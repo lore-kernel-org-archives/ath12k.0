@@ -1,9 +1,9 @@
 From: Kalle Valo <kvalo@kernel.org>
-Date: Fri, 12 Aug 2022 19:10:03 +0300
-Subject: [PATCH 50/50] MAINTAINERS: add ath12k
+Date: Fri, 12 Aug 2022 19:10:01 +0300
+Subject: [PATCH 48/50] wifi: ath: add ath12k to Makefile
 In-Reply-To: <20220812161003.27279-1-kvalo@kernel.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
-Message-ID: <20220812161003.27279-51-kvalo@kernel.org>
+Message-ID: <20220812161003.27279-49-kvalo@kernel.org>
 List-Id: <ath12k.lists.infradead.org>
 To: ath12k@lists.infradead.org
 MIME-Version: 1.0
@@ -12,30 +12,25 @@ Content-Transfer-Encoding: 7bit
 
 From: Kalle Valo <quic_kvalo@quicinc.com>
 
-Add an entry for ath12k to the MAINTAINERS file.
+(Patches split into one patch per file for easier review, but the final
+commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- MAINTAINERS | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/net/wireless/ath/Makefile | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 66738c8330db..98d7b5ba058b 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -16571,6 +16571,13 @@ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
- F:	Documentation/devicetree/bindings/net/wireless/qcom,ath11k.yaml
- F:	drivers/net/wireless/ath/ath11k/
+diff --git a/drivers/net/wireless/ath/Makefile b/drivers/net/wireless/ath/Makefile
+index 8e4ae9de5ae4..8d6e6e218d24 100644
+--- a/drivers/net/wireless/ath/Makefile
++++ b/drivers/net/wireless/ath/Makefile
+@@ -8,6 +8,7 @@ obj-$(CONFIG_WIL6210)		+= wil6210/
+ obj-$(CONFIG_ATH10K)		+= ath10k/
+ obj-$(CONFIG_WCN36XX)		+= wcn36xx/
+ obj-$(CONFIG_ATH11K)		+= ath11k/
++obj-$(CONFIG_ATH12K)		+= ath12k/
  
-+QUALCOMM ATH12K WIRELESS DRIVER
-+M:	Kalle Valo <kvalo@kernel.org>
-+L:	ath12k at lists.infradead.org
-+S:	Supported
-+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
-+F:	drivers/net/wireless/ath/ath12k/
-+
- QUALCOMM ATHEROS ATH9K WIRELESS DRIVER
- M:	Toke H?iland-J?rgensen <toke@toke.dk>
- L:	linux-wireless at vger.kernel.org
+ obj-$(CONFIG_ATH_COMMON)	+= ath.o
+ 
 
 
