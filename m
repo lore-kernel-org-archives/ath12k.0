@@ -1,9 +1,9 @@
 From: Kalle Valo <kvalo@kernel.org>
-Date: Fri, 12 Aug 2022 19:09:23 +0300
-Subject: [PATCH 10/50] wifi: ath12k: add debug.h
+Date: Fri, 12 Aug 2022 19:09:21 +0300
+Subject: [PATCH 08/50] wifi: ath12k: add dbring.h
 In-Reply-To: <20220812161003.27279-1-kvalo@kernel.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
-Message-ID: <20220812161003.27279-11-kvalo@kernel.org>
+Message-ID: <20220812161003.27279-9-kvalo@kernel.org>
 List-Id: <ath12k.lists.infradead.org>
 To: ath12k@lists.infradead.org
 MIME-Version: 1.0
@@ -17,82 +17,94 @@ commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/debug.h | 68 +++++++++++++++++++++++++++++++++
- 1 file changed, 68 insertions(+)
+ drivers/net/wireless/ath/ath12k/dbring.h | 80 ++++++++++++++++++++++++++++++++
+ 1 file changed, 80 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/debug.h b/drivers/net/wireless/ath/ath12k/debug.h
+diff --git a/drivers/net/wireless/ath/ath12k/dbring.h b/drivers/net/wireless/ath/ath12k/dbring.h
 new file mode 100644
-index 000000000000..ec2be467edbc
+index 000000000000..2be2d8def3f0
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/debug.h
-@@ -0,0 +1,68 @@
++++ b/drivers/net/wireless/ath/ath12k/dbring.h
+@@ -0,0 +1,80 @@
 +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
 +/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
 + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
 + */
 +
-+#ifndef _ATH12K_DEBUG_H_
-+#define _ATH12K_DEBUG_H_
++#ifndef ATH12K_DBRING_H
++#define ATH12K_DBRING_H
 +
-+#include "trace.h"
++#include <linux/types.h>
++#include <linux/idr.h>
++#include <linux/spinlock.h>
++#include "dp.h"
 +
-+enum ath12k_debug_mask {
-+	ATH12K_DBG_AHB		= 0x00000001,
-+	ATH12K_DBG_WMI		= 0x00000002,
-+	ATH12K_DBG_HTC		= 0x00000004,
-+	ATH12K_DBG_DP_HTT	= 0x00000008,
-+	ATH12K_DBG_MAC		= 0x00000010,
-+	ATH12K_DBG_BOOT		= 0x00000020,
-+	ATH12K_DBG_QMI		= 0x00000040,
-+	ATH12K_DBG_DATA		= 0x00000080,
-+	ATH12K_DBG_MGMT		= 0x00000100,
-+	ATH12K_DBG_REG		= 0x00000200,
-+	ATH12K_DBG_TESTMODE	= 0x00000400,
-+	ATH12K_DBG_HAL		= 0x00000800,
-+	ATH12K_DBG_PCI		= 0x00001000,
-+	ATH12K_DBG_DP_TX	= 0x00001000,
-+	ATH12K_DBG_DP_RX	= 0x00002000,
-+	ATH12K_DBG_ANY		= 0xffffffff,
++struct ath12k_dbring_element {
++	dma_addr_t paddr;
++	u8 payload[0];
 +};
 +
-+__printf(2, 3) void ath12k_info(struct ath12k_base *ab, const char *fmt, ...);
-+__printf(2, 3) void ath12k_err(struct ath12k_base *ab, const char *fmt, ...);
-+__printf(2, 3) void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...);
++struct ath12k_dbring_data {
++	void *data;
++	u32 data_sz;
++	struct ath12k_wmi_dma_buf_release_meta_data_params meta;
++};
 +
-+extern unsigned int ath12k_debug_mask;
++struct ath12k_dbring_buf_release_event {
++	struct ath12k_wmi_dma_buf_release_fixed_params fixed;
++	const struct ath12k_wmi_dma_buf_release_entry_params *buf_entry;
++	const struct ath12k_wmi_dma_buf_release_meta_data_params *meta_data;
++	u32 num_buf_entry;
++	u32 num_meta;
++};
 +
-+#ifdef CONFIG_ATH12K_DEBUG
-+__printf(3, 4) void __ath12k_dbg(struct ath12k_base *ab,
-+				 enum ath12k_debug_mask mask,
-+				 const char *fmt, ...);
-+void ath12k_dbg_dump(struct ath12k_base *ab,
-+		     enum ath12k_debug_mask mask,
-+		     const char *msg, const char *prefix,
-+		     const void *buf, size_t len);
-+#else /* CONFIG_ATH12K_DEBUG */
-+static inline int __ath12k_dbg(struct ath12k_base *ab,
-+			       enum ath12k_debug_mask dbg_mask,
-+			       const char *fmt, ...)
-+{
-+	return 0;
-+}
++struct ath12k_dbring_cap {
++	u32 pdev_id;
++	enum wmi_direct_buffer_module id;
++	u32 min_elem;
++	u32 min_buf_sz;
++	u32 min_buf_align;
++};
 +
-+static inline void ath12k_dbg_dump(struct ath12k_base *ab,
-+				   enum ath12k_debug_mask mask,
-+				   const char *msg, const char *prefix,
-+				   const void *buf, size_t len)
-+{
-+}
-+#endif /* CONFIG_ATH12K_DEBUG */
++struct ath12k_dbring {
++	struct dp_srng refill_srng;
++	struct idr bufs_idr;
++	/* Protects bufs_idr */
++	spinlock_t idr_lock;
++	dma_addr_t tp_addr;
++	dma_addr_t hp_addr;
++	int bufs_max;
++	u32 pdev_id;
++	u32 buf_sz;
++	u32 buf_align;
++	u32 num_resp_per_event;
++	u32 event_timeout_ms;
++	int (*handler)(struct ath12k *ar, struct ath12k_dbring_data *data);
++};
 +
-+#define ath12k_dbg(ar, dbg_mask, fmt, ...)			\
-+do {								\
-+	typeof(dbg_mask) mask = (dbg_mask);			\
-+	if (ath12k_debug_mask & mask)				\
-+		__ath12k_dbg(ar, mask, fmt, ##__VA_ARGS__);	\
-+} while (0)
-+
-+#endif /* _ATH12K_DEBUG_H_ */
++int ath12k_dbring_set_cfg(struct ath12k *ar,
++			  struct ath12k_dbring *ring,
++			  u32 num_resp_per_event,
++			  u32 event_timeout_ms,
++			  int (*handler)(struct ath12k *,
++					 struct ath12k_dbring_data *));
++int ath12k_dbring_wmi_cfg_setup(struct ath12k *ar,
++				struct ath12k_dbring *ring,
++				enum wmi_direct_buffer_module id);
++int ath12k_dbring_buf_setup(struct ath12k *ar,
++			    struct ath12k_dbring *ring,
++			    struct ath12k_dbring_cap *db_cap);
++int ath12k_dbring_srng_setup(struct ath12k *ar, struct ath12k_dbring *ring,
++			     int ring_num, int num_entries);
++int ath12k_dbring_buffer_release_event(struct ath12k_base *ab,
++				       struct ath12k_dbring_buf_release_event *ev);
++int ath12k_dbring_get_cap(struct ath12k_base *ab,
++			  u8 pdev_idx,
++			  enum wmi_direct_buffer_module id,
++			  struct ath12k_dbring_cap *db_cap);
++void ath12k_dbring_srng_cleanup(struct ath12k *ar, struct ath12k_dbring *ring);
++void ath12k_dbring_buf_cleanup(struct ath12k *ar, struct ath12k_dbring *ring);
++#endif /* ATH12K_DBRING_H */
 
 
