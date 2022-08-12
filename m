@@ -1,9 +1,9 @@
 From: Kalle Valo <kvalo@kernel.org>
-Date: Fri, 12 Aug 2022 19:09:14 +0300
-Subject: [PATCH 01/50] wifi: ath12k: add Kconfig
+Date: Fri, 12 Aug 2022 19:09:15 +0300
+Subject: [PATCH 02/50] wifi: ath12k: add Makefile
 In-Reply-To: <20220812161003.27279-1-kvalo@kernel.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
-Message-ID: <20220812161003.27279-2-kvalo@kernel.org>
+Message-ID: <20220812161003.27279-3-kvalo@kernel.org>
 List-Id: <ath12k.lists.infradead.org>
 To: ath12k@lists.infradead.org
 MIME-Version: 1.0
@@ -17,48 +17,41 @@ commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/Kconfig | 34 +++++++++++++++++++++++++++++++++
- 1 file changed, 34 insertions(+)
+ drivers/net/wireless/ath/ath12k/Makefile | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
+diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
 new file mode 100644
-index 000000000000..4b60852691ba
+index 000000000000..62c52e733b5e
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/Kconfig
-@@ -0,0 +1,34 @@
++++ b/drivers/net/wireless/ath/ath12k/Makefile
+@@ -0,0 +1,27 @@
 +# SPDX-License-Identifier: BSD-3-Clause-Clear
-+config ATH12K
-+	tristate "Qualcomm Technologies Wi-Fi 7 support (ath12k)"
-+	depends on MAC80211 && HAS_DMA && PCI
-+	depends on CRYPTO_MICHAEL_MIC
-+	select QCOM_QMI_HELPERS
-+	select MHI_BUS
-+	select QRTR
-+	select QRTR_MHI
-+	help
-+	  Enable support for Qualcomm Technologies Wi-Fi 7 (IEEE
-+	  802.11be) family of chipsets, for example WCN7850 and
-+	  QCN9274.
++obj-$(CONFIG_ATH12K) += ath12k.o
++ath12k-y += core.o \
++	    hal.o \
++	    hal_tx.o \
++	    hal_rx.o \
++	    wmi.o \
++	    mac.o \
++	    reg.o \
++	    htc.o \
++	    qmi.o \
++	    dp.o  \
++	    dp_tx.o \
++	    dp_rx.o \
++	    debug.o \
++	    ce.o \
++	    peer.o \
++	    dbring.o \
++	    hw.o \
++	    mhi.o \
++	    pci.o \
++	    dp_mon.o
 +
-+	  If you choose to build a module, it'll be called ath12k.
++ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
 +
-+config ATH12K_DEBUG
-+	bool "ath12k debugging"
-+	depends on ATH12K
-+	help
-+	  Enable debug support, for example debug messages which must
-+	  be enabled separately using the debug_mask module parameter.
-+
-+	  If unsure, say Y to make it easier to debug problems. But if
-+	  you want optimal perfomance choose N.
-+
-+config ATH12K_TRACING
-+	bool "ath12k tracing support"
-+	depends on ATH12K && EVENT_TRACING
-+	help
-+	  Enable ath12k tracing infrastructure.
-+
-+	  If unsure, say Y to make it easier to debug problems. But if
-+	  you want optimal perfomance choose N.
++# for tracing framework to find trace.h
++CFLAGS_trace.o := -I$(src)
 
 
