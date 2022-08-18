@@ -4,83 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25916C00140
-	for <ath12k@archiver.kernel.org>; Thu, 18 Aug 2022 23:18:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01E57C00140
+	for <ath12k@archiver.kernel.org>; Thu, 18 Aug 2022 23:34:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ejb9khTWZuCod84isMEM7D6gmC7okjsnVOGO2ewHTS0=; b=qM6QhM5CJMp4mg
-	APBJdG8xOlcaGQOJqHC0/dlfiTiqdBSGULOuH5Hj1Ah54Z/Kq6zdX4xKDCZ+AF7E9TNh7wlKUl8LJ
-	VeynO5K9bIEcdx4fihw1eWLJkdN8sFTwF78BEWW7yJICHIvCiEjfaoraJCvjkeX8ULG4ydZ5yEasp
-	F6vz2ibGAKD/WaIigtamqBhpKAINcbHO3MPLDr/AqPZlotHGIA3knFm3CJ6UtmTHr0+a7S0mBJlbg
-	hN/iloEDMqUOyG4qVEPWwkTOuODykf4gOlDiMBg46lrd9trvxiuxxuF/R2xiF5x1uBDHfp5x+UfOa
-	Oxllsoo2dJE197aVZHAg==;
+	List-Owner; bh=Q8ZrHiAyJfThmid/JgT1cocPeSYClX3XGiEbaIJ8fTk=; b=0ykdtbVKZh5vyk
+	dIZD6C4rxLAcCE/OytIjLtAGyfQiDoddl1MXg3DtUowqwwT6NAsYDmvg6EauoedYGFYIFozu2NFRX
+	Lpk2GrnlqM4At0/SK+khJOYnVYoh3O7xYpA4EukqN4vACKJ1GOnZgQpVQ2EB9cSOvjxUOkSXZvkzw
+	T+JYc9dwIsr7NJ0q+jseKdtpFL6bPf7iD3re9ndgCkdK6RzCKEdGZ9MDOAerF6LfxMozwzsnC95fh
+	2of/v6EviDTGGqnwVnURHvApwG1jsWC1B3DBycKAfjGFOWhzB3qcxrZY3Vfv9THpwgzWiK1v1Z48I
+	zwR3c+DO1WWRCON933nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOomE-00B5xU-Fk
-	for ath12k@archiver.kernel.org; Thu, 18 Aug 2022 23:18:14 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1oOp23-00BHRJ-Ct
+	for ath12k@archiver.kernel.org; Thu, 18 Aug 2022 23:34:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOomB-00B5u8-Rg
-	for ath12k@lists.infradead.org; Thu, 18 Aug 2022 23:18:13 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27ILILV0026509;
-	Thu, 18 Aug 2022 23:18:08 GMT
+	id 1oOp1z-00BHNj-Tx
+	for ath12k@lists.infradead.org; Thu, 18 Aug 2022 23:34:34 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27IMpZwb025402;
+	Thu, 18 Aug 2022 23:34:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=f37tqwu0u597YIQPvYVwEVI5ufA857AD2yrl5tdzoK8=;
- b=EVANMWrzFMDVPHYINy65rv1iy/mn0Q6ZV+IOoRQAnu1pITijL/7kj29+ePlcf3MrEEHr
- VNgfYXBG2EGwfOrT8zvuA+IRfU0ORQjm23ufcHN+s764T3GwXaHUlogbZaraBN8dZC6G
- h/4y/qb3UHK/pWfd/hdY1pD9/Ob1ZAlm43d68vfJ/tmVe79bhr+UfCaqGoOTYOez9gIq
- A95PgeTra9lA335YgAeI+8ik3I8Rrngo8d7HV1K9rFQHaS7hU8KUDrZ0uU+alzFjClCg
- gjvd8JRtPQ7KPmCbC80Jb8VGAYeYnRJXfEG0jLCwf6HE3YnZf+g7YQvZdkIO1EDU50/l EA== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j1pwuhhts-1
+ bh=T0kSSSS0HOQo+PSEsT9YbwAr8wdHWNYEWz81cB1dWvY=;
+ b=nQh8p6YVvheeWiBwLkNhnDgb7R8MiJD8Yp29vvGqk5+2YTVhwXTjNz3oPiEWaHrEYLbT
+ 54Ycah0dcQ7Lkrf1NPQpx9bAWAQPYv4B9pqzCJlH9zjp5Z9hTm2/ujE6HpL6Neclney2
+ iv2MZ8jJ+zLD6taWHkWrBty4D/G9Ma0bzAbn113gORRIhvxR6SeOKScPTj2aw6ZizAtc
+ cHJAGFSfU47zFzM5ywmLWmRDiP5aYjfhDDzHIdqgkfzsLHzSMcPoddn00fsMSi9qem5T
+ /JX2+FAXbIfxov84VzNjB+TagBsx0fN+GrYwaUqXsBGeEEkBtQiL5sNSQYbO4mkiBEWl 5w== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j13c05wgg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Aug 2022 23:18:07 +0000
+	Thu, 18 Aug 2022 23:34:28 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27INI6N8010170
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27INYRgu019060
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Aug 2022 23:18:06 GMT
+	Thu, 18 Aug 2022 23:34:27 GMT
 Received: from [10.110.11.6] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Thu, 18 Aug
- 2022 16:18:06 -0700
-Message-ID: <d6323a12-0a7c-af50-7fc6-d996eb24a02f@quicinc.com>
-Date: Thu, 18 Aug 2022 16:18:04 -0700
+ 2022 16:34:26 -0700
+Message-ID: <c5a1b013-d53a-77b3-eaf8-05b5bbc23b0a@quicinc.com>
+Date: Thu, 18 Aug 2022 16:34:24 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
  Thunderbird/91.12.0
-Subject: Re: [PATCH 36/50] wifi: ath12k: add pci.h
+Subject: Re: [PATCH 37/50] wifi: ath12k: add peer.c
 Content-Language: en-US
 To: Kalle Valo <kvalo@kernel.org>, <linux-wireless@vger.kernel.org>
 CC: <ath12k@lists.infradead.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
- <20220812161003.27279-37-kvalo@kernel.org>
+ <20220812161003.27279-38-kvalo@kernel.org>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20220812161003.27279-37-kvalo@kernel.org>
+In-Reply-To: <20220812161003.27279-38-kvalo@kernel.org>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: gOuzeQYIyFeooejABgVp2hNe76T4aE-H
-X-Proofpoint-ORIG-GUID: gOuzeQYIyFeooejABgVp2hNe76T4aE-H
+X-Proofpoint-ORIG-GUID: cMJYFegiPFGILyPcB9C5siktaAab8HDI
+X-Proofpoint-GUID: cMJYFegiPFGILyPcB9C5siktaAab8HDI
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.517,FMLib:17.11.122.1
  definitions=2022-08-18_16,2022-08-18_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
- mlxscore=0 clxscore=1015 lowpriorityscore=0 priorityscore=1501
- impostorscore=0 adultscore=0 spamscore=0 phishscore=0 suspectscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2207270000 definitions=main-2208180085
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
+ mlxscore=0 lowpriorityscore=0 priorityscore=1501 malwarescore=0
+ mlxlogscore=999 spamscore=0 phishscore=0 impostorscore=0 bulkscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2207270000 definitions=main-2208180086
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220818_161812_053229_5AD3E1E4 
-X-CRM114-Status: GOOD (  13.24  )
+X-CRM114-CacheID: sfid-20220818_163432_067574_FDDE26AD 
+X-CRM114-Status: GOOD (  23.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,35 +105,124 @@ On 8/12/2022 9:09 AM, Kalle Valo wrote:
 > 
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 > ---
->   drivers/net/wireless/ath/ath12k/pci.h | 132 ++++++++++++++++++++++++++++++++++
->   1 file changed, 132 insertions(+)
+>   drivers/net/wireless/ath/ath12k/peer.c | 343 +++++++++++++++++++++++++++++++++
+>   1 file changed, 343 insertions(+)
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-[...]
-> +struct ath12k_msi_user {
-> +	char *name;
-
-should this be const?
-
-> +	int num_vectors;
-> +	u32 base_vector;
-> +};
+> diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+> new file mode 100644
+> index 000000000000..30ffdbbdcc7f
+> --- /dev/null
+> +++ b/drivers/net/wireless/ath/ath12k/peer.c
+> @@ -0,0 +1,343 @@
+> +// SPDX-License-Identifier: BSD-3-Clause-Clear
+> +/*
+> + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+> + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+> + */
 > +
-> +struct ath12k_msi_config {
-> +	int total_vectors;
-> +	int total_users;
-> +	struct ath12k_msi_user *users;
+> +#include "core.h"
+> +#include "peer.h"
+> +#include "debug.h"
+> +
+> +struct ath12k_peer *ath12k_peer_find(struct ath12k_base *ab, int vdev_id,
+> +				     const u8 *addr)
+> +{
+> +	struct ath12k_peer *peer;
+> +
+> +	lockdep_assert_held(&ab->base_lock);
+> +
+> +	list_for_each_entry(peer, &ab->peers, list) {
+> +		if (peer->vdev_id != vdev_id)
+> +			continue;
+> +		if (!ether_addr_equal(peer->addr, addr))
+> +			continue;
+> +
+> +		return peer;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +static struct ath12k_peer *ath12k_peer_find_by_pdev_idx(struct ath12k_base *ab,
+> +							u8 pdev_idx, const u8 *addr)
+> +{
+> +	struct ath12k_peer *peer;
+> +
+> +	lockdep_assert_held(&ab->base_lock);
+> +
+> +	list_for_each_entry(peer, &ab->peers, list) {
+> +		if (peer->pdev_idx != pdev_idx)
+> +			continue;
+> +		if (!ether_addr_equal(peer->addr, addr))
+> +			continue;
+> +
+> +		return peer;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +struct ath12k_peer *ath12k_peer_find_by_addr(struct ath12k_base *ab,
+> +					     const u8 *addr)
+> +{
+> +	struct ath12k_peer *peer;
+> +
+> +	lockdep_assert_held(&ab->base_lock);
+> +
+> +	list_for_each_entry(peer, &ab->peers, list) {
+> +		if (!ether_addr_equal(peer->addr, addr))
+> +			continue;
+> +
+> +		return peer;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +struct ath12k_peer *ath12k_peer_find_by_id(struct ath12k_base *ab,
+> +					   int peer_id)
+> +{
+> +	struct ath12k_peer *peer;
+> +
+> +	lockdep_assert_held(&ab->base_lock);
+> +
+> +	list_for_each_entry(peer, &ab->peers, list)
+> +		if (peer_id == peer->peer_id)
+> +			return peer;
+> +
+> +	return NULL;
+> +}
+> +
+> +struct ath12k_peer *ath12k_peer_find_by_vdev_id(struct ath12k_base *ab,
+> +						int vdev_id)
+> +{
+> +	struct ath12k_peer *peer;
+> +
+> +	spin_lock_bh(&ab->base_lock);
 
-should this be const?
+the other ath12k_peer_find_*() functions expect the caller to take the 
+lock, but in this one the function itself takes the lock. why the 
+discrepancy? should these have a consistent interface? note that the 
+returned peer won't be protected by the lock.
 
-then the following typecast in pci.c would not be necessary:
+note i see this is only used in one place, and there it doesn't use the 
+peer, it just checks if it exists.
 
-static const struct ath12k_msi_config ath12k_msi_config[] = {
-	{
-[...]
-		.users = (struct ath12k_msi_user[]) {
-[...]
-		},
+perhaps rename this to bool ath12k_peer_exists_by_vdev() to justify the 
+difference in locking?
+
+
+> +
+> +	list_for_each_entry(peer, &ab->peers, list) {
+> +		if (vdev_id == peer->vdev_id) {
+> +			spin_unlock_bh(&ab->base_lock);
+> +			return peer;
+> +		}
+> +	}
+> +	spin_unlock_bh(&ab->base_lock);
+> +	return NULL;
+> +}
+
 [...]
 
 -- 
