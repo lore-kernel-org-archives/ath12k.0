@@ -4,83 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56705C00140
-	for <ath12k@archiver.kernel.org>; Fri, 19 Aug 2022 01:12:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6737FC32771
+	for <ath12k@archiver.kernel.org>; Fri, 19 Aug 2022 19:02:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:From:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J1dI/xGHE5wdwzHWLS01MVq7S7fLmuOitdOvxGXr++4=; b=BJY7TNCfSlkCy8
-	LOthg9Q91NuB52tUvMzo3+nc9Mv3mqoxYNXf9DyMoiKnrNTIoZr78cqhtFolmOQRZTPV9PLzAF7Pj
-	W/j3eWP2PUnm1WRNhQOgCjQS4S6K9zLQ7oeU85xA97MZaWmAIVk/2hcIU+r8jeNItgrr8FTAyR4qu
-	eolrt03HqaGncLoLhfIcfKUUY8NyvxZV1h/3dqp6I2I6q+2mPdUqVgnm5M35V1hQFPcKe6yD0qkAi
-	lun4y6xNjpjRBL7gHfNcdB03UCpa6GLnFdUeHEj0ot8TMq1dXuLh3cqgR8xDLT6aiuv88nPC10qa1
-	yHYP73v80Fx+qkXcDxpg==;
+	List-Owner; bh=/fU//pUMtOIXaKhgEgpnx1mwGFMbQdebVbxCWmBcFvk=; b=qWQzRjzPbRXiCe
+	dJa6arJ4bMn0FaOViXtvkWKu0tWlw5OhHGkn8c0yEa1jKjaPMM8FB2rpNSThhQHBUx6Vw+V2QiRJJ
+	DwnabxX0u/Tp5ZUiRc9haOgxgVuzbpFSaSlSfqcOgbDs3jaWewj4TXoK5SjEf5Fj8UsL9Q3tfbveB
+	/Jzv5n91yZTlvicbVKjeBcOxwKVkWHIgWOZ0JSaps+UMmPt+DhC7Mg73odfwNtXudvt4Wb/kBWhSl
+	P4JRrS3bsAwQhItMnJxULanHOjyCON+X9KbucH2js0bu5MGn4bGAuhAfFbzwsXCby2r1rpVcAlsLp
+	zQoYtc8Pg8lHeDQbd1kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOqYg-00CyEI-NJ
-	for ath12k@archiver.kernel.org; Fri, 19 Aug 2022 01:12:22 +0000
+	id 1oP7GD-00BOWm-Ps
+	for ath12k@archiver.kernel.org; Fri, 19 Aug 2022 19:02:25 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOqYd-00Cy4s-7t
-	for ath12k@lists.infradead.org; Fri, 19 Aug 2022 01:12:20 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27J0xtSX006967;
-	Fri, 19 Aug 2022 01:12:13 GMT
+	id 1oP7FL-00BO2y-Qm
+	for ath12k@lists.infradead.org; Fri, 19 Aug 2022 19:01:35 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27JIvZwj004273;
+	Fri, 19 Aug 2022 19:01:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
+ mime-version : subject : from : to : cc : references : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=PP51UZsJ2Azw9ascxyzGNbbWKrwLLSR0Rk3q2TbHAGk=;
- b=d//NXGM13mmeUD7OXJJKqADOSn25VzKoL3WHVAI7pjwoKascvrfbud50Rl7PI2w1BP2Q
- 1VOut0fMBargDkRwymbxJ89l3n/PFgeCMxQYy/qVWAB8XXMKSNqj5xgKv5klwjtLbzJp
- AeKb+I64+V070pZfTau8JW25LHZkwKQzrbAJLMUif+CRtrgS11FU7V9xlxeusXaRE+af
- I0FOQvlATCymXt7iEIJUoHAg4Kl0CA3Td337MLlU5jG7hJCA74hNrDhVu0SgjfUINtpM
- eGImqnumJfJHj9GNegV/N1bQlKzARQ9r+hDHkTEMGHXpmJZmpmQtb/bwqDvYOaHWFrhL Kg== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j1wtcrba7-1
+ bh=QcSLGs4SuAganUIc0YVw/OiPQWqEBg69UHJVY0f3+0w=;
+ b=EkLJ2d1Bp/3ieh+qmxlgsRqt1g1atXBGOUunFIoaO1/zDcHWLIXlLN0Ji4r2fcd+vXQO
+ C4giXuDPFD6wKRA6clFyiqntF/fWpOk+DJwYYKXMuk5JXZyC1n50U6wWU6PjvCt3fFHN
+ hGrh1vjDiZEz6wu3E/tCPoSeCazySThUwbztly288BwRpNsQjJzIxP6aoizho45lFnaN
+ mtJ8Fjc9hQCJByrvEKreXSj8R1HnQ3ESKbYY/OX4I2Z5N+nILN1jWxBW13DV6N84ch2J
+ sGyphv3gTqELh2bJ4ZyWQ8/J7h2BToZ6F9gpZstOIv8x+NveTQRPRiwGCcWlWlqNlR3N kw== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j21v52k0n-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Aug 2022 01:12:12 +0000
+	Fri, 19 Aug 2022 19:01:25 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27J1CBqL009559
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27JIuOgL030297
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Aug 2022 01:12:11 GMT
+	Fri, 19 Aug 2022 18:56:24 GMT
 Received: from [10.110.11.6] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Thu, 18 Aug
- 2022 18:12:11 -0700
-Message-ID: <5460619d-38e3-9960-5bc7-63854bd01b46@quicinc.com>
-Date: Thu, 18 Aug 2022 18:11:52 -0700
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Fri, 19 Aug
+ 2022 11:56:24 -0700
+Message-ID: <3b09b751-54c1-d684-7d5c-8f736cd80707@quicinc.com>
+Date: Fri, 19 Aug 2022 11:56:23 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
  Thunderbird/91.12.0
-Subject: Re: [PATCH 47/50] wifi: ath12k: add wmi.h
+Subject: Re: [PATCH 33/50] wifi: ath12k: add mhi.c
 Content-Language: en-US
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, <linux-wireless@vger.kernel.org>
 CC: <ath12k@lists.infradead.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
- <20220812161003.27279-48-kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20220812161003.27279-48-kvalo@kernel.org>
+ <20220812161003.27279-34-kvalo@kernel.org>
+ <05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com>
+In-Reply-To: <05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: GkHJ2dzLTHPSk3AgIqW5RJRyRVeVo8ek
-X-Proofpoint-GUID: GkHJ2dzLTHPSk3AgIqW5RJRyRVeVo8ek
+X-Proofpoint-ORIG-GUID: PyGS-C6aGoyKhqcXPrP9cEe_XoQnCK_W
+X-Proofpoint-GUID: PyGS-C6aGoyKhqcXPrP9cEe_XoQnCK_W
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.517,FMLib:17.11.122.1
- definitions=2022-08-18_18,2022-08-18_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 suspectscore=0
- impostorscore=0 mlxscore=0 clxscore=1015 malwarescore=0 bulkscore=0
- spamscore=0 priorityscore=1501 mlxlogscore=999 adultscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2207270000 definitions=main-2208190003
+ definitions=2022-08-19_10,2022-08-18_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 mlxscore=0 adultscore=0 bulkscore=0 impostorscore=0
+ malwarescore=0 spamscore=0 mlxlogscore=923 phishscore=0 suspectscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2207270000 definitions=main-2208190071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220818_181219_435194_15C3F4EB 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20220819_120132_066437_47F361A0 
+X-CRM114-Status: GOOD (  14.98  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,106 +98,29 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/12/2022 9:10 AM, Kalle Valo wrote:
-> From: Kalle Valo <quic_kvalo@quicinc.com>
-> 
-> (Patches split into one patch per file for easier review, but the final
-> commit will be one big patch. See the cover letter for more info.)
-> 
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->   drivers/net/wireless/ath/ath12k/wmi.h | 4796 +++++++++++++++++++++++++++++++++
->   1 file changed, 4796 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-[...]
-> +/* defines to set Packet extension values whic can be 0 us, 8 usec or 16 usec */
+On 8/18/2022 3:25 PM, Jeff Johnson wrote:
+ > On 8/12/2022 9:09 AM, Kalle Valo wrote:
+ >> +static struct mhi_event_config ath12k_mhi_events_qcn9274[] = {
+ >
+ > seems this should be const
+ > but for some reason struct mhi_controller_config has:
+ >      struct mhi_event_config *event_cfg;
+ >
+ > (not const) so this can't be const :(
+ >
+ > perhaps someone can propose a MHI interface change?
+ > especially since internally to MHI in parse_ev_cfg() we have:
+ >      const struct mhi_event_config *event_cfg;
+ >      [...]
+ >      for (i = 0; i < num; i++) {
+ >          event_cfg = &config->event_cfg[i];
+ >
+ > so it is treated as const
 
-s/whic/which/
+I submitted a patch for this
 
-[...]
+<https://lore.kernel.org/mhi/20220819184245.28035-1-quic_jjohnson@quicinc.com/>
 
-> +enum {
-
-naming the enum allows you to reference the enum in code and comments
-
-> +	WMI_HOST_WLAN_2G_CAP	= 0x1,
-> +	WMI_HOST_WLAN_5G_CAP	= 0x2,
-> +	WMI_HOST_WLAN_2G_5G_CAP	= 0x3,
-> +};
-
-[...]
-
-> +#define WMI_CMD_UNSUPPORTED 0
-
-why not just add this to enum wmi_tlv_cmd_id?
-
-> +
-> +enum wmi_tlv_cmd_id {
-> +	WMI_INIT_CMDID = 0x1,
-> +	WMI_START_SCAN_CMDID = WMI_TLV_CMD(WMI_GRP_SCAN),
-[...]
-> +#define WMI_PEER_MIMO_PS_STATE                          0x1
-> +#define WMI_PEER_AMPDU                                  0x2
-> +#define WMI_PEER_AUTHORIZE                              0x3
-> +#define WMI_PEER_CHWIDTH                                0x4
-> +#define WMI_PEER_NSS                                    0x5
-> +#define WMI_PEER_USE_4ADDR                              0x6
-> +#define WMI_PEER_MEMBERSHIP                             0x7
-> +#define WMI_PEER_USERPOS                                0x8
-> +#define WMI_PEER_CRIT_PROTO_HINT_ENABLED                0x9
-> +#define WMI_PEER_TX_FAIL_CNT_THR                        0xA
-> +#define WMI_PEER_SET_HW_RETRY_CTS2S                     0xB
-> +#define WMI_PEER_IBSS_ATIM_WINDOW_LENGTH                0xC
-> +#define WMI_PEER_PHYMODE                                0xD
-> +#define WMI_PEER_USE_FIXED_PWR                          0xE
-> +#define WMI_PEER_PARAM_FIXED_RATE                       0xF
-> +#define WMI_PEER_SET_MU_WHITELIST                       0x10
-> +#define WMI_PEER_SET_MAX_TX_RATE                        0x11
-> +#define WMI_PEER_SET_MIN_TX_RATE                        0x12
-> +#define WMI_PEER_SET_DEFAULT_ROUTING                    0x13
-
-perhaps create an enum for these?
-
-> +
-> +#define WMI_VDEV_SLOT_TIME_LONG         0x1
-> +#define WMI_VDEV_SLOT_TIME_SHORT        0x2
-
-another enum?
-
-> +#define WMI_VDEV_PREAMBLE_LONG          0x1
-> +#define WMI_VDEV_PREAMBLE_SHORT         0x2
-
-another enum?
-[...]
-
-> +/* Regaulatory Rule Flags Passed by FW */
-
-s/Regaulatory/Regulatory/
-
-[...]
-
-> +#define WMI_KEY_PAIRWISE 0x00
-> +#define WMI_KEY_GROUP    0x01
-
-create an enum?
-
-> +
-> +#define WMI_CIPHER_NONE     0x0 /* clear key */
-> +#define WMI_CIPHER_WEP      0x1
-> +#define WMI_CIPHER_TKIP     0x2
-> +#define WMI_CIPHER_AES_OCB  0x3
-> +#define WMI_CIPHER_AES_CCM  0x4
-> +#define WMI_CIPHER_WAPI     0x5
-> +#define WMI_CIPHER_CKIP     0x6
-> +#define WMI_CIPHER_AES_CMAC 0x7
-> +#define WMI_CIPHER_ANY      0x8
-> +#define WMI_CIPHER_AES_GCM  0x9
-> +#define WMI_CIPHER_AES_GMAC 0xa
-
-create an enum?
-
-[...]
 
 -- 
 ath12k mailing list
