@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6737FC32771
-	for <ath12k@archiver.kernel.org>; Fri, 19 Aug 2022 19:02:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69A40C32771
+	for <ath12k@archiver.kernel.org>; Fri, 19 Aug 2022 20:50:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:From:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/fU//pUMtOIXaKhgEgpnx1mwGFMbQdebVbxCWmBcFvk=; b=qWQzRjzPbRXiCe
-	dJa6arJ4bMn0FaOViXtvkWKu0tWlw5OhHGkn8c0yEa1jKjaPMM8FB2rpNSThhQHBUx6Vw+V2QiRJJ
-	DwnabxX0u/Tp5ZUiRc9haOgxgVuzbpFSaSlSfqcOgbDs3jaWewj4TXoK5SjEf5Fj8UsL9Q3tfbveB
-	/Jzv5n91yZTlvicbVKjeBcOxwKVkWHIgWOZ0JSaps+UMmPt+DhC7Mg73odfwNtXudvt4Wb/kBWhSl
-	P4JRrS3bsAwQhItMnJxULanHOjyCON+X9KbucH2js0bu5MGn4bGAuhAfFbzwsXCby2r1rpVcAlsLp
-	zQoYtc8Pg8lHeDQbd1kg==;
+	List-Owner; bh=ZZRY4ZkCLudcdn6HiEPNgb/GLg4dix4+052f7mfuzM0=; b=AeEkhij4dvRZgZ
+	qWzGWtx35LBxFifDZ5zzc69a1rLLK4kBnVq7l6yE3XScecvTlnnK2eHmjbVWZ6KsNhL6CQDNwCLIU
+	0fiqjS5/L6ZgC2SnaaIrYWT0gsK059mu64OsYavX5OdxUNbhuxwbrJqC2r92+1IMiFTSO9Mz5nHfi
+	sZCO9+BpZtUQPsWeF2tmBCZmaQv3fcrBqCN8J/NAqVcKyo/aqoLm46pJheP39ucznWDAFJ0Y6S8D8
+	Hsi8Ue2OaoEylM/NBYfchhj9yGc23P3uouhphGXotVFp87dRzTN4LOxAZSZTM0bXB7qS1HvtmLpzV
+	C7fJJaylpX6XAvQ5VEDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oP7GD-00BOWm-Ps
-	for ath12k@archiver.kernel.org; Fri, 19 Aug 2022 19:02:25 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1oP8wz-00C9C2-At
+	for ath12k@archiver.kernel.org; Fri, 19 Aug 2022 20:50:41 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oP7FL-00BO2y-Qm
-	for ath12k@lists.infradead.org; Fri, 19 Aug 2022 19:01:35 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27JIvZwj004273;
-	Fri, 19 Aug 2022 19:01:25 GMT
+	id 1oP8ww-00C97n-37
+	for ath12k@lists.infradead.org; Fri, 19 Aug 2022 20:50:39 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 27JB1FwI031941;
+	Fri, 19 Aug 2022 20:50:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : from : to : cc : references : in-reply-to :
+ mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=QcSLGs4SuAganUIc0YVw/OiPQWqEBg69UHJVY0f3+0w=;
- b=EkLJ2d1Bp/3ieh+qmxlgsRqt1g1atXBGOUunFIoaO1/zDcHWLIXlLN0Ji4r2fcd+vXQO
- C4giXuDPFD6wKRA6clFyiqntF/fWpOk+DJwYYKXMuk5JXZyC1n50U6wWU6PjvCt3fFHN
- hGrh1vjDiZEz6wu3E/tCPoSeCazySThUwbztly288BwRpNsQjJzIxP6aoizho45lFnaN
- mtJ8Fjc9hQCJByrvEKreXSj8R1HnQ3ESKbYY/OX4I2Z5N+nILN1jWxBW13DV6N84ch2J
- sGyphv3gTqELh2bJ4ZyWQ8/J7h2BToZ6F9gpZstOIv8x+NveTQRPRiwGCcWlWlqNlR3N kw== 
+ bh=NVEKoE6HPyHMIKayE+its8PR3siiCvbCSH1tYN00GI0=;
+ b=lgjPtuvxNdqtlli0ZoT+vGNp2OfiI0IvbgRYXrsWccdBl9Wv4zMTKiBL0TQ0/afexCbS
+ /F33460vMh7X8vklOZIhUtRD0qqunoT4n5JhXc4wX1OqLs2nnXOJfrA32+hKeGzIT3Rn
+ uaeRHwBwI67olRCg42uiqGBf2HImaa4ySxhT3J7SeDI7rjoZmUHcrbgb8AdcxaZDL7l/
+ qtmql2w3Mz11FFGOnXpuWtfaZtiEmt/JAnotkgWHRtk17uyo05LPuI3EQOHSN2NzVFtp
+ shnt/Xmll6zf+UILFEyZiCHSh6q12zVvqqAa9j/zV7l8f9xpJsTGZHDmI0BCMGiZYZcb iw== 
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j21v52k0n-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3j256ttbdf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Aug 2022 19:01:25 +0000
+	Fri, 19 Aug 2022 20:50:29 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27JIuOgL030297
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 27JKjTJr012263
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Aug 2022 18:56:24 GMT
+	Fri, 19 Aug 2022 20:45:29 GMT
 Received: from [10.110.11.6] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Fri, 19 Aug
- 2022 11:56:24 -0700
-Message-ID: <3b09b751-54c1-d684-7d5c-8f736cd80707@quicinc.com>
-Date: Fri, 19 Aug 2022 11:56:23 -0700
+ 2022 13:45:28 -0700
+Message-ID: <959339da-3574-8638-02e6-e1459559fa45@quicinc.com>
+Date: Fri, 19 Aug 2022 13:45:27 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
  Thunderbird/91.12.0
-Subject: Re: [PATCH 33/50] wifi: ath12k: add mhi.c
+Subject: Re: [PATCH 46/50] wifi: ath12k: add wmi.c
 Content-Language: en-US
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, <linux-wireless@vger.kernel.org>
 CC: <ath12k@lists.infradead.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
- <20220812161003.27279-34-kvalo@kernel.org>
- <05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com>
-In-Reply-To: <05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com>
+ <20220812161003.27279-47-kvalo@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20220812161003.27279-47-kvalo@kernel.org>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: PyGS-C6aGoyKhqcXPrP9cEe_XoQnCK_W
-X-Proofpoint-GUID: PyGS-C6aGoyKhqcXPrP9cEe_XoQnCK_W
+X-Proofpoint-ORIG-GUID: _dNgFRp2Z15Bf7y1aDGO1KXwLpS9Sq7j
+X-Proofpoint-GUID: _dNgFRp2Z15Bf7y1aDGO1KXwLpS9Sq7j
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.517,FMLib:17.11.122.1
- definitions=2022-08-19_10,2022-08-18_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 mlxscore=0 adultscore=0 bulkscore=0 impostorscore=0
- malwarescore=0 spamscore=0 mlxlogscore=923 phishscore=0 suspectscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2207270000 definitions=main-2208190071
+ definitions=2022-08-19_12,2022-08-18_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
+ mlxscore=0 adultscore=0 spamscore=0 priorityscore=1501 suspectscore=0
+ malwarescore=0 impostorscore=0 mlxlogscore=999 lowpriorityscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2207270000 definitions=main-2208190078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220819_120132_066437_47F361A0 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20220819_135038_192004_4054F724 
+X-CRM114-Status: GOOD (  18.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,29 +97,80 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/18/2022 3:25 PM, Jeff Johnson wrote:
- > On 8/12/2022 9:09 AM, Kalle Valo wrote:
- >> +static struct mhi_event_config ath12k_mhi_events_qcn9274[] = {
- >
- > seems this should be const
- > but for some reason struct mhi_controller_config has:
- >      struct mhi_event_config *event_cfg;
- >
- > (not const) so this can't be const :(
- >
- > perhaps someone can propose a MHI interface change?
- > especially since internally to MHI in parse_ev_cfg() we have:
- >      const struct mhi_event_config *event_cfg;
- >      [...]
- >      for (i = 0; i < num; i++) {
- >          event_cfg = &config->event_cfg[i];
- >
- > so it is treated as const
+On 8/12/2022 9:09 AM, Kalle Valo wrote:
+> From: Kalle Valo <quic_kvalo@quicinc.com>
+> 
+> (Patches split into one patch per file for easier review, but the final
+> commit will be one big patch. See the cover letter for more info.)
+> 
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> ---
+>   drivers/net/wireless/ath/ath12k/wmi.c | 6558 +++++++++++++++++++++++++++++++++
 
-I submitted a patch for this
+[...]
 
-<https://lore.kernel.org/mhi/20220819184245.28035-1-quic_jjohnson@quicinc.com/>
+I notice an inconsistency in logging, and wonder if there should be 
+consistency. Some commands have a debug log after ath12k_wmi_cmd_send() 
+and some have a debug log before:
 
+> +int ath12k_wmi_vdev_create(struct ath12k *ar, u8 *macaddr,
+> +			   struct ath12k_wmi_vdev_create_arg *args)
+> +{
+
+[... after case ...]
+
+> +	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_VDEV_CREATE_CMDID);
+> +	if (ret) {
+> +		ath12k_warn(ar->ab,
+> +			    "failed to submit WMI_VDEV_CREATE_CMDID\n");
+> +		dev_kfree_skb(skb);
+> +	}
+> +
+> +	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
+> +		   "WMI vdev create: id %d type %d subtype %d macaddr %pM pdevid %d\n",
+> +		   args->if_id, args->type, args->subtype,
+> +		   macaddr, args->pdev_id);
+> +
+> +	return ret;
+> +}
+
+[...]
+
+> +int ath12k_wmi_send_peer_delete_cmd(struct ath12k *ar,
+> +				    const u8 *peer_addr, u8 vdev_id)
+> +{
+
+[... before case ...]
+
+> +	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
+> +		   "WMI peer delete vdev_id %d peer_addr %pM\n",
+> +		   vdev_id,  peer_addr);
+> +
+> +	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_PEER_DELETE_CMDID);
+> +	if (ret) {
+> +		ath12k_warn(ar->ab, "failed to send WMI_PEER_DELETE cmd\n");
+> +		dev_kfree_skb(skb);
+> +	}
+> +
+> +	return ret;
+> +}
+
+in the case where an error is reported I think it would make more sense 
+to have the error log after the debug log.
+
+For the "after" case above, in the error path, you'd have logs:
+failed to submit WMI_VDEV_CREATE_CMDID
+WMI vdev create: id %d type %d subtype %d macaddr %pM pdevid %d
+
+IMO this is confusing since it tells you it failed, but then seems to be 
+telling you it did somethig
+
+For the "before" case above, in the error path, you'd have:
+WMI peer delete vdev_id %d peer_addr %pM
+failed to send WMI_PEER_DELETE cmd
+
+This seems to make more sense since it tells you it is doing something 
+and then tells you that what it was trying to do failed. no ambiguity.
 
 -- 
 ath12k mailing list
