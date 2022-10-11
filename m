@@ -4,158 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF95FC433FE
-	for <ath12k@archiver.kernel.org>; Tue,  4 Oct 2022 11:30:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC6ABC433FE
+	for <ath12k@archiver.kernel.org>; Tue, 11 Oct 2022 19:20:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FB6sWiFah4o0Sk2oc+B0RBNMe/SaA46ShE7yxE9lMOk=; b=1hK7ieBYBXRsOz
-	n1kGXsd74wXCqMw1JJcWkhAxDeVN6W87PrXGpzRUQdqUHuIcXbr6SZSknXe8YsPGC7Q7kEEHLHzlR
-	c0nhHd53JiNBmP/v9zf/SBClFdlv9BFyiNKJh+2GkQ6Gpe3+4nFbVS1zWjqKso3HlIB6l0Q6FDjLl
-	ccN3uGHcJ+pFBCQ8iGDJuecue0sq4TZCzSS3s44hcPiNRuq2IsWOyaR5ivmJPvoqlO5np7jmRyhtd
-	Dd1hDDZHY+nkBaALjbW3jWZWWTruPFRJv/3DvZcZrqWg6Ek3FYxoel02E75ElfVITg/XO7E7nJ73X
-	823fFwDhWf1j/4FVwRQw==;
+	List-Owner; bh=Inz1jV+6N1PpbBTRFZQ3WN4PmxdUzV54iVFvRYNeb5g=; b=AyTjsrPZmZARaw
+	tzbq/lIV01Gkj/lP2HyYKdRNhEKtZGHkz/qgk6WkF0OkRstwMJVR7kg1FaJlGx4RbOxoms1Xmyc7k
+	SSIt917afpFMTPrA6czxuhNq2fn+7+DI44we4DJomfE1P0mtyezzs1s/KRtXkPO1bG4cghF7NHmDO
+	s3CIsPGBMLrg2Yl7M4cUswOJOoAn9G9cK0XBZ7jA2anvv5XXPMN0qaeo5KUNa/lOit5d5HuxnD+YN
+	uKwfb1Y34kUgIghpCHxgQDsYUxjwUSy42vobtBpG2v/lJZq9d1xFIRySxD1m/muMj3eREpGTaM9AJ
+	eJ40oAGH94F8Hx9xHaEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ofg7x-009W9k-6x
-	for ath12k@archiver.kernel.org; Tue, 04 Oct 2022 11:30:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1oiKo1-005bzo-RO
+	for ath12k@archiver.kernel.org; Tue, 11 Oct 2022 19:20:45 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ofg7s-009W8l-PX
-	for ath12k@lists.infradead.org; Tue, 04 Oct 2022 11:30:19 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 294BQUlH023330;
-	Tue, 4 Oct 2022 11:30:13 GMT
+	id 1oiKnw-005byw-Gn
+	for ath12k@lists.infradead.org; Tue, 11 Oct 2022 19:20:45 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 29BIwHWw015987;
+	Tue, 11 Oct 2022 19:20:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=qcppdkim1;
- bh=E6W+zLbjGVqTmUcIzMagB6mJN9t2K9z/eigePYImBxM=;
- b=e7aC+oaO85SC8xVkRgfqhDDF9fBTrXexH3OBRhR8D+VssgrWQ8g1Gpi4NbJIvzXSWcL8
- 1lhEg76PtLemrYG4hkNa3S2VaTVn+c8u8NSkInmcIer6rTFk03Rb75bT56sY83grRnpL
- W23/Z0l7mYRXR8GhqCaw07bUnGT0XQCbc9xSO27Z8ztMzLjoU2YWECN2PssKbnOL/RK3
- BoYEGrWE5L81oicnFWi16dhvtuhUEloEmKrKT1vO5/Tpj+IEL9yLPsz97uQ7Dv/OciuR
- tGNau48g+FO1/wz1HB/Rxea5aF2tnOsvd2JAOctFvGZYJV1ExnoMGoBx8+kvgYmHnZFe /A== 
-Received: from nam11-bn8-obe.outbound.protection.outlook.com (mail-bn8nam11lp2168.outbound.protection.outlook.com [104.47.58.168])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3jxawu60ya-1
+ subject : date : message-id : content-type : in-reply-to : references :
+ mime-version : list-id : content-transfer-encoding; s=qcppdkim1;
+ bh=1noGlLv82Oei9nu6ZQIAa+MaHh0KVCPNwlx+TblZBME=;
+ b=hVwLgNtxpzFplb9OT4+ogMPYKmAXp1MAKCMgio9UCdBQCyndqSGipf5o2CmByM9s2yII
+ w0QaEPrgY9IYs9OLFAXkjwsy+8hHMPoO+JtueLlNvgV3+XRcaGOfyxSZEnvbYJ3yoQ26
+ 1tNtNfst3MHePB4/lFyTuYBwSU/nUv+dXjoecNgqKad+mDjJjWuoyPoPzvmR3ODV0KKL
+ 8rYbK/1FzVogjSJ/esiF6NMVpz8j/yFfbKtbJUEvpTZyeBw4T8T1muISsYBScyZplrxE
+ LClYj0MDK3PWpQzkGrWnQfvgtRAnAj0uuFvObTzDueLPPahwTJuU/XIDDdRU8hui+QdJ mw== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3k5e7fg286-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 04 Oct 2022 11:30:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kHLNJw5XBb4mAgdG4Y07GcWLftwibrypqdf6ysRBjugjzlhqtR7kBaNw5ci2CVb/c7LE7n3APnNW7LIuBjaq5xFuVQ0V1VbjuPGrU2sdRb1MSRGGIEe8C+gFwOfnC5NXs9hMMBv/1K+AutdKjcD0fYa9la+pCO8IQaygwfGRvHO42Ofnf2yJ5xyGDmwoAbDzS02eMZyPZ+1z7m2Q0+Y9VKW7skrS49FBIKw1bft/VEEE6+BvrLedcyS3XKuw78gDUUK0ib0CTTcEmaAAzvMIktXDyBOUEwIcjC7aIclPmQDKD1hM2Lswi2xhULbfVcceLMaYwAKQE7k4Df0E0LM65A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=E6W+zLbjGVqTmUcIzMagB6mJN9t2K9z/eigePYImBxM=;
- b=kaX4/4Tm8PIf/6r9tM6UQCTW8eIQoOMz1JXvvKP8JWdN1JkB0qm1YJUUVWkEZAk4nW82tIVbrHbwTTxOhgsZilo6h0Xm0h/amb+OllqvCpRqoKPcjAWIHE8g0y/9MO37HCPiqok/ZJ70eyXOUPvxXjAMmltwsoDF9Rhnt1chDhSznUdRwIuc30A+vPqqtqhKLuf4Vj5tss96ovIe8lGOsenR3rCV7lt6X57Bw5gDLy6vTqHzVgrfPWiT8sASZxMX5i/KA/85f1kZ+94fsqJFnasRUpvrCw6tg+ykKNiflxwJZCUixyhx/zDbb83BGO3gjUOG0BPFUquxTM15vWI0SQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=quicinc.com; dmarc=pass action=none header.from=quicinc.com;
- dkim=pass header.d=quicinc.com; arc=none
-Received: from CH0PR02MB8212.namprd02.prod.outlook.com (2603:10b6:610:eb::20)
- by BY5PR02MB6882.namprd02.prod.outlook.com (2603:10b6:a03:23b::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5676.24; Tue, 4 Oct
- 2022 11:30:11 +0000
-Received: from CH0PR02MB8212.namprd02.prod.outlook.com
- ([fe80::a2aa:7ce8:a34:fdb1]) by CH0PR02MB8212.namprd02.prod.outlook.com
- ([fe80::a2aa:7ce8:a34:fdb1%6]) with mapi id 15.20.5676.031; Tue, 4 Oct 2022
- 11:30:11 +0000
-From: "Karthikeyan Periyasamy (QUIC)" <quic_periyasa@quicinc.com>
-To: "Jeff Johnson (QUIC)" <quic_jjohnson@quicinc.com>,
-        Kalle Valo
-	<kvalo@kernel.org>,
-        "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-CC: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Subject: RE: [PATCH 37/50] wifi: ath12k: add peer.c
-Thread-Topic: [PATCH 37/50] wifi: ath12k: add peer.c
-Thread-Index: AQHYrmYoGlPGh5U2kEqvzi4XYG2Jia21WUwAgEkS/7A=
-Date: Tue, 4 Oct 2022 11:30:11 +0000
-Message-ID:  <CH0PR02MB821262DF3ABBBA911E31B1CFF65A9@CH0PR02MB8212.namprd02.prod.outlook.com>
+	Tue, 11 Oct 2022 19:20:34 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 29BJKYFa004879
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 11 Oct 2022 19:20:34 GMT
+Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.29; Tue, 11 Oct 2022 12:20:33 -0700
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+To: quic_pradeepc@quicinc.com, linux-wireless@vger.kernel.org
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org,
+        Kalle Valo <quic_kvalo@quicinc.com>
+Subject: [PATCH 11/50] wifi: ath12k: add dp.c
+Date: Tue, 11 Oct 2022 12:20:25 -0700
+Message-ID: <20220812161003.27279-12-kvalo@kernel.org>
+X-Mailer: git-send-email 2.17.1
+X-Patchwork-Submitter: Kalle Valo <kvalo@kernel.org>
+X-Patchwork-Id: 12942338
+X-Patchwork-Delegate: kvalo@adurom.com
+Received: from vger.kernel.org (vger.kernel.org [23.128.96.18]) by smtp.lore.kernel.org (Postfix) with ESMTP id 68F3FC00140 for <linux-wireless@archiver.kernel.org>; Fri, 12 Aug 2022 16:10:32 +0000 (UTC)
+Received: (majordomo@vger.kernel.org) by vger.kernel.org via listexpand id S239195AbiHLQKb (ORCPT <rfc822;linux-wireless@archiver.kernel.org>); Fri, 12 Aug 2022 12:10:31 -0400
+Received: from lindbergh.monkeyblade.net ([23.128.96.19]:36866 "EHLO lindbergh.monkeyblade.net" rhost-flags-OK-OK-OK-OK) by vger.kernel.org with ESMTP id S239170AbiHLQKW (ORCPT <rfc822;linux-wireless@vger.kernel.org>); Fri, 12 Aug 2022 12:10:22 -0400
+Received: from dfw.source.kernel.org (dfw.source.kernel.org [139.178.84.217]) by lindbergh.monkeyblade.net (Postfix) with ESMTPS id 5B524283 for <linux-wireless@vger.kernel.org>; Fri, 12 Aug 2022 09:10:19 -0700 (PDT)
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140]) (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)) (No client certificate requested) by dfw.source.kernel.org (Postfix) with ESMTPS id DB71061592 for <linux-wireless@vger.kernel.org>; Fri, 12 Aug 2022 16:10:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB015C433C1; Fri, 12 Aug 2022 16:10:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org; s=k20201202; t=1660320618; bh=52TsB2e+2g+8/RYicUT0p74hKQvT7ZoPsgx7NjxIoPQ=; h=From:To:Cc:Subject:Date:In-Reply-To:References:From; b=rDi66MCr3m3r8ikvqBK2OtYzxcxyV/mG6Gsa6Axj1alWFoAffExAcvPNPxG5XYWvY J8hpJAfe8b4amxYD2JxyQm+gIaVJ+LjsLgO8ofVxh5hJ/HOVf0J4zuQ2/0feM/mbvi f4NCE7UdopMCZRtNGQm+6sHMLPPl0/+irVldd5cdUJF9NaL9ziKWQPpPhPDQACdzKD mjb+lG5QmR+ICTjgAYV8Q4ByVK019i0/73eBnp168NnUcegb0eQjy1dc8ZM/wtc27Q R2qknXtOyP7livFW4IAq2LgVyzcTzvbzh/0udYYIC7rsqsEr5BFdvViCePgpKEqkmS D3WG7lbDZsAIg==
+X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20220812161003.27279-1-kvalo@kernel.org>
 References: <20220812161003.27279-1-kvalo@kernel.org>
- <20220812161003.27279-38-kvalo@kernel.org>
- <c5a1b013-d53a-77b3-eaf8-05b5bbc23b0a@quicinc.com>
-In-Reply-To: <c5a1b013-d53a-77b3-eaf8-05b5bbc23b0a@quicinc.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: CH0PR02MB8212:EE_|BY5PR02MB6882:EE_
-x-ms-office365-filtering-correlation-id: 003ab370-0d86-41e4-a04e-08daa5fbcc72
-x-ld-processed: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  eQvQgOzpS1sXeQSFmxWdPfcPGwKAyigffAeDSViJvq4HC+XYMStQkRErPC3loeXp3mdV3i8rpFu0oN70gEmyE3HDMpU9Lp8gcKZOGebtLLoKPHw9GUjrI9T75ZrxlOU0lKShazlvGKNxat0Yujbu/OutPTdnZ1RCYCKB6/1A0TRhvk4Mpfz7fL/na5krJX9LJFZIyLc10C0YUIFxICEt6pdsIEMKoZNRPjTAgKshV4TZ9j2F75x8Melum2La1OwuvWSc2X07tbrvhXlj6ZLHWkc+ZopF8sUEhKsObnF0DSLbD6AVVAZ6XHv8nBAEeinAN+UkQ0n+XAODpkXBY7AxxCTmVMr79c7s0czKfJu95LvFJojt6nRSP40cIP/rR7ZUsgZ8MUIHYFa5Q/VC4HuLrIcVDLjauvAUTIQ902YkJVpqlu4B1E/E9HZWIbcEZa1oMPbUOJpTkVgu4bA5nB7SXGgmwBnxR/QypNQoTBApjn8HDUnnMeTJkgO8ouv7VPYMwrH8QbWTB35Pk6dW+/FOvZpWxx2KFxeH3pC2b5byRwuak4neJu7lVNXfUK3Kkozghwjln40o9EIeVVatxJTpy7uEECIStoDXdSRshvlTVlnXO9ii/NElDAi6RGH6+MY54uCCx+lcfR+r0YU76xA4o8HnVgKAb9BWZoObmquhLxZiG0mtdttxhzDkRmJFMUCXyaDvA1W0EbnJMg64GeptLTaXMhiHEXkiRo/by+i0MevPZ5aRJCA7THNWW2Cp5VGsYho1mxMmXGhpIu4ji91Siw==
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CH0PR02MB8212.namprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(4636009)(366004)(39860400002)(376002)(136003)(346002)(396003)(451199015)(6506007)(33656002)(7696005)(478600001)(53546011)(71200400001)(76116006)(66446008)(66946007)(66556008)(66476007)(8676002)(4326008)(316002)(110136005)(38100700002)(122000001)(64756008)(38070700005)(55016003)(186003)(9686003)(26005)(86362001)(83380400001)(41300700001)(5660300002)(2906002)(52536014)(8936002);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?utf-8?B?dWJGNWQ1aGZKRTN5ZjRHeThZYlJSN0wvTE4rZlZoWDRlTW01bXVyOUZnVm95?=
- =?utf-8?B?cUVRQzdTZ20zZmZaNEJtTGVVTklDZFB1eklhcytmTVJTUkdaNFhkcUwxSFhV?=
- =?utf-8?B?NnB0NmNhN05GVWtEUkJOTUd3NDFRSjAzS0d4dzhJYjAyaGh0VmM2Rm1BQXV1?=
- =?utf-8?B?dk5lai9TTzJuWWtyQlhTU1BUOUhqR3JJekQ4M21nNUJvdjlmOWxTcDl2YzRp?=
- =?utf-8?B?MTZXN0g1MERzRVkxV0VWVittOUw2d2d5WmQrRE1DVWhYM3JxZ1RrYklNbEoz?=
- =?utf-8?B?UHBNNFVQSFBTSFlXTDVuVFNMeC8zcGliakc5MjlWZVQvMDRrbXVlTGI2UFRr?=
- =?utf-8?B?Yk5LTSt0bDVpQWRvSi9PeWhpdkFRbHNsM0d1ZnhRMWIxNWwzd1dUMUFwTlgr?=
- =?utf-8?B?QkZ1QWQycC8ybzFvSmtaUGVzUVJ0TVF0VGRDb1gzSDViNDRnNDFadFE1NExD?=
- =?utf-8?B?dDZwQnRCNjgyaVVUVDVkNDhvM1FZTHVDUE5MMVlqZ0tvQXIrWXpKYmVXMEsw?=
- =?utf-8?B?ZDE1cmlsQXgvSjJzd2d3QmFXTTBpbkxFYnZPYndOcGcwd2QrbERVVytNUS9R?=
- =?utf-8?B?TGhaZDNiRWxybmlLdUlnNGpkRzVweFYrNkNIeHpZMElNVWpENFhCZmU2dnox?=
- =?utf-8?B?K1ZiKzA3ZDFWWXpKVWtBbVZWQ1lrL0RscGd5Tk5TcEY1OGpEMytRcHUyaWUw?=
- =?utf-8?B?ZWhqL3liNEc3eXgyQUNlZzdxeEg4QWhKWTJ1RDRzUXVEaTBicHVsYlBWY1FE?=
- =?utf-8?B?OHFzUm1XYVZBam5Ob3BzNk4yeVJPTStxdXlPK0lEaHk1bWVWVDdRNS81OVY2?=
- =?utf-8?B?MHcrRzhZUE1Cd0tiekU4ODRzMld4SFlNUXhoNkZIZWpQQXd0OUhkMkxHbGtG?=
- =?utf-8?B?clE5T0pvb04yVU5IYWZrQ2tkQWtCNVFadjBDaTFHc0o3ZUsxQ2MxUGU1elR6?=
- =?utf-8?B?bm5tT2taMmErZEZLOG1QQWFVZHhNSHUzNVd1dWxndHV5QnRIRXRINDF2TmRj?=
- =?utf-8?B?eXg1TmRqVnMyZGlWbk1Yb1c4MkdJQ05mN1VuUkNZOEdJYUJQRUh2ZE1pNVM5?=
- =?utf-8?B?S2dsN2hXNUJoQ012L2NkSkNMNmRpRXZ0M1RjUnQ4QjgrRGpRSms0MTFlSGtP?=
- =?utf-8?B?WThMUm1Vanl0R2N6MzBRSmEvZ3pPaFQ0Z25PUjRvakFHT0lhaTFWN1ZGc1Jh?=
- =?utf-8?B?Zm52ZnBwb0hMSlhmV2wxSC9xUVhFMnlDMFhqamkxelhlbUlQNGNQSWVVQkdD?=
- =?utf-8?B?ckpneDU2elFBcHVUZHhjQ0VRbzBTMUVsellnM2txREl6ZGorUERsWVNMQlNO?=
- =?utf-8?B?STkwUytUUG1nUGxrZ2tITm8yamcyYlFOM0pCRjB3cW9oVDJLVkxFUWVvNmps?=
- =?utf-8?B?WTRFNWN0cUJ0WlV2ak0wanRnbVBrc1ozS3RRdHk4RzF5K3Erb1l0NmYrYUJz?=
- =?utf-8?B?N1l4UVB5SmhRNTZGNzZzRXc2Z3VaTldqQmpMOUZhdlBvY1VycURrNmd6b2lo?=
- =?utf-8?B?VXdjZTZ1TGhjWVBkdWpJRTRTeGNiMS95SWxXeDJqbmVHZTNPZ2RySXl1TXYz?=
- =?utf-8?B?TFZTWDIwdU1yMWV4SlVIcW1LelpEQWJKWE5QWlhaSjNUQ1ZQL3U0SGp3RVFD?=
- =?utf-8?B?Q1FsaFRuSVpjbFlmZkNzRm84ekZDS1hzNnM2d2pUSDdPZnZsZGR5VG55K0JN?=
- =?utf-8?B?N2RyYTM4bTYxaU5veFlZSTdYWDJwQ0RyYzByR3pod3JkaFlHVmdBZXYxV2Nx?=
- =?utf-8?B?c1ZvcStnNEFQMHhNbDlpMjFNaGxPM0srMVUyMEExaTZoVG45SUNMS3h5bFNQ?=
- =?utf-8?B?VTQxV09tM3psaXhQWHgzSDZkT1ZyR3hOU1hMRFNHSENDKzZGV2l2ZmhGK2hs?=
- =?utf-8?B?VXpXTnhNY2E1cWZRTVJWSlNhd1V1bU5ndFRPa1lNM3hvb0sxckVxQUlyQWRn?=
- =?utf-8?B?TkhVL1ZNaVByVTBvK2ZXeVo3TWRMVXR6R3hpckgxaXlTNWRHaXFDSnJCN3l4?=
- =?utf-8?B?RXZEZ290ZnQ1eSswZ0haVVBGT21LMFAxbnVZMWtWenYyZzVFNnBTYkZKM1RC?=
- =?utf-8?B?WTE1ekxUNUNVUC9uL280a25PbW1RV1gzamswMG9SSjFqYzZnVGFqMWF2THhU?=
- =?utf-8?Q?Q8H5Yd0KTaNODHF+JX7fvtmI1?=
 MIME-Version: 1.0
-X-OriginatorOrg: quicinc.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: CH0PR02MB8212.namprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 003ab370-0d86-41e4-a04e-08daa5fbcc72
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Oct 2022 11:30:11.1160
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Gw52v0rzAJ3VulYj8soGPFSnfxkRASQmw118eU+iiVoJWQdbR+uuHu31yK1iySrS2mpMsF7+3B+ZcEbbatZDmD64oUCCgXHKCrGm87/GCys=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR02MB6882
-X-Proofpoint-GUID: YyBNtilHjk6ibSPfZI2aCJv9Ba51zPx1
-X-Proofpoint-ORIG-GUID: YyBNtilHjk6ibSPfZI2aCJv9Ba51zPx1
+Precedence: bulk
+X-Mailing-List: linux-wireless@vger.kernel.org
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: EBoGoj7w-a_mrkOJwp6LXOInluX_Y_ex
+X-Proofpoint-GUID: EBoGoj7w-a_mrkOJwp6LXOInluX_Y_ex
 X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
- definitions=2022-10-04_04,2022-09-29_03,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=970 phishscore=0
- clxscore=1015 malwarescore=0 spamscore=0 suspectscore=0 lowpriorityscore=0
- adultscore=0 impostorscore=0 priorityscore=1501 mlxscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2209130000
- definitions=main-2210040074
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.545,FMLib:17.11.122.1
+ definitions=2022-10-11_08,2022-10-11_02,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 spamscore=0
+ impostorscore=0 suspectscore=0 clxscore=1011 lowpriorityscore=0
+ malwarescore=0 adultscore=0 mlxscore=0 priorityscore=1501 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2209130000 definitions=main-2210110113
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221004_043016_972912_6C16470C 
-X-CRM114-Status: GOOD (  36.17  )
+X-CRM114-CacheID: sfid-20221011_122040_674955_830AD302 
+X-CRM114-Status: GOOD (  28.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
-Precedence: list
 List-Id: <ath12k.lists.infradead.org>
 List-Unsubscribe: <https://lists.infradead.org/mailman/options/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=unsubscribe>
@@ -168,153 +106,1587 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
+Message-ID: <20221011192025.5r0fDrktapShiLqJh9nL24ECfMdjT776mXeGezVJra0@z>
 
-> -----Original Message-----
-> From: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Sent: Friday, August 19, 2022 5:04 AM
-> To: Kalle Valo <kvalo@kernel.org>; linux-wireless@vger.kernel.org
-> Cc: ath12k@lists.infradead.org
-> Subject: Re: [PATCH 37/50] wifi: ath12k: add peer.c
-> 
-> WARNING: This email originated from outside of Qualcomm. Please be wary
-> of any links or attachments, and do not enable macros.
-> 
-> On 8/12/2022 9:09 AM, Kalle Valo wrote:
-> > From: Kalle Valo <quic_kvalo@quicinc.com>
-> >
-> > (Patches split into one patch per file for easier review, but the
-> > final commit will be one big patch. See the cover letter for more
-> > info.)
-> >
-> > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> > ---
-> >   drivers/net/wireless/ath/ath12k/peer.c | 343
-> +++++++++++++++++++++++++++++++++
-> >   1 file changed, 343 insertions(+)
-> >
-> > diff --git a/drivers/net/wireless/ath/ath12k/peer.c
-> > b/drivers/net/wireless/ath/ath12k/peer.c
-> > new file mode 100644
-> > index 000000000000..30ffdbbdcc7f
-> > --- /dev/null
-> > +++ b/drivers/net/wireless/ath/ath12k/peer.c
-> > @@ -0,0 +1,343 @@
-> > +// SPDX-License-Identifier: BSD-3-Clause-Clear
-> > +/*
-> > + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-> > + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights
-> reserved.
-> > + */
-> > +
-> > +#include "core.h"
-> > +#include "peer.h"
-> > +#include "debug.h"
-> > +
-> > +struct ath12k_peer *ath12k_peer_find(struct ath12k_base *ab, int
-> vdev_id,
-> > +                                  const u8 *addr) {
-> > +     struct ath12k_peer *peer;
-> > +
-> > +     lockdep_assert_held(&ab->base_lock);
-> > +
-> > +     list_for_each_entry(peer, &ab->peers, list) {
-> > +             if (peer->vdev_id != vdev_id)
-> > +                     continue;
-> > +             if (!ether_addr_equal(peer->addr, addr))
-> > +                     continue;
-> > +
-> > +             return peer;
-> > +     }
-> > +
-> > +     return NULL;
-> > +}
-> > +
-> > +static struct ath12k_peer *ath12k_peer_find_by_pdev_idx(struct
-> ath12k_base *ab,
-> > +                                                     u8 pdev_idx,
-> > +const u8 *addr) {
-> > +     struct ath12k_peer *peer;
-> > +
-> > +     lockdep_assert_held(&ab->base_lock);
-> > +
-> > +     list_for_each_entry(peer, &ab->peers, list) {
-> > +             if (peer->pdev_idx != pdev_idx)
-> > +                     continue;
-> > +             if (!ether_addr_equal(peer->addr, addr))
-> > +                     continue;
-> > +
-> > +             return peer;
-> > +     }
-> > +
-> > +     return NULL;
-> > +}
-> > +
-> > +struct ath12k_peer *ath12k_peer_find_by_addr(struct ath12k_base *ab,
-> > +                                          const u8 *addr) {
-> > +     struct ath12k_peer *peer;
-> > +
-> > +     lockdep_assert_held(&ab->base_lock);
-> > +
-> > +     list_for_each_entry(peer, &ab->peers, list) {
-> > +             if (!ether_addr_equal(peer->addr, addr))
-> > +                     continue;
-> > +
-> > +             return peer;
-> > +     }
-> > +
-> > +     return NULL;
-> > +}
-> > +
-> > +struct ath12k_peer *ath12k_peer_find_by_id(struct ath12k_base *ab,
-> > +                                        int peer_id) {
-> > +     struct ath12k_peer *peer;
-> > +
-> > +     lockdep_assert_held(&ab->base_lock);
-> > +
-> > +     list_for_each_entry(peer, &ab->peers, list)
-> > +             if (peer_id == peer->peer_id)
-> > +                     return peer;
-> > +
-> > +     return NULL;
-> > +}
-> > +
-> > +struct ath12k_peer *ath12k_peer_find_by_vdev_id(struct ath12k_base
-> *ab,
-> > +                                             int vdev_id) {
-> > +     struct ath12k_peer *peer;
-> > +
-> > +     spin_lock_bh(&ab->base_lock);
-> 
-> the other ath12k_peer_find_*() functions expect the caller to take the lock,
-> but in this one the function itself takes the lock. why the discrepancy? should
-> these have a consistent interface? note that the returned peer won't be
-> protected by the lock.
-> 
-> note i see this is only used in one place, and there it doesn't use the peer, it
-> just checks if it exists.
-> 
-> perhaps rename this to bool ath12k_peer_exists_by_vdev() to justify the
-> difference in locking?
-> 
+From: Kalle Valo <kvalo@kernel.org>
 
-Sure will address this comment in the next version of the patch
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-> 
-> > +
-> > +     list_for_each_entry(peer, &ab->peers, list) {
-> > +             if (vdev_id == peer->vdev_id) {
-> > +                     spin_unlock_bh(&ab->base_lock);
-> > +                     return peer;
-> > +             }
-> > +     }
-> > +     spin_unlock_bh(&ab->base_lock);
-> > +     return NULL;
-> > +}
-> 
-> [...]
+(Patches split into one patch per file for easier review, but the final
+commit will be one big patch. See the cover letter for more info.)
 
-Thanks
-Karthikeyan
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp.c | 1560 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 1560 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+new file mode 100644
+index 000000000000..351bb24e08a0
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -0,0 +1,1560 @@
++// SPDX-License-Identifier: BSD-3-Clause-Clear
++/*
++ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++
++#include <crypto/hash.h>
++#include "core.h"
++#include "dp_tx.h"
++#include "hal_tx.h"
++#include "hif.h"
++#include "debug.h"
++#include "dp_rx.h"
++#include "peer.h"
++#include "dp_mon.h"
++
++static void ath12k_dp_htt_htc_tx_complete(struct ath12k_base *ab,
++					  struct sk_buff *skb)
++{
++	dev_kfree_skb_any(skb);
++}
++
++void ath12k_dp_peer_cleanup(struct ath12k *ar, int vdev_id, const u8 *addr)
++{
++	struct ath12k_base *ab = ar->ab;
++	struct ath12k_peer *peer;
++
++	/* TODO: Any other peer specific DP cleanup */
++
++	spin_lock_bh(&ab->base_lock);
++	peer = ath12k_peer_find(ab, vdev_id, addr);
++	if (!peer) {
++		ath12k_warn(ab, "failed to lookup peer %pM on vdev %d\n",
++			    addr, vdev_id);
++		spin_unlock_bh(&ab->base_lock);
++		return;
++	}
++
++	ath12k_dp_rx_peer_tid_cleanup(ar, peer);
++	crypto_free_shash(peer->tfm_mmic);
++	spin_unlock_bh(&ab->base_lock);
++}
++
++int ath12k_dp_peer_setup(struct ath12k *ar, int vdev_id, const u8 *addr)
++{
++	struct ath12k_base *ab = ar->ab;
++	struct ath12k_peer *peer;
++	u32 reo_dest;
++	int ret = 0, tid;
++
++	/* NOTE: reo_dest ring id starts from 1 unlike mac_id which starts from 0 */
++	reo_dest = ar->dp.mac_id + 1;
++	ret = ath12k_wmi_set_peer_param(ar, addr, vdev_id,
++					WMI_PEER_SET_DEFAULT_ROUTING,
++					DP_RX_HASH_ENABLE | (reo_dest << 1));
++
++	if (ret) {
++		ath12k_warn(ab, "failed to set default routing %d peer :%pM vdev_id :%d\n",
++			    ret, addr, vdev_id);
++		return ret;
++	}
++
++	for (tid = 0; tid <= IEEE80211_NUM_TIDS; tid++) {
++		ret = ath12k_dp_rx_peer_tid_setup(ar, addr, vdev_id, tid, 1, 0,
++						  HAL_PN_TYPE_NONE);
++		if (ret) {
++			ath12k_warn(ab, "failed to setup rxd tid queue for tid %d: %d\n",
++				    tid, ret);
++			goto peer_clean;
++		}
++	}
++
++	ret = ath12k_dp_rx_peer_frag_setup(ar, addr, vdev_id);
++	if (ret) {
++		ath12k_warn(ab, "failed to setup rx defrag context\n");
++		return ret;
++	}
++
++	/* TODO: Setup other peer specific resource used in data path */
++
++	return 0;
++
++peer_clean:
++	spin_lock_bh(&ab->base_lock);
++
++	peer = ath12k_peer_find(ab, vdev_id, addr);
++	if (!peer) {
++		ath12k_warn(ab, "failed to find the peer to del rx tid\n");
++		spin_unlock_bh(&ab->base_lock);
++		return -ENOENT;
++	}
++
++	for (; tid >= 0; tid--)
++		ath12k_dp_rx_peer_tid_delete(ar, peer, tid);
++
++	spin_unlock_bh(&ab->base_lock);
++
++	return ret;
++}
++
++void ath12k_dp_srng_cleanup(struct ath12k_base *ab, struct dp_srng *ring)
++{
++	if (!ring->vaddr_unaligned)
++		return;
++
++	dma_free_coherent(ab->dev, ring->size, ring->vaddr_unaligned,
++			  ring->paddr_unaligned);
++
++	ring->vaddr_unaligned = NULL;
++}
++
++static int ath12k_dp_srng_find_ring_in_mask(int ring_num, const u8 *grp_mask)
++{
++	int ext_group_num;
++	u8 mask = 1 << ring_num;
++
++	for (ext_group_num = 0; ext_group_num < ATH12K_EXT_IRQ_GRP_NUM_MAX;
++	     ext_group_num++) {
++		if (mask & grp_mask[ext_group_num])
++			return ext_group_num;
++	}
++
++	return -ENOENT;
++}
++
++static int ath12k_dp_srng_calculate_msi_group(struct ath12k_base *ab,
++					      enum hal_ring_type type, int ring_num)
++{
++	const u8 *grp_mask;
++
++	switch (type) {
++	case HAL_WBM2SW_RELEASE:
++		if (ring_num == HAL_WBM2SW_REL_ERR_RING_NUM) {
++			grp_mask = &ab->hw_params->ring_mask->rx_wbm_rel[0];
++			ring_num = 0;
++		} else {
++			grp_mask = &ab->hw_params->ring_mask->tx[0];
++		}
++		break;
++	case HAL_REO_EXCEPTION:
++		grp_mask = &ab->hw_params->ring_mask->rx_err[0];
++		break;
++	case HAL_REO_DST:
++		grp_mask = &ab->hw_params->ring_mask->rx[0];
++		break;
++	case HAL_REO_STATUS:
++		grp_mask = &ab->hw_params->ring_mask->reo_status[0];
++		break;
++	case HAL_RXDMA_MONITOR_STATUS:
++	case HAL_RXDMA_MONITOR_DST:
++		grp_mask = &ab->hw_params->ring_mask->rx_mon_dest[0];
++		break;
++	case HAL_TX_MONITOR_DST:
++		grp_mask = &ab->hw_params->ring_mask->tx_mon_dest[0];
++		break;
++	case HAL_RXDMA_BUF:
++		grp_mask = &ab->hw_params->ring_mask->host2rxdma[0];
++		break;
++	case HAL_RXDMA_MONITOR_BUF:
++	case HAL_TCL_DATA:
++	case HAL_TCL_CMD:
++	case HAL_REO_CMD:
++	case HAL_SW2WBM_RELEASE:
++	case HAL_WBM_IDLE_LINK:
++	case HAL_TCL_STATUS:
++	case HAL_REO_REINJECT:
++	case HAL_CE_SRC:
++	case HAL_CE_DST:
++	case HAL_CE_DST_STATUS:
++	default:
++		return -ENOENT;
++	}
++
++	return ath12k_dp_srng_find_ring_in_mask(ring_num, grp_mask);
++}
++
++static void ath12k_dp_srng_msi_setup(struct ath12k_base *ab,
++				     struct hal_srng_params *ring_params,
++				     enum hal_ring_type type, int ring_num)
++{
++	int msi_group_number, msi_data_count;
++	u32 msi_data_start, msi_irq_start, addr_lo, addr_hi;
++	int ret;
++
++	ret = ath12k_hif_get_user_msi_vector(ab, "DP",
++					     &msi_data_count, &msi_data_start,
++					     &msi_irq_start);
++	if (ret)
++		return;
++
++	msi_group_number = ath12k_dp_srng_calculate_msi_group(ab, type,
++							      ring_num);
++	if (msi_group_number < 0) {
++		ath12k_dbg(ab, ATH12K_DBG_PCI,
++			   "ring not part of an ext_group; ring_type: %d,ring_num %d",
++			   type, ring_num);
++		ring_params->msi_addr = 0;
++		ring_params->msi_data = 0;
++		return;
++	}
++
++	if (msi_group_number > msi_data_count) {
++		ath12k_dbg(ab, ATH12K_DBG_PCI,
++			   "multiple msi_groups share one msi, msi_group_num %d",
++			   msi_group_number);
++	}
++
++	ath12k_hif_get_msi_address(ab, &addr_lo, &addr_hi);
++
++	ring_params->msi_addr = addr_lo;
++	ring_params->msi_addr |= (dma_addr_t)(((uint64_t)addr_hi) << 32);
++	ring_params->msi_data = (msi_group_number % msi_data_count)
++		+ msi_data_start;
++	ring_params->flags |= HAL_SRNG_FLAGS_MSI_INTR;
++}
++
++int ath12k_dp_srng_setup(struct ath12k_base *ab, struct dp_srng *ring,
++			 enum hal_ring_type type, int ring_num,
++			 int mac_id, int num_entries)
++{
++	struct hal_srng_params params = { 0 };
++	int entry_sz = ath12k_hal_srng_get_entrysize(ab, type);
++	int max_entries = ath12k_hal_srng_get_max_entries(ab, type);
++	int ret;
++
++	if (max_entries < 0 || entry_sz < 0)
++		return -EINVAL;
++
++	if (num_entries > max_entries)
++		num_entries = max_entries;
++
++	ring->size = (num_entries * entry_sz) + HAL_RING_BASE_ALIGN - 1;
++	ring->vaddr_unaligned = dma_alloc_coherent(ab->dev, ring->size,
++						   &ring->paddr_unaligned,
++						   GFP_KERNEL);
++	if (!ring->vaddr_unaligned)
++		return -ENOMEM;
++
++	ring->vaddr = PTR_ALIGN(ring->vaddr_unaligned, HAL_RING_BASE_ALIGN);
++	ring->paddr = ring->paddr_unaligned + ((unsigned long)ring->vaddr -
++		      (unsigned long)ring->vaddr_unaligned);
++
++	params.ring_base_vaddr = ring->vaddr;
++	params.ring_base_paddr = ring->paddr;
++	params.num_entries = num_entries;
++	ath12k_dp_srng_msi_setup(ab, &params, type, ring_num + mac_id);
++
++	switch (type) {
++	case HAL_REO_DST:
++		params.intr_batch_cntr_thres_entries =
++					HAL_SRNG_INT_BATCH_THRESHOLD_RX;
++		params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_RX;
++		break;
++	case HAL_RXDMA_BUF:
++	case HAL_RXDMA_MONITOR_BUF:
++	case HAL_RXDMA_MONITOR_STATUS:
++		params.low_threshold = num_entries >> 3;
++		params.flags |= HAL_SRNG_FLAGS_LOW_THRESH_INTR_EN;
++		params.intr_batch_cntr_thres_entries = 0;
++		params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_RX;
++		break;
++	case HAL_TX_MONITOR_DST:
++		params.low_threshold = DP_TX_MONITOR_BUF_SIZE_MAX >> 3;
++		params.flags |= HAL_SRNG_FLAGS_LOW_THRESH_INTR_EN;
++		params.intr_batch_cntr_thres_entries = 0;
++		params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_RX;
++		break;
++	case HAL_WBM2SW_RELEASE:
++		if (ab->hw_params->hw_ops->dp_srng_is_tx_comp_ring(ring_num)) {
++			params.intr_batch_cntr_thres_entries =
++					HAL_SRNG_INT_BATCH_THRESHOLD_TX;
++			params.intr_timer_thres_us =
++					HAL_SRNG_INT_TIMER_THRESHOLD_TX;
++			break;
++		}
++		/* follow through when ring_num != HAL_WBM2SW_REL_ERR_RING_NUM */
++		fallthrough;
++	case HAL_REO_EXCEPTION:
++	case HAL_REO_REINJECT:
++	case HAL_REO_CMD:
++	case HAL_REO_STATUS:
++	case HAL_TCL_DATA:
++	case HAL_TCL_CMD:
++	case HAL_TCL_STATUS:
++	case HAL_WBM_IDLE_LINK:
++	case HAL_SW2WBM_RELEASE:
++	case HAL_RXDMA_DST:
++	case HAL_RXDMA_MONITOR_DST:
++	case HAL_RXDMA_MONITOR_DESC:
++		params.intr_batch_cntr_thres_entries =
++					HAL_SRNG_INT_BATCH_THRESHOLD_OTHER;
++		params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_OTHER;
++		break;
++	case HAL_RXDMA_DIR_BUF:
++		break;
++	default:
++		ath12k_warn(ab, "Not a valid ring type in dp :%d\n", type);
++		return -EINVAL;
++	}
++
++	ret = ath12k_hal_srng_setup(ab, type, ring_num, mac_id, &params);
++	if (ret < 0) {
++		ath12k_warn(ab, "failed to setup srng: %d ring_id %d\n",
++			    ret, ring_num);
++		return ret;
++	}
++
++	ring->ring_id = ret;
++
++	return 0;
++}
++
++static
++void ath12k_dp_tx_get_vdev_bank_config(struct ath12k_base *ab, struct ath12k_vif *arvif,
++				       u32 *bank_config)
++{
++	enum hal_encrypt_type encrypt_type = 0;
++
++	/* Only valid for raw frames with HW crypto enabled.
++	 * With SW crypto, mac80211 sets key per packet
++	 */
++	if (arvif->tx_encap_type == HAL_TCL_ENCAP_TYPE_RAW &&
++	    test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ab->dev_flags))
++		encrypt_type = ath12k_dp_tx_get_encrypt_type(arvif->key_cipher);
++
++	*bank_config |= u32_encode_bits(arvif->tx_encap_type,
++					HAL_TX_BANK_CONFIG_ENCAP_TYPE) |
++			u32_encode_bits(encrypt_type,
++					HAL_TX_BANK_CONFIG_ENCRYPT_TYPE);
++	*bank_config |= u32_encode_bits(0, HAL_TX_BANK_CONFIG_SRC_BUFFER_SWAP) |
++			u32_encode_bits(0, HAL_TX_BANK_CONFIG_LINK_META_SWAP) |
++			u32_encode_bits(0, HAL_TX_BANK_CONFIG_EPD);
++
++	/* only valid if idx_lookup_override is not set in tcl_data_cmd */
++	*bank_config |= u32_encode_bits(0, HAL_TX_BANK_CONFIG_INDEX_LOOKUP_EN);
++
++	*bank_config |= u32_encode_bits(arvif->hal_addr_search_flags & HAL_TX_ADDRX_EN,
++					HAL_TX_BANK_CONFIG_ADDRX_EN) |
++			u32_encode_bits(!!(arvif->hal_addr_search_flags &
++					HAL_TX_ADDRY_EN),
++					HAL_TX_BANK_CONFIG_ADDRY_EN);
++
++	*bank_config |= u32_encode_bits(ieee80211_vif_is_mesh(arvif->vif) ? 3 : 0,
++					HAL_TX_BANK_CONFIG_MESH_EN) |
++			u32_encode_bits(arvif->vdev_id_check_en,
++					HAL_TX_BANK_CONFIG_VDEV_ID_CHECK_EN);
++
++	*bank_config |= u32_encode_bits(0, HAL_TX_BANK_CONFIG_DSCP_TIP_MAP_ID);
++}
++
++static int ath12k_dp_tx_get_bank_profile(struct ath12k_base *ab, struct ath12k_vif *arvif,
++					 struct ath12k_dp *dp)
++{
++	int bank_id = DP_INVALID_BANK_ID;
++	int i;
++	u32 bank_config = 0;
++	bool configure_register = false;
++
++	/* convert vdev params into hal_tx_bank_config */
++	ath12k_dp_tx_get_vdev_bank_config(ab, arvif, &bank_config);
++
++	spin_lock_bh(&dp->tx_bank_lock);
++	/* TODO: implement using idr kernel framework*/
++	for (i = 0; i < dp->num_bank_profiles; i++) {
++		if (dp->bank_profiles[i].is_configured &&
++		    (dp->bank_profiles[i].bank_config ^ bank_config) == 0) {
++			bank_id = i;
++			goto inc_ref_and_return;
++		}
++		if (!dp->bank_profiles[i].is_configured ||
++		    !dp->bank_profiles[i].num_users) {
++			bank_id = i;
++			goto configure_and_return;
++		}
++	}
++
++	if (bank_id == DP_INVALID_BANK_ID) {
++		spin_unlock_bh(&dp->tx_bank_lock);
++		ath12k_err(ab, "unable to find TX bank!");
++		return bank_id;
++	}
++
++configure_and_return:
++	dp->bank_profiles[bank_id].is_configured = true;
++	dp->bank_profiles[bank_id].bank_config = bank_config;
++	configure_register = true;
++inc_ref_and_return:
++	dp->bank_profiles[bank_id].num_users++;
++	spin_unlock_bh(&dp->tx_bank_lock);
++
++	if (configure_register)
++		ath12k_hal_tx_configure_bank_register(ab, bank_config, bank_id);
++
++	ath12k_dbg(ab, ATH12K_DBG_DP_HTT, "dp_htt tcl bank_id %d input 0x%x match 0x%x num_users %u",
++		   bank_id, bank_config, dp->bank_profiles[bank_id].bank_config,
++		   dp->bank_profiles[bank_id].num_users);
++
++	return bank_id;
++}
++
++void ath12k_dp_tx_put_bank_profile(struct ath12k_dp *dp, u8 bank_id)
++{
++	spin_lock_bh(&dp->tx_bank_lock);
++	dp->bank_profiles[bank_id].num_users--;
++	spin_unlock_bh(&dp->tx_bank_lock);
++}
++
++static void ath12k_dp_deinit_bank_profiles(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++
++	kfree(dp->bank_profiles);
++}
++
++static int ath12k_dp_init_bank_profiles(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	u32 num_tcl_banks = ab->hw_params->num_tcl_banks;
++	int i;
++
++	dp->num_bank_profiles = num_tcl_banks;
++	dp->bank_profiles = kmalloc_array(num_tcl_banks,
++					  sizeof(struct ath12k_dp_tx_bank_profile),
++					  GFP_KERNEL);
++	if (!dp->bank_profiles)
++		return -ENOMEM;
++
++	spin_lock_init(&dp->tx_bank_lock);
++
++	for (i = 0; i < num_tcl_banks; i++) {
++		dp->bank_profiles[i].is_configured = false;
++		dp->bank_profiles[i].num_users = 0;
++	}
++
++	return 0;
++}
++
++static void ath12k_dp_srng_common_cleanup(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	int i;
++
++	ath12k_dp_srng_cleanup(ab, &dp->wbm_desc_rel_ring);
++	ath12k_dp_srng_cleanup(ab, &dp->tcl_cmd_ring);
++	ath12k_dp_srng_cleanup(ab, &dp->tcl_status_ring);
++	for (i = 0; i < ab->hw_params->max_tx_ring; i++) {
++		ath12k_dp_srng_cleanup(ab, &dp->tx_ring[i].tcl_data_ring);
++		ath12k_dp_srng_cleanup(ab, &dp->tx_ring[i].tcl_comp_ring);
++	}
++	ath12k_dp_srng_cleanup(ab, &dp->reo_reinject_ring);
++	ath12k_dp_srng_cleanup(ab, &dp->rx_rel_ring);
++	ath12k_dp_srng_cleanup(ab, &dp->reo_except_ring);
++	ath12k_dp_srng_cleanup(ab, &dp->reo_cmd_ring);
++	ath12k_dp_srng_cleanup(ab, &dp->reo_status_ring);
++}
++
++static int ath12k_dp_srng_common_setup(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	const struct ath12k_hal_tcl_to_wbm_rbm_map *map;
++	struct hal_srng *srng;
++	int i, ret, tx_comp_ring_num;
++	u32 ring_hash_map;
++
++	ret = ath12k_dp_srng_setup(ab, &dp->wbm_desc_rel_ring,
++				   HAL_SW2WBM_RELEASE, 0, 0,
++				   DP_WBM_RELEASE_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up wbm2sw_release ring :%d\n",
++			    ret);
++		goto err;
++	}
++
++	ret = ath12k_dp_srng_setup(ab, &dp->tcl_cmd_ring, HAL_TCL_CMD, 0, 0,
++				   DP_TCL_CMD_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up tcl_cmd ring :%d\n", ret);
++		goto err;
++	}
++
++	ret = ath12k_dp_srng_setup(ab, &dp->tcl_status_ring, HAL_TCL_STATUS,
++				   0, 0, DP_TCL_STATUS_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up tcl_status ring :%d\n", ret);
++		goto err;
++	}
++
++	for (i = 0; i < ab->hw_params->max_tx_ring; i++) {
++		map = ab->hw_params->hal_ops->tcl_to_wbm_rbm_map;
++		tx_comp_ring_num = map[i].wbm_ring_num;
++
++		ret = ath12k_dp_srng_setup(ab, &dp->tx_ring[i].tcl_data_ring,
++					   HAL_TCL_DATA, i, 0,
++					   DP_TCL_DATA_RING_SIZE);
++		if (ret) {
++			ath12k_warn(ab, "failed to set up tcl_data ring (%d) :%d\n",
++				    i, ret);
++			goto err;
++		}
++
++		ret = ath12k_dp_srng_setup(ab, &dp->tx_ring[i].tcl_comp_ring,
++					   HAL_WBM2SW_RELEASE, tx_comp_ring_num, 0,
++					   DP_TX_COMP_RING_SIZE);
++		if (ret) {
++			ath12k_warn(ab, "failed to set up tcl_comp ring (%d) :%d\n",
++				    tx_comp_ring_num, ret);
++			goto err;
++		}
++	}
++
++	ret = ath12k_dp_srng_setup(ab, &dp->reo_reinject_ring, HAL_REO_REINJECT,
++				   0, 0, DP_REO_REINJECT_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up reo_reinject ring :%d\n",
++			    ret);
++		goto err;
++	}
++
++	ret = ath12k_dp_srng_setup(ab, &dp->rx_rel_ring, HAL_WBM2SW_RELEASE,
++				   HAL_WBM2SW_REL_ERR_RING_NUM, 0,
++				   DP_RX_RELEASE_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up rx_rel ring :%d\n", ret);
++		goto err;
++	}
++
++	ret = ath12k_dp_srng_setup(ab, &dp->reo_except_ring, HAL_REO_EXCEPTION,
++				   0, 0, DP_REO_EXCEPTION_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up reo_exception ring :%d\n",
++			    ret);
++		goto err;
++	}
++
++	ret = ath12k_dp_srng_setup(ab, &dp->reo_cmd_ring, HAL_REO_CMD,
++				   0, 0, DP_REO_CMD_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up reo_cmd ring :%d\n", ret);
++		goto err;
++	}
++
++	srng = &ab->hal.srng_list[dp->reo_cmd_ring.ring_id];
++	ath12k_hal_reo_init_cmd_ring(ab, srng);
++
++	ret = ath12k_dp_srng_setup(ab, &dp->reo_status_ring, HAL_REO_STATUS,
++				   0, 0, DP_REO_STATUS_RING_SIZE);
++	if (ret) {
++		ath12k_warn(ab, "failed to set up reo_status ring :%d\n", ret);
++		goto err;
++	}
++
++	/* When hash based routing of rx packet is enabled, 32 entries to map
++	 * the hash values to the ring will be configured. Each hash entry uses
++	 * four bits to map to a particular ring. The ring mapping will be
++	 * 0:TCL, 1:SW1, 2:SW2, 3:SW3, 4:SW4, 5:Release, 6:FW and 7:SW5
++	 * 8:SW6, 9:SW7, 10:SW8, 11:Not used.
++	 */
++	ring_hash_map = HAL_HASH_ROUTING_RING_SW1 |
++			HAL_HASH_ROUTING_RING_SW2 << 4 |
++			HAL_HASH_ROUTING_RING_SW3 << 8 |
++			HAL_HASH_ROUTING_RING_SW4 << 12 |
++			HAL_HASH_ROUTING_RING_SW1 << 16 |
++			HAL_HASH_ROUTING_RING_SW2 << 20 |
++			HAL_HASH_ROUTING_RING_SW3 << 24 |
++			HAL_HASH_ROUTING_RING_SW4 << 28;
++
++	ath12k_hal_reo_hw_setup(ab, ring_hash_map);
++
++	return 0;
++
++err:
++	ath12k_dp_srng_common_cleanup(ab);
++
++	return ret;
++}
++
++static void ath12k_dp_scatter_idle_link_desc_cleanup(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	struct hal_wbm_idle_scatter_list *slist = dp->scatter_list;
++	int i;
++
++	for (i = 0; i < DP_IDLE_SCATTER_BUFS_MAX; i++) {
++		if (!slist[i].vaddr)
++			continue;
++
++		dma_free_coherent(ab->dev, HAL_WBM_IDLE_SCATTER_BUF_SIZE_MAX,
++				  slist[i].vaddr, slist[i].paddr);
++		slist[i].vaddr = NULL;
++	}
++}
++
++static int ath12k_dp_scatter_idle_link_desc_setup(struct ath12k_base *ab,
++						  int size,
++						  u32 n_link_desc_bank,
++						  u32 n_link_desc,
++						  u32 last_bank_sz)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	struct dp_link_desc_bank *link_desc_banks = dp->link_desc_banks;
++	struct hal_wbm_idle_scatter_list *slist = dp->scatter_list;
++	u32 n_entries_per_buf;
++	int num_scatter_buf, scatter_idx;
++	struct hal_wbm_link_desc *scatter_buf;
++	int align_bytes, n_entries;
++	dma_addr_t paddr;
++	int rem_entries;
++	int i;
++	int ret = 0;
++	u32 end_offset, cookie;
++
++	n_entries_per_buf = HAL_WBM_IDLE_SCATTER_BUF_SIZE /
++		ath12k_hal_srng_get_entrysize(ab, HAL_WBM_IDLE_LINK);
++	num_scatter_buf = DIV_ROUND_UP(size, HAL_WBM_IDLE_SCATTER_BUF_SIZE);
++
++	if (num_scatter_buf > DP_IDLE_SCATTER_BUFS_MAX)
++		return -EINVAL;
++
++	for (i = 0; i < num_scatter_buf; i++) {
++		slist[i].vaddr = dma_alloc_coherent(ab->dev,
++						    HAL_WBM_IDLE_SCATTER_BUF_SIZE_MAX,
++						    &slist[i].paddr, GFP_KERNEL);
++		if (!slist[i].vaddr) {
++			ret = -ENOMEM;
++			goto err;
++		}
++	}
++
++	scatter_idx = 0;
++	scatter_buf = slist[scatter_idx].vaddr;
++	rem_entries = n_entries_per_buf;
++
++	for (i = 0; i < n_link_desc_bank; i++) {
++		align_bytes = link_desc_banks[i].vaddr -
++			      link_desc_banks[i].vaddr_unaligned;
++		n_entries = (DP_LINK_DESC_ALLOC_SIZE_THRESH - align_bytes) /
++			     HAL_LINK_DESC_SIZE;
++		paddr = link_desc_banks[i].paddr;
++		while (n_entries) {
++			cookie = DP_LINK_DESC_COOKIE_SET(n_entries, i);
++			ath12k_hal_set_link_desc_addr(scatter_buf, cookie, paddr);
++			n_entries--;
++			paddr += HAL_LINK_DESC_SIZE;
++			if (rem_entries) {
++				rem_entries--;
++				scatter_buf++;
++				continue;
++			}
++
++			rem_entries = n_entries_per_buf;
++			scatter_idx++;
++			scatter_buf = slist[scatter_idx].vaddr;
++		}
++	}
++
++	end_offset = (scatter_buf - slist[scatter_idx].vaddr) *
++		     sizeof(struct hal_wbm_link_desc);
++	ath12k_hal_setup_link_idle_list(ab, slist, num_scatter_buf,
++					n_link_desc, end_offset);
++
++	return 0;
++
++err:
++	ath12k_dp_scatter_idle_link_desc_cleanup(ab);
++
++	return ret;
++}
++
++static void
++ath12k_dp_link_desc_bank_free(struct ath12k_base *ab,
++			      struct dp_link_desc_bank *link_desc_banks)
++{
++	int i;
++
++	for (i = 0; i < DP_LINK_DESC_BANKS_MAX; i++) {
++		if (link_desc_banks[i].vaddr_unaligned) {
++			dma_free_coherent(ab->dev,
++					  link_desc_banks[i].size,
++					  link_desc_banks[i].vaddr_unaligned,
++					  link_desc_banks[i].paddr_unaligned);
++			link_desc_banks[i].vaddr_unaligned = NULL;
++		}
++	}
++}
++
++static int ath12k_dp_link_desc_bank_alloc(struct ath12k_base *ab,
++					  struct dp_link_desc_bank *desc_bank,
++					  int n_link_desc_bank,
++					  int last_bank_sz)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	int i;
++	int ret = 0;
++	int desc_sz = DP_LINK_DESC_ALLOC_SIZE_THRESH;
++
++	for (i = 0; i < n_link_desc_bank; i++) {
++		if (i == (n_link_desc_bank - 1) && last_bank_sz)
++			desc_sz = last_bank_sz;
++
++		desc_bank[i].vaddr_unaligned =
++					dma_alloc_coherent(ab->dev, desc_sz,
++							   &desc_bank[i].paddr_unaligned,
++							   GFP_KERNEL);
++		if (!desc_bank[i].vaddr_unaligned) {
++			ret = -ENOMEM;
++			goto err;
++		}
++
++		desc_bank[i].vaddr = PTR_ALIGN(desc_bank[i].vaddr_unaligned,
++					       HAL_LINK_DESC_ALIGN);
++		desc_bank[i].paddr = desc_bank[i].paddr_unaligned +
++				     ((unsigned long)desc_bank[i].vaddr -
++				      (unsigned long)desc_bank[i].vaddr_unaligned);
++		desc_bank[i].size = desc_sz;
++	}
++
++	return 0;
++
++err:
++	ath12k_dp_link_desc_bank_free(ab, dp->link_desc_banks);
++
++	return ret;
++}
++
++void ath12k_dp_link_desc_cleanup(struct ath12k_base *ab,
++				 struct dp_link_desc_bank *desc_bank,
++				 u32 ring_type, struct dp_srng *ring)
++{
++	ath12k_dp_link_desc_bank_free(ab, desc_bank);
++
++	if (ring_type != HAL_RXDMA_MONITOR_DESC) {
++		ath12k_dp_srng_cleanup(ab, ring);
++		ath12k_dp_scatter_idle_link_desc_cleanup(ab);
++	}
++}
++
++static int ath12k_wbm_idle_ring_setup(struct ath12k_base *ab, u32 *n_link_desc)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	u32 n_mpdu_link_desc, n_mpdu_queue_desc;
++	u32 n_tx_msdu_link_desc, n_rx_msdu_link_desc;
++	int ret = 0;
++
++	n_mpdu_link_desc = (DP_NUM_TIDS_MAX * DP_AVG_MPDUS_PER_TID_MAX) /
++			   HAL_NUM_MPDUS_PER_LINK_DESC;
++
++	n_mpdu_queue_desc = n_mpdu_link_desc /
++			    HAL_NUM_MPDU_LINKS_PER_QUEUE_DESC;
++
++	n_tx_msdu_link_desc = (DP_NUM_TIDS_MAX * DP_AVG_FLOWS_PER_TID *
++			       DP_AVG_MSDUS_PER_FLOW) /
++			      HAL_NUM_TX_MSDUS_PER_LINK_DESC;
++
++	n_rx_msdu_link_desc = (DP_NUM_TIDS_MAX * DP_AVG_MPDUS_PER_TID_MAX *
++			       DP_AVG_MSDUS_PER_MPDU) /
++			      HAL_NUM_RX_MSDUS_PER_LINK_DESC;
++
++	*n_link_desc = n_mpdu_link_desc + n_mpdu_queue_desc +
++		      n_tx_msdu_link_desc + n_rx_msdu_link_desc;
++
++	if (*n_link_desc & (*n_link_desc - 1))
++		*n_link_desc = 1 << fls(*n_link_desc);
++
++	ret = ath12k_dp_srng_setup(ab, &dp->wbm_idle_ring,
++				   HAL_WBM_IDLE_LINK, 0, 0, *n_link_desc);
++	if (ret) {
++		ath12k_warn(ab, "failed to setup wbm_idle_ring: %d\n", ret);
++		return ret;
++	}
++	return ret;
++}
++
++int ath12k_dp_link_desc_setup(struct ath12k_base *ab,
++			      struct dp_link_desc_bank *link_desc_banks,
++			      u32 ring_type, struct hal_srng *srng,
++			      u32 n_link_desc)
++{
++	u32 tot_mem_sz;
++	u32 n_link_desc_bank, last_bank_sz;
++	u32 entry_sz, align_bytes, n_entries;
++	struct hal_wbm_link_desc *desc;
++	u32 paddr;
++	int i, ret;
++	u32 cookie;
++
++	tot_mem_sz = n_link_desc * HAL_LINK_DESC_SIZE;
++	tot_mem_sz += HAL_LINK_DESC_ALIGN;
++
++	if (tot_mem_sz <= DP_LINK_DESC_ALLOC_SIZE_THRESH) {
++		n_link_desc_bank = 1;
++		last_bank_sz = tot_mem_sz;
++	} else {
++		n_link_desc_bank = tot_mem_sz /
++				   (DP_LINK_DESC_ALLOC_SIZE_THRESH -
++				    HAL_LINK_DESC_ALIGN);
++		last_bank_sz = tot_mem_sz %
++			       (DP_LINK_DESC_ALLOC_SIZE_THRESH -
++				HAL_LINK_DESC_ALIGN);
++
++		if (last_bank_sz)
++			n_link_desc_bank += 1;
++	}
++
++	if (n_link_desc_bank > DP_LINK_DESC_BANKS_MAX)
++		return -EINVAL;
++
++	ret = ath12k_dp_link_desc_bank_alloc(ab, link_desc_banks,
++					     n_link_desc_bank, last_bank_sz);
++	if (ret)
++		return ret;
++
++	/* Setup link desc idle list for HW internal usage */
++	entry_sz = ath12k_hal_srng_get_entrysize(ab, ring_type);
++	tot_mem_sz = entry_sz * n_link_desc;
++
++	/* Setup scatter desc list when the total memory requirement is more */
++	if (tot_mem_sz > DP_LINK_DESC_ALLOC_SIZE_THRESH &&
++	    ring_type != HAL_RXDMA_MONITOR_DESC) {
++		ret = ath12k_dp_scatter_idle_link_desc_setup(ab, tot_mem_sz,
++							     n_link_desc_bank,
++							     n_link_desc,
++							     last_bank_sz);
++		if (ret) {
++			ath12k_warn(ab, "failed to setup scatting idle list descriptor :%d\n",
++				    ret);
++			goto fail_desc_bank_free;
++		}
++
++		return 0;
++	}
++
++	spin_lock_bh(&srng->lock);
++
++	ath12k_hal_srng_access_begin(ab, srng);
++
++	for (i = 0; i < n_link_desc_bank; i++) {
++		align_bytes = link_desc_banks[i].vaddr -
++			      link_desc_banks[i].vaddr_unaligned;
++		n_entries = (link_desc_banks[i].size - align_bytes) /
++			    HAL_LINK_DESC_SIZE;
++		paddr = link_desc_banks[i].paddr;
++		while (n_entries &&
++		       (desc = ath12k_hal_srng_src_get_next_entry(ab, srng))) {
++			cookie = DP_LINK_DESC_COOKIE_SET(n_entries, i);
++			ath12k_hal_set_link_desc_addr(desc,
++						      cookie, paddr);
++			n_entries--;
++			paddr += HAL_LINK_DESC_SIZE;
++		}
++	}
++
++	ath12k_hal_srng_access_end(ab, srng);
++
++	spin_unlock_bh(&srng->lock);
++
++	return 0;
++
++fail_desc_bank_free:
++	ath12k_dp_link_desc_bank_free(ab, link_desc_banks);
++
++	return ret;
++}
++
++int ath12k_dp_service_srng(struct ath12k_base *ab,
++			   struct ath12k_ext_irq_grp *irq_grp,
++			   int budget)
++{
++	struct napi_struct *napi = &irq_grp->napi;
++	int grp_id = irq_grp->grp_id;
++	int work_done = 0;
++	int i = 0, j;
++	int tot_work_done = 0;
++	bool flag;
++
++	while (i < ab->hw_params->max_tx_ring) {
++		if (ab->hw_params->ring_mask->tx[grp_id] &
++			BIT(ab->hw_params->hal_ops->tcl_to_wbm_rbm_map[i].wbm_ring_num))
++			ath12k_dp_tx_completion_handler(ab, i);
++		i++;
++	}
++
++	if (ab->hw_params->ring_mask->rx_err[grp_id]) {
++		work_done = ath12k_dp_rx_process_err(ab, napi, budget);
++		budget -= work_done;
++		tot_work_done += work_done;
++		if (budget <= 0)
++			goto done;
++	}
++
++	if (ab->hw_params->ring_mask->rx_wbm_rel[grp_id]) {
++		work_done = ath12k_dp_rx_process_wbm_err(ab,
++							 napi,
++							 budget);
++		budget -= work_done;
++		tot_work_done += work_done;
++
++		if (budget <= 0)
++			goto done;
++	}
++
++	if (ab->hw_params->ring_mask->rx[grp_id]) {
++		i = fls(ab->hw_params->ring_mask->rx[grp_id]) - 1;
++		work_done = ath12k_dp_rx_process(ab, i, napi,
++						 budget);
++		budget -= work_done;
++		tot_work_done += work_done;
++		if (budget <= 0)
++			goto done;
++	}
++
++	if (ab->hw_params->ring_mask->rx_mon_dest[grp_id]) {
++		for (i = 0; i < ab->num_radios; i++) {
++			for (j = 0; j < ab->hw_params->num_rxmda_per_pdev; j++) {
++				int id = i * ab->hw_params->num_rxmda_per_pdev + j;
++
++				flag = ATH12K_DP_RX_MONITOR_MODE;
++
++				if (ab->hw_params->ring_mask->rx_mon_dest[grp_id] &
++					BIT(id)) {
++					work_done =
++					ath12k_dp_mon_process_ring(ab, id, napi, budget,
++								   flag);
++					budget -= work_done;
++					tot_work_done += work_done;
++
++					if (budget <= 0)
++						goto done;
++				}
++			}
++		}
++	}
++
++	if (ab->hw_params->ring_mask->tx_mon_dest[grp_id]) {
++		for (i = 0; i < ab->num_radios; i++) {
++			for (j = 0; j < ab->hw_params->num_rxmda_per_pdev; j++) {
++				int id = i * ab->hw_params->num_rxmda_per_pdev + j;
++
++				flag = ATH12K_DP_TX_MONITOR_MODE;
++
++				if (ab->hw_params->ring_mask->tx_mon_dest[grp_id] &
++					BIT(id)) {
++					work_done =
++					ath12k_dp_mon_process_ring(ab, id, napi, budget,
++								   flag);
++					budget -= work_done;
++					tot_work_done += work_done;
++
++					if (budget <= 0)
++						goto done;
++				}
++			}
++		}
++	}
++
++	if (ab->hw_params->ring_mask->reo_status[grp_id])
++		ath12k_dp_rx_process_reo_status(ab);
++
++	if (ab->hw_params->ring_mask->host2rxdma[grp_id]) {
++		struct ath12k_dp *dp = &ab->dp;
++		struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
++
++		ath12k_dp_rx_bufs_replenish(ab, 0, rx_ring, 0,
++					    ab->hw_params->hal_params->rx_buf_rbm,
++					    true);
++	}
++
++	/* TODO: Implement handler for other interrupts */
++
++done:
++	return tot_work_done;
++}
++
++void ath12k_dp_pdev_free(struct ath12k_base *ab)
++{
++	int i;
++
++	del_timer_sync(&ab->mon_reap_timer);
++
++	for (i = 0; i < ab->num_radios; i++)
++		ath12k_dp_rx_pdev_free(ab, i);
++}
++
++void ath12k_dp_pdev_pre_alloc(struct ath12k_base *ab)
++{
++	struct ath12k *ar;
++	struct ath12k_pdev_dp *dp;
++	int i;
++
++	for (i = 0; i <  ab->num_radios; i++) {
++		ar = ab->pdevs[i].ar;
++		dp = &ar->dp;
++		dp->mac_id = i;
++		atomic_set(&dp->num_tx_pending, 0);
++		init_waitqueue_head(&dp->tx_empty_waitq);
++
++		/* TODO: Add any RXDMA setup required per pdev */
++	}
++}
++
++int ath12k_dp_pdev_alloc(struct ath12k_base *ab)
++{
++	struct ath12k *ar;
++	int ret;
++	int i;
++
++	ret = ath12k_dp_rx_htt_setup(ab);
++	if (ret)
++		goto out;
++
++	/* TODO: Per-pdev rx ring unlike tx ring which is mapped to different AC's */
++	for (i = 0; i < ab->num_radios; i++) {
++		ar = ab->pdevs[i].ar;
++		ret = ath12k_dp_rx_pdev_alloc(ab, i);
++		if (ret) {
++			ath12k_warn(ab, "failed to allocate pdev rx for pdev_id :%d\n",
++				    i);
++			goto err;
++		}
++		ret = ath12k_dp_rx_pdev_mon_attach(ar);
++		if (ret) {
++			ath12k_warn(ab, "failed to initialize mon pdev %d\n",
++				    i);
++			goto err;
++		}
++	}
++
++	return 0;
++
++err:
++	ath12k_dp_pdev_free(ab);
++out:
++	return ret;
++}
++
++int ath12k_dp_htt_connect(struct ath12k_dp *dp)
++{
++	struct ath12k_htc_svc_conn_req conn_req;
++	struct ath12k_htc_svc_conn_resp conn_resp;
++	int status;
++
++	memset(&conn_req, 0, sizeof(conn_req));
++	memset(&conn_resp, 0, sizeof(conn_resp));
++
++	conn_req.ep_ops.ep_tx_complete = ath12k_dp_htt_htc_tx_complete;
++	conn_req.ep_ops.ep_rx_complete = ath12k_dp_htt_htc_t2h_msg_handler;
++
++	/* connect to control service */
++	conn_req.service_id = ATH12K_HTC_SVC_ID_HTT_DATA_MSG;
++
++	status = ath12k_htc_connect_service(&dp->ab->htc, &conn_req,
++					    &conn_resp);
++
++	if (status)
++		return status;
++
++	dp->eid = conn_resp.eid;
++
++	return 0;
++}
++
++static void ath12k_dp_update_vdev_search(struct ath12k_vif *arvif)
++{
++	switch (arvif->vdev_type) {
++	case WMI_VDEV_TYPE_STA:
++		/* TODO: Verify the search type and flags since ast hash
++		 * is not part of peer mapv3
++		 */
++		arvif->hal_addr_search_flags = HAL_TX_ADDRY_EN;
++		arvif->search_type = HAL_TX_ADDR_SEARCH_DEFAULT;
++		break;
++	case WMI_VDEV_TYPE_AP:
++	case WMI_VDEV_TYPE_IBSS:
++		arvif->hal_addr_search_flags = HAL_TX_ADDRX_EN;
++		arvif->search_type = HAL_TX_ADDR_SEARCH_DEFAULT;
++		break;
++	case WMI_VDEV_TYPE_MONITOR:
++	default:
++		return;
++	}
++}
++
++void ath12k_dp_vdev_tx_attach(struct ath12k *ar, struct ath12k_vif *arvif)
++{
++	struct ath12k_base *ab = ar->ab;
++
++	arvif->tcl_metadata |= u32_encode_bits(1, HTT_TCL_META_DATA_TYPE) |
++			       u32_encode_bits(arvif->vdev_id,
++					       HTT_TCL_META_DATA_VDEV_ID) |
++			       u32_encode_bits(ar->pdev->pdev_id,
++					       HTT_TCL_META_DATA_PDEV_ID);
++
++	/* set HTT extension valid bit to 0 by default */
++	arvif->tcl_metadata &= ~HTT_TCL_META_DATA_VALID_HTT;
++
++	ath12k_dp_update_vdev_search(arvif);
++	arvif->vdev_id_check_en = true;
++	arvif->bank_id = ath12k_dp_tx_get_bank_profile(ab, arvif, &ab->dp);
++
++	/* TODO: error path for bank id failure */
++	if (arvif->bank_id == DP_INVALID_BANK_ID) {
++		ath12k_err(ar->ab, "Failed to initialize DP TX Banks");
++		return;
++	}
++}
++
++static void ath12k_dp_cc_cleanup(struct ath12k_base *ab)
++{
++	struct ath12k_rx_desc_info *desc_info, *tmp;
++	struct ath12k_tx_desc_info *tx_desc_info, *tmp1;
++	struct ath12k_dp *dp = &ab->dp;
++	struct sk_buff *skb;
++	int i;
++
++	if (!dp->spt_info)
++		return;
++
++	/* RX Descriptor cleanup */
++	spin_lock_bh(&dp->rx_desc_lock);
++
++	list_for_each_entry_safe(desc_info, tmp, &dp->rx_desc_used_list, list) {
++		list_del(&desc_info->list);
++		skb = desc_info->skb;
++
++		if (!skb)
++			continue;
++
++		dma_unmap_single(ab->dev, ATH12K_SKB_RXCB(skb)->paddr,
++				 skb->len + skb_tailroom(skb), DMA_FROM_DEVICE);
++		dev_kfree_skb_any(skb);
++	}
++
++	spin_unlock_bh(&dp->rx_desc_lock);
++
++	/* TX Descriptor cleanup */
++	for (i = 0; i < ATH12K_HW_MAX_QUEUES; i++) {
++		spin_lock_bh(&dp->tx_desc_lock[i]);
++
++		list_for_each_entry_safe(tx_desc_info, tmp1, &dp->tx_desc_used_list[i],
++					 list) {
++			list_del(&tx_desc_info->list);
++			skb = tx_desc_info->skb;
++
++			if (!skb)
++				continue;
++
++			dma_unmap_single(ab->dev, ATH12K_SKB_RXCB(skb)->paddr,
++					 skb->len, DMA_TO_DEVICE);
++			dev_kfree_skb_any(skb);
++		}
++
++		spin_unlock_bh(&dp->tx_desc_lock[i]);
++	}
++
++	/* unmap SPT pages */
++	for (i = 0; i < dp->num_spt_pages; i++) {
++		if (!dp->spt_info[i].vaddr)
++			continue;
++
++		dma_free_coherent(ab->dev, ATH12K_PAGE_SIZE,
++				  dp->spt_info[i].vaddr, dp->spt_info[i].paddr);
++		dp->spt_info[i].vaddr = NULL;
++	}
++
++	kfree(dp->spt_info);
++}
++
++static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++
++	if (!ab->hw_params->reoq_lut_support)
++		return;
++
++	if (!dp->reoq_lut.vaddr)
++		return;
++
++	dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
++			  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
++	dp->reoq_lut.vaddr = NULL;
++
++	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0, 0);
++}
++
++void ath12k_dp_free(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	int i;
++
++	ath12k_dp_link_desc_cleanup(ab, dp->link_desc_banks,
++				    HAL_WBM_IDLE_LINK, &dp->wbm_idle_ring);
++
++	ath12k_dp_cc_cleanup(ab);
++	ath12k_dp_reoq_lut_cleanup(ab);
++	ath12k_dp_deinit_bank_profiles(ab);
++	ath12k_dp_srng_common_cleanup(ab);
++
++	ath12k_dp_rx_reo_cmd_list_cleanup(ab);
++
++	for (i = 0; i < ab->hw_params->max_tx_ring; i++)
++		kfree(dp->tx_ring[i].tx_status);
++
++	ath12k_dp_rx_free(ab);
++	/* Deinit any SOC level resource */
++}
++
++void ath12k_dp_cc_config(struct ath12k_base *ab)
++{
++	u32 cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
++	u32 reo_base = HAL_SEQ_WCSS_UMAC_REO_REG;
++	u32 wbm_base = HAL_SEQ_WCSS_UMAC_WBM_REG;
++	u32 val = 0;
++
++	ath12k_hif_write32(ab, reo_base + HAL_REO1_SW_COOKIE_CFG0, cmem_base);
++
++	val |= u32_encode_bits(ATH12K_CMEM_ADDR_MSB,
++			       HAL_REO1_SW_COOKIE_CFG_CMEM_BASE_ADDR_MSB) |
++		u32_encode_bits(ATH12K_CC_PPT_MSB,
++				HAL_REO1_SW_COOKIE_CFG_COOKIE_PPT_MSB) |
++		u32_encode_bits(ATH12K_CC_SPT_MSB,
++				HAL_REO1_SW_COOKIE_CFG_COOKIE_SPT_MSB) |
++		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_ALIGN) |
++		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_ENABLE) |
++		u32_encode_bits(1, HAL_REO1_SW_COOKIE_CFG_GLOBAL_ENABLE);
++
++	ath12k_hif_write32(ab, reo_base + HAL_REO1_SW_COOKIE_CFG1, val);
++
++	/* Enable HW CC for WBM */
++	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG0, cmem_base);
++
++	val = u32_encode_bits(ATH12K_CMEM_ADDR_MSB,
++			      HAL_WBM_SW_COOKIE_CFG_CMEM_BASE_ADDR_MSB) |
++		u32_encode_bits(ATH12K_CC_PPT_MSB,
++				HAL_WBM_SW_COOKIE_CFG_COOKIE_PPT_MSB) |
++		u32_encode_bits(ATH12K_CC_SPT_MSB,
++				HAL_WBM_SW_COOKIE_CFG_COOKIE_SPT_MSB) |
++		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_ALIGN);
++
++	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG1, val);
++
++	/* Enable conversion complete indication */
++	val = ath12k_hif_read32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG2);
++	val |= u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_RELEASE_PATH_EN) |
++		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_ERR_PATH_EN) |
++		u32_encode_bits(1, HAL_WBM_SW_COOKIE_CFG_CONV_IND_EN);
++
++	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CFG2, val);
++
++	/* Enable Cookie conversion for WBM2SW Rings */
++	val = ath12k_hif_read32(ab, wbm_base + HAL_WBM_SW_COOKIE_CONVERT_CFG);
++	val |= u32_encode_bits(1, HAL_WBM_SW_COOKIE_CONV_CFG_GLOBAL_EN) |
++	       ab->hw_params->hal_params->wbm2sw_cc_enable;
++
++	ath12k_hif_write32(ab, wbm_base + HAL_WBM_SW_COOKIE_CONVERT_CFG, val);
++}
++
++static u32 ath12k_dp_cc_cookie_gen(u16 ppt_idx, u16 spt_idx)
++{
++	return (u32)ppt_idx << ATH12K_CC_PPT_SHIFT | spt_idx;
++}
++
++static inline void *ath12k_dp_cc_get_desc_addr_ptr(struct ath12k_base *ab,
++						   u16 ppt_idx, u16 spt_idx)
++{
++	struct ath12k_dp *dp = &ab->dp;
++
++	return dp->spt_info[ppt_idx].vaddr + spt_idx;
++}
++
++struct ath12k_rx_desc_info *ath12k_dp_get_rx_desc(struct ath12k_base *ab,
++						  u32 cookie)
++{
++	struct ath12k_rx_desc_info **desc_addr_ptr;
++	u16 ppt_idx, spt_idx;
++
++	ppt_idx = u32_get_bits(cookie, ATH12K_DP_CC_COOKIE_PPT);
++	spt_idx = u32_get_bits(cookie, ATH12k_DP_CC_COOKIE_SPT);
++
++	if (ppt_idx > ATH12K_NUM_RX_SPT_PAGES ||
++	    spt_idx > ATH12K_MAX_SPT_ENTRIES)
++		return NULL;
++
++	desc_addr_ptr = ath12k_dp_cc_get_desc_addr_ptr(ab, ppt_idx, spt_idx);
++
++	return *desc_addr_ptr;
++}
++
++struct ath12k_tx_desc_info *ath12k_dp_get_tx_desc(struct ath12k_base *ab,
++						  u32 cookie)
++{
++	struct ath12k_tx_desc_info **desc_addr_ptr;
++	u16 ppt_idx, spt_idx;
++
++	ppt_idx = u32_get_bits(cookie, ATH12K_DP_CC_COOKIE_PPT);
++	spt_idx = u32_get_bits(cookie, ATH12k_DP_CC_COOKIE_SPT);
++
++	if (ppt_idx < ATH12K_NUM_RX_SPT_PAGES ||
++	    ppt_idx > ab->dp.num_spt_pages ||
++	    spt_idx > ATH12K_MAX_SPT_ENTRIES)
++		return NULL;
++
++	desc_addr_ptr = ath12k_dp_cc_get_desc_addr_ptr(ab, ppt_idx, spt_idx);
++
++	return *desc_addr_ptr;
++}
++
++static int ath12k_dp_cc_desc_init(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	struct ath12k_rx_desc_info *rx_descs, **rx_desc_addr;
++	struct ath12k_tx_desc_info *tx_descs, **tx_desc_addr;
++	u32 i, j, pool_id, tx_spt_page;
++	u32 ppt_idx;
++
++	spin_lock_bh(&dp->rx_desc_lock);
++
++	/* First ATH12K_NUM_RX_SPT_PAGES of allocated SPT pages are used for RX */
++	for (i = 0; i < ATH12K_NUM_RX_SPT_PAGES; i++) {
++		rx_descs = kcalloc(ATH12K_MAX_SPT_ENTRIES, sizeof(*rx_descs),
++				   GFP_ATOMIC);
++
++		if (!rx_descs) {
++			spin_unlock_bh(&dp->rx_desc_lock);
++			return -ENOMEM;
++		}
++
++		for (j = 0; j < ATH12K_MAX_SPT_ENTRIES; j++) {
++			rx_descs[j].cookie = ath12k_dp_cc_cookie_gen(i, j);
++			rx_descs[j].magic = ATH12K_DP_RX_DESC_MAGIC;
++			list_add_tail(&rx_descs[j].list, &dp->rx_desc_free_list);
++
++			/* Update descriptor VA in SPT */
++			rx_desc_addr = ath12k_dp_cc_get_desc_addr_ptr(ab, i, j);
++			*rx_desc_addr = &rx_descs[j];
++		}
++	}
++
++	spin_unlock_bh(&dp->rx_desc_lock);
++
++	for (pool_id = 0; pool_id < ATH12K_HW_MAX_QUEUES; pool_id++) {
++		spin_lock_bh(&dp->tx_desc_lock[pool_id]);
++		for (i = 0; i < ATH12K_TX_SPT_PAGES_PER_POOL; i++) {
++			tx_descs = kcalloc(ATH12K_MAX_SPT_ENTRIES, sizeof(*tx_descs),
++					   GFP_ATOMIC);
++
++			if (!tx_descs) {
++				spin_unlock_bh(&dp->tx_desc_lock[pool_id]);
++				/* Caller takes care of TX pending and RX desc cleanup */
++				return -ENOMEM;
++			}
++
++			for (j = 0; j < ATH12K_MAX_SPT_ENTRIES; j++) {
++				tx_spt_page = i + pool_id * ATH12K_TX_SPT_PAGES_PER_POOL;
++				ppt_idx = ATH12K_NUM_RX_SPT_PAGES + tx_spt_page;
++				tx_descs[j].desc_id = ath12k_dp_cc_cookie_gen(ppt_idx, j);
++				tx_descs[j].pool_id = pool_id;
++				list_add_tail(&tx_descs[j].list,
++					      &dp->tx_desc_free_list[pool_id]);
++
++				/* Update descriptor VA in SPT */
++				tx_desc_addr =
++					ath12k_dp_cc_get_desc_addr_ptr(ab, ppt_idx, j);
++				*tx_desc_addr = &tx_descs[j];
++			}
++		}
++		spin_unlock_bh(&dp->tx_desc_lock[pool_id]);
++	}
++	return 0;
++}
++
++static int ath12k_dp_cc_init(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	int i, ret = 0;
++	u32 cmem_base;
++
++	INIT_LIST_HEAD(&dp->rx_desc_free_list);
++	INIT_LIST_HEAD(&dp->rx_desc_used_list);
++	spin_lock_init(&dp->rx_desc_lock);
++
++	for (i = 0; i < ATH12K_HW_MAX_QUEUES; i++) {
++		INIT_LIST_HEAD(&dp->tx_desc_free_list[i]);
++		INIT_LIST_HEAD(&dp->tx_desc_used_list[i]);
++		spin_lock_init(&dp->tx_desc_lock[i]);
++	}
++
++	dp->num_spt_pages = ATH12K_NUM_SPT_PAGES;
++	if (dp->num_spt_pages > ATH12K_MAX_PPT_ENTRIES)
++		dp->num_spt_pages = ATH12K_MAX_PPT_ENTRIES;
++
++	dp->spt_info = kcalloc(dp->num_spt_pages, sizeof(struct ath12k_spt_info),
++			       GFP_KERNEL);
++
++	if (!dp->spt_info) {
++		ath12k_warn(ab, "SPT page allocation failure");
++		return -ENOMEM;
++	}
++
++	cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
++
++	for (i = 0; i < dp->num_spt_pages; i++) {
++		dp->spt_info[i].vaddr = dma_alloc_coherent(ab->dev,
++							   ATH12K_PAGE_SIZE,
++							   &dp->spt_info[i].paddr,
++							   GFP_KERNEL);
++
++		if (!dp->spt_info[i].vaddr) {
++			ret = -ENOMEM;
++			goto free;
++		}
++
++		if (dp->spt_info[i].paddr & ATH12K_SPT_4K_ALIGN_CHECK) {
++			ath12k_warn(ab, "SPT allocated memoty is not 4K aligned");
++			ret = -EINVAL;
++			goto free;
++		}
++
++		/* Write to PPT in CMEM */
++		ath12k_hif_write32(ab, cmem_base + ATH12K_PPT_ADDR_OFFSET(i),
++				   dp->spt_info[i].paddr >> ATH12K_SPT_4K_ALIGN_OFFSET);
++	}
++
++	ret = ath12k_dp_cc_desc_init(ab);
++	if (ret) {
++		ath12k_warn(ab, "HW CC desc init failed %d", ret);
++		goto free;
++	}
++
++	return 0;
++free:
++	ath12k_dp_cc_cleanup(ab);
++	return ret;
++}
++
++static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++
++	if (!ab->hw_params->reoq_lut_support)
++		return 0;
++
++	dp->reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
++						DP_REOQ_LUT_SIZE,
++						&dp->reoq_lut.paddr,
++						GFP_KERNEL);
++
++	if (!dp->reoq_lut.vaddr) {
++		ath12k_warn(ab, "failed to allocate memory for reoq table");
++		return -ENOMEM;
++	}
++
++	memset(dp->reoq_lut.vaddr, 0, DP_REOQ_LUT_SIZE);
++
++	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0,
++			   dp->reoq_lut.paddr);
++	return 0;
++}
++
++int ath12k_dp_alloc(struct ath12k_base *ab)
++{
++	struct ath12k_dp *dp = &ab->dp;
++	struct hal_srng *srng = NULL;
++	size_t size = 0;
++	u32 n_link_desc = 0;
++	int ret;
++	int i;
++
++	dp->ab = ab;
++
++	INIT_LIST_HEAD(&dp->reo_cmd_list);
++	INIT_LIST_HEAD(&dp->reo_cmd_cache_flush_list);
++	spin_lock_init(&dp->reo_cmd_lock);
++
++	dp->reo_cmd_cache_flush_count = 0;
++
++	ret = ath12k_wbm_idle_ring_setup(ab, &n_link_desc);
++	if (ret) {
++		ath12k_warn(ab, "failed to setup wbm_idle_ring: %d\n", ret);
++		return ret;
++	}
++
++	srng = &ab->hal.srng_list[dp->wbm_idle_ring.ring_id];
++
++	ret = ath12k_dp_link_desc_setup(ab, dp->link_desc_banks,
++					HAL_WBM_IDLE_LINK, srng, n_link_desc);
++	if (ret) {
++		ath12k_warn(ab, "failed to setup link desc: %d\n", ret);
++		return ret;
++	}
++
++	ret = ath12k_dp_cc_init(ab);
++
++	if (ret) {
++		ath12k_warn(ab, "failed to setup cookie converter %d\n", ret);
++		goto fail_link_desc_cleanup;
++	}
++	ret = ath12k_dp_init_bank_profiles(ab);
++	if (ret) {
++		ath12k_warn(ab, "failed to setup bank profiles %d\n", ret);
++		goto fail_hw_cc_cleanup;
++	}
++
++	ret = ath12k_dp_srng_common_setup(ab);
++	if (ret)
++		goto fail_dp_bank_profiles_cleanup;
++
++	size = sizeof(struct hal_wbm_release_ring_tx) * DP_TX_COMP_RING_SIZE;
++
++	ret = ath12k_dp_reoq_lut_setup(ab);
++	if (ret) {
++		ath12k_warn(ab, "failed to setup reoq table %d\n", ret);
++		goto fail_cmn_srng_cleanup;
++	}
++
++	for (i = 0; i < ab->hw_params->max_tx_ring; i++) {
++		dp->tx_ring[i].tcl_data_ring_id = i;
++
++		dp->tx_ring[i].tx_status_head = 0;
++		dp->tx_ring[i].tx_status_tail = DP_TX_COMP_RING_SIZE - 1;
++		dp->tx_ring[i].tx_status = kmalloc(size, GFP_KERNEL);
++		if (!dp->tx_ring[i].tx_status) {
++			ret = -ENOMEM;
++			/* FIXME: The allocated tx status is not freed
++			 * properly here
++			 */
++			goto fail_cmn_reoq_cleanup;
++		}
++	}
++
++	for (i = 0; i < HAL_DSCP_TID_MAP_TBL_NUM_ENTRIES_MAX; i++)
++		ath12k_hal_tx_set_dscp_tid_map(ab, i);
++
++	ret = ath12k_dp_rx_alloc(ab);
++	if (ret)
++		goto fail_dp_rx_free;
++
++	/* Init any SOC level resource for DP */
++
++	return 0;
++
++fail_dp_rx_free:
++	ath12k_dp_rx_free(ab);
++
++fail_cmn_reoq_cleanup:
++	ath12k_dp_reoq_lut_cleanup(ab);
++
++fail_cmn_srng_cleanup:
++	ath12k_dp_srng_common_cleanup(ab);
++
++fail_dp_bank_profiles_cleanup:
++	ath12k_dp_deinit_bank_profiles(ab);
++
++fail_hw_cc_cleanup:
++	ath12k_dp_cc_cleanup(ab);
++
++fail_link_desc_cleanup:
++	ath12k_dp_link_desc_cleanup(ab, dp->link_desc_banks,
++				    HAL_WBM_IDLE_LINK, &dp->wbm_idle_ring);
++
++	return ret;
++}
+
 -- 
 ath12k mailing list
 ath12k@lists.infradead.org
