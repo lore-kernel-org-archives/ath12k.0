@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF13CC4332F
-	for <ath12k@archiver.kernel.org>; Fri, 21 Oct 2022 11:07:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39869C4332F
+	for <ath12k@archiver.kernel.org>; Fri, 21 Oct 2022 11:13:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W3CSK6mz74WSfe1HMzAjg7FY9ntiujbJ0RxGOh9mMUo=; b=myTldws5G+uroB
-	yRQShGhdEIXeOdTQIctD+t+pHgVBwtmJ7nl86G4xIB6mv9gs/fwqEXQ6vOeT3rPXk//TnanTGW2S8
-	rEcSWBlEOwUepnQ3+VmJpFeFZ1sr13FqTJdtyc89Y+AV1Yi93YnxJZrnMXM0cNXAtP8G3a5+GNU9f
-	yPXSFMvOWqIIMcFDsNgEl5vGzRAwFgakHq5M8FG8qwd0eb0vn1PX+8bau3L8g80a/b5y3YNq33qPa
-	SF67CD/c2w1HCXLlssxvpgaJAIMhwvCtaKd1yFJvS7XVM1iP6iYJ1Q09p5mYgmMO/OjpL9MRe/4HU
-	tfMxANlX1GXp+okTjUIw==;
+	List-Owner; bh=pExg5YudI2eZpqHFVpL6HAVGOiOB3Dgp0bdCNNdlf74=; b=Cb5sVQJQtAhScJ
+	fdYAZRouvTW9CcOzXO523XnDyiqss7KWkJ03Se7vWJYnAMWGAbGRlZak6lMxFNIX8BIzpb5E6ynzY
+	R1I7dGcrHnzgMUGZRQ3KVncS2PKcIofEXXRIyj004VwERe6Cj8m9JCvSHZT/12xT5eydoBvMaO/FJ
+	yYOZN9LUuctGBMTi5Ry2zL3icYoefaiDg3Bl/kRnPvROFvAAYwCIvO8kYk4bAyRe6bPF0Toof9ib6
+	qOn7S6yQSmLZFqDjKUOLkOtcHWQ19Q3WECl4j5P9pn9pjuA4oGIUdC20cHbgKNFvNEppQWFxtnFWN
+	0n7NeUIUFfKscdimbcPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olpsG-007I2r-9r
-	for ath12k@archiver.kernel.org; Fri, 21 Oct 2022 11:07:36 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1olpxW-007JQF-Mk
+	for ath12k@archiver.kernel.org; Fri, 21 Oct 2022 11:13:02 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olpsD-007I2F-R9
-	for ath12k@lists.infradead.org; Fri, 21 Oct 2022 11:07:35 +0000
+	id 1olpxT-007JOB-8P
+	for ath12k@lists.infradead.org; Fri, 21 Oct 2022 11:13:00 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 22FB161E4D;
-	Fri, 21 Oct 2022 11:07:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9ECEC433C1;
-	Fri, 21 Oct 2022 11:07:31 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id D054BB82A05;
+	Fri, 21 Oct 2022 11:12:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0217C433D6;
+	Fri, 21 Oct 2022 11:12:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666350452;
-	bh=KiDKvGNH29WQDs7TzlkbxJyAX/pWfvnZQyxfCLqQWuQ=;
+	s=k20201202; t=1666350774;
+	bh=EAZr8MnyEYrWDeZ3KDwVf2S2ovNDi+djVop8NKZmqf8=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=BfvRsP7dZ/YvgZ/8xs3ieVwdwAJfjO0KOFcP+n0lxep/2k3FMdDbVFKvbdopuil6t
-	 0B2dpR2RK7y4SoH1oXQRtFeHJZ9JmEqeH3+gf7ic2OrqYtBPhQoivb/qpAHPBxENiF
-	 53DzUue1jlCt2k46EfeT1+1lb75NlRu+0GTXpnpQj7rt+4gMx4svUE9HO6Rc5j2DSy
-	 MWPnapjjVHwg2KFaViUw+AUWYq8Mw70JL9E1Qxb4ZLIB0tM9K0c6V1jL0swwDGXLEu
-	 y47Wiau24InTUlxPQIqcIAoZ0u7r9Cc5ArJf8+2QM2V4PrGtmtDRKaqNCIh56m8G7K
-	 oVpXV2/kjThbQ==
+	b=LZN5fanhjbalZ/93gXChtA8E01oDFDujZp9cqPVF4IYc6lH18LqlGbi+TDt7UyZEh
+	 lrbd5wy2bALOh4hCdS5Rr12DMzGbUggvL9ZCilxZMlg9uUBDvSuIgbtG5FUrzwUvDv
+	 kf6YEa0HSgtajvPk2fsdI+TA4+pKjATVdPhxkjWlUDUGJsb8ZoFb9ZN0Ev21nYIoTn
+	 Tgot6NYRenXgNBhcPZOXfSgVu66bTFjLRk/0GuNYJYBJ8RMS82tMYNHW1Y/eY5Dy9a
+	 A2y57aAZ1E3VdmDiw2rr+d+KowWob0iVFxprCfUQLjPOmR867K+PQKObeBKqeyc73m
+	 5nzmf7xCsgJ0Q==
 From: Kalle Valo <kvalo@kernel.org>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
 Cc: <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>
@@ -50,15 +50,16 @@ Subject: Re: [PATCH 08/50] wifi: ath12k: add dbring.h
 References: <20220812161003.27279-1-kvalo@kernel.org>
 	<20220812161003.27279-9-kvalo@kernel.org>
 	<3f8edc37-6be7-efe5-ac02-2d068f428277@quicinc.com>
-Date: Fri, 21 Oct 2022 14:07:29 +0300
-In-Reply-To: <3f8edc37-6be7-efe5-ac02-2d068f428277@quicinc.com> (Jeff
-	Johnson's message of "Mon, 15 Aug 2022 12:59:31 -0700")
-Message-ID: <87r0z1juz2.fsf@kernel.org>
+	<87r0z1juz2.fsf@kernel.org>
+Date: Fri, 21 Oct 2022 14:12:48 +0300
+In-Reply-To: <87r0z1juz2.fsf@kernel.org> (Kalle Valo's message of "Fri, 21 Oct
+	2022 14:07:29 +0300")
+Message-ID: <87mt9pjuq7.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221021_040733_934892_F46761CA 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20221021_041259_460985_70F34A0B 
+X-CRM114-Status: GOOD (  13.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,52 +76,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+Kalle Valo <kvalo@kernel.org> writes:
 
-> On 8/12/2022 9:09 AM, Kalle Valo wrote:
+> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 >
->> From: Kalle Valo <quic_kvalo@quicinc.com>
+>> On 8/12/2022 9:09 AM, Kalle Valo wrote:
 >>
->> (Patches split into one patch per file for easier review, but the final
->> commit will be one big patch. See the cover letter for more info.)
+>>> From: Kalle Valo <quic_kvalo@quicinc.com>
+>>>
+>>> (Patches split into one patch per file for easier review, but the final
+>>> commit will be one big patch. See the cover letter for more info.)
+>>>
+>>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+>>> ---
+>>>   drivers/net/wireless/ath/ath12k/dbring.h | 80 ++++++++++++++++++++++++++++++++
+>>>   1 file changed, 80 insertions(+)
+>>>
+>>> diff --git a/drivers/net/wireless/ath/ath12k/dbring.h
+>>> b/drivers/net/wireless/ath/ath12k/dbring.h
+>>> new file mode 100644
+>>> index 000000000000..2be2d8def3f0
+>>> --- /dev/null
+>>> +++ b/drivers/net/wireless/ath/ath12k/dbring.h
+>>> @@ -0,0 +1,80 @@
+>>> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
+>>> +/*
+>>> + * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
+>>> + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+>>> + */
+>>> +
+>>> +#ifndef ATH12K_DBRING_H
+>>> +#define ATH12K_DBRING_H
+>>> +
+>>> +#include <linux/types.h>
+>>> +#include <linux/idr.h>
+>>> +#include <linux/spinlock.h>
+>>> +#include "dp.h"
+>>> +
+>>> +struct ath12k_dbring_element {
+>>> +	dma_addr_t paddr;
+>>> +	u8 payload[0];
 >>
->> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/dbring.h | 80 ++++++++++++++++++++++++++++++++
->>   1 file changed, 80 insertions(+)
+>> should just be payload[]
 >>
->> diff --git a/drivers/net/wireless/ath/ath12k/dbring.h
->> b/drivers/net/wireless/ath/ath12k/dbring.h
->> new file mode 100644
->> index 000000000000..2be2d8def3f0
->> --- /dev/null
->> +++ b/drivers/net/wireless/ath/ath12k/dbring.h
->> @@ -0,0 +1,80 @@
->> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
->> +/*
->> + * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
->> + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
->> + */
->> +
->> +#ifndef ATH12K_DBRING_H
->> +#define ATH12K_DBRING_H
->> +
->> +#include <linux/types.h>
->> +#include <linux/idr.h>
->> +#include <linux/spinlock.h>
->> +#include "dp.h"
->> +
->> +struct ath12k_dbring_element {
->> +	dma_addr_t paddr;
->> +	u8 payload[0];
+>> <https://www.kernel.org/doc/html/latest/process/deprecated.html#zero-length-and-one-element-arrays>
 >
-> should just be payload[]
+> Praneesh fixed this:
 >
-> <https://www.kernel.org/doc/html/latest/process/deprecated.html#zero-length-and-one-element-arrays>
+> c568d8bc26de ath12k: convert payload[0] to payload[], use ab variable
+> and fix __ath12k_dbg() signature
 
-Praneesh fixed this:
+But there's still more of these:
 
-c568d8bc26de ath12k: convert payload[0] to payload[], use ab variable and fix __ath12k_dbg() signature
+ce.h:138:	struct sk_buff *skb[0];
+core.h:738:	u8 drv_priv[0] __aligned(sizeof(void *));
+dp.h:1336:	u8 data[0];
+dp.h:1341:	u8 value[0];
+dp.h:1597:	u8 payload[0];
+rx_desc.h:1397:	u8 msdu_payload[0];
+rx_desc.h:1418:	u8 msdu_payload[0];
+
+I added these to my todo list, need to investigate in detail.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
