@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA7E4C433FE
-	for <ath12k@archiver.kernel.org>; Fri, 21 Oct 2022 11:45:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 596AAC433FE
+	for <ath12k@archiver.kernel.org>; Fri, 21 Oct 2022 13:08:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jazsMN9FiCEtms1zn9NBItKx1bzU/RCsxRGgp2W8/Mk=; b=GIEuNCeknW7VOC
-	aWr9MG5gWX+LjkrrUljicwL5EfuwOpHp/zNw5Lv3lej4P/yOoopJNKccvMwDbOo2ttBTt8QXkZm0i
-	Ua7h3Z4i7qO6zk4K61nx7aYql85x2gJPEzb7IzcbGhjD7zNe4YE/7BG1EqXwtyGveAL4sgiXV7Qav
-	45MrNIxkqBm+o1ICo4y3fjPGjj0CkdHf11QRtPzIOxVO/P0pyPwq/3+ZJ7z1twf0iqIjfSU273g14
-	wk5AmElwECfWEpKhcYdCW6g/3hppUQUQ6HXPaeB6Q5k3SIbrBkUGNoslYw4E85A3a6GmUNTHlDf1v
-	d103B9KnNcXyLtUfrQlw==;
+	List-Owner; bh=rv94D4E4Ific1nwKcE7trhqkOkP4vQKR5I6fT+eYha0=; b=lNDIhbNhABl7wn
+	rt1smZBi2nm78ucGD1gbYHh5R2N0/dngHpo5mSDUjh4uqnuHwpGb0WP7GwwpTlDzHuJmRNpAvaror
+	ziA9aZH4XrcH5AqjvBk6vWy6FLrwT7vEksQr3i9a/9KV4ZAM1kmkJlXpjk9egwmPzHPtO8IqRQS29
+	FZu53mWzuWheUWdWLySw7JCdxeHHqNbzlTJ6eO7tEDLAR3IBeqkFzK+srYeNtIWfTzrlkQoaBdb2V
+	SkZJ1Q45zkHNcYFaYSLoA20PknIwF4cv+Ax3XYDx+5CjnDzIeDdG4KMhSXpS02r8tpKLyteSUNmRs
+	gQgLKYkpgWNbuiOgXh9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olqT5-007SOj-96
-	for ath12k@archiver.kernel.org; Fri, 21 Oct 2022 11:45:39 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1olrku-007oKi-Q8
+	for ath12k@archiver.kernel.org; Fri, 21 Oct 2022 13:08:08 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1olqT2-007SM3-7Y
-	for ath12k@lists.infradead.org; Fri, 21 Oct 2022 11:45:37 +0000
+	id 1olrkr-007oJd-B0
+	for ath12k@lists.infradead.org; Fri, 21 Oct 2022 13:08:07 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7316761E3D;
-	Fri, 21 Oct 2022 11:45:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1AFA6C433D6;
-	Fri, 21 Oct 2022 11:45:31 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 946B4B82BFE;
+	Fri, 21 Oct 2022 13:08:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77A75C433C1;
+	Fri, 21 Oct 2022 13:08:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1666352732;
-	bh=jEOgSwQYCD+gxiCJMxt436mAcZyHcOjM4AZn3LcQ+Vc=;
+	s=k20201202; t=1666357682;
+	bh=tKKxs7kbtMVrIJ25VRA8AnRI7kBpz/GZtojXw0IasK8=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=TyvPBM/avix8g4eP5sAjjJIR6HWquANhsUBQ+0uUcAgSvSeuz85ak8tGCOTX4NTaq
-	 V6L+vYNFUIABkjCmYzP0YAepJe4EKHTetuwujyzFxZ7t8Ko1i5FBcUDQf6uCxzTkye
-	 W3QhgPPAyNnWpMkdz8C4eskWhH/4wugAL5Ez2RgyKFeHSeRwPwKN0pkNXhw5G3pjE4
-	 NwmFmUed9uNnBbHcDeJtE/McqE9KZI3Nfdteg1gibgEo9jyZzIYZJz4fGpEmwhMEKb
-	 m8Mz/4m0XzUlzS8hafR4MwPPYkytsPqojt6sHqYQlmwqU+Bcu/TpfLoU4pHfc5jKGf
-	 hqncKmj2R1eLQ==
+	b=U+E+90G+6vXZ3J168+f0JOK6bvHTv4NZIyVeh9nNe97XIvCoTzKliduMT45WRLSH+
+	 pXNPFZjEHZzfF3eZrn7DgXbTBoiJQ9NKDzUyekOtls5ugjU8O4p8g5yJBptIvDkOG2
+	 dpZN30uzlra3qDAxjAdFJBrDhiaxzJnFJ4/sQKHpwhRvwvejO+IR7XKq9vVIp3G/qV
+	 v7gUy+qkpGaMb24yNBUAsLWohw9h0nkFyvWEerJf9qH1/3y+NPd53B9/+waHfkqCKD
+	 PdUf4e7bT5f0qoD5KNKNaxtmyFF/yvS6ubgnKeXn6gZr0fEli7nUOCuaEvhcva00XA
+	 yLIUlb8Sq0bsQ==
 From: Kalle Valo <kvalo@kernel.org>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: "linux-wireless\@vger.kernel.org" <linux-wireless@vger.kernel.org>,  "ath12k\@lists.infradead.org" <ath12k@lists.infradead.org>
-Subject: Re: [PATCH 12/50] wifi: ath12k: add dp.h
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>
+Subject: Re: [PATCH 13/50] wifi: ath12k: add dp_mon.c
 References: <20220812161003.27279-1-kvalo@kernel.org>
-	<20220812161003.27279-13-kvalo@kernel.org>
-	<0eabd6c1b3ca4d8a8152ad5b4f3efee6@realtek.com>
-	<87leqxag07.fsf@kernel.org>
-Date: Fri, 21 Oct 2022 14:45:30 +0300
-In-Reply-To: <87leqxag07.fsf@kernel.org> (Kalle Valo's message of "Mon, 05 Sep
-	2022 20:27:20 +0300")
-Message-ID: <878rl9jt7p.fsf@kernel.org>
+	<20220812161003.27279-14-kvalo@kernel.org>
+	<e4c2c436-82e2-bf15-a635-e8f4e566d8d2@quicinc.com>
+Date: Fri, 21 Oct 2022 16:07:58 +0300
+In-Reply-To: <e4c2c436-82e2-bf15-a635-e8f4e566d8d2@quicinc.com> (Jeff
+	Johnson's message of "Tue, 16 Aug 2022 13:13:46 -0700")
+Message-ID: <87y1t9iatt.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221021_044536_325909_95BC5A6E 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20221021_060805_698252_367966CD 
+X-CRM114-Status: GOOD (  18.31  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,48 +75,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
->>> +struct htt_srng_setup_cmd {
->>> +	u32 info0;
->>> +	u32 ring_base_addr_lo;
->>> +	u32 ring_base_addr_hi;
->>> +	u32 info1;
->>> +	u32 ring_head_off32_remote_addr_lo;
->>> +	u32 ring_head_off32_remote_addr_hi;
->>> +	u32 ring_tail_off32_remote_addr_lo;
->>> +	u32 ring_tail_off32_remote_addr_hi;
->>> +	u32 ring_msi_addr_lo;
->>> +	u32 ring_msi_addr_hi;
->>> +	u32 msi_data;
->>> +	u32 intr_info;
->>> +	u32 info2;
->>> +} __packed;
->>> +
->>
->> Should they be '__le32' instead of 'u32'?
->>
->> This struct is used to fill data of ath12k_htc_send(), and the fields of
->> htc header are __le32: 
->>
->> struct ath12k_htc_hdr {
->> 	__le32 htc_info;
->> 	__le32 ctrl_info;
->> } __packed __aligned(4);
->>
->> If above is correct, some struct(s) related to ath12k_htc_send() have
->> similar problems:
->> struct htt_ver_req_cmd
->> struct htt_ppdu_stats_cfg_cmd
->> struct htt_rx_ring_selection_cfg_cmd
->> struct htt_ext_stats_cfg_cmd
->> struct htt_tx_ring_selection_cfg_cmd  (miss __packed)
+> On 8/12/2022 9:09 AM, Kalle Valo wrote:
 >
-> Good catch, we'll fix those and the missing __packed. Thanks for the review!
+>> From: Kalle Valo <quic_kvalo@quicinc.com>
+>>
+>> (Patches split into one patch per file for easier review, but the final
+>> commit will be one big patch. See the cover letter for more info.)
+>>
+>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/dp_mon.c | 2598 ++++++++++++++++++++++++++++++
+>>   1 file changed, 2598 insertions(+)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c
+>> b/drivers/net/wireless/ath/ath12k/dp_mon.c
+>> new file mode 100644
+>> index 000000000000..479be0e441d8
+>> --- /dev/null
+>> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+>> @@ -0,0 +1,2598 @@
+>> +// SPDX-License-Identifier: BSD-3-Clause-Clear
+>> +/*
+>> + * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
+>> + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+>> + */
+>> +
+>> +#include "dp_mon.h"
+>> +#include "debug.h"
+>> +#include "dp_rx.h"
+>> +#include "dp_tx.h"
+>> +#include "peer.h"
+>> +
+>> +static void ath12k_dp_mon_rx_handle_ofdma_info(void *rx_tlv,
+>> + struct hal_rx_user_status *rx_user_status)
+>> +{
+>> +	struct hal_rx_ppdu_end_user_stats *ppdu_end_user =
+>> +				(struct hal_rx_ppdu_end_user_stats *)rx_tlv;
+>> +
+>> +	rx_user_status->ul_ofdma_user_v0_word0 = __le32_to_cpu(ppdu_end_user->info6);
+>> + rx_user_status->ul_ofdma_user_v0_word1 =
+>> __le32_to_cpu(ppdu_end_user->rsvd2[10]);
+>
+> this violates the convention that info* is used for fields that are
+> accessed while rsvd* is used for fields that are not accessed. in
+> addition, use of magic number offsets is also not nice.
 
-I fixed these in:
+P Praneesh fixed this:
 
-efc72b2aa34c wifi: ath12k: dp: convert htt cmd structs to __le32
+b290b591dbdd ath12k: remove magic number offset in rx_user_status struct
+
+> imo what would improve this code is to have accessor macros/inline
+> functions defined co-resident with the struct so that all the magic
+> numbers and magic fields are contained within the acessors, and the
+> actual code here looks really readable.
+
+Yeah, in general that would be good. But in this case it would also help
+if struct hal_rx_user_status word0 and word1 fields would be renamed to
+better reflect what they actually are:
+
+	u32 ul_ofdma_user_v0_word0;
+	u32 ul_ofdma_user_v0_word1;
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
