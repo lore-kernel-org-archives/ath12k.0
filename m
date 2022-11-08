@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73D12C43217
-	for <ath12k@archiver.kernel.org>; Tue,  8 Nov 2022 13:56:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BF6BC43219
+	for <ath12k@archiver.kernel.org>; Tue,  8 Nov 2022 14:00:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vVuxStIzb54ZyqBzomUs5QbB5I+MTI6i4uoCl1vOY+0=; b=eYS5/73Cl3BPKL
-	jg9biNTwtio1wMeToR2tpwjaE6ohodPw4KaYVcqPfcwNf7QFjk/c9aFQ6UcNHvXoGKg5Yg9151aHW
-	7wqEjXT4ijFFgxZJRcHPs3F6BplNv3BAxuCxoHj9XYWkOnGD0egX4fc98GhCDExhcw382036Czb2B
-	KrnNd+7rl6VtD89JgJsIUZn9zwox2kweTR5EucPPmb36SWWHDeQgChVe+V3wMVqQfubCdrLcohxLU
-	if353LUW7TMn+qghMWnS8uEMGPAHLCXRNGt7Id93zlCbiF2lkLb/PTysnyb19ZbScp8/4Q2KYSJ1J
-	a+YTBXi35P14NIXHvoiQ==;
+	List-Owner; bh=++Pq9Am5FvWGyzPstUNJu4MwlKEBo5nvSKJK4+QJpt8=; b=1QSkGbKtyrjoFP
+	8Xb32JJgN8Cljxpd6G45pcmSHB4BIyMXHqrXKI9pfBEhBV/yUUipS/LXrUCKvTjuR37Tllty8VxMH
+	MAsb+y9e/ItZ73u45ykdx8+PLhEFyRvNfWn61VeO2GTevXH9eoC2QJm1PVLX6IZrjDlRx1n7Q3kqn
+	U2++4yymXcR1uzM+yDnjKZ54hsVH3c5pip+uYIilNMknByzAzSwkg9mqU7y88Cbnhq9hZiR5PZZzO
+	gRsko44bmiILvzTChDAXbJN0x9A7wkxa8DPJWKiFcFNns4Wd5JbCFqTids5NtvpG+7W3dn2D7/aK4
+	Sp7toULZV13C02Twywyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osP59-005kPl-Sa
-	for ath12k@archiver.kernel.org; Tue, 08 Nov 2022 13:56:03 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1osP9u-005nG9-HA
+	for ath12k@archiver.kernel.org; Tue, 08 Nov 2022 14:00:58 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osP55-005kND-Rz
-	for ath12k@lists.infradead.org; Tue, 08 Nov 2022 13:56:02 +0000
+	id 1osP9r-005nFS-GF
+	for ath12k@lists.infradead.org; Tue, 08 Nov 2022 14:00:57 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id D3035CE1B8E;
-	Tue,  8 Nov 2022 13:55:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1A94DC433D6;
-	Tue,  8 Nov 2022 13:55:54 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BB95D61567;
+	Tue,  8 Nov 2022 14:00:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7862C433B5;
+	Tue,  8 Nov 2022 14:00:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1667915756;
-	bh=8EgEva8SGwONgvqVF+oT5XZ1onQ/RUXXCy8m098YtaI=;
+	s=k20201202; t=1667916054;
+	bh=GQqN3uk4uI0pLzcEd/XRQ6ibDPBdgB9ImZSIjgy8Jhs=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=eyAq4xYFytIpU+xLpuIfvcK67wNFwlAnyur7FJsYZ/zKCIXBtgozt8CbstVf8SKWB
-	 Lu+0Mpp2EnFgYqxvGpjpdn2r47A6/VUci5czcSWGxLUGDDycsSTPSN0Zd/p51tYDVa
-	 k/+1rbaWtWJypv9XM9uGjWNrlfAAYQ91xBKoqCGrWTDNxaAaRFW9gKYvqGdSvXTUs/
-	 HPEtrq7BDyEuPYoJlYpul6ODt6T+fIE54RCOLj5tMktaJzcdTvrDD6t858NqcBh6Ro
-	 W18wp4RlHq2D6HHYJW9+6hI0unP3bqx94ZTPKXiO5Jq4SnTPI5Nh+zlv1mldPE2ZUp
-	 0B799gx8ohaVg==
+	b=mz12nUWZfx7cSJl2DB9kOkyE992ySRrcRzBhH8j144/iJPvMoEuu1aZRbixQ1WHLY
+	 dqx13Cn4V1vENfWPEAPyAQqQ5rBJ0dZly9xkaWa1DsbMuifNuy0S1qPHvhirhopf5N
+	 /HvI/0uNdtSXpoUkDoReXI8sbvxlY29gcrVyFhBAasvw/ZPDBwqJWAwNStsrPF0ZpV
+	 uI+x+oa5MV393+nCcRKqIN2IGeC0fTsX9c20F+7Dcye0yhRnVvuuqawAMw9LsNj9k+
+	 pUTe2onmpXgtOsrVqQ5fv/NdZDaUkeRyPSW550qtHnhBKVzyCWuANJ/jwx6m9N0i8j
+	 z1aSn3bMlbAqg==
 From: Kalle Valo <kvalo@kernel.org>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
 Cc: <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>
-Subject: Re: [PATCH 31/50] wifi: ath12k: add mac.c
+Subject: Re: [PATCH 33/50] wifi: ath12k: add mhi.c
 References: <20220812161003.27279-1-kvalo@kernel.org>
-	<20220812161003.27279-32-kvalo@kernel.org>
-	<1a043aac-c160-c826-3933-99dbe3bb18fe@quicinc.com>
-Date: Tue, 08 Nov 2022 15:55:50 +0200
-In-Reply-To: <1a043aac-c160-c826-3933-99dbe3bb18fe@quicinc.com> (Jeff
-	Johnson's message of "Tue, 16 Aug 2022 11:09:49 -0700")
-Message-ID: <87leoleejd.fsf@kernel.org>
+	<20220812161003.27279-34-kvalo@kernel.org>
+	<05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com>
+Date: Tue, 08 Nov 2022 16:00:49 +0200
+In-Reply-To: <05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com> (Jeff
+	Johnson's message of "Thu, 18 Aug 2022 15:25:49 -0700")
+Message-ID: <87h6z9eeb2.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221108_055600_306833_016B9971 
-X-CRM114-Status: GOOD (  28.89  )
+X-CRM114-CacheID: sfid-20221108_060055_641467_C1558FE0 
+X-CRM114-Status: GOOD (  25.28  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,6 +78,7 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
 > On 8/12/2022 9:09 AM, Kalle Valo wrote:
+>
 >> From: Kalle Valo <quic_kvalo@quicinc.com>
 >>
 >> (Patches split into one patch per file for easier review, but the final
@@ -85,428 +86,119 @@ Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 >>
 >> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 >> ---
->>   drivers/net/wireless/ath/ath12k/mac.c | 7054 +++++++++++++++++++++++++++++++++
->>   1 file changed, 7054 insertions(+)
+>>   drivers/net/wireless/ath/ath12k/mhi.c | 615 ++++++++++++++++++++++++++++++++++
+>>   1 file changed, 615 insertions(+)
 >>
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c
->> b/drivers/net/wireless/ath/ath12k/mac.c
+>> diff --git a/drivers/net/wireless/ath/ath12k/mhi.c
+>> b/drivers/net/wireless/ath/ath12k/mhi.c
 >> new file mode 100644
->> index 000000000000..2ccbd83dc9ca
+>> index 000000000000..f77634994d97
 >> --- /dev/null
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->
-> snip
->
->> +u8 ath12k_mac_bw_to_mac80211_bw(u8 bw)
->
-> should the input param be of type enum ath12k_supported_bw to better
-> describe it? should the function return type be enum rate_info_bw to
-> better describe it?
-
-Fixed.
-
->
->> +{
->> +	u8 ret = 0;
->
-> change to use RATE_INFO_BW_20?
-
-Fixed.
-
->> +static u8 ath12k_parse_mpdudensity(u8 mpdudensity)
->> +{
->> +/* 802.11n D2.0 defined values for "Minimum MPDU Start Spacing":
->
-> nit: use an up-to-date reference?
-
-Fixed.
-
->> +static int ath12k_recalc_rtscts_prot(struct ath12k_vif *arvif)
->> +{
->> +	struct ath12k *ar = arvif->ar;
->> +	u32 vdev_param, rts_cts = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +static int ath12k_monitor_vdev_up(struct ath12k *ar, int vdev_id)
->> +{
->> +	int ret = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +static int ath12k_mac_monitor_vdev_start(struct ath12k *ar, int vdev_id,
->> +					 struct cfg80211_chan_def *chandef)
->> +{
->> +	struct ieee80211_channel *channel = NULL;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +	struct wmi_vdev_start_req_arg arg = {};
->> +	int ret = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +static int ath12k_mac_monitor_vdev_stop(struct ath12k *ar)
->> +{
->> +	int ret = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +static int ath12k_mac_monitor_vdev_create(struct ath12k *ar)
->> +{
->> +	struct ath12k_pdev *pdev = ar->pdev;
->> +	struct ath12k_wmi_vdev_create_arg arg = {};
->> +	int bit, ret = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +	u8 tmp_addr[6] = {0};
->> +	u16 nss = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed as well.
-
->> +static int ath12k_mac_monitor_vdev_delete(struct ath12k *ar)
->> +{
->> +	int ret = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +	unsigned long time_left = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
->> +static void ath12k_control_beaconing(struct ath12k_vif *arvif,
->> +				     struct ieee80211_bss_conf *info)
->> +{
->> +	struct ath12k *ar = arvif->ar;
->> +	int ret = 0;
->
-> nit: unnecessary initializer that is always overwritten
-
-Fixed.
-
+>> +++ b/drivers/net/wireless/ath/ath12k/mhi.c
+>> @@ -0,0 +1,615 @@
+>> +// SPDX-License-Identifier: BSD-3-Clause-Clear
+>> +/*
+>> + * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
+>> + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+>> + */
 >> +
->> +	lockdep_assert_held(&arvif->ar->conf_mutex);
+>> +#include <linux/msi.h>
+>> +#include <linux/pci.h>
 >> +
->> +	if (!info->enable_beacon) {
->> +		ret = ath12k_wmi_vdev_down(ar, arvif->vdev_id);
->> +		if (ret)
->> +			ath12k_warn(ar->ab, "failed to down vdev_id %i: %d\n",
->> +				    arvif->vdev_id, ret);
+>> +#include "core.h"
+>> +#include "debug.h"
+>> +#include "mhi.h"
+>> +#include "pci.h"
 >> +
->> +		arvif->is_up = false;
->> +		return;
->> +	}
+>> +#define MHI_TIMEOUT_DEFAULT_MS	90000
 >> +
->> +	/* Install the beacon template to the FW */
->> +	ret = ath12k_mac_setup_bcn_tmpl(arvif);
->> +	if (ret) {
->> +		ath12k_warn(ar->ab, "failed to update bcn tmpl during vdev up: %d\n",
->> +			    ret);
->> +		return;
->> +	}
+>> +static struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
+>
+> should this be const?
+> in struct mhi_controller_config:
+> 	const struct mhi_channel_config *ch_cfg;
+
+Fixed.
+
+>> +static struct mhi_event_config ath12k_mhi_events_qcn9274[] = {
+>
+> seems this should be const
+> but for some reason struct mhi_controller_config has:
+> 	struct mhi_event_config *event_cfg;
+>
+> (not const) so this can't be const :(
+>
+> perhaps someone can propose a MHI interface change?
+> especially since internally to MHI in parse_ev_cfg() we have:
+> 	const struct mhi_event_config *event_cfg;
+> 	[...]
+> 	for (i = 0; i < num; i++) {
+> 		event_cfg = &config->event_cfg[i];
+>
+> so it is treated as const
+
+You submitted a patch for this, thanks for that:
+
+https://lore.kernel.org/all/20220830171147.24338-1-quic_jjohnson@quicinc.com/
+
+But oddly I cannot find anywhere in git, I sent a question about that to
+the mhi list.
+
+>> +static struct mhi_channel_config ath12k_mhi_channels_wcn7850[] = {
+>
+> const
+
+Fixed.
+
+>> +static struct mhi_event_config ath12k_mhi_events_wcn7850[] = {
+>
+> keep not const (for now) :(
+
+Yup, hopefully we can fix this soon.
+
+>> +struct mhi_controller_config ath12k_mhi_config_wcn7850 = {
+>
+> and this one should be const since it is registered via:
+>
+> int mhi_register_controller(struct mhi_controller *mhi_cntrl,
+> 			const struct mhi_controller_config *config);
+
+Fixed.
+
+>> +static int ath12k_mhi_get_msi(struct ath12k_pci *ab_pci)
+>> +{
+>> +	struct ath12k_base *ab = ab_pci->ab;
+>> +	u32 user_base_data, base_vector;
+>> +	int ret, num_vectors, i;
+>> +	int *irq;
 >> +
->> +	arvif->tx_seq_no = 0x1000;
->
-> why this magic number?
-
-Ramya removed the initialisation in commit:
-
-640978f9fb1f wifi: ath12k: Fix typo and initializer in mac.c
-
-But the unused field is still in struct ath12k_vif, I added that to todo
-list.
-
->> +static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
->> +				    struct ieee80211_vif *vif,
->> +				    struct ieee80211_sta *sta,
->> +				    struct ath12k_wmi_peer_assoc_arg *arg)
->> +{
->
-> snip
->
->> +	/* In IPQ8074 platform, VHT mcs rate 10 and 11 is enabled by default.
->> +	 * VHT mcs rate 10 and 11 is not suppoerted in 11ac standard.
->
-> typo: s/suppoerted/supported/
-
-Fixed.
-
-> bigger question: why concern about IPQ8074 when this driver isn't for
-> that platform
-
-This was changed to QCN9274.
-
->> +static void ath12k_peer_assoc_h_he(struct ath12k *ar,
->> +				   struct ieee80211_vif *vif,
->> +				   struct ieee80211_sta *sta,
->> +				   struct ath12k_wmi_peer_assoc_arg *arg)
->> +{
->
-> snip
->
->> +	/* As per section 26.6.1 11ax Draft5.0, if the Max AMPDU Exponent Extension
->
-> nit: get an up-to-date reference?
-
-Fixed.
-
->> +static void ath12k_mac_op_bss_info_changed(struct ieee80211_hw *hw,
->> +					   struct ieee80211_vif *vif,
->> +					   struct ieee80211_bss_conf *info,
->> +					   u64 changed)
->> +{
->> +	struct ath12k *ar = hw->priv;
->> +	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
->> +	struct cfg80211_chan_def def;
->> +	u32 param_id, param_value;
->> +	enum nl80211_band band;
->> +	u32 vdev_param;
->> +	int mcast_rate;
->> +	u32 preamble;
->> +	u16 hw_value;
->> +	u16 bitrate;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
->> +				 struct ieee80211_vif *vif,
->> +				 struct ieee80211_scan_request *hw_req)
->> +{
->> +	struct ath12k *ar = hw->priv;
->> +	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
->> +	struct cfg80211_scan_request *req = &hw_req->req;
->> +	struct ath12k_wmi_scan_req_arg arg = {};
->> +	int ret = 0;
->
-> nit: unnecessary initializer since this is set in all cases of switch
-> (ar->scan.state)
-
-Fixed.
-
->> +	ret = ath12k_start_scan(ar, &arg);
->> +	if (ret) {
->> +		ath12k_warn(ar->ab, "failed to start hw scan: %d\n", ret);
->> +		spin_lock_bh(&ar->data_lock);
->> +		ar->scan.state = ATH12K_SCAN_IDLE;
->> +		spin_unlock_bh(&ar->data_lock);
->> +	}
+>> +	ret = ath12k_pci_get_user_msi_assignment(ab,
+>> +						 "MHI", &num_vectors,
+>> +						 &user_base_data, &base_vector);
+>> +	if (ret)
+>> +		return ret;
 >> +
->> +	/* Add a 200ms margin to account for event/command processing */
->
-> nit: remove 200ms from the comment. the value of the macro will be the
-> actual value, and values in comments like this tend to get out of sync
-> with the macros over time
-
-Indeed, fixed.
-
->> +static int ath12k_station_assoc(struct ath12k *ar,
->> +				struct ieee80211_vif *vif,
->> +				struct ieee80211_sta *sta,
->> +				bool reassoc)
->> +{
->> +	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
->> +	struct ath12k_wmi_peer_assoc_arg peer_arg;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int ath12k_station_disassoc(struct ath12k *ar,
->> +				   struct ieee80211_vif *vif,
->> +				   struct ieee80211_sta *sta)
->> +{
->> +	struct ath12k_vif *arvif = (void *)vif->drv_priv;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int ath12k_mac_op_sta_set_txpwr(struct ieee80211_hw *hw,
->> +				       struct ieee80211_vif *vif,
->> +				       struct ieee80211_sta *sta)
->> +{
->> +	struct ath12k *ar = hw->priv;
->> +	struct ath12k_vif *arvif = (void *)vif->drv_priv;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int ath12k_conf_tx_uapsd(struct ath12k *ar, struct ieee80211_vif *vif,
->> +				u16 ac, bool enable)
->> +{
->> +	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
->> +	u32 value = 0;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int ath12k_mac_set_txbf_conf(struct ath12k_vif *arvif)
->> +{
->
-> snip
->
->> +	/* TODO: SUBFEE not validated in HK, disable here until validated? */
->
-> nit: remove cryptic reference?
-
-Fixed.
-
->> +static void ath12k_set_vht_txbf_cap(struct ath12k *ar, u32 *vht_cap)
->> +{
->> +	bool subfer, subfee;
->> +	int sound_dim = 0;
+>> + ath12k_dbg(ab, ATH12K_DBG_PCI, "Number of assigned MSI for MHI is
+>> %d, base vector is %d\n",
+>> +		   num_vectors, base_vector);
 >> +
->> +	subfer = !!(*vht_cap & (IEEE80211_VHT_CAP_SU_BEAMFORMER_CAPABLE));
->> +	subfee = !!(*vht_cap & (IEEE80211_VHT_CAP_SU_BEAMFORMEE_CAPABLE));
->> +
->> +	if (ar->num_tx_chains < 2) {
->> +		*vht_cap &= ~(IEEE80211_VHT_CAP_SU_BEAMFORMER_CAPABLE);
->> +		subfer = false;
->> +	}
->> +
->> +	/* If SU Beaformer is not set, then disable MU Beamformer Capability */
->> +	if (!subfer)
->> +		*vht_cap &= ~(IEEE80211_VHT_CAP_MU_BEAMFORMER_CAPABLE);
->> +
->> +	/* If SU Beaformee is not set, then disable MU Beamformee Capability */
->> +	if (!subfee)
->> +		*vht_cap &= ~(IEEE80211_VHT_CAP_MU_BEAMFORMEE_CAPABLE);
->> +
->> +	sound_dim = (*vht_cap & IEEE80211_VHT_CAP_SOUNDING_DIMENSIONS_MASK);
->> +	sound_dim >>= IEEE80211_VHT_CAP_SOUNDING_DIMENSIONS_SHIFT;
->> +	*vht_cap &= ~IEEE80211_VHT_CAP_SOUNDING_DIMENSIONS_MASK;
+>> +	irq = kcalloc(num_vectors, sizeof(int), GFP_KERNEL);
 >
-> use bitops?
+> prefer sizeof(*irq)?
 
-Indeed, added to todo.
+Fixed.
 
->> +static int ath12k_mac_vif_txmgmt_idr_remove(int buf_id, void *skb, void *ctx)
+>> +void ath12k_mhi_unregister(struct ath12k_pci *ab_pci)
 >> +{
->> +	struct ieee80211_vif *vif = ctx;
->> +	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB((struct sk_buff *)skb);
->
-> nit: unnecessary typecast from void *?
-
-Fixed.
-
->> +static u32
->> +ath12k_mac_prepare_he_mode(struct ath12k_pdev *pdev, u32 viftype)
->> +{
->> +	struct ath12k_pdev_cap *pdev_cap = &pdev->cap;
->> +	struct ath12k_band_cap *cap_band = NULL;
->> +	u32 *hecap_phy_ptr = NULL;
->> +	u32 hemode = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int ath12k_set_he_mu_sounding_mode(struct ath12k *ar,
->> +					  struct ath12k_vif *arvif)
->> +{
->> +	u32 param_id, param_value;
->> +	struct ath12k_base *ab = ar->ab;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
->> +					   unsigned int changed_flags,
->> +					   unsigned int *total_flags,
->> +					   u64 multicast)
->> +{
->> +	struct ath12k *ar = hw->priv;
->> +	bool reset_flag = false;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
->> +			      const struct cfg80211_chan_def *chandef,
->> +			      bool restart)
->> +{
->> +	struct ath12k *ar = arvif->ar;
->> +	struct ath12k_base *ab = ar->ab;
->> +	struct wmi_vdev_start_req_arg arg = {};
->> +	int he_support = arvif->vif->bss_conf.he_support;
->> +	int ret = 0;
->
-> nit: unnecessary initializer?
-
-Fixed.
-
->> +static int
->> +ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
->> +				 struct ieee80211_vif *vif,
->> +				 struct ieee80211_bss_conf *link_conf,
->> +				 struct ieee80211_chanctx_conf *ctx)
->> +{
->
-> snip
->
->> +	ret = ath12k_mac_vdev_start(arvif, &ctx->def);
->> +	if (ret) {
->> +		ath12k_warn(ab, "failed to start vdev %i addr %pM on freq %d: %d\n",
->> +			    arvif->vdev_id, vif->addr,
->> +			    ctx->def.chan->center_freq, ret);
->> +		goto out;
->> +	}
+>> +	struct mhi_controller *mhi_ctrl = ab_pci->mhi_ctrl;
 >> +
->> +	if (arvif->vdev_type != WMI_VDEV_TYPE_MONITOR && ar->monitor_vdev_created)
->> +		ath12k_mac_monitor_start(ar);
->> +
->> +	arvif->is_started = true;
->> +
->> +	/* TODO: Setup ps and cts/rts protection */
->> +
->> +	ret = 0;
+>> +	mhi_unregister_controller(mhi_ctrl);
+>> +	kfree(mhi_ctrl->irq);
+>> +	mhi_free_controller(mhi_ctrl);
 >
-> unnecessary assignment -- already set from ath12k_mac_vdev_start()
+> consider setting ab_pci->mhi_ctrl = NULL to avoid dangling pointer?
 
 Fixed.
-
-> rest snipped. hard to review such a long file :P
-
-Indeed, mac.c is 7000 lines long. We should consider refactoring it to
-smaller files at some point.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
