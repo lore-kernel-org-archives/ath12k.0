@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BF6BC43219
-	for <ath12k@archiver.kernel.org>; Tue,  8 Nov 2022 14:00:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59BC2C43217
+	for <ath12k@archiver.kernel.org>; Tue,  8 Nov 2022 14:01:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=++Pq9Am5FvWGyzPstUNJu4MwlKEBo5nvSKJK4+QJpt8=; b=1QSkGbKtyrjoFP
-	8Xb32JJgN8Cljxpd6G45pcmSHB4BIyMXHqrXKI9pfBEhBV/yUUipS/LXrUCKvTjuR37Tllty8VxMH
-	MAsb+y9e/ItZ73u45ykdx8+PLhEFyRvNfWn61VeO2GTevXH9eoC2QJm1PVLX6IZrjDlRx1n7Q3kqn
-	U2++4yymXcR1uzM+yDnjKZ54hsVH3c5pip+uYIilNMknByzAzSwkg9mqU7y88Cbnhq9hZiR5PZZzO
-	gRsko44bmiILvzTChDAXbJN0x9A7wkxa8DPJWKiFcFNns4Wd5JbCFqTids5NtvpG+7W3dn2D7/aK4
-	Sp7toULZV13C02Twywyg==;
+	List-Owner; bh=PVnH/xxcZzEOXz21+7W0LTa1BS/Kz7F5t4CRLF3E0DI=; b=3JSmq1pZvOQaYS
+	Uy6tNW5liZoOD+DjCAc1n//WsB+z/y7rUudcoCi11/YXkj/dP6klJKcjo9M4YKrDzKq3EkvsFkvSL
+	KJuCHliiYbfNuhBvnl2FnlFHw3eJqV9xkZlIMnPT/e+DuvrSl9btcTjC/7ujnfPwxHJYKLZOf/umw
+	XMdXVgO7GYhBDkK9FIViG/zIQ3yS3w6W1v48FMeIzfBeh2ZgnXx8Q6qQAbc62I+UB12pkJr6lJWUK
+	416rKy/2DHBgqoocbCU0GxRuiRYEXAGaT1ItjSNt72dQCjV7nqWbVcMgllWsSi/JtrYPZU6lM8wyZ
+	mrok3UF4WO5Cj9MlHtKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osP9u-005nG9-HA
-	for ath12k@archiver.kernel.org; Tue, 08 Nov 2022 14:00:58 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1osPAe-005ni1-Q0
+	for ath12k@archiver.kernel.org; Tue, 08 Nov 2022 14:01:44 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osP9r-005nFS-GF
-	for ath12k@lists.infradead.org; Tue, 08 Nov 2022 14:00:57 +0000
+	id 1osPAb-005nhV-H8
+	for ath12k@lists.infradead.org; Tue, 08 Nov 2022 14:01:43 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id BB95D61567;
-	Tue,  8 Nov 2022 14:00:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7862C433B5;
-	Tue,  8 Nov 2022 14:00:53 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 08E59B81AFB;
+	Tue,  8 Nov 2022 14:01:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E32D6C433D6;
+	Tue,  8 Nov 2022 14:01:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1667916054;
-	bh=GQqN3uk4uI0pLzcEd/XRQ6ibDPBdgB9ImZSIjgy8Jhs=;
+	s=k20201202; t=1667916096;
+	bh=9prAyGVeteAqqEgdah8x4O25W796zsM/hMuDhu14HI0=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=mz12nUWZfx7cSJl2DB9kOkyE992ySRrcRzBhH8j144/iJPvMoEuu1aZRbixQ1WHLY
-	 dqx13Cn4V1vENfWPEAPyAQqQ5rBJ0dZly9xkaWa1DsbMuifNuy0S1qPHvhirhopf5N
-	 /HvI/0uNdtSXpoUkDoReXI8sbvxlY29gcrVyFhBAasvw/ZPDBwqJWAwNStsrPF0ZpV
-	 uI+x+oa5MV393+nCcRKqIN2IGeC0fTsX9c20F+7Dcye0yhRnVvuuqawAMw9LsNj9k+
-	 pUTe2onmpXgtOsrVqQ5fv/NdZDaUkeRyPSW550qtHnhBKVzyCWuANJ/jwx6m9N0i8j
-	 z1aSn3bMlbAqg==
+	b=ByzqXn4+OWE99tlqZypSWAaHb4gsVGWoAiYFV/1LFrPGUGwREoJHjQ8r4MK5vBDA3
+	 8gOXFxczaw/xksGs6YM8sMqJcoC7l2GOrFmC86q+G4QD2jN3VtrnIp8vSz1Xr3AzkX
+	 1XO8dgWynzQxIcizCK2W2+7nX+pwW97UEk0ddD1CoXq0IB3TvjrBgyAaGuOrsuWAHD
+	 +gBbeHRZzITKUB7Er5BzDXp56RTgr/Jb3Ec6OIsXodYRXqMCu7QGEN4X0zKDCuMssj
+	 Ym2LZGhURee7TTJY91eWoxzjMcGjRHAP7A74F4XUc2IbOdw0SqLkIncRq8eC8QVBWc
+	 AVWa26JAZNQTQ==
 From: Kalle Valo <kvalo@kernel.org>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
 Cc: <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>
-Subject: Re: [PATCH 33/50] wifi: ath12k: add mhi.c
+Subject: Re: [PATCH 34/50] wifi: ath12k: add mhi.h
 References: <20220812161003.27279-1-kvalo@kernel.org>
-	<20220812161003.27279-34-kvalo@kernel.org>
-	<05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com>
-Date: Tue, 08 Nov 2022 16:00:49 +0200
-In-Reply-To: <05841a52-3d2f-8704-b885-4b02e7a439e0@quicinc.com> (Jeff
-	Johnson's message of "Thu, 18 Aug 2022 15:25:49 -0700")
-Message-ID: <87h6z9eeb2.fsf@kernel.org>
+	<20220812161003.27279-35-kvalo@kernel.org>
+	<d4d4ab35-b38c-6369-e436-5eb37c502ca6@quicinc.com>
+Date: Tue, 08 Nov 2022 16:01:34 +0200
+In-Reply-To: <d4d4ab35-b38c-6369-e436-5eb37c502ca6@quicinc.com> (Jeff
+	Johnson's message of "Thu, 18 Aug 2022 15:30:53 -0700")
+Message-ID: <87cz9xee9t.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221108_060055_641467_C1558FE0 
-X-CRM114-Status: GOOD (  25.28  )
+X-CRM114-CacheID: sfid-20221108_060141_725573_5C97B648 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,118 +86,13 @@ Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 >> commit will be one big patch. See the cover letter for more info.)
 >>
 >> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/mhi.c | 615 ++++++++++++++++++++++++++++++++++
->>   1 file changed, 615 insertions(+)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/mhi.c
->> b/drivers/net/wireless/ath/ath12k/mhi.c
->> new file mode 100644
->> index 000000000000..f77634994d97
->> --- /dev/null
->> +++ b/drivers/net/wireless/ath/ath12k/mhi.c
->> @@ -0,0 +1,615 @@
->> +// SPDX-License-Identifier: BSD-3-Clause-Clear
->> +/*
->> + * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
->> + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
->> + */
->> +
->> +#include <linux/msi.h>
->> +#include <linux/pci.h>
->> +
->> +#include "core.h"
->> +#include "debug.h"
->> +#include "mhi.h"
->> +#include "pci.h"
->> +
->> +#define MHI_TIMEOUT_DEFAULT_MS	90000
->> +
->> +static struct mhi_channel_config ath12k_mhi_channels_qcn9274[] = {
+
+[...]
+
+>> +extern struct mhi_controller_config ath12k_mhi_config_qcn9274;
+>> +extern struct mhi_controller_config ath12k_mhi_config_wcn7850;
 >
-> should this be const?
-> in struct mhi_controller_config:
-> 	const struct mhi_channel_config *ch_cfg;
-
-Fixed.
-
->> +static struct mhi_event_config ath12k_mhi_events_qcn9274[] = {
->
-> seems this should be const
-> but for some reason struct mhi_controller_config has:
-> 	struct mhi_event_config *event_cfg;
->
-> (not const) so this can't be const :(
->
-> perhaps someone can propose a MHI interface change?
-> especially since internally to MHI in parse_ev_cfg() we have:
-> 	const struct mhi_event_config *event_cfg;
-> 	[...]
-> 	for (i = 0; i < num; i++) {
-> 		event_cfg = &config->event_cfg[i];
->
-> so it is treated as const
-
-You submitted a patch for this, thanks for that:
-
-https://lore.kernel.org/all/20220830171147.24338-1-quic_jjohnson@quicinc.com/
-
-But oddly I cannot find anywhere in git, I sent a question about that to
-the mhi list.
-
->> +static struct mhi_channel_config ath12k_mhi_channels_wcn7850[] = {
->
-> const
-
-Fixed.
-
->> +static struct mhi_event_config ath12k_mhi_events_wcn7850[] = {
->
-> keep not const (for now) :(
-
-Yup, hopefully we can fix this soon.
-
->> +struct mhi_controller_config ath12k_mhi_config_wcn7850 = {
->
-> and this one should be const since it is registered via:
->
-> int mhi_register_controller(struct mhi_controller *mhi_cntrl,
-> 			const struct mhi_controller_config *config);
-
-Fixed.
-
->> +static int ath12k_mhi_get_msi(struct ath12k_pci *ab_pci)
->> +{
->> +	struct ath12k_base *ab = ab_pci->ab;
->> +	u32 user_base_data, base_vector;
->> +	int ret, num_vectors, i;
->> +	int *irq;
->> +
->> +	ret = ath12k_pci_get_user_msi_assignment(ab,
->> +						 "MHI", &num_vectors,
->> +						 &user_base_data, &base_vector);
->> +	if (ret)
->> +		return ret;
->> +
->> + ath12k_dbg(ab, ATH12K_DBG_PCI, "Number of assigned MSI for MHI is
->> %d, base vector is %d\n",
->> +		   num_vectors, base_vector);
->> +
->> +	irq = kcalloc(num_vectors, sizeof(int), GFP_KERNEL);
->
-> prefer sizeof(*irq)?
-
-Fixed.
-
->> +void ath12k_mhi_unregister(struct ath12k_pci *ab_pci)
->> +{
->> +	struct mhi_controller *mhi_ctrl = ab_pci->mhi_ctrl;
->> +
->> +	mhi_unregister_controller(mhi_ctrl);
->> +	kfree(mhi_ctrl->irq);
->> +	mhi_free_controller(mhi_ctrl);
->
-> consider setting ab_pci->mhi_ctrl = NULL to avoid dangling pointer?
+> imo both should be const
 
 Fixed.
 
