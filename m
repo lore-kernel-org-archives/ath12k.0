@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59BC2C43217
-	for <ath12k@archiver.kernel.org>; Tue,  8 Nov 2022 14:01:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02357C4332F
+	for <ath12k@archiver.kernel.org>; Tue,  8 Nov 2022 14:45:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PVnH/xxcZzEOXz21+7W0LTa1BS/Kz7F5t4CRLF3E0DI=; b=3JSmq1pZvOQaYS
-	Uy6tNW5liZoOD+DjCAc1n//WsB+z/y7rUudcoCi11/YXkj/dP6klJKcjo9M4YKrDzKq3EkvsFkvSL
-	KJuCHliiYbfNuhBvnl2FnlFHw3eJqV9xkZlIMnPT/e+DuvrSl9btcTjC/7ujnfPwxHJYKLZOf/umw
-	XMdXVgO7GYhBDkK9FIViG/zIQ3yS3w6W1v48FMeIzfBeh2ZgnXx8Q6qQAbc62I+UB12pkJr6lJWUK
-	416rKy/2DHBgqoocbCU0GxRuiRYEXAGaT1ItjSNt72dQCjV7nqWbVcMgllWsSi/JtrYPZU6lM8wyZ
-	mrok3UF4WO5Cj9MlHtKg==;
+	List-Owner; bh=bI8G5sVn0u5ULislz1eD6r79qD+4uKYMmYwYIAi88SA=; b=MFR7BBNzFFZCfV
+	yk4ISmYmcWel+z5/gcr0a1HfqnWXxOQRl4rkeiUsQQKeRPddi2wgrYWcRubG893aPPFcGrSWvE3WP
+	8JERhx4kPqQ8zwAvjknfubKlfS3Svs8xidhJ3EHoNWBmF7+jKwbSPYe+d26QE+1LEzneQhwM1CCwP
+	pYVlC6allnoGywaVVPq8UM0+ChEZR/D7IyRNOWxPVkffVChM5EYamT3EWijF6vV1ZE7aGMlF+I245
+	Xr+aEsTQ3EuxhIuVNphIpm2Ob1fDtTcqOs+7N1YF0sAuuFhjMcfUrsTFECOIv9kRAobO9+E5UvMw0
+	YaxFT05HQ+tqYPlWVjEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osPAe-005ni1-Q0
-	for ath12k@archiver.kernel.org; Tue, 08 Nov 2022 14:01:44 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1osPrE-005yTK-9x
+	for ath12k@archiver.kernel.org; Tue, 08 Nov 2022 14:45:44 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osPAb-005nhV-H8
-	for ath12k@lists.infradead.org; Tue, 08 Nov 2022 14:01:43 +0000
+	id 1osPrB-005ySn-Hk
+	for ath12k@lists.infradead.org; Tue, 08 Nov 2022 14:45:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 08E59B81AFB;
-	Tue,  8 Nov 2022 14:01:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E32D6C433D6;
-	Tue,  8 Nov 2022 14:01:35 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D77FE614E3;
+	Tue,  8 Nov 2022 14:45:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 81372C433D6;
+	Tue,  8 Nov 2022 14:45:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1667916096;
-	bh=9prAyGVeteAqqEgdah8x4O25W796zsM/hMuDhu14HI0=;
+	s=k20201202; t=1667918740;
+	bh=2kooCGud+rjaS6L4Gd38qK6vl6TzkcqcMznVDB1kckk=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=ByzqXn4+OWE99tlqZypSWAaHb4gsVGWoAiYFV/1LFrPGUGwREoJHjQ8r4MK5vBDA3
-	 8gOXFxczaw/xksGs6YM8sMqJcoC7l2GOrFmC86q+G4QD2jN3VtrnIp8vSz1Xr3AzkX
-	 1XO8dgWynzQxIcizCK2W2+7nX+pwW97UEk0ddD1CoXq0IB3TvjrBgyAaGuOrsuWAHD
-	 +gBbeHRZzITKUB7Er5BzDXp56RTgr/Jb3Ec6OIsXodYRXqMCu7QGEN4X0zKDCuMssj
-	 Ym2LZGhURee7TTJY91eWoxzjMcGjRHAP7A74F4XUc2IbOdw0SqLkIncRq8eC8QVBWc
-	 AVWa26JAZNQTQ==
+	b=Wqa17tY9DUXPi1vEdkphMT+axzdEDC3HrORIIEzjpzy3ODMARrJ4UmUfF4laAiyaW
+	 8ioN1T1zlk7BUeQjoXsgec9ZPr7xcl57YgJdjEM+KRrPRJ+xMQb3whcBS331dfoLVt
+	 buxvPQYZNESDcT+RRRQY0eNERL+dA1mFzApIWgZ/cuQbzyECkJNq9AvhGYIi6MsQnP
+	 1D8guavBxaU1JA/wBjBsFVGUJ9oy+GwJlafR3M6CAEvvAMNTsY/7Mietj8E6jhKyFH
+	 f4B9xAHF/wmjHb3S+9MY3RjkvQz8IusMhqzOOzcPJelScgPge6E/pCEg27D1AxFPb2
+	 g8l+asUZCiBLA==
 From: Kalle Valo <kvalo@kernel.org>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
 Cc: <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>
-Subject: Re: [PATCH 34/50] wifi: ath12k: add mhi.h
+Subject: Re: [PATCH 35/50] wifi: ath12k: add pci.c
 References: <20220812161003.27279-1-kvalo@kernel.org>
-	<20220812161003.27279-35-kvalo@kernel.org>
-	<d4d4ab35-b38c-6369-e436-5eb37c502ca6@quicinc.com>
-Date: Tue, 08 Nov 2022 16:01:34 +0200
-In-Reply-To: <d4d4ab35-b38c-6369-e436-5eb37c502ca6@quicinc.com> (Jeff
-	Johnson's message of "Thu, 18 Aug 2022 15:30:53 -0700")
-Message-ID: <87cz9xee9t.fsf@kernel.org>
+	<20220812161003.27279-36-kvalo@kernel.org>
+	<7b06d248-c976-6c9f-4d5c-5dec7b1d5511@quicinc.com>
+Date: Tue, 08 Nov 2022 16:45:37 +0200
+In-Reply-To: <7b06d248-c976-6c9f-4d5c-5dec7b1d5511@quicinc.com> (Jeff
+	Johnson's message of "Thu, 18 Aug 2022 16:02:14 -0700")
+Message-ID: <878rklec8e.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221108_060141_725573_5C97B648 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20221108_064541_647025_BA0E9686 
+X-CRM114-Status: GOOD (  17.24  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,20 +78,76 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
 > On 8/12/2022 9:09 AM, Kalle Valo wrote:
->
 >> From: Kalle Valo <quic_kvalo@quicinc.com>
 >>
 >> (Patches split into one patch per file for easier review, but the final
 >> commit will be one big patch. See the cover letter for more info.)
 >>
 >> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-
-[...]
-
->> +extern struct mhi_controller_config ath12k_mhi_config_qcn9274;
->> +extern struct mhi_controller_config ath12k_mhi_config_wcn7850;
+>> ---
+>>   drivers/net/wireless/ath/ath12k/pci.c | 1344 +++++++++++++++++++++++++++++++++
+>>   1 file changed, 1344 insertions(+)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/pci.c
+>> b/drivers/net/wireless/ath/ath12k/pci.c
 >
-> imo both should be const
+> snip
+>
+>> +static void ath12k_pci_remove(struct pci_dev *pdev)
+>> +{
+>> +	struct ath12k_base *ab = pci_get_drvdata(pdev);
+>> +	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
+>> +
+>> +	if (test_bit(ATH12K_FLAG_QMI_FAIL, &ab->dev_flags)) {
+>> +		ath12k_pci_power_down(ab);
+>> +		ath12k_qmi_deinit_service(ab);
+>> +		goto qmi_fail;
+>> +	}
+>> +
+>> +	set_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags);
+>> +
+>> +	cancel_work_sync(&ab->reset_work);
+>> +	ath12k_core_deinit(ab);
+>> +
+>> +qmi_fail:
+>> +	ath12k_mhi_unregister(ab_pci);
+>> +
+>> +	ath12k_pci_free_irq(ab);
+>> +	ath12k_pci_msi_free(ab_pci);
+>> +	ath12k_pci_free_region(ab_pci);
+>> +
+>> +	ath12k_hal_srng_deinit(ab);
+>> +	ath12k_ce_free_pipes(ab);
+>> +	destroy_workqueue(ab->workqueue_aux);
+>
+> it seems strange/asymetrical to destroy this here.
+>
+> it was allocated in ath12k_core_alloc() so I'd expect it to be
+> destroyed in ath12k_core_free() to maintain symmetry
+
+Fixed.
+
+> in addition I don't see ab->workqueue being destroyed, and imo that
+> should also take place in ath12k_core_free() for the same reason
+
+This is also fixed.
+
+>> +static SIMPLE_DEV_PM_OPS(ath12k_pci_pm_ops,
+>> +			 ath12k_pci_pm_suspend,
+>> +			 ath12k_pci_pm_resume);
+>> +
+>> +static struct pci_driver ath12k_pci_driver = {
+>> +	.name = "ath12k_pci",
+>> +	.id_table = ath12k_pci_id_table,
+>> +	.probe = ath12k_pci_probe,
+>> +	.remove = ath12k_pci_remove,
+>> +	.shutdown = ath12k_pci_shutdown,
+>> +#ifdef CONFIG_PM
+>> +	.driver.pm = &ath12k_pci_pm_ops,
+>> +#endif
+>
+> conditional compilation is unnecessary here since SIMPLE_DEV_PM_OPS
+> handles the conditional
 
 Fixed.
 
