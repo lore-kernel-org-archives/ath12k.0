@@ -4,56 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38D1EC433FE
-	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 17:46:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B874C43217
+	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 17:46:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8nMMh5Z23X8ys90g3q56+lFZ6qo+Wd9aQ+/1GiaoODE=; b=hvQz5Rm3eDKFBo
-	yf7IO7yQKyx4CFCZbkg0wc4/XlMDorlnI3Y0GVlkAkkQ1rZlwToljoeVx0DUwTz4Wpn24jU4UzIcI
-	7mvAtPvVw6Kwbf7wE5cuehlK0Sh1qC/YvMM+ADqu9YKDPp9nUnfRikTHbkGF/UyvjzorvQKEFfEz/
-	3g6zMultxowqKXVIYIJJj4zdTd1tzdgPcBfKGCKFKRn96Tgcx919nTHrbji8DLp9UjtwVqLMMff5F
-	2Ip0mA0YHiydKPumsqvxyo+P6Ab21ND+9gfsEb7WDlWbqyu/ICFk3cnLQadaSCvKx0+8sr/qHGDbG
-	kI63G+XPAbFy3u1qasSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rFM/jgPrWg+J5YTuJPRRrZmv9aOKRvQF9zPE3b3AGok=; b=mAD36r2iLtiYBw
+	QT8vPWhZMYn0bmIJV3BdMGgvjFoqGzx0PDxRp3uHA5xAetHTprh2sbzRVzYkcjz4VdhZkIM1Ko0DK
+	0Bcqix8JlL19jPBkNf59Ci5cjcsb3VS3+cDdp4I9WWqW/0ht9QzOeWGjpEa2nTLtskIhzjMAZpMVi
+	/crp/AaZirP/uDDSP1D96GJ9tyKWMXSBZVKVBdenBZ6GAAC4M3ywR3nDDu4RDAvJLbUYRZxReXuYH
+	4xRJVPkAhE7baS0tuotMRGDuf38uQOnMo7G6I5nkm8vLrVg9O8ceCBcFnC+gjdpHVgf4WtzmLZIKD
+	ZZ78G/pXaM6po/xdwdRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovMU5-006ble-Mi
-	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 17:46:01 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1ovMU6-006bmg-Fl
+	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 17:46:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRQ-005xMu-2Y
-	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:16 +0000
+	id 1ovLRb-005xjG-GQ
+	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:26 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 51C71CE1BDC
-	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA030C433C1;
-	Wed, 16 Nov 2022 16:39:06 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2112361EDA
+	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 04C12C433D7;
+	Wed, 16 Nov 2022 16:39:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668616747;
-	bh=xAet6t7SMYSpYMId9rmJBrw/UKR2Kdu8vWYcdikEhtg=;
-	h=From:To:Cc:Subject:Date:From;
-	b=V/BddIf30KRgEcrIQCP5ouItziytq21n9K+6+nFoIfVMkFv0amL/PiPh66Y1xvooE
-	 Q4zwutDoRwrE8kmwnEdk1HETzGTxQ1/ODYbB+81hynRP1PXDcw6siIz9fVxin4D0LE
-	 Pvm0l37TGM/X8rRR/P9tRZqxnWNbzcLfZXHib9rj8O/L6fMXCnIBjKEPqclshhX7KA
-	 +tvGgtmKlXsLcFJQHB1QWVEBSla+t83vmWzTJh7q0+cMLBiSaOqtahXT1ODaP+dbYX
-	 xcpCSFhUSYdwrGDCBtZtNU+CigPGRWSY11bDB3iGPuKf8+EdBJUKLCFxoyyR30Gmun
-	 rI5EXO/gg/aNA==
+	s=k20201202; t=1668616762;
+	bh=ATo1sKjzu8Op3S6t1v9qL3Bjry5l4Am2KPMrV2NCwuc=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=QfGxDD7bT4AmGLIrUs8lvyh4/q0i1RRP0v/Mw4ILZhOfYbNGUYed9Z/zDbR+Lj7ft
+	 UsGTtvt+g9Eb1Ggc2P0tG3D8eHKVczEs7hSAjDOnG6j/38nZ0xtRpkrgKUUpURD1rk
+	 alkiKrS192NiKoOm72UctC1W8a7mXGdKAOlAX9Sw8KIdKDE4lJXmNfB1RRAQZAjjoJ
+	 SoLCvZNLnJ5PuqHvxGqcnQHAdGYW1yK3/vh/pMOdGdtg7XAyI+R6PJfYBEJaeoMeRQ
+	 R8nFx/8q9Cx8w9SyWvckSpTDntq0UP4cIdkyLbXdXStbI6MQ1SJF4aIV+BECl1+GXg
+	 TrJK9j5fdLsCw==
 From: Kalle Valo <kvalo@kernel.org>
 To: linux-wireless@vger.kernel.org
 Cc: ath12k@lists.infradead.org
-Subject: [PATCH v2 00/50] wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices
-Date: Wed, 16 Nov 2022 18:38:12 +0200
-Message-Id: <20221116163902.24996-1-kvalo@kernel.org>
+Subject: [PATCH v2 14/50] wifi: ath12k: add dp_mon.h
+Date: Wed, 16 Nov 2022 18:38:26 +0200
+Message-Id: <20221116163902.24996-15-kvalo@kernel.org>
 X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20221116163902.24996-1-kvalo@kernel.org>
+References: <20221116163902.24996-1-kvalo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_083913_010924_48CE4ACC 
-X-CRM114-Status: GOOD (  19.91  )
+X-CRM114-CacheID: sfid-20221116_083923_644060_19678D41 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,185 +74,126 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Kalle Valo <quic_kvalo@quicinc.com>
 
-ath12k is a new mac80211 driver for Qualcomm Wi-Fi 7 devices, first
-supporting QCN9274 and WCN7850 PCI devices.  QCN9274 supports both AP
-and station; WCN7850 supports only station mode. Monitor mode is not
-(yet) supported. Only PCI bus devices are supported.
+(Patches split into one patch per file for easier review, but the final
+commit will be one big patch. See the cover letter for more info.)
 
-ath12k is forked from an earlier version of ath11k. It was simpler to
-have a "clean start" for the new generation and not try to share the
-code with ath11k. This makes maintenance easier and avoids major
-changes in ath11k, which would have significantly increased the risk
-of regressions in existing setups.
-
-ath12k uses le32 and cpu_to_le32() macros to handle endian
-conversions, instead of using the firmware byte swap feature utilized
-by ath11k. There is only one kernel module, named ath12k.ko.
-
-Currently ath12k only supports HE mode (IEEE 802.11ax) or older, but
-work is ongoing to add EHT mode (IEEE 802.11be) support.
-
-The size of the driver is ~41 kLOC and 45 files. To make the review
-easier, this initial version of ath12k does not support Device Tree,
-debugfs or any other extra features. Those will be added later, after
-ath12k is accepted to upstream.
-
-The driver is build tested by Intel's kernel test robot with both GCC
-and Clang. Sparse reports no warnings. The driver is mostly free of
-checkpatch warnings, albeit few of the warnings are omitted on
-purpose, list of them here:
-
-https://github.com/qca/qca-swiss-army-knife/blob/master/tools/scripts/ath12k/ath12k-check#L52
-
-The driver has had multiple authors who are listed in alphabetical
-order below.
-
-Co-developed-by: Balamurugan S <quic_bselvara@quicinc.com>
-Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-Co-developed-by: Balamurugan Selvarajan <quic_bselvara@quicinc.com>
-Signed-off-by: Balamurugan Selvarajan <quic_bselvara@quicinc.com>
-Co-developed-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Co-developed-by: Bhagavathi Perumal S <quic_bperumal@quicinc.com>
-Signed-off-by: Bhagavathi Perumal S <quic_bperumal@quicinc.com>
-Co-developed-by: Carl Huang <quic_cjhuang@quicinc.com>
-Signed-off-by: Carl Huang <quic_cjhuang@quicinc.com>
-Co-developed-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Co-developed-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-Co-developed-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Co-developed-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Co-developed-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Co-developed-by: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-Signed-off-by: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-Co-developed-by: Wen Gong <quic_wgong@quicinc.com>
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_mon.h | 106 +++++++++++++++++++++++++++++++
+ 1 file changed, 106 insertions(+)
 
---------------[cut]-------------------[cut]-----------------
-
-For easier review I have split the driver into multiple patches (one
-file per patch). But in the final version, which will be commited to
-git, all these patches will be folded into one big patch. So in the
-git archive the full driver be in a single commit to avoid any bisect
-issues etc.
-
-This version is based on commit 324dde0354ace6d793cd79a6654cd8e20872e082
-from ath12k-bringup branch on my ath.git tree:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/log/?h=ath12k-bringup
-
-The patchset applies on top of wireless-next commit:
-
-a9501019f2de706eb43b59d66dcde70a23440cd3
-
-Unfortunately the firmware images are not yet available but they will be soon, the
-plan is to publish them any day now.
-
-Please review and comment.
-
-Kalle
-
-v2:
-
-* Lots of comments both from Jeff and Ping addressed.
-
-* Support for QCN9274 hw2.0.
-
-* git log --oneline --reverse ath12k-bringup-v1..ath12k-bringup-v2 drivers/net/wireless/ath/ath12k/:
-
-c8bd8aa45f6a ath12k: fix ATH12K_DBG_DP_TX value in ath12k_debug_mask
-1b4a11d871b4 wifi: ath12k: dp: remove unused structures
-efc72b2aa34c wifi: ath12k: dp: convert htt cmd structs to __le32
-f2226a858c6c wifi: ath12k: dp: add __packed to struct htt_tx_ring_selection_cfg_cmd
-ded0b851ddb1 wifi: ath12k: mac: replace get_num_chains() with hweight32()
-2bae125b29fd wifi: ath12k: dp: convert event structures to le32 and le16
-dab2e1356301 wifi: ath12k: dp: fix long line warnings introduced in previous patch
-e094a9ab1340 wifi: ath12k: dp: convert ath12k_dp_htt_tlv_iter() to a static function
-c34c346fe9cc wifi: ath12k: Remove the redundant code in ce_send
-c568d8bc26de ath12k: convert payload[0] to payload[], use ab variable and fix __ath12k_dbg() signature
-b290b591dbdd ath12k: remove magic number offset in rx_user_status struct
-1a458fd07d47 ath12k: remove __packed from the ath12k_skb_cb struct
-7887e032942a wifi: ath12k: fix dp peer setup error handling
-6b650b8d9fd3 wifi: ath12k: make bank_config as return value instead of an argument
-d09d40c053b3 wifi: ath12k: fix dangling pointer during vdev bank profile cleanup
-4a033426a7e2 wifi: ath12k: reverse the order of common srng cleanup
-eaa2ce8b29bd wifi: ath12k: use enum for determining tx or rx monitor mode
-8589ba1261da wifi: ath12k: cleanup monitor interrupt processing
-45b3bcb37321 wifi: ath12k: fix tx descriptor cleanup
-54ea2140eb0f wifi: ath12k: avoid using memset for initializing structure
-3936b1ff26d1 wifi: ath12k: fix initializations in dp_tx.c
-67ecf855bd48 wifi: ath12k: fix peer access in ath12k_peer_find_by_vdev_id
-2f2e1a9c64b1 wifi: ath12k: Change mhi_config member to const in ath12k_hw_params structure
-ef4638246b7f wifi: ath12k: Declare cosnt for mhi controller config and channel config
-e7afb023979c wifi: ath12k: Initialize ab_pci->mhi_ctrl to NULL in mhi unregister
-229acc4f9feb wifi: ath12k: Declare structure member as constant
-454c8ff42ac5 wifi: ath12k: remove unnecessary debug print
-10a5d161e3d1 wifi: ath12k: fix the iteration in ath12k_htc_get_credit_allocation
-529d0f47ef90 wifi: ath12k: avoid unnecessary initializer
-7d147446cf0b wifi: ath12k: fix ath12k_hw_ring_mask intializer
-b528f968d261 wifi: ath12k: fix misspelled words
-dc40c72b9831 wifi: ath12k: fix indentation in ath12k_hal_srng_update_hp_tp_addr
-db88dec1cf82 wifi: ath12k: fix ath12k_he_ru_tones_to_nl80211_he_ru_alloc
-9e24a0dab3f9 wifi: ath12k: fix zero element array in ath12k_htc_record
-16fd0b13a04f wifi: ath12k: remove unused/draft structure
-725d23f61ea3 wifi: ath12k: Fix hw mode setup error handling
-fc27ae0c8ebe wifi: ath12k: remove packing for struct ppdu_user_delayba
-795c1a99be86 wifi: ath12k: set tid vaddr to NULL after free
-27a5dfb1af56 wifi: ath12k: fix typo in dp_rx.c
-b0132b83649b wifi: ath12k: dp_rx: replace use of sizeof(struct ...) with sizeof(member)
-7b3a801aad49 wifi: ath12k: dp_rx: avoid unnecessary function initializers
-2d9db64a52fa wifi: ath12k: Declare 'drop' variable as bool in rx err processing
-b6ef02504a91 wifi: ath12k: log peer mac in case of pn config failure
-08c766f0e4d3 wifi: ath12k: Remove duplicate use of used buf count variable
-faa8a0a89616 wifi: ath12k: dp_rx: avoid use of bitwise OR for the first assignment
-3ca5427e7315 wifi: ath12k: move monitor reap timer init out of srng setup
-2942a582a455 wifi: ath12k: dp_rx: unlock spinlock before logging
-8dd0efa92787 wifi: ath12k: fix failure handling during buffer replenish
-e4589bd5717e wifi: ath12k: avoid unnecessary typecast
-9ae39e387a65 wifi: ath12k: remove backpressure event handler
-b7359c7cbbd5 wifi: ath12k: fix a recently introduced long line warning in dp.h
-8f0edd33f436 wifi: ath12k: Change consistency of logging in wmi.c
-e7171c7f2ac2 wifi: ath12k: remove unnecessary initializer in mac.c
-afb95e82a20e wifi: ath12k: Group related constants into enum
-0808f3bbb335 wifi: ath12k: Update reference in comments
-f2f15d0adf34 wifi: ath12k: fix uninitialized function return value
-8069d95c4157 wifi: ath12k: fix srng configuration dangling pointer
-4ec85908eb49 wifi: ath12k: refactor the DSCP TID map
-bd676f340565 wifi: ath12k: refactor HTC connection flag
-620b992fbdb3 wifi: ath12k: avoid unnecessary initialization of local variable
-daddbf430f14 wifi: ath12k: add comments to justify spin unlock
-42a0928f9b5b wifi: ath12k: fix svc_id in ath12k_htc_setup_target_buffer_assignments
-a7acf32c70f4 wifi: ath12k: do empty initializer instead of memset
-607f79b27b97 wifi: ath12k: update to shadow register v3 configuration
-5a9ae823b2dd wifi: ath12k: remove qdss config download code
-bfef46ffcc5e wifi: ath12k: trivial change in ath12k_dbring_buf_setup
-640978f9fb1f wifi: ath12k: Fix typo and initializer in mac.c
-c5444c60c642 wifi: ath12k: avoid unnecessary initialization of local variable
-1ff52c83d54b wifi: ath12k: add QCN9274 hw2.0 register related changes
-5a26aea56ae9 wifi: ath12k: add HAL changes to support QCN9274 hw2.0
-90bfc0fe0f07 wifi: ath12k: add hardware params for QCN9274 hw2.0
-0b7b165dd088 wifi: ath12k: pci: check TCSR_SOC_HW_VERSION
-62cf12719696 wifi: ath12k: Endianness and bit ops changes in wmi.c
-392fb0544176 wifi: ath12k: Fix invalid management rx frame length
-b4e956acc25b wifi: ath12k: hal: use parenthesis with complex values
-76ed1650d959 wifi: ath12k: hal: fix possible side affects
-adf26aed2c11 wifi: ath12k: wmi: whitespace fixes
-f9b3b6aa0317 Merge ath-next into ath12k-bringup
-93f45aee4c5d wifi: ath12k: Remove conditional compilation for pm ops
-a6d720a7ca6c wifi: ath12k: Move destroy_workqueue(xx) to ath12k_core_free()
-73db655f7f75 wifi: ath12k: don't use zero-length element arrays
-3a8a8251fde1 wifi: ath12k: dp: remove ath12k_htt_pktlog()
-c826fbcfba79 wifi: ath12k: core: remove unused struct ath12k_vif::tx_seq_no
-ac43b20e7d06 wifi: ath12k: mac: use u32_replace_bits() to set beamforming capabilities
-ea6338c47150 wifi: ath12k: wmi: avoid copying invalid vdev key data
-
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.h b/drivers/net/wireless/ath/ath12k/dp_mon.h
+new file mode 100644
+index 000000000000..c18c385798a1
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.h
+@@ -0,0 +1,106 @@
++/* SPDX-License-Identifier: BSD-3-Clause-Clear */
++/*
++ * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++
++#ifndef ATH12K_DP_MON_H
++#define ATH12K_DP_MON_H
++
++#include "core.h"
++
++enum dp_monitor_mode {
++	ATH12K_DP_TX_MONITOR_MODE,
++	ATH12K_DP_RX_MONITOR_MODE
++};
++
++enum dp_mon_tx_ppdu_info_type {
++	DP_MON_TX_PROT_PPDU_INFO,
++	DP_MON_TX_DATA_PPDU_INFO
++};
++
++enum dp_mon_tx_tlv_status {
++	DP_MON_TX_FES_SETUP,
++	DP_MON_TX_FES_STATUS_END,
++	DP_MON_RX_RESPONSE_REQUIRED_INFO,
++	DP_MON_RESPONSE_END_STATUS_INFO,
++	DP_MON_TX_MPDU_START,
++	DP_MON_TX_MSDU_START,
++	DP_MON_TX_BUFFER_ADDR,
++	DP_MON_TX_DATA,
++	DP_MON_TX_STATUS_PPDU_NOT_DONE,
++};
++
++enum dp_mon_tx_medium_protection_type {
++	DP_MON_TX_MEDIUM_NO_PROTECTION,
++	DP_MON_TX_MEDIUM_RTS_LEGACY,
++	DP_MON_TX_MEDIUM_RTS_11AC_STATIC_BW,
++	DP_MON_TX_MEDIUM_RTS_11AC_DYNAMIC_BW,
++	DP_MON_TX_MEDIUM_CTS2SELF,
++	DP_MON_TX_MEDIUM_QOS_NULL_NO_ACK_3ADDR,
++	DP_MON_TX_MEDIUM_QOS_NULL_NO_ACK_4ADDR
++};
++
++struct dp_mon_qosframe_addr4 {
++	__le16 frame_control;
++	__le16 duration;
++	u8 addr1[ETH_ALEN];
++	u8 addr2[ETH_ALEN];
++	u8 addr3[ETH_ALEN];
++	__le16 seq_ctrl;
++	u8 addr4[ETH_ALEN];
++	__le16 qos_ctrl;
++} __packed;
++
++struct dp_mon_frame_min_one {
++	__le16 frame_control;
++	__le16 duration;
++	u8 addr1[ETH_ALEN];
++} __packed;
++
++struct dp_mon_packet_info {
++	u64 cookie;
++	u16 dma_length;
++	bool msdu_continuation;
++	bool truncated;
++};
++
++struct dp_mon_tx_ppdu_info {
++	u32 ppdu_id;
++	u8  num_users;
++	bool is_used;
++	struct hal_rx_mon_ppdu_info rx_status;
++	struct list_head dp_tx_mon_mpdu_list;
++	struct dp_mon_mpdu *tx_mon_mpdu;
++};
++
++enum hal_rx_mon_status
++ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
++				  struct ath12k_mon_data *pmon,
++				  int mac_id, struct sk_buff *skb,
++				  struct napi_struct *napi);
++int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
++				struct dp_rxdma_ring *buf_ring,
++				int req_entries);
++int ath12k_dp_mon_srng_process(struct ath12k *ar, int mac_id,
++			       int *budget, enum dp_monitor_mode monitor_mode,
++			       struct napi_struct *napi);
++int ath12k_dp_mon_process_ring(struct ath12k_base *ab, int mac_id,
++			       struct napi_struct *napi, int budget,
++			       enum dp_monitor_mode monitor_mode);
++struct sk_buff *ath12k_dp_mon_tx_alloc_skb(void);
++enum dp_mon_tx_tlv_status
++ath12k_dp_mon_tx_status_get_num_user(u16 tlv_tag,
++				     struct hal_tlv_hdr *tx_tlv,
++				     u8 *num_users);
++enum hal_rx_mon_status
++ath12k_dp_mon_tx_parse_mon_status(struct ath12k *ar,
++				  struct ath12k_mon_data *pmon,
++				  int mac_id,
++				  struct sk_buff *skb,
++				  struct napi_struct *napi,
++				  u32 ppdu_id);
++void ath12k_dp_mon_rx_process_ulofdma(struct hal_rx_mon_ppdu_info *ppdu_info);
++int ath12k_dp_mon_rx_process_stats(struct ath12k *ar, int mac_id,
++				   struct napi_struct *napi, int *budget);
++#endif
 
 
 -- 
