@@ -4,72 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC552C46467
-	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 17:46:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E7CC4708A
+	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 17:46:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=caKC/gxW2tU6C6ZSh9AEDe8y5PaJrpIdwhi+dPDrYAQ=; b=B87C5Ko6FEVO4J
-	60IC4SHr9MU1E0OdER+BbxFpzDgRc/zefjS02NrSC87GekYYuJC91FQ/lqVSxsNU95nRSACcZWWuO
-	UqbwZBU2jUD4uA09IuRnfmAcpk8jS81OAD6xFtneNk0FzzkTedKX27VxpKgytUTvXlekN5KHnjmuT
-	lFALXxJU3xEpcldoPFRo2bpcZjBJ/7/7p4NfsFgUnddZbsWt4rneg5j29tyR6yq1JZueVz2BDMkMV
-	Tpu+W1gh7mdgjSb+i5M3vU2Kz91rpEDvMdu0gq7VUxHu69vXsIh3ivNJT5Y6kkQh+5tqTNQQW0XP5
-	fHmUDRsyt8q/oi5+90Pw==;
+	List-Owner; bh=VZEF1ITPo58S8R+fWQhEGiVaXhRQu+ReTeHxQHfXdvs=; b=z4HhKWg4FcVOJL
+	YwmnWNv8P01/YELkWezShaHCTrDLLK4wDb9y6a/LaZ7TjGrQf94W/ZosDeWQzNQxfDDYUCWhC1qGD
+	CcW6AX9d/tsjlPNsHD1uU2BE6HmCeB70EfPn2uEGZCbG1mshcOJx044keGtCs3wN7xq/ivQq8oX4J
+	qvAmHt9iCxD5vxzcGSH2TCbdTL174I++eaBDkawykb2VlVVP5FbRO9bl5Q7KN2NnvsuEC27tMh9lF
+	4SjAJ6SvFwePIFFrYOBDmg+Bzxl4NeNouywH8HRVl+yb2CatQvDWYqR/VftTk+AiKFKo5Pkoz9Ac/
+	pJNHa0rWUA6qJrOiYshA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovMUI-006bxC-E6
+	id 1ovMUI-006bxt-O2
 	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 17:46:14 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRt-005xgh-SE
-	for ath12k@bombadil.infradead.org; Wed, 16 Nov 2022 16:39:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=YnkIxPzyZRM/sHPU/ZwMs+UDq5CEvhXXVpTO2XL9TrI=; b=OWCC07BgGD7zYUb5u00q8v7gj8
-	ajyfCffrkS/zSFN6f+ZMN3twK9PU+G55q7+6JepL6AWBqNDuXlyaZysrS8yHzDyHWzCoxUdEiTnie
-	mtwDLpFINMVzchCIgjHGP1ezESNtx7tZZ2feu2CWPEKL796/pEmnpe15wHhVO5z1fqedYzrcWEMik
-	noGp0G5aHjx9wQ8aH0pt50RiJzNBBCxtneGDsR5w+cPI5Xu4JqhAJzcZ5Q0PZrFoWldDf+DY8zNWM
-	TXohfe3r6IOlzUZoLg9k21XHM4zQGqkcq8b99ojRuN0DXDLHQTpnz+mNBlpdLMd6wEi9iAUWn1SLz
-	LE+qY/FQ==;
-Received: from sin.source.kernel.org ([145.40.73.55])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRq-001OwB-CZ
-	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:40 +0000
+	id 1ovLRy-005yEv-C3
+	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:47 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id E8751CE1BDC
-	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BE02C433C1;
-	Wed, 16 Nov 2022 16:39:33 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0122361EF7
+	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E60CC4314A;
+	Wed, 16 Nov 2022 16:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668616774;
-	bh=+70Y5sJc8kp4qcrR7GwFhWpeZR5mZ5XSWXvkap53iZM=;
+	s=k20201202; t=1668616785;
+	bh=t4pf8U2vgt03/8dO2tN5i52yc7ErpHhSBObbGI6YtwE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=SUtCp2fiZuQ8EfeT9hluhyneen1KedQ4NXdsD4TLRRTwSlmNh2HWLaUrNhhNCFcBU
-	 jL1yoHo4sNqjQrTcuY6qSdvjf+Tp6jCOdqOTUKcNBHqKpWKA3kIiQ6CYBitspe7cZr
-	 Ytntycz+UWGXSXDinV7LFSyge0tit8HDCfdo859KDuZXKl1Q5Wg1w4AKdm/3E89pOZ
-	 H4c9qzbNGi2c9j+DydGi2W0w0ZaPeIOwBgvzdBMa4IfC0yN7kexfp1bYCX6VBN8j/W
-	 N5piLjc+/Nu6XKYpZlTre7jTbMfxFpn0Pw6ytNqkbYpts1So/u4caCUztVo7BnUK6j
-	 c7ASnAYGVOrGA==
+	b=MlPUdWJOBNP3L+enwxukV1yOXEx+RtifbW+DvZToX+lbdJtcGg3sy8vAEylcfOCgW
+	 0JRCOZ+bTFdZdR1ueo8wL4BAezkwJdhjNuClo8zbNYdRj4LBBJA8XpddCMBQxj7q+S
+	 TSeTTfw1Ka1iqBHVbgFe14v5qSGktZf3hsh+lkjYpCTjAjKmMsKE/XC6+sUTL8HzF1
+	 j2u0hcKEU230eh5VWviLHzFKcFknnxCxoJv7C/F+lUL6i0HIZM3HhFMv2zwmw71t5c
+	 ocgX703HLHsFIaHXYz9vnISCTZzVJoFpDDi5Cj5Lck1G9jkxfqQbe+I18nc8fHgrll
+	 i8RyEvWVs5Mtg==
 From: Kalle Valo <kvalo@kernel.org>
 To: linux-wireless@vger.kernel.org
 Cc: ath12k@lists.infradead.org
-Subject: [PATCH v2 25/50] wifi: ath12k: add hal_tx.h
-Date: Wed, 16 Nov 2022 18:38:37 +0200
-Message-Id: <20221116163902.24996-26-kvalo@kernel.org>
+Subject: [PATCH v2 36/50] wifi: ath12k: add pci.h
+Date: Wed, 16 Nov 2022 18:38:48 +0200
+Message-Id: <20221116163902.24996-37-kvalo@kernel.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20221116163902.24996-1-kvalo@kernel.org>
 References: <20221116163902.24996-1-kvalo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_163938_858324_7472C3F7 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20221116_083946_509223_BE49AA92 
+X-CRM114-Status: GOOD (  14.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,209 +79,150 @@ commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hal_tx.h | 194 +++++++++++++++++++++++++++++++
- 1 file changed, 194 insertions(+)
+ drivers/net/wireless/ath/ath12k/pci.h | 135 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 135 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal_tx.h b/drivers/net/wireless/ath/ath12k/hal_tx.h
+diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
 new file mode 100644
-index 000000000000..7c837094a6f7
+index 000000000000..0d9e40ab31f2
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/hal_tx.h
-@@ -0,0 +1,194 @@
++++ b/drivers/net/wireless/ath/ath12k/pci.h
+@@ -0,0 +1,135 @@
 +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
 +/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
 + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
 + */
++#ifndef ATH12K_PCI_H
++#define ATH12K_PCI_H
 +
-+#ifndef ATH12K_HAL_TX_H
-+#define ATH12K_HAL_TX_H
++#include <linux/mhi.h>
 +
-+#include "hal_desc.h"
 +#include "core.h"
 +
-+#define HAL_TX_ADDRX_EN			1
-+#define HAL_TX_ADDRY_EN			2
++#define PCIE_SOC_GLOBAL_RESET			0x3008
++#define PCIE_SOC_GLOBAL_RESET_V			1
 +
-+#define HAL_TX_ADDR_SEARCH_DEFAULT	0
-+#define HAL_TX_ADDR_SEARCH_INDEX	1
++#define WLAON_WARM_SW_ENTRY			0x1f80504
++#define WLAON_SOC_RESET_CAUSE_REG		0x01f8060c
 +
-+/* TODO: check all these data can be managed with struct ath12k_tx_desc_info for perf */
-+struct hal_tx_info {
-+	u16 meta_data_flags; /* %HAL_TCL_DATA_CMD_INFO0_META_ */
-+	u8 ring_id;
-+	u8 rbm_id;
-+	u32 desc_id;
-+	enum hal_tcl_desc_type type;
-+	enum hal_tcl_encap_type encap_type;
-+	dma_addr_t paddr;
-+	u32 data_len;
-+	u32 pkt_offset;
-+	enum hal_encrypt_type encrypt_type;
-+	u32 flags0; /* %HAL_TCL_DATA_CMD_INFO1_ */
-+	u32 flags1; /* %HAL_TCL_DATA_CMD_INFO2_ */
-+	u16 addr_search_flags; /* %HAL_TCL_DATA_CMD_INFO0_ADDR(X/Y)_ */
-+	u16 bss_ast_hash;
-+	u16 bss_ast_idx;
-+	u8 tid;
-+	u8 search_type; /* %HAL_TX_ADDR_SEARCH_ */
-+	u8 lmac_id;
-+	u8 vdev_id;
-+	u8 dscp_tid_tbl_idx;
-+	bool enable_mesh;
-+	int bank_id;
++#define PCIE_Q6_COOKIE_ADDR			0x01f80500
++#define PCIE_Q6_COOKIE_DATA			0xc0000000
++
++/* register to wake the UMAC from power collapse */
++#define PCIE_SCRATCH_0_SOC_PCIE_REG		0x4040
++
++/* register used for handshake mechanism to validate UMAC is awake */
++#define PCIE_SOC_WAKE_PCIE_LOCAL_REG		0x3004
++
++#define PCIE_PCIE_PARF_LTSSM			0x1e081b0
++#define PARM_LTSSM_VALUE			0x111
++
++#define GCC_GCC_PCIE_HOT_RST			0x1e38338
++#define GCC_GCC_PCIE_HOT_RST_VAL		0x10
++
++#define PCIE_PCIE_INT_ALL_CLEAR			0x1e08228
++#define PCIE_SMLH_REQ_RST_LINK_DOWN		0x2
++#define PCIE_INT_CLEAR_ALL			0xffffffff
++
++#define PCIE_QSERDES_COM_SYSCLK_EN_SEL_REG(ab) \
++	((ab)->hw_params->regs->pcie_qserdes_sysclk_en_sel)
++#define PCIE_QSERDES_COM_SYSCLK_EN_SEL_VAL	0x10
++#define PCIE_QSERDES_COM_SYSCLK_EN_SEL_MSK	0xffffffff
++#define PCIE_PCS_OSC_DTCT_CONFIG1_REG(ab) \
++	((ab)->hw_params->regs->pcie_pcs_osc_dtct_config_base)
++#define PCIE_PCS_OSC_DTCT_CONFIG1_VAL		0x02
++#define PCIE_PCS_OSC_DTCT_CONFIG2_REG(ab) \
++	((ab)->hw_params->regs->pcie_pcs_osc_dtct_config_base + 0x4)
++#define PCIE_PCS_OSC_DTCT_CONFIG2_VAL		0x52
++#define PCIE_PCS_OSC_DTCT_CONFIG4_REG(ab) \
++	((ab)->hw_params->regs->pcie_pcs_osc_dtct_config_base + 0xc)
++#define PCIE_PCS_OSC_DTCT_CONFIG4_VAL		0xff
++#define PCIE_PCS_OSC_DTCT_CONFIG_MSK		0x000000ff
++
++#define WLAON_QFPROM_PWR_CTRL_REG		0x01f8031c
++#define QFPROM_PWR_CTRL_VDD4BLOW_MASK		0x4
++
++#define PCI_BAR_WINDOW0_BASE	0x1E00000
++#define PCI_BAR_WINDOW0_END	0x1E7FFFC
++#define PCI_SOC_RANGE_MASK	0x3FFF
++#define PCI_SOC_PCI_REG_BASE	0x1E04000
++#define PCI_SOC_PCI_REG_END	0x1E07FFC
++#define PCI_PARF_BASE		0x1E08000
++#define PCI_PARF_END		0x1E0BFFC
++#define PCI_MHIREGLEN_REG	0x1E0E100
++#define PCI_MHI_REGION_END	0x1E0EFFC
++#define QRTR_PCI_DOMAIN_NR_MASK		GENMASK(7, 4)
++#define QRTR_PCI_BUS_NUMBER_MASK	GENMASK(3, 0)
++
++#define ATH12K_PCI_SOC_HW_VERSION_1	1
++#define ATH12K_PCI_SOC_HW_VERSION_2	2
++
++struct ath12k_msi_user {
++	const char *name;
++	int num_vectors;
++	u32 base_vector;
 +};
 +
-+/* TODO: Check if the actual desc macros can be used instead */
-+#define HAL_TX_STATUS_FLAGS_FIRST_MSDU		BIT(0)
-+#define HAL_TX_STATUS_FLAGS_LAST_MSDU		BIT(1)
-+#define HAL_TX_STATUS_FLAGS_MSDU_IN_AMSDU	BIT(2)
-+#define HAL_TX_STATUS_FLAGS_RATE_STATS_VALID	BIT(3)
-+#define HAL_TX_STATUS_FLAGS_RATE_LDPC		BIT(4)
-+#define HAL_TX_STATUS_FLAGS_RATE_STBC		BIT(5)
-+#define HAL_TX_STATUS_FLAGS_OFDMA		BIT(6)
-+
-+#define HAL_TX_STATUS_DESC_LEN		sizeof(struct hal_wbm_release_ring)
-+
-+/* Tx status parsed from srng desc */
-+struct hal_tx_status {
-+	enum hal_wbm_rel_src_module buf_rel_source;
-+	enum hal_wbm_tqm_rel_reason status;
-+	u8 ack_rssi;
-+	u32 flags; /* %HAL_TX_STATUS_FLAGS_ */
-+	u32 ppdu_id;
-+	u8 try_cnt;
-+	u8 tid;
-+	u16 peer_id;
-+	u32 rate_stats;
++struct ath12k_msi_config {
++	int total_vectors;
++	int total_users;
++	const struct ath12k_msi_user *users;
 +};
 +
-+#define HAL_TX_PHY_DESC_INFO0_BF_TYPE		GENMASK(17, 16)
-+#define HAL_TX_PHY_DESC_INFO0_PREAMBLE_11B	BIT(20)
-+#define HAL_TX_PHY_DESC_INFO0_PKT_TYPE		GENMASK(24, 21)
-+#define HAL_TX_PHY_DESC_INFO0_BANDWIDTH		GENMASK(30, 28)
-+#define HAL_TX_PHY_DESC_INFO1_MCS		GENMASK(3, 0)
-+#define HAL_TX_PHY_DESC_INFO1_STBC		BIT(6)
-+#define HAL_TX_PHY_DESC_INFO2_NSS		GENMASK(23, 21)
-+#define HAL_TX_PHY_DESC_INFO3_AP_PKT_BW		GENMASK(6, 4)
-+#define HAL_TX_PHY_DESC_INFO3_LTF_SIZE		GENMASK(20, 19)
-+#define HAL_TX_PHY_DESC_INFO3_ACTIVE_CHANNEL	GENMASK(17, 15)
++enum ath12k_pci_flags {
++	ATH12K_PCI_FLAG_INIT_DONE,
++	ATH12K_PCI_FLAG_IS_MSI_64,
++	ATH12K_PCI_ASPM_RESTORE,
++};
 +
-+struct hal_tx_phy_desc {
-+	__le32 info0;
-+	__le32 info1;
-+	__le32 info2;
-+	__le32 info3;
-+} __packed;
++struct ath12k_pci {
++	struct pci_dev *pdev;
++	struct ath12k_base *ab;
++	u16 dev_id;
++	char amss_path[100];
++	u32 msi_ep_base_data;
++	struct mhi_controller *mhi_ctrl;
++	const struct ath12k_msi_config *msi_config;
++	unsigned long mhi_state;
++	u32 register_window;
 +
-+#define HAL_TX_FES_STAT_PROT_INFO0_STRT_FRM_TS_15_0	GENMASK(15, 0)
-+#define HAL_TX_FES_STAT_PROT_INFO0_STRT_FRM_TS_31_16	GENMASK(31, 16)
-+#define HAL_TX_FES_STAT_PROT_INFO1_END_FRM_TS_15_0	GENMASK(15, 0)
-+#define HAL_TX_FES_STAT_PROT_INFO1_END_FRM_TS_31_16	GENMASK(31, 16)
++	/* protects register_window above */
++	spinlock_t window_lock;
 +
-+struct hal_tx_fes_status_prot {
-+	__le64 reserved;
-+	__le32 info0;
-+	__le32 info1;
-+	__le32 reserved1[11];
-+} __packed;
++	/* enum ath12k_pci_flags */
++	unsigned long flags;
++	u16 link_ctl;
++};
 +
-+#define HAL_TX_FES_STAT_USR_PPDU_INFO0_DURATION		GENMASK(15, 0)
++static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
++{
++	return (struct ath12k_pci *)ab->drv_priv;
++}
 +
-+struct hal_tx_fes_status_user_ppdu {
-+	__le64 reserved;
-+	__le32 info0;
-+	__le32 reserved1[3];
-+} __packed;
-+
-+#define HAL_TX_FES_STAT_STRT_INFO0_PROT_TS_LOWER_32	GENMASK(31, 0)
-+#define HAL_TX_FES_STAT_STRT_INFO1_PROT_TS_UPPER_32	GENMASK(31, 0)
-+
-+struct hal_tx_fes_status_start_prot {
-+	__le32 info0;
-+	__le32 info1;
-+	__le64 reserved;
-+} __packed;
-+
-+#define HAL_TX_FES_STATUS_START_INFO0_MEDIUM_PROT_TYPE	GENMASK(29, 27)
-+
-+struct hal_tx_fes_status_start {
-+	__le32 reserved;
-+	__le32 info0;
-+	__le64 reserved1;
-+} __packed;
-+
-+#define HAL_TX_Q_EXT_INFO0_FRAME_CTRL		GENMASK(15, 0)
-+#define HAL_TX_Q_EXT_INFO0_QOS_CTRL		GENMASK(31, 16)
-+#define HAL_TX_Q_EXT_INFO1_AMPDU_FLAG		BIT(0)
-+
-+struct hal_tx_queue_exten {
-+	__le32 info0;
-+	__le32 info1;
-+} __packed;
-+
-+#define HAL_TX_FES_SETUP_INFO0_NUM_OF_USERS	GENMASK(28, 23)
-+
-+struct hal_tx_fes_setup {
-+	__le32 schedule_id;
-+	__le32 info0;
-+	__le64 reserved;
-+} __packed;
-+
-+#define HAL_TX_PPDU_SETUP_INFO0_MEDIUM_PROT_TYPE	GENMASK(2, 0)
-+#define HAL_TX_PPDU_SETUP_INFO1_PROT_FRAME_ADDR1_31_0	GENMASK(31, 0)
-+#define HAL_TX_PPDU_SETUP_INFO2_PROT_FRAME_ADDR1_47_32	GENMASK(15, 0)
-+#define HAL_TX_PPDU_SETUP_INFO2_PROT_FRAME_ADDR2_15_0	GENMASK(31, 16)
-+#define HAL_TX_PPDU_SETUP_INFO3_PROT_FRAME_ADDR2_47_16	GENMASK(31, 0)
-+#define HAL_TX_PPDU_SETUP_INFO4_PROT_FRAME_ADDR3_31_0	GENMASK(31, 0)
-+#define HAL_TX_PPDU_SETUP_INFO5_PROT_FRAME_ADDR3_47_32	GENMASK(15, 0)
-+#define HAL_TX_PPDU_SETUP_INFO5_PROT_FRAME_ADDR4_15_0	GENMASK(31, 16)
-+#define HAL_TX_PPDU_SETUP_INFO6_PROT_FRAME_ADDR4_47_16	GENMASK(31, 0)
-+
-+struct hal_tx_pcu_ppdu_setup_init {
-+	__le32 info0;
-+	__le32 info1;
-+	__le32 info2;
-+	__le32 info3;
-+	__le32 reserved;
-+	__le32 info4;
-+	__le32 info5;
-+	__le32 info6;
-+} __packed;
-+
-+#define HAL_TX_FES_STATUS_END_INFO0_START_TIMESTAMP_15_0	GENMASK(15, 0)
-+#define HAL_TX_FES_STATUS_END_INFO0_START_TIMESTAMP_31_16	GENMASK(31, 16)
-+
-+struct hal_tx_fes_status_end {
-+	__le32 reserved[2];
-+	__le32 info0;
-+	__le32 reserved1[19];
-+} __packed;
-+
-+#define HAL_TX_BANK_CONFIG_EPD			BIT(0)
-+#define HAL_TX_BANK_CONFIG_ENCAP_TYPE		GENMASK(2, 1)
-+#define HAL_TX_BANK_CONFIG_ENCRYPT_TYPE		GENMASK(6, 3)
-+#define HAL_TX_BANK_CONFIG_SRC_BUFFER_SWAP	BIT(7)
-+#define HAL_TX_BANK_CONFIG_LINK_META_SWAP	BIT(8)
-+#define HAL_TX_BANK_CONFIG_INDEX_LOOKUP_EN	BIT(9)
-+#define HAL_TX_BANK_CONFIG_ADDRX_EN		BIT(10)
-+#define HAL_TX_BANK_CONFIG_ADDRY_EN		BIT(11)
-+#define HAL_TX_BANK_CONFIG_MESH_EN		GENMASK(13, 12)
-+#define HAL_TX_BANK_CONFIG_VDEV_ID_CHECK_EN	BIT(14)
-+#define HAL_TX_BANK_CONFIG_PMAC_ID		GENMASK(16, 15)
-+/* STA mode will have MCAST_PKT_CTRL instead of DSCP_TID_MAP bitfield */
-+#define HAL_TX_BANK_CONFIG_DSCP_TIP_MAP_ID	GENMASK(22, 17)
-+
-+void ath12k_hal_tx_cmd_desc_setup(struct ath12k_base *ab,
-+				  struct hal_tcl_data_cmd *tcl_cmd,
-+				  struct hal_tx_info *ti);
-+void ath12k_hal_tx_set_dscp_tid_map(struct ath12k_base *ab, int id);
-+int ath12k_hal_reo_cmd_send(struct ath12k_base *ab, struct hal_srng *srng,
-+			    enum hal_reo_cmd_type type,
-+			    struct ath12k_hal_reo_cmd *cmd);
-+void ath12k_hal_tx_configure_bank_register(struct ath12k_base *ab, u32 bank_config,
-+					   u8 bank_id);
-+#endif
++int ath12k_pci_get_user_msi_assignment(struct ath12k_base *ab, char *user_name,
++				       int *num_vectors, u32 *user_base_data,
++				       u32 *base_vector);
++int ath12k_pci_get_msi_irq(struct device *dev, unsigned int vector);
++void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value);
++u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset);
++int ath12k_pci_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
++				   u8 *ul_pipe, u8 *dl_pipe);
++void ath12k_pci_get_msi_address(struct ath12k_base *ab, u32 *msi_addr_lo,
++				u32 *msi_addr_hi);
++void ath12k_pci_get_ce_msi_idx(struct ath12k_base *ab, u32 ce_id,
++			       u32 *msi_idx);
++void ath12k_pci_hif_ce_irq_enable(struct ath12k_base *ab);
++void ath12k_pci_hif_ce_irq_disable(struct ath12k_base *ab);
++void ath12k_pci_ext_irq_enable(struct ath12k_base *ab);
++void ath12k_pci_ext_irq_disable(struct ath12k_base *ab);
++int ath12k_pci_hif_suspend(struct ath12k_base *ab);
++int ath12k_pci_hif_resume(struct ath12k_base *ab);
++void ath12k_pci_stop(struct ath12k_base *ab);
++int ath12k_pci_start(struct ath12k_base *ab);
++int ath12k_pci_power_up(struct ath12k_base *ab);
++void ath12k_pci_power_down(struct ath12k_base *ab);
++#endif /* ATH12K_PCI_H */
 
 
 -- 
