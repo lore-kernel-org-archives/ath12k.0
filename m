@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E7CC4708A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BF50C3E8A8
 	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 17:46:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VZEF1ITPo58S8R+fWQhEGiVaXhRQu+ReTeHxQHfXdvs=; b=z4HhKWg4FcVOJL
-	YwmnWNv8P01/YELkWezShaHCTrDLLK4wDb9y6a/LaZ7TjGrQf94W/ZosDeWQzNQxfDDYUCWhC1qGD
-	CcW6AX9d/tsjlPNsHD1uU2BE6HmCeB70EfPn2uEGZCbG1mshcOJx044keGtCs3wN7xq/ivQq8oX4J
-	qvAmHt9iCxD5vxzcGSH2TCbdTL174I++eaBDkawykb2VlVVP5FbRO9bl5Q7KN2NnvsuEC27tMh9lF
-	4SjAJ6SvFwePIFFrYOBDmg+Bzxl4NeNouywH8HRVl+yb2CatQvDWYqR/VftTk+AiKFKo5Pkoz9Ac/
-	pJNHa0rWUA6qJrOiYshA==;
+	List-Owner; bh=U1Ns0Ljxhm7rcD4DRlcOK4UCsYenaMJ6tH6rgSX+XRw=; b=thEwWHnSvwYkzg
+	lRN8GzgmPzb5T+OSjNOTVjJuhK6cpwPihQNS+82WXJi6pslXDFmRpFRDhsLisxZM/Ktzj16GXeYUl
+	6+b4salMwZlqiJyccTDE3JvawF+MZ7661uiZDDapQbW0N0Y0hdZO3wEefJmLt+30ZH8CEVvwyr5Ff
+	ExgdgJTu5l/6mwp9DLlTFQO0KZrEewPTWmrPklDcvku0dBb0k0qkipLpGqdr5U66S4LQ6/E1Eb2SM
+	nk/UkLIX2ylMI0xaJYf2BeN/aGLcuZrPM4Mua9E6xLGDnrKqFXwWPmM13fJ8t6LaAIjM/FGgyuEbg
+	Cu98lC/A3jlE935R8TTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovMUI-006bxt-O2
+	id 1ovMUI-006bxK-GM
 	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 17:46:14 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRy-005yEv-C3
-	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:47 +0000
+	id 1ovLRr-005y5i-Rk
+	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0122361EF7
-	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E60CC4314A;
-	Wed, 16 Nov 2022 16:39:44 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 8BE98B81DFB
+	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6EDEC433C1;
+	Wed, 16 Nov 2022 16:39:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668616785;
-	bh=t4pf8U2vgt03/8dO2tN5i52yc7ErpHhSBObbGI6YtwE=;
+	s=k20201202; t=1668616777;
+	bh=nbbzjkB11pnpzCTeO2d39qrlIZCcDKB4ymr1nraM/c4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=MlPUdWJOBNP3L+enwxukV1yOXEx+RtifbW+DvZToX+lbdJtcGg3sy8vAEylcfOCgW
-	 0JRCOZ+bTFdZdR1ueo8wL4BAezkwJdhjNuClo8zbNYdRj4LBBJA8XpddCMBQxj7q+S
-	 TSeTTfw1Ka1iqBHVbgFe14v5qSGktZf3hsh+lkjYpCTjAjKmMsKE/XC6+sUTL8HzF1
-	 j2u0hcKEU230eh5VWviLHzFKcFknnxCxoJv7C/F+lUL6i0HIZM3HhFMv2zwmw71t5c
-	 ocgX703HLHsFIaHXYz9vnISCTZzVJoFpDDi5Cj5Lck1G9jkxfqQbe+I18nc8fHgrll
-	 i8RyEvWVs5Mtg==
+	b=EIxAi5BZRjFLBkISk51bCFb0n8HM0c9ccBaZoCpBhjxBhsPAfZqSQhJlwpL9+KlJP
+	 htqdInSPYqLdKdiFcRRDLNr5DR8IX41N3wc+TyjDDtmrKmL2hTyDftx27zNZJ/yjxg
+	 7vTR6C6HqiUwD/bobRHwPr5ysgP4TQ0W4ifFarMDd6vuuKA+wO6GC5iTBFkcinzHq6
+	 R+82O5ww8b22cTjtasW2Ha7pAPHMLfvl1Myk57C+zdEWNVCDtSYRtDwcTr0bYuLQyA
+	 iFL1ukYyUZmwain8Edo/oBN1W57beRC7mpDyVADVrS5pIsCZ4X/k+Ozs1qj0CgANWf
+	 4AD9NCeCV+fNQ==
 From: Kalle Valo <kvalo@kernel.org>
 To: linux-wireless@vger.kernel.org
 Cc: ath12k@lists.infradead.org
-Subject: [PATCH v2 36/50] wifi: ath12k: add pci.h
-Date: Wed, 16 Nov 2022 18:38:48 +0200
-Message-Id: <20221116163902.24996-37-kvalo@kernel.org>
+Subject: [PATCH v2 28/50] wifi: ath12k: add htc.h
+Date: Wed, 16 Nov 2022 18:38:40 +0200
+Message-Id: <20221116163902.24996-29-kvalo@kernel.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20221116163902.24996-1-kvalo@kernel.org>
 References: <20221116163902.24996-1-kvalo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_083946_509223_BE49AA92 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20221116_083940_225607_F286FAA6 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,150 +79,331 @@ commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/pci.h | 135 ++++++++++++++++++++++++++++++++++
- 1 file changed, 135 insertions(+)
+ drivers/net/wireless/ath/ath12k/htc.h | 316 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 316 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
+diff --git a/drivers/net/wireless/ath/ath12k/htc.h b/drivers/net/wireless/ath/ath12k/htc.h
 new file mode 100644
-index 000000000000..0d9e40ab31f2
+index 000000000000..7e3dccc7cc14
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -0,0 +1,135 @@
++++ b/drivers/net/wireless/ath/ath12k/htc.h
+@@ -0,0 +1,316 @@
 +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
 +/*
-+ * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
 + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
 + */
-+#ifndef ATH12K_PCI_H
-+#define ATH12K_PCI_H
 +
-+#include <linux/mhi.h>
++#ifndef ATH12K_HTC_H
++#define ATH12K_HTC_H
 +
-+#include "core.h"
++#include <linux/kernel.h>
++#include <linux/list.h>
++#include <linux/bug.h>
++#include <linux/skbuff.h>
++#include <linux/timer.h>
 +
-+#define PCIE_SOC_GLOBAL_RESET			0x3008
-+#define PCIE_SOC_GLOBAL_RESET_V			1
++struct ath12k_base;
 +
-+#define WLAON_WARM_SW_ENTRY			0x1f80504
-+#define WLAON_SOC_RESET_CAUSE_REG		0x01f8060c
++#define HTC_HDR_ENDPOINTID                       GENMASK(7, 0)
++#define HTC_HDR_FLAGS                            GENMASK(15, 8)
++#define HTC_HDR_PAYLOADLEN                       GENMASK(31, 16)
++#define HTC_HDR_CONTROLBYTES0                    GENMASK(7, 0)
++#define HTC_HDR_CONTROLBYTES1                    GENMASK(15, 8)
++#define HTC_HDR_RESERVED                         GENMASK(31, 16)
 +
-+#define PCIE_Q6_COOKIE_ADDR			0x01f80500
-+#define PCIE_Q6_COOKIE_DATA			0xc0000000
++#define HTC_SVC_MSG_SERVICE_ID                   GENMASK(31, 16)
++#define HTC_SVC_MSG_CONNECTIONFLAGS              GENMASK(15, 0)
++#define HTC_SVC_MSG_SERVICEMETALENGTH            GENMASK(23, 16)
++#define HTC_READY_MSG_CREDITCOUNT                GENMASK(31, 16)
++#define HTC_READY_MSG_CREDITSIZE                 GENMASK(15, 0)
++#define HTC_READY_MSG_MAXENDPOINTS               GENMASK(23, 16)
 +
-+/* register to wake the UMAC from power collapse */
-+#define PCIE_SCRATCH_0_SOC_PCIE_REG		0x4040
++#define HTC_READY_EX_MSG_HTCVERSION              GENMASK(7, 0)
++#define HTC_READY_EX_MSG_MAXMSGSPERHTCBUNDLE     GENMASK(15, 8)
 +
-+/* register used for handshake mechanism to validate UMAC is awake */
-+#define PCIE_SOC_WAKE_PCIE_LOCAL_REG		0x3004
++#define HTC_SVC_RESP_MSG_SERVICEID           GENMASK(31, 16)
++#define HTC_SVC_RESP_MSG_STATUS              GENMASK(7, 0)
++#define HTC_SVC_RESP_MSG_ENDPOINTID          GENMASK(15, 8)
++#define HTC_SVC_RESP_MSG_MAXMSGSIZE          GENMASK(31, 16)
++#define HTC_SVC_RESP_MSG_SERVICEMETALENGTH   GENMASK(7, 0)
 +
-+#define PCIE_PCIE_PARF_LTSSM			0x1e081b0
-+#define PARM_LTSSM_VALUE			0x111
++#define HTC_MSG_MESSAGEID                        GENMASK(15, 0)
++#define HTC_SETUP_COMPLETE_EX_MSG_SETUPFLAGS     GENMASK(31, 0)
++#define HTC_SETUP_COMPLETE_EX_MSG_MAXMSGSPERBUNDLEDRECV      GENMASK(7, 0)
++#define HTC_SETUP_COMPLETE_EX_MSG_RSVD0          GENMASK(15, 8)
++#define HTC_SETUP_COMPLETE_EX_MSG_RSVD1          GENMASK(23, 16)
++#define HTC_SETUP_COMPLETE_EX_MSG_RSVD2          GENMASK(31, 24)
 +
-+#define GCC_GCC_PCIE_HOT_RST			0x1e38338
-+#define GCC_GCC_PCIE_HOT_RST_VAL		0x10
-+
-+#define PCIE_PCIE_INT_ALL_CLEAR			0x1e08228
-+#define PCIE_SMLH_REQ_RST_LINK_DOWN		0x2
-+#define PCIE_INT_CLEAR_ALL			0xffffffff
-+
-+#define PCIE_QSERDES_COM_SYSCLK_EN_SEL_REG(ab) \
-+	((ab)->hw_params->regs->pcie_qserdes_sysclk_en_sel)
-+#define PCIE_QSERDES_COM_SYSCLK_EN_SEL_VAL	0x10
-+#define PCIE_QSERDES_COM_SYSCLK_EN_SEL_MSK	0xffffffff
-+#define PCIE_PCS_OSC_DTCT_CONFIG1_REG(ab) \
-+	((ab)->hw_params->regs->pcie_pcs_osc_dtct_config_base)
-+#define PCIE_PCS_OSC_DTCT_CONFIG1_VAL		0x02
-+#define PCIE_PCS_OSC_DTCT_CONFIG2_REG(ab) \
-+	((ab)->hw_params->regs->pcie_pcs_osc_dtct_config_base + 0x4)
-+#define PCIE_PCS_OSC_DTCT_CONFIG2_VAL		0x52
-+#define PCIE_PCS_OSC_DTCT_CONFIG4_REG(ab) \
-+	((ab)->hw_params->regs->pcie_pcs_osc_dtct_config_base + 0xc)
-+#define PCIE_PCS_OSC_DTCT_CONFIG4_VAL		0xff
-+#define PCIE_PCS_OSC_DTCT_CONFIG_MSK		0x000000ff
-+
-+#define WLAON_QFPROM_PWR_CTRL_REG		0x01f8031c
-+#define QFPROM_PWR_CTRL_VDD4BLOW_MASK		0x4
-+
-+#define PCI_BAR_WINDOW0_BASE	0x1E00000
-+#define PCI_BAR_WINDOW0_END	0x1E7FFFC
-+#define PCI_SOC_RANGE_MASK	0x3FFF
-+#define PCI_SOC_PCI_REG_BASE	0x1E04000
-+#define PCI_SOC_PCI_REG_END	0x1E07FFC
-+#define PCI_PARF_BASE		0x1E08000
-+#define PCI_PARF_END		0x1E0BFFC
-+#define PCI_MHIREGLEN_REG	0x1E0E100
-+#define PCI_MHI_REGION_END	0x1E0EFFC
-+#define QRTR_PCI_DOMAIN_NR_MASK		GENMASK(7, 4)
-+#define QRTR_PCI_BUS_NUMBER_MASK	GENMASK(3, 0)
-+
-+#define ATH12K_PCI_SOC_HW_VERSION_1	1
-+#define ATH12K_PCI_SOC_HW_VERSION_2	2
-+
-+struct ath12k_msi_user {
-+	const char *name;
-+	int num_vectors;
-+	u32 base_vector;
++enum ath12k_htc_tx_flags {
++	ATH12K_HTC_FLAG_NEED_CREDIT_UPDATE = 0x01,
++	ATH12K_HTC_FLAG_SEND_BUNDLE        = 0x02
 +};
 +
-+struct ath12k_msi_config {
-+	int total_vectors;
-+	int total_users;
-+	const struct ath12k_msi_user *users;
++enum ath12k_htc_rx_flags {
++	ATH12K_HTC_FLAG_TRAILER_PRESENT = 0x02,
++	ATH12K_HTC_FLAG_BUNDLE_MASK     = 0xF0
 +};
 +
-+enum ath12k_pci_flags {
-+	ATH12K_PCI_FLAG_INIT_DONE,
-+	ATH12K_PCI_FLAG_IS_MSI_64,
-+	ATH12K_PCI_ASPM_RESTORE,
++struct ath12k_htc_hdr {
++	__le32 htc_info;
++	__le32 ctrl_info;
++} __packed __aligned(4);
++
++enum ath12k_htc_msg_id {
++	ATH12K_HTC_MSG_READY_ID                = 1,
++	ATH12K_HTC_MSG_CONNECT_SERVICE_ID      = 2,
++	ATH12K_HTC_MSG_CONNECT_SERVICE_RESP_ID = 3,
++	ATH12K_HTC_MSG_SETUP_COMPLETE_ID       = 4,
++	ATH12K_HTC_MSG_SETUP_COMPLETE_EX_ID    = 5,
++	ATH12K_HTC_MSG_SEND_SUSPEND_COMPLETE   = 6,
++	ATH12K_HTC_MSG_NACK_SUSPEND	       = 7,
++	ATH12K_HTC_MSG_WAKEUP_FROM_SUSPEND_ID  = 8,
 +};
 +
-+struct ath12k_pci {
-+	struct pci_dev *pdev;
++enum ath12k_htc_version {
++	ATH12K_HTC_VERSION_2P0 = 0x00, /* 2.0 */
++	ATH12K_HTC_VERSION_2P1 = 0x01, /* 2.1 */
++};
++
++enum ath12k_htc_conn_flag_threshold_level {
++	ATH12K_HTC_CONN_FLAGS_THRESHOLD_LEVEL_ONE_FOURTH,
++	ATH12K_HTC_CONN_FLAGS_THRESHOLD_LEVEL_ONE_HALF,
++	ATH12K_HTC_CONN_FLAGS_THRESHOLD_LEVEL_THREE_FOURTHS,
++	ATH12K_HTC_CONN_FLAGS_THRESHOLD_LEVEL_UNITY,
++};
++
++#define ATH12K_HTC_CONN_FLAGS_THRESHOLD_LEVEL_MASK	GENMASK(1, 0)
++#define ATH12K_HTC_CONN_FLAGS_REDUCE_CREDIT_DRIBBLE	BIT(2)
++#define ATH12K_HTC_CONN_FLAGS_DISABLE_CREDIT_FLOW_CTRL	BIT(3)
++#define ATH12K_HTC_CONN_FLAGS_RECV_ALLOC		GENMASK(15, 8)
++
++enum ath12k_htc_conn_svc_status {
++	ATH12K_HTC_CONN_SVC_STATUS_SUCCESS      = 0,
++	ATH12K_HTC_CONN_SVC_STATUS_NOT_FOUND    = 1,
++	ATH12K_HTC_CONN_SVC_STATUS_FAILED       = 2,
++	ATH12K_HTC_CONN_SVC_STATUS_NO_RESOURCES = 3,
++	ATH12K_HTC_CONN_SVC_STATUS_NO_MORE_EP   = 4
++};
++
++struct ath12k_htc_ready {
++	__le32 id_credit_count;
++	__le32 size_ep;
++} __packed;
++
++struct ath12k_htc_ready_extended {
++	struct ath12k_htc_ready base;
++	__le32 ver_bundle;
++} __packed;
++
++struct ath12k_htc_conn_svc {
++	__le32 msg_svc_id;
++	__le32 flags_len;
++} __packed;
++
++struct ath12k_htc_conn_svc_resp {
++	__le32 msg_svc_id;
++	__le32 flags_len;
++	__le32 svc_meta_pad;
++} __packed;
++
++struct ath12k_htc_setup_complete_extended {
++	__le32 msg_id;
++	__le32 flags;
++	__le32 max_msgs_per_bundled_recv;
++} __packed;
++
++struct ath12k_htc_msg {
++	__le32 msg_svc_id;
++	__le32 flags_len;
++} __packed __aligned(4);
++
++enum ath12k_htc_record_id {
++	ATH12K_HTC_RECORD_NULL    = 0,
++	ATH12K_HTC_RECORD_CREDITS = 1
++};
++
++struct ath12k_htc_record_hdr {
++	u8 id; /* @enum ath12k_htc_record_id */
++	u8 len;
++	u8 pad0;
++	u8 pad1;
++} __packed;
++
++struct ath12k_htc_credit_report {
++	u8 eid; /* @enum ath12k_htc_ep_id */
++	u8 credits;
++	u8 pad0;
++	u8 pad1;
++} __packed;
++
++struct ath12k_htc_record {
++	struct ath12k_htc_record_hdr hdr;
++	struct ath12k_htc_credit_report credit_report[];
++} __packed __aligned(4);
++
++/* HTC FRAME structure layout draft
++ *
++ * note: the trailer offset is dynamic depending
++ * on payload length. this is only a struct layout draft
++ *
++ *=======================================================
++ *
++ *                 HTC HEADER
++ *
++ *=======================================================
++ *                      |
++ *      HTC message     |        payload
++ *   (variable length)  |    (variable length)
++ *=======================================================
++ *
++ *                  HTC Record
++ *
++ *=======================================================
++ */
++
++enum ath12k_htc_svc_gid {
++	ATH12K_HTC_SVC_GRP_RSVD = 0,
++	ATH12K_HTC_SVC_GRP_WMI = 1,
++	ATH12K_HTC_SVC_GRP_NMI = 2,
++	ATH12K_HTC_SVC_GRP_HTT = 3,
++	ATH12K_HTC_SVC_GRP_CFG = 4,
++	ATH12K_HTC_SVC_GRP_IPA = 5,
++	ATH12K_HTC_SVC_GRP_PKTLOG = 6,
++
++	ATH12K_HTC_SVC_GRP_TEST = 254,
++	ATH12K_HTC_SVC_GRP_LAST = 255,
++};
++
++#define SVC(group, idx) \
++	(int)(((int)(group) << 8) | (int)(idx))
++
++enum ath12k_htc_svc_id {
++	/* NOTE: service ID of 0x0000 is reserved and should never be used */
++	ATH12K_HTC_SVC_ID_RESERVED	= 0x0000,
++	ATH12K_HTC_SVC_ID_UNUSED	= ATH12K_HTC_SVC_ID_RESERVED,
++
++	ATH12K_HTC_SVC_ID_RSVD_CTRL	= SVC(ATH12K_HTC_SVC_GRP_RSVD, 1),
++	ATH12K_HTC_SVC_ID_WMI_CONTROL	= SVC(ATH12K_HTC_SVC_GRP_WMI, 0),
++	ATH12K_HTC_SVC_ID_WMI_DATA_BE	= SVC(ATH12K_HTC_SVC_GRP_WMI, 1),
++	ATH12K_HTC_SVC_ID_WMI_DATA_BK	= SVC(ATH12K_HTC_SVC_GRP_WMI, 2),
++	ATH12K_HTC_SVC_ID_WMI_DATA_VI	= SVC(ATH12K_HTC_SVC_GRP_WMI, 3),
++	ATH12K_HTC_SVC_ID_WMI_DATA_VO	= SVC(ATH12K_HTC_SVC_GRP_WMI, 4),
++	ATH12K_HTC_SVC_ID_WMI_CONTROL_MAC1 = SVC(ATH12K_HTC_SVC_GRP_WMI, 5),
++	ATH12K_HTC_SVC_ID_WMI_CONTROL_MAC2 = SVC(ATH12K_HTC_SVC_GRP_WMI, 6),
++	ATH12K_HTC_SVC_ID_WMI_CONTROL_DIAG = SVC(ATH12K_HTC_SVC_GRP_WMI, 7),
++
++	ATH12K_HTC_SVC_ID_NMI_CONTROL	= SVC(ATH12K_HTC_SVC_GRP_NMI, 0),
++	ATH12K_HTC_SVC_ID_NMI_DATA	= SVC(ATH12K_HTC_SVC_GRP_NMI, 1),
++
++	ATH12K_HTC_SVC_ID_HTT_DATA_MSG	= SVC(ATH12K_HTC_SVC_GRP_HTT, 0),
++
++	/* raw stream service (i.e. flash, tcmd, calibration apps) */
++	ATH12K_HTC_SVC_ID_TEST_RAW_STREAMS = SVC(ATH12K_HTC_SVC_GRP_TEST, 0),
++	ATH12K_HTC_SVC_ID_IPA_TX = SVC(ATH12K_HTC_SVC_GRP_IPA, 0),
++	ATH12K_HTC_SVC_ID_PKT_LOG = SVC(ATH12K_HTC_SVC_GRP_PKTLOG, 0),
++};
++
++#undef SVC
++
++enum ath12k_htc_ep_id {
++	ATH12K_HTC_EP_UNUSED = -1,
++	ATH12K_HTC_EP_0 = 0,
++	ATH12K_HTC_EP_1 = 1,
++	ATH12K_HTC_EP_2,
++	ATH12K_HTC_EP_3,
++	ATH12K_HTC_EP_4,
++	ATH12K_HTC_EP_5,
++	ATH12K_HTC_EP_6,
++	ATH12K_HTC_EP_7,
++	ATH12K_HTC_EP_8,
++	ATH12K_HTC_EP_COUNT,
++};
++
++struct ath12k_htc_ep_ops {
++	void (*ep_tx_complete)(struct ath12k_base *ab, struct sk_buff *skb);
++	void (*ep_rx_complete)(struct ath12k_base *ab, struct sk_buff *skb);
++	void (*ep_tx_credits)(struct ath12k_base *ab);
++};
++
++/* service connection information */
++struct ath12k_htc_svc_conn_req {
++	u16 service_id;
++	struct ath12k_htc_ep_ops ep_ops;
++	int max_send_queue_depth;
++};
++
++/* service connection response information */
++struct ath12k_htc_svc_conn_resp {
++	u8 buffer_len;
++	u8 actual_len;
++	enum ath12k_htc_ep_id eid;
++	unsigned int max_msg_len;
++	u8 connect_resp_code;
++};
++
++#define ATH12K_NUM_CONTROL_TX_BUFFERS 2
++#define ATH12K_HTC_MAX_LEN 4096
++#define ATH12K_HTC_MAX_CTRL_MSG_LEN 256
++#define ATH12K_HTC_WAIT_TIMEOUT_HZ (1 * HZ)
++#define ATH12K_HTC_CONTROL_BUFFER_SIZE (ATH12K_HTC_MAX_CTRL_MSG_LEN + \
++					sizeof(struct ath12k_htc_hdr))
++#define ATH12K_HTC_CONN_SVC_TIMEOUT_HZ (1 * HZ)
++#define ATH12K_HTC_MAX_SERVICE_ALLOC_ENTRIES 8
++
++struct ath12k_htc_ep {
++	struct ath12k_htc *htc;
++	enum ath12k_htc_ep_id eid;
++	enum ath12k_htc_svc_id service_id;
++	struct ath12k_htc_ep_ops ep_ops;
++
++	int max_tx_queue_depth;
++	int max_ep_message_len;
++	u8 ul_pipe_id;
++	u8 dl_pipe_id;
++
++	u8 seq_no; /* for debugging */
++	int tx_credits;
++	bool tx_credit_flow_enabled;
++};
++
++struct ath12k_htc_svc_tx_credits {
++	u16 service_id;
++	u8  credit_allocation;
++};
++
++struct ath12k_htc {
 +	struct ath12k_base *ab;
-+	u16 dev_id;
-+	char amss_path[100];
-+	u32 msi_ep_base_data;
-+	struct mhi_controller *mhi_ctrl;
-+	const struct ath12k_msi_config *msi_config;
-+	unsigned long mhi_state;
-+	u32 register_window;
++	struct ath12k_htc_ep endpoint[ATH12K_HTC_EP_COUNT];
 +
-+	/* protects register_window above */
-+	spinlock_t window_lock;
++	/* protects endpoints */
++	spinlock_t tx_lock;
 +
-+	/* enum ath12k_pci_flags */
-+	unsigned long flags;
-+	u16 link_ctl;
++	u8 control_resp_buffer[ATH12K_HTC_MAX_CTRL_MSG_LEN];
++	int control_resp_len;
++
++	struct completion ctl_resp;
++
++	int total_transmit_credits;
++	struct ath12k_htc_svc_tx_credits
++		service_alloc_table[ATH12K_HTC_MAX_SERVICE_ALLOC_ENTRIES];
++	int target_credit_size;
++	u8 wmi_ep_count;
 +};
 +
-+static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
-+{
-+	return (struct ath12k_pci *)ab->drv_priv;
-+}
++int ath12k_htc_init(struct ath12k_base *ar);
++int ath12k_htc_wait_target(struct ath12k_htc *htc);
++int ath12k_htc_start(struct ath12k_htc *htc);
++int ath12k_htc_connect_service(struct ath12k_htc *htc,
++			       struct ath12k_htc_svc_conn_req  *conn_req,
++			       struct ath12k_htc_svc_conn_resp *conn_resp);
++int ath12k_htc_send(struct ath12k_htc *htc, enum ath12k_htc_ep_id eid,
++		    struct sk_buff *packet);
++struct sk_buff *ath12k_htc_alloc_skb(struct ath12k_base *ar, int size);
++void ath12k_htc_rx_completion_handler(struct ath12k_base *ar,
++				      struct sk_buff *skb);
 +
-+int ath12k_pci_get_user_msi_assignment(struct ath12k_base *ab, char *user_name,
-+				       int *num_vectors, u32 *user_base_data,
-+				       u32 *base_vector);
-+int ath12k_pci_get_msi_irq(struct device *dev, unsigned int vector);
-+void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value);
-+u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset);
-+int ath12k_pci_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
-+				   u8 *ul_pipe, u8 *dl_pipe);
-+void ath12k_pci_get_msi_address(struct ath12k_base *ab, u32 *msi_addr_lo,
-+				u32 *msi_addr_hi);
-+void ath12k_pci_get_ce_msi_idx(struct ath12k_base *ab, u32 ce_id,
-+			       u32 *msi_idx);
-+void ath12k_pci_hif_ce_irq_enable(struct ath12k_base *ab);
-+void ath12k_pci_hif_ce_irq_disable(struct ath12k_base *ab);
-+void ath12k_pci_ext_irq_enable(struct ath12k_base *ab);
-+void ath12k_pci_ext_irq_disable(struct ath12k_base *ab);
-+int ath12k_pci_hif_suspend(struct ath12k_base *ab);
-+int ath12k_pci_hif_resume(struct ath12k_base *ab);
-+void ath12k_pci_stop(struct ath12k_base *ab);
-+int ath12k_pci_start(struct ath12k_base *ab);
-+int ath12k_pci_power_up(struct ath12k_base *ab);
-+void ath12k_pci_power_down(struct ath12k_base *ab);
-+#endif /* ATH12K_PCI_H */
++#endif
 
 
 -- 
