@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3238C4332F
-	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 16:39:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B6EBC43219
+	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 16:39:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jupTSsH+E1Hs/wOWL9QHXBAvJa5IL2h80sAoKDP59Vs=; b=cS+KZQZfoLpM20
-	ooBzP7kAyiOZOio6hd51m2RVNVvgkAuvgFTV7pjiRCh89tsrGibXWUdc8NxQTRMuQwIHaXP+7hSjG
-	cwN9Z6sjr1kiL4dv3/QipSfqd5MCPTkTjaXogAq4Ex8rYBcJen1B7sz3Xnsjaq5pCq12yFCsoIwQd
-	K4nqK+qWfzxydXOmS4baQ6TJrSltWQSVMLlpGBOCP2f630e5CUTQbZsHsLztkAlZ94zxEK24PyHxz
-	sKEzyNBtYG4SI10RktIk9vS0VND5ilvhjEcp352q3cLE7YDpBcVl5g9RsLSXTNkHEP9I3TjVCSsGx
-	tlGlj/ScgdehbhhMdnxA==;
+	List-Owner; bh=VueBsLed3ZONO9bOWt0NA4UeiFVS4uLwhozYHa338m0=; b=VzusOzNLSOGs6p
+	YwkUE02TQuHrLHjaoY9DoRFx9BHa36CfbgaEIeWIU6bsnBCqQBny6TfH1e/5EKDGBbOtFAyZHCofe
+	cenTf1TKpUhuOvL0oXLQREp9gXMrM+SlMOUm29X064S64GKP4xeemVv05/oma3SlsdACNr0Ujqo66
+	twY3PgXhEuKZibcnPIaDgPUXaw+dsIXkbui1D3uArfNH4ngyXp3q5slRRZ8hVuapjT6y9td3kH6C+
+	827cSvpGXOETzFmGYfI3VgfUJGhlgHRDiQzM9nwRIIkf1GrkW1pUy5J31JuOxUZPOz57DQ0KXlYN8
+	AKadzPL7ipPoBMOCIRAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRS-005xRe-9q
-	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 16:39:14 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1ovLRU-005xZa-GG
+	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 16:39:16 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRQ-005xMv-3y
-	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:13 +0000
+	id 1ovLRQ-005xNS-Sg
+	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:15 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id DE802B81DDC
-	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0FC84C433D7;
-	Wed, 16 Nov 2022 16:39:07 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id F0993B81DBF
+	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1AD8DC433D6;
+	Wed, 16 Nov 2022 16:39:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668616748;
-	bh=1SM7K3/4Fy0y/nWhjjRoQXPN6DVkPA1qyrRfg0BZ1Ao=;
+	s=k20201202; t=1668616749;
+	bh=afi8JZrLiX2wXtdlF6dXd1AGUNdqgAzSllZrAXc550s=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=P83G3bXijGWc0j+17BxwAD1wQD24UtzCO44P4H+UmJzWcTDGGj0nNc61UJfD/t22R
-	 Ayut4JnacBzArjKyLbVLZRDarsEso1qt1Q3HzTfz0NrOhmd81sREGZy43mqZyckCQJ
-	 D9Cwb8DRNl651MkG/PbjTnFKiCQvtr2eJ5VqRTYBFEbXBivtkDTXlxv3aixTq/QBUS
-	 cvOgtvCfV0Qm9k3AgelphsS18tcg0AXatreOeTkvU+V61yqHjHNNpkoGICYZbk0g1H
-	 F59QZkxVaxa9/c0DzCodxigNWy9WAkfCwuaAYy6X0R6oT8ryo8I3a7SMocwgcBMHp+
-	 WHGaSxxfEvZBg==
+	b=mVVBxWpPF0s5Mq62UwKwrz9yI1MJswMVQJyx0TU2uY0Fw1fnI8+9k4kOTw2rNySpE
+	 aFO2N++BtEBab+lS4NV2pF7f7zTzMVTloZM+a0IxxUmw03wbELi1qp7wg+CKFtgBKk
+	 D+Q40X41mjYiMtR5ZMXc5NPJYKYxi2HPznZBhEjTYeZ5MulrM3qkd4lnY2lyMFkAdd
+	 mfXkiI3/w6I7EPcC3n3hboQM18yjxpG1kIdgPYGA+WibcUfJpVzpAI6KfTETKc9jJT
+	 NdHEnEk+ZlzkIvni7A/cRhU0MKvFdg3AfrfJ5oe7oz2Mdu/uFj6jfGbkdsqBRgpB0q
+	 Gx47gb7/n1qAQ==
 From: Kalle Valo <kvalo@kernel.org>
 To: linux-wireless@vger.kernel.org
 Cc: ath12k@lists.infradead.org
-Subject: [PATCH v2 01/50] wifi: ath12k: add Kconfig
-Date: Wed, 16 Nov 2022 18:38:13 +0200
-Message-Id: <20221116163902.24996-2-kvalo@kernel.org>
+Subject: [PATCH v2 02/50] wifi: ath12k: add Makefile
+Date: Wed, 16 Nov 2022 18:38:14 +0200
+Message-Id: <20221116163902.24996-3-kvalo@kernel.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20221116163902.24996-1-kvalo@kernel.org>
 References: <20221116163902.24996-1-kvalo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_083912_355470_7CC27E9B 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20221116_083913_094235_59CDFA28 
+X-CRM114-Status: GOOD (  10.99  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,49 +79,42 @@ commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/Kconfig | 34 +++++++++++++++++++++++++++++++++
- 1 file changed, 34 insertions(+)
+ drivers/net/wireless/ath/ath12k/Makefile | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
+diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
 new file mode 100644
-index 000000000000..4f9c514c13e7
+index 000000000000..62c52e733b5e
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/Kconfig
-@@ -0,0 +1,34 @@
++++ b/drivers/net/wireless/ath/ath12k/Makefile
+@@ -0,0 +1,27 @@
 +# SPDX-License-Identifier: BSD-3-Clause-Clear
-+config ATH12K
-+	tristate "Qualcomm Technologies Wi-Fi 7 support (ath12k)"
-+	depends on MAC80211 && HAS_DMA && PCI
-+	depends on CRYPTO_MICHAEL_MIC
-+	select QCOM_QMI_HELPERS
-+	select MHI_BUS
-+	select QRTR
-+	select QRTR_MHI
-+	help
-+	  Enable support for Qualcomm Technologies Wi-Fi 7 (IEEE
-+	  802.11be) family of chipsets, for example WCN7850 and
-+	  QCN9274.
++obj-$(CONFIG_ATH12K) += ath12k.o
++ath12k-y += core.o \
++	    hal.o \
++	    hal_tx.o \
++	    hal_rx.o \
++	    wmi.o \
++	    mac.o \
++	    reg.o \
++	    htc.o \
++	    qmi.o \
++	    dp.o  \
++	    dp_tx.o \
++	    dp_rx.o \
++	    debug.o \
++	    ce.o \
++	    peer.o \
++	    dbring.o \
++	    hw.o \
++	    mhi.o \
++	    pci.o \
++	    dp_mon.o
 +
-+	  If you choose to build a module, it'll be called ath12k.
++ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
 +
-+config ATH12K_DEBUG
-+	bool "ath12k debugging"
-+	depends on ATH12K
-+	help
-+	  Enable debug support, for example debug messages which must
-+	  be enabled separately using the debug_mask module parameter.
-+
-+	  If unsure, say Y to make it easier to debug problems. But if
-+	  you want optimal performance choose N.
-+
-+config ATH12K_TRACING
-+	bool "ath12k tracing support"
-+	depends on ATH12K && EVENT_TRACING
-+	help
-+	  Enable ath12k tracing infrastructure.
-+
-+	  If unsure, say Y to make it easier to debug problems. But if
-+	  you want optimal performance choose N.
++# for tracing framework to find trace.h
++CFLAGS_trace.o := -I$(src)
 
 
 -- 
