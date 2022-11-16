@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0FA4C4321E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64913C43219
 	for <ath12k@archiver.kernel.org>; Wed, 16 Nov 2022 17:46:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hT+nD+Mewhyrbr/YNhkil3juF6C3+A/8rDkTY8XFN54=; b=q/5ovYGUKg4kAK
-	tG/0hTVNxMBgFYhXryK6E3ZS28Hnf8zPquKGmKeMeBKaUf+X8Bb5I1281SQZ1o76H+I1HDz3CgVI5
-	XB3oK2ncFGZgaYXKEIgkY4QubM61XLXHn7Hn2oZg/+DGIkhtZbPXSh5cU5Z6z9qYaa/CI2ouzhW5Z
-	bbNELKqSF1ARExdQ1lUN6pVaiU26R/vyyut+BHLhvgqVAJ2U1zBwLFCC2GvRr3rKrt+4fDm/RhXWD
-	2V5f1WE33kqJ8P3zYljjh0AXfywVJ7NDT6bYTAMJeElioH4Oh50aKjUzC4TTrbFqS52ApxxrndmEO
-	zQv+xLYTJ0a36TPnrGag==;
+	List-Owner; bh=xx3Q/f8q2O2Kg1wNnoyfhTqmg/9vFtNbkgKs0RMo4m8=; b=GLziUVPxoYrFSG
+	6ay1R0VvIrnjxSSAoTr+5oesTfO079dHz+4AH3AGCm05D8r611HIr+wsFb/FGPsXlBVI83zfs2BZe
+	3Xf5R5neZ07UXEWKguxQKsPNZ/rKR8apM2UpojsWWpC0JKhStGQqVBLapfw8TBTIujKNzy+0AFBKW
+	4c+3lrEQMq8X6CdsVtkRDUiyqPyAufdNVSgrkBP9wgNvY05WaFsn1TGo2D0ghAzGYKzNaU7PLcHpK
+	MXbfpyI1C2Rh6gH625gbbsxyuYBCbxUTUYUu9lN4XStLjdBszViDm22PRcfMbk0pdrqqIBXg0/R2f
+	rXuVYmFC9HMxHREFirkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovMUH-006bv5-8z
-	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 17:46:13 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ovMUG-006buQ-Sb
+	for ath12k@archiver.kernel.org; Wed, 16 Nov 2022 17:46:12 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ovLRh-005xr8-2L
-	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:35 +0000
+	id 1ovLRi-005xgh-Mo
+	for ath12k@bombadil.infradead.org; Wed, 16 Nov 2022 16:39:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=peHRlSfaNtn4uq13HBxogpiyXHv3BLb7m5um3hCMT2c=; b=RGa19MPHgbjzZ0g/BjyVd2vz2t
+	drYmtwIXZ9koLDcs+v+YylmV1o5h/a7uaLZz26dx225PQD42vzXUNiqI115wSa0i09Qrmnz4etlIK
+	lWruWr2jR0GEc9jKFv8TQQ+IiG64YLMB8gx3r1rRCT2PUPV5/V/89v1IBeP61CPPshgBgrKIYUMWm
+	1NS7PrUYkTWc/wNTCmALYxuB87pTtRdW7H4vEXX6YjbLg2HOEiNrl559t4AuAnFvkOPWhuQjssdR6
+	weRJ7Xt64IgclEgwbgbSm+b2m4MOpMw66S1h++dpx2kEAeYeO272M3qstUCyAOK2MBJpHpVXHkNDu
+	Y5yLEgMw==;
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ovLRd-001OqY-T4
+	for ath12k@lists.infradead.org; Wed, 16 Nov 2022 16:39:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 6DB6E61EDA
-	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AC06C433D6;
-	Wed, 16 Nov 2022 16:39:27 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id A1DC0B81DDC
+	for <ath12k@lists.infradead.org>; Wed, 16 Nov 2022 16:39:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4397C433D6;
+	Wed, 16 Nov 2022 16:39:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668616767;
-	bh=cwsEv6HjUvq2ZaW5q2LZbr5Dcp75my+jF0E1a7jrGG8=;
+	s=k20201202; t=1668616760;
+	bh=bNrJyB+7/tUEar+6l6KSO0c5GJpVxHqj/0SJ4TWuWmg=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=CyhvICC65AzQ+HDkIIy4PL3oz5afUgAOU19Gf7XHjS6QxL5CPdnTHvvwkUV5urrQ1
-	 SG6nRivb5x+9p9u/JW4i2+2JdG8IzRRcUV2XqXTf3LsJF5d2OKpCx3gFf8cxQ10XK2
-	 RYSGwchsv7ga7BTOpm5fmZKr4f83jIVtKALkrEMiV0oCJ7pzGsvNJT/dUz5az2mvYh
-	 HGiSHobeWbIFKNqBIGKXaQCkr/gAaQ2TtzqmAVZhgIllKFk9tExpCx7wjYUpTm7X1f
-	 O1FOCYcMGg8rQeg5veAwUBxcPXjugoDtTarBGFrhUwv280+6h6V7f+VDNpQCNBvQW8
-	 kjOB2WFrGTv3Q==
+	b=jDT/hzVmXFroSYoVbzmoH/pMwJOZGAnpJGqPYiaw47+1Qrb5sie6bLrqWEoEaK5Bk
+	 4QTuh0o9Ha1o76r4p70ycMSzip5f36isQhMsOGppNOFNeK3qbsbXz2biKMG4JMVZkN
+	 vzqaGRdOWZ4gQ6ZwikA4JOG/XHlIMgMgGeMFQPaFTanPbXbxIe2MuKJpBLgcIybgFY
+	 uN8tc4NCurMhXZQHiA/5wlsvkXZjmO8ImgvelQqH3kskKhIeeXn7MeDRMKE6/EzRl0
+	 q2WmVPwjdC2xaAXgs/kB/GJF1jayWs8uAp0KOWTbIQg0pj3deb/a6fZYEhkCDjrnaG
+	 +mzMHAA9YqWzg==
 From: Kalle Valo <kvalo@kernel.org>
 To: linux-wireless@vger.kernel.org
 Cc: ath12k@lists.infradead.org
-Subject: [PATCH v2 19/50] wifi: ath12k: add hal.c
-Date: Wed, 16 Nov 2022 18:38:31 +0200
-Message-Id: <20221116163902.24996-20-kvalo@kernel.org>
+Subject: [PATCH v2 12/50] wifi: ath12k: add dp.h
+Date: Wed, 16 Nov 2022 18:38:24 +0200
+Message-Id: <20221116163902.24996-13-kvalo@kernel.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20221116163902.24996-1-kvalo@kernel.org>
 References: <20221116163902.24996-1-kvalo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221116_083929_321031_B0323ABB 
-X-CRM114-Status: GOOD (  14.79  )
+X-CRM114-CacheID: sfid-20221116_163926_180190_007F758D 
+X-CRM114-Status: GOOD (  18.80  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,2192 +93,1831 @@ commit will be one big patch. See the cover letter for more info.)
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.c | 2177 +++++++++++++++++++++++++++++++++
- 1 file changed, 2177 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp.h | 1816 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 1816 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
 new file mode 100644
-index 000000000000..1e05e876af51
+index 000000000000..36a876d7f61d
 --- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -0,0 +1,2177 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -0,0 +1,1816 @@
++/* SPDX-License-Identifier: BSD-3-Clause-Clear */
 +/*
 + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
 + * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
 + */
-+#include <linux/dma-mapping.h>
-+#include "hal_tx.h"
++
++#ifndef ATH12K_DP_H
++#define ATH12K_DP_H
++
 +#include "hal_rx.h"
-+#include "debug.h"
-+#include "hal_desc.h"
-+#include "hif.h"
++#include "hw.h"
 +
-+static const struct hal_srng_config hw_srng_config_template[] = {
-+	/* TODO: max_rings can populated by querying HW capabilities */
-+	[HAL_REO_DST] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_REO2SW1,
-+		.max_rings = 8,
-+		.entry_size = sizeof(struct hal_reo_dest_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_REO_REO2SW1_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_REO_EXCEPTION] = {
-+		/* Designating REO2SW0 ring as exception ring.
-+		 * Any of theREO2SW rings can be used as exception ring.
-+		 */
-+		.start_ring_id = HAL_SRNG_RING_ID_REO2SW0,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_reo_dest_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_REO_REO2SW0_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_REO_REINJECT] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_SW2REO,
-+		.max_rings = 4,
-+		.entry_size = sizeof(struct hal_reo_entrance_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_REO_SW2REO_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_REO_CMD] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_REO_CMD,
-+		.max_rings = 1,
-+		.entry_size = (sizeof(struct hal_tlv_64_hdr) +
-+			sizeof(struct hal_reo_get_queue_stats)) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_REO_CMD_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_REO_STATUS] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_REO_STATUS,
-+		.max_rings = 1,
-+		.entry_size = (sizeof(struct hal_tlv_64_hdr) +
-+			sizeof(struct hal_reo_get_queue_stats_status)) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_REO_STATUS_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_TCL_DATA] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_SW2TCL1,
-+		.max_rings = 6,
-+		.entry_size = sizeof(struct hal_tcl_data_cmd) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_SW2TCL1_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_TCL_CMD] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_SW2TCL_CMD,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_tcl_gse_cmd) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_SW2TCL1_CMD_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_TCL_STATUS] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_TCL_STATUS,
-+		.max_rings = 1,
-+		.entry_size = (sizeof(struct hal_tlv_hdr) +
-+			     sizeof(struct hal_tcl_status_ring)) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_TCL_STATUS_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_CE_SRC] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_CE0_SRC,
-+		.max_rings = 16,
-+		.entry_size = sizeof(struct hal_ce_srng_src_desc) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_CE_SRC_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_CE_DST] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_CE0_DST,
-+		.max_rings = 16,
-+		.entry_size = sizeof(struct hal_ce_srng_dest_desc) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_CE_DST_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_CE_DST_STATUS] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_CE0_DST_STATUS,
-+		.max_rings = 16,
-+		.entry_size = sizeof(struct hal_ce_srng_dst_status_desc) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_CE_DST_STATUS_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_WBM_IDLE_LINK] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WBM_IDLE_LINK,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_wbm_link_desc) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_WBM_IDLE_LINK_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_SW2WBM_RELEASE] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WBM_SW0_RELEASE,
-+		.max_rings = 2,
-+		.entry_size = sizeof(struct hal_wbm_release_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_SW2WBM_RELEASE_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_WBM2SW_RELEASE] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WBM2SW0_RELEASE,
-+		.max_rings = 8,
-+		.entry_size = sizeof(struct hal_wbm_release_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_UMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_WBM2SW_RELEASE_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_RXDMA_BUF] = {
-+		.start_ring_id = HAL_SRNG_SW2RXDMA_BUF0,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_wbm_buffer_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_DMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	},
-+	[HAL_RXDMA_DST] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_RXDMA2SW0,
-+		.max_rings = 0,
-+		.entry_size = 0,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	},
-+	[HAL_RXDMA_MONITOR_BUF] = {
-+		.start_ring_id = HAL_SRNG_SW2RXMON_BUF0,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_mon_buf_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	},
-+	[HAL_RXDMA_MONITOR_STATUS] = { 0, },
-+	[HAL_RXDMA_MONITOR_DESC] = { 0, },
-+	[HAL_RXDMA_DIR_BUF] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_RXDMA_DIR_BUF,
-+		.max_rings = 2,
-+		.entry_size = 8 >> 2, /* TODO: Define the struct */
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	},
-+	[HAL_PPE2TCL] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_PPE2TCL1,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_tcl_entrance_from_ppe_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_SW2TCL1_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_PPE_RELEASE] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WBM_PPE_RELEASE,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_wbm_release_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_WBM2PPE_RELEASE_RING_BASE_MSB_RING_SIZE,
-+	},
-+	[HAL_TX_MONITOR_BUF] = {
-+		.start_ring_id = HAL_SRNG_SW2TXMON_BUF0,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_mon_buf_ring) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_SRC,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	},
-+	[HAL_RXDMA_MONITOR_DST] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_SW2RXMON_BUF0,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_mon_dest_desc) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	},
-+	[HAL_TX_MONITOR_DST] = {
-+		.start_ring_id = HAL_SRNG_RING_ID_WMAC1_TXMON2SW0_BUF0,
-+		.max_rings = 1,
-+		.entry_size = sizeof(struct hal_mon_dest_desc) >> 2,
-+		.mac_type = ATH12K_HAL_SRNG_PMAC,
-+		.ring_dir = HAL_SRNG_DIR_DST,
-+		.max_size = HAL_RXDMA_RING_MAX_SIZE_BE,
-+	}
++#define MAX_RXDMA_PER_PDEV     2
++
++struct ath12k_base;
++struct ath12k_peer;
++struct ath12k_dp;
++struct ath12k_vif;
++struct hal_tcl_status_ring;
++struct ath12k_ext_irq_grp;
++
++#define DP_MON_PURGE_TIMEOUT_MS     100
++#define DP_MON_SERVICE_BUDGET       128
++
++struct dp_srng {
++	u32 *vaddr_unaligned;
++	u32 *vaddr;
++	dma_addr_t paddr_unaligned;
++	dma_addr_t paddr;
++	int size;
++	u32 ring_id;
 +};
 +
-+static const struct ath12k_hal_tcl_to_wbm_rbm_map
-+ath12k_hal_qcn9274_tcl_to_wbm_rbm_map[DP_TCL_NUM_RING_MAX] = {
-+	{
-+		.wbm_ring_num = 0,
-+		.rbm_id = HAL_RX_BUF_RBM_SW0_BM,
-+	},
-+	{
-+		.wbm_ring_num = 1,
-+		.rbm_id = HAL_RX_BUF_RBM_SW1_BM,
-+	},
-+	{
-+		.wbm_ring_num = 2,
-+		.rbm_id = HAL_RX_BUF_RBM_SW2_BM,
-+	},
-+	{
-+		.wbm_ring_num = 4,
-+		.rbm_id = HAL_RX_BUF_RBM_SW4_BM,
-+	}
++struct dp_rxdma_ring {
++	struct dp_srng refill_buf_ring;
++	struct idr bufs_idr;
++	/* Protects bufs_idr */
++	spinlock_t idr_lock;
++	int bufs_max;
 +};
 +
-+static const struct ath12k_hal_tcl_to_wbm_rbm_map
-+ath12k_hal_wcn7850_tcl_to_wbm_rbm_map[DP_TCL_NUM_RING_MAX] = {
-+	{
-+		.wbm_ring_num = 0,
-+		.rbm_id = HAL_RX_BUF_RBM_SW0_BM,
-+	},
-+	{
-+		.wbm_ring_num = 2,
-+		.rbm_id = HAL_RX_BUF_RBM_SW2_BM,
-+	},
-+	{
-+		.wbm_ring_num = 4,
-+		.rbm_id = HAL_RX_BUF_RBM_SW4_BM,
-+	},
++#define ATH12K_TX_COMPL_NEXT(x)	(((x) + 1) % DP_TX_COMP_RING_SIZE)
++
++struct dp_tx_ring {
++	u8 tcl_data_ring_id;
++	struct dp_srng tcl_data_ring;
++	struct dp_srng tcl_comp_ring;
++	struct hal_wbm_completion_ring_tx *tx_status;
++	int tx_status_head;
++	int tx_status_tail;
 +};
 +
-+static bool ath12k_hw_qcn9274_rx_desc_get_first_msdu(struct hal_rx_desc *desc)
-+{
-+	return !!le16_get_bits(desc->u.qcn9274.msdu_end.info5,
-+			       RX_MSDU_END_INFO5_FIRST_MSDU);
-+}
-+
-+static bool ath12k_hw_qcn9274_rx_desc_get_last_msdu(struct hal_rx_desc *desc)
-+{
-+	return !!le16_get_bits(desc->u.qcn9274.msdu_end.info5,
-+			       RX_MSDU_END_INFO5_LAST_MSDU);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_l3_pad_bytes(struct hal_rx_desc *desc)
-+{
-+	return le16_get_bits(desc->u.qcn9274.msdu_end.info5,
-+			     RX_MSDU_END_INFO5_L3_HDR_PADDING);
-+}
-+
-+static bool ath12k_hw_qcn9274_rx_desc_encrypt_valid(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
-+			       RX_MPDU_START_INFO4_ENCRYPT_INFO_VALID);
-+}
-+
-+static u32 ath12k_hw_qcn9274_rx_desc_get_encrypt_type(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.mpdu_start.info2,
-+			     RX_MPDU_START_INFO2_ENC_TYPE);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_decap_type(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info11,
-+			     RX_MSDU_END_INFO11_DECAP_FORMAT);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_mesh_ctl(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info11,
-+			     RX_MSDU_END_INFO11_MESH_CTRL_PRESENT);
-+}
-+
-+static bool ath12k_hw_qcn9274_rx_desc_get_mpdu_seq_ctl_vld(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
-+			       RX_MPDU_START_INFO4_MPDU_SEQ_CTRL_VALID);
-+}
-+
-+static bool ath12k_hw_qcn9274_rx_desc_get_mpdu_fc_valid(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
-+			       RX_MPDU_START_INFO4_MPDU_FCTRL_VALID);
-+}
-+
-+static u16 ath12k_hw_qcn9274_rx_desc_get_mpdu_start_seq_no(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.mpdu_start.info4,
-+			     RX_MPDU_START_INFO4_MPDU_SEQ_NUM);
-+}
-+
-+static u16 ath12k_hw_qcn9274_rx_desc_get_msdu_len(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info10,
-+			     RX_MSDU_END_INFO10_MSDU_LENGTH);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_sgi(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_SGI);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_rate_mcs(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_RATE_MCS);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_rx_bw(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_RECV_BW);
-+}
-+
-+static u32 ath12k_hw_qcn9274_rx_desc_get_msdu_freq(struct hal_rx_desc *desc)
-+{
-+	return __le32_to_cpu(desc->u.qcn9274.msdu_end.phy_meta_data);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_pkt_type(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_PKT_TYPE);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_nss(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_MIMO_SS_BITMAP);
-+}
-+
-+static u8 ath12k_hw_qcn9274_rx_desc_get_mpdu_tid(struct hal_rx_desc *desc)
-+{
-+	return le16_get_bits(desc->u.qcn9274.msdu_end.info5,
-+			    RX_MSDU_END_INFO5_TID);
-+}
-+
-+static u16 ath12k_hw_qcn9274_rx_desc_get_mpdu_peer_id(struct hal_rx_desc *desc)
-+{
-+	return __le16_to_cpu(desc->u.qcn9274.mpdu_start.sw_peer_id);
-+}
-+
-+static void ath12k_hw_qcn9274_rx_desc_copy_end_tlv(struct hal_rx_desc *fdesc,
-+						   struct hal_rx_desc *ldesc)
-+{
-+	memcpy(&fdesc->u.qcn9274.msdu_end, &ldesc->u.qcn9274.msdu_end,
-+	       sizeof(struct rx_msdu_end_qcn9274));
-+}
-+
-+static u32 ath12k_hw_qcn9274_rx_desc_get_mpdu_ppdu_id(struct hal_rx_desc *desc)
-+{
-+	return __le16_to_cpu(desc->u.qcn9274.mpdu_start.phy_ppdu_id);
-+}
-+
-+static void ath12k_hw_qcn9274_rx_desc_set_msdu_len(struct hal_rx_desc *desc, u16 len)
-+{
-+	u32 info = __le32_to_cpu(desc->u.qcn9274.msdu_end.info10);
-+
-+	info &= ~RX_MSDU_END_INFO10_MSDU_LENGTH;
-+	info |= u32_encode_bits(len, RX_MSDU_END_INFO10_MSDU_LENGTH);
-+
-+	desc->u.qcn9274.msdu_end.info10 = __cpu_to_le32(info);
-+}
-+
-+static u8 *ath12k_hw_qcn9274_rx_desc_get_msdu_payload(struct hal_rx_desc *desc)
-+{
-+	return &desc->u.qcn9274.msdu_payload[0];
-+}
-+
-+static u32 ath12k_hw_qcn9274_rx_desc_get_mpdu_start_offset(void)
-+{
-+	return offsetof(struct hal_rx_desc_qcn9274, mpdu_start);
-+}
-+
-+static u32 ath12k_hw_qcn9274_rx_desc_get_msdu_end_offset(void)
-+{
-+	return offsetof(struct hal_rx_desc_qcn9274, msdu_end);
-+}
-+
-+static bool ath12k_hw_qcn9274_rx_desc_mac_addr2_valid(struct hal_rx_desc *desc)
-+{
-+	return __le32_to_cpu(desc->u.qcn9274.mpdu_start.info4) &
-+	       RX_MPDU_START_INFO4_MAC_ADDR2_VALID;
-+}
-+
-+static u8 *ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
-+{
-+	return desc->u.qcn9274.mpdu_start.addr2;
-+}
-+
-+static bool ath12k_hw_qcn9274_rx_desc_is_mcbc(struct hal_rx_desc *desc)
-+{
-+	return __le32_to_cpu(desc->u.qcn9274.mpdu_start.info6) &
-+	       RX_MPDU_START_INFO6_MCAST_BCAST;
-+}
-+
-+static void ath12k_hw_qcn9274_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
-+						    struct ieee80211_hdr *hdr)
-+{
-+	hdr->frame_control = desc->u.qcn9274.mpdu_start.frame_ctrl;
-+	hdr->duration_id = desc->u.qcn9274.mpdu_start.duration;
-+	ether_addr_copy(hdr->addr1, desc->u.qcn9274.mpdu_start.addr1);
-+	ether_addr_copy(hdr->addr2, desc->u.qcn9274.mpdu_start.addr2);
-+	ether_addr_copy(hdr->addr3, desc->u.qcn9274.mpdu_start.addr3);
-+	if (__le32_to_cpu(desc->u.qcn9274.mpdu_start.info4) &
-+			RX_MPDU_START_INFO4_MAC_ADDR4_VALID) {
-+		ether_addr_copy(hdr->addr4, desc->u.qcn9274.mpdu_start.addr4);
-+	}
-+	hdr->seq_ctrl = desc->u.qcn9274.mpdu_start.seq_ctrl;
-+}
-+
-+static void ath12k_hw_qcn9274_rx_desc_get_crypto_hdr(struct hal_rx_desc *desc,
-+						     u8 *crypto_hdr,
-+						     enum hal_encrypt_type enctype)
-+{
-+	unsigned int key_id;
-+
-+	switch (enctype) {
-+	case HAL_ENCRYPT_TYPE_OPEN:
-+		return;
-+	case HAL_ENCRYPT_TYPE_TKIP_NO_MIC:
-+	case HAL_ENCRYPT_TYPE_TKIP_MIC:
-+		crypto_hdr[0] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.qcn9274.mpdu_start.pn[0]);
-+		crypto_hdr[1] = 0;
-+		crypto_hdr[2] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.qcn9274.mpdu_start.pn[0]);
-+		break;
-+	case HAL_ENCRYPT_TYPE_CCMP_128:
-+	case HAL_ENCRYPT_TYPE_CCMP_256:
-+	case HAL_ENCRYPT_TYPE_GCMP_128:
-+	case HAL_ENCRYPT_TYPE_AES_GCMP_256:
-+		crypto_hdr[0] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.qcn9274.mpdu_start.pn[0]);
-+		crypto_hdr[1] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.qcn9274.mpdu_start.pn[0]);
-+		crypto_hdr[2] = 0;
-+		break;
-+	case HAL_ENCRYPT_TYPE_WEP_40:
-+	case HAL_ENCRYPT_TYPE_WEP_104:
-+	case HAL_ENCRYPT_TYPE_WEP_128:
-+	case HAL_ENCRYPT_TYPE_WAPI_GCM_SM4:
-+	case HAL_ENCRYPT_TYPE_WAPI:
-+		return;
-+	}
-+	key_id = le32_get_bits(desc->u.qcn9274.mpdu_start.info5,
-+			       RX_MPDU_START_INFO5_KEY_ID);
-+	crypto_hdr[3] = 0x20 | (key_id << 6);
-+	crypto_hdr[4] = HAL_RX_MPDU_INFO_PN_GET_BYTE3(desc->u.qcn9274.mpdu_start.pn[0]);
-+	crypto_hdr[5] = HAL_RX_MPDU_INFO_PN_GET_BYTE4(desc->u.qcn9274.mpdu_start.pn[0]);
-+	crypto_hdr[6] = HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.qcn9274.mpdu_start.pn[1]);
-+	crypto_hdr[7] = HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.qcn9274.mpdu_start.pn[1]);
-+}
-+
-+static u16 ath12k_hw_qcn9274_rx_desc_get_mpdu_frame_ctl(struct hal_rx_desc *desc)
-+{
-+	return __le16_to_cpu(desc->u.qcn9274.mpdu_start.frame_ctrl);
-+}
-+
-+static int ath12k_hal_srng_create_config_qcn9274(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	struct hal_srng_config *s;
-+
-+	hal->srng_config = kmemdup(hw_srng_config_template,
-+				   sizeof(hw_srng_config_template),
-+				   GFP_KERNEL);
-+	if (!hal->srng_config)
-+		return -ENOMEM;
-+
-+	s = &hal->srng_config[HAL_REO_DST];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_RING_HP;
-+	s->reg_size[0] = HAL_REO2_RING_BASE_LSB(ab) - HAL_REO1_RING_BASE_LSB(ab);
-+	s->reg_size[1] = HAL_REO2_RING_HP - HAL_REO1_RING_HP;
-+
-+	s = &hal->srng_config[HAL_REO_EXCEPTION];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_SW0_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_SW0_RING_HP;
-+
-+	s = &hal->srng_config[HAL_REO_REINJECT];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_SW2REO_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_SW2REO_RING_HP;
-+	s->reg_size[0] = HAL_SW2REO1_RING_BASE_LSB(ab) - HAL_SW2REO_RING_BASE_LSB(ab);
-+	s->reg_size[1] = HAL_SW2REO1_RING_HP - HAL_SW2REO_RING_HP;
-+
-+	s = &hal->srng_config[HAL_REO_CMD];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_CMD_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_CMD_HP;
-+
-+	s = &hal->srng_config[HAL_REO_STATUS];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_STATUS_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_STATUS_HP;
-+
-+	s = &hal->srng_config[HAL_TCL_DATA];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_HP;
-+	s->reg_size[0] = HAL_TCL2_RING_BASE_LSB - HAL_TCL1_RING_BASE_LSB;
-+	s->reg_size[1] = HAL_TCL2_RING_HP - HAL_TCL1_RING_HP;
-+
-+	s = &hal->srng_config[HAL_TCL_CMD];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_RING_HP;
-+
-+	s = &hal->srng_config[HAL_TCL_STATUS];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_STATUS_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_STATUS_RING_HP;
-+
-+	s = &hal->srng_config[HAL_CE_SRC];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_HP;
-+	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
-+	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
-+
-+	s = &hal->srng_config[HAL_CE_DST];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_HP;
-+	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+
-+	s = &hal->srng_config[HAL_CE_DST_STATUS];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG +
-+		HAL_CE_DST_STATUS_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_STATUS_RING_HP;
-+	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+
-+	s = &hal->srng_config[HAL_WBM_IDLE_LINK];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_IDLE_LINK_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_IDLE_LINK_RING_HP;
-+
-+	s = &hal->srng_config[HAL_SW2WBM_RELEASE];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG +
-+		HAL_WBM_SW_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_SW_RELEASE_RING_HP;
-+	s->reg_size[0] = HAL_WBM_SW1_RELEASE_RING_BASE_LSB(ab) -
-+			 HAL_WBM_SW_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_size[1] = HAL_WBM_SW1_RELEASE_RING_HP - HAL_WBM_SW_RELEASE_RING_HP;
-+
-+	s = &hal->srng_config[HAL_WBM2SW_RELEASE];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM0_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM0_RELEASE_RING_HP;
-+	s->reg_size[0] = HAL_WBM1_RELEASE_RING_BASE_LSB(ab) -
-+		HAL_WBM0_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_size[1] = HAL_WBM1_RELEASE_RING_HP - HAL_WBM0_RELEASE_RING_HP;
-+
-+	/* Some LMAC rings are not accesed from the host:
-+	 * RXDMA_BUG, RXDMA_DST, RXDMA_MONITOR_BUF, RXDMA_MONITOR_STATUS,
-+	 * RXDMA_MONITOR_DST, RXDMA_MONITOR_DESC, RXDMA_DIR_BUF_SRC,
-+	 * RXDMA_RX_MONITOR_BUF, TX_MONITOR_BUF, TX_MONITOR_DST, SW2RXDMA
-+	 */
-+	s = &hal->srng_config[HAL_PPE2TCL];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_PPE2TCL1_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_PPE2TCL1_RING_HP;
-+
-+	s = &hal->srng_config[HAL_PPE_RELEASE];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG +
-+				HAL_WBM_PPE_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_PPE_RELEASE_RING_HP;
-+
-+	return 0;
-+}
-+
-+static bool ath12k_hw_qcn9274_dp_rx_h_msdu_done(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.qcn9274.msdu_end.info14,
-+			       RX_MSDU_END_INFO14_MSDU_DONE);
-+}
-+
-+static bool ath12k_hw_qcn9274_dp_rx_h_l4_cksum_fail(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.qcn9274.msdu_end.info13,
-+			       RX_MSDU_END_INFO13_TCP_UDP_CKSUM_FAIL);
-+}
-+
-+static bool ath12k_hw_qcn9274_dp_rx_h_ip_cksum_fail(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.qcn9274.msdu_end.info13,
-+			       RX_MSDU_END_INFO13_IP_CKSUM_FAIL);
-+}
-+
-+static bool ath12k_hw_qcn9274_dp_rx_h_is_decrypted(struct hal_rx_desc *desc)
-+{
-+	return (le32_get_bits(desc->u.qcn9274.msdu_end.info14,
-+			      RX_MSDU_END_INFO14_DECRYPT_STATUS_CODE) ==
-+			      RX_DESC_DECRYPT_STATUS_CODE_OK);
-+}
-+
-+static u32 ath12k_hw_qcn9274_dp_rx_h_mpdu_err(struct hal_rx_desc *desc)
-+{
-+	u32 info = __le32_to_cpu(desc->u.qcn9274.msdu_end.info13);
-+	u32 errmap = 0;
-+
-+	if (info & RX_MSDU_END_INFO13_FCS_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_FCS;
-+
-+	if (info & RX_MSDU_END_INFO13_DECRYPT_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_DECRYPT;
-+
-+	if (info & RX_MSDU_END_INFO13_TKIP_MIC_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_TKIP_MIC;
-+
-+	if (info & RX_MSDU_END_INFO13_A_MSDU_ERROR)
-+		errmap |= HAL_RX_MPDU_ERR_AMSDU_ERR;
-+
-+	if (info & RX_MSDU_END_INFO13_OVERFLOW_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_OVERFLOW;
-+
-+	if (info & RX_MSDU_END_INFO13_MSDU_LEN_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_MSDU_LEN;
-+
-+	if (info & RX_MSDU_END_INFO13_MPDU_LEN_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_MPDU_LEN;
-+
-+	return errmap;
-+}
-+
-+const struct hal_ops hal_qcn9274_ops = {
-+	.rx_desc_get_first_msdu = ath12k_hw_qcn9274_rx_desc_get_first_msdu,
-+	.rx_desc_get_last_msdu = ath12k_hw_qcn9274_rx_desc_get_last_msdu,
-+	.rx_desc_get_l3_pad_bytes = ath12k_hw_qcn9274_rx_desc_get_l3_pad_bytes,
-+	.rx_desc_encrypt_valid = ath12k_hw_qcn9274_rx_desc_encrypt_valid,
-+	.rx_desc_get_encrypt_type = ath12k_hw_qcn9274_rx_desc_get_encrypt_type,
-+	.rx_desc_get_decap_type = ath12k_hw_qcn9274_rx_desc_get_decap_type,
-+	.rx_desc_get_mesh_ctl = ath12k_hw_qcn9274_rx_desc_get_mesh_ctl,
-+	.rx_desc_get_mpdu_seq_ctl_vld = ath12k_hw_qcn9274_rx_desc_get_mpdu_seq_ctl_vld,
-+	.rx_desc_get_mpdu_fc_valid = ath12k_hw_qcn9274_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_start_seq_no = ath12k_hw_qcn9274_rx_desc_get_mpdu_start_seq_no,
-+	.rx_desc_get_msdu_len = ath12k_hw_qcn9274_rx_desc_get_msdu_len,
-+	.rx_desc_get_msdu_sgi = ath12k_hw_qcn9274_rx_desc_get_msdu_sgi,
-+	.rx_desc_get_msdu_rate_mcs = ath12k_hw_qcn9274_rx_desc_get_msdu_rate_mcs,
-+	.rx_desc_get_msdu_rx_bw = ath12k_hw_qcn9274_rx_desc_get_msdu_rx_bw,
-+	.rx_desc_get_msdu_freq = ath12k_hw_qcn9274_rx_desc_get_msdu_freq,
-+	.rx_desc_get_msdu_pkt_type = ath12k_hw_qcn9274_rx_desc_get_msdu_pkt_type,
-+	.rx_desc_get_msdu_nss = ath12k_hw_qcn9274_rx_desc_get_msdu_nss,
-+	.rx_desc_get_mpdu_tid = ath12k_hw_qcn9274_rx_desc_get_mpdu_tid,
-+	.rx_desc_get_mpdu_peer_id = ath12k_hw_qcn9274_rx_desc_get_mpdu_peer_id,
-+	.rx_desc_copy_end_tlv = ath12k_hw_qcn9274_rx_desc_copy_end_tlv,
-+	.rx_desc_get_mpdu_ppdu_id = ath12k_hw_qcn9274_rx_desc_get_mpdu_ppdu_id,
-+	.rx_desc_set_msdu_len = ath12k_hw_qcn9274_rx_desc_set_msdu_len,
-+	.rx_desc_get_msdu_payload = ath12k_hw_qcn9274_rx_desc_get_msdu_payload,
-+	.rx_desc_get_mpdu_start_offset = ath12k_hw_qcn9274_rx_desc_get_mpdu_start_offset,
-+	.rx_desc_get_msdu_end_offset = ath12k_hw_qcn9274_rx_desc_get_msdu_end_offset,
-+	.rx_desc_mac_addr2_valid = ath12k_hw_qcn9274_rx_desc_mac_addr2_valid,
-+	.rx_desc_mpdu_start_addr2 = ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2,
-+	.rx_desc_is_mcbc = ath12k_hw_qcn9274_rx_desc_is_mcbc,
-+	.rx_desc_get_dot11_hdr = ath12k_hw_qcn9274_rx_desc_get_dot11_hdr,
-+	.rx_desc_get_crypto_header = ath12k_hw_qcn9274_rx_desc_get_crypto_hdr,
-+	.rx_desc_get_mpdu_frame_ctl = ath12k_hw_qcn9274_rx_desc_get_mpdu_frame_ctl,
-+	.create_srng_config = ath12k_hal_srng_create_config_qcn9274,
-+	.tcl_to_wbm_rbm_map = ath12k_hal_qcn9274_tcl_to_wbm_rbm_map,
-+	.dp_rx_h_msdu_done = ath12k_hw_qcn9274_dp_rx_h_msdu_done,
-+	.dp_rx_h_l4_cksum_fail = ath12k_hw_qcn9274_dp_rx_h_l4_cksum_fail,
-+	.dp_rx_h_ip_cksum_fail = ath12k_hw_qcn9274_dp_rx_h_ip_cksum_fail,
-+	.dp_rx_h_is_decrypted = ath12k_hw_qcn9274_dp_rx_h_is_decrypted,
-+	.dp_rx_h_mpdu_err = ath12k_hw_qcn9274_dp_rx_h_mpdu_err,
++struct ath12k_pdev_mon_stats {
++	u32 status_ppdu_state;
++	u32 status_ppdu_start;
++	u32 status_ppdu_end;
++	u32 status_ppdu_compl;
++	u32 status_ppdu_start_mis;
++	u32 status_ppdu_end_mis;
++	u32 status_ppdu_done;
++	u32 dest_ppdu_done;
++	u32 dest_mpdu_done;
++	u32 dest_mpdu_drop;
++	u32 dup_mon_linkdesc_cnt;
++	u32 dup_mon_buf_cnt;
 +};
 +
-+static bool ath12k_hw_wcn7850_rx_desc_get_first_msdu(struct hal_rx_desc *desc)
-+{
-+	return !!le16_get_bits(desc->u.wcn7850.msdu_end.info5,
-+			       RX_MSDU_END_INFO5_FIRST_MSDU);
-+}
-+
-+static bool ath12k_hw_wcn7850_rx_desc_get_last_msdu(struct hal_rx_desc *desc)
-+{
-+	return !!le16_get_bits(desc->u.wcn7850.msdu_end.info5,
-+			       RX_MSDU_END_INFO5_LAST_MSDU);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_l3_pad_bytes(struct hal_rx_desc *desc)
-+{
-+	return le16_get_bits(desc->u.wcn7850.msdu_end.info5,
-+			    RX_MSDU_END_INFO5_L3_HDR_PADDING);
-+}
-+
-+static bool ath12k_hw_wcn7850_rx_desc_encrypt_valid(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.wcn7850.mpdu_start.info4,
-+			       RX_MPDU_START_INFO4_ENCRYPT_INFO_VALID);
-+}
-+
-+static u32 ath12k_hw_wcn7850_rx_desc_get_encrypt_type(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.mpdu_start.info2,
-+			     RX_MPDU_START_INFO2_ENC_TYPE);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_decap_type(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info11,
-+			     RX_MSDU_END_INFO11_DECAP_FORMAT);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_mesh_ctl(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info11,
-+			     RX_MSDU_END_INFO11_MESH_CTRL_PRESENT);
-+}
-+
-+static bool ath12k_hw_wcn7850_rx_desc_get_mpdu_seq_ctl_vld(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.wcn7850.mpdu_start.info4,
-+			       RX_MPDU_START_INFO4_MPDU_SEQ_CTRL_VALID);
-+}
-+
-+static bool ath12k_hw_wcn7850_rx_desc_get_mpdu_fc_valid(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.wcn7850.mpdu_start.info4,
-+			       RX_MPDU_START_INFO4_MPDU_FCTRL_VALID);
-+}
-+
-+static u16 ath12k_hw_wcn7850_rx_desc_get_mpdu_start_seq_no(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.mpdu_start.info4,
-+			     RX_MPDU_START_INFO4_MPDU_SEQ_NUM);
-+}
-+
-+static u16 ath12k_hw_wcn7850_rx_desc_get_msdu_len(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info10,
-+			     RX_MSDU_END_INFO10_MSDU_LENGTH);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_sgi(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_SGI);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_rate_mcs(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_RATE_MCS);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_rx_bw(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_RECV_BW);
-+}
-+
-+static u32 ath12k_hw_wcn7850_rx_desc_get_msdu_freq(struct hal_rx_desc *desc)
-+{
-+	return __le32_to_cpu(desc->u.wcn7850.msdu_end.phy_meta_data);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_pkt_type(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_PKT_TYPE);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_nss(struct hal_rx_desc *desc)
-+{
-+	return le32_get_bits(desc->u.wcn7850.msdu_end.info12,
-+			     RX_MSDU_END_INFO12_MIMO_SS_BITMAP);
-+}
-+
-+static u8 ath12k_hw_wcn7850_rx_desc_get_mpdu_tid(struct hal_rx_desc *desc)
-+{
-+	return le16_get_bits(desc->u.wcn7850.msdu_end.info5,
-+			     RX_MSDU_END_INFO5_TID);
-+}
-+
-+static u16 ath12k_hw_wcn7850_rx_desc_get_mpdu_peer_id(struct hal_rx_desc *desc)
-+{
-+	return __le16_to_cpu(desc->u.wcn7850.mpdu_start.sw_peer_id);
-+}
-+
-+static void ath12k_hw_wcn7850_rx_desc_copy_end_tlv(struct hal_rx_desc *fdesc,
-+						   struct hal_rx_desc *ldesc)
-+{
-+	memcpy(&fdesc->u.wcn7850.msdu_end, &ldesc->u.wcn7850.msdu_end,
-+	       sizeof(struct rx_msdu_end_qcn9274));
-+}
-+
-+static u32 ath12k_hw_wcn7850_rx_desc_get_mpdu_start_tag(struct hal_rx_desc *desc)
-+{
-+	return le64_get_bits(desc->u.wcn7850.mpdu_start_tag,
-+			    HAL_TLV_HDR_TAG);
-+}
-+
-+static u32 ath12k_hw_wcn7850_rx_desc_get_mpdu_ppdu_id(struct hal_rx_desc *desc)
-+{
-+	return __le16_to_cpu(desc->u.wcn7850.mpdu_start.phy_ppdu_id);
-+}
-+
-+static void ath12k_hw_wcn7850_rx_desc_set_msdu_len(struct hal_rx_desc *desc, u16 len)
-+{
-+	u32 info = __le32_to_cpu(desc->u.wcn7850.msdu_end.info10);
-+
-+	info &= ~RX_MSDU_END_INFO10_MSDU_LENGTH;
-+	info |= u32_encode_bits(len, RX_MSDU_END_INFO10_MSDU_LENGTH);
-+
-+	desc->u.wcn7850.msdu_end.info10 = __cpu_to_le32(info);
-+}
-+
-+static u8 *ath12k_hw_wcn7850_rx_desc_get_msdu_payload(struct hal_rx_desc *desc)
-+{
-+	return &desc->u.wcn7850.msdu_payload[0];
-+}
-+
-+static u32 ath12k_hw_wcn7850_rx_desc_get_mpdu_start_offset(void)
-+{
-+	return offsetof(struct hal_rx_desc_wcn7850, mpdu_start_tag);
-+}
-+
-+static u32 ath12k_hw_wcn7850_rx_desc_get_msdu_end_offset(void)
-+{
-+	return offsetof(struct hal_rx_desc_wcn7850, msdu_end_tag);
-+}
-+
-+static bool ath12k_hw_wcn7850_rx_desc_mac_addr2_valid(struct hal_rx_desc *desc)
-+{
-+	return __le32_to_cpu(desc->u.wcn7850.mpdu_start.info4) &
-+	       RX_MPDU_START_INFO4_MAC_ADDR2_VALID;
-+}
-+
-+static u8 *ath12k_hw_wcn7850_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
-+{
-+	return desc->u.wcn7850.mpdu_start.addr2;
-+}
-+
-+static bool ath12k_hw_wcn7850_rx_desc_is_mcbc(struct hal_rx_desc *desc)
-+{
-+	return __le32_to_cpu(desc->u.wcn7850.mpdu_start.info6) &
-+	       RX_MPDU_START_INFO6_MCAST_BCAST;
-+}
-+
-+static void ath12k_hw_wcn7850_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
-+						    struct ieee80211_hdr *hdr)
-+{
-+	hdr->frame_control = desc->u.wcn7850.mpdu_start.frame_ctrl;
-+	hdr->duration_id = desc->u.wcn7850.mpdu_start.duration;
-+	ether_addr_copy(hdr->addr1, desc->u.wcn7850.mpdu_start.addr1);
-+	ether_addr_copy(hdr->addr2, desc->u.wcn7850.mpdu_start.addr2);
-+	ether_addr_copy(hdr->addr3, desc->u.wcn7850.mpdu_start.addr3);
-+	if (__le32_to_cpu(desc->u.wcn7850.mpdu_start.info4) &
-+			RX_MPDU_START_INFO4_MAC_ADDR4_VALID) {
-+		ether_addr_copy(hdr->addr4, desc->u.wcn7850.mpdu_start.addr4);
-+	}
-+	hdr->seq_ctrl = desc->u.wcn7850.mpdu_start.seq_ctrl;
-+}
-+
-+static void ath12k_hw_wcn7850_rx_desc_get_crypto_hdr(struct hal_rx_desc *desc,
-+						     u8 *crypto_hdr,
-+						     enum hal_encrypt_type enctype)
-+{
-+	unsigned int key_id;
-+
-+	switch (enctype) {
-+	case HAL_ENCRYPT_TYPE_OPEN:
-+		return;
-+	case HAL_ENCRYPT_TYPE_TKIP_NO_MIC:
-+	case HAL_ENCRYPT_TYPE_TKIP_MIC:
-+		crypto_hdr[0] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.wcn7850.mpdu_start.pn[0]);
-+		crypto_hdr[1] = 0;
-+		crypto_hdr[2] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.wcn7850.mpdu_start.pn[0]);
-+		break;
-+	case HAL_ENCRYPT_TYPE_CCMP_128:
-+	case HAL_ENCRYPT_TYPE_CCMP_256:
-+	case HAL_ENCRYPT_TYPE_GCMP_128:
-+	case HAL_ENCRYPT_TYPE_AES_GCMP_256:
-+		crypto_hdr[0] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.wcn7850.mpdu_start.pn[0]);
-+		crypto_hdr[1] =
-+			HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.wcn7850.mpdu_start.pn[0]);
-+		crypto_hdr[2] = 0;
-+		break;
-+	case HAL_ENCRYPT_TYPE_WEP_40:
-+	case HAL_ENCRYPT_TYPE_WEP_104:
-+	case HAL_ENCRYPT_TYPE_WEP_128:
-+	case HAL_ENCRYPT_TYPE_WAPI_GCM_SM4:
-+	case HAL_ENCRYPT_TYPE_WAPI:
-+		return;
-+	}
-+	key_id = u32_get_bits(__le32_to_cpu(desc->u.wcn7850.mpdu_start.info5),
-+			      RX_MPDU_START_INFO5_KEY_ID);
-+	crypto_hdr[3] = 0x20 | (key_id << 6);
-+	crypto_hdr[4] = HAL_RX_MPDU_INFO_PN_GET_BYTE3(desc->u.wcn7850.mpdu_start.pn[0]);
-+	crypto_hdr[5] = HAL_RX_MPDU_INFO_PN_GET_BYTE4(desc->u.wcn7850.mpdu_start.pn[0]);
-+	crypto_hdr[6] = HAL_RX_MPDU_INFO_PN_GET_BYTE1(desc->u.wcn7850.mpdu_start.pn[1]);
-+	crypto_hdr[7] = HAL_RX_MPDU_INFO_PN_GET_BYTE2(desc->u.wcn7850.mpdu_start.pn[1]);
-+}
-+
-+static u16 ath12k_hw_wcn7850_rx_desc_get_mpdu_frame_ctl(struct hal_rx_desc *desc)
-+{
-+	return __le16_to_cpu(desc->u.wcn7850.mpdu_start.frame_ctrl);
-+}
-+
-+static int ath12k_hal_srng_create_config_wcn7850(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	struct hal_srng_config *s;
-+
-+	hal->srng_config = kmemdup(hw_srng_config_template,
-+				   sizeof(hw_srng_config_template),
-+				   GFP_KERNEL);
-+	if (!hal->srng_config)
-+		return -ENOMEM;
-+
-+	s = &hal->srng_config[HAL_REO_DST];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_RING_HP;
-+	s->reg_size[0] = HAL_REO2_RING_BASE_LSB(ab) - HAL_REO1_RING_BASE_LSB(ab);
-+	s->reg_size[1] = HAL_REO2_RING_HP - HAL_REO1_RING_HP;
-+
-+	s = &hal->srng_config[HAL_REO_EXCEPTION];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_SW0_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_SW0_RING_HP;
-+
-+	s = &hal->srng_config[HAL_REO_REINJECT];
-+	s->max_rings = 1;
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_SW2REO_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_SW2REO_RING_HP;
-+
-+	s = &hal->srng_config[HAL_REO_CMD];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_CMD_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_CMD_HP;
-+
-+	s = &hal->srng_config[HAL_REO_STATUS];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_STATUS_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_STATUS_HP;
-+
-+	s = &hal->srng_config[HAL_TCL_DATA];
-+	s->max_rings = 5;
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_HP;
-+	s->reg_size[0] = HAL_TCL2_RING_BASE_LSB - HAL_TCL1_RING_BASE_LSB;
-+	s->reg_size[1] = HAL_TCL2_RING_HP - HAL_TCL1_RING_HP;
-+
-+	s = &hal->srng_config[HAL_TCL_CMD];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_RING_HP;
-+
-+	s = &hal->srng_config[HAL_TCL_STATUS];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_STATUS_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_STATUS_RING_HP;
-+
-+	s = &hal->srng_config[HAL_CE_SRC];
-+	s->max_rings = 12;
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_HP;
-+	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
-+	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
-+
-+	s = &hal->srng_config[HAL_CE_DST];
-+	s->max_rings = 12;
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_HP;
-+	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+
-+	s = &hal->srng_config[HAL_CE_DST_STATUS];
-+	s->max_rings = 12;
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG +
-+		HAL_CE_DST_STATUS_RING_BASE_LSB;
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_STATUS_RING_HP;
-+	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
-+		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
-+
-+	s = &hal->srng_config[HAL_WBM_IDLE_LINK];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_IDLE_LINK_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_IDLE_LINK_RING_HP;
-+
-+	s = &hal->srng_config[HAL_SW2WBM_RELEASE];
-+	s->max_rings = 1;
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG +
-+		HAL_WBM_SW_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_SW_RELEASE_RING_HP;
-+
-+	s = &hal->srng_config[HAL_WBM2SW_RELEASE];
-+	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM0_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM0_RELEASE_RING_HP;
-+	s->reg_size[0] = HAL_WBM1_RELEASE_RING_BASE_LSB(ab) -
-+		HAL_WBM0_RELEASE_RING_BASE_LSB(ab);
-+	s->reg_size[1] = HAL_WBM1_RELEASE_RING_HP - HAL_WBM0_RELEASE_RING_HP;
-+
-+	s = &hal->srng_config[HAL_RXDMA_BUF];
-+	s->max_rings = 2;
-+	s->mac_type = ATH12K_HAL_SRNG_PMAC;
-+
-+	s = &hal->srng_config[HAL_RXDMA_DST];
-+	s->max_rings = 1;
-+	s->entry_size = sizeof(struct hal_reo_entrance_ring) >> 2;
-+
-+	/* below rings are not used */
-+	s = &hal->srng_config[HAL_RXDMA_DIR_BUF];
-+	s->max_rings = 0;
-+
-+	s = &hal->srng_config[HAL_PPE2TCL];
-+	s->max_rings = 0;
-+
-+	s = &hal->srng_config[HAL_PPE_RELEASE];
-+	s->max_rings = 0;
-+
-+	s = &hal->srng_config[HAL_TX_MONITOR_BUF];
-+	s->max_rings = 0;
-+
-+	s = &hal->srng_config[HAL_TX_MONITOR_DST];
-+	s->max_rings = 0;
-+
-+	s = &hal->srng_config[HAL_PPE2TCL];
-+	s->max_rings = 0;
-+
-+	return 0;
-+}
-+
-+static bool ath12k_hw_wcn7850_dp_rx_h_msdu_done(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.wcn7850.msdu_end.info14,
-+			       RX_MSDU_END_INFO14_MSDU_DONE);
-+}
-+
-+static bool ath12k_hw_wcn7850_dp_rx_h_l4_cksum_fail(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.wcn7850.msdu_end.info13,
-+			       RX_MSDU_END_INFO13_TCP_UDP_CKSUM_FAIL);
-+}
-+
-+static bool ath12k_hw_wcn7850_dp_rx_h_ip_cksum_fail(struct hal_rx_desc *desc)
-+{
-+	return !!le32_get_bits(desc->u.wcn7850.msdu_end.info13,
-+			      RX_MSDU_END_INFO13_IP_CKSUM_FAIL);
-+}
-+
-+static bool ath12k_hw_wcn7850_dp_rx_h_is_decrypted(struct hal_rx_desc *desc)
-+{
-+	return (le32_get_bits(desc->u.wcn7850.msdu_end.info14,
-+			      RX_MSDU_END_INFO14_DECRYPT_STATUS_CODE) ==
-+			      RX_DESC_DECRYPT_STATUS_CODE_OK);
-+}
-+
-+static u32 ath12k_hw_wcn7850_dp_rx_h_mpdu_err(struct hal_rx_desc *desc)
-+{
-+	u32 info = __le32_to_cpu(desc->u.wcn7850.msdu_end.info13);
-+	u32 errmap = 0;
-+
-+	if (info & RX_MSDU_END_INFO13_FCS_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_FCS;
-+
-+	if (info & RX_MSDU_END_INFO13_DECRYPT_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_DECRYPT;
-+
-+	if (info & RX_MSDU_END_INFO13_TKIP_MIC_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_TKIP_MIC;
-+
-+	if (info & RX_MSDU_END_INFO13_A_MSDU_ERROR)
-+		errmap |= HAL_RX_MPDU_ERR_AMSDU_ERR;
-+
-+	if (info & RX_MSDU_END_INFO13_OVERFLOW_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_OVERFLOW;
-+
-+	if (info & RX_MSDU_END_INFO13_MSDU_LEN_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_MSDU_LEN;
-+
-+	if (info & RX_MSDU_END_INFO13_MPDU_LEN_ERR)
-+		errmap |= HAL_RX_MPDU_ERR_MPDU_LEN;
-+
-+	return errmap;
-+}
-+
-+const struct hal_ops hal_wcn7850_ops = {
-+	.rx_desc_get_first_msdu = ath12k_hw_wcn7850_rx_desc_get_first_msdu,
-+	.rx_desc_get_last_msdu = ath12k_hw_wcn7850_rx_desc_get_last_msdu,
-+	.rx_desc_get_l3_pad_bytes = ath12k_hw_wcn7850_rx_desc_get_l3_pad_bytes,
-+	.rx_desc_encrypt_valid = ath12k_hw_wcn7850_rx_desc_encrypt_valid,
-+	.rx_desc_get_encrypt_type = ath12k_hw_wcn7850_rx_desc_get_encrypt_type,
-+	.rx_desc_get_decap_type = ath12k_hw_wcn7850_rx_desc_get_decap_type,
-+	.rx_desc_get_mesh_ctl = ath12k_hw_wcn7850_rx_desc_get_mesh_ctl,
-+	.rx_desc_get_mpdu_seq_ctl_vld = ath12k_hw_wcn7850_rx_desc_get_mpdu_seq_ctl_vld,
-+	.rx_desc_get_mpdu_fc_valid = ath12k_hw_wcn7850_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_start_seq_no = ath12k_hw_wcn7850_rx_desc_get_mpdu_start_seq_no,
-+	.rx_desc_get_msdu_len = ath12k_hw_wcn7850_rx_desc_get_msdu_len,
-+	.rx_desc_get_msdu_sgi = ath12k_hw_wcn7850_rx_desc_get_msdu_sgi,
-+	.rx_desc_get_msdu_rate_mcs = ath12k_hw_wcn7850_rx_desc_get_msdu_rate_mcs,
-+	.rx_desc_get_msdu_rx_bw = ath12k_hw_wcn7850_rx_desc_get_msdu_rx_bw,
-+	.rx_desc_get_msdu_freq = ath12k_hw_wcn7850_rx_desc_get_msdu_freq,
-+	.rx_desc_get_msdu_pkt_type = ath12k_hw_wcn7850_rx_desc_get_msdu_pkt_type,
-+	.rx_desc_get_msdu_nss = ath12k_hw_wcn7850_rx_desc_get_msdu_nss,
-+	.rx_desc_get_mpdu_tid = ath12k_hw_wcn7850_rx_desc_get_mpdu_tid,
-+	.rx_desc_get_mpdu_peer_id = ath12k_hw_wcn7850_rx_desc_get_mpdu_peer_id,
-+	.rx_desc_copy_end_tlv = ath12k_hw_wcn7850_rx_desc_copy_end_tlv,
-+	.rx_desc_get_mpdu_start_tag = ath12k_hw_wcn7850_rx_desc_get_mpdu_start_tag,
-+	.rx_desc_get_mpdu_ppdu_id = ath12k_hw_wcn7850_rx_desc_get_mpdu_ppdu_id,
-+	.rx_desc_set_msdu_len = ath12k_hw_wcn7850_rx_desc_set_msdu_len,
-+	.rx_desc_get_msdu_payload = ath12k_hw_wcn7850_rx_desc_get_msdu_payload,
-+	.rx_desc_get_mpdu_start_offset = ath12k_hw_wcn7850_rx_desc_get_mpdu_start_offset,
-+	.rx_desc_get_msdu_end_offset = ath12k_hw_wcn7850_rx_desc_get_msdu_end_offset,
-+	.rx_desc_mac_addr2_valid = ath12k_hw_wcn7850_rx_desc_mac_addr2_valid,
-+	.rx_desc_mpdu_start_addr2 = ath12k_hw_wcn7850_rx_desc_mpdu_start_addr2,
-+	.rx_desc_is_mcbc = ath12k_hw_wcn7850_rx_desc_is_mcbc,
-+	.rx_desc_get_dot11_hdr = ath12k_hw_wcn7850_rx_desc_get_dot11_hdr,
-+	.rx_desc_get_crypto_header = ath12k_hw_wcn7850_rx_desc_get_crypto_hdr,
-+	.rx_desc_get_mpdu_frame_ctl = ath12k_hw_wcn7850_rx_desc_get_mpdu_frame_ctl,
-+	.create_srng_config = ath12k_hal_srng_create_config_wcn7850,
-+	.tcl_to_wbm_rbm_map = ath12k_hal_wcn7850_tcl_to_wbm_rbm_map,
-+	.dp_rx_h_msdu_done = ath12k_hw_wcn7850_dp_rx_h_msdu_done,
-+	.dp_rx_h_l4_cksum_fail = ath12k_hw_wcn7850_dp_rx_h_l4_cksum_fail,
-+	.dp_rx_h_ip_cksum_fail = ath12k_hw_wcn7850_dp_rx_h_ip_cksum_fail,
-+	.dp_rx_h_is_decrypted = ath12k_hw_wcn7850_dp_rx_h_is_decrypted,
-+	.dp_rx_h_mpdu_err = ath12k_hw_wcn7850_dp_rx_h_mpdu_err,
++struct dp_link_desc_bank {
++	void *vaddr_unaligned;
++	void *vaddr;
++	dma_addr_t paddr_unaligned;
++	dma_addr_t paddr;
++	u32 size;
 +};
 +
-+static int ath12k_hal_alloc_cont_rdp(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	size_t size;
++/* Size to enforce scatter idle list mode */
++#define DP_LINK_DESC_ALLOC_SIZE_THRESH 0x200000
++#define DP_LINK_DESC_BANKS_MAX 8
++
++#define DP_LINK_DESC_START	0x4000
++#define DP_LINK_DESC_SHIFT	3
++
++#define DP_LINK_DESC_COOKIE_SET(id, page) \
++	((((id) + DP_LINK_DESC_START) << DP_LINK_DESC_SHIFT) | (page))
++
++#define DP_LINK_DESC_BANK_MASK	GENMASK(2, 0)
++
++#define DP_RX_DESC_COOKIE_INDEX_MAX		0x3ffff
++#define DP_RX_DESC_COOKIE_POOL_ID_MAX		0x1c0000
++#define DP_RX_DESC_COOKIE_MAX	\
++	(DP_RX_DESC_COOKIE_INDEX_MAX | DP_RX_DESC_COOKIE_POOL_ID_MAX)
++#define DP_NOT_PPDU_ID_WRAP_AROUND 20000
++
++enum ath12k_dp_ppdu_state {
++	DP_PPDU_STATUS_START,
++	DP_PPDU_STATUS_DONE,
++};
++
++struct dp_mon_mpdu {
++	struct list_head list;
++	struct sk_buff *head;
++	struct sk_buff *tail;
++};
++
++#define DP_MON_MAX_STATUS_BUF 32
++
++struct ath12k_mon_data {
++	struct dp_link_desc_bank link_desc_banks[DP_LINK_DESC_BANKS_MAX];
++	struct hal_rx_mon_ppdu_info mon_ppdu_info;
++
++	u32 mon_ppdu_status;
++	u32 mon_last_buf_cookie;
++	u64 mon_last_linkdesc_paddr;
++	u16 chan_noise_floor;
++
++	struct ath12k_pdev_mon_stats rx_mon_stats;
++	/* lock for monitor data */
++	spinlock_t mon_lock;
++	struct sk_buff_head rx_status_q;
++	struct dp_mon_mpdu *mon_mpdu;
++	struct list_head dp_rx_mon_mpdu_list;
++	struct sk_buff *dest_skb_q[DP_MON_MAX_STATUS_BUF];
++	struct dp_mon_tx_ppdu_info *tx_prot_ppdu_info;
++	struct dp_mon_tx_ppdu_info *tx_data_ppdu_info;
++};
++
++struct ath12k_pdev_dp {
++	u32 mac_id;
++	atomic_t num_tx_pending;
++	wait_queue_head_t tx_empty_waitq;
++	struct dp_srng rxdma_mon_dst_ring[MAX_RXDMA_PER_PDEV];
++	struct dp_srng tx_mon_dst_ring[MAX_RXDMA_PER_PDEV];
++
++	struct ieee80211_rx_status rx_status;
++	struct ath12k_mon_data mon_data;
++};
++
++#define DP_NUM_CLIENTS_MAX 64
++#define DP_AVG_TIDS_PER_CLIENT 2
++#define DP_NUM_TIDS_MAX (DP_NUM_CLIENTS_MAX * DP_AVG_TIDS_PER_CLIENT)
++#define DP_AVG_MSDUS_PER_FLOW 128
++#define DP_AVG_FLOWS_PER_TID 2
++#define DP_AVG_MPDUS_PER_TID_MAX 128
++#define DP_AVG_MSDUS_PER_MPDU 4
++
++#define DP_RX_HASH_ENABLE	1 /* Enable hash based Rx steering */
++
++#define DP_BA_WIN_SZ_MAX	256
++
++#define DP_TCL_NUM_RING_MAX	4
++
++#define DP_IDLE_SCATTER_BUFS_MAX 16
++
++#define DP_WBM_RELEASE_RING_SIZE	64
++#define DP_TCL_DATA_RING_SIZE		512
++#define DP_TX_COMP_RING_SIZE		32768
++#define DP_TX_IDR_SIZE			DP_TX_COMP_RING_SIZE
++#define DP_TCL_CMD_RING_SIZE		32
++#define DP_TCL_STATUS_RING_SIZE		32
++#define DP_REO_DST_RING_MAX		8
++#define DP_REO_DST_RING_SIZE		2048
++#define DP_REO_REINJECT_RING_SIZE	32
++#define DP_RX_RELEASE_RING_SIZE		1024
++#define DP_REO_EXCEPTION_RING_SIZE	128
++#define DP_REO_CMD_RING_SIZE		128
++#define DP_REO_STATUS_RING_SIZE		2048
++#define DP_RXDMA_BUF_RING_SIZE		4096
++#define DP_RXDMA_REFILL_RING_SIZE	2048
++#define DP_RXDMA_ERR_DST_RING_SIZE	1024
++#define DP_RXDMA_MON_STATUS_RING_SIZE	1024
++#define DP_RXDMA_MONITOR_BUF_RING_SIZE	4096
++#define DP_RXDMA_MONITOR_DST_RING_SIZE	2048
++#define DP_RXDMA_MONITOR_DESC_RING_SIZE	4096
++#define DP_TX_MONITOR_BUF_RING_SIZE	4096
++#define DP_TX_MONITOR_DEST_RING_SIZE	2048
++
++#define DP_TX_MONITOR_BUF_SIZE		2048
++#define DP_TX_MONITOR_BUF_SIZE_MIN	48
++#define DP_TX_MONITOR_BUF_SIZE_MAX	8192
 +
-+	size = sizeof(u32) * HAL_SRNG_RING_ID_MAX;
-+	hal->rdp.vaddr = dma_alloc_coherent(ab->dev, size, &hal->rdp.paddr,
-+					    GFP_KERNEL);
-+	if (!hal->rdp.vaddr)
-+		return -ENOMEM;
++#define DP_RX_BUFFER_SIZE	2048
++#define DP_RX_BUFFER_SIZE_LITE	1024
++#define DP_RX_BUFFER_ALIGN_SIZE	128
 +
-+	return 0;
-+}
++#define DP_RXDMA_BUF_COOKIE_BUF_ID	GENMASK(17, 0)
++#define DP_RXDMA_BUF_COOKIE_PDEV_ID	GENMASK(19, 18)
 +
-+static void ath12k_hal_free_cont_rdp(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	size_t size;
++#define DP_HW2SW_MACID(mac_id) ({ typeof(mac_id) x = (mac_id); x ? x - 1 : 0; })
++#define DP_SW2HW_MACID(mac_id) ((mac_id) + 1)
 +
-+	if (!hal->rdp.vaddr)
-+		return;
++#define DP_TX_DESC_ID_MAC_ID  GENMASK(1, 0)
++#define DP_TX_DESC_ID_MSDU_ID GENMASK(18, 2)
++#define DP_TX_DESC_ID_POOL_ID GENMASK(20, 19)
 +
-+	size = sizeof(u32) * HAL_SRNG_RING_ID_MAX;
-+	dma_free_coherent(ab->dev, size,
-+			  hal->rdp.vaddr, hal->rdp.paddr);
-+	hal->rdp.vaddr = NULL;
-+}
++#define ATH12K_SHADOW_DP_TIMER_INTERVAL 20
++#define ATH12K_SHADOW_CTRL_TIMER_INTERVAL 10
 +
-+static int ath12k_hal_alloc_cont_wrp(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	size_t size;
++#define ATH12K_NUM_POOL_TX_DESC	32768
 +
-+	size = sizeof(u32) * (HAL_SRNG_NUM_PMAC_RINGS + HAL_SRNG_NUM_DMAC_RINGS);
-+	hal->wrp.vaddr = dma_alloc_coherent(ab->dev, size, &hal->wrp.paddr,
-+					    GFP_KERNEL);
-+	if (!hal->wrp.vaddr)
-+		return -ENOMEM;
++/* TODO: revisit this count during testing */
++#define ATH12K_RX_DESC_COUNT	(12288)
 +
-+	return 0;
-+}
++#define ATH12K_PAGE_SIZE	PAGE_SIZE
 +
-+static void ath12k_hal_free_cont_wrp(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	size_t size;
-+
-+	if (!hal->wrp.vaddr)
-+		return;
-+
-+	size = sizeof(u32) * (HAL_SRNG_NUM_PMAC_RINGS + HAL_SRNG_NUM_DMAC_RINGS);
-+	dma_free_coherent(ab->dev, size,
-+			  hal->wrp.vaddr, hal->wrp.paddr);
-+	hal->wrp.vaddr = NULL;
-+}
-+
-+static void ath12k_hal_ce_dst_setup(struct ath12k_base *ab,
-+				    struct hal_srng *srng, int ring_num)
-+{
-+	struct hal_srng_config *srng_config = &ab->hal.srng_config[HAL_CE_DST];
-+	u32 addr;
-+	u32 val;
-+
-+	addr = HAL_CE_DST_RING_CTRL +
-+	       srng_config->reg_start[HAL_SRNG_REG_GRP_R0] +
-+	       ring_num * srng_config->reg_size[HAL_SRNG_REG_GRP_R0];
-+
-+	val = ath12k_hif_read32(ab, addr);
-+	val &= ~HAL_CE_DST_R0_DEST_CTRL_MAX_LEN;
-+	val |= u32_encode_bits(srng->u.dst_ring.max_buffer_length,
-+			       HAL_CE_DST_R0_DEST_CTRL_MAX_LEN);
-+	ath12k_hif_write32(ab, addr, val);
-+}
-+
-+static void ath12k_hal_srng_dst_hw_init(struct ath12k_base *ab,
-+					struct hal_srng *srng)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	u32 val;
-+	u64 hp_addr;
-+	u32 reg_base;
-+
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R0];
-+
-+	if (srng->flags & HAL_SRNG_FLAGS_MSI_INTR) {
-+		ath12k_hif_write32(ab, reg_base +
-+				   HAL_REO1_RING_MSI1_BASE_LSB_OFFSET,
-+				   srng->msi_addr);
-+
-+		val = u32_encode_bits(((u64)srng->msi_addr >> HAL_ADDR_MSB_REG_SHIFT),
-+				      HAL_REO1_RING_MSI1_BASE_MSB_ADDR) |
-+				      HAL_REO1_RING_MSI1_BASE_MSB_MSI1_ENABLE;
-+		ath12k_hif_write32(ab, reg_base +
-+				       HAL_REO1_RING_MSI1_BASE_MSB_OFFSET, val);
-+
-+		ath12k_hif_write32(ab,
-+				   reg_base + HAL_REO1_RING_MSI1_DATA_OFFSET,
-+				   srng->msi_data);
-+	}
-+
-+	ath12k_hif_write32(ab, reg_base, srng->ring_base_paddr);
-+
-+	val = u32_encode_bits(((u64)srng->ring_base_paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+			      HAL_REO1_RING_BASE_MSB_RING_BASE_ADDR_MSB) |
-+	      u32_encode_bits((srng->entry_size * srng->num_entries),
-+			      HAL_REO1_RING_BASE_MSB_RING_SIZE);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_BASE_MSB_OFFSET, val);
-+
-+	val = u32_encode_bits(srng->ring_id, HAL_REO1_RING_ID_RING_ID) |
-+	      u32_encode_bits(srng->entry_size, HAL_REO1_RING_ID_ENTRY_SIZE);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_ID_OFFSET(ab), val);
-+
-+	/* interrupt setup */
-+	val = u32_encode_bits((srng->intr_timer_thres_us >> 3),
-+			      HAL_REO1_RING_PRDR_INT_SETUP_INTR_TMR_THOLD);
-+
-+	val |= u32_encode_bits((srng->intr_batch_cntr_thres_entries * srng->entry_size),
-+				HAL_REO1_RING_PRDR_INT_SETUP_BATCH_COUNTER_THOLD);
-+
-+	ath12k_hif_write32(ab,
-+			   reg_base + HAL_REO1_RING_PRODUCER_INT_SETUP_OFFSET,
-+			   val);
-+
-+	hp_addr = hal->rdp.paddr +
-+		  ((unsigned long)srng->u.dst_ring.hp_addr -
-+		   (unsigned long)hal->rdp.vaddr);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_HP_ADDR_LSB_OFFSET,
-+			   hp_addr & HAL_ADDR_LSB_REG_MASK);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_HP_ADDR_MSB_OFFSET,
-+			   hp_addr >> HAL_ADDR_MSB_REG_SHIFT);
-+
-+	/* Initialize head and tail pointers to indicate ring is empty */
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R2];
-+	ath12k_hif_write32(ab, reg_base, 0);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_TP_OFFSET, 0);
-+	*srng->u.dst_ring.hp_addr = 0;
-+
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R0];
-+	val = 0;
-+	if (srng->flags & HAL_SRNG_FLAGS_DATA_TLV_SWAP)
-+		val |= HAL_REO1_RING_MISC_DATA_TLV_SWAP;
-+	if (srng->flags & HAL_SRNG_FLAGS_RING_PTR_SWAP)
-+		val |= HAL_REO1_RING_MISC_HOST_FW_SWAP;
-+	if (srng->flags & HAL_SRNG_FLAGS_MSI_SWAP)
-+		val |= HAL_REO1_RING_MISC_MSI_SWAP;
-+	val |= HAL_REO1_RING_MISC_SRNG_ENABLE;
-+
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_MISC_OFFSET, val);
-+}
-+
-+static void ath12k_hal_srng_src_hw_init(struct ath12k_base *ab,
-+					struct hal_srng *srng)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	u32 val;
-+	u64 tp_addr;
-+	u32 reg_base;
-+
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R0];
-+
-+	if (srng->flags & HAL_SRNG_FLAGS_MSI_INTR) {
-+		ath12k_hif_write32(ab, reg_base +
-+				   HAL_TCL1_RING_MSI1_BASE_LSB_OFFSET(ab),
-+				   srng->msi_addr);
-+
-+		val = u32_encode_bits(((u64)srng->msi_addr >> HAL_ADDR_MSB_REG_SHIFT),
-+				      HAL_TCL1_RING_MSI1_BASE_MSB_ADDR) |
-+				      HAL_TCL1_RING_MSI1_BASE_MSB_MSI1_ENABLE;
-+		ath12k_hif_write32(ab, reg_base +
-+				       HAL_TCL1_RING_MSI1_BASE_MSB_OFFSET(ab),
-+				   val);
-+
-+		ath12k_hif_write32(ab, reg_base +
-+				       HAL_TCL1_RING_MSI1_DATA_OFFSET(ab),
-+				   srng->msi_data);
-+	}
-+
-+	ath12k_hif_write32(ab, reg_base, srng->ring_base_paddr);
-+
-+	val = u32_encode_bits(((u64)srng->ring_base_paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+			      HAL_TCL1_RING_BASE_MSB_RING_BASE_ADDR_MSB) |
-+	      u32_encode_bits((srng->entry_size * srng->num_entries),
-+			      HAL_TCL1_RING_BASE_MSB_RING_SIZE);
-+	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_BASE_MSB_OFFSET, val);
-+
-+	val = u32_encode_bits(srng->entry_size, HAL_REO1_RING_ID_ENTRY_SIZE);
-+	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_ID_OFFSET(ab), val);
-+
-+	val = u32_encode_bits(srng->intr_timer_thres_us,
-+			      HAL_TCL1_RING_CONSR_INT_SETUP_IX0_INTR_TMR_THOLD);
-+
-+	val |= u32_encode_bits((srng->intr_batch_cntr_thres_entries * srng->entry_size),
-+			       HAL_TCL1_RING_CONSR_INT_SETUP_IX0_BATCH_COUNTER_THOLD);
-+
-+	ath12k_hif_write32(ab,
-+			   reg_base + HAL_TCL1_RING_CONSR_INT_SETUP_IX0_OFFSET(ab),
-+			   val);
-+
-+	val = 0;
-+	if (srng->flags & HAL_SRNG_FLAGS_LOW_THRESH_INTR_EN) {
-+		val |= u32_encode_bits(srng->u.src_ring.low_threshold,
-+				       HAL_TCL1_RING_CONSR_INT_SETUP_IX1_LOW_THOLD);
-+	}
-+	ath12k_hif_write32(ab,
-+			   reg_base + HAL_TCL1_RING_CONSR_INT_SETUP_IX1_OFFSET(ab),
-+			   val);
-+
-+	if (srng->ring_id != HAL_SRNG_RING_ID_WBM_IDLE_LINK) {
-+		tp_addr = hal->rdp.paddr +
-+			  ((unsigned long)srng->u.src_ring.tp_addr -
-+			   (unsigned long)hal->rdp.vaddr);
-+		ath12k_hif_write32(ab,
-+				   reg_base + HAL_TCL1_RING_TP_ADDR_LSB_OFFSET(ab),
-+				   tp_addr & HAL_ADDR_LSB_REG_MASK);
-+		ath12k_hif_write32(ab,
-+				   reg_base + HAL_TCL1_RING_TP_ADDR_MSB_OFFSET(ab),
-+				   tp_addr >> HAL_ADDR_MSB_REG_SHIFT);
-+	}
-+
-+	/* Initialize head and tail pointers to indicate ring is empty */
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R2];
-+	ath12k_hif_write32(ab, reg_base, 0);
-+	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_TP_OFFSET, 0);
-+	*srng->u.src_ring.tp_addr = 0;
-+
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R0];
-+	val = 0;
-+	if (srng->flags & HAL_SRNG_FLAGS_DATA_TLV_SWAP)
-+		val |= HAL_TCL1_RING_MISC_DATA_TLV_SWAP;
-+	if (srng->flags & HAL_SRNG_FLAGS_RING_PTR_SWAP)
-+		val |= HAL_TCL1_RING_MISC_HOST_FW_SWAP;
-+	if (srng->flags & HAL_SRNG_FLAGS_MSI_SWAP)
-+		val |= HAL_TCL1_RING_MISC_MSI_SWAP;
-+
-+	/* Loop count is not used for SRC rings */
-+	val |= HAL_TCL1_RING_MISC_MSI_LOOPCNT_DISABLE;
-+
-+	val |= HAL_TCL1_RING_MISC_SRNG_ENABLE;
-+
-+	if (srng->ring_id == HAL_SRNG_RING_ID_WBM_IDLE_LINK)
-+		val |= HAL_TCL1_RING_MISC_MSI_RING_ID_DISABLE;
-+
-+	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_MISC_OFFSET(ab), val);
-+}
-+
-+static void ath12k_hal_srng_hw_init(struct ath12k_base *ab,
-+				    struct hal_srng *srng)
-+{
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC)
-+		ath12k_hal_srng_src_hw_init(ab, srng);
-+	else
-+		ath12k_hal_srng_dst_hw_init(ab, srng);
-+}
-+
-+static int ath12k_hal_srng_get_ring_id(struct ath12k_base *ab,
-+				       enum hal_ring_type type,
-+				       int ring_num, int mac_id)
-+{
-+	struct hal_srng_config *srng_config = &ab->hal.srng_config[type];
-+	int ring_id;
-+
-+	if (ring_num >= srng_config->max_rings) {
-+		ath12k_warn(ab, "invalid ring number :%d\n", ring_num);
-+		return -EINVAL;
-+	}
-+
-+	ring_id = srng_config->start_ring_id + ring_num;
-+	if (srng_config->mac_type == ATH12K_HAL_SRNG_PMAC)
-+		ring_id += mac_id * HAL_SRNG_RINGS_PER_PMAC;
-+
-+	if (WARN_ON(ring_id >= HAL_SRNG_RING_ID_MAX))
-+		return -EINVAL;
-+
-+	return ring_id;
-+}
-+
-+int ath12k_hal_srng_get_entrysize(struct ath12k_base *ab, u32 ring_type)
-+{
-+	struct hal_srng_config *srng_config;
-+
-+	if (WARN_ON(ring_type >= HAL_MAX_RING_TYPES))
-+		return -EINVAL;
-+
-+	srng_config = &ab->hal.srng_config[ring_type];
-+
-+	return (srng_config->entry_size << 2);
-+}
-+
-+int ath12k_hal_srng_get_max_entries(struct ath12k_base *ab, u32 ring_type)
-+{
-+	struct hal_srng_config *srng_config;
-+
-+	if (WARN_ON(ring_type >= HAL_MAX_RING_TYPES))
-+		return -EINVAL;
-+
-+	srng_config = &ab->hal.srng_config[ring_type];
-+
-+	return (srng_config->max_size / srng_config->entry_size);
-+}
-+
-+void ath12k_hal_srng_get_params(struct ath12k_base *ab, struct hal_srng *srng,
-+				struct hal_srng_params *params)
-+{
-+	params->ring_base_paddr = srng->ring_base_paddr;
-+	params->ring_base_vaddr = srng->ring_base_vaddr;
-+	params->num_entries = srng->num_entries;
-+	params->intr_timer_thres_us = srng->intr_timer_thres_us;
-+	params->intr_batch_cntr_thres_entries =
-+		srng->intr_batch_cntr_thres_entries;
-+	params->low_threshold = srng->u.src_ring.low_threshold;
-+	params->msi_addr = srng->msi_addr;
-+	params->msi2_addr = srng->msi2_addr;
-+	params->msi_data = srng->msi_data;
-+	params->msi2_data = srng->msi2_data;
-+	params->flags = srng->flags;
-+}
-+
-+dma_addr_t ath12k_hal_srng_get_hp_addr(struct ath12k_base *ab,
-+				       struct hal_srng *srng)
-+{
-+	if (!(srng->flags & HAL_SRNG_FLAGS_LMAC_RING))
-+		return 0;
-+
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC)
-+		return ab->hal.wrp.paddr +
-+		       ((unsigned long)srng->u.src_ring.hp_addr -
-+			(unsigned long)ab->hal.wrp.vaddr);
-+	else
-+		return ab->hal.rdp.paddr +
-+		       ((unsigned long)srng->u.dst_ring.hp_addr -
-+			 (unsigned long)ab->hal.rdp.vaddr);
-+}
-+
-+dma_addr_t ath12k_hal_srng_get_tp_addr(struct ath12k_base *ab,
-+				       struct hal_srng *srng)
-+{
-+	if (!(srng->flags & HAL_SRNG_FLAGS_LMAC_RING))
-+		return 0;
-+
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC)
-+		return ab->hal.rdp.paddr +
-+		       ((unsigned long)srng->u.src_ring.tp_addr -
-+			(unsigned long)ab->hal.rdp.vaddr);
-+	else
-+		return ab->hal.wrp.paddr +
-+		       ((unsigned long)srng->u.dst_ring.tp_addr -
-+			(unsigned long)ab->hal.wrp.vaddr);
-+}
-+
-+u32 ath12k_hal_ce_get_desc_size(enum hal_ce_desc type)
-+{
-+	switch (type) {
-+	case HAL_CE_DESC_SRC:
-+		return sizeof(struct hal_ce_srng_src_desc);
-+	case HAL_CE_DESC_DST:
-+		return sizeof(struct hal_ce_srng_dest_desc);
-+	case HAL_CE_DESC_DST_STATUS:
-+		return sizeof(struct hal_ce_srng_dst_status_desc);
-+	}
-+
-+	return 0;
-+}
-+
-+void ath12k_hal_ce_src_set_desc(struct hal_ce_srng_src_desc *desc, dma_addr_t paddr,
-+				u32 len, u32 id, u8 byte_swap_data)
-+{
-+	desc->buffer_addr_low = cpu_to_le32(paddr & HAL_ADDR_LSB_REG_MASK);
-+	desc->buffer_addr_info =
-+		le32_encode_bits(((u64)paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+				 HAL_CE_SRC_DESC_ADDR_INFO_ADDR_HI) |
-+		le32_encode_bits(byte_swap_data,
-+				 HAL_CE_SRC_DESC_ADDR_INFO_BYTE_SWAP) |
-+		le32_encode_bits(0, HAL_CE_SRC_DESC_ADDR_INFO_GATHER) |
-+		le32_encode_bits(len, HAL_CE_SRC_DESC_ADDR_INFO_LEN);
-+	desc->meta_info = le32_encode_bits(id, HAL_CE_SRC_DESC_META_INFO_DATA);
-+}
-+
-+void ath12k_hal_ce_dst_set_desc(struct hal_ce_srng_dest_desc *desc, dma_addr_t paddr)
-+{
-+	desc->buffer_addr_low = cpu_to_le32(paddr & HAL_ADDR_LSB_REG_MASK);
-+	desc->buffer_addr_info =
-+		le32_encode_bits(((u64)paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+				 HAL_CE_DEST_DESC_ADDR_INFO_ADDR_HI);
-+}
-+
-+u32 ath12k_hal_ce_dst_status_get_length(struct hal_ce_srng_dst_status_desc *desc)
-+{
-+	u32 len;
-+
-+	len = le32_get_bits(desc->flags, HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
-+	desc->flags &= ~cpu_to_le32(HAL_CE_DST_STATUS_DESC_FLAGS_LEN);
-+
-+	return len;
-+}
-+
-+void ath12k_hal_set_link_desc_addr(struct hal_wbm_link_desc *desc, u32 cookie,
-+				   dma_addr_t paddr)
-+{
-+	desc->buf_addr_info.info0 = le32_encode_bits((paddr & HAL_ADDR_LSB_REG_MASK),
-+						     BUFFER_ADDR_INFO0_ADDR);
-+	desc->buf_addr_info.info1 =
-+			le32_encode_bits(((u64)paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+					 BUFFER_ADDR_INFO1_ADDR) |
-+			le32_encode_bits(1, BUFFER_ADDR_INFO1_RET_BUF_MGR) |
-+			le32_encode_bits(cookie, BUFFER_ADDR_INFO1_SW_COOKIE);
-+}
-+
-+void *ath12k_hal_srng_dst_peek(struct ath12k_base *ab, struct hal_srng *srng)
-+{
-+	lockdep_assert_held(&srng->lock);
-+
-+	if (srng->u.dst_ring.tp != srng->u.dst_ring.cached_hp)
-+		return (srng->ring_base_vaddr + srng->u.dst_ring.tp);
-+
-+	return NULL;
-+}
-+
-+void *ath12k_hal_srng_dst_get_next_entry(struct ath12k_base *ab,
-+					 struct hal_srng *srng)
-+{
-+	void *desc;
-+
-+	lockdep_assert_held(&srng->lock);
-+
-+	if (srng->u.dst_ring.tp == srng->u.dst_ring.cached_hp)
-+		return NULL;
-+
-+	desc = srng->ring_base_vaddr + srng->u.dst_ring.tp;
-+
-+	srng->u.dst_ring.tp = (srng->u.dst_ring.tp + srng->entry_size) %
-+			      srng->ring_size;
-+
-+	return desc;
-+}
-+
-+int ath12k_hal_srng_dst_num_free(struct ath12k_base *ab, struct hal_srng *srng,
-+				 bool sync_hw_ptr)
-+{
-+	u32 tp, hp;
-+
-+	lockdep_assert_held(&srng->lock);
-+
-+	tp = srng->u.dst_ring.tp;
-+
-+	if (sync_hw_ptr) {
-+		hp = *srng->u.dst_ring.hp_addr;
-+		srng->u.dst_ring.cached_hp = hp;
-+	} else {
-+		hp = srng->u.dst_ring.cached_hp;
-+	}
-+
-+	if (hp >= tp)
-+		return (hp - tp) / srng->entry_size;
-+	else
-+		return (srng->ring_size - tp + hp) / srng->entry_size;
-+}
-+
-+/* Returns number of available entries in src ring */
-+int ath12k_hal_srng_src_num_free(struct ath12k_base *ab, struct hal_srng *srng,
-+				 bool sync_hw_ptr)
-+{
-+	u32 tp, hp;
-+
-+	lockdep_assert_held(&srng->lock);
-+
-+	hp = srng->u.src_ring.hp;
-+
-+	if (sync_hw_ptr) {
-+		tp = *srng->u.src_ring.tp_addr;
-+		srng->u.src_ring.cached_tp = tp;
-+	} else {
-+		tp = srng->u.src_ring.cached_tp;
-+	}
-+
-+	if (tp > hp)
-+		return ((tp - hp) / srng->entry_size) - 1;
-+	else
-+		return ((srng->ring_size - hp + tp) / srng->entry_size) - 1;
-+}
-+
-+void *ath12k_hal_srng_src_get_next_entry(struct ath12k_base *ab,
-+					 struct hal_srng *srng)
-+{
-+	void *desc;
-+	u32 next_hp;
-+
-+	lockdep_assert_held(&srng->lock);
-+
-+	/* TODO: Using % is expensive, but we have to do this since size of some
-+	 * SRNG rings is not power of 2 (due to descriptor sizes). Need to see
-+	 * if separate function is defined for rings having power of 2 ring size
-+	 * (TCL2SW, REO2SW, SW2RXDMA and CE rings) so that we can avoid the
-+	 * overhead of % by using mask (with &).
-+	 */
-+	next_hp = (srng->u.src_ring.hp + srng->entry_size) % srng->ring_size;
-+
-+	if (next_hp == srng->u.src_ring.cached_tp)
-+		return NULL;
-+
-+	desc = srng->ring_base_vaddr + srng->u.src_ring.hp;
-+	srng->u.src_ring.hp = next_hp;
-+
-+	/* TODO: Reap functionality is not used by all rings. If particular
-+	 * ring does not use reap functionality, we need not update reap_hp
-+	 * with next_hp pointer. Need to make sure a separate function is used
-+	 * before doing any optimization by removing below code updating
-+	 * reap_hp.
-+	 */
-+	srng->u.src_ring.reap_hp = next_hp;
-+
-+	return desc;
-+}
-+
-+void *ath12k_hal_srng_src_reap_next(struct ath12k_base *ab,
-+				    struct hal_srng *srng)
-+{
-+	void *desc;
-+	u32 next_reap_hp;
-+
-+	lockdep_assert_held(&srng->lock);
-+
-+	next_reap_hp = (srng->u.src_ring.reap_hp + srng->entry_size) %
-+		       srng->ring_size;
-+
-+	if (next_reap_hp == srng->u.src_ring.cached_tp)
-+		return NULL;
-+
-+	desc = srng->ring_base_vaddr + next_reap_hp;
-+	srng->u.src_ring.reap_hp = next_reap_hp;
-+
-+	return desc;
-+}
-+
-+void *ath12k_hal_srng_src_get_next_reaped(struct ath12k_base *ab,
-+					  struct hal_srng *srng)
-+{
-+	void *desc;
-+
-+	lockdep_assert_held(&srng->lock);
-+
-+	if (srng->u.src_ring.hp == srng->u.src_ring.reap_hp)
-+		return NULL;
-+
-+	desc = srng->ring_base_vaddr + srng->u.src_ring.hp;
-+	srng->u.src_ring.hp = (srng->u.src_ring.hp + srng->entry_size) %
-+			      srng->ring_size;
-+
-+	return desc;
-+}
-+
-+void ath12k_hal_srng_access_begin(struct ath12k_base *ab, struct hal_srng *srng)
-+{
-+	lockdep_assert_held(&srng->lock);
-+
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC)
-+		srng->u.src_ring.cached_tp =
-+			*(volatile u32 *)srng->u.src_ring.tp_addr;
-+	else
-+		srng->u.dst_ring.cached_hp = *srng->u.dst_ring.hp_addr;
-+}
-+
-+/* Update cached ring head/tail pointers to HW. ath12k_hal_srng_access_begin()
-+ * should have been called before this.
++/* Total 1024 entries in PPT, i.e 4K/4 considering 4K aligned
++ * SPT pages which makes lower 12bits 0
 + */
-+void ath12k_hal_srng_access_end(struct ath12k_base *ab, struct hal_srng *srng)
-+{
-+	lockdep_assert_held(&srng->lock);
++#define ATH12K_MAX_PPT_ENTRIES	1024
 +
-+	/* TODO: See if we need a write memory barrier here */
-+	if (srng->flags & HAL_SRNG_FLAGS_LMAC_RING) {
-+		/* For LMAC rings, ring pointer updates are done through FW and
-+		 * hence written to a shared memory location that is read by FW
-+		 */
-+		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
-+			srng->u.src_ring.last_tp =
-+				*(volatile u32 *)srng->u.src_ring.tp_addr;
-+			*srng->u.src_ring.hp_addr = srng->u.src_ring.hp;
-+		} else {
-+			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-+			*srng->u.dst_ring.tp_addr = srng->u.dst_ring.tp;
-+		}
-+	} else {
-+		if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
-+			srng->u.src_ring.last_tp =
-+				*(volatile u32 *)srng->u.src_ring.tp_addr;
-+			ath12k_hif_write32(ab,
-+					   (unsigned long)srng->u.src_ring.hp_addr -
-+					   (unsigned long)ab->mem,
-+					   srng->u.src_ring.hp);
-+		} else {
-+			srng->u.dst_ring.last_hp = *srng->u.dst_ring.hp_addr;
-+			ath12k_hif_write32(ab,
-+					   (unsigned long)srng->u.dst_ring.tp_addr -
-+					   (unsigned long)ab->mem,
-+					   srng->u.dst_ring.tp);
-+		}
-+	}
++/* Total 512 entries in a SPT, i.e 4K Page/8 */
++#define ATH12K_MAX_SPT_ENTRIES	512
 +
-+	srng->timestamp = jiffies;
-+}
++#define ATH12K_NUM_RX_SPT_PAGES	((ATH12K_RX_DESC_COUNT) / ATH12K_MAX_SPT_ENTRIES)
 +
-+void ath12k_hal_setup_link_idle_list(struct ath12k_base *ab,
-+				     struct hal_wbm_idle_scatter_list *sbuf,
-+				     u32 nsbufs, u32 tot_link_desc,
-+				     u32 end_offset)
-+{
-+	struct ath12k_buffer_addr *link_addr;
-+	int i;
-+	u32 reg_scatter_buf_sz = HAL_WBM_IDLE_SCATTER_BUF_SIZE / 64;
-+	u32 val;
++#define ATH12K_TX_SPT_PAGES_PER_POOL (ATH12K_NUM_POOL_TX_DESC / \
++					  ATH12K_MAX_SPT_ENTRIES)
++#define ATH12K_NUM_TX_SPT_PAGES	(ATH12K_TX_SPT_PAGES_PER_POOL * ATH12K_HW_MAX_QUEUES)
++#define ATH12K_NUM_SPT_PAGES	(ATH12K_NUM_RX_SPT_PAGES + ATH12K_NUM_TX_SPT_PAGES)
 +
-+	link_addr = (void *)sbuf[0].vaddr + HAL_WBM_IDLE_SCATTER_BUF_SIZE;
++/* The SPT pages are divided for RX and TX, first block for RX
++ * and remaining for TX
++ */
++#define ATH12K_NUM_TX_SPT_PAGE_START ATH12K_NUM_RX_SPT_PAGES
 +
-+	for (i = 1; i < nsbufs; i++) {
-+		link_addr->info0 = cpu_to_le32(sbuf[i].paddr & HAL_ADDR_LSB_REG_MASK);
++#define ATH12K_DP_RX_DESC_MAGIC	0xBABABABA
 +
-+		link_addr->info1 =
-+			le32_encode_bits((u64)sbuf[i].paddr >> HAL_ADDR_MSB_REG_SHIFT,
-+					 HAL_WBM_SCATTERED_DESC_MSB_BASE_ADDR_39_32) |
-+			le32_encode_bits(BASE_ADDR_MATCH_TAG_VAL,
-+					 HAL_WBM_SCATTERED_DESC_MSB_BASE_ADDR_MATCH_TAG);
++/* 4K aligned address have last 12 bits set to 0, this check is done
++ * so that two spt pages address can be stored per 8bytes
++ * of CMEM (PPT)
++ */
++#define ATH12K_SPT_4K_ALIGN_CHECK 0xFFF
++#define ATH12K_SPT_4K_ALIGN_OFFSET 12
++#define ATH12K_PPT_ADDR_OFFSET(ppt_index) (4 * (ppt_index))
 +
-+		link_addr = (void *)sbuf[i].vaddr +
-+			     HAL_WBM_IDLE_SCATTER_BUF_SIZE;
-+	}
++/* To indicate HW of CMEM address, b0-31 are cmem base received via QMI */
++#define ATH12K_CMEM_ADDR_MSB 0x10
 +
-+	val = u32_encode_bits(reg_scatter_buf_sz, HAL_WBM_SCATTER_BUFFER_SIZE) |
-+	      u32_encode_bits(0x1, HAL_WBM_LINK_DESC_IDLE_LIST_MODE);
++/* Of 20 bits cookie, b0-b8 is to indicate SPT offset and b9-19 for PPT */
++#define ATH12K_CC_SPT_MSB 8
++#define ATH12K_CC_PPT_MSB 19
++#define ATH12K_CC_PPT_SHIFT 9
++#define ATH12k_DP_CC_COOKIE_SPT	GENMASK(8, 0)
++#define ATH12K_DP_CC_COOKIE_PPT	GENMASK(19, 9)
 +
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_R0_IDLE_LIST_CONTROL_ADDR(ab),
-+			   val);
++#define DP_REO_QREF_NUM		GENMASK(31, 16)
++#define DP_MAX_PEER_ID		2047
 +
-+	val = u32_encode_bits(reg_scatter_buf_sz * nsbufs,
-+			      HAL_WBM_SCATTER_RING_SIZE_OF_IDLE_LINK_DESC_LIST);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_R0_IDLE_LIST_SIZE_ADDR(ab),
-+			   val);
++/* Total size of the LUT is based on 2K peers, each having reference
++ * for 17tids, note each entry is of type ath12k_reo_queue_ref
++ * hence total size is 2048 * 17 * 8 = 278528
++ */
++#define DP_REOQ_LUT_SIZE	278528
 +
-+	val = u32_encode_bits(sbuf[0].paddr & HAL_ADDR_LSB_REG_MASK,
-+			      BUFFER_ADDR_INFO0_ADDR);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_RING_BASE_LSB(ab),
-+			   val);
++/* Invalid TX Bank ID value */
++#define DP_INVALID_BANK_ID -1
 +
-+	val = u32_encode_bits(BASE_ADDR_MATCH_TAG_VAL,
-+			      HAL_WBM_SCATTERED_DESC_MSB_BASE_ADDR_MATCH_TAG) |
-+	      u32_encode_bits((u64)sbuf[0].paddr >> HAL_ADDR_MSB_REG_SHIFT,
-+			      HAL_WBM_SCATTERED_DESC_MSB_BASE_ADDR_39_32);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_RING_BASE_MSB(ab),
-+			   val);
++struct ath12k_dp_tx_bank_profile {
++	u8 is_configured;
++	u32 num_users;
++	u32 bank_config;
++};
 +
-+	/* Setup head and tail pointers for the idle list */
-+	val = u32_encode_bits(sbuf[nsbufs - 1].paddr, BUFFER_ADDR_INFO0_ADDR);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_DESC_PTR_HEAD_INFO_IX0(ab),
-+			   val);
++struct ath12k_hp_update_timer {
++	struct timer_list timer;
++	bool started;
++	bool init;
++	u32 tx_num;
++	u32 timer_tx_num;
++	u32 ring_id;
++	u32 interval;
++	struct ath12k_base *ab;
++};
 +
-+	val = u32_encode_bits(((u64)sbuf[nsbufs - 1].paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+			      HAL_WBM_SCATTERED_DESC_MSB_BASE_ADDR_39_32) |
-+	       u32_encode_bits((end_offset >> 2),
-+			       HAL_WBM_SCATTERED_DESC_HEAD_P_OFFSET_IX1);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_DESC_PTR_HEAD_INFO_IX1(ab),
-+			   val);
++struct ath12k_rx_desc_info {
++	struct list_head list;
++	struct sk_buff *skb;
++	u32 cookie;
++	u32 magic;
++};
 +
-+	val = u32_encode_bits(sbuf[0].paddr, BUFFER_ADDR_INFO0_ADDR);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_DESC_PTR_HEAD_INFO_IX0(ab),
-+			   val);
++struct ath12k_tx_desc_info {
++	struct list_head list;
++	struct sk_buff *skb;
++	u32 desc_id; /* Cookie */
++	u8 mac_id;
++	u8 pool_id;
++};
 +
-+	val = u32_encode_bits(sbuf[0].paddr, BUFFER_ADDR_INFO0_ADDR);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_DESC_PTR_TAIL_INFO_IX0(ab),
-+			   val);
++struct ath12k_spt_info {
++	dma_addr_t paddr;
++	u64 *vaddr;
++};
 +
-+	val = u32_encode_bits(((u64)sbuf[0].paddr >> HAL_ADDR_MSB_REG_SHIFT),
-+			      HAL_WBM_SCATTERED_DESC_MSB_BASE_ADDR_39_32) |
-+	      u32_encode_bits(0, HAL_WBM_SCATTERED_DESC_TAIL_P_OFFSET_IX1);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_DESC_PTR_TAIL_INFO_IX1(ab),
-+			   val);
++struct ath12k_reo_queue_ref {
++	u32 info0;
++	u32 info1;
++} __packed;
 +
-+	val = 2 * tot_link_desc;
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_SCATTERED_DESC_PTR_HP_ADDR(ab),
-+			   val);
++struct ath12k_reo_q_addr_lut {
++	dma_addr_t paddr;
++	u32 *vaddr;
++};
 +
-+	/* Enable the SRNG */
-+	val = u32_encode_bits(1, HAL_WBM_IDLE_LINK_RING_MISC_SRNG_ENABLE) |
-+	      u32_encode_bits(1, HAL_WBM_IDLE_LINK_RING_MISC_RIND_ID_DISABLE);
-+	ath12k_hif_write32(ab,
-+			   HAL_SEQ_WCSS_UMAC_WBM_REG +
-+			   HAL_WBM_IDLE_LINK_RING_MISC_ADDR(ab),
-+			   val);
-+}
++struct ath12k_dp {
++	struct ath12k_base *ab;
++	u8 num_bank_profiles;
++	/* protects the access and update of bank_profiles */
++	spinlock_t tx_bank_lock;
++	struct ath12k_dp_tx_bank_profile *bank_profiles;
++	enum ath12k_htc_ep_id eid;
++	struct completion htt_tgt_version_received;
++	u8 htt_tgt_ver_major;
++	u8 htt_tgt_ver_minor;
++	struct dp_link_desc_bank link_desc_banks[DP_LINK_DESC_BANKS_MAX];
++	struct dp_srng wbm_idle_ring;
++	struct dp_srng wbm_desc_rel_ring;
++	struct dp_srng tcl_cmd_ring;
++	struct dp_srng tcl_status_ring;
++	struct dp_srng reo_reinject_ring;
++	struct dp_srng rx_rel_ring;
++	struct dp_srng reo_except_ring;
++	struct dp_srng reo_cmd_ring;
++	struct dp_srng reo_status_ring;
++	struct dp_srng reo_dst_ring[DP_REO_DST_RING_MAX];
++	struct dp_tx_ring tx_ring[DP_TCL_NUM_RING_MAX];
++	struct hal_wbm_idle_scatter_list scatter_list[DP_IDLE_SCATTER_BUFS_MAX];
++	struct list_head reo_cmd_list;
++	struct list_head reo_cmd_cache_flush_list;
++	u32 reo_cmd_cache_flush_count;
 +
-+int ath12k_hal_srng_setup(struct ath12k_base *ab, enum hal_ring_type type,
-+			  int ring_num, int mac_id,
-+			  struct hal_srng_params *params)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	struct hal_srng_config *srng_config = &ab->hal.srng_config[type];
-+	struct hal_srng *srng;
-+	int ring_id;
-+	u32 idx;
-+	int i;
-+	u32 reg_base;
-+
-+	ring_id = ath12k_hal_srng_get_ring_id(ab, type, ring_num, mac_id);
-+	if (ring_id < 0)
-+		return ring_id;
-+
-+	srng = &hal->srng_list[ring_id];
-+
-+	srng->ring_id = ring_id;
-+	srng->ring_dir = srng_config->ring_dir;
-+	srng->ring_base_paddr = params->ring_base_paddr;
-+	srng->ring_base_vaddr = params->ring_base_vaddr;
-+	srng->entry_size = srng_config->entry_size;
-+	srng->num_entries = params->num_entries;
-+	srng->ring_size = srng->entry_size * srng->num_entries;
-+	srng->intr_batch_cntr_thres_entries =
-+				params->intr_batch_cntr_thres_entries;
-+	srng->intr_timer_thres_us = params->intr_timer_thres_us;
-+	srng->flags = params->flags;
-+	srng->msi_addr = params->msi_addr;
-+	srng->msi2_addr = params->msi2_addr;
-+	srng->msi_data = params->msi_data;
-+	srng->msi2_data = params->msi2_data;
-+	srng->initialized = 1;
-+	spin_lock_init(&srng->lock);
-+	lockdep_set_class(&srng->lock, &srng->lock_key);
-+
-+	for (i = 0; i < HAL_SRNG_NUM_REG_GRP; i++) {
-+		srng->hwreg_base[i] = srng_config->reg_start[i] +
-+				      (ring_num * srng_config->reg_size[i]);
-+	}
-+
-+	memset(srng->ring_base_vaddr, 0,
-+	       (srng->entry_size * srng->num_entries) << 2);
-+
-+	reg_base = srng->hwreg_base[HAL_SRNG_REG_GRP_R2];
-+
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC) {
-+		srng->u.src_ring.hp = 0;
-+		srng->u.src_ring.cached_tp = 0;
-+		srng->u.src_ring.reap_hp = srng->ring_size - srng->entry_size;
-+		srng->u.src_ring.tp_addr = (void *)(hal->rdp.vaddr + ring_id);
-+		srng->u.src_ring.low_threshold = params->low_threshold *
-+						 srng->entry_size;
-+		if (srng_config->mac_type == ATH12K_HAL_SRNG_UMAC) {
-+			if (!ab->hw_params->supports_shadow_regs)
-+				srng->u.src_ring.hp_addr =
-+					(u32 *)((unsigned long)ab->mem + reg_base);
-+			else
-+				ath12k_dbg(ab, ATH12K_DBG_HAL,
-+					   "hal type %d ring_num %d reg_base 0x%x shadow 0x%lx\n",
-+					   type, ring_num,
-+					   reg_base,
-+					   (unsigned long)srng->u.src_ring.hp_addr -
-+					   (unsigned long)ab->mem);
-+		} else {
-+			idx = ring_id - HAL_SRNG_RING_ID_DMAC_CMN_ID_START;
-+			srng->u.src_ring.hp_addr = (void *)(hal->wrp.vaddr +
-+						   idx);
-+			srng->flags |= HAL_SRNG_FLAGS_LMAC_RING;
-+		}
-+	} else {
-+		/* During initialization loop count in all the descriptors
-+		 * will be set to zero, and HW will set it to 1 on completing
-+		 * descriptor update in first loop, and increments it by 1 on
-+		 * subsequent loops (loop count wraps around after reaching
-+		 * 0xffff). The 'loop_cnt' in SW ring state is the expected
-+		 * loop count in descriptors updated by HW (to be processed
-+		 * by SW).
-+		 */
-+		srng->u.dst_ring.loop_cnt = 1;
-+		srng->u.dst_ring.tp = 0;
-+		srng->u.dst_ring.cached_hp = 0;
-+		srng->u.dst_ring.hp_addr = (void *)(hal->rdp.vaddr + ring_id);
-+		if (srng_config->mac_type == ATH12K_HAL_SRNG_UMAC) {
-+			if (!ab->hw_params->supports_shadow_regs)
-+				srng->u.dst_ring.tp_addr =
-+					(u32 *)((unsigned long)ab->mem + reg_base +
-+					(HAL_REO1_RING_TP - HAL_REO1_RING_HP));
-+			else
-+				ath12k_dbg(ab, ATH12K_DBG_HAL,
-+					   "type %d ring_num %d target_reg 0x%x shadow 0x%lx\n",
-+					   type, ring_num,
-+					   reg_base + HAL_REO1_RING_TP - HAL_REO1_RING_HP,
-+					   (unsigned long)srng->u.dst_ring.tp_addr -
-+					   (unsigned long)ab->mem);
-+		} else {
-+			/* For PMAC & DMAC rings, tail pointer updates will be done
-+			 * through FW by writing to a shared memory location
-+			 */
-+			idx = ring_id - HAL_SRNG_RING_ID_DMAC_CMN_ID_START;
-+			srng->u.dst_ring.tp_addr = (void *)(hal->wrp.vaddr +
-+						   idx);
-+			srng->flags |= HAL_SRNG_FLAGS_LMAC_RING;
-+		}
-+	}
-+
-+	if (srng_config->mac_type != ATH12K_HAL_SRNG_UMAC)
-+		return ring_id;
-+
-+	ath12k_hal_srng_hw_init(ab, srng);
-+
-+	if (type == HAL_CE_DST) {
-+		srng->u.dst_ring.max_buffer_length = params->max_buffer_len;
-+		ath12k_hal_ce_dst_setup(ab, srng, ring_num);
-+	}
-+
-+	return ring_id;
-+}
-+
-+static void ath12k_hal_srng_update_hp_tp_addr(struct ath12k_base *ab,
-+					      int shadow_cfg_idx,
-+					      enum hal_ring_type ring_type,
-+					      int ring_num)
-+{
-+	struct hal_srng *srng;
-+	struct ath12k_hal *hal = &ab->hal;
-+	int ring_id;
-+	struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
-+
-+	ring_id = ath12k_hal_srng_get_ring_id(ab, ring_type, ring_num, 0);
-+	if (ring_id < 0)
-+		return;
-+
-+	srng = &hal->srng_list[ring_id];
-+
-+	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
-+		srng->u.dst_ring.tp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+						   (unsigned long)ab->mem);
-+	else
-+		srng->u.src_ring.hp_addr = (u32 *)(HAL_SHADOW_REG(shadow_cfg_idx) +
-+						   (unsigned long)ab->mem);
-+}
-+
-+int ath12k_hal_srng_update_shadow_config(struct ath12k_base *ab,
-+					 enum hal_ring_type ring_type,
-+					 int ring_num)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
-+	int shadow_cfg_idx = hal->num_shadow_reg_configured;
-+	u32 target_reg;
-+
-+	if (shadow_cfg_idx >= HAL_SHADOW_NUM_REGS)
-+		return -EINVAL;
-+
-+	hal->num_shadow_reg_configured++;
-+
-+	target_reg = srng_config->reg_start[HAL_HP_OFFSET_IN_REG_START];
-+	target_reg += srng_config->reg_size[HAL_HP_OFFSET_IN_REG_START] *
-+		ring_num;
-+
-+	/* For destination ring, shadow the TP */
-+	if (srng_config->ring_dir == HAL_SRNG_DIR_DST)
-+		target_reg += HAL_OFFSET_FROM_HP_TO_TP;
-+
-+	hal->shadow_reg_addr[shadow_cfg_idx] = target_reg;
-+
-+	/* update hp/tp addr to hal structure*/
-+	ath12k_hal_srng_update_hp_tp_addr(ab, shadow_cfg_idx, ring_type,
-+					  ring_num);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_HAL,
-+		   "target_reg %x, shadow reg 0x%x shadow_idx 0x%x, ring_type %d, ring num %d",
-+		  target_reg,
-+		  HAL_SHADOW_REG(shadow_cfg_idx),
-+		  shadow_cfg_idx,
-+		  ring_type, ring_num);
-+
-+	return 0;
-+}
-+
-+void ath12k_hal_srng_shadow_config(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	int ring_type, ring_num;
-+
-+	/* update all the non-CE srngs. */
-+	for (ring_type = 0; ring_type < HAL_MAX_RING_TYPES; ring_type++) {
-+		struct hal_srng_config *srng_config = &hal->srng_config[ring_type];
-+
-+		if (ring_type == HAL_CE_SRC ||
-+		    ring_type == HAL_CE_DST ||
-+			ring_type == HAL_CE_DST_STATUS)
-+			continue;
-+
-+		if (srng_config->mac_type == ATH12K_HAL_SRNG_DMAC ||
-+		    srng_config->mac_type == ATH12K_HAL_SRNG_PMAC)
-+			continue;
-+
-+		for (ring_num = 0; ring_num < srng_config->max_rings; ring_num++)
-+			ath12k_hal_srng_update_shadow_config(ab, ring_type, ring_num);
-+	}
-+}
-+
-+void ath12k_hal_srng_get_shadow_config(struct ath12k_base *ab,
-+				       u32 **cfg, u32 *len)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+
-+	*len = hal->num_shadow_reg_configured;
-+	*cfg = hal->shadow_reg_addr;
-+}
-+
-+void ath12k_hal_srng_shadow_update_hp_tp(struct ath12k_base *ab,
-+					 struct hal_srng *srng)
-+{
-+	lockdep_assert_held(&srng->lock);
-+
-+	/* check whether the ring is empty. Update the shadow
-+	 * HP only when then ring isn't' empty.
++	/* protects access to below fields,
++	 * - reo_cmd_list
++	 * - reo_cmd_cache_flush_list
++	 * - reo_cmd_cache_flush_count
 +	 */
-+	if (srng->ring_dir == HAL_SRNG_DIR_SRC &&
-+	    *srng->u.src_ring.tp_addr != srng->u.src_ring.hp)
-+		ath12k_hal_srng_access_end(ab, srng);
-+}
++	spinlock_t reo_cmd_lock;
++	struct ath12k_hp_update_timer reo_cmd_timer;
++	struct ath12k_hp_update_timer tx_ring_timer[DP_TCL_NUM_RING_MAX];
++	struct ath12k_spt_info *spt_info;
++	u32 num_spt_pages;
++	struct list_head rx_desc_free_list;
++	struct list_head rx_desc_used_list;
++	/* protects the free and used desc list */
++	spinlock_t rx_desc_lock;
 +
-+static void ath12k_hal_register_srng_lock_keys(struct ath12k_base *ab)
++	struct list_head tx_desc_free_list[ATH12K_HW_MAX_QUEUES];
++	struct list_head tx_desc_used_list[ATH12K_HW_MAX_QUEUES];
++	/* protects the free and used desc lists */
++	spinlock_t tx_desc_lock[ATH12K_HW_MAX_QUEUES];
++
++	struct dp_rxdma_ring rx_refill_buf_ring;
++	struct dp_srng rx_mac_buf_ring[MAX_RXDMA_PER_PDEV];
++	struct dp_srng rxdma_err_dst_ring[MAX_RXDMA_PER_PDEV];
++	struct dp_rxdma_ring rxdma_mon_buf_ring;
++	struct dp_rxdma_ring tx_mon_buf_ring;
++	struct ath12k_reo_q_addr_lut reoq_lut;
++};
++
++/* HTT definitions */
++
++#define HTT_TCL_META_DATA_TYPE			BIT(0)
++#define HTT_TCL_META_DATA_VALID_HTT		BIT(1)
++
++/* vdev meta data */
++#define HTT_TCL_META_DATA_VDEV_ID		GENMASK(9, 2)
++#define HTT_TCL_META_DATA_PDEV_ID		GENMASK(11, 10)
++#define HTT_TCL_META_DATA_HOST_INSPECTED	BIT(12)
++
++/* peer meta data */
++#define HTT_TCL_META_DATA_PEER_ID		GENMASK(15, 2)
++
++#define HTT_TX_WBM_COMP_STATUS_OFFSET 8
++
++/* HTT tx completion is overlayed in wbm_release_ring */
++#define HTT_TX_WBM_COMP_INFO0_STATUS		GENMASK(16, 13)
++#define HTT_TX_WBM_COMP_INFO1_REINJECT_REASON	GENMASK(3, 0)
++#define HTT_TX_WBM_COMP_INFO1_EXCEPTION_FRAME	BIT(4)
++
++#define HTT_TX_WBM_COMP_INFO2_ACK_RSSI		GENMASK(31, 24)
++
++struct htt_tx_wbm_completion {
++	__le32 rsvd0[2];
++	__le32 info0;
++	__le32 info1;
++	__le32 info2;
++	__le32 info3;
++	__le32 info4;
++	__le32 rsvd1;
++
++} __packed;
++
++enum htt_h2t_msg_type {
++	HTT_H2T_MSG_TYPE_VERSION_REQ		= 0,
++	HTT_H2T_MSG_TYPE_SRING_SETUP		= 0xb,
++	HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG	= 0xc,
++	HTT_H2T_MSG_TYPE_EXT_STATS_CFG		= 0x10,
++	HTT_H2T_MSG_TYPE_PPDU_STATS_CFG		= 0x11,
++	HTT_H2T_MSG_TYPE_VDEV_TXRX_STATS_CFG	= 0x1a,
++	HTT_H2T_MSG_TYPE_TX_MONITOR_CFG		= 0x1b,
++};
++
++#define HTT_VER_REQ_INFO_MSG_ID		GENMASK(7, 0)
++
++struct htt_ver_req_cmd {
++	__le32 ver_reg_info;
++} __packed;
++
++enum htt_srng_ring_type {
++	HTT_HW_TO_SW_RING,
++	HTT_SW_TO_HW_RING,
++	HTT_SW_TO_SW_RING,
++};
++
++enum htt_srng_ring_id {
++	HTT_RXDMA_HOST_BUF_RING,
++	HTT_RXDMA_MONITOR_STATUS_RING,
++	HTT_RXDMA_MONITOR_BUF_RING,
++	HTT_RXDMA_MONITOR_DESC_RING,
++	HTT_RXDMA_MONITOR_DEST_RING,
++	HTT_HOST1_TO_FW_RXBUF_RING,
++	HTT_HOST2_TO_FW_RXBUF_RING,
++	HTT_RXDMA_NON_MONITOR_DEST_RING,
++	HTT_TX_MON_HOST2MON_BUF_RING,
++	HTT_TX_MON_MON2HOST_DEST_RING,
++};
++
++/* host -> target  HTT_SRING_SETUP message
++ *
++ * After target is booted up, Host can send SRING setup message for
++ * each host facing LMAC SRING. Target setups up HW registers based
++ * on setup message and confirms back to Host if response_required is set.
++ * Host should wait for confirmation message before sending new SRING
++ * setup message
++ *
++ * The message would appear as follows:
++ *
++ * |31            24|23    20|19|18 16|15|14          8|7                0|
++ * |--------------- +-----------------+----------------+------------------|
++ * |    ring_type   |      ring_id    |    pdev_id     |     msg_type     |
++ * |----------------------------------------------------------------------|
++ * |                          ring_base_addr_lo                           |
++ * |----------------------------------------------------------------------|
++ * |                         ring_base_addr_hi                            |
++ * |----------------------------------------------------------------------|
++ * |ring_misc_cfg_flag|ring_entry_size|            ring_size              |
++ * |----------------------------------------------------------------------|
++ * |                         ring_head_offset32_remote_addr_lo            |
++ * |----------------------------------------------------------------------|
++ * |                         ring_head_offset32_remote_addr_hi            |
++ * |----------------------------------------------------------------------|
++ * |                         ring_tail_offset32_remote_addr_lo            |
++ * |----------------------------------------------------------------------|
++ * |                         ring_tail_offset32_remote_addr_hi            |
++ * |----------------------------------------------------------------------|
++ * |                          ring_msi_addr_lo                            |
++ * |----------------------------------------------------------------------|
++ * |                          ring_msi_addr_hi                            |
++ * |----------------------------------------------------------------------|
++ * |                          ring_msi_data                               |
++ * |----------------------------------------------------------------------|
++ * |         intr_timer_th            |IM|      intr_batch_counter_th     |
++ * |----------------------------------------------------------------------|
++ * |          reserved        |RR|PTCF|        intr_low_threshold         |
++ * |----------------------------------------------------------------------|
++ * Where
++ *     IM = sw_intr_mode
++ *     RR = response_required
++ *     PTCF = prefetch_timer_cfg
++ *
++ * The message is interpreted as follows:
++ * dword0  - b'0:7   - msg_type: This will be set to
++ *                     HTT_H2T_MSG_TYPE_SRING_SETUP
++ *           b'8:15  - pdev_id:
++ *                     0 (for rings at SOC/UMAC level),
++ *                     1/2/3 mac id (for rings at LMAC level)
++ *           b'16:23 - ring_id: identify which ring is to setup,
++ *                     more details can be got from enum htt_srng_ring_id
++ *           b'24:31 - ring_type: identify type of host rings,
++ *                     more details can be got from enum htt_srng_ring_type
++ * dword1  - b'0:31  - ring_base_addr_lo: Lower 32bits of ring base address
++ * dword2  - b'0:31  - ring_base_addr_hi: Upper 32bits of ring base address
++ * dword3  - b'0:15  - ring_size: size of the ring in unit of 4-bytes words
++ *           b'16:23 - ring_entry_size: Size of each entry in 4-byte word units
++ *           b'24:31 - ring_misc_cfg_flag: Valid only for HW_TO_SW_RING and
++ *                     SW_TO_HW_RING.
++ *                     Refer to HTT_SRING_SETUP_RING_MISC_CFG_RING defs.
++ * dword4  - b'0:31  - ring_head_off32_remote_addr_lo:
++ *                     Lower 32 bits of memory address of the remote variable
++ *                     storing the 4-byte word offset that identifies the head
++ *                     element within the ring.
++ *                     (The head offset variable has type u32.)
++ *                     Valid for HW_TO_SW and SW_TO_SW rings.
++ * dword5  - b'0:31  - ring_head_off32_remote_addr_hi:
++ *                     Upper 32 bits of memory address of the remote variable
++ *                     storing the 4-byte word offset that identifies the head
++ *                     element within the ring.
++ *                     (The head offset variable has type u32.)
++ *                     Valid for HW_TO_SW and SW_TO_SW rings.
++ * dword6  - b'0:31  - ring_tail_off32_remote_addr_lo:
++ *                     Lower 32 bits of memory address of the remote variable
++ *                     storing the 4-byte word offset that identifies the tail
++ *                     element within the ring.
++ *                     (The tail offset variable has type u32.)
++ *                     Valid for HW_TO_SW and SW_TO_SW rings.
++ * dword7  - b'0:31  - ring_tail_off32_remote_addr_hi:
++ *                     Upper 32 bits of memory address of the remote variable
++ *                     storing the 4-byte word offset that identifies the tail
++ *                     element within the ring.
++ *                     (The tail offset variable has type u32.)
++ *                     Valid for HW_TO_SW and SW_TO_SW rings.
++ * dword8  - b'0:31  - ring_msi_addr_lo: Lower 32bits of MSI cfg address
++ *                     valid only for HW_TO_SW_RING and SW_TO_HW_RING
++ * dword9  - b'0:31  - ring_msi_addr_hi: Upper 32bits of MSI cfg address
++ *                     valid only for HW_TO_SW_RING and SW_TO_HW_RING
++ * dword10 - b'0:31  - ring_msi_data: MSI data
++ *                     Refer to HTT_SRING_SETUP_RING_MSC_CFG_xxx defs
++ *                     valid only for HW_TO_SW_RING and SW_TO_HW_RING
++ * dword11 - b'0:14  - intr_batch_counter_th:
++ *                     batch counter threshold is in units of 4-byte words.
++ *                     HW internally maintains and increments batch count.
++ *                     (see SRING spec for detail description).
++ *                     When batch count reaches threshold value, an interrupt
++ *                     is generated by HW.
++ *           b'15    - sw_intr_mode:
++ *                     This configuration shall be static.
++ *                     Only programmed at power up.
++ *                     0: generate pulse style sw interrupts
++ *                     1: generate level style sw interrupts
++ *           b'16:31 - intr_timer_th:
++ *                     The timer init value when timer is idle or is
++ *                     initialized to start downcounting.
++ *                     In 8us units (to cover a range of 0 to 524 ms)
++ * dword12 - b'0:15  - intr_low_threshold:
++ *                     Used only by Consumer ring to generate ring_sw_int_p.
++ *                     Ring entries low threshold water mark, that is used
++ *                     in combination with the interrupt timer as well as
++ *                     the clearing of the level interrupt.
++ *           b'16:18 - prefetch_timer_cfg:
++ *                     Used only by Consumer ring to set timer mode to
++ *                     support Application prefetch handling.
++ *                     The external tail offset/pointer will be updated
++ *                     at following intervals:
++ *                     3'b000: (Prefetch feature disabled; used only for debug)
++ *                     3'b001: 1 usec
++ *                     3'b010: 4 usec
++ *                     3'b011: 8 usec (default)
++ *                     3'b100: 16 usec
++ *                     Others: Reserverd
++ *           b'19    - response_required:
++ *                     Host needs HTT_T2H_MSG_TYPE_SRING_SETUP_DONE as response
++ *           b'20:31 - reserved:  reserved for future use
++ */
++
++#define HTT_SRNG_SETUP_CMD_INFO0_MSG_TYPE	GENMASK(7, 0)
++#define HTT_SRNG_SETUP_CMD_INFO0_PDEV_ID	GENMASK(15, 8)
++#define HTT_SRNG_SETUP_CMD_INFO0_RING_ID	GENMASK(23, 16)
++#define HTT_SRNG_SETUP_CMD_INFO0_RING_TYPE	GENMASK(31, 24)
++
++#define HTT_SRNG_SETUP_CMD_INFO1_RING_SIZE			GENMASK(15, 0)
++#define HTT_SRNG_SETUP_CMD_INFO1_RING_ENTRY_SIZE		GENMASK(23, 16)
++#define HTT_SRNG_SETUP_CMD_INFO1_RING_LOOP_CNT_DIS		BIT(25)
++#define HTT_SRNG_SETUP_CMD_INFO1_RING_FLAGS_MSI_SWAP		BIT(27)
++#define HTT_SRNG_SETUP_CMD_INFO1_RING_FLAGS_HOST_FW_SWAP	BIT(28)
++#define HTT_SRNG_SETUP_CMD_INFO1_RING_FLAGS_TLV_SWAP		BIT(29)
++
++#define HTT_SRNG_SETUP_CMD_INTR_INFO_BATCH_COUNTER_THRESH	GENMASK(14, 0)
++#define HTT_SRNG_SETUP_CMD_INTR_INFO_SW_INTR_MODE		BIT(15)
++#define HTT_SRNG_SETUP_CMD_INTR_INFO_INTR_TIMER_THRESH		GENMASK(31, 16)
++
++#define HTT_SRNG_SETUP_CMD_INFO2_INTR_LOW_THRESH	GENMASK(15, 0)
++#define HTT_SRNG_SETUP_CMD_INFO2_PRE_FETCH_TIMER_CFG	GENMASK(18, 16)
++#define HTT_SRNG_SETUP_CMD_INFO2_RESPONSE_REQUIRED	BIT(19)
++
++struct htt_srng_setup_cmd {
++	__le32 info0;
++	__le32 ring_base_addr_lo;
++	__le32 ring_base_addr_hi;
++	__le32 info1;
++	__le32 ring_head_off32_remote_addr_lo;
++	__le32 ring_head_off32_remote_addr_hi;
++	__le32 ring_tail_off32_remote_addr_lo;
++	__le32 ring_tail_off32_remote_addr_hi;
++	__le32 ring_msi_addr_lo;
++	__le32 ring_msi_addr_hi;
++	__le32 msi_data;
++	__le32 intr_info;
++	__le32 info2;
++} __packed;
++
++/* host -> target FW  PPDU_STATS config message
++ *
++ * @details
++ * The following field definitions describe the format of the HTT host
++ * to target FW for PPDU_STATS_CFG msg.
++ * The message allows the host to configure the PPDU_STATS_IND messages
++ * produced by the target.
++ *
++ * |31          24|23          16|15           8|7            0|
++ * |-----------------------------------------------------------|
++ * |    REQ bit mask             |   pdev_mask  |   msg type   |
++ * |-----------------------------------------------------------|
++ * Header fields:
++ *  - MSG_TYPE
++ *    Bits 7:0
++ *    Purpose: identifies this is a req to configure ppdu_stats_ind from target
++ *    Value: 0x11
++ *  - PDEV_MASK
++ *    Bits 8:15
++ *    Purpose: identifies which pdevs this PPDU stats configuration applies to
++ *    Value: This is a overloaded field, refer to usage and interpretation of
++ *           PDEV in interface document.
++ *           Bit   8    :  Reserved for SOC stats
++ *           Bit 9 - 15 :  Indicates PDEV_MASK in DBDC
++ *                         Indicates MACID_MASK in DBS
++ *  - REQ_TLV_BIT_MASK
++ *    Bits 16:31
++ *    Purpose: each set bit indicates the corresponding PPDU stats TLV type
++ *        needs to be included in the target's PPDU_STATS_IND messages.
++ *    Value: refer htt_ppdu_stats_tlv_tag_t <<<???
++ *
++ */
++
++struct htt_ppdu_stats_cfg_cmd {
++	__le32 msg;
++} __packed;
++
++#define HTT_PPDU_STATS_CFG_MSG_TYPE		GENMASK(7, 0)
++#define HTT_PPDU_STATS_CFG_PDEV_ID		GENMASK(15, 8)
++#define HTT_PPDU_STATS_CFG_TLV_TYPE_BITMASK	GENMASK(31, 16)
++
++enum htt_ppdu_stats_tag_type {
++	HTT_PPDU_STATS_TAG_COMMON,
++	HTT_PPDU_STATS_TAG_USR_COMMON,
++	HTT_PPDU_STATS_TAG_USR_RATE,
++	HTT_PPDU_STATS_TAG_USR_MPDU_ENQ_BITMAP_64,
++	HTT_PPDU_STATS_TAG_USR_MPDU_ENQ_BITMAP_256,
++	HTT_PPDU_STATS_TAG_SCH_CMD_STATUS,
++	HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON,
++	HTT_PPDU_STATS_TAG_USR_COMPLTN_BA_BITMAP_64,
++	HTT_PPDU_STATS_TAG_USR_COMPLTN_BA_BITMAP_256,
++	HTT_PPDU_STATS_TAG_USR_COMPLTN_ACK_BA_STATUS,
++	HTT_PPDU_STATS_TAG_USR_COMPLTN_FLUSH,
++	HTT_PPDU_STATS_TAG_USR_COMMON_ARRAY,
++	HTT_PPDU_STATS_TAG_INFO,
++	HTT_PPDU_STATS_TAG_TX_MGMTCTRL_PAYLOAD,
++
++	/* New TLV's are added above to this line */
++	HTT_PPDU_STATS_TAG_MAX,
++};
++
++#define HTT_PPDU_STATS_TAG_DEFAULT (BIT(HTT_PPDU_STATS_TAG_COMMON) \
++				   | BIT(HTT_PPDU_STATS_TAG_USR_COMMON) \
++				   | BIT(HTT_PPDU_STATS_TAG_USR_RATE) \
++				   | BIT(HTT_PPDU_STATS_TAG_SCH_CMD_STATUS) \
++				   | BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON) \
++				   | BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_ACK_BA_STATUS) \
++				   | BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_FLUSH) \
++				   | BIT(HTT_PPDU_STATS_TAG_USR_COMMON_ARRAY))
++
++#define HTT_PPDU_STATS_TAG_PKTLOG  (BIT(HTT_PPDU_STATS_TAG_USR_MPDU_ENQ_BITMAP_64) | \
++				    BIT(HTT_PPDU_STATS_TAG_USR_MPDU_ENQ_BITMAP_256) | \
++				    BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_BA_BITMAP_64) | \
++				    BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_BA_BITMAP_256) | \
++				    BIT(HTT_PPDU_STATS_TAG_INFO) | \
++				    BIT(HTT_PPDU_STATS_TAG_TX_MGMTCTRL_PAYLOAD) | \
++				    HTT_PPDU_STATS_TAG_DEFAULT)
++
++enum htt_stats_internal_ppdu_frametype {
++	HTT_STATS_PPDU_FTYPE_CTRL,
++	HTT_STATS_PPDU_FTYPE_DATA,
++	HTT_STATS_PPDU_FTYPE_BAR,
++	HTT_STATS_PPDU_FTYPE_MAX
++};
++
++/* HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG Message
++ *
++ * details:
++ *    HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG message is sent by host to
++ *    configure RXDMA rings.
++ *    The configuration is per ring based and includes both packet subtypes
++ *    and PPDU/MPDU TLVs.
++ *
++ *    The message would appear as follows:
++ *
++ *    |31       26|25|24|23            16|15             8|7             0|
++ *    |-----------------+----------------+----------------+---------------|
++ *    |   rsvd1   |PS|SS|     ring_id    |     pdev_id    |    msg_type   |
++ *    |-------------------------------------------------------------------|
++ *    |              rsvd2               |           ring_buffer_size     |
++ *    |-------------------------------------------------------------------|
++ *    |                        packet_type_enable_flags_0                 |
++ *    |-------------------------------------------------------------------|
++ *    |                        packet_type_enable_flags_1                 |
++ *    |-------------------------------------------------------------------|
++ *    |                        packet_type_enable_flags_2                 |
++ *    |-------------------------------------------------------------------|
++ *    |                        packet_type_enable_flags_3                 |
++ *    |-------------------------------------------------------------------|
++ *    |                         tlv_filter_in_flags                       |
++ *    |-------------------------------------------------------------------|
++ * Where:
++ *     PS = pkt_swap
++ *     SS = status_swap
++ * The message is interpreted as follows:
++ * dword0 - b'0:7   - msg_type: This will be set to
++ *                    HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG
++ *          b'8:15  - pdev_id:
++ *                    0 (for rings at SOC/UMAC level),
++ *                    1/2/3 mac id (for rings at LMAC level)
++ *          b'16:23 - ring_id : Identify the ring to configure.
++ *                    More details can be got from enum htt_srng_ring_id
++ *          b'24    - status_swap: 1 is to swap status TLV
++ *          b'25    - pkt_swap:  1 is to swap packet TLV
++ *          b'26:31 - rsvd1:  reserved for future use
++ * dword1 - b'0:16  - ring_buffer_size: size of bufferes referenced by rx ring,
++ *                    in byte units.
++ *                    Valid only for HW_TO_SW_RING and SW_TO_HW_RING
++ *        - b'16:31 - rsvd2: Reserved for future use
++ * dword2 - b'0:31  - packet_type_enable_flags_0:
++ *                    Enable MGMT packet from 0b0000 to 0b1001
++ *                    bits from low to high: FP, MD, MO - 3 bits
++ *                        FP: Filter_Pass
++ *                        MD: Monitor_Direct
++ *                        MO: Monitor_Other
++ *                    10 mgmt subtypes * 3 bits -> 30 bits
++ *                    Refer to PKT_TYPE_ENABLE_FLAG0_xxx_MGMT_xxx defs
++ * dword3 - b'0:31  - packet_type_enable_flags_1:
++ *                    Enable MGMT packet from 0b1010 to 0b1111
++ *                    bits from low to high: FP, MD, MO - 3 bits
++ *                    Refer to PKT_TYPE_ENABLE_FLAG1_xxx_MGMT_xxx defs
++ * dword4 - b'0:31 -  packet_type_enable_flags_2:
++ *                    Enable CTRL packet from 0b0000 to 0b1001
++ *                    bits from low to high: FP, MD, MO - 3 bits
++ *                    Refer to PKT_TYPE_ENABLE_FLAG2_xxx_CTRL_xxx defs
++ * dword5 - b'0:31  - packet_type_enable_flags_3:
++ *                    Enable CTRL packet from 0b1010 to 0b1111,
++ *                    MCAST_DATA, UCAST_DATA, NULL_DATA
++ *                    bits from low to high: FP, MD, MO - 3 bits
++ *                    Refer to PKT_TYPE_ENABLE_FLAG3_xxx_CTRL_xxx defs
++ * dword6 - b'0:31 -  tlv_filter_in_flags:
++ *                    Filter in Attention/MPDU/PPDU/Header/User tlvs
++ *                    Refer to CFG_TLV_FILTER_IN_FLAG defs
++ */
++
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_MSG_TYPE	GENMASK(7, 0)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_PDEV_ID	GENMASK(15, 8)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_RING_ID	GENMASK(23, 16)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_SS		BIT(24)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_PS		BIT(25)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO1_BUF_SIZE	GENMASK(15, 0)
++#define HTT_RX_RING_SELECTION_CFG_CMD_OFFSET_VALID      BIT(26)
++
++#define HTT_RX_RING_SELECTION_CFG_RX_PACKET_OFFSET      GENMASK(15, 0)
++#define HTT_RX_RING_SELECTION_CFG_RX_HEADER_OFFSET      GENMASK(31, 16)
++#define HTT_RX_RING_SELECTION_CFG_RX_MPDU_END_OFFSET    GENMASK(15, 0)
++#define HTT_RX_RING_SELECTION_CFG_RX_MPDU_START_OFFSET  GENMASK(31, 16)
++#define HTT_RX_RING_SELECTION_CFG_RX_MSDU_END_OFFSET    GENMASK(15, 0)
++#define HTT_RX_RING_SELECTION_CFG_RX_MSDU_START_OFFSET  GENMASK(31, 16)
++#define HTT_RX_RING_SELECTION_CFG_RX_ATTENTION_OFFSET   GENMASK(15, 0)
++
++enum htt_rx_filter_tlv_flags {
++	HTT_RX_FILTER_TLV_FLAGS_MPDU_START		= BIT(0),
++	HTT_RX_FILTER_TLV_FLAGS_MSDU_START		= BIT(1),
++	HTT_RX_FILTER_TLV_FLAGS_RX_PACKET		= BIT(2),
++	HTT_RX_FILTER_TLV_FLAGS_MSDU_END		= BIT(3),
++	HTT_RX_FILTER_TLV_FLAGS_MPDU_END		= BIT(4),
++	HTT_RX_FILTER_TLV_FLAGS_PACKET_HEADER		= BIT(5),
++	HTT_RX_FILTER_TLV_FLAGS_PER_MSDU_HEADER		= BIT(6),
++	HTT_RX_FILTER_TLV_FLAGS_ATTENTION		= BIT(7),
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_START		= BIT(8),
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END		= BIT(9),
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS	= BIT(10),
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS_EXT	= BIT(11),
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_STATUS_DONE	= BIT(12),
++};
++
++enum htt_rx_mgmt_pkt_filter_tlv_flags0 {
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_REQ		= BIT(0),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_REQ		= BIT(1),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_REQ		= BIT(2),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_RESP		= BIT(3),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_RESP		= BIT(4),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_RESP		= BIT(5),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_REQ	= BIT(6),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_REQ	= BIT(7),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_REQ	= BIT(8),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_RESP	= BIT(9),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_RESP	= BIT(10),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_RESP	= BIT(11),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_REQ		= BIT(12),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_REQ		= BIT(13),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_REQ		= BIT(14),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_RESP		= BIT(15),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_RESP		= BIT(16),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_RESP		= BIT(17),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_TIMING_ADV	= BIT(18),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_TIMING_ADV	= BIT(19),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_TIMING_ADV	= BIT(20),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_RESERVED_7		= BIT(21),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_RESERVED_7		= BIT(22),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_RESERVED_7		= BIT(23),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_BEACON		= BIT(24),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_BEACON		= BIT(25),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_BEACON		= BIT(26),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_ATIM		= BIT(27),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_ATIM		= BIT(28),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_ATIM		= BIT(29),
++};
++
++enum htt_rx_mgmt_pkt_filter_tlv_flags1 {
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_DISASSOC		= BIT(0),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_DISASSOC		= BIT(1),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_DISASSOC		= BIT(2),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_AUTH		= BIT(3),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_AUTH		= BIT(4),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_AUTH		= BIT(5),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_DEAUTH		= BIT(6),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_DEAUTH		= BIT(7),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_DEAUTH		= BIT(8),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION		= BIT(9),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION		= BIT(10),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION		= BIT(11),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION_NOACK	= BIT(12),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION_NOACK	= BIT(13),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION_NOACK	= BIT(14),
++	HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_RESERVED_15	= BIT(15),
++	HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_RESERVED_15	= BIT(16),
++	HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_RESERVED_15	= BIT(17),
++};
++
++enum htt_rx_ctrl_pkt_filter_tlv_flags2 {
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_1	= BIT(0),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_1	= BIT(1),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_1	= BIT(2),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_2	= BIT(3),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_2	= BIT(4),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_2	= BIT(5),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_TRIGGER	= BIT(6),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_TRIGGER	= BIT(7),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_TRIGGER	= BIT(8),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_4	= BIT(9),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_4	= BIT(10),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_4	= BIT(11),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_BF_REP_POLL	= BIT(12),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_BF_REP_POLL	= BIT(13),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_BF_REP_POLL	= BIT(14),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_VHT_NDP	= BIT(15),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_VHT_NDP	= BIT(16),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_VHT_NDP	= BIT(17),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_FRAME_EXT	= BIT(18),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_FRAME_EXT	= BIT(19),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_FRAME_EXT	= BIT(20),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_WRAPPER	= BIT(21),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_WRAPPER	= BIT(22),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_WRAPPER	= BIT(23),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_BAR		= BIT(24),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_BAR		= BIT(25),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_BAR		= BIT(26),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_BA			= BIT(27),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_BA			= BIT(28),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_BA			= BIT(29),
++};
++
++enum htt_rx_ctrl_pkt_filter_tlv_flags3 {
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_PSPOLL		= BIT(0),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_PSPOLL		= BIT(1),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_PSPOLL		= BIT(2),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_RTS		= BIT(3),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_RTS		= BIT(4),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_RTS		= BIT(5),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_CTS		= BIT(6),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_CTS		= BIT(7),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_CTS		= BIT(8),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_ACK		= BIT(9),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_ACK		= BIT(10),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_ACK		= BIT(11),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND		= BIT(12),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND		= BIT(13),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND		= BIT(14),
++	HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND_ACK		= BIT(15),
++	HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND_ACK		= BIT(16),
++	HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND_ACK		= BIT(17),
++};
++
++enum htt_rx_data_pkt_filter_tlv_flasg3 {
++	HTT_RX_FP_DATA_PKT_FILTER_TLV_FLASG3_MCAST	= BIT(18),
++	HTT_RX_MD_DATA_PKT_FILTER_TLV_FLASG3_MCAST	= BIT(19),
++	HTT_RX_MO_DATA_PKT_FILTER_TLV_FLASG3_MCAST	= BIT(20),
++	HTT_RX_FP_DATA_PKT_FILTER_TLV_FLASG3_UCAST	= BIT(21),
++	HTT_RX_MD_DATA_PKT_FILTER_TLV_FLASG3_UCAST	= BIT(22),
++	HTT_RX_MO_DATA_PKT_FILTER_TLV_FLASG3_UCAST	= BIT(23),
++	HTT_RX_FP_DATA_PKT_FILTER_TLV_FLASG3_NULL_DATA	= BIT(24),
++	HTT_RX_MD_DATA_PKT_FILTER_TLV_FLASG3_NULL_DATA	= BIT(25),
++	HTT_RX_MO_DATA_PKT_FILTER_TLV_FLASG3_NULL_DATA	= BIT(26),
++};
++
++#define HTT_RX_FP_MGMT_FILTER_FLAGS0 \
++	(HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_REQ \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_RESP \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_REQ \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_RESP \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_REQ \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_RESP \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_TIMING_ADV \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_BEACON \
++	| HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_ATIM)
++
++#define HTT_RX_MD_MGMT_FILTER_FLAGS0 \
++	(HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_REQ \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_RESP \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_REQ \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_RESP \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_REQ \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_RESP \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_TIMING_ADV \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_BEACON \
++	| HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS0_ATIM)
++
++#define HTT_RX_MO_MGMT_FILTER_FLAGS0 \
++	(HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_REQ \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_ASSOC_RESP \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_REQ \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_REASSOC_RESP \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_REQ \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_RESP \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_PROBE_TIMING_ADV \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_BEACON \
++	| HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_ATIM)
++
++#define HTT_RX_FP_MGMT_FILTER_FLAGS1 (HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_DISASSOC \
++				     | HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_AUTH \
++				     | HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_DEAUTH \
++				     | HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION \
++				     | HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION_NOACK)
++
++#define HTT_RX_MD_MGMT_FILTER_FLAGS1 (HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_DISASSOC \
++				     | HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_AUTH \
++				     | HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_DEAUTH \
++				     | HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION \
++				     | HTT_RX_MD_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION_NOACK)
++
++#define HTT_RX_MO_MGMT_FILTER_FLAGS1 (HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_DISASSOC \
++				     | HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_AUTH \
++				     | HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_DEAUTH \
++				     | HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION \
++				     | HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_ACTION_NOACK)
++
++#define HTT_RX_FP_CTRL_FILTER_FLASG2 (HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_WRAPPER \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_BAR \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_BA)
++
++#define HTT_RX_MD_CTRL_FILTER_FLASG2 (HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_WRAPPER \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_BAR \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS2_BA)
++
++#define HTT_RX_MO_CTRL_FILTER_FLASG2 (HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_WRAPPER \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_BAR \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_BA)
++
++#define HTT_RX_FP_CTRL_FILTER_FLASG3 (HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_PSPOLL \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_RTS \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_CTS \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_ACK \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND \
++				     | HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND_ACK)
++
++#define HTT_RX_MD_CTRL_FILTER_FLASG3 (HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_PSPOLL \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_RTS \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_CTS \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_ACK \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND \
++				     | HTT_RX_MD_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND_ACK)
++
++#define HTT_RX_MO_CTRL_FILTER_FLASG3 (HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_PSPOLL \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_RTS \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_CTS \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_ACK \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND \
++				     | HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS3_CFEND_ACK)
++
++#define HTT_RX_FP_DATA_FILTER_FLASG3 (HTT_RX_FP_DATA_PKT_FILTER_TLV_FLASG3_MCAST \
++				     | HTT_RX_FP_DATA_PKT_FILTER_TLV_FLASG3_UCAST \
++				     | HTT_RX_FP_DATA_PKT_FILTER_TLV_FLASG3_NULL_DATA)
++
++#define HTT_RX_MD_DATA_FILTER_FLASG3 (HTT_RX_MD_DATA_PKT_FILTER_TLV_FLASG3_MCAST \
++				     | HTT_RX_MD_DATA_PKT_FILTER_TLV_FLASG3_UCAST \
++				     | HTT_RX_MD_DATA_PKT_FILTER_TLV_FLASG3_NULL_DATA)
++
++#define HTT_RX_MO_DATA_FILTER_FLASG3 (HTT_RX_MO_DATA_PKT_FILTER_TLV_FLASG3_MCAST \
++				     | HTT_RX_MO_DATA_PKT_FILTER_TLV_FLASG3_UCAST \
++				     | HTT_RX_MO_DATA_PKT_FILTER_TLV_FLASG3_NULL_DATA)
++
++#define HTT_RX_MON_FP_MGMT_FILTER_FLAGS0 \
++		(HTT_RX_FP_MGMT_FILTER_FLAGS0 | \
++		HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS0_RESERVED_7)
++
++#define HTT_RX_MON_MO_MGMT_FILTER_FLAGS0 \
++		(HTT_RX_MO_MGMT_FILTER_FLAGS0 | \
++		HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS0_RESERVED_7)
++
++#define HTT_RX_MON_FP_MGMT_FILTER_FLAGS1 \
++		(HTT_RX_FP_MGMT_FILTER_FLAGS1 | \
++		HTT_RX_FP_MGMT_PKT_FILTER_TLV_FLAGS1_RESERVED_15)
++
++#define HTT_RX_MON_MO_MGMT_FILTER_FLAGS1 \
++		(HTT_RX_MO_MGMT_FILTER_FLAGS1 | \
++		HTT_RX_MO_MGMT_PKT_FILTER_TLV_FLAGS1_RESERVED_15)
++
++#define HTT_RX_MON_FP_CTRL_FILTER_FLASG2 \
++		(HTT_RX_FP_CTRL_FILTER_FLASG2 | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_1 | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_2 | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_TRIGGER | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_4 | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_BF_REP_POLL | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_VHT_NDP | \
++		HTT_RX_FP_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_FRAME_EXT)
++
++#define HTT_RX_MON_MO_CTRL_FILTER_FLASG2 \
++		(HTT_RX_MO_CTRL_FILTER_FLASG2 | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_1 | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_2 | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_TRIGGER | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_RESERVED_4 | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_BF_REP_POLL | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_VHT_NDP | \
++		HTT_RX_MO_CTRL_PKT_FILTER_TLV_FLAGS2_CTRL_FRAME_EXT)
++
++#define HTT_RX_MON_FP_CTRL_FILTER_FLASG3 HTT_RX_FP_CTRL_FILTER_FLASG3
++
++#define HTT_RX_MON_MO_CTRL_FILTER_FLASG3 HTT_RX_MO_CTRL_FILTER_FLASG3
++
++#define HTT_RX_MON_FP_DATA_FILTER_FLASG3 HTT_RX_FP_DATA_FILTER_FLASG3
++
++#define HTT_RX_MON_MO_DATA_FILTER_FLASG3 HTT_RX_MO_DATA_FILTER_FLASG3
++
++#define HTT_RX_MON_FILTER_TLV_FLAGS \
++		(HTT_RX_FILTER_TLV_FLAGS_MPDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS_EXT | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END_STATUS_DONE)
++
++#define HTT_RX_MON_FILTER_TLV_FLAGS_MON_STATUS_RING \
++		(HTT_RX_FILTER_TLV_FLAGS_MPDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS_EXT | \
++		HTT_RX_FILTER_TLV_FLAGS_PPDU_END_STATUS_DONE)
++
++#define HTT_RX_MON_FILTER_TLV_FLAGS_MON_BUF_RING \
++		(HTT_RX_FILTER_TLV_FLAGS_MPDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_MSDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_RX_PACKET | \
++		HTT_RX_FILTER_TLV_FLAGS_MSDU_END | \
++		HTT_RX_FILTER_TLV_FLAGS_MPDU_END | \
++		HTT_RX_FILTER_TLV_FLAGS_PACKET_HEADER | \
++		HTT_RX_FILTER_TLV_FLAGS_PER_MSDU_HEADER | \
++		HTT_RX_FILTER_TLV_FLAGS_ATTENTION)
++
++/* msdu start. mpdu end, attention, rx hdr tlv's are not subscribed */
++#define HTT_RX_TLV_FLAGS_RXDMA_RING \
++		(HTT_RX_FILTER_TLV_FLAGS_MPDU_START | \
++		HTT_RX_FILTER_TLV_FLAGS_RX_PACKET | \
++		HTT_RX_FILTER_TLV_FLAGS_MSDU_END)
++
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_MSG_TYPE	GENMASK(7, 0)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_PDEV_ID	GENMASK(15, 8)
++
++struct htt_rx_ring_selection_cfg_cmd {
++	__le32 info0;
++	__le32 info1;
++	__le32 pkt_type_en_flags0;
++	__le32 pkt_type_en_flags1;
++	__le32 pkt_type_en_flags2;
++	__le32 pkt_type_en_flags3;
++	__le32 rx_filter_tlv;
++	__le32 rx_packet_offset;
++	__le32 rx_mpdu_offset;
++	__le32 rx_msdu_offset;
++	__le32 rx_attn_offset;
++} __packed;
++
++struct htt_rx_ring_tlv_filter {
++	u32 rx_filter; /* see htt_rx_filter_tlv_flags */
++	u32 pkt_filter_flags0; /* MGMT */
++	u32 pkt_filter_flags1; /* MGMT */
++	u32 pkt_filter_flags2; /* CTRL */
++	u32 pkt_filter_flags3; /* DATA */
++	bool offset_valid;
++	u16 rx_packet_offset;
++	u16 rx_header_offset;
++	u16 rx_mpdu_end_offset;
++	u16 rx_mpdu_start_offset;
++	u16 rx_msdu_end_offset;
++	u16 rx_msdu_start_offset;
++	u16 rx_attn_offset;
++};
++
++#define HTT_STATS_FRAME_CTRL_TYPE_MGMT  0x0
++#define HTT_STATS_FRAME_CTRL_TYPE_CTRL  0x1
++#define HTT_STATS_FRAME_CTRL_TYPE_DATA  0x2
++#define HTT_STATS_FRAME_CTRL_TYPE_RESV  0x3
++
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_MSG_TYPE	GENMASK(7, 0)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_PDEV_ID	GENMASK(15, 8)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_RING_ID	GENMASK(23, 16)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_SS		BIT(24)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO0_PS		BIT(25)
++
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO1_RING_BUFF_SIZE	GENMASK(15, 0)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO1_PKT_TYPE		GENMASK(18, 16)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_MGMT	GENMASK(21, 19)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_CTRL	GENMASK(24, 22)
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_DATA	GENMASK(27, 25)
++
++#define HTT_TX_RING_SELECTION_CFG_CMD_INFO2_PKT_TYPE_EN_FLAG	GENMASK(2, 0)
++
++struct htt_tx_ring_selection_cfg_cmd {
++	__le32 info0;
++	__le32 info1;
++	__le32 info2;
++	__le32 tlv_filter_mask_in0;
++	__le32 tlv_filter_mask_in1;
++	__le32 tlv_filter_mask_in2;
++	__le32 tlv_filter_mask_in3;
++	__le32 reserverd[3];
++} __packed;
++
++#define HTT_TX_RING_TLV_FILTER_MGMT_DMA_LEN	GENMASK(3, 0)
++#define HTT_TX_RING_TLV_FILTER_CTRL_DMA_LEN	GENMASK(7, 4)
++#define HTT_TX_RING_TLV_FILTER_DATA_DMA_LEN	GENMASK(11, 8)
++
++#define HTT_TX_MON_FILTER_HYBRID_MODE \
++		(HTT_TX_FILTER_TLV_FLAGS0_RESPONSE_START_STATUS | \
++		HTT_TX_FILTER_TLV_FLAGS0_RESPONSE_END_STATUS | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_START | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_END | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_START_PPDU | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_USER_PPDU | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_ACK_OR_BA | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_1K_BA | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_START_PROT | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_PROT | \
++		HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_USER_RESPONSE | \
++		HTT_TX_FILTER_TLV_FLAGS0_RECEIVED_RESPONSE_INFO | \
++		HTT_TX_FILTER_TLV_FLAGS0_RECEIVED_RESPONSE_INFO_PART2)
++
++struct htt_tx_ring_tlv_filter {
++	u32 tx_mon_downstream_tlv_flags;
++	u32 tx_mon_upstream_tlv_flags0;
++	u32 tx_mon_upstream_tlv_flags1;
++	u32 tx_mon_upstream_tlv_flags2;
++	bool tx_mon_mgmt_filter;
++	bool tx_mon_data_filter;
++	bool tx_mon_ctrl_filter;
++	u16 tx_mon_pkt_dma_len;
++} __packed;
++
++enum htt_tx_mon_upstream_tlv_flags0 {
++	HTT_TX_FILTER_TLV_FLAGS0_RESPONSE_START_STATUS		= BIT(1),
++	HTT_TX_FILTER_TLV_FLAGS0_RESPONSE_END_STATUS		= BIT(2),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_START		= BIT(3),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_END		= BIT(4),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_START_PPDU	= BIT(5),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_USER_PPDU	= BIT(6),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_ACK_OR_BA	= BIT(7),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_1K_BA		= BIT(8),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_START_PROT	= BIT(9),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_PROT		= BIT(10),
++	HTT_TX_FILTER_TLV_FLAGS0_TX_FES_STATUS_USER_RESPONSE	= BIT(11),
++	HTT_TX_FILTER_TLV_FLAGS0_RX_FRAME_BITMAP_ACK		= BIT(12),
++	HTT_TX_FILTER_TLV_FLAGS0_RX_FRAME_1K_BITMAP_ACK		= BIT(13),
++	HTT_TX_FILTER_TLV_FLAGS0_COEX_TX_STATUS			= BIT(14),
++	HTT_TX_FILTER_TLV_FLAGS0_RECEIVED_RESPONSE_INFO		= BIT(15),
++	HTT_TX_FILTER_TLV_FLAGS0_RECEIVED_RESPONSE_INFO_PART2	= BIT(16),
++};
++
++#define HTT_TX_FILTER_TLV_FLAGS2_TXPCU_PHYTX_OTHER_TRANSMIT_INFO32	BIT(11)
++
++/* HTT message target->host */
++
++enum htt_t2h_msg_type {
++	HTT_T2H_MSG_TYPE_VERSION_CONF,
++	HTT_T2H_MSG_TYPE_PEER_MAP	= 0x3,
++	HTT_T2H_MSG_TYPE_PEER_UNMAP	= 0x4,
++	HTT_T2H_MSG_TYPE_RX_ADDBA	= 0x5,
++	HTT_T2H_MSG_TYPE_PKTLOG		= 0x8,
++	HTT_T2H_MSG_TYPE_SEC_IND	= 0xb,
++	HTT_T2H_MSG_TYPE_PEER_MAP2	= 0x1e,
++	HTT_T2H_MSG_TYPE_PEER_UNMAP2	= 0x1f,
++	HTT_T2H_MSG_TYPE_PPDU_STATS_IND = 0x1d,
++	HTT_T2H_MSG_TYPE_EXT_STATS_CONF = 0x1c,
++	HTT_T2H_MSG_TYPE_BKPRESSURE_EVENT_IND = 0x24,
++	HTT_T2H_MSG_TYPE_MLO_TIMESTAMP_OFFSET_IND = 0x28,
++	HTT_T2H_MSG_TYPE_PEER_MAP3	= 0x2b,
++	HTT_T2H_MSG_TYPE_VDEV_TXRX_STATS_PERIODIC_IND = 0x2c,
++};
++
++#define HTT_TARGET_VERSION_MAJOR 3
++
++#define HTT_T2H_MSG_TYPE		GENMASK(7, 0)
++#define HTT_T2H_VERSION_CONF_MINOR	GENMASK(15, 8)
++#define HTT_T2H_VERSION_CONF_MAJOR	GENMASK(23, 16)
++
++struct htt_t2h_version_conf_msg {
++	__le32 version;
++} __packed;
++
++#define HTT_T2H_PEER_MAP_INFO_VDEV_ID	GENMASK(15, 8)
++#define HTT_T2H_PEER_MAP_INFO_PEER_ID	GENMASK(31, 16)
++#define HTT_T2H_PEER_MAP_INFO1_MAC_ADDR_H16	GENMASK(15, 0)
++#define HTT_T2H_PEER_MAP_INFO1_HW_PEER_ID	GENMASK(31, 16)
++#define HTT_T2H_PEER_MAP_INFO2_AST_HASH_VAL	GENMASK(15, 0)
++#define HTT_T2H_PEER_MAP_INFO2_NEXT_HOP_M	BIT(16)
++#define HTT_T2H_PEER_MAP_INFO2_NEXT_HOP_S	16
++
++struct htt_t2h_peer_map_event {
++	__le32 info;
++	__le32 mac_addr_l32;
++	__le32 info1;
++	__le32 info2;
++} __packed;
++
++#define HTT_T2H_PEER_UNMAP_INFO_VDEV_ID	HTT_T2H_PEER_MAP_INFO_VDEV_ID
++#define HTT_T2H_PEER_UNMAP_INFO_PEER_ID	HTT_T2H_PEER_MAP_INFO_PEER_ID
++#define HTT_T2H_PEER_UNMAP_INFO1_MAC_ADDR_H16 \
++					HTT_T2H_PEER_MAP_INFO1_MAC_ADDR_H16
++#define HTT_T2H_PEER_MAP_INFO1_NEXT_HOP_M HTT_T2H_PEER_MAP_INFO2_NEXT_HOP_M
++#define HTT_T2H_PEER_MAP_INFO1_NEXT_HOP_S HTT_T2H_PEER_MAP_INFO2_NEXT_HOP_S
++
++struct htt_t2h_peer_unmap_event {
++	__le32 info;
++	__le32 mac_addr_l32;
++	__le32 info1;
++} __packed;
++
++struct htt_resp_msg {
++	union {
++		struct htt_t2h_version_conf_msg version_msg;
++		struct htt_t2h_peer_map_event peer_map_ev;
++		struct htt_t2h_peer_unmap_event peer_unmap_ev;
++	};
++} __packed;
++
++#define HTT_VDEV_GET_STATS_U64(msg_l32, msg_u32)\
++	(((u64)__le32_to_cpu(msg_u32) << 32) | (__le32_to_cpu(msg_l32)))
++#define HTT_T2H_VDEV_STATS_PERIODIC_MSG_TYPE		GENMASK(7, 0)
++#define HTT_T2H_VDEV_STATS_PERIODIC_PDEV_ID		GENMASK(15, 8)
++#define HTT_T2H_VDEV_STATS_PERIODIC_NUM_VDEV		GENMASK(23, 16)
++#define HTT_T2H_VDEV_STATS_PERIODIC_PAYLOAD_BYTES	GENMASK(15, 0)
++#define HTT_VDEV_TXRX_STATS_COMMON_TLV		0
++#define HTT_VDEV_TXRX_STATS_HW_STATS_TLV	1
++
++struct htt_t2h_vdev_txrx_stats_ind {
++	__le32 vdev_id;
++	__le32 rx_msdu_byte_cnt_lo;
++	__le32 rx_msdu_byte_cnt_hi;
++	__le32 rx_msdu_cnt_lo;
++	__le32 rx_msdu_cnt_hi;
++	__le32 tx_msdu_byte_cnt_lo;
++	__le32 tx_msdu_byte_cnt_hi;
++	__le32 tx_msdu_cnt_lo;
++	__le32 tx_msdu_cnt_hi;
++	__le32 tx_retry_cnt_lo;
++	__le32 tx_retry_cnt_hi;
++	__le32 tx_retry_byte_cnt_lo;
++	__le32 tx_retry_byte_cnt_hi;
++	__le32 tx_drop_cnt_lo;
++	__le32 tx_drop_cnt_hi;
++	__le32 tx_drop_byte_cnt_lo;
++	__le32 tx_drop_byte_cnt_hi;
++	__le32 msdu_ttl_cnt_lo;
++	__le32 msdu_ttl_cnt_hi;
++	__le32 msdu_ttl_byte_cnt_lo;
++	__le32 msdu_ttl_byte_cnt_hi;
++} __packed;
++
++struct htt_t2h_vdev_common_stats_tlv {
++	__le32 soc_drop_count_lo;
++	__le32 soc_drop_count_hi;
++} __packed;
++
++/* ppdu stats
++ *
++ * @details
++ * The following field definitions describe the format of the HTT target
++ * to host ppdu stats indication message.
++ *
++ *
++ * |31                         16|15   12|11   10|9      8|7            0 |
++ * |----------------------------------------------------------------------|
++ * |    payload_size             | rsvd  |pdev_id|mac_id  |    msg type   |
++ * |----------------------------------------------------------------------|
++ * |                          ppdu_id                                     |
++ * |----------------------------------------------------------------------|
++ * |                        Timestamp in us                               |
++ * |----------------------------------------------------------------------|
++ * |                          reserved                                    |
++ * |----------------------------------------------------------------------|
++ * |                    type-specific stats info                          |
++ * |                     (see htt_ppdu_stats.h)                           |
++ * |----------------------------------------------------------------------|
++ * Header fields:
++ *  - MSG_TYPE
++ *    Bits 7:0
++ *    Purpose: Identifies this is a PPDU STATS indication
++ *             message.
++ *    Value: 0x1d
++ *  - mac_id
++ *    Bits 9:8
++ *    Purpose: mac_id of this ppdu_id
++ *    Value: 0-3
++ *  - pdev_id
++ *    Bits 11:10
++ *    Purpose: pdev_id of this ppdu_id
++ *    Value: 0-3
++ *     0 (for rings at SOC level),
++ *     1/2/3 PDEV -> 0/1/2
++ *  - payload_size
++ *    Bits 31:16
++ *    Purpose: total tlv size
++ *    Value: payload_size in bytes
++ */
++
++#define HTT_T2H_PPDU_STATS_INFO_PDEV_ID GENMASK(11, 10)
++#define HTT_T2H_PPDU_STATS_INFO_PAYLOAD_SIZE GENMASK(31, 16)
++
++struct ath12k_htt_ppdu_stats_msg {
++	__le32 info;
++	__le32 ppdu_id;
++	__le32 timestamp;
++	__le32 rsvd;
++	u8 data[];
++} __packed;
++
++struct htt_tlv {
++	__le32 header;
++	u8 value[];
++} __packed;
++
++#define HTT_TLV_TAG			GENMASK(11, 0)
++#define HTT_TLV_LEN			GENMASK(23, 12)
++
++enum HTT_PPDU_STATS_BW {
++	HTT_PPDU_STATS_BANDWIDTH_5MHZ   = 0,
++	HTT_PPDU_STATS_BANDWIDTH_10MHZ  = 1,
++	HTT_PPDU_STATS_BANDWIDTH_20MHZ  = 2,
++	HTT_PPDU_STATS_BANDWIDTH_40MHZ  = 3,
++	HTT_PPDU_STATS_BANDWIDTH_80MHZ  = 4,
++	HTT_PPDU_STATS_BANDWIDTH_160MHZ = 5, /* includes 80+80 */
++	HTT_PPDU_STATS_BANDWIDTH_DYN    = 6,
++};
++
++#define HTT_PPDU_STATS_CMN_FLAGS_FRAME_TYPE_M	GENMASK(7, 0)
++#define HTT_PPDU_STATS_CMN_FLAGS_QUEUE_TYPE_M	GENMASK(15, 8)
++/* bw - HTT_PPDU_STATS_BW */
++#define HTT_PPDU_STATS_CMN_FLAGS_BW_M		GENMASK(19, 16)
++
++struct htt_ppdu_stats_common {
++	__le32 ppdu_id;
++	__le16 sched_cmdid;
++	u8 ring_id;
++	u8 num_users;
++	__le32 flags; /* %HTT_PPDU_STATS_COMMON_FLAGS_*/
++	__le32 chain_mask;
++	__le32 fes_duration_us; /* frame exchange sequence */
++	__le32 ppdu_sch_eval_start_tstmp_us;
++	__le32 ppdu_sch_end_tstmp_us;
++	__le32 ppdu_start_tstmp_us;
++	/* BIT [15 :  0] - phy mode (WLAN_PHY_MODE) with which ppdu was transmitted
++	 * BIT [31 : 16] - bandwidth (in MHz) with which ppdu was transmitted
++	 */
++	__le16 phy_mode;
++	__le16 bw_mhz;
++} __packed;
++
++enum htt_ppdu_stats_gi {
++	HTT_PPDU_STATS_SGI_0_8_US,
++	HTT_PPDU_STATS_SGI_0_4_US,
++	HTT_PPDU_STATS_SGI_1_6_US,
++	HTT_PPDU_STATS_SGI_3_2_US,
++};
++
++#define HTT_PPDU_STATS_USER_RATE_INFO0_USER_POS_M	GENMASK(3, 0)
++#define HTT_PPDU_STATS_USER_RATE_INFO0_MU_GROUP_ID_M	GENMASK(11, 4)
++
++enum HTT_PPDU_STATS_PPDU_TYPE {
++	HTT_PPDU_STATS_PPDU_TYPE_SU,
++	HTT_PPDU_STATS_PPDU_TYPE_MU_MIMO,
++	HTT_PPDU_STATS_PPDU_TYPE_MU_OFDMA,
++	HTT_PPDU_STATS_PPDU_TYPE_MU_MIMO_OFDMA,
++	HTT_PPDU_STATS_PPDU_TYPE_UL_TRIG,
++	HTT_PPDU_STATS_PPDU_TYPE_BURST_BCN,
++	HTT_PPDU_STATS_PPDU_TYPE_UL_BSR_RESP,
++	HTT_PPDU_STATS_PPDU_TYPE_UL_BSR_TRIG,
++	HTT_PPDU_STATS_PPDU_TYPE_UL_RESP,
++	HTT_PPDU_STATS_PPDU_TYPE_MAX
++};
++
++#define HTT_PPDU_STATS_USER_RATE_INFO1_RESP_TYPE_VALD_M	BIT(0)
++#define HTT_PPDU_STATS_USER_RATE_INFO1_PPDU_TYPE_M	GENMASK(5, 1)
++
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_LTF_SIZE_M	GENMASK(1, 0)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_STBC_M		BIT(2)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_HE_RE_M		BIT(3)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_TXBF_M		GENMASK(7, 4)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_BW_M		GENMASK(11, 8)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_NSS_M		GENMASK(15, 12)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_MCS_M		GENMASK(19, 16)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_PREAMBLE_M	GENMASK(23, 20)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_GI_M		GENMASK(27, 24)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_DCM_M		BIT(28)
++#define HTT_PPDU_STATS_USER_RATE_FLAGS_LDPC_M		BIT(29)
++
++#define HTT_USR_RATE_PREAMBLE(_val) \
++		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_PREAMBLE_M)
++#define HTT_USR_RATE_BW(_val) \
++		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_BW_M)
++#define HTT_USR_RATE_NSS(_val) \
++		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_NSS_M)
++#define HTT_USR_RATE_MCS(_val) \
++		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_MCS_M)
++#define HTT_USR_RATE_GI(_val) \
++		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_GI_M)
++#define HTT_USR_RATE_DCM(_val) \
++		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_DCM_M)
++
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_LTF_SIZE_M		GENMASK(1, 0)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_STBC_M		BIT(2)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_HE_RE_M		BIT(3)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_TXBF_M		GENMASK(7, 4)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_BW_M		GENMASK(11, 8)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_NSS_M		GENMASK(15, 12)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_MCS_M		GENMASK(19, 16)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_PREAMBLE_M		GENMASK(23, 20)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_GI_M		GENMASK(27, 24)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_DCM_M		BIT(28)
++#define HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_LDPC_M		BIT(29)
++
++struct htt_ppdu_stats_user_rate {
++	u8 tid_num;
++	u8 reserved0;
++	__le16 sw_peer_id;
++	__le32 info0; /* %HTT_PPDU_STATS_USER_RATE_INFO0_*/
++	__le16 ru_end;
++	__le16 ru_start;
++	__le16 resp_ru_end;
++	__le16 resp_ru_start;
++	__le32 info1; /* %HTT_PPDU_STATS_USER_RATE_INFO1_ */
++	__le32 rate_flags; /* %HTT_PPDU_STATS_USER_RATE_FLAGS_ */
++	/* Note: resp_rate_info is only valid for if resp_type is UL */
++	__le32 resp_rate_flags; /* %HTT_PPDU_STATS_USER_RATE_RESP_FLAGS_ */
++} __packed;
++
++#define HTT_PPDU_STATS_TX_INFO_FLAGS_RATECODE_M		GENMASK(7, 0)
++#define HTT_PPDU_STATS_TX_INFO_FLAGS_IS_AMPDU_M		BIT(8)
++#define HTT_PPDU_STATS_TX_INFO_FLAGS_BA_ACK_FAILED_M	GENMASK(10, 9)
++#define HTT_PPDU_STATS_TX_INFO_FLAGS_BW_M		GENMASK(13, 11)
++#define HTT_PPDU_STATS_TX_INFO_FLAGS_SGI_M		BIT(14)
++#define HTT_PPDU_STATS_TX_INFO_FLAGS_PEERID_M		GENMASK(31, 16)
++
++#define HTT_TX_INFO_IS_AMSDU(_flags) \
++			u32_get_bits(_flags, HTT_PPDU_STATS_TX_INFO_FLAGS_IS_AMPDU_M)
++#define HTT_TX_INFO_BA_ACK_FAILED(_flags) \
++			u32_get_bits(_flags, HTT_PPDU_STATS_TX_INFO_FLAGS_BA_ACK_FAILED_M)
++#define HTT_TX_INFO_RATECODE(_flags) \
++			u32_get_bits(_flags, HTT_PPDU_STATS_TX_INFO_FLAGS_RATECODE_M)
++#define HTT_TX_INFO_PEERID(_flags) \
++			u32_get_bits(_flags, HTT_PPDU_STATS_TX_INFO_FLAGS_PEERID_M)
++
++struct htt_tx_ppdu_stats_info {
++	struct htt_tlv tlv_hdr;
++	__le32 tx_success_bytes;
++	__le32 tx_retry_bytes;
++	__le32 tx_failed_bytes;
++	__le32 flags; /* %HTT_PPDU_STATS_TX_INFO_FLAGS_ */
++	__le16 tx_success_msdus;
++	__le16 tx_retry_msdus;
++	__le16 tx_failed_msdus;
++	__le16 tx_duration; /* united in us */
++} __packed;
++
++enum  htt_ppdu_stats_usr_compln_status {
++	HTT_PPDU_STATS_USER_STATUS_OK,
++	HTT_PPDU_STATS_USER_STATUS_FILTERED,
++	HTT_PPDU_STATS_USER_STATUS_RESP_TIMEOUT,
++	HTT_PPDU_STATS_USER_STATUS_RESP_MISMATCH,
++	HTT_PPDU_STATS_USER_STATUS_ABORT,
++};
++
++#define HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_LONG_RETRY_M	GENMASK(3, 0)
++#define HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_SHORT_RETRY_M	GENMASK(7, 4)
++#define HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_IS_AMPDU_M		BIT(8)
++#define HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_RESP_TYPE_M		GENMASK(12, 9)
++
++#define HTT_USR_CMPLTN_IS_AMPDU(_val) \
++	    le32_get_bits(_val, HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_IS_AMPDU_M)
++#define HTT_USR_CMPLTN_LONG_RETRY(_val) \
++	    le32_get_bits(_val, HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_LONG_RETRY_M)
++#define HTT_USR_CMPLTN_SHORT_RETRY(_val) \
++	    le32_get_bits(_val, HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_SHORT_RETRY_M)
++
++struct htt_ppdu_stats_usr_cmpltn_cmn {
++	u8 status;
++	u8 tid_num;
++	__le16 sw_peer_id;
++	/* RSSI value of last ack packet (units = dB above noise floor) */
++	__le32 ack_rssi;
++	__le16 mpdu_tried;
++	__le16 mpdu_success;
++	__le32 flags; /* %HTT_PPDU_STATS_USR_CMPLTN_CMN_FLAGS_LONG_RETRIES*/
++} __packed;
++
++#define HTT_PPDU_STATS_ACK_BA_INFO_NUM_MPDU_M	GENMASK(8, 0)
++#define HTT_PPDU_STATS_ACK_BA_INFO_NUM_MSDU_M	GENMASK(24, 9)
++#define HTT_PPDU_STATS_ACK_BA_INFO_TID_NUM	GENMASK(31, 25)
++
++#define HTT_PPDU_STATS_NON_QOS_TID	16
++
++struct htt_ppdu_stats_usr_cmpltn_ack_ba_status {
++	__le32 ppdu_id;
++	__le16 sw_peer_id;
++	__le16 reserved0;
++	__le32 info; /* %HTT_PPDU_STATS_USR_CMPLTN_CMN_INFO_ */
++	__le16 current_seq;
++	__le16 start_seq;
++	__le32 success_bytes;
++} __packed;
++
++struct htt_ppdu_user_stats {
++	u16 peer_id;
++	u16 delay_ba;
++	u32 tlv_flags;
++	bool is_valid_peer_id;
++	struct htt_ppdu_stats_user_rate rate;
++	struct htt_ppdu_stats_usr_cmpltn_cmn cmpltn_cmn;
++	struct htt_ppdu_stats_usr_cmpltn_ack_ba_status ack_ba;
++};
++
++#define HTT_PPDU_STATS_MAX_USERS	8
++#define HTT_PPDU_DESC_MAX_DEPTH	16
++
++struct htt_ppdu_stats {
++	struct htt_ppdu_stats_common common;
++	struct htt_ppdu_user_stats user_stats[HTT_PPDU_STATS_MAX_USERS];
++};
++
++struct htt_ppdu_stats_info {
++	u32 tlv_bitmap;
++	u32 ppdu_id;
++	u32 frame_type;
++	u32 frame_ctrl;
++	u32 delay_ba;
++	u32 bar_num_users;
++	struct htt_ppdu_stats ppdu_stats;
++	struct list_head list;
++};
++
++/* @brief target -> host MLO offset indiciation message
++ *
++ * @details
++ * The following field definitions describe the format of the HTT target
++ * to host mlo offset indication message.
++ *
++ *
++ * |31        29|28    |26|25  22|21 16|15  13|12     10 |9     8|7     0|
++ * |---------------------------------------------------------------------|
++ * |   rsvd1    | mac_freq                    |chip_id   |pdev_id|msgtype|
++ * |---------------------------------------------------------------------|
++ * |                           sync_timestamp_lo_us                      |
++ * |---------------------------------------------------------------------|
++ * |                           sync_timestamp_hi_us                      |
++ * |---------------------------------------------------------------------|
++ * |                           mlo_offset_lo                             |
++ * |---------------------------------------------------------------------|
++ * |                           mlo_offset_hi                             |
++ * |---------------------------------------------------------------------|
++ * |                           mlo_offset_clcks                          |
++ * |---------------------------------------------------------------------|
++ * |   rsvd2           | mlo_comp_clks |mlo_comp_us                      |
++ * |---------------------------------------------------------------------|
++ * |   rsvd3                   |mlo_comp_timer                           |
++ * |---------------------------------------------------------------------|
++ * Header fields
++ *  - MSG_TYPE
++ *    Bits 7:0
++ *    Purpose: Identifies this is a MLO offset indication msg
++ *  - PDEV_ID
++ *    Bits 9:8
++ *    Purpose: Pdev of this MLO offset
++ *  - CHIP_ID
++ *    Bits 12:10
++ *    Purpose: chip_id of this MLO offset
++ *  - MAC_FREQ
++ *    Bits 28:13
++ *  - SYNC_TIMESTAMP_LO_US
++ *    Purpose: clock frequency of the mac HW block in MHz
++ *    Bits: 31:0
++ *    Purpose: lower 32 bits of the WLAN global time stamp at which
++ *             last sync interrupt was received
++ *  - SYNC_TIMESTAMP_HI_US
++ *    Bits: 31:0
++ *    Purpose: upper 32 bits of WLAN global time stamp at which
++ *             last sync interrupt was received
++ *  - MLO_OFFSET_LO
++ *    Bits: 31:0
++ *    Purpose: lower 32 bits of the MLO offset in us
++ *  - MLO_OFFSET_HI
++ *    Bits: 31:0
++ *    Purpose: upper 32 bits of the MLO offset in us
++ *  - MLO_COMP_US
++ *    Bits: 15:0
++ *    Purpose: MLO time stamp compensation applied in us
++ *  - MLO_COMP_CLCKS
++ *    Bits: 25:16
++ *    Purpose: MLO time stamp compensation applied in clock ticks
++ *  - MLO_COMP_TIMER
++ *    Bits: 21:0
++ *    Purpose: Periodic timer at which compensation is applied
++ */
++
++#define HTT_T2H_MLO_OFFSET_INFO_MSG_TYPE        GENMASK(7, 0)
++#define HTT_T2H_MLO_OFFSET_INFO_PDEV_ID         GENMASK(9, 8)
++
++struct ath12k_htt_mlo_offset_msg {
++	__le32 info;
++	__le32 sync_timestamp_lo_us;
++	__le32 sync_timestamp_hi_us;
++	__le32 mlo_offset_hi;
++	__le32 mlo_offset_lo;
++	__le32 mlo_offset_clks;
++	__le32 mlo_comp_clks;
++	__le32 mlo_comp_timer;
++} __packed;
++
++/* @brief host -> target FW extended statistics retrieve
++ *
++ * @details
++ * The following field definitions describe the format of the HTT host
++ * to target FW extended stats retrieve message.
++ * The message specifies the type of stats the host wants to retrieve.
++ *
++ * |31          24|23          16|15           8|7            0|
++ * |-----------------------------------------------------------|
++ * |   reserved   | stats type   |   pdev_mask  |   msg type   |
++ * |-----------------------------------------------------------|
++ * |                   config param [0]                        |
++ * |-----------------------------------------------------------|
++ * |                   config param [1]                        |
++ * |-----------------------------------------------------------|
++ * |                   config param [2]                        |
++ * |-----------------------------------------------------------|
++ * |                   config param [3]                        |
++ * |-----------------------------------------------------------|
++ * |                         reserved                          |
++ * |-----------------------------------------------------------|
++ * |                        cookie LSBs                        |
++ * |-----------------------------------------------------------|
++ * |                        cookie MSBs                        |
++ * |-----------------------------------------------------------|
++ * Header fields:
++ *  - MSG_TYPE
++ *    Bits 7:0
++ *    Purpose: identifies this is a extended stats upload request message
++ *    Value: 0x10
++ *  - PDEV_MASK
++ *    Bits 8:15
++ *    Purpose: identifies the mask of PDEVs to retrieve stats from
++ *    Value: This is a overloaded field, refer to usage and interpretation of
++ *           PDEV in interface document.
++ *           Bit   8    :  Reserved for SOC stats
++ *           Bit 9 - 15 :  Indicates PDEV_MASK in DBDC
++ *                         Indicates MACID_MASK in DBS
++ *  - STATS_TYPE
++ *    Bits 23:16
++ *    Purpose: identifies which FW statistics to upload
++ *    Value: Defined by htt_dbg_ext_stats_type (see htt_stats.h)
++ *  - Reserved
++ *    Bits 31:24
++ *  - CONFIG_PARAM [0]
++ *    Bits 31:0
++ *    Purpose: give an opaque configuration value to the specified stats type
++ *    Value: stats-type specific configuration value
++ *           Refer to htt_stats.h for interpretation for each stats sub_type
++ *  - CONFIG_PARAM [1]
++ *    Bits 31:0
++ *    Purpose: give an opaque configuration value to the specified stats type
++ *    Value: stats-type specific configuration value
++ *           Refer to htt_stats.h for interpretation for each stats sub_type
++ *  - CONFIG_PARAM [2]
++ *    Bits 31:0
++ *    Purpose: give an opaque configuration value to the specified stats type
++ *    Value: stats-type specific configuration value
++ *           Refer to htt_stats.h for interpretation for each stats sub_type
++ *  - CONFIG_PARAM [3]
++ *    Bits 31:0
++ *    Purpose: give an opaque configuration value to the specified stats type
++ *    Value: stats-type specific configuration value
++ *           Refer to htt_stats.h for interpretation for each stats sub_type
++ *  - Reserved [31:0] for future use.
++ *  - COOKIE_LSBS
++ *    Bits 31:0
++ *    Purpose: Provide a mechanism to match a target->host stats confirmation
++ *        message with its preceding host->target stats request message.
++ *    Value: LSBs of the opaque cookie specified by the host-side requestor
++ *  - COOKIE_MSBS
++ *    Bits 31:0
++ *    Purpose: Provide a mechanism to match a target->host stats confirmation
++ *        message with its preceding host->target stats request message.
++ *    Value: MSBs of the opaque cookie specified by the host-side requestor
++ */
++
++struct htt_ext_stats_cfg_hdr {
++	u8 msg_type;
++	u8 pdev_mask;
++	u8 stats_type;
++	u8 reserved;
++} __packed;
++
++struct htt_ext_stats_cfg_cmd {
++	struct htt_ext_stats_cfg_hdr hdr;
++	__le32 cfg_param0;
++	__le32 cfg_param1;
++	__le32 cfg_param2;
++	__le32 cfg_param3;
++	__le32 reserved;
++	__le32 cookie_lsb;
++	__le32 cookie_msb;
++} __packed;
++
++/* htt stats config default params */
++#define HTT_STAT_DEFAULT_RESET_START_OFFSET 0
++#define HTT_STAT_DEFAULT_CFG0_ALL_HWQS 0xffffffff
++#define HTT_STAT_DEFAULT_CFG0_ALL_TXQS 0xffffffff
++#define HTT_STAT_DEFAULT_CFG0_ALL_CMDQS 0xffff
++#define HTT_STAT_DEFAULT_CFG0_ALL_RINGS 0xffff
++#define HTT_STAT_DEFAULT_CFG0_ACTIVE_PEERS 0xff
++#define HTT_STAT_DEFAULT_CFG0_CCA_CUMULATIVE 0x00
++#define HTT_STAT_DEFAULT_CFG0_ACTIVE_VDEVS 0x00
++
++/* HTT_DBG_EXT_STATS_PEER_INFO
++ * PARAMS:
++ * @config_param0:
++ *  [Bit0] - [0] for sw_peer_id, [1] for mac_addr based request
++ *  [Bit15 : Bit 1] htt_peer_stats_req_mode_t
++ *  [Bit31 : Bit16] sw_peer_id
++ * @config_param1:
++ *  peer_stats_req_type_mask:32 (enum htt_peer_stats_tlv_enum)
++ *   0 bit htt_peer_stats_cmn_tlv
++ *   1 bit htt_peer_details_tlv
++ *   2 bit htt_tx_peer_rate_stats_tlv
++ *   3 bit htt_rx_peer_rate_stats_tlv
++ *   4 bit htt_tx_tid_stats_tlv/htt_tx_tid_stats_v1_tlv
++ *   5 bit htt_rx_tid_stats_tlv
++ *   6 bit htt_msdu_flow_stats_tlv
++ * @config_param2: [Bit31 : Bit0] mac_addr31to0
++ * @config_param3: [Bit15 : Bit0] mac_addr47to32
++ *                [Bit31 : Bit16] reserved
++ */
++#define HTT_STAT_PEER_INFO_MAC_ADDR BIT(0)
++#define HTT_STAT_DEFAULT_PEER_REQ_TYPE 0x7f
++
++/* Used to set different configs to the specified stats type.*/
++struct htt_ext_stats_cfg_params {
++	u32 cfg0;
++	u32 cfg1;
++	u32 cfg2;
++	u32 cfg3;
++};
++
++enum vdev_stats_offload_timer_duration {
++	ATH12K_STATS_TIMER_DUR_500MS = 1,
++	ATH12K_STATS_TIMER_DUR_1SEC = 2,
++	ATH12K_STATS_TIMER_DUR_2SEC = 3,
++};
++
++static inline void ath12k_dp_get_mac_addr(u32 addr_l32, u16 addr_h16, u8 *addr)
 +{
-+	struct ath12k_hal *hal = &ab->hal;
-+	u32 ring_id;
-+
-+	for (ring_id = 0; ring_id < HAL_SRNG_RING_ID_MAX; ring_id++)
-+		lockdep_register_key(&hal->srng_list[ring_id].lock_key);
++	memcpy(addr, &addr_l32, 4);
++	memcpy(addr + 4, &addr_h16, ETH_ALEN - 4);
 +}
 +
-+static void ath12k_hal_unregister_srng_lock_keys(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	u32 ring_id;
-+
-+	for (ring_id = 0; ring_id < HAL_SRNG_RING_ID_MAX; ring_id++)
-+		lockdep_unregister_key(&hal->srng_list[ring_id].lock_key);
-+}
-+
-+int ath12k_hal_srng_init(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+	int ret;
-+
-+	memset(hal, 0, sizeof(*hal));
-+
-+	ret = ab->hw_params->hal_ops->create_srng_config(ab);
-+	if (ret)
-+		goto err_hal;
-+
-+	ret = ath12k_hal_alloc_cont_rdp(ab);
-+	if (ret)
-+		goto err_hal;
-+
-+	ret = ath12k_hal_alloc_cont_wrp(ab);
-+	if (ret)
-+		goto err_free_cont_rdp;
-+
-+	ath12k_hal_register_srng_lock_keys(ab);
-+
-+	return 0;
-+
-+err_free_cont_rdp:
-+	ath12k_hal_free_cont_rdp(ab);
-+
-+err_hal:
-+	return ret;
-+}
-+
-+void ath12k_hal_srng_deinit(struct ath12k_base *ab)
-+{
-+	struct ath12k_hal *hal = &ab->hal;
-+
-+	ath12k_hal_unregister_srng_lock_keys(ab);
-+	ath12k_hal_free_cont_rdp(ab);
-+	ath12k_hal_free_cont_wrp(ab);
-+	kfree(hal->srng_config);
-+	hal->srng_config = NULL;
-+}
-+
-+void ath12k_hal_dump_srng_stats(struct ath12k_base *ab)
-+{
-+	struct hal_srng *srng;
-+	struct ath12k_ext_irq_grp *irq_grp;
-+	struct ath12k_ce_pipe *ce_pipe;
-+	int i;
-+
-+	ath12k_err(ab, "Last interrupt received for each CE:\n");
-+	for (i = 0; i < ab->hw_params->ce_count; i++) {
-+		ce_pipe = &ab->ce.ce_pipe[i];
-+
-+		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
-+			continue;
-+
-+		ath12k_err(ab, "CE_id %d pipe_num %d %ums before\n",
-+			   i, ce_pipe->pipe_num,
-+			   jiffies_to_msecs(jiffies - ce_pipe->timestamp));
-+	}
-+
-+	ath12k_err(ab, "\nLast interrupt received for each group:\n");
-+	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
-+		irq_grp = &ab->ext_irq_grp[i];
-+		ath12k_err(ab, "group_id %d %ums before\n",
-+			   irq_grp->grp_id,
-+			   jiffies_to_msecs(jiffies - irq_grp->timestamp));
-+	}
-+
-+	for (i = 0; i < HAL_SRNG_RING_ID_MAX; i++) {
-+		srng = &ab->hal.srng_list[i];
-+
-+		if (!srng->initialized)
-+			continue;
-+
-+		if (srng->ring_dir == HAL_SRNG_DIR_SRC)
-+			ath12k_err(ab,
-+				   "src srng id %u hp %u, reap_hp %u, cur tp %u, cached tp %u last tp %u napi processed before %ums\n",
-+				   srng->ring_id, srng->u.src_ring.hp,
-+				   srng->u.src_ring.reap_hp,
-+				   *srng->u.src_ring.tp_addr, srng->u.src_ring.cached_tp,
-+				   srng->u.src_ring.last_tp,
-+				   jiffies_to_msecs(jiffies - srng->timestamp));
-+		else if (srng->ring_dir == HAL_SRNG_DIR_DST)
-+			ath12k_err(ab,
-+				   "dst srng id %u tp %u, cur hp %u, cached hp %u last hp %u napi processed before %ums\n",
-+				   srng->ring_id, srng->u.dst_ring.tp,
-+				   *srng->u.dst_ring.hp_addr,
-+				   srng->u.dst_ring.cached_hp,
-+				   srng->u.dst_ring.last_hp,
-+				   jiffies_to_msecs(jiffies - srng->timestamp));
-+	}
-+}
++int ath12k_dp_service_srng(struct ath12k_base *ab,
++			   struct ath12k_ext_irq_grp *irq_grp,
++			   int budget);
++int ath12k_dp_htt_connect(struct ath12k_dp *dp);
++void ath12k_dp_vdev_tx_attach(struct ath12k *ar, struct ath12k_vif *arvif);
++void ath12k_dp_free(struct ath12k_base *ab);
++int ath12k_dp_alloc(struct ath12k_base *ab);
++void ath12k_dp_cc_config(struct ath12k_base *ab);
++int ath12k_dp_pdev_alloc(struct ath12k_base *ab);
++void ath12k_dp_pdev_pre_alloc(struct ath12k_base *ab);
++void ath12k_dp_pdev_free(struct ath12k_base *ab);
++int ath12k_dp_tx_htt_srng_setup(struct ath12k_base *ab, u32 ring_id,
++				int mac_id, enum hal_ring_type ring_type);
++int ath12k_dp_peer_setup(struct ath12k *ar, int vdev_id, const u8 *addr);
++void ath12k_dp_peer_cleanup(struct ath12k *ar, int vdev_id, const u8 *addr);
++void ath12k_dp_srng_cleanup(struct ath12k_base *ab, struct dp_srng *ring);
++int ath12k_dp_srng_setup(struct ath12k_base *ab, struct dp_srng *ring,
++			 enum hal_ring_type type, int ring_num,
++			 int mac_id, int num_entries);
++void ath12k_dp_link_desc_cleanup(struct ath12k_base *ab,
++				 struct dp_link_desc_bank *desc_bank,
++				 u32 ring_type, struct dp_srng *ring);
++int ath12k_dp_link_desc_setup(struct ath12k_base *ab,
++			      struct dp_link_desc_bank *link_desc_banks,
++			      u32 ring_type, struct hal_srng *srng,
++			      u32 n_link_desc);
++struct ath12k_rx_desc_info *ath12k_dp_get_rx_desc(struct ath12k_base *ab,
++						  u32 cookie);
++struct ath12k_tx_desc_info *ath12k_dp_get_tx_desc(struct ath12k_base *ab,
++						  u32 desc_id);
++#endif
 
 
 -- 
