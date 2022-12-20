@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 956C7C3DA6E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B140CC4167B
 	for <ath12k@archiver.kernel.org>; Tue, 20 Dec 2022 12:07:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2oJT2VTfgyPTvMbMutyM9BFoE1wVC28LE2JoyJudy1I=; b=qOh32CmOnoxT5r
-	rtLk49i2iDYf7vrUm8jHx4yudGfZkQUKtZM1wPkAEWYyG4PyqvU1LFpwMFIC8b2aj69RkwCu0phyQ
-	S/86nEo4qRjTDUdRqZAW/2AXE0ocEBbO6NprPo76+uGITBMS0r9X0hJ4+wndbFlTtaObLRg8w++cw
-	p0/cpSQTyOb4YjEoLukmPHym9XXGhY06zfDzm+gx1CKGdmAe4b4HlKzmR8pheexybaQYPoXsSXEXi
-	CES5w+QagGNRs8LkVVBkZEd2o5TRTcBycjtwNbFCDYrXiFrXwKEdUqtcbV5sIL2kSeYJbDAPvo9N9
-	DXpSlrr1JMon8ILwSvrw==;
+	List-Owner; bh=OuNjL5BD3CAwFMnWu6LFINqNEkikNvj4AtfHoNuRBUA=; b=nOqjysfrffIf7q
+	ceCMePy0YXf53V1QExaUziMFKM/oigOuXZi6wLXcnjACgJVq5942mEEjfs1x9ztwAw4mP2gnqlnHd
+	ylTaUbe2eajiD4UZ6AWHV3Lmt0XavRC66UJvRWgTgQQYkdtJ0nYmYw/vOwlOUsHwQxTawwjIyGLuX
+	LQcZo3sPGA+bAtbIkEFXaYy18RwpIiwSp1/f1Y/iHMUEtbccUO/kYd1pN4CxI9gWzAMa42/GVaAiX
+	Enh8xHA7CaVr2kMLvyfeSUJ8yfKF3wTrCnU2OO7TAm5TnbB0SH4NRmpGSsGwf/ckwcYx5QhOWq3AB
+	eOC4JqQBZdtN1DMY73Cw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7bOp-00EMJ2-Uh
-	for ath12k@archiver.kernel.org; Tue, 20 Dec 2022 12:07:11 +0000
+	id 1p7bOq-00EMJ9-2g
+	for ath12k@archiver.kernel.org; Tue, 20 Dec 2022 12:07:12 +0000
 Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7bOl-00EM6s-An
+	id 1p7bOl-00EM9T-R1
 	for ath12k@lists.infradead.org; Tue, 20 Dec 2022 12:07:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id C1428B81211
-	for <ath12k@lists.infradead.org>; Tue, 20 Dec 2022 12:07:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2406C433F0;
-	Tue, 20 Dec 2022 12:07:01 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id C09D6B811A2
+	for <ath12k@lists.infradead.org>; Tue, 20 Dec 2022 12:07:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EBD1BC433D2;
+	Tue, 20 Dec 2022 12:07:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1671538022;
-	bh=Y1kTfbdM42byAQZeBosdaf7QeTdLvj+mtpvhxkW8yW8=;
+	s=k20201202; t=1671538024;
+	bh=H8hOmQQXa73xd1vfaYZBM6AE2cK7nY9g5yp5NjMcdZk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Xq860ZBOn1ShkSrig2vVwiACco742atbj7DqH67poaUYBeDKkVtFbLU8hPremCMjJ
-	 etKccMpL90QSuJtGgu11qBosniXgN+HHTj35lClRCPgeaShXtIXk33DafCJDn0KP88
-	 M8UgijGYURO8ACPP/s9CZqHTfgojRH3BAmNc9dJ2hcQ2+/KZf72bERXUcUvWdOQrhj
-	 snnqasGARv0U9yd8QaCsq3n/31nUOKATQd26S3t6DCYloYc9ntpFWJwrlIjUNU1rsT
-	 kHYDeor+McDIw+IRzJUjwdUbAHKyCHoVHZBeO9/wlvIgZRoEC9ZwIb7dt56xRamDX/
-	 fZ4r1WKdA+34A==
+	b=unmmMtD0wPOaTDkTNSs8pgTQNYNPgSBGuDLpsDn51lkT6oEJWx1PqynePy5fHOHIE
+	 UG2WC/0r3p6buehOZ4xXPWvZV+jmogsCsqL1ulRAKOC7iVrdxVORqPiVqmF9eUqyaM
+	 t1/lmgCQ8aFhRDYjcPcPCMds6XpiVHnP5S9FsyHsxx1EBi2XrG68F9r2XS7M81AZpP
+	 Hd7J3yw5+DwBh72baaSI+afxvaFbV2hu8mLevzPfM8BbMqxGjB6ELQoTKP5jjHaYQU
+	 av1gXjgriiH/Yqc5Rmpmjh6NJ4RsArv6f04UCekJnzl9mnksODTG1Bn70u/rIG8888
+	 L7+dik1uXGaCA==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 1/3] wifi: ath12k: hal: add ab parameter to macros using it
-Date: Tue, 20 Dec 2022 14:06:53 +0200
-Message-Id: <20221220120655.19389-2-kvalo@kernel.org>
+Subject: [PATCH 3/3] wifi: ath12k: wmi: delete PSOC_HOST_MAX_NUM_SS
+Date: Tue, 20 Dec 2022 14:06:55 +0200
+Message-Id: <20221220120655.19389-4-kvalo@kernel.org>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20221220120655.19389-1-kvalo@kernel.org>
 References: <20221220120655.19389-1-kvalo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221220_040707_781425_8BB9EF4B 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20221220_040708_237479_2500CA21 
+X-CRM114-Status: GOOD (  14.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,8 +74,10 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Kalle Valo <quic_kvalo@quicinc.com>
 
-It's considered evil if a macro is using a variable but not having the variable
-as a parameter. So add the ab parameter to macros using that.
+Both PSOC_HOST_MAX_NUM_SS and WMI_MAX_NUM_SS are set to 8. The host assumes
+that the values are the same but there's no check for that, so things will
+break if either of the values change. It's simpler and safer to have just one
+define so delete PSOC_HOST_MAX_NUM_SS and use WMI_MAX_NUM_SS everywhere.
 
 No functional changes.
 
@@ -83,112 +85,81 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.c | 16 ++++++++--------
- drivers/net/wireless/ath/ath12k/hal.h | 16 ++++++++--------
- 2 files changed, 16 insertions(+), 16 deletions(-)
+ drivers/net/wireless/ath/ath12k/wmi.c | 10 +++++-----
+ drivers/net/wireless/ath/ath12k/wmi.h |  4 +---
+ 2 files changed, 6 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index 1e05e876af51..7b4a75ce5c82 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -1217,17 +1217,17 @@ static void ath12k_hal_srng_dst_hw_init(struct ath12k_base *ab,
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 338082719631..f6df14149531 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -428,7 +428,7 @@ static int ath12k_pull_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
+ 	arg->ppet.numss_m1 = le32_to_cpu(ev->ppet.numss_m1);
+ 	arg->ppet.ru_bit_mask = le32_to_cpu(ev->ppet.ru_info);
  
- 	if (srng->flags & HAL_SRNG_FLAGS_MSI_INTR) {
- 		ath12k_hif_write32(ab, reg_base +
--				   HAL_REO1_RING_MSI1_BASE_LSB_OFFSET,
-+				   HAL_REO1_RING_MSI1_BASE_LSB_OFFSET(ab),
- 				   srng->msi_addr);
+-	for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
++	for (i = 0; i < WMI_MAX_NUM_SS; i++)
+ 		arg->ppet.ppet16_ppet8_ru3_ru0[i] =
+ 			le32_to_cpu(ev->ppet.ppet16_ppet8_ru3_ru0[i]);
  
- 		val = u32_encode_bits(((u64)srng->msi_addr >> HAL_ADDR_MSB_REG_SHIFT),
- 				      HAL_REO1_RING_MSI1_BASE_MSB_ADDR) |
- 				      HAL_REO1_RING_MSI1_BASE_MSB_MSI1_ENABLE;
- 		ath12k_hif_write32(ab, reg_base +
--				       HAL_REO1_RING_MSI1_BASE_MSB_OFFSET, val);
-+				   HAL_REO1_RING_MSI1_BASE_MSB_OFFSET(ab), val);
+@@ -520,7 +520,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
+ 		cap_band->he_ppet.numss_m1 = le32_to_cpu(mac_caps->he_ppet2g.numss_m1);
+ 		cap_band->he_ppet.ru_bit_mask = le32_to_cpu(mac_caps->he_ppet2g.ru_info);
  
- 		ath12k_hif_write32(ab,
--				   reg_base + HAL_REO1_RING_MSI1_DATA_OFFSET,
-+				   reg_base + HAL_REO1_RING_MSI1_DATA_OFFSET(ab),
- 				   srng->msi_data);
+-		for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
++		for (i = 0; i < WMI_MAX_NUM_SS; i++)
+ 			cap_band->he_ppet.ppet16_ppet8_ru3_ru0[i] =
+ 				le32_to_cpu(mac_caps->he_ppet2g.ppet16_ppet8_ru3_ru0[i]);
  	}
+@@ -541,7 +541,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
+ 		cap_band->he_ppet.numss_m1 = le32_to_cpu(mac_caps->he_ppet5g.numss_m1);
+ 		cap_band->he_ppet.ru_bit_mask = le32_to_cpu(mac_caps->he_ppet5g.ru_info);
  
-@@ -1237,7 +1237,7 @@ static void ath12k_hal_srng_dst_hw_init(struct ath12k_base *ab,
- 			      HAL_REO1_RING_BASE_MSB_RING_BASE_ADDR_MSB) |
- 	      u32_encode_bits((srng->entry_size * srng->num_entries),
- 			      HAL_REO1_RING_BASE_MSB_RING_SIZE);
--	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_BASE_MSB_OFFSET, val);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_BASE_MSB_OFFSET(ab), val);
+-		for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
++		for (i = 0; i < WMI_MAX_NUM_SS; i++)
+ 			cap_band->he_ppet.ppet16_ppet8_ru3_ru0[i] =
+ 				le32_to_cpu(mac_caps->he_ppet5g.ppet16_ppet8_ru3_ru0[i]);
  
- 	val = u32_encode_bits(srng->ring_id, HAL_REO1_RING_ID_RING_ID) |
- 	      u32_encode_bits(srng->entry_size, HAL_REO1_RING_ID_ENTRY_SIZE);
-@@ -1251,15 +1251,15 @@ static void ath12k_hal_srng_dst_hw_init(struct ath12k_base *ab,
- 				HAL_REO1_RING_PRDR_INT_SETUP_BATCH_COUNTER_THOLD);
+@@ -559,7 +559,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
+ 		cap_band->he_ppet.numss_m1 = le32_to_cpu(mac_caps->he_ppet5g.numss_m1);
+ 		cap_band->he_ppet.ru_bit_mask = le32_to_cpu(mac_caps->he_ppet5g.ru_info);
  
- 	ath12k_hif_write32(ab,
--			   reg_base + HAL_REO1_RING_PRODUCER_INT_SETUP_OFFSET,
-+			   reg_base + HAL_REO1_RING_PRODUCER_INT_SETUP_OFFSET(ab),
- 			   val);
+-		for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
++		for (i = 0; i < WMI_MAX_NUM_SS; i++)
+ 			cap_band->he_ppet.ppet16_ppet8_ru3_ru0[i] =
+ 				le32_to_cpu(mac_caps->he_ppet5g.ppet16_ppet8_ru3_ru0[i]);
+ 	}
+@@ -1935,7 +1935,7 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
+ 			cpu_to_le32(arg->peer_he_cap_phyinfo[i]);
+ 	cmd->peer_ppet.numss_m1 = cpu_to_le32(arg->peer_ppet.numss_m1);
+ 	cmd->peer_ppet.ru_info = cpu_to_le32(arg->peer_ppet.ru_bit_mask);
+-	for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
++	for (i = 0; i < WMI_MAX_NUM_SS; i++)
+ 		cmd->peer_ppet.ppet16_ppet8_ru3_ru0[i] =
+ 			cpu_to_le32(arg->peer_ppet.ppet16_ppet8_ru3_ru0[i]);
  
- 	hp_addr = hal->rdp.paddr +
- 		  ((unsigned long)srng->u.dst_ring.hp_addr -
- 		   (unsigned long)hal->rdp.vaddr);
--	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_HP_ADDR_LSB_OFFSET,
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_HP_ADDR_LSB_OFFSET(ab),
- 			   hp_addr & HAL_ADDR_LSB_REG_MASK);
--	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_HP_ADDR_MSB_OFFSET,
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_HP_ADDR_MSB_OFFSET(ab),
- 			   hp_addr >> HAL_ADDR_MSB_REG_SHIFT);
- 
- 	/* Initialize head and tail pointers to indicate ring is empty */
-@@ -1278,7 +1278,7 @@ static void ath12k_hal_srng_dst_hw_init(struct ath12k_base *ab,
- 		val |= HAL_REO1_RING_MISC_MSI_SWAP;
- 	val |= HAL_REO1_RING_MISC_SRNG_ENABLE;
- 
--	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_MISC_OFFSET, val);
-+	ath12k_hif_write32(ab, reg_base + HAL_REO1_RING_MISC_OFFSET(ab), val);
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index c193aea704a2..84e3fb918e43 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -43,8 +43,6 @@ static inline s32 a_sle32_to_cpu(a_sle32 val)
+ 	return le32_to_cpu((__force __le32)val);
  }
  
- static void ath12k_hal_srng_src_hw_init(struct ath12k_base *ab,
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 4962fa81d1c1..9d0f1d68c534 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -155,13 +155,13 @@ struct ath12k_base;
- #define HAL_REO1_AGING_THRESH_IX_2(ab)	((ab)->hw_params->regs->hal_reo1_aging_thres_ix2)
- #define HAL_REO1_AGING_THRESH_IX_3(ab)	((ab)->hw_params->regs->hal_reo1_aging_thres_ix3)
+-#define PSOC_HOST_MAX_NUM_SS (8)
+-
+ /* defines to set Packet extension values which can be 0 us, 8 usec or 16 usec */
+ #define MAX_HE_NSS               8
+ #define MAX_HE_MODULATION        8
+@@ -2233,7 +2231,7 @@ struct ath12k_wmi_pdev_band_arg {
+ struct ath12k_wmi_ppe_threshold_arg {
+ 	u32 numss_m1;
+ 	u32 ru_bit_mask;
+-	u32 ppet16_ppet8_ru3_ru0[PSOC_HOST_MAX_NUM_SS];
++	u32 ppet16_ppet8_ru3_ru0[WMI_MAX_NUM_SS];
+ };
  
--#define HAL_REO1_RING_MSI1_BASE_LSB_OFFSET \
-+#define HAL_REO1_RING_MSI1_BASE_LSB_OFFSET(ab)				\
- 		(HAL_REO1_RING_MSI1_BASE_LSB(ab) - HAL_REO1_RING_BASE_LSB(ab))
--#define HAL_REO1_RING_MSI1_BASE_MSB_OFFSET \
-+#define HAL_REO1_RING_MSI1_BASE_MSB_OFFSET(ab)				\
- 		(HAL_REO1_RING_MSI1_BASE_MSB(ab) - HAL_REO1_RING_BASE_LSB(ab))
--#define HAL_REO1_RING_MSI1_DATA_OFFSET \
-+#define HAL_REO1_RING_MSI1_DATA_OFFSET(ab)				\
- 		(HAL_REO1_RING_MSI1_DATA(ab) - HAL_REO1_RING_BASE_LSB(ab))
--#define HAL_REO1_RING_BASE_MSB_OFFSET \
-+#define HAL_REO1_RING_BASE_MSB_OFFSET(ab)				\
- 		(HAL_REO1_RING_BASE_MSB(ab) - HAL_REO1_RING_BASE_LSB(ab))
- 
- #define HAL_REO1_RING_ID_OFFSET(ab)					\
-@@ -170,13 +170,13 @@ struct ath12k_base;
- 		(HAL_REO1_RING_ID(_ab) - HAL_REO1_RING_BASE_LSB(_ab));	\
- 	})
- 
--#define HAL_REO1_RING_PRODUCER_INT_SETUP_OFFSET \
-+#define HAL_REO1_RING_PRODUCER_INT_SETUP_OFFSET(ab)			\
- 		(HAL_REO1_RING_PRODUCER_INT_SETUP(ab) - HAL_REO1_RING_BASE_LSB(ab))
--#define HAL_REO1_RING_HP_ADDR_LSB_OFFSET \
-+#define HAL_REO1_RING_HP_ADDR_LSB_OFFSET(ab)				\
- 		(HAL_REO1_RING_HP_ADDR_LSB(ab) - HAL_REO1_RING_BASE_LSB(ab))
--#define HAL_REO1_RING_HP_ADDR_MSB_OFFSET \
-+#define HAL_REO1_RING_HP_ADDR_MSB_OFFSET(ab)				\
- 		(HAL_REO1_RING_HP_ADDR_MSB(ab) - HAL_REO1_RING_BASE_LSB(ab))
--#define HAL_REO1_RING_MISC_OFFSET \
-+#define HAL_REO1_RING_MISC_OFFSET(ab)					\
- 		(HAL_REO1_RING_MISC(ab) - HAL_REO1_RING_BASE_LSB(ab))
- 
- /* REO2SW(x) R2 ring pointers (head/tail) address */
+ #define PSOC_HOST_MAX_PHY_SIZE (3)
 -- 
 2.30.2
 
