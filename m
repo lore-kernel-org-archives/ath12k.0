@@ -4,58 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B140CC4167B
-	for <ath12k@archiver.kernel.org>; Tue, 20 Dec 2022 12:07:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE549C4332F
+	for <ath12k@archiver.kernel.org>; Wed, 21 Dec 2022 10:58:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OuNjL5BD3CAwFMnWu6LFINqNEkikNvj4AtfHoNuRBUA=; b=nOqjysfrffIf7q
-	ceCMePy0YXf53V1QExaUziMFKM/oigOuXZi6wLXcnjACgJVq5942mEEjfs1x9ztwAw4mP2gnqlnHd
-	ylTaUbe2eajiD4UZ6AWHV3Lmt0XavRC66UJvRWgTgQQYkdtJ0nYmYw/vOwlOUsHwQxTawwjIyGLuX
-	LQcZo3sPGA+bAtbIkEFXaYy18RwpIiwSp1/f1Y/iHMUEtbccUO/kYd1pN4CxI9gWzAMa42/GVaAiX
-	Enh8xHA7CaVr2kMLvyfeSUJ8yfKF3wTrCnU2OO7TAm5TnbB0SH4NRmpGSsGwf/ckwcYx5QhOWq3AB
-	eOC4JqQBZdtN1DMY73Cw==;
+	List-Owner; bh=gGDEQp3SRQ+ooX6HaJ5i0j/86GbMyh/JJnw+5B67tSA=; b=JMBKtOjOL2Fzgd
+	kvcO4C8FzKfa806esQ7S+ZIcOe4/A5Jg2hdholLneqMESI+yrhfg4vprk3fKKYXOnSwS/Rb9A1er5
+	KSN8VU+KQu0mitDlfntL3HlLxcJYzzSQGmhRXYvhI8XyhPWRX5PkvxRsW9Q+QOnTTaJgVN8tL1ZAw
+	Vl+1+kDPCBbPH3MleyE0L18sNcYE+z11BrGSLkxQZ2AULnpwJnwG9+822ZOxLUSzuS3Fv1U4RcpwW
+	7NLajqqfAOZgboGbSui6404eN6wro3MBaQbRM2ieTSCMUkikjPpp+/HbQ5Vwcks71+H/GtCTlN9EZ
+	pO6pheKSxWkXHpdyJEBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7bOq-00EMJ9-2g
-	for ath12k@archiver.kernel.org; Tue, 20 Dec 2022 12:07:12 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1p7wnV-00Drsl-Va
+	for ath12k@archiver.kernel.org; Wed, 21 Dec 2022 10:58:06 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p7bOl-00EM9T-R1
-	for ath12k@lists.infradead.org; Tue, 20 Dec 2022 12:07:10 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id C09D6B811A2
-	for <ath12k@lists.infradead.org>; Tue, 20 Dec 2022 12:07:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EBD1BC433D2;
-	Tue, 20 Dec 2022 12:07:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1671538024;
-	bh=H8hOmQQXa73xd1vfaYZBM6AE2cK7nY9g5yp5NjMcdZk=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=unmmMtD0wPOaTDkTNSs8pgTQNYNPgSBGuDLpsDn51lkT6oEJWx1PqynePy5fHOHIE
-	 UG2WC/0r3p6buehOZ4xXPWvZV+jmogsCsqL1ulRAKOC7iVrdxVORqPiVqmF9eUqyaM
-	 t1/lmgCQ8aFhRDYjcPcPCMds6XpiVHnP5S9FsyHsxx1EBi2XrG68F9r2XS7M81AZpP
-	 Hd7J3yw5+DwBh72baaSI+afxvaFbV2hu8mLevzPfM8BbMqxGjB6ELQoTKP5jjHaYQU
-	 av1gXjgriiH/Yqc5Rmpmjh6NJ4RsArv6f04UCekJnzl9mnksODTG1Bn70u/rIG8888
-	 L7+dik1uXGaCA==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 3/3] wifi: ath12k: wmi: delete PSOC_HOST_MAX_NUM_SS
-Date: Tue, 20 Dec 2022 14:06:55 +0200
-Message-Id: <20221220120655.19389-4-kvalo@kernel.org>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20221220120655.19389-1-kvalo@kernel.org>
-References: <20221220120655.19389-1-kvalo@kernel.org>
+	id 1p7wlh-00DqQy-9J
+	for ath12k@lists.infradead.org; Wed, 21 Dec 2022 10:56:14 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 2BL9piL0018756;
+	Wed, 21 Dec 2022 10:56:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=qcppdkim1;
+ bh=B0WEfYUu/OhdP110qIuduHHYNIqjaV3osrD/8Dm8GHk=;
+ b=c5ML7zbdQv8dxZ6yBcFcTnA8hsIQ/sqhWnv269gB7ExMqDUJUcpzGby+IxHKOL5rQoS/
+ +MN2W+Lkn3uvnSlxS9Fachb75HqfQ5kgLEDOyA360ZL5HO+DNA6Le8GeOgbN+M6x0nNS
+ WG58nUYtNKdBcB8bhyRoMk8l/f3H0NY50K/esnp/mNwMK6pE8kygw9n13JJMxMApEWYl
+ Jol8I+aqXqxhyP63QMhMnDHmTmo3fvisMmDSxpkfhjE8X2DjjRTXCR2JYAUF4DVWGOnz
+ bAc8s9N6DOz6BgVvk6NhZdr34b8rbikhY90lWdUtKE07ej/3bTAvqAEXlwdYa+4YhZBf bQ== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3mkmvt9dnb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 21 Dec 2022 10:56:11 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 2BLAuBMF016776
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 21 Dec 2022 10:56:11 GMT
+Received: from tmariyap-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.36; Wed, 21 Dec 2022 02:56:09 -0800
+From: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Thiraviyam Mariyappan
+	<quic_tmariyap@quicinc.com>
+Subject: [PATCH 1/4] wifi: ath12k: Fix uninitilized variable clang warnings
+Date: Wed, 21 Dec 2022 16:25:26 +0530
+Message-ID: <20221221105529.19345-2-quic_tmariyap@quicinc.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20221221105529.19345-1-quic_tmariyap@quicinc.com>
+References: <20221221105529.19345-1-quic_tmariyap@quicinc.com>
 MIME-Version: 1.0
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: WRuCY8tKNVmzeO7Ixq_aypzevkd3qZ1G
+X-Proofpoint-GUID: WRuCY8tKNVmzeO7Ixq_aypzevkd3qZ1G
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.923,Hydra:6.0.545,FMLib:17.11.122.1
+ definitions=2022-12-21_05,2022-12-21_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 bulkscore=0
+ malwarescore=0 adultscore=0 suspectscore=0 priorityscore=1501
+ lowpriorityscore=0 clxscore=1015 impostorscore=0 mlxlogscore=999
+ phishscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2212210088
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221220_040708_237479_2500CA21 
-X-CRM114-Status: GOOD (  14.73  )
+X-CRM114-CacheID: sfid-20221221_025613_389189_386B4509 
+X-CRM114-Status: GOOD (  17.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,96 +96,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Kalle Valo <quic_kvalo@quicinc.com>
+Fix uninitilized variable warnings spotted during clang compilation.
 
-Both PSOC_HOST_MAX_NUM_SS and WMI_MAX_NUM_SS are set to 8. The host assumes
-that the values are the same but there's no check for that, so things will
-break if either of the values change. It's simpler and safer to have just one
-define so delete PSOC_HOST_MAX_NUM_SS and use WMI_MAX_NUM_SS everywhere.
+Warnings:
+drivers/net/wireless/ath/ath12k/mac.c:1076:8: warning: variable 'ret' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+drivers/net/wireless/ath/ath12k/dbring.c:272:7: warning: variable 'ring' is used uninitialized whenever switch case is taken [-Wsometimes-uninitialized]
+drivers/net/wireless/ath/ath12k/dp_rx.c:2690:34: warning: variable 'i' is uninitialized when used here [-Wuninitialized]
 
-No functional changes.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-03171-QCAHKSWPL_SILICONZ-1
+Reported-by: kernel test robot <lkp@intel.com>
+Signed-off-by: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 10 +++++-----
- drivers/net/wireless/ath/ath12k/wmi.h |  4 +---
- 2 files changed, 6 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath12k/dbring.c | 2 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.c  | 3 +--
+ drivers/net/wireless/ath/ath12k/mac.c    | 4 ++--
+ 3 files changed, 4 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 338082719631..f6df14149531 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -428,7 +428,7 @@ static int ath12k_pull_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 	arg->ppet.numss_m1 = le32_to_cpu(ev->ppet.numss_m1);
- 	arg->ppet.ru_bit_mask = le32_to_cpu(ev->ppet.ru_info);
+diff --git a/drivers/net/wireless/ath/ath12k/dbring.c b/drivers/net/wireless/ath/ath12k/dbring.c
+index 9aa2631be1a8..8fbf868e6f7e 100644
+--- a/drivers/net/wireless/ath/ath12k/dbring.c
++++ b/drivers/net/wireless/ath/ath12k/dbring.c
+@@ -230,7 +230,7 @@ int ath12k_dbring_get_cap(struct ath12k_base *ab,
+ int ath12k_dbring_buffer_release_event(struct ath12k_base *ab,
+ 				       struct ath12k_dbring_buf_release_event *ev)
+ {
+-	struct ath12k_dbring *ring;
++	struct ath12k_dbring *ring = NULL;
+ 	struct hal_srng *srng;
+ 	struct ath12k *ar;
+ 	struct ath12k_dbring_element *buff;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index d6835d13f7ec..83a43ad48c51 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -2582,7 +2582,6 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
+ 	struct sk_buff *msdu;
+ 	bool done = false;
+ 	int mac_id;
+-	int i;
+ 	u64 desc_va;
  
--	for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
-+	for (i = 0; i < WMI_MAX_NUM_SS; i++)
- 		arg->ppet.ppet16_ppet8_ru3_ru0[i] =
- 			le32_to_cpu(ev->ppet.ppet16_ppet8_ru3_ru0[i]);
+ 	__skb_queue_head_init(&msdu_list);
+@@ -2687,7 +2686,7 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
+ 		goto exit;
  
-@@ -520,7 +520,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 		cap_band->he_ppet.numss_m1 = le32_to_cpu(mac_caps->he_ppet2g.numss_m1);
- 		cap_band->he_ppet.ru_bit_mask = le32_to_cpu(mac_caps->he_ppet2g.ru_info);
+ 	/* TODO: Move to implicit BM? */
+-	ath12k_dp_rx_bufs_replenish(ab, i, rx_ring, num_buffs_reaped,
++	ath12k_dp_rx_bufs_replenish(ab, 0, rx_ring, num_buffs_reaped,
+ 				    ab->hw_params->hal_params->rx_buf_rbm, true);
  
--		for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
-+		for (i = 0; i < WMI_MAX_NUM_SS; i++)
- 			cap_band->he_ppet.ppet16_ppet8_ru3_ru0[i] =
- 				le32_to_cpu(mac_caps->he_ppet2g.ppet16_ppet8_ru3_ru0[i]);
- 	}
-@@ -541,7 +541,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 		cap_band->he_ppet.numss_m1 = le32_to_cpu(mac_caps->he_ppet5g.numss_m1);
- 		cap_band->he_ppet.ru_bit_mask = le32_to_cpu(mac_caps->he_ppet5g.ru_info);
+ 	ath12k_dp_rx_process_received_packets(ab, napi, &msdu_list,
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index ac6548c087ba..bf7e5b6977b2 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -1057,7 +1057,7 @@ static int ath12k_mac_op_config(struct ieee80211_hw *hw, u32 changed)
+ {
+ 	struct ath12k *ar = hw->priv;
+ 	struct ieee80211_conf *conf = &hw->conf;
+-	int ret;
++	int ret = 0;
  
--		for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
-+		for (i = 0; i < WMI_MAX_NUM_SS; i++)
- 			cap_band->he_ppet.ppet16_ppet8_ru3_ru0[i] =
- 				le32_to_cpu(mac_caps->he_ppet5g.ppet16_ppet8_ru3_ru0[i]);
+ 	mutex_lock(&ar->conf_mutex);
  
-@@ -559,7 +559,7 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
- 		cap_band->he_ppet.numss_m1 = le32_to_cpu(mac_caps->he_ppet5g.numss_m1);
- 		cap_band->he_ppet.ru_bit_mask = le32_to_cpu(mac_caps->he_ppet5g.ru_info);
- 
--		for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
-+		for (i = 0; i < WMI_MAX_NUM_SS; i++)
- 			cap_band->he_ppet.ppet16_ppet8_ru3_ru0[i] =
- 				le32_to_cpu(mac_caps->he_ppet5g.ppet16_ppet8_ru3_ru0[i]);
- 	}
-@@ -1935,7 +1935,7 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
- 			cpu_to_le32(arg->peer_he_cap_phyinfo[i]);
- 	cmd->peer_ppet.numss_m1 = cpu_to_le32(arg->peer_ppet.numss_m1);
- 	cmd->peer_ppet.ru_info = cpu_to_le32(arg->peer_ppet.ru_bit_mask);
--	for (i = 0; i < PSOC_HOST_MAX_NUM_SS; i++)
-+	for (i = 0; i < WMI_MAX_NUM_SS; i++)
- 		cmd->peer_ppet.ppet16_ppet8_ru3_ru0[i] =
- 			cpu_to_le32(arg->peer_ppet.ppet16_ppet8_ru3_ru0[i]);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index c193aea704a2..84e3fb918e43 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -43,8 +43,6 @@ static inline s32 a_sle32_to_cpu(a_sle32 val)
- 	return le32_to_cpu((__force __le32)val);
+@@ -1089,7 +1089,7 @@ static int ath12k_mac_op_config(struct ieee80211_hw *hw, u32 changed)
+ err_mon_del:
+ 	ath12k_mac_monitor_vdev_delete(ar);
+ 	mutex_unlock(&ar->conf_mutex);
+-	return 0;
++	return ret;
  }
  
--#define PSOC_HOST_MAX_NUM_SS (8)
--
- /* defines to set Packet extension values which can be 0 us, 8 usec or 16 usec */
- #define MAX_HE_NSS               8
- #define MAX_HE_MODULATION        8
-@@ -2233,7 +2231,7 @@ struct ath12k_wmi_pdev_band_arg {
- struct ath12k_wmi_ppe_threshold_arg {
- 	u32 numss_m1;
- 	u32 ru_bit_mask;
--	u32 ppet16_ppet8_ru3_ru0[PSOC_HOST_MAX_NUM_SS];
-+	u32 ppet16_ppet8_ru3_ru0[WMI_MAX_NUM_SS];
- };
- 
- #define PSOC_HOST_MAX_PHY_SIZE (3)
+ static int ath12k_mac_setup_bcn_tmpl(struct ath12k_vif *arvif)
 -- 
-2.30.2
+2.17.1
 
 
 -- 
