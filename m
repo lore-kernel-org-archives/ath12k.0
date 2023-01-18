@@ -4,82 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E0E2C4332F
-	for <ath12k@archiver.kernel.org>; Fri, 23 Dec 2022 05:07:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49348C32793
+	for <ath12k@archiver.kernel.org>; Wed, 18 Jan 2023 06:36:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RlZ6GV1cxqyI13+EhtmdT9oYYx7x0HMbZJonkKm7bC0=; b=A9ijM2zuhVEexd
-	k8BWBV9jReOFc7RO8WyM+q3nwJp6mezoiKuTzIpnN+jhXcwaH0f4Ll0hEMoXiJA/B8xGrs+oikiMp
-	anRwaBnSO09UNqhdukfPB9MXSVFz6QeDF74j0mX9BPFGzW0xpPiNHZZjnEmYiAi//MYKlLuz1cMki
-	4cPfuQSMJnrwyLBVNNf+LDhcr6Egbltgrw+vRm3N8372A0C3qFECR7WdKSBes4/rFzXFSgbfI0MGV
-	Sb3yIpW/ZT6po+ihqXaU1mwfhOhNXfrwWn9Yn7+0llejpDQYk3w0TN5dgdkyrbVEL1BkJn4IhsIQj
-	wPtPr4TdcO9O16tJdb8w==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bfUFvL8ZX406qjOM1jvgkD5dOI4zrxSBsbZXrfPRf5Q=; b=V37MmemzXBNHGS
+	mVK9xh8LsrhSm7EAMFMEI2b3axbjgveoThjFHk6iFPe5kMc4tL40v2YFhZKvyxwp7E1OYmh+VxtzA
+	5K0DFKrtu8mMiUcmkU/g9lqFy8vyoIwsVPfzbuHDYmnUoCbt1QYFEB/iz6Yk7/Be0PMxWJwSSG4xZ
+	bOR0DrQzYXjsrSCIfyryPU8CQw3cVEQRgONMM94lykgQ6jQnGXoqHEi36khLU5hkec6u7nwY2wWYj
+	FuA2Geq/wFJ3L9FaYoFPKImEp6QRxEjHsIdvOdAky3EJWnVo4nJViXGkZWNjAi2J+sa7cotGEeijB
+	DpJwcarDoGg8cBQCQzDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8aHS-003jhQ-Hp
-	for ath12k@archiver.kernel.org; Fri, 23 Dec 2022 05:07:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1pI249-00H78k-Kh
+	for ath12k@archiver.kernel.org; Wed, 18 Jan 2023 06:36:57 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p8aHP-003jeo-2x
-	for ath12k@lists.infradead.org; Fri, 23 Dec 2022 05:07:36 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 2BN50QoH014389;
-	Fri, 23 Dec 2022 05:07:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=PzcgMozoFB9J7s18F/3O449TD2NtEWYM+hSAROjYSHk=;
- b=Kb1fp+hhYrLapX2gQ3gy28y4IO1sDa9KHXadzbQYECrxEB24YXPbrbLcIRmsXLgcFsue
- mbQnrInE/NjUdrcQ/p8wRPWA4safOdR0oifAIex7TX4gf1MrnIseSjUu6h+au3VJBEl+
- o0WRQVHxSick+XMPpUkq9eIWVE6oMrbBvFMT/T5ivFctmAAckz0gHA6VYFzc9Vu/7fJh
- DqYI9Q1owuDxU3C7dvyJS1MbUl8ru+M7GUrWmBqDsW733FQUDnvz0YbAII9fWSOJzmTX
- UtDwgCdDZIXIOISfgVz9e3S93xfW1z2rAtHUmCYazApHov/f884/znSS2ttsnt5/PLG8 Lg== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3mm5r2ku8h-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Dec 2022 05:07:33 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 2BN57Xek032102
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Dec 2022 05:07:33 GMT
-Received: from dinek-linux.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.36; Thu, 22 Dec 2022 21:07:31 -0800
-From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Dinesh Karthikeyan
-	<quic_dinek@quicinc.com>
-Subject: [PATCH 3/3] wifi: ath12k: Add support to read EEPROM caldata
-Date: Fri, 23 Dec 2022 10:36:46 +0530
-Message-ID: <20221223050646.27785-4-quic_dinek@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20221223050646.27785-1-quic_dinek@quicinc.com>
-References: <20221223050646.27785-1-quic_dinek@quicinc.com>
+	id 1pI247-00H77o-75
+	for ath12k@lists.infradead.org; Wed, 18 Jan 2023 06:36:56 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BB889616C3
+	for <ath12k@lists.infradead.org>; Wed, 18 Jan 2023 06:36:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6E7C9C433D2;
+	Wed, 18 Jan 2023 06:36:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1674023814;
+	bh=rMt7RLBg+8UgFhPbYQja+uE8JR12ZtZAkrWUxIpGEg8=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=rp9gWJ00bkUn6AbhMl9kkRPzORTuVNr6xqZ47/78O8TwJ4aZJ4RYMaW6D4qXSDBXb
+	 ooF0XixG4yONiHjr1NrcPXje/BWN+SlBcBNavzzCW0JuX961fimcYKgG9+kkXgtsv1
+	 P2IcLn0z5/6tFelaSCN30uZ5njohXMWH+aZ60PM6t8SaWZf2MoxvhdhcCor3xHVoPx
+	 9u6zTmIypYrIh7OdtUi+9ARWw2dsHJQ0D3nz7uqFSLJnTEpBIpZNyauPVZn/dr/aFn
+	 37LvIi4NXY6p0nfmpb3+2H+3CM5VJnQhtgFhO/znJFA4ApF3LgT2vkda2ZA8BMIGH4
+	 /ERrfPAebbpHA==
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ga6CoJ12EfL1CtPGaDhhWi_RNAIRg8RF
-X-Proofpoint-ORIG-GUID: ga6CoJ12EfL1CtPGaDhhWi_RNAIRg8RF
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.923,Hydra:6.0.545,FMLib:17.11.122.1
- definitions=2022-12-23_02,2022-12-22_03,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
- priorityscore=1501 phishscore=0 mlxlogscore=999 malwarescore=0 bulkscore=0
- impostorscore=0 spamscore=0 clxscore=1015 adultscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2212070000
- definitions=main-2212230044
+Subject: Re: [PATCH 1/3] wifi: ath12k: hal: add ab parameter to macros using
+ it
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20221220120655.19389-2-kvalo@kernel.org>
+References: <20221220120655.19389-2-kvalo@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
+Message-ID: <167402381127.24104.9379612780147081639.kvalo@kernel.org>
+Date: Wed, 18 Jan 2023 06:36:53 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221222_210735_166126_4E69840F 
-X-CRM114-Status: GOOD (  17.27  )
+X-CRM114-CacheID: sfid-20230117_223655_321703_53AB197B 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,59 +74,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In current implementation, there is a overhead of maintaining caldata
-in the filesystem manually. To eliminate this overhead, for pci based
-chipsets, if calibration data is present in EEPROM, indicate firmware
-to download and read caldata from EEPROM. If the caldata is present in
-EEPROM, host is notified in the target capability.
-Upon this, the download request for the type ATH12K_QMI_FILE_TYPE_EEPROM
-is sent to firmware.
+Kalle Valo <kvalo@kernel.org> wrote:
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> It's considered evil if a macro is using a variable but not having the variable
+> as a parameter. So add the ab parameter to macros using that.
+> 
+> No functional changes.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/qmi.c | 18 +++++++++++-------
- 1 file changed, 11 insertions(+), 7 deletions(-)
+3 patches applied to ath-next branch of ath.git, thanks.
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index a69307bea596..979a63f2e2ab 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2371,12 +2371,16 @@ static int ath12k_qmi_load_file_target_mem(struct ath12k_base *ab,
- 			goto out;
- 		}
- 
--		remaining -= req->data_len;
--		temp += req->data_len;
--		req->seg_id++;
--		ath12k_dbg(ab, ATH12K_DBG_QMI,
--			   "qmi bdf download request remaining %i\n",
--			   remaining);
-+		if (type == ATH12K_QMI_FILE_TYPE_EEPROM) {
-+			remaining = 0;
-+		} else {
-+			remaining -= req->data_len;
-+			temp += req->data_len;
-+			req->seg_id++;
-+			ath12k_dbg(ab, ATH12K_DBG_QMI,
-+				   "qmi bdf download request remaining %i\n",
-+				   remaining);
-+		}
- 	}
- 
- out:
-@@ -2422,7 +2426,7 @@ static int ath12k_qmi_load_bdf_qmi(struct ath12k_base *ab,
- 	case ATH12K_QMI_BDF_TYPE_CALIBRATION:
- 
- 		if (ab->qmi.target.eeprom_caldata) {
--			file_type = ATH12K_QMI_FILE_TYPE_CALDATA;
-+			file_type = ATH12K_QMI_FILE_TYPE_EEPROM;
- 			tmp = filename;
- 			fw_size = ATH12K_QMI_MAX_BDF_FILE_NAME_SIZE;
- 		} else {
+1a8dc2eb5b4e wifi: ath12k: hal: add ab parameter to macros using it
+f8209eef730e wifi: ath12k: hal: convert offset macros to functions
+cfec785c7662 wifi: ath12k: wmi: delete PSOC_HOST_MAX_NUM_SS
+
 -- 
-2.17.1
+https://patchwork.kernel.org/project/linux-wireless/patch/20221220120655.19389-2-kvalo@kernel.org/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
 -- 
