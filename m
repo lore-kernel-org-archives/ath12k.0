@@ -4,82 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B27B9C25B50
-	for <ath12k@archiver.kernel.org>; Mon, 23 Jan 2023 09:51:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFB4DC38142
+	for <ath12k@archiver.kernel.org>; Tue, 31 Jan 2023 12:34:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RH5IlbkkKipNnBNpEcHOEDSVvgUisNZ48i3WqP4vw/E=; b=knykziOMvt9puh
-	fTz4JujDy9C95QD9ErMlnkClhTXqvVLHIvL2s13NXo4/nUYpxsrr8ZA4ZKbFsEZfPKGVCp0GoAVZ1
-	uxf5Ir7rgE4fsf0dc4bKpOxhvPV+KfV/r3nghtfisEp6y0lol1yeDC8HKpdiHkLHivetK+m3oKc3j
-	pkhqo1puOEe0c8IrHnRSzAAQeF55wktkp+59W866JkiI1fjTDqdbE6JnwqrlovQ2r244qcUc4F1ml
-	fevtnEWXGQI7zZLgAxANb9W+CeJExlt/ChOGnREjzR6prv5vBWJfigsFOpLUifWjlmNnncIFLz38i
-	0x1gsg6b9VQbEaw/oH3Q==;
+	List-Owner; bh=6cIhOgwI4YPoHmPJQoJIhBFse2zwDdI7PMjcqnNwYP4=; b=kBzgON/n1detA1
+	D7POlzwLBX4dsdAHdmrTBydVCKLLV2pArut0d4AuLJAGcK3qUDWvXEPlA9BdDtPISl9RYXUlMgPac
+	tDedP33sxCfgXkXfg/forUs7TgMUZlmtyrA+fyQJbBwEhoKQzvm6/vrqCc1kNE8JgXLt4xQtNTQdC
+	w72mTahkvZwiEzRqODQg9D++J45yiZRkh6RztUXYLga25Q4Aa8kTBZCDDP+Jic1hPa2uwlc8RuWp0
+	LEF1m1vlGYrNSjiaKGERt6QnzV6qQYKu8R0vXdbMTJr4AzZ1WJJHJl2EMqw93JvBTb7OCGDGCiCiv
+	T5qLYM73/lhWWuVisZ6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJtUZ-00GapO-2l
-	for ath12k@archiver.kernel.org; Mon, 23 Jan 2023 09:51:55 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1pMpqV-007syO-Sj
+	for ath12k@archiver.kernel.org; Tue, 31 Jan 2023 12:34:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pJtUW-00GanH-68
-	for ath12k@lists.infradead.org; Mon, 23 Jan 2023 09:51:53 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 30N8YLpj025709;
-	Mon, 23 Jan 2023 09:51:49 GMT
+	id 1pMpqS-007swD-Hx
+	for ath12k@lists.infradead.org; Tue, 31 Jan 2023 12:34:43 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 30VC7BtQ021934;
+	Tue, 31 Jan 2023 12:34:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id; s=qcppdkim1;
- bh=tkQhIqiqZnzbSTdUPNH2N3otreAXvXheqvISCGVkiXc=;
- b=IEG4oLmfNuVOV8OBxtBASnMwi9/WbddpJuTvMhNYWX6SsVZ9qAhsIYw/cGIh6pnV69z3
- I8l9Cp5tXZACRbDxTEY/a4xaxrtqO8/SW4A5ldkwdQCH5e5q36+ko6TJ5Ds2DNMWTw0c
- Dy+goaHrZSKKZAo+khYsQd7IgiytNwLOKz02VvWucfd8bXT3mq9DK/xONdzqOR+ZRD1M
- Sj2p4xadAiEOhsmQym6RZmQD+RxS3VrMG2oVmF8cuesiei3+ur+meQq0rEX19AwPGKzm
- eJAh5vGajhsQvAB5VPOuwG6/Z0eHPkmfrelNj3A1yHOgJ6wcF8vjKt1WuXJe8xuTeaq9 0w== 
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3n89k9anh8-1
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=tink1d0jo9oImFxgxkeWSXXSx83+J60vmVx65kr7tqw=;
+ b=MepIoquCHfiCPbntSiTAQzBwRCRGxzFJ6Tn1fyH+6STNahmTCX/6PMYAhdwjHbeZSQr3
+ TSlS4FKyA+3ASSU0UDW+FERiJFkPYcjUaZgaWg12olHm80KZXQHiPzvDxrmpcoLQwQre
+ uISFuWopcyXQC2UqMxrvlmU7AHAVX7t+erHkJitFBeanBJFtOrG/WEcjNYOhYPF+fPx9
+ M4uPKWJzi6EF2GbDkwaByi984SS7gtfEF2D+r432Uba/5gbOLFznxjaxX3dIBy3mxn3+
+ RtERqGR3KldMaXDxB7KWjUE/sXR5aQMRa3MM/cIsiFW3DLHgSBFAL+jdF/VixYdUI0fx Jg== 
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3nexn8gj33-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Jan 2023 09:51:48 +0000
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 30N9pinu008753;
-	Mon, 23 Jan 2023 09:51:44 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3n894khusw-1;
-	Mon, 23 Jan 2023 09:51:44 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 30N9pi8X008747;
-	Mon, 23 Jan 2023 09:51:44 GMT
-Received: from rgnanase-linux.qualcomm.com (rgnanase-linux.qualcomm.com [10.201.162.135])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 30N9piXT008746;
-	Mon, 23 Jan 2023 09:51:44 +0000
-Received: by rgnanase-linux.qualcomm.com (Postfix, from userid 2378837)
-	id 6EA67110200D; Mon, 23 Jan 2023 15:21:43 +0530 (IST)
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH] wifi: ath12k: PCI ops for wakeup/release MHI
-Date: Mon, 23 Jan 2023 15:21:41 +0530
-Message-Id: <20230123095141.5310-1-quic_rgnanase@quicinc.com>
+	Tue, 31 Jan 2023 12:34:34 +0000
+Received: from nasanex01a.na.qualcomm.com ([10.52.223.231])
+	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 30VCYYIs006329
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 31 Jan 2023 12:34:34 GMT
+Received: from karm-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.36; Tue, 31 Jan 2023 04:34:32 -0800
+From: Karthik M <quic_karm@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Karthik M <quic_karm@quicinc.com>
+Subject: [PATCH] wifi: ath12k: Encoding regdb.bin in board-2.bin
+Date: Tue, 31 Jan 2023 18:04:22 +0530
+Message-ID: <20230131123422.24985-1-quic_karm@quicinc.com>
 X-Mailer: git-send-email 2.17.1
-X-QCInternal: smtphost
+MIME-Version: 1.0
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: B5uT3QMADWRm7vl1WgAi9r2Tnwv30A8I
-X-Proofpoint-GUID: B5uT3QMADWRm7vl1WgAi9r2Tnwv30A8I
+X-Proofpoint-GUID: JNfEKVvj1DHSD97yvS6HZxCUro8GV5ux
+X-Proofpoint-ORIG-GUID: JNfEKVvj1DHSD97yvS6HZxCUro8GV5ux
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.219,Aquarius:18.0.930,Hydra:6.0.562,FMLib:17.11.122.1
- definitions=2023-01-23_05,2023-01-20_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- mlxlogscore=875 spamscore=0 clxscore=1015 adultscore=0 priorityscore=1501
- phishscore=0 bulkscore=0 mlxscore=0 suspectscore=0 impostorscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2212070000 definitions=main-2301230092
+ definitions=2023-01-31_07,2023-01-31_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0
+ lowpriorityscore=0 adultscore=0 priorityscore=1501 suspectscore=0
+ impostorscore=0 mlxlogscore=999 mlxscore=0 clxscore=1011 bulkscore=0
+ malwarescore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2212070000 definitions=main-2301310111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230123_015152_398954_7B4D5985 
-X-CRM114-Status: GOOD (  16.28  )
+X-CRM114-CacheID: sfid-20230131_043440_647694_861A503D 
+X-CRM114-Status: GOOD (  26.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,191 +86,509 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Wakeup/release MHI is not needed before pci_read/write for QCN9274.
-Since wakeup & release MHI is enabled for all QCN9274 and
-WCN7850, below MHI assert is seen in QCN9274
+Currently regulatory database information are in regdb.bin outside
+the board-2.bin.
 
-[  784.906613] BUG: sleeping function called from invalid context at drivers/bus/mhi/host/pm.c:989
-[  784.906633] in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 0, name: swapper/3
-[  784.906637] preempt_count: 503, expected: 0
-[  784.906641] RCU nest depth: 0, expected: 0
-[  784.906644] 2 locks held by swapper/3/0:
-[  784.906646]  #0: ffff8ed348e429e0 (&ab->ce.ce_lock){+.-.}-{2:2}, at: ath12k_ce_recv_process_cb+0xb3/0x2f0 [ath12k]
-[  784.906664]  #1: ffff8ed348e491f0 (&srng->lock_key#3){+.-.}-{2:2}, at: ath12k_ce_recv_process_cb+0xfb/0x2f0 [ath12k]
-[  784.906678] Preemption disabled at:
-[  784.906680] [<0000000000000000>] 0x0
-[  784.906686] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G        W  O       6.1.0-rc2+ #3
-[  784.906688] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0056.2019.0506.1527 05/06/2019
-[  784.906690] Call Trace:
-[  784.906691]  <IRQ>
-[  784.906693]  dump_stack_lvl+0x56/0x7b
-[  784.906698]  __might_resched+0x21c/0x270
-[  784.906704]  __mhi_device_get_sync+0x7d/0x1c0 [mhi]
-[  784.906714]  mhi_device_get_sync+0xd/0x20 [mhi]
-[  784.906719]  ath12k_pci_write32+0x75/0x170 [ath12k]
-[  784.906729]  ath12k_hal_srng_access_end+0x55/0xc0 [ath12k]
-[  784.906737]  ath12k_ce_recv_process_cb+0x1f3/0x2f0 [ath12k]
-[  784.906776]  ? ath12k_pci_ce_tasklet+0x11/0x30 [ath12k]
-[  784.906788]  ath12k_pci_ce_tasklet+0x11/0x30 [ath12k]
-[  784.906813]  tasklet_action_common.isra.18+0xb7/0xe0
-[  784.906820]  __do_softirq+0xd0/0x4c9
-[  784.906826]  irq_exit_rcu+0x88/0xe0
-[  784.906828]  common_interrupt+0xa5/0xc0
-[  784.906831]  </IRQ>
-[  784.906832]  <TASK>
+In this implementation, Add support to encode the secured regdb.bin
+in board-2.bin along with the bdf files.
 
-Adding function callbacks for MHI wakeup and release operations.
-QCN9274 does not need wakeup/release, function callbacks are initialized
-to NULL. In case of WCN7850, shadow registers are used to access rings.
-Since, shadow register's offset is less than ACCESS_ALWAYS_OFF,
-mhi_device_get_sync() or mhi_device_put() to wakeup
-and release mhi will not be called during service ring accesses.
+New api(ath12k_core_fetch_regdb) fetches the board specific regdb
+from board-2.bin. If it fails, it downloads the default regdb.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-03171-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+Firmware receives the binary over QMI and verifies the signing.
+If it is authentic, the binary will be used.
 
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Renumbered the enum ATH12K_BD_IE_BOARD_EXT to '2' since it is
+not used in the code. ATH12K_BD_IE_REGDB enum will take the value '1'
+as per the ath11k upstream design.
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index ae7f6083c9fc..d32637b0113d 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -119,6 +119,30 @@ static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
- 	"tcl2host-status-ring",
- };
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Karthik M <quic_karm@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/core.c | 212 +++++++++++++++++++------
+ drivers/net/wireless/ath/ath12k/core.h |  23 +++
+ drivers/net/wireless/ath/ath12k/hw.h   |  23 ++-
+ drivers/net/wireless/ath/ath12k/qmi.c  |   6 +-
+ 4 files changed, 213 insertions(+), 51 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index a89e66653f04..6b447244d0d3 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -83,8 +83,9 @@ int ath12k_core_resume(struct ath12k_base *ab)
+ 	return 0;
+ }
  
-+static int ath12k_pci_bus_wake_up(struct ath12k_base *ab)
-+{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+
-+	return mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+}
-+
-+static void ath12k_pci_bus_release(struct ath12k_base *ab)
-+{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+
-+	mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
-+}
-+
-+static const struct ath12k_pci_ops ath12k_pci_ops_qcn9274 = {
-+	.wakeup = NULL,
-+	.release = NULL,
-+};
-+
-+static const struct ath12k_pci_ops ath12k_pci_ops_wcn7850 = {
-+	.wakeup = ath12k_pci_bus_wake_up,
-+	.release = ath12k_pci_bus_release,
-+};
-+
- static void ath12k_pci_select_window(struct ath12k_pci *ab_pci, u32 offset)
+-static int ath12k_core_create_board_name(struct ath12k_base *ab, char *name,
+-					 size_t name_len)
++static int ath12k_core_create_board_name(struct ath12k_base *ab,
++					 char *boardname,
++					 char *defaultboardname)
  {
- 	struct ath12k_base *ab = ab_pci->ab;
-@@ -989,13 +1013,14 @@ u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset)
- {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
- 	u32 val, window_start;
-+	int ret = 0;
+ 	/* strlen(',variant=') + strlen(ab->qmi.target.bdf_ext) */
+ 	char variant[9 + ATH12K_QMI_BDF_EXT_STR_LENGTH] = { 0 };
+@@ -92,15 +93,70 @@ static int ath12k_core_create_board_name(struct ath12k_base *ab, char *name,
+ 	if (ab->qmi.target.bdf_ext[0] != '\0')
+ 		scnprintf(variant, sizeof(variant), ",variant=%s",
+ 			  ab->qmi.target.bdf_ext);
++	switch (ab->id.bdf_search) {
++	case ATH12K_BDF_SEARCH_BUS_AND_BOARD:
++		if (snprintf(boardname, BOARD_NAME_SIZE,
++				     "bus=%s,vendor=%04x,device=%04x,"
++				     "subsystem-vendor=%04x,"
++				     "subsystem-device=%04x,qmi-chip-id=%d,"
++				     "qmi-board-id=%d%s",
++				     ath12k_bus_str(ab->hif.bus),
++				     ab->id.vendor, ab->id.device,
++				     ab->id.subsystem_vendor,
++				     ab->id.subsystem_device,
++				     ab->qmi.target.chip_id,
++				     ab->qmi.target.board_id,
++				     variant) >= BOARD_NAME_SIZE) {
++			ath12k_dbg(ab, ATH12K_DBG_BOOT,
++				   "buffer overflowed for boardname\n");
++			return -EOVERFLOW;
++		}
++		if (snprintf(defaultboardname, BOARD_NAME_SIZE,
++				     "bus=%s,vendor=%04x,device=%04x,"
++				     "subsystem-vendor=%04x,"
++				     "subsystem-device=%04x,qmi-chip-id=%d,"
++				     "qmi-board-id=%d%s",
++				     ath12k_bus_str(ab->hif.bus),
++				     ab->id.vendor, ab->id.device,
++				     ab->id.subsystem_vendor,
++				     ab->id.subsystem_device,
++				     ab->qmi.target.chip_id,
++				     ab->qmi.target.board_id,
++				     variant) >= BOARD_NAME_SIZE) {
++			ath12k_dbg(ab, ATH12K_DBG_BOOT,
++				   "buffer overflowed for default boardname\n");
++			return -EOVERFLOW;
++		}
++		break;
++	default:
++		if (snprintf(boardname, BOARD_NAME_SIZE,
++				     "bus=%s,qmi-chip-id=%d,"
++				     "qmi-board-id=%d%s",
++				     ath12k_bus_str(ab->hif.bus),
++				     ab->qmi.target.chip_id,
++				     ab->qmi.target.board_id,
++				     variant) >= BOARD_NAME_SIZE) {
++			ath12k_dbg(ab, ATH12K_DBG_BOOT,
++				   "buffer overflowed for boardname\n");
++			return -EOVERFLOW;
++		}
++		if (snprintf(defaultboardname, BOARD_NAME_SIZE,
++				     "bus=%s,qmi-chip-id=%d,"
++				     "qmi-board-id=%d%s",
++				     ath12k_bus_str(ab->hif.bus),
++				     ab->qmi.target.chip_id,
++				     ATH12K_DEFAULT_ID,
++				     variant) >= BOARD_NAME_SIZE) {
++			ath12k_dbg(ab, ATH12K_DBG_BOOT,
++				   "buffer overflowed for default boardname\n");
++			return -EOVERFLOW;
++		}
++		break;
++	}
  
- 	/* for offset beyond BAR + 4K - 32, may
- 	 * need to wakeup MHI to access.
- 	 */
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->wakeup)
-+		ret = ab_pci->pci_ops->wakeup(ab);
- 
- 	if (offset < WINDOW_START) {
- 		val = ioread32(ab->mem + offset);
-@@ -1023,9 +1048,9 @@ u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset)
- 	}
- 
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
+-	scnprintf(name, name_len,
+-		  "bus=%s,qmi-chip-id=%d,qmi-board-id=%d%s",
+-		  ath12k_bus_str(ab->hif.bus),
+-		  ab->qmi.target.chip_id,
+-		  ab->qmi.target.board_id, variant);
 -
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->release &&
-+	    !ret)
-+		ab_pci->pci_ops->release(ab);
- 	return val;
+-	ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot using board name '%s'\n", name);
+-
++	ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot using board name : '%s'\t"
++		   "default boardname : '%s'\n", boardname,
++		   defaultboardname);
+ 	return 0;
  }
  
-@@ -1033,13 +1058,14 @@ void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
+@@ -136,9 +192,7 @@ void ath12k_core_free_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd)
+ 
+ static int ath12k_core_parse_bd_ie_board(struct ath12k_base *ab,
+ 					 struct ath12k_board_data *bd,
+-					 const void *buf, size_t buf_len,
+-					 const char *boardname,
+-					 int bd_ie_type)
++					 const void *buf, size_t buf_len)
  {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
- 	u32 window_start;
-+	int ret = 0;
+ 	const struct ath12k_fw_ie *hdr;
+ 	bool name_match_found;
+@@ -148,7 +202,7 @@ static int ath12k_core_parse_bd_ie_board(struct ath12k_base *ab,
  
- 	/* for offset beyond BAR + 4K - 32, may
- 	 * need to wakeup MHI to access.
- 	 */
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->wakeup)
-+		ret = ab_pci->pci_ops->wakeup(ab);
+ 	name_match_found = false;
  
- 	if (offset < WINDOW_START) {
- 		iowrite32(value, ab->mem + offset);
-@@ -1067,8 +1093,9 @@ void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
+-	/* go through ATH12K_BD_IE_BOARD_ elements */
++	/* go through ATH12K_BD_IE_BOARD_/ATH12K_BD_IE_REGDB_ elements */
+ 	while (buf_len > sizeof(struct ath12k_fw_ie)) {
+ 		hdr = buf;
+ 		board_ie_id = le32_to_cpu(hdr->id);
+@@ -159,48 +213,51 @@ static int ath12k_core_parse_bd_ie_board(struct ath12k_base *ab,
+ 		buf += sizeof(*hdr);
+ 
+ 		if (buf_len < ALIGN(board_ie_len, 4)) {
+-			ath12k_err(ab, "invalid ATH12K_BD_IE_BOARD length: %zu < %zu\n",
++			ath12k_err(ab, "invalid %s length: %zu < %zu\n",
++				   ath12k_bd_ie_type_str(bd->ie_id),
+ 				   buf_len, ALIGN(board_ie_len, 4));
+ 			ret = -EINVAL;
+ 			goto out;
+ 		}
+ 
+-		switch (board_ie_id) {
+-		case ATH12K_BD_IE_BOARD_NAME:
++		if (board_ie_id == bd->name_id) {
+ 			ath12k_dbg_dump(ab, ATH12K_DBG_BOOT, "board name", "",
+ 					board_ie_data, board_ie_len);
+ 
+-			if (board_ie_len != strlen(boardname))
+-				break;
++			if (board_ie_len != strlen(bd->boardname))
++				goto next;
+ 
+-			ret = memcmp(board_ie_data, boardname, strlen(boardname));
++			ret = memcmp(board_ie_data, bd->boardname, strlen(bd->boardname));
+ 			if (ret)
+-				break;
++				goto next;
+ 
+ 			name_match_found = true;
+ 			ath12k_dbg(ab, ATH12K_DBG_BOOT,
+-				   "boot found match for name '%s'",
+-				   boardname);
+-			break;
+-		case ATH12K_BD_IE_BOARD_DATA:
++				   "boot found match %s for name '%s'",
++				   ath12k_bd_ie_type_str(bd->ie_id),
++				   bd->boardname);
++		} else if (board_ie_id == bd->data_id) {
+ 			if (!name_match_found)
+ 				/* no match found */
+-				break;
++				goto next;
+ 
+ 			ath12k_dbg(ab, ATH12K_DBG_BOOT,
+-				   "boot found board data for '%s'", boardname);
++				   "boot found %s for '%s'",
++				   ath12k_bd_ie_type_str(bd->ie_id),
++				   bd->boardname);
+ 
+ 			bd->data = board_ie_data;
+ 			bd->len = board_ie_len;
+ 
+ 			ret = 0;
+ 			goto out;
+-		default:
+-			ath12k_warn(ab, "unknown ATH12K_BD_IE_BOARD found: %d\n",
++		} else {
++			ath12k_warn(ab, "unknown %s id found: %d\n",
++				    ath12k_bd_ie_type_str(bd->ie_id),
+ 				    board_ie_id);
+-			break;
+ 		}
+ 
++next:
+ 		/* jump over the padding */
+ 		board_ie_len = ALIGN(board_ie_len, 4);
+ 
+@@ -216,8 +273,7 @@ static int ath12k_core_parse_bd_ie_board(struct ath12k_base *ab,
+ }
+ 
+ static int ath12k_core_fetch_board_data_api_n(struct ath12k_base *ab,
+-					      struct ath12k_board_data *bd,
+-					      const char *boardname)
++					      struct ath12k_board_data *bd)
+ {
+ 	size_t len, magic_len;
+ 	const u8 *data;
+@@ -282,15 +338,12 @@ static int ath12k_core_fetch_board_data_api_n(struct ath12k_base *ab,
+ 			goto err;
+ 		}
+ 
+-		switch (ie_id) {
+-		case ATH12K_BD_IE_BOARD:
++		if (ie_id == bd->ie_id) {
+ 			ret = ath12k_core_parse_bd_ie_board(ab, bd, data,
+-							    ie_len,
+-							    boardname,
+-							    ATH12K_BD_IE_BOARD);
++							    ie_len);
+ 			if (ret == -ENOENT)
+ 				/* no match found, continue */
+-				break;
++				goto next;
+ 			else if (ret)
+ 				/* there was an error, bail out */
+ 				goto err;
+@@ -298,6 +351,7 @@ static int ath12k_core_fetch_board_data_api_n(struct ath12k_base *ab,
+ 			goto out;
+ 		}
+ 
++next:
+ 		/* jump over the padding */
+ 		ie_len = ALIGN(ie_len, 4);
+ 
+@@ -307,9 +361,10 @@ static int ath12k_core_fetch_board_data_api_n(struct ath12k_base *ab,
+ 
+ out:
+ 	if (!bd->data || !bd->len) {
+-		ath12k_err(ab,
+-			   "failed to fetch board data for %s from %s\n",
+-			   boardname, filepath);
++		ath12k_dbg(ab, ATH12K_DBG_BOOT,
++			   "failed to fetch %s for %s from %s\n",
++			   ath12k_bd_ie_type_str(bd->ie_id),
++			   bd->boardname, filepath);
+ 		ret = -ENODATA;
+ 		goto err;
+ 	}
+@@ -317,7 +372,8 @@ static int ath12k_core_fetch_board_data_api_n(struct ath12k_base *ab,
+ 	return 0;
+ 
+ err:
+-	ath12k_core_free_bdf(ab, bd);
++	if (bd->retry)
++		ath12k_core_free_bdf(ab, bd);
+ 	return ret;
+ }
+ 
+@@ -326,6 +382,7 @@ int ath12k_core_fetch_board_data_api_1(struct ath12k_base *ab,
+ 				       char *filename)
+ {
+ 	bd->fw = ath12k_core_firmware_request(ab, filename);
++
+ 	if (IS_ERR(bd->fw))
+ 		return PTR_ERR(bd->fw);
+ 
+@@ -335,28 +392,89 @@ int ath12k_core_fetch_board_data_api_1(struct ath12k_base *ab,
+ 	return 0;
+ }
+ 
+-#define BOARD_NAME_SIZE 100
+ int ath12k_core_fetch_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd)
+ {
+-	char boardname[BOARD_NAME_SIZE];
++	char boardname[BOARD_NAME_SIZE] = {0},
++	     defaultboardname[BOARD_NAME_SIZE] = {0};
+ 	int ret;
+ 
+-	ret = ath12k_core_create_board_name(ab, boardname, BOARD_NAME_SIZE);
++	ret = ath12k_core_create_board_name(ab, boardname,
++					    defaultboardname);
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to create board name: %d", ret);
+ 		return ret;
  	}
  
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->release &&
-+	    !ret)
-+		ab_pci->pci_ops->release(ab);
- }
+ 	ab->bd_api = 2;
+-	ret = ath12k_core_fetch_board_data_api_n(ab, bd, boardname);
++	bd->ie_id = ATH12K_BD_IE_BOARD;
++	bd->name_id = ATH12K_BD_IE_BOARD_NAME;
++	bd->data_id = ATH12K_BD_IE_BOARD_DATA;
++	memcpy(bd->boardname, boardname, BOARD_NAME_SIZE);
++
++	ret = ath12k_core_fetch_board_data_api_n(ab, bd);
++	if (!ret)
++		goto success;
++
++	bd->retry = 1;
++	memcpy(bd->boardname, defaultboardname, BOARD_NAME_SIZE);
++
++	ret = ath12k_core_fetch_board_data_api_n(ab, bd);
+ 	if (!ret)
+ 		goto success;
  
- int ath12k_pci_power_up(struct ath12k_base *ab)
-@@ -1182,6 +1209,7 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
- 	case QCN9274_DEVICE_ID:
- 		ab_pci->msi_config = &ath12k_msi_config[0];
- 		ab->static_window_map = true;
-+		ab_pci->pci_ops = &ath12k_pci_ops_qcn9274;
- 		ath12k_pci_read_hw_version(ab, &soc_hw_version_major,
- 					   &soc_hw_version_minor);
- 		switch (soc_hw_version_major) {
-@@ -1202,6 +1230,7 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
- 		ab_pci->msi_config = &ath12k_msi_config[0];
- 		ab->static_window_map = false;
- 		ab->hw_rev = ATH12K_HW_WCN7850_HW20;
-+		ab_pci->pci_ops = &ath12k_pci_ops_wcn7850;
- 		break;
+ 	ab->bd_api = 1;
+ 	ret = ath12k_core_fetch_board_data_api_1(ab, bd, ATH12K_DEFAULT_BOARD_FILE);
+ 	if (ret) {
+-		ath12k_err(ab, "failed to fetch board-2.bin or board.bin from %s\n",
++		ath12k_err(ab, "failed to fetch board.bin from %s\n",
+ 			   ab->hw_params->fw.dir);
++	} else {
++		ret = ath12k_core_fetch_board_data_api_1(ab, bd, ATH12K_BOARD_API2_FILE);
++		if (ret)
++			ath12k_err(ab, "failed to fetch board-2.bin from %s\n",
++				   ab->hw_params->fw.dir);
++		return ret;
++	}
++
++success:
++	ath12k_dbg(ab, ATH12K_DBG_BOOT, "using board api %d\n", ab->bd_api);
++	return 0;
++}
++
++int ath12k_core_fetch_regdb(struct ath12k_base *ab, struct ath12k_board_data *bd)
++{
++	char regdbname[BOARD_NAME_SIZE] = {0},
++	     defaultregdbname[BOARD_NAME_SIZE] = {0};
++	int ret;
++
++	ret = ath12k_core_create_board_name(ab, regdbname,
++					    defaultregdbname);
++	if (ret) {
++		ath12k_err(ab, "failed to create regdb name: %d", ret);
++		return ret;
++	}
++
++	ab->bd_api = 2;
++	bd->ie_id = ATH12K_BD_IE_REGDB;
++	bd->name_id = ATH12K_BD_IE_REGDB_NAME;
++	bd->data_id = ATH12K_BD_IE_REGDB_DATA;
++	memcpy(bd->boardname, regdbname, BOARD_NAME_SIZE);
++
++	ret = ath12k_core_fetch_board_data_api_n(ab, bd);
++	if (!ret)
++		goto success;
++
++	bd->retry = 1;
++	memcpy(bd->boardname, defaultregdbname, BOARD_NAME_SIZE);
++
++	ret = ath12k_core_fetch_board_data_api_n(ab, bd);
++	if (!ret)
++		goto success;
++
++	ab->bd_api = 1;
++	ret = ath12k_core_fetch_board_data_api_1(ab, bd, ATH12K_REGDB_FILE_NAME);
++	if (ret) {
++		ath12k_err(ab, "failed to fetch %s file from %s\n",
++			   ATH12K_REGDB_FILE_NAME, ab->hw_params->fw.dir);
+ 		return ret;
+ 	}
  
- 	default:
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 0d9e40ab31f2..6547bd9ae475 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -86,6 +86,11 @@ enum ath12k_pci_flags {
- 	ATH12K_PCI_ASPM_RESTORE,
- };
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index a54ae74543c1..361d23406a58 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -44,6 +44,11 @@
+ #define ATH12K_RECONFIGURE_TIMEOUT_HZ		(10 * HZ)
+ #define ATH12K_RECOVER_START_TIMEOUT_HZ		(20 * HZ)
  
-+struct ath12k_pci_ops {
-+        int (*wakeup)(struct ath12k_base *ab);
-+        void (*release)(struct ath12k_base *ab);
++enum ath12k_bdf_search {
++	ATH12K_BDF_SEARCH_DEFAULT,
++	ATH12K_BDF_SEARCH_BUS_AND_BOARD,
 +};
 +
- struct ath12k_pci {
- 	struct pci_dev *pdev;
- 	struct ath12k_base *ab;
-@@ -103,6 +108,7 @@ struct ath12k_pci {
- 	/* enum ath12k_pci_flags */
- 	unsigned long flags;
- 	u16 link_ctl;
-+	const struct ath12k_pci_ops *pci_ops;
+ enum wme_ac {
+ 	WME_AC_BE,
+ 	WME_AC_BK,
+@@ -612,10 +617,24 @@ struct ath12k_pdev {
+ 	struct mlo_timestamp timestamp;
  };
  
- static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
++#define BOARD_NAME_SIZE 100
+ struct ath12k_board_data {
+ 	const struct firmware *fw;
+ 	const void *data;
+ 	size_t len;
++	char boardname[BOARD_NAME_SIZE];
++	u32 ie_id;
++	u32 name_id;
++	u32 data_id;
++	u32 retry;
++};
++
++struct vendor_info {
++	enum ath12k_bdf_search bdf_search;
++	u32 vendor;
++	u32 device;
++	u32 subsystem_vendor;
++	u32 subsystem_device;
+ };
+ 
+ struct ath12k_soc_dp_tx_err_stats {
+@@ -735,6 +754,8 @@ struct ath12k_base {
+ 	u64 fw_soc_drop_count;
+ 	bool static_window_map;
+ 
++	struct vendor_info id;
++
+ 	/* must be last */
+ 	u8 drv_priv[] __aligned(sizeof(void *));
+ };
+@@ -751,6 +772,8 @@ int ath12k_core_fetch_board_data_api_1(struct ath12k_base *ab,
+ 				       char *filename);
+ int ath12k_core_fetch_bdf(struct ath12k_base *ath12k,
+ 			  struct ath12k_board_data *bd);
++int ath12k_core_fetch_regdb(struct ath12k_base *ath12k,
++			    struct ath12k_board_data *bd);
+ void ath12k_core_free_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd);
+ int ath12k_core_check_dt(struct ath12k_base *ath12k);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index e3461004188b..2e3108a518a3 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -81,6 +81,7 @@
+ #define ATH12K_AMSS_FILE		"amss.bin"
+ #define ATH12K_M3_FILE			"m3.bin"
+ #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
++#define ATH12K_DEFAULT_ID		255
+ 
+ enum ath12k_hw_rate_cck {
+ 	ATH12K_HW_RATE_CCK_LP_11M = 0,
+@@ -234,12 +235,32 @@ enum ath12k_bd_ie_board_type {
+ 	ATH12K_BD_IE_BOARD_DATA = 1,
+ };
+ 
++enum ath12k_bd_ie_regdb_type {
++	ATH12K_BD_IE_REGDB_NAME = 0,
++	ATH12K_BD_IE_REGDB_DATA = 1,
++};
++
+ enum ath12k_bd_ie_type {
+ 	/* contains sub IEs of enum ath12k_bd_ie_board_type */
+ 	ATH12K_BD_IE_BOARD = 0,
+-	ATH12K_BD_IE_BOARD_EXT = 1,
++	ATH12K_BD_IE_REGDB = 1,
++	ATH12K_BD_IE_BOARD_EXT = 2,
+ };
+ 
++static inline const char *ath12k_bd_ie_type_str(enum ath12k_bd_ie_type type)
++{
++	switch (type) {
++	case ATH12K_BD_IE_BOARD:
++		return "board data";
++	case ATH12K_BD_IE_REGDB:
++		return "regdb data";
++	case ATH12K_BD_IE_BOARD_EXT:
++		return "board data ext";
++	}
++
++	return "unknown";
++}
++
+ struct ath12k_hw_regs {
+ 	u32 hal_tcl1_ring_id;
+ 	u32 hal_tcl1_ring_misc;
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 979a63f2e2ab..457ae1be41ee 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2416,12 +2416,12 @@ static int ath12k_qmi_load_bdf_qmi(struct ath12k_base *ab,
+ 
+ 		break;
+ 	case ATH12K_QMI_BDF_TYPE_REGDB:
+-		ret = ath12k_core_fetch_board_data_api_1(ab, &bd,
+-							 ATH12K_REGDB_FILE_NAME);
++		ret = ath12k_core_fetch_regdb(ab, &bd);
+ 		if (ret) {
+-			ath12k_warn(ab, "qmi failed to load regdb bin:\n");
++			ath12k_warn(ab, "qmi failed to load regdb:\n");
+ 			goto out;
+ 		}
++		type = ATH12K_QMI_BDF_TYPE_REGDB;
+ 		break;
+ 	case ATH12K_QMI_BDF_TYPE_CALIBRATION:
+ 
 -- 
 2.17.1
 
