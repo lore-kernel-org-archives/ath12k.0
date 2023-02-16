@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56375C636CC
-	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 14:00:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75D30C636CC
+	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 14:00:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ESKrEUkhLu7CErPMgIXM3ZLVGmFgdOckH4D1niDAwSw=; b=y3ylj6Z2/cfOMf
-	QuNnXASCsfw5HgmZLoWmLMGRe4kdh/dDi7XpvzB9UKUjEFkUckWxrKNICN3XcDjKtwCkKayFZhJYV
-	j5ihXnKy8tnI17zCagTv1f+ZNjKOOk3jj6cMH69ZbiQWBj7JiNe+r84aD+/lxZoLR19tUiUc0V+/g
-	VFnhdBX/HK6zM+AsUJCrBbD9q9GJufbTWgAZlgTlQpcY8u+9Mo4L/NvT/MU4yOdSshpuvO2wmkcdZ
-	I055Y0/LDcbZFVCR7yCr3N/d6UzHNb98tlQR4PoXbNVVO+hVtw36aN5da9KkQdjpeoHY+2UHBNf5a
-	uMfnKcPuVskcQpWQHALA==;
+	List-Owner; bh=oGoEaaonOtkEJ+wyHtPPC/wK0IXNxpy7Dvo7W0QabZI=; b=CSmdXaeoik7Iix
+	oxJyJC1q04oILoeVqiZ2h2Z/RhywUOoLnYjY8od96G3fYdJQqZSX8/ehWru1oAAyhpF973Paf2x91
+	4zrt+P4Xru0obdOB4Q4e6OG8ieEuPeV61UbzeTMbEXhGcpgzTJk0vCvyp0ZfBUCsqHu+v213d9fNy
+	KhFhe9/LLpF5YyAqLL7qLH0fg4brnUuJcLdsds8RUtKDE+1I5duyRbNpQ9Wc7HwdIFzMW12gPL/a7
+	AEYYSF4S+tKhffwMJGc9BzF/5WdSWzc2t8S41d5vKM6nBM0Rh0NEHpgW0IPhPhJ/QSr6r8hS9W4Ve
+	eJdpibI3NZcp8HGvYAkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSeo7-00ATvl-Pu
-	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 14:00:19 +0000
+	id 1pSeoA-00ATwm-Uy
+	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 14:00:22 +0000
 Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSeo4-00ATuo-6x
-	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 14:00:17 +0000
-Received: by mail-ed1-x529.google.com with SMTP id w3so3142517edc.2
-        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 06:00:15 -0800 (PST)
+	id 1pSeo8-00ATuo-Ix
+	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 14:00:21 +0000
+Received: by mail-ed1-x529.google.com with SMTP id w3so3143892edc.2
+        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 06:00:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=content-disposition:mime-version:message-id:subject:cc:to:from:date
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=gbsVILwGxVzGSFQAMmcvTjtP3iS0H0Jk8jlmA3fje44=;
-        b=C+L6/jTqnSeYo/b6IiQCVonl4htdmnONEbBMxu61VCOz8uqTjoupU69shAxIRXuXS3
-         48MfOCaFgOkReQUUJHND45qkDEyyUJRYY3i14h5SKoTw7DCyl21omBRAcz/NLvMjTSZQ
-         Q444pLCb9ABZwNIRvbkZqzy14Kqpb0ArIvP0oGBxw13Cow5hVcr2yuS2V74yqdV4subm
-         c5IGLQaC6ShCnhVWBQKtwogG15r4+QnHQV03JMbDNKEtzEaCznIx1zOak22M7GuFaY0+
-         1Mkb56QEikJMI8hGrECIBEw92w0wV5Tf636WKZnSk4mC4EpHHz0O1mDVW483h4/Uooq8
-         e9ew==
+        bh=0jessfGxLyy7OlNlyD5MYHYRyTI9Jb37IhwhAOttInw=;
+        b=GuMdRTyITJYDDH3BWTAHLKGjR1oO/cD6yNGPHlc9lKLDpk8Dz51zQtwIPC91Q6o7z8
+         oqMzzxGK94wapyfgYF/1YFXZQgsZHQkb/OgKDoelYfbVqXkoRVsV6AzIa0+dJsxiTfyz
+         oJu4/EmVPtWyZYLVL+bwTcLSLroAzIbrI5JVTyEAWSxYSBBSxdnuv8hfIIcGVdrWrc8S
+         AH5/AYYobtk5s6eMn2zO9csTMtZzuWMAr5k9OCLh7OcO7xwFDtyFCp+YId4Dk7t8IJvb
+         Mp52io25jJkxTM/hBSAQMTqKP9/evaS8eMxuR+YQ5wo42r4MWsYugROO8juo8ZoSCMVY
+         WyWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-disposition:mime-version:message-id:subject:cc:to:from:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=gbsVILwGxVzGSFQAMmcvTjtP3iS0H0Jk8jlmA3fje44=;
-        b=CQHGz/corN/inE1FqV6bbQHz+HoNCqZRz3pujiiVy6uiRVj5n3I+GIhO2J4+7Xq/g5
-         JweybnVvpnN6ttQHgnC0J1BlfiR1tK9wGo0XH46We8vAPobNj9Cbzwg0T+/TJYm7XJ25
-         GmKBPL31EWA1mUO+bSL9OFsvAh3dGG6wFewVowBBVzxiNG5EA4fY4lwjpqiJbbmCLAt2
-         ycBjYEvO4Uk4FUZ8gywvbjIR2SjN1zQlFI08ntTMaV69z7YfCsugUF/5mfrkrMlF2Z2l
-         5htlc9WPZvlWCZUefUiHSg69TebOxhUBK2nNsGfhXEyvXLjhezAi2zIwfqGw7CDkUdxw
-         DuXA==
-X-Gm-Message-State: AO0yUKWpCjyLGBAn9HN3hgw90RRb4bapDC20tnNjaPLFjuTX7ypouPSa
-	/wSHwXXjUq1CFMEPgdpJ3oCB3gedD+SBOg==
-X-Google-Smtp-Source: AK7set/NOpoSw8hvSJwZWpiZvhxLi2XsMnxIK+Gsy/wyCdTsKPgfM748J/cz6ZUI6KGt3j6vQkDXOw==
-X-Received: by 2002:a17:906:2806:b0:8af:3c9f:6e5d with SMTP id r6-20020a170906280600b008af3c9f6e5dmr6150008ejc.12.1676556013788;
-        Thu, 16 Feb 2023 06:00:13 -0800 (PST)
+        bh=0jessfGxLyy7OlNlyD5MYHYRyTI9Jb37IhwhAOttInw=;
+        b=AodE9qHyDQANL3RRLjb+uUVulHPtDkBf6sZmW5kh/oM+rCc/67tMQQbE5mgPa5PWc9
+         f/kUpwSBQPxAdpaxnimDh9FOcmfJ+MCdcCO8mH0TmvahIictj0iBh+xvnjp7cFs4ujOq
+         GQAjmaR4G0JWnapOTU9nCwepN5MMcXSHZsSfYy8sdgV3Tk5dddsTzGUiHgFyDAyAFBRk
+         XgZXj5xjEnOLVmwOvmzXoLxB2rB2n+kf8DVO/ZeiBOC+h9yJIG3ovTlDPBHK8iZh/3iw
+         GtZnf/V+RGxe0k6BJqYET8ywocNnV/ssDzOnlSuXgNzowXRK6verpXBNndN0cX5p65C/
+         0QqQ==
+X-Gm-Message-State: AO0yUKV8sS0FRoz38mbD3rH4fsgbEe1wq17uELJSQitXS31LAEXvoquo
+	ced3e/0oc54FsdCI8eH4eRRLHldSI56trQ==
+X-Google-Smtp-Source: AK7set9liknlFhcdwpSsGij5LD0Ab/pHl3tuNxO1ruvoLp3it9UvqqjI5MAHuK7IS4gQ1fpnwLC3hA==
+X-Received: by 2002:a17:906:c02:b0:7c4:fa17:7203 with SMTP id s2-20020a1709060c0200b007c4fa177203mr6126662ejf.63.1676556020215;
+        Thu, 16 Feb 2023 06:00:20 -0800 (PST)
 Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id n11-20020a170906688b00b008b13a8ec56asm845772ejr.110.2023.02.16.06.00.12
+        by smtp.gmail.com with ESMTPSA id x16-20020a170906711000b008b17879ec95sm218777ejj.22.2023.02.16.06.00.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 16 Feb 2023 06:00:13 -0800 (PST)
-Date: Thu, 16 Feb 2023 17:00:10 +0300
+        Thu, 16 Feb 2023 06:00:19 -0800 (PST)
+Date: Thu, 16 Feb 2023 17:00:16 +0300
 From: Dan Carpenter <error27@gmail.com>
 To: quic_kvalo@quicinc.com
 Cc: ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: missing clean up
-Message-ID: <Y+426q6cfkEdb5Bv@kili>
+Subject: [bug report] wifi: ath12k: duplicate checks
+Message-ID: <Y+428K5KOrDGaCw+@kili>
 MIME-Version: 1.0
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_060016_279377_17532ADB 
-X-CRM114-Status: UNSURE (   5.46  )
+X-CRM114-CacheID: sfid-20230216_060020_645934_355D76BF 
+X-CRM114-Status: UNSURE (   5.65  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,141 +93,46 @@ The patch d889913205cf: "wifi: ath12k: driver for Qualcomm Wi-Fi 7
 devices" from Nov 28, 2022, leads to the following Smatch static
 checker warning:
 
-	drivers/net/wireless/ath/ath12k/pci.c:1198 ath12k_pci_probe()
-	warn: missing unwind goto?
+drivers/net/wireless/ath/ath12k/mac.c:5809 ath12k_mac_op_assign_vif_chanctx() warn: 'arvif->vdev_type == 4' 'false' implies 'arvif->vdev_type != 4' is 'true'
+drivers/net/wireless/ath/ath12k/dp_rx.c:1369 ath12k_update_per_peer_tx_stats() warn: 'mcs > 11' 'false' implies 'mcs > 11' is 'false'
+drivers/net/wireless/ath/ath12k/dp_rx.c:1329 ath12k_update_per_peer_tx_stats() warn: address of 'ppdu_stats->user_stats[user]' is non-NULL
 
-drivers/net/wireless/ath/ath12k/pci.c
-    1151 static int ath12k_pci_probe(struct pci_dev *pdev,
-    1152                             const struct pci_device_id *pci_dev)
-    1153 {
-    1154         struct ath12k_base *ab;
-    1155         struct ath12k_pci *ab_pci;
-    1156         u32 soc_hw_version_major, soc_hw_version_minor;
-    1157         int ret;
-    1158 
-    1159         ab = ath12k_core_alloc(&pdev->dev, sizeof(*ab_pci), ATH12K_BUS_PCI);
-    1160         if (!ab) {
-    1161                 dev_err(&pdev->dev, "failed to allocate ath12k base\n");
-    1162                 return -ENOMEM;
-    1163         }
-    1164 
-    1165         ab->dev = &pdev->dev;
-    1166         pci_set_drvdata(pdev, ab);
-    1167         ab_pci = ath12k_pci_priv(ab);
-    1168         ab_pci->dev_id = pci_dev->device;
-    1169         ab_pci->ab = ab;
-    1170         ab_pci->pdev = pdev;
-    1171         ab->hif.ops = &ath12k_pci_hif_ops;
-    1172         pci_set_drvdata(pdev, ab);
-    1173         spin_lock_init(&ab_pci->window_lock);
-    1174 
-    1175         ret = ath12k_pci_claim(ab_pci, pdev);
-    1176         if (ret) {
-    1177                 ath12k_err(ab, "failed to claim device: %d\n", ret);
-    1178                 goto err_free_core;
-    1179         }
-    1180 
-    1181         switch (pci_dev->device) {
-    1182         case QCN9274_DEVICE_ID:
-    1183                 ab_pci->msi_config = &ath12k_msi_config[0];
-    1184                 ab->static_window_map = true;
-    1185                 ath12k_pci_read_hw_version(ab, &soc_hw_version_major,
-    1186                                            &soc_hw_version_minor);
-    1187                 switch (soc_hw_version_major) {
-    1188                 case ATH12K_PCI_SOC_HW_VERSION_2:
-    1189                         ab->hw_rev = ATH12K_HW_QCN9274_HW20;
-    1190                         break;
-    1191                 case ATH12K_PCI_SOC_HW_VERSION_1:
-    1192                         ab->hw_rev = ATH12K_HW_QCN9274_HW10;
-    1193                         break;
-    1194                 default:
-    1195                         dev_err(&pdev->dev,
-    1196                                 "Unknown hardware version found for QCN9274: 0x%x\n",
-    1197                                 soc_hw_version_major);
---> 1198                         return -EOPNOTSUPP;
+drivers/net/wireless/ath/ath12k/mac.c
+    5792 
+    5793         if (arvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
 
-ret = -EOPNOTSUPP;
-goto err_pci_free_region
+type checked here
 
-    1199                 }
-    1200                 break;
-    1201         case WCN7850_DEVICE_ID:
-    1202                 ab_pci->msi_config = &ath12k_msi_config[0];
-    1203                 ab->static_window_map = false;
-    1204                 ab->hw_rev = ATH12K_HW_WCN7850_HW20;
-    1205                 break;
-    1206 
-    1207         default:
-    1208                 dev_err(&pdev->dev, "Unknown PCI device found: 0x%x\n",
-    1209                         pci_dev->device);
-    1210                 ret = -EOPNOTSUPP;
-    1211                 goto err_pci_free_region;
-    1212         }
-    1213 
-    1214         ret = ath12k_pci_msi_alloc(ab_pci);
-    1215         if (ret) {
-    1216                 ath12k_err(ab, "failed to alloc msi: %d\n", ret);
-    1217                 goto err_pci_free_region;
-    1218         }
-    1219 
-    1220         ret = ath12k_core_pre_init(ab);
-    1221         if (ret)
-    1222                 goto err_pci_msi_free;
-    1223 
-    1224         ret = ath12k_mhi_register(ab_pci);
-    1225         if (ret) {
-    1226                 ath12k_err(ab, "failed to register mhi: %d\n", ret);
-    1227                 goto err_pci_msi_free;
-    1228         }
-    1229 
-    1230         ret = ath12k_hal_srng_init(ab);
-    1231         if (ret)
-    1232                 goto err_mhi_unregister;
-    1233 
-    1234         ret = ath12k_ce_alloc_pipes(ab);
-    1235         if (ret) {
-    1236                 ath12k_err(ab, "failed to allocate ce pipes: %d\n", ret);
-    1237                 goto err_hal_srng_deinit;
-    1238         }
-    1239 
-    1240         ath12k_pci_init_qmi_ce_config(ab);
-    1241 
-    1242         ret = ath12k_pci_config_irq(ab);
-    1243         if (ret) {
-    1244                 ath12k_err(ab, "failed to config irq: %d\n", ret);
-    1245                 goto err_ce_free;
-    1246         }
-    1247 
-    1248         ret = ath12k_core_init(ab);
-    1249         if (ret) {
-    1250                 ath12k_err(ab, "failed to init core: %d\n", ret);
-    1251                 goto err_free_irq;
-    1252         }
-    1253         return 0;
-    1254 
-    1255 err_free_irq:
-    1256         ath12k_pci_free_irq(ab);
-    1257 
-    1258 err_ce_free:
-    1259         ath12k_ce_free_pipes(ab);
-    1260 
-    1261 err_hal_srng_deinit:
-    1262         ath12k_hal_srng_deinit(ab);
-    1263 
-    1264 err_mhi_unregister:
-    1265         ath12k_mhi_unregister(ab_pci);
-    1266 
-    1267 err_pci_msi_free:
-    1268         ath12k_pci_msi_free(ab_pci);
-    1269 
-    1270 err_pci_free_region:
-    1271         ath12k_pci_free_region(ab_pci);
-    1272 
-    1273 err_free_core:
-    1274         ath12k_core_free(ab);
-    1275 
-    1276         return ret;
-    1277 }
+    5794                 ret = ath12k_mac_monitor_start(ar);
+    5795                 if (ret)
+    5796                         goto out;
+    5797                 arvif->is_started = true;
+    5798                 goto out;
+    5799         }
+    5800 
+    5801         ret = ath12k_mac_vdev_start(arvif, &ctx->def);
+    5802         if (ret) {
+    5803                 ath12k_warn(ab, "failed to start vdev %i addr %pM on freq %d: %d\n",
+    5804                             arvif->vdev_id, vif->addr,
+    5805                             ctx->def.chan->center_freq, ret);
+    5806                 goto out;
+    5807         }
+    5808 
+--> 5809         if (arvif->vdev_type != WMI_VDEV_TYPE_MONITOR && ar->monitor_vdev_created)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+No need to check again
+
+    5810                 ath12k_mac_monitor_start(ar);
+    5811 
+    5812         arvif->is_started = true;
+    5813 
+    5814         /* TODO: Setup ps and cts/rts protection */
+    5815 
+    5816 out:
+    5817         mutex_unlock(&ar->conf_mutex);
+    5818 
+    5819         return ret;
+    5820 }
 
 regards,
 dan carpenter
