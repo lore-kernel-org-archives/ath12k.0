@@ -4,72 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 760A6C61DA4
-	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 13:59:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53622C636CC
+	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 13:59:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rSV4Rs02w2Nro2N6aGW+8Em88tn6iiA2C0HDzgyF6Pc=; b=uPRLrUOME4lWsZ
-	zufAC50zJd+GnLetDHlktoY2S/mo5N2wpgmTSGePw2Xi5DfBsZMLI9ekNh3yAfNbN2n97kiZemlWj
-	pGGkuOWUlFR8MPurecZRm9hiJgO0SeV20YL0JWdQuHjfxEpaUwBS7qwNms58cdZtws3ABREe++uOK
-	3lTjP8NVKuxLkkd4cruRV3kopGYi/8QCsBhclJ4bFnax2f5IWjIpezpPfOMaPHj1K25n8ixv3lM1P
-	5StfHfx4QsThpAS2Skt9Ohit1e+JGWJnb0rcsAOdzB6bOZe+kW6lQ04WKhR0xLGzogWHZf6ABIjOx
-	XyeFBmoPT/3pw2r9SouA==;
+	List-Owner; bh=SdubjSHKChqmlsGPN4zoSmO2+nVpgJJfTFATcIe89wA=; b=imWK+eBef9kL18
+	6qT5BNkPX3R3KcMoY43V2MuW+R5A8Gu3UvLtvPg2cGKlG07l529MQPE1XOp9l9MXbWAoQgAvP99YH
+	HbR0d6dXUrIQhwJ/Lzp8l45rP7VfQHtpgdyfK0bNcUrSiEG+eqs38JPtLSgQ3/I5wZXHfq8/k4Kjs
+	bCO8RZTyoFWJ0btI1Pb70cVnC8u0kRElPOGPnM7V85NBYlbe0a7Y24MOtHM9EIyxFO0VisNGY8UTb
+	PA3Ek9frgGqVAz0Yei28iayGrnTuCnKMUAPDvtUa6mkMxYCcQ44wW45/nWP3RAu2Oi7pTiYcmRamq
+	PxTRZ7cc6VOnDjBhrDOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSenJ-00ATiC-SB
-	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 13:59:29 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1pSeng-00ATpG-Pn
+	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 13:59:52 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSenH-00ATh9-1Z
-	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 13:59:28 +0000
-Received: by mail-ed1-x533.google.com with SMTP id d40so3087703eda.8
-        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 05:59:25 -0800 (PST)
+	id 1pSend-00ATnX-J4
+	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 13:59:50 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id cq19so3127340edb.5
+        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 05:59:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=SWnxOXJWrLRO0rOLU2hnvBrK74mGy0kyTT4E3Ui+XSw=;
-        b=AUAIFXE8CyvXtjYr2a/OHGsF2cxasmd6xVMpU4VdFh2Iyn4qfLb4K2cX9m9tuwL2YG
-         qPeM3iwxGegRrMLrhd3HC7n6Kh1FImk8mFbwzVmkjGxKESkwWbtcoD/0nR4dQGI5Mhyx
-         WXPcXbUhDii7Dkb8CZnPKav1QJszxpxksL0G6Nw0tYK/kYE3Vg6GNjFSvx6uFOF+nXq+
-         R+GNRrmMhmlvsDl+VwUTE2d2TEHM3FkaYnC8Bj1Ygec4xSCSPFDJoLXUCEaAk4AVyKqe
-         Se0hbd29JBNx3/oHDH3RO85P2AWw++vMoBLBe1HgMqakn+ax64eafKogEwLzsPD57Yo7
-         H1YQ==
+        h=content-transfer-encoding:content-disposition:mime-version
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=NP2EeIZblOgOuyfbYVE/OJExXiFkEYgP2KQobmY9rOA=;
+        b=dJ9frDoNz/QXw8Uw3uOyeQTksdlQixz3m/cfPKNF5AV15ylLKUxFNHF0yVswNoyD1L
+         ROQA65Qx6LslHdOvsi79R04vxt+cJVEfjPLMF0VKVMNF8VKFElU+n9Ul6jTJ4tuEMFcB
+         zcPwsbmRgkxPY49Yqer1SiOR+F9sW03Qgj/y875rQq7BKpXi9mcxj+3S/lzh3Weypbr/
+         JM9kJUDpkMVOE/JTaOGdWsbu6wVq4TCGmjw7UqSdG19r6Zn3DvLdwrFCBDnuY+irArJs
+         1HV9j0nmcocsEMhFSMs4C82ugE/+Ah5hAFCDRQduomfrVOJqdkhM9lDEtZHF2VjAgdbI
+         M9jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=SWnxOXJWrLRO0rOLU2hnvBrK74mGy0kyTT4E3Ui+XSw=;
-        b=AlpBgRNh7a+LdXBKxS4hhyCijGQPhQIhGuSZ9Ohd9/A0KGdbTgP7rRtlulqC89esGf
-         FVIccktEVMaYZ7obUK27O7F50ZzMY02L/m1L8nHgEmwtVzzUBy7QbD7lyZRqIDVBWikA
-         mCFhZyFayjPvKiLdKefTrSy1y1+2fzn71QuBrFYwuRM9bY1LYoq0CDBCRolAkCfAVSVz
-         w6oLBadLJkup2roR/eXmiJaPdjtCRKD8VAhfKbhcOw8epHFB0MMDV0Y/W4yqqtvxQ/HA
-         d71BAFr+8kl3ZV+RlBI8iz4EQH0kxaeR+nsbkddh9gPl3AqiHModmuno1IBalKd5q7yR
-         464g==
-X-Gm-Message-State: AO0yUKUiAY+GnGGZGCtGx9qlu1BMDwfNQc58KUIpTVTJfhvQrixGMLk2
-	LVLgt/AIpzJb56UdVr8b2u8=
-X-Google-Smtp-Source: AK7set9Qs5lQ//9v4JtF0LDglnZH21a/NxaaNAODcQZbpu+IHCSL8coyiBISaxAJvCNL8TwzesEe4w==
-X-Received: by 2002:aa7:d04c:0:b0:4ad:4c4e:2b66 with SMTP id n12-20020aa7d04c000000b004ad4c4e2b66mr1581702edo.11.1676555964549;
-        Thu, 16 Feb 2023 05:59:24 -0800 (PST)
+        h=content-transfer-encoding:content-disposition:mime-version
+         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=NP2EeIZblOgOuyfbYVE/OJExXiFkEYgP2KQobmY9rOA=;
+        b=JDF0w39IYoM2PM6p/tO+JsmCkaHOCNnG+DvYEPa48i1nORD29r/Z909xF/OXTF3B0l
+         gNhVOjCsmiGhBBme7xglbLD78ARfSm5Bi1hHkyHHKb7M/DryA/9aX7Svpo8RJbnoDGqk
+         tv5eFWZ7NF8kcj7f4l8QBnhjjdgoQAIY10xE0gSC6mVuNfogVGx9QtpAxBvXuN23NCR8
+         8wzIBl3eBSgJOyHRUfajuzRIu0OAkXveLdSnXmzQSg7n/gfJE4iYCNswR2IzEt9itRjh
+         T2bkJH5wiaiZE8bfGLynYzXSHq/SZa18PgXeMXxGPy1mDmtdX9rsQTPTaBZ4aeEHIHlQ
+         lfjA==
+X-Gm-Message-State: AO0yUKUHpupcfiACgZuDjAu7lPAV80OB8wJQNPNZKlHaLPOg4TKY9vLT
+	9f1wSXFPLcA8zBKaCHCS5DU=
+X-Google-Smtp-Source: AK7set9b5QCPv+xCtk2rdKe0+uCgkvalrNzVps3UO97Y7sZj5LraJnILdG9fdQNo1wmXujujqG3sLw==
+X-Received: by 2002:a17:907:8a26:b0:8b0:ad0b:7ab8 with SMTP id sc38-20020a1709078a2600b008b0ad0b7ab8mr8219466ejc.14.1676555988312;
+        Thu, 16 Feb 2023 05:59:48 -0800 (PST)
 Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id c30-20020a50f61e000000b004ac089bb600sm932430edn.0.2023.02.16.05.59.23
+        by smtp.gmail.com with ESMTPSA id w5-20020a1709064a0500b008b144796d9esm848164eju.143.2023.02.16.05.59.47
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 16 Feb 2023 05:59:24 -0800 (PST)
-Date: Thu, 16 Feb 2023 16:59:20 +0300
+        Thu, 16 Feb 2023 05:59:47 -0800 (PST)
+Date: Thu, 16 Feb 2023 16:59:44 +0300
 From: Dan Carpenter <error27@gmail.com>
 To: quic_kvalo@quicinc.com
 Cc: ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: resource leak in ath12k_dp_srng_setup()
-Message-ID: <Y+42uErUlW1RuHSf@kili>
+Subject: [bug report] wifi: ath12k: memcpy read overflow
+Message-ID: <Y+420NRnP8m53bVu@kili>
 MIME-Version: 1.0
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_055927_106145_083E2C01 
-X-CRM114-Status: UNSURE (   6.70  )
+X-CRM114-CacheID: sfid-20230216_055949_651126_06490594 
+X-CRM114-Status: UNSURE (   7.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,123 +84,72 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello Kalle Valo,
-
-The patch d889913205cf: "wifi: ath12k: driver for Qualcomm Wi-Fi 7
-devices" from Nov 28, 2022, leads to the following Smatch static
-checker warning:
-
-drivers/net/wireless/ath/ath12k/dp.c:310 ath12k_dp_srng_setup() warn: 'ring->vaddr_unaligned' from dma_alloc_coherent() not released on lines: 298,305.
-
-drivers/net/wireless/ath/ath12k/dp.c
-    217 int ath12k_dp_srng_setup(struct ath12k_base *ab, struct dp_srng *ring,
-    218                          enum hal_ring_type type, int ring_num,
-    219                          int mac_id, int num_entries)
-    220 {
-    221         struct hal_srng_params params = { 0 };
-    222         int entry_sz = ath12k_hal_srng_get_entrysize(ab, type);
-    223         int max_entries = ath12k_hal_srng_get_max_entries(ab, type);
-    224         int ret;
-    225 
-    226         if (max_entries < 0 || entry_sz < 0)
-    227                 return -EINVAL;
-    228 
-    229         if (num_entries > max_entries)
-    230                 num_entries = max_entries;
-    231 
-    232         ring->size = (num_entries * entry_sz) + HAL_RING_BASE_ALIGN - 1;
-    233         ring->vaddr_unaligned = dma_alloc_coherent(ab->dev, ring->size,
-    234                                                    &ring->paddr_unaligned,
-    235                                                    GFP_KERNEL);
-    236         if (!ring->vaddr_unaligned)
-    237                 return -ENOMEM;
-    238 
-    239         ring->vaddr = PTR_ALIGN(ring->vaddr_unaligned, HAL_RING_BASE_ALIGN);
-    240         ring->paddr = ring->paddr_unaligned + ((unsigned long)ring->vaddr -
-    241                       (unsigned long)ring->vaddr_unaligned);
-    242 
-    243         params.ring_base_vaddr = ring->vaddr;
-    244         params.ring_base_paddr = ring->paddr;
-    245         params.num_entries = num_entries;
-    246         ath12k_dp_srng_msi_setup(ab, &params, type, ring_num + mac_id);
-    247 
-    248         switch (type) {
-    249         case HAL_REO_DST:
-    250                 params.intr_batch_cntr_thres_entries =
-    251                                         HAL_SRNG_INT_BATCH_THRESHOLD_RX;
-    252                 params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_RX;
-    253                 break;
-    254         case HAL_RXDMA_BUF:
-    255         case HAL_RXDMA_MONITOR_BUF:
-    256         case HAL_RXDMA_MONITOR_STATUS:
-    257                 params.low_threshold = num_entries >> 3;
-    258                 params.flags |= HAL_SRNG_FLAGS_LOW_THRESH_INTR_EN;
-    259                 params.intr_batch_cntr_thres_entries = 0;
-    260                 params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_RX;
-    261                 break;
-    262         case HAL_TX_MONITOR_DST:
-    263                 params.low_threshold = DP_TX_MONITOR_BUF_SIZE_MAX >> 3;
-    264                 params.flags |= HAL_SRNG_FLAGS_LOW_THRESH_INTR_EN;
-    265                 params.intr_batch_cntr_thres_entries = 0;
-    266                 params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_RX;
-    267                 break;
-    268         case HAL_WBM2SW_RELEASE:
-    269                 if (ab->hw_params->hw_ops->dp_srng_is_tx_comp_ring(ring_num)) {
-    270                         params.intr_batch_cntr_thres_entries =
-    271                                         HAL_SRNG_INT_BATCH_THRESHOLD_TX;
-    272                         params.intr_timer_thres_us =
-    273                                         HAL_SRNG_INT_TIMER_THRESHOLD_TX;
-    274                         break;
-    275                 }
-    276                 /* follow through when ring_num != HAL_WBM2SW_REL_ERR_RING_NUM */
-    277                 fallthrough;
-    278         case HAL_REO_EXCEPTION:
-    279         case HAL_REO_REINJECT:
-    280         case HAL_REO_CMD:
-    281         case HAL_REO_STATUS:
-    282         case HAL_TCL_DATA:
-    283         case HAL_TCL_CMD:
-    284         case HAL_TCL_STATUS:
-    285         case HAL_WBM_IDLE_LINK:
-    286         case HAL_SW2WBM_RELEASE:
-    287         case HAL_RXDMA_DST:
-    288         case HAL_RXDMA_MONITOR_DST:
-    289         case HAL_RXDMA_MONITOR_DESC:
-    290                 params.intr_batch_cntr_thres_entries =
-    291                                         HAL_SRNG_INT_BATCH_THRESHOLD_OTHER;
-    292                 params.intr_timer_thres_us = HAL_SRNG_INT_TIMER_THRESHOLD_OTHER;
-    293                 break;
-    294         case HAL_RXDMA_DIR_BUF:
-    295                 break;
-    296         default:
-    297                 ath12k_warn(ab, "Not a valid ring type in dp :%d\n", type);
-    298                 return -EINVAL;
-
-ring->vaddr_unaligned not released on error path.
-
-    299         }
-    300 
-    301         ret = ath12k_hal_srng_setup(ab, type, ring_num, mac_id, &params);
-    302         if (ret < 0) {
-    303                 ath12k_warn(ab, "failed to setup srng: %d ring_id %d\n",
-    304                             ret, ring_num);
-    305                 return ret;
-    306         }
-    307 
-    308         ring->ring_id = ret;
-    309 
---> 310         return 0;
-    311 }
-
-regards,
-dan carpenter
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+SGVsbG8gS2FsbGUgVmFsbywKClRoZSBwYXRjaCBkODg5OTEzMjA1Y2Y6ICJ3aWZpOiBhdGgxMms6
+IGRyaXZlciBmb3IgUXVhbGNvbW0gV2ktRmkgNwpkZXZpY2VzIiBmcm9tIE5vdiAyOCwgMjAyMiwg
+bGVhZHMgdG8gdGhlIGZvbGxvd2luZyBTbWF0Y2ggc3RhdGljCmNoZWNrZXIgd2FybmluZzoKCmRy
+aXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvbWFjLmM6MTYzNiBhdGgxMmtfcGVlcl9hc3Nv
+Y19oX2hlKCkgd2FybjogJ2hlX2NhcC0+aGVfY2FwX2VsZW0ubWFjX2NhcF9pbmZvJyBzb21ldGlt
+ZXMgdG9vIHNtYWxsICc2JyBzaXplID0gOApkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJr
+L21hYy5jOjE2MzggYXRoMTJrX3BlZXJfYXNzb2NfaF9oZSgpIHdhcm46ICdoZV9jYXAtPmhlX2Nh
+cF9lbGVtLnBoeV9jYXBfaW5mbycgc29tZXRpbWVzIHRvbyBzbWFsbCAnMTEnIHNpemUgPSAxMgoK
+ZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9tYWMuYwogICAgMTU4NSBzdGF0aWMgdm9p
+ZCBhdGgxMmtfcGVlcl9hc3NvY19oX2hlKHN0cnVjdCBhdGgxMmsgKmFyLAogICAgMTU4NiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBpZWVlODAyMTFfdmlmICp2aWYs
+CiAgICAxNTg3ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3RydWN0IGllZWU4
+MDIxMV9zdGEgKnN0YSwKICAgIDE1ODggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICBzdHJ1Y3QgYXRoMTJrX3dtaV9wZWVyX2Fzc29jX2FyZyAqYXJnKQogICAgMTU4OSB7CiAgICAx
+NTkwICAgICAgICAgY29uc3Qgc3RydWN0IGllZWU4MDIxMV9zdGFfaGVfY2FwICpoZV9jYXAgPSAm
+c3RhLT5kZWZsaW5rLmhlX2NhcDsKICAgIDE1OTEgICAgICAgICBpbnQgaTsKICAgIDE1OTIgICAg
+ICAgICB1OCBhbXBkdV9mYWN0b3IsIHJ4X21jc184MCwgcnhfbWNzXzE2MCwgbWF4X25zczsKICAg
+IDE1OTMgICAgICAgICB1MTYgbWNzXzE2MF9tYXAsIG1jc184MF9tYXA7CiAgICAxNTk0ICAgICAg
+ICAgYm9vbCBzdXBwb3J0XzE2MDsKICAgIDE1OTUgICAgICAgICB1MTYgdjsKICAgIDE1OTYgCiAg
+ICAxNTk3ICAgICAgICAgaWYgKCFoZV9jYXAtPmhhc19oZSkKICAgIDE1OTggICAgICAgICAgICAg
+ICAgIHJldHVybjsKICAgIDE1OTkgCiAgICAxNjAwICAgICAgICAgYXJnLT5oZV9mbGFnID0gdHJ1
+ZTsKICAgIDE2MDEgCiAgICAxNjAyICAgICAgICAgc3VwcG9ydF8xNjAgPSAhIShoZV9jYXAtPmhl
+X2NhcF9lbGVtLnBoeV9jYXBfaW5mb1swXSAmCiAgICAxNjAzICAgICAgICAgICAgICAgICAgIElF
+RUU4MDIxMV9IRV9QSFlfQ0FQMF9DSEFOTkVMX1dJRFRIX1NFVF8xNjBNSFpfSU5fNUcpOwogICAg
+MTYwNCAKICAgIDE2MDUgICAgICAgICAvKiBTdXBwb3J0ZWQgSEUtTUNTIGFuZCBOU1MgU2V0IG9m
+IHBlZXIgaGVfY2FwIGlzIGludGVyc2VjdGlvbiB3aXRoIHNlbGYgaGVfY3AgKi8KICAgIDE2MDYg
+ICAgICAgICBtY3NfMTYwX21hcCA9IGxlMTZfdG9fY3B1KGhlX2NhcC0+aGVfbWNzX25zc19zdXBw
+LnJ4X21jc18xNjApOwogICAgMTYwNyAgICAgICAgIG1jc184MF9tYXAgPSBsZTE2X3RvX2NwdSho
+ZV9jYXAtPmhlX21jc19uc3Nfc3VwcC5yeF9tY3NfODApOwogICAgMTYwOCAKICAgIDE2MDkgICAg
+ICAgICBpZiAoc3VwcG9ydF8xNjApIHsKICAgIDE2MTAgICAgICAgICAgICAgICAgIGZvciAoaSA9
+IDc7IGkgPj0gMDsgaS0tKSB7CiAgICAxNjExICAgICAgICAgICAgICAgICAgICAgICAgIHU4IG1j
+c18xNjAgPSAobWNzXzE2MF9tYXAgPj4gKDIgKiBpKSkgJiAzOwogICAgMTYxMiAKICAgIDE2MTMg
+ICAgICAgICAgICAgICAgICAgICAgICAgaWYgKG1jc18xNjAgIT0gSUVFRTgwMjExX0hFX01DU19O
+T1RfU1VQUE9SVEVEKSB7CiAgICAxNjE0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+cnhfbWNzXzE2MCA9IGkgKyAxOwogICAgMTYxNSAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgIGJyZWFrOwogICAgMTYxNiAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAxNjE3ICAg
+ICAgICAgICAgICAgICB9CiAgICAxNjE4ICAgICAgICAgfQogICAgMTYxOSAKICAgIDE2MjAgICAg
+ICAgICBmb3IgKGkgPSA3OyBpID49IDA7IGktLSkgewogICAgMTYyMSAgICAgICAgICAgICAgICAg
+dTggbWNzXzgwID0gKG1jc184MF9tYXAgPj4gKDIgKiBpKSkgJiAzOwogICAgMTYyMiAKICAgIDE2
+MjMgICAgICAgICAgICAgICAgIGlmIChtY3NfODAgIT0gSUVFRTgwMjExX0hFX01DU19OT1RfU1VQ
+UE9SVEVEKSB7CiAgICAxNjI0ICAgICAgICAgICAgICAgICAgICAgICAgIHJ4X21jc184MCA9IGkg
+KyAxOwogICAgMTYyNSAgICAgICAgICAgICAgICAgICAgICAgICBicmVhazsKICAgIDE2MjYgICAg
+ICAgICAgICAgICAgIH0KICAgIDE2MjcgICAgICAgICB9CiAgICAxNjI4IAogICAgMTYyOSAgICAg
+ICAgIGlmIChzdXBwb3J0XzE2MCkKICAgIDE2MzAgICAgICAgICAgICAgICAgIG1heF9uc3MgPSBt
+aW4ocnhfbWNzXzgwLCByeF9tY3NfMTYwKTsKICAgIDE2MzEgICAgICAgICBlbHNlCiAgICAxNjMy
+ICAgICAgICAgICAgICAgICBtYXhfbnNzID0gcnhfbWNzXzgwOwogICAgMTYzMyAKICAgIDE2MzQg
+ICAgICAgICBhcmctPnBlZXJfbnNzID0gbWluKHN0YS0+ZGVmbGluay5yeF9uc3MsIG1heF9uc3Mp
+OwogICAgMTYzNSAKLS0+IDE2MzYgICAgICAgICBtZW1jcHkoJmFyZy0+cGVlcl9oZV9jYXBfbWFj
+aW5mbywgaGVfY2FwLT5oZV9jYXBfZWxlbS5tYWNfY2FwX2luZm8sCiAgICAxNjM3ICAgICAgICAg
+ICAgICAgIHNpemVvZihhcmctPnBlZXJfaGVfY2FwX21hY2luZm8pKTsKClRoZXNlIGJ1ZmZlcnMg
+YXJlIGRpZmZlcmVudCBzaXplcy4gIEkgd291bGQgYmUgc3VycHJpc2VkIGlmIENsYW5nCmNvbXBp
+bGVzIHRoaXMuICBLZWVzIGhhcyBiZWVuIHRyeWluZyB0byBhZGRyZXNzIHRoaXMgc29ydCBvZiB0
+aGluZy4KCiAgICAxNjM4ICAgICAgICAgbWVtY3B5KCZhcmctPnBlZXJfaGVfY2FwX3BoeWluZm8s
+IGhlX2NhcC0+aGVfY2FwX2VsZW0ucGh5X2NhcF9pbmZvLAogICAgMTYzOSAgICAgICAgICAgICAg
+ICBzaXplb2YoYXJnLT5wZWVyX2hlX2NhcF9waHlpbmZvKSk7CgpTYW1lLgoKICAgIDE2NDAgICAg
+ICAgICBhcmctPnBlZXJfaGVfb3BzID0gdmlmLT5ic3NfY29uZi5oZV9vcGVyLnBhcmFtczsKICAg
+IDE2NDEgCiAgICAxNjQyICAgICAgICAgLyogdGhlIHRvcCBtb3N0IGJ5dGUgaXMgdXNlZCB0byBp
+bmRpY2F0ZSBCU1MgY29sb3IgaW5mbyAqLwogICAgMTY0MyAgICAgICAgIGFyZy0+cGVlcl9oZV9v
+cHMgJj0gMHhmZmZmZmY7CiAgICAxNjQ0IAogICAgMTY0NSAgICAgICAgIC8qIEFzIHBlciBzZWN0
+aW9uIDI2LjYuMSBJRUVFIFN0ZCA4MDIuMTFheOKAkDIwMjIsIGlmIHRoZSBNYXggQU1QRFUKICAg
+IDE2NDYgICAgICAgICAgKiBFeHBvbmVudCBFeHRlbnNpb24gaW4gSEUgY2FwIGlzIHplcm8sIHVz
+ZSB0aGUgYXJnLT5wZWVyX21heF9tcGR1CiAgIApyZWdhcmRzLApkYW4gY2FycGVudGVyCgotLSAK
+YXRoMTJrIG1haWxpbmcgbGlzdAphdGgxMmtAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9hdGgxMmsK
