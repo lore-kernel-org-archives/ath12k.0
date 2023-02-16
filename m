@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06D61C61DA4
-	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 12:29:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEA39C636D6
+	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 13:59:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YofPioeCdDVULB3BXWEfzAxN/c1Uf6p4w7L7y2b40N4=; b=2fwV+Fo0E9SytB
-	fE7d6jBq/Bh8LEeqTnZI1sSGcJcbCbcXNT85uVajWc0F3xEhJxgDqqKsXpfk8PcAhJUKEr778ruYh
-	P7VlL7HVHgI6OOrzyDdpfxlJJYoQeVKrBv7HkFBLMqZLWgfg7WwlwAxwqWbhlBMG6bPXPfUZpQc4p
-	sOUiqqnXYTDysjNU3zNwBPlsoYMqoF+BN3vCQZa0yxpkTljTWkVludAmsQXy7vkxoB06N2kHZdVsL
-	DRBfFpWb+iAdd4Qc9zVP0kTpLPV+iKMY+OPklkp8JyucefWzC2D6IQTUHtOjiA1D+i7c36lKhBktN
-	TOpOJxFy8wb9EiH/V03Q==;
+	List-Owner; bh=2ar7Nuh8btGr8aG15GI9b9GDxyZXhmq6mqGYwr5r5JU=; b=wRkjaX9HEyVxWo
+	2kUR2rjdjr+AISilA22VzvHRyP2yDLl9NXiU8ZhNaA9iDNZdSX5U0/SLHlo7g8s+c2MX39pLF1bxN
+	VchYEDy09dDtGtzbOvCVzBl3vhtgsIM7NvHmPdu3pT/XOa78EteRg6nOHU94PA9rU7sEx5ExWn3bC
+	Pies8G8jMnSjaEVgcF07B8DiFtIKMeVCH75dhK3TlRybQc5BLZk+T2NDGyUYa3kKmy6HuXKRSU7LJ
+	ED/8UzaGs7TrvXGFH4aoSAeVkkb72KrX+7tsARU49FRGVVuwU+W/6qwSt/Y0ZIzM9alYehgYGBVrF
+	zQUyN04MYNPCUT7b8/ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSdNt-00A9hz-FN
-	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 12:29:09 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1pSemz-00ATdJ-5i
+	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 13:59:09 +0000
+Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSdNq-00A9gt-AW
-	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 12:29:07 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id f21so4703403ejq.8
-        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 04:29:05 -0800 (PST)
+	id 1pSemw-00ATcO-DT
+	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 13:59:07 +0000
+Received: by mail-ed1-x52a.google.com with SMTP id fi26so3093993edb.7
+        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 05:59:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=content-disposition:mime-version:message-id:subject:cc:to:from:date
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=NA7qP01LFw1LKeNSZIlwsECPftMMJ1XE2jzmzgWplsM=;
-        b=GDw1zpe+Vp34S93Kw0FS4btavYSKEZB2wFbArOZPWfuLuFNJOJgTu9Una+7qAzxaMW
-         SL8QQPrcCjeHvAUcANO69vb2ATkNNyYnQFXTgGmQIEx4GJYsiK6QBhaL/6bEh9aAR1j1
-         gsasYU+EPjDt3U3pNr+19d0goGB2dHJDmT+CDiu87nBrZBzmsfSqbG4RCawDqPPuHxBV
-         /AQcgrqU+BOvStiXedlWhJjsK5FLSltOGxeKBdbLG8Zv7jdw3cHlSK4QNhNS5jwj0KDR
-         RmAzdii/wZvS7jPPKaiNnONtMp0Rr9g5R0957Zm9Gez+3i9JPNqJdzzW/AU85x1ECe4E
-         IT8g==
+        bh=2Ik9dqPwWPjRxw2TcHa9m153tysofsVEba3E2OHCDtU=;
+        b=O+o+M0sKb0IE/Ic1i+ph72DWKCSCcpJDZ9Am+XxjdgNYeXvc3tp8FFSJ8OlQ+wp8bH
+         prhEGee2a6I5uPAsxOzXIWYChUymBL0Ur+z529VGO/o1Cb+h9WP0s7N7vAL6ZG24kHp8
+         hFy04/ePwEKXrYuPYVAigWYps7syJEYto6srwrwsUZEc0E0bTBw24XzCfONJBgXUzFdx
+         ZC+qG19jAtrwq1HuXeZesw1aJrVQHVX0cIrMp/yahgbXWGla1qqVUaq3pjWmP1KkQlwt
+         IkBb4E+qwAy+wseAVHaE6twCuy62ecAgBEHknPc5FZnYiOw6ZKe9Bmm8APbZlVWAkcwl
+         BZsg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-disposition:mime-version:message-id:subject:cc:to:from:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=NA7qP01LFw1LKeNSZIlwsECPftMMJ1XE2jzmzgWplsM=;
-        b=G7t2y5J0/vWwkX9KMJmQjKL1ChYlvWqiVP7Y2OLAulHklDFPV0/aUbjX6bT4S+whN6
-         ddKqeoyh/CnxX+1LvPbkWfkjARzBzZ9Kp7hiiikWrFgq+psLAHRezY5oYNz2/fn6jA5r
-         Xj/mYd3HGgMfOzFfG/5ocGCC1nt4Zl6XKz0GCeTKgkuNj6jAQZDGKA+VLObxMLQlSTpz
-         lnzjkaNs/xgM3MIAfWV0s0vHqMwMfOpstioKlUDB1gVufXaZqfgVBIvAd1mw4xpYbxYo
-         5MlZJXwJflCMBcd9wk609FCwKAZTkU84wUwq58obaL9QNdqAewTCmEW181Mrgq6E5x8C
-         RMAw==
-X-Gm-Message-State: AO0yUKUQp5CZylNIBIj2hivgR09+zK2s5U/ofSDWz71C7Lm0/6LuCr1x
-	cU3NoDQv9qwS2tVop8NcNgU=
-X-Google-Smtp-Source: AK7set8NqwOQi1y3jsCEp1xSlmtSb2bZG3t4jXOQ64FAuSfEoMOLIawOreOXgRO7tynh98GvHWhFBg==
-X-Received: by 2002:a17:906:4dc4:b0:889:d156:616d with SMTP id f4-20020a1709064dc400b00889d156616dmr5583377ejw.27.1676550544192;
-        Thu, 16 Feb 2023 04:29:04 -0800 (PST)
+        bh=2Ik9dqPwWPjRxw2TcHa9m153tysofsVEba3E2OHCDtU=;
+        b=1v03gId644SZF1QXlUV1ITnDDrOMqtg9waoSxUUV8SyIe6ojdO4opS+ydHIRMbxP2h
+         9N3EYw1tBzAM3vasYnadmCU8tarjHoOTrOfLsnr87EmCK8/PZ93xkEitRm/E5QNQV/VM
+         K8fBSZ/ru8S/iB+eoKUF8hO8RPGLjZFDrITxzVf73X+rMCSH5j+lK7+4enboa8mey+Hy
+         8p/LSzMEGciv938No5KCHXxj++mpxJKC6N1/f95e4tcU2gWIKMc1QzYFww8+kPzDlV7p
+         xmcPzT7DMrjq2Ud/gtoGo4YzgPNIwTz/bbtfs6kzLA2CLM8ceTYM1U2Se8ZH9Vf3cUE9
+         njQg==
+X-Gm-Message-State: AO0yUKUDC4YxYmAV7PotI59b4DD0qRzAsk5K0El4Ey3AaVuDh2JRUPKU
+	myw7YPblr7SMD54/aq2CPHY=
+X-Google-Smtp-Source: AK7set/zri4IZkbAQ5NLYbEfNJ9NKvYhEea4NL+34vPRiXQcb1BdnzDOhZLUqDTZy0bDgwq+52Y2Kw==
+X-Received: by 2002:a17:907:9884:b0:889:794d:f412 with SMTP id ja4-20020a170907988400b00889794df412mr5912720ejc.10.1676555944669;
+        Thu, 16 Feb 2023 05:59:04 -0800 (PST)
 Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id j11-20020a170906474b00b0088f8a61eb48sm750773ejs.154.2023.02.16.04.29.02
+        by smtp.gmail.com with ESMTPSA id x16-20020a170906711000b008b17879ec95sm217456ejj.22.2023.02.16.05.59.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 16 Feb 2023 04:29:03 -0800 (PST)
-Date: Thu, 16 Feb 2023 15:28:49 +0300
+        Thu, 16 Feb 2023 05:59:04 -0800 (PST)
+Date: Thu, 16 Feb 2023 16:59:00 +0300
 From: Dan Carpenter <error27@gmail.com>
 To: quic_kvalo@quicinc.com
 Cc: ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices
-Message-ID: <Y+4hgdh7iTOPFiyk@kili>
+Subject: [bug report] wifi: ath12k: sleeping in atomic bugs
+Message-ID: <Y+42pE/OAPfgvWCe@kili>
 MIME-Version: 1.0
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_042906_400060_10EE212C 
-X-CRM114-Status: UNSURE (   5.77  )
+X-CRM114-CacheID: sfid-20230216_055906_498613_0FA0AF21 
+X-CRM114-Status: UNSURE (   5.93  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,67 +93,53 @@ The patch d889913205cf: "wifi: ath12k: driver for Qualcomm Wi-Fi 7
 devices" from Nov 28, 2022, leads to the following Smatch static
 checker warning:
 
-	drivers/net/wireless/ath/ath12k/mac.c:5872 ath12k_mac_op_unassign_vif_chanctx()
-	error: double unlocked '&ar->conf_mutex' (orig line 5854)
+drivers/net/wireless/ath/ath12k/dbring.c:39 ath12k_dbring_bufs_replenish() warn: make sure GFP_ATOMIC set here
+drivers/net/wireless/ath/ath12k/dbring.c:97 ath12k_dbring_fill_bufs() warn: sleeping in atomic context
 
-drivers/net/wireless/ath/ath12k/mac.c
-    5822 static void
-    5823 ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
-    5824                                    struct ieee80211_vif *vif,
-    5825                                    struct ieee80211_bss_conf *link_conf,
-    5826                                    struct ieee80211_chanctx_conf *ctx)
-    5827 {
-    5828         struct ath12k *ar = hw->priv;
-    5829         struct ath12k_base *ab = ar->ab;
-    5830         struct ath12k_vif *arvif = (void *)vif->drv_priv;
-    5831         int ret;
-    5832 
-    5833         mutex_lock(&ar->conf_mutex);
-    5834 
-    5835         ath12k_dbg(ab, ATH12K_DBG_MAC,
-    5836                    "mac chanctx unassign ptr %pK vdev_id %i\n",
-    5837                    ctx, arvif->vdev_id);
-    5838 
-    5839         WARN_ON(!arvif->is_started);
-    5840 
-    5841         if (ab->hw_params->vdev_start_delay &&
-    5842             arvif->vdev_type == WMI_VDEV_TYPE_MONITOR &&
-    5843             ath12k_peer_find_by_addr(ab, ar->mac_addr))
-    5844                 ath12k_peer_delete(ar, arvif->vdev_id, ar->mac_addr);
-    5845 
-    5846         if (arvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
-    5847                 ret = ath12k_mac_monitor_stop(ar);
-    5848                 if (ret) {
-    5849                         mutex_unlock(&ar->conf_mutex);
-    5850                         return;
-    5851                 }
-    5852 
-    5853                 arvif->is_started = false;
-    5854                 mutex_unlock(&ar->conf_mutex);
+drivers/net/wireless/ath/ath12k/dbring.c
+    10 static int ath12k_dbring_bufs_replenish(struct ath12k *ar,
+    11                                         struct ath12k_dbring *ring,
+    12                                         struct ath12k_dbring_element *buff,
+    13                                         gfp_t gfp)
+    14 {
+    15         struct ath12k_base *ab = ar->ab;
+    16         struct hal_srng *srng;
+    17         dma_addr_t paddr;
+    18         void *ptr_aligned, *ptr_unaligned, *desc;
+    19         int ret;
+    20         int buf_id;
+    21         u32 cookie;
+    22 
+    23         srng = &ab->hal.srng_list[ring->refill_srng.ring_id];
+    24 
+    25         lockdep_assert_held(&srng->lock);
+    26 
+    27         ath12k_hal_srng_access_begin(ab, srng);
+    28 
+    29         ptr_unaligned = buff->payload;
+    30         ptr_aligned = PTR_ALIGN(ptr_unaligned, ring->buf_align);
+    31         paddr = dma_map_single(ab->dev, ptr_aligned, ring->buf_sz,
+    32                                DMA_FROM_DEVICE);
+    33 
+    34         ret = dma_mapping_error(ab->dev, paddr);
+    35         if (ret)
+    36                 goto err;
+    37 
+    38         spin_lock_bh(&ring->idr_lock);
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Atomic context.
 
-Should this return after unlocking?
+--> 39         buf_id = idr_alloc(&ring->bufs_idr, buff, 0, ring->bufs_max, gfp);
+    40         spin_unlock_bh(&ring->idr_lock);
 
-    5855         }
-    5856 
-    5857         ret = ath12k_mac_vdev_stop(arvif);
-    5858         if (ret)
-    5859                 ath12k_warn(ab, "failed to stop vdev %i: %d\n",
-    5860                             arvif->vdev_id, ret);
-    5861 
-    5862         arvif->is_started = false;
-    5863 
-    5864         if (ab->hw_params->vdev_start_delay &&
-    5865             arvif->vdev_type == WMI_VDEV_TYPE_MONITOR)
-    5866                 ath12k_wmi_vdev_down(ar, arvif->vdev_id);
-    5867 
-    5868         if (arvif->vdev_type != WMI_VDEV_TYPE_MONITOR &&
-    5869             ar->num_started_vdevs == 1 && ar->monitor_vdev_created)
-    5870                 ath12k_mac_monitor_stop(ar);
-    5871 
---> 5872         mutex_unlock(&ar->conf_mutex);
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ath12k_dbring_buf_setup() passes GFP_KERNEL to here as the gfp.  I think
+this is a sleeping in atomic bug.  The caller definitely has a bug.
 
-    5873 }
+    41         if (buf_id < 0) {
+    42                 ret = -ENOBUFS;
+    43                 goto err_dma_unmap;
+    44         }
+    45 
 
 regards,
 dan carpenter
