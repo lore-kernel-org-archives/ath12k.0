@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75D30C636CC
-	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 14:00:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DA08C636CC
+	for <ath12k@archiver.kernel.org>; Thu, 16 Feb 2023 14:00:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oGoEaaonOtkEJ+wyHtPPC/wK0IXNxpy7Dvo7W0QabZI=; b=CSmdXaeoik7Iix
-	oxJyJC1q04oILoeVqiZ2h2Z/RhywUOoLnYjY8od96G3fYdJQqZSX8/ehWru1oAAyhpF973Paf2x91
-	4zrt+P4Xru0obdOB4Q4e6OG8ieEuPeV61UbzeTMbEXhGcpgzTJk0vCvyp0ZfBUCsqHu+v213d9fNy
-	KhFhe9/LLpF5YyAqLL7qLH0fg4brnUuJcLdsds8RUtKDE+1I5duyRbNpQ9Wc7HwdIFzMW12gPL/a7
-	AEYYSF4S+tKhffwMJGc9BzF/5WdSWzc2t8S41d5vKM6nBM0Rh0NEHpgW0IPhPhJ/QSr6r8hS9W4Ve
-	eJdpibI3NZcp8HGvYAkg==;
+	List-Owner; bh=MoiL+FxEztZvkhF8ObXsOq0lHF0R4PoyWWFhx4MikfE=; b=0BRXJY9hKpEcnM
+	g1HSbZt75ngk+sb3nzxuV+y9d0gL/c0n6fXkVghxEeiriobsWJPxLZJnHC2C8tdB0UyCEi1Y9jaSI
+	Xvo3YmmGfeNTUgKBteugoMRhqPKRpQzrIKVLLoBlkMQ7VMjTWcl+VcKblmcHFEVhKC42u6sh8KMYT
+	2SszIROllSK5gWW3v0QgilWzv7MbcVn4ktMtUgFTLZpPxZUUnEi/2xQA6ghfB+eo52iUaZZqkpUUT
+	2PC7SJcnV1qBqwbeGXLYv7JRBYyKcZH66XWF4Cb6+tlLYxSoNm/frfpz0YbYzQCalLQdJdZtW/vpP
+	C/qlMi3ah/dOOliodIMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSeoA-00ATwm-Uy
-	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 14:00:22 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1pSeoY-00AU1l-LY
+	for ath12k@archiver.kernel.org; Thu, 16 Feb 2023 14:00:46 +0000
+Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSeo8-00ATuo-Ix
-	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 14:00:21 +0000
-Received: by mail-ed1-x529.google.com with SMTP id w3so3143892edc.2
-        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 06:00:20 -0800 (PST)
+	id 1pSeoW-00AU18-8y
+	for ath12k@lists.infradead.org; Thu, 16 Feb 2023 14:00:45 +0000
+Received: by mail-ed1-x531.google.com with SMTP id fj20so3154986edb.1
+        for <ath12k@lists.infradead.org>; Thu, 16 Feb 2023 06:00:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
         h=content-disposition:mime-version:message-id:subject:cc:to:from:date
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=0jessfGxLyy7OlNlyD5MYHYRyTI9Jb37IhwhAOttInw=;
-        b=GuMdRTyITJYDDH3BWTAHLKGjR1oO/cD6yNGPHlc9lKLDpk8Dz51zQtwIPC91Q6o7z8
-         oqMzzxGK94wapyfgYF/1YFXZQgsZHQkb/OgKDoelYfbVqXkoRVsV6AzIa0+dJsxiTfyz
-         oJu4/EmVPtWyZYLVL+bwTcLSLroAzIbrI5JVTyEAWSxYSBBSxdnuv8hfIIcGVdrWrc8S
-         AH5/AYYobtk5s6eMn2zO9csTMtZzuWMAr5k9OCLh7OcO7xwFDtyFCp+YId4Dk7t8IJvb
-         Mp52io25jJkxTM/hBSAQMTqKP9/evaS8eMxuR+YQ5wo42r4MWsYugROO8juo8ZoSCMVY
-         WyWw==
+        bh=Vt0jIbJbRmOGby/oN8WgltcBDgruIMCpp/2egokuL5w=;
+        b=Km0jYhMNtTHI51i4vdXkaSYiIRxF6mEW2+MuPx9vnT5gD4N0yQ5TYJeiBySrr3lP7K
+         61vIlqnkZexVLZbo4kZ87r79ibsSEsNeWhvwQSndEbQYx+pEFSpHMeevOiNlemktUu1r
+         78UrPo2E9IMwSDR6CE7CdcRT9VvU2jnj/EZFFudjYqpdRYBonPQE6BTXEdFj+TQq9PLb
+         9GsvyptpH5zy1+jac3pxoJJorWhXRwUYfqDGU0Vno9JUzrklj6l8xiZ6R6dYclnpwtxj
+         ns3BcnxK8S/MtUBAxM72aJR2K5bQ1slEWbMHIo9c4bkR5EL8ZM6/xtY105G4Kst/T8R0
+         kkrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=content-disposition:mime-version:message-id:subject:cc:to:from:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=0jessfGxLyy7OlNlyD5MYHYRyTI9Jb37IhwhAOttInw=;
-        b=AodE9qHyDQANL3RRLjb+uUVulHPtDkBf6sZmW5kh/oM+rCc/67tMQQbE5mgPa5PWc9
-         f/kUpwSBQPxAdpaxnimDh9FOcmfJ+MCdcCO8mH0TmvahIictj0iBh+xvnjp7cFs4ujOq
-         GQAjmaR4G0JWnapOTU9nCwepN5MMcXSHZsSfYy8sdgV3Tk5dddsTzGUiHgFyDAyAFBRk
-         XgZXj5xjEnOLVmwOvmzXoLxB2rB2n+kf8DVO/ZeiBOC+h9yJIG3ovTlDPBHK8iZh/3iw
-         GtZnf/V+RGxe0k6BJqYET8ywocNnV/ssDzOnlSuXgNzowXRK6verpXBNndN0cX5p65C/
-         0QqQ==
-X-Gm-Message-State: AO0yUKV8sS0FRoz38mbD3rH4fsgbEe1wq17uELJSQitXS31LAEXvoquo
-	ced3e/0oc54FsdCI8eH4eRRLHldSI56trQ==
-X-Google-Smtp-Source: AK7set9liknlFhcdwpSsGij5LD0Ab/pHl3tuNxO1ruvoLp3it9UvqqjI5MAHuK7IS4gQ1fpnwLC3hA==
-X-Received: by 2002:a17:906:c02:b0:7c4:fa17:7203 with SMTP id s2-20020a1709060c0200b007c4fa177203mr6126662ejf.63.1676556020215;
-        Thu, 16 Feb 2023 06:00:20 -0800 (PST)
+        bh=Vt0jIbJbRmOGby/oN8WgltcBDgruIMCpp/2egokuL5w=;
+        b=e5FYVimPwNMg1YihBv53uxkw7ewGAEaaZ7dc4G5kd1NyJ98lHFU6hS12ZDMwBswHAP
+         XK6zkusGLedvVgPVj/corDNy6gxYC5stdQtexJouHB1f6x1KvOiXWyRl7wyFMkrjUHkB
+         El2CREEsyO2UFEB5L8BKLCpdqmdGTQ61pOigIIPsju9YgiDbRRj20CcVvPHHrgLvJQoT
+         WPNiKDsU6+msbGMCp62B3zrjLkO3xDrtU7WGOj1gVPZCQ5hFiC4hAGivvyHHtavHpezc
+         rqXBldNTBPdcyntfp/8uqHfBz5ZDR0grSzBGvWrLmnXJoKaWQrA106MljBdmPwuDhpTo
+         B/nQ==
+X-Gm-Message-State: AO0yUKVFoUyTLTPXl8fDa3b6ogOhZf6j2pOx/KIOnzR0rXThhL5IiPrJ
+	bHtnvBQ8ZS9Z3hArmHtkrFn4dp4bCTce3Q==
+X-Google-Smtp-Source: AK7set/FvJwFTdXLsGB1itHNiMR3vevAOzVipKU0AQPOhNuvMuEoescaayT7RDeDkInM0qTMfBnCcg==
+X-Received: by 2002:a05:6402:5022:b0:4ac:b528:5727 with SMTP id p34-20020a056402502200b004acb5285727mr1939843eda.1.1676556043024;
+        Thu, 16 Feb 2023 06:00:43 -0800 (PST)
 Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id x16-20020a170906711000b008b17879ec95sm218777ejj.22.2023.02.16.06.00.19
+        by smtp.gmail.com with ESMTPSA id s27-20020a50ab1b000000b004acb6d659eesm902514edc.52.2023.02.16.06.00.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 16 Feb 2023 06:00:19 -0800 (PST)
-Date: Thu, 16 Feb 2023 17:00:16 +0300
+        Thu, 16 Feb 2023 06:00:42 -0800 (PST)
+Date: Thu, 16 Feb 2023 17:00:39 +0300
 From: Dan Carpenter <error27@gmail.com>
 To: quic_kvalo@quicinc.com
 Cc: ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: duplicate checks
-Message-ID: <Y+428K5KOrDGaCw+@kili>
+Subject: [bug report] wifi: ath12k: last element unused?
+Message-ID: <Y+43B0+OUAFYeOAY@kili>
 MIME-Version: 1.0
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_060020_645934_355D76BF 
-X-CRM114-Status: UNSURE (   5.65  )
+X-CRM114-CacheID: sfid-20230216_060044_337183_F66F0AB7 
+X-CRM114-Status: UNSURE (   7.79  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,46 +93,31 @@ The patch d889913205cf: "wifi: ath12k: driver for Qualcomm Wi-Fi 7
 devices" from Nov 28, 2022, leads to the following Smatch static
 checker warning:
 
-drivers/net/wireless/ath/ath12k/mac.c:5809 ath12k_mac_op_assign_vif_chanctx() warn: 'arvif->vdev_type == 4' 'false' implies 'arvif->vdev_type != 4' is 'true'
-drivers/net/wireless/ath/ath12k/dp_rx.c:1369 ath12k_update_per_peer_tx_stats() warn: 'mcs > 11' 'false' implies 'mcs > 11' is 'false'
-drivers/net/wireless/ath/ath12k/dp_rx.c:1329 ath12k_update_per_peer_tx_stats() warn: address of 'ppdu_stats->user_stats[user]' is non-NULL
+	drivers/net/wireless/ath/ath12k/dp_rx.c:1172 ath12k_get_ppdu_user_index()
+	warn: why is the last element skipped?
 
-drivers/net/wireless/ath/ath12k/mac.c
-    5792 
-    5793         if (arvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
+drivers/net/wireless/ath/ath12k/dp_rx.c
+    1167 static int ath12k_get_ppdu_user_index(struct htt_ppdu_stats *ppdu_stats,
+    1168                                       u16 peer_id)
+    1169 {
+    1170         int i;
+    1171 
+--> 1172         for (i = 0; i < HTT_PPDU_STATS_MAX_USERS - 1; i++) {
 
-type checked here
+What's the - 1 for?  The "HTT_PPDU_STATS_MAX_USERS - 1" is done in
+several places so maybe it's correct but I couldn't figure out what's
+stored in the last element of the array.
 
-    5794                 ret = ath12k_mac_monitor_start(ar);
-    5795                 if (ret)
-    5796                         goto out;
-    5797                 arvif->is_started = true;
-    5798                 goto out;
-    5799         }
-    5800 
-    5801         ret = ath12k_mac_vdev_start(arvif, &ctx->def);
-    5802         if (ret) {
-    5803                 ath12k_warn(ab, "failed to start vdev %i addr %pM on freq %d: %d\n",
-    5804                             arvif->vdev_id, vif->addr,
-    5805                             ctx->def.chan->center_freq, ret);
-    5806                 goto out;
-    5807         }
-    5808 
---> 5809         if (arvif->vdev_type != WMI_VDEV_TYPE_MONITOR && ar->monitor_vdev_created)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-No need to check again
-
-    5810                 ath12k_mac_monitor_start(ar);
-    5811 
-    5812         arvif->is_started = true;
-    5813 
-    5814         /* TODO: Setup ps and cts/rts protection */
-    5815 
-    5816 out:
-    5817         mutex_unlock(&ar->conf_mutex);
-    5818 
-    5819         return ret;
-    5820 }
+    1173                 if (ppdu_stats->user_stats[i].is_valid_peer_id) {
+    1174                         if (peer_id == ppdu_stats->user_stats[i].peer_id)
+    1175                                 return i;
+    1176                 } else {
+    1177                         return i;
+    1178                 }
+    1179         }
+    1180 
+    1181         return -EINVAL;
+    1182 }
 
 regards,
 dan carpenter
