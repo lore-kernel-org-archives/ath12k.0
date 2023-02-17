@@ -4,53 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6318C05027
-	for <ath12k@archiver.kernel.org>; Fri, 17 Feb 2023 07:28:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66962C05027
+	for <ath12k@archiver.kernel.org>; Fri, 17 Feb 2023 16:04:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lBgDfXpxzI6H6AnrdvHCgh5Ro+dl7s/NovXrTkF3XAc=; b=LVEe7bsJ8cPB+J
-	3cvuLsVcCiR3tp+y5Jj5aJ65Hjy/xFK4W0/QLeqkobaznLE+t+wBYn+ko0HUojt9OJTadpJQCipun
-	5jcOKwHdUqsToL/aEBNRrqRRSdibLvW8UufDxcgnFohAnY8QpPEAHzYrzSmrWXyHOw602COm7PGY4
-	zDJCtxHUsq1yylQiTrlqTSl4fnKSPJLg3mrQhvVVoaUftZwtR6xF+sS8Iwm3jO6vW4kkJ1UFcEbti
-	GzOWLBGXJwJrzhsWDIHkEM+3FOR7ef2ZJnSe0a/XDIHuCtNpnu+a0Sruoep859NLm4Dx4uGPhQfnY
-	Dck/jklTcb08uB4yiUGQ==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kWprYjkjttTIybleFqFsXtEiwpUnCakYKWA1d8GmSvA=; b=JsEvZQKEQKBUPL
+	rXTLhk7jrnUs1qiqcnFKDFxjZXbKm78Uuxk2KrNRDW7N/xFc6A4pJfEBo8bCK26QEUr8I3f9izhYj
+	hLGe6fOYQmWIWO6AnMQmviYpscWOuf0jYju6jIiYf2YrNmnXtGCndihEso1saX9HBlqHup5IcTUfZ
+	Dmbf1XLGI73NrYHcveIZJ20sjh5McxwyE+po6bV3gont8t5pI6pVrysyyRgYrU/7/5tyFuhTl/UYD
+	WtDrFem6g6KQGYjSPZtcJiUx7HLYXU9FqTJJfP+exB6TpuJQF5OpjnGDt+vhci3XRIt3XvkFSzwJe
+	kgCyBuQIyLAarbJwfUPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSvAi-00D5nW-5e
-	for ath12k@archiver.kernel.org; Fri, 17 Feb 2023 07:28:44 +0000
-Received: from szxga02-in.huawei.com ([45.249.212.188])
+	id 1pT3E5-00Eygj-RW
+	for ath12k@archiver.kernel.org; Fri, 17 Feb 2023 16:04:45 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSvAf-00D5lF-69
-	for ath12k@lists.infradead.org; Fri, 17 Feb 2023 07:28:43 +0000
-Received: from dggpemm100007.china.huawei.com (unknown [172.30.72.56])
-	by szxga02-in.huawei.com (SkyGuard) with ESMTP id 4PJ3JQ4pfqzRsCN;
-	Fri, 17 Feb 2023 15:25:58 +0800 (CST)
-Received: from huawei.com (10.175.103.91) by dggpemm100007.china.huawei.com
- (7.185.36.116) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.6; Fri, 17 Feb
- 2023 15:28:34 +0800
-From: Yang Yingliang <yangyingliang@huawei.com>
-To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-CC: <kvalo@kernel.org>, <quic_kvalo@quicinc.com>, <quic_jjohnson@quicinc.com>,
-	<quic_bselvara@quicinc.com>, <quic_srirrama@quicinc.com>,
-	<quic_pradeepc@quicinc.com>, <quic_bqiang@quicinc.com>,
-	<yangyingliang@huawei.com>, <liwei391@huawei.com>
-Subject: [PATCH -next] wifi: ath12k: use kfree_skb() instead of kfree()
-Date: Fri, 17 Feb 2023 15:27:39 +0800
-Message-ID: <20230217072739.181304-1-yangyingliang@huawei.com>
-X-Mailer: git-send-email 2.25.1
+	id 1pT3E3-00EygI-0c
+	for ath12k@lists.infradead.org; Fri, 17 Feb 2023 16:04:44 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 8DA1AB82C82;
+	Fri, 17 Feb 2023 16:04:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F062C433D2;
+	Fri, 17 Feb 2023 16:04:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1676649880;
+	bh=MhbECQnoKSy05RSvXladUTSAdb/Mb7zR8TEQqOIMZ6c=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=DGJXci3x60y9O+nZEq+OdbAoI6bpewskbhX947OXu7XRLiKbxPjYUgybyEyACvgzr
+	 /GsI6BHpkS+Qz1jmTqcb0FGh+QYW4iAIe6DqB1cRwPEpWSxqAlOKV8zZkLPrZbQ0Tc
+	 QHBlht8mYhGpm2WLJiMEWnLM6bkajPudXzudtd78jbwGspVJp/LRTyV2hQi+Q2/Uc9
+	 WtEsLfsDhrB5BCgneqOM/I6JNphsENDkyES5wlACULuG9UXDCJIpMhmhtB35Rl9QpX
+	 z6+GzVRxqSjELTLVyiL+wwPmWASwYlnCCinvp4SvNtMKMBJxwDyKjgwHK5cl8506H0
+	 f2akMTLj3es7A==
 MIME-Version: 1.0
-X-Originating-IP: [10.175.103.91]
-X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
- dggpemm100007.china.huawei.com (7.185.36.116)
-X-CFilter-Loop: Reflected
+Subject: Re: [PATCH][next] wifi: ath12k: Fix spelling mistakes in warning
+ messages
+ and comments
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20230214092122.265336-1-colin.i.king@gmail.com>
+References: <20230214092122.265336-1-colin.i.king@gmail.com>
+To: Colin Ian King <colin.i.king@gmail.com>
+Cc: "David S . Miller" <davem@davemloft.net>,
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+ Paolo Abeni <pabeni@redhat.com>, ath12k@lists.infradead.org,
+ linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
+Message-ID: <167664987616.8263.15640226468725297685.kvalo@kernel.org>
+Date: Fri, 17 Feb 2023 16:04:38 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230216_232841_425214_2FEEC636 
-X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-CacheID: sfid-20230217_080443_237603_6474B59F 
+X-CRM114-Status: UNSURE (   7.21  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -68,30 +79,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The sk_buff should be freed with kfree_skb(), replace
-the kfree() with kfree_skb().
+Colin Ian King <colin.i.king@gmail.com> wrote:
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
----
- drivers/net/wireless/ath/ath12k/dp_tx.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> There are quite a few spelling mistakes in warning messages and a lot
+> of the comments. Fix these.
+> 
+> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 95294f35155c..fd8d850f9818 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -270,7 +270,7 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_vif *arvif,
- 					  skb_ext_desc->len, DMA_TO_DEVICE);
- 		ret = dma_mapping_error(ab->dev, ti.paddr);
- 		if (ret) {
--			kfree(skb_ext_desc);
-+			kfree_skb(skb_ext_desc);
- 			goto fail_unmap_dma;
- 		}
- 
+Patch applied to ath-next branch of ath.git, thanks.
+
+480c9df57787 wifi: ath12k: Fix spelling mistakes in warning messages and comments
+
 -- 
-2.25.1
+https://patchwork.kernel.org/project/linux-wireless/patch/20230214092122.265336-1-colin.i.king@gmail.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
 -- 
