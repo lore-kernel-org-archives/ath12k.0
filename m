@@ -4,60 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A1C8C64ED6
-	for <ath12k@archiver.kernel.org>; Wed, 22 Feb 2023 10:29:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2947C636D6
+	for <ath12k@archiver.kernel.org>; Wed, 22 Feb 2023 16:40:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zpXp9czCTJ+OxLbuh6RhMrNaJsUwVKd+xGDqG8j1cp4=; b=SY5J8rFKpeSKr6
-	jEPealD4RYf/yyRB7dRe/D9VLHHBy0HwahE/uyDHeYqu2mId2UDrHdfv4yHXyp31X/QJ2OolrVtHq
-	ejHN4CS8SqcLiCc/nJjM/t12+i+yVtfU6D/6SigmR4ITr0rN7Pbg24lzTfwJsReb4/gaW+V1JKaD3
-	Ovo69rOV2CA0kf7PsfgpzEuqQTrMTbYjouIktzrF3HOD9PMZLl0+s0ZWvXGlIWa4R1mXcm7DXAb3Z
-	6F1JCqukJuC7g22KzAwb4d+CCP58reKV/2fYYhOaLbjBlYWDYun32y+5gJWQ6miMdraMGpjlI0gqG
-	z7gJP3/d5gBcCUn9gfhQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=q+BXyfCc4WmytJDdDrBWtjfe7r4i67moyQTO/zerPTM=; b=Z2qhhh3Eao+QW8
+	8OAJ+w32PhTcGt7dfOyVP9sUKERIuW2FheApBYsIh1ZNUCXZq4Ji7mql4b60l4QACa0BJAYH2OhYr
+	gzTIeVQZinkgAd1KWds/43+42O61FtaZFoVBuXdHqKvz0KPgPxEgq9r+Iq3zi2yzC7r8608NvL3BT
+	X2i07WuiZUXjPvnpFZVWZRmHIHtvZtCIujm+j23j78DuAgIVtGBs8+s+Q6FNkVjGQxQfWFdTeVo3j
+	m6kykxf4Cp9IGDB8mqsOP95mutFQEjkSczlt/tHr66tsclEk9YnUm53Ssdcwo/mEDLvDr3ync15Sh
+	JS5bfGb9QM6WT/MSG6xA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pUmNZ-00Bvu4-VL
-	for ath12k@archiver.kernel.org; Wed, 22 Feb 2023 10:29:41 +0000
+	id 1pUsAG-00D3qv-5J
+	for ath12k@archiver.kernel.org; Wed, 22 Feb 2023 16:40:20 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pUlmD-00Bcez-16
-	for ath12k@lists.infradead.org; Wed, 22 Feb 2023 09:51:06 +0000
+	id 1pUsAD-00D3q6-Oz
+	for ath12k@lists.infradead.org; Wed, 22 Feb 2023 16:40:19 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 70310612A1;
-	Wed, 22 Feb 2023 09:51:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01EE0C433EF;
-	Wed, 22 Feb 2023 09:51:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4A0DA614C4
+	for <ath12k@lists.infradead.org>; Wed, 22 Feb 2023 16:40:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30514C433EF;
+	Wed, 22 Feb 2023 16:40:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1677059463;
-	bh=J4Rdt/UTPBYVv3Psrg0L5jzWK/A8zDA7m7xO+uuzOKQ=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=ULvBjhZn4DPulCdA77rdKBi2bG1I786puKiAQ0INmKJl/qMOx7BgNpielSrtlYCFB
-	 I/H+smNZOs8tNxELiFD0DvnN96fkOnX0uB/jlmoxPLKq+IbPKe7TLYZjw9nYOGcpsQ
-	 WRQT+m72GK5KyiOUXIvouC40T3udc+DSpclILSbPCrngWFt3D8bXiGjIIE5qOIru5m
-	 NRYL8yYpXdJpqjZ2bwi0hsvlTzSn3a+H2z6MciPwnVbgEnPn/2KauF6AyJ2xc40huc
-	 6xtQ3CmL+PUoLau3Sxg4Y2q6qct7wZOSkbIUlwdEQdIan82nMUpkH6MhA1Lz9fitrd
-	 7bTB7ER2DoVJA==
-MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: PCI ops for wakeup/release MHI
+	s=k20201202; t=1677084016;
+	bh=Cq5LJA51WZMVZRD+6jr03EpdMGj/1bo1DYkBpIiNA9o=;
+	h=From:To:Cc:Subject:Date:From;
+	b=c5y0rKj7bsPD2J77uL3PPZe9c2tCU58PBGI25U3vjN2hovtM31xSAqNc3fVFCsQk4
+	 NgBdS/XLI+DkaJC24TC5/zNut4DK39LCX+sh3x4tH5UoYYdHSbdy0NXvLE6yV/IBgo
+	 Yc//bO12ewrlzCfF+dN2AKLAl8JpOG1u4i8Jy6D+dOy/lqM7/pbAiFTghAH64/Li9i
+	 qMsuCam5fOGQVcYmTjGOKi65JCm9tj3Ck35HR5Q3ViYZ5/C+bCNIUKsvq+yHbhDWaL
+	 e9xtHKf/aKUhc8C2mCJbMnKQJczQoKEbRP7AyJlOQbyTyI827nquJPvpke09twI9Fi
+	 s7hWyDiaVrzqQ==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230123095141.5310-1-quic_rgnanase@quicinc.com>
-References: <20230123095141.5310-1-quic_rgnanase@quicinc.com>
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <167705946127.25767.8864744237899074037.kvalo@kernel.org>
-Date: Wed, 22 Feb 2023 09:51:02 +0000 (UTC)
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: remove memset with byte count of 278528
+Date: Wed, 22 Feb 2023 18:40:14 +0200
+Message-Id: <20230222164014.860-1-kvalo@kernel.org>
+X-Mailer: git-send-email 2.30.2
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230222_015105_195225_F3F3B0E9 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230222_084017_874091_0F497A40 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,62 +70,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ramya Gnanasekar <quic_rgnanase@quicinc.com> wrote:
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-> Wakeup/release MHI is not needed before pci_read/write for QCN9274.
-> Since wakeup & release MHI is enabled for all QCN9274 and
-> WCN7850, below MHI assert is seen in QCN9274
-> 
-> [  784.906613] BUG: sleeping function called from invalid context at drivers/bus/mhi/host/pm.c:989
-> [  784.906633] in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 0, name: swapper/3
-> [  784.906637] preempt_count: 503, expected: 0
-> [  784.906641] RCU nest depth: 0, expected: 0
-> [  784.906644] 2 locks held by swapper/3/0:
-> [  784.906646]  #0: ffff8ed348e429e0 (&ab->ce.ce_lock){+.-.}-{2:2}, at: ath12k_ce_recv_process_cb+0xb3/0x2f0 [ath12k]
-> [  784.906664]  #1: ffff8ed348e491f0 (&srng->lock_key#3){+.-.}-{2:2}, at: ath12k_ce_recv_process_cb+0xfb/0x2f0 [ath12k]
-> [  784.906678] Preemption disabled at:
-> [  784.906680] [<0000000000000000>] 0x0
-> [  784.906686] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G        W  O       6.1.0-rc2+ #3
-> [  784.906688] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0056.2019.0506.1527 05/06/2019
-> [  784.906690] Call Trace:
-> [  784.906691]  <IRQ>
-> [  784.906693]  dump_stack_lvl+0x56/0x7b
-> [  784.906698]  __might_resched+0x21c/0x270
-> [  784.906704]  __mhi_device_get_sync+0x7d/0x1c0 [mhi]
-> [  784.906714]  mhi_device_get_sync+0xd/0x20 [mhi]
-> [  784.906719]  ath12k_pci_write32+0x75/0x170 [ath12k]
-> [  784.906729]  ath12k_hal_srng_access_end+0x55/0xc0 [ath12k]
-> [  784.906737]  ath12k_ce_recv_process_cb+0x1f3/0x2f0 [ath12k]
-> [  784.906776]  ? ath12k_pci_ce_tasklet+0x11/0x30 [ath12k]
-> [  784.906788]  ath12k_pci_ce_tasklet+0x11/0x30 [ath12k]
-> [  784.906813]  tasklet_action_common.isra.18+0xb7/0xe0
-> [  784.906820]  __do_softirq+0xd0/0x4c9
-> [  784.906826]  irq_exit_rcu+0x88/0xe0
-> [  784.906828]  common_interrupt+0xa5/0xc0
-> [  784.906831]  </IRQ>
-> [  784.906832]  <TASK>
-> 
-> Adding function callbacks for MHI wakeup and release operations.
-> QCN9274 does not need wakeup/release, function callbacks are initialized
-> to NULL. In case of WCN7850, shadow registers are used to access rings.
-> Since, shadow register's offset is less than ACCESS_ALWAYS_OFF,
-> mhi_device_get_sync() or mhi_device_put() to wakeup
-> and release mhi will not be called during service ring accesses.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-03171-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Sparse warns:
 
-Patch applied to ath-next branch of ath.git, thanks.
+drivers/net/wireless/ath/ath12k/dp.c:1471:15: warning: memset with byte count of 278528
 
-80e396586d0a wifi: ath12k: PCI ops for wakeup/release MHI
+There's no need to use memset() here, instead call dma_alloc_coherent() with __GFP_ZERO.
 
+While at it, remove an extra line before the error handler.
+
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index 9926d81c5fe4..ae1645d0f42a 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -1461,15 +1461,12 @@ static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
+ 	dp->reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
+ 						DP_REOQ_LUT_SIZE,
+ 						&dp->reoq_lut.paddr,
+-						GFP_KERNEL);
+-
++						GFP_KERNEL | __GFP_ZERO);
+ 	if (!dp->reoq_lut.vaddr) {
+ 		ath12k_warn(ab, "failed to allocate memory for reoq table");
+ 		return -ENOMEM;
+ 	}
+ 
+-	memset(dp->reoq_lut.vaddr, 0, DP_REOQ_LUT_SIZE);
+-
+ 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab),
+ 			   dp->reoq_lut.paddr);
+ 	return 0;
+
+base-commit: 5aa9ff08c0b71be15a607341fa5344546e19ceb2
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230123095141.5310-1-quic_rgnanase@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.30.2
 
 
 -- 
