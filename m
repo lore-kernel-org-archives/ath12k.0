@@ -4,59 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FC34C6FA8E
-	for <ath12k@archiver.kernel.org>; Fri, 24 Feb 2023 10:24:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAEF6C678D4
+	for <ath12k@archiver.kernel.org>; Tue,  7 Mar 2023 10:47:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19ESwgYQKAwObur387yCgp3MyGdqYNAcsgH9DdCo5zw=; b=TRhc9Pl/+Vf6v2
-	0mar1JjXcewbu0ASXww6Uxk3xyWpS0kwRkqf75Us43H8hqe1y338IHIJ4cg0+iOQvwCWC7kVBEoOC
-	XoJKgxcLyvY21VJqWIUMGN9q9sl/zDoKjMs9yQMQ7/ixfdvT7ckJa947L/J05stv1OzbVN8TjMGS2
-	aEYTHpQUaNqeQxVJFfN/aNkdhyeY4Uei2uvUalz7d3D5sh05MZrmUTrx/SQCOrtEaYyaP4upSFTu+
-	SB0QbxpYHEyg4oQykJUg+thar5EbQXUiMw2A1tYFGU8pGYFCTnv0GGKE9i/ZGIBqYhK504BOCjZDA
-	/yFZqM8/7UuaRql7DrTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ii3c51U1iddSgVxMUWSffh1aEX00XQORtLDURuqfJ9A=; b=LgRRa5Ee1ZKrhk
+	O/aGhOjSFIUrzaV2JSlzjKXkYxR1wVGEg+o2AvmosbCWR0/8pDf+SYA+so9F5Ua6n4V2tat5/Iw+C
+	rSW+wRKp9wcBI++4gEkp1jOGp/GURJ3jMP2gbt/PWq5DuurVIKZR95LKhdnnvSrxznurf9vjXWq2X
+	387CgELsR/IwyrGyUj4s2XledplnI9ULGa88DjoSvTa6zodz3wMXz1oRNptOoHxocSTy6UzGoyg0J
+	ein6xtcX2OmHesX3KfaYJ0sB6Uwk4t4vzw80GYHASzZP4la7wkl5oddxuCqhEtR+yodOeS7sEmcWQ
+	N10UUGy19HUpldFBPUuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVVFA-00203B-IY
-	for ath12k@archiver.kernel.org; Fri, 24 Feb 2023 10:24:00 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1pZUqv-00HLmL-6h
+	for ath12k@archiver.kernel.org; Tue, 07 Mar 2023 10:47:29 +0000
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pVVF3-002005-AC
-	for ath12k@lists.infradead.org; Fri, 24 Feb 2023 10:23:54 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id CD87EB81B2C
-	for <ath12k@lists.infradead.org>; Fri, 24 Feb 2023 10:23:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D684AC433EF;
-	Fri, 24 Feb 2023 10:23:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1677234230;
-	bh=P3K/dE6Hz+oGgt67Eu8N0sVORnlzLCrKHwFeN/XgUoM=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=fqb5yJfyslps0zydxUXMGobn3NfBAnfb3yI9/Y0mcT0tJNJd1ZfqPx1qDKam+crVY
-	 RWgxwX4G6ufmq40KHV2sqOQL8ouTUlHi2xj21L0cvtUHcjNjZQA/nCs+pcELzVQgmg
-	 +gRM0ZRTljQPDEV2k5om7/B5L+ZosTmn+pkO0Z0EB1/eG/kZh7bUolc176/yaN5OMz
-	 VcbXvfdTVYlXfBdgLMuo7wzEyjUVngtT8tYJ2LmNOhRQcVUdNeOG1I32DqxUSY94Xs
-	 V4fLRaEJ933U7oza9OK/ES2P6EO5hP9Le4SC7Gf2iEGAPKWRqJ8szJqMMhjewwj8aR
-	 GoN7IsSJ+FL5Q==
+	id 1pZUqs-00HLl6-HP
+	for ath12k@lists.infradead.org; Tue, 07 Mar 2023 10:47:28 +0000
+Received: from pps.filterd (m0246629.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 327844Eo002231;
+	Tue, 7 Mar 2023 10:47:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding;
+ s=corp-2022-7-12; bh=/tJZ3YePYEELuocuqcOTMWUm8BXxNbj3l4AIZJllPnc=;
+ b=09Z6MRQKK+W7TIbWUTSzYuqnAcP5aCEEW/AgWmYCg7rtI7Ve1+Rs1xSw9uxaVjM70okn
+ bEanX38tbANrZOPOHqQGgONPzTwKy5nUPDxRSfeMyqILEXvs2Sfetl6jriyqjRtnx6nt
+ IBDP82Er1jNG3ihw90PHsmj4m0cmInKEaLGaLW+eg/1S1QiiKON1T1n2JcZCVCNDQopg
+ 8C6WDqM2c46kuXx4xmM8pLw/NPwbWNoQTSFXmRuD4rwnMwVhsjM3rAl+FkhImKHyDFm9
+ 70uXCJhmFnbn5rHMguBpYsu5watTU0trUkPKOZgiGkiP+UXMmpl+M3065VmbL5vyA3Wt 2w== 
+Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta03.appoci.oracle.com [138.1.37.129])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3p4161w529-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Tue, 07 Mar 2023 10:47:14 +0000
+Received: from pps.filterd (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.5/8.17.1.5) with ESMTP id 327AGvID037021;
+	Tue, 7 Mar 2023 10:47:13 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id 3p4txeahvr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Tue, 07 Mar 2023 10:47:13 +0000
+Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 327AlDvT022134;
+	Tue, 7 Mar 2023 10:47:13 GMT
+Received: from ca-dev112.us.oracle.com (ca-dev112.us.oracle.com [10.129.136.47])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTP id 3p4txeahut-1;
+	Tue, 07 Mar 2023 10:47:13 +0000
+From: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
+To: 
+Cc: error27@gmail.com, Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>,
+        Kalle Valo <kvalo@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        Paolo Abeni <pabeni@redhat.com>,
+        P Praneesh <quic_ppranees@quicinc.com>,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        Jeff Johnson <quic_jjohnson@quicinc.com>,
+        Bhagavathi Perumal S <quic_bperumal@quicinc.com>,
+        Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: Add missing unwind goto in ath12k_pci_probe()
+Date: Tue,  7 Mar 2023 02:47:06 -0800
+Message-Id: <20230307104706.240119-1-harshit.m.mogalapalli@oracle.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: remove memset with byte count of 278528
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230222164014.860-1-kvalo@kernel.org>
-References: <20230222164014.860-1-kvalo@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <167723422796.18267.2237295490310604820.kvalo@kernel.org>
-Date: Fri, 24 Feb 2023 10:23:49 +0000 (UTC)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-03-07_04,2023-03-07_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0 mlxscore=0 adultscore=0
+ spamscore=0 suspectscore=0 mlxlogscore=999 phishscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2212070000
+ definitions=main-2303070097
+X-Proofpoint-GUID: Y8xNgqQ2VEOOh30QKLX5QqXehDa4Q4Po
+X-Proofpoint-ORIG-GUID: Y8xNgqQ2VEOOh30QKLX5QqXehDa4Q4Po
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230224_022353_566086_49B059ED 
-X-CRM114-Status: UNSURE (   7.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230307_024726_735904_2CA4AC3D 
+X-CRM114-Status: GOOD (  14.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,26 +100,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> wrote:
+Smatch Warns:
+	drivers/net/wireless/ath/ath12k/pci.c:1198 ath12k_pci_probe()
+	warn: missing unwind goto?
 
-> Sparse warns:
-> 
-> drivers/net/wireless/ath/ath12k/dp.c:1471:15: warning: memset with byte count of 278528
-> 
-> There's no need to use memset() here, instead call dma_alloc_coherent() with __GFP_ZERO.
-> 
-> While at it, remove an extra line before the error handler.
-> 
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Store the error value in ret and use correct label with a goto.
 
-Patch applied to ath-next branch of ath.git, thanks.
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Reported-by: Dan Carpenter <error27@gmail.com>
+Link: https://lore.kernel.org/all/Y+426q6cfkEdb5Bv@kili/
+Suggested-by: Dan Carpenter <error27@gmail.com>
+Signed-off-by: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
+---
+Only Compile tested, found with Smatch.
+---
+ drivers/net/wireless/ath/ath12k/pci.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-28013c356296 wifi: ath12k: remove memset with byte count of 278528
-
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index ae7f6083c9fc..f523aa15885f 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -1195,7 +1195,8 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
+ 			dev_err(&pdev->dev,
+ 				"Unknown hardware version found for QCN9274: 0x%x\n",
+ 				soc_hw_version_major);
+-			return -EOPNOTSUPP;
++			ret = -EOPNOTSUPP;
++			goto err_pci_free_region;
+ 		}
+ 		break;
+ 	case WCN7850_DEVICE_ID:
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230222164014.860-1-kvalo@kernel.org/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.38.1
 
 
 -- 
