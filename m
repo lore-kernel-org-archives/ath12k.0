@@ -4,73 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 286CAC6FD1D
-	for <ath12k@archiver.kernel.org>; Wed, 15 Mar 2023 10:18:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BF82C6FD1D
+	for <ath12k@archiver.kernel.org>; Wed, 15 Mar 2023 11:32:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bu5ht2/LEmTBS22NfvB3QsjddeomOzrtoK56VQAtAkY=; b=CmxB+foGsUYik3
-	Yz4oTPmlg3VGFFmO4Ur/k2TYAMHGu4VuYr7TUodsJ79VLEjHI2dU+P92VKfMgrMLwQ9ofIdyHs9Et
-	opWHCBgBDjpuduly8dQAVaviN5KQNmEwTBVgoEprT4Fl+CNOOah7wwks69sF+fJmqGNhIuDJP6u+D
-	Q73M3ecD11tnWvoR2qJTSk3KOkPC4wRVYcPo2k+CsMlm0QBOJUIvGKA/DxCyejrCs/lYSVvZEvv5+
-	dIAMMebnG6sNFrkwfdWHV8HilnxN0KV0rEot/IVP/LkJ12SiPgyu1GQOPjTj7OJouAoTXr69qhx2A
-	16+URQpHO7AbuFuv2J0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Mz0LvblwwFR0dGXB5G58CVVCOUTt0qszgOxlVJWD6Qw=; b=ADNbrCzaS6sfeD
+	K5a08MrwDhQqmpygqDGI69fNHbrgDrSOxeNRvyVqH24xRtI154lLin/0ysX/LZ2NPzyBAEISGNmEo
+	UoO4iVYP0ny25urlqWHGRJ52fm3uavpJOhAtmlezUJGka5WtHCOdItfocB36n9HXkjSTGsBYEoLiQ
+	V60Thww2B6MQbHDTIajbVq/aFdFdLnrtt8OHc6Ot33zwa2LPi1SqwddBSAkNQJqW5qguv7ef5qwl5
+	W9hS4pi2FdYooSGQzPYM6VhM9tYwoX69riI5MusvhPy8elzlmWO1P4zbn0Fx9V7PeY0dROZbJc5Ij
+	RHXLF28gcPZyETdGnHVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcODQ-00D2aL-2N
+	id 1pcPN3-00DCLM-0p
 	for ath12k@archiver.kernel.org;
-	Wed, 15 Mar 2023 10:18:40 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 15 Mar 2023 11:32:41 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pcODN-00D2Zz-32
+	id 1pcPN0-00DCKF-1z
 	for ath12k@lists.infradead.org;
-	Wed, 15 Mar 2023 10:18:39 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 3DEF361CB0;
-	Wed, 15 Mar 2023 10:18:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B443C4339B;
-	Wed, 15 Mar 2023 10:18:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1678875516;
-	bh=P4PR/J1VSp93ASIxZ95h9QGDLtrqnHpwJX+AZxMNMiA=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=vPDNpTZFF02nnIbA8wP8f0pmHYThgI1wYVo95qD16L+YOup+r/10ImZaBeTsuc4ZC
-	 x5P/eFMQ8Hiw5LsLeWHTse0+HPiCE2fKC6uKnymsiFDLx3EDNGB4gjU+lYXPmXaSx3
-	 LK2sGy/ysXCdSq2DvSfYvvs2eKEoh9a+MWz4TuhXVEPOKTsWzQwqxeJjhhP2lJrAz8
-	 89XxuFPUXDi+hLRqqWjj4uORwAZFnLmjoE2+o//lwbgZCB/tvG9qhAXBs9Ld0/UZA7
-	 hOFt2cbX9sxjlz8qqSoiZxG6P1+TIC/I2/5bIi9g8cMTvWzSJeVgpq4Wb+FcdW0edu
-	 6ekOvkH+HUw1A==
+	Wed, 15 Mar 2023 11:32:40 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 32FALRB2010615;
+	Wed, 15 Mar 2023 11:32:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=J1WFJ4r6F11pSJA5oiRldzV8jK57pPHD9YqfucrMzgg=;
+ b=aYYqh1dzkU9BjSoVc6s8Gmh/aP00f9gMN5TXE0xaw5EmXeI575OVoPfZoN5SjLn7v69y
+ eazvFjBQRq9OPdE6EYVeg2RyR3wXV07gw1A8jOR/bzc1dYLx06aYT3Y7Njt1tZ4msyd9
+ FrrHM7xXlJj2dzaVWxC7EYr9yFzk0SL2DYZBifcP7SmpJnWdtM/LoOaRsm7JDb9LjpaO
+ swt4cpSa4jNG/mZdwYp2G9RDPWqvjGRhXlDsCk3eeL/6Xn58p3xA17iwZ70BXqWTWA/d
+ 5xogq9p4pHPw7EIHaR9m9gI1ji1NLqJ/+6JkLpxytnK9Tk+4lCHVdiHo0qLa0tGQkPMo LA== 
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pb2d2sb4q-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 15 Mar 2023 11:32:36 +0000
+Received: from nasanex01a.na.qualcomm.com ([10.52.223.231])
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 32FBWZ8A013953
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 15 Mar 2023 11:32:35 GMT
+Received: from aarasahu-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.41; Wed, 15 Mar 2023 04:32:32 -0700
+From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Aditya Kumar Singh
+	<quic_adisi@quicinc.com>,
+        Aaradhana Sahu <quic_aarasahu@quicinc.com>
+Subject: [PATCH] wifi: ath12k: fix firmware assert during channel switch for peer sta
+Date: Wed, 15 Mar 2023 17:02:02 +0530
+Message-ID: <20230315113202.8774-1-quic_aarasahu@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: Add missing unwind goto in
- ath12k_pci_probe()
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230307104706.240119-1-harshit.m.mogalapalli@oracle.com>
-References: <20230307104706.240119-1-harshit.m.mogalapalli@oracle.com>
-To: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
-Cc: unlisted-recipients:;
- (no To-header on input), error27@gmail.com,
- Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>,
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- P Praneesh <quic_ppranees@quicinc.com>,
- Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
- Jeff Johnson <quic_jjohnson@quicinc.com>,
- Bhagavathi Perumal S <quic_bperumal@quicinc.com>,
- Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org,
- linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <167887550837.27926.11659991726085359589.kvalo@kernel.org>
-Date: Wed, 15 Mar 2023 10:18:33 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 4nidtc69RaKM5lEox-NkPTyWGMqNMK-N
+X-Proofpoint-ORIG-GUID: 4nidtc69RaKM5lEox-NkPTyWGMqNMK-N
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-03-15_04,2023-03-15_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ lowpriorityscore=0 bulkscore=0 adultscore=0 malwarescore=0 mlxscore=0
+ phishscore=0 mlxlogscore=999 impostorscore=0 clxscore=1011 spamscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2302240000 definitions=main-2303150098
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230315_031838_016724_D91A60CF 
-X-CRM114-Status: UNSURE (   7.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230315_043238_774041_B87336CB 
+X-CRM114-Status: GOOD (  24.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,32 +96,237 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com> wrote:
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
 
-> Smatch Warns:
->         drivers/net/wireless/ath/ath12k/pci.c:1198 ath12k_pci_probe()
->         warn: missing unwind goto?
-> 
-> Store the error value in ret and use correct label with a goto.
-> 
-> Only Compile tested, found with Smatch.
-> 
-> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-> Reported-by: Dan Carpenter <error27@gmail.com>
-> Link: https://lore.kernel.org/all/Y+426q6cfkEdb5Bv@kili/
-> Suggested-by: Dan Carpenter <error27@gmail.com>
-> Signed-off-by: Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
-> Reviewed-by: Simon Horman <simon.horman@corigine.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Currently, during change in bandwidth for peer sta, host sends the
+new value of channel width via WMI_PEER_CHWIDTH set peer param command
+alone. This can lead to firmware assert in some scenario since before
+the command, firmware was having value of channel width and its
+corresponding phymode. After the command, host tries to set the new
+value of channel width alone which can become incompatible when compared
+with its phymode.
 
-Patch applied to ath-next branch of ath.git, thanks.
+For example:
 
-488d9a484f96 wifi: ath12k: Add missing unwind goto in ath12k_pci_probe()
+Bandwidth Upgrade
+~~~~~~~~~~~~~~~~~~
+After association, sta is in 40 MHz bandwidth in 11ax-HE40 phymode.
+After bandwidth upgrades, sta moves to 80 MHz but as per phymode,
+max bandwidth is still 40 MHz. Hence, firmware assert is seen.
+So in this case first phymode should be moved to 11ax-HE80
+followed by bandwidth change.
 
+Bandwidth Downgrade
+~~~~~~~~~~~~~~~~~~
+Similarly, reverse of above is also possible when sta is in 40 MHz
+bandwidth in 11ax-HE40 phymode. Bandwidth should be changed to 20 MHz
+and if host sends phymode first then, phymode will become 11ax-HE20
+and will be incompatible with bandwidth value and hence firmware
+assert will be seen. Hence, in this case first channel width
+should be set followed by phymode.
+
+Fix this issue by sending WMI set peer param command for phymode as
+well as bandwidth based on the type of bandwidth change i.e upgrade
+or downgrade.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/core.h |   1 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 117 +++++++++++++++++++------
+ 2 files changed, 89 insertions(+), 29 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index dffa687ee40e..9439052a652e 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -395,6 +395,7 @@ struct ath12k_sta {
+ 	u8 rssi_comb;
+ 	struct ath12k_rx_peer_stats *rx_stats;
+ 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
++	u32 bw_prev;
+ };
+ 
+ #define ATH12K_MIN_5G_FREQ 4150
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index bf7e5b6977b2..d7daeff2170b 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -3220,10 +3220,11 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
+ 	enum nl80211_band band;
+ 	const u8 *ht_mcs_mask;
+ 	const u16 *vht_mcs_mask;
+-	u32 changed, bw, nss, smps;
++	u32 changed, bw, nss, smps, bw_prev;
+ 	int err, num_vht_rates;
+ 	const struct cfg80211_bitrate_mask *mask;
+ 	struct ath12k_wmi_peer_assoc_arg peer_arg;
++	enum wmi_phy_mode peer_phymode;
+ 
+ 	arsta = container_of(wk, struct ath12k_sta, update_wk);
+ 	sta = container_of((void *)arsta, struct ieee80211_sta, drv_priv);
+@@ -3243,6 +3244,7 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
+ 	arsta->changed = 0;
+ 
+ 	bw = arsta->bw;
++	bw_prev = arsta->bw_prev;
+ 	nss = arsta->nss;
+ 	smps = arsta->smps;
+ 
+@@ -3255,11 +3257,53 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
+ 			   ath12k_mac_max_vht_nss(vht_mcs_mask)));
+ 
+ 	if (changed & IEEE80211_RC_BW_CHANGED) {
+-		err = ath12k_wmi_set_peer_param(ar, sta->addr, arvif->vdev_id,
+-						WMI_PEER_CHWIDTH, bw);
+-		if (err)
+-			ath12k_warn(ar->ab, "failed to update STA %pM peer bw %d: %d\n",
+-				    sta->addr, bw, err);
++		ath12k_peer_assoc_h_phymode(ar, arvif->vif, sta, &peer_arg);
++		peer_phymode = peer_arg.peer_phymode;
++
++		if (bw > bw_prev) {
++			/* Phymode shows maximum supported channel width, if we
++			 * upgrade bandwidth then due to sanity check of firmware,
++			 * we have to send WMI_PEER_PHYMODE followed by
++			 * WMI_PEER_CHWIDTH
++			 */
++			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac BW upgrade for sta %pM new BW %d, old BW %d\n",
++				   sta->addr, bw, bw_prev);
++			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++							arvif->vdev_id, WMI_PEER_PHYMODE,
++							peer_phymode);
++			if (err) {
++				ath12k_warn(ar->ab, "failed to update STA %pM peer phymode %d: %d\n",
++					    sta->addr, peer_phymode, err);
++				goto err_rc_bw_changed;
++			}
++			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++							arvif->vdev_id, WMI_PEER_CHWIDTH,
++							bw);
++			if (err)
++				ath12k_warn(ar->ab, "failed to update STA %pM peer bw %d: %d\n",
++					    sta->addr, bw, err);
++		} else {
++			/* When we downgrade bandwidth this will conflict with phymode
++			 * and cause to trigger firmware crash. In this case we send
++			 * WMI_PEER_CHWIDTH followed by WMI_PEER_PHYMODE
++			 */
++			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac BW downgrade for sta %pM new BW %d,old BW %d\n",
++				   sta->addr, bw, bw_prev);
++			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++							arvif->vdev_id, WMI_PEER_CHWIDTH,
++							bw);
++			if (err) {
++				ath12k_warn(ar->ab, "failed to update STA %pM peer bw %d: %d\n",
++					    sta->addr, bw, err);
++				goto err_rc_bw_changed;
++			}
++			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++							arvif->vdev_id, WMI_PEER_PHYMODE,
++							peer_phymode);
++			if (err)
++				ath12k_warn(ar->ab, "failed to update STA %pM peer phymode %d: %d\n",
++					    sta->addr, peer_phymode, err);
++		}
+ 	}
+ 
+ 	if (changed & IEEE80211_RC_NSS_CHANGED) {
+@@ -3321,7 +3365,7 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
+ 					    sta->addr, arvif->vdev_id);
+ 		}
+ 	}
+-
++err_rc_bw_changed:
+ 	mutex_unlock(&ar->conf_mutex);
+ }
+ 
+@@ -3433,6 +3477,34 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 	return ret;
+ }
+ 
++static u32 ath12k_mac_ieee80211_sta_bw_to_wmi(struct ath12k *ar,
++					      struct ieee80211_sta *sta)
++{
++	u32 bw = WMI_PEER_CHWIDTH_20MHZ;
++
++	switch (sta->deflink.bandwidth) {
++	case IEEE80211_STA_RX_BW_20:
++		bw = WMI_PEER_CHWIDTH_20MHZ;
++		break;
++	case IEEE80211_STA_RX_BW_40:
++		bw = WMI_PEER_CHWIDTH_40MHZ;
++		break;
++	case IEEE80211_STA_RX_BW_80:
++		bw = WMI_PEER_CHWIDTH_80MHZ;
++		break;
++	case IEEE80211_STA_RX_BW_160:
++		bw = WMI_PEER_CHWIDTH_160MHZ;
++		break;
++	default:
++		ath12k_warn(ar->ab, "Invalid bandwidth %d in rc update for %pM\n",
++			    sta->deflink.bandwidth, sta->addr);
++		bw = WMI_PEER_CHWIDTH_20MHZ;
++		break;
++	}
++
++	return bw;
++}
++
+ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 				   struct ieee80211_vif *vif,
+ 				   struct ieee80211_sta *sta,
+@@ -3498,6 +3570,13 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 		if (ret)
+ 			ath12k_warn(ar->ab, "Failed to associate station: %pM\n",
+ 				    sta->addr);
++
++		spin_lock_bh(&ar->data_lock);
++
++		arsta->bw = ath12k_mac_ieee80211_sta_bw_to_wmi(ar, sta);
++		arsta->bw_prev = sta->deflink.bandwidth;
++
++		spin_unlock_bh(&ar->data_lock);
+ 	} else if (old_state == IEEE80211_STA_ASSOC &&
+ 		   new_state == IEEE80211_STA_AUTHORIZED) {
+ 		spin_lock_bh(&ar->ab->base_lock);
+@@ -3607,28 +3686,8 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 	spin_lock_bh(&ar->data_lock);
+ 
+ 	if (changed & IEEE80211_RC_BW_CHANGED) {
+-		bw = WMI_PEER_CHWIDTH_20MHZ;
+-
+-		switch (sta->deflink.bandwidth) {
+-		case IEEE80211_STA_RX_BW_20:
+-			bw = WMI_PEER_CHWIDTH_20MHZ;
+-			break;
+-		case IEEE80211_STA_RX_BW_40:
+-			bw = WMI_PEER_CHWIDTH_40MHZ;
+-			break;
+-		case IEEE80211_STA_RX_BW_80:
+-			bw = WMI_PEER_CHWIDTH_80MHZ;
+-			break;
+-		case IEEE80211_STA_RX_BW_160:
+-			bw = WMI_PEER_CHWIDTH_160MHZ;
+-			break;
+-		default:
+-			ath12k_warn(ar->ab, "Invalid bandwidth %d in rc update for %pM\n",
+-				    sta->deflink.bandwidth, sta->addr);
+-			bw = WMI_PEER_CHWIDTH_20MHZ;
+-			break;
+-		}
+-
++		bw = ath12k_mac_ieee80211_sta_bw_to_wmi(ar, sta);
++		arsta->bw_prev = arsta->bw;
+ 		arsta->bw = bw;
+ 	}
+ 
+
+base-commit: 3fa9da4001890def44801dd56d5fbc134689be28
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230307104706.240119-1-harshit.m.mogalapalli@oracle.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.17.1
 
 
 -- 
