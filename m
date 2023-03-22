@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91F9AC6FD1C
-	for <ath12k@archiver.kernel.org>; Wed, 22 Mar 2023 10:06:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 686FBC6FD1F
+	for <ath12k@archiver.kernel.org>; Wed, 22 Mar 2023 10:06:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AYMb78eRjP4gUwLR8Th/yPc/4WeksJfhRcQrKx4IQDA=; b=XFPRiFdkGZmSCc
-	3rZo8tiINCgPJa5v5mlRv23/AKANH2si0HBYkI9WCizuBd3V337BGdcPHWI45XNe+/ehtXI98A70Y
-	k5j7eE1PspHjpgHXZy7KfUz+yqpJ2IphEWFBeY/fGOD/iq47yIeCOafWuCC5PWEuRVeEgGh59GYQX
-	3K1XlXXLPBdw2AcuQdDW6qNwuV8UUF4ngHOB0Y69TRpDIhwF6EIEwli5SNbB7sR8QK4hkH3fvzX+v
-	O1g4vfpXBp4d0SnHrZbXoH8gRU0NYhGR3YHjTMcvRNaOvy1RYN5eTBF3yN6a12C0gLfGGOlJiQrw1
-	bCUvCc8CjfdxwPQNOgTg==;
+	List-Owner; bh=20t/nnxeEOSGDuMXt8mPEkq+rrTfSmjuvMYKF+N6UOs=; b=zAnHqUHlWPzD0m
+	XF/KExzPsxJPVdRrbKUqhOr+QLWYNwUWaVdUAxbhebpIwj0/2dlTPZVVYI6XOit+fE+WuOXVyb6hP
+	VYXr6+2+GJP088HR2gRcUsQ51Iw4eh0iMBcRAi/vFT7KKO/bd9LvuNxxAaF86464fdV5xSnfJAyIB
+	O1d4vkCXybhXvsfQNfBh84nPNBQTwpjNaUDJsmLDC3DrwVjjMMIgwmI79BX/fzmxS+PaAl9cT8CDK
+	3DhT9le0YqCuSRCAg3crEye44aOSFWzkg5L9usUnhhc0qJlemg+5XGU999uA9IGwJRyls1dr7DUNp
+	m5aShgCPH0C2tjGVG55Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pevM1-00FZyz-0b
+	id 1pevMN-00Fa2l-0G
 	for ath12k@archiver.kernel.org;
-	Wed, 22 Mar 2023 10:06:01 +0000
+	Wed, 22 Mar 2023 10:06:23 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pevLy-00FZxt-0T
+	id 1pevMK-00Fa1v-00
 	for ath12k@lists.infradead.org;
-	Wed, 22 Mar 2023 10:05:59 +0000
+	Wed, 22 Mar 2023 10:06:21 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9611061F72;
-	Wed, 22 Mar 2023 10:05:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DDDD7C433D2;
-	Wed, 22 Mar 2023 10:05:55 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 8FC6762003;
+	Wed, 22 Mar 2023 10:06:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 40265C433D2;
+	Wed, 22 Mar 2023 10:06:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1679479557;
-	bh=Twu27M3OjVEot50ANfuewirgwxiZlSiBne6ZVJl4WcU=;
+	s=k20201202; t=1679479579;
+	bh=CsjaIYS2qGvXc8fSVyo4ENm6K5YOcQPAEp8BXkXVdM0=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=FF7czHaLiNYmTiSglIMQNVZ6fY2sw8sBtFfiYVbZ9SrYYXbKAcFfGSRyRW5NjIs2t
-	 Z22HXvt4egc8v6TsOb9toWkudXingtth44eKIdzi/r+itYxfBOIVZC9bnSIJLunQT0
-	 c0i+UNrxhbkwc+/IIuXJfCYkUutHbcj4GaKzCzVyvUDRPYaNEdnoe/1unm5fnd0srq
-	 qcXa8Qmfxdo1kCSU+7ojpgvT7FK7plpbPGyMRxMceydGWhKlTHKNap7LJAx1JA8NAj
-	 bqTTsQiw1A/vV3hxV0ALl4egK3Qa/8Q+dMInKuMGnyochqvm3InLaIiZbc3HyrOznq
-	 gOuL6biYq6VJg==
+	b=A0utQ/9PBLEOFiAptg6qkqdK3uZraY0rWphgly/ewcl+wL//YoZ97+MNsMcz+OYbX
+	 jeR5iRCYDil1WCvMhUSCEwvRxTq8IoO9tlOgA5Qt45T/DDowolVZ2zJ5LSyDKd4nPh
+	 qIhQJaWGbPw11BQN+Q/glqhmjjLz6p6vWdCkKTuMHUujJJ7agR1/on+dmteedR4jnr
+	 GhHQD5PdG+Ycb4gOFbGxOv/AvRiWIVgClMrtG6dWXN3r6dbIbtjJV4ckuLOcBPBhhv
+	 UDphR+uhwm5t7y0kgZ/0zs8dgzsZFdinol8l7GYfxX5ms5e2K61383tVYKqmkTkTg+
+	 CS8baoRcAGyow==
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: fix firmware assert during channel switch
- for
- peer sta
+Subject: Re: [PATCH] wifi: ath12k: Identify DFS channel when sending scan
+ channel
+ list command
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230315113202.8774-1-quic_aarasahu@quicinc.com>
-References: <20230315113202.8774-1-quic_aarasahu@quicinc.com>
-To: Aaradhana Sahu <quic_aarasahu@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Aditya Kumar Singh <quic_adisi@quicinc.com>,
- Aaradhana Sahu <quic_aarasahu@quicinc.com>
+In-Reply-To: <20230316041144.7770-1-quic_bqiang@quicinc.com>
+References: <20230316041144.7770-1-quic_bqiang@quicinc.com>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <167947955370.29931.1748538574703666695.kvalo@kernel.org>
-Date: Wed, 22 Mar 2023 10:05:55 +0000 (UTC)
+Message-ID: <167947957332.29931.14263672557733620301.kvalo@kernel.org>
+Date: Wed, 22 Mar 2023 10:06:18 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230322_030558_220327_CF835933 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20230322_030620_080168_F368D049 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,51 +77,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Aaradhana Sahu <quic_aarasahu@quicinc.com> wrote:
+Baochen Qiang <quic_bqiang@quicinc.com> wrote:
 
-> Currently, during change in bandwidth for peer sta, host sends the
-> new value of channel width via WMI_PEER_CHWIDTH set peer param command
-> alone. This can lead to firmware assert in some scenario since before
-> the command, firmware was having value of channel width and its
-> corresponding phymode. After the command, host tries to set the new
-> value of channel width alone which can become incompatible when compared
-> with its phymode.
+> WMI_CHAN_INFO_DFS flag should be set when configuring a DFS channel
+> included in scan channel list. Without it, firmware will not send a
+> probe request frame which is needed in connection to an AP configured
+> with hidden SSID/network_id. So fix this to allow probe request frames
+> to be sent in cases where a beacon frame has been seen on the channel
+> first.
 > 
-> For example:
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Bandwidth Upgrade
-> ~~~~~~~~~~~~~~~~~~
-> After association, sta is in 40 MHz bandwidth in 11ax-HE40 phymode.
-> After bandwidth upgrades, sta moves to 80 MHz but as per phymode,
-> max bandwidth is still 40 MHz. Hence, firmware assert is seen.
-> So in this case first phymode should be moved to 11ax-HE80
-> followed by bandwidth change.
-> 
-> Bandwidth Downgrade
-> ~~~~~~~~~~~~~~~~~~
-> Similarly, reverse of above is also possible when sta is in 40 MHz
-> bandwidth in 11ax-HE40 phymode. Bandwidth should be changed to 20 MHz
-> and if host sends phymode first then, phymode will become 11ax-HE20
-> and will be incompatible with bandwidth value and hence firmware
-> assert will be seen. Hence, in this case first channel width
-> should be set followed by phymode.
-> 
-> Fix this issue by sending WMI set peer param command for phymode as
-> well as bandwidth based on the type of bandwidth change i.e upgrade
-> or downgrade.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
-> Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
 Patch applied to ath-next branch of ath.git, thanks.
 
-cbc0008c9b39 wifi: ath12k: fix firmware assert during channel switch for peer sta
+4c26033d75e4 wifi: ath12k: Identify DFS channel when sending scan channel list command
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230315113202.8774-1-quic_aarasahu@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230316041144.7770-1-quic_bqiang@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
