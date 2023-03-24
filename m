@@ -4,66 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D934C77B61
-	for <ath12k@archiver.kernel.org>; Thu, 23 Mar 2023 11:32:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E403C77B60
+	for <ath12k@archiver.kernel.org>; Fri, 24 Mar 2023 14:48:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KInyMHVdNgovay1FL3TKB0QIVlzk8+/0IoxFVI5XXCw=; b=dZkgQ7gyemutsi
-	ux+NN1OwgHHeL2n3Ad1fbOBVT7NgS8fJ4CLl/uH3HzNALzZJlNawNDSE6dAuDHLBIjfTmQa+nWcuj
-	eebwD9WfyKHvhrwItAvyQWcVKWclqtyG+TUJVgmkQ/Obb6WKX0fPskbWEVvzRKr9L2V7ZjDCSxt3t
-	QDx9ljAbeoTJg4Bw+Q8rkK1W82HPkZnkzAYBUn04y/aXkZP7j1WfsbHcGJQjKqC/l61Ej18kutxNs
-	FVpf2WHzoTnfbxQdV7WeWZopulElUq4G7Egh2XjsZnp6piZxtr9MwhDGE4HjPVhP1+RCC9F4oLIRo
-	ETEpaYtP68xIqBNAIHmw==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Vv7jWR7yvJ9emrXUiaSZrB3C/GP10P1cC9GM3/iHrqs=; b=Fag5lf7GZgEmYK
+	aobMJCi1kjDliZuk8a2NZ8GRXuhinZW2w9E56PozUMsSn0mL2H+Xueaxv+vwaE7PXrtN8MWjgx4Sk
+	lSQsQBaCnPN/z80nbe49oGEE+/KHV55xwLxyEHRX8QiQfSORLXD0hbL3kG7AnOs9et2EUMVEdob0R
+	fx6AqcC9T/WctnPpBs11x9Wql+KhqA2WrZASG8H34PymXBnwD6/B060l6owHwwgm2hiDBe20bZpLW
+	3Ow6b3RX4Mvdc8/wcbA2bl4CNhN77a+56rzRx64LbEWe4fszjU0+03kA9zOxB4R8prme5faIxp4w6
+	unnM9Gd71a4k9F7GdGng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfJBG-001jrQ-2K
+	id 1pfiiT-004hFt-2T
 	for ath12k@archiver.kernel.org;
-	Thu, 23 Mar 2023 11:32:30 +0000
-Received: from out-30.mta0.migadu.com ([91.218.175.30])
+	Fri, 24 Mar 2023 14:48:29 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pfJB6-001jkd-06
+	id 1pfiiE-004h6k-2j
 	for ath12k@lists.infradead.org;
-	Thu, 23 Mar 2023 11:32:26 +0000
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1679570808;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=rGX1VskIO2esd5iCrlayQqCszF4VgpeWWivrdPxtbg4=;
-	b=DEC0eNYJuul660lvjxaoeqUvLhH6GgzbdTk1AxcCx2Kj5x96BZHZ6aIIUJVK+sncVZDQbr
-	L9l0JBXZZCm4W/vQB+sibYpvqmQhuHR7E+rRTEisdt4Tig3SaANUsw7ODwTgZtri/miSV/
-	x9vbQkNC/yn23vno5LmkGylhSwUG/RI=
-From: Cai Huoqing <cai.huoqing@linux.dev>
-To: cai.huoqing@linux.dev
-Cc: Kalle Valo <kvalo@kernel.org>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Yan-Hsuan Chuang <tony0620emma@gmail.com>,
-	Ping-Ke Shih <pkshih@realtek.com>,
-	ath10k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH 5/5] wifi: rtw89: Remove redundant pci_clear_master
-Date: Thu, 23 Mar 2023 19:26:13 +0800
-Message-Id: <20230323112613.7550-5-cai.huoqing@linux.dev>
-In-Reply-To: <20230323112613.7550-1-cai.huoqing@linux.dev>
-References: <20230323112613.7550-1-cai.huoqing@linux.dev>
+	Fri, 24 Mar 2023 14:48:16 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 048F862B49;
+	Fri, 24 Mar 2023 14:48:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 43C8FC433EF;
+	Fri, 24 Mar 2023 14:48:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1679669293;
+	bh=59V+XprMe1CK/peoI3vFhJIIr76W6/AmLfObBg/sjeM=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=ctDUN9XqTxC+6uAQ+l3dhP49/uqU8qVfj+v/BdGugUoZMF42d1gAVLHZihNESnCuW
+	 SCN5IH0sQki214HCYV0t7/YbCv3tNUT/mRIW67+tTSaxX4NEse6JvWBuoVdw+ZgvNq
+	 xomxSMwKzgMHZYCVXjSCh0vhVK/OwU2n5T+mmT0AI4AIcZ91YqUalQfq68S07/2cB6
+	 wZukIsiPVKb1ik3XmzCItwuzwV9VPK+6KFD2BATyNvnMJzN1HupWwBenilRkvUVqVb
+	 8B9o5yUH1YO8McGy5n9bPRYlo+gX06s6IiMerHU3Gpns93qanCiLqxs6oweVxmnIut
+	 yfP3pqn4W+QaQ==
 MIME-Version: 1.0
-X-Migadu-Flow: FLOW_OUT
+Subject: Re: [PATCH] wifi: ath12k: fill peer meta data during reo_reinject
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20230317162056.20353-1-quic_mdharane@quicinc.com>
+References: <20230317162056.20353-1-quic_mdharane@quicinc.com>
+To: Manish Dharanenthiran <quic_mdharane@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ P Praneesh <quic_ppranees@quicinc.com>,
+ Manish Dharanenthiran <quic_mdharane@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
+Message-ID: <167966928962.27260.2628983691559791238.kvalo@kernel.org>
+Date: Fri, 24 Mar 2023 14:48:12 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230323_043220_307167_E8BA934B 
-X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-CacheID: sfid-20230324_074814_922070_F0DC62C9 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,43 +77,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Remove pci_clear_master to simplify the code,
-the bus-mastering is also cleared in do_pci_disable_device,
-like this:
-./drivers/pci/pci.c:2197
-static void do_pci_disable_device(struct pci_dev *dev)
-{
-	u16 pci_command;
+Manish Dharanenthiran <quic_mdharane@quicinc.com> wrote:
 
-	pci_read_config_word(dev, PCI_COMMAND, &pci_command);
-	if (pci_command & PCI_COMMAND_MASTER) {
-		pci_command &= ~PCI_COMMAND_MASTER;
-		pci_write_config_word(dev, PCI_COMMAND, pci_command);
-	}
+> Firmware expects physical address in the reo entrance ring when MLO is
+> enabled and peer meta data in the queue_addr_lo for the non MLO cases.
+> Current implementation fills the physical address for the non MLO cases
+> and firmware decodes it differently which leads to SOC CSR region
+> access which is not related to firmware/MAC operation.
+> 
+> Fix this by sending only peer_meta data and destination indication bit
+> during non MLO case. This prevents firmware from invalid decoding.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+> Signed-off-by: Manish Dharanenthiran <quic_mdharane@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-	pcibios_disable_device(dev);
-}.
-And dev->is_busmaster is set to 0 in pci_disable_device.
+Patch applied to ath-next branch of ath.git, thanks.
 
-Signed-off-by: Cai Huoqing <cai.huoqing@linux.dev>
----
- drivers/net/wireless/realtek/rtw89/pci.c | 1 -
- 1 file changed, 1 deletion(-)
+4b50d4205207 wifi: ath12k: fill peer meta data during reo_reinject
 
-diff --git a/drivers/net/wireless/realtek/rtw89/pci.c b/drivers/net/wireless/realtek/rtw89/pci.c
-index ec8bb5f10482..75bd3ac4dd71 100644
---- a/drivers/net/wireless/realtek/rtw89/pci.c
-+++ b/drivers/net/wireless/realtek/rtw89/pci.c
-@@ -2694,7 +2694,6 @@ static int rtw89_pci_claim_device(struct rtw89_dev *rtwdev,
- static void rtw89_pci_declaim_device(struct rtw89_dev *rtwdev,
- 				     struct pci_dev *pdev)
- {
--	pci_clear_master(pdev);
- 	pci_disable_device(pdev);
- }
- 
 -- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/patch/20230317162056.20353-1-quic_mdharane@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
 -- 
