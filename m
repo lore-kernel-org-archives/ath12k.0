@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66E5DC76196
-	for <ath12k@archiver.kernel.org>; Fri, 31 Mar 2023 14:49:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64208C77B6C
+	for <ath12k@archiver.kernel.org>; Mon,  3 Apr 2023 13:39:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TCZnmt3etYN5eSZ+fi1AwdqD6y5PXyQXBmXo+LR/KaQ=; b=dmwfNvenxV0X1b
-	uYWJfIaiOKfa/EMIIekgk6HE7xW66mADhMbeNdzNh1gqgGdc4RGyf8kNsJrNVjVc/WRIcG/Dc0i9r
-	rNiUUWCYc5KX/BToLRBWJEZBFu9g9jFl4+CJ8SeMRkOukry2edgZtFgSxp2kb7jDQCQAGWPpEmE6K
-	xGH389fMyq45XghH5gtr92JlmdFjtid6Q+QwI6T3P8U0lil7Z2vEYYg3R5lu4FW+Lhj5sBwsRc0Rq
-	6wGFEqE3fgVgfrjNbgC/hRdcGGY/TUcHMtIqzJ5JCGsiPAAJM8NTQ+IS+xDoJRuUCmMQgFt3Rou1b
-	8XZqMDaKD6cP/djPvDdQ==;
+	List-Owner; bh=4DXvnCwIedmaszFfAXgJOBAvWmP7trUODw8l3uNukXo=; b=IOPf1GxbeqgluV
+	UvjtBUKCirPxwf1Aa2uTreHQ8eQxaYkPd2GQZKbbiO9zM3ZDYvieaasq/iS2A1/Ub/k0FFTU9lGZB
+	55qsCifN2JSg7UA6/0U1c2R2592uGHvHgDQYV+q3C5Bj6fxc6nW8V2tkHZwv9b/hYk7hN6P3z2/VT
+	a5eGaSRtLsHUw5miijj+/TBzxGKL5b8xvZYXmxk/wDC0iW37QvNIvolhAAHM6elVBL9J5QRVoYhH1
+	5jCpqYjXLmabOu4mHAigP1WBO3ElRbcCzT9/xTuyON4RXyHQD/jccdmBfk55D11/Zt/MulUT/BleW
+	Ses6an1767Wz7zGqQ0Kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piG4F-007nF2-02
+	id 1pjKOq-00FUOh-06
 	for ath12k@archiver.kernel.org;
-	Fri, 31 Mar 2023 14:49:27 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Mon, 03 Apr 2023 13:39:08 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piG49-007nD0-1x;
-	Fri, 31 Mar 2023 14:49:23 +0000
+	id 1pjKOl-00FUNU-1V;
+	Mon, 03 Apr 2023 13:39:04 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by sin.source.kernel.org (Postfix) with ESMTPS id 56A57CE2FC0;
-	Fri, 31 Mar 2023 14:49:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D39ACC433EF;
-	Fri, 31 Mar 2023 14:49:14 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 180A3B81ABE;
+	Mon,  3 Apr 2023 13:39:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5D49C433D2;
+	Mon,  3 Apr 2023 13:38:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1680274157;
-	bh=nwc5YPzwUATML1zglVwWiNR73nsURuoCmDlBMPRIh8Y=;
+	s=k20201202; t=1680529140;
+	bh=WCFvnKJDN1ldCJrZMZbHk+9WKFAoxGDQHk9tIhXqgwo=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=i5BirXI10C+WP67AGxYbXoGuzImzyfv7lkGdaXASDjYmzlIqR7xZkKK9cmBYuL62l
-	 xV5KplyHb8fc45zfaP22QaeDtzV2J+yUX36hoJqF/LzJ70zTuse+0F3s5Dg6gyCazE
-	 ZhcfO24xV9BdOQIg2mSqF/ZnfWKeqELg9eCG1cOl+r8nFsBpovy3qBQ17R0DQlTc53
-	 i0euRVEG6uKQAPPFRk3PNoFnS0y3+TKW5yJKqCTHkreKaTe8TT2WEu4ktJgN6vZ0dg
-	 WwFMrOkXvatdH99kpswLnY3JO687UJSBz1yBZe9KQWKebWpFztIf3F4EO3LH4s11m7
-	 tH5idFt/LBDpw==
+	b=bQx4o3H71KLPaOm6ptTMMh0RvtxCrxsDEkwm4PMtWC9GyNKGMDETnrLnj0Jy5rBJh
+	 e0AykclcdzyEyZQ2gD3hFOeO71+vIbBx050ZL5UKjSm6AYMU5sd1xtKJkngBkWiWea
+	 zezUPu7foE6Ydwgy28xzGHwitbzYq3KBeU2ofvrgNbum+sb57y8rS1HcQ1Fv5D9I3z
+	 SINpMH6zoFjI5DY/CEIdgFJtEOqZeg/j+2e6yJjNEEZ+XKrf3xIWyVuyxsMnRwRefw
+	 W7rOtuUijJaa4wa0s+pPOVo0A1CbWWFud7YdBH9KG/hBsvFYwZp9ZIwdaicVe4fsQ0
+	 erF1GlQuqxuIw==
 MIME-Version: 1.0
-Subject: Re: [PATCH 4/5] wifi: rtw88: Remove redundant pci_clear_master
+Subject: Re: [PATCH 5/5] wifi: rtw89: Remove redundant pci_clear_master
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230323112613.7550-4-cai.huoqing@linux.dev>
-References: <20230323112613.7550-4-cai.huoqing@linux.dev>
+In-Reply-To: <20230323112613.7550-5-cai.huoqing@linux.dev>
+References: <20230323112613.7550-5-cai.huoqing@linux.dev>
 To: Cai Huoqing <cai.huoqing@linux.dev>
 Cc: cai.huoqing@linux.dev, "David S. Miller" <davem@davemloft.net>,
  Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
@@ -58,11 +58,11 @@ Cc: cai.huoqing@linux.dev, "David S. Miller" <davem@davemloft.net>,
  linux-kernel@vger.kernel.org, ath11k@lists.infradead.org,
  ath12k@lists.infradead.org
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <168027415284.32751.5288169344605905589.kvalo@kernel.org>
-Date: Fri, 31 Mar 2023 14:49:14 +0000 (UTC)
+Message-ID: <168052913602.11825.8401946165259356841.kvalo@kernel.org>
+Date: Mon,  3 Apr 2023 13:38:57 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_074921_839093_C9CDB808 
-X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-CacheID: sfid-20230403_063903_649026_422C79F4 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,14 +102,14 @@ Cai Huoqing <cai.huoqing@linux.dev> wrote:
 > 
 > Signed-off-by: Cai Huoqing <cai.huoqing@linux.dev>
 > Reviewed-by: Simon Horman <simon.horman@corigine.com>
-> Reviewed-by: Ping-Ke Shih <pkshih@realtek.com>
+> Acked-by: Ping-Ke Shih <pkshih@realtek.com>
 
 Patch applied to wireless-next.git, thanks.
 
-e665c6d67e54 wifi: rtw88: Remove redundant pci_clear_master
+5995f7463101 wifi: rtw89: Remove redundant pci_clear_master
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230323112613.7550-4-cai.huoqing@linux.dev/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230323112613.7550-5-cai.huoqing@linux.dev/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
