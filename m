@@ -4,84 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07D25C76188
-	for <ath12k@archiver.kernel.org>; Wed,  5 Apr 2023 05:47:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C043C77B61
+	for <ath12k@archiver.kernel.org>; Mon, 10 Apr 2023 16:23:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+GlZ4+q8KN13XmvGEB1JnSkaLUwAIb+zAKpsItUYbLo=; b=di/F6jtwibPKlC
-	MrSl6AdjGM7CI+jsQSz5A2dJFWleY8svxoX9gOc7bsOBoTsZB+Z8pXXL5T1s5PKW9FZdRdu7wCIco
-	41IqXFF6CZw1NcHPkYhJkcw6T7nJpLCPRA/QHTEqRZZ4VbciBg8Sj1dihX2qgzemb+WEFwv0vCkA3
-	BxPPbHKIDDSjkyNgrAUBfjbsRD4qzXuno6fy8T+W+9cM0yA/wsUihW3O3Kztt/Z5MbKnoZK7yZ9sm
-	5g8hjE83p8+EXKtJNvhw7SbBMMB2rn+XFTh7Oyh2yZ/b2TJAl10tZ5fN3q0oHBmpx/TG0pJj32HRt
-	WTUnDHV+cWgxdoKGgTNw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z69Z1oSouqwgGeFcX9IpTusc7wSgFTfC9txi8tYrIGI=; b=IhVQDkloHeSiI5
+	dGXaZX4Xr9LVR6rPU1uVv6xHKN/Jf+Ojh9k1dyRI8/1iDYgETo7gr5eC11kO5mEcbKxpL8cSnShZp
+	q3yDgsOneOmV7m27xQKE+beXB/FmPOVXLn90sNRPWP0/qWZN0qc0IHHpsLT+aeXaTnJQOsYKyfEJK
+	aCZSIf2KQrTFEQWK5yU69DHk0tT5SoM63kaikAD08b+p/KWf0nvKx8cosP2aeCdD1sR8220lk513D
+	EnE08nAVPj+21wdlSW2gbe0qfES2WGhZm0oQKrGdN4vKoBZ2FVRiW8L20YyeGvbWWj5Z1f77LQcSz
+	1Glv8Xr7mv4aL4+BLPNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjvz5-003QVB-1v
+	id 1pluIG-00FX1W-24
 	for ath12k@archiver.kernel.org;
-	Wed, 05 Apr 2023 05:47:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 10 Apr 2023 16:23:00 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjvz2-003QUW-2Z
+	id 1pluID-00FWza-2d
 	for ath12k@lists.infradead.org;
-	Wed, 05 Apr 2023 05:47:02 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3353qbNx017884;
-	Wed, 5 Apr 2023 05:46:59 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id; s=qcppdkim1;
- bh=zHqRbm1u6+B2/ZCZlA19hv32DhFUyke0y5ISbcE5RVE=;
- b=AZZHnyYZWkFZPV1Va/GJXgPHaVSshyKlFaXl5oBDI5C01Ji2pulS/QGE+n6h9gq7jsv/
- 0ak8/FdUMpo1ULwc415Sj+7DBPOMXQcQYqHQTKKCjE9LlCrk81QPeLx+YD53sAPc7EWH
- 9co9p1U6YQB7BkvACEx/hfH0tZJlkh3qvHuKakWFo+ivMGqud6biecrmMBANhr53zHBs
- +zvkX8OVLTt9B1Km5QvaIWheUbIKPKZfOPwA9bI/oW5exRRBIA7iMA0GgSlvcR07A9M6
- ZwJeZZiI1cmVsb+SCrAWHGWNK0u5CuNUMC6rLb4a89MQ8BsEDVW20xH7mKvU1VzwuuRQ fw== 
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3prpg21sex-1
+	Mon, 10 Apr 2023 16:22:59 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33AFcFTx026807;
+	Mon, 10 Apr 2023 16:22:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=3lJMiVRfvN6h7n2bdTM/qCHW5/XoOFcofVx3jowYF/M=;
+ b=jJSK2P2y+8fQ0f1IwRGlaAzppmAM7gGEZ4P9SuouZjIyLF/qHvgWahWOsRw/opJKhjzn
+ Vb7R747V7f/o/pz36iMu8IScE59F7qPYKofXLHViTxJBY64ZSMVGSpgoFg1jZ7jroMJ6
+ lwofEhaSu8aF9HKcs0bKy0QVkpT5zr2a9oFutDSJomKdDWf/3IxFzGkBAKfiOU1onwrW
+ 5u+unlSNzcKTIzvHgG+JuicQlm36kHNYEQAEy7tED27N0+esq7mHYJsKm5qHRg/oWTAn
+ M8X6gyD0v6yne8HFawnK+ORhFQjDt5D8eeNsJnj8njM8RvNpsBXkdAcH4zUdeNtvGS+9 XQ== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pu0c33cyv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 05 Apr 2023 05:46:59 +0000
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3355k3Ur015810;
-	Wed, 5 Apr 2023 05:46:55 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3ppdpkqtgx-1;
-	Wed, 05 Apr 2023 05:46:55 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3355ksB9016446;
-	Wed, 5 Apr 2023 05:46:54 GMT
-Received: from rgnanase-linux.qualcomm.com (rgnanase-linux.qualcomm.com [10.201.162.135])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3355ksdT016444;
-	Wed, 05 Apr 2023 05:46:54 +0000
-Received: by rgnanase-linux.qualcomm.com (Postfix, from userid 2378837)
-	id 1C00E1103CFA; Wed,  5 Apr 2023 11:16:54 +0530 (IST)
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Karthik M <quic_karm@quicinc.com>,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH] wifi: ath12k: add wait operation for tx management packets for flush from mac80211
-Date: Wed,  5 Apr 2023 11:16:46 +0530
-Message-Id: <20230405054646.7300-1-quic_rgnanase@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-X-QCInternal: smtphost
+	Mon, 10 Apr 2023 16:22:56 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33AGMsfb005885
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Apr 2023 16:22:54 GMT
+Received: from [10.110.38.151] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.42; Mon, 10 Apr
+ 2023 09:22:54 -0700
+Message-ID: <b3282c7d-07c5-8657-fca2-c286f82cb235@quicinc.com>
+Date: Mon, 10 Apr 2023 09:22:53 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v2 06/11] wifi: ath12k: prepare EHT peer assoc parameters
+Content-Language: en-US
+To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+CC: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+References: <20230403225146.14139-1-quic_alokad@quicinc.com>
+ <20230403225146.14139-7-quic_alokad@quicinc.com>
+From: Aloka Dixit <quic_alokad@quicinc.com>
+In-Reply-To: <20230403225146.14139-7-quic_alokad@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: gK1kZe-qpfp11YWv4d0yOQy73ySNZud9
-X-Proofpoint-ORIG-GUID: gK1kZe-qpfp11YWv4d0yOQy73ySNZud9
+X-Proofpoint-GUID: E8N7KmBj_Wjte4GR3RM9ZnvK1SVtU2TI
+X-Proofpoint-ORIG-GUID: E8N7KmBj_Wjte4GR3RM9ZnvK1SVtU2TI
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-05_02,2023-04-04_05,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 adultscore=0
- bulkscore=0 impostorscore=0 clxscore=1015 priorityscore=1501
- suspectscore=0 mlxscore=0 spamscore=0 mlxlogscore=999 lowpriorityscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304050053
+ definitions=2023-04-10_12,2023-04-06_03,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ priorityscore=1501 bulkscore=0 lowpriorityscore=0 phishscore=0 mlxscore=0
+ suspectscore=0 clxscore=1015 spamscore=0 malwarescore=0 adultscore=0
+ mlxlogscore=569 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2304100140
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230404_224700_849514_EC977B67 
-X-CRM114-Status: GOOD (  17.87  )
+X-CRM114-CacheID: sfid-20230410_092257_995303_1E770240 
+X-CRM114-Status: GOOD (  11.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,188 +94,42 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthik M <quic_karm@quicinc.com>
+On 4/3/2023 3:51 PM, Aloka Dixit wrote:
+> Add new parameters and prepare the association data for an EHT peer.
+> MCS data uses the format described in IEEE P802.11be/D2.0, May 2022,
+> 9.4.2.313.4, convert it into the format expected by the firmware.
+> 
+> +	case IEEE80211_STA_RX_BW_320:
+> +		bw = &eht_cap->eht_mcs_nss_supp.bw._320;
+> +		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
+> +				       bw->rx_tx_mcs9_max_nss,
+> +				       bw->rx_tx_mcs11_max_nss,
+> +				       bw->rx_tx_mcs13_max_nss,
+> +				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320],
+> +				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320]);
+> +		arg->peer_eht_mcs_count++;
+> +		fallthrough;
+> +
+> +	case IEEE80211_STA_RX_BW_160:
+> +		bw = &eht_cap->eht_mcs_nss_supp.bw._160;
+> +		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
+> +				       bw->rx_tx_mcs9_max_nss,
+> +				       bw->rx_tx_mcs11_max_nss,
+> +				       bw->rx_tx_mcs13_max_nss,
+> +				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160],
+> +				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160]);
+> +		fallthrough;
+> +
 
-Transmission of management packets are done in a work queue. Sometimes
-the workqueue does not finish Tx immediately, then it lead after the next
-step of vdev delete finished, it start to send the management packet to
-firmware and lead firmware crash.
-
-ieee80211_set_disassoc() have logic of ieee80211_flush_queues() after
-it send_deauth_disassoc() to ath12k, its purpose is make sure the
-deauth was actually sent, so it need to change ath12k to match the
-purpose of mac80211.
-
-To address these issues wait for Tx management as well as Tx data packets.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Karthik M <quic_karm@quicinc.com>
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index a89e66653f04..499b81cd938e 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -706,6 +706,7 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 		idr_for_each(&ar->txmgmt_idr,
- 			     ath12k_mac_tx_mgmt_pending_free, ar);
- 		idr_destroy(&ar->txmgmt_idr);
-+		wake_up(&ar->txmgmt_empty_waitq);
- 	}
- 
- 	wake_up(&ab->wmi_ab.tx_credits_wq);
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index dffa687ee40e..509a9d4450b4 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -532,6 +532,7 @@ struct ath12k {
- 	/* protects txmgmt_idr data */
- 	spinlock_t txmgmt_idr_lock;
- 	atomic_t num_pending_mgmt_tx;
-+	wait_queue_head_t txmgmt_empty_waitq;
- 
- 	/* cycle count is reported twice for each visited channel during scan.
- 	 * access protected by data_lock
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index bf7e5b6977b2..0e5cc477ba56 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4316,6 +4316,21 @@ static int __ath12k_set_antenna(struct ath12k *ar, u32 tx_ant, u32 rx_ant)
- 	return 0;
- }
- 
-+static void ath12k_mgmt_over_wmi_tx_drop(struct ath12k *ar, struct sk_buff *skb)
-+{
-+	int num_mgmt;
-+
-+	ieee80211_free_txskb(ar->hw, skb);
-+
-+	num_mgmt = atomic_dec_if_positive(&ar->num_pending_mgmt_tx);
-+
-+	if (num_mgmt < 0)
-+		WARN_ON_ONCE(1);
-+
-+	if (!num_mgmt)
-+		wake_up(&ar->txmgmt_empty_waitq);
-+}
-+
- int ath12k_mac_tx_mgmt_pending_free(int buf_id, void *skb, void *ctx)
- {
- 	struct sk_buff *msdu = skb;
-@@ -4332,7 +4347,7 @@ int ath12k_mac_tx_mgmt_pending_free(int buf_id, void *skb, void *ctx)
- 	info = IEEE80211_SKB_CB(msdu);
- 	memset(&info->status, 0, sizeof(info->status));
- 
--	ieee80211_free_txskb(ar->hw, msdu);
-+	ath12k_mgmt_over_wmi_tx_drop(ar, skb);
- 
- 	return 0;
- }
-@@ -4416,7 +4431,7 @@ static void ath12k_mgmt_over_wmi_tx_purge(struct ath12k *ar)
- 	struct sk_buff *skb;
- 
- 	while ((skb = skb_dequeue(&ar->wmi_mgmt_tx_queue)) != NULL)
--		ieee80211_free_txskb(ar->hw, skb);
-+		ath12k_mgmt_over_wmi_tx_drop(ar, skb);
- }
- 
- static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
-@@ -4431,7 +4446,7 @@ static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
- 		skb_cb = ATH12K_SKB_CB(skb);
- 		if (!skb_cb->vif) {
- 			ath12k_warn(ar->ab, "no vif found for mgmt frame\n");
--			ieee80211_free_txskb(ar->hw, skb);
-+			ath12k_mgmt_over_wmi_tx_drop(ar, skb);
- 			continue;
- 		}
- 
-@@ -4442,16 +4457,14 @@ static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
- 			if (ret) {
- 				ath12k_warn(ar->ab, "failed to tx mgmt frame, vdev_id %d :%d\n",
- 					    arvif->vdev_id, ret);
--				ieee80211_free_txskb(ar->hw, skb);
--			} else {
--				atomic_inc(&ar->num_pending_mgmt_tx);
-+				ath12k_mgmt_over_wmi_tx_drop(ar, skb);
- 			}
- 		} else {
- 			ath12k_warn(ar->ab,
- 				    "dropping mgmt frame for vdev %d, is_started %d\n",
- 				    arvif->vdev_id,
- 				    arvif->is_started);
--			ieee80211_free_txskb(ar->hw, skb);
-+			ath12k_mgmt_over_wmi_tx_drop(ar, skb);
- 		}
- 	}
- }
-@@ -4482,6 +4495,7 @@ static int ath12k_mac_mgmt_tx(struct ath12k *ar, struct sk_buff *skb,
- 	}
- 
- 	skb_queue_tail(q, skb);
-+	atomic_inc(&ar->num_pending_mgmt_tx);
- 	ieee80211_queue_work(ar->hw, &ar->wmi_mgmt_tx_work);
- 
- 	return 0;
-@@ -5955,6 +5969,13 @@ static void ath12k_mac_op_flush(struct ieee80211_hw *hw, struct ieee80211_vif *v
- 				       ATH12K_FLUSH_TIMEOUT);
- 	if (time_left == 0)
- 		ath12k_warn(ar->ab, "failed to flush transmit queue %ld\n", time_left);
-+
-+	time_left = wait_event_timeout(ar->txmgmt_empty_waitq,
-+				       (atomic_read(&ar->num_pending_mgmt_tx) == 0),
-+				       ATH12K_FLUSH_TIMEOUT);
-+	if (time_left == 0)
-+		ath12k_warn(ar->ab, "failed to flush mgmt transmit queue %ld\n",
-+			    time_left);
- }
- 
- static int
-@@ -6932,6 +6953,7 @@ int ath12k_mac_register(struct ath12k_base *ab)
- 		if (ret)
- 			goto err_cleanup;
- 
-+		init_waitqueue_head(&ar->txmgmt_empty_waitq);
- 		idr_init(&ar->txmgmt_idr);
- 		spin_lock_init(&ar->txmgmt_idr_lock);
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 3e6991120e53..1d303b217758 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -4637,6 +4637,7 @@ static int wmi_process_mgmt_tx_comp(struct ath12k *ar, u32 desc_id,
- 	struct sk_buff *msdu;
- 	struct ieee80211_tx_info *info;
- 	struct ath12k_skb_cb *skb_cb;
-+	int num_mgmt;
- 
- 	spin_lock_bh(&ar->txmgmt_idr_lock);
- 	msdu = idr_find(&ar->txmgmt_idr, desc_id);
-@@ -4660,10 +4661,15 @@ static int wmi_process_mgmt_tx_comp(struct ath12k *ar, u32 desc_id,
- 
- 	ieee80211_tx_status_irqsafe(ar->hw, msdu);
- 
-+	num_mgmt = atomic_dec_if_positive(&ar->num_pending_mgmt_tx);
-+
- 	/* WARN when we received this event without doing any mgmt tx */
--	if (atomic_dec_if_positive(&ar->num_pending_mgmt_tx) < 0)
-+	if (num_mgmt < 0)
- 		WARN_ON_ONCE(1);
- 
-+	if (!num_mgmt)
-+		wake_up(&ar->txmgmt_empty_waitq);
-+
- 	return 0;
- }
- 
--- 
-2.17.1
+'arg->peer_eht_mcs_count++' is missing for 160 MHz case.
+Should I send a follow-up now for the series or wait for comments on the 
+remaining part for some time.
+Thanks.
 
 
 -- 
