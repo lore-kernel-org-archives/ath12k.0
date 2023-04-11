@@ -4,85 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C043C77B61
-	for <ath12k@archiver.kernel.org>; Mon, 10 Apr 2023 16:23:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6987C76196
+	for <ath12k@archiver.kernel.org>; Tue, 11 Apr 2023 10:16:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z69Z1oSouqwgGeFcX9IpTusc7wSgFTfC9txi8tYrIGI=; b=IhVQDkloHeSiI5
-	dGXaZX4Xr9LVR6rPU1uVv6xHKN/Jf+Ojh9k1dyRI8/1iDYgETo7gr5eC11kO5mEcbKxpL8cSnShZp
-	q3yDgsOneOmV7m27xQKE+beXB/FmPOVXLn90sNRPWP0/qWZN0qc0IHHpsLT+aeXaTnJQOsYKyfEJK
-	aCZSIf2KQrTFEQWK5yU69DHk0tT5SoM63kaikAD08b+p/KWf0nvKx8cosP2aeCdD1sR8220lk513D
-	EnE08nAVPj+21wdlSW2gbe0qfES2WGhZm0oQKrGdN4vKoBZ2FVRiW8L20YyeGvbWWj5Z1f77LQcSz
-	1Glv8Xr7mv4aL4+BLPNg==;
+	List-Owner; bh=uTFTRSw8uG6w/T55BsNeuwWVsLEbcTmMMRzXKkPTjwg=; b=cQM7O53Ao8G4Mm
+	7K+QahgzJvCem7os8dFLkYOY7xOeyptXVz34mUtoUVKXFzYgSlqC8iy0ey+cr8HJyKgWx5lMuhw/t
+	azLle4iCBLrIqkDkWlUBGUTeqmOTowYnSanagyPaNMjn1TdPpzGn/q1max4qxhM+t5p0KjqULuqgm
+	QrUSW30htokZ8lHADwl4d0lTEo6kb7ehEVPneE5P7f/hckwwQjwlMbRDPYjk4pktqrlUSTHKNtQqe
+	fQq3I+jsD2qrXFVnG4/lJttW4se0RjSQXebJ8bEnSFIjUmEBaB8wybY453jIYlFcyTQ2IckJJUI9c
+	ltnOvW2PztDJYD+JR3FQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pluIG-00FX1W-24
+	id 1pmB3T-00HDrK-1i
 	for ath12k@archiver.kernel.org;
-	Mon, 10 Apr 2023 16:23:00 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 11 Apr 2023 10:16:51 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pluID-00FWza-2d
-	for ath12k@lists.infradead.org;
-	Mon, 10 Apr 2023 16:22:59 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33AFcFTx026807;
-	Mon, 10 Apr 2023 16:22:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=3lJMiVRfvN6h7n2bdTM/qCHW5/XoOFcofVx3jowYF/M=;
- b=jJSK2P2y+8fQ0f1IwRGlaAzppmAM7gGEZ4P9SuouZjIyLF/qHvgWahWOsRw/opJKhjzn
- Vb7R747V7f/o/pz36iMu8IScE59F7qPYKofXLHViTxJBY64ZSMVGSpgoFg1jZ7jroMJ6
- lwofEhaSu8aF9HKcs0bKy0QVkpT5zr2a9oFutDSJomKdDWf/3IxFzGkBAKfiOU1onwrW
- 5u+unlSNzcKTIzvHgG+JuicQlm36kHNYEQAEy7tED27N0+esq7mHYJsKm5qHRg/oWTAn
- M8X6gyD0v6yne8HFawnK+ORhFQjDt5D8eeNsJnj8njM8RvNpsBXkdAcH4zUdeNtvGS+9 XQ== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pu0c33cyv-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Apr 2023 16:22:56 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33AGMsfb005885
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Apr 2023 16:22:54 GMT
-Received: from [10.110.38.151] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.42; Mon, 10 Apr
- 2023 09:22:54 -0700
-Message-ID: <b3282c7d-07c5-8657-fca2-c286f82cb235@quicinc.com>
-Date: Mon, 10 Apr 2023 09:22:53 -0700
+	id 1pmB3P-00HDjb-2f;
+	Tue, 11 Apr 2023 10:16:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=VBbUCXUzj+FqoSlTXXwTAPkQoNkpCBgeaQh7XK4E1V8=;
+	t=1681208195; x=1682417795; b=nqtRpj5yooOsdUIYzRXLUG+z5c4aaN28BCgghbbe0v3Rc27
+	Ne01A9yQiqC3Kp0gNnQPUd7SUsa+g/GMyamateZb9zfJrURjKjKwN7fz3sGPkd+O/k1vDm+R6AYBk
+	Yf+kd8L9oH9ku/zyIDCfbP1fLzCStqrYqEGAbrtVktKsqXwu6W9XTaI3gKVKfgJz+HcnZix+P8CHr
+	965CmU9RGc7bEsrr+LFMkUuzIOUDB1AZpchT+nF0Mmb2x38DOxoNmOw/zalsYH6w+wdYbb3CwnQFj
+	yWjHjmFJ9+FFO2GUu6bPRQYVE93Rv8EQSGyAAfYH42IOtbSDe2vwMVpJC7LyVLqw==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.96)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1pmB36-00CgG2-2k;
+	Tue, 11 Apr 2023 12:16:28 +0200
+Message-ID: <90618520913ba1e6795403b0ab1aabdb1e374f9d.camel@sipsolutions.net>
+Subject: Re: [PATCH 24/27] wifi: mac80211: implement link switching
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Wen Gong <quic_wgong@quicinc.com>, linux-wireless@vger.kernel.org
+Cc: ath11k@lists.infradead.org, ath12k@lists.infradead.org
+Date: Tue, 11 Apr 2023 12:16:28 +0200
+In-Reply-To: <e315d6bf-67d7-31b3-991d-e6cb78701990@quicinc.com>
+References: <20220902141259.377789-1-johannes@sipsolutions.net>
+	 <20220902161143.d99dfbe65c90.I92385ba882ec984a9a2ad18293173436657e82aa@changeid>
+	 <ca5177fe-3b9f-2309-9afd-1d5e827540f7@quicinc.com>
+	 <50719d34bc48d816d00b56d3d9efdb59e3e51a16.camel@sipsolutions.net>
+	 <7872a08d-fe37-a876-713d-c5ec40c1893f@quicinc.com>
+	 <106ad2b4934efd2f81d51b2e66336954bee7c185.camel@sipsolutions.net>
+	 <e315d6bf-67d7-31b3-991d-e6cb78701990@quicinc.com>
+User-Agent: Evolution 3.46.4 (3.46.4-1.fc37) 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v2 06/11] wifi: ath12k: prepare EHT peer assoc parameters
-Content-Language: en-US
-To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-CC: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-References: <20230403225146.14139-1-quic_alokad@quicinc.com>
- <20230403225146.14139-7-quic_alokad@quicinc.com>
-From: Aloka Dixit <quic_alokad@quicinc.com>
-In-Reply-To: <20230403225146.14139-7-quic_alokad@quicinc.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: E8N7KmBj_Wjte4GR3RM9ZnvK1SVtU2TI
-X-Proofpoint-ORIG-GUID: E8N7KmBj_Wjte4GR3RM9ZnvK1SVtU2TI
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-10_12,2023-04-06_03,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- priorityscore=1501 bulkscore=0 lowpriorityscore=0 phishscore=0 mlxscore=0
- suspectscore=0 clxscore=1015 spamscore=0 malwarescore=0 adultscore=0
- mlxlogscore=569 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304100140
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230410_092257_995303_1E770240 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20230411_031647_861169_71AC285A 
+X-CRM114-Status: GOOD (  13.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,43 +73,31 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/3/2023 3:51 PM, Aloka Dixit wrote:
-> Add new parameters and prepare the association data for an EHT peer.
-> MCS data uses the format described in IEEE P802.11be/D2.0, May 2022,
-> 9.4.2.313.4, convert it into the format expected by the firmware.
+On Mon, 2023-04-03 at 22:15 +0800, Wen Gong wrote:
+> On 3/28/2023 3:39 PM, Johannes Berg wrote:
+> > On Tue, 2023-03-28 at 15:37 +0800, Wen Gong wrote:
+> > > On 3/27/2023 4:31 PM, Johannes Berg wrote:
+> > > ...
+> > > > > Also I see commit(8fb7e2ef4bab mac80211_hwsim: always activate all links) and ieee80211_if_parse_active_links()
+> > > > > will use ieee80211_set_active_links(), so I think ieee80211_set_active_links() has passed test case with some type lower driver/chip?
+> > > > Yes, we have this working on iwlwifi/mvm.
+> > > > 
+> > > > johannes
+> > > May I know how did you test it?
+> > Just writing to the debugfs file. We have various tests using that now.
+> > 
+> Do you mean the various tests using debugfs or using 
+> ieee80211_set_active_links() directly?
 > 
-> +	case IEEE80211_STA_RX_BW_320:
-> +		bw = &eht_cap->eht_mcs_nss_supp.bw._320;
-> +		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
-> +				       bw->rx_tx_mcs9_max_nss,
-> +				       bw->rx_tx_mcs11_max_nss,
-> +				       bw->rx_tx_mcs13_max_nss,
-> +				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320],
-> +				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320]);
-> +		arg->peer_eht_mcs_count++;
-> +		fallthrough;
-> +
-> +	case IEEE80211_STA_RX_BW_160:
-> +		bw = &eht_cap->eht_mcs_nss_supp.bw._160;
-> +		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
-> +				       bw->rx_tx_mcs9_max_nss,
-> +				       bw->rx_tx_mcs11_max_nss,
-> +				       bw->rx_tx_mcs13_max_nss,
-> +				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160],
-> +				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160]);
-> +		fallthrough;
-> +
 
-'arg->peer_eht_mcs_count++' is missing for 160 MHz case.
-Should I send a follow-up now for the series or wait for comments on the 
-remaining part for some time.
-Thanks.
+Yeah the tests write to debugfs.
 
+johannes
 
 -- 
 ath12k mailing list
