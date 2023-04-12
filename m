@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E0DC7619A
-	for <ath12k@archiver.kernel.org>; Tue, 11 Apr 2023 10:18:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1409AC77B71
+	for <ath12k@archiver.kernel.org>; Wed, 12 Apr 2023 09:19:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i7T4IDkY9VeR5UjyVjbnXbk7AzXGdwrxiygfIkGMMgo=; b=FTewSf8NkiuUu/
-	SRE5dWF3UkvptS4gul95fgtN5dJbcnCdpLwaXdW3lg74Nq7Y4CUABjCYjvM7UFXyCkHbt+5P2ydwA
-	qFY7MhqG0kcB10peEP2+sFHd53+gDm9y+xxNS6J0qBbm8LNQkDAs65BmTlg5VHLjGGhY4bTUCcEL3
-	n1Tgz9H5XwRZV+VT+P/evty4SVBegF4U+2XXxly3rcZXRvZVMa+EFwnDMCl2pOPDCpfNQYZZvsu4Y
-	mwzdKWFj1clpNzgNHbiw1h9nVZXGE2dNkRPa8bd2XzVc1jZ27VMVbseRahjMOcE9mM1Pb714nc9Tc
-	afC1KRsQAB59KKGH9lSg==;
+	List-Owner; bh=+5nEeBG8ks7U6H90KLwgojP4846sR7m/ybCBodMF17w=; b=vhTVQRy+Air3dH
+	U1NlwqCTDTHKvBQhp2mgLRSpjAcFkgQaoIijFJG8dlZSyLN6EhrOAgAmethJrLKn8VOMcsD2Nm8Zh
+	62N4bAEfXAxsAgFu6NF+YZ9DoaMqw9ZDvah8YwtsQd0tvt+u50SNQA3vwFuycxW+BiKj1r8OqsLgq
+	e5mWY7lVc0hzxSOTq6ohH7DeTOrz1YmBeZlDRVT7IIAorDi3UEffZH6x4mmGgBE+lSBtBl/LZNbBf
+	xj0Qa47ZSOWyINbQkOsBul2kVSUDgUVZBc2VMSNpfXS/t50d62OLJacGGTEP8i+ESt2ustaL2zMzR
+	RkNFfdpTpmbLvJo/y8pA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmB50-00HEBx-3C
+	id 1pmWdD-002NGx-2O
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Apr 2023 10:18:26 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2] helo=sipsolutions.net)
+	Wed, 12 Apr 2023 09:19:11 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmB4x-00HEB7-2l;
-	Tue, 11 Apr 2023 10:18:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=g37lg8wxChlnTFd5lG/0A02V1vDlQ8YaEb0RUigmtow=;
-	t=1681208303; x=1682417903; b=ojKNw5mpEYwiGT4/qf0SiiWDSMqazzMNSwCSQyMMboR88eM
-	U0bzX3vFRXmfP9eC2vRDROb2aMC9wj/aIdrbtEzsyRvtllwmQqRvq2ZNIeqMcVcG70DaMnpbyTZTG
-	/JMu0X1+ijNgu8IHRyh1q0alKxQmGeH5F2+YHbRibZ271PD5MCw7u4InxZDeWSUUiSa+aP27LboSL
-	JA/LvCHA/oj38zgXTx0A9rCyyyWPQHJHtAJmVJK7WKzNBcq9Nqlr3tY0mk6QJ4cKmqdjJi4eSTdkQ
-	kj1vAUyoMpnk8+6/Z5vRgq6oMfFzm2NYM53JEPhIqitfVc/pl084OB5DF9WaBi2A==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.96)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1pmB4t-00CgIS-1p;
-	Tue, 11 Apr 2023 12:18:19 +0200
-Message-ID: <b352dc03e5b404e4caa7e836a6ee3efde7e17ba6.camel@sipsolutions.net>
-Subject: Re: [PATCH 24/27] wifi: mac80211: implement link switching
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Wen Gong <quic_wgong@quicinc.com>, linux-wireless@vger.kernel.org
-Cc: ath11k@lists.infradead.org, ath12k@lists.infradead.org
-Date: Tue, 11 Apr 2023 12:18:18 +0200
-In-Reply-To: <955cf0b5-8973-86b5-109e-268917d70904@quicinc.com>
-References: <20220902141259.377789-1-johannes@sipsolutions.net>
-	 <20220902161143.d99dfbe65c90.I92385ba882ec984a9a2ad18293173436657e82aa@changeid>
-	 <ca5177fe-3b9f-2309-9afd-1d5e827540f7@quicinc.com>
-	 <50719d34bc48d816d00b56d3d9efdb59e3e51a16.camel@sipsolutions.net>
-	 <955cf0b5-8973-86b5-109e-268917d70904@quicinc.com>
-User-Agent: Evolution 3.46.4 (3.46.4-1.fc37) 
+	id 1pmWdA-002NGC-24
+	for ath12k@lists.infradead.org;
+	Wed, 12 Apr 2023 09:19:10 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id D02C660FD2;
+	Wed, 12 Apr 2023 09:19:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C112C4339B;
+	Wed, 12 Apr 2023 09:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1681291147;
+	bh=bzUvRwr59wVHRCDw1b7h2SYW2FjX9c1LwaIMpXjxMC0=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=gR3sR1H8RAfDkkf3k9GB1vF9MrG4JOn8jsLuLs+DXzFSTyURE39ukj8p13W5O6IAW
+	 gb73EdhiBQ/2dqB0XQ0Cc3iSHdhcwX7nOJ/619pzVD9u4XlJDid4L3LLCIuY5hcsie
+	 70eRKsuDXqhuN9iStOK3Dpg//AIUTyMTo1idEYwGi/z+34dS3WL9/NLR9pkHTntJBr
+	 66m8xpAkB9RaluqcO9fOLby1Zj774yqnrDwGI2BmvIM/NzhB8V8CtrijCnLWGIyGqv
+	 h6INV4zfsVPl0SgQ0o5O8Xm4jpvP9Zan2FahSkfyqhZOx9uUp8jXOR9QJxAkGSRyQT
+	 7wPpzcHGViZ9w==
+From: Kalle Valo <kvalo@kernel.org>
+To: Aloka Dixit <quic_alokad@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Subject: Re: [PATCH v2 06/11] wifi: ath12k: prepare EHT peer assoc parameters
+References: <20230403225146.14139-1-quic_alokad@quicinc.com>
+	<20230403225146.14139-7-quic_alokad@quicinc.com>
+	<b3282c7d-07c5-8657-fca2-c286f82cb235@quicinc.com>
+Date: Wed, 12 Apr 2023 12:19:03 +0300
+In-Reply-To: <b3282c7d-07c5-8657-fca2-c286f82cb235@quicinc.com> (Aloka Dixit's
+	message of "Mon, 10 Apr 2023 09:22:53 -0700")
+Message-ID: <87r0sp8nlk.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230411_031823_891208_6A7125D9 
-X-CRM114-Status: UNSURE (   8.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230412_021908_740533_33706EC7 
+X-CRM114-Status: GOOD (  12.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,26 +77,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2023-04-03 at 22:21 +0800, Wen Gong wrote:
-> 
-> Also it does not have BSS_CHANGED_ASSOC(exists in 
-> ieee80211_set_associated()) for
-> 
-> ieee80211_link_info_change_notify()/ieee80211_vif_cfg_change_notify().
+Aloka Dixit <quic_alokad@quicinc.com> writes:
 
-Well, that's clearly intentional though, since the assoc state is at the
-MLD level, so changing a link doesn't affect the assoc state, right?
-This is also done through _vif_cfg_change_notify().
+> On 4/3/2023 3:51 PM, Aloka Dixit wrote:
+>
+>> Add new parameters and prepare the association data for an EHT peer.
+>> MCS data uses the format described in IEEE P802.11be/D2.0, May 2022,
+>> 9.4.2.313.4, convert it into the format expected by the firmware.
+>>
+>> +	case IEEE80211_STA_RX_BW_320:
+>> +		bw = &eht_cap->eht_mcs_nss_supp.bw._320;
+>> +		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
+>> +				       bw->rx_tx_mcs9_max_nss,
+>> +				       bw->rx_tx_mcs11_max_nss,
+>> +				       bw->rx_tx_mcs13_max_nss,
+>> +				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320],
+>> +				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320]);
+>> +		arg->peer_eht_mcs_count++;
+>> +		fallthrough;
+>> +
+>> +	case IEEE80211_STA_RX_BW_160:
+>> +		bw = &eht_cap->eht_mcs_nss_supp.bw._160;
+>> +		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
+>> +				       bw->rx_tx_mcs9_max_nss,
+>> +				       bw->rx_tx_mcs11_max_nss,
+>> +				       bw->rx_tx_mcs13_max_nss,
+>> +				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160],
+>> +				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160]);
+>> +		fallthrough;
+>> +
+>
+> 'arg->peer_eht_mcs_count++' is missing for 160 MHz case.
+> Should I send a follow-up now for the series or wait for comments on
+> the remaining part for some time.
 
-> So I think low-level driver also need to auto add BSS_CHANGED_ASSOC 
-> logic for the added link as well as the pairwise key you said, right?
-> 
+Sending a new version sounds like the best.
 
-That doesn't make a lot of sense as written, IMHO, but yes if you have
-something you need to do on links during assoc, then you'd have to take
-care of that as well, just like the keys.
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-johannes
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 -- 
 ath12k mailing list
