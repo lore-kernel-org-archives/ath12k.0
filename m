@@ -4,66 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F807C77B72
-	for <ath12k@archiver.kernel.org>; Wed, 12 Apr 2023 10:03:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80DD7C77B61
+	for <ath12k@archiver.kernel.org>; Thu, 13 Apr 2023 21:52:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8gbDMPbfji6MdBw9qc9Ua5EWi29loZ1t8Y1cb2nJyeI=; b=lo3keQ3D8PUXXy
-	953naIu+ZwuMMwh0VV04eIEA5POAaweFZXaBVxL3hr0QXWvynTIz0gG9rP9pCXpboVqitPv6gwptx
-	ymNpJmgTtbFEPa5unLPz5gPy3kTY4NGZXRU/NnmDTJDtMyPDItmxSEX83j0jU/FZzdjanzfPPvlIQ
-	Zs3lKx0wvfGmfeX+glc1qwv2pHr4noJNq6fD2nc1+nFXEiYh5iYHUNx/WhEZNQvDypVk07Kansqxx
-	eUk0z6fYMxRVtmSTeeXJ3R4cUYKqfSHPUdEuk4LDHCdRvbZsUJchaciDFimpOm0+ai7GsDky5Hllj
-	yv5X1q04hHppbha2i/4Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6SVup2l9I+bC1H6FhYJdyZnzkXchz6dbj6J8vdcPmrw=; b=P7yJjYt8T8cV18
+	/SYFLhwaN95+mDEK9onzjz/7ZG/gMP+MAzcxGqdThDSjeSpYhurzWnXh0doGCjgmU1nScvSzYOZ/u
+	7GhQvrgn4bCxOI1foWNlksQgsgiLDj+QFtMiNRKCT9uz1VraaYSXyQm85zwZ1Hi70gJJZX7yerSa5
+	pzPEfDjwl981flOK2262bXhCakeHZ0I6Lf/Bi5X9l8YtdKBzSYuKUXagzUv466NIi4creKaZLFdH9
+	uAda4hPglYm2+2BDQkjDUCWa/DzevWOwyj6SVpnjFo9KYsrs+t6j8iL8FXZzsgzLNHaM44nG8Qk5o
+	npQ5c0Ms2l53kbO1yASA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmXKL-002VLr-0V
+	id 1pn4rZ-007DsS-01
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Apr 2023 10:03:45 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 13 Apr 2023 21:52:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pmXKG-002VKl-2e;
-	Wed, 12 Apr 2023 10:03:42 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 56D9660FC9;
-	Wed, 12 Apr 2023 10:03:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DABB7C4339E;
-	Wed, 12 Apr 2023 10:03:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681293819;
-	bh=tEpNk+OfBlpzjfw7+X3xFjLc7iWcYLC+okDPMAZ5S8E=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=j4vi955Im0u3442ZSdiXtcvq3q4XLPHy5S8sO5xupwMzU9LBAJb2K7uv25yw8DEJY
-	 n6pPjs4Zq1uW/F/0o4SaHjBzLO66/C9dxcYVm7cmBNPUbKFLJZZFBnaRwR7w0O/XSC
-	 Ro4U0XKjCqi3Wqa4/8d0vFMOGC77bFWw50msOjDqrIvt2cel8xAbP4oPaz21rpbcjS
-	 mOFVeg+CcbJt5MvIbAHnmXgd/2y6p0GgJRbCdcej0FcWWTY0MiHtD7DFtz9e04z3Ry
-	 cmtXeDmRgVkhI/tRtOEXNYy+KW7boYNAPjchqm6FeiZrpzY8WI1uL+t5hRQq+CnrDR
-	 Q8erlwVwUQvfA==
+	id 1pn4rU-007Dop-0j
+	for ath12k@lists.infradead.org;
+	Thu, 13 Apr 2023 21:52:14 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33DLprmP011575;
+	Thu, 13 Apr 2023 21:52:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding : content-type; s=qcppdkim1;
+ bh=qK5BffHwalBH1mZF4foeoPBUSfBTezlPBH/whUSXrYo=;
+ b=ExFY9joG5xJtswhnFTneOsPvdovc25XuXdXN0tHC5QaI4GFjyylRAXC9evqMeiRTXO5l
+ 6QGRQpfCVMMMJpi1WcrqTJgPEbQRzK/Dm7dQn7uaYbag3ld+Lx6fSfAS/PiDYn8G86Yd
+ hspt6AeC61Y/sjcXZZRgYrz+RKffleRIxmlBfvVAV/TcSN6Fnrh8HK+e7SXUuUmxtXfz
+ G4ndkCF3PIjJzwPaP0jmY8ipnGSiiPqPiu8GvysOrkFj6d5w0H9PJb6epEQJtMIR/yRq
+ igVngSmIStnCagQcrs+3eZMxQyLkAc/+BuvCH1KeS2T9dVpvrx/5Yjuf6M7X3C7+HyTO ew== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pxbx5swjc-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 13 Apr 2023 21:52:09 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33DLq8AJ026607
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 13 Apr 2023 21:52:08 GMT
+Received: from alokad-linux.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.42; Thu, 13 Apr 2023 14:52:08 -0700
+From: Aloka Dixit <quic_alokad@quicinc.com>
+To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+CC: Aloka Dixit <quic_alokad@quicinc.com>
+Subject: [PATCH v3 02/11] wifi: ath12k: move HE capabilities processing to a new function
+Date: Thu, 13 Apr 2023 14:51:47 -0700
+Message-ID: <20230413215156.2649-3-quic_alokad@quicinc.com>
+X-Mailer: git-send-email 2.39.0
+In-Reply-To: <20230413215156.2649-1-quic_alokad@quicinc.com>
+References: <20230413215156.2649-1-quic_alokad@quicinc.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH 1/5] wifi: ath11k: Remove redundant pci_clear_master
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230323112613.7550-1-cai.huoqing@linux.dev>
-References: <20230323112613.7550-1-cai.huoqing@linux.dev>
-To: Cai Huoqing <cai.huoqing@linux.dev>
-Cc: cai.huoqing@linux.dev, "David S. Miller" <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Yan-Hsuan Chuang <tony0620emma@gmail.com>,
- Ping-Ke Shih <pkshih@realtek.com>, ath10k@lists.infradead.org,
- linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <168129381469.14673.15764454080204541798.kvalo@kernel.org>
-Date: Wed, 12 Apr 2023 10:03:36 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: XVpOxQHRv1mH53PwtjoB_8s9hSbQyXzP
+X-Proofpoint-GUID: XVpOxQHRv1mH53PwtjoB_8s9hSbQyXzP
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
+ definitions=2023-04-13_16,2023-04-13_01,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
+ lowpriorityscore=0 adultscore=0 mlxlogscore=999 malwarescore=0 bulkscore=0
+ spamscore=0 suspectscore=0 priorityscore=1501 clxscore=1015
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2304130194
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230412_030340_896611_1B0D4356 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230413_145212_387628_673CAFB6 
+X-CRM114-Status: GOOD (  18.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,39 +96,161 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Cai Huoqing <cai.huoqing@linux.dev> wrote:
+The function ath12k_mac_copy_sband_iftype_data() is currently
+used HE capabilities propagation but it can be extended to
+include EHT data. Move the HE specific functionality from to
+ath12k_mac_copy_he_cap() to make EHT additions easier.
 
-> Remove pci_clear_master to simplify the code,
-> the bus-mastering is also cleared in do_pci_disable_device,
-> like this:
-> ./drivers/pci/pci.c:2197
-> static void do_pci_disable_device(struct pci_dev *dev)
-> {
->         u16 pci_command;
-> 
->         pci_read_config_word(dev, PCI_COMMAND, &pci_command);
->         if (pci_command & PCI_COMMAND_MASTER) {
->                 pci_command &= ~PCI_COMMAND_MASTER;
->                 pci_write_config_word(dev, PCI_COMMAND, pci_command);
->         }
-> 
->         pcibios_disable_device(dev);
-> }.
-> And dev->is_busmaster is set to 0 in pci_disable_device.
-> 
-> Signed-off-by: Cai Huoqing <cai.huoqing@linux.dev>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
+---
+v3: No change from v2.
+v2: No change from v1.
 
-3 patches applied to ath-next branch of ath.git, thanks.
+ drivers/net/wireless/ath/ath12k/mac.c | 111 +++++++++++++-------------
+ 1 file changed, 55 insertions(+), 56 deletions(-)
 
-f812e2a9f85d wifi: ath11k: Remove redundant pci_clear_master
-76008fc13b09 wifi: ath10k: Remove redundant pci_clear_master
-b9235aef8492 wifi: ath12k: Remove redundant pci_clear_master
-
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index ab718585411e..e5ba7a01d571 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -4206,18 +4206,69 @@ static __le16 ath12k_mac_setup_he_6ghz_cap(struct ath12k_pdev_cap *pcap,
+ 	return cpu_to_le16(bcap->he_6ghz_capa);
+ }
+ 
++static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
++				   int iftype, u8 num_tx_chains,
++				   struct ieee80211_sta_he_cap *he_cap)
++{
++	struct ieee80211_he_cap_elem *he_cap_elem = &he_cap->he_cap_elem;
++	struct ieee80211_he_mcs_nss_supp *mcs_nss = &he_cap->he_mcs_nss_supp;
++
++	he_cap->has_he = true;
++	memcpy(he_cap_elem->mac_cap_info, band_cap->he_cap_info,
++	       sizeof(he_cap_elem->mac_cap_info));
++	memcpy(he_cap_elem->phy_cap_info, band_cap->he_cap_phy_info,
++	       sizeof(he_cap_elem->phy_cap_info));
++
++	he_cap_elem->mac_cap_info[1] &=
++		IEEE80211_HE_MAC_CAP1_TF_MAC_PAD_DUR_MASK;
++
++	he_cap_elem->phy_cap_info[5] &=
++		~IEEE80211_HE_PHY_CAP5_BEAMFORMEE_NUM_SND_DIM_UNDER_80MHZ_MASK;
++	he_cap_elem->phy_cap_info[5] &=
++		~IEEE80211_HE_PHY_CAP5_BEAMFORMEE_NUM_SND_DIM_ABOVE_80MHZ_MASK;
++	he_cap_elem->phy_cap_info[5] |= num_tx_chains - 1;
++
++	switch (iftype) {
++	case NL80211_IFTYPE_AP:
++		he_cap_elem->phy_cap_info[3] &=
++			~IEEE80211_HE_PHY_CAP3_DCM_MAX_CONST_TX_MASK;
++		he_cap_elem->phy_cap_info[9] |=
++			IEEE80211_HE_PHY_CAP9_RX_1024_QAM_LESS_THAN_242_TONE_RU;
++		break;
++	case NL80211_IFTYPE_STATION:
++		he_cap_elem->mac_cap_info[0] &= ~IEEE80211_HE_MAC_CAP0_TWT_RES;
++		he_cap_elem->mac_cap_info[0] |= IEEE80211_HE_MAC_CAP0_TWT_REQ;
++		he_cap_elem->phy_cap_info[9] |=
++			IEEE80211_HE_PHY_CAP9_TX_1024_QAM_LESS_THAN_242_TONE_RU;
++		break;
++	case NL80211_IFTYPE_MESH_POINT:
++		ath12k_mac_filter_he_cap_mesh(he_cap_elem);
++		break;
++	}
++
++	mcs_nss->rx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
++	mcs_nss->tx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
++	mcs_nss->rx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
++	mcs_nss->tx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
++	mcs_nss->rx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
++	mcs_nss->tx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
++
++	memset(he_cap->ppe_thres, 0, sizeof(he_cap->ppe_thres));
++	if (he_cap_elem->phy_cap_info[6] &
++	    IEEE80211_HE_PHY_CAP6_PPE_THRESHOLD_PRESENT)
++		ath12k_gen_ppe_thresh(&band_cap->he_ppet, he_cap->ppe_thres);
++}
++
+ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+ 					     struct ath12k_pdev_cap *cap,
+ 					     struct ieee80211_sband_iftype_data *data,
+ 					     int band)
+ {
++	struct ath12k_band_cap *band_cap = &cap->band[band];
+ 	int i, idx = 0;
+ 
+ 	for (i = 0; i < NUM_NL80211_IFTYPES; i++) {
+ 		struct ieee80211_sta_he_cap *he_cap = &data[idx].he_cap;
+-		struct ath12k_band_cap *band_cap = &cap->band[band];
+-		struct ieee80211_he_cap_elem *he_cap_elem =
+-				&he_cap->he_cap_elem;
+ 
+ 		switch (i) {
+ 		case NL80211_IFTYPE_STATION:
+@@ -4230,60 +4281,8 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+ 		}
+ 
+ 		data[idx].types_mask = BIT(i);
+-		he_cap->has_he = true;
+-		memcpy(he_cap_elem->mac_cap_info, band_cap->he_cap_info,
+-		       sizeof(he_cap_elem->mac_cap_info));
+-		memcpy(he_cap_elem->phy_cap_info, band_cap->he_cap_phy_info,
+-		       sizeof(he_cap_elem->phy_cap_info));
+-
+-		he_cap_elem->mac_cap_info[1] &=
+-			IEEE80211_HE_MAC_CAP1_TF_MAC_PAD_DUR_MASK;
+-
+-		he_cap_elem->phy_cap_info[5] &=
+-			~IEEE80211_HE_PHY_CAP5_BEAMFORMEE_NUM_SND_DIM_UNDER_80MHZ_MASK;
+-		he_cap_elem->phy_cap_info[5] &=
+-			~IEEE80211_HE_PHY_CAP5_BEAMFORMEE_NUM_SND_DIM_ABOVE_80MHZ_MASK;
+-		he_cap_elem->phy_cap_info[5] |= ar->num_tx_chains - 1;
+-
+-		switch (i) {
+-		case NL80211_IFTYPE_AP:
+-			he_cap_elem->phy_cap_info[3] &=
+-				~IEEE80211_HE_PHY_CAP3_DCM_MAX_CONST_TX_MASK;
+-			he_cap_elem->phy_cap_info[9] |=
+-				IEEE80211_HE_PHY_CAP9_RX_1024_QAM_LESS_THAN_242_TONE_RU;
+-			break;
+-		case NL80211_IFTYPE_STATION:
+-			he_cap_elem->mac_cap_info[0] &=
+-				~IEEE80211_HE_MAC_CAP0_TWT_RES;
+-			he_cap_elem->mac_cap_info[0] |=
+-				IEEE80211_HE_MAC_CAP0_TWT_REQ;
+-			he_cap_elem->phy_cap_info[9] |=
+-				IEEE80211_HE_PHY_CAP9_TX_1024_QAM_LESS_THAN_242_TONE_RU;
+-			break;
+-		case NL80211_IFTYPE_MESH_POINT:
+-			ath12k_mac_filter_he_cap_mesh(he_cap_elem);
+-			break;
+-		}
+-
+-		he_cap->he_mcs_nss_supp.rx_mcs_80 =
+-			cpu_to_le16(band_cap->he_mcs & 0xffff);
+-		he_cap->he_mcs_nss_supp.tx_mcs_80 =
+-			cpu_to_le16(band_cap->he_mcs & 0xffff);
+-		he_cap->he_mcs_nss_supp.rx_mcs_160 =
+-			cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-		he_cap->he_mcs_nss_supp.tx_mcs_160 =
+-			cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-		he_cap->he_mcs_nss_supp.rx_mcs_80p80 =
+-			cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-		he_cap->he_mcs_nss_supp.tx_mcs_80p80 =
+-			cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-
+-		memset(he_cap->ppe_thres, 0, sizeof(he_cap->ppe_thres));
+-		if (he_cap_elem->phy_cap_info[6] &
+-		    IEEE80211_HE_PHY_CAP6_PPE_THRESHOLD_PRESENT)
+-			ath12k_gen_ppe_thresh(&band_cap->he_ppet,
+-					      he_cap->ppe_thres);
+ 
++		ath12k_mac_copy_he_cap(band_cap, i, ar->num_tx_chains, he_cap);
+ 		if (band == NL80211_BAND_6GHZ) {
+ 			data[idx].he_6ghz_capa.capa =
+ 				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230323112613.7550-1-cai.huoqing@linux.dev/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.39.0
 
 
 -- 
