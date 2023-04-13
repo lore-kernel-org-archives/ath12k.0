@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29E71C77B7A
-	for <ath12k@archiver.kernel.org>; Thu, 13 Apr 2023 21:52:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EB60C7EE20
+	for <ath12k@archiver.kernel.org>; Thu, 13 Apr 2023 21:52:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TjLiZbZt4+qVsXhZO//4IMnj5J58H7se4YVMFQkTYVU=; b=iGLxZjT/7fJTG0
-	1QF7NcB6ZlAYpJvv/6KPsyhDV2gNvdDUQmil9XmElaBwS69EOp+yOfb+ci/95g+hydtTnxq9iigAO
-	kSPx2ZIb8z5FBLxmFcFo4ol2zP8v3MBwkDFkYFdizKoBFRJsS2c7fqVi+AARXgpbGsxxA8C3rf0rI
-	rjgIgAQc126QKdtAe36PMPskS5DdXZqyJPqZOAyMVyGtgW1zSypTFnPhHHJQmy3gdJ7G+B0+EwhXQ
-	P5GqHo6ABr1DByGl2wWAaLM4eQjpWi1W/1COnD+ZO3QEN9e6iQIYp/Xzv5L3paPDB/DHuINEC6nOs
-	02U0hWup9ttmaUyo/88g==;
+	List-Owner; bh=xBdtMzcoSO7N4k1pjCO6x5BUBW9DZnLvPjoRs0lXm80=; b=cfdFRv1qqEls6k
+	vetacmKYg1dz44cQnR06q1NPjyynIY45pusWS5njylNaMkBMsV28jRs4moOLBsekvGVTHcyIkOyuz
+	RhHUlJ+armdZzU9gqxBDL3NaFU2jpWZU4EoapxpseqFo9DEwlqL3EOdAGEnNX9kIAP91JSfqsS6Do
+	ffp6WdKK1Pf7TQmyh/JcrjeWoGv2LVE1kXqR6of4uq0SU+hRV7bFkiQRjdy3rqmBoSwvPYq52RaT1
+	XeAfxLvtfgh2UUZxk/9Sj/R0m3/e9vnZROQjUnuJuE6K4q2YdxhB5V+k6pD/pazNgvyZEBqrRTmDd
+	q6q6zBpz824UEwVqdsLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pn4ra-007Du3-2P
+	id 1pn4rd-007DvG-0M
 	for ath12k@archiver.kernel.org;
-	Thu, 13 Apr 2023 21:52:18 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 13 Apr 2023 21:52:21 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pn4rU-007Dor-2n
+	id 1pn4rU-007Dpp-2v
 	for ath12k@lists.infradead.org;
-	Thu, 13 Apr 2023 21:52:16 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33DIlCfo027121;
-	Thu, 13 Apr 2023 21:52:10 GMT
+	Thu, 13 Apr 2023 21:52:17 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33DJv7Av030327;
+	Thu, 13 Apr 2023 21:52:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=41vME/TBT1yQ0uK8Ufav3QW/soRh/01OmgskgXlogHI=;
- b=cDH31iQ/VNvKzOTUevBCRizKTf+jlcnYaZyroj16R6UaL/imHxs7RK6Vd/ivk9KJDzVI
- KYilsoI8R2dZoWCbYB1okKuwGvBGH6kReOxmltsOm5vpWbSBi9BRs3kYJeasaQcZBayl
- bphm9ovmF8yBhOJ/ZaC/Dgru/YP0bjILE8khYr3qwLsFx+Yby2ikhLbHQ83E/wUIO5hz
- MPtAz3IF7apsphCyWwhM3zz0vjgQBUDOP36gaXlrq7uvSQak/JSMX3FkLdJFMPmUE+B3
- wqkHeOUERMYJGxwTZtXuVP5TGAVHLlGA52mgszGvtZgwQLHLlQD0DvxQrViWxTU8w/Hz og== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pxd4n1qtc-1
+ bh=epCihspHMPzrtm/vMwrnK+aBfr8BU8kaeXFujDRzLdo=;
+ b=YVuOAwAO0N0LnZzYFkQLo6BOgyGkgHP4cXGNx5mmVfU5lc5GIuFvLG5QnkL/sq9q3gFP
+ 2w1Ybhv8mfrzu5o74hqsaWk7E5yWdGi816569dgyGac5p6hCHyQ5zZFoLFOqnn7LEjKu
+ ho5zGNpn/s5s/10p9fUeegq05VUakWT/JjtOwurn0hin/f+6Wun45tdg84Khky/3sivU
+ o+lsHmXWAwlFmuXSeZ4PG2w5RBx40O5P6eXfat3kpHq8ahClVLV2065M7wnK9uJK0Wmk
+ eK4/Q2Tq0bDeIHwGqMxFybhGcMkmuMJhYQSi1SqeS0Kf2iYy9v4+gQRJf+B0k5cJ9Jm9 Gg== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pxqf989re-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 13 Apr 2023 21:52:10 +0000
+	Thu, 13 Apr 2023 21:52:12 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33DLq9Ua012197
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33DLqBgc006714
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 13 Apr 2023 21:52:09 GMT
+	Thu, 13 Apr 2023 21:52:11 GMT
 Received: from alokad-linux.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Thu, 13 Apr 2023 14:52:09 -0700
+ 15.2.986.42; Thu, 13 Apr 2023 14:52:10 -0700
 From: Aloka Dixit <quic_alokad@quicinc.com>
 To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-CC: Muna Sinada <quic_msinada@quicinc.com>,
-        Aloka Dixit
-	<quic_alokad@quicinc.com>
-Subject: [PATCH v3 05/11] wifi: ath12k: add EHT PHY modes
-Date: Thu, 13 Apr 2023 14:51:50 -0700
-Message-ID: <20230413215156.2649-6-quic_alokad@quicinc.com>
+CC: Aloka Dixit <quic_alokad@quicinc.com>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>
+Subject: [PATCH v3 08/11] wifi: ath12k: peer assoc for 320 MHz
+Date: Thu, 13 Apr 2023 14:51:53 -0700
+Message-ID: <20230413215156.2649-9-quic_alokad@quicinc.com>
 X-Mailer: git-send-email 2.39.0
 In-Reply-To: <20230413215156.2649-1-quic_alokad@quicinc.com>
 References: <20230413215156.2649-1-quic_alokad@quicinc.com>
@@ -69,19 +69,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: YhpND3XUhIzd_rIcCeJxZfVQUy-qjlqU
-X-Proofpoint-ORIG-GUID: YhpND3XUhIzd_rIcCeJxZfVQUy-qjlqU
+X-Proofpoint-GUID: e7qvmRUL6ppkV9wzGUSNzllk6_iHZBKl
+X-Proofpoint-ORIG-GUID: e7qvmRUL6ppkV9wzGUSNzllk6_iHZBKl
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-13_16,2023-04-13_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
- impostorscore=0 mlxlogscore=999 priorityscore=1501 mlxscore=0 phishscore=0
- suspectscore=0 malwarescore=0 adultscore=0 bulkscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303200000
- definitions=main-2304130194
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
+ suspectscore=0 malwarescore=0 spamscore=0 phishscore=0 clxscore=1015
+ mlxlogscore=999 priorityscore=1501 lowpriorityscore=0 bulkscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2304130194
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230413_145212_923132_B30E5C5C 
-X-CRM114-Status: GOOD (  20.64  )
+X-CRM114-CacheID: sfid-20230413_145213_059807_8D55BA11 
+X-CRM114-Status: GOOD (  14.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,207 +98,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Muna Sinada <quic_msinada@quicinc.com>
-
-Add support to retrieve and configure the phy modes supported
-by the hardware.
+Add required peer association definitions and processing if the
+bandwidth is 320 MHz.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
 Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
+Signed-off-by: Pradeep Kumar Chitrapu<quic_pradeepc@quicinc.com>
 ---
 v3: No change from v2.
-v2: Changed 'target' to 'hardware' in the description.
+v2: No change from v1.
 
- drivers/net/wireless/ath/ath12k/mac.c | 98 +++++++++++++++++++++------
- drivers/net/wireless/ath/ath12k/mac.h |  2 +-
- drivers/net/wireless/ath/ath12k/wmi.h | 13 +++-
- 3 files changed, 91 insertions(+), 22 deletions(-)
+ drivers/net/wireless/ath/ath12k/wmi.c | 2 ++
+ drivers/net/wireless/ath/ath12k/wmi.h | 2 ++
+ 2 files changed, 4 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 7e6fc6b941e8..22e136617687 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -182,32 +182,35 @@ ath12k_phymodes[NUM_NL80211_BANDS][ATH12K_CHAN_WIDTH_NUM] = {
- 	[NL80211_BAND_2GHZ] = {
- 			[NL80211_CHAN_WIDTH_5] = MODE_UNKNOWN,
- 			[NL80211_CHAN_WIDTH_10] = MODE_UNKNOWN,
--			[NL80211_CHAN_WIDTH_20_NOHT] = MODE_11AX_HE20_2G,
--			[NL80211_CHAN_WIDTH_20] = MODE_11AX_HE20_2G,
--			[NL80211_CHAN_WIDTH_40] = MODE_11AX_HE40_2G,
--			[NL80211_CHAN_WIDTH_80] = MODE_11AX_HE80_2G,
-+			[NL80211_CHAN_WIDTH_20_NOHT] = MODE_11BE_EHT20_2G,
-+			[NL80211_CHAN_WIDTH_20] = MODE_11BE_EHT20_2G,
-+			[NL80211_CHAN_WIDTH_40] = MODE_11BE_EHT40_2G,
-+			[NL80211_CHAN_WIDTH_80] = MODE_UNKNOWN,
- 			[NL80211_CHAN_WIDTH_80P80] = MODE_UNKNOWN,
- 			[NL80211_CHAN_WIDTH_160] = MODE_UNKNOWN,
-+			[NL80211_CHAN_WIDTH_320] = MODE_UNKNOWN,
- 	},
- 	[NL80211_BAND_5GHZ] = {
- 			[NL80211_CHAN_WIDTH_5] = MODE_UNKNOWN,
- 			[NL80211_CHAN_WIDTH_10] = MODE_UNKNOWN,
--			[NL80211_CHAN_WIDTH_20_NOHT] = MODE_11AX_HE20,
--			[NL80211_CHAN_WIDTH_20] = MODE_11AX_HE20,
--			[NL80211_CHAN_WIDTH_40] = MODE_11AX_HE40,
--			[NL80211_CHAN_WIDTH_80] = MODE_11AX_HE80,
--			[NL80211_CHAN_WIDTH_160] = MODE_11AX_HE160,
--			[NL80211_CHAN_WIDTH_80P80] = MODE_11AX_HE80_80,
-+			[NL80211_CHAN_WIDTH_20_NOHT] = MODE_11BE_EHT20,
-+			[NL80211_CHAN_WIDTH_20] = MODE_11BE_EHT20,
-+			[NL80211_CHAN_WIDTH_40] = MODE_11BE_EHT40,
-+			[NL80211_CHAN_WIDTH_80] = MODE_11BE_EHT80,
-+			[NL80211_CHAN_WIDTH_160] = MODE_11BE_EHT160,
-+			[NL80211_CHAN_WIDTH_80P80] = MODE_11BE_EHT80_80,
-+			[NL80211_CHAN_WIDTH_320] = MODE_11BE_EHT320,
- 	},
- 	[NL80211_BAND_6GHZ] = {
- 			[NL80211_CHAN_WIDTH_5] = MODE_UNKNOWN,
- 			[NL80211_CHAN_WIDTH_10] = MODE_UNKNOWN,
--			[NL80211_CHAN_WIDTH_20_NOHT] = MODE_11AX_HE20,
--			[NL80211_CHAN_WIDTH_20] = MODE_11AX_HE20,
--			[NL80211_CHAN_WIDTH_40] = MODE_11AX_HE40,
--			[NL80211_CHAN_WIDTH_80] = MODE_11AX_HE80,
--			[NL80211_CHAN_WIDTH_160] = MODE_11AX_HE160,
--			[NL80211_CHAN_WIDTH_80P80] = MODE_11AX_HE80_80,
-+			[NL80211_CHAN_WIDTH_20_NOHT] = MODE_11BE_EHT20,
-+			[NL80211_CHAN_WIDTH_20] = MODE_11BE_EHT20,
-+			[NL80211_CHAN_WIDTH_40] = MODE_11BE_EHT40,
-+			[NL80211_CHAN_WIDTH_80] = MODE_11BE_EHT80,
-+			[NL80211_CHAN_WIDTH_160] = MODE_11BE_EHT160,
-+			[NL80211_CHAN_WIDTH_80P80] = MODE_11BE_EHT80_80,
-+			[NL80211_CHAN_WIDTH_320] = MODE_11BE_EHT320,
- 	},
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index f81724260b9b..e5513e979d78 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1808,6 +1808,8 @@ static void ath12k_wmi_copy_peer_flags(struct wmi_peer_assoc_complete_cmd *cmd,
+ 			cmd->peer_flags |= cpu_to_le32(WMI_PEER_80MHZ);
+ 		if (arg->bw_160)
+ 			cmd->peer_flags |= cpu_to_le32(WMI_PEER_160MHZ);
++		if (arg->bw_320)
++			cmd->peer_flags |= cpu_to_le32(WMI_PEER_EXT_320MHZ);
  
- };
-@@ -292,6 +295,24 @@ static const char *ath12k_mac_phymode_str(enum wmi_phy_mode mode)
- 		return "11ax-he40-2g";
- 	case MODE_11AX_HE80_2G:
- 		return "11ax-he80-2g";
-+	case MODE_11BE_EHT20:
-+		return "11be-eht20";
-+	case MODE_11BE_EHT40:
-+		return "11be-eht40";
-+	case MODE_11BE_EHT80:
-+		return "11be-eht80";
-+	case MODE_11BE_EHT80_80:
-+		return "11be-eht80+80";
-+	case MODE_11BE_EHT160:
-+		return "11be-eht160";
-+	case MODE_11BE_EHT160_160:
-+		return "11be-eht160+160";
-+	case MODE_11BE_EHT320:
-+		return "11be-eht320";
-+	case MODE_11BE_EHT20_2G:
-+		return "11be-eht20-2g";
-+	case MODE_11BE_EHT40_2G:
-+		return "11be-eht40-2g";
- 	case MODE_UNKNOWN:
- 		/* skip */
- 		break;
-@@ -1926,6 +1947,38 @@ static enum wmi_phy_mode ath12k_mac_get_phymode_he(struct ath12k *ar,
- 	return MODE_UNKNOWN;
- }
- 
-+static enum wmi_phy_mode ath12k_mac_get_phymode_eht(struct ath12k *ar,
-+						    struct ieee80211_sta *sta)
-+{
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_320)
-+		if (sta->deflink.eht_cap.eht_cap_elem.phy_cap_info[0] &
-+		    IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ)
-+			return MODE_11BE_EHT320;
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_160) {
-+		if (sta->deflink.he_cap.he_cap_elem.phy_cap_info[0] &
-+		    IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_160MHZ_IN_5G)
-+			return MODE_11BE_EHT160;
-+
-+		if (sta->deflink.he_cap.he_cap_elem.phy_cap_info[0] &
-+			 IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_80PLUS80_MHZ_IN_5G)
-+			return MODE_11BE_EHT80_80;
-+
-+		ath12k_warn(ar->ab, "invalid eht phy cap info for 160 Mhz\n");
-+		return MODE_11BE_EHT160;
-+	}
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_80)
-+		return MODE_11BE_EHT80;
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_40)
-+		return MODE_11BE_EHT40;
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_20)
-+		return MODE_11BE_EHT20;
-+
-+	return MODE_UNKNOWN;
-+}
-+
- static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
- 					struct ieee80211_vif *vif,
- 					struct ieee80211_sta *sta,
-@@ -1947,7 +2000,12 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
- 
- 	switch (band) {
- 	case NL80211_BAND_2GHZ:
--		if (sta->deflink.he_cap.has_he) {
-+		if (sta->deflink.eht_cap.has_eht) {
-+			if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_40)
-+				phymode = MODE_11BE_EHT40_2G;
-+			else
-+				phymode = MODE_11BE_EHT20_2G;
-+		} else if (sta->deflink.he_cap.has_he) {
- 			if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_80)
- 				phymode = MODE_11AX_HE80_2G;
- 			else if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_40)
-@@ -1974,8 +2032,10 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
- 		break;
- 	case NL80211_BAND_5GHZ:
- 	case NL80211_BAND_6GHZ:
--		/* Check HE first */
--		if (sta->deflink.he_cap.has_he) {
-+		/* Check EHT first */
-+		if (sta->deflink.eht_cap.has_eht) {
-+			phymode = ath12k_mac_get_phymode_eht(ar, sta);
-+		} else if (sta->deflink.he_cap.has_he) {
- 			phymode = ath12k_mac_get_phymode_he(ar, sta);
- 		} else if (sta->deflink.vht_cap.vht_supported &&
- 		    !ath12k_peer_assoc_h_vht_masked(vht_mcs_mask)) {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index 57f4295420bb..7b16b70df4fa 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -33,7 +33,7 @@ struct ath12k_generic_iter {
- #define IEEE80211_VHT_MCS_SUPPORT_0_11_MASK	GENMASK(23, 16)
- #define IEEE80211_DISABLE_VHT_MCS_SUPPORT_0_11	BIT(24)
- 
--#define ATH12K_CHAN_WIDTH_NUM			8
-+#define ATH12K_CHAN_WIDTH_NUM			14
- 
- #define ATH12K_TX_POWER_MAX_VAL	70
- #define ATH12K_TX_POWER_MIN_VAL	0
+ 		/* Typically if STBC is enabled for VHT it should be enabled
+ 		 * for HT as well
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index fa513a24bca4..65b52a8079cd 100644
+index c2c340af3612..f348ea9e325d 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.h
 +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2792,8 +2792,17 @@ enum wmi_phy_mode {
- 	MODE_11AX_HE20_2G = 21,
- 	MODE_11AX_HE40_2G = 22,
- 	MODE_11AX_HE80_2G = 23,
--	MODE_UNKNOWN = 24,
--	MODE_MAX = 24
-+	MODE_11BE_EHT20 = 24,
-+	MODE_11BE_EHT40 = 25,
-+	MODE_11BE_EHT80 = 26,
-+	MODE_11BE_EHT80_80 = 27,
-+	MODE_11BE_EHT160 = 28,
-+	MODE_11BE_EHT160_160 = 29,
-+	MODE_11BE_EHT320 = 30,
-+	MODE_11BE_EHT20_2G = 31,
-+	MODE_11BE_EHT40_2G = 32,
-+	MODE_UNKNOWN = 33,
-+	MODE_MAX = 33,
+@@ -1169,6 +1169,7 @@ enum wmi_tlv_peer_flags {
+ 
+ enum wmi_tlv_peer_flags_ext {
+ 	WMI_PEER_EXT_EHT = 0x00000001,
++	WMI_PEER_EXT_320MHZ = 0x00000002,
  };
  
- struct wmi_vdev_start_req_arg {
+ /** Enum list of TLV Tags for each parameter structure type. */
+@@ -3549,6 +3550,7 @@ struct ath12k_wmi_peer_assoc_arg {
+ 	bool bw_40;
+ 	bool bw_80;
+ 	bool bw_160;
++	bool bw_320;
+ 	bool stbc_flag;
+ 	bool ldpc_flag;
+ 	bool static_mimops_flag;
 -- 
 2.39.0
 
