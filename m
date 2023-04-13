@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3811C77B6F
-	for <ath12k@archiver.kernel.org>; Thu, 13 Apr 2023 21:52:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1AD1C77B78
+	for <ath12k@archiver.kernel.org>; Thu, 13 Apr 2023 21:52:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gjaeNs3364P6CMAacxLbzqgpEly+2d64P8Zuw8K+XW0=; b=D7WU6w869OutUH
-	Fr3jfDtlSIGiKfQDSFgSXkPb3+Rjj2ugewvyEEcfvITh4PwXsSLMA1Vxjr9/ZlH7kT7QIZZWFwNDB
-	6afOTidqnaM1VwZn992NTr4eUNe/OGa0G5vlPhmfF94mFs9XAxOKEOw/WdbDOK+lTnQ89m868Rqwd
-	/ZmErCL7Qo/3POPzfzgs2cmzXfBY06UO8VadkbwIiDetW/Ii0r0Qyu5sOyPTkn2dX/WFgagv4A0cV
-	HmySyoYR5Wni48Z1NQQ2lzgrr4wVyGfJu7Pq1EYHmf9uuQ2+QooDZ/6fLrtblIlSEDBfliylPCQYv
-	B5KXaSHNoaW3zls2TODw==;
+	List-Owner; bh=9BxRn8irM2mC1HdNhMktWWCuQLvg0SANYpYboo5tUvc=; b=b0NuiUuWuhBHtM
+	Uifj5VRU0ppRBxvR2BgT9vyFGH1CuxgU46ENm/PL/0sFDqnP4yGx9mLpJrmhJzrCrmmjTKZ4tCRyl
+	q4jUCXeBqXDrs9KwV0hdbZq0PcVExSalCnVGQEuACQqQoLpXPKh5kEjWyOlU12s3vqDQQ11q2AO3L
+	S6tG3EPwa1s7B3c+pw1ow7rIV/sRY4xXa6j8KTzb90ZAq3Gfe2Y/jj4KZr2ijfFr817jmzf2A7dal
+	KJnsHA6zUMU6EKR43/28i0jU/6f5+GHa0tsT91sdTKMD/GCmlntH1CkFzdVUA0tlQK9m1Yx7k3LVc
+	qmJzg8JWA6LFkWQ86geA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pn4rZ-007Dsb-11
+	id 1pn4ra-007Dtd-1Q
 	for ath12k@archiver.kernel.org;
-	Thu, 13 Apr 2023 21:52:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 13 Apr 2023 21:52:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pn4rU-007Dos-0j
+	id 1pn4rU-007Dot-2f
 	for ath12k@lists.infradead.org;
-	Thu, 13 Apr 2023 21:52:15 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33DKTKAc001695;
+	Thu, 13 Apr 2023 21:52:16 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33DLq1Vg022729;
 	Thu, 13 Apr 2023 21:52:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=+SogjF/OtDctf0fFfWK2TF5SN9oKpc4LkMuG80CSc7Q=;
- b=XxGgcrBr62nsvKyMIdHzhKIPmKEcGPdife6tuZ37m1+vNloVCtlXfgxFwl7rnI4BksU9
- xivhW5b0tEzMBWyImx6zcVQgP7kP5S1cSCluPoObBkvGEfgh7OrNtxbQLqK+zYELSk6R
- 7sclweF+0KSxoMC7ijVjbfsPBkA0WhdzBHceBd+fYNITxiZpQQrMJwt5J0lNKWiI7DDg
- +3/VLj1TVOoeB57KSXT2tMLVSx2BOAOT4Pz1aX7BlZN26fNiCCfmUuFaUcsPEde3B+ix
- AIYcX+2rVCOgMdtxsKAMvn0U7t1TqrS19gc2MQwWODwSQAwYvwj/eBZeEa3xe2Y7uM3w Fw== 
+ bh=c4DaeBnr/uSzAKRY8741gDm4R13EVUN3Oqc+Rs2pN9M=;
+ b=aDoOkVl4Q5CwCCTfxnDnOAHq/p9aLcYGhNbZgw4qex9h01b9+ZvkVjs7UcWgbO4548od
+ 87i+4DHMwmEQyv5ywdbwlYfSGRW5E4niAs1rjtmBKMaC58F/ijWsj9w049YJBSz0ktwD
+ 0IZss4l5L3/LRx0nbW+2coC1AON3qd5PgZ5YtuPaxPEff1P0e9jnl6zpYsqxbIIM+LNG
+ /upMTclQC1wM23XPP2zetx3e0SyhVzkgnit2PlGCjqne9WmmCv13ipD+8MP1ulh+/i8v
+ X2f4sNoi0HYCr9FjjZJr6w7WFi+gFlkzopy9wzbIMLsB3uhL4GMpDPOP7BTUl4mPhfYc sg== 
 Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3px689tew0-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3pxd4n1qte-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 13 Apr 2023 21:52:10 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33DLq8XS012194
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33DLqA3W012200
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 13 Apr 2023 21:52:09 GMT
+	Thu, 13 Apr 2023 21:52:10 GMT
 Received: from alokad-linux.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.42; Thu, 13 Apr 2023 14:52:08 -0700
+ 15.2.986.42; Thu, 13 Apr 2023 14:52:09 -0700
 From: Aloka Dixit <quic_alokad@quicinc.com>
 To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
 CC: Aloka Dixit <quic_alokad@quicinc.com>,
         Pradeep Kumar Chitrapu
 	<quic_pradeepc@quicinc.com>
-Subject: [PATCH v3 03/11] wifi: ath12k: process EHT capabilities
-Date: Thu, 13 Apr 2023 14:51:48 -0700
-Message-ID: <20230413215156.2649-4-quic_alokad@quicinc.com>
+Subject: [PATCH v3 06/11] wifi: ath12k: prepare EHT peer assoc parameters
+Date: Thu, 13 Apr 2023 14:51:51 -0700
+Message-ID: <20230413215156.2649-7-quic_alokad@quicinc.com>
 X-Mailer: git-send-email 2.39.0
 In-Reply-To: <20230413215156.2649-1-quic_alokad@quicinc.com>
 References: <20230413215156.2649-1-quic_alokad@quicinc.com>
@@ -69,19 +69,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: LAUFylQgg1RUGKUchXUrcYVAjUvHbB-B
-X-Proofpoint-ORIG-GUID: LAUFylQgg1RUGKUchXUrcYVAjUvHbB-B
+X-Proofpoint-GUID: m3M9cqUmK1QZh7ngp0PIn0x1fVa4obrf
+X-Proofpoint-ORIG-GUID: m3M9cqUmK1QZh7ngp0PIn0x1fVa4obrf
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
  definitions=2023-04-13_16,2023-04-13_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 mlxscore=0 clxscore=1015 bulkscore=0 lowpriorityscore=0
- adultscore=0 mlxlogscore=999 priorityscore=1501 spamscore=0 phishscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304130194
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
+ impostorscore=0 mlxlogscore=999 priorityscore=1501 mlxscore=0 phishscore=0
+ suspectscore=0 malwarescore=0 adultscore=0 bulkscore=0 lowpriorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2303200000
+ definitions=main-2304130194
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230413_145212_383154_5A2E4F79 
-X-CRM114-Status: GOOD (  21.68  )
+X-CRM114-CacheID: sfid-20230413_145212_877106_C81BB052 
+X-CRM114-Status: GOOD (  19.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,227 +98,227 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add WMI support to process the EHT capabilities passed by the firmware.
-Add required EHT specific definitions in structures ath12k_band_cap and
-ath12k_wmi_svc_rdy_ext_parse.
+Add new parameters and prepare the association data for an EHT peer.
+MCS data uses the format described in IEEE P802.11be/D2.0, May 2022,
+9.4.2.313.4, convert it into the format expected by the firmware.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
 Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 ---
-v3: No change from v2.
-v2: Changed 'target' to 'firmware' in the description.
+v3: Incremented peer_eht_mcs_count for IEEE80211_STA_RX_BW_160 in
+ath12k_peer_assoc_h_eht().
+v2: No change from v1.
 
- drivers/net/wireless/ath/ath12k/core.h |   8 ++
- drivers/net/wireless/ath/ath12k/wmi.c  | 112 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  38 +++++++++
- 3 files changed, 158 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 145 ++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h |  17 +++
+ 2 files changed, 162 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 9439052a652e..ed21dd78a2b9 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -579,6 +579,14 @@ struct ath12k_band_cap {
- 	u32 he_cap_phy_info[PSOC_HOST_MAX_PHY_SIZE];
- 	struct ath12k_wmi_ppe_threshold_arg he_ppet;
- 	u16 he_6ghz_capa;
-+	u32 eht_cap_mac_info[WMI_MAX_EHTCAP_MAC_SIZE];
-+	u32 eht_cap_phy_info[WMI_MAX_EHTCAP_PHY_SIZE];
-+	u32 eht_mcs_20_only;
-+	u32 eht_mcs_80;
-+	u32 eht_mcs_160;
-+	u32 eht_mcs_320;
-+	struct ath12k_wmi_ppe_threshold_arg eht_ppet;
-+	u32 eht_cap_info_internal;
- };
- 
- struct ath12k_pdev_cap {
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 7ae0bb78b2b5..89c3bf759bd4 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -65,6 +65,8 @@ struct ath12k_wmi_svc_rdy_ext_parse {
- struct ath12k_wmi_svc_rdy_ext2_parse {
- 	struct ath12k_wmi_dma_ring_caps_parse dma_caps_parse;
- 	bool dma_ring_cap_done;
-+	bool spectral_bin_scaling_done;
-+	bool mac_phy_caps_ext_done;
- };
- 
- struct ath12k_wmi_rdy_parse {
-@@ -4034,6 +4036,100 @@ static int ath12k_service_ready_ext_event(struct ath12k_base *ab,
- 	return ret;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 22e136617687..81ef3ea81018 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -2061,6 +2061,150 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
+ 	WARN_ON(phymode == MODE_UNKNOWN);
  }
  
-+static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
-+				      __le32 cap_mac_info[],
-+				      __le32 cap_phy_info[],
-+				      __le32 supp_mcs[],
-+				      struct ath12k_wmi_ppe_threshold_params *ppet,
-+				       __le32 cap_info_internal)
++static void ath12k_mac_set_eht_mcs(u8 rx_tx_mcs7, u8 rx_tx_mcs9,
++				   u8 rx_tx_mcs11, u8 rx_tx_mcs13,
++				   u32 *rx_mcs, u32 *tx_mcs)
 +{
-+	struct ath12k_band_cap *cap_band = &pdev->cap.band[band];
-+	u8 i;
++	*rx_mcs = 0;
++	u32p_replace_bits(rx_mcs,
++			  u8_get_bits(rx_tx_mcs7, IEEE80211_EHT_MCS_NSS_RX),
++			  WMI_EHT_MCS_NSS_0_7);
++	u32p_replace_bits(rx_mcs,
++			  u8_get_bits(rx_tx_mcs9, IEEE80211_EHT_MCS_NSS_RX),
++			  WMI_EHT_MCS_NSS_8_9);
++	u32p_replace_bits(rx_mcs,
++			  u8_get_bits(rx_tx_mcs11, IEEE80211_EHT_MCS_NSS_RX),
++			  WMI_EHT_MCS_NSS_10_11);
++	u32p_replace_bits(rx_mcs,
++			  u8_get_bits(rx_tx_mcs13, IEEE80211_EHT_MCS_NSS_RX),
++			  WMI_EHT_MCS_NSS_12_13);
 +
-+	for (i = 0; i < WMI_MAX_EHTCAP_MAC_SIZE; i++)
-+		cap_band->eht_cap_mac_info[i] = le32_to_cpu(cap_mac_info[i]);
-+
-+	for (i = 0; i < WMI_MAX_EHTCAP_PHY_SIZE; i++)
-+		cap_band->eht_cap_phy_info[i] = le32_to_cpu(cap_phy_info[i]);
-+
-+	cap_band->eht_mcs_20_only = le32_to_cpu(supp_mcs[0]);
-+	cap_band->eht_mcs_80 = le32_to_cpu(supp_mcs[1]);
-+	if (band != NL80211_BAND_2GHZ) {
-+		cap_band->eht_mcs_160 = le32_to_cpu(supp_mcs[2]);
-+		cap_band->eht_mcs_320 = le32_to_cpu(supp_mcs[3]);
-+	}
-+
-+	cap_band->eht_ppet.numss_m1 = le32_to_cpu(ppet->numss_m1);
-+	cap_band->eht_ppet.ru_bit_mask = le32_to_cpu(ppet->ru_info);
-+	for (i = 0; i < WMI_MAX_NUM_SS; i++)
-+		cap_band->eht_ppet.ppet16_ppet8_ru3_ru0[i] =
-+			le32_to_cpu(ppet->ppet16_ppet8_ru3_ru0[i]);
-+
-+	cap_band->eht_cap_info_internal = le32_to_cpu(cap_info_internal);
++	*tx_mcs = 0;
++	u32p_replace_bits(tx_mcs,
++			  u8_get_bits(rx_tx_mcs7, IEEE80211_EHT_MCS_NSS_TX),
++			  WMI_EHT_MCS_NSS_0_7);
++	u32p_replace_bits(tx_mcs,
++			  u8_get_bits(rx_tx_mcs9, IEEE80211_EHT_MCS_NSS_TX),
++			  WMI_EHT_MCS_NSS_8_9);
++	u32p_replace_bits(tx_mcs,
++			  u8_get_bits(rx_tx_mcs11, IEEE80211_EHT_MCS_NSS_TX),
++			  WMI_EHT_MCS_NSS_10_11);
++	u32p_replace_bits(tx_mcs,
++			  u8_get_bits(rx_tx_mcs13, IEEE80211_EHT_MCS_NSS_TX),
++			  WMI_EHT_MCS_NSS_12_13);
 +}
 +
-+static int ath12k_wmi_tlv_mac_phy_caps_ext_parse(struct ath12k_base *ab,
-+						 struct ath12k_wmi_mac_phy_caps_ext_params *caps,
-+						 struct ath12k_pdev *pdev)
++static void ath12k_mac_set_eht_ppe_threshold(const u8 *ppe_thres,
++					     struct ath12k_wmi_ppe_threshold_arg *ppet)
 +{
-+	if (pdev->cap.supported_bands & WMI_HOST_WLAN_2G_CAP) {
-+		ath12k_wmi_eht_caps_parse(pdev, NL80211_BAND_2GHZ,
-+					  caps->eht_cap_mac_info_2ghz,
-+					  caps->eht_cap_phy_info_2ghz,
-+					  caps->eht_supp_mcs_ext_2ghz,
-+					  &caps->eht_ppet_2ghz,
-+					  caps->eht_cap_info_internal);
-+	}
++	u32 bit_pos = IEEE80211_EHT_PPE_THRES_INFO_HEADER_SIZE;
++	u8 nss;
 +
-+	if (pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP) {
-+		ath12k_wmi_eht_caps_parse(pdev, NL80211_BAND_5GHZ,
-+					  caps->eht_cap_mac_info_5ghz,
-+					  caps->eht_cap_phy_info_5ghz,
-+					  caps->eht_supp_mcs_ext_5ghz,
-+					  &caps->eht_ppet_5ghz,
-+					  caps->eht_cap_info_internal);
++	ppet->numss_m1 = u8_get_bits(ppe_thres[0], IEEE80211_EHT_PPE_THRES_NSS_MASK);
++	ppet->ru_bit_mask = u16_get_bits(get_unaligned_le16(ppe_thres),
++					 IEEE80211_EHT_PPE_THRES_RU_INDEX_BITMASK_MASK);
 +
-+		ath12k_wmi_eht_caps_parse(pdev, NL80211_BAND_6GHZ,
-+					  caps->eht_cap_mac_info_5ghz,
-+					  caps->eht_cap_phy_info_5ghz,
-+					  caps->eht_supp_mcs_ext_5ghz,
-+					  &caps->eht_ppet_5ghz,
-+					  caps->eht_cap_info_internal);
-+	}
++	for (nss = 0; nss <= ppet->numss_m1; nss++) {
++		u8 ru;
 +
-+	return 0;
-+}
++		for (ru = 0;
++		     ru < hweight8(IEEE80211_EHT_PPE_THRES_RU_INDEX_BITMASK_MASK);
++		     ru++) {
++			u32 val = 0;
++			u8 i;
 +
-+static int ath12k_wmi_tlv_mac_phy_caps_ext(struct ath12k_base *ab, u16 tag,
-+					   u16 len, const void *ptr,
-+					   void *data)
-+{
-+	struct ath12k_wmi_mac_phy_caps_ext_params *caps =
-+			(struct ath12k_wmi_mac_phy_caps_ext_params *)ptr;
-+	int i, ret;
++			if ((ppet->ru_bit_mask & BIT(ru)) == 0)
++				continue;
 +
-+	if (tag != WMI_TAG_MAC_PHY_CAPABILITIES_EXT)
-+		return -EPROTO;
-+
-+	for (i = 0; i < ab->num_radios; i++) {
-+		if (ab->pdevs[i].pdev_id == le32_to_cpu(caps->pdev_id))
-+			break;
-+	}
-+
-+	if (i == ab->num_radios)
-+		return -EINVAL;
-+
-+	ret = ath12k_wmi_tlv_mac_phy_caps_ext_parse(ab, caps, &ab->pdevs[i]);
-+	if (ret) {
-+		ath12k_warn(ab,
-+			    "failed to extract mac phy caps ext, pdev_id:%d\n",
-+			    ab->pdevs[i].pdev_id);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
- static int ath12k_wmi_svc_rdy_ext2_parse(struct ath12k_base *ab,
- 					 u16 tag, u16 len,
- 					 const void *ptr, void *data)
-@@ -4050,6 +4146,22 @@ static int ath12k_wmi_svc_rdy_ext2_parse(struct ath12k_base *ab,
- 				return ret;
- 
- 			parse->dma_ring_cap_done = true;
-+		} else if (!parse->spectral_bin_scaling_done) {
-+			/* TODO: This is a place-holder as WMI tag for
-+			 * spectral scaling is before
-+			 * WMI_TAG_MAC_PHY_CAPABILITIES_EXT
-+			 */
-+			parse->spectral_bin_scaling_done = true;
-+		} else if (!parse->mac_phy_caps_ext_done) {
-+			ret = ath12k_wmi_tlv_iter(ab, ptr, len,
-+						  ath12k_wmi_tlv_mac_phy_caps_ext,
-+						  parse);
-+			if (ret) {
-+				ath12k_warn(ab, "failed to parse tlv %d\n", ret);
-+				return ret;
++			for (i = 0;
++			     i < IEEE80211_EHT_PPE_THRES_INFO_PPET_SIZE;
++			     i++) {
++				val >>= 1;
++				val |= ((ppe_thres[bit_pos / 8] >>
++					 (bit_pos % 8)) & 0x1) << 5;
++				bit_pos++;
 +			}
++			ppet->ppet16_ppet8_ru3_ru0[nss] |=
++				(val <<
++				 (ru * IEEE80211_EHT_PPE_THRES_INFO_PPET_SIZE));
++		}
++	}
++}
 +
-+			parse->mac_phy_caps_ext_done = true;
- 		}
- 		break;
- 	default:
++static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
++				    struct ieee80211_vif *vif,
++				    struct ieee80211_sta *sta,
++				    struct ath12k_wmi_peer_assoc_arg *arg)
++{
++	const struct ieee80211_sta_eht_cap *eht_cap = &sta->deflink.eht_cap;
++	const struct ieee80211_eht_mcs_nss_supp_bw *bw;
++	u32 *rx_mcs, *tx_mcs;
++
++	if (!sta->deflink.he_cap.has_he || !eht_cap->has_eht)
++		return;
++
++	arg->eht_flag = true;
++	if ((eht_cap->eht_cap_elem.phy_cap_info[5] &
++	     IEEE80211_EHT_PHY_CAP5_PPE_THRESHOLD_PRESENT) &&
++	    eht_cap->eht_ppe_thres[0] != 0)
++		ath12k_mac_set_eht_ppe_threshold(eht_cap->eht_ppe_thres,
++						 &arg->peer_eht_ppet);
++	memcpy(arg->peer_eht_cap_mac, eht_cap->eht_cap_elem.mac_cap_info,
++	       sizeof(eht_cap->eht_cap_elem.mac_cap_info));
++	memcpy(arg->peer_eht_cap_phy, eht_cap->eht_cap_elem.phy_cap_info,
++	       sizeof(eht_cap->eht_cap_elem.phy_cap_info));
++
++	rx_mcs = arg->peer_eht_rx_mcs_set;
++	tx_mcs = arg->peer_eht_tx_mcs_set;
++	switch (sta->deflink.bandwidth) {
++	case IEEE80211_STA_RX_BW_320:
++		bw = &eht_cap->eht_mcs_nss_supp.bw._320;
++		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
++				       bw->rx_tx_mcs9_max_nss,
++				       bw->rx_tx_mcs11_max_nss,
++				       bw->rx_tx_mcs13_max_nss,
++				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320],
++				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_320]);
++		arg->peer_eht_mcs_count++;
++		fallthrough;
++
++	case IEEE80211_STA_RX_BW_160:
++		bw = &eht_cap->eht_mcs_nss_supp.bw._160;
++		ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
++				       bw->rx_tx_mcs9_max_nss,
++				       bw->rx_tx_mcs11_max_nss,
++				       bw->rx_tx_mcs13_max_nss,
++				       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160],
++				       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_160]);
++		arg->peer_eht_mcs_count++;
++		fallthrough;
++
++	default:
++		if (arg->peer_phymode == MODE_11BE_EHT20) {
++			const struct ieee80211_eht_mcs_nss_supp_20mhz_only *bw_20 =
++					&eht_cap->eht_mcs_nss_supp.only_20mhz;
++
++			ath12k_mac_set_eht_mcs(bw_20->rx_tx_mcs7_max_nss,
++					       bw_20->rx_tx_mcs9_max_nss,
++					       bw_20->rx_tx_mcs11_max_nss,
++					       bw_20->rx_tx_mcs13_max_nss,
++					       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80],
++					       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80]);
++		} else {
++			bw = &eht_cap->eht_mcs_nss_supp.bw._80;
++			ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
++					       bw->rx_tx_mcs9_max_nss,
++					       bw->rx_tx_mcs11_max_nss,
++					       bw->rx_tx_mcs13_max_nss,
++					       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80],
++					       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80]);
++		}
++
++		arg->peer_eht_mcs_count++;
++		break;
++	}
++}
++
+ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+ 				      struct ieee80211_vif *vif,
+ 				      struct ieee80211_sta *sta,
+@@ -2080,6 +2224,7 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+ 	ath12k_peer_assoc_h_ht(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_vht(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_he(ar, vif, sta, arg);
++	ath12k_peer_assoc_h_eht(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_qos(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_phymode(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_smps(sta, arg);
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 08a8c9e0f59f..fa513a24bca4 100644
+index 65b52a8079cd..12fedcf2c8b4 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.h
 +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2577,6 +2577,44 @@ struct ath12k_wmi_soc_hal_reg_caps_params {
- 	__le32 num_phy;
- } __packed;
+@@ -2579,6 +2579,7 @@ struct ath12k_wmi_soc_hal_reg_caps_params {
  
-+#define WMI_MAX_EHTCAP_MAC_SIZE  2
-+#define WMI_MAX_EHTCAP_PHY_SIZE  3
+ #define WMI_MAX_EHTCAP_MAC_SIZE  2
+ #define WMI_MAX_EHTCAP_PHY_SIZE  3
++#define WMI_MAX_EHTCAP_RATE_SET  3
+ 
+ /* Used for EHT MCS-NSS array. Data at each array index follows the format given
+  * in IEEE P802.11be/D2.0, May 20229.4.2.313.4.
+@@ -2592,6 +2593,15 @@ struct ath12k_wmi_soc_hal_reg_caps_params {
+ #define WMI_MAX_EHT_SUPP_MCS_2G_SIZE  2
+ #define WMI_MAX_EHT_SUPP_MCS_5G_SIZE  4
+ 
++#define WMI_EHTCAP_TXRX_MCS_NSS_IDX_80    0
++#define WMI_EHTCAP_TXRX_MCS_NSS_IDX_160   1
++#define WMI_EHTCAP_TXRX_MCS_NSS_IDX_320   2
 +
-+/* Used for EHT MCS-NSS array. Data at each array index follows the format given
-+ * in IEEE P802.11be/D2.0, May 20229.4.2.313.4.
-+ *
-+ * Index interpretation:
-+ * 0 - 20 MHz only sta, all 4 bytes valid
-+ * 1 - index for bandwidths <= 80 MHz except 20 MHz-only, first 3 bytes valid
-+ * 2 - index for 160 MHz, first 3 bytes valid
-+ * 3 - index for 320 MHz, first 3 bytes valid
-+ */
-+#define WMI_MAX_EHT_SUPP_MCS_2G_SIZE  2
-+#define WMI_MAX_EHT_SUPP_MCS_5G_SIZE  4
++#define WMI_EHT_MCS_NSS_0_7    GENMASK(3, 0)
++#define WMI_EHT_MCS_NSS_8_9    GENMASK(7, 4)
++#define WMI_EHT_MCS_NSS_10_11  GENMASK(11, 8)
++#define WMI_EHT_MCS_NSS_12_13  GENMASK(15, 12)
 +
-+struct ath12k_wmi_mac_phy_caps_ext_params {
-+	__le32 hw_mode_id;
-+	union {
-+		struct {
-+			__le16 pdev_id;
-+			__le16 hw_link_id;
-+		} __packed ath12k_wmi_pdev_to_link_map;
-+		__le32 pdev_id;
-+	};
-+	__le32 phy_id;
-+	__le32 wireless_modes_ext;
-+	__le32 eht_cap_mac_info_2ghz[WMI_MAX_EHTCAP_MAC_SIZE];
-+	__le32 eht_cap_mac_info_5ghz[WMI_MAX_EHTCAP_MAC_SIZE];
-+	__le32 rsvd0[2];
-+	__le32 eht_cap_phy_info_2ghz[WMI_MAX_EHTCAP_PHY_SIZE];
-+	__le32 eht_cap_phy_info_5ghz[WMI_MAX_EHTCAP_PHY_SIZE];
-+	struct ath12k_wmi_ppe_threshold_params eht_ppet_2ghz;
-+	struct ath12k_wmi_ppe_threshold_params eht_ppet_5ghz;
-+	__le32 eht_cap_info_internal;
-+	__le32 eht_supp_mcs_ext_2ghz[WMI_MAX_EHT_SUPP_MCS_2G_SIZE];
-+	__le32 eht_supp_mcs_ext_5ghz[WMI_MAX_EHT_SUPP_MCS_5G_SIZE];
-+} __packed;
-+
- /* 2 word representation of MAC addr */
- struct ath12k_wmi_mac_addr_params {
- 	u8 addr[ETH_ALEN];
+ struct ath12k_wmi_mac_phy_caps_ext_params {
+ 	__le32 hw_mode_id;
+ 	union {
+@@ -3561,6 +3571,13 @@ struct ath12k_wmi_peer_assoc_arg {
+ 	bool twt_responder;
+ 	bool twt_requester;
+ 	struct ath12k_wmi_ppe_threshold_arg peer_ppet;
++	bool eht_flag;
++	u32 peer_eht_cap_mac[WMI_MAX_EHTCAP_MAC_SIZE];
++	u32 peer_eht_cap_phy[WMI_MAX_EHTCAP_PHY_SIZE];
++	u32 peer_eht_mcs_count;
++	u32 peer_eht_rx_mcs_set[WMI_MAX_EHTCAP_RATE_SET];
++	u32 peer_eht_tx_mcs_set[WMI_MAX_EHTCAP_RATE_SET];
++	struct ath12k_wmi_ppe_threshold_arg peer_eht_ppet;
+ };
+ 
+ struct wmi_peer_assoc_complete_cmd {
 -- 
 2.39.0
 
