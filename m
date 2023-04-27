@@ -4,85 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85E38C7618E
-	for <ath12k@archiver.kernel.org>; Wed, 26 Apr 2023 16:49:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7136EC77B60
+	for <ath12k@archiver.kernel.org>; Thu, 27 Apr 2023 01:31:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NAktc3OxPsbWEasP2GXODX8SfkYs2qHbrgLU1bvsyvk=; b=AEHdZH6GFYuQYR
-	sp7O6XBwgEXlsAzYjf9QFu9GIXPlfuZuh6UzVo8Tz2LnKxJC/c2+QmjRmIuCs9fYnWNORfZG4SyQw
-	nJOqTS1hJHTl3l2JfUIihGov//mNGCoelGWZbzs1DaPHq1M5/eTowCaKSnqRl0J+75/RGMmAgkWtF
-	bD1AhkDmk23dbAOV9kbDvawKGhy3VT5i2PHLIGy3VJW8OAlS9Ox5d9dVeozxo5CJTTDN0kaskO++h
-	A6OBvEaiJD0l/C9RiCKqGGCyy40ua/ruooSvg31jfuydH6A3tXIiSyBjipV0xiN+N1JXNVUIOnwBV
-	WGYgnQ+kXdpwQpTnOuPA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AOrGqURE5Y/Wpsbj9gUzrVr2xh2xUKE1x6K69xDsZB8=; b=OByjpaA6PxaXq7
+	bSzqRQfs0LwEuQH4do9MIo2m66SVARXeGRUHehKN72CinSiKnvynKc9iKimxWvUo8m1hRznH+/4l5
+	aZZHBzezf0bQIaaBjdN5659hUPagNGpfjtWP5ZBq8beuPByy9Nz7x9jYULESLGgQhkOd+Bd8t3DLu
+	iDo1Rm+z/9W88dNgNSkUXVYKejXcWTETlpuZTV1tZJ2dhKqNqLx2gZ0HhNA7WPM4wbgq1xiicn7dF
+	yCOBIjTEUWvOiDSZTh++2bOcjAK7yWnP5tcxRrGrsogDkoKGL/G5IUIKG5Lhu5kd5jwEhy9rjvTmS
+	VoDe/XA0pddxlNElW+3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1priKq-004RZF-0K
+	id 1prqTg-005DCl-1b
 	for ath12k@archiver.kernel.org;
-	Wed, 26 Apr 2023 16:49:40 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 27 Apr 2023 01:31:20 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1priKn-004RYZ-0H
+	id 1prqTd-005DCN-0v
 	for ath12k@lists.infradead.org;
-	Wed, 26 Apr 2023 16:49:38 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33QG4XYH025015;
-	Wed, 26 Apr 2023 16:49:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=OGFCBSk9Ao2wgRC4CQBkJE67+vbisEmpOdkqP44I7UI=;
- b=R/wF55uO4Xg6cf5yblw3Iv7d0+fvlOEmEF5rFQYnMQfcURLY4PVLdq3kaNvmMn1/Hfh+
- 1+iOaTR9dkE+VCi2xJOmIOi3YWG/Bv84rSYlX8lV12uQ6Y6XuWqLuy0T2smpx5wn8Sfi
- zZRkFS7xilUfaer7FFjc15AlI3qf8fePa83tik0mH7s2yCzBmdRUNcI808/QMmQ437Os
- CV4cFlX9rlEp3tNVueKYTwXhho8HAQ5TkQMXDll27mYsz1QU5rknBL83OQeqoQxHYOOi
- +cxv2w0m+/hZ1ZS2SpzK630IkNgRy2lHsKxQok8OcjLUyq4bDsawDLpanyxJjyHtnigA rA== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q6uprst0w-1
+	Thu, 27 Apr 2023 01:31:18 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 33QNwS2W018088;
+	Thu, 27 Apr 2023 01:31:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=spfbNfwmiL3qg7k8mINHhVDrbQKuteH3oLy9EIuNsHw=;
+ b=ITrS99XDxvezNhs0NctLOTUTLHPHVY+VSeClaXYy8UmXpSCs9lyi9fZZ7jPrcDLk+m9k
+ PT0xB7ETRF+Ocs8Tv4Rkt9wemMcL6wbCKJEwIyhguUYODBd45WnfksAPARfT4UnC/Wsz
+ XyVb4bmqIDO2kzw+K0ky5P9u+BHxhjEe4zXGZ2smaijHlfo6AbAEvAOYaSmgcoHm6GWy
+ dpMMeWtpgN2m0J3k3PtTWlw7nZMTjprEZoi5DzboHVFr1YOQkE1wISZREBX794/kQDh1
+ jvDFn/a3CVysWFRdLli85FZB0HlXJhrlDTcZc0JbCb5m4I2c5N2AzGdf5SRBqzIXjUr7 PA== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3q7dh2g6gu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Apr 2023 16:49:30 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33QGnT3i007847
+	Thu, 27 Apr 2023 01:31:14 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 33R1VBdT015040
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Apr 2023 16:49:29 GMT
-Received: from [10.110.11.241] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.42; Wed, 26 Apr
- 2023 09:49:29 -0700
-Message-ID: <759bf2e8-ce51-b882-7d26-7ae57b8cf571@quicinc.com>
-Date: Wed, 26 Apr 2023 09:49:28 -0700
+	Thu, 27 Apr 2023 01:31:11 GMT
+Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.42; Wed, 26 Apr 2023 18:30:37 -0700
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+Subject: [PATCH] wifi: ath12k: Use msdu_end to check MCBC
+Date: Thu, 27 Apr 2023 09:30:21 +0800
+Message-ID: <20230427013021.29792-1-quic_bqiang@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Subject: Re: [PATCH v3 00/11] wifi: ath12k: (v3) EHT support
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20230413215156.2649-1-quic_alokad@quicinc.com>
- <87ildjtc1c.fsf@kernel.org>
-Content-Language: en-US
-From: Aloka Dixit <quic_alokad@quicinc.com>
-In-Reply-To: <87ildjtc1c.fsf@kernel.org>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 8Ua1JzCLdsQzG9TIEPwsyCC_wqqpXbmD
-X-Proofpoint-GUID: 8Ua1JzCLdsQzG9TIEPwsyCC_wqqpXbmD
+X-Proofpoint-ORIG-GUID: Rpu3Jamhwdgros-R5vyRRiSG0HzVyGW2
+X-Proofpoint-GUID: Rpu3Jamhwdgros-R5vyRRiSG0HzVyGW2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-04-26_08,2023-04-26_03,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- mlxscore=0 clxscore=1011 priorityscore=1501 mlxlogscore=999
- lowpriorityscore=0 adultscore=0 impostorscore=0 spamscore=0 phishscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2304260148
+ definitions=2023-04-27_01,2023-04-26_03,2023-02-09_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 malwarescore=0
+ spamscore=0 adultscore=0 priorityscore=1501 phishscore=0 bulkscore=0
+ mlxlogscore=833 mlxscore=0 lowpriorityscore=0 impostorscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2303200000 definitions=main-2304270012
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230426_094937_262374_63AC3313 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20230426_183117_345602_2660703D 
+X-CRM114-Status: GOOD (  15.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,40 +89,45 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/25/2023 11:03 PM, Kalle Valo wrote:
-> Aloka Dixit <quic_alokad@quicinc.com> writes:
-> 
->> Add driver support to bring AP up in EHT mode, configure a preamble
->> puncturing bitmap and associate with an EHT client.
->>
->> v3: Modified patches 6 and 9 to fix some issues,
->> changelog included in the respective patches.
->> v2: This version modifies only few commit descriptions,
->> changelog included in the respective patches.
->>
-> This breaks WCN7850 support:
-> 
-> [  144.039164] ath12k_pci 0000:06:00.0: BAR 0: assigned [mem 0xda200000-0xda3fffff 64bit]
-> [  144.039315] ath12k_pci 0000:06:00.0: enabling device (0000 -> 0002)
-> [  144.046220] ath12k_pci 0000:06:00.0: Hardware name: wcn7850 hw2.0
-> [  144.118539] mhi mhi0: Requested to power ON
-> [  144.118716] mhi mhi0: Power on setup success
-> [  144.222303] mhi mhi0: Wait for device to enter SBL or Mission mode
-> [  144.627712] ath12k_pci 0000:06:00.0: chip_id 0x2 chip_family 0x4 board_id 0x104 soc_id 0x40170200
-> [  144.627945] ath12k_pci 0000:06:00.0: fw_version 0x1005bc12 fw_build_timestamp 2022-10-11 12:13 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> [  144.959196] ath12k_pci 0000:06:00.0: failed to parse tlv -22
-> [  144.959317] ath12k_pci 0000:06:00.0: failed to parse ext2 event tlv -22
-> [  150.263567] ath12k_pci 0000:06:00.0: failed to receive wmi service ready event: -110
-> [  150.276547] ath12k_pci 0000:06:00.0: failed to start core: -110
-> 
+We are seeing a very low TCP throughput testing with some specific
+tools. This is because for sub-frames of an AMSDU, MCBC flag in
+mpdu_start may be not valid, and as a result those frames would be
+dropped by kernel.
 
-I have started seeing ETIMEDOUT on QCN9274 as well, AP bring up fails in 
-vdev sync. It works if the sync timeout is increased.
+Change to get it from msdu_end.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/hal.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
+index 0ec53afe9915..980ec2024b37 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.c
++++ b/drivers/net/wireless/ath/ath12k/hal.c
+@@ -889,8 +889,8 @@ static u8 *ath12k_hw_wcn7850_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
+ 
+ static bool ath12k_hw_wcn7850_rx_desc_is_mcbc(struct hal_rx_desc *desc)
+ {
+-	return __le32_to_cpu(desc->u.wcn7850.mpdu_start.info6) &
+-	       RX_MPDU_START_INFO6_MCAST_BCAST;
++	return __le32_to_cpu(desc->u.wcn7850.msdu_end.info5) &
++	       RX_MSDU_END_INFO5_DA_IS_MCBC;
+ }
+ 
+ static void ath12k_hw_wcn7850_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
+
+base-commit: d276b90ff7f9c51e1f2f8826b7cbb3dff20a4b66
+-- 
+2.25.1
+
 
 -- 
 ath12k mailing list
