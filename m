@@ -4,84 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E7DEC77B73
-	for <ath12k@archiver.kernel.org>; Tue,  2 May 2023 14:20:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E28AC7EE2A
+	for <ath12k@archiver.kernel.org>; Thu,  4 May 2023 19:41:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nz5F+0Hb+0kxCHCZzjkl+oqsNtVeWB7QGXdusP8gK68=; b=xzxqnJOKapPMLB
-	hxwBdrLMrR/RoaJ/gdcfFCFjWDMD8D3pwR1nedG1Hq+9CLC/DIkmBaRwQCRWGAX8bXwDTbq52g74V
-	3VQvsmBiejjIWdOs3szQ+dW2S8/5Y2b1tWTbnHfSj5WRvs/ARAF6w4vSQMrwdGdBE7sw/r0EKmVLX
-	jgxojeQY/i/mREAt2wLPqzOVxiIQpgL7ynQavdXFCqYfMrLlqpBRvkCGi/EkK0kEQ07nnydRWR0Ur
-	rYreZV3NzzvacliPf/3Lc0uK4zzOhVnK0TaFEM5sE+y7TUxVRZ9q5KQokfrkB6EaRu4eahKxxeAQa
-	QTGTELApTUB3lil8eAIQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Xfv2wSA49j0er1uOy2qz5IIuYVxIf+S6E/KS0z2Td2k=; b=mri5RUFeBclkcv
+	yCmKEu1GgQmZ8mH1kmk+gR0avLPKEcID9beSjvtKWPij+1KpoZG4Se+XmWXGWVuADR8dduke/DFqi
+	smYxm+F7eoMgmZfKCU4eeFfDTEha9uSIl1YSws01kiZidt0iolfVxhy4q53zKASImRZNRzr+GqN1j
+	aPrcICrnNwccjbfVr9v4yprBeU06R3kE0pK0SLbUvwIN/i0U+1HLuauiwfC5eWvbW18+VIw6GWsHY
+	kvy9TTO2tPU8VnLA6yK4hurB7+rzyuvbQroTFyJRYK0ZYTOuHHyV8T/VpPnl06u6AIVJ01R/6YdUf
+	FJdpb1GYAVomT7olpNxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptqrq-001nuv-0S
+	id 1pueps-008onL-38
 	for ath12k@archiver.kernel.org;
-	Tue, 02 May 2023 14:20:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 04 May 2023 19:41:52 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptqrm-001ntA-0G
+	id 1puepp-008okW-2m
 	for ath12k@lists.infradead.org;
-	Tue, 02 May 2023 14:20:31 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 342Cf1nc002956;
-	Tue, 2 May 2023 14:20:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id; s=qcppdkim1;
- bh=igYnEbqouOca/khF5lBjPXOrEjknq3yuc6tNWZXMYpE=;
- b=TFN0IhFjRPdLiScPSIWksQyfCUVkWdFIdatf15/IUaHvr/w1FExptqzOvo1DmpHxSxM9
- aqHvbJac5lC8en+t/usqxTW0IUjGwF+7Sm7UXhIyVbJMCzV3OoLdu7bOI6UlKwJN3N5u
- vs4e2h6GsQUWJ7cyK+vHoJkaouQD3mH7JXcG7qtUnNuEk15X9TGNQCNNjMooUYrGJUfk
- b5C4nih5ROjsHaTOVICEjzbUYcAqTaJ1X9Yq2Mn298C6V2B2iG+6BJdMCZ0Yat6XmncK
- Eo1eckLDX+SESd+yf2LgceMEIutvIBoX1GT7De8BR2+QLJ2OV4nYmVRPAu8qhG+2m8/Z JA== 
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qajdp28r8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 02 May 2023 14:20:26 +0000
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 342EKMTp007604;
-	Tue, 2 May 2023 14:20:22 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 3q8vakummn-1;
-	Tue, 02 May 2023 14:20:22 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 342EKMHC007596;
-	Tue, 2 May 2023 14:20:22 GMT
-Received: from rgnanase-linux.qualcomm.com (rgnanase-linux.qualcomm.com [10.201.162.135])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 342EKM8u007595;
-	Tue, 02 May 2023 14:20:22 +0000
-Received: by rgnanase-linux.qualcomm.com (Postfix, from userid 2378837)
-	id 7EEF41100068; Tue,  2 May 2023 19:50:21 +0530 (IST)
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, P Praneesh <quic_ppranees@quicinc.com>,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH] wifi: ath12k: Add support to parse new WMI event for 6 GHz regulatory
-Date: Tue,  2 May 2023 19:50:18 +0530
-Message-Id: <20230502142018.20301-1-quic_rgnanase@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: iuGAyZ4t90fimvLkRQHwh02nTgtlHbbR
-X-Proofpoint-ORIG-GUID: iuGAyZ4t90fimvLkRQHwh02nTgtlHbbR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.942,Hydra:6.0.573,FMLib:17.11.170.22
- definitions=2023-05-02_08,2023-04-27_01,2023-02-09_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0 mlxscore=0
- priorityscore=1501 suspectscore=0 mlxlogscore=999 phishscore=0
- malwarescore=0 spamscore=0 bulkscore=0 adultscore=0 impostorscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2303200000 definitions=main-2305020121
+	Thu, 04 May 2023 19:41:51 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 6E2956369F;
+	Thu,  4 May 2023 19:41:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88D9DC433A0;
+	Thu,  4 May 2023 19:41:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1683229307;
+	bh=tU2yWWf+fXit+lYbclQs/l+cPlES+3C5m/4vEUaCOCA=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=cGiVNk1bfUql4Gh/MeNhT1gOkc/p7Q2ReQFN+ZE9ibzLFSqQzZXKEN3K8jcJ1mj07
+	 71GN/KnH2fp1+eGvOxdAG3sNmoMERTvqUxb9FwQL6JV6bH7qcNAdwtlsRT/Fo0OXUx
+	 dIAZV2WPCk29YkwvxRULUz3ScHj6lwjKoL6GPVVHLlrAnnHceDGB1MlmsF+DQgma6z
+	 W+ddnA8qWj4TuXP1Hm4KDhtNEQ5g/I0Om/OxYNWzKDVC017LwL/wYFeiGH1wmbUrFl
+	 mUZFP9vvaF4CZ9ga1nF9noRM+DY4ee9UqXjEHDSmWQ7LxhWmW+UDM6zfKVpR6MnkOS
+	 XjcC/pm6yMOsg==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
+	Kalle Valo <quic_kvalo@quicinc.com>,
+	Sasha Levin <sashal@kernel.org>,
+	kvalo@kernel.org,
+	davem@davemloft.net,
+	edumazet@google.com,
+	kuba@kernel.org,
+	pabeni@redhat.com,
+	ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	netdev@vger.kernel.org
+Subject: [PATCH AUTOSEL 6.3 02/59] wifi: ath12k: Handle lock during peer_id find
+Date: Thu,  4 May 2023 15:40:45 -0400
+Message-Id: <20230504194142.3805425-2-sashal@kernel.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20230504194142.3805425-1-sashal@kernel.org>
+References: <20230504194142.3805425-1-sashal@kernel.org>
+MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230502_072030_267284_1AD34C1A 
-X-CRM114-Status: GOOD (  18.88  )
+X-CRM114-CacheID: sfid-20230504_124149_981285_6AA08E8F 
+X-CRM114-Status: GOOD (  11.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,199 +82,86 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: P Praneesh <quic_ppranees@quicinc.com>
+From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 
-In order to support different power levels of 6 GHz AP and client,
-new WMI event for regulatory (WMI_REG_CHAN_LIST_CC_EXT_EVENTID) has been
-added in firmware to provide new parameters required for 6 GHz regulatory rules.
+[ Upstream commit 95a389e2ff3212d866cc51c77d682d2934074eb8 ]
 
-Firmware advertises its capability of handling new event in WMI service ready
-event. Based on that, host needs to set host_service_flags in WMI init command
-to indicate that host supports processing of this WMI event.
-Based on advertised host capability, firmware sends event (WMI_REG_CHAN_LIST_CC_EXT_EVENTID).
-This new event contains 2G/5G/6G reg rules with additional power value
-fields for 6GHz and regd is built accordingly.
+ath12k_peer_find_by_id() requires that the caller hold the
+ab->base_lock. Currently the WBM error path does not hold
+the lock and calling that function, leads to the
+following lockdep_assert()in QCN9274:
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
+[105162.160893] ------------[ cut here ]------------
+[105162.160916] WARNING: CPU: 3 PID: 0 at drivers/net/wireless/ath/ath12k/peer.c:71 ath12k_peer_find_by_id+0x52/0x60 [ath12k]
+[105162.160933] Modules linked in: ath12k(O) qrtr_mhi qrtr mac80211 cfg80211 mhi qmi_helpers libarc4 nvme nvme_core [last unloaded: ath12k(O)]
+[105162.160967] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G        W  O       6.1.0-rc2+ #3
+[105162.160972] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0056.2019.0506.1527 05/06/2019
+[105162.160977] RIP: 0010:ath12k_peer_find_by_id+0x52/0x60 [ath12k]
+[105162.160990] Code: 07 eb 0f 39 68 24 74 0a 48 8b 00 48 39 f8 75 f3 31 c0 5b 5d c3 48 8d bf b0 f2 00 00 be ff ff ff ff e8 22 20 c4 e2 85 c0 75 bf <0f> 0b eb bb 66 2e 0f 1f 84 00 00 00 00 00 41 54 4c 8d a7 98 f2 00
+[105162.160996] RSP: 0018:ffffa223001acc60 EFLAGS: 00010246
+[105162.161003] RAX: 0000000000000000 RBX: ffff9f0573940000 RCX: 0000000000000000
+[105162.161008] RDX: 0000000000000001 RSI: ffffffffa3951c8e RDI: ffffffffa39a96d7
+[105162.161013] RBP: 000000000000000a R08: 0000000000000000 R09: 0000000000000000
+[105162.161017] R10: ffffa223001acb40 R11: ffffffffa3d57c60 R12: ffff9f057394f2e0
+[105162.161022] R13: ffff9f0573940000 R14: ffff9f04ecd659c0 R15: ffff9f04d5a9b040
+[105162.161026] FS:  0000000000000000(0000) GS:ffff9f0575600000(0000) knlGS:0000000000000000
+[105162.161031] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[105162.161036] CR2: 00001d5c8277a008 CR3: 00000001e6224006 CR4: 00000000003706e0
+[105162.161041] Call Trace:
+[105162.161046]  <IRQ>
+[105162.161051]  ath12k_dp_rx_process_wbm_err+0x6da/0xaf0 [ath12k]
+[105162.161072]  ? ath12k_dp_rx_process_err+0x80e/0x15a0 [ath12k]
+[105162.161084]  ? __lock_acquire+0x4ca/0x1a60
+[105162.161104]  ath12k_dp_service_srng+0x263/0x310 [ath12k]
+[105162.161120]  ath12k_pci_ext_grp_napi_poll+0x1c/0x70 [ath12k]
+[105162.161133]  __napi_poll+0x22/0x260
+[105162.161141]  net_rx_action+0x2f8/0x380
+[105162.161153]  __do_softirq+0xd0/0x4c9
+[105162.161162]  irq_exit_rcu+0x88/0xe0
+[105162.161169]  common_interrupt+0xa5/0xc0
+[105162.161174]  </IRQ>
+[105162.161179]  <TASK>
+[105162.161184]  asm_common_interrupt+0x22/0x40
 
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Handle spin lock/unlock in WBM error path to hold the necessary lock
+expected by ath12k_peer_find_by_id().
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-03171-QCAHKSWPL_SILICONZ-1
+
 Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Link: https://lore.kernel.org/r/20230122014936.3594-1-quic_rgnanase@quicinc.com
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 95 +++++++++++++++++----------
- drivers/net/wireless/ath/ath12k/wmi.h |  8 ++-
- 2 files changed, 68 insertions(+), 35 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 03fbe078ebe7..d972df7f21a5 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -3194,8 +3194,8 @@ ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cf
- 	wmi_cfg->sched_params = cpu_to_le32(tg_cfg->sched_params);
- 	wmi_cfg->twt_ap_pdev_count = cpu_to_le32(tg_cfg->twt_ap_pdev_count);
- 	wmi_cfg->twt_ap_sta_count = cpu_to_le32(tg_cfg->twt_ap_sta_count);
--	wmi_cfg->host_service_flags =
--		cpu_to_le32(1 << WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT);
-+	wmi_cfg->host_service_flags = cpu_to_le32(tg_cfg->is_reg_cc_ext_event_supported <<
-+				WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT);
- }
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 83a43ad48c512..de9a4ca66c664 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -3494,11 +3494,14 @@ static int ath12k_dp_rx_h_null_q_desc(struct ath12k *ar, struct sk_buff *msdu,
+ 	msdu_len = ath12k_dp_rx_h_msdu_len(ab, desc);
+ 	peer_id = ath12k_dp_rx_h_peer_id(ab, desc);
  
- static int ath12k_init_cmd_send(struct ath12k_wmi_pdev *wmi,
-@@ -3403,6 +3403,10 @@ int ath12k_wmi_cmd_init(struct ath12k_base *ab)
- 	struct ath12k_wmi_base *wmi_sc = &ab->wmi_ab;
- 	struct ath12k_wmi_init_cmd_arg arg = {};
- 
-+	if (test_bit(WMI_TLV_SERVICE_REG_CC_EXT_EVENT_SUPPORT,
-+		     ab->wmi_ab.svc_map))
-+		arg.res_cfg.is_reg_cc_ext_event_supported = 1;
-+
- 	ab->hw_params->wmi_init(ab, &arg.res_cfg);
- 
- 	arg.num_mem_chunks = wmi_sc->num_mem_chunks;
-@@ -6011,47 +6015,72 @@ static void ath12k_vdev_install_key_compl_event(struct ath12k_base *ab,
- 	rcu_read_unlock();
- }
- 
--static void ath12k_service_available_event(struct ath12k_base *ab, struct sk_buff *skb)
-+static int ath12k_wmi_tlv_services_parser(struct ath12k_base *ab,
-+					  u16 tag, u16 len,
-+					  const void *ptr,
-+					  void *data)
- {
--	const void **tb;
- 	const struct wmi_service_available_event *ev;
--	int ret;
-+	u32 *wmi_ext2_service_bitmap;
- 	int i, j;
-+	u16 expected_len;
- 
--	tb = ath12k_wmi_tlv_parse_alloc(ab, skb->data, skb->len, GFP_ATOMIC);
--	if (IS_ERR(tb)) {
--		ret = PTR_ERR(tb);
--		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
--		return;
-+	expected_len = WMI_SERVICE_SEGMENT_BM_SIZE32 * sizeof(u32);
-+	if (len < expected_len) {
-+		ath12k_warn(ab, "invalid len %d for the tag 0x%x\n",
-+			    len, tag);
-+		return -EINVAL;
++	spin_lock(&ab->base_lock);
+ 	if (!ath12k_peer_find_by_id(ab, peer_id)) {
++		spin_unlock(&ab->base_lock);
+ 		ath12k_dbg(ab, ATH12K_DBG_DATA, "invalid peer id received in wbm err pkt%d\n",
+ 			   peer_id);
+ 		return -EINVAL;
  	}
++	spin_unlock(&ab->base_lock);
  
--	ev = tb[WMI_TAG_SERVICE_AVAILABLE_EVENT];
--	if (!ev) {
--		ath12k_warn(ab, "failed to fetch svc available ev");
--		kfree(tb);
--		return;
--	}
-+	switch (tag) {
-+	case WMI_TAG_SERVICE_AVAILABLE_EVENT:
-+		ev = (struct wmi_service_available_event *)ptr;
-+		for (i = 0, j = WMI_MAX_SERVICE;
-+		     i < WMI_SERVICE_SEGMENT_BM_SIZE32 && j < WMI_MAX_EXT_SERVICE;
-+		     i++) {
-+			do {
-+				if (le32_to_cpu(ev->wmi_service_segment_bitmap[i]) &
-+				    BIT(j % WMI_AVAIL_SERVICE_BITS_IN_SIZE32))
-+					set_bit(j, ab->wmi_ab.svc_map);
-+			} while (++j % WMI_AVAIL_SERVICE_BITS_IN_SIZE32);
-+		}
- 
--	/* TODO: Use wmi_service_segment_offset information to get the service
--	 * especially when more services are advertised in multiple service
--	 * available events.
--	 */
--	for (i = 0, j = WMI_MAX_SERVICE;
--	     i < WMI_SERVICE_SEGMENT_BM_SIZE32 && j < WMI_MAX_EXT_SERVICE;
--	     i++) {
--		do {
--			if (le32_to_cpu(ev->wmi_service_segment_bitmap[i]) &
--			    BIT(j % WMI_AVAIL_SERVICE_BITS_IN_SIZE32))
--				set_bit(j, ab->wmi_ab.svc_map);
--		} while (++j % WMI_AVAIL_SERVICE_BITS_IN_SIZE32);
-+		ath12k_dbg(ab, ATH12K_DBG_WMI,
-+			   "wmi_ext_service_bitmap 0:0x%x, 1:0x%x, 2:0x%x, 3:0x%x",
-+			   ev->wmi_service_segment_bitmap[0],
-+			   ev->wmi_service_segment_bitmap[1],
-+			   ev->wmi_service_segment_bitmap[2],
-+			   ev->wmi_service_segment_bitmap[3]);
-+		break;
-+	case WMI_TAG_ARRAY_UINT32:
-+		wmi_ext2_service_bitmap = (u32 *)ptr;
-+		for (i = 0, j = WMI_MAX_EXT_SERVICE;
-+		     i < WMI_SERVICE_SEGMENT_BM_SIZE32 && j < WMI_MAX_EXT2_SERVICE;
-+		     i++) {
-+			do {
-+				if (wmi_ext2_service_bitmap[i] &
-+				    BIT(j % WMI_AVAIL_SERVICE_BITS_IN_SIZE32))
-+					set_bit(j, ab->wmi_ab.svc_map);
-+			} while (++j % WMI_AVAIL_SERVICE_BITS_IN_SIZE32);
-+		}
-+
-+		ath12k_dbg(ab, ATH12K_DBG_WMI,
-+			   "wmi_ext2_service_bitmap  0:0x%04x, 1:0x%04x, 2:0x%04x, 3:0x%04x",
-+			   wmi_ext2_service_bitmap[0], wmi_ext2_service_bitmap[1],
-+			   wmi_ext2_service_bitmap[2], wmi_ext2_service_bitmap[3]);
-+		break;
- 	}
-+	return 0;
-+}
- 
--	ath12k_dbg(ab, ATH12K_DBG_WMI,
--		   "wmi_ext_service_bitmap 0:0x%x, 1:0x%x, 2:0x%x, 3:0x%x",
--		   ev->wmi_service_segment_bitmap[0], ev->wmi_service_segment_bitmap[1],
--		   ev->wmi_service_segment_bitmap[2], ev->wmi_service_segment_bitmap[3]);
-+static int ath12k_service_available_event(struct ath12k_base *ab, struct sk_buff *skb)
-+{
-+	int ret;
- 
--	kfree(tb);
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_tlv_services_parser,
-+				  NULL);
-+	return ret;
- }
- 
- static void ath12k_peer_assoc_conf_event(struct ath12k_base *ab, struct sk_buff *skb)
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index a8b972493fbb..43a7eef3f3f9 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2148,7 +2148,10 @@ enum wmi_tlv_service {
- 	WMI_TLV_SERVICE_FREQINFO_IN_METADATA = 219,
- 	WMI_TLV_SERVICE_EXT2_MSG = 220,
- 
--	WMI_MAX_EXT_SERVICE
-+	WMI_MAX_EXT_SERVICE = 256,
-+
-+	WMI_TLV_SERVICE_REG_CC_EXT_EVENT_SUPPORT = 281,
-+	WMI_MAX_EXT2_SERVICE,
- };
- 
- enum {
-@@ -2333,6 +2336,7 @@ struct ath12k_wmi_resource_config_arg {
- 	u32 sched_params;
- 	u32 twt_ap_pdev_count;
- 	u32 twt_ap_sta_count;
-+	bool is_reg_cc_ext_event_supported;
- };
- 
- struct ath12k_wmi_init_cmd_arg {
-@@ -4665,7 +4669,7 @@ struct ath12k_wmi_base {
- 
- 	struct completion service_ready;
- 	struct completion unified_ready;
--	DECLARE_BITMAP(svc_map, WMI_MAX_EXT_SERVICE);
-+	DECLARE_BITMAP(svc_map, WMI_MAX_EXT2_SERVICE);
- 	wait_queue_head_t tx_credits_wq;
- 	const struct wmi_peer_flags_map *peer_flags;
- 	u32 num_mem_chunks;
+ 	if (!rxcb->is_frag && ((msdu_len + hal_rx_desc_sz) > DP_RX_BUFFER_SIZE)) {
+ 		/* First buffer will be freed by the caller, so deduct it's length */
 -- 
-2.17.1
+2.39.2
 
 
 -- 
