@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3C9DC7EE21
-	for <ath12k@archiver.kernel.org>; Thu,  4 May 2023 19:41:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D7AEC77B78
+	for <ath12k@archiver.kernel.org>; Thu,  4 May 2023 19:42:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/KF39OZtU0jNBIDKtJMzl+P/NBuyhb3UE7SOWVSiaAE=; b=CvrMG8xtTRKHIT
-	Oz2Sgj2KTyVUp43LnO6CQh8oyqgjfmLNK90eXoZmETOxYNar/tihW7CiVDvZO2+gM6BuYB+Ea7K/I
-	itQcXYpYIz8DEMftPr4JMOVBZofUcTA9sCOzPpnEwXfCoVFb4M0S9qJrUYYfT88r5c9aoj1q+qnl1
-	BbNN9CdqpY2ui+UfOx/1qhK1/K3C074S9MYuvnxQy7wTtm3QO0J4oBvsUgDQOzKFQnJUOYxYmf/uh
-	7EKNJmqIdJ2cOjk2oHzvxXHkcIaSB54z+8xlXWXqE8Ze1te380T6ljHIaOL3tE4j3auaQcmsrIlp4
-	h9myrpTD0Lo4IOrOI++A==;
+	List-Owner; bh=4jhpiJoBL5gdJHBmxNbBEXe4J6N//gKUb/pgJwEpErU=; b=SfXKMyxW9/I9kg
+	V69wHnRWBSr1qnqk55OjAE/cemxtYic3rj30vElCDdPVdOL5FFVqiEDAt+H7pQzVEcaopbUzMHT3+
+	mEdSvN89ymUbf7f7QrJh/B5VevjISQCHl8tWODDmPJ31FoKA+zqHW97xh9wa9HWpWuc67ghiNxWSS
+	Ma8/HXrxWnAo+3+G+eH9Nlz89sn9HZm2DFLaq9ssOF+IwuhxbSlSQW5FCp8oko+TmhnrjOwHRLa5E
+	t1FmbBaGWG/m2iGPPYTdyUSXkT9cDgEfmtiul+L+W/Z3bC0yGscs984zJo2eqBSXTgwNlt8aR3yn4
+	V6yMmeXIj4pNNjhtAI4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puepu-008oo5-0y
+	id 1pueqZ-008pFg-2N
 	for ath12k@archiver.kernel.org;
-	Thu, 04 May 2023 19:41:54 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 04 May 2023 19:42:35 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puepr-008olt-0E
+	id 1pueqX-008pE2-1f
 	for ath12k@lists.infradead.org;
-	Thu, 04 May 2023 19:41:53 +0000
+	Thu, 04 May 2023 19:42:34 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 85B4B62D46;
-	Thu,  4 May 2023 19:41:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75EE4C433A8;
-	Thu,  4 May 2023 19:41:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id BE6C76370D;
+	Thu,  4 May 2023 19:42:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF387C433A7;
+	Thu,  4 May 2023 19:42:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683229309;
-	bh=0WiwHMcHXif2lDlvSZTXjjkYOySdSwVPXH3cTPH205Y=;
+	s=k20201202; t=1683229352;
+	bh=bkD6hVU+8F90R1FdgY0SO//u+++2L4MdapcaIwB2BL8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=YhJFDH2MQ0ztb/F6AvVN4boUaf+kuaIavh9WxBpsdvXSLvzOQMA4yc81vk9Ctd4IW
-	 nDp/GgfAa+ri8gdMBkTqeXtUxJUJE/oKdKRGFxCdR7S9RmlfXpAueaxqTLvaXCiOXd
-	 mCVaEgo0i7XSLr/ZzCQi/HOof6OJJeqmqB2X3ov68jy6W30TAJ51R4iDAlhmiZXBW9
-	 ux2aUzKRet/tWBSwo/NTvdVS8FlZZsc0a58tM2WUFxiIb0KYaUuYKEBiRttaW4b4/1
-	 gfAyH+SdEVwffIib2s4QnpmuiUZeizwmoYwsEvelX3D40TfWRk/qIhJKrIpAHKAxNx
-	 FjEyvPf4udnTg==
+	b=ZnJ83nOSmWzoU9SGz7V4PJlMT0ELfP1zqYEyy57eCOxHHYEHg2zV/6Mv+X7p6QaK2
+	 BtVIC6pXA7PY+6El3VrTJ3Gt9MmtEN5TZcS+56qAicXmbCWuUevaD/djCbQTLNmi6Y
+	 wn0SaVpILLTrfmTPRlH0vRCDOyVk+CKqa3jlHquYqLuwModOU4RTNhWwuMZ3mJTE7e
+	 LU3Od7YiL34ZFYDvEOQ2JAL7MZaQ01gBShR3J+djPnuWwCe7OevSwQx4ULfbau8x4r
+	 B8AKFFAhlXMudA/W3YlllOC8GVwGF3KejDpWXsXm7O6DRVf8GYCgXJ7KcZaw+nueD9
+	 MSKilzqag2Zwg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
+Cc: Rajat Soni <quic_rajson@quicinc.com>,
 	Kalle Valo <quic_kvalo@quicinc.com>,
 	Sasha Levin <sashal@kernel.org>,
 	kvalo@kernel.org,
@@ -59,9 +59,9 @@ Cc: Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
 	ath12k@lists.infradead.org,
 	linux-wireless@vger.kernel.org,
 	netdev@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.3 03/59] wifi: ath12k: PCI ops for wakeup/release MHI
-Date: Thu,  4 May 2023 15:40:46 -0400
-Message-Id: <20230504194142.3805425-3-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.3 16/59] wifi: ath12k: fix memory leak in ath12k_qmi_driver_event_work()
+Date: Thu,  4 May 2023 15:40:59 -0400
+Message-Id: <20230504194142.3805425-16-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230504194142.3805425-1-sashal@kernel.org>
 References: <20230504194142.3805425-1-sashal@kernel.org>
@@ -69,8 +69,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230504_124151_195408_1A5A4CAC 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20230504_124233_594761_3F119522 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,196 +87,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+From: Rajat Soni <quic_rajson@quicinc.com>
 
-[ Upstream commit 80e396586d0a94c42015dd9472176d89a3b0e4ca ]
+[ Upstream commit 960412bee0ea75f6b3c2dca4a3535795ee84c47a ]
 
-Wakeup/release MHI is not needed before pci_read/write for QCN9274.
-Since wakeup & release MHI is enabled for all QCN9274 and
-WCN7850, below MHI assert is seen in QCN9274
+Currently the buffer pointed by event is not freed in case
+ATH12K_FLAG_UNREGISTERING bit is set, this causes memory leak.
 
-[  784.906613] BUG: sleeping function called from invalid context at drivers/bus/mhi/host/pm.c:989
-[  784.906633] in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 0, name: swapper/3
-[  784.906637] preempt_count: 503, expected: 0
-[  784.906641] RCU nest depth: 0, expected: 0
-[  784.906644] 2 locks held by swapper/3/0:
-[  784.906646]  #0: ffff8ed348e429e0 (&ab->ce.ce_lock){+.-.}-{2:2}, at: ath12k_ce_recv_process_cb+0xb3/0x2f0 [ath12k]
-[  784.906664]  #1: ffff8ed348e491f0 (&srng->lock_key#3){+.-.}-{2:2}, at: ath12k_ce_recv_process_cb+0xfb/0x2f0 [ath12k]
-[  784.906678] Preemption disabled at:
-[  784.906680] [<0000000000000000>] 0x0
-[  784.906686] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G        W  O       6.1.0-rc2+ #3
-[  784.906688] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0056.2019.0506.1527 05/06/2019
-[  784.906690] Call Trace:
-[  784.906691]  <IRQ>
-[  784.906693]  dump_stack_lvl+0x56/0x7b
-[  784.906698]  __might_resched+0x21c/0x270
-[  784.906704]  __mhi_device_get_sync+0x7d/0x1c0 [mhi]
-[  784.906714]  mhi_device_get_sync+0xd/0x20 [mhi]
-[  784.906719]  ath12k_pci_write32+0x75/0x170 [ath12k]
-[  784.906729]  ath12k_hal_srng_access_end+0x55/0xc0 [ath12k]
-[  784.906737]  ath12k_ce_recv_process_cb+0x1f3/0x2f0 [ath12k]
-[  784.906776]  ? ath12k_pci_ce_tasklet+0x11/0x30 [ath12k]
-[  784.906788]  ath12k_pci_ce_tasklet+0x11/0x30 [ath12k]
-[  784.906813]  tasklet_action_common.isra.18+0xb7/0xe0
-[  784.906820]  __do_softirq+0xd0/0x4c9
-[  784.906826]  irq_exit_rcu+0x88/0xe0
-[  784.906828]  common_interrupt+0xa5/0xc0
-[  784.906831]  </IRQ>
-[  784.906832]  <TASK>
+Add a goto skip instead of return, to ensure event and all the
+list entries are freed properly.
 
-Adding function callbacks for MHI wakeup and release operations.
-QCN9274 does not need wakeup/release, function callbacks are initialized
-to NULL. In case of WCN7850, shadow registers are used to access rings.
-Since, shadow register's offset is less than ACCESS_ALWAYS_OFF,
-mhi_device_get_sync() or mhi_device_put() to wakeup
-and release mhi will not be called during service ring accesses.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-03171-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://lore.kernel.org/r/20230123095141.5310-1-quic_rgnanase@quicinc.com
+Link: https://lore.kernel.org/r/20230315090632.15065-1-quic_rajson@quicinc.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 47 ++++++++++++++++++++++-----
- drivers/net/wireless/ath/ath12k/pci.h |  6 ++++
- 2 files changed, 44 insertions(+), 9 deletions(-)
+ drivers/net/wireless/ath/ath12k/qmi.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index ae7f6083c9fc2..d32637b0113db 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -119,6 +119,30 @@ static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
- 	"tcl2host-status-ring",
- };
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 979a63f2e2ab8..03ba245fbee92 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2991,7 +2991,7 @@ static void ath12k_qmi_driver_event_work(struct work_struct *work)
+ 		spin_unlock(&qmi->event_lock);
  
-+static int ath12k_pci_bus_wake_up(struct ath12k_base *ab)
-+{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+
-+	return mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+}
-+
-+static void ath12k_pci_bus_release(struct ath12k_base *ab)
-+{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+
-+	mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
-+}
-+
-+static const struct ath12k_pci_ops ath12k_pci_ops_qcn9274 = {
-+	.wakeup = NULL,
-+	.release = NULL,
-+};
-+
-+static const struct ath12k_pci_ops ath12k_pci_ops_wcn7850 = {
-+	.wakeup = ath12k_pci_bus_wake_up,
-+	.release = ath12k_pci_bus_release,
-+};
-+
- static void ath12k_pci_select_window(struct ath12k_pci *ab_pci, u32 offset)
- {
- 	struct ath12k_base *ab = ab_pci->ab;
-@@ -989,13 +1013,14 @@ u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset)
- {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
- 	u32 val, window_start;
-+	int ret = 0;
+ 		if (test_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags))
+-			return;
++			goto skip;
  
- 	/* for offset beyond BAR + 4K - 32, may
- 	 * need to wakeup MHI to access.
- 	 */
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->wakeup)
-+		ret = ab_pci->pci_ops->wakeup(ab);
- 
- 	if (offset < WINDOW_START) {
- 		val = ioread32(ab->mem + offset);
-@@ -1023,9 +1048,9 @@ u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset)
+ 		switch (event->type) {
+ 		case ATH12K_QMI_EVENT_SERVER_ARRIVE:
+@@ -3032,6 +3032,8 @@ static void ath12k_qmi_driver_event_work(struct work_struct *work)
+ 			ath12k_warn(ab, "invalid event type: %d", event->type);
+ 			break;
+ 		}
++
++skip:
+ 		kfree(event);
+ 		spin_lock(&qmi->event_lock);
  	}
- 
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
--
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->release &&
-+	    !ret)
-+		ab_pci->pci_ops->release(ab);
- 	return val;
- }
- 
-@@ -1033,13 +1058,14 @@ void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
- {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
- 	u32 window_start;
-+	int ret = 0;
- 
- 	/* for offset beyond BAR + 4K - 32, may
- 	 * need to wakeup MHI to access.
- 	 */
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_get_sync(ab_pci->mhi_ctrl->mhi_dev);
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->wakeup)
-+		ret = ab_pci->pci_ops->wakeup(ab);
- 
- 	if (offset < WINDOW_START) {
- 		iowrite32(value, ab->mem + offset);
-@@ -1067,8 +1093,9 @@ void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
- 	}
- 
- 	if (test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags) &&
--	    offset >= ACCESS_ALWAYS_OFF)
--		mhi_device_put(ab_pci->mhi_ctrl->mhi_dev);
-+	    offset >= ACCESS_ALWAYS_OFF && ab_pci->pci_ops->release &&
-+	    !ret)
-+		ab_pci->pci_ops->release(ab);
- }
- 
- int ath12k_pci_power_up(struct ath12k_base *ab)
-@@ -1182,6 +1209,7 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
- 	case QCN9274_DEVICE_ID:
- 		ab_pci->msi_config = &ath12k_msi_config[0];
- 		ab->static_window_map = true;
-+		ab_pci->pci_ops = &ath12k_pci_ops_qcn9274;
- 		ath12k_pci_read_hw_version(ab, &soc_hw_version_major,
- 					   &soc_hw_version_minor);
- 		switch (soc_hw_version_major) {
-@@ -1202,6 +1230,7 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
- 		ab_pci->msi_config = &ath12k_msi_config[0];
- 		ab->static_window_map = false;
- 		ab->hw_rev = ATH12K_HW_WCN7850_HW20;
-+		ab_pci->pci_ops = &ath12k_pci_ops_wcn7850;
- 		break;
- 
- 	default:
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 0d9e40ab31f26..0f24fd9395cd9 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -86,6 +86,11 @@ enum ath12k_pci_flags {
- 	ATH12K_PCI_ASPM_RESTORE,
- };
- 
-+struct ath12k_pci_ops {
-+	int (*wakeup)(struct ath12k_base *ab);
-+	void (*release)(struct ath12k_base *ab);
-+};
-+
- struct ath12k_pci {
- 	struct pci_dev *pdev;
- 	struct ath12k_base *ab;
-@@ -103,6 +108,7 @@ struct ath12k_pci {
- 	/* enum ath12k_pci_flags */
- 	unsigned long flags;
- 	u16 link_ctl;
-+	const struct ath12k_pci_ops *pci_ops;
- };
- 
- static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
 -- 
 2.39.2
 
