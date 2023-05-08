@@ -4,64 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66C78C77B7C
-	for <ath12k@archiver.kernel.org>; Fri,  5 May 2023 14:00:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AAFCC77B7F
+	for <ath12k@archiver.kernel.org>; Mon,  8 May 2023 08:44:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sViqlxvn7Zu/x8lJvwbEhYWvMalfn7ZRCVy42M2p+qE=; b=DWT2hvLPVVPap4
-	6UQbWaz7rhp/v8TgKyfvwYbwPidUreqEO9ntcnqsP6sqwuamHJPEk/eV4QAfE+65yc/w6k0Khz+L6
-	eIHubN/4wQ0MxgxeBFB8VJ64sDSq1Elc4CwpMa90Bw2C0AitxyVbpfeMb5tcothJSE820MuUbVMK2
-	ueifE4VeOmBrluZWK2O9yFjPfInz4CbGdeORQXQpiUA7Gkc88MKtPIUYzmGLyxqW+qNCfKz2wD893
-	MVrNbw2eNZcc1oMhYRi8/kS+QrJTOBkqERxVCfkyQZh8kve3VpINdUPOIzA8tsDt5jNJtbLHwaamy
-	AP0q1+gl5WaTuK6AYyCQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WS2tW5YxEuicaYjutUwhVMgMYu81Dko1tYip57MfmZM=; b=rw6Yk2hA7Yx0Qq
+	oSK47jLZm4KFMvQRESV6wvP+LM8l6ga8RYvvOpOcb+L/2xt6riLr/p2u/n9S1A0JyQ+i7bHVNRKZm
+	Y4U5r2YfdTOu5PEFe7FG5HyzfuybOryrp821CLjwd4taoYGZlyAk1n8mV/6joQGNC8x3mA4RtzIvd
+	TE9HPIRXGTLj4DDrXgTS/OFx2At8NwvcVHh010vxRjGVYBGOCLy5pN1E5zEumnJzDO2xU3atQg+XQ
+	BGcoVNd5E7srIzg6bwgpFBc4WCdB0iyZCq2i1yWQ0phy7stF+I5ui9kv2jJkXxTn7lr6INU7TwTgF
+	VcxsggWv6ARppQsCqWqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1puvzR-00B2sf-34
+	id 1pvwUL-0000oJ-04
 	for ath12k@archiver.kernel.org;
-	Fri, 05 May 2023 14:00:53 +0000
+	Mon, 08 May 2023 08:44:57 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puuzb-00Aw8V-2l
-	for ath12k@lists.infradead.org;
-	Fri, 05 May 2023 12:57:01 +0000
+	id 1pvwUI-0000nk-0h;
+	Mon, 08 May 2023 08:44:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 17D2363D08;
-	Fri,  5 May 2023 12:56:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5AFE0C433D2;
-	Fri,  5 May 2023 12:56:57 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 572C9611B5;
+	Mon,  8 May 2023 08:44:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6DC5FC433EF;
+	Mon,  8 May 2023 08:44:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683291418;
-	bh=LqboN86lk1pQb0m3e4Qf+Jmh3aLEz38XRms+T3U9DV8=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=jk6xg26/MvKP7C1mM1xoErVGTJPC4g3I1YmMcN5kNDTkZem5jYR/rvU3V01yupBrL
-	 Abjz3waGIOI0J5Az2LTcEW7Iuk60pXEnwnthCvSr6I6wtevPPJztFEMG3qjRrrz37H
-	 rZQAcuc27pqXmxUsMWMDD6o2LtkrGb41RMPVOfMuFtrmty/o4me5w5sGE1JFLgwSdn
-	 3x2ERJ++/RnXKfcf4zzEKRnaTL9hapyBb1/89UneoIqApAMZ84x1bau+/W0lkGfY/Z
-	 WbijULaQoa+VVi6FuEQabtPLq2Aut1f2zZJnWOmdlU40saKx/E7p8CJyUpu8wp7wdl
-	 JesekotGjS+xQ==
-MIME-Version: 1.0
-Subject: Re: [PATCH v2] wifi: ath12k: add wait operation for tx management
- packets
- for flush from mac80211
+	s=k20201202; t=1683535492;
+	bh=4r3I/p321L24aAx0oFkvVjKBy4Ysck/E+5s0WPzJpB4=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=Idi0uxdhC0IAIqdFhRDaGnjKm6BtsAeoZxde4HBaCAGj0spmTGStkmr7e8SPNw8rp
+	 Nu3QMcgKRSvP1m4fTcff+oBGfiROJfCLvCF27uuKlSHDOjPB0A4pKZqhWCbmunFJMb
+	 eTmXv+aOLEvT0SLoNxKYjChy9TaxfsZXlIpTN1SeIDxO4OKSk3xASB0H1FeBzVxKLa
+	 Wuk7qx5qIQ8otkjmAUrArGp0Bhz71uBjmHEbG+SPtFR5g+YEyp5fbBgTfteLOxSg+e
+	 JwQYSksPZCHm3jVUueeJJeprPuDHMim7rJONUbR+kSr6rK7McAE1OfM4B0POrZ/xeW
+	 /QUr6qcr0r/WA==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230419095738.19859-1-quic_rgnanase@quicinc.com>
-References: <20230419095738.19859-1-quic_rgnanase@quicinc.com>
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- Karthik M <quic_karm@quicinc.com>,
- Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <168329141362.30600.16864220030105499975.kvalo@kernel.org>
-Date: Fri,  5 May 2023 12:56:57 +0000 (UTC)
+To: Arnd Bergmann <arnd@kernel.org>
+Cc: "David S. Miller" <davem@davemloft.net>,  Eric Dumazet <edumazet@google.com>,  Jakub Kicinski <kuba@kernel.org>,  Paolo Abeni <pabeni@redhat.com>,  Arnd Bergmann <arnd@arndb.de>,  Johannes Berg <johannes.berg@intel.com>,  Manikanta Pubbisetty <quic_mpubbise@quicinc.com>,  Wen Gong <quic_wgong@quicinc.com>,  Baochen Qiang <quic_bqiang@quicinc.com>,  Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,  ath11k@lists.infradead.org,  linux-wireless@vger.kernel.org,  netdev@vger.kernel.org,  linux-kernel@vger.kernel.org,  ath12k@lists.infradead.org
+Subject: Re: [PATCH] wireless: ath: work around false-positive stringop-overread warning
+References: <20230417205447.1800912-1-arnd@kernel.org>
+Date: Mon, 08 May 2023 11:44:44 +0300
+In-Reply-To: <20230417205447.1800912-1-arnd@kernel.org> (Arnd Bergmann's
+	message of "Mon, 17 Apr 2023 22:54:20 +0200")
+Message-ID: <87ttwnnrer.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230505_055659_974185_741F2B0C 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20230508_014454_323518_849E590A 
+X-CRM114-Status: GOOD (  13.72  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,35 +74,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ramya Gnanasekar <quic_rgnanase@quicinc.com> wrote:
+Arnd Bergmann <arnd@kernel.org> writes:
 
-> Transmission of management packets are done in a work queue. Sometimes
-> the workqueue does not finish Tx immediately, then it lead after the next
-> step of vdev delete finished, it start to send the management packet to
-> firmware and lead firmware crash.
-> 
-> ieee80211_set_disassoc() have logic of ieee80211_flush_queues() after
-> it send_deauth_disassoc() to ath12k, its purpose is make sure the
-> deauth was actually sent, so it need to change ath12k to match the
-> purpose of mac80211.
-> 
-> To address these issues wait for Tx management as well as Tx data packets.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthik M <quic_karm@quicinc.com>
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> From: Arnd Bergmann <arnd@arndb.de>
+>
+> In a rare arm64 randconfig build, I got multiple warnings for ath11k
+> and ath12k:
+>
+> In function 'ath11k_peer_assoc_h_ht',
+>     inlined from 'ath11k_peer_assoc_prepare' at drivers/net/wireless/ath/ath11k/mac.c:2665:2:
+> drivers/net/wireless/ath/ath11k/mac.c:1709:13: error: 'ath11k_peer_assoc_h_ht_masked' reading 10 bytes from a region of size 0 [-Werror=stringop-overread]
+>  1709 |         if (ath11k_peer_assoc_h_ht_masked(ht_mcs_mask))
+>       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>
+> This happens whenever gcc-13 fails to inline one of the functions
+> that take a fixed-length array argument but gets passed a pointer.
+>
+> Change these functions to all take a regular pointer argument
+> instead.
+>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-Patch applied to ath-next branch of ath.git, thanks.
+s/wireless:/wifi:/ but I can fix that.
 
-5189a8dba849 wifi: ath12k: add wait operation for tx management packets for flush from mac80211
+In a awat it's a shame to lose the explicit length but I guess there's
+no other way to fix this?
+
+Also I hope you find the time to add GCC 13 to crosstool :) Related to
+this, last year we had a similar warning with GCC 11 for which I added this
+not-so-pretty workaround:
+
+abf93f369419 wifi: ath11k: mac: fix reading 16 bytes from a region of size 0 warning
+
+https://git.kernel.org/linus/abf93f369419
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230419095738.19859-1-quic_rgnanase@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/list/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
 
 -- 
 ath12k mailing list
