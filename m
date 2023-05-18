@@ -4,78 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70976C77B7F
-	for <ath12k@archiver.kernel.org>; Wed, 17 May 2023 11:04:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2AEFC7EE24
+	for <ath12k@archiver.kernel.org>; Thu, 18 May 2023 06:17:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EbvSrierCB3KlhROJg+7iOt67w88QkhBAzKxG0NfpRY=; b=C+jx3CxgpurG9c
-	SLTphdptVm/ySi7EZbXEFo7FNfk7alifdTF67caUh/bU+gcihAMV32w2/g5MwAYLSO4CdOXwEX2DX
-	4z8pxw8W3pfR+6T2Afobv9K7CBv4v3Rdta56GTZFtn4qzmagFDQIFbZYKFtFlaAcbnEV5okaEu3ro
-	MI+EFI3ORogR/owG/Y/WleReTlBeVP0x9cmzoFDLqdf3vdliZMrJJgjGI/0wKB2uO62ypfLFJyoKB
-	bzEXV0NfLzfgnzIII7uDQHNt+QXYi9HEpbzbQVQJiuM7IkNHJyvikJnmvMDBPj/k2BoBrWOTKi4H9
-	lVgcrk1jibaVM7EEXEtg==;
+	List-Owner; bh=Rb493XKbo1vAxT0ALfnTToJcb7l3Q8GdNUj1p+0wmZI=; b=MtzpiyFrvcPM5p
+	14oGUKMays/i1TJKiHdQyUuMoi40U95TU7NoS0sajB78xc2iqerRmSHghfBWPb2n1AMxu239TtP01
+	MIY9m9EG8E/Dp1n5nRm7rlRv6RTrA8WPbhDVx5GvCqABUGh8KdYWH45xV8K1pk/FeV6b+76thiohr
+	yWK+MfI1dH+EsWxqWcW0yaEpMZUKNDsYCAFM/65Lpr9vWMtn2qWwxN/d7BaGOW7f3o47/IjevS/x6
+	xB0yVf5NvE809QXl2XiNBkyuBQ54uOve10A1wqLlDgbGfqu6gFoz8zLeGkGJBcMNito1iKHv8EuwI
+	VojvwArv1udRo2lvDzaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pzEx2-009WuP-0P
+	id 1pzWww-00C30X-0y
 	for ath12k@archiver.kernel.org;
-	Wed, 17 May 2023 11:04:12 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 18 May 2023 06:17:18 +0000
+Received: from smtp-22.smtpout.orange.fr ([80.12.242.22] helo=smtp.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pzEwz-009Wte-15
+	id 1pzWws-00C2y8-2I
 	for ath12k@lists.infradead.org;
-	Wed, 17 May 2023 11:04:10 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 756A763A7C;
-	Wed, 17 May 2023 11:04:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 91E08C433A1;
-	Wed, 17 May 2023 11:04:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1684321445;
-	bh=tR3qS12+MUYmkZK6jLAcuvivmBsfJSWs1iLgSwCi8fY=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=Q6w2br9fnsK/saD7J/nbmuE4MtaDXepq8RRZpSubF96Trnm6BvliJeDLqoVyWp+8z
-	 egyinTUw3TEb4Y0N8JqJj19LLSGRYy8AwmGRHsov8tnU7aYGwUAXMoOD/7ZOxJ1Jn2
-	 sIBxxCFFMzvMJYG1uWo5JZR1i2U6GBQdoW0xx/9JOt+ZgA96vEljgHPYz+ZJEcW3iZ
-	 Pz1tXLN2HjdWaBEuYzPqNICJAGHli8WhH5+0PKIkpAb5t5/Tj8p0aoiIqZ2c6AZlox
-	 gvjjVTQRDDlvr2prU1hIAtj7QPMX8jgFBRFhd0SGyfMKEtS8mNuV1RdNiuOY6Xnj4U
-	 v2nQnGG9XAu1Q==
-From: Kalle Valo <kvalo@kernel.org>
-To: Ilpo =?utf-8?Q?J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
-Cc: linux-pci@vger.kernel.org,  Bjorn Helgaas <bhelgaas@google.com>,
-  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,  Rob Herring
- <robh@kernel.org>,  Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-  Emmanuel Grumbach <emmanuel.grumbach@intel.com>,  "Rafael J . Wysocki"
- <rafael@kernel.org>,  Heiner Kallweit <hkallweit1@gmail.com>,  Lukas
- Wunner <lukas@wunner.de>,  "David S. Miller" <davem@davemloft.net>,  Eric
- Dumazet <edumazet@google.com>,  Jakub Kicinski <kuba@kernel.org>,  Paolo
- Abeni <pabeni@redhat.com>,  Sriram R <quic_srirrama@quicinc.com>,  P
- Praneesh <quic_ppranees@quicinc.com>,  Ramya Gnanasekar
- <quic_rgnanase@quicinc.com>,  Karthikeyan Periyasamy
- <quic_periyasa@quicinc.com>,  Vasanthakumar Thiagarajan
- <quic_vthiagar@quicinc.com>,  ath12k@lists.infradead.org,
-  linux-wireless@vger.kernel.org,  netdev@vger.kernel.org,
-  linux-kernel@vger.kernel.org,  Dean Luick
- <dean.luick@cornelisnetworks.com>,  Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>,  stable@vger.kernel.org
-Subject: Re: [PATCH v2 8/9] wifi: ath12k: Use RMW accessors for changing LNKCTL
-References: <20230517105235.29176-1-ilpo.jarvinen@linux.intel.com>
-	<20230517105235.29176-9-ilpo.jarvinen@linux.intel.com>
-Date: Wed, 17 May 2023 14:03:57 +0300
-In-Reply-To: <20230517105235.29176-9-ilpo.jarvinen@linux.intel.com> ("Ilpo
-	\=\?utf-8\?Q\?J\=C3\=A4rvinen\=22's\?\= message of "Wed, 17 May 2023 13:52:34
- +0300")
-Message-ID: <871qjfmd7m.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+	Thu, 18 May 2023 06:17:17 +0000
+Received: from [192.168.1.18] ([86.243.2.178])
+	by smtp.orange.fr with ESMTPA
+	id zWwipDLQ5jCyEzWwiphDGq; Thu, 18 May 2023 08:17:07 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
+	s=t20230301; t=1684390627;
+	bh=lHzeDDfUlQX3RH1HXK0XsiQwqk7lqO7xwS/nUPsFcJ8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=QOwSADmn96OEyVdr0c7A5uO5YPGAzWOZyiU0QJi2BiJnl6Pt/jVDU1puyRiTyZws/
+	 Y5tgDazDLcZP61+sofQWEaUzFmCo0OO3KL5ppkUwxna38ivSWqlzxe/mUZZ1rXkBfp
+	 6Rp4irTvkCaJn4X3tLsg6SoKwxS/gR8ua5sEN23+I8R5pTd+oCUXqHYeCsDOp8mY76
+	 97Tem981S6ocQ5+IaqA1Mwtaxs0IIs8nu2gCVPx6XIXtmRs4DujC8efA6TySfcKIym
+	 vV87QeD5I5LOb2G3S8Te7GQQOpsBUbwlMG0xvsE9ME3RHih7r/o0HiJ8GPUNYWfPtB
+	 Qu9l6av+Y2AHg==
+X-ME-Helo: [192.168.1.18]
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Thu, 18 May 2023 08:17:07 +0200
+X-ME-IP: 86.243.2.178
+Message-ID: <bd9f392c-93e5-7147-0f21-f6732b210df5@wanadoo.fr>
+Date: Thu, 18 May 2023 08:17:03 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.11.0
+Subject: Re: AW: [PATCH] wifi: ath12k: Remove some dead code
+Content-Language: fr
+To: Walter Harms <wharms@bfs.de>, Kalle Valo <kvalo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+ "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>
+References: <c17edf0811156a33bae6c5cf1906d751cc87edd4.1682423828.git.christophe.jaillet@wanadoo.fr>
+ <d0c5ed33fb1644328fbdc5d7aba20a97@bfs.de>
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+In-Reply-To: <d0c5ed33fb1644328fbdc5d7aba20a97@bfs.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230517_040409_417675_F7AAFC16 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20230517_231715_161444_9EB22152 
+X-CRM114-Status: GOOD (  13.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,24 +78,41 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-SWxwbyBKw6RydmluZW4gPGlscG8uamFydmluZW5AbGludXguaW50ZWwuY29tPiB3cml0ZXM6Cgo+
-IERvbid0IGFzc3VtZSB0aGF0IG9ubHkgdGhlIGRyaXZlciB3b3VsZCBiZSBhY2Nlc3NpbmcgTE5L
-Q1RMLiBBU1BNCj4gcG9saWN5IGNoYW5nZXMgY2FuIHRyaWdnZXIgd3JpdGUgdG8gTE5LQ1RMIG91
-dHNpZGUgb2YgZHJpdmVyJ3MgY29udHJvbC4KPgo+IFVzZSBSTVcgY2FwYWJpbGl0eSBhY2Nlc3Nv
-cnMgd2hpY2ggZG8gcHJvcGVyIGxvY2tpbmcgdG8gYXZvaWQgbG9zaW5nCj4gY29uY3VycmVudCB1
-cGRhdGVzIHRvIHRoZSByZWdpc3RlciB2YWx1ZS4gT24gcmVzdG9yZSwgY2xlYXIgdGhlIEFTUE1D
-Cj4gZmllbGQgcHJvcGVybHkuCj4KPiBGaXhlczogZDg4OTkxMzIwNWNmICgid2lmaTogYXRoMTJr
-OiBkcml2ZXIgZm9yIFF1YWxjb21tIFdpLUZpIDcgZGV2aWNlcyIpCj4gU3VnZ2VzdGVkLWJ5OiBM
-dWthcyBXdW5uZXIgPGx1a2FzQHd1bm5lci5kZT4KPiBTaWduZWQtb2ZmLWJ5OiBJbHBvIErDpHJ2
-aW5lbiA8aWxwby5qYXJ2aW5lbkBsaW51eC5pbnRlbC5jb20+Cj4gQ2M6IHN0YWJsZUB2Z2VyLmtl
-cm5lbC5vcmcKCkFja2VkLWJ5OiBLYWxsZSBWYWxvIDxrdmFsb0BrZXJuZWwub3JnPgoKLS0gCmh0
-dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcHJvamVjdC9saW51eC13aXJlbGVzcy9saXN0LwoK
-aHR0cHM6Ly93aXJlbGVzcy53aWtpLmtlcm5lbC5vcmcvZW4vZGV2ZWxvcGVycy9kb2N1bWVudGF0
-aW9uL3N1Ym1pdHRpbmdwYXRjaGVzCgotLSAKYXRoMTJrIG1haWxpbmcgbGlzdAphdGgxMmtAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9hdGgxMmsK
+TGUgMjUvMDQvMjAyMyDDoCAxNDoxMCwgV2FsdGVyIEhhcm1zIGEgw6ljcml0wqA6Cj4gRG9lcyAg
+bWNzID0gQVRIMTJLX0hFX01DU19NQVggbWFrZSBzZW5zZSA/Cj4gCgpCYXNlZCBvbiBbMV0sIEkg
+d291bGQgc2F5IHllcywgV01JX1JBVEVfUFJFQU1CTEVfSEUgKGkuZS4gMTEpIGxvb2tzIGxpa2Ug
+CmEgdmFsaWQgdmFsdWUuCgpDSgoKWzFdOiBodHRwczovL3d3dy43c2lnbmFsLmNvbS9pbmZvL21j
+cwoKPiByZSwKPiAgIHdoCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Xwo+IFZvbjogQ2hyaXN0b3BoZSBKQUlMTEVUIDxjaHJpc3RvcGhlLmphaWxsZXRAd2FuYWRvby5m
+cj4KPiBHZXNlbmRldDogRGllbnN0YWcsIDI1LiBBcHJpbCAyMDIzIDEzOjU3OjE5Cj4gQW46IEth
+bGxlIFZhbG87IERhdmlkIFMuIE1pbGxlcjsgRXJpYyBEdW1hemV0OyBKYWt1YiBLaWNpbnNraTsg
+UGFvbG8gQWJlbmkKPiBDYzogbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsga2VybmVsLWph
+bml0b3JzQHZnZXIua2VybmVsLm9yZzsgQ2hyaXN0b3BoZSBKQUlMTEVUOyBhdGgxMmtAbGlzdHMu
+aW5mcmFkZWFkLm9yZzsgbGludXgtd2lyZWxlc3NAdmdlci5rZXJuZWwub3JnOyBuZXRkZXZAdmdl
+ci5rZXJuZWwub3JnCj4gQmV0cmVmZjogW1BBVENIXSB3aWZpOiBhdGgxMms6IFJlbW92ZSBzb21l
+IGRlYWQgY29kZQo+IAo+IEFUSDEyS19IRV9NQ1NfTUFYID0gMTEsIHNvIHRoaXMgdGVzdCBhbmQg
+dGhlIGZvbGxvd2luZyBvbmUgYXJlIHRoZSBzYW1lLgo+IFJlbW92ZSB0aGUgb25lIHdpdGggdGhl
+IGhhcmQgY29kZWQgMTEgdmFsdWUuCj4gCj4gU2lnbmVkLW9mZi1ieTogQ2hyaXN0b3BoZSBKQUlM
+TEVUIDxjaHJpc3RvcGhlLmphaWxsZXRAd2FuYWRvby5mcj4KPiAtLS0KPiAgIGRyaXZlcnMvbmV0
+L3dpcmVsZXNzL2F0aC9hdGgxMmsvZHBfcnguYyB8IDUgLS0tLS0KPiAgIDEgZmlsZSBjaGFuZ2Vk
+LCA1IGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC93aXJlbGVzcy9h
+dGgvYXRoMTJrL2RwX3J4LmMgYi9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL2RwX3J4
+LmMKPiBpbmRleCBlNzg0NzhhNWI5NzguLjc5Mzg2NTYyNTYyZiAxMDA2NDQKPiAtLS0gYS9kcml2
+ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL2RwX3J4LmMKPiArKysgYi9kcml2ZXJzL25ldC93
+aXJlbGVzcy9hdGgvYXRoMTJrL2RwX3J4LmMKPiBAQCAtMTM2MiwxMSArMTM2Miw2IEBAIGF0aDEy
+a191cGRhdGVfcGVyX3BlZXJfdHhfc3RhdHMoc3RydWN0IGF0aDEyayAqYXIsCj4gICAgICAgICAg
+ICogRmlybXdhcmUgcmF0ZSdzIGNvbnRyb2wgdG8gYmUgc2tpcHBlZCBmb3IgdGhpcz8KPiAgICAg
+ICAgICAgKi8KPiAKPiAtICAgICAgIGlmIChmbGFncyA9PSBXTUlfUkFURV9QUkVBTUJMRV9IRSAm
+JiBtY3MgPiAxMSkgewo+IC0gICAgICAgICAgICAgICBhdGgxMmtfd2FybihhYiwgIkludmFsaWQg
+SEUgbWNzICVkIHBlZXIgc3RhdHMiLCAgbWNzKTsKPiAtICAgICAgICAgICAgICAgcmV0dXJuOwo+
+IC0gICAgICAgfQo+IC0KPiAgICAgICAgICBpZiAoZmxhZ3MgPT0gV01JX1JBVEVfUFJFQU1CTEVf
+SEUgJiYgbWNzID4gQVRIMTJLX0hFX01DU19NQVgpIHsKPiAgICAgICAgICAgICAgICAgIGF0aDEy
+a193YXJuKGFiLCAiSW52YWxpZCBIRSBtY3MgJWQgcGVlciBzdGF0cyIsICBtY3MpOwo+ICAgICAg
+ICAgICAgICAgICAgcmV0dXJuOwo+IC0tCj4gMi4zNC4xCj4gCj4gCgoKLS0gCmF0aDEyayBtYWls
+aW5nIGxpc3QKYXRoMTJrQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vYXRoMTJrCg==
