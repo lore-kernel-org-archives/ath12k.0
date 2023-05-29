@@ -4,65 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E196C77B7A
-	for <ath12k@archiver.kernel.org>; Fri, 26 May 2023 09:39:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BB24C77B7E
+	for <ath12k@archiver.kernel.org>; Mon, 29 May 2023 08:16:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S8Lm8K/7tVkliK1rSzAWWeci1yzP0UAbhu5Li4oLDZU=; b=v1xvQJhN6N1/xC
-	lOHY3LxjwMBaruAuBHabUwYGPa2Cz4LNL/Vx12l7GizubHATd50fQNBfiMZM5OPBxb+kFqDYPFMhO
-	CQ7SzKVMfN8O1JNVs00Kig4YfQy9q0gYTC6ljLIK3knir9of7lSOJbHvsH9wxh2ho55/2/89sNfjI
-	bN7FSkZWdGf2pOFIQasw32viL6u5BWahMl9BT4a70CU1+W5AEMfxcN/91wcgq/4y5h2DEkrkyXQtM
-	xIo2GA7uuWRc1iEdOaW5QXhTWyMwIywA0GQRe3CnftCzHq5RqrpSgGPQyChRRIiN8O8KF4c64pxBE
-	Sj1pm5WMmWYVOZXRePhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RuxxHlHR/wP6xk1XILeGol3IyCxE+q3uc1p0V5M/kzk=; b=GbaARB7YU2c1oQ
+	Mnksui8f6ej/0lqrp63XK6yUiWmcURh696rjlxTDgqKs0GK4jCVUy6Lag3aBHqetgqL8g5JUdOi1D
+	dCbxM5C5qeltvaFZgo+WhFlrdUOR827umOMydXzRuooQU/7rcTQIwN3qWNKD92OWQKCPWNx5PTF/g
+	k3SYSgcS6QCQREBBj32JuK6BGKDHhoa7XL3X1lYUpUExAygNyNixmRuWTCg+Rfd5hUeX9W5V/DzW5
+	PGBINJ8Xs17gjgvVt/wmurCeTmntau7J/gkTpRQh8TIEH3PYyNkoLLB3vVIbqWj+jVyucFkppnO0o
+	PUGlsM6LYnch9q2nGnVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q2Tuc-001qgO-07
+	id 1q3Y3W-009h6I-0Y
 	for ath12k@archiver.kernel.org;
-	Fri, 26 May 2023 09:39:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Mon, 29 May 2023 08:16:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q2TuY-001qei-1B
+	id 1q3Y3S-009h4M-12
 	for ath12k@lists.infradead.org;
-	Fri, 26 May 2023 09:39:04 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id B3F9064E8F;
-	Fri, 26 May 2023 09:39:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DCB4DC4339C;
-	Fri, 26 May 2023 09:38:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1685093941;
-	bh=1jvDYFDddIWiMkiwRme9di50H0U0k1tYRF66A/E0T+I=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=r5m9jmtI9Zkkmvbd+aQ9MJlZOEoXSn7NdimYdX7dU4n7nSbFPJJDOwT1u3pgWUtcB
-	 +VXFnJy8DAzBFIGNv6hd7LrdvlzbsnsCwEq6+vpGIadP3KD2PweUlJAqumh0Q+bRuG
-	 34l3mTTiwv/+PuqtlAasgJVLetRX9DbVVI6cMqlSHN7iQbqJMkb4JgXVAHWzPW+uQo
-	 RRqLZfXIBiagk28tgOQl5woSVKT60UTUvow5B/pJGFB9OWUE/cC8UrAGCVYVBkam62
-	 NGLoJa3M0CVbZrUx1KaZyP4slooQ1067t69vtw/nfW0jwUIkwhljIKw+q4nnXGyn5D
-	 Vsf1lBa7Dar8w==
+	Mon, 29 May 2023 08:16:40 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 34T77OP9005773;
+	Mon, 29 May 2023 08:16:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=x2KGN2ig6TCTvV4OBPBrr4W2B0jrBI9QQuiLADfxY54=;
+ b=azu2cMEctuwoCZJRXiZx2+WKaTVaM3nYWrY0u2lOqhWuHefzl7x3ypPWEPIys4fIt9AE
+ aQI2ulIm6tbfDWgjp1zNILH+qzdEMJBz21qzra9tfFkkLXvN5mAW4PS5K93W8huFneVm
+ 0+TqOCwRMkxVl8VDlSOzzP4S+M0GE9PQ4CMatVOgp4gDrJU8kmvagV2qZ7qehUSuuiRy
+ L4/hOoeivD4gJEIdvvTjs6hFCk7d3B9c6GRe/OMQoA+2wfdz0TlHq8wl1BaoP8ZQQ1Yi
+ v1K3mehuD6f9cMF9l/CwJqJTRIYaRP2RsfJQGolTCpzPEg7zJhob5riVR5ClZnbXDAqp WA== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3qub5djxyq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 29 May 2023 08:16:19 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 34T8GJa8019744
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 29 May 2023 08:16:19 GMT
+Received: from bqiang-Celadon-RN.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.42; Mon, 29 May 2023 01:16:18 -0700
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+Subject: [PATCH v3] wifi: ath12k: Use msdu_end to check MCBC
+Date: Mon, 29 May 2023 16:16:09 +0800
+Message-ID: <20230529081609.34567-1-quic_bqiang@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: Add support to parse new WMI event for 6
- GHz
- regulatory
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230502142018.20301-1-quic_rgnanase@quicinc.com>
-References: <20230502142018.20301-1-quic_rgnanase@quicinc.com>
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- P Praneesh <quic_ppranees@quicinc.com>,
- Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <168509393704.23037.3611388693586746214.kvalo@kernel.org>
-Date: Fri, 26 May 2023 09:38:59 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: No44ztu3_WAY7wDOLXnCPBpjwEC087LW
+X-Proofpoint-GUID: No44ztu3_WAY7wDOLXnCPBpjwEC087LW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.573,FMLib:17.11.176.26
+ definitions=2023-05-29_04,2023-05-25_03,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
+ mlxlogscore=773 spamscore=0 priorityscore=1501 malwarescore=0 bulkscore=0
+ lowpriorityscore=0 impostorscore=0 mlxscore=0 clxscore=1015 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2304280000
+ definitions=main-2305290071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230526_023902_446039_1B8F8CFC 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230529_011638_399476_A897AA48 
+X-CRM114-Status: GOOD (  18.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,33 +94,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ramya Gnanasekar <quic_rgnanase@quicinc.com> wrote:
+We are seeing a very low TCP throughput testing with some specific
+tools. This is because for sub-frames of an AMSDU, MCBC flag in
+mpdu_start may be not valid, and as a result those frames would be
+dropped by kernel.
 
-> In order to support different power levels of 6 GHz AP and client, new WMI
-> event for regulatory (WMI_REG_CHAN_LIST_CC_EXT_EVENTID) has been added in
-> firmware to provide new parameters required for 6 GHz regulatory rules.
-> 
-> Firmware advertises its capability of handling new event in WMI service ready
-> event. Based on that, host needs to set host_service_flags in WMI init command
-> to indicate that host supports processing of this WMI event. Based on
-> advertised host capability, firmware sends event WMI_REG_CHAN_LIST_CC_EXT_EVENTID.
-> This new event contains 2G/5G/6G reg rules with additional power value fields
-> for 6GHz and regd is built accordingly.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Add a new helper to get it from msdu_end. Also clean up original
+helper since it is not needed any more.
 
-Patch applied to ath-next branch of ath.git, thanks.
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-342527f35338 wifi: ath12k: Add support to parse new WMI event for 6 GHz regulatory
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+---
+v3:
+ 1. remove original helper since it is not needed.
 
+v2:
+ 1. add a new helper according to Vasanth's comment.
+ 2. change to use __le16_to_cpu instead of __le32_to_cpu
+
+ drivers/net/wireless/ath/ath12k/dp_rx.c |  8 ++++----
+ drivers/net/wireless/ath/ath12k/hal.c   | 16 ++++++++--------
+ drivers/net/wireless/ath/ath12k/hal.h   |  2 +-
+ 3 files changed, 13 insertions(+), 13 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 8c8162fbe5c6..ffd9a2018610 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -193,11 +193,11 @@ static void ath12k_dp_rxdesc_set_msdu_len(struct ath12k_base *ab,
+ 	ab->hw_params->hal_ops->rx_desc_set_msdu_len(desc, len);
+ }
+ 
+-static bool ath12k_dp_rx_h_is_mcbc(struct ath12k_base *ab,
+-				   struct hal_rx_desc *desc)
++static bool ath12k_dp_rx_h_is_da_mcbc(struct ath12k_base *ab,
++				      struct hal_rx_desc *desc)
+ {
+ 	return (ath12k_dp_rx_h_first_msdu(ab, desc) &&
+-		ab->hw_params->hal_ops->rx_desc_is_mcbc(desc));
++		ab->hw_params->hal_ops->rx_desc_is_da_mcbc(desc));
+ }
+ 
+ static bool ath12k_dp_rxdesc_mac_addr2_valid(struct ath12k_base *ab,
+@@ -2208,7 +2208,7 @@ static void ath12k_dp_rx_h_mpdu(struct ath12k *ar,
+ 
+ 	/* PN for multicast packets will be checked in mac80211 */
+ 	rxcb = ATH12K_SKB_RXCB(msdu);
+-	fill_crypto_hdr = ath12k_dp_rx_h_is_mcbc(ar->ab, rx_desc);
++	fill_crypto_hdr = ath12k_dp_rx_h_is_da_mcbc(ar->ab, rx_desc);
+ 	rxcb->is_mcbc = fill_crypto_hdr;
+ 
+ 	if (rxcb->is_mcbc)
+diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
+index 0ec53afe9915..e7a150e7158e 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.c
++++ b/drivers/net/wireless/ath/ath12k/hal.c
+@@ -447,10 +447,10 @@ static u8 *ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
+ 	return desc->u.qcn9274.mpdu_start.addr2;
+ }
+ 
+-static bool ath12k_hw_qcn9274_rx_desc_is_mcbc(struct hal_rx_desc *desc)
++static bool ath12k_hw_qcn9274_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
+ {
+-	return __le32_to_cpu(desc->u.qcn9274.mpdu_start.info6) &
+-	       RX_MPDU_START_INFO6_MCAST_BCAST;
++	return __le16_to_cpu(desc->u.qcn9274.msdu_end.info5) &
++	       RX_MSDU_END_INFO5_DA_IS_MCBC;
+ }
+ 
+ static void ath12k_hw_qcn9274_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
+@@ -708,7 +708,7 @@ const struct hal_ops hal_qcn9274_ops = {
+ 	.rx_desc_get_msdu_end_offset = ath12k_hw_qcn9274_rx_desc_get_msdu_end_offset,
+ 	.rx_desc_mac_addr2_valid = ath12k_hw_qcn9274_rx_desc_mac_addr2_valid,
+ 	.rx_desc_mpdu_start_addr2 = ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2,
+-	.rx_desc_is_mcbc = ath12k_hw_qcn9274_rx_desc_is_mcbc,
++	.rx_desc_is_da_mcbc = ath12k_hw_qcn9274_rx_desc_is_da_mcbc,
+ 	.rx_desc_get_dot11_hdr = ath12k_hw_qcn9274_rx_desc_get_dot11_hdr,
+ 	.rx_desc_get_crypto_header = ath12k_hw_qcn9274_rx_desc_get_crypto_hdr,
+ 	.rx_desc_get_mpdu_frame_ctl = ath12k_hw_qcn9274_rx_desc_get_mpdu_frame_ctl,
+@@ -887,10 +887,10 @@ static u8 *ath12k_hw_wcn7850_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
+ 	return desc->u.wcn7850.mpdu_start.addr2;
+ }
+ 
+-static bool ath12k_hw_wcn7850_rx_desc_is_mcbc(struct hal_rx_desc *desc)
++static bool ath12k_hw_wcn7850_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
+ {
+-	return __le32_to_cpu(desc->u.wcn7850.mpdu_start.info6) &
+-	       RX_MPDU_START_INFO6_MCAST_BCAST;
++	return __le16_to_cpu(desc->u.wcn7850.msdu_end.info5) &
++	       RX_MSDU_END_INFO5_DA_IS_MCBC;
+ }
+ 
+ static void ath12k_hw_wcn7850_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
+@@ -1163,7 +1163,7 @@ const struct hal_ops hal_wcn7850_ops = {
+ 	.rx_desc_get_msdu_end_offset = ath12k_hw_wcn7850_rx_desc_get_msdu_end_offset,
+ 	.rx_desc_mac_addr2_valid = ath12k_hw_wcn7850_rx_desc_mac_addr2_valid,
+ 	.rx_desc_mpdu_start_addr2 = ath12k_hw_wcn7850_rx_desc_mpdu_start_addr2,
+-	.rx_desc_is_mcbc = ath12k_hw_wcn7850_rx_desc_is_mcbc,
++	.rx_desc_is_da_mcbc = ath12k_hw_wcn7850_rx_desc_is_da_mcbc,
+ 	.rx_desc_get_dot11_hdr = ath12k_hw_wcn7850_rx_desc_get_dot11_hdr,
+ 	.rx_desc_get_crypto_header = ath12k_hw_wcn7850_rx_desc_get_crypto_hdr,
+ 	.rx_desc_get_mpdu_frame_ctl = ath12k_hw_wcn7850_rx_desc_get_mpdu_frame_ctl,
+diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
+index 0d4fa12ea622..66035a787c72 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.h
++++ b/drivers/net/wireless/ath/ath12k/hal.h
+@@ -1063,7 +1063,7 @@ struct hal_ops {
+ 	u32 (*rx_desc_get_msdu_end_offset)(void);
+ 	bool (*rx_desc_mac_addr2_valid)(struct hal_rx_desc *desc);
+ 	u8* (*rx_desc_mpdu_start_addr2)(struct hal_rx_desc *desc);
+-	bool (*rx_desc_is_mcbc)(struct hal_rx_desc *desc);
++	bool (*rx_desc_is_da_mcbc)(struct hal_rx_desc *desc);
+ 	void (*rx_desc_get_dot11_hdr)(struct hal_rx_desc *desc,
+ 				      struct ieee80211_hdr *hdr);
+ 	u16 (*rx_desc_get_mpdu_frame_ctl)(struct hal_rx_desc *desc);
+
+base-commit: 4ab7f08db5310ded48a5c1f3ec3f2e177ba6b1c2
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230502142018.20301-1-quic_rgnanase@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.25.1
 
 
 -- 
