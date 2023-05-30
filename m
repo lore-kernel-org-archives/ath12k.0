@@ -4,67 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D1DEC7EE2E
-	for <ath12k@archiver.kernel.org>; Tue, 30 May 2023 06:22:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2767C77B7A
+	for <ath12k@archiver.kernel.org>; Tue, 30 May 2023 13:50:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:Subject:From:References:Cc:To:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Lj1FBNkNt6t3ibfGVqsYWrXP7i4pWRlepE6ouxqWI0=; b=nN362HQTdXymzR
-	ocSJPYxE/H9ePdHkbImEwgL6GyXSords31KW/bEOlovhCDUe6bZOJgV5H5WOhaumwv9B/5CdbAjov
-	yX/gjDChkNgWAL8xoVVOVcF5VqLqINwiIxgqAmb+3OvrsdeY7bucxs4h9JpjXd3/H8sao8Jr5vRwN
-	RgQpzjdokPUAR0GmU8Jee9QT1ieARtmdCqmONuyEh7NYLVNPqVVfD4gYuiBZinzRnMk1bYtPSoZQo
-	nYM2a5esridXez3X8/6qHuyxvwJv5KQJFECd2sKGB/u2C7QFhJoTZ2JqcNeAkK/W92AG7uTuyVs3i
-	G0zDSdbGxiPS5OpvSOfw==;
+	List-Owner; bh=EruMf9HqUrGomrN+tb0bHm/+U7kGnovGFx9fXe+OWYU=; b=1i2WbL2DAXY0/f
+	gjbVKyiK8QDcMUP+lbb5LfXMBi0Slcdyk3x7kIVF8ZAFpBKeRljTqe2GPLWbVnOGSyBYmei+YkSuO
+	3I6TdyQDmxbjrzdpQxg1w+43zXVRSy7WI2ZHe+3+fYGdxNviLRHlgG7nXmKdzTWtxL1IMTboa3Q44
+	yq+DIyprF9BpdxCHh5UYDTYa/PYymYYF+GOprsqbOy4JdEBfzGeRivD18f/Xgij5VF0SnXlNI9ygB
+	mz+HkptwZlH2V2qz0LTxYjJJrH6mG3NPx4wmj2o1JORJddbKj7/0nT85qSEFz56bxr+6aJau71nUp
+	QzAIxSdk6Jm98WTgqnfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3skz-00CZ0T-1j
+	id 1q3zkR-00E6Tw-1E
 	for ath12k@archiver.kernel.org;
-	Tue, 30 May 2023 06:22:57 +0000
-Received: from nbd.name ([46.4.11.11])
+	Tue, 30 May 2023 13:50:51 +0000
+Received: from mga11.intel.com ([192.55.52.93])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q3skw-00CYzZ-1h;
-	Tue, 30 May 2023 06:22:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:Subject:From
-	:References:Cc:To:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=XSDebSB19oA+MAG3fUqSU9st5hGlMUaKZomFXQkj8bQ=; b=YMImdWrUu2aDReyNZtLXpB54Kk
-	v1V1iaz9LXAL6jIDg7iIP2MLG6I9EZxMEqmxSHtwXqtEgm79oPgihC51IsJTPgi0wEH7jjFbZXMmK
-	KymQMz9B3RcEYtx41OSunnc5/SVEFBLvAtf//HXRk37oVPNR+2w054Neu4fha0KDNBT4=;
-Received: from p200300da7708b3c00512399822b48468.dip0.t-ipconnect.de ([2003:da:7708:b3c0:512:3998:22b4:8468] helo=nf.local)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.94.2)
-	(envelope-from <nbd@nbd.name>)
-	id 1q3skY-00GyzG-PZ; Tue, 30 May 2023 08:22:30 +0200
-Message-ID: <1502188c-c527-3038-2163-5ca4f51ed735@nbd.name>
-Date: Tue, 30 May 2023 08:22:29 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0)
- Gecko/20100101 Thunderbird/102.11.0
+	id 1q3zkN-00E6Se-1l;
+	Tue, 30 May 2023 13:50:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1685454647; x=1716990647;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=coaE20tPVJ7AZBZ9YIPPD7ohxPRVwifqLulonpO6f/c=;
+  b=YJckxA+FyN3ki0NCQjov++QYgmYr5Gl5vJsecqC3Sqj396ywu8T+kR92
+   6Kf95Dr31MiHgV0a8bm0pvXw0Bd7ZF+5tKUNegXYCeOyU8hlPVyCEBFjD
+   35yQ8IyXb47tkRRviIegbGRVQR3LlDO97WD9XYaEXGJVqrtHiQYayCtsw
+   ntNJqpDefa1LSh4cKkJdFzzGFl/Lb4teMpLfhW/e4xmMr+sne/eMTUNF0
+   xSoD8S+/WSB+rfZp8z6aGDwVuu1Vexl1CmBve8r2Fkz0bdrz+hB4kny4e
+   AuquQBPV6DfRzOFl8lna3eCoVyuWogQ5H2kVyK3/N4mhablMUPGvCNjS9
+   g==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10726"; a="352418871"
+X-IronPort-AV: E=Sophos;i="6.00,204,1681196400"; 
+   d="scan'208";a="352418871"
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+  by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 May 2023 06:50:28 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10726"; a="771552147"
+X-IronPort-AV: E=Sophos;i="6.00,204,1681196400"; 
+   d="scan'208";a="771552147"
+Received: from lkp-server01.sh.intel.com (HELO fb1ced2c09fb) ([10.239.97.150])
+  by fmsmga008.fm.intel.com with ESMTP; 30 May 2023 06:50:23 -0700
+Received: from kbuild by fb1ced2c09fb with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1q3zjy-0000aN-2p;
+	Tue, 30 May 2023 13:50:22 +0000
+Date: Tue, 30 May 2023 21:50:09 +0800
+From: kernel test robot <lkp@intel.com>
 To: Evan Quan <evan.quan@amd.com>, rafael@kernel.org, lenb@kernel.org,
- alexander.deucher@amd.com, christian.koenig@amd.com, Xinhui.Pan@amd.com,
- airlied@gmail.com, daniel@ffwll.ch, kvalo@kernel.org, lorenzo@kernel.org,
- ryder.lee@mediatek.com, shayne.chen@mediatek.com, sean.wang@mediatek.com,
- matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
- Mario.Limonciello@amd.com, Lijo.Lazar@amd.com
-Cc: linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, dri-devel@lists.freedesktop.org,
- linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org
-References: <20230530024227.2139632-1-evan.quan@amd.com>
-Content-Language: en-US
-From: Felix Fietkau <nbd@nbd.name>
-Subject: Re: [PATCH 0/9] Support Wifi RFI interference mitigation feature
-In-Reply-To: <20230530024227.2139632-1-evan.quan@amd.com>
+	alexander.deucher@amd.com, christian.koenig@amd.com,
+	Xinhui.Pan@amd.com, airlied@gmail.com, daniel@ffwll.ch,
+	kvalo@kernel.org, nbd@nbd.name, lorenzo@kernel.org,
+	ryder.lee@mediatek.com, shayne.chen@mediatek.com,
+	sean.wang@mediatek.com, matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com, Mario.Limonciello@amd.com,
+	Lijo.Lazar@amd.com
+Cc: oe-kbuild-all@lists.linux.dev, ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-acpi@vger.kernel.org,
+	amd-gfx@lists.freedesktop.org, ath11k@lists.infradead.org
+Subject: Re: [PATCH 8/9] drm/amd/pm: enable Wifi RFI mitigation feature
+ support for SMU13.0.0
+Message-ID: <202305302118.3mARqykY-lkp@intel.com>
+References: <20230530024227.2139632-9-evan.quan@amd.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230530024227.2139632-9-evan.quan@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230529_232254_664905_D0E3CFC1 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230530_065047_619647_81C97B8C 
+X-CRM114-Status: GOOD (  11.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,43 +90,53 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 30.05.23 04:42, Evan Quan wrote:
-> Due to electrical and mechanical constraints in certain platform designs there may
-> be likely interference of relatively high-powered harmonics of the (G-)DDR memory
-> clocks with local radio module frequency bands used by Wifi 6/6e/7. To mitigate
-> possible RFI interference producers can advertise the frequencies in use and
-> consumers can use this information to avoid using these frequencies for
-> sensitive features.
-> 
-> The whole patch set is based on 6.4-rc3. With some brief introductions as below:
-> Patch1:     Core ACPI interfaces needed to support WBRF feature.
-> Patch2 - 4: Enable WBRF support for some Mediatek and Qualcomm wifi drivers.
-> Patch5 - 9: Enable WBRF support for AMD graphics driver.
-> 
-> Anson Tsao (1):
->    wifi: ath11k: Add support to the Qualcomm ath11k for ACPI WBRF
-> 
-> Evan Quan (6):
->    wifi: ath12k: Add support to the Qualcomm ath12k for ACPI WBRF
->    drm/amd/pm: update driver_if and ppsmc headers for coming wbrf feature
->    drm/amd/pm: setup the framework to support Wifi RFI mitigation feature
->    drm/amd/pm: add flood detection for wbrf events
->    drm/amd/pm: enable Wifi RFI mitigation feature support for SMU13.0.0
->    drm/amd/pm: enable Wifi RFI mitigation feature support for SMU13.0.7
-> 
-> Mario Limonciello (2):
->    drivers/acpi: Add support for Wifi band RF mitigations
->    mt76: Add support to the Mediatek MT7921 for ACPI WBRF
-Wouldn't it make more sense to put this in mac80211 or cfg80211 instead 
-of duplicating the logic in different drivers?
+Hi Evan,
 
-- Felix
+kernel test robot noticed the following build errors:
 
+[auto build test ERROR on drm-misc/drm-misc-next]
+[also build test ERROR on kvalo-ath/ath-next wireless-next/main wireless/main linus/master v6.4-rc4]
+[cannot apply to next-20230530]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Evan-Quan/drivers-acpi-Add-support-for-Wifi-band-RF-mitigations/20230530-104541
+base:   git://anongit.freedesktop.org/drm/drm-misc drm-misc-next
+patch link:    https://lore.kernel.org/r/20230530024227.2139632-9-evan.quan%40amd.com
+patch subject: [PATCH 8/9] drm/amd/pm: enable Wifi RFI mitigation feature support for SMU13.0.0
+config: powerpc-allmodconfig (https://download.01.org/0day-ci/archive/20230530/202305302118.3mARqykY-lkp@intel.com/config)
+compiler: powerpc-linux-gcc (GCC) 12.3.0
+reproduce (this is a W=1 build):
+        mkdir -p ~/bin
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/8ecc361da81a0915bb626156b47403a91b678de1
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Evan-Quan/drivers-acpi-Add-support-for-Wifi-band-RF-mitigations/20230530-104541
+        git checkout 8ecc361da81a0915bb626156b47403a91b678de1
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.3.0 ~/bin/make.cross W=1 O=build_dir ARCH=powerpc olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-12.3.0 ~/bin/make.cross W=1 O=build_dir ARCH=powerpc SHELL=/bin/bash
+
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202305302118.3mARqykY-lkp@intel.com/
+
+All errors (new ones prefixed by >>, old ones prefixed by <<):
+
+>> ERROR: modpost: "__umoddi3" [drivers/gpu/drm/amd/amdgpu/amdgpu.ko] undefined!
+>> ERROR: modpost: "__udivdi3" [drivers/gpu/drm/amd/amdgpu/amdgpu.ko] undefined!
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 ath12k mailing list
