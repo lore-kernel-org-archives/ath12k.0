@@ -4,60 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4618CC7EE43
-	for <ath12k@archiver.kernel.org>; Fri,  9 Jun 2023 13:32:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EE26EB64DC
+	for <ath12k@archiver.kernel.org>; Thu, 15 Jun 2023 11:35:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=krI0yFvz4Op4C7lrc/IOTijSVk8/Gkj4k+4b3Hk7J+o=; b=gkrpvXcnO2Ao/8
-	MLS34ywuO93SNt7YQoK8iN+ELqtEQ0L0ZdMNqg49eIhWNiu4HDMk4c5DCClNZTEa0iIpv9ydvk1zr
-	jbL8cLSdCLOLfa1JnC7W3F6GDRAYwTwUCY8uWE6vrDyiqmumdGfe66JJLY1Zh4RJioDK6lndgcIeA
-	wVh/t9d9F5RXGzwYsgBmLbVjwXGN7DupANMemZ6aSJJ4czaQ/8AyK2cqqkfpRFrRihNeEn4EtAJjh
-	VRexQKtBYgHXlkUC08peSuxAZsIVvBcpKQFkz7sthPxg9YyYZPlZRmwtG9/ZwhiJn4sF/0+W4TUGr
-	Vi9NuLR271t+RTGb/fuw==;
+	List-Owner; bh=W8JfNCfkrhuluGZdjQyTYn8RssF3AnO5IBy9kcRfZQY=; b=1npx1T6f3bdJCK
+	6IL3EbgdrSUDUGFdpRzukSkbt/Nw/qfK+5lO/NtnP0jd7mO/gKtpEscwdEn2BAH0KkH2pxEVdYDk2
+	yQgQduO629UjiPXSQZpMzMPfIwmZzmi4ikxImzpnoEpwdsl0Uz3Am7nTwdAqCYGFCDGAeGebu3tJd
+	kCctdDWdz5nf1d/z6IKVbBahEhaNPmYuZSy9mX9EasIw0xf3JdEyrtBEIdTqEC+gb+EtbxHdsk6aL
+	K0qEMjMCGqg0sBFES8/QVRrpIQsHyBFiHdxhzeVMpBz1dszJDeGOyP2//rRQBqT7eWlQ2m81XtDhI
+	nTLchPF5TjrpIiABRxUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7cEa-00D8ec-2z
+	id 1q9lGd-00EiT0-2I
 	for ath12k@archiver.kernel.org;
-	Fri, 09 Jun 2023 13:32:56 +0000
+	Thu, 15 Jun 2023 11:35:55 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q7cEX-00D8eF-2R
+	id 1q9lGa-00EiSY-2N
 	for ath12k@lists.infradead.org;
-	Fri, 09 Jun 2023 13:32:55 +0000
+	Thu, 15 Jun 2023 11:35:54 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 53E2365198;
-	Fri,  9 Jun 2023 13:32:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03AE4C433EF;
-	Fri,  9 Jun 2023 13:32:51 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1F4C462679;
+	Thu, 15 Jun 2023 11:35:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9735AC433C0;
+	Thu, 15 Jun 2023 11:35:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1686317572;
-	bh=WD1Ur85G/JkD3hVnsGbmyDe3nGLBZlleJ8E5RPUG/lE=;
+	s=k20201202; t=1686828951;
+	bh=HRKs8EDAMspjkc4t+uSo5TJHix7Rge5uKAkGMWz4HuM=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=CguK+VEmiDE3jCdXAnFGucO0hr4RaokR/pDyCqb568waQsf9DJAPzz2IPZf1pGDCc
-	 8l8u+DnEww/ghavAk0Lf3MvSz+a3aZFdcR1UAj7v4rQQAYZrs9/zHiwMJDLDegFdgA
-	 kQSCFJPaGW/7wg/eT+p7J5PJjV5rK1U2oNguqf0wcu/8Tk0fuagZ3dKWaLCYpDvaQi
-	 H0TWwLAceasUqvfsCn9Vw2suTCteSZnbeyrv+24q+jxTf8Y0RdIDwx5yQSwDTWrEbr
-	 iOfdlpn6QrC8Tx0MbrpqdcaTa36qdTUVeWtonOOhKz5+xF14SGcuOfZ+AIfcQPVhCH
-	 x5HDh2jF9j4JQ==
+	b=TtpHxPUX/FT1K6E8TAqgXlrquSrQWTe7UjZkbStkfBNjBK54jy9Dq91tOMX0ZurWq
+	 zg8Q9iQ6WjoxQnftPEJx0gtUeeKKN004PJrdO2V3v6F2PRXBHa7CCO5yd4A/SvL1LH
+	 35Aj9aLy1R3cdBCRfF6oggdybHQ3YfPDGiGToRqd9wqTH3fWQoRoaxiWefcn3SilHF
+	 15FbPFChl4BFFqQr9L55+NRQlQ3SgQNr8AQOQGWdFp1rfGry75lX1uJji5IEYvzc87
+	 2bKdJ8VxRByT2BA6aJH0x9kgeV3mUwioUDowi1NvfZbLMdmxlYmBEbcCKvC4rV3KYR
+	 cyZCV6YZcY1sA==
 MIME-Version: 1.0
-Subject: Re: [PATCH v3] wifi: ath12k: Use msdu_end to check MCBC
+Subject: Re: [PATCH] wifi: ath12k: fix conf_mutex in
+ ath12k_mac_op_unassign_vif_chanctx()
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230529081609.34567-1-quic_bqiang@quicinc.com>
-References: <20230529081609.34567-1-quic_bqiang@quicinc.com>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+In-Reply-To: <20230608104444.3134-1-quic_wgong@quicinc.com>
+References: <20230608104444.3134-1-quic_wgong@quicinc.com>
+To: Wen Gong <quic_wgong@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ <quic_wgong@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <168631757013.7235.1908290827588270825.kvalo@kernel.org>
-Date: Fri,  9 Jun 2023 13:32:51 +0000 (UTC)
+Message-ID: <168682894712.15751.14642356726851590142.kvalo@kernel.org>
+Date: Thu, 15 Jun 2023 11:35:50 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230609_063253_853977_78B7E8DA 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20230615_043552_833180_EE9FDB2A 
+X-CRM114-Status: UNSURE (   7.00  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,27 +78,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Baochen Qiang <quic_bqiang@quicinc.com> wrote:
+Wen Gong <quic_wgong@quicinc.com> wrote:
 
-> We are seeing a very low TCP throughput testing with some specific
-> tools. This is because for sub-frames of an AMSDU, MCBC flag in
-> mpdu_start may be not valid, and as a result those frames would be
-> dropped by kernel.
-> 
-> Add a new helper to get it from msdu_end. Also clean up original
-> helper since it is not needed any more.
+> "mutex_unlock(&ar->conf_mutex);" is always called at end of function
+> ath12k_mac_op_unassign_vif_chanctx(), so delete this unlock to make
+> sure lock/unlock is paired.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
 Patch applied to ath-next branch of ath.git, thanks.
 
-8f04852e90cb wifi: ath12k: Use msdu_end to check MCBC
+3a5d50f8eb4f wifi: ath12k: fix conf_mutex in ath12k_mac_op_unassign_vif_chanctx()
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230529081609.34567-1-quic_bqiang@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230608104444.3134-1-quic_wgong@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
