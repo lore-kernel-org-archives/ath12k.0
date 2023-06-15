@@ -4,64 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EE26EB64DC
-	for <ath12k@archiver.kernel.org>; Thu, 15 Jun 2023 11:35:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC4EAEB64D9
+	for <ath12k@archiver.kernel.org>; Thu, 15 Jun 2023 11:47:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W8JfNCfkrhuluGZdjQyTYn8RssF3AnO5IBy9kcRfZQY=; b=1npx1T6f3bdJCK
-	6IL3EbgdrSUDUGFdpRzukSkbt/Nw/qfK+5lO/NtnP0jd7mO/gKtpEscwdEn2BAH0KkH2pxEVdYDk2
-	yQgQduO629UjiPXSQZpMzMPfIwmZzmi4ikxImzpnoEpwdsl0Uz3Am7nTwdAqCYGFCDGAeGebu3tJd
-	kCctdDWdz5nf1d/z6IKVbBahEhaNPmYuZSy9mX9EasIw0xf3JdEyrtBEIdTqEC+gb+EtbxHdsk6aL
-	K0qEMjMCGqg0sBFES8/QVRrpIQsHyBFiHdxhzeVMpBz1dszJDeGOyP2//rRQBqT7eWlQ2m81XtDhI
-	nTLchPF5TjrpIiABRxUw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ijycREwfUjWdrRaXOcTZl3bAQInAiJO5kepBuZBREI0=; b=Dy3Owz+GZDNfbe
+	TYiHJG6jyPwzCdxiGQpC8HGbX4c1RhJhZ6DoIe/KJP9oyGbBcGwRMM6kANaThdY/Uvpt/pzJDsf/T
+	/Se+8FTmz1PA19mwy+0dHzSjT0k4ssaYMIscBvuuJ1GzcckG5sjSZFa6uDqdgj/rhC2nBgdPvqAbl
+	2nTmZvG+9GJteKFUxB2YsQodd71WEHNSK0JuMdrvQ+LMPggmTgblHeAOnoNVr8ChEROr4YGx1va7n
+	lqwC+bCdMxgmpWycDMs2TqJRLzj08AimnT9+oTdLMbZlThXHIARAi2gVeJmIHimcxhztyarfigU+k
+	erEKMtmBH1kmO1JRdxlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9lGd-00EiT0-2I
+	id 1q9lSC-00EliJ-1m
 	for ath12k@archiver.kernel.org;
-	Thu, 15 Jun 2023 11:35:55 +0000
+	Thu, 15 Jun 2023 11:47:52 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q9lGa-00EiSY-2N
+	id 1q9lS9-00ElhV-2b
 	for ath12k@lists.infradead.org;
-	Thu, 15 Jun 2023 11:35:54 +0000
+	Thu, 15 Jun 2023 11:47:51 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1F4C462679;
-	Thu, 15 Jun 2023 11:35:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9735AC433C0;
-	Thu, 15 Jun 2023 11:35:50 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 4C62463A1B;
+	Thu, 15 Jun 2023 11:47:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC377C433C8;
+	Thu, 15 Jun 2023 11:47:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1686828951;
-	bh=HRKs8EDAMspjkc4t+uSo5TJHix7Rge5uKAkGMWz4HuM=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=TtpHxPUX/FT1K6E8TAqgXlrquSrQWTe7UjZkbStkfBNjBK54jy9Dq91tOMX0ZurWq
-	 zg8Q9iQ6WjoxQnftPEJx0gtUeeKKN004PJrdO2V3v6F2PRXBHa7CCO5yd4A/SvL1LH
-	 35Aj9aLy1R3cdBCRfF6oggdybHQ3YfPDGiGToRqd9wqTH3fWQoRoaxiWefcn3SilHF
-	 15FbPFChl4BFFqQr9L55+NRQlQ3SgQNr8AQOQGWdFp1rfGry75lX1uJji5IEYvzc87
-	 2bKdJ8VxRByT2BA6aJH0x9kgeV3mUwioUDowi1NvfZbLMdmxlYmBEbcCKvC4rV3KYR
-	 cyZCV6YZcY1sA==
-MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: fix conf_mutex in
- ath12k_mac_op_unassign_vif_chanctx()
+	s=k20201202; t=1686829668;
+	bh=ETjfqbV35FydXvtQT6glIanv5Nl5Ltd28mo9+pNNqaw=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=UpjKZs3oreG5S+ux9roaMSwCGte48DJrQnHyfkZp+9pf1J27jvZhR0P/y4ShdmyUD
+	 eVo3rjRKYQFsUgi0pis74aM8FYSw3wcfRNum0lSF8r0m0E8qfDJ6VUxy0qzeKtVa0D
+	 fE5sQzKlVkTfMActgAtT8s+lL8SNpx/IXXKCg0gFn5I3IiZk94aPq08WHcdxGQ9qvZ
+	 r1qBa9By2moxGPmt/Hd8qiYeEPWmVFKreVpoOmUksrVBW70fjNyawpfTDwOWrTFUy2
+	 H2owO5Z0Hjx7T9B2DFcM/zQ293qBo8zl+cNLeq+zlp38dqkPvleSW/W5PWwWPgI7gs
+	 n0J/BkqrNsmAQ==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230608104444.3134-1-quic_wgong@quicinc.com>
-References: <20230608104444.3134-1-quic_wgong@quicinc.com>
-To: Wen Gong <quic_wgong@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- <quic_wgong@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.7.3
-Message-ID: <168682894712.15751.14642356726851590142.kvalo@kernel.org>
-Date: Thu, 15 Jun 2023 11:35:50 +0000 (UTC)
+To: Aloka Dixit <quic_alokad@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v4 00/11] wifi: ath12k: (v4) EHT support
+References: <20230602235820.23912-1-quic_alokad@quicinc.com>
+Date: Thu, 15 Jun 2023 14:47:43 +0300
+In-Reply-To: <20230602235820.23912-1-quic_alokad@quicinc.com> (Aloka Dixit's
+	message of "Fri, 2 Jun 2023 16:58:09 -0700")
+Message-ID: <87y1klaqw0.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230615_043552_833180_EE9FDB2A 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230615_044749_879422_A342ABE7 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,26 +76,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Wen Gong <quic_wgong@quicinc.com> wrote:
+Aloka Dixit <quic_alokad@quicinc.com> writes:
 
-> "mutex_unlock(&ar->conf_mutex);" is always called at end of function
-> ath12k_mac_op_unassign_vif_chanctx(), so delete this unlock to make
-> sure lock/unlock is paired.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> Add driver support for EHT bring-up, association and
+> preamble puncturing.
+>
+> v4: Modified patch 3 to support WCN7850.
+> v3: Modified patches 6 and 9 to fix some issues,
+> changelog included in the respective patches.
+> v2: This version modifies only few commit descriptions,
+> changelog included in the respective patches.
 
-Patch applied to ath-next branch of ath.git, thanks.
+I did some minor changes to these patches in the pending branch, here's
+a list:
 
-3a5d50f8eb4f wifi: ath12k: fix conf_mutex in ath12k_mac_op_unassign_vif_chanctx()
+* patch 3: ath12k_wmi_tlv_mac_phy_caps_ext(): remove unncessary cast and add const
+
+* patch 3: shorten struct ath12k_wmi_mac_phy_caps_ext_params due to
+  long line warning
+
+* patch 3: improve error messages
+
+* patch 3: move struct ath12k_fw_pdev after struct ath12k_pdev
+
+* patch 5: ath12k_mac_get_phymode_eht(): add extra spaces, improve error messages
+
+* patch 6: cosmetic cleanup, extra lines etc
+
+* patch 6: ath12k_mac_set_eht_ppe_threshold(): move declarations
+  to the beginning of the function
+
+* patch 7&8: use BIT() for enum wmi_tlv_peer_flags_ext
+
+I have two more comments which I'll send as a reply to patches. I'm
+hoping to fix those in my pending branch as well so there would no need
+to resend anything.
+
+The changes are now in the pending branch, under tag
+ath-pending-202306151144. Here's a link to few of those commits:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=master-pending&id=974310a085acad9cee462b3f343e8c05185abc67
+
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=master-pending&id=e4b7f51541b4ae79baa1ab9a8389fd4d9e0fe219
+
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=master-pending&id=ae4b76c40bc7350d52d42de6e8633f6e52d905fb
+
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=master-pending&id=3594ef351ae29788c00fad6c69d60b9a41dc1bbb
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230608104444.3134-1-quic_wgong@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/list/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
 
 -- 
 ath12k mailing list
