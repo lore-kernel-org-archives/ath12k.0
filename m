@@ -4,95 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDD8BEB64DA
-	for <ath12k@archiver.kernel.org>; Wed, 19 Jul 2023 06:54:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88E16C001B0
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jul 2023 02:52:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yzEhBfOViPpHyKq2NJySQS1cuI7ANzfEtt1gqeA/4dQ=; b=OfLEh6PnVQeek7
-	HwepHqytpF3095JeDOAOfM4mzzIAxxlLR6KDjWCMa7oViOo9Ec9jmXcEwitNbA6y6quWOCnejnWpU
-	lb0jzRhjYqYiDDTo1EEGw3mJy6JMZSjxi/Z5SckfHaov2xu2IwMpyRyba5cwKO/1SHReFu/RbYPLC
-	W7mbG3iVDeClLBlKZJAq7Fbpv2XFaRamWYVQieBnkHLdHiEzW094i+vV2dRt/XxPxiEXWnAGeDHHv
-	/2GzYF0NArW/UbU+kMEcylRg1BxKgCL452g+wegJN5QNe4LUFrD9HgCA6iGb2xJtvySnZ3QzW//4S
-	ALTGzNXM0KuwpICVa0GA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zsTxKSRJfluhNaFZRXlLZrdZCEpZU82kgOLEH6Zuwag=; b=w5Fu/BH055MTf7
+	WyfTwTn4EW1ZxBk6V9SHklTH6IOnpFNuWO3cI5Z8AaSJ1Mx2zpvni1mllVo/JgXCn1CTAeMdh0ZH7
+	j0234FY4yl/5OZ6gRMm4mx65XIZ7LWyqS5PeT435e/B9+Vn/vfQYspB4+NeW8Cp5tWAbi29xZiSWM
+	OCudIoTRe49T1pMnRfb30D5d9dAcenyQg7Yw1hICZoKqh7ADyBDfV/tUiX/4/Sopysmam1mBFlie8
+	CXjWuT1epNiQUsQDt8YrPJz5HHGIpGhwIjZFXfQyqPSAtVhZSrj0AqXwkVOd9REbI5cw2LEmYGgxp
+	LC5me2qOmuQ5Jyh5/Pjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM14y-005xe2-1o
+	id 1qMJmi-009auX-0K
 	for ath12k@archiver.kernel.org;
-	Wed, 19 Jul 2023 06:54:32 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qM14w-005xby-2t
-	for ath12k@bombadil.infradead.org;
-	Wed, 19 Jul 2023 06:54:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=Y4LVSotgpj1rOBsiuRlk9VRWl4eBVM6YTEqbq3VQpK8=; b=Sj/XAiOmKV9ov5ZjoWrjYmFM4J
-	pjNquk5xEIxUrzUGGRXFRfRzzPut5F3UIOGOA2eyX7wjyoY+aY8Sa4XXubsOEF+dLJ1rZ+aHwBHay
-	2Q5dUntI0F4+nRfyvzN5Czy/u33g03qKRrSW3g4Iq1coZLbLeVnA0GAwyXA8IKzxTXbtlgSeWLS9M
-	Oazg7/Th+QrE3WvidxDNVxlryrEdTDHf3FY46fHOqo2+s7ffsWxT5C2/FtJftxs95y5gm0fy7fB4p
-	qKHiOELAze0teRwL8zHNpZMHpJUhYSmM6MaSyG4SYJw2ULLEKWby4swxRMLqbPk/g7nDNmnX2lkbG
-	dlg7XRPQ==;
+	Thu, 20 Jul 2023 02:52:56 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qLala-009aaC-0f
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qMJmf-009at7-0U
 	for ath12k@lists.infradead.org;
-	Tue, 18 Jul 2023 02:48:51 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36I2VrZP010945;
-	Tue, 18 Jul 2023 02:47:40 GMT
+	Thu, 20 Jul 2023 02:52:54 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36K1xqbT009192;
+	Thu, 20 Jul 2023 02:52:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding :
- content-type; s=qcppdkim1;
- bh=Y4LVSotgpj1rOBsiuRlk9VRWl4eBVM6YTEqbq3VQpK8=;
- b=ShpHvMSFHx7WqRkLdOp4UAdWPBMwmZqVly2+2FeFzHTAcYVNOE4H2CfAZ08o86AZ8sNW
- Su9ULJwHBOpQL5Z9UdhTO1OCVnOCU7O/Gx6bfsnkoshWevwwlUcxPq504t5IXQEshbFV
- eaEjcxq3hSFksrijPntxlRmTfbQIuiomBKK/C3izBaewnG4+PhW79LxodoTStZawe4Z1
- 0ZJK81D1s2WlPbzrTrvoe453BgnIeUAbIHfJLPdCh+9T4U5ZNyM4UZZHNb7ZudpQY4S9
- cwtZeKWBKb7LRyPFn7g2vXG4UQD/cdJ7LManDKqPY7HIH+9XDWksBFLozFCdBtpMz7jC Uw== 
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding : content-type; s=qcppdkim1;
+ bh=v04/jZu6rS74Kbl4ylaImq74Qnm9nrCiCsSm5mqFmwI=;
+ b=Y5/PxZ+4JhWL4PcUQuYP7yRgplA5ggmUj68zf6wDoipb1GLZpw2HNM6Frm0Wgc/TtLs7
+ 338VG4SCadjdRfrTOAuP+F7nuPQ75WjU8P07EN+x30ntn6XhmsLr3YHgNcRHnnlQnUuA
+ b14DBHlZbTGusVYuldbCbf1RloQX8Oc1Eg/mQUL9NEHvjKDrwJs/uLtXWp05mi89E0La
+ oMBxMo1FvoOoz9sfwzaB7H0UQrCjnzSqimRBZWGvuIku+sn6V5EeJ4sU0d6qWuKFV1K7
+ k2KxoPTyTPr0xyt9rid8sKeWTwaaI8Uzcx7JLiLfOJAxzNPlp2SO3er2ux4R9ln6YF3N 1A== 
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3run1jcxw9-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rxummr31m-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Jul 2023 02:47:39 +0000
+	Thu, 20 Jul 2023 02:52:51 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36I2lc1x019488
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36K2qojw020651
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Jul 2023 02:47:38 GMT
+	Thu, 20 Jul 2023 02:52:50 GMT
 Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Mon, 17 Jul 2023 19:47:37 -0700
+ 15.2.1118.30; Wed, 19 Jul 2023 19:52:49 -0700
 From: Wen Gong <quic_wgong@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
-Subject: [PATCH] wifi: ath12k: avoid deadlock by change ieee80211_queue_work for regd_update_work
-Date: Mon, 17 Jul 2023 22:47:24 -0400
-Message-ID: <20230718024724.29120-1-quic_wgong@quicinc.com>
+Subject: [PATCH 2/3] wifi: ath12k: add ath12k_qmi_free_resource() for recovery
+Date: Wed, 19 Jul 2023 22:52:31 -0400
+Message-ID: <20230720025232.7701-3-quic_wgong@quicinc.com>
 X-Mailer: git-send-email 2.40.1
+In-Reply-To: <20230720025232.7701-1-quic_wgong@quicinc.com>
+References: <20230720025232.7701-1-quic_wgong@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: dfmhe5738vx9ZAhRJyImvME62JUrLzQd
-X-Proofpoint-ORIG-GUID: dfmhe5738vx9ZAhRJyImvME62JUrLzQd
+X-Proofpoint-ORIG-GUID: w-XA8ET-hsv0TuqFtuZe9iOyU0HWGblS
+X-Proofpoint-GUID: w-XA8ET-hsv0TuqFtuZe9iOyU0HWGblS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-17_15,2023-07-13_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
- clxscore=1015 malwarescore=0 adultscore=0 phishscore=0 mlxlogscore=770
- bulkscore=0 spamscore=0 impostorscore=0 lowpriorityscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307180024
+ definitions=2023-07-19_16,2023-07-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 impostorscore=0 phishscore=0 lowpriorityscore=0
+ clxscore=1015 adultscore=0 suspectscore=0 mlxscore=0 mlxlogscore=999
+ malwarescore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307200020
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230718_034848_801956_60EB2D92 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20230719_195253_329179_65FF48B6 
+X-CRM114-Status: GOOD (  14.41  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,40 +96,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Deadlock is easily happened while shutdown wlan interface such as run
-"ifconfig wlan0 down".
-
-The reason is because when ar->regd_update_work is ran, it will
-call wiphy_lock(ar->hw->wiphy) in function ath12k_regd_update() which
-is running in workqueue of ieee80211_local queued by ieee80211_queue_work().
-Another thread from "ifconfig wlan0 down" will also accuqire the lock
-by wiphy_lock(sdata->local->hw.wiphy) in function ieee80211_stop(), and
-then it call ieee80211_stop_device() to flush_workqueue(local->workqueue),
-this will wait the workqueue of ieee80211_local finished. Then deadlock
-will happen easily if the two thread run meanwhile.
+ath12k_qmi_free_target_mem_chunk() and ath12k_qmi_m3_free() is static
+in qmi.c, they are needed for recovery, export them in a new function
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
 Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/core.c | 1 +
+ drivers/net/wireless/ath/ath12k/qmi.c  | 6 ++++++
+ drivers/net/wireless/ath/ath12k/qmi.h  | 1 +
+ 3 files changed, 8 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 7ae0bb78b2b5..ea6de84bf5cd 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -5213,7 +5213,7 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
- 		ar = ab->pdevs[pdev_idx].ar;
- 		kfree(ab->new_regd[pdev_idx]);
- 		ab->new_regd[pdev_idx] = regd;
--		ieee80211_queue_work(ar->hw, &ar->regd_update_work);
-+		queue_work(ab->workqueue, &ar->regd_update_work);
- 	} else {
- 		/* Multiple events for the same *ar is not expected. But we
- 		 * can still clear any previously stored default_regd if we
-
-base-commit: 0a00db612b6df1fad80485e3642529d1f28ea084
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 3df8059d5512..85e49f9ff4c4 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -839,6 +839,7 @@ static void ath12k_core_reset(struct work_struct *work)
+ 						ATH12K_RECOVER_START_TIMEOUT_HZ);
+ 
+ 	ath12k_hif_power_down(ab);
++	ath12k_qmi_free_resource(ab);
+ 	ath12k_hif_power_up(ab);
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_BOOT, "reset started\n");
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 4afba76b90fe..d0da9b63a114 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -3089,3 +3089,9 @@ void ath12k_qmi_deinit_service(struct ath12k_base *ab)
+ 	ath12k_qmi_m3_free(ab);
+ 	ath12k_qmi_free_target_mem_chunk(ab);
+ }
++
++void ath12k_qmi_free_resource(struct ath12k_base *ab)
++{
++	ath12k_qmi_free_target_mem_chunk(ab);
++	ath12k_qmi_m3_free(ab);
++}
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
+index df76149c49f5..6d4a5ab72d45 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.h
++++ b/drivers/net/wireless/ath/ath12k/qmi.h
+@@ -566,5 +566,6 @@ void ath12k_qmi_event_work(struct work_struct *work);
+ void ath12k_qmi_msg_recv_work(struct work_struct *work);
+ void ath12k_qmi_deinit_service(struct ath12k_base *ab);
+ int ath12k_qmi_init_service(struct ath12k_base *ab);
++void ath12k_qmi_free_resource(struct ath12k_base *ab);
+ 
+ #endif
 -- 
 2.40.1
 
