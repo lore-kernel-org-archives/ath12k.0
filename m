@@ -4,80 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69254EB64DC
-	for <ath12k@archiver.kernel.org>; Fri, 21 Jul 2023 05:59:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07637C0015E
+	for <ath12k@archiver.kernel.org>; Fri, 21 Jul 2023 15:42:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TFWMaX28saDmNMyQ6xr0ymjRL7BbwZJKtsitITn/F08=; b=PK+x7lqQlBj0q3
-	rbql6LrZeUOa092CU1/ywZLL83TDhKsWcJzsVAPZ+FE4B2Mso1nqqVaEB4xwJMvDMQHeIdOeIGASF
-	yEhl3NfDAeG8myg7FxTxUbb99ePHQRRpbomfyWd4Nz6wEaZjsiC78dXHdfRpoAwpcSomq4h9o0KSo
-	VDp3vv/xDoWsUjsG38e4hjyWfmAoPvMDqp8Z8P6eJPb0aTv6Tvofprh0KXbjTZjI5B0SiINesodkx
-	miW8lLMhqHgzKCkoCO3yktLwyjnsARGvN6g/Q9ubIutUJhQFwRSh+Y2JwEArdI0OdFaatPdoDU+th
-	/gDf9bqZXcnzLWwLG/Zw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kvPohSjulmKausPscFzmJxsJB9/OWjBLxUFb+0/4KZw=; b=qYnIhfwLWwFOMN
+	W6uguts1DXMGS1vzMBF2BJdEr6lHVbDw0NhTlmN00INeOJAXMBkYHhD3mlLIT8VOkTS1gGPS4WBD6
+	a8EaBXQkEGElhs1t6X3cTIWtotX3ijemWKOi2mCJz98rYZnV4UCESKIfWpt9KQeMt4FOroupBHsom
+	sSkNYVVDg/F7NjIG45DfgGXcLbRsT0kZho4suQRVQMvK1pFSdxSqvwZJf9x3Awkx2Oz2THgJeTjB8
+	32v+sXOUVUUTQ7sRg/2ghMMGCYd7tDggjHc+YijvTd85qocnF+vzExQ6udZRCc2pxGPfH6JUvit/V
+	4Af9fQ9yeucrprJ3cQAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMjAa-00Cz30-0P
+	id 1qMsGk-00ESQQ-2O
 	for ath12k@archiver.kernel.org;
-	Fri, 21 Jul 2023 05:59:16 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 21 Jul 2023 15:42:14 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMjAX-00Cz2N-03
+	id 1qMsGi-00ESOh-04
 	for ath12k@lists.infradead.org;
-	Fri, 21 Jul 2023 05:59:14 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36L4Hite030001;
-	Fri, 21 Jul 2023 05:59:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding :
- content-type; s=qcppdkim1;
- bh=RXYK7uYTPYx3uYtbgrMZErzAz6eAMS2Xr9OkenEW2gI=;
- b=LLFT9rT8KSJ5QK/uxyFWzOWwCP0UpcLetNnHnDE41Z05vcSK6YWaJ/757KF+WaE/SnLV
- uE6yE1A6vC33kBG1j/DYDv7u1RdJ6G4Cj6GrOjtjDHqTmgYVAXIvx4eAFgGmtRq2sV1t
- Wu3mONVoMDZGZ/02wtoR7bLzPS8zU9KDD+1mi82dE0otHPZgBLkvgmoZydV3sj9hAXbJ
- XQPb/PAo6gkKb5va1ko0ttJcIvlWfaYHqiymxZ3bvOyXEcWLi19Bkcs9I//Nz2TO+5m+
- Ni4bBHOOe2QDDMPAQ7kNaUbnB6VgdrUazOyUBLikiAY2P8LPakYHexgZ7Ci4eOZ6b5lO qQ== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3rxup4k69a-1
+	Fri, 21 Jul 2023 15:42:13 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36LAxMxK008830;
+	Fri, 21 Jul 2023 15:41:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=wDnHF2PWIs/ZqPkocgVZn/AazvlicjltIRMUx6my/8s=;
+ b=X8WpqbPTWQY86/tWlf9ff00DiMeWfcGocaInz2AtApz+CCaNbCq3W663wC6wSB4+/TJJ
+ lbk6Wd0UF1Oaytl83wRgTGIbGd3OYOhEtBsMMY4SmMBgi4UT9K0/2ajRHcB3YTHN95tm
+ o1g5OofJbuQ+pRnD9B+C4lIx2EIcdV+LMkm0zgjSGID8Q1+vMuQC5E2bwjIkqWubSoYs
+ 5nwPy3b0us2JM7SO9jzVuX20BMgt9va6GJC4C5AfAoPgCx0G/jm5jPwnhOe7tbZaFy/H
+ +6IpIdvB2NTaG62ERfQk6PMhMu4IGZeadO+4ByABJ1y1wznJNIJShgJw4LjhzMJ3y5+a tA== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ryfyf1prf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jul 2023 05:59:11 +0000
+	Fri, 21 Jul 2023 15:41:57 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36L5x9vI005316
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36LFfvpC023628
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jul 2023 05:59:09 GMT
-Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Thu, 20 Jul 2023 22:59:07 -0700
-From: Wen Gong <quic_wgong@quicinc.com>
-To: <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
-Subject: [PATCH] wifi: mac80211: avoid buffer overflow by adding clear data of VHT Tx power envelope
-Date: Fri, 21 Jul 2023 01:58:51 -0400
-Message-ID: <20230721055851.20525-1-quic_wgong@quicinc.com>
-X-Mailer: git-send-email 2.40.1
+	Fri, 21 Jul 2023 15:41:57 GMT
+Received: from [10.48.244.138] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Fri, 21 Jul
+ 2023 08:41:56 -0700
+Message-ID: <88dbaf62-4a44-2bed-0f1d-530b1d8302c1@quicinc.com>
+Date: Fri, 21 Jul 2023 08:41:56 -0700
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: mac80211: avoid buffer overflow by adding clear
+ data of VHT Tx power envelope
+Content-Language: en-US
+To: Wen Gong <quic_wgong@quicinc.com>, <johannes@sipsolutions.net>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20230721055851.20525-1-quic_wgong@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20230721055851.20525-1-quic_wgong@quicinc.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 03civB66477Hzs-zqCBEpgcFMi7N7fEr
-X-Proofpoint-ORIG-GUID: 03civB66477Hzs-zqCBEpgcFMi7N7fEr
+X-Proofpoint-GUID: MdPS1Zlw-o1ZKQwef1sAtKKaLu-Pi4KC
+X-Proofpoint-ORIG-GUID: MdPS1Zlw-o1ZKQwef1sAtKKaLu-Pi4KC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-21_02,2023-07-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 spamscore=0
- adultscore=0 mlxlogscore=999 lowpriorityscore=0 suspectscore=0
- priorityscore=1501 clxscore=1015 bulkscore=0 mlxscore=0 phishscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307210053
+ definitions=2023-07-21_10,2023-07-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 spamscore=0
+ mlxscore=0 lowpriorityscore=0 bulkscore=0 phishscore=0 adultscore=0
+ priorityscore=1501 impostorscore=0 clxscore=1011 malwarescore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307210139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230720_225913_172449_430FE4B0 
-X-CRM114-Status: GOOD (  22.36  )
+X-CRM114-CacheID: sfid-20230721_084212_090247_05EDCC28 
+X-CRM114-Status: GOOD (  33.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,90 +94,96 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-While connecting to a 6 GHz AP, the tx_pwr_env_num of struct
-ieee80211_bss_conf is increased (e.g. from 0 to 1) in function
-ieee80211_prep_channel().
+On 7/20/2023 10:58 PM, Wen Gong wrote:
+> While connecting to a 6 GHz AP, the tx_pwr_env_num of struct
+> ieee80211_bss_conf is increased (e.g. from 0 to 1) in function
+> ieee80211_prep_channel().
+> 
+> when AP send authentication with status which is not 0 to station, then
+> the connection failed here, and the tx_pwr_env_num is not reset to 0,
+> because it is only reset to 0 in ieee80211_set_disassoc() which will not
+> entered for this fail. Then connect to AP again and hit same fail again,
+> the tx_pwr_env_num will increased again and become to 2, then it is an
+> invalid number because it should be 1.
+> 
+> When connect-fail again and again, finally it will exceed the max length
+> tx_pwr_env[] in struct ieee80211_bss_conf, when driver use the value of
+> tx_pwr_env_num to run loop to access the tx_pwr_env[], then overflow
+> happened here.
+> 
+> There are many steps while connecting to AP for station, and any one step
+> failure will lead connect failure, so it is hard to do reset the value of
+> tx_pwr_env_num for each failure case.
+> 
+> And the next connection maybe change to NON-6G Hz and NON-11AX-HE AP after
+> connection failure with 6 GHz AP, then the check of flag is_6ghz and flag
+> of IEEE80211_CONN_DISABLE_HE will not matched in ieee80211_prep_channel().
+> 
+> Hence change to assign value of tx_pwr_env_num each time in function
+> ieee80211_prep_channel(), then the tx_pwr_env_num will be 1 when the next
+> AP is still 6 GHz AP, and it will be 0 for NON-6 GHz AP , and then it
+> will be always avoid buffer overflow and invalid value of tx_pwr_env_num.
+> 
+> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+> ---
+>   net/mac80211/mlme.c | 9 ++++-----
+>   1 file changed, 4 insertions(+), 5 deletions(-)
+> 
+> diff --git a/net/mac80211/mlme.c b/net/mac80211/mlme.c
+> index 959695ed7649..d8ca7f18028e 100644
+> --- a/net/mac80211/mlme.c
+> +++ b/net/mac80211/mlme.c
+> @@ -4712,6 +4712,7 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
+>   	int ret;
+>   	u32 i;
+>   	bool have_80mhz;
+> +	u8 j = 0;
 
-when AP send authentication with status which is not 0 to station, then
-the connection failed here, and the tx_pwr_env_num is not reset to 0,
-because it is only reset to 0 in ieee80211_set_disassoc() which will not
-entered for this fail. Then connect to AP again and hit same fail again,
-the tx_pwr_env_num will increased again and become to 2, then it is an
-invalid number because it should be 1.
+Since the scope is larger and this is more than a loop control variable, 
+suggest giving this a more meaningful name like num_pwr_env
 
-When connect-fail again and again, finally it will exceed the max length
-tx_pwr_env[] in struct ieee80211_bss_conf, when driver use the value of
-tx_pwr_env_num to run loop to access the tx_pwr_env[], then overflow
-happened here.
+>   
+>   	rcu_read_lock();
+>   
+> @@ -4789,10 +4790,7 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
+>   		he_oper = elems->he_operation;
+>   
+>   		if (link && is_6ghz) {
+> -			struct ieee80211_bss_conf *bss_conf;
+> -			u8 j = 0;
+> -
+> -			bss_conf = link->conf;
+> +			struct ieee80211_bss_conf *bss_conf = link->conf;;
 
-There are many steps while connecting to AP for station, and any one step
-failure will lead connect failure, so it is hard to do reset the value of
-tx_pwr_env_num for each failure case.
+s/;;/;/
 
-And the next connection maybe change to NON-6G Hz and NON-11AX-HE AP after
-connection failure with 6 GHz AP, then the check of flag is_6ghz and flag
-of IEEE80211_CONN_DISABLE_HE will not matched in ieee80211_prep_channel().
-
-Hence change to assign value of tx_pwr_env_num each time in function
-ieee80211_prep_channel(), then the tx_pwr_env_num will be 1 when the next
-AP is still 6 GHz AP, and it will be 0 for NON-6 GHz AP , and then it
-will be always avoid buffer overflow and invalid value of tx_pwr_env_num.
-
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
----
- net/mac80211/mlme.c | 9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
-
-diff --git a/net/mac80211/mlme.c b/net/mac80211/mlme.c
-index 959695ed7649..d8ca7f18028e 100644
---- a/net/mac80211/mlme.c
-+++ b/net/mac80211/mlme.c
-@@ -4712,6 +4712,7 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
- 	int ret;
- 	u32 i;
- 	bool have_80mhz;
-+	u8 j = 0;
- 
- 	rcu_read_lock();
- 
-@@ -4789,10 +4790,7 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
- 		he_oper = elems->he_operation;
- 
- 		if (link && is_6ghz) {
--			struct ieee80211_bss_conf *bss_conf;
--			u8 j = 0;
--
--			bss_conf = link->conf;
-+			struct ieee80211_bss_conf *bss_conf = link->conf;;
- 
- 			if (elems->pwr_constr_elem)
- 				bss_conf->pwr_reduction = *elems->pwr_constr_elem;
-@@ -4805,7 +4803,6 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
- 				    sizeof(bss_conf->tx_pwr_env[j]))
- 					continue;
- 
--				bss_conf->tx_pwr_env_num++;
- 				memcpy(&bss_conf->tx_pwr_env[j], elems->tx_pwr_env[i],
- 				       elems->tx_pwr_env_len[i]);
- 				j++;
-@@ -4818,6 +4815,8 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
- 				       IEEE80211_CONN_DISABLE_EHT;
- 	}
- 
-+	link->conf->tx_pwr_env_num = j;
-+
- 	/*
- 	 * EHT requires HE to be supported as well. Specifically for 6 GHz
- 	 * channels, the operation channel information can only be deduced from
-
-base-commit: b21fe5be53eb873c02e7479372726c8aeed171e3
--- 
-2.40.1
+>   
+>   			if (elems->pwr_constr_elem)
+>   				bss_conf->pwr_reduction = *elems->pwr_constr_elem;
+> @@ -4805,7 +4803,6 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
+>   				    sizeof(bss_conf->tx_pwr_env[j]))
+>   					continue;
+>   
+> -				bss_conf->tx_pwr_env_num++;
+>   				memcpy(&bss_conf->tx_pwr_env[j], elems->tx_pwr_env[i],
+>   				       elems->tx_pwr_env_len[i]);
+>   				j++;
+> @@ -4818,6 +4815,8 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
+>   				       IEEE80211_CONN_DISABLE_EHT;
+>   	}
+>   
+> +	link->conf->tx_pwr_env_num = j;
+> +
+>   	/*
+>   	 * EHT requires HE to be supported as well. Specifically for 6 GHz
+>   	 * channels, the operation channel information can only be deduced from
+> 
+> base-commit: b21fe5be53eb873c02e7479372726c8aeed171e3
 
 
 -- 
