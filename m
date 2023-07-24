@@ -4,85 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07637C0015E
-	for <ath12k@archiver.kernel.org>; Fri, 21 Jul 2023 15:42:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7527C001B0
+	for <ath12k@archiver.kernel.org>; Mon, 24 Jul 2023 10:16:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kvPohSjulmKausPscFzmJxsJB9/OWjBLxUFb+0/4KZw=; b=qYnIhfwLWwFOMN
-	W6uguts1DXMGS1vzMBF2BJdEr6lHVbDw0NhTlmN00INeOJAXMBkYHhD3mlLIT8VOkTS1gGPS4WBD6
-	a8EaBXQkEGElhs1t6X3cTIWtotX3ijemWKOi2mCJz98rYZnV4UCESKIfWpt9KQeMt4FOroupBHsom
-	sSkNYVVDg/F7NjIG45DfgGXcLbRsT0kZho4suQRVQMvK1pFSdxSqvwZJf9x3Awkx2Oz2THgJeTjB8
-	32v+sXOUVUUTQ7sRg/2ghMMGCYd7tDggjHc+YijvTd85qocnF+vzExQ6udZRCc2pxGPfH6JUvit/V
-	4Af9fQ9yeucrprJ3cQAw==;
+	List-Owner; bh=9LdOgt08zeQDuMp3FnUUmTvOIF3cQJiK/bQBslgrLeo=; b=WB6dNHsqSCH2/T
+	zqqmR0qyNpjPYPwVEVqpAVDL9QC+LtpoAndwJyLExP0pEZPrKmuevSPWH4JjOaqA70LlvoYZK2ncx
+	lipHjyJCMeTOlQxgWWyDwZUseJHlQ07reNQhN2kciElRmhMCAfBl2nMqFWFdifkh5/udGQUPsxB4x
+	OOcFilZKoBcy5YLb2VoYgS53kS9+4qsTocjkG1JeYafxmSYspiPC99mkp7UYil/RRexFxbFfmXCqY
+	6AHiHmLn1MbVVLmJNtSVGO33sTWOh/T3fjnYBq7EHypAahJC2pvG2MUAxCimX483eKHAxoZLBtfyp
+	4X/uJ0FzG0cVnnVtb4Zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMsGk-00ESQQ-2O
+	id 1qNscZ-003e0t-1G
 	for ath12k@archiver.kernel.org;
-	Fri, 21 Jul 2023 15:42:14 +0000
+	Mon, 24 Jul 2023 10:16:55 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qMsGi-00ESOh-04
+	id 1qNscW-003dlC-2N
 	for ath12k@lists.infradead.org;
-	Fri, 21 Jul 2023 15:42:13 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36LAxMxK008830;
-	Fri, 21 Jul 2023 15:41:58 GMT
+	Mon, 24 Jul 2023 10:16:54 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36O6FmuM000883;
+	Mon, 24 Jul 2023 10:16:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=wDnHF2PWIs/ZqPkocgVZn/AazvlicjltIRMUx6my/8s=;
- b=X8WpqbPTWQY86/tWlf9ff00DiMeWfcGocaInz2AtApz+CCaNbCq3W663wC6wSB4+/TJJ
- lbk6Wd0UF1Oaytl83wRgTGIbGd3OYOhEtBsMMY4SmMBgi4UT9K0/2ajRHcB3YTHN95tm
- o1g5OofJbuQ+pRnD9B+C4lIx2EIcdV+LMkm0zgjSGID8Q1+vMuQC5E2bwjIkqWubSoYs
- 5nwPy3b0us2JM7SO9jzVuX20BMgt9va6GJC4C5AfAoPgCx0G/jm5jPwnhOe7tbZaFy/H
- +6IpIdvB2NTaG62ERfQk6PMhMu4IGZeadO+4ByABJ1y1wznJNIJShgJw4LjhzMJ3y5+a tA== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ryfyf1prf-1
+ bh=cfewn56TVGilkmEgIByWqsa6Ek2mqMzLIsbNYs2uegI=;
+ b=BMi/hewY69T7bB2FJgqpb1r5DleYLGVqj2+zGdAddmTGlHbZahU538M2SS2OQluxmLqL
+ ObWANCPAwLfayEE9/+K0TXqHPefaSmHjuV/2DUfKRM7PHpi64cxvNAGaRfe9jR7B3NX0
+ JYEz6Ggq4sXi39iky/zFrs9mwUpf0PbClYCMl+v28CRmz/ZaTGcW3qV+ys0qj9maXHRw
+ /yROdztBapPu0xDF07Vr+nWw/cBtY3OOnXxii5i4p2mT6BBW/Gw8d/Fscbw6JtdIprpR
+ /KcdvUVN2/Gy3ZJoRw0rR2Ahb25o8ru0AB8Jk2Ao8nOJAnvSYdTH4soVVFXROkxd4Tco +g== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s089ttvvp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jul 2023 15:41:57 +0000
+	Mon, 24 Jul 2023 10:16:30 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36LFfvpC023628
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36OAGTiP019896
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jul 2023 15:41:57 GMT
-Received: from [10.48.244.138] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Mon, 24 Jul 2023 10:16:29 GMT
+Received: from [10.253.76.190] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Fri, 21 Jul
- 2023 08:41:56 -0700
-Message-ID: <88dbaf62-4a44-2bed-0f1d-530b1d8302c1@quicinc.com>
-Date: Fri, 21 Jul 2023 08:41:56 -0700
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Mon, 24 Jul
+ 2023 03:16:28 -0700
+Message-ID: <f4515520-1d3b-1b07-6ddd-ae269c12a91f@quicinc.com>
+Date: Mon, 24 Jul 2023 18:16:24 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: mac80211: avoid buffer overflow by adding clear
- data of VHT Tx power envelope
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v4 06/11] wifi: ath12k: prepare EHT peer assoc parameters
+To: Aloka Dixit <quic_alokad@quicinc.com>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>
+CC: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+References: <20230602235820.23912-1-quic_alokad@quicinc.com>
+ <20230602235820.23912-7-quic_alokad@quicinc.com>
 Content-Language: en-US
-To: Wen Gong <quic_wgong@quicinc.com>, <johannes@sipsolutions.net>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20230721055851.20525-1-quic_wgong@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230721055851.20525-1-quic_wgong@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <20230602235820.23912-7-quic_alokad@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: MdPS1Zlw-o1ZKQwef1sAtKKaLu-Pi4KC
-X-Proofpoint-ORIG-GUID: MdPS1Zlw-o1ZKQwef1sAtKKaLu-Pi4KC
+X-Proofpoint-GUID: 3riSjrm0_YjQubqt7MbLv5nz8B56jQiO
+X-Proofpoint-ORIG-GUID: 3riSjrm0_YjQubqt7MbLv5nz8B56jQiO
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-21_10,2023-07-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 spamscore=0
- mlxscore=0 lowpriorityscore=0 bulkscore=0 phishscore=0 adultscore=0
- priorityscore=1501 impostorscore=0 clxscore=1011 malwarescore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307210139
+ definitions=2023-07-24_08,2023-07-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=794
+ malwarescore=0 lowpriorityscore=0 suspectscore=0 phishscore=0 mlxscore=0
+ bulkscore=0 adultscore=0 clxscore=1015 spamscore=0 impostorscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307240091
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230721_084212_090247_05EDCC28 
-X-CRM114-Status: GOOD (  33.22  )
+X-CRM114-CacheID: sfid-20230724_031652_787854_01055BA8 
+X-CRM114-Status: GOOD (  11.55  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,92 +100,45 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 7/20/2023 10:58 PM, Wen Gong wrote:
-> While connecting to a 6 GHz AP, the tx_pwr_env_num of struct
-> ieee80211_bss_conf is increased (e.g. from 0 to 1) in function
-> ieee80211_prep_channel().
-> 
-> when AP send authentication with status which is not 0 to station, then
-> the connection failed here, and the tx_pwr_env_num is not reset to 0,
-> because it is only reset to 0 in ieee80211_set_disassoc() which will not
-> entered for this fail. Then connect to AP again and hit same fail again,
-> the tx_pwr_env_num will increased again and become to 2, then it is an
-> invalid number because it should be 1.
-> 
-> When connect-fail again and again, finally it will exceed the max length
-> tx_pwr_env[] in struct ieee80211_bss_conf, when driver use the value of
-> tx_pwr_env_num to run loop to access the tx_pwr_env[], then overflow
-> happened here.
-> 
-> There are many steps while connecting to AP for station, and any one step
-> failure will lead connect failure, so it is hard to do reset the value of
-> tx_pwr_env_num for each failure case.
-> 
-> And the next connection maybe change to NON-6G Hz and NON-11AX-HE AP after
-> connection failure with 6 GHz AP, then the check of flag is_6ghz and flag
-> of IEEE80211_CONN_DISABLE_HE will not matched in ieee80211_prep_channel().
-> 
-> Hence change to assign value of tx_pwr_env_num each time in function
-> ieee80211_prep_channel(), then the tx_pwr_env_num will be 1 when the next
-> AP is still 6 GHz AP, and it will be 0 for NON-6 GHz AP , and then it
-> will be always avoid buffer overflow and invalid value of tx_pwr_env_num.
-> 
-> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-> ---
->   net/mac80211/mlme.c | 9 ++++-----
->   1 file changed, 4 insertions(+), 5 deletions(-)
-> 
-> diff --git a/net/mac80211/mlme.c b/net/mac80211/mlme.c
-> index 959695ed7649..d8ca7f18028e 100644
-> --- a/net/mac80211/mlme.c
-> +++ b/net/mac80211/mlme.c
-> @@ -4712,6 +4712,7 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
->   	int ret;
->   	u32 i;
->   	bool have_80mhz;
-> +	u8 j = 0;
+On 6/3/2023 7:58 AM, Aloka Dixit wrote:
+> ...
+> +	default:
+> +		if (arg->peer_phymode == MODE_11BE_EHT20) {
+> +			const struct ieee80211_eht_mcs_nss_supp_20mhz_only *bw_20 =
+> +					&eht_cap->eht_mcs_nss_supp.only_20mhz;
 
-Since the scope is larger and this is more than a loop control variable, 
-suggest giving this a more meaningful name like num_pwr_env
+When ath12k used as station mode, it entered here as well as AP mode.
 
->   
->   	rcu_read_lock();
->   
-> @@ -4789,10 +4790,7 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
->   		he_oper = elems->he_operation;
->   
->   		if (link && is_6ghz) {
-> -			struct ieee80211_bss_conf *bss_conf;
-> -			u8 j = 0;
-> -
-> -			bss_conf = link->conf;
-> +			struct ieee80211_bss_conf *bss_conf = link->conf;;
+But remote is AP device for station mode, then remote AP device do not 
+have the only_20mhz data(EHT-MCS Map (20 MHz-Only Non-AP STA)).
 
-s/;;/;/
+Also 20 MHz should be same for 5 GHz/6 GHz(MODE_11BE_EHT20) and 2.4 
+GHz(MODE_11BE_EHT20_2G), right?
 
->   
->   			if (elems->pwr_constr_elem)
->   				bss_conf->pwr_reduction = *elems->pwr_constr_elem;
-> @@ -4805,7 +4803,6 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
->   				    sizeof(bss_conf->tx_pwr_env[j]))
->   					continue;
->   
-> -				bss_conf->tx_pwr_env_num++;
->   				memcpy(&bss_conf->tx_pwr_env[j], elems->tx_pwr_env[i],
->   				       elems->tx_pwr_env_len[i]);
->   				j++;
-> @@ -4818,6 +4815,8 @@ static int ieee80211_prep_channel(struct ieee80211_sub_if_data *sdata,
->   				       IEEE80211_CONN_DISABLE_EHT;
->   	}
->   
-> +	link->conf->tx_pwr_env_num = j;
 > +
->   	/*
->   	 * EHT requires HE to be supported as well. Specifically for 6 GHz
->   	 * channels, the operation channel information can only be deduced from
-> 
-> base-commit: b21fe5be53eb873c02e7479372726c8aeed171e3
+> +			ath12k_mac_set_eht_mcs(bw_20->rx_tx_mcs7_max_nss,
+> +					       bw_20->rx_tx_mcs9_max_nss,
+> +					       bw_20->rx_tx_mcs11_max_nss,
+> +					       bw_20->rx_tx_mcs13_max_nss,
+> +					       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80],
+> +					       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80]);
+> +		} else {
+> +			bw = &eht_cap->eht_mcs_nss_supp.bw._80;
+> +			ath12k_mac_set_eht_mcs(bw->rx_tx_mcs9_max_nss,
+> +					       bw->rx_tx_mcs9_max_nss,
+> +					       bw->rx_tx_mcs11_max_nss,
+> +					       bw->rx_tx_mcs13_max_nss,
+> +					       &rx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80],
+> +					       &tx_mcs[WMI_EHTCAP_TXRX_MCS_NSS_IDX_80]);
+> +		}
+> +
+> +		arg->peer_eht_mcs_count++;
+> +		break;
+> +	}
+> +}
+> +
 
+...
 
 -- 
 ath12k mailing list
