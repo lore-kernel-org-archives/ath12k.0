@@ -4,60 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CCA7C04A6A
-	for <ath12k@archiver.kernel.org>; Tue, 25 Jul 2023 23:45:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA496C001E0
+	for <ath12k@archiver.kernel.org>; Tue, 25 Jul 2023 23:45:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A18S4EmIqNwy9opwppoga8bEu/uPxDUAzmLkrVs+U04=; b=pUPow+OROOQHkv
-	i+09QDeaRSsIIraqJ1RqH/cK0hRkZuA+krx+4OJ8F4D8T+wqhwnsuHYswrILsbe/bjAIi4eUPfzQF
-	TpFj95JG6P5wzjyPAyBL/cb3C+YrXa5Z9WeOaeUbD2daGvdgI1QS3Hv7PYvKXXtfYufHgK1OQV7e8
-	fH1fSAvai3MG97RhocYtKGKOVq5IBbp+ETDSPFclaFrEcfRBVvSTvSX1nOcFLvXHfReOenkh99mIU
-	RvLK4lEstxNOI8sf739bm5C5hbYw23ZvsvtODZTwDFoVjKLtWfIlectaY9n51u5831uIZUASOQ3iP
-	LknDwD15bgxoc04OLYVQ==;
+	List-Owner; bh=AY5Yw5CV25bsip01Hxh5t+iewmD9Chdc7T3X7u7nRYw=; b=sKspXt8WNjJ/Tm
+	IoPUh2PYsbMwAYd3DN49eK7BoDKlmrbUB/8gOEa/OMHg6glxVXtMFzV9pFJAKViPpXS/O7rE+3I5a
+	B0BOB9qqMlNOwnZROZ1BEFp5k3xFL6asf15NFrH4wvZj34oY317Mq9nslQK0ltepjCgDn5GIv2aBE
+	EH31dJSX9tnV4RFNbspIRw8+58Js+J+oQ5VnQ7RdeJlDuiBt1KJUPu0jI6nt/kotI3CLKaL4bAA1t
+	wGTCxh3ZR1YYAwbuPirN7M2tMXXyJWpUoQCjg6Wfqvvt0oeYtn2r/M19ZqSugbhROkXXAsFaFBdWm
+	nUlMUzkBrecDOMmC/HKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qORie-008jgJ-2i
+	id 1qORie-008jg7-1m
 	for ath12k@archiver.kernel.org;
 	Tue, 25 Jul 2023 23:45:32 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOQhz-008ejk-33
+	id 1qOQhz-008ek6-2q
 	for ath12k@lists.infradead.org;
 	Tue, 25 Jul 2023 22:40:50 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PMFf9q006820;
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PMFBmq016324;
 	Tue, 25 Jul 2023 22:40:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=QJUeN1xDcraQBeAVnVHBAUmD59vIzUTmYwqZvKwUj0I=;
- b=cNzSNvYHkD7SXotJOCLdi0TG1OKjXjoyxqU1SGOowhhU9mdvsYjLyKR/g746pjae2GQb
- xXyXr//SCQb2v3pICIjpTBshcMSlrJ2TcAe2R0U38RLXGMgkhPCIu+U9asMTOP1gp2pq
- obvzzMDYY5A2z08PtNUUpdbGu2Fytjahs3QKFZZ03SOkUhzhwQKmm9132PqLw4+gkuRz
- 91Xhzb4SMSeZ4p6SIQ5SNkk9IbmhtraRxuk0U6SgDRli9li1bM5YBq8thmPehE88NDsZ
- P6SwXf3ULs9KMVJINh0o63oF0NdH2EXO44Q4zYrF9RbcxhOYBb/u2jKJr4ciR/tj9fSY 8w== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s2gp1ru3k-1
+ bh=rPIWq/m0E3eQAFg/aRa2XR7PGs/Iau/r2vO7y+NfzQ0=;
+ b=l11xStX+ODe3968Mr0jnNFzxWCV9V0kQ1gdwDp9d++8GAbkjzGrZr0oUspqOP/Fe/g90
+ PR7duRpBi81TxjfOm1jl18reXA58aZXCo7L1bEuUrTisiwicVA8MvhGOXINrdjt0cK60
+ nGLLeeetJC8OdAcIjmB5vtd7WMsXrGL7C7xkKBGaKPP9whNK6Fz3g98nmp0vVl6+1POI
+ d9Rk+2F9JB1E3b5wtL/ltlF1sSVaWZk4NCR681hYzIlldPhdmnONg81KitzgKNzjOW+c
+ H68hyuGHFgJTLY4Lx7rj7M7fCqnRqgSbFpPT0DYHotUk3FSWKAnDe7TQeEq8AA1FT+oQ 9g== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s2cf8skuy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Jul 2023 22:40:46 +0000
+	Tue, 25 Jul 2023 22:40:47 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36PMejEZ028358
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36PMekIi022984
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Jul 2023 22:40:45 GMT
+	Tue, 25 Jul 2023 22:40:46 GMT
 Received: from alokad-linux.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Tue, 25 Jul 2023 15:40:45 -0700
+ 15.2.1118.30; Tue, 25 Jul 2023 15:40:46 -0700
 From: Aloka Dixit <quic_alokad@quicinc.com>
 To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-CC: Aloka Dixit <quic_alokad@quicinc.com>
-Subject: [PATCH v5 01/11] wifi: ath12k: rename HE capabilities setup/copy functions
-Date: Tue, 25 Jul 2023 15:40:24 -0700
-Message-ID: <20230725224034.14045-2-quic_alokad@quicinc.com>
+CC: Aloka Dixit <quic_alokad@quicinc.com>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>
+Subject: [PATCH v5 04/11] wifi: ath12k: propagate EHT capabilities to userspace
+Date: Tue, 25 Jul 2023 15:40:27 -0700
+Message-ID: <20230725224034.14045-5-quic_alokad@quicinc.com>
 X-Mailer: git-send-email 2.39.0
 In-Reply-To: <20230725224034.14045-1-quic_alokad@quicinc.com>
 References: <20230725224034.14045-1-quic_alokad@quicinc.com>
@@ -67,19 +69,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: uWXdEGXLEAS1tl-2BpILhZdGKfEZYO69
-X-Proofpoint-ORIG-GUID: uWXdEGXLEAS1tl-2BpILhZdGKfEZYO69
+X-Proofpoint-ORIG-GUID: 2kRpZeFuPOR33gh_-wLjmUXIrBnhjvae
+X-Proofpoint-GUID: 2kRpZeFuPOR33gh_-wLjmUXIrBnhjvae
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-07-25_12,2023-07-25_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- mlxlogscore=999 clxscore=1015 lowpriorityscore=0 bulkscore=0 phishscore=0
- malwarescore=0 spamscore=0 suspectscore=0 impostorscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
- definitions=main-2307250193
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ suspectscore=0 spamscore=0 adultscore=0 bulkscore=0 mlxlogscore=999
+ lowpriorityscore=0 malwarescore=0 phishscore=0 clxscore=1015
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307250193
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_154048_093668_4315C552 
-X-CRM114-Status: GOOD (  17.93  )
+X-CRM114-CacheID: sfid-20230725_154047_920120_06325E8B 
+X-CRM114-Status: GOOD (  19.79  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,128 +98,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Functions ath12k_mac_setup_he_cap() and ath12k_mac_copy_he_cap()
-propagate HE and 6GHz capabilities to the userspace using an instance
-of struct ieee80211_sband_iftype_data. This structure now has a new
-member 'eht_cap' to include EHT capabilities as well.
-Rename the above mentioned functions to indicate that their use is not
-limited to HE.
+Propagate EHT capabilities to the userspace using a new member
+'eht_cap' in structure ieee80211_sband_iftype_data.
 
-Also, replace the local variable 'band' with 'sband' and reuse
-'band' for the type enum nl80211_band.
+MCS-NSS capabilities are copied depending on the supported bandwidths
+for the given band.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
+Signed-off-by: Pradeep Kumar Chitrapu<quic_pradeepc@quicinc.com>
 ---
-v5: No change from v4.
+v5: Squashed code from ath12k_mac_copy_eht_ppet_ru() into
+ath12k_mac_copy_eht_ppe_thresh(). Removed the bit shifting of 'val' and
+unused 'len'. Replaced hweight8 by hweight16 for
+IEEE80211_EHT_PPE_THRES_RU_INDEX_BITMASK_MASK. Used a varible as input to
+GENMASK() instead of a hard-coded value.
 v4: No change from v3.
 v3: No change from v2.
 v2: No change from v1.
 
- drivers/net/wireless/ath/ath12k/mac.c | 58 ++++++++++++++-------------
- 1 file changed, 31 insertions(+), 27 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 111 ++++++++++++++++++++++++++
+ 1 file changed, 111 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 1bb9802ef569..db6a774494d2 100644
+index 30df1afd57d3..fcc24ef4999f 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4209,10 +4209,10 @@ static __le16 ath12k_mac_setup_he_6ghz_cap(struct ath12k_pdev_cap *pcap,
- 	return cpu_to_le16(bcap->he_6ghz_capa);
+@@ -4262,6 +4262,115 @@ static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
+ 		ath12k_gen_ppe_thresh(&band_cap->he_ppet, he_cap->ppe_thres);
  }
  
--static int ath12k_mac_copy_he_cap(struct ath12k *ar,
--				  struct ath12k_pdev_cap *cap,
--				  struct ieee80211_sband_iftype_data *data,
--				  int band)
-+static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
-+					     struct ath12k_pdev_cap *cap,
-+					     struct ieee80211_sband_iftype_data *data,
-+					     int band)
- {
- 	int i, idx = 0;
- 
-@@ -4297,38 +4297,42 @@ static int ath12k_mac_copy_he_cap(struct ath12k *ar,
- 	return idx;
- }
- 
--static void ath12k_mac_setup_he_cap(struct ath12k *ar,
--				    struct ath12k_pdev_cap *cap)
-+static void ath12k_mac_setup_sband_iftype_data(struct ath12k *ar,
-+					       struct ath12k_pdev_cap *cap)
- {
--	struct ieee80211_supported_band *band;
-+	struct ieee80211_supported_band *sband;
-+	enum nl80211_band band;
- 	int count;
- 
- 	if (cap->supported_bands & WMI_HOST_WLAN_2G_CAP) {
--		count = ath12k_mac_copy_he_cap(ar, cap,
--					       ar->mac.iftype[NL80211_BAND_2GHZ],
--					       NL80211_BAND_2GHZ);
--		band = &ar->mac.sbands[NL80211_BAND_2GHZ];
--		band->iftype_data = ar->mac.iftype[NL80211_BAND_2GHZ];
--		band->n_iftype_data = count;
-+		band = NL80211_BAND_2GHZ;
-+		count = ath12k_mac_copy_sband_iftype_data(ar, cap,
-+							  ar->mac.iftype[band],
-+							  band);
-+		sband = &ar->mac.sbands[band];
-+		sband->iftype_data = ar->mac.iftype[band];
-+		sband->n_iftype_data = count;
++static void
++ath12k_mac_copy_eht_mcs_nss(struct ath12k_band_cap *band_cap,
++			    struct ieee80211_eht_mcs_nss_supp *mcs_nss,
++			    const struct ieee80211_he_cap_elem *he_cap,
++			    const struct ieee80211_eht_cap_elem_fixed *eht_cap)
++{
++	if ((he_cap->phy_cap_info[0] &
++	     (IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_40MHZ_IN_2G |
++	      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_40MHZ_80MHZ_IN_5G |
++	      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_160MHZ_IN_5G |
++	      IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_80PLUS80_MHZ_IN_5G)) == 0)
++		memcpy(&mcs_nss->only_20mhz, &band_cap->eht_mcs_20_only,
++		       sizeof(struct ieee80211_eht_mcs_nss_supp_20mhz_only));
++
++	if (he_cap->phy_cap_info[0] &
++	    (IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_40MHZ_IN_2G |
++	     IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_40MHZ_80MHZ_IN_5G))
++		memcpy(&mcs_nss->bw._80, &band_cap->eht_mcs_80,
++		       sizeof(struct ieee80211_eht_mcs_nss_supp_bw));
++
++	if (he_cap->phy_cap_info[0] &
++	    IEEE80211_HE_PHY_CAP0_CHANNEL_WIDTH_SET_160MHZ_IN_5G)
++		memcpy(&mcs_nss->bw._160, &band_cap->eht_mcs_160,
++		       sizeof(struct ieee80211_eht_mcs_nss_supp_bw));
++
++	if (eht_cap->phy_cap_info[0] & IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ)
++		memcpy(&mcs_nss->bw._320, &band_cap->eht_mcs_320,
++		       sizeof(struct ieee80211_eht_mcs_nss_supp_bw));
++}
++
++static void ath12k_mac_copy_eht_ppe_thresh(struct ath12k_wmi_ppe_threshold_arg *fw_ppet,
++					   struct ieee80211_sta_eht_cap *cap)
++{
++	u16 bit = IEEE80211_EHT_PPE_THRES_INFO_HEADER_SIZE;
++	u8 i, nss, ru, ppet_bit_len_per_ru = IEEE80211_EHT_PPE_THRES_INFO_PPET_SIZE * 2;
++
++	u8p_replace_bits(&cap->eht_ppe_thres[0], fw_ppet->numss_m1,
++			 IEEE80211_EHT_PPE_THRES_NSS_MASK);
++
++	u16p_replace_bits((u16 *)&cap->eht_ppe_thres[0], fw_ppet->ru_bit_mask,
++			  IEEE80211_EHT_PPE_THRES_RU_INDEX_BITMASK_MASK);
++
++	for (nss = 0; nss <= fw_ppet->numss_m1; nss++) {
++		for (ru = 0;
++		     ru < hweight16(IEEE80211_EHT_PPE_THRES_RU_INDEX_BITMASK_MASK);
++		     ru++) {
++			u32 val = 0;
++
++			if ((fw_ppet->ru_bit_mask & BIT(ru)) == 0)
++				continue;
++
++			u32p_replace_bits(&val, fw_ppet->ppet16_ppet8_ru3_ru0[nss] >>
++						(ru * ppet_bit_len_per_ru),
++					  GENMASK(ppet_bit_len_per_ru - 1, 0));
++
++			for (i = 0; i < ppet_bit_len_per_ru; i++) {
++				cap->eht_ppe_thres[bit / 8] |=
++					(((val >> i) & 0x1) << ((bit % 8)));
++				bit++;
++			}
++		}
++	}
++}
++
++static void ath12k_mac_copy_eht_cap(struct ath12k_band_cap *band_cap,
++				    struct ieee80211_he_cap_elem *he_cap_elem,
++				    int iftype,
++				    struct ieee80211_sta_eht_cap *eht_cap)
++{
++	struct ieee80211_eht_cap_elem_fixed *eht_cap_elem = &eht_cap->eht_cap_elem;
++
++	memset(eht_cap, 0, sizeof(struct ieee80211_sta_eht_cap));
++	eht_cap->has_eht = true;
++	memcpy(eht_cap_elem->mac_cap_info, band_cap->eht_cap_mac_info,
++	       sizeof(eht_cap_elem->mac_cap_info));
++	memcpy(eht_cap_elem->phy_cap_info, band_cap->eht_cap_phy_info,
++	       sizeof(eht_cap_elem->phy_cap_info));
++
++	switch (iftype) {
++	case NL80211_IFTYPE_AP:
++		eht_cap_elem->phy_cap_info[0] &=
++			~IEEE80211_EHT_PHY_CAP0_242_TONE_RU_GT20MHZ;
++		eht_cap_elem->phy_cap_info[4] &=
++			~IEEE80211_EHT_PHY_CAP4_PART_BW_DL_MU_MIMO;
++		eht_cap_elem->phy_cap_info[5] &=
++			~IEEE80211_EHT_PHY_CAP5_TX_LESS_242_TONE_RU_SUPP;
++		break;
++	case NL80211_IFTYPE_STATION:
++		eht_cap_elem->phy_cap_info[7] &=
++			~(IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_80MHZ |
++			  IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_160MHZ |
++			  IEEE80211_EHT_PHY_CAP7_NON_OFDMA_UL_MU_MIMO_320MHZ);
++		eht_cap_elem->phy_cap_info[7] &=
++			~(IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_80MHZ |
++			  IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_160MHZ |
++			  IEEE80211_EHT_PHY_CAP7_MU_BEAMFORMER_320MHZ);
++		break;
++	default:
++		break;
++	}
++
++	ath12k_mac_copy_eht_mcs_nss(band_cap, &eht_cap->eht_mcs_nss_supp,
++				    he_cap_elem, eht_cap_elem);
++
++	if (eht_cap_elem->phy_cap_info[5] &
++	    IEEE80211_EHT_PHY_CAP5_PPE_THRESHOLD_PRESENT)
++		ath12k_mac_copy_eht_ppe_thresh(&band_cap->eht_ppet, eht_cap);
++}
++
+ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+ 					     struct ath12k_pdev_cap *cap,
+ 					     struct ieee80211_sband_iftype_data *data,
+@@ -4290,6 +4399,8 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+ 			data[idx].he_6ghz_capa.capa =
+ 				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
+ 		}
++		ath12k_mac_copy_eht_cap(band_cap, &he_cap->he_cap_elem, i,
++					&data[idx].eht_cap);
+ 		idx++;
  	}
  
- 	if (cap->supported_bands & WMI_HOST_WLAN_5G_CAP) {
--		count = ath12k_mac_copy_he_cap(ar, cap,
--					       ar->mac.iftype[NL80211_BAND_5GHZ],
--					       NL80211_BAND_5GHZ);
--		band = &ar->mac.sbands[NL80211_BAND_5GHZ];
--		band->iftype_data = ar->mac.iftype[NL80211_BAND_5GHZ];
--		band->n_iftype_data = count;
-+		band = NL80211_BAND_5GHZ;
-+		count = ath12k_mac_copy_sband_iftype_data(ar, cap,
-+							  ar->mac.iftype[band],
-+							  band);
-+		sband = &ar->mac.sbands[band];
-+		sband->iftype_data = ar->mac.iftype[band];
-+		sband->n_iftype_data = count;
- 	}
- 
- 	if (cap->supported_bands & WMI_HOST_WLAN_5G_CAP &&
- 	    ar->supports_6ghz) {
--		count = ath12k_mac_copy_he_cap(ar, cap,
--					       ar->mac.iftype[NL80211_BAND_6GHZ],
--					       NL80211_BAND_6GHZ);
--		band = &ar->mac.sbands[NL80211_BAND_6GHZ];
--		band->iftype_data = ar->mac.iftype[NL80211_BAND_6GHZ];
--		band->n_iftype_data = count;
-+		band = NL80211_BAND_6GHZ;
-+		count = ath12k_mac_copy_sband_iftype_data(ar, cap,
-+							  ar->mac.iftype[band],
-+							  band);
-+		sband = &ar->mac.sbands[band];
-+		sband->iftype_data = ar->mac.iftype[band];
-+		sband->n_iftype_data = count;
- 	}
- }
- 
-@@ -4373,7 +4377,7 @@ static int __ath12k_set_antenna(struct ath12k *ar, u32 tx_ant, u32 rx_ant)
- 
- 	/* Reload HT/VHT/HE capability */
- 	ath12k_mac_setup_ht_vht_cap(ar, &ar->pdev->cap, NULL);
--	ath12k_mac_setup_he_cap(ar, &ar->pdev->cap);
-+	ath12k_mac_setup_sband_iftype_data(ar, &ar->pdev->cap);
- 
- 	return 0;
- }
-@@ -6854,7 +6858,7 @@ static int __ath12k_mac_register(struct ath12k *ar)
- 		goto err;
- 
- 	ath12k_mac_setup_ht_vht_cap(ar, cap, &ht_cap);
--	ath12k_mac_setup_he_cap(ar, cap);
-+	ath12k_mac_setup_sband_iftype_data(ar, cap);
- 
- 	ret = ath12k_mac_setup_iface_combinations(ar);
- 	if (ret) {
 -- 
 2.39.0
 
