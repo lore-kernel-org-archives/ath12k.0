@@ -4,80 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F057C001E0
-	for <ath12k@archiver.kernel.org>; Tue, 25 Jul 2023 11:12:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 504DEEB64DD
+	for <ath12k@archiver.kernel.org>; Tue, 25 Jul 2023 19:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=WYjFJoNJWcHUbd00yarKyrxTVp37TiDF2fWKD4nET6s=; b=xyjCiZWS3StCLP
-	mYPLLACbJxSk1Wik/4E+2l3XyiaYbvYUD0gfIMxN/UPUjvzSlkLcIQ764zmRsuNqRjnY4Ni6drlH9
-	yCMw4PTVWRxV+E1IKbFhJteX4K5Ec/Yz78vp+BL96BpZXSQWA+H3mryx9nqoDfBDyjMJG+uDrOyhZ
-	AUKGG36LFtzLMiUcyqYOrd59ryAROk8GLvUGbF330sRLRPMkf7LA2c92jSTOlI9Vvnv59ln2ZimId
-	bhRZhvLuXTUo+Nn2eR3KVZCla8tI/cQ/YhDyApMPyKgtu9We6g+BohCRgtb3QG14ES+CG2hkfODDB
-	V0R2zoM0m8l0PReojEJA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TQ/Vj4cPOFbyH5qB3Iczfd6VhvPeCBoyh8I2NoZBz8Y=; b=a8Ql1K9IVsKrAR
+	0JDSqpAkOYseiOPtqwnVeFygdXVrcoIZS2ioRZjdOx71t8Mx5tZfQgeNQ6156uQ97EpVB1diC2+2N
+	oYTa2Vkqw9fJHYxvc9JESDRBp02amC+7QYajekSfMe/BiqWpT1nt/IWgyCUHmwZPpCF/nyI27FRYB
+	X4TCgvoNXpoU89ZGW2PrqW7VGWb/7i428km+5oE5YsauAHXHNdTLP0OR3zWbCwkpkvNqvtB0rCQGv
+	Au4vzIC7mAtaj7B/5BkyLlUrrsHWnElkl2x16mAfvcW9+ATL7UMR57/cu+gBK0Z5WuxOJYbocVBxe
+	ARZ11wTuXjAI71ijWFZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOFxd-007NRP-09
+	id 1qONxE-008MnJ-00
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Jul 2023 11:12:13 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	Tue, 25 Jul 2023 19:44:20 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOFxZ-007NPP-1c
+	id 1qONxA-008Mms-2V
 	for ath12k@lists.infradead.org;
-	Tue, 25 Jul 2023 11:12:11 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-3fb4146e8deso54383095e9.0
-        for <ath12k@lists.infradead.org>; Tue, 25 Jul 2023 04:12:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1690283521; x=1690888321;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=E2TkVQOO2dvDhRwA4pB7+VODDjmGBCoGSf6JgGl78WU=;
-        b=saKhX229943c1HQwfP6KJYHV7g6+MTIc8bdP4Wx4fmHKr4EmpNPAybLbBoQKej95O4
-         1kRCDel1n297Sia30oN7JdiDZjoehPJuRgt8yaZtFkMskzThd3+JVVvDsZPpAdVsE2v9
-         IYXNDc8ujGtrKqu2Zx3hvL7dLeFfzuM9OvlyCN6GkzLSPp9uY9Z6+4AMMCx/gWiQCzWf
-         8iN9qU3YcAj5aKPOI6GXtCPJkfzN29ATrI4GY4xummyC6WAdCDZsKDxo69nJMhaKGkGW
-         07TqHMg/4yjexpWh/dnYoskDiQOPVkmQNTdA6P+oPml981C35TE7O0WVjyRP8Ft1o5cm
-         6VMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1690283521; x=1690888321;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=E2TkVQOO2dvDhRwA4pB7+VODDjmGBCoGSf6JgGl78WU=;
-        b=EgOMnTXkh8Z6BlMJEJES04EcXgyHkLoqZkxbfWUNOF/C6rR5MlUkwOKHfg/J9Dxhsx
-         LKiJk4NQbwV0NWj8VPT2kKWNsZ/m5gxVv+Q4DYmwtodHy0S97LbirXBYhJM5XMS74t8C
-         lGUga60ttCkIFVmE14N1ArspskfoJiUWn/kIjIDH9mWnALvNwLmb46+e/UNm90ywqo3M
-         gB6MOSFhqQXA/fyoAQHd8gHHB6NSqGg/TWHMadNz/pIq0zRvFNBn8TZFxD3tTeleWDrg
-         Me7NT7jkA5van1m0b+A9oOT2/gunAm7qxYiZg4wsXiljONNtIgHDcr55EdHgU4xxwddR
-         SV5w==
-X-Gm-Message-State: ABy/qLZg/IhFLcGKBZC0eY0c0sAGG0xGktkBQQZ/0S3YvlfVD2YY7fXd
-	9fx/vXhqGtv+QWrzIehOwO9v0Q==
-X-Google-Smtp-Source: APBJJlFtYHDH6CTtEO16m5ro5wjfYDfJjQbh+xQfQtEkhRfEEwHBAFBvVC5XQLWJtskAn75aUWjHLw==
-X-Received: by 2002:a05:600c:234a:b0:3fd:2a34:e867 with SMTP id 10-20020a05600c234a00b003fd2a34e867mr8154570wmq.25.1690283521115;
-        Tue, 25 Jul 2023 04:12:01 -0700 (PDT)
-Received: from localhost ([102.36.222.112])
-        by smtp.gmail.com with ESMTPSA id t10-20020a1c770a000000b003faef96ee78sm15730467wmi.33.2023.07.25.04.12.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 25 Jul 2023 04:12:00 -0700 (PDT)
-Date: Tue, 25 Jul 2023 14:11:58 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev, Wen Gong <quic_wgong@quicinc.com>,
-	johannes@sipsolutions.net, ath12k@lists.infradead.org
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	linux-wireless@vger.kernel.org, quic_wgong@quicinc.com
-Subject: Re: [PATCH] wifi: mac80211: avoid buffer overflow by adding clear
- data of VHT Tx power envelope
-Message-ID: <311e08c7-c553-4722-8dd1-1556e8063479@kadam.mountain>
+	Tue, 25 Jul 2023 19:44:18 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PJdFen026133;
+	Tue, 25 Jul 2023 19:44:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=PNuRfmOT8KhHU3Wfu3lF2YLZ/va6SuJ2gN7OEqI7FJI=;
+ b=Dla6FG6XiYt5i5TY8cfwfNZFhxELwHXcfxA82efvbrEW4jUN3QuH7bMXhPwOhxPtHsk/
+ d0ebD5Xfrz/Az4B4zM4NQ2QunaPkNaM+StPmznevLBG8Y37c6OfmDIGKPElDhZ7S1UQw
+ I4nDySqqOLnxhlR+A9q0xy1VbhlmBhjCw/gvyOVg+aLBoPW7Edz05ykI9NI2wnuMulpl
+ b0Fs9KXLn4zI3YNeOdwiiUxZUZRdQJE/qddWNiJOsqwW9K842NSZzMUdMqNLWAProQTO
+ E1plN/uKIGJTHvNWlRSvMeWPPPCTUvCBf2D9bV2djMQsI+nfVI6f7mB9PLlfUTzqQBjM Ng== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s29xmhq0c-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 25 Jul 2023 19:44:11 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36PJiAOW021188
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 25 Jul 2023 19:44:10 GMT
+Received: from [10.227.89.240] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Tue, 25 Jul
+ 2023 12:44:10 -0700
+Message-ID: <35c86c8e-afdb-adb6-f331-af74c99d3a02@quicinc.com>
+Date: Tue, 25 Jul 2023 12:44:09 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230721055851.20525-1-quic_wgong@quicinc.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH v4 03/11] wifi: ath12k: WMI support to process EHT
+ capabilities
+Content-Language: en-US
+To: Wen Gong <quic_wgong@quicinc.com>, Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        "Pradeep
+ Kumar Chitrapu" <quic_pradeepc@quicinc.com>
+References: <20230602235820.23912-1-quic_alokad@quicinc.com>
+ <20230602235820.23912-4-quic_alokad@quicinc.com> <87ttv9aqtn.fsf@kernel.org>
+ <dc0ae263-e5f6-b876-842a-7b598caf68fa@quicinc.com>
+From: Aloka Dixit <quic_alokad@quicinc.com>
+In-Reply-To: <dc0ae263-e5f6-b876-842a-7b598caf68fa@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: u2y0msoTWnKJhQkGA4I6oPXuwH6V_P-J
+X-Proofpoint-GUID: u2y0msoTWnKJhQkGA4I6oPXuwH6V_P-J
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-25_10,2023-07-25_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1015
+ mlxlogscore=806 impostorscore=0 adultscore=0 mlxscore=0 bulkscore=0
+ phishscore=0 suspectscore=0 spamscore=0 priorityscore=1501
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307250168
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_041209_544158_3952949A 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230725_124416_820846_339EC3FD 
+X-CRM114-Status: GOOD (  25.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,109 +98,57 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Wen,
-
-kernel test robot noticed the following build warnings:
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Wen-Gong/wifi-mac80211-avoid-buffer-overflow-by-adding-clear-data-of-VHT-Tx-power-envelope/20230721-140122
-base:   b21fe5be53eb873c02e7479372726c8aeed171e3
-patch link:    https://lore.kernel.org/r/20230721055851.20525-1-quic_wgong%40quicinc.com
-patch subject: [PATCH] wifi: mac80211: avoid buffer overflow by adding clear data of VHT Tx power envelope
-config: i386-randconfig-m021-20230723 (https://download.01.org/0day-ci/archive/20230725/202307251807.z04UOfqH-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
-reproduce: (https://download.01.org/0day-ci/archive/20230725/202307251807.z04UOfqH-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202307251807.z04UOfqH-lkp@intel.com/
-
-New smatch warnings:
-net/mac80211/mlme.c:4818 ieee80211_prep_channel() error: we previously assumed 'link' could be null (see line 4792)
-net/mac80211/mlme.c:4890 ieee80211_prep_channel() warn: variable dereferenced before check 'link' (see line 4818)
-
-Old smatch warnings:
-net/mac80211/mlme.c:7073 ieee80211_setup_assoc_link() warn: variable dereferenced before check 'elem' (see line 7071)
-
-vim +/link +4818 net/mac80211/mlme.c
-
-7781f0d81c7a7e6 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4789  	if (!(*conn_flags & IEEE80211_CONN_DISABLE_HE)) {
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4790  		he_oper = elems->he_operation;
-d524215f6cad245 net/mac80211/mlme.c          Felix Fietkau     2010-01-08  4791  
-7781f0d81c7a7e6 net/mac80211/mlme.c          Johannes Berg     2022-07-12 @4792  		if (link && is_6ghz) {
-
-Check for NULL
-
-4df17235d03fd79 net/mac80211/mlme.c          Wen Gong          2023-07-21  4793  			struct ieee80211_bss_conf *bss_conf = link->conf;;
-a607268a0d5532d net/mac80211/ieee80211_sta.c Bruno Randolf     2008-02-18  4794  
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4795  			if (elems->pwr_constr_elem)
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4796  				bss_conf->pwr_reduction = *elems->pwr_constr_elem;
-66e67e418908442 net/mac80211/mlme.c          Johannes Berg     2012-01-20  4797  
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4798  			BUILD_BUG_ON(ARRAY_SIZE(bss_conf->tx_pwr_env) !=
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4799  				     ARRAY_SIZE(elems->tx_pwr_env));
-66e67e418908442 net/mac80211/mlme.c          Johannes Berg     2012-01-20  4800  
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4801  			for (i = 0; i < elems->tx_pwr_env_num; i++) {
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4802  				if (elems->tx_pwr_env_len[i] >
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4803  				    sizeof(bss_conf->tx_pwr_env[j]))
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4804  					continue;
-1d00ce807efaa0e net/mac80211/mlme.c          Thomas Pedersen   2020-09-21  4805  
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4806  				memcpy(&bss_conf->tx_pwr_env[j], elems->tx_pwr_env[i],
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4807  				       elems->tx_pwr_env_len[i]);
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4808  				j++;
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4809  			}
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4810  		}
-66e67e418908442 net/mac80211/mlme.c          Johannes Berg     2012-01-20  4811  
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4812  		if (!ieee80211_verify_peer_he_mcs_support(sdata, ies, he_oper) ||
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4813  		    !ieee80211_verify_sta_he_mcs_support(sdata, sband, he_oper))
-7781f0d81c7a7e6 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4814  			*conn_flags |= IEEE80211_CONN_DISABLE_HE |
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4815  				       IEEE80211_CONN_DISABLE_EHT;
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4816  	}
-1d00ce807efaa0e net/mac80211/mlme.c          Thomas Pedersen   2020-09-21  4817  
-4df17235d03fd79 net/mac80211/mlme.c          Wen Gong          2023-07-21 @4818  	link->conf->tx_pwr_env_num = j;
-                                                                                        ^^^^^^^^^^
-Unchecked dereference
-
-4df17235d03fd79 net/mac80211/mlme.c          Wen Gong          2023-07-21  4819  
-66e67e418908442 net/mac80211/mlme.c          Johannes Berg     2012-01-20  4820  	/*
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4821  	 * EHT requires HE to be supported as well. Specifically for 6 GHz
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4822  	 * channels, the operation channel information can only be deduced from
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4823  	 * both the 6 GHz operation information (from the HE operation IE) and
-61513162aa2d6c1 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4824  	 * EHT operation.
-66e67e418908442 net/mac80211/mlme.c          Johannes Berg     2012-01-20  4825  	 */
-7781f0d81c7a7e6 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4826  	if (!(*conn_flags &
-
-[ snip ]
-
-1ad22fb5bb53ce6 net/mac80211/mlme.c          Tosoni            2018-03-14  4879  
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4880  	*conn_flags |=
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4881  		ieee80211_determine_chantype(sdata, link, *conn_flags,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4882  					     sband,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4883  					     cbss->channel,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4884  					     bss->vht_cap_info,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4885  					     ht_oper, vht_oper,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4886  					     he_oper, eht_oper,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4887  					     s1g_oper,
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4888  					     &chandef, false);
-78ac51f81532c1e net/mac80211/mlme.c          Sara Sharon       2019-01-16  4889  
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12 @4890  	if (link)
-
-More checks for NULL
-
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4891  		link->needed_rx_chains =
-6911458dc4283a7 net/mac80211/mlme.c          Johannes Berg     2022-07-12  4892  			min(ieee80211_max_rx_chains(link, cbss),
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+T24gNy8yNS8yMDIzIDM6NTEgQU0sIFdlbiBHb25nIHdyb3RlOgo+IE9uIDYvMTUvMjAyMyA3OjQ5
+IFBNLCBLYWxsZSBWYWxvIHdyb3RlOgo+PiBBbG9rYSBEaXhpdCA8cXVpY19hbG9rYWRAcXVpY2lu
+Yy5jb20+IHdyaXRlczoKPj4KPiBbLi4uXQo+PiBbLi4uXQo+Pgo+Pj4gK3N0cnVjdCBhdGgxMmtf
+ZndfcGRldiB7Cj4+PiArwqDCoMKgIHUzMiBwZGV2X2lkOwo+Pj4gK8KgwqDCoCB1MzIgcGh5X2lk
+Owo+Pj4gK8KgwqDCoCB1MzIgc3VwcG9ydGVkX2JhbmRzOwo+Pj4gK307Cj4+IFNvIHdlIGhhdmUg
+bm93IHR3byB2ZXJ5IHNpbWlsYXIgc3RydWN0dXJlcywgYXRoMTJrX3BkZXYgYW5kCj4+IGF0aDEy
+a19md19wZGV2LiBJdCB3b3VsZCBiZSBnb29kIHRvIGRvY3VtZW50IGFib3ZlIHRoZSBzdHJ1Y3Rz
+IHRoZWlyCj4+IHB1cnBvc2UuIEFueSBpZGVhcyB3aGF0IEkgY291bGQgYWRkPwo+IEN1cnJlbnRs
+eSBhdGgxMmsgaGFzIHNpbmdsZV9wZGV2IHBhcmFtZXRlciwgaXQgaW1wYWN0IHRoZSBpbnRlcmZh
+Y2UgCj4gbnVtYmVyIG9mIHdpZmkuCj4gCj4gRm9yIHNpbmdsZV9wZGV2PXR1cmUsIGFiLT5udW1f
+cmFkaW9zIGlzIHNldCB0byAxIGFuZCBhbGwgY2FwYmlsaXR5IG9mIAo+IDIuNCBHSHovCj4gNSBH
+SHovNiBHSHogaXMgc2F2ZWQgaW50byBhYi0+cGRldnNbMF0gaW4gCj4gYXRoMTJrX3dtaV9leHRf
+c29jX2hhbF9yZWdfY2Fwc19wYXJzZSgpLgo+IGF0aDEya19tYWNfcmVnaXN0ZXIoKSB3aWxsIGNh
+bGwgb25seSBvbmUgdGltZSBpbnRvIAo+IF9fYXRoMTJrX21hY19yZWdpc3RlcigpLCBhbmQKPiBp
+ZWVlODAyMTFfcmVnaXN0ZXJfaHcoKSBpcyBjYWxsZWQgb25seSBvbmUgdGltZSwgYW5kIG9ubHkg
+b25lIHdpZmkgCj4gaW50ZXJmYWNlIGluCj4gdGhlIHJlc3VsdCBvZiAiaXcgZGV2L2lmY29uZmln
+IiwgdGhlIGludGVyZmFjZSBzdXBwb3J0IDIuNCBHSHovNSBHSHovNiAKPiBHSHouIEFjdHVhbGx5
+Cj4gdGhlcmUgaGFyZSBtb3JlIHRoYW4gb25lIFBIWSBpbiBmaXJtd2FyZSwgZmlybXdhcmUgbWFp
+bnRhaW4gdGhlIGFsbCBQSFkgCj4gZGF0YSBhbmQKPiBwcm92aWRlIGEgc2luZ2xlIHBkZXYvc29j
+IGludGVyZmFjZSB0byBhdGgxMmssIHRoZW4gYXRoMTJrIGRvIG5vdCBuZWVkIAo+IHRvIGNvbnNp
+ZGVyCj4gdGhlIFBIWSBpbmZvIHN1Y2ggYXMgY2hhbm5lbC9CQU5EPC0+UEhZIG1hcHBpbmcgcmVs
+YXRpb25zaGlwLCBpdCBpcyAKPiBjb252ZW5pZW50IGZvcgo+IGF0aDEyayB0byBzdXBwb3J0IDIu
+NCBHSHovNSBHSHovNiBHSHouCj4gCj4gRm9yIHNpbmdsZV9wZGV2PWZhbHNlLCBhYi0+bnVtX3Jh
+ZGlvcyBpcyBtb3JlIHRoYW4gMSwgYWItPnBkZXZzW10gaGFzIAo+IG11dGkgdmFsaWQKPiBlbGVt
+ZW50LCBlYWNoIGVsZW1lbnQgb25seSBzdXBwb3J0IG9uZSBCQU5ELiBGaXJtd2FyZSBkbyBub3Qg
+cHJvdmlkZSBhIAo+IHNpbmdsZQo+IHBkZXYvc29jIGludGVyZmFjZSwgc28gYXRoMTJrIG5lZWQg
+dG8gbWFpbnRhaW4gdGhlIFBIWSBkYXRhIHN1Y2ggYXMgCj4gY2hhbm5lbC9CQU5EPC0+Cj4gUEhZ
+IG1hcHBpbmcgcmVsYXRpb25zaGlwLCBhbmQgYXRoMTJrX21hY19yZWdpc3RlcigpIHdpbGwgY2Fs
+bCBtdXRpLXRpbWUgCj4gaW50bwo+IF9fYXRoMTJrX21hY19yZWdpc3RlcigpLCBhbmQgaWVlZTgw
+MjExX3JlZ2lzdGVyX2h3KCkgaXMgY2FsbGVkIAo+IG11dGktdGltZSwgYW5kIG11dGkKPiB3aWZp
+IGludGVyZmFjZSBpbiB0aGUgcmVzdWx0IG9mICJpdyBkZXYvaWZjb25maWciLCBhbmQgZWFjaCBp
+bnRlcmZhY2UgCj4gb25seSBzdXBwb3J0Cj4gb25lIEJBTkQsIGZvciBleGFtcGxlLCB3bGFuMCBv
+bmx5IHN1cHBvcnQgMi40IEdIeiwgd2xhbjEgb25seSBzdXBwb3J0IDUgCj4gR0h6LCBhbmQKPiB3
+bGFuMiBvbmx5IHN1cHBvcnQgNiBHSHouCj4gCj4gRm9yIHNpbmdsZV9wZGV2PXR1cmUsIGF0aDEy
+ayBhbHNvIG5lZWQgdG8ga25vdyBzb21lIGluZm8gYWJvdXQgdGhlIFBIWXMgCj4gc3VzaCBhcwo+
+IHBkZXZfaWQvcGh5X2lkL3N1cHBvcnRlZF9iYW5kcyBpbiB0aGlzIHBhdGNoLCBzbyBhYi0+Zndf
+cGRldiBpcyB1c2VkIHRvIAo+IHN0b3JlIHRoZQo+IFBIWSBkYXRhLgoKClRoZSBuZXcgc3RydWN0
+IGF0aDEya19md19wZGV2IGlzIGFueXdheSBnb2luZyB0byBoYXZlIGFzIG1hbnkgZWxlbWVudHMg
+CmFzIHRoZSBudW1fcmFkaW8sIHJpZ2h0PyBUaGVuIHRoZXJlIG11c3QgYmUgYSB3YXkgdG8gcmV1
+c2UgdGhlIGNvbW1vbiAKc3RydWN0IGF0aDEya19wZGV2IGluc3RlYWQgYXMgaXQgZG9uZSBmb3Ig
+UUNOIGRldmljZXMuIEkgdW5kZXJzdGFuZCB0aGlzIAppdCB3aWxsIG5lZWQgY2hhbmdlcyB0byBh
+bGwgdGhlIGV4aXN0aW5nIGNvZGUgZm9yIHRoZSBzaW5nbGUtcGRldiB3aGVyZSAKaXQgbWlnaHQg
+aGF2ZSBoYXJkLWNvZGVkIHBkZXZbMF0gZm9yIHRoZSBvcmlnaW5hbCBzdHJ1Y3R1cmUuIFNvbWV0
+aGluZyAKdG8gdGhpbmsgYWJvdXQgaW4gYSBzZXBhcmF0ZSBwYXRjaC1zZXQuCgpGb3Igbm93IEkg
+d2lsbCBzZW5kIG5ldyB2ZXJzaW9uIHdpdGggY29tbWVudHMgKGFzIGZhciBhcyBJIHVuZGVyc3Rv
+b2QgCml0KSBiZWNhdXNlIHdpdGhvdXQgdGhpcyBwYXRjaCBXQ04gZGV2aWNlcyBzaG93IGEgY3Jh
+c2ggZHVyaW5nIGJvb3QtdXAuCgpUaGFua3MuCgotLSAKYXRoMTJrIG1haWxpbmcgbGlzdAphdGgx
+MmtAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9hdGgxMmsK
