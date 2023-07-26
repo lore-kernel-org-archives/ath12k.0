@@ -4,97 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92189EB64DD
-	for <ath12k@archiver.kernel.org>; Tue, 25 Jul 2023 23:55:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D36BC0015E
+	for <ath12k@archiver.kernel.org>; Wed, 26 Jul 2023 03:44:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qbLnq0AOyez3PYZcF26adYrW/Gh0o+RQQ4PtnA3xkbI=; b=EDllbXoFNXTJIa
-	hb8u1g5QFvKmQgPyIYGE6AAbfA40GOWPCoDRQ214wi3o4fVyC1rc/ZrKyCTZPV/KgVBM2NRn6uKX0
-	5bEdl2JbvvtE+r6zNkqdy5F+kVk9nlsBFtvJm1IyMRxc+yFoUkwD0c0KyAx95bl6hdRQmMRFlk7vd
-	I2qv4ziYRKF/wWNirf7mtmbLSut2vCGBIdEH5OzdcjnzhIMBTrbpilyGY/nq3MwY6ZD8HVgf9hHeU
-	HbT7FQMjd/HQyKeQ7rNuS1v/efgZDaXxrokQ6EuWA7EN/Iy2Wv2OT0/yq59GSbE0ahSYQhNiIDw7x
-	NxiIBN8zIazfkRciI51A==;
+	List-Owner; bh=QK0PAEi3WYeWmqP3glIfSSiK07C0d2bZInXvMGQaP7A=; b=qvR5rqh0bEiTsO
+	MalnU/44qp84q5VZ7EOXMYWcA/e90yhkW/uUbWTQozQLQTufDvwEnLilS7nb5TRZpf5fcyWDohrxD
+	wqi48YspH47aoJ2G64Nh+a2ggswl4a4tarubU6NTTR29Wa9nbHxMgvpSOMzlm5SivvigSEhtj0/5a
+	xwxRxGQb6faTPfhRDAIQXa+w2FGtdqs0qf/nKNp8metVZq7Saa0pKYlpJZ/moicKsyG8Zhu/h2Xb7
+	E889c0a/e3dCcpjN/3zSsN240c0KNnQFEfrIQfM/9weW4dcYBIHO2j3b7WpfejksFJch7mIq79OgJ
+	WcEQpLaHdqA9qqJz1qsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qORsf-008kxJ-12
+	id 1qOVRY-0091FC-2w
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Jul 2023 23:55:53 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qORsa-008krO-1Y
-	for ath12k@bombadil.infradead.org;
-	Tue, 25 Jul 2023 23:55:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=prNiTbjF56KR1wKuzRGRZ2M5D2yZeAr0/YXKcg345yk=; b=Q+7tgJw7Rv3D2td+WG3Azswi5W
-	m1a5hT5saiYVhGGDzDYLsqkim3vzqXMwMSETuJV4t0+N6kvWfEZUqTLIARBIxnbbRDn5K0JKiyHOV
-	1SkobuN4Q2ruZUqeFeihBfHL8Xj3OgQJLKlgHXAGz34N9mxI7elf/BZjgT11zHL2868orYXWRJzE5
-	SbzxwHHzTO2u7M5MiM7Dwri+ItcOhsm6CENS7Fcx9he54Q8q9VlvomjBVaUzoddYZRHi4auDqKBGh
-	k2y7FtkR6zSz7b86qNRyhmV6dgWuLtVBRv2mGre28YbHOA650KvOsOEtq8gNrAludwbShRlZD/MjY
-	SawiyBjg==;
+	Wed, 26 Jul 2023 03:44:08 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qOQi8-004NLJ-0y
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qOVRV-0091EQ-0b
 	for ath12k@lists.infradead.org;
-	Tue, 25 Jul 2023 22:41:01 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36PMMcFN020538;
-	Tue, 25 Jul 2023 22:40:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding : content-type; s=qcppdkim1;
- bh=prNiTbjF56KR1wKuzRGRZ2M5D2yZeAr0/YXKcg345yk=;
- b=ZRkbjfPuAPneZLzQi4I9ElI4NnLhOKSXOKdB7Uq8R/hrqTHyPG8Oa0pTD3VPjGjk4PQX
- pqi4YXf/2FJcB8ntPxI3T5htE6nU9qGRvVGDMFm/dwy51Av/+YXPjzyeb4o4W3iRffH7
- H8/7yARqRDRtFbuGjS/uCmIvbwoJqgsmvK1A0RRm6PIwED3If4EM1VUFiOUdfODm2zRP
- 3uGhNhkrpkwE/KR2I2aXrn7dSgyaqgzXLnpN8mEeDu9l4EZvunF6n7tCzJKtxdOMqcXS
- P1OfLhdzsjouvqpNgqBrDoghLWxGRs9dkOAns4QW5623zwg/DI1Abb3kcMY5cueONtdN SA== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s2aq69t7a-1
+	Wed, 26 Jul 2023 03:44:06 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 36Q1vo3V021485;
+	Wed, 26 Jul 2023 03:43:57 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=kziEQLUySX2lc5jw48DvsuK1owDpMXOhKodUIh9p+ps=;
+ b=Uu+nxm0chhzkKOKiT6AJEjhpUjw2r15VxyROuwmxlK4MnTPvL2E7cQujmLOygg5P0tgm
+ wPqOMSxpuOZXZcVCM7yBTd8fd8CbTBhxnmKVq1WTPfke1T0NPeEXJA+HBvBxWbOQ3sd5
+ uT0R8L65gwnmve2JBZB8hJ3R+GYTTEZn6DqRYnFM9ZBA7sghmO5CfcqZc1dHSpRT7j0s
+ WNH4ckt53PlaE0/VULNyrH0EQmlfev4XsEhSa1uprwQXQNwFyRPrJyrfwCIUilG1XlvL
+ C4Z7rL51QpB6ux6ipf/prscfoC3rCAPGb7cPuonfooCKVJm9dffYQi/6b92zE9WFLowF JQ== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s29j5jhuy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Jul 2023 22:40:50 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36PMenRH027727
+	Wed, 26 Jul 2023 03:43:57 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 36Q3hue1029524
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Jul 2023 22:40:49 GMT
-Received: from alokad-linux.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Tue, 25 Jul 2023 15:40:48 -0700
-From: Aloka Dixit <quic_alokad@quicinc.com>
-To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-CC: Aloka Dixit <quic_alokad@quicinc.com>
-Subject: [PATCH v5 10/11] wifi: ath12k: parse WMI service ready ext2 event
-Date: Tue, 25 Jul 2023 15:40:33 -0700
-Message-ID: <20230725224034.14045-11-quic_alokad@quicinc.com>
-X-Mailer: git-send-email 2.39.0
-In-Reply-To: <20230725224034.14045-1-quic_alokad@quicinc.com>
-References: <20230725224034.14045-1-quic_alokad@quicinc.com>
+	Wed, 26 Jul 2023 03:43:56 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Tue, 25 Jul
+ 2023 20:43:54 -0700
+Message-ID: <293dd873-1d9d-afc0-a122-48dfe4bb0fde@quicinc.com>
+Date: Wed, 26 Jul 2023 11:43:52 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v5 06/11] wifi: ath12k: prepare EHT peer assoc parameters
+Content-Language: en-US
+To: Aloka Dixit <quic_alokad@quicinc.com>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>
+CC: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+References: <20230725224034.14045-1-quic_alokad@quicinc.com>
+ <20230725224034.14045-7-quic_alokad@quicinc.com>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <20230725224034.14045-7-quic_alokad@quicinc.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: CsHbaKVvZkQuOo3NRAmhi8jhqk5Hc4PB
-X-Proofpoint-ORIG-GUID: CsHbaKVvZkQuOo3NRAmhi8jhqk5Hc4PB
+X-Proofpoint-ORIG-GUID: utCmE-8I8qnT2HRhuJRpCsuawR6lWGxq
+X-Proofpoint-GUID: utCmE-8I8qnT2HRhuJRpCsuawR6lWGxq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-07-25_12,2023-07-25_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
- priorityscore=1501 adultscore=0 mlxlogscore=999 lowpriorityscore=0
- spamscore=0 suspectscore=0 impostorscore=0 clxscore=1015 phishscore=0
- mlxscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2307250193
+ definitions=2023-07-25_14,2023-07-25_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
+ adultscore=0 malwarescore=0 mlxlogscore=999 phishscore=0 clxscore=1015
+ mlxscore=0 bulkscore=0 lowpriorityscore=0 priorityscore=1501
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2307260031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230725_234057_926280_EBA1238E 
-X-CRM114-Status: GOOD (  18.02  )
+X-CRM114-CacheID: sfid-20230725_204405_345607_35E55BE4 
+X-CRM114-Status: GOOD (  14.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,142 +95,84 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Parse WMI service ready ext2 event.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
----
-v5: No change from v4.
-v4: No change from v3.
-v3: No change from v2.
-v2: No change from v1.
-
- drivers/net/wireless/ath/ath12k/wmi.c | 48 +++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h | 16 +++++++++
- 2 files changed, 64 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 1debda890b8c..f4093beb8536 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -62,7 +62,23 @@ struct ath12k_wmi_svc_rdy_ext_parse {
- 	bool dma_ring_cap_done;
- };
- 
-+struct ath12k_wmi_svc_rdy_ext2_arg {
-+	u32 reg_db_version;
-+	u32 hw_min_max_tx_power_2ghz;
-+	u32 hw_min_max_tx_power_5ghz;
-+	u32 chwidth_num_peer_caps;
-+	u32 preamble_puncture_bw;
-+	u32 max_user_per_ppdu_ofdma;
-+	u32 max_user_per_ppdu_mumimo;
-+	u32 target_cap_flags;
-+	u32 eht_cap_mac_info[WMI_MAX_EHTCAP_MAC_SIZE];
-+	u32 max_num_linkview_peers;
-+	u32 max_num_msduq_supported_per_tid;
-+	u32 default_num_msduq_supported_per_tid;
-+};
-+
- struct ath12k_wmi_svc_rdy_ext2_parse {
-+	struct ath12k_wmi_svc_rdy_ext2_arg arg;
- 	struct ath12k_wmi_dma_ring_caps_parse dma_caps_parse;
- 	bool dma_ring_cap_done;
- 	bool spectral_bin_scaling_done;
-@@ -4098,6 +4114,26 @@ static int ath12k_service_ready_ext_event(struct ath12k_base *ab,
- 	return ret;
- }
- 
-+static int ath12k_pull_svc_ready_ext2(struct ath12k_wmi_pdev *wmi_handle,
-+				      const void *ptr,
-+				      struct ath12k_wmi_svc_rdy_ext2_arg *arg)
-+{
-+	const struct wmi_service_ready_ext2_event *ev = ptr;
-+
-+	if (!ev)
-+		return -EINVAL;
-+
-+	arg->reg_db_version = le32_to_cpu(ev->reg_db_version);
-+	arg->hw_min_max_tx_power_2ghz = le32_to_cpu(ev->hw_min_max_tx_power_2ghz);
-+	arg->hw_min_max_tx_power_5ghz = le32_to_cpu(ev->hw_min_max_tx_power_5ghz);
-+	arg->chwidth_num_peer_caps = le32_to_cpu(ev->chwidth_num_peer_caps);
-+	arg->preamble_puncture_bw = le32_to_cpu(ev->preamble_puncture_bw);
-+	arg->max_user_per_ppdu_ofdma = le32_to_cpu(ev->max_user_per_ppdu_ofdma);
-+	arg->max_user_per_ppdu_mumimo = le32_to_cpu(ev->max_user_per_ppdu_mumimo);
-+	arg->target_cap_flags = le32_to_cpu(ev->target_cap_flags);
-+	return 0;
-+}
-+
- static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
- 				      const __le32 cap_mac_info[],
- 				      const __le32 cap_phy_info[],
-@@ -4221,10 +4257,22 @@ static int ath12k_wmi_svc_rdy_ext2_parse(struct ath12k_base *ab,
- 					 u16 tag, u16 len,
- 					 const void *ptr, void *data)
- {
-+	struct ath12k_wmi_pdev *wmi_handle = &ab->wmi_ab.wmi[0];
- 	struct ath12k_wmi_svc_rdy_ext2_parse *parse = data;
- 	int ret;
- 
- 	switch (tag) {
-+	case WMI_TAG_SERVICE_READY_EXT2_EVENT:
-+		ret = ath12k_pull_svc_ready_ext2(wmi_handle, ptr,
-+						 &parse->arg);
-+		if (ret) {
-+			ath12k_warn(ab,
-+				    "failed to extract wmi service ready ext2 parameters: %d\n",
-+				    ret);
-+			return ret;
-+		}
-+		break;
-+
- 	case WMI_TAG_ARRAY_STRUCT:
- 		if (!parse->dma_ring_cap_done) {
- 			ret = ath12k_wmi_dma_ring_caps(ab, len, ptr,
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 764ca4947281..12a393302ebd 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -1925,6 +1925,7 @@ enum wmi_tlv_tag {
- 	/* TODO add all the missing cmds */
- 	WMI_TAG_PDEV_PEER_PKTLOG_FILTER_CMD = 0x301,
- 	WMI_TAG_PDEV_PEER_PKTLOG_FILTER_INFO,
-+	WMI_TAG_SERVICE_READY_EXT2_EVENT = 0x334,
- 	WMI_TAG_FILS_DISCOVERY_TMPL_CMD = 0x344,
- 	WMI_TAG_MAC_PHY_CAPABILITIES_EXT = 0x36F,
- 	WMI_TAG_REGULATORY_RULE_EXT_STRUCT = 0x3A9,
-@@ -2612,6 +2613,21 @@ struct ath12k_wmi_soc_hal_reg_caps_params {
- #define WMI_EHT_MCS_NSS_10_11  GENMASK(11, 8)
- #define WMI_EHT_MCS_NSS_12_13  GENMASK(15, 12)
- 
-+struct wmi_service_ready_ext2_event {
-+	__le32 reg_db_version;
-+	__le32 hw_min_max_tx_power_2ghz;
-+	__le32 hw_min_max_tx_power_5ghz;
-+	__le32 chwidth_num_peer_caps;
-+	__le32 preamble_puncture_bw;
-+	__le32 max_user_per_ppdu_ofdma;
-+	__le32 max_user_per_ppdu_mumimo;
-+	__le32 target_cap_flags;
-+	__le32 eht_cap_mac_info[WMI_MAX_EHTCAP_MAC_SIZE];
-+	__le32 max_num_linkview_peers;
-+	__le32 max_num_msduq_supported_per_tid;
-+	__le32 default_num_msduq_supported_per_tid;
-+} __packed;
-+
- struct ath12k_wmi_caps_ext_params {
- 	__le32 hw_mode_id;
- 	union {
--- 
-2.39.0
-
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+T24gNy8yNi8yMDIzIDY6NDAgQU0sIEFsb2thIERpeGl0IHdyb3RlOgpbLi4uXQo+ICsKPiArc3Rh
+dGljIHZvaWQgYXRoMTJrX3BlZXJfYXNzb2NfaF9laHQoc3RydWN0IGF0aDEyayAqYXIsCj4gKwkJ
+CQkgICAgc3RydWN0IGllZWU4MDIxMV92aWYgKnZpZiwKPiArCQkJCSAgICBzdHJ1Y3QgaWVlZTgw
+MjExX3N0YSAqc3RhLAo+ICsJCQkJICAgIHN0cnVjdCBhdGgxMmtfd21pX3BlZXJfYXNzb2NfYXJn
+ICphcmcpCj4gK3sKPiArCWNvbnN0IHN0cnVjdCBpZWVlODAyMTFfc3RhX2VodF9jYXAgKmVodF9j
+YXAgPSAmc3RhLT5kZWZsaW5rLmVodF9jYXA7Cj4gKwljb25zdCBzdHJ1Y3QgaWVlZTgwMjExX3N0
+YV9oZV9jYXAgKmhlX2NhcCA9ICZzdGEtPmRlZmxpbmsuaGVfY2FwOwpbLi4uXQo+ICsJZGVmYXVs
+dDoKPiArCQlpZiAoKGhlX2NhcC0+aGVfY2FwX2VsZW0ucGh5X2NhcF9pbmZvWzBdICYKPiArCQkg
+ICAgIChJRUVFODAyMTFfSEVfUEhZX0NBUDBfQ0hBTk5FTF9XSURUSF9TRVRfNDBNSFpfSU5fMkcg
+fAo+ICsJCSAgICAgIElFRUU4MDIxMV9IRV9QSFlfQ0FQMF9DSEFOTkVMX1dJRFRIX1NFVF80ME1I
+Wl84ME1IWl9JTl81RyB8Cj4gKwkJICAgICAgSUVFRTgwMjExX0hFX1BIWV9DQVAwX0NIQU5ORUxf
+V0lEVEhfU0VUXzE2ME1IWl9JTl81RyB8Cj4gKwkJICAgICAgSUVFRTgwMjExX0hFX1BIWV9DQVAw
+X0NIQU5ORUxfV0lEVEhfU0VUXzgwUExVUzgwX01IWl9JTl81RykpID09IDApIHsKPiArCQkJY29u
+c3Qgc3RydWN0IGllZWU4MDIxMV9laHRfbWNzX25zc19zdXBwXzIwbWh6X29ubHkgKmJ3XzIwID0K
+PiArCQkJCQkmZWh0X2NhcC0+ZWh0X21jc19uc3Nfc3VwcC5vbmx5XzIwbWh6Owo+ICsKVGhpcyBp
+cyB0aGUgSUVzIG9mIG15IEFQIGJlbG93LCB0aGVuIGl0IHdpbGwgc3RpbGwgZW50ZXJlZCBpbnRv
+IHRoaXMgCmJyYW5jaCBmb3IgbXkgYXRoMTJrIHN0YXRpb24gbW9kZS4Kc3RhLT5kZWZsaW5rLmVo
+dF9jYXAgYW5kIHN0YS0+ZGVmbGluay5oZV9jYXAgaXMgY29waWVkIGZyb20gcGVlciByZW1vdGUs
+IApmb3IgYXRoMTJrIHN0YXRpb24gbW9kZSwgcGVlcgpyZW1vdGUgaXMgdGhlIEFQLiBUaGUgZmll
+bGQgb25seV8yMG1oeiBpcyBvbmx5IHZhbGlkIHdoZW4gdGhlIElFcyBpcyAKZnJvbSBhIHN0YXRp
+b24gd2hpY2ggb25seSBzdXBwb3J0CjIwIE1Iei4KCkkgdGhpbmsgdGhlIGZsYWcgZnJvbV9hcCBz
+aG91bGQgYmUgYWRkZWQgaGVyZSBhcyB3ZWxsIGFzIGZ1bmN0aW9uIAppZWVlODAyMTFfZWh0X21j
+c19uc3Nfc2l6ZSgpLgoKUGxlYXNlIGNvcnJlY3QgbWUgaWYgd3JvbmcuCgpFeHQgVGFnOiBIRSBD
+YXBhYmlsaXRpZXMgKElFRUUgU3RkIDgwMi4xMWF4L0QzLjApCiDCoMKgwqAgVGFnIE51bWJlcjog
+RWxlbWVudCBJRCBFeHRlbnNpb24gKDI1NSkKIMKgwqDCoCBFeHQgVGFnIGxlbmd0aDogMjkKIMKg
+wqDCoCBFeHQgVGFnIE51bWJlcjogSEUgQ2FwYWJpbGl0aWVzIChJRUVFIFN0ZCA4MDIuMTFheC9E
+My4wKSAoMzUpCiDCoMKgwqAgSEUgTUFDIENhcGFiaWxpdGllcyBJbmZvcm1hdGlvbjogMHgxMDQw
+MWEwODAxMGQKIMKgwqDCoCBIRSBQaHkgQ2FwYWJpbGl0aWVzIEluZm9ybWF0aW9uCiDCoMKgwqDC
+oMKgwqDCoCAuLi4uIC4uLjAgPSBSZXNlcnZlZDogMHgwCiDCoMKgwqDCoMKgwqDCoCAwMDAwIDAw
+MC4gPSBDaGFubmVsIFdpZHRoIFNldDogMHgwMAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAuLi4u
+IC4uMC4gPSA0ME1IeiBpbiAyLjRHSHogYmFuZDogTm90IHN1cHBvcnRlZAogwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCAuLi4uIC4wLi4gPSA0MCAmIDgwTUh6IGluIHRoZSA1R0h6IG9yIDZHSHogYmFu
+ZDogTm90IHN1cHBvcnRlZAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAuLi4uIDAuLi4gPSAxNjBN
+SHogaW4gdGhlIDVHSHogb3IgNkdIeiBiYW5kOiBOb3Qgc3VwcG9ydGVkCiDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgIC4uLjAgLi4uLiA9IDE2MC84MCs4ME1IeiBpbiB0aGUgNUdIeiBvciA2R0h6IGJh
+bmQ6IE5vdCAKc3VwcG9ydGVkCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC4uMC4gLi4uLiA9IDI0
+MiB0b25lIFJVcyBpbiB0aGUgMi40R0h6IGJhbmQ6IE5vdCBzdXBwb3J0ZWQKIMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgLjAuLiAuLi4uID0gMjQyIHRvbmUgUlVzIGluIHRoZSA1R0h6IG9yIDZHSHog
+YmFuZDogTm90IApzdXBwb3J0ZWQKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgMC4uLiAuLi4uID0g
+UmVzZXJ2ZWQ6IDB4MAogwqDCoMKgwqDCoMKgwqAgQml0cyA4IHRvIDIzOiAweDQwNjMKIMKgwqDC
+oMKgwqDCoMKgIEJpdHMgMjQgdG8gMzk6IDB4MWY4OAogwqDCoMKgwqDCoMKgwqAgQml0cyA0MCB0
+byA1NTogMHg4MTQxCiDCoMKgwqDCoMKgwqDCoCBCaXRzIDU2IHRvIDcxOiAweDExMWMKIMKgwqDC
+oMKgwqDCoMKgIEJpdHMgNzIgdG8gODc6IDB4MDAwOAogwqDCoMKgIFN1cHBvcnRlZCBIRS1NQ1Mg
+YW5kIE5TUyBTZXQKIMKgwqDCoCBQUEUgVGhyZXNob2xkcwoKRXh0IFRhZzogRUhUIENhcGFiaWxp
+dGllcyAoSUVFRSBTdGQgODAyLjExYmUvRDIuMCkKIMKgwqDCoCBUYWcgTnVtYmVyOiBFbGVtZW50
+IElEIEV4dGVuc2lvbiAoMjU1KQogwqDCoMKgIEV4dCBUYWcgbGVuZ3RoOiAxNQogwqDCoMKgIEV4
+dCBUYWcgTnVtYmVyOiBFSFQgQ2FwYWJpbGl0aWVzIChJRUVFIFN0ZCA4MDIuMTFiZS9EMi4wKSAo
+MTA4KQogwqDCoMKgIEVIVCBNQUMgQ2FwYWJpbGl0aWVzIEluZm9ybWF0aW9uOiAweDAwMDAKIMKg
+wqDCoCBFSFQgUEhZIENhcGFiaWxpdGllcyBJbmZvcm1hdGlvbgogwqDCoMKgIFN1cHBvcnRlZCBF
+SFQtTUNTIGFuZCBOU1MgU2V0CiDCoMKgwqDCoMKgwqDCoCBFSFQtTUNTIE1hcCAoQlcgPD0gODBN
+SHopOiAweDIyMjIyMgogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAuLi4uIC4uLi4gLi4uLiAuLi4u
+IC4uLi4gMDAxMCA9IFJ4IE1heCBOc3MgVGhhdCBTdXBwb3J0cyAKRUhULU1DUyAwLTk6IDIKIMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgLi4uLiAuLi4uIC4uLi4gLi4uLiAwMDEwIC4uLi4gPSBUeCBN
+YXggTnNzIFRoYXQgU3VwcG9ydHMgCkVIVC1NQ1MgMC05OiAyCiDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIC4uLi4gLi4uLiAuLi4uIDAwMTAgLi4uLiAuLi4uID0gUnggTWF4IE5zcyBUaGF0IFN1cHBv
+cnRzIApFSFQtTUNTIDEwLTExOiAyCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC4uLi4gLi4uLiAw
+MDEwIC4uLi4gLi4uLiAuLi4uID0gVHggTWF4IE5zcyBUaGF0IFN1cHBvcnRzIApFSFQtTUNTIDEw
+LTExOiAyCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC4uLi4gMDAxMCAuLi4uIC4uLi4gLi4uLiAu
+Li4uID0gUnggTWF4IE5zcyBUaGF0IFN1cHBvcnRzIApFSFQtTUNTIDEyLTEzOiAyCiDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIDAwMTAgLi4uLiAuLi4uIC4uLi4gLi4uLiAuLi4uID0gVHggTWF4IE5z
+cyBUaGF0IFN1cHBvcnRzIApFSFQtTUNTIDEyLTEzOiAyCiDCoMKgwqAgRUhUIFBQRSBUaHJlc2hv
+bGRzOiA8TUlTU0lORz4KCj4gKwkJCWF0aDEya19tYWNfc2V0X2VodF9tY3MoYndfMjAtPnJ4X3R4
+X21jczdfbWF4X25zcywKPiArCQkJCQkgICAgICAgYndfMjAtPnJ4X3R4X21jczlfbWF4X25zcywK
+PiArCQkJCQkgICAgICAgYndfMjAtPnJ4X3R4X21jczExX21heF9uc3MsCj4gKwkJCQkJICAgICAg
+IGJ3XzIwLT5yeF90eF9tY3MxM19tYXhfbnNzLAo+ICsJCQkJCSAgICAgICAmcnhfbWNzW1dNSV9F
+SFRDQVBfVFhSWF9NQ1NfTlNTX0lEWF84MF0sCj4gKwkJCQkJICAgICAgICZ0eF9tY3NbV01JX0VI
+VENBUF9UWFJYX01DU19OU1NfSURYXzgwXSk7Cj4gKwkJfSBlbHNlIHsKPiArCQkJYncgPSAmZWh0
+X2NhcC0+ZWh0X21jc19uc3Nfc3VwcC5idy5fODA7Cj4gKwkJCWF0aDEya19tYWNfc2V0X2VodF9t
+Y3MoYnctPnJ4X3R4X21jczlfbWF4X25zcywKPiArCQkJCQkgICAgICAgYnctPnJ4X3R4X21jczlf
+bWF4X25zcywKPiArCQkJCQkgICAgICAgYnctPnJ4X3R4X21jczExX21heF9uc3MsCj4gKwkJCQkJ
+ICAgICAgIGJ3LT5yeF90eF9tY3MxM19tYXhfbnNzLAo+ICsJCQkJCSAgICAgICAmcnhfbWNzW1dN
+SV9FSFRDQVBfVFhSWF9NQ1NfTlNTX0lEWF84MF0sCj4gKwkJCQkJICAgICAgICZ0eF9tY3NbV01J
+X0VIVENBUF9UWFJYX01DU19OU1NfSURYXzgwXSk7Cj4gKwkJfQo+ICsKPiArCQlhcmctPnBlZXJf
+ZWh0X21jc19jb3VudCsrOwo+ICsJCWJyZWFrOwo+ICsJfQo+ICt9Cj4gKwpbLi4uXQoKLS0gCmF0
+aDEyayBtYWlsaW5nIGxpc3QKYXRoMTJrQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vYXRoMTJrCg==
