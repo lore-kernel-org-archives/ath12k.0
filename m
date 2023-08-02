@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0756C001E0
-	for <ath12k@archiver.kernel.org>; Wed,  2 Aug 2023 16:54:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FC76C04E69
+	for <ath12k@archiver.kernel.org>; Wed,  2 Aug 2023 16:55:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8lEiHtIyUZadNfzpKnyYeSnLpdj0M64qP5649cnvPWQ=; b=o/3B417fe+iOI0
-	0HSixlCDNLirqDJZ/b4PWnzUjvS+nxDP4fJvvkbayHlUCdMTeW1KV+RkgGhrI/5C8+irqVnKXenjM
-	B/V5PSpoJt6dFuVdjAnxHahBl4IR2+C6m9uuQuihe/wRWih8ZGGlvJrtuZNrb8LreTCgBaq4f7/bN
-	HsdkpkZsl2ilUXrH/773Ez4ekSstdAv+OisXxM4+3bh23Ybb/8oRxLBAQb525cWtWFSZlfrhyFIM7
-	zlHmljwbf25/eJBmbzZVNYaYCtPaGp1KgpfHFqkm6q4d0YtYx/ibG9EMIiuO9FaUo/+hQE/eha/fd
-	WKrCNE9xixKKke1CLmlg==;
+	List-Owner; bh=LYk5s5tzwV2Pc/uW0easonjSckIh3k8DEivXky1HNQE=; b=mazR9GkyroKIAG
+	dCmDAulxlK4xXTWQoh3YIq6XkFCuaBwiIZd1TPw7iJjsvHAk6MEw50SKyeR5+B7KpVAfp73kJLv7G
+	XKx8b9pxzhTZfKJh6fBPpfyfJvklwNGRmsUYQuJ0BlrwWGJhSFVRXRjdO9qWvdouGRy2bCM8FGaFE
+	iP5FpXubSRtdDAALVzzxuhtKUdGwF6pxeBmMd7VwSZ6/7rbnsMlEhRx4qpZvd8ELD3DloR7gWOwED
+	oviIqGF6beFxHXfLcqlm/mPdUK3OZ/XcXcgKHVcRU6ITRPPdSxY2l8Vv2Snx5y/5nzHWiUBXOE88K
+	TgY4OV4ZIpkCDOECFHkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRF7K-005QLX-1F
+	id 1qRF7v-005QTQ-31
 	for ath12k@archiver.kernel.org;
-	Wed, 02 Aug 2023 16:54:34 +0000
+	Wed, 02 Aug 2023 16:55:11 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRF7H-005QKy-29
+	id 1qRF7t-005QSX-0h
 	for ath12k@lists.infradead.org;
-	Wed, 02 Aug 2023 16:54:33 +0000
+	Wed, 02 Aug 2023 16:55:10 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1D82E615C2;
-	Wed,  2 Aug 2023 16:54:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8C002C433C8;
-	Wed,  2 Aug 2023 16:54:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 1672B619CB;
+	Wed,  2 Aug 2023 16:55:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8C5A3C433C8;
+	Wed,  2 Aug 2023 16:55:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1690995270;
-	bh=A2OruOp+lJC1+M5+VpWcfMzRWKAKt+bR0nx1v+/4O/M=;
+	s=k20201202; t=1690995306;
+	bh=qdxA9pBPS4Z9MxnRtXeIEl8r2HFOL4kudXJ/rb14Er0=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=kny19TAcHybABvRt1Rhy4fqlLq0E3v3v7M4AAFjXHGn9Shag3S1BMy7I9JwhK1vv9
-	 Q4LPmWEzhlU8NignCZieIvNZoBWgHEMoNjVN3CCMk3Ki1HNfhuYRy71ChKggBVrXqe
-	 rhZaGKyzkfmzbF5obxpcTCw9amx8NzRirw3VChAtYxLU7KbYHrrCSS71+S7GX74Y5R
-	 r83D90lDaa5gDFGc6BI+LfgfdqDaAVDrzs1EFYuVDJnejSpnmLj1ESxDecWXuaSY6v
-	 7YRxv7W0PB9NtqPNPa2rxE1iJ4teSYbkj1gx7cj5dmVI81nhLvZJcnWuJDn45pUes/
-	 nnq5theb2oFow==
+	b=mXmi1FFp6Z+WjzNyOq5aKuBff8NmVE3a/zlPystDO4PU3vGxmrDF2OPktMcul7Onq
+	 mrOWWOOmAmBWV+Tn0OZocRC6b7SeGr+uhnHQqRrzZ+5FWIRTdMSFlBzaUjjALviS+w
+	 eLgwB8uF8r1jcDgY6HesOWu9xDhOZXmy1cpWbs2AnyWdKa5dD67MFik/GvMHDQVVZ1
+	 EmmVwGl1jyXPIao/Rm4k3Xm54Qc6ptY6YPdWFFOuZqf5oP9G3+WaZyexT4mVq9MhU4
+	 4dt2fpyx/8XsAxHiup6MYeICFXM8lqW+1lu2MW1NAlGbyNZO78wn5MW3iXDZelnIip
+	 cUBR8jEaFioSA==
 MIME-Version: 1.0
-Subject: Re: [PATCH] ath12k: Fix a NULL pointer dereference in
- ath12k_mac_op_hw_scan()
+Subject: Re: [PATCH] wifi: ath12k: correct the data_type from QMI_OPT_FLAG to
+ QMI_UNSIGNED_1_BYTE for mlo_capable
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230726092625.3350-1-quic_wgong@quicinc.com>
-References: <20230726092625.3350-1-quic_wgong@quicinc.com>
+In-Reply-To: <20230726093857.3610-1-quic_wgong@quicinc.com>
+References: <20230726093857.3610-1-quic_wgong@quicinc.com>
 To: Wen Gong <quic_wgong@quicinc.com>
 Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
  <quic_wgong@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169099526747.463701.13168373572998934165.kvalo@kernel.org>
-Date: Wed,  2 Aug 2023 16:54:29 +0000 (UTC)
+Message-ID: <169099530370.463701.4567477992736594889.kvalo@kernel.org>
+Date: Wed,  2 Aug 2023 16:55:05 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230802_095431_740966_4A0626C9 
-X-CRM114-Status: UNSURE (   8.10  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230802_095509_304498_4F814825 
+X-CRM114-Status: GOOD (  11.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,11 +79,21 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Wen Gong <quic_wgong@quicinc.com> wrote:
 
-> In ath12k_mac_op_hw_scan(), the return value of kzalloc() is directly
-> used in memcpy(), which may lead to a NULL pointer dereference on
-> failure of kzalloc().
+> Currently, the encoding rule for field mlo_capable in struct
+> qmi_wlanfw_host_cap_req_msg_v01 defined in array
+> qmi_wlanfw_host_cap_req_msg_v01_ei uses type QMI_OPT_FLAG.
 > 
-> Fix this bug by adding a check of arg.extraie.ptr.
+> Unfortunately, all ath12k firmware actually expects this field to be of
+> type NON QMI_OPT_FLAG such as QMI_UNSIGNED_1_BYTE/QMI_UNSIGNED_8_BYTE...
+> And as a result, firmware is unable to correctly decode the mlo_capable
+> field.
+> 
+> Change the ath12k definition as QMI_UNSIGNED_1_BYTE to match the firmware
+> definition so that firmware can correctly parse the mlo_capable info from
+> message QMI_WLANFW_HOST_CAP_REQ_V01 at wlan load time.
+> 
+> This is just an accidental typo and that both WCN7850 and QCN9274 firmwares
+> use QMI_UNSIGNED_1_BYTE.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
@@ -93,10 +102,10 @@ Wen Gong <quic_wgong@quicinc.com> wrote:
 
 Patch applied to ath-next branch of ath.git, thanks.
 
-8ad314da54c6 wifi: ath12k: Fix a NULL pointer dereference in ath12k_mac_op_hw_scan()
+15c8441dc1ed wifi: ath12k: correct the data_type from QMI_OPT_FLAG to QMI_UNSIGNED_1_BYTE for mlo_capable
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230726092625.3350-1-quic_wgong@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230726093857.3610-1-quic_wgong@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
