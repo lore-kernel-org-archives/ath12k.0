@@ -4,63 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4B89C001DF
-	for <ath12k@archiver.kernel.org>; Thu,  3 Aug 2023 09:19:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 476C2C0015E
+	for <ath12k@archiver.kernel.org>; Thu,  3 Aug 2023 09:41:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uhzvr4SDGk8rILQNTpC5RVkFQ7tFdmspt8ZfyK6jk0M=; b=RV/Zd7a3+9L6hg
-	dtdmQW1+/fbAaqOp5kGIF86EtY5JeFFhpQgU32My4M6N20KWCs5gs3tDQBeFGZayLrqPlv63ZGVdY
-	Z53+KGTr0tKR64fij6c4Zh3/2y2RyeGhozsoJ0e7TU/ebrwxnGxWkNXi1PpIk0sqzAPZjF6OrJQuc
-	AnC5+293fr7Lfu25DwZn8z4rsFUdNz9q/MAx/eiQ59HdGdCPt6g0goEsQDOqsQFuW9b8H9Ap0wRl+
-	bUDwv1+8JbonbBqqypmz1frA4+sjZnZBNXEPkFHmggl+DmDeEbqafMAhhExnVAhXFo+jPqRXsnFn6
-	PcLnuuVYTswGVUtvK6tQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2ElCRi2+hw6Nmp4+TZQ9+tB15f07gLp78U/sb+2399s=; b=EJKGmr/MI0B2XT
+	6SEx4bXelGQW3Vjv5Msa1vSXFUZAk+tguj9od6s0paMWxyXyoO1TKxFDlcR0wn1CAKJfO9JO1Hpo9
+	Lg/Irewak/OzPLtRZywYTly+HgwwLS2pDiaD7E5y6ngJ+sL4b85nLbb8f+H/z1ozpFJ71VbqxI+I/
+	qpxJZC5KymB9r0V0H3ujX9s2rc4wIKUrpRlH0bsYb2YhO2bgCMADdVP0eqgDqDOaMl+PVW0Kwp3+O
+	n0egBSc+aMUkgsKmxX8yIDVxhOTONAAli548I1WPkOY+CgqWc3Mcuvkw4ZgnGXjkc56YFKzJnX+qx
+	Ggly4OJzzg5fjw5ZA1TQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRUUW-007Acx-0i
+	id 1qRUpQ-007ELy-2Y
 	for ath12k@archiver.kernel.org;
-	Thu, 03 Aug 2023 09:19:32 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 03 Aug 2023 09:41:08 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRUUT-007AbT-0d
+	id 1qRUpN-007EKv-0G
 	for ath12k@lists.infradead.org;
-	Thu, 03 Aug 2023 09:19:30 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 7FCD161CE8;
-	Thu,  3 Aug 2023 09:19:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F3338C433C8;
-	Thu,  3 Aug 2023 09:19:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1691054367;
-	bh=BBs5xDVfPy4kBjsyiU8qNidPHEPfQ9H3VspFwt1rOwU=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=LeDu4EEf7QWGBLBKVnIPQRxmIRezvKQOCpHvmRKaNiTW/VOOKhu7MB9ke1nLBfyZ5
-	 Bz4/EBK8cmDIpc8FPqbdteBtiKjKqj5kgh+UnDsuM5uIjSKCBS7hE54cXEG1BYK1gO
-	 PFlVI6IQPnIWTjD/Sp9S0JYm6FZ8ZQy0xwDVf3qFvjkazRsjWd/wVhcmiANc1vvqTc
-	 0Q8EsQGJAG7IFtOTjqChq2JMUFVJNpGFnW3/K6eKkRQQ/Bhpmyo/AcqIeoSf1JRwnu
-	 4UvyZNWPlfOlcCEMmR/AnckhGYwYW558+3ksvzaPTuP/1MZEHc9GNBT8suSNH/kxLo
-	 5PS8T6UlYI7Hw==
+	Thu, 03 Aug 2023 09:41:06 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3736cd0E006446;
+	Thu, 3 Aug 2023 09:41:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=oMFOj4CPTdcUMCz1lZPzPS2D1UbuapHX2+Br3qM+YoM=;
+ b=JfyqC8bBbOHSENtv4kgLWqmouGOCyWxi7FGghTBngg/h7FA9L65NP+0IaQcklkf4Udl6
+ 66ZbjbBXIDKOufrc8aX7LW7/8ZFHtrgske7E7tBdDrw5id/uhBAp/QLe1vVct2hAQqIH
+ nBC/8aB3GNjD/J/fpgHz1jKqTL4XToBudpItInc4oHBVOz5ra3uRrCtxgEJPa9c4h8gJ
+ Oogh2XlVjdgwr2OPPDwfNLqgIgij2SsTvDIy/w1wzfo6cC+2urVA8WBdj7HFxRwp9tc+
+ pJchoIABHjgR+lMHIVjI1XwmX/OMMwXJJbCVxheNrkhXQMD63rgNtMmBMwveRcBJn3Y8 aQ== 
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s83q0gnp7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 03 Aug 2023 09:41:00 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3739egMr017999
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 3 Aug 2023 09:40:42 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nasanex01a.na.qualcomm.com
+ (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Thu, 3 Aug
+ 2023 02:40:41 -0700
+Message-ID: <1bbe5e90-1f37-3926-98f7-a685578fef8f@quicinc.com>
+Date: Thu, 3 Aug 2023 17:40:39 +0800
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: add handler for scan event
- WMI_SCAN_EVENT_DEQUEUED
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230717034457.22162-1-quic_wgong@quicinc.com>
-References: <20230717034457.22162-1-quic_wgong@quicinc.com>
-To: Wen Gong <quic_wgong@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- <quic_wgong@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169105436499.894438.10408926666024994853.kvalo@kernel.org>
-Date: Thu,  3 Aug 2023 09:19:26 +0000 (UTC)
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v2 1/3] wifi: ath12k: configure RDDM size to MHI for
+ device recovery
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20230721055305.20420-2-quic_wgong@quicinc.com>
+ <169105464227.894438.15435946207134709277.kvalo@kernel.org>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <169105464227.894438.15435946207134709277.kvalo@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: cl9LxbwMu0gRTia_nU6i8A79p_SDW18l
+X-Proofpoint-GUID: cl9LxbwMu0gRTia_nU6i8A79p_SDW18l
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-08-03_08,2023-08-01_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ bulkscore=0 clxscore=1015 impostorscore=0 malwarescore=0 suspectscore=0
+ mlxlogscore=696 priorityscore=1501 mlxscore=0 spamscore=0 phishscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308030086
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230803_021929_303898_CE2134FD 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20230803_024105_329215_3E2F6864 
+X-CRM114-Status: GOOD (  16.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,45 +95,44 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Wen Gong <quic_wgong@quicinc.com> wrote:
+On 8/3/2023 5:24 PM, Kalle Valo wrote:
+> Wen Gong <quic_wgong@quicinc.com> wrote:
+>
+>> RDDM is RAM DUMP DEBUG module, it is used to debug issues when firmware
+>> encounters an error.
+>>
+>> The rddm_size is needed by firmware while MHI enter RDDM state. Add it
+>> to support device recovery when ath12k receive MHI_CB_EE_RDDM message.
+>>
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>>
+>> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> I'm not sure what "support device recovery" means exactly. How does this patch
+> change functionality from user's point of view?
+>
+> No need to resend because of this, I can add that to the commit log.
+Device recovery means SSR(subsystem restart), when firmware happen 
+crash, ath12k
+will receive the RDDM event, and then ath12k/mac80211 begin to re-start 
+wifi/firmware,
+after that, the wifi become normal again.
 
-> When wlan interface is up, and 11d scan is sent to the firmware, then
-> firmware needs to spend couple of seconds to complete the 11d scan. If
-> normal scan from user space arrives to ath12k at this moment, then the
-> normal scan request is also sent to the firmware, but the scan started
-> event will be reported to ath12k until the 11d scan complete. When timed
-> out for the scan started in ath12k, ath12k stops the normal scan and the
-> firmware reports WMI_SCAN_EVENT_DEQUEUED to ath12k for the normal scan.
-> ath12k has no handler for the event and then timed out for the scan
-> completed in ath12k_scan_stop(), and ath12k prints the following error
-> message.
-> 
-> [ 1491.604750] ath12k_pci 0000:02:00.0: failed to receive scan abort comple: timed out
-> [ 1491.604756] ath12k_pci 0000:02:00.0: failed to stop scan: -110
-> [ 1491.604758] ath12k_pci 0000:02:00.0: failed to start hw scan: -110
-> 
-> Add a handler for WMI_SCAN_EVENT_DEQUEUED and then complete the scan to
-> get rid of the above error message.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+This patch is to let firmware report RDDM event correctly to ath12k. 
+Without this patch,
+firmware will not report RDDM event to ath12k correctly, then ath12k 
+will not begin SSR
+process.
 
-Patch applied to ath-next branch of ath.git, thanks.
-
-9632ea57be65 wifi: ath12k: add handler for scan event WMI_SCAN_EVENT_DEQUEUED
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230717034457.22162-1-quic_wgong@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+I think it should be changed like this:
+The rddm_size is needed by firmware while MHI enter RDDM state. Add it
+and then firmware will report MHI_CB_EE_RDDM correctly while firmware
+encounters an error, then ath12k could start the device recovery process.
 
 -- 
 ath12k mailing list
