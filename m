@@ -4,62 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8772EB64DD
-	for <ath12k@archiver.kernel.org>; Thu,  3 Aug 2023 13:54:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76589C001DE
+	for <ath12k@archiver.kernel.org>; Mon,  7 Aug 2023 02:56:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PAYsWf61CtsKIduvcH70WaAr25rnYFXDF6eZKyvMnnw=; b=1rCmF66x/sqPgt
-	sQnTQFNy3R7ID2Lk9T7XqH6o7QWTB2lZazeTSnJ6oaAZXwnOwaVH5oaCDDN8m2QxH4EX3pZxdZ98N
-	1HsQvM75rbzzuJ3fCSlNxcUuWIvF11n7O71cnyjRYtZgW6cJHKO0u/QRB8a3Fp+woweI8gKrSYyok
-	uRU1KfQR5XzzMQHKQZC2TPethyu5F6F1id0EIzSZgV+twAp7ZYzmIA+auvAD/ooSekXLV85p/xZe2
-	nYzqS4zheZBF3667AlWRmmwm1EpF5kAkSiqB31XgmHl+TYEtzp/ZqvcJ3qMIm+U1scOgYpU0LF4RP
-	xsgWZB1fJbO9mZkDzZ4w==;
+	List-Owner; bh=lnsmDJss8H0eZZKVP+1wyHdcMmZ1ONvYpzPRrzIE4kI=; b=BbTH3GsPQyE4Pd
+	SuEDiHgQuTiZpn6P6D3a6xIDVsWCiRgyPzfHR0DHmH5Q5J7O/xF4QU6362BfoIWoqsEZ2xx1mRaYq
+	niW7AFOM1+9GykqddqPBv8o0X7QKVrdkcdkdzrxShbPqN3yHjpGjkTa3Bz1Eh6W8w9fXtLm/fVktm
+	/7L9hRoxucNu0fnR+7vkl1AxWJmlwiQGW734oTnp0sL9og7t99VD4WSW2lnEZyKutz2e42WQxbeL/
+	o5baPGXJGuBaWcNZ5D8hdKlU0UwztDJcVlQeST6tOv6x+onVHI1+2v8OIr+0+SSS0UaYQD3jpelj1
+	OeynQfFBmr9sY0ooSlvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRYmG-009Hjp-1v
+	id 1qSqQ6-00G2fj-0g
 	for ath12k@archiver.kernel.org;
-	Thu, 03 Aug 2023 13:54:08 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Mon, 07 Aug 2023 02:56:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRYmD-009Hgh-0K
+	id 1qSqQ2-00G2e5-30
 	for ath12k@lists.infradead.org;
-	Thu, 03 Aug 2023 13:54:06 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 64FED61DAB;
-	Thu,  3 Aug 2023 13:54:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F02E8C433C9;
-	Thu,  3 Aug 2023 13:54:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1691070843;
-	bh=2zndGpTW3ZG0uaaqaVtbSxN+xzTy4HQzh1W7lEh+UII=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=eljg5XsEByTElk9FWxj66hON4KRf6wEx9aq3ngYXSAXGcf2vNMayxyi6a/SHGOcdC
-	 a8m7uupwp3lOjgnQWZdfVH3cKYA/ywYFURVYOzEcBOkWGwVrVxM/WjuZ585h/so7IB
-	 9Ne+6Kfw1beI3wJndMEJ5qIHEOod3JlT9GuICdZBMEs/000Xq15Q2WwpEPYpejEICg
-	 Kimp8m4jHbFGYqtoN+7f9aY5VYzHH338g4XQfoQfcGLK7jPzPCNXcJvYDS++UBh+Cm
-	 zYb+K4+++6gec3sqhlYvg9Zinj2r/huvzJqN56M/W3wdfI71FCpp8T8ME4JrLxHdtx
-	 nowha7IAQeFmQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: Dmitry Antipov <dmantipov@yandex.ru>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-Subject: Re: ath12k: memcpy() source buffer overread
-References: <5c114ed7-6e8a-76a7-c0da-4193d1288686@yandex.ru>
-Date: Thu, 03 Aug 2023 16:54:00 +0300
-In-Reply-To: <5c114ed7-6e8a-76a7-c0da-4193d1288686@yandex.ru> (Dmitry
-	Antipov's message of "Tue, 20 Jun 2023 09:18:03 +0300")
-Message-ID: <875y5wteo7.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Mon, 07 Aug 2023 02:56:32 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3771gqsu021787;
+	Mon, 7 Aug 2023 02:56:17 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=FKw1svoSZ+oIO2/i4JhRj7Tru9ZeZtNo1ovahurHt/s=;
+ b=goE52STz5/ZWUIfXbv73vmhZ17XGHuG/4YOwfNlLbm1Ktt+CgE5DD2mUfiXetdaNDX7N
+ IkT5Z/0WhHYvT1dbGnykG5xCkLa7w9HbUgl+bA/8U1ji8VdGdbxcj9adVEbvc4DCwTpn
+ SRdIo1Kakf0oB7uNv9phJKLYpdg8q4tiLD/pVUbdA5CGOgo7L3vYvmH3sLlUohOBreKg
+ hNhN05I4WEcNWpszPcolI/NPG28S3HHrJq0BUNr/H3nBLJw529/yT1ukrSWFpLt6bc9n
+ 8oemwC/5LDehwKFsjZKMszeh3fnmEXvlit6zve81PekBW+p+gt0XpXHrx0dASdU+/0qR CQ== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s9e16tdvm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 07 Aug 2023 02:56:17 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3772uGVO008127
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 7 Aug 2023 02:56:16 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Sun, 6 Aug
+ 2023 19:56:15 -0700
+Message-ID: <afac3a79-d4b0-967c-ef04-f8fdbd123eaa@quicinc.com>
+Date: Mon, 7 Aug 2023 10:56:12 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH v2 1/3] wifi: ath12k: configure RDDM size to MHI for
+ device recovery
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20230721055305.20420-2-quic_wgong@quicinc.com>
+ <169105464227.894438.15435946207134709277.kvalo@kernel.org>
+ <1bbe5e90-1f37-3926-98f7-a685578fef8f@quicinc.com>
+ <87msz8tl8e.fsf@kernel.org>
+Content-Language: en-US
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <87msz8tl8e.fsf@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: i1en1LnM91vzXvdAPUpxJ69dJD9Avhvm
+X-Proofpoint-ORIG-GUID: i1en1LnM91vzXvdAPUpxJ69dJD9Avhvm
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-08-06_24,2023-08-03_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 mlxlogscore=711
+ phishscore=0 impostorscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0
+ clxscore=1015 suspectscore=0 priorityscore=1501 spamscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
+ definitions=main-2308070025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230803_065405_262996_D9150A0E 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20230806_195631_137265_FCE5DEDD 
+X-CRM114-Status: GOOD (  18.68  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,46 +97,62 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-KyBhdGgxMmsgbGlzdAoKRG1pdHJ5IEFudGlwb3YgPGRtYW50aXBvdkB5YW5kZXgucnU+IHdyaXRl
-czoKCj4gV2hlbiBjb21waWxpbmcgd2l0aCBnY2MgMTMuMSBhbmQgQ09ORklHX0ZPUlRJRllfU09V
-UkNFPXksIEkndmUgbm90aWNlZCB0aGUgZm9sbG93aW5nOgo+Cj4gLi4uCj4gSW4gZnVuY3Rpb24g
-4oCYZm9ydGlmeV9tZW1jcHlfY2hr4oCZLAo+ICAgICBpbmxpbmVkIGZyb20g4oCYYXRoMTJrX3Bl
-ZXJfYXNzb2NfaF9oZeKAmSBhdCBkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL21hYy5j
-OjE2NDA6MiwKPiAgICAgaW5saW5lZCBmcm9tIOKAmGF0aDEya19wZWVyX2Fzc29jX3ByZXBhcmXi
-gJkgYXQgZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9tYWMuYzoyMDI3OjI6Cj4gLi9p
-bmNsdWRlL2xpbnV4L2ZvcnRpZnktc3RyaW5nLmg6NTI5OjI1OiB3YXJuaW5nOiBjYWxsIHRvIOKA
-mF9fcmVhZF9vdmVyZmxvdzJfZmllbGTigJkgZGVjbGFyZWQgd2l0aAo+IGF0dHJpYnV0ZSB3YXJu
-aW5nOiBkZXRlY3RlZCByZWFkIGJleW9uZCBzaXplIG9mIGZpZWxkICgybmQgcGFyYW1ldGVyKTsg
-bWF5YmUgdXNlIHN0cnVjdF9ncm91cCgpPwo+IFstV2F0dHJpYnV0ZS13YXJuaW5nXQo+ICAgNTI5
-IHwgICAgICAgICAgICAgICAgICAgICAgICAgX19yZWFkX292ZXJmbG93Ml9maWVsZChxX3NpemVf
-ZmllbGQsIHNpemUpOwo+ICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+Cj4gSW4gZnVuY3Rpb24g4oCYZm9ydGlm
-eV9tZW1jcHlfY2hr4oCZLAo+ICAgICBpbmxpbmVkIGZyb20g4oCYYXRoMTJrX3BlZXJfYXNzb2Nf
-aF9oZeKAmSBhdCBkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL21hYy5jOjE2NDM6MiwK
-PiAgICAgaW5saW5lZCBmcm9tIOKAmGF0aDEya19wZWVyX2Fzc29jX3ByZXBhcmXigJkgYXQgZHJp
-dmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9tYWMuYzoyMDI3OjI6Cj4gLi9pbmNsdWRlL2xp
-bnV4L2ZvcnRpZnktc3RyaW5nLmg6NTI5OjI1OiB3YXJuaW5nOiBjYWxsIHRvIOKAmF9fcmVhZF9v
-dmVyZmxvdzJfZmllbGTigJkgZGVjbGFyZWQgd2l0aAo+IGF0dHJpYnV0ZSB3YXJuaW5nOiBkZXRl
-Y3RlZCByZWFkIGJleW9uZCBzaXplIG9mIGZpZWxkICgybmQgcGFyYW1ldGVyKTsgbWF5YmUgdXNl
-IHN0cnVjdF9ncm91cCgpPwo+IFstV2F0dHJpYnV0ZS13YXJuaW5nXQo+ICAgNTI5IHwgICAgICAg
-ICAgICAgICAgICAgICAgICAgX19yZWFkX292ZXJmbG93Ml9maWVsZChxX3NpemVfZmllbGQsIHNp
-emUpOwo+ICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+Cj4gLi4uCj4KPiBBbmQgdGhpcyBzZWVtcyBjb3JyZWN0
-IGJlY2F1c2U6Cj4KPiAvKiBkc3Q6IHUzMlsyXSwgc3JjOiB1OFs2XSwgc2l6ZTogOCBzbyAyIGJ5
-dGUgc291cmNlIG92ZXJyZWFkICovCj4gbWVtY3B5KCZhcmctPnBlZXJfaGVfY2FwX21hY2luZm8s
-IGhlX2NhcC0+aGVfY2FwX2VsZW0ubWFjX2NhcF9pbmZvLAo+ICAgICAgICBzaXplb2YoYXJnLT5w
-ZWVyX2hlX2NhcF9tYWNpbmZvKSk7Cj4KPiBhbmQ6Cj4KPiAvKiBkc3Q6IHUzMlszXSwgc3JjOiB1
-OFsxMV0sIHNpemU6IDEyIHNvIDEgYnl0ZSBzb3VyY2Ugb3ZlcnJlYWQgKi8KPiBtZW1jcHkoJmFy
-Zy0+cGVlcl9oZV9jYXBfcGh5aW5mbywgaGVfY2FwLT5oZV9jYXBfZWxlbS5waHlfY2FwX2luZm8s
-Cj4gICAgICAgIHNpemVvZihhcmctPnBlZXJfaGVfY2FwX3BoeWluZm8pKTsKCkFybmQgZml4ZWQg
-dGhpczoKCmh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcva3ZhbG8vYXRoL2MvNjAzY2Y2YzJmY2RjCgot
-LSAKaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wcm9qZWN0L2xpbnV4LXdpcmVsZXNzL2xp
-c3QvCgpodHRwczovL3dpcmVsZXNzLndpa2kua2VybmVsLm9yZy9lbi9kZXZlbG9wZXJzL2RvY3Vt
-ZW50YXRpb24vc3VibWl0dGluZ3BhdGNoZXMKCi0tIAphdGgxMmsgbWFpbGluZyBsaXN0CmF0aDEy
-a0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2F0aDEyawo=
+On 8/3/2023 7:32 PM, Kalle Valo wrote:
+> Wen Gong <quic_wgong@quicinc.com> writes:
+>
+>> On 8/3/2023 5:24 PM, Kalle Valo wrote:
+>>> Wen Gong <quic_wgong@quicinc.com> wrote:
+>>>
+>>>> RDDM is RAM DUMP DEBUG module, it is used to debug issues when firmware
+>>>> encounters an error.
+>>>>
+>>>> The rddm_size is needed by firmware while MHI enter RDDM state. Add it
+>>>> to support device recovery when ath12k receive MHI_CB_EE_RDDM message.
+>>>>
+>>>> Tested-on: WCN7850 hw2.0 PCI
+>>>> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>>>>
+>>>> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+>>>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+>>> I'm not sure what "support device recovery" means exactly. How does this patch
+>>> change functionality from user's point of view?
+>>>
+>>> No need to resend because of this, I can add that to the commit log.
+>> Device recovery means SSR(subsystem restart), when firmware happen
+>> crash, ath12k
+>> will receive the RDDM event, and then ath12k/mac80211 begin to
+>> re-start wifi/firmware,
+>> after that, the wifi become normal again.
+>>
+>> This patch is to let firmware report RDDM event correctly to ath12k.
+>> Without this patch,
+>> firmware will not report RDDM event to ath12k correctly, then ath12k
+>> will not begin SSR
+>> process.
+>>
+>> I think it should be changed like this:
+>>
+>> The rddm_size is needed by firmware while MHI enter RDDM state. Add it
+>> and then firmware will report MHI_CB_EE_RDDM correctly while firmware
+>> encounters an error, then ath12k could start the device recovery process.
+> How about this:
+>
+> "RDDM is Ram Dump Debug Module which is used to debug issues when the
+> firmware encounters an error. The rddm_size is needed by the firmware
+> while MHI goes to the RDDM state. Provide the size to MHI subsystem so
+> that the firmware restart works when the firmware crashes."
+
+Thanks.
+
+Yes, it is OK for me.
+
+
+-- 
+ath12k mailing list
+ath12k@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/ath12k
