@@ -4,80 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87800C0015E
-	for <ath12k@archiver.kernel.org>; Mon,  7 Aug 2023 03:08:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8265C001B0
+	for <ath12k@archiver.kernel.org>; Tue,  8 Aug 2023 10:26:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RjQ6jCV+3W2grOLUm/Zm4O2N3Ysl6g3do6mMwiy4dow=; b=JEFZcqxF1880Zp
-	c/bVVD4J7dVULKCSdOCvtX/oaZ2+OX9S1ZR/I7z6PLLSvK5+oIWvzK6q8VvodwVFlbBytcvl8LU6k
-	bymbPYqKV4st5t7sWFtiVQ3PfGJ344AxLy9jfwB5QX8wLqfqpVZR/Y15Wl15rYcnqlIBtQao2nLiD
-	OodhoUND1Jh23uBaNT0ON7mPr0m/m/Ubcvn6Y/eDi67A+twGjW28ONytwf/62JevuBwz2fniNvYY8
-	rSMuPp9O0vLR2bULQvXPGFjgC4L6EyNKbabjqFTBEWGF6hsvK8WOFA4C60UaxOKzgfJG7t0AEmL1e
-	QwtVZJt+EUJhyuuljyew==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=spsx5bCfFvoc6Kf/TF68LbxzXY6TMQopr84xYlW5Jc4=; b=3tUWzLy1YCETgA
+	EQPZrfzvTipXijyyXNBCXyge5G6JeWKvnnk1eAMCP5l2XbRoKFYnrYuYUuWi2mP/kdN6FP0LvQzhu
+	rdaMZU7hDn6DAH1/UetyBulgYg7GD33c4bKqFKZlNSF33ZrQUnl6GVLP4azU/3B1vFQZYTF0aCLrp
+	sH2fhkiFeLgDZA0xhSULI3R0axFh4QTbfAQfxCKyX0r4Qa58GkMqgIAFfMFRxN4K0H5klJ11Ux/Av
+	xGznQqPxAkTesRwm6+By/QdpWkDZiO5uFurPb86n/ubxTb6UQBHBlOA1D376mMT7wMoP6zOu/nK4D
+	aJ0eYdkYjATqOrf5qmow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qSqc0-00G3RQ-0v
+	id 1qTJvD-002EJa-28
 	for ath12k@archiver.kernel.org;
-	Mon, 07 Aug 2023 03:08:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 08 Aug 2023 10:26:39 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qSqbx-00G3R2-1Q
+	id 1qTJvA-002EI4-1P
 	for ath12k@lists.infradead.org;
-	Mon, 07 Aug 2023 03:08:50 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3772oQsp024981;
-	Mon, 7 Aug 2023 03:08:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding :
- content-type; s=qcppdkim1;
- bh=YrYFgvkBLSeBEQHH1nAzsoORCIvZUhbD43Y/ndAJI74=;
- b=eJLpJxFONODbb5w+OBUoryLUgdLg1EpG1JBPGAPCz6MIXPF3d6BZpSmFS2uJFdYz34aY
- gkFADKhV2jzCKdJiKzhyHaTJkL3OEg7Q8kRxD+GpJtKenbjWpeC+xEjlx7igQ4++Tz6o
- 5lsvuV/whOaieYryhQJ2lE6pPWnPuisqNcREfMhs5gnh5zDVkVwnpoIrWiw6zRCNxR7f
- zEIMpu9CL7pda/giMBaGPrvE4nhhzd4xpxCh8+U9LPRwiqgj4eNOXXdNum9lTO3liHfb
- mjjHj8zTP7Wi/qbLB27Bp2cqUtlel9WaX075vLLSN+nY49ZDL/lw2tlVw4fuAl6fGHzp Ew== 
+	Tue, 08 Aug 2023 10:26:37 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3787SNHL013044;
+	Tue, 8 Aug 2023 10:26:32 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=CTlCVNrnLOZbC2Bp8ihc1hVt9SYK5pZEPHJRtPEyOro=;
+ b=IpS6X5JgJlqcTUGL42PYvhfSnruJ1W7ZEV5fRwAVB7jiJEz8d6BPn5yzJYpmjkJSufLa
+ ORwZB0vYa4IRT96KeWEiMJ+dBAMt2xj+Nw8aG7UXBizSnMEyHwkTVdhZo9OYdvjDHIDD
+ Mzji+3BETosf5FzyhgkhoqwhXQ2pi7nbe5A4e1HbjDJtFXRvcnWGms0ypFHJtzSsxAYx
+ U7bO8Vf3YeeGZ+9Rq7MwoAZrBU1/DugYW6QxtrQ1/NF231/ZsJBOF3pp4Vsn1Do1Bgjw
+ bpzbpynatULaDD2sasERn7CyHoQ0KqtYBloIsBdfvYM96ylNz3aIIoZZhvbV5Wj4N0J6 aQ== 
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3s9dcyag2m-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sawbgargy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 07 Aug 2023 03:08:47 +0000
+	Tue, 08 Aug 2023 10:26:31 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37738kr1014531
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 378AQUsT015122
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 7 Aug 2023 03:08:46 GMT
-Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.30; Sun, 6 Aug 2023 20:08:45 -0700
-From: Wen Gong <quic_wgong@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
-Subject: [PATCH] wifi: ath12k: Fix buffer overflow when scanning with extraie
-Date: Sun, 6 Aug 2023 23:08:06 -0400
-Message-ID: <20230807030806.9345-1-quic_wgong@quicinc.com>
-X-Mailer: git-send-email 2.40.1
+	Tue, 8 Aug 2023 10:26:30 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Tue, 8 Aug
+ 2023 03:26:29 -0700
+Message-ID: <40034bde-5512-8df5-a19d-48487102c003@quicinc.com>
+Date: Tue, 8 Aug 2023 18:26:27 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH 1/2] wifi: ath12k: fix WARN_ON during
+ ath12k_mac_update_vif_chan
+Content-Language: en-US
+To: Jeff Johnson <quic_jjohnson@quicinc.com>,
+        Manish Dharanenthiran
+	<quic_mdharane@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20230802085852.19821-1-quic_mdharane@quicinc.com>
+ <20230802085852.19821-2-quic_mdharane@quicinc.com>
+ <54733de9-db66-f1c4-9ad5-4d1f31529c05@quicinc.com>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <54733de9-db66-f1c4-9ad5-4d1f31529c05@quicinc.com>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 2c99uWsyBD43cewsZq2_2keHi_8M6T7Y
-X-Proofpoint-GUID: 2c99uWsyBD43cewsZq2_2keHi_8M6T7Y
+X-Proofpoint-ORIG-GUID: T0JCaUQKC_FfLJX8RmFWqNHn8dYWPRCk
+X-Proofpoint-GUID: T0JCaUQKC_FfLJX8RmFWqNHn8dYWPRCk
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-08-06_24,2023-08-03_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 malwarescore=0
- mlxscore=0 bulkscore=0 impostorscore=0 mlxlogscore=999 suspectscore=0
- spamscore=0 lowpriorityscore=0 clxscore=1015 priorityscore=1501
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2308070027
+ definitions=2023-08-08_09,2023-08-03_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=725
+ impostorscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0 phishscore=0
+ mlxscore=0 priorityscore=1501 malwarescore=0 adultscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
+ definitions=main-2308080093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230806_200849_483467_A77235A2 
-X-CRM114-Status: GOOD (  23.24  )
+X-CRM114-CacheID: sfid-20230808_032636_611791_A6703A9F 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,103 +99,37 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-If cfg80211 is providing extraie's for a scanning process then ath12k will
-copy that over to the firmware. The extraie.len is a 32 bit value in struct
-element_info and describes the amount of bytes for the vendor information
-elements.
+On 8/2/2023 10:59 PM, Jeff Johnson wrote:
+> On 8/2/2023 1:58 AM, Manish Dharanenthiran wrote:
+>> Fix WARN_ON() from ath12k_mac_update_vif_chan() if vdev is not up.
+>> Since change_chanctx can be called even before vdev_up.
+>>
+>> Do vdev stop followed by a vdev start in case of vdev is down.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
+>
+> Has this been tested on WCN7850? My understanding is that firmware may 
+> expect vdev down and then vdev restart
+>
+For WCN7850, firmware do not expect vdev down for station vdev type here.
 
-The WMI_TLV packet is having a special WMI_TAG_ARRAY_BYTE section. This
-section can have a (payload) length up to 65535 bytes because the
-WMI_TLV_LEN can store up to 16 bits. The code was missing such a check and
-could have created a scan request which cannot be parsed correctly by the
-firmware.
+And this patch only take effect when arvif->is_up is not set,
 
-But the bigger problem was the allocation of the buffer. It has to align
-the TLV sections by 4 bytes. But the code was using an u8 to store the
-newly calculated length of this section (with alignment). And the new
-calculated length was then used to allocate the skbuff. But the actual code
-to copy in the data is using the extraie.len and not the calculated
-"aligned" length.
+it is hard to happen that for MCC station mode.
 
-The length of extraie with IEEE80211_HW_SINGLE_SCAN_ON_ALL_BANDS enabled
-was 264 bytes during tests with a wifi card. But it only allocated 8
-bytes (264 bytes % 256) for it. As consequence, the code to memcpy the
-extraie into the skb was then just overwriting data after skb->end. Things
-like shinfo were therefore corrupted. This could usually be seen by a crash
-in skb_zcopy_clear which tried to call a ubuf_info callback (using a bogus
-address).
+Because this function is entered for channel switch for MCC station mode,
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+it means station is connected to the AP, then arvif->is_up is set, then 
+this patch not take effect.
 
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/wmi.c | 22 ++++++++++++++--------
- 1 file changed, 14 insertions(+), 8 deletions(-)
+[...]
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 6512267ae4ca..0acd58aed79d 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -2145,7 +2145,7 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
- 	void *ptr;
- 	int i, ret, len;
- 	u32 *tmp_ptr;
--	u8 extraie_len_with_pad = 0;
-+	u32 extraie_len_with_pad = 0;
- 	struct ath12k_wmi_hint_short_ssid_arg *s_ssid = NULL;
- 	struct ath12k_wmi_hint_bssid_arg *hint_bssid = NULL;
- 
-@@ -2163,12 +2163,6 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
- 	if (arg->num_bssid)
- 		len += sizeof(*bssid) * arg->num_bssid;
- 
--	len += TLV_HDR_SIZE;
--	if (arg->extraie.len)
--		extraie_len_with_pad =
--			roundup(arg->extraie.len, sizeof(u32));
--	len += extraie_len_with_pad;
--
- 	if (arg->num_hint_bssid)
- 		len += TLV_HDR_SIZE +
- 		       arg->num_hint_bssid * sizeof(*hint_bssid);
-@@ -2177,6 +2171,18 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
- 		len += TLV_HDR_SIZE +
- 		       arg->num_hint_s_ssid * sizeof(*s_ssid);
- 
-+	len += TLV_HDR_SIZE;
-+	if (arg->extraie.len)
-+		extraie_len_with_pad =
-+			roundup(arg->extraie.len, sizeof(u32));
-+	if (extraie_len_with_pad <= (wmi->wmi_ab->max_msg_len[ar->pdev_idx] - len)) {
-+		len += extraie_len_with_pad;
-+	} else {
-+		ath12k_warn(ar->ab, "discard large size %d bytes extraie for scan start\n",
-+			    arg->extraie.len);
-+		extraie_len_with_pad = 0;
-+	}
-+
- 	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
- 	if (!skb)
- 		return -ENOMEM;
-@@ -2266,7 +2272,7 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
- 	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, len);
- 	ptr += TLV_HDR_SIZE;
- 
--	if (arg->extraie.len)
-+	if (extraie_len_with_pad)
- 		memcpy(ptr, arg->extraie.ptr,
- 		       arg->extraie.len);
- 
-
-base-commit: b21fe5be53eb873c02e7479372726c8aeed171e3
--- 
-2.40.1
-
+>
 
 -- 
 ath12k mailing list
