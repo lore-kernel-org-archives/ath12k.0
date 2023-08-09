@@ -4,86 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E729C001B0
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70A47C04E69
 	for <ath12k@archiver.kernel.org>; Wed,  9 Aug 2023 04:27:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7rCZ/9kra/6la9V2pCvI1mgnqdtcKkuVnRnMlpjfsiw=; b=CbtrXhsu1+bNu5
-	sA+ezwgHRZYdjriIHJkZYCm+XMKrzLw9BTpjGE/dqUedRlrI9f3YJyBfLAR8ECCy/wqQT9rCjilo7
-	PSLa7IZ5JgbY+2zSuaVNUGtMCGKe3Hua7DQHG63LoigIMFbgpJjHDPP7W3LMkB1RYLkv/sOmxVYhC
-	UUxwgcociv9KzC11SE5rhjUPXZ96Pxmyt48243dDjqe2j7yPUyCIqSYAtgBMMsHd/O2xRHK5N2Dvm
-	oVB8F50oT+05Sd+Pphz2qmihiBA5WR6/qC9OQdzptiCA4q1tyXPXWSeDp/I8zMRbfaH0swem+WiJ8
-	CUdRvXnkD76NX4tjUQcg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1jfFxczB19rCPNA64cmNeGZ8S5SUAh1u2qGnxiR9zbE=; b=25txIUpvyjRYzv
+	fTJrN/czJevrFhg689OXFzbh759/leGimgFUfq10NWXd3cb6OkzLWWrDYJ7XDBKDQlpUBMrWQSZPP
+	W+OTfGcJEnaut5u1Q5n0QZ0QspvDy/tmRkakKht5dpy0kECnTFh/9GX03tzz4kIM8GOMaV/8oJVNI
+	ky6x2mY2YnzGB28ZVeWrxnyKFBAT6bDqZ4f8gcn4doicIL16RdYF1cvOHNIBGN6i+V0mF92nNKHqA
+	2ffW0zGnYYT1tUgDmpLGTHpUuQLxuDhodAchxPuMEsDENuIhpLBh7kCROs24sjOjmRfJSRDXmolZI
+	bLFqVm+cOa8oNQzDb/tA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTanW-00410f-2T
+	id 1qTanX-00410m-0F
 	for ath12k@archiver.kernel.org;
-	Wed, 09 Aug 2023 04:27:50 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 09 Aug 2023 04:27:51 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTanT-0040zc-2m
+	id 1qTanU-0040zX-0a
 	for ath12k@lists.infradead.org;
 	Wed, 09 Aug 2023 04:27:49 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3794Q7fJ005537;
-	Wed, 9 Aug 2023 04:27:45 GMT
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3794N2gh012381;
+	Wed, 9 Aug 2023 04:27:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=VzAGB4dZcEjV+6I3XoAIzzdK9wBW2NBYOCDdgn2OM54=;
- b=IeiFV73ftuWKX814QETk3qimrgOxO5Ws7nPlbAI2Xl9z0dsYTdCAHh03BFEjxF6mnyw2
- 3m1E7JFyAH8323Ers/7sHacfIh3dkdLsFYiE9sELxuK+w59ViX1LUW2QaHTPujbBC0mv
- uva/4bGMuwft2m/+BsUZ4Rb2gnlFot/tsEC7uZXKy+cO5+b/010mGH7WvpZ+HNbul8hZ
- VJymRlM44FVf0eolO5D6hsOOe4tT+fMYZwFJGZHaocBCwbS1Vy2EF0nnzSxaJV2Gdo1l
- gI8ar0DXRfn1lQWX36dYEmsO4dqRJDhIZVh02s2mGhUiWaoU6f8kshMJqVCuh5XWy/ik pQ== 
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sc28rr4ms-1
+ subject : date : message-id; s=qcppdkim1;
+ bh=zSMraO1ZfBnQqxcoJNNsj2Xo4IODwLxsQ7cHPDoHClU=;
+ b=j763HbTzAXywvd5dD116Kvr0HfSxg9gf9M9hBCb5p6OW1SILlRWszrTSlp8M74ZPuSwl
+ N92hK6lokmWj+FvATyPOEqEPysgZC8y7iJKsSE53WQhlRf79uPYk/bbtl42QgiyFN+vt
+ 18GIsElrfj7VhA+uMSWFBj6FpoROARGEJKN50GZc9VZt+DMlGEk7C+gasCqFSpJHsEvE
+ V/Wsd8s6Ixoqekrl1xE+9O4FL29LC2R4KYE4UpqZmxMJN2l/Mh+2FOQwksMLEFswJI3f
+ qs9CaXQf+PPLShDn5iIAYscGC+Y7o4flt1S/DOqBFzgpl7Zy6uwRfkH4iY9qpmyCipGU nw== 
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sbmrqhtgd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 09 Aug 2023 04:27:45 +0000
-Received: from pps.filterd (NASANPPMTA02.qualcomm.com [127.0.0.1])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3794Q8r7028285;
-	Wed, 9 Aug 2023 04:27:44 GMT
+	Wed, 09 Aug 2023 04:27:44 +0000
+Received: from pps.filterd (NASANPPMTA03.qualcomm.com [127.0.0.1])
+	by NASANPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 3794RhU1015378;
+	Wed, 9 Aug 2023 04:27:43 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by NASANPPMTA02.qualcomm.com (PPS) with ESMTPS id 3sbfxr1cs2-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Wed, 09 Aug 2023 04:27:44 +0000
-Received: from NASANPPMTA02.qualcomm.com (NASANPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3794RiXD029866;
-	Wed, 9 Aug 2023 04:27:44 GMT
+	by NASANPPMTA03.qualcomm.com (PPS) with ESMTP id 3sbuj0kkb8-1;
+	Wed, 09 Aug 2023 04:27:43 +0000
+Received: from NASANPPMTA03.qualcomm.com (NASANPPMTA03.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 3794RhBB015372;
+	Wed, 9 Aug 2023 04:27:43 GMT
 Received: from hprem-linux.qualcomm.com (hprem-linux.qualcomm.com [10.201.162.248])
-	by NASANPPMTA02.qualcomm.com (PPS) with ESMTP id 3794RgWq029858;
-	Wed, 09 Aug 2023 04:27:44 +0000
+	by NASANPPMTA03.qualcomm.com (PPS) with ESMTP id 3794RguM015366;
+	Wed, 09 Aug 2023 04:27:43 +0000
 Received: by hprem-linux.qualcomm.com (Postfix, from userid 4146166)
-	id EE486B003A8; Wed,  9 Aug 2023 09:57:41 +0530 (IST)
+	id 3F3ADB00102; Wed,  9 Aug 2023 09:57:41 +0530 (IST)
 From: Harshitha Prem <quic_hprem@quicinc.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Harshitha Prem <quic_hprem@quicinc.com>
-Subject: [PATCH 1/2] wifi: ath12k: Ignore fragments from uninitialized peer in dp
-Date: Wed,  9 Aug 2023 09:57:37 +0530
-Message-Id: <20230809042738.13394-2-quic_hprem@quicinc.com>
+Subject: [PATCH 0/2]  wifi: ath12k: Ignore fragments from uninitialized peer in dp
+Date: Wed,  9 Aug 2023 09:57:36 +0530
+Message-Id: <20230809042738.13394-1-quic_hprem@quicinc.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20230809042738.13394-1-quic_hprem@quicinc.com>
-References: <20230809042738.13394-1-quic_hprem@quicinc.com>
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: w6m2CHXJs8JXMWmsrrsLqmMZ2trLbjsh
-X-Proofpoint-GUID: w6m2CHXJs8JXMWmsrrsLqmMZ2trLbjsh
+X-Proofpoint-GUID: mkFtPjyv7EhiKNdwraI1PrhjVGHeNEgN
+X-Proofpoint-ORIG-GUID: mkFtPjyv7EhiKNdwraI1PrhjVGHeNEgN
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
  definitions=2023-08-09_01,2023-08-08_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 malwarescore=0 suspectscore=0
- adultscore=0 impostorscore=0 bulkscore=0 mlxscore=0 priorityscore=1501
- mlxlogscore=980 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
+ adultscore=0 mlxscore=0 suspectscore=0 phishscore=0 mlxlogscore=657
+ impostorscore=0 priorityscore=1501 clxscore=1011 bulkscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2306200000 definitions=main-2308090038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230808_212748_041149_BC3BFEA8 
-X-CRM114-Status: GOOD (  17.72  )
+X-CRM114-CacheID: sfid-20230808_212748_227365_8F8E4E60 
+X-CRM114-Status: GOOD (  11.89  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,101 +100,25 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 When max virtual ap interfaces are configured in all the bands
 with ACS and hostapd restart is done every 60s,
-a crash is observed at random times.
+a crash is observed at random times in dp_rx path.
 
-In the above scenario, a fragmented packet is received for self peer,
-for which rx_tid and rx_frags are not initialized in datapath.
-While handling this fragment, crash is observed as the rx_frag list
-is uninitialised and when we walk in ath12k_dp_rx_h_sort_frags,
-skb null leads to exception.
+This patch series handles the following:
+    1. Ignore the fragments of the peer which does not have its
+       datapath initialized.
+    2. Fix the undefined behavior of __fls which was found during
+       this crash.
 
-To address this, before processing received fragments we check
-dp_setup_done flag is set to ensure that peer has completed its
-dp peer setup for fragment queue, else ignore processing the
-fragments.
+Harshitha Prem (2):
+  wifi: ath12k: Ignore fragments from uninitialized peer in  dp
+  wifi: ath12k: fix undefined behavior with __fls in dp
 
-Call trace:
-    PC points to "ath12k_dp_process_rx_err+0x4e8/0xfcc [ath12k]"
-    LR points to "ath12k_dp_process_rx_err+0x480/0xfcc [ath12k]".
-    The Backtrace obtained is as follows:
-    ath12k_dp_process_rx_err+0x4e8/0xfcc [ath12k]
-    ath12k_dp_service_srng+0x78/0x260 [ath12k]
-    ath12k_pci_write32+0x990/0xb0c [ath12k]
-    __napi_poll+0x30/0xa4
-    net_rx_action+0x118/0x270
-    __do_softirq+0x10c/0x244
-    irq_exit+0x64/0xb4
-    __handle_domain_irq+0x88/0xac
-    gic_handle_irq+0x74/0xbc
-    el1_irq+0xf0/0x1c0
-    arch_cpu_idle+0x10/0x18
-    do_idle+0x104/0x248
-    cpu_startup_entry+0x20/0x64
-    rest_init+0xd0/0xdc
-    arch_call_rest_init+0xc/0x14
+ drivers/net/wireless/ath/ath12k/dp.c    |  1 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 11 ++++++++++-
+ drivers/net/wireless/ath/ath12k/peer.h  |  3 +++
+ 3 files changed, 14 insertions(+), 1 deletion(-)
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.c    | 1 +
- drivers/net/wireless/ath/ath12k/dp_rx.c | 9 +++++++++
- drivers/net/wireless/ath/ath12k/peer.h  | 3 +++
- 3 files changed, 13 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index ae1645d0f42a..d825e08d820a 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -38,6 +38,7 @@ void ath12k_dp_peer_cleanup(struct ath12k *ar, int vdev_id, const u8 *addr)
- 
- 	ath12k_dp_rx_peer_tid_cleanup(ar, peer);
- 	crypto_free_shash(peer->tfm_mmic);
-+	peer->dp_setup_done = false;
- 	spin_unlock_bh(&ab->base_lock);
- }
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 67f8c140840f..5923c7c9eaff 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2748,6 +2748,7 @@ int ath12k_dp_rx_peer_frag_setup(struct ath12k *ar, const u8 *peer_mac, int vdev
- 	}
- 
- 	peer->tfm_mmic = tfm;
-+	peer->dp_setup_done = true;
- 	spin_unlock_bh(&ab->base_lock);
- 
- 	return 0;
-@@ -3214,6 +3215,14 @@ static int ath12k_dp_rx_frag_h_mpdu(struct ath12k *ar,
- 		ret = -ENOENT;
- 		goto out_unlock;
- 	}
-+
-+	if (!peer->dp_setup_done) {
-+		ath12k_warn(ab, "The peer %pM [%d] has uninitialized datapath\n",
-+			    peer->addr, peer_id);
-+		ret = -ENOENT;
-+		goto out_unlock;
-+	}
-+
- 	rx_tid = &peer->rx_tid[tid];
- 
- 	if ((!skb_queue_empty(&rx_tid->rx_frags) && seqno != rx_tid->cur_sn) ||
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index b296dc0e2f67..c6edb24cbedd 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -44,6 +44,9 @@ struct ath12k_peer {
- 	struct ppdu_user_delayba ppdu_stats_delayba;
- 	bool delayba_flag;
- 	bool is_authorized;
-+
-+	/* protected by ab->data_lock */
-+	bool dp_setup_done;
- };
- 
- void ath12k_peer_unmap_event(struct ath12k_base *ab, u16 peer_id);
+base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
 -- 
 2.17.1
 
