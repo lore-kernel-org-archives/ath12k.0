@@ -4,91 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40952C001B0
-	for <ath12k@archiver.kernel.org>; Thu, 10 Aug 2023 08:14:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31AA2C001DE
+	for <ath12k@archiver.kernel.org>; Thu, 10 Aug 2023 08:15:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=azgzDU+NDPg68PS6xEEMbEz8/b266wmc62plYJd+qhs=; b=r+Xhh23AMGgKwN
-	FkGJzcT3VFwetwWB0ppZ0zfE/LDCs6Mg2rmFwCsrLOd21v3xcfj9vGD6I5eXzE2xq/tcn0y+84c4N
-	oICal4R15Zb4JTpPcpKWR27Z48KIDDBc56Tmz7JveB59qXTk1lWqaJBB5y5Dd9HUZWoJl1/98/lDp
-	AzHlOuW75xqF78ovHFWQgEOGmYoQyh4HhkolvuJ2ZnoO1F3XVuKGt/YrhoM+vQ0wGORu1iA7XXlqC
-	hVnHXip1SXG8Fp1tnAmaOzaTMOGtC+TWqUedCsHhxVdoa4YHALaggVeKK0pyb6tJxuIN2TQmJqVat
-	OblR0M66CqR3xVZyjiyQ==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0f/xF5jiw2c2NpiMQ6iqs6pegJHD4muRZOO6oou3hO0=; b=ub9zCN2f6brs3/2icrJP7ZUUqX
+	EwMV/NFImPbZXEHQWbsGJZn49pZs9S3vROskd+BZVjQ5RbgdQwsuAINzcWH7uLMwMlcdH9Riuxe2B
+	CM+XhcPdpt36nbQSh10x0IlFNRt6GsO5a9kL5wAy+mT3u5EQ6XyVs/v9L4h4Ee9hN1oDqZCNEzk4k
+	oM0YBZxYByrCBi89ODI/Vl1LUFCQs+Bb6sdzrInqByX1wXqwMcTGkxhyDXEN9BxVXqGPVutIqRvqw
+	S1O2aJ7SZjI+npuUVCIJbixv/owG56ZaoPAgc2wdxSXWeVve0sW+BqAYjhuHjzLg1zKmUIl2XM53m
+	a2ThoSNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qU0op-006qNZ-3A
+	id 1qU0pB-006qSj-2z
 	for ath12k@archiver.kernel.org;
-	Thu, 10 Aug 2023 08:14:55 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 10 Aug 2023 08:15:17 +0000
+Received: from dvalin.narfation.org ([213.160.73.56])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qU0om-006qLk-2d
+	id 1qU0p9-006qQg-35
 	for ath12k@lists.infradead.org;
-	Thu, 10 Aug 2023 08:14:54 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37A55Eok031431;
-	Thu, 10 Aug 2023 08:14:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=tdX0uGppUULsBxleRWSticHxr/dKu/KeYYQi2pz1Brk=;
- b=XAj/0kXX8pNSSO3ldf2mKP5lKuB4WCaqHo9znjIzrMjx2BAHaS1A8qSyDZ82Thz0ro8E
- C3o0sdNYDrtOE+yXlV0Ztk2x4g2t2pZI9U/ilBJQF4VmbFFF5TuRvc9IE2sHXMHagx4G
- uIqK6O/ELJwjfEGKfZJQxav+l2C66ponSvWOP0roO0TlehYYpjg/lqd9PEj7iRxZ2TNd
- jAYEOFRfUVdCD3c6n5nP3rstf4/pjKRKtiPAyM+EY/DYfuQyeemKYDtOim6KFJbw62Pu
- knN/ovIAqkwxpWnDF5dEmwNA7oEmyGcEJBlZcCNyJKY/82nAcRsrdBYP80Da8mKZoVAP 6A== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3scr39geyj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 10 Aug 2023 08:14:48 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37A8EleS002788
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 10 Aug 2023 08:14:47 GMT
-Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Thu, 10 Aug
- 2023 01:14:46 -0700
-Message-ID: <ca02c01f-6b53-edaf-321f-b9452558dbd3@quicinc.com>
-Date: Thu, 10 Aug 2023 16:14:43 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH v2] wifi: ath12k: Fix buffer overflow when scanning with
- extraie
-Content-Language: en-US
-To: Sven Eckelmann <sven@narfation.org>,
-        Jeff Johnson
-	<quic_jjohnson@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
+	Thu, 10 Aug 2023 08:15:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=narfation.org;
+	s=20121; t=1691655311;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=DLlflyYOngEb2hRwNwugn1tbiottu6X5hyIKDMBoaAk=;
+	b=JjL5skd+laa1ZwveR79V9J9EC64MRni9MkP3prlWPFyZ2iz7HFe3qhNq3Ko/ZcZeDvMz9X
+	ok57Jn+v04/zDwRK9HLmcocvY3OCxSJ3DFWTVCA3MBtG8W/Z+lQsh/ARZTN5O1AWll9E7R
+	fExEWWYQ1kQ1AGUiERGlJKy/TAL9N0I=
+From: Sven Eckelmann <sven@narfation.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org,
+ Wen Gong <quic_wgong@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+Subject: Re: [PATCH v2] wifi: ath12k: Fix buffer overflow when scanning with extraie
+Date: Thu, 10 Aug 2023 10:15:09 +0200
+Message-ID: <9198694.rMLUfLXkoz@ripper>
+In-Reply-To: <4161316.1IzOArtZ34@ripper>
 References: <20230809081241.32765-1-quic_wgong@quicinc.com>
- <3206e181-f770-c599-87e1-364114b9746a@quicinc.com>
  <db119d06-7549-3be9-524f-327485d34da9@quicinc.com>
  <4161316.1IzOArtZ34@ripper>
-From: Wen Gong <quic_wgong@quicinc.com>
-In-Reply-To: <4161316.1IzOArtZ34@ripper>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: f6xcLmL8TRRT3effa5Ou-q2hZaBXZSU0
-X-Proofpoint-ORIG-GUID: f6xcLmL8TRRT3effa5Ou-q2hZaBXZSU0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-08-10_07,2023-08-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
- lowpriorityscore=0 malwarescore=0 suspectscore=0 spamscore=0 phishscore=0
- adultscore=0 mlxlogscore=623 clxscore=1011 mlxscore=0 impostorscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2308100069
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230810_011452_971605_54801C8A 
-X-CRM114-Status: GOOD (  17.95  )
+X-CRM114-CacheID: sfid-20230810_011516_163753_75DC1A34 
+X-CRM114-Status: GOOD (  10.12  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,46 +63,81 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============3389501328648705322=="
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/10/2023 4:09 PM, Sven Eckelmann wrote:
-> On Thursday, 10 August 2023 06:31:02 CEST Wen Gong wrote:
->> On 8/10/2023 2:16 AM, Jeff Johnson wrote:
->>> On 8/9/2023 10:31 AM, Jeff Johnson wrote:
->>>> On 8/9/2023 1:12 AM, Wen Gong wrote:
->> [...]
->>>> Reviewed-by: Jeff Johnson <quic_jjohnson@quicinc.com>
->>> Wen, can you please add a Fixes: tag since based upon the discussion
->>> you actually observed a crash
->>>
->> Jeff, do you mean I should add the crash call stack or other thing in
->> this patch?
-> I think a reference to the commit which is fixed should be added.
->
->> The crash is observed by Sven Eckelmann <sven@narfation.org>  on 07 Dec
->> 2021 here:
->> Subject: Re: [PATCH] ath11k: enable
->> IEEE80211_HW_SINGLE_SCAN_ON_ALL_BANDS for WCN6855
->> https://lore.kernel.org/linux-wireless/3267805.el9kkjlfUZ@ripper/
-> This was for ath11k. See my patch for it in
+--===============3389501328648705322==
+Content-Type: multipart/signed; boundary="nextPart3052943.CbtlEUcBR6";
+ micalg="pgp-sha512"; protocol="application/pgp-signature"
+
+--nextPart3052943.CbtlEUcBR6
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"; protected-headers="v1"
+From: Sven Eckelmann <sven@narfation.org>
+Cc: linux-wireless@vger.kernel.org
+Date: Thu, 10 Aug 2023 10:15:09 +0200
+Message-ID: <9198694.rMLUfLXkoz@ripper>
+In-Reply-To: <4161316.1IzOArtZ34@ripper>
+MIME-Version: 1.0
+
+On Thursday, 10 August 2023 10:09:25 CEST Sven Eckelmann wrote:
+[...]
+> This was for ath11k. See my patch for it in 
 > https://lore.kernel.org/r/20211207142913.1734635-1-sven@narfation.org
 > So I doubt that it is ok to add the same backtrace for an ath12k commit.
->
-> And if I compare both patches, it looks to me that you don't handle the
+> 
+> And if I compare both patches, it looks to me that you don't handle the 
 > params->extraie.len > 16 bit (see WMI_TLV_LEN) in ath12k.
->
-> Kind regards,
-> 	Sven
 
-I added similar check here:
-[v2] wifi: ath12k: add check max message length while scanning with extraie
-https://patchwork.kernel.org/project/linux-wireless/patch/20230809081657.13858-1-quic_wgong@quicinc.com/
+Ok, just saw that the v1 had handling for that but it was not split into two patches.
+https://lore.kernel.org/r/20230809081657.13858-1-quic_wgong@quicinc.com
 
+So just ignore this remark.
+
+Kind regards,
+	Sven
+--nextPart3052943.CbtlEUcBR6
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEF10rh2Elc9zjMuACXYcKB8Eme0YFAmTUnI0ACgkQXYcKB8Em
+e0ZjHw/+N9VA/8VaWv4Ms52vwZTowjPU8NgfkaPnSVx7boynE9sun1JujW6P+SXj
+pDCb9++Sm+yDdHfPN/j5SYKh5HqqZ/YKNzy0Sesz6TJLEzZBaHoLLFIJfid71Czy
+QcNAK5M9g97OlMGgo/tVsE0BA6+2LKDplMiwBmT/p4RGS7VM0aw8lY9L6ElcHold
+TiPDpJyWjk9hT9S/Y0rSEoeyOKgpOBAoYEgIpR+s5F8OgCt/HivImemFQkQOhoaE
+dU1oKB6/gqIYURzsOoZGCMJuNyf+7JcAP+gPWs5otHqYPXIoDEjOEO9OzyD0g2GS
+hNvsKtvOjUVqILZH7Y6VS2YA0LAho37z6WX6M/UW8Mhaebjjj0vu2T5n5DuJJwUS
+5LbZyLhKoMAD6JcvbEFJ5U8NIoQwC++39dK+Gjw1rjEmAMQg/FA0dHjvD6Wn74uI
+YBrryCkE4uZCw0gmar9LVXibvzFjXV3iOHKGZm2gmkJ8LPU7KTb9Pve893zOaZ++
+H2qP9VVfXqXAYQfTsxk/90PXR89kk52B5MNSHCZ3sQELSDspb84zs1sGnTvwNVUf
+pQgfCbZt3eDr2SVYXZ56EuoEMUT3EUKaT6bPPLHlhjNBexkDXrReX486kGWQwzA9
+tsVlxxGhdH1LrZJiFOYHaSTh+E8o/R2McMT6w57OJcfj8+lptYs=
+=BGuC
+-----END PGP SIGNATURE-----
+
+--nextPart3052943.CbtlEUcBR6--
+
+
+
+
+
+--===============3389501328648705322==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 ath12k mailing list
 ath12k@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/ath12k
+
+--===============3389501328648705322==--
+
+
+
+
