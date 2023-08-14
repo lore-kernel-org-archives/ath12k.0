@@ -4,93 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40A52C001B0
-	for <ath12k@archiver.kernel.org>; Fri, 11 Aug 2023 09:54:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1225C001B0
+	for <ath12k@archiver.kernel.org>; Mon, 14 Aug 2023 07:33:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5x1vyBJPUoqHMAQ1BV+WVmjCqD1P+nf9VVKgLDKdX4=; b=lqTtHfr69cUPvw
-	xk5cAYdBmhZfMbEw7u+MVPnptZQq0vgxAmtVmRgwJNPIidL6mFajf31jC4nuVfAss0T8xhiR2RW1f
-	X1kDN+DDLPNNVcq2dch6c+Y9ZMf33wUgUXsdQwtSESjj7orQecQFZBdwpOxLyt7tN0AFhUdyHieg7
-	FgmAYfmWyjYst6bvRGMgkqLYnTUFN1Jd+I5b0ZhVZQCixWwOBC+4vQvS/6ygWD596t6Hn8Hkk85R4
-	QNp49flCfGC0wAREgHixG/ouY+fynPmmfiQpIizBYsf7u6nx10xgPPPXn+xfr29J1/TrYnmqpYXhe
-	zAc9ykQMl2J6JoJ5ja1w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f47wSdXfM3A4EqY+lvnnkto9l8thLwZYx9fN/NFNBuw=; b=YQ1Jgyhf7ram0E
+	A+/i8LB74UK3N95T3XCcGB5OoyqR7oAbcqZcYR7ewn3GDS+k6XhOFLck9SnGI5YB9jJdVdQtbhh/S
+	+F3dzNWTKkHLg5a+fD6BWNm9SonmW48GqijsTmyzakgVOIzxzvczmhEje16QOjVok2QmXPiTjUr+8
+	+triNCv/49v6d8FKoCwgIjcbu5USF5yN7Z7hvIid9cF2Dn5LqMNpQfdugbUbGcd+mU+1EQ2DmVDZs
+	d4oTs3Qd15uM57AtO0aLYF0yLRBGTTo4ZKOf/wgXMwTt62oeh6AG7zqVlEPYyZhpi+eWNeb59LmfE
+	EMz+W2fmUet9Evu7wsfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUOqe-00A46E-38
+	id 1qVS4c-00GNXo-1V
 	for ath12k@archiver.kernel.org;
-	Fri, 11 Aug 2023 09:54:24 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 14 Aug 2023 07:33:10 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qUOqb-00A45X-1q
+	id 1qVS4Z-00GNWW-2t
 	for ath12k@lists.infradead.org;
-	Fri, 11 Aug 2023 09:54:23 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37B4vDM9029032;
-	Fri, 11 Aug 2023 09:54:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=czV3SHta8Iw3Ga3vbsaBj6VIqSHhqc4SyELz2wDepHk=;
- b=ZUo3F59eHX6qssrWlLoNsr9odQimEJVjCop1DvDFpZ2J2A28SA3QeMCrACmTsND5MbWp
- dlVGlsVp6rWNiaAadzJqcLYVsI4jfqCCDv6WlvXHZYKWi7Y9e1ecX1Paa/Ssg46ZxPew
- 4j99lw5TB/sWIZuav3fiQrfiw07TzBdmYHGMHr8LXY+xRf8ZKRBkPD2f914aljf7d3F/
- LW1Fsh/aAnZ5SkdTK/BMZekncW0NRi84t4M6gzPI/klkz1M3NOOlKhHbWmv5oHXnzaP7
- 2rtvlPRQkrIfcobXu09lGq6T6ZTmkiGwW88sszqwXu9xe4wmXfpt+8T/TS0mBMxrnvZs wA== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sd8ywh9en-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 11 Aug 2023 09:54:19 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37B9sItM029246
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 11 Aug 2023 09:54:18 GMT
-Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.30; Fri, 11 Aug
- 2023 02:54:17 -0700
-Message-ID: <f29e5ba9-ef30-b954-7608-79604930ac1c@quicinc.com>
-Date: Fri, 11 Aug 2023 17:54:14 +0800
+	Mon, 14 Aug 2023 07:33:09 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id E86BC62FD7;
+	Mon, 14 Aug 2023 07:33:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16FDCC433C9;
+	Mon, 14 Aug 2023 07:33:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1691998386;
+	bh=oMrRrOgkXSkt1HkEn3EB2rPFU8IDxpcIDKwVgYNNvdw=;
+	h=From:To:Cc:Subject:Date:From;
+	b=VTgGRjUyjEGGy0kmNfgMxIoTWJq+BK4NPhgHFu/yvZy8c5xaZE3zpFYkVzmUXCDyN
+	 WDxf5vFDX/nQ1fLfar3q0tRT5WlSsYDKxJ/0iBGOXWpL+ES8e6We5G3cvhEJje6YA9
+	 gZ+81x9QbuwKGYQgTP2wBm0E1yJ5N3+l26ArtBBkBjop4PPk7as3IcTxGC8jScuS7+
+	 0fmXKVMXbyZHg0//zUjHz4IaTEnLcpKKX0cL1PHiWc5JXVHAAg4r0zDaxt027FzFfR
+	 NYEd0ObVyUAOV0BldiJ1uzeZcFNnLGHJHicSd2Xl6gdaJ0gOgKpx5F0tBjID8Hp610
+	 huK5qhIA5P2XQ==
+From: Arnd Bergmann <arnd@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>,
+	Jeff Johnson <quic_jjohnson@quicinc.com>,
+	Jiri Slaby <jirislaby@kernel.org>,
+	Nick Kossifidis <mickflemm@gmail.com>,
+	Luis Chamberlain <mcgrof@kernel.org>,
+	=?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
+Cc: Arnd Bergmann <arnd@arndb.de>,
+	Nathan Chancellor <nathan@kernel.org>,
+	Nick Desaulniers <ndesaulniers@google.com>,
+	Tom Rix <trix@redhat.com>,
+	Aloka Dixit <quic_alokad@quicinc.com>,
+	Wen Gong <quic_wgong@quicinc.com>,
+	Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
+	Karthik M <quic_karm@quicinc.com>,
+	Aditya Kumar Singh <quic_adisi@quicinc.com>,
+	Muna Sinada <quic_msinada@quicinc.com>,
+	Johannes Berg <johannes.berg@intel.com>,
+	ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	llvm@lists.linux.dev
+Subject: [PATCH] wireless: ath: remove unused-but-set parameter
+Date: Mon, 14 Aug 2023 09:32:23 +0200
+Message-Id: <20230814073255.1065242-1-arnd@kernel.org>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH 61/76] wifi: nl80211: add EML/MLD capabilities to
- per-iftype capabilities
-Content-Language: en-US
-To: Johannes Berg <johannes@sipsolutions.net>,
-        <linux-wireless@vger.kernel.org>
-CC: <ath12k@lists.infradead.org>, <quic_rkaliapp@quicinc.com>
-References: <20220713094502.163926-1-johannes@sipsolutions.net>
- <20220713114426.4dfc9ebd0461.Ice7b841051cfeb23da17bb2caa0e45191b34c4db@changeid>
- <d2f17799-6d90-9d72-a389-565163d723d2@quicinc.com>
- <f577425e2d4fd6141c29bcbfbea919565da9326d.camel@sipsolutions.net>
- <cc6b83eb-ac30-34fc-4827-290a9ae25378@quicinc.com>
- <8627bb8a3dddc33be7f1f97f30fc0f716328ff81.camel@sipsolutions.net>
- <29ab2b41-0adf-3a04-6eb9-3d5666253eb9@quicinc.com>
- <1ec93eca79a7bc96c1498b771c3b6ea2ebc78d95.camel@sipsolutions.net>
-From: Wen Gong <quic_wgong@quicinc.com>
-In-Reply-To: <1ec93eca79a7bc96c1498b771c3b6ea2ebc78d95.camel@sipsolutions.net>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: G3XRzibD2U1mNEub9tecomQdaCxohTIo
-X-Proofpoint-GUID: G3XRzibD2U1mNEub9tecomQdaCxohTIo
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-08-10_20,2023-08-10_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 mlxscore=0
- lowpriorityscore=0 impostorscore=0 phishscore=0 spamscore=0 clxscore=1015
- bulkscore=0 mlxlogscore=532 suspectscore=0 adultscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
- definitions=main-2308110089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230811_025421_760112_29D7D0FC 
-X-CRM114-Status: GOOD (  17.86  )
+X-CRM114-CacheID: sfid-20230814_003308_044785_FF6142CE 
+X-CRM114-Status: GOOD (  11.79  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,33 +87,94 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-T24gOC8xMS8yMDIzIDU6MjcgUE0sIEpvaGFubmVzIEJlcmcgd3JvdGU6Cj4gT24gRnJpLCAyMDIz
-LTA4LTExIGF0IDE3OjI0ICswODAwLCBXZW4gR29uZyB3cm90ZToKPgpbLi4uXQo+IE9LLCBhdCBs
-ZWFzdCB0aGF0IGFuc3dlcnMgdGhlIHF1ZXN0aW9uIHdoYXQgeW91J2Qgd2FudCB0byBkbyB3aXRo
-IGl0IDopCj4KPj4gRm9yIGR5bmFtaWMgbGluayBjaGFuZ2UsIGl0IGlzIGFub3RoZXIgbmV3IHRv
-cGljLCBzbyBJIGhhdmUgbm90IGdvb2QgYWR2aXNlCj4+IGZvciB0aGF0LvCfmIEKPiBCdXQgZXZl
-cnlvbmUncyBsb29raW5nIGF0IHRoYXQ/Ckkgc2VlIHRoZXJlIGhhcmUgc29tZSBwYXRjaGVzIGlu
-IG1hYzgwMjExL2NmZzgwMjExIGZvciBkeW5hbWljIGxpbmsgCnJlbW92YWwgc3VjaCBhcwoid2lm
-aTogbWFjODAyMTE6IFN1cHBvcnQgbGluayByZW1vdmFsIHVzaW5nIFJlY29uZmlndXJhdGlvbiBN
-TCBlbGVtZW50Ii4gCkZvciBsaW5rCnJlbW92YWwsIGl0IGRvZXMgbm90IGVmZmVjdCB0aGUgRU1M
-IGlzc3VlIEkgc2FpZC4gT25seSBsaW5rIGFkZCAKb3BlcmF0aW9uIHdpdGhvdXQgKHJlKWFzc29j
-CigzNS4zLjYgTUwgcmVjb25maWd1cmF0aW9uIG9mIElFRUUgUDgwMi4xMWJl4oSiL0QzLjIgZGlz
-YWxsb3cgKHJlKWFzc29jIApmb3IgbGluayBhZGQpCndpbGwgaW1wYWN0IHRoZSBFTUwgaXNzdWUg
-SSBzYWlkLiBCdXQgSSBkaWQgbm90IHNlZSBkeW5hbWljIGxpbmsgYWRkIApwYXRjaCBub3cuIFdp
-bGwKeW91IGFsc28gZG8gdGhlIHBhdGNoZXMgZm9yIGR5bmFtaWMgbGluayBhZGQgd2l0aG91dCAo
-cmUpYXNzb2M/Cj4KPiBIb25lc3RseSBJJ20gbm90IGV2ZW4gc3VyZSAtIGFuZCB5b3UgbWlnaHQg
-a25vdyBiZXR0ZXIgLSB3aGF0IHRoZSBFTUwKPiBjYXBhYmlsaXRpZXMgbWF0dGVyIGZvciBpZiB5
-b3UgbmV2ZXIgZW5hYmxlIEVNTC4KPgo+IFNvIGFsbW9zdCBmZWVscyBsaWtlIGlmIHlvdSBuZXZl
-ciBzZW5kIHRoZSBFTUwgT01OIGZyYW1lICh0aGFua3MgZm9yIHRoZQo+IG5hbWUhKSB0aGUgQVAg
-d291bGRuJ3QgcmVhbGx5IGNhcmUsIGFuZCB0aGF0J3Mgc29tZXRoaW5nIHlvdSBjb3VsZCBkbwo+
-IHZlcnkgZWFzaWx5IHdpdGhvdXQgY2hhbmdpbmcgaXQsIGkuZS4geW91IHByZXRlbmQgdGhhdCB5
-b3VyIDIuNCBHSHoKPiBhY3R1YWxseSBoYXMgRU1MLCB5b3UganVzdCBuZXZlciBlbmFibGUgaXQg
-aW4gY2FzZSAyLjQgR0h6IGlzIGFjdGl2ZT8KWW91ciBhZHZpc2UgbWF5YmUgZmVhc2libGUuIFRo
-ZW4gbm8gY2hhbmdlIGlzIG5lZWRlZCBpbiBubDgwMjExIGhlcmUgZm9yIAp0aGUgRU1MLgo+IGpv
-aGFubmVzCgotLSAKYXRoMTJrIG1haWxpbmcgbGlzdAphdGgxMmtAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9hdGgxMmsK
+From: Arnd Bergmann <arnd@arndb.de>
+
+This has never been used since the driver was merged, but it now causes
+a W=1 warning in recent clang versions
+
+drivers/net/wireless/ath/ath9k/main.c:1566:21: error: parameter 'changed_flags' set but not used [-Werror,-Wunused-but-set-parameter]
+drivers/net/wireless/ath/ath9k/htc_drv_main.c:1258:25: error: parameter 'changed_flags' set but not used [-Werror,-Wunused-but-set-parameter]
+drivers/net/wireless/ath/ath5k/mac80211-ops.c:367:62: error: parameter 'changed_flags' set but not used [-Werror,-Wunused-but-set-parameter]
+
+Remove the bit manipulation on the otherwise unused parameter.
+
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/net/wireless/ath/ath12k/mac.c         | 5 ++---
+ drivers/net/wireless/ath/ath5k/mac80211-ops.c | 1 -
+ drivers/net/wireless/ath/ath9k/htc_drv_main.c | 1 -
+ drivers/net/wireless/ath/ath9k/main.c         | 1 -
+ 4 files changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 91453624fd842..354ed66e6d13b 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -5666,7 +5666,6 @@ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 
+-	changed_flags &= SUPPORTED_FILTERS;
+ 	*total_flags &= SUPPORTED_FILTERS;
+ 	ar->filter_flags = *total_flags;
+ 
+@@ -5684,8 +5683,8 @@ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
+ 			    "fail to set monitor filter: %d\n", ret);
+ 	}
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
+-		   "changed_flags:0x%x, total_flags:0x%x, reset_flag:%d\n",
+-		   changed_flags, *total_flags, reset_flag);
++		   "total_flags:0x%x, reset_flag:%d\n",
++		   *total_flags, reset_flag);
+ 
+ 	mutex_unlock(&ar->conf_mutex);
+ }
+diff --git a/drivers/net/wireless/ath/ath5k/mac80211-ops.c b/drivers/net/wireless/ath/ath5k/mac80211-ops.c
+index 11ed30d6b595a..c630343ca4f9b 100644
+--- a/drivers/net/wireless/ath/ath5k/mac80211-ops.c
++++ b/drivers/net/wireless/ath/ath5k/mac80211-ops.c
+@@ -382,7 +382,6 @@ ath5k_configure_filter(struct ieee80211_hw *hw, unsigned int changed_flags,
+ 	mfilt[1] = multicast >> 32;
+ 
+ 	/* Only deal with supported flags */
+-	changed_flags &= SUPPORTED_FIF_FLAGS;
+ 	*new_flags &= SUPPORTED_FIF_FLAGS;
+ 
+ 	/* If HW detects any phy or radar errors, leave those filters on.
+diff --git a/drivers/net/wireless/ath/ath9k/htc_drv_main.c b/drivers/net/wireless/ath/ath9k/htc_drv_main.c
+index 51766de5ec3b6..6eeaa9011a168 100644
+--- a/drivers/net/wireless/ath/ath9k/htc_drv_main.c
++++ b/drivers/net/wireless/ath/ath9k/htc_drv_main.c
+@@ -1264,7 +1264,6 @@ static void ath9k_htc_configure_filter(struct ieee80211_hw *hw,
+ 	u32 rfilt;
+ 
+ 	mutex_lock(&priv->mutex);
+-	changed_flags &= SUPPORTED_FILTERS;
+ 	*total_flags &= SUPPORTED_FILTERS;
+ 
+ 	if (test_bit(ATH_OP_INVALID, &common->op_flags)) {
+diff --git a/drivers/net/wireless/ath/ath9k/main.c b/drivers/net/wireless/ath/ath9k/main.c
+index 6360d3356e256..1494feedb27db 100644
+--- a/drivers/net/wireless/ath/ath9k/main.c
++++ b/drivers/net/wireless/ath/ath9k/main.c
+@@ -1571,7 +1571,6 @@ static void ath9k_configure_filter(struct ieee80211_hw *hw,
+ 	struct ath_chanctx *ctx;
+ 	u32 rfilt;
+ 
+-	changed_flags &= SUPPORTED_FILTERS;
+ 	*total_flags &= SUPPORTED_FILTERS;
+ 
+ 	spin_lock_bh(&sc->chan_lock);
+-- 
+2.39.2
+
+
+-- 
+ath12k mailing list
+ath12k@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/ath12k
