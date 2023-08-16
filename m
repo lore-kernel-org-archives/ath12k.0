@@ -4,54 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E13F8C001E0
-	for <ath12k@archiver.kernel.org>; Wed, 16 Aug 2023 13:06:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B59E4C001B0
+	for <ath12k@archiver.kernel.org>; Wed, 16 Aug 2023 14:32:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tZzS8ez9iQXFa1yWQ+XJp23hUBP+yaruQEg7BL7TLrw=; b=lGdHwYGwZQvmjR
-	J1lokz3M6R/jLIzlIg36/MuKj11uw6DX8RvZU7QbyXnpZwobmR2gWxORkepL/1Uf0WukQmaoqrIgE
-	EY4TR9M+rO4r1NhJv/Pz+9PVcKMe7qaMXxVP7JIQznuVcZjWMOj1Yrui5oQZi69b79MeoC5BhRmCg
-	RxuGXkTAl6wPzpzc3mT2pcbzfOhUB8XTrDH4JSKJxztQn2ElGwQM4HT24/IEi5HAnKH58uJJIXC2f
-	3pqg1pgqfXqE0avTVsXYnixVbPMDPrSwSX58gN7dbazIns3izGZ9Y74rVeeVp3ZcIUmFYlDWpM9Pg
-	KrxD9haIJgGybLJgETfA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yoPMKmJ6owU7+uJDiC0w538WM0W9Jz4etB2yXwOwn9U=; b=h2ekVOyqmYi8DC
+	SOKjXrbjZEYGz/fWt6+/F2bdnAbhI+4bQ00R4QW10dE5eIH3lwtMW94Mf+qfnb0y5kbT5C9775zb7
+	xjnTAGFFrAqOPBenT2C8wrropBKg8gh69hh54ff7NhIb8ZhvN47W8Lu3faw3R2XQjQTCt3aw4q6K4
+	E/M77oEYQb7P/rfl6t9Fea+y1p7r4bQ4dlaWpFMX6EMCbG1w8WQ9BpgsivWGP0JeibejPYzRDzBs/
+	o7zg3EYzPHzTfNW8o2l5CvFX0LU3SJB4w/yw0mccaOjzy6XUWwlDwDQ+QSWtu+pCCTlBU22RBnqy3
+	NFT0PkyHnxnlKtvI8paQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWGE6-004DFd-25
+	id 1qWHZ8-004N6X-15
 	for ath12k@archiver.kernel.org;
-	Wed, 16 Aug 2023 13:06:18 +0000
-Received: from szxga02-in.huawei.com ([45.249.212.188])
+	Wed, 16 Aug 2023 14:32:06 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWGE3-004DDQ-1M
+	id 1qWHZ5-004N5b-0A
 	for ath12k@lists.infradead.org;
-	Wed, 16 Aug 2023 13:06:18 +0000
-Received: from canpemm500007.china.huawei.com (unknown [172.30.72.54])
-	by szxga02-in.huawei.com (SkyGuard) with ESMTP id 4RQpHJ1YPfzVjsD;
-	Wed, 16 Aug 2023 21:03:56 +0800 (CST)
-Received: from localhost (10.174.179.215) by canpemm500007.china.huawei.com
- (7.192.104.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.31; Wed, 16 Aug
- 2023 21:06:01 +0800
-From: Yue Haibing <yuehaibing@huawei.com>
-To: <kvalo@kernel.org>, <quic_jjohnson@quicinc.com>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-	<yuehaibing@huawei.com>
-Subject: [PATCH] wifi: ath12k: Remove unused declarations
-Date: Wed, 16 Aug 2023 21:05:50 +0800
-Message-ID: <20230816130550.50896-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+	Wed, 16 Aug 2023 14:32:04 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37GC8URe016793;
+	Wed, 16 Aug 2023 14:31:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=jwMHsnumhiM5iIO6GefpbZ6p/tzVbuBW5JsEh/NMYIM=;
+ b=jb++5KwJE6bgWwTsiG4jgS4BqbTz2pXlJPEjOuQ3Odp02rcVN1NaXN4O3I//wU6+esSt
+ ftbOH+qdmpTWZxLrFstRfY8OPQNOOF5pDleVA8eyaQ5lAvxhr9ZSzL6WbpCkRvcpVc48
+ TAaKzuS3QgoXmggmBdnuy9wEx4mETTrQ0QEFH6WBipRnX3YGI+p6UZckFruZ1ZBmZvrd
+ GpokHPvWQn3S3+H6nshO7y08sm+STv0rKZ1CPdY2Z69OmUQgFqEJNyJEzcA/xwSzymgH
+ droWPYMUz0GUiY7bzp3IWe0yXswsXRWwN3uVz67Bq6fEMo2eVr4X5Tkq519PcYu5DSos AA== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sgnje1ab1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 16 Aug 2023 14:31:47 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37GEVl1D018969
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 16 Aug 2023 14:31:47 GMT
+Received: from [10.48.240.144] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 16 Aug
+ 2023 07:31:46 -0700
+Message-ID: <e8b1cbce-3139-a922-85ee-970756027d87@quicinc.com>
+Date: Wed, 16 Aug 2023 07:31:46 -0700
 MIME-Version: 1.0
-X-Originating-IP: [10.174.179.215]
-X-ClientProxiedBy: dggems703-chm.china.huawei.com (10.3.19.180) To
- canpemm500007.china.huawei.com (7.192.104.62)
-X-CFilter-Loop: Reflected
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: Remove unused declarations
+Content-Language: en-US
+To: Yue Haibing <yuehaibing@huawei.com>, <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20230816130550.50896-1-yuehaibing@huawei.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20230816130550.50896-1-yuehaibing@huawei.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 3AN0QtSUJI4l4bLrjleyGTnuQaQa4UkG
+X-Proofpoint-ORIG-GUID: 3AN0QtSUJI4l4bLrjleyGTnuQaQa4UkG
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-16_14,2023-08-15_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ phishscore=0 adultscore=0 priorityscore=1501 malwarescore=0
+ mlxlogscore=729 spamscore=0 mlxscore=0 impostorscore=0 suspectscore=0
+ clxscore=1011 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308160125
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230816_060615_969466_A4AD0944 
-X-CRM114-Status: UNSURE (   6.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230816_073203_095402_1A5D8D74 
+X-CRM114-Status: GOOD (  22.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,76 +92,118 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Commit d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-declared but never implemented these, remove it.
+On 8/16/2023 6:05 AM, Yue Haibing wrote:
+> Commit d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+> declared but never implemented these, remove it.
 
-Signed-off-by: Yue Haibing <yuehaibing@huawei.com>
----
- drivers/net/wireless/ath/ath12k/ce.h   | 3 ---
- drivers/net/wireless/ath/ath12k/core.h | 1 -
- drivers/net/wireless/ath/ath12k/qmi.h  | 2 --
- drivers/net/wireless/ath/ath12k/wmi.h  | 2 --
- 4 files changed, 8 deletions(-)
+Note that the ath12k driver is under active development, and due to the 
+manner in which this driver was originally upstreamed (staring with just 
+core functionality) it is very possible that prototypes are present in 
+the current upstream code that are not currently being used, but which 
+will be used in the future.
 
-diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
-index 17cf16235e0b..79af3b6159f1 100644
---- a/drivers/net/wireless/ath/ath12k/ce.h
-+++ b/drivers/net/wireless/ath/ath12k/ce.h
-@@ -176,9 +176,6 @@ int ath12k_ce_alloc_pipes(struct ath12k_base *ab);
- void ath12k_ce_free_pipes(struct ath12k_base *ab);
- int ath12k_ce_get_attr_flags(struct ath12k_base *ab, int ce_id);
- void ath12k_ce_poll_send_completed(struct ath12k_base *ab, u8 pipe_id);
--int ath12k_ce_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
--				  u8 *ul_pipe, u8 *dl_pipe);
--int ath12k_ce_attr_attach(struct ath12k_base *ab);
- void ath12k_ce_get_shadow_config(struct ath12k_base *ab,
- 				 u32 **shadow_cfg, u32 *shadow_cfg_len);
- #endif
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 4389ff40b49d..d873b573dac6 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -788,7 +788,6 @@ int ath12k_core_fetch_board_data_api_1(struct ath12k_base *ab,
- int ath12k_core_fetch_bdf(struct ath12k_base *ath12k,
- 			  struct ath12k_board_data *bd);
- void ath12k_core_free_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd);
--int ath12k_core_check_dt(struct ath12k_base *ath12k);
- 
- void ath12k_core_halt(struct ath12k *ar);
- int ath12k_core_resume(struct ath12k_base *ab);
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index df76149c49f5..15944f5f33ab 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -562,8 +562,6 @@ struct qmi_wlanfw_wlan_cfg_resp_msg_v01 {
- int ath12k_qmi_firmware_start(struct ath12k_base *ab,
- 			      u32 mode);
- void ath12k_qmi_firmware_stop(struct ath12k_base *ab);
--void ath12k_qmi_event_work(struct work_struct *work);
--void ath12k_qmi_msg_recv_work(struct work_struct *work);
- void ath12k_qmi_deinit_service(struct ath12k_base *ab);
- int ath12k_qmi_init_service(struct ath12k_base *ab);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 8c047a9623f9..c75a6fa1f7e0 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4855,8 +4855,6 @@ int ath12k_wmi_vdev_install_key(struct ath12k *ar,
- 				struct wmi_vdev_install_key_arg *arg);
- int ath12k_wmi_pdev_bss_chan_info_request(struct ath12k *ar,
- 					  enum wmi_bss_chan_info_req_type type);
--int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
--				      u32 vdev_id, u32 pdev_id);
- int ath12k_wmi_send_pdev_temperature_cmd(struct ath12k *ar);
- int ath12k_wmi_send_peer_flush_tids_cmd(struct ath12k *ar,
- 					u8 peer_addr[ETH_ALEN],
--- 
-2.34.1
+However, since there are currently no implementations, it seems logical 
+to remove them for now. They can always be added back when the 
+implementations are provided.
+
+And for four of these ath11k also has unused prototypes, so feel free to 
+submit a patch for those.
+
+Further details below
+
+> 
+> Signed-off-by: Yue Haibing <yuehaibing@huawei.com>
+
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+
+> ---
+>   drivers/net/wireless/ath/ath12k/ce.h   | 3 ---
+>   drivers/net/wireless/ath/ath12k/core.h | 1 -
+>   drivers/net/wireless/ath/ath12k/qmi.h  | 2 --
+>   drivers/net/wireless/ath/ath12k/wmi.h  | 2 --
+>   4 files changed, 8 deletions(-)
+
+
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
+> index 17cf16235e0b..79af3b6159f1 100644
+> --- a/drivers/net/wireless/ath/ath12k/ce.h
+> +++ b/drivers/net/wireless/ath/ath12k/ce.h
+> @@ -176,9 +176,6 @@ int ath12k_ce_alloc_pipes(struct ath12k_base *ab);
+>   void ath12k_ce_free_pipes(struct ath12k_base *ab);
+>   int ath12k_ce_get_attr_flags(struct ath12k_base *ab, int ce_id);
+>   void ath12k_ce_poll_send_completed(struct ath12k_base *ab, u8 pipe_id);
+> -int ath12k_ce_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
+> -				  u8 *ul_pipe, u8 *dl_pipe);
+> -int ath12k_ce_attr_attach(struct ath12k_base *ab);
+
+These were inherited from ath11k, and are unused there as well. These 
+can go. Also feel free to submit a similar patch for ath11k
+
+>   void ath12k_ce_get_shadow_config(struct ath12k_base *ab,
+>   				 u32 **shadow_cfg, u32 *shadow_cfg_len);
+>   #endif
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 4389ff40b49d..d873b573dac6 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -788,7 +788,6 @@ int ath12k_core_fetch_board_data_api_1(struct ath12k_base *ab,
+>   int ath12k_core_fetch_bdf(struct ath12k_base *ath12k,
+>   			  struct ath12k_board_data *bd);
+>   void ath12k_core_free_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd);
+> -int ath12k_core_check_dt(struct ath12k_base *ath12k);
+
+This was inherited from ath11k, and it is in use there.
+I'm not sure if the underlying functionality will be required on ath12k, 
+but if so, the prototype can be added back when the function 
+implementation is added. So this can be removed
+
+>   
+>   void ath12k_core_halt(struct ath12k *ar);
+>   int ath12k_core_resume(struct ath12k_base *ab);
+> diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
+> index df76149c49f5..15944f5f33ab 100644
+> --- a/drivers/net/wireless/ath/ath12k/qmi.h
+> +++ b/drivers/net/wireless/ath/ath12k/qmi.h
+> @@ -562,8 +562,6 @@ struct qmi_wlanfw_wlan_cfg_resp_msg_v01 {
+>   int ath12k_qmi_firmware_start(struct ath12k_base *ab,
+>   			      u32 mode);
+>   void ath12k_qmi_firmware_stop(struct ath12k_base *ab);
+> -void ath12k_qmi_event_work(struct work_struct *work);
+> -void ath12k_qmi_msg_recv_work(struct work_struct *work);
+
+These were inherited from ath11k, and are unused there as well. These 
+can go. Also feel free to submit a similar patch for ath11k
+
+>   void ath12k_qmi_deinit_service(struct ath12k_base *ab);
+>   int ath12k_qmi_init_service(struct ath12k_base *ab);
+>   
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+> index 8c047a9623f9..c75a6fa1f7e0 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+> @@ -4855,8 +4855,6 @@ int ath12k_wmi_vdev_install_key(struct ath12k *ar,
+>   				struct wmi_vdev_install_key_arg *arg);
+>   int ath12k_wmi_pdev_bss_chan_info_request(struct ath12k *ar,
+>   					  enum wmi_bss_chan_info_req_type type);
+> -int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
+> -				      u32 vdev_id, u32 pdev_id);
+
+This was inherited from ath11k, and it is in use there.
+I expect this API will be implemented in the future since it is used by 
+the DebugFS code which is not yet present. That said, the prototype can 
+be added back when the function implementation is added. So this can be 
+removed
+
+
+>   int ath12k_wmi_send_pdev_temperature_cmd(struct ath12k *ar);
+>   int ath12k_wmi_send_peer_flush_tids_cmd(struct ath12k *ar,
+>   					u8 peer_addr[ETH_ALEN],
 
 
 -- 
