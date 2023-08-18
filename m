@@ -4,85 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB8D3C2FC39
-	for <ath12k@archiver.kernel.org>; Thu, 17 Aug 2023 14:21:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EBC6C05052
+	for <ath12k@archiver.kernel.org>; Fri, 18 Aug 2023 03:23:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5KmYDKkESzLq731OKwvIJ0wAjIlD2yXovynZ9fb8uaw=; b=nvTUimRgwov7to
-	lDyX2y4jPiGO+JHSHRabP/oEK8jyeR6ElfLqmd6IimSnuHYbaips1dlefkBdEc+G2LCk/qWPC+xjV
-	7FdaZC7c2lOdFrXfQrq3Xn9EddmRUVTzVmLUi2h3jwyhuthlH5vizVnIqCWFHmg/ntj6waN/reHFK
-	zg9RMIvZTqTu8owXfbXVVMk9HmWr8WMsCRDZ9tE3uNidPfbM+FQ5BCYJV9T82piOlVHmyAAWmiUdD
-	yzhqP5U84DXM0hc7Ft6vNQloinnXM1WZDGUByFcVWSR8xA/ghYPOFCm2euMRGuW8zrjgX8cexEYDs
-	6zZRrFcf60r++ve8mjxw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=XcrSg7klSQuEEhDi/L03eLyyPFMvEt4TWzgBTsc0EcY=; b=pb4QmvDINLFJLpcJ7QIpMp1ctr
+	mlgTPMN2gPJAlW8rtBXZDKs6Utl5MNZpxKLGbuWTUoAZ4dpwSOR5ruWoSrrdQKuWWHlHshal7sS/h
+	XAE7oiduSCgOvAXdIdWAAYer1ob/ggdRXy65Q9iHPOj/QXh4QxlE28zHT+wvDt5X8AzL6GEVxeh9X
+	KSfAN17E18K84ut37UdldWzhF3ycyrrVNwtNtr2aDOE+s1exA7qaEanbTI+UeCsnKtn7VagHfIGQs
+	VF3cw6JeNCYebrpxo7AGlrG4VIULdGKq5/gk2fy8gvsAbCRX1s+FOiLfJKgVL+KHkJSNQQxE+tcI/
+	EcH1uvFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWds0-006XLw-17
+	id 1qWq5b-007bM6-0K
 	for ath12k@archiver.kernel.org;
-	Thu, 17 Aug 2023 14:21:04 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 18 Aug 2023 03:23:55 +0000
+Received: from szxga03-in.huawei.com ([45.249.212.189])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWdry-006XKh-11
+	id 1qWq5X-007bL2-12
 	for ath12k@lists.infradead.org;
-	Thu, 17 Aug 2023 14:21:03 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37HDtuHM015246;
-	Thu, 17 Aug 2023 14:20:59 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=7HMbfla+JqqCMpc+15tgoMJPcNcMhQqN1xJKlXDGeGE=;
- b=lEgxfinms5umirBy0J8GBY7oR9U4sWMrDSXA5/narfBtxbRdKt/L+nlJFvFldAAM2j1O
- 3h+ffyZUTju1F5LLeui3ARmkb7CM/UdZzU5pddBRVEcAk5GICf7RtlTa4JE/c7j7g24S
- y2CP3xylWjFPniz7DdReShobn9YHfchRpYeZcfavnOW3/WmARlfqMks9l+iAAmEOKfgA
- gpprUPmko+eCpK9ROurO+XDugJqEJyEFPQv7HiTHKOI9EU4VZB+DSV9EtJnxrYdp0Vtb
- DD4UcCxsmuTW8zY6DhOfYEsjG0ADmBg1zc0ruJzcU06Rv5efrf8CqaJsw0O/0geu2nJe sw== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3shbc0sarg-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Aug 2023 14:20:59 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37HEKwnm000735
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Aug 2023 14:20:58 GMT
-Received: from [10.48.241.213] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Thu, 17 Aug
- 2023 07:20:58 -0700
-Message-ID: <9c082dcd-e26c-4f5b-ae85-8be96763c0c8@quicinc.com>
-Date: Thu, 17 Aug 2023 07:20:58 -0700
+	Fri, 18 Aug 2023 03:23:54 +0000
+Received: from canpemm500007.china.huawei.com (unknown [172.30.72.55])
+	by szxga03-in.huawei.com (SkyGuard) with ESMTP id 4RRnFV061PzFqjS;
+	Fri, 18 Aug 2023 11:20:46 +0800 (CST)
+Received: from [10.174.179.215] (10.174.179.215) by
+ canpemm500007.china.huawei.com (7.192.104.62) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.31; Fri, 18 Aug 2023 11:23:45 +0800
+Subject: Re: [PATCH] wifi: ath12k: Remove unused declarations
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20230816130550.50896-1-yuehaibing@huawei.com>
+ <e8b1cbce-3139-a922-85ee-970756027d87@quicinc.com>
+From: Yue Haibing <yuehaibing@huawei.com>
+Message-ID: <9200f152-8443-5c86-97f3-41e722ab7f1f@huawei.com>
+Date: Fri, 18 Aug 2023 11:23:44 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
+ Thunderbird/78.5.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] wifi: ath12k: fix radar detection in 160 MHz
+In-Reply-To: <e8b1cbce-3139-a922-85ee-970756027d87@quicinc.com>
 Content-Language: en-US
-To: Manish Dharanenthiran <quic_mdharane@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20230802085852.19821-1-quic_mdharane@quicinc.com>
- <20230802085852.19821-3-quic_mdharane@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230802085852.19821-3-quic_mdharane@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 7f-ckXnG2cfx16VnNqnUJHp-smiuCdbC
-X-Proofpoint-GUID: 7f-ckXnG2cfx16VnNqnUJHp-smiuCdbC
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-17_07,2023-08-17_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
- mlxlogscore=999 clxscore=1015 priorityscore=1501 impostorscore=0
- adultscore=0 spamscore=0 lowpriorityscore=0 phishscore=0 mlxscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2306200000 definitions=main-2308170129
+X-Originating-IP: [10.174.179.215]
+X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
+ canpemm500007.china.huawei.com (7.192.104.62)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230817_072102_357337_8DE16603 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20230817_202351_847154_15BA312F 
+X-CRM114-Status: GOOD (  19.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,31 +67,104 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/2/2023 1:58 AM, Manish Dharanenthiran wrote:
-> Radar detection fails in the secondary 80 MHz when the
-> the AP's primary 80 MHz is in non-DFS region in 160 MHz.
-> 
-> This is due to WMI channel flag WMI_CHAN_INFO_DFS_FREQ2 is not set
-> properly in case of the primary 80 MHz is in non-DFS region.
-> HALPHY detects the radar pulses in the secondary 80 MHz only when
-> WMI_CHAN_INFO_DFS_FREQ2 is set.
-> 
-> Fix this issue by setting WMI channel flag WMI_CHAN_INFO_DFS_FREQ2
-> based on the radar_enabled flag from the channel context.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Manish Dharanenthiran <quic_mdharane@quicinc.com>
-
-Reviewed-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+T24gMjAyMy84LzE2IDIyOjMxLCBKZWZmIEpvaG5zb24gd3JvdGU6Cj4gT24gOC8xNi8yMDIzIDY6
+MDUgQU0sIFl1ZSBIYWliaW5nIHdyb3RlOgo+PiBDb21taXQgZDg4OTkxMzIwNWNmICgid2lmaTog
+YXRoMTJrOiBkcml2ZXIgZm9yIFF1YWxjb21tIFdpLUZpIDcgZGV2aWNlcyIpCj4+IGRlY2xhcmVk
+IGJ1dCBuZXZlciBpbXBsZW1lbnRlZCB0aGVzZSwgcmVtb3ZlIGl0Lgo+IAo+IE5vdGUgdGhhdCB0
+aGUgYXRoMTJrIGRyaXZlciBpcyB1bmRlciBhY3RpdmUgZGV2ZWxvcG1lbnQsIGFuZCBkdWUgdG8g
+dGhlIG1hbm5lciBpbiB3aGljaCB0aGlzIGRyaXZlciB3YXMgb3JpZ2luYWxseSB1cHN0cmVhbWVk
+IChzdGFyaW5nIHdpdGgganVzdCBjb3JlIGZ1bmN0aW9uYWxpdHkpIGl0IGlzIHZlcnkgcG9zc2li
+bGUgdGhhdCBwcm90b3R5cGVzIGFyZSBwcmVzZW50IGluIHRoZSBjdXJyZW50IHVwc3RyZWFtIGNv
+ZGUgdGhhdCBhcmUgbm90IGN1cnJlbnRseSBiZWluZyB1c2VkLCBidXQgd2hpY2ggd2lsbCBiZSB1
+c2VkIGluIHRoZSBmdXR1cmUuCj4gCj4gSG93ZXZlciwgc2luY2UgdGhlcmUgYXJlIGN1cnJlbnRs
+eSBubyBpbXBsZW1lbnRhdGlvbnMsIGl0IHNlZW1zIGxvZ2ljYWwgdG8gcmVtb3ZlIHRoZW0gZm9y
+IG5vdy4gVGhleSBjYW4gYWx3YXlzIGJlIGFkZGVkIGJhY2sgd2hlbiB0aGUgaW1wbGVtZW50YXRp
+b25zIGFyZSBwcm92aWRlZC4KPiAKPiBBbmQgZm9yIGZvdXIgb2YgdGhlc2UgYXRoMTFrIGFsc28g
+aGFzIHVudXNlZCBwcm90b3R5cGVzLCBzbyBmZWVsIGZyZWUgdG8gc3VibWl0IGEgcGF0Y2ggZm9y
+IHRob3NlLgoKVGhhbmtzLCB0aGlzIGlzIGRvbmUgaW4gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVs
+Lm9yZy9wcm9qZWN0L2xpbnV4LXdpcmVsZXNzL3BhdGNoLzIwMjMwODExMTA0NDEzLjMzNjY4LTEt
+eXVlaGFpYmluZ0BodWF3ZWkuY29tCgo+IAo+IEZ1cnRoZXIgZGV0YWlscyBiZWxvdwo+IAo+Pgo+
+PiBTaWduZWQtb2ZmLWJ5OiBZdWUgSGFpYmluZyA8eXVlaGFpYmluZ0BodWF3ZWkuY29tPgo+IAo+
+IEFja2VkLWJ5OiBKZWZmIEpvaG5zb24gPHF1aWNfampvaG5zb25AcXVpY2luYy5jb20+Cj4gCj4+
+IC0tLQo+PiDCoCBkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL2NlLmjCoMKgIHwgMyAt
+LS0KPj4gwqAgZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9jb3JlLmggfCAxIC0KPj4g
+wqAgZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9xbWkuaMKgIHwgMiAtLQo+PiDCoCBk
+cml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL3dtaS5owqAgfCAyIC0tCj4+IMKgIDQgZmls
+ZXMgY2hhbmdlZCwgOCBkZWxldGlvbnMoLSkKPiAKPiAKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvY2UuaCBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0
+aC9hdGgxMmsvY2UuaAo+PiBpbmRleCAxN2NmMTYyMzVlMGIuLjc5YWYzYjYxNTlmMSAxMDA2NDQK
+Pj4gLS0tIGEvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9jZS5oCj4+ICsrKyBiL2Ry
+aXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvY2UuaAo+PiBAQCAtMTc2LDkgKzE3Niw2IEBA
+IGludCBhdGgxMmtfY2VfYWxsb2NfcGlwZXMoc3RydWN0IGF0aDEya19iYXNlICphYik7Cj4+IMKg
+IHZvaWQgYXRoMTJrX2NlX2ZyZWVfcGlwZXMoc3RydWN0IGF0aDEya19iYXNlICphYik7Cj4+IMKg
+IGludCBhdGgxMmtfY2VfZ2V0X2F0dHJfZmxhZ3Moc3RydWN0IGF0aDEya19iYXNlICphYiwgaW50
+IGNlX2lkKTsKPj4gwqAgdm9pZCBhdGgxMmtfY2VfcG9sbF9zZW5kX2NvbXBsZXRlZChzdHJ1Y3Qg
+YXRoMTJrX2Jhc2UgKmFiLCB1OCBwaXBlX2lkKTsKPj4gLWludCBhdGgxMmtfY2VfbWFwX3NlcnZp
+Y2VfdG9fcGlwZShzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiLCB1MTYgc2VydmljZV9pZCwKPj4gLcKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdTggKnVsX3BpcGUsIHU4ICpkbF9waXBl
+KTsKPj4gLWludCBhdGgxMmtfY2VfYXR0cl9hdHRhY2goc3RydWN0IGF0aDEya19iYXNlICphYik7
+Cj4gCj4gVGhlc2Ugd2VyZSBpbmhlcml0ZWQgZnJvbSBhdGgxMWssIGFuZCBhcmUgdW51c2VkIHRo
+ZXJlIGFzIHdlbGwuIFRoZXNlIGNhbiBnby4gQWxzbyBmZWVsIGZyZWUgdG8gc3VibWl0IGEgc2lt
+aWxhciBwYXRjaCBmb3IgYXRoMTFrCj4gCj4+IMKgIHZvaWQgYXRoMTJrX2NlX2dldF9zaGFkb3df
+Y29uZmlnKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIsCj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCB1MzIgKipzaGFkb3dfY2ZnLCB1MzIgKnNoYWRvd19jZmdfbGVuKTsKPj4g
+wqAgI2VuZGlmCj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJr
+L2NvcmUuaCBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvY29yZS5oCj4+IGluZGV4
+IDQzODlmZjQwYjQ5ZC4uZDg3M2I1NzNkYWM2IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL25ldC93
+aXJlbGVzcy9hdGgvYXRoMTJrL2NvcmUuaAo+PiArKysgYi9kcml2ZXJzL25ldC93aXJlbGVzcy9h
+dGgvYXRoMTJrL2NvcmUuaAo+PiBAQCAtNzg4LDcgKzc4OCw2IEBAIGludCBhdGgxMmtfY29yZV9m
+ZXRjaF9ib2FyZF9kYXRhX2FwaV8xKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIsCj4+IMKgIGludCBh
+dGgxMmtfY29yZV9mZXRjaF9iZGYoc3RydWN0IGF0aDEya19iYXNlICphdGgxMmssCj4+IMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgYXRoMTJrX2JvYXJkX2RhdGEgKmJkKTsK
+Pj4gwqAgdm9pZCBhdGgxMmtfY29yZV9mcmVlX2JkZihzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiLCBz
+dHJ1Y3QgYXRoMTJrX2JvYXJkX2RhdGEgKmJkKTsKPj4gLWludCBhdGgxMmtfY29yZV9jaGVja19k
+dChzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmF0aDEyayk7Cj4gCj4gVGhpcyB3YXMgaW5oZXJpdGVkIGZy
+b20gYXRoMTFrLCBhbmQgaXQgaXMgaW4gdXNlIHRoZXJlLgo+IEknbSBub3Qgc3VyZSBpZiB0aGUg
+dW5kZXJseWluZyBmdW5jdGlvbmFsaXR5IHdpbGwgYmUgcmVxdWlyZWQgb24gYXRoMTJrLCBidXQg
+aWYgc28sIHRoZSBwcm90b3R5cGUgY2FuIGJlIGFkZGVkIGJhY2sgd2hlbiB0aGUgZnVuY3Rpb24g
+aW1wbGVtZW50YXRpb24gaXMgYWRkZWQuIFNvIHRoaXMgY2FuIGJlIHJlbW92ZWQKPiAKPj4gwqAg
+wqAgdm9pZCBhdGgxMmtfY29yZV9oYWx0KHN0cnVjdCBhdGgxMmsgKmFyKTsKPj4gwqAgaW50IGF0
+aDEya19jb3JlX3Jlc3VtZShzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiKTsKPj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvcW1pLmggYi9kcml2ZXJzL25ldC93aXJl
+bGVzcy9hdGgvYXRoMTJrL3FtaS5oCj4+IGluZGV4IGRmNzYxNDljNDlmNS4uMTU5NDRmNWYzM2Fi
+IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL3FtaS5oCj4+
+ICsrKyBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvcW1pLmgKPj4gQEAgLTU2Miw4
+ICs1NjIsNiBAQCBzdHJ1Y3QgcW1pX3dsYW5md193bGFuX2NmZ19yZXNwX21zZ192MDEgewo+PiDC
+oCBpbnQgYXRoMTJrX3FtaV9maXJtd2FyZV9zdGFydChzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiLAo+
+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB1MzIgbW9kZSk7Cj4+IMKg
+IHZvaWQgYXRoMTJrX3FtaV9maXJtd2FyZV9zdG9wKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIpOwo+
+PiAtdm9pZCBhdGgxMmtfcW1pX2V2ZW50X3dvcmsoc3RydWN0IHdvcmtfc3RydWN0ICp3b3JrKTsK
+Pj4gLXZvaWQgYXRoMTJrX3FtaV9tc2dfcmVjdl93b3JrKHN0cnVjdCB3b3JrX3N0cnVjdCAqd29y
+ayk7Cj4gCj4gVGhlc2Ugd2VyZSBpbmhlcml0ZWQgZnJvbSBhdGgxMWssIGFuZCBhcmUgdW51c2Vk
+IHRoZXJlIGFzIHdlbGwuIFRoZXNlIGNhbiBnby4gQWxzbyBmZWVsIGZyZWUgdG8gc3VibWl0IGEg
+c2ltaWxhciBwYXRjaCBmb3IgYXRoMTFrCj4gCj4+IMKgIHZvaWQgYXRoMTJrX3FtaV9kZWluaXRf
+c2VydmljZShzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiKTsKPj4gwqAgaW50IGF0aDEya19xbWlfaW5p
+dF9zZXJ2aWNlKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIpOwo+PiDCoCBkaWZmIC0tZ2l0IGEvZHJp
+dmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay93bWkuaCBiL2RyaXZlcnMvbmV0L3dpcmVsZXNz
+L2F0aC9hdGgxMmsvd21pLmgKPj4gaW5kZXggOGMwNDdhOTYyM2Y5Li5jNzVhNmZhMWY3ZTAgMTAw
+NjQ0Cj4+IC0tLSBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvd21pLmgKPj4gKysr
+IGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay93bWkuaAo+PiBAQCAtNDg1NSw4ICs0
+ODU1LDYgQEAgaW50IGF0aDEya193bWlfdmRldl9pbnN0YWxsX2tleShzdHJ1Y3QgYXRoMTJrICph
+ciwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3Qgd21pX3ZkZXZf
+aW5zdGFsbF9rZXlfYXJnICphcmcpOwo+PiDCoCBpbnQgYXRoMTJrX3dtaV9wZGV2X2Jzc19jaGFu
+X2luZm9fcmVxdWVzdChzdHJ1Y3QgYXRoMTJrICphciwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBlbnVtIHdtaV9ic3NfY2hhbl9pbmZvX3JlcV90eXBl
+IHR5cGUpOwo+PiAtaW50IGF0aDEya193bWlfc2VuZF9zdGF0c19yZXF1ZXN0X2NtZChzdHJ1Y3Qg
+YXRoMTJrICphciwgdTMyIHN0YXRzX2lkLAo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIHUzMiB2ZGV2X2lkLCB1MzIgcGRldl9pZCk7Cj4gCj4gVGhpcyB3YXMg
+aW5oZXJpdGVkIGZyb20gYXRoMTFrLCBhbmQgaXQgaXMgaW4gdXNlIHRoZXJlLgo+IEkgZXhwZWN0
+IHRoaXMgQVBJIHdpbGwgYmUgaW1wbGVtZW50ZWQgaW4gdGhlIGZ1dHVyZSBzaW5jZSBpdCBpcyB1
+c2VkIGJ5IHRoZSBEZWJ1Z0ZTIGNvZGUgd2hpY2ggaXMgbm90IHlldCBwcmVzZW50LiBUaGF0IHNh
+aWQsIHRoZSBwcm90b3R5cGUgY2FuIGJlIGFkZGVkIGJhY2sgd2hlbiB0aGUgZnVuY3Rpb24gaW1w
+bGVtZW50YXRpb24gaXMgYWRkZWQuIFNvIHRoaXMgY2FuIGJlIHJlbW92ZWQKPiAKPiAKPj4gwqAg
+aW50IGF0aDEya193bWlfc2VuZF9wZGV2X3RlbXBlcmF0dXJlX2NtZChzdHJ1Y3QgYXRoMTJrICph
+cik7Cj4+IMKgIGludCBhdGgxMmtfd21pX3NlbmRfcGVlcl9mbHVzaF90aWRzX2NtZChzdHJ1Y3Qg
+YXRoMTJrICphciwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IHU4IHBlZXJfYWRkcltFVEhfQUxFTl0sCj4gCj4gLgoKLS0gCmF0aDEyayBtYWlsaW5nIGxpc3QK
+YXRoMTJrQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vYXRoMTJrCg==
