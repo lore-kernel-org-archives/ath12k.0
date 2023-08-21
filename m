@@ -4,58 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EBC6C05052
-	for <ath12k@archiver.kernel.org>; Fri, 18 Aug 2023 03:23:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B81CEE49A0
+	for <ath12k@archiver.kernel.org>; Mon, 21 Aug 2023 06:14:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=XcrSg7klSQuEEhDi/L03eLyyPFMvEt4TWzgBTsc0EcY=; b=pb4QmvDINLFJLpcJ7QIpMp1ctr
-	mlgTPMN2gPJAlW8rtBXZDKs6Utl5MNZpxKLGbuWTUoAZ4dpwSOR5ruWoSrrdQKuWWHlHshal7sS/h
-	XAE7oiduSCgOvAXdIdWAAYer1ob/ggdRXy65Q9iHPOj/QXh4QxlE28zHT+wvDt5X8AzL6GEVxeh9X
-	KSfAN17E18K84ut37UdldWzhF3ycyrrVNwtNtr2aDOE+s1exA7qaEanbTI+UeCsnKtn7VagHfIGQs
-	VF3cw6JeNCYebrpxo7AGlrG4VIULdGKq5/gk2fy8gvsAbCRX1s+FOiLfJKgVL+KHkJSNQQxE+tcI/
-	EcH1uvFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9m2WGZosBtCaYlVSdmqzkMUrxMAin9I6IrmcHz/BzzE=; b=xKCm6iEViYDNxY
+	CHt6hH2wXnWkEs+zL/NNSAG8caAmOKsl8YdqhIHV3klra5u9FDdZ2GQ2j+i93ULKj0JDRJxMMHGvA
+	z8b3Os2Yqg/aYDbWym+hKnXaU/P4n3mgl2bf5OJtTKOzJjMjUNKTDqFkqQSsVacfjRUAswX28irHX
+	yVQ90IlC4jkO+tQ4u5nB2hJfJ5UhugSGvFEE1HyjIW0+5BwpTagW2GY1umNk9MdSDlh0urYU4bN6/
+	L6hIGMeDzijqndZ+CUNOsscyvvEypWQkgI0moxPbecxRaRGNXJPJc4lUbUMPL6XVNdJXg6NKNF1sr
+	R1RRbEIj6om5oo/x9bdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWq5b-007bM6-0K
+	id 1qXyBf-00DEoV-19
 	for ath12k@archiver.kernel.org;
-	Fri, 18 Aug 2023 03:23:55 +0000
-Received: from szxga03-in.huawei.com ([45.249.212.189])
+	Mon, 21 Aug 2023 06:14:51 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qWq5X-007bL2-12
+	id 1qXyBc-00DEn9-2B
 	for ath12k@lists.infradead.org;
-	Fri, 18 Aug 2023 03:23:54 +0000
-Received: from canpemm500007.china.huawei.com (unknown [172.30.72.55])
-	by szxga03-in.huawei.com (SkyGuard) with ESMTP id 4RRnFV061PzFqjS;
-	Fri, 18 Aug 2023 11:20:46 +0800 (CST)
-Received: from [10.174.179.215] (10.174.179.215) by
- canpemm500007.china.huawei.com (7.192.104.62) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.31; Fri, 18 Aug 2023 11:23:45 +0800
-Subject: Re: [PATCH] wifi: ath12k: Remove unused declarations
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20230816130550.50896-1-yuehaibing@huawei.com>
- <e8b1cbce-3139-a922-85ee-970756027d87@quicinc.com>
-From: Yue Haibing <yuehaibing@huawei.com>
-Message-ID: <9200f152-8443-5c86-97f3-41e722ab7f1f@huawei.com>
-Date: Fri, 18 Aug 2023 11:23:44 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.5.0
+	Mon, 21 Aug 2023 06:14:50 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37L69Tos023141;
+	Mon, 21 Aug 2023 06:14:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=wS2gz4qWNMO1J13T8lzU2svIo7IAYpG2tQumZUhsKP8=;
+ b=glSw36buA3nVFDyDhiN+lSgaXxZP6rW8UoAb9bKerAReJiFZ7kF8wq1KGKd5HIggAPL4
+ Vf1p6th39RE3knAQvr+pPzcPcFbKjiF2U86POsi0N25owhNsMy3muRWmEBgwSr+l+2fl
+ BldNzeRgzlbPz/dOzkIFO6BXqzUZQl4oZvRn66BkDD9EzTmoS81MWjOxE9CRmC9d1268
+ umOru8x7tQLg+Q0YC0Nd0H8AgiPZZyHwN9+giIBmR5OG96+cn/irgvEheiph52a6Tv66
+ dvynxZKbqHpd/bnw8r/efQuB/+hjOxlYhwjXcrV6ga60qZOZI2bEklywidx/H2Lk2n++ /g== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sjnu12rfp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 21 Aug 2023 06:14:46 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37L6EjbA027897
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 21 Aug 2023 06:14:45 GMT
+Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Sun, 20 Aug 2023 23:14:43 -0700
+From: Wen Gong <quic_wgong@quicinc.com>
+To: <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
+Subject: [PATCH] wifi: mac80211: fix cfg80211_bss always hold when assoc response fail for MLO connection
+Date: Mon, 21 Aug 2023 02:13:55 -0400
+Message-ID: <20230821061355.18168-1-quic_wgong@quicinc.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-In-Reply-To: <e8b1cbce-3139-a922-85ee-970756027d87@quicinc.com>
-Content-Language: en-US
-X-Originating-IP: [10.174.179.215]
-X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
- canpemm500007.china.huawei.com (7.192.104.62)
-X-CFilter-Loop: Reflected
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: -hsVrYKt2akLK0hAkZFKy7k0D-37pUEd
+X-Proofpoint-GUID: -hsVrYKt2akLK0hAkZFKy7k0D-37pUEd
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-20_15,2023-08-18_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
+ impostorscore=0 clxscore=1015 mlxlogscore=999 suspectscore=0
+ malwarescore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0
+ priorityscore=1501 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2306200000 definitions=main-2308210056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230817_202351_847154_15BA312F 
-X-CRM114-Status: GOOD (  19.95  )
+X-CRM114-CacheID: sfid-20230820_231448_827594_D49A467D 
+X-CRM114-Status: GOOD (  23.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,104 +89,91 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-T24gMjAyMy84LzE2IDIyOjMxLCBKZWZmIEpvaG5zb24gd3JvdGU6Cj4gT24gOC8xNi8yMDIzIDY6
-MDUgQU0sIFl1ZSBIYWliaW5nIHdyb3RlOgo+PiBDb21taXQgZDg4OTkxMzIwNWNmICgid2lmaTog
-YXRoMTJrOiBkcml2ZXIgZm9yIFF1YWxjb21tIFdpLUZpIDcgZGV2aWNlcyIpCj4+IGRlY2xhcmVk
-IGJ1dCBuZXZlciBpbXBsZW1lbnRlZCB0aGVzZSwgcmVtb3ZlIGl0Lgo+IAo+IE5vdGUgdGhhdCB0
-aGUgYXRoMTJrIGRyaXZlciBpcyB1bmRlciBhY3RpdmUgZGV2ZWxvcG1lbnQsIGFuZCBkdWUgdG8g
-dGhlIG1hbm5lciBpbiB3aGljaCB0aGlzIGRyaXZlciB3YXMgb3JpZ2luYWxseSB1cHN0cmVhbWVk
-IChzdGFyaW5nIHdpdGgganVzdCBjb3JlIGZ1bmN0aW9uYWxpdHkpIGl0IGlzIHZlcnkgcG9zc2li
-bGUgdGhhdCBwcm90b3R5cGVzIGFyZSBwcmVzZW50IGluIHRoZSBjdXJyZW50IHVwc3RyZWFtIGNv
-ZGUgdGhhdCBhcmUgbm90IGN1cnJlbnRseSBiZWluZyB1c2VkLCBidXQgd2hpY2ggd2lsbCBiZSB1
-c2VkIGluIHRoZSBmdXR1cmUuCj4gCj4gSG93ZXZlciwgc2luY2UgdGhlcmUgYXJlIGN1cnJlbnRs
-eSBubyBpbXBsZW1lbnRhdGlvbnMsIGl0IHNlZW1zIGxvZ2ljYWwgdG8gcmVtb3ZlIHRoZW0gZm9y
-IG5vdy4gVGhleSBjYW4gYWx3YXlzIGJlIGFkZGVkIGJhY2sgd2hlbiB0aGUgaW1wbGVtZW50YXRp
-b25zIGFyZSBwcm92aWRlZC4KPiAKPiBBbmQgZm9yIGZvdXIgb2YgdGhlc2UgYXRoMTFrIGFsc28g
-aGFzIHVudXNlZCBwcm90b3R5cGVzLCBzbyBmZWVsIGZyZWUgdG8gc3VibWl0IGEgcGF0Y2ggZm9y
-IHRob3NlLgoKVGhhbmtzLCB0aGlzIGlzIGRvbmUgaW4gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVs
-Lm9yZy9wcm9qZWN0L2xpbnV4LXdpcmVsZXNzL3BhdGNoLzIwMjMwODExMTA0NDEzLjMzNjY4LTEt
-eXVlaGFpYmluZ0BodWF3ZWkuY29tCgo+IAo+IEZ1cnRoZXIgZGV0YWlscyBiZWxvdwo+IAo+Pgo+
-PiBTaWduZWQtb2ZmLWJ5OiBZdWUgSGFpYmluZyA8eXVlaGFpYmluZ0BodWF3ZWkuY29tPgo+IAo+
-IEFja2VkLWJ5OiBKZWZmIEpvaG5zb24gPHF1aWNfampvaG5zb25AcXVpY2luYy5jb20+Cj4gCj4+
-IC0tLQo+PiDCoCBkcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL2NlLmjCoMKgIHwgMyAt
-LS0KPj4gwqAgZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9jb3JlLmggfCAxIC0KPj4g
-wqAgZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9xbWkuaMKgIHwgMiAtLQo+PiDCoCBk
-cml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL3dtaS5owqAgfCAyIC0tCj4+IMKgIDQgZmls
-ZXMgY2hhbmdlZCwgOCBkZWxldGlvbnMoLSkKPiAKPiAKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZl
-cnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvY2UuaCBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0
-aC9hdGgxMmsvY2UuaAo+PiBpbmRleCAxN2NmMTYyMzVlMGIuLjc5YWYzYjYxNTlmMSAxMDA2NDQK
-Pj4gLS0tIGEvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay9jZS5oCj4+ICsrKyBiL2Ry
-aXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvY2UuaAo+PiBAQCAtMTc2LDkgKzE3Niw2IEBA
-IGludCBhdGgxMmtfY2VfYWxsb2NfcGlwZXMoc3RydWN0IGF0aDEya19iYXNlICphYik7Cj4+IMKg
-IHZvaWQgYXRoMTJrX2NlX2ZyZWVfcGlwZXMoc3RydWN0IGF0aDEya19iYXNlICphYik7Cj4+IMKg
-IGludCBhdGgxMmtfY2VfZ2V0X2F0dHJfZmxhZ3Moc3RydWN0IGF0aDEya19iYXNlICphYiwgaW50
-IGNlX2lkKTsKPj4gwqAgdm9pZCBhdGgxMmtfY2VfcG9sbF9zZW5kX2NvbXBsZXRlZChzdHJ1Y3Qg
-YXRoMTJrX2Jhc2UgKmFiLCB1OCBwaXBlX2lkKTsKPj4gLWludCBhdGgxMmtfY2VfbWFwX3NlcnZp
-Y2VfdG9fcGlwZShzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiLCB1MTYgc2VydmljZV9pZCwKPj4gLcKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdTggKnVsX3BpcGUsIHU4ICpkbF9waXBl
-KTsKPj4gLWludCBhdGgxMmtfY2VfYXR0cl9hdHRhY2goc3RydWN0IGF0aDEya19iYXNlICphYik7
-Cj4gCj4gVGhlc2Ugd2VyZSBpbmhlcml0ZWQgZnJvbSBhdGgxMWssIGFuZCBhcmUgdW51c2VkIHRo
-ZXJlIGFzIHdlbGwuIFRoZXNlIGNhbiBnby4gQWxzbyBmZWVsIGZyZWUgdG8gc3VibWl0IGEgc2lt
-aWxhciBwYXRjaCBmb3IgYXRoMTFrCj4gCj4+IMKgIHZvaWQgYXRoMTJrX2NlX2dldF9zaGFkb3df
-Y29uZmlnKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIsCj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCB1MzIgKipzaGFkb3dfY2ZnLCB1MzIgKnNoYWRvd19jZmdfbGVuKTsKPj4g
-wqAgI2VuZGlmCj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJr
-L2NvcmUuaCBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvY29yZS5oCj4+IGluZGV4
-IDQzODlmZjQwYjQ5ZC4uZDg3M2I1NzNkYWM2IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL25ldC93
-aXJlbGVzcy9hdGgvYXRoMTJrL2NvcmUuaAo+PiArKysgYi9kcml2ZXJzL25ldC93aXJlbGVzcy9h
-dGgvYXRoMTJrL2NvcmUuaAo+PiBAQCAtNzg4LDcgKzc4OCw2IEBAIGludCBhdGgxMmtfY29yZV9m
-ZXRjaF9ib2FyZF9kYXRhX2FwaV8xKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIsCj4+IMKgIGludCBh
-dGgxMmtfY29yZV9mZXRjaF9iZGYoc3RydWN0IGF0aDEya19iYXNlICphdGgxMmssCj4+IMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgYXRoMTJrX2JvYXJkX2RhdGEgKmJkKTsK
-Pj4gwqAgdm9pZCBhdGgxMmtfY29yZV9mcmVlX2JkZihzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiLCBz
-dHJ1Y3QgYXRoMTJrX2JvYXJkX2RhdGEgKmJkKTsKPj4gLWludCBhdGgxMmtfY29yZV9jaGVja19k
-dChzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmF0aDEyayk7Cj4gCj4gVGhpcyB3YXMgaW5oZXJpdGVkIGZy
-b20gYXRoMTFrLCBhbmQgaXQgaXMgaW4gdXNlIHRoZXJlLgo+IEknbSBub3Qgc3VyZSBpZiB0aGUg
-dW5kZXJseWluZyBmdW5jdGlvbmFsaXR5IHdpbGwgYmUgcmVxdWlyZWQgb24gYXRoMTJrLCBidXQg
-aWYgc28sIHRoZSBwcm90b3R5cGUgY2FuIGJlIGFkZGVkIGJhY2sgd2hlbiB0aGUgZnVuY3Rpb24g
-aW1wbGVtZW50YXRpb24gaXMgYWRkZWQuIFNvIHRoaXMgY2FuIGJlIHJlbW92ZWQKPiAKPj4gwqAg
-wqAgdm9pZCBhdGgxMmtfY29yZV9oYWx0KHN0cnVjdCBhdGgxMmsgKmFyKTsKPj4gwqAgaW50IGF0
-aDEya19jb3JlX3Jlc3VtZShzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiKTsKPj4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvcW1pLmggYi9kcml2ZXJzL25ldC93aXJl
-bGVzcy9hdGgvYXRoMTJrL3FtaS5oCj4+IGluZGV4IGRmNzYxNDljNDlmNS4uMTU5NDRmNWYzM2Fi
-IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL25ldC93aXJlbGVzcy9hdGgvYXRoMTJrL3FtaS5oCj4+
-ICsrKyBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvcW1pLmgKPj4gQEAgLTU2Miw4
-ICs1NjIsNiBAQCBzdHJ1Y3QgcW1pX3dsYW5md193bGFuX2NmZ19yZXNwX21zZ192MDEgewo+PiDC
-oCBpbnQgYXRoMTJrX3FtaV9maXJtd2FyZV9zdGFydChzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiLAo+
-PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB1MzIgbW9kZSk7Cj4+IMKg
-IHZvaWQgYXRoMTJrX3FtaV9maXJtd2FyZV9zdG9wKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIpOwo+
-PiAtdm9pZCBhdGgxMmtfcW1pX2V2ZW50X3dvcmsoc3RydWN0IHdvcmtfc3RydWN0ICp3b3JrKTsK
-Pj4gLXZvaWQgYXRoMTJrX3FtaV9tc2dfcmVjdl93b3JrKHN0cnVjdCB3b3JrX3N0cnVjdCAqd29y
-ayk7Cj4gCj4gVGhlc2Ugd2VyZSBpbmhlcml0ZWQgZnJvbSBhdGgxMWssIGFuZCBhcmUgdW51c2Vk
-IHRoZXJlIGFzIHdlbGwuIFRoZXNlIGNhbiBnby4gQWxzbyBmZWVsIGZyZWUgdG8gc3VibWl0IGEg
-c2ltaWxhciBwYXRjaCBmb3IgYXRoMTFrCj4gCj4+IMKgIHZvaWQgYXRoMTJrX3FtaV9kZWluaXRf
-c2VydmljZShzdHJ1Y3QgYXRoMTJrX2Jhc2UgKmFiKTsKPj4gwqAgaW50IGF0aDEya19xbWlfaW5p
-dF9zZXJ2aWNlKHN0cnVjdCBhdGgxMmtfYmFzZSAqYWIpOwo+PiDCoCBkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay93bWkuaCBiL2RyaXZlcnMvbmV0L3dpcmVsZXNz
-L2F0aC9hdGgxMmsvd21pLmgKPj4gaW5kZXggOGMwNDdhOTYyM2Y5Li5jNzVhNmZhMWY3ZTAgMTAw
-NjQ0Cj4+IC0tLSBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMmsvd21pLmgKPj4gKysr
-IGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEyay93bWkuaAo+PiBAQCAtNDg1NSw4ICs0
-ODU1LDYgQEAgaW50IGF0aDEya193bWlfdmRldl9pbnN0YWxsX2tleShzdHJ1Y3QgYXRoMTJrICph
-ciwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3Qgd21pX3ZkZXZf
-aW5zdGFsbF9rZXlfYXJnICphcmcpOwo+PiDCoCBpbnQgYXRoMTJrX3dtaV9wZGV2X2Jzc19jaGFu
-X2luZm9fcmVxdWVzdChzdHJ1Y3QgYXRoMTJrICphciwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBlbnVtIHdtaV9ic3NfY2hhbl9pbmZvX3JlcV90eXBl
-IHR5cGUpOwo+PiAtaW50IGF0aDEya193bWlfc2VuZF9zdGF0c19yZXF1ZXN0X2NtZChzdHJ1Y3Qg
-YXRoMTJrICphciwgdTMyIHN0YXRzX2lkLAo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgIHUzMiB2ZGV2X2lkLCB1MzIgcGRldl9pZCk7Cj4gCj4gVGhpcyB3YXMg
-aW5oZXJpdGVkIGZyb20gYXRoMTFrLCBhbmQgaXQgaXMgaW4gdXNlIHRoZXJlLgo+IEkgZXhwZWN0
-IHRoaXMgQVBJIHdpbGwgYmUgaW1wbGVtZW50ZWQgaW4gdGhlIGZ1dHVyZSBzaW5jZSBpdCBpcyB1
-c2VkIGJ5IHRoZSBEZWJ1Z0ZTIGNvZGUgd2hpY2ggaXMgbm90IHlldCBwcmVzZW50LiBUaGF0IHNh
-aWQsIHRoZSBwcm90b3R5cGUgY2FuIGJlIGFkZGVkIGJhY2sgd2hlbiB0aGUgZnVuY3Rpb24gaW1w
-bGVtZW50YXRpb24gaXMgYWRkZWQuIFNvIHRoaXMgY2FuIGJlIHJlbW92ZWQKPiAKPiAKPj4gwqAg
-aW50IGF0aDEya193bWlfc2VuZF9wZGV2X3RlbXBlcmF0dXJlX2NtZChzdHJ1Y3QgYXRoMTJrICph
-cik7Cj4+IMKgIGludCBhdGgxMmtfd21pX3NlbmRfcGVlcl9mbHVzaF90aWRzX2NtZChzdHJ1Y3Qg
-YXRoMTJrICphciwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IHU4IHBlZXJfYWRkcltFVEhfQUxFTl0sCj4gCj4gLgoKLS0gCmF0aDEyayBtYWlsaW5nIGxpc3QK
-YXRoMTJrQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vYXRoMTJrCg==
+When connect to MLO AP with more than one link, and the assoc response of
+AP is not success, then cfg80211_unhold_bss() is not called for all the
+links' cfg80211_bss except the primary link which means the link used by
+the latest successful association request. Thus the hold value of the
+cfg80211_bss is not reset to 0 after the assoc fail, and then the
+__cfg80211_unlink_bss() will not be called for the cfg80211_bss by
+__cfg80211_bss_expire().
+
+Then the AP always looks exist even the AP is shutdown or reconfigured
+to another type, then it will lead error while connecting it again.
+
+The detail info are as below.
+
+When connect with muti-links AP, cfg80211_hold_bss() is called by
+cfg80211_mlme_assoc() for each cfg80211_bss of all the links. When
+assoc response from AP is not success(such as status_code==1), the
+ieee80211_link_data of non-primary link(sdata->link[link_id]) is NULL
+because ieee80211_assoc_success()->ieee80211_vif_update_links() is
+not called for the links.
+
+Then struct cfg80211_rx_assoc_resp resp in cfg80211_rx_assoc_resp() and
+struct cfg80211_connect_resp_params cr in __cfg80211_connect_result()
+will only have the data of the primary link, and finally function
+cfg80211_connect_result_release_bsses() only call cfg80211_unhold_bss()
+for the primary link. Then cfg80211_bss of the other links will never free
+because its hold is always > 0 now.
+
+Hence assign value for the bss and status from assoc_data since it is
+valid for this case. Also assign value of addr from assoc_data when the
+link is NULL because the addrs of assoc_data and link both represent the
+local link addr and they are same value for success connection.
+
+It is 100% ratio to reproduce the issue with this change.
+Add "mgmt->u.assoc_resp.status_code = 1" in ieee80211_rx_mgmt_assoc_resp().
+
+Fixes: 81151ce462e5 ("wifi: mac80211: support MLO authentication/association with one link")
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+---
+ net/mac80211/mlme.c | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/net/mac80211/mlme.c b/net/mac80211/mlme.c
+index f93eb38ae0b8..370b2cd0cc6d 100644
+--- a/net/mac80211/mlme.c
++++ b/net/mac80211/mlme.c
+@@ -5429,17 +5429,22 @@ static void ieee80211_rx_mgmt_assoc_resp(struct ieee80211_sub_if_data *sdata,
+ 	for (link_id = 0; link_id < IEEE80211_MLD_MAX_NUM_LINKS; link_id++) {
+ 		struct ieee80211_link_data *link;
+ 
+-		link = sdata_dereference(sdata->link[link_id], sdata);
+-		if (!link)
+-			continue;
+-
+ 		if (!assoc_data->link[link_id].bss)
+ 			continue;
+ 
+ 		resp.links[link_id].bss = assoc_data->link[link_id].bss;
+-		resp.links[link_id].addr = link->conf->addr;
+ 		resp.links[link_id].status = assoc_data->link[link_id].status;
+ 
++		link = sdata_dereference(sdata->link[link_id], sdata);
++
++		if (!link) {
++			/* use the addr of assoc_data link which is set in ieee80211_mgd_assoc() */
++			resp.links[link_id].addr = assoc_data->link[link_id].addr;
++			continue;
++		}
++
++		resp.links[link_id].addr = link->conf->addr;
++
+ 		/* get uapsd queues configuration - same for all links */
+ 		resp.uapsd_queues = 0;
+ 		for (ac = 0; ac < IEEE80211_NUM_ACS; ac++)
+
+base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
+-- 
+2.40.1
+
+
+-- 
+ath12k mailing list
+ath12k@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/ath12k
