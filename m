@@ -4,84 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2091EE49A6
-	for <ath12k@archiver.kernel.org>; Mon, 21 Aug 2023 15:28:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F339EE4996
+	for <ath12k@archiver.kernel.org>; Tue, 22 Aug 2023 10:04:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8UzEBEb+oo4bDf7TbYYWPNxLnGPU2TtHNUaMQtM386Q=; b=KA5THLTOFNK/AlsDfwyRTr5y7s
-	CLoSDJRdGkjJONQT8e9Cd5+u/n1CUf9ZNLcaaGSTl4sL0NsTNicJCimKtvywkgWGnoy00oqB5Ce4P
-	xEx6jIdOpSMAJ63xEph2HTQ6/J6jvukwjV1smUPXkijCxPTxxQxetKv7eAzCv3SU54kyXd4akjyHr
-	n/vTpES3lnZJ173MKfsJ6m2+W8qx7nRfshdq4SpXpc2P1R1nWEjzrsO6GnNGtUM5xDf/FXW0wRg8d
-	XQvC7n+S+OySeYcs6uR/xn0THJyKSNFX73mn8YQ8kLq1MRUAIxYvXQzi3oQFLVFpEr98e9dqzwrV8
-	7b20fEjQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IpAWV5ohviq/yuODZNcGcPy3t+12JC6pD3Hv/wN77vc=; b=VZErI6mI99G/a/
+	OatlQd3z1oQuIUrFuJ8G+jHpPHGbQKg9r3uRSEeLuiJmX1kZ9Ybt2t4uT2Zb2GH8ynH8qe4KU7JD1
+	6JU4kxPWEKElFcJ1DiK66soMTm5sVdq2L0/kQGLYwk6wyjMrL3NghrXx57If/vN7HYyVXaXDu/1k2
+	fVgwqIZWYGLP8H73n8l/Z+bSfUlLZVtSMOE1fSSvyO0dbwdPURJIafP+zn3wabZyDew02X4hR0LdR
+	6CTJfl1FuO2JZEu7OFDkbG6hP2ECxZxA3Gc5XN2vYn3ZOqrHLl9uJV7BlAA7LLwhHqS06ltU4jIVt
+	0WZjofKKAiIUWy2NdElA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qY6oy-00EGpq-1p
+	id 1qYOFi-00Fb5V-0x
 	for ath12k@archiver.kernel.org;
-	Mon, 21 Aug 2023 15:28:00 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 22 Aug 2023 10:04:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qY6ov-00EGpP-21
+	id 1qYOFe-00Fb4q-2X
 	for ath12k@lists.infradead.org;
-	Mon, 21 Aug 2023 15:27:59 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37LDmDDe030491
-	for <ath12k@lists.infradead.org>; Mon, 21 Aug 2023 15:27:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=pb49fzBQGigvvp0FBntYXXn6ZuQdaLQX0SkYuNn/j3Q=;
- b=XTCn4iRRabn6ftpD2vBOUM97z6LmbXp99OfHhoS7rYjCwGKhHKXoBm28YJ9jNgmoz07G
- MzsSXSm8WoFt3dMkw42mN1DHh+fQdla7CEDP4bE90FAXYdBCkAsCAbqQ78Hy/hlVFX44
- 55BbYdxBIf1zx8j/cu6H4ta0kyNXZkgonaIcPwqS6GQmWOrU1g5BWBeESzMJpMHpaLiL
- k0lFYPCUvvC6hirLuhQfIOFFvJoMCwY871CFl86ISGQgGfTC928Lwie+ZGZutMoM5tHN
- r5FAjD13nnULjBptIgu0Jjk2ZMp2S29gOjv9qQwEbc/2j0iCJTrfRF1LDxK6JpcE6kWc DA== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sjp4dc1jy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 21 Aug 2023 15:27:55 +0000
+	Tue, 22 Aug 2023 10:04:44 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37M9xVCJ005972;
+	Tue, 22 Aug 2023 10:04:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=EkWtkbiFyDbPnAvu1h1QmufrWSYgk5wcqAvQ4tiJSCo=;
+ b=lOS/38erqngJvauk/AUCykIt+Ipt3l1qJ5qas/DZ1+dBvGjbLvIWTmizJEY5Azo+YVBK
+ Uy6PchcrJBRkUyKatuJlrZbkAXdmvE9xBOIo5LhNKOu7YP/B2K78xtpi2j76HEeF6gwy
+ NSOO6FHgsARDxHY/d8uHAcwSckczjIe63Ga8DAo14Dv+GNQ/m1UAcAN+MJ/Lji3wVC5C
+ WySWYKRGvomljuAtqmtVWs84qPPatqX3hmEgigst3hFjvnxUoPg+t4HUIggL5QIoxdbF
+ ylLgz8AvCjl38Y3GiDUZbtvmb9gNpGWdacWBp6EnPjAB+d63ALyekUK/r8L2aO7N8tv1 FA== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3smreu0awx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 22 Aug 2023 10:04:39 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37LFRsGQ023803
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 21 Aug 2023 15:27:54 GMT
-Received: from [10.48.244.52] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Mon, 21 Aug
- 2023 08:27:54 -0700
-Message-ID: <ab94c255-8ac3-4b2a-a7a5-af40058ad6e6@quicinc.com>
-Date: Mon, 21 Aug 2023 08:27:53 -0700
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37MA4Vgs001305
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 22 Aug 2023 10:04:31 GMT
+Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Tue, 22 Aug 2023 03:04:29 -0700
+From: Wen Gong <quic_wgong@quicinc.com>
+To: <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
+Subject: [PATCH v2] wifi: mac80211: fix cfg80211_bss always hold when assoc response fail for MLO connection
+Date: Tue, 22 Aug 2023 06:04:09 -0400
+Message-ID: <20230822100409.1242-1-quic_wgong@quicinc.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] wifi: ath12k: fix undefined behavior with __fls in
- dp
-Content-Language: en-US
-To: <ath12k@lists.infradead.org>
-References: <20230821130343.29495-1-quic_hprem@quicinc.com>
- <20230821130343.29495-3-quic_hprem@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230821130343.29495-3-quic_hprem@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Ir7pcfBziBFifXP8d1C-nC4CLN5trG3K
-X-Proofpoint-ORIG-GUID: Ir7pcfBziBFifXP8d1C-nC4CLN5trG3K
+X-Proofpoint-GUID: jYZWzv-elIV-tyZx-1hDlnrzuJOGN1ZK
+X-Proofpoint-ORIG-GUID: jYZWzv-elIV-tyZx-1hDlnrzuJOGN1ZK
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-21_03,2023-08-18_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 spamscore=0
- impostorscore=0 phishscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015
- mlxscore=0 suspectscore=0 priorityscore=1501 bulkscore=0 mlxlogscore=999
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2306200000
- definitions=main-2308210143
+ definitions=2023-08-22_10,2023-08-18_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ clxscore=1015 bulkscore=0 mlxscore=0 priorityscore=1501 mlxlogscore=999
+ impostorscore=0 malwarescore=0 spamscore=0 suspectscore=0 phishscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2306200000 definitions=main-2308220076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230821_082757_809188_D906EB19 
-X-CRM114-Status: GOOD (  21.99  )
+X-CRM114-CacheID: sfid-20230822_030442_871245_703487EC 
+X-CRM114-Status: GOOD (  24.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,48 +89,101 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/21/2023 6:03 AM, Harshitha Prem wrote:
-> When max virtual ap interfaces are configured in all the bands
-> with ACS and hostapd restart is done every 60s,
-> a crash is observed at random times because of handling the
-> uninitialized peer fragments with fragment id of packet as 0.
-> 
-> "__fls" would have an undefined behavior if the argument is passed
-> as "0". Hence, added changes to handle the same.
-> 
-> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+When connect to MLO AP with more than one link, and the assoc response of
+AP is not success, then cfg80211_unhold_bss() is not called for all the
+links' cfg80211_bss except the primary link which means the link used by
+the latest successful association request. Thus the hold value of the
+cfg80211_bss is not reset to 0 after the assoc fail, and then the
+__cfg80211_unlink_bss() will not be called for the cfg80211_bss by
+__cfg80211_bss_expire().
 
-this should be in the last section with the Signed-off-by
+Then the AP always looks exist even the AP is shutdown or reconfigured
+to another type, then it will lead error while connecting it again.
 
-see 
-<https://www.kernel.org/doc/html/latest/process/submitting-patches.html#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes>
+The detail info are as below.
 
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-> ---
->   drivers/net/wireless/ath/ath12k/dp_rx.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> index 5923c7c9eaff..ea8dfea22be6 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> @@ -3238,7 +3238,7 @@ static int ath12k_dp_rx_frag_h_mpdu(struct ath12k *ar,
->   		goto out_unlock;
->   	}
->   
-> -	if (frag_no > __fls(rx_tid->rx_frag_bitmap))
-> +	if ((!rx_tid->rx_frag_bitmap || frag_no > __fls(rx_tid->rx_frag_bitmap)))
->   		__skb_queue_tail(&rx_tid->rx_frags, msdu);
->   	else
->   		ath12k_dp_rx_h_sort_frags(ab, &rx_tid->rx_frags, msdu);
+When connect with muti-links AP, cfg80211_hold_bss() is called by
+cfg80211_mlme_assoc() for each cfg80211_bss of all the links. When
+assoc response from AP is not success(such as status_code==1), the
+ieee80211_link_data of non-primary link(sdata->link[link_id]) is NULL
+because ieee80211_assoc_success()->ieee80211_vif_update_links() is
+not called for the links.
+
+Then struct cfg80211_rx_assoc_resp resp in cfg80211_rx_assoc_resp() and
+struct cfg80211_connect_resp_params cr in __cfg80211_connect_result()
+will only have the data of the primary link, and finally function
+cfg80211_connect_result_release_bsses() only call cfg80211_unhold_bss()
+for the primary link. Then cfg80211_bss of the other links will never free
+because its hold is always > 0 now.
+
+Hence assign value for the bss and status from assoc_data since it is
+valid for this case. Also assign value of addr from assoc_data when the
+link is NULL because the addrs of assoc_data and link both represent the
+local link addr and they are same value for success connection.
+
+It is 100% ratio to reproduce the issue with this change.
+Add "mgmt->u.assoc_resp.status_code = 1" in ieee80211_rx_mgmt_assoc_resp().
+
+Fixes: 81151ce462e5 ("wifi: mac80211: support MLO authentication/association with one link")
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+---
+v2: change logic per johannes
+
+ include/net/cfg80211.h |  2 +-
+ net/mac80211/mlme.c    | 12 +++++++-----
+ 2 files changed, 8 insertions(+), 6 deletions(-)
+
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index 7c7d03aa9d06..5a53cc0edb30 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -7229,7 +7229,7 @@ struct cfg80211_rx_assoc_resp {
+ 	int uapsd_queues;
+ 	const u8 *ap_mld_addr;
+ 	struct {
+-		const u8 *addr;
++		u8 addr[ETH_ALEN] __aligned(2);
+ 		struct cfg80211_bss *bss;
+ 		u16 status;
+ 	} links[IEEE80211_MLD_MAX_NUM_LINKS];
+diff --git a/net/mac80211/mlme.c b/net/mac80211/mlme.c
+index f93eb38ae0b8..f36359269377 100644
+--- a/net/mac80211/mlme.c
++++ b/net/mac80211/mlme.c
+@@ -5429,17 +5429,19 @@ static void ieee80211_rx_mgmt_assoc_resp(struct ieee80211_sub_if_data *sdata,
+ 	for (link_id = 0; link_id < IEEE80211_MLD_MAX_NUM_LINKS; link_id++) {
+ 		struct ieee80211_link_data *link;
+ 
+-		link = sdata_dereference(sdata->link[link_id], sdata);
+-		if (!link)
+-			continue;
+-
+ 		if (!assoc_data->link[link_id].bss)
+ 			continue;
+ 
+ 		resp.links[link_id].bss = assoc_data->link[link_id].bss;
+-		resp.links[link_id].addr = link->conf->addr;
++		/* use the addr of assoc_data link which is set in ieee80211_mgd_assoc() */
++		ether_addr_copy(resp.links[link_id].addr,
++				assoc_data->link[link_id].addr);
+ 		resp.links[link_id].status = assoc_data->link[link_id].status;
+ 
++		link = sdata_dereference(sdata->link[link_id], sdata);
++		if (!link)
++			continue;
++
+ 		/* get uapsd queues configuration - same for all links */
+ 		resp.uapsd_queues = 0;
+ 		for (ac = 0; ac < IEEE80211_NUM_ACS; ac++)
+
+base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
+-- 
+2.40.1
 
 
 -- 
