@@ -4,86 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E92CEE49AC
-	for <ath12k@archiver.kernel.org>; Tue, 22 Aug 2023 11:36:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D5D4EE49A3
+	for <ath12k@archiver.kernel.org>; Tue, 22 Aug 2023 13:27:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/wfy7BtBX9rPAm5qmrQ1CaEhMILWfnZv7OG2d0hvvo=; b=tZiUKS+KagYvU3
-	cD/PJ9HPlnel6WquQHGZZ9nAky9RgiH/Stxf242/QPuwQ/h4I44wzh3Z7CzIIbWza0urfq5HyuAcZ
-	hMJ6fQPzCLPc8/e4tfEkXch966xdWYnLQJYn+kbdNwzAgKOmjTEkvfMq/uBOtnKuKnXH57mDILkNP
-	oGtHLaBGPntU27MFAHXrRCV0eS/P450WxiRW7C1F3VtJjQkx8osEOrzS+mRxYxC9Ze8LwIGrnvJpL
-	kmPCHBaDqdomqozdqH0t7rT1sEW5+vAW76num4vMRWBRXtifpPwzcdR9LOI7h3KH5clglSm6ufNQe
-	DpCahVZxzrcFlUKtsU3Q==;
+	List-Owner; bh=szA8rJurHN5g5ANrMrfbjyKUwLLhPNpA2ZltR6BtRnE=; b=ExkWd2EMtOA6PJ
+	zLbfhGhJMSZobsEGIxymq3GkAxyKLtdH5yCrz2SIkFHWAsCg1aP20OZtpCwA51OdJa6WeHdLU/wYp
+	v+Opaj7OCjWfx8XrX/x90oDfGH3wtmnobcUTm912lFs5Px9XmDzkbNTmrEMuFnGQvQUYkGFCB9TzX
+	ULvH96/qjUXHG6xWlZKML2+m6cWY/1XjkaDZwnwmgafk1h9/oxsAYWkcousg0vTiGFcXSf8tJeDcR
+	SI/pL6VSV/bZtowQE6qu08jxM1csyh5Hnp0WbF9hkBR8DgnwmABT6kVpwVh/c/fZvsgp4aSL7IeIS
+	rlsfLQjjYOoRuUxG0udA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPgQ-00FpjL-0L
+	id 1qYRQA-00G2wx-0j
 	for ath12k@archiver.kernel.org;
-	Tue, 22 Aug 2023 11:36:26 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Tue, 22 Aug 2023 13:27:46 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPgP-00Fpit-14
-	for ath12k@bombadil.infradead.org;
-	Tue, 22 Aug 2023 11:36:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=KpVLcmhr5AtSywAFUscShxgiLen1Dkl75O/ELmbJb1U=; b=Wo4Qff90JmdWuKr1urZ1PxhFWI
-	fjSNyG2T1MyGg8a+FOHfRS1ZbEPlGvv3Txwj91dmlGurj+oex5JTJSKInYCAE7RLOErXVrfiShIKU
-	O/dS1M7p+wsSHHYM8dioDOwWgZsruMD3oKpqMY1DLqlqcJdFatQcwExeW94ImT5kMWZoEcIHnoFK4
-	IoVxh4EP112VPJ9yhd6uXjyPut6y531RoZiV0E0+fnX84ZEmMlg3F6mDzNAQKQV5971VaiSQiKnYP
-	VttnbkHQoE5yCoV0CNxg1k5zRoN3yZPShx64iytQW7oTNrx/HCNfVz2BCCTbpP2cIw9vkWlacsi//
-	atrOKOAA==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPgK-002hfO-2k
+	id 1qYRQ8-00G2wS-02
 	for ath12k@lists.infradead.org;
-	Tue, 22 Aug 2023 11:36:24 +0000
+	Tue, 22 Aug 2023 13:27:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 9529D63430;
-	Tue, 22 Aug 2023 11:36:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CDE3BC433CB;
-	Tue, 22 Aug 2023 11:36:11 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 7BEE7656C7;
+	Tue, 22 Aug 2023 13:27:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01EE1C433C7;
+	Tue, 22 Aug 2023 13:27:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1692704172;
-	bh=m1o0jXed7BnewlHKG+1vCqtrmwRS0IPm7ZfcZTswWms=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=IrdYlZZaWqM3fQQ0NJZafwAu1OL695GbZndRx3hQf5zRk7iEndCWn4NvUZNMeiyxB
-	 pv7g/X3WcItoae5jC4aG1ydhvIm4MHngcMdkbYNei/4rydcfm01ef2uPpTWKBWI/b7
-	 jtsV2C/WsPOBDvE/vRooAtVx3WfBIjTewkF6Q/ENDXipbzdcwiXHMoZGX5X6gGOiuS
-	 kEbdKGW1PhUN4X6iEwDujtXmH0EA488QHaoreoVM4chme3YuAatq1rtn4I6XK6bl5K
-	 O7n+oCm/S32gLduTZ2o9O9w9/mL5hwh91MWehm0EvbbUN647voxBgJIgXy+sPqVX2F
-	 Ypjx9gBGtnWRg==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Wen Gong <quic_wgong@quicinc.com>,
-	Johannes Berg <johannes.berg@intel.com>,
-	Sasha Levin <sashal@kernel.org>,
-	kvalo@kernel.org,
-	quic_jjohnson@quicinc.com,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.4 06/11] wifi: ath12k: Fix buffer overflow when scanning with extraie
-Date: Tue, 22 Aug 2023 07:35:48 -0400
-Message-Id: <20230822113553.3551206-6-sashal@kernel.org>
-X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230822113553.3551206-1-sashal@kernel.org>
-References: <20230822113553.3551206-1-sashal@kernel.org>
+	s=k20201202; t=1692710862;
+	bh=H3lL4hRz7BWjICYi+JiYCyi4XJOYiVGuW3F+KajnREo=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=HRqqrVKDb+lhDrsTAvfLnbHvNGpIk8nIymTQhmXvBix6Gbi0FCZ4/f1kekLJ4JV7R
+	 gwuE+iRfw1WfJXr9X8xjWr9McipV15yxhN8dsbI1bE0mYh+qAf/KHH1yG/EN/08eRf
+	 X8tGXEvwtDTvNVHEDf33oBU6EPVDQ0O+CuqMb5kwiQ23ptjSJGG4wgFq3B2sKFqAzG
+	 aL2Xf17yrCA6HXXpWXsdWzej79xSbSXi3rC7+KEQ70AJYzZUOoOREuCp58SPxODkJv
+	 o0HOgDt/nOE2cfz6TinxF6WVgin+laFENI+m0EIYaXuWfX0Ghc4ZjKcuJy9LUCMWIi
+	 FPxxEMlhxCRHQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, linux-wireless@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] wifi: ath12k: fix undefined behavior with __fls
+ in dp
+References: <20230821130343.29495-1-quic_hprem@quicinc.com>
+	<20230821130343.29495-3-quic_hprem@quicinc.com>
+	<ab94c255-8ac3-4b2a-a7a5-af40058ad6e6@quicinc.com>
+Date: Tue, 22 Aug 2023 16:27:39 +0300
+In-Reply-To: <ab94c255-8ac3-4b2a-a7a5-af40058ad6e6@quicinc.com> (Jeff
+	Johnson's message of "Mon, 21 Aug 2023 08:27:53 -0700")
+Message-ID: <877cpni4vo.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.4.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_123621_184350_1BE90215 
-X-CRM114-Status: GOOD (  15.59  )
+X-CRM114-CacheID: sfid-20230822_062744_094286_A7957534 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,57 +79,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Wen Gong <quic_wgong@quicinc.com>
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
-[ Upstream commit 06f2ab86a5b6ed55f013258de4be9319841853ea ]
+> On 8/21/2023 6:03 AM, Harshitha Prem wrote:
+>> When max virtual ap interfaces are configured in all the bands
+>> with ACS and hostapd restart is done every 60s,
+>> a crash is observed at random times because of handling the
+>> uninitialized peer fragments with fragment id of packet as 0.
+>> "__fls" would have an undefined behavior if the argument is passed
+>> as "0". Hence, added changes to handle the same.
+>> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7
+>> devices")
+>
+> this should be in the last section with the Signed-off-by
+>
+> see
+> <https://www.kernel.org/doc/html/latest/process/submitting-patches.html#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes>
 
-If cfg80211 is providing extraie's for a scanning process then ath12k will
-copy that over to the firmware. The extraie.len is a 32 bit value in struct
-element_info and describes the amount of bytes for the vendor information
-elements.
+I can fix that in the pending branch, no need to resend because of this.
 
-The problem is the allocation of the buffer. It has to align the TLV
-sections by 4 bytes. But the code was using an u8 to store the newly
-calculated length of this section (with alignment). And the new
-calculated length was then used to allocate the skbuff. But the actual
-code to copy in the data is using the extraie.len and not the calculated
-"aligned" length.
-
-The length of extraie with IEEE80211_HW_SINGLE_SCAN_ON_ALL_BANDS enabled
-was 264 bytes during tests with a wifi card. But it only allocated 8
-bytes (264 bytes % 256) for it. As consequence, the code to memcpy the
-extraie into the skb was then just overwriting data after skb->end. Things
-like shinfo were therefore corrupted. This could usually be seen by a crash
-in skb_zcopy_clear which tried to call a ubuf_info callback (using a bogus
-address).
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-Link: https://lore.kernel.org/r/20230809081241.32765-1-quic_wgong@quicinc.com
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/wireless/ath/ath12k/wmi.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 7ae0bb78b2b53..1e65e35b5f3a6 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -2144,8 +2144,7 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
- 	struct wmi_tlv *tlv;
- 	void *ptr;
- 	int i, ret, len;
--	u32 *tmp_ptr;
--	u8 extraie_len_with_pad = 0;
-+	u32 *tmp_ptr, extraie_len_with_pad = 0;
- 	struct ath12k_wmi_hint_short_ssid_arg *s_ssid = NULL;
- 	struct ath12k_wmi_hint_bssid_arg *hint_bssid = NULL;
- 
 -- 
-2.40.1
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 -- 
 ath12k mailing list
