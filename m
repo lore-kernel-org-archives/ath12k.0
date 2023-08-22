@@ -4,61 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71FA1EE4993
-	for <ath12k@archiver.kernel.org>; Tue, 22 Aug 2023 11:16:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E92CEE49AC
+	for <ath12k@archiver.kernel.org>; Tue, 22 Aug 2023 11:36:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kj9Cx8xoUQJ7rRoSeZvSwie6H6z6MlE4B0gNG1zns6M=; b=HP2JxuO3Ai5+az
-	eXoiJAUK64nSM0SkTVxjPJKFZqE7j+DDdQWugMmRJq4JPx5OWU6VpJV2KV9fToleENsZWuPrDAFGS
-	cXqO1frig28xqlnBoHPWm4pyfMTrqJ9klQAVJsFFjW7bGaaTDZopvZdgLDeQdPjYU9ogcdo4Rxycq
-	7aW6GJ6r4JTUPBXqNhsosxjxonUdCAIzsdsLZ9/aSeVHNkKe71T3VALTXXCWgFXyGJd4UBlnPBAtc
-	eafs6NIsjCSbH4W28W6p+AO4Hml/tU3QL/wQhbdIVpVpDGHFTvVSDNFzemfV45DHxtGiCehv5KixM
-	cvUtMjKw1XH3qC2xJ6aQ==;
+	List-Owner; bh=y/wfy7BtBX9rPAm5qmrQ1CaEhMILWfnZv7OG2d0hvvo=; b=tZiUKS+KagYvU3
+	cD/PJ9HPlnel6WquQHGZZ9nAky9RgiH/Stxf242/QPuwQ/h4I44wzh3Z7CzIIbWza0urfq5HyuAcZ
+	hMJ6fQPzCLPc8/e4tfEkXch966xdWYnLQJYn+kbdNwzAgKOmjTEkvfMq/uBOtnKuKnXH57mDILkNP
+	oGtHLaBGPntU27MFAHXrRCV0eS/P450WxiRW7C1F3VtJjQkx8osEOrzS+mRxYxC9Ze8LwIGrnvJpL
+	kmPCHBaDqdomqozdqH0t7rT1sEW5+vAW76num4vMRWBRXtifpPwzcdR9LOI7h3KH5clglSm6ufNQe
+	DpCahVZxzrcFlUKtsU3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPNF-00Fo7m-0K
+	id 1qYPgQ-00FpjL-0L
 	for ath12k@archiver.kernel.org;
-	Tue, 22 Aug 2023 11:16:37 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Tue, 22 Aug 2023 11:36:26 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYPNB-00Fo7O-2a
-	for ath12k@lists.infradead.org;
-	Tue, 22 Aug 2023 11:16:35 +0000
+	id 1qYPgP-00Fpit-14
+	for ath12k@bombadil.infradead.org;
+	Tue, 22 Aug 2023 11:36:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=mkW7mf7IDVG5Od3Z5Q/f49ZooKwzTbwmE/yQzEcHPI8=;
-	t=1692702989; x=1693912589; b=Vhj/qL0Uw3Lmj66cuRCvTnXeQZXsP594ADvTgClAClFo8ci
-	A7Okv/H9ZWTkz2eNfw7bZufLaA1UxsPUys4mIhSQ5qiK6PTVnDsTkcNBI0Hm7iP9/B5hz+gEoisNc
-	fPrRiENm+WjgMGs08R/diy/8WFGiBX9AgzoARMYtMUzg6iPSLnuloIBLXvJijCa/wkIFzQyfy08Ph
-	6pNDSPYYFaNP4D4d/nzWifvUKuNmBntsY/+FqAqHXJkchvSrnqfqzASWdkS0KVJlbI2BxY+z5B2rM
-	HPIMyoEKm+vMMkpiqYAtQepH9Ow/Sbl40hKxIaL3OuemJzas3K7FYwune4z1kppw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.96)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1qYPN4-00536j-23;
-	Tue, 22 Aug 2023 13:16:26 +0200
-Message-ID: <c4d2c8987f929f29da96154e0fc6c9e94882310e.camel@sipsolutions.net>
-Subject: Re: [PATCH v2] wifi: mac80211: fix cfg80211_bss always hold when
- assoc response fail for MLO connection
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Date: Tue, 22 Aug 2023 13:16:25 +0200
-In-Reply-To: <20230822100409.1242-1-quic_wgong@quicinc.com>
-References: <20230822100409.1242-1-quic_wgong@quicinc.com>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=KpVLcmhr5AtSywAFUscShxgiLen1Dkl75O/ELmbJb1U=; b=Wo4Qff90JmdWuKr1urZ1PxhFWI
+	fjSNyG2T1MyGg8a+FOHfRS1ZbEPlGvv3Txwj91dmlGurj+oex5JTJSKInYCAE7RLOErXVrfiShIKU
+	O/dS1M7p+wsSHHYM8dioDOwWgZsruMD3oKpqMY1DLqlqcJdFatQcwExeW94ImT5kMWZoEcIHnoFK4
+	IoVxh4EP112VPJ9yhd6uXjyPut6y531RoZiV0E0+fnX84ZEmMlg3F6mDzNAQKQV5971VaiSQiKnYP
+	VttnbkHQoE5yCoV0CNxg1k5zRoN3yZPShx64iytQW7oTNrx/HCNfVz2BCCTbpP2cIw9vkWlacsi//
+	atrOKOAA==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qYPgK-002hfO-2k
+	for ath12k@lists.infradead.org;
+	Tue, 22 Aug 2023 11:36:24 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9529D63430;
+	Tue, 22 Aug 2023 11:36:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CDE3BC433CB;
+	Tue, 22 Aug 2023 11:36:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1692704172;
+	bh=m1o0jXed7BnewlHKG+1vCqtrmwRS0IPm7ZfcZTswWms=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=IrdYlZZaWqM3fQQ0NJZafwAu1OL695GbZndRx3hQf5zRk7iEndCWn4NvUZNMeiyxB
+	 pv7g/X3WcItoae5jC4aG1ydhvIm4MHngcMdkbYNei/4rydcfm01ef2uPpTWKBWI/b7
+	 jtsV2C/WsPOBDvE/vRooAtVx3WfBIjTewkF6Q/ENDXipbzdcwiXHMoZGX5X6gGOiuS
+	 kEbdKGW1PhUN4X6iEwDujtXmH0EA488QHaoreoVM4chme3YuAatq1rtn4I6XK6bl5K
+	 O7n+oCm/S32gLduTZ2o9O9w9/mL5hwh91MWehm0EvbbUN647voxBgJIgXy+sPqVX2F
+	 Ypjx9gBGtnWRg==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Wen Gong <quic_wgong@quicinc.com>,
+	Johannes Berg <johannes.berg@intel.com>,
+	Sasha Levin <sashal@kernel.org>,
+	kvalo@kernel.org,
+	quic_jjohnson@quicinc.com,
+	ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org
+Subject: [PATCH AUTOSEL 6.4 06/11] wifi: ath12k: Fix buffer overflow when scanning with extraie
+Date: Tue, 22 Aug 2023 07:35:48 -0400
+Message-Id: <20230822113553.3551206-6-sashal@kernel.org>
+X-Mailer: git-send-email 2.40.1
+In-Reply-To: <20230822113553.3551206-1-sashal@kernel.org>
+References: <20230822113553.3551206-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.4.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_041634_066190_D91C3FEE 
-X-CRM114-Status: UNSURE (   9.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230822_123621_184350_1BE90215 
+X-CRM114-Status: GOOD (  15.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,33 +100,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2023-08-22 at 06:04 -0400, Wen Gong wrote:
-> 
-> It is 100% ratio to reproduce the issue with this change.
-> Add "mgmt->u.assoc_resp.status_code = 1" in ieee80211_rx_mgmt_assoc_resp().
+From: Wen Gong <quic_wgong@quicinc.com>
 
-Don't think that adds any value, but I guess I can always remove it.
+[ Upstream commit 06f2ab86a5b6ed55f013258de4be9319841853ea ]
 
-> +		/* use the addr of assoc_data link which is set in ieee80211_mgd_assoc() */
+If cfg80211 is providing extraie's for a scanning process then ath12k will
+copy that over to the firmware. The extraie.len is a 32 bit value in struct
+element_info and describes the amount of bytes for the vendor information
+elements.
 
-not sure that's so useful? but anyway
+The problem is the allocation of the buffer. It has to align the TLV
+sections by 4 bytes. But the code was using an u8 to store the newly
+calculated length of this section (with alignment). And the new
+calculated length was then used to allocate the skbuff. But the actual
+code to copy in the data is using the extraie.len and not the calculated
+"aligned" length.
 
-The reason I'm even writing this message is that you didn't think this
-change through:
+The length of extraie with IEEE80211_HW_SINGLE_SCAN_ON_ALL_BANDS enabled
+was 264 bytes during tests with a wifi card. But it only allocated 8
+bytes (264 bytes % 256) for it. As consequence, the code to memcpy the
+extraie into the skb was then just overwriting data after skb->end. Things
+like shinfo were therefore corrupted. This could usually be seen by a crash
+in skb_zcopy_clear which tried to call a ubuf_info callback (using a bogus
+address).
 
-> -		const u8 *addr;
-> +		u8 addr[ETH_ALEN] __aligned(2);
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-That has some other consequences you need to adapt to, in particular
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+Link: https://lore.kernel.org/r/20230809081241.32765-1-quic_wgong@quicinc.com
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/net/wireless/ath/ath12k/wmi.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-                /* need to have local link addresses for MLO connections */
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 7ae0bb78b2b53..1e65e35b5f3a6 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -2144,8 +2144,7 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
+ 	struct wmi_tlv *tlv;
+ 	void *ptr;
+ 	int i, ret, len;
+-	u32 *tmp_ptr;
+-	u8 extraie_len_with_pad = 0;
++	u32 *tmp_ptr, extraie_len_with_pad = 0;
+ 	struct ath12k_wmi_hint_short_ssid_arg *s_ssid = NULL;
+ 	struct ath12k_wmi_hint_bssid_arg *hint_bssid = NULL;
+ 
+-- 
+2.40.1
 
-                WARN_ON(cr.ap_mld_addr && !cr.links[link_id].addr);
-
-makes no sense anymore. Not sure if that's the only one.
-
-
-johannes
 
 -- 
 ath12k mailing list
