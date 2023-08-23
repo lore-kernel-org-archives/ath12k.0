@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 885E1EE49AF
-	for <ath12k@archiver.kernel.org>; Wed, 23 Aug 2023 06:34:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CFC7EE49B2
+	for <ath12k@archiver.kernel.org>; Wed, 23 Aug 2023 14:06:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S17NLB8I8qwgxhlNA3LnhOcaCCuGON+jxL1ccA+U6Q0=; b=yZDHUr+lqCXYrK
-	g7zaYH1xPqgmFcS+Nd1rjfrmQDa1yS8kaJTWM7+ahCyP2w+WhBl7iBZPXkZfdt97INtvzVVt6IWT7
-	JA174EiuGoRoDL2zmoeZoU0QhzQnYl3mpcYFhEPDy/MM0J3x1G69B3f9pbyfe0pkgaAoRN5B3WZU7
-	V+Ux+8oxAyI1SkgmawRZatfSH+wUbndecFMypDnP27C8oazhWiqBS0VEAOvdkbicMZ7S7eIMP8J8d
-	6HQTWOdadYeEf0oTNKwHt6Wsm/HE6CBJ+hQpuwD8CCpIHsECIVsNPaMvvQ5+G1A/4JbiWwQTtNsdt
-	6CwpSO8IoT97cCLoy2LQ==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0rl4azMYb9pCd0S6i+SfS0ibykclWf5B1tK92siJw+c=; b=qWlqo7b7pZUB7T
+	G8Q08HoG8L6NKZaQ/lj8SNn9GEkqgEIJcAxC4bY5Qb4FcjbQf5DNc/JLj/AtEzFsYooVq5HSNOMDa
+	AfLF/hdGWQ36zwdvbm1HaiuQT639nSwgSIIbpGgoqKqzSYfMUS+RpfvaDECRZBliCtgJ58WC58/HW
+	LEKASc3fRG0cwQD0XhmbvGmPt6bnK2ZEBfOGRbizPaHsu88dHAWNOC/2Gd0Q2gbrpLu3Aunmb3HIm
+	D37jkPwdZKNBo5Lxw5lLhTicWq6/OiGpsT1AL8KIxeopSxDBRuU6uPzeEA0wn3d2rNO6+5cLscILv
+	W1n+kCkM/Pz3dYbWYVQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYhSF-00HOuL-0n
+	id 1qYoUz-000o9r-1u
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Aug 2023 06:34:59 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Wed, 23 Aug 2023 14:06:17 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYhSB-00HOty-1w
-	for ath12k@lists.infradead.org;
-	Wed, 23 Aug 2023 06:34:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=a3Kw1m3sTWZpr7vRhEXtah4OAfpsV2xAyGg0LqKsvDA=;
-	t=1692772488; x=1693982088; b=l/S2mnwWjaZ2RNCOZCKq+uvviqOBDpXKa0EsDAhpkwMuJym
-	I4mvj8QpznpCw91Do5FyVg8BVY/HRMHHk7182aRE3j/mYCwRzfdf+ylnkKA4Iiw9iS2/22OkBJz0W
-	5iMRcJrINZIY5cD+2/P3rWI94CJ5+bvzqttATaf9xEAJMN7s1JrD/gYimyammE9MeCObM2insMsoX
-	jrQxTRabT05AxPB1B27bi87dEkXbfSho3JEyaDsTwah49uOzWKGJoHGsQCSdHvk+HMME2IgzDbznb
-	V5aBpAWxDtOHk6PBOBYCVKpGU2pviZmnEA77eJt5VrUR4toGHmGNc3onMnTV3FlA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.96)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1qYhS1-006kBP-2v;
-	Wed, 23 Aug 2023 08:34:46 +0200
-Message-ID: <941b1bdb6852f20722fa3a5b01f546f054f9e8a8.camel@sipsolutions.net>
-Subject: Re: [PATCH v2] wifi: mac80211: fix cfg80211_bss always hold when
- assoc response fail for MLO connection
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Date: Wed, 23 Aug 2023 08:34:44 +0200
-In-Reply-To: <bcf65017-0dbc-e957-f382-98c6dc406346@quicinc.com>
-References: <20230822100409.1242-1-quic_wgong@quicinc.com>
-	 <c4d2c8987f929f29da96154e0fc6c9e94882310e.camel@sipsolutions.net>
-	 <bcf65017-0dbc-e957-f382-98c6dc406346@quicinc.com>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
+	id 1qYoUv-000o8u-37;
+	Wed, 23 Aug 2023 14:06:15 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 615EE61072;
+	Wed, 23 Aug 2023 14:06:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0C310C433C8;
+	Wed, 23 Aug 2023 14:06:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1692799572;
+	bh=wn2siE3uN6pWAkKWnir+ZgoWOBFDb8FchTv2dj6tr9E=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=p8vyoehhyovBAx/1WHouvuktyN+2LcZUAWeO0ZU5xbHKnii9KFY2i+Oyv2wl/vuNE
+	 NgC/PbRjxiGE7Uxan/r04XtjJU8falzd5iRx+qOekQ8IhIiSLXbXvAJwc/+0NiUNVg
+	 ZgQUA8Cu55c3GXuvLIHspRBFQ0G7R/e/NyXew2QNL6ahTgo89W+JQd6PMRH5sgex3Y
+	 8zFcczIHxvocs+P+lBXxJj5umKG3F7cZu8nDvnfBg86Bu/MtjpJNiWLmNgI0+U7Xhb
+	 IJKLmRh523+pvV/Fy92ExOJVtYm4hDB3ff0VVyLaYnSXPWqYbfc/XKKGvhaJMitsfB
+	 TniXGBWI6FrwA==
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Subject: Re: [PATCH 1/3] wifi: ath10k: Fix a few spelling errors
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20230822-ath_spelling-v1-1-8e2698759564@quicinc.com>
+References: <20230822-ath_spelling-v1-1-8e2698759564@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath10k@lists.infradead.org>,
+ <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <ath11k@lists.infradead.org>, <ath12k@lists.infradead.org>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <169279956875.1241462.11254897741265211259.kvalo@kernel.org>
+Date: Wed, 23 Aug 2023 14:06:10 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_233456_144154_EBBF89C7 
-X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-CacheID: sfid-20230823_070614_043608_DE96B4F6 
+X-CRM114-Status: UNSURE (   5.83  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,32 +77,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2023-08-23 at 10:28 +0800, Wen Gong wrote:
-> > 
-> >                  /* need to have local link addresses for MLO connections */
-> > 
-> >                  WARN_ON(cr.ap_mld_addr && !cr.links[link_id].addr);
-> > 
-> > makes no sense anymore. Not sure if that's the only one.
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
+
+> Fix a few issues flagged by 'codespell'.
 > 
-> After this patch, the cr.links[link_id].addr will be a valid local link 
-> address from
-> 
-> struct cfg80211_rx_assoc_resp, so I think it is not needed remove now.
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Acked-by: Randy Dunlap <rdunlap@infradead.org>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-You don't understand.
+3 patches applied to ath-next branch of ath.git, thanks.
 
-The issue is that it's set the line above.
+3ced39049d4d wifi: ath10k: Fix a few spelling errors
+d68a283bfc39 wifi: ath11k: Fix a few spelling errors
+4f1dbb4904c3 wifi: ath12k: Fix a few spelling errors
 
->                 cr.links[link_id].addr = data->links[link_id].addr;
->                 /* need to have local link addresses for MLO connections */
->                 WARN_ON(cr.ap_mld_addr && !cr.links[link_id].addr);
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20230822-ath_spelling-v1-1-8e2698759564@quicinc.com/
 
-But look at that! What values can cr.links[link_id].addr get? Note how
-it's a pointer - assigned from an array.
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
-
-johannes
 
 -- 
 ath12k mailing list
