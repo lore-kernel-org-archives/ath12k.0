@@ -4,66 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FE2DEE4993
-	for <ath12k@archiver.kernel.org>; Tue, 22 Aug 2023 19:10:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CC06EE49A3
+	for <ath12k@archiver.kernel.org>; Wed, 23 Aug 2023 02:28:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aqNnlzXuwbysJQ2yGVbf4hjT5nwz1Aw/9TxiVoQBju0=; b=nr5IqUvTuQjGTM
-	c5H2Gt32GaRDihm/JLnWqTuiD1cQSclCsXHm2BnhmDVF2Hk7cIzjQjigNWymcRIT3ZTU1X1wnMJtc
-	tm3PX+Ngg84XScbQSJebQJyqc8vJM49ujrP7KqU9zAm7gJvdIqelw4C7cUPNQWomLwj3SGSKtjFxW
-	d+1ktjk6QHsO/wOwKybtu9yc8hFVwXlHPpKi9dqQP63FtlV7V2Tm87sY1uX0LPyBcKGafBSIx44CD
-	NpfEkWpWUCahqz8rgoN14xL+rhcqRfUM2nkRgPIejWh2UqLACL4N7Udk9KSvI+SfDKUxGtLpAiD4f
-	PjtHLLW8TzI/nr5sdngg==;
+	List-Owner; bh=YmprVMtZZgZhoBHiy0OusM1UI5uSoqlN9uql47V8rVA=; b=w2zsY8QyryEhkW
+	4CJnSit+HXw872Isx/pLZ0IJuKrLOk74n1bvo8Zf2HYJY8U2F4eaRIX9GEsTKdD95GR68fZpT0q/x
+	WKM/3ZY+2iLVZpjhY8HbnKh9vbUlhJvGkOIye5hICmG5hdj5n+O7pOyJr9Ks8mgrtHi5RV4g3kJO4
+	nljZW2RsCdNGwxaCZG3+zaS2gVeWEVIdBc4AGSppX/DG2g29dg69x1k4kWoIglA43kOdPflXZJrk6
+	1KYT22tfoEsY/RLrFesMbjBZF2QyR8/N0m63GziG2wQfj3MaecGe7uT7M+49gSniRy9LbUQT2wTVZ
+	OvKBTKioJt+/DUDXOI5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYWmG-00Gh0N-1r
+	id 1qYdbd-00H5C7-1u
 	for ath12k@archiver.kernel.org;
-	Tue, 22 Aug 2023 19:10:56 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 23 Aug 2023 02:28:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYWmD-00GgzD-1T;
-	Tue, 22 Aug 2023 19:10:54 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E1128625CF;
-	Tue, 22 Aug 2023 19:10:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B69E6C433C7;
-	Tue, 22 Aug 2023 19:10:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1692731452;
-	bh=nr4GjTppWgFW9yVzV6ogm5jejxBqzeEjyQ/mmPg7ulM=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=Iz566OCHSbLw3VM4P7vq7Fm1TDtZBmofK6vRl/IpLuSGhx2AUYPn/lT2kKfGWGcBN
-	 /hDiBfPSXCfQo+c3a8Zg5RQ6kKgF/5reMx7136YY87GnpSjVE/fEa3VaDGXTO5o35W
-	 kY1YjAW0yPnxsHXKp/sA7IDwtaHodn4188umUrevKX0ZTCpowonW2fLQ5AVpyKsZW2
-	 i50Xt56Q6K28J2inoQ9QA8iUAIp/wPg5GAbubfhAbEL0XwPBACLt/RCJ7ke6owZbWi
-	 K02rVDiHHxjMJjJig0iGylQhyBIW40PAgJPwRZE6Uzgi7IZG0V5Any/uJnu5d28AS7
-	 9k427Nh6gRpNg==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Randy Dunlap <rdunlap@infradead.org>,  <ath10k@lists.infradead.org>,
-  <linux-wireless@vger.kernel.org>,  <linux-kernel@vger.kernel.org>,
-  <ath11k@lists.infradead.org>,  <ath12k@lists.infradead.org>
-Subject: Re: [PATCH 3/3] wifi: ath12k: Fix a few spelling errors
-References: <20230822-ath_spelling-v1-0-8e2698759564@quicinc.com>
-	<20230822-ath_spelling-v1-3-8e2698759564@quicinc.com>
-	<768de9a1-b186-c296-e9b9-d83cee1997a6@infradead.org>
-	<1a9f7b7b-6e99-4cbb-a2e1-c76ed6b90a1d@quicinc.com>
-Date: Tue, 22 Aug 2023 22:10:48 +0300
-In-Reply-To: <1a9f7b7b-6e99-4cbb-a2e1-c76ed6b90a1d@quicinc.com> (Jeff
-	Johnson's message of "Tue, 22 Aug 2023 09:43:08 -0700")
-Message-ID: <87y1i2hozr.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	id 1qYdba-00H5Bo-0Z
+	for ath12k@lists.infradead.org;
+	Wed, 23 Aug 2023 02:28:23 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37N1M2pB021157;
+	Wed, 23 Aug 2023 02:28:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=D4NMvvlBpSBphEdziYMcFX8py+7jy58aV7F0y9CBTWw=;
+ b=SAlQVrIIX2P+qzeipF+S6Uf//uQtW6O8WSYKeRI/9nLD2giPKJE/y5KDNkQcJ/wO1L9m
+ JZdCBjZieeKH36Ntyr1Yl5cP2fZhEcs2UUKCykZboMajefeZ4NQVjryqE0aGpgsEPyHa
+ GVNvQvhEynj/vwmIutjFeu0ibTlsJXWscgTQU91oPxnJ2kHFr6z72lSyAO72bC96a6na
+ 6OktunJWgKcSjNJDlLKvUGXsLu5ZEvtlTeBkOf6tLymZep9ylF2LWSEkc2pbnlY+AUya
+ DaoWRM2pQglVk4zFtuUaZvIiUtpdjChNuDImw/Tq5X/mjSuVoc9AAq6YmeqWKM0Lo+ps xA== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sn26sgtuw-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Aug 2023 02:28:17 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37N2SHA9004645
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Aug 2023 02:28:17 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 22 Aug
+ 2023 19:28:16 -0700
+Message-ID: <bcf65017-0dbc-e957-f382-98c6dc406346@quicinc.com>
+Date: Wed, 23 Aug 2023 10:28:13 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH v2] wifi: mac80211: fix cfg80211_bss always hold when
+ assoc response fail for MLO connection
+Content-Language: en-US
+To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20230822100409.1242-1-quic_wgong@quicinc.com>
+ <c4d2c8987f929f29da96154e0fc6c9e94882310e.camel@sipsolutions.net>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <c4d2c8987f929f29da96154e0fc6c9e94882310e.camel@sipsolutions.net>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: RdsGoLIhFvaNsqfjkRcpWKboCvMlulGe
+X-Proofpoint-GUID: RdsGoLIhFvaNsqfjkRcpWKboCvMlulGe
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-22_22,2023-08-22_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 clxscore=1015 mlxscore=0 lowpriorityscore=0 adultscore=0
+ suspectscore=0 phishscore=0 malwarescore=0 spamscore=0 impostorscore=0
+ mlxlogscore=946 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2308230021
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230822_121053_540982_A657F12B 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20230822_192822_244089_C422FAB6 
+X-CRM114-Status: GOOD (  19.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,52 +95,36 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
-
-> On 8/22/2023 9:18 AM, Randy Dunlap wrote:
->
->> Hi--
->> On 8/22/23 07:50, Jeff Johnson wrote:
->>> Fix a few issues flagged by 'codespell'.
->>>
->>> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
->>> ---
->>>   drivers/net/wireless/ath/ath12k/dp.h      | 2 +-
->>>   drivers/net/wireless/ath/ath12k/dp_rx.c   | 2 +-
->>>   drivers/net/wireless/ath/ath12k/dp_tx.c   | 2 +-
->>>   drivers/net/wireless/ath/ath12k/mac.c     | 2 +-
->>>   drivers/net/wireless/ath/ath12k/rx_desc.h | 2 +-
->>>   5 files changed, 5 insertions(+), 5 deletions(-)
->>>
->>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->>> index 0f2af2f14ef7..dbaf033c2527 100644
->>> --- a/drivers/net/wireless/ath/ath12k/mac.c
->>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->>> @@ -6771,7 +6771,7 @@ ath12k_mac_op_reconfig_complete(struct ieee80211_hw *hw,
->>>   			/* After trigger disconnect, then upper layer will
->>>   			 * trigger connect again, then the PN number of
->>>   			 * upper layer will be reset to keep up with AP
->>> -			 * side, hence PN number mis-match will not happened.
->>> +			 * side, hence PN number mismatch will not happened.
->> The fix is good, but preferably also s/happened/happen/.
->
-> Kalle, can you apply that when it goes to -pending?
-
-Yes, did that now:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=212796e28fe44c0a4956c797d8b685b905784cd6
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+T24gOC8yMi8yMDIzIDc6MTYgUE0sIEpvaGFubmVzIEJlcmcgd3JvdGU6Cj4gT24gVHVlLCAyMDIz
+LTA4LTIyIGF0IDA2OjA0IC0wNDAwLCBXZW4gR29uZyB3cm90ZToKPj4gSXQgaXMgMTAwJSByYXRp
+byB0byByZXByb2R1Y2UgdGhlIGlzc3VlIHdpdGggdGhpcyBjaGFuZ2UuCj4+IEFkZCAibWdtdC0+
+dS5hc3NvY19yZXNwLnN0YXR1c19jb2RlID0gMSIgaW4gaWVlZTgwMjExX3J4X21nbXRfYXNzb2Nf
+cmVzcCgpLgo+IERvbid0IHRoaW5rIHRoYXQgYWRkcyBhbnkgdmFsdWUsIGJ1dCBJIGd1ZXNzIEkg
+Y2FuIGFsd2F5cyByZW1vdmUgaXQuCgpjaGFuZ2UgdGhlICJtZ210LT51LmFzc29jX3Jlc3Auc3Rh
+dHVzX2NvZGUgPSAxIiBpcyBvbmx5IGEgd2F5IHRvIApyZXByb2R1Y2UgdGhlIGJzcyBob2xkCgpp
+c3N1ZS4geW91IGNhbiByZW1vdmUgaXQgd2hlbiB1cHN0cmVhbSB0aGlzIHBhdGNoLvCfmIEKCj4K
+Pj4gKwkJLyogdXNlIHRoZSBhZGRyIG9mIGFzc29jX2RhdGEgbGluayB3aGljaCBpcyBzZXQgaW4g
+aWVlZTgwMjExX21nZF9hc3NvYygpICovCj4gbm90IHN1cmUgdGhhdCdzIHNvIHVzZWZ1bD8gYnV0
+IGFueXdheQo+Cj4gVGhlIHJlYXNvbiBJJ20gZXZlbiB3cml0aW5nIHRoaXMgbWVzc2FnZSBpcyB0
+aGF0IHlvdSBkaWRuJ3QgdGhpbmsgdGhpcwo+IGNoYW5nZSB0aHJvdWdoOgpZZXMsIHlvdSBjYW4g
+cmVtb3ZlIHRoZSBjb21tZW50IHdoZW4gdXBzdHJlYW0gdGhpcyBwYXRjaC4KPj4gLQkJY29uc3Qg
+dTggKmFkZHI7Cj4+ICsJCXU4IGFkZHJbRVRIX0FMRU5dIF9fYWxpZ25lZCgyKTsKPiBUaGF0IGhh
+cyBzb21lIG90aGVyIGNvbnNlcXVlbmNlcyB5b3UgbmVlZCB0byBhZGFwdCB0bywgaW4gcGFydGlj
+dWxhcgo+Cj4gICAgICAgICAgICAgICAgICAvKiBuZWVkIHRvIGhhdmUgbG9jYWwgbGluayBhZGRy
+ZXNzZXMgZm9yIE1MTyBjb25uZWN0aW9ucyAqLwo+Cj4gICAgICAgICAgICAgICAgICBXQVJOX09O
+KGNyLmFwX21sZF9hZGRyICYmICFjci5saW5rc1tsaW5rX2lkXS5hZGRyKTsKPgo+IG1ha2VzIG5v
+IHNlbnNlIGFueW1vcmUuIE5vdCBzdXJlIGlmIHRoYXQncyB0aGUgb25seSBvbmUuCgpBZnRlciB0
+aGlzIHBhdGNoLCB0aGUgY3IubGlua3NbbGlua19pZF0uYWRkciB3aWxsIGJlIGEgdmFsaWQgbG9j
+YWwgbGluayAKYWRkcmVzcyBmcm9tCgpzdHJ1Y3QgY2ZnODAyMTFfcnhfYXNzb2NfcmVzcCwgc28g
+SSB0aGluayBpdCBpcyBub3QgbmVlZGVkIHJlbW92ZSBub3cuCgoKQW5vdGhlciBpcyBoZXJlIGlu
+IF9fY2ZnODAyMTFfY29ubmVjdF9yZXN1bHQoKToKCiDCoMKgIMKgwqDCoMKgIGZvcl9lYWNoX3Zh
+bGlkX2xpbmsoY3IsIGxpbmspIHsKIMKgwqAgwqDCoMKgwqAgwqDCoMKgIGlmIChXQVJOX09OKCFj
+ci0+bGlua3NbbGlua10uYWRkcikpCiDCoMKgIMKgwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ290byBv
+dXQ7Cgo+Cj4KPiBqb2hhbm5lcwoKLS0gCmF0aDEyayBtYWlsaW5nIGxpc3QKYXRoMTJrQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vYXRoMTJrCg==
