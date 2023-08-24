@@ -4,85 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06B69C27C40
-	for <ath12k@archiver.kernel.org>; Wed, 23 Aug 2023 19:28:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56DD8C3DA6F
+	for <ath12k@archiver.kernel.org>; Thu, 24 Aug 2023 02:26:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5mek12EnrYedJr8U9EhkNxWKtU9BygjRIJBENOBhLUE=; b=ujtAzZ1g9kwm+m
-	xsZNgfYpYqUYATVc20bJ9bg0DbHVxE+xgV5k7y+khv6cLCqNCQOgIq47rHoVDk8CH/X3bfLB56aor
-	jrOD7SnYqhQwY7MVEUsbewCXKZXNaH5o1iVXGxBKWWf7NIuqGHX9nbsaU+hBi/q0tVV47FJqUR0Tl
-	RZ+PP9bk6ipy3qqC60VOs2AN1sa+7lK5gFBhtSV3Qb6BVbZ7KFiw1xLGebBdIicumn+zxgHkKbQVl
-	bkkCR9Sq+1lbOYxgfBJDooVnS0nSBCslhIzZicyhgHNwX12iUuABo4dPk2BeLYLe7bpxV2jcvPqi4
-	AxBx1mKf5ECko6pQ1RHw==;
+	List-Owner; bh=jvQy+pFNrBKfKXUbc7+dkaTFSQQMR3HErOC9ul9Thxk=; b=ifgG9Rh6RHJIIY
+	DoQrotmDp+nmglGdydqZvaAQ2dpKjb/WBcPYWy0KZceNN9WaNIxgJtMgnSmaVZGWVq+89+QtZ3jI5
+	BgdnOJePKZShX0oQ7uQOe4/1h2y5yk8LzNsPInhA4hWeuK5lHZx1/fZAQ57T/dIXNuoYApkUVzdk+
+	mo3B9bnkKb3SwnJq2sEwc1V9FxXhzo40eBrxR4zWg9XllK5mk8L494/CjYVAc0o2xFFLNlSohsAvs
+	2X71Q12ywcS6HM4SvMoSho8w6vIDPCoB9REn8lODyYQ78/hGNCHqfwP3D8UJnL5g3CHMtVJSJm0LN
+	KuA9QaahGhQj7LZygc8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYtXE-001Pj5-2G
+	id 1qZ03E-001xsL-2N
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Aug 2023 19:28:56 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 24 Aug 2023 02:26:24 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYtXC-001PiX-0G
+	id 1qZ03B-001xrU-0n
 	for ath12k@lists.infradead.org;
-	Wed, 23 Aug 2023 19:28:55 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37NHu0uM031525;
-	Wed, 23 Aug 2023 19:28:48 GMT
+	Thu, 24 Aug 2023 02:26:23 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37O1UFKV025158;
+	Thu, 24 Aug 2023 02:26:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=nWkX+BUg99eXcykkBankFCkg8ZVaQEgKD6CtJCFVD44=;
- b=Id4HPBFb1+0qXNnpa+LE9+e9nj+fkLBshuSdSQGsAX4zpmO2wq+9Jog6vjCh4RB/Eyh1
- 7qM2F62B7ZL1Wi0MrlNtq6SkwCwheSr4aMsQzf82RZvHPMkS01b0+K/pAI7II5vvM1de
- rEqcf0z3fxi4/OnsAFnxzTl5kwx6R1Pt1V39+LK29bNP4CUE8mraM5xBtDd9e+BxvMGo
- qsP/pfQ0Qg8OA2bkWKYh4Qfl53MA5O6VRNqS/grSdJm79zIqlHm3oVQLApWzmjuF2fic
- S5WP1D18ASfwrRVphgjX9897/DK3QBgLGcwZYTnpfGz2U2J8lUEVO4Ow2yA8xkmTZ3t2 Iw== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sn208k2b0-1
+ bh=aNdtgVnyPdNHvAsrEU+7y4frtvGGc70j5dBulEvO9+k=;
+ b=dH1FHGKLWTtu2s1G9FC3610RYDXDjRaEOCokBoOI6D79t7mlyuhxTX4Lwg2vfPMP906L
+ zlqJfguzgHCcuJFx3YRVdlBkqrye+XC1Hl5d5yc7LPlIdtrEdDdVKwX0lAK/picXePzO
+ 8N/+8fIXfIZ8ivr4soRs5F05OE9mH21ZvdYVbcrSVKscoPJeNtW291QvdO+8eFnRrne2
+ EodIsFOQVwXpUJeGTyk3wjL4H/9A9UO6zulhOJ/24XODZD5guCzwo+uECBancTyHzFjS
+ ndBHSdqF2TiL7IhKiU/8xcAN1YsZHziVXEf6N218k/I0Y83uRA+Qt0C7AJsVCNT7uz0w 2g== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sn2exuby2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Aug 2023 19:28:48 +0000
+	Thu, 24 Aug 2023 02:26:09 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37NJSmaX017649
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37O2Q8fg025802
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Aug 2023 19:28:48 GMT
-Received: from [10.48.244.52] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Thu, 24 Aug 2023 02:26:08 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 23 Aug
- 2023 12:28:47 -0700
-Message-ID: <e5a64ac0-7f4b-40c3-8f63-d96cae2568e9@quicinc.com>
-Date: Wed, 23 Aug 2023 12:28:46 -0700
+ 2023 19:26:07 -0700
+Message-ID: <1a193edc-23a8-6631-5beb-2020de489934@quicinc.com>
+Date: Thu, 24 Aug 2023 10:26:04 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/1] wifi: ath12k: add msdu_end structure for WCN7850
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.14.0
+Subject: Re: [PATCH v2] wifi: mac80211: fix cfg80211_bss always hold when
+ assoc response fail for MLO connection
 Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20230815062610.59248-1-quic_kangyang@quicinc.com>
- <18b72ba8-7f0c-ed88-38f7-7422a179519f@quicinc.com>
- <87jztlhboj.fsf@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <87jztlhboj.fsf@kernel.org>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20230822100409.1242-1-quic_wgong@quicinc.com>
+ <c4d2c8987f929f29da96154e0fc6c9e94882310e.camel@sipsolutions.net>
+ <bcf65017-0dbc-e957-f382-98c6dc406346@quicinc.com>
+ <941b1bdb6852f20722fa3a5b01f546f054f9e8a8.camel@sipsolutions.net>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <941b1bdb6852f20722fa3a5b01f546f054f9e8a8.camel@sipsolutions.net>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: HRuNPNaqQRHpRflOOI5ovZ8ZDv5-OmZd
-X-Proofpoint-ORIG-GUID: HRuNPNaqQRHpRflOOI5ovZ8ZDv5-OmZd
+X-Proofpoint-GUID: v7hH1cNyCZZJZce6gmJk8vwwOpYa_518
+X-Proofpoint-ORIG-GUID: v7hH1cNyCZZJZce6gmJk8vwwOpYa_518
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-08-23_13,2023-08-22_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1015
- bulkscore=0 impostorscore=0 mlxlogscore=394 spamscore=0 phishscore=0
- lowpriorityscore=0 priorityscore=1501 adultscore=0 suspectscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2308230176
+ definitions=2023-08-23_17,2023-08-22_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxlogscore=633
+ mlxscore=0 lowpriorityscore=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 suspectscore=0 adultscore=0 phishscore=0 bulkscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2308240018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230823_122854_161876_2CD40F81 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20230823_192621_446763_79B8955F 
+X-CRM114-Status: GOOD (  16.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,17 +102,44 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/23/2023 11:10 AM, Kalle Valo wrote:
-> Jeff, for some reason your mail didn't have Cc linux-wireless so
-> patchwork don't show your comments:
-> 
-> https://patchwork.kernel.org/project/linux-wireless/patch/20230815062610.59248-1-quic_kangyang@quicinc.com/
-> 
-> The problem is that if there are no comments in patchwork I will most
-> likely miss them. Adding linux-wireless back now.
-> 
+On 8/23/2023 2:34 PM, Johannes Berg wrote:
+> On Wed, 2023-08-23 at 10:28 +0800, Wen Gong wrote:
+>>>                   /* need to have local link addresses for MLO connections */
+>>>
+>>>                   WARN_ON(cr.ap_mld_addr && !cr.links[link_id].addr);
+>>>
+>>> makes no sense anymore. Not sure if that's the only one.
+>> After this patch, the cr.links[link_id].addr will be a valid local link
+>> address from
+>>
+>> struct cfg80211_rx_assoc_resp, so I think it is not needed remove now.
+> You don't understand.
+>
+> The issue is that it's set the line above.
+>
+>>                  cr.links[link_id].addr = data->links[link_id].addr;
+>>                  /* need to have local link addresses for MLO connections */
+>>                  WARN_ON(cr.ap_mld_addr && !cr.links[link_id].addr);
+> But look at that! What values can cr.links[link_id].addr get? Note how
+> it's a pointer - assigned from an array.
 
-Thanks for the reminder to make sure I always select Reply-All vs Reply-list
+Oh, I know it now. the cr.links[link_id].addr will always NOT 0 because 
+it is pointer
+
+to an array "u8 addr[ETH_ALEN]" of struct cfg80211_rx_assoc_resp.
+
+So maybe we can choose one of the 2 things to do:
+
+1. remove the "WARN_ON(cr.ap_mld_addr && !cr.links[link_id].addr);"
+
+2. change like this:
+
+WARN_ON(cr.ap_mld_addr && !is_valid_ether_addr(cr.links[link_id].addr));
+
+What about your advise?
+
+>
+> johannes
 
 -- 
 ath12k mailing list
