@@ -4,65 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9E34C3DA6F
-	for <ath12k@archiver.kernel.org>; Fri, 25 Aug 2023 07:53:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0956C83F11
+	for <ath12k@archiver.kernel.org>; Mon, 28 Aug 2023 04:04:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WyrNitYppLhXyBAlBAY7+a7goJOUaFUj76EEoCVDT7Y=; b=QOFZ5LCgNdDh9U
-	8Rk55WVUI6Xw+3tixbzkqlXVppNIE5bDi0bwGyPi1R9RYDIc+hU6VknyMbJl95OoeI2K7mpTin4Ou
-	11WVwwwCdzEeVOKvzUlCJ5Kr4pr70AsNtBBNvDSRB1MleHVkBCRtJqZS7kUhBGscys/dJN00jefZ8
-	kI9m6zOJsxD6J1Q71b7yxfHVowJnnmP1hQMG0eMWydHiIcy5W92OrXMEO14bzoPfhyTpQnXZE5I8Y
-	EkCvsC7lZNCuFzvcOcYwMg3x5fSgFihqQNG7WJPAyusuo3bdCjoTmNQ/pyaCXD7ED86tXa40/pZS3
-	aS5aw7646rprwA2oSrcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u+39I2Afm8ZsGM7fIhdJmWhZ5fTnWTaG4zZMB4+At+4=; b=hU1nIekGhl4p7d
+	LKRsBEtOKI55D3IL3MCora1Dh/CL7h4Xc703Ew3jvfKeTUxq+yRteEyRdBXz2457zgQVj9npcN2TE
+	wxz16DbHdanheCltVCoucAuJngMszZGwmCqYhYPPgi7oDxWuWKBfnMBU7xCTyNOPEeP+OsKp0ieoa
+	Sz2GkIRbf2u0XKTzIYHq/s7O+mo1zJmgGmXDoPAF749gjqf/iFRpmanznh/k8QEOhnTASYvemP9Qa
+	TbG0lrnHfsQVSmq1TziXDlxuNIFEMcfqOzEYeuVWItKZVqxySeRqcFs+mt5d066vp8vlcIzsaDVq2
+	Ji0c8Xb0oCctrT04CFqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZRde-004Zvw-25
+	id 1qaTUX-008ome-0q
 	for ath12k@archiver.kernel.org;
-	Fri, 25 Aug 2023 07:53:50 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Mon, 28 Aug 2023 04:04:41 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qZRdb-004Zuy-2u
+	id 1qaTUU-008omJ-1t
 	for ath12k@lists.infradead.org;
-	Fri, 25 Aug 2023 07:53:49 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 39F2C63B8F;
-	Fri, 25 Aug 2023 07:53:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD0ECC433C7;
-	Fri, 25 Aug 2023 07:53:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1692950026;
-	bh=KOzRnaC44+Xlhg47OtXM9sPc7szh93iPq2k6FzlXDMI=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=mXhm/f1FO8Tc7xtH021mtnaY7iM//JOkkg/jY194PRLKCjVar6RkJwMRGXfWXVO/a
-	 Ky4ot7sM/jn2dzIxdvApbK+dzO4D4Rwz5WM14Q9yZO4pb+qaOI4rniLhqYnyLPEO+1
-	 vyOndbP2p/6jWVgcqDujuW+gbR2S7TDelFnK7R0nBx7apYNlD4sLySfKRkVk3Mg9T5
-	 YYnm8GMX8nuvutG2FuyiWRmS6DdNxVDDDeByp2ckML1dK6glcA4VhyMCYpajtXzE1y
-	 QppNiHpWJkXNa8xOJdUjzmZgGLZrCH5hCgQ3hmOdC4DY0pzVMBtFwA/LW6HfoQzTvX
-	 aiUK60dmJ49Eg==
+	Mon, 28 Aug 2023 04:04:40 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37S2Ft3t032171;
+	Mon, 28 Aug 2023 04:04:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=TQZJduRiEPKORw7CY1DYbG/gkyyeEliGePL7Ijut9XQ=;
+ b=OsLs39ByhFQfOpH1r2wVSApecaNcyjNgo66ooztMfChbCZhIfRaK/j14KITaLsy4smeB
+ ipDe//J5tJi3jZCW1M86lzZTYG9HctSiPKDJGvFyJ1NelmZsdI1wKJS0QSYREEzMTR4o
+ pUsVRjA+jWKoVEk91+YPZ/SdlCgpWe7LY2wN7BSlJmMJUpmQIHU4oVeBkrLz91I/f84a
+ P+mGcUxFki/N1/1284PAITJk7GMvOjo1KC2O4f10pPCn8H8MvMg/gFhqnNPwBWEhOYO7
+ ltZw0/JWP4nRvAlf+XQPQgaLcWv9ukMaOcI4h7QSC4mR53AX/OSqvMaZnXEjZkdWVtr8 0g== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sq6ruaqce-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 28 Aug 2023 04:04:35 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37S44Ya6016276
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 28 Aug 2023 04:04:34 GMT
+Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Sun, 27 Aug 2023 21:04:33 -0700
+From: Wen Gong <quic_wgong@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
+Subject: [PATCH v3] wifi: ath12k: enable 320 MHz bandwidth for 6 GHz band in EHT PHY capability for WCN7850
+Date: Mon, 28 Aug 2023 00:04:20 -0400
+Message-ID: <20230828040420.2165-1-quic_wgong@quicinc.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-Subject: Re: [PATCH v2] wifi: ath12k: enable 320 MHz bandwidth for 6 GHz band
- in
- EHT PHY capbility for WCN7850
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230824025432.19406-1-quic_wgong@quicinc.com>
-References: <20230824025432.19406-1-quic_wgong@quicinc.com>
-To: Wen Gong <quic_wgong@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- <quic_wgong@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169295002356.1753110.7150166655358699685.kvalo@kernel.org>
-Date: Fri, 25 Aug 2023 07:53:45 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: uiFrn0f3hQc9ftXvADkUxs8f7A0mQ45b
+X-Proofpoint-GUID: uiFrn0f3hQc9ftXvADkUxs8f7A0mQ45b
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-08-27_22,2023-08-25_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ adultscore=0 malwarescore=0 lowpriorityscore=0 clxscore=1015 bulkscore=0
+ mlxlogscore=999 suspectscore=0 priorityscore=1501 spamscore=0 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2308280036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230825_005347_979613_BB34E066 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230827_210438_764300_CBCC4399 
+X-CRM114-Status: GOOD (  19.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,37 +94,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Wen Gong <quic_wgong@quicinc.com> wrote:
+320 MHz bandwidth is reported only for single PHY mode for WCN7850, get it
+from WMI_HOST_HW_MODE_SINGLE ath12k_wmi_caps_ext_params and report it for
+6 GHz band.
 
-> 320 MHz bandwidth is reported only for single PHY mode for WCN7850, get it
-> from WMI_HOST_HW_MODE_SINGLE ath12k_wmi_caps_ext_params and report it for
-> 6 GHz band.
-> 
-> After this patch, "iw list" show 320MHz support for WCN7850:
-> EHT Iftypes: managed
->         EHT PHY Capabilities: (0xe26f090010768800):
->                 320MHz in 6GHz Supported
->         EHT bw=320 MHz, max NSS for MCS 8-9: Rx=0, Tx=0
->         EHT bw=320 MHz, max NSS for MCS 10-11: Rx=0, Tx=0
->         EHT bw=320 MHz, max NSS for MCS 12-13: Rx=0, Tx=0
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+After this patch, "iw list" show 320MHz support for WCN7850:
+EHT Iftypes: managed
+        EHT PHY Capabilities: (0xe26f090010768800):
+                320MHz in 6GHz Supported
+        EHT bw=320 MHz, max NSS for MCS 8-9: Rx=0, Tx=0
+        EHT bw=320 MHz, max NSS for MCS 10-11: Rx=0, Tx=0
+        EHT bw=320 MHz, max NSS for MCS 12-13: Rx=0, Tx=0
 
-New warning:
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-drivers/net/wireless/ath/ath12k/wmi.c:4199:69: warning: restricted __le32 degrades to integer
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+---
+v3:
+   1. fix "wmi.c:4199:69: warning: restricted __le32 degrades to integer"
+   2. s/capbility/capability/
+   3. change "u8 support_320mhz" to "u32 support_320mhz"
 
-Remember to ALWAYS run ath12k-check.
+v2: change eht_cap_phy_info_5G to eht_cap_phy_info_5ghz.
 
-Patch set to Changes Requested.
+ drivers/net/wireless/ath/ath12k/wmi.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 9ed33e2d6da0..5f46259cfa2a 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -4148,14 +4148,22 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
+ 				       __le32 cap_info_internal)
+ {
+ 	struct ath12k_band_cap *cap_band = &pdev->cap.band[band];
++	u32 support_320mhz;
+ 	u8 i;
+ 
++	if (band == NL80211_BAND_6GHZ)
++		support_320mhz = cap_band->eht_cap_phy_info[0] &
++					IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
++
+ 	for (i = 0; i < WMI_MAX_EHTCAP_MAC_SIZE; i++)
+ 		cap_band->eht_cap_mac_info[i] = le32_to_cpu(cap_mac_info[i]);
+ 
+ 	for (i = 0; i < WMI_MAX_EHTCAP_PHY_SIZE; i++)
+ 		cap_band->eht_cap_phy_info[i] = le32_to_cpu(cap_phy_info[i]);
+ 
++	if (band == NL80211_BAND_6GHZ)
++		cap_band->eht_cap_phy_info[0] |= support_320mhz;
++
+ 	cap_band->eht_mcs_20_only = le32_to_cpu(supp_mcs[0]);
+ 	cap_band->eht_mcs_80 = le32_to_cpu(supp_mcs[1]);
+ 	if (band != NL80211_BAND_2GHZ) {
+@@ -4177,10 +4185,19 @@ ath12k_wmi_tlv_mac_phy_caps_ext_parse(struct ath12k_base *ab,
+ 				      const struct ath12k_wmi_caps_ext_params *caps,
+ 				      struct ath12k_pdev *pdev)
+ {
+-	u32 bands;
++	struct ath12k_band_cap *cap_band;
++	u32 bands, support_320mhz;
+ 	int i;
+ 
+ 	if (ab->hw_params->single_pdev_only) {
++		if (caps->hw_mode_id == WMI_HOST_HW_MODE_SINGLE) {
++			support_320mhz = le32_to_cpu(caps->eht_cap_phy_info_5ghz[0]) &
++				IEEE80211_EHT_PHY_CAP0_320MHZ_IN_6GHZ;
++			cap_band = &pdev->cap.band[NL80211_BAND_6GHZ];
++			cap_band->eht_cap_phy_info[0] |= support_320mhz;
++			return 0;
++		}
++
+ 		for (i = 0; i < ab->fw_pdev_count; i++) {
+ 			struct ath12k_fw_pdev *fw_pdev = &ab->fw_pdev[i];
+ 
+@@ -4236,7 +4253,8 @@ static int ath12k_wmi_tlv_mac_phy_caps_ext(struct ath12k_base *ab, u16 tag,
+ 		return -EPROTO;
+ 
+ 	if (ab->hw_params->single_pdev_only) {
+-		if (ab->wmi_ab.preferred_hw_mode != le32_to_cpu(caps->hw_mode_id))
++		if (ab->wmi_ab.preferred_hw_mode != le32_to_cpu(caps->hw_mode_id) &&
++		    caps->hw_mode_id != WMI_HOST_HW_MODE_SINGLE)
+ 			return 0;
+ 	} else {
+ 		for (i = 0; i < ab->num_radios; i++) {
+
+base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230824025432.19406-1-quic_wgong@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.40.1
 
 
 -- 
