@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D9ACC6FA8F
-	for <ath12k@archiver.kernel.org>; Wed, 30 Aug 2023 05:42:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D29FC6FA8F
+	for <ath12k@archiver.kernel.org>; Wed, 30 Aug 2023 05:54:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I+EIlvgiuNucftPGcTd1S9gwSeMdnn6ceURYEVnc8FI=; b=1GrFfKkMkks8o4
-	VB6ltrSpMg9xRDAzFrldkjFKGLO2hx78kocPBzi6fqj6tf2+KJwc6/RlJ5606R6d6l136DVupK4Xn
-	4IZSsLM3HYEXj2f/+cmGc1OTxNNTb4YbQeRS3HCJ/rZAiOmqDrMDXKQi+5nQAv05sakC2VHXJ5P4o
-	QyA+FYGCdhsrcL4vAa8txjgyAjb17xub30wUmf6WgKHtKLoTjfBavy+KJjT5b7kqZOEEZcd5kW3lm
-	tRghF0/23yItuFHb4fACS9UJaPQ+QbIrxV8XjwMB63OTbaprTeIinO2NSTjCGH1Suhj1qr9aOJPjl
-	ZKub2zl8ZIGTlAbkWEfw==;
+	List-Owner; bh=rCqw94PUCilSkY2aF3k829SjMa0M4FjWQZSFehlYC+E=; b=gzr5LSKJRTxwo+
+	gj6Py0n87xrkw9vGhm8q9eTv0AcRLDvaEGI2UkZ2n+CDTLfnwa28EUeLwWTTlArtmtCa0JHypgErl
+	EvsiIUsvSlgxzL+oW5LfXyfrFmd20dMGyEMKeA5pUgKP8D38Zjf2F2oBFIAmT+hF5q++18puFmK7Y
+	p1qOtNQqyP2v1zyMrergkc0Ilv3f2oYNMHKjOj05OJJc2EPZto0DKBvIZGehpN5cGEebTjf19AWZR
+	PTeTcVmnnNmeXWaGZ6YB8PKE8pb6tdrtsQfIM5fD0a0xPUSbIF4PJjHUg7v2c9jl2XpedYFNNr2jC
+	M6pzdfjTBU1aHPELgVZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbDxt-00Crbr-0S
+	id 1qbEAK-00CsVl-03
 	for ath12k@archiver.kernel.org;
-	Wed, 30 Aug 2023 05:42:05 +0000
+	Wed, 30 Aug 2023 05:54:56 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qbDxl-00CrWn-1Q
+	id 1qbEAC-00CsUV-1T
 	for ath12k@lists.infradead.org;
-	Wed, 30 Aug 2023 05:42:03 +0000
+	Wed, 30 Aug 2023 05:54:54 +0000
 Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37U4U0Y5005151;
-	Wed, 30 Aug 2023 05:39:52 GMT
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 37U5DKZa004167;
+	Wed, 30 Aug 2023 05:54:48 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=fXB+I5cpp1GRCVEYZ9qHgnkX45uwzaaNxWlfwgzVaAU=;
- b=h01hbVR0nQ/dd0FLkUG2Bq9CpIiFuzRz9XV18ZzHuxY6Lf92UF1CuwvWbeZBYwhnCEOK
- g1ooF54cdlhD0MD+YXy3qEcUEI5cHoN6UY7xCMEOsA2GjO5OxVdJ4yfunhe4khD+CpKg
- G6OAHRTb2KDFPcowoMQf3NhpyB+Di7HH+kulkRQIvBTNnKq6QndA/7lxXvEshKiFy+2h
- FZ7BpTXjD835PRXW0NA/tCOETIp/DmnnNnXBxsoMohI+tNsmL81i/hRVQfRDJ/RqAVqu
- N8xXh3B+TjC6yulYbAdEh1gZYgFctryB49mVwtDQnhyDkcvJGHKtcDYnfN+RAtoIEOVw Mw== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ssv008d15-1
+ bh=Tr2kQL3A0sK5eKz2dvL/1IHT5LYq1UvdjCs6ssqj0kg=;
+ b=gKMI3zyZibMYydxc/V45A25bXxKV4MrZF/KcL3ueQQppXjhuEWRBYfR5USPUzF48FDkU
+ G1CmK8Bq+inftSRTuPXhaOXaXzqdoXs0puJfQgSmtDawYKlQpUEfGAwFsuFDCgCAyHDL
+ W7lvMyCl6yh7cr+2CZDrJi78Ezm5n3LKvb59Tfn9a6OgNlAVagxOjW+nr/Io2h/dxfZ8
+ O6ibXboc/VMdv2HJtLMNAdm0YWyO+rndrc59YaTRr+8oxkyu55eqqZ8uJ7kmWXceUGs0
+ bFyXGBHeN7pjWrPqAWwLPI2Efn1obcdqTWsxv/A0RUlBUYMVF9bRI1CxkvO0fku6vJ+w 5A== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ssv008e62-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 30 Aug 2023 05:39:52 +0000
+	Wed, 30 Aug 2023 05:54:47 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37U5Yf18021152
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 37U5ZHH9017472
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 30 Aug 2023 05:34:41 GMT
+	Wed, 30 Aug 2023 05:35:17 GMT
 Received: from [10.111.178.80] (10.49.16.6) by nalasex01b.na.qualcomm.com
  (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 29 Aug
- 2023 22:34:38 -0700
-Message-ID: <477607e8-5d56-437c-9c77-c1a46feb01ee@quicinc.com>
-Date: Tue, 29 Aug 2023 22:34:38 -0700
+ 2023 22:35:17 -0700
+Message-ID: <55a839a3-bfbd-43fc-b968-70d2a5bdee44@quicinc.com>
+Date: Tue, 29 Aug 2023 22:35:16 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix possible out-of-bound write in
- ath12k_wmi_ext_hal_reg_caps()
+Subject: Re: [PATCH] wifi: ath12k: fix DMA unmap warning on NULL DMA address
 Content-Language: en-US
 To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-References: <20230830020716.5420-1-quic_bqiang@quicinc.com>
+References: <20230830021131.5610-1-quic_bqiang@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230830020716.5420-1-quic_bqiang@quicinc.com>
+In-Reply-To: <20230830021131.5610-1-quic_bqiang@quicinc.com>
 X-Originating-IP: [10.49.16.6]
 X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Be1eQmgvm3muuX7ybsbK267uk-rNEzJ4
-X-Proofpoint-GUID: Be1eQmgvm3muuX7ybsbK267uk-rNEzJ4
+X-Proofpoint-ORIG-GUID: J2hzwA-ng9Z0Ewv1G_aqq8gGrHNSASBS
+X-Proofpoint-GUID: J2hzwA-ng9Z0Ewv1G_aqq8gGrHNSASBS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
  definitions=2023-08-29_16,2023-08-29_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
  suspectscore=0 spamscore=0 malwarescore=0 priorityscore=1501 bulkscore=0
- adultscore=0 mlxlogscore=822 lowpriorityscore=0 phishscore=0 clxscore=1015
+ adultscore=0 mlxlogscore=845 lowpriorityscore=0 phishscore=0 clxscore=1015
  mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2308300052
+ engine=8.12.0-2308100000 definitions=main-2308300055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230829_224157_511313_F7A3C423 
-X-CRM114-Status: GOOD (  18.10  )
+X-CRM114-CacheID: sfid-20230829_225448_498425_0AC205E1 
+X-CRM114-Status: GOOD (  16.64  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,38 +97,44 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/29/2023 7:07 PM, Baochen Qiang wrote:
-> reg_cap.phy_id is extracted from WMI event and could be an unexpected value
-> in case some errors happen. As a result out-of-bound write may occur to
-> soc->hal_reg_cap. Fix it by validating reg_cap.phy_id before using it.
+On 8/29/2023 7:11 PM, Baochen Qiang wrote:
+> In ath12k_dp_tx(), if we reach fail_dma_unmap due to some errors,
+> current code does DMA unmap unconditionally on skb_cb->paddr_ext_desc.
+> However, skb_cb->paddr_ext_desc may be NULL and thus we get below
+> warning:
 > 
-> This is found during code review.
+> kernel: [ 8887.076212] WARNING: CPU: 3 PID: 0 at drivers/iommu/dma-iommu.c:1077 iommu_dma_unmap_page+0x79/0x90
 > 
-> Compile tested only.
+> Fix it by checking skb_cb->paddr_ext_desc before unmap it.
 > 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 > Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 > ---
->   drivers/net/wireless/ath/ath12k/wmi.c | 4 ++++
->   1 file changed, 4 insertions(+)
+>   drivers/net/wireless/ath/ath12k/dp_tx.c | 6 ++++--
+>   1 file changed, 4 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-> index ef0f3cf35cfd..a8a7fa9f71cf 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.c
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> @@ -3876,6 +3876,10 @@ static int ath12k_wmi_ext_hal_reg_caps(struct ath12k_base *soc,
->   			ath12k_warn(soc, "failed to extract reg cap %d\n", i);
->   			return ret;
->   		}
-> +		if (reg_cap.phy_id >= MAX_RADIOS) {
-> +			ath12k_warn(soc, "unexpected phy id %u\n", reg_cap.phy_id);
-> +			return -EINVAL;
-> +		}
->   		soc->hal_reg_cap[reg_cap.phy_id] = reg_cap;
->   	}
->   	return 0;
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+> index 8874c815d7fa..c0ae2fd443cc 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+> @@ -330,8 +330,10 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_vif *arvif,
+>   
+>   fail_unmap_dma:
+>   	dma_unmap_single(ab->dev, ti.paddr, ti.data_len, DMA_TO_DEVICE);
+> -	dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
+> -			 sizeof(struct hal_tx_msdu_ext_desc), DMA_TO_DEVICE);
+> +	if (skb_cb->paddr_ext_desc)
+> +		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
+> +				 sizeof(struct hal_tx_msdu_ext_desc),
+> +				 DMA_TO_DEVICE);
+>   
+>   fail_remove_tx_buf:
+>   	ath12k_dp_tx_release_txbuf(dp, tx_desc, pool_id);
 > 
 > base-commit: a62b0aeb556839fb6abb9835874443b08fe95598
 
