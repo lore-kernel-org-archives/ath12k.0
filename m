@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D47E3C83F2C
-	for <ath12k@archiver.kernel.org>; Tue,  5 Sep 2023 02:49:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AA37C83F3F
+	for <ath12k@archiver.kernel.org>; Tue,  5 Sep 2023 02:49:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bt3xaoYs2/SgaPQlBwxpv0OWiDyl/m5Cw/dOFLB7dr4=; b=wpNQCIREVZYvCU
-	Kq+WBqjLmQhwOnTwnobmEmskZNpSbGlQBV0gxK7A5xDFkmTWI1dzvhnQTuKtoDgZqoofGkOGYIO37
-	LNXHbpDydU/fe55iX80dOUYRSNTpNviagHoCxXfvsr1AC8ilH2whzol2ANsl/dl2OsMdTDLr4iJli
-	ZnHs7C/qyteP+vYb132otp6kGMPB0QuIonz55pTVtfrw1ulbM+YGzoXI3A88GC3BZoL/KtsM0cJlg
-	asr6zzUP58mn2b34p9S2/0KKzSkr3OOEByYFzzLOmX1EEmAT4734OYYbLosgn1ol96sOZED8xhGbn
-	6QZMhmltZ4AeMkdowJIw==;
+	List-Owner; bh=FbQfQu1ObtgngmWBhnwYsFiG0IAK5+XGDjp3oKgo9xM=; b=XMycTI5rucoX6x
+	0jWmZ+yG3PuKfaDxtiQuxwNBCi84YVslAIuxynXUdliYzBADyWG8LxesOdNF/MfqNQUdrk0U5C8Y0
+	6c3Erxh0tJp9DZQP7zmWqDer4rm+iM+w8EeUCg3uvq6Rc7rQCDffor8vC+3E8bAFNO9TkT1gAN4Fr
+	oDPeqhl9g8D6PMI6TaQwC8bQfElS0KMDbj8CVoRE/SijTfGh6P2Em1bcxnGjAl4wIq6CLmy+Zww30
+	vVTrKu5Z/Xw/H/PYhD4oR6hO2A/LB8FGBh6sx7L8I2BLMqihRVsb2sxFIII2/Zm6hrs7csLbCRCqI
+	G+zcGl2THTOjr9JdhJNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdM8B-0057EE-1n
+	id 1qdM8B-0057Ec-2s
 	for ath12k@archiver.kernel.org;
 	Tue, 05 Sep 2023 02:49:31 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdM88-0057CZ-0T
+	id 1qdM88-0057Cp-0r
 	for ath12k@lists.infradead.org;
 	Tue, 05 Sep 2023 02:49:30 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3852AK2I018385;
-	Tue, 5 Sep 2023 02:49:25 GMT
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3852LXKc019802;
+	Tue, 5 Sep 2023 02:49:27 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=09RI01f6VfCSPtKkzBOn8/faue/Jt31MFLXQPuImYhY=;
- b=T9nuK0SPWo/yNALx1u45KjYdSg+3grIK4m5RjQG56vN1/p5354HvIFOw989R/zTnmHcr
- DdWASnXlvl7jL4ibnjKuz30ukCxVKea/d+VLkSka8en+px/OjbTGCgFNWpLppdfk221L
- INI9piG2dFuFfEC4um04JUYkdjKSOszvxZ6w7BmHgReIAvXq0CcGNxL85HvJn0NXhq/s
- bpTmhFTaPI/5SqhO2Ba03TVFQt0avo5YDhwrKcoQZ3VImOIximiU8SVQzCZ6j+a/4KuH
- fO9witQ6B9VYwGHR8ezffc8bkRH4nqDAIjpoVgGOfjYdUYKY1fDKED8VYMkQolidQ/uh JQ== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3suxbfw0pv-1
+ bh=pDHxkgRKKP9IGj0y705n2ntggF7OiIzxpHWDUcojGCA=;
+ b=cTqg4RkDCD6OPWxZkbfhJBV5F6btOVDRK6RzF9shlwddkC1RZY37/ZprgOYnf8G5SfBl
+ svgd9gQ+g1jOzFryP0GGJoCt715litft3s6rQ0W1ocnc6lEE4e3QMkbBoeiBcgYlTo08
+ Tm67ikFgBSEKEfMI/nJqJxtVYp0VKc0A86vkcQhcwle0BE41l7nSfElygbvxdnZmco9p
+ L2VGsPWThNqe1+SBYfc5YOT94eTJdn3CUrRotK9clBLAom43VfRyF7vCSFMcSfbVi2Bq
+ 6BZN5sZ30AQVawNljBPHhYHAgBBurtTzfyaQhYOYdVxCL/7uncmzuiWMF7qOtccNxbtB mA== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3swtevg4ff-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 05 Sep 2023 02:49:25 +0000
+	Tue, 05 Sep 2023 02:49:27 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3852nOYP006632
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3852nQLK013862
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 5 Sep 2023 02:49:24 GMT
+	Tue, 5 Sep 2023 02:49:26 GMT
 Received: from lingbok-HP-EliteBook-8460p.qca.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Mon, 4 Sep 2023 19:49:23 -0700
+ 15.2.1118.36; Mon, 4 Sep 2023 19:49:25 -0700
 From: Lingbo Kong <quic_lingbok@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH 1/4] wifi: ath12k: add TAS capability for WCN7850
-Date: Tue, 5 Sep 2023 10:49:01 +0800
-Message-ID: <20230905024904.3882-2-quic_lingbok@quicinc.com>
+Subject: [PATCH 2/4] wifi: ath12k: add BIOS SAR capability for WCN7850
+Date: Tue, 5 Sep 2023 10:49:02 +0800
+Message-ID: <20230905024904.3882-3-quic_lingbok@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230905024904.3882-1-quic_lingbok@quicinc.com>
 References: <20230905024904.3882-1-quic_lingbok@quicinc.com>
@@ -67,19 +67,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: h_1_D7mxR0VhUvWS9fHyTeaew1MWh9aw
-X-Proofpoint-ORIG-GUID: h_1_D7mxR0VhUvWS9fHyTeaew1MWh9aw
+X-Proofpoint-GUID: 6jV04_9XsFCoxYxXqiUUKMy4VUIp7L7Z
+X-Proofpoint-ORIG-GUID: 6jV04_9XsFCoxYxXqiUUKMy4VUIp7L7Z
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
  definitions=2023-09-05_01,2023-08-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 adultscore=0 impostorscore=0 clxscore=1015
- suspectscore=0 mlxlogscore=999 mlxscore=0 bulkscore=0 phishscore=0
- spamscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309050023
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ adultscore=0 impostorscore=0 priorityscore=1501 clxscore=1015 bulkscore=0
+ lowpriorityscore=0 spamscore=0 mlxscore=0 phishscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2309050022
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230904_194928_189975_6B018C6D 
-X-CRM114-Status: GOOD (  31.70  )
+X-CRM114-CacheID: sfid-20230904_194928_422363_2B4699A0 
+X-CRM114-Status: GOOD (  21.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,453 +96,275 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In order to enable Time-Average-SAR(TAS) for WCN7850, define some
-functions. One function is to return TAS configuration, the other return
-SAR power table, then ath12k apply these data to wlan firmware. ath12k
-register an ACPI event callback so that ACPI can notify ath12k to retrieve
-the updated SAR power table and apply it to wlan firmware.
+ath12k get the latest BIOS SAR power table by using ACPI _DSM method, then
+pass this table to the firmware.ath12k register a notification callback for
+ACPI event so ACPI can notify ath12k to get the latest BIOS SAR table.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
 Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/Makefile |   3 +-
- drivers/net/wireless/ath/ath12k/acpi.c   | 203 +++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/acpi.h   |  28 ++++
- drivers/net/wireless/ath/ath12k/core.c   |   6 +
- drivers/net/wireless/ath/ath12k/core.h   |   8 +
- drivers/net/wireless/ath/ath12k/hw.c     |  10 ++
- drivers/net/wireless/ath/ath12k/hw.h     |   4 +-
- drivers/net/wireless/ath/ath12k/pci.c    |   6 +
- drivers/net/wireless/ath/ath12k/wmi.c    |  82 +++++++++
- drivers/net/wireless/ath/ath12k/wmi.h    |  20 ++-
- 10 files changed, 367 insertions(+), 3 deletions(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/acpi.c
- create mode 100644 drivers/net/wireless/ath/ath12k/acpi.h
+ drivers/net/wireless/ath/ath12k/acpi.c | 103 +++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/acpi.h |  15 ++++
+ drivers/net/wireless/ath/ath12k/core.h |   3 +
+ drivers/net/wireless/ath/ath12k/wmi.c  |  94 ++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h  |  21 +++++
+ 5 files changed, 236 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index 62c52e733b5e..a479fe06caac 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -19,7 +19,8 @@ ath12k-y += core.o \
- 	    hw.o \
- 	    mhi.o \
- 	    pci.o \
--	    dp_mon.o
-+	    dp_mon.o \
-+	    acpi.o
- 
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
- 
 diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
-new file mode 100644
-index 000000000000..384e01748b32
---- /dev/null
+index 384e01748b32..ae1ce7b99d2d 100644
+--- a/drivers/net/wireless/ath/ath12k/acpi.c
 +++ b/drivers/net/wireless/ath/ath12k/acpi.c
-@@ -0,0 +1,203 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
-+/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#include "core.h"
-+#include "acpi.h"
-+#include "debug.h"
-+
-+static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
-+{
-+	union acpi_object *obj;
-+	acpi_handle root_handle;
-+	int ret = 0;
-+
-+	root_handle = ACPI_HANDLE(ab->dev);
-+	if (!root_handle) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "invalid ACPI handler\n");
-+		return -EOPNOTSUPP;
-+	}
-+
-+	obj = acpi_evaluate_dsm(root_handle, ab->hw_params->acpi_guid, 0, func,
-+				NULL);
-+
-+	if (!obj) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "ACPI _DSM method invocation failed\n");
-+		return -ENOENT;
-+	}
-+
-+	if (obj->type == ACPI_TYPE_INTEGER) {
-+		ab->acdata->func_bit = obj->integer.value;
-+	} else if (obj->type == ACPI_TYPE_BUFFER) {
-+		switch (func) {
-+		case ATH12K_ACPI_DSM_FUNC_INDEX_TAS_CFG:
-+			if (obj->buffer.length != ATH12K_ACPI_DSM_TAS_CFG_SIZE) {
-+				ath12k_err(ab, "Invalid TAS cfg size %d\n",
+@@ -52,6 +52,26 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
+ 			memcpy(&ab->acdata->tas_sar_power_table, obj->buffer.pointer,
+ 			       obj->buffer.length);
+ 			break;
++		case ATH12K_ACPI_DSM_FUNC_INDEX_BIOS_SAR:
++			if (obj->buffer.length != ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE) {
++				ath12k_err(ab, "Invalid BIOS SAR data size %d\n",
 +					   obj->buffer.length);
 +				ret = -EINVAL;
 +				goto out;
 +			}
-+			memcpy(&ab->acdata->tas_cfg, obj->buffer.pointer,
++			memcpy(&ab->acdata->bios_sar_data, obj->buffer.pointer,
 +			       obj->buffer.length);
 +			break;
-+		case ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA:
-+			if (obj->buffer.length != ATH12K_ACPI_DSM_TAS_DATA_SIZE) {
-+				ath12k_err(ab, "Invalid TAS data size %d\n",
++		case ATH12K_ACPI_DSM_FUNC_INDEX_GEO_OFFSET:
++			if (obj->buffer.length != ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE) {
++				ath12k_err(ab, "Invalid GEO OFFSET data size %d\n",
 +					   obj->buffer.length);
 +				ret = -EINVAL;
 +				goto out;
 +			}
-+			memcpy(&ab->acdata->tas_sar_power_table, obj->buffer.pointer,
++			memcpy(&ab->acdata->geo_offset_data, obj->buffer.pointer,
 +			       obj->buffer.length);
 +			break;
-+		}
-+	} else {
-+		ath12k_err(ab,
-+			   "ACPI: DSM method did not return a valid object, type %d\n",
-+			   obj->type);
-+		ret = -EINVAL;
-+	}
-+
-+out:
-+	ACPI_FREE(obj);
-+	return ret;
-+}
-+
-+static int ath12k_set_tas_power_limit_data(struct ath12k_base *ab)
+ 		}
+ 	} else {
+ 		ath12k_err(ab,
+@@ -83,6 +103,24 @@ static int ath12k_set_tas_power_limit_data(struct ath12k_base *ab)
+ 	return ret;
+ }
+ 
++static int ath12k_set_bios_sar_power_limit_data(struct ath12k_base *ab)
 +{
 +	int ret;
 +
-+	if (ab->acdata->tas_sar_power_table[0] == ATH12K_ACPI_TAS_DATA_VERSION &&
-+	    ab->acdata->tas_sar_power_table[1] == ATH12K_ACPI_TAS_DATA_ENABLE_FLAG) {
-+		ret = ath12k_wmi_pdev_set_tas_data_table_param(ab,
-+							       ab->acdata->tas_sar_power_table);
++	if (ab->acdata->bios_sar_data[0] == ATH12K_ACPI_POWER_LIMIT_VERSION &&
++	    ab->acdata->bios_sar_data[1] == ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG) {
++		ret = ath12k_wmi_pdev_set_bios_sar_table_param(ab,
++							       ab->acdata->bios_sar_data);
 +		if (ret)
-+			ath12k_err(ab, "failed to pass tas data table %d\n", ret);
++			ath12k_err(ab, "failed to pass bios sar table %d\n", ret);
 +	} else {
-+		ath12k_err(ab, "the latest tas data is invalid\n");
++		ath12k_err(ab, "the latest bios sar data is invalid\n");
 +		ret = -EINVAL;
 +	}
 +
 +	return ret;
 +}
 +
-+void acpi_dsm_notify(acpi_handle handle, u32 event, void *data)
-+{
-+	int ret;
-+	struct ath12k_base *ab = data;
+ void acpi_dsm_notify(acpi_handle handle, u32 event, void *data)
+ {
+ 	int ret;
+@@ -101,6 +139,20 @@ void acpi_dsm_notify(acpi_handle handle, u32 event, void *data)
+ 			if (ret)
+ 				return;
+ 		}
 +
-+	if (event == ATH12K_ACPI_NOTIFY_EVENT) {
-+		if (ab->acdata->acpi_tas_enable) {
++		if (ab->acdata->acpi_bios_sar_enable) {
 +			ret = ath12k_acpi_dsm_get_data(ab,
-+						       ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA);
++						       ATH12K_ACPI_DSM_FUNC_INDEX_BIOS_SAR);
 +			if (ret) {
-+				ath12k_err(ab, "failed to update tas data table %d\n", ret);
++				ath12k_err(ab, "failed to update bios sar %d\n", ret);
 +				return;
 +			}
 +
-+			ret = ath12k_set_tas_power_limit_data(ab);
++			ret = ath12k_set_bios_sar_power_limit_data(ab);
 +			if (ret)
 +				return;
 +		}
-+	} else {
-+		ath12k_err(ab, "unknown acpi notify %u\n", event);
-+	}
-+}
 +
-+void ath12k_acpi_remove_notify(struct ath12k_base *ab)
-+{
-+	acpi_remove_notify_handler(ACPI_HANDLE(ab->dev),
-+				   ACPI_DEVICE_NOTIFY,
-+				   acpi_dsm_notify);
-+}
-+
-+static int ath12k_pass_acpi_cfg_and_data_to_fw(struct ath12k_base *ab)
+ 	} else {
+ 		ath12k_err(ab, "unknown acpi notify %u\n", event);
+ 	}
+@@ -113,6 +165,27 @@ void ath12k_acpi_remove_notify(struct ath12k_base *ab)
+ 				   acpi_dsm_notify);
+ }
+ 
++static int ath12k_pass_acpi_bios_sar_and_geo_to_fw(struct ath12k_base *ab)
 +{
 +	int ret;
 +
-+	ret = ath12k_wmi_pdev_set_tas_cfg_table_param(ab,
-+						      ab->acdata->tas_cfg);
++	ret = ath12k_wmi_pdev_set_bios_sar_table_param(ab,
++						       ab->acdata->bios_sar_data);
++
 +	if (ret) {
-+		ath12k_err(ab, "failed to pass tas cfg table to fw %d\n", ret);
++		ath12k_err(ab, "failed to pass bios sar table to fw %d\n", ret);
 +		return ret;
 +	}
 +
-+	ret = ath12k_wmi_pdev_set_tas_data_table_param(ab,
-+						       ab->acdata->tas_sar_power_table);
++	ret = ath12k_wmi_pdev_set_bios_geo_table_param(ab,
++						       ab->acdata->geo_offset_data);
++
 +	if (ret)
-+		ath12k_err(ab, "failed to pass tas data table to fw %d\n", ret);
++		ath12k_err(ab, "failed to pass bios geo table to fw %d\n", ret);
 +
 +	return ret;
 +}
 +
-+int ath12k_get_acpi_all_data(struct ath12k_base *ab)
-+{
-+	int ret;
-+	acpi_status status;
-+
-+	ab->acdata = kzalloc(sizeof(*ab->acdata), GFP_KERNEL);
-+	if (!ab->acdata)
-+		return -ENOMEM;
-+
-+	ab->acdata->acpi_tas_enable = false;
-+
-+	ret = ath12k_acpi_dsm_get_data(ab,
-+				       ATH12K_ACPI_DSM_FUNC_INDEX_SUPPORT_FUNCS);
-+
-+	if (ret)
-+		return ret;
-+
-+	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_TAS_CFG)) {
+ static int ath12k_pass_acpi_cfg_and_data_to_fw(struct ath12k_base *ab)
+ {
+ 	int ret;
+@@ -172,12 +245,42 @@ int ath12k_get_acpi_all_data(struct ath12k_base *ab)
+ 			ab->acdata->acpi_tas_enable = true;
+ 	}
+ 
++	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_BIOS_SAR)) {
 +		ret = ath12k_acpi_dsm_get_data(ab,
-+					       ATH12K_ACPI_DSM_FUNC_INDEX_TAS_CFG);
++					       ATH12K_ACPI_DSM_FUNC_INDEX_BIOS_SAR);
 +		if (ret) {
-+			ath12k_err(ab, "failed to get tas cfg table %d\n", ret);
++			ath12k_err(ab, "failed to get bios sar data %d\n", ret);
 +			goto err_free_acdata;
 +		}
 +	}
 +
-+	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_TAS_DATA)) {
++	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_GEO_OFFSET)) {
 +		ret = ath12k_acpi_dsm_get_data(ab,
-+					       ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA);
++					       ATH12K_ACPI_DSM_FUNC_INDEX_GEO_OFFSET);
 +		if (ret) {
-+			ath12k_err(ab, "failed to get tas data table %d\n", ret);
++			ath12k_err(ab, "failed to get geo offset data %d\n", ret);
 +			goto err_free_acdata;
 +		}
 +
-+		if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_TAS_CFG) &&
-+		    ab->acdata->tas_sar_power_table[0] == ATH12K_ACPI_TAS_DATA_VERSION &&
-+		    ab->acdata->tas_sar_power_table[1] == ATH12K_ACPI_TAS_DATA_ENABLE_FLAG)
-+			ab->acdata->acpi_tas_enable = true;
++		if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_BIOS_SAR) &&
++		    ab->acdata->bios_sar_data[0] == ATH12K_ACPI_POWER_LIMIT_VERSION &&
++		    ab->acdata->bios_sar_data[1] == ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG &&
++		    !ab->acdata->acpi_tas_enable)
++			ab->acdata->acpi_bios_sar_enable = true;
 +	}
 +
-+	if (ab->acdata->acpi_tas_enable) {
-+		ret = ath12k_pass_acpi_cfg_and_data_to_fw(ab);
+ 	if (ab->acdata->acpi_tas_enable) {
+ 		ret = ath12k_pass_acpi_cfg_and_data_to_fw(ab);
+ 		if (ret)
+ 			goto err_free_acdata;
+ 	}
+ 
++	if (ab->acdata->acpi_bios_sar_enable) {
++		ret = ath12k_pass_acpi_bios_sar_and_geo_to_fw(ab);
 +		if (ret)
 +			goto err_free_acdata;
 +	}
 +
-+	status = acpi_install_notify_handler(ACPI_HANDLE(ab->dev),
-+					     ACPI_DEVICE_NOTIFY,
-+					     acpi_dsm_notify, ab);
-+	if (ACPI_FAILURE(status)) {
-+		ath12k_err(ab, "failed to install DSM notify callback\n");
-+		goto err_remove_notify;
-+	}
-+
-+	return 0;
-+
-+err_remove_notify:
-+	acpi_remove_notify_handler(ACPI_HANDLE(ab->dev),
-+				   ACPI_DEVICE_NOTIFY,
-+				   acpi_dsm_notify);
-+
-+	ret = -EIO;
-+
-+err_free_acdata:
-+	kfree(ab->acdata);
-+	ab->acdata = NULL;
-+
-+	return ret;
-+}
+ 	status = acpi_install_notify_handler(ACPI_HANDLE(ab->dev),
+ 					     ACPI_DEVICE_NOTIFY,
+ 					     acpi_dsm_notify, ab);
 diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-new file mode 100644
-index 000000000000..cf742958a623
---- /dev/null
+index cf742958a623..59f87cb258c6 100644
+--- a/drivers/net/wireless/ath/ath12k/acpi.h
 +++ b/drivers/net/wireless/ath/ath12k/acpi.h
-@@ -0,0 +1,28 @@
-+/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-+/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+#include <linux/acpi.h>
-+
-+#ifndef ATH12K_ACPI_H
-+#define ATH12K_ACPI_H
-+
-+#define ATH12K_ACPI_DSM_FUNC_INDEX_SUPPORT_FUNCS	0
-+#define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_CFG		8
-+#define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA		9
-+
-+#define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
-+#define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
-+#define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
-+#define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
-+
-+#define ATH12K_ACPI_NOTIFY_EVENT			0x86
-+#define ATH12K_ACPI_FUNC_BIT_VALID(_acdata, _func)	((((_acdata)->func_bit) & (_func)) != 0)
-+
-+#define ATH12K_ACPI_TAS_DATA_VERSION		0x1
-+#define ATH12K_ACPI_TAS_DATA_ENABLE_FLAG	0x1
-+
-+int ath12k_get_acpi_all_data(struct ath12k_base *ab);
-+void acpi_dsm_notify(acpi_handle handle, u32 event, void *data);
-+#endif
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 3df8059d5512..7d876660a351 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -538,6 +538,12 @@ static int ath12k_core_start(struct ath12k_base *ab,
- 		goto err_reo_cleanup;
- 	}
+@@ -11,9 +11,16 @@
+ #define ATH12K_ACPI_DSM_FUNC_INDEX_SUPPORT_FUNCS	0
+ #define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_CFG		8
+ #define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA		9
++#define ATH12K_ACPI_DSM_FUNC_INDEX_BIOS_SAR		4
++#define ATH12K_ACPI_DSM_FUNC_INDEX_GEO_OFFSET		5
  
-+	if (!guid_is_null(ab->hw_params->acpi_guid)) {
-+		ret = ath12k_get_acpi_all_data(ab);
-+		if (!ret)
-+			ath12k_info(ab, "success to get acpi cfg data\n");
-+	}
+ #define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
+ #define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
++#define ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE		34
++#define ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE		19
 +
- 	return 0;
++#define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
++#define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
+ #define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
+ #define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
  
- err_reo_cleanup:
+@@ -22,6 +29,14 @@
+ 
+ #define ATH12K_ACPI_TAS_DATA_VERSION		0x1
+ #define ATH12K_ACPI_TAS_DATA_ENABLE_FLAG	0x1
++#define ATH12K_ACPI_BIOS_SAR_TABLE_LEN		22
++#define ATH12K_ACPI_BIOS_SAR_DBS_BACKOFF_LEN	10
++#define ATH12K_ACPI_POWER_LIMIT_DATAOFFSET	12
++#define ATH12K_ACPI_DBS_BACKOFF_DATAOFFSET	2
++#define ATH12K_ACPI_POWER_LIMIT_VERSION		0x1
++#define ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG	0x1
++#define ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET	1
++#define ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN	18
+ 
+ int ath12k_get_acpi_all_data(struct ath12k_base *ab);
+ void acpi_dsm_notify(acpi_handle handle, u32 event, void *data);
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index d873b573dac6..cba4f176c018 100644
+index cba4f176c018..6fe4f0ddee4a 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -22,6 +22,7 @@
- #include "hal_rx.h"
- #include "reg.h"
- #include "dbring.h"
-+#include "acpi.h"
+@@ -775,8 +775,11 @@ struct ath12k_base {
+ 	struct {
+ 		u32 func_bit;
+ 		bool acpi_tas_enable;
++		bool acpi_bios_sar_enable;
+ 		u8 tas_cfg[ATH12K_ACPI_DSM_TAS_CFG_SIZE];
+ 		u8 tas_sar_power_table[ATH12K_ACPI_DSM_TAS_DATA_SIZE];
++		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
++		u8 geo_offset_data[ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE];
+ 	} *acdata;
  
- #define SM(_v, _f) (((_v) << _f##_LSB) & _f##_MASK)
- 
-@@ -771,6 +772,13 @@ struct ath12k_base {
- 	u64 fw_soc_drop_count;
- 	bool static_window_map;
- 
-+	struct {
-+		u32 func_bit;
-+		bool acpi_tas_enable;
-+		u8 tas_cfg[ATH12K_ACPI_DSM_TAS_CFG_SIZE];
-+		u8 tas_sar_power_table[ATH12K_ACPI_DSM_TAS_DATA_SIZE];
-+	} *acdata;
-+
  	/* must be last */
- 	u8 drv_priv[] __aligned(sizeof(void *));
- };
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 5991cc91cd00..f0f7f9dbb08a 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -15,6 +15,10 @@
- #include "mhi.h"
- #include "dp_rx.h"
- 
-+static const guid_t wcn7850_uuid = GUID_INIT(0xf634f534, 0x6147, 0x11ec,
-+					     0x90, 0xd6, 0x02, 0x42,
-+					     0xac, 0x12, 0x00, 0x03);
-+
- static u8 ath12k_hw_qcn9274_mac_from_pdev_id(int pdev_idx)
- {
- 	return pdev_idx;
-@@ -907,6 +911,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.hal_ops = &hal_qcn9274_ops,
- 
- 		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
-+
-+		.acpi_guid = NULL,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -964,6 +970,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 
- 		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01) |
- 					   BIT(CNSS_PCIE_PERST_NO_PULL_V01),
-+
-+		.acpi_guid = &wcn7850_uuid,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -1019,6 +1027,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.hal_ops = &hal_qcn9274_ops,
- 
- 		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
-+
-+		.acpi_guid = NULL,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index e6c4223c283c..ab409e8ae268 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -8,7 +8,7 @@
- #define ATH12K_HW_H
- 
- #include <linux/mhi.h>
--
-+#include <linux/uuid.h>
- #include "wmi.h"
- #include "hal.h"
- 
-@@ -186,6 +186,8 @@ struct ath12k_hw_params {
- 	const struct hal_ops *hal_ops;
- 
- 	u64 qmi_cnss_feature_bitmap;
-+
-+	const guid_t *acpi_guid;
- };
- 
- struct ath12k_hw_ops {
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index bd689efa7daa..3c2967e760ab 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1340,6 +1340,12 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
- 
- 	ath12k_hal_srng_deinit(ab);
- 	ath12k_ce_free_pipes(ab);
-+	if (!guid_is_null(ab->hw_params->acpi_guid) && ab->acdata) {
-+		acpi_remove_notify_handler(ACPI_HANDLE(ab->dev),
-+					   ACPI_DEVICE_NOTIFY,
-+					   acpi_dsm_notify);
-+		kfree(ab->acdata);
-+	}
- 	ath12k_core_free(ab);
- }
- 
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index ef0f3cf35cfd..2d501993b197 100644
+index 2d501993b197..f090ccea5f64 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.c
 +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -6896,3 +6896,85 @@ void ath12k_wmi_detach(struct ath12k_base *ab)
+@@ -6978,3 +6978,97 @@ int ath12k_wmi_pdev_set_tas_data_table_param(struct ath12k_base *ab,
  
- 	ath12k_wmi_free_dbring_caps(ab);
+ 	return ret;
  }
 +
-+int ath12k_wmi_pdev_set_tas_cfg_table_param(struct ath12k_base *ab,
-+					    const u8 *ptas_cfg)
++int ath12k_wmi_pdev_set_bios_sar_table_param(struct ath12k_base *ab,
++					     u8 *psar_table)
 +{
 +	struct ath12k_wmi_base *wmi_ab = &ab->wmi_ab;
-+	struct wmi_pdev_set_bios_interface_cmd *cmd;
++	struct wmi_pdev_set_bios_sar_table_cmd *cmd;
 +	struct wmi_tlv *tlv;
 +	struct sk_buff *skb;
-+	u8 *buf_ptr;
-+	u32 len, len_aligned;
 +	int ret;
++	u8 *buf_ptr;
++	u32 len, sar_table_len_aligned, sar_dbs_backoff_len_aligned;
++	u8 *psar_value = psar_table + ATH12K_ACPI_POWER_LIMIT_DATAOFFSET;
++	u8 *pdbs_value = psar_table + ATH12K_ACPI_DBS_BACKOFF_DATAOFFSET;
 +
-+	len_aligned = roundup(ATH12K_ACPI_DSM_TAS_CFG_SIZE, sizeof(u32));
-+	len = sizeof(*cmd) + TLV_HDR_SIZE + len_aligned;
++	sar_table_len_aligned = roundup(ATH12K_ACPI_BIOS_SAR_TABLE_LEN, sizeof(u32));
++	sar_dbs_backoff_len_aligned = roundup(ATH12K_ACPI_BIOS_SAR_DBS_BACKOFF_LEN, sizeof(u32));
++	len = sizeof(*cmd) + TLV_HDR_SIZE + sar_table_len_aligned +
++		TLV_HDR_SIZE + sar_dbs_backoff_len_aligned;
 +
 +	skb = ath12k_wmi_alloc_skb(wmi_ab, len);
 +	if (!skb)
 +		return -ENOMEM;
 +
-+	cmd = (struct wmi_pdev_set_bios_interface_cmd *)skb->data;
++	cmd = (struct wmi_pdev_set_bios_sar_table_cmd *)skb->data;
 +	cmd->tlv_header =
-+		cpu_to_le32(ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD_PARAMS,
++		cpu_to_le32(ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_SAR_TABLE_CMD_PARAMS,
 +						   sizeof(*cmd)));
 +	cmd->pdev_id = cpu_to_le32(WMI_PDEV_ID_SOC);
-+	cmd->param_type_id = cpu_to_le32(WMI_BIOS_PARAM_TAS_CONFIG_TYPE);
-+	cmd->length = cpu_to_le32(ATH12K_ACPI_DSM_TAS_CFG_SIZE);
++	cmd->sar_len = cpu_to_le32(ATH12K_ACPI_BIOS_SAR_TABLE_LEN);
++	cmd->dbs_backoff_len = cpu_to_le32(ATH12K_ACPI_BIOS_SAR_DBS_BACKOFF_LEN);
 +
 +	buf_ptr = skb->data + sizeof(*cmd);
 +	tlv = (struct wmi_tlv *)buf_ptr;
-+	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, len_aligned);
++	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE,
++					 sar_table_len_aligned);
 +	buf_ptr += TLV_HDR_SIZE;
-+	memcpy(buf_ptr, ptas_cfg, ATH12K_ACPI_DSM_TAS_CFG_SIZE);
++	memcpy(buf_ptr, psar_value, ATH12K_ACPI_BIOS_SAR_TABLE_LEN);
 +
-+	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0], skb, WMI_PDEV_SET_BIOS_INTERFACE_CMDID);
++	buf_ptr += sar_table_len_aligned;
++	tlv = (struct wmi_tlv *)buf_ptr;
++	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE,
++					 sar_dbs_backoff_len_aligned);
++	buf_ptr += TLV_HDR_SIZE;
++	memcpy(buf_ptr, pdbs_value, ATH12K_ACPI_BIOS_SAR_DBS_BACKOFF_LEN);
++
++	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0], skb, WMI_PDEV_SET_BIOS_SAR_TABLE_CMDID);
 +	if (ret) {
 +		ath12k_warn(ab, "failed to send WMI_PDEV_SET_BIOS_INTERFACE_CMDID %d\n", ret);
 +		dev_kfree_skb(skb);
@@ -551,95 +373,96 @@ index ef0f3cf35cfd..2d501993b197 100644
 +	return ret;
 +}
 +
-+int ath12k_wmi_pdev_set_tas_data_table_param(struct ath12k_base *ab,
-+					     const u8 *ptas_data)
++int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
++					     u8 *pgeo_table)
 +{
 +	struct ath12k_wmi_base *wmi_ab = &ab->wmi_ab;
-+	struct wmi_pdev_set_bios_interface_cmd *cmd;
++	struct wmi_pdev_set_bios_geo_table_cmd *cmd;
 +	struct wmi_tlv *tlv;
 +	struct sk_buff *skb;
-+	u8 *buf_ptr;
-+	u32 len, len_aligned;
 +	int ret;
++	u8 *buf_ptr;
++	u32 len, sar_geo_len_aligned;
++	u8 *pgeo_value = pgeo_table + ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET;
 +
-+	len_aligned = roundup(ATH12K_ACPI_DSM_TAS_DATA_SIZE, sizeof(u32));
-+	len = sizeof(*cmd) + TLV_HDR_SIZE + len_aligned;
++	sar_geo_len_aligned = roundup(ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN, sizeof(u32));
++	len = sizeof(*cmd) + TLV_HDR_SIZE + sar_geo_len_aligned;
 +
 +	skb = ath12k_wmi_alloc_skb(wmi_ab, len);
 +	if (!skb)
 +		return -ENOMEM;
 +
-+	cmd = (struct wmi_pdev_set_bios_interface_cmd *)skb->data;
++	cmd = (struct wmi_pdev_set_bios_geo_table_cmd *)skb->data;
 +	cmd->tlv_header =
-+		cpu_to_le32(ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD_PARAMS,
++		cpu_to_le32(ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_GEO_TABLE_CMD_PARAMS,
 +						   sizeof(*cmd)));
 +	cmd->pdev_id = cpu_to_le32(WMI_PDEV_ID_SOC);
-+	cmd->param_type_id = cpu_to_le32(WMI_BIOS_PARAM_TAS_DATA_TYPE);
-+	cmd->length = cpu_to_le32(ATH12K_ACPI_DSM_TAS_DATA_SIZE);
++	cmd->geo_len = cpu_to_le32(ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN);
 +
 +	buf_ptr = skb->data + sizeof(*cmd);
 +	tlv = (struct wmi_tlv *)buf_ptr;
-+	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, len_aligned);
++	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, sar_geo_len_aligned);
 +	buf_ptr += TLV_HDR_SIZE;
-+	memcpy(buf_ptr, ptas_data, ATH12K_ACPI_DSM_TAS_DATA_SIZE);
++	memcpy(buf_ptr, pgeo_value, ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN);
 +
-+	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0], skb, WMI_PDEV_SET_BIOS_INTERFACE_CMDID);
++	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0], skb, WMI_PDEV_SET_BIOS_GEO_TABLE_CMDID);
 +	if (ret) {
-+		ath12k_warn(ab, "failed to send WMI_PDEV_SET_BIOS_INTERFACE_CMDID %d\n", ret);
++		ath12k_warn(ab, "failed to send WMI_PDEV_SET_BIOS_GEO_TABLE_CMDID %d\n", ret);
 +		dev_kfree_skb(skb);
 +	}
 +
 +	return ret;
 +}
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index c75a6fa1f7e0..38bbf59fc6b7 100644
+index 38bbf59fc6b7..8a774655fe9f 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.h
 +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -361,6 +361,7 @@ enum wmi_tlv_cmd_id {
+@@ -361,6 +361,8 @@ enum wmi_tlv_cmd_id {
  	WMI_PDEV_DMA_RING_CFG_REQ_CMDID,
  	WMI_PDEV_HE_TB_ACTION_FRM_CMDID,
  	WMI_PDEV_PKTLOG_FILTER_CMDID,
-+	WMI_PDEV_SET_BIOS_INTERFACE_CMDID = 0x404A,
++	WMI_PDEV_SET_BIOS_SAR_TABLE_CMDID = 0x4044,
++	WMI_PDEV_SET_BIOS_GEO_TABLE_CMDID = 0x4045,
+ 	WMI_PDEV_SET_BIOS_INTERFACE_CMDID = 0x404A,
  	WMI_VDEV_CREATE_CMDID = WMI_TLV_CMD(WMI_GRP_VDEV),
  	WMI_VDEV_DELETE_CMDID,
- 	WMI_VDEV_START_REQUEST_CMDID,
-@@ -1931,6 +1932,7 @@ enum wmi_tlv_tag {
+@@ -1932,6 +1934,8 @@ enum wmi_tlv_tag {
  	WMI_TAG_REGULATORY_RULE_EXT_STRUCT = 0x3A9,
  	WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT,
  	WMI_TAG_EHT_RATE_SET = 0x3C4,
-+	WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD_PARAMS = 0x3FB,
++	WMI_TAG_PDEV_SET_BIOS_SAR_TABLE_CMD_PARAMS = 0x3D8,
++	WMI_TAG_PDEV_SET_BIOS_GEO_TABLE_CMD_PARAMS = 0x3D9,
+ 	WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD_PARAMS = 0x3FB,
  	WMI_TAG_MAX
  };
- 
-@@ -4791,6 +4793,19 @@ struct ath12k_wmi_base {
- 	struct ath12k_wmi_target_cap_arg *targ_cap;
+@@ -4806,6 +4810,19 @@ enum bios_param_type {
+ 	WMI_BIOS_PARAM_TYPE_MAX,
  };
  
-+struct wmi_pdev_set_bios_interface_cmd {
++struct wmi_pdev_set_bios_sar_table_cmd {
 +	__le32 tlv_header;
 +	__le32 pdev_id;
-+	__le32 param_type_id;
-+	__le32 length;
++	__le32 sar_len;
++	__le32 dbs_backoff_len;
 +} __packed;
 +
-+enum bios_param_type {
-+	WMI_BIOS_PARAM_TAS_CONFIG_TYPE	=	1,
-+	WMI_BIOS_PARAM_TAS_DATA_TYPE	=	2,
-+	WMI_BIOS_PARAM_TYPE_MAX,
-+};
++struct wmi_pdev_set_bios_geo_table_cmd {
++	__le32 tlv_header;
++	__le32 pdev_id;
++	__le32 geo_len;
++} __packed;
 +
  #define ATH12K_FW_STATS_BUF_SIZE (1024 * 1024)
  
  void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
-@@ -4912,5 +4927,8 @@ int ath12k_wmi_probe_resp_tmpl(struct ath12k *ar, u32 vdev_id,
- 			       struct sk_buff *tmpl);
- int ath12k_wmi_set_hw_mode(struct ath12k_base *ab,
- 			   enum wmi_host_hw_mode_config_type mode);
--
-+int ath12k_wmi_pdev_set_tas_cfg_table_param(struct ath12k_base *ab,
-+					    const u8 *ptas_cfg);
-+int ath12k_wmi_pdev_set_tas_data_table_param(struct ath12k_base *ab,
-+					     const u8 *ptas_data);
+@@ -4931,4 +4948,8 @@ int ath12k_wmi_pdev_set_tas_cfg_table_param(struct ath12k_base *ab,
+ 					    const u8 *ptas_cfg);
+ int ath12k_wmi_pdev_set_tas_data_table_param(struct ath12k_base *ab,
+ 					     const u8 *ptas_data);
++int ath12k_wmi_pdev_set_bios_sar_table_param(struct ath12k_base *ab,
++					     u8 *psar_table);
++int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
++					     u8 *pgeo_table);
  #endif
 -- 
 2.34.1
