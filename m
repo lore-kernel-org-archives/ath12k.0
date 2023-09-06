@@ -4,84 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BEACEB8FA5
-	for <ath12k@archiver.kernel.org>; Wed,  6 Sep 2023 05:17:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D33C5EB8FAD
+	for <ath12k@archiver.kernel.org>; Wed,  6 Sep 2023 08:58:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXlAzFDeCtEXGcGZQn6kKwJe+69EJmyTwH4ibjvJF1Q=; b=K/9oiGUgeBgPI4
-	W+UUDnD+yIPQCEFoz8SI7Vyg4aD9VNm55Kh3zLbcB58Hwg0l3yGJL7c50CtGVuhiOzV0foisvrgKp
-	MditHBKLy1GaELrqmsZVGVE1NyY+YowY8qLXzsFBKta9LkZBHDwrRckmH116W/KdHRJBtQlE1EdlW
-	dQB9S6C7Nsx1EDFrc6Yvu580PJvHH9IyeORWSnt9ZafcVfjQ/xLz8d2YgQxENaf4afZF3zkTxgcLy
-	7SN72OOuc4cBdR2HQkyex/k6OiYo4EXm6eXgPrK3HJkcostXRUd1QP85u4PKSvWPLzsmCsjSjPEon
-	KHn8506BlS8W9vaOGOPA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=m+dvLK8qIpUhnGzubbJsZ35BBxPScARn8amgOklQSao=; b=NvsMFSu7SNJmYd
+	8Tu+yrtEOyJ0ubs+dyNc1St297V213QfGd/0As1L9rvLDTzBIUdK3ooo0V7cTXWSVB2yUJexYmWNz
+	JRSmSOOvaMCvAx79sHXRQNQ5D6Jb9tWlWWOGd+dBSnIqKilHnixhnefz2DSOwwFygEErNzJuprei9
+	NpGMmV/Q/wOzrgm7dypTV6ZD5UNIfsuVd/jYiSFcCCZC7pS6Qa/9Jnikz6P/PWGEpTPfVGlsh8lut
+	s4gXfJZIaVQV8PHPGHoXEu92zfMkI52GtT55bu5mXQCuKdrjkdqn/ABp/ur/jN/Qb6putKwk+n+nn
+	F+QNIWvj5QVMPX18IKSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdkv6-007HgU-01
+	id 1qdoMU-007pQn-1I
 	for ath12k@archiver.kernel.org;
-	Wed, 06 Sep 2023 05:17:40 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 06 Sep 2023 08:58:10 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdkv3-007Hg7-2E
+	id 1qdoMQ-007pPj-2U
 	for ath12k@lists.infradead.org;
-	Wed, 06 Sep 2023 05:17:39 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3864eNV0016063;
-	Wed, 6 Sep 2023 05:17:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=HoyuN8PeUnYwc2gm3r/5SfCpwIfosnmVGjGSJtSKvwc=;
- b=XO3mWC8tCWHlBx7kBAf5jCT0CRf1XJPuQ2ukpm1fz52168/NTtESvXwe8NPgXOIgrlUx
- MWhWxsDTretQ51vk+klwS7VSM7l/ExCyDCTY0ax400FO5vSy6EPnH1NEqHHQvU7dSNHG
- UBRlyPcvXkaDmvd6KytJ0gmyeJrbeYFoMCRgbkFGldN+W672ha8TfCwJdxTK3wX5Xdwp
- OmZAZLCbhxijP4uRR9gIPC0bqqG62z40SxGe4kd9WEIOtT0Pqmjo/aQWJ9hpeM9/uTeH
- Srpo3GGtt/owQmPfqmrKHUxKKuefirpIC4s83/FgnkIpnI8fnp4U8cfHkwsXUuFfsGV7 Ig== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sx62wsy2d-1
+	Wed, 06 Sep 2023 08:58:08 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3867ICDJ021054;
+	Wed, 6 Sep 2023 08:58:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=UPqEUgtVregvk72U9ypoQs6bJKCBhAmh+YXpXdgrGeI=;
+ b=L60UmTqgUnTvAnHdWCwgg8QjSR6MSESgVz193J8iPQv6BSqWDCPTMvYfOJ9xNITwxEKS
+ 7Yp6Hzjp5z/Empf11QEk8dEusbsywZZr2odkL/4VAdy0QwP7QR830NqgCKrOPyHdJIWH
+ +CGazDQ+Iw3kg6a3E25B6B6rcTwVM1aCz96E5xbCRVoO8ErwxoBnvHtCPrJFHY5QIkxP
+ WU/VIxywQy7OfPO/uCkPa0jZPphIpeNvMQRiTpDoC7t97x1Axrkw2GAqBDpGMP2cMOUx
+ ZV+yIsN0ynly12nKoNuhvh/tbTCtIPa62maOzMV6hlh4UUTPp/liDsyY3twVmwwCcKoY MA== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sxhragq15-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 06 Sep 2023 05:17:36 +0000
+	Wed, 06 Sep 2023 08:58:05 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3865Ha9p017149
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3868w4A9026811
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 6 Sep 2023 05:17:36 GMT
-Received: from [10.111.180.119] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 5 Sep
- 2023 22:17:35 -0700
-Message-ID: <f859afc5-e51b-4b3a-9039-0da434d255e6@quicinc.com>
-Date: Tue, 5 Sep 2023 22:17:35 -0700
+	Wed, 6 Sep 2023 08:58:04 GMT
+Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Wed, 6 Sep 2023 01:58:02 -0700
+From: Wen Gong <quic_wgong@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_wgong@quicinc.com>
+Subject: [PATCH] wifi: ath12k: indicate scan complete for scan canceled when scan running
+Date: Wed, 6 Sep 2023 04:57:46 -0400
+Message-ID: <20230906085746.18968-1-quic_wgong@quicinc.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/4] wifi: ath12k: add TAS capability for WCN7850
-Content-Language: en-US
-To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20230905024904.3882-1-quic_lingbok@quicinc.com>
- <20230905024904.3882-2-quic_lingbok@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230905024904.3882-2-quic_lingbok@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: w2F7im-SZoAK95Ri9VkLvUmiFkVO3W4Z
-X-Proofpoint-ORIG-GUID: w2F7im-SZoAK95Ri9VkLvUmiFkVO3W4Z
+X-Proofpoint-ORIG-GUID: PXfvh_F1WseBjShFHwAi3Wick1i4cr03
+X-Proofpoint-GUID: PXfvh_F1WseBjShFHwAi3Wick1i4cr03
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-05_13,2023-09-05_01,2023-05-22_02
+ definitions=2023-09-06_02,2023-09-05_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- bulkscore=0 clxscore=1015 impostorscore=0 mlxscore=0 adultscore=0
- spamscore=0 malwarescore=0 suspectscore=0 mlxlogscore=578 phishscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309060047
+ bulkscore=0 clxscore=1015 suspectscore=0 adultscore=0 impostorscore=0
+ mlxscore=0 mlxlogscore=999 phishscore=0 malwarescore=0 priorityscore=1501
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309060075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230905_221737_760859_7364F106 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20230906_015806_945395_87A0BCE3 
+X-CRM114-Status: GOOD (  18.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,34 +89,85 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-...
+ath12k prints "Received scan event for unknown vdev" when doing the
+following test:
+1. trigger scan
+2. wait 0.2 second
+3. iw reg set is issued or 11d scan complete event is sent from firmware
 
-> diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-> new file mode 100644
-> index 000000000000..cf742958a623
-> --- /dev/null
-> +++ b/drivers/net/wireless/ath/ath12k/acpi.h
-> @@ -0,0 +1,28 @@
-> +/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-> +/*
-> + * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-> + * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-> + */
-> +#include <linux/acpi.h>
+Reason is:
+When iw reg set is issues or the 11d scan complete event is received, the
+new country code will be set to the firmware, and the new regdomain info
+indicated to ath12k, then the new channel list will be sent to the firmware.
+The firmware will cancel the current scan after receiving WMI_SCAN_CHAN_LIST_CMDID
+which is used for the new channel list, and the state of ath12k is
+ATH12K_SCAN_RUNNING, then ath12k_get_ar_on_scan_abort() returns NULL and
+ath12k_scan_event() returns at this point and does not indicate scan
+completion to mac80211.
 
-nit: this should be inside the include guard...
+Indicate scan completion to mac80211 and get rid of the "Received scan
+event for unknown vdev" print for the above case.
 
-> +
-> +#ifndef ATH12K_ACPI_H
-> +#define ATH12K_ACPI_H
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-...here
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/wmi.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 9ed33e2d6da0..d30de487f43f 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -5862,8 +5862,9 @@ static void ath12k_mgmt_tx_compl_event(struct ath12k_base *ab, struct sk_buff *s
+ 	rcu_read_unlock();
+ }
+ 
+-static struct ath12k *ath12k_get_ar_on_scan_abort(struct ath12k_base *ab,
+-						  u32 vdev_id)
++static struct ath12k *ath12k_get_ar_on_scan_state(struct ath12k_base *ab,
++						  u32 vdev_id,
++						  enum ath12k_scan_state state)
+ {
+ 	int i;
+ 	struct ath12k_pdev *pdev;
+@@ -5875,7 +5876,7 @@ static struct ath12k *ath12k_get_ar_on_scan_abort(struct ath12k_base *ab,
+ 			ar = pdev->ar;
+ 
+ 			spin_lock_bh(&ar->data_lock);
+-			if (ar->scan.state == ATH12K_SCAN_ABORTING &&
++			if (ar->scan.state == state &&
+ 			    ar->scan.vdev_id == vdev_id) {
+ 				spin_unlock_bh(&ar->data_lock);
+ 				return ar;
+@@ -5905,10 +5906,15 @@ static void ath12k_scan_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 	 * aborting scan's vdev id matches this event info.
+ 	 */
+ 	if (le32_to_cpu(scan_ev.event_type) == WMI_SCAN_EVENT_COMPLETED &&
+-	    le32_to_cpu(scan_ev.reason) == WMI_SCAN_REASON_CANCELLED)
+-		ar = ath12k_get_ar_on_scan_abort(ab, le32_to_cpu(scan_ev.vdev_id));
+-	else
++	    le32_to_cpu(scan_ev.reason) == WMI_SCAN_REASON_CANCELLED) {
++		ar = ath12k_get_ar_on_scan_state(ab, le32_to_cpu(scan_ev.vdev_id),
++						 ATH12K_SCAN_ABORTING);
++		if (!ar)
++			ar = ath12k_get_ar_on_scan_state(ab, le32_to_cpu(scan_ev.vdev_id),
++							 ATH12K_SCAN_RUNNING);
++	} else {
+ 		ar = ath12k_mac_get_ar_by_vdev_id(ab, le32_to_cpu(scan_ev.vdev_id));
++	}
+ 
+ 	if (!ar) {
+ 		ath12k_warn(ab, "Received scan event for unknown vdev");
+
+base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
+-- 
+2.40.1
 
 
 -- 
