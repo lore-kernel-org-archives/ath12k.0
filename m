@@ -4,82 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6E38EE14DC
-	for <ath12k@archiver.kernel.org>; Thu,  7 Sep 2023 10:17:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F248BEC873E
+	for <ath12k@archiver.kernel.org>; Thu,  7 Sep 2023 16:13:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rnp2kOZgG0JCmELbOwcTfhoV2RgUBbyMVDuwrUhfhkU=; b=pREhbEdXSAOZHB
-	3SigCizccase8v9TdZt4bUd2rvjiv83ynZdV7dmli2+W06H9/mPK1/31r9guUsk7eBI8FngH3yIqU
-	qZNDg35bMCzQnWP0tUCUnRr/y9JSDZ4qLk0/2+Ilamt9vtVzIIKi+h5BIXCHftc0EHP7QTweg5HVq
-	siuDbmA6LpVPYTxmlzGJocZEsNnslVLAU4Gvgmo2MnfMq69U3K5FZG24MpxtGGrOxo/JJWjMY9Czp
-	pTp9mbcAWi3TqGqlrJwQwvxmtXpkl+G7LnKq1r9OFDTzcYQuKWmqHQSm3eY1UYwROJ+HGQRukoIWu
-	+GYmleV5QyDLEGiFN7Lg==;
+	List-Owner; bh=XicPD14OhPbjYlHCydn9EMmkaJ5sJ/Hn84AXyYceIuw=; b=ngKkBbPH7jwQpm
+	rn7MnHirqmvzKjn/GE09RQMyoiggr/QsBOcD2EDakxdW6OE2cYWjCMEkucVszQno6Hw59dm4miv3b
+	KyRLX1p7Me530PZL/3glgmw8p0NV8s3H6UzcP29KQcFi0lVKPJDAIZ/8V0G8d8Ge1ZdLEYcYuGV43
+	cwEng2rhi8zhRTkZ1Ki6NSEZkIyekMLSgOdPUV4Elji4PY0lVy8cZ+tiAoWQzYB4+kghTifKBlcFd
+	f8gqcHI+zTOVMkzEXdo77eIho1Dvzxbx7t768bG9P/h745SDnl000V/yqNXWRDQl0m6URfTmTApzR
+	PevV3pPRCOBfG81k6NCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qeC5G-00BlMR-1W
+	id 1qeHcw-00CMqs-1H
 	for ath12k@archiver.kernel.org;
-	Thu, 07 Sep 2023 10:17:58 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 07 Sep 2023 16:13:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qeC5C-00BlL8-2f
+	id 1qeHcs-00CMqT-0X
 	for ath12k@lists.infradead.org;
-	Thu, 07 Sep 2023 10:17:56 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3875jLsC013399;
-	Thu, 7 Sep 2023 10:17:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding : content-type; s=qcppdkim1;
- bh=QOmmgB8gtyW0ITwumY9hNA5RNvIjStZ6YnzJBi9zivk=;
- b=E4mdvPoXufaDbcd5QBu//WlphOvTN2j0yxKkbFotMvVEsA1KgKTy7qPlbIR21OzjphAd
- OBIjUKM94A0b2bwuP49B+jfULB8GVBHTFupjAspt3Twj1HL9XsAUDhqKyJYkVc1hNHzn
- ToDDmooLK09hDyVRYBxIh7crHiVNb2UIQU0xh+GT5WPyWnu7X76T+ouIhQP29dTpnk0+
- q/iERCRZmXFy9rvSj7wVpJvK48x54JOridsRj6YUOy7NcQqkdHB73Wtb1xlwhidP7FU3
- Vjb5OMvUapssGkwtxJiqr6fyGLQEx/LdXw3HXdWxGhe6iEUL6RUX/z35bwd0PJUAyhgG 3g== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sxpt034et-1
+	Thu, 07 Sep 2023 16:13:04 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 387C4C5q027023;
+	Thu, 7 Sep 2023 16:13:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=HFqo0ej5abGoQJTZpWZL5b1e1gaxt37JhZB+srh9uPk=;
+ b=fQzsH5pnkfm9ZUkbmLBDz4T71aZMXJmFa4Y26IiX3OT59UAd3O4W4rPz2JS23vQJpxrD
+ xdlsVkUOUQ2txL4vZwghhc9MOxcz9hCjrbhPH66S2e59iuc29V7eK1R+h03VbvnLv+Hy
+ hbASXlVj+tETSWjo6eX0117Q3xwbffS03HRB8GTe9Cn/MJ/GRK+hzKFQ9DRFT/Y7gOMC
+ 0xhaX/oAAZK3no5lYY9NaaSh88K5tgT6/0fqkrq+koJY1kuIGLw5bfkloq2ABW9aUQkx
+ lYq+HiYbxZWfXlD7W71QLmiETQ3DP+CAmOoewNHFGWsy6zlTacWOxT1nNhkkQGODcXw6 Aw== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sxqha3hwb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 07 Sep 2023 10:17:54 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 387AHrBU025230
+	Thu, 07 Sep 2023 16:13:00 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 387GCVt6013242
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 7 Sep 2023 10:17:53 GMT
-Received: from lingbok-HP-EliteBook-8460p.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Thu, 7 Sep 2023 03:17:52 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>, <quic_jjohnson@quicinc.com>
-CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH v3 4/4] wifi: ath12k: add band edge channel power for WCN7850
-Date: Thu, 7 Sep 2023 18:17:10 +0800
-Message-ID: <20230907101710.11659-5-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20230907101710.11659-1-quic_lingbok@quicinc.com>
-References: <20230907101710.11659-1-quic_lingbok@quicinc.com>
+	Thu, 7 Sep 2023 16:12:31 GMT
+Received: from [10.111.180.119] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Thu, 7 Sep
+ 2023 09:12:30 -0700
+Message-ID: <d93aa6f3-e6a2-47d8-a4c4-55994ed79b12@quicinc.com>
+Date: Thu, 7 Sep 2023 09:12:29 -0700
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath12k: add support for hardware rfkill for
+ WCN7850
+Content-Language: en-US
+To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20230906110412.182176-1-quic_lingbok@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20230906110412.182176-1-quic_lingbok@quicinc.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: vmGK0NC-0ZCrLoAH7PPHlIpRSRMNZtre
-X-Proofpoint-GUID: vmGK0NC-0ZCrLoAH7PPHlIpRSRMNZtre
+X-Proofpoint-ORIG-GUID: DGHfJuRztFBjp-TZOZag_SlmHxjrwxL9
+X-Proofpoint-GUID: DGHfJuRztFBjp-TZOZag_SlmHxjrwxL9
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-07_03,2023-09-05_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
- mlxscore=0 phishscore=0 impostorscore=0 suspectscore=0 mlxlogscore=945
- adultscore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309070091
+ definitions=2023-09-07_08,2023-09-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ impostorscore=0 adultscore=0 phishscore=0 suspectscore=0
+ priorityscore=1501 clxscore=1015 lowpriorityscore=0 mlxscore=0 spamscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309070144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230907_031754_871803_81110F03 
-X-CRM114-Status: GOOD (  20.60  )
+X-CRM114-CacheID: sfid-20230907_091302_322133_D14E0AFC 
+X-CRM114-Status: GOOD (  35.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,196 +93,392 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k need to retrieve band edge channel power table by invoking ACPI _DSM
-method, then pass the table to firmware.
+On 9/6/2023 4:04 AM, Lingbo Kong wrote:
+> When hardware rfkill is enabled in the firmware, it will report the
+> capability using WMI_SYS_CAP_INFO_RFKILL bit in the WMI_SERVICE_READY event
+> to the host. Currently ath12k does not process this service capability. In
+> order to support this, update ath12k to check if the capability is enabled,
+> if so, send the GPIO information to firmware. When the firmware detects
+> hardware rfkill is enabled by the user, it will report it using
+> WMI_RFKILL_STATE_CHANGE_EVENTID. When ath12k receive the event, it will set
+> the value of rfkill_radio_on based on whether radio_state is equal to
+> WMI_RFKILL_RADIO_STATE_ON, then send WMI_PDEV_PARAM_RFKILL_ENABLE to
+> firmware.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
-v3:
-1.remove unnecessary cpu_to_le32()
-2.adjust the order of the macros
-
-v2:
-no change
-
- drivers/net/wireless/ath/ath12k/acpi.c | 29 +++++++++++++++++++
- drivers/net/wireless/ath/ath12k/acpi.h |  5 ++++
- drivers/net/wireless/ath/ath12k/core.h |  1 +
- drivers/net/wireless/ath/ath12k/wmi.c  | 40 ++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  3 ++
- 5 files changed, 78 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
-index a9931e17bd17..389b900df170 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.c
-+++ b/drivers/net/wireless/ath/ath12k/acpi.c
-@@ -82,6 +82,16 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
- 			memcpy(&ab->acdata->cca_data, obj->buffer.pointer,
- 			       obj->buffer.length);
- 			break;
-+		case ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE:
-+			if (obj->buffer.length != ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE) {
-+				ath12k_err(ab, "Invalid BAND EDGE data size %d\n",
-+					   obj->buffer.length);
-+				ret = -EINVAL;
-+				goto out;
-+			}
-+			memcpy(&ab->acdata->band_edge_power, obj->buffer.pointer,
-+			       obj->buffer.length);
-+			break;
- 		}
- 	} else {
- 		ath12k_err(ab,
-@@ -311,6 +321,25 @@ int ath12k_get_acpi_all_data(struct ath12k_base *ab)
- 		}
- 	}
- 
-+	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER)) {
-+		ret = ath12k_acpi_dsm_get_data(ab,
-+					       ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE);
-+		if (ret) {
-+			ath12k_err(ab, "failed to get band edge channel power %d\n", ret);
-+			goto err_free_acdata;
-+		}
-+
-+		if (ab->acdata->band_edge_power[0] == ATH12K_ACPI_BAND_EDGE_VERSION &&
-+		    ab->acdata->band_edge_power[1] == ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG) {
-+			ret = ath12k_wmi_pdev_set_band_edge_power(ab,
-+								  ab->acdata->band_edge_power);
-+			if (ret) {
-+				ath12k_err(ab, "set band edge channel power failed %d\n", ret);
-+				goto err_free_acdata;
-+			}
-+		}
-+	}
-+
- 	status = acpi_install_notify_handler(ACPI_HANDLE(ab->dev),
- 					     ACPI_DEVICE_NOTIFY,
- 					     acpi_dsm_notify, ab);
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-index 1f05a68e490b..27f28fc13600 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.h
-+++ b/drivers/net/wireless/ath/ath12k/acpi.h
-@@ -14,12 +14,14 @@
- #define ATH12K_ACPI_DSM_FUNC_INDEX_CCA			6
- #define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_CFG		8
- #define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA		9
-+#define ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE		10
- 
- #define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
- #define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
- #define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
- #define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
- #define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
-+#define ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER	BIT(9)
- 
- #define ATH12K_ACPI_NOTIFY_EVENT			0x86
- #define ATH12K_ACPI_FUNC_BIT_VALID(_acdata, _func)	((((_acdata)->func_bit) & (_func)) != 0)
-@@ -30,6 +32,8 @@
- #define ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG	0x1
- #define ATH12K_ACPI_CCA_THR_VERSION		0x1
- #define ATH12K_ACPI_CCA_THR_ENABLE_FLAG		0x1
-+#define ATH12K_ACPI_BAND_EDGE_VERSION		0x1
-+#define ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG	0x1
- 
- #define ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET	1
- #define ATH12K_ACPI_DBS_BACKOFF_DATA_OFFSET	2
-@@ -41,6 +45,7 @@
- #define ATH12K_ACPI_CCA_THR_OFFSET_LEN		36
- 
- #define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
-+#define ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE		100
- #define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
- 
- #define ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE (ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET + \
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index d57e2013b0fe..d06c3984aef9 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -781,6 +781,7 @@ struct ath12k_base {
- 		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
- 		u8 geo_offset_data[ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE];
- 		u8 cca_data[ATH12K_ACPI_DSM_CCA_DATA_SIZE];
-+		u8 band_edge_power[ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE];
- 	} *acdata;
- 
- 	/* must be last */
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 727ce28abd7d..102228229932 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7130,3 +7130,43 @@ int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab,
- 	}
- 	return ret;
- }
-+
-+int ath12k_wmi_pdev_set_band_edge_power(struct ath12k_base *ab,
-+					const u8 *pchan_table)
-+{
-+	struct ath12k_wmi_base *wmi_ab = &ab->wmi_ab;
-+	struct wmi_pdev_set_bios_interface_cmd *cmd;
-+	struct wmi_tlv *tlv;
-+	struct sk_buff *skb;
-+	int ret;
-+	u8 *buf_ptr;
-+	u32 len, len_aligned;
-+
-+	len_aligned = roundup(ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE, sizeof(u32));
-+	len = sizeof(*cmd) + TLV_HDR_SIZE + len_aligned;
-+
-+	skb = ath12k_wmi_alloc_skb(wmi_ab, len);
-+	if (!skb)
-+		return -ENOMEM;
-+
-+	cmd = (struct wmi_pdev_set_bios_interface_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD_PARAMS,
-+						 sizeof(*cmd));
-+	cmd->pdev_id = cpu_to_le32(WMI_PDEV_ID_SOC);
-+	cmd->param_type_id = cpu_to_le32(WMI_BIOS_PARAM_TYPE_BANDEDGE_CTL_POWER);
-+	cmd->length = cpu_to_le32(ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE);
-+
-+	buf_ptr = skb->data + sizeof(*cmd);
-+	tlv = (struct wmi_tlv *)buf_ptr;
-+	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, len_aligned);
-+	buf_ptr += TLV_HDR_SIZE;
-+	memcpy(buf_ptr, pchan_table, ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE);
-+
-+	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0], skb, WMI_PDEV_SET_BIOS_INTERFACE_CMDID);
-+	if (ret) {
-+		ath12k_warn(ab, "failed to send WMI_PDEV_SET_BIOS_INTERFACE_CMDID %d\n", ret);
-+		dev_kfree_skb(skb);
-+	}
-+
-+	return ret;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 7607cd7ab699..73d790d405cd 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4808,6 +4808,7 @@ enum bios_param_type {
- 	WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE	=	0,
- 	WMI_BIOS_PARAM_TAS_CONFIG_TYPE		=	1,
- 	WMI_BIOS_PARAM_TAS_DATA_TYPE		=	2,
-+	WMI_BIOS_PARAM_TYPE_BANDEDGE_CTL_POWER	=	3,
- 	WMI_BIOS_PARAM_TYPE_MAX,
- };
- 
-@@ -4955,4 +4956,6 @@ int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
- 					     u8 *pgeo_table);
- int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab,
- 					    u8 *pcca_table);
-+int ath12k_wmi_pdev_set_band_edge_power(struct ath12k_base *ab,
-+					const u8 *pchan_table);
- #endif
--- 
-2.34.1
+> ---
+> v2:
+> 1.s/via//
+> 2.modify commit log
+> 3.use an endian-conversion macro
+> 
+>   drivers/net/wireless/ath/ath12k/core.c | 52 +++++++++++++++++++++++
+>   drivers/net/wireless/ath/ath12k/core.h |  4 ++
+>   drivers/net/wireless/ath/ath12k/hw.c   | 12 ++++++
+>   drivers/net/wireless/ath/ath12k/hw.h   |  4 ++
+>   drivers/net/wireless/ath/ath12k/mac.c  | 58 ++++++++++++++++++++++++++
+>   drivers/net/wireless/ath/ath12k/mac.h  |  2 +
+>   drivers/net/wireless/ath/ath12k/wmi.c  | 39 +++++++++++++++++
+>   drivers/net/wireless/ath/ath12k/wmi.h  | 25 +++++++++++
+>   8 files changed, 196 insertions(+)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+> index 39f938fafa81..c6fb1e435d86 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.c
+> +++ b/drivers/net/wireless/ath/ath12k/core.c
+> @@ -19,6 +19,27 @@ unsigned int ath12k_debug_mask;
+>   module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
+>   MODULE_PARM_DESC(debug_mask, "Debugging mask");
+>   
+> +static int ath12k_core_rfkill_config(struct ath12k_base *ab)
+> +{
+> +	struct ath12k *ar;
+> +	int ret = 0, i;
+> +
+> +	if (!(ab->target_caps.sys_cap_info & WMI_SYS_CAP_INFO_RFKILL))
+> +		return 0;
+> +
+> +	for (i = 0; i < ab->num_radios; i++) {
+> +		ar = ab->pdevs[i].ar;
+> +
+> +		ret = ath12k_mac_rfkill_config(ar);
+> +		if (ret && ret != -EOPNOTSUPP) {
+> +			ath12k_warn(ab, "failed to configure rfkill: %d", ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+>   int ath12k_core_suspend(struct ath12k_base *ab)
+>   {
+>   	int ret;
+> @@ -603,6 +624,13 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
+>   		goto err_core_stop;
+>   	}
+>   	ath12k_hif_irq_enable(ab);
+> +
+> +	ret = ath12k_core_rfkill_config(ab);
+> +	if (ret && ret != -EOPNOTSUPP) {
+> +		ath12k_err(ab, "failed to config rfkill: %d\n", ret);
+> +		goto err_core_stop;
+> +	}
+> +
+>   	mutex_unlock(&ab->core_lock);
+>   
+>   	return 0;
+> @@ -655,6 +683,27 @@ static int ath12k_core_reconfigure_on_crash(struct ath12k_base *ab)
+>   	return ret;
+>   }
+>   
+> +static void ath12k_rfkill_work(struct work_struct *work)
+> +{
+> +	struct ath12k_base *ab = container_of(work, struct ath12k_base, rfkill_work);
+> +	struct ath12k *ar;
+> +	bool rfkill_radio_on;
+> +	int i;
+> +
+> +	spin_lock_bh(&ab->base_lock);
+> +	rfkill_radio_on = ab->rfkill_radio_on;
+> +	spin_unlock_bh(&ab->base_lock);
+> +
+> +	for (i = 0; i < ab->num_radios; i++) {
+> +		ar = ab->pdevs[i].ar;
+> +		if (!ar)
+> +			continue;
+> +
+> +		ath12k_mac_rfkill_enable_radio(ar, rfkill_radio_on);
+> +		wiphy_rfkill_set_hw_state(ar->hw->wiphy, !rfkill_radio_on);
+> +	}
+> +}
+> +
+>   void ath12k_core_halt(struct ath12k *ar)
+>   {
+>   	struct ath12k_base *ab = ar->ab;
+> @@ -668,6 +717,7 @@ void ath12k_core_halt(struct ath12k *ar)
+>   	ath12k_mac_peer_cleanup_all(ar);
+>   	cancel_delayed_work_sync(&ar->scan.timeout);
+>   	cancel_work_sync(&ar->regd_update_work);
+> +	cancel_work_sync(&ab->rfkill_work);
+>   
+>   	rcu_assign_pointer(ab->pdevs_active[ar->pdev_idx], NULL);
+>   	synchronize_rcu();
+> @@ -921,6 +971,8 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
+>   	init_waitqueue_head(&ab->wmi_ab.tx_credits_wq);
+>   	INIT_WORK(&ab->restart_work, ath12k_core_restart);
+>   	INIT_WORK(&ab->reset_work, ath12k_core_reset);
+> +	INIT_WORK(&ab->rfkill_work, ath12k_rfkill_work);
+> +
+>   	timer_setup(&ab->rx_replenish_retry, ath12k_ce_rx_replenish_retry, 0);
+>   	init_completion(&ab->htc_suspend);
+>   
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index d873b573dac6..3f5f0471f640 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -771,6 +771,10 @@ struct ath12k_base {
+>   	u64 fw_soc_drop_count;
+>   	bool static_window_map;
+>   
+> +	struct work_struct rfkill_work;
+> +	/* true means radio is on */
+> +	bool rfkill_radio_on;
+> +
+>   	/* must be last */
+>   	u8 drv_priv[] __aligned(sizeof(void *));
+>   };
+> diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+> index 5991cc91cd00..f69649f58e82 100644
+> --- a/drivers/net/wireless/ath/ath12k/hw.c
+> +++ b/drivers/net/wireless/ath/ath12k/hw.c
+> @@ -907,6 +907,10 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+>   		.hal_ops = &hal_qcn9274_ops,
+>   
+>   		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
+> +
+> +		.rfkill_pin = 0,
+> +		.rfkill_cfg = 0,
+> +		.rfkill_on_level = 0,
+>   	},
+>   	{
+>   		.name = "wcn7850 hw2.0",
+> @@ -964,6 +968,10 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+>   
+>   		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01) |
+>   					   BIT(CNSS_PCIE_PERST_NO_PULL_V01),
+> +
+> +		.rfkill_pin = 48,
+> +		.rfkill_cfg = 0,
+> +		.rfkill_on_level = 1,
+>   	},
+>   	{
+>   		.name = "qcn9274 hw2.0",
+> @@ -1019,6 +1027,10 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+>   		.hal_ops = &hal_qcn9274_ops,
+>   
+>   		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
+> +
+> +		.rfkill_pin = 0,
+> +		.rfkill_cfg = 0,
+> +		.rfkill_on_level = 0,
+>   	},
+>   };
+>   
+> diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+> index e6c4223c283c..1b4912bf57ad 100644
+> --- a/drivers/net/wireless/ath/ath12k/hw.h
+> +++ b/drivers/net/wireless/ath/ath12k/hw.h
+> @@ -186,6 +186,10 @@ struct ath12k_hw_params {
+>   	const struct hal_ops *hal_ops;
+>   
+>   	u64 qmi_cnss_feature_bitmap;
+> +
+> +	u32 rfkill_pin;
+> +	u32 rfkill_cfg;
+> +	u32 rfkill_on_level;
+>   };
+>   
+>   struct ath12k_hw_ops {
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 8cc9ae2204b8..bfba9ad18776 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -5108,6 +5108,63 @@ static int ath12k_mac_op_start(struct ieee80211_hw *hw)
+>   	return ret;
+>   }
+>   
+> +int ath12k_mac_rfkill_config(struct ath12k *ar)
+> +{
+> +	struct ath12k_base *ab = ar->ab;
+> +	u32 param;
+> +	int ret;
+> +
+> +	if (ab->hw_params->rfkill_pin == 0)
+> +		return -EOPNOTSUPP;
+> +
+> +	ath12k_dbg(ab, ATH12K_DBG_MAC,
+> +		   "mac rfkill_pin %d rfkill_cfg %d rfkill_on_level %d",
+> +		   ab->hw_params->rfkill_pin, ab->hw_params->rfkill_cfg,
+> +		   ab->hw_params->rfkill_on_level);
+> +
+> +	param = u32_encode_bits(ab->hw_params->rfkill_on_level,
+> +				WMI_RFKILL_CFG_RADIO_LEVEL) |
+> +		u32_encode_bits(ab->hw_params->rfkill_pin,
+> +				WMI_RFKILL_CFG_GPIO_PIN_NUM) |
+> +		u32_encode_bits(ab->hw_params->rfkill_cfg,
+> +				WMI_RFKILL_CFG_PIN_AS_GPIO);
+> +
+> +	ret = ath12k_wmi_pdev_set_param(ar, WMI_PDEV_PARAM_HW_RFKILL_CONFIG,
+> +					param, ar->pdev->pdev_id);
+> +	if (ret) {
+> +		ath12k_warn(ab,
+> +			    "failed to set rfkill config 0x%x: %d\n",
+> +			    param, ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +int ath12k_mac_rfkill_enable_radio(struct ath12k *ar, bool enable)
+> +{
+> +	enum wmi_rfkill_enable_radio param;
+> +	int ret;
+> +
+> +	if (enable)
+> +		param = WMI_RFKILL_ENABLE_RADIO_ON;
+> +	else
+> +		param = WMI_RFKILL_ENABLE_RADIO_OFF;
+> +
+> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac %d rfkill enable %d",
+> +		   ar->pdev_idx, param);
+> +
+> +	ret = ath12k_wmi_pdev_set_param(ar, WMI_PDEV_PARAM_RFKILL_ENABLE,
+> +					param, ar->pdev->pdev_id);
+> +	if (ret) {
+> +		ath12k_warn(ar->ab, "failed to set rfkill enable param %d: %d\n",
+> +			    param, ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>   static void ath12k_mac_op_stop(struct ieee80211_hw *hw)
+>   {
+>   	struct ath12k *ar = hw->priv;
+> @@ -5128,6 +5185,7 @@ static void ath12k_mac_op_stop(struct ieee80211_hw *hw)
+>   
+>   	cancel_delayed_work_sync(&ar->scan.timeout);
+>   	cancel_work_sync(&ar->regd_update_work);
+> +	cancel_work_sync(&ar->ab->rfkill_work);
+>   
+>   	spin_lock_bh(&ar->data_lock);
+>   	list_for_each_entry_safe(ppdu_stats, tmp, &ar->ppdu_stats_info, list) {
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+> index 7b16b70df4fa..59b4e8f5eee0 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.h
+> +++ b/drivers/net/wireless/ath/ath12k/mac.h
+> @@ -73,4 +73,6 @@ int ath12k_mac_tx_mgmt_pending_free(int buf_id, void *skb, void *ctx);
+>   enum rate_info_bw ath12k_mac_bw_to_mac80211_bw(enum ath12k_supported_bw bw);
+>   enum ath12k_supported_bw ath12k_mac_mac80211_bw_to_ath12k_bw(enum rate_info_bw bw);
+>   enum hal_encrypt_type ath12k_dp_tx_get_encrypt_type(u32 cipher);
+> +int ath12k_mac_rfkill_enable_radio(struct ath12k *ar, bool enable);
+> +int ath12k_mac_rfkill_config(struct ath12k *ar);
+>   #endif
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index f48ab69e256a..5bd357ea8a75 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -152,6 +152,8 @@ static const struct ath12k_wmi_tlv_policy ath12k_wmi_tlv_policies[] = {
+>   		.min_len = sizeof(struct wmi_service_available_event) },
+>   	[WMI_TAG_PEER_ASSOC_CONF_EVENT] = {
+>   		.min_len = sizeof(struct wmi_peer_assoc_conf_event) },
+> +	[WMI_TAG_RFKILL_EVENT] = {
+> +		.min_len = sizeof(struct wmi_rfkill_state_change_event) },
+>   	[WMI_TAG_PDEV_CTL_FAILSAFE_CHECK_EVENT] = {
+>   		.min_len = sizeof(struct wmi_pdev_ctl_failsafe_chk_event) },
+>   	[WMI_TAG_HOST_SWFDA_EVENT] = {
+> @@ -6602,6 +6604,40 @@ static void ath12k_probe_resp_tx_status_event(struct ath12k_base *ab,
+>   	kfree(tb);
+>   }
+>   
+> +static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
+> +					     struct sk_buff *skb)
+> +{
+> +	const struct wmi_rfkill_state_change_event *ev;
+> +	const void **tb;
+> +	int ret;
+> +
+> +	tb = ath12k_wmi_tlv_parse_alloc(ab, skb->data, skb->len, GFP_ATOMIC);
+> +	if (IS_ERR(tb)) {
+> +		ret = PTR_ERR(tb);
+> +		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	ev = tb[WMI_TAG_RFKILL_EVENT];
+> +	if (!ev) {
+> +		kfree(tb);
+> +		return;
+> +	}
+> +
+> +	ath12k_dbg(ab, ATH12K_DBG_MAC,
+> +		   "wmi tlv rfkill state change gpio %d type %d radio_state %d\n",
+> +		   le32_to_cpu(ev->gpio_pin_num),
+> +		   le32_to_cpu(ev->int_type),
+> +		   le32_to_cpu(ev->radio_state));
+> +
+> +	spin_lock_bh(&ab->base_lock);
+> +	ab->rfkill_radio_on = (ev->radio_state == cpu_to_le32(WMI_RFKILL_RADIO_STATE_ON));
+> +	spin_unlock_bh(&ab->base_lock);
+> +
+> +	queue_work(ab->workqueue, &ab->rfkill_work);
+> +	kfree(tb);
+> +}
+> +
+>   static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+>   {
+>   	struct wmi_cmd_hdr *cmd_hdr;
+> @@ -6694,6 +6730,9 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+>   	case WMI_OFFLOAD_PROB_RESP_TX_STATUS_EVENTID:
+>   		ath12k_probe_resp_tx_status_event(ab, skb);
+>   		break;
+> +	case WMI_RFKILL_STATE_CHANGE_EVENTID:
+> +		ath12k_rfkill_state_change_event(ab, skb);
+> +		break;
+>   	/* add Unsupported events here */
+>   	case WMI_TBTTOFFSET_EXT_UPDATE_EVENTID:
+>   	case WMI_PEER_OPER_MODE_CHANGE_EVENTID:
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+> index c75a6fa1f7e0..965755b4cbfd 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+> @@ -4793,6 +4793,31 @@ struct ath12k_wmi_base {
+>   
+>   #define ATH12K_FW_STATS_BUF_SIZE (1024 * 1024)
+>   
+> +enum wmi_sys_cap_info_flags {
+> +	WMI_SYS_CAP_INFO_RXTX_LED	= BIT(0),
+> +	WMI_SYS_CAP_INFO_RFKILL		= BIT(1),
+> +};
+> +
+> +#define WMI_RFKILL_CFG_GPIO_PIN_NUM		GENMASK(5, 0)
+> +#define WMI_RFKILL_CFG_RADIO_LEVEL		BIT(6)
+> +#define WMI_RFKILL_CFG_PIN_AS_GPIO		GENMASK(10, 7)
+> +
+> +enum wmi_rfkill_enable_radio {
+> +	WMI_RFKILL_ENABLE_RADIO_ON	= 0,
+> +	WMI_RFKILL_ENABLE_RADIO_OFF	= 1,
+> +};
+> +
+> +enum wmi_rfkill_radio_state {
+> +	WMI_RFKILL_RADIO_STATE_OFF	= 1,
+> +	WMI_RFKILL_RADIO_STATE_ON	= 2,
+> +};
+> +
+> +struct wmi_rfkill_state_change_event {
+> +	__le32 gpio_pin_num;
+> +	__le32 int_type;
+> +	__le32 radio_state;
+> +} __packed;
+> +
+>   void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
+>   			     struct ath12k_wmi_resource_config_arg *config);
+>   void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
+> 
+> base-commit: 1b5b69a51bb4909844e4003920af09ca1cc6bb0e
 
 
 -- 
