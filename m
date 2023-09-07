@@ -4,85 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B88A2EE14D0
-	for <ath12k@archiver.kernel.org>; Wed,  6 Sep 2023 20:37:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19098EE14D4
+	for <ath12k@archiver.kernel.org>; Thu,  7 Sep 2023 05:11:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eSnCZfzx634L6FG5M51jim+Fpd1tfKzDupJlH57A3b8=; b=Pq4H6fWeI4TdOz
-	B4n81GgNYBtbwu1DnglZz/Q+J6+NGtc4l2XmHA+JeyfNZML7QBnxGsh3F+/y47xC4husr/mOQIZBs
-	n9j4GtQ0y5XXXxA0FvzE2vRt0LlO4aw4YGxWM7IeHEDIRuyxlFosQLHKe7OOFGCY4j/y6kwKgahcO
-	2V6NCaCrmPnkMaQj5BpEX5GonkKWdhOPnw/EY/060hkb2I9XW8f3KA96R8JnPHse4f8ZsLWH+XZSN
-	ZIOIbCTyRtGEE9NC5V1EssRgrKvHeDFuqF2J0sR0FrV5BdtizCjpBNWnwrc9qTT92sHZW/zmTPhC3
-	XZK7VDvlqnmNM+99DeTw==;
+	List-Owner; bh=t24a0J9pTVSHhPs4erkJ8T34l+NF091zGydQsUS0SSE=; b=0s5qGbCpScpG7e
+	D+3xDyxLoGLvSyVCxdiq4zbZkOMom7qNZ0MeEtZ0T+l6NJbwGma+8z47olAt/eyLIZ/QWh/ZhyF8U
+	OvLOzRC21LJMe4bCwxJHvG9vGGcVssTCECs3SsS7+61UaXxSs2LS/hQsD/rzU5UUu5fW8Iurlh+hu
+	7E66oCBrh0FCqrAiiT7pU47bCZG7A/BSgxkkjiWc0FBo4uz+T57OZlzK5jjiVuudWaGVqCssotkgf
+	bjFxkrd9huhC0YXAB4Q2tr+sdj/kEzmc6WXBBk1umqQZ/v+D+AvYkC7yjSHeWIa0xtjlggkDs3uZ4
+	BC0Lt+JZLJcUkjjMcLSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdzHI-00ArVK-1B
+	id 1qe7IO-00BL7e-2D
 	for ath12k@archiver.kernel.org;
-	Wed, 06 Sep 2023 20:37:32 +0000
+	Thu, 07 Sep 2023 05:11:12 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qdzHE-00ArUL-1A
+	id 1qe7IL-00BL77-3D
 	for ath12k@lists.infradead.org;
-	Wed, 06 Sep 2023 20:37:30 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 386IlPax000732;
-	Wed, 6 Sep 2023 20:37:27 GMT
+	Thu, 07 Sep 2023 05:11:11 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38740iQR000349;
+	Thu, 7 Sep 2023 05:11:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=W9uShhwqZemtFLyTkC7Bl453GXx0OXfuii1+UxJjtNk=;
- b=CECvz/81T/P5psPfdoyLiqo+GbED2h3qZ8N9uBC505lTVPXq/Z1LsOqdvi55xMobzAix
- OPQBIO2FeaRlIJDGYtodWlnpF9GC8evDDG42j0WYT7NKWUMRHKnzxKDmSA4nuaSLftyS
- ecPqlAbHAktZl7Lxn9kWnOS/JDFRXqz0PlcizzqRBq3rdpQspX01YZF5yGeddlFtuG6Q
- Zf3L8Yst2++Xg0D4OJDs4dGEqnAcsbnhkMLzFa3q6LnFzlI8Fjq2Tl4Rj/xCZ5DoE5y/
- Wf3Zwe4/pFFjf1Lq0iuSebnGE48wmcQfDbs/62gplSv7uNMYNK16fc96k2CHiEfvENwj tA== 
+ bh=NkgTf100L4BOAJr3olFLS/P1LzhLfZm+gIIir/FI3PA=;
+ b=LFCSIp0TJMA37Ot4MTajyoVA/jUzZOBI8x6C40+CiM847gbkjqMZKqH83zpbH3IqJaum
+ Z2705S1bFPWlmDfMOR8WzCyjeoCQ257sxzy+DBkB09I6439itUsH8t1suRYa9treM1RB
+ 20APHQNo8s9vhqW5YKjQGXl4iN0IYiIKi7gRCdOgkEUFKTa9HIkg9mMNdfxiUnCTBK8I
+ l0I0spW90yK8bLWyCp26cCTk6agtMjXU0uQTpV6Y6aDS3CmGV8+PXKUZXi1o6Z8005Fb
+ EhcB7ki6gUSvSLG6Q2OxbdO7aNEZoeGFTu3HDigSIbLfdKs34HxQPlC6XHZUZWntFskl 2g== 
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sxpt01qkv-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3sxq23agaq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 06 Sep 2023 20:37:27 +0000
+	Thu, 07 Sep 2023 05:11:08 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 386KbQKX005874
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3875B7O5007584
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 6 Sep 2023 20:37:26 GMT
+	Thu, 7 Sep 2023 05:11:07 GMT
 Received: from [10.111.180.119] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 6 Sep
- 2023 13:37:26 -0700
-Message-ID: <a7e4e6b7-f640-477a-a7bd-16d1a8c7532b@quicinc.com>
-Date: Wed, 6 Sep 2023 13:37:25 -0700
+ 2023 22:11:07 -0700
+Message-ID: <51377366-584d-4854-ab30-552e15100dee@quicinc.com>
+Date: Wed, 6 Sep 2023 22:11:06 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/4] wifi: ath12k: adjust configuration of CCA threshold
- value
+Subject: Re: [PATCH 4/4] wifi: ath12k: add band edge channel power for WCN7850
 Content-Language: en-US
 To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20230905024904.3882-1-quic_lingbok@quicinc.com>
- <20230905024904.3882-4-quic_lingbok@quicinc.com>
+ <20230905024904.3882-5-quic_lingbok@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230905024904.3882-4-quic_lingbok@quicinc.com>
+In-Reply-To: <20230905024904.3882-5-quic_lingbok@quicinc.com>
 X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: HpHw3z4kHBsE0rqIGNAn8_0Zq6Gl3IoZ
-X-Proofpoint-GUID: HpHw3z4kHBsE0rqIGNAn8_0Zq6Gl3IoZ
+X-Proofpoint-ORIG-GUID: YpmCBb3FzDSRsceIbSdVg0GLiKCqyXn2
+X-Proofpoint-GUID: YpmCBb3FzDSRsceIbSdVg0GLiKCqyXn2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-06_06,2023-09-05_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
- mlxscore=0 phishscore=0 impostorscore=0 suspectscore=0 mlxlogscore=999
- adultscore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309060178
+ definitions=2023-09-06_12,2023-09-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ bulkscore=0 phishscore=0 adultscore=0 priorityscore=1501 clxscore=1015
+ suspectscore=0 spamscore=0 impostorscore=0 malwarescore=0 mlxscore=0
+ mlxlogscore=998 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309070044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230906_133728_431642_DD621858 
-X-CRM114-Status: GOOD (  27.67  )
+X-CRM114-CacheID: sfid-20230906_221110_067102_C91E0512 
+X-CRM114-Status: GOOD (  24.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,61 +99,59 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 9/4/2023 7:49 PM, Lingbo Kong wrote:
-> ath12k need to adjust CCA threshold values to meet the regulatory
-> requirement. ath12k can retrieve CCA threshold configuration by invoking
-> ACPI _DSM method.
+> ath12k need to retrieve band edge channel power table by invoking ACPI _DSM
+> method, then pass the table to firmware.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
 > Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
 > ---
->   drivers/net/wireless/ath/ath12k/acpi.c | 30 +++++++++++++++++++
->   drivers/net/wireless/ath/ath12k/acpi.h |  8 +++++
+>   drivers/net/wireless/ath/ath12k/acpi.c | 29 ++++++++++++++++++
+>   drivers/net/wireless/ath/ath12k/acpi.h |  6 +++-
 >   drivers/net/wireless/ath/ath12k/core.h |  1 +
 >   drivers/net/wireless/ath/ath12k/wmi.c  | 41 ++++++++++++++++++++++++++
->   drivers/net/wireless/ath/ath12k/wmi.h  |  7 +++--
->   5 files changed, 85 insertions(+), 2 deletions(-)
+>   drivers/net/wireless/ath/ath12k/wmi.h  |  3 ++
+>   5 files changed, 79 insertions(+), 1 deletion(-)
 > 
 > diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
-> index ae1ce7b99d2d..a9931e17bd17 100644
+> index a9931e17bd17..389b900df170 100644
 > --- a/drivers/net/wireless/ath/ath12k/acpi.c
 > +++ b/drivers/net/wireless/ath/ath12k/acpi.c
-> @@ -72,6 +72,16 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
->   			memcpy(&ab->acdata->geo_offset_data, obj->buffer.pointer,
+> @@ -82,6 +82,16 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
+>   			memcpy(&ab->acdata->cca_data, obj->buffer.pointer,
 >   			       obj->buffer.length);
 >   			break;
-> +		case ATH12K_ACPI_DSM_FUNC_INDEX_CCA:
-> +			if (obj->buffer.length != ATH12K_ACPI_DSM_CCA_DATA_SIZE) {
-> +				ath12k_err(ab, "Invalid CCA data size %d\n",
+> +		case ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE:
+> +			if (obj->buffer.length != ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE) {
+> +				ath12k_err(ab, "Invalid BAND EDGE data size %d\n",
 > +					   obj->buffer.length);
 > +				ret = -EINVAL;
 > +				goto out;
 > +			}
-> +			memcpy(&ab->acdata->cca_data, obj->buffer.pointer,
+> +			memcpy(&ab->acdata->band_edge_power, obj->buffer.pointer,
 > +			       obj->buffer.length);
 > +			break;
 >   		}
 >   	} else {
 >   		ath12k_err(ab,
-> @@ -281,6 +291,26 @@ int ath12k_get_acpi_all_data(struct ath12k_base *ab)
->   			goto err_free_acdata;
+> @@ -311,6 +321,25 @@ int ath12k_get_acpi_all_data(struct ath12k_base *ab)
+>   		}
 >   	}
 >   
-> +	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_CCA)) {
+> +	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata, ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER)) {
 > +		ret = ath12k_acpi_dsm_get_data(ab,
-> +					       ATH12K_ACPI_DSM_FUNC_INDEX_CCA);
+> +					       ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE);
 > +		if (ret) {
-> +			ath12k_err(ab, "failed to get cca threshold configuration %d\n", ret);
+> +			ath12k_err(ab, "failed to get band edge channel power %d\n", ret);
 > +			goto err_free_acdata;
 > +		}
 > +
-> +		if (ab->acdata->cca_data[0] == ATH12K_ACPI_CCA_THR_VERSION &&
-> +		    ab->acdata->cca_data[ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET] ==
-> +		    ATH12K_ACPI_CCA_THR_ENABLE_FLAG) {
-> +			ret = ath12k_wmi_pdev_set_cca_thr_table_param(ab,
-> +								      ab->acdata->cca_data);
+> +		if (ab->acdata->band_edge_power[0] == ATH12K_ACPI_BAND_EDGE_VERSION &&
+> +		    ab->acdata->band_edge_power[1] == ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG) {
+> +			ret = ath12k_wmi_pdev_set_band_edge_power(ab,
+> +								  ab->acdata->band_edge_power);
 > +			if (ret) {
-> +				ath12k_err(ab, "set cca threshold failed %d\n", ret);
+> +				ath12k_err(ab, "set band edge channel power failed %d\n", ret);
 > +				goto err_free_acdata;
 > +			}
 > +		}
@@ -164,76 +161,64 @@ On 9/4/2023 7:49 PM, Lingbo Kong wrote:
 >   					     ACPI_DEVICE_NOTIFY,
 >   					     acpi_dsm_notify, ab);
 > diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-> index 59f87cb258c6..acdf8d851fba 100644
+> index acdf8d851fba..1acfd7696dfc 100644
 > --- a/drivers/net/wireless/ath/ath12k/acpi.h
 > +++ b/drivers/net/wireless/ath/ath12k/acpi.h
-> @@ -13,14 +13,17 @@
->   #define ATH12K_ACPI_DSM_FUNC_INDEX_TAS_DATA		9
+> @@ -14,18 +14,21 @@
 >   #define ATH12K_ACPI_DSM_FUNC_INDEX_BIOS_SAR		4
 >   #define ATH12K_ACPI_DSM_FUNC_INDEX_GEO_OFFSET		5
-> +#define ATH12K_ACPI_DSM_FUNC_INDEX_CCA			6
+>   #define ATH12K_ACPI_DSM_FUNC_INDEX_CCA			6
+> +#define ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE		10
 >   
 >   #define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
 >   #define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
 >   #define ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE		34
 >   #define ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE		19
-> +#define ATH12K_ACPI_DSM_CCA_DATA_SIZE			41
+>   #define ATH12K_ACPI_DSM_CCA_DATA_SIZE			41
+> +#define ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE		100
 >   
 >   #define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
 >   #define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
-> +#define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
+>   #define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
 >   #define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
 >   #define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
+> +#define ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER	BIT(9)
 >   
-> @@ -37,6 +40,11 @@
->   #define ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG	0x1
->   #define ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET	1
->   #define ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN	18
-> +#define ATH12K_ACPI_CCA_THR_VERSION		0x1
-> +#define ATH12K_ACPI_CCA_THR_ENABLE_FLAG		0x1
-> +#define ATH12K_ACPI_CCA_THR_OFFSET_LEN		36
-> +#define ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET	5
-
-for all of these macros it seems like you have duplication of knowledge.
-
-here you have two macros that describe the layout, and you have a 
-separate macro above that describes the entire data size. IMO it would 
-be "better" if the data size was based upon the layout macros rather 
-than being an independent quantity:
-
-#define ATH12K_ACPI_DSM_CCA_DATA_SIZE 
-(ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET +
-ATH12K_ACPI_CCA_THR_OFFSET_LEN)
-
-consider this advice to apply to the previous patches in this patchset
-
-> +
+>   #define ATH12K_ACPI_NOTIFY_EVENT			0x86
+>   #define ATH12K_ACPI_FUNC_BIT_VALID(_acdata, _func)	((((_acdata)->func_bit) & (_func)) != 0)
+> @@ -44,7 +47,8 @@
+>   #define ATH12K_ACPI_CCA_THR_ENABLE_FLAG		0x1
+>   #define ATH12K_ACPI_CCA_THR_OFFSET_LEN		36
+>   #define ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET	5
+> -
+> +#define ATH12K_ACPI_BAND_EDGE_VERSION		0x1
+> +#define ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG	0x1
 >   
 >   int ath12k_get_acpi_all_data(struct ath12k_base *ab);
 >   void acpi_dsm_notify(acpi_handle handle, u32 event, void *data);
 > diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 6fe4f0ddee4a..d57e2013b0fe 100644
+> index d57e2013b0fe..d06c3984aef9 100644
 > --- a/drivers/net/wireless/ath/ath12k/core.h
 > +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -780,6 +780,7 @@ struct ath12k_base {
->   		u8 tas_sar_power_table[ATH12K_ACPI_DSM_TAS_DATA_SIZE];
+> @@ -781,6 +781,7 @@ struct ath12k_base {
 >   		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
 >   		u8 geo_offset_data[ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE];
-> +		u8 cca_data[ATH12K_ACPI_DSM_CCA_DATA_SIZE];
+>   		u8 cca_data[ATH12K_ACPI_DSM_CCA_DATA_SIZE];
+> +		u8 band_edge_power[ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE];
 >   	} *acdata;
 >   
 >   	/* must be last */
 > diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-> index f090ccea5f64..3f66807b7961 100644
+> index 3f66807b7961..345bdd50adb2 100644
 > --- a/drivers/net/wireless/ath/ath12k/wmi.c
 > +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> @@ -7072,3 +7072,44 @@ int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
->   
+> @@ -7113,3 +7113,44 @@ int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab,
+>   	}
 >   	return ret;
 >   }
 > +
-> +int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab,
-> +					    u8 *pcca_table)
+> +int ath12k_wmi_pdev_set_band_edge_power(struct ath12k_base *ab,
+> +					const u8 *pchan_table)
 > +{
 > +	struct ath12k_wmi_base *wmi_ab = &ab->wmi_ab;
 > +	struct wmi_pdev_set_bios_interface_cmd *cmd;
@@ -241,11 +226,10 @@ consider this advice to apply to the previous patches in this patchset
 > +	struct sk_buff *skb;
 > +	int ret;
 > +	u8 *buf_ptr;
-> +	u32 len, cca_thr_len_aligned;
-> +	u8 *pcca_value = pcca_table + ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET;
+> +	u32 len, len_aligned;
 > +
-> +	cca_thr_len_aligned = roundup(ATH12K_ACPI_CCA_THR_OFFSET_LEN, sizeof(u32));
-> +	len = sizeof(*cmd) + TLV_HDR_SIZE + cca_thr_len_aligned;
+> +	len_aligned = roundup(ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE, sizeof(u32));
+> +	len = sizeof(*cmd) + TLV_HDR_SIZE + len_aligned;
 > +
 > +	skb = ath12k_wmi_alloc_skb(wmi_ab, len);
 > +	if (!skb)
@@ -254,49 +238,46 @@ consider this advice to apply to the previous patches in this patchset
 > +	cmd = (struct wmi_pdev_set_bios_interface_cmd *)skb->data;
 > +	cmd->tlv_header =
 > +		cpu_to_le32(ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD_PARAMS,
-> +						   sizeof(*cmd)));
 
 remove cpu_to_le32()
 
+> +						   sizeof(*cmd)));
 > +	cmd->pdev_id = cpu_to_le32(WMI_PDEV_ID_SOC);
-> +	cmd->param_type_id = cpu_to_le32(WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE);
-> +	cmd->length = ATH12K_ACPI_CCA_THR_OFFSET_LEN;
+> +	cmd->param_type_id = cpu_to_le32(WMI_BIOS_PARAM_TYPE_BANDEDGE_CTL_POWER);
+> +	cmd->length = cpu_to_le32(ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE);
 > +
 > +	buf_ptr = skb->data + sizeof(*cmd);
 > +	tlv = (struct wmi_tlv *)buf_ptr;
-> +	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, cca_thr_len_aligned);
+> +	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, len_aligned);
 > +	buf_ptr += TLV_HDR_SIZE;
-> +	memcpy(buf_ptr, pcca_value, ATH12K_ACPI_CCA_THR_OFFSET_LEN);
+> +	memcpy(buf_ptr, pchan_table, ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE);
 > +
 > +	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0], skb, WMI_PDEV_SET_BIOS_INTERFACE_CMDID);
 > +	if (ret) {
 > +		ath12k_warn(ab, "failed to send WMI_PDEV_SET_BIOS_INTERFACE_CMDID %d\n", ret);
 > +		dev_kfree_skb(skb);
 > +	}
+> +
 > +	return ret;
 > +}
 > diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-> index 8a774655fe9f..7607cd7ab699 100644
+> index 7607cd7ab699..73d790d405cd 100644
 > --- a/drivers/net/wireless/ath/ath12k/wmi.h
 > +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-> @@ -4805,8 +4805,9 @@ struct wmi_pdev_set_bios_interface_cmd {
->   } __packed;
->   
->   enum bios_param_type {
-> -	WMI_BIOS_PARAM_TAS_CONFIG_TYPE	=	1,
-> -	WMI_BIOS_PARAM_TAS_DATA_TYPE	=	2,
-> +	WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE	=	0,
-> +	WMI_BIOS_PARAM_TAS_CONFIG_TYPE		=	1,
-> +	WMI_BIOS_PARAM_TAS_DATA_TYPE		=	2,
+> @@ -4808,6 +4808,7 @@ enum bios_param_type {
+>   	WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE	=	0,
+>   	WMI_BIOS_PARAM_TAS_CONFIG_TYPE		=	1,
+>   	WMI_BIOS_PARAM_TAS_DATA_TYPE		=	2,
+> +	WMI_BIOS_PARAM_TYPE_BANDEDGE_CTL_POWER	=	3,
 >   	WMI_BIOS_PARAM_TYPE_MAX,
 >   };
 >   
-> @@ -4952,4 +4953,6 @@ int ath12k_wmi_pdev_set_bios_sar_table_param(struct ath12k_base *ab,
->   					     u8 *psar_table);
->   int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
+> @@ -4955,4 +4956,6 @@ int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
 >   					     u8 *pgeo_table);
-> +int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab,
-> +					    u8 *pcca_table);
+>   int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab,
+>   					    u8 *pcca_table);
+> +int ath12k_wmi_pdev_set_band_edge_power(struct ath12k_base *ab,
+> +					const u8 *pchan_table);
 >   #endif
 
 
