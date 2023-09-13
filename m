@@ -4,85 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D420EE3F0C
-	for <ath12k@archiver.kernel.org>; Tue, 12 Sep 2023 19:33:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DFA9CA550A
+	for <ath12k@archiver.kernel.org>; Wed, 13 Sep 2023 08:55:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nGf9alEjfPpTU+1MRH2KrMsBPudt6AQWx7qmZ3GRjgA=; b=gmbry/9P3Wvlh5
-	jxi1cHwZlEGOG9dVcqfGlF3GKYtl4spQix3SjTcj7b9CYFL4whnFbS/NwlOyD5UrYzkvG7UjEOo3y
-	q/eEfvj2h6LWOx8JsDK/WdT6P8uYhMCyif8TDl86+mmkhASykoZul+LIfX7uTB3fwAMHCj9jdnxGh
-	r6HgKx9pRrU/Fz4pn0U+B3tKJZicl8CQImmpI+FyG4jrOEQfWOZDdGIuraNLfM28PANt2GZYq49zC
-	6b7ZGZl9kaI7QFRSEI/SFw2K91BZKdfB+z7xchjTc3zGV3EK8OhmRurOwiemCWQOhqi2WqkWGAGms
-	3O3133X+7pV1NF4lA32Q==;
+	List-Owner; bh=+0Obm+ACzxDxQusF7h86u9jeOipIvoTQClPGOtgBTLI=; b=PFKhI5wL9vgu1u
+	/gRnA7oEwTpC2YObLthP0CKemkuY9OCGil67ZPKRM870dCXciXsithe9h8W1Zagy177feKZSYuhLf
+	fLZ67RWz0T7OFEOHYtqyN0o1O/saEwb4x4sDBka3gV0kQK92lJ4Rm70lYPUPE5zYmnKsam+ScMCtg
+	SBMHO1wlJQutEy96BewAOzbUT1x3VnN/SI8Mp6lGnTvv8SCmifhHJkXfHR7+EKv8VMQanP1i+uf4c
+	GK7aBX5ulrWH8hd/kNrH/oCHTWAA2iXqZZtWJA+Rwi9gD8aBMDCtzEs82UoP04O9k+ycSeff1/SE/
+	FmD+fgUjueeuLqz4VwIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qg98C-00433f-0K
+	id 1qgLeP-005Cp1-2H
 	for ath12k@archiver.kernel.org;
-	Tue, 12 Sep 2023 19:33:04 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 13 Sep 2023 08:55:09 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qg989-00432p-0h
+	id 1qgLeM-005Cny-0O
 	for ath12k@lists.infradead.org;
-	Tue, 12 Sep 2023 19:33:02 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38CJUFtE011451;
-	Tue, 12 Sep 2023 19:33:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=9cywZsQ3KQ2CJi9wFs5DkAy+F1eZHQgGuyzaVsxb2NI=;
- b=gT/YB66ZYY9luNELZX/YEgglxKwFqW7d+FuWpvpTyml/iG81J/qyyqejzmqg5PU2z1so
- 5Oub4ublXNoC8Qqj6BTa1w2Up/Q6WKgUr1zEQcB6dCkJU82NXgImt2WeNHntlfyECg61
- doXWfRFXsZ/hTLm3OhnLlrVtGwCq2FbrunglkVc5+Usl+r6Jy7oFo9sQLr1+5zODeDJA
- x2vzv3SADM4kyvXyHwopddtecSgGdIkMbfGxHDelX+EEEM0U2zyWpIaC17Y/5oOmc9ID
- Oz6k/EY8oVd+C5qJ+gl3nzy5ePrmvcUTfNTYAR+Qt7rr2+jvWByB0l18fs6vKjeQWkMi YA== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t2ncp1pfh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Sep 2023 19:33:00 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38CJWxRN019106
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Sep 2023 19:32:59 GMT
-Received: from [10.111.183.71] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 12 Sep
- 2023 12:32:59 -0700
-Message-ID: <329ef7bc-5184-4fc8-8c59-8036e9d654c6@quicinc.com>
-Date: Tue, 12 Sep 2023 12:32:58 -0700
+	Wed, 13 Sep 2023 08:55:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=jqnDKez6df2YW11yiROlt1j6XBsPX2hqwFtKpg//+FI=;
+	t=1694595304; x=1695804904; b=PUBGT1qsa2UD38wWCQ70Lh8D/jvC5GFCq6kpeHuXWzVzK5E
+	P5pV0S5wN2FaydCDkQeHaLjcAfMNJVyXfEMTUrsvPMczmiw/1MaPePXhKXj41Deh42LxqHS+s5+1R
+	IYtMcdaODmyW8sf46XnpoSlyvVlLj2d0gdKltgUZzvPJIpzg7KH+WD8AZJ7yE7/n9BF8MbAOzxi7f
+	STvWvjOvlxBRwJTymFuh/bkYRn4Tfb8zAMT0SDS33BaUZmjue2EFG7n+P6dPbdivMBxVpouk1BAt5
+	2PbVVhhRO6tEqQAbLE/PUvw5tBO1r2tIpnoycIThcZ2MHrqbQTonN2M7A0dAFmow==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.96)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1qgLeH-00EhXj-2E;
+	Wed, 13 Sep 2023 10:55:01 +0200
+Message-ID: <cd762f33b1c15566237c85f1e265ee8a00006f5c.camel@sipsolutions.net>
+Subject: Re: [PATCH 1/3] wifi: mac80211: add support to allow driver to
+ generate local link address for station
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Date: Wed, 13 Sep 2023 10:55:00 +0200
+In-Reply-To: <20230906103458.24092-2-quic_wgong@quicinc.com>
+References: <20230906103458.24092-1-quic_wgong@quicinc.com>
+	 <20230906103458.24092-2-quic_wgong@quicinc.com>
+User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 4/4] wifi: ath12k: add set band edge channel power for
- WCN7850
-Content-Language: en-US
-To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20230910082802.9198-1-quic_lingbok@quicinc.com>
- <20230910082802.9198-5-quic_lingbok@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230910082802.9198-5-quic_lingbok@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 3Lgb_N5mBEGOWGaDsI7PTDYIclH3kOWZ
-X-Proofpoint-ORIG-GUID: 3Lgb_N5mBEGOWGaDsI7PTDYIclH3kOWZ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.957,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-12_19,2023-09-05_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
- bulkscore=0 spamscore=0 priorityscore=1501 mlxscore=0 suspectscore=0
- clxscore=1015 malwarescore=0 mlxlogscore=829 adultscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309120164
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230912_123301_255116_89A39CDD 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20230913_015506_373634_2FFBBA9A 
+X-CRM114-Status: GOOD (  18.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,24 +70,54 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/10/2023 1:28 AM, Lingbo Kong wrote:
-> Currently, ath12k does not have the ability to set band edge channel power
-> for WCN7850. In order to support this, ath12k gets band edge channel power
-> table in ath12k_acpi_dsm_get_data() function and sets pdev_id and
-> param_type_id, then finally sends these data and
-> WMI_PDEV_SET_BIOS_INTERFACE_CMDID to firmware to set band edge channel
-> power.
+On Wed, 2023-09-06 at 06:34 -0400, Wen Gong wrote:
+> Currently the local link address of all links is random generated by
+> eth_random_addr() in mac80211 while connecting to a MLO AP for station
+> mode. The MAC address of link is not passed from NL command. The 1st
+> link address is generated while authenticate with AP, the other links'
+> addresses are generated after assoc success with AP.
 > 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> It is not convenient for some driver, reason is, for station mode,
+> the interface with its mac address is already created in driver after
+> wlan load, it is used for hw scan and non-MLO connection.
 > 
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+> When connecting to MLO AP, driver reuse the interface as the 1st link of
+> MLO. If the mac address of the 1st link changed to a new value, then
+> driver need to change the mac address and do many synchronous operation
+> with firmware. Thus the operation become complex. After MLO disconnect,
+> driver need to restore the old mac address, it is also another complex
+> operation.
+> 
+> The hw scan maybe happen through the MLO connection/disconnection. And
+> the hw scan uses the 1st link address while MLO connected and uses the
+> interface address while MLO is disconnected, this leads hw scan complex.
+> 
+> Hence add this interface to allow driver to generate the address of each
+> link while MLO connection. Then driver could provide the same mac address
+> for the 1st link, thus hw scan/NON-MLO connection/1st link of MLO will use
+> the same mac address, then operation become easy.
 
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Maybe after all this explanation, all we need is a flag "reuse MLD
+address for assoc link"?
+
+
+> +		ret = drv_generate_link_addr(sdata->local, sdata,
+> +					     link_id, link->conf->addr);
+> +		if (ret)
+> +			eth_random_addr(link->conf->addr);
+
+should probably refactor this into a separate function though.
+
+I'm also not sure how the driver even knows that a link it's being asked
+to get the address for *is* the assoc link? Do you want to rely on that
+being the first address handed out?
+
+johannes
 
 
 -- 
