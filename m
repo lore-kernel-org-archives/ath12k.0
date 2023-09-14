@@ -4,52 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C2DBCA0EF3
-	for <ath12k@archiver.kernel.org>; Thu, 14 Sep 2023 04:05:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C46BEDE99D
+	for <ath12k@archiver.kernel.org>; Thu, 14 Sep 2023 09:08:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FaoKDgFuzGMOpHYr8O5ZzLSwrR/xVZbjiXSz+xeBQ1c=; b=l+ZOh5TJ8qcd8x
-	LAMpCfTkbyPvpB3kE2X5NCs7qXhr2UF7K9xXoamiaCHSZyNxLv9ETwWUYZj4J5IL0vaHxjdMBcZfm
-	bYf++HPWdJuH51MxuValkupda5I4QexNtuRTyt5nDc1zZALrg+Q+ZWLWiuBR9u1PWneuxLKR7RJGe
-	3FzEmxBJ90N2ACizaFzjnhav/TjfaDNuCirsGrIBaJmpelfkeDXntR1u4+orzYN+2fwatnMCqcEo0
-	LrHwGB0knxjQDELw7ILk4Hq+XV8dvU8nS+JKLlRLkUiR3+VjWu7Sv+bF/P1SqV58HQaHTcxZGJ4GV
-	5ygtJMnQtejyZFM1uN+A==;
+	List-Owner; bh=VLSQr1dKNd412gl54N1Z6KG48HRkILK7B0cymPtVLzY=; b=xPnbUkxdFNZYXL
+	YZRsU7eVEyiv9ApSAxJRttsn2DygIRpugBWMuwbLLTTg0+dv4w0Ynp1G3M84FRcyxVmorw99NYkQO
+	fYLksB9lZ/OCs3cIrXPivwikOg9j73bJh9jLwKToKgcTKcg8PTQW0p5XNzUfbam6ZIwbmtu6jbUHW
+	F3JzjctnnWPDfkCfMcwQdBYwdRavg7e1PNilZ8qze9OB3WvjCrN/hox7LS4b8ED10zCeimEwkN7CD
+	DKaJaAdkq0crwH32vKkhilV55/y0g2PHU41lrnKG384+yQgs9P1saR/YztlBZylMHxXDGKJg2+e0w
+	TIRpAMRjv7ym7RkHHP2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgdbf-007Jiw-2T
+	id 1qgiKa-007npw-2i
 	for ath12k@archiver.kernel.org;
-	Thu, 14 Sep 2023 04:05:31 +0000
-Received: from [42.101.60.195] (helo=mail.nfschina.com)
-	by bombadil.infradead.org with smtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgdbd-007Jh6-1B
+	Thu, 14 Sep 2023 09:08:12 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qgiKX-007np5-1j
 	for ath12k@lists.infradead.org;
-	Thu, 14 Sep 2023 04:05:30 +0000
-Received: from localhost.localdomain (unknown [180.167.10.98])
-	by mail.nfschina.com (Maildata Gateway V2.8.8) with ESMTPA id 62715606080E2;
-	Thu, 14 Sep 2023 12:05:26 +0800 (CST)
-X-MD-Sfrom: yunchuan@nfschina.com
-X-MD-SrcIP: 180.167.10.98
-From: Wu Yunchuan <yunchuan@nfschina.com>
-To: kvalo@kernel.org,
-	quic_jjohnson@quicinc.com
-Cc: ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	kernel-janitors@vger.kernel.org,
-	Wu Yunchuan <yunchuan@nfschina.com>
-Subject: [PATCH wireless-next 7/9] wifi: ath12k: Remove unnecessary (void*) conversions
-Date: Thu, 14 Sep 2023 12:05:25 +0800
-Message-Id: <20230914040525.1170102-1-yunchuan@nfschina.com>
-X-Mailer: git-send-email 2.30.2
+	Thu, 14 Sep 2023 09:08:10 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38E7sb4j007867;
+	Thu, 14 Sep 2023 09:08:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=eZ1ib4AcYbH+yG2b+X4LpEAJJzSFbX7AX1tg7HNj/Mg=;
+ b=W27WYenUNNuNphfWKw9uyx7ep2afe5uNEwxsxj8As3uBjkuN1uvWYOMm1roBYfq8xg16
+ U8JjPn9/x4/92A5C00MPIE93DfKePHnvwsMQhU1kbNFm3a469sEwWBlRnBeNc11PF8e0
+ z2KxcwyApmkV0D6h/5Ake6pQ/FuMutDymgcAg86MrZOuRYMzrrhRgaSNv+iCuoh9ns13
+ CCk1RYcdbkhUomQOTh26dUs44m7bmV+ZBkn4I95K6AAbGM7bYuffNO+5CBMC3oRZfcjU
+ bbc3lgYpBqiI/25lbxxuyY1GN3/lDYv+MGPkX6QNFb5Doj99MdOpFD5+nP7vS6UC6W32 wQ== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t3x6mr5y3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 14 Sep 2023 09:08:05 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38E984NX018133
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 14 Sep 2023 09:08:04 GMT
+Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Thu, 14 Sep 2023 02:08:03 -0700
+From: Wen Gong <quic_wgong@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <kvalo@kernel.org>,
+        <quic_jjohnson@quicinc.com>, <quic_wgong@quicinc.com>
+Subject: [PATCH v2 0/4] wifi: ath12k: add 11d scan offload support and handle country code for WCN7850
+Date: Thu, 14 Sep 2023 05:07:42 -0400
+Message-ID: <20230914090746.23560-1-quic_wgong@quicinc.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: NUOOu6JXmfyc98ezbHi1Y12YAbo6ctiH
+X-Proofpoint-ORIG-GUID: NUOOu6JXmfyc98ezbHi1Y12YAbo6ctiH
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-14_07,2023-09-13_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ phishscore=0 mlxlogscore=695 malwarescore=0 mlxscore=0 priorityscore=1501
+ suspectscore=0 bulkscore=0 spamscore=0 adultscore=0 impostorscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309140078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230913_210529_578807_2ADEB7CD 
-X-CRM114-Status: UNSURE (   7.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230914_020809_576064_08D36B84 
+X-CRM114-Status: GOOD (  13.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,68 +95,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-No need cast (void*) to (struct hal_rx_ppdu_end_user_stats *),
-(struct ath12k_rx_desc_info *) or (struct hal_tx_msdu_ext_desc *).
+v2: change per Jeff.
+    1. change alpha2 length from 3 to 2.
+    2. change wmi_11d_new_cc_ev to wmi_11d_new_cc_event.
 
-Signed-off-by: Wu Yunchuan <yunchuan@nfschina.com>
----
- drivers/net/wireless/ath/ath12k/dp_mon.c | 6 ++----
- drivers/net/wireless/ath/ath12k/dp_rx.c  | 2 +-
- drivers/net/wireless/ath/ath12k/dp_tx.c  | 2 +-
- 3 files changed, 4 insertions(+), 6 deletions(-)
+Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID which is needed for 
+11d scan offload to firmware. And add support for 11d scan offload for 
+WCN7850.
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index f1e57e98bdc6..41cfe7bd865f 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -13,8 +13,7 @@
- static void ath12k_dp_mon_rx_handle_ofdma_info(void *rx_tlv,
- 					       struct hal_rx_user_status *rx_user_status)
- {
--	struct hal_rx_ppdu_end_user_stats *ppdu_end_user =
--				(struct hal_rx_ppdu_end_user_stats *)rx_tlv;
-+	struct hal_rx_ppdu_end_user_stats *ppdu_end_user = rx_tlv;
- 
- 	rx_user_status->ul_ofdma_user_v0_word0 =
- 		__le32_to_cpu(ppdu_end_user->usr_resp_ref);
-@@ -26,8 +25,7 @@ static void
- ath12k_dp_mon_rx_populate_byte_count(void *rx_tlv, void *ppduinfo,
- 				     struct hal_rx_user_status *rx_user_status)
- {
--	struct hal_rx_ppdu_end_user_stats *ppdu_end_user =
--		(struct hal_rx_ppdu_end_user_stats *)rx_tlv;
-+	struct hal_rx_ppdu_end_user_stats *ppdu_end_user = rx_tlv;
- 	u32 mpdu_ok_byte_count = __le32_to_cpu(ppdu_end_user->mpdu_ok_cnt);
- 	u32 mpdu_err_byte_count = __le32_to_cpu(ppdu_end_user->mpdu_err_cnt);
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index e6e64d437c47..ff5f66ca7783 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -3730,7 +3730,7 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 			continue;
- 		}
- 
--		desc_info = (struct ath12k_rx_desc_info *)err_info.rx_desc;
-+		desc_info = err_info.rx_desc;
- 
- 		/* retry manual desc retrieval if hw cc is not done */
- 		if (!desc_info) {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 8874c815d7fa..98ddf46b3bb9 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -109,7 +109,7 @@ static struct ath12k_tx_desc_info *ath12k_dp_tx_assign_buffer(struct ath12k_dp *
- static void ath12k_hal_tx_cmd_ext_desc_setup(struct ath12k_base *ab, void *cmd,
- 					     struct hal_tx_info *ti)
- {
--	struct hal_tx_msdu_ext_desc *tcl_ext_cmd = (struct hal_tx_msdu_ext_desc *)cmd;
-+	struct hal_tx_msdu_ext_desc *tcl_ext_cmd = cmd;
- 
- 	tcl_ext_cmd->info0 = le32_encode_bits(ti->paddr,
- 					      HAL_TX_MSDU_EXT_INFO0_BUF_PTR_LO);
+Also fix firmware crash for country code set for WCN7850 and store country
+code for device recovery for WCN7850.
+
+Wen Gong (4):
+  wifi: ath12k: add configure country code for WCN7850
+  wifi: ath12k: add 11d scan offload support
+  wifi: ath12k: avoid firmware crash when reg set for WCN7850
+  wifi: ath12k: store and send country code to firmware after recovery
+
+ drivers/net/wireless/ath/ath12k/core.c |  36 ++++-
+ drivers/net/wireless/ath/ath12k/core.h |  17 +++
+ drivers/net/wireless/ath/ath12k/hw.c   |   3 +
+ drivers/net/wireless/ath/ath12k/hw.h   |   1 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 178 ++++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/mac.h  |   7 +
+ drivers/net/wireless/ath/ath12k/reg.c  |  67 ++++++++--
+ drivers/net/wireless/ath/ath12k/reg.h  |   3 +-
+ drivers/net/wireless/ath/ath12k/wmi.c  | 159 +++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/wmi.h  |  38 ++++++
+ 10 files changed, 489 insertions(+), 20 deletions(-)
+
+
+base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
 -- 
-2.30.2
+2.40.1
 
 
 -- 
