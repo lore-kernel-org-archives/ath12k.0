@@ -4,84 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AC11EE0203
-	for <ath12k@archiver.kernel.org>; Thu, 14 Sep 2023 01:53:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF19DCA5506
+	for <ath12k@archiver.kernel.org>; Thu, 14 Sep 2023 04:05:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eh02NlVARvqUfQMAUfxlW9+WHYlOuUrKnK3iX/ZNtV0=; b=O3Fwwj/Cbj3JyU
-	ucmKN6+v/TXVTN+PjRLTEPzq3aO495iJdOS8kps3QAPYKvjKtFKa7l4uZRCsBLOEvpBrsl9TS3pZl
-	zR2I4t6Ln5VQzNVIspvq2jYfnvLZqEJGMZLIGstRy9dk1gYGMxP/NafARpeORpboN1eaxXL9vIdcC
-	ieLVXfP72L+zB51lN1c/qPAQREYrAn51enJAJqWMUnS9k9h6JNtJ47BRbJl1DQh2isQTqVyvc+kkl
-	pSiP16pCC4Ha7nIG5oUW9p4M3JvhoKGpaw2eqqG+M/y6tuGYQEQFIMBl4c6BQcWtQ4ortsPIMEk8Q
-	1D4ZYx0uGr3fFC+3neFA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pg+B3Wv0Wvqbwcd+h4IyFK8tpgjV3PrqfqWdWPh0gq8=; b=IPWGTBDqU9KGko
+	FEzdGaMBEZgAWUbFxfWap/5Rw5aHJqaFgldTlx4h4SM6GGEPB65NfXcM6Lg+pvkjpeqhU8B7syZmC
+	CK3vek2U0DxXLG20xR60nkxfJp5URWX7vEjilmsy3YaS/ZX62NNjKZbqN9Ax+oayec0iCmj2Aj8VW
+	REKHI6X0rtgPwqhII0JznHFfNNklGehztqm6bBTUARwkCroJjPcLj0a24gy17Ukk+LbRmCVO6dpxn
+	uqau72i4umuE6uH+FaRHSmkyqG+NtPkklT47s/nnHB2Kk6Rop0pPcmaEV8giszUFhQgqhEGKV4zLs
+	QYvJLC+4QDFCtsHxcdXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgbXb-0072Pv-2L
+	id 1qgdbI-007Jas-3C
 	for ath12k@archiver.kernel.org;
-	Thu, 14 Sep 2023 01:53:11 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgbXY-0072PD-2k
-	for ath12k@lists.infradead.org;
-	Thu, 14 Sep 2023 01:53:10 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38E0rLrs022633;
-	Thu, 14 Sep 2023 01:53:07 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=qXjsU0Cihns6TzET08hDvDwBGAsGXx3MlLbpeZHsy5g=;
- b=FTK3+PFKytxXm5EuVyaalhb8AXGWjAfaewTITnzwb07zOL6mg6Bg2c/75WDpg6EjrFac
- +L02EUCgK9qyYwJPrbfd0YGCxEQLTZDwKk2guNRTdQgVpQkkMilMrYICbluzaN8YlBRa
- Oz7HcDarDfWA8E0aMlRYEoBgN6TBpxPZ5nf15XiGh/hPGPZEfupgHl2apehZxhyw7zXN
- zECECm4xaOLkfkLdiKQRUjnyZ4b+6VfYOij3CZn3YJCdL7gtC52VIRgBnXt10vdli1/+
- SHBmaxACWOIPXyZtYGnlKrjVuNZIPlTGR4RCF+DzHdcKcHmaYpWiQMs3TOklHZ+8BUXr 3Q== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t2ygrbbnt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 14 Sep 2023 01:53:06 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38E1r5Mg010373
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 14 Sep 2023 01:53:06 GMT
-Received: from [10.111.183.186] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 13 Sep
- 2023 18:53:05 -0700
-Message-ID: <bdfbb540-aceb-45d2-a0fc-aeee61b0a9c4@quicinc.com>
-Date: Wed, 13 Sep 2023 18:53:05 -0700
+	Thu, 14 Sep 2023 04:05:08 +0000
+Received: from [42.101.60.195] (helo=mail.nfschina.com)
+	by bombadil.infradead.org with smtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qgdbE-007JXe-0D;
+	Thu, 14 Sep 2023 04:05:06 +0000
+Received: from localhost.localdomain (unknown [180.167.10.98])
+	by mail.nfschina.com (Maildata Gateway V2.8.8) with ESMTPA id 2ED14606080E2;
+	Thu, 14 Sep 2023 12:04:17 +0800 (CST)
+X-MD-Sfrom: yunchuan@nfschina.com
+X-MD-SrcIP: 180.167.10.98
+From: Wu Yunchuan <yunchuan@nfschina.com>
+To: kvalo@kernel.org,
+	quic_jjohnson@quicinc.com,
+	jirislaby@kernel.org,
+	mickflemm@gmail.com,
+	mcgrof@kernel.org,
+	toke@toke.dk,
+	afaerber@suse.de,
+	mani@kernel.org,
+	chunkeey@googlemail.com,
+	loic.poulain@linaro.org,
+	mcoquelin.stm32@gmail.com,
+	alexandre.torgue@foss.st.com
+Cc: johannes.berg@intel.com,
+	syoshida@redhat.com,
+	alexander@wetzel-home.de,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	ath10k@lists.infradead.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-actions@lists.infradead.org,
+	wcn36xx@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	kernel-janitors@vger.kernel.org,
+	Wu Yunchuan <yunchuan@nfschina.com>
+Subject: [PATCH wireless-next 0/9] Remove unnecessary (void*) conversions
+Date: Thu, 14 Sep 2023 12:03:16 +0800
+Message-Id: <20230914040315.1169121-1-yunchuan@nfschina.com>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: add keep backward compatibility of PHY mode
- to avoid firmware crash
-Content-Language: en-US
-To: Wen Gong <quic_wgong@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <kvalo@kernel.org>
-References: <20230913105757.17744-1-quic_wgong@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230913105757.17744-1-quic_wgong@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: TgqKh4tH7J0kIm4WS8rNs_jqzPq2bnTb
-X-Proofpoint-ORIG-GUID: TgqKh4tH7J0kIm4WS8rNs_jqzPq2bnTb
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-13_19,2023-09-13_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- clxscore=1015 impostorscore=0 bulkscore=0 phishscore=0 mlxscore=0
- adultscore=0 mlxlogscore=999 malwarescore=0 lowpriorityscore=0 spamscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309140014
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230913_185308_914073_82F6D389 
-X-CRM114-Status: GOOD (  30.35  )
+X-CRM114-CacheID: sfid-20230913_210504_315145_3660450F 
+X-CRM114-Status: UNSURE (   4.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,160 +79,60 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/13/2023 3:57 AM, Wen Gong wrote:
-> In a special WCN7855 firmware release the EHT (IEEE 802.11be) support has
-> been disabled for size reduction. Currently ath12k always enables EHT PHY
-> mode during vdev start but with the special firmware that will cause a
-> firmware crash during vdev start in firmware initialisation. This is
-> because the firmware will use the EHT mode to allocate resources but as
-> the EHT mode is not available in the firmware, there's an internal
-> conflict and the firmware will crash.
-> 
-> To fix the crash check the WMI_TLV_SERVICE_11BE flag to see if the firmware
-> supports EHT. If EHT is not supported downgrade the PHY mode to HE
-> (IEEE 802.11ax).
-> 
-> This does not impact QCN9274, because WMI_SERVICE_11BE is always enabled
-> for QCN9274, then eht_cap->has_eht will always set for it, and the logic
-> of this patch will not take effect and the PHY mode will not down grade
-> for it.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+Remove all unnecessary (void*) conversions under the directory drivers/net/wireless/ath.
 
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Wu Yunchuan (9):
+  wifi: ar5523: Remove unnecessary (void*) conversions
+  carl9170: remove unnecessary (void*) conversions
+  wifi: wcn36xx: remove unnecessary (void*) conversions
+  wifi: ath5k: remove unnecessary (void*) conversions
+  ath6kl: remove unnecessary (void*) conversions
+  wifi: ath10k: Remove unnecessary (void*) conversions
+  wifi: ath12k: Remove unnecessary (void*) conversions
+  wifi: ath11k: remove unnecessary (void*) conversions
+  wifi: ath9k: Remove unnecessary (void*) conversions
 
-> ---
->   drivers/net/wireless/ath/ath12k/mac.c | 65 ++++++++++++++++++++++++++-
->   drivers/net/wireless/ath/ath12k/wmi.h |  3 ++
->   2 files changed, 66 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 0f2af2f14ef7..c72a7028b4b3 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -4553,7 +4553,8 @@ static void ath12k_mac_copy_eht_ppe_thresh(struct ath12k_wmi_ppe_threshold_arg *
->   	}
->   }
->   
-> -static void ath12k_mac_copy_eht_cap(struct ath12k_band_cap *band_cap,
-> +static void ath12k_mac_copy_eht_cap(struct ath12k *ar,
-> +				    struct ath12k_band_cap *band_cap,
->   				    struct ieee80211_he_cap_elem *he_cap_elem,
->   				    int iftype,
->   				    struct ieee80211_sta_eht_cap *eht_cap)
-> @@ -4561,6 +4562,10 @@ static void ath12k_mac_copy_eht_cap(struct ath12k_band_cap *band_cap,
->   	struct ieee80211_eht_cap_elem_fixed *eht_cap_elem = &eht_cap->eht_cap_elem;
->   
->   	memset(eht_cap, 0, sizeof(struct ieee80211_sta_eht_cap));
-> +
-> +	if (!(test_bit(WMI_TLV_SERVICE_11BE, ar->ab->wmi_ab.svc_map)))
-> +		return;
-> +
->   	eht_cap->has_eht = true;
->   	memcpy(eht_cap_elem->mac_cap_info, band_cap->eht_cap_mac_info,
->   	       sizeof(eht_cap_elem->mac_cap_info));
-> @@ -4626,7 +4631,7 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
->   			data[idx].he_6ghz_capa.capa =
->   				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
->   		}
-> -		ath12k_mac_copy_eht_cap(band_cap, &he_cap->he_cap_elem, i,
-> +		ath12k_mac_copy_eht_cap(ar, band_cap, &he_cap->he_cap_elem, i,
->   					&data[idx].eht_cap);
->   		idx++;
->   	}
-> @@ -5789,6 +5794,59 @@ static void ath12k_mac_op_remove_chanctx(struct ieee80211_hw *hw,
->   	mutex_unlock(&ar->conf_mutex);
->   }
->   
-> +static enum wmi_phy_mode
-> +ath12k_mac_check_down_grade_phy_mode(struct ath12k *ar,
-> +				     enum wmi_phy_mode mode,
-> +				     enum nl80211_band band,
-> +				     enum nl80211_iftype type)
-> +{
-> +	struct ieee80211_sta_eht_cap *eht_cap;
-> +	enum wmi_phy_mode down_mode;
-> +
-> +	if (mode < MODE_11BE_EHT20)
-> +		return mode;
-> +
-> +	eht_cap = &ar->mac.iftype[band][type].eht_cap;
-> +	if (eht_cap->has_eht)
-> +		return mode;
-> +
-> +	switch (mode) {
-> +	case MODE_11BE_EHT20:
-> +		down_mode = MODE_11AX_HE20;
-> +		break;
-> +	case MODE_11BE_EHT40:
-> +		down_mode = MODE_11AX_HE40;
-> +		break;
-> +	case MODE_11BE_EHT80:
-> +		down_mode = MODE_11AX_HE80;
-> +		break;
-> +	case MODE_11BE_EHT80_80:
-> +		down_mode = MODE_11AX_HE80_80;
-> +		break;
-> +	case MODE_11BE_EHT160:
-> +	case MODE_11BE_EHT160_160:
-> +	case MODE_11BE_EHT320:
-> +		down_mode = MODE_11AX_HE160;
-> +		break;
-> +	case MODE_11BE_EHT20_2G:
-> +		down_mode = MODE_11AX_HE20_2G;
-> +		break;
-> +	case MODE_11BE_EHT40_2G:
-> +		down_mode = MODE_11AX_HE40_2G;
-> +		break;
-> +	default:
-> +		down_mode = mode;
-> +		break;
-> +	}
-> +
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-> +		   "mac vdev start phymode %s downgrade to %s\n",
-> +		   ath12k_mac_phymode_str(mode),
-> +		   ath12k_mac_phymode_str(down_mode));
-> +
-> +	return down_mode;
-> +}
-> +
->   static int
->   ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
->   			      const struct cfg80211_chan_def *chandef,
-> @@ -5814,6 +5872,9 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
->   	arg.band_center_freq2 = chandef->center_freq2;
->   	arg.mode = ath12k_phymodes[chandef->chan->band][chandef->width];
->   
-> +	arg.mode = ath12k_mac_check_down_grade_phy_mode(ar, arg.mode,
-> +							chandef->chan->band,
-> +							arvif->vif->type);
->   	arg.min_power = 0;
->   	arg.max_power = chandef->chan->max_power * 2;
->   	arg.max_reg_power = chandef->chan->max_reg_power * 2;
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-> index 8c047a9623f9..d7ab8c3ff177 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.h
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-> @@ -2158,6 +2158,9 @@ enum wmi_tlv_service {
->   	WMI_MAX_EXT_SERVICE = 256,
->   
->   	WMI_TLV_SERVICE_REG_CC_EXT_EVENT_SUPPORT = 281,
-> +
-> +	WMI_TLV_SERVICE_11BE = 289,
-> +
->   	WMI_MAX_EXT2_SERVICE,
->   };
->   
-> 
-> base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
+ drivers/net/wireless/ath/ar5523/ar5523.c      |  2 +-
+ drivers/net/wireless/ath/ath10k/htt_tx.c      |  6 ++--
+ drivers/net/wireless/ath/ath11k/dp.c          |  2 +-
+ drivers/net/wireless/ath/ath11k/dp_rx.c       | 13 +++----
+ drivers/net/wireless/ath/ath11k/hal.c         |  8 ++---
+ drivers/net/wireless/ath/ath11k/hal_rx.c      | 17 ++++-----
+ drivers/net/wireless/ath/ath11k/hal_tx.c      |  2 +-
+ drivers/net/wireless/ath/ath11k/mac.c         |  4 +--
+ drivers/net/wireless/ath/ath11k/spectral.c    |  2 +-
+ drivers/net/wireless/ath/ath11k/wmi.c         |  6 ++--
+ drivers/net/wireless/ath/ath12k/dp_mon.c      |  6 ++--
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  2 +-
+ drivers/net/wireless/ath/ath12k/dp_tx.c       |  2 +-
+ drivers/net/wireless/ath/ath5k/base.c         |  4 +--
+ drivers/net/wireless/ath/ath5k/pci.c          |  4 +--
+ drivers/net/wireless/ath/ath6kl/main.c        |  4 +--
+ drivers/net/wireless/ath/ath6kl/txrx.c        |  2 +-
+ .../wireless/ath/ath9k/ath9k_pci_owl_loader.c |  2 +-
+ drivers/net/wireless/ath/ath9k/common-init.c  |  2 +-
+ .../net/wireless/ath/ath9k/common-spectral.c  |  2 +-
+ drivers/net/wireless/ath/ath9k/debug.c        |  2 +-
+ drivers/net/wireless/ath/ath9k/hif_usb.c      | 10 +++---
+ .../net/wireless/ath/ath9k/htc_drv_debug.c    |  2 +-
+ drivers/net/wireless/ath/ath9k/htc_drv_init.c | 36 +++++++++----------
+ drivers/net/wireless/ath/ath9k/htc_hst.c      |  2 +-
+ drivers/net/wireless/ath/ath9k/init.c         | 12 +++----
+ drivers/net/wireless/ath/ath9k/link.c         |  2 +-
+ drivers/net/wireless/ath/ath9k/pci.c          |  6 ++--
+ drivers/net/wireless/ath/carl9170/usb.c       | 10 +++---
+ drivers/net/wireless/ath/wcn36xx/dxe.c        |  6 ++--
+ drivers/net/wireless/ath/wcn36xx/smd.c        | 20 +++++------
+ drivers/net/wireless/ath/wcn36xx/testmode.c   |  2 +-
+ 32 files changed, 95 insertions(+), 107 deletions(-)
+
+-- 
+2.30.2
 
 
 -- 
