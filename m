@@ -4,81 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 089DDCA5537
-	for <ath12k@archiver.kernel.org>; Wed, 13 Sep 2023 10:58:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16445EE0212
+	for <ath12k@archiver.kernel.org>; Thu, 14 Sep 2023 01:52:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=spFjML56qN/U7PDC0HZZ3SO/wGseG0+bk68aBVq7muY=; b=aofe66E0LChCUz
-	GCJqnvuDe0y0XSrVcKC7hpxGgpccx1MdS7FVdNNiVTe6QKoV3R4F2trjiM+hJlhspA6mb5fyQ9mGs
-	gzTHlynH9YfIKopVHrjyJcsDY9iHkbh0AeVYhdM5QF6NWHP7uSeQJEasn8oBbErDfTnzt0tFoS/Cp
-	xL9cV+EtQdh0uYV5DYnCOFiiCNXLIQxqEWxZzFPDBfM12307rEnIwX2LHBPdfWU2bGuwWpA5hcIp9
-	rCIPIFVw/+I+Uk1urxojVwo5Q7r+UGgs5Wr6eeYHlBxu6ZvWA9jxYjs4GkTh9LajFiDE6NuOofDhL
-	TJXWQoxCyAJR/pR0AGuA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UlJwP7+l05ELppgWsFrwE8hhyBIgxGJLOYEaPR9nEog=; b=QOAOb6kH69PlkP
+	mRraaATO7RVXUxnCmxqmP7UncRpDdUdZhjr/tjqhyRkC4lte55LI8VNKQtBIX1amfDzibw+5Uqvej
+	nNQBnn/RF0NCy3W9630EU4acC9AVRe+Q88xuabwFYEHWkRP/pDAn39CH8NhGyMOft6BI4D5uC+D1n
+	+F5BdP1wDze2sXU640qqXUJZh95TccsM8nZxHdrRqrX6CrveESiYcCznHPhELa+IHAP7Je74jUjiA
+	pVrUyXJokwYKZQPeWfpBgrFE5inlSh4I3pvGX28xqKmH9dZcps3ersnv999OGkqmrLbaj5mTAeRAK
+	mhi21XoD0RbnueE3gSLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgNZg-005gHz-2K
+	id 1qgbXN-0072Nv-2D
 	for ath12k@archiver.kernel.org;
-	Wed, 13 Sep 2023 10:58:24 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 14 Sep 2023 01:52:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgNZd-005gGg-2g
+	id 1qgbXK-0072NK-1l
 	for ath12k@lists.infradead.org;
-	Wed, 13 Sep 2023 10:58:23 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38DAortF021288;
-	Wed, 13 Sep 2023 10:58:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : mime-version : content-transfer-encoding :
- content-type; s=qcppdkim1;
- bh=WWGlYP9LKvOM2Jl8FWf6PugIdBbRWijJpW88A5U0JH4=;
- b=FpG5bxVyOw8+BSsGn53c3BW3WHUm5ise99sGMHS0ZOScYnJ/iTmm7tSnFblgmH5rZjr+
- iY/hp/xJVB6R7iGzVppfUJ78v0UZTW505M6dNO2hJQ+sAabhfalgLiusIjOy6VUXuMbA
- iei3m5+MSIJmxAdBHYPF7pJVLgRXPooftItcjvjpaV6ea8nCmIDqIydT5OAdFwUblAxs
- +CfC37LxJ2Qaoxk15ReVwfbu6qEyJxjr3fJLJ/X5Dt4swVtWn4hEWq9VqJMJcOhUqLzG
- qrklfX7cysMTB4FxVSxUQrnVWVxOFK68W1G+L7OMkga4+MM2CbLXCjNDEVzRuQOKKe5Y BQ== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t314ch5s8-1
+	Thu, 14 Sep 2023 01:52:57 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38E0Vs28017937;
+	Thu, 14 Sep 2023 01:52:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=lbpPq+1iRvxhVw2cDaYE6K8Me4D9TcKA4U/Ecbpy/qc=;
+ b=lMeIizz144ifaVWkwdbBYKhir2A+E/NIFvEai/c8dTsvalk9Yxvo/5UscdkCke3c/ils
+ doWALJGgbbA8PJAIG+yjKU1KkXKwo4nIJspjGe4j6wQ3ousZOSJN16MjYRSZSbAnFwrn
+ hQUGCB0phUNphSbUMoLH3RnpMQ4ppALiPB7QCM0RXd26/XM+jRzXa8t+8duaGKG9ElMm
+ mBQ70WyPKDK+3XxbpHvtl9islJgCcVRDJnLiYCnkfz/6MqbUnsr/GKY0erFfxjld5vlB
+ jVmZQHpJZDOCcT7VcTdTLggLk+KRpyDAQXSs1s3SM8V/uETd1/7dvCpk2dz2ocomeMJ3 jg== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t3qqa84md-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Sep 2023 10:58:18 +0000
+	Thu, 14 Sep 2023 01:52:50 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38DAwHUc029244
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38E1qnRP027137
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Sep 2023 10:58:17 GMT
-Received: from wgong-HP3-Z230-SFF-Workstation.qca.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Wed, 13 Sep 2023 03:58:15 -0700
-From: Wen Gong <quic_wgong@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <kvalo@kernel.org>,
-        <quic_jjohnson@quicinc.com>, <quic_wgong@quicinc.com>
-Subject: [PATCH] wifi: ath12k: add keep backward compatibility of PHY mode to avoid firmware crash
-Date: Wed, 13 Sep 2023 06:57:57 -0400
-Message-ID: <20230913105757.17744-1-quic_wgong@quicinc.com>
-X-Mailer: git-send-email 2.40.1
+	Thu, 14 Sep 2023 01:52:49 GMT
+Received: from [10.111.183.186] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 13 Sep
+ 2023 18:52:49 -0700
+Message-ID: <e0645b4c-4d9c-46b0-85e9-8964d82fb2e9@quicinc.com>
+Date: Wed, 13 Sep 2023 18:52:48 -0700
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: read country code from SMBIOS for WCN7850
+Content-Language: en-US
+To: Wen Gong <quic_wgong@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <kvalo@kernel.org>
+References: <20230913105156.17618-1-quic_wgong@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20230913105156.17618-1-quic_wgong@quicinc.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: S_yRxIsxAuLTZBt8KSH9mfFw3zF-87QN
-X-Proofpoint-ORIG-GUID: S_yRxIsxAuLTZBt8KSH9mfFw3zF-87QN
+X-Proofpoint-ORIG-GUID: 328ACcJjH2A6BLEZV7uehBrbPTeyP4JC
+X-Proofpoint-GUID: 328ACcJjH2A6BLEZV7uehBrbPTeyP4JC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-13_04,2023-09-13_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
- clxscore=1015 phishscore=0 spamscore=0 mlxscore=0 bulkscore=0
- lowpriorityscore=0 priorityscore=1501 mlxlogscore=999 impostorscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309130086
+ definitions=2023-09-13_19,2023-09-13_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 mlxscore=0 suspectscore=0 phishscore=0 malwarescore=0
+ bulkscore=0 priorityscore=1501 clxscore=1015 mlxlogscore=999 spamscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2308100000 definitions=main-2309140014
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230913_035821_984459_FC0B05A5 
-X-CRM114-Status: GOOD (  23.24  )
+X-CRM114-CacheID: sfid-20230913_185254_611067_09EF3013 
+X-CRM114-Status: GOOD (  25.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,158 +92,168 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In a special WCN7855 firmware release the EHT (IEEE 802.11be) support has
-been disabled for size reduction. Currently ath12k always enables EHT PHY
-mode during vdev start but with the special firmware that will cause a
-firmware crash during vdev start in firmware initialisation. This is
-because the firmware will use the EHT mode to allocate resources but as
-the EHT mode is not available in the firmware, there's an internal
-conflict and the firmware will crash.
+On 9/13/2023 3:51 AM, Wen Gong wrote:
+> This read the country code from SMBIOS and send the country code
+> to firmware, firmware will indicate the regulatory domain info of the
+> country code and then ath12k will use the info.
+> 
+> dmesg:
+> [ 1242.637253] ath12k_pci 0000:02:00.0: worldwide regdomain setting from SMBIOS
+> [ 1242.637259] ath12k_pci 0000:02:00.0: bdf variant name not found.
+> [ 1242.637261] ath12k_pci 0000:02:00.0: SMBIOS bdf variant name not set.
+> [ 1242.927543] ath12k_pci 0000:02:00.0: set current country pdev id 0 alpha2 00
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
 
-To fix the crash check the WMI_TLV_SERVICE_11BE flag to see if the firmware
-supports EHT. If EHT is not supported downgrade the PHY mode to HE
-(IEEE 802.11ax).
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-This does not impact QCN9274, because WMI_SERVICE_11BE is always enabled
-for QCN9274, then eht_cap->has_eht will always set for it, and the logic
-of this patch will not take effect and the PHY mode will not down grade
-for it.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 65 ++++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/wmi.h |  3 ++
- 2 files changed, 66 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 0f2af2f14ef7..c72a7028b4b3 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4553,7 +4553,8 @@ static void ath12k_mac_copy_eht_ppe_thresh(struct ath12k_wmi_ppe_threshold_arg *
- 	}
- }
- 
--static void ath12k_mac_copy_eht_cap(struct ath12k_band_cap *band_cap,
-+static void ath12k_mac_copy_eht_cap(struct ath12k *ar,
-+				    struct ath12k_band_cap *band_cap,
- 				    struct ieee80211_he_cap_elem *he_cap_elem,
- 				    int iftype,
- 				    struct ieee80211_sta_eht_cap *eht_cap)
-@@ -4561,6 +4562,10 @@ static void ath12k_mac_copy_eht_cap(struct ath12k_band_cap *band_cap,
- 	struct ieee80211_eht_cap_elem_fixed *eht_cap_elem = &eht_cap->eht_cap_elem;
- 
- 	memset(eht_cap, 0, sizeof(struct ieee80211_sta_eht_cap));
-+
-+	if (!(test_bit(WMI_TLV_SERVICE_11BE, ar->ab->wmi_ab.svc_map)))
-+		return;
-+
- 	eht_cap->has_eht = true;
- 	memcpy(eht_cap_elem->mac_cap_info, band_cap->eht_cap_mac_info,
- 	       sizeof(eht_cap_elem->mac_cap_info));
-@@ -4626,7 +4631,7 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
- 			data[idx].he_6ghz_capa.capa =
- 				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
- 		}
--		ath12k_mac_copy_eht_cap(band_cap, &he_cap->he_cap_elem, i,
-+		ath12k_mac_copy_eht_cap(ar, band_cap, &he_cap->he_cap_elem, i,
- 					&data[idx].eht_cap);
- 		idx++;
- 	}
-@@ -5789,6 +5794,59 @@ static void ath12k_mac_op_remove_chanctx(struct ieee80211_hw *hw,
- 	mutex_unlock(&ar->conf_mutex);
- }
- 
-+static enum wmi_phy_mode
-+ath12k_mac_check_down_grade_phy_mode(struct ath12k *ar,
-+				     enum wmi_phy_mode mode,
-+				     enum nl80211_band band,
-+				     enum nl80211_iftype type)
-+{
-+	struct ieee80211_sta_eht_cap *eht_cap;
-+	enum wmi_phy_mode down_mode;
-+
-+	if (mode < MODE_11BE_EHT20)
-+		return mode;
-+
-+	eht_cap = &ar->mac.iftype[band][type].eht_cap;
-+	if (eht_cap->has_eht)
-+		return mode;
-+
-+	switch (mode) {
-+	case MODE_11BE_EHT20:
-+		down_mode = MODE_11AX_HE20;
-+		break;
-+	case MODE_11BE_EHT40:
-+		down_mode = MODE_11AX_HE40;
-+		break;
-+	case MODE_11BE_EHT80:
-+		down_mode = MODE_11AX_HE80;
-+		break;
-+	case MODE_11BE_EHT80_80:
-+		down_mode = MODE_11AX_HE80_80;
-+		break;
-+	case MODE_11BE_EHT160:
-+	case MODE_11BE_EHT160_160:
-+	case MODE_11BE_EHT320:
-+		down_mode = MODE_11AX_HE160;
-+		break;
-+	case MODE_11BE_EHT20_2G:
-+		down_mode = MODE_11AX_HE20_2G;
-+		break;
-+	case MODE_11BE_EHT40_2G:
-+		down_mode = MODE_11AX_HE40_2G;
-+		break;
-+	default:
-+		down_mode = mode;
-+		break;
-+	}
-+
-+	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-+		   "mac vdev start phymode %s downgrade to %s\n",
-+		   ath12k_mac_phymode_str(mode),
-+		   ath12k_mac_phymode_str(down_mode));
-+
-+	return down_mode;
-+}
-+
- static int
- ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
- 			      const struct cfg80211_chan_def *chandef,
-@@ -5814,6 +5872,9 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
- 	arg.band_center_freq2 = chandef->center_freq2;
- 	arg.mode = ath12k_phymodes[chandef->chan->band][chandef->width];
- 
-+	arg.mode = ath12k_mac_check_down_grade_phy_mode(ar, arg.mode,
-+							chandef->chan->band,
-+							arvif->vif->type);
- 	arg.min_power = 0;
- 	arg.max_power = chandef->chan->max_power * 2;
- 	arg.max_reg_power = chandef->chan->max_reg_power * 2;
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 8c047a9623f9..d7ab8c3ff177 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2158,6 +2158,9 @@ enum wmi_tlv_service {
- 	WMI_MAX_EXT_SERVICE = 256,
- 
- 	WMI_TLV_SERVICE_REG_CC_EXT_EVENT_SUPPORT = 281,
-+
-+	WMI_TLV_SERVICE_11BE = 289,
-+
- 	WMI_MAX_EXT2_SERVICE,
- };
- 
-
-base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
--- 
-2.40.1
+> ---
+> depends on 5 patches in public review:
+> Wen Gong:
+> 
+> https://lore.kernel.org/linux-wireless/20230905105637.10230-1-quic_wgong@quicinc.com/
+> wifi: ath12k: add read variant from SMBIOS for download board data
+> 
+> https://lore.kernel.org/linux-wireless/20230906082948.18452-1-quic_wgong@quicinc.com/
+> wifi: ath12k: add read variant from SMBIOS for download board data
+> [PATCH 0/4] wifi: ath12k: add 11d scan offload support and handle country code for WCN7850
+>    wifi: ath12k: add configure country code for WCN7850
+>    wifi: ath12k: add 11d scan offload support
+>    wifi: ath12k: avoid firmware crash when reg set for WCN7850
+>    wifi: ath12k: store and send country code to firmware after recovery
+> 
+>   drivers/net/wireless/ath/ath12k/core.c | 26 +++++++++++++++++++++++--
+>   drivers/net/wireless/ath/ath12k/core.h | 27 +++++++++++++++++++++++++-
+>   drivers/net/wireless/ath/ath12k/mac.c  | 11 +++++++++++
+>   3 files changed, 61 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+> index 4c4abeba39c8..de9b7604eaa2 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.c
+> +++ b/drivers/net/wireless/ath/ath12k/core.c
+> @@ -377,7 +377,7 @@ static void ath12k_core_stop(struct ath12k_base *ab)
+>   	/* De-Init of components as needed */
+>   }
+>   
+> -static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
+> +static void ath12k_core_check_cc_code_bdfext(const struct dmi_header *hdr, void *data)
+>   {
+>   	struct ath12k_base *ab = data;
+>   	const char *magic = ATH12K_SMBIOS_BDF_EXT_MAGIC;
+> @@ -399,6 +399,28 @@ static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
+>   		return;
+>   	}
+>   
+> +	spin_lock_bh(&ab->base_lock);
+> +
+> +	switch (smbios->country_code_flag) {
+> +	case ATH12K_SMBIOS_CC_ISO:
+> +		ab->new_alpha2[0] = u16_get_bits(smbios->cc_code, 0xff00);
+> +		ab->new_alpha2[1] = u16_get_bits(smbios->cc_code, 0xff);
+> +		ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot smbios cc_code %c%c\n",
+> +			   ab->new_alpha2[0], ab->new_alpha2[1]);
+> +		break;
+> +	case ATH12K_SMBIOS_CC_WW:
+> +		ab->new_alpha2[0] = '0';
+> +		ab->new_alpha2[1] = '0';
+> +		ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot smbios worldwide regdomain\n");
+> +		break;
+> +	default:
+> +		ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot ignore smbios country code setting %d\n",
+> +			   smbios->country_code_flag);
+> +		break;
+> +	}
+> +
+> +	spin_unlock_bh(&ab->base_lock);
+> +
+>   	if (!smbios->bdf_enabled) {
+>   		ath12k_dbg(ab, ATH12K_DBG_BOOT, "bdf variant name not found.\n");
+>   		return;
+> @@ -438,7 +460,7 @@ static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
+>   int ath12k_core_check_smbios(struct ath12k_base *ab)
+>   {
+>   	ab->qmi.target.bdf_ext[0] = '\0';
+> -	dmi_walk(ath12k_core_check_bdfext, ab);
+> +	dmi_walk(ath12k_core_check_cc_code_bdfext, ab);
+>   
+>   	if (ab->qmi.target.bdf_ext[0] == '\0')
+>   		return -ENODATA;
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 35a3b6357eb5..d35b97520e6d 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -142,9 +142,34 @@ struct ath12k_ext_irq_grp {
+>   	struct net_device napi_ndev;
+>   };
+>   
+> +enum ath12k_smbios_cc_type {
+> +	/* disable country code setting from SMBIOS */
+> +	ATH12K_SMBIOS_CC_DISABLE = 0,
+> +
+> +	/* set country code by ANSI country name, based on ISO3166-1 alpha2 */
+> +	ATH12K_SMBIOS_CC_ISO = 1,
+> +
+> +	/* worldwide regdomain */
+> +	ATH12K_SMBIOS_CC_WW = 2,
+> +};
+> +
+>   struct ath12k_smbios_bdf {
+>   	struct dmi_header hdr;
+> -	u32 padding;
+> +	u8 features_disabled;
+> +
+> +	/* enum ath12k_smbios_cc_type */
+> +	u8 country_code_flag;
+> +
+> +	/* To set specific country, you need to set country code
+> +	 * flag=ATH12K_SMBIOS_CC_ISO first, then if country is United
+> +	 * States, then country code value = 0x5553 ("US",'U' = 0x55, 'S'=
+> +	 * 0x53). To set country to INDONESIA, then country code value =
+> +	 * 0x4944 ("IN", 'I'=0x49, 'D'=0x44). If country code flag =
+> +	 * ATH12K_SMBIOS_CC_WW, then you can use worldwide regulatory
+> +	 * setting.
+> +	 */
+> +	u16 cc_code;
+> +
+>   	u8 bdf_enabled;
+>   	u8 bdf_ext[];
+>   } __packed;
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 0df154c34f8f..ba292c2873d1 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -7509,6 +7509,17 @@ static int __ath12k_mac_register(struct ath12k *ar)
+>   		goto err_unregister_hw;
+>   	}
+>   
+> +	if (ar->ab->hw_params->current_cc_support && ab->new_alpha2[0]) {
+> +		struct wmi_set_current_country_params set_current_param = {};
+> +
+> +		memcpy(&set_current_param.alpha2, ab->new_alpha2, 2);
+> +		memcpy(&ar->alpha2, ab->new_alpha2, 2);
+> +		ret = ath12k_wmi_send_set_current_country_cmd(ar, &set_current_param);
+> +		if (ret)
+> +			ath12k_warn(ar->ab,
+> +				    "failed set cc code for mac register: %d\n", ret);
+> +	}
+> +
+>   	return 0;
+>   
+>   err_unregister_hw:
+> 
+> base-commit: 3f257461ab0ab19806bae2bfde4c3cd88dbf050e
+> prerequisite-patch-id: 2ee4ca0fc2ff95861b978c44b2cb04771c927ee1
+> prerequisite-patch-id: a341b369c2d9f319970dff05a117cc4c6c85c31c
+> prerequisite-patch-id: 04c82a480f25fa06001c9ff3fb1d30630f9ec82a
+> prerequisite-patch-id: 9ba56bba555d7c1b7dea4ad394d39d8397e79754
+> prerequisite-patch-id: 7c1c0cda8e48fee003376e035ac2b472d22cbae9
 
 
 -- 
