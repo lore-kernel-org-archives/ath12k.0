@@ -4,109 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E256CD5BC0
-	for <ath12k@archiver.kernel.org>; Tue, 19 Sep 2023 13:36:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87184CE79A8
+	for <ath12k@archiver.kernel.org>; Tue, 19 Sep 2023 17:48:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Date:References:
-	In-Reply-To:Message-Id:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rmaleQgEKZD1bRaL3UR3t5JQRE0s7AxHx98ZWheI6Mc=; b=hhZQSF0S862tN1
-	5nBXW7c/wxGXDAC5h3tdH4a+Wo/bpjb/jqmcAcN7BbRIJhO5iQA1sCfLh6lFewUrf0BRxuqykkDeJ
-	4TRNTuGlbvleUq40rJ2NY2MVI2tpwWCz5uRoM9fdrA0zg69F09aozyMjcBoW6kRTxDTjnaJ0tWDQ9
-	KmDGXdAnqc2p9aiEgnzR10R4teHVqmE4N58gaQGcvZdEeZFQ0AD8c1BopsnQPLGP+cH0+hr0AdEI+
-	SmpHEYAquQzd1vKI79m92urMl9U9tvIlh6vk4DRZ6RCp7ktPxYyJRgngqdz8V5bpySiVcvqLuOF5g
-	01wveN+eBOGQlhTaQ0Fg==;
+	List-Owner; bh=sPoH62KDrkMLMro+eFiLy2IkYBdgjFclpYazeDH+Iik=; b=xOaQmZ/+gFUVfM
+	4AsC/4klBB0Evp1dtCCNS6vZi1LYaYoHOlKeiA/I4ysM2eKNsSXB9P+NOUUnsQQDMNWrFSU+L52SL
+	zKGNHH6/tDHK3ba96TW7Mq6xc1Gis3WIP3VKCit6Xsd2qhBykmT5JOkUWOlrsZIXdOrZWdJR/DObF
+	9n/FQ/FBZzW+6Rl4EqcvFEfo9Ai0srgN+R4DHSzgr/fC5Q9bRwFOkzN3NPrENmWlEHx0aCIpX7y/i
+	023w8gMY9SnFBfhX4ZXXna2m1Hc9bLt+vZIEVUPEb4tQ0celJzuOHn8dqNBflBucAlqj2damnZ/41
+	CwRGSL5qvdj+NtX7kfBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qiauF-000Xss-0z
+	id 1qiepN-000ykP-0v
 	for ath12k@archiver.kernel.org;
-	Tue, 19 Sep 2023 13:36:47 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	Tue, 19 Sep 2023 17:48:01 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qiauB-000Xr4-1T;
-	Tue, 19 Sep 2023 13:36:44 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
-	by mailout.nyi.internal (Postfix) with ESMTP id 0A3D15C00A5;
-	Tue, 19 Sep 2023 09:36:34 -0400 (EDT)
-Received: from imap47 ([10.202.2.97])
-  by compute5.internal (MEProxy); Tue, 19 Sep 2023 09:36:34 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=svenpeter.dev;
-	 h=cc:cc:content-transfer-encoding:content-type:content-type
-	:date:date:from:from:in-reply-to:in-reply-to:message-id
-	:mime-version:references:reply-to:sender:subject:subject:to:to;
-	 s=fm2; t=1695130594; x=1695216994; bh=G3Kkrzt0AGrrY/tjL0EyntUuI
-	Bb8mCCGj+mtTnmx+Q8=; b=UnODe/CFFm/fKyGaSWbPPfJGyccMgh1Fl4ql7J8B2
-	9jTTCbW7SBL9mmZVXktU9NHHOKE59vNmIt0/3PhYLyfB2ct9PpB2TtdW2GrTNk0N
-	p54KxQZhj60LKixvUfYSDQa4v3EbvN8Xt+LCAGQGVQ26IZGNwzMCGuce3Gghezi+
-	NDemRIJWikj5y3YJh93ZKtlx/6vlOGJnSRujwbi6RlScOarSzktohPxAwVVayDgE
-	wc1G63LzMMrc7gbgXgfjjE3fjf+QuIdkFrVuooWiII9CtYxJ0KGYCqtctLBBxlXB
-	a0MaGet4EcXXzcNEDj0hlAAITshodNu2ZUQSCM82e95IQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:sender:subject:subject:to:to:x-me-proxy
-	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
-	1695130594; x=1695216994; bh=G3Kkrzt0AGrrY/tjL0EyntUuIBb8mCCGj+m
-	tTnmx+Q8=; b=Ki98uDeNfz0jsUIT+QrBfvj6hR3UdAj0JGP0Kk0m3is6XGITVnc
-	DitfO8Z+GtWWohKTB22DWPAWKANFWZvwpnHoOdj68y6C4Z7ADQwwOPv0cl9n2b+x
-	ySjituYs4vc8wTr6657lSCf6nuZlPaevwRT+ZlC5EloYB2OJvQKrFkiBrlsDjKms
-	R/4JDdefME8w8YDPy5+wnxG2+Fya9/liDAL5qCMMKpXum+43+FmCAvT5DhfpQlfI
-	HT3jt59lJiwFge+hvLDqbVFgQ4bt7cNR/bPeevGW7CpYG9z9TksRHzzWy5ZpkhSc
-	+qvxWapAs7q7hQNor2DKBFbtWnh42FwH2mg==
-X-ME-Sender: <xms:4KMJZbW9LbqWPcHkGh_DlPuxCBkGLtv3JnsYlVzXjKzSIeeti7RIhg>
-    <xme:4KMJZTmAvH4L7z_nGaP5KdfIvqOZiks__CHr-LlmDmPx7zd2plYewMvSEyaWyUHFk
-    jKbOhCbS2QMQUW6WgU>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedviedrudekuddgfeeiucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepofgfggfkjghffffhvfevufgtgfesthhqredtreerjeenucfhrhhomhepfdfu
-    vhgvnhcurfgvthgvrhdfuceoshhvvghnsehsvhgvnhhpvghtvghrrdguvghvqeenucggtf
-    frrghtthgvrhhnpeevhedthffgffelhedujefgueduudeutdefleevvdetudelhfeihfdv
-    ffelteeuudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhroh
-    hmpehsvhgvnhesshhvvghnphgvthgvrhdruggvvh
-X-ME-Proxy: <xmx:4KMJZXYmYuvL3nH0_SgD_kNdsC7XHLClfVBAmruidR-V60B6y3P-MQ>
-    <xmx:4KMJZWXQA3WzRBb5zCu-QYvcA4iZm-q-O5n5rA4kxuHe43SgaGHuSg>
-    <xmx:4KMJZVk9Oi99N4mk7qm3lIUI4afyU90X7PI_XuVzNp7f82_pACbMKw>
-    <xmx:4qMJZdNsFBGmk6guzMsje_BoEdpEh-d6HrZzup8N865hs4SPZgsPDA>
-Feedback-ID: i51094778:Fastmail
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
-	id 0378AA60077; Tue, 19 Sep 2023 09:36:31 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.9.0-alpha0-761-gece9e40c48-fm-20230913.001-gece9e40c
+	id 1qiepI-000yjX-38
+	for ath12k@lists.infradead.org;
+	Tue, 19 Sep 2023 17:47:59 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38JDv5ZJ029424;
+	Tue, 19 Sep 2023 17:47:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=PLObc+5R5Ors8A3fY3YEbKNJxmJ3r3i1ic7/gDeU2G8=;
+ b=ExPrRId5Df8kp3TJxJQpZ5Y+0F2meNR89SCnaNtalQEziecHndVS756YDF/cShrPw4ek
+ +VgUvA7DXOvA+UNfRiJ0JqIJiKUbMMaHVxXOT4dOJQ47F67t3HsyQ9SdiaKrnLnvnrIB
+ Afw1uxtXGRm0msKMOsK6RoLtrFIhgrBbPFbrsx3j6vFIxAqqExL+FYtoCMzcl0WOu8mT
+ dpPZswxAXfUekLoWi1Wm/6YKNq1j5dkJRb7sTc9SS5ZbPJmMi+4Wxp0VJhsLPu2hhKz3
+ ilCH6NjNF8/aI4E7RCeox7OYm5KxWucU0BY+rFQMo+zel7v3roBM83WcFop/hZaMmxCa lg== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t77wn99gg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 19 Sep 2023 17:47:54 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38JHlr7A017773
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 19 Sep 2023 17:47:53 GMT
+Received: from [10.48.245.144] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 19 Sep
+ 2023 10:47:52 -0700
+Message-ID: <4282f92a-3543-4863-bc00-478ae03759e0@quicinc.com>
+Date: Tue, 19 Sep 2023 10:47:52 -0700
 MIME-Version: 1.0
-Message-Id: <aabaa49f-8988-42c0-bf8e-2266005e2155@app.fastmail.com>
-In-Reply-To: <20230918131103.24119-7-ilpo.jarvinen@linux.intel.com>
-References: <20230918131103.24119-1-ilpo.jarvinen@linux.intel.com>
- <20230918131103.24119-7-ilpo.jarvinen@linux.intel.com>
-Date: Tue, 19 Sep 2023 15:36:10 +0200
-From: "Sven Peter" <sven@svenpeter.dev>
-To: =?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
- linux-pci@vger.kernel.org, "Bjorn Helgaas" <helgaas@kernel.org>,
- "Lorenzo Pieralisi" <lorenzo.pieralisi@arm.com>,
- "Rob Herring" <robh@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
- "Lukas Wunner" <lukas@wunner.de>, "Rafael J. Wysocki" <rafael@kernel.org>,
- "Heiner Kallweit" <hkallweit1@gmail.com>,
- "Emmanuel Grumbach" <emmanuel.grumbach@intel.com>,
- linux-kernel@vger.kernel.org, "Hector Martin" <marcan@marcan.st>,
- "Alyssa Rosenzweig" <alyssa@rosenzweig.io>,
- "Marcel Holtmann" <marcel@holtmann.org>,
- "Johan Hedberg" <johan.hedberg@gmail.com>,
- "Luiz Augusto von Dentz" <luiz.dentz@gmail.com>,
- "Bjorn Helgaas" <bhelgaas@google.com>, asahi@lists.linux.dev,
- linux-arm-kernel@lists.infradead.org, linux-bluetooth@vger.kernel.org
-Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org, intel-wired-lan@lists.osuosl.org,
- linux-mediatek@lists.infradead.org, linux-rdma@vger.kernel.org,
- linux-wireless@vger.kernel.org, netdev@vger.kernel.org
-Subject: Re: [PATCH v2 06/13] Bluetooth: hci_bcm4377: Convert aspm disable to quirk
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/7] wifi: ath12k: add support to select 6 GHz Regulatory
+ type
+Content-Language: en-US
+To: Aishwarya R <quic_aisr@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Wen Gong <quic_wgong@quicinc.com>
+References: <20230919071724.15505-1-quic_aisr@quicinc.com>
+ <20230919071724.15505-2-quic_aisr@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20230919071724.15505-2-quic_aisr@quicinc.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: IX6ncWcU4ifrSrabbv_AAQ4UkrH34SSS
+X-Proofpoint-GUID: IX6ncWcU4ifrSrabbv_AAQ4UkrH34SSS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
+ definitions=2023-09-19_09,2023-09-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ clxscore=1015 suspectscore=0 mlxscore=0 lowpriorityscore=0 adultscore=0
+ mlxlogscore=999 priorityscore=1501 spamscore=0 bulkscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2309190152
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230919_063643_577320_1211611E 
-X-CRM114-Status: UNSURE (   7.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230919_104757_039598_5307EA00 
+X-CRM114-Status: GOOD (  33.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,19 +94,509 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-SGksCgpPbiBNb24sIFNlcCAxOCwgMjAyMywgYXQgMTU6MTAsIElscG8gSsOkcnZpbmVuIHdyb3Rl
-Ogo+IHBjaV9kaXNhYmxlX2xpbmtfc3RhdGUoKSB3YXMgbWFkZSByZWxpYWJsZSByZWdhcmRsZXNz
-IG9mIEFTUE0gQ09ORklHCj4gYW5kIE9TIGJlaW5nIGRpc2FsbG93ZWQgdG8gY2hhbmdlIEFTUE0g
-c3RhdGVzIHRvIGFsbG93IGRyaXZlcnMgdG8gcmVseQo+IG9uIHBjaV9kaXNhYmxlX2xpbmtfc3Rh
-dGUoKSB3b3JraW5nLgo+Cj4gUmVtb3ZlIGRyaXZlciB3b3JraW5nIGFyb3VuZCB1bnJlbGlhYmxl
-IHBjaV9kaXNhYmxlX2xpbmtfc3RhdGUoKSBmcm9tCj4gaGNpX2JjbTQzNzcgZHJpdmVyIGFuZCBh
-ZGQgYSBQQ0kgcXVpcmsgdG8gZGlzYWJsZSBBU1BNLgo+Cj4gU2lnbmVkLW9mZi1ieTogSWxwbyBK
-w6RydmluZW4gPGlscG8uamFydmluZW5AbGludXguaW50ZWwuY29tPgo+IC0tLQoKQWNrZWQtYnk6
-IFN2ZW4gUGV0ZXIgPHN2ZW5Ac3ZlbnBldGVyLmRldj4KCgpUaGFua3MsCgpTdmVuCgotLSAKYXRo
-MTJrIG1haWxpbmcgbGlzdAphdGgxMmtAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9hdGgxMmsK
+On 9/19/2023 12:17 AM, Aishwarya R wrote:
+> There are 3 types of regulatory rules for AP mode and 6 types for
+> STATION mode. This is to add wmi_vdev_type and ieee80211_ap_reg_power
+> to select the exact reg rules.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Wen,
+Can you provide a "Tested-on: WCN7850" tag for this series?
+
+> 
+> Signed-off-by: Aishwarya R <quic_aisr@quicinc.com>
+> ---
+>   drivers/net/wireless/ath/ath12k/reg.c |  62 +++++++--
+>   drivers/net/wireless/ath/ath12k/reg.h |   6 +-
+>   drivers/net/wireless/ath/ath12k/wmi.c | 182 +++++++++++++++++++++++++-
+>   drivers/net/wireless/ath/ath12k/wmi.h |  27 +++-
+>   4 files changed, 257 insertions(+), 20 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+> index 6ede91ebc8e1..8501f77eee55 100644
+> --- a/drivers/net/wireless/ath/ath12k/reg.c
+> +++ b/drivers/net/wireless/ath/ath12k/reg.c
+> @@ -28,6 +28,21 @@ static const struct ieee80211_regdomain ath12k_world_regd = {
+>   	}
+>   };
+>   
+> +enum wmi_reg_6g_ap_type
+> +ath12k_ieee80211_ap_pwr_type_convert(enum ieee80211_ap_reg_power power_type)
+> +{
+> +	switch (power_type) {
+> +	case IEEE80211_REG_LPI_AP:
+> +		return WMI_REG_INDOOR_AP;
+> +	case IEEE80211_REG_SP_AP:
+> +		return WMI_REG_STD_POWER_AP;
+> +	case IEEE80211_REG_VLP_AP:
+> +		return WMI_REG_VLP_AP;
+> +	default:
+> +		return WMI_REG_MAX_AP_TYPE;
+> +	}
+> +}
+> +
+>   static bool ath12k_regdom_changes(struct ath12k *ar, char *alpha2)
+>   {
+>   	const struct ieee80211_regdomain *regd;
+> @@ -562,14 +577,16 @@ ath12k_reg_update_weather_radar_band(struct ath12k_base *ab,
+>   
+>   struct ieee80211_regdomain *
+>   ath12k_reg_build_regd(struct ath12k_base *ab,
+> -		      struct ath12k_reg_info *reg_info, bool intersect)
+> +		      struct ath12k_reg_info *reg_info, bool intersect,
+> +		      enum wmi_vdev_type vdev_type,
+> +		      enum ieee80211_ap_reg_power power_type)
+>   {
+>   	struct ieee80211_regdomain *tmp_regd, *default_regd, *new_regd = NULL;
+> -	struct ath12k_reg_rule *reg_rule;
+> +	struct ath12k_reg_rule *reg_rule, *reg_rule_6ghz;
+>   	u8 i = 0, j = 0, k = 0;
+>   	u8 num_rules;
+>   	u16 max_bw;
+> -	u32 flags;
+> +	u32 flags, reg_6ghz_number, max_bw_6ghz;
+>   	char alpha2[3];
+>   
+>   	num_rules = reg_info->num_5g_reg_rules + reg_info->num_2g_reg_rules;
+> @@ -578,8 +595,33 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+>   	 * This can be updated to choose the combination dynamically based on AP
+>   	 * type and client type, after complete 6G regulatory support is added.
+>   	 */
+> -	if (reg_info->is_ext_reg_event)
+> -		num_rules += reg_info->num_6g_reg_rules_ap[WMI_REG_INDOOR_AP];
+> +	if (reg_info->is_ext_reg_event) {
+> +		if (vdev_type == WMI_VDEV_TYPE_STA) {
+> +			enum wmi_reg_6g_ap_type ap_type;
+> +
+> +			ap_type = ath12k_ieee80211_ap_pwr_type_convert(power_type);
+> +
+> +			if (ap_type == WMI_REG_MAX_AP_TYPE)
+> +				ap_type = WMI_REG_INDOOR_AP;
+
+where is power_type coming from and can it be tainted?
+if we always expect a valid value then why not just have the conversion 
+function set the default to WMI_REG_INDOOR_AP?
+Are there places in upcoming patches that actually perform error 
+handling if the conversion function returns MAX?
+
+> +			reg_6ghz_number = reg_info->num_6g_reg_rules_cl
+> +					[ap_type][WMI_REG_DEFAULT_CLIENT];
+
+please avoid splitting lines in the middle of a variable reference; that 
+decreases the readability of the code. It is better to exceed some 
+arbitrary line length guideline. you can use a client_type = 
+WMI_REG_DEFAULT_CLIENT assignment to help reduce the length.
+if the line is still exceedingly long, split the lines after =
+
+repeat for all cases that follow
+
+
+> +			if (reg_6ghz_number == 0) {
+> +				ap_type = WMI_REG_INDOOR_AP;
+> +				reg_6ghz_number = reg_info->num_6g_reg_rules_cl
+> +						[ap_type][WMI_REG_DEFAULT_CLIENT];
+> +			}
+> +			reg_rule_6ghz = reg_info->reg_rules_6g_client_ptr
+> +					[ap_type][WMI_REG_DEFAULT_CLIENT];
+> +			max_bw_6ghz = reg_info->max_bw_6g_client
+> +					[ap_type][WMI_REG_DEFAULT_CLIENT];
+> +		} else {
+> +			reg_6ghz_number = reg_info->num_6g_reg_rules_ap
+> +					[WMI_REG_INDOOR_AP];
+> +			reg_rule_6ghz = reg_info->reg_rules_6g_ap_ptr[WMI_REG_INDOOR_AP];
+> +			max_bw_6ghz = reg_info->max_bw_6g_ap[WMI_REG_INDOOR_AP];
+> +		}
+> +		num_rules += reg_6ghz_number;
+> +	}
+>   
+>   	if (!num_rules)
+>   		goto ret;
+> @@ -626,12 +668,10 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+>   			 * per other BW rule flags we pass from here
+>   			 */
+>   			flags = NL80211_RRF_AUTO_BW;
+> -		} else if (reg_info->is_ext_reg_event &&
+> -			   reg_info->num_6g_reg_rules_ap[WMI_REG_INDOOR_AP] &&
+> -			(k < reg_info->num_6g_reg_rules_ap[WMI_REG_INDOOR_AP])) {
+> -			reg_rule = reg_info->reg_rules_6g_ap_ptr[WMI_REG_INDOOR_AP] + k++;
+> -			max_bw = min_t(u16, reg_rule->max_bw,
+> -				       reg_info->max_bw_6g_ap[WMI_REG_INDOOR_AP]);
+> +		} else if (reg_info->is_ext_reg_event && reg_6ghz_number &&
+> +			   (k < reg_6ghz_number)) {
+> +			reg_rule = reg_rule_6ghz + k++;
+> +			max_bw = min_t(u16, reg_rule->max_bw, max_bw_6ghz);
+>   			flags = NL80211_RRF_AUTO_BW;
+>   		} else {
+>   			break;
+> diff --git a/drivers/net/wireless/ath/ath12k/reg.h b/drivers/net/wireless/ath/ath12k/reg.h
+> index 56d009a47234..56324e30a358 100644
+> --- a/drivers/net/wireless/ath/ath12k/reg.h
+> +++ b/drivers/net/wireless/ath/ath12k/reg.h
+> @@ -88,7 +88,11 @@ void ath12k_reg_free(struct ath12k_base *ab);
+>   void ath12k_regd_update_work(struct work_struct *work);
+>   struct ieee80211_regdomain *ath12k_reg_build_regd(struct ath12k_base *ab,
+>   						  struct ath12k_reg_info *reg_info,
+> -						  bool intersect);
+> +						  bool intersect,
+> +						  enum wmi_vdev_type vdev_type,
+> +						  enum ieee80211_ap_reg_power power_type);
+> +enum wmi_reg_6g_ap_type
+> +ath12k_ieee80211_ap_pwr_type_convert(enum ieee80211_ap_reg_power power_type);
+>   int ath12k_regd_update(struct ath12k *ar, bool init);
+>   int ath12k_reg_update_chan_list(struct ath12k *ar);
+>   
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index af910296c41e..1b9ce9a2ae96 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -4152,6 +4152,119 @@ static struct ath12k_reg_rule
+>   	return reg_rule_ptr;
+>   }
+>   
+> +static char *ath12k_cc_status_to_str(enum ath12k_reg_cc_code code)
+
+all of these *_str() functions should return const char *
+
+> +{
+> +	switch (code) {
+> +	case REG_SET_CC_STATUS_PASS:
+> +		return "REG_SET_CC_STATUS_PASS";
+> +	case REG_CURRENT_ALPHA2_NOT_FOUND:
+> +		return "REG_CURRENT_ALPHA2_NOT_FOUND";
+> +	case REG_INIT_ALPHA2_NOT_FOUND:
+> +		return "REG_INIT_ALPHA2_NOT_FOUND";
+> +	case REG_SET_CC_CHANGE_NOT_ALLOWED:
+> +		return "REG_SET_CC_CHANGE_NOT_ALLOWED";
+> +	case REG_SET_CC_STATUS_NO_MEMORY:
+> +		return "REG_SET_CC_STATUS_NO_MEMORY";
+> +	case REG_SET_CC_STATUS_FAIL:
+> +		return "REG_SET_CC_STATUS_FAIL";
+> +	default:
+> +		return "unknown cc status";
+> +	}
+> +};
+> +
+> +static char *ath12k_super_reg_6ghz_to_str(enum reg_super_domain_6ghz domain_id)
+> +{
+> +	switch (domain_id) {
+> +	case FCC1_6GHZ:
+> +		return "FCC1_6GHZ";
+> +	case ETSI1_6GHZ:
+> +		return "ETSI1_6GHZ";
+> +	case ETSI2_6GHZ:
+> +		return "ETSI2_6GHZ";
+> +	case APL1_6GHZ:
+> +		return "APL1_6GHZ";
+> +	case FCC1_6GHZ_CL:
+> +		return "FCC1_6GHZ_CL";
+> +	default:
+> +		return "unknown domain id";
+> +	}
+> +}
+> +
+> +static char *ath12k_6ghz_client_type_to_str(enum wmi_reg_6g_client_type type)
+> +{
+> +	switch (type) {
+> +	case WMI_REG_DEFAULT_CLIENT:
+> +		return "DEFAULT CLIENT";
+> +	case WMI_REG_SUBORDINATE_CLIENT:
+> +		return "SUBORDINATE CLIENT";
+> +	default:
+> +		return "unknown client type";
+> +	}
+> +}
+> +
+> +static char *ath12k_6ghz_ap_type_to_str(enum wmi_reg_6g_ap_type type)
+> +{
+> +	switch (type) {
+> +	case WMI_REG_INDOOR_AP:
+> +		return "INDOOR AP";
+> +	case WMI_REG_STD_POWER_AP:
+> +		return "STANDARD POWER AP";
+> +	case WMI_REG_VLP_AP:
+> +		return "VERY LOW POWER AP";
+> +	default:
+> +		return "unknown AP type";
+> +	}
+> +}
+> +
+> +static char *ath12k_sub_reg_6ghz_to_str(enum reg_subdomains_6ghz sub_id)
+> +{
+> +	switch (sub_id) {
+> +	case FCC1_CLIENT_LPI_REGULAR_6GHZ:
+> +		return "FCC1_CLIENT_LPI_REGULAR_6GHZ";
+> +	case FCC1_CLIENT_SP_6GHZ:
+> +		return "FCC1_CLIENT_SP_6GHZ";
+> +	case FCC1_AP_LPI_6GHZ:
+> +		return "FCC1_AP_LPI_6GHZ/FCC1_CLIENT_LPI_SUBORDINATE";
+> +	case FCC1_AP_SP_6GHZ:
+> +		return "FCC1_AP_SP_6GHZ";
+> +	case ETSI1_LPI_6GHZ:
+> +		return "ETSI1_LPI_6GHZ";
+> +	case ETSI1_VLP_6GHZ:
+> +		return "ETSI1_VLP_6GHZ";
+> +	case ETSI2_LPI_6GHZ:
+> +		return "ETSI2_LPI_6GHZ";
+> +	case ETSI2_VLP_6GHZ:
+> +		return "ETSI2_VLP_6GHZ";
+> +	case APL1_LPI_6GHZ:
+> +		return "APL1_LPI_6GHZ";
+> +	case APL1_VLP_6GHZ:
+> +		return "APL1_VLP_6GHZ";
+> +	case EMPTY_6GHZ:
+> +		return "N/A";
+> +	default:
+> +		return "unknown sub reg id";
+> +	}
+> +}
+> +
+> +static void ath12k_print_reg_rule(struct ath12k_base *ab, char *prev,
+> +				  u32 num_reg_rules,
+> +				  struct ath12k_reg_rule *reg_rule_ptr)
+> +{
+> +	struct ath12k_reg_rule *reg_rule = reg_rule_ptr;
+> +	u32 count;
+> +
+> +	ath12k_dbg(ab, ATH12K_DBG_WMI, "%s reg rules number %d\n", prev, num_reg_rules);
+> +
+> +	for (count = 0; count < num_reg_rules; count++) {
+> +		ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +			   "reg rule %d: (%d - %d @ %d) (%d, %d) (FLAGS %d) (psd flag %d EIRP %d dB/MHz)\n",
+> +			   count + 1, reg_rule->start_freq, reg_rule->end_freq,
+> +			   reg_rule->max_bw, reg_rule->ant_gain, reg_rule->reg_power,
+> +			   reg_rule->flags, reg_rule->psd_flag, reg_rule->psd_eirp);
+> +		reg_rule++;
+> +	}
+> +}
+> +
+>   static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   						   struct sk_buff *skb,
+>   						   struct ath12k_reg_info *reg_info)
+> @@ -4163,7 +4276,7 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   	u32 num_6g_reg_rules_ap[WMI_REG_CURRENT_MAX_AP_TYPE];
+>   	u32 num_6g_reg_rules_cl[WMI_REG_CURRENT_MAX_AP_TYPE][WMI_REG_MAX_CLIENT_TYPE];
+>   	u32 total_reg_rules = 0;
+> -	int ret, i, j;
+> +	int ret, i, j, skip_6ghz_rules_in_5ghz_rules = 0;
+>   
+>   	ath12k_dbg(ab, ATH12K_DBG_WMI, "processing regulatory ext channel list\n");
+>   
+> @@ -4265,6 +4378,13 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   	 * from 5G rules list.
+>   	 */
+>   	if (memcmp(reg_info->alpha2, "US", 2) == 0) {
+> +		ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +			   "US 5 GHz reg rules number %d from fw",
+> +			   reg_info->num_5g_reg_rules);
+> +
+> +		if (reg_info->num_5g_reg_rules > REG_US_5G_NUM_REG_RULES)
+> +			skip_6ghz_rules_in_5ghz_rules = reg_info->num_5g_reg_rules -
+> +						    REG_US_5G_NUM_REG_RULES;
+
+I'd split this line after = instead of in the middle of the expression
+
+>   		reg_info->num_5g_reg_rules = REG_US_5G_NUM_REG_RULES;
+>   		num_5g_reg_rules = reg_info->num_5g_reg_rules;
+>   	}
+> @@ -4297,6 +4417,10 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   		break;
+>   	}
+>   
+> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +		   "%s: status_code %s", __func__,
+> +		   ath12k_cc_status_to_str(reg_info->status_code));
+> +
+>   	reg_info->is_ext_reg_event = true;
+>   
+>   	reg_info->min_bw_2g = le32_to_cpu(ev->min_bw_2g);
+> @@ -4325,6 +4449,10 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   			le32_to_cpu(ev->max_bw_6g_client_vlp[i]);
+>   	}
+>   
+> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +		   "%s: status_code %s", __func__,
+> +		   ath12k_cc_status_to_str(reg_info->status_code));
+> +
+>   	ath12k_dbg(ab, ATH12K_DBG_WMI,
+>   		   "%s:cc_ext %s dsf %d BW: min_2g %d max_2g %d min_5g %d max_5g %d",
+>   		   __func__, reg_info->alpha2, reg_info->dfs_region,
+> @@ -4368,10 +4496,13 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   			ath12k_warn(ab, "Unable to Allocate memory for 2g rules\n");
+>   			return -ENOMEM;
+>   		}
+> +		ath12k_print_reg_rule(ab, "2 GHz",
+> +				      num_2g_reg_rules,
+> +				      reg_info->reg_rules_2g_ptr);
+>   	}
+> +	ext_wmi_reg_rule += num_2g_reg_rules;
+>   
+>   	if (num_5g_reg_rules) {
+> -		ext_wmi_reg_rule += num_2g_reg_rules;
+>   		reg_info->reg_rules_5g_ptr =
+>   			create_ext_reg_rules_from_wmi(num_5g_reg_rules,
+>   						      ext_wmi_reg_rule);
+> @@ -4381,9 +4512,18 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   			ath12k_warn(ab, "Unable to Allocate memory for 5g rules\n");
+>   			return -ENOMEM;
+>   		}
+> +		ath12k_print_reg_rule(ab, "5 GHz",
+> +				      num_5g_reg_rules,
+> +				      reg_info->reg_rules_5g_ptr);
+>   	}
+>   
+> -	ext_wmi_reg_rule += num_5g_reg_rules;
+> +	/* We have adjusted the number of 5 GHz reg rules via the hack above.
+> +	 * Here, we adjust that many extra rules which came with 5g reg rules
+> +	 * (for cc: US)
+> +	 *
+> +	 * NOTE: skip_6ghz_rules_in_5ghz_rules will be 0 for rest other cases.
+> +	 */
+> +	ext_wmi_reg_rule += num_5g_reg_rules + skip_6ghz_rules_in_5ghz_rules;
+>   
+>   	for (i = 0; i < WMI_REG_CURRENT_MAX_AP_TYPE; i++) {
+>   		reg_info->reg_rules_6g_ap_ptr[i] =
+> @@ -4396,10 +4536,17 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   			return -ENOMEM;
+>   		}
+>   
+> +		ath12k_print_reg_rule(ab, ath12k_6ghz_ap_type_to_str(i),
+> +				      num_6g_reg_rules_ap[i],
+> +				      reg_info->reg_rules_6g_ap_ptr[i]);
+> +
+>   		ext_wmi_reg_rule += num_6g_reg_rules_ap[i];
+>   	}
+>   
+>   	for (j = 0; j < WMI_REG_CURRENT_MAX_AP_TYPE; j++) {
+> +		ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +			   "AP type %s", ath12k_6ghz_ap_type_to_str(j));
+> +
+>   		for (i = 0; i < WMI_REG_MAX_CLIENT_TYPE; i++) {
+>   			reg_info->reg_rules_6g_client_ptr[j][i] =
+>   				create_ext_reg_rules_from_wmi(num_6g_reg_rules_cl[j][i],
+> @@ -4411,6 +4558,10 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   				return -ENOMEM;
+>   			}
+>   
+> +			ath12k_print_reg_rule(ab, ath12k_6ghz_client_type_to_str(i),
+> +					      num_6g_reg_rules_cl[j][i],
+> +					      reg_info->reg_rules_6g_client_ptr[j][i]);
+> +
+>   			ext_wmi_reg_rule += num_6g_reg_rules_cl[j][i];
+>   		}
+>   	}
+> @@ -4425,6 +4576,18 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   	reg_info->domain_code_6g_ap[WMI_REG_VLP_AP] =
+>   		le32_to_cpu(ev->domain_code_6g_ap_vlp);
+>   
+> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +		   "6 GHz reg info client type %s rnr_tpe_usable %d unspecified_ap_usable %d AP sub domain: lpi %s , sp %s , vlp %s\n",
+> +		   ath12k_6ghz_client_type_to_str(reg_info->client_type),
+> +		   reg_info->rnr_tpe_usable,
+> +		   reg_info->unspecified_ap_usable,
+> +		   ath12k_sub_reg_6ghz_to_str
+> +		   (le32_to_cpu(ev->domain_code_6g_ap_lpi)),
+> +		   ath12k_sub_reg_6ghz_to_str
+> +		   (le32_to_cpu(ev->domain_code_6g_ap_sp)),
+> +		   ath12k_sub_reg_6ghz_to_str
+> +		   (le32_to_cpu(ev->domain_code_6g_ap_vlp)));
+
+avoid splitting the line between a function and it's parameters.
+it is ok to split in the middle of a parameter list, but the first 
+parameter should almost always be on the same line as the function
+
+> +
+>   	for (i = 0; i < WMI_REG_MAX_CLIENT_TYPE; i++) {
+>   		reg_info->domain_code_6g_client[WMI_REG_INDOOR_AP][i] =
+>   			le32_to_cpu(ev->domain_code_6g_client_lpi[i]);
+> @@ -4432,12 +4595,18 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+>   			le32_to_cpu(ev->domain_code_6g_client_sp[i]);
+>   		reg_info->domain_code_6g_client[WMI_REG_VLP_AP][i] =
+>   			le32_to_cpu(ev->domain_code_6g_client_vlp[i]);
+> +		ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +			   "6 GHz AP BW: lpi %d - %d sp %d - %d vlp %d - %d\n",
+> +			   ev->min_bw_6g_ap_lpi, ev->max_bw_6g_ap_lpi,
+> +			   ev->min_bw_6g_ap_sp, ev->max_bw_6g_ap_sp,
+> +			   ev->min_bw_6g_ap_vlp, ev->max_bw_6g_ap_vlp);
+>   	}
+>   
+>   	reg_info->domain_code_6g_super_id = le32_to_cpu(ev->domain_code_6g_super_id);
+>   
+> -	ath12k_dbg(ab, ATH12K_DBG_WMI, "6g client_type: %d domain_code_6g_super_id: %d",
+> -		   reg_info->client_type, reg_info->domain_code_6g_super_id);
+> +	ath12k_dbg(ab, ATH12K_DBG_WMI, "6 GHz client_type: %s 6 GHz super domain %s",
+> +		   ath12k_6ghz_client_type_to_str(reg_info->client_type),
+> +		   ath12k_super_reg_6ghz_to_str(reg_info->domain_code_6g_super_id));
+>   
+>   	ath12k_dbg(ab, ATH12K_DBG_WMI, "processed regulatory ext channel list\n");
+>   
+> @@ -5192,7 +5361,8 @@ static int ath12k_reg_chan_list_event(struct ath12k_base *ab, struct sk_buff *sk
+>   	    !ath12k_reg_is_world_alpha((char *)reg_info->alpha2))
+>   		intersect = true;
+>   
+> -	regd = ath12k_reg_build_regd(ab, reg_info, intersect);
+> +	regd = ath12k_reg_build_regd(ab, reg_info, intersect,
+> +				     WMI_VDEV_TYPE_AP, IEEE80211_REG_UNSET_AP);
+
+why is this forced to AP?
+where is logic for client?
+
+>   	if (!regd) {
+>   		ath12k_warn(ab, "failed to build regd from reg_info\n");
+>   		goto fallback;
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+> index 08a8c9e0f59f..966e6ba4e162 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+> @@ -2832,8 +2832,8 @@ struct ath12k_wmi_rx_reorder_queue_remove_arg {
+>   #define REG_RULE_MAX_BW				0x0000ffff
+>   #define REG_RULE_REG_PWR			0x00ff0000
+>   #define REG_RULE_ANT_GAIN			0xff000000
+> -#define REG_RULE_PSD_INFO			BIT(2)
+> -#define REG_RULE_PSD_EIRP			0xffff0000
+> +#define REG_RULE_PSD_INFO                       BIT(0)
+> +#define REG_RULE_PSD_EIRP                       0xff0000
+>   
+>   #define WMI_VDEV_PARAM_TXBF_SU_TX_BFEE BIT(0)
+>   #define WMI_VDEV_PARAM_TXBF_MU_TX_BFEE BIT(1)
+> @@ -3844,6 +3844,29 @@ enum {
+>   	WMI_REG_SET_CC_STATUS_FAIL = 5,
+>   };
+>   
+> +enum reg_subdomains_6ghz {
+> +	EMPTY_6GHZ = 0x0,
+> +	FCC1_CLIENT_LPI_REGULAR_6GHZ = 0x01,
+> +	FCC1_CLIENT_SP_6GHZ = 0x02,
+> +	FCC1_AP_LPI_6GHZ = 0x03,
+> +	FCC1_CLIENT_LPI_SUBORDINATE = FCC1_AP_LPI_6GHZ,
+> +	FCC1_AP_SP_6GHZ = 0x04,
+> +	ETSI1_LPI_6GHZ = 0x10,
+> +	ETSI1_VLP_6GHZ = 0x11,
+> +	ETSI2_LPI_6GHZ = 0x12,
+> +	ETSI2_VLP_6GHZ = 0x13,
+> +	APL1_LPI_6GHZ = 0x20,
+> +	APL1_VLP_6GHZ = 0x21,
+> +};
+> +
+> +enum reg_super_domain_6ghz {
+> +	FCC1_6GHZ = 0x01,
+> +	ETSI1_6GHZ = 0x02,
+> +	ETSI2_6GHZ = 0x03,
+> +	APL1_6GHZ = 0x04,
+> +	FCC1_6GHZ_CL = 0x05,
+> +};
+> +
+>   #define WMI_REG_CLIENT_MAX 4
+>   
+>   struct wmi_reg_chan_list_cc_ext_event {
+
+
+-- 
+ath12k mailing list
+ath12k@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/ath12k
