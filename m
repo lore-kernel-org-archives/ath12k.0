@@ -4,85 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11B11CE79AF
-	for <ath12k@archiver.kernel.org>; Tue, 19 Sep 2023 20:22:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FAABCE79A9
+	for <ath12k@archiver.kernel.org>; Wed, 20 Sep 2023 02:12:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t3Nc66nl0HRc45od7PAAiWrkkWzCqh9/QtkEPI3zjUU=; b=QWxk/U1ah2jJut
-	9BC7jpcswG9Ev5hAEu8NcvaiYea+fuRUVFIM8MuzHJ3EIjGAuJyT1ZNrN45IRo1JUrG0r53XCmuUE
-	mL1JScZuoPJdRklMlfEom05EnBg+TeCjW2L0gZZRFgFlYDDC5iXEg7GE7edvfXbjF7xS/L17lxBQi
-	wDRBcl8HO2Z+N3+Uq/JeOy5grPW3yGX7QFLyNedb8dRFL4xQ/dPjVd6YyuUKoa2eeuzruhvQyl04a
-	GWM0F+gUgjdw3lYp24N6p7LvKpEluxSFRqstFLTpRE/d0EkKkZJGXqJPK1m/d6fb0Afo2x36DYJfd
-	GQ+rFiRKsF1B7JSkiAKA==;
+	List-Owner; bh=2InCw2dY82gdThVAOk2aUo2IBbUTZLWt6pgpDYuGQXw=; b=k47dU/Kn424Cdi
+	frW2GRnITo3iW9oZlZESN412xCrBRkp4jvfschqVX3yh0JctZiFEnXRifEsuomx0uoA+2RSkAsiSK
+	+OG5R63IReWKAzIO9N/+T9KF1yqetOIC9Mms1Ugz2xm7GuqtraYadAXPMq1zHe78SQ9g05MTfF5fq
+	IAPErTR52cy+EKIK4KvK5haiji3qEVaUkpX8HABjzqO8c0ix0B0n1v0voukQ1Q407spXeMZTPYy6X
+	x9MxSYaTU4JghAXYwkApMZNR/1CnWd8/vbhEKFCTvyStIpVavWzCqvdWaWQV/C56uFiUpeTLVIlJN
+	Nymgn5oq2hZFs3SzDptw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qihEa-001EEe-28
+	id 1qimhf-001c2z-2A
 	for ath12k@archiver.kernel.org;
-	Tue, 19 Sep 2023 20:22:12 +0000
+	Wed, 20 Sep 2023 02:12:35 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qihEX-001EDv-19
+	id 1qimhb-001c2X-2Y
 	for ath12k@lists.infradead.org;
-	Tue, 19 Sep 2023 20:22:11 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38JKCQMj013130;
-	Tue, 19 Sep 2023 20:22:00 GMT
+	Wed, 20 Sep 2023 02:12:33 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38K1JKxU006060;
+	Wed, 20 Sep 2023 02:12:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=0664GNu6kdAzaJVNwn82lFiHh34fchNprkK1Q+qGWjo=;
- b=VTPgH24EjNOw9khsRF9OKKoN5qIodu7Hr5ZZq/Gmcfxd+M7ye10r50eyiSo4gZ1TpH9l
- hCpoOU8JinpeRzZ8mMzkKB7KCp2iEXYTNW1vKYF+JQuAwzwkBcm5wtjbFhRpPHcXuRGG
- ESqeBMAKU+/Dxkjfy1bG5tFXEoKCmTjUQv2DJbTzjx243+NjzchBqu4sptu3/qIV+X9d
- 4nVU95T88tF/jmeub4pF2gkVLSJ7P91M51DNkeWUmcjR6dqAyXPyn4bWYoJ4hb+EqiOw
- qBpgh5K7hh9XtSCLbs2N+201uLTo1QkDroK6V9vH+oYdU/nwV0Dqy5PEZ8CS/Zdwb5kG AA== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t6mtsbxk9-1
+ bh=10EeeZpDflKUk7CQvRG7jyrqOr8t7dL3SSXQ+LokSVo=;
+ b=gr+tlDDnPj01hMcJmE9KS91PNGJOQzrV58MeMYM6dGb1t2neSMY2+pIJnKQBZuGqO4ZB
+ odj7O2F37SfMPO+jgliong2oRVsdMPqEprr6GEC5NdWHtVs5ix/hwpMXmuiT5ZVSkl5L
+ RP2MFumcCzM6ymloc53xB0A8vgtUVclWsompXv1CCoNQf/H4fbR+azuNZKSGdfdnIu/o
+ rH9ilclJn93z0gOXFmHD0yc6SNmkjoaP4dNXaQpNeTxiI3Rggl6mxcWv4hzoYXM306Db
+ Au3UkpU3qzIpI0q2PPa1awc/MgY1JFYvNjPSu/rAEl96b/FFbdW7uWyL6y36EDJZ0Ugr cA== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3t77wna2eq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 19 Sep 2023 20:21:59 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38JKLxtm004409
+	Wed, 20 Sep 2023 02:12:29 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38K2CSXt016530
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 19 Sep 2023 20:21:59 GMT
-Received: from [10.48.245.144] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+	Wed, 20 Sep 2023 02:12:29 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 19 Sep
- 2023 13:21:58 -0700
-Message-ID: <b5238b10-ca83-40df-b7e3-b0161b98ede7@quicinc.com>
-Date: Tue, 19 Sep 2023 13:21:57 -0700
+ 2023 19:10:31 -0700
+Message-ID: <46b69fe7-d007-18b0-baae-e59ffb035e42@quicinc.com>
+Date: Wed, 20 Sep 2023 10:10:38 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 7/7] wifi: ath12k: send TPC power to firmware for 6 GHz
- VDEV
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.0
+Subject: Re: [PATCH 1/7] wifi: ath12k: add support to select 6 GHz Regulatory
+ type
 Content-Language: en-US
-To: Aishwarya R <quic_aisr@quicinc.com>, <ath12k@lists.infradead.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>,
+        Aishwarya R
+	<quic_aisr@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20230919071724.15505-1-quic_aisr@quicinc.com>
- <20230919071724.15505-8-quic_aisr@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20230919071724.15505-8-quic_aisr@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ <20230919071724.15505-2-quic_aisr@quicinc.com>
+ <4282f92a-3543-4863-bc00-478ae03759e0@quicinc.com>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <4282f92a-3543-4863-bc00-478ae03759e0@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: RuqnkPKSv7Pw9JHCaEYjC13WVA346ub6
-X-Proofpoint-ORIG-GUID: RuqnkPKSv7Pw9JHCaEYjC13WVA346ub6
+X-Proofpoint-ORIG-GUID: rY6A1WNRQhVsqUY6oyMPQF9KiZSrUn17
+X-Proofpoint-GUID: rY6A1WNRQhVsqUY6oyMPQF9KiZSrUn17
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.601,FMLib:17.11.176.26
- definitions=2023-09-19_10,2023-09-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 bulkscore=0 suspectscore=0 adultscore=0 mlxlogscore=999
- malwarescore=0 mlxscore=0 lowpriorityscore=0 spamscore=0 clxscore=1015
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2308100000 definitions=main-2309190174
+ definitions=2023-09-20_02,2023-09-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ clxscore=1015 suspectscore=0 mlxscore=0 lowpriorityscore=0 adultscore=0
+ mlxlogscore=783 priorityscore=1501 spamscore=0 bulkscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2308100000
+ definitions=main-2309200015
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230919_132209_420719_80A11342 
-X-CRM114-Status: GOOD (  40.24  )
+X-CRM114-CacheID: sfid-20230919_191231_873781_2D1EC980 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,258 +103,27 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 9/19/2023 12:17 AM, Aishwarya R wrote:
-> When STATION is connected to a 6 GHz AP, or when AP boots up, it has
+On 9/20/2023 1:47 AM, Jeff Johnson wrote:
+> On 9/19/2023 12:17 AM, Aishwarya R wrote:
+>> There are 3 types of regulatory rules for AP mode and 6 types for
+>> STATION mode. This is to add wmi_vdev_type and ieee80211_ap_reg_power
+>> to select the exact reg rules.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>
+> Wen,
+> Can you provide a "Tested-on: WCN7850" tag for this series?
+>
+Jeff, it is this tag below.
 
-what is "it"?
+I have not tested this serials on WCN7850.
 
-> 2 ways to configure the power limit to firmware. Currently it
-> sends 2 wmi command WMI_PDEV_PARAM_TXPOWER_LIMIT2G/
-> WMI_PDEV_PARAM_TXPOWER_LIMIT5G to firmware.
-> 
-> Add support to send WMI_VDEV_SET_TPC_POWER_CMDID to firmware which
-> include more parameters for power control. When firmware support
-> SERVICE_EXT_TPC_REG, it means firmware support this feature, then ath12k
-> discard BSS_CHANGED_TXPOWER flag from mac80211 which is used to the first
-> way for 6 GHz band.
+Should I test this serials on WCN7850?
 
-I'm not parsing this last sentence. s I mentioned in a previous patch, 
-it will be easier to understand if you break it down:
-what the current code does
-what is wrong with the current code
-how to fix the current code
+Tested-on: WCN7850 hw2.0 PCI 
+WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-> 
-> The second way is to prepare the parameter for wmi command
-> WMI_VDEV_SET_TPC_POWER_CMDID and send the firmware after vdev start
-> response success from firmware.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Aishwarya R <quic_aisr@quicinc.com>
-> ---
->   drivers/net/wireless/ath/ath12k/mac.c | 25 +++++++++-
->   drivers/net/wireless/ath/ath12k/wmi.c | 67 +++++++++++++++++++++++++++
->   drivers/net/wireless/ath/ath12k/wmi.h | 36 +++++++++++++-
->   3 files changed, 125 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 35bd472267c1..5505f933a4e1 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -2467,8 +2467,18 @@ static void ath12k_mac_op_bss_info_changed(struct ieee80211_hw *hw,
->   		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev_id %i txpower %d\n",
->   			   arvif->vdev_id, info->txpower);
->   
-> -		arvif->txpower = info->txpower;
-> -		ath12k_mac_txpower_recalc(ar);
-> +		if (ar->supports_6ghz && info->chandef.chan &&
-> +		    info->chandef.chan->band == NL80211_BAND_6GHZ &&
-> +		    (arvif->vdev_type == WMI_VDEV_TYPE_STA ||
-> +		     arvif->vdev_type == WMI_VDEV_TYPE_AP) &&
-> +		     test_bit(WMI_TLV_SERVICE_EXT_TPC_REG_SUPPORT,
-> +			      ar->ab->wmi_ab.svc_map)) {
-> +			ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-> +				   "discard tx power, change to set TPC power\n");
-> +		} else {
-> +			arvif->txpower = info->txpower;
-> +			ath12k_mac_txpower_recalc(ar);
-> +		}
->   	}
->   
->   	if (changed & BSS_CHANGED_MCAST_RATE &&
-> @@ -5519,6 +5529,16 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
->   		return ret;
->   	}
->   
-> +	if (ar->supports_6ghz &&
-> +	    chandef->chan->band == NL80211_BAND_6GHZ &&
-> +	    (arvif->vdev_type == WMI_VDEV_TYPE_STA ||
-> +	     arvif->vdev_type == WMI_VDEV_TYPE_AP) &&
-> +	     test_bit(WMI_TLV_SERVICE_EXT_TPC_REG_SUPPORT, ar->ab->wmi_ab.svc_map)) {
-
-this complex test occurs in two places. can it be refactored into a 
-well-named bool imperative function?
-
-> +		ath12k_mac_fill_reg_tpc_info(ar, arvif->vif, &arvif->chanctx);
-> +		ath12k_wmi_send_vdev_set_tpc_power(ar, arvif->vdev_id,
-> +						   &arvif->reg_tpc_info);
-> +	}
-> +
->   	ar->num_started_vdevs++;
->   	ath12k_dbg(ab, ATH12K_DBG_MAC,  "vdev %pM started, vdev_id %d\n",
->   		   arvif->vif->addr, arvif->vdev_id);
-> @@ -6304,6 +6324,7 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
->   		if (power_type == IEEE80211_REG_UNSET_AP)
->   			power_type = IEEE80211_REG_LPI_AP;
->   
-> +		arvif->chanctx = *ctx;
->   		if (arvif->vdev_type == WMI_VDEV_TYPE_STA)
->   			ath12k_mac_parse_tx_pwr_env(ar, vif, ctx);
->   	}
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-> index 5bfca2513730..582c7e80c76b 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.c
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> @@ -2311,6 +2311,73 @@ int ath12k_wmi_send_scan_start_cmd(struct ath12k *ar,
->   	return ret;
->   }
->   
-> +int ath12k_wmi_send_vdev_set_tpc_power(struct ath12k *ar,
-> +				       u32 vdev_id,
-> +				       struct ath12k_reg_tpc_power_info *param)
-> +{
-> +	struct ath12k_wmi_pdev *wmi = ar->wmi;
-> +	struct wmi_vdev_set_tpc_power_cmd *cmd;
-> +	struct wmi_vdev_ch_power_info_params *ch;
-> +	struct sk_buff *skb;
-> +	struct wmi_tlv *tlv;
-> +	u8 *ptr;
-> +	int i, ret, len;
-> +
-> +	len = sizeof(*cmd) + TLV_HDR_SIZE;
-> +	len += (sizeof(*ch) * param->num_pwr_levels);
-> +
-> +	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
-> +	if (!skb)
-> +		return -ENOMEM;
-> +
-> +	ptr = skb->data;
-> +
-> +	cmd = (struct wmi_vdev_set_tpc_power_cmd *)ptr;
-> +	cmd->tlv_header = cpu_to_le32(FIELD_PREP(WMI_TLV_TAG,
-> +						 WMI_TAG_VDEV_SET_TPC_POWER_CMD) |
-> +				      FIELD_PREP(WMI_TLV_LEN,
-> +						 sizeof(*cmd) - TLV_HDR_SIZE));
-
-use ath12k_wmi_tlv_cmd_hdr() everywhere you are creating a TLV header
-
-
-> +	cmd->vdev_id = cpu_to_le32(vdev_id);
-> +	cmd->psd_power = cpu_to_le32(param->is_psd_power);
-> +	cmd->eirp_power = cpu_to_le32(param->eirp_power);
-> +	cmd->power_type_6ghz = cpu_to_le32(param->power_type_6ghz);
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-> +		   "wmi TPC vdev_id: %d is_psd_power: %d eirp_power: %d power_type_6ghz: %d\n",
-> +		   vdev_id, param->is_psd_power, param->eirp_power,
-> +		   param->power_type_6ghz);
-> +
-> +	ptr += sizeof(*cmd);
-> +	tlv = (struct wmi_tlv *)ptr;
-> +	tlv->header = cpu_to_le32(FIELD_PREP(WMI_TLV_TAG, WMI_TAG_ARRAY_STRUCT) |
-> +				  FIELD_PREP(WMI_TLV_LEN,
-> +					     param->num_pwr_levels * sizeof(*ch)));
-> +
-> +	ptr += TLV_HDR_SIZE;
-> +	ch = (struct wmi_vdev_ch_power_info_params *)ptr;
-> +
-> +	for (i = 0; i < param->num_pwr_levels; i++, ch++) {
-> +		ch->tlv_header = cpu_to_le32(FIELD_PREP(WMI_TLV_TAG,
-> +							WMI_TAG_VDEV_CH_POWER_INFO) |
-> +					     FIELD_PREP(WMI_TLV_LEN,
-> +							sizeof(*ch) - TLV_HDR_SIZE));
-> +
-> +		ch->chan_cfreq = cpu_to_le32(param->chan_power_info[i].chan_cfreq);
-> +		ch->tx_power = cpu_to_le32(param->chan_power_info[i].tx_power);
-> +
-> +		ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-> +			   "wmi TPC chan_cfreq: %d , tx_power: %d\n",
-> +			   ch->chan_cfreq, ch->tx_power);
-> +	}
-> +
-> +	ret = ath12k_wmi_cmd_send(wmi, skb,
-> +				  WMI_VDEV_SET_TPC_POWER_CMDID);
-> +	if (ret) {
-> +		ath12k_warn(ar->ab, "failed to send WMI_VDEV_SET_TPC_POWER_CMDID\n");
-> +		dev_kfree_skb(skb);
-> +	}
-> +	return ret;
-> +}
-> +
->   int ath12k_wmi_send_scan_stop_cmd(struct ath12k *ar,
->   				  struct ath12k_wmi_scan_cancel_arg *arg)
->   {
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-> index 9f24f8ded52f..a97eb2544ab0 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.h
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-> @@ -24,6 +24,7 @@
->   
->   struct ath12k_base;
->   struct ath12k;
-> +struct ath12k_reg_tpc_power_info;
->   
->   /* There is no signed version of __le32, so for a temporary solution come
->    * up with our own version. The idea is from fs/ntfs/endian.h.
-> @@ -388,6 +389,7 @@ enum wmi_tlv_cmd_id {
->   	WMI_VDEV_SET_CUSTOM_AGGR_SIZE_CMDID,
->   	WMI_VDEV_ENCRYPT_DECRYPT_DATA_REQ_CMDID,
->   	WMI_VDEV_ADD_MAC_ADDR_TO_RX_FILTER_CMDID,
-> +	WMI_VDEV_SET_TPC_POWER_CMDID,
->   	WMI_PEER_CREATE_CMDID = WMI_TLV_CMD(WMI_GRP_PEER),
->   	WMI_PEER_DELETE_CMDID,
->   	WMI_PEER_FLUSH_TIDS_CMDID,
-> @@ -1924,6 +1926,8 @@ enum wmi_tlv_tag {
->   	WMI_TAG_MAC_PHY_CAPABILITIES_EXT = 0x36F,
->   	WMI_TAG_REGULATORY_RULE_EXT_STRUCT = 0x3A9,
->   	WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT,
-> +	WMI_TAG_VDEV_SET_TPC_POWER_CMD = 0x3B5,
-> +	WMI_TAG_VDEV_CH_POWER_INFO,
->   	WMI_TAG_MAX
->   };
->   
-> @@ -2148,7 +2152,8 @@ enum wmi_tlv_service {
->   	WMI_TLV_SERVICE_FREQINFO_IN_METADATA = 219,
->   	WMI_TLV_SERVICE_EXT2_MSG = 220,
->   
-> -	WMI_MAX_EXT_SERVICE
-> +	WMI_MAX_EXT_SERVICE,
-> +	WMI_TLV_SERVICE_EXT_TPC_REG_SUPPORT = 280,
->   };
->   
->   enum {
-> @@ -3037,6 +3042,32 @@ struct ath12k_wmi_element_info_arg {
->   	u8 *ptr;
->   };
->   
-> +struct wmi_vdev_ch_power_info_params {
-> +	__le32 tlv_header;
-> +	__le32 chan_cfreq; /* Channel center frequency (MHz) */
-> +	/* Unit: dBm, either PSD/EIRP power for this frequency or
-> +	 * incremental for non-PSD BW
-> +	 */
-> +	__le32 tx_power;
-> +} __packed;
-> +
-> +struct wmi_vdev_set_tpc_power_cmd {
-> +	__le32 tlv_header;
-> +	__le32 vdev_id;
-> +	__le32 psd_power; /* Value: 0 or 1, is PSD power or not */
-> +	__le32 eirp_power;
-> +	/* Maximum EIRP power (dBm units), valid only if power is PSD */
-> +	__le32 power_type_6ghz; /* Type: WMI_6 GHz_REG_TYPE, used for halphy CTL lookup */
-> +	/* This fixed_param TLV is followed by the below TLVs:
-> +	 * num_pwr_levels of wmi_vdev_ch_power_info
-> +	 * For PSD power, it is the PSD/EIRP power of the frequency (20 MHz chunks).
-> +	 * For non-psd power, the power values are for 20, 40, and till
-> +	 * BSS BW power levels.
-> +	 * The num_pwr_levels will be checked by sw how many elements present
-> +	 * in the variable-length array.
-> +	 */
-> +} __packed;
-> +
->   #define WMI_IE_BITMAP_SIZE             8
->   
->   #define WMI_SCAN_MAX_NUM_SSID                0x0A
-> @@ -4824,5 +4855,8 @@ int ath12k_wmi_probe_resp_tmpl(struct ath12k *ar, u32 vdev_id,
->   			       struct sk_buff *tmpl);
->   int ath12k_wmi_set_hw_mode(struct ath12k_base *ab,
->   			   enum wmi_host_hw_mode_config_type mode);
-> +int ath12k_wmi_send_vdev_set_tpc_power(struct ath12k *ar,
-> +				       u32 vdev_id,
-> +				       struct ath12k_reg_tpc_power_info *param);
->   
->   #endif
+[...]
 
 
 -- 
