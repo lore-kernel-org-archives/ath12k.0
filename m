@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 327E9E7D271
-	for <ath12k@archiver.kernel.org>; Tue, 26 Sep 2023 09:43:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E619E7D270
+	for <ath12k@archiver.kernel.org>; Tue, 26 Sep 2023 09:44:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OS4Me0WcJMxfho7g28yNKgOKpuk8XTts4vy6vpEObkU=; b=bBbbNg/iTA+zK5
-	JmIaDubq79kErq5oNcPjP1kTOUeLplRHp01Muv/NB6Nd7oMbr8u3BqPOUdbjakuhlEEIb2uKZQ/7l
-	BV+ivu7mtae8f8xm3tqUvGFJupvvPKQy4u9nkFkY87zDdl3fXVvgZfpxdt3VEckEXFaWqF0Rj8gwp
-	LJGn0SZOk3oFNuj8jPZXDzvMIUv/FtEg+pB2xv8QpoCX2K7FLIu4inhIBZcu6Lfg8AJUuYOBEmPNm
-	jTGb6VxJXynlHAfD3cQCTT9pCunS1jzhFbOCjfcVqPnaO6MVJqlnrfK5er9Oy7PtQLkMfLv8TrYaQ
-	8f0vSO0vQIO8jnclNnBA==;
+	List-Owner; bh=rnTg3/AV68eqylMvJdKZ7tSuJ4aVn3WmdPaqbpQYnK8=; b=ANXgU/uUaoOFkZ
+	0zicAc5+Cf63gRC1ggqebFkxZzUbGzo3qt8+TSGS8h6nt4xVzTFYIfGsZgbMygFdvD/LYnFMeZwUV
+	MTPsmtedAYfTOArIAbaBDivhyBi3/mVrttfked+JDXwrLwxnNGWkgXL/s+YumIa+E+AxcLcPkbSXU
+	kunVquhbojLN5HVSRWdc5T1gpGmMcqe6+GPWJvltQIDntYw+RvqRUJGGhWCCTjhthUPaD4ct4CpUM
+	cCwDeTh/lZ0hYRyAIgnGtQWBlh4Y+QZdasJNIWlSJHHPa7CRXul/3yqpbZD9bw7PMAUW29CxAjcyg
+	ozszsX+OhB6HYcAymnTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ql4ap-00Fzbo-2x
+	id 1ql4bx-00Fzgp-0X
 	for ath12k@archiver.kernel.org;
-	Tue, 26 Sep 2023 09:42:59 +0000
+	Tue, 26 Sep 2023 09:44:09 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ql4an-00FzbM-0y
+	id 1ql4bu-00FzgQ-1L
 	for ath12k@lists.infradead.org;
-	Tue, 26 Sep 2023 09:42:58 +0000
+	Tue, 26 Sep 2023 09:44:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
 	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=J07PKgzvHv9pru8vLLpOFovCpNHRFFMR8SOnLLFgFZk=;
-	t=1695721369; x=1696930969; b=OzxJ64wWzGbzbNZ+mlZqs3x6Re0M2DbXpNuo3fLhIsNhxgX
-	tZjNxqtw7uUa4pTFFDLTSjQSB1TRgjXWu9LfhFazDrP+ce8wiUvdzrEGldmugPHXch+15g607XF3m
-	8vS8cRTsDN/Bm2YOSceHp0KopjH7nEATKfW4zZLXCu9/aoeF4tDfCYCqp4ilVJflwaetgW6LQfp5G
-	gw0uNBNPEzI1beLr5leV0P6t6qyaWdTfcaMNHF4JqziLZSqZWv0wCe4lu2cDVcJHosvd6wdetpbx0
-	VCy2iohn7bojZHGsUIkHmlDypknR1Emk1b0/+1UQ5kDm6B/d/yYS4ZdftdY8ktMA==;
+	Resent-Cc:Resent-Message-ID; bh=HmkCa+CDajndIlz08jjKz46l6h4i8QXpU+sUtr7YgfM=;
+	t=1695721446; x=1696931046; b=LAgKyTbIBUt+O7CxWB4f4DB2yT72mdlP0aNEOFZ4NPlG6/z
+	4wx6sIe6e3Dl741Wl/vvXJcgCWzlWt5s/oeAPzGWzElYs1bqvsrzsiczYM5PBoJAgGSc9J+LJzdiJ
+	22ZjQZYl43kohqaekwMU31WwPVKMqVVrm7bWp56m5X8gPLtiII1Nm/ty+5nTfvtDfLNn999V9gRMF
+	h7CblK9nYRPtDwfio2oPQDDNImC1cfSlAGGmSdaNJlau/IyakxnpJy7IOMWiY7Hh6aF8erDNNEq1F
+	0UG0FGpx3XN8jwb1xTJJvTf/q3QhLpPTGa/dzGyl9x41NkwpXDKCu1DLDBUdLgjA==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
 	(Exim 4.96)
 	(envelope-from <johannes@sipsolutions.net>)
-	id 1ql4ac-005RdD-1M;
-	Tue, 26 Sep 2023 11:42:46 +0200
-Message-ID: <d42b46d628c1d0d09d8772f19cec0b572251c02b.camel@sipsolutions.net>
+	id 1ql4br-005RiW-1I;
+	Tue, 26 Sep 2023 11:44:03 +0200
+Message-ID: <18228b58173d9f33b1c3ddda9df5b3c4b49fb075.camel@sipsolutions.net>
 Subject: Re: [PATCH 3/3] wifi: mac80211: update link RX NSS by
  ieee80211_sta_set_rx_nss() in ieee80211_assoc_config_link()
 From: Johannes Berg <johannes@sipsolutions.net>
 To: Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Date: Tue, 26 Sep 2023 11:42:45 +0200
-In-Reply-To: <7e350410-0e45-910d-68db-ea1d85df958a@quicinc.com>
+Date: Tue, 26 Sep 2023 11:44:02 +0200
+In-Reply-To: <bfdcbf9a-0b27-1f7e-3eca-7390a9a7404e@quicinc.com>
 References: <20230906103458.24092-1-quic_wgong@quicinc.com>
 	 <20230906103458.24092-4-quic_wgong@quicinc.com>
 	 <e6ea3009c489fae910adbf2e1c766f2d827f287f.camel@sipsolutions.net>
-	 <7e350410-0e45-910d-68db-ea1d85df958a@quicinc.com>
+	 <bfdcbf9a-0b27-1f7e-3eca-7390a9a7404e@quicinc.com>
 User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230926_024257_359784_84EFAFF5 
-X-CRM114-Status: GOOD (  28.49  )
+X-CRM114-CacheID: sfid-20230926_024406_452725_8A5FAE36 
+X-CRM114-Status: GOOD (  17.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,62 +72,42 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2023-09-15 at 15:53 +0800, Wen Gong wrote:
-> On 9/13/2023 5:04 PM, Johannes Berg wrote:
-> > On Wed, 2023-09-06 at 06:34 -0400, Wen Gong wrote:
-> > > Currently for MLO connection, only deflink's rx_nss is set to correct
-> > > value. The others links' rx_nss of struct ieee80211_link_sta is
-> > > value 0 in ieee80211_set_associated(), because they are not pass into
-> > > ieee80211_sta_set_rx_nss() in mac80211 except the deflink in
-> > > rate_control_rate_init(). This leads driver get NSS = 0 for other links.
-> > > Add the ieee80211_sta_set_rx_nss() in ieee80211_assoc_config_link(),
-> > > then the other links' rx_nss will be set to the correct value.
-> > This is pretty much true, but I also think it's problematic the way you
-> > phrase it. Software rate control is pretty much, at least currently,
-> > _not_ supported for MLO (and I don't really see how to support it, if
-> > firmware picks the link to transmit on, as it probably should).
-> > 
-> > Thus, I'm not even sure we should be calling rate_control_rate_init().
-> > Clearly we do today, but it's also obviously wrong for everything except
-> > the call to ieee80211_sta_set_rx_nss().
-> > 
-> > So while I agree that there's a problem with the RX NSS, I disagree that
-> > this patch is the right way to fix it. Yes, it also fairly obviously
-> > fixes the problem, but it just makes an existing design problem worse.
-> > 
-> > Please change change the overall design here so that
-> > ieee80211_sta_set_rx_nss() isn't related to rate control at all.
-> > 
-> > johannes
-> So should I delete ieee80211_sta_set_rx_nss() in rate_control_rate_init(),
-> and add it into ieee80211_assoc_config_link() as you said before here?
-> https://lore.kernel.org/linux-wireless/ca0f6ea2d78538ffb6640f2e56d65c89c86f5221.camel@sipsolutions.net/
-
-I think that would make sense. After all, rate_control_rate_init() is
-related to the software rate control which isn't really supported with
-MLD, and the NSS init is unrelated, it's just updating a piece of per
-(link) station data.
-
-> I checked the git log, ieee80211_sta_set_rx_nss() is added into
-> rate_control_rate_init() here for VHT, so is it correct to delete
-> ieee80211_sta_set_rx_nss() in rate_control_rate_init()?
-> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?id=8921d04e8df7475d733d853564bdb001e83bf33f
-> > 
-
-Well we'll have to call it appropriately when rate_control_rate_init()
-is called today, and then the new places in your patch, I guess.
-
-But I per the above that makes more sense semantically, since we don't
-support software rate control on link stations.
-
-johannes
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+T24gRnJpLCAyMDIzLTA5LTE1IGF0IDE2OjQzICswODAwLCBXZW4gR29uZyB3cm90ZToKPiBPbiA5
+LzEzLzIwMjMgNTowNCBQTSwgSm9oYW5uZXMgQmVyZyB3cm90ZToKPiA+IE9uIFdlZCwgMjAyMy0w
+OS0wNiBhdCAwNjozNCAtMDQwMCwgV2VuIEdvbmcgd3JvdGU6Cj4gPiA+IEN1cnJlbnRseSBmb3Ig
+TUxPIGNvbm5lY3Rpb24sIG9ubHkgZGVmbGluaydzIHJ4X25zcyBpcyBzZXQgdG8gY29ycmVjdAo+
+ID4gPiB2YWx1ZS4gVGhlIG90aGVycyBsaW5rcycgcnhfbnNzIG9mIHN0cnVjdCBpZWVlODAyMTFf
+bGlua19zdGEgaXMKPiA+ID4gdmFsdWUgMCBpbiBpZWVlODAyMTFfc2V0X2Fzc29jaWF0ZWQoKSwg
+YmVjYXVzZSB0aGV5IGFyZSBub3QgcGFzcyBpbnRvCj4gPiA+IGllZWU4MDIxMV9zdGFfc2V0X3J4
+X25zcygpIGluIG1hYzgwMjExIGV4Y2VwdCB0aGUgZGVmbGluayBpbgo+ID4gPiByYXRlX2NvbnRy
+b2xfcmF0ZV9pbml0KCkuIFRoaXMgbGVhZHMgZHJpdmVyIGdldCBOU1MgPSAwIGZvciBvdGhlciBs
+aW5rcy4KPiA+ID4gQWRkIHRoZSBpZWVlODAyMTFfc3RhX3NldF9yeF9uc3MoKSBpbiBpZWVlODAy
+MTFfYXNzb2NfY29uZmlnX2xpbmsoKSwKPiA+ID4gdGhlbiB0aGUgb3RoZXIgbGlua3MnIHJ4X25z
+cyB3aWxsIGJlIHNldCB0byB0aGUgY29ycmVjdCB2YWx1ZS4KPiA+IFRoaXMgaXMgcHJldHR5IG11
+Y2ggdHJ1ZSwgYnV0IEkgYWxzbyB0aGluayBpdCdzIHByb2JsZW1hdGljIHRoZSB3YXkgeW91Cj4g
+PiBwaHJhc2UgaXQuIFNvZnR3YXJlIHJhdGUgY29udHJvbCBpcyBwcmV0dHkgbXVjaCwgYXQgbGVh
+c3QgY3VycmVudGx5LAo+ID4gX25vdF8gc3VwcG9ydGVkIGZvciBNTE8gKGFuZCBJIGRvbid0IHJl
+YWxseSBzZWUgaG93IHRvIHN1cHBvcnQgaXQsIGlmCj4gPiBmaXJtd2FyZSBwaWNrcyB0aGUgbGlu
+ayB0byB0cmFuc21pdCBvbiwgYXMgaXQgcHJvYmFibHkgc2hvdWxkKS4KPiBJIHNlYXJjaGVkIGFs
+bCB0aGUgZm9sZGVyIHdpcmVsZXNzLCBJIG9ubHkgZm91bmQgNSBwbGFjZXMgaGF2ZSB0aGUgCj4g
+aGFuZGxlciBvZiByYXRlX2luaXQgYmVsb3csCj4gYW5kIHRoZSBmdW5jdGlvbnMgYXJlIGFsbCBl
+bXB0eS4gSXMgaXQgbWVhbnMgbm8gZHJpdmVyIHN1cHBvcnQgcmF0ZV9pbml0IAo+IGN1cnJlbnRs
+eT8KPiBkcml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0bHdpZmkvcmMuYzozMDQ6wqDCoMKg
+wqAgLnJhdGVfaW5pdCA9IAo+IHJ0bF9yYXRlX2luaXQsCj4gZHJpdmVycy9uZXQvd2lyZWxlc3Mv
+aW50ZWwvaXdsd2lmaS9tdm0vcnMuYzo0MDk4OsKgIC5yYXRlX2luaXQgPSAKPiByc19yYXRlX2lu
+aXRfb3BzLAo+IGRyaXZlcnMvbmV0L3dpcmVsZXNzL2ludGVsL2l3bHdpZmkvZHZtL3JzLmM6MzI3
+NjrCoCAucmF0ZV9pbml0ID0gCj4gcnNfcmF0ZV9pbml0X3N0dWIsCj4gZHJpdmVycy9uZXQvd2ly
+ZWxlc3MvaW50ZWwvaXdsZWdhY3kvNDk2NS1ycy5jOjI3Nzk6IC5yYXRlX2luaXQgPSAKPiBpbDQ5
+NjVfcnNfcmF0ZV9pbml0X3N0dWIsCj4gZHJpdmVycy9uZXQvd2lyZWxlc3MvaW50ZWwvaXdsZWdh
+Y3kvMzk0NS1ycy5jOjg2NzogLnJhdGVfaW5pdCA9IAo+IGlsMzk0NV9yc19yYXRlX2luaXRfc3R1
+YiwKPiBbLi4uXQo+IAoKV2VsbCwgbWFueSBvdGhlciBkcml2ZXJzIHVzZSBtaW5zdHJlbCwgYW5k
+IHRoZSBfc3R1YiBvbmVzIGluIGludGVsIGFyZQphdHVhbGx5IG5vdCBkb2luZyBhbnl0aGluZy4K
+ClNvIG1vc3QgZHJpdmVycyB3b3VsZCB1c2UgCgpuZXQvbWFjODAyMTEvcmM4MDIxMV9taW5zdHJl
+bF9odC5jOiAgICAgLnJhdGVfaW5pdCA9Cm1pbnN0cmVsX2h0X3JhdGVfaW5pdCwKCmhlcmUuCgpq
+b2hhbm5lcwoKCi0tIAphdGgxMmsgbWFpbGluZyBsaXN0CmF0aDEya0BsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2F0aDEyawo=
