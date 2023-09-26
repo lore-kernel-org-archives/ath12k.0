@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EB5CE8181B
-	for <ath12k@archiver.kernel.org>; Tue, 26 Sep 2023 04:42:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 327E9E7D271
+	for <ath12k@archiver.kernel.org>; Tue, 26 Sep 2023 09:43:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KMOfSnVqnKPXwcBYnZ8uFTbUDJW0Z7ibmG5eK84eBs8=; b=ciXoAPPZiRCOcY
-	W24fdJVetE/pVIlwhrnlJ23IFOIJ6VsxTjoLw7sJ5MEVIfECVFD91ivJ+jIxlJ8+5zzMSkhVnPxRp
-	MyaRJCzh6Ej6SCcFGtc9+cLNMK3NECnsFJ60Fqfznht9oT+MqfhC4fuQEBkQfrEO0hPzalIrPdnhN
-	gZGuu6kClUAkx4RTFpCfzNkOfbvdXVVOhu2o57YBkUPK3k5O3TMnXL/hvkI7rVFCaqU7OUpfReO7O
-	kV/GVH76VThVP9dSOzImK6IWhVAf9NnKG7yBBjiroYApmYvhYKZIv1OxATL3JGsMv58/bGi6OSAgi
-	uJco2ZG8ANCbo2USpb9w==;
+	List-Owner; bh=OS4Me0WcJMxfho7g28yNKgOKpuk8XTts4vy6vpEObkU=; b=bBbbNg/iTA+zK5
+	JmIaDubq79kErq5oNcPjP1kTOUeLplRHp01Muv/NB6Nd7oMbr8u3BqPOUdbjakuhlEEIb2uKZQ/7l
+	BV+ivu7mtae8f8xm3tqUvGFJupvvPKQy4u9nkFkY87zDdl3fXVvgZfpxdt3VEckEXFaWqF0Rj8gwp
+	LJGn0SZOk3oFNuj8jPZXDzvMIUv/FtEg+pB2xv8QpoCX2K7FLIu4inhIBZcu6Lfg8AJUuYOBEmPNm
+	jTGb6VxJXynlHAfD3cQCTT9pCunS1jzhFbOCjfcVqPnaO6MVJqlnrfK5er9Oy7PtQLkMfLv8TrYaQ
+	8f0vSO0vQIO8jnclNnBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qkztz-00FZae-0M
+	id 1ql4ap-00Fzbo-2x
 	for ath12k@archiver.kernel.org;
-	Tue, 26 Sep 2023 04:42:27 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	Tue, 26 Sep 2023 09:42:59 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qkztv-00FZa0-2Y
+	id 1ql4an-00FzbM-0y
 	for ath12k@lists.infradead.org;
-	Tue, 26 Sep 2023 04:42:25 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 1D78BB80E02;
-	Tue, 26 Sep 2023 04:42:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D8140C433C7;
-	Tue, 26 Sep 2023 04:42:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695703341;
-	bh=ELFbAulTiKpZ+L7fo1P/FIiLacUOpOyIxCPGzGhSjOg=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=hE8h8U0WGmkGt4FzoqMXv9ybb/z/I8d0SdZ7jiLmBZgTtHP1feby4bWlZNSfQ7Jsu
-	 MHvT/H1kCVQiCfiNhJLtMEOh9ABbXpddVvzKZqQaW2p9skzz/J+0N3k+c9Yn1y4eoq
-	 zRYzaUz5MVRDbJiFfqly4iFxSKz9PKNfXvEQDDo2czHV4xeBPS1f8FhcsQdN+C9STf
-	 bjSVR+TsZdUouKGZoWE4W6MVAyQHCzfXuatc/6GGdb66iyhQ57orYoK6IfLbDRjyzC
-	 5wDm223SFXqIz24lbrCL2CmJUCjYpJdc0iL19+g2CYnvO6X+wiBgyW3vofbOaZdW6R
-	 G7Pc6wQwZtIWw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Wen Gong <quic_wgong@quicinc.com>
-Cc: <ath12k@lists.infradead.org>
-Subject: Re: ath12k-check warnings
-References: <20230824025432.19406-1-quic_wgong@quicinc.com>
-	<169295002356.1753110.7150166655358699685.kvalo@kernel.org>
-	<5376cd01-ab3e-416f-ea73-649c82e3bc40@quicinc.com>
-	<87cyyve6ul.fsf_-_@kernel.org>
-	<b27fb345-b9e5-1ab0-b6df-1fad6c24a825@quicinc.com>
-Date: Tue, 26 Sep 2023 07:42:18 +0300
-In-Reply-To: <b27fb345-b9e5-1ab0-b6df-1fad6c24a825@quicinc.com> (Wen Gong's
-	message of "Tue, 26 Sep 2023 10:32:48 +0800")
-Message-ID: <87o7hp8s0l.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Tue, 26 Sep 2023 09:42:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=J07PKgzvHv9pru8vLLpOFovCpNHRFFMR8SOnLLFgFZk=;
+	t=1695721369; x=1696930969; b=OzxJ64wWzGbzbNZ+mlZqs3x6Re0M2DbXpNuo3fLhIsNhxgX
+	tZjNxqtw7uUa4pTFFDLTSjQSB1TRgjXWu9LfhFazDrP+ce8wiUvdzrEGldmugPHXch+15g607XF3m
+	8vS8cRTsDN/Bm2YOSceHp0KopjH7nEATKfW4zZLXCu9/aoeF4tDfCYCqp4ilVJflwaetgW6LQfp5G
+	gw0uNBNPEzI1beLr5leV0P6t6qyaWdTfcaMNHF4JqziLZSqZWv0wCe4lu2cDVcJHosvd6wdetpbx0
+	VCy2iohn7bojZHGsUIkHmlDypknR1Emk1b0/+1UQ5kDm6B/d/yYS4ZdftdY8ktMA==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.96)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1ql4ac-005RdD-1M;
+	Tue, 26 Sep 2023 11:42:46 +0200
+Message-ID: <d42b46d628c1d0d09d8772f19cec0b572251c02b.camel@sipsolutions.net>
+Subject: Re: [PATCH 3/3] wifi: mac80211: update link RX NSS by
+ ieee80211_sta_set_rx_nss() in ieee80211_assoc_config_link()
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Date: Tue, 26 Sep 2023 11:42:45 +0200
+In-Reply-To: <7e350410-0e45-910d-68db-ea1d85df958a@quicinc.com>
+References: <20230906103458.24092-1-quic_wgong@quicinc.com>
+	 <20230906103458.24092-4-quic_wgong@quicinc.com>
+	 <e6ea3009c489fae910adbf2e1c766f2d827f287f.camel@sipsolutions.net>
+	 <7e350410-0e45-910d-68db-ea1d85df958a@quicinc.com>
+User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
 MIME-Version: 1.0
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230925_214223_962704_F11A6220 
-X-CRM114-Status: UNSURE (   8.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230926_024257_359784_84EFAFF5 
+X-CRM114-Status: GOOD (  28.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,44 +72,62 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-V2VuIEdvbmcgPHF1aWNfd2dvbmdAcXVpY2luYy5jb20+IHdyaXRlczoKCj4gSSB1cGRhdGVkIHRv
-IGxhdGVzdCBjb21taXQgb2YgcWNhLXN3aXNzLWFybXkta25pZmUgKDlhMTZhNGEgLQo+IGF0aDEx
-ay1jaGVjazogdmVyaWZ5IGNoZWNrcGF0Y2gucGwgbWQ1c3VtKSwKPgo+IGFuZCBpdCBzdGlsbCBw
-cmludCBhYm91dCB+NTAwICJub3RlOiBpbiBpbmNsdWRlZCBmaWxlIC4uLiIsIHRoZXkgYXJlCj4g
-cHJpbnQgYnkgc3BhcnNlLCBub3QgYnkgY2hlY2twYXRjaC5wbC4KCkFoLCBJIG1pc3NlZCB0aGF0
-IHRoZXNlIGFyZSBjb21pbmcgZnJvbSBzcGFyc2UuCgo+IHdnb25nQHdnb25nLUxhdGl0dWRlLUU2
-NDMwOn4vb3BlbnNvdXJjZS9rZXJuZWwvYXRoJCAuL2F0aDEyay1jaGVjayAtLXZlcnNpb24KPiAv
-aG9tZS93Z29uZy9vcGVuc291cmNlL2tlcm5lbC9hdGgvLi9hdGgxMmstY2hlY2s6MzI6Cj4gRGVw
-cmVjYXRpb25XYXJuaW5nOiBUaGUgZGlzdHV0aWxzIHBhY2thZ2UgaXMgZGVwcmVjYXRlZCBhbmQg
-c2xhdGVkIGZvcgo+IHJlbW92YWwgaW4gUHl0aG9uIDMuMTIuIFVzZSBzZXR1cHRvb2xzIG9yIGNo
-ZWNrIFBFUCA2MzIgZm9yIHBvdGVudGlhbAo+IGFsdGVybmF0aXZlcwo+IMKgIGltcG9ydCBkaXN0
-dXRpbHMuc3Bhd24KPiBhdGgxMmstY2hlY2sgKG1kNXN1bSBhOTM0ZTE4YTZmN2M0MzllMzUxNjk1
-MjY4NDcxMTU2YykKPgo+IGdjYzrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGdjYyAoVWJ1bnR1IDEx
-LjQuMC0xdWJ1bnR1MX4yMi4wNCkgMTEuNC4wCj4gc3BhcnNlOsKgwqDCoMKgwqDCoMKgwqAgMC42
-LjQgKFVidW50dTogMC42LjQtMikKPiBjaGVja3BhdGNoLnBsOsKgIFZlcnNpb246IDAuMzIgKG1k
-NXN1bSA0N2VmMzI3ZDc3MmMxNTZlNTNhMzY1OTc3MjNmYzc4MSkKPiBndGFnczrCoMKgwqDCoMKg
-wqDCoMKgwqAgZ3RhZ3MgKEdsb2JhbCkgNi42LjcKCkkgZ3Vlc3MgeW91ciBzcGFyc2UgaXMgdG9v
-IG9sZC4gSSdtIHVzaW5nOgoKJCBhdGgxMmstY2hlY2sgLS12ZXJzaW9uCmF0aDEyay1jaGVjayAo
-bWQ1c3VtIGE5MzRlMThhNmY3YzQzOWUzNTE2OTUyNjg0NzExNTZjKQoKZ2NjOgkJZ2NjIChEZWJp
-YW4gMTIuMi4wLTE0KSAxMi4yLjAKc3BhcnNlOgkJdjAuNi40LTM5LWdjZTFhNjcyMGY2OWUKY2hl
-Y2twYXRjaC5wbDoJVmVyc2lvbjogMC4zMiAobWQ1c3VtIDQ3ZWYzMjdkNzcyYzE1NmU1M2EzNjU5
-NzcyM2ZjNzgxKQpndGFnczoJCWd0YWdzIChHbG9iYWwpIDYuNi45CgpJIHJlY29tbWVuZCBpbnN0
-YWxsaW5nIHNwYXJzZSBkaXJlY3RseSBmcm9tIGdpdCwgaXQncyBxdWl0ZSBlYXN5OgoKaHR0cHM6
-Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2RldmVsL3NwYXJzZS9zcGFyc2UuZ2l0LwoKPiAvaG9t
-ZS93Z29uZy9vcGVuc291cmNlL2tlcm5lbC9hdGgvLi9hdGgxMmstY2hlY2s6MzI6Cj4gRGVwcmVj
-YXRpb25XYXJuaW5nOiBUaGUgZGlzdHV0aWxzIHBhY2thZ2UgaXMgZGVwcmVjYXRlZCBhbmQgc2xh
-dGVkIGZvcgo+IHJlbW92YWwgaW4gUHl0aG9uIDMuMTIuIFVzZSBzZXR1cHRvb2xzIG9yIGNoZWNr
-IFBFUCA2MzIgZm9yIHBvdGVudGlhbAo+IGFsdGVybmF0aXZlcwo+IMKgIGltcG9ydCBkaXN0dXRp
-bHMuc3Bhd24KCkkgZG9uJ3Qgc2VlIHRoaXMgd2FybmluZyBvbiBEZWJpYW4gMTIgYnV0IEknbGwg
-bmVlZCB0byBmaXggdGhhdCBhcyB3ZWxsLgpCdXQgdGhpcyBpcyB3aGF0IEkgaGF0ZSB3aXRoIHB5
-dGhvbiwgdGhleSBhcmUgYWx3YXlzIGRlcHJhY2F0aW5nCnNvbWV0aGluZyBhbmQgaXQncyBleHRy
-YSB3b3JrIGZvciB1cy4KCi0tIApodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL3Byb2plY3Qv
-bGludXgtd2lyZWxlc3MvbGlzdC8KCmh0dHBzOi8vd2lyZWxlc3Mud2lraS5rZXJuZWwub3JnL2Vu
-L2RldmVsb3BlcnMvZG9jdW1lbnRhdGlvbi9zdWJtaXR0aW5ncGF0Y2hlcwoKLS0gCmF0aDEyayBt
-YWlsaW5nIGxpc3QKYXRoMTJrQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vYXRoMTJrCg==
+On Fri, 2023-09-15 at 15:53 +0800, Wen Gong wrote:
+> On 9/13/2023 5:04 PM, Johannes Berg wrote:
+> > On Wed, 2023-09-06 at 06:34 -0400, Wen Gong wrote:
+> > > Currently for MLO connection, only deflink's rx_nss is set to correct
+> > > value. The others links' rx_nss of struct ieee80211_link_sta is
+> > > value 0 in ieee80211_set_associated(), because they are not pass into
+> > > ieee80211_sta_set_rx_nss() in mac80211 except the deflink in
+> > > rate_control_rate_init(). This leads driver get NSS = 0 for other links.
+> > > Add the ieee80211_sta_set_rx_nss() in ieee80211_assoc_config_link(),
+> > > then the other links' rx_nss will be set to the correct value.
+> > This is pretty much true, but I also think it's problematic the way you
+> > phrase it. Software rate control is pretty much, at least currently,
+> > _not_ supported for MLO (and I don't really see how to support it, if
+> > firmware picks the link to transmit on, as it probably should).
+> > 
+> > Thus, I'm not even sure we should be calling rate_control_rate_init().
+> > Clearly we do today, but it's also obviously wrong for everything except
+> > the call to ieee80211_sta_set_rx_nss().
+> > 
+> > So while I agree that there's a problem with the RX NSS, I disagree that
+> > this patch is the right way to fix it. Yes, it also fairly obviously
+> > fixes the problem, but it just makes an existing design problem worse.
+> > 
+> > Please change change the overall design here so that
+> > ieee80211_sta_set_rx_nss() isn't related to rate control at all.
+> > 
+> > johannes
+> So should I delete ieee80211_sta_set_rx_nss() in rate_control_rate_init(),
+> and add it into ieee80211_assoc_config_link() as you said before here?
+> https://lore.kernel.org/linux-wireless/ca0f6ea2d78538ffb6640f2e56d65c89c86f5221.camel@sipsolutions.net/
+
+I think that would make sense. After all, rate_control_rate_init() is
+related to the software rate control which isn't really supported with
+MLD, and the NSS init is unrelated, it's just updating a piece of per
+(link) station data.
+
+> I checked the git log, ieee80211_sta_set_rx_nss() is added into
+> rate_control_rate_init() here for VHT, so is it correct to delete
+> ieee80211_sta_set_rx_nss() in rate_control_rate_init()?
+> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?id=8921d04e8df7475d733d853564bdb001e83bf33f
+> > 
+
+Well we'll have to call it appropriately when rate_control_rate_init()
+is called today, and then the new places in your patch, I guess.
+
+But I per the above that makes more sense semantically, since we don't
+support software rate control on link stations.
+
+johannes
+
+-- 
+ath12k mailing list
+ath12k@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/ath12k
