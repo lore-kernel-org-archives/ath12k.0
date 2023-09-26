@@ -4,63 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36197E7D273
-	for <ath12k@archiver.kernel.org>; Tue, 26 Sep 2023 10:00:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47AA8E7D27B
+	for <ath12k@archiver.kernel.org>; Tue, 26 Sep 2023 10:44:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TomyCSoGe4uw0/b2J6rLM/qECjeVJIif9FX9X5CAQeU=; b=0ukw52INbqWJPQ
-	qa3Ynd2TCSPODNQ+4bEl1zjFDRbuOwYllHLXEqWfImwiQ7U31R0xtyTWXFNouKgGGO/1B81m0YuCr
-	OHSAOL+KFuDNUuvVfVtZePihkeeU5dT87Js6mvRC47UJliv45PBymwUZuO3oqp2qvjTD1ovJGWLDI
-	J8n/fvIBiOKM28kYcQLFdCAQgPAQCJ7TgQ8W0V6+l7OxsCw390h6VL8pbvsWQCE1S5ZH6YU/tkpFU
-	JvqF/xjvS+GoHx1gPsNblqqxK2eB82C2ub0CcHukxUxfMhVjxnY26GdaUQJ3WfTQdXw5rr12MJ5ix
-	sME1Pc2XHPFfFG55SGSg==;
+	List-Owner; bh=4AZmoOXrtI6ps7NsRk5JrRgjXncKrc85YKVx6Ul8+0M=; b=qaddGMEPlqPW4T
+	RuRpb64atScI+2NHz6fTLJ+9ynb9ywe6Ss0rntNbecoqK5NXDHanlrVWsaIw9H75O6YB+jC8slOf2
+	h1wdafcBmsJcVQNAomqCXX3qER83WdPKfJE6A1kP6TLMwUYYuWHthNlHV9bsTfhqolE7tunAQ8Qbc
+	nESRMNg5Bmm2ic5yjWHYPY6plHz8lmySFHJbq6UXWs9XuxilEW26kmMEcHvG7uCPVODTepWavkSF7
+	8lG9N/L2Na3MBbmjv1aUedDmdDyszuPgqM2ClyV3BobkPJrYOA8cii40iweCkOEF7CZK2BrzPGf+X
+	8Wv6N4hCrDdln5ykMH3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ql4rj-00G0tp-2V
+	id 1ql5Y4-00GBfs-2t
 	for ath12k@archiver.kernel.org;
-	Tue, 26 Sep 2023 10:00:27 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Tue, 26 Sep 2023 10:44:12 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ql4rg-00G0tO-0t
+	id 1ql5Y1-00GBcS-1z
 	for ath12k@lists.infradead.org;
-	Tue, 26 Sep 2023 10:00:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=YMkWUhPMi5MlgEJx/17dv5tGxomlRYsOBLSY0nriJC8=;
-	t=1695722423; x=1696932023; b=aisXlE6wvYk1YZ5o/VXPAN+OjZm8nmkdru+EBThfbxRXLPM
-	vplSnjRdwhY3GnJArLiGYUQ1XBLc8LPZ1HWwdSNMpJSC+7yOz19GNwBxxCS9KxCLRRtYAG64412UL
-	9BBx4OQesGW2jYTlovAZ+fFR8NZG8FH9GE6opaCVYSxwf3OuABK+SMCVJjs+K0JN+Pj0ggsNqPddU
-	YbgvfcAkOd4SXMTsaWFwmp04cPZmlT2dwx6rF7Sdr5hPpIiDyJfy1A3F2pQKz6BXyp90svYQ2Idr/
-	T5rLZoUUoWMTWBjgiYUUQrx/NUKsM9dNrQMqs/8Xnb8ApJgV2TrxGhOXenmwE2vA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.96)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1ql4rd-005SgD-1e;
-	Tue, 26 Sep 2023 12:00:21 +0200
-Message-ID: <6892f4026a275756eecf36f46711442882aac7fd.camel@sipsolutions.net>
-Subject: Re: [PATCH 2/3] wifi: mac80211: add support to allow driver to set
- active link while connection for station
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Wen Gong <quic_wgong@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Tue, 26 Sep 2023 12:00:20 +0200
-In-Reply-To: <96ae3c1d-274b-00b1-cb19-a9a301b6aa56@quicinc.com>
-References: <20230906103458.24092-1-quic_wgong@quicinc.com>
-	 <20230906103458.24092-3-quic_wgong@quicinc.com>
-	 <4b597bba9dc13c3260f174826de38b4f1bc3bf6e.camel@sipsolutions.net>
-	 <96ae3c1d-274b-00b1-cb19-a9a301b6aa56@quicinc.com>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
+	Tue, 26 Sep 2023 10:44:11 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 38Q8rtAI001828;
+	Tue, 26 Sep 2023 10:44:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=x/q0yrM9dUprVMkYwxIKy/DQhFhc/xipxRZbvbeXGv0=;
+ b=p1SiBXxy80KcVRYK/5dzTAlYtkbBW7Z+hC9ydsfVckU4ui5zYYJzWWw0KBhb5eAKdEy7
+ iYYU6s5L3s9lehcJ4aL5xxdsQfGYNmG43z0ue21IlxM2A+FaL1Aunrne5X8uGwwncoTB
+ mvfgon2123E+8x6rMseVE09zPRD4u3BruvVrc6GdBKFOKURATx8i6uLyxwcjw+S9m+3x
+ vO5VIl2r6EOsKXRdUAe6Z8ZeFlSu328FXvjk6gmSu2GzI+uIHI9FhpYqDpgT7ClzlCgj
+ u24+pJXCSpWXPo4ADYho+4gTgAbjKhH6yLOpo1wZV3j4ziWa9rLXbGBNMUcE4Slgb9UD EA== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tbv6608d1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 26 Sep 2023 10:44:06 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 38QAi6al011514
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 26 Sep 2023 10:44:06 GMT
+Received: from [10.231.195.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 26 Sep
+ 2023 03:44:04 -0700
+Message-ID: <7ac4b560-26d5-2125-b1be-2f1313097d0a@quicinc.com>
+Date: Tue, 26 Sep 2023 18:44:02 +0800
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 1/3] wifi: mac80211: add support to allow driver to
+ generate local link address for station
+Content-Language: en-US
+To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20230906103458.24092-1-quic_wgong@quicinc.com>
+ <20230906103458.24092-2-quic_wgong@quicinc.com>
+ <cd762f33b1c15566237c85f1e265ee8a00006f5c.camel@sipsolutions.net>
+ <d23b617e-5ca0-e721-0c2a-fcca8942efef@quicinc.com>
+ <4dac29f3844309fb62afe6acd4c4ebd379b0a194.camel@sipsolutions.net>
+From: Wen Gong <quic_wgong@quicinc.com>
+In-Reply-To: <4dac29f3844309fb62afe6acd4c4ebd379b0a194.camel@sipsolutions.net>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 5nA07PYgGmmMpwjJPJydCHI-2JUuDcbM
+X-Proofpoint-GUID: 5nA07PYgGmmMpwjJPJydCHI-2JUuDcbM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-09-26_07,2023-09-25_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ malwarescore=0 mlxlogscore=487 bulkscore=0 phishscore=0 suspectscore=0
+ clxscore=1015 impostorscore=0 mlxscore=0 adultscore=0 spamscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2309260091
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230926_030024_335193_07B28ADA 
-X-CRM114-Status: GOOD (  19.18  )
+X-CRM114-CacheID: sfid-20230926_034409_682171_2E2B8CE4 
+X-CRM114-Status: GOOD (  22.39  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,52 +98,58 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Cj4gRm9yIGllZWU4MDIxMV9zZXRfYWN0aXZlX2xpbmtzKCksIGRyaXZlciBuZWVkIHNhdmUgYW5k
-IGluc3RhbGwgcGFpcndpc2UKPiBrZXlzIGZvciB0aGUgb3RoZXIgbGlua3MgYXMgeW91IHNhaWQg
-aW4gbGluayBiZWxvdy4gQnV0IGRyaXZlciBkbyBub3QKPiBzYXZlIHRoZSBrZXkgZGF0YSBjdXJy
-ZW50bHkuIFNvIGRyaXZlciBjb3VsZCBub3QgaW5zdGFsbCB0aGUgcGFpcndpc2UKPiBrZXlzIGJ5
-IGl0c2VsZi4KPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC13aXJlbGVzcy81MDcxOWQz
-NGJjNDhkODE2ZDAwYjU2ZDNkOWVmZGI1OWUzZTUxYTE2LmNhbWVsQHNpcHNvbHV0aW9ucy5uZXQv
-CgpXZWxsIGl0IGNhbiBzdGlsbCBlYXNpbHkgaXRlcmF0ZSB0aGUga2V5cywgYnV0IE9LLCBJIGNh
-biBidXkgdGhpcwphcmd1bWVudC4gWW91IHNob3VsZCBwcm9iYWJseSBtZW50aW9uIGl0IGFsbCBp
-biB0aGUgY29tbWl0IGxvZyB0aG91Z2guCgo+ID4gPiBAQCAtMTY2LDYgKzE2NywxMyBAQCBzdGF0
-aWMgdm9pZCBpZWVlODAyMTFfc2V0X3ZpZl9saW5rc19iaXRtYXBzKHN0cnVjdCBpZWVlODAyMTFf
-c3ViX2lmX2RhdGEgKnNkYXRhLAo+ID4gPiAgIAkJV0FSTl9PTihkb3JtYW50X2xpbmtzKTsKPiA+
-ID4gICAJCWJyZWFrOwo+ID4gPiAgIAljYXNlIE5MODAyMTFfSUZUWVBFX1NUQVRJT046Cj4gPiA+
-ICsJCWFjdGl2ZV9saW5rcyA9IGRydl9jYWxjdWxhdGVfYWN0aXZlX2xpbmtzKHNkYXRhLT5sb2Nh
-bCwgc2RhdGEsCj4gPiA+ICsJCQkJCQkJICB2YWxpZF9saW5rcyAmIH5kb3JtYW50X2xpbmtzKTsK
-PiA+ID4gKwkJaWYgKGFjdGl2ZV9saW5rcykgewo+ID4gPiArCQkJc2RhdGEtPnZpZi5hY3RpdmVf
-bGlua3MgPSBhY3RpdmVfbGlua3M7Cj4gPiA+ICsJCQlicmVhazsKPiA+ID4gKwkJfQo+ID4gPiAK
-PiA+IEkgYWxzbyBfcmVhbGx5XyBkb24ndCB0aGluayB0aGlzIHNob3VsZCBvcGVyYXRlIGF0IHRo
-aXMgbG93LWxldmVsCj4gPiBpbmZyYXN0cnVjdHVyZS4KPiAKPiBJIHJlYWxseSB3YW50IHRvIGtu
-b3cgdGhlIHJlYXNvbiB3aHkgYWN0aXZlICpvbmx5KiB0aGUgYXNzb2MgbGluayBmb3IgCj4gc3Rh
-dGlvbiwgYnV0Cj4gCj4gYWN0aXZlICphbGwqIGxpbmtzIGZvciBBUCBoZXJl8J+YgT8KCldlbGws
-IGZhaXIgcG9pbnQuCgpJIHdhcyBzb21laG93IGFueXdheSB0aGlua2luZyB0aGF0IGl0IHNob3Vs
-ZCBiZSB0aGUgb3RoZXIgd2F5IGFyb3VuZCwgSQptZWFuLCBpbiB0aGUgc2Vuc2UgdGhhdCB0aGlz
-IGNvZGUgaGVyZSBpcyBqdXN0IG1lY2hhbmlzbSwgYW5kIHRoZSBwb2xpY3kKc2hvdWxkJ3ZlIGJl
-ZW4gaW4gaGlnaGVyLWxldmVsIGNvZGUgLi4uIGJ1dCBzb21laG93IHRoYXQncyBub3Qgd2hhdCB3
-ZQplbmRlZCB1cCBkb2lnbiBoZXJlLgoKCkl0IHJlYWxseSBmZWVscyB3cm9uZyB0byBtZSB0byBo
-YXZlIHRoZSBkcml2ZXIgaW52b2x2ZWQgaW4gdGhpcyBsb3ctCmxldmVsIGluZnJhc3RydWN0dXJl
-LCBidXQgT1RPSCB0aGF0IHJlYWxseSBpcyBob3cgaXQgd29ya3Mgbm93PwoKCk1heWJlIHJlYWxs
-eSB3aGF0IHlvdSB3YW50IGlzIGEgZHJpdmVyIGZsYWcgc2F5aW5nCklFRUU4MDIxMV9IV19NQU5B
-R0VTX0FDVElWRV9MSU5LUyBvciBzb21ldGhpbmcsIGFuZCB0aGVuIGZyb20gYSBtYWM4MDIxMQpw
-ZXJzcGVjdGl2ZSB5b3UgZG9uJ3Qgc2V0IGFjdGl2ZSBsaW5rcyBhdCBhbGw/IFRob3VnaCBJJ20g
-bm90IHN1cmUgdGhhdAp3b3JrcyB3aXRoIFRUTE0sIGZvciBpbnN0YW5jZT8gQW5kIG1heWJlIHlv
-dSdkIHN0aWxsIHdhbnQgdGhlIGRlYnVnZnM/CgpCdXQgaW4gZmFjdCwgaWYgeW91IGRvIHN0aWxs
-IHdhbnQgc29tZXRoaW5nIGZyb20gbWFjODAyMTEgZm9yIGRlYnVnZnMgb3IKVFRMTSwgdGhlbiB0
-aGlzIGNvZGUgaGVyZSBpcyBub3QgcmVhbGx5IHJpZ2h0LCBzaW5jZSB5b3UnZCBpbnRlcmFjdCB3
-aXRoCl9hbGxfIGF0dGVtcHRzIGluIG1hYzgwMjExIHRvIGFjdGl2YXRlIG9yIGRlYWN0aXZhdGUg
-bGlua3MgLSB3aGVuIGFsbAp5b3UgcmVhbGx5IHdhbnRlZCB3YXMgdGhlIHZlcnkgZmlyc3Qgb25l
-LgoKV2hpY2ggdG9kYXkgbWFjODAyMTEgYWNoaWV2ZXMgYnkgYmFpbGluZyBvdXQKImlmIChzZGF0
-YS0+dmlmLmFjdGl2ZV9saW5rcykiLCBhbmQgd2hpbGUgeW91IGNvdWxkIGRvIHRoZSBzYW1lIGlu
-IHRoZQpkcml2ZXIsIGl0IGZlZWxzIHJlYWxseSBicml0dGxlIC8gZXJyb3ItcHJvbmUgdG8gbWUu
-CgoKSSB0aGluayBpdCdkIGJlIGJldHRlciB0aGFuIGFsbCB0aGVzZSBjYWxsYmFja3MgdG8gZW5j
-b2RlIHRoZSBzcGVjaWZpYwpiZWhhdmlvdXIgeW91IG5lZWQgaW4gYSBmbGFnLCBlLmcuICJhY3Rp
-dmF0ZSBhbGwgU1RBIGxpbmtzIG9uIGFzc29jIiBvcgpzb21ldGhpbmc/Cgpqb2hhbm5lcwoKLS0g
-CmF0aDEyayBtYWlsaW5nIGxpc3QKYXRoMTJrQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vYXRoMTJrCg==
+On 9/26/2023 5:45 PM, Johannes Berg wrote:
+> On Fri, 2023-09-15 at 16:11 +0800, Wen Gong wrote:
+>> On 9/13/2023 4:55 PM, Johannes Berg wrote:
+>>> On Wed, 2023-09-06 at 06:34 -0400, Wen Gong wrote:
+>> [...]
+>>> Maybe after all this explanation, all we need is a flag "reuse MLD
+>>> address for assoc link"?
+>> yes. It is similar as I said before here:
+>>
+>> https://lore.kernel.org/linux-wireless/b9c6d022-12c3-a696-c4b9-cb14a6d30a45@quicinc.com/
+>>
+>>>
+>>>> +		ret = drv_generate_link_addr(sdata->local, sdata,
+>>>> +					     link_id, link->conf->addr);
+>>>> +		if (ret)
+>>>> +			eth_random_addr(link->conf->addr);
+>>> should probably refactor this into a separate function though.
+>> OK.
+>>> I'm also not sure how the driver even knows that a link it's being asked
+>>> to get the address for *is* the assoc link? Do you want to rely on that
+>>> being the first address handed out?
+>> Current I used (vif->valid_links==0) check for assoc link. When
+>> drv_generate_link_addr() called for the assoc link, vif->valid_links
+>> is 0, and it is not 0 for other links.
+> That seems a bit questionable?
+
+Also we can change to indicate a new flag(e.g. 
+IEEE80211_HW_MLO_FIXED_ASSOC_LINK_ADDR) to
+
+mac80211 from driver, if the flag is not set, then keep current logic.
+
+If it is set, then copy vif->addr to the link->conf->addr for assoc link 
+in ieee80211_mgd_setup_link().
+
+The logic keep not change for other links.
+
+> Well then again, what do you want for AP mode? Anyway you can still
+> distinguish, and if we later need to change an internal API that's not
+> the end of the world either ...
+I do not want any change for AP mode.
+>
+> So OK, I guess we can live with this, just would like to see it wrapped
+> up into a single function.
+>
+> johannes
+
+-- 
+ath12k mailing list
+ath12k@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/ath12k
