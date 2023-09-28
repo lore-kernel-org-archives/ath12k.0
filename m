@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAB51E732DB
-	for <ath12k@archiver.kernel.org>; Thu, 28 Sep 2023 15:13:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAF90E732E6
+	for <ath12k@archiver.kernel.org>; Thu, 28 Sep 2023 15:33:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YG2B6MlhQ9ROUKZxd4xxFM65qOXOt34uLCZyVoJpz38=; b=L5OCAxbr0CDVEH
-	xUYdtBG1PjmIQzK92IVDZbpRTxnuzbMqTPYQ5aq0d3iOQlcL+YRT6woEF7pKOqKil2C5koyp/Tq57
-	vI6hjvDus+RPFqBLVvPn94yc6Q5isQNfaJjCLdzN4zmil0BUHFcch0G9OqHdhk4d27Q5PHxZZ9OiK
-	1fIa9od0uEHAyv3j1Ugr+h5jIIxAgwNN0v9Gn2LRCUMfZKonC0Bqwloq+R08TKcTkwU5wlmMbdKrV
-	cWqO5YivuFDSzJCqsjleRPEi6Bb+4JShxj73LZ5kwFzd0fTDitmVpYMpGw1DlmF18/A2WxR5v/dwd
-	6dwLGemhfjtBRGfcgx3Q==;
+	List-Owner; bh=lMSFfT6M8Bbh0QUuC6hh7QI7FVWpIkYBpeVP+OgCUJo=; b=0AP9zq5XHQ2AAO
+	xNU9jrW7FYov8xiuDrx6AZULAkAoe6G3ml0hLSltwattDKkxPPr43mk7iRTrhvV5wImtmwReCwOR5
+	Jo2tEpU+uRfdaCdb/ng3DRatDY1m5fqrgv0+R4khj6TjGw1u7lSEt6tmzrCNg8p8NrELkPp46jY09
+	1c/W7di4SeO2Jh0RF95IMjPT5E/nD9Insc+6JHoYDuhM0ebgA2EvQTNYAtGyJQTWFPZQ4IiyY+ut1
+	ld+Z86kYf1MG+v9hZAKBmlP/mgkmsJj/ooIvLVdrZr6b9wATGYpcxvfbN0znJf73FKZYYgvaZS/iR
+	wQiTnsJDFdpkk+4n29sQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlshM-005IIC-09
+	id 1qlt0x-005Uwf-1B
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Sep 2023 15:13:04 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Thu, 28 Sep 2023 15:33:19 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlsh7-005I64-0B
+	id 1qlt0t-005Utl-2o
 	for ath12k@lists.infradead.org;
-	Thu, 28 Sep 2023 15:13:01 +0000
+	Thu, 28 Sep 2023 15:33:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 6B0C6CE21FB;
-	Thu, 28 Sep 2023 15:12:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1104C433C7;
-	Thu, 28 Sep 2023 15:12:43 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 49DE6B81CE5;
+	Thu, 28 Sep 2023 15:33:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2384C433C7;
+	Thu, 28 Sep 2023 15:33:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695913964;
-	bh=SM8aoie+ezJU9UWpCf9w3qJBLObW5VTQZ19AGhyBUxw=;
+	s=k20201202; t=1695915193;
+	bh=1LuJxiMXhASalrUfVnL7ck/q6s7MQDu+aMOcytyqgAo=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=GZj0DAFMD9JPXISv+El0rXTFMqeUskYVNuYuNVgU8ohhHofxRHXtjVIxLKE6irDsl
-	 3bNss1PayM8GEbVLewPA0gB9nf3RYeCk2L1MBvH1PT9f35ddNpFZv+ggafyTQ6ZEQZ
-	 q0zN5zhZp1VeBfQZbgDwnfsaJLD2+oJd5QQXL5zFgURb0oeC7X+RK34v7SZd7DgCRP
-	 ruU6SzvA2r+BW5x7vqJwrAeXdrbcXkIUfOy+EeNIrqRm7olCplsXkNSENzvdYbOAVg
-	 5Xd7Fvwm0zXla86xlE4krH3n8GKU5KLMq3aQKyRZNTMQJeYHJF9JXsQ9Txar7cCths
-	 UM2iux660tXEA==
+	b=HVrYmn5uyV6eBfz6Gku2xahF9bWYa7EjgsVmgaJW8lNrR3Ufw5JmmKi1BVQDUfFKh
+	 t24ukabQ9r4BQnaDwZfzy/x7UneGV4dqBtqsyhDYlZDX31SEI4dpvW+JeYLBB2FrIq
+	 dVpFgXmq/NGQpXF1HhQKsw8IG1/K3EsqOYmgbHGcWe2yYxiTjpXfOeA14wzjkrDDEu
+	 aejBzsLS5TVrRLfDmoppIjulT3QahFvfNDlvmntH51ZXTS3zxrjKxyLBc5qrFCe4E5
+	 ApccGjDgsq0MuoOwKsFZ3ouuOwyyKCZXrPzmQK0UE6gT2wTg8VOYWGHNUrFwcMdHNc
+	 rOfvoBcoW+ogg==
 MIME-Version: 1.0
-Subject: Re: [PATCH v2] wifi: ath12k: add msdu_end structure for WCN7850
+Subject: Re: [PATCH v4 1/4] wifi: ath12k: add TAS capability for WCN7850
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230911093054.74943-1-quic_kangyang@quicinc.com>
-References: <20230911093054.74943-1-quic_kangyang@quicinc.com>
-To: Kang Yang <quic_kangyang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- <quic_kangyang@quicinc.com>
+In-Reply-To: <20230910082802.9198-2-quic_lingbok@quicinc.com>
+References: <20230910082802.9198-2-quic_lingbok@quicinc.com>
+To: Lingbo Kong <quic_lingbok@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <quic_jjohnson@quicinc.com>,
+ <linux-wireless@vger.kernel.org>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169591396177.3019228.6958340171406115973.kvalo@kernel.org>
-Date: Thu, 28 Sep 2023 15:12:43 +0000 (UTC)
+Message-ID: <169591519084.3096214.13489607891365501029.kvalo@kernel.org>
+Date: Thu, 28 Sep 2023 15:33:12 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230928_081254_907037_2C6E1DE9 
-X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-CacheID: sfid-20230928_083316_058431_AD30DA38 
+X-CRM114-Status: UNSURE (   8.20  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,32 +74,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kang Yang <quic_kangyang@quicinc.com> wrote:
+Lingbo Kong <quic_lingbok@quicinc.com> wrote:
 
-> WCN7850 and QCN9274 currently use the same structure rx_msdu_end_qcn9274
-> for msdu_end. But content of msdu_end on WCN7850 is different from that of
-> QCN9274. Need to update it for WCN7850, otherwise will get the wrong
-> values when using it.
-> 
-> For example, TID is no longer in WCN7850's msdu_end. But
-> ath12k_dp_rx_process_err() and ath12k_dp_rx_process_wbm_err() still get
-> TID from msdu_end. So an uncertain value will be used in these two
-> functions on WCN7850.
-> 
-> Therefore, add new structure rx_msdu_end_wcn7850 for WCN7850.
+> Currently, ath12k does not support Time-Average-SAR(TAS) for WCN7850. In
+> order to enable Time-Average-SAR(TAS) for WCN7850, ath12k defines
+> ath12k_get_acpi_all_data() function to get TAS configuration and SAR power
+> table, then sets pdev_id, param_type_id, and finally sends the TAS
+> configuration, SAR power table and WMI_PDEV_SET_BIOS_INTERFACE_CMDID
+> command to firmware to implement TAS during the initialization phase.
+> Besides, ath12k registers an ACPI event callback so that ACPI can notify
+> ath12k to get the updated SAR power table and sends it to firmware when the
+> device state is changed.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
 > Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Patch applied to ath-next branch of ath.git, thanks.
+Fails to apply, please rebase.
 
-ed823fd113b7 wifi: ath12k: add msdu_end structure for WCN7850
+error: patch failed: drivers/net/wireless/ath/ath12k/core.h:771
+error: drivers/net/wireless/ath/ath12k/core.h: patch does not apply
+error: patch failed: drivers/net/wireless/ath/ath12k/hw.c:907
+error: drivers/net/wireless/ath/ath12k/hw.c: patch does not apply
+error: patch failed: drivers/net/wireless/ath/ath12k/hw.h:186
+error: drivers/net/wireless/ath/ath12k/hw.h: patch does not apply
+error: patch failed: drivers/net/wireless/ath/ath12k/wmi.h:4791
+error: drivers/net/wireless/ath/ath12k/wmi.h: patch does not apply
+stg import: Diff does not apply cleanly
+
+4 patches set to Changes Requested.
+
+13378463 [v4,1/4] wifi: ath12k: add TAS capability for WCN7850
+13378462 [v4,2/4] wifi: ath12k: add BIOS SAR capability for WCN7850
+13378465 [v4,3/4] wifi: ath12k: add adjust configuration of CCA threshold value for WCN7850
+13378464 [v4,4/4] wifi: ath12k: add set band edge channel power for WCN7850
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230911093054.74943-1-quic_kangyang@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230910082802.9198-2-quic_lingbok@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
