@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E90BE732DF
-	for <ath12k@archiver.kernel.org>; Thu, 28 Sep 2023 15:01:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58E3FE732E0
+	for <ath12k@archiver.kernel.org>; Thu, 28 Sep 2023 15:02:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uMvCjPbmMgg+MRDipPm6DIOgXXJItE5ohyCeukuN5d0=; b=X7mYo30fvrn3f1
-	8Ezwlnh61+Owpqzvrw204B50SfqXerMRTfc/kz0iPcui6l/dQCKg/wGENGkZEBTofvm8tb89drhaN
-	QUhWm8iWRDZTyWChCmKEaNKGGuPfGJpJkRudd8Gd/WGg6i4sguMYUmr8xiCV8b+4ngYbt04t0Hue3
-	KoLBOLzGvC5yyiSfhyuw54SHYwroZN/42KCNlcM8v4z8YUIDH0ADOls92C16NmFR3KOXiZOV66vI6
-	P5rdTMB4EKOi9+WHOla2kFDEVJobHf8L7UOAJeve2gKC+ufdZq4ZmbOD8Cc0wrKp/X1Tlapfi8//P
-	8WzR3oMvqxQ6KrgxfqqA==;
+	List-Owner; bh=pcHMSMXOs1ijflQUApPVOWAMFY0NJZXB/WhrIWYD9Cc=; b=2FMgEusz+3AhW6
+	gnwDl2hhY9A3cQXcSrRm+eE3wl9GtpZl3ic62ts0Zz4TzqEcQr+hl9YL4e4sydrmqWAAu94+ZSH3a
+	LwiIBEVHTHXlUX+kLMqHknWFaHTbfDqzmVJzwFQPkXEFUhHOEh1+T6bV0jaHJfZwK/9COlfAsx7I2
+	7N05l6NReoS7OmZm5aILgkJutNvLUHqm98wIfzIWt/SYCAFLcttoohTTFDotMbHqXMmwAUp0p4c4E
+	9vk7ar5RsFc+Q4wN67eIIUn6kyQqkNaGhmzVuEFLnasLA+BcawaTdBTJyUrWcqQFM7i0klCcQ+nPl
+	Q2BMpWgbAoy/ENdHbjbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlsW8-005AgN-06
+	id 1qlsXV-005Bcp-2t
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Sep 2023 15:01:28 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Thu, 28 Sep 2023 15:02:53 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qlsW4-005Acq-0h
+	id 1qlsXS-005BZw-1N
 	for ath12k@lists.infradead.org;
-	Thu, 28 Sep 2023 15:01:26 +0000
+	Thu, 28 Sep 2023 15:02:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 9F2F1CE21CB;
-	Thu, 28 Sep 2023 15:01:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2CF6C433C8;
-	Thu, 28 Sep 2023 15:01:19 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id A2BC1B81CC1;
+	Thu, 28 Sep 2023 15:02:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16123C433C7;
+	Thu, 28 Sep 2023 15:02:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695913280;
-	bh=Sv4ZYwTJOdt8iL9WrmtNcE/NncscTaorBT+D7H4XgLk=;
+	s=k20201202; t=1695913368;
+	bh=tsaHVP2mx7ljQj4gqbh8HSWkgBxSGcfcQehBDZTlBcY=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=ePHKEK7kdeARJnGXIHDaatuXWLffil8m9TDDOfhKeuFmylbKUDrqWvSxsT0PkdCtI
-	 JdmfiCoYEPO0dhVDJi19IyjFzifjOSg9BStv/gfyhWpHDW7JWWsaUPGdFcYF7mZh7W
-	 NzxLERpHbGU7XCO72xwAIIX7UPcDWIlf5ConemRsch7k8OQ0QW90IkQp1XM8vC4iUV
-	 JZLMbnMm5p+zgMKBUuY+OYA6w2BJoHk3zzITfgLoo1AuK/HxNA1AVEvdADrZCQvDWL
-	 XwjPgGL5EqB1qQu+78IGQ1bk0YQskETFvLFu3lFoQ4IrQf8orVJ+Y2qixQjUBi+1kh
-	 IzRjuGxOEeDqg==
+	b=LykRHUy0u0cVgoS6993uSGpPsRukfCzMfffkSXgrHN1fnV57PE3PwypUy4B60tL7Q
+	 KxLCUTNbO8ugzwI42HBXiJI8tDYrCZKYeWxTWNfzK6v6bKRWtKt5cHhjYgU26hd/Dn
+	 1xzYEGN7+MpNYZJkw11fbg2DFMwQbKnU5oQF7EfIpT79OtnAavaJI5+VqPHz1/YuwS
+	 +cQF50UrENEgAFang6JAqgiHsufWmUI0dJy5xMvHq10orEBApUcuskJeUDbgn5CScS
+	 UixESlDAxNx75cj7VwIpLPyWOzDj0Y+kShJUD4cAl6yaMN+a4uzzw5bbB2GOoOB7MD
+	 kOEdzn92TOB9Q==
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: fix recovery fail while firmware crash when
- doing channel switch
+Subject: Re: [PATCH] wifi: ath12k: indicate to mac80211 scan complete with
+ aborted
+ flag for ATH12K_SCAN_STARTING state
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230905105229.10090-1-quic_wgong@quicinc.com>
-References: <20230905105229.10090-1-quic_wgong@quicinc.com>
+In-Reply-To: <20230905105947.10369-1-quic_wgong@quicinc.com>
+References: <20230905105947.10369-1-quic_wgong@quicinc.com>
 To: Wen Gong <quic_wgong@quicinc.com>
 Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
  <quic_wgong@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169591327779.3019228.18229314827081753794.kvalo@kernel.org>
-Date: Thu, 28 Sep 2023 15:01:19 +0000 (UTC)
+Message-ID: <169591336483.3019228.4801533515401885948.kvalo@kernel.org>
+Date: Thu, 28 Sep 2023 15:02:46 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230928_080124_507546_0A3A9792 
-X-CRM114-Status: UNSURE (   6.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230928_080250_635188_6F7AFAA1 
+X-CRM114-Status: GOOD (  11.24  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,15 +77,30 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Wen Gong <quic_wgong@quicinc.com> wrote:
 
-> When firmware crashed while channel switch running, recovery starts in
-> ath12k. Then ieee80211_sta_connection_lost() will be called by function
-> ieee80211_restart_work() in mac80211. And then many WMI command timeout
-> because firmware is crashed. Each WMI command cost 3 seconds, then the
-> total time will be large and leads recovery fail.
+> Scan failure can not be recovered from when running a loop of the
+> following steps:
+> 1. run scan: "iw wlan scan".
+> 2. run command: echo assert > /sys/kernel/debug/ath12k/wcn7850\ hw2.0/simulate_fw_crash
+>    immediately after step 1.
 > 
-> Hence change to set value ATH12K_FLAG_CRASH_FLUSH early and then
-> ath12k_wmi_cmd_send() will not wait 3 seconds, then recovery will be
-> started quickly and success.
+> result:
+> scan failed and can not recover even when wlan recovery succeeds:
+> command failed: Device or resource busy (-16)
+> 
+> reason:
+> When scan arrives, WMI_START_SCAN_CMDID is sent to the firmware and
+> function ath12k_mac_op_hw_scan() returns, then simulate_fw_crash arrives
+> and the scan started event does not arrive, and then it starts to do
+> recovery of wlan. __ath12k_mac_scan_finish() which is called from
+> ath12k_core_halt() is one step of recovery, it will not call
+> ieee80211_scan_completed() by logic currently because the scan state is
+> ATH12K_SCAN_STARTING. Thus it leads the scan not being completed in
+> mac80211, and leads all consecutive scans failing with -EBUSY in
+> nl80211_trigger_scan even after wlan recovery success.
+> 
+> Indicate scan complete with aborted flag to mac80211 for
+> ATH12K_SCAN_STARTING to allow recovery from scan failed with "Device or
+> resource busy (-16)" after wlan recovery.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
@@ -95,10 +110,10 @@ Wen Gong <quic_wgong@quicinc.com> wrote:
 
 Patch applied to ath-next branch of ath.git, thanks.
 
-ecbb987b0a96 wifi: ath12k: fix recovery fail while firmware crash when doing channel switch
+c2ebb1d11ab9 wifi: ath12k: indicate to mac80211 scan complete with aborted flag for ATH12K_SCAN_STARTING state
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230905105229.10090-1-quic_wgong@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230905105947.10369-1-quic_wgong@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
