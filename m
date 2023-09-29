@@ -4,60 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69543CE7AF7
-	for <ath12k@archiver.kernel.org>; Fri, 29 Sep 2023 08:58:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 453BCE71D2F
+	for <ath12k@archiver.kernel.org>; Fri, 29 Sep 2023 13:12:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KXMfp+E/84/5c85wCGvV8cnbO2ZvPVfg99KdZefJ8ws=; b=wX7PKmimPrmEVe
-	30+y/bKs/69mqS7SQF9uRYiGQudnU4DRpixq0SIag8L5WX2UZzfu2mraUSntGNIvkniGc4mGny8MW
-	S5cHoBVd0uu33c9AdZ6lyeSNOz2WsVnEQewsDXo/ES2ec7ydlxUFxRzFeg/qssezDTNjIYN7PlMEO
-	4B96rGmlzL2T4mgZnGlUAY4cbxgHqx6Jzfx9hWrFBfZpQPHGB+BPFaHGhKvrX1mehCM03tALzZSme
-	jGeYqMPwM2htOgvjnB772dhL++iVG4Th+nPKE2zPTmzRM464zvplCBfrIWv1FDqXvq6+JShotY7HL
-	uLeult6no9+BCQEBq1Pw==;
+	List-Owner; bh=sG3p8vyXwHEz0Nlr+7Mkczwol4mFG6iNCyX6t88ol10=; b=hyHpzwc6M2e3Kz
+	cY6mKFDGcVxOqr6N9wa4L2/HIgc4DfpjeRLvlXKjTDCjXgebT9Gl1RBqTn23n5tAXas92+ILpdo/1
+	aTgru8s2/RPx0IWIgxY6gBkQZxYGmjYAxl7tJz0eljFsHbh/K2QeNE4eJWugLRgY+LQEpxTYd53z1
+	Bvgf/kDgd3yxCbT3M5zClMi9Bus7JRkrGGZ1UhM83k0m7/vVi3KSSxvKUW7yxNaBotcnETpHUfSbi
+	VexlATFrJHSe0pZEwdUii7u7Ez0Z+levihEkX4QvfjSOg+Y3FK+PbZ7RYUNNhwMMuk3dYmJsvfBb4
+	/QjJXsiC71Z53zVvafSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qm9Kn-007QUh-0V
+	id 1qmDHo-007wJu-2n
 	for ath12k@archiver.kernel.org;
-	Fri, 29 Sep 2023 08:58:53 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Fri, 29 Sep 2023 13:12:04 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qm9Kk-007QTX-0Y
+	id 1qmDHm-007wJF-1x
 	for ath12k@lists.infradead.org;
-	Fri, 29 Sep 2023 08:58:51 +0000
+	Fri, 29 Sep 2023 13:12:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3BF9461E72;
-	Fri, 29 Sep 2023 08:58:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE5CBC433C8;
-	Fri, 29 Sep 2023 08:58:47 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id B119CCE230B;
+	Fri, 29 Sep 2023 13:12:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05079C433C7;
+	Fri, 29 Sep 2023 13:11:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695977928;
-	bh=SBYFF3GE71EQ79OqXOD4/RePPQVKeKn0txws+PTnhFg=;
+	s=k20201202; t=1695993120;
+	bh=VwhPo7thtDa/O3CwoVZUwDUOz3iWStVOolqNk43Hng0=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=cqU5wCv6WlqzbUEHh5RTOZws4NjKenUDAQypXEV2dkd7Xu9J0WmUggUI/fPyPiBtk
-	 IlMk2cFga67Y+nbExp+G3f6GQI+Dn2tTEZ/GpbLn3ZU2gHoqmza1yswVPEtBbHOusd
-	 bHKVx9V3JR2rI2u47+EAvSjtT5DrqQaUcdAX2LS1xjk60la7EE7HsU96KLFX9XXcoI
-	 5xklSVTMWdFdOK/F/KGwNZLTjhymUBjBFnDxlgg5Z9Uydo1UYtSIotPh2ijEMYErkt
-	 ip0Xl/BwcSrRLeeHMVsQhgNsGxF/yMn5BToRuhzylBuyUtZdpTjYPBLv5OcUXIMmo7
-	 IrbSNuHUY/Mpw==
+	b=KQhlqnlzHYnCxgZnIW9X8aFZgEi9U8sT0BW1GANF58FKrfu+sSfpQv0R3Pa+N0OmQ
+	 HGGEjkkK0YBKekHzvjVJcT9IDGys2Xhv+jbXgNIaUJVRPfFA4VU+HgaH4St6amIDbo
+	 bAz2ami/q+6JViwsgJd6PNHFfWCuUnoYtpmT8h1x6PqdIuKynncE3NihJVkybtGZBf
+	 W+S9Ask6O5DLulssR49E3x1jMcDHo668+Wtv4YObQYtnFE5mF7s3ULQ+gezEsAoJgd
+	 OFFuyBtlOpcFezsbjZzNsUvWNfOwfMrX+ARGCivgdGq8nDHQhcFFXPn9ALxyZ0xmSu
+	 wnCAsStonn3Vg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Hari Chandrakanthan <quic_haric@quicinc.com>
-Cc: <quic_kvalo@quicinc.com>,  <ath12k@lists.infradead.org>,
-  <linux-wireless@vger.kernel.org>
-Subject: Re: wifi: ath12k: do not drop data frames from unassociated stations
-References: <1689749074-14676-1-git-send-email-quic_haric@quicinc.com>
-Date: Fri, 29 Sep 2023 11:58:45 +0300
-In-Reply-To: <1689749074-14676-1-git-send-email-quic_haric@quicinc.com> (Hari
-	Chandrakanthan's message of "Wed, 19 Jul 2023 12:14:34 +0530")
-Message-ID: <87y1gp73ui.fsf@kernel.org>
+To: Wen Gong <quic_wgong@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
+  <quic_jjohnson@quicinc.com>
+Subject: Re: [PATCH v2 0/4] wifi: ath12k: add 11d scan offload support and
+ handle country code for WCN7850
+References: <20230914090746.23560-1-quic_wgong@quicinc.com>
+Date: Fri, 29 Sep 2023 16:11:56 +0300
+In-Reply-To: <20230914090746.23560-1-quic_wgong@quicinc.com> (Wen Gong's
+	message of "Thu, 14 Sep 2023 05:07:42 -0400")
+Message-ID: <87ttrd6s4j.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230929_015850_291455_2D8D8198 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20230929_061202_815712_8684FD1F 
+X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,72 +76,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-(moving from ath11k to ath12k list)
+Wen Gong <quic_wgong@quicinc.com> writes:
 
-Hari Chandrakanthan <quic_haric@quicinc.com> writes:
-
->>From 'IEEE Std 802.11-2020 section 11.3.4.1':
-> If STA A in an infrastructure BSS receives a Class 2 or Class 3 frame
-> from STA B that is not authenticated with STA A
-> (i.e., the state for STA B is State 1), STA A shall discard the frame.
-> If the frame has an individual address in the Address 1 field,
-> the MLME of STA A shall send a Deauthentication frame to STA B.
+> v2: change per Jeff.
+>     1. change alpha2 length from 3 to 2.
+>     2. change wmi_11d_new_cc_ev to wmi_11d_new_cc_event.
 >
-> When data frames from unassociated stations are received by an AP,
-> the AP is supposed to send a deauthentication/disassociation frame with
-> reason code "Class 2 frame received from nonauthenticated STA" or
-> "Class 3 frame received from nonassociated STA".
+> Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID which is needed for 
+> 11d scan offload to firmware. And add support for 11d scan offload for 
+> WCN7850.
 >
-> But ath12k AP doesn't send deauthentication/disassociation frames,
-> when it receives data frames from unassociated stations.
+> Also fix firmware crash for country code set for WCN7850 and store country
+> code for device recovery for WCN7850.
 >
-> The ath12k driver drops the data frames from unassociated
-> station and the upper layer(mac80211/hostapd) is not aware of such event.
-> Hence deauthentication/disassociation frame is not sent to that
-> particular station by the AP.
->
-> To address this issue, allow the data frames from the
-> unassociated stations to reach mac80211 so that mac80211 can send
-> NL80211_CMD_UNEXPECTED_FRAME event to userspace(hostapd) and hostapd
-> upon receiving the event will send the deauthentication/disassociation
-> frame with proper reason code.
->
-> The data frame from unassociated stations gets dropped in mac80211.
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
->
-> Signed-off-by: Hari Chandrakanthan <quic_haric@quicinc.com>
+> Wen Gong (4):
+>   wifi: ath12k: add configure country code for WCN7850
+>   wifi: ath12k: add 11d scan offload support
+>   wifi: ath12k: avoid firmware crash when reg set for WCN7850
+>   wifi: ath12k: store and send country code to firmware after recovery
 
-Heh, I think I found a bug in patchwork. I had a weird problem that
-whenever I took this patch from patchwork and applied it using git-am
-the commit was empty. The issue seems to be that in mbox format
-patchwork doesn't replace "\nFrom " with "\n>From " like all other
-software do.
+Patches 2 & 3 had trivial conflicts with rfkill patches, fixed in the
+pending branch:
 
-When downloading from patchwork[1]:
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=3261a8fe9de8fd5a94215eaf0c8738c3f0051105
 
-[...]
-X-Mailing-List: linux-wireless@vger.kernel.org
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=0f82a7f8a8d1944faea458f992d492daa74a968e
 
-From 'IEEE Std 802.11-2020 section 11.3.4.1':
-If STA A in an infrastructure BSS receives a Class 2 or Class 3 frame
-[...]
-
-But from lore[2] it's correct:
-
-[...]
-X-Mailing-List: linux-wireless@vger.kernel.org
-
->From 'IEEE Std 802.11-2020 section 11.3.4.1':
-If STA A in an infrastructure BSS receives a Class 2 or Class 3 frame
-[...]
-
-No need to resend because of this, the patch will be soon in the pending
-branch.
-
-[1] https://patchwork.kernel.org/project/linux-wireless/patch/1689749074-14676-1-git-send-email-quic_haric@quicinc.com/mbox/
-
-[2] https://lore.kernel.org/linux-wireless/1689749074-14676-1-git-send-email-quic_haric@quicinc.com/raw
+No need to resend because of this.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
