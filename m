@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32A36E784BF
-	for <ath12k@archiver.kernel.org>; Mon,  2 Oct 2023 16:02:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9CB5E743C3
+	for <ath12k@archiver.kernel.org>; Mon,  2 Oct 2023 16:14:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nnF/0IJpm0qJUK8B8LXXghGWk+qgESwzbK0L+MTgKC8=; b=ijAriZdeYU2rzW
-	/9pIU2sGcVXVWvXMsryEbAxJLhV9bVBddW7+Ld0tn7VWAeTbOdfdB4fiKufRRnPFfIDvWvN50xzgt
-	tANgDzYn837h6BKMDi7ybdFnVeIZ0be2MixV7Aw8U+1g0oNoORusdGiqhpGv4UE7erS5Ud5zTAVEB
-	P+B7emLQM6SGFe5TV60QTwJF0f9PN1yvqHiJmfa2qC7lTvp78FGE+pYmhjKWkOUwg40i0HUyIlcoY
-	dAh5/4U7tchGMTYgXo8UhKeoWtwEQGVST7ymxxRg61K7bJxMi8V3EtJwO2zyzrjHefd7fDb1QiYw/
-	2L1IAEmk0GXbXk5a+WTA==;
+	List-Owner; bh=T0mUgqmlkh+jYr1AXCdk3YCncTYUdLqAOKDJ7lUIOYY=; b=wiLMAB8udUCTk+
+	xzAi1lTJpCJeSkK7W6XV/wrMwK6kwVwZTYUySLSYBr9HLcHPVd/xoDohtprQxLr2FaackpsDTf7s4
+	DwrIoxmviMQwz9zZ4hSID3+N8t3VFncNdQqsY23ZhRXytlcMHLJJFcgBCywD9oYgTiyhga6SVz2Ow
+	VMki9vc1zU3PFLRxNAurAqt6H1Py1De/L7H9IHRMR3mZzwJyd0J/hqYLrKvONFZdw0YdODloSYAjt
+	dtcb4Lfb5C2sOavtkULdw0QetqgkxCG9lFoDDVQ5FQcbANo9q7PyX+FtWfaBR8YTUTLZrSRGZYjY0
+	1a6fPhGoSWpCbZwy9V8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnLNn-00D2Om-2m
+	id 1qnLYg-00D3MS-1t
 	for ath12k@archiver.kernel.org;
-	Mon, 02 Oct 2023 16:02:55 +0000
+	Mon, 02 Oct 2023 16:14:10 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnLNk-00D2OU-1y
+	id 1qnLYd-00D3Ka-04
 	for ath12k@lists.infradead.org;
-	Mon, 02 Oct 2023 16:02:54 +0000
+	Mon, 02 Oct 2023 16:14:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0728260EF9;
-	Mon,  2 Oct 2023 16:02:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8EE3AC433C7;
-	Mon,  2 Oct 2023 16:02:50 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7F92060F6D;
+	Mon,  2 Oct 2023 16:14:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 438F6C433C8;
+	Mon,  2 Oct 2023 16:14:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696262571;
-	bh=HuxJiuznms2W8lxP6HRykHp7BYb4KNtNZEOr+LscHgU=;
+	s=k20201202; t=1696263246;
+	bh=MYOcq/f37Tq8zr3wS1nmV9Ey9mP0nvdOGbnwCPOj3us=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=FL06NhOIuzHuu2zLbQ7BQ99cT9nnu8JCzArSJXRp/urU0or7BIpSD7A10PWo+UzN9
-	 EgwVhhCznoSyOUMlYpqg6QrlvNw0cPAdc/bLBCUAOhNMa/TC+sMEd4b3AHBODkF8IP
-	 zF+u4fVAsdoMndA4mPgPJZ3wyQuj1y4CBxNvLkrV1+b0nmIVgVZ4yUschuZfzbMgvk
-	 7ASI667rRPmexnoR7a4I8oPluTmjZwMe0qCpWbw4M3XTChBJlyyR78WulMG9jNNQN6
-	 7b/nrXyWoCAgJyiGI/dCg/IUQjK575q/CuJdjbJGg3W92YkRlgiihe4+frQeFmjXbH
-	 6ELVN8G6sYhcQ==
+	b=GNwgRm0r7jmfum3leufEBafPwyYNDz167/l+uHgvFczF8zshQbHEOQm1FyhqWRf6m
+	 WUvowLKez2k1F1+lHdeoXMhnKgEVqUom0C/n8MfiycQAddXzDSXYQSck8Rppus6bf5
+	 bWukMlKW6CYr0T7er60YH4Che0fs9raCQWuc68wSTT+NNoWNS0UGu4C8bUalsypQOu
+	 ntrWAdz9E9AAkpVZ7JQHZYoQPYYefVW13wjeIgIPIe0DvfaN6Q8Xyr7jj6luR8REmV
+	 18GFscmhjmYWJjOYcg/p16H9OUsI135ih7M0YuYKWMiwZYY6ZOjTwOs1GdbEvY56tN
+	 p7fd18a14EIyw==
 MIME-Version: 1.0
-Subject: Re: [PATCH] ath12k: mhi: fix potential memory leak in
- ath12k_mhi_register()
+Subject: Re: [PATCH] wifi: ath12k: add read variant from SMBIOS for download
+ board
+ data
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230922021036.3604157-1-make_ruc2021@163.com>
-References: <20230922021036.3604157-1-make_ruc2021@163.com>
-To: Ma Ke <make_ruc2021@163.com>
-Cc: quic_jjohnson@quicinc.com, ath12k@lists.infradead.org,
- linux-wireless@vger.kernel.org, Ma Ke <make_ruc2021@163.com>
+In-Reply-To: <20230905105637.10230-1-quic_wgong@quicinc.com>
+References: <20230905105637.10230-1-quic_wgong@quicinc.com>
+To: Wen Gong <quic_wgong@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ <quic_wgong@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169626256833.3917291.8799520274083808418.kvalo@kernel.org>
-Date: Mon,  2 Oct 2023 16:02:50 +0000 (UTC)
+Message-ID: <169626324327.3936351.13611584406343769411.kvalo@kernel.org>
+Date: Mon,  2 Oct 2023 16:14:05 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231002_090252_713889_7CC6C28D 
-X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-CacheID: sfid-20231002_091407_104616_611B50B6 
+X-CRM114-Status: UNSURE (   6.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,25 +76,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ma Ke <make_ruc2021@163.com> wrote:
+Wen Gong <quic_wgong@quicinc.com> wrote:
 
-> mhi_alloc_controller() allocates a memory space for mhi_ctrl. When some
-> errors occur, mhi_ctrl should be freed by mhi_free_controller() and set
-> ab_pci->mhi_ctrl = NULL.
+> This is to read variant from SMBIOS such as read from DT, the variant
+> string will be used to one part of string which used to search board
+> data from board-2.bin.
 > 
-> We can fix it by calling mhi_free_controller() when the failure happens
-> and set ab_pci->mhi_ctrl = NULL in all of the places where we call
-> mhi_free_controller().
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Signed-off-by: Ma Ke <make_ruc2021@163.com>
+> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
 Patch applied to ath-next branch of ath.git, thanks.
 
-47c27aa7ded4 wifi: ath12k: mhi: fix potential memory leak in ath12k_mhi_register()
+7d9832e3b538 wifi: ath12k: add read variant from SMBIOS for download board data
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230922021036.3604157-1-make_ruc2021@163.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20230905105637.10230-1-quic_wgong@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
