@@ -4,59 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15F77E7AD58
-	for <ath12k@archiver.kernel.org>; Tue,  3 Oct 2023 14:56:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E5BBE7AD6E
+	for <ath12k@archiver.kernel.org>; Tue,  3 Oct 2023 15:01:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XX2SFfyLrdFLLH3oyKj8QTwZ7KCm0/JpCog2UqMLzTA=; b=XnWjz1/zdQ4AIZ
-	SixnsqObjFZnr3hyRPgOwWn2/DkwX2iTEEp93QTJhW/aSas72TyaCp+KUqXeSjqNSR9m/3ySVWSqW
-	Ji69lX/BtaRIOpkNhINGbUJQMTRK0X6Jx3hcN1yXSDF2jq+iu+16PT8OKol1BY1x1r4n7r8/Zky+6
-	a4QzeU2ZUhOxrtKH1kEjAtq2MM9YZ2uL4V3K0ATJjlWvXyHrikAo0ZMkojmts1PbsvMOpzIMC5Gc/
-	E1KA5b6bFjjG2hrlaj2ePstelvMV/cycUbqevZo5riVWFF7UlxT2lyUnlsFEtd+m5qyfrS2F0c51+
-	bJoMOHBoGmwxq16irqNg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XsbzzqN2LGiNzJNOlx1060AlzylXfa+dVGMyGGBAL8k=; b=bqvU+SLTboFx1A
+	IVJp1qpJVHwwFIsgiU5cZJYFkoZmElWa8tF6Flz0H4QCy0T8YExWujCl6kD7S0GKll4gZ+WLnOsli
+	1cbxetw5OFRztITbZCU1KgaEJeaxh0gLPPrrcTId8B+1x3s6kAWyYq7qlNotSBEPmmlZFP2aR0wrT
+	AUjaxjFiz7EXd0+jsle3neaXoTRZZ1jfSJd8uXynmygSQsrj9VJpf4NUrqonOWvHWIzvqkD9wWJp1
+	FauasjPdCvWbfEZoKZyzDChxqTfCpGlR9GIcTE1nWEGpa9qrgHgElyDNUVSX0Rn00zd1Z29Ub3oDM
+	JXB4+YtJv+Sbx/ywFD4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qngos-00Epu1-2g
+	id 1qngu5-00EqFi-09
 	for ath12k@archiver.kernel.org;
-	Tue, 03 Oct 2023 14:56:18 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	Tue, 03 Oct 2023 15:01:41 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qngop-00Eptb-1n
+	id 1qngu2-00EqFN-1V
 	for ath12k@lists.infradead.org;
-	Tue, 03 Oct 2023 14:56:17 +0000
+	Tue, 03 Oct 2023 15:01:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 080E9B81B2F;
-	Tue,  3 Oct 2023 14:56:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 691DCC433C7;
-	Tue,  3 Oct 2023 14:56:12 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 8407BCE18A6
+	for <ath12k@lists.infradead.org>; Tue,  3 Oct 2023 15:01:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C42EFC433C8;
+	Tue,  3 Oct 2023 15:01:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696344973;
-	bh=p0AgQWyC7sV+5Z0KZ2RWo84QUqVPvvrxy7P5WybgfBA=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=JteOu6smdI73xmfL2Gj/5UxP+Jfrh/iElevnZvhn2tThq0DhhZqMiBSpcPjz0gmu1
-	 e2je7eOU/WH7Qr+h92BTDaavu6fzHKwlYWaRbURygw27uTdX6CrJKt5xFtsWO6Q4fz
-	 Y8/PpPWt96bGpqDOiVR9hbT4eDMrggw6ADT6NbI37OnNqJvn4Gw67DLQP+tgiMWYJz
-	 vd92qWv5n7iU5z3CjNR2pNIvsynPcdAUPZA0st2MZCfnLyzI21kvKBbOz5ISTV3mB6
-	 qeX0TMZRFRkx+KZ+00P+/h22UH6s2vjdRpmLaC/kP2se8wzk3Lakd50OPWnbuu0cuH
-	 SsEYRovi07AEA==
-MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: Encoding regdb.bin in board-2.bin
+	s=k20201202; t=1696345295;
+	bh=lVcxIOxipF//JQsTO3JXp6HIOgSsOIh5C2sbfnSbzhw=;
+	h=From:To:Cc:Subject:Date:From;
+	b=CbosmV/bZL50DTPQD2iDFbm5HTNgTYuN+ab+ixJKEwcM+u+cR+KHKfBIeN9oEEgjf
+	 XA/6a1P/Uu1grtQofMTDJdoAQNlUxfi4iG27XZ311+OrDw58TG76/lSiqh4Cwkmjl/
+	 EXqZZuYp/tdGT/TZKdYNRfreKj08WhMr2kwNl5TcXxoPNxdmtM2GY7beJv8FZoB01L
+	 5Vb8F/lBuolgH1MIVNeejOtrxiwiVwywZfoUeoyQO3zNXX86aZ60RwUOJlj9r/rmgF
+	 R8ZrPkk2rQuTGYebnJfYec7QK+FGQq8q80KvIQ1IPsfJht4EXJ4Gwt+/pPliNoT+dO
+	 QsOt1idAOdg8Q==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20230131123422.24985-1-quic_karm@quicinc.com>
-References: <20230131123422.24985-1-quic_karm@quicinc.com>
-To: Karthik M <quic_karm@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Karthik M <quic_karm@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169634497029.182212.8117239239886289035.kvalo@kernel.org>
-Date: Tue,  3 Oct 2023 14:56:12 +0000 (UTC)
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: fix debug messages
+Date: Tue,  3 Oct 2023 18:01:32 +0300
+Message-Id: <20231003150132.187875-1-kvalo@kernel.org>
+X-Mailer: git-send-email 2.39.2
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_075615_732573_2F6D85D1 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20231003_080138_698408_1B7B19ED 
+X-CRM114-Status: GOOD (  12.76  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,39 +70,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthik M <quic_karm@quicinc.com> wrote:
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-> Currently regulatory database information are in regdb.bin outside
-> the board-2.bin.
-> 
-> In this implementation, Add support to encode the secured regdb.bin
-> in board-2.bin along with the bdf files.
-> 
-> New api(ath12k_core_fetch_regdb) fetches the board specific regdb
-> from board-2.bin. If it fails, it downloads the default regdb.
-> 
-> Firmware receives the binary over QMI and verifies the signing.
-> If it is authentic, the binary will be used.
-> 
-> Renumbered the enum ATH12K_BD_IE_BOARD_EXT to '2' since it is
-> not used in the code. ATH12K_BD_IE_REGDB enum will take the value '1'
-> as per the ath11k upstream design.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthik M <quic_karm@quicinc.com>
+In ath12k the debug messages were broken, no matter setting what value to the
+debug_mask module parameter would not get the debug messages printed. The issue
+is that __ath12k_dbg() uses dev_dbg() to print the debug messages which requires either enabling
+CONFIG_DYNAMIC_DEBUG or DEBUG symbol in the driver.
 
-It's a long time since I tested this and this doesn't apply anymore so I
-cannot give you any detailed report. But IIRC I noticed in my test that
-having just board.bin didn't work anymore. Please double check that, rebase and
-submit v2.
+ath12k is supposed to use debug_mask module to control whether debug messages
+are printed or not. Using both CONFIG_DYNAMIC_DEBUG and debug_mask parameter
+does not make any sense so switch to using dev_printk(), just like ath11k does.
+Now it's enough just to debug_mask module parameter to get the debug messages.
 
-Patch set to Changes Requested.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/debug.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/debug.c b/drivers/net/wireless/ath/ath12k/debug.c
+index 67893923e010..45d33279e665 100644
+--- a/drivers/net/wireless/ath/ath12k/debug.c
++++ b/drivers/net/wireless/ath/ath12k/debug.c
+@@ -64,7 +64,7 @@ void __ath12k_dbg(struct ath12k_base *ab, enum ath12k_debug_mask mask,
+ 	vaf.va = &args;
+ 
+ 	if (ath12k_debug_mask & mask)
+-		dev_dbg(ab->dev, "%pV", &vaf);
++		dev_printk(KERN_DEBUG, ab->dev, "%pV", &vaf);
+ 
+ 	/* TODO: trace log */
+ 
+
+base-commit: 140accd3f29eee6507f8a51bc38e85c119aedf14
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20230131123422.24985-1-quic_karm@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.39.2
 
 
 -- 
