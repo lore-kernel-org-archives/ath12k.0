@@ -4,83 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CDF5E7AD72
-	for <ath12k@archiver.kernel.org>; Tue,  3 Oct 2023 15:55:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27FC2E7B5E1
+	for <ath12k@archiver.kernel.org>; Wed,  4 Oct 2023 09:28:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OH/+mkwjDjBGKSc68Cf8EHmVGTx6zOEvPeoTowtn4bU=; b=yVqJkz0/ildFR8
-	4fumE+dgAdNu0n+gBt0mQKbD6dj/b/6DxIWgW4zwRbfj5fl5ZxeSP+4vgko6GnJxOapgiGs/lIydK
-	Mdp8Yvu7mg/l1FxSlifjdAgm68jrEG+F6M0d1LejJkoEyM7jLJv3qConv6oLULgxuVYTT8TTZ7P0G
-	tJ2VOfNgnfoDqo4Hjp0Nmi1QjWy9hBI9evwZWLOefV9gZaQZkz+sdIV643VpDZOrY/XocUsrrCrRV
-	zoxRoo7l8FpJp/QvAKeJhVjSHwfBcTIW1ZhZJ8YSPlnZm6xc6GriGvGmPWOhkK1lnR3DXSTisb6XS
-	XHpWRvTpiSOlgFyq+RVQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=klK1Z7VncPSvJ3HifZ2V66QKUrYmMNTFZ/XMFCz24yU=; b=iGXcfdUI2tBxC9
+	sZFOG76lGXrnNK4YoBa5Qtwar1qEZzjAwz3kl8Vsz16Xyi3yRPbhEeJ7UPM+w4Oz32n00Z2voGBiF
+	LoKLpfiJu0NeEZNd0oLBD9i7IkXzwYfwHGZHCIcBodagr0bFIrkOIMyCj7whnyE4jztZ3/dUvki/0
+	fKMGka05OQngiumNu5Apomb6NsT19Vg/Mt0xujhZA+T/jwNBXt8717NNQ5YTsOTyKgLFSGVf1FsRi
+	h1JrDrD1f7HMGhd2EqFywRKGb2IPwYqVHeE9bMvdLWUH4qQ/r2CdbzgXyoLddVo56hJFXjStBCtNT
+	bGGn033r9MM9Sur+3mEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnhjj-00EujK-0D
+	id 1qnyBK-00H3n4-2q
 	for ath12k@archiver.kernel.org;
-	Tue, 03 Oct 2023 15:55:03 +0000
+	Wed, 04 Oct 2023 09:28:38 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qnhje-00Euif-2m
+	id 1qnyBG-00H3m4-2q
 	for ath12k@lists.infradead.org;
-	Tue, 03 Oct 2023 15:55:01 +0000
+	Wed, 04 Oct 2023 09:28:36 +0000
 Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 393FdGH2018635;
-	Tue, 3 Oct 2023 15:54:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=HUXyGXoLKhyYQeoVnJGMcDOQp0CNl54U8zFApb+wyvU=;
- b=mOR1T5ec9TwlP5LUINFKJBfiFdSSKg1kEGmBlDkKbvvna2h4INznZxJYkHF8+gtjTTZn
- c8DkvcCJcxEUfBS/dFCJiREVkuvcWMJAjANUMGxtzvhJjzv5r5m2ImJFifBleVee7v+N
- MMCBGQilKPU01VT38z4OWnIan6YzkM2mIlU+f0JExH8EU7dGfIm4Kll4sinGLYSo0JwG
- WLvltnL7SaHFs6n5wpR8A9g9CuzG1wKBbmi33s5hXb3JNENvaAjFsQZsIw7200xTwxlV
- /xQdCxICMAG2JtA+gM7nIe0LzXPSMruXTO3shXUL6bYavCJ657Zo5e4D+qMOm/ePznFw SA== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tgbjj9f81-1
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3948Kh6O030032;
+	Wed, 4 Oct 2023 09:28:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=kLDz14lHunwK9akFb62TEBE7+9iOIMH+zi0jkz74IkI=;
+ b=cxcT68tmEoBiJMeYlvwj9EPXzPOo7S9LNh3uVCtgFO5132aGPfHpBA+hS3J8fBK7Z3AH
+ zQ1hs4jctn/5caJU+0rXo1CfW6vgodjOjZK/3hvF8SwQAGCjazKsGXGqnKq7k6mhsBql
+ gMx2DircxpLYOsjubADHe2CubbDQMBeLxw4O2NSHK7gFqtSgJMlqouVC4/ISegMZdx35
+ lnR09bNxnTNZIRnT6bdcdsYesAY2Uw6kjTyR9A8OkYBcRhsqtFmrTZZjxWy6fXZt8hmZ
+ nFLhpWZxiREK7hluwmHCccumDcTdDynPQT7Nzpnhayex18ADta7r98FSFNlD9uqn0RIB tQ== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tgynh8nrg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Oct 2023 15:54:56 +0000
+	Wed, 04 Oct 2023 09:28:34 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 393FstmF002725
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3949SXUF002221
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Oct 2023 15:54:55 GMT
-Received: from [10.111.179.185] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Tue, 3 Oct
- 2023 08:54:55 -0700
-Message-ID: <946415fc-f8a6-42ee-b20c-f6a895a2db4f@quicinc.com>
-Date: Tue, 3 Oct 2023 08:54:54 -0700
+	Wed, 4 Oct 2023 09:28:33 GMT
+Received: from adisi-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Wed, 4 Oct 2023 02:28:31 -0700
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Aditya Kumar Singh
+	<quic_adisi@quicinc.com>
+Subject: [PATCH] wifi: ath12k: add parsing of phy bitmap for reg rules
+Date: Wed, 4 Oct 2023 14:58:18 +0530
+Message-ID: <20231004092818.25130-1-quic_adisi@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix debug messages
-Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20231003150132.187875-1-kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231003150132.187875-1-kvalo@kernel.org>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Og_jjKyYrwNo3ZelrdfklecqSZ3seJVw
-X-Proofpoint-ORIG-GUID: Og_jjKyYrwNo3ZelrdfklecqSZ3seJVw
+X-Proofpoint-GUID: Ftj6Zbu2q66TmkVVPYhr3LInEkNZU7j-
+X-Proofpoint-ORIG-GUID: Ftj6Zbu2q66TmkVVPYhr3LInEkNZU7j-
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-03_12,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 spamscore=0
- clxscore=1015 impostorscore=0 phishscore=0 malwarescore=0
- priorityscore=1501 mlxlogscore=906 adultscore=0 suspectscore=0 bulkscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310030119
+ definitions=2023-10-04_01,2023-10-02_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
+ priorityscore=1501 impostorscore=0 malwarescore=0 mlxscore=0
+ mlxlogscore=999 clxscore=1011 adultscore=0 lowpriorityscore=0 bulkscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310040067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231003_085458_906559_2C6620D8 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20231004_022834_950578_52F2B6FA 
+X-CRM114-Status: GOOD (  17.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,29 +90,101 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/3/2023 8:01 AM, Kalle Valo wrote:
-> From: Kalle Valo <quic_kvalo@quicinc.com>
-> 
-> In ath12k the debug messages were broken, no matter setting what value to the
-> debug_mask module parameter would not get the debug messages printed. The issue
-> is that __ath12k_dbg() uses dev_dbg() to print the debug messages which requires either enabling
-> CONFIG_DYNAMIC_DEBUG or DEBUG symbol in the driver.
-> 
-> ath12k is supposed to use debug_mask module to control whether debug messages
-> are printed or not. Using both CONFIG_DYNAMIC_DEBUG and debug_mask parameter
-> does not make any sense so switch to using dev_printk(), just like ath11k does.
-> Now it's enough just to debug_mask module parameter to get the debug messages.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Certain regulatory domains could put restrictions on phy mode operation.
+For example, in a few countries HE/EHT Operation is not allowed. For such
+countries, firmware indicates this via phy bitmap in each reg rule.
 
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Currently, there is no logic to parse this info and then pass it on to the
+cfg80211/regulatory.
+
+Add parsing of this phy bitmap from the regulatory channel change event and
+then accordingly map it to cfg80211/regulatory flags and pass it on to it.
+
+While at it, correct typo in debug print: s/dsf/dfs.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/reg.c | 14 ++++++++++++++
+ drivers/net/wireless/ath/ath12k/reg.h |  6 ++++++
+ drivers/net/wireless/ath/ath12k/wmi.c |  5 +++--
+ 3 files changed, 23 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 6ede91ebc8e1..5c006256c82a 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -314,6 +314,19 @@ static u32 ath12k_map_fw_reg_flags(u16 reg_flags)
+ 	return flags;
+ }
+ 
++static u32 ath12k_map_fw_phy_flags(u32 phy_flags)
++{
++	u32 flags = 0;
++
++	if (phy_flags & ATH12K_REG_PHY_BITMAP_NO11AX)
++		flags |= NL80211_RRF_NO_HE;
++
++	if (phy_flags & ATH12K_REG_PHY_BITMAP_NO11BE)
++		flags |= NL80211_RRF_NO_EHT;
++
++	return flags;
++}
++
+ static bool
+ ath12k_reg_can_intersect(struct ieee80211_reg_rule *rule1,
+ 			 struct ieee80211_reg_rule *rule2)
+@@ -638,6 +651,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 		}
+ 
+ 		flags |= ath12k_map_fw_reg_flags(reg_rule->flags);
++		flags |= ath12k_map_fw_phy_flags(reg_info->phybitmap);
+ 
+ 		ath12k_reg_update_rule(tmp_regd->reg_rules + i,
+ 				       reg_rule->start_freq,
+diff --git a/drivers/net/wireless/ath/ath12k/reg.h b/drivers/net/wireless/ath/ath12k/reg.h
+index 56d009a47234..35569f03042d 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.h
++++ b/drivers/net/wireless/ath/ath12k/reg.h
+@@ -83,6 +83,12 @@ struct ath12k_reg_info {
+ 		[WMI_REG_CURRENT_MAX_AP_TYPE][WMI_REG_MAX_CLIENT_TYPE];
+ };
+ 
++/* Phy bitmaps */
++enum ath12k_reg_phy_bitmap {
++	ATH12K_REG_PHY_BITMAP_NO11AX	= BIT(5),
++	ATH12K_REG_PHY_BITMAP_NO11BE	= BIT(6),
++};
++
+ void ath12k_reg_init(struct ath12k *ar);
+ void ath12k_reg_free(struct ath12k_base *ab);
+ void ath12k_regd_update_work(struct work_struct *work);
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 80b3d51387b8..558ced12f7f7 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -4611,10 +4611,11 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
+ 	}
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI,
+-		   "%s:cc_ext %s dsf %d BW: min_2g %d max_2g %d min_5g %d max_5g %d",
++		   "%s:cc_ext %s dfs %d BW: min_2g %d max_2g %d min_5g %d max_5g %d, phy_bitmap: 0x%x",
+ 		   __func__, reg_info->alpha2, reg_info->dfs_region,
+ 		   reg_info->min_bw_2g, reg_info->max_bw_2g,
+-		   reg_info->min_bw_5g, reg_info->max_bw_5g);
++		   reg_info->min_bw_5g, reg_info->max_bw_5g,
++		   reg_info->phybitmap);
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI,
+ 		   "num_2g_reg_rules %d num_5g_reg_rules %d",
+-- 
+2.17.1
 
 
 -- 
