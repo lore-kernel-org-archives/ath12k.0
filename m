@@ -4,86 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A66DE7C4E2
-	for <ath12k@archiver.kernel.org>; Wed,  4 Oct 2023 18:03:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A786EE7C4EC
+	for <ath12k@archiver.kernel.org>; Wed,  4 Oct 2023 18:45:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2V3/1w9MEy/1DJI7sKlRA9uJnNzNDfwmoUy8e2th9hU=; b=HI4jI7Y6MtZuXk
-	XYvYrL7krFpdbubvc6Xoc0XOFZ2k4NeaH0VmuH9PeJQT6bXT9nXuy6RUYm/qwACkeYifa1FwbTxrm
-	5AKu41Hii5yWxHUFwZ5qj/z7RdhAIGft+S4qHS3wITPIn1aWuFfYVy/3yBZ3suqCmc+Ai4kwauBmf
-	MDprJ9nlqT2BwCGfMD1wCtAfeNDzdhPYI6DCHGbfmB4QGbvFZUP/V51F9bXuGnw4qrpWiyASGVWgr
-	NyWyHzxGgs+N51l4BYCO6ntVhxcarGx60W8Hzf+FbwR8Hq4uxXktXwIeh+BQXkvR+MzssGdANRE1i
-	73hdOJNovu927NGS+6sw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XpizKUwdY32XGR9+sjn2FKM8eLqW/+u2Nj3LwowakGU=; b=tFq2q4QBH1OtS9
+	WQ3axjCBJ0KRRKtmsS6q9jmdpK9/AlvIq47balETuCUW4n5GaMrV+RmMEeD3VsFik2w4ZC4YePeGg
+	hNLNtsGXx0SOrKROunVelGtGKfmjM/Q1p+k+31oswuOBhB0cNlxkFIJEmh7RPcL3Bz67ZoH5NUkQ6
+	UQ8/MKipG4b4fF6Gq2SlKnlIBNjJ8o71Fm6t7LMy2Yy8ML+SFBL/Uh+k6xkpcztReVgJFyaAudRd7
+	g8FRElI7pSzY8PrkY7rB5zBc7VrQI+ZhfYZZddf3XKnEb4eCEew1ufBDcBGNAX7Qx4HVJAaaUtzCh
+	Q02vKUNj/BGo5C08lxPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qo6D5-000ejk-2k
+	id 1qo6sc-000itV-1J
 	for ath12k@archiver.kernel.org;
-	Wed, 04 Oct 2023 18:02:59 +0000
+	Wed, 04 Oct 2023 18:45:54 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qo6D3-000ei2-0u
+	id 1qo6sX-000it1-2n
 	for ath12k@lists.infradead.org;
-	Wed, 04 Oct 2023 18:02:59 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 394FBX7G013070;
-	Wed, 4 Oct 2023 18:02:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : date :
- subject : mime-version : content-type : content-transfer-encoding :
- message-id : to : cc; s=qcppdkim1;
- bh=OvZUuyZPmdXb7F8qQXaNslpqNBSL7LH3Mp9t06dauGI=;
- b=hPIfPbd5JY5GXYbW9cAX5q2faKWSlVkQ/7kHdJ+Ku6Sl8tMgAkbjvBlOLaipzBKlIcOl
- DEUg/790oRzykvT++Pyrrt1eHT/Ewm224m5qF31wXJH+Ip6+/PbptZ6/o5vaA7uAzAFc
- S/vmgkbj3Bc+PI+2WhYpZp6sntO6vA+pp3R1V1awosCEaDnvBjhBF/0TRGJLx8JGorwC
- yP1TvCIRwmKDJ/kMyNLNA3QVgiNklRumRUeGzwwBRJbfEeH8hwx2tWTR4KiMNdd6eyCF
- 32ckheAwggbNC1yorxgBGPUccT9sFS0su0yNb6UzgvjQJ8UE0RftmKEZORGNV2IIm+R4 rQ== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3th8ck0vgp-1
+	Wed, 04 Oct 2023 18:45:52 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 394GjCMU003230;
+	Wed, 4 Oct 2023 18:45:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=GurH8bKL+CTciNVyLikBgLu6gh2boLCkwEgQL80rfZE=;
+ b=GnlFnFdvHb72YSp/zezQMclQUopvXy/BHRFK33qmv1ESdPm+cB/juOAvaj/rV/rxaVPv
+ 8iVtTHzgc4bqrfTV97v4+lLSferIB+Ls/Hw2PQPQKs2RLebhx1b6r1F9fimlMFO6gp7F
+ +2xvw6i1kblhL9Aobuwc+EA3bC9p+qNeiiRNQWKIhbFligZkfkhEZ+r9GhKHs6Sga+xb
+ Q4Ami6TxFuRPx7QVhbVRnR8hFbIpw8lqX6mU4OovJydVDuvdzPa7eQPi6Iszf22O5wXY
+ S4g+xFvp/xxdMOoVo46rRL9cQoRYBQYG8u6SDYgprTCTNRqYltEodUUWNJXDjQQI0JiU kA== 
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3th2gq1tux-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 04 Oct 2023 18:02:24 +0000
+	Wed, 04 Oct 2023 18:45:49 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 394I2Odg030308
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 394IjmOW001987
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 4 Oct 2023 18:02:24 GMT
-Received: from hu-jjohnson-lv.qualcomm.com (10.49.16.6) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Wed, 4 Oct 2023 11:02:24 -0700
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Wed, 4 Oct 2023 11:02:21 -0700
-Subject: [PATCH] wifi: ath12k: Consistently use ath12k_vif_to_arvif()
+	Wed, 4 Oct 2023 18:45:48 GMT
+Received: from [10.111.179.185] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 4 Oct
+ 2023 11:45:47 -0700
+Message-ID: <75d04fcf-b800-4c8f-849f-ddc655462a97@quicinc.com>
+Date: Wed, 4 Oct 2023 11:45:47 -0700
 MIME-Version: 1.0
-Message-ID: <20231004-ath12k_vif_to_arvif-v1-1-3f38f6882d33@quicinc.com>
-X-B4-Tracking: v=1; b=H4sIAKyoHWUC/32NQQ7CIBREr9L8tRgoJG1deQ/TEISP/TGWCpVoG
- u4u9gDu5k0ybzZIGAkTnJoNImZKFOYK4tCAncx8Q0auMrS8lXwQipl1Eu1dZ/J6DdrEGpjvrly
- qzkjjHdTlEtHTe7dexsoTpTXEz36Sxa/978uCCcYHKXunsHeozs8XWZrt0YYHjKWULzSv5wW4A
- AAA
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>,
-        Jeff Johnson <quic_jjohnson@quicinc.com>
-X-Mailer: b4 0.12.3
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: add parsing of phy bitmap for reg rules
+Content-Language: en-US
+To: Aditya Kumar Singh <quic_adisi@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20231004092818.25130-1-quic_adisi@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20231004092818.25130-1-quic_adisi@quicinc.com>
 X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: sMR7HTtbE3oGH2DaZ9PiA5m1z3_zxyph
-X-Proofpoint-ORIG-GUID: sMR7HTtbE3oGH2DaZ9PiA5m1z3_zxyph
+X-Proofpoint-GUID: vhZvmiKeP97rWZD97mPeAQGjr1dNXJiu
+X-Proofpoint-ORIG-GUID: vhZvmiKeP97rWZD97mPeAQGjr1dNXJiu
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-10-04_10,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- priorityscore=1501 mlxscore=0 impostorscore=0 malwarescore=0
- mlxlogscore=999 adultscore=0 bulkscore=0 lowpriorityscore=0 spamscore=0
- suspectscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2309180000 definitions=main-2310040131
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ lowpriorityscore=0 phishscore=0 mlxlogscore=999 mlxscore=0 impostorscore=0
+ malwarescore=0 suspectscore=0 clxscore=1015 bulkscore=0 adultscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310040137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231004_110257_325122_515F7B1E 
-X-CRM114-Status: GOOD (  16.69  )
+X-CRM114-CacheID: sfid-20231004_114549_907974_DB6DD933 
+X-CRM114-Status: GOOD (  13.08  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,231 +92,28 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Helper function ath12k_vif_to_arvif() exists to retrieve a struct
-ath12k_vif from a struct ieee80211_vif. However, in multiple places
-this logic is open-coded with inline typecasting. Since the
-typecasting prevents the compiler from type-checking the source and
-destination, update the driver to consistently use the helper
-function.
-
-No functional changes, compile tested only.
-
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 44 +++++++++++++++++------------------
- 1 file changed, 22 insertions(+), 22 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index c092451f8580..59d8fff78e6d 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -523,7 +523,7 @@ static void ath12k_get_arvif_iter(void *data, u8 *mac,
- 				  struct ieee80211_vif *vif)
- {
- 	struct ath12k_vif_iter *arvif_iter = data;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 
- 	if (arvif->vdev_id == arvif_iter->vdev_id)
- 		arvif_iter->arvif = arvif;
-@@ -1208,7 +1208,7 @@ static void ath12k_peer_assoc_h_basic(struct ath12k *ar,
- 				      struct ieee80211_sta *sta,
- 				      struct ath12k_wmi_peer_assoc_arg *arg)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	u32 aid;
- 
- 	lockdep_assert_held(&ar->conf_mutex);
-@@ -1236,7 +1236,7 @@ static void ath12k_peer_assoc_h_crypto(struct ath12k *ar,
- 	struct ieee80211_bss_conf *info = &vif->bss_conf;
- 	struct cfg80211_chan_def def;
- 	struct cfg80211_bss *bss;
--	struct ath12k_vif *arvif = (struct ath12k_vif *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	const u8 *rsnie = NULL;
- 	const u8 *wpaie = NULL;
- 
-@@ -1294,7 +1294,7 @@ static void ath12k_peer_assoc_h_rates(struct ath12k *ar,
- 				      struct ieee80211_sta *sta,
- 				      struct ath12k_wmi_peer_assoc_arg *arg)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct wmi_rate_set_arg *rateset = &arg->peer_legacy_rates;
- 	struct cfg80211_chan_def def;
- 	const struct ieee80211_supported_band *sband;
-@@ -1357,7 +1357,7 @@ static void ath12k_peer_assoc_h_ht(struct ath12k *ar,
- 				   struct ath12k_wmi_peer_assoc_arg *arg)
- {
- 	const struct ieee80211_sta_ht_cap *ht_cap = &sta->deflink.ht_cap;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct cfg80211_chan_def def;
- 	enum nl80211_band band;
- 	const u8 *ht_mcs_mask;
-@@ -1518,7 +1518,7 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
- 				    struct ath12k_wmi_peer_assoc_arg *arg)
- {
- 	const struct ieee80211_sta_vht_cap *vht_cap = &sta->deflink.vht_cap;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct cfg80211_chan_def def;
- 	enum nl80211_band band;
- 	const u16 *vht_mcs_mask;
-@@ -1793,7 +1793,7 @@ static void ath12k_peer_assoc_h_qos(struct ath12k *ar,
- 				    struct ieee80211_sta *sta,
- 				    struct ath12k_wmi_peer_assoc_arg *arg)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 
- 	switch (arvif->vdev_type) {
- 	case WMI_VDEV_TYPE_AP:
-@@ -1991,7 +1991,7 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
- 					struct ieee80211_sta *sta,
- 					struct ath12k_wmi_peer_assoc_arg *arg)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct cfg80211_chan_def def;
- 	enum nl80211_band band;
- 	const u8 *ht_mcs_mask;
-@@ -2140,7 +2140,7 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
- 	const struct ieee80211_sta_he_cap *he_cap = &sta->deflink.he_cap;
- 	const struct ieee80211_eht_mcs_nss_supp_20mhz_only *bw_20;
- 	const struct ieee80211_eht_mcs_nss_supp_bw *bw;
--	struct ath12k_vif *arvif = (struct ath12k_vif *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	u32 *rx_mcs, *tx_mcs;
- 
- 	if (!sta->deflink.he_cap.has_he || !eht_cap->has_eht)
-@@ -2266,7 +2266,7 @@ static void ath12k_bss_assoc(struct ieee80211_hw *hw,
- 			     struct ieee80211_bss_conf *bss_conf)
- {
- 	struct ath12k *ar = hw->priv;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct ath12k_wmi_peer_assoc_arg peer_arg;
- 	struct ieee80211_sta *ap_sta;
- 	struct ath12k_peer *peer;
-@@ -2360,7 +2360,7 @@ static void ath12k_bss_disassoc(struct ieee80211_hw *hw,
- 				struct ieee80211_vif *vif)
- {
- 	struct ath12k *ar = hw->priv;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	int ret;
- 
- 	lockdep_assert_held(&ar->conf_mutex);
-@@ -2407,7 +2407,7 @@ static void ath12k_recalculate_mgmt_rate(struct ath12k *ar,
- 					 struct ieee80211_vif *vif,
- 					 struct cfg80211_chan_def *def)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	const struct ieee80211_supported_band *sband;
- 	u8 basic_rate_idx;
- 	int hw_rate_code;
-@@ -3420,7 +3420,7 @@ static int ath12k_station_disassoc(struct ath12k *ar,
- 				   struct ieee80211_vif *vif,
- 				   struct ieee80211_sta *sta)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	int ret;
- 
- 	lockdep_assert_held(&ar->conf_mutex);
-@@ -3856,7 +3856,7 @@ static int ath12k_mac_op_sta_set_txpwr(struct ieee80211_hw *hw,
- 				       struct ieee80211_sta *sta)
- {
- 	struct ath12k *ar = hw->priv;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	int ret;
- 	s16 txpwr;
- 
-@@ -3893,7 +3893,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
- {
- 	struct ath12k *ar = hw->priv;
- 	struct ath12k_sta *arsta = (struct ath12k_sta *)sta->drv_priv;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct ath12k_peer *peer;
- 	u32 bw, smps;
- 
-@@ -4019,7 +4019,7 @@ static int ath12k_mac_op_conf_tx(struct ieee80211_hw *hw,
- 				 const struct ieee80211_tx_queue_params *params)
- {
- 	struct ath12k *ar = hw->priv;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct wmi_wmm_params_arg *p = NULL;
- 	int ret;
- 
-@@ -6123,7 +6123,7 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
- 	lockdep_assert_held(&ar->conf_mutex);
- 
- 	for (i = 0; i < n_vifs; i++) {
--		arvif = (void *)vifs[i].vif->drv_priv;
-+		arvif = ath12k_vif_to_arvif(vifs[i].vif);
- 
- 		if (vifs[i].vif->type == NL80211_IFTYPE_MONITOR)
- 			monitor_vif = true;
-@@ -6157,7 +6157,7 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
- 	/* TODO: Update ar->rx_channel */
- 
- 	for (i = 0; i < n_vifs; i++) {
--		arvif = (void *)vifs[i].vif->drv_priv;
-+		arvif = ath12k_vif_to_arvif(vifs[i].vif);
- 
- 		if (WARN_ON(!arvif->is_started))
- 			continue;
-@@ -6271,7 +6271,7 @@ static int ath12k_start_vdev_delay(struct ieee80211_hw *hw,
- {
- 	struct ath12k *ar = hw->priv;
- 	struct ath12k_base *ab = ar->ab;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	int ret;
- 
- 	if (WARN_ON(arvif->is_started))
-@@ -6307,7 +6307,7 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
- {
- 	struct ath12k *ar = hw->priv;
- 	struct ath12k_base *ab = ar->ab;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	int ret;
- 	struct ath12k_wmi_peer_create_arg param;
- 
-@@ -6386,7 +6386,7 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
- {
- 	struct ath12k *ar = hw->priv;
- 	struct ath12k_base *ab = ar->ab;
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	int ret;
- 
- 	mutex_lock(&ar->conf_mutex);
-@@ -6749,7 +6749,7 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 			       struct ieee80211_vif *vif,
- 			       const struct cfg80211_bitrate_mask *mask)
- {
--	struct ath12k_vif *arvif = (void *)vif->drv_priv;
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct cfg80211_chan_def def;
- 	struct ath12k *ar = arvif->ar;
- 	enum nl80211_band band;
-
----
-base-commit: da88574f60df34727f5bf9ed4c56cf418d1d2551
-change-id: 20230914-ath12k_vif_to_arvif-f7b0347a3afd
+On 10/4/2023 2:28 AM, Aditya Kumar Singh wrote:
+> Certain regulatory domains could put restrictions on phy mode operation.
+> For example, in a few countries HE/EHT Operation is not allowed. For such
+> countries, firmware indicates this via phy bitmap in each reg rule.
+> 
+> Currently, there is no logic to parse this info and then pass it on to the
+> cfg80211/regulatory.
+> 
+> Add parsing of this phy bitmap from the regulatory channel change event and
+> then accordingly map it to cfg80211/regulatory flags and pass it on to it.
+> 
+> While at it, correct typo in debug print: s/dsf/dfs.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
 -- 
