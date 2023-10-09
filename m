@@ -4,59 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B2FEE7B61F
-	for <ath12k@archiver.kernel.org>; Thu,  5 Oct 2023 06:24:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44E49E95A91
+	for <ath12k@archiver.kernel.org>; Mon,  9 Oct 2023 09:02:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VPvLTZiq2u++bDwx2Pv7UMTN4DV0or3M06Q1H6eICMM=; b=IBQNRDDGk1PZK/
-	C3oxttVqWg93K42HahBnpsr/EIjD51QC7029utvp2Jt2TOFvJu1D9yOuMTL8T2d0yMCnhbItagOw/
-	VzlTykNSuwHbN870Zm9cZGKVcFP7sBqd95S0ttqmsZFi5k0ojll+5Hk1T92St/qAQL96aAkW99mhQ
-	XHnb4oj00BiBhkAnLwnM7N40IzOSLslTANt35PorSwjAHu3uIoC51m2lC6XPfzbRXaIpmmevOr9o3
-	jaHl0lUWfGy2MEOSj1uxlXjrLNtJWjMO2I70svhmV/5oFAwGisb9iH3/RMhJ0SMYewpZWdIsj0scO
-	4lJ4Cic7zFSt/YOVUsLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aU9BN0gyZD7kq2VFI6EXao2n7CjeYlOJRY3O5h9DmiY=; b=BsiGWdbKnS3Dve
+	f1cp0m03h3g8NbzUjrUfgvHpiTbeSQgAeedyfjGNsj+Chvr2gkmzRKzCpjQBwzY8ne73kVGH02teS
+	N5RnVhN/OM7Ic3asZK3JkoGRnCb1D23w4fajVlod6EByZoFUF3XD3ZciCJS+qj776UBN3K0CBawOv
+	XSGiVJBemyhxT2idp/f+dtpe1bD2LU6tORUqS2hHssY/w0FeVBTm42w6DAPwzrehbH1fRGfMNknHf
+	BrQ38ZuOeFg3MuYqY+sxSA1+qc7Pgl7meWvw+ok31qiU149n1r8HHm445Yg9Vbs19Jw6QaT0T+MNR
+	LqP9xVBjzRWRP/fXkatw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qoHme-001W39-0V
+	id 1qpm9Y-00A2bh-2q
 	for ath12k@archiver.kernel.org;
-	Thu, 05 Oct 2023 06:24:28 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Mon, 09 Oct 2023 09:02:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qoHmb-001W2D-1s
+	id 1qpm9V-00A2aY-2y
 	for ath12k@lists.infradead.org;
-	Thu, 05 Oct 2023 06:24:27 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id BB8A7CE1DDD
-	for <ath12k@lists.infradead.org>; Thu,  5 Oct 2023 06:24:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4BE5EC433AB;
-	Thu,  5 Oct 2023 06:24:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696487063;
-	bh=yzON0/8AzdJNaPS9HT17ZwhuFj1fWIAt4MvZ47s8buw=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=sItvzO2qI36HAyZ/ml0DUgZDqxB5P3WoYpvmYVF+TQnoVwtaSniu/fBPEf9YcLgIj
-	 MlWtQN8y8m+uYlZHGrUS9W9CyqM9AeK7w08w0Gp00LFo1VlP+ySoBPQ0Kv4r29mcgH
-	 VkLZTHPOupRFiTRGT/dCBJSSSJ7uAoKbeJV6Q1kcEQjpQqzGcifyIBtUuw6r1MNAf6
-	 C7BuxsZb/0QQ8ERyuAthmu/jNrGJm9TlyfVVI2AdIiUL0e2rXzi59y6B/dwja0TREY
-	 srC6MwJKnXLoEDu6nSQy8xD8f0Bj8mhVmI7RyS2007V1shs8BTs9ZBki8EfWr9motz
-	 9kZGFmbTWN5ag==
+	Mon, 09 Oct 2023 09:02:15 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39984cIj023634;
+	Mon, 9 Oct 2023 09:02:08 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=9twVUG2SrWS+ncc3m23Jbox6Lmt2JfGJv63ykKkk5s0=;
+ b=DP3HlTgB7aLBFrBd/DKdAiZhhkQrlgBVANicGRDQmlR6CwmCg4KGAN+3hlYCloSCBuDa
+ jwRJzSnZs0u1+1dI5wuQcoR7xiOa7qCmIPtbjH+i5tN2OWWpsjkI44yQtjVW2BiKfK9l
+ HnJFV71AKMHXgM4h1Pf/4gYU5wzV+o5LPuknM19smeYN1/CS0aPRClrtw1ObxbJAtGOO
+ tXR39bZF3mrtJ2+tN/ERZIZ5+77v0ItbXausMxVvURSNqbRq53e1cIC3GcV/nlYB4m88
+ 5xpX8YqTqnnOg+bGcxerYlzoH9WJN8IsnsY4t3SO7aYd5N/4qmhRrCiAPlJp+CwzsERg Dg== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tkh4t9xr2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 09 Oct 2023 09:02:07 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 399926ws010343
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 9 Oct 2023 09:02:06 GMT
+Received: from lingbok-Latitude-E5440.qca.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.36; Mon, 9 Oct 2023 02:02:04 -0700
+From: Lingbo Kong <quic_lingbok@quicinc.com>
+To: <ath12k@lists.infradead.org>, <kvalo@kernel.org>,
+        <quic_jjohnson@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
+Subject: [PATCH v5 0/4] wifi: ath12k: implement some functionalities through reading ACPI Table
+Date: Mon, 9 Oct 2023 05:01:45 -0400
+Message-ID: <20231009090149.247211-1-quic_lingbok@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Subject: Re: [PATCH] wifi: ath12k: fix debug messages
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231003150132.187875-1-kvalo@kernel.org>
-References: <20231003150132.187875-1-kvalo@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169648706024.444191.15030535746469071290.kvalo@kernel.org>
-Date: Thu,  5 Oct 2023 06:24:22 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: x4nM5OH-duSCYfeOUnQu-16a3vYfWrSx
+X-Proofpoint-ORIG-GUID: x4nM5OH-duSCYfeOUnQu-16a3vYfWrSx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-09_07,2023-10-06_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=586
+ priorityscore=1501 lowpriorityscore=0 phishscore=0 clxscore=1011
+ spamscore=0 impostorscore=0 bulkscore=0 malwarescore=0 adultscore=0
+ suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310090075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231004_232425_800875_78C3CD01 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231009_020214_097502_6930C69B 
+X-CRM114-Status: GOOD (  13.41  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,30 +95,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> wrote:
+v5:
+1.rebase to the latest tag
 
-> In ath12k the debug messages were broken, no matter setting what value to the
-> debug_mask module parameter would not get the debug messages printed. The issue
-> is that __ath12k_dbg() uses dev_dbg() to print the debug messages which requires either enabling
-> CONFIG_DYNAMIC_DEBUG or DEBUG symbol in the driver.
-> 
-> ath12k is supposed to use debug_mask module to control whether debug messages
-> are printed or not. Using both CONFIG_DYNAMIC_DEBUG and debug_mask parameter
-> does not make any sense so switch to using dev_printk(), just like ath11k does.
-> Now it's enough just to debug_mask module parameter to get the debug messages.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+v4:
+1.revise commit log using imperative voice
+2.delete guid_is_null()
 
-Patch applied to ath-next branch of ath.git, thanks.
+v3:
+1.remove unnecessary cpu_to_le32()
+2.adjust the order of the macros
+3.apply jeff's advice
 
-453a62a3ee65 wifi: ath12k: fix debug messages
+v2:
+1.put <linux/acpi.h> in the include guard
 
+Lingbo Kong (4):
+  wifi: ath12k: add TAS capability for WCN7850
+  wifi: ath12k: add BIOS SAR capability for WCN7850
+  wifi: ath12k: add adjust configuration of CCA threshold value for
+    WCN7850
+  wifi: ath12k: add set band edge channel power for WCN7850
+
+ drivers/net/wireless/ath/ath12k/Makefile |   3 +-
+ drivers/net/wireless/ath/ath12k/acpi.c   | 365 +++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/acpi.h   |  60 ++++
+ drivers/net/wireless/ath/ath12k/core.c   |   6 +
+ drivers/net/wireless/ath/ath12k/core.h   |  13 +
+ drivers/net/wireless/ath/ath12k/hw.c     |  10 +
+ drivers/net/wireless/ath/ath12k/hw.h     |   4 +-
+ drivers/net/wireless/ath/ath12k/pci.c    |   6 +
+ drivers/net/wireless/ath/ath12k/wmi.c    | 252 ++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h    |  47 ++-
+ 10 files changed, 763 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/net/wireless/ath/ath12k/acpi.c
+ create mode 100644 drivers/net/wireless/ath/ath12k/acpi.h
+
+
+base-commit: 3b961e3a412d9d4b70418f53d07847af0a7ea376
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231003150132.187875-1-kvalo@kernel.org/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.34.1
 
 
 -- 
