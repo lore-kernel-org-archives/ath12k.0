@@ -4,62 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75EC3CD6E49
-	for <ath12k@archiver.kernel.org>; Wed, 11 Oct 2023 08:55:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CB19CDB468
+	for <ath12k@archiver.kernel.org>; Wed, 11 Oct 2023 16:38:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=71IKOV7iLAswI+Ny5dFaViJ3DpRSZ91Zu9WxIAhElpA=; b=i/n2BgquoNWONS
-	4HbXo3sfqv3zN5ZGPzAVdFGspt8Il94SmmHcEUkyuPX6atAz7/cSnlJKnKiSwD548OvsdkjudnMh7
-	gkUQPoEdsLsIZEl8LEW2tIf8Di879ZeYPUDzMazBjn3zMiTxtoACvqtTdqWYiAkgiYLRee75tue0q
-	augDXVtudDwyCWjXhj+jZZn1up8Op+NzJCYzHND1ijS5o2ifgeWYWDxMIU2THSoh4ejEhswE2GIGP
-	Pdhq/zqTX1X+M/kih6bRnV6O8dUeOIYof7h4CbnHWPtFYINaCqhxjey9CvjyYbP/yTTOQPpRyeD6E
-	2SnyP61jhKqBYTZLJFMQ==;
+	List-Owner; bh=hyPSLdKSvjFD5n4rslPYVcThrpgo5UnHZcos/lBBJgg=; b=V7KzS40iRI/pHv
+	uDo3cEtHk6buvt+QuwcWAYB4G6plD4xI2EZbbbDB5VedhyOTgKWChCwoPvXvintSS1U7vArgTaNM8
+	5S5/KU7jxrDjrQUwgJJuEm5GiGylE2uN0dV5qdU9v5FBfX52y4gj7CkDcmaRsCBzDjXNn//6BIjrj
+	zk+cS6lsZDPAOo/542YeRBIjhqxyJgKQyLhxHO9Jgfr6m4k/H/RPWGWCFaP0IIh3mU1rhW47SbMEo
+	HsTFcDqsw5bi+I5160TDfasixw8jJnClfgzMwpYdSgxaocfvm6xaAY2hDvw4NE0ydOTslalr2AmaX
+	Y+RpTK8PltBbMSlg+1jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qqV0P-00FHJR-0i
+	id 1qqcDt-00GGd6-27
 	for ath12k@archiver.kernel.org;
-	Wed, 11 Oct 2023 08:55:49 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 11 Oct 2023 16:38:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qqV0L-00FHIg-2Z
+	id 1qqcDr-00GGcN-1Q
 	for ath12k@lists.infradead.org;
-	Wed, 11 Oct 2023 08:55:47 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1A67561AE1;
-	Wed, 11 Oct 2023 08:55:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9DF52C433C7;
-	Wed, 11 Oct 2023 08:55:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1697014544;
-	bh=ypmKXRXN1bDbe6BFnY52JOMJEHn4p1Ml9jjg3Cls6yQ=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=S36I6tTLRNWWOyYJERZnEvDfdRdM5VZ2cY4TzOEtzhPF1BK1XQnusUKKdgYtXNYtF
-	 EYOKfZV6P6Y87HZ0Ol7jRG/4flF4wl9ah7+cZQjoctR+qT9L3LLTN+WN8RICEhgCGH
-	 G4r8vbPwdi8tm6fEv35Q7FtIy/m68ZfEocHGrQsyxUj5+ZrvFkQN6yOR69hd+ETv+w
-	 vik3NwzMmxk7CPqFjrZgYZKQwUh6TwnuCR19sBsk5veZMEf8IZ/NJdwOX8Qukhn5b3
-	 MttLjUgBZVrE1ihjmfpoDcvNSGaYtG8+FwQeP8vfVPnG8AiECFVzXiW/IcwHuZr3B5
-	 b8JQoJZmsIDKw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Ma Ke <make_ruc2021@163.com>
-Cc: quic_jjohnson@quicinc.com,  ath12k@lists.infradead.org,
-  linux-wireless@vger.kernel.org,  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] wifi: ath12k: call ath12k_mac_fils_discovery() without
- condition
-References: <20231011072950.4097927-1-make_ruc2021@163.com>
-Date: Wed, 11 Oct 2023 11:55:41 +0300
-In-Reply-To: <20231011072950.4097927-1-make_ruc2021@163.com> (Ma Ke's message
-	of "Wed, 11 Oct 2023 15:29:50 +0800")
-Message-ID: <87mswp4jxu.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 11 Oct 2023 16:38:12 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39BCNJpp017903;
+	Wed, 11 Oct 2023 16:38:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=gu2apgfUR9QVJtxf7s5KraUVpcOv6L4f5sRu4PMzoEo=;
+ b=V+ZLAypLAl2+hVF7j88bQ+AleU7rPEuJXXSL/QazlgReJIn9vQwS6divex2ddgMvWT8U
+ qk5a7hYbmndeCeIFyGEUTsUhRpMh95xdcJ3hpmCskg3lW+r8yAE/DCZ8szK0YoBNOwQE
+ ro3ILnP6gVUd526yky8N2PHJZR/NdnaIZxNOtv0y163cEsJo1bAHr4LK7MHiNc25cWJV
+ 77kB1e4Q24cSo8vefUYFK9RtM9dXaUOaByQBIGXkUiHdxrg2rcSHKctFZ+ZKGkw/8uAe
+ 3x0dXTGYdYpMeJ2gOubNiPf9CBGUD7a5YMMzqGgYk4XP7DyC3dPcJEz9I0RoI4KLO9ta MQ== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tnstyrxsk-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 11 Oct 2023 16:38:07 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39BGc7xc019816
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 11 Oct 2023 16:38:07 GMT
+Received: from [10.111.181.241] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Wed, 11 Oct
+ 2023 09:38:06 -0700
+Message-ID: <fbc9c0ed-87b9-490b-9992-14625eda9635@quicinc.com>
+Date: Wed, 11 Oct 2023 09:38:06 -0700
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 1/4] wifi: ath12k: add TAS capability for WCN7850
+Content-Language: en-US
+To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20231011050004.423413-1-quic_lingbok@quicinc.com>
+ <20231011050004.423413-2-quic_lingbok@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20231011050004.423413-2-quic_lingbok@quicinc.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: M39FipRfkYYfimfBIUtnppooHA7poeZa
+X-Proofpoint-GUID: M39FipRfkYYfimfBIUtnppooHA7poeZa
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-11_11,2023-10-11_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
+ bulkscore=0 malwarescore=0 suspectscore=0 priorityscore=1501
+ impostorscore=0 mlxlogscore=883 lowpriorityscore=0 clxscore=1015
+ spamscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310110145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231011_015545_880420_B23E1AB3 
-X-CRM114-Status: UNSURE (   7.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231011_093811_508940_9E3F21F6 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,35 +93,27 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ma Ke <make_ruc2021@163.com> writes:
+On 10/10/2023 10:00 PM, Lingbo Kong wrote:
+> Currently, ath12k does not support Time-Average-SAR(TAS) for WCN7850. In
+> order to enable Time-Average-SAR(TAS) for WCN7850, ath12k defines
+> ath12k_get_acpi_all_data() function to get TAS configuration and SAR power
+> table, then sets pdev_id, param_type_id, and finally sends the TAS
+> configuration, SAR power table and WMI_PDEV_SET_BIOS_INTERFACE_CMDID
+> command to firmware to implement TAS during the initialization phase.
+> Besides, ath12k registers an ACPI event callback so that ACPI can notify
+> ath12k to get the updated SAR power table and sends it to firmware when the
+> device state is changed.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-> Mac80211 does not set flags BSS_CHANGED_FILS_DISCOVERY and
-> BSS_CHANGED_UNSOL_BCAST_PROBE_RESP if there are no updates to
-> FILS discovery and unsolicited broadcast probe response transmission
-> configurations respectively. This results in the transmissions getting
-> stopped during BSS change operations which do not include these
-> attributes. Remove the checks for the flags and always send the existing
-> configuration to firmware.
->
-> Signed-off-by: Ma Ke <make_ruc2021@163.com>
-
-This looks almost identical to Aloka's patch:
-
-wifi: ath12k: call ath12k_mac_fils_discovery() without condition
-
-https://git.kernel.org/netdev/net-next/c/43a10990404f
-
-What's happening here?
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 -- 
 ath12k mailing list
