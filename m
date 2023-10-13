@@ -4,87 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0591CDB484
-	for <ath12k@archiver.kernel.org>; Fri, 13 Oct 2023 07:00:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DD92CDB483
+	for <ath12k@archiver.kernel.org>; Fri, 13 Oct 2023 07:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z3WNyh43sppKYwfQTmb5NbMI5wYJ0BiZ6+PNw7gIoDI=; b=Bz1+0GI8T+iV4t
-	urZP0ZavWH0qONNhw9C1Fv1yOg/MLEC0XT1BgW2PNzoyfFZfZiAHtSrSRoff4hGYc/B9vrNdtOifB
-	lh62mRwx9UgTfsodJtkEP9JLE5ee9zQG8T06F2c9kHjimIvTGDL6wsZrhviPZlZ0CovdA7mkYv0cd
-	wChTO8J3U7SwaLKFCiIF2gm3dM6l1GFwWzyWyRDBNzeKcpMZx8l2L5OexsK3XVI02cWWWgTA/P92K
-	fI0hUZah4mF2ls6tRHnI5ZO66gzeWXdMGZkfD0g3rJAubem81FdwnZzlcRcgPW+NTXoxwhvzAqEZC
-	xiSfrTeRjMdZ4P01GM8g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WUYnGyZKRbMn8UB2srNr6ly4bSUs4zqmPc+gW3AQbXI=; b=L7DZF6JDUrMGir
+	0I77SusSVcxDsKYaNRi+Ik8A76JnDdjytz96w8XikaG0bM+teSPb08qCksKtnxwh+g+U7M7nSFFRq
+	oiR8xirDm/cmPF9oQB8ArKiHAMnE3zk/IVp81S/LRCydZJXHPiaJDg/nNAZ6vSutE3EOdvRr2Lslv
+	FJVWLKy1XOdjERSkfrlR6UWYDfY79rF5WjIM35a5xd+uZ+RxYOSz4fUXtjX8b10nQQ6i25BHUi98k
+	aQSdEhSnqVndnr36I2u7VfbwKSj3eD2POGNIBiUKu6/riW1k2FA2xqg0vW+Y30BfDqDAaAqkQQa28
+	QhEkfe9e3idbisPyKQQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrC9m-002g1i-19
+	id 1qrCtg-002kFn-0L
 	for ath12k@archiver.kernel.org;
-	Fri, 13 Oct 2023 07:00:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrC9g-002fzQ-2K
+	Fri, 13 Oct 2023 07:47:48 +0000
+Received: from m12.mail.163.com ([220.181.12.197])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qrCtd-002kDp-0n
 	for ath12k@lists.infradead.org;
-	Fri, 13 Oct 2023 07:00:20 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39D6K8mN004841;
-	Fri, 13 Oct 2023 07:00:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references; s=qcppdkim1;
- bh=1iTuwP352xzZDvTi8jqrD/tRqg8F/XkjG7R0hkSBj1c=;
- b=chjbLLwLreGztcTws08uRe/57IrutQaEZDHbZ3NNxPyQrO9z6GS8y7fSXCPIfAnkNOO7
- XRhiXmh4RJW/DfECFgtHUJvaBaMR2/beE+spHV107oSXllWsUv1iROtnrm5f7DJj0Mau
- Q4sN+rrvXzdJePdjJZfXBE6aczNcauqsZ4/vYj2GYViG7+7NItAFzQEWVVKoERmIDvT0
- Ub3dXO2YmurS5npDh2sdcDcdGi0J4gW/qIsVmv2/8n4XdViHZDZGIWaEBiq6QatrdN3w
- EF+vLgWDMmQoyaOyRZ+LB26iTCM36XylvbTrnpbM6cKQLDtGZ0WqbDX1jMT1jtMGzRlB LA== 
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tpt1yrv88-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 07:00:13 +0000
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 39D70AKD020104;
-	Fri, 13 Oct 2023 07:00:10 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3tk0dkvxwq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Fri, 13 Oct 2023 07:00:10 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 39D70A9r020088;
-	Fri, 13 Oct 2023 07:00:10 GMT
-Received: from rgnanase-linux.qualcomm.com (rgnanase-linux.qualcomm.com [10.201.162.135])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 39D70AET020085;
-	Fri, 13 Oct 2023 07:00:10 +0000
-Received: by rgnanase-linux.qualcomm.com (Postfix, from userid 2378837)
-	id 3FCFB1101FE3; Fri, 13 Oct 2023 12:30:09 +0530 (IST)
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH 2/2] wifi: ath12k: Enable Mesh support for QCN9274
-Date: Fri, 13 Oct 2023 12:30:06 +0530
-Message-Id: <20231013070007.25597-2-quic_rgnanase@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20231013070007.25597-1-quic_rgnanase@quicinc.com>
-References: <20231013070007.25597-1-quic_rgnanase@quicinc.com>
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: prfP12_RnrL5fJvnB46t0fvwk6gAwoQs
-X-Proofpoint-ORIG-GUID: prfP12_RnrL5fJvnB46t0fvwk6gAwoQs
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-13_03,2023-10-12_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- clxscore=1011 lowpriorityscore=0 bulkscore=0 impostorscore=0 mlxscore=0
- phishscore=0 mlxlogscore=791 priorityscore=1501 suspectscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310130057
+	Fri, 13 Oct 2023 07:47:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:Subject:Date:Message-Id:MIME-Version; bh=2FP/I
+	2HYvAdTtXOXfAHhCpnshFB9PypJYAVg1wtwkRU=; b=YWvQlSrhLrGqgUFYLb9bj
+	Dzv6ST3gElzGD9PRpj+6XgdJvz9Gl9TLaRTWJa7s7f8cS/ttCxJb9xJxKatgeQ7v
+	pv/0Sg5DDrie8nwFklTgNDPbb9FsV+bWlKStqA91iNQ6j6eCGtYM98sMjEGHeZOg
+	LMQQijj5ttImm9/za4suso=
+Received: from icess-ProLiant-DL380-Gen10.. (unknown [183.174.60.14])
+	by zwqz-smtp-mta-g4-4 (Coremail) with SMTP id _____wDHb8cB9ihl+PW5AQ--.20384S4;
+	Fri, 13 Oct 2023 15:47:25 +0800 (CST)
+From: Ma Ke <make_ruc2021@163.com>
+To: kvalo@kernel.org,
+	quic_jjohnson@quicinc.com
+Cc: ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Ma Ke <make_ruc2021@163.com>
+Subject: [PATCH] wifi: ath12k: drop NULL pointer check in ath12k_update_per_peer_tx_stats()
+Date: Fri, 13 Oct 2023 15:47:11 +0800
+Message-Id: <20231013074711.2202850-1-make_ruc2021@163.com>
+X-Mailer: git-send-email 2.37.2
+MIME-Version: 1.0
+X-CM-TRANSID: _____wDHb8cB9ihl+PW5AQ--.20384S4
+X-Coremail-Antispam: 1Uf129KBjvdXoWruF45Xr1kGrWkGw4DJF4kCrg_yoW3Krc_Ga
+	12vF4xXFs3Gws8Kr47ZF42qrWqvasrJFZ5JF4qqrWfCrW7JrWUAr98Zw1kAryq93WDArna
+	9wsrJF4UX39YgjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7xRMeHqJUUUUU==
+X-Originating-IP: [183.174.60.14]
+X-CM-SenderInfo: 5pdnvshuxfjiisr6il2tof0z/1tbivggIC1ZcjGu80wAAs3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231013_000016_883586_717AC5DF 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20231013_004746_094659_974FE67C 
+X-CRM114-Status: UNSURE (   5.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,49 +71,36 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently QCN9274 supports only AP and station interface modes.
+Since 'user_stats' is a fixed-size array of 'struct htt_ppdu_user_stats'
+in 'struct htt_ppdu_stats', any of its member can't be NULL and so
+relevant check may be dropped.
 
-Add interface type mesh to ath12k_hw_params for
-QCN9274 to provide support for mesh mode as well.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Signed-off-by: Ma Ke <make_ruc2021@163.com>
 ---
- drivers/net/wireless/ath/ath12k/hw.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index f69649f58e82..ac2106fa8b56 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -886,7 +886,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.vdev_start_delay = false,
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index e6e64d437c47..a38a239669a8 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1339,9 +1339,6 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
+ 	u8 tid = HTT_PPDU_STATS_NON_QOS_TID;
+ 	bool is_ampdu = false;
  
- 		.interface_modes = BIT(NL80211_IFTYPE_STATION) |
--					BIT(NL80211_IFTYPE_AP),
-+					BIT(NL80211_IFTYPE_AP) |
-+					BIT(NL80211_IFTYPE_MESH_POINT),
- 		.supports_monitor = false,
+-	if (!usr_stats)
+-		return;
+-
+ 	if (!(usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_RATE)))
+ 		return;
  
- 		.idle_ps = false,
-@@ -1006,7 +1007,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.vdev_start_delay = false,
- 
- 		.interface_modes = BIT(NL80211_IFTYPE_STATION) |
--					BIT(NL80211_IFTYPE_AP),
-+					BIT(NL80211_IFTYPE_AP) |
-+					BIT(NL80211_IFTYPE_MESH_POINT),
- 		.supports_monitor = false,
- 
- 		.idle_ps = false,
 -- 
-2.17.1
+2.37.2
 
 
 -- 
