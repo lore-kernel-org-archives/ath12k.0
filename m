@@ -4,85 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9B1BCDB483
-	for <ath12k@archiver.kernel.org>; Fri, 13 Oct 2023 14:31:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96101CDB487
+	for <ath12k@archiver.kernel.org>; Fri, 13 Oct 2023 16:42:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HgvNgwGm446obGDMkvGUjGJ87shmLL9dwz+RKvOpiDQ=; b=cx0GypiyZxsGPj
-	uKG1PDBhmNj9NVsx5DkHduBMG7wXVD8tEWgsaQBx5zo6MLyMcD3VRDqKkLAVL0eY/EwssGkySrz3y
-	XpB2sn6IGf1dIw/2IqhIrIKI6yNXgn8ymtmKWPr7Mxhia5XsfcDDs4RTLHzNmGqmhSFFtZ3tG1XYI
-	Nrgwpba2sWGLUNpFsFmmcYaKkkkz/KAru2hRAsY5pUB/dcW37WiqMUQ3yjOCbc3d8uVWhssaGI7+u
-	ZA9dc39JQegK6VEXi+9oUydR69IhmGz7kWiCfCPiyL9M4u4Qo/2uUH4Ogqnr/fPDYW8GOjJsp1AG+
-	PXOrTmvgNiRF9YG3QiQA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=Kw4eVXvJdmw5yBNFkYtE6Y12s9aX3Kaj9FOU6GnsSYw=; b=phgNscG2TYN6o/
+	aPKIfQ9M/6lxMz7/HhP1+bwf94kdp0WvDxzfOu4WQw3Wrf6twreUWi05/oGorazrH+RTBO+2KSy6P
+	ny9gGGM/JMb69VIy9UQEXehjsaXwakzaN5GSX71XZwtnzfhRggbRgPt6lCzGZiBaaKLGJsbFUjuvj
+	9pOchzQFf2V/b/u1IHnLSQkdDQo455BHthHZ/3qV+YGin1kTbxGUdoTZIGSnAoBvKSFQEtLWtOwLF
+	o9dyiL3GSJz4alz4bRLIO2ZEH7vaORTZ9OeZxOHu0puOwAJZUHOpVWqpuBjNkMhVsnLRn+oPLLYS/
+	N51pRr+50L4GPvdDedWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrJBs-003azc-1e
+	id 1qrLFE-003trT-12
 	for ath12k@archiver.kernel.org;
-	Fri, 13 Oct 2023 14:31:00 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 13 Oct 2023 16:42:36 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrJBp-003ayq-0I
-	for ath12k@lists.infradead.org;
-	Fri, 13 Oct 2023 14:30:58 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39DDojZj005405;
-	Fri, 13 Oct 2023 14:30:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=byyPySpuEzs+k9GORQd9rQy1JwT/b/pZRBAjY44ovu8=;
- b=klI6eWPFPTZNlw0HbQvUWqLoUx8cPEi7yXoRrW2cF4o9ZT2+mA8YwhkR/STZvbL7QnkH
- rtCOgpzeQFQf8IdSWGaLlgvAxhfnQkjJPK2NOo8lUdG8XbNirEt1sXllZjqjMQ/YvFTC
- vSOkjjUfzfx3cIhyeM14pvxHP+OSf64VzOeBibpB4JEDpMPOVOgRZkXeySKEUuowGJG3
- Y+rfym6HdwHhtkOtJOXFiTHKFJ18AzfGe1Y6YWhgEasn8p0KukXZeApybjHyiyEmQOSD
- iR+9lw7NuJa6W6zO3gcWZpf7/BiE+oaxSBMsLeQwY7IqtRE6IQDUN4dRG4D0TE2tKlhp zw== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tpt1k1wab-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 14:30:56 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39DEUs6O031999
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 14:30:54 GMT
-Received: from [10.111.181.241] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.36; Fri, 13 Oct
- 2023 07:30:54 -0700
-Message-ID: <a661a608-e077-4b1c-ae9c-c0d1711bc1b0@quicinc.com>
-Date: Fri, 13 Oct 2023 07:30:54 -0700
+	id 1qrLFA-003toi-2d;
+	Fri, 13 Oct 2023 16:42:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 2D17ACE315D;
+	Fri, 13 Oct 2023 16:42:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C518C433C8;
+	Fri, 13 Oct 2023 16:42:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1697215350;
+	bh=MqC3yrRRj3UMGOPti8ERknVNqGEUu0oFiV03E0Vidv0=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=b86OTm7/vWPz1lXdWBiZn7RcGveX1aFsvL5jmXTq2YbcyNGIbGhWA6q1/AnMGbd1N
+	 IFYYegR+vc8lMskeUk8lajThoc+bo1PlPWPhNqD2fwOG3AfKYpg90Eza/kNH0uSNPW
+	 Jky7Vj9783vlIkTQS3O7jJucPYVzjXAq/DJZUjUVY+A/BEROWzFLMN0GpWgbN/I8Vu
+	 ImQsRWZuesvRBHjxd0H3/8ZdxSWJjJnhbYb4F5CAQ1P15D5R2lTSA+hkWwJq0LpHAe
+	 Bn/6fD9G+fr9mHm/5sCM1EEe3TdFQCGEcv6U3ysqKGhpLI6CBcvRuzJ9zOUE+g+0U1
+	 YdquVEXDnza8g==
+Date: Fri, 13 Oct 2023 11:42:28 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>
+Cc: "Rafael J . Wysocki" <rafael@kernel.org>, linux-pci@vger.kernel.org,
+	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Lukas Wunner <lukas@wunner.de>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+	LKML <linux-kernel@vger.kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>, ath10k@lists.infradead.org,
+	ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+	intel-wired-lan@lists.osuosl.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-bluetooth@vger.kernel.org, linux-mediatek@lists.infradead.org,
+	linux-rdma@vger.kernel.org, linux-wireless@vger.kernel.org,
+	Netdev <netdev@vger.kernel.org>
+Subject: Re: [PATCH v2 03/13] PCI/ASPM: Disable ASPM when driver requests it
+Message-ID: <20231013164228.GA1117889@bhelgaas>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] wifi: ath12k: Enable Mesh support for QCN9274
-Content-Language: en-US
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20231013070007.25597-1-quic_rgnanase@quicinc.com>
- <20231013070007.25597-2-quic_rgnanase@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231013070007.25597-2-quic_rgnanase@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 0CIFalHJkoriwyE-u3fptpIAbnY45BF8
-X-Proofpoint-GUID: 0CIFalHJkoriwyE-u3fptpIAbnY45BF8
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-13_06,2023-10-12_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=665 phishscore=0
- spamscore=0 mlxscore=0 malwarescore=0 priorityscore=1501 adultscore=0
- clxscore=1015 bulkscore=0 impostorscore=0 suspectscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310130121
+Content-Disposition: inline
+In-Reply-To: <aa3386a4-c22d-6d5d-112d-f36b22cda6d3@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231013_073057_243994_99C572DE 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231013_094233_197241_07A7B50C 
+X-CRM114-Status: GOOD (  29.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,25 +79,52 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/13/2023 12:00 AM, Ramya Gnanasekar wrote:
-> Currently QCN9274 supports only AP and station interface modes.
-> 
-> Add interface type mesh to ath12k_hw_params for
-> QCN9274 to provide support for mesh mode as well.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-
-
-
--- 
-ath12k mailing list
-ath12k@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/ath12k
+T24gVGh1LCBPY3QgMTIsIDIwMjMgYXQgMDE6NTY6MTZQTSArMDMwMCwgSWxwbyBKw6RydmluZW4g
+d3JvdGU6Cj4gT24gV2VkLCAxMSBPY3QgMjAyMywgQmpvcm4gSGVsZ2FhcyB3cm90ZToKPiA+IE9u
+IE1vbiwgU2VwIDE4LCAyMDIzIGF0IDA0OjEwOjUzUE0gKzAzMDAsIElscG8gSsOkcnZpbmVuIHdy
+b3RlOgo+ID4gPiBQQ0kgY29yZS9BU1BNIHNlcnZpY2UgZHJpdmVyIGFsbG93cyBjb250cm9sbGlu
+ZyBBU1BNIHN0YXRlIHRocm91Z2gKPiA+ID4gcGNpX2Rpc2FibGVfbGlua19zdGF0ZSgpIGFuZCBw
+Y2lfZW5hYmxlX2xpbmtfc3RhdGUoKSBBUEkuIEl0IHdhcwo+ID4gPiBkZWNpZGVkIGVhcmxpZXIg
+KHNlZSB0aGUgTGluayBiZWxvdyksIHRvIG5vdCBhbGxvdyBBU1BNIGNoYW5nZXMgd2hlbiBPUwo+
+ID4gPiBkb2VzIG5vdCBoYXZlIGNvbnRyb2wgb3ZlciBpdCBidXQgb25seSBsb2cgYSB3YXJuaW5n
+IGFib3V0IHRoZSBwcm9ibGVtCj4gPiA+IChjb21taXQgMmFkZDBlYzE0YzI1ICgiUENJL0FTUE06
+IFdhcm4gd2hlbiBkcml2ZXIgYXNrcyB0byBkaXNhYmxlIEFTUE0sCj4gPiA+IGJ1dCB3ZSBjYW4n
+dCBkbyBpdCIpKS4gU2ltaWxhcmx5LCBpZiBBU1BNIGlzIG5vdCBlbmFibGVkIHRocm91Z2gKPiA+
+ID4gY29uZmlnLCBBU1BNIGNhbm5vdCBiZSBkaXNhYmxlZC4KPiAuLi4KCj4gPiBUaGlzIGRpc2Fi
+bGVzICphbGwqIEFTUE0gc3RhdGVzLCB1bmxpa2UgdGhlIHZlcnNpb24gd2hlbgo+ID4gQ09ORklH
+X1BDSUVBU1BNIGlzIGVuYWJsZWQuICBJIHN1cHBvc2UgdGhlcmUncyBhIHJlYXNvbiwgYW5kIG1h
+eWJlIGEKPiA+IGNvbW1lbnQgY291bGQgZWxhYm9yYXRlIG9uIGl0Pwo+ID4KPiA+IFdoZW4gQ09O
+RklHX1BDSUVBU1BNIGlzIG5vdCBlbmFibGVkLCBJIGRvbid0IHRoaW5rIHdlIGFjdGl2ZWx5Cj4g
+PiAqZGlzYWJsZSogQVNQTSBpbiB0aGUgaGFyZHdhcmU7IHdlIGp1c3QgbGVhdmUgaXQgYXMtaXMs
+IHNvIGZpcm13YXJlCj4gPiBtaWdodCBoYXZlIGxlZnQgaXQgZW5hYmxlZC4KPiAKPiBUaGlzIHdo
+b2xlIHRyaWNrZXJ5IGlzIGludGVuZGVkIGZvciBkcml2ZXJzIHRoYXQgZG8gbm90IHdhbnQgdG8g
+aGF2ZSBBU1BNIAo+IGJlY2F1c2UgdGhlIGRldmljZXMgYXJlIGJyb2tlbiB3aXRoIGl0LiBTbyBs
+ZWF2aW5nIGl0IGFzLWlzIGlzIG5vdCByZWFsbHkgCj4gYW4gb3B0aW9uIChhcyBkZW1vbnN0cmF0
+ZWQgYnkgdGhlIGN1c3RvbSB3b3JrYXJvdW5kcykuCgpSaWdodC4KCj4gPiBDb25jZXB0dWFsbHkg
+aXQgc2VlbXMgbGlrZSB0aGUgTE5LQ1RMIHVwZGF0ZXMgaGVyZSBzaG91bGQgYmUgdGhlIHNhbWUK
+PiA+IHdoZXRoZXIgQ09ORklHX1BDSUVBU1BNIGlzIGVuYWJsZWQgb3Igbm90IChzdWJqZWN0IHRv
+IHRoZSBxdWVzdGlvbgo+ID4gYWJvdmUpLgo+ID4gCj4gPiBXaGVuIENPTkZJR19QQ0lFQVNQTSBp
+cyBlbmFibGVkLCB3ZSBtaWdodCBuZWVkIHRvIGRvIG1vcmUgc3R1ZmYsIGJ1dAo+ID4gaXQgc2Vl
+bXMgbGlrZSB0aGUgY29yZSBzaG91bGQgYmUgdGhlIHNhbWUuCj4gCj4gU28geW91IHRoaW5rIGl0
+J3Mgc2FmZXIgdG8gcGFydGlhbGx5IGRpc2FibGUgQVNQTSAoYXMgcGVyIGRyaXZlcidzIAo+IHJl
+cXVlc3QpIHJhdGhlciB0aGFuIGRpc2FibGUgaXQgY29tcGxldGVseT8gSSBnb3QgdGhlIGltcHJl
+c3Npb24gdGhhdCB0aGUgCj4gbGF0dGVyIG1pZ2h0IGJlIHNhZmVyIGZyb20gd2hhdCBSYWZhZWwg
+c2FpZCBlYXJsaWVyIGJ1dCBJIHN1cHBvc2UgSSBtaWdodCAKPiBoYXZlIG1pc2ludGVycHJldGVk
+IGhpbSBzaW5jZSBoZSBkaWRuJ3QgZXhhY3RseSBzYXkgdGhhdCBpdCBtaWdodCBiZSBzYWZlciAK
+PiB0byBfY29tcGxldGVseV8gZGlzYWJsZSBpdC4KCk15IHF1ZXN0aW9uIGlzIHdoZXRoZXIgdGhl
+IHN0YXRlIG9mIHRoZSBkZXZpY2Ugc2hvdWxkIGRlcGVuZCBvbgpDT05GSUdfUENJRUFTUE0uICBJ
+ZiB0aGUgZHJpdmVyIGRvZXMgdGhpczoKCiAgcGNpX2Rpc2FibGVfbGlua19zdGF0ZShQQ0lFX0xJ
+TktfU1RBVEVfTDBTKQoKZG8gd2Ugd2FudCB0byBsZWF2ZSBMMSBlbmFibGVkIHdoZW4gQ09ORklH
+X1BDSUVBU1BNPXkgYnV0IGRpc2FibGUgTDEKd2hlbiBDT05GSUdfUENJRUFTUE0gaXMgdW5zZXQ/
+CgpJIGNhbiBzZWUgYXJndW1lbnRzIGJvdGggd2F5cy4gIE15IHRob3VnaHQgd2FzIHRoYXQgaXQg
+d291bGQgYmUgbmljZQp0byBlbmQgdXAgd2l0aCBhIHNpbmdsZSBpbXBsZW1lbnRhdGlvbiBvZiBw
+Y2lfZGlzYWJsZV9saW5rX3N0YXRlKCkKd2l0aCBhbiAjaWZkZWYgYXJvdW5kIHRoZSBDT05GSUdf
+UENJRUFTUE0tZW5hYmxlZCBzdHVmZiBiZWNhdXNlIGl0Cm1ha2VzIHRoZSBjb2RlIGVhc2llciB0
+byByZWFkLgoKQmpvcm4KCi0tIAphdGgxMmsgbWFpbGluZyBsaXN0CmF0aDEya0BsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2F0
+aDEyawo=
