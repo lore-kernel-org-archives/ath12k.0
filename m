@@ -4,82 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17F3CCDB483
-	for <ath12k@archiver.kernel.org>; Fri, 13 Oct 2023 11:44:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A07CCCDB47E
+	for <ath12k@archiver.kernel.org>; Fri, 13 Oct 2023 14:24:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eFV/fgDh8qD6UALS+sbtE7vSSfjzmQZv4YwyY8NObQw=; b=pQjFTs0KwQOr3n
-	9239LNclsjRizTKcb1r5zIh16Dlnhx83coaBSL87Ia60pFTkPFt1cdYXMIhD2PgR6PewmuU2Ierze
-	UdW+EkKQ/r+7mQIfrQKTLShKRy6THT4ap0hoCnd3H6ATMbc/afLUIBLwVZgXI5AXha75ELHCP0dJt
-	6LHxzdKV2Neyv/DZHj9xILwyXfvo4YR7cYPx5EDbLq6s7X2+rPlt8Xu6jB0c2eOHbqt5ejAggbBNj
-	IiFSZMlCvDO4kg1rCa/mhLxzPPQc6riX9X4T6ThOYbadmqsNK0fimMpcGyIzbn1yooBY+T5DzYbKf
-	EDLf0Vbcch4RD+KV8HIw==;
+	List-Owner; bh=5wTVK8egD+CXVRWNQAdqzNjqF6iqF/Vee4l/ZV6LSbc=; b=X+w9omIFsjYfuo
+	keAH4W7ygFroaId0vJ64hkiXGVRzzb3CwgREwES7ZOwdVuGkKrR93E0Fd2mu/paJ9bGFmz/ttKBPq
+	BHav+la3i5M2DggkoGSq9JbIJU+oZarEWPoUCkUGyCdbAYcLyGYSlb97MIGqKcRbi0JbfW5aMrBfu
+	aP7LQtb/7zVWOIO3Mz3Zlc4iqr/zZ7qXrqipQ4m8/zB0NTWyoxtpry/t7gJdoqvV/y50N606tv6u5
+	oPD1RwbiLcc5NuB/TlbOKTPcVcvF85MMR5ITUuS8gbh8h64oC8Wxnd6sDQAjGEJ8mQypLJLuDA7U3
+	Uso42hUpdOo3BNlVHQnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrGbC-003KrZ-0t
+	id 1qrJ5V-003aIy-1E
 	for ath12k@archiver.kernel.org;
-	Fri, 13 Oct 2023 11:44:58 +0000
+	Fri, 13 Oct 2023 14:24:25 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qrGb8-003Kpu-2Q
-	for ath12k@lists.infradead.org;
-	Fri, 13 Oct 2023 11:44:56 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39DAF1V8028467;
-	Fri, 13 Oct 2023 11:44:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding : content-type; s=qcppdkim1;
- bh=9M/HneumYeweKZWofbw990Dtq+CjoEz/y37Dt7aOwbo=;
- b=CwzeSwVwOaaMK8YcMINDaieDIvUm9F4522bR5i+RaUoMm6+1pIeKd0B/JzvcNGeVM14F
- ERU0qUtJwGiFQdIch73L8rBia+abIh2SSTc2DXQRIr2GsRJ3PziHTQN5Lle05NnqpZni
- kBs1qhQubEUWGN11lgGCopxB/GAeCMkKLPsAW66UKhz807YXDN/an2jjLYnz0YSpWx+N
- Y5C7BPo0gNNAG/gNzeTW/8QSw8ZfeY/VLFt82E9vt1nyPz/WTidtc0BFlmGTM35YRPXa
- 6/sn1nygynjmaAF2GemC2msZu+p0S99uBc5K3S2ImmKCsj0/cZtK0rI2K2wkTb106zBo uw== 
+	id 1qrJ5S-003aIS-1u;
+	Fri, 13 Oct 2023 14:24:24 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39DDgIpY022651;
+	Fri, 13 Oct 2023 14:24:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : date :
+ subject : mime-version : content-type : content-transfer-encoding :
+ message-id : references : in-reply-to : to : cc; s=qcppdkim1;
+ bh=Pir3ku6EK/1+189ah2jxDNBM4ljMV2VO5+1SLY1pm7o=;
+ b=DoIU1Ijl7NPjgnowNkqLnUDsrRBZC91Bzz7ze1RG0T3qVFmgF9S0GzrmBvmgss3i9Wax
+ iDIWzLArZ9w42g9TUosZnH8WdcUIlwrHCGHo41rhDwT8eVXOyaN9wqhHTRmMfpuWDIRt
+ 96hI9aJVITS7St/IYIlr4JwFNvibhZvGOY/o6kskIhimorNUnl/2Qnc4lDYK9j7v1SWl
+ OgVq9tH8XKHTRO6l0kGGJY2/EWny3isx/qkRy73YP2+fq8nxGYwjc9cOaeySot7mSo72
+ rO0khbjh2DLSnIMK0zpB7db/AJ1Nd29lIaSzGXqV9QQALFpER6aP+Et/3+dla/v8nYbl qg== 
 Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tq2sr8b63-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tpt1nsw9u-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 11:44:53 +0000
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39DBiqrY024148
+	Fri, 13 Oct 2023 14:24:11 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39DEOAA8018261
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Oct 2023 11:44:52 GMT
-Received: from lingbok-Latitude-E5440.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+	Fri, 13 Oct 2023 14:24:10 GMT
+Received: from hu-jjohnson-lv.qualcomm.com (10.49.16.6) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.36; Fri, 13 Oct 2023 04:44:51 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH v7 4/4] wifi: ath12k: add set band edge channel power for WCN7850
-Date: Fri, 13 Oct 2023 07:44:34 -0400
-Message-ID: <20231013114434.81648-5-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20231013114434.81648-1-quic_lingbok@quicinc.com>
-References: <20231013114434.81648-1-quic_lingbok@quicinc.com>
+ 15.2.1118.36; Fri, 13 Oct 2023 07:24:09 -0700
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+Date: Fri, 13 Oct 2023 07:24:09 -0700
+Subject: [PATCH 2/2] wifi: ath12k: Remove ath12k_base::bd_api
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+Message-ID: <20231013-ath11k_bd_api-v1-2-3fefe4629706@quicinc.com>
+References: <20231013-ath11k_bd_api-v1-0-3fefe4629706@quicinc.com>
+In-Reply-To: <20231013-ath11k_bd_api-v1-0-3fefe4629706@quicinc.com>
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath11k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        Jeff Johnson
+	<quic_jjohnson@quicinc.com>
+X-Mailer: b4 0.12.3
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: hnrrXnFh_zhjLuKVYyWKRuDY2a3vCQ57
-X-Proofpoint-ORIG-GUID: hnrrXnFh_zhjLuKVYyWKRuDY2a3vCQ57
+X-Proofpoint-GUID: FeGpHGFb-SMvgN0PWMIR2ipi0-XpTjZE
+X-Proofpoint-ORIG-GUID: FeGpHGFb-SMvgN0PWMIR2ipi0-XpTjZE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-13_03,2023-10-12_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
- adultscore=0 priorityscore=1501 mlxscore=0 mlxlogscore=879 spamscore=0
- suspectscore=0 phishscore=0 malwarescore=0 bulkscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2309180000
- definitions=main-2310130096
+ definitions=2023-10-13_05,2023-10-12_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
+ priorityscore=1501 phishscore=0 clxscore=1015 suspectscore=0
+ lowpriorityscore=0 mlxlogscore=894 mlxscore=0 spamscore=0 adultscore=0
+ bulkscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2309180000 definitions=main-2310130120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231013_044454_903838_CE935AC9 
-X-CRM114-Status: GOOD (  21.26  )
+X-CRM114-CacheID: sfid-20231013_072422_766866_13F17FEE 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,212 +98,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k does not have the ability to set band edge channel power
-for WCN7850. In order to support this, ath12k gets band edge channel power
-table in ath12k_acpi_dsm_get_data() function and sets pdev_id and
-param_type_id, then finally sends these data and
-WMI_PDEV_SET_BIOS_INTERFACE_CMDID to firmware to set band edge channel
-power.
+Currently struct ath12k_base defines the member bd_api. However, this
+member is only accessed within ath12k_core_fetch_bdf(). Since the
+scope is local just to that one function, remove it from ath12k_base
+and instead just use a local stack variable.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+No functional changes, compile tested only.
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
-v7:
-1.adjust the length of line
+ drivers/net/wireless/ath/ath12k/core.c | 7 ++++---
+ drivers/net/wireless/ath/ath12k/core.h | 1 -
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-v6:
-1.no change
-
-v5:
-1.rebase to the latest tag
-
-v4:
-1.revise commit log using imperative voice
-
-v3:
-1.remove unnecessary cpu_to_le32()
-2.adjust the order of the macros
-
-v2:
-no change
-
- drivers/net/wireless/ath/ath12k/acpi.c | 31 ++++++++++++++++++
- drivers/net/wireless/ath/ath12k/acpi.h |  5 +++
- drivers/net/wireless/ath/ath12k/core.h |  1 +
- drivers/net/wireless/ath/ath12k/wmi.c  | 44 ++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  2 ++
- 5 files changed, 83 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
-index cb0850ae110a..bcffd925e750 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.c
-+++ b/drivers/net/wireless/ath/ath12k/acpi.c
-@@ -82,6 +82,16 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
- 			memcpy(&ab->acdata->cca_data, obj->buffer.pointer,
- 			       obj->buffer.length);
- 			break;
-+		case ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE:
-+			if (obj->buffer.length != ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE) {
-+				ath12k_err(ab, "Invalid BAND EDGE data size %d\n",
-+					   obj->buffer.length);
-+				ret = -EINVAL;
-+				goto out;
-+			}
-+			memcpy(&ab->acdata->band_edge_power, obj->buffer.pointer,
-+			       obj->buffer.length);
-+			break;
- 		}
- 	} else {
- 		ath12k_err(ab,
-@@ -308,6 +318,27 @@ int ath12k_get_acpi_all_data(struct ath12k_base *ab)
- 		}
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index c68750cb3c4d..dbffd1c7cd88 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -360,6 +360,7 @@ int ath12k_core_fetch_board_data_api_1(struct ath12k_base *ab,
+ int ath12k_core_fetch_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd)
+ {
+ 	char boardname[BOARD_NAME_SIZE];
++	int bd_api;
+ 	int ret;
+ 
+ 	ret = ath12k_core_create_board_name(ab, boardname, BOARD_NAME_SIZE);
+@@ -368,12 +369,12 @@ int ath12k_core_fetch_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd)
+ 		return ret;
  	}
  
-+	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acdata,
-+				       ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER)) {
-+		ret = ath12k_acpi_dsm_get_data(ab,
-+					       ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE);
-+		if (ret) {
-+			ath12k_err(ab, "fail to get band edge channel power %d\n", ret);
-+			goto err_free_acdata;
-+		}
-+
-+		if (ab->acdata->band_edge_power[0] == ATH12K_ACPI_BAND_EDGE_VERSION &&
-+		    ab->acdata->band_edge_power[1] == ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG) {
-+			ret = ath12k_wmi_pdev_set_band_edge_power(ab);
-+			if (ret) {
-+				ath12k_err(ab,
-+					   "set band edge channel power failed %d\n",
-+					   ret);
-+				goto err_free_acdata;
-+			}
-+		}
-+	}
-+
- 	status = acpi_install_notify_handler(ACPI_HANDLE(ab->dev),
- 					     ACPI_DEVICE_NOTIFY,
- 					     acpi_dsm_notify, ab);
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-index f9ad4d573b78..a419c47046ce 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.h
-+++ b/drivers/net/wireless/ath/ath12k/acpi.h
-@@ -14,12 +14,14 @@
- #define ATH12K_ACPI_DSM_FUNC_INDEX_CCA		6
- #define ATH12K_ACPI_DSM_FUNC_TAS_CFG		8
- #define ATH12K_ACPI_DSM_FUNC_TAS_DATA		9
-+#define ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE		10
+-	ab->bd_api = 2;
++	bd_api = 2;
+ 	ret = ath12k_core_fetch_board_data_api_n(ab, bd, boardname);
+ 	if (!ret)
+ 		goto success;
  
- #define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
- #define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
- #define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
- #define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
- #define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
-+#define ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER	BIT(9)
+-	ab->bd_api = 1;
++	bd_api = 1;
+ 	ret = ath12k_core_fetch_board_data_api_1(ab, bd, ATH12K_DEFAULT_BOARD_FILE);
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to fetch board-2.bin or board.bin from %s\n",
+@@ -382,7 +383,7 @@ int ath12k_core_fetch_bdf(struct ath12k_base *ab, struct ath12k_board_data *bd)
+ 	}
  
- #define ATH12K_ACPI_NOTIFY_EVENT			0x86
- #define ATH12K_ACPI_FUNC_BIT_VALID(_acdata, _func)	(((_acdata)->func_bit) & (_func))
-@@ -30,6 +32,8 @@
- #define ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG	0x1
- #define ATH12K_ACPI_CCA_THR_VERSION		0x1
- #define ATH12K_ACPI_CCA_THR_ENABLE_FLAG		0x1
-+#define ATH12K_ACPI_BAND_EDGE_VERSION		0x1
-+#define ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG	0x1
+ success:
+-	ath12k_dbg(ab, ATH12K_DBG_BOOT, "using board api %d\n", ab->bd_api);
++	ath12k_dbg(ab, ATH12K_DBG_BOOT, "using board api %d\n", bd_api);
+ 	return 0;
+ }
  
- #define ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET	1
- #define ATH12K_ACPI_DBS_BACKOFF_DATA_OFFSET	2
-@@ -41,6 +45,7 @@
- #define ATH12K_ACPI_CCA_THR_OFFSET_LEN		36
- 
- #define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
-+#define ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE		100
- #define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
- 
- #define ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE (ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET + \
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 4b663577c2b9..350cff3c30e3 100644
+index 254eb42a85c5..fafb2a5b9350 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -803,6 +803,7 @@ struct ath12k_base {
- 		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
- 		u8 geo_offset_data[ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE];
- 		u8 cca_data[ATH12K_ACPI_DSM_CCA_DATA_SIZE];
-+		u8 band_edge_power[ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE];
- 	} *acdata;
+@@ -737,7 +737,6 @@ struct ath12k_base {
+ 	struct ath12k_wmi_target_cap_arg target_caps;
+ 	u32 ext_service_bitmap[WMI_SERVICE_EXT_BM_SIZE];
+ 	bool pdevs_macaddr_valid;
+-	int bd_api;
  
- 	/* must be last */
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 0d9101f9643a..06f68dd2542c 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7205,3 +7205,47 @@ int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab)
- 	}
- 	return ret;
- }
-+
-+int ath12k_wmi_pdev_set_band_edge_power(struct ath12k_base *ab)
-+{
-+	struct ath12k_wmi_base *wmi_ab = &ab->wmi_ab;
-+	struct wmi_pdev_set_bios_interface_cmd *cmd;
-+	struct wmi_tlv *tlv;
-+	struct sk_buff *skb;
-+	int ret;
-+	u8 *buf_ptr;
-+	u32 len, len_aligned;
-+	u8 *pchan_table = ab->acdata->band_edge_power;
-+
-+	len_aligned = roundup(ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE, sizeof(u32));
-+	len = sizeof(*cmd) + TLV_HDR_SIZE + len_aligned;
-+
-+	skb = ath12k_wmi_alloc_skb(wmi_ab, len);
-+	if (!skb)
-+		return -ENOMEM;
-+
-+	cmd = (struct wmi_pdev_set_bios_interface_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD,
-+						 sizeof(*cmd));
-+	cmd->pdev_id = cpu_to_le32(WMI_PDEV_ID_SOC);
-+	cmd->param_type_id = cpu_to_le32(WMI_BIOS_PARAM_TYPE_BANDEDGE_CTL_POWER);
-+	cmd->length = cpu_to_le32(ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE);
-+
-+	buf_ptr = skb->data + sizeof(*cmd);
-+	tlv = (struct wmi_tlv *)buf_ptr;
-+	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_BYTE, len_aligned);
-+	buf_ptr += TLV_HDR_SIZE;
-+	memcpy(buf_ptr, pchan_table, ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE);
-+
-+	ret = ath12k_wmi_cmd_send(&wmi_ab->wmi[0],
-+				  skb,
-+				  WMI_PDEV_SET_BIOS_INTERFACE_CMDID);
-+	if (ret) {
-+		ath12k_warn(ab,
-+			    "failed to send WMI_PDEV_SET_BIOS_INTERFACE_CMDID %d\n",
-+			    ret);
-+		dev_kfree_skb(skb);
-+	}
-+
-+	return ret;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 8c6b16a572ee..fa03c0f507d4 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4811,6 +4811,7 @@ enum bios_param_type {
- 	WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE	=	0,
- 	WMI_BIOS_PARAM_TAS_CONFIG_TYPE		=	1,
- 	WMI_BIOS_PARAM_TAS_DATA_TYPE		=	2,
-+	WMI_BIOS_PARAM_TYPE_BANDEDGE_CTL_POWER	=	3,
- 	WMI_BIOS_PARAM_TYPE_MAX,
- };
+ 	const struct ath12k_hw_params *hw_params;
  
-@@ -4982,4 +4983,5 @@ int ath12k_wmi_pdev_set_bios_sar_table_param(struct ath12k_base *ab,
- int ath12k_wmi_pdev_set_bios_geo_table_param(struct ath12k_base *ab,
- 					     u8 *pgeo_table);
- int ath12k_wmi_pdev_set_cca_thr_table_param(struct ath12k_base *ab);
-+int ath12k_wmi_pdev_set_band_edge_power(struct ath12k_base *ab);
- #endif
+
 -- 
-2.34.1
+2.42.0
 
 
 -- 
