@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25E5BCDB484
-	for <ath12k@archiver.kernel.org>; Wed, 18 Oct 2023 08:30:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BFD4CDB483
+	for <ath12k@archiver.kernel.org>; Wed, 18 Oct 2023 08:31:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:References:
 	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCWePiv9ASCKCnoaDQjiKPQo5+u+QWZdIsU+aU0Jzic=; b=Eqw99z9+7ni46e
-	cUgTpOqwRUWXWVkMg3biPKSxJZZdh7osgEx073eWaXEpx6TiV/p6Is5dFlDbo78Y4DnJKln1bA2bM
-	6WOkE9aa8EV5exLkWX82bYqqZCOFSFqLIuF5bp+mrr6SOgMwljB17h/bUvG4XvfS2O0ONLJQkcXBt
-	0wt5dvcQkeSCUxhAmrYi45r8f5p9N1QYL/gnnEdLnshj2AjRiS4qYbPy8crYan4rXACfL5HPlxEJs
-	JWOK59V7l9z52xlAe1DbMLVEJpPEGq3r4DHXT/GjoKBr9dTruDPIU2SNAGS/PJ8dCOMcRCxRSii4u
-	5kMFYQdziNkgowkxVIHQ==;
+	List-Owner; bh=MvRF+149Bwuubx7zpFFxKuUPXG2WUVZbSqZVy9W0qYQ=; b=1BcdYjmSSImnDY
+	30YQaIg2uSiEkwa1Bftw3e7N4uAgGop5yvqpTr2L4EFX/iFtXfUESei6MGlBn+a+K/D4wV42FTNL/
+	0ViFN0grpSg7LO3mq0522oQhMO62Nx1kKaWVMmk/en7mT/DwVUyr4e0kkrfCaTpbQRKCW2BVAHADp
+	cFI3bnmP8Wb6q9DrXyv9T2+OUbahwhWRNuWCopcZ7UE0ap7z5IIZt6jHedSsvD5DbHUT6o/aWjm0q
+	YOyFxdvuLw1S5Ly3YJQ1GIobarUPnj8cfcmxXrJPInbW4xU9bPpc+JF+eHuOJtxJCCUvl2F16N8Pb
+	5XC8131T6uj1vArkkljQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qt1wO-00E9Vx-2L
+	id 1qt1xK-00E9hF-2A
 	for ath12k@archiver.kernel.org;
-	Wed, 18 Oct 2023 08:30:08 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 18 Oct 2023 08:31:06 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qt1wM-00E9Uz-1H
-	for ath12k@lists.infradead.org;
-	Wed, 18 Oct 2023 08:30:07 +0000
+	id 1qt1xH-00E9fq-1X;
+	Wed, 18 Oct 2023 08:31:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DBA15616F4;
-	Wed, 18 Oct 2023 08:30:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A680C433C9;
-	Wed, 18 Oct 2023 08:30:04 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id F09B160FAF;
+	Wed, 18 Oct 2023 08:31:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 542E1C433C8;
+	Wed, 18 Oct 2023 08:31:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1697617805;
-	bh=p7qtdS3dP5TCiZktRCL3CVf1Ih72w/1xVDE1TzIdIHw=;
+	s=k20201202; t=1697617862;
+	bh=DmaIORX38lsk+s8u9A1sNW59yUVMPJkqJEYyV4bNIhY=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=Wdu6EOeEjwGiOK8JyqPu247OpNo5L+cYUyXg68WZP/UUSwNqyPzCV+YvKkMXEkgIE
-	 v1uJ/9WUQz93TkNFR7sMQWOVipaE15lwXVicG4jH6ifo/dV40cJexvqkzsG8RNhc1M
-	 KEP9K9SjD/1YocKyDiFdi8naJZb92tIXSPw0HlKqslHTwrY3KDDua6rqpAFFaXaj5l
-	 GgLyxrA+/2bXX8ssW4Hm67udkFNMxKc2bxwKjci1iQv1PjSJJaqJPnrpmGdNOaCOVc
-	 FesSb4px7bdPzwEidre0Ym7OdGR2YNS6WHHlJR7Q0uggKtdqbNrJl4rl24bpb33K/u
-	 UVlLlSC7gmD+A==
+	b=HBIxPtGUhN/JlZd7seAMtycPXYiSRFWhQXCYyKYdLKpJxh+LujAL0rBktmZ8OJNjK
+	 Uf/vRvEIg1V8qOiEFI/Nq3+fyTcORNb77V/qxVNfc2E8eLdMnPeszKtlqEwkTc0oKM
+	 C05h5vWMEnLnr0y7WGymgR+VpIIDuZLmjlzcdgA6nzA8aoR97fjzxVDFKnt5HyoeS8
+	 FryJn4jKuvHbtc5hdtj9EvmxTuxGpNwL12pvLeRewiw6iXQLPXmZCQE/J7J1fNmAZ7
+	 5d0nTXsUNhUhNBZXcpIVLYPDOMuxrAMw0Qg+IKdImFurJWrPZ8a6lEiRGmpcBlGdYf
+	 +/QogbGs6uNcA==
 MIME-Version: 1.0
-Subject: Re: [PATCH 1/2] wifi: ath12k: register EHT mesh capabilities
+Subject: Re: [PATCH 1/2] wifi: ath11k: Remove ath11k_base::bd_api
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231013070007.25597-3-quic_rgnanase@quicinc.com>
-References: <20231013070007.25597-3-quic_rgnanase@quicinc.com>
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+In-Reply-To: <20231013-ath11k_bd_api-v1-1-3fefe4629706@quicinc.com>
+References: <20231013-ath11k_bd_api-v1-1-3fefe4629706@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: <ath11k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <ath12k@lists.infradead.org>,
+ Jeff Johnson <quic_jjohnson@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <169761780232.48072.9283113948539025613.kvalo@kernel.org>
-Date: Wed, 18 Oct 2023 08:30:04 +0000 (UTC)
+Message-ID: <169761785908.48072.2555690903765273261.kvalo@kernel.org>
+Date: Wed, 18 Oct 2023 08:31:01 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231018_013006_482808_82456941 
-X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-CacheID: sfid-20231018_013103_557410_8143D615 
+X-CRM114-Status: UNSURE (   6.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,28 +74,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ramya Gnanasekar <quic_rgnanase@quicinc.com> wrote:
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-> The capabilities for the EHT mesh are generated from the capabilities
-> reported by the firmware. But the firmware only reports the overall
-> capabilities and not the one which are specific for mesh.
+> Currently struct ath11k_base defines the member bd_api. However, this
+> member is only accessed within ath11k_core_fetch_bdf(). Since the
+> scope is local just to that one function, remove it from ath11k_base
+> and instead just use a local stack variable.
 > 
-> Capabilities which requires infrastructure setup with a main STA(AP)
-> controlling operations are not needed for mesh and hence remove these
-> capabilities from the list.
+> No functional changes, compile tested only.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
 2 patches applied to ath-next branch of ath.git, thanks.
 
-6b819f89c482 wifi: ath12k: register EHT mesh capabilities
-3e9942fbdf4d wifi: ath12k: Enable Mesh support for QCN9274
+b4f70ac0fa88 wifi: ath11k: Remove ath11k_base::bd_api
+2180f7ac0abe wifi: ath12k: Remove ath12k_base::bd_api
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231013070007.25597-3-quic_rgnanase@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20231013-ath11k_bd_api-v1-1-3fefe4629706@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
