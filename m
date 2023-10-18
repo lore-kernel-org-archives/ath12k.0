@@ -4,61 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48F3ECDB482
-	for <ath12k@archiver.kernel.org>; Wed, 18 Oct 2023 11:39:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65871CDB47E
+	for <ath12k@archiver.kernel.org>; Wed, 18 Oct 2023 15:30:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gyFGMYIsTO180rJTl8u9j+8AdI4MjgUb0PBRBe5wjOk=; b=SWchcqA1CJ+U2t
-	yc6+4JKqy31tQrbjE9eW/vyBr078j/YscG7xsHLkp+JRTDvbp/dkUdyIUoBQ0EaHujAWqXQDpH+V9
-	UsFEjB88dIdXpmYICHmKXnVEa/iSwvRMp9FZht/WE3ZYoNnTZj79PMhbna1iz1bHC3iFz0l8VXRZp
-	Z8atF4YxRBbpB7wMWdCxD9G+Yb5HHih40o19CoSoitv5FZb3dMR4ZdFf71pU5bR+czEW/TYFbbrDx
-	xcPtWIRkPRHmkBkauLobp0jNKzPf4VAOAw1EhZ6InWvkYm/QLAVz+qrs+hsTjvGJ26RMVHDxXvoxB
-	l6kLhDl16Ls1Qbw8hnig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S97l401apnOYHBrgDT8wow1tud+z9X9mTrtVbAMBglQ=; b=IohmV9VzwRA6p4
+	Ob+ENqQfAIrtQTxBeQXsHTKhh6oVrkVPDM6GkrDYpRuk5ZnfaXFJbN7B+i6t8zA0sO6gTEgbdEmaS
+	fL/a363eAPGDxGaIyID9A3xxE+Sb8IToLlsK7unanptdYgu8WOdrX49VErKibbzv0Z5Ab5Nfdyfqt
+	xLXXR6UZcsZxqMSx5If9z1pk6C/WEKB4Ulok26tLuq8w/y6rIB4IotuxCy636qqCdD/DIZRBLd++M
+	9nnbUqNh/45fnOIMIozHO/sIsLXjLzbDZ0p6DlwZFDscUDCMPVeJRSVxl5MhPVpNLBK0OYIoWHyHZ
+	nmibMpnVsYYexumc+k4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qt4tw-00EaGd-02
+	id 1qt8VH-00F3NZ-0V
 	for ath12k@archiver.kernel.org;
-	Wed, 18 Oct 2023 11:39:48 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Wed, 18 Oct 2023 15:30:35 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qt4ts-00EaDX-34
+	id 1qt8VD-00F3LP-2g
 	for ath12k@lists.infradead.org;
-	Wed, 18 Oct 2023 11:39:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=bCy8dKQpQ9iG+rcaw3GhkrRi3vhdBx1LFm1P6vdeUMg=;
-	t=1697629181; x=1698838781; b=mBREfynix1xIdOUPcGItiRvWugesxKn2euXOyVeaYOuPTfz
-	L25HXgLQVa66ExgdaeXa/LspbDmISaUwFU/f2JjoIgSxJ38mO6WLu8fKJ1bs6piJWHpOGu+nZ4llK
-	gJhLucDVsSGKQDDUOM2CJGFGImwZKkdsAGEhZDZI97wu7eFU+cSXmoGdYG04H7rVCIVgkXd9f5wI9
-	5RLRyjNNj4qkkweN7leq2PKnD1Nfjslcm4SQUQS9oBE1gVtX6djbdz6YI/MN1fLw/+m9GYtUVAxw3
-	41W9JJfTDcDbo3WXcguvIsDhHmgl3/OjBtK8hXrSxO7x36eAGWgZoUcTWKLLHddA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97-RC1)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1qt4tm-0000000Blvt-1ctA;
-	Wed, 18 Oct 2023 13:39:38 +0200
-Message-ID: <08ff36664eb34bce8e7beb425233b1e8d4a4971c.camel@sipsolutions.net>
-Subject: Re: [PATCH 1/4] wifi: mac80211: mlme: fix verification of
- puncturing bitmap obtained from AP
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Date: Wed, 18 Oct 2023 13:39:37 +0200
-In-Reply-To: <20230928055022.9670-2-quic_kangyang@quicinc.com>
-References: <20230928055022.9670-1-quic_kangyang@quicinc.com>
-	 <20230928055022.9670-2-quic_kangyang@quicinc.com>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
+	Wed, 18 Oct 2023 15:30:33 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39IFJeCZ018197;
+	Wed, 18 Oct 2023 15:30:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=OdNuxyO6elS7DV3bJ3NKsmQhot8BHJL7528qcLwee8U=;
+ b=SSboG6pt0Un0gXpdvac/XBWh8cxtuz15lDo9jDRnKak+CxaKY5/tGe0ArpT8SeKepL0S
+ AMnbBtUCu2ocCp9xNKliSOSW+O8RDHAlRg9iEPrdER6F/IppcLc+0NbT2FMDvsXM6VJN
+ w16zuRbrGyqJ0kUZDQtnra9zv/syuJXkyohZCi2q7ob3DGcioevGCQa6m8o3LPiN0KzC
+ kUJq+n9SO8MD3KyKCM+UK2Lhxj2IJP9bj2HeohpI0tQRlQ4fE698eOtQ2aTkT32xF3Um
+ KnTFCmgBi9GYeeySGkhk3emyZg7PEB38wR1P8l3+a7OyTtPTLu67zcjgLp4sH+YQJHoA 5g== 
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tt5v81j1p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Oct 2023 15:30:25 +0000
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39IFUOqg014978
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Oct 2023 15:30:24 GMT
+Received: from periyasa-linux.qualcomm.com (10.80.80.8) by
+ nasanex01a.na.qualcomm.com (10.52.223.231) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.39; Wed, 18 Oct 2023 08:30:22 -0700
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH 0/2] wifi: ath12k: rename the variable naming convention
+Date: Wed, 18 Oct 2023 21:00:06 +0530
+Message-ID: <20231018153008.29820-1-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: o3KAnvxqOSbpuvTymmTBQZHRUn4xzv0X
+X-Proofpoint-ORIG-GUID: o3KAnvxqOSbpuvTymmTBQZHRUn4xzv0X
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-18_13,2023-10-18_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
+ mlxlogscore=607 lowpriorityscore=0 phishscore=0 impostorscore=0
+ suspectscore=0 mlxscore=0 clxscore=1011 bulkscore=0 priorityscore=1501
+ spamscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310180124
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231018_043944_991499_BC9AFD96 
-X-CRM114-Status: GOOD (  16.58  )
+X-CRM114-CacheID: sfid-20231018_083032_013853_F44DE164 
+X-CRM114-Status: GOOD (  10.97  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,91 +95,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2023-09-28 at 13:50 +0800, Kang Yang wrote:
-> 
-> +static enum nl80211_chan_width
-> +ieee80211_rx_bw_to_nlwidth(enum ieee80211_sta_rx_bandwidth bw)
-> +{
-> +	switch (bw) {
-> +	case IEEE80211_STA_RX_BW_20:
-> +		return NL80211_CHAN_WIDTH_20;
+Currently, the identifier sc is used to represent an instance of SoC
+structure. But in ath12k ab is refer to the SoC data structure.
+So rename the variable name.
 
-So for a while now I was actually not responding to this because I was
-scratching my head over how this function ever could be needed or make
-sense ...
+Karthikeyan Periyasamy (2):
+  wifi: ath12k: rename the wmi_sc naming convention to wmi_ab
+  wifi: ath12k: rename the sc naming convention to ab
 
-
->  static bool ieee80211_config_puncturing(struct ieee80211_link_data *link,
->  					const struct ieee80211_eht_operation *eht_oper,
->  					u64 *changed)
->  {
-> +	struct cfg80211_chan_def rx_chandef = link->conf->chandef;
->  	u16 bitmap = 0, extracted;
-> +	u8 bw = 0;
->  
->  	if ((eht_oper->params & IEEE80211_EHT_OPER_INFO_PRESENT) &&
->  	    (eht_oper->params &
-> @@ -5684,6 +5706,28 @@ static bool ieee80211_config_puncturing(struct ieee80211_link_data *link,
->  		const u8 *disable_subchannel_bitmap = info->optional;
->  
->  		bitmap = get_unaligned_le16(disable_subchannel_bitmap);
-> +		bw = u8_get_bits(info->control, IEEE80211_EHT_OPER_CHAN_WIDTH);
-> +		rx_chandef.width = ieee80211_rx_bw_to_nlwidth(bw);
-
-But looking here, it clearly _doesn't_ make sense. IEEE80211_STA_RX_BW_*
-is a purely internal API, has nothing to do with the spec.
-
-All this might even be "accidentally correct", but it really isn't right
-at all - the values in IEEE80211_EHT_OPER_CHAN_WIDTH are
-IEEE80211_EHT_OPER_CHAN_WIDTH_*, not IEEE80211_STA_RX_BW_*.
+ drivers/net/wireless/ath/ath12k/hif.h | 18 +++++++++---------
+ drivers/net/wireless/ath/ath12k/pci.c |  4 ++--
+ drivers/net/wireless/ath/ath12k/wmi.c | 22 +++++++++++-----------
+ 3 files changed, 22 insertions(+), 22 deletions(-)
 
 
-
-More generally though, I don't even understand the change.
-
-> +		if (rx_chandef.width == NL80211_CHAN_WIDTH_80)
-> +			rx_chandef.center_freq1 =
-> +				ieee80211_channel_to_frequency(info->ccfs0,
-> +							       rx_chandef.chan->band);
-> +		else if (rx_chandef.width == NL80211_CHAN_WIDTH_160 ||
-> +			 rx_chandef.width == NL80211_CHAN_WIDTH_320)
-> +			rx_chandef.center_freq1 =
-> +				ieee80211_channel_to_frequency(info->ccfs1,
-> +							       rx_chandef.chan->band);
-> +	}
-> +
-> +	if (!cfg80211_valid_disable_subchannel_bitmap(&bitmap,
-> +						      &rx_chandef)) {
-> +		link_info(link,
-> +			  "Got an invalid disable subchannel bitmap from AP %pM: bitmap = 0x%x, bw = 0x%x. disconnect\n",
-> +			  link->u.mgd.bssid,
-> +			  bitmap,
-> +			  rx_chandef.width);
-> +		return false;
->  	}
->  
->  	extracted = ieee80211_extract_dis_subch_bmap(eht_oper,
-// I've filled in the context here in the patch
->                                                      &link->conf->chandef,
->                                                      bitmap);
-> 
->         /* accept if there are no changes */
->         if (!(*changed & BSS_CHANGED_BANDWIDTH) &&
->             extracted == link->conf->eht_puncturing)
->                 return true;
-
-but ... ieee80211_extract_dis_subch_bmap actually already takes the
-bandwidth from eht_oper into account!
- 
-> -	if (!cfg80211_valid_disable_subchannel_bitmap(&bitmap,
-> -						      &link->conf->chandef)) {
-
-So are you saying that the real bug is that we're missing to update the
-link->conf->chandef with the EHT operation from the assoc response?
-
-But you didn't fix that issue ... so not sure?
-
-johannes
+base-commit: 91bc2f15a1b8c38ddbc1ea400dcd4bbd3639d22b
+-- 
+2.17.1
 
 
 -- 
