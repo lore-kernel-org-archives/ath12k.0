@@ -4,85 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DF50CDB482
-	for <ath12k@archiver.kernel.org>; Thu, 19 Oct 2023 16:58:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB2B6CDB485
+	for <ath12k@archiver.kernel.org>; Thu, 19 Oct 2023 17:31:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EL1ivnusRRtsGYQMRhyGmMmFqMD4SBweuSNunF5W8CA=; b=dOHKFi121gvETQ
-	CX+Tat5YW887CQgnadqRX9f0PjRc/dTuAwUdBisXEtLRbclGiNZveBW0wU5EDC1gYwEEuCWcJIpwt
-	2yjUE2rSqHHwKKo6/gAADGjK9U/+l3vz9MF54CbMlEs9U4OHusFR19f9WQtK2kbpzyM69nWPLD83Y
-	SshM+sjLA3V9rgoX9USOCrbg9KdS2EHJGrbfasEYya2y3Cg715wWBzTctoW2i9iXzbibSuQdVm5Ft
-	fC8ZA5c+6/uJ/Vxh4X/lhz8/BPRNkdhQ4hkO6sCVBCR54sB52fkK0NDXR6rfDhNjF9rCdTzOPeYsW
-	D7e1ZVvGq2rtcrr7/frw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uT8ujuWLyNH3vLQDXF4cULDfdLUId3VTiU03iukbG54=; b=JWZhpWNdHGZxNX
+	BF4K3+S+HLKVvHHYTgM/2o/+vRI9HbuIxEY+5Zp+sDfP8L5mgVQGnqHb08xqmpLSQrCr62WZLLtoT
+	O1iZsJuGRWPgTVWA1WMHGXUJaUxlPvGtGg5liKJsgMJdAaYHu6bNmCGSDM6R2JxJEzaPzmifk1wpT
+	2UVhnhKXqwzgbyA2Q4uyO6vzd7BXODNWA3YF6ZXqZKftqnfDk8xlrqjeEtCRDzDyOAKuEJcUie3J4
+	d70BT/4BWHey7RkZwPyq3osOQOHAljd+oPZ4kkZrqpbtv+B6s3T1coI+UJJzYBruSMyjm41B/5HrQ
+	/UxfuYUftC4BZjcXXJ9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtWLQ-000MyV-3D
+	id 1qtWrP-000QO5-1x
 	for ath12k@archiver.kernel.org;
-	Thu, 19 Oct 2023 16:58:01 +0000
+	Thu, 19 Oct 2023 17:31:03 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtWLL-000MuH-2d
+	id 1qtWrM-000QN9-0q
 	for ath12k@lists.infradead.org;
-	Thu, 19 Oct 2023 16:57:57 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39JGK4pa025592;
-	Thu, 19 Oct 2023 16:57:52 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : date :
- subject : mime-version : content-type : content-transfer-encoding :
- message-id : to : cc; s=qcppdkim1;
- bh=tR4P2i779nsa9la0a1oQcjUVlyZDjWN0SOTtc95npQY=;
- b=LNw+n11ENLwhTidLjHPsy6zf2IQitcis9u+q5Ri/jSoLfsmAtI08PnfwGm+Y6m/0x8om
- af4QhFU/33wvOegxueAAnteNK5q0REe+WPbVPUz//sMRZvHo2HsxjnwmgbptDpZmYk81
- Nv4uHBUrCT6IcfnT+2EdqO9xXWoxjjhFosJcu2AJL8QqEZLRhLSvFCwmWVK+qpGnWKhH
- bvwLyGje1uaDGXtaIDNsTWjwUzE9yHwV47sT83sGWqVoeLur1Qik97PcM1AJAVsFHQxw
- F5eMTP8IggWKScXxNLbaZxKOQOq7wBeb8u60cAa2OtuDywxuPqY4+D5KpobQ8AvjexNE YQ== 
+	Thu, 19 Oct 2023 17:31:01 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39JGRhcS030815;
+	Thu, 19 Oct 2023 17:30:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=Nf/29FghDRhiaGg0xKf0f475ZS/kQXtuV2LNjym+dh8=;
+ b=PFWGdF82f5gPEQkZ23uZCe67GzGwLlAkualgUXG2trnRxsJ5Ae1pkZnEg6140KNJhY0t
+ bNm8btvhouoIXPI6nEOy5HYH20rwjE7bj6Wz3ZeUfVAzNf+kXHhTA5zjnbGClxE0ik32
+ DTmb2WSdzB5/wgCFAotiqjUZMB3wVWPiLnig7VmVesrCEt6910m/+yxp9ocNtJGJP55X
+ OQmbJeD0vraOd4LIIXcyiW7c2OGRL7Tlh7DT1styz5tylm1dTP8nJVPXe6mFxowJS+VK
+ MVXM4QbS/rASclgMDSeBSBN2Q3Gsxor1wiPUxths4sz6+5+76rYzQzwIiFMAZs7udLVR Dg== 
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ttgw3u4s4-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3tu49b0qn3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Oct 2023 16:57:51 +0000
+	Thu, 19 Oct 2023 17:30:58 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39JGvp2m013559
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39JHUvkp020339
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Oct 2023 16:57:51 GMT
-Received: from hu-jjohnson-lv.qualcomm.com (10.49.16.6) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.39; Thu, 19 Oct 2023 09:57:50 -0700
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Thu, 19 Oct 2023 09:57:50 -0700
-Subject: [PATCH] wifi: ath12k: Introduce and use ath12k_sta_to_arsta()
+	Thu, 19 Oct 2023 17:30:57 GMT
+Received: from [10.48.241.70] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Thu, 19 Oct
+ 2023 10:30:57 -0700
+Message-ID: <3cb5372a-aa11-4184-8f3d-969ee25e0642@quicinc.com>
+Date: Thu, 19 Oct 2023 10:30:56 -0700
 MIME-Version: 1.0
-Message-ID: <20231019-upstream-ath12k_sta_to_arsta-v1-1-06f06f693338@quicinc.com>
-X-B4-Tracking: v=1; b=H4sIAA1gMWUC/x3MQQqEMAxA0atI1lNoqwv1KsNQok01yKgknUEQ7
- 25x99/mn6AkTAp9dYLQn5W3tcC9KhhnXCcyHIvBW1876zrz2zUL4ddgnp1fgmYMeQsoJQw1qUu
- 2jS0NEcpiF0p8PPv357puMbs+NG4AAAA=
-To: Kalle Valo <kvalo@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] wifi: ath12k: fix dfs-radar and temperature event
+ locking
+Content-Language: en-US
+To: Johan Hovold <johan+linaro@kernel.org>, Kalle Valo <kvalo@kernel.org>
 CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>,
-        Jeff Johnson <quic_jjohnson@quicinc.com>
-X-Mailer: b4 0.12.3
+        <linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
+References: <20231019113650.9060-1-johan+linaro@kernel.org>
+ <20231019113650.9060-2-johan+linaro@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20231019113650.9060-2-johan+linaro@kernel.org>
 X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: QOfkKJB6CH5rWAuetTmXJRU8CO4iYf13
-X-Proofpoint-GUID: QOfkKJB6CH5rWAuetTmXJRU8CO4iYf13
+X-Proofpoint-ORIG-GUID: L8mRo8YIcAOr2oMg7jgwUEJnQcbnmfcN
+X-Proofpoint-GUID: L8mRo8YIcAOr2oMg7jgwUEJnQcbnmfcN
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-19_15,2023-10-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- phishscore=0 lowpriorityscore=0 suspectscore=0 mlxscore=0 bulkscore=0
- impostorscore=0 adultscore=0 clxscore=1015 malwarescore=0 mlxlogscore=694
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2309180000 definitions=main-2310190143
+ definitions=2023-10-19_16,2023-10-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=642
+ impostorscore=0 phishscore=0 bulkscore=0 adultscore=0 priorityscore=1501
+ mlxscore=0 lowpriorityscore=0 suspectscore=0 malwarescore=0 spamscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2309180000 definitions=main-2310190148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_095755_872086_0E78B654 
-X-CRM114-Status: GOOD (  18.89  )
+X-CRM114-CacheID: sfid-20231019_103100_303103_549B504D 
+X-CRM114-Status: GOOD (  11.94  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,161 +95,26 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the logic to return an ath12k_sta pointer, given a
-ieee80211_sta pointer, uses typecasting throughout the driver. In
-general, conversion functions are preferable to typecasting since
-using a conversion function allows the compiler to validate the types
-of both the input and output parameters.
-
-ath12k already defines a conversion function ath12k_vif_to_arvif() for
-a similar conversion. So introduce ath12k_sta_to_arsta() for this use
-case, and convert all of the existing typecasting to use this
-function.
-
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h   |  5 +++++
- drivers/net/wireless/ath/ath12k/dp_mon.c |  4 ++--
- drivers/net/wireless/ath/ath12k/dp_rx.c  |  6 +++---
- drivers/net/wireless/ath/ath12k/mac.c    | 12 ++++++------
- 4 files changed, 16 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index fafb2a5b9350..68c42ca44fcb 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -852,6 +852,11 @@ static inline struct ath12k_vif *ath12k_vif_to_arvif(struct ieee80211_vif *vif)
- 	return (struct ath12k_vif *)vif->drv_priv;
- }
- 
-+static inline struct ath12k_sta *ath12k_sta_to_arsta(struct ieee80211_sta *sta)
-+{
-+	return (struct ath12k_sta *)sta->drv_priv;
-+}
-+
- static inline struct ath12k *ath12k_ab_to_ar(struct ath12k_base *ab,
- 					     int mac_id)
- {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 1698a7712494..f44bc5494ce7 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -2374,7 +2374,7 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k *ar,
- 		return;
- 	}
- 
--	arsta = (struct ath12k_sta *)peer->sta->drv_priv;
-+	arsta = ath12k_sta_to_arsta(peer->sta);
- 	rx_stats = arsta->rx_stats;
- 
- 	if (!rx_stats)
-@@ -2550,7 +2550,7 @@ int ath12k_dp_mon_rx_process_stats(struct ath12k *ar, int mac_id,
- 			}
- 
- 			if (ppdu_info->reception_type == HAL_RX_RECEPTION_TYPE_SU) {
--				arsta = (struct ath12k_sta *)peer->sta->drv_priv;
-+				arsta = ath12k_sta_to_arsta(peer->sta);
- 				ath12k_dp_mon_rx_update_peer_su_stats(ar, arsta,
- 								      ppdu_info);
- 			} else if ((ppdu_info->fc_valid) &&
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 54e0a09bf8dd..670901437cb6 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1054,7 +1054,7 @@ int ath12k_dp_rx_ampdu_start(struct ath12k *ar,
- 			     struct ieee80211_ampdu_params *params)
- {
- 	struct ath12k_base *ab = ar->ab;
--	struct ath12k_sta *arsta = (void *)params->sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(params->sta);
- 	int vdev_id = arsta->arvif->vdev_id;
- 	int ret;
- 
-@@ -1072,7 +1072,7 @@ int ath12k_dp_rx_ampdu_stop(struct ath12k *ar,
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_peer *peer;
--	struct ath12k_sta *arsta = (void *)params->sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(params->sta);
- 	int vdev_id = arsta->arvif->vdev_id;
- 	bool active;
- 	int ret;
-@@ -1410,7 +1410,7 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 	}
- 
- 	sta = peer->sta;
--	arsta = (struct ath12k_sta *)sta->drv_priv;
-+	arsta = ath12k_sta_to_arsta(sta);
- 
- 	memset(&arsta->txrate, 0, sizeof(arsta->txrate));
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index aebbb762dcfb..fc0d14ea328e 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3247,7 +3247,7 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
- 		ath12k_warn(ab, "peer %pM disappeared!\n", peer_addr);
- 
- 	if (sta) {
--		arsta = (struct ath12k_sta *)sta->drv_priv;
-+		arsta = ath12k_sta_to_arsta(sta);
- 
- 		switch (key->cipher) {
- 		case WLAN_CIPHER_SUITE_TKIP:
-@@ -3637,7 +3637,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
--	struct ath12k_sta *arsta = (struct ath12k_sta *)sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
- 	struct ath12k_wmi_peer_create_arg peer_param;
- 	int ret;
- 
-@@ -3744,7 +3744,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- {
- 	struct ath12k *ar = hw->priv;
- 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
--	struct ath12k_sta *arsta = (struct ath12k_sta *)sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
- 	struct ath12k_peer *peer;
- 	int ret = 0;
- 
-@@ -3892,7 +3892,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
- 					u32 changed)
- {
- 	struct ath12k *ar = hw->priv;
--	struct ath12k_sta *arsta = (struct ath12k_sta *)sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
- 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct ath12k_peer *peer;
- 	u32 bw, smps;
-@@ -6762,7 +6762,7 @@ static void ath12k_mac_set_bitrate_mask_iter(void *data,
- 					     struct ieee80211_sta *sta)
- {
- 	struct ath12k_vif *arvif = data;
--	struct ath12k_sta *arsta = (struct ath12k_sta *)sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
- 	struct ath12k *ar = arvif->ar;
- 
- 	spin_lock_bh(&ar->data_lock);
-@@ -7051,7 +7051,7 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 					 struct ieee80211_sta *sta,
- 					 struct station_info *sinfo)
- {
--	struct ath12k_sta *arsta = (struct ath12k_sta *)sta->drv_priv;
-+	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
- 
- 	sinfo->rx_duration = arsta->rx_duration;
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
-
----
-base-commit: 2e66190e0d87a7266c89728565e0681b22e68f30
-change-id: 20231019-upstream-ath12k_sta_to_arsta-e4f9f08d8ebd
+On 10/19/2023 4:36 AM, Johan Hovold wrote:
+> The ath12k active pdevs are protected by RCU but the DFS-radar and
+> temperature event handling code calling ath12k_mac_get_ar_by_pdev_id()
+> was not marked as a read-side critical section.
+> 
+> Mark the code in question as RCU read-side critical sections to avoid
+> any potential use-after-free issues.
+> 
+> Note that the temperature event handler looks like a place holder
+> currently but would still trigger an RCU lockdep splat.
+> 
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+> Cc: stable@vger.kernel.org	# v6.2
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
 -- 
