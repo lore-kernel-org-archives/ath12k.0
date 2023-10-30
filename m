@@ -4,63 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82951C4332F
-	for <ath12k@archiver.kernel.org>; Mon, 30 Oct 2023 22:27:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29C5CC00142
+	for <ath12k@archiver.kernel.org>; Mon, 30 Oct 2023 22:27:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yQ2Zb0ROdkXG9Fpic7CF0hs4IirwnM9u8tSwiujT4PQ=; b=IfKCOj+8d5oG87
-	73tXPPo0r9nEN9yuW0Sem2xjApes7lrKl1JAvK27ESevU87G40+qJJeZ4xR5IF3NgX60MIu9/hNYu
-	y13pyVdlKaSZDjvUVy2eL7DtSdeHzRznBCXIftjOWCFmxYnCD6jsFH4YDy/OSMJRrT76jiv5hKWma
-	Lpn3UfHBr6wKnUpVZ/ph0I0vHzwiUdwNkJxaF5X0txQIgUAdKeu7okwKJpocwSv8JHX2Dq3jaKA+o
-	d11l9vKXtBwYhuB4YDqtMRuIVjsI+1E4QXZj3AOd+ZeqaDexlDaEcj+sZahSAw8/TOm/bO0N4fSQU
-	rnl1YDibtFzelWHrKmQA==;
+	List-Owner; bh=bvNmmM6SzhKbRPtM5Nm6V+MPRUoSLeEEME7SP7N9bzg=; b=yR/Er/k12afH9b
+	3RShhot2PAHLFd9UrSdipA5EvFMvJTvcLTmmk46J5NjtRm138NXBMFwplToSCydgqXnGftcroAfVR
+	LS/2it1XOvD+R65lEY/KtNlCDfqjJuD+QAoWqE5I0Xh0lLoa4XXKQVFUpRCCfNmLfNC288Fnu28Au
+	/yfMe6TB4MsmAGNWAtbwgpt/E2zpyWgGwZc8XdHL+W63X16ZsGlf74M7qafXJNT6r+er9Rpb3YkSo
+	1nxCVcSHMnBsydw5aBKAJo/PjlGMj796GTHmg14Wl1pEzEVcBJFGC5ui37QV4n98YQcgw+0a9NXWL
+	bl17GcYdb21Oc546Da9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxajZ-0048q5-0j
+	id 1qxaja-0048qn-2o
 	for ath12k@archiver.kernel.org;
-	Mon, 30 Oct 2023 22:27:45 +0000
+	Mon, 30 Oct 2023 22:27:46 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxajV-0048ov-31
+	id 1qxajY-0048pj-0k
 	for ath12k@lists.infradead.org;
-	Mon, 30 Oct 2023 22:27:43 +0000
+	Mon, 30 Oct 2023 22:27:45 +0000
 Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39UM7uR1028002;
-	Mon, 30 Oct 2023 22:27:41 GMT
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39ULtJWu002144;
+	Mon, 30 Oct 2023 22:27:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=qcppdkim1;
- bh=F8LiVZZSwSOMvtokTgHKWp1Tyez2a9SaGzHSzQob2i8=;
- b=VY/e1g6ccsN69xNcWHhGEg/kUjoa2vVNr5GEkaYrJK0qkfopmFjkgdMKuMVfUC+glRma
- nS/7/PT1Zkto7cq6YNtb64ktmOycvAJagov3Gn139UnqKMD8ALzxZrCsI8YRmvQ3NowE
- sH7cZ0gw4IOkwa0CA5+TtNPoyBemPtP5DAXU6cbmVfUFUa8/7h/1lpeloixQ2fRfQvxX
- 7ZY/1fbePwndNTrQi2nNlahOfBcloyLTnl0t2w6Yb4nxtI1kQaX7TfvSHNO/IyXnEGlu
- XRlSJzU0d0Z9Eh2Q3Y2DiVpslWTEchbrl+9xUUaGDua5jCAsWfcLm+m88Ng7IvlDKtAy 3Q== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u2dey175n-1
+ bh=oCdQz+w5aPjXPKrgIivnaoFls1dP8AheoVNQ3yVg2Gs=;
+ b=morwlZ/cds2dh9RVACOPCrTd6srCKpFUkcuwutkqW0e9Fe+4ITI60+5qG7X7cAXPgQm1
+ i9uYbPR/1uooZIhv4GGIc4cWqjOrHtjtsH4mM/vnWQ69jyXezHbbpFQiLpDYXicY+Gt3
+ OX9Cqxd8CNrCE/zd3Um9G9uJKnJOmao11gUOrZ+kBkOykjahOjWb6i8YDe9AdaqmYHYw
+ 15bxPOm2FG87htxhtxJwM18R50BooN7npRothYUoNB3JKFfaBcDwkCitv6K2pUaMZWct
+ vQGdfTR3ZOjcHq7MtV04Xf5RBlUw6FbN32db2NWSVLWPcF2844pahtDQyUma/Gc/ol4g qw== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u2dey175q-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 30 Oct 2023 22:27:40 +0000
+	Mon, 30 Oct 2023 22:27:43 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39UMReEY020694
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39UMRg99021337
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 30 Oct 2023 22:27:40 GMT
+	Mon, 30 Oct 2023 22:27:42 GMT
 Received: from rajkbhag-linux.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.39; Mon, 30 Oct 2023 15:27:38 -0700
+ 15.2.1118.39; Mon, 30 Oct 2023 15:27:40 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Sowmiya Sree Elavalagan
-	<quic_ssreeela@quicinc.com>,
+CC: <linux-wireless@vger.kernel.org>, Harshitha Prem <quic_hprem@quicinc.com>,
         Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [PATCH 03/13] wifi: ath12k: fetch correct pdev id from WMI_SERVICE_READY_EXT_EVENTID
-Date: Tue, 31 Oct 2023 03:56:50 +0530
-Message-ID: <20231030222700.18914-4-quic_rajkbhag@quicinc.com>
+Subject: [PATCH 04/13] wifi: ath12k: add support for peer meta data version
+Date: Tue, 31 Oct 2023 03:56:51 +0530
+Message-ID: <20231030222700.18914-5-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20231030222700.18914-1-quic_rajkbhag@quicinc.com>
 References: <20231030222700.18914-1-quic_rajkbhag@quicinc.com>
@@ -70,19 +68,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: BiGCmaRLHnCnDKAL_wD7wK3yBFJevCTY
-X-Proofpoint-GUID: BiGCmaRLHnCnDKAL_wD7wK3yBFJevCTY
+X-Proofpoint-ORIG-GUID: O_8mr1gY_hxoALZDEP8YZ5N6u1ZTPcQi
+X-Proofpoint-GUID: O_8mr1gY_hxoALZDEP8YZ5N6u1ZTPcQi
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-10-30_13,2023-10-27_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
  lowpriorityscore=0 suspectscore=0 spamscore=0 bulkscore=0 mlxscore=0
- phishscore=0 priorityscore=1501 impostorscore=0 mlxlogscore=905
+ phishscore=0 priorityscore=1501 impostorscore=0 mlxlogscore=999
  adultscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.12.0-2310240000 definitions=main-2310300176
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231030_152742_090241_47B74C62 
-X-CRM114-Status: GOOD (  18.69  )
+X-CRM114-CacheID: sfid-20231030_152744_383372_6A456FF2 
+X-CRM114-Status: GOOD (  15.42  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,135 +97,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+From: Harshitha Prem <quic_hprem@quicinc.com>
 
-Currently while fetching for pdev id from WMI_SERVICE_READY_EXT_EVENTID
-we consider 32 bit pdev_id in ath12k_wmi_caps_ext_params structure. But
-Firmware sends lower 16 bit for pdev id along with higher 16 bit for
-hw_link_id. Due to this wrong pdev id is fetched. This wrong pdev id
-when used for WMI commands leads to Firmware crash.
+Add support to process WMI_TLV_SERVICE_PEER_METADATA_V1A_V1B_SUPPORT
+service bit. If this service bit is set by firmware, then it expects
+host to set rx_peer_meta_data_ver in wmi_resource_config's flags2
+with value 3 for QCN9274 to indicate as V1B meta version. If this is
+not set firmware crash is seen during peer addition.
 
-Hence fetch the correct pdev id considering only the lower 16 bits.
+Hence, if WMI_TLV_SERVICE_PEER_METADATA_V1A_V1B_SUPPORT service bit
+is set by firmware, set correct peer metadata version to avoid
+firmware crash.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
-Co-developed-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c |  9 +++---
- drivers/net/wireless/ath/ath12k/wmi.h | 44 ++++++++++++++++++++++-----
- 2 files changed, 41 insertions(+), 12 deletions(-)
+ drivers/net/wireless/ath/ath12k/hw.h  | 2 ++
+ drivers/net/wireless/ath/ath12k/wmi.c | 6 ++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 4 ++++
+ 3 files changed, 12 insertions(+)
 
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index 2d6427cf4..2fb50941c 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -66,6 +66,8 @@
+ #define TARGET_NUM_WDS_ENTRIES		32
+ #define TARGET_DMA_BURST_SIZE		1
+ #define TARGET_RX_BATCHMODE		1
++#define TARGET_RX_PEER_METADATA_VER_V1A	2
++#define TARGET_RX_PEER_METADATA_VER_V1B	3
+ 
+ #define ATH12K_HW_MAX_QUEUES		4
+ #define ATH12K_QUEUE_LEN		4096
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 88ec77dee..ead77688a 100644
+index ead77688a..460f38a22 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.c
 +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -493,13 +493,13 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
+@@ -228,6 +228,9 @@ void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
+ 	config->peer_map_unmap_version = 0x32;
+ 	config->twt_ap_pdev_count = ab->num_radios;
+ 	config->twt_ap_sta_count = 1000;
++
++	if (test_bit(WMI_TLV_SERVICE_PEER_METADATA_V1A_V1B_SUPPORT, ab->wmi_ab.svc_map))
++		config->dp_peer_meta_data_ver = TARGET_RX_PEER_METADATA_VER_V1B;
+ }
  
- 	mac_caps = wmi_mac_phy_caps + phy_idx;
- 
--	pdev->pdev_id = le32_to_cpu(mac_caps->pdev_id);
-+	pdev->pdev_id = ath12k_wmi_mac_phy_get_pdev_id(mac_caps);
- 	pdev_cap->supported_bands |= le32_to_cpu(mac_caps->supported_bands);
- 	pdev_cap->ampdu_density = le32_to_cpu(mac_caps->ampdu_density);
- 
- 	fw_pdev = &ab->fw_pdev[ab->fw_pdev_count];
- 	fw_pdev->supported_bands = le32_to_cpu(mac_caps->supported_bands);
--	fw_pdev->pdev_id = le32_to_cpu(mac_caps->pdev_id);
-+	fw_pdev->pdev_id = ath12k_wmi_mac_phy_get_pdev_id(mac_caps);
- 	fw_pdev->phy_id = le32_to_cpu(mac_caps->phy_id);
- 	ab->fw_pdev_count++;
- 
-@@ -4215,7 +4215,7 @@ ath12k_wmi_tlv_mac_phy_caps_ext_parse(struct ath12k_base *ab,
- 		for (i = 0; i < ab->fw_pdev_count; i++) {
- 			struct ath12k_fw_pdev *fw_pdev = &ab->fw_pdev[i];
- 
--			if (fw_pdev->pdev_id == le32_to_cpu(caps->pdev_id) &&
-+			if (fw_pdev->pdev_id == ath12k_wmi_caps_ext_get_pdev_id(caps) &&
- 			    fw_pdev->phy_id == le32_to_cpu(caps->phy_id)) {
- 				bands = fw_pdev->supported_bands;
- 				break;
-@@ -4272,7 +4272,8 @@ static int ath12k_wmi_tlv_mac_phy_caps_ext(struct ath12k_base *ab, u16 tag,
- 			return 0;
- 	} else {
- 		for (i = 0; i < ab->num_radios; i++) {
--			if (ab->pdevs[i].pdev_id == le32_to_cpu(caps->pdev_id))
-+			if (ab->pdevs[i].pdev_id ==
-+			    ath12k_wmi_caps_ext_get_pdev_id(caps))
- 				break;
- 		}
- 
+ void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
+@@ -3266,6 +3269,9 @@ ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cf
+ 	wmi_cfg->sched_params = cpu_to_le32(tg_cfg->sched_params);
+ 	wmi_cfg->twt_ap_pdev_count = cpu_to_le32(tg_cfg->twt_ap_pdev_count);
+ 	wmi_cfg->twt_ap_sta_count = cpu_to_le32(tg_cfg->twt_ap_sta_count);
++	wmi_cfg->flags2 = le32_encode_bits(tg_cfg->dp_peer_meta_data_ver,
++					   WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION);
++
+ 	wmi_cfg->host_service_flags = cpu_to_le32(tg_cfg->is_reg_cc_ext_event_supported <<
+ 				WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT);
+ }
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index dfe9eb0cb..0fa73a651 100644
+index 0fa73a651..8377e8b5a 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.h
 +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2548,9 +2548,17 @@ struct ath12k_wmi_hw_mode_cap_params {
+@@ -2161,6 +2161,8 @@ enum wmi_tlv_service {
  
- #define WMI_MAX_HECAP_PHY_SIZE                 (3)
+ 	WMI_TLV_SERVICE_11BE = 289,
  
-+/* pdev_id is present in lower 16 bits of pdev_and_hw_link_ids in
-+ * ath12k_wmi_mac_phy_caps_params & ath12k_wmi_caps_ext_params.
-+ *
-+ * hw_link_id is present in higher 16 bits of pdev_and_hw_link_ids.
-+ */
-+#define WMI_CAPS_PARAMS_PDEV_ID		GENMASK(15, 0)
-+#define WMI_CAPS_PARAMS_HW_LINK_ID	GENMASK(31, 16)
++	WMI_TLV_SERVICE_PEER_METADATA_V1A_V1B_SUPPORT = 365,
 +
- struct ath12k_wmi_mac_phy_caps_params {
- 	__le32 hw_mode_id;
--	__le32 pdev_id;
-+	__le32 pdev_and_hw_link_ids;
- 	__le32 phy_id;
- 	__le32 supported_flags;
- 	__le32 supported_bands;
-@@ -2642,13 +2650,7 @@ struct wmi_service_ready_ext2_event {
+ 	WMI_MAX_EXT2_SERVICE,
+ };
  
- struct ath12k_wmi_caps_ext_params {
- 	__le32 hw_mode_id;
--	union {
--		struct {
--			__le16 pdev_id;
--			__le16 hw_link_id;
--		} __packed ath12k_wmi_pdev_to_link_map;
--		__le32 pdev_id;
--	};
-+	__le32 pdev_and_hw_link_ids;
- 	__le32 phy_id;
- 	__le32 wireless_modes_ext;
- 	__le32 eht_cap_mac_info_2ghz[WMI_MAX_EHTCAP_MAC_SIZE];
-@@ -4950,4 +4952,30 @@ int ath12k_wmi_probe_resp_tmpl(struct ath12k *ar, u32 vdev_id,
- int ath12k_wmi_set_hw_mode(struct ath12k_base *ab,
- 			   enum wmi_host_hw_mode_config_type mode);
+@@ -2356,6 +2358,7 @@ struct ath12k_wmi_resource_config_arg {
+ 	u32 twt_ap_pdev_count;
+ 	u32 twt_ap_sta_count;
+ 	bool is_reg_cc_ext_event_supported;
++	u8  dp_peer_meta_data_ver;
+ };
  
-+static inline u32
-+ath12k_wmi_caps_ext_get_pdev_id(const struct ath12k_wmi_caps_ext_params *param)
-+{
-+	return le32_get_bits(param->pdev_and_hw_link_ids, WMI_CAPS_PARAMS_PDEV_ID);
-+}
-+
-+static inline u32
-+ath12k_wmi_caps_ext_get_hw_link_id(const struct ath12k_wmi_caps_ext_params *param)
-+{
-+	return le32_get_bits(param->pdev_and_hw_link_ids, WMI_CAPS_PARAMS_HW_LINK_ID);
-+}
-+
-+static inline u32
-+ath12k_wmi_mac_phy_get_pdev_id(const struct ath12k_wmi_mac_phy_caps_params *param)
-+{
-+	return le32_get_bits(param->pdev_and_hw_link_ids,
-+			     WMI_CAPS_PARAMS_PDEV_ID);
-+}
-+
-+static inline u32
-+ath12k_wmi_mac_phy_get_hw_link_id(const struct ath12k_wmi_mac_phy_caps_params *param)
-+{
-+	return le32_get_bits(param->pdev_and_hw_link_ids,
-+			     WMI_CAPS_PARAMS_HW_LINK_ID);
-+}
-+
- #endif
+ struct ath12k_wmi_init_cmd_arg {
+@@ -2408,6 +2411,7 @@ struct wmi_init_cmd {
+ } __packed;
+ 
+ #define WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT 4
++#define WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION		GENMASK(5, 4)
+ 
+ struct ath12k_wmi_resource_config_params {
+ 	__le32 tlv_header;
 -- 
 2.17.1
 
