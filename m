@@ -4,61 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9F4CC4167D
-	for <ath12k@archiver.kernel.org>; Mon, 30 Oct 2023 17:01:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D01C5C4332F
+	for <ath12k@archiver.kernel.org>; Mon, 30 Oct 2023 17:11:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NHtFsyeWLkPOEnezJUBq75Dj58ke8DfeN90ApadJZCY=; b=n1Z+xo9E4cl245
-	Mglbsfq5yZMzz2MXWeKtSDudmfk9lX5gVJHEFuboLY7O0l2fqxTIAViTL82NIZ1QFn3SbV0V82Rjr
-	H1NMjKuLWjrcyHtT+nc6KH8KodeUsvgMvjnBYT5wFVFBpjaro4wcERmZcye76Y4ONHyIEMEpCXyTK
-	nxMN0mTsJqPLfBooxQEic7poJe2PA7+70ZhLyo/TCClNgOBdwTjZnC5GKskZb6Ybqp9q+YQx+xv6W
-	gaWCGe2YMaE5clDga3pdkYR7o2SUu2G6Y7tRfz+LcwPgNQ49MIaZw4BHxPVsxKHOzxtyt6gdqUPi5
-	gf8hKgacWiYS6FeH3LBA==;
+	List-Owner; bh=wK2on+xDtXTbmrztCjHf4hHo88ZTnZU4yC8JfEq+nJM=; b=qUqS+GXYeteiv9
+	5cN6aU1Hr0Dz7jjuwLtin69Ztt1WBdn9oQM3zoHgp3cU5L1L7G54UQ0UX7jRjb4ff9fLydjUNcgM0
+	kX70J0hlD9dYdCRPslj9tAaAcy3vfZiTjBcstNXNJW/6eJunSl9DdCdD34k5MMqMqXWIpizUmJDEo
+	j0R1/oChNk2tLcDAcnugZiTeeqiD585/yMy7tUoAyZRhK98L3nbik864EsJ+sO7zmrsyVScjTeobi
+	mOLrBNobYGgUEaGJk1W04+PhBfQYXuPgFPBE0kZft1YJ6F42DZkvDBYNclOJe++TnRmcyEp3l6y2r
+	lmC/ln8VexH8E3BAEVFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxVdd-003i2c-0q
+	id 1qxVnl-003iwS-1L
 	for ath12k@archiver.kernel.org;
-	Mon, 30 Oct 2023 17:01:17 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Mon, 30 Oct 2023 17:11:45 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxVda-003i1c-2Q
+	id 1qxVni-003iuu-1m
 	for ath12k@lists.infradead.org;
-	Mon, 30 Oct 2023 17:01:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 24819CE18DA;
-	Mon, 30 Oct 2023 17:01:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D036C433C7;
-	Mon, 30 Oct 2023 17:01:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1698685271;
-	bh=uhht+9KTwyk5xSob1/njGftx8cix5tlAAKpjG3TawZE=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=t8DS9JKVcR63N9kyRZcLw1my5sk6Ql1WYdfXRXLbkFlOiVhOuTpXG9ZvqV2++eZ5/
-	 fCDIpxT6dUA7CrL+zHNYNxQLELEGW0PYhc1JPToFoPJIqLEe3GBdXPfIxxsUeDB4HB
-	 /9S7Rtbmeai8X1S1fUg2zdmGjOVZ9Kd6fEPuHSGtorfi73KWbnT24Ei0NNvZk44Xl+
-	 IXqxnMld/KW4SA67yf+fiqLrBYhSFY8DXVgut3NrJwfuCFJEG4/a/qoAqKxW6wTx9Z
-	 SYRkie6BqBC90CV48MwNwZWtlW2GqvjAXrMuIMlIQ23nrLOQkFCA67x96eZ1ilwAS/
-	 sNJmBVUVTs8vw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Aaradhana Sahu <quic_aarasahu@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 0/4] ath12k: Factory test mode support
-References: <20231030082749.17855-1-quic_aarasahu@quicinc.com>
-	<37452ae3-3006-41ca-9b31-f0d4bed75e35@quicinc.com>
-Date: Mon, 30 Oct 2023 19:01:08 +0200
-In-Reply-To: <37452ae3-3006-41ca-9b31-f0d4bed75e35@quicinc.com> (Jeff
-	Johnson's message of "Mon, 30 Oct 2023 08:21:11 -0700")
-Message-ID: <878r7kvycr.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Mon, 30 Oct 2023 17:11:44 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39UH02LB017234;
+	Mon, 30 Oct 2023 17:11:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=9R/xaPbDK3oi6GF2d9HF5+5/5BSNwCSOoDJ43ViUkwQ=;
+ b=VwtiiP26HfEuwBw6YfjfUQ51geWUN2oCbeMeVlciu4UU+Adqq5fTG9cJS3jnCMqLMeED
+ lDdlNFF78Nm7+drfuD3dehvHmd2Ggm6Wx29uRDmYtiSXmIJbVbHtXuIiG/shLTcN11fV
+ N6xFV2EmsO7NpR1XG/M1QsJujscUYhszpSYP9HxEda4iJABugCOvKae/YT08y5SHqbIp
+ peYS94iO5L/feHgAw/iWX+U/fPWMuI4QLfPvVRp++0FkZqcQj01+yLPNjdGumFgOcTM0
+ sc52evKCexmrQ/tiX2qaQAtmYiabD8KwJ5siw0ayWlD6F5+3NWhNY+g/dK3EkhRS3nV4 3g== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u0sw7vgp0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 30 Oct 2023 17:11:36 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39UHBZOa011724
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 30 Oct 2023 17:11:35 GMT
+Received: from [10.48.245.206] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Mon, 30 Oct
+ 2023 10:11:34 -0700
+Message-ID: <54e8c4b4-4f8b-49a8-944b-a85594bee0d9@quicinc.com>
+Date: Mon, 30 Oct 2023 10:11:33 -0700
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/4] ath12k: Factory test mode support
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>
+CC: Aaradhana Sahu <quic_aarasahu@quicinc.com>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>
+References: <20231030082749.17855-1-quic_aarasahu@quicinc.com>
+ <37452ae3-3006-41ca-9b31-f0d4bed75e35@quicinc.com>
+ <878r7kvycr.fsf@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <878r7kvycr.fsf@kernel.org>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: ghb0uXBqqknsZVI-Lj_fwHWOMyVJc8wm
+X-Proofpoint-GUID: ghb0uXBqqknsZVI-Lj_fwHWOMyVJc8wm
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-10-30_10,2023-10-27_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=550 clxscore=1015
+ phishscore=0 lowpriorityscore=0 spamscore=0 malwarescore=0
+ priorityscore=1501 adultscore=0 bulkscore=0 impostorscore=0 suspectscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2310240000 definitions=main-2310300134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231030_100115_146564_FCC7FB18 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20231030_101142_703020_C5003DC0 
+X-CRM114-Status: GOOD (  11.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,67 +95,27 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+On 10/30/2023 10:01 AM, Kalle Valo wrote:
+> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+>> In addition, please use
+> 
+> Jeff, did you sent your mail too early? Something seems to be missing in
+> your mail.
+> 
 
-> On 10/30/2023 1:27 AM, Aaradhana Sahu wrote:
->
->> Device is booted in factory test mode for calibration.
->> The commands are sent from userspace application, which
->> is sent to firmware using wmi commands. Firmware sends
->> the response to driver as wmi events and driver sends
->> these events to the application via netlink message.
->> Also added changes related to correct pdev id access for
->> fw test cmd.
->> Aaradhana Sahu (3):
->>    wifi: ath: create common testmode_i.h file for ath drivers
->>    wifi: ath12k: export ath12k_wmi_tlv_hdr for testmode
->>    wifi: ath12k: add factory test mode support
->> Rajat Soni (1):
->>    wifi: ath12k: Fill pdev id for fw test cmd
->>   drivers/net/wireless/ath/ath11k/testmode.c    |  78 ++--
->>   drivers/net/wireless/ath/ath12k/Makefile      |   1 +
->>   drivers/net/wireless/ath/ath12k/core.c        |  19 +-
->>   drivers/net/wireless/ath/ath12k/core.h        |  13 +
->>   drivers/net/wireless/ath/ath12k/debug.h       |   1 +
->>   drivers/net/wireless/ath/ath12k/dp.c          |   3 +
->>   drivers/net/wireless/ath/ath12k/mac.c         |  13 +-
->>   drivers/net/wireless/ath/ath12k/pci.c         |   1 +
->>   drivers/net/wireless/ath/ath12k/testmode.c    | 413 ++++++++++++++++++
->>   drivers/net/wireless/ath/ath12k/testmode.h    |  42 ++
->>   drivers/net/wireless/ath/ath12k/wmi.c         |  38 +-
->>   drivers/net/wireless/ath/ath12k/wmi.h         |  22 +-
->>   .../wireless/ath/{ath11k => }/testmode_i.h    |  52 +--
->>   13 files changed, 624 insertions(+), 72 deletions(-)
->>   create mode 100644 drivers/net/wireless/ath/ath12k/testmode.c
->>   create mode 100644 drivers/net/wireless/ath/ath12k/testmode.h
->>   rename drivers/net/wireless/ath/{ath11k => }/testmode_i.h (53%)
->> base-commit: 0263687f4441d5a5eab8074d56b4693c8f0acf85
->
-> That base-commit is pretty old (tag: ath-202309051328) and your series
-> fails to apply to current ath-next, please rebase:
+No, that was operator error on my part. I noticed my initial reply was 
+not going to linux-wireless so I thought that was an error in the 
+submission. I stopped in mid-sentence to verify, and saw that the 
+submission was correct, and that it was my reply that was only a "reply 
+list" and "not "reply all". So I changed my reply, but forgot to remove 
+the sentence fragment.
 
-That tag is almost two months old! Aaradhana, what an earth are you
-testing with?
-
-> Applying: wifi: ath: create common testmode_i.h file for ath drivers
-> Applying: wifi: ath12k: export ath12k_wmi_tlv_hdr for testmode
-> Applying: wifi: ath12k: add factory test mode support
-> Patch failed at 0003 wifi: ath12k: add factory test mode support
->
-> In addition, please use
-
-Jeff, did you sent your mail too early? Something seems to be missing in
-your mail.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+/jeff
 
 -- 
 ath12k mailing list
