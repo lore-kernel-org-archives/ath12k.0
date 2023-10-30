@@ -4,85 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13CBBC4332F
-	for <ath12k@archiver.kernel.org>; Mon, 30 Oct 2023 23:33:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F036C4332F
+	for <ath12k@archiver.kernel.org>; Mon, 30 Oct 2023 23:35:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rES3RFR2V6W0EbQ94tE28FGfoO1DCAPYoZqa2xO/Da4=; b=MNeyOcwKca4fXi
-	urwLaMxqHSxf934CY7iupAJ2fceW0lx32oiQZ+7WQyYwz3wl4rvN01iWjtB7v+JPmSWCSvvtw4FCC
-	Q7UPy2PUamPTxB1mvNKmfTw0BpArmMMUphHsC5iAKmojWGMj/wXSCkwdN+pybKK+EBOkk2qz6dQMu
-	rS4yo0I7jiqEdj/X9cpzi31HVqECjZOAcrkyVCgEywYHz3dzn3Hm8HENpGe92Vq7IKV8zUl7nyW10
-	lev56kAt+YCbe34D9UCHcSoBADC6i7S4UKKT9dRa02vc4rS2oPLNifm94COupFwWM7vx0xSRKX8R5
-	67lJqs8VU7iEigXgwF9Q==;
+	List-Owner; bh=6FGrhbc/ayzpcDGTLHe/4huLvpv7vgSMRC0K/SROJQA=; b=TE3B/pfuRQbXRv
+	nrC1dS5Giw+U41w7holXYZNL6VxHNPrKrOXTAoh0gcfX4gJ1bBOxpr/2/nWw4DWN9O2v6kc7FN4+/
+	c42XEQG4lQpNSNdWgm0ChlFek7lbqIpyy2Kn5zbZdzMPxFk8n+kZmseHl7vfH7XSkDWvrhNuOlVKZ
+	gE0Dpg9S69MMZU5a5HtxWghme+HDoyEVRfElFlEiL/0eH0mCygfvRF1AxqYKeybyHt7N6Yn0k/XE8
+	WLNXsSqPyBnUlButQKg4zpiexTbL9OkizaJS8hQBrwPFzMVK0dumiviBQ42p9AfBkNI1UVGe1zj4H
+	k+e9cThKBcqgEdmtQz5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxblF-004Cf7-2b
+	id 1qxbmf-004Cnh-1F
 	for ath12k@archiver.kernel.org;
-	Mon, 30 Oct 2023 23:33:33 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 30 Oct 2023 23:35:01 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qxblC-004Ceg-0D
+	id 1qxbmc-004Cn1-2N
 	for ath12k@lists.infradead.org;
-	Mon, 30 Oct 2023 23:33:31 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39UNXSVq012307;
-	Mon, 30 Oct 2023 23:33:28 GMT
+	Mon, 30 Oct 2023 23:35:00 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 39UNS6pG022263;
+	Mon, 30 Oct 2023 23:34:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
  mime-version : subject : to : cc : references : from : in-reply-to :
  content-type : content-transfer-encoding; s=qcppdkim1;
- bh=L0HE6XoMw+iLvpQq3HPtXd+WcqarT81suFfxCbEokgc=;
- b=pESSxA98bg6O9vKXjgmvc4T4eoF0QzYekE+9j3sLkIe3rxxjPVzO5y8Gku8+AxNdRxhY
- GhxRmAa1WRnsG14rJqISCEJ4iNmOnTaVCdqPwrmsnhBOKHIGNvhuzbwwBer1HAeNdjMi
- MLxYhowmh+TQGvX3cgDj291CVaUGkRWvRDF0eihiBupHRqW8S7er5cQvESNRBUAsy2Fg
- kGsxizuIpQqoEG/3oLmwaXb6HW6Fl35l9XIRqFhdWDh6iqMlCAgshqyaKCS2xPOledjf
- WxfKVUL4rwCgreRATPFD4hBXe9ccRy/MbVEa907vqimOlvo4Ha9eOnTRzGx1na9CyVqs tg== 
+ bh=LGFm/6htql5qYJ2ctvGV3KEbt1gHigZrgdfYLf4gT44=;
+ b=EutInS3wtPON65WtEkkDIVn0g9oPMYIgqdxXu9FtftagPzc54YGDLslVxZhF7krgk2xW
+ 9Z7UKZ7/q2hhDFvG7v/0DDqYbO0250vNa2gVFeNKc1BWH0KDSrobjIuJ97SG5/3ibwIY
+ E9PB3crRv39Nk/a4ZZjzvjuoDoVkLxhLA0OHg4OEqIS3pN+iIajN/GdOd+Ran3uDjfIR
+ Jd9Pt2bKTZRmzb9a/bmGXaEygxPTgD4YwNYzi49W6ndH5tNvOFataGZJYs/0jmjpiv7n
+ QWM1UoSsUKJ5+Lke0ccCKsmV9LkzjePAYL+IqxLk++SKKcd4CWbiVKHGHksPm9pPg8BS pA== 
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u0sw7w76d-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u2c4rsffa-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 30 Oct 2023 23:33:28 +0000
+	Mon, 30 Oct 2023 23:34:58 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39UNXRxU018850
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 39UNYvVK020557
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 30 Oct 2023 23:33:27 GMT
+	Mon, 30 Oct 2023 23:34:57 GMT
 Received: from [10.48.245.206] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Mon, 30 Oct
- 2023 16:33:26 -0700
-Message-ID: <7065daac-c86f-4b2c-a132-31f34fc71f60@quicinc.com>
-Date: Mon, 30 Oct 2023 16:33:26 -0700
+ 2023 16:34:57 -0700
+Message-ID: <13753715-9dbd-4f82-b526-55e65a9b9894@quicinc.com>
+Date: Mon, 30 Oct 2023 16:34:56 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 08/13] wifi: ath12k: split hal_ops to support RX TLVs word
- mask compaction
+Subject: Re: [PATCH 09/13] wifi: ath12k: remove hal_desc_sz from hw params
 Content-Language: en-US
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20231030222700.18914-1-quic_rajkbhag@quicinc.com>
- <20231030222700.18914-9-quic_rajkbhag@quicinc.com>
+ <20231030222700.18914-10-quic_rajkbhag@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231030222700.18914-9-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20231030222700.18914-10-quic_rajkbhag@quicinc.com>
 X-Originating-IP: [10.49.16.6]
 X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: WOUdRFTklVtqLFeJfkBHk8itooaRueuH
-X-Proofpoint-GUID: WOUdRFTklVtqLFeJfkBHk8itooaRueuH
+X-Proofpoint-ORIG-GUID: EsESw4WlLoGXgs3hdU4kZdEz73qizSeb
+X-Proofpoint-GUID: EsESw4WlLoGXgs3hdU4kZdEz73qizSeb
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-10-30_13,2023-10-27_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=998 clxscore=1015
- phishscore=0 lowpriorityscore=0 spamscore=0 malwarescore=0
- priorityscore=1501 adultscore=0 bulkscore=0 impostorscore=0 suspectscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 bulkscore=0
+ phishscore=0 adultscore=0 spamscore=0 priorityscore=1501 mlxlogscore=999
+ malwarescore=0 mlxscore=0 suspectscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2310240000 definitions=main-2310300184
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231030_163330_239235_E83493AB 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20231030_163458_777321_D8FF542A 
+X-CRM114-Status: GOOD (  14.06  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,12 +106,11 @@ On 10/30/2023 3:26 PM, Raj Kumar Bhagat wrote:
 > mask subscription), two different structures of rx_desc will be
 > required for the same hardware.
 > 
-> Most of the hal_ops are directly related to rx_desc.
-> 
-> Hence, split hal_ops into operations that are independent of rx_desc
-> (hal_ops) and the operations that are directly dependent on rx_desc
-> (hal_rx_ops). These hal_rx_ops depend on both hardware and firmware
-> hence move them out of hw_params.
+> The hardware param hal_desc_sz value cannot be constant for the same
+> hardware. It depends on the size of rx_desc structure which may
+> change based on firmware capability to support word mask subscription.
+> Hence, remove hal_desc_sz from hardware param and add hal_rx_ops
+> to get the size of rx_desc in run time.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
@@ -120,6 +118,7 @@ On 10/30/2023 3:26 PM, Raj Kumar Bhagat wrote:
 > Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+
 
 
 -- 
