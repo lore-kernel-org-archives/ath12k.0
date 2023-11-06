@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 556CCC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7BC8C4167B
 	for <ath12k@archiver.kernel.org>; Mon,  6 Nov 2023 18:26:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QufVqK7cNw4QTnf2Qmf7kJMVUczXVlCUKgeQe/+gfGw=; b=stJiLyPORVLhqu
-	Pbsux8TVYazZL2QklNC7yCyuitgAwbUvjVqkJapqaHrT4X6Nlm28mXP4VZq3ZjWbj6TC9eEcvY9fp
-	xWpR0uifMStazLhj11d1ebPWTSS8zNRQVq9XGow0q5lmK904b62TdopEB2WbmvPLQT1QDe5QsXQ0/
-	/JGMFhGkTbMoVokYhJAjBdN3cJ/eIHN7QKLkLmJwdKQGasmYLZjlx5oagYODdTvIAg6DI2zZJ9IwH
-	DKlRStSRgw890qADSnMMtMVTapAg2dZtvopbOtECzHLL4HIM3jtkcT0v2N5o8F7VAoWpelpsT0sXt
-	M0A+6SyHiZ+aTBOwFUyA==;
+	List-Owner; bh=UnAqvsHBDwXRtBtcvgxb7xpbjZA2rSS9aNRhkLsW5ww=; b=C2CteFgSbAbeFX
+	iAofPKRRry0sRhBjh9uJGGtPqa+TbFJSR/BwpQfkpaWkCIT7kYMIqdEXAq1mCXzbAqgA19ZdgL7a0
+	YgRX32n6/gk7bEdJYAsHbyDCXX1rbZjDTJkE8Wc9jm4lv/uYg+6HwZO2fE15I48Hb+7GzXxj7Wefl
+	hS9xLqeDP0WDtbC+QJBTrWSTnWPXYnstzmyyEJkQAcOUSm8KcrGygDJ6CA6VjiMFJkuNjIHWiFq/C
+	eYHkTb32J0TYRMEi9SyDDOfCslfxv8PkLgCs6en4r1mQoHj7m5ZFsbeynASv2O7tcgCV1SSyYLwex
+	xM37lrzl7xNq1Ns6E9Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r04Il-00HJjl-07
+	id 1r04Il-00HJk8-1E
 	for ath12k@archiver.kernel.org;
 	Mon, 06 Nov 2023 18:26:19 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r04Ie-00HJep-1o;
+	id 1r04Ie-00HJes-1n;
 	Mon, 06 Nov 2023 18:26:15 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3A6FOkXu013264;
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3A6G1lpY017922;
 	Mon, 6 Nov 2023 18:26:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : date :
  subject : mime-version : content-type : content-transfer-encoding :
  message-id : references : in-reply-to : to : cc; s=qcppdkim1;
- bh=55t/8xBDytWJU1+2fU6EcVnx5wtMVDKpMD1oL/ICq6Y=;
- b=QhBn8Eq4vDvpkJI43KvE+AW+bIs3ef28K8wj+cyHGpDuWBF0TbtK8sEToU/OzU4ZEhZq
- PrEyW6+am8jNbkR1u6NkR+G/VaYgzsLylALtwynVzawzdNT6l2wPyC5319BF50vEcEMv
- 4K5/ym4qoLbrHwrVWfslHPfp9hXj6oBmUJ9DOwYyRe51Q7J92tEvO35P+D8lF1y95kS6
- soW6L8pJjrTSjKAaqouKTK5850L9Yl/qKq+bHC2pVeIncKUvl3VsXljCy03llrH4+mcw
- 6tx4jszQ8AXPPpfnHl3gDSOcsDuYAsYV5obYjA7IPcre8AN1vH/2rdHGsX/fWDu2JRAR 8w== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u72r28f9n-1
+ bh=SJKlOS1E2M2M5RmYQFKiqfdV74N+yh3PGJefhyKs7wc=;
+ b=faoC2llptdXpksEeEhrMuH6FXJvlJIkmNchqEjO66p/eKFEy2nLGaRCwkv9znUZUBYxE
+ dy4HDqWEK/LjvwJULuNf8WVyudIKSG95z4FY8Gp+8bzLNF2+uUrme20jR5J5S8FB3FO2
+ kH+ihXJdOwBuR+SRZ+Io+BQQxqY6b5vLdcduvSYT1/H04AktJY1fq/xtsqrEJ7F45BkS
+ GaLxrU9BXOeeHHFBuGoit5E0kbUhT90Bk9GAm6JjFVAFA/mfh8Uv9qxVi+IaF7uujW2G
+ hOyPAo2p4eLFOzENWc3IoKfUeHQW2/inrUXhiLBpoSHzukWR1sJ/VU3uFS40EIGilCVw NQ== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u73a70c9t-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 06 Nov 2023 18:26:06 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3A6IQ5iL013288
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3A6IQ5Vc013143
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 6 Nov 2023 18:26:05 GMT
 Received: from hu-jjohnson-lv.qualcomm.com (10.49.16.6) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.39; Mon, 6 Nov 2023 10:26:05 -0800
+ 15.2.1118.39; Mon, 6 Nov 2023 10:26:04 -0800
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Mon, 6 Nov 2023 10:26:06 -0800
-Subject: [PATCH 4/4] wifi: ath12k: Consolidate WMI peer flags
+Date: Mon, 6 Nov 2023 10:26:05 -0800
+Subject: [PATCH 3/4] wifi: ath11k: Consolidate WMI peer flags
 MIME-Version: 1.0
-Message-ID: <20231106-ath-peer-flags-v1-4-781e83b7e8e8@quicinc.com>
+Message-ID: <20231106-ath-peer-flags-v1-3-781e83b7e8e8@quicinc.com>
 References: <20231106-ath-peer-flags-v1-0-781e83b7e8e8@quicinc.com>
 In-Reply-To: <20231106-ath-peer-flags-v1-0-781e83b7e8e8@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>
@@ -69,19 +69,19 @@ X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 15c66zbwy1zOMu8kmutE6kYi05iXIM_l
-X-Proofpoint-ORIG-GUID: 15c66zbwy1zOMu8kmutE6kYi05iXIM_l
+X-Proofpoint-ORIG-GUID: 3FwCrPLH8hQHsJsPf31EomVw8TDlJHk2
+X-Proofpoint-GUID: 3FwCrPLH8hQHsJsPf31EomVw8TDlJHk2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-11-06_13,2023-11-02_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
- adultscore=0 lowpriorityscore=0 suspectscore=0 malwarescore=0
- clxscore=1015 phishscore=0 priorityscore=1501 mlxscore=0 spamscore=0
- mlxlogscore=667 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 clxscore=1015 bulkscore=0 spamscore=0 suspectscore=0
+ priorityscore=1501 mlxscore=0 mlxlogscore=894 adultscore=0 malwarescore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2310240000 definitions=main-2311060149
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231106_102612_730986_E758687D 
-X-CRM114-Status: GOOD (  17.81  )
+X-CRM114-CacheID: sfid-20231106_102612_717876_1EA91FCF 
+X-CRM114-Status: GOOD (  17.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,23 +117,14 @@ Compile tested only.
 
 Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.h | 61 +++++++++++------------------------
- 1 file changed, 19 insertions(+), 42 deletions(-)
+ drivers/net/wireless/ath/ath11k/wmi.h | 59 +++++++++++------------------------
+ 1 file changed, 18 insertions(+), 41 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 7d295330e6f1..811aeea34e34 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_WMI_H
-@@ -1146,25 +1146,27 @@ enum wmi_tlv_vdev_param {
+diff --git a/drivers/net/wireless/ath/ath11k/wmi.h b/drivers/net/wireless/ath/ath11k/wmi.h
+index 42e4234be69b..3ad29d5d0999 100644
+--- a/drivers/net/wireless/ath/ath11k/wmi.h
++++ b/drivers/net/wireless/ath/ath11k/wmi.h
+@@ -1096,25 +1096,27 @@ enum wmi_tlv_vdev_param {
  };
  
  enum wmi_tlv_peer_flags {
@@ -176,8 +167,8 @@ index 7d295330e6f1..811aeea34e34 100644
 -
  };
  
- enum wmi_tlv_peer_flags_ext {
-@@ -3844,31 +3846,6 @@ struct wmi_unit_test_cmd {
+ /** Enum list of TLV Tags for each parameter structure type. */
+@@ -4061,31 +4063,6 @@ struct wmi_unit_test_cmd {
  
  #define MAX_SUPPORTED_RATES 128
  
@@ -206,9 +197,9 @@ index 7d295330e6f1..811aeea34e34 100644
 -#define WMI_PEER_160MHZ		0x40000000
 -#define WMI_PEER_SAFEMODE_EN	0x80000000
 -
- struct ath12k_wmi_vht_rate_set_params {
- 	__le32 tlv_header;
- 	__le32 rx_max_rate;
+ struct beacon_tmpl_params {
+ 	u8 vdev_id;
+ 	u32 tim_ie_offset;
 
 -- 
 2.42.0
