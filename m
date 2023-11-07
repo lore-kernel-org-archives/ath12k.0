@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9094C0018C
-	for <ath12k@archiver.kernel.org>; Tue,  7 Nov 2023 12:07:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D1DFC4167D
+	for <ath12k@archiver.kernel.org>; Tue,  7 Nov 2023 12:07:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a0tTjAu1+7bUBB81WlyZn1ZIDrDQcXKOQIX8Z30HJnE=; b=4gVdv87O7FZvdm
-	TmLV984g+bBFZ40vl0peIA4VBCOFsx5f54lJ/TV3EOeY6NUvrWaqdWgWme0X9tnf0Yr3+rXWFL3ik
-	z+f42uo8e0IRzM9is10q4jyUv0pHs5rGUI0V8pRwWkMe//QyK6KRipt//78R03dbYzLgDlMYxGUdt
-	HthAAA8+zf+P2+49p2U8wAt97rY5ViaSYPDM5Ol6LIA8eYLwn8Gtn5X73itl5eaos4jMfdbrslWGm
-	0k867snzlE20NpypCsS1oTucXP29OR0Fqpki15rzwWffUTZwSV4e8HZLvhsDbob/NU3Zr066BRKru
-	6SDTxFS9JRo56YlNY9AQ==;
+	List-Owner; bh=4c9pTNmpcdV6ISk+v8GrxVZbqvhP0/xaMjRsCZI4ZLY=; b=w5vLo9PDiACeQQ
+	agzApTLPUbqLO4jc/bWlRtdbCsLITrdNzk8EVj4CZ8R0a8VeRhxQH7fxrTjSVBaL8+Vf0Viq+m4i9
+	mdRFg4zFTKlClHI0JJS8bP857DqRPlWCYfWzrF9dLVDGxIWkqBoQdFdtfY8S2u0tRQzQCfW2Lw36R
+	SeRKKCsCqeNfGkM1Yx+fOL8GxFQHqOfwoEF4cwvMG0U831VpineiPyi8QHq3Yxd5JmNaXoE5Oji3E
+	jmlrC/7WoYsh5YrCND5dj6CYlHoDk3xOnOxE2Is6IfYMsB8eIds3Gi2iKkhD1aiDkz40AAfxS5kpp
+	jhOKXca3c5JqiPgnD0Dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r0KrQ-001PIC-1h
+	id 1r0Krh-001POW-0u
 	for ath12k@archiver.kernel.org;
-	Tue, 07 Nov 2023 12:07:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 07 Nov 2023 12:07:29 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r0KrN-001PHZ-1o
+	id 1r0Krd-001PMd-2g
 	for ath12k@lists.infradead.org;
-	Tue, 07 Nov 2023 12:07:11 +0000
+	Tue, 07 Nov 2023 12:07:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D612E611D7;
-	Tue,  7 Nov 2023 12:07:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 998DEC433C9;
-	Tue,  7 Nov 2023 12:07:07 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 27A9ECE0B89;
+	Tue,  7 Nov 2023 12:07:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 72E18C433C7;
+	Tue,  7 Nov 2023 12:07:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1699358828;
-	bh=QGhKnTRMS32ayT2MMhoB62SzaKWb3xt4pGpY0Aw7sHM=;
+	s=k20201202; t=1699358843;
+	bh=01j6EKsgCax7l7Fd8OSsdrmplpwNAU3rMOg92D5wsp8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=llYVfC06fXfdStkUFc/RSDiBTvQruRIlj7Z4a2+N+AXCxo9yKs57TgRQLDSpmvLyy
-	 2Isso6qkA9vlQSiEPKeZ9AdUGS7hrZZrzP3brZd8eqmqWvpTNLx2IpYHGPSqOoy4A5
-	 20R5p6oem1bq0dHf+4pJzGyZYc7XGaC3kuzH5j3kQ81l3Y/Y78ORsZKlgjNei+LbYB
-	 ny4Ps2ADH5S7HC02Y47BIN9y9FI8Z4rIkSB91auQ9nMi8nE0Ej3aUIEEqjHJmm2hvz
-	 xTHlOg4cvCS9zdm2srPjSUH3q0sB8IaD9dDssL4fB8uNsZTbkZ6RfUvUhy5ud+WAOH
-	 KEYxQCk7aU28w==
+	b=jmR0CEXlCuh99CrQfAqHccjtlQGB4j+qy8j6A6JYwHCwl1Us3aVXqPxIO1zGwXdX3
+	 AagIPCzqYpezXhzeujYpUcjSLS7o6L6ur+F1tshJdTHeS3Rm63aLeZm7e8YodAbU9K
+	 W5YYRYU/IGfX0dwHbsxHqI/NzbaZ5lB8HgSrDLzJQdyh4PcBmlxFlZGE108inHYBUg
+	 xmx0CYpGRbR1HkVXAcJTsXdfBRX7nzdypLZAknFwPKeIV1z2h9HlTi/mZ5hLFUCyLk
+	 5SWMjBBL+wp20D4h+pCL1e3uBcHp52kZxH3YBJDESfAxlR6JPN4lOMKNmE3st3aYT4
+	 1vv/p8s7GJG5Q==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Harshitha Prem <quic_hprem@quicinc.com>,
+Cc: Baochen Qiang <quic_bqiang@quicinc.com>,
+	Jeff Johnson <quic_jjohnson@quicinc.com>,
 	Kalle Valo <quic_kvalo@quicinc.com>,
 	Sasha Levin <sashal@kernel.org>,
 	kvalo@kernel.org,
-	quic_jjohnson@quicinc.com,
 	ath12k@lists.infradead.org,
 	linux-wireless@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.6 02/31] wifi: ath12k: Ignore fragments from uninitialized peer in  dp
-Date: Tue,  7 Nov 2023 07:05:49 -0500
-Message-ID: <20231107120704.3756327-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.6 08/31] wifi: ath12k: fix possible out-of-bound read in ath12k_htt_pull_ppdu_stats()
+Date: Tue,  7 Nov 2023 07:05:55 -0500
+Message-ID: <20231107120704.3756327-8-sashal@kernel.org>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20231107120704.3756327-1-sashal@kernel.org>
 References: <20231107120704.3756327-1-sashal@kernel.org>
@@ -64,8 +64,8 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231107_040709_686823_DD18E8E2 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20231107_040726_050279_15A9C6B5 
+X-CRM114-Status: GOOD (  10.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,110 +82,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Harshitha Prem <quic_hprem@quicinc.com>
+From: Baochen Qiang <quic_bqiang@quicinc.com>
 
-[ Upstream commit bbc86757ca62423c3b6bd8f7176da1ff43450769 ]
+[ Upstream commit 1bc44a505a229bb1dd4957e11aa594edeea3690e ]
 
-When max virtual ap interfaces are configured in all the bands with
-ACS and hostapd restart is done every 60s, a crash is observed at
-random times.
+len is extracted from HTT message and could be an unexpected value in
+case errors happen, so add validation before using to avoid possible
+out-of-bound read in the following message iteration and parsing.
 
-In the above scenario, a fragmented packet is received for self peer,
-for which rx_tid and rx_frags are not initialized in datapath.
-While handling this fragment, crash is observed as the rx_frag list
-is uninitialized and when we walk in ath12k_dp_rx_h_sort_frags,
-skb null leads to exception.
+The same issue also applies to ppdu_info->ppdu_stats.common.num_users,
+so validate it before using too.
 
-To address this, before processing received fragments we check
-dp_setup_done flag is set to ensure that peer has completed its
-dp peer setup for fragment queue, else ignore processing the
-fragments.
+These are found during code review.
 
-Call trace:
-    PC points to "ath12k_dp_process_rx_err+0x4e8/0xfcc [ath12k]"
-    LR points to "ath12k_dp_process_rx_err+0x480/0xfcc [ath12k]".
-    The Backtrace obtained is as follows:
-    ath12k_dp_process_rx_err+0x4e8/0xfcc [ath12k]
-    ath12k_dp_service_srng+0x78/0x260 [ath12k]
-    ath12k_pci_write32+0x990/0xb0c [ath12k]
-    __napi_poll+0x30/0xa4
-    net_rx_action+0x118/0x270
-    __do_softirq+0x10c/0x244
-    irq_exit+0x64/0xb4
-    __handle_domain_irq+0x88/0xac
-    gic_handle_irq+0x74/0xbc
-    el1_irq+0xf0/0x1c0
-    arch_cpu_idle+0x10/0x18
-    do_idle+0x104/0x248
-    cpu_startup_entry+0x20/0x64
-    rest_init+0xd0/0xdc
-    arch_call_rest_init+0xc/0x14
+Compile test only.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://lore.kernel.org/r/20230821130343.29495-2-quic_hprem@quicinc.com
+Link: https://lore.kernel.org/r/20230901015602.45112-1-quic_bqiang@quicinc.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/dp.c    | 1 +
- drivers/net/wireless/ath/ath12k/dp_rx.c | 9 +++++++++
- drivers/net/wireless/ath/ath12k/peer.h  | 3 +++
- 3 files changed, 13 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index f933896f2a68d..6893466f61f04 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -38,6 +38,7 @@ void ath12k_dp_peer_cleanup(struct ath12k *ar, int vdev_id, const u8 *addr)
- 
- 	ath12k_dp_rx_peer_tid_cleanup(ar, peer);
- 	crypto_free_shash(peer->tfm_mmic);
-+	peer->dp_setup_done = false;
- 	spin_unlock_bh(&ab->base_lock);
- }
- 
 diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index e6e64d437c47a..100390fdc735f 100644
+index 100390fdc735f..42f9cfede12bf 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2748,6 +2748,7 @@ int ath12k_dp_rx_peer_frag_setup(struct ath12k *ar, const u8 *peer_mac, int vdev
- 	}
+@@ -1555,6 +1555,13 @@ static int ath12k_htt_pull_ppdu_stats(struct ath12k_base *ab,
  
- 	peer->tfm_mmic = tfm;
-+	peer->dp_setup_done = true;
- 	spin_unlock_bh(&ab->base_lock);
- 
- 	return 0;
-@@ -3214,6 +3215,14 @@ static int ath12k_dp_rx_frag_h_mpdu(struct ath12k *ar,
- 		ret = -ENOENT;
- 		goto out_unlock;
- 	}
-+
-+	if (!peer->dp_setup_done) {
-+		ath12k_warn(ab, "The peer %pM [%d] has uninitialized datapath\n",
-+			    peer->addr, peer_id);
-+		ret = -ENOENT;
-+		goto out_unlock;
+ 	msg = (struct ath12k_htt_ppdu_stats_msg *)skb->data;
+ 	len = le32_get_bits(msg->info, HTT_T2H_PPDU_STATS_INFO_PAYLOAD_SIZE);
++	if (len > (skb->len - struct_size(msg, data, 0))) {
++		ath12k_warn(ab,
++			    "HTT PPDU STATS event has unexpected payload size %u, should be smaller than %u\n",
++			    len, skb->len);
++		return -EINVAL;
 +	}
 +
- 	rx_tid = &peer->rx_tid[tid];
+ 	pdev_id = le32_get_bits(msg->info, HTT_T2H_PPDU_STATS_INFO_PDEV_ID);
+ 	ppdu_id = le32_to_cpu(msg->ppdu_id);
  
- 	if ((!skb_queue_empty(&rx_tid->rx_frags) && seqno != rx_tid->cur_sn) ||
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index b296dc0e2f671..c6edb24cbedd8 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -44,6 +44,9 @@ struct ath12k_peer {
- 	struct ppdu_user_delayba ppdu_stats_delayba;
- 	bool delayba_flag;
- 	bool is_authorized;
+@@ -1583,6 +1590,16 @@ static int ath12k_htt_pull_ppdu_stats(struct ath12k_base *ab,
+ 		goto exit;
+ 	}
+ 
++	if (ppdu_info->ppdu_stats.common.num_users >= HTT_PPDU_STATS_MAX_USERS) {
++		spin_unlock_bh(&ar->data_lock);
++		ath12k_warn(ab,
++			    "HTT PPDU STATS event has unexpected num_users %u, should be smaller than %u\n",
++			    ppdu_info->ppdu_stats.common.num_users,
++			    HTT_PPDU_STATS_MAX_USERS);
++		ret = -EINVAL;
++		goto exit;
++	}
 +
-+	/* protected by ab->data_lock */
-+	bool dp_setup_done;
- };
- 
- void ath12k_peer_unmap_event(struct ath12k_base *ab, u16 peer_id);
+ 	/* back up data rate tlv for all peers */
+ 	if (ppdu_info->frame_type == HTT_STATS_PPDU_FTYPE_DATA &&
+ 	    (ppdu_info->tlv_bitmap & (1 << HTT_PPDU_STATS_TAG_USR_COMMON)) &&
 -- 
 2.42.0
 
