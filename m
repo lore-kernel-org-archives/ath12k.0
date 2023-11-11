@@ -4,84 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86EF3C4332F
-	for <ath12k@archiver.kernel.org>; Fri, 10 Nov 2023 18:54:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9100C4332F
+	for <ath12k@archiver.kernel.org>; Sat, 11 Nov 2023 04:02:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aCIe64ufMGDli9i/2V4RfbJWevZhSYwUwcdB5ATPLvg=; b=RjZf/csTnZeiq6
-	psAzCySt7GgvzfKr2szfcBO6ppH4dWYjOuvT0gt0hhTQ5jxruyp5O5bw950FcencyVSP2tba7sLLe
-	seLNHODoUqDFOFGlIKMeeiJjicvduJt6aUbqo6egnT2vIA+i0ry5LbxVGJmWKZY/SQV4I/ZPLMHTA
-	r/OuddjusUAc5iFiohsrdP4FI5HJYf7CLirq7HFlyPTnnPPSsxYoNNvyRlUqnTgN3VXmvHu4UpVep
-	uQA4MHizavsSSnKS6isnHkCfLFBHG+UQQwqoxbffxCs685/P7teB/YoXydZ9k+k7kk8ns4Lh/8/3d
-	HyfMK14oBhp6XQThG9CQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=D2wZ7ugpuO45DLnOMhxvi7HzfxfKQrpNycnnd8fbCMU=; b=zBud8u07iVkHU3
+	k2CBpSPN9cN8NorQjDVrzVrB83aqtcR56zP8T8BMZa2VmAxHeLvp7UEBEd4+cDNpGyf2AzIA4VmJK
+	I5QEWEFqQTHJVlbYHOEwN2bBOMGfawofMsiQcBx3ay2Wa545Px+v12nDiApKcH3mQ6vy/kl+OD7M3
+	g6W+dzKc9JhxckXoPRuTc6slH7e0mryexIQ4HJRY6vwE4XfPB+ORESzGfWoraTrXIW+Ay5terBthn
+	MMnYt+FUnrJ0EGglo1Jfm8sVF1hKwSQygzvpN/dLAbL9zXXhTzIrKLu6ssIQO9JM4sdDpIORyWKSp
+	Fx/Oiw291xt+/X0IrAyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1WeE-009GT9-0W
+	id 1r1fC9-009yQ7-0v
 	for ath12k@archiver.kernel.org;
-	Fri, 10 Nov 2023 18:54:30 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Sat, 11 Nov 2023 04:02:05 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1WeB-009GS3-0y
+	id 1r1fC5-009yPZ-2V
 	for ath12k@lists.infradead.org;
-	Fri, 10 Nov 2023 18:54:28 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AAIckbC026572;
-	Fri, 10 Nov 2023 18:54:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=hUIa1xw7MNKdlnHkIlbisQWeSZuSkGwfRvkO7Fyg85c=;
- b=RAbZhXxb7hC3UxM+M6toWjoNEWNRtpls/IkGTMpcZGFaUiC8r+Uk7EkN6FEGglGh7Z26
- I3ghKLCeWu4XdnyQMS6bLwvOmgb/r4NNmHfGOg4k82QZqB8Ssl0qBBqrZv8BMHKY8S3H
- yQMmIVI50hKSV9Gt7YX8Nl1g9oELZtUFkEjDrw4h6wFhsRjLzQF1efum9VsNm+Em5f0v
- JPdMKSw2UM/n7/kOJ/tOeoqy9tin9gZA1oQrRS4V2FLGyAe/YcQGdsOGq8ayJopdu985
- 3n1xXtFPVocsmCUU7ZKinQhFEDT9aF3Gs9fobbKwFDEh87LSicWBJeWHxmpM359d3b3i Zg== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3u9q0w0fft-1
+	Sat, 11 Nov 2023 04:02:03 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AB3hQvw007196;
+	Sat, 11 Nov 2023 04:01:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=0ShenSEDZTptJ33kTOgofmsx502ftZSKDsBpsm35Wxo=;
+ b=AGa8JXecINboR3YCUgJZv+kDfLdxlPRn7DgMOwdmj7UPZnM8zP8ThGpxOFZqQmPWm4oV
+ 0xa9ut+ltHf1a3ZTz+KvHOAQTdAN+sC1fAr6vay+Epa1dBtJLoEMgwOnC70YyFMaLahx
+ 12+y/pcUWS66uE33dNNJwHBQWqQ8PPJFkGIasT2WxyC7f3i0MaJnN5DHu/h1vr8tFxqs
+ ZVtwB8e4OxQSpQdK8nq0JLfDEaXARxHJWwdoQBEVRg/dtKhiFrLTB1LnkwKBizUHHLIO
+ Psh01LK0eTU3nWSI6G3B6XnpOwuAt2rBBXtaxDTB2oDKpvTcTf9FC062BEGTNaRRTBsv rA== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ua0mdg47t-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 10 Nov 2023 18:54:26 +0000
+	Sat, 11 Nov 2023 04:01:56 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AAIrxok013208
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AB41NON026721
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 10 Nov 2023 18:53:59 GMT
-Received: from [10.110.6.241] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Fri, 10 Nov
- 2023 10:53:59 -0800
-Message-ID: <3d54205c-46a0-4353-b1c0-1f5afe8d4c5d@quicinc.com>
-Date: Fri, 10 Nov 2023 10:53:59 -0800
+	Sat, 11 Nov 2023 04:01:23 GMT
+Received: from periyasa-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.39; Fri, 10 Nov 2023 20:01:21 -0800
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH v2] wifi: ath12k: fix the error handler of rfkill config
+Date: Sat, 11 Nov 2023 09:31:07 +0530
+Message-ID: <20231111040107.18708-1-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/4] ath12k: Refactor Rxdma replenish arguments
-Content-Language: en-US
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20231110081317.19608-1-quic_periyasa@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231110081317.19608-1-quic_periyasa@quicinc.com>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 7KZH7TBnPdqIj9UdsCnZYXjYmI9BqNMO
-X-Proofpoint-ORIG-GUID: 7KZH7TBnPdqIj9UdsCnZYXjYmI9BqNMO
+X-Proofpoint-ORIG-GUID: I6b_bwVEa27QfgD-r4gi7ShNIyikDldD
+X-Proofpoint-GUID: I6b_bwVEa27QfgD-r4gi7ShNIyikDldD
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-10_16,2023-11-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- bulkscore=0 spamscore=0 mlxlogscore=372 phishscore=0 impostorscore=0
- lowpriorityscore=0 clxscore=1015 malwarescore=0 mlxscore=0 adultscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311100158
+ definitions=2023-11-10_21,2023-11-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ adultscore=0 malwarescore=0 mlxlogscore=712 spamscore=0 clxscore=1015
+ mlxscore=0 priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311110031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231110_105427_364086_D2442075 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20231110_200201_954215_E376F103 
+X-CRM114-Status: GOOD (  16.24  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,30 +90,61 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 11/10/2023 12:13 AM, Karthikeyan Periyasamy wrote:
-> Avoid the explicit arguments of Rxdma replenish to optimize the per packet
-> rx data path CPU cycles. Also refactor the Rxdma ring structure.
-> 
-> Karthikeyan Periyasamy (4):
->    wifi: ath12k: avoid explicit mac id argument in Rxdma replenish
->    wifi: ath12k: avoid explicit RBM id argument in Rxdma replenish
->    wifi: ath12k: avoid explicit HW conversion argument in Rxdma replenish
->    wifi: ath12k: refactor DP Rxdma ring structure
-> 
->   drivers/net/wireless/ath/ath12k/dp.c     |   4 +-
->   drivers/net/wireless/ath/ath12k/dp.h     |  11 +-
->   drivers/net/wireless/ath/ath12k/dp_mon.c |  10 +-
->   drivers/net/wireless/ath/ath12k/dp_mon.h |   2 +-
->   drivers/net/wireless/ath/ath12k/dp_rx.c  | 143 ++++++++++-------------
->   drivers/net/wireless/ath/ath12k/dp_rx.h  |   6 +-
->   6 files changed, 76 insertions(+), 100 deletions(-)
+When the core rfkill config throws error, it should free the
+allocated resources. Currently it is not freeing the core pdev
+create resources. Avoid this issue by calling the core pdev
+destroy in the error handler of core rfkill config.
 
-Can you respin and update the QuIC copyright to 2023?
+Found this issue in the code review and it is compile tested only.
+
+Fixes: 004ccbc0dd49 ("wifi: ath12k: add support for hardware rfkill for WCN7850")
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+---
+ v2:
+  - Changed the copyright year
+
+ drivers/net/wireless/ath/ath12k/core.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index b936760b5140..6c01b282fcd3 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #include <linux/module.h>
+@@ -698,13 +698,15 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
+ 	ret = ath12k_core_rfkill_config(ab);
+ 	if (ret && ret != -EOPNOTSUPP) {
+ 		ath12k_err(ab, "failed to config rfkill: %d\n", ret);
+-		goto err_core_stop;
++		goto err_core_pdev_destroy;
+ 	}
+ 
+ 	mutex_unlock(&ab->core_lock);
+ 
+ 	return 0;
+ 
++err_core_pdev_destroy:
++	ath12k_core_pdev_destroy(ab);
+ err_core_stop:
+ 	ath12k_core_stop(ab);
+ 	ath12k_mac_destroy(ab);
+
+base-commit: 553d0057523dc1d6935160613f1fbf9bb8db88f6
+-- 
+2.17.1
 
 
 -- 
