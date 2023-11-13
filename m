@@ -4,84 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75F6FC4332F
-	for <ath12k@archiver.kernel.org>; Sat, 11 Nov 2023 04:40:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D38DC4167B
+	for <ath12k@archiver.kernel.org>; Mon, 13 Nov 2023 15:21:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7KhVHQjit8HkVkZBrMgCsmM38TihrYnUCZmK15HZmso=; b=fUecqhVuUby7eb
-	Mqu8gCBP9y80AUTeT7amQy+9IcIguER63U5QDdsSPpuuLA4HFg7tndt09owBfucMXH+vy42GFSBSl
-	R44mUAIvej7wCXx83l3s0N6FMare/wXyKlySLgGvx6OeI/KWudGXum7YoPekEDnQdGPWdywyLTdFl
-	8TUfk5xe//J4bFRhRtAB9aO5PbiokgG/WBzE7ENlfbSb8CGiYn74ynWFv759PR4uBMm5bs1VcrFcv
-	asoi0ysV9u+d1A2nUQWUGQRIh3S9IeWia/AkoLmCw670yBnOD3wmKf9ZoxWpiAAqidPxT0VhNdTJz
-	eP2a5zv3mJaiNv5PeJQg==;
+	List-Owner; bh=6SSWlm5MggJ99JSqPYzQPhL/R+qrUcGN/A4f1a9Y2UY=; b=qjcwtKMOGJgMuR
+	loxqwrg+qMDkmSo7iaGrtk60/4WLsjsO69EKPvyRMf7VKSduZ5wRVwwJBikyYgtrGRfgYy2Mqz/PM
+	U/M2BxhR3Qzew2sm9JD23d4JhUbE+3WkhDpEmFl1wbsLErxSLSyB9nsT/Bvpo8Ek3jENN5fGOfpLk
+	jW2RBi0sYyocJzve9o3woBzpec0V/458Ih1wniD3RE8PR1IVNsr/Qj4UQKKL1t8TzODWC+rrabh8r
+	gh26WVzCO39HBfXvBcCwuotr/a6sO0r1xT5w7VheL11lu7TS3J2Oz/rA7dGc7MB+DtJztilNeb9WP
+	2E0xRPN7y6Agfq24Hwmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1fmv-00A1jI-0M
+	id 1r2Yki-00EE3B-3D
 	for ath12k@archiver.kernel.org;
-	Sat, 11 Nov 2023 04:40:05 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 13 Nov 2023 15:21:29 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r1fms-00A1iM-0U
+	id 1r2Ykg-00EE2k-1W
 	for ath12k@lists.infradead.org;
-	Sat, 11 Nov 2023 04:40:04 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AB2rUDW003722;
-	Sat, 11 Nov 2023 04:40:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=qcppdkim1;
- bh=8tt4lqpXqeViQVx1HmAutfpjWnPUKUKwoVcGZ/sarYM=;
- b=Xq2sOkLB3rVloPdhf9A0BrHoj0rrI4/k7E9fOhr5xxU/Dc5YbQtfds8TaOZ8KxnIzW3F
- Ty5kWmGzLPW5onEuUMnUol61XWQ5RldeF9rxXyN54RyIUUMyS1RFNGx0fWxyunQsfbtx
- YIkC5NM3QcYlJSi/80ehQjOQ8vw2SVqnuj+lE+973yLik4YMe1LUVj2G6AdUUt42GkbJ
- UDKtnyBmt40jK1Lj7EBEIMQcHaRy2I1le+DBkgcl7Fett23RSo+DwIMl1AWGMvJzGuhg
- 8LIF30fPUDo3EhElRnGwSYu281S6CMbL9sOt9WEcwn8waqSZezRWjI0l5glW8Tj4TG8l lA== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ua1778460-1
+	Mon, 13 Nov 2023 15:21:27 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3ADEj05g031905;
+	Mon, 13 Nov 2023 15:21:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=Ak1ZX8NRXysrd0syBJWm9Q579ECQbY/GalDDGgeIczA=;
+ b=Ten9PcRu7joYj3+wdZVq17QSGRbQ7+XbX4XFpGNXXGGw+pl4iqKq9d5W3P69uGNz9k9D
+ l7tQr84IfD8eYM0qTzcQrtTPJ+5GoxlZ5DBqy+E/4emPRaCGkp2n8lHulom/tEcBdEAB
+ Wx0YojYDJABewJb1aWZ8XgEYl6KBC7iAr5UQBpscjupUHTwTpC5IFZDWnKTJD1vmyXDS
+ GTyb50o8sLzVGeBPzMQm+bahjkE7n3Pi0M7UzyJVssRLbr2cDA6TUqLmiOQfpe+kUgge
+ iuirKQ2mM5o4DWUK/VHAbs+Baa9hpqsKEnKfD1bsVCpSwhv433O4ho/cgIejBXCgCX8p PQ== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ubmtv88c4-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 11 Nov 2023 04:40:01 +0000
+	Mon, 13 Nov 2023 15:21:24 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AB4e0D1007785
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3ADFLOte027273
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 11 Nov 2023 04:40:00 GMT
-Received: from periyasa-linux.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.39; Fri, 10 Nov 2023 20:39:58 -0800
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-Subject: [PATCH v2 4/4] wifi: ath12k: refactor DP Rxdma ring structure
-Date: Sat, 11 Nov 2023 10:09:34 +0530
-Message-ID: <20231111043934.20485-5-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20231111043934.20485-1-quic_periyasa@quicinc.com>
-References: <20231111043934.20485-1-quic_periyasa@quicinc.com>
+	Mon, 13 Nov 2023 15:21:24 GMT
+Received: from [10.110.49.55] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.39; Mon, 13 Nov
+ 2023 07:21:23 -0800
+Message-ID: <87c908cd-ee56-4dd5-9acd-cb58f0e650b2@quicinc.com>
+Date: Mon, 13 Nov 2023 07:21:22 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath12k: fix the error handler of rfkill config
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20231111040107.18708-1-quic_periyasa@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20231111040107.18708-1-quic_periyasa@quicinc.com>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: SqaiqYzXe4qlByw0pf8cbuavoKrDbVRQ
-X-Proofpoint-GUID: SqaiqYzXe4qlByw0pf8cbuavoKrDbVRQ
+X-Proofpoint-ORIG-GUID: LzLgpzufM-WbIwfUcimdh-Q1egUFbAeK
+X-Proofpoint-GUID: LzLgpzufM-WbIwfUcimdh-Q1egUFbAeK
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-11_01,2023-11-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
- bulkscore=0 priorityscore=1501 spamscore=0 suspectscore=0
- lowpriorityscore=0 adultscore=0 impostorscore=0 phishscore=0 mlxscore=0
- mlxlogscore=673 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311110036
+ definitions=2023-11-13_06,2023-11-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 bulkscore=0 lowpriorityscore=0 mlxscore=0 clxscore=1015
+ spamscore=0 mlxlogscore=610 phishscore=0 adultscore=0 malwarescore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311130125
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231110_204002_309033_E18EADB6 
-X-CRM114-Status: GOOD (  21.50  )
+X-CRM114-CacheID: sfid-20231113_072126_540423_F82881C3 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,267 +98,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently data path Rxdma ring structure store the IDR buffer and lock.
-These IDR handling is needed only for SW cookie conversion and not
-needed for HW cookie conversion. REO Rxdma ring use the HW cookie
-conversion and monitor Rxdma ring use the SW cookie conversion.
-Since idr not needed for REO Rxdma ring, remove the IDR data entity
-from the data path Rxdma ring structure. Introduce the new data path ring
-structure for monitor rxmda rings since it need IDR data entity.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00125-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.h     | 13 ++++--
- drivers/net/wireless/ath/ath12k/dp_mon.c | 12 ++---
- drivers/net/wireless/ath/ath12k/dp_mon.h |  4 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c  | 56 ++++++++++++------------
- 4 files changed, 46 insertions(+), 39 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 61f765432516..1df3cdd46140 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_DP_H
-@@ -31,7 +31,7 @@ struct dp_srng {
- 	u32 ring_id;
- };
- 
--struct dp_rxdma_ring {
-+struct dp_rxdma_mon_ring {
- 	struct dp_srng refill_buf_ring;
- 	struct idr bufs_idr;
- 	/* Protects bufs_idr */
-@@ -39,6 +39,11 @@ struct dp_rxdma_ring {
- 	int bufs_max;
- };
- 
-+struct dp_rxdma_ring {
-+	struct dp_srng refill_buf_ring;
-+	int bufs_max;
-+};
-+
- #define ATH12K_TX_COMPL_NEXT(x)	(((x) + 1) % DP_TX_COMP_RING_SIZE)
- 
- struct dp_tx_ring {
-@@ -353,8 +358,8 @@ struct ath12k_dp {
- 	struct dp_rxdma_ring rx_refill_buf_ring;
- 	struct dp_srng rx_mac_buf_ring[MAX_RXDMA_PER_PDEV];
- 	struct dp_srng rxdma_err_dst_ring[MAX_RXDMA_PER_PDEV];
--	struct dp_rxdma_ring rxdma_mon_buf_ring;
--	struct dp_rxdma_ring tx_mon_buf_ring;
-+	struct dp_rxdma_mon_ring rxdma_mon_buf_ring;
-+	struct dp_rxdma_mon_ring tx_mon_buf_ring;
- 	struct ath12k_reo_q_addr_lut reoq_lut;
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index f44bc5494ce7..98d7c8e2c0eb 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include "dp_mon.h"
-@@ -797,7 +797,7 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k_base *ab,
- 		/* TODO: add msdu start parsing logic */
- 		break;
- 	case HAL_MON_BUF_ADDR: {
--		struct dp_rxdma_ring *buf_ring = &ab->dp.rxdma_mon_buf_ring;
-+		struct dp_rxdma_mon_ring *buf_ring = &ab->dp.rxdma_mon_buf_ring;
- 		struct dp_mon_packet_info *packet_info =
- 			(struct dp_mon_packet_info *)tlv_data;
- 		int buf_id = u32_get_bits(packet_info->cookie,
-@@ -1259,7 +1259,7 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
- }
- 
- int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
--				struct dp_rxdma_ring *buf_ring,
-+				struct dp_rxdma_mon_ring *buf_ring,
- 				int req_entries)
- {
- 	struct hal_mon_buf_ring *mon_buf;
-@@ -1902,7 +1902,7 @@ ath12k_dp_mon_tx_parse_status_tlv(struct ath12k_base *ab,
- 	}
- 
- 	case HAL_MON_BUF_ADDR: {
--		struct dp_rxdma_ring *buf_ring = &ab->dp.tx_mon_buf_ring;
-+		struct dp_rxdma_mon_ring *buf_ring = &ab->dp.tx_mon_buf_ring;
- 		struct dp_mon_packet_info *packet_info =
- 			(struct dp_mon_packet_info *)tlv_data;
- 		int buf_id = u32_get_bits(packet_info->cookie,
-@@ -2067,7 +2067,7 @@ int ath12k_dp_mon_srng_process(struct ath12k *ar, int mac_id, int *budget,
- 	struct ath12k_skb_rxcb *rxcb;
- 	struct dp_srng *mon_dst_ring;
- 	struct hal_srng *srng;
--	struct dp_rxdma_ring *buf_ring;
-+	struct dp_rxdma_mon_ring *buf_ring;
- 	u64 cookie;
- 	u32 ppdu_id;
- 	int num_buffs_reaped = 0, srng_id, buf_id;
-@@ -2480,7 +2480,7 @@ int ath12k_dp_mon_rx_process_stats(struct ath12k *ar, int mac_id,
- 	struct ath12k_skb_rxcb *rxcb;
- 	struct dp_srng *mon_dst_ring;
- 	struct hal_srng *srng;
--	struct dp_rxdma_ring *buf_ring;
-+	struct dp_rxdma_mon_ring *buf_ring;
- 	struct ath12k_sta *arsta = NULL;
- 	struct ath12k_peer *peer;
- 	u64 cookie;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.h b/drivers/net/wireless/ath/ath12k/dp_mon.h
-index c18c385798a1..fb9e9c176ce5 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_DP_MON_H
-@@ -80,7 +80,7 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
- 				  int mac_id, struct sk_buff *skb,
- 				  struct napi_struct *napi);
- int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
--				struct dp_rxdma_ring *buf_ring,
-+				struct dp_rxdma_mon_ring *buf_ring,
- 				int req_entries);
- int ath12k_dp_mon_srng_process(struct ath12k *ar, int mac_id,
- 			       int *budget, enum dp_monitor_mode monitor_mode,
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 2098a5f8fb70..fb02238798d7 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -364,8 +364,8 @@ int ath12k_dp_rx_bufs_replenish(struct ath12k_base *ab,
- 	return req_entries - num_remain;
- }
- 
--static int ath12k_dp_rxdma_buf_ring_free(struct ath12k_base *ab,
--					 struct dp_rxdma_ring *rx_ring)
-+static int ath12k_dp_rxdma_mon_buf_ring_free(struct ath12k_base *ab,
-+					     struct dp_rxdma_mon_ring *rx_ring)
- {
- 	struct sk_buff *skb;
- 	int buf_id;
-@@ -390,44 +390,49 @@ static int ath12k_dp_rxdma_buf_ring_free(struct ath12k_base *ab,
- static int ath12k_dp_rxdma_buf_free(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
--	struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
- 
--	ath12k_dp_rxdma_buf_ring_free(ab, rx_ring);
-+	ath12k_dp_rxdma_mon_buf_ring_free(ab, &dp->rxdma_mon_buf_ring);
-+
-+	ath12k_dp_rxdma_mon_buf_ring_free(ab, &dp->tx_mon_buf_ring);
-+
-+	return 0;
-+}
-+
-+static int ath12k_dp_rxdma_mon_ring_buf_setup(struct ath12k_base *ab,
-+					      struct dp_rxdma_mon_ring *rx_ring,
-+					      u32 ringtype)
-+{
-+	int num_entries;
- 
--	rx_ring = &dp->rxdma_mon_buf_ring;
--	ath12k_dp_rxdma_buf_ring_free(ab, rx_ring);
-+	num_entries = rx_ring->refill_buf_ring.size /
-+		ath12k_hal_srng_get_entrysize(ab, ringtype);
- 
--	rx_ring = &dp->tx_mon_buf_ring;
--	ath12k_dp_rxdma_buf_ring_free(ab, rx_ring);
-+	rx_ring->bufs_max = num_entries;
-+	ath12k_dp_mon_buf_replenish(ab, rx_ring, num_entries);
- 
- 	return 0;
- }
- 
- static int ath12k_dp_rxdma_ring_buf_setup(struct ath12k_base *ab,
--					  struct dp_rxdma_ring *rx_ring,
--					  u32 ringtype)
-+					  struct dp_rxdma_ring *rx_ring)
- {
- 	int num_entries;
- 
- 	num_entries = rx_ring->refill_buf_ring.size /
--		ath12k_hal_srng_get_entrysize(ab, ringtype);
-+		ath12k_hal_srng_get_entrysize(ab, HAL_RXDMA_BUF);
- 
- 	rx_ring->bufs_max = num_entries;
--	if ((ringtype == HAL_RXDMA_MONITOR_BUF) || (ringtype == HAL_TX_MONITOR_BUF))
--		ath12k_dp_mon_buf_replenish(ab, rx_ring, num_entries);
--	else
--		ath12k_dp_rx_bufs_replenish(ab, rx_ring, num_entries);
-+	ath12k_dp_rx_bufs_replenish(ab, rx_ring, num_entries);
-+
- 	return 0;
- }
- 
- static int ath12k_dp_rxdma_buf_setup(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
--	struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
- 	int ret;
- 
--	ret = ath12k_dp_rxdma_ring_buf_setup(ab, rx_ring,
--					     HAL_RXDMA_BUF);
-+	ret = ath12k_dp_rxdma_ring_buf_setup(ab, &dp->rx_refill_buf_ring);
- 	if (ret) {
- 		ath12k_warn(ab,
- 			    "failed to setup HAL_RXDMA_BUF\n");
-@@ -435,18 +440,18 @@ static int ath12k_dp_rxdma_buf_setup(struct ath12k_base *ab)
- 	}
- 
- 	if (ab->hw_params->rxdma1_enable) {
--		rx_ring = &dp->rxdma_mon_buf_ring;
--		ret = ath12k_dp_rxdma_ring_buf_setup(ab, rx_ring,
--						     HAL_RXDMA_MONITOR_BUF);
-+		ret = ath12k_dp_rxdma_mon_ring_buf_setup(ab,
-+							 &dp->rxdma_mon_buf_ring,
-+							 HAL_RXDMA_MONITOR_BUF);
- 		if (ret) {
- 			ath12k_warn(ab,
- 				    "failed to setup HAL_RXDMA_MONITOR_BUF\n");
- 			return ret;
- 		}
- 
--		rx_ring = &dp->tx_mon_buf_ring;
--		ret = ath12k_dp_rxdma_ring_buf_setup(ab, rx_ring,
--						     HAL_TX_MONITOR_BUF);
-+		ret = ath12k_dp_rxdma_mon_ring_buf_setup(ab,
-+							 &dp->tx_mon_buf_ring,
-+							 HAL_TX_MONITOR_BUF);
- 		if (ret) {
- 			ath12k_warn(ab,
- 				    "failed to setup HAL_TX_MONITOR_BUF\n");
-@@ -4060,9 +4065,6 @@ int ath12k_dp_rx_alloc(struct ath12k_base *ab)
- 	struct ath12k_dp *dp = &ab->dp;
- 	int i, ret;
- 
--	idr_init(&dp->rx_refill_buf_ring.bufs_idr);
--	spin_lock_init(&dp->rx_refill_buf_ring.idr_lock);
--
- 	idr_init(&dp->rxdma_mon_buf_ring.bufs_idr);
- 	spin_lock_init(&dp->rxdma_mon_buf_ring.idr_lock);
- 
--- 
-2.17.1
+On 11/10/2023 8:01 PM, Karthikeyan Periyasamy wrote:
+> When the core rfkill config throws error, it should free the
+> allocated resources. Currently it is not freeing the core pdev
+> create resources. Avoid this issue by calling the core pdev
+> destroy in the error handler of core rfkill config.
+> 
+> Found this issue in the code review and it is compile tested only.
+> 
+> Fixes: 004ccbc0dd49 ("wifi: ath12k: add support for hardware rfkill for WCN7850")
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
 -- 
