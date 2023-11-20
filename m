@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97E80C54E76
-	for <ath12k@archiver.kernel.org>; Mon, 20 Nov 2023 10:16:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B676C197A0
+	for <ath12k@archiver.kernel.org>; Mon, 20 Nov 2023 10:16:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xtTdyQXGZ4y1FkwEsBgn9klKvLm+zkI5tYUeT7yLTy8=; b=H4vr9vuhgqCTZv
-	NqaN9Dt+jM0p33cQ9zfjh6u5NFnTPqGumk3XoBN1sSJayHE8WX5+ebpNCJYTs74wF+O/j1HOn1818
-	k0gAaH3KRHL8RVPHw4EaiHujUL/jcMuLqtM8HjpcDhiWYq5/bHQsF+Hdbxmad+TkDKhHjbMLzaqrl
-	VjrlgBzwjELaXsK74r5Dpg5MJ9vVqIGbJPZwt37gTY1TrQwVrjwiIGtG5D811FXK1Q2JHiBE84/SN
-	UJQIAHtINGvPxcP5NTP5ZkdriuWJr0TI0tL8jTR6sOeolTs2n3u5EQfWEGApBm46bNr0W7YDLKZ//
-	63K6pNF0m9CnRkyyzlDw==;
+	List-Owner; bh=qFdYQEdaUPirGag56+z0GRPlcHAoMeWr/mEjMUnVDEY=; b=0Owi2tvQcEmKAB
+	Zya5yprcYdAk4VT80Rs8+e0CuCL2EIL7eoc9qx/L3FRBcKuhcq+s4NPwzM92YTSn8oFkLDqZxzTrI
+	3K80d54xM2dHfuA7975QrkJ0U0FjbT7CI/56owgg41JDpfj0E18fpxGWuZyMexoIB6jZVSneP8nfK
+	pGOXWyJwlCXzdFybUApeem+ujTumK7fW7opHTaNI1r5SyP7diYSEn8fO+KkClRBuMGieskqreuwMA
+	sejFfyd/jOUaxwtdY9baZr+IDBstvaMRSWGU6RDldxea9OKghVqo7o8nPkw3HFBRySGGmuoMjNaKu
+	MXy4M9kWyQucuFllX5kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r51K6-00BkdO-2p
+	id 1r51K8-00Bkdm-0C
 	for ath12k@archiver.kernel.org;
-	Mon, 20 Nov 2023 10:16:10 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 20 Nov 2023 10:16:12 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r51Jy-00Bkb1-0W
+	id 1r51K1-00Bkbb-2H
 	for ath12k@lists.infradead.org;
 	Mon, 20 Nov 2023 10:16:09 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AK4txZC031861;
-	Mon, 20 Nov 2023 10:16:01 GMT
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AK3hpZN001367;
+	Mon, 20 Nov 2023 10:16:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=qcppdkim1;
- bh=LlzzVY+H2eDLFJ0u7BTyMgXFnPHboxmbKfaczKcZOBI=;
- b=SVrD0gbNnipebrH8GX9joN5yQJEj+n2C5eZ4hTHKRskT9PnQMAmiFMr9n+eRWozG4lvk
- aN4SWTd50nH6hH4nus07cNYQZmrA5igktN4dXLyNAU1vxvT1/3nerPJyYqAqosXhr3wR
- FV/7cdWMJhGDbsVVZVk+rmYqcTzYWNsbCIC6bkJl5aV4sUwu+LM5iVsySCh5P5XYQcYN
- mO4hzClezWrg9GDMihKVC4gMza4mienCx4lJr/Obx0KZYbheeYJCL6wj8xp1BUVFsBbS
- 1xlsE3ZiHCnoGhFLuhLpQG5Hs0AeBn2A3sXh8dxxActNSHTLV/GR2F2MAJ2uPFIK94VL Rg== 
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uem80kqrk-1
+ bh=Y8sawliJceCP8EZF9b5G7Lsg32ZM8JNX2aU1Mf6TvNA=;
+ b=kloY7/09DNFPQIf8doGAOi3QRINmyGMJ4h1m6Pb95JZEYvTey7bTG3YU2cBM64pH0Jds
+ 2zaEndThXOLy8+kLA4nBNDTnWYGO8tnlVNocoEqF5xgPhG+CTUcusVmp+36f74RhILA4
+ FdncGZPXJbMDG74V3MQEIR9RVvDQyDH67uPv1o6FdnFhrToVdnUvTFicgTOXF92umnMw
+ fcjDe9JBFDYiwGO1QiE7Y+6XMAncP5fORgLkkHvOZBHhLRrRCj9YPdPFP4ZmFZGuY98W
+ DN5/0Kpr2shdoA6sIA3+YDPv7ng1ZuBNI15F4Zy1gmCZUb4EUvhdgfHR9TGZwPUGOlPa mA== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uejmuuvs6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Nov 2023 10:16:00 +0000
+	Mon, 20 Nov 2023 10:16:02 +0000
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AKAG0aP019598
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AKAG1en019283
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Nov 2023 10:16:00 GMT
+	Mon, 20 Nov 2023 10:16:01 GMT
 Received: from yk-E5440.qca.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 20 Nov 2023 02:15:58 -0800
+ 15.2.1118.40; Mon, 20 Nov 2023 02:15:59 -0800
 From: Kang Yang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH 1/7] wifi: ath12k: get msi_data again after request_irq is called
-Date: Mon, 20 Nov 2023 18:15:37 +0800
-Message-ID: <20231120101543.4369-2-quic_kangyang@quicinc.com>
+Subject: [PATCH 2/7] wifi: ath12k: add CE and ext IRQ flag to indicate irq_handler
+Date: Mon, 20 Nov 2023 18:15:38 +0800
+Message-ID: <20231120101543.4369-3-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20231120101543.4369-1-quic_kangyang@quicinc.com>
 References: <20231120101543.4369-1-quic_kangyang@quicinc.com>
@@ -67,19 +67,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: GqYIuQ6PdIrKtw7qUNZVwfQraX_8Aa8O
-X-Proofpoint-ORIG-GUID: GqYIuQ6PdIrKtw7qUNZVwfQraX_8Aa8O
+X-Proofpoint-GUID: DaW8ennjcQiLSpSCoN3695gkEi7z3_oE
+X-Proofpoint-ORIG-GUID: DaW8ennjcQiLSpSCoN3695gkEi7z3_oE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-20_07,2023-11-17_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=937
- adultscore=0 priorityscore=1501 phishscore=0 malwarescore=0
- impostorscore=0 lowpriorityscore=0 mlxscore=0 spamscore=0 bulkscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311200069
+ definitions=2023-11-20_08,2023-11-17_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
+ malwarescore=0 spamscore=0 lowpriorityscore=0 bulkscore=0 mlxlogscore=357
+ impostorscore=0 priorityscore=1501 clxscore=1015 suspectscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311200068
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231120_021602_303886_25A54635 
-X-CRM114-Status: GOOD (  19.96  )
+X-CRM114-CacheID: sfid-20231120_021605_962321_C3167D97 
+X-CRM114-Status: GOOD (  18.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,77 +96,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The reservation mode of interrupts in kernel assigns a dummy vector
-when the interrupt is allocated and assigns a real vector when the
-request_irq is called. The reservation mode helps to ease vector
-pressure when devices with a large amount of queues/interrupts are
-initialized, but only a minimal subset of those queues/interrupts
-is actually used.
-
-So on reservation mode, the msi_data may change after request_irq is
-called, then it will lead to spurious interrupt. But when VT-d in
-BIOS is enabled and ath12k can get 32 MSI vectors, ath12k always get
-the same msi_data before and after request_irq.
-
-So in case of one MSI vector, ath12k need read msi_data again after
-request_irq is called, and then the correct msi_data is programmed
-into WCN7850 hardware components.
+Add two flags to indicate whether IRQ handler for CE and DP can be called.
+This is because in one MSI vector case, interrupt is not disabled in
+hif_stop and hif_irq_disable. So if interrupt is disabled, MHI interrupt
+is disabled too.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
 Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 30 +++++++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
+ drivers/net/wireless/ath/ath12k/core.h |  2 ++
+ drivers/net/wireless/ath/ath12k/pci.c  | 16 ++++++++++++++++
+ 2 files changed, 18 insertions(+)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 68c42ca44fcb..63c4d84657c4 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -199,6 +199,8 @@ enum ath12k_dev_flags {
+ 	ATH12K_FLAG_REGISTERED,
+ 	ATH12K_FLAG_QMI_FAIL,
+ 	ATH12K_FLAG_HTC_SUSPEND_COMPLETE,
++	ATH12K_FLAG_CE_IRQ_ENABLED,
++	ATH12K_FLAG_EXT_IRQ_ENABLED,
+ };
+ 
+ enum ath12k_monitor_flags {
 diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 3006cd3fbe11..c5bc9afaa9fc 100644
+index c5bc9afaa9fc..7f984a80fb27 100644
 --- a/drivers/net/wireless/ath/ath12k/pci.c
 +++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -708,6 +708,25 @@ static void ath12k_pci_msi_free(struct ath12k_pci *ab_pci)
- 	pci_free_irq_vectors(ab_pci->pdev);
- }
- 
-+static int ath12k_pci_config_msi_data(struct ath12k_pci *ab_pci)
-+{
-+	struct msi_desc *msi_desc;
-+
-+	msi_desc = irq_get_msi_desc(ab_pci->pdev->irq);
-+	if (!msi_desc) {
-+		ath12k_err(ab_pci->ab, "msi_desc is NULL!\n");
-+		pci_free_irq_vectors(ab_pci->pdev);
-+		return -EINVAL;
-+	}
-+
-+	ab_pci->msi_ep_base_data = msi_desc->msg.data;
-+
-+	ath12k_dbg(ab_pci->ab, ATH12K_DBG_PCI, "pci after request_irq msi_ep_base_data %d\n",
-+		   ab_pci->msi_ep_base_data);
-+
-+	return 0;
-+}
-+
- static int ath12k_pci_claim(struct ath12k_pci *ab_pci, struct pci_dev *pdev)
+@@ -373,6 +373,8 @@ static void ath12k_pci_ce_irqs_disable(struct ath12k_base *ab)
  {
- 	struct ath12k_base *ab = ab_pci->ab;
-@@ -1286,6 +1305,17 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
- 		goto err_ce_free;
- 	}
+ 	int i;
  
-+	/* kernel may allocate a dummy vector before request_irq and
-+	 * then allocate a real vector when request_irq is called.
-+	 * So get msi_data here again to avoid spurious interrupt
-+	 * as msi_data will configured to srngs.
-+	 */
-+	ret = ath12k_pci_config_msi_data(ab_pci);
-+	if (ret) {
-+		ath12k_err(ab, "failed to config msi_data: %d\n", ret);
-+		goto err_free_irq;
-+	}
++	clear_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags);
 +
- 	ret = ath12k_core_init(ab);
- 	if (ret) {
- 		ath12k_err(ab, "failed to init core: %d\n", ret);
+ 	for (i = 0; i < ab->hw_params->ce_count; i++) {
+ 		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
+ 			continue;
+@@ -406,6 +408,10 @@ static void ath12k_pci_ce_tasklet(struct tasklet_struct *t)
+ static irqreturn_t ath12k_pci_ce_interrupt_handler(int irq, void *arg)
+ {
+ 	struct ath12k_ce_pipe *ce_pipe = arg;
++	struct ath12k_base *ab = ce_pipe->ab;
++
++	if (!test_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags))
++		return IRQ_HANDLED;
+ 
+ 	/* last interrupt received for this CE */
+ 	ce_pipe->timestamp = jiffies;
+@@ -428,6 +434,8 @@ static void __ath12k_pci_ext_irq_disable(struct ath12k_base *ab)
+ {
+ 	int i;
+ 
++	clear_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags);
++
+ 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
+@@ -483,6 +491,10 @@ static int ath12k_pci_ext_grp_napi_poll(struct napi_struct *napi, int budget)
+ static irqreturn_t ath12k_pci_ext_interrupt_handler(int irq, void *arg)
+ {
+ 	struct ath12k_ext_irq_grp *irq_grp = arg;
++	struct ath12k_base *ab = irq_grp->ab;
++
++	if (!test_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags))
++		return IRQ_HANDLED;
+ 
+ 	ath12k_dbg(irq_grp->ab, ATH12K_DBG_PCI, "ext irq:%d\n", irq);
+ 
+@@ -626,6 +638,8 @@ static void ath12k_pci_ce_irqs_enable(struct ath12k_base *ab)
+ {
+ 	int i;
+ 
++	set_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags);
++
+ 	for (i = 0; i < ab->hw_params->ce_count; i++) {
+ 		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
+ 			continue;
+@@ -975,6 +989,8 @@ void ath12k_pci_ext_irq_enable(struct ath12k_base *ab)
+ {
+ 	int i;
+ 
++	set_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags);
++
+ 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
 -- 
 2.34.1
 
