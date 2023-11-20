@@ -4,85 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65D3DC5AD4C
-	for <ath12k@archiver.kernel.org>; Mon, 20 Nov 2023 15:54:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0062C2BB3F
+	for <ath12k@archiver.kernel.org>; Mon, 20 Nov 2023 23:58:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q9XTk//gYeOxPQFXDgAJ1nAcWgpcrFhsNQtY8BAS4Ig=; b=sxjUg9UdqGAqWM
-	y5Uex7mH+QAdMGiH/FSADGzn7bv+u6ylH2kOWKdMwXkMqZNaGzVAhQvadfDc8+vqOoSlx2K1elR7Z
-	tZcgzAlF5Skn+4B8q4432j1nhZx7Y/0h4ZGCK91PN8sef7m6nP0UC4V/3D622IDuoYDdUhOCzUP/x
-	2foReDN1XtCeLP8QNTZ9XDTgFuJa/mWHXM9/YjOOAVuLF90+RgO6ls3N45/J4uJhe/iM8rm9AJARi
-	HvY9D4i2BSYq+lFLophp9FFs17lO0ZmSI4Ch66jWpwyCW9F4eEViGLlNXz/zX++OoYsURCwg1Y1lK
-	asebu274+N6L+GGTIn+A==;
+	List-Owner; bh=NLBqYCoYWggyAURkc30xAjQOOw/J8HzaXYYAq382zyw=; b=zlvPTP7u7t7fGQ
+	ElmPCfounHmNIqSeYVxIknu0mo304mGUSaNmxq36H+pfCPB+d12pGco+MvCjsC8PLp+QyVKjgbpxJ
+	ta7ToBHl3t+ZczU/3PgCUJcjIUeI44CWsrP75GfytpLDKTBoIDQlY5KdvaJBbynUJqs/zro5jVY9Z
+	x9jJdJMnGfpWSWEWDrasH/tqevmNcnBKvH/TNCo/yWU+/A06PSFOXM/3g+GKDz6vpzviuPgAisSQY
+	vMpwo1O/6iDoizvdlAYs0d1vbPq+tyGK5+ioZmTtCyHaxcfha3TK4ZkDlKIK4TsqYrpIl/Zo2c4Vc
+	ZlDlK7tMuz9MRiwQkBUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r56bZ-00CuTR-07
+	id 1r5EA7-00FBqp-0e
 	for ath12k@archiver.kernel.org;
-	Mon, 20 Nov 2023 15:54:33 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 20 Nov 2023 23:58:43 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r56bW-00CuQw-03
+	id 1r5E9y-00FBhY-2t
 	for ath12k@lists.infradead.org;
-	Mon, 20 Nov 2023 15:54:31 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AKFN62Z008480;
-	Mon, 20 Nov 2023 15:54:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=Ecz2MTpk2YTNo6aoiceIM9H2ckiTAOo6tol6IfP7ZHM=;
- b=jYoCIic+TjuavC/qxP16SnEKHh86iOYoBnkM3SGo2pfKdNtbMagW48sq4Q0CjkBTZGfq
- 5posC0Lf683Cby7+gP1cQSrIP+kjYXGaJnftX9I8qFLUoGyVuaPDIwkVt6cNRkkncODT
- xQA/yhNbjoQG8WONF6jqsWSqkxDzrPKjzs/IaOXCQ7lPpE26Fv2R//A4/WSc/uiNDq8j
- ulqC0xbaZ+ecTJhqQRe/Ja2wkZiTw+7sNF8wH+Q4VTb88t0UQYx5yESoi4EhVCmqLg5x
- Yt+Giu1b9WwMgC4w3vfxYV2Ip4ActU1nabPs7tRgmVvpD+sHzzRCAYEAINJdi4EAeAxy Rg== 
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uem80mg5k-1
+	Mon, 20 Nov 2023 23:58:41 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AKNiOIt008012;
+	Mon, 20 Nov 2023 23:58:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding : content-type; s=qcppdkim1;
+ bh=iIOsr+Oc6RR7yThdcqDp7tmyW3n4O2KqOa9s+XtgHTk=;
+ b=X+NtZRuF8/hwufxGtJ1GG/ZvhZH3GQlFHHPSOpaMH5B2AEmQ+wc8DRv7SUb3vsPJc3R2
+ yBHWiZXkTpUWB5eRYJxArU5RZzGGuIxqOXQDCsx95m9dB7OG3uYTnwRmIIDlH9SItp97
+ LloN5t7uYOfuXYHaSHvHO1JwJy99HFZnipcUqSwdZuT6L+1Sj3gSV3Q+1tnUfRnAhHFr
+ fGnStqMLrdtoT2Pxy/7vkqr8KchwV6qZE0v6MIzswmalTAfqq9e3pWJzkwD+1G9rlm16
+ iVS4IIyezJx5SRn+mx2WODcdCDMY2RKIkP3K/8zkaF2MvSYAySHumWxDthVZOYGvVlxo 0w== 
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ug26ttb00-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Nov 2023 15:54:29 +0000
+	Mon, 20 Nov 2023 23:58:31 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AKFsSr4010481
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AKNwUTe032543
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Nov 2023 15:54:29 GMT
-Received: from [10.110.116.223] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 20 Nov
- 2023 07:54:27 -0800
-Message-ID: <03dace08-3916-4332-bd31-b82b627ae847@quicinc.com>
-Date: Mon, 20 Nov 2023 07:54:27 -0800
+	Mon, 20 Nov 2023 23:58:30 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Mon, 20 Nov 2023 15:58:28 -0800
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH 1/2] wifi: ath12k: Optimize the mac80211 hw data access
+Date: Tue, 21 Nov 2023 05:28:11 +0530
+Message-ID: <20231120235812.2602198-2-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20231120235812.2602198-1-quic_periyasa@quicinc.com>
+References: <20231120235812.2602198-1-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 7/7] wifi: ath12k: set IRQ affinity to CPU0 in case of one
- MSI vector
-Content-Language: en-US
-To: Kang Yang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20231120101543.4369-1-quic_kangyang@quicinc.com>
- <20231120101543.4369-8-quic_kangyang@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231120101543.4369-8-quic_kangyang@quicinc.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: T12yydX1ezDFwHH1FsE7EmcBSrCCBCtu
-X-Proofpoint-ORIG-GUID: T12yydX1ezDFwHH1FsE7EmcBSrCCBCtu
+X-Proofpoint-ORIG-GUID: -4uWAg06eyF_ZHYfbgM1hd3HJazWwAxX
+X-Proofpoint-GUID: -4uWAg06eyF_ZHYfbgM1hd3HJazWwAxX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-20_16,2023-11-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=920
- adultscore=0 priorityscore=1501 phishscore=0 malwarescore=0
- impostorscore=0 lowpriorityscore=0 mlxscore=0 spamscore=0 bulkscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311200112
+ definitions=2023-11-20_22,2023-11-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ malwarescore=0 mlxlogscore=999 priorityscore=1501 impostorscore=0
+ suspectscore=0 clxscore=1015 bulkscore=0 spamscore=0 phishscore=0
+ adultscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311200176
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231120_075430_189957_1FB5AFFC 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20231120_155835_088290_BD725238 
+X-CRM114-Status: GOOD (  18.24  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,22 +98,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 11/20/2023 2:15 AM, Kang Yang wrote:
-> With VT-d disabled on Intel platform, ath12k gets only one MSI
-> vector. In that case, ath12k does not free IRQ when doing suspend,
-> hence the kernel has to migrate it to CPU0 (if it was affine to
-> other CPUs) and allocates a new MSI vector. However, ath12k has
-> no chance to reconfig it to HW srngs during this phase, thus
-> ath12k fails to resume.
-> 
-> This issue can be fixed by setting IRQ affinity to CPU0 before
-> request_irq is called. With such affinity, migration will not
-> happen and thus the vector keeps unchanged during suspend/resume.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Currently mac80211 hw data is accessed by convert the hw to radio (ar)
+structure and then radio to hw structure which is not necessary in some
+places where mac80211 hw data is already present. So in that kind of
+places avoid the conversion and directly access the mac80211 hw data.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 14 +++++++-------
+ drivers/net/wireless/ath/ath12k/reg.c |  6 +++---
+ 2 files changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index fc0d14ea328e..a85862ba134e 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -4987,7 +4987,7 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
+ 		if (ret) {
+ 			ath12k_warn(ar->ab, "failed to queue management frame %d\n",
+ 				    ret);
+-			ieee80211_free_txskb(ar->hw, skb);
++			ieee80211_free_txskb(hw, skb);
+ 		}
+ 		return;
+ 	}
+@@ -4995,7 +4995,7 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
+ 	ret = ath12k_dp_tx(ar, arvif, skb);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to transmit frame %d\n", ret);
+-		ieee80211_free_txskb(ar->hw, skb);
++		ieee80211_free_txskb(hw, skb);
+ 	}
+ }
+ 
+@@ -5596,7 +5596,7 @@ static int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
+ 		goto err_peer_del;
+ 
+ 	param_id = WMI_VDEV_PARAM_RTS_THRESHOLD;
+-	param_value = ar->hw->wiphy->rts_threshold;
++	param_value = hw->wiphy->rts_threshold;
+ 	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
+ 					    param_id, param_value);
+ 	if (ret) {
+@@ -6836,7 +6836,7 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
+ 				    arvif->vdev_id, ret);
+ 			return ret;
+ 		}
+-		ieee80211_iterate_stations_atomic(ar->hw,
++		ieee80211_iterate_stations_atomic(hw,
+ 						  ath12k_mac_disable_peer_fixed_rate,
+ 						  arvif);
+ 	} else if (ath12k_mac_bitrate_mask_get_single_nss(ar, band, mask,
+@@ -6882,14 +6882,14 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
+ 			return -EINVAL;
+ 		}
+ 
+-		ieee80211_iterate_stations_atomic(ar->hw,
++		ieee80211_iterate_stations_atomic(hw,
+ 						  ath12k_mac_disable_peer_fixed_rate,
+ 						  arvif);
+ 
+ 		mutex_lock(&ar->conf_mutex);
+ 
+ 		arvif->bitrate_mask = *mask;
+-		ieee80211_iterate_stations_atomic(ar->hw,
++		ieee80211_iterate_stations_atomic(hw,
+ 						  ath12k_mac_set_bitrate_mask_iter,
+ 						  arvif);
+ 
+@@ -6927,7 +6927,7 @@ ath12k_mac_op_reconfig_complete(struct ieee80211_hw *hw,
+ 		ath12k_warn(ar->ab, "pdev %d successfully recovered\n",
+ 			    ar->pdev->pdev_id);
+ 		ar->state = ATH12K_STATE_ON;
+-		ieee80211_wake_queues(ar->hw);
++		ieee80211_wake_queues(hw);
+ 
+ 		if (ab->is_reset) {
+ 			recovery_count = atomic_inc_return(&ab->recovery_count);
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 5c006256c82a..b7fe4a6e7873 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -28,11 +28,11 @@ static const struct ieee80211_regdomain ath12k_world_regd = {
+ 	}
+ };
+ 
+-static bool ath12k_regdom_changes(struct ath12k *ar, char *alpha2)
++static bool ath12k_regdom_changes(struct ieee80211_hw *hw, char *alpha2)
+ {
+ 	const struct ieee80211_regdomain *regd;
+ 
+-	regd = rcu_dereference_rtnl(ar->hw->wiphy->regd);
++	regd = rcu_dereference_rtnl(hw->wiphy->regd);
+ 	/* This can happen during wiphy registration where the previous
+ 	 * user request is received before we update the regd received
+ 	 * from firmware.
+@@ -71,7 +71,7 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
+ 		return;
+ 	}
+ 
+-	if (!ath12k_regdom_changes(ar, request->alpha2)) {
++	if (!ath12k_regdom_changes(hw, request->alpha2)) {
+ 		ath12k_dbg(ar->ab, ATH12K_DBG_REG, "Country is already set\n");
+ 		return;
+ 	}
+-- 
+2.34.1
 
 
 -- 
