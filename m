@@ -4,85 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DB15C61D90
-	for <ath12k@archiver.kernel.org>; Tue, 21 Nov 2023 16:08:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 743D9C61D92
+	for <ath12k@archiver.kernel.org>; Wed, 22 Nov 2023 06:40:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2zH+wdtS2MtbzNVSvgPWLrXf7jHN32FF7JBaoKsjiug=; b=ijkD5YXeS75k5c
-	8QmkqtR0f70sWkdI+9drtZlcoLg6RsSL3Qg0/YymzJzZ4tEoJ5cMBQhKzRJ45I/gvEqXojBlP9Hw1
-	zTBUNK2l/4QHXhHqobgFG4DN3SUf5K56YWPwQwaU+TQWr8eclTqlQkYihIpvzefLT77ttVIM60ihM
-	w22pq+mr8N+yO7laHQXApIItEshhompZOeFSnHUaICA3yIxwnyyACqJ4yw5lWsp2qo6Dh8QFbmvlc
-	ZdIXZT9xwqp/fs82aD7Doyz0zj62uGQCt8DzhsDJ5jJDNhkR0tBpbNoV4mbg2DqU7anFHGbIato3m
-	jYH/Wx94em0zOnOJKbhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HQK0TptjsBa1zEll9VM9PVYrzoPKG18UgR2+09OzliA=; b=hwqcIMk3tXf2Rx
+	UP/3i7GPrJKbWoBoySxhhjRyfiGbhLeJqF0cglgbVi2zkCEMauoYH4Sj91fgraj2Y/7JTyxd7rhTM
+	bYbNezVYBR+ETirYOwHU8gs+77YZdXCiVlSO9fp+wKnVLIo1X1VWDcQbKkOhcwnIehHyIdB8Nbt+d
+	OqpqHUrdFnH+81biVmVKuXelPHIudpI5VqOQo2tP9AM/iawBhjRQG6ImlYvXOCTk9KnFS8JHvK4q9
+	dVP02dRycYCK7MbeK3F9M5LBpB7T8lE8HNVLxV09iB50/KM1+ro4QZAo215H3UgyuySpeIyVfa1Dp
+	8QC3tpSQmfulQE+y13qA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5TIb-00HFGY-2S
+	id 1r5gu1-000qiM-0S
 	for ath12k@archiver.kernel.org;
-	Tue, 21 Nov 2023 16:08:29 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 22 Nov 2023 06:40:01 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r5TIZ-00HFFN-0k
+	id 1r5gtx-000qh7-3A
 	for ath12k@lists.infradead.org;
-	Tue, 21 Nov 2023 16:08:28 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3ALE1mMh010901;
-	Tue, 21 Nov 2023 16:08:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=1mdyPrsu67APsNDZfjHYJQPGl02sxbUb5zyREZHDels=;
- b=OBzNaT2D46sjOq73mu4aBCaRB6N5bUt7i+AjxmwzCDIrS2OrwFCN5/TP/LVXYknlFqMT
- vdw8doCk921d+tnxw7J3cjchVVYmBxMpe4dWeezMfgi1RC99YkcZrZxUXJfvHfUkT1aJ
- mt0SuB4jJkGLHcSaefrxRAhk11KutnrkcM7MpF/5PJ/rukmUEyZ2TwRCSgk1lDGu0AgF
- YbqHShl1NcD947CwUwXrSGcFBwFCSZ+jr+7UR0mi3vcXWRQgsT5P9bMWfpRkioEBOCSs
- feau3LisC0DCFR9LuqdERMa1hLVek9k8mymIg4LPOgQQlsaZHpWqV1ns8zG4FkjXA/WZ ZQ== 
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ugvt2gkjv-1
+	Wed, 22 Nov 2023 06:39:59 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AM5W8kI015327;
+	Wed, 22 Nov 2023 06:39:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=qcppdkim1;
+ bh=oIavnNmrxOGK6W8+sL2Y2u3L5GHYFMOv93RZAzeaqAg=;
+ b=abyWJyMWwx5UO84mAKI3gHmFCQwvlzlCFftKGTY2+YV1E49zHSElTLmlVT9IewDqsqkz
+ POPZF4fdFQVOJ9oSgCBg3hdaZ065yFtB2jejkULddrGa6sYlD8V2HYAMYk4fQ4+FT3IF
+ cz8b3AQmovtvHOhEtAuTnefPAZW6qkSs+7ZOVh93IHfUUandJ+2HJF849pRVHhH67XDP
+ Xbgi2B0UH1Kq/fvZI+XTgL5WsjKzxH78XcHS7lZ9M6gRC7sdOcPUYyVuGmKwgxK6ivEi
+ Vpndj/IV6lFpvM0vFMRIqwDNjyr0hqZx2eFvt6pHkf5tITQF3qWJjmVjMSKgkyqQwelC pA== 
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uhbjvg58s-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Nov 2023 16:08:26 +0000
+	Wed, 22 Nov 2023 06:39:53 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3ALG8QS5003817
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AM6dqr7010425
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Nov 2023 16:08:26 GMT
-Received: from [10.110.116.223] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 21 Nov
- 2023 08:08:25 -0800
-Message-ID: <de71ff67-c840-479f-9d06-5a2a7364cc09@quicinc.com>
-Date: Tue, 21 Nov 2023 08:08:25 -0800
+	Wed, 22 Nov 2023 06:39:52 GMT
+Received: from tamizhr-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Tue, 21 Nov 2023 22:39:50 -0800
+From: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Tamizh Chelvam Raja
+	<quic_tamizhr@quicinc.com>
+Subject: [PATCH 0/3] wifi: ath12k: Remove unsupported and unused ring configurations
+Date: Wed, 22 Nov 2023 12:09:29 +0530
+Message-ID: <20231122063932.10321-1-quic_tamizhr@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 7/7] wifi: ath12k: set IRQ affinity to CPU0 in case of
- one MSI vector
-Content-Language: en-US
-To: Kang Yang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20231121021304.12966-1-quic_kangyang@quicinc.com>
- <20231121021304.12966-8-quic_kangyang@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231121021304.12966-8-quic_kangyang@quicinc.com>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 0W-Wx5wOHjcWBUwhHnFsHnxwsqVO2Sgq
-X-Proofpoint-ORIG-GUID: 0W-Wx5wOHjcWBUwhHnFsHnxwsqVO2Sgq
+X-Proofpoint-GUID: V2RuGsJGvw0fQuLaGKykk6g61-sMan7w
+X-Proofpoint-ORIG-GUID: V2RuGsJGvw0fQuLaGKykk6g61-sMan7w
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.987,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-21_09,2023-11-21_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- priorityscore=1501 lowpriorityscore=0 adultscore=0 malwarescore=0
- suspectscore=0 bulkscore=0 mlxscore=0 spamscore=0 phishscore=0
- impostorscore=0 mlxlogscore=920 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2311060000 definitions=main-2311210126
+ definitions=2023-11-22_04,2023-11-21_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 malwarescore=0
+ spamscore=0 impostorscore=0 lowpriorityscore=0 mlxlogscore=660
+ suspectscore=0 adultscore=0 mlxscore=0 phishscore=0 bulkscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311220046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231121_080827_271544_4E6BF4F9 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20231121_223958_158193_EDA8A4B1 
+X-CRM114-Status: GOOD (  11.71  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,22 +95,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 11/20/2023 6:13 PM, Kang Yang wrote:
-> With VT-d disabled on Intel platform, ath12k gets only one MSI
-> vector. In that case, ath12k does not free IRQ when doing suspend,
-> hence the kernel has to migrate it to CPU0 (if it was affine to
-> other CPUs) and allocates a new MSI vector. However, ath12k has
-> no chance to reconfig it to HW srngs during this phase, thus
-> ath12k fails to resume.
-> 
-> This issue can be fixed by setting IRQ affinity to CPU0 before
-> request_irq is called. With such affinity, migration will not
-> happen and thus the vector keeps unchanged during suspend/resume.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Currently in driver doing memory allocation for tx_monitor, tcl_cmd_ring
+and tcl_status ring. Here driver support for tx_monitor mode is not
+there and memory for tcl_cmd and tcl_status rings are allocated by
+firmware and it uses that memory instead of host allocated. So avoid
+these unused ring setup configuration.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Tamizh Chelvam Raja (3):
+  wifi: ath12k: fix calling correct function for rx monitor mode
+  wifi: ath12k: Remove unsupported tx monitor handling
+  wifi: ath12k: Remove unused tcl_*_ring configuration
+
+ drivers/net/wireless/ath/ath12k/dp.c     | 16 -------
+ drivers/net/wireless/ath/ath12k/dp.h     |  2 -
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 40 +----------------
+ drivers/net/wireless/ath/ath12k/dp_rx.c  | 57 ------------------------
+ drivers/net/wireless/ath/ath12k/dp_tx.c  | 43 +-----------------
+ drivers/net/wireless/ath/ath12k/dp_tx.h  |  1 -
+ 6 files changed, 2 insertions(+), 157 deletions(-)
+
+
+base-commit: 9a36440d929d134c56030a8492405708a143f580
+-- 
+2.17.1
 
 
 -- 
