@@ -4,84 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41195C07E97
-	for <ath12k@archiver.kernel.org>; Tue, 28 Nov 2023 15:19:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E9BCC4167B
+	for <ath12k@archiver.kernel.org>; Tue, 28 Nov 2023 15:47:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q8W7SvRrLnkrtcdPg+mrrEMJYHKhgGFUIROxqmsgRmg=; b=ehKvl6hUoxIb1O
-	YopRN7AKp2qg7ranuzOmdAtu285heNFJuZb96UT2LOv0oyy1qbbYZ0mWAm+EjU5IvwhUFq9PpDm+j
-	Y3UTQr68jNDl7cw9A5SaOr3lh2U2zdn6qvbb1lOXos71SOtmLVsyzgOIZu/a97TtsKmK2Tw5LhPxC
-	CHk3QeTeXBiL1wVCXaVIkOzZuMuhRm+IuYCMGnDw1VGPoVaTNL4K52U/iEufWyZ6EYH2WOGIUmmxX
-	oM8d0dz1++nrHLweot4Z7WeJauTuLAXLaPr+Oy5eEtfztes7ROEpSPiK/LlJsEoNBVEbR45s8Lnm2
-	0uyebvOmylU2M4b6pJZQ==;
+	List-Owner; bh=jPDR3/GFVguaTqXeyd6TkB5KeWTAvbZZrEOrNW8O6lw=; b=lycjnqwGyLTc2T
+	B3hchCynY7FLYyEU7pniWnfSJTG1klUWrZcYbQJ4tOlCYgjzD73bGVGXkAqLxoxf45Ky/o/M7RGQS
+	m8iKV1fRI2f/hqiKzZd2wKCQVpJnKSnPMtOOHrhKRZZHfjrnVfblloJVQBtLDoODZzpJW9eVq8zUS
+	5o8Vgc9I+ZJ9i7+TeUbJvXkYX+gEoorajYIssbmG+3adedN4+3f4u8uzM7O7DqdYaCeu7rg0ZQj4m
+	2Z+13La9fSoOXXqmPeyHGzaT0WuubN2oAOPiEn59NR5vAV3OCjNTsbHtG+BvA1/7cJGAjUeNE722e
+	iC+mIfFfYc79Nve1E2yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7zsS-005ewt-2n
+	id 1r80JJ-005j7u-3D
 	for ath12k@archiver.kernel.org;
-	Tue, 28 Nov 2023 15:19:56 +0000
+	Tue, 28 Nov 2023 15:47:42 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r7zsM-005eru-1f;
-	Tue, 28 Nov 2023 15:19:53 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3ASEuk3j012360;
-	Tue, 28 Nov 2023 15:19:46 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : date :
- subject : mime-version : content-type : content-transfer-encoding :
- message-id : references : in-reply-to : to : cc; s=qcppdkim1;
- bh=CUN5/KkSI1Ds+rUCUvd5uvngfX+qSEn391HdD9xc/rw=;
- b=KkyCOzUzN0asEda32m8iTxPv089n2oTWOSMhmLrh0YuGTal24R7IeFhZpov9NKnqKkzD
- 0NM4vPZ87LzUfkbWl0ftmk1r0fQmF7HQ6B2PkHpCWsEdem1+jeaHJBRIe9heYXHOLqRk
- ykjeBcnQCC68YPsSxOrJ9JK8DvnC95o+tYn8G0wfdxUvYqU3b1+GlryTz85alwV+cgPW
- hvef+nXXA7fR6f2yF+WDCdIiS101HhSLFUbZ+v5y8VpNwRASMBH2kh3IFWINiinN0jmW
- NuVYXt/1X4USk+9DPv05DnxhiKo2j25ZOrOf2DKNW+LM4Y/26c+gkstUj+bJAfpv9mNs rw== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3unjdtg233-1
+	id 1r80JG-005j7W-2o
+	for ath12k@lists.infradead.org;
+	Tue, 28 Nov 2023 15:47:40 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3ASBoPLt008184;
+	Tue, 28 Nov 2023 15:47:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=a2JHhS2pwIzZgJSxms+DFFnjgcPM+4+z3hQTxLTWwOo=;
+ b=RSmlJijOhRLvMpdySbsuheipXMJS1PC2CtA/lbCRhDR6scicv6q0Okiqx3nG0ipde0rw
+ g73qy5e2CpMcJmCUHYHbY3HN9OUxmGz9mOo7AVteStjoLLsGp0qiFDcc8Jcp7tdouoXh
+ QG1ZcJlnGxsk6/BoJ2y/efO5KZu4gq3i4VreCFgXO6XjUEbvAP2AW5hgezBDJc/1jDm+
+ eYPmmxzqAWb+wdRNCKDJSVRi5fY0auA5vwD9qNsBK0mFCEg5Zpk8xCMDUYH2sBXb7ZHv
+ X87hjyCc2mvgw/9+6FT+AejRTX3bzf/IVPZ+LT7Az1wbO7p9fGtH6ZvOVkGEyasN0yDs /Q== 
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3un1atjqv6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Nov 2023 15:19:46 +0000
+	Tue, 28 Nov 2023 15:47:37 +0000
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3ASFJeVM020484
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3ASFlaeE008615
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Nov 2023 15:19:40 GMT
-Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Tue, 28 Nov 2023 15:47:36 GMT
+Received: from [10.110.63.243] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 28 Nov
- 2023 07:19:39 -0800
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Tue, 28 Nov 2023 07:19:25 -0800
-Subject: [PATCH 1/3] wifi: ath12k: Update Qualcomm Innovation Center, Inc.
- copyrights
+ 2023 07:47:35 -0800
+Message-ID: <803affe3-c332-457a-b0ca-92450664cb6e@quicinc.com>
+Date: Tue, 28 Nov 2023 07:47:34 -0800
 MIME-Version: 1.0
-Message-ID: <20231128-ath12kcopyrights-v1-1-be0b7408cbac@quicinc.com>
-References: <20231128-ath12kcopyrights-v1-0-be0b7408cbac@quicinc.com>
-In-Reply-To: <20231128-ath12kcopyrights-v1-0-be0b7408cbac@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <quic_jjohnson@quicinc.com>
-CC: <ath12k@lists.infradead.org>, <ath11k@lists.infradead.org>,
-        <ath10k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>
-X-Mailer: b4 0.12.3
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/3] wifi: ath12k: add support for BA1024
+Content-Language: en-US
+To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20231128025440.46988-1-quic_bqiang@quicinc.com>
+ <20231128025440.46988-3-quic_bqiang@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20231128025440.46988-3-quic_bqiang@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: RvZ8nbyiqia6C1xPVrGdMwlsUhNUCX7b
-X-Proofpoint-ORIG-GUID: RvZ8nbyiqia6C1xPVrGdMwlsUhNUCX7b
+X-Proofpoint-GUID: wgkRBi6frFSJbHd5X6e0VDKnurSnIhTR
+X-Proofpoint-ORIG-GUID: wgkRBi6frFSJbHd5X6e0VDKnurSnIhTR
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-28_14,2023-11-27_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
- lowpriorityscore=0 suspectscore=0 spamscore=0 mlxscore=0 mlxlogscore=757
- impostorscore=0 priorityscore=1501 clxscore=1015 malwarescore=0
- phishscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311280122
+ definitions=2023-11-28_17,2023-11-27_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ impostorscore=0 priorityscore=1501 clxscore=1015 spamscore=0
+ mlxlogscore=999 suspectscore=0 adultscore=0 mlxscore=0 malwarescore=0
+ bulkscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311280126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231128_071950_733993_C8BAFE85 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20231128_074739_047782_08FBF37F 
+X-CRM114-Status: GOOD (  26.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,408 +98,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Update the copyright for all ath12k files modified on behalf of
-Qualcomm Innovation Center, Inc. in 2023.
+On 11/27/2023 6:54 PM, Baochen Qiang wrote:
+> Currently the maximum block ACK window size supported is 256.
+> This results in that, when connected to an AP which supports
+> larger BA sizes like BA512 or BA1024, only BA256 is
+> established, leading to a lower peak throughput.
+> 
+> So add support for BA1024, this is doen by allocating a larger
 
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.c    | 2 +-
- drivers/net/wireless/ath/ath12k/core.h    | 2 +-
- drivers/net/wireless/ath/ath12k/dbring.c  | 2 +-
- drivers/net/wireless/ath/ath12k/debug.c   | 2 +-
- drivers/net/wireless/ath/ath12k/dp.c      | 2 +-
- drivers/net/wireless/ath/ath12k/dp.h      | 2 +-
- drivers/net/wireless/ath/ath12k/dp_mon.c  | 2 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c   | 2 +-
- drivers/net/wireless/ath/ath12k/dp_tx.c   | 2 +-
- drivers/net/wireless/ath/ath12k/hal.c     | 2 +-
- drivers/net/wireless/ath/ath12k/hal.h     | 2 +-
- drivers/net/wireless/ath/ath12k/hal_rx.c  | 2 +-
- drivers/net/wireless/ath/ath12k/hif.h     | 2 +-
- drivers/net/wireless/ath/ath12k/hw.c      | 2 +-
- drivers/net/wireless/ath/ath12k/hw.h      | 2 +-
- drivers/net/wireless/ath/ath12k/mac.c     | 2 +-
- drivers/net/wireless/ath/ath12k/mac.h     | 2 +-
- drivers/net/wireless/ath/ath12k/mhi.c     | 2 +-
- drivers/net/wireless/ath/ath12k/pci.c     | 2 +-
- drivers/net/wireless/ath/ath12k/pci.h     | 2 +-
- drivers/net/wireless/ath/ath12k/peer.h    | 2 +-
- drivers/net/wireless/ath/ath12k/qmi.c     | 2 +-
- drivers/net/wireless/ath/ath12k/qmi.h     | 2 +-
- drivers/net/wireless/ath/ath12k/reg.c     | 2 +-
- drivers/net/wireless/ath/ath12k/reg.h     | 2 +-
- drivers/net/wireless/ath/ath12k/rx_desc.h | 2 +-
- drivers/net/wireless/ath/ath12k/wmi.c     | 2 +-
- drivers/net/wireless/ath/ath12k/wmi.h     | 2 +-
- 28 files changed, 28 insertions(+), 28 deletions(-)
+nit: s/doen/done/
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index b936760b5140..fa456fb62f5e 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/module.h>
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 68c42ca44fcb..bd8700ecded3 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_CORE_H
-diff --git a/drivers/net/wireless/ath/ath12k/dbring.c b/drivers/net/wireless/ath/ath12k/dbring.c
-index 8fbf868e6f7e..788160c84c68 100644
---- a/drivers/net/wireless/ath/ath12k/dbring.c
-+++ b/drivers/net/wireless/ath/ath12k/dbring.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include "core.h"
-diff --git a/drivers/net/wireless/ath/ath12k/debug.c b/drivers/net/wireless/ath/ath12k/debug.c
-index 45d33279e665..fe5a732ba9ec 100644
---- a/drivers/net/wireless/ath/ath12k/debug.c
-+++ b/drivers/net/wireless/ath/ath12k/debug.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/vmalloc.h>
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 6893466f61f0..a9137172d400 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <crypto/hash.h>
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 61f765432516..7a2f8091b81a 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_DP_H
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index f44bc5494ce7..37db0b400ff6 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include "dp_mon.h"
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 9f831e3971f9..c95d84c8d4c5 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/ieee80211.h>
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 492ca6ce6714..62f9cdbb811c 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include "core.h"
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index eca86fc25a60..ca6f1d0db31e 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #include <linux/dma-mapping.h>
- #include "hal_tx.h"
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 66035a787c72..fc47e7e6b498 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_HAL_H
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.c b/drivers/net/wireless/ath/ath12k/hal_rx.c
-index f6afbd8196bf..4f25eb9f7745 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include "debug.h"
-diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
-index 4095fd82b1b3..c653ca1f59b2 100644
---- a/drivers/net/wireless/ath/ath12k/hif.h
-+++ b/drivers/net/wireless/ath/ath12k/hif.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_HIF_H
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 2245fb510ba2..ea3eda1f1948 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/types.h>
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 2d6427cf41a4..d2622bfef942 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_HW_H
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index fc0d14ea328e..a13506c177f6 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <net/mac80211.h>
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index 59b4e8f5eee0..7d71ae1aba45 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_MAC_H
-diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
-index 39e640293cdc..27eb38b2b1bd 100644
---- a/drivers/net/wireless/ath/ath12k/mhi.c
-+++ b/drivers/net/wireless/ath/ath12k/mhi.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/msi.h>
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 3006cd3fbe11..a6a5f9bcffbd 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/module.h>
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 0f24fd9395cd..9a17a7dcdd6a 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #ifndef ATH12K_PCI_H
- #define ATH12K_PCI_H
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index c6edb24cbedd..7b3500b5c8c2 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_PEER_H
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index f6e949c618d0..77a132f6bbd1 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/elf.h>
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index e20d6511d1ca..e25bbaa125e8 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_QMI_H
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index 5c006256c82a..8321715779cb 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #include <linux/rtnetlink.h>
- #include "core.h"
-diff --git a/drivers/net/wireless/ath/ath12k/reg.h b/drivers/net/wireless/ath/ath12k/reg.h
-index 35569f03042d..d4a0776e1034 100644
---- a/drivers/net/wireless/ath/ath12k/reg.h
-+++ b/drivers/net/wireless/ath/ath12k/reg.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_REG_H
-diff --git a/drivers/net/wireless/ath/ath12k/rx_desc.h b/drivers/net/wireless/ath/ath12k/rx_desc.h
-index c4058abc516e..55f20c446ca9 100644
---- a/drivers/net/wireless/ath/ath12k/rx_desc.h
-+++ b/drivers/net/wireless/ath/ath12k/rx_desc.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #ifndef ATH12K_RX_DESC_H
- #define ATH12K_RX_DESC_H
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 0e5bf5ce8d4c..11cc3005c0f9 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #include <linux/skbuff.h>
- #include <linux/ctype.h>
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 629373d67421..2e199f6435bb 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_WMI_H
+> REO queue and advertising IEEE80211_MAX_AMPDU_BUF_EHT support
+> to MAC80211.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/dp.h       |  2 +-
+>  drivers/net/wireless/ath/ath12k/hal_desc.h | 28 ++++++++++++++++++++++
+>  drivers/net/wireless/ath/ath12k/hal_rx.c   | 11 ++++++---
+>  drivers/net/wireless/ath/ath12k/mac.c      |  2 +-
+>  4 files changed, 38 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+> index 61f765432516..50db1403ebce 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp.h
+> +++ b/drivers/net/wireless/ath/ath12k/dp.h
+> @@ -145,7 +145,7 @@ struct ath12k_pdev_dp {
+>  
+>  #define DP_RX_HASH_ENABLE	1 /* Enable hash based Rx steering */
+>  
+> -#define DP_BA_WIN_SZ_MAX	256
+> +#define DP_BA_WIN_SZ_MAX	1024
+>  
+>  #define DP_TCL_NUM_RING_MAX	4
+>  
+> diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
+> index ec204939e50c..f12977aa6afe 100644
+> --- a/drivers/net/wireless/ath/ath12k/hal_desc.h
+> +++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
+> @@ -2517,6 +2517,34 @@ struct hal_reo_update_rx_queue {
+>  	__le32 pn[4];
+>  } __packed;
+>  
+> +struct hal_rx_reo_queue_1k {
+> +	struct hal_desc_header desc_hdr;
+> +	__le32 rx_bitmap_319_288;
 
--- 
-2.42.0
+are these individual bitmap members ever directly referenced? seems it
+would make more sense to have simply:
+	__le32 rx_bitmap_1023_288[23]
+
+this would align with struct hal_rx_reo_queue which defines:
+	__le32 rx_bitmap[9]
+
+> +	__le32 rx_bitmap_351_320;
+> +	__le32 rx_bitmap_383_352;
+> +	__le32 rx_bitmap_415_384;
+> +	__le32 rx_bitmap_447_416;
+> +	__le32 rx_bitmap_479_448;
+> +	__le32 rx_bitmap_511_480;
+> +	__le32 rx_bitmap_543_512;
+> +	__le32 rx_bitmap_575_544;
+> +	__le32 rx_bitmap_607_576;
+> +	__le32 rx_bitmap_639_608;
+> +	__le32 rx_bitmap_671_640;
+> +	__le32 rx_bitmap_703_672;
+> +	__le32 rx_bitmap_735_704;
+> +	__le32 rx_bitmap_767_736;
+> +	__le32 rx_bitmap_799_768;
+> +	__le32 rx_bitmap_831_800;
+> +	__le32 rx_bitmap_863_832;
+> +	__le32 rx_bitmap_895_864;
+> +	__le32 rx_bitmap_927_896;
+> +	__le32 rx_bitmap_959_928;
+> +	__le32 rx_bitmap_991_960;
+> +	__le32 rx_bitmap_1023_992;
+> +	__le32 reserved[8];
+> +} __packed;
+> +
+>  #define HAL_REO_UNBLOCK_CACHE_INFO0_UNBLK_CACHE		BIT(0)
+>  #define HAL_REO_UNBLOCK_CACHE_INFO0_RESOURCE_IDX	GENMASK(2, 1)
+>  
+> diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.c b/drivers/net/wireless/ath/ath12k/hal_rx.c
+> index f6afbd8196bf..6fa874a93d3a 100644
+> --- a/drivers/net/wireless/ath/ath12k/hal_rx.c
+> +++ b/drivers/net/wireless/ath/ath12k/hal_rx.c
+> @@ -688,23 +688,28 @@ void ath12k_hal_reo_update_rx_reo_queue_status(struct ath12k_base *ab,
+>  
+>  u32 ath12k_hal_reo_qdesc_size(u32 ba_window_size, u8 tid)
+>  {
+> -	u32 num_ext_desc;
+> +	u32 num_ext_desc, num_1k_desc = 0;
+>  
+>  	if (ba_window_size <= 1) {
+>  		if (tid != HAL_DESC_REO_NON_QOS_TID)
+>  			num_ext_desc = 1;
+>  		else
+>  			num_ext_desc = 0;
+> +
+>  	} else if (ba_window_size <= 105) {
+>  		num_ext_desc = 1;
+>  	} else if (ba_window_size <= 210) {
+>  		num_ext_desc = 2;
+> -	} else {
+> +	} else if (ba_window_size <= 256) {
+>  		num_ext_desc = 3;
+> +	} else {
+> +		num_ext_desc = 10;
+> +		num_1k_desc = 1;
+>  	}
+>  
+>  	return sizeof(struct hal_rx_reo_queue) +
+> -		(num_ext_desc * sizeof(struct hal_rx_reo_queue_ext));
+> +		(num_ext_desc * sizeof(struct hal_rx_reo_queue_ext)) +
+> +		(num_1k_desc * sizeof(struct hal_rx_reo_queue_1k));
+>  }
+>  
+>  void ath12k_hal_reo_qdesc_setup(struct hal_rx_reo_queue *qdesc,
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index fc0d14ea328e..3cfb17f71aa6 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -7474,7 +7474,7 @@ static int __ath12k_mac_register(struct ath12k *ar)
+>  	ar->hw->queues = ATH12K_HW_MAX_QUEUES;
+>  	ar->hw->wiphy->tx_queue_len = ATH12K_QUEUE_LEN;
+>  	ar->hw->offchannel_tx_hw_queue = ATH12K_HW_MAX_QUEUES - 1;
+> -	ar->hw->max_rx_aggregation_subframes = IEEE80211_MAX_AMPDU_BUF_HE;
+> +	ar->hw->max_rx_aggregation_subframes = IEEE80211_MAX_AMPDU_BUF_EHT;
+>  
+>  	ar->hw->vif_data_size = sizeof(struct ath12k_vif);
+>  	ar->hw->sta_data_size = sizeof(struct ath12k_sta);
+
+Are any related changes needed to struct hal_reo_get_queue_stats_status?
+Or to ath12k_hal_reo_status_queue_stats()?
+There I see the 256-bit bitmap being dumped -- do you need to dump the
+1024-bit bitmap? Is there a mechanism which allows that?
+
 
 
 -- 
