@@ -4,63 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2965CC4167B
-	for <ath12k@archiver.kernel.org>; Wed, 29 Nov 2023 11:27:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5080AC4167B
+	for <ath12k@archiver.kernel.org>; Wed, 29 Nov 2023 15:35:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9aab8t4MJgjlcZAVQyQJmRP2wyJq7Pv16Dqhi1xYfKg=; b=kjo4n5XMGZwxatpogWKkz669fc
-	W/88Uembxhg9yZTqyY4HCc1REZQz5GFlsttluw3sGBZI1x1o+TOzxawnEnrQX/3DzzZefvkg7VjXu
-	/pHNdDbKGO6ywc4WFcs0+KKVOzXLf4GpEBHvTGx/WwevqeW9T+9xlBW91Wy3VUbzcPpEnT4FyU0DJ
-	mEbuLLwpni7Okh65b0zKgO2gq6fz35FcF3W4ImheiDrwVR3AFweN/4YY6e9UKf0lLJiXCHdDJcu4J
-	DjOAcoLm+BcSg3vjojRI/25GUv5wN6+D73u40MyBX7lYUtC2UADRNFgeibS3osrYo40dPzhtqhJOH
-	G432Ayww==;
+	bh=6tA+4dm3fGfIdvLepGkvqvZVuTtjmjIe5X9Fmhad0fU=; b=sUuBMZKYtIhCBX5xzmD+5SHOX9
+	7EIkEssqoASLIAh5W49jtmbITJOZyZSUTxV3cyA4RychFEVCM9x0zg3nE29FfCufxZmLJhG7RRp19
+	lgQU0In0sYANV74HAx4k5XKJCGiww4KAZ7RIBAFazmyYm4QghO5Vu55w2QRvkkNH2xuxxlWNEKgyX
+	xl3eRAPTH+ZvBrTjHitNPspSlbSYpAO/YUZVSVCb71a2mnRPE3gkYUvC6jr1QdUi76rpBeGDaoYcR
+	Fjq0o5/yiuogl578m3uAqRfWyNopo6v9YtSzb+fiRVLq+JaPkHWZ3X/yHRGVyySjrXTGvoBLpAPoP
+	V/A5989g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8IjL-0086Ny-2l
+	id 1r8Maq-008lXd-0F
 	for ath12k@archiver.kernel.org;
-	Wed, 29 Nov 2023 11:27:47 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 29 Nov 2023 15:35:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8IjI-0086Ki-2B
+	id 1r8Man-008lX2-1E
 	for ath12k@lists.infradead.org;
-	Wed, 29 Nov 2023 11:27:46 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0356E61ADB;
-	Wed, 29 Nov 2023 11:27:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB5C2C433C8;
-	Wed, 29 Nov 2023 11:27:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701257263;
-	bh=CxhC3KPL6edIsxMs1xLty9ggRm5+698r8F21EfLaHqI=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=gnBUPItKb/2k/CgXYbsieuHvMzORRgH59C+x1bm62PZH9YPK2me8Yot24fyJSjObe
-	 LccgTClXfmJvhZ28GXRycfGMKRgmf4iNuz4z4KZnTk2WwARPgzfL269OtyK85Ul9+K
-	 SGKZLUf3NT4sP1X93nRHa1yM1BqGao26p76AcWg9uJ/WvQZPSI4DHKyh4b3IbijP0B
-	 hwQMwZE7HV+rZAx3r060qm6vaxgnkXD52kbFGiBIvniNV7LQ5jIQ89XylsqfikSu3D
-	 WQPubVSL6FnHvyRG4Qm0gQGUzHx5EQds77QxVk0107A6Eu1JuJRw7ajubMoRzloKPa
-	 S8A958q3y9Sgw==
-Content-Type: text/plain; charset="utf-8"
+	Wed, 29 Nov 2023 15:35:14 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3ATDXgnq007345;
+	Wed, 29 Nov 2023 15:35:10 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
+ mime-version : subject : to : cc : references : from : in-reply-to :
+ content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=6tA+4dm3fGfIdvLepGkvqvZVuTtjmjIe5X9Fmhad0fU=;
+ b=dJEKtUHaxDHVTiuSr5pY7A4CkeK5y0LEkXw22wW1ofm8ls7C2tNua7+pEXSpYFeL/R2m
+ nJ/xZMtLkCNk6XmySwnA303ZRT2nafw50lE2qVqqpb72zS/cnfsLE/M5Qe+H67AoqKGk
+ HeS50/3/vg2sAPlNB2XIZQ7Zro7Vg9G5zZ7wCcGunqsWd7suCMQloJ1EhoEm9PQTxscF
+ gxjsa798RLND/e+zAG0ZTSW7WPyT4sdbOH4/U7aiK/0qrJAcC6e2akRx7B4p6B3C7mJA
+ pb1zAZSLeidp9V4s5NCWQ1VimP0gL6En9Zn++X60WEG9uiOqw131/wvH75NiS16gRsHS HA== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3unjdtk9qt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 29 Nov 2023 15:35:09 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3ATFZ9ma020239
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 29 Nov 2023 15:35:09 GMT
+Received: from [10.110.63.243] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 29 Nov
+ 2023 07:35:08 -0800
+Message-ID: <c1965895-5aa2-49be-a96c-b2aa1d5e5dd3@quicinc.com>
+Date: Wed, 29 Nov 2023 07:35:08 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/3] wifi: ath12k: fix wrong definitions of
+ hal_reo_update_rx_queue
+Content-Language: en-US
+To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20231129020414.56425-1-quic_bqiang@quicinc.com>
+ <20231129020414.56425-2-quic_bqiang@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20231129020414.56425-2-quic_bqiang@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH v2 1/4] wifi: ath12k: avoid explicit mac id argument in
- Rxdma
- replenish
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231111043934.20485-2-quic_periyasa@quicinc.com>
-References: <20231111043934.20485-2-quic_periyasa@quicinc.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170125726059.1070846.12579198842403519575.kvalo@kernel.org>
-Date: Wed, 29 Nov 2023 11:27:42 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: RRMxLibsPFVIBRp77UwshfylbBiKmfhZ
+X-Proofpoint-ORIG-GUID: RRMxLibsPFVIBRp77UwshfylbBiKmfhZ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-11-29_13,2023-11-29_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
+ lowpriorityscore=0 suspectscore=0 spamscore=0 mlxscore=0 mlxlogscore=551
+ impostorscore=0 priorityscore=1501 clxscore=1015 malwarescore=0
+ phishscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2311290117
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231129_032744_813415_FD787F4C 
-X-CRM114-Status: UNSURE (   5.64  )
+X-CRM114-CacheID: sfid-20231129_073513_558749_632E38BF 
+X-CRM114-Status: UNSURE (   9.60  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,29 +100,13 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
-
-> Currently all Rxdma replenish callers pass zero for the mac id
-> argument, so make it as zero implicitly. To optimize the rx
-> data path per packet, avoid the explicit unnecessary argument
-> in Rxdma replenish function.
+On 11/28/2023 6:04 PM, Baochen Qiang wrote:
+> Some fields of hal_reo_update_rx_queue structure are wrongly
+> defined, so fix it.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00125-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-
-4 patches applied to ath-next branch of ath.git, thanks.
-
-d281a574f133 wifi: ath12k: avoid explicit mac id argument in Rxdma replenish
-d457f9fe863d wifi: ath12k: avoid explicit RBM id argument in Rxdma replenish
-4d922ce983cb wifi: ath12k: avoid explicit HW conversion argument in Rxdma replenish
-9f1eebf0454d wifi: ath12k: refactor DP Rxdma ring structure
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231111043934.20485-2-quic_periyasa@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
