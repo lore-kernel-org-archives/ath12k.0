@@ -4,86 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9507C4167B
-	for <ath12k@archiver.kernel.org>; Thu, 30 Nov 2023 16:32:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E110C4167B
+	for <ath12k@archiver.kernel.org>; Thu, 30 Nov 2023 16:59:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O7GylH7uEV74FGZ99ziYrotPQJbQuu8i+ThZAnWdQh0=; b=Fs+hnXm8D1c7kuc3n9UNHC+RAp
-	u6xMAJVqN8KTOYZqzKVZkLwcxtfLSrMrfBP1nF9IzHqt2dlmw0U4GzHWIgfSoUkcQlY/h+LUHPuMb
-	NkJAcSun/ZSpgaD7xKKDqtyg7XiyafoNpjHVVHdI4UIOYDu4PTvdAl/AOYR3l52YRi7J9GNUECtF6
-	ieqgKaFDbCYUaUcUJ2GnyMbqSeOkpQt3bRs9wNI2KB0SxGPaLLeHMV10gmHKXC9xHGhvijzQs8o0d
-	68acIQ6m5LNZLIN4CEr+birv4EcII5ZzpmeCtJ+SPH2zw1wscrLQSGdaA1/9C4LUV58XRrwFeVwKX
-	YFtfpWgw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ywAGIzZnRYr1KYla+qNG6gqlVQvwKyTALiXOS8r2ivg=; b=PIIAkpe+RKkxTDj57xo6XI8mph
+	LRsyIo7GsElmWRWdjR1Xm7A14FsDNvFgvMV2Vhv1x4cGzWMKnObxsXyjwGmzJtx05/ISKYA4iHYS8
+	mYYLTJtqMB/AU7iI9xRJpseE5e6JRexjeR7MyVoQpgEiDFAdPmI9tVTSvdf/UEfzf+R2K6Bi4ISKZ
+	z9O53Lpx6iOBlB51+9EWYvkqdNrAPJ6WVXTf89uBeo7sXv1PNmsciFkx5FYuSnOzbJf6pHJbdR7mw
+	R2XCVugGwVsg/p8Uqskk9IXnQt6OGx2N2geYDaMprTpFlD6KYEvynnloEd2Zm0w22cWoxhMdLJZj9
+	7TUkwVKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8jxQ-00BM53-1M
+	id 1r8kO8-00BRvs-3D
 	for ath12k@archiver.kernel.org;
-	Thu, 30 Nov 2023 16:32:08 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 30 Nov 2023 16:59:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8jxN-00BM4S-26
-	for ath12k@lists.infradead.org;
-	Thu, 30 Nov 2023 16:32:07 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3AUElLGC021574;
-	Thu, 30 Nov 2023 16:32:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=O7GylH7uEV74FGZ99ziYrotPQJbQuu8i+ThZAnWdQh0=;
- b=WKWWQmSgLB2qKreRdQ35ffUNyzXD1HQM41quXa8LnDR1cq/HwY+F8JhCZ9Bp5YYG7C5a
- PekVacTOw7X4BlZuoVpJiA+LotTCCtbEpX4r9rvgAdTcRk1xacvDRBmmM/cvcThPbkqB
- 2+CzPF3En0sL0oC3iV88kx+WUVehdIxQbaVLQOAIP7eaUe8EoKZXsNc20TEnO/LIIgu4
- iUobFeVD9PSMtbVURRZI7cu3Mma/Q0QWgmRSHD4RafMH8aVkRUJvHT9snx6hOqDEnZzP
- YfsvwoFG2ba4C7iNFi4CbDIRPHDMypFIjSOiZ/QMH10H/KC8zRQdioN9LjGkIBmmhtRg 0Q== 
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3upjdq9ucn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Nov 2023 16:32:01 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3AUGW0Ao026578
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Nov 2023 16:32:00 GMT
-Received: from [10.110.26.250] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 30 Nov
- 2023 08:32:00 -0800
-Message-ID: <dac4b5df-80e6-4ba9-8612-b840f9536a18@quicinc.com>
-Date: Thu, 30 Nov 2023 08:31:59 -0800
+	id 1r8kO4-00BRtm-1b;
+	Thu, 30 Nov 2023 16:59:41 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 981B161E42;
+	Thu, 30 Nov 2023 16:59:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF1E7C433CB;
+	Thu, 30 Nov 2023 16:59:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1701363579;
+	bh=22tNHaTzJIBbBfRc7EQUN92ROgJ2k/Qfhg6/ee+vttI=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=Mny9vh9pXG31dN8btGwzKcZHB9kfNjwbNFFxFznSTbm+otM5Lxe8vMkmtRUxWDdKv
+	 0GxCuWJu3/asQOtxGA3rx3tkt4FKhQbj+OrHG/78Nf8AL+DIocUIXt5MvmNfdh4a+u
+	 WGoO7tScn7f7MgLz2dbgOsbKPK2rOHB2asgeAfXISZJVfc/m0DGO0/lx5H6IAHcPda
+	 AlBvdc8FGtWSOr+u16KjahKc/39bLN7OnGSeTHPzDedgTfwP+7y87e+I1qt6Bcpdeo
+	 T83tgWbkIpkgLFxMNlyoIzCD7IugSqZxofSrxNOdOPz61TGA3OsVX1gPk6myG6guBQ
+	 WxJDqWZ7JNm8Q==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: Firmware for qcn9274?
-Content-Language: en-US
-To: Ben Greear <greearb@candelatech.com>, <ath12k@lists.infradead.org>
-References: <864419c3-71e1-49e8-40e1-88bfafba26f4@candelatech.com>
- <bcc2a41e-0d5c-46b2-acbc-fa0f22c55232@quicinc.com>
- <b48f1931-7844-9dd9-7668-0e553385afdf@candelatech.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <b48f1931-7844-9dd9-7668-0e553385afdf@candelatech.com>
-Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: YN1D2_8Op7aFe6l-hGu6pq1-ump3c3Ks
-X-Proofpoint-ORIG-GUID: YN1D2_8Op7aFe6l-hGu6pq1-ump3c3Ks
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-11-30_16,2023-11-30_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 adultscore=0 mlxlogscore=403 lowpriorityscore=0
- clxscore=1015 spamscore=0 suspectscore=0 impostorscore=0 bulkscore=0
- mlxscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311060000 definitions=main-2311300120
+Subject: Re: [PATCH 1/3] wifi: ath12k: Update Qualcomm Innovation Center, Inc.
+ copyrights
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20231128-ath12kcopyrights-v1-1-be0b7408cbac@quicinc.com>
+References: <20231128-ath12kcopyrights-v1-1-be0b7408cbac@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>,
+ <ath11k@lists.infradead.org>, <ath10k@lists.infradead.org>,
+ <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <170136357571.1435047.9848958403770331944.kvalo@kernel.org>
+Date: Thu, 30 Nov 2023 16:59:37 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231130_083205_729777_A1011B2E 
-X-CRM114-Status: GOOD (  13.10  )
+X-CRM114-CacheID: sfid-20231130_085940_591535_D0BF82B0 
+X-CRM114-Status: UNSURE (   5.37  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,38 +75,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 11/30/2023 8:18 AM, Ben Greear wrote:
-> On 11/29/23 14:49, Jeff Johnson wrote:
->> On 11/29/2023 9:39 AM, Ben Greear wrote:
->>> Hello,
->>>
->>> Where are the ath12k firmware binaries located?  I don't see any ath12k tree
->>> in linux-firmware, for instance.
->>>
->>> ]# dmesg|grep ath12
->>> [   55.381104] ath12k_pci 0000:0e:00.0: BAR 0: assigned [mem 0xdf000000-0xdf1fffff 64bit]
->>> [   55.415662] ath12k_pci 0000:0e:00.0: Hardware name: qcn9274 hw2.0
->>> [   55.592167] mhi mhi0: Direct firmware load for ath12k/QCN9274/hw2.0/amss.bin failed with error -2
->>>
->>> Thanks,
->>> Ben
->>>
->> See if this helps
->> https://wireless.wiki.kernel.org/en/users/drivers/ath12k/installation
->>
-> 
-> It got me closer, but the ath11k-firmware directory tree has different path than what the driver expects.
-> 
-> [greearb@v-f34-64 firmware]$ find . -name amss.bin -print
-> ./ath12k/QCN9274/hw2.0/WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1/amss.bin
-> ./ath12k/QCN9274/hw2.0/WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1/amss.bin
-> ./ath12k/WCN7850/hw2.0/WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4/amss.bin
-> ./ath11k/QCA6390/hw2.0/amss.bin
-> ./ath11k/WCN6855/hw2.0/amss.bin
-> ./ath11k/QCN9074/hw1.0/amss.bin
-> 
-> 
-> Which one of those QCAHKSWPL directories I use?
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-use WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Update the copyright for all ath12k files modified on behalf of
+> Qualcomm Innovation Center, Inc. in 2023.
+> 
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+
+3 patches applied to ath-next branch of ath.git, thanks.
+
+05205b957661 wifi: ath12k: Update Qualcomm Innovation Center, Inc. copyrights
+ea77e9398b32 wifi: ath11k: Update Qualcomm Innovation Center, Inc. copyrights
+b1dc0ba41431 wifi: ath10k: Update Qualcomm Innovation Center, Inc. copyrights
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20231128-ath12kcopyrights-v1-1-be0b7408cbac@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
