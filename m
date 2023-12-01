@@ -4,63 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7759DC4167B
-	for <ath12k@archiver.kernel.org>; Thu, 30 Nov 2023 17:33:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFB21C4167B
+	for <ath12k@archiver.kernel.org>; Fri,  1 Dec 2023 01:37:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=r0Nm8LRoxoafPjYtdgu+SYvYPz+nacFS/JBRU9nSy60=; b=NqPAnleMSp7daEZIkEpctWorC5
-	2YWHD1e5ag+EWR2EVzGazPHq8jZnApp3bu4BuecvI+4SVuMTKCX0/gYaW15uo1SZxLanQNnzmmeuC
-	fY61Ovam5n9tWbP9Tv4bEXJ7RucV+50Zjh3vVH3SGfRAAhyJnmiv3OdxQTbGOdOz4SB3JWGnkoyM8
-	iOSrg13UZCqdfVVAsvUlUQDj2Pwl199wpWe3gxmGFbyzrNPPoMXsc/9ST+GCYlDmDBucJj044yamC
-	aYPLwc+HBdrmt3VraOci5AlXWRhn2+QPEUxHT2kZbmQdkJAMCWJmLp8ChQ97/QovqE+81D8dDyIlG
-	RGllAH+Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=2zRwbuPoPfvFcuvWiCCmyNhamUyniJqv2AXmQ3z+SUs=; b=CiDqDoXgw/6yNTprEU4AHFEy6G
+	kouu2gJTn+qvM1gEBWf9wphe9R9wGZo2G/F8qXwyDTeG3aEG6CWAbHd05vZUHsKkLdh4T8mR+Eu8Z
+	6wHx52LGmga7yaicSRqptpLB+Yq4NNxXwZbxtDq0GKXrZuPPqA7ySFZJ3TQndV4iuAffZhoQvghyU
+	e5T8RuhngIuJa8c7tFaf3fxbJdeQY7hAht9rHyptAwFuEE5NxflULTzMN4hZp2ZHSJDp08VbskyK9
+	KQ+K18UsmUle0c228zaQNGdvLFDp5qoBZ2h0DqMvHf7UF+hnmInWp0GQ+/3uBIPvFYUtEgNndR4d0
+	vVc61+2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8kug-00BVxy-0k
+	id 1r8sTf-00CMdD-1O
 	for ath12k@archiver.kernel.org;
-	Thu, 30 Nov 2023 17:33:22 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	Fri, 01 Dec 2023 01:37:59 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8kuc-00BVxP-2y
+	id 1r8sTc-00CMbz-1w
 	for ath12k@lists.infradead.org;
-	Thu, 30 Nov 2023 17:33:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 4DF85B8433E;
-	Thu, 30 Nov 2023 17:33:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8230C433C7;
-	Thu, 30 Nov 2023 17:33:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701365596;
-	bh=t8uwdWXJ/C0JLH2QtDk8ksHVHtSvg4O875BSx0Lnepo=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=U65o5Om96swNnsEc4VWBBVrKn+jJlHiJwetMhFbmNLXe21f81nW1mxyUmiOr8kuer
-	 p2ZCdwAm1lUz5pBg11I5fkT5M6OdqRR100/Sn0pFOP4hmYQSaMKbuIsIOgdKJ6tpHI
-	 mzDvskPaC8jO2bGjRVDlaKMv/isO2xNBT3WnEySjiMIDIE0huKngOIm95A1cck8JHT
-	 vMz2Rihy+j1tyFTITKW4m6AqeBrHqu+GEt/6FAG/CePxwKVqPmt2uTkBa1xbQOAV5y
-	 923yJJZQG5PSn1Tlx9uQ1lKNyhAR3bGUxAnH7nd19fGkrcNmDjHihju59hb+nQE40L
-	 aLx32waVWA8jA==
-Content-Type: text/plain; charset="utf-8"
+	Fri, 01 Dec 2023 01:37:58 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3B10rXlX031670;
+	Fri, 1 Dec 2023 01:37:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=2zRwbuPoPfvFcuvWiCCmyNhamUyniJqv2AXmQ3z+SUs=;
+ b=Mo2Uh/ZYeiXLgBABCB8/D3w+BkQgISGEjq3QtU3ZIv7Jj5jD4txXt5A2e0qBti+j4jWo
+ hrFwdUoG3ZzkRVjJ/b9g9iJM68AGoTAGVp3lIdi8Eujib45ok6mSzeiLBHRE/mQUcUq/
+ S8u7cVzqp2ujsOvM/J5jYXp2d9kUNqd1pDA2nj5zssWWU3xZixS/yd4QIhZX7WGVG3cz
+ bHD4w3XMkOh8Fpzv5TqtllZJMjl/859LLAEUYEv0BMR76zi0gTZABDVqWPdtD7nwwOK5
+ a/jQleSJ31/UbPKLVz/Fcm821ioSU8jrhngVNLrw/vtE+7S0uP6suABo7lx9AefvAFMO Vw== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3up5e8w4n5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 01 Dec 2023 01:37:55 +0000
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3B11bsYl016293
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 1 Dec 2023 01:37:54 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Thu, 30 Nov 2023 17:37:52 -0800
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH] wifi: ath12k: avoid repeated wiphy access from hw
+Date: Fri, 1 Dec 2023 07:07:35 +0530
+Message-ID: <20231201013735.2292313-1-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: fix the issue that the multicast/broadcast
- indicator is not read correctly for WCN7850
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231118134538.19545-1-quic_lingbok@quicinc.com>
-References: <20231118134538.19545-1-quic_lingbok@quicinc.com>
-To: Lingbo Kong <quic_lingbok@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- <lingbok@qti.qualcomm.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170136559355.1566939.2533583060106709722.kvalo@kernel.org>
-Date: Thu, 30 Nov 2023 17:33:15 +0000 (UTC)
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: qMUugoS0PR896kOlGCPnYu6-dQmWEwl-
+X-Proofpoint-ORIG-GUID: qMUugoS0PR896kOlGCPnYu6-dQmWEwl-
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-11-30_25,2023-11-30_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ suspectscore=0 phishscore=0 malwarescore=0 lowpriorityscore=0 spamscore=0
+ clxscore=1015 impostorscore=0 adultscore=0 mlxlogscore=777 mlxscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311060000 definitions=main-2312010008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231130_093319_130200_AA587682 
-X-CRM114-Status: UNSURE (   7.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231130_173756_651523_DD7642BD 
+X-CRM114-Status: GOOD (  20.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,30 +96,196 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Lingbo Kong <quic_lingbok@quicinc.com> wrote:
+Currently repeated access of wiphy data from mac80211 hw structure is
+happen inside the mac80211 registration helper functions. So optimize
+these helper functions by storing wiphy data locally and accessing it
+directly.
 
-> We observe some packets are discarded in ieee80211_rx_handlers_result
-> function for WCN7850. This is because the way to get multicast/broadcast
-> indicator with RX_MSDU_END_INFO5_DA_IS_MCBC & info5 is incorrect. It should
-> use RX_MSDU_END_INFO13_MCAST_BCAST & info13 to get multicast/broadcast
-> indicator.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-ALWAYS run ath12k-check:
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 72 ++++++++++++++-------------
+ 1 file changed, 37 insertions(+), 35 deletions(-)
 
-drivers/net/wireless/ath/ath12k/hal.c:892:16: warning: cast to restricted __le16
-drivers/net/wireless/ath/ath12k/hal.c:892:16: warning: cast from restricted __le32
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 45b5c642a0fd..6b4a3ee24ed4 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -7247,6 +7247,7 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k *ar)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct ieee80211_hw *hw = ar->hw;
++	struct wiphy *wiphy = hw->wiphy;
+ 	struct ieee80211_iface_combination *combinations;
+ 	struct ieee80211_iface_limit *limits;
+ 	int n_limits, max_interfaces;
+@@ -7297,8 +7298,8 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k *ar)
+ 						BIT(NL80211_CHAN_WIDTH_40) |
+ 						BIT(NL80211_CHAN_WIDTH_80);
+ 
+-	hw->wiphy->iface_combinations = combinations;
+-	hw->wiphy->n_iface_combinations = 1;
++	wiphy->iface_combinations = combinations;
++	wiphy->n_iface_combinations = 1;
+ 
+ 	return 0;
+ }
+@@ -7343,6 +7344,7 @@ static const struct wiphy_iftype_ext_capab ath12k_iftypes_ext_capa[] = {
+ static void __ath12k_mac_unregister(struct ath12k *ar)
+ {
+ 	struct ieee80211_hw *hw = ar->hw;
++	struct wiphy *wiphy = hw->wiphy;
+ 
+ 	cancel_work_sync(&ar->regd_update_work);
+ 
+@@ -7355,8 +7357,8 @@ static void __ath12k_mac_unregister(struct ath12k *ar)
+ 	kfree(ar->mac.sbands[NL80211_BAND_5GHZ].channels);
+ 	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
+ 
+-	kfree(hw->wiphy->iface_combinations[0].limits);
+-	kfree(hw->wiphy->iface_combinations);
++	kfree(wiphy->iface_combinations[0].limits);
++	kfree(wiphy->iface_combinations);
+ 
+ 	SET_IEEE80211_DEV(hw, NULL);
+ }
+@@ -7381,6 +7383,7 @@ static int __ath12k_mac_register(struct ath12k *ar)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct ieee80211_hw *hw = ar->hw;
++	struct wiphy *wiphy = hw->wiphy;
+ 	struct ath12k_pdev_cap *cap = &ar->pdev->cap;
+ 	static const u32 cipher_suites[] = {
+ 		WLAN_CIPHER_SUITE_TKIP,
+@@ -7416,14 +7419,14 @@ static int __ath12k_mac_register(struct ath12k *ar)
+ 		goto err_free_channels;
+ 	}
+ 
+-	hw->wiphy->available_antennas_rx = cap->rx_chain_mask;
+-	hw->wiphy->available_antennas_tx = cap->tx_chain_mask;
++	wiphy->available_antennas_rx = cap->rx_chain_mask;
++	wiphy->available_antennas_tx = cap->tx_chain_mask;
+ 
+-	hw->wiphy->interface_modes = ab->hw_params->interface_modes;
++	wiphy->interface_modes = ab->hw_params->interface_modes;
+ 
+-	if (hw->wiphy->bands[NL80211_BAND_2GHZ] &&
+-	    hw->wiphy->bands[NL80211_BAND_5GHZ] &&
+-	    hw->wiphy->bands[NL80211_BAND_6GHZ])
++	if (wiphy->bands[NL80211_BAND_2GHZ] &&
++	    wiphy->bands[NL80211_BAND_5GHZ] &&
++	    wiphy->bands[NL80211_BAND_6GHZ])
+ 		ieee80211_hw_set(hw, SINGLE_SCAN_ON_ALL_BANDS);
+ 
+ 	ieee80211_hw_set(hw, SIGNAL_DBM);
+@@ -7449,60 +7452,59 @@ static int __ath12k_mac_register(struct ath12k *ar)
+ 		ieee80211_hw_set(hw, USES_RSS);
+ 	}
+ 
+-	hw->wiphy->features |= NL80211_FEATURE_STATIC_SMPS;
+-	hw->wiphy->flags |= WIPHY_FLAG_IBSS_RSN;
++	wiphy->features |= NL80211_FEATURE_STATIC_SMPS;
++	wiphy->flags |= WIPHY_FLAG_IBSS_RSN;
+ 
+ 	/* TODO: Check if HT capability advertised from firmware is different
+ 	 * for each band for a dual band capable radio. It will be tricky to
+ 	 * handle it when the ht capability different for each band.
+ 	 */
+ 	if (ht_cap & WMI_HT_CAP_DYNAMIC_SMPS)
+-		hw->wiphy->features |= NL80211_FEATURE_DYNAMIC_SMPS;
++		wiphy->features |= NL80211_FEATURE_DYNAMIC_SMPS;
+ 
+-	hw->wiphy->max_scan_ssids = WLAN_SCAN_PARAMS_MAX_SSID;
+-	hw->wiphy->max_scan_ie_len = WLAN_SCAN_PARAMS_MAX_IE_LEN;
++	wiphy->max_scan_ssids = WLAN_SCAN_PARAMS_MAX_SSID;
++	wiphy->max_scan_ie_len = WLAN_SCAN_PARAMS_MAX_IE_LEN;
+ 
+ 	hw->max_listen_interval = ATH12K_MAX_HW_LISTEN_INTERVAL;
+ 
+-	hw->wiphy->flags |= WIPHY_FLAG_HAS_REMAIN_ON_CHANNEL;
+-	hw->wiphy->flags |= WIPHY_FLAG_HAS_CHANNEL_SWITCH;
+-	hw->wiphy->max_remain_on_channel_duration = 5000;
++	wiphy->flags |= WIPHY_FLAG_HAS_REMAIN_ON_CHANNEL;
++	wiphy->flags |= WIPHY_FLAG_HAS_CHANNEL_SWITCH;
++	wiphy->max_remain_on_channel_duration = 5000;
+ 
+-	hw->wiphy->flags |= WIPHY_FLAG_AP_UAPSD;
+-	hw->wiphy->features |= NL80211_FEATURE_AP_MODE_CHAN_WIDTH_CHANGE |
++	wiphy->flags |= WIPHY_FLAG_AP_UAPSD;
++	wiphy->features |= NL80211_FEATURE_AP_MODE_CHAN_WIDTH_CHANGE |
+ 				   NL80211_FEATURE_AP_SCAN;
+ 
+ 	ar->max_num_stations = TARGET_NUM_STATIONS;
+ 	ar->max_num_peers = TARGET_NUM_PEERS_PDEV;
+ 
+-	hw->wiphy->max_ap_assoc_sta = ar->max_num_stations;
++	wiphy->max_ap_assoc_sta = ar->max_num_stations;
+ 
+ 	hw->queues = ATH12K_HW_MAX_QUEUES;
+-	hw->wiphy->tx_queue_len = ATH12K_QUEUE_LEN;
++	wiphy->tx_queue_len = ATH12K_QUEUE_LEN;
+ 	hw->offchannel_tx_hw_queue = ATH12K_HW_MAX_QUEUES - 1;
+ 	hw->max_rx_aggregation_subframes = IEEE80211_MAX_AMPDU_BUF_HE;
+ 
+ 	hw->vif_data_size = sizeof(struct ath12k_vif);
+ 	hw->sta_data_size = sizeof(struct ath12k_sta);
+ 
+-	wiphy_ext_feature_set(hw->wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
+-	wiphy_ext_feature_set(hw->wiphy, NL80211_EXT_FEATURE_STA_TX_PWR);
++	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
++	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_STA_TX_PWR);
+ 
+-	hw->wiphy->cipher_suites = cipher_suites;
+-	hw->wiphy->n_cipher_suites = ARRAY_SIZE(cipher_suites);
++	wiphy->cipher_suites = cipher_suites;
++	wiphy->n_cipher_suites = ARRAY_SIZE(cipher_suites);
+ 
+-	hw->wiphy->iftype_ext_capab = ath12k_iftypes_ext_capa;
+-	hw->wiphy->num_iftype_ext_capab =
+-		ARRAY_SIZE(ath12k_iftypes_ext_capa);
++	wiphy->iftype_ext_capab = ath12k_iftypes_ext_capa;
++	wiphy->num_iftype_ext_capab = ARRAY_SIZE(ath12k_iftypes_ext_capa);
+ 
+ 	if (ar->supports_6ghz) {
+-		wiphy_ext_feature_set(hw->wiphy,
++		wiphy_ext_feature_set(wiphy,
+ 				      NL80211_EXT_FEATURE_FILS_DISCOVERY);
+-		wiphy_ext_feature_set(hw->wiphy,
++		wiphy_ext_feature_set(wiphy,
+ 				      NL80211_EXT_FEATURE_UNSOL_BCAST_PROBE_RESP);
+ 	}
+ 
+-	wiphy_ext_feature_set(hw->wiphy, NL80211_EXT_FEATURE_PUNCT);
++	wiphy_ext_feature_set(wiphy, NL80211_EXT_FEATURE_PUNCT);
+ 
+ 	ath12k_reg_init(hw);
+ 
+@@ -7524,7 +7526,7 @@ static int __ath12k_mac_register(struct ath12k *ar)
+ 		 * while. But that time is so short and in practise it make
+ 		 * a difference in real life.
+ 		 */
+-		hw->wiphy->interface_modes &= ~BIT(NL80211_IFTYPE_MONITOR);
++		wiphy->interface_modes &= ~BIT(NL80211_IFTYPE_MONITOR);
+ 
+ 	/* Apply the regd received during initialization */
+ 	ret = ath12k_regd_update(ar, true);
+@@ -7539,8 +7541,8 @@ static int __ath12k_mac_register(struct ath12k *ar)
+ 	ieee80211_unregister_hw(hw);
+ 
+ err_free_if_combs:
+-	kfree(hw->wiphy->iface_combinations[0].limits);
+-	kfree(hw->wiphy->iface_combinations);
++	kfree(wiphy->iface_combinations[0].limits);
++	kfree(wiphy->iface_combinations);
+ 
+ err_free_channels:
+ 	kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
 
-Patch set to Changes Requested.
-
+base-commit: ca4f872acfb5f093b6c68ae156dc9f163da414e3
+prerequisite-patch-id: 4f660d65ba08d3375e613278664a9f31d2c9e539
+prerequisite-patch-id: dfbdb03ae418047c172c12c285a8b0c14435aeed
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231118134538.19545-1-quic_lingbok@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.34.1
 
 
