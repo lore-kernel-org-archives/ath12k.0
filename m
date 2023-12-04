@@ -4,62 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C74AC07E97
-	for <ath12k@archiver.kernel.org>; Fri,  1 Dec 2023 16:05:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A31BEC4167B
+	for <ath12k@archiver.kernel.org>; Mon,  4 Dec 2023 09:14:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QONFaCObi+57YVHH1P010FvvsTIvQNW0idS8qlgcTLg=; b=I0wftTEZE0LlkdfNGGbFEzzrZw
-	gas4wt95qG29t9bbBMawUROLlV+/EGS6LNB/Lv+oRn5xgdZq+fvKADzJKyl5uOgUwFsQGdfY7AaCV
-	wOw0s7AuUbK2kJdBFIINkM4G8+mY1tzBUalaR4uP1Gi/7Mnurd8KdCmN555XxEBlIwCxXVCYe09Pp
-	BF3PLn1rHp1dID0lXWxgLE8qjM+7q6k3nVRnT1e20ljuruPpNPH2EtWF1G2ZMielSEEXYrl9b3I1B
-	XnFmybHSmLBHDkacOUv31Pmsd1YLVmnB9HiLgkcSGUt8fcTREscUhluVAoui2uWF/OMIYmONBXat+
-	fOpYraGw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=4xxujmofWxEQvFwC/3YQS6TR/Uv0cAMVegQiWNYCdZI=; b=G5K/BHtBiX86GnUWLE4oUSQzkl
+	+Tpl6M8KfKmVvW0Txj1yu1XRMsY0/9EUi83Iz4YoVZ/gNF1gJ3oenzOgmFg69p2H4wqjd50WlhYTx
+	YL6SFWRwj4yCXLDk2Ylj+wu4k5Kp/D08sc9I1+NeZzMgfzIOMgS8ejEO825kH4kKmMQmyAPNQjWNk
+	PxU+/QlYC+P7OSb6TJ1fc1oLBemDxwO5I3nbB1r+gpctPBUTCsmm1HCwXTUxkc03ITO7kDytmp3tn
+	r+cjbpW52uT04e9Iv9L043M7GEf3Cjlebfoj5MpEREhdoUH6sT2CUiizMqskZ7t4EptZZ7UFSFsPF
+	fOTnuFjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r961a-00E793-2N
+	id 1rA52B-003Nm9-0X
 	for ath12k@archiver.kernel.org;
-	Fri, 01 Dec 2023 16:05:54 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Mon, 04 Dec 2023 09:14:35 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r961X-00E788-2h
+	id 1rA522-003NlO-2a
 	for ath12k@lists.infradead.org;
-	Fri, 01 Dec 2023 16:05:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 88E46CE268D;
-	Fri,  1 Dec 2023 16:05:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAE27C433C8;
-	Fri,  1 Dec 2023 16:05:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701446748;
-	bh=nDl/aaAVTMBelGPOB6ViJvy/FJt4deD09PE/7R1bxFM=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=ZUeujLybmuJFInTuwuYKDt2h3+Z1ytIBh3k9tNxmlPrxn23Jib8dZciNcHLQGn8HB
-	 w/aoqL4LNzAefRd5ulTiq/uIcjkswukLtauHZcpEatm61msttJCkYNMRDHgJrU9TWi
-	 UxTReEzxiNqaHpEou4zcXwcKAFh7rfLgJWh7C+MmHfIjo3MvGqlrOfk5yAdJy74wZU
-	 oZsKaowZ0cFK/b4HXZJwEXSDucIu5uN7SZTgjXMTk9QSxyFVhPY/JD6qdpPVB9Ho4r
-	 dbU2+rllrQMwnja4YwcDTv1MHrxjSKEPL3tKV61ri61pZDStaNVaq+uX6BPuAsMeot
-	 cel/3dzgYWNqA==
-Content-Type: text/plain; charset="utf-8"
+	Mon, 04 Dec 2023 09:14:32 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-2c9f4bb2e5eso19071371fa.1
+        for <ath12k@lists.infradead.org>; Mon, 04 Dec 2023 01:14:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1701681264; x=1702286064; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=4xxujmofWxEQvFwC/3YQS6TR/Uv0cAMVegQiWNYCdZI=;
+        b=Zzrt1jz3aJ0QwryYIW/CQ2gmvvmqIgOVprYik5gSC59We4grVq58+Oo0l00xASODUr
+         M+c9xjz87auWxtMTxnZpt+JLXP5JRNTRar1FX+7k9PF0GxVXSkBbruitBrp67x54bUsQ
+         z4HvGiTyIC8ObVoJPOpkgtPCaFqjBb3st8vDFrUqS9VYNhJr3LkaxWwv2hEGoykokjMP
+         x3idPf+KRSTSUXeLTyoh+eDsHRD6i1TuQeRegbd+Cv4UNL8JgVDXUewbYsIWX/4bSIM4
+         ymoJPzFVtpYLHVT6xx26MJ7h/3YTilQ+pueISys7GlaEm9dmS2n2jAibL/sOJigamxFx
+         wHYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701681264; x=1702286064;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=4xxujmofWxEQvFwC/3YQS6TR/Uv0cAMVegQiWNYCdZI=;
+        b=I4TDJtf63pBYzKjFQ+tHRR3tIQqDYGGaO1ED6rzZP8byVHQL+AFwCqI0D6zORgL5xO
+         MhMsakaRnFUgvsXB5p3VU5xmnjiervyq9ZgKHdXDISNUQeVVOoL4p8uugKDnemzjZ1Fq
+         NDUrjLvdmbFPcU5Kn0PCoTX7RA/n+EeXIv5DCONjA44LnEHvvmJ7KqA309zi/rOD+n8c
+         mEvLCf8kXc3cSolwA/0fhWgEC3JVaPZJ0JaS+FhCDYlguQCAzAFK7IjF3AQ9P9A/6p8q
+         Oao/JxGqXC1KW8qQoWVuEMDxHofzcBFYIm9ZPvpYR8f0/OtsCPVveA5yP1faRKXoIpGt
+         9Abg==
+X-Gm-Message-State: AOJu0YxnZ2rOtVJFKxX7UJgiQ2pm9cOO9WaUHeL9VRE16K+JWCZZGYE4
+	iMQhiOxpQYMyL+xIc8M9OkIlqW1HIrki0RfQ2+PGcWxc9os8xQ==
+X-Google-Smtp-Source: AGHT+IGb8wOVG08rSpwuYICimqQES/PbT0iSm0SNPPwVZ9fVoNHKk/nAX/WdzDZUsR3+pOSFstPesf6kqVtvqNDxl7I=
+X-Received: by 2002:a2e:3814:0:b0:2c9:f71f:c00f with SMTP id
+ f20-20020a2e3814000000b002c9f71fc00fmr1115485lja.30.1701681263898; Mon, 04
+ Dec 2023 01:14:23 -0800 (PST)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH 1/2] wifi: ath12k: Optimize the mac80211 hw data access
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231120235812.2602198-2-quic_periyasa@quicinc.com>
-References: <20231120235812.2602198-2-quic_periyasa@quicinc.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170144674601.2201420.17048744977292270118.kvalo@kernel.org>
-Date: Fri,  1 Dec 2023 16:05:47 +0000 (UTC)
+From: Weng Lin Puah <wlpuah@gmail.com>
+Date: Mon, 4 Dec 2023 17:14:12 +0800
+Message-ID: <CAD73Kh8_Ks0Fb6EsG6ks0oKKONfwr98uRccV5bbmEb15PLPvow@mail.gmail.com>
+Subject: [PATCH] wifi: ath12k: fix wrong definition of ath12k_hw_ring_mask_qcn9274
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231201_080552_103624_DFDE5B31 
-X-CRM114-Status: UNSURE (   5.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231204_011426_845155_B9EFAEE3 
+X-CRM114-Status: GOOD (  10.28  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,27 +83,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
+ath12k_hw_ring_mask_qcn9274.tx[3] does not match with its counterpart
+wbm_ring_num. This will cause the corresponding
+ath12k_dp_tx_completion_handler is not entered. Thus, some of the dma
+memory is not free and eventually runs out of the dma memory.
 
-> Currently mac80211 hw data is accessed by convert the hw to radio (ar)
-> structure and then radio to hw structure which is not necessary in some
-> places where mac80211 hw data is already present. So in that kind of
-> places avoid the conversion and directly access the mac80211 hw data.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00148-QCAHKSWPL_SILICONZ-1
 
-2 patches applied to ath-next branch of ath.git, thanks.
+Signed-off-by: WL Puah <wl_puah@compex.com.sg>
 
-842addae0208 wifi: ath12k: Optimize the mac80211 hw data access
-940b57fd0e77 wifi: ath12k: avoid repeated hw access from ar
+---
+ drivers/net/wireless/ath/ath12k/hw.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/hw.c
+b/drivers/net/wireless/ath/ath12k/hw.c
+index ea3eda1f1948..2b35c8aa6273 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.c
++++ b/drivers/net/wireless/ath/ath12k/hw.c
+@@ -536,7 +536,7 @@ static const struct ath12k_hw_ring_mask
+ath12k_hw_ring_mask_qcn9274 = {
+         ATH12K_TX_RING_MASK_0,
+         ATH12K_TX_RING_MASK_1,
+         ATH12K_TX_RING_MASK_2,
+-        ATH12K_TX_RING_MASK_3,
++        ATH12K_TX_RING_MASK_4,
+     },
+     .rx_mon_dest = {
+         0, 0, 0,
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231120235812.2602198-2-quic_periyasa@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+2.34.1
 
