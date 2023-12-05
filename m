@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64173C4167B
-	for <ath12k@archiver.kernel.org>; Tue,  5 Dec 2023 15:06:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E370C07E97
+	for <ath12k@archiver.kernel.org>; Tue,  5 Dec 2023 15:10:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qh4M/HaWRgVz9cqERXkCTW97SfYibLK7II5oA1mLzIE=; b=dFgff4O3UtxVBOxlb+pZQz+uNS
-	ldyyER0Lmy0+IOvf6QbWJ36HvpslNBMM1N2g2D3cPBfH7vmhe63ZC6/3o3C7nCajV9mobKIZU9HKi
-	kCdfuCZp7AO+ACRAbStAjovxJCJjQLKdLRcbaWvlaPN+uc60jC+2AQiNegVRXm1/imInIdHtINp0W
-	HnH0fTdmw2AA7wwi33oaPHvQhFyqiJp3MAFreBCdJMMcm4WlwvcWS6V9pfcWGlEaJTNDaFGt+i0S1
-	8rgsoVhU/Uz6csE1MALfbcZafLyVwGMRAaftAyOQl9JL3ivI2nWIMkxJl7m08GKeV4QE91MKah1qo
-	dvFTVOgw==;
+	bh=pTuX19aeLOz99DEmFUcIkOqVFefXlP4bcoq0pwzcRyE=; b=4y/cop9Ifp1j6ed+3bvdsQZkvN
+	MbxbNM8r+B2FvCkYJHUNeXJ8c24rzIdFDNRQ+IbS67Sp9sdK+XZnY24Z1djea90PnW+jYM/jKrJHX
+	4BZM/yeQFJUdTa2KgYTC1xB+MAOCw00CUk/N2O/lH1vfrRD/PeS0uUHMIVak6e2F8sQoNKWz6/+cP
+	VlU2hdSnIaboVt8IPiviQPYDZBNPYHBDR+nEuPOCRrL6DxKtEWhHQhrnPFIRbdkdG7bIc6VVrmcan
+	x2I08ZCG6V6tZcJYMvi9NHrVdbx8TJouvf1P27PCkTXDESK3zRk+GS+9nlks0603EC5qYGz31/80U
+	srC7uFbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAWzv-007g4o-0R
+	id 1rAX3m-007gc6-1F
 	for ath12k@archiver.kernel.org;
-	Tue, 05 Dec 2023 15:06:07 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	Tue, 05 Dec 2023 15:10:06 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAWzr-007g3n-0I
+	id 1rAX3j-007gba-1G
 	for ath12k@lists.infradead.org;
-	Tue, 05 Dec 2023 15:06:04 +0000
+	Tue, 05 Dec 2023 15:10:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 76FD7B81A97;
-	Tue,  5 Dec 2023 15:06:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 708B4C433C8;
-	Tue,  5 Dec 2023 15:05:59 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 91027CE187D;
+	Tue,  5 Dec 2023 15:10:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAD14C433C7;
+	Tue,  5 Dec 2023 15:09:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1701788760;
-	bh=6XNlK8LiAolYKHBxWx4NVArki/Uu6MojnCM41SR+luI=;
+	s=k20201202; t=1701789000;
+	bh=YpmLEyUZCZpUEOzslM23kiDsHRP5zwc+nXw2molgSLw=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=ayT6Ffhpsc7mLa0pDG9oXhR7w6GsqIM5JnJhmeFABlRsvjvkRGRe/LVdF1lcVYYd/
-	 qW9b8F4uHVvMlqmGNl7DusWF7fmW2XeTW61mMSePnHf6HvN61npRXFJh7gPAvj/8MF
-	 i4JNSRkvGY5YvdWTzdKnpXE5QpjjhacaTbER+vUCB9fceYR1uiYd9zqqZru9aYFHru
-	 Fl8lzKY8ewUnwexb9+Z5spdEi1IOXgQu/rDdc7iB+cK7U0k3RU7SPZ4txn4iUSh6ru
-	 S7h4O53MlrzLPjgAuqEsFFx8MTLT9mGRJ/B6khv/V3aMr+OpFju3F13MH28P97IQ5i
-	 ccke1p0W2pLcQ==
+	b=p2bHu2G/hNeE3aWt/FUmXv2emFu3yXIztnALlPyTeBsZieTbj9HEH5iyLg9kKm6Z/
+	 auZcN3cNcKiRe06W/n5DjLwLzla8cStz+ZJNSyDS10ApGiDtZD1oOU97h6YAZfpyX4
+	 tYHLjge0rde5ZcJQHm+1KBW0tb+KjmlkxRbAsUvR0Pl6EWgdqhyaznXXZ6E2v+1AEw
+	 Xi1ZFFj4nUJYneLbi2KeUM4RPz3cYkwif5D3LNZeDn4ENykYxp3PBzHbj3GDLKOR51
+	 1TmVWBeu0zRmDvK92HhBYwteSNRlgJTu5mJFgoVN2k+J3lWKGPnr4JpbGh8y1/EpSS
+	 bcQtYCVDBdJ3Q==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH v2 1/7] wifi: ath12k: get msi_data again after request_irq
- is
- called
+Subject: Re: [PATCH v2] wifi: ath12k: fix and enable AP mode for WCN7850
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231121021304.12966-2-quic_kangyang@quicinc.com>
-References: <20231121021304.12966-2-quic_kangyang@quicinc.com>
+In-Reply-To: <20231121022459.17209-1-quic_kangyang@quicinc.com>
+References: <20231121022459.17209-1-quic_kangyang@quicinc.com>
 To: Kang Yang <quic_kangyang@quicinc.com>
 Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
  <quic_kangyang@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170178875768.2413512.746840226279919618.kvalo@kernel.org>
-Date: Tue,  5 Dec 2023 15:05:59 +0000 (UTC)
+Message-ID: <170178899778.2418939.15506998345561558345.kvalo@kernel.org>
+Date: Tue,  5 Dec 2023 15:09:59 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231205_070603_286121_59613A76 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20231205_071003_610772_BCF7923E 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,21 +76,26 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Kang Yang <quic_kangyang@quicinc.com> wrote:
 
-> The reservation mode of interrupts in kernel assigns a dummy vector
-> when the interrupt is allocated and assigns a real vector when the
-> request_irq is called. The reservation mode helps to ease vector
-> pressure when devices with a large amount of queues/interrupts are
-> initialized, but only a minimal subset of those queues/interrupts
-> is actually used.
+> For AP mode, the peer is created earlier in ath12k_mac_op_add_interface() but
+> ath12k_mac_op_assign_vif_chanctx() will try to create peer again.  Then an
+> error will return which makes AP mode startup fail.
 > 
-> So on reservation mode, the msi_data may change after request_irq is
-> called, then it will lead to spurious interrupt. But when VT-d in
-> BIOS is enabled and ath12k can get 32 MSI vectors, ath12k always get
-> the same msi_data before and after request_irq.
+> Kernel log:
 > 
-> So in case of one MSI vector, ath12k need read msi_data again after
-> request_irq is called, and then the correct msi_data is programmed
-> into WCN7850 hardware components.
+> [ 5017.665006] ath12k_pci 0000:04:00.0: failed to create peer after vdev start delay: -22
+> 
+> wpa_supplicant log:
+> 
+> Failed to set beacon parameters
+> Interface initialization failed
+> wls1: interface state UNINITIALIZED->DISABLED
+> wls1: AP-DISABLED
+> wls1: Unable to setup interface.
+> Failed to initialize AP interface
+> wls1: interface state DISABLED->DISABLED
+> wls1: AP-DISABLED
+> 
+> So fix this check and enable AP mode for WCN7850, as now AP mode works normally.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
@@ -99,18 +103,12 @@ Kang Yang <quic_kangyang@quicinc.com> wrote:
 > Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-7 patches applied to ath-next branch of ath.git, thanks.
+Patch applied to ath-next branch of ath.git, thanks.
 
-1b66601d1416 wifi: ath12k: get msi_data again after request_irq is called
-604308a34487 wifi: ath12k: add CE and ext IRQ flag to indicate irq_handler
-1f1f7d548a00 wifi: ath12k: use ATH12K_PCI_IRQ_DP_OFFSET for DP IRQ
-6711b2a80b9a wifi: ath12k: refactor multiple MSI vector implementation
-8398654398c2 wifi: ath12k: add support one MSI vector
-08d52ba29678 wifi: ath12k: do not restore ASPM in case of single MSI vector
-a3012f206d07 wifi: ath12k: set IRQ affinity to CPU0 in case of one MSI vector
+ed7e818a7b50 wifi: ath12k: fix and enable AP mode for WCN7850
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231121021304.12966-2-quic_kangyang@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20231121022459.17209-1-quic_kangyang@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
