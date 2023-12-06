@@ -4,86 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4450C10F07
-	for <ath12k@archiver.kernel.org>; Wed,  6 Dec 2023 03:49:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4790CC4167B
+	for <ath12k@archiver.kernel.org>; Wed,  6 Dec 2023 13:50:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gcHnisN0ZzLo00s3Vlki9fl/iZRS8NOFIuSI1PeuHbQ=; b=iz52BkPELzkZ1DKtleadZ7CCkR
-	L/xc8jF3hUlIvD5485mJmXxvBfNwLStBck+Om0+BngVGrUbfZCfZMZo1J9auLy1hUk6cOGTGGXiRB
-	GSU9jx1NHBsEDr0y8xmke1vzaR/I3g1FN1a/kzzvb+eWpj2T9LFxD89iK0QK04VuVLwl4AeVulV1Y
-	NCm6MDCL/uFSMtm36H84I9Qg7EKf+xw1AKD5rmkzn+oHaeVtdCqP/jhkjAoHKE/QjzLQdUwcnenJP
-	qqlPmvjuSjz8c3OAm4WthJya2qn+Q283dPZ9gHnuAULt4PehJWdEpnrjUzhCPSMGarbN5MoQ0LLqE
-	CUTeYpdg==;
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=4JYaQlxqIS0NtCMmU/Vlsz2J1I0jWr7PeFnDobSu9IA=; b=Do9W2ppcwGqoSgPAG89p1SvxLX
+	zCPc6AG4vJkbypYr8u6EiHlznXDm72pXKpcUBAJlD3QQNFwGmA8kcYUWI1kqwLnPM0JG5sAn2E9KP
+	b6Tpi3UL5eXs9Jwr5q/tlGqgAZ5kVJ/4AF8g8IwffEvcc1jCRRbOdTGbck8Iq/AMQl+Nn2FXgldUB
+	09ecSI5rLClPOkErIuQrxV+7T/IQa3tXVOnkXPwvAxUuLg/gD+nFr+860vK5LhUpV8/lGla4Botkv
+	CTCJf6Vkr6M35VzhVBaZHHvtof1KcqAHru3Kzq4RiK2kfqOQh/cIfWc8Va5oBBvBqJbvIG1i560vW
+	YtCOvu8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAiv2-008zbT-1T
+	id 1rAsIR-00AQQm-03
 	for ath12k@archiver.kernel.org;
-	Wed, 06 Dec 2023 03:49:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 06 Dec 2023 13:50:39 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rAiuz-008zaE-1t
+	id 1rAsIN-00AQQH-21
 	for ath12k@lists.infradead.org;
-	Wed, 06 Dec 2023 03:49:51 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3B62TDL5011754;
-	Wed, 6 Dec 2023 03:49:49 GMT
+	Wed, 06 Dec 2023 13:50:38 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3B66vc3v001308;
+	Wed, 6 Dec 2023 13:50:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding : content-type; s=qcppdkim1;
- bh=gcHnisN0ZzLo00s3Vlki9fl/iZRS8NOFIuSI1PeuHbQ=;
- b=LO4W3sgZ4e/NLm7uAlWo/n0fvZuPFvwzMyHs/dGzwqb4wiCVjNbzndem429LapDDDdah
- BU+gg7Fh2MWQuEbbbcDlTQKd51ykpcxJ3yw2leUNwXlB6m1xrAIlLp584QnTdOOTV18R
- B28uSY+DqBedHsYJ5PXXFlXhCHoea7+F2gz76xFrSpRbWZ6+EUT6ezBdYwFJlNbwnoIS
- CCEnSPAhNeF9NO2gkM6e4OUszBoHAr4AQflkwEJ5eoJXjxHwcA8yy1uhojZDmXDrHtCW
- T1Fx7UD3tcRdNCQp+ToTd5n8MGu/o5ycl1lhMR0ScBFWfbxB5n8r98b3NLS5JH9zm02T RA== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3utd0qggk9-1
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=qcppdkim1;
+ bh=4JYaQlxqIS0NtCMmU/Vlsz2J1I0jWr7PeFnDobSu9IA=;
+ b=cfJwZECVW/PZOEDCBaMi31xYLRr/bjhWCnn7TnxihdOUAlzI33phN6EH6uRW/J7OPlDz
+ 4x8X2KOyF7MwmZxIJFhyLr6VDdnSDuFlBaT7CUiiNKbsH+rjOb/mtjYqidUneXpSilgg
+ qHz40PDiriTLcF18rqIXypNNraYjXyG8Enw3HUOnBmccUacnjx1XcaaEbyH8/gjfT4Vy
+ DxQMYgULD7EGTVadK5EmcTW1LVczMo5dfR6BgPl5Y7Z27vN5NvwvaW/M1DyxvK8e+RgC
+ azzH6xCjVdSIKKqSbecvHwnmNBwq+i50J7uaVYO/BPlx27xI6NKCgEjcyYUaLLZGh/Eg Mw== 
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3utd1whwsk-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 06 Dec 2023 03:49:49 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3B63nmok019858
+	Wed, 06 Dec 2023 13:50:32 +0000
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3B6DoTP2018442
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 6 Dec 2023 03:49:48 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+	Wed, 6 Dec 2023 13:50:31 GMT
+Received: from lingbok-HP-EliteBook-8460p.qca.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 5 Dec 2023 19:49:46 -0800
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+ 15.2.1118.40; Wed, 6 Dec 2023 05:47:04 -0800
+From: Lingbo Kong <quic_lingbok@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-Subject: [PATCH 4/4] wifi: ath12k: Refactor MAC un/register helper function
-Date: Wed, 6 Dec 2023 09:19:20 +0530
-Message-ID: <20231206034920.1037449-5-quic_periyasa@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
+Subject: [PATCH] wifi: ath12k: report tx bitrate for iw dev xxx station dump
+Date: Wed, 6 Dec 2023 21:46:54 +0800
+Message-ID: <20231206134654.24662-1-quic_lingbok@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20231206034920.1037449-1-quic_periyasa@quicinc.com>
-References: <20231206034920.1037449-1-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: hUXjj6fL-3WBSQ9_nNMy8Mtw2HJRpq23
-X-Proofpoint-ORIG-GUID: hUXjj6fL-3WBSQ9_nNMy8Mtw2HJRpq23
+X-Proofpoint-GUID: plMb3aE9o6Jb2bYU9CDqcz-1H6YDEpzE
+X-Proofpoint-ORIG-GUID: plMb3aE9o6Jb2bYU9CDqcz-1H6YDEpzE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-06_01,2023-12-05_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
- impostorscore=0 bulkscore=0 mlxlogscore=931 lowpriorityscore=0 spamscore=0
- adultscore=0 priorityscore=1501 suspectscore=0 malwarescore=0 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2311290000
- definitions=main-2312060031
+ definitions=2023-12-06_10,2023-12-06_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 mlxscore=0 phishscore=0 clxscore=1011 impostorscore=0
+ adultscore=0 mlxlogscore=999 suspectscore=0 spamscore=0 malwarescore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2311290000 definitions=main-2312060111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231205_194949_628506_39632BBA 
-X-CRM114-Status: GOOD (  23.74  )
+X-CRM114-CacheID: sfid-20231206_055035_814508_245E82B1 
+X-CRM114-Status: GOOD (  26.58  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,329 +94,390 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the mac80211 hw registration procedure is tightly coupled with
-the handling of link/radio (ar). Define a new helper function to separate
-the link/radio handling from the mac80211 hw registration procedure for
-improved code readability. Also, it can be easy to scale these
-functionality to support single/multi link operation in the future.
+The tx bitrate of "iw dev xxx station dump" always show an invalid value
+"tx bitrate: 6.0MBit/s".
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+To address this issue, parse the tx complete report from firmware and
+indicate the tx rate to mac80211.
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+After that, "iw dev xxx station dump" show the correct tx bitrate such as:
+tx bitrate: 104.0 MBit/s MCS 13
+tx bitrate: 144.4 MBit/s MCS 15 short GI
+tx bitrate: 626.9 MBit/s 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0
+tx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+
+Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c |  61 +++++++++++-
- drivers/net/wireless/ath/ath12k/mac.c  | 132 ++++++++++---------------
- drivers/net/wireless/ath/ath12k/mac.h  |   4 +-
- 3 files changed, 109 insertions(+), 88 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h   |   1 +
+ drivers/net/wireless/ath/ath12k/dp_mon.c |   2 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.c  |   6 +-
+ drivers/net/wireless/ath/ath12k/dp_tx.c  | 128 ++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/hal_tx.h |   7 +-
+ drivers/net/wireless/ath/ath12k/mac.c    |  92 ++++++++++++++++
+ drivers/net/wireless/ath/ath12k/mac.h    |   3 +
+ 7 files changed, 230 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index e10c5f2cd8eb..d1ac00c59b8c 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -498,11 +498,62 @@ static void ath12k_core_soc_destroy(struct ath12k_base *ab)
- 	ath12k_qmi_deinit_service(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 8458dc292821..0598d18c51a6 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -417,6 +417,7 @@ struct ath12k_sta {
+ 	struct ath12k_rx_peer_stats *rx_stats;
+ 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
+ 	u32 bw_prev;
++	u32 peer_nss;
+ };
+ 
+ #define ATH12K_MIN_5G_FREQ 4150
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index be4b39f5fa80..f5be951a165e 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -290,7 +290,7 @@ static void ath12k_dp_mon_parse_he_sig_b1_mu(u8 *tlv_data,
+ 
+ 	ru_tones = u32_get_bits(info0,
+ 				HAL_RX_HE_SIG_B1_MU_INFO_INFO0_RU_ALLOCATION);
+-	ppdu_info->ru_alloc = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(ru_tones);
++	ppdu_info->ru_alloc = ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(ru_tones);
+ 	ppdu_info->he_RU[0] = ru_tones;
+ 	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
+ }
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 1ee83f765929..60e10a4893cc 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1416,10 +1416,10 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
+ 		arsta->txrate.mcs = mcs;
+ 		arsta->txrate.flags = RATE_INFO_FLAGS_HE_MCS;
+ 		arsta->txrate.he_dcm = dcm;
+-		arsta->txrate.he_gi = ath12k_he_gi_to_nl80211_he_gi(sgi);
++		arsta->txrate.he_gi = ath12k_mac_he_gi_to_nl80211_he_gi(sgi);
+ 		tones = le16_to_cpu(user_rate->ru_end) -
+ 			le16_to_cpu(user_rate->ru_start) + 1;
+-		v = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(tones);
++		v = ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(tones);
+ 		arsta->txrate.he_ru_alloc = v;
+ 		break;
+ 	}
+@@ -2328,7 +2328,7 @@ static void ath12k_dp_rx_h_rate(struct ath12k *ar, struct hal_rx_desc *rx_desc,
+ 		}
+ 		rx_status->encoding = RX_ENC_HE;
+ 		rx_status->nss = nss;
+-		rx_status->he_gi = ath12k_he_gi_to_nl80211_he_gi(sgi);
++		rx_status->he_gi = ath12k_mac_he_gi_to_nl80211_he_gi(sgi);
+ 		rx_status->bw = ath12k_mac_bw_to_mac80211_bw(bw);
+ 		break;
+ 	}
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index 62f9cdbb811c..6313851b1a40 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -8,6 +8,8 @@
+ #include "dp_tx.h"
+ #include "debug.h"
+ #include "hw.h"
++#include "peer.h"
++#include "mac.h"
+ 
+ static enum hal_tcl_encap_type
+ ath12k_dp_tx_get_encap_type(struct ath12k_vif *arvif, struct sk_buff *skb)
+@@ -443,6 +445,106 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab,
+ 	}
  }
  
-+static int ath12k_core_mac_register(struct ath12k_base *ab)
++static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct hal_tx_status *ts)
 +{
-+	struct ath12k *ar;
-+	struct ath12k_pdev *pdev;
-+	int i;
++	struct ath12k_base *ab = ar->ab;
++	struct ath12k_peer *peer;
++	struct ath12k_sta *arsta;
++	struct ieee80211_sta *sta;
++	u16 rate;
++	u8 rate_idx = 0;
 +	int ret;
 +
-+	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags))
-+		return 0;
-+
-+	/* Initialize channel counters frequency value in hertz */
-+	ab->cc_freq_hz = 320000;
-+	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS)) - 1;
-+
-+	for (i = 0; i < ab->num_radios; i++) {
-+		pdev = &ab->pdevs[i];
-+		ar = pdev->ar;
-+
-+		ret = ath12k_mac_hw_register(ar);
-+		if (ret)
-+			goto err_cleanup;
++	spin_lock_bh(&ab->base_lock);
++	peer = ath12k_peer_find_by_id(ab, ts->peer_id);
++	if (!peer || !peer->sta) {
++		ath12k_dbg(ab, ATH12K_DBG_DP_TX,
++			   "failed to find the peer by id %u\n", ts->peer_id);
++		goto err_out;
 +	}
 +
-+	return 0;
++	sta = peer->sta;
++	arsta = ath12k_sta_to_arsta(sta);
 +
-+err_cleanup:
-+	for (i = i - 1; i >= 0; i--) {
-+		pdev = &ab->pdevs[i];
-+		ar = pdev->ar;
-+		ath12k_mac_hw_unregister(ar);
++	memset(&arsta->txrate, 0, sizeof(arsta->txrate));
++
++	/* This is to prefer choose the real NSS value arsta->last_txrate.nss,
++	 * if it is invalid, then choose the NSS value while assoc.
++	 */
++	if (arsta->last_txrate.nss)
++		arsta->txrate.nss = arsta->last_txrate.nss;
++	else
++		arsta->txrate.nss = arsta->peer_nss;
++
++	if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11A ||
++	    ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11B) {
++		ret = ath12k_mac_hw_ratecode_to_legacy_rate(ts->mcs,
++							    ts->pkt_type,
++							    &rate_idx,
++							    &rate);
++		if (ret < 0)
++			goto err_out;
++
++		arsta->txrate.legacy = rate;
++	} else if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11N) {
++		if (ts->mcs > 7)
++			goto err_out;
++
++		if (arsta->txrate.nss != 0)
++			arsta->txrate.mcs = ts->mcs + 8 * (arsta->txrate.nss - 1);
++		arsta->txrate.flags = RATE_INFO_FLAGS_MCS;
++		if (ts->sgi)
++			arsta->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
++	} else if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11AC) {
++		if (ts->mcs > 9)
++			goto err_out;
++
++		arsta->txrate.mcs = ts->mcs;
++		arsta->txrate.flags = RATE_INFO_FLAGS_VHT_MCS;
++		if (ts->sgi)
++			arsta->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
++	} else if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11AX) {
++		if (ts->mcs > 11)
++			goto err_out;
++
++		arsta->txrate.mcs = ts->mcs;
++		arsta->txrate.flags = RATE_INFO_FLAGS_HE_MCS;
++		arsta->txrate.he_gi = ath12k_mac_he_gi_to_nl80211_he_gi(ts->sgi);
++	}
++
++	arsta->txrate.bw = ath12k_mac_bw_to_mac80211_bw(ts->bw);
++	if (ts->ofdma && ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11AX) {
++		arsta->txrate.bw = RATE_INFO_BW_HE_RU;
++		arsta->txrate.he_ru_alloc =
++			ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(ts->ru_tones);
++	}
++
++err_out:
++	spin_unlock_bh(&ab->base_lock);
++}
++
++static void ath12k_dp_tx_update(struct ath12k *ar, struct hal_tx_status *ts)
++{
++	if (!ar->ab->hw_params->single_pdev_only)
++		return;
++
++	if (ar->last_ppdu_id == 0)
++		goto update_last_ppdu_id;
++
++	if (ar->last_ppdu_id == ts->ppdu_id ||
++	    ar->cached_ppdu_id == ar->last_ppdu_id) {
++		ar->cached_ppdu_id = ar->last_ppdu_id;
++		ar->cached_stats.is_ampdu = true;
++	} else {
++		ar->cached_stats.is_ampdu = false;
++	}
++
++	ath12k_dp_tx_update_txcompl(ar, ts);
++
++update_last_ppdu_id:
++	ar->last_ppdu_id = ts->ppdu_id;
++}
++
+ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
+ 				       struct sk_buff *msdu,
+ 				       struct hal_tx_status *ts)
+@@ -498,6 +600,8 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
+ 	 * Might end up reporting it out-of-band from HTT stats.
+ 	 */
+ 
++	ath12k_dp_tx_update(ar, ts);
++
+ 	ieee80211_tx_status_skb(ar->hw, msdu);
+ 
+ exit:
+@@ -522,10 +626,26 @@ static void ath12k_dp_tx_status_parse(struct ath12k_base *ab,
+ 
+ 	ts->ppdu_id = le32_get_bits(desc->info1,
+ 				    HAL_WBM_COMPL_TX_INFO1_TQM_STATUS_NUMBER);
+-	if (le32_to_cpu(desc->rate_stats.info0) & HAL_TX_RATE_STATS_INFO0_VALID)
+-		ts->rate_stats = le32_to_cpu(desc->rate_stats.info0);
+-	else
+-		ts->rate_stats = 0;
++
++	if (le32_to_cpu(desc->info2) & HAL_WBM_COMPL_TX_INFO2_FIRST_MSDU)
++		ts->flags |= HAL_TX_STATUS_FLAGS_FIRST_MSDU;
++
++	ts->peer_id = le32_get_bits(desc->info3, HAL_WBM_COMPL_TX_INFO3_PEER_ID);
++
++	if (le32_to_cpu(desc->rate_stats.info0) & HAL_TX_RATE_STATS_INFO0_VALID) {
++		ts->pkt_type = le32_get_bits(desc->rate_stats.info0,
++					     HAL_TX_RATE_STATS_INFO0_PKT_TYPE);
++		ts->mcs = le32_get_bits(desc->rate_stats.info0,
++					HAL_TX_RATE_STATS_INFO0_MCS);
++		ts->sgi = le32_get_bits(desc->rate_stats.info0,
++					HAL_TX_RATE_STATS_INFO0_SGI);
++		ts->bw = le32_get_bits(desc->rate_stats.info0,
++				       HAL_TX_RATE_STATS_INFO0_BW);
++		ts->ru_tones = le32_get_bits(desc->rate_stats.info0,
++					     HAL_TX_RATE_STATS_INFO0_TONES_IN_RU);
++		ts->ofdma = le32_get_bits(desc->rate_stats.info0,
++					  HAL_TX_RATE_STATS_INFO0_OFDMA_TX);
++	}
+ }
+ 
+ void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id)
+diff --git a/drivers/net/wireless/ath/ath12k/hal_tx.h b/drivers/net/wireless/ath/ath12k/hal_tx.h
+index 7c837094a6f7..4ffd5c82fcfd 100644
+--- a/drivers/net/wireless/ath/ath12k/hal_tx.h
++++ b/drivers/net/wireless/ath/ath12k/hal_tx.h
+@@ -63,7 +63,12 @@ struct hal_tx_status {
+ 	u8 try_cnt;
+ 	u8 tid;
+ 	u16 peer_id;
+-	u32 rate_stats;
++	enum hal_tx_rate_stats_pkt_type pkt_type;
++	enum hal_tx_rate_stats_sgi sgi;
++	enum ath12k_supported_bw bw;
++	u8 mcs;
++	u16 ru_tones;
++	u8 ofdma;
+ };
+ 
+ #define HAL_TX_PHY_DESC_INFO0_BF_TYPE		GENMASK(17, 16)
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 88cec54c6c2e..40aa00002885 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -2225,8 +2225,12 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+ 				      struct ath12k_wmi_peer_assoc_arg *arg,
+ 				      bool reassoc)
+ {
++	struct ath12k_sta *arsta;
++
+ 	lockdep_assert_held(&ar->conf_mutex);
+ 
++	arsta = ath12k_sta_to_arsta(sta);
++
+ 	memset(arg, 0, sizeof(*arg));
+ 
+ 	reinit_completion(&ar->peer_assoc_done);
+@@ -2243,6 +2247,7 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+ 	ath12k_peer_assoc_h_phymode(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_smps(sta, arg);
+ 
++	arsta->peer_nss = arg->peer_nss;
+ 	/* TODO: amsdu_disable req? */
+ }
+ 
+@@ -7691,3 +7696,90 @@ void ath12k_mac_destroy(struct ath12k_base *ab)
+ 		pdev->ar = NULL;
+ 	}
+ }
++
++enum nl80211_he_ru_alloc ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(u16 ru_phy)
++{
++	enum nl80211_he_ru_alloc ret;
++
++	switch (ru_phy) {
++	case RU_26:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
++		break;
++	case RU_52:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
++		break;
++	case RU_106:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
++		break;
++	case RU_242:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
++		break;
++	case RU_484:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
++		break;
++	case RU_996:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
++		break;
++	default:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
++		break;
 +	}
 +
 +	return ret;
 +}
 +
-+static void ath12k_core_mac_unregister(struct ath12k_base *ab)
++enum nl80211_he_ru_alloc ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
 +{
-+	struct ath12k *ar;
-+	struct ath12k_pdev *pdev;
-+	int i;
++	enum nl80211_he_ru_alloc ret;
 +
-+	for (i = 0; i < ab->num_radios; i++) {
-+		pdev = &ab->pdevs[i];
-+		ar = pdev->ar;
-+		if (!ar)
-+			continue;
-+
-+		ath12k_mac_hw_unregister(ar);
++	switch (ru_tones) {
++	case 26:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
++		break;
++	case 52:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
++		break;
++	case 106:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
++		break;
++	case 242:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
++		break;
++	case 484:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
++		break;
++	case 996:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
++		break;
++	case (996 * 2):
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_2x996;
++		break;
++	default:
++		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
++		break;
 +	}
++
++	return ret;
 +}
 +
- static int ath12k_core_pdev_create(struct ath12k_base *ab)
- {
- 	int ret;
- 
--	ret = ath12k_mac_register(ab);
-+	ret = ath12k_core_mac_register(ab);
- 	if (ret) {
- 		ath12k_err(ab, "failed register the radio with mac80211: %d\n", ret);
- 		return ret;
-@@ -511,20 +562,20 @@ static int ath12k_core_pdev_create(struct ath12k_base *ab)
- 	ret = ath12k_dp_pdev_alloc(ab);
- 	if (ret) {
- 		ath12k_err(ab, "failed to attach DP pdev: %d\n", ret);
--		goto err_mac_unregister;
-+		goto err_core_mac_unregister;
- 	}
- 
- 	return 0;
- 
--err_mac_unregister:
--	ath12k_mac_unregister(ab);
-+err_core_mac_unregister:
-+	ath12k_core_mac_unregister(ab);
- 
- 	return ret;
- }
- 
- static void ath12k_core_pdev_destroy(struct ath12k_base *ab)
- {
--	ath12k_mac_unregister(ab);
-+	ath12k_core_mac_unregister(ab);
- 	ath12k_hif_irq_disable(ab);
- 	ath12k_dp_pdev_free(ab);
- }
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index be3ef388e9aa..27f6067fd3fc 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7349,7 +7349,17 @@ static const struct wiphy_iftype_ext_capab ath12k_iftypes_ext_capa[] = {
- 	},
- };
- 
--static void __ath12k_mac_unregister(struct ath12k *ar)
-+static void ath12k_mac_cleanup_unregister(struct ath12k *ar)
++enum nl80211_he_gi ath12k_mac_he_gi_to_nl80211_he_gi(u8 sgi)
 +{
-+	idr_for_each(&ar->txmgmt_idr, ath12k_mac_tx_mgmt_pending_free, ar);
-+	idr_destroy(&ar->txmgmt_idr);
++	enum nl80211_he_gi ret;
 +
-+	kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
-+	kfree(ar->mac.sbands[NL80211_BAND_5GHZ].channels);
-+	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
-+}
-+
-+void ath12k_mac_hw_unregister(struct ath12k *ar)
- {
- 	struct ieee80211_hw *hw = ar->hw;
- 	struct wiphy *wiphy = hw->wiphy;
-@@ -7358,12 +7368,7 @@ static void __ath12k_mac_unregister(struct ath12k *ar)
- 
- 	ieee80211_unregister_hw(hw);
- 
--	idr_for_each(&ar->txmgmt_idr, ath12k_mac_tx_mgmt_pending_free, ar);
--	idr_destroy(&ar->txmgmt_idr);
--
--	kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
--	kfree(ar->mac.sbands[NL80211_BAND_5GHZ].channels);
--	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
-+	ath12k_mac_cleanup_unregister(ar);
- 
- 	kfree(wiphy->iface_combinations[0].limits);
- 	kfree(wiphy->iface_combinations);
-@@ -7371,28 +7376,41 @@ static void __ath12k_mac_unregister(struct ath12k *ar)
- 	SET_IEEE80211_DEV(hw, NULL);
- }
- 
--void ath12k_mac_unregister(struct ath12k_base *ab)
-+static int ath12k_mac_setup_register(struct ath12k *ar,
-+				     u32 *ht_cap,
-+				     struct ieee80211_supported_band *bands[])
- {
--	struct ath12k *ar;
--	struct ath12k_pdev *pdev;
--	int i;
-+	struct ath12k_pdev_cap *cap = &ar->pdev->cap;
-+	int ret;
- 
--	for (i = 0; i < ab->num_radios; i++) {
--		pdev = &ab->pdevs[i];
--		ar = pdev->ar;
--		if (!ar)
--			continue;
-+	init_waitqueue_head(&ar->txmgmt_empty_waitq);
-+	idr_init(&ar->txmgmt_idr);
-+	spin_lock_init(&ar->txmgmt_idr_lock);
- 
--		__ath12k_mac_unregister(ar);
--	}
-+	ath12k_pdev_caps_update(ar);
-+
-+	ret = ath12k_mac_setup_channels_rates(ar,
-+					      cap->supported_bands,
-+					      bands);
-+	if (ret)
-+		return ret;
-+
-+	ath12k_mac_setup_ht_vht_cap(ar, cap, ht_cap);
-+	ath12k_mac_setup_sband_iftype_data(ar, cap);
-+
-+	ar->max_num_stations = TARGET_NUM_STATIONS;
-+	ar->max_num_peers = TARGET_NUM_PEERS_PDEV;
-+
-+	return 0;
- }
- 
--static int __ath12k_mac_register(struct ath12k *ar)
-+int ath12k_mac_hw_register(struct ath12k *ar)
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ieee80211_hw *hw = ar->hw;
- 	struct wiphy *wiphy = hw->wiphy;
--	struct ath12k_pdev_cap *cap = &ar->pdev->cap;
-+	struct ath12k_pdev *pdev = ar->pdev;
-+	struct ath12k_pdev_cap *cap = &pdev->cap;
- 	static const u32 cipher_suites[] = {
- 		WLAN_CIPHER_SUITE_TKIP,
- 		WLAN_CIPHER_SUITE_CCMP,
-@@ -7407,25 +7425,24 @@ static int __ath12k_mac_register(struct ath12k *ar)
- 	int ret;
- 	u32 ht_cap = 0;
- 
--	ath12k_pdev_caps_update(ar);
--
--	SET_IEEE80211_PERM_ADDR(hw, ar->mac_addr);
--
--	SET_IEEE80211_DEV(hw, ab->dev);
-+	if (ab->pdevs_macaddr_valid) {
-+		ether_addr_copy(ar->mac_addr, pdev->mac_addr);
-+	} else {
-+		ether_addr_copy(ar->mac_addr, ab->mac_addr);
-+		ar->mac_addr[4] += ar->pdev_idx;
++	switch (sgi) {
++	case RX_MSDU_START_SGI_0_8_US:
++		ret = NL80211_RATE_INFO_HE_GI_0_8;
++		break;
++	case RX_MSDU_START_SGI_1_6_US:
++		ret = NL80211_RATE_INFO_HE_GI_1_6;
++		break;
++	case RX_MSDU_START_SGI_3_2_US:
++		ret = NL80211_RATE_INFO_HE_GI_3_2;
++		break;
++	default:
++		ret = NL80211_RATE_INFO_HE_GI_0_8;
++		break;
 +	}
- 
--	ret = ath12k_mac_setup_channels_rates(ar,
--					      cap->supported_bands,
--					      hw->wiphy->bands);
-+	ret = ath12k_mac_setup_register(ar, &ht_cap, hw->wiphy->bands);
- 	if (ret)
--		goto err;
-+		goto out;
- 
--	ath12k_mac_setup_ht_vht_cap(ar, cap, &ht_cap);
--	ath12k_mac_setup_sband_iftype_data(ar, cap);
-+	SET_IEEE80211_PERM_ADDR(hw, ar->mac_addr);
-+	SET_IEEE80211_DEV(hw, ab->dev);
- 
- 	ret = ath12k_mac_setup_iface_combinations(ar);
- 	if (ret) {
- 		ath12k_err(ar->ab, "failed to setup interface combinations: %d\n", ret);
--		goto err_free_channels;
-+		goto err_setup_unregister;
- 	}
- 
- 	wiphy->available_antennas_rx = cap->rx_chain_mask;
-@@ -7484,9 +7501,6 @@ static int __ath12k_mac_register(struct ath12k *ar)
- 	wiphy->features |= NL80211_FEATURE_AP_MODE_CHAN_WIDTH_CHANGE |
- 				   NL80211_FEATURE_AP_SCAN;
- 
--	ar->max_num_stations = TARGET_NUM_STATIONS;
--	ar->max_num_peers = TARGET_NUM_PEERS_PDEV;
--
- 	wiphy->max_ap_assoc_sta = ar->max_num_stations;
- 
- 	hw->queues = ATH12K_HW_MAX_QUEUES;
-@@ -7553,58 +7567,14 @@ static int __ath12k_mac_register(struct ath12k *ar)
- 	kfree(wiphy->iface_combinations[0].limits);
- 	kfree(wiphy->iface_combinations);
- 
--err_free_channels:
-+err_setup_unregister:
- 	kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
- 	kfree(ar->mac.sbands[NL80211_BAND_5GHZ].channels);
- 	kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
- 
--err:
- 	SET_IEEE80211_DEV(hw, NULL);
--	return ret;
--}
--
--int ath12k_mac_register(struct ath12k_base *ab)
--{
--	struct ath12k *ar;
--	struct ath12k_pdev *pdev;
--	int i;
--	int ret;
--
--	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags))
--		return 0;
--
--	for (i = 0; i < ab->num_radios; i++) {
--		pdev = &ab->pdevs[i];
--		ar = pdev->ar;
--		if (ab->pdevs_macaddr_valid) {
--			ether_addr_copy(ar->mac_addr, pdev->mac_addr);
--		} else {
--			ether_addr_copy(ar->mac_addr, ab->mac_addr);
--			ar->mac_addr[4] += i;
--		}
--
--		ret = __ath12k_mac_register(ar);
--		if (ret)
--			goto err_cleanup;
--
--		init_waitqueue_head(&ar->txmgmt_empty_waitq);
--		idr_init(&ar->txmgmt_idr);
--		spin_lock_init(&ar->txmgmt_idr_lock);
--	}
--
--	/* Initialize channel counters frequency value in hertz */
--	ab->cc_freq_hz = 320000;
--	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS)) - 1;
--
--	return 0;
--
--err_cleanup:
--	for (i = i - 1; i >= 0; i--) {
--		pdev = &ab->pdevs[i];
--		ar = pdev->ar;
--		__ath12k_mac_unregister(ar);
--	}
- 
-+out:
- 	return ret;
- }
- 
++
++	return ret;
++}
 diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index fb4c0662581b..c30ebda77b0a 100644
+index 7c63bb628adc..061a41b33641 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.h
 +++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -49,8 +49,8 @@ enum ath12k_supported_bw {
- extern const struct htt_rx_ring_tlv_filter ath12k_mac_mon_status_filter_default;
- 
- void ath12k_mac_hw_destroy(struct ath12k_base *ab);
--void ath12k_mac_unregister(struct ath12k_base *ab);
--int ath12k_mac_register(struct ath12k_base *ab);
-+void ath12k_mac_hw_unregister(struct ath12k *ar);
-+int ath12k_mac_hw_register(struct ath12k *ar);
- int ath12k_mac_hw_allocate(struct ath12k_base *ab);
- int ath12k_mac_hw_ratecode_to_legacy_rate(u8 hw_rc, u8 preamble, u8 *rateidx,
- 					  u16 *rate);
+@@ -76,4 +76,7 @@ enum ath12k_supported_bw ath12k_mac_mac80211_bw_to_ath12k_bw(enum rate_info_bw b
+ enum hal_encrypt_type ath12k_dp_tx_get_encrypt_type(u32 cipher);
+ int ath12k_mac_rfkill_enable_radio(struct ath12k *ar, bool enable);
+ int ath12k_mac_rfkill_config(struct ath12k *ar);
++u32 ath12k_mac_he_gi_to_nl80211_he_gi(u8 sgi);
++enum nl80211_he_ru_alloc ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(u16 ru_phy);
++enum nl80211_he_ru_alloc ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones);
+ #endif
+
+base-commit: 0dbdc9383054fd3ecbcacfeb364aace3db744314
 -- 
 2.34.1
 
