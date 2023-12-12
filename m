@@ -4,86 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46B01C4167B
-	for <ath12k@archiver.kernel.org>; Fri,  8 Dec 2023 00:40:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C31DFC4332F
+	for <ath12k@archiver.kernel.org>; Tue, 12 Dec 2023 17:34:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=kNB32l88K4OKdqzfGK3kqapv53u6cdbNAUhSI40TMyc=; b=e4InIOn76tSNu5fSW0SEDGCD7q
-	5aQBnsdbl/HalpP1DQpcXwW7WBjxcX3W3tTKsHuyNpapXNK0LQfaSQg08Eoe6W3koS4UcDfwKS2Mo
-	7RlF5u7MgJzqtC4i65sViQlcl+sRvVvvK+Oi2bAHL+KPDiQ5KYR4Qn+kzQM1VdL/q6rfTHj8jtNLe
-	YsS2UEDuHaay51RPbCCSleebHjbn40+eDi2lMjlpWyu60BlOvu80QiGpVGLnbfz6PQpA09fbGNKUD
-	AKy7oyo35RXir3KGgq0dU4s9SgyfqXTNXDHrvs9RNrabDoe7GndZEJqbzourmdZfCxtb26MgFPW++
-	iY+tpwkw==;
+	bh=y1QjbiOMdB6Orm54ZIokYmAOMrXtnnFoV1dQr2iaU8s=; b=J5UhAfcnhRG/tNei0Xt35wuqYe
+	2HBZJzeyKZp00bzoC/fGZI3/sLgulS/RUOmMsmqt3i3vmMVHG15bn3gBIRAHdiRO/7Zox/zL1j107
+	8Jerihv4vT15K3MCnhwHXpG4HPN2g4ISU01/7z2yeWLvI8vgvjWxXK5boMM9Bifi+3uIXy80kS8+d
+	Bumh62ryxKrWGfuvnmXb36ruyUEYcAyzkPp76BRv0b38uDhbLW/+3WHoleHw6Q8p5yhelQ1lX1fRm
+	Hf9s8brop6nnnR3pIBjLR36az1j2DLmZ/JFjzjGYVSFMauLE8Tu9lcNikP5F97aQMi6MIS4+F2P35
+	075542hQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBOv8-00EM7G-3A
+	id 1rD6eK-00COwk-1j
 	for ath12k@archiver.kernel.org;
-	Fri, 08 Dec 2023 00:40:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 12 Dec 2023 17:34:28 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rBOv6-00EM6Z-1W
+	id 1rD6eI-00COvw-11
+	for ath12k@bombadil.infradead.org;
+	Tue, 12 Dec 2023 17:34:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Date:Message-ID:Cc:To:References:
+	In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:Content-Type:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=y1QjbiOMdB6Orm54ZIokYmAOMrXtnnFoV1dQr2iaU8s=; b=R6WCOk5sbD12etxK5NCwAt+E1Q
+	WesOL9JrbijkYqpkvCjnNsmIAAabVVxWlC9nsfBGshUR/+bbqysEvycCEaVPeQUKc6nOVogOiBm+s
+	qcXqniy2Ef6e29avSCkodc/k2DlHXpg6FOdrTWiixIN+leGv6xqk+iPHm3kJAcUOglU3PN0mb7NY4
+	76ffMi+7Y4YmFj33c1a6fAcG0r7Wnb7Zy9hXIpZaeGP7PBhiildpKm5QcSmDCD+KpviJvCbQQar2Y
+	NMT+LTmiPgLWfzgpgZKTYLmrDuHzF8Ft0YrU18+OO4+y4n0Jg7bqTgiDN/EF4iOnqxREZqo5M4gDD
+	8laFNwGw==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by desiato.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1rD6eD-008nPk-33
 	for ath12k@lists.infradead.org;
-	Fri, 08 Dec 2023 00:40:45 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id 3B80YF4w010690;
-	Fri, 8 Dec 2023 00:40:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=message-id : date :
- mime-version : subject : to : cc : references : from : in-reply-to :
- content-type : content-transfer-encoding; s=qcppdkim1;
- bh=kNB32l88K4OKdqzfGK3kqapv53u6cdbNAUhSI40TMyc=;
- b=pjy1MdLaWEt1MjBc4P48xiyZrcQxzhsxQOTdCb9xTF0b6AzlO7Hx1VVQj9BdDzDQxPek
- LzP+0GNcITfga4Bt6M7F4IiLI4UTq3MaYlrzjhPvlrLnTzItkL8d1FZCF7EeT0Vnqg6R
- 5wQw35ia3XW8nKFpA9hPM1PkTl9q9pGtxA2TFRLzu5CrUsNWGNwmb+iTSdxk39nifmQk
- /HbPUo2zoftGfYllyvUPBqsos7B8n7VFE24Jl6H4RzD9MFli0mHr3LoBWH5lfox79+gw
- AaLoAwNXRqWrFkrB454qC1lD844vLq+yWwFN9nE6ustFM1VR15vQu8b87f+OIi2xBEsY lQ== 
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3uubdm27bh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 08 Dec 2023 00:40:43 +0000
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3B80egPN007000
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 8 Dec 2023 00:40:42 GMT
-Received: from [10.110.111.75] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 7 Dec
- 2023 16:40:42 -0800
-Message-ID: <da46d1eb-8612-47fa-b092-4020b55b8647@quicinc.com>
-Date: Thu, 7 Dec 2023 16:40:41 -0800
+	Tue, 12 Dec 2023 17:34:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id B66CE618CA;
+	Tue, 12 Dec 2023 17:34:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74F48C433C7;
+	Tue, 12 Dec 2023 17:34:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1702402455;
+	bh=yk6/skGYK6YvSbUR9DTx4a8xAsateDiOD9tx7ERd4nQ=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=WYBVRVY1g61Otta5VIkRm5KAu0U3eGsGlKSBeIr10JSJ5wg5V9N0MN8LBKhkPf3Yb
+	 IIDGkuEMDxZRsgXqDEdmm/ackG5+kMhcaqZr1GSRwOxc6Wi8jM8VQ7v3ixHUaA0y5d
+	 8ausYg5HlF0K5jfaZbHlgQL/DLN0zfSWzjhhM1UMupi30gf0Tz1f9OR5oGD2hGBKLf
+	 ziPeKe2MHIaC23jQt37dQkiqpQMEKjqWwlYObtk09lijv37bCIxR9egbYhjh82rPdU
+	 WuLysKGGzS1p8SJgbk6vPJCKOla3aWNU7HlpaHWcnxmJkDrVexVwIoBKHedHcn7ymi
+	 BsEKTly41MY0A==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath12k: report tx bitrate for iw dev xxx station
- dump
-Content-Language: en-US
-To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20231207021155.13125-1-quic_lingbok@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20231207021155.13125-1-quic_lingbok@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: gx3LSF7kl2GgzIYQpXH-X4sNRgSiYDz0
-X-Proofpoint-GUID: gx3LSF7kl2GgzIYQpXH-X4sNRgSiYDz0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-07_19,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 mlxlogscore=722
- adultscore=0 impostorscore=0 lowpriorityscore=0 priorityscore=1501
- suspectscore=0 bulkscore=0 clxscore=1015 phishscore=0 spamscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311290000 definitions=main-2312080004
+Subject: Re: [PATCH v2] wifi: ath12k: fix the issue that the
+ multicast/broadcast
+ indicator is not read correctly for WCN7850
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20231206141759.5430-1-quic_lingbok@quicinc.com>
+References: <20231206141759.5430-1-quic_lingbok@quicinc.com>
+To: Lingbo Kong <quic_lingbok@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ <quic_lingbok@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <170240245237.422537.1028242008359125098.kvalo@kernel.org>
+Date: Tue, 12 Dec 2023 17:34:14 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231207_164044_514258_D3FCAC0F 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20231212_173422_381114_E6D0E96B 
+X-CRM114-Status: UNSURE (   6.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,36 +91,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12/6/2023 6:11 PM, Lingbo Kong wrote:
-> The tx bitrate of "iw dev xxx station dump" always show an invalid value
-> "tx bitrate: 6.0MBit/s".
-> 
-> To address this issue, parse the tx complete report from firmware and
-> indicate the tx rate to mac80211.
-> 
-> After that, "iw dev xxx station dump" show the correct tx bitrate such as:
-> tx bitrate: 104.0 MBit/s MCS 13
-> tx bitrate: 144.4 MBit/s MCS 15 short GI
-> tx bitrate: 626.9 MBit/s 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0
-> tx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
+Lingbo Kong <quic_lingbok@quicinc.com> wrote:
+
+> We observe some packets are discarded in ieee80211_rx_handlers_result
+> function for WCN7850. This is because the way to get multicast/broadcast
+> indicator with RX_MSDU_END_INFO5_DA_IS_MCBC & info5 is incorrect. It should
+> use RX_MSDU_END_INFO13_MCAST_BCAST & info13 to get multicast/broadcast
+> indicator.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
 > Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> ---
-> v2:
-> 1.modify types
-> 
->  drivers/net/wireless/ath/ath12k/core.h   |   1 +
->  drivers/net/wireless/ath/ath12k/dp_mon.c |   2 +-
->  drivers/net/wireless/ath/ath12k/dp_rx.c  |   6 +-
->  drivers/net/wireless/ath/ath12k/dp_tx.c  | 128 ++++++++++++++++++++++-
->  drivers/net/wireless/ath/ath12k/hal_tx.h |   7 +-
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Please update hal_tx.h copyright to include 2023
+Patch applied to ath-next branch of ath.git, thanks.
 
->  drivers/net/wireless/ath/ath12k/mac.c    |  92 ++++++++++++++++
->  drivers/net/wireless/ath/ath12k/mac.h    |   3 +
->  7 files changed, 230 insertions(+), 9 deletions(-)
+7133b072dfbf wifi: ath12k: fix the issue that the multicast/broadcast indicator is not read correctly for WCN7850
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20231206141759.5430-1-quic_lingbok@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
