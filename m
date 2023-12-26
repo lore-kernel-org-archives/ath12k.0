@@ -4,83 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EA96C3DA6E
-	for <ath12k@archiver.kernel.org>; Mon, 25 Dec 2023 08:08:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E1C8C4706F
+	for <ath12k@archiver.kernel.org>; Tue, 26 Dec 2023 19:42:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=+tDshnxGqTvqWtzA+cZBRrZCG+UPxFEUuDKcFTZysC4=; b=j4TuNjjlE1zkF9Kn3WyOcVjmD1
-	6T4rvQIGSt+kWnqL3FWSfo1Ck8pYPIWU1oGyABI4BOuZ6HDVvruPIEwWYgMNVN1n8+AWRKTiNcLiN
-	42cgAzaQQP8cURqKXLm0kKKIOrEPe1onYoHPz5lTt3j9zDD4mXlPwqMv035AGagPZc1gjT/bj6+fr
-	o/NDvcq/NlscAOQAxBYNZmTpZZWZPWgCLJ9aVZNpRyciVMtIexurgnHtHH6/KClh+WKuZrEu6qLgr
-	kqP0hncRGdRb7otWDOs202kvavc8S18+uaR3bFajRHbkH+Vve7g4fJh4FqaLeMEUnG59a0uzId+4W
-	4Blbrbzg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Lc0ZZS9raYFTuzTAjY2HbHAifM/5aEZ7LhNbefE+rA0=; b=Z4tMzbr8pC82/1t5we+FZl+ys8
+	p14TCdc4NwCGQx351bUqFTmKzVeGpYHUmBI+jJtKJAuMBOyrmhX1q70OCn7DzBrPpPn0D5jHhb8X5
+	933wS6Ng+81LEyiqZdVTcehappVRBVSA0zuz717EkFL/Iov+1UPDNDeYNa/E1KL8dJEBNSzki4pwo
+	9pM1dyrpLa1e8PK9y8L3sG/ceedobk+RaG/Da2rP2AWYcnJhtRy0diQOKljayBW/8Sd53oqlYs6lj
+	mh0LCyVADD3wHXBn1C/jrjwaWQQMJeLRw81xUArNp3QPvDaYVyEtuwWskJwycdYN8RrdusD+sOARs
+	07W7ytoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHg0w-00ANgR-3B
+	id 1rIDJf-00DSOI-0a
 	for ath12k@archiver.kernel.org;
-	Mon, 25 Dec 2023 08:08:43 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 26 Dec 2023 19:42:15 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rHg0t-00ANfn-0F
-	for ath12k@lists.infradead.org;
-	Mon, 25 Dec 2023 08:08:41 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 3BP7e3bb018451;
-	Mon, 25 Dec 2023 08:08:35 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=+tDshnx
-	GqTvqWtzA+cZBRrZCG+UPxFEUuDKcFTZysC4=; b=UMzStfWuXX8CfAxxLMIt5pf
-	UI4BmA3hGVMn3x1Du5MaNIYmDkDTmKU10eZOypzKlx7e5c2UeUiQd4yHJqT6YRbD
-	ZQ7KMcYf8SfChxhGOAn18sKOOm9AA+nXwakftPGydlKNgkcZYTIIapXJtPAnDaLq
-	942/0p/JAuG1fDSNal4ZMFdarRIIWu1Ms2a8g7JMAfh+wslwa60RoKrYpdrwBoYO
-	20QkmRss9yve4K4qXus+DvjdBvfnbAgBpj4yFtwAdGJZdoupeoX6BzeC6YJa99MH
-	SzUF0NsOp8FQN2TWJDXWzV51dAtF3lr95P8egbjS8Z+qYzRf0PO7tUn3a6ZflSg=
-	=
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3v5ruf351v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Dec 2023 08:08:35 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 3BP88Yo8007933
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Dec 2023 08:08:34 GMT
-Received: from lingbok-Latitude-E5440.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 25 Dec 2023 00:08:33 -0800
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH v3] wifi: ath12k: report tx bitrate for iw dev xxx station dump
-Date: Mon, 25 Dec 2023 03:07:23 -0500
-Message-ID: <20231225080723.9518-1-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	id 1rIDJb-00DSNF-0d;
+	Tue, 26 Dec 2023 19:42:13 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id DBE64B80945;
+	Tue, 26 Dec 2023 19:42:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3EC57C433C8;
+	Tue, 26 Dec 2023 19:42:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1703619729;
+	bh=yGkxVhUKDayFNUEMyL0TaOj2LLfx+FpjFxb7WILnJbY=;
+	h=References:In-Reply-To:From:Date:Subject:To:List-Id:Cc:From;
+	b=iwfI6OsJ0OSxBbcvHbcN4T0NHFQfRqMgnKIX0Ccsw8L4R+erCnvUyZoRYgRJcZIvs
+	 1COiuDN02x1HsjoHI/JFPmnmVj1XVgHvQYbCSQMg5ZfWkQxhB+CJg/B23hlVHwx1ki
+	 Rz2DFM2DqfyYJJjrnahFvePUdSAv57S7olZwQpfIQxSAM7JYVbAhsOTj8pyTfRXDdh
+	 5NqRTgaVdSdYanhwgF0JhDlQ9tloZXWIUeaJt7KAWCdt6p7IOmJq0i+4jIr2LzTKCc
+	 CiTjs+Kit+VvOSyeu5aLMqI+WEk/akp9+3gNa8pk1FiK0xieCctuBNr/hI3nMgTfyk
+	 dmjOqFxm+aDDQ==
+Received: by mail-yb1-f173.google.com with SMTP id 3f1490d57ef6-dbdbe917d39so3622028276.2;
+        Tue, 26 Dec 2023 11:42:09 -0800 (PST)
+X-Gm-Message-State: AOJu0YwxT7WDz/J1tdzKsMIM9Oa/2cs1iv05AiLO7JIEz130w8/krU07
+	Jc6PihgMEmG8ZWvu0K4U1lEr3TpvNCyeScv+4tE=
+X-Google-Smtp-Source: AGHT+IFo/cnUZqxRCUv6aDluCoe4zPRLbzZCTXYsyfOwSZNJkt8jQ+OdNEVJMSTHLE0aGXkcw+bftFtMW163Y8A/HDM=
+X-Received: by 2002:a25:8583:0:b0:d9a:cd62:410c with SMTP id
+ x3-20020a258583000000b00d9acd62410cmr2895754ybk.4.1703619728414; Tue, 26 Dec
+ 2023 11:42:08 -0800 (PST)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: D0iKxZegiJphlC_Wk-f30iL7nMBo9FHX
-X-Proofpoint-ORIG-GUID: D0iKxZegiJphlC_Wk-f30iL7nMBo9FHX
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 impostorscore=0
- mlxscore=0 lowpriorityscore=0 phishscore=0 malwarescore=0
- priorityscore=1501 adultscore=0 mlxlogscore=999 spamscore=0 suspectscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2312250061
+References: <878r5nprch.fsf@kernel.org>
+In-Reply-To: <878r5nprch.fsf@kernel.org>
+From: Josh Boyer <jwboyer@kernel.org>
+Date: Tue, 26 Dec 2023 14:41:57 -0500
+X-Gmail-Original-Message-ID: <CA+5PVA5CAbLESXMZY-b7j2A4P2fjeH6upxQkStw_VTDyok-V2g@mail.gmail.com>
+Message-ID: <CA+5PVA5CAbLESXMZY-b7j2A4P2fjeH6upxQkStw_VTDyok-V2g@mail.gmail.com>
+Subject: Re: [PULL linux-firmware] ath10k, ath11k and ath12k firmware 2023-12-21
+To: Kalle Valo <kvalo@kernel.org>
+Cc: linux-firmware@kernel.org, linux-wireless@vger.kernel.org, 
+	ath10k@lists.infradead.org, ath11k@lists.infradead.org, 
+	ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231225_000839_127033_C7C279CE 
-X-CRM114-Status: GOOD (  23.32  )
+X-CRM114-CacheID: sfid-20231226_114211_509378_88E4DD92 
+X-CRM114-Status: GOOD (  18.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,406 +81,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The tx bitrate of "iw dev xxx station dump" always show an invalid value
-"tx bitrate: 6.0MBit/s".
+On Thu, Dec 21, 2023 at 9:23=E2=80=AFAM Kalle Valo <kvalo@kernel.org> wrote=
+:
+>
+> Hi,
+>
+> Here's a new pull request for ath10k, ath11k and ath12k. We have a new
+> driver ath12k and the first firmware for WCN7850. And as usual firmware
+> and board files to other hardware.
+>
+> Please let me know if there are any problems.
+>
+> Kalle
+>
+> The following changes since commit c156e6be6d4a0a2290e7059bc74fb0612aa196=
+93:
+>
+>   Merge branch 'robot/pr-0-1702625169' into 'main' (2023-12-15 12:16:57 +=
+0000)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/linux-firmware.git =
+ath10k-20231221
 
-To address this issue, parse the tx complete report from firmware and
-indicate the tx rate to mac80211.
+Pulled and pushed out.
 
-After that, "iw dev xxx station dump" show the correct tx bitrate such as:
-tx bitrate: 104.0 MBit/s MCS 13
-tx bitrate: 144.4 MBit/s MCS 15 short GI
-tx bitrate: 626.9 MBit/s 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0
-tx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
+https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/103
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+josh
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
-v3:
-1.update hal_tx.h copyright to include 2023
-
-v2:
-1.modify types
-
- drivers/net/wireless/ath/ath12k/core.h   |   1 +
- drivers/net/wireless/ath/ath12k/dp_mon.c |   2 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c  |   6 +-
- drivers/net/wireless/ath/ath12k/dp_tx.c  | 128 ++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/hal_tx.h |   9 +-
- drivers/net/wireless/ath/ath12k/mac.c    |  92 ++++++++++++++++
- drivers/net/wireless/ath/ath12k/mac.h    |   3 +
- 7 files changed, 231 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index ba0a30f1ea29..d3f912704c8b 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -422,6 +422,7 @@ struct ath12k_sta {
- 	struct ath12k_rx_peer_stats *rx_stats;
- 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
- 	u32 bw_prev;
-+	u32 peer_nss;
- };
- 
- #define ATH12K_MIN_5G_FREQ 4150
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index be4b39f5fa80..f5be951a165e 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -290,7 +290,7 @@ static void ath12k_dp_mon_parse_he_sig_b1_mu(u8 *tlv_data,
- 
- 	ru_tones = u32_get_bits(info0,
- 				HAL_RX_HE_SIG_B1_MU_INFO_INFO0_RU_ALLOCATION);
--	ppdu_info->ru_alloc = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(ru_tones);
-+	ppdu_info->ru_alloc = ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(ru_tones);
- 	ppdu_info->he_RU[0] = ru_tones;
- 	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
- }
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 1ee83f765929..60e10a4893cc 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1416,10 +1416,10 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 		arsta->txrate.mcs = mcs;
- 		arsta->txrate.flags = RATE_INFO_FLAGS_HE_MCS;
- 		arsta->txrate.he_dcm = dcm;
--		arsta->txrate.he_gi = ath12k_he_gi_to_nl80211_he_gi(sgi);
-+		arsta->txrate.he_gi = ath12k_mac_he_gi_to_nl80211_he_gi(sgi);
- 		tones = le16_to_cpu(user_rate->ru_end) -
- 			le16_to_cpu(user_rate->ru_start) + 1;
--		v = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(tones);
-+		v = ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(tones);
- 		arsta->txrate.he_ru_alloc = v;
- 		break;
- 	}
-@@ -2328,7 +2328,7 @@ static void ath12k_dp_rx_h_rate(struct ath12k *ar, struct hal_rx_desc *rx_desc,
- 		}
- 		rx_status->encoding = RX_ENC_HE;
- 		rx_status->nss = nss;
--		rx_status->he_gi = ath12k_he_gi_to_nl80211_he_gi(sgi);
-+		rx_status->he_gi = ath12k_mac_he_gi_to_nl80211_he_gi(sgi);
- 		rx_status->bw = ath12k_mac_bw_to_mac80211_bw(bw);
- 		break;
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 62f9cdbb811c..6313851b1a40 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -8,6 +8,8 @@
- #include "dp_tx.h"
- #include "debug.h"
- #include "hw.h"
-+#include "peer.h"
-+#include "mac.h"
- 
- static enum hal_tcl_encap_type
- ath12k_dp_tx_get_encap_type(struct ath12k_vif *arvif, struct sk_buff *skb)
-@@ -443,6 +445,106 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab,
- 	}
- }
- 
-+static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct hal_tx_status *ts)
-+{
-+	struct ath12k_base *ab = ar->ab;
-+	struct ath12k_peer *peer;
-+	struct ath12k_sta *arsta;
-+	struct ieee80211_sta *sta;
-+	u16 rate;
-+	u8 rate_idx = 0;
-+	int ret;
-+
-+	spin_lock_bh(&ab->base_lock);
-+	peer = ath12k_peer_find_by_id(ab, ts->peer_id);
-+	if (!peer || !peer->sta) {
-+		ath12k_dbg(ab, ATH12K_DBG_DP_TX,
-+			   "failed to find the peer by id %u\n", ts->peer_id);
-+		goto err_out;
-+	}
-+
-+	sta = peer->sta;
-+	arsta = ath12k_sta_to_arsta(sta);
-+
-+	memset(&arsta->txrate, 0, sizeof(arsta->txrate));
-+
-+	/* This is to prefer choose the real NSS value arsta->last_txrate.nss,
-+	 * if it is invalid, then choose the NSS value while assoc.
-+	 */
-+	if (arsta->last_txrate.nss)
-+		arsta->txrate.nss = arsta->last_txrate.nss;
-+	else
-+		arsta->txrate.nss = arsta->peer_nss;
-+
-+	if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11A ||
-+	    ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11B) {
-+		ret = ath12k_mac_hw_ratecode_to_legacy_rate(ts->mcs,
-+							    ts->pkt_type,
-+							    &rate_idx,
-+							    &rate);
-+		if (ret < 0)
-+			goto err_out;
-+
-+		arsta->txrate.legacy = rate;
-+	} else if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11N) {
-+		if (ts->mcs > 7)
-+			goto err_out;
-+
-+		if (arsta->txrate.nss != 0)
-+			arsta->txrate.mcs = ts->mcs + 8 * (arsta->txrate.nss - 1);
-+		arsta->txrate.flags = RATE_INFO_FLAGS_MCS;
-+		if (ts->sgi)
-+			arsta->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
-+	} else if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11AC) {
-+		if (ts->mcs > 9)
-+			goto err_out;
-+
-+		arsta->txrate.mcs = ts->mcs;
-+		arsta->txrate.flags = RATE_INFO_FLAGS_VHT_MCS;
-+		if (ts->sgi)
-+			arsta->txrate.flags |= RATE_INFO_FLAGS_SHORT_GI;
-+	} else if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11AX) {
-+		if (ts->mcs > 11)
-+			goto err_out;
-+
-+		arsta->txrate.mcs = ts->mcs;
-+		arsta->txrate.flags = RATE_INFO_FLAGS_HE_MCS;
-+		arsta->txrate.he_gi = ath12k_mac_he_gi_to_nl80211_he_gi(ts->sgi);
-+	}
-+
-+	arsta->txrate.bw = ath12k_mac_bw_to_mac80211_bw(ts->bw);
-+	if (ts->ofdma && ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11AX) {
-+		arsta->txrate.bw = RATE_INFO_BW_HE_RU;
-+		arsta->txrate.he_ru_alloc =
-+			ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(ts->ru_tones);
-+	}
-+
-+err_out:
-+	spin_unlock_bh(&ab->base_lock);
-+}
-+
-+static void ath12k_dp_tx_update(struct ath12k *ar, struct hal_tx_status *ts)
-+{
-+	if (!ar->ab->hw_params->single_pdev_only)
-+		return;
-+
-+	if (ar->last_ppdu_id == 0)
-+		goto update_last_ppdu_id;
-+
-+	if (ar->last_ppdu_id == ts->ppdu_id ||
-+	    ar->cached_ppdu_id == ar->last_ppdu_id) {
-+		ar->cached_ppdu_id = ar->last_ppdu_id;
-+		ar->cached_stats.is_ampdu = true;
-+	} else {
-+		ar->cached_stats.is_ampdu = false;
-+	}
-+
-+	ath12k_dp_tx_update_txcompl(ar, ts);
-+
-+update_last_ppdu_id:
-+	ar->last_ppdu_id = ts->ppdu_id;
-+}
-+
- static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 				       struct sk_buff *msdu,
- 				       struct hal_tx_status *ts)
-@@ -498,6 +600,8 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 	 * Might end up reporting it out-of-band from HTT stats.
- 	 */
- 
-+	ath12k_dp_tx_update(ar, ts);
-+
- 	ieee80211_tx_status_skb(ar->hw, msdu);
- 
- exit:
-@@ -522,10 +626,26 @@ static void ath12k_dp_tx_status_parse(struct ath12k_base *ab,
- 
- 	ts->ppdu_id = le32_get_bits(desc->info1,
- 				    HAL_WBM_COMPL_TX_INFO1_TQM_STATUS_NUMBER);
--	if (le32_to_cpu(desc->rate_stats.info0) & HAL_TX_RATE_STATS_INFO0_VALID)
--		ts->rate_stats = le32_to_cpu(desc->rate_stats.info0);
--	else
--		ts->rate_stats = 0;
-+
-+	if (le32_to_cpu(desc->info2) & HAL_WBM_COMPL_TX_INFO2_FIRST_MSDU)
-+		ts->flags |= HAL_TX_STATUS_FLAGS_FIRST_MSDU;
-+
-+	ts->peer_id = le32_get_bits(desc->info3, HAL_WBM_COMPL_TX_INFO3_PEER_ID);
-+
-+	if (le32_to_cpu(desc->rate_stats.info0) & HAL_TX_RATE_STATS_INFO0_VALID) {
-+		ts->pkt_type = le32_get_bits(desc->rate_stats.info0,
-+					     HAL_TX_RATE_STATS_INFO0_PKT_TYPE);
-+		ts->mcs = le32_get_bits(desc->rate_stats.info0,
-+					HAL_TX_RATE_STATS_INFO0_MCS);
-+		ts->sgi = le32_get_bits(desc->rate_stats.info0,
-+					HAL_TX_RATE_STATS_INFO0_SGI);
-+		ts->bw = le32_get_bits(desc->rate_stats.info0,
-+				       HAL_TX_RATE_STATS_INFO0_BW);
-+		ts->ru_tones = le32_get_bits(desc->rate_stats.info0,
-+					     HAL_TX_RATE_STATS_INFO0_TONES_IN_RU);
-+		ts->ofdma = le32_get_bits(desc->rate_stats.info0,
-+					  HAL_TX_RATE_STATS_INFO0_OFDMA_TX);
-+	}
- }
- 
- void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id)
-diff --git a/drivers/net/wireless/ath/ath12k/hal_tx.h b/drivers/net/wireless/ath/ath12k/hal_tx.h
-index 7c837094a6f7..72b539d36db5 100644
---- a/drivers/net/wireless/ath/ath12k/hal_tx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_tx.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_HAL_TX_H
-@@ -63,7 +63,12 @@ struct hal_tx_status {
- 	u8 try_cnt;
- 	u8 tid;
- 	u16 peer_id;
--	u32 rate_stats;
-+	enum hal_tx_rate_stats_pkt_type pkt_type;
-+	enum hal_tx_rate_stats_sgi sgi;
-+	enum ath12k_supported_bw bw;
-+	u8 mcs;
-+	u16 ru_tones;
-+	u8 ofdma;
- };
- 
- #define HAL_TX_PHY_DESC_INFO0_BF_TYPE		GENMASK(17, 16)
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 88cec54c6c2e..40aa00002885 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -2225,8 +2225,12 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
- 				      struct ath12k_wmi_peer_assoc_arg *arg,
- 				      bool reassoc)
- {
-+	struct ath12k_sta *arsta;
-+
- 	lockdep_assert_held(&ar->conf_mutex);
- 
-+	arsta = ath12k_sta_to_arsta(sta);
-+
- 	memset(arg, 0, sizeof(*arg));
- 
- 	reinit_completion(&ar->peer_assoc_done);
-@@ -2243,6 +2247,7 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
- 	ath12k_peer_assoc_h_phymode(ar, vif, sta, arg);
- 	ath12k_peer_assoc_h_smps(sta, arg);
- 
-+	arsta->peer_nss = arg->peer_nss;
- 	/* TODO: amsdu_disable req? */
- }
- 
-@@ -7691,3 +7696,90 @@ void ath12k_mac_destroy(struct ath12k_base *ab)
- 		pdev->ar = NULL;
- 	}
- }
-+
-+enum nl80211_he_ru_alloc ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(u16 ru_phy)
-+{
-+	enum nl80211_he_ru_alloc ret;
-+
-+	switch (ru_phy) {
-+	case RU_26:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-+		break;
-+	case RU_52:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
-+		break;
-+	case RU_106:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
-+		break;
-+	case RU_242:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
-+		break;
-+	case RU_484:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
-+		break;
-+	case RU_996:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
-+		break;
-+	default:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-+		break;
-+	}
-+
-+	return ret;
-+}
-+
-+enum nl80211_he_ru_alloc ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
-+{
-+	enum nl80211_he_ru_alloc ret;
-+
-+	switch (ru_tones) {
-+	case 26:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-+		break;
-+	case 52:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
-+		break;
-+	case 106:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
-+		break;
-+	case 242:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
-+		break;
-+	case 484:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
-+		break;
-+	case 996:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
-+		break;
-+	case (996 * 2):
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_2x996;
-+		break;
-+	default:
-+		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-+		break;
-+	}
-+
-+	return ret;
-+}
-+
-+enum nl80211_he_gi ath12k_mac_he_gi_to_nl80211_he_gi(u8 sgi)
-+{
-+	enum nl80211_he_gi ret;
-+
-+	switch (sgi) {
-+	case RX_MSDU_START_SGI_0_8_US:
-+		ret = NL80211_RATE_INFO_HE_GI_0_8;
-+		break;
-+	case RX_MSDU_START_SGI_1_6_US:
-+		ret = NL80211_RATE_INFO_HE_GI_1_6;
-+		break;
-+	case RX_MSDU_START_SGI_3_2_US:
-+		ret = NL80211_RATE_INFO_HE_GI_3_2;
-+		break;
-+	default:
-+		ret = NL80211_RATE_INFO_HE_GI_0_8;
-+		break;
-+	}
-+
-+	return ret;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index 7c63bb628adc..274aa219b53c 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -76,4 +76,7 @@ enum ath12k_supported_bw ath12k_mac_mac80211_bw_to_ath12k_bw(enum rate_info_bw b
- enum hal_encrypt_type ath12k_dp_tx_get_encrypt_type(u32 cipher);
- int ath12k_mac_rfkill_enable_radio(struct ath12k *ar, bool enable);
- int ath12k_mac_rfkill_config(struct ath12k *ar);
-+enum nl80211_he_gi ath12k_mac_he_gi_to_nl80211_he_gi(u8 sgi);
-+enum nl80211_he_ru_alloc ath12k_mac_phy_he_ru_to_nl80211_he_ru_alloc(u16 ru_phy);
-+enum nl80211_he_ru_alloc ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones);
- #endif
-
-base-commit: 2cd4e3f91f264926a6b11df948417b74d52ca9b9
--- 
-2.34.1
-
+>
+> for you to fetch changes up to 17509e53b97baaefeb287b98d3358da8a6e1c199:
+>
+>   ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SI=
+LICONZ_LITE-3.6510.36 (2023-12-21 16:13:58 +0200)
+>
+> ----------------------------------------------------------------
+> Kalle Valo (9):
+>       ath12k: add new driver and firmware for WCN7850
+>       ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00309=
+-
+>       ath10k: QCA4019 hw1.0: update board-2.bin
+>       ath10k: QCA9888 hw2.0: update board-2.bin
+>       ath10k: WCN3990 hw1.0: update board-2.bin
+>       ath11k: IPQ8074 hw2.0: update board-2.bin
+>       ath11k: WCN6750 hw1.0: update board-2.bin
+>       ath11k: WCN6855 hw2.0: update board-2.bin
+>       ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V=
+2_SILICONZ_LITE-3.6510.36
+>
+>  WHENCE                              |   16 +-
+>  ath10k/QCA4019/hw1.0/board-2.bin    |  Bin 1798148 -> 1822336 bytes
+>  ath10k/QCA6174/hw3.0/firmware-6.bin |  Bin 706004 -> 706360 bytes
+>  ath10k/QCA9888/hw2.0/board-2.bin    |  Bin 206444 -> 218596 bytes
+>  ath10k/WCN3990/hw1.0/board-2.bin    |  Bin 513892 -> 670116 bytes
+>  ath11k/IPQ8074/hw2.0/board-2.bin    |  Bin 1311380 -> 1442536 bytes
+>  ath11k/WCN6750/hw1.0/board-2.bin    |  Bin 843548 -> 843548 bytes
+>  ath11k/WCN6855/hw2.0/amss.bin       |  Bin 4980736 -> 4988928 bytes
+>  ath11k/WCN6855/hw2.0/board-2.bin    |  Bin 6278772 -> 6308684 bytes
+>  ath12k/WCN7850/hw2.0/Notice.txt     | 3386 +++++++++++++++++++++++++++++=
+++++++
+>  ath12k/WCN7850/hw2.0/amss.bin       |  Bin 0 -> 6000704 bytes
+>  ath12k/WCN7850/hw2.0/board-2.bin    |  Bin 0 -> 382856 bytes
+>  ath12k/WCN7850/hw2.0/m3.bin         |  Bin 0 -> 299660 bytes
+>  13 files changed, 3400 insertions(+), 2 deletions(-)
+>  create mode 100644 ath12k/WCN7850/hw2.0/Notice.txt
+>  create mode 100644 ath12k/WCN7850/hw2.0/amss.bin
+>  create mode 100644 ath12k/WCN7850/hw2.0/board-2.bin
+>  create mode 100644 ath12k/WCN7850/hw2.0/m3.bin
 
