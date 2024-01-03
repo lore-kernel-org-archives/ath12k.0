@@ -4,87 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACE03C3DA6E
-	for <ath12k@archiver.kernel.org>; Wed,  3 Jan 2024 06:38:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A632AC3DA6E
+	for <ath12k@archiver.kernel.org>; Wed,  3 Jan 2024 16:23:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=f6gTHbbt+D1TXWHItPU4W2QwHAZqa3tRzDPC/qx42LY=; b=QOmpgVljSPA/odjpmERqb2AV9F
-	YYSZ1tO3r0f5NDcewSl5djShhsSTxeRun5oaACDbleHDL6EJGEyKzLt7W4HIUimqCu1hEUiMEZvb3
-	8Kx7jc+GgYULJWu2gFA2qDngvrer7NlSGyloHyiGNzNT0wUyaR6+gYUZsVlZ+aeuFO92ecymZZM8s
-	CIICgYezvdMwR21U4v8hOXxn+MdWoJaMua0Aszfk8FP4L2FVeZDIWTg60RcKvlYW8EQunX2kPxcZe
-	BUFGKELXlCpCQYykgHKIj/79VG6nyLX8UL/m1ywuykPyzS+DdZQKdN/MfxsJvCo6em9Qe1VQHNzCR
-	uWm2SdJw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0iMW22XVoA5EYuKjSRktWPaoevirJknKUkzcyB462UM=; b=vPEypNknC2ijMBIhbclkB0cxVH
+	0bUgWs1/jm4WyirL3BE3wsx8GzIF5g85bAYe6q2TIB3A1EmgED0GzHGAqw4bsH0twll1TQLRglr8h
+	aJ3FYaqJo9SMj6pep2iTtifRFx14NPB+dy9U+8Exo3WH4SMS95i1mYLatjbodMQ1LvRhOXfd04/SP
+	mdtHg9VhsSUZ/7Ak30+LjMI9KJCwamqReKvVpv/bvptS3rGPgUymtl/nX+Inms2DGJtgW/+klvAkh
+	FYvIGjPk3KT50LXzHoYwpyk0KmbWFN4R1gvqmTE9/SxwuUgH76/X1eNOPkxlT1EyG0N01K3Vni7lj
+	oHKyMc6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKutH-009uMB-1R
+	id 1rL41i-00BNA6-0s
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Jan 2024 06:38:11 +0000
+	Wed, 03 Jan 2024 16:23:30 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKutE-009uKo-2e
-	for ath12k@lists.infradead.org;
-	Wed, 03 Jan 2024 06:38:10 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4033wrZt028851;
-	Wed, 3 Jan 2024 06:38:08 GMT
+	id 1rL41f-00BN9S-0I;
+	Wed, 03 Jan 2024 16:23:28 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 403FqJ7j006414;
+	Wed, 3 Jan 2024 16:23:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=f6gTHbbt+D1TXWHItPU4W2QwHAZqa3tRzDPC/qx42LY=; b=mF
-	z6svmnJcw+/Q6uQzeylApf7dgk7MROQM9a1m5B7C95YZKkni1+L7oJBbNSLjquLx
-	wFYh0mVD3e5X76/vArF4zcj1YuJugKKyCdl/40y38klburNbCpZbhpnTRR3LC0D8
-	T5ws682RUbJadHtHbu0Rj9NH2+uObahYIF9q+HIpp3KEyH99R/alG5ANUJaF+Ko/
-	MTRUu9ZqAxN2Dq2lQVK6CSgFWc5uAo0dXgEKPqkCwfKykRE90AnwO81R7Igr9SAp
-	QlsLaZdMIheCl38fIpHskn9hf66eg03QnCVxH4IG7hvvdNJHg1SJPfZo7zHYiw5G
-	+mF9IzRNXMwwCz9HVYFw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vcvq5gt9b-1
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=0iMW22XVoA5EYuKjSRktWPaoevirJknKUkzcyB462UM=; b=X0
+	7PmXVr/4W8fMkC/f3EtNMucgHJr3eTLWjBWLz8sb932HpLbh32M357LACTLgBqtT
+	YBLuEuxFF4nQCdh0rsukA1cjJUeyhbqvHcN+3NjSLQNmwgItVg76s8fVfN2/4X9w
+	JP1ega2oyRBPhQ+S5u/+K8Iy7XTnnIJRO4g51bR64dsiD2wHtTOccqnDSDTMRP04
+	t0tB2goRHFXZWZpT8Z2Ksw8rXHK7WU3D7jNu+ToyNNsJm2wMsgGD3GSV2d7m+PFp
+	7raL2Gb8I71IwG/fXSlFi/iujoMomzANKgQPpRZbjjklvqEAOgSRZovkjqFmHn0I
+	Cngxzh7m4mN7GEd77ScA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vd2tm9bjg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Jan 2024 06:38:08 +0000 (GMT)
+	Wed, 03 Jan 2024 16:23:24 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4036c7hZ018613
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 403GNNgP022873
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Jan 2024 06:38:07 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 2 Jan 2024 22:38:06 -0800
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-Subject: [PATCH 10/10] wifi: ath12k: Refactor start vdev delay function
-Date: Wed, 3 Jan 2024 12:07:31 +0530
-Message-ID: <20240103063731.3356060-11-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240103063731.3356060-1-quic_periyasa@quicinc.com>
-References: <20240103063731.3356060-1-quic_periyasa@quicinc.com>
+	Wed, 3 Jan 2024 16:23:23 GMT
+Received: from [10.110.76.17] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 3 Jan
+ 2024 08:23:23 -0800
+Message-ID: <0c12c1f1-6952-4ae8-8875-81c149ab430b@quicinc.com>
+Date: Wed, 3 Jan 2024 08:23:22 -0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/3] wifi: ath12k: replace ENOTSUPP with EOPNOTSUPP
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>, <ath11k@lists.infradead.org>,
+        <ath10k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240103041220.3082014-1-quic_periyasa@quicinc.com>
+ <20240103041220.3082014-2-quic_periyasa@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240103041220.3082014-2-quic_periyasa@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: RtPuDGAdK0jQq9mzZR890P9VeiAa1T8f
-X-Proofpoint-GUID: RtPuDGAdK0jQq9mzZR890P9VeiAa1T8f
+X-Proofpoint-GUID: dfw1Fny-ZTpLkdr9fGY3wQrYBU-a-kXp
+X-Proofpoint-ORIG-GUID: dfw1Fny-ZTpLkdr9fGY3wQrYBU-a-kXp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
- lowpriorityscore=0 clxscore=1015 suspectscore=0 adultscore=0
- priorityscore=1501 mlxlogscore=666 spamscore=0 bulkscore=0 malwarescore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2401030052
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ suspectscore=0 mlxlogscore=365 impostorscore=0 priorityscore=1501
+ spamscore=0 lowpriorityscore=0 mlxscore=0 clxscore=1011 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401030134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240102_223808_866731_86558542 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20240103_082327_166542_46FD061C 
+X-CRM114-Status: UNSURE (   7.19  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,59 +101,13 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-To support single wiphy abstraction, remove the mac80211 hw data
-dependency from the start vdev delay function. This way, this
-function can be extended to handle multiple link/radio in the future.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 84587c5782e6..d328f37dac92 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -241,8 +241,8 @@ static const u32 ath12k_smps_map[] = {
- 	[WLAN_HT_CAP_SM_PS_DISABLED] = WMI_PEER_SMPS_PS_NONE,
- };
- 
--static int ath12k_start_vdev_delay(struct ieee80211_hw *hw,
--				   struct ieee80211_vif *vif);
-+static int ath12k_start_vdev_delay(struct ath12k *ar,
-+				   struct ath12k_vif *arvif);
- 
- static const char *ath12k_mac_phymode_str(enum wmi_phy_mode mode)
- {
-@@ -3718,7 +3718,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
- 	if (ab->hw_params->vdev_start_delay &&
- 	    !arvif->is_started &&
- 	    arvif->vdev_type != WMI_VDEV_TYPE_AP) {
--		ret = ath12k_start_vdev_delay(ar->hw, vif);
-+		ret = ath12k_start_vdev_delay(ar, arvif);
- 		if (ret) {
- 			ath12k_warn(ab, "failed to delay vdev start: %d\n", ret);
- 			goto free_peer;
-@@ -6411,12 +6411,11 @@ static void ath12k_mac_op_change_chanctx(struct ieee80211_hw *hw,
- 	mutex_unlock(&ar->conf_mutex);
- }
- 
--static int ath12k_start_vdev_delay(struct ieee80211_hw *hw,
--				   struct ieee80211_vif *vif)
-+static int ath12k_start_vdev_delay(struct ath12k *ar,
-+				   struct ath12k_vif *arvif)
- {
--	struct ath12k *ar = hw->priv;
- 	struct ath12k_base *ab = ar->ab;
--	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
-+	struct ieee80211_vif *vif = arvif->vif;
- 	int ret;
- 
- 	if (WARN_ON(arvif->is_started))
--- 
-2.34.1
+On 1/2/2024 8:12 PM, Karthikeyan Periyasamy wrote:
+> ENOTSUPP is not a standard error code, don't use it. Replace with
+> EOPNOTSUPP instead.
+> 
+> No functional changes, compile tested only.
+> 
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
