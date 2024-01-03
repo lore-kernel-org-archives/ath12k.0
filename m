@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF075C3DA6E
-	for <ath12k@archiver.kernel.org>; Wed,  3 Jan 2024 05:10:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26960C47077
+	for <ath12k@archiver.kernel.org>; Wed,  3 Jan 2024 05:10:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=OlhOUdLq+cGfppRS6u0LovKMuQ4HaUfJARI1h41+tq4=; b=ys2BVY7OnrrHESffPdK/xZxPu0
-	aGLReaYgyLRRKZR4kQIMsuixBQnN0bD1Kyh7gwK5cXEl8P/P99fzXiIBVrFWjk5ZrKg96lv9oPWyW
-	H/twaslMdWVodz7gG8WVOcQMU/EIGRSM87rpbW4XmzAied7gyazKLWbSBOUWB3t+utoRbw7ttccUs
-	l+lnBRrTZNlRGO5FqAerte5T4Eytk6DByStBf/iXkGi6CArDvxBI6VBXYjrWeJVnM4oC2+d9s8dCG
-	BXzuSky7ssQIKEnWF73Xhi9rgio+F6wJ+al2UfUEHCOT3wNRtu5uNhM/ua+qnIQ2JP5N00YwncbRH
-	mBjXUPsA==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=TjfPVXl1GnCuSUCFb+AA6Jay6wbZkr4JFE7JBasplUI=; b=Q+xO6Q28Yi6ceHAmvwQQzei27p
+	5B68PddhGk4sv1Fujk3ZN92YgT3i06JylDnAdtj4SDaAvmPkitzoIFWhWiJNChYe1H3wvLBpXK9Bg
+	107Spd6zL8/IOZIdbMk6t8H9f7QaO0eptRnJkSTwhseZDlb0OrTSFwPpFPlV6aRht/DRHkBez4W8o
+	adwL2A0qF10b6UBli1vgAIkiudFSbo1h5BAb9UyggT6rDZetxoT7I1V9ZTBU1e1u6ijXKrr33A/XV
+	7K3tj0nBd0XrHL9SJlr6kCoZUlKFf/MSUdYzv0PerNfVthKv32Dx0tGJFo/F4WNjISMxUwYnyc4w/
+	oqt0WU8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKtWU-009ndA-1R
+	id 1rKtWV-009ndQ-2g
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Jan 2024 05:10:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 03 Jan 2024 05:10:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rKtWP-009nb2-1Z
+	id 1rKtWP-009nb7-1g
 	for ath12k@lists.infradead.org;
 	Wed, 03 Jan 2024 05:10:33 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4032oFfo013290;
-	Wed, 3 Jan 2024 05:10:27 GMT
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4031ismR007431;
+	Wed, 3 Jan 2024 05:10:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=OlhOUdL
-	q+cGfppRS6u0LovKMuQ4HaUfJARI1h41+tq4=; b=jyRn2kd8n5JYRQ/cvSYS+53
-	NLk4A3yePzU8rfVCbGzFbyubSGi+NFkFoNQiXUUlBXo7495RkjOzedvACVJTXuIt
-	d3YivuGM9UxiJiI9Dp3ftSTJmmpUdsT+zD9r3hhSXEvY+m4eEQDN3UelVayOUIoD
-	XMtlKfnzqDCwJWRRbhIWlm/UA4eqN0RVvc0tRO/IDQEJIhYESSu1xSbRC7JFL6zt
-	+P0zlFNNY3FYWjhzFEgs9JlphTlUqTD+tH3Rbb4cPgj6xQeQlz7rbq6gadAec7e6
-	/H5gIGe2jIQfPh/nGNBBAE/HMXPRAh+CtnnuVzA6zrEBiJNBFfeS3NUYhHq5qDQ=
-	=
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	qcppdkim1; bh=TjfPVXl1GnCuSUCFb+AA6Jay6wbZkr4JFE7JBasplUI=; b=On
+	t16npIZSv+vURMPkdlWas7HG2CEdSXhOWPuCyztt2fC++UelfFUI8KnNWsTglVFH
+	i0NTEOZQSnnupsWPcAsVr5ASkT0rTnVtaUMK9bqWI5o+20WPPaRCeHZSn8CtUApx
+	hIp00LivyUHM41Pg4USKtdxIjIXml//9NSh7dbC+2bFsJknxUXgPtFL7T3H5a0mp
+	PpuyMYYZi4T1/3HEu2L3SBFcmd0V+vJdhhM8jTiuFXQbLn4GlEaTWhXJWZdEph8Q
+	dbpIqm/aNQMdbUFdrhAm1LPFJZcYEV/d6MhL5gqnfefAuuQecR5c4maO0cI6Ahie
+	LeZq26KCItXwZDX6eZ6A==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vc9nn2q7b-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vcguba2cc-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Jan 2024 05:10:27 +0000 (GMT)
+	Wed, 03 Jan 2024 05:10:28 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4035AQmI003078
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4035ARZ6003104
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Jan 2024 05:10:26 GMT
+	Wed, 3 Jan 2024 05:10:27 GMT
 Received: from lingbok-Latitude-E5440.qca.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 2 Jan 2024 21:10:25 -0800
+ 15.2.1118.40; Tue, 2 Jan 2024 21:10:26 -0800
 From: Lingbo Kong <quic_lingbok@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH 0/2] wifi: ath12k: add processing for TWT enable/disable event
-Date: Wed, 3 Jan 2024 00:09:24 -0500
-Message-ID: <20240103050926.14115-1-quic_lingbok@quicinc.com>
+Subject: [PATCH 1/2] wifi: ath12k: add processing for TWT enable event
+Date: Wed, 3 Jan 2024 00:09:25 -0500
+Message-ID: <20240103050926.14115-2-quic_lingbok@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240103050926.14115-1-quic_lingbok@quicinc.com>
+References: <20240103050926.14115-1-quic_lingbok@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -68,20 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: KTtGUJNMcwqnWG7Nxz3lSix8aJyeSJJO
-X-Proofpoint-ORIG-GUID: KTtGUJNMcwqnWG7Nxz3lSix8aJyeSJJO
+X-Proofpoint-ORIG-GUID: JtnDUc15Nn2qB9-YLcAzHELwhwz8GLGX
+X-Proofpoint-GUID: JtnDUc15Nn2qB9-YLcAzHELwhwz8GLGX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 impostorscore=0
- priorityscore=1501 mlxlogscore=394 phishscore=0 mlxscore=0 clxscore=1015
- lowpriorityscore=0 bulkscore=0 spamscore=0 suspectscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2311290000
- definitions=main-2401030040
+ definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
+ lowpriorityscore=0 phishscore=0 priorityscore=1501 clxscore=1015
+ mlxlogscore=999 impostorscore=0 adultscore=0 spamscore=0 mlxscore=0
+ bulkscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401030039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240102_211029_657866_57E2D218 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240102_211029_564359_9E424050 
+X-CRM114-Status: GOOD (  16.93  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,23 +97,118 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Wen Gong <quic_wgong@quicinc.com>
+When ath12k send TWT enable command to firmware, firmware will return a TWT
+enable event to ath12k. Through the analysis of TWT enable event status, we
+can easily obtain the status of TWT enable command. It can be more
+convenient to debug TWT.
 
-This patch set is used for processing TWT enable/disable event. It can be
-more convenient to debug TWT.
+This patch works with WCN7850 and QCN9274.
 
-The patches work with WCN7850 and QCN9274.
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-Lingbo Kong (2):
-  wifi: ath12k: add processing for TWT enable event
-  wifi: ath12k: add processing for TWT disable event
+Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/wmi.c | 37 +++++++++++++++++++++++++--
+ drivers/net/wireless/ath/ath12k/wmi.h |  7 ++++-
+ 2 files changed, 41 insertions(+), 3 deletions(-)
 
- drivers/net/wireless/ath/ath12k/wmi.c | 72 +++++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/wmi.h | 12 ++++-
- 2 files changed, 80 insertions(+), 4 deletions(-)
-
-
-base-commit: 2cd4e3f91f264926a6b11df948417b74d52ca9b9
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 11cc3005c0f9..3873a04a6ae1 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ #include <linux/skbuff.h>
+ #include <linux/ctype.h>
+@@ -162,6 +162,8 @@ static const struct ath12k_wmi_tlv_policy ath12k_wmi_tlv_policies[] = {
+ 		.min_len = sizeof(struct wmi_probe_resp_tx_status_event) },
+ 	[WMI_TAG_VDEV_DELETE_RESP_EVENT] = {
+ 		.min_len = sizeof(struct wmi_vdev_delete_resp_event) },
++	[WMI_TAG_TWT_ENABLE_COMPLETE_EVENT] = {
++		.min_len = sizeof(struct wmi_twt_enable_event) },
+ };
+ 
+ static __le32 ath12k_wmi_tlv_hdr(u32 cmd, u32 len)
+@@ -6662,6 +6664,35 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
+ 	kfree(tb);
+ }
+ 
++static void ath12k_wmi_twt_enable_event(struct ath12k_base *ab,
++					struct sk_buff *skb)
++{
++	const void **tb;
++	const struct wmi_twt_enable_event *ev;
++	int ret;
++
++	tb = ath12k_wmi_tlv_parse_alloc(ab, skb->data, skb->len, GFP_ATOMIC);
++	if (IS_ERR(tb)) {
++		ret = PTR_ERR(tb);
++		ath12k_warn(ab, "failed to parse wmi twt enable status event tlv: %d\n",
++			    ret);
++		return;
++	}
++
++	ev = tb[WMI_TAG_TWT_ENABLE_COMPLETE_EVENT];
++	if (!ev) {
++		ath12k_warn(ab, "failed to fetch twt enable wmi event\n");
++		goto exit;
++	}
++
++	ath12k_dbg(ab, ATH12K_DBG_MAC, "wmi twt enable event pdev id %u status %u\n",
++		   le32_to_cpu(ev->pdev_id),
++		   le32_to_cpu(ev->status));
++
++exit:
++	kfree(tb);
++}
++
+ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	struct wmi_cmd_hdr *cmd_hdr;
+@@ -6757,10 +6788,12 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ 	case WMI_RFKILL_STATE_CHANGE_EVENTID:
+ 		ath12k_rfkill_state_change_event(ab, skb);
+ 		break;
++	case WMI_TWT_ENABLE_EVENTID:
++		ath12k_wmi_twt_enable_event(ab, skb);
++		break;
+ 	/* add Unsupported events here */
+ 	case WMI_TBTTOFFSET_EXT_UPDATE_EVENTID:
+ 	case WMI_PEER_OPER_MODE_CHANGE_EVENTID:
+-	case WMI_TWT_ENABLE_EVENTID:
+ 	case WMI_TWT_DISABLE_EVENTID:
+ 	case WMI_PDEV_DMA_RING_CFG_RSP_EVENTID:
+ 		ath12k_dbg(ab, ATH12K_DBG_WMI,
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 06e5b9b4049b..3546d19a04b6 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #ifndef ATH12K_WMI_H
+@@ -4797,6 +4797,11 @@ struct wmi_rfkill_state_change_event {
+ 	__le32 radio_state;
+ } __packed;
+ 
++struct wmi_twt_enable_event {
++	__le32 pdev_id;
++	__le32 status;
++} __packed;
++
+ void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
+ 			     struct ath12k_wmi_resource_config_arg *config);
+ void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
 -- 
 2.34.1
 
