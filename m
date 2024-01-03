@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46C2FC47073
-	for <ath12k@archiver.kernel.org>; Wed,  3 Jan 2024 17:38:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB338C3DA6E
+	for <ath12k@archiver.kernel.org>; Wed,  3 Jan 2024 17:39:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0yKovrxtYku3ijxAC5Sz2MNtCGF430WnXs+TCjKNbrQ=; b=hYOBfOsbEiO0bp8PSL5C0DiKjn
-	XGYBEP6sE4+R3Ji94gg9EO1S9rpdOt5rj5Pq0QBYa5W2aJtptpluhzJAWXrZI9GNNMrf/fy9bdbdM
-	Lq3UfLvZ46Uazdu/g4UCiPxFTtYDQzr0HbRjUmQcXxURSRPgVI7/LHkCbNnsOS3JA+TA6y5HasfxQ
-	HjtLjoLhs5L2PU6KuXflMtB3cAg57pyeD90XzOkvWN4C1KUIey/xI6NAUeIHd/sIJHKvoRTJXVZgP
-	bN+vwvkmLczba8yVYaCxSEup/vkjRDq0GNiebyvUcoU3TywabsfDYo916qQsUgGumueM4zyiz2F68
-	z7k7DoXg==;
+	bh=i34Zmy1GCAKykJqA1Ua5C1CBIQT23pQ+vcpngJLOBys=; b=r/3P2Rwlamj2si6XCCbGruhQkw
+	cM8V4HJfKzWm5pZgH9k5uVMZLM5OpwaET6VS38rhXaUani0EoZJx32shq36MDc15hv7EuotqHINOb
+	70bOW2oYWuGK6gHkvD7iKmCQsj5MuRa56ney+0EGNzPkkSxqVy2zGh6MMSnQhiGevdzfuIuG3FUaT
+	DL+NTdR7Apo//V+UEfjODq65zXDCDC2wLz3zZ5VdkLXAe7BCvhjeReIfvdt06fiSZrgL2dYC72tlz
+	d0eXyrs8JiR+Gg6b2yj+EA387rsPqkKvUc3RS2xCP5Tc02pVU8C5RdVoH07nvAdnSwOgf+R35KT5B
+	S41eSzcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rL5C6-00BYKx-2u
+	id 1rL5D5-00BYWy-1O
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Jan 2024 17:38:18 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 03 Jan 2024 17:39:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rL5C4-00BYKP-0Z
+	id 1rL5D2-00BYUe-0X
 	for ath12k@lists.infradead.org;
-	Wed, 03 Jan 2024 17:38:17 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 403HUokl028901;
-	Wed, 3 Jan 2024 17:38:15 GMT
+	Wed, 03 Jan 2024 17:39:18 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 403F0d1s016591;
+	Wed, 3 Jan 2024 17:39:15 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=0yKovrxtYku3ijxAC5Sz2MNtCGF430WnXs+TCjKNbrQ=; b=eM
-	Q5SXcg+d7F8TnzTx1+9FufK0ll9kjEaZMC8MdXo3TZmddILd3mFzLdBCYVeaEawI
-	cdlIZplDVER6GZXWOG4q/mCSDds5U+xTuIV/JHoV0W8erqeCF6ye+GydwmMqvsxR
-	vUe5KIb5kNE6oN06/EqanUA8/8w6eomzll6XXQJFD92eS+aQqPS/y3U05bD2ir2/
-	119NhecwFuo4juxIlbkGbK/0k7uszCZF9jd1ZWWSLePJY47A2iehfyOq84yyDihf
-	3+sbTj2F0at48QRBREpozLuQZX0RUGKPrepu7OyvpaF24pJgTRkO1Uq+lhssUEM8
-	TzoxrzE7MyyGMV9dSk2g==
+	qcppdkim1; bh=i34Zmy1GCAKykJqA1Ua5C1CBIQT23pQ+vcpngJLOBys=; b=bL
+	0zvf4x4wIffl+ATCwAioq2QBA33k8V4uxwgLB8R8XuUj4+/ydOv7VQVIyJer/AvV
+	IXs8dWi3W5/p30ZGtHV2cS3p0r9Vc8tcP+yCTpUwuGV4KV7lloayRSU/DorclmiD
+	NSX4A1FxoBXFsKZrnMevH4USEAOLzS72pPvYubyN/AXrC1TX9qqKEul1qDhYmMjW
+	jcaQN5fpOcLITfOD4UUPyitQvFMCdW114gbx5Nh0GFodUiO8nnlVV4+hCIbtCwxz
+	VatJ1R1zFZ05xsyWLy6ED0qojYqqsDiR0BF+ZVsm/px7am6GEnNiu5jpdIDwExuZ
+	RsOkhcuA0tozRKIHVwHg==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vd2tm9h6n-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vd84crn23-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Jan 2024 17:38:14 +0000 (GMT)
+	Wed, 03 Jan 2024 17:39:15 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 403HcD8C017569
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 403HdE7r019087
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Jan 2024 17:38:13 GMT
+	Wed, 3 Jan 2024 17:39:14 GMT
 Received: from [10.110.76.17] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 3 Jan
- 2024 09:38:13 -0800
-Message-ID: <a21eb56c-112d-4acf-9d83-26d2796eb039@quicinc.com>
-Date: Wed, 3 Jan 2024 09:38:12 -0800
+ 2024 09:39:13 -0800
+Message-ID: <a0386ddc-8e44-4057-ae75-8f368a6f6c92@quicinc.com>
+Date: Wed, 3 Jan 2024 09:39:13 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 09/10] wifi: ath12k: Refactor mac callback of flush
+Subject: Re: [PATCH 10/10] wifi: ath12k: Refactor start vdev delay function
 Content-Language: en-US
 To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
         <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20240103063731.3356060-1-quic_periyasa@quicinc.com>
- <20240103063731.3356060-10-quic_periyasa@quicinc.com>
+ <20240103063731.3356060-11-quic_periyasa@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240103063731.3356060-10-quic_periyasa@quicinc.com>
+In-Reply-To: <20240103063731.3356060-11-quic_periyasa@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 9rg9pSDDTuyZcDThO8okjHr7EbTbvnwZ
-X-Proofpoint-ORIG-GUID: 9rg9pSDDTuyZcDThO8okjHr7EbTbvnwZ
+X-Proofpoint-ORIG-GUID: DeoGzFixd5Q7iw9ot9D-JdNP5JwCiqDo
+X-Proofpoint-GUID: DeoGzFixd5Q7iw9ot9D-JdNP5JwCiqDo
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- suspectscore=0 mlxlogscore=314 impostorscore=0 priorityscore=1501
- spamscore=0 lowpriorityscore=0 mlxscore=0 clxscore=1015 phishscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
+ mlxlogscore=286 phishscore=0 bulkscore=0 suspectscore=0 spamscore=0
+ adultscore=0 priorityscore=1501 impostorscore=0 clxscore=1015 mlxscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2311290000 definitions=main-2401030143
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240103_093816_219580_4D261D94 
-X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-CacheID: sfid-20240103_093916_318961_2C32EC43 
+X-CRM114-Status: UNSURE (   7.08  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,9 +102,9 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 1/2/2024 10:37 PM, Karthikeyan Periyasamy wrote:
-> To support single wiphy abstraction, introduce link/radio specific helper
-> function in the mac80211 callback flush(). This way, the callback can be
-> extended to handle multiple link/radio in the future.
+> To support single wiphy abstraction, remove the mac80211 hw data
+> dependency from the start vdev delay function. This way, this
+> function can be extended to handle multiple link/radio in the future.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
