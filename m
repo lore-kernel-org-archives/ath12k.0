@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D24FC4707B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76272C47DA2
 	for <ath12k@archiver.kernel.org>; Fri,  5 Jan 2024 19:57:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,54 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sF069wRG7DUa3TBkwkMrbuYhrVyPlC7i5fhOQ8qAz9c=; b=J+/HzcBjY+09W22EponQcpnDmH
-	LgoaDqfbzNn0bhz7TgJNbB8b7+imH5HVwEvq77ANgo/ggIO+Rm21MJg/4AqGbomyfFbxkPc3zOUJs
-	q3k7lSZmdi7GnpbI5JbYPEoliyNacUziA0hhOhMUcqUFQKTib4fif63DbgvTyf3c+8rvNCXLDCzt3
-	L7T1MMb+rWNgCihI+Jr10h8sahvM4GCvTSh9PJtCanmvo6FRUn+lSRbS8VGPmRCGjoT0P/IawOebL
-	wSahxvKaPmSH9ON6pV5u3CDcBcWGFDFmtRLjCF++i4r0zF8F4FUxMB4sNGzb9e1BMU2fda05J+yWV
-	Vr2h8nEA==;
+	bh=mKJX8DpzuvAVcthquEQSl9CnPSw9uFBlhjT8mvvjuqc=; b=0zIzEbK+WqfazS8+Anwg8Pqq89
+	tBLkc4JDaxiX+Yl57LmkezJhg693He2nNtUKfqsFFoVZx3RNN63bbs/BHnxCGI6szC8dhoRQXpcDk
+	k3y5nJG5CbfuPgbxIMgc4a07hQ/1z/8DXg2VIaZPBayrDVc3AsCMOj/0uKhDRPeMDIKT+Wi6ey7eL
+	FdTdCdMnQCASvpr4EbHKxQH0rZW0v98SWECQ26L/jRncN+dNq9OD8F9zwXcKvsUCwKAFKMnNvz9WN
+	uUPF/PUKe+ER8Jg9nbi7F4wJzxJY+uBDWMledKTC1s1ZzTeDV84vZOhovuHUYpZeh6BwRR9ewToW7
+	ajUeIzbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLqJt-0008kZ-2f
+	id 1rLqJu-0008kw-0g
 	for ath12k@archiver.kernel.org;
-	Fri, 05 Jan 2024 19:57:29 +0000
+	Fri, 05 Jan 2024 19:57:30 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLqJm-0008dl-1K
+	id 1rLqJm-0008gb-2x
 	for ath12k@lists.infradead.org;
 	Fri, 05 Jan 2024 19:57:27 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 405Egmwe003789;
-	Fri, 5 Jan 2024 19:57:15 GMT
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 405F5a8l030638;
+	Fri, 5 Jan 2024 19:57:22 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=sF069wRG7DUa3TBkwkMrbuYhrVyPlC7i5fhOQ8qAz9c=; b=cm
-	6LeahRXaywjhtuMrom62jY5FQMYUYSn/ML0+eoOGbhadlaNwVMNkkJlLOG3jO9qZ
-	ATeq0x6AiteFKNWV96XWcJouSnRe/yY5ksTgtEzSlVk+Y0pv2gKmz5Nsfz5OFAzq
-	rEdGislBsPyBYR6bNmCb9SoX7uTLWAAbROEZq0ERLrB7/IXbtEGFrptOvdfkbBBr
-	q6kzeDIfuXVPDvbOcdYxMMUTMKnICpE6k294Z07YAXE3Srt0r40i3z1xHqGQ4yXb
-	Z5i73DM90Er5Ky6Des+ag8ynuweeJX1r224dJSqPMTITbtAInLwMnXrCqZtHIikl
-	XDhB9Ikq7GME/xyLwb2g==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ve9a3t5n4-1
+	qcppdkim1; bh=mKJX8DpzuvAVcthquEQSl9CnPSw9uFBlhjT8mvvjuqc=; b=gX
+	tQaQUWE4w4SBcfgspb9L4uedW+YRTaZySxKYMJ9td29ypj/XcU6DTw6A6TFItOOk
+	MbOSay/z/SFyo8D7QfnwZntkErffFvBNnac+6uXieLvTcaKBt0uHyYNtpWM9EJZL
+	kRlG+Kpe9pNT6hmQkt37PBLLnbqI9yoBOUfHmjbiyY7Ebg+tuMC17nSyfU785ejj
+	WV6Nr7GPOMoWgADStw1pehzfxW0cDUPOOIKKuratmngL2wguAGrN5dk+PhW4+Goh
+	mPPeHUtz+CN/5/hAAyU/4TxacNNDXOWzipgNcdDG4txkVvKBP1PDZwPCdxFA8QGG
+	gm/Toy3m5I5IeqC9JG+w==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ve94ra72u-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 05 Jan 2024 19:57:14 +0000 (GMT)
+	Fri, 05 Jan 2024 19:57:22 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 405Jv94Z008833
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 405JvMvI000345
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 5 Jan 2024 19:57:09 GMT
+	Fri, 5 Jan 2024 19:57:22 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Fri, 5 Jan 2024 11:57:06 -0800
+ 15.2.1118.40; Fri, 5 Jan 2024 11:57:19 -0800
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [PATCH v2 05/12] wifi: ath12k: Add logic to write QRTR node id to scratch
-Date: Sat, 6 Jan 2024 01:26:32 +0530
-Message-ID: <20240105195639.3217739-6-quic_rajkbhag@quicinc.com>
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        Raj Kumar Bhagat
+	<quic_rajkbhag@quicinc.com>
+Subject: [PATCH v2 11/12] wifi: ath12k: fix PCI read and write
+Date: Sat, 6 Jan 2024 01:26:38 +0530
+Message-ID: <20240105195639.3217739-12-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240105195639.3217739-1-quic_rajkbhag@quicinc.com>
 References: <20240105195639.3217739-1-quic_rajkbhag@quicinc.com>
@@ -71,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Pi24n9ydL5iIptd-gevdfRJYtLu4SPJA
-X-Proofpoint-ORIG-GUID: Pi24n9ydL5iIptd-gevdfRJYtLu4SPJA
+X-Proofpoint-ORIG-GUID: el1JOXZ9lp7hmuVQ9EyPQEj6WyjXzVSR
+X-Proofpoint-GUID: el1JOXZ9lp7hmuVQ9EyPQEj6WyjXzVSR
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- phishscore=0 adultscore=0 spamscore=0 bulkscore=0 impostorscore=0
- lowpriorityscore=0 clxscore=1015 malwarescore=0 mlxlogscore=999 mlxscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
+ impostorscore=0 malwarescore=0 priorityscore=1501 suspectscore=0
+ adultscore=0 mlxlogscore=951 spamscore=0 bulkscore=0 mlxscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2311290000 definitions=main-2401050161
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240105_115722_506724_895CD7C0 
-X-CRM114-Status: GOOD (  19.15  )
+X-CRM114-CacheID: sfid-20240105_115722_961073_25E6AF08 
+X-CRM114-Status: GOOD (  14.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,172 +102,108 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: P Praneesh <quic_ppranees@quicinc.com>
 
-Currently only one MHI device is registered successfully on platform
-having two or more identical MHI devices. This is beacuse QMI service
-runs with identical QRTR node ID. And, qrtr-lookup cannot register
-more than one QMI service with identical node ID.
+Currently, PCI read is failing for the registers belonging to
+SECURITY_CONTROL_WLAN registers. These registers read is required
+to read the board-id to identify the dual-mac QCN9274 hardware.
 
-Hence, generate a unique QRTR instance ID from PCIe domain number and
-bus number. QMI allows node id to be written on scratch register.
-Add logic to write QRTR node id to the register. It is available for
-firmware to uniquely identify an instance.
+The failure is because, for these registers (SECURITY_CONTROL_WLAN)
+offset, ath12k_pci_get_window_start() returns window_start as 0. Due
+to this PCI read is done without PCI select window and with
+window_start offset as 0.
+
+Hence, fix PCI read and write by doing PCI select window and by using
+the correct window_start offset - WINDOW_START for
+SECURITY_CONTROL_WLAN registers.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Depends-On: wifi: ath12k: add firmware-2.bin support
-
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Co-developed-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/fw.h  |  5 ++++
- drivers/net/wireless/ath/ath12k/pci.c | 39 ++++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/pci.h |  3 ++-
- drivers/net/wireless/ath/ath12k/qmi.h |  3 +--
- 4 files changed, 46 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/pci.c | 43 ++++++++++++++-------------
+ 1 file changed, 23 insertions(+), 20 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/fw.h b/drivers/net/wireless/ath/ath12k/fw.h
-index ee0a3b68b3e1..687b0d22fce3 100644
---- a/drivers/net/wireless/ath/ath12k/fw.h
-+++ b/drivers/net/wireless/ath/ath12k/fw.h
-@@ -17,6 +17,11 @@ enum ath12k_fw_ie_type {
- };
- 
- enum ath12k_fw_features {
-+	/* The firmware supports setting the QRTR id via register
-+	 * PCIE_LOCAL_REG_QRTR_NODE_ID
-+	 */
-+	ATH12K_FW_FEATURE_MULTI_QRTR_ID = 0,
-+
- 	/* keep last */
- 	ATH12K_FW_FEATURE_COUNT,
- };
 diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 76438b3afd55..7a0ed7c9f5a2 100644
+index d334f41f9658..14954bc05144 100644
 --- a/drivers/net/wireless/ath/ath12k/pci.c
 +++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
+@@ -205,18 +205,17 @@ static u32 ath12k_pci_get_window_start(struct ath12k_base *ab,
+ 	/* If offset lies within CE register range, use 2nd window */
+ 	else if ((offset ^ HAL_CE_WFSS_CE_REG_BASE) < WINDOW_RANGE_MASK)
+ 		window_start = 2 * WINDOW_START;
+-	/* If offset lies within PCI_BAR_WINDOW0_BASE and within PCI_SOC_PCI_REG_BASE
+-	 * use 0th window
+-	 */
+-	else if (((offset ^ PCI_BAR_WINDOW0_BASE) < WINDOW_RANGE_MASK) &&
+-		 !((offset ^ PCI_SOC_PCI_REG_BASE) < PCI_SOC_RANGE_MASK))
+-		window_start = 0;
+ 	else
+ 		window_start = WINDOW_START;
  
- #include <linux/module.h>
-@@ -39,6 +39,10 @@
- #define QCN9274_DEVICE_ID		0x1109
- #define WCN7850_DEVICE_ID		0x1107
- 
-+#define PCIE_LOCAL_REG_QRTR_NODE_ID	0x1E03164
-+#define DOMAIN_NUMBER_MASK		GENMASK(7, 4)
-+#define BUS_NUMBER_MASK			GENMASK(3, 0)
-+
- static const struct pci_device_id ath12k_pci_id_table[] = {
- 	{ PCI_VDEVICE(QCOM, QCN9274_DEVICE_ID) },
- 	{ PCI_VDEVICE(QCOM, WCN7850_DEVICE_ID) },
-@@ -682,12 +686,22 @@ static void ath12k_pci_init_qmi_ce_config(struct ath12k_base *ab)
- {
- 	struct ath12k_qmi_ce_cfg *cfg = &ab->qmi.ce_cfg;
- 
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+	struct pci_bus *bus = ab_pci->pdev->bus;
-+
- 	cfg->tgt_ce = ab->hw_params->target_ce_config;
- 	cfg->tgt_ce_len = ab->hw_params->target_ce_count;
- 
- 	cfg->svc_to_ce_map = ab->hw_params->svc_to_ce_map;
- 	cfg->svc_to_ce_map_len = ab->hw_params->svc_to_ce_map_len;
- 	ab->qmi.service_ins_id = ab->hw_params->qmi_service_ins_id;
-+
-+	if (test_bit(ATH12K_FW_FEATURE_MULTI_QRTR_ID, ab->fw.fw_features)) {
-+		ab_pci->qmi_instance =
-+			u32_encode_bits(pci_domain_nr(bus), DOMAIN_NUMBER_MASK) |
-+			u32_encode_bits(bus->number, BUS_NUMBER_MASK);
-+		ab->qmi.service_ins_id += ab_pci->qmi_instance;
-+	}
+ 	return window_start;
  }
  
- static void ath12k_pci_ce_irqs_enable(struct ath12k_base *ab)
-@@ -901,6 +915,26 @@ static void ath12k_pci_aspm_disable(struct ath12k_pci *ab_pci)
- 	set_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags);
- }
- 
-+static void ath12k_pci_update_qrtr_node_id(struct ath12k_base *ab)
++static inline bool ath12k_pci_is_offset_within_mhi_region(u32 offset)
 +{
-+	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
-+	u32 reg;
-+
-+	/* On platforms with two or more identical mhi devices, qmi service run
-+	 * with identical qrtr-node-id. Because of this identical ID qrtr-lookup
-+	 * cannot register more than one qmi service with identical node ID.
-+	 *
-+	 * This generates a unique instance ID from PCIe domain number and bus number,
-+	 * writes to the given register, it is available for firmware when the QMI service
-+	 * is spawned.
-+	 */
-+	reg = PCIE_LOCAL_REG_QRTR_NODE_ID & WINDOW_RANGE_MASK;
-+	ath12k_pci_write32(ab, reg, ab_pci->qmi_instance);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_PCI, "pci reg 0x%x instance 0x%x read val 0x%x\n",
-+		   reg, ab_pci->qmi_instance, ath12k_pci_read32(ab, reg));
++	return (offset >= PCI_MHIREGLEN_REG && offset <= PCI_MHI_REGION_END);
 +}
 +
- static void ath12k_pci_aspm_restore(struct ath12k_pci *ab_pci)
+ static void ath12k_pci_soc_global_reset(struct ath12k_base *ab)
  {
- 	if (test_and_clear_bit(ATH12K_PCI_ASPM_RESTORE, &ab_pci->flags))
-@@ -1219,6 +1253,9 @@ int ath12k_pci_power_up(struct ath12k_base *ab)
- 
- 	ath12k_pci_msi_enable(ab_pci);
- 
-+	if (test_bit(ATH12K_FW_FEATURE_MULTI_QRTR_ID, ab->fw.fw_features))
-+		ath12k_pci_update_qrtr_node_id(ab);
+ 	u32 val, delay;
+@@ -1172,15 +1171,17 @@ u32 ath12k_pci_read32(struct ath12k_base *ab, u32 offset)
+ 		if (window_start == WINDOW_START) {
+ 			spin_lock_bh(&ab_pci->window_lock);
+ 			ath12k_pci_select_window(ab_pci, offset);
+-			val = ioread32(ab->mem + window_start +
+-				       (offset & WINDOW_RANGE_MASK));
 +
- 	ret = ath12k_mhi_start(ab_pci);
- 	if (ret) {
- 		ath12k_err(ab, "failed to start mhi: %d\n", ret);
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index b2edf32ada20..023616928f03 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #ifndef ATH12K_PCI_H
- #define ATH12K_PCI_H
-@@ -111,6 +111,7 @@ struct ath12k_pci {
- 	u16 link_ctl;
- 	unsigned long irq_flags;
- 	const struct ath12k_pci_ops *pci_ops;
-+	u32 qmi_instance;
- };
- 
- static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index e25bbaa125e8..6b38a999a9f0 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_QMI_H
-@@ -15,7 +15,6 @@
- #define ATH12K_QMI_MAX_BDF_FILE_NAME_SIZE	64
- #define ATH12K_QMI_CALDB_ADDRESS		0x4BA00000
- #define ATH12K_QMI_WLANFW_MAX_BUILD_ID_LEN_V01	128
--#define ATH12K_QMI_WLFW_NODE_ID_BASE		0x07
- #define ATH12K_QMI_WLFW_SERVICE_ID_V01		0x45
- #define ATH12K_QMI_WLFW_SERVICE_VERS_V01	0x01
- #define ATH12K_QMI_WLFW_SERVICE_INS_ID_V01	0x02
++			if (ath12k_pci_is_offset_within_mhi_region(offset)) {
++				offset = offset - PCI_MHIREGLEN_REG;
++				val = ioread32(ab->mem +
++					       (offset & WINDOW_RANGE_MASK));
++			} else {
++				val = ioread32(ab->mem + window_start +
++					       (offset & WINDOW_RANGE_MASK));
++			}
+ 			spin_unlock_bh(&ab_pci->window_lock);
+ 		} else {
+-			if ((!window_start) &&
+-			    (offset >= PCI_MHIREGLEN_REG &&
+-			     offset <= PCI_MHI_REGION_END))
+-				offset = offset - PCI_MHIREGLEN_REG;
+-
+ 			val = ioread32(ab->mem + window_start +
+ 				       (offset & WINDOW_RANGE_MASK));
+ 		}
+@@ -1217,15 +1218,17 @@ void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
+ 		if (window_start == WINDOW_START) {
+ 			spin_lock_bh(&ab_pci->window_lock);
+ 			ath12k_pci_select_window(ab_pci, offset);
+-			iowrite32(value, ab->mem + window_start +
+-				  (offset & WINDOW_RANGE_MASK));
++
++			if (ath12k_pci_is_offset_within_mhi_region(offset)) {
++				offset = offset - PCI_MHIREGLEN_REG;
++				iowrite32(value, ab->mem +
++					  (offset & WINDOW_RANGE_MASK));
++			} else {
++				iowrite32(value, ab->mem + window_start +
++					  (offset & WINDOW_RANGE_MASK));
++			}
+ 			spin_unlock_bh(&ab_pci->window_lock);
+ 		} else {
+-			if ((!window_start) &&
+-			    (offset >= PCI_MHIREGLEN_REG &&
+-			     offset <= PCI_MHI_REGION_END))
+-				offset = offset - PCI_MHIREGLEN_REG;
+-
+ 			iowrite32(value, ab->mem + window_start +
+ 				  (offset & WINDOW_RANGE_MASK));
+ 		}
 -- 
 2.34.1
 
