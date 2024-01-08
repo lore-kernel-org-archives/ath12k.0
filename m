@@ -4,85 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1A5FC3DA6E
-	for <ath12k@archiver.kernel.org>; Mon,  8 Jan 2024 08:26:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E29C3DA6E
+	for <ath12k@archiver.kernel.org>; Mon,  8 Jan 2024 17:52:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=G3KMXD9RCLoi+tZuHWuFW6Oc6L6RnY+cp37DfvNmPKw=; b=0m/pZ6bQCVSlfTSP3CcomQO0Qt
-	CGmrTDQ8cKjbGS0DZMHyZP/fKb1F4xX8VYZOPUlKJyobu2rhjuvdglNh1oI9tXPCaJeZ7v9GgePJD
-	WaivWdY99G+Lne0NSqiAU4520zfqu50Y5IEvDeR/WIy+lDu9r3ZVmEo6Iuw3lGhHEgcTnszXS6cAw
-	NxYvQJnrj2jG5xrzUCiWcZd/x9O/Ldf7HYJVhd1P0BwNZy2VUcxJnB+PxGrrt9H01UA46xrV6aEt5
-	iJZ86MUMDe+YgPJXospDXkH+6QXKO/Syh6pIeOFpSAZnMlWdYB+sy+obh2vHohnMTHd3RwLnVldJY
-	SEapiyOw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=OJ5Cxm5UlnPCIE/+NoU4vrvM4xh18aVN066891HC0wY=; b=hJv4wA2IzItWZNpII0u5SP5jmg
+	9TnnytCaYE2VP3GHrCLVbP5usN2F2xG9/JNTlqmxdzq1kjFEUOf7BKwpLx2BFjiksehPylUYHnxxW
+	hen8v7PSj9PPmdl8eXPPsG7pHKd7YU8IwEZ5tljdA+poVKCpCVDYcFDnsVZ9uK6LASdSnU0kM0zMv
+	gkrNlz4tsXXdGRe/EgLM1xjFJKrsoCDgIU1OngpD3r4R9zIxPkFPQ0P5zALMdh/SLOkql8NE/EsZ4
+	f5GocuimcLATjE7ru5ft6mhi+ntunlPt3LbaJWxD7kTYakN3NsgbXCbcJkMt8RAJzB+HjEQk1OVUQ
+	FDsmu27A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rMky5-004IZz-26
+	id 1rMtny-005o22-1a
 	for ath12k@archiver.kernel.org;
-	Mon, 08 Jan 2024 08:26:45 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 08 Jan 2024 17:52:54 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rMky2-004IYC-0e
+	id 1rMtnv-005o0i-0o
 	for ath12k@lists.infradead.org;
-	Mon, 08 Jan 2024 08:26:43 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4086x2CT028135;
-	Mon, 8 Jan 2024 08:26:42 GMT
+	Mon, 08 Jan 2024 17:52:52 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 408Ej50l023547;
+	Mon, 8 Jan 2024 17:52:46 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=G3KMXD9RCLoi+tZuHWuFW6Oc6L6RnY+cp37DfvNmPKw=; b=pq
-	f771uMEVxS294ynZFglL4m6/AA9q220X2hGDyk36Kcm081QvsZd7dymPd1pf5DNR
-	MB/UuBScn+97QhLFQJGKSP7kNSOUUuWOsB0SdsL2IT5EFK8QzsJLACB9wZmR8kEp
-	vLT8iAOL4U4PJDbvvCZu7J9CT3no6ak0DrCStSSBMu4F1q1kZtaepm8qd4u7kLst
-	ekxenjMdv4bJJnS+zfH2hjhsOxB9k5BvPguXWoyiBP59i2C5llYoR60wOmg7KOwI
-	oKPpbbsScFHCDuKCLTrj95EtZAJ5qAYqYpihLKIvqMuf6mrHsXooT63o8QssKQh7
-	495H9r0LQniqVs0sQcMQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3veymmbcvj-1
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=OJ5Cxm5UlnPCIE/+NoU4vrvM4xh18aVN066891HC0wY=; b=fF
+	BLK6g+ysh3cL4HdJo3rYYph+DBnjp2TRvzFpbeMDafaGaqbBUgMyqkeARu85B75t
+	aP/mSGj7hM2B8EMA2z1/1oiHd44+g50IduZERzK66xKc6ARqvfFF41FbN3Z8SouJ
+	zUn9/p8MingdfM+Vr6zR6NYJwC8EGfWhOiwbz7Wx0Nc02tpGYpfDp4PBIMC3+t/E
+	8zoir1H07eUyNXEjPjCEVYyfGhXTQWvN3j427Iy/U4Y9i1oC5DDKWFcrD+tJ1ytz
+	qY7ReN3wfgDDH3XfYyUWc1G1FlkMs9+V3yIIk3IAIFwRyPxeZHriAReh3UB8lohP
+	5IB24M0H5yqk3T/Zymrw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vg8n09rb2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 08 Jan 2024 08:26:41 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4088Qf6e026446
+	Mon, 08 Jan 2024 17:52:46 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 408HqjNR001254
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 8 Jan 2024 08:26:41 GMT
-Received: from yk-E5440.local (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+	Mon, 8 Jan 2024 17:52:45 GMT
+Received: from [10.110.42.177] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 8 Jan
- 2024 00:26:39 -0800
-From: Kang Yang <quic_kangyang@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH 10/10] wifi: ath12k: advertise P2P dev support for WCN7850
-Date: Mon, 8 Jan 2024 16:25:52 +0800
-Message-ID: <20240108082552.7227-11-quic_kangyang@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240108082552.7227-1-quic_kangyang@quicinc.com>
-References: <20240108082552.7227-1-quic_kangyang@quicinc.com>
+ 2024 09:52:45 -0800
+Message-ID: <6fc15b1d-b8a4-40d2-8c6a-857dcaa0ac96@quicinc.com>
+Date: Mon, 8 Jan 2024 09:52:44 -0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 00/12] wifi: ath12k: QCN9274 dualmac bring up
+Content-Language: en-US
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240105195639.3217739-1-quic_rajkbhag@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240105195639.3217739-1-quic_rajkbhag@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: jVnfvjn-OamslVSfC8tIc6T2Vd11ULjD
-X-Proofpoint-GUID: jVnfvjn-OamslVSfC8tIc6T2Vd11ULjD
+X-Proofpoint-GUID: Jq-mpVfIck8yLounE4kwvilBy1RuXGPo
+X-Proofpoint-ORIG-GUID: Jq-mpVfIck8yLounE4kwvilBy1RuXGPo
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
- mlxlogscore=695 spamscore=0 phishscore=0 malwarescore=0 bulkscore=0
- suspectscore=0 adultscore=0 mlxscore=0 priorityscore=1501
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2401080070
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=467 adultscore=0 lowpriorityscore=0 spamscore=0 phishscore=0
+ malwarescore=0 impostorscore=0 priorityscore=1501 clxscore=1015
+ bulkscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401080151
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240108_002642_239274_432990F7 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20240108_095251_427479_32D09870 
+X-CRM114-Status: UNSURE (   6.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,64 +99,15 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Now that all the necessary pieces are implemented we can enable P2P
-support for WCN7850.
+On 1/5/2024 11:56 AM, Raj Kumar Bhagat wrote:
+> QCN9274 Ath12k chipset can support single-mac or dualmac architecture.
+> Currently, Ath12k driver supports only the single-mac QCN9274
+> architecture.
+> 
+> Hence, add support for dualmac QCN9274 chipset.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/hw.c  | 5 ++++-
- drivers/net/wireless/ath/ath12k/mac.c | 8 ++++++++
- 2 files changed, 12 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index de60d988d860..9b7402f5a9f7 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -950,7 +950,10 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.vdev_start_delay = true,
- 
- 		.interface_modes = BIT(NL80211_IFTYPE_STATION) |
--				   BIT(NL80211_IFTYPE_AP),
-+				   BIT(NL80211_IFTYPE_AP) |
-+				   BIT(NL80211_IFTYPE_P2P_DEVICE) |
-+				   BIT(NL80211_IFTYPE_P2P_CLIENT) |
-+				   BIT(NL80211_IFTYPE_P2P_GO),
- 		.supports_monitor = false,
- 
- 		.idle_ps = true,
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 7e2e88ad9d66..48f7975311b6 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5635,17 +5635,25 @@ static int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
- 	case NL80211_IFTYPE_UNSPECIFIED:
- 	case NL80211_IFTYPE_STATION:
- 		arvif->vdev_type = WMI_VDEV_TYPE_STA;
-+		if (vif->p2p)
-+			arvif->vdev_subtype = WMI_VDEV_SUBTYPE_P2P_CLIENT;
- 		break;
- 	case NL80211_IFTYPE_MESH_POINT:
- 		arvif->vdev_subtype = WMI_VDEV_SUBTYPE_MESH_11S;
- 		fallthrough;
- 	case NL80211_IFTYPE_AP:
- 		arvif->vdev_type = WMI_VDEV_TYPE_AP;
-+		if (vif->p2p)
-+			arvif->vdev_subtype = WMI_VDEV_SUBTYPE_P2P_GO;
- 		break;
- 	case NL80211_IFTYPE_MONITOR:
- 		arvif->vdev_type = WMI_VDEV_TYPE_MONITOR;
- 		ar->monitor_vdev_id = bit;
- 		break;
-+	case NL80211_IFTYPE_P2P_DEVICE:
-+		arvif->vdev_type = WMI_VDEV_TYPE_STA;
-+		arvif->vdev_subtype = WMI_VDEV_SUBTYPE_P2P_DEVICE;
-+		break;
- 	default:
- 		WARN_ON(1);
- 		break;
--- 
-2.34.1
+Can you please have the WCN7850 test team validate there are no
+regression issues with this series, and then add their Tested-on: tag to
+each patch?
 
 
