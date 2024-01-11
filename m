@@ -4,87 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B76EEC4707C
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jan 2024 17:51:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4094FC47077
+	for <ath12k@archiver.kernel.org>; Thu, 11 Jan 2024 04:51:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TK4R7YjpOoaeJpgRenwcUYToruwgnjKAjGG59bKhVmI=; b=sEXmEDzms9Mg2d
-	YxoUSPp+51oWOIaqXO2IHJgC36owMGc5RdGdRaIauc5qd6VIw2jzvDh7Yy0t8C5k720eZBZ3yuvmy
-	pAneN20Wup+oUq+4TKVQBJKKckwVB5T6N8+BIIDVSkOM5AgfRdZFy7S16WewntKoRmnkxCgUeW7vb
-	QRn64cuD1PLYkNG7lUCkMkI8di45KjZnPybOtVclFJV1j3ht3p94URcbsLd5NDiMxY9jx4JUGkla/
-	7MUoL+A2uHSjQVP4282X1zQxOEoVRzFjS6EIlhp20CIqfZ5Q7pstJeTsCbl2bpDrClGQy53znQnRP
-	AlTZAlXPPO2Gi2ASsRLg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=6FErVX5W/bUm/MFm/7oAeQOzrBCMaMPj+fJTtWpP9ZE=; b=qm52pDzmgh3bw75pEaUCuKB6ma
+	8H9H2LsPcE0nEJV84Vxj4crHdn27jqMY0A0lOkfw/FRhYt0O58H0rH6C0N/kTjmLF573JXkc7JWzT
+	HoyPwLs7rGjTmlvdyyQbsjQVloScXNXYdZNlqux/xiSot6bnVECqFqggHt+n9Mc9MsDcWwGE/HZgx
+	TD0kgape9FaEmVm8knHAkFQVcPh+kDpVaXWAMxDWgCZivFPI/lks9tLhAOe8AE08ZkDA/Y8GCu1In
+	wIAIIIFwBiDCGw87JC5DEOXpLWKlgYard53Ogf5t0tfPabQFNwoFz783NOS55LQlTvOizXclbxfqi
+	3EFMO1FA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNGFx-0092UU-1J
+	id 1rNn2P-00FrDT-2M
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Jan 2024 17:51:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 11 Jan 2024 04:51:29 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNGFs-0092Rs-0u
+	id 1rNn2M-00FrB2-08
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jan 2024 17:51:14 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 409Ganr4012230;
-	Tue, 9 Jan 2024 17:51:08 GMT
+	Thu, 11 Jan 2024 04:51:27 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40B40F1m026249;
+	Thu, 11 Jan 2024 04:51:20 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:subject:date:message-id:mime-version:content-type
-	:content-transfer-encoding:to:cc; s=qcppdkim1; bh=TK4R7YjpOoaeJp
-	gRenwcUYToruwgnjKAjGG59bKhVmI=; b=No63c6/+71OXrBOUAd49ylbKGmzR5l
-	InSaddKxZuMc0ObnboxU0CB90wwKJ9vflhDeiAwl+qfz9nYp/hmZ/S0VldcYCvqW
-	EUYRTRimPQ79lgzXC/zfQcIOqgyY75L4dn1KW2hyC4whdIYgt+saX5+5buSgxBG0
-	arT9JKFSQDOE6qdwhI0lFYEgt4snjNoyvkTTu0U+D+2VcbeJ0g7jigTcAb8KiSCD
-	U4B5Evlf/C/SPdhSz7EqLDOH/bhB0bGoFD0Ed45uQvnYk8yxRgWEUFfyp1Ms3S2Z
-	oPlpp/aZVYuLaMwJk12XJeXcEPeMjIaSVrdn02eBEh1ifKYMg+IOC/XQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vh9ta05rp-1
+	from:to:cc:subject:date:message-id:mime-version:content-type; s=
+	qcppdkim1; bh=6FErVX5W/bUm/MFm/7oAeQOzrBCMaMPj+fJTtWpP9ZE=; b=Eo
+	T+3U8dLsa8zSUHWKtvjMaNHtSaD3tM0XtJ2JW5KDiWCoU0P7ANe7pJXd/RSb1Ksi
+	1nVdHVIXAcIdTUbBujBW9eMaGlt7ePonFIpvybnbHXGZyDkxJHsfsdb+VyOqcKjq
+	g6JpdupE97uq97Q3vpI7R7Cwtw28wEC+pWk3PdtPoXoOatvtD0R3nwdhbsLUovIE
+	PIP3ElogMwxrPOcv9FqHknaNgemRESC7wlHyVffYtF2PHeGRJSibiNmJ1EZbWahD
+	Q4msghhu4Ia/5gD+1YA0+Hwk4CSed2WCdRSL0cQR6LxSP/bO76yRJTZWjw0MFuB2
+	x55/WNAo2oaSMNDrvY4g==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vhvwx1nks-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 09 Jan 2024 17:51:08 +0000 (GMT)
+	Thu, 11 Jan 2024 04:51:20 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 409Hp73K032020
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40B4pJTc017245
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 9 Jan 2024 17:51:07 GMT
-Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 9 Jan
- 2024 09:51:06 -0800
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Subject: [PATCH 0/3] wifi: ath12k: Cleanup QMI messaging functions
-Date: Tue, 9 Jan 2024 09:51:02 -0800
-Message-ID: <20240109-qmi-cleanup-v1-0-607b10858566@quicinc.com>
+	Thu, 11 Jan 2024 04:51:19 GMT
+Received: from srirrama-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Wed, 10 Jan 2024 20:51:17 -0800
+From: Sriram R <quic_srirrama@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+Subject: [PATCH 00/12] wifi: ath12k: Add single wiphy support
+Date: Thu, 11 Jan 2024 10:20:33 +0530
+Message-ID: <20240111045045.28377-1-quic_srirrama@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAIaHnWUC/23MSw6CMBSF4a2QO7bmtoJWRu7DMIA+5CbSQiuNh
- nTvVsYO/5Ocb4NoApkIbbVBMIkieVeCHypQY+8ehpEuDQJFjRwbtkzE1NP0bp0ZIvKr0rWVgkN
- 5zMFYeu/avSs9Unz58NnxxH/rfydxhsxeBin10OAZT7dlJUVOHZWfoMs5fwEL643VqAAAAA==
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <quic_jjohnson@quicinc.com>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>
-X-Mailer: b4 0.12.3
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: FpIzD3PGQrvo8NqJ0xSwp665X4LN4-h5
-X-Proofpoint-ORIG-GUID: FpIzD3PGQrvo8NqJ0xSwp665X4LN4-h5
+X-Proofpoint-GUID: qnM-VZMhey66zJ3ycxBSd1Sh8FK1EXX6
+X-Proofpoint-ORIG-GUID: qnM-VZMhey66zJ3ycxBSd1Sh8FK1EXX6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 malwarescore=0 mlxscore=0 adultscore=0 mlxlogscore=279
- bulkscore=0 priorityscore=1501 lowpriorityscore=0 clxscore=1015
- phishscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2401090144
+ definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ spamscore=0 lowpriorityscore=0 clxscore=1011 phishscore=0 mlxscore=0
+ impostorscore=0 adultscore=0 mlxlogscore=642 bulkscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401110035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240109_095112_446326_1484F9B9 
-X-CRM114-Status: UNSURE (   6.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240110_205126_098301_1224C3F9 
+X-CRM114-Status: GOOD (  10.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,19 +93,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Correct some issues in the QMI messaging functions found during code
-review.
+With the introduction of Multi Link Operation (MLO) support in
+IEEE802.11be, each EHT AP/non AP interface is capable of
+operating with multiple radio links.
 
----
-Jeff Johnson (3):
-      wifi: ath12k: Remove unnecessary struct qmi_txn initializers
-      wifi: ath12k: Add missing qmi_txn_cancel() calls
-      wifi: ath12k: Use initializers for QMI message buffers
+cfg80211/mac80211 expects drivers to abstract the communication
+between such Multi Link HW and mac80211/cfg80211 since it depends
+on different driver/HW implementation. Hence the single wiphy
+abstraction with changes in datastructures were introduced in
+"wifi: ath12k: Introduce hw abstraction"
 
- drivers/net/wireless/ath/ath12k/qmi.c | 63 +++++++++++++++--------------------
- 1 file changed, 26 insertions(+), 37 deletions(-)
----
-base-commit: e7ab40b733094dfc50dad58bbce81f544af1d8cc
-change-id: 20240105-qmi-cleanup-00019cd4f821
+This patchset extends the implementation to allow combination
+of multiple underlying radios into a single composite hw/wiphy
+for registration. Since now multiple radios are represented by
+a single wiphy, changes are required in various mac ops that the
+driver supports since the driver now needs to learn on how to tunnel
+various mac ops properly to a specific radio.
+
+This patchset covers the basic mac80211 ops for an interface bringup
+and operation.
+
+Note:
+In addition to sanity on single radio QCN9274 and WCN7850
+the single wiphy changes are tested over "wifi: ath12k: QCN9274 dualmac bring up"
+where multiple radios in the dualmac SoC are combined and tested.
+
+Monitor and hw reconfig support for Single Wiphy will be done in future
+patchsets.
+
+This patchset is dependent on "[PATCH 0/2] wifi: ath12k: Introduce hw abstraction"
+
+Karthikeyan Periyasamy (1):
+  wifi: ath12k: add multiple radio support in a single MAC HW
+    un/register
+
+Sriram R (11):
+  wifi: ath12k: Modify add and remove chanctx ops for single wiphy
+    support
+  wifi: ath12k: modify ath12k mac start/stop ops for single wiphy
+  wifi: ath12k: vdev statemachine changes for single wiphy
+  wifi: ath12k: scan statemachine changes for single wiphy
+  wifi: ath12k: fetch correct radio based on vdev status
+  wifi: ath12k: Cache vdev configs before vdev create
+  wifi: ath12k: Add additional checks for vif and sta iterators
+  wifi: ath12k: modify regulatory support for single wiphy architecture
+  wifi: ath12k: Modify set and get antenna mac ops for single wiphy
+  wifi: ath12k: Modify rts threshold mac op for single wiphy
+  wifi: ath12k: support get_survey mac op for single wiphy
+
+ drivers/net/wireless/ath/ath12k/core.h |   40 +-
+ drivers/net/wireless/ath/ath12k/hw.h   |    3 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 1014 +++++++++++++++++++-----
+ drivers/net/wireless/ath/ath12k/reg.c  |   62 +-
+ 4 files changed, 886 insertions(+), 233 deletions(-)
+
+-- 
+2.17.1
 
 
