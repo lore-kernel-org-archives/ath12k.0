@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FE66C4725D
-	for <ath12k@archiver.kernel.org>; Thu, 11 Jan 2024 18:05:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE33FC47077
+	for <ath12k@archiver.kernel.org>; Thu, 11 Jan 2024 20:13:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hh/tRNJ5XrL+rWWHTNtLhbWKFUswhrmv1cBQS4WQcJE=; b=AcV/W/3d3zeOWXCH2KCVJ649Dz
-	icqSJR/gxYQxgiqduY4S5lF5hUHO0WwIxiqaYlOdtyqmYfObWSwNbCMKEz9NiQwXdNkb5ciXXFKnW
-	iBUykw9pkNt7MlEXtE/WI3CoUX0UTcLwAvgNyd6wkMCrF9xJAgvITtqn27y/Q36ljdcjHZV5rDkiP
-	23DFO3spphcRvmfbmTE37acHgkK3iE3j4DfKOm9/Spgi65pr1igmW6QAx4a4Qew5KP7XlfF1hHU9V
-	AWdbluwXAGLHDWjUhgZgjULzFXNb+v3/GkugwP4TDJGbNttOyNAJwoa7YVwFCIWxLRahwZhRQFHfz
-	eCNDSKCA==;
+	bh=rcOVUd9UAOBgD7vaTiue1aOXwBW9kSFcJo+Ihf6OkhI=; b=TnkKiNovFxRADvWD96uPZGse+c
+	3YkGX6FoUp7Rcb9iACuZ55nMof9fAMuLAbbtXJztPq1lXOaH7dTN6uU6SfuuCIY78V61Z7/fWaKRz
+	PUlfQjSnHjScbrHo1JYqRWFeiQ7kx12JRbi5fhxh2FSNnM/j/jfE0k1AbJXHtBI5dyAUY3pK/8H8c
+	d2OA+qB7zF07LbpRIzfqg7Y2ZR3JbATTxxEpYnA9epzl6lGS279oVaBvLe++Wp/6fZMCXKO8tG0fd
+	W/FkoPfs8AXfGToBUN2vvOn+z3fxTCBlXZzi+HAz/KQycVdL5UfEAOKKZUnfXmr+FwaZn9+ClH2Q/
+	42ui/omA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNzR9-000mxN-0O
+	id 1rO1QJ-0014Gw-1E
 	for ath12k@archiver.kernel.org;
-	Thu, 11 Jan 2024 18:05:51 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 11 Jan 2024 20:13:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNzR5-000mwU-0D
+	id 1rO1QF-0014GY-0X
 	for ath12k@lists.infradead.org;
-	Thu, 11 Jan 2024 18:05:49 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40BD06LU002874;
-	Thu, 11 Jan 2024 18:05:43 GMT
+	Thu, 11 Jan 2024 20:13:05 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40BKCp8d031054;
+	Thu, 11 Jan 2024 20:13:01 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:date:subject:mime-version:content-type
-	:content-transfer-encoding:message-id:references:in-reply-to:to
-	:cc; s=qcppdkim1; bh=hh/tRNJ5XrL+rWWHTNtLhbWKFUswhrmv1cBQS4WQcJE
-	=; b=XlvdxguIi4bwdXi+QfQXHeLdgKPMPldUr2/N1VLCV+tFh8Kn2GSEib4ORTP
-	cDKONsYqo3sXzXPMvX45falZgLiS4mJFrw81o3lZf1QNS5NzLQrw8qviDn4Tuk64
-	iMFtcNR8n6nvjkrn3DGrF06jN4HZYKFDh41Wk/7jpL4njO4qsQO5gEqEwIDXjCBt
-	Uymo2GW0imsPzFi7TYyYVeniJdVyifd/ERD9TwQyaaHAv6EkKtEp68TnoJcMvhnx
-	DOcUULVAkUd90/tbnVS8kR+u57NIpIrxw4rf2a2/w4HK0l119JjDBTfrL71v0Icv
-	lxQtP9yMgapcKw3jOsHST2YlS+w==
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=rcOVUd9UAOBgD7vaTiue1aOXwBW9kSFcJo+Ihf6OkhI=; b=fs
+	Psy6IsNSiqmV7HFDpeiiY+6BkoHo5gCFcRyXQygEeMZEKlJziTRfjK9vF+U/gga6
+	hU52Zl/1Ln6QlWBdvEYgo/pOM4obxW5Wg77iSzZh1wCAuummhhda12eQSJQWC2oH
+	Qu1VPF1TJIbPXqlPywc0z8B3kEJWNxooMBbIin6OSg//Nousuav4miNdrvPn43lI
+	Em+lQssi+h3Nto9yGBpZKsQfJf8tlJnF50yYUl9Cy0aaLO8l8aJoaiXjn6I0KeHe
+	vnmVcJcxY1E0A+Q/+piFDTeMrf2/DsDNvsMKQ5fCoVEuuYw2AyTmTH8VoLQNtFDK
+	ohZboL26bIdNGWaJ+64Q==
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vjgtjgq7t-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vjf231d2f-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 11 Jan 2024 18:05:43 +0000 (GMT)
+	Thu, 11 Jan 2024 20:13:00 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40BI5gVT018207
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40BKCxF9009079
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 11 Jan 2024 18:05:42 GMT
-Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Thu, 11 Jan 2024 20:13:00 GMT
+Received: from [10.227.110.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 11 Jan
- 2024 10:05:42 -0800
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Thu, 11 Jan 2024 10:05:30 -0800
-Subject: [PATCH v2 1/3] wifi: ath12k: Remove unnecessary struct qmi_txn
- initializers
+ 2024 12:12:59 -0800
+Message-ID: <ea393ad8-5623-45b9-824a-02d7e4c39b90@quicinc.com>
+Date: Thu, 11 Jan 2024 12:12:58 -0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/2] wifi: ath12k: Introduce hw abstraction
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240109051252.3325106-1-quic_periyasa@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240109051252.3325106-1-quic_periyasa@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com>
-References: <20240111-qmi-cleanup-v2-0-53343af953d5@quicinc.com>
-In-Reply-To: <20240111-qmi-cleanup-v2-0-53343af953d5@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <quic_jjohnson@quicinc.com>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>
-X-Mailer: b4 0.12.3
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: YaBNPeqwNgiwKuID-T_txlVtZPDJIBua
-X-Proofpoint-ORIG-GUID: YaBNPeqwNgiwKuID-T_txlVtZPDJIBua
+X-Proofpoint-ORIG-GUID: 7HjE877cb4pYwsZTSmKeG9V8fPYFNzgC
+X-Proofpoint-GUID: 7HjE877cb4pYwsZTSmKeG9V8fPYFNzgC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
- suspectscore=0 bulkscore=0 clxscore=1015 priorityscore=1501
- lowpriorityscore=0 spamscore=0 impostorscore=0 malwarescore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2311290000 definitions=main-2401110142
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 impostorscore=0
+ mlxscore=0 phishscore=0 lowpriorityscore=0 mlxlogscore=500
+ priorityscore=1501 spamscore=0 adultscore=0 suspectscore=0 malwarescore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401110157
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240111_100547_109452_7D55F6DB 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20240111_121304_034166_A81276B7 
+X-CRM114-Status: GOOD (  10.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,98 +99,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently most of the ath12k QMI messaging functions define their
-struct qmi_txn variables with a {} initializer. However, all of these
-functions subsequently call qmi_txn_init(), and the very first thing
-that function does is zero the struct. Hence, the initializers are
-unnecessary. Since these consume code space and cpu cycles, remove
-them.
+On 1/8/2024 9:12 PM, Karthikeyan Periyasamy wrote:
+> To support multi link operation (MLO), need to move from the multi wiphy
+> model to a single wiphy model. However, the single wiphy model allows
+> multiple link/radio to be exposed by the same mac80211 hw. So introduce
+> a new container (ath12k_hw) structure. This approach improves scalability
+> for future multi link operation support.
+> 
+> Note:
+> 
+> This patchset sits on top of below patches
+>   wifi: ath12k: Refactor mac callback of config
+>   wifi: ath12k: Refactor mac callback of bss info changed
+>   wifi: ath12k: Refactor mac callback of conf tx
+>   wifi: ath12k: Refactor mac callback of start
+>   wifi: ath12k: Refactor mac callback of stop
+>   wifi: ath12k: Refactor mac callback of update vif offload
+>   wifi: ath12k: Refactor mac callback of configure filter
+>   wifi: ath12k: Refactor mac callback of ampdu action
+>   wifi: ath12k: Refactor mac callback of flush
+>   wifi: ath12k: Refactor start vdev delay function
+>   wifi: ath12k: Refactor the DP pdev pre alloc call sequence
+>   wifi: ath12k: Refactor the MAC allocation and destroy
+>   wifi: ath12k: Refactor MAC setup channel helper function
+>   wifi: ath12k: Refactor MAC un/register helper function
+> 
+> Karthikeyan Periyasamy (2):
+>   wifi: ath12k: Refactor the mac80211 hw access from link/radio
+>   wifi: ath12k: Introduce the container for mac80211 hw
+> 
+>  drivers/net/wireless/ath/ath12k/core.c   | 108 +++--
+>  drivers/net/wireless/ath/ath12k/core.h   |  47 ++-
+>  drivers/net/wireless/ath/ath12k/dp_mon.c |   4 +-
+>  drivers/net/wireless/ath/ath12k/dp_rx.c  |   6 +-
+>  drivers/net/wireless/ath/ath12k/dp_tx.c  |   6 +-
+>  drivers/net/wireless/ath/ath12k/mac.c    | 480 +++++++++++++++++------
+>  drivers/net/wireless/ath/ath12k/mac.h    |  14 +-
+>  drivers/net/wireless/ath/ath12k/reg.c    |   9 +-
+>  drivers/net/wireless/ath/ath12k/wmi.c    |  17 +-
+>  9 files changed, 510 insertions(+), 181 deletions(-)
+> 
+> 
+> base-commit: 2cd4e3f91f264926a6b11df948417b74d52ca9b9
+> prerequisite-patch-id: c2cebfe634adf505f1dd4fff4235dac6162c7da7
+> prerequisite-patch-id: cc11dc22588dbbd884ce44bcc4680ff0cc64b696
+> prerequisite-patch-id: 2eb8549471f3a66e200d82f6d3e902de2832a210
+> prerequisite-patch-id: 330f495e6871998fddc71c735e7fbfe5efc9c798
+> prerequisite-patch-id: 903acc7b989d5974623fdf4b9be901e2664dbef3
+> prerequisite-patch-id: 53378c45727417943331a0b98c5718b24a8e3577
+> prerequisite-patch-id: 9f1e02951355b889eddf23c24d063e9933008b2a
+> prerequisite-patch-id: 9b662f69fa076e61e089a15b5559c4ee913f94a8
+> prerequisite-patch-id: 4e079d284495ae939dc2173cae9e3fa082e607cb
+> prerequisite-patch-id: f81c109928533db71c84e64e102f5921db406f2d
+> prerequisite-patch-id: 70e3b0429286e17f26ea53369027a6f43a3653c3
+> prerequisite-patch-id: c2bebc5a0ea8cea79d6aec293096a168860bb48d
+> prerequisite-patch-id: e89f6abeea9771cb0832b8db13507a2b08f774ce
+> prerequisite-patch-id: c26a2ceec9261bec16474d1c8e3ff093d404b778
 
-No functional changes, compile tested only.
+In my workspace your patches are not applying. Can you rebase against
+the 'pending' branch since that has the pending versions of the
+prerequisite patches?
 
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/qmi.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 536856234f3b..180e86c2a10c 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/elf.h>
-@@ -1921,7 +1921,7 @@ static int ath12k_qmi_host_cap_send(struct ath12k_base *ab)
- {
- 	struct qmi_wlanfw_host_cap_req_msg_v01 req;
- 	struct qmi_wlanfw_host_cap_resp_msg_v01 resp;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	int ret = 0;
- 
- 	memset(&req, 0, sizeof(req));
-@@ -2069,7 +2069,7 @@ static int ath12k_qmi_respond_fw_mem_request(struct ath12k_base *ab)
- {
- 	struct qmi_wlanfw_respond_mem_req_msg_v01 *req;
- 	struct qmi_wlanfw_respond_mem_resp_msg_v01 resp;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	int ret = 0, i;
- 	bool delayed;
- 
-@@ -2210,7 +2210,7 @@ static int ath12k_qmi_request_target_cap(struct ath12k_base *ab)
- {
- 	struct qmi_wlanfw_cap_req_msg_v01 req;
- 	struct qmi_wlanfw_cap_resp_msg_v01 resp;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	unsigned int board_id = ATH12K_BOARD_ID_DEFAULT;
- 	int ret = 0;
- 	int r;
-@@ -2311,7 +2311,7 @@ static int ath12k_qmi_load_file_target_mem(struct ath12k_base *ab,
- {
- 	struct qmi_wlanfw_bdf_download_req_msg_v01 *req;
- 	struct qmi_wlanfw_bdf_download_resp_msg_v01 resp;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	const u8 *temp = data;
- 	int ret;
- 	u32 remaining = len;
-@@ -2547,7 +2547,7 @@ static int ath12k_qmi_wlanfw_m3_info_send(struct ath12k_base *ab)
- 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
- 	struct qmi_wlanfw_m3_info_req_msg_v01 req;
- 	struct qmi_wlanfw_m3_info_resp_msg_v01 resp;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	int ret = 0;
- 
- 	memset(&req, 0, sizeof(req));
-@@ -2598,7 +2598,7 @@ static int ath12k_qmi_wlanfw_mode_send(struct ath12k_base *ab,
- {
- 	struct qmi_wlanfw_wlan_mode_req_msg_v01 req;
- 	struct qmi_wlanfw_wlan_mode_resp_msg_v01 resp;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	int ret = 0;
- 
- 	memset(&req, 0, sizeof(req));
-@@ -2651,7 +2651,7 @@ static int ath12k_qmi_wlanfw_wlan_cfg_send(struct ath12k_base *ab)
- 	struct qmi_wlanfw_wlan_cfg_resp_msg_v01 resp;
- 	struct ce_pipe_config *ce_cfg;
- 	struct service_to_pipe *svc_cfg;
--	struct qmi_txn txn = {};
-+	struct qmi_txn txn;
- 	int ret = 0, pipe_num;
- 
- 	ce_cfg	= (struct ce_pipe_config *)ab->qmi.ce_cfg.tgt_ce;
-
--- 
-2.42.0
-
+/jeff
 
