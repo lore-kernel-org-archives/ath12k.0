@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D284C4706C
-	for <ath12k@archiver.kernel.org>; Fri, 12 Jan 2024 18:25:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63F93C4707C
+	for <ath12k@archiver.kernel.org>; Fri, 12 Jan 2024 18:26:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fe4akUkUVyB+kVTkZU4inYl0No9qSEYqBo9dcrH6a8M=; b=D4A41CDWsu1Tz9FsSdoSzj7b4c
-	VnQxF3fxb4ffzooDnOSLPDuqwSNtLgnA9Thl3Gp63rgSA+uYwbR5AtipneFNbiWnRBaEyAjRMuz8x
-	AOFjOWto45GgRHqo0BXZBm94ryog16B6D2sJHFsdkU30MOB0xxs7qJ4xrAquLFSF3UrralhvNf45I
-	HoyVwtN89aQju/cvjwLo68s3cc04tkRGcKHUWwltJ5N+O+YWCly032vO5aSdwiHrqNcLHAAT3/X+s
-	62jUfxPSdaWn/FXP21sIQRvWhvCNXFgtU1z+45g2IrXcogU0dPZ7QZCqzptVu4I1dvTuSqWoIyi2j
-	EkqTHBNg==;
+	bh=auwGExs+0U24zSa+udYYtgByYLcZ8u/TzQieruqRB1U=; b=cv9fw/hKf88Ak+BuNqiO7XqqrX
+	27GXcBH2E12dvaFUakabpKPrp6lJGI/37Mny6mZ+XnFu44GAdsPCpNDwMLyp6uE+jXVmEydU1MSKj
+	XqzfCgAUyoxDlP/yHboZNnWpR6+OnHmTH7ReBclJYQAXEscHeOBXDllaUcp7TTzxoeOMhDWpiDYCy
+	lM9lxg2CTvZvVsEhx2rEK1p1xf0tqa1eOBJWIRc33r2G1W9Way4vz2vJCHeKDP57U6OpG5+hzi7ej
+	6elua3T/Ue28w1bCMa2lPBVUk6Pi7fqi6D1+vI+Ci6GLDQ0ELF+t0Rm2jVXz0Dmz2JALnNXJD4vLY
+	fKpCulOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOMDr-003bHG-2J
+	id 1rOMEV-003bMj-0E
 	for ath12k@archiver.kernel.org;
-	Fri, 12 Jan 2024 18:25:39 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 12 Jan 2024 18:26:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOMDn-003bGd-38
+	id 1rOMET-003bMG-0B
 	for ath12k@lists.infradead.org;
-	Fri, 12 Jan 2024 18:25:37 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40CGQuJb010497;
-	Fri, 12 Jan 2024 18:25:32 GMT
+	Fri, 12 Jan 2024 18:26:18 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40CEErfc019655;
+	Fri, 12 Jan 2024 18:26:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=fe4akUkUVyB+kVTkZU4inYl0No9qSEYqBo9dcrH6a8M=; b=f5
-	lzfC3j/WuS4xc836JsJ5A9utUya/cvLglCGOOG8hMg9qv7CCxuc2GNIUli5dIPvj
-	l4ACCvuBPiNKVKjl7m+9EHBxv0FFNb9aLqYJ9PIfGkDQZ394wCmYdUE+8fEA++Bj
-	GzshnDXUQSkYQyGBdZIckCZjDnJ+gZ3qRiiyPUthnC5ImpSCiGkqOE7J6xd3cf8T
-	IaFbs3pQqK12EC1wKLQHamhUPFH0v+tngo34ILoyQULKSPMecaHQKyn/Hemnlfl6
-	YbT1n6wXxLs9yux1zfkqjN4ncUibvewWrtzWgSY0D4dQ3sDSM24Ho2yhVrwNMzsc
-	oohaZcQWYYfhF8NI5Qqg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vk43xgx8u-1
+	qcppdkim1; bh=auwGExs+0U24zSa+udYYtgByYLcZ8u/TzQieruqRB1U=; b=Bz
+	FZo3V3tijg85FO0eoTD8hmtH7SN+3iYoREqiMOw71nNHgrghGCM4YAX5vqOTOU61
+	AL1BeMw8d/oej+9+SS+N57R2Q3T4po8ezkG0jDWHd1niEJ2fS8GDjS+aq8Ztymhp
+	f92EqWzO9z4nq4zweLePAR3LOVP7ukO0Lso9O5nWWbgxE7CSHmMMKTp0xckH+OIx
+	dUYckmdwaMnNpHN0kUSn4pXeDSK1sEa52T32J4uEZQ0I5HzZEzKeRZX5q++oGbUQ
+	g2ORuHiyOiSHf6RtLM6SHDQfPBdxooNRlCZhgVoZMSXXB3KPWtV920YuwFR/lFDw
+	vn6GsU6mdqjqsdVuijPw==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vk6ee8mch-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 12 Jan 2024 18:25:31 +0000 (GMT)
+	Fri, 12 Jan 2024 18:26:16 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40CIPUs0016512
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40CIQF5T015920
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 12 Jan 2024 18:25:30 GMT
+	Fri, 12 Jan 2024 18:26:15 GMT
 Received: from [10.110.16.29] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 12 Jan
- 2024 10:25:30 -0800
-Message-ID: <bfdf62da-e2f3-4b59-971c-e10349e705f6@quicinc.com>
-Date: Fri, 12 Jan 2024 10:25:29 -0800
+ 2024 10:26:15 -0800
+Message-ID: <f5c25f3f-a56b-49a9-ab47-db481ba9309e@quicinc.com>
+Date: Fri, 12 Jan 2024 10:26:15 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 10/12] wifi: ath12k: Modify set and get antenna mac ops
- for single wiphy
+Subject: Re: [PATCH 11/12] wifi: ath12k: Modify rts threshold mac op for
+ single wiphy
 Content-Language: en-US
 To: Sriram R <quic_srirrama@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20240111045045.28377-1-quic_srirrama@quicinc.com>
- <20240111045045.28377-11-quic_srirrama@quicinc.com>
+ <20240111045045.28377-12-quic_srirrama@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240111045045.28377-11-quic_srirrama@quicinc.com>
+In-Reply-To: <20240111045045.28377-12-quic_srirrama@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -73,19 +73,20 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: BELvJjw88OR-EtYg1Nh7i8k3Ns_Ro0ij
-X-Proofpoint-GUID: BELvJjw88OR-EtYg1Nh7i8k3Ns_Ro0ij
+X-Proofpoint-ORIG-GUID: dCSclbN3XhMReHmVTpwUNFxKg1ZMaunS
+X-Proofpoint-GUID: dCSclbN3XhMReHmVTpwUNFxKg1ZMaunS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
- spamscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0 phishscore=0
- priorityscore=1501 mlxlogscore=999 mlxscore=0 suspectscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2311290000
- definitions=main-2401120143
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ lowpriorityscore=0 mlxlogscore=514 clxscore=1015 malwarescore=0
+ impostorscore=0 mlxscore=0 adultscore=0 spamscore=0 priorityscore=1501
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401120144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240112_102536_132445_760789B9 
-X-CRM114-Status: GOOD (  23.51  )
+X-CRM114-CacheID: sfid-20240112_102617_105497_1D46029C 
+X-CRM114-Status: UNSURE (   6.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,116 +102,17 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 1/10/2024 8:50 PM, Sriram R wrote:
-> As multiple radios are combined into a single wiphy, and
-> the current infrastructure supports only set/get antenna
-> for the wiphy, the max Tx/Rx antenna capability is advertised
-> during wiphy register.
-> Hence, When antenna set/get is received we adjust the set/get
-> based on max radio capability and set/get antenna accordingly.
+> Since multiple radios are abstracted under a single wiphy,
+> apply the rts threshold value to all the vdevs of the radios
+> combined under single wiphy.
 > 
-> Multi radio capability would get introduced with interface
-
-Since this multi-radio capability is not part of the current series, I
-don't think it is correct to say this "would get introduced". Rather, I
-think it is more appropriate to say it "would need to be introduced in
-the future" if you want per-radio configuration
-
-> combination changes to support single wiphy model in cfg80211
-> which would help extend the wiphy specific get/set configs similar
-> to this to per hw level.
+> This also implies that vif specific rts threshold support
+> needs to be added in future from cfg80211/mac80211.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
 > Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/mac.c | 41 +++++++++++++++++++--------
->  1 file changed, 29 insertions(+), 12 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 2f19d6c5b741..00063c783e6c 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -5064,6 +5064,13 @@ static int __ath12k_set_antenna(struct ath12k *ar, u32 tx_ant, u32 rx_ant)
->  	if (ath12k_check_chain_mask(ar, rx_ant, false))
->  		return -EINVAL;
->  
-> +	/* Since we advertised the max cap of all radios combined during wiphy
-> +	 * registration, ensure we don't set the antenna config higher than our
-> +	 * limits
-
-*specific radio* limits
-
-> +	 */
-> +	tx_ant = min_t(u32, tx_ant, ar->pdev->cap.tx_chain_mask);
-> +	rx_ant = min_t(u32, rx_ant, ar->pdev->cap.rx_chain_mask);
-> +
->  	ar->cfg_tx_chainmask = tx_ant;
->  	ar->cfg_rx_chainmask = rx_ant;
->  
-> @@ -6380,21 +6387,25 @@ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
->  static int ath12k_mac_op_get_antenna(struct ieee80211_hw *hw, u32 *tx_ant, u32 *rx_ant)
->  {
->  	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
-> +	int antennas_rx = 0, antennas_tx = 0;
->  	struct ath12k *ar;
-> +	int i;
->  
->  	mutex_lock(&ah->conf_mutex);
->  
->  	ar = ath12k_ah_to_ar(ah, 0);
->  
-> -	mutex_lock(&ar->conf_mutex);
-> -
-> -	*tx_ant = ar->cfg_tx_chainmask;
-> -	*rx_ant = ar->cfg_rx_chainmask;
-> -
-> -	mutex_unlock(&ar->conf_mutex);
-> -
-> +	for (i = 0; i < ah->num_radio; i++) {
-> +		mutex_lock(&ar->conf_mutex);
-> +		antennas_rx = max_t(u32, antennas_rx, ar->cfg_rx_chainmask);
-> +		antennas_tx = max_t(u32, antennas_tx, ar->cfg_tx_chainmask);
-> +		mutex_unlock(&ar->conf_mutex);
-> +		ar++;
-> +	}
->  	mutex_unlock(&ah->conf_mutex);
->  
-> +	*tx_ant = antennas_rx;
-> +	*rx_ant = antennas_tx;
->  	return 0;
->  }
->  
-> @@ -6402,16 +6413,22 @@ static int ath12k_mac_op_set_antenna(struct ieee80211_hw *hw, u32 tx_ant, u32 rx
->  {
->  	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
->  	struct ath12k *ar;
-> -	int ret;
-> +	int ret = 0;
-> +	int i;
->  
->  	mutex_lock(&ah->conf_mutex);
->  
->  	ar = ath12k_ah_to_ar(ah, 0);
->  
-> -	mutex_lock(&ar->conf_mutex);
-> -	ret = __ath12k_set_antenna(ar, tx_ant, rx_ant);
-> -	mutex_unlock(&ar->conf_mutex);
-> -
-> +	for (i = 0; i < ah->num_radio; i++) {
-> +		mutex_lock(&ar->conf_mutex);
-> +		ret = __ath12k_set_antenna(ar, tx_ant, rx_ant);
-> +		mutex_unlock(&ar->conf_mutex);
-> +		if (ret)
-> +			goto out;
-> +		ar++;
-> +	}
-> +out:
->  	mutex_unlock(&ah->conf_mutex);
->  
->  	return ret;
-Since I just have documentation nits:
-
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
