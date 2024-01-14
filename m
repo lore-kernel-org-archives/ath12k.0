@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5F67C4707B
-	for <ath12k@archiver.kernel.org>; Sat, 13 Jan 2024 09:44:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45F00C47077
+	for <ath12k@archiver.kernel.org>; Sun, 14 Jan 2024 15:01:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=p6Eb+B6YMRgsLS3XtEyomyE73GMv3ezDtKAXl2lwhYk=; b=0E20lUwYtQkaHs2XtS6Mvc/A+T
-	1AaUhCzkhaR7nLuMWiRoQql5TYVZY9iKKAeOfovgv+lAvkNTD5kLW8LGhOy4woT11UeefwPpMfsIp
-	8TJu/ZR+88/HNPY+xpgWFrDxIpDRsbesxWZOBwsQ4qfz88gHnvNBk7AGRiY7K+xEpMKGGHPeofoUM
-	dfPrjD3xHVP6JhPy3G+9AzonB+jgTUigN2j/jWltjXORz5SR+SZn8A4yMObDo+EoO23cAF30JfMCM
-	WemU63WbWkgBldOHHZoQiHK/kxcJWu7l/48v6dbBqELTcVYzkxuLOCeOaxF8wwnsBVk1C0rdb8YqD
-	wZbSDqRg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=8tAqmWO+9ZTznLFOpIl1KeZde35dWnY+hXs1P0a7oB0=; b=BhYCcMeQoT2p64vK8ixq59C/N7
+	Q3ZcAms/LN/guhBfXl7p51DY1xU4PZdEdPqRlHTyXdlcff0a7V+lkeaDujMcdLVQfv6ufADv9S/GJ
+	RIsm9wEC18w/W5VBMMwRvWkbrrjRDPDYe57Tp/7qkpO99+VX5/Z+Dc6zR6P9lHfNh7fyyOSqHq5q7
+	mrmI89XXzum5gkpehJjNIurGipPaCJjYHTtYghJdby3W0NeRr6usGeYWXC3lIhlVCrae0pG584onN
+	70Tvs6SncF4j9g/FZUcP29SB7BBzmXSRYhhfvQlzKDagf22sZ+YprpA3h4WtivHxiz6KW6HCUwI80
+	ex6Vj9ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOaZJ-004qg1-19
+	id 1rP1z1-006ra4-0a
 	for ath12k@archiver.kernel.org;
-	Sat, 13 Jan 2024 09:44:45 +0000
+	Sun, 14 Jan 2024 15:01:07 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rOaZF-004qfT-2j
+	id 1rP1yy-006rZd-2G
 	for ath12k@lists.infradead.org;
-	Sat, 13 Jan 2024 09:44:43 +0000
+	Sun, 14 Jan 2024 15:01:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 38FCFB82468;
-	Sat, 13 Jan 2024 09:44:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C082C433C7;
-	Sat, 13 Jan 2024 09:44:38 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 4AA5BB80A6C;
+	Sun, 14 Jan 2024 15:01:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A519C433C7;
+	Sun, 14 Jan 2024 15:01:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705139079;
-	bh=1hvDFRV24xJJKkGg0jYO3A1J1KEhcdugByo3G/yj7Dw=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=fvqWcWqtTrHxllZ17lSGnOeJciIg627H7RZMhPFhyFImMVvFRvItdWCFNMzykwYli
-	 AOi/QuzHHoFDTMhVsVFh5Cc3VpREmNQK5q3717epyYGH+weq3RZuB9Pnsqz8NbM6Yd
-	 gNnezmr46goqzAaazhkQLF4dV4IkYzdCabnenIShU64nbvMMEwPuxBLMpc0olEf5dj
-	 QGRWWDx+H3lYFM6oQhTyTLR51GlrsZNLjUJKmw7sAbbhodVD4hTi7YsgQGa8DVVVhM
-	 wG4itUKEtvsBf/4tAsUJPyb/YzCSLygfAWmPGziSo0jwjJ+Lo4+aEGFZpxinAm65IF
-	 +tmMeJiyFoDsg==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Sriram R <quic_srirrama@quicinc.com>,  <ath12k@lists.infradead.org>,
-  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 07/12] wifi: ath12k: Cache vdev configs before vdev create
-References: <20240111045045.28377-1-quic_srirrama@quicinc.com>
-	<20240111045045.28377-8-quic_srirrama@quicinc.com>
-	<c35da30b-335c-4418-9d7c-0784ec9e8d30@quicinc.com>
-Date: Sat, 13 Jan 2024 11:44:36 +0200
-In-Reply-To: <c35da30b-335c-4418-9d7c-0784ec9e8d30@quicinc.com> (Jeff
-	Johnson's message of "Fri, 12 Jan 2024 09:23:59 -0800")
-Message-ID: <87cyu5h8jf.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1705244462;
+	bh=aRieRp79l/B2y5vjKinEX+iYJeaHanzDnbFW5Ls4f7c=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=Xe4D1PxZsT3269QVH2gTyELMT7aGAoEsaGU8YG8fdfFBHVPNNrrblvLV2MoCokdqg
+	 D1XUnCNMRzsvgdXhvczZx/35lGmUOQbtCs5U2zb5aZv2rtpQbmphTUJSCz/KbjQNNx
+	 5+ZwukFf9axgEUtA7mZGYogLkaZivYrVUAn8xXRQ0ZGLRipyvAcZIAt/DPeGYaieiS
+	 xQQeiLfA0iTewi5iApesC35R+hUr0rQ8z6INWobFL8LtOR09iA0vZkUqIcozYVohLY
+	 fihuo/wsCduIvBOj8oULK6w18TCjfyQVU6BIevIBXgZyL5KZHqrdNJnQTifROaLFIC
+	 y632ne2aIyD7A==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Subject: Re: [PATCH v2 1/3] wifi: ath12k: Remove unnecessary struct qmi_txn
+ initializers
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com>
+References: <20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>,
+ <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <170524445957.1421352.9255954399937351219.kvalo@kernel.org>
+Date: Sun, 14 Jan 2024 15:01:01 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240113_014442_051218_3603F938 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20240114_070104_894617_E8DFC0DE 
+X-CRM114-Status: UNSURE (   6.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,40 +75,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
->> +static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
->> +				 struct ieee80211_vif *vif, struct ieee80211_sta *sta,
->> +				 struct ieee80211_key_conf *key)
->> +{
->> +	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
->> +	struct ath12k *ar;
->> +	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
->> +	int ret;
->> +
->> +	/* BIP needs to be done in software */
->> +	if (key->cipher == WLAN_CIPHER_SUITE_AES_CMAC ||
->> +	    key->cipher == WLAN_CIPHER_SUITE_BIP_GMAC_128 ||
->> +	    key->cipher == WLAN_CIPHER_SUITE_BIP_GMAC_256 ||
->> +	    key->cipher == WLAN_CIPHER_SUITE_BIP_CMAC_256)
->> +		return 1;
->
-> I know this in the existing code, but what is the significance of
-> returning 1? Should this be returning a -errno like the error cases that
-> follow?
+> Currently most of the ath12k QMI messaging functions define their
+> struct qmi_txn variables with a {} initializer. However, all of these
+> functions subsequently call qmi_txn_init(), and the very first thing
+> that function does is zero the struct. Hence, the initializers are
+> unnecessary. Since these consume code space and cpu cycles, remove
+> them.
+> 
+> No functional changes, compile tested only.
+> 
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-It's to use software encryption, from mac80211.h:
+3 patches applied to ath-next branch of ath.git, thanks.
 
- * Note that in the case that the @IEEE80211_HW_SW_CRYPTO_CONTROL flag is
- * set, mac80211 will not automatically fall back to software crypto if
- * enabling hardware crypto failed. The set_key() call may also return the
- * value 1 to permit this specific key/algorithm to be done in software.
-
-Yeah, this is confusing. IMHO there should be a define or an enum for
-this value.
+59cf57ab3dee wifi: ath12k: Remove unnecessary struct qmi_txn initializers
+2e82b5f09a97 wifi: ath12k: Add missing qmi_txn_cancel() calls
+6d2b0a066941 wifi: ath12k: Use initializers for QMI message buffers
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
