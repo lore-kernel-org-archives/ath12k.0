@@ -4,63 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45F00C47077
-	for <ath12k@archiver.kernel.org>; Sun, 14 Jan 2024 15:01:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4C74C47077
+	for <ath12k@archiver.kernel.org>; Mon, 15 Jan 2024 02:37:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8tAqmWO+9ZTznLFOpIl1KeZde35dWnY+hXs1P0a7oB0=; b=BhYCcMeQoT2p64vK8ixq59C/N7
-	Q3ZcAms/LN/guhBfXl7p51DY1xU4PZdEdPqRlHTyXdlcff0a7V+lkeaDujMcdLVQfv6ufADv9S/GJ
-	RIsm9wEC18w/W5VBMMwRvWkbrrjRDPDYe57Tp/7qkpO99+VX5/Z+Dc6zR6P9lHfNh7fyyOSqHq5q7
-	mrmI89XXzum5gkpehJjNIurGipPaCJjYHTtYghJdby3W0NeRr6usGeYWXC3lIhlVCrae0pG584onN
-	70Tvs6SncF4j9g/FZUcP29SB7BBzmXSRYhhfvQlzKDagf22sZ+YprpA3h4WtivHxiz6KW6HCUwI80
-	ex6Vj9ag==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=NcD9Q2VjbIEF7ScjFJ7rLFvw2qKQQu/jPeE56YndeZI=; b=w3wjKVVGINFQ6CXv7P7LSMYvo4
+	kkKD00TEV87g1A0HCCvF2lUEo+f2PckreUUVdVVX4yZ6nq7nOv/bRVv28pw6/54nUN/yovT47lbD1
+	jA9iXaBbj0/axe71d3jqrTD4Rjp/fmkhR1flpTprC/kZPRFcoYRGXVhaF58i8AgUcXy1g+TVIMYX9
+	upe7Ipwzh2Xwy9QwMrjuaNpVTufYR2N6cGCNtQsoKfiwnm4zfA4PkDr/0L+rITF2bFT8cTErImDTb
+	YHATEHJ0CAY2pCV4r/ORGOSTrJ/fH1Vg8ujkqaRSqknb4IQlXmMouGI4wS7j29JoL7WlaL4t4seX7
+	PepCtZRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rP1z1-006ra4-0a
+	id 1rPCrL-007eEe-1L
 	for ath12k@archiver.kernel.org;
-	Sun, 14 Jan 2024 15:01:07 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	Mon, 15 Jan 2024 02:37:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rP1yy-006rZd-2G
+	id 1rPCrI-007eDv-04
 	for ath12k@lists.infradead.org;
-	Sun, 14 Jan 2024 15:01:06 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 4AA5BB80A6C;
-	Sun, 14 Jan 2024 15:01:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A519C433C7;
-	Sun, 14 Jan 2024 15:01:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705244462;
-	bh=aRieRp79l/B2y5vjKinEX+iYJeaHanzDnbFW5Ls4f7c=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=Xe4D1PxZsT3269QVH2gTyELMT7aGAoEsaGU8YG8fdfFBHVPNNrrblvLV2MoCokdqg
-	 D1XUnCNMRzsvgdXhvczZx/35lGmUOQbtCs5U2zb5aZv2rtpQbmphTUJSCz/KbjQNNx
-	 5+ZwukFf9axgEUtA7mZGYogLkaZivYrVUAn8xXRQ0ZGLRipyvAcZIAt/DPeGYaieiS
-	 xQQeiLfA0iTewi5iApesC35R+hUr0rQ8z6INWobFL8LtOR09iA0vZkUqIcozYVohLY
-	 fihuo/wsCduIvBOj8oULK6w18TCjfyQVU6BIevIBXgZyL5KZHqrdNJnQTifROaLFIC
-	 y632ne2aIyD7A==
-Content-Type: text/plain; charset="utf-8"
+	Mon, 15 Jan 2024 02:37:54 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40F2Z89D030313;
+	Mon, 15 Jan 2024 02:37:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding:content-type; s=qcppdkim1; bh=NcD9Q2V
+	jbIEF7ScjFJ7rLFvw2qKQQu/jPeE56YndeZI=; b=apyyJhBRuSLWknHnzdroUpH
+	tNk367vkSXrt+TKXrjGUrqPunwWIAiIKK87YAJoDsylCHpJ4Gdf+qJbHYDkfZVci
+	UxFMJ0Adyv3990pH5FBj5BPGAiRZl62fY51cJjaXvA/vowVrbVH0FAU7iCOq78Qy
+	rQOCzYHFsusjql+golZ652GIK3XG5UxGuBPYD0p2GykiB4wqzdgPP3JX0tY7HdJJ
+	ZRPT94VilkwVyhb8tSUUHv1X7A8nyVAa19Jbs90hw7KwE7c4CZAWsbJ96tubPeR2
+	1QApuFEBe5X+r8wi5XXTO8sb1tNiIHw0R+lJvBrFh69vCiqJVg7TZCvYBU9F71w=
+	=
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vkmkcjf7d-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 15 Jan 2024 02:37:49 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40F2bbEs003596
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 15 Jan 2024 02:37:37 GMT
+Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Sun, 14 Jan 2024 18:37:35 -0800
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
+Subject: [PATCH] wifi: ath12k: add support for collecting firmware log
+Date: Mon, 15 Jan 2024 10:37:26 +0800
+Message-ID: <20240115023726.2866-1-quic_bqiang@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH v2 1/3] wifi: ath12k: Remove unnecessary struct qmi_txn
- initializers
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com>
-References: <20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>,
- <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170524445957.1421352.9255954399937351219.kvalo@kernel.org>
-Date: Sun, 14 Jan 2024 15:01:01 +0000 (UTC)
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: Z8shJz1jytAOGTPnuYfs3rt7fEO1pwyH
+X-Proofpoint-ORIG-GUID: Z8shJz1jytAOGTPnuYfs3rt7fEO1pwyH
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_02,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 spamscore=0
+ impostorscore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0
+ adultscore=0 clxscore=1015 malwarescore=0 mlxlogscore=999 suspectscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401150019
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240114_070104_894617_E8DFC0DE 
-X-CRM114-Status: UNSURE (   6.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240114_183752_303301_A13E4EA4 
+X-CRM114-Status: GOOD (  21.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,29 +95,265 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
+Currently there is no way to collect firmware log because firmware
+does not send it to host. Also host does not handle WMI_DIAG_EVENTID
+which is used by firmware to upload firmware log.
 
-> Currently most of the ath12k QMI messaging functions define their
-> struct qmi_txn variables with a {} initializer. However, all of these
-> functions subsequently call qmi_txn_init(), and the very first thing
-> that function does is zero the struct. Hence, the initializers are
-> unnecessary. Since these consume code space and cpu cycles, remove
-> them.
-> 
-> No functional changes, compile tested only.
-> 
-> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+So add support for it by firstly enabling firmware log upload via a
+QMI message, and secondly processing WMI DIAG event to expose it to
+userspace via trace event.
 
-3 patches applied to ath-next branch of ath.git, thanks.
+This change applies to both WCN7850 and QCN9274.
 
-59cf57ab3dee wifi: ath12k: Remove unnecessary struct qmi_txn initializers
-2e82b5f09a97 wifi: ath12k: Add missing qmi_txn_cancel() calls
-6d2b0a066941 wifi: ath12k: Use initializers for QMI message buffers
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/qmi.c   | 93 +++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/qmi.h   | 17 ++++-
+ drivers/net/wireless/ath/ath12k/trace.h | 29 +++++++-
+ drivers/net/wireless/ath/ath12k/wmi.c   | 11 ++-
+ 4 files changed, 147 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index c4c7f31a91cd..7f4c92540b20 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -1893,6 +1893,50 @@ static const struct qmi_elem_info qmi_wlanfw_fw_ready_ind_msg_v01_ei[] = {
+ 	},
+ };
+ 
++static const struct qmi_elem_info qmi_wlanfw_wlan_ini_req_msg_v01_ei[] = {
++	{
++		.data_type	= QMI_OPT_FLAG,
++		.elem_len	= 1,
++		.elem_size	= sizeof(u8),
++		.array_type	= NO_ARRAY,
++		.tlv_type	= 0x10,
++		.offset		= offsetof(struct qmi_wlanfw_wlan_ini_req_msg_v01,
++					   enablefwlog_valid),
++	},
++	{
++		.data_type	= QMI_UNSIGNED_1_BYTE,
++		.elem_len	= 1,
++		.elem_size	= sizeof(u8),
++		.array_type	= NO_ARRAY,
++		.tlv_type	= 0x10,
++		.offset		= offsetof(struct qmi_wlanfw_wlan_ini_req_msg_v01,
++					   enablefwlog),
++	},
++	{
++		.data_type	= QMI_EOTI,
++		.array_type	= NO_ARRAY,
++		.tlv_type	= QMI_COMMON_TLV_TYPE,
++	},
++};
++
++static const struct qmi_elem_info qmi_wlanfw_wlan_ini_resp_msg_v01_ei[] = {
++	{
++		.data_type	= QMI_STRUCT,
++		.elem_len	= 1,
++		.elem_size	= sizeof(struct qmi_response_type_v01),
++		.array_type	= NO_ARRAY,
++		.tlv_type	= 0x02,
++		.offset		= offsetof(struct qmi_wlanfw_wlan_ini_resp_msg_v01,
++					   resp),
++		.ei_array	= qmi_response_type_v01_ei,
++	},
++	{
++		.data_type	= QMI_EOTI,
++		.array_type	= NO_ARRAY,
++		.tlv_type	= QMI_COMMON_TLV_TYPE,
++	},
++};
++
+ static void ath12k_host_cap_parse_mlo(struct qmi_wlanfw_host_cap_req_msg_v01 *req)
+ {
+ 	req->mlo_capable_valid = 1;
+@@ -2721,6 +2765,49 @@ static int ath12k_qmi_wlanfw_wlan_cfg_send(struct ath12k_base *ab)
+ 	return ret;
+ }
+ 
++static int ath12k_qmi_wlanfw_wlan_ini_send(struct ath12k_base *ab, bool enable)
++{
++	int ret;
++	struct qmi_txn txn;
++	struct qmi_wlanfw_wlan_ini_req_msg_v01 req = {};
++	struct qmi_wlanfw_wlan_ini_resp_msg_v01 resp = {};
++
++	req.enablefwlog_valid = true;
++	req.enablefwlog = enable ? 1 : 0;
++
++	ret = qmi_txn_init(&ab->qmi.handle, &txn,
++			   qmi_wlanfw_wlan_ini_resp_msg_v01_ei, &resp);
++	if (ret < 0)
++		goto out;
++
++	ret = qmi_send_request(&ab->qmi.handle, NULL, &txn,
++			       ATH12K_QMI_WLANFW_WLAN_INI_REQ_V01,
++			       QMI_WLANFW_WLAN_INI_REQ_MSG_V01_MAX_LEN,
++			       qmi_wlanfw_wlan_ini_req_msg_v01_ei, &req);
++	if (ret < 0) {
++		qmi_txn_cancel(&txn);
++		ath12k_warn(ab, "qmi failed to send wlan ini request, err = %d\n",
++			    ret);
++		goto out;
++	}
++
++	ret = qmi_txn_wait(&txn, msecs_to_jiffies(ATH12K_QMI_WLANFW_TIMEOUT_MS));
++	if (ret < 0) {
++		ath12k_warn(ab, "qmi failed wlan ini request, err = %d\n", ret);
++		goto out;
++	}
++
++	if (resp.resp.result != QMI_RESULT_SUCCESS_V01) {
++		ath12k_warn(ab, "qmi wlan ini request failed, result: %d, err: %d\n",
++			    resp.resp.result, resp.resp.error);
++		ret = -EINVAL;
++		goto out;
++	}
++
++out:
++	return ret;
++}
++
+ void ath12k_qmi_firmware_stop(struct ath12k_base *ab)
+ {
+ 	int ret;
+@@ -2737,6 +2824,12 @@ int ath12k_qmi_firmware_start(struct ath12k_base *ab,
+ {
+ 	int ret;
+ 
++	ret = ath12k_qmi_wlanfw_wlan_ini_send(ab, true);
++	if (ret < 0) {
++		ath12k_warn(ab, "qmi failed to send wlan fw ini:%d\n", ret);
++		return ret;
++	}
++
+ 	ret = ath12k_qmi_wlanfw_wlan_cfg_send(ab);
+ 	if (ret < 0) {
+ 		ath12k_warn(ab, "qmi failed to send wlan cfg:%d\n", ret);
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
+index e25bbaa125e8..86fc282ab7b0 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.h
++++ b/drivers/net/wireless/ath/ath12k/qmi.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #ifndef ATH12K_QMI_H
+@@ -559,6 +559,21 @@ struct qmi_wlanfw_wlan_cfg_resp_msg_v01 {
+ 	struct qmi_response_type_v01 resp;
+ };
+ 
++#define ATH12K_QMI_WLANFW_WLAN_INI_REQ_V01	0x002F
++#define ATH12K_QMI_WLANFW_WLAN_INI_RESP_V01	0x002F
++#define QMI_WLANFW_WLAN_INI_REQ_MSG_V01_MAX_LEN		7
++#define QMI_WLANFW_WLAN_INI_RESP_MSG_V01_MAX_LEN	7
++
++struct qmi_wlanfw_wlan_ini_req_msg_v01 {
++	/* Must be set to true if enablefwlog is being passed */
++	u8 enablefwlog_valid;
++	u8 enablefwlog;
++};
++
++struct qmi_wlanfw_wlan_ini_resp_msg_v01 {
++	struct qmi_response_type_v01 resp;
++};
++
+ int ath12k_qmi_firmware_start(struct ath12k_base *ab,
+ 			      u32 mode);
+ void ath12k_qmi_firmware_stop(struct ath12k_base *ab);
+diff --git a/drivers/net/wireless/ath/ath12k/trace.h b/drivers/net/wireless/ath/ath12k/trace.h
+index f72096684b74..240737e1542d 100644
+--- a/drivers/net/wireless/ath/ath12k/trace.h
++++ b/drivers/net/wireless/ath/ath12k/trace.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #if !defined(_TRACE_H_) || defined(TRACE_HEADER_MULTI_READ)
+@@ -140,6 +140,33 @@ TRACE_EVENT(ath12k_htt_rxdesc,
+ 	 )
+ );
+ 
++TRACE_EVENT(ath12k_wmi_diag,
++	    TP_PROTO(struct ath12k_base *ab, const void *data, size_t len),
++
++	TP_ARGS(ab, data, len),
++
++	TP_STRUCT__entry(
++		__string(device, dev_name(ab->dev))
++		__string(driver, dev_driver_string(ab->dev))
++		__field(u16, len)
++		__dynamic_array(u8, data, len)
++	),
++
++	TP_fast_assign(
++		__assign_str(device, dev_name(ab->dev));
++		__assign_str(driver, dev_driver_string(ab->dev));
++		__entry->len = len;
++		memcpy(__get_dynamic_array(data), data, len);
++	),
++
++	TP_printk(
++		"%s %s tlv diag len %d",
++		__get_str(driver),
++		__get_str(device),
++		__entry->len
++	)
++);
++
+ #endif /* _TRACE_H_ || TRACE_HEADER_MULTI_READ*/
+ 
+ /* we don't want to use include/trace/events */
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 553d2566b3f7..3776f9ea94db 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ #include <linux/skbuff.h>
+ #include <linux/ctype.h>
+@@ -6661,6 +6661,12 @@ static void ath12k_rfkill_state_change_event(struct ath12k_base *ab,
+ 	kfree(tb);
+ }
+ 
++static void
++ath12k_wmi_diag_event(struct ath12k_base *ab, struct sk_buff *skb)
++{
++	trace_ath12k_wmi_diag(ab, skb->data, skb->len);
++}
++
+ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	struct wmi_cmd_hdr *cmd_hdr;
+@@ -6771,6 +6777,9 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ 	case WMI_VDEV_DELETE_RESP_EVENTID:
+ 		ath12k_vdev_delete_resp_event(ab, skb);
+ 		break;
++	case WMI_DIAG_EVENTID:
++		ath12k_wmi_diag_event(ab, skb);
++		break;
+ 	/* TODO: Add remaining events */
+ 	default:
+ 		ath12k_dbg(ab, ATH12K_DBG_WMI, "Unknown eventid: 0x%x\n", id);
+
+base-commit: b7e181d8d8483ade26ce3b15b957ca5bf9653b72
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240111-qmi-cleanup-v2-1-53343af953d5@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.25.1
 
 
