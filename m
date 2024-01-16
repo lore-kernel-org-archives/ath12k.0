@@ -4,61 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1057C3DA79
-	for <ath12k@archiver.kernel.org>; Mon, 15 Jan 2024 16:19:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D03DFC4706C
+	for <ath12k@archiver.kernel.org>; Tue, 16 Jan 2024 04:46:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gpXGTmG95W3tUSykO5LZoothpBmZ/Dd2MuSkHy4HFjQ=; b=WIh89vmtnr2mAX7Gzk6lFUK0sq
-	fHNJZqXQDFS0wu1oRoRFXyl34z+FjdPUXMFXKrZcwkol3wG8h5lnLRfEip6hkSgso4JsgzUOUef/N
-	Cv9LNKNNpmo2hUZLhhRAKU7YXL1zH4RyqIIrsc6yuiIGiBTG/jCIKOR+0mhhigTYG7Ha2B8NPT+NT
-	rJXQNLKDwFg4q+o7QMpYThomgxhoKdC59fg+bswXpehYzblkF6BvfUQdrY1qIqvPAMiQWhV5Eb/mI
-	MxckT1kMSosZ3EF/WM0EU/c647HGOKGdHnvAbGYpNNEa9yvk7OczsCR+dVXsyAjJLyv4i52gQHUfP
-	LOF0PzUw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fwRt4ShUkKf5hBERPdC1lT0Bavy272wqYTsEgEKcGKU=; b=W5A6+MYluS40lRWGWfxBaMpiG1
+	q1WEHzcDRsVhmv2RqAkeC5+xlXHiJIyzkEWAILlK8nu3kdRJByI3REzIh75PhcwtKSs/82OzbyLrU
+	SPxuOcFbne2REIKvfHM61gaIhLsXTvkmhFAYxO8tJj7bV1A04UUv5illfLgKx2VG4zOOFZApPu6LX
+	mjfdRMfhbQDv3asqcp4+7hPVIe41GooBxhr8VC/rbJxT8n3YyFraTadT52m4IeIBxF+F7ORZw++OV
+	sOmjQa7xe0cIXWbmPm4cMlbrtfVGXwUbpOjsr/BWuJhbLsNCtDCMp9TucxfOWdVDO6QiH7L3mSkWe
+	QomhVhag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPPgd-009cyy-25
+	id 1rPbL0-00Awpf-1O
 	for ath12k@archiver.kernel.org;
-	Mon, 15 Jan 2024 16:19:43 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	Tue, 16 Jan 2024 04:46:10 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPPga-009cxi-1N
+	id 1rPbKt-00AwpD-2B
 	for ath12k@lists.infradead.org;
-	Mon, 15 Jan 2024 16:19:43 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id DDD47B8013C;
-	Mon, 15 Jan 2024 16:19:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D906C433F1;
-	Mon, 15 Jan 2024 16:19:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705335578;
-	bh=QiSgZSolxUPSfOYbyLUUHLTy4CLjDRtp62kNYexLlyA=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=X5bvSBwzhpwwuM9OTTEWa3LR43D6ATbj7nHrPlmN1FTD7QAsb0S7HG9+8VuCTqQYJ
-	 /iLdfdR1FJ92c2odOR6xTcg38Ang2XZVV694FtvUE0eBgd0PQ0g7zHhF9oDyzywFAY
-	 nO3amy6rKUtR97rK7qwb2snkKJPDgtHhZRRGQ+4kobY1DW2Jb4M5cFlWY8GthHK+vB
-	 1kGfHvWyDs3f8v80k9BVb6UYkWYB8KRqyUVCaF3r48/Pc0Uh3uwAECDHV1N7FTMgI5
-	 xFusOOFXmSuIQ2QjuNL5BlKFoqnyXcJ1bh+jKIXRm4E9FEtIRzcgycmq9ZTzRdYhEX
-	 bXrRiM+figKAA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v2 0/2] wifi: ath12k: Introduce hw abstraction
-References: <20240112024214.3481840-1-quic_periyasa@quicinc.com>
-Date: Mon, 15 Jan 2024 18:19:35 +0200
-In-Reply-To: <20240112024214.3481840-1-quic_periyasa@quicinc.com> (Karthikeyan
-	Periyasamy's message of "Fri, 12 Jan 2024 08:12:12 +0530")
-Message-ID: <877cka7enc.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Tue, 16 Jan 2024 04:46:08 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40G48CLI003035;
+	Tue, 16 Jan 2024 04:46:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=fwRt4ShUkKf5hBERPdC1lT0Bavy272wqYTsEgEKcGKU=; b=SC
+	swTzkwhBGBXpuqyMR6GfVuvSfTfUFhdmpCv6HQU5H92yAybC3ke1d4YyssAuTQXG
+	3pNd48jy3lj0NAwliY7tQD0rFBP83uEVMHD+fVZjgrxmQ81j6OwJuHoPOUAQXuKB
+	qMsgwwk6Vgl8zaAlLzFwe6pSd9vBfY890tL1pxks4zg0jOaWW4rjgckS1qy1aO5l
+	G11rTMcsZtRXimN7TbRibdf7FeuJ+JbO9eGh3QeXwL6DdC98zJ4C5KbMM9h3j67n
+	EV3dOjfSOKrL1zr+bb0BnKDUFDim1o0WyOYmL7yBaNR54VkAiQG7HmX4W6FPb90t
+	eTIU/s86RG0rNAKMMpUQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vn2bjhv6b-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 16 Jan 2024 04:45:59 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40G4jxUs029630
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 16 Jan 2024 04:45:59 GMT
+Received: from [10.50.41.2] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 15 Jan
+ 2024 20:45:57 -0800
+Message-ID: <de5a4bbc-3533-7666-c079-9164ea98dd27@quicinc.com>
+Date: Tue, 16 Jan 2024 10:15:52 +0530
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Subject: Re: [PATCH 01/12] wifi: ath12k: add multiple radio support in a
+ single MAC HW un/register
+Content-Language: en-US
+To: Jeff Johnson <quic_jjohnson@quicinc.com>,
+        Sriram R
+	<quic_srirrama@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240111045045.28377-1-quic_srirrama@quicinc.com>
+ <20240111045045.28377-2-quic_srirrama@quicinc.com>
+ <aee0419e-c443-4b5d-957c-6c88dd3d4a71@quicinc.com>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <aee0419e-c443-4b5d-957c-6c88dd3d4a71@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: BcYh23J5ipajN6ibLlEM9IN6ev7gfJEN
+X-Proofpoint-ORIG-GUID: BcYh23J5ipajN6ibLlEM9IN6ev7gfJEN
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2023-12-09_01,2023-12-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ priorityscore=1501 mlxscore=0 phishscore=0 spamscore=0 malwarescore=0
+ mlxlogscore=814 adultscore=0 lowpriorityscore=0 bulkscore=0 suspectscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401160034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240115_081940_618359_896305C5 
-X-CRM114-Status: UNSURE (   8.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240115_204603_752196_CDCE345A 
+X-CRM114-Status: GOOD (  16.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,32 +104,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
 
-> To support multi link operation (MLO), need to move from the multi wiphy
-> model to a single wiphy model. However, the single wiphy model allows
-> multiple link/radio to be exposed by the same mac80211 hw. So introduce
-> a new container (ath12k_hw) structure. This approach improves scalability
-> for future multi link operation support.
+On 1/12/2024 10:33 PM, Jeff Johnson wrote:
+> On 1/10/2024 8:50 PM, Sriram R wrote:
+> ...
 >
-> v2:
->  - Rebased on pending branch as per jeff comments
->
-> Note: Raised on top of pending branch
->
-> Karthikeyan Periyasamy (2):
->   wifi: ath12k: Refactor the mac80211 hw access from link/radio
->   wifi: ath12k: Introduce the container for mac80211 hw
+>> @@ -7553,10 +7553,12 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+>>   
+>>   static u16 ath12k_mac_get_ifmodes(struct ath12k_hw *ah)
+>>   {
+>> -	struct ath12k *ar = ath12k_ah_to_ar(ah);
+>> +	struct ath12k *ar;
+>> +	int i;
+>>   	u16 interface_modes = U16_MAX;
+>>   
+>> -	interface_modes &= ar->ab->hw_params->interface_modes;
+>> +	for_each_ar(i, ah, ar)
+>> +		interface_modes &= ar->ab->hw_params->interface_modes;
+> This logic sets interface_modes to be the modes that are supported on
+> every radio (starts with all modes supported and then masks off the ones
+> that are not supported on a given radio). That means that if radio 0
+> supports a mode that radio 1 does not support, then we don't advertise
+> support for that mode. Just want to verify that is the correct logic,
+> and that instead we don't want to start with no modes supported and then
+> OR in the ones that are supported so that we get the list of modes that
+> are supported on ANY radio instead of ALL radios.
 
-In the pending branch I made changes to this patchset due to my changes
-in the dependency patchsets:
 
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=9a0e461254022db80d13f9a4e4046280bfd2bd9c
+Yes, interface_modes to be the modes that are supported on every radio 
+not any radio.
 
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=f7f6382c4e81f1de141d687e32a0159ee1a3f11c
+Any radio support can be add in the future ath12k driver once the hw 
+specific interface mode support is added in mac80211/cfg80211.
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+>>   
+>>   	return interface_modes == U16_MAX ? 0 : interface_modes;
+>>   }
+>> @@ -7564,15 +7566,19 @@ static u16 ath12k_mac_get_ifmodes(struct ath12k_hw *ah)
+>>   static bool ath12k_mac_is_iface_mode_enable(struct ath12k_hw *ah,
+>>   					    enum nl80211_iftype type)
+>>   {
+>> -	struct ath12k *ar = ath12k_ah_to_ar(ah);
+>> +	struct ath12k *ar;
+>> +	int i;
+>>   	u16 interface_modes, mode;
+>>   	bool is_enable = true;
+>>   
+>>   	mode = BIT(type);
+>> -
+>> -	interface_modes = ar->ab->hw_params->interface_modes;
+>> -	if (!(interface_modes & mode))
+>> -		is_enable = false;
+>> +	for_each_ar(i, ah, ar) {
+>> +		interface_modes = ar->ab->hw_params->interface_modes;
+>> +		if (!(interface_modes & mode)) {
+>> +			is_enable = false;
+> note that in the example I mentioned above, this logic could say a given
+> mode is enabled even though the bit isn't set in the interface_modes
+> listed above
+
+
+The condition check "if (!(interface_modes & mode))" become true when 
+the the bit isn't set in the interface_modes. So no issues.
+
+
+Thanks,
+
+Karthikeyan
+
 
