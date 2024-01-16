@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BDA2C4706C
-	for <ath12k@archiver.kernel.org>; Tue, 16 Jan 2024 12:20:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08506C47077
+	for <ath12k@archiver.kernel.org>; Tue, 16 Jan 2024 12:22:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zUF5MbMyE0Dr0MHZ0h16LctGyxWz967Rgr8zVHte0rs=; b=nMXkmDt1A758EzpoGoADywlKQa
-	Ps1XFHtbfTBTuTNP1nfpGVU8cwr+mSCoxV5lved8zKvniCIto/6XvJ4sdsnQ2hQY0ETmMOb2RbFJD
-	NKUqYBriJWXGD7l3unfmvoE8jRUqFbwiU0wjeZ05zsJd+X2Mx/NAJpyvi18Ka1L81ezxwZUXDvCkL
-	Lyqd+pgXggUSybq9dxL4zuhXlaNku5u6lUN0iXtHBzi2ER2imIbsVbroh1ham0YxId8hCJWfSPM9l
-	PTGuLuru5QXV+vE2D4mJ+Csc3BcpCzyhoDZLh3myBjQgyEu9Z0m1ZN4Xc2vJxxMrC61TlCcQ1mupx
-	TXGzjNWw==;
+	bh=Acga5plFFSx2JaEUnvLzqlDB1a2tLE6wffbV1Arc25w=; b=KKR6nebBZX/wkAohsSJ1TtP8f1
+	x4FfnOvMRBUkaUcHNIkKXylOXAo4JEhuiIU7rTXj8uimN8lb9L/LBWqX20+/lgBaS7JDvqO/lstHt
+	BfwGeFTmf0fFy9SXOKd9Ov32Bjj9ShZ7hHIIUcEdl7tw1p4qF9mbww+hz2FcnZ+CTYfG6pSdeWQGq
+	QJ7Tb71/wRsK7yJw4cJjSnW0GGP1Xa2p0jEmB7Cbtzi947nAY/fl222g8OtMK9CIaMhhjp8NNKCyV
+	GY36GmYmnBnxzM4/WCML5uT1Sh93UVWvfRL/DKaSzMCGkEmH1mh5KULGuiPjo6iKKwFWfo005U76L
+	RNk2Orcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPiQK-00C3gy-2Y
+	id 1rPiSE-00C3pH-2C
 	for ath12k@archiver.kernel.org;
-	Tue, 16 Jan 2024 12:20:08 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	Tue, 16 Jan 2024 12:22:06 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPiQH-00C3gT-2u
+	id 1rPiSC-00C3p0-1a
 	for ath12k@lists.infradead.org;
-	Tue, 16 Jan 2024 12:20:07 +0000
+	Tue, 16 Jan 2024 12:22:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 4ACA3B80D4A;
-	Tue, 16 Jan 2024 12:20:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B52A4C433C7;
-	Tue, 16 Jan 2024 12:20:02 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 9D827CE17A3;
+	Tue, 16 Jan 2024 12:22:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEACEC433C7;
+	Tue, 16 Jan 2024 12:22:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705407603;
-	bh=0CmDpSQc0Up0qnAibGSGxlDMH4yJggWHuZlFHOc0WmE=;
+	s=k20201202; t=1705407721;
+	bh=dR8CBQ3B2SO+JTqS8n8ZkaY08urpncIcQX5n8mMD14I=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=fZ9RZsgR5qpQOMImVAiv0M4+gLu8eXZDGqlKQpU56XO6/E7oB0aMWCog2Qdd9h6GV
-	 QF2DP5BIXDkrAmctozG85PoZyQE2hldjJ8K5ybnxQ+H2aRFbEp9tVURM6A2hE4/xAp
-	 5gQs6zCuNWuybXI9HIm+8fohhelPSJpTBXVpH/mdXPI3Q97PyKHYrhgDU3GxZDvSCR
-	 932v/bHRaF8iulZm3YNV3YMLh2m1QoFlJLW+TG7nZk3IQRxtiH7dTOy9eB/Eb7bPjr
-	 KineJVsj1DlCD4bGFlcUGT/bk1P0Jwdhm2fdVqNkRm/nWpU8lBXCSjXIiuweNPrGn3
-	 Ie3A2e1grTGig==
+	b=HXYZrAAgTzgRtdedMEO6qtsZk9H9tShl1+DbO23j7R174H6j7RUK5TVwkoJ7YjlxL
+	 sKgp0H2TKNHZCJpjCXG0JLJkgFUVoOG/Vdc0YL/uSmI0E9ieMS5r2O0xHYVheJXioO
+	 ddMYtMVq52Ve7cdh17svYu6PouBdiG1MHKcXdTuiSpwLvpu4y3s2VYo9OjkPxcGar8
+	 jJY0UOy6bg3UPebcZMVFxumX7zRLritzzNBQul61NATWWFKgCVrcmcR9anPR4VR7ed
+	 JL0ixTHT3/UH+4iItKi91EYUCvQ/kZo/tAlZ9dUtRuSKexvGEOgbRQ/f8BVmXR7De3
+	 rBcj3y5WAIsRQ==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH 1/4] wifi: ath12k: Refactor the DP pdev pre alloc call
- sequence
+Subject: Re: [PATCH 01/10] wifi: ath12k: Refactor mac callback of config
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20231206034920.1037449-2-quic_periyasa@quicinc.com>
-References: <20231206034920.1037449-2-quic_periyasa@quicinc.com>
+In-Reply-To: <20240103063731.3356060-2-quic_periyasa@quicinc.com>
+References: <20240103063731.3356060-2-quic_periyasa@quicinc.com>
 To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
  Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170540760056.1846129.3705979634876364963.kvalo@kernel.org>
-Date: Tue, 16 Jan 2024 12:20:02 +0000 (UTC)
+Message-ID: <170540771884.1846129.16513288629933447199.kvalo@kernel.org>
+Date: Tue, 16 Jan 2024 12:22:00 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_042006_097963_388DC8D2 
-X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-CacheID: sfid-20240116_042204_731267_BA29383B 
+X-CRM114-Status: UNSURE (   5.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,29 +77,32 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
 
-> Currently, the data path pdev pre alloc and mac allocate are called
-> separately from the core start procedure. The data path pdev pre alloc
-> can be called from the mac allocate procedure itself since initialization
-> related to pdev happens in the mac allocate procedure. So move the caller
-> of DP pdev pre alloc from the core start procedure to the mac allocate
-> procedure. This change helps in the future to easily decouple the mac
-> allocate procedure from core start handling in order to support MLO in
-> multi chip.
+> To support single wiphy abstraction, introduce link/radio specific helper
+> function in the mac80211 callback config(). This way, the callback can be
+> extended to handle multiple link/radio in the future.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
 > Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-4 patches applied to ath-next branch of ath.git, thanks.
+10 patches applied to ath-next branch of ath.git, thanks.
 
-eaf9f17b861b wifi: ath12k: relocate ath12k_dp_pdev_pre_alloc() call
-8a742a79f90e wifi: ath12k: refactor ath12k_mac_allocate() and ath12k_mac_destroy()
-d2b7a6e5fa1c wifi: ath12k: refactor ath12k_mac_setup_channels_rates()
-d786c9f5fe34 wifi: ath12k: refactor ath12k_mac_register() and ath12k_mac_unregister()
+3e141f0034d5 wifi: ath12k: refactor ath12k_mac_op_config()
+ce20a10fdff4 wifi: ath12k: refactor ath12k_bss_assoc()
+00c9b1a6d21d wifi: ath12k: refactor ath12k_mac_op_conf_tx()
+e1e275a69906 wifi: ath12k: refactor ath12k_mac_op_start()
+3bbc9c7429ff wifi: ath12k: refactor ath12k_mac_op_stop()
+92b30bb39786 wifi: ath12k: refactor ath12k_mac_op_update_vif_offload()
+d629b0c149c9 wifi: ath12k: refactor ath12k_mac_op_configure_filter()
+5b1b5dbfd6a6 wifi: ath12k: refactor ath12k_mac_op_ampdu_action()
+b33dcbe8d53d wifi: ath12k: refactor ath12k_mac_op_flush()
+5bdfb8c9db22 wifi: ath12k: ath12k_start_vdev_delay(): convert to use ar
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20231206034920.1037449-2-quic_periyasa@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240103063731.3356060-2-quic_periyasa@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
