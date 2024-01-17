@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1A1CC47258
-	for <ath12k@archiver.kernel.org>; Wed, 17 Jan 2024 11:34:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61C19C47258
+	for <ath12k@archiver.kernel.org>; Wed, 17 Jan 2024 12:25:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uOwGgA7CuNK/bgZgI9jpUuqpi4lVV0FTcpx+xraXjeM=; b=ohuijkFdhs4YPTS3XiF0ZZDYkh
-	J+uQ3uFDaY+tIGOKpct/9HaSZ4plz8ZFaBJLsqrWyePghRJbJnEbtIHaUfDXzG13maW1Vl+0ji9ft
-	7vF5HxvfPaWxL00kWDueeH/OOAUwW6w8zznA4sVgCUb96zPeKyBVeZOSc8vCspsvCIBa/wXBijqVO
-	brM63FUJHOiSWY8SVR7d+HqpCP1b3Pkpww6nwNtZeacnsfc9JRfpT3CiarEisXMqP8n2drKgS6aQl
-	V2ONgD1gAzhA8J+tQ6OPSo/VkPs9dyY3BqYNS2WozgbstdWoBYri62hvrz/bs8vRB8tAt3Bo4TyiZ
-	Q3lJd8VQ==;
+	bh=nkDfuytSSTKYDJ0qedzy5Gz2QN5nCbZlT96ROh4NK30=; b=XEpJWIxfE684LS382eOLb1545+
+	hx6ZbWYlLT99FqviAYPeQxvlk8U5AHl5FBsI5DkyMDZZpKEd1pysZ0mPPe4Z6Na/zKknQn/d3xceo
+	9azZ//Q8XU4IDZ9NnP1BFkiv4IhiTcus1/FlM9YEpPqxyulnEDHTMz2V8L3gjdf/P7curi1zkN+8v
+	bz9rIQUgH6Yfq45JfIOZY1JyWOgEtBMV2vVSwnhWsMz3huytqfNvMdDI/PJGNMpfCottuUipi9gaX
+	QoE84v3CmG5ZY0IJK6F+4n4MpN+iAk/2nG/rAmdhVZADiG2g/ghipx3vJKPu9AVwH/IR6SkxvGQwK
+	LQ1RIh1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ4BT-00FUYE-22
+	id 1rQ4zJ-00Fsyl-32
 	for ath12k@archiver.kernel.org;
-	Wed, 17 Jan 2024 11:34:15 +0000
+	Wed, 17 Jan 2024 12:25:45 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ4BQ-00FUWQ-0c
+	id 1rQ4zF-00FsuT-1u
 	for ath12k@lists.infradead.org;
-	Wed, 17 Jan 2024 11:34:14 +0000
+	Wed, 17 Jan 2024 12:25:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 81B53CE1BB4;
-	Wed, 17 Jan 2024 11:34:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 482F1C433F1;
-	Wed, 17 Jan 2024 11:34:08 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 5C24DCE0AC6;
+	Wed, 17 Jan 2024 12:25:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D28C4C433F1;
+	Wed, 17 Jan 2024 12:25:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705491249;
-	bh=pPKNBBEMNaE9AOSgKnLD5IFuAu+Lw4zwpaYb11q4AVA=;
+	s=k20201202; t=1705494336;
+	bh=gVt7/Sn2odT1iG7XbXOMPV86sBp35yRM/f0EfvTfyNo=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=pKe5wN71vM4bB7WDKT0WaRco/mNR34Tqp/fHZmTNulsVlXkC+Tb53d1kEP7xxXMpi
-	 BRx8UP6+Mdxp8PlU1b+AIjmwkZaq8L8Sv2Vx4flgabItKJfxA8IxOoCjYCJarPh/UU
-	 j0KBFtvPWrO47wVvuCLimvAV5MQL7LEIWaIAAhemyG1iEta/nyKS1UHAJsst3ucIo+
-	 4NVPvUkm7RjF5s8Tfc2z90vFgLoKxORMjkbps2IwYkvwnL61im9XqrsZalWy67TluV
-	 2c5RdBwjWWCWxrI+2zbjyGyjqAX24GPdVjpb4RaX5lpfzWSSRQdNzeEsU4sTMosJQS
-	 qcwygC9ofc9rA==
+	b=g8OKgXvPNplxpaU8bvEEywnpd4mb6pAxdXPNcbVVdQDC/Fyp/dO9puraoQ8B9DJCB
+	 ArStu5YLvRaBaX53hKeG3AJfbrw+6TAzO/0Oda9NGaauux2egmqK/TdQF8W5ZJT5gm
+	 a0mdBgFLenWVGGSuRYXuBIClAhx6Mhe4iu/mHWVfNfVKXwGqSqqwL/hvVLaz25alqQ
+	 caxmdHm5+kLVlT3F4czeaXOEb6SNa9b5ZUdp0xAree0g1ivsUGO3rkWs5SlcEkbbjY
+	 Uo9/e/WR/sFHx7NTpF/zMc728Ev+GX+A4OKMYDiGTZ+wIxCnhzV671uH+hIa0S50yF
+	 qSaRPSXQupk5A==
 From: Kalle Valo <kvalo@kernel.org>
-To: Lingbo Kong <quic_lingbok@quicinc.com>
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v7 0/4] wifi: ath12k: implement some functionalities
- through reading ACPI Table
-References: <20231013114434.81648-1-quic_lingbok@quicinc.com>
-Date: Wed, 17 Jan 2024 13:34:06 +0200
-In-Reply-To: <20231013114434.81648-1-quic_lingbok@quicinc.com> (Lingbo Kong's
-	message of "Fri, 13 Oct 2023 07:44:30 -0400")
-Message-ID: <87ply05h3l.fsf@kernel.org>
+Subject: Re: [PATCH v2 00/12] wifi: ath12k: QCN9274 dualmac bring up
+References: <20240105195639.3217739-1-quic_rajkbhag@quicinc.com>
+Date: Wed, 17 Jan 2024 14:25:33 +0200
+In-Reply-To: <20240105195639.3217739-1-quic_rajkbhag@quicinc.com> (Raj Kumar
+	Bhagat's message of "Sat, 6 Jan 2024 01:26:27 +0530")
+Message-ID: <87le8o5epu.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240117_033412_431297_3E9F91EB 
-X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-CacheID: sfid-20240117_042542_467169_AED4E205 
+X-CRM114-Status: UNSURE (   8.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,33 +73,20 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Lingbo Kong <quic_lingbok@quicinc.com> writes:
+Raj Kumar Bhagat <quic_rajkbhag@quicinc.com> writes:
 
-> Through reading ACPI table, implement Time-Average-SAR(TAS), BIOS SAR,
-> configuration of CCA threshold and band edge channel power functionalities.
+> QCN9274 Ath12k chipset can support single-mac or dualmac architecture.
+> Currently, Ath12k driver supports only the single-mac QCN9274
+> architecture.
+>
+> Hence, add support for dualmac QCN9274 chipset.
+>
+> Depends-On: wifi: ath12k: add firmware-2.bin support
 
-The coding style felt more like for a vendor driver style than upstream
-driver so I made quite a lot of changes, too many to list. But for
-example I did changes in naming, code compiled only if CONFIG_ACPI is
-enabled and whitespace cleanup.
+There's no base-commit so it will be very difficult for me to try to fix
+the conflicts. Please ALWAYS use --base, makes it easier for everyone.
 
-The updated patches are here:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=98dbc0c37b480117959221cafa6326e54667a53a
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=c3d84c46ff4029fdfe15036be4f0a0d1839d31c6
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=04ec37eb823d9d9cba01531a938c53e8a142486f
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=fdd99edcb8ce2433fd243b5ae1b57668eab48ef0
-
-I still have at least few things to do which I'll try to do soon:
-
-o find a correct place to call register()&unregister()
-
-o move wmi functions up in wmi.c
-
-o consolidate wmi functions into two functions? (duplicated code)
-
-I'll let you know once I'm done. As I don't have any device with these
-ACPI settings I would need help with testing.
+I'll mark this as Changes Requested and assume there will be v3.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
