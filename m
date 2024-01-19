@@ -4,89 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F17DC4707B
-	for <ath12k@archiver.kernel.org>; Thu, 18 Jan 2024 16:03:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E0FCC47DAF
+	for <ath12k@archiver.kernel.org>; Fri, 19 Jan 2024 11:37:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=K2xpEeGSfJVjk46W2XfRvf92gdmwu5SggqYR//qJ5yI=; b=CSsWcd1EfJu8H5jWYxZsV4xq8s
-	+GSjHePV09/krsnfLVSI3BkfYrHOH6WN98WdJb6CjLjE/45R0wwITqhTMnnkV/S6CbG+/p8gmGEpN
-	R1+zfNTKM8x6Y8cmvDd+mfGANuO4QsQPVFO9bgK7CAGUb53ui4D1prHdB/GCZI01Qdqj1xf8BP1df
-	H5DaGtVBvgvff2YSAYryfVVDC4wPI5N/m1ajtlZoUYN6Iy2teqnhypzTF1LBAGb3AkiHL30MdrAA3
-	t++uqRcWASg8ih8jusLtN3yyqLgNuxJsvAHak4ekzjbN+5Nq9nMB1hSJzIOxRTnfcrmGgnTVtqiM/
-	tOGxdcRQ==;
+	Content-Type:MIME-Version:Message-ID:Subject:From:To:Date:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=674YX3HbIgK5RQLd+6rljfEjT8b53igO4c/gmNk99Zw=; b=VBiFQg9hqMK0JExvXnnWhqi4DY
+	VAF57wzdS1NVlnZVG8/2h97okH0EOyJXnXv0IFG6jbPzebcTxJdNgGjnPfdQPt7KmhW36FVAGFXmG
+	Rv0JJYS0p5+HlVKxuANtmB96EFJHnlIHa7W0aEivR/HwnzCbhi5upZyjtNCzFjh4XHmqjGP2zRuIM
+	J1vtWCJzBp/G6JDWMKQYbVN+h4k9d6VAfzpfWuA6UR6FYMXYgMYLcVcHjy7CWFsNJXL+yej5xy/7D
+	Pq5rXL7xme1fT0ULty7F4lqyE7EdTcM3UyGvdUfkKFBhbcCtNwLuRQhCFBP3ZiPH+T4kRUTIAO1eZ
+	VSOiQOqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQUrp-003C1E-0S
+	id 1rQnBG-005FVJ-0X
 	for ath12k@archiver.kernel.org;
-	Thu, 18 Jan 2024 16:03:45 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 19 Jan 2024 11:37:02 +0000
+Received: from mail-40135.protonmail.ch ([185.70.40.135])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQUrm-003Bzr-2D
+	id 1rQnBD-005FTH-1R
 	for ath12k@lists.infradead.org;
-	Thu, 18 Jan 2024 16:03:44 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40IFt9TH029504;
-	Thu, 18 Jan 2024 16:03:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=K2xpEeGSfJVjk46W2XfRvf92gdmwu5SggqYR//qJ5yI=; b=E5
-	IaCDK/irI8nE3S+WVcBGhl5Liq47Oe3pexFo72IKFidpDhzazSw9RiSSIkmvhGbb
-	fxUvQyaM52/z9+S7i9/ZyEtvaOvoA2xrPWWKqGX3nxzHofZ18Aklc7Ec1ti26qwu
-	k28IfKZ0cniJf3FutI8T4G+2WVAH2dgogfIqnJIOksQIoMhe0S8skmnWx+4AdPOV
-	wp0AXEtF9d8yeSmhGukh+aTytXY9/yyC8HrlMQIoYHKhU7q/4bRSz0Uke6yX6H2F
-	jOhgCctPFOcesor9IaPSm/x70bpMKKarJ55SapokWhHy15dTitVRM7HkcD08v7Sr
-	Hkq2yWuKDE1TqFK+6dOQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vq6ub825q-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Jan 2024 16:03:39 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40IG3cYK016793
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Jan 2024 16:03:38 GMT
-Received: from [10.110.99.42] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 18 Jan
- 2024 08:03:38 -0800
-Message-ID: <1c57b675-1f56-430a-8bf9-4fcc89528bcd@quicinc.com>
-Date: Thu, 18 Jan 2024 08:03:38 -0800
+	Fri, 19 Jan 2024 11:37:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=protonmail.com;
+	s=protonmail3; t=1705664215; x=1705923415;
+	bh=674YX3HbIgK5RQLd+6rljfEjT8b53igO4c/gmNk99Zw=;
+	h=Date:To:From:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=MWSBgW0AHDz2xNeXZ96tg2JZJvlDicQT7l77KrjwmM+npDR+gnTbNfeh6Z+Yugekk
+	 xHi+i8KDsr/RW+2zdxn2vFndihQmS6yHPKUWXcOW2H/ljKg15Y3GnUhBhnB9PlzgGu
+	 QZCK32EBOgrbFCsneEtDRLwCmB2uDr+Me5401gpxcZ8DczC3ns5kHsaZRiQPRdrpIn
+	 mFeelWEqtWCDphpCDsLe4gXFAleqohfz7sue+1+thf/Esyg1QGPCJ4ImW54ecAzdkA
+	 aQxT7F47WqYIDLomWOxS+aLlCI3HS1ETqERmG0PNvoDKDLwgN59ZCwZPR6JXVMSrTr
+	 AptIzo73LwYoQ==
+Date: Fri, 19 Jan 2024 11:36:48 +0000
+To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+From: GreyXor <greyxor@protonmail.com>
+Subject: Difference between WCN7850 and WCN7851 ?
+Message-ID: <r_LAIMwF1YgGlpJWWQBKCsCqurisqY5ZzmPQ0QesUAXwqziwlbTWt8NLn0DA2fJAL9ukIX2T8kHs0pOABysXUcMDOh5RdRgBu4mAg6xCeuM=@protonmail.com>
+Feedback-ID: 1917010:user:proton
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] wifi: ath12k: Introduce the container for mac80211
- hw
-Content-Language: en-US
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240118010320.3918136-1-quic_periyasa@quicinc.com>
- <20240118010320.3918136-3-quic_periyasa@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240118010320.3918136-3-quic_periyasa@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: nDlGouNXYyLH0NNkRExdCU6QMw1VGURG
-X-Proofpoint-GUID: nDlGouNXYyLH0NNkRExdCU6QMw1VGURG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-01-18_08,2024-01-17_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 clxscore=1015 adultscore=0 malwarescore=0 mlxlogscore=730
- phishscore=0 lowpriorityscore=0 mlxscore=0 spamscore=0 bulkscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2311290000 definitions=main-2401180117
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240118_080342_836948_41E3BD27 
-X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-CacheID: sfid-20240119_033659_638803_A61F92E3 
+X-CRM114-Status: UNSURE (   3.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,44 +66,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/17/2024 5:03 PM, Karthikeyan Periyasamy wrote:
-> To support multi link operation, we need to combine all the link/pdev
-> under a single wiphy. This avoids the overhead of synchronization
-> across multiple hardware instances in both the cfg80211 and mac80211
-> layers. Currently, each link/pdev is registered as separate wiphy,
-> tightly coupled with link/pdev/radio (ar) structure. To enable single
-> wiphy registration within the chip, we decouple the wiphy data entity from
-> the link/pdev/radio (ar) structure and move it under the chip (ab)
-> structure with a new data container (ath12k_hw) structure. This approach
-> improves scalability for future multi link operation support.
-> 
-> 		mac80211 hw private data structure diagram
-> 		------------------------------------------
-> 
-> 	Now						After
-> 
->  +---------------------+                          +---------------------+
->  |mac80211 hw priv data|                          |mac80211 hw priv data|
->  |                     |                          |                     |
->  |                     |                          |                     |
->  |                     |                          |                     |
->  |                     |                          |   ath12k_hw (ah)    |
->  |                     |                          |                     |
->  |                     |  +------------------->   |                     |
->  |    ath12k (ar)      |                          |   +-------------+   |
->  |                     |                          |   |             |   |
->  |                     |                          |   | ath12k (ar) |   |
->  |                     |                          |   |             |   |
->  |                     |                          |   |             |   |
->  |                     |                          |   +-------------+   |
->  |                     |                          |                     |
->  |                     |                          |                     |
->  +---------------------+                          +---------------------+
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-
+Hi, I'm interested in acquiring a WiFi 7 card for my laptop, and I came acr=
+oss the Qualcomm QCNCM865, which is Qualcomm's WiFi 7 card. Upon checking W=
+i-Cat, I noticed that it features a WCN7851 chipset. However, when examinin=
+g the ath12k/linux source, I couldn't find any mention of the WCN7851; only=
+ the WCN7850 was referenced. What implications does this have? Can I still =
+obtain a WCN7851, or would it be advisable to opt for a card with a WCN7850=
+ chipset, given its greater number of updates and references in the kernel?=
+ Thank you for your assistance.
 
