@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A2FAC47DAF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC6D3C47DD3
 	for <ath12k@archiver.kernel.org>; Mon, 22 Jan 2024 11:39:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,53 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=955ENI/v172A5+QEJTHcaiyn9W+17q3OueWXK8oLj+M=; b=I+qPy1eMr5ZNG0LklzQ2ST64rl
-	imVThOWhGLc1mK22FKS8NE0nR7nDuSA84ETYC33O0T8BOJUwqQxgW8SH4jbkEhNVdYTWgMPhAlMmW
-	5dokgRQq7u2Hi65GkaZ2K/U+m33fCoiwiw+krBPetR57Rd1X42zoJ00vT8GNgefomsQLaCPtdRnpE
-	tf/eowVM4j2LNKMyDYR/KTyGfQ/jcP4dFXfIcGj6pQZdwhoTEt9G/xAtPu5Lv6EHITfm7ZVgAht4J
-	cqOCEPhLVF/35KsBRS6tzpLKVQt/+yi5hFVrDcCSQczAzAG7nVThwjR4tKc9pfuJ0JGksAT9Pj7K6
-	WxuxfNnw==;
+	bh=+ZhqzFARwJ38W9QncDLgIC/pe9uDa6Ft9vDTyIFtHbw=; b=R4/VvjtzCqgYD2sLe//PpcLG7W
+	6hoo0wHxcg90MAzONICCtt/jDJtv/TRi9p5NhmGupQwR5Rw4VIaFrm6ab3Y4GTRdlopfO7f0FH9Xe
+	K9e4L1sJV/T5PFNMbYx1XYh7PIIfq6n3eRC02Gevn/HMJRSonU6381J50PfZ7a1BH6szeXmRfS42p
+	0N8XUGlHToVB6wyyhjdst/SU77Ema8/WIvZBoJWvqI+whXmyODSmCawMmC8ZBNp3npTFLCSyewTAR
+	/vWGv2rQBcfT4bYXa6A8mbsDVPhg1++q1A+DmvOCaO+KZY2lmh2M0X4iZUGexKjwgL7bWWFvEf7JE
+	EeAbgP3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rRseT-00BovW-0I
+	id 1rRseT-00Bovx-1O
 	for ath12k@archiver.kernel.org;
 	Mon, 22 Jan 2024 11:39:41 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rRseP-00Bost-1P
+	id 1rRseQ-00Bou3-2E
 	for ath12k@lists.infradead.org;
-	Mon, 22 Jan 2024 11:39:39 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40M5ma7B000337;
-	Mon, 22 Jan 2024 11:39:37 GMT
+	Mon, 22 Jan 2024 11:39:40 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40M9cipC014361;
+	Mon, 22 Jan 2024 11:39:38 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=955ENI/v172A5+QEJTHcaiyn9W+17q3OueWXK8oLj+M=; b=IJ
-	SKF3kn6qgLVV6j5DPNZcwP2D3KDwWlaKH4R9Zj3xwT4zL5UHVjhgAKaEdAQEojOe
-	Xk0xObPdoRpYt+kvfM+4ZUNXtYU21ptozV/zKfeZqFOfvv/GzsW+GCPFSZk2MK2s
-	iTfSrdRp8yWFQnj0g6fKOTwPHMyZqNbqf97llKmvU7CL7vnvmA+ei6YxR6q8/lgQ
-	qwXY6rpbQkxUqPB4PilzlNWu+rqruQFGza6GRmasNX4zTpa35ejKVuZaIANYAK/p
-	EIgdpHlHiUbsKfdRldbPfpcq1EQlUCsG77ERfUDmEF1evXt+f5kby/JWKKUib1DN
-	ACQ8ScARDUZCmhsEsA7w==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vr7bqknc9-1
+	qcppdkim1; bh=+ZhqzFARwJ38W9QncDLgIC/pe9uDa6Ft9vDTyIFtHbw=; b=GR
+	LQU23QE+YsxoC6MCFqNO76AsMY4bcI40kILrf4iegJDpMJIUIs9mKdbz2eYFIe1R
+	Y2gu3bRl9xUjaBebRPnK+QbP2IhbSwPD/vD5g9UoFBUxahXuv80xwZK1gn9dS3zb
+	doKy0nqhqt9HHuC9TiK3uiTlF3IcJVXo/NdcTCYzcoXmZuzHU84H0U1AG7S4Khr2
+	XtqddCgSvli6FJaK4hblTZ9bizcdRNGrtStx2cEZ7dcxJW8OhhWtkIDG6Hc11D8V
+	XRUr6Ae8wMD24fINSm4anEIeN//Q27aJkTTjZ4Cl1/PubuPzijxlaTZy6xHJ8roX
+	7qgcruwJF/s8g03gZhdg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vskn18jxf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Jan 2024 11:39:36 +0000 (GMT)
+	Mon, 22 Jan 2024 11:39:38 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40MBdab9025412
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40MBdb9r027238
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Jan 2024 11:39:36 GMT
+	Mon, 22 Jan 2024 11:39:37 GMT
 Received: from yk-E5440.qca.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 22 Jan 2024 03:39:34 -0800
+ 15.2.1118.40; Mon, 22 Jan 2024 03:39:36 -0800
 From: Kang Yang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v3 08/10] wifi: ath12k: move peer delete after vdev stop of station for WCN7850
-Date: Mon, 22 Jan 2024 19:39:02 +0800
-Message-ID: <20240122113904.8938-9-quic_kangyang@quicinc.com>
+Subject: [PATCH v3 09/10] wifi: ath12k: designating channel frequency for ROC scan
+Date: Mon, 22 Jan 2024 19:39:03 +0800
+Message-ID: <20240122113904.8938-10-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240122113904.8938-1-quic_kangyang@quicinc.com>
 References: <20240122113904.8938-1-quic_kangyang@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: mkHN_K2ErH6zm51LvgEBNaC4PfPFWdVF
-X-Proofpoint-ORIG-GUID: mkHN_K2ErH6zm51LvgEBNaC4PfPFWdVF
+X-Proofpoint-GUID: GVX7HYP4v-a-ZTuI955N5jBCpVI9IsTG
+X-Proofpoint-ORIG-GUID: GVX7HYP4v-a-ZTuI955N5jBCpVI9IsTG
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-01-22_02,2024-01-22_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 priorityscore=1501 bulkscore=0 phishscore=0 adultscore=0
- clxscore=1015 spamscore=0 mlxlogscore=999 mlxscore=0 lowpriorityscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
+ mlxlogscore=999 priorityscore=1501 impostorscore=0 phishscore=0
+ spamscore=0 lowpriorityscore=0 clxscore=1015 adultscore=0 bulkscore=0
  malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2311290000 definitions=main-2401220083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240122_033937_515387_147533FC 
-X-CRM114-Status: GOOD (  14.99  )
+X-CRM114-CacheID: sfid-20240122_033938_733871_5BB7ED07 
+X-CRM114-Status: GOOD (  14.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,27 +97,14 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In current code, when STA/P2P Client connect to AP/P2P GO, the WMI
-command sequence is:
+For P2P mode, the WLAN interface may be requested to remain on a
+specific channel and then to send some management frames on that
+channel. Now chananel frequency of wmi_mgmt_send_cmd is set as 0. As
+a result, firmware may choose a default but wrong channel.
 
-peer_create->vdev_start->vdev_up
+Fix it by assigning chanfreq field with the ROC channel frequency.
 
-And sequence of STA/P2P Client disconnect from AP/P2P GO is:
-
-peer_delete->vdev_down->vdev_stop
-
-This sequence of disconnect is not opposite of connect. For STA or P2P
-GO, bss peer is not needed by firmware during handling vdev stop
-command. So with this sequence, STA and P2P GO can work normally.
-
-But for P2P Client, firmware needs bss peer in some functions during
-handling vdev stop command. The opposite sequence of disconnect should
-be:
-
-vdev_down->vdev_stop->peer_delete
-
-So change the sequence of disconnect as above opposite sequence for
-WCN7850.
+This change only applies to WCN7850, other chips are not affected.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
@@ -129,140 +116,51 @@ v3: no change.
 v2: add Tested-on tag of QCN9274.
 
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 99 +++++++++++++++------------
- 1 file changed, 54 insertions(+), 45 deletions(-)
+ drivers/net/wireless/ath/ath12k/wmi.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 65ac1d0b52a4..10aa8b20ef7a 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1083,6 +1083,46 @@ static int ath12k_mac_monitor_stop(struct ath12k *ar)
- 	return ret;
- }
- 
-+static int ath12k_mac_vdev_stop(struct ath12k_vif *arvif)
-+{
-+	struct ath12k *ar = arvif->ar;
-+	int ret;
-+
-+	lockdep_assert_held(&ar->conf_mutex);
-+
-+	reinit_completion(&ar->vdev_setup_done);
-+
-+	ret = ath12k_wmi_vdev_stop(ar, arvif->vdev_id);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to stop WMI vdev %i: %d\n",
-+			    arvif->vdev_id, ret);
-+		goto err;
-+	}
-+
-+	ret = ath12k_mac_vdev_setup_sync(ar);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to synchronize setup for vdev %i: %d\n",
-+			    arvif->vdev_id, ret);
-+		goto err;
-+	}
-+
-+	WARN_ON(ar->num_started_vdevs == 0);
-+
-+	ar->num_started_vdevs--;
-+	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "vdev %pM stopped, vdev_id %d\n",
-+		   arvif->vif->addr, arvif->vdev_id);
-+
-+	if (test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) {
-+		clear_bit(ATH12K_CAC_RUNNING, &ar->dev_flags);
-+		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "CAC Stopped for vdev %d\n",
-+			   arvif->vdev_id);
-+	}
-+
-+	return 0;
-+err:
-+	return ret;
-+}
-+
- static int ath12k_mac_config(struct ath12k *ar, u32 changed)
- {
- 	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
-@@ -3905,6 +3945,13 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- 				    sta->addr, arvif->vdev_id);
- 	} else if ((old_state == IEEE80211_STA_NONE &&
- 		    new_state == IEEE80211_STA_NOTEXIST)) {
-+		if (arvif->vdev_type == WMI_VDEV_TYPE_STA) {
-+			ath12k_bss_disassoc(ar, arvif);
-+			ret = ath12k_mac_vdev_stop(arvif);
-+			if (ret)
-+				ath12k_warn(ar->ab, "failed to stop vdev %i: %d\n",
-+					    arvif->vdev_id, ret);
-+		}
- 		ath12k_dp_peer_cleanup(ar, arvif->vdev_id, sta->addr);
- 
- 		ret = ath12k_peer_delete(ar, arvif->vdev_id, sta->addr);
-@@ -6336,46 +6383,6 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 34e676799616..9e2c6b98166b 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -732,6 +732,20 @@ static int ath12k_service_ready_event(struct ath12k_base *ab, struct sk_buff *sk
  	return 0;
  }
  
--static int ath12k_mac_vdev_stop(struct ath12k_vif *arvif)
--{
--	struct ath12k *ar = arvif->ar;
--	int ret;
--
--	lockdep_assert_held(&ar->conf_mutex);
--
--	reinit_completion(&ar->vdev_setup_done);
--
--	ret = ath12k_wmi_vdev_stop(ar, arvif->vdev_id);
--	if (ret) {
--		ath12k_warn(ar->ab, "failed to stop WMI vdev %i: %d\n",
--			    arvif->vdev_id, ret);
--		goto err;
--	}
--
--	ret = ath12k_mac_vdev_setup_sync(ar);
--	if (ret) {
--		ath12k_warn(ar->ab, "failed to synchronize setup for vdev %i: %d\n",
--			    arvif->vdev_id, ret);
--		goto err;
--	}
--
--	WARN_ON(ar->num_started_vdevs == 0);
--
--	ar->num_started_vdevs--;
--	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "vdev %pM stopped, vdev_id %d\n",
--		   arvif->vif->addr, arvif->vdev_id);
--
--	if (test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) {
--		clear_bit(ATH12K_CAC_RUNNING, &ar->dev_flags);
--		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "CAC Stopped for vdev %d\n",
--			   arvif->vdev_id);
--	}
--
--	return 0;
--err:
--	return ret;
--}
--
- static int ath12k_mac_vdev_start(struct ath12k_vif *arvif,
- 				 struct ieee80211_chanctx_conf *ctx)
++static u32 ath12k_wmi_mgmt_get_freq(struct ath12k *ar,
++				    struct ieee80211_tx_info *info)
++{
++	struct ath12k_base *ab = ar->ab;
++	u32 freq = 0;
++
++	if (ab->hw_params->single_pdev_only &&
++	    ar->scan.is_roc &&
++	    (info->flags & IEEE80211_TX_CTL_TX_OFFCHAN))
++		freq = ar->scan.roc_freq;
++
++	return freq;
++}
++
+ struct sk_buff *ath12k_wmi_alloc_skb(struct ath12k_wmi_base *wmi_ab, u32 len)
  {
-@@ -6742,11 +6749,13 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
- 		arvif->is_started = false;
- 	}
- 
--	ret = ath12k_mac_vdev_stop(arvif);
--	if (ret)
--		ath12k_warn(ab, "failed to stop vdev %i: %d\n",
--			    arvif->vdev_id, ret);
--
-+	if (arvif->vdev_type != WMI_VDEV_TYPE_STA) {
-+		ath12k_bss_disassoc(ar, arvif);
-+		ret = ath12k_mac_vdev_stop(arvif);
-+		if (ret)
-+			ath12k_warn(ab, "failed to stop vdev %i: %d\n",
-+				    arvif->vdev_id, ret);
-+	}
- 	arvif->is_started = false;
- 
- 	if (ab->hw_params->vdev_start_delay &&
+ 	struct sk_buff *skb;
+@@ -757,6 +771,7 @@ int ath12k_wmi_mgmt_send(struct ath12k *ar, u32 vdev_id, u32 buf_id,
+ {
+ 	struct ath12k_wmi_pdev *wmi = ar->wmi;
+ 	struct wmi_mgmt_send_cmd *cmd;
++	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(frame);
+ 	struct wmi_tlv *frame_tlv;
+ 	struct sk_buff *skb;
+ 	u32 buf_len;
+@@ -775,7 +790,7 @@ int ath12k_wmi_mgmt_send(struct ath12k *ar, u32 vdev_id, u32 buf_id,
+ 						 sizeof(*cmd));
+ 	cmd->vdev_id = cpu_to_le32(vdev_id);
+ 	cmd->desc_id = cpu_to_le32(buf_id);
+-	cmd->chanfreq = 0;
++	cmd->chanfreq = cpu_to_le32(ath12k_wmi_mgmt_get_freq(ar, info));
+ 	cmd->paddr_lo = cpu_to_le32(lower_32_bits(ATH12K_SKB_CB(frame)->paddr));
+ 	cmd->paddr_hi = cpu_to_le32(upper_32_bits(ATH12K_SKB_CB(frame)->paddr));
+ 	cmd->frame_len = cpu_to_le32(frame->len);
 -- 
 2.34.1
 
