@@ -4,61 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FC5CC47258
-	for <ath12k@archiver.kernel.org>; Tue, 23 Jan 2024 09:33:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69737C47258
+	for <ath12k@archiver.kernel.org>; Tue, 23 Jan 2024 12:11:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KCG2sHQpLrcwef0tfGODeonLN8MkZ7bpsULOgAGhI8k=; b=JlVHaRlZExaj7rj0zSCZ9ZFLGp
-	XGjOGygRyTj9h3Q6BFo+o28yuATzXX/FhfR+jZ6hZVurjxndYDQm7/hUoFmiFDw1Z9DFYEimGJJzO
-	VJa9XPkYXZlOSqEqZBUDJbPRbs+qAYEO/Htg5P4DJOySc6IaUw5KuLxEqyp+zu2eTaJDpP+rwLduV
-	mvlddlGIWeyNsCFbHt6yUO/jizXY+hK7yrIRuTncRNDch5JlnVpaZby2I4GhloTCY1Wa2CBnIjZhg
-	+DScq8PIrIlr1x/i2AUkvgCV/Eo8k+U2brLXMkhkudwsMXqYUPKIPTJoDipMMbZSujkWGCvAbU72k
-	HLO36DmA==;
+	bh=GCW0j9BJepQthm+7VlZT9SLUFqUQG15+jgQaEKEhH7E=; b=J1OuLAPZnVn1cM8eIhlTPFo33A
+	BvDK+9syOCP4vRordmb0a0SDMhJnmTaruHvtAVeJZ0hw2yGbMH8Sj2OmFrLjpQ7eH0aYkcps0y8cb
+	PP9oS1h0STXZw0YeVqTA5gcuGosfxIv/XNjHOZdEv+2cb/izuD7tN0AKCCM0vR83Q6+xwxf8yoUoR
+	syT2wUrQLt4rDN/DeSK67X873hesnEZMMh9N9N1N99WoMRRRtXN0fEFbYi96SjfzYeK1KBufylmcM
+	Hr2PHXaprjzNrMFoLHT2VGVUe9w0lZpkp8wpbNj9YvR3KPCh7V2my2PWBO2/LT1YVgEDjj9R4Wj7H
+	ovebjR0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSD9R-00FlIa-02
+	id 1rSFcg-00GMhQ-35
 	for ath12k@archiver.kernel.org;
-	Tue, 23 Jan 2024 09:33:01 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 23 Jan 2024 12:11:22 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSD9O-00FlI1-2a
+	id 1rSFcd-00GMgq-1o
 	for ath12k@lists.infradead.org;
-	Tue, 23 Jan 2024 09:33:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 080DA61C11;
-	Tue, 23 Jan 2024 09:32:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B63E0C43390;
-	Tue, 23 Jan 2024 09:32:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706002376;
-	bh=HwDo0qMM5rmS7Ioy8zXu0yj4NxvXalYI+ptN1DCfQL8=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=gY2uuySA6EmCungLnDHpui2vUEf4nuZzbda3AW7Nc+45uYdkLRAWmLaCb3H09wlnw
-	 Cbh7zMD6F9u1ZmM6DHep9Txu9j8rRdR5qxIVnCTEKUuhuh/ne5+vzoSuhc814ZFBLk
-	 PeRrfmYHf4fVtknwls817JCBQmBsWQYUXfAt6VZiFrQQzxDHp47w9cTuaH9dXm5G6M
-	 T/GDkqmB5Xa+5QGDVCePNUyNp6TYCG6drJFYa0Gx3RR7iF3fLoPwuAwsflWtVb+WN7
-	 YAQvFZcpS/yHey+9Qcabb2xoVObz3/s87KgGzTBwnYsPzAFK9HBBlEBDsHZxoaCfwx
-	 vQMxYX2HrGzSg==
-Content-Type: text/plain; charset="utf-8"
+	Tue, 23 Jan 2024 12:11:21 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40N5Mtp3027968;
+	Tue, 23 Jan 2024 12:11:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=GCW0j9BJepQthm+7VlZT9SLUFqUQG15+jgQaEKEhH7E=; b=ke
+	tP9mxBqL3+M9UdD09WwY5qDlOKjTp8+Ey8ngJLsUB6jKa0Xnn2i+vjO9itE8ieos
+	RgvFrt+CmT4GTFiFE0TpkwaZuxNcNOLpO7v17f9Zibf4O0jEtZO/lcJAPyQHz8l5
+	YkfokmWWjBFE5xB6KWn/4T0TuhsZzBUbGmhqmeN/zQzXto7u5QcPdBCn+f4c6KCA
+	mnxfiGvl9xJdHwXoYs+wONoO+xZUmA3qvTi4LtWRPYvdUn5KLR3uWK/lEsaCNWG5
+	EzBThvpilO8j1qrIWPM4zk7gX0tl3nVsofpmmSZREBaCCiMQJeUR29lRoGDUVO9a
+	0U7gm92C4yxHaSuW6r+Q==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vt5sg8y9p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 23 Jan 2024 12:11:14 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40NCBDjK032349
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 23 Jan 2024 12:11:13 GMT
+Received: from [10.201.207.25] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 23 Jan
+ 2024 04:11:11 -0800
+Message-ID: <b22a3c69-f7a6-8a89-a3da-ab776e5e57c9@quicinc.com>
+Date: Tue, 23 Jan 2024 17:41:01 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH] wifi: ath12k: add firmware-2.bin support
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240105164207.2906093-1-quic_rajkbhag@quicinc.com>
+ <84a1fba8-b709-4bf5-8fc0-9d32d245f9ff@quicinc.com>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <84a1fba8-b709-4bf5-8fc0-9d32d245f9ff@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: Fix issues in channel list update
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240117062628.8260-1-quic_srirrama@quicinc.com>
-References: <20240117062628.8260-1-quic_srirrama@quicinc.com>
-To: Sriram R <quic_srirrama@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Sriram R <quic_srirrama@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170600237376.3897582.9674673785656987739.kvalo@kernel.org>
-Date: Tue, 23 Jan 2024 09:32:55 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: RPFo6htmZL9-ZBgk7y4Z9XdiJJmoNvGs
+X-Proofpoint-ORIG-GUID: RPFo6htmZL9-ZBgk7y4Z9XdiJJmoNvGs
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-01-23_06,2024-01-23_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ priorityscore=1501 mlxscore=0 clxscore=1015 impostorscore=0
+ mlxlogscore=999 malwarescore=0 lowpriorityscore=0 bulkscore=0 spamscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2311290000 definitions=main-2401230089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_013258_911778_187E64E6 
-X-CRM114-Status: GOOD (  18.56  )
+X-CRM114-CacheID: sfid-20240123_041120_013773_3FCDE2C0 
+X-CRM114-Status: GOOD (  19.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,51 +100,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Sriram R <quic_srirrama@quicinc.com> wrote:
-
-> Currently, the logic used to select the 6 GHz band is incorrect,
-> which may cause 6 GHz supported channels to not be updated properly.
-> This is because the 6 GHz max frequency supported by the driver is
-> being compared to the max frequency supported on the board. If in
-> some cases, the 6 GHz max frequency supported on the board is less
-> than the defined 6 GHz max frequency, all 6 GHz channels are disabled.
-> To address this, compare the max frequency supported by the board to
-> the defined 6 GHz minimum frequency by the driver.
+On 1/6/2024 12:06 AM, Jeff Johnson wrote:
+> On 1/5/2024 8:42 AM, Raj Kumar Bhagat wrote:
+>> Firmware IE containers can dynamically provide various information
+>> what firmware supports. Also it can embed more than one image so
+>> updating firmware is easy, user just needs to update one file in
+>> /lib/firmware/.
+>>
+>> The firmware API 2 or higher will use the IE container format, the
+>> current API 1 will not use the new format but it still is supported
+>> for some time. Firmware API 2 files are named as firmware-2.bin
+>> (which contains both amss.bin and m3.bin images) and API 1 files are
+>> amss.bin and m3.bin.
+>>
+>> Currently ath12k PCI driver provides firmware binary (amss.bin) path to
+>> MHI driver, MHI driver reads firmware from filesystem and boots it. Add
+>> provision to read firmware files from ath12k driver and provide the amss.bin
+>> firmware data and size to MHI using a pointer.
+>>
+>> Currently enum ath12k_fw_features is empty, the patches adding features will
+>> add the flags.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+>>  drivers/net/wireless/ath/ath12k/Makefile |   3 +-
+>>  drivers/net/wireless/ath/ath12k/core.c   |  10 +-
+>>  drivers/net/wireless/ath/ath12k/core.h   |  16 ++-
+>>  drivers/net/wireless/ath/ath12k/fw.c     | 165 +++++++++++++++++++++++
+>>  drivers/net/wireless/ath/ath12k/fw.h     |  27 ++++
+>>  drivers/net/wireless/ath/ath12k/mhi.c    |  20 ++-
+>>  drivers/net/wireless/ath/ath12k/qmi.c    |  51 ++++---
+>>  7 files changed, 267 insertions(+), 25 deletions(-)
+>>  create mode 100644 drivers/net/wireless/ath/ath12k/fw.c
+>>  create mode 100644 drivers/net/wireless/ath/ath12k/fw.h
+>>
+> ...
+>> +int ath12k_fw_map(struct ath12k_base *ab)
+>> +{
+>> +	int ret;
+>> +
+>> +	ret = ath12k_fw_request_firmware_api_n(ab, ATH12K_FW_API2_FILE);
+>> +	if (ret == 0)
+>> +		ab->fw.api_version = 2;
+>> +	else
+>> +		ab->fw.api_version = 1;
+>> +
+>> +	ath12k_dbg(ab, ATH12K_DBG_BOOT, "using fw api %d\n",
+>> +		   ab->fw.api_version);
+>> +
+>> +	return 0;
 > 
-> Similarly, when a dual mac card supports both 6 GHz and 5 GHz radios,
-> if the 5 GHz radio gets enumerated first before 6 GHz, the checks in
-> ath12k_mac_setup_channels_rates() can cause the 5 GHz channels which
-> were enabled earlier to get disabled when the 6 GHz channel list is
-> updated. This is because the min 6 GHz frequency defined in the driver
-> is 5945 MHz, which should be 5925 MHz since channel 2 is not considered
-> currently, but the firmware can pass 5925 MHz as the minimum.
-> Hence, update the min frequency supported by the driver to 5925 MHz.
+> since this always returns 0 perhaps make this a void function and remove
+> the error checking from the caller?
 > 
-> In addition, ensure that the channel list update to firmware updates
-> only the channels that the current radio (ar) supports rather than
-> considering the wiphy support. This would be required when multiple pdevs
-> are supported in a wiphy and they support different ranges of frequencies
-> or bands as in single wiphy support.
+Will change to void in next version.
+
+>> +}
+>> +
+>> +void ath12k_fw_unmap(struct ath12k_base *ab)
+>> +{
+>> +	release_firmware(ab->fw.fw);
 > 
-> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+> should we memset the entire ab->fw struct to 0 so that there aren't any
+> dangling pointers into the firmware buffer?
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Will memset entire ab->fw to 0, in next version.
+
+>> +}
 > 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-
-I did because it looks odd for me that these are capitalised (could be wrong though):
-
-s/Min/min/
-s/Max/max/
-
-Jeff, what do you think about that the patch and my changes?
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240117062628.8260-1-quic_srirrama@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
