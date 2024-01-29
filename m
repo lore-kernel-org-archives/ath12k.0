@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CF9EC47DA9
-	for <ath12k@archiver.kernel.org>; Mon, 29 Jan 2024 10:15:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D12B5C47422
+	for <ath12k@archiver.kernel.org>; Mon, 29 Jan 2024 10:15:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=V5oW0dfBics7ms/Y5IONfngAaUN92MIpwh8Y6XfpcCU=; b=TkBvFEExC0AFQtfait+GlEBFh8
-	OUO5g0FZNFIkphMP87zEhpRUTHjx1YdkNT+kCRpRYz24N5FnSsaUktRsiTAy5EREQc4lLnsnugwWu
-	nEJIL73+z++y6sGU6Zi2qJV4Y1cq2Ryin1J7XTRK7tbyNhhOC+vUrtjbkHzWnboZurzw1kHqs3DPs
-	JGrJlU+ALhJnvOBuaw2cnFy1VZ8yXg5wZilWhnDgup95We6TTjd0HZ1G3c78j7asoAAU5YokuMnGZ
-	wDsZWzsGGvVGjYtY5r598bksFVJLerCfjBXP2qVvmw2BNG5An+wQza8AaBdgbibx49liMdPIU1BoT
-	pBNSrh5Q==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9gGxKoTWacXUaD1QUJ6ADPVjHjk8PFQVXH+8EGOZ0xM=; b=vc4y27ZrMITXNbgZfPcz8MPXYv
+	W2rHc8mQq4iQJn6qmErFoaFqDDtvnN5s22b5Oj7zwhBr0KlAEerPJIyR5R8MW59fBTtg/V3cxm4/G
+	BtgKe+NEMEbx3s3e9XQk/h782tmNzFdhm1PYysUwRskRXBBAe08zZhL8zw5QWDoXdwwrax3jcfrXb
+	mECu8ZaVIyE4Mgg7Ml6jAroV6wn492dbK8jn8JB0tyrlsqzj4lhhysKnpvL6SCDMSgL9tes4LldRl
+	40zT01hPMpEcXQUtTE3z55fW3wTO6Uae+rMo2VD3DInjwv0L7nhNjh1oEtKzjH3nfN3Ie9/4+KzCI
+	z+mzwUOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUOfd-0000000CBSl-0AqY
+	id 1rUOff-0000000CBTj-24St
 	for ath12k@archiver.kernel.org;
-	Mon, 29 Jan 2024 10:15:17 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 29 Jan 2024 10:15:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUOfa-0000000CBRj-30W6
+	id 1rUOfc-0000000CBS5-1lMq
 	for ath12k@lists.infradead.org;
-	Mon, 29 Jan 2024 10:15:15 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40T7hnkw023511;
-	Mon, 29 Jan 2024 10:15:14 GMT
+	Mon, 29 Jan 2024 10:15:17 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40T7GMKM024165;
+	Mon, 29 Jan 2024 10:15:15 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=V5oW0df
-	Bics7ms/Y5IONfngAaUN92MIpwh8Y6XfpcCU=; b=ST+W8TvAalqJasksb5cuw1w
-	qN01fW5OHX2hyEjoPc7hTSRh1cg1iQNhO5SaiDgoSxY2RMCpDf2CLQD0h2kvt9rF
-	5q6TDc1JP8T5ZmVy8U1vfvadK3K/yhPHuTSvqojW2Qzi/aDz91fP0j82I1vqD17f
-	8xyTxHOuXfT13SkMSpqtbg2hAB3oG0Glxp9ArHca3ydNc1kIP3MGIAOkMKpxD0S6
-	SHqtCqe69GA3LbY0W02Y3uDHv1yqBmwmZ1T06pkMvXRbI3x0460bJkfMZZZWplhB
-	tVzy/AjPehtd/WmuaOq6/T7eKoRqhefOY6EEorNaKmHsf5af6IgDKFfnZfh9A6g=
-	=
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vvtkmb9xs-1
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	qcppdkim1; bh=9gGxKoTWacXUaD1QUJ6ADPVjHjk8PFQVXH+8EGOZ0xM=; b=DR
+	1mTZlcAWf7KO22bvWghK0lj6WF0QKLd3lgV2EWniH+P1Vf8tY16OYTvXc0fqqWMW
+	/g8REcbbltWj5F54pHQKwCv4SzMkorqlP/gx+isliqEYet1BTSj1CYsCgF0RrY8t
+	FTod5RPxLLSyFV1IKSeE2JbWNsUbIWtplxTElHuZJy41n2lqYlMbWW1rhkWlTh0s
+	mw+39/PC7mQalwQROfM0T6Lk2mbuT226gy6DNQggn6/IHUEiefjUF7lKmZ2UxKiR
+	Rk9mQEKBQ8PnGzviiVt7+nNOxZX4wfLnPLYyaW+FkTMVVEf0FCcxcNxPl1Rm80WT
+	8ocion+tYcolgH2V0CKQ==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vx3rqgqa9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 29 Jan 2024 10:15:13 +0000 (GMT)
+	Mon, 29 Jan 2024 10:15:15 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40TAFCOp015690
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40TAFEwh027225
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 29 Jan 2024 10:15:12 GMT
+	Mon, 29 Jan 2024 10:15:14 GMT
 Received: from yk-E5440.qca.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 29 Jan 2024 02:15:11 -0800
+ 15.2.1118.40; Mon, 29 Jan 2024 02:15:12 -0800
 From: Kang Yang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v5 00/11] wifi: ath12k: P2P support for WCN7850
-Date: Mon, 29 Jan 2024 18:14:42 +0800
-Message-ID: <20240129101453.368494-1-quic_kangyang@quicinc.com>
+Subject: [PATCH v5 01/11] wifi: ath12k: change interface combination for P2P mode
+Date: Mon, 29 Jan 2024 18:14:43 +0800
+Message-ID: <20240129101453.368494-2-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240129101453.368494-1-quic_kangyang@quicinc.com>
+References: <20240129101453.368494-1-quic_kangyang@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -68,19 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Rnv7L94ms42DWjzKCi9il-_T-YNfpcNM
-X-Proofpoint-GUID: Rnv7L94ms42DWjzKCi9il-_T-YNfpcNM
+X-Proofpoint-GUID: PQ_tIW852POZh0pR0PVTYLAVXjkYVRIn
+X-Proofpoint-ORIG-GUID: PQ_tIW852POZh0pR0PVTYLAVXjkYVRIn
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-01-29_06,2024-01-25_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- lowpriorityscore=0 mlxlogscore=999 malwarescore=0 suspectscore=0
- priorityscore=1501 impostorscore=0 spamscore=0 adultscore=0 phishscore=0
- bulkscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401190000 definitions=main-2401290073
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 clxscore=1015
+ impostorscore=0 bulkscore=0 mlxlogscore=841 spamscore=0 lowpriorityscore=0
+ phishscore=0 suspectscore=0 mlxscore=0 malwarescore=0 priorityscore=1501
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2401190000
+ definitions=main-2401290073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240129_021514_808790_81855750 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20240129_021516_619767_AABF3DAC 
+X-CRM114-Status: GOOD (  14.55  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,45 +97,90 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add P2P support for WCN7850.
+Current interface combination doesn't support P2P mode. Change the
+combination for P2P mode.
 
-Kang Yang (11):
-  wifi: ath12k: change interface combination for P2P mode
-  wifi: ath12k: add P2P IE in beacon template
-  wifi: ath12k: implement handling of P2P NoA event
-  wifi: ath12k: implement remain on channel for P2P mode
-  wifi: ath12k: change WLAN_SCAN_PARAMS_MAX_IE_LEN from 256 to 512
-  wifi: ath12k: allow specific mgmt frame tx while vdev is not up
-  wifi: ath12k: fix broken structure wmi_vdev_create_cmd
-  wifi: ath12k: fix incorrect logic of calculating vdev_stats_id
-  wifi: ath12k: move peer delete after vdev stop of station for WCN7850
-  wifi: ath12k: designating channel frequency for ROC scan
-  wifi: ath12k: advertise P2P dev support for WCN7850
+Also, there is a bug that when mesh is enabled but ap is not enabled.
+In this situation, the mesh's max_interface of interface combination
+won't be set.
 
-v5: 
-    1. move patch #10 to patch #8.
-    2. change commit log for patch #6 and patch #8.
-    3. simplify assignment logic for patch #7(Jeff).
-v4: add a new patch #10 to fix warning(Kalle).
-v3: rebase on new ath-tag, use ath12k_ah_to_ar() get ar(Karthikeyan).
+So assign the max_interfaces for mesh directly.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+---
+
+v5: no change.
+v4: no change.
+v3: no change.
 v2:
     1. add Tested-on tag of QCN9274.
-    2. update copyright in patch #1, #2, #4 and #10.
+    2. update copyright.
 
- drivers/net/wireless/ath/ath12k/Makefile |   3 +-
- drivers/net/wireless/ath/ath12k/core.c   |   1 +
- drivers/net/wireless/ath/ath12k/hw.c     |   7 +-
- drivers/net/wireless/ath/ath12k/mac.c    | 368 +++++++++++++++++++----
- drivers/net/wireless/ath/ath12k/p2p.c    | 142 +++++++++
- drivers/net/wireless/ath/ath12k/p2p.h    |  23 ++
- drivers/net/wireless/ath/ath12k/wmi.c    | 114 ++++++-
- drivers/net/wireless/ath/ath12k/wmi.h    |  50 ++-
- 8 files changed, 642 insertions(+), 66 deletions(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/p2p.c
- create mode 100644 drivers/net/wireless/ath/ath12k/p2p.h
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
 
-
-base-commit: 17f4b952f067b1f87d14e6df4c8c216fe7a245d1
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index a27480a69b27..d1d2e83dfa37 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -7479,9 +7479,10 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 	struct ieee80211_iface_combination *combinations;
+ 	struct ieee80211_iface_limit *limits;
+ 	int n_limits, max_interfaces;
+-	bool ap, mesh;
++	bool ap, mesh, p2p;
+ 
+ 	ap = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_AP);
++	p2p = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_P2P_DEVICE);
+ 
+ 	mesh = IS_ENABLED(CONFIG_MAC80211_MESH) &&
+ 		ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_MESH_POINT);
+@@ -7490,9 +7491,15 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 	if (!combinations)
+ 		return -ENOMEM;
+ 
+-	if (ap || mesh) {
++	if ((ap || mesh) && !p2p) {
+ 		n_limits = 2;
+ 		max_interfaces = 16;
++	} else if (p2p) {
++		n_limits = 3;
++		if (ap || mesh)
++			max_interfaces = 16;
++		else
++			max_interfaces = 3;
+ 	} else {
+ 		n_limits = 1;
+ 		max_interfaces = 1;
+@@ -7507,14 +7514,22 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 	limits[0].max = 1;
+ 	limits[0].types |= BIT(NL80211_IFTYPE_STATION);
+ 
+-	if (ap) {
++	if (ap || mesh || p2p)
+ 		limits[1].max = max_interfaces;
++
++	if (ap)
+ 		limits[1].types |= BIT(NL80211_IFTYPE_AP);
+-	}
+ 
+ 	if (mesh)
+ 		limits[1].types |= BIT(NL80211_IFTYPE_MESH_POINT);
+ 
++	if (p2p) {
++		limits[1].types |= BIT(NL80211_IFTYPE_P2P_CLIENT) |
++				   BIT(NL80211_IFTYPE_P2P_GO);
++		limits[2].max = 1;
++		limits[2].types |= BIT(NL80211_IFTYPE_P2P_DEVICE);
++	}
++
+ 	combinations[0].limits = limits;
+ 	combinations[0].n_limits = n_limits;
+ 	combinations[0].max_interfaces = max_interfaces;
 -- 
 2.34.1
 
