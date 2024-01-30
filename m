@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DF4CC47DA9
-	for <ath12k@archiver.kernel.org>; Tue, 30 Jan 2024 17:23:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7498C46CD2
+	for <ath12k@archiver.kernel.org>; Tue, 30 Jan 2024 17:24:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gUCnpilmKyq7NCseGbW/MRAYpQO6yQXVFh9XTJwlQAY=; b=cAgbSGO03UBDNo5w/YWtamfdgJ
-	10dMgCMJ2eFPE/RDl/ioS8Kw8F7WFyZRxEaiadL26AAfa5aicJxzmIxxNnqClGq01GIAZ71AX6k5z
-	PgwPHWFtB+kXBpk3oNxF1hOiGyKfCA+4sh3KFCxRx8HZta3yXU4W0VdfPUQjQhebQzlxarlcT5oh1
-	IjhQvwa7s9S+Cmpe840UHovJ1Q6wG9sEdRbnMg5xrFFtWbWnf2LUSb8lOfhPPMK1F8k95Bi36lX26
-	/0HhrNmZEsmFlV3Ro5xpZjknUZBhor1dG7xSj/ijor+0UVwuH3A3YZd4phTi/XTgCYQewluZlccGJ
-	dgzLRIZA==;
+	bh=1HNVLDtd85ifl9duJnr5kt0j3/uI6aaehxzHBCZO6Do=; b=GZFT5P4ELF7OKwQShbk3Rbf87u
+	Jh7b9yUYwqjswgAEsTiJwXsNKiWPq2aUn+tVzojt+Xt49qk2wz81e1BCBxtVIsHD1YOTFmW8yxrym
+	mL/F2w7NPBGANrhFSNiC2pAZ8KRqYkw+rXacP+pNv4j+SHejaFKRpMKOhM7DLVXdsLhVA6zq4eEjX
+	g8ufx++ybRkbi5mBzD2jU6BaHDagQhlGPKfJ70zx1D/jWE41QGqMVN7TlzpWdB2nlpw4Ei6xIDUyp
+	riXa2WGnsWOGM+wAHXtLzE+3dKk/HirXRQxQ05S6h8K5HSrVTnwvGcLmYfBTXPagp6SKhycDqlMrh
+	ZaHhREOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUrq0-0000000HYK5-3QqG
+	id 1rUrqD-0000000HYNd-1uLp
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Jan 2024 17:23:56 +0000
+	Tue, 30 Jan 2024 17:24:09 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUrpy-0000000HYIy-0RAB
+	id 1rUrqA-0000000HYMu-2AQB
 	for ath12k@lists.infradead.org;
-	Tue, 30 Jan 2024 17:23:55 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40UATbOj017586;
-	Tue, 30 Jan 2024 17:23:53 GMT
+	Tue, 30 Jan 2024 17:24:07 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40UEME4p002442;
+	Tue, 30 Jan 2024 17:24:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=gUCnpilmKyq7NCseGbW/MRAYpQO6yQXVFh9XTJwlQAY=; b=Cf
-	9fn2J4lND4YFahMDU269Dq8ANbC/qH5/TNMYJ5hOuuhhapoVRwpvTBUCfI2hChSe
-	MuhkiK+y8ynta86EapQ7sYH7cVx+mySGakCIFG4DB9pFAgyXp+Hx3yrTgogHRBiq
-	0VWj+l//MHiggwVziKsyR4dgDpKtBSi1xdWtRoN4kcnXXdy3lQA029z20SQQNIlh
-	wIusdqX0SFCCenO8uW2hEnkEyA4jhiJ7B/rf+b3HMSXJqrkie1we5sUKJmJwVQWv
-	OW/IDNPerFG8adfnGgw7iI2ih96fkH6rEjan2pYrSwK86F0m8jxffPoOclHPPiC1
-	5aYaWFaWZvsdzpPeLUWA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vxvve1b97-1
+	qcppdkim1; bh=1HNVLDtd85ifl9duJnr5kt0j3/uI6aaehxzHBCZO6Do=; b=fc
+	wEEQHqnWeyxPpBSlg+eSrdLJk+Rs/FgxRvBBa95KVtM8Oo5hEkZfG+zRKDg/ANPB
+	aOskeJQpSM7KPGPdB0ITkJwquVNaORahkVXKFSXrWAV6fbLaaRhHgvOPNs+PXs/J
+	/j1b9t81ZEtVTAB+EoEc8k4NQ6d3HegEhLhIBIS+j9uNMCMPBlDvQSZZyWPcv3ji
+	O0MMb5OwYeNs0IkScFuMxhX42Qer/ivLejODLTsTsmPamkwit4Ywr9LXmHZMTJPE
+	Rc1LD3Wsdr815iLScnsMuoVN1vZ8uWWNNX3TUbGQM5ja3hMFjZXCjn1gqL1c+EYS
+	uQd84drD/+bwgKQvEDkg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vxtp31kv7-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Jan 2024 17:23:53 +0000 (GMT)
+	Tue, 30 Jan 2024 17:24:05 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40UHNJjx021977
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40UHO4Yq006966
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Jan 2024 17:23:19 GMT
+	Tue, 30 Jan 2024 17:24:04 GMT
 Received: from [10.110.47.232] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 30 Jan
- 2024 09:23:18 -0800
-Message-ID: <fdebbc41-b6f0-4590-930c-46518868cc64@quicinc.com>
-Date: Tue, 30 Jan 2024 09:23:18 -0800
+ 2024 09:24:04 -0800
+Message-ID: <940e9774-efd6-4964-9015-9c058134ab42@quicinc.com>
+Date: Tue, 30 Jan 2024 09:24:04 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 08/11] wifi: ath12k: allow specific mgmt frame tx while
- vdev is not up
+Subject: Re: [PATCH v6 09/11] wifi: ath12k: move peer delete after vdev stop
+ of station for WCN7850
 Content-Language: en-US
 To: Kang Yang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20240130040303.370590-1-quic_kangyang@quicinc.com>
- <20240130040303.370590-9-quic_kangyang@quicinc.com>
+ <20240130040303.370590-10-quic_kangyang@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240130040303.370590-9-quic_kangyang@quicinc.com>
+In-Reply-To: <20240130040303.370590-10-quic_kangyang@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -73,20 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: hVS0Guhiq1hO7SPvPaN38Bfl4HGf_5IP
-X-Proofpoint-ORIG-GUID: hVS0Guhiq1hO7SPvPaN38Bfl4HGf_5IP
+X-Proofpoint-ORIG-GUID: nS5slaC0I7J-Syiv1BKjxusMv5aF8MfS
+X-Proofpoint-GUID: nS5slaC0I7J-Syiv1BKjxusMv5aF8MfS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-01-30_08,2024-01-30_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
- suspectscore=0 priorityscore=1501 impostorscore=0 mlxscore=0
- lowpriorityscore=0 phishscore=0 bulkscore=0 adultscore=0 malwarescore=0
- mlxlogscore=746 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401190000 definitions=main-2401300129
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ spamscore=0 clxscore=1015 lowpriorityscore=0 adultscore=0 bulkscore=0
+ mlxlogscore=882 malwarescore=0 mlxscore=0 impostorscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401190000 definitions=main-2401300126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240130_092354_301757_F47FD75C 
-X-CRM114-Status: UNSURE (   6.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240130_092406_708853_43E2F9FC 
+X-CRM114-Status: GOOD (  10.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,11 +101,27 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 1/29/2024 8:03 PM, Kang Yang wrote:
-> In current code, the management frames must be sent after vdev is started.
-> But for P2P device, vdev won't start until P2P negotiation is done. So
-> this logic doesn't make sense for P2P device.
+> In current code, when STA/P2P Client connect to AP/P2P GO, the WMI
+> command sequence is:
 > 
-> Also use ar->conf_mutex to synchronize ar to avoid potential conflicts.
+> peer_create->vdev_start->vdev_up
+> 
+> And sequence of STA/P2P Client disconnect from AP/P2P GO is:
+> 
+> peer_delete->vdev_down->vdev_stop
+> 
+> This sequence of disconnect is not opposite of connect. For STA or P2P
+> GO, bss peer is not needed by firmware during handling vdev stop
+> command. So with this sequence, STA and P2P GO can work normally.
+> 
+> But for P2P Client, firmware needs bss peer in some functions during
+> handling vdev stop command. The opposite sequence of disconnect should
+> be:
+> 
+> vdev_down->vdev_stop->peer_delete
+> 
+> So change the sequence of disconnect as above opposite sequence for
+> WCN7850.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
