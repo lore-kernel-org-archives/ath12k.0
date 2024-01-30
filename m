@@ -4,87 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08B8AC46CD2
-	for <ath12k@archiver.kernel.org>; Tue, 30 Jan 2024 06:09:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DD01C46CD2
+	for <ath12k@archiver.kernel.org>; Tue, 30 Jan 2024 07:02:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wdEMmto+Z8Qs5ZH4jeox/Uh86zL8uwIjP+oWJ0vSKZ0=; b=HME5KwNvFLrLC82JdBcLnIh3k1
-	n33Af7CkgrOPJidwefcQboK1sssqzTRhQFjC3JM/lguDNQ8n6xsEklOk3098doBdaM5L1fB0TUMHH
-	6GSf4ME3M4LH8X9+O1UFGRB8s51oVNF20DSiMOw8X0zA3l5iHx4r+HzDivlUH58CoUU6p8cmuXdi6
-	25PQTEWKIuOHglWbbZYoJ0nrT1DrUuXJo51n6Wu8Ut+N/rpG3zzS+Toc4n5QTys3hXfqobS33mSnT
-	qAhduCHFGsxiFLS/74GyI402kncoxJSiIhpbFxPXhchRYJ1hD/KUTpgCx9A8lV/Bf1l0fwU0plEpI
-	wkLd8opQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:References:Subject:To:From:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=BaQi+uffQx+bcT8OByEnpa5PdA/yCPnBVInhhhMRdt4=; b=Ko3yCyvN7q+OB0Qkuvv/wcUtPB
+	zPin1R9xFIUHGCt5+NWnyWfv4eVl4neYWiSJZ3JkC8+iTguqEBZfNreE3UmNRKKMBFOVMITnFe4oI
+	Ukx0dkOO7v5yraerOpmlQ8SK10WAj/yeEHZgsWrjNY6RuJjbIWTznhp5eY7W1CZtZ1GL01EM7d25S
+	aNDhF8B7KnDV5OdMmO33OAGvzaegEdiW6tO9HZg5zqWg790uXI2nA7Vo/h4jtA39bYvEovZXdsnuX
+	GV3aPLZVTtze6/ByNs26PJqCNlA3rka13aJTbAK8j6EAxI6xCAol++F2tiOisVK6r+Br3n/RSc9h+
+	WR0mjZiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUhIv-0000000FNuL-2svw
+	id 1rUi8d-0000000FUAE-3gZ5
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Jan 2024 06:09:05 +0000
+	Tue, 30 Jan 2024 07:02:31 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUhIr-0000000FNsf-0yQv
+	id 1rUi8b-0000000FU9n-2yL9
 	for ath12k@lists.infradead.org;
-	Tue, 30 Jan 2024 06:09:02 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40U5KkM5026446;
-	Tue, 30 Jan 2024 06:09:01 GMT
+	Tue, 30 Jan 2024 07:02:30 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40U3eLwo008188;
+	Tue, 30 Jan 2024 07:02:27 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=wdEMmto+Z8Qs5ZH4jeox/Uh86zL8uwIjP+oWJ0vSKZ0=; b=jQ
-	pT9/eJedT7QtaTfq+onew9kQILIPUzjDq9dSR2eZK54MdlV2EunykBfYrWdtwJWb
-	kiP5MBECGAblaQ7EVkz9RPSBcNd8gUV6uIoLnZU/oD+gOXItN5h5ALl2A+h2alkG
-	96e/f3vQxXNB2pEeWCuumBjADuTpvbMDryT5f5QztukVVqrtN5vLtlKv9hNhmJvp
-	LRposXr2oVQhYrubFb0+VfsHTgkPEuQGmDbr668zZ5rv0BxhU4Lrf6RQF5oq3LtQ
-	vLDud5RlacfiJwARMyvnA1vIrjc6XNw+DXq60gWM8v/LmJ0kz+/7xfaNyuwix162
-	/Qa1kAbkjS1BcsByyA1w==
+	message-id:date:mime-version:from:to:subject:references
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=BaQi+uffQx+bcT8OByEnpa5PdA/yCPnBVInhhhMRdt4=; b=FH
+	ILCMzGtUtogTK7smXJtzeCVJL0JDWJ+hVrBwvUUyV1Z4vcSrm5R613jtbQmopDXE
+	SC0/2FMp6biD9EDpkL7y0HuTCkC36B6Y2t+Zatvt8l9uMwSMPnal60qhjMQoiUBz
+	5zbnKYR8zwtItn8k/FbrhbMpZ0Mj+WaNoCjZPIBLEtYbO6P7N2pDlz6DV14HCrdS
+	4Y3S2L1TJWwedSlcieAHzXfaoOJedAFNeQhAW28NgGuAZOzmlXRLv/m6K4BmYR/C
+	LlU0AMjrvI1n59oOyC+4igR8B/TRZthA083ToRYXtlStYC6QOGaVvZIKPy4XiNKK
+	xn7wkG7QLD2qMxvXe0rg==
 Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vxr2v0bwm-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vxevdsn56-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Jan 2024 06:09:00 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40U69084027106
+	Tue, 30 Jan 2024 07:02:27 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40U72Q6r003672
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Jan 2024 06:09:00 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 29 Jan 2024 22:08:58 -0800
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-Subject: [PATCH 3/3] wifi: ath12k: Refactor the hardware state
-Date: Tue, 30 Jan 2024 11:38:38 +0530
-Message-ID: <20240130060838.3895599-4-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240130060838.3895599-1-quic_periyasa@quicinc.com>
-References: <20240130060838.3895599-1-quic_periyasa@quicinc.com>
+	Tue, 30 Jan 2024 07:02:26 GMT
+Received: from [10.253.12.70] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 29 Jan
+ 2024 23:02:25 -0800
+Message-ID: <67810e6a-331e-49f1-b50e-d4b398ef9eae@quicinc.com>
+Date: Tue, 30 Jan 2024 15:02:22 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+From: <quic_kangyang@quicinc.com>
+To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v3 00/10] wifi: ath12k: P2P support for WCN7850
+References: <20240122113904.8938-1-quic_kangyang@quicinc.com>
+ <87cytp1nhd.fsf@kernel.org>
+ <9a90fab6-18f1-4664-96f4-6795174d636f@quicinc.com>
+ <87sf2gwaw9.fsf@kernel.org>
+In-Reply-To: <87sf2gwaw9.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: A-NSGJ5oiH8XvAVcQdETdZ0WDoWMpNA-
-X-Proofpoint-ORIG-GUID: A-NSGJ5oiH8XvAVcQdETdZ0WDoWMpNA-
+X-Proofpoint-GUID: RDTKN1XWgKdz9KcD9231qcul85oe6foM
+X-Proofpoint-ORIG-GUID: RDTKN1XWgKdz9KcD9231qcul85oe6foM
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-01-30_02,2024-01-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxlogscore=999
- impostorscore=0 bulkscore=0 suspectscore=0 spamscore=0 malwarescore=0
- clxscore=1015 mlxscore=0 priorityscore=1501 lowpriorityscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401190000 definitions=main-2401300042
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
+ clxscore=1015 mlxscore=0 malwarescore=0 mlxlogscore=999 lowpriorityscore=0
+ priorityscore=1501 adultscore=0 impostorscore=0 phishscore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2401190000
+ definitions=main-2401300049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240129_220901_312019_5CDE8BE1 
-X-CRM114-Status: GOOD (  21.11  )
+X-CRM114-CacheID: sfid-20240129_230229_787296_210A9EFB 
+X-CRM114-Status: GOOD (  20.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,363 +100,60 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, in multi wiphy models, the mac80211 hardware state is maintained
-within the radio/link structure. However, in single wiphy models, the
-mac80211 hardware state is needed at the hardware abstraction layer
-(ath12k_hw). Therefore, move the hardware state from the radio/link
-structure to the hardware abstraction layer (ath12k_hw). Additionally,
-update the naming convention of the state enums to enhance clarity and
-consistency.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.c | 58 +++++++++------------
- drivers/net/wireless/ath/ath12k/core.h | 20 ++++---
- drivers/net/wireless/ath/ath12k/mac.c  | 72 ++++++++++++++------------
- drivers/net/wireless/ath/ath12k/reg.c  |  5 +-
- 4 files changed, 80 insertions(+), 75 deletions(-)
+On 1/29/24 9:02 PM, Kalle Valo <kvalo@kernel.org> wrote:
+> Kang Yang <quic_kangyang@quicinc.com> writes:
+> 
+> > On 1/25/2024 10:44 PM, Kalle Valo wrote:
+> >> Kang Yang <quic_kangyang@quicinc.com> writes:
+> >>
+> >>> Add P2P support for WCN7850.
+> >>>
+> >>> Kang Yang (10):
+> >>>     wifi: ath12k: change interface combination for P2P mode
+> >>>     wifi: ath12k: add P2P IE in beacon template
+> >>>     wifi: ath12k: implement handling of P2P NoA event
+> >>>     wifi: ath12k: implement remain on channel for P2P mode
+> >>>     wifi: ath12k: change WLAN_SCAN_PARAMS_MAX_IE_LEN from 256 to 512
+> >>>     wifi: ath12k: allow specific mgmt frame tx while vdev is not up
+> >>>     wifi: ath12k: fix broken structure wmi_vdev_create_cmd
+> >>>     wifi: ath12k: move peer delete after vdev stop of station for WCN7850
+> >>>     wifi: ath12k: designating channel frequency for ROC scan
+> >>>     wifi: ath12k: advertise P2P dev support for WCN7850
+> >>>
+> >>> v3: rebase on new ath-tag, use ath12k_ah_to_ar() get ar(Karthikeyan).
+> >>> v2:
+> >>>       1. add Tested-on tag of QCN9274.
+> >>>       2. update copyright in patch #1, #2, #4 and #10.
+> >> I have not been able to run any p2p tests yet but during rmmod with
+> >> WCN7850 I now see:
+> >> [  136.260660] ------------[ cut here ]------------
+> >> [ 136.260909] UBSAN: shift-out-of-bounds in
+> >> drivers/net/wireless/ath/ath12k/mac.c:6005:38
+> >> [  136.261008] shift exponent 255 is too large for 64-bit type 'long long int'
+> >
+> >
+> > It seems you enable CONFIG_UBSAN, CONFIG_UBSAN_SANITIZE_ALL and other
+> > CONFIG_UBSAN_XXX.
+> 
+> Yes, I try to enable debug facilities as much as possible. They are
+> really good at finding issues in the code.
+> 
+> > I will add them to my config file and debug this warning.
+> 
+> Thanks.
+> 
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 4ea5eacc1342..48134aa1dac7 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -934,15 +934,13 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 
- 	for (i = 0; i < ab->num_hw; i++) {
- 		ah = ab->ah[i];
--		if (!ah)
-+		if (!ah || ah->state == ATH12K_HW_STATE_OFF)
- 			continue;
- 
- 		ieee80211_stop_queues(ah->hw);
- 
- 		for (j = 0; j < ah->num_radio; j++) {
- 			ar = &ah->radio[j];
--			if (!ar || ar->state == ATH12K_STATE_OFF)
--				continue;
- 
- 			ath12k_mac_drain_tx(ar);
- 			complete(&ar->scan.started);
-@@ -971,49 +969,43 @@ static void ath12k_core_post_reconfigure_recovery(struct ath12k_base *ab)
- 	struct ath12k_hw *ah;
- 	struct ath12k *ar;
- 	int i, j;
--	u8 restart_count;
- 
- 	for (i = 0; i < ab->num_hw; i++) {
- 		ah = ab->ah[i];
--		if (!ah)
-+		if (!ah || ah->state == ATH12K_HW_STATE_OFF)
- 			continue;
- 
- 		mutex_lock(&ah->conf_mutex);
- 
--		for (j = 0, restart_count = 0; j < ah->num_radio; j++) {
--			ar = &ah->radio[j];
--			if (ar->state == ATH12K_STATE_OFF)
--				continue;
-+		switch (ah->state) {
-+		case ATH12K_HW_STATE_ON:
-+			ah->state = ATH12K_HW_STATE_RESTARTING;
- 
--			mutex_lock(&ar->conf_mutex);
-+			for (j = 0; j < ah->num_radio; j++) {
-+				ar = &ah->radio[j];
- 
--			switch (ar->state) {
--			case ATH12K_STATE_ON:
--				ar->state = ATH12K_STATE_RESTARTING;
-+				mutex_lock(&ar->conf_mutex);
- 				ath12k_core_halt(ar);
--				restart_count++;
--				break;
--			case ATH12K_STATE_OFF:
--				ath12k_warn(ab,
--					    "cannot restart radio %d that hasn't been started\n",
--					    j);
--				break;
--			case ATH12K_STATE_RESTARTING:
--				break;
--			case ATH12K_STATE_RESTARTED:
--				ar->state = ATH12K_STATE_WEDGED;
--				fallthrough;
--			case ATH12K_STATE_WEDGED:
--				ath12k_warn(ab,
--					    "device is wedged, will not restart radio %d\n", j);
--				break;
-+				mutex_unlock(&ar->conf_mutex);
- 			}
--			mutex_unlock(&ar->conf_mutex);
--		}
- 
--		/* Restart after all the link/radio got restart */
--		if (restart_count == ah->num_radio)
- 			ieee80211_restart_hw(ah->hw);
-+			break;
-+		case ATH12K_HW_STATE_OFF:
-+			ath12k_warn(ab,
-+				    "cannot restart hw %d that hasn't been started\n",
-+				    i);
-+			break;
-+		case ATH12K_HW_STATE_RESTARTING:
-+			break;
-+		case ATH12K_HW_STATE_RESTARTED:
-+			ah->state = ATH12K_HW_STATE_WEDGED;
-+			fallthrough;
-+		case ATH12K_HW_STATE_WEDGED:
-+			ath12k_warn(ab,
-+				    "device is wedged, will not restart hw %d\n", i);
-+			break;
-+		}
- 
- 		mutex_unlock(&ah->conf_mutex);
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 660c1b260201..64d1bd4898e5 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -430,12 +430,12 @@ struct ath12k_sta {
- #define ATH12K_NUM_CHANS 100
- #define ATH12K_MAX_5G_CHAN 173
- 
--enum ath12k_state {
--	ATH12K_STATE_OFF,
--	ATH12K_STATE_ON,
--	ATH12K_STATE_RESTARTING,
--	ATH12K_STATE_RESTARTED,
--	ATH12K_STATE_WEDGED,
-+enum ath12k_hw_state {
-+	ATH12K_HW_STATE_OFF,
-+	ATH12K_HW_STATE_ON,
-+	ATH12K_HW_STATE_RESTARTING,
-+	ATH12K_HW_STATE_RESTARTED,
-+	ATH12K_HW_STATE_WEDGED,
- 	/* Add other states as required */
- };
- 
-@@ -480,7 +480,6 @@ struct ath12k {
- 	u32 ht_cap_info;
- 	u32 vht_cap_info;
- 	struct ath12k_he ar_he;
--	enum ath12k_state state;
- 	bool supports_6ghz;
- 	struct {
- 		struct completion started;
-@@ -599,9 +598,11 @@ struct ath12k {
- 
- struct ath12k_hw {
- 	struct ieee80211_hw *hw;
-+	struct ath12k_base *ab;
- 
- 	/* To synchronize hardware restart operation */
- 	struct mutex conf_mutex;
-+	enum ath12k_hw_state state;
- 
- 	u8 num_radio;
- 
-@@ -934,6 +935,11 @@ static inline struct ath12k *ath12k_ah_to_ar(struct ath12k_hw *ah)
- 	return ah->radio;
- }
- 
-+static inline struct ath12k_hw *ath12k_ar_to_ah(struct ath12k *ar)
-+{
-+	return ar->ah;
-+}
-+
- static inline struct ieee80211_hw *ath12k_ar_to_hw(struct ath12k *ar)
- {
- 	return ar->ah->hw;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4c9a591778a2..de6b1f357fbb 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4808,6 +4808,7 @@ static void ath12k_mac_setup_sband_iftype_data(struct ath12k *ar,
- 
- static int __ath12k_set_antenna(struct ath12k *ar, u32 tx_ant, u32 rx_ant)
- {
-+	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
- 	int ret;
- 
- 	lockdep_assert_held(&ar->conf_mutex);
-@@ -4821,8 +4822,8 @@ static int __ath12k_set_antenna(struct ath12k *ar, u32 tx_ant, u32 rx_ant)
- 	ar->cfg_tx_chainmask = tx_ant;
- 	ar->cfg_rx_chainmask = rx_ant;
- 
--	if (ar->state != ATH12K_STATE_ON &&
--	    ar->state != ATH12K_STATE_RESTARTED)
-+	if (ah->state != ATH12K_HW_STATE_ON &&
-+	    ah->state != ATH12K_HW_STATE_RESTARTED)
- 		return 0;
- 
- 	ret = ath12k_wmi_pdev_set_param(ar, WMI_PDEV_PARAM_TX_CHAIN_MASK,
-@@ -5120,7 +5121,7 @@ static void ath12k_mac_wait_reconfigure(struct ath12k_base *ab)
- 
- static int ath12k_mac_start(struct ath12k *ar)
- {
--	struct ath12k_hw *ah = ar->ah;
-+	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_pdev *pdev = ar->pdev;
- 	int ret;
-@@ -5129,22 +5130,6 @@ static int ath12k_mac_start(struct ath12k *ar)
- 
- 	mutex_lock(&ar->conf_mutex);
- 
--	switch (ar->state) {
--	case ATH12K_STATE_OFF:
--		ar->state = ATH12K_STATE_ON;
--		break;
--	case ATH12K_STATE_RESTARTING:
--		ar->state = ATH12K_STATE_RESTARTED;
--		ath12k_mac_wait_reconfigure(ab);
--		break;
--	case ATH12K_STATE_RESTARTED:
--	case ATH12K_STATE_WEDGED:
--	case ATH12K_STATE_ON:
--		WARN_ON(1);
--		ret = -EINVAL;
--		goto err;
--	}
--
- 	ret = ath12k_wmi_pdev_set_param(ar, WMI_PDEV_PARAM_PMF_QOS,
- 					1, pdev->pdev_id);
- 
-@@ -5235,7 +5220,6 @@ static int ath12k_mac_start(struct ath12k *ar)
- 
- 	return 0;
- err:
--	ar->state = ATH12K_STATE_OFF;
- 	mutex_unlock(&ar->conf_mutex);
- 
- 	return ret;
-@@ -5252,11 +5236,33 @@ static int ath12k_mac_op_start(struct ieee80211_hw *hw)
- 
- 	mutex_lock(&ah->conf_mutex);
- 
-+	switch (ah->state) {
-+	case ATH12K_HW_STATE_OFF:
-+		ah->state = ATH12K_HW_STATE_ON;
-+		break;
-+	case ATH12K_HW_STATE_RESTARTING:
-+		ah->state = ATH12K_HW_STATE_RESTARTED;
-+		ath12k_mac_wait_reconfigure(ah->ab);
-+		break;
-+	case ATH12K_HW_STATE_RESTARTED:
-+	case ATH12K_HW_STATE_WEDGED:
-+	case ATH12K_HW_STATE_ON:
-+		ah->state = ATH12K_HW_STATE_OFF;
-+
-+		WARN_ON(1);
-+		ret = -EINVAL;
-+		goto err;
-+	}
-+
- 	ret = ath12k_mac_start(ar);
--	if (ret)
-+	if (ret) {
-+		ah->state = ATH12K_HW_STATE_OFF;
-+
- 		ath12k_err(ab, "fail to start mac operations in pdev idx %d ret %d\n",
- 			   ar->pdev_idx, ret);
-+	}
- 
-+err:
- 	mutex_unlock(&ah->conf_mutex);
- 
- 	return ret;
-@@ -5321,7 +5327,7 @@ int ath12k_mac_rfkill_enable_radio(struct ath12k *ar, bool enable)
- 
- static void ath12k_mac_stop(struct ath12k *ar)
- {
--	struct ath12k_hw *ah = ar->ah;
-+	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
- 	struct htt_ppdu_stats_info *ppdu_stats, *tmp;
- 	int ret;
- 
-@@ -5334,7 +5340,6 @@ static void ath12k_mac_stop(struct ath12k *ar)
- 			   ret);
- 
- 	clear_bit(ATH12K_CAC_RUNNING, &ar->dev_flags);
--	ar->state = ATH12K_STATE_OFF;
- 	mutex_unlock(&ar->conf_mutex);
- 
- 	cancel_delayed_work_sync(&ar->scan.timeout);
-@@ -5364,6 +5369,7 @@ static void ath12k_mac_op_stop(struct ieee80211_hw *hw)
- 
- 	mutex_lock(&ah->conf_mutex);
- 
-+	ah->state = ATH12K_HW_STATE_OFF;
- 	ath12k_mac_stop(ar);
- 
- 	mutex_unlock(&ah->conf_mutex);
-@@ -7133,24 +7139,23 @@ ath12k_mac_op_reconfig_complete(struct ieee80211_hw *hw,
- 
- 	mutex_lock(&ah->conf_mutex);
- 
-+	if (ah->state != ATH12K_HW_STATE_RESTARTED) {
-+		mutex_unlock(&ah->conf_mutex);
-+		return;
-+	}
-+
-+	ah->state = ATH12K_HW_STATE_ON;
-+	ieee80211_wake_queues(hw);
-+
- 	for (i = 0; i < ah->num_radio; i++) {
- 		ar = &ah->radio[i];
-+		ab = ar->ab;
- 
- 		mutex_lock(&ar->conf_mutex);
- 
--		if (ar->state != ATH12K_STATE_RESTARTED) {
--			mutex_unlock(&ar->conf_mutex);
--			continue;
--		}
--
--		ab = ar->ab;
--
- 		ath12k_warn(ar->ab, "pdev %d successfully recovered\n",
- 			    ar->pdev->pdev_id);
- 
--		ar->state = ATH12K_STATE_ON;
--		ieee80211_wake_queues(hw);
--
- 		if (ab->is_reset) {
- 			recovery_count = atomic_inc_return(&ab->recovery_count);
- 
-@@ -7939,6 +7944,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_base *ab,
- 
- 	ah = ath12k_hw_to_ah(hw);
- 	ah->hw = hw;
-+	ah->ab = ab;
- 	ah->num_radio = num_pdev_map;
- 
- 	mutex_init(&ah->conf_mutex);
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index f308e9a6ed55..4fcd6af3696e 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -200,7 +200,8 @@ static void ath12k_copy_regd(struct ieee80211_regdomain *regd_orig,
- 
- int ath12k_regd_update(struct ath12k *ar, bool init)
- {
--	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
-+	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
-+	struct ieee80211_hw *hw = ah->hw;
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
- 	int ret, regd_len, pdev_id;
- 	struct ath12k_base *ab;
-@@ -258,7 +259,7 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 	if (ret)
- 		goto err;
- 
--	if (ar->state == ATH12K_STATE_ON) {
-+	if (ah->state == ATH12K_HW_STATE_ON) {
- 		ret = ath12k_reg_update_chan_list(ar);
- 		if (ret)
- 			goto err;
--- 
-2.34.1
+Now, i fix this warning with new patch '[PATCH v6 02/11] wifi: ath12k: fix incorrect logic of calculating vdev_stats_id'.
 
+Please ignore this version.
+
+
+> > It's been a long time since the last update of kernel config. Can you
+> > share the new one if convenient?
+> 
+> Yeah, it is. I updated it now.
+> 
+> 
 
