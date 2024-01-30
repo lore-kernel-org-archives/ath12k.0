@@ -4,78 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59503C47DB3
-	for <ath12k@archiver.kernel.org>; Mon, 29 Jan 2024 15:09:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34AEBC47DA9
+	for <ath12k@archiver.kernel.org>; Tue, 30 Jan 2024 01:40:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jXR3P2ZZLGkL0xEiJlvG33ms0PgELeJ161B0XbDc1ko=; b=0z3qTn4FPYm3nQaWikeTC+26oh
-	OsvPUdQU45yJE6VSVWeoBw0IFq65c/jruS+SRqylBrCTrjDJv5P4bJsv0s0OXyvaYPR1QiSUzZP8P
-	/e52UoiwSTWnl364/fZeY5VonNquH7soVP+zpQLd52ym3tGX26EStmtZjYW2w7bh9t+ZXRDJPdySN
-	qx7Sfvjo34N8HJWB3DLxe0zLaNZOY2KBAAHbYMjdz/jI8GaJVtfJb320VTEklRsgeE0ym3DfVPuu1
-	NqLVhCycQ1yYQyqwKsKsJssCymOeJws5c+UJscodqnA6dvIsqifVC2kgISFvV6fRV4zKO/0ezZM/Q
-	7lxUV7Ug==;
+	bh=ZPtRUycgAa9lXETMoy5ixhUG1iXxm5wZI9cIOjvtUzI=; b=dkpMzbku268n1Ht5sgMU48QOVy
+	JGGgumuA80QcRLXtJmxAYPvH4LZoitYysevDmyg3wJX/a4KLDi4S85tGbb4v0dUKXjOBzKcLXn6WH
+	xIGuWN/J2CHpG4GkIj1lrW0hF8P/iIq/Gv0ajIirsXOcqLIObHJYfNzCfq6Mul5+vB0K6gVFkfur9
+	UDL/kqj6UoIYBRD2x5PbfqP4kA3Dn6paRESkUlymQmHu7r5+J3IhDQEYRql4jSHKl6k/jBci/MYE3
+	CxZrBMtdYiSiAzL+UdIWeZLGSLGvKpwH2IZPP2g4+dmQvekziGmUThu501FeYisDUMWJROzNd4Mch
+	7k53ZsVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUTGk-0000000DCgW-0HlE
+	id 1rUd6a-0000000EqR4-3ZtV
 	for ath12k@archiver.kernel.org;
-	Mon, 29 Jan 2024 15:09:54 +0000
-Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
+	Tue, 30 Jan 2024 01:40:04 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rUTGh-0000000DCfK-0sAN
+	id 1rUd6X-0000000EqN3-2NJ4
 	for ath12k@lists.infradead.org;
-	Mon, 29 Jan 2024 15:09:52 +0000
-Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-2906dffd8ddso2194968a91.3
-        for <ath12k@lists.infradead.org>; Mon, 29 Jan 2024 07:09:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1706540989; x=1707145789; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=jXR3P2ZZLGkL0xEiJlvG33ms0PgELeJ161B0XbDc1ko=;
-        b=h13xI4h9+owBwttv5z829CkVV2BaN9R4SbMJCh2BnLFiY90l9nevFo3m248rUcllgY
-         ae1ZMlBNALpKpSnLy/RtYkPUFxuOmAXWFVUWZJlJmoxHMM5RQkCR6DTMo2lotwwKk0X6
-         46O48t7X+5JNnrD40OsLgROibeSa2T/su49+MbShUyUvj94zUCrFKZnTmLYJyCbt05Sm
-         6FdY3LWcJ5sQFmZduaY0DWxxsNKS+ITflM5N5zTzq17PANVpQIdULPgEQ4usIMyxhmv2
-         kNRbvzACRhY58lNXc45fPHmFVciVjC5RttC+VWcgN2fK8sltlGLfwMKUY4gdi3l2G6Md
-         3hyA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1706540989; x=1707145789;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=jXR3P2ZZLGkL0xEiJlvG33ms0PgELeJ161B0XbDc1ko=;
-        b=Ip0xAIskem7KA90eVhZCFfuHGyEGUWylvRWDUzAaxaZVwsa6F7ANSMCzLtdFlPMwag
-         +u4D//It6VuygDK0WlDeQnrfUyMIgienX7prnoH2q3JTADnXmMEhh5l/nHMZCsdV6RFD
-         He9Yn3oJvtygiryykd1kWJVmMmwMt67akP7U20Gfx633Hq+4tQRttbV3esoQJwYdYuIV
-         YAim8zf4J9k7DpeaSQGKnSsbFLWY2DhUnWbOUuGrhoNMDv5X2wJpTjvAXQwNdg1j2CUk
-         B6onBUCfSwOFK+IiVXozGrgUZXViAZLVF0bs0+aJ0E30zKW0C5d5ZBsiy4IF6bIo2yXX
-         h3jQ==
-X-Gm-Message-State: AOJu0Yxqnu74+HSwa+D6qH5B8cU1YBAHevpG3xVIGsGGL8XdLFZRUtBD
-	13W6+tRLfVZ+71h3EK/orvrDQ1sKnVOYg2mHPiRnEWKzAMlkkkqD3Jb+UFs0XMgIwY/lbq1e4b0
-	AxuJrmuCQt3MU/OmQ37e4MPrf8rQ=
-X-Google-Smtp-Source: AGHT+IH/ZV1/GVTZ2Ki3j6mHDZrB4m2/4hNbkNF9Cmm38M7xBGf4wnzL2uHMdkJB1u7aAvtfhJSVeuCNdiGh6n6gYQ4=
-X-Received: by 2002:a17:90a:b398:b0:290:f7a7:333d with SMTP id
- e24-20020a17090ab39800b00290f7a7333dmr3442286pjr.36.1706540989179; Mon, 29
- Jan 2024 07:09:49 -0800 (PST)
+	Tue, 30 Jan 2024 01:40:03 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 40U1VjM9021696;
+	Tue, 30 Jan 2024 01:39:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=ZPtRUycgAa9lXETMoy5ixhUG1iXxm5wZI9cIOjvtUzI=; b=QE
+	kky1C5MK+5C2rH0uTlSfAylNxM+0hM3PUObLpXu7mfbSIwH673acwaLOK86LvB7s
+	vj4HHA3Yrxa21rTnbELlTkejSnKnoX2FyqyEek9fkse5UK4OVi9u4b9ZA/QoY58c
+	02cxIzxTRrcFEyCcyH08xwylo951WSueuSc1PM2cmgWSKDWFn+CNx4Ue2DneEdkX
+	vxFdzom7mIhDjNGNXlKfVe0GxbtbRtfX1BtNhfM5mSdFDqxqvA1RlCeU++vKxzsF
+	/mT2Tk+IEjjIWw6R1H2b2eonGXMsypwDLiKEbMIQ/OzB0jHsDjQzdTo4dFLVeA5L
+	xnCaa2aeXplQkf7Smb8Q==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3vx86htbsj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 30 Jan 2024 01:39:56 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 40U1dtiq030169
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 30 Jan 2024 01:39:55 GMT
+Received: from [10.110.47.232] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 29 Jan
+ 2024 17:39:55 -0800
+Message-ID: <c48df22b-e04f-4c51-bb7d-36eb9b2282af@quicinc.com>
+Date: Mon, 29 Jan 2024 17:39:54 -0800
 MIME-Version: 1.0
-References: <CAFED-jma7ZB17Rcgx9H+eVZ=N6Pty4__gz3B+O2V34XtcEzOGg@mail.gmail.com>
- <87o7d4wasb.fsf@kernel.org>
-In-Reply-To: <87o7d4wasb.fsf@kernel.org>
-From: Janusz Dziedzic <janusz.dziedzic@gmail.com>
-Date: Mon, 29 Jan 2024 16:09:37 +0100
-Message-ID: <CAFED-jmEt2BarCzNkPnECMn6X1j1nmQOrFfTrRgBaQHfTHRYoA@mail.gmail.com>
-Subject: Re: qcn9274 hw2.0 in banana pi r64 - LTSSM read fail
-To: Kalle Valo <kvalo@kernel.org>
-Cc: ath12k@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 07/11] wifi: ath12k: fix broken structure
+ wmi_vdev_create_cmd
+Content-Language: en-US
+To: Kang Yang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240129101453.368494-1-quic_kangyang@quicinc.com>
+ <20240129101453.368494-8-quic_kangyang@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240129101453.368494-8-quic_kangyang@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: -SXh-Rn9hPUHsXF7zLkEUB409_7Iz-h3
+X-Proofpoint-GUID: -SXh-Rn9hPUHsXF7zLkEUB409_7Iz-h3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-01-29_15,2024-01-29_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ mlxscore=0 bulkscore=0 lowpriorityscore=0 malwarescore=0 spamscore=0
+ impostorscore=0 adultscore=0 clxscore=1015 mlxlogscore=733
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401190000 definitions=main-2401300009
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240129_070951_274668_368CA493 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20240129_174001_908873_5BCAE46E 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,72 +101,20 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-pon., 29 sty 2024 o 14:04 Kalle Valo <kvalo@kernel.org> napisa=C5=82(a):
->
-> Janusz Dziedzic <janusz.dziedzic@gmail.com> writes:
->
-> > I have this card in bpi-r64 board. Need to hash: ath12k_pci_enable_ltss=
-m()
-> > While board hang here (next board restart):
-> >
-> > val =3D ath12k_pci_read32(ab, PCIE_PCIE_PARF_LTSSM);
-> >
-> > Is it a 12k bug/MTK pci controller bug?
-> > When hash it works correctly.
-> >
-> > root@OpenWrt:~# lspci -nn
-> > 00:00.0 PCI bridge [0604]: MEDIATEK Corp. Device [14c3:3258]
-> > 01:00.0 Network controller [0280]: Qualcomm Device [17cb:1109] (rev 01)
-> > root@OpenWrt:~#
->
-> Sorry, I'm not following you. What do you exactly mean with "hash it"?
->
-Have to remove ath12k_pci_enable_ltssm() call.
-In other case
+On 1/29/2024 2:14 AM, Kang Yang wrote:
+> Current structure wmi_vdev_create_cmd is not matched to the firmware
+> definition. So update it.
+> 
+> And update vdev_stats_id_valid for vdev_stats_id.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-ioread32(ab->mem + window_start + PCIE_PCIE_PARF_LTSSM) hang the system.
+FYI IMO this and the 08/11 patch should go first since they are fixing
+pre-existing code independent of the P2P feature (the P2P code just
+exposed the flaws) -- hence why I'm ack'ing these first
 
-window_start was 0
-PCIE_PCIE_PARF_LTSSM - 0x1e081b0
-No idea why this ioread32() fail/hang on bpi-r64
-
-Did smth like this:
-static void ath12k_pci_sw_reset(struct ath12k_base *ab, bool power_on)
-{
-        if (power_on) {
-                //ath12k_pci_enable_ltssm(ab);
-                ath12k_pci_clear_all_intrs(ab);
-                ath12k_pci_set_wlaon_pwr_ctrl(ab);
-        }
-
-After that works correctly.
-
-
-root@OpenWrt:~# dmesg |grep -e ath -e mhi
-[  123.056248] ath12k_pci 0000:01:00.0: assign IRQ: got 0
-[  123.061704] ath12k_pci 0000:01:00.0: BAR 0: assigned [mem
-0x20000000-0x201fffff 64bit]
-[  123.069764] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002)
-[  123.076103] ath12k_pci 0000:01:00.0: enabling bus mastering
-[  123.089329] ath12k_pci 0000:01:00.0: MSI vectors: 1
-[  123.094226] ath12k_pci 0000:01:00.0: Hardware name: qcn9274 hw2.0
-
-   < if ltssm - hang here>
-
-[  123.151406] mhi mhi0: Requested to power ON
-[  123.155622] mhi mhi0: Power on setup success
-[  123.300815] mhi mhi0: Wait for device to enter SBL or Mission mode
-[  123.864188] ath12k_pci 0000:01:00.0: qmi dma allocation failed
-(29360128 B type 1), will try later with small size
-[  123.893962] ath12k_pci 0000:01:00.0: memory type 10 not supported
-[  123.905655] ath12k_pci 0000:01:00.0: chip_id 0x0 chip_family 0xb
-board_id 0xff soc_id 0x401a2200
-[  123.914441] ath12k_pci 0000:01:00.0: fw_version 0x10098b57
-fw_build_timestamp 2022-09-19 18:18 fw_build_id
-QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
-[  125.997541] ath12k_pci 0000:01:00.0: leaving PCI ASPM disabled to
-avoid MHI M2 problems
-root@OpenWrt:~#
-
-BR
 
