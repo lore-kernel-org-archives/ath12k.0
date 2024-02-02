@@ -4,65 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70014C4828E
-	for <ath12k@archiver.kernel.org>; Fri,  2 Feb 2024 12:21:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85454C48294
+	for <ath12k@archiver.kernel.org>; Fri,  2 Feb 2024 12:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AsfLzmKplsWJkmQu/aR7gd6KNTDCJhMJr4cwx6ClJnc=; b=IBlhVXplcUiKQHW65oLv/cfEvl
-	1pNk5CD+9vJC7crcls3PXGW9aOdejG72rv1mLfOph0waZbMKHR6Ch/pd8o1zkKSd7oaNXw8Prf6Ge
-	m6J7rZAT1F+1MHOxGn/502VZl62tBPaz2TP5a0c/QZCUi3ap2K157B/2zeyPiunl/RbGOSUXhA0o8
-	oC1EE/USRMPhdXa9t5egoopW08HaHST3nZYgXnvXtV416Ed7MgSvgqINtq1HEu3SHJfvt2IW093J1
-	iM4CU3Sc3RBUk/QSebPddhld8iklwth6eePCmxUejytByQ3guIYkNvNvfXG9iNEzlZPCwM9ZJxqos
-	fEZdmoBA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+wEYjkvJMs1eppm+bz9HSOWUX5SMfUFbnTHurlGQ6t4=; b=Mtivf8tyh61rAo5WY3w82iB0v5
+	em3c6F09LfgbOKzIJM1JBSX5jr+sOpRPViw49iXzq+Jwq5ALf8oqo8RyiaA8liE54t2Hw7xeBYa4W
+	NpG4NbCJRVMtjRueviRu2kpwlZkSPAIz29nT2pdspD/J6uv1fCrFwfnhSpw3lQcFSFpRRZBktOj8J
+	/Dkdod6TEsVPeh83PTbtUCf4YodGvaqrkUalGQ+iFNjcqSGC2GGQQ5rVlE6Ib/u5CGOjCZaejBMSt
+	aVQQ4Fa4B3KvXt3arTNIGv46bMuc4psSxQ5yVo71JHLg4VkSGhnfi/Lo3X7Of1Fjy2BgTT6HeR02z
+	YSL4ZsaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVsXW-0000000BSEk-0cEO
+	id 1rVsdb-0000000BTKs-0CdW
 	for ath12k@archiver.kernel.org;
-	Fri, 02 Feb 2024 12:21:02 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Fri, 02 Feb 2024 12:27:19 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVsXT-0000000BSDP-1VlV
-	for ath12k@lists.infradead.org;
-	Fri, 02 Feb 2024 12:21:00 +0000
+	id 1rVsdW-0000000BTHp-3p6M;
+	Fri, 02 Feb 2024 12:27:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 666C8622C0;
-	Fri,  2 Feb 2024 12:20:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E476FC43390;
-	Fri,  2 Feb 2024 12:20:56 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 0A7C6CE2B5A;
+	Fri,  2 Feb 2024 12:27:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F1DCC43390;
+	Fri,  2 Feb 2024 12:27:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706876458;
-	bh=OaamQbuXmp+aUnngrzGO74ZKOK+42U6K3zZz1020izA=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=VxHw0oolisN9YC6A9fNC6A1oGfYmbnjyAfYk8qGNA3gVAxj8DLzRGL/nnXSDDjXsm
-	 ea9H1J+sGgTh/Hma6p3SvCZR0mmJH7lUJ7N1KQ+8SQ1aLwaiQ2hw6sp0BwDOe9Hm4b
-	 rgMdEAhUH4AgHvFqhJQoMjymgRBrvI9/gheHvQF2KTQaI/bP13rgmZw6CWycUyOeLP
-	 1w8wk2gP+FaXqalH+lE42LzT1yRo1rzwRl1nxD4euKp386CnA9xaSVY5rHH8dZIVb5
-	 7ajD1PwcdybzyLG0kJibiL+ktXHYzh+V3uYfAi88ISOe1OHavZe8e5QymDEegjEF42
-	 h2u/F4zmlpXjw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  P
- Praneesh <quic_ppranees@quicinc.com>
-Subject: Re: [PATCH v3 05/13] wifi: ath12k: Add logic to write QRTR node id
- to scratch
-References: <20240129065724.2310207-1-quic_rajkbhag@quicinc.com>
-	<20240129065724.2310207-6-quic_rajkbhag@quicinc.com>
-	<b7a6ad2c-7f28-4758-921e-f77b56b5190e@quicinc.com>
-Date: Fri, 02 Feb 2024 14:20:54 +0200
-In-Reply-To: <b7a6ad2c-7f28-4758-921e-f77b56b5190e@quicinc.com> (Jeff
-	Johnson's message of "Wed, 31 Jan 2024 13:06:28 -0800")
-Message-ID: <87il37t5uh.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1706876832;
+	bh=touhaxaAdJle9IpRdiLb/BuCH/K63CXh37IPTsucA44=;
+	h=References:In-Reply-To:From:Date:Subject:To:List-Id:Cc:From;
+	b=FOfy3xkQuJLCa/8utMZ7Z+/l8979Nkn++NJ8oYq/+kY1EWZ/CBdeenmUp0HKzkaZx
+	 +djF5TSbKE7ziPUibatTcIBDVNlVTJQdtvcbZz9GQTUlOmJ3dcIpEqe06Ra9U+Tsoo
+	 pt/zAxVlBggVauirYFlNcvbec/VhGUus0WGAOOpm8ngJNhZf/2gMfFiUn3viA+9JWr
+	 qEsa7moFgc5mT9c5EawszTnUgcqddr0APcKIYMR0IiLmdLWNpmG7ec5RIECuRMqTK3
+	 N/5Q79CusYDU21aDq0c+Jb6napV8/QmdrNcqn2Okkzho0kD2GGK8OiCyhUnf6+2JXt
+	 pTsQDW03IasLA==
+Received: by mail-yb1-f178.google.com with SMTP id 3f1490d57ef6-dc6da01f092so1623497276.0;
+        Fri, 02 Feb 2024 04:27:12 -0800 (PST)
+X-Gm-Message-State: AOJu0YzuF54L0YES12fy7JIFIKWlN0aRRyuAewixsFxujVENh0w+W8L+
+	4/aYa31t8odRye8mMSE9r4qvGcvllspfsCrSl5AAXSuY+7Y7kNQXq/6A04k4v+FzUvqtuyTV6gQ
+	MVkMuzQisAeED2rNXdKDnj9rgJM8=
+X-Google-Smtp-Source: AGHT+IGsOfXqhV/8fwaOfdUYofJMLh85JNkTrPVoVUFGs6T8y8xVasqQtpavtGo+pw0jUlR15wn96uhuUFl7ur7Nni4=
+X-Received: by 2002:a05:6902:102e:b0:db5:6e6b:9b40 with SMTP id
+ x14-20020a056902102e00b00db56e6b9b40mr2291792ybt.31.1706876831150; Fri, 02
+ Feb 2024 04:27:11 -0800 (PST)
 MIME-Version: 1.0
-Content-Type: text/plain
+References: <8734uewvi9.fsf@kernel.org>
+In-Reply-To: <8734uewvi9.fsf@kernel.org>
+From: Josh Boyer <jwboyer@kernel.org>
+Date: Fri, 2 Feb 2024 07:27:00 -0500
+X-Gmail-Original-Message-ID: <CA+5PVA6hsTbSWRzyxv6a9yhKZUKA-zCKm2y+N0A+TEE3dMXt-Q@mail.gmail.com>
+Message-ID: <CA+5PVA6hsTbSWRzyxv6a9yhKZUKA-zCKm2y+N0A+TEE3dMXt-Q@mail.gmail.com>
+Subject: Re: [PULL linux-firmware] ath10k, ath11k and ath12k firmware 20240130
+To: Kalle Valo <kvalo@kernel.org>
+Cc: linux-firmware@kernel.org, linux-wireless@vger.kernel.org, 
+	ath10k@lists.infradead.org, ath11k@lists.infradead.org, 
+	ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240202_042059_468249_1CDC4798 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20240202_042715_246289_191E1C0D 
+X-CRM114-Status: GOOD (  17.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,35 +82,47 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
-
-> On 1/28/2024 10:57 PM, Raj Kumar Bhagat wrote:
->> From: P Praneesh <quic_ppranees@quicinc.com>
->> 
->> Currently only one MHI device is registered successfully on platform
->> having two or more identical MHI devices. This is beacuse QMI service
->> runs with identical QRTR node ID. And, qrtr-lookup cannot register
->> more than one QMI service with identical node ID.
->> 
->> Hence, generate a unique QRTR instance ID from PCIe domain number and
->> bus number. QMI allows node id to be written on scratch register.
->> Add logic to write QRTR node id to the register. It is available for
->> firmware to uniquely identify an instance.
->> 
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->> 
->> Depends-On: wifi: ath12k: add firmware-2.bin support
+On Tue, Jan 30, 2024 at 1:01=E2=80=AFPM Kalle Valo <kvalo@kernel.org> wrote=
+:
 >
-> I would not expect this information to be part of the final commit text,
-> but I suspect Kalle can remove it when it goes into the pending branch
+> Hi,
+>
+> We have one important update for ath11k WCN6855 which fixes a suspend
+> regression reported by several people.
+>
+> Please let me know if there are any problems.
+>
+> Kalle
+>
+> The following changes since commit 1a9518c73c4b54854c9cd8f416fd3b8f8e3456=
+e7:
+>
+>   Merge branch 'mlimonci/amd-2024-01-30.2' into 'main' (2024-01-30 15:55:=
+30 +0000)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/linux-firmware.git =
+ath10k-20240130
 
-Yes, I removed Depends-On. In the future, please add it to the cover
-letter or, if there's no cover letter, after "---" line.
+Pulled and pushed out.
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/137
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+josh
+
+>
+> for you to fetch changes up to 5217b76bed90ae86d5f3fe9a5f4e2301868cdd02:
+>
+>   ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SI=
+LICONZ_LITE-3.6510.37 (2024-01-30 19:58:18 +0200)
+>
+> ----------------------------------------------------------------
+> Kalle Valo (1):
+>       ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V=
+2_SILICONZ_LITE-3.6510.37
+>
+>  WHENCE                        |   2 +-
+>  ath11k/WCN6855/hw2.0/amss.bin | Bin 4988928 -> 4988928 bytes
+>  2 files changed, 1 insertion(+), 1 deletion(-)
 
