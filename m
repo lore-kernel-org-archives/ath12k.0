@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A36CDC47DB3
-	for <ath12k@archiver.kernel.org>; Fri,  2 Feb 2024 12:33:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23268C47DB3
+	for <ath12k@archiver.kernel.org>; Fri,  2 Feb 2024 12:37:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sp58MFNplRMtGOTyXRmNOTSkRcJr7kVZ4bN9gj3Xdg8=; b=pI7irMWsjR1Ja+eulQFBon3Y/G
-	Xml5vLTDEYpAt0+apMG/AooPyqiriBnrSFWfpH2Q/7lQbPJGII26LCcNXWH+nFnhQtDAzIZkLx1G9
-	O8lJjMxbfrWIYVazFtkwcQ2UnC7jF1UIgOCImURNfsAmqs35nA6LXQLAGH9AloKE46tsw1qpejJ23
-	QYC6yu9oLpqWsXpt+ca/AmdhrDQ87tmAFCe4ye29m7modh75f9LD+j28FVLhTMv7IeGYu8qDRRpAD
-	mhSVeV99pyNrlRz8UKIAkiSQpyZjkPUsUkHapGN6EkV6UD8g4Cz2OcIOOPcT/EJipab4i0CFeOFiP
-	4GPerA5A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=69mssu3XQQD5o5sQcH10XF03YXC+K3FBrIbBxyPauZg=; b=E7EtVNQqBi5IgieEzFQo74vHV8
+	2ybbB4qJAQ2NO3NzNVZZcP/LELkDFtivqywuR6b4yJcBN6P1I0Om/TL64Ggbvg1C0pauIIft3WXMy
+	e23AzSKIxZ8WT9dkjMRFXf1Q5SpRkKwIxYgW0tp3W+OUrXWxXZBTRd7jUVNyiz2P0hmm77BaEFOxA
+	Me0c/jpwl3P4x6MEU/DVXaMNeFwrURotoDPGpoOdlC2R3t7LZOCYfosoMTaT/Uo9hfMIDzJHNvCQE
+	2cheEdefOMTjK7bEFUut03bXyqCygEz026w9uDwLwtrcPH1JuFBZMJcAL9PQHbDqFPFUMP4oeh6ou
+	uPcaVYOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVsje-0000000BUVM-1WKj
+	id 1rVsn1-0000000BUvZ-3Vss
 	for ath12k@archiver.kernel.org;
-	Fri, 02 Feb 2024 12:33:34 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Fri, 02 Feb 2024 12:37:03 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVsjb-0000000BUV0-2a4K
+	id 1rVsmx-0000000BUub-0KNy
 	for ath12k@lists.infradead.org;
-	Fri, 02 Feb 2024 12:33:33 +0000
+	Fri, 02 Feb 2024 12:37:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id F1A18622C2;
-	Fri,  2 Feb 2024 12:33:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 81F39C433C7;
-	Fri,  2 Feb 2024 12:33:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 69BDC62523;
+	Fri,  2 Feb 2024 12:36:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 251A2C433C7;
+	Fri,  2 Feb 2024 12:36:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706877210;
-	bh=HVpMJX4yaTYtWCWha9jRm5UBMt4O9QaOzbebi8cEGho=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=odsefLlCKl/Wt5Vc0vljRZBFkBmcm3TO8deQOLPEqcdW6etjyjxwKJg12OFops0QD
-	 fkDPYBX8ZRCeYwyX8x1YRMghg3Jh84YnuYH3Z1H/FIGV7eihQCNGUy5SMT1bIJNTI/
-	 /6ONzg8w11Lqz+/AP2sxjIOnAHNS13BGxKjbiRtvuZCL8lI6V61iuUCJz0YeSXX6KR
-	 Ug+tu6QMXnL7b61LHcWpmrXjHfKDQ97Vo2Ru3eiLyAuyW4AxNWKoldP9CvJnBjneEQ
-	 iwYsglhyatMCvknAMCCD14oWhv+VHpjAmM3ry/4FbjWvG4bqYO9u3MRLWmiKxtPvZZ
-	 tKsFEmAWTLkYg==
-Content-Type: text/plain; charset="utf-8"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH v3 01/13] wifi: ath12k: indicate NON MBSSID vdev by
- default
- during vdev start
+	s=k20201202; t=1706877418;
+	bh=S9kXI/nhnyCQ2E9xStS/KEOinhoWXOUkKo3t3H2M95c=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=M+cPTIm1DVO7RaQ+3OZ9bpbFIvU8ENiPcpbdd+OAUAoNw5zUwCrFYx4X+jyFbd3hV
+	 wZ3V+6CMBq94lD/UDRadU+sncEBqCPLLQ+g5QcRcoYBGjw8yuFu2YZNPcxfEQDgikp
+	 h0CaCe1TfGxWtLv3vyixtYJZmQDOeZhrMVSkCDhdifYkG1S5jgk/6GKEeAoD8/vU3n
+	 8jh0MP+Aq1Dn3p5oGUBQDpm3vKO/GG0AV/lxjLjxfWtCOrFYG+PSgu9CWBwf4Wfwi7
+	 8iuvZ7ljdjqIS6/y+MlEFGcNQYHqMr/wKLTGYOtqwkYzvVPouw/rjKZGnN63hGAub0
+	 mN6uNpXjrmk1Q==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240129065724.2310207-2-quic_rajkbhag@quicinc.com>
-References: <20240129065724.2310207-2-quic_rajkbhag@quicinc.com>
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Sriram R <quic_srirrama@quicinc.com>,
- Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170687720763.3214428.5130695458131576261.kvalo@kernel.org>
-Date: Fri,  2 Feb 2024 12:33:29 +0000 (UTC)
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Lingbo Kong <quic_lingbok@quicinc.com>,  <ath12k@lists.infradead.org>,
+  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v2 1/2] wifi: ath12k: add processing for TWT enable event
+References: <20240122085336.3985-1-quic_lingbok@quicinc.com>
+	<20240122085336.3985-2-quic_lingbok@quicinc.com>
+	<ea2952a4-8343-407e-9a9c-3c93f4afd607@quicinc.com>
+Date: Fri, 02 Feb 2024 14:36:55 +0200
+In-Reply-To: <ea2952a4-8343-407e-9a9c-3c93f4afd607@quicinc.com> (Jeff
+	Johnson's message of "Mon, 22 Jan 2024 09:47:36 -0800")
+Message-ID: <87a5ojt53s.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240202_043331_734383_E77B6089 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240202_043659_186255_3BCAE32D 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,42 +75,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Raj Kumar Bhagat <quic_rajkbhag@quicinc.com> wrote:
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
-> When any VDEV is started, MBSSID flags are passed to firmware to
-> indicate if its a MBSSID/EMA AP vdev. If the interface is not an AP
-> or if the AP doesn't support MBSSID, the vdev needs to be brought up
-> as a non MBSSID vdev. Set these flags as a non MBSSID AP by default
-> which can be updated as and when MBSSID support is added in ath12k.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> On 1/22/2024 12:53 AM, Lingbo Kong wrote:
+>> When ath12k send TWT enable command to firmware, firmware will return a TWT
+>> enable event to ath12k. Through the analysis of TWT enable event status, we
+>> can easily obtain the status of TWT enable command. It can be more
+>> convenient to debug TWT.
+>> 
+>> This patch works with WCN7850 and QCN9274.
+>> 
+>> Tested-on: WCN7850 hw2.0 PCI
+>> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>> 
+>> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+>> ---
+> [...snip...]
+>> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h
+>> b/drivers/net/wireless/ath/ath12k/wmi.h
+>> index 06e5b9b4049b..7570ef7be38d 100644
+>> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+>> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+>
+> Qualcomm Innovation Center copyright missing 2024
+>
+> Kalle can probably address this in "pending"
 
-13 patches applied to ath-next branch of ath.git, thanks.
-
-6925eba532e1 wifi: ath12k: indicate NON MBSSID vdev by default during vdev start
-9f06911998ca wifi: ath12k: fetch correct pdev id from WMI_SERVICE_READY_EXT_EVENTID
-287033810990 wifi: ath12k: add support for peer meta data version
-902700d55d4a wifi: ath12k: fix fetching MCBC flag for QCN9274
-94e8235c679d wifi: ath12k: Add logic to write QRTR node id to scratch
-664a1c96b297 wifi: ath12k: fix firmware assert during insmod in memory segment mode
-f7019c2fcdf6 wifi: ath12k: split hal_ops to support RX TLVs word mask compaction
-3cf1a9f7a1b2 wifi: ath12k: remove hal_desc_sz from hw params
-419927ec8438 wifi: ath12k: subscribe required word mask from rx tlv
-57c8b5c332e5 wifi: ath12k: add MAC id support in WBM error path
-afeee629e72e wifi: ath12k: fix PCI read and write
-af9bc78d14fb wifi: ath12k: Read board id to support split-PHY QCN9274
-2d3a7384b9c8 wifi: ath12k: disable QMI PHY capability learn in split-phy QCN9274
+Actually the year 2024 was already there, most likely some other patch
+added that.
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240129065724.2310207-2-quic_rajkbhag@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/list/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
 
