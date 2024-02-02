@@ -4,93 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FF95C47DB3
-	for <ath12k@archiver.kernel.org>; Fri,  2 Feb 2024 14:32:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65155C48291
+	for <ath12k@archiver.kernel.org>; Fri,  2 Feb 2024 16:26:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gMR0f6pPEG9XXumtI/sMRTZYLSfX0HhhNJuMH7nQGYo=; b=DnODa+bR6rluUHnPJcIs1ehqEP
-	tP0cB/la+TMbiF7S+s+UEx4d/U91nQhxXYMnT20rlomMn9o9HM2TYh90PJOdSQscCtgCE3fMBMX46
-	JY8rqWHk0rTbw+7As5lMMEgNRSRsli9RAEqFXPAVek7ZgsmuXHhvkfj0mYehWbpzMnbG/QE8fS+fh
-	UPM33f/EZ9FEGeCiO1tOTSwCCHa9bvfZZvQVw+3tVJ2aFAWh8OnCUUQcnIGUO4yDRxjbq5oJtGOpv
-	AmddLgyV5zKXNYIIpcu6t6XubHXfGL0AET6vSHRQL2pwrpAvYmuOt2Hdw9Vlz3us2CEdG7xmo3Oc3
-	9CDvBkxw==;
+	bh=1sM4sc8t+56vSJd/5xISQ9hv9POHn/iy6DAQJ0YZmgo=; b=YuZFAKpYXZB39DgDwgJpnKXF3t
+	JN3o7q/tbAGVfpCBIDWDUZyci135GK/6CNp8K2gX3VTvU6XWMGZ61OnH2H6uOzoh4rlsouvA7Nxpr
+	WiDLTvxpdHVoqjfjfRptfWipBepJtH5EnPIkJ3KjikQp+wyvxYwslK9pbRYzM31i67RzL8DVpnZxQ
+	aXLRU5nT4DrSnR6x1CPC0kqxMof/EMVWUfajWWL2QdleYcorggXhgcsFQOB5bJNhYahI4/VvF/kMa
+	a5rBZOI6kNEWaZgoi7hxE1X3WJ+W1+hF4ALz5fzT9APVJ5kXyXjEjQdAX2gYVmqrWy4UHqol0s+iN
+	+j3p4Mng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVub9-0000000BmOu-1IaE
+	id 1rVwMb-0000000CI78-4AUO
 	for ath12k@archiver.kernel.org;
-	Fri, 02 Feb 2024 14:32:55 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 02 Feb 2024 16:26:01 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rVub6-0000000BmNg-30yn
+	id 1rVwMZ-0000000CI5l-0VZa
 	for ath12k@lists.infradead.org;
-	Fri, 02 Feb 2024 14:32:54 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 412CkCYs010543;
-	Fri, 2 Feb 2024 14:32:49 GMT
+	Fri, 02 Feb 2024 16:26:00 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 412D4SBs003074;
+	Fri, 2 Feb 2024 16:25:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=gMR0f6pPEG9XXumtI/sMRTZYLSfX0HhhNJuMH7nQGYo=; b=kv
-	W+dSTsEwpc4dNvIArZWbdecwYPf2Gx0nUmB2Wm0BdYyGx5jMQ50gN6EsP3d6Z6kb
-	Nn1gNg9WDJnklh6/ojcW+HdJN+2xtmSZ7Pt7btkh820t6EtPAOo46h6shk6Aqm/D
-	yfy6vuhfFtw6DBhwsfSsiWXA4AaxyzTrmV5YSgJNNfGvHlJe/rNfe4CxFbc1s6QD
-	IPAyiT3YoUKYYLvbMY6fr8rYfnqdOtfBFqJwUtzCDK8cDpxEkV+uaDhnTP+BmQZT
-	o3mdEPGtGU1M87Wjnu1tDn2oWFZhSRu85BRrsMRkaDiRIDXSp3U7bnlRMaVuclY5
-	eNf19bOI38p83p36hzKw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w0ptv1ky3-1
+	qcppdkim1; bh=1sM4sc8t+56vSJd/5xISQ9hv9POHn/iy6DAQJ0YZmgo=; b=PV
+	aRxJnCnUm+7Gnp5zdm7km5IipOpYbEP3tJXHgoaylcL7cDyABQg9su0J6lu8KSJF
+	heFptiGc2GqRbumN4zQXeeijqobI85mye8/q4YJWkH/Iv47SS8fW8uPX17bRkw30
+	+rnxtK9/pJZxwI6MsYYuVWvLOGlGCbMlF/cbfR5Me6835Cx27SN3X//3IHfroKXI
+	yVtM279z4y3DHBSJOLxHu0lb4TX/smrXnEhTFTLRSRUPms05i3M8aRMI/KNNPXY2
+	ekOyG09WJ4a3Cjjp/n6LkHFRgvpuTOWKjRCji13Y65NY7kSbcFnCBqCeuVATKAE1
+	AYKhxrdqgJK/7/+0Mrjg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w0pu01um1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 02 Feb 2024 14:32:49 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 412EWmDW024845
+	Fri, 02 Feb 2024 16:25:50 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 412GPnIt021575
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 2 Feb 2024 14:32:48 GMT
-Received: from [10.216.55.87] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+	Fri, 2 Feb 2024 16:25:49 GMT
+Received: from [10.110.16.197] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 2 Feb
- 2024 06:32:46 -0800
-Message-ID: <86e82bb7-eb30-f025-79d6-0fe739255243@quicinc.com>
-Date: Fri, 2 Feb 2024 20:02:42 +0530
+ 2024 08:25:49 -0800
+Message-ID: <a857abd1-0e24-457a-a34c-466be7ee1d56@quicinc.com>
+Date: Fri, 2 Feb 2024 08:25:48 -0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v3 05/13] wifi: ath12k: Add logic to write QRTR node id to
- scratch
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 05/11] wifi: ath12k: implement handling of P2P NoA
+ event
 Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <quic_jjohnson@quicinc.com>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        P Praneesh
-	<quic_ppranees@quicinc.com>
-References: <20240129065724.2310207-1-quic_rajkbhag@quicinc.com>
- <20240129065724.2310207-6-quic_rajkbhag@quicinc.com>
- <b7a6ad2c-7f28-4758-921e-f77b56b5190e@quicinc.com>
- <87il37t5uh.fsf@kernel.org>
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <87il37t5uh.fsf@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>, Kang Yang <quic_kangyang@quicinc.com>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240130040303.370590-1-quic_kangyang@quicinc.com>
+ <20240130040303.370590-6-quic_kangyang@quicinc.com>
+ <871q9vt1km.fsf@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <871q9vt1km.fsf@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: yyvFFPFrvnsznQ7wpWlAh16gFqLKxzH5
-X-Proofpoint-GUID: yyvFFPFrvnsznQ7wpWlAh16gFqLKxzH5
+X-Proofpoint-GUID: SKFx1-f9Tg9O7Qg2HZhNJoUbGwBsDxZW
+X-Proofpoint-ORIG-GUID: SKFx1-f9Tg9O7Qg2HZhNJoUbGwBsDxZW
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-02_08,2024-01-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- malwarescore=0 impostorscore=0 bulkscore=0 suspectscore=0
- priorityscore=1501 clxscore=1015 spamscore=0 phishscore=0 adultscore=0
- mlxscore=0 mlxlogscore=524 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401310000 definitions=main-2402020106
+ definitions=2024-02-02_10,2024-01-31_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 mlxscore=0
+ mlxlogscore=653 suspectscore=0 lowpriorityscore=0 impostorscore=0
+ bulkscore=0 clxscore=1015 adultscore=0 spamscore=0 priorityscore=1501
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401310000 definitions=main-2402020119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240202_063252_796522_08351199 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20240202_082559_318227_8375C4C6 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,34 +101,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/2/2024 5:50 PM, Kalle Valo wrote:
-> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+On 2/2/2024 5:53 AM, Kalle Valo wrote:
+> Kang Yang <quic_kangyang@quicinc.com> writes:
 > 
->> On 1/28/2024 10:57 PM, Raj Kumar Bhagat wrote:
->>> From: P Praneesh <quic_ppranees@quicinc.com>
->>>
->>> Currently only one MHI device is registered successfully on platform
->>> having two or more identical MHI devices. This is beacuse QMI service
->>> runs with identical QRTR node ID. And, qrtr-lookup cannot register
->>> more than one QMI service with identical node ID.
->>>
->>> Hence, generate a unique QRTR instance ID from PCIe domain number and
->>> bus number. QMI allows node id to be written on scratch register.
->>> Add logic to write QRTR node id to the register. It is available for
->>> firmware to uniquely identify an instance.
->>>
->>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
->>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>>
->>> Depends-On: wifi: ath12k: add firmware-2.bin support
+>> The NoA(Notice of Absence) attribute is used by the P2P Group Owner to
+>> signal its absence due to power save timing, concurrent operation, or
+>> off-channel scanning. It is also used in the P2P Presence Request-Response
+>> mechanism.
 >>
->> I would not expect this information to be part of the final commit text,
->> but I suspect Kalle can remove it when it goes into the pending branch
+>> The NoA attribute shall be present in the P2P IE in the beacon frames
+>> transmitted by a P2P Group Owner when a NoA schedule is being advertised,
+>> or when the CTWindow is non-zero.
+>>
+>> So add support to update P2P information after P2P GO is up through
+>> event WMI_P2P_NOA_EVENTID, and always put it in probe resp.
+>>
+>> Create p2p.c and p2p.h for P2P related functions and definitions.
+>>
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
 > 
-> Yes, I removed Depends-On. In the future, please add it to the cover
-> letter or, if there's no cover letter, after "---" line.
+> This patch 5 had simple conflicts in wmi.c, please check:
 > 
-
-Sure Kalle, would follow above for future patches.
+> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=cbcb45c458a93d32a48b9280c13294e0853fa5dd
+> 
+LGTM
 
