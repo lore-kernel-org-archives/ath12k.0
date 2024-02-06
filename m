@@ -4,71 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBA67C48297
-	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 12:14:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A27F5C48297
+	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 12:47:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
-	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=jzvTRvTHnNAqPpd7v6l1oIeYqPT8wbi+L8ob8OzDhDU=; b=Vs//EJ4opwUuCHp55/VRVa67m9
-	SaaYraCtGhfMRRz/S7lZzDDeH33zivWq0Yt03pFQ/lC8G8n70+yvhflFKxRD8t2VOkHMi5chAicK/
-	HmQF29Ts8zZ5+VKjF0gMm5zY3IMnJcufJiVPO1Lwof+WRWOnN4EsV2/fyV6mDgPJs35eKkcD5uHuG
-	1ciOBGTxl66dQYqRlnekqcK05FpYUzDn/MWozGjkHprRcJCB6LWTmbtJ39CmYWBBGKiwzBWrRdN1p
-	UdVKLRENdz0AOUPxmbSg63oWUB1RGxbiJ48+l61F4ZkTg+qiKyZ3HnKQ/+f88lN1xqmOskbylM4Kw
-	SYKP/Ogg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=RPjM9N3DPQ9iRFbHM7+DKSGvdbzmRkSlMELbvtKprvU=; b=VvH9WzgeMDUIhb0vkLbwSYb5+w
+	TY5YMaxHZw0Q2q5lYD0Z5ZS/gYDHN+08xk6j8UJV4CfgKNz7lt2bu3Ubj8XMNxPkIrPIZouIwYiM6
+	RPf/4Mdow8NRKsqPHkVqP5Zlfo13YzVKoC6Gn4cSSEim/s0bDxjx55Lv0DwSVwL2MYBpQ6fvmu7B5
+	stkoe+F9o/N56Vez5ISk2k+VhrBRoGvR7cVhEA3chrQOObiCFlKZEjbtaOeZhdx3MKH5EpUa8U44Q
+	OLSabfvAWX6rF3znCAzeTItgjW1BKMHPoWaYPDdwIfQvAnCUbikzIz4Le655T8YdAJ6dRNmERIXve
+	J65sWu/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXKL5-00000007WLh-2GfL
+	id 1rXKr4-00000007cIo-1M5d
 	for ath12k@archiver.kernel.org;
-	Tue, 06 Feb 2024 12:14:11 +0000
-Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
+	Tue, 06 Feb 2024 12:47:14 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXKL3-00000007WL7-1i2M
+	id 1rXKr2-00000007cI2-15Ct
 	for ath12k@lists.infradead.org;
-	Tue, 06 Feb 2024 12:14:10 +0000
-Received: by mail-yb1-xb36.google.com with SMTP id 3f1490d57ef6-dc6f6d10ea9so3680885276.2
-        for <ath12k@lists.infradead.org>; Tue, 06 Feb 2024 04:14:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1707221647; x=1707826447; darn=lists.infradead.org;
-        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=jzvTRvTHnNAqPpd7v6l1oIeYqPT8wbi+L8ob8OzDhDU=;
-        b=ZIDIG2vEVT+GTuZksxZvxnDorUJRAcCVIxTxwQUtQ2Y3vxQqhbzNIQhYl0RtIkBEXj
-         LuLzcZYcjneBKWHIfdxQvMGTvtW1YzJ68vYOzeiuXye/m3WW5nKVE6TUFJxE7YaNw0eW
-         qbs1q0VPtRtSPyG6ncnSFbC+WvtUl+WKEjCMMwMptFaztgZlRoNDz3VAjtytOvoZJ17M
-         DSIyKTGQ9AMM5SB+mf45Z6NHBOvcrMjis7lsadr8DvxKGQ9KoqPW2mbgqYZxG5YSGwbP
-         Vt+jsrHNNl1f1Pvd/0ZmoC4ZtiTl/D+uYovHLZILr8g7JQqj25tgPx3xKoHvWBmPhkli
-         OYKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1707221647; x=1707826447;
-        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=jzvTRvTHnNAqPpd7v6l1oIeYqPT8wbi+L8ob8OzDhDU=;
-        b=i82EGEG9CRkoHrZtykwHxMjeC9EXRvyNklp0Q1e35M/0Lds2Q+Mf9GZZ/EMYlnZz40
-         hUGzDfn715acP+2QT09HGI8+1PN2Y9nQ5GdmUlBOGoDgCUHJXZxYcbk8fsAFPMtTDwZF
-         +8YVstc+BELoncnXZAPzQfAcKg3xdFUcelu6GpFFe/9EWXdeF+urr8vXRHoySr9iaBD/
-         gxGEEDXhLe+hyWvBtbyDfvvhXVmlYxpPQcELF/CWVVfiXUjqpmhk2UdKQbSWXB1um4bl
-         aCfwlx3yNxEDk1yOXOP3OS2V6AqH6cs/fXkjgPI70+WX1QLCZj2aUgoh3ETg5QYOj+Jt
-         RacA==
-X-Gm-Message-State: AOJu0Yy//kzxzE4R3vyZq0ud8+xrZjhmVGCBZO8hKAGnDITysXxCAJYb
-	SfU09LcyvCqQT1/lZOoX9tb+WrYWwr09dcyVzNA6Sv11PHLD/VAhgtc/KMybIZ8eFUeyo0hDbC0
-	3tHS4D9gxAbxiOmIJSQFvtEuYJgLBZtPP5HY=
-X-Google-Smtp-Source: AGHT+IHT7oAE7YEGw81mipbLhk3kjKpOF9eNz2bIXJF6MZ7gAB37a6675nbs39BmdKuAxvKPdSuYlXJWhKeFJi3d2EM=
-X-Received: by 2002:a25:206:0:b0:dc2:1f56:11e4 with SMTP id
- 6-20020a250206000000b00dc21f5611e4mr1399860ybc.24.1707221647082; Tue, 06 Feb
- 2024 04:14:07 -0800 (PST)
+	Tue, 06 Feb 2024 12:47:13 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 048CACE0B53;
+	Tue,  6 Feb 2024 12:47:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABC53C433F1;
+	Tue,  6 Feb 2024 12:47:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1707223629;
+	bh=XJ8LEmc29rQHPuZ+xQYyUqHzDRYmO6l2IEQN/DV9nus=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=jAOrH8R8ltlavmQjWZFipXJqwRZXvFsfxcYk/h8xM1T+B5SBqkbpRchjOP8hsM62x
+	 y/sAEpqgHZ7CECT3Hhzi6zEyM4oaQ8kTacWj3Eq0P/hoOH4to0c/8Ou6lMqYkscNgl
+	 HktSyvHjZ/CYJSCF+juVHKsFE8rDXjSMnbQpsZx/QqUlY4dJzpgCRxEEU5yexbGTAY
+	 MmrB+xuxyiWSdbgAbxNPp240L1iWv7qB0q8MXWkMus1nFKPuq68QDCViLLzIJ3xd5L
+	 sHH5NAmdj/nYUuk0Q+DtkyMn5eY/EHCivSwP6gdRZHQfSY9swIETXWcSLQGzPUDlYx
+	 W6GEzkvvyi6oQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Dave Jones <s.dave.jones@gmail.com>
+Cc: ath12k@lists.infradead.org
+Subject: Re: WCN7850 doesn't work on Linux kernel 6.8-rc3
+References: <CANf5e8YuWEp-NdF1+nhtH6t2KLac8MqMX8HyiZgUE=MvQBiefw@mail.gmail.com>
+Date: Tue, 06 Feb 2024 14:47:06 +0200
+In-Reply-To: <CANf5e8YuWEp-NdF1+nhtH6t2KLac8MqMX8HyiZgUE=MvQBiefw@mail.gmail.com>
+	(Dave Jones's message of "Tue, 6 Feb 2024 20:13:56 +0800")
+Message-ID: <87ttmlrc8l.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-From: Dave Jones <s.dave.jones@gmail.com>
-Date: Tue, 6 Feb 2024 20:13:56 +0800
-Message-ID: <CANf5e8YuWEp-NdF1+nhtH6t2KLac8MqMX8HyiZgUE=MvQBiefw@mail.gmail.com>
-Subject: WCN7850 doesn't work on Linux kernel 6.8-rc3
-To: ath12k@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_041409_469188_CF3CEAB8 
-X-CRM114-Status: UNSURE (   5.50  )
+X-CRM114-CacheID: sfid-20240206_044712_488893_3F4B5959 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,25 +73,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello,
+Dave Jones <s.dave.jones@gmail.com> writes:
 
-I tried to test a wcn8750-based wifi adapter under Linux kernel 6.8-rc3,
-it's not working. dmesg below:
+> Hello,
+>
+> I tried to test a wcn8750-based wifi adapter under Linux kernel 6.8-rc3,
+> it's not working. dmesg below:
+>
+> ath12k_pci 0000:02:00.0: BAR 0 [mem 0x90400000-0x905fffff 64bit]: assigned
+> ath12k_pci 0000:02:00.0: MSI vectors: 1
+> ath12k_pci 0000:02:00.0: Hardware name: wcn7850 hw2.0
+> ath12k_pci 0000:02:00.0: qmi dma allocation failed (7077888 B type 1), will try
+> later with small size
+> ath12k_pci 0000:02:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x4017
+> 0200
+> ath12k_pci 0000:02:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:
+> 05 fw_build_id
+> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> ath12k_pci 0000:02:00.0: qmi failed to load regdb bin:
+> ath12k_pci 0000:02:00.0: qmi failed to load regdb file:-2
+>
+> Should I need regdb.bin? If so, where can I get that file? Thanks.
 
-ath12k_pci 0000:02:00.0: BAR 0 [mem 0x90400000-0x905fffff 64bit]: assigned
-ath12k_pci 0000:02:00.0: MSI vectors: 1
-ath12k_pci 0000:02:00.0: Hardware name: wcn7850 hw2.0
-ath12k_pci 0000:02:00.0: qmi dma allocation failed (7077888 B type 1), will try
-later with small size
-ath12k_pci 0000:02:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x4017
-0200
-ath12k_pci 0000:02:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:
-05 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-ath12k_pci 0000:02:00.0: qmi failed to load regdb bin:
-ath12k_pci 0000:02:00.0: qmi failed to load regdb file:-2
+regdb.bin is for developer testing, end users shouldn't use that file.
 
-Should I need regdb.bin? If so, where can I get that file? Thanks.
+Can you try ath.git master branch:
 
-Regards,
-Dave
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/log/
+
+We have some patches in the pipeline which didn't sadly make it to v6.8.
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
