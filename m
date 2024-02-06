@@ -4,101 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C90F9C4829D
-	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 11:45:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBA67C48297
+	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 12:14:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2mIZfcyLh28SVhNb9Kcwit7KXxWjsONUsVR+djd/jHU=; b=zyNa1RMMDO0pHBJy/GbpfaFC4c
-	rDKhFsqtOh/ofvXYD/owoSUovRAAwvryS6gR6D091HUuO6K1sQUjsOTyXKrwSFROXCEK1B3cKOh1k
-	XlpOI4ZTpgZidVNnk/jy4nFlfk9z5X0KcdbBCLi6rFNONfE2XnAOCv3hU/dZfG0WUMLEkHSyL69l4
-	Qa3vdKsJUbzV0S55KMA4MObuzevgPPbkZa9q/+FpP7u0qfXtsNBmKQV4NNRG5XK4A4RVZR+9CJc6o
-	I3jorHx2myBvuBCZWG2e1xpCBU+oSe487dGVWlLuoGLPfcVZ7+BLqp/Z8SBamfKUNzfNcpvXbjN8a
-	1ROqejgw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=jzvTRvTHnNAqPpd7v6l1oIeYqPT8wbi+L8ob8OzDhDU=; b=Vs//EJ4opwUuCHp55/VRVa67m9
+	SaaYraCtGhfMRRz/S7lZzDDeH33zivWq0Yt03pFQ/lC8G8n70+yvhflFKxRD8t2VOkHMi5chAicK/
+	HmQF29Ts8zZ5+VKjF0gMm5zY3IMnJcufJiVPO1Lwof+WRWOnN4EsV2/fyV6mDgPJs35eKkcD5uHuG
+	1ciOBGTxl66dQYqRlnekqcK05FpYUzDn/MWozGjkHprRcJCB6LWTmbtJ39CmYWBBGKiwzBWrRdN1p
+	UdVKLRENdz0AOUPxmbSg63oWUB1RGxbiJ48+l61F4ZkTg+qiKyZ3HnKQ/+f88lN1xqmOskbylM4Kw
+	SYKP/Ogg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXJta-00000007OT3-26YR
+	id 1rXKL5-00000007WLh-2GfL
 	for ath12k@archiver.kernel.org;
-	Tue, 06 Feb 2024 11:45:46 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Tue, 06 Feb 2024 12:14:11 +0000
+Received: from mail-yb1-xb36.google.com ([2607:f8b0:4864:20::b36])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHeZ-00000006gF0-0uSa
-	for ath12k@bombadil.infradead.org;
-	Tue, 06 Feb 2024 09:22:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=2mIZfcyLh28SVhNb9Kcwit7KXxWjsONUsVR+djd/jHU=; b=lbfHYcdD2lAGsQf920z2m1ba7L
-	F7+HkLb2AGXyWSiixUB1nvPzboyYf3DsNLyC0bPTpZunyiFtsU2+Zu3k7xwOLu00xOyNr7Qc2fEfn
-	uiouYLgw9JMq9cJbsY4OblihumbZABTnmAr/NHY3+NyKSyJbVCYdDm77lJqmuP7Qa7+UVAs4ES0ix
-	Q++NuhX+X1Tkj9jENYzPMjr1jh7Mb5AWPA0Tfj/bbwIkeAhFxhQPTXPfilKrSifWoDV+DM/3elfax
-	RwCaywBAn07fBFusbQikeEsL6Pqvid4pPx0F+cYSVPSG3noOKJ3JZGVgc92l6NuQcx6PU9jkyiMjq
-	j/IRgASg==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHeV-0000000CR1Y-3f8R
+	id 1rXKL3-00000007WL7-1i2M
 	for ath12k@lists.infradead.org;
-	Tue, 06 Feb 2024 09:22:06 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4166Eo7g005947;
-	Tue, 6 Feb 2024 09:22:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=2mIZfcyLh28SVhNb9Kcwit7KXxWjsONUsVR+djd/jHU=; b=T4
-	WFjb+oPGrk6v5uX6gkPEHO4tNGwDM5XNDdTAp/CL6b/SctffjGusHIkCqmiqW8/K
-	V9UfoctGDzALIxA/c8hxSEPHOe2dum94M3fC5UE++EoJCYRxBfGpFGTPW/Noh2U0
-	6ApTne7gO8r8LcNClFKWAC2JZbQwKya0rrZbNilXIBA7XdoRLH6mJL/86j3jao53
-	jYXznEIiYSbL4uQBclj5Qzld+dLHpg4PaS9+0uhNj1ZKKWVXRoLcBWmqO3W42Q3M
-	tkcW2rBgGKIF0kmtELcRKiQAKySDbwWDnHqwVRyY71FTUrOYXzB9qBuUtRh6TlrX
-	bhUEn9fUuW+2McINz15A==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w3cafrprx-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 06 Feb 2024 09:22:02 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4169M1rW020657
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 6 Feb 2024 09:22:01 GMT
-Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 6 Feb 2024 01:21:59 -0800
-From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>,
-        Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Subject: [PATCH v2 12/12] wifi: ath12k: support get_survey mac op for single wiphy
-Date: Tue, 6 Feb 2024 14:49:54 +0530
-Message-ID: <20240206091954.4144454-13-quic_ramess@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240206091954.4144454-1-quic_ramess@quicinc.com>
-References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
+	Tue, 06 Feb 2024 12:14:10 +0000
+Received: by mail-yb1-xb36.google.com with SMTP id 3f1490d57ef6-dc6f6d10ea9so3680885276.2
+        for <ath12k@lists.infradead.org>; Tue, 06 Feb 2024 04:14:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707221647; x=1707826447; darn=lists.infradead.org;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=jzvTRvTHnNAqPpd7v6l1oIeYqPT8wbi+L8ob8OzDhDU=;
+        b=ZIDIG2vEVT+GTuZksxZvxnDorUJRAcCVIxTxwQUtQ2Y3vxQqhbzNIQhYl0RtIkBEXj
+         LuLzcZYcjneBKWHIfdxQvMGTvtW1YzJ68vYOzeiuXye/m3WW5nKVE6TUFJxE7YaNw0eW
+         qbs1q0VPtRtSPyG6ncnSFbC+WvtUl+WKEjCMMwMptFaztgZlRoNDz3VAjtytOvoZJ17M
+         DSIyKTGQ9AMM5SB+mf45Z6NHBOvcrMjis7lsadr8DvxKGQ9KoqPW2mbgqYZxG5YSGwbP
+         Vt+jsrHNNl1f1Pvd/0ZmoC4ZtiTl/D+uYovHLZILr8g7JQqj25tgPx3xKoHvWBmPhkli
+         OYKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707221647; x=1707826447;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=jzvTRvTHnNAqPpd7v6l1oIeYqPT8wbi+L8ob8OzDhDU=;
+        b=i82EGEG9CRkoHrZtykwHxMjeC9EXRvyNklp0Q1e35M/0Lds2Q+Mf9GZZ/EMYlnZz40
+         hUGzDfn715acP+2QT09HGI8+1PN2Y9nQ5GdmUlBOGoDgCUHJXZxYcbk8fsAFPMtTDwZF
+         +8YVstc+BELoncnXZAPzQfAcKg3xdFUcelu6GpFFe/9EWXdeF+urr8vXRHoySr9iaBD/
+         gxGEEDXhLe+hyWvBtbyDfvvhXVmlYxpPQcELF/CWVVfiXUjqpmhk2UdKQbSWXB1um4bl
+         aCfwlx3yNxEDk1yOXOP3OS2V6AqH6cs/fXkjgPI70+WX1QLCZj2aUgoh3ETg5QYOj+Jt
+         RacA==
+X-Gm-Message-State: AOJu0Yy//kzxzE4R3vyZq0ud8+xrZjhmVGCBZO8hKAGnDITysXxCAJYb
+	SfU09LcyvCqQT1/lZOoX9tb+WrYWwr09dcyVzNA6Sv11PHLD/VAhgtc/KMybIZ8eFUeyo0hDbC0
+	3tHS4D9gxAbxiOmIJSQFvtEuYJgLBZtPP5HY=
+X-Google-Smtp-Source: AGHT+IHT7oAE7YEGw81mipbLhk3kjKpOF9eNz2bIXJF6MZ7gAB37a6675nbs39BmdKuAxvKPdSuYlXJWhKeFJi3d2EM=
+X-Received: by 2002:a25:206:0:b0:dc2:1f56:11e4 with SMTP id
+ 6-20020a250206000000b00dc21f5611e4mr1399860ybc.24.1707221647082; Tue, 06 Feb
+ 2024 04:14:07 -0800 (PST)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: PDi5bOJjImS0im4GPdtR1sIW3k34G7iX
-X-Proofpoint-GUID: PDi5bOJjImS0im4GPdtR1sIW3k34G7iX
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-06_02,2024-01-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 adultscore=0
- mlxscore=0 lowpriorityscore=0 malwarescore=0 spamscore=0 clxscore=1015
- bulkscore=0 impostorscore=0 priorityscore=1501 suspectscore=0
- mlxlogscore=695 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401310000 definitions=main-2402060065
+From: Dave Jones <s.dave.jones@gmail.com>
+Date: Tue, 6 Feb 2024 20:13:56 +0800
+Message-ID: <CANf5e8YuWEp-NdF1+nhtH6t2KLac8MqMX8HyiZgUE=MvQBiefw@mail.gmail.com>
+Subject: WCN7850 doesn't work on Linux kernel 6.8-rc3
+To: ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_092204_461797_8378C544 
-X-CRM114-Status: GOOD (  15.17  )
+X-CRM114-CacheID: sfid-20240206_041409_469188_CF3CEAB8 
+X-CRM114-Status: UNSURE (   5.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,84 +84,25 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sriram R <quic_srirrama@quicinc.com>
+Hello,
 
-The radio for which the survey info needs to be collected
-depends on the channel idx which could be based on the band.
-Use the idx to identify the appropriate sband since multiple
-bands could be combined for single wiphy case.
+I tried to test a wcn8750-based wifi adapter under Linux kernel 6.8-rc3,
+it's not working. dmesg below:
 
-Also use the channel idx and sband to identify the corresponding
-radio on which the survey results needs to be populated.
+ath12k_pci 0000:02:00.0: BAR 0 [mem 0x90400000-0x905fffff 64bit]: assigned
+ath12k_pci 0000:02:00.0: MSI vectors: 1
+ath12k_pci 0000:02:00.0: Hardware name: wcn7850 hw2.0
+ath12k_pci 0000:02:00.0: qmi dma allocation failed (7077888 B type 1), will try
+later with small size
+ath12k_pci 0000:02:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x4017
+0200
+ath12k_pci 0000:02:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:
+05 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+ath12k_pci 0000:02:00.0: qmi failed to load regdb bin:
+ath12k_pci 0000:02:00.0: qmi failed to load regdb file:-2
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Should I need regdb.bin? If so, where can I get that file? Thanks.
 
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 25 ++++++++++++++++---------
- 1 file changed, 16 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 1e1de27e5d14..8f867fb99b5f 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7702,7 +7702,6 @@ ath12k_mac_update_bss_chan_survey(struct ath12k *ar,
- static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 				    struct survey_info *survey)
- {
--	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
- 	struct ath12k *ar;
- 	struct ieee80211_supported_band *sband;
- 	struct survey_info *ar_survey;
-@@ -7711,12 +7710,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 	if (idx >= ATH12K_NUM_CHANS)
- 		return -ENOENT;
- 
--	ar = ath12k_ah_to_ar(ah, 0);
--
--	ar_survey = &ar->survey[idx];
--
--	mutex_lock(&ar->conf_mutex);
--
- 	sband = hw->wiphy->bands[NL80211_BAND_2GHZ];
- 	if (sband && idx >= sband->n_channels) {
- 		idx -= sband->n_channels;
-@@ -7731,6 +7724,21 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 		goto exit;
- 	}
- 
-+	ar = ath12k_mac_get_ar_by_chan(hw, &sband->channels[idx]);
-+	if (!ar) {
-+		if (sband->channels[idx].flags & IEEE80211_CHAN_DISABLED) {
-+			ret = 0;
-+			memset(survey, 0, sizeof(*survey));
-+			goto exit;
-+		}
-+		ret = -ENOENT;
-+		goto exit;
-+	}
-+
-+	ar_survey = &ar->survey[idx];
-+
-+	mutex_lock(&ar->conf_mutex);
-+
- 	ath12k_mac_update_bss_chan_survey(ar, &sband->channels[idx]);
- 
- 	spin_lock_bh(&ar->data_lock);
-@@ -7742,9 +7750,8 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 	if (ar->rx_channel == survey->channel)
- 		survey->filled |= SURVEY_INFO_IN_USE;
- 
--exit:
- 	mutex_unlock(&ar->conf_mutex);
--
-+exit:
- 	return ret;
- }
- 
--- 
-2.25.1
-
+Regards,
+Dave
 
