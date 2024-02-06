@@ -4,77 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E7EEC4828D
-	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 10:30:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C697C4829A
+	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 10:30:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tgPu1IGPSkoodtjXL+roS8cawxMXT5/Ei4a544A4YAU=; b=OaWhZGPnxsm6ju2OGX2mkz4XyH
-	nUvReT9G2U2TS+njUStK7UtHBvsfQe3DgyetxM/ev+QLSVJ5hkwc23m0Fha0xxhObKdbitNP02fA1
-	fjcwPpdAwWN5hh2GSXuthy/eaRk306UO4bk5RIgGlRNgMQHJnYdzCIqQYTJXUFZXXnTnP/3ae9t05
-	LMpzaiioYgJCXnjGFUdhUXEmXnDSLTb9IgDktpAg2TQn+I7SE/enhaZoiVQEb8bVGpBmUz9sQJ/i7
-	5Y/XIAktKkj2ovvJeGraFJzsiCcuCyt0a+NjzdBTb0JGmFjQ9HZ2k6yjrDz9rLx6XTRdYWl6bXIlP
-	zTmfL5og==;
+	bh=P8oThcEseXeci+2Oka9N6s6WRxIEy9fVkyjoodbuk5o=; b=o2vYUgZ5J52xv/xy3f13DK9usb
+	Ug4tC6j78J7qEEGuUx+aWNPndzyAla16udZ1d/HWHSTuDD8p1l/UzaFHyJtb9/KT856rsybNZP1CW
+	4y/KixmMAB6PdpauRi8XE0RcRUeLsEDhhVezZC48gDrD8jTcBN8G/6gVH6zKyCv/mkk8K6PUsAqAE
+	hehveQNKbb6gC4AfFJALNVq2WagGbGYrG75qwOZ+fvAqVIsrOfi9MbP2sU5Qw730+KV3b/1W1+wKk
+	cpilrSYZh+mjtX84sFLeKy2506kq3nDrcknjtm1PVFD90ZC5vY1k5Xj6fXBgbwtToeROp9v1VjQKj
+	STjzeFNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXIj2-0000000736x-3gKe
+	id 1rXIj3-0000000737z-46Om
 	for ath12k@archiver.kernel.org;
-	Tue, 06 Feb 2024 10:30:48 +0000
+	Tue, 06 Feb 2024 10:30:49 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHeH-00000006g7Y-3AQz
+	id 1rXHeS-00000006gBX-0gAb
 	for ath12k@bombadil.infradead.org;
-	Tue, 06 Feb 2024 09:21:49 +0000
+	Tue, 06 Feb 2024 09:22:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
 	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
 	Sender:Reply-To:Content-ID:Content-Description;
-	bh=tgPu1IGPSkoodtjXL+roS8cawxMXT5/Ei4a544A4YAU=; b=UfY1YOEq/0uGFKmD4t1tOuzuBg
-	QLgxA882mSLhbWjz+WInD+/jiz4Zpn1UHNq9ggcy1ufvavnhBosbs0bS92fvVhF+flAqt/lULq6Lw
-	z0QsJFGh0gp9H6Dbp/G8TZfZW0EfhW8OLfOv2kj2dT0L0lnZonzNWFlAq1ys9x1uWxo5AnIVaZm5L
-	/dnZG9cTCB+9Fh2bAWAjx3SDe9hRDgX12tiOkEuu8JejIQFWDgjWJ7CC/okhOfTfzJ75i1upUcLYu
-	Yr6CsEO4Ts+sZ94AJ4sRGBQ+UbZXJRs8O4Sr8oNmU1BfKClc1vQpqO3BXMHBBvEnhi71w9PhcdcA2
-	Jk8FyeVw==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	bh=P8oThcEseXeci+2Oka9N6s6WRxIEy9fVkyjoodbuk5o=; b=lNtNmEz0xm6OdCy94Age2WPk1y
+	cOlF2AqxzolJd9CD+g/3POcD0iV4O3BTS7wshapOT6mEQNGGQfR8IDt7useBMM2iio3CHeLcfsLoU
+	VBD3jn54w24pTxgbRwTsQVAS5/QtEQtO2QdKypaHUur95e3bOp1D1l/RT2rQqKMhw89jtli95lUOU
+	hs1VGVmkXhO7GQPj/PM+Zme356mnK5skS7xdEeYWbYGMu5cyxmcGUtuBczKVh0hOBo3p5gsFzn9ln
+	0Jt+DHagE+BJ5+c1HOGPD/3CB8Vkqa0FIYQ1koDnWxXzNFOpFnAuCK2fgYhKc7gpTqFaeyPxk4a6K
+	yhFije/Q==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHeC-0000000CQw2-42v5
+	id 1rXHeK-0000000CQxi-2GIJ
 	for ath12k@lists.infradead.org;
-	Tue, 06 Feb 2024 09:21:48 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4165Kelg002526;
-	Tue, 6 Feb 2024 09:21:43 GMT
+	Tue, 06 Feb 2024 09:21:58 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4164xTDp020374;
+	Tue, 6 Feb 2024 09:21:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=tgPu1IGPSkoodtjXL+roS8cawxMXT5/Ei4a544A4YAU=; b=h/
-	sqaowpSSYOZEb6mGqUm0FJyvslBpTR+LqLdnunVSmwY9AeEBIjN/dlMZ3mxTAAmu
-	ca6t1GGehk5A4RlEBDa3g0yzFcka+TP+og15pU9W3qGiw6qnDH8IuAPogmj8qBig
-	1CjKXM/ZulDbHe5n+7weYatXdJVQ0vrMcc4n9BJQTwtjMzzWV0tY9kUSNxYS2ZAy
-	sfXk9lt1r35ZOhuX1Ksyk2BbqQCWMYp+8DeKn/XMbfI1sy5CI9sy17ocJihJYL/3
-	YFXEx5hNMo77y77jTBKco5lpkMUAZ2T9kez6hthbI3pIGMkyvDKQOlSi4PUkrFes
-	9SAbRoLi7OM6528rdntw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w3cafrpra-1
+	qcppdkim1; bh=P8oThcEseXeci+2Oka9N6s6WRxIEy9fVkyjoodbuk5o=; b=IS
+	oGsRU79uNqcFEF/ATVwUvmy+cyKY6vo3S55IDkQvoc26sNqMCFTQnDTG2Zb7rSNI
+	fCCDyBIJdae+6JQYFhdCbraTO8c3L+OKDYmi+080kZLDMOlyLvM0Gu6/SM3eQCta
+	an0w6qfWbVzUoMVz0KMbynR/0nNFkj/qc6vAtS9yb83oxLJKD6xfiu0hgSsxT67L
+	c0KUISkB2dmz8o6j2hoxQBff8a8vNRMP0wdZ1sNyGQBndu7te60Z0sMFgzy7+wzq
+	Fi59bueOtJp4VqK0cDQs8VN52eg5IC5EBZrlnSSi5TW2UNn71v+6N7aKGp8kVLHe
+	Q/conMpJd9M6qXfrFVFQ==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w37t59777-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 06 Feb 2024 09:21:43 +0000 (GMT)
+	Tue, 06 Feb 2024 09:21:49 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4169Lg1h017216
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4169LmeU020530
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 6 Feb 2024 09:21:42 GMT
+	Tue, 6 Feb 2024 09:21:48 GMT
 Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 6 Feb 2024 01:21:40 -0800
+ 15.2.1118.40; Tue, 6 Feb 2024 01:21:46 -0800
 From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>,
         Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Subject: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops for single wiphy
-Date: Tue, 6 Feb 2024 14:49:45 +0530
-Message-ID: <20240206091954.4144454-4-quic_ramess@quicinc.com>
+Subject: [PATCH v2 06/12] wifi: ath12k: fetch correct radio based on vdev status
+Date: Tue, 6 Feb 2024 14:49:48 +0530
+Message-ID: <20240206091954.4144454-7-quic_ramess@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240206091954.4144454-1-quic_ramess@quicinc.com>
 References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
@@ -86,19 +86,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: crDhHytIWFKiUn6xuG9P6V8Wi33NGtfQ
-X-Proofpoint-GUID: crDhHytIWFKiUn6xuG9P6V8Wi33NGtfQ
+X-Proofpoint-GUID: XWzNfG3IHLNSSQHJHPssQHlG2q-tq-50
+X-Proofpoint-ORIG-GUID: XWzNfG3IHLNSSQHJHPssQHlG2q-tq-50
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-02-06_02,2024-01-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 adultscore=0
- mlxscore=0 lowpriorityscore=0 malwarescore=0 spamscore=0 clxscore=1015
- bulkscore=0 impostorscore=0 priorityscore=1501 suspectscore=0
- mlxlogscore=762 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ malwarescore=0 spamscore=0 bulkscore=0 suspectscore=0 impostorscore=0
+ mlxlogscore=867 phishscore=0 clxscore=1015 lowpriorityscore=0 mlxscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2401310000 definitions=main-2402060065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_092145_568198_57AB43C0 
-X-CRM114-Status: GOOD (  16.39  )
+X-CRM114-CacheID: sfid-20240206_092155_562034_6D649EF7 
+X-CRM114-Status: GOOD (  20.88  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,8 +115,12 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sriram R <quic_srirrama@quicinc.com>
 
-When mac80211 does drv start/stop, apply the state change
-for all the radios within the wiphy in ath12k.
+For ops which passes the vif info, fetch the radio(ar)
+to be used for corresponding functions based on the
+the vdev creation status. If the vdev is not created yet,
+which could happen when the ops are called before channel
+is assigned for the vif, the data needs to be cached and this
+is done in followup changes.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -124,110 +128,178 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
 Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 57 +++++++++++++++++++++------
- 1 file changed, 45 insertions(+), 12 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 78 +++++++++++++++++++++++----
+ 1 file changed, 67 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index c58f753d4a10..ef952e8e4086 100644
+index e576c2447a85..f8e6ac1c4a68 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -243,6 +243,7 @@ static const u32 ath12k_smps_map[] = {
- 
- static int ath12k_start_vdev_delay(struct ath12k *ar,
- 				   struct ath12k_vif *arvif);
-+static void ath12k_mac_stop(struct ath12k *ar);
- 
- static const char *ath12k_mac_phymode_str(enum wmi_phy_mode mode)
- {
-@@ -5256,15 +5257,31 @@ static int ath12k_mac_start(struct ath12k *ar)
- 	return ret;
+@@ -646,6 +646,24 @@ static struct ath12k *ath12k_get_ar_by_ctx(struct ieee80211_hw *hw,
+ 	return ath12k_mac_get_ar_by_chan(hw, ctx->def.chan);
  }
  
-+static void ath12k_drain_tx(struct ath12k_hw *ah)
++static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
++					   struct ieee80211_vif *vif)
 +{
-+	int i;
-+	struct ath12k *ar;
++	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
++	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
 +
-+	ar = ah->radio;
++	/* If there is one pdev within ah, then we return
++	 * ar directly.
++	 */
++	if (ah->num_radio == 1)
++		return ah->radio;
 +
-+	for (i = 0; i < ah->num_radio; i++) {
-+		ath12k_mac_drain_tx(ar);
-+		ar++;
-+	}
++	if (arvif->is_created)
++		return arvif->ar;
++
++	return NULL;
 +}
 +
- static int ath12k_mac_op_start(struct ieee80211_hw *hw)
+ static void ath12k_pdev_caps_update(struct ath12k *ar)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+@@ -2828,11 +2846,17 @@ static void ath12k_mac_op_bss_info_changed(struct ieee80211_hw *hw,
+ 					   struct ieee80211_bss_conf *info,
+ 					   u64 changed)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++
++	/* TODO if the vdev is not created on a certain radio,
++	 * cache the info to be updated later on vdev creation
++	 */
++
++	if (!ar)
++		return;
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 
+@@ -3330,7 +3354,6 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+ 				 struct ieee80211_vif *vif, struct ieee80211_sta *sta,
+ 				 struct ieee80211_key_conf *key)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_base *ab;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+@@ -3347,7 +3370,11 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+ 	    key->cipher == WLAN_CIPHER_SUITE_BIP_CMAC_256)
+ 		return 1;
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		WARN_ON_ONCE(1);
++		return -EINVAL;
++	}
+ 	ab = ar->ab;
+ 
+ 	if (test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags))
+@@ -3925,7 +3952,6 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 				   enum ieee80211_sta_state old_state,
+ 				   enum ieee80211_sta_state new_state)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
+@@ -3937,7 +3963,11 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 	     new_state == IEEE80211_STA_NOTEXIST))
+ 		cancel_work_sync(&arsta->update_wk);
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		WARN_ON_ONCE(1);
++		return -EINVAL;
++	}
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 
+@@ -4081,14 +4111,17 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 					struct ieee80211_sta *sta,
+ 					u32 changed)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	struct ath12k_peer *peer;
+ 	u32 bw, smps;
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		WARN_ON_ONCE(1);
++		return;
++	}
+ 
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 
+@@ -4264,12 +4297,15 @@ static int ath12k_mac_op_conf_tx(struct ieee80211_hw *hw,
+ 				 unsigned int link_id, u16 ac,
+ 				 const struct ieee80211_tx_queue_params *params)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	int ret;
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		/* TODO cache the info and apply after vdev is created */
++		return -EINVAL;
++	}
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 	ret = ath12k_mac_conf_tx(arvif, link_id, ac, params);
+@@ -6279,6 +6315,10 @@ static int ath12k_mac_op_ampdu_action(struct ieee80211_hw *hw,
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	int ret = -EINVAL;
+ 
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar)
++		return -EINVAL;
++
+ 	ar = ath12k_ah_to_ar(ah, 0);
+ 
+ 	mutex_lock(&ar->conf_mutex);
+@@ -7069,11 +7109,27 @@ static void ath12k_mac_op_flush(struct ieee80211_hw *hw, struct ieee80211_vif *v
+ 				u32 queues, bool drop)
  {
  	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
 -	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
--	struct ath12k_base *ab = ar->ab;
--	int ret;
 +	struct ath12k *ar;
-+	struct ath12k_base *ab;
-+	int ret = 0;
 +	int i;
  
--	ath12k_mac_drain_tx(ar);
-+	ath12k_drain_tx(ah);
+ 	if (drop)
+ 		return;
  
-+	ar = ah->radio;
-+	ab = ar->ab;
- 	mutex_lock(&ah->conf_mutex);
- 
- 	switch (ah->state) {
-@@ -5285,14 +5302,26 @@ static int ath12k_mac_op_start(struct ieee80211_hw *hw)
- 		goto err;
- 	}
- 
--	ret = ath12k_mac_start(ar);
--	if (ret) {
--		ah->state = ATH12K_HW_STATE_OFF;
--
--		ath12k_err(ab, "fail to start mac operations in pdev idx %d ret %d\n",
--			   ar->pdev_idx, ret);
-+	for (i = 0; i < ah->num_radio; i++) {
-+		ret = ath12k_mac_start(ar);
-+		if (ret) {
-+			ah->state = ATH12K_HW_STATE_OFF;
-+			ath12k_err(ab, "fail to start mac operations in pdev idx %d ret %d\n",
-+				   ar->pdev_idx, ret);
-+			goto fail_start;
++	/* vif can be NULL when flush() is considered for hw */
++	if (!vif) {
++		ar = ath12k_ah_to_ar(ah, 0);
++		for (i = 0; i < ah->num_radio; i++) {
++			ath12k_mac_flush(ar);
++			ar++;
 +		}
-+		ar++;
-+		ab = ar->ab;
- 	}
- 
-+	mutex_unlock(&ah->conf_mutex);
++		return;
++	}
 +
-+	return 0;
-+fail_start:
-+	for (; i > 0; i--) {
-+		ar--;
-+		ath12k_mac_stop(ar);
-+	}
- err:
- 	mutex_unlock(&ah->conf_mutex);
- 
-@@ -5395,13 +5424,17 @@ static void ath12k_mac_op_stop(struct ieee80211_hw *hw)
- {
- 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
- 	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
-+	int i;
- 
--	ath12k_mac_drain_tx(ar);
-+	ath12k_drain_tx(ah);
- 
- 	mutex_lock(&ah->conf_mutex);
- 
- 	ah->state = ATH12K_HW_STATE_OFF;
--	ath12k_mac_stop(ar);
-+	for (i = 0; i < ah->num_radio; i++) {
-+		ath12k_mac_stop(ar);
-+		ar++;
-+	}
- 
- 	mutex_unlock(&ah->conf_mutex);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++
++	if (!ar)
++		return;
++
+ 	ath12k_mac_flush(ar);
  }
+ 
 -- 
 2.25.1
 
