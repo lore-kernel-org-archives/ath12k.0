@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1247AC48297
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E1E1C4829E
 	for <ath12k@archiver.kernel.org>; Tue,  6 Feb 2024 11:45:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,69 +12,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=28cuVq00o/JMlfn7ktM0K873EkZPm5LlSZpvsIteBQg=; b=k+gK1z+39hDR8tDUp/YQa0aTUH
-	nFGDoDAH2T2iJoyyOnejI4mpvQj4RZZE99OyobQ4KF0wgt3DQKIv5aXGA+6+RTTw9Nx5P/G/AmrtO
-	4H2a1OwRrlNzQtBU+t3h4hDGw/2bGa8g1akSurMAlZ+wNN5P7HcY9F6bxpsLFqeZ3Rmv/3rIuWXPp
-	6cAYQtZWl5Q+OwH+3qp1BQTvYjnzGHwR+a9Une5MlWQSa+ap/GateDo9qa7nh2FKAwKrYCxulbQkr
-	vJKg6fXWT4Vz1xGnQqdtDBpap5ganUKq6pdSqX5eXBkiKNT17EZZv+ekwH4NeYaipntjx6VfpaKNR
-	C/rocYEw==;
+	bh=y9x/L9zBRAyTkONnTlLEDtK2szL6cwTn1TVFewVFbA8=; b=XfGDPKsFFLE1SzKzwPw+hmZZU7
+	QlVaDX185DZyrJbAMBca+MRaYkPOpuQYTmZXgeB5fJYEfs2Qr+SwBGbsNCzonQonVnuQCQ6oisPQf
+	W91p/5X1giMbEaY1k+IeUTOrmzqpc08qiBuPeRw+EWqSNpMKbMTPys3w02vGVyAXswi/OW8CYc5Jm
+	C9AlhxfUsJowtryDU0QvTdEkMO8+6sQNwZ6piHB/edQuaAxTBnLUsNDgrfYF8Z6wbDSEg8vf6Gau2
+	bUhQxXwwScVjPPbGSCmbcD3qe/9kSBn+TfuUU9PAI2BKPIF4g8M54u0kaoztnJ5TvhUiehU5Wc6G6
+	+tUI/dfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXJtZ-00000007OSW-3DjX
+	id 1rXJta-00000007OSe-0WAY
 	for ath12k@archiver.kernel.org;
-	Tue, 06 Feb 2024 11:45:45 +0000
+	Tue, 06 Feb 2024 11:45:46 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHeU-00000006gCm-3Rxa
+	id 1rXHeV-00000006gDX-3up1
 	for ath12k@bombadil.infradead.org;
-	Tue, 06 Feb 2024 09:22:02 +0000
+	Tue, 06 Feb 2024 09:22:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
 	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
 	Sender:Reply-To:Content-ID:Content-Description;
-	bh=28cuVq00o/JMlfn7ktM0K873EkZPm5LlSZpvsIteBQg=; b=PctlxlY9ALrBIGx3ZjUo8u8uV2
-	64NKJPf9fII6ZJcYiNqS53ps3ZyOFGlZ0u87XiYZ/9kNtPZBn172XB0KMgPySUN/CoyXQtR0cWbSu
-	kYWYtSIG/W8wR++DqVrCyZLYDp0z3MO/HIplMJulD/BGBmgc097bf+kKDgsMHw2YDlamr7FHKRHf1
-	flcdQK9yWiCQauuL56+CPghkl73KR6DcAknn7MR+6CBtt9ILB6hlRzcyQhtN3ILUyMTdvPf44oMt1
-	bJs2mdijE4DSZnTGPAy3WbmduDdLiPHN8wBbdgxB9bjr1fyaAtbAq8wVyozIthecQjTTFCAXE3cLx
-	8QtdNyxQ==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	bh=y9x/L9zBRAyTkONnTlLEDtK2szL6cwTn1TVFewVFbA8=; b=JWEnebhnTe58dtVX/7p2myLcUj
+	a9pwrZdGmF44acxSOIJctjiUShAyk1/ElamA0cFsxO3PDBchYS/vHw0VQ9Z6AmqzgjgeMklWdLyvz
+	bbZ+DDS0BBZkyOhS4FvAZxdBnRjdzcgSwtIvpGNjgzz8/4UxwjDeAwsGQU1W7mjDPumMRzn00woBN
+	m7kv0RNokei7sueDCYS+IaS9WLne50U+AJ+03BKe18/Uo66TFITafp/G1A1/1K74MvlTgfJBJRegR
+	eqSGofdqjwXBjjme/S1XY2AcPTMWoToxcqW4N9qv6XOLKVsEC+nGZslA3s8PNn80RtJkx3HJR1fMY
+	OwGnQlHA==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXHeQ-0000000CQyq-43eZ
+	id 1rXHeR-0000000CQzA-2yD7
 	for ath12k@lists.infradead.org;
-	Tue, 06 Feb 2024 09:22:01 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4169FaEx013622;
-	Tue, 6 Feb 2024 09:21:56 GMT
+	Tue, 06 Feb 2024 09:22:02 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4166xQRE014451;
+	Tue, 6 Feb 2024 09:21:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=28cuVq00o/JMlfn7ktM0K873EkZPm5LlSZpvsIteBQg=; b=Z/
-	bjqh74xeULgNmcyOAS8otBzJcVTdf4v9cM55pj56xKl6mVB4N/YKhdczlWso7UvO
-	LAz6OBotvomoke5lzgMPXwEN8WI3xg//30FpAQJLBDUF2DBZwZ9HEdB0gNl4N2ru
-	ZRRxqZwHIvQurVYMZhewF1LkW3PR+1//GTHd0jeDSFxkzJ1Jz2/OtHIJ0AKtvcA6
-	IlIkxGP0CJN7bAQgf+f+aIQkp2I8cMRJd+cBQvmPakW89nSIEGgfDXxGy+fTC2Df
-	6d9pULupoGKg5qsoZ4fuEfOXjt+2ZzlUc2FtkF61Ve38d7hKifjJV0Jx76nnPofV
-	abu2Rzz11K1D4cPldFqQ==
+	qcppdkim1; bh=y9x/L9zBRAyTkONnTlLEDtK2szL6cwTn1TVFewVFbA8=; b=VH
+	RzC2pJ9zDmojfTndwt1pGvVBBn2fxsTQ5az+hsp3xOeOwah7vJP9Ap0tU8hzARB2
+	+O+BA/jHBWx4OjnKnmy0cF0DXjKTZBVuzT9e75fFB3theGQ+rX8ceVFwpHj9GURk
+	L4aJ59AIpLfhi8pZVzvueU80eQ8tZwpR0STI2q7y48FyPVKoKSgJ19HZR27icavZ
+	d5kPY0ky0hTkJGorJEvTqHFhW7rQsecbvTPiMoIwJsnViEDH0NpnZTeQ5wSQ4ioj
+	6+90aGUg+9SjjtXGAjYqwtIny5v3uZZc550mE2qknW25JUBsIgcGkM0+w0z0cPLr
+	4Zq8SttR0byZp/foXezA==
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w3hyvg0a9-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w3e7g0ggx-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 06 Feb 2024 09:21:56 +0000 (GMT)
+	Tue, 06 Feb 2024 09:21:57 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4169LtsA021325
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4169LvIN021340
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 6 Feb 2024 09:21:55 GMT
+	Tue, 6 Feb 2024 09:21:57 GMT
 Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 6 Feb 2024 01:21:53 -0800
+ 15.2.1118.40; Tue, 6 Feb 2024 01:21:55 -0800
 From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>,
         Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Subject: [PATCH v2 09/12] wifi: ath12k: modify regulatory support for single wiphy architecture
-Date: Tue, 6 Feb 2024 14:49:51 +0530
-Message-ID: <20240206091954.4144454-10-quic_ramess@quicinc.com>
+Subject: [PATCH v2 10/12] wifi: ath12k: Modify set and get antenna mac ops for single wiphy
+Date: Tue, 6 Feb 2024 14:49:52 +0530
+Message-ID: <20240206091954.4144454-11-quic_ramess@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240206091954.4144454-1-quic_ramess@quicinc.com>
 References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
@@ -86,19 +86,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 3SYhprtr12fmTSRIQ4T8CadBRO7ioOo2
-X-Proofpoint-GUID: 3SYhprtr12fmTSRIQ4T8CadBRO7ioOo2
+X-Proofpoint-GUID: u6ghTtS7jtMuDVEAtYnTINYiHk9OGl6b
+X-Proofpoint-ORIG-GUID: u6ghTtS7jtMuDVEAtYnTINYiHk9OGl6b
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-02-06_02,2024-01-31_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- spamscore=0 priorityscore=1501 impostorscore=0 mlxlogscore=999
- suspectscore=0 adultscore=0 malwarescore=0 bulkscore=0 phishscore=0
- clxscore=1015 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 adultscore=0 mlxscore=0 mlxlogscore=999 lowpriorityscore=0
+ bulkscore=0 spamscore=0 clxscore=1015 priorityscore=1501 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2401310000 definitions=main-2402060065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240206_092159_517119_F3DF03BA 
-X-CRM114-Status: GOOD (  24.10  )
+X-CRM114-CacheID: sfid-20240206_092200_381855_6DFA390D 
+X-CRM114-Status: GOOD (  16.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,19 +115,17 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sriram R <quic_srirrama@quicinc.com>
 
-With all the radios being combined and registered as a single
-mac80211 hw/wiphy, separate regd built from firmware rules need
-not be updated to cfg80211. Rather we can pick one of the regd
-built from the rules to update to cfg80211 for the whole
-registered device. We prefer 6 GHz pdev based rules since it has
-the rules for all bands. If the hw doesn't support 6 GHz, then update
-rules from one of the pdevs.
+As multiple radios are combined into a single wiphy, and
+the current infrastructure supports only set/get antenna
+for the wiphy, the max Tx/Rx antenna capability is advertised
+during wiphy register.
+Hence, When antenna set/get is received we adjust the set/get
+based on max radio capability and set/get antenna accordingly.
 
-Also, when regulatory notification is received, update to all the
-underlying radios/ar so that it becomes aware of the change and as
-well us it updates its local regd with the new country rules. Later
-pick the appropriate pdev's regd(6 GHz if available) and apply to
-cfg80211.
+Multi radio capability needs to introduced with interface
+combination changes to support single wiphy model in cfg80211
+which would help extend the wiphy specific get/set configs similar
+to this to per hw level.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -135,136 +133,79 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
 Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h |  2 +
- drivers/net/wireless/ath/ath12k/mac.c  |  2 +
- drivers/net/wireless/ath/ath12k/reg.c  | 58 ++++++++++++++++++++++----
- 3 files changed, 53 insertions(+), 9 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 37 ++++++++++++++++++++-------
+ 1 file changed, 28 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index d41f8e5915f6..01232679795c 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -632,6 +632,8 @@ struct ath12k_hw {
- 
- 	u8 num_radio;
- 
-+	bool regd_updated;
-+	bool use_6ghz_regd;
- 	/* Keep last */
- 	struct ath12k radio[] __aligned(sizeof(void *));
- };
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 631b24c6e435..617dd55e7d4e 100644
+index 617dd55e7d4e..a85468cc63da 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7829,6 +7829,7 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 	struct ath12k_wmi_hal_reg_capabilities_ext_arg *reg_cap;
- 	void *channels;
- 	u32 phy_id;
-+	struct ath12k_hw *ah = ar->ah;
+@@ -5010,6 +5010,13 @@ static int __ath12k_set_antenna(struct ath12k *ar, u32 tx_ant, u32 rx_ant)
+ 	if (ath12k_check_chain_mask(ar, rx_ant, false))
+ 		return -EINVAL;
  
- 	BUILD_BUG_ON((ARRAY_SIZE(ath12k_2ghz_channels) +
- 		      ARRAY_SIZE(ath12k_5ghz_channels) +
-@@ -7881,6 +7882,7 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
- 			ath12k_mac_update_ch_list(ar, band,
- 						  reg_cap->low_5ghz_chan,
- 						  reg_cap->high_5ghz_chan);
-+			ah->use_6ghz_regd = true;
- 		}
- 
- 		if (reg_cap->low_5ghz_chan < ATH12K_MIN_6G_FREQ) {
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index e44723d9d0b2..1df8a2bfcddd 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -50,7 +50,7 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 	struct ath12k_wmi_init_country_arg arg;
- 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
- 	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
--	int ret;
-+	int ret, i;
- 
- 	ath12k_dbg(ar->ab, ATH12K_DBG_REG,
- 		   "Regulatory Notification received for %s\n", wiphy_name(wiphy));
-@@ -85,10 +85,17 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 	memcpy(&arg.cc_info.alpha2, request->alpha2, 2);
- 	arg.cc_info.alpha2[2] = 0;
- 
--	ret = ath12k_wmi_send_init_country_cmd(ar, &arg);
--	if (ret)
--		ath12k_warn(ar->ab,
--			    "INIT Country code set to fw failed : %d\n", ret);
-+	/* Allow fresh updates to wiphy regd */
-+	ah->regd_updated = false;
++	/* Since we advertised the max cap of all radios combined during wiphy
++	 * registration, ensure we don't set the antenna config higher than the
++	 * limits
++	 */
++	tx_ant = min_t(u32, tx_ant, ar->pdev->cap.tx_chain_mask);
++	rx_ant = min_t(u32, rx_ant, ar->pdev->cap.rx_chain_mask);
 +
-+	/* Send the reg change request to all the radios */
-+	for (i = 0; i < ah->num_radio; i++) {
-+		ret = ath12k_wmi_send_init_country_cmd(ar, &arg);
-+		if (ret)
-+			ath12k_warn(ar->ab,
-+				    "INIT Country code set to fw failed : %d\n", ret);
-+		ar++;
-+	}
- }
+ 	ar->cfg_tx_chainmask = tx_ant;
+ 	ar->cfg_rx_chainmask = rx_ant;
  
- int ath12k_reg_update_chan_list(struct ath12k *ar)
-@@ -205,8 +212,29 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
- 	int ret, regd_len, pdev_id;
- 	struct ath12k_base *ab;
+@@ -6309,16 +6316,22 @@ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
+ static int ath12k_mac_op_get_antenna(struct ieee80211_hw *hw, u32 *tx_ant, u32 *rx_ant)
+ {
+ 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
++	int antennas_rx = 0, antennas_tx = 0;
+ 	struct ath12k *ar;
 +	int i;
  
- 	ab = ar->ab;
-+
-+	/* If one of the radios within ah has already updated the regd for
-+	 * the wiphy, then avoid setting regd again
-+	 */
-+	if (ah->regd_updated)
-+		return 0;
-+
-+	/* firmware provides reg rules which are similar for 2 GHz and 5 GHz
-+	 * pdev but 6 GHz pdev has superset of all rules including rules for
-+	 * all bands, we prefer 6 GHz pdev's rules to be used for setup of
-+	 * the wiphy regd.
-+	 * If 6 GHz pdev was part of the ath12k_hw, wait for the 6 GHz pdev,
-+	 * else pick the first pdev which calls this function and use its
-+	 * regd to update global hw regd.
-+	 * The regd_updated flag set at the end will not allow any further
-+	 * updates.
-+	 */
-+	if (ah->use_6ghz_regd && !ar->supports_6ghz)
-+		return 0;
-+
- 	pdev_id = ar->pdev_idx;
+ 	ar = ath12k_ah_to_ar(ah, 0);
  
- 	spin_lock_bh(&ab->base_lock);
-@@ -259,10 +287,22 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 	if (ret)
- 		goto err;
- 
--	if (ah->state == ATH12K_HW_STATE_ON) {
--		ret = ath12k_reg_update_chan_list(ar);
--		if (ret)
--			goto err;
-+	ah->regd_updated = true;
-+
-+	/* Apply the new regd to all the radios, this is expected to be received only once
-+	 * since we check for ah->regd_updated and allow here only once
-+	 */
-+	ar = ah->radio;
-+	ab = ar->ab;
-+
+-	mutex_lock(&ar->conf_mutex);
+-
+-	*tx_ant = ar->cfg_tx_chainmask;
+-	*rx_ant = ar->cfg_rx_chainmask;
 +	for (i = 0; i < ah->num_radio; i++) {
-+		if (ah->state == ATH12K_HW_STATE_ON) {
-+			ret = ath12k_reg_update_chan_list(ar);
-+			if (ret)
-+				goto err;
-+		}
++		mutex_lock(&ar->conf_mutex);
++		antennas_rx = max_t(u32, antennas_rx, ar->cfg_rx_chainmask);
++		antennas_tx = max_t(u32, antennas_tx, ar->cfg_tx_chainmask);
++		mutex_unlock(&ar->conf_mutex);
 +		ar++;
-+		ab = ar->ab;
- 	}
++	}
+ 
+-	mutex_unlock(&ar->conf_mutex);
++	*tx_ant = antennas_tx;
++	*rx_ant = antennas_rx;
  
  	return 0;
+ }
+@@ -6327,13 +6340,19 @@ static int ath12k_mac_op_set_antenna(struct ieee80211_hw *hw, u32 tx_ant, u32 rx
+ {
+ 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+-	int ret;
++	int ret = 0;
++	int i;
+ 
+ 	ar = ath12k_ah_to_ar(ah, 0);
+ 
+-	mutex_lock(&ar->conf_mutex);
+-	ret = __ath12k_set_antenna(ar, tx_ant, rx_ant);
+-	mutex_unlock(&ar->conf_mutex);
++	for (i = 0; i < ah->num_radio; i++) {
++		mutex_lock(&ar->conf_mutex);
++		ret = __ath12k_set_antenna(ar, tx_ant, rx_ant);
++		mutex_unlock(&ar->conf_mutex);
++		if (ret)
++			break;
++		ar++;
++	}
+ 
+ 	return ret;
+ }
 -- 
 2.25.1
 
