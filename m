@@ -4,65 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5B76C4828D
-	for <ath12k@archiver.kernel.org>; Wed,  7 Feb 2024 15:08:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6B6DC4828F
+	for <ath12k@archiver.kernel.org>; Wed,  7 Feb 2024 17:43:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rlRPdvHa5Hmi+2+vmMoo2vGBFo+9I9Qg+aIo1X/DXpw=; b=Wdiph2RbEXQazvdxNggt/t6p1n
-	MRVpml3cF+68WrKJPJqUWil7wBXsocNYSRM9iuSTknvjKV5AwnNhymYww9UTNd4wjBKahZMNFUHv2
-	b/Mj86WC+A/4EdP7fBUeAEDPzKhKaKtYDPzhlUsxOpv3wu+wxEbcao60pgz/jpNv86WKEtrC0Deyb
-	81cl+xcxCkDirjmwFEKtJH4YnR733KTdCd+MGzV+epKZ16XN02MQacZPLDJ1ZvvUEb19s35qPMUkL
-	aUBfHCmLb3TT10B2XPL0ompMyGSWVYRPs7JP3oYPRRK7NHZSoNfGkKL1WYuj0VeVQY21ssJOhrYfE
-	YtunjA9Q==;
+	bh=4kxLxkoweed2TxxYILjc92714iKBzsNAZuTMz3ABe1A=; b=3JMahGBj69sBnnMxRTgNdpnnBp
+	+EbB+iay2O3QW8lGUDG8IS9rWqz/VAKzJwMyDO7HGV4nN4MdICF7Fo9g1X2iSMAdvtBltP7LZa0NV
+	gPtPvcYuaqHCaQUwcIFIGlATQVUzYb5+7LiWIzne4PZt5txnu51dHZxYrQ56W5AVFaULM+iq687fl
+	t+yioTlduFcHec2UBA2njI2nX1HvY3/gEGhj67KXrt3gMAJzfI3sX0aAH6HP5hsTSQ26to++O3ecm
+	PR6GnhoAuSyYnUXkon2hbyf45xH3+zAmn2nIf6cvA2HRkKAzzyaDwLMzWjAJ3k4hTkTOqEjvUBpkp
+	rCkKIutw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXjXA-0000000B2W9-2Q3W
+	id 1rXlx9-0000000BLFR-2JAd
 	for ath12k@archiver.kernel.org;
-	Wed, 07 Feb 2024 15:08:20 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 07 Feb 2024 17:43:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rXjX7-0000000B2V7-0uPs
+	id 1rXlx6-0000000BLCN-25tc
 	for ath12k@lists.infradead.org;
-	Wed, 07 Feb 2024 15:08:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A449C6188A;
-	Wed,  7 Feb 2024 15:08:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AB68C433C7;
-	Wed,  7 Feb 2024 15:08:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707318496;
-	bh=y/x282TGyBYCjdhcKYKHYG/kynm2rucyoPS3V5ieUbM=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=VD+Ura7ktRstWIYsHIa0uBGaRlrylJuQiMb0G/Z1Ou/klx3BKPrNCku8O1PnAr1UU
-	 rvp/vWbyITQnsJpu6D0bAB2etGy+Jbz1Sg0TxzhabyHBx3/EM1OHrG3m36ha5EumsV
-	 S+Q/7b38B4inl0Pw3jRCNOqCHK4PYZcb0e7lmHvDjw4GFKD7rPTj+AcLx5BupeHXCH
-	 Uc+/e8h83XnknucKPCfn4oFURhl7giw8RzjKTPTXLYp9kBcXEluB06St/WY5frZlcO
-	 h5tm2ekwL3m/MMf/j+w6iLZp9qqcgCYebibORvCinj+uiNxqiF3sAJyp0Abj9RvDlR
-	 HNfC1dJlP4NTA==
-Content-Type: text/plain; charset="utf-8"
+	Wed, 07 Feb 2024 17:43:18 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 417D2cE6011772;
+	Wed, 7 Feb 2024 17:43:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=4kxLxkoweed2TxxYILjc92714iKBzsNAZuTMz3ABe1A=; b=et
+	E/ULZwfL9eGk7e0WpYWPgjVMoVspAcg5D4+pYMsbBURPYhjFoArpSL6GfJfNB9Df
+	3PefAWw1JaEEELNsq6udg0fV2VpoAki8ZJ5j6N2HgopMYDPwB/hS3Sd1ws8Ykkh6
+	tPXoxdpOLzyoU7LLIXP+Fk912imofAeUpzU/xeqtFEXU3HcvPLVpQmgYP1Db7N8r
+	HRdxfqsvqE5Oy+1+oTNT7s40AQK1tQ3rIOQsZlj4NNsYiOib1Ai7QRzNTusAeat4
+	9vxT29nlT5EWoNoYN/xAoCv0WZ12u4Yx7yLfA7Ogs3ii6I8P5qmcqZ3mcKDTcpTT
+	3MYKgFPWxS4WPwXP1q0w==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w3x41t27m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 07 Feb 2024 17:43:12 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 417HhC7l022503
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 7 Feb 2024 17:43:12 GMT
+Received: from [10.110.62.200] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 7 Feb
+ 2024 09:43:11 -0800
+Message-ID: <1f46c0cc-6cd5-4081-b91b-fb6cca830eaa@quicinc.com>
+Date: Wed, 7 Feb 2024 09:43:11 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 05/11] wifi: ath12k: implement handling of P2P NoA
+ event
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>, Kang Yang <quic_kangyang@quicinc.com>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240130040303.370590-1-quic_kangyang@quicinc.com>
+ <20240130040303.370590-6-quic_kangyang@quicinc.com>
+ <87plx9r2rp.fsf@kernel.org> <87eddpqwym.fsf@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <87eddpqwym.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: Fix uninitialized use of ret in
- ath12k_mac_allocate()
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240205-ath12k-mac-wuninitialized-v1-1-3fda7b17357f@kernel.org>
-References: <20240205-ath12k-mac-wuninitialized-v1-1-3fda7b17357f@kernel.org>
-To: Nathan Chancellor <nathan@kernel.org>
-Cc: quic_jjohnson@quicinc.com, morbo@google.com, justinstitt@google.com,
- quic_periyasa@quicinc.com, ath12k@lists.infradead.org,
- linux-wireless@vger.kernel.org, llvm@lists.linux.dev,
- patches@lists.linux.dev, Nathan Chancellor <nathan@kernel.org>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170731849247.2220494.17976129376947521581.kvalo@kernel.org>
-Date: Wed,  7 Feb 2024 15:08:14 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: uf8E1rZy1eN2nouGp0avimEc6gt2sPl5
+X-Proofpoint-GUID: uf8E1rZy1eN2nouGp0avimEc6gt2sPl5
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-02-07_09,2024-02-07_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 impostorscore=0
+ mlxlogscore=999 clxscore=1015 spamscore=0 priorityscore=1501
+ suspectscore=0 adultscore=0 phishscore=0 lowpriorityscore=0 malwarescore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401310000 definitions=main-2402070131
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240207_070817_348349_9E507C1C 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240207_094316_593327_22858667 
+X-CRM114-Status: GOOD (  13.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,38 +101,82 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Nathan Chancellor <nathan@kernel.org> wrote:
-
-> Clang warns (or errors with CONFIG_WERROR=y):
+On 2/6/2024 10:17 AM, Kalle Valo wrote:
+> Kalle Valo <kvalo@kernel.org> writes:
 > 
->   drivers/net/wireless/ath/ath12k/mac.c:8060:9: error: variable 'ret' is uninitialized when used here [-Werror,-Wuninitialized]
->    8060 |         return ret;
->         |                ^~~
->   drivers/net/wireless/ath/ath12k/mac.c:8022:9: note: initialize the variable 'ret' to silence this warning
->    8022 |         int ret, i, j;
->         |                ^
->         |                 = 0
->   1 error generated.
+>> Kang Yang <quic_kangyang@quicinc.com> writes:
+>>
+>>> The NoA(Notice of Absence) attribute is used by the P2P Group Owner to
+>>> signal its absence due to power save timing, concurrent operation, or
+>>> off-channel scanning. It is also used in the P2P Presence Request-Response
+>>> mechanism.
+>>>
+>>> The NoA attribute shall be present in the P2P IE in the beacon frames
+>>> transmitted by a P2P Group Owner when a NoA schedule is being advertised,
+>>> or when the CTWindow is non-zero.
+>>>
+>>> So add support to update P2P information after P2P GO is up through
+>>> event WMI_P2P_NOA_EVENTID, and always put it in probe resp.
+>>>
+>>> Create p2p.c and p2p.h for P2P related functions and definitions.
+>>>
+>>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>>
+>>> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+>>
+>> [...]
+>>
+>>> +static int ath12k_wmi_p2p_noa_event(struct ath12k_base *ab,
+>>> +				    struct sk_buff *skb)
+>>> +{
+>>> +	const void **tb;
+>>> +	const struct wmi_p2p_noa_event *ev;
+>>> +	const struct ath12k_wmi_p2p_noa_info *noa;
+>>> +	struct ath12k *ar;
+>>> +	int ret, vdev_id;
+>>> +
+>>> +	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
+>>> +	if (IS_ERR(tb)) {
+>>> +		ret = PTR_ERR(tb);
+>>> +		ath12k_warn(ab, "failed to parse tlv: %d\n", ret);
+>>> +		return ret;
+>>> +	}
+>>> +
+>>> +	ev = tb[WMI_TAG_P2P_NOA_EVENT];
+>>> +	noa = tb[WMI_TAG_P2P_NOA_INFO];
+>>> +
+>>> +	if (!ev || !noa) {
+>>> +		kfree(tb);
+>>> +		return -EPROTO;
+>>> +	}
+>>> +
+>>> +	vdev_id = __le32_to_cpu(ev->vdev_id);
+>>> +
+>>> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
+>>> +		   "wmi tlv p2p noa vdev_id %i descriptors %u\n",
+>>> +		   vdev_id, le32_get_bits(noa->noa_attr, WMI_P2P_NOA_INFO_DESC_NUM));
+>>> +	ar = ath12k_mac_get_ar_by_vdev_id(ab, vdev_id);
+>>> +	if (!ar) {
+>>> +		ath12k_warn(ab, "invalid vdev id %d in P2P NoA event\n",
+>>> +			    vdev_id);
+>>> +		return -EINVAL;
+>>> +	}
+>>
+>> Aren't we leaking tb here? In this function I revamped the error
+>> handling to use the out label to make sure we are freeing tb in every
+>> error. Please review:
+>>
+>> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=12e182b47078a48169e873c51d438d7417e7e0c8
 > 
-> Commit 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211
-> hw") added a completely uninitialized use of ret. Prior to that change,
-> -ENOMEM was returned to the callers of ath12k_mac_allocate() whenever
-> ath12k_mac_hw_allocate() failed. Assign that value to ret to make sure
-> it is always initialized when used and clear up the warning.
+> I realised that ret was uninitialised when no error, new version:
 > 
-> Closes: https://github.com/ClangBuiltLinux/linux/issues/1989i
-> Fixes: 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211 hw")
-> Signed-off-by: Nathan Chancellor <nathan@kernel.org>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=43f3069f6580b8a67969a6f32377d35aa7dd8d9a
 
-Patch applied to ath-next branch of ath.git, thanks.
+Thanks Kalle, looks like I had a review failure on the original :(
+The version here LGTM :)
 
-04edb5dc68f4 wifi: ath12k: Fix uninitialized use of ret in ath12k_mac_allocate()
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240205-ath12k-mac-wuninitialized-v1-1-3fda7b17357f@kernel.org/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+/jeff
+> 
 
 
