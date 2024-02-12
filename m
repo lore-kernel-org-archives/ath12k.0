@@ -4,76 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 380B3C4829B
-	for <ath12k@archiver.kernel.org>; Sun, 11 Feb 2024 15:11:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79D30C48297
+	for <ath12k@archiver.kernel.org>; Mon, 12 Feb 2024 18:51:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ereKpYdLrSaaOEa5xs7M1T2/tfEfvgSZWOY7DvZi9OI=; b=3eXixCRs5m5whLflitO+a9YsfC
-	lYlSg+/UJGnSejjFhgOMksDSW37GdRxx1Nh3KXCKI3/9HuRl2Jghf9R9UDnpVcP0/NjFu21rbiqp1
-	QBFnkvlJlWfcOpN1LDQolk7ZZ+TOZoTHNknb148OqOVvvQK9mauNUH1eo4MfDRAGd16p01e66EoZH
-	DJ6zu/+7Vt/TZdCPgIjDein2+GIFSeAFVrYnncvZXkr9QZaCrinYhxcbOe5iFd0C5CRQah8Rm+HEH
-	wtGeteABVQJ0Sq0Zedqqkoqi9z6HnAq6BaTUnMhQLeB1ODcjADq62vgVhBiFg+zZBOl8fGTC6Lm/I
-	MNcjFjSg==;
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=EJ236RSJh2JONZt11QtRVcZlbpwRlVn2jBMn8/Ch+oY=; b=zhT6vkPG2khDjuLw4cbNvBJhRh
+	Wm2YYrBjk8NrnUAyTiGMo84dwQXoimuT84Ctq6tqakgCqJmOFK28M+1MAAZGgWVDQeHfJRG8gzIJ5
+	TMi/8N0JQ/a16gT8CubdT8hlL+NGHFxCR52B2aGgi4CfS9hJMsBmnaCCt0Bsd5S2k55Qn46tVFn28
+	KebOgFLm4VYHZPUewEpUumVL2xclSiiE0JAAJgOLDi6OGzqdny6NJC8WXEmF+PJuCzStHxZMijgVi
+	FAZgR2YWk3iHpbqj+KMXG/69zEC4GKn+mUKCqkcCNZleaOlvilF3F8yh9Io09ZfteM5BKJe8dE2BE
+	xBbfzqww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZBU6-00000002tzd-3rq4
+	id 1rZbOU-00000006gTz-0jx5
 	for ath12k@archiver.kernel.org;
-	Sun, 11 Feb 2024 15:11:10 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	Mon, 12 Feb 2024 18:51:06 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rZBU3-00000002tyF-2rZ4
+	id 1rZbOM-00000006gRf-3NZV
 	for ath12k@lists.infradead.org;
-	Sun, 11 Feb 2024 15:11:08 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-40f02b8d176so20560555e9.1
-        for <ath12k@lists.infradead.org>; Sun, 11 Feb 2024 07:11:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1707664266; x=1708269066; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=ereKpYdLrSaaOEa5xs7M1T2/tfEfvgSZWOY7DvZi9OI=;
-        b=gyxc7DNWNim0g0A/4paVzQcm5u7MqACM/Sm3CAG72ZRa1Be6NHjnJpXU0rssc7e6Z0
-         RKi4hj2nJMU4hNXk2lXd4wzzEqnkqufri5e8U4FZuItErsQG4wy/rfQ1VqDdTbzB8wg+
-         Q6iMYEff5USYfikgMCrPypaLaJI3OO7Kbc+6zmaZH71Xi5XUaZ+qFS62vyvoXDTbNsIl
-         RErbQhXv7D48x8W2Nx11D8RxTg0eEN9KoPdlq1X066cCCs9/S0ugdjT2B2/dbdZ/BG37
-         iWXxa35vD1OuDoux9iOl78WL3BPskROjMzd/Sbn5Scdk+cSDWFZ4HcnlnwZRY+AmBwG5
-         lWIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1707664266; x=1708269066;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ereKpYdLrSaaOEa5xs7M1T2/tfEfvgSZWOY7DvZi9OI=;
-        b=cMuPrpq7pEzhqGd9fmmSYRfXVXXd2z+xNi9d5UutroOGrN5dIDN0mZEEIdoSHTdcof
-         AYsBn9jHMTLzxNQ/1BQ6ZpwxSo/KmSIG0oUO4qszZw/xlGA8f2s8x4+jWPW0FckkZ0Vu
-         8HApXbLw/Gl89rsNPPViMEbHeKoZvS4Uz+4VsPHOTwl0EFSdriyEKOt0DcHPTV/I3UIq
-         hRsBC/NwhdiWME54lxbpzbPpEnlpSBgMlmvgPcQU8GeBAiexS0OVt4fJbwHsRN1KQ8Pu
-         qUcw6IK3J8DV4brVBF5uQvfI8Wda50QBgK3RH60p/9mvkBbxH9cmaJt9ey/bxgMYN74a
-         yyeA==
-X-Gm-Message-State: AOJu0YyisBvx2+elvc5Ownk8I+NqSCeIinWEnRBkgi2abmEg0pKpwJOZ
-	Tk8fso83RaGGQvICEKEtBhlrsQIaKfieJ66QOMcIAHqmIaLvnkPtvB0+SS4R
-X-Google-Smtp-Source: AGHT+IG4ENqfTMl/QDlO2wMczjF5TosO6T+Na4EuQRiiRB1auNm5e64Gu/ZjATk92+xSlqaBztqibQ==
-X-Received: by 2002:a05:600c:4ed0:b0:410:c127:62fe with SMTP id g16-20020a05600c4ed000b00410c12762femr1176907wmq.1.1707664265701;
-        Sun, 11 Feb 2024 07:11:05 -0800 (PST)
-Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id bi11-20020a05600c3d8b00b00410d41f1d96sm384272wmb.34.2024.02.11.07.11.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 11 Feb 2024 07:11:04 -0800 (PST)
-From: Nicolas Escande <nico.escande@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH] wifi: ath12k: remove the unused scan_events from ath12k_wmi_scan_req_arg
-Date: Sun, 11 Feb 2024 16:11:04 +0100
-Message-ID: <20240211151104.1951418-1-nico.escande@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	Mon, 12 Feb 2024 18:51:01 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41CIfFc6022119;
+	Mon, 12 Feb 2024 18:50:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=EJ236RSJh2JONZt11QtRVcZlbpwRlVn2jBMn8/Ch+oY=; b=kN
+	NzN/DNo72RoNzpOgs33IlvzGm5xwc79HACR4UEp100BVc2qwvW/5a4ux4n1PSzE+
+	N+omk4y89ShzDt6vz5wQOVsxkwXJo2qJbTj8S9QZLV7eaVFxiJMn/9q55vIGdAJi
+	nsPZMyfPEe6Nn3gdOMFuy+qKCM78XPqg4iyu5bn2MBiJnyDQ20sFAU9P1NXGJfsQ
+	D7mi1WFZ8HHvwGnTFWiaUSVU3FDOdzb7JcEQZhMpbyGttlot1OYhu4FWQB1or0O8
+	B5mS22pReBxAkHKE/l3DhIew+MLedvgDbz39Q+84ej18EdwKI44craPd1+su7BXe
+	rZ4ftp7uWmQHD0I0wJcg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w7ju78ym3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 12 Feb 2024 18:50:54 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41CIoswK029775
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 12 Feb 2024 18:50:54 GMT
+Received: from [10.227.110.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 12 Feb
+ 2024 10:50:53 -0800
+Message-ID: <11a06acd-1049-476a-92a6-a9fe410aa5b6@quicinc.com>
+Date: Mon, 12 Feb 2024 10:50:53 -0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] wifi: ath12k: Do not use scan_flags from struct
+ ath12k_wmi_scan_req_arg
+Content-Language: en-US
+To: Nicolas Escande <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240211145548.1939610-1-nico.escande@gmail.com>
+ <20240211145548.1939610-2-nico.escande@gmail.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240211145548.1939610-2-nico.escande@gmail.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: hrL2Leay_qXiWbtdfEfTHsWlGvf326tI
+X-Proofpoint-GUID: hrL2Leay_qXiWbtdfEfTHsWlGvf326tI
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-02-12_16,2024-02-12_03,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ mlxlogscore=391 lowpriorityscore=0 spamscore=0 clxscore=1015
+ priorityscore=1501 mlxscore=0 malwarescore=0 suspectscore=0 phishscore=0
+ adultscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401310000 definitions=main-2402120144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240211_071107_741894_949C74BB 
-X-CRM114-Status: UNSURE (   7.77  )
+X-CRM114-CacheID: sfid-20240212_105058_884538_662C60B1 
+X-CRM114-Status: UNSURE (   7.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,58 +101,16 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-As done for ath11k, lets keep on cleaning up struct ath12k_wmi_scan_req_arg by
-removing the unused scan_events. Also remove the underlying union & struct
-construct as it isn't needed anymore. No functionnal changes.
-
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
----
- drivers/net/wireless/ath/ath12k/wmi.h | 31 +++++++++++----------------
- 1 file changed, 13 insertions(+), 18 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 892f21f95ee5..103462feb935 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -3281,24 +3281,19 @@ struct ath12k_wmi_scan_req_arg {
- 	u32 vdev_id;
- 	u32 pdev_id;
- 	enum wmi_scan_priority scan_priority;
--	union {
--		struct {
--			u32 scan_ev_started:1,
--			    scan_ev_completed:1,
--			    scan_ev_bss_chan:1,
--			    scan_ev_foreign_chan:1,
--			    scan_ev_dequeued:1,
--			    scan_ev_preempted:1,
--			    scan_ev_start_failed:1,
--			    scan_ev_restarted:1,
--			    scan_ev_foreign_chn_exit:1,
--			    scan_ev_invalid:1,
--			    scan_ev_gpio_timeout:1,
--			    scan_ev_suspended:1,
--			    scan_ev_resumed:1;
--		};
--		u32 scan_events;
--	};
-+	u32 scan_ev_started:1,
-+	    scan_ev_completed:1,
-+	    scan_ev_bss_chan:1,
-+	    scan_ev_foreign_chan:1,
-+	    scan_ev_dequeued:1,
-+	    scan_ev_preempted:1,
-+	    scan_ev_start_failed:1,
-+	    scan_ev_restarted:1,
-+	    scan_ev_foreign_chn_exit:1,
-+	    scan_ev_invalid:1,
-+	    scan_ev_gpio_timeout:1,
-+	    scan_ev_suspended:1,
-+	    scan_ev_resumed:1;
- 	u32 dwell_time_active;
- 	u32 dwell_time_active_2g;
- 	u32 dwell_time_passive;
--- 
-2.43.0
+On 2/11/2024 6:55 AM, Nicolas Escande wrote:
+> As discussed in [1] to fix the mismatch between the WMI_SCAN_XXX macros &
+> their corresponding scan_f_xxx bitfield equivalent, lets stop using the
+> scan_flags in the union altogether.
+> 
+> [1] https://lore.kernel.org/all/4be7d62e-cb59-462d-aac2-94e27efc22ff@quicinc.com/
+> 
+> Tested-on: QCN9274 hw2.0 PCI CI_WLAN.WBE.1.3-02907.1-QCAHKSWPL_SILICONZ-10
+> 
+> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
