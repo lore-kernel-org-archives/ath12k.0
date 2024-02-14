@@ -4,68 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20446C48BC4
-	for <ath12k@archiver.kernel.org>; Wed, 14 Feb 2024 10:45:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C23CFC48BC4
+	for <ath12k@archiver.kernel.org>; Wed, 14 Feb 2024 10:51:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Subject:Cc:To:
+	From:Date:References:In-Reply-To:Message-Id:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yi3Xs7CvpqCNzxxb6XTsRLlCiBOaXTGuNmWTsgxzBXA=; b=VgYRUe4/PamkX9/gu/HyhkujXN
-	shmMCAKZsUbm+f+hkQbHj2oOS3MVzkmvn3s42leI/b39JJrIrgx+MEuNTkFkkz9B3g1PdjOYK/zEz
-	yzLZ3CSEkVDpN11x+S+1d2nTFUH9A+CA+y0A3uFxDmUsYRQfuvhDrAJA4O3Asxm1Hpsa7o1o7v0VO
-	N1S2Rl8foK+hFCWwQTjSwLkNo3gZDAnybc0DkBubkLNb14a5wEIcvyWAzLUOvq1LzZgjswuLzgxJo
-	rW0On44IHcWrKjelJagqe2WHk70Fup3iOadpgePoEfAO3y97mP0/QFIXA+mc42TZAyZaSHDFVBXhV
-	M8D44fgw==;
+	bh=79/Qzm2vJk0BAzjRMVt7ecM1kUIJeCMDLpwDD4uxJWo=; b=sWQJ73AGS4QQeCZAXE09IC0zw2
+	RzjOzuylJnmJAE2GvThRykJr13zDUFaHir0H0WnKqXv4drCkK5xrusU6KlAky7WYG3w0i0yAnPlQn
+	vZRWSnGv/Ze6yfpe/6lzKV/7qIsQroMdA9j5YQ+lOBRs9Xx4lg+cZX4eLvWS43L1eXcu5d2zVV1Za
+	OtFsGSRvsBms5evSu56GAgBwdkRkZ86iJg8A9ZRCeDAG+j5ppj3oN5OilvHl8S71KX/+ySxll9dhr
+	GXjY9+hwocCg6g7pARZofjv0MiPE+l3Ks9P9umkdkgOE6K7ta5DgCyTPwXSr7mQejtYLxJ2wcaoDH
+	ybo1L4wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raClG-0000000CZL7-3PYY
+	id 1raCrc-0000000Ca1V-21E5
 	for ath12k@archiver.kernel.org;
-	Wed, 14 Feb 2024 10:45:06 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 14 Feb 2024 10:51:40 +0000
+Received: from wfout5-smtp.messagingengine.com ([64.147.123.148])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raClD-0000000CZKh-2ddp
+	id 1raCrZ-0000000Ca03-3qG3
 	for ath12k@lists.infradead.org;
-	Wed, 14 Feb 2024 10:45:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0DEC461886;
-	Wed, 14 Feb 2024 10:45:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C5F91C433F1;
-	Wed, 14 Feb 2024 10:45:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707907502;
-	bh=c5a5QD1qybAX8sIO7SlkwMh3DXcoPgzluORoGmCH18o=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=MHd1grYrjnKc6N9SBwHUg+n7lvaoMgaqHzbsWY/uOvBtvyA/Sdh5GG2It2CXBgr+O
-	 f6cdD473ETW5ujH6eag47aT9vAFUtzuCDz2Qo3hbR/iKNTJ/nzTfi1eDzuyMui+ma4
-	 SMSV86kIPVszpaikgwZmMolujKS0mFjwrO1ZBlfpR2uNg46S5LBdN/EY/clf9ny6t/
-	 w1UtIqsz3y+mk73XgXWesN6JXldOrboaDEk/OC0MDo9uacqx3ZHkVSzh9ww4X84cMk
-	 KNU4hDcT6ApwBbp0wc6VQdixjI1QQ5UdladLXqrjxpiYZHjQ5XLKeZg98BIMBPUvZc
-	 TEhhP98yNTKZw==
-From: Kalle Valo <kvalo@kernel.org>
-To: "Arnd Bergmann" <arnd@arndb.de>
-Cc: "Arnd Bergmann" <arnd@kernel.org>,  "Jeff Johnson"
- <quic_jjohnson@quicinc.com>,  "Karthikeyan Periyasamy"
- <quic_periyasa@quicinc.com>,  "Aloka Dixit" <quic_alokad@quicinc.com>,
-  "Wen Gong" <quic_wgong@quicinc.com>,  "Muna Sinada"
- <quic_msinada@quicinc.com>,  "Aditya Kumar Singh"
- <quic_adisi@quicinc.com>,  ath12k@lists.infradead.org,
-  linux-wireless@vger.kernel.org,  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] wifi: ath12k: sanitize ath12k_mac_allocate() return code
-References: <20240213100912.459018-1-arnd@kernel.org>
-	<170790025305.3179441.138152315558305278.kvalo@kernel.org>
-	<08ac32ef-610d-479d-a3fd-a3c3b8c4c697@app.fastmail.com>
-Date: Wed, 14 Feb 2024 12:44:58 +0200
-In-Reply-To: <08ac32ef-610d-479d-a3fd-a3c3b8c4c697@app.fastmail.com> (Arnd
-	Bergmann's message of "Wed, 14 Feb 2024 11:37:52 +0100")
-Message-ID: <87plwze34l.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 14 Feb 2024 10:51:39 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+	by mailfout.west.internal (Postfix) with ESMTP id 9F5901C0007B;
+	Wed, 14 Feb 2024 05:51:33 -0500 (EST)
+Received: from imap51 ([10.202.2.101])
+  by compute5.internal (MEProxy); Wed, 14 Feb 2024 05:51:34 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:subject
+	:subject:to:to; s=fm3; t=1707907893; x=1707994293; bh=79/Qzm2vJk
+	0BAzjRMVt7ecM1kUIJeCMDLpwDD4uxJWo=; b=1COWNVYH87gWNKMltpLJTnWw29
+	E25ubIUcUwoHblWcT8XhX6017jq8mggn+2LzFzRLZizNfrUHM5fMdHu8tdqOUtbR
+	Rut6m5DVGdTIAhwrtJtiuEGiWiyL/Sn8YqBDXndFO1YVxtyVzwtduSf3+6Fmo8Pl
+	o5lCb5tnI5yfyyJMTUBjW4EJvcW9hwZeXVMifZy40bJDlrJxz5UGkSedmePUqTDD
+	/E8PDeBP6vWghx6RKjgf2T9ZIDD0lVy8SQIjlVI3Qfol8hDi8E21vfT450NPVdkV
+	q6qwj/uYa4tfVjt15cWHWMSFlXTaCdyjGXAwrYdUwq2sQCI9yHq46EHdHGJQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1707907893; x=1707994293; bh=79/Qzm2vJk0BAzjRMVt7ecM1kUIJ
+	eCMDLpwDD4uxJWo=; b=nsQklX3H59Y1ufjMGSGzYWPK6jQicRXM1irJ7KW5dOEn
+	yrQqdBhVESERXan/LkmJC7udmsuLmsLbGKrWRj5lsghVKDce2g+jq6LpYSb83DTu
+	XvrY5b9vyAPAZxbNJZoadCu5OBx0RIyJth9xjpAwXPkzTHhK7IgopNm55Tw+Gd5l
+	JzLxf5kFU5aY1KLLVBAlwzz4myfew2tSsHFCgmi3nBri7c/bYSYlT8SzhmeWfO+w
+	+FqaPnAMbvODLnUyKD9LY3U+uT9xs4Qjc443xRytGv7ZwFLLZrsvTKdiVsFqZYYK
+	0hmutfFuGrnr43rBfyihzXpYE+WEzR5M4Tie+msl2A==
+X-ME-Sender: <xms:NJvMZYfsglnlEUxKurnhugeyEfdV54TEHGsGZkqh_shNIhg2nSGxLw>
+    <xme:NJvMZaMbqiNeRXCSSbQieaooADEKvUtW1QoASI6QwH5mkTFGzqA2_ExsCiZPnUdU2
+    96TSMRWpb2mcIZDezg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvledrudejgddvtdcutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpefofgggkfgjfhffhffvvefutgesthdtredtreertdenucfhrhhomhepfdetrhhn
+    ugcuuegvrhhgmhgrnhhnfdcuoegrrhhnugesrghrnhgusgdruggvqeenucggtffrrghtth
+    gvrhhnpeffheeugeetiefhgeethfejgfdtuefggeejleehjeeutefhfeeggefhkedtkeet
+    ffenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrrh
+    hnugesrghrnhgusgdruggv
+X-ME-Proxy: <xmx:NZvMZZiO5s_YjRzHQwE-h9yArVo-ZuFoSiP1JR6yGT4YOFzkCsaqqQ>
+    <xmx:NZvMZd-ySjK4kgFCrJNikAQ7HJXyrUmYA1-h4n6hTkBM-BKSn2RC5g>
+    <xmx:NZvMZUtHWgpkqZYz4Un54ZvXVuK4Ca_5VcICfU9iaGS2hJiHELoa6Q>
+    <xmx:NZvMZVlC3VMgFqiA2sblIvjIjZ66Lo2oqeswXAyrJvNbcXvRorc6nj8D8YA>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+	id D6FFBB6008D; Wed, 14 Feb 2024 05:51:32 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.11.0-alpha0-144-ge5821d614e-fm-20240125.002-ge5821d61
 MIME-Version: 1.0
+Message-Id: <d9a7ad2f-c9a7-4886-8bbc-7a77771c0aec@app.fastmail.com>
+In-Reply-To: <87plwze34l.fsf@kernel.org>
+References: <20240213100912.459018-1-arnd@kernel.org>
+ <170790025305.3179441.138152315558305278.kvalo@kernel.org>
+ <08ac32ef-610d-479d-a3fd-a3c3b8c4c697@app.fastmail.com>
+ <87plwze34l.fsf@kernel.org>
+Date: Wed, 14 Feb 2024 11:51:02 +0100
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Kalle Valo" <kvalo@kernel.org>
+Cc: "Arnd Bergmann" <arnd@kernel.org>,
+ "Jeff Johnson" <quic_jjohnson@quicinc.com>,
+ "Karthikeyan Periyasamy" <quic_periyasa@quicinc.com>,
+ "Aloka Dixit" <quic_alokad@quicinc.com>, "Wen Gong" <quic_wgong@quicinc.com>,
+ "Muna Sinada" <quic_msinada@quicinc.com>,
+ "Aditya Kumar Singh" <quic_adisi@quicinc.com>, ath12k@lists.infradead.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] wifi: ath12k: sanitize ath12k_mac_allocate() return code
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240214_024503_737853_07D9C0E9 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20240214_025138_016741_ED9AD0A6 
+X-CRM114-Status: GOOD (  10.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,40 +111,20 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-"Arnd Bergmann" <arnd@arndb.de> writes:
-
-> On Wed, Feb 14, 2024, at 09:44, Kalle Valo wrote:
->> Arnd Bergmann <arnd@kernel.org> wrote:
->>
->>> The return code has no initializer:
->>> 
->>> drivers/net/wireless/ath/ath12k/mac.c:8006:9: error: variable 'ret' is uninitialized when used here [-Werror,-Wuninitialized]
->>> 
->>> Make it return -ENOMEM for allocation failures and remove the unused
->>> variable instead.
->>> 
->>> Fixes: 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211 hw")
->>> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
->>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->>
->> Nathan already fixed this:
->>
->> https://git.kernel.org/kvalo/ath/c/04edb5dc68f4
->>
->> Patch set to Rejected.
+On Wed, Feb 14, 2024, at 11:44, Kalle Valo wrote:
+> "Arnd Bergmann" <arnd@arndb.de> writes:
+>> On Wed, Feb 14, 2024, at 09:44, Kalle Valo wrote:
+>>> Arnd Bergmann <arnd@kernel.org> wrote:
 >
-> Ok, sounds good. Nathan's patch looks fine to me
+>> but I see it's not in linux-next yet as of today.
+>
+> Yeah, it's a problem that ath.git is not included linux-next builds. The
+> commits will be in linux-next only after ath-next is pulled to
+> wireless-next :/
 
-Great, thanks for checking.
+Not sure if that is intentional, but if you'd like to change
+that, you can just email Stephen Rothwell asking him to include
+ath-next into linux-next as well.
 
-> but I see it's not in linux-next yet as of today.
-
-Yeah, it's a problem that ath.git is not included linux-next builds. The
-commits will be in linux-next only after ath-next is pulled to
-wireless-next :/
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+      Arnd 
 
