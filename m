@@ -4,63 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 775A9C48BC4
-	for <ath12k@archiver.kernel.org>; Fri, 16 Feb 2024 16:35:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADE96C48260
+	for <ath12k@archiver.kernel.org>; Fri, 16 Feb 2024 16:46:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=eWu9L5P0abMC4nkKScKKrgJkGxTQ5fQAm3MZv711kgo=; b=cyuAu6/5gpvn+h9KEIqGrUyvxv
-	qccMT+1gFaD1rKIO7fhHe45C9whImME8VYTZmSmD/tuS4Kctk2aTdk7NInbKgZ3WS7cjAh+Z2TSOL
-	MFSxi4V3qRRzXOElQp5pTJrdJiRRG1sjTjyBt/StBzbIX+znF2fjfqin38LO8NQafbn2fNNfu6OXU
-	3uerxkQUFXopoOr0v6DYwj7qFi+IugpdSsEQ2XMw2pysbS6DJ5tGDsznFSLiLi0vbalaHLiTwRC8e
-	0dyCz2ru37iCTLaHbZzaul7w6YIH+UsW20FMuQeOaz2q3qtWjeuWhQSi6CBeY+uPnmLTYRN5vajJl
-	zzfYnZwg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=vEH9reJzSJ6u2KRXYY5q3/m7eSnbXCysrVPfSl4mIok=; b=so7clfIR+aVtgugMtF3VXGF7t/
+	S7Ck8kHbViF/R7vFvvZ9fu1OUF+YXR8YukOMjRXF13ZbgKaKKo6insg7NDKWG7ISK77LBYWPmz8P3
+	xQlzkuV2rdyTRklvEzpb6F8fYtbc2i4Hk4L9doSwEiPW1i32K4+kbDqeD/Grw0RzCx5purfgdVKvE
+	erPclyg0/n03KsG8Odx77gCDviQgENfc+D0uyUki7IhDtTodj0AGIiZrKl9sgQP2AzQxgZEI5Cza9
+	HvmKK1BejRwXqcDTwbr7y9LlqRdiTus0lB+2AQNpFpe3NG6tFtc0kw7/bxsOigm6Mr+yQsGsS9HbE
+	kQ1a0SPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rb1Bl-000000031GV-0oKT
+	id 1rb1Li-000000032xZ-1b0G
 	for ath12k@archiver.kernel.org;
-	Fri, 16 Feb 2024 16:35:49 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Fri, 16 Feb 2024 16:46:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rb1Bj-000000031Fk-0Pyu
+	id 1rb1Lf-000000032wo-1ADI
 	for ath12k@lists.infradead.org;
-	Fri, 16 Feb 2024 16:35:48 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id E774B61FDE;
-	Fri, 16 Feb 2024 16:35:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C561C433C7;
-	Fri, 16 Feb 2024 16:35:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1708101344;
-	bh=Ln8SvTSKUBvAst/PdaGwGh7GdSDxPCTOFBToh/EUHKU=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=YUpmOZ9I0aLwJcrYutr+JPvg/qE+8Y+Msy6FvdjxUX133kIQQCavXVwJV4xuSYzSt
-	 OBahGWxivh0b3PVDpGHQ+abXaRDW71xGgqqZ5aAoixRVDsDgqssa4M5onDbQyyXxLm
-	 mXqGIrKvZJSSFJk/FNFZI/cl+HfqKj9vLxCjEijEVgxi9SCOb7oCHSqHWuSotNajJz
-	 gdiM49diHqL3sT6ChuBS+374wHeLFhteeEgeJR31RCoguDKLT6P6qAp5dpS3e8l/wB
-	 DPEqEVTcc57NIWAM8qigHg8Fd0KCKFJL0xBGgAJVuU0/N8Ijts3WOqeRsFyEYNqauz
-	 MWWkD9J8z7jwg==
-From: Kalle Valo <kvalo@kernel.org>
-To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Sriram
- R <quic_srirrama@quicinc.com>
+	Fri, 16 Feb 2024 16:46:04 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41GErVoN025495;
+	Fri, 16 Feb 2024 16:45:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=vEH9reJzSJ6u2KRXYY5q3/m7eSnbXCysrVPfSl4mIok=; b=cO
+	2+ZKjUtzH/0Eo4663ILJkucvbxpBBF0Drpz/UlmycJ5aVaNGMk077vv1ooK4QjLi
+	LiC9pbcb5+tsMwdWwSNDlniXIPLQZ3taK8vrWHHSkC/o4GRpdOJIMxJmWUeZ1gpz
+	xXsNLX1SXpJGnfuFdPgJMprvwQTdunut6I4L2Jy5vndKn+QGYML3IAIfSd7xvYki
+	XNBgo2yUfhLUSj+EFzgoSHh7isPC8x2D39+4ZClNoN1g5+xXHGD5rLgCx6Iu/9YH
+	W998F1SS4t7y1WWoYWmmnSxhiy9jpbAFBd+gIrNG/Bni87P45AKEmgcYHA+Si9gf
+	LXNMH5+T13T/CCqrBAgw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3w9xdx9gxt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 16 Feb 2024 16:45:58 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41GGjvVw024458
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 16 Feb 2024 16:45:57 GMT
+Received: from [10.110.53.145] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 16 Feb
+ 2024 08:45:57 -0800
+Message-ID: <2368ff4c-374c-4203-b0f8-f8a761370310@quicinc.com>
+Date: Fri, 16 Feb 2024 08:45:56 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops
  for single wiphy
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>,
+        Rameshkumar Sundaram
+	<quic_ramess@quicinc.com>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Sriram R
+	<quic_srirrama@quicinc.com>
 References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
-	<20240206091954.4144454-4-quic_ramess@quicinc.com>
-Date: Fri, 16 Feb 2024 18:35:41 +0200
-In-Reply-To: <20240206091954.4144454-4-quic_ramess@quicinc.com> (Rameshkumar
-	Sundaram's message of "Tue, 6 Feb 2024 14:49:45 +0530")
-Message-ID: <8734tsnz8i.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+ <20240206091954.4144454-4-quic_ramess@quicinc.com>
+ <8734tsnz8i.fsf@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <8734tsnz8i.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Z7dAGSns-pLpK4OF1P5RbF_cgYslsxTp
+X-Proofpoint-GUID: Z7dAGSns-pLpK4OF1P5RbF_cgYslsxTp
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-02-16_16,2024-02-16_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
+ suspectscore=0 mlxlogscore=562 adultscore=0 phishscore=0 mlxscore=0
+ clxscore=1015 impostorscore=0 bulkscore=0 priorityscore=1501
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401310000 definitions=main-2402160133
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240216_083547_215484_535BA660 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20240216_084603_464838_9DB95459 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,47 +106,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
+On 2/16/2024 8:35 AM, Kalle Valo wrote:
+> Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
+> 
+>> From: Sriram R <quic_srirrama@quicinc.com>
+>>
+>> When mac80211 does drv start/stop, apply the state change
+>> for all the radios within the wiphy in ath12k.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+>> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+> 
+> I haven't reviewed the patchset fully yet, first quick impressions:
 
-> From: Sriram R <quic_srirrama@quicinc.com>
->
-> When mac80211 does drv start/stop, apply the state change
-> for all the radios within the wiphy in ath12k.
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+I didn't review it at all since it has a dependency upon a series that
+needs rework, and hence I figure this series will require rework.
 
-I haven't reviewed the patchset fully yet, first quick impressions:
-
-> +static void ath12k_drain_tx(struct ath12k_hw *ah)
-> +{
-> +	int i;
-> +	struct ath12k *ar;
-
-We usually try to have reverse xmas style, of course not always possible
-but here it is.
-
-> +	ar = ah->radio;
-> +
-> +	for (i = 0; i < ah->num_radio; i++) {
-> +		ath12k_mac_drain_tx(ar);
-> +		ar++;
-> +	}
-> +}
-
-Please avoid pointer arithmetic (in this case 'ar++') as much as
-possible, it's just so easy to shoot yourself in the foot. In patch 1
-you add ath12k_ah_to_ar(), why not use it?
-
-And I see this pattern quite a lot, should we have
-ath12k_for_each_radio() or something like that? Or did I see that macro
-in some patch already?
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
