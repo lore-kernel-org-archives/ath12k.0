@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02F9BC48BEB
-	for <ath12k@archiver.kernel.org>; Thu, 15 Feb 2024 11:32:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 775A9C48BC4
+	for <ath12k@archiver.kernel.org>; Fri, 16 Feb 2024 16:35:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8pVE2IbgSesPWu1LL1kYYO9zJ5PGzbkhAEFW8uh3t2U=; b=cQkPaucKKBKjA46/Z2O4JEkAib
-	8kKboNBHZsQ0t0WaZpKrhs0JYAQaKv79dbwSn7vgaAwyk+XOY/ungRbJn6HSdnFHdLDz6MlsCyEVb
-	h7cIU+od7Z5AkJgRyUGsCy8p3UtgX9IP+QIENtzlFzox9oXg/XXY9nOdJa4LN/+3Z9gVDVKv+KtUY
-	82nfj29PGgWWuwHLcHdan/aBEwDEk1Gxg0MP9zfJ/GVWjf3IVvxiPS/9vHJFsBrOXY6O6Lu2QwQ1/
-	DcPHmYgtAR39zLHyFCqJ6nOtMagA9RJ96ynO7zRhvRURv9oncSqFUPQLsqkyxXzA2xY2ElAObab8J
-	hK+aL7rA==;
+	bh=eWu9L5P0abMC4nkKScKKrgJkGxTQ5fQAm3MZv711kgo=; b=cyuAu6/5gpvn+h9KEIqGrUyvxv
+	qccMT+1gFaD1rKIO7fhHe45C9whImME8VYTZmSmD/tuS4Kctk2aTdk7NInbKgZ3WS7cjAh+Z2TSOL
+	MFSxi4V3qRRzXOElQp5pTJrdJiRRG1sjTjyBt/StBzbIX+znF2fjfqin38LO8NQafbn2fNNfu6OXU
+	3uerxkQUFXopoOr0v6DYwj7qFi+IugpdSsEQ2XMw2pysbS6DJ5tGDsznFSLiLi0vbalaHLiTwRC8e
+	0dyCz2ru37iCTLaHbZzaul7w6YIH+UsW20FMuQeOaz2q3qtWjeuWhQSi6CBeY+uPnmLTYRN5vajJl
+	zzfYnZwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raZyy-0000000G3UH-2UmI
+	id 1rb1Bl-000000031GV-0oKT
 	for ath12k@archiver.kernel.org;
-	Thu, 15 Feb 2024 11:32:48 +0000
+	Fri, 16 Feb 2024 16:35:49 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1raZyv-0000000G3Sw-0a6U
+	id 1rb1Bj-000000031Fk-0Pyu
 	for ath12k@lists.infradead.org;
-	Thu, 15 Feb 2024 11:32:46 +0000
+	Fri, 16 Feb 2024 16:35:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A4CBA61D22;
-	Thu, 15 Feb 2024 11:32:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A250C433C7;
-	Thu, 15 Feb 2024 11:32:42 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id E774B61FDE;
+	Fri, 16 Feb 2024 16:35:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C561C433C7;
+	Fri, 16 Feb 2024 16:35:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1707996764;
-	bh=Y75MeSiVwPc8AkG3sXMXhAT4eHoFE1miiimyMA/OJ7M=;
+	s=k20201202; t=1708101344;
+	bh=Ln8SvTSKUBvAst/PdaGwGh7GdSDxPCTOFBToh/EUHKU=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=rBuiQTs6ju7+wsFmHunT5vuKkQT1FKtI8m5SXkyx1vL3Mpecw+3E1EdRwzihtCYZo
-	 bIl7HXM0qJ0qqv3tVQYsORBAk++LPn5jrZnZoXnN2ZqCDpq7+p0RtZ72jIL0h+ewmO
-	 l9sIn27n5wNC1+QyCZEQ2W2b32Vw3u30kYaPiD6bYK6siPXGbH6WAppY2h+MpOYeP1
-	 blh5fVeeeYrKAJGurZ1CMVppgEA7WU/V69YI9RoXiXBgj6KzLu+GV9lQTXTw1UgdXS
-	 jcdM0MbF6PZLGb0IzlorhPPGRgz4f+wiQOWty8RjCWc3n14FiWz1rPrOtJ20OcDMJT
-	 VLrYlb7rMGDIQ==
+	b=YUpmOZ9I0aLwJcrYutr+JPvg/qE+8Y+Msy6FvdjxUX133kIQQCavXVwJV4xuSYzSt
+	 OBahGWxivh0b3PVDpGHQ+abXaRDW71xGgqqZ5aAoixRVDsDgqssa4M5onDbQyyXxLm
+	 mXqGIrKvZJSSFJk/FNFZI/cl+HfqKj9vLxCjEijEVgxi9SCOb7oCHSqHWuSotNajJz
+	 gdiM49diHqL3sT6ChuBS+374wHeLFhteeEgeJR31RCoguDKLT6P6qAp5dpS3e8l/wB
+	 DPEqEVTcc57NIWAM8qigHg8Fd0KCKFJL0xBGgAJVuU0/N8Ijts3WOqeRsFyEYNqauz
+	 MWWkD9J8z7jwg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Sven Eckelmann <sven@narfation.org>
-Cc: ath12k@lists.infradead.org,  Raj Kumar Bhagat
- <quic_rajkbhag@quicinc.com>,  linux-wireless@vger.kernel.org,  Ganesh Babu
- Jothiram <quic_gjothira@quicinc.com>
-Subject: Re: [PATCH v3 12/13] wifi: ath12k: Read board id to support
- split-PHY QCN9274
-References: <20240129065724.2310207-1-quic_rajkbhag@quicinc.com>
-	<20240129065724.2310207-13-quic_rajkbhag@quicinc.com>
-	<23399810.6Emhk5qWAg@ripper>
-Date: Thu, 15 Feb 2024 13:32:41 +0200
-In-Reply-To: <23399810.6Emhk5qWAg@ripper> (Sven Eckelmann's message of "Wed,
-	14 Feb 2024 15:17:11 +0100")
-Message-ID: <87bk8inesm.fsf@kernel.org>
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Sriram
+ R <quic_srirrama@quicinc.com>
+Subject: Re: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops
+ for single wiphy
+References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
+	<20240206091954.4144454-4-quic_ramess@quicinc.com>
+Date: Fri, 16 Feb 2024 18:35:41 +0200
+In-Reply-To: <20240206091954.4144454-4-quic_ramess@quicinc.com> (Rameshkumar
+	Sundaram's message of "Tue, 6 Feb 2024 14:49:45 +0530")
+Message-ID: <8734tsnz8i.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240215_033245_242509_718CF97F 
-X-CRM114-Status: GOOD (  18.18  )
+X-CRM114-CacheID: sfid-20240216_083547_215484_535BA660 
+X-CRM114-Status: GOOD (  13.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,64 +75,44 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Sven Eckelmann <sven@narfation.org> writes:
+Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
 
-> On Monday, 29 January 2024 07:57:23 CET Raj Kumar Bhagat wrote:
->> diff --git a/drivers/net/wireless/ath/ath12k/fw.c
->> b/drivers/net/wireless/ath/ath12k/fw.c
->> index fbcf40c97792..5be4b2d4a19d 100644
->> --- a/drivers/net/wireless/ath/ath12k/fw.c
->> +++ b/drivers/net/wireless/ath/ath12k/fw.c
->> @@ -119,6 +119,13 @@ static int
->> ath12k_fw_request_firmware_api_n(struct ath12k_base *ab,
-> [...]
->> +		case ATH12K_FW_IE_AMSS_DUALMAC_IMAGE:
->> +			ath12k_dbg(ab, ATH12K_DBG_BOOT,
->> +				   "found dualmac fw image ie (%zd B)\n",
->> +				   ie_len);
->> +			ab->fw.amss_dualmac_data = data;
->> +			ab->fw.amss_dualmac_len = ie_len;
->> +			break;
->>  		default:
->>  			ath12k_warn(ab, "Unknown FW IE: %u\n", ie_id);
->>  			break;
+> From: Sriram R <quic_srirrama@quicinc.com>
 >
->> @@ -371,16 +375,43 @@ int ath12k_mhi_register(struct ath12k_pci *ab_pci)
-> [...]
->> +	if (dualmac) {
->> +		if (ab->fw.amss_dualmac_data && ab->fw.amss_dualmac_len > 0) {
->> +			/* use MHI firmware file from firmware-N.bin */
->> +			mhi_ctrl->fw_data = ab->fw.amss_dualmac_data;
->> +			mhi_ctrl->fw_sz = ab->fw.amss_dualmac_len;
->> +		} else {
->> + ath12k_warn(ab, "dualmac firmware IE not present in
->> firmware-N.bin\n");
->> +			ret = -ENOENT;
->> +			goto free_controller;
->> +		}
+> When mac80211 does drv start/stop, apply the state change
+> for all the radios within the wiphy in ath12k.
 >
-> I saw this now already multiple times that the source code was referencing the 
-> firmware-N.bin (like we had with ath10k). But they aren't published anywhere. 
-> I can't find a single one at:
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 >
-> *
-> https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/ath11k
-> *
-> https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/ath12k
-> * https://github.com/kvalo/ath11k-firmware
-> * https://github.com/quic/upstream-wifi-fw
->
-> So I find it odd that the new code now seems to depend on it without actually 
-> providing these files anywhere.
+> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 
-For example, firmware-2.bin will be used for qrtr id to support multiple
-devices on the same host.
+I haven't reviewed the patchset fully yet, first quick impressions:
 
-> Might be good to have these soon in linux-firmware.git.
+> +static void ath12k_drain_tx(struct ath12k_hw *ah)
+> +{
+> +	int i;
+> +	struct ath12k *ar;
 
-Yeah, we will but just slowly. We are currently moving
-ath1?k-firmware.git repos to a new location, firmware-N.bin files should
-start emerging after that.
+We usually try to have reverse xmas style, of course not always possible
+but here it is.
+
+> +	ar = ah->radio;
+> +
+> +	for (i = 0; i < ah->num_radio; i++) {
+> +		ath12k_mac_drain_tx(ar);
+> +		ar++;
+> +	}
+> +}
+
+Please avoid pointer arithmetic (in this case 'ar++') as much as
+possible, it's just so easy to shoot yourself in the foot. In patch 1
+you add ath12k_ah_to_ar(), why not use it?
+
+And I see this pattern quite a lot, should we have
+ath12k_for_each_radio() or something like that? Or did I see that macro
+in some patch already?
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
