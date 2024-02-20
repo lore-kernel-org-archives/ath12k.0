@@ -4,83 +4,156 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CF67C48BC3
-	for <ath12k@archiver.kernel.org>; Mon, 19 Feb 2024 11:14:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EEE9C48BC3
+	for <ath12k@archiver.kernel.org>; Tue, 20 Feb 2024 11:29:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=iwsKdLIvwUspJYp+631LHoK3VAZn1d3zg//BuNqcXZM=; b=y3sdQU2aYMOrFVVtAtvnhibRRN
-	LkuVrkRxmbqd/TRJtwZOxONLCiKwx8Dms2pMSTxnEQk2TrgrfwvwdvtmMStxnMFWrzEThJrekCoVI
-	NScA1Tgn8eijcjpPN+QGbg6k5UhZQ0ddCcpW03EiSFaR2AaH0YoZ7uQIBdbUOHEOaYFrq7bQ0rHA7
-	Qi9kKKwfIxUI/utpbWZfTZMU09nUe4/DV27YACtnUu/in2zx4PxUMJq29qaGcjTsyP4LyO4Yp11qs
-	ewpehS+KCauwtqpeveJXW96Aw9x80LHpi04waPkGZh2OKWxe1hjKZTR+6NNScXCR8EZ3bny8fzsKK
-	pZVV3KCw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=M3hEn+Y3nsDbPB4bw8I2/G8Cs84tq+OiZvthIJI0SMo=; b=kbHJkRWkJ6agoaF9HAs1ah/Hf+
+	9vgXt5ZdDtw1Tz0lrsA61D05EQOowv2dXwVPXGP0uMK6GS3Dq2WUmqJkGwdRdeDLcYIv6U+3F0fhC
+	5Xxv7k4rWTLb9bEPS8W2Y1AI8R4Ufxav9ZzagDdH/9IGiYw6BpHVisbEQVkUhlA3qXJQ+rCk2XYOz
+	bc01fkXeayT78pbl3QaZ0bIatsq+wpLgZ2Zc0BP8k+l7F4+ly2KyxC39TfdPTgDR1XZwNHUt5vGzg
+	pCBLA26jxr4qiBSw3DlBXjjgzunQBHCLUPvogHH6e04TiTIRDlLQAWlvPLKBi8mBoY8mx9/aAlCaL
+	xAla/tJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rc1bY-0000000A9t3-3hMs
+	id 1rcOJu-0000000ESiJ-03iX
 	for ath12k@archiver.kernel.org;
-	Mon, 19 Feb 2024 11:14:36 +0000
+	Tue, 20 Feb 2024 11:29:54 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rc1bT-0000000A9nq-39ql
+	id 1rcOJr-0000000ESfz-1UsB
 	for ath12k@lists.infradead.org;
-	Mon, 19 Feb 2024 11:14:35 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41J9rijF009221;
-	Mon, 19 Feb 2024 11:14:30 GMT
+	Tue, 20 Feb 2024 11:29:53 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41K3lXXf010879;
+	Tue, 20 Feb 2024 11:29:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=iwsKdLI
-	vwUspJYp+631LHoK3VAZn1d3zg//BuNqcXZM=; b=ZG/aeVeHjn1CKACVU/I83tx
-	uFFAQUw3aFKChHOD+rWYGAHjh4lZ3h5rbgP04EGc8M+84f7WSryecpPpVNepJQk4
-	lmrrYTc1QrUP8SFjwbkhPQtoadmwmBRZt1GuP3qja9Zri8GkFzXrL9aQtUHcjLQw
-	JT4I3o0kSeSkfaDL9oIkjFnm+9lPtXGMaYI63/WWcQVrIQ74FTSC4rlmzryFfmBa
-	LE3MoyxwFOLOG6If3pdZg1ZVCTAtKWqYqsRUVDxNIs39K++e2lDrLWixylwvdFtb
-	g/wbMw6nwuXQaIA8eF5IJK7zo1vMgJPD7b4SIUBCBFb/4WdWehA7oroPuU/saCQ=
-	=
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wc4qx05ef-1
+	from:to:cc:subject:date:message-id:references:in-reply-to
+	:content-type:content-transfer-encoding:mime-version; s=
+	qcppdkim1; bh=M3hEn+Y3nsDbPB4bw8I2/G8Cs84tq+OiZvthIJI0SMo=; b=SW
+	rAuCITBmkTtTE3kOJ+ksi9Bz6EzYbP2rdAXKXqalKzZXoCydTXBWeFk4R8/DDs3h
+	DvLuythhgQiYTQsoYxfTcXpPjYmci6ZYmCYA2Ypng8eUTjnH+39fIVfzDcxhQUTS
+	e5F0Nn1nqH+JAq6RekGyDKeov0fCsceg91FoFQ2259hGzIn2dPVOIC5N/boHabGp
+	QqJEJeRKGl1QwDaLTyZGoj1SD6yfaQyCgXYoIQEBiFRyt4ozcynp1JaCFOeQuj3W
+	hQcM7ww8sEcTVPP8EdOQcgQbxCBoG4TiKTYB8SUosIDSE3OVNtam985k8YxgN6Vr
+	NoVeBZXcKw2BAxEkQAsA==
+Received: from nam11-co1-obe.outbound.protection.outlook.com (mail-co1nam11lp2169.outbound.protection.outlook.com [104.47.56.169])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wckv9gwee-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 19 Feb 2024 11:14:30 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41JBET5d015546
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 19 Feb 2024 11:14:29 GMT
-Received: from lingbok.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 19 Feb 2024 03:14:27 -0800
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH] wifi: ath12k: report signal for iw dev xxx station dump
-Date: Mon, 19 Feb 2024 19:14:17 +0800
-Message-ID: <20240219111417.1185-1-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.37.3.windows.1
+	Tue, 20 Feb 2024 11:29:46 +0000 (GMT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PRrdDqxt3SmIPlajhg5s7eaaTVb46EgBIEltnYm4QuCFSyaQY11vEJxmWcRGPSb4Vr44XB++YurshSVRUDf5fsVKFcXnptioGAgWcXyHeixvyEXN+ooH5B2+XXH1A+BLNG4GjRgxEvLmwXWjylHXocgSuYNNMY1QtHDWS5pNtOvBTQ8oNn8Gf1joH84Y+/AGWGM17g2slbAOPcZCJfpTOTuxCaR+SpQoUhITMBdnuQfA/Uf3ipplcNPirmCq528qZdKEax3qBjAym6fG/Wi+vRrYyw/G1i1Khs5lJqob6POeU6/dgbm8jsVKbVzlSeiSV8Zqoo1b3BAo2n5cEiWrSg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=M3hEn+Y3nsDbPB4bw8I2/G8Cs84tq+OiZvthIJI0SMo=;
+ b=eldtLT9n2ckrALpne8tkEdSkRs9d1LS8rVI1NGUpN6b/HDu1gt0aLf70wimTSXP0j1VyWSNmBLtbYFTokEn6BOWf1RklR8VfEgMGWi9wEFwhJox2dH5BIHrFSLpr4gB2R6azSriXtcda1CSGJCeIHKDxQPNUXIPw+1Erq3Q8IIx7m9sV0GuH5Yrpd4p+stchSDjffQYQrhzt0aDGhE7fUSimxEHPbDIZhaZFtTWkCdgWj2b/NGstJ4KTB0CIwYe7OE0b90BrYbmFMOfDSHImAc7VZE5DEtEtRtSoiQHZCan/gg0Qjb7UQDojvHXwxBqqZGIay1wj86M/f19Ip95FRA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=quicinc.com; dmarc=pass action=none header.from=quicinc.com;
+ dkim=pass header.d=quicinc.com; arc=none
+Received: from LV8PR02MB10287.namprd02.prod.outlook.com
+ (2603:10b6:408:1fa::10) by IA1PR02MB9064.namprd02.prod.outlook.com
+ (2603:10b6:208:418::6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.39; Tue, 20 Feb
+ 2024 11:29:43 +0000
+Received: from LV8PR02MB10287.namprd02.prod.outlook.com
+ ([fe80::748c:4d58:afcb:a2ec]) by LV8PR02MB10287.namprd02.prod.outlook.com
+ ([fe80::748c:4d58:afcb:a2ec%5]) with mapi id 15.20.7292.036; Tue, 20 Feb 2024
+ 11:29:42 +0000
+From: "Rameshkumar Sundaram (QUIC)" <quic_ramess@quicinc.com>
+To: Kalle Valo <kvalo@kernel.org>,
+        "Rameshkumar Sundaram (QUIC)"
+	<quic_ramess@quicinc.com>
+CC: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
+        "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+        Sriram R
+	<quic_srirrama@quicinc.com>
+Subject: RE: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops
+ for single wiphy
+Thread-Topic: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops
+ for single wiphy
+Thread-Index: AQHaWN3llx3RTeDx002mNcYlfjLMAbENOquxgAXazOA=
+Date: Tue, 20 Feb 2024 11:29:42 +0000
+Message-ID: <LV8PR02MB102877C0CD1CC770B29594191E9502@LV8PR02MB10287.namprd02.prod.outlook.com>
+References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
+	<20240206091954.4144454-4-quic_ramess@quicinc.com>
+ <8734tsnz8i.fsf@kernel.org>
+In-Reply-To: <8734tsnz8i.fsf@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: LV8PR02MB10287:EE_|IA1PR02MB9064:EE_
+x-ms-office365-filtering-correlation-id: 29bc67fc-68ea-4fe4-63c7-08dc32073b9e
+x-ld-processed: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: KH/h8Xh+COOGDw9Bljm69lOQ4EsHtOG8eyQ2FkZOJLtCPqGGe+u6hiB6EzZ9JLvnirPtTmG4zd/DNxPoKGkXXIPlzYRnwJseIWY3vjTxMDCThFtUtgF0MVINO9nCPewShWqECCnVa0eFuvf/K0F498GKgjP8wE12APL9rQA97pv3oXyD3q+DURPqsGQ+B+r4X1ErcZmYYbNU+bHLWTODkSMiVt+oE9gsmMw2jaL8FyT5UBM0UIenLtAJ3QP2iB6SBBrWmk7DQAzNWCBf7LchQP950nWPwb26TOnImHG3sNFmhKH1TIaoNiJEBDZhbC+lLdXp3BoiYv4o4NFEbaxIeowKpgEJeWhiTd3PBi6Qc3IsCk7iIB1AjNICRsZ1a0dxJnrK/BxdJ+WnTiU5iF9xJdswuUYkn13qAnatPHw6wzs1uZXusUmmFFbADpLqoDUPElz3tAC4+IKC67t1Zfu0m4xmZVQQ7q/7wAtu2XDiF75b2y+NOp66zRB0rhwbbkWkQVuFfMokbOW1jYW0YC4cvA/uQI38e0zftUUrqfyqdmMgQEoE3j41VO32lt3S/9Bg3xfcqxwhsyx3Qx3XTaG2XnnVGgF8/I4t5dQS4lGtoN4=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LV8PR02MB10287.namprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(38070700009);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?Iiv+XnIr+elsduiAoOl1Dh5S0mQq/M+DsMjYbN1irTCigjmVSxlvVnkkhafW?=
+ =?us-ascii?Q?0Bo2PRIYZ92PbMN7aYhuXxWuZjAjOeEYVZcsbi9u+JZNLr392TyvPB/3ajGg?=
+ =?us-ascii?Q?H5egNCB/wI1ZNVixfadl0lAkMksLUA3kmZvS8yYrvJykmP/ESixQIPZgp8f0?=
+ =?us-ascii?Q?tRFUMo/pnZ0x9n5KeFEXoU3IJfW/88SMY6Y4btr4+46yEkc/F39uSX1EMI5q?=
+ =?us-ascii?Q?YO0O5FZvAYVZEp2Smgs71hj3QoEJW18Hi3JN2ZbWDINWOwU3RJaEkmszIJiH?=
+ =?us-ascii?Q?qT/98kYE3y7lx6bOKsRs37n2qgRx333A+VrzOPlJGDcMiKD639ZPD8xgyzXO?=
+ =?us-ascii?Q?apyMDs49wkVgpBVfpHprgxenvn9lT60NLf3LRlDTOeCUkQOZ8khSdt2eYfwp?=
+ =?us-ascii?Q?H2pUDNDVsaI4X9H8ZCfqQfRNRpeaaz1UXUmsb7bno1U/Uq3tZq++k/SVvOpI?=
+ =?us-ascii?Q?gbmhlVaMgEJrg4X630n4EsuRXAaOLp92tDNEvj3loeRUZ8X15gVabLqi4N6X?=
+ =?us-ascii?Q?FQnGcy6vkvEAhZEfMOdL2eaykEZkMQbszvfwf+i3A7dDog3/Il8no9ri/wAc?=
+ =?us-ascii?Q?6n8TL7PK2chgD8aIZijSWMKYRtkp8gIgjpQrOSXfoVXcoR/ACdGox0z+97nM?=
+ =?us-ascii?Q?FrSPl66qJBONo+SPvTd5lKISmfMz86hLIWZ1TncaZGqu6zaMAr+n7itgoM9B?=
+ =?us-ascii?Q?OAVZziAnURfSczXzY1f3COrgwn/pj68UkgQ6imLGZ2hW5LGmtG5jN98dAmvU?=
+ =?us-ascii?Q?VfH7mZQjkFYycN1k2xtqd3XTSPPnO+O9/1Ze1zdJjKdRjjoHMLEJGdnjNydC?=
+ =?us-ascii?Q?d2NfUM8oMcCN22DatZtf3ZDcYAYBu73hzs9qtphu1Am47ztPzwcbl0od3b67?=
+ =?us-ascii?Q?Ph7lre6l+D6JgTkvZxip6LfniJK/cFlnwRCyAM39/Xva+2GDZJRAj79QHnMM?=
+ =?us-ascii?Q?dzpOMjtkzr0L/SI6cWyme4X7vqr3zLVIEiKf+DaENCozL+B1TUYiwVe0YKCm?=
+ =?us-ascii?Q?POsBRFeeYvIfjv2XGnHQQOkpejlM/XUB+T1rLiFLdSj0Ll80wffYm6D6lVQv?=
+ =?us-ascii?Q?OqLo6664BMPm6InGcwLh5JcTs4A7BaPrhGHlmPXCDrOTad+qT4OD6ZCmSrnF?=
+ =?us-ascii?Q?vo/55DwZe4JNiBmVX5XbqtiQD2JOwl/QpkIvaW88TWvpXULMJS+jlTXfmDDb?=
+ =?us-ascii?Q?xcDaM2aksd2tojUYiEuo1NaVSpQbFIrAW1qen8dHSr5adzqZwQAREt27Fcc1?=
+ =?us-ascii?Q?D7SfuoAqOhN1RsCf1RVSZEW2NZBiIEKwTvGtN4RznHVFQ6vi3dMoxvnI5keW?=
+ =?us-ascii?Q?JPJRmpBYMNMLgs0u5DHymiWzKgIk9iOHFM5olOpWu3zl2LrAeFulOpH7hUvk?=
+ =?us-ascii?Q?EqtXL1iehZVKLb1f+EdkggiWx0a4O67GuKi4CYGrsDmhQRPzyG5L/sEZF01Z?=
+ =?us-ascii?Q?6RPSAoTUFfQxIS077C7Uckg4fHJE+TaP7KvwiHiuIcFEeIi4mFwKswso0cFb?=
+ =?us-ascii?Q?64iGfBY1sCnqoo69g55HS6j7KxttMAxndEEEMIyTw4tG9tVBigabPcllqymK?=
+ =?us-ascii?Q?m7rjMnayNfn3E5OMM6wVC+kSKpBjCdNT/eIDd5Zl?=
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: OyogeICbCOkp_z-byzEq_b_YziCascYH
-X-Proofpoint-ORIG-GUID: OyogeICbCOkp_z-byzEq_b_YziCascYH
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: nI3XCPcv9SRmk7Y/Tn47H6MNmHBbKqBSlJkidwjJV6BSWh51YnAxYwYwAuTIKihHWQkfudliUukgpOKNGRj/HtQ309yhwwG8fwKo2JQY2U899Adi8nGu/OwX1VWUWUN2VWgF52qL0YCGqOJG2oDHnx4XvXjPbFjwEll3e/fM7TEaIbHMUxs94L5AurgB7IDzwlBfeFkGtDD/uRAIMMSViGEiBa2W2odehMOKr8TTpL+H0wYMPl8SiOkyGMMNnWPVVFEuF4/xPACvT//i8GyFn53C0Gp5otwfeoh7Fyb0rXkWpNb0I2BRs1DwJgO4VCfyfATjIdGe2dR1ACXnLwlLCYAXUWNJfRP0jbWL/TcsHgsge0Xbdh/GSFmWyYRdA2CpOkujVQPrhBMrw7qzLDFTZCoMiUPV8NI/FZ0pBtUOGm2E5E4DJpt83LcrwphFtBCt77xS0hArTvRMjs3zBF0/8/OcVy6PL2eYTFV6Mwv+3H1Q/GIMgRiLYnd0KvQ98zTK5KfiZ5/m8es875U8E7ox1e3sIoc3w82pSGJRrL36Gmoe4Re01VvOJYAMbXD+iIT4CcC9ZOz5vUAxcd7TsXEtKAirPGtV7C3DFjl/vsrhblSAofjhJA5zD2rB95nCw0DZ
+X-OriginatorOrg: quicinc.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: LV8PR02MB10287.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 29bc67fc-68ea-4fe4-63c7-08dc32073b9e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Feb 2024 11:29:42.5504
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: nZrPxKtnZYnWO5ntazUUkCuIT3NwUX9FsdMARZiozva2dcnPxSMKacX4q+3sVqKvYovmJK8o4XoQBbKEOSpe+Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR02MB9064
+X-Proofpoint-ORIG-GUID: Y2IMiClAsYsLUkG3AAOrHewmq3WObQtN
+X-Proofpoint-GUID: Y2IMiClAsYsLUkG3AAOrHewmq3WObQtN
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-19_08,2024-02-16_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- spamscore=0 suspectscore=0 adultscore=0 clxscore=1015 malwarescore=0
- bulkscore=0 impostorscore=0 priorityscore=1501 mlxlogscore=999 mlxscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401310000 definitions=main-2402190084
+ definitions=2024-02-20_06,2024-02-20_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 lowpriorityscore=0 phishscore=0 clxscore=1011 adultscore=0
+ mlxlogscore=746 impostorscore=0 suspectscore=0 malwarescore=0 spamscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2401310000 definitions=main-2402200082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240219_031432_126866_57E29B26 
-X-CRM114-Status: GOOD (  22.06  )
+X-CRM114-CacheID: sfid-20240220_032951_554748_93DA2ED7 
+X-CRM114-Status: GOOD (  22.88  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,375 +168,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The signal of "iw dev xxx station dump" always show 0 dBm. This is because
-currently signal is only set in ath12k_mgmt_rx_event function, and not set
-for rx data packet. So, change to get signal from firmware and report to
-mac80211.
+> -----Original Message-----
+> From: Kalle Valo <kvalo@kernel.org>
+> Sent: Friday, February 16, 2024 10:06 PM
+> To: Rameshkumar Sundaram (QUIC) <quic_ramess@quicinc.com>
+> Cc: ath12k@lists.infradead.org; linux-wireless@vger.kernel.org; Sriram
+> R <quic_srirrama@quicinc.com>
+> Subject: Re: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac
+> start/stop ops for single wiphy
+>=20
+> Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
+>=20
+> > From: Sriram R <quic_srirrama@quicinc.com>
+> >
+> > When mac80211 does drv start/stop, apply the state change for all
+> the
+> > radios within the wiphy in ath12k.
+> >
+> > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-
+> QCAHKSWPL_SILICONZ-1
+> > Tested-on: WCN7850 hw2.0 PCI
+> > WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> >
+> > Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+> > Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+>=20
+> I haven't reviewed the patchset fully yet, first quick impressions:
+>=20
+> > +static void ath12k_drain_tx(struct ath12k_hw *ah) {
+> > +	int i;
+> > +	struct ath12k *ar;
+>=20
+> We usually try to have reverse xmas style, of course not always possible
+> but here it is.
+>=20
+Sure, Will fix it v3.
 
-After that, "iw dev xxx station dump" show the correct signal such as:
-signal: -50 dBm
-signal: -49 dBm
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |   1 +
- drivers/net/wireless/ath/ath12k/hw.c   |   6 ++
- drivers/net/wireless/ath/ath12k/hw.h   |   2 +
- drivers/net/wireless/ath/ath12k/mac.c  |  45 ++++++++-
- drivers/net/wireless/ath/ath12k/wmi.c  | 129 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  48 +++++++++
- 6 files changed, 229 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 2c8e23ab894f..ce45faa31cd2 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -426,6 +426,7 @@ struct ath12k_sta {
- 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
- 	u32 bw_prev;
- 	u32 peer_nss;
-+	s8 rssi_beacon;
- };
- 
- #define ATH12K_MIN_5G_FREQ 4150
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 0b17dfd47856..521ad3ac2739 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -920,6 +920,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.otp_board_id_register = QCN9274_QFPROM_RAW_RFA_PDET_ROW13_LSB,
- 
- 		.supports_sta_ps = false,
-+
-+		.supports_rssi_stats = false,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -993,6 +995,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.otp_board_id_register = 0,
- 
- 		.supports_sta_ps = true,
-+
-+		.supports_rssi_stats = true,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -1061,6 +1065,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.otp_board_id_register = QCN9274_QFPROM_RAW_RFA_PDET_ROW13_LSB,
- 
- 		.supports_sta_ps = false,
-+
-+		.supports_rssi_stats = false,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 87965980b938..b7059195ff59 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -211,6 +211,8 @@ struct ath12k_hw_params {
- 	u32 otp_board_id_register;
- 
- 	bool supports_sta_ps;
-+
-+	bool supports_rssi_stats;
- };
- 
- struct ath12k_hw_ops {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 39fe845a6137..8aaf6e0036cf 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7443,12 +7443,42 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 	return ret;
- }
- 
-+static int ath12k_mac_get_fw_stats(struct ath12k *ar, u32 pdev_id,
-+				   u32 vdev_id, u32 stats_id)
-+{
-+	struct ath12k_base *ab = ar->ab;
-+	int ret;
-+
-+	mutex_lock(&ar->conf_mutex);
-+
-+	if (ar->state != ATH12K_STATE_ON) {
-+		ret = -ENETDOWN;
-+		goto err_unlock;
-+	}
-+
-+	ret = ath12k_wmi_send_stats_request_cmd(ar, stats_id, vdev_id, pdev_id);
-+
-+	if (ret)
-+		ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WMI,
-+		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-+		   pdev_id, vdev_id, stats_id);
-+
-+err_unlock:
-+
-+	mutex_unlock(&ar->conf_mutex);
-+	return ret;
-+}
-+
- static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 					 struct ieee80211_vif *vif,
- 					 struct ieee80211_sta *sta,
- 					 struct station_info *sinfo)
- {
- 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
-+	struct ath12k *ar = arsta->arvif->ar;
-+	s8 signal;
- 
- 	sinfo->rx_duration = arsta->rx_duration;
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
-@@ -7473,8 +7503,19 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
- 
- 	/* TODO: Use real NF instead of default one. */
--	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
--	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-+	signal = arsta->rssi_comb;
-+
-+	if (!signal &&
-+	    arsta->arvif->vdev_type == WMI_VDEV_TYPE_STA &&
-+	    ar->ab->hw_params->supports_rssi_stats &&
-+	    !(ath12k_mac_get_fw_stats(ar, ar->pdev->pdev_id, 0,
-+				      WMI_REQUEST_VDEV_STAT)))
-+		signal = arsta->rssi_beacon;
-+
-+	if (signal) {
-+		sinfo->signal = signal;
-+		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-+	}
- }
- 
- static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 838161dd9098..12adb553a0c8 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -25,6 +25,10 @@ struct ath12k_wmi_svc_ready_parse {
- 	bool wmi_svc_bitmap_done;
- };
- 
-+struct wmi_tlv_fw_stats_parse {
-+	const struct wmi_stats_event *ev;
-+};
-+
- struct ath12k_wmi_dma_ring_caps_parse {
- 	struct ath12k_wmi_dma_ring_caps_params *dma_ring_caps;
- 	u32 n_dma_ring_caps;
-@@ -6459,8 +6463,100 @@ static void ath12k_peer_assoc_conf_event(struct ath12k_base *ab, struct sk_buff
- 	rcu_read_unlock();
- }
- 
-+static int ath12k_wmi_tlv_fw_stats_data_parse(struct ath12k_base *ab,
-+					      struct wmi_tlv_fw_stats_parse *parse,
-+					      const void *ptr,
-+					      u16 len)
-+{
-+	const struct wmi_stats_event *ev = parse->ev;
-+	struct ath12k *ar;
-+	struct ath12k_vif *arvif;
-+	struct ieee80211_sta *sta;
-+	struct ath12k_sta *arsta;
-+	int i, ret = 0;
-+	const void *data = ptr;
-+
-+	if (!ev) {
-+		ath12k_warn(ab, "failed to fetch update stats ev");
-+		return -EPROTO;
-+	}
-+
-+	rcu_read_lock();
-+
-+	ar = ath12k_mac_get_ar_by_pdev_id(ab, le32_to_cpu(ev->pdev_id));
-+	if (!ar) {
-+		ath12k_warn(ab, "invalid pdev id %d in update stats event\n",
-+			    le32_to_cpu(ev->pdev_id));
-+		ret = -EPROTO;
-+		goto exit;
-+	}
-+
-+	for (i = 0; i < le32_to_cpu(ev->num_vdev_stats); i++) {
-+		const struct ath12k_wmi_vdev_stats *src;
-+
-+		src = data;
-+		if (len < sizeof(*src)) {
-+			ret = -EPROTO;
-+			goto exit;
-+		}
-+
-+		arvif = ath12k_mac_get_arvif(ar, le32_to_cpu(src->vdev_id));
-+		if (arvif) {
-+			sta = ieee80211_find_sta_by_ifaddr(ath12k_ar_to_hw(ar),
-+							   arvif->bssid,
-+							   NULL);
-+			if (sta) {
-+				arsta = ath12k_sta_to_arsta(sta);
-+				arsta->rssi_beacon = le32_to_cpu(src->beacon_snr);
-+				ath12k_dbg(ab, ATH12K_DBG_WMI,
-+					   "wmi stats vdev id %d snr %d\n",
-+					   src->vdev_id, src->beacon_snr);
-+			} else {
-+				ath12k_dbg(ab, ATH12K_DBG_WMI,
-+					   "not found station bssid %pM for vdev stat\n",
-+					   arvif->bssid);
-+			}
-+		}
-+
-+		data += sizeof(*src);
-+		len -= sizeof(*src);
-+	}
-+
-+exit:
-+	rcu_read_unlock();
-+	return ret;
-+}
-+
-+static int ath12k_wmi_tlv_fw_stats_parse(struct ath12k_base *ab,
-+					 u16 tag, u16 len,
-+					 const void *ptr, void *data)
-+{
-+	struct wmi_tlv_fw_stats_parse *parse = data;
-+	int ret = 0;
-+
-+	switch (tag) {
-+	case WMI_TAG_STATS_EVENT:
-+		parse->ev = ptr;
-+		break;
-+	case WMI_TAG_ARRAY_BYTE:
-+		ret = ath12k_wmi_tlv_fw_stats_data_parse(ab, parse, ptr, len);
-+		break;
-+	default:
-+		break;
-+	}
-+	return ret;
-+}
-+
- static void ath12k_update_stats_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
-+	int ret;
-+	struct wmi_tlv_fw_stats_parse parse = {};
-+
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_tlv_fw_stats_parse,
-+				  &parse);
-+	if (ret)
-+		ath12k_warn(ab, "failed to parse fw stats %d\n", ret);
- }
- 
- /* PDEV_CTL_FAILSAFE_CHECK_EVENT is received from FW when the frequency scanned
-@@ -7180,3 +7276,36 @@ void ath12k_wmi_detach(struct ath12k_base *ab)
- 
- 	ath12k_wmi_free_dbring_caps(ab);
- }
-+
-+int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
-+				      u32 vdev_id, u32 pdev_id)
-+{
-+	struct ath12k_wmi_pdev *wmi = ar->wmi;
-+	struct wmi_request_stats_cmd *cmd;
-+	struct sk_buff *skb;
-+	int ret;
-+
-+	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
-+	if (!skb)
-+		return -ENOMEM;
-+
-+	cmd = (struct wmi_request_stats_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_REQUEST_STATS_CMD,
-+						 sizeof(*cmd));
-+
-+	cmd->stats_id = cpu_to_le32(stats_id);
-+	cmd->vdev_id = cpu_to_le32(vdev_id);
-+	cmd->pdev_id = cpu_to_le32(pdev_id);
-+
-+	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_REQUEST_STATS_CMDID);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to send WMI_REQUEST_STATS cmd\n");
-+		dev_kfree_skb(skb);
-+	}
-+
-+	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-+		   "WMI request stats 0x%x vdev id %d pdev id %d\n",
-+		   stats_id, vdev_id, pdev_id);
-+
-+	return ret;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 103462feb935..65a8801a0d81 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4845,6 +4845,52 @@ struct wmi_twt_disable_event {
- 	__le32 status;
- } __packed;
- 
-+struct wmi_stats_event {
-+	__le32 stats_id;
-+	__le32 num_pdev_stats;
-+	__le32 num_vdev_stats;
-+	__le32 num_peer_stats;
-+	__le32 num_bcnflt_stats;
-+	__le32 num_chan_stats;
-+	__le32 num_mib_stats;
-+	__le32 pdev_id;
-+	__le32 num_bcn_stats;
-+	__le32 num_peer_extd_stats;
-+	__le32 num_peer_extd2_stats;
-+} __packed;
-+
-+enum wmi_stats_id {
-+	WMI_REQUEST_VDEV_STAT	= BIT(3),
-+};
-+
-+struct wmi_request_stats_cmd {
-+	__le32 tlv_header;
-+	__le32 stats_id;
-+	__le32 vdev_id;
-+	struct ath12k_wmi_mac_addr_params peer_macaddr;
-+	__le32 pdev_id;
-+} __packed;
-+
-+#define WLAN_MAX_AC 4
-+#define MAX_TX_RATE_VALUES 10
-+
-+struct ath12k_wmi_vdev_stats {
-+	__le32 vdev_id;
-+	__le32 beacon_snr;
-+	__le32 data_snr;
-+	__le32 num_tx_frames[WLAN_MAX_AC];
-+	__le32 num_rx_frames;
-+	__le32 num_tx_frames_retries[WLAN_MAX_AC];
-+	__le32 num_tx_frames_failures[WLAN_MAX_AC];
-+	__le32 num_rts_fail;
-+	__le32 num_rts_success;
-+	__le32 num_rx_err;
-+	__le32 num_rx_discard;
-+	__le32 num_tx_not_acked;
-+	__le32 tx_rate_history[MAX_TX_RATE_VALUES];
-+	__le32 beacon_rssi_history[MAX_TX_RATE_VALUES];
-+} __packed;
-+
- void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
- 			     struct ath12k_wmi_resource_config_arg *config);
- void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
-@@ -4966,6 +5012,8 @@ int ath12k_wmi_probe_resp_tmpl(struct ath12k *ar, u32 vdev_id,
- 			       struct sk_buff *tmpl);
- int ath12k_wmi_set_hw_mode(struct ath12k_base *ab,
- 			   enum wmi_host_hw_mode_config_type mode);
-+int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
-+				      u32 vdev_id, u32 pdev_id);
- 
- static inline u32
- ath12k_wmi_caps_ext_get_pdev_id(const struct ath12k_wmi_caps_ext_params *param)
-
-base-commit: 707e306f3573fa321ae197d77366578e4566cff5
-prerequisite-patch-id: be59cc41a58272051c64f75d2e96d6cfbdc17180
--- 
-2.34.1
-
+> > +	ar =3D ah->radio;
+> > +
+> > +	for (i =3D 0; i < ah->num_radio; i++) {
+> > +		ath12k_mac_drain_tx(ar);
+> > +		ar++;
+> > +	}
+> > +}
+>=20
+> Please avoid pointer arithmetic (in this case 'ar++') as much as possible=
+,
+> it's just so easy to shoot yourself in the foot. In patch 1 you add
+> ath12k_ah_to_ar(), why not use it?
+Sure, will avoid this and take reference from ah->radio[]
+>=20
+> And I see this pattern quite a lot, should we have
+> ath12k_for_each_radio() or something like that? Or did I see that macro
+> in some patch already?
+Sure, makes sense, guess it was in v1 of patch [01/12] in this series, but =
+was removed and used inline in subsequent patch sets.
+will introduced it back.
+>=20
+> --
+> https://patchwork.kernel.org/project/linux-wireless/list/
+>=20
+> https://wireless.wiki.kernel.org/en/developers/documentation/submitti
+> ngpatches
 
