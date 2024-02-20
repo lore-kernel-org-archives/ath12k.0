@@ -4,156 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EEE9C48BC3
-	for <ath12k@archiver.kernel.org>; Tue, 20 Feb 2024 11:29:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E3D1C48BC3
+	for <ath12k@archiver.kernel.org>; Tue, 20 Feb 2024 17:11:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=M3hEn+Y3nsDbPB4bw8I2/G8Cs84tq+OiZvthIJI0SMo=; b=kbHJkRWkJ6agoaF9HAs1ah/Hf+
-	9vgXt5ZdDtw1Tz0lrsA61D05EQOowv2dXwVPXGP0uMK6GS3Dq2WUmqJkGwdRdeDLcYIv6U+3F0fhC
-	5Xxv7k4rWTLb9bEPS8W2Y1AI8R4Ufxav9ZzagDdH/9IGiYw6BpHVisbEQVkUhlA3qXJQ+rCk2XYOz
-	bc01fkXeayT78pbl3QaZ0bIatsq+wpLgZ2Zc0BP8k+l7F4+ly2KyxC39TfdPTgDR1XZwNHUt5vGzg
-	pCBLA26jxr4qiBSw3DlBXjjgzunQBHCLUPvogHH6e04TiTIRDlLQAWlvPLKBi8mBoY8mx9/aAlCaL
-	xAla/tJw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-Id:
+	Date:Content-Type:Content-Transfer-Encoding:Mime-Version:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=VE1b7+Zs1sAYzLfGxr5znkkGcQFqRIY7wI1kANXm/Uw=; b=QGVQzOcuPzVD3qCjGuDcPrRQN6
+	y0buNurJo/Kz/U+LV2rxIxVytvJrwb4LnHcZrFfUprfYkt1dR/u3fjwYWpg6NZpSkC7pwWILweWcw
+	PWvevhHkg4kAKxGEnWpWMsC3nHDhb2xbmSXZq8PFEgAb1k/mS5a15MYfyyrTAlNcH/gD7WyjfEubq
+	Wd9qgmTL0axx6eNRrVprR7yckdBUzu/8v6TCm3xtGaWFPLIF0pXB+0j7WO8uyEe7JLBYkwje1rUPm
+	oID0qXIIUVGiAIv6h13ZSP8011FUVWp61fbbajyCLQUP90UXSlaTltaWunPPq7Pa8RH3XG8evPfbO
+	7OuTSyhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcOJu-0000000ESiJ-03iX
+	id 1rcTej-0000000FaFy-0Pro
 	for ath12k@archiver.kernel.org;
-	Tue, 20 Feb 2024 11:29:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 20 Feb 2024 17:11:45 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcOJr-0000000ESfz-1UsB
-	for ath12k@lists.infradead.org;
-	Tue, 20 Feb 2024 11:29:53 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41K3lXXf010879;
-	Tue, 20 Feb 2024 11:29:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:references:in-reply-to
-	:content-type:content-transfer-encoding:mime-version; s=
-	qcppdkim1; bh=M3hEn+Y3nsDbPB4bw8I2/G8Cs84tq+OiZvthIJI0SMo=; b=SW
-	rAuCITBmkTtTE3kOJ+ksi9Bz6EzYbP2rdAXKXqalKzZXoCydTXBWeFk4R8/DDs3h
-	DvLuythhgQiYTQsoYxfTcXpPjYmci6ZYmCYA2Ypng8eUTjnH+39fIVfzDcxhQUTS
-	e5F0Nn1nqH+JAq6RekGyDKeov0fCsceg91FoFQ2259hGzIn2dPVOIC5N/boHabGp
-	QqJEJeRKGl1QwDaLTyZGoj1SD6yfaQyCgXYoIQEBiFRyt4ozcynp1JaCFOeQuj3W
-	hQcM7ww8sEcTVPP8EdOQcgQbxCBoG4TiKTYB8SUosIDSE3OVNtam985k8YxgN6Vr
-	NoVeBZXcKw2BAxEkQAsA==
-Received: from nam11-co1-obe.outbound.protection.outlook.com (mail-co1nam11lp2169.outbound.protection.outlook.com [104.47.56.169])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wckv9gwee-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 20 Feb 2024 11:29:46 +0000 (GMT)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=PRrdDqxt3SmIPlajhg5s7eaaTVb46EgBIEltnYm4QuCFSyaQY11vEJxmWcRGPSb4Vr44XB++YurshSVRUDf5fsVKFcXnptioGAgWcXyHeixvyEXN+ooH5B2+XXH1A+BLNG4GjRgxEvLmwXWjylHXocgSuYNNMY1QtHDWS5pNtOvBTQ8oNn8Gf1joH84Y+/AGWGM17g2slbAOPcZCJfpTOTuxCaR+SpQoUhITMBdnuQfA/Uf3ipplcNPirmCq528qZdKEax3qBjAym6fG/Wi+vRrYyw/G1i1Khs5lJqob6POeU6/dgbm8jsVKbVzlSeiSV8Zqoo1b3BAo2n5cEiWrSg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=M3hEn+Y3nsDbPB4bw8I2/G8Cs84tq+OiZvthIJI0SMo=;
- b=eldtLT9n2ckrALpne8tkEdSkRs9d1LS8rVI1NGUpN6b/HDu1gt0aLf70wimTSXP0j1VyWSNmBLtbYFTokEn6BOWf1RklR8VfEgMGWi9wEFwhJox2dH5BIHrFSLpr4gB2R6azSriXtcda1CSGJCeIHKDxQPNUXIPw+1Erq3Q8IIx7m9sV0GuH5Yrpd4p+stchSDjffQYQrhzt0aDGhE7fUSimxEHPbDIZhaZFtTWkCdgWj2b/NGstJ4KTB0CIwYe7OE0b90BrYbmFMOfDSHImAc7VZE5DEtEtRtSoiQHZCan/gg0Qjb7UQDojvHXwxBqqZGIay1wj86M/f19Ip95FRA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=quicinc.com; dmarc=pass action=none header.from=quicinc.com;
- dkim=pass header.d=quicinc.com; arc=none
-Received: from LV8PR02MB10287.namprd02.prod.outlook.com
- (2603:10b6:408:1fa::10) by IA1PR02MB9064.namprd02.prod.outlook.com
- (2603:10b6:208:418::6) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.39; Tue, 20 Feb
- 2024 11:29:43 +0000
-Received: from LV8PR02MB10287.namprd02.prod.outlook.com
- ([fe80::748c:4d58:afcb:a2ec]) by LV8PR02MB10287.namprd02.prod.outlook.com
- ([fe80::748c:4d58:afcb:a2ec%5]) with mapi id 15.20.7292.036; Tue, 20 Feb 2024
- 11:29:42 +0000
-From: "Rameshkumar Sundaram (QUIC)" <quic_ramess@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>,
-        "Rameshkumar Sundaram (QUIC)"
-	<quic_ramess@quicinc.com>
-CC: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
-        "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-        Sriram R
-	<quic_srirrama@quicinc.com>
-Subject: RE: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops
- for single wiphy
-Thread-Topic: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac start/stop ops
- for single wiphy
-Thread-Index: AQHaWN3llx3RTeDx002mNcYlfjLMAbENOquxgAXazOA=
-Date: Tue, 20 Feb 2024 11:29:42 +0000
-Message-ID: <LV8PR02MB102877C0CD1CC770B29594191E9502@LV8PR02MB10287.namprd02.prod.outlook.com>
-References: <20240206091954.4144454-1-quic_ramess@quicinc.com>
-	<20240206091954.4144454-4-quic_ramess@quicinc.com>
- <8734tsnz8i.fsf@kernel.org>
-In-Reply-To: <8734tsnz8i.fsf@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: LV8PR02MB10287:EE_|IA1PR02MB9064:EE_
-x-ms-office365-filtering-correlation-id: 29bc67fc-68ea-4fe4-63c7-08dc32073b9e
-x-ld-processed: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: KH/h8Xh+COOGDw9Bljm69lOQ4EsHtOG8eyQ2FkZOJLtCPqGGe+u6hiB6EzZ9JLvnirPtTmG4zd/DNxPoKGkXXIPlzYRnwJseIWY3vjTxMDCThFtUtgF0MVINO9nCPewShWqECCnVa0eFuvf/K0F498GKgjP8wE12APL9rQA97pv3oXyD3q+DURPqsGQ+B+r4X1ErcZmYYbNU+bHLWTODkSMiVt+oE9gsmMw2jaL8FyT5UBM0UIenLtAJ3QP2iB6SBBrWmk7DQAzNWCBf7LchQP950nWPwb26TOnImHG3sNFmhKH1TIaoNiJEBDZhbC+lLdXp3BoiYv4o4NFEbaxIeowKpgEJeWhiTd3PBi6Qc3IsCk7iIB1AjNICRsZ1a0dxJnrK/BxdJ+WnTiU5iF9xJdswuUYkn13qAnatPHw6wzs1uZXusUmmFFbADpLqoDUPElz3tAC4+IKC67t1Zfu0m4xmZVQQ7q/7wAtu2XDiF75b2y+NOp66zRB0rhwbbkWkQVuFfMokbOW1jYW0YC4cvA/uQI38e0zftUUrqfyqdmMgQEoE3j41VO32lt3S/9Bg3xfcqxwhsyx3Qx3XTaG2XnnVGgF8/I4t5dQS4lGtoN4=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LV8PR02MB10287.namprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(38070700009);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?Iiv+XnIr+elsduiAoOl1Dh5S0mQq/M+DsMjYbN1irTCigjmVSxlvVnkkhafW?=
- =?us-ascii?Q?0Bo2PRIYZ92PbMN7aYhuXxWuZjAjOeEYVZcsbi9u+JZNLr392TyvPB/3ajGg?=
- =?us-ascii?Q?H5egNCB/wI1ZNVixfadl0lAkMksLUA3kmZvS8yYrvJykmP/ESixQIPZgp8f0?=
- =?us-ascii?Q?tRFUMo/pnZ0x9n5KeFEXoU3IJfW/88SMY6Y4btr4+46yEkc/F39uSX1EMI5q?=
- =?us-ascii?Q?YO0O5FZvAYVZEp2Smgs71hj3QoEJW18Hi3JN2ZbWDINWOwU3RJaEkmszIJiH?=
- =?us-ascii?Q?qT/98kYE3y7lx6bOKsRs37n2qgRx333A+VrzOPlJGDcMiKD639ZPD8xgyzXO?=
- =?us-ascii?Q?apyMDs49wkVgpBVfpHprgxenvn9lT60NLf3LRlDTOeCUkQOZ8khSdt2eYfwp?=
- =?us-ascii?Q?H2pUDNDVsaI4X9H8ZCfqQfRNRpeaaz1UXUmsb7bno1U/Uq3tZq++k/SVvOpI?=
- =?us-ascii?Q?gbmhlVaMgEJrg4X630n4EsuRXAaOLp92tDNEvj3loeRUZ8X15gVabLqi4N6X?=
- =?us-ascii?Q?FQnGcy6vkvEAhZEfMOdL2eaykEZkMQbszvfwf+i3A7dDog3/Il8no9ri/wAc?=
- =?us-ascii?Q?6n8TL7PK2chgD8aIZijSWMKYRtkp8gIgjpQrOSXfoVXcoR/ACdGox0z+97nM?=
- =?us-ascii?Q?FrSPl66qJBONo+SPvTd5lKISmfMz86hLIWZ1TncaZGqu6zaMAr+n7itgoM9B?=
- =?us-ascii?Q?OAVZziAnURfSczXzY1f3COrgwn/pj68UkgQ6imLGZ2hW5LGmtG5jN98dAmvU?=
- =?us-ascii?Q?VfH7mZQjkFYycN1k2xtqd3XTSPPnO+O9/1Ze1zdJjKdRjjoHMLEJGdnjNydC?=
- =?us-ascii?Q?d2NfUM8oMcCN22DatZtf3ZDcYAYBu73hzs9qtphu1Am47ztPzwcbl0od3b67?=
- =?us-ascii?Q?Ph7lre6l+D6JgTkvZxip6LfniJK/cFlnwRCyAM39/Xva+2GDZJRAj79QHnMM?=
- =?us-ascii?Q?dzpOMjtkzr0L/SI6cWyme4X7vqr3zLVIEiKf+DaENCozL+B1TUYiwVe0YKCm?=
- =?us-ascii?Q?POsBRFeeYvIfjv2XGnHQQOkpejlM/XUB+T1rLiFLdSj0Ll80wffYm6D6lVQv?=
- =?us-ascii?Q?OqLo6664BMPm6InGcwLh5JcTs4A7BaPrhGHlmPXCDrOTad+qT4OD6ZCmSrnF?=
- =?us-ascii?Q?vo/55DwZe4JNiBmVX5XbqtiQD2JOwl/QpkIvaW88TWvpXULMJS+jlTXfmDDb?=
- =?us-ascii?Q?xcDaM2aksd2tojUYiEuo1NaVSpQbFIrAW1qen8dHSr5adzqZwQAREt27Fcc1?=
- =?us-ascii?Q?D7SfuoAqOhN1RsCf1RVSZEW2NZBiIEKwTvGtN4RznHVFQ6vi3dMoxvnI5keW?=
- =?us-ascii?Q?JPJRmpBYMNMLgs0u5DHymiWzKgIk9iOHFM5olOpWu3zl2LrAeFulOpH7hUvk?=
- =?us-ascii?Q?EqtXL1iehZVKLb1f+EdkggiWx0a4O67GuKi4CYGrsDmhQRPzyG5L/sEZF01Z?=
- =?us-ascii?Q?6RPSAoTUFfQxIS077C7Uckg4fHJE+TaP7KvwiHiuIcFEeIi4mFwKswso0cFb?=
- =?us-ascii?Q?64iGfBY1sCnqoo69g55HS6j7KxttMAxndEEEMIyTw4tG9tVBigabPcllqymK?=
- =?us-ascii?Q?m7rjMnayNfn3E5OMM6wVC+kSKpBjCdNT/eIDd5Zl?=
-Content-Type: text/plain; charset="us-ascii"
+	id 1rcTef-0000000FaEd-12n9;
+	Tue, 20 Feb 2024 17:11:42 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-41272d42207so1479955e9.2;
+        Tue, 20 Feb 2024 09:11:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1708449098; x=1709053898; darn=lists.infradead.org;
+        h=to:from:subject:message-id:date:content-transfer-encoding
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=VE1b7+Zs1sAYzLfGxr5znkkGcQFqRIY7wI1kANXm/Uw=;
+        b=jCEU4slOQdpSAGbW3PNav0Xu8M6RfMo1uuoT1f8XwYKNMDQeKXCSLo7+4DODQ42hQb
+         IpqkW2kfW9ScUw9607sQTjlWNVZUB891B+7sDtz80MDnAjtJiNN7NSLvlSIlpp0Qgetd
+         TADofxUNYzXtEDaSp5wJddsFFm8fgQ3IszlJQm3mYn7sWYTD6VO2Oyc4TmcD7N6gX8fa
+         KQRUuEcBvwKHAuT+NGir0HOCLCfr38ffEm55bB10+W+cxR7WXcEqYeY+WflLzi7Nufdo
+         rOCEQ2C+dJra1UNAr5qF+A6VduFNYzjUKaj0vT5fGW3Areh5KvTooFqwpHiZi99d7ckO
+         zASQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1708449098; x=1709053898;
+        h=to:from:subject:message-id:date:content-transfer-encoding
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=VE1b7+Zs1sAYzLfGxr5znkkGcQFqRIY7wI1kANXm/Uw=;
+        b=X+ajDRQvJgAUUQZTP8LRNHNMuEW7FdB5xWqcmP1vyBgEyuc5xgZLzooK8+AJSlj3dG
+         zS+U6FPYmIr5mljqSMnQLu9agiqVzTVriOlUoZt0HFTlP45/nZyOirycO3zXUB80+FN9
+         WfGb4J47R33yxhAMflHJyhJGY4it57fE6kJ4PgeRfvt4dHYL0S2uo5D8kxzzrjpFLBbV
+         BkRd066aNtQVk3Fj9OydjEQPCxzVInuw/L3jZXabSuDE4XQOhRwTFqSGwyVS4fvPdG44
+         ipyZBm1QIwUN7ZoZ4Ue0ro8lP8LY75gpSOeW7tKAuS4LpRH75mV0olj9UcnbbsQ40TCN
+         svyA==
+X-Forwarded-Encrypted: i=1; AJvYcCWKHtrDj/Z+xNaeKxG8VHKwG6l7gtDScOQL0ONYYYSPwhGMUiL2qDjSo7/3Rc9O9EVmTFSfX7j2F/blxl5uN9MxJcUBmZJ0/4WlCg==
+X-Gm-Message-State: AOJu0Yxg17GQqx9vHS6416+C88DD2Xo6EpyE1o7crFTvtiTrGeG2qzap
+	+Pa/wR/8XqMKwkdarJZyuiGK/GvbCuaEQ8u9P2U3QU9cBcYaoYcTWyPC/HJ4
+X-Google-Smtp-Source: AGHT+IGELZLv6VyK0+cuniAr5wftu3t4c8qApMtycEcTK4QnkiGkja/d6yCvpkEkOF8hXELu+eTCSQ==
+X-Received: by 2002:a05:600c:68d0:b0:411:3673:1c6d with SMTP id jd16-20020a05600c68d000b0041136731c6dmr13346859wmb.37.1708449097893;
+        Tue, 20 Feb 2024 09:11:37 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id k10-20020a7bc40a000000b004101f27737asm15116765wmi.29.2024.02.20.09.11.37
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 20 Feb 2024 09:11:37 -0800 (PST)
+Mime-Version: 1.0
 Content-Transfer-Encoding: quoted-printable
-MIME-Version: 1.0
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: nI3XCPcv9SRmk7Y/Tn47H6MNmHBbKqBSlJkidwjJV6BSWh51YnAxYwYwAuTIKihHWQkfudliUukgpOKNGRj/HtQ309yhwwG8fwKo2JQY2U899Adi8nGu/OwX1VWUWUN2VWgF52qL0YCGqOJG2oDHnx4XvXjPbFjwEll3e/fM7TEaIbHMUxs94L5AurgB7IDzwlBfeFkGtDD/uRAIMMSViGEiBa2W2odehMOKr8TTpL+H0wYMPl8SiOkyGMMNnWPVVFEuF4/xPACvT//i8GyFn53C0Gp5otwfeoh7Fyb0rXkWpNb0I2BRs1DwJgO4VCfyfATjIdGe2dR1ACXnLwlLCYAXUWNJfRP0jbWL/TcsHgsge0Xbdh/GSFmWyYRdA2CpOkujVQPrhBMrw7qzLDFTZCoMiUPV8NI/FZ0pBtUOGm2E5E4DJpt83LcrwphFtBCt77xS0hArTvRMjs3zBF0/8/OcVy6PL2eYTFV6Mwv+3H1Q/GIMgRiLYnd0KvQ98zTK5KfiZ5/m8es875U8E7ox1e3sIoc3w82pSGJRrL36Gmoe4Re01VvOJYAMbXD+iIT4CcC9ZOz5vUAxcd7TsXEtKAirPGtV7C3DFjl/vsrhblSAofjhJA5zD2rB95nCw0DZ
-X-OriginatorOrg: quicinc.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: LV8PR02MB10287.namprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 29bc67fc-68ea-4fe4-63c7-08dc32073b9e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Feb 2024 11:29:42.5504
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: nZrPxKtnZYnWO5ntazUUkCuIT3NwUX9FsdMARZiozva2dcnPxSMKacX4q+3sVqKvYovmJK8o4XoQBbKEOSpe+Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR02MB9064
-X-Proofpoint-ORIG-GUID: Y2IMiClAsYsLUkG3AAOrHewmq3WObQtN
-X-Proofpoint-GUID: Y2IMiClAsYsLUkG3AAOrHewmq3WObQtN
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-20_06,2024-02-20_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- bulkscore=0 lowpriorityscore=0 phishscore=0 clxscore=1011 adultscore=0
- mlxlogscore=746 impostorscore=0 suspectscore=0 malwarescore=0 spamscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2401310000 definitions=main-2402200082
+Content-Type: text/plain; charset=UTF-8
+Date: Tue, 20 Feb 2024 18:11:37 +0100
+Message-Id: <CZA2NS7J83D4.18SU6W9R96KPY@gmail.com>
+Subject: ath12k & ath11k beacon miss detection
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: <ath11k@lists.infradead.org>, <ath12k@lists.infradead.org>
+X-Mailer: aerc 0.15.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240220_032951_554748_93DA2ED7 
-X-CRM114-Status: GOOD (  22.88  )
+X-CRM114-CacheID: sfid-20240220_091141_322050_2A319C59 
+X-CRM114-Status: GOOD (  13.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,66 +88,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-> -----Original Message-----
-> From: Kalle Valo <kvalo@kernel.org>
-> Sent: Friday, February 16, 2024 10:06 PM
-> To: Rameshkumar Sundaram (QUIC) <quic_ramess@quicinc.com>
-> Cc: ath12k@lists.infradead.org; linux-wireless@vger.kernel.org; Sriram
-> R <quic_srirrama@quicinc.com>
-> Subject: Re: [PATCH v2 03/12] wifi: ath12k: modify ath12k mac
-> start/stop ops for single wiphy
->=20
-> Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
->=20
-> > From: Sriram R <quic_srirrama@quicinc.com>
-> >
-> > When mac80211 does drv start/stop, apply the state change for all
-> the
-> > radios within the wiphy in ath12k.
-> >
-> > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-
-> QCAHKSWPL_SILICONZ-1
-> > Tested-on: WCN7850 hw2.0 PCI
-> > WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> >
-> > Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> > Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
->=20
-> I haven't reviewed the patchset fully yet, first quick impressions:
->=20
-> > +static void ath12k_drain_tx(struct ath12k_hw *ah) {
-> > +	int i;
-> > +	struct ath12k *ar;
->=20
-> We usually try to have reverse xmas style, of course not always possible
-> but here it is.
->=20
-Sure, Will fix it v3.
+Hi there,
 
-> > +	ar =3D ah->radio;
-> > +
-> > +	for (i =3D 0; i < ah->num_radio; i++) {
-> > +		ath12k_mac_drain_tx(ar);
-> > +		ar++;
-> > +	}
-> > +}
->=20
-> Please avoid pointer arithmetic (in this case 'ar++') as much as possible=
-,
-> it's just so easy to shoot yourself in the foot. In patch 1 you add
-> ath12k_ah_to_ar(), why not use it?
-Sure, will avoid this and take reference from ah->radio[]
->=20
-> And I see this pattern quite a lot, should we have
-> ath12k_for_each_radio() or something like that? Or did I see that macro
-> in some patch already?
-Sure, makes sense, guess it was in v1 of patch [01/12] in this series, but =
-was removed and used inline in subsequent patch sets.
-will introduced it back.
->=20
-> --
-> https://patchwork.kernel.org/project/linux-wireless/list/
->=20
-> https://wireless.wiki.kernel.org/en/developers/documentation/submitti
-> ngpatches
+I found that when using QCN9274 iun station mode, we never get disconnected=
+ from
+the AP even if it stops beaconning. Using iw I can see the "inactive time"
+increasing without supplicant ever getting a beacon miss event.
+
+From what I gathered, given we set the flag CONNECTION_MONITOR using
+ieee80211_hw_set in __ath12k_mac_register (mac.c) we should detect the
+connection loss and call ieee80211_connection_loss() at some point. Right n=
+ow,
+there is no such mecanism in ath12k.
+
+So looking at ath11k code I found out that in that driver we have a specifi=
+c
+WMI event "WMI_ROAM_EVENTID" that can report a WMI_ROAM_REASON_BEACON_MISS =
+that
+in turn ends up calling ieee80211_beacon_loss after some time.
+
+But trying ath11k & qcn9074 in station mode yielded the same result, we nev=
+er
+get the roam event and never get disconnected either.
+
+So going back to ath10k this time, the code isn't exactly the same but even=
+ then
+we had the same wmi event, with the same WMI_ROAM_REASON_BEACON_MISS and we=
+'d
+call ath10k_mac_handle_beacon_miss which in turn ends up calling
+ieee80211_beacon_loss via a work item.
+
+And using ath10k on qca9888 works well for me.
+
+So I have a few questions:
+  - is this supposed to work on ath11k ? Does it not work for me specifical=
+ly
+    because of my chipset ? Or are we missing some wmi config ?
+  - as the code to handle the roam event is missing/commented out in ath12k=
+ will
+    it be a different mecanism to detect connection loss ? Or it'll be the =
+same
+    and you guys just did not have time yet to tackle this ?
+
+I'm happy to add the missing code to fix that use case in both drivers but =
+I'll
+need some insight from you ath folks on this.
+
+Thanks =20
 
