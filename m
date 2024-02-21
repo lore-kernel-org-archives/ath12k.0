@@ -4,87 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 258A3C48BEB
-	for <ath12k@archiver.kernel.org>; Wed, 21 Feb 2024 16:17:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FBA8C48BEB
+	for <ath12k@archiver.kernel.org>; Wed, 21 Feb 2024 18:00:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=E9x7Uwhdmnd48TDUfR/CdE7qrVONSVhDZQKKQRCQd8E=; b=H01Hq0m7yBV9+2icVVXkxOFZW4
-	T/MN74BYXr3Vye4y0pORFwBl3QkZDoAgxlYFJvsaruBSNd+V4TUwNMYujDGre9dK3jsK2Whp7btFh
-	ZbMJihkGT6NPfCmvLW7gSFm0rk4NqZugDrSBwu/UBLwqRvkzvHSXSlOVx+hKyO0J9QaKUMxnU7NtO
-	5q3bt1vQYVKlsnGvL8oLruB53nZ01PZn1cXLb3RwNzf7zEAYjVD3w+26yxg/mJMH8LTPGvgLxEzwN
-	qYAuVOWhZwGvOqFx936qWT6g4W8+8FF6uEuaoMbPI+WqjTNddrI2x51sI58fQoXkDomVu6jAgcN4I
-	xYoOFfeQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=I79nBzwV+DGOFYWmVvZfc/TFubiREZmX/BfIloex9Ko=; b=IrGbArEO0efzUGRLohqCXCka1D
+	XvnL8f+TnychKZsNwLTjPdxzNl5oNvF2samoVCkQhI1DI/cfKbRB2mLLmXi538Xc9H2FFYgxD3vkP
+	KUmtIud2B4y+TfKyrJ+KLkaXYKK3sKcazUPjQ3SEqQdmhC2stLaptUyKypfYWS86koSkiofk9Dqby
+	U2eRlJTRSFYJeKTuiR9w8QjUqvjjJCdmtPlvDonK71QbXiWBrc1pq/27RmSBJrT88qrWFVO5lvLFy
+	e0wsJJth+kNYeSUeLQ+vrpibhH7pg6HE09PQIKJqrJaAmLTbQsnC814q60RlP2/JYDKhW90ePIDpb
+	1T+1gLFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcpIE-00000001gFg-3aZc
+	id 1rcqtK-000000020bI-3ETE
 	for ath12k@archiver.kernel.org;
-	Wed, 21 Feb 2024 16:17:58 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 21 Feb 2024 18:00:22 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcpIB-00000001gEr-3u5f
+	id 1rcqtH-000000020an-3n9p
 	for ath12k@lists.infradead.org;
-	Wed, 21 Feb 2024 16:17:57 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41LCTQn9023911;
-	Wed, 21 Feb 2024 16:17:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=E9x7Uwhdmnd48TDUfR/CdE7qrVONSVhDZQKKQRCQd8E=; b=hG
-	EmeeAdw9P2yHpwqtLv7o/jcUmKH7TE6A+EWeF+GvZGdb00/TxYm6heccr5iKS4mi
-	AUZzoKOTmwcrPeE1FcgC1Z447Seecctn0KDnD0jFh3GXJib9B3UBFu1H7b6tnmTm
-	uG12KSpoa9GeHsJrrQK2hr0lSiGq34lgcyrYcaid/LL0UQA1z8mfkN9wHHqty4ZA
-	GwBPSIwsgCdk5hsk/I2ksh+9LPR7SrecNM5KRnIb2A5aP/g2+fiImiDCkaW6Kkhv
-	1PCaDC4unJvnu7FImti80CqZQwxudJelTGhesDj8AhB66oFdqihDjxuV+fGYdSj7
-	h4Qz0CxM5KRWy77kt/aQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wd21s2fgh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 Feb 2024 16:17:55 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41LGHsX0017171
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 Feb 2024 16:17:54 GMT
-Received: from [10.110.34.22] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 21 Feb
- 2024 08:17:54 -0800
-Message-ID: <cdec81ec-0ae1-4bb2-90f4-25a4a4c2b54d@quicinc.com>
-Date: Wed, 21 Feb 2024 08:17:54 -0800
+	Wed, 21 Feb 2024 18:00:21 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id D346FCE1E42;
+	Wed, 21 Feb 2024 18:00:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8EEF5C433F1;
+	Wed, 21 Feb 2024 18:00:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1708538415;
+	bh=jxZwS9DN/zj+74jkA+Tojl38QtgkRwQ4DpNjiGFaawA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=O2ualo2McOjkeWFt8Ny1g5JkA0rbFsfW+tHcf5qM2Hny6sF5bRCZiPEFjlT237Jq5
+	 2GTE/Em43/ZGYALhEcStY5oPj5DfA9MgfgKGUK0nzb0GYQdeNzMh3PuXipYfgWUYr6
+	 C0YC6sD/+4gZcufJszBiMpW2zpoRlQtmz4OjYrKepJhFgHWyIgXNdgNf0X4E8IdZ2y
+	 fwbJC66YKfHBeAvJSt7KEBRcq/N8OrHKKftTGy7NfHQTRKTePhqcKY7uPrldc4enSd
+	 vNSr+BdMXVhca85/8/GJnkWsi4vy5MGHOlu42USDa+jUpz1p0UtPOAF+NiRkZ25kDu
+	 a3iVVkVNck4iA==
+Date: Wed, 21 Feb 2024 11:00:13 -0700
+From: Nathan Chancellor <nathan@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>
+Cc: quic_jjohnson@quicinc.com, morbo@google.com, justinstitt@google.com,
+	quic_periyasa@quicinc.com, ath12k@lists.infradead.org,
+	linux-wireless@vger.kernel.org, llvm@lists.linux.dev,
+	patches@lists.linux.dev
+Subject: Re: [PATCH] wifi: ath12k: Fix uninitialized use of ret in
+ ath12k_mac_allocate()
+Message-ID: <20240221180013.GA2074929@dev-arch.thelio-3990X>
+References: <20240205-ath12k-mac-wuninitialized-v1-1-3fda7b17357f@kernel.org>
+ <170731849247.2220494.17976129376947521581.kvalo@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: report signal for iw dev xxx station dump
-Content-Language: en-US
-To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240219111417.1185-1-quic_lingbok@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240219111417.1185-1-quic_lingbok@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: yFgbsa2aWVR9MsVkvyiFeUwAd61bmIKU
-X-Proofpoint-GUID: yFgbsa2aWVR9MsVkvyiFeUwAd61bmIKU
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-21_03,2024-02-21_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- spamscore=0 impostorscore=0 mlxscore=0 suspectscore=0 phishscore=0
- clxscore=1015 lowpriorityscore=0 mlxlogscore=925 malwarescore=0
- bulkscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2402210126
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <170731849247.2220494.17976129376947521581.kvalo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240221_081756_017505_DDB3ECA9 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240221_100020_148960_8A0A0416 
+X-CRM114-Status: GOOD (  14.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,19 +76,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/19/2024 3:14 AM, Lingbo Kong wrote:
-> The signal of "iw dev xxx station dump" always show 0 dBm. This is because
-> currently signal is only set in ath12k_mgmt_rx_event function, and not set
-> for rx data packet. So, change to get signal from firmware and report to
-> mac80211.
-> 
-> After that, "iw dev xxx station dump" show the correct signal such as:
-> signal: -50 dBm
-> signal: -49 dBm
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Hi Kalle,
 
+On Wed, Feb 07, 2024 at 03:08:14PM +0000, Kalle Valo wrote:
+> Nathan Chancellor <nathan@kernel.org> wrote:
+> 
+> > Clang warns (or errors with CONFIG_WERROR=y):
+> > 
+> >   drivers/net/wireless/ath/ath12k/mac.c:8060:9: error: variable 'ret' is uninitialized when used here [-Werror,-Wuninitialized]
+> >    8060 |         return ret;
+> >         |                ^~~
+> >   drivers/net/wireless/ath/ath12k/mac.c:8022:9: note: initialize the variable 'ret' to silence this warning
+> >    8022 |         int ret, i, j;
+> >         |                ^
+> >         |                 = 0
+> >   1 error generated.
+> > 
+> > Commit 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211
+> > hw") added a completely uninitialized use of ret. Prior to that change,
+> > -ENOMEM was returned to the callers of ath12k_mac_allocate() whenever
+> > ath12k_mac_hw_allocate() failed. Assign that value to ret to make sure
+> > it is always initialized when used and clear up the warning.
+> > 
+> > Closes: https://github.com/ClangBuiltLinux/linux/issues/1989i
+> > Fixes: 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211 hw")
+> > Signed-off-by: Nathan Chancellor <nathan@kernel.org>
+> > Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> 
+> Patch applied to ath-next branch of ath.git, thanks.
+> 
+> 04edb5dc68f4 wifi: ath12k: Fix uninitialized use of ret in ath12k_mac_allocate()
+
+It doesn't seem like this tree or branch flows into -next on its own, so
+this patch is not present in and the build still breaks on
+next-20240221. Can this be fixed so that this warning stops breaking our
+builds?
+
+Cheers,
+Nathan
 
