@@ -4,66 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB001C48BEB
-	for <ath12k@archiver.kernel.org>; Wed, 21 Feb 2024 18:21:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87D24C5478A
+	for <ath12k@archiver.kernel.org>; Wed, 21 Feb 2024 18:47:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pPqTA10aUTd7OyOTWQU0Z21UeSO6OCcIhtgZ2d+qAbk=; b=RbRtTciLmrR8dha1J6XSYK3sO/
-	RZZmUvbQ5QwTr2BpkDQ4qX9jgQilBmUPxdH21dg7yVocTNYQi5BLwwKJ3eGFkQqRoxy5DU5K90bV+
-	VvL9qSlP9ghQB351ihK5Lq5UuhS1A9B/iDmThLcgI5OP3cHuJ1WMrFw3lvtG5TnZjR00vtFxVw8ky
-	dH3xxqZ4ZG40SlP/6s7h8q7/129QKfYVgjXs9kGeim9rAGrExcyNE4Ge5O+k88h7Hegy/xHMRlvEn
-	BeBR+ibVk3dEfjgYvDPQ0NhKyv+8382WYcr6sTYu3ry/59qFdAHGJdP8FgjMCgxAmMcf1PKG16sJs
-	45e1SxTw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6eaQTcUoeKL7PqXkEqP+E59DQs9+SQ8x5ErceTOTabM=; b=t8PEJqOtSI1e52Ig4GjwM1LoZF
+	FlevXkYteGjKDxIcmcqZFnCE3WbKdrMbRijPlq5BEIzB1A20r8Qqa8ZlKCLMBzF46moXBFc6QQs85
+	27PIU3vamTvKyMd3Yyt7v9kn9H5/LRKmeY/tXAT8qxKMkMzdYUCX5ONEg9WV7CJPlkLlRJxUtUTQM
+	HYMOR/NZl1x9/gJI+JNbZ0zhzwltGD+zUEpNpAI6M6yPVPJXQJnJBN+HE0QhvJ9/89sOeayHq4X2Q
+	n2RiJ79KDk3DzRT+humFUJIvVxnka8XF7uJ6RvS71pSGgfo8iU8Nf3ll2mMwTJh7mmgAFpB51WMmG
+	ppX4CqLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcrDY-000000023Ih-0x8g
+	id 1rcrcv-00000002Ay8-0tvS
 	for ath12k@archiver.kernel.org;
-	Wed, 21 Feb 2024 18:21:16 +0000
+	Wed, 21 Feb 2024 18:47:29 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rcrDQ-000000023HG-2MoL
-	for ath12k@lists.infradead.org;
-	Wed, 21 Feb 2024 18:21:15 +0000
+	id 1rcrcr-00000002AwX-0fNH;
+	Wed, 21 Feb 2024 18:47:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id EBF7DCE1F30;
-	Wed, 21 Feb 2024 18:21:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AECEC433F1;
-	Wed, 21 Feb 2024 18:21:04 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id D3B89CE1F52;
+	Wed, 21 Feb 2024 18:47:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 60FE2C433F1;
+	Wed, 21 Feb 2024 18:47:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1708539666;
-	bh=tQaWzc3U8kyTUOyG3hGc5iK+s3OXDgj0AzeWKbHcNFY=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=F561lTe2JDbsfjGXvYgvVLgEO0kOuviDsp5/faAf/biHQ56QorfmvA/inS1XrvfJT
-	 GGtIXWZQlyOn5zCgu/CCCVTEiD04wc86dJrO11M4oo3hNJ9x+e22aEvo5bh/vwUdvw
-	 xL8M1UF4iaWsh+2Fu/L6Y1S4kB2YJ0CGKU3nn/Mf6n9ke3kq9i6sbIrpXlTbGqTm6J
-	 aLMhDan+ZxNA8DQzdiZiWA26zT5RQMq+un8HT1tEe39ugLStCXw08gbBusOz086znX
-	 qus+lwKIc/AqREgUHCJPCeL8CMdRHerpzHrIxreGEZJoYE8nOAyQ+WjOGOlJdhmIKi
-	 3vPYYPiCARF6w==
-From: Kalle Valo <kvalo@kernel.org>
-To: Nathan Chancellor <nathan@kernel.org>
-Cc: quic_jjohnson@quicinc.com,  morbo@google.com,  justinstitt@google.com,
-  quic_periyasa@quicinc.com,  ath12k@lists.infradead.org,
-  linux-wireless@vger.kernel.org,  llvm@lists.linux.dev,
-  patches@lists.linux.dev
-Subject: Re: [PATCH] wifi: ath12k: Fix uninitialized use of ret in
- ath12k_mac_allocate()
-References: <20240205-ath12k-mac-wuninitialized-v1-1-3fda7b17357f@kernel.org>
-	<170731849247.2220494.17976129376947521581.kvalo@kernel.org>
-	<20240221180013.GA2074929@dev-arch.thelio-3990X>
-Date: Wed, 21 Feb 2024 20:21:02 +0200
-In-Reply-To: <20240221180013.GA2074929@dev-arch.thelio-3990X> (Nathan
-	Chancellor's message of "Wed, 21 Feb 2024 11:00:13 -0700")
-Message-ID: <87ttm1llv5.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1708541240;
+	bh=gqoAm28ysMhQcEAAi5Gh3dH2gq6BWAr+ceiJbrjqTLw=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=B4a49GRxpgPJI2ECisO/VeUOxKUutVCrIW4oXYFeemxKREmjO4ZIBHQwmxTMuu7ir
+	 yWvYvDsaJBjexF4S7mUZpUOzTsS4NBr+uTRcHfInbw1OBtpPytvT6RIXETNCb5mO2/
+	 /ChAOFz+Ta+Fw2oFV9YNv+LwyTnbZtw/mLHJtUuZ5PP04y9iCQvrqGuxGNCIlA0gef
+	 iva8GpSCKQ3C9EX70Hz6GpvLL090bHj3ALKDJizvIKsbiisDEGG+77r7Srefr+nnCL
+	 4xQNz+H+8cDIc+jFSuE4U2l+Td9+nXv6AFe2X8YOiD1eUFTSKDOrEmViJtR+l1tAhL
+	 Ns/2jC9pyTBgQ==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Subject: Re: [1/2] MAINTAINERS: wifi: update Jeff Johnson e-mail address
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240217-update-maintainer-v1-1-1426cf7a8bb1@quicinc.com>
+References: <20240217-update-maintainer-v1-1-1426cf7a8bb1@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: <ath10k@lists.infradead.org>, <ath11k@lists.infradead.org>,
+ <ath12k@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>, "Jeff
+ Johnson" <quic_jjohnson@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <170854123612.1848588.403515299525075943.kvalo@kernel.org>
+Date: Wed, 21 Feb 2024 18:47:18 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240221_102110_337558_1841E15A 
-X-CRM114-Status: GOOD (  18.31  )
+X-CRM114-CacheID: sfid-20240221_104725_935466_A308AAF0 
+X-CRM114-Status: UNSURE (   5.64  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,52 +75,21 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Nathan Chancellor <nathan@kernel.org> writes:
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-> Hi Kalle,
->
-> On Wed, Feb 07, 2024 at 03:08:14PM +0000, Kalle Valo wrote:
->> Nathan Chancellor <nathan@kernel.org> wrote:
->> 
->> > Clang warns (or errors with CONFIG_WERROR=y):
->> > 
->> >   drivers/net/wireless/ath/ath12k/mac.c:8060:9: error: variable 'ret' is uninitialized when used here [-Werror,-Wuninitialized]
->> >    8060 |         return ret;
->> >         |                ^~~
->> >   drivers/net/wireless/ath/ath12k/mac.c:8022:9: note: initialize
->> > the variable 'ret' to silence this warning
->> >    8022 |         int ret, i, j;
->> >         |                ^
->> >         |                 = 0
->> >   1 error generated.
->> > 
->> > Commit 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211
->> > hw") added a completely uninitialized use of ret. Prior to that change,
->> > -ENOMEM was returned to the callers of ath12k_mac_allocate() whenever
->> > ath12k_mac_hw_allocate() failed. Assign that value to ret to make sure
->> > it is always initialized when used and clear up the warning.
->> > 
->> > Closes: https://github.com/ClangBuiltLinux/linux/issues/1989i
->> > Fixes: 6db6e70a17f6 ("wifi: ath12k: Introduce the container for mac80211 hw")
->> > Signed-off-by: Nathan Chancellor <nathan@kernel.org>
->> > Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
->> > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->> 
->> Patch applied to ath-next branch of ath.git, thanks.
->> 
->> 04edb5dc68f4 wifi: ath12k: Fix uninitialized use of ret in ath12k_mac_allocate()
->
-> It doesn't seem like this tree or branch flows into -next on its own, so
-> this patch is not present in and the build still breaks on
-> next-20240221. Can this be fixed so that this warning stops breaking our
-> builds?
+> I now have a @kernel.org e-mail address, so use that for my
+> maintenance activities.
+> 
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-Yeah, ath-next is not pulled to linux-next because of "reasons". We are
-planning to send ath-next pull request to wireless-next in the next few
-days.
+2 patches applied to wireless.git, thanks.
+
+27dc4c6ee5fe MAINTAINERS: wifi: update Jeff Johnson e-mail address
+1b7d9ab3e666 MAINTAINERS: wifi: Add N: ath1*k entries to match .yaml files
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240217-update-maintainer-v1-1-1426cf7a8bb1@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
