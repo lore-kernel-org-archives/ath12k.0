@@ -4,66 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38184C5478C
-	for <ath12k@archiver.kernel.org>; Fri, 23 Feb 2024 18:11:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 254EDC5478C
+	for <ath12k@archiver.kernel.org>; Fri, 23 Feb 2024 18:33:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4veztuq0nbr+6eP96SMUiNpeVsWoA09x4TohJonoSk0=; b=FFNMwar/ToXjmBQSUtvTg07QG0
-	kvnjE5071dCtFqYHqwd71Y8uiUQhUNk/MWr0iNWR9I2pyedFc1ql5089iZir6YOpVYBRmlEOdGpTc
-	Z+bpeIcU0oOy9urk+ByyqdA5ApTuMzThJbdXx5QtiDoYUXtthWKY+rKb40KXOYkyH5cBiiIxRfQvC
-	TC9nb8/uKn277NFWdWiwPR9Lo1f2r6fFUngRM16xfxnkTQnrPNklrlvmVtZ9UyO8u2xyy5mr0fwlO
-	tSIcNERzL8fG9vdOqDe9+BkNEDFfrMaozOr+0lb4vLfPToO8K4c5LJhSkQwhRIKWz9XpRLvop1N4c
-	+NO4Sm7Q==;
+	bh=Kfo/C8zqynWW3khr9w38fLA/juhM//M+1TSK7YbUzao=; b=o7ERvBSlDC/CMXWe6gChaAtpjO
+	HF7TRv84xDCBQuiKRY0XxA4BD3JguVr+64dif07ShhLfB/5q3zznkXc104J17CzZuRehlfhYJKDlS
+	0JRx6deH0uqscHhz9eYHGyU+3NLdJDKC1ZV1MrzZ3xZEYP84X6AeYwuj5nnBYvy4+ufWDzeSkRiyO
+	ALfd/23Qkg0o7fuvYgtuGx7zJqnwfzPYyE2ldk27HkptH8DY+fqeGOlGgyF/vp1wouZ+kpcfwsaaI
+	+ONPJMkqzDc6kK6SqD7Y87XBsefrw9QP5TIdoXTi2xaIPFSDMQRAsV1QdIq+AxMtryn2cbrAz6gih
+	LbarGQ6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rda0r-0000000AlZ4-3czr
+	id 1rdaMT-0000000ArfZ-37vQ
 	for ath12k@archiver.kernel.org;
-	Fri, 23 Feb 2024 18:11:09 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 23 Feb 2024 18:33:29 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rda0m-0000000AlXO-47VV
-	for ath12k@lists.infradead.org;
-	Fri, 23 Feb 2024 18:11:09 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41N6wkl4025091;
-	Fri, 23 Feb 2024 18:11:01 GMT
+	id 1rdaMH-0000000Arc8-2m63;
+	Fri, 23 Feb 2024 18:33:28 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41NEnafk007025;
+	Fri, 23 Feb 2024 18:30:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=4veztuq0nbr+6eP96SMUiNpeVsWoA09x4TohJonoSk0=; b=dG
-	8KTtsUFoXFErX2VODxchl6CO0DB2mPZA89Nl6rxtyIlXmYE26ONDklIp4vOA/3zH
-	FHHxPt30xMt+JvZzRDgqUQje9xqI4/4Vwf2KErK25+eBfAVU2T7GO7i7qpscMhLR
-	ozcNhPPrLB6eR5/rt9WllwefDX2bxWipaPn4odEfc1llnXFqXbgXKJ4rZLf0Xnm1
-	tyj82rdeup7jJlOwmgMjRxVxXYDXS8EWJyvHSEbVruXmO9ak4KGpRF/sRTOnPfOe
-	LoOndOd3SrTUuvbhgGktkGxED5mKqqoj/m99dHFMHLJVKemlqwJS4wqMWIvFtRhN
-	g9FTfAI3Dkpp8+52q9vQ==
+	qcppdkim1; bh=Kfo/C8zqynWW3khr9w38fLA/juhM//M+1TSK7YbUzao=; b=SM
+	1IU5a4CNIWLmOnc+jXipb4Ga9eIJLWms0rnPxEXMwHDSoxe92W9Ew+cz2UneOT08
+	Iyi2XyxnbZDa1t3nXppWD2gBv5baFGSu5jpaJXHu6vAsxhujSo74jXQc1qhtrkyj
+	b1JYz/cxWMolVJrmsIH4767eZriXHsfPc1ASRZIKs+Vh4MImjLRwoZRf+c04IWja
+	WREgwfvGpnGGa1IxPu7qJXJNToVvZY2M73nvMYmrwiDnSM6QuEXhaYYJoUiQlYDP
+	AVkDtm/36vZFGTWQ5CsU0kJMULpTBDkWBl74wMVr5RZuQ0KaRJ0q/8gb9Xik4nP2
+	o7j3uPWaxue4GCbloFJw==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3weg88t7jd-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3we3233ydp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Feb 2024 18:11:01 +0000 (GMT)
+	Fri, 23 Feb 2024 18:30:49 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41NIB0LH012195
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41NIUm69006076
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Feb 2024 18:11:00 GMT
+	Fri, 23 Feb 2024 18:30:48 GMT
 Received: from [10.110.104.142] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 23 Feb
- 2024 10:11:00 -0800
-Message-ID: <f9e4b895-cf77-49a9-951b-05118ff5f633@quicinc.com>
-Date: Fri, 23 Feb 2024 10:10:59 -0800
+ 2024 10:30:46 -0800
+Message-ID: <0aed6cf2-17ae-45aa-b7ff-03da932ea4e0@quicinc.com>
+Date: Fri, 23 Feb 2024 10:30:45 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: add rcu lock for ath12k_wmi_p2p_noa_event()
+Subject: Re: [FYI][PATCH] tracing/treewide: Remove second parameter of
+ __assign_str()
 Content-Language: en-US
-To: Kang Yang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240223054505.438839-1-quic_kangyang@quicinc.com>
+To: Steven Rostedt <rostedt@goodmis.org>, LKML <linux-kernel@vger.kernel.org>,
+        Linux Trace Kernel <linux-trace-kernel@vger.kernel.org>
+CC: Masami Hiramatsu <mhiramat@kernel.org>,
+        Mathieu Desnoyers
+	<mathieu.desnoyers@efficios.com>,
+        Linus Torvalds
+	<torvalds@linux-foundation.org>,
+        <linuxppc-dev@lists.ozlabs.org>, <kvm@vger.kernel.org>,
+        <linux-block@vger.kernel.org>, <linux-cxl@vger.kernel.org>,
+        <linux-media@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <amd-gfx@lists.freedesktop.org>, <intel-gfx@lists.freedesktop.org>,
+        <intel-xe@lists.freedesktop.org>, <linux-arm-msm@vger.kernel.org>,
+        <freedreno@lists.freedesktop.org>, <virtualization@lists.linux.dev>,
+        <linux-rdma@vger.kernel.org>, <linux-pm@vger.kernel.org>,
+        <iommu@lists.linux.dev>, <linux-tegra@vger.kernel.org>,
+        <netdev@vger.kernel.org>, <linux-hyperv@vger.kernel.org>,
+        <ath10k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        <ath11k@lists.infradead.org>, <ath12k@lists.infradead.org>,
+        <brcm80211@lists.linux.dev>, <brcm80211-dev-list.pdl@broadcom.com>,
+        <linux-usb@vger.kernel.org>, <linux-bcachefs@vger.kernel.org>,
+        <linux-nfs@vger.kernel.org>, <ocfs2-devel@lists.linux.dev>,
+        <linux-cifs@vger.kernel.org>, <linux-xfs@vger.kernel.org>,
+        <linux-edac@vger.kernel.org>, <selinux@vger.kernel.org>,
+        <linux-btrfs@vger.kernel.org>, <linux-erofs@lists.ozlabs.org>,
+        <linux-f2fs-devel@lists.sourceforge.net>,
+        <linux-hwmon@vger.kernel.org>, <io-uring@vger.kernel.org>,
+        <linux-sound@vger.kernel.org>, <bpf@vger.kernel.org>,
+        <linux-wpan@vger.kernel.org>, <dev@openvswitch.org>,
+        <linux-s390@vger.kernel.org>, <tipc-discussion@lists.sourceforge.net>,
+        Julia
+ Lawall <Julia.Lawall@inria.fr>
+References: <20240223125634.2888c973@gandalf.local.home>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240223054505.438839-1-quic_kangyang@quicinc.com>
+In-Reply-To: <20240223125634.2888c973@gandalf.local.home>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -71,20 +100,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: vazHD-7QDz4mfzOlSwSNqtvoJZOyeMch
-X-Proofpoint-GUID: vazHD-7QDz4mfzOlSwSNqtvoJZOyeMch
+X-Proofpoint-ORIG-GUID: wCcVNA_rPgQQt00obewLDHJucphy8QWk
+X-Proofpoint-GUID: wCcVNA_rPgQQt00obewLDHJucphy8QWk
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-02-23_04,2024-02-23_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=696
- malwarescore=0 suspectscore=0 impostorscore=0 clxscore=1015 adultscore=0
- phishscore=0 priorityscore=1501 bulkscore=0 mlxscore=0 spamscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2402230133
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 bulkscore=0
+ impostorscore=0 priorityscore=1501 mlxscore=0 lowpriorityscore=0
+ clxscore=1011 suspectscore=0 malwarescore=0 mlxlogscore=793 adultscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2402230136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240223_101107_730307_E06D83E7 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240223_103326_465232_4828DEA1 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,36 +127,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/22/2024 9:45 PM, Kang Yang wrote:
-> Warning will appear when running P2P GO:
+On 2/23/2024 9:56 AM, Steven Rostedt wrote:
+> From: "Steven Rostedt (Google)" <rostedt@goodmis.org>
 > 
-> WARNING: suspicious RCU usage
-> drivers/net/wireless/ath/ath12k/mac.c:583 suspicious rcu_dereference_check() usage!
-> other info that might help us debug this:
-> rcu_scheduler_active = 2, debug_locks = 1
-> no locks held by swapper/0/0.
-> stack backtrace:
-> CPU: 0 PID: 0 Comm: swapper/0 Not tainted 6.8.0-rc4-wt-ath+ #4
-> Call Trace:
->  <IRQ>
->  dump_stack_lvl+0x82/0xa0
->  dump_stack+0x14/0x20
->  lockdep_rcu_suspicious+0x214/0x3b0
->  ath12k_mac_get_ar_by_vdev_id+0x192/0x220 [ath12k]
->  ath12k_wmi_op_rx+0x2d7/0x1b40 [ath12k]
+> [
+>    This is a treewide change. I will likely re-create this patch again in
+>    the second week of the merge window of v6.9 and submit it then. Hoping
+>    to keep the conflicts that it will cause to a minimum.
+> ]
 > 
-> ath12k_mac_get_ar_by_vdev_id() requires its callers to have called
-> rcu_read_lock(), but in ath12k_wmi_p2p_noa_event() it is called without
-> doing so, and hence the warning was triggered.
-> 
-> Add rcu_read_lock() and rcu_read_unlock() to avoid warning.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Fixes: 9411eecb60cb ("wifi: ath12k: implement handling of P2P NoA event")
-> Reported-by: Kalle Valo <quic_kvalo@quicinc.com>
-> Closes: https://lore.kernel.org/linux-wireless/87o7cusyvw.fsf@kernel.org/
-> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> With the rework of how the __string() handles dynamic strings where it
+> saves off the source string in field in the helper structure[1], the
+> assignment of that value to the trace event field is stored in the helper
+> value and does not need to be passed in again.
 
+Just curious if this could be done piecemeal by first changing the
+macros to be variadic macros which allows you to ignore the extra
+argument. The callers could then be modified in their separate trees.
+And then once all the callers have be merged, the macros could be
+changed to no longer be variadic.
 
