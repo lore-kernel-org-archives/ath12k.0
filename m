@@ -4,63 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A60EAC5478C
-	for <ath12k@archiver.kernel.org>; Tue, 27 Feb 2024 13:23:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC2C4C54798
+	for <ath12k@archiver.kernel.org>; Tue, 27 Feb 2024 13:55:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cO/yFaRDYdY9PnNwJeKgzEQDhEeY2nxIZbE3S6T4low=; b=SED3cG34RfDSOt+aPgiGu7Yn2f
-	yPkYtZHI934dxwMQsAhR2wjONFENy+7r6RDMo47y7uqU7XTQaQ8ICHD4vA7fwQj8BgGhI/rNRAOCt
-	yNDJlpY3ubsWaNnZbKLWNlMrjNho7uup7KnwN87obDc75Tj1VYk/2Y+XUGFd9kywfGmxnsDDLCVzd
-	tEfwVsJPhnIQN7/QREhYUHCRuV6M3kD3zqRmiLae7xG8yBORALoadedOqRN9CXndxrB7jPdQXvuVr
-	gumcrP2C7gC2Hii0elJiAbqYi3z3M/qajNpUD9UTSJFz5qVQq9iCy3Kstglcmzk7eq7jbwhcbbAZZ
-	6hp4kqWw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=I+0f1g1tzkVdDjmucwPA0uMYtrPDAcXmN//2NYtBeQQ=; b=S3tnOwLg3g9c9HZQYSqXBYufyS
+	xv2FS4kWAMwoZPKtWBQAfBPWQvlePKgbR2ax3KNol/7j0uumHZR0VMTKk09c8ON4d9tO8i0HVQamB
+	VqTWDkAN3YhF4zlFF7/KH0yhtHFeS2kq+XxOvPl3ui65KC8cJTchE8RwIqwQMIUStaZDXZzNk5q/5
+	QCfKar1nX2olE5dk8R6JnEUtHoI22lCy9SBDF/EMBWBQ3Ibym0LvOmT7qUtNp2Z5Vp04ITk8BqYId
+	yTSZ0iPjZnpql87NHET/zhOpwV2W062+weG1rlFzmkX5CE0LKXB+GYXO1nDMBMrz7Iter8HWDZ8pI
+	Q114Ulxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rexQT-00000005Mx6-1Pjq
+	id 1rexvJ-00000005TiG-3qsS
 	for ath12k@archiver.kernel.org;
-	Tue, 27 Feb 2024 13:23:17 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Tue, 27 Feb 2024 13:55:10 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rexQQ-00000005MvN-2D09
+	id 1rexv6-00000005Tcj-0g2W
 	for ath12k@lists.infradead.org;
-	Tue, 27 Feb 2024 13:23:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 2C3B5CE1A27;
-	Tue, 27 Feb 2024 13:23:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A887AC433C7;
-	Tue, 27 Feb 2024 13:23:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1709040184;
-	bh=TUkZkkUGbM11amjg6L2bFOhq4Ad1EaBH2oZivW9MLj8=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=qnjpRWG10Z1GRIM7uPI78mrinLBuTcKaqqj4xGZY0OLDrQKXbSZy8od7d2L2LEfqX
-	 K3n2hFb7Sl59E4Yb3v6D906va6CnV//7I1EE1PT1EbqKLQWSNk6PNOsbqUtgqKcWIr
-	 OwwRQbcWNaaSf228gp3jggrQg3Q1uN/56W72Wc2FpzGtft68Yegp3MBFOql2hB/Ix3
-	 5ipAMT0XpA3WXTpEI4JF3IHhQoKrimhQHod6me4IlIP+24fHbvT4UZXcqF/oubB8T1
-	 LVP0CyhQDcjQDvLWp6l4+wfNR+bNZRqRvZD47Li33tcsIGhHERlbLoQtZH3PnS92a2
-	 JAlHMO8sv/ukA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Lingbo Kong <quic_lingbok@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v4] wifi: ath12k: report tx bitrate for iw dev xxx
- station dump
-References: <20240219095802.1147-1-quic_lingbok@quicinc.com>
-	<87y1b7jkxu.fsf@kernel.org>
-	<6f39eb1c-97f7-4029-a5f2-5ab36ff0f0a6@quicinc.com>
-Date: Tue, 27 Feb 2024 15:23:01 +0200
-In-Reply-To: <6f39eb1c-97f7-4029-a5f2-5ab36ff0f0a6@quicinc.com> (Lingbo Kong's
-	message of "Tue, 27 Feb 2024 21:07:36 +0800")
-Message-ID: <877ciq9h3e.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Tue, 27 Feb 2024 13:54:58 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-5129e5b8cecso5236608e87.3
+        for <ath12k@lists.infradead.org>; Tue, 27 Feb 2024 05:54:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1709042092; x=1709646892; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=I+0f1g1tzkVdDjmucwPA0uMYtrPDAcXmN//2NYtBeQQ=;
+        b=n8kug5SN7Y24AF5ZyeQ0r2NVa2ys1V8hv3M2Wnp+NxPCAxgVw+sX3mZO3iME6FsUHD
+         BN5UaRQgFEvhSNAsFuil6PHBSJT5v06tbUKBfcCO5AjfmnzzcFLUWEm5GYVzp4569FQr
+         brjZWFb9KAYI3JNBYhBzC3M24sOUCQ+mizeGgMWplwXeUIrPDe+8v1JTQhyhT6XNyR4g
+         YB4I8xXwooBap1aO1qmPbTVY44Tt/5Zp8FE913+zX9MEO7v6aX/Y5PyIIsnx7eEEdbGN
+         KRFFoc1Sz7p2rNpgfil23bXmmgCBxWONuNJBswDUgD/eNghud2Kv/2mqa7xO3WwLqEPM
+         8pww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1709042092; x=1709646892;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=I+0f1g1tzkVdDjmucwPA0uMYtrPDAcXmN//2NYtBeQQ=;
+        b=EvUl22zNjECj5BcDv7lwW6XCtiRfyzKBi6VeH3+cTKCTTuIKymkhAgZ8hUhPDxWT/l
+         BNtiwLqLLu04PiyyCnP3xQsDcoOgluvK9FNMBkiLT2/ebCv7P4FXoV+HpXqlcADISni9
+         XH7LTli7ViueTXye+rt/Ei3dP7HO16bKx2kbMVhRtjGWFN0bHikJWsQ3tfyLoO5g4vJT
+         VOCsBGGbx3E88D4Jc7Yx8uwmLHNv9Tn2Ow6GXpVVAIs72w7/P3/zILGH5plEkx2fgLbC
+         TW547Fs180eUjS1Kmbv3ZzQrH44BGKG5a0+UNkwPUJ8oK2Pcraf8L4+h6wecMEOFqAe6
+         NpwQ==
+X-Gm-Message-State: AOJu0YxGo6VHNs0zX2zcwFltjYPEzYbpwIIefX04ZqPDEsrOpTgVu5OG
+	kj3lSIqH90ngClZhL+Mxa7wZxb6pUJUYi68X9ESz9Lj+7eyUPDu9jk2DPkz7lgKQpuZQ9cOU+V7
+	FlkcOJIx6dvwcISjjmorSLrcEXyXFVq97hx+B4w==
+X-Google-Smtp-Source: AGHT+IGOuDo0zXvmTqAu2Fm0n6j5seiS4SqWLb7/0ok0tqOeWFovEFsXMkh4PQBuQ/+OdO3dD+1R6mqChku1Yyp+ho8=
+X-Received: by 2002:ac2:4471:0:b0:513:1577:3d66 with SMTP id
+ y17-20020ac24471000000b0051315773d66mr179803lfl.64.1709042091588; Tue, 27 Feb
+ 2024 05:54:51 -0800 (PST)
 MIME-Version: 1.0
-Content-Type: text/plain
+From: Jun Nie <jun.nie@linaro.org>
+Date: Tue, 27 Feb 2024 21:54:40 +0800
+Message-ID: <CABymUCNgjWMmfBAWJtzsd96iw5o0nxO8K8pdK_YJjkyjv-1roQ@mail.gmail.com>
+Subject: Performance of WCN7850
+To: kvalo@kernel.org, quic_periyasa@quicinc.com, quic_kangyang@quicinc.com
+Cc: ath12k@lists.infradead.org, Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240227_052315_111189_1AC10534 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20240227_055457_239019_C82529DC 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,46 +85,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Lingbo Kong <quic_lingbok@quicinc.com> writes:
+Hi,
 
-> On 2024/2/26 23:37, Kalle Valo wrote:
->> Lingbo Kong <quic_lingbok@quicinc.com> writes:
->> 
->>> The tx bitrate of "iw dev xxx station dump" always show an invalid value
->>> "tx bitrate: 6.0MBit/s".
->>>
->>> To address this issue, parse the tx complete report from firmware and
->>> indicate the tx rate to mac80211.
->>>
->>> After that, "iw dev xxx station dump" show the correct tx bitrate such as:
->>> tx bitrate: 104.0 MBit/s MCS 13
->>> tx bitrate: 144.4 MBit/s MCS 15 short GI
->>> tx bitrate: 626.9 MBit/s 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0
->>> tx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
->>>
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>> Tested-on: QCN9274 hw2.0 PCI QCN9274 hw2.0 PCI
->>> WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->>>
->>> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
->> Please use full englist words like transmit instead of tx. Also the
->> title could be simplified to:
->> wifi: ath12k: report station mode transmit rate to user space
->> Here I assumed this only works in station mode. Or does this also
->> support AP and P2P mode? The commit message should explain that.
->> 
->
-> Ok, i will apply it in next version. Thanks for pointing out.
+I am trying to maximize the bandwidth of WCN7850. Does anyone know the
+performance status of WCN7850 in mainline? It's about 160Mbps in 6GHz
+band and ~600Mbps in 5GHz band on sm8650 platform in my test. The
+firmware is from below links:
+https://github.com/kvalo/ath11k-firmware/raw/master/ath12k-testing/WCN7850/hw2.0/board.bin
+https://github.com/kvalo/ath11k-firmware/raw/master/ath12k-testing/WCN7850/hw2.0/regdb.bin
 
-After rereading my comments maybe keep the title simple like:
+While it is ~940Mbps in both 5GHz and 6GHz band with
+Android/linux6.1.25, . But the firmware names are different per log,
+amss20.bin on Android. Not sure whether the driver is totally
+different for Android/linux6.1.25 and mainline.
 
-  wifi: ath12k: report station mode transmit rate
+Do you have any idea that the low performance on mainline is due to
+driver difference or TX/RX power configuration, or firmware version?
 
-But it would be good to clarify in the commit message what modes this is
-supported. And what hardware families support this.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Thanks for your input!
+Jun
 
