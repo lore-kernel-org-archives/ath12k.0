@@ -4,87 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0352EC54E49
-	for <ath12k@archiver.kernel.org>; Thu, 29 Feb 2024 15:53:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DA39C54E41
+	for <ath12k@archiver.kernel.org>; Thu, 29 Feb 2024 16:04:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BkIb/2DKZCK+gaU9hwZH7KCFlRv9mxSImPBsZYN2TIA=; b=J1EM7MMbpZAF++me0TkrNVQXxN
-	i2nrPGpBEoqUgmdCy0EPnefpS1Ysc9Oj1XlC9/9pAbQOX51yp3L/DOhF4g23nCcBKz6vr2Eu2B37N
-	do3G/exO1fSjKsu1LZeWLkeyDE9kGxP+dAGwPWrn+vx0c9kB5elfT/SgUzHq0b1Iq3vQ+Hwogphho
-	/rFRctHAgsvxigGSzRyfTOQiMM/5e7Ag0CgdJKBS8l6f16Q5psose6F3kDrezCzRwx4a6km+fj54z
-	FyHFZe5bRE9fRXqaV2jcuXdSqasmQnfLOpHqJorg7wHs/xWjbamWP2DBBqXdBaLHXXP6jNu79AK7k
-	3yBBnq+w==;
+	bh=mAViczRPJ5p+qxS5ox44uEAe0IBDf8zmhXVvPisl9iA=; b=fxGMjgJhloUob54htJDwtPvA0c
+	UUbW7l9KjjmanySwVrtkdB6EOjnjwsyGQP6eobcJ21dcHexoBDESZXxZImX6l5PY0xnvE6b1DrRbT
+	pUWbHAvY1IVzIgi1OaE1rk3Ns60j9SOoFv9/g/ChWHo3pZIx9pLKW0WcVKS7+cOd7kdMuCMG8+qGG
+	yDQVfhcY1iE0G3ra6YJKD3Ttyz3n03MwrEj91cST5zuhWM9OrtaAzq52Y1fExafr4melh+zczpLKv
+	0YVOIMaWUcT4YjAjO4fixk/Jj3f6L0KUpZ2LAw5aqw2eoLZTE84bTs5qf/Co1J1d47BtATruPp6SM
+	Iamxp8+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfiio-0000000E9Cl-2rb3
+	id 1rfitU-0000000ECNw-3VCe
 	for ath12k@archiver.kernel.org;
-	Thu, 29 Feb 2024 15:53:22 +0000
+	Thu, 29 Feb 2024 16:04:24 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfiil-0000000E9Ab-2gpq
+	id 1rfitS-0000000ECMo-1dCp
 	for ath12k@lists.infradead.org;
-	Thu, 29 Feb 2024 15:53:21 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41TEu8Pi028326;
-	Thu, 29 Feb 2024 15:53:15 GMT
+	Thu, 29 Feb 2024 16:04:24 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41TEtSpp005400;
+	Thu, 29 Feb 2024 16:04:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=BkIb/2DKZCK+gaU9hwZH7KCFlRv9mxSImPBsZYN2TIA=; b=nb
-	jWoXlqxhCJjQ5fKapSj65vjXce9CjVJyuVTB5PMuoG4mS/e23/Q1hg/rv1T+Lgsh
-	8OF2bowP1uJPlpms0FJ4vJ1vMhCXeP9I8vEi/tvEFIzdyVoge9VxrspXvZ8gPIC6
-	6Y3P5+8z0Gy34+PvPks5nPPTBIvNKVjhg8ujmqLgNeUinW7WkgehTcgWhyvT3S3I
-	1XBHu8YnpsksD3zQ7SAwh+YBLY0pbddRnGTTuv2bnbgTmNvEnL0S1MWnA5aRMxVI
-	Eh7fNWDjWTngcgSyYZDiaAzO2rxYtll5/Y2Me8yjv52IiGss/6RtlVv9xPBlmvGG
-	bqHb0s2TqX65w/uY8Y0A==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wjmcx1g7b-1
+	qcppdkim1; bh=mAViczRPJ5p+qxS5ox44uEAe0IBDf8zmhXVvPisl9iA=; b=cX
+	HIvJzqogtTJab44ncCjrUXHVBrLYMSqyiUzqPG749rPx0LrL6eaFPCAOcl1pXxYR
+	LeE2yp1+ya4mw4eZ73EPswJb+/UD2zrFYlc8joYdZXdl2W+jb1MtVWYDyF9XXg3q
+	JsmGTN9F59JUh0CIew+NbpNh6bk4IeA65JYcc3i+QqUo1qIoQSpNUh3QbBtsPz7v
+	ittHyBU1dgqNg5EGtpNce5qxLpdD16NXGNIKlclwKbaGvhYgP5J43THPEMdSRyqu
+	5kanaEmLMKQI7h/Kjgz8hf3xctKq6C3D+PcDTWQK8X5V3t7B9uubSxeAmb6sTokb
+	48jxjxVPp3pKh2yI2XOg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wjkkq9ng0-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Feb 2024 15:53:14 +0000 (GMT)
+	Thu, 29 Feb 2024 16:04:16 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41TFqk4V023081
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 41TG4Fqw009390
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Feb 2024 15:52:46 GMT
+	Thu, 29 Feb 2024 16:04:15 GMT
 Received: from [10.110.42.209] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 29 Feb
- 2024 07:52:45 -0800
-Message-ID: <ded15bd4-7b89-467e-829d-62b1067e1f03@quicinc.com>
-Date: Thu, 29 Feb 2024 07:52:44 -0800
+ 2024 08:04:15 -0800
+Message-ID: <3ce6c8f8-e009-433c-9a22-5dfc75388726@quicinc.com>
+Date: Thu, 29 Feb 2024 08:04:14 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: Performance of WCN7850
+Subject: Re: Multiple Qualcomm Hamilton cards on same host - none working
 Content-Language: en-US
-To: Jun Nie <jun.nie@linaro.org>, <kvalo@kernel.org>,
-        <quic_periyasa@quicinc.com>, <quic_kangyang@quicinc.com>
-CC: <ath12k@lists.infradead.org>, Neil Armstrong <neil.armstrong@linaro.org>
-References: <CABymUCNgjWMmfBAWJtzsd96iw5o0nxO8K8pdK_YJjkyjv-1roQ@mail.gmail.com>
+To: david Atkins <david@3adesign.co.uk>, Kalle Valo <kvalo@kernel.org>
+CC: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+References: <LO0P123MB40577FE30E1B6D72A554624BD6452@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+ <87a5ocqzil.fsf@kernel.org>
+ <LO0P123MB40574FC63D7EF7424ADB5589D65F2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <CABymUCNgjWMmfBAWJtzsd96iw5o0nxO8K8pdK_YJjkyjv-1roQ@mail.gmail.com>
+In-Reply-To: <LO0P123MB40574FC63D7EF7424ADB5589D65F2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Xcdt8wFqS7GK20I5ClPFMtMa3IT8UUwu
-X-Proofpoint-GUID: Xcdt8wFqS7GK20I5ClPFMtMa3IT8UUwu
+X-Proofpoint-ORIG-GUID: vTVwgiMefVh5z74hfnT0EvbkE6lbS92n
+X-Proofpoint-GUID: vTVwgiMefVh5z74hfnT0EvbkE6lbS92n
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-02-29_02,2024-02-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 malwarescore=0 mlxlogscore=999 bulkscore=0 phishscore=0
- clxscore=1015 suspectscore=0 impostorscore=0 spamscore=0 adultscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2402290122
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ spamscore=0 bulkscore=0 priorityscore=1501 mlxscore=0 mlxlogscore=999
+ lowpriorityscore=0 suspectscore=0 adultscore=0 malwarescore=0
+ clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2402290123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240229_075319_839974_3DC8F311 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20240229_080422_578891_28463750 
+X-CRM114-Status: GOOD (  12.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,35 +100,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/27/2024 5:54 AM, Jun Nie wrote:
+On 2/28/2024 11:21 PM, david Atkins wrote:
 > Hi,
 > 
-> I am trying to maximize the bandwidth of WCN7850. Does anyone know the
-> performance status of WCN7850 in mainline? It's about 160Mbps in 6GHz
-> band and ~600Mbps in 5GHz band on sm8650 platform in my test. The
-> firmware is from below links:
-> https://github.com/kvalo/ath11k-firmware/raw/master/ath12k-testing/WCN7850/hw2.0/board.bin
-> https://github.com/kvalo/ath11k-firmware/raw/master/ath12k-testing/WCN7850/hw2.0/regdb.bin
+> Update on this, with an Intel CPU the first NIC is found but the second fails so slightly different behaviour, I'll update bug registered with logs
+
+FYI on Linux Kernel mailing lists it is preferred to either have
+interleaved or bottom-posted responses.
+<https://docs.kernel.org/process/submitting-patches.html#use-trimmed-interleaved-replies-in-email-discussions>
+
 > 
-> While it is ~940Mbps in both 5GHz and 6GHz band with
-> Android/linux6.1.25, . But the firmware names are different per log,
-> amss20.bin on Android. Not sure whether the driver is totally
-> different for Android/linux6.1.25 and mainline.
+> I note there was a patch with a comment:
 > 
-> Do you have any idea that the low performance on mainline is due to
-> driver difference or TX/RX power configuration, or firmware version?
+> " * support having multiple identical PCI devices (firmware needs to
+>   have ATH12K_FW_FEATURE_MULTI_QRTR_ID) "
+> 
+> would this address the issue? and is the updated firmware available?
 
-To debug this issue the development team has asked:
-#1) Please change ath12k debug_mask to 0xffffffff
-#2) trigger association to 5G AP
-#3) reproduce throughput low issue with 5G AP
-#4) trigger association to 6G AP
-#5) reproduce throughput low issue with 6G AP
+New firmware would be required. Kalle and I are actively working with
+the firmware team to get updated firmware posted publicly.
 
-Then share the logs with me (redacting anything personal) and I'll pass
-them on to the developers.
+> In discussion with Qualcomm this week I think understood from them that the ath12k driver will not support Wi-Fi 7 in its current form, is this correct?
 
-Thanks
-/jeff
+The current driver has support for some of the WiFi 7 features but the
+major addition, multi-link operation, is not currently available.
 
 
