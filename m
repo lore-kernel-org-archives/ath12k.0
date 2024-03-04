@@ -4,87 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1233EC5475B
-	for <ath12k@archiver.kernel.org>; Fri,  1 Mar 2024 16:53:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D1ECC54E41
+	for <ath12k@archiver.kernel.org>; Mon,  4 Mar 2024 08:42:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gSI7a+FME0r5JfS4mRlk0m3zVoz17Jebk108aGve7yY=; b=gk33EJfIZ1g02vLl97BOwqHW67
-	LFV5BQlL1xzkDh/SUUXLljhwGzJ0uL3GED7bTGtGoQHsH6PEhYyXD4M3yFt4/sFY+8z9LdcwMXen2
-	Cg2e+psdK5aTq8udwkDNJQdGfwABQHgr7c4MvQskT/Ccfu4c3N0JKG1TCYNRovarXZiO0wvtJEqQE
-	QafgbkakBeJkgeVdV16QAnZPFpPfPwO1hXa0C3xKPszQKj8thDKuPrfU4PTMZlpI++Tqz8RRKWFKh
-	Qt9Ya4OJkIn5ICFWvVS2KT5LqDx42mioqyio7QmsFmnZ4TdZYPmH1U9+pIW7lKenNbOEiD0vrpCN2
-	+Tf1nzJw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gQnxJCGBSmzZ+S6U1W7Ysy6ly+i4D+aupCTEOqXfKJg=; b=pRCSJulN+TQsYHjL8gWGbV7Cn8
+	qupkqvqUVj3PaOS+sN0TOwoe7Grx4DDDHSfiIKM7bFhwLm34JoBJm5qUtHV6uYX+0e6TgD7DvT72c
+	1bUlcv8FG3yyjuUyF9H0Wd3R/ziw1Q/FDKgPIgZh35ZTwjW0U8wIPML+qkx2neb9+fZVGJrALstKy
+	F0sZDNOUfXCvsG4FSJMRwc1CF77WCYQZCruTTyUcXr49gbFGcgbLk8qcITO/JDzb2IITWUR+DyDhC
+	hC21ppDYaygJE93QGKeAvBGvvn/6lPaAvkXfXctyMGYjPPo8PKl2U/avH1NSaC0mDyw+d8eBB4TSW
+	tSKlQopQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rg68O-00000001D9A-37wL
+	id 1rh3u5-00000008B5b-2pv4
 	for ath12k@archiver.kernel.org;
-	Fri, 01 Mar 2024 16:53:20 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 04 Mar 2024 08:42:34 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rg68M-00000001D7T-0UQQ
+	id 1rh3u2-00000008B4U-0tyW
 	for ath12k@lists.infradead.org;
-	Fri, 01 Mar 2024 16:53:19 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 421F1HWv011155;
-	Fri, 1 Mar 2024 16:53:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=gSI7a+FME0r5JfS4mRlk0m3zVoz17Jebk108aGve7yY=; b=D/
-	1LtdOwt/q5kRjHFOSXSxtp4OkTIEGgpIX93cHAw4OJ0rp/rma+QYp9ycAH1pSX+g
-	rqBP/qrMveMQ8f/cUI1BvvxdFAMP8AQ0QZwIwJDn7HYnEQb4myyX4eYDsjpWt782
-	6sB2f9ZEBrc7KkcBcEAFBenrOFuEHmSnnbULNu9cZYUkIkY42dnefxb9/R3Ugg2V
-	B62s1wH40G1CV1QkqCjrJQgkJQzbM8ZKqDqi5SCEikuzcSfXiPG0ev/ySM7Sckhs
-	rW9sYSycN9MOg3YMPEz5wlDULd1lmosynkdZUqPS3q+9humEzFdhZS0HD7wHrEK0
-	UlJa0rncrYzwVIBgciSw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wkh9rg8n3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 01 Mar 2024 16:53:16 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 421GrFLO020600
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 1 Mar 2024 16:53:15 GMT
-Received: from [10.110.42.209] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Fri, 1 Mar
- 2024 08:53:15 -0800
-Message-ID: <6a91daf9-76ea-4379-8b12-1b9cb23b3869@quicinc.com>
-Date: Fri, 1 Mar 2024 08:53:14 -0800
+	Mon, 04 Mar 2024 08:42:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id E3236CE10F4;
+	Mon,  4 Mar 2024 08:42:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA214C433F1;
+	Mon,  4 Mar 2024 08:42:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1709541747;
+	bh=n39k5IWguKIPVo0AbP4RHmUCj+p7+SusDkiJx3jxedo=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=kryt/BlDzM82mbk9xjCjLCJ7jh0bDdZg9BvzjEFb9f9b/Q3XX3vOrPKU8iFjsEjyr
+	 6c/NpSEJq4RsXoEKgOa58+DTxR/FU/ogti/sv/YvfCCzRLL626Of+Nc9bHV6mKaxTq
+	 yHkQxDsQ2U3L1bbxsUqxQ2Z+ctGyj69aHdch2MS5cUML+7PTXfE+BcPXaadfDS8TRz
+	 CW9o3fGhmDHPYXBAuqwFITM6N9KCG3v0n+0LsQYv4Q2XFfsN9768Rts+AKZd3KDQZr
+	 2Rj56mEKEkLcuAGZH9sO5biBGG6uoXiiDAXCv97Pps+/XT0NfBOJNDrzzDgZOe3Q+p
+	 lnhel/MRssBZA==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jun Nie <jun.nie@linaro.org>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,  quic_periyasa@quicinc.com,
+  quic_kangyang@quicinc.com,  ath12k@lists.infradead.org,  Neil Armstrong
+ <neil.armstrong@linaro.org>
+Subject: Re: 6GHz AP association failure on WCN7850
+References: <CABymUCNgjWMmfBAWJtzsd96iw5o0nxO8K8pdK_YJjkyjv-1roQ@mail.gmail.com>
+	<ded15bd4-7b89-467e-829d-62b1067e1f03@quicinc.com>
+	<CABymUCOuxnJH6o15VFihx0xVNjcdaUtpaEuQO-NGHhjaEiLWbQ@mail.gmail.com>
+Date: Mon, 04 Mar 2024 10:42:23 +0200
+In-Reply-To: <CABymUCOuxnJH6o15VFihx0xVNjcdaUtpaEuQO-NGHhjaEiLWbQ@mail.gmail.com>
+	(Jun Nie's message of "Fri, 1 Mar 2024 17:14:37 +0800")
+Message-ID: <87o7buie1c.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: remove reserve member of wbm completion
- structure
-Content-Language: en-US
-To: <quic_tmariyap@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240301091936.12054-1-quic_tmariyap@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240301091936.12054-1-quic_tmariyap@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: EPY_dc2vQcVFAaJkaDEmy_gLL8kYu42q
-X-Proofpoint-ORIG-GUID: EPY_dc2vQcVFAaJkaDEmy_gLL8kYu42q
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-01_17,2024-03-01_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- bulkscore=0 mlxlogscore=999 malwarescore=0 impostorscore=0 phishscore=0
- spamscore=0 mlxscore=0 adultscore=0 clxscore=1015 lowpriorityscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2403010140
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240301_085318_359486_16285E1C 
-X-CRM114-Status: GOOD (  16.21  )
+X-CRM114-CacheID: sfid-20240304_004230_474881_72728090 
+X-CRM114-Status: GOOD (  12.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,40 +76,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/1/2024 1:19 AM, quic_tmariyap@quicinc.com wrote:
-> From: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
-> 
-> In tx completion, status desc obtained from offsetting the address
-> from wbm ring. Having reserved 8 bytes in status desc offsets the
-> address twice and read the values from the incorrect address.
-> So, removing the reserved 8 bytes from wbm completion structure.
+Jun Nie <jun.nie@linaro.org> writes:
 
-Why not instead remove the addition of HTT_TX_WBM_COMP_STATUS_OFFSET in
-ath12k_dp_tx_process_htt_tx_complete()?
+> I see there is association failure many times when I try to connect my
+> 6GHz AP with latest mainline Linux. Does anyone also observe it too?
+> Any newer firmware than WLAN.HMT.2.0-01734 is available? Or we
+> recommend any specific version firmware?
+>
+> The issue only happens with this version firmware:
+>   [    9.441624] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
+>    [   10.058822] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4
+> board_id 0x3d soc_id 0x40170200
+>    [   10.082876] ath12k_pci 0000:01:00.0: fw_version 0x200a06c6
+> fw_build_timestamp 2023-09-20 03:43 fw_build_id
+> QC_IMAGE_VERSION_STRING=WLAN.HMT.2.0-01734-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+>
+> I do not see the issue with firmware:
+> [    7.896737] ath12k_pci 0000:01:00.0: fw_version 0x1005bc12
+> fw_build_timestamp 2022-10-11 12:13 fw_build_id
+> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>
+> Detail log can be found at:
+> https://www.dropbox.com/scl/fi/jgn1zbnw44i1vypbjxl0v/ath12k-6GHz-association-fail-log.tgz?rlkey=pg2ifnzcttzimz7vaxb7tuc6w&dl=0
 
-That would remove an unnecessary operation in the data path.
+    List:    ath12k@lists.infradead.org
+    From:    jun.nie@linaro.org
+    Subject: Re: Performance of WCN7850
+    Reason:  Message body is too big: 1294317 bytes with a limit of 500 KB
 
-> 
-> Also this patch is applicable for WCN7850.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/dp.h | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-> index eb2dd408e081..d01fc0b0c9a5 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp.h
-> +++ b/drivers/net/wireless/ath/ath12k/dp.h
-> @@ -387,7 +387,6 @@ struct ath12k_dp {
->  #define HTT_TX_WBM_COMP_INFO2_ACK_RSSI		GENMASK(31, 24)
->  
->  struct htt_tx_wbm_completion {
-> -	__le32 rsvd0[2];
->  	__le32 info0;
->  	__le32 info1;
->  	__le32 info2;
+BTW Jun, please don't submit 1 MB files to our lists. That's just too
+much. IMHO 100 kB should be the maximum even if the list has 500 kB
+limit.
 
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
