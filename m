@@ -4,91 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD4E8C54E49
-	for <ath12k@archiver.kernel.org>; Wed,  6 Mar 2024 04:44:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E990C5475B
+	for <ath12k@archiver.kernel.org>; Wed,  6 Mar 2024 06:45:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2qH83HxliV1uVpQGC6xK96ulfWTpQIzrVHaZ2J7NW+k=; b=ZrMOdEPi0vOx2Bn8lVc/uaQk9M
-	Qec1oK+cw2a7pbsFrsX8sdTWfk0x3sbAIgeCRLpq8TQxWau701NkK8mn2dtYeQtmcIWLEEs6jsmqF
-	gQKzHMevs4PP/wprbw44mVbF4Ti5mU7IcqJrsuCfFQo/fWVX8EaqPmSNE28LSRcd/Awa0uyKsyW8X
-	EnhAyXak+cHdvaQ9+EfrCT3pY5GiF/F+KCFEJ+U4qgZXuYF0wySvQJcUL6y3Nd5Uz0wDxdmq6b86s
-	YvGhDLWF7obGRskZDXvV1HFcv8O8MdQV0iDDBdJTJ7ddQi0lbasK8XQJLJjeqT+2K2/52TAENOcdI
-	932dz7sQ==;
+	bh=pYQmoaEpyY3JnzV572+CYB11wSAtEBpddatDgzdYMJE=; b=NNKYoG/TUnC1GeX7YUeeA0n0CA
+	CDB0b1++F5Mq3fMZRymx4VYQlhWRBWMC0tclUBAUYqZhEaIXoVGH4qQrwHt/OTXoFWFZX831olhZD
+	64O7QWv2wSOrZs238573YFsV23N2xk8muym710xbHnyZKSxvZ0jhyHiGhf4K+5d6hRezcrWanftaT
+	QGY5CNjuMAL5NFosYCTvLVPMimym51qYzlLUDmMywah6WXfxVBG2XnVYB3mow/G0egeQ8eMp9uA1p
+	TZVPT4Oqym+UBLB3GN+o9E0JVXhvcTdSHaBrXWreMMeQbg0blE415lXeV3r+nF4Uc0AMXRJWgX41B
+	glpvm7rA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhj8y-0000000GHuE-1KE0
+	id 1rhl1w-0000000GaqK-0M66
 	for ath12k@archiver.kernel.org;
-	Wed, 06 Mar 2024 04:44:40 +0000
+	Wed, 06 Mar 2024 06:45:32 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhj8u-0000000GHtX-1qaY
+	id 1rhl1s-0000000Gape-1uW8
 	for ath12k@lists.infradead.org;
-	Wed, 06 Mar 2024 04:44:38 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4260g51q014707;
-	Wed, 6 Mar 2024 04:44:33 GMT
+	Wed, 06 Mar 2024 06:45:30 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4265iKfG014119;
+	Wed, 6 Mar 2024 06:45:23 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:from:to:cc:references
+	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=2qH83HxliV1uVpQGC6xK96ulfWTpQIzrVHaZ2J7NW+k=; b=Ql
-	jbtKB+3AttpWtH6S2P9UsKnXEMT+sIdowqq7s5OU2u3K1RtCmVYyz+uilSrCWl3q
-	vnhaUyfqAXMdt1Mj9MAduVMIB61pmK9o4dR+zzXgfcNoAeO7H+Hh+eeRAfETyQEy
-	PIqcQmCuPKUMC4apR7avCI2wNwJk628/b39bsOu0/jCCfbMFAfvJ1nNdZR8hJsam
-	hqSJjmnMWhioVLG8989E7PLxRrwD69kPL9UEB/wbl2CAafCkCIfYUjGxXtGFr8Cn
-	yXf5Q0iuzXyuFxAT99RnsG4+QJcxI2ijmdwSvJmm5Ste0VN4NBEWbzezmuReKjQk
-	FJlX+oTWokbAoWmGuYNA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wp028adfm-1
+	qcppdkim1; bh=pYQmoaEpyY3JnzV572+CYB11wSAtEBpddatDgzdYMJE=; b=Oy
+	ACk0K0TY/V/WTOviDm8XCFjq0RiEI7v4b4NJTqvZ/pSZMpH7wzoR2ImlQfoFWrX3
+	CISnKvEchEjYCvx9vzSPuHlx2t1rH39aAQCliU91AgFXpDe1o/LKzNZFtLXsAAoG
+	zpZae4AISvKNai1Wu25pQqZX7go+JcUFtWauhqzP3TrDtWg/ATMqCbBk5zHp1yn+
+	80BA1TPW0+sDHcwat0/U9nKRadzwosPE7JeHHq+FZie1R+4FhxJoOlvktYOathvi
+	hPBObnR9EX7DQRb/64uBoD4lTwLIrgwQ3KFhpmval5Zw9RbXH2bPOsVpIUD+tsEe
+	Fla+2ToviMP8rCMy23ag==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wpgdsrada-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 06 Mar 2024 04:44:33 +0000 (GMT)
+	Wed, 06 Mar 2024 06:45:23 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4264iWDO028802
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4266jMxa001790
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 6 Mar 2024 04:44:32 GMT
+	Wed, 6 Mar 2024 06:45:22 GMT
 Received: from [10.253.9.240] (10.80.80.8) by nalasex01b.na.qualcomm.com
  (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 5 Mar
- 2024 20:44:31 -0800
-Message-ID: <c9af14d1-2202-493c-9dae-7e3924e4e149@quicinc.com>
-Date: Wed, 6 Mar 2024 12:44:29 +0800
+ 2024 22:45:21 -0800
+Message-ID: <2b978117-cd72-42ca-a5d0-fd7a7c644e5c@quicinc.com>
+Date: Wed, 6 Mar 2024 14:45:18 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/4] wifi: mac80211: mlme: fix verification of puncturing
- bitmap obtained from AP
+Subject: Re: 6GHz AP association failure on WCN7850
 Content-Language: en-US
+To: Jun Nie <jun.nie@linaro.org>
+CC: Jeff Johnson <quic_jjohnson@quicinc.com>, <kvalo@kernel.org>,
+        <quic_periyasa@quicinc.com>, <ath12k@lists.infradead.org>,
+        Neil Armstrong
+	<neil.armstrong@linaro.org>
+References: <CABymUCNgjWMmfBAWJtzsd96iw5o0nxO8K8pdK_YJjkyjv-1roQ@mail.gmail.com>
+ <ded15bd4-7b89-467e-829d-62b1067e1f03@quicinc.com>
+ <CABymUCOuxnJH6o15VFihx0xVNjcdaUtpaEuQO-NGHhjaEiLWbQ@mail.gmail.com>
+ <25c22014-bb26-414e-a29f-8ed97c1ef465@quicinc.com>
+ <CABymUCMntFfKPRZyv+PzmNB3WejG7v5Y1-AYhXRK1o++U_xnRQ@mail.gmail.com>
+ <aa92159e-d2e3-44d4-8514-2c81591cff31@quicinc.com>
+ <CABymUCM-9a6z-PPYm=HaUREZ4rjxaZtqxZB7Via4h_vM2wK2QA@mail.gmail.com>
 From: Kang Yang <quic_kangyang@quicinc.com>
-To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>,
-        Kalle Valo <kvalo@kernel.org>, Kalle Valo <quic_kvalo@quicinc.com>
-CC: <linux-wireless@vger.kernel.org>
-References: <20230928055022.9670-1-quic_kangyang@quicinc.com>
- <20230928055022.9670-2-quic_kangyang@quicinc.com>
- <08ff36664eb34bce8e7beb425233b1e8d4a4971c.camel@sipsolutions.net>
- <d85bd8f7-a6aa-6ff7-09a8-57005e4d0779@quicinc.com>
-In-Reply-To: <d85bd8f7-a6aa-6ff7-09a8-57005e4d0779@quicinc.com>
+In-Reply-To: <CABymUCM-9a6z-PPYm=HaUREZ4rjxaZtqxZB7Via4h_vM2wK2QA@mail.gmail.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: MlkG6IrN481YpYMktXDB74gg_Hwrnhya
-X-Proofpoint-ORIG-GUID: MlkG6IrN481YpYMktXDB74gg_Hwrnhya
+X-Proofpoint-ORIG-GUID: B-JE-cLsu308knDXLBfS7YDlWl0Oe1Fx
+X-Proofpoint-GUID: B-JE-cLsu308knDXLBfS7YDlWl0Oe1Fx
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-06_01,2024-03-05_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 mlxlogscore=999 suspectscore=0 phishscore=0 spamscore=0
- malwarescore=0 mlxscore=0 clxscore=1011 bulkscore=0 impostorscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2403060035
+ definitions=2024-03-06_04,2024-03-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
+ lowpriorityscore=0 mlxlogscore=999 impostorscore=0 mlxscore=0 spamscore=0
+ adultscore=0 priorityscore=1501 phishscore=0 suspectscore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2402120000
+ definitions=main-2403060052
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240305_204436_511881_88E2641A 
-X-CRM114-Status: GOOD (  31.96  )
+X-CRM114-CacheID: sfid-20240305_224528_528134_1204824D 
+X-CRM114-Status: GOOD (  18.06  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,160 +109,148 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-Due to Johannes's refactor of Puncturing bitmap, this patchset can be 
-abandoned now.
-
-
-Will prepare a new patch about puncturing bitmap for ath12k.
-
-
-On 10/19/2023 11:25 AM, Kang Yang wrote:
-> 
-> 
-> On 10/18/2023 7:39 PM, Johannes Berg wrote:
->>>   static bool ieee80211_config_puncturing(struct ieee80211_link_data 
->>> *link,
->>>                       const struct ieee80211_eht_operation *eht_oper,
->>>                       u64 *changed)
->>>   {
->>> +    struct cfg80211_chan_def rx_chandef = link->conf->chandef;
->>>       u16 bitmap = 0, extracted;
->>> +    u8 bw = 0;
->>>       if ((eht_oper->params & IEEE80211_EHT_OPER_INFO_PRESENT) &&
->>>           (eht_oper->params &
->>> @@ -5684,6 +5706,28 @@ static bool ieee80211_config_puncturing(struct 
->>> ieee80211_link_data *link,
->>>           const u8 *disable_subchannel_bitmap = info->optional;
->>>           bitmap = get_unaligned_le16(disable_subchannel_bitmap);
->>> +        bw = u8_get_bits(info->control, IEEE80211_EHT_OPER_CHAN_WIDTH);
->>> +        rx_chandef.width = ieee80211_rx_bw_to_nlwidth(bw);
->>
->> But looking here, it clearly _doesn't_ make sense. IEEE80211_STA_RX_BW_*
->> is a purely internal API, has nothing to do with the spec.
->>
->> All this might even be "accidentally correct", but it really isn't right
->> at all - the values in IEEE80211_EHT_OPER_CHAN_WIDTH are
->> IEEE80211_EHT_OPER_CHAN_WIDTH_*, not IEEE80211_STA_RX_BW_*.
->>
-> 
-> 
-> 
-> Oh, sorry that i didn't notice IEEE80211_EHT_OPER_CHAN_WIDTH_*, will 
-> replace them.
-> 
-> 
+On 3/6/2024 10:25 AM, Jun Nie wrote:
+> Kang Yang <quic_kangyang@quicinc.com> 于2024年3月5日周二 16:30写道：
 >>
 >>
->> More generally though, I don't even understand the change.
-> 
-> 
-> During assoc, downgrade may happen in func ieee80211_config_bw(). In 
-> this situation, the bandwidth in beacon and the bandwidth after 
-> downgrade(chandef->width, maybe i should call it local bandwidth during 
-> below context, will use this name in next version) during assoc will be 
-> different.
-> 
-> The change is based on this point.
-> 
-> 
 >>
->>> +        if (rx_chandef.width == NL80211_CHAN_WIDTH_80)
->>> +            rx_chandef.center_freq1 =
->>> +                ieee80211_channel_to_frequency(info->ccfs0,
->>> +                                   rx_chandef.chan->band);
->>> +        else if (rx_chandef.width == NL80211_CHAN_WIDTH_160 ||
->>> +             rx_chandef.width == NL80211_CHAN_WIDTH_320)
->>> +            rx_chandef.center_freq1 =
->>> +                ieee80211_channel_to_frequency(info->ccfs1,
->>> +                                   rx_chandef.chan->band);
->>> +    }
->>> +
->>> +    if (!cfg80211_valid_disable_subchannel_bitmap(&bitmap,
->>> +                              &rx_chandef)) {
-> 
-> 
-> Here i change you code 
-> cfg80211_valid_disable_subchannel_bitmap(&bitmap,&link->conf->chandef) to
-> cfg80211_valid_disable_subchannel_bitmap(&bitmap,&rx_chandef)
-> 
-> As described above, downgrade may happen before enter 
-> ieee80211_config_puncturing(), so the bandwidth in link->conf->chandef 
-> may be different with bandwidth in beacon.
-> 
-> Here, the bitmap you used is from eht_oper in beacon, but the bandwidth 
-> you used is local bandwidth. They are not match. This is the first issue.
-> 
-> 
->>> +        link_info(link,
->>> +              "Got an invalid disable subchannel bitmap from AP %pM: 
->>> bitmap = 0x%x, bw = 0x%x. disconnect\n",
->>> +              link->u.mgd.bssid,
->>> +              bitmap,
->>> +              rx_chandef.width);
->>> +        return false;
->>>       }
->>>       extracted = ieee80211_extract_dis_subch_bmap(eht_oper,
->> // I've filled in the context here in the patch
-> 
-> 
-> Here is move the cfg80211_valid_disable_subchannel_bitmap() before the 
-> ieee80211_extract_dis_subch_bmap(), cause i think check should done 
-> before extract.
-> 
-> This is the second issue i said(perhaps not a issue).
-> 
-> 
-> 
->>>                                                       
->>> &link->conf->chandef,
->>>                                                       bitmap);
+>> On 3/4/2024 6:14 PM, Jun Nie wrote:
+>>> Kang Yang <quic_kangyang@quicinc.com> 于2024年3月1日周五 19:42写道：
+>>>>
+>>>>
+>>>>
+>>>> On 3/1/2024 5:14 PM, Jun Nie wrote:
+>>>>> Hi,
+>>>>>
+>>>>> I see there is association failure many times when I try to connect my
+>>>>> 6GHz AP with latest mainline Linux. Does anyone also observe it too?
+>>>>> Any newer firmware than WLAN.HMT.2.0-01734 is available? Or we
+>>>>> recommend any specific version firmware?
+>>>>>
+>>>>> The issue only happens with this version firmware:
+>>>>>      [    9.441624] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
+>>>>>       [   10.058822] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4
+>>>>> board_id 0x3d soc_id 0x40170200
+>>>>>       [   10.082876] ath12k_pci 0000:01:00.0: fw_version 0x200a06c6
+>>>>> fw_build_timestamp 2023-09-20 03:43 fw_build_id
+>>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.2.0-01734-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+>>>>>
+>>>>
+>>>> Wrong firmware.
+>>>>
+>>>> We use WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 and
+>>>> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4,
+>>>>
+>>>> https://github.com/kvalo/ath11k-firmware/tree/master/ath12k-testing/WCN7850/hw2.0
+>>>>
+>>>>> I do not see the issue with firmware:
+>>>>> [    7.896737] ath12k_pci 0000:01:00.0: fw_version 0x1005bc12
+>>>>> fw_build_timestamp 2022-10-11 12:13 fw_build_id
+>>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>>>>>
+>>>>
+>>>> That's it, i recommend you to use
+>>>> WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3. It's new one.
+>>>>
+>>>>
+>>>>
+>>>>> Detail log can be found at:
+>>>>> https://www.dropbox.com/scl/fi/jgn1zbnw44i1vypbjxl0v/ath12k-6GHz-association-fail-log.tgz?rlkey=pg2ifnzcttzimz7vaxb7tuc6w&dl=0
+>>>>>
+>>>>> Jun
 >>>
->>>          /* accept if there are no changes */
->>>          if (!(*changed & BSS_CHANGED_BANDWIDTH) &&
->>>              extracted == link->conf->eht_puncturing)
->>>                  return true;
+>>> Hi Kang,
+>>>
+>>> I see wlan0 failure with below log with firmware version
+>>> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4.
 >>
->> but ... ieee80211_extract_dis_subch_bmap actually already takes the
->> bandwidth from eht_oper into account!
-> 
-> Yes, the ieee80211_extract_dis_subch_bmap realy takes the bandwidth from 
-> eht_oper into account, and the local_bw in this func is the local 
-> bandwidth i discuss.
-> 
-> You already notice the difference between bandwidth from eht_oper and 
-> local bandwidth in ieee80211_extract_dis_subch_bmap(). I think you 
-> should also take it into account when you use 
-> cfg80211_valid_disable_subchannel_bitmap(), right?
-> 
-> BTW, do you want to verify the bitmap from eht_oper, or the extracted 
-> bitmap?
-> 
-> Anyway, whether you want to verify the bitmap from eht_oper or extracted 
-> bitmap in cfg80211_valid_disable_subchannel_bitmap(), the bitmap and 
-> bandwidth must correspond.
-> 
-> 
-> 
->>> -    if (!cfg80211_valid_disable_subchannel_bitmap(&bitmap,
->>> -                              &link->conf->chandef)) {
 >>
->> So are you saying that the real bug is that we're missing to update the
->> link->conf->chandef with the EHT operation from the assoc response?
+>> Can you check if you completely replaces our upstream version?
 >>
->> But you didn't fix that issue ... so not sure?
-> 
-> 
-> I have described my patch with the comments above, maybe i should make 
-> my commit log more coherent.
-> 
-> 
-> Besides, this is you first version, i made some comments on Nov. 21, 
-> 2022, 7:29 a.m. Maybe you already forget them.
-> https://patchwork.kernel.org/project/linux-wireless/patch/20220325140859.e48bf244f157.I3547481d49f958389f59dfeba3fcc75e72b0aa6e@changeid/
-> 
-> 
+>> It is best not to mix it with other versions
+>> (board.bin/board.bin/regdb.bin/amss.bin/m3.bin).
 >>
->> johannes
+>> Mixed use may also have an impact on throughput.
 >>
+> Yeah, tried to replace all binaries from below path, but no help.
+> https://github.com/kvalo/ath11k-firmware/tree/master/ath12k-testing/WCN7850/hw2.0
+> https://github.com/kvalo/ath11k-firmware/tree/master/ath12k-testing/WCN7850/hw2.0/WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
+
+So, both WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4. and 
+WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 have this problem? 
+Their log is the same?
+
+
+
+
+> What's your test platform? I use sm8650-hdk. Not sure whether there is something
+> platform dependent.
+
+Our test platform is x86 devices(normal x86 PC or x86 board).
+
+These binary can only be uploaded after detailed testing on x86 platform.
+
+
+> These binary was tested OK with Linux mainline on some QCOM platform, right?
+> 
+
+
+
+
+Your platform is arm. Actually, we never test whether upstream firmware 
+of ath12k can work well on other platforms. Any errors could happen.
+
+
+
+Did you download this firmware by git clone? Or just download manually.
+
+Please retry with git clone if you download manually.
+
+
+
+
+
+
+
+>>
+>>
+>>
+>>
+>>> Do I need any patch outside mainline? Actually, I add below 2 patches
+>>> for 6GHz band.
+>>> afb7a22d9e22 wifi: ath12k: build 6 GHz regd based on vdev type and 6
+>>> GHz power type
+>>> 6c60469f0bae wifi: ath12k: add support to select 6 GHz Regulatory type
+>>>
+>>
+>>
+>> If problem still exist, please revert these patches and check again.
+> 
+> Reverting them does not help as expected.
+>>
+>>
+>>
+>>
+>>>
+>>> [    6.194535] ath12k_pci 0000:01:00.0: setting mhi state: INIT(0)
+>>> [    6.195067] ath12k_pci 0000:01:00.0: setting mhi state: POWER_ON(2)
+>>> [    6.195069] mhi mhi0: Requested to power ON
+>>> [    6.195083] mhi mhi0: Power on setup success
+>>> [    6.196541] mhi mhi0: Image transfer failed
+>>> [    6.196559] mhi mhi0: Reg: ERROR_CODE value: 0xef128100
+>>> [    6.196574] mhi mhi0: Reg: ERROR_DBG1 value: 0xff7fc000
+>>> [    6.196588] mhi mhi0: Reg: ERROR_DBG2 value: 0x0
+>>> [    6.196601] mhi mhi0: Reg: ERROR_DBG3 value: 0x1988
+>>> [    6.196631] mhi mhi0: MHI did not load image over BHI, ret: -5
+>>>
+>>
+>> BTW, is it a probability problem?
+> 
+> It happens 100%.
+>>
+>>> Kalle,
+>>> Thanks for the reminder of attachment size limitation!
+>>>
+>>> Jun
 
