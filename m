@@ -4,62 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09BCFC54E4A
-	for <ath12k@archiver.kernel.org>; Fri,  8 Mar 2024 15:04:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6F46C54798
+	for <ath12k@archiver.kernel.org>; Sat,  9 Mar 2024 17:59:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mPSj4Bv04Y8h0kY3s+SB3X4mJGHMA5X7NA+HYrjuVDI=; b=4QuF1MkNIkbF1sQJz+PdZ0+8nS
-	J8w6OiVim6tZHPKB+9on+qEVbD/7pgg6kuMDbspWEYPT1IlZWlPTSFa6eSSOmi6JB58dv12SkM5u6
-	8Kwhgrc4o5tFgknIfwuXAPrXXP3XEOaRK68zCMWfgHKRIw9ER/bFPZYdsQW0fcPsfoseQXbjARavh
-	YVRLl8RmILuUT7+kZ6rQv6CDRax3PkqJ2plS3c6/1BTePzn/FljJ00JxqdmvOdO9hXi5Jy7E6oSmb
-	4+MDSdGpQCIHTKZV7xf4vwJTrFwp0bF/wazDhJqjOQqCLIkJIubZNXZ8g90zAE6hHaMmUwuRMVA5T
-	uUn1405g==;
+	bh=RfEPUE/s2ovA9Fjpc51gZmR3vhNMiXC763Bj0mwC0dY=; b=47HgAY/RZbqZ8kTHDo8QVUAD9V
+	RbN19sLdas37WDTpTfVWOrVts9YJzp0SYngkJV2tdpo+CjDiOR4rv5Hk8UcqXA8zO3CcTAPaqagKA
+	4xzmjsM1tLad7/QzoQ/M5751ErSO8XtBT8m09peP7oHSkGbwmnhVSRbtkC38RveyYQ8fKoO3sxroG
+	Sf2cj3MTQ7Y/vXhaKV+oEN2hsEfyqQRA64/gWbxM8iWroHSlPD8AsztJ0BErrqMpkcrkWuLwr3QFN
+	S6UmKivaCJAAN78jiVFofrAe7JTtDxe1XCVhp5TdZVY10J6NGdDM+9hKJ7nqh75Ap31dyDvf2NHcf
+	B8yXxn8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ribmJ-00000009k7t-2xrw
+	id 1rj0yl-0000000Du8K-15TG
 	for ath12k@archiver.kernel.org;
-	Fri, 08 Mar 2024 15:04:55 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Sat, 09 Mar 2024 17:59:27 +0000
+Received: from mail.as201155.net ([185.84.6.188])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ribmG-00000009k6S-1mZw
+	id 1rj0yh-0000000Du5s-2orX
 	for ath12k@lists.infradead.org;
-	Fri, 08 Mar 2024 15:04:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 97690CE1E6B;
-	Fri,  8 Mar 2024 15:04:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5256C433F1;
-	Fri,  8 Mar 2024 15:04:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1709910289;
-	bh=u/gEmAT3XX/DsAa4AUjUG98Bpzl+laVZfO8peR0n210=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=bfO4RrXqhIgk5Y3Zz22vssvmYfEFr40dBNHw61CgBrEnrrVMuEKusLu0LEfPuHjBt
-	 chjC30xmTvOb2AANaYLkVdsJrUq7KvE91mRVizNJNX0FQiK2JeIiofoMJpP20qgHNh
-	 d2cO7mI6RQZg49d4QrAdWvMRzU9zbx2ey0ZrsODMf4Uz6+toX806RYyLEVYQYuRpsi
-	 Zm7f+cnA8jRvXNqCLBOQM/0/sv/zgsozoIvesBMB4M7XrINoTjN4Oi6oSTxAA6KUo4
-	 skc5g3BPx2/F6Oo7wZnt6i8T9YwrkRmyVg+oxyZs0aG+2UcPc3GCI6erX8HOQMlsiJ
-	 0yF2K+OlunjOg==
-Content-Type: text/plain; charset="utf-8"
+	Sat, 09 Mar 2024 17:59:25 +0000
+Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]:57564 helo=webmail.newmedia-net.de)
+	by mail.as201155.net with esmtps  (TLS1) tls TLS_RSA_WITH_AES_256_CBC_SHA
+	(Exim 4.96)
+	(envelope-from <s.gottschall@dd-wrt.com>)
+	id 1rj0yY-0002s4-1t;
+	Sat, 09 Mar 2024 18:59:15 +0100
+X-SASI-Hits: BODYTEXTP_SIZE_3000_LESS 0.000000, BODY_SIZE_2000_2999 0.000000,
+	BODY_SIZE_5000_LESS 0.000000, BODY_SIZE_7000_LESS 0.000000,
+	CTE_8BIT 0.000000, DKIM_ALIGNS 0.000000, DKIM_SIGNATURE 0.000000,
+	HTML_00_01 0.050000, HTML_00_10 0.050000, IN_REP_TO 0.000000,
+	LEGITIMATE_SIGNS 0.000000, MSGID_SAMEAS_FROM_HEX_844412 0.100000,
+	MSG_THREAD 0.000000, MULTIPLE_RCPTS 0.100000, MULTIPLE_REAL_RCPTS 0.000000,
+	NO_FUR_HEADER 0.000000, OUTBOUND 0.000000, OUTBOUND_SOPHOS 0.000000,
+	REFERENCES 0.000000, SENDER_NO_AUTH 0.000000, SUSP_DH_NEG 0.000000,
+	URI_WITH_PATH_ONLY 0.000000, __ANY_URI 0.000000, __BODY_NO_MAILTO 0.000000,
+	__BOUNCE_CHALLENGE_SUBJ 0.000000, __BOUNCE_NDR_SUBJ_EXEMPT 0.000000,
+	__BULK_NEGATE 0.000000, __CC_NAME 0.000000, __CC_NAME_DIFF_FROM_ACC 0.000000,
+	__CC_REAL_NAMES 0.000000, __CP_URI_IN_BODY 0.000000, __CT 0.000000,
+	__CTE 0.000000, __CT_TEXT_PLAIN 0.000000, __DKIM_ALIGNS_1 0.000000,
+	__DKIM_ALIGNS_2 0.000000, __DQ_NEG_DOMAIN 0.000000, __DQ_NEG_HEUR 0.000000,
+	__DQ_NEG_IP 0.000000, __FORWARDED_MSG 0.000000, __FRAUD_PARTNERSHIP 0.000000,
+	__FROM_DOMAIN_NOT_IN_BODY 0.000000, __FROM_NAME_NOT_IN_BODY 0.000000,
+	__FUR_RDNS_SOPHOS 0.000000, __HAS_CC_HDR 0.000000, __HAS_FROM 0.000000,
+	__HAS_MSGID 0.000000, __HAS_REFERENCES 0.000000,
+	__HEADER_ORDER_FROM 0.000000, __HIGHBIT_ASCII_MIX 0.000000,
+	__HTTPS_URI 0.000000, __IN_REP_TO 0.000000, __MAIL_CHAIN 0.000000,
+	__MIME_BOUND_CHARSET 0.000000, __MIME_TEXT_ONLY 0.000000,
+	__MIME_TEXT_P 0.000000, __MIME_TEXT_P1 0.000000, __MIME_VERSION 0.000000,
+	__MOZILLA_USER_AGENT 0.000000, __MSGID_HEX_844412 0.000000,
+	__MULTIPLE_RCPTS_CC_X2 0.000000, __MULTIPLE_RCPTS_TO_X2 0.000000,
+	__MULTIPLE_URI_TEXT 0.000000, __NO_HTML_TAG_RAW 0.000000,
+	__OUTBOUND_SOPHOS_FUR 0.000000, __OUTBOUND_SOPHOS_FUR_IP 0.000000,
+	__OUTBOUND_SOPHOS_FUR_RDNS 0.000000, __RCVD_PASS 0.000000,
+	__REFERENCES 0.000000, __SANE_MSGID 0.000000, __SCAN_D_NEG 0.000000,
+	__SCAN_D_NEG2 0.000000, __SCAN_D_NEG_HEUR 0.000000,
+	__SCAN_D_NEG_HEUR2 0.000000, __SUBJ_ALPHA_END 0.000000,
+	__SUBJ_ALPHA_NEGATE 0.000000, __SUBJ_REPLY 0.000000,
+	__TO_MALFORMED_2 0.000000, __TO_NAME 0.000000,
+	__TO_NAME_DIFF_FROM_ACC 0.000000, __TO_REAL_NAMES 0.000000,
+	__URI_ENDS_IN_SLASH 0.000000, __URI_HAS_HYPHEN_USC 0.000000,
+	__URI_IN_BODY 0.000000, __URI_MAILTO 0.000000, __URI_NOT_IMG 0.000000,
+	__URI_NO_WWW 0.000000, __URI_NS 0.000000, __URI_WITH_PATH 0.000000,
+	__USER_AGENT 0.000000, __X_MAILSCANNER 0.000000
+X-SASI-Probability: 8%
+X-SASI-RCODE: 200
+X-SASI-Version: Antispam-Engine: 5.1.4, AntispamData: 2024.3.9.173017
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com; s=mikd;
+	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID; bh=RfEPUE/s2ovA9Fjpc51gZmR3vhNMiXC763Bj0mwC0dY=;
+	b=Q/Eu5PgnXLQwMSES/d9nQ2JI7Flke2Sqa7KXKzVVIhJRf/fQMghpO9E1iIyejOBRY40V7H2b+bthUWYbumHEIkmos8UgQNNiw6rC9ENP6BYUmLgMSrwCZlJ15nCUTsrdcWViSQ+xmdQ2SxWQnvwmwTLhEUSuCzD65iB9pHyDd0Y=;
+Message-ID: <3b57d932-0848-40f4-ab2d-a8d4afe11df1@dd-wrt.com>
+Date: Sat, 9 Mar 2024 18:58:47 +0100
 MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: remove obsolete struct wmi_start_scan_arg
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240226-ath12k-obsolete-wmi_start_scan_arg-v1-1-07b0b563cb27@quicinc.com>
-References: <20240226-ath12k-obsolete-wmi_start_scan_arg-v1-1-07b0b563cb27@quicinc.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>,
- <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <170991028648.1311983.8441436934552157832.kvalo@kernel.org>
-Date: Fri,  8 Mar 2024 15:04:48 +0000 (UTC)
+User-Agent: Mozilla Thunderbird Beta
+Subject: Re: New staging repos for ath1*k firmware
+To: Kalle Valo <kvalo@kernel.org>, Robert Marko <robert.marko@sartura.hr>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,
+ ath10k <ath10k@lists.infradead.org>, ath11k <ath11k@lists.infradead.org>,
+ ath12k <ath12k@lists.infradead.org>,
+ linux-wireless <linux-wireless@vger.kernel.org>
+References: <bac97f31-4a70-4c4c-8179-4ede0b32f869@quicinc.com>
+ <CA+HBbNFQ+25u_PK2j3vYtiCZwv+shVAVeAHKqQCwhyCopORt4Q@mail.gmail.com>
+ <874jdigf76.fsf@kernel.org>
+From: Sebastian Gottschall <s.gottschall@dd-wrt.com>
+In-Reply-To: <874jdigf76.fsf@kernel.org>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+Received-SPF: pass (webmail.newmedia-net.de: localhost is always allowed.) client-ip=127.0.0.1; envelope-from=s.gottschall@dd-wrt.com; helo=webmail.newmedia-net.de;
+X-SA-Exim-Connect-IP: 127.0.0.1
+X-SA-Exim-Mail-From: s.gottschall@dd-wrt.com
+X-SA-Exim-Scanned: No (on webmail.newmedia-net.de); SAEximRunCond expanded to false
+X-NMN-MailScanner-Information: Please contact the ISP for more information
+X-NMN-MailScanner-ID: 1rj0yD-000FpE-At
+X-NMN-MailScanner: Found to be clean
+X-NMN-MailScanner-From: s.gottschall@dd-wrt.com
+X-Received: from localhost.localdomain ([127.0.0.1] helo=webmail.newmedia-net.de)
+	by webmail.newmedia-net.de with esmtp (Exim 4.72)
+	(envelope-from <s.gottschall@dd-wrt.com>)
+	id 1rj0yD-000FpE-At; Sat, 09 Mar 2024 18:58:53 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240308_070452_757041_E6223917 
-X-CRM114-Status: UNSURE (   5.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240309_095923_891709_5C2DCC99 
+X-CRM114-Status: GOOD (  15.80  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,24 +123,49 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-> ath12k inherited struct wmi_start_scan_arg from ath11k. However, in
-> ath12k, this struct is unused -- struct ath12k_wmi_scan_req_arg is
-> used for this functionality. So remove the unused struct.
-> 
-> No functional changes, compile tested only.
-> 
-> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Am 07.03.2024 um 17:49 schrieb Kalle Valo:
+> Robert Marko <robert.marko@sartura.hr> writes:
+>
+>> On Wed, Mar 6, 2024 at 8:23 PM Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
+>>
+>>> Historically, prior to being incorporated into the linux-firmware
+>>> project, firmware for kernel.org ath1*k drivers has been first published
+>>> to Kalle's GitHub:
+>>> https://github.com/kvalo/ath10k-firmware
+>>> https://github.com/kvalo/ath11k-firmware
+>>> (ath12k firmware was pushed to the ath11k-firmware repo on a temporary
+>>> basis in anticipation of this move)
+>>>
+>>> But in order to have repos with multiple maintainers, as well as to have
+>>> a hosting platform with more control, we have moved to CodeLinaro:
+>>> https://git.codelinaro.org/clo/ath-firmware/ath10k-firmware
+>>> https://git.codelinaro.org/clo/ath-firmware/ath11k-firmware
+>>> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware
+>>>
+>>> Note that most people should not care about this -- normally you should
+>>> use the firmware that is in the official linux-firmware repo:
+>>> https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
+>>>
+>>> You should only need to access the staging repos if you need a previous
+>>> version to work around an issue, or if you are testing new firmware that
+>>> is supposed to fix a problem that you've reported.
+>>>
+>>> Please let Kalle & I know if you have any issues with these new repos!
+>> Can I please ask for IPQ6018 firmware to be updated to 2.9.0.1 as well?
+>>
+>> We have added IPQ6018 support to OpenWrt but we are forced to use the old 2.4
+>> firmware since anything newer is crashing on IPQ6018, we had the same issue on
+>> IPQ8074 but it was fixed with 2.9.0.1 firmware.
+>>
+>> Even for IPQ8074, there is newer 2.9.0.1 firmware that is only
+>> available as part of
+>> QSDK and the community would benefit from being able to use it.
+> We are working on getting the AP chipset firmwares updated but
+> unfortunately no news yet.
+why isnt qca releasing the latest firmwares at all. i mean we all know 
+that the qca networking tree contains way newer firmwares for all 
+chipsets since a long time
 
-Patch applied to ath-next branch of ath.git, thanks.
-
-4cd6eb606f02 wifi: ath12k: remove obsolete struct wmi_start_scan_arg
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240226-ath12k-obsolete-wmi_start_scan_arg-v1-1-07b0b563cb27@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+>
 
