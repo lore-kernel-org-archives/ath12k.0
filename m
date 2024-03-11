@@ -4,111 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6F46C54798
-	for <ath12k@archiver.kernel.org>; Sat,  9 Mar 2024 17:59:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D935C5475B
+	for <ath12k@archiver.kernel.org>; Mon, 11 Mar 2024 09:19:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RfEPUE/s2ovA9Fjpc51gZmR3vhNMiXC763Bj0mwC0dY=; b=47HgAY/RZbqZ8kTHDo8QVUAD9V
-	RbN19sLdas37WDTpTfVWOrVts9YJzp0SYngkJV2tdpo+CjDiOR4rv5Hk8UcqXA8zO3CcTAPaqagKA
-	4xzmjsM1tLad7/QzoQ/M5751ErSO8XtBT8m09peP7oHSkGbwmnhVSRbtkC38RveyYQ8fKoO3sxroG
-	Sf2cj3MTQ7Y/vXhaKV+oEN2hsEfyqQRA64/gWbxM8iWroHSlPD8AsztJ0BErrqMpkcrkWuLwr3QFN
-	S6UmKivaCJAAN78jiVFofrAe7JTtDxe1XCVhp5TdZVY10J6NGdDM+9hKJ7nqh75Ap31dyDvf2NHcf
-	B8yXxn8A==;
+	bh=cpUQxwBTnZDQfcOX+Oo9aGF8jSCpbH8XaaCaA85BWBA=; b=mnIUZdaqp29AGMKERAYKItNBlo
+	+Gx8BdR5D+m6ac9Xc7rJe5QHBgK+hki9CBMki/kHGVB7xbcNTOUYsvaqf+9cWGa2aX3fohDCcdQTD
+	x64Y66+GUMp7qUT1ol6xZPVvwJAvnJqPJb2dDwytoy0i1SBpXnP23sm4xwwfRBjuOZ+i5Eb1vRPXo
+	EtmUQoMGEGR42JWngj89dzR8kwY2b5N5WDmbF9y1IfIBmiKsDeU7XNwZ9Xgg48vAWd7KG9ipSjZnb
+	M/wUVJniB9bPgyoEXOGOMUTzYy5U04SeJEJCsK5ahq3mofUTr1dsgOod/kFbzbCJhzcthGrluw/1v
+	u69+lBsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rj0yl-0000000Du8K-15TG
+	id 1rjboq-00000000o81-3eHJ
 	for ath12k@archiver.kernel.org;
-	Sat, 09 Mar 2024 17:59:27 +0000
-Received: from mail.as201155.net ([185.84.6.188])
+	Mon, 11 Mar 2024 09:19:40 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rj0yh-0000000Du5s-2orX
+	id 1rjbok-00000000o57-1meZ
 	for ath12k@lists.infradead.org;
-	Sat, 09 Mar 2024 17:59:25 +0000
-Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]:57564 helo=webmail.newmedia-net.de)
-	by mail.as201155.net with esmtps  (TLS1) tls TLS_RSA_WITH_AES_256_CBC_SHA
-	(Exim 4.96)
-	(envelope-from <s.gottschall@dd-wrt.com>)
-	id 1rj0yY-0002s4-1t;
-	Sat, 09 Mar 2024 18:59:15 +0100
-X-SASI-Hits: BODYTEXTP_SIZE_3000_LESS 0.000000, BODY_SIZE_2000_2999 0.000000,
-	BODY_SIZE_5000_LESS 0.000000, BODY_SIZE_7000_LESS 0.000000,
-	CTE_8BIT 0.000000, DKIM_ALIGNS 0.000000, DKIM_SIGNATURE 0.000000,
-	HTML_00_01 0.050000, HTML_00_10 0.050000, IN_REP_TO 0.000000,
-	LEGITIMATE_SIGNS 0.000000, MSGID_SAMEAS_FROM_HEX_844412 0.100000,
-	MSG_THREAD 0.000000, MULTIPLE_RCPTS 0.100000, MULTIPLE_REAL_RCPTS 0.000000,
-	NO_FUR_HEADER 0.000000, OUTBOUND 0.000000, OUTBOUND_SOPHOS 0.000000,
-	REFERENCES 0.000000, SENDER_NO_AUTH 0.000000, SUSP_DH_NEG 0.000000,
-	URI_WITH_PATH_ONLY 0.000000, __ANY_URI 0.000000, __BODY_NO_MAILTO 0.000000,
-	__BOUNCE_CHALLENGE_SUBJ 0.000000, __BOUNCE_NDR_SUBJ_EXEMPT 0.000000,
-	__BULK_NEGATE 0.000000, __CC_NAME 0.000000, __CC_NAME_DIFF_FROM_ACC 0.000000,
-	__CC_REAL_NAMES 0.000000, __CP_URI_IN_BODY 0.000000, __CT 0.000000,
-	__CTE 0.000000, __CT_TEXT_PLAIN 0.000000, __DKIM_ALIGNS_1 0.000000,
-	__DKIM_ALIGNS_2 0.000000, __DQ_NEG_DOMAIN 0.000000, __DQ_NEG_HEUR 0.000000,
-	__DQ_NEG_IP 0.000000, __FORWARDED_MSG 0.000000, __FRAUD_PARTNERSHIP 0.000000,
-	__FROM_DOMAIN_NOT_IN_BODY 0.000000, __FROM_NAME_NOT_IN_BODY 0.000000,
-	__FUR_RDNS_SOPHOS 0.000000, __HAS_CC_HDR 0.000000, __HAS_FROM 0.000000,
-	__HAS_MSGID 0.000000, __HAS_REFERENCES 0.000000,
-	__HEADER_ORDER_FROM 0.000000, __HIGHBIT_ASCII_MIX 0.000000,
-	__HTTPS_URI 0.000000, __IN_REP_TO 0.000000, __MAIL_CHAIN 0.000000,
-	__MIME_BOUND_CHARSET 0.000000, __MIME_TEXT_ONLY 0.000000,
-	__MIME_TEXT_P 0.000000, __MIME_TEXT_P1 0.000000, __MIME_VERSION 0.000000,
-	__MOZILLA_USER_AGENT 0.000000, __MSGID_HEX_844412 0.000000,
-	__MULTIPLE_RCPTS_CC_X2 0.000000, __MULTIPLE_RCPTS_TO_X2 0.000000,
-	__MULTIPLE_URI_TEXT 0.000000, __NO_HTML_TAG_RAW 0.000000,
-	__OUTBOUND_SOPHOS_FUR 0.000000, __OUTBOUND_SOPHOS_FUR_IP 0.000000,
-	__OUTBOUND_SOPHOS_FUR_RDNS 0.000000, __RCVD_PASS 0.000000,
-	__REFERENCES 0.000000, __SANE_MSGID 0.000000, __SCAN_D_NEG 0.000000,
-	__SCAN_D_NEG2 0.000000, __SCAN_D_NEG_HEUR 0.000000,
-	__SCAN_D_NEG_HEUR2 0.000000, __SUBJ_ALPHA_END 0.000000,
-	__SUBJ_ALPHA_NEGATE 0.000000, __SUBJ_REPLY 0.000000,
-	__TO_MALFORMED_2 0.000000, __TO_NAME 0.000000,
-	__TO_NAME_DIFF_FROM_ACC 0.000000, __TO_REAL_NAMES 0.000000,
-	__URI_ENDS_IN_SLASH 0.000000, __URI_HAS_HYPHEN_USC 0.000000,
-	__URI_IN_BODY 0.000000, __URI_MAILTO 0.000000, __URI_NOT_IMG 0.000000,
-	__URI_NO_WWW 0.000000, __URI_NS 0.000000, __URI_WITH_PATH 0.000000,
-	__USER_AGENT 0.000000, __X_MAILSCANNER 0.000000
-X-SASI-Probability: 8%
-X-SASI-RCODE: 200
-X-SASI-Version: Antispam-Engine: 5.1.4, AntispamData: 2024.3.9.173017
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com; s=mikd;
-	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID; bh=RfEPUE/s2ovA9Fjpc51gZmR3vhNMiXC763Bj0mwC0dY=;
-	b=Q/Eu5PgnXLQwMSES/d9nQ2JI7Flke2Sqa7KXKzVVIhJRf/fQMghpO9E1iIyejOBRY40V7H2b+bthUWYbumHEIkmos8UgQNNiw6rC9ENP6BYUmLgMSrwCZlJ15nCUTsrdcWViSQ+xmdQ2SxWQnvwmwTLhEUSuCzD65iB9pHyDd0Y=;
-Message-ID: <3b57d932-0848-40f4-ab2d-a8d4afe11df1@dd-wrt.com>
-Date: Sat, 9 Mar 2024 18:58:47 +0100
+	Mon, 11 Mar 2024 09:19:36 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-513b022a238so344711e87.0
+        for <ath12k@lists.infradead.org>; Mon, 11 Mar 2024 02:19:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1710148770; x=1710753570; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=cpUQxwBTnZDQfcOX+Oo9aGF8jSCpbH8XaaCaA85BWBA=;
+        b=adSgMWyZQAxI0FTawMjQX0fMSyYoohkEktXBAogNvZrImVBHa6/2G+cT9dD9XVsAK5
+         O1oG4cfv9b3uEvG+jkNovWBQPrCAu0YtLcmD/8dERIR9Its/IWfA5JMhLQ4ooZd6ZoQd
+         idQzR05JUdmqonXQU3rrH7cZZv7FXMMRMbqqc4qbvsUuCy75OOH8zsZ0mBvUWwgbxUrw
+         jYpYrEiEzQ+NAvPL3F3wl2ftrwDqSiuCpd6BfFCsPHNTUELQC8lzBWmzuppZtzeE3S/J
+         s6iI9D4S/PDGzeOexrZTC0q/YkHAs1mOhFavB3wJxWKdITd7z7RbGlseyptuuA4wU6dm
+         Icdw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1710148770; x=1710753570;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=cpUQxwBTnZDQfcOX+Oo9aGF8jSCpbH8XaaCaA85BWBA=;
+        b=iZ022bTXOSSOReMPjop2fWaYE/cB0EB8lkH/5E9CHrSsHpygpiE0yxaXVva2kSBrCy
+         JNJLh0thCJ1rSttkCfx4QO1U8u1wLUNMi2ZeY1eFPnfK2eghMQvgCrzy0NULxviuEmok
+         1yW307S6mRzSwNDCvY4macuZ9WcBwooKCu1QrFvXnQPSI1L0AV9iaNkxW8j6gX5hDhc9
+         2vX45f7xrvuJLb8d617whtntAJ0OAM/3E2bsMODMrWd1J6HFSCQGncm465edp1Invu/p
+         QQ/2TiPjI6nUf5X8JNvzhp671isZqVxejnmaXeBG8xWUzCjhWHqDZ/lVdlZGQ+TnBqLS
+         hd2Q==
+X-Forwarded-Encrypted: i=1; AJvYcCW1A86QCrx3TvRLAYVVIvdAqRqzR0opn2VociBGjvZdeTyyQ1DOCO8GvzQQwgFtkB5ve83QLh6lq8HX2zuBwC1umqjzKhCIUJoWYg==
+X-Gm-Message-State: AOJu0YxaDw9nmSS+DWgjMQOswqEl5MyzKGYhPga2oDIiqp1n3yZjKmoj
+	nw6r8aMaGoHMIOiP5NcqNfcHBoSNwZUpzZ3BFbTC8fujDpiJ7Vt0GOQazVMlRj//I+60NNdQJhK
+	kTdct3jQosyo3HE+gSqRohwGWRbZMpHHtWRBbBUBxk+lVCTWhc6w=
+X-Google-Smtp-Source: AGHT+IHTt/de6L0hXwKuI3CZiXJNCh3/lcxpVg+d58aFmcBt+SvPHICjZs0KYt1uDFjCLNR6+EZc/yp42aMo/W4Q60U=
+X-Received: by 2002:a05:6512:31c5:b0:513:a91c:69f0 with SMTP id
+ j5-20020a05651231c500b00513a91c69f0mr1923085lfe.67.1710148769954; Mon, 11 Mar
+ 2024 02:19:29 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird Beta
-Subject: Re: New staging repos for ath1*k firmware
-To: Kalle Valo <kvalo@kernel.org>, Robert Marko <robert.marko@sartura.hr>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,
- ath10k <ath10k@lists.infradead.org>, ath11k <ath11k@lists.infradead.org>,
- ath12k <ath12k@lists.infradead.org>,
- linux-wireless <linux-wireless@vger.kernel.org>
-References: <bac97f31-4a70-4c4c-8179-4ede0b32f869@quicinc.com>
- <CA+HBbNFQ+25u_PK2j3vYtiCZwv+shVAVeAHKqQCwhyCopORt4Q@mail.gmail.com>
- <874jdigf76.fsf@kernel.org>
-From: Sebastian Gottschall <s.gottschall@dd-wrt.com>
-In-Reply-To: <874jdigf76.fsf@kernel.org>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-Received-SPF: pass (webmail.newmedia-net.de: localhost is always allowed.) client-ip=127.0.0.1; envelope-from=s.gottschall@dd-wrt.com; helo=webmail.newmedia-net.de;
-X-SA-Exim-Connect-IP: 127.0.0.1
-X-SA-Exim-Mail-From: s.gottschall@dd-wrt.com
-X-SA-Exim-Scanned: No (on webmail.newmedia-net.de); SAEximRunCond expanded to false
-X-NMN-MailScanner-Information: Please contact the ISP for more information
-X-NMN-MailScanner-ID: 1rj0yD-000FpE-At
-X-NMN-MailScanner: Found to be clean
-X-NMN-MailScanner-From: s.gottschall@dd-wrt.com
-X-Received: from localhost.localdomain ([127.0.0.1] helo=webmail.newmedia-net.de)
-	by webmail.newmedia-net.de with esmtp (Exim 4.72)
-	(envelope-from <s.gottschall@dd-wrt.com>)
-	id 1rj0yD-000FpE-At; Sat, 09 Mar 2024 18:58:53 +0100
+References: <CABymUCNgjWMmfBAWJtzsd96iw5o0nxO8K8pdK_YJjkyjv-1roQ@mail.gmail.com>
+ <ded15bd4-7b89-467e-829d-62b1067e1f03@quicinc.com> <CABymUCN0c9HK3vC3ZFxfXkV9Ezcqwq41J4vGSkpsz09sMDL8rw@mail.gmail.com>
+In-Reply-To: <CABymUCN0c9HK3vC3ZFxfXkV9Ezcqwq41J4vGSkpsz09sMDL8rw@mail.gmail.com>
+From: Jun Nie <jun.nie@linaro.org>
+Date: Mon, 11 Mar 2024 17:19:18 +0800
+Message-ID: <CABymUCMsHDViQ=qfyamdkpTutrXoRuhto88iQsRo6TcgDKnWZQ@mail.gmail.com>
+Subject: Re: Performance of WCN7850
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: kvalo@kernel.org, quic_periyasa@quicinc.com, quic_kangyang@quicinc.com, 
+	ath12k@lists.infradead.org, Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240309_095923_891709_5C2DCC99 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20240311_021934_511440_517ACE8A 
+X-CRM114-Status: GOOD (  18.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,49 +92,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-Am 07.03.2024 um 17:49 schrieb Kalle Valo:
-> Robert Marko <robert.marko@sartura.hr> writes:
+Jun Nie <jun.nie@linaro.org> =E4=BA=8E2024=E5=B9=B43=E6=9C=881=E6=97=A5=E5=
+=91=A8=E4=BA=94 16:15=E5=86=99=E9=81=93=EF=BC=9A
 >
->> On Wed, Mar 6, 2024 at 8:23 PM Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
->>
->>> Historically, prior to being incorporated into the linux-firmware
->>> project, firmware for kernel.org ath1*k drivers has been first published
->>> to Kalle's GitHub:
->>> https://github.com/kvalo/ath10k-firmware
->>> https://github.com/kvalo/ath11k-firmware
->>> (ath12k firmware was pushed to the ath11k-firmware repo on a temporary
->>> basis in anticipation of this move)
->>>
->>> But in order to have repos with multiple maintainers, as well as to have
->>> a hosting platform with more control, we have moved to CodeLinaro:
->>> https://git.codelinaro.org/clo/ath-firmware/ath10k-firmware
->>> https://git.codelinaro.org/clo/ath-firmware/ath11k-firmware
->>> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware
->>>
->>> Note that most people should not care about this -- normally you should
->>> use the firmware that is in the official linux-firmware repo:
->>> https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
->>>
->>> You should only need to access the staging repos if you need a previous
->>> version to work around an issue, or if you are testing new firmware that
->>> is supposed to fix a problem that you've reported.
->>>
->>> Please let Kalle & I know if you have any issues with these new repos!
->> Can I please ask for IPQ6018 firmware to be updated to 2.9.0.1 as well?
->>
->> We have added IPQ6018 support to OpenWrt but we are forced to use the old 2.4
->> firmware since anything newer is crashing on IPQ6018, we had the same issue on
->> IPQ8074 but it was fixed with 2.9.0.1 firmware.
->>
->> Even for IPQ8074, there is newer 2.9.0.1 firmware that is only
->> available as part of
->> QSDK and the community would benefit from being able to use it.
-> We are working on getting the AP chipset firmwares updated but
-> unfortunately no news yet.
-why isnt qca releasing the latest firmwares at all. i mean we all know 
-that the qca networking tree contains way newer firmwares for all 
-chipsets since a long time
+> Jeff Johnson <quic_jjohnson@quicinc.com> =E4=BA=8E2024=E5=B9=B42=E6=9C=88=
+29=E6=97=A5=E5=91=A8=E5=9B=9B 23:53=E5=86=99=E9=81=93=EF=BC=9A
+> >
+> > On 2/27/2024 5:54 AM, Jun Nie wrote:
+> > > Hi,
+> > >
+> > > I am trying to maximize the bandwidth of WCN7850. Does anyone know th=
+e
+> > > performance status of WCN7850 in mainline? It's about 160Mbps in 6GHz
+> > > band and ~600Mbps in 5GHz band on sm8650 platform in my test. The
+> > > firmware is from below links:
+> > > https://github.com/kvalo/ath11k-firmware/raw/master/ath12k-testing/WC=
+N7850/hw2.0/board.bin
+> > > https://github.com/kvalo/ath11k-firmware/raw/master/ath12k-testing/WC=
+N7850/hw2.0/regdb.bin
+> > >
+> > > While it is ~940Mbps in both 5GHz and 6GHz band with
+> > > Android/linux6.1.25, . But the firmware names are different per log,
+> > > amss20.bin on Android. Not sure whether the driver is totally
+> > > different for Android/linux6.1.25 and mainline.
+> > >
+> > > Do you have any idea that the low performance on mainline is due to
+> > > driver difference or TX/RX power configuration, or firmware version?
+> >
+> > To debug this issue the development team has asked:
+> > #1) Please change ath12k debug_mask to 0xffffffff
+> > #2) trigger association to 5G AP
+> > #3) reproduce throughput low issue with 5G AP
+> > #4) trigger association to 6G AP
+> > #5) reproduce throughput low issue with 6G AP
+> >
+> > Then share the logs with me (redacting anything personal) and I'll pass
+> > them on to the developers.
+> >
+> > Thanks
+> > /jeff
+> >
+Hi Jeff,
+The latest finding is that 6GHz TX performance of wcn7850 is as we talked a=
+bout.
+But the RX performance wcn7850 is better than 5GHz case. So the direction
+impacts a lot. Not sure whether the bottoleneck is in scheduling side, or a=
+ny
+configuration on TX power.
 
->
+> Jun
 
