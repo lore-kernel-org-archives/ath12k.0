@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4717AC54E67
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AA92C54E66
 	for <ath12k@archiver.kernel.org>; Tue, 12 Mar 2024 09:04:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,54 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2ooT2xNwMhbWwrEQmrl62I+wO7+i9J6o798XT7Cmwm4=; b=VJEJIPNb1zhCXb8ArLLT2GwWiO
-	8tFD+kb+NgmO2XperTmiyIfHCb4uZ93oemL3nO5qwHMzievD7zGCNCMiymSi67HgXR/dq0gv6uQCf
-	LuV8kWS5zfBDgTZX+uY8dxb4BsmNInQS+a6LquZ7R/kmp1oBpv2lSEioXfM9QQDwGwzzGiFLrjmr1
-	UF63e2Ne71svUZa1+eGUEGbLVEeP5+zkc7g1Aw3lqgihsCEJgAT8Vu+p9rGtDNNSOACFtRGYth0Sg
-	P7h7otuoc5P7+WOeJ9B81lSpsAjCi7xgRSUKvAYDSlBJgMIo6TmoOshwP3L/7TmGxktJJYAjnymXU
-	UMNkgbjQ==;
+	bh=tUM/Ju9aK4iSOwpxhxl3AvnD03TmbsIcqpCil7BxX/8=; b=EEgTsxda6GhLEpkCDvsH7xCIgJ
+	TlnMk8EIjBKvsI0YWSjGQsjzr7bHOdtvOgu+bwWa0eixX89eLM8suelJsHHKOVbpy0OVmMfVrlC4t
+	iPbagXPMF337szVVS80bE3xJI9BoXiKDChulupib6hVon8PbZVGxURX4sHdcaT0TLrD0laNFhizJo
+	zLiI87THq+VwGt/+KiubPfmFiJ6lRcdIRzeVVeirAObpLwboz6T7cdW48DwkvazBUDRe4zUDbLPGL
+	AxjC0OqSALFmE7CfKTeK97zETJDpsMjExrU67HMGa0NqRrBw0kYVJoV9QayQYnIBWMGlclWPQPxcW
+	zMKX5E/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjy42-000000051JI-3Zt3
+	id 1rjy43-000000051Jr-0z0F
 	for ath12k@archiver.kernel.org;
-	Tue, 12 Mar 2024 09:04:50 +0000
+	Tue, 12 Mar 2024 09:04:51 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjy3u-000000051C8-3NHs
+	id 1rjy3w-000000051Dq-3RRp
 	for ath12k@lists.infradead.org;
-	Tue, 12 Mar 2024 09:04:47 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42C5tTGc008491;
-	Tue, 12 Mar 2024 09:04:42 GMT
+	Tue, 12 Mar 2024 09:04:48 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42C7loUb027209;
+	Tue, 12 Mar 2024 09:04:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=2ooT2xNwMhbWwrEQmrl62I+wO7+i9J6o798XT7Cmwm4=; b=as
-	ZySQLTKS9kBIce/SSBXCvI7Es/PZm1GQ7EpMGt4N490qzRGileT2LjXJU+JQoE9g
-	xoDyUYT90Do04t79W4vYcHBdFkpqSnteZ4rRh/t1doDA6Oi0OGpcxUlTPpO4D+JK
-	dnkEHMs0QOgZdIgS/jjmKl0sH5y2iM8Pw0btWu2A7HsiFtKeJkc6gsNpmEKTPbOI
-	Y1jdqNB/LFFkZMAdnCBlJN9kdKrSHDxpZ5T3uM7PL7HGe2UkwQYFxWKy2rBcCGO0
-	ZfedQWC+8aueWf1qnvSpVxj3jA6C20Vi6Yel7CIhpgQNm928EkAivEboUlDHs32E
-	8XWNykzavT5PTd1VSKxw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wte5d0pc2-1
+	qcppdkim1; bh=tUM/Ju9aK4iSOwpxhxl3AvnD03TmbsIcqpCil7BxX/8=; b=Ae
+	9WjuM3jArGnligTjyBQB8xww5TdsY1i+VrcV2knykItfwNhks0ZyQNEn/kucdV5S
+	OCBL1Uq1VAfb7LkQzhLwEbrG/uEQG2h86ctACT1rZ4hNPEUOWpZfIgPT3TbKzWHt
+	aJ4D/0gYb24ExFVBpBT4pHSbUKkc69h5hY7lbSwOKvCP8kyiOgG5egXJw6yUPfm/
+	8cjkGNF/QaTe7vdCmBKB50y8nm2ZPLktQd1PwJ3yNLR91evmXWWbT4qpDaGUQLgm
+	RA2Y7z7EgaYA+gFs6KV14zEPRb8LaeiLtuSCmspvyXePodFKUzrHl00ff4thn33H
+	UlmVMGgnPXbj2+ilwZLQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wtckh0u45-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Mar 2024 09:04:42 +0000 (GMT)
+	Tue, 12 Mar 2024 09:04:44 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42C94fv9023023
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42C94hqT013736
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 12 Mar 2024 09:04:41 GMT
+	Tue, 12 Mar 2024 09:04:43 GMT
 Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Tue, 12 Mar 2024 02:04:39 -0700
+ 15.2.1118.40; Tue, 12 Mar 2024 02:04:41 -0700
 From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>,
         Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Subject: [PATCH v3 11/12] wifi: ath12k: Modify rts threshold mac op for single wiphy
-Date: Tue, 12 Mar 2024 14:33:50 +0530
-Message-ID: <20240312090351.1620218-12-quic_ramess@quicinc.com>
+Subject: [PATCH v3 12/12] wifi: ath12k: support get_survey mac op for single wiphy
+Date: Tue, 12 Mar 2024 14:33:51 +0530
+Message-ID: <20240312090351.1620218-13-quic_ramess@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240312090351.1620218-1-quic_ramess@quicinc.com>
 References: <20240312090351.1620218-1-quic_ramess@quicinc.com>
@@ -71,19 +71,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: mCu9YujQuP8k-mLCUKTBbiuYot7zFph9
-X-Proofpoint-GUID: mCu9YujQuP8k-mLCUKTBbiuYot7zFph9
+X-Proofpoint-ORIG-GUID: t4WohCMKJywuZgo5XvwwQG3gEg8_dngb
+X-Proofpoint-GUID: t4WohCMKJywuZgo5XvwwQG3gEg8_dngb
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-03-12_08,2024-03-11_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- spamscore=0 impostorscore=0 phishscore=0 suspectscore=0 mlxlogscore=909
- malwarescore=0 clxscore=1015 lowpriorityscore=0 bulkscore=0 mlxscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2403120069
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=813
+ impostorscore=0 mlxscore=0 lowpriorityscore=0 priorityscore=1501
+ bulkscore=0 clxscore=1015 suspectscore=0 spamscore=0 adultscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2403120070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240312_020443_259381_FE381EED 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20240312_020445_234255_BE59D53C 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,12 +100,13 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sriram R <quic_srirrama@quicinc.com>
 
-Since multiple radios are abstracted under a single wiphy,
-apply the rts threshold value to all the vdevs of the radios
-combined under single wiphy.
+The radio for which the survey info needs to be collected
+depends on the channel idx which could be based on the band.
+Use the idx to identify the appropriate sband since multiple
+bands could be combined for single wiphy case.
 
-This also implies that vif specific rts threshold support
-needs to be added in future from cfg80211/mac80211.
+Also use the channel idx and sband to identify the corresponding
+radio on which the survey results needs to be populated.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -113,39 +114,67 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
 Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 18 ++++++++++++++----
- 1 file changed, 14 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 25 ++++++++++++++++---------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 0934abc7995f..6123d7db2edc 100644
+index 6123d7db2edc..a31003f8325d 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7292,11 +7292,21 @@ static int ath12k_mac_op_set_rts_threshold(struct ieee80211_hw *hw, u32 value)
+@@ -7821,7 +7821,6 @@ ath12k_mac_update_bss_chan_survey(struct ath12k *ar,
+ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+ 				    struct survey_info *survey)
  {
- 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
  	struct ath12k *ar;
--	int param_id = WMI_VDEV_PARAM_RTS_THRESHOLD, ret;
-+	int param_id = WMI_VDEV_PARAM_RTS_THRESHOLD, ret, i;
+ 	struct ieee80211_supported_band *sband;
+ 	struct survey_info *ar_survey;
+@@ -7830,12 +7829,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+ 	if (idx >= ATH12K_NUM_CHANS)
+ 		return -ENOENT;
  
 -	ar = ath12k_ah_to_ar(ah, 0);
 -
--	ret = ath12k_set_vdev_param_to_all_vifs(ar, param_id, value);
-+	/* Currently we set the rts threshold value to all the vifs across
-+	 * all radios of the single wiphy.
-+	 * TODO Once support for vif specific RTS threshold in mac80211 is
-+	 * available, ath12k can make use of it.
-+	 */
-+	for_each_ar(i, ah, ar) {
-+		ret = ath12k_set_vdev_param_to_all_vifs(ar, param_id, value);
-+		if (ret) {
-+			ath12k_warn(ar->ab, "failed to set RTS config for all vdevs of pdev %d",
-+				    ar->pdev->pdev_id);
-+			break;
-+		}
-+	}
+-	ar_survey = &ar->survey[idx];
+-
+-	mutex_lock(&ar->conf_mutex);
+-
+ 	sband = hw->wiphy->bands[NL80211_BAND_2GHZ];
+ 	if (sband && idx >= sband->n_channels) {
+ 		idx -= sband->n_channels;
+@@ -7850,6 +7843,21 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+ 		goto exit;
+ 	}
  
++	ar = ath12k_mac_get_ar_by_chan(hw, &sband->channels[idx]);
++	if (!ar) {
++		if (sband->channels[idx].flags & IEEE80211_CHAN_DISABLED) {
++			ret = 0;
++			memset(survey, 0, sizeof(*survey));
++			goto exit;
++		}
++		ret = -ENOENT;
++		goto exit;
++	}
++
++	ar_survey = &ar->survey[idx];
++
++	mutex_lock(&ar->conf_mutex);
++
+ 	ath12k_mac_update_bss_chan_survey(ar, &sband->channels[idx]);
+ 
+ 	spin_lock_bh(&ar->data_lock);
+@@ -7861,9 +7869,8 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+ 	if (ar->rx_channel == survey->channel)
+ 		survey->filled |= SURVEY_INFO_IN_USE;
+ 
+-exit:
+ 	mutex_unlock(&ar->conf_mutex);
+-
++exit:
  	return ret;
  }
+ 
 -- 
 2.25.1
 
