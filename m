@@ -4,64 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DBEEC54E58
-	for <ath12k@archiver.kernel.org>; Tue, 12 Mar 2024 08:16:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D8B0C54E58
+	for <ath12k@archiver.kernel.org>; Tue, 12 Mar 2024 08:46:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ihz++E9B6/8HRGfur9tdMnVj2qTl+gPGQxmLPwTE2Ko=; b=AZubqbHYqKykLM8lpIg6TmtVZk
-	bjB6IM4kMJ6u/UMShyKeo9XjNADDjSsco27dQTu31yAYdtu3NWLBQ7G0f2ugp1QdeAskY3d+jcLBC
-	lP8jsCZdQljS7aEH3yx2gQa3+KqbxVaJpfA38xkI+x3p2y6JSaa2ZrBu9YweVyDQbOifJf+Pa+T5h
-	VP+7udi/sHTdEH4fjQjCNJHmIsp7Ad2Uj3fxboAfmlYlspdXTFt3zQ20iJb0kUGvhgdYGNmuIpstU
-	+3EIPIhoF12erMa24UCTSTZIm53tSX/Q84vTBMyRNuUwy+lIWtFlg7J1skX+wAIVco61cDAgJZDI/
-	kLL3B+Yw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1+rSUVWfCzdIkoheg30LFd7Q7z9zAOEXR0rnTbQBLXc=; b=HuJRFMT3r2KmfLX+vx5M5ncBWY
+	GTlbhshb0SU6/KGTJZP+yuexwbeDdiSVxHiXJHgxgDKN3kGkGBSa8y5QHdrOSIuENGRVBt/nbouHI
+	daOyMcf/D+KaXkwvcIrOVYG04QWBfQR+hjTUinfhFlOyAzvcJEsJBgK7pNRadTs/L/cI7PJyAbUNy
+	NhDhRx92Lm9itPSpAnXummKr9JtxEcSk4QXUyKVFwjATZljqOhVH4yWkv1BUgVttEES6wM1kfjXZh
+	R+w1XFQuvyhnK5EFWayjHPKawRzDomLk6MgbwUCwmeP26h/stqh41BIKgciyybnculmM8r4MxRNrh
+	F17otLsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjxJO-00000004qmC-0NxT
+	id 1rjxlp-00000004wYz-0gud
 	for ath12k@archiver.kernel.org;
-	Tue, 12 Mar 2024 08:16:38 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Tue, 12 Mar 2024 08:46:01 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjxJL-00000004qlJ-0pwi
+	id 1rjxll-00000004wWd-0vD8
 	for ath12k@lists.infradead.org;
-	Tue, 12 Mar 2024 08:16:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=ihz++E9B6/8HRGfur9tdMnVj2qTl+gPGQxmLPwTE2Ko=;
-	t=1710231392; x=1711440992; b=aqXH+ruStOhoQRlkwQvLx/88jre6rdD9fByFsO8NkpfFesy
-	5C+5eYKQAXahwb4JfTJY6usvr1Ksr5Y+UkrFyIWJjd6xA3+eIqeUpg7bYSUEYz8uVcwQ5JgT3O0Pk
-	LTLK9Ep89ZkLdb2JxinB6mYB+dWws8Bpg7YXqsJW9uRfk6tK+M2uLMlIknAnNIkAyTS2MPVxPz9yr
-	gQ4DMS27TyyZVTaDPaliKafJR0MAyE6jz7Ewrg8PGOmcwG532uMFR4M3W0rkHOiMslSxRqPDGYtld
-	3PmP+QBnFsWqiePm/2CmMiRBo4yhv2FBp3OshLTaaAmKZILNWIVt2Cmyck0o9AJg==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1rjxJE-0000000DjWz-1qLP;
-	Tue, 12 Mar 2024 09:16:28 +0100
-Message-ID: <8cc7e7f7b2914385b481ecfdd7bc3f67fc4546b3.camel@sipsolutions.net>
+	Tue, 12 Mar 2024 08:45:59 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42C6POe9024085;
+	Tue, 12 Mar 2024 08:45:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=1+rSUVWfCzdIkoheg30LFd7Q7z9zAOEXR0rnTbQBLXc=; b=Ei
+	WhH4Picu7hRHM3oOYSk3zwHomcSPWZVQgMGQZutLMYsIWJsAJ1JhDBEAXCw5Q8XD
+	Ork87I7+/JE0jqjF8kcghnBqq9BktUpAY9FHhkgtVmL93l8zHMgDg69FZErYn9dN
+	4QoH7m/DfF6gXh0FS8JmpXoXlZl8fpNirYYxyOgKk2Z0f45tFR6pgHjILiYmgBCE
+	H/p5nyyLhl190vLH9ctP8HkLLbm4hwe3atT77PShLa7qIrjWsAZRFXzCAFfxyH0y
+	2Hlm2PQnflg9v3YJI5HVkoiUtvWp89ayKToFygcmkGo+42mLsxmxKpenfkDsBUAy
+	PEWqpjoOWnYKPsmqlV+w==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wthqfr81p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 12 Mar 2024 08:45:55 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42C8js5P011980
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 12 Mar 2024 08:45:54 GMT
+Received: from [10.253.9.188] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 12 Mar
+ 2024 01:45:53 -0700
+Message-ID: <3250c791-fb06-488b-9736-aeb0c8d48a42@quicinc.com>
+Date: Tue, 12 Mar 2024 16:45:51 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 1/2] wifi: mac80211: supplement parsing of puncturing
  bitmap
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Date: Tue, 12 Mar 2024 09:16:27 +0100
-In-Reply-To: <20240312045947.576231-2-quic_kangyang@quicinc.com>
+Content-Language: en-US
+To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
 References: <20240312045947.576231-1-quic_kangyang@quicinc.com>
-	 <20240312045947.576231-2-quic_kangyang@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
-MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+ <20240312045947.576231-2-quic_kangyang@quicinc.com>
+ <8cc7e7f7b2914385b481ecfdd7bc3f67fc4546b3.camel@sipsolutions.net>
+From: Kang Yang <quic_kangyang@quicinc.com>
+In-Reply-To: <8cc7e7f7b2914385b481ecfdd7bc3f67fc4546b3.camel@sipsolutions.net>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: IT9hNNU8tNDBmAku01N4_fWcaE3g90h2
+X-Proofpoint-ORIG-GUID: IT9hNNU8tNDBmAku01N4_fWcaE3g90h2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-12_06,2024-03-11_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 impostorscore=0 mlxlogscore=999 spamscore=0 lowpriorityscore=0
+ suspectscore=0 clxscore=1015 adultscore=0 mlxscore=0 malwarescore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2402120000 definitions=main-2403120067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240312_011635_556114_88ECD598 
-X-CRM114-Status: UNSURE (   6.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240312_014557_576868_C444672F 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,17 +101,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2024-03-12 at 12:59 +0800, Kang Yang wrote:
-> Current mac80211 won't parsing puncturing bitmap when process EHT
-> Operation element in 6 GHz band or Bandwidth Indication element. This
-> leads to puncturing bitmap cannot be updated in related situations, such
-> as connecting to an EHT AP in 6 GHz band.
->=20
-> So supplement parsing of puncturing bitmap for these elements.
 
-Hah, yes, I just noticed that too and fixed the second part yesterday,
-and was still thinking about how I could test the first part :-)
 
-johannes
+On 3/12/2024 4:16 PM, Johannes Berg wrote:
+> On Tue, 2024-03-12 at 12:59 +0800, Kang Yang wrote:
+>> Current mac80211 won't parsing puncturing bitmap when process EHT
+>> Operation element in 6 GHz band or Bandwidth Indication element. This
+>> leads to puncturing bitmap cannot be updated in related situations, such
+>> as connecting to an EHT AP in 6 GHz band.
+>>
+>> So supplement parsing of puncturing bitmap for these elements.
+> 
+> Hah, yes, I just noticed that too and fixed the second part yesterday,
+> and was still thinking about how I could test the first part :-)
+> 
 
+Our AP could set puncturing bitmap manually.
+
+So i just add printk() to check if it matches the value sent by AP.
+
+
+> johannes
+> 
+> 
 
