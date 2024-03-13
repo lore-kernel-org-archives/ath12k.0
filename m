@@ -4,68 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31698C54E66
-	for <ath12k@archiver.kernel.org>; Wed, 13 Mar 2024 16:58:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 312C3C54791
+	for <ath12k@archiver.kernel.org>; Wed, 13 Mar 2024 18:04:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=g5VgZ4sVo+32qjIlgEb9gMJ+qtOEmXni3Yh5d1+FR5U=; b=ms7ONfDExxborNIHNt5WZl/2YO
-	GgeIFVT5wNNwuRs5oel1b3Va6tDgVL+tgn3xLOuijYpFy8aNcN4XT7FG/JxYxrLoH6fV6LffSc4kl
-	0SHpKkIrG+sMuKIq1xM4dPaAbMAaGnrqs2InJ5Bw8Wy4lwhz4ITE7qriC5Ti3TyzsNC5/TzMDgBxz
-	090ElR75BEYDQB/Et74GzOn9mfEDN19g7eUdAj7qZnHt2w7lxQ1+lfriqCZh85PVMZQ5mON8OKCkP
-	LsEnyLEZOq2z1Pyvdpv0GEy5VQfDB9lWBOrFmcy6a1KtM0lwOdhhVBT/tAVg56kl12gp4zhrFvPFZ
-	x/5FG/0g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=scks9tYyUMDTRmnslv2srjZa5cALFnqvoeHDv12bEXg=; b=Sa0m2M6RWknoHCrNhUc0bdAmxT
+	XCviXR7qoId1Od8L/Ibl+gmgXvDIvrX4lRyDOXVfF+uZxeMK+JwpY3RWRIWSGEDDeFXqycBtT8gB/
+	Ut+uRNcIQRul2JoK9as5Wwi8CvffIPyVbavfFIC5+u4NHo5x1dmJJKF8roWvMggREvqJcrjXba5ep
+	IYwA+991jU3uV2gkmqKP4VWi9oV8WwErUUvl7Va5X0WgmcboFYU8I0tCmi0ipomq7He9NJZu/CPQV
+	OUuCGIRTymV/xoDjl5svo5xRgiG4i3S41vbOecQoNN5WeWvDqo6LHzFs5N6YD0jpLCBU51TVGzIKR
+	CgxgvA0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkRwL-0000000AtgL-3kAr
+	id 1rkSyC-0000000BCix-3lc0
 	for ath12k@archiver.kernel.org;
-	Wed, 13 Mar 2024 16:58:53 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Wed, 13 Mar 2024 18:04:52 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkRwJ-0000000AtfL-2y1i
+	id 1rkSy9-0000000BChP-1p3j
 	for ath12k@lists.infradead.org;
-	Wed, 13 Mar 2024 16:58:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 7FA62CE1B45;
-	Wed, 13 Mar 2024 16:58:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A80FC433C7;
-	Wed, 13 Mar 2024 16:58:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710349128;
-	bh=iWmS2Spgv1Gr93S5/dBCQwU7XXs/+racpo5Z0qjdcOM=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=R9+UVPHDlgOeLelpwakkprs8Z4KeTK82X9TwrOfFkkLbTOUchIIj5x4DgSRkLDOZ/
-	 NM6GlgXWyedip6qYiT/zHvQI19NViamWFRZh44NMTyDbngJYTqUKXpzRopv3wZIB70
-	 0w2DBRuvlAJ2OUVXrsZC5FKz4bJpVKo7Zix4wWDgdTDAmepoZNNyjjz+pNmdKxfpc7
-	 HE7gwH/SRkTchmzf5KwOzz6ROwlYm3UbZtD7HaTiAGtru55KB5FhdSXtK129/aNfHf
-	 4dg6YMexRZvDXQHQ9wV2NCI7fXKPKazdeh0KE+Yn0M/AZa61EfTF0dxTPUyd9Ra4an
-	 ytgV8LW3w9VAA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
-  Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+	Wed, 13 Mar 2024 18:04:51 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42D9v9oW007297;
+	Wed, 13 Mar 2024 18:04:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=scks9tYyUMDTRmnslv2srjZa5cALFnqvoeHDv12bEXg=; b=iU
+	+dh2TTrN1JSsUZv1fik7LWagnOOxrJn7H9MewamhvTLoyQf9SHtIwUiX/YPsppi7
+	r/BZOtaHxVQgrJeuOMt4taBOep/on+nmKtvRXzJmZqv7dNWRCfq59m+qeiVkonDD
+	4iC+LSvT583fwg5NsgVBWTj+7RrCMUCBNVyGlT236Ey9ZqYT4Tj4uxNmc73Y/S7K
+	0LdLH+Qs9a9QuWr5PIAGzOMokoVHzrh6kGlVOKZN9iwRkf1pUdN8GCRF+wG6/2pu
+	xTG2YfzZaXxjVdPhfZ5zgzebSonWHQl8qAG2I8deCzM9HDh1dOX0ePdp3oDvsk5O
+	zhiQ6x4USAznZi1Bc0nw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wu9y3s2ry-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Mar 2024 18:04:46 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42DI4jp6002860
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Mar 2024 18:04:45 GMT
+Received: from [10.110.27.195] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Wed, 13 Mar
+ 2024 11:04:44 -0700
+Message-ID: <f768cfec-d20d-424d-85ef-3576434aca12@quicinc.com>
+Date: Wed, 13 Mar 2024 11:04:44 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v4 01/12] wifi: ath12k: add multiple radio support in a
  single MAC HW un/register
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>
+CC: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+        <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        "Karthikeyan
+ Periyasamy" <quic_periyasa@quicinc.com>
 References: <20240312135557.1778379-1-quic_ramess@quicinc.com>
-	<20240312135557.1778379-2-quic_ramess@quicinc.com>
-	<4a527729-2bf8-47ce-8275-d36b76bde95c@quicinc.com>
-	<3178cf8c-d328-4fe2-b3be-f5c4c908f20f@quicinc.com>
-	<605a673e-3686-47d0-b71b-1e314fde65db@quicinc.com>
-	<87il1qf571.fsf@kernel.org>
-Date: Wed, 13 Mar 2024 18:58:45 +0200
-In-Reply-To: <87il1qf571.fsf@kernel.org> (Kalle Valo's message of "Wed, 13 Mar
-	2024 18:48:50 +0200")
-Message-ID: <87edcef4qi.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+ <20240312135557.1778379-2-quic_ramess@quicinc.com>
+ <4a527729-2bf8-47ce-8275-d36b76bde95c@quicinc.com>
+ <3178cf8c-d328-4fe2-b3be-f5c4c908f20f@quicinc.com>
+ <605a673e-3686-47d0-b71b-1e314fde65db@quicinc.com>
+ <87il1qf571.fsf@kernel.org> <87edcef4qi.fsf@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <87edcef4qi.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: ehXgaA8TvWHcA0CCSqY7-kG8qzDYlNJ5
+X-Proofpoint-GUID: ehXgaA8TvWHcA0CCSqY7-kG8qzDYlNJ5
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-13_09,2024-03-13_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=956 spamscore=0
+ impostorscore=0 adultscore=0 mlxscore=0 suspectscore=0 lowpriorityscore=0
+ bulkscore=0 malwarescore=0 clxscore=1015 phishscore=0 priorityscore=1501
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2402120000
+ definitions=main-2403130137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240313_095851_958210_80719CA6 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20240313_110449_528811_3EB65872 
+X-CRM114-Status: GOOD (  16.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,32 +107,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
-
-> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
->
->> On 3/13/2024 5:57 AM, Rameshkumar Sundaram wrote:
->>> On 3/13/2024 3:23 AM, Jeff Johnson wrote:
->>>> and guess we have to figure out how to suppress the ath12k-check issues with
->>>> this macro
->>> ath12k-check complains about the reuse of ah and index arguments which 
->>> may get evaluated multiple times if its an arithmetic expression, But 
->>> areas where we use the macro in our code aren't doing so.
->>> Do you have any suggestions here ? or shall we go back and use this 
->>> for-loop inline.
+On 3/13/2024 9:58 AM, Kalle Valo wrote:
+> Kalle Valo <kvalo@kernel.org> writes:
+> 
+>> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 >>
->> The macro makes sense -- we'll need to update the overrides in ath12k-check.
->
-> IIRC it is possible to avoid variable reuse in macros with typeof()
-> operator (or something like that). I can't remember the details right
-> now but I think there are examples in the kernel code.
+>>> On 3/13/2024 5:57 AM, Rameshkumar Sundaram wrote:
+>>>> On 3/13/2024 3:23 AM, Jeff Johnson wrote:
+>>>>> and guess we have to figure out how to suppress the ath12k-check issues with
+>>>>> this macro
+>>>> ath12k-check complains about the reuse of ah and index arguments which 
+>>>> may get evaluated multiple times if its an arithmetic expression, But 
+>>>> areas where we use the macro in our code aren't doing so.
+>>>> Do you have any suggestions here ? or shall we go back and use this 
+>>>> for-loop inline.
+>>>
+>>> The macro makes sense -- we'll need to update the overrides in ath12k-check.
+>>
+>> IIRC it is possible to avoid variable reuse in macros with typeof()
+>> operator (or something like that). I can't remember the details right
+>> now but I think there are examples in the kernel code.
+> 
+> Here's the GCC documentation with an example:
+> 
+> https://gcc.gnu.org/onlinedocs/gcc/Typeof.html
+> 
 
-Here's the GCC documentation with an example:
+the problem here is that the macro actually writes to those arguments multiple
+times, so we actually need to reuse the arguments
 
-https://gcc.gnu.org/onlinedocs/gcc/Typeof.html
+the macro as defined exactly matches the semantics of other for_each macros in
+the kernel, i.e. see in include/linux/list.h:
+#define list_for_each(pos, head) \
+	for (pos = (head)->next; !list_is_head(pos, (head)); pos = pos->next)
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+what I don't understand is why list_for_each() doesn't trigger the same
+checkpatch issues. even stranger is that if I copy that macro into ath12k then
+I do see the same checkpatch issues:
+CHECK: Macro argument reuse 'pos' - possible side-effects?
+#998: FILE: drivers/net/wireless/ath/ath12k/core.h:998:
++#define list_for_each(pos, head) \
++       for (pos = (head)->next; !list_is_head(pos, (head)); pos = pos->next)
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+CHECK: Macro argument reuse 'head' - possible side-effects?
+#998: FILE: drivers/net/wireless/ath/ath12k/core.h:998:
++#define list_for_each(pos, head) \
++       for (pos = (head)->next; !list_is_head(pos, (head)); pos = pos->next)
+
+So I'm really confused since I don't see anything in checkpatch.pl that would
+cause the behavior to change between macros in include/linux/list.h vs macros
+in drivers/net/wireless/ath/ath12k/core.h
+
+<scratch head>
+
+/jeff
 
