@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5730BC54E60
-	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 16:36:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34C34C54E60
+	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 16:39:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dCFd1I2Em7XvcmtL4wPtHwPzcp7oEL0x21kdZ4PMWpA=; b=fCKVbQZ9VJ3crQq1iLM9tieSO5
-	djlv9Yttp0bHVbQGNZrvJ2Ud6dphaR67q5tQKymlqJDmA4+xyCTYyKMtM0HTezTS3JDgxWdTy51nx
-	y1cA/FqHSeAnpVDsWM9BHXEncUWvNA/lM0q3XaULc2L9DoFu+CydEwn0kiiLAq1AfkyiKonlAsTDx
-	zMeEfpaLm7ppugT4MVUVWIRNeNEE1CySu8T4MARwYw+Vh6Ur9o0HFxyIm5YLUGUUc3P5puTH5p7Q4
-	LmlTgRkq4vrUBVRfbcsqqOuRpCTq66u2UCHDPz56gU1MIZMQPZyID/eWNZj5xsMLJ0StYqIoTRs0u
-	9Wyaachg==;
+	bh=lABueEjsjHsz1dEQkBPiVFr1ueO4+utrsBBCIV7/O5Y=; b=Whq7m5EBvN2R4oOlPPVfEXG/34
+	u4ZcSYSmqpZzVvGHqX74oTA9fuI5Q6ICQTHIQUXPjx9m40GhwokxseEnpe3Nh0hDp0Se/6hQeUXQH
+	2pYaQUh6cs6OpO2uucOj2ejYh56rgfkKytC9rjaga28+yDnhkgHW2NuDqLiEEBG3Rv8sUb9rioNxQ
+	9ZuL+K2C0A8hMi+yQmWK6gDgGsXRdJYT9dpiQyBirvdfVLMcr5nLVYzprNcQd4IvYiQ3efK87cZYJ
+	YUsKIpQZY+Aen8XN+iCllRnYf4h8VLaagvWgqH08btAXFuIcICIGScx08Y9CUtCkTJMrkopVBNh5a
+	S0tjxmvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rko43-0000000F1W3-3wvF
+	id 1rko6t-0000000F1x8-2sZm
 	for ath12k@archiver.kernel.org;
-	Thu, 14 Mar 2024 16:36:19 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Thu, 14 Mar 2024 16:39:15 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rko41-0000000F1Ue-37z3
+	id 1rko6p-0000000F1wi-2NlI
 	for ath12k@lists.infradead.org;
-	Thu, 14 Mar 2024 16:36:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=dCFd1I2Em7XvcmtL4wPtHwPzcp7oEL0x21kdZ4PMWpA=;
-	t=1710434177; x=1711643777; b=F9UX+QIh+rQMY7LDN7wgZ4wWDdT0hd7/sa3VtmQOzB2k7Wy
-	Nt0OuGZqDFa5ZBTLLDtjDP8e5bVPrr6mJ7Nyl1T+hHOjjmmZQqi3u9LAccErpgn4TPvRHdwzo3wgZ
-	3S5JR57nQneb2bZe8hoie6CTSiUJR9Tw6bt891GSltxLrmooREFyq/K71XR6e3xcD26KhLnjEtvbG
-	4FpGb+TMm3HLqhpNtH3wWPCLZGVIj4D+YEQrHSF3tEOAWkxyTZTvWibSWcvr4WaXPwNiAE47sX5Hd
-	CV/BQ/L7ge541n4sa2o/LEWDOWoKq+DntAv5ODb658sThl06mweYLnDvL/K0O2bw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1rko3u-0000000GgKk-3Sjq;
-	Thu, 14 Mar 2024 17:36:11 +0100
-Message-ID: <09e961f89c9d86ff8e60e860376924961a18387b.camel@sipsolutions.net>
+	Thu, 14 Mar 2024 16:39:13 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id EAA60CE1DCF;
+	Thu, 14 Mar 2024 16:39:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4619AC433F1;
+	Thu, 14 Mar 2024 16:39:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1710434348;
+	bh=rF2DLgDO55iegvKQy0bAVedrMvrHU7TJp19+CD7rlrI=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=QjdiiwLIYrllow9oz3zUDcu5mG5et8UeBpwFKRRNIGZZStNPNmuIb6D28KejV6hz2
+	 SxedUW41SfgRXy9ipE0WZEq5mb+o/6I0WS93lRU0GM6KA1d0euGesEkZtZG0np5/xL
+	 slOs9D1KPyy34QXCrlqRJIjWspGc0wOodUdA4vlsqX0ECYNa9TpZZoyRr5JCOA0Out
+	 FQZiCW5qEMMFWtJjkcOpdy5FTIyb7UXGm8e78AhaA4GPf3HeF0Qb2t8vMLcgw8SXpP
+	 tQjt4x8kccjdF43zTwEX3yPJL8DLgAFBOaGPK+rdcyErtIdw2XWNstUyhV5J5PErFA
+	 0OzjO8uQ5NppQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org,  Miri Korenblit
+ <miriam.rachel.korenblit@intel.com>,  ath12k@lists.infradead.org
 Subject: Re: [PATCH 2/2] wifi: iwlwifi: mvm: disable MLO for the time being
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, Kalle Valo <kvalo@kernel.org>
-Cc: linux-wireless@vger.kernel.org, Miri Korenblit
-	 <miriam.rachel.korenblit@intel.com>, ath12k@lists.infradead.org
-Date: Thu, 14 Mar 2024 17:36:09 +0100
-In-Reply-To: <3883eb2c-54dc-4492-bbc1-9fea02e7e46e@quicinc.com>
 References: <20240314110951.b50f1dc4ec21.I656ddd8178eedb49dc5c6c0e70f8ce5807afb54f@changeid>
-	 <20240314110951.d6ad146df98d.I47127e4fdbdef89e4ccf7483641570ee7871d4e6@changeid>
-	 <87bk7g4x08.fsf@kernel.org>
-	 <09ca997159333980a168051a2a49c675a8ad5eeb.camel@sipsolutions.net>
-	 <3883eb2c-54dc-4492-bbc1-9fea02e7e46e@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
+	<20240314110951.d6ad146df98d.I47127e4fdbdef89e4ccf7483641570ee7871d4e6@changeid>
+	<87bk7g4x08.fsf@kernel.org>
+	<09ca997159333980a168051a2a49c675a8ad5eeb.camel@sipsolutions.net>
+Date: Thu, 14 Mar 2024 18:39:05 +0200
+In-Reply-To: <09ca997159333980a168051a2a49c675a8ad5eeb.camel@sipsolutions.net>
+	(Johannes Berg's message of "Thu, 14 Mar 2024 17:09:47 +0100")
+Message-ID: <87plvwepjq.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240314_093617_806253_0EFB6F27 
-X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-CacheID: sfid-20240314_093911_849474_B0917F56 
+X-CRM114-Status: UNSURE (   9.55  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,21 +77,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
->=20
-> what does it mean "disable wext" if we are a mac80211 driver that doesn't
-> utilize wext?
->=20
+Johannes Berg <johannes@sipsolutions.net> writes:
 
-You don't have a choice about wireless extension support - cfg80211 will
-support wext for any non-MLO drivers.
+> On Thu, 2024-03-14 at 18:08 +0200, Kalle Valo wrote:
+>> 
+>> > -		hw->wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
+>> > +		hw->wiphy->flags |= WIPHY_FLAG_DISABLE_WEXT;
+>> 
+>> I think we should add the same for ath12k, right?
+>> 
+>
+> It's really up to you, I think. I'm hoping to even get this into stable,
+> FWIW.
 
-However now we're faced with the situation where we have devices today
-that enable MLO, and thus don't have wext. But if we disable MLO, then
-those devices would get wext, and then when we later enable MLO again,
-they'd lose wext again ... all that seems very unreasonable, and more
-likely to lead to complaints than "new device doesn't support wext",
-hence the first patch and disabling it explicitly for a device that will
-again get MLO later.
+ath12k doesn't support MLO yet but I feel that disabling wext already
+now would be consistent from user's point of view.
 
-johannes
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
