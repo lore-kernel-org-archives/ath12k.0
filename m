@@ -4,66 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 294FDC54E5D
-	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 16:45:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F244C54E5D
+	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 16:58:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SYBnJ18XKwpAbOvEsmJL5tBfia+4M8Q1hVLJH5yybwM=; b=uZKu33jL4Qtz6a+qKaRXXaQRO2
-	JzCyCxcLSBf/L4vHd8Gt2SYT+sNzIxGt3A6lGEo2ECp+0JLpLsGD5C+gGyYxxVgb7o9U7ztz2OWoT
-	87SKmPb3R0GXHuoYDrdxZBKbxEJegi+YYGAdnJa9S4yTm7cq4WEPL1N9DBHbSNoExRsE9CLXeYDmd
-	DL5tPa+PLyJ5ycuGM8qBJeNC9frtKRvFZJCph7QTt4FKQ7p4JLeiEC6PSPwvO/eDGzKaJtWsJHVVM
-	JvqMfrpx8dGQKTJXXzEl+c2rmr0yP2jkiMBcz1+CWNnZHOpYjtM2ZvRMCQHLMfixYOiwV0eIYRrFt
-	ArqIpkig==;
+	bh=+Xthtgc6epJ48b8mPPUX33mNuxBQopUdr8M3EQRllsI=; b=mu12siuoz9PKpHXVglKJCaghY4
+	KNoqCVZry18qUXljVMPrQNkCeURakbZ2iDhzpvn/+6MAQDiwZogsB43ugMPsBiPaBeI3Q7PONC/e8
+	S6OsvmqV6xMvvLJzH7eipV4N9NJ60DqXC1JOaKi6TDE6dzDRif+nATt/XmM+boV/+HP8ELUA4jvsf
+	XmN+O98/eGv14ib19jDjScAnmGFQd82M2XppEIf15MJ5AUv/g15K6C+R573SmlZyUqKCy49xkBrex
+	QXP6K+5kyJnMdFTshaniFnYziJnvRcExmV8DOjsVxEuTY2/8/KoHOfXcFjRoRC0wzbawtqsIfEuSj
+	vpkTGE2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkoCc-0000000F2fB-3hsC
+	id 1rkoP9-0000000F44G-41JD
 	for ath12k@archiver.kernel.org;
-	Thu, 14 Mar 2024 16:45:10 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Thu, 14 Mar 2024 16:58:07 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkoCZ-0000000F2e3-3EhH
-	for ath12k@lists.infradead.org;
-	Thu, 14 Mar 2024 16:45:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id C814CCE1DFF;
-	Thu, 14 Mar 2024 16:45:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1D58DC433F1;
-	Thu, 14 Mar 2024 16:45:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710434705;
-	bh=3rUj+mXvS6cQYpRc7HsWZ1EgGhCgHVdn29FomCViicU=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=PvvSvmapt1obVEFRIEgdCGApBQKWx+t2FVCtYbnwFEC7JXMloJ78Cal02lQFQD7Sl
-	 QYFn/tuRgDBS/rW4Z0CKhkxkEV1Ks0qNrMoC8hRGPrsAkMeFp+pEmbZJIBkMwrZwzC
-	 MVPLiIy8Yj2qI4vL0Y+WekYRZm0JZeV1WkfgzxEJ55gajYibvVGgDEigZO+TIs5KEF
-	 qexHDpgVTYBA3v7o3nU4MBCbFb/P++9iGb/eCmzIe7sVLOHavTsRVHXFQ8hh3Dfzbp
-	 6E2bhPtyiEU8qEw8BwtYNAFMtiRIIfxClgX12qXghaGd04YyfehepzCPhSnlU6Nt26
-	 w0Y+EutFr2XJQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org,  Miri Korenblit
- <miriam.rachel.korenblit@intel.com>,  ath12k@lists.infradead.org
-Subject: Re: [PATCH 2/2] wifi: iwlwifi: mvm: disable MLO for the time being
-References: <20240314110951.b50f1dc4ec21.I656ddd8178eedb49dc5c6c0e70f8ce5807afb54f@changeid>
-	<20240314110951.d6ad146df98d.I47127e4fdbdef89e4ccf7483641570ee7871d4e6@changeid>
-	<87bk7g4x08.fsf@kernel.org>
-	<09ca997159333980a168051a2a49c675a8ad5eeb.camel@sipsolutions.net>
-	<87plvwepjq.fsf@kernel.org>
-	<db6a60e0dbd66f307a5890d958f67029ad5bcb4f.camel@sipsolutions.net>
-Date: Thu, 14 Mar 2024 18:45:02 +0200
-In-Reply-To: <db6a60e0dbd66f307a5890d958f67029ad5bcb4f.camel@sipsolutions.net>
-	(Johannes Berg's message of "Thu, 14 Mar 2024 17:40:21 +0100")
-Message-ID: <87le6kep9t.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	id 1rkoP5-0000000F43C-3Ea2;
+	Thu, 14 Mar 2024 16:58:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1710435484; x=1741971484;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=fcf8GvnNI2NlxwWa/BLBUBs674hhRLyrkoAa66D2RKo=;
+  b=Upxp6VnMtVVIh5OrjLy1m4x53O33vUT82Px9mA1yIg4XVcMfwTQJFixh
+   7LgJMYtNRqx/gFI4UZaFZANBwyUZ2125tyWFO/h/8aNJY3Ssz6Q5mTtSq
+   z2Rj4kEpS4nJkn25okzKvdQv4rbbJF9HCHjqQ9B/Jb64bwio9XG/KBlJp
+   J699SnKSz1nj/E2RkWAJaF9YVeUpsaCsOXlpHs5uHkESF9K3aOaQpXess
+   FCsbM8DPR2tGCmMJCjBmNp+30GvOQOM0FuzvdY/0Dl1c7H5pm+EbBsxtB
+   SWZno7PLV95EK9E7rTZWvtAMKbMAY13rhlzTtvMhwYJfdAqn3LBycbVbu
+   Q==;
+X-IronPort-AV: E=McAfee;i="6600,9927,11013"; a="22731675"
+X-IronPort-AV: E=Sophos;i="6.07,126,1708416000"; 
+   d="scan'208";a="22731675"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Mar 2024 09:58:02 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.07,126,1708416000"; 
+   d="scan'208";a="16952403"
+Received: from aschofie-mobl2.amr.corp.intel.com (HELO aschofie-mobl2) ([10.209.72.214])
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Mar 2024 09:57:59 -0700
+Date: Thu, 14 Mar 2024 09:57:57 -0700
+From: Alison Schofield <alison.schofield@intel.com>
+To: Steven Rostedt <rostedt@goodmis.org>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+	Linux Trace Kernel <linux-trace-kernel@vger.kernel.org>,
+	Masami Hiramatsu <mhiramat@kernel.org>,
+	Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
+	Linus Torvalds <torvalds@linux-foundation.org>,
+	linuxppc-dev@lists.ozlabs.org, kvm@vger.kernel.org,
+	linux-block@vger.kernel.org, linux-cxl@vger.kernel.org,
+	linux-media@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	amd-gfx@lists.freedesktop.org, intel-gfx@lists.freedesktop.org,
+	intel-xe@lists.freedesktop.org, linux-arm-msm@vger.kernel.org,
+	freedreno@lists.freedesktop.org, virtualization@lists.linux.dev,
+	linux-rdma@vger.kernel.org, linux-pm@vger.kernel.org,
+	iommu@lists.linux.dev, linux-tegra@vger.kernel.org,
+	netdev@vger.kernel.org, linux-hyperv@vger.kernel.org,
+	ath10k@lists.infradead.org, linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+	brcm80211@lists.linux.dev, brcm80211-dev-list.pdl@broadcom.com,
+	linux-usb@vger.kernel.org, linux-bcachefs@vger.kernel.org,
+	linux-nfs@vger.kernel.org, ocfs2-devel@lists.linux.dev,
+	linux-cifs@vger.kernel.org, linux-xfs@vger.kernel.org,
+	linux-edac@vger.kernel.org, selinux@vger.kernel.org,
+	linux-btrfs@vger.kernel.org, linux-erofs@lists.ozlabs.org,
+	linux-f2fs-devel@lists.sourceforge.net, linux-hwmon@vger.kernel.org,
+	io-uring@vger.kernel.org, linux-sound@vger.kernel.org,
+	bpf@vger.kernel.org, linux-wpan@vger.kernel.org,
+	dev@openvswitch.org, linux-s390@vger.kernel.org,
+	tipc-discussion@lists.sourceforge.net,
+	Julia Lawall <Julia.Lawall@inria.fr>
+Subject: Re: [FYI][PATCH] tracing/treewide: Remove second parameter of
+ __assign_str()
+Message-ID: <ZfMslbCmCtyEaEWN@aschofie-mobl2>
+References: <20240223125634.2888c973@gandalf.local.home>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20240223125634.2888c973@gandalf.local.home>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240314_094508_097128_3EFF5AEC 
-X-CRM114-Status: GOOD (  14.59  )
+X-CRM114-CacheID: sfid-20240314_095803_912760_33EE396E 
+X-CRM114-Status: GOOD (  27.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,37 +106,120 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Johannes Berg <johannes@sipsolutions.net> writes:
+On Fri, Feb 23, 2024 at 12:56:34PM -0500, Steven Rostedt wrote:
+> From: "Steven Rostedt (Google)" <rostedt@goodmis.org>
+> 
+> [
+>    This is a treewide change. I will likely re-create this patch again in
+>    the second week of the merge window of v6.9 and submit it then. Hoping
+>    to keep the conflicts that it will cause to a minimum.
+> ]
+> 
+> With the rework of how the __string() handles dynamic strings where it
+> saves off the source string in field in the helper structure[1], the
+> assignment of that value to the trace event field is stored in the helper
+> value and does not need to be passed in again.
+> 
+> This means that with:
+> 
+>   __string(field, mystring)
+> 
+> Which use to be assigned with __assign_str(field, mystring), no longer
+> needs the second parameter and it is unused. With this, __assign_str()
+> will now only get a single parameter.
+> 
+> There's over 700 users of __assign_str() and because coccinelle does not
+> handle the TRACE_EVENT() macro I ended up using the following sed script:
+> 
+>   git grep -l __assign_str | while read a ; do
+>       sed -e 's/\(__assign_str([^,]*[^ ,]\) *,[^;]*/\1)/' $a > /tmp/test-file;
+>       mv /tmp/test-file $a;
+>   done
+> 
+> I then searched for __assign_str() that did not end with ';' as those
+> were multi line assignments that the sed script above would fail to catch.
+> 
+> Note, the same updates will need to be done for:
+> 
+>   __assign_str_len()
+>   __assign_rel_str()
+>   __assign_rel_str_len()
+>   __assign_bitmask()
+>   __assign_rel_bitmask()
+>   __assign_cpumask()
+>   __assign_rel_cpumask()
+> 
+> [1] https://lore.kernel.org/linux-trace-kernel/20240222211442.634192653@goodmis.org/
+> 
+> Signed-off-by: Steven Rostedt (Google) <rostedt@goodmis.org>
+> ---
+>  arch/arm64/kernel/trace-events-emulation.h    |   2 +-
+>  arch/powerpc/include/asm/trace.h              |   4 +-
+>  arch/x86/kvm/trace.h                          |   2 +-
+>  drivers/base/regmap/trace.h                   |  18 +--
+>  drivers/base/trace.h                          |   2 +-
+>  drivers/block/rnbd/rnbd-srv-trace.h           |  12 +-
+>  drivers/cxl/core/trace.h                      |  24 ++--
 
-> On Thu, 2024-03-14 at 18:39 +0200, Kalle Valo wrote:
->> Johannes Berg <johannes@sipsolutions.net> writes:
->> 
->> > On Thu, 2024-03-14 at 18:08 +0200, Kalle Valo wrote:
->> > > 
->> > > > -		hw->wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
->> > > > +		hw->wiphy->flags |= WIPHY_FLAG_DISABLE_WEXT;
->> > > 
->> > > I think we should add the same for ath12k, right?
->> > > 
->> > 
->> > It's really up to you, I think. I'm hoping to even get this into stable,
->> > FWIW.
->> 
->> ath12k doesn't support MLO yet but I feel that disabling wext already
->> now would be consistent from user's point of view.
->
-> Ah, you're in the situation where wext is still enabled now, but will
-> disappear when you enable MLO.
+snip to CXL
 
-Exactly.
 
-> Agree then that it would make sense to disable wext right now so it's
-> not a software upgrade for the same hardware that removes it.
+> diff --git a/drivers/cxl/core/trace.h b/drivers/cxl/core/trace.h
+> index bdf117a33744..07ba4e033347 100644
+> --- a/drivers/cxl/core/trace.h
+> +++ b/drivers/cxl/core/trace.h
 
-Good, thanks for confirming.
+snip to poison
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+> @@ -668,8 +668,8 @@ TRACE_EVENT(cxl_poison,
+>  	    ),
+>  
+>  	TP_fast_assign(
+> -		__assign_str(memdev, dev_name(&cxlmd->dev));
+> -		__assign_str(host, dev_name(cxlmd->dev.parent));
+> +		__assign_str(memdev);
+> +		__assign_str(host);
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+I think I get that the above changes work because the TP_STRUCT__entry for
+these did:
+	__string(memdev, dev_name(&cxlmd->dev))
+	__string(host, dev_name(cxlmd->dev.parent))
+
+>  		__entry->serial = cxlmd->cxlds->serial;
+>  		__entry->overflow_ts = cxl_poison_overflow(flags, overflow_ts);
+>  		__entry->dpa = cxl_poison_record_dpa(record);
+> @@ -678,12 +678,12 @@ TRACE_EVENT(cxl_poison,
+>  		__entry->trace_type = trace_type;
+>  		__entry->flags = flags;
+>  		if (region) {
+> -			__assign_str(region, dev_name(&region->dev));
+> +			__assign_str(region);
+>  			memcpy(__entry->uuid, &region->params.uuid, 16);
+>  			__entry->hpa = cxl_trace_hpa(region, cxlmd,
+>  						     __entry->dpa);
+>  		} else {
+> -			__assign_str(region, "");
+> +			__assign_str(region);
+>  			memset(__entry->uuid, 0, 16);
+>  			__entry->hpa = ULLONG_MAX;
+
+For the above 2, there was no helper in TP_STRUCT__entry. A recently
+posted patch is fixing that up to be __string(region, NULL) See [1],
+with the actual assignment still happening in TP_fast_assign.
+
+Does that assign logic need to move to the TP_STRUCT__entry definition
+when you merge these changes? I'm not clear how much logic is able to be
+included, ie like 'C' style code in the TP_STRUCT__entry.
+
+[1]
+https://lore.kernel.org/linux-cxl/20240314044301.2108650-1-alison.schofield@intel.com/
+
+Thanks for helping,
+Alison
+
+
+>  		}
+
+
+
 
