@@ -4,67 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5971C54E5D
-	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 18:28:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FD1AC54E6E
+	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 18:32:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BkHr+9qM0u7SYwG1echqaV1YHoXR2Qs6CYjw0JLgs64=; b=juDR2S17zvqIkZAmVmKX+v0adJ
-	9f6HVfqczi1hgnaQIYAHsLHjSY8c5ce/TYZrudza81hFgJaEkBLkmCvVqr5IuhcRGIal0suUd8pwH
-	9UP/RawG7nSheUvLKCY01YJfxcAlwsTFSAqrugBJ8/W3aZDhYBxYx2gbP4djhnPs/bUQIqqLTH6uL
-	/XSICATNRgHYJiSc4fwzp0qXosnVonny0UAvQqeSoXD36/LiArN8wXc1jFIx3Ubko02u7jxKvECr5
-	N7OtFDicuA49pT23I5r7QDqgfpPwesyxrywLouzHZNE9LR714RZjPT1+Cqf/VUzZoCkF7M038nqNV
-	4UK3z9mQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ZI7IlN9dL2SCg7IRLTZDFQQpUE0qPe64yvdIHej8xpI=; b=X8wrv5t/Y21c+WPzNpNfixyZvO
+	8Ob0clNRWdrrPKa6xS5sXDrkk3TFVp1LYqS8nmCkpAOHorqymb3NVYnaOcbKZ8RvtuX6Hql7AMyaY
+	qfyXYDkv/2FFnskKkx6XvP6fgz2An/sNYbm+0Dk7r/VbMdqRMsYTAPJ9EgRZcyHDXqFis66fOq0oZ
+	61z75ac54WUMaY8ZiS9T2yfn1trBMQ7m+HOEt/qX+d11x83yMIds2x7cWtz+vPSCdQRGxU2Y4BOx3
+	YimEL7V5jpJ47BBI6EX9LMQZHXD9YKWInn1jIbLDY/K+aPefqP62BSaX6gmtlSIg/BmCw0xC+EHA9
+	EMSeaumw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkpol-0000000FJ7W-1WPD
+	id 1rkps6-0000000FJbf-3JRp
 	for ath12k@archiver.kernel.org;
-	Thu, 14 Mar 2024 18:28:39 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Thu, 14 Mar 2024 18:32:06 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkpoj-0000000FJ6g-0kRa
-	for ath12k@lists.infradead.org;
-	Thu, 14 Mar 2024 18:28:38 +0000
+	id 1rkps1-0000000FJYx-3HOj;
+	Thu, 14 Mar 2024 18:32:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 0A7BACE1E44;
-	Thu, 14 Mar 2024 18:28:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FC41C433C7;
-	Thu, 14 Mar 2024 18:28:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710440914;
-	bh=NTXQxwuJ31ty4EL4cdcFnyfkJRuGxEuDEQ/8YoGL0aM=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=e5vkYECxZwUvcrwGnTINr2Jf5n9ogUcMPt9qTRrIX980vjEc1ZrwMPQH0aJlRar8W
-	 fWnNCz6et9YZKaU390+WgC5bS/vzLsu8guBdScxbE1+EvKdSZf04/6OeJHGDZiWatb
-	 dpXB1zhShbYngHJDrFFA2oiRokOqqtihVbWvrxVKzQmiTkAJwT1Q4lwM2TpRziwlio
-	 N1iLFWdNW+JpF7AVOPmIZdJX4mSKK8Bu5xxbme280aY/DDqxh9Y9c4Xq2BEz17ndBa
-	 s6aaCK5VbXaqQ8jgvpJm/iRvMdiBEQ/mfwCCJfwfmI2ocdrvcbX68G7CM1CHeP/sSI
-	 a5QryMBoJM8IA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Johannes Berg <johannes@sipsolutions.net>,
-  <linux-wireless@vger.kernel.org>,  Miri Korenblit
- <miriam.rachel.korenblit@intel.com>,  <ath12k@lists.infradead.org>
-Subject: Re: [PATCH 2/2] wifi: iwlwifi: mvm: disable MLO for the time being
-References: <20240314110951.b50f1dc4ec21.I656ddd8178eedb49dc5c6c0e70f8ce5807afb54f@changeid>
-	<20240314110951.d6ad146df98d.I47127e4fdbdef89e4ccf7483641570ee7871d4e6@changeid>
-	<87bk7g4x08.fsf@kernel.org>
-	<09ca997159333980a168051a2a49c675a8ad5eeb.camel@sipsolutions.net>
-	<87plvwepjq.fsf@kernel.org>
-	<50b2d162-00a1-4001-894b-d5560c4226b2@quicinc.com>
-Date: Thu, 14 Mar 2024 20:28:31 +0200
-In-Reply-To: <50b2d162-00a1-4001-894b-d5560c4226b2@quicinc.com> (Jeff
-	Johnson's message of "Thu, 14 Mar 2024 09:42:08 -0700")
-Message-ID: <87h6h8ekhc.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	by dfw.source.kernel.org (Postfix) with ESMTP id E3C8C6150D;
+	Thu, 14 Mar 2024 18:32:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A243FC43390;
+	Thu, 14 Mar 2024 18:31:55 +0000 (UTC)
+Date: Thu, 14 Mar 2024 14:34:06 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Alison Schofield <alison.schofield@intel.com>
+Cc: LKML <linux-kernel@vger.kernel.org>, Linux Trace Kernel
+ <linux-trace-kernel@vger.kernel.org>, Masami Hiramatsu
+ <mhiramat@kernel.org>, Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org, kvm@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-cxl@vger.kernel.org,
+ linux-media@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ amd-gfx@lists.freedesktop.org, intel-gfx@lists.freedesktop.org,
+ intel-xe@lists.freedesktop.org, linux-arm-msm@vger.kernel.org,
+ freedreno@lists.freedesktop.org, virtualization@lists.linux.dev,
+ linux-rdma@vger.kernel.org, linux-pm@vger.kernel.org,
+ iommu@lists.linux.dev, linux-tegra@vger.kernel.org, netdev@vger.kernel.org,
+ linux-hyperv@vger.kernel.org, ath10k@lists.infradead.org,
+ linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+ ath12k@lists.infradead.org, brcm80211@lists.linux.dev,
+ brcm80211-dev-list.pdl@broadcom.com, linux-usb@vger.kernel.org,
+ linux-bcachefs@vger.kernel.org, linux-nfs@vger.kernel.org,
+ ocfs2-devel@lists.linux.dev, linux-cifs@vger.kernel.org,
+ linux-xfs@vger.kernel.org, linux-edac@vger.kernel.org,
+ selinux@vger.kernel.org, linux-btrfs@vger.kernel.org,
+ linux-erofs@lists.ozlabs.org, linux-f2fs-devel@lists.sourceforge.net,
+ linux-hwmon@vger.kernel.org, io-uring@vger.kernel.org,
+ linux-sound@vger.kernel.org, bpf@vger.kernel.org,
+ linux-wpan@vger.kernel.org, dev@openvswitch.org,
+ linux-s390@vger.kernel.org, tipc-discussion@lists.sourceforge.net, Julia
+ Lawall <Julia.Lawall@inria.fr>
+Subject: Re: [FYI][PATCH] tracing/treewide: Remove second parameter of
+ __assign_str()
+Message-ID: <20240314143406.6289a060@gandalf.local.home>
+In-Reply-To: <ZfMslbCmCtyEaEWN@aschofie-mobl2>
+References: <20240223125634.2888c973@gandalf.local.home>
+	<ZfMslbCmCtyEaEWN@aschofie-mobl2>
+X-Mailer: Claws Mail 3.19.1 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240314_112837_449428_DA9B9F41 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20240314_113201_973615_88823618 
+X-CRM114-Status: GOOD (  28.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,35 +88,111 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+On Thu, 14 Mar 2024 09:57:57 -0700
+Alison Schofield <alison.schofield@intel.com> wrote:
 
-> On 3/14/2024 9:39 AM, Kalle Valo wrote:
->> Johannes Berg <johannes@sipsolutions.net> writes:
->> 
->>> On Thu, 2024-03-14 at 18:08 +0200, Kalle Valo wrote:
->>>>
->>>>> -		hw->wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
->>>>> +		hw->wiphy->flags |= WIPHY_FLAG_DISABLE_WEXT;
->>>>
->>>> I think we should add the same for ath12k, right?
->>>>
->>>
->>> It's really up to you, I think. I'm hoping to even get this into stable,
->>> FWIW.
->> 
->> ath12k doesn't support MLO yet but I feel that disabling wext already
->> now would be consistent from user's point of view.
->
-> Now that I understand what this is doing I completely agree. We should prevent
-> the use of wext with ath12k.
+> On Fri, Feb 23, 2024 at 12:56:34PM -0500, Steven Rostedt wrote:
+> > From: "Steven Rostedt (Google)" <rostedt@goodmis.org>
+> > 
+> > [
+> >    This is a treewide change. I will likely re-create this patch again in
+> >    the second week of the merge window of v6.9 and submit it then. Hoping
+> >    to keep the conflicts that it will cause to a minimum.
+> > ]
 
-And thinking more about this I think it would be good that other drivers
-supporting Wi-Fi 7 hardware do the same until they also support MLO. Of
-course Wi-Fi 6 and older hardware should still support wext,
-unfortunately :/
+Note, change of plans. I plan on sending this in the next merge window, as
+this merge window I have this patch:
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+  https://lore.kernel.org/linux-trace-kernel/20240312113002.00031668@gandalf.local.home/
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+That will warn if the source string of __string() is different than the
+source string of __assign_str(). I want to make sure they are identical
+before just dropping one of them.
+
+
+> 
+> > diff --git a/drivers/cxl/core/trace.h b/drivers/cxl/core/trace.h
+> > index bdf117a33744..07ba4e033347 100644
+> > --- a/drivers/cxl/core/trace.h
+> > +++ b/drivers/cxl/core/trace.h  
+> 
+> snip to poison
+> 
+> > @@ -668,8 +668,8 @@ TRACE_EVENT(cxl_poison,
+> >  	    ),
+> >  
+> >  	TP_fast_assign(
+> > -		__assign_str(memdev, dev_name(&cxlmd->dev));
+> > -		__assign_str(host, dev_name(cxlmd->dev.parent));
+> > +		__assign_str(memdev);
+> > +		__assign_str(host);  
+> 
+> I think I get that the above changes work because the TP_STRUCT__entry for
+> these did:
+> 	__string(memdev, dev_name(&cxlmd->dev))
+> 	__string(host, dev_name(cxlmd->dev.parent))
+
+That's the point. They have to be identical or you will likely bug.
+
+The __string(name, src) is used to find the string length of src which
+allocates the necessary length on the ring buffer. The __assign_str(name, src)
+will copy src into the ring buffer.
+
+Similar to:
+
+	len = strlen(src);
+	buf = malloc(len);
+	strcpy(buf, str);
+
+Where __string() is strlen() and __assign_str() is strcpy(). It doesn't
+make sense to use two different strings, and if you did, it would likely be
+a bug.
+
+But the magic behind __string() does much more than just get the length of
+the string, and it could easily save the pointer to the string (along with
+its length) and have it copy that in the __assign_str() call, making the
+src parameter of __assign_str() useless.
+
+> 
+> >  		__entry->serial = cxlmd->cxlds->serial;
+> >  		__entry->overflow_ts = cxl_poison_overflow(flags, overflow_ts);
+> >  		__entry->dpa = cxl_poison_record_dpa(record);
+> > @@ -678,12 +678,12 @@ TRACE_EVENT(cxl_poison,
+> >  		__entry->trace_type = trace_type;
+> >  		__entry->flags = flags;
+> >  		if (region) {
+> > -			__assign_str(region, dev_name(&region->dev));
+> > +			__assign_str(region);
+> >  			memcpy(__entry->uuid, &region->params.uuid, 16);
+> >  			__entry->hpa = cxl_trace_hpa(region, cxlmd,
+> >  						     __entry->dpa);
+> >  		} else {
+> > -			__assign_str(region, "");
+> > +			__assign_str(region);
+> >  			memset(__entry->uuid, 0, 16);
+> >  			__entry->hpa = ULLONG_MAX;  
+> 
+> For the above 2, there was no helper in TP_STRUCT__entry. A recently
+> posted patch is fixing that up to be __string(region, NULL) See [1],
+> with the actual assignment still happening in TP_fast_assign.
+
+__string(region, NULL) doesn't make sense. It's like:
+
+	len = strlen(NULL);
+	buf = malloc(len);
+	strcpy(buf, NULL);
+
+??
+
+I'll reply to that email.
+
+-- Steve
+
+> 
+> Does that assign logic need to move to the TP_STRUCT__entry definition
+> when you merge these changes? I'm not clear how much logic is able to be
+> included, ie like 'C' style code in the TP_STRUCT__entry.
+> 
+> [1]
+> https://lore.kernel.org/linux-cxl/20240314044301.2108650-1-alison.schofield@intel.com/
 
