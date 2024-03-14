@@ -4,92 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFF48C5475B
-	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 09:27:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE985C5475B
+	for <ath12k@archiver.kernel.org>; Thu, 14 Mar 2024 10:20:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NDCgEUAAUG+BJEiBMUHxjJYf9BD9fQ4xHSOClod/mCs=; b=fBryMStTN0S79B2Vv7+CKrU7H8
-	WqzkjTBoXoYS81Yqm3hrdt3HW9pwZNzkjL+LXEOkwpGA5bbPr87OUtgmEgKd94MnAQLh18xJiBJu2
-	/nM+YYkmFKLHvC43Z4YMzzomMHrhTDW+AGSE9z8+7cNLkr4M2U/MTOxjK4seN6RS/U9l05f8wWtK0
-	c8fenVqOCXpsJXohtYJ5W/8iubK1P6LshxXHZSkASSoQMYatSJB8NMuXHctw0cDB0nxyILI0G3GCq
-	0S1yRAQPrCqVoUGbHKw07LEzeadSNgPvbHVdcTjsTWN+b4HBnvo00MpeTIFWWLp4sQr/xYxGtlVM9
-	qVbVBfTg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=19z4ZhgMG7r/2LQo9EMckokBcKVD/D2zmJQS3RGmTA4=; b=21J0wpQJ+0BCHthfqN+6rIQERm
+	ibFZ0brA3/2pIRB4sVo8RRWM7LiF4jseVPrPoB1ElMI9BNhY7LYrqaQIeVV+f7nM4Lws+TG9PzPpF
+	N1d9/z4VJ0Z9Z0LBtheC2X7zEgMMD/j9y+vicxrfJISfcgic2X1umT8c+eEeEgsY5uziG/JAtxBz/
+	gW6XJ0O01tzoyMifjTaAGAz7NB9Ii21kLmtdLJtGPLI1Hu++1qcJU6HRZlvmIXbzFyZkUYiAXa0AP
+	/7DOq728fozxLqxAL8dkv3reD61ibhUel6LxAu27d1vLMWD17T4QyswQuaPJ98BWslac1FyG642pu
+	RGqMT9ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkhN9-0000000Ditk-00Jl
+	id 1rkiCT-0000000Dssh-2H6V
 	for ath12k@archiver.kernel.org;
-	Thu, 14 Mar 2024 09:27:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 14 Mar 2024 10:20:37 +0000
+Received: from mgamail.intel.com ([198.175.65.17])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rkhN5-0000000Disc-1Hzy
+	id 1rkiCQ-0000000DssF-1VwF
 	for ath12k@lists.infradead.org;
-	Thu, 14 Mar 2024 09:27:33 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42E6co6d023793;
-	Thu, 14 Mar 2024 09:27:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=NDCgEUAAUG+BJEiBMUHxjJYf9BD9fQ4xHSOClod/mCs=; b=U6
-	JVC39ShGYEFVa9/yadsyi4VFhBtdBOOgdHiu5NTTTK1GPJBNABKHNEG2pDlSM9GA
-	3W4+dna70Q9flP88ITbV43BI1oC/01A1TBNjO6ewu71ErTVx6XoPLo7cOYJhQJzm
-	rpoQgY4k9Mx9TV7/eEhuoEQC5oWT4WhLTiZ5zY2B4ERp3hR7FbA/pY/LU2lbKy9y
-	XzWzslzxIcFE2z4buuC2bm/9mgkel8nvTs+chvVpKkZDFLxWKA+hM9XtR7g3aMNh
-	LPknu7quf/gf2rmsc187HR39lFFX2eXSCCr60azUBBjIQFwDXiPkWA87Uq1KO5xS
-	n4aZIrULm9iyFuFER61Q==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wupch12vw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 14 Mar 2024 09:27:27 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42E9RQHq010245
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 14 Mar 2024 09:27:26 GMT
-Received: from [10.110.125.139] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 14 Mar
- 2024 02:27:24 -0700
-Message-ID: <fd8384dc-b35f-477e-aac3-b7a5f49ce712@quicinc.com>
-Date: Thu, 14 Mar 2024 17:27:22 +0800
+	Thu, 14 Mar 2024 10:20:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1710411635; x=1741947635;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=Q40t2apZMO7d2J09faoTKTeEJycl4UQXXRiMphUtsZA=;
+  b=CO9ugBSncREzZm6Ycrql1+l9Xj9vS1eEEHQCDbhRnj2Hv62NNgx7NQru
+   8vNf4Kc5N4pwN9IaYD4yGE3eN1bEKFtjlSTBJV1/UnFaoYvtIx2n6tKPR
+   VfQJO/1LpeYuOlXWOYalJjpRWaO4t+0yb0xmMD3kk/N7BAVmXpoi57Xh5
+   NXxoQw+qEa4fgD3dXF7FBoj7oqSfJC1aFqsOCfYKPYw9EBVjS7c36+CLe
+   w1u+ZzpIVjrSgmhvpo+vx7BYBbKtxerKdv3GL9rd+EUhqJRlxLMXf9CBs
+   UeN9LZQJaz9KQMkjxNX9MsJaAbWRlV01f4tnf5Id2vGsyof7NbqW9MYR9
+   A==;
+X-IronPort-AV: E=McAfee;i="6600,9927,11012"; a="5343413"
+X-IronPort-AV: E=Sophos;i="6.07,125,1708416000"; 
+   d="scan'208";a="5343413"
+Received: from fmviesa008.fm.intel.com ([10.60.135.148])
+  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Mar 2024 03:20:33 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.07,125,1708416000"; 
+   d="scan'208";a="12312950"
+Received: from lkp-server01.sh.intel.com (HELO b21307750695) ([10.239.97.150])
+  by fmviesa008.fm.intel.com with ESMTP; 14 Mar 2024 03:18:24 -0700
+Received: from kbuild by b21307750695 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1rkiAH-000DKZ-2l;
+	Thu, 14 Mar 2024 10:18:21 +0000
+Date: Thu, 14 Mar 2024 18:17:35 +0800
+From: kernel test robot <lkp@intel.com>
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+	ath12k@lists.infradead.org
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	linux-wireless@vger.kernel.org,
+	Sriram R <quic_srirrama@quicinc.com>,
+	Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Subject: Re: [PATCH v4 04/12] wifi: ath12k: vdev statemachine changes for
+ single wiphy
+Message-ID: <202403141850.4ccwnsut-lkp@intel.com>
+References: <20240312135557.1778379-5-quic_ramess@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4] wifi: ath12k: report tx bitrate for iw dev xxx station
- dump
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240219095802.1147-1-quic_lingbok@quicinc.com>
- <87y1b7jkxu.fsf@kernel.org>
- <6f39eb1c-97f7-4029-a5f2-5ab36ff0f0a6@quicinc.com>
- <877ciq9h3e.fsf@kernel.org>
- <4e67118d-80e4-422e-aa39-73b891ee6042@quicinc.com>
- <87a5nkkfs1.fsf@kernel.org>
-Content-Language: en-US
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-In-Reply-To: <87a5nkkfs1.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: U1r8I_g-PpgggMJv87MeaAnSjIFBIsP7
-X-Proofpoint-GUID: U1r8I_g-PpgggMJv87MeaAnSjIFBIsP7
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-14_07,2024-03-13_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
- priorityscore=1501 impostorscore=0 phishscore=0 lowpriorityscore=0
- mlxlogscore=950 suspectscore=0 bulkscore=0 adultscore=0 clxscore=1011
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2403140066
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20240312135557.1778379-5-quic_ramess@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240314_022731_577113_446BD2A3 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20240314_032034_526902_4605AFDF 
+X-CRM114-Status: GOOD (  14.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,84 +88,207 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Hi Rameshkumar,
+
+kernel test robot noticed the following build warnings:
+
+[auto build test WARNING on kvalo-ath/ath-next]
+[also build test WARNING on wireless/main wireless-next/main linus/master next-20240314]
+[cannot apply to v6.8]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Rameshkumar-Sundaram/wifi-ath12k-add-multiple-radio-support-in-a-single-MAC-HW-un-register/20240312-215924
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git ath-next
+patch link:    https://lore.kernel.org/r/20240312135557.1778379-5-quic_ramess%40quicinc.com
+patch subject: [PATCH v4 04/12] wifi: ath12k: vdev statemachine changes for single wiphy
+config: powerpc-allyesconfig (https://download.01.org/0day-ci/archive/20240314/202403141850.4ccwnsut-lkp@intel.com/config)
+compiler: clang version 19.0.0git (https://github.com/llvm/llvm-project 503c55e17037436dcd45ac69dea8967e67e3f5e8)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240314/202403141850.4ccwnsut-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202403141850.4ccwnsut-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+   In file included from include/net/mac80211.h:18:
+   In file included from include/linux/if_ether.h:19:
+   In file included from include/linux/skbuff.h:17:
+   In file included from include/linux/bvec.h:10:
+   In file included from include/linux/highmem.h:8:
+   In file included from include/linux/cacheflush.h:5:
+   In file included from arch/powerpc/include/asm/cacheflush.h:7:
+   In file included from include/linux/mm.h:2188:
+   include/linux/vmstat.h:508:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     508 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     509 |                            item];
+         |                            ~~~~
+   include/linux/vmstat.h:515:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     515 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     516 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/vmstat.h:522:36: warning: arithmetic between different enumeration types ('enum node_stat_item' and 'enum lru_list') [-Wenum-enum-conversion]
+     522 |         return node_stat_name(NR_LRU_BASE + lru) + 3; // skip "nr_"
+         |                               ~~~~~~~~~~~ ^ ~~~
+   include/linux/vmstat.h:527:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     527 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     528 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/vmstat.h:536:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     536 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     537 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   In file included from drivers/net/wireless/ath/ath12k/mac.c:7:
+   In file included from include/net/mac80211.h:20:
+   In file included from include/linux/ieee80211.h:20:
+   In file included from include/linux/etherdevice.h:21:
+   In file included from include/linux/netdevice.h:45:
+   In file included from include/uapi/linux/neighbour.h:6:
+   In file included from include/linux/netlink.h:9:
+   In file included from include/net/scm.h:9:
+   In file included from include/linux/security.h:35:
+   include/linux/bpf.h:742:48: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     742 |         ARG_PTR_TO_MAP_VALUE_OR_NULL    = PTR_MAYBE_NULL | ARG_PTR_TO_MAP_VALUE,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:743:43: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     743 |         ARG_PTR_TO_MEM_OR_NULL          = PTR_MAYBE_NULL | ARG_PTR_TO_MEM,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+   include/linux/bpf.h:744:43: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     744 |         ARG_PTR_TO_CTX_OR_NULL          = PTR_MAYBE_NULL | ARG_PTR_TO_CTX,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+   include/linux/bpf.h:745:45: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     745 |         ARG_PTR_TO_SOCKET_OR_NULL       = PTR_MAYBE_NULL | ARG_PTR_TO_SOCKET,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:746:44: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     746 |         ARG_PTR_TO_STACK_OR_NULL        = PTR_MAYBE_NULL | ARG_PTR_TO_STACK,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:747:45: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     747 |         ARG_PTR_TO_BTF_ID_OR_NULL       = PTR_MAYBE_NULL | ARG_PTR_TO_BTF_ID,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:751:38: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     751 |         ARG_PTR_TO_UNINIT_MEM           = MEM_UNINIT | ARG_PTR_TO_MEM,
+         |                                           ~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+   include/linux/bpf.h:753:45: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_arg_type') [-Wenum-enum-conversion]
+     753 |         ARG_PTR_TO_FIXED_SIZE_MEM       = MEM_FIXED_SIZE | ARG_PTR_TO_MEM,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+   include/linux/bpf.h:776:48: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     776 |         RET_PTR_TO_MAP_VALUE_OR_NULL    = PTR_MAYBE_NULL | RET_PTR_TO_MAP_VALUE,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:777:45: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     777 |         RET_PTR_TO_SOCKET_OR_NULL       = PTR_MAYBE_NULL | RET_PTR_TO_SOCKET,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:778:47: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     778 |         RET_PTR_TO_TCP_SOCK_OR_NULL     = PTR_MAYBE_NULL | RET_PTR_TO_TCP_SOCK,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:779:50: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     779 |         RET_PTR_TO_SOCK_COMMON_OR_NULL  = PTR_MAYBE_NULL | RET_PTR_TO_SOCK_COMMON,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:781:49: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     781 |         RET_PTR_TO_DYNPTR_MEM_OR_NULL   = PTR_MAYBE_NULL | RET_PTR_TO_MEM,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+   include/linux/bpf.h:782:45: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     782 |         RET_PTR_TO_BTF_ID_OR_NULL       = PTR_MAYBE_NULL | RET_PTR_TO_BTF_ID,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:783:43: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_return_type') [-Wenum-enum-conversion]
+     783 |         RET_PTR_TO_BTF_ID_TRUSTED       = PTR_TRUSTED    | RET_PTR_TO_BTF_ID,
+         |                                           ~~~~~~~~~~~    ^ ~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:894:44: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_reg_type') [-Wenum-enum-conversion]
+     894 |         PTR_TO_MAP_VALUE_OR_NULL        = PTR_MAYBE_NULL | PTR_TO_MAP_VALUE,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:895:42: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_reg_type') [-Wenum-enum-conversion]
+     895 |         PTR_TO_SOCKET_OR_NULL           = PTR_MAYBE_NULL | PTR_TO_SOCKET,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~
+   include/linux/bpf.h:896:46: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_reg_type') [-Wenum-enum-conversion]
+     896 |         PTR_TO_SOCK_COMMON_OR_NULL      = PTR_MAYBE_NULL | PTR_TO_SOCK_COMMON,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~
+   include/linux/bpf.h:897:44: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_reg_type') [-Wenum-enum-conversion]
+     897 |         PTR_TO_TCP_SOCK_OR_NULL         = PTR_MAYBE_NULL | PTR_TO_TCP_SOCK,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~
+   include/linux/bpf.h:898:42: warning: bitwise operation between different enumeration types ('enum bpf_type_flag' and 'enum bpf_reg_type') [-Wenum-enum-conversion]
+     898 |         PTR_TO_BTF_ID_OR_NULL           = PTR_MAYBE_NULL | PTR_TO_BTF_ID,
+         |                                           ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~
+>> drivers/net/wireless/ath/ath12k/mac.c:6038:54: warning: variable 'bit' is uninitialized when used here [-Wuninitialized]
+    6038 |                 ath12k_warn(ab, "failed to create vdev %d ret %d", bit, ret);
+         |                                                                    ^~~
+   drivers/net/wireless/ath/ath12k/mac.c:6001:8: note: initialize the variable 'bit' to silence this warning
+    6001 |         u8 bit;
+         |               ^
+         |                = '\0'
+   26 warnings generated.
 
 
-On 2024/2/28 19:08, Kalle Valo wrote:
-> Lingbo Kong <quic_lingbok@quicinc.com> writes:
-> 
->> On 2024/2/27 21:23, Kalle Valo wrote:
->>> Lingbo Kong <quic_lingbok@quicinc.com> writes:
->>>
->>>> On 2024/2/26 23:37, Kalle Valo wrote:
->>>>> Lingbo Kong <quic_lingbok@quicinc.com> writes:
->>>>>
->>>>>> The tx bitrate of "iw dev xxx station dump" always show an invalid value
->>>>>> "tx bitrate: 6.0MBit/s".
->>>>>>
->>>>>> To address this issue, parse the tx complete report from firmware and
->>>>>> indicate the tx rate to mac80211.
->>>>>>
->>>>>> After that, "iw dev xxx station dump" show the correct tx bitrate such as:
->>>>>> tx bitrate: 104.0 MBit/s MCS 13
->>>>>> tx bitrate: 144.4 MBit/s MCS 15 short GI
->>>>>> tx bitrate: 626.9 MBit/s 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0
->>>>>> tx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
->>>>>>
->>>>>> Tested-on: WCN7850 hw2.0 PCI
->>>>>> WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>>>>> Tested-on: QCN9274 hw2.0 PCI QCN9274 hw2.0 PCI
->>>>>> WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->>>>>>
->>>>>> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
->>>>> Please use full englist words like transmit instead of tx. Also the
->>>>> title could be simplified to:
->>>>> wifi: ath12k: report station mode transmit rate to user space
->>>>> Here I assumed this only works in station mode. Or does this also
->>>>> support AP and P2P mode? The commit message should explain that.
->>>>>
->>>>
->>>> Ok, i will apply it in next version. Thanks for pointing out.
->>> After rereading my comments maybe keep the title simple like:
->>>     wifi: ath12k: report station mode transmit rate
->>> But it would be good to clarify in the commit message what modes
->>> this is
->>> supported. And what hardware families support this.
->>
->> Hi kalle, Could you please offer your opinion on this commit message?
->>
->> wifi: ath12k: report station mode transmit rate
->>
->> Currently, the transmit rate of "iw dev xxx station dump" command
->> always show an invalid value.
->>
->> To address this issue, ath12k parse the info of transmit complete
->> report from firmware and indicate the transmit rate to mac80211.
->>
->> This patch only applies to the WCN7850's station mode.
->>
->> After that, "iw dev xxx station dump" show the correct transmit rate.
->> Such as:
->> tx bitrate: 104.0 MBit/s MCS 13
->> tx bitrate: 144.4 MBit/s MCS 15 short GI tx bitrate: 626.9 MBit/s
->> 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0 tx bitrate: 1921.5 MBit/s
->> 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
-> 
-> Looks good, except for readability I would add an empty line after "Such
-> as:".
-> 
-> I noticed that the signal patch depends on this patchset:
-> 
-> https://patchwork.kernel.org/project/linux-wireless/patch/20240219111417.1185-1-quic_lingbok@quicinc.com/
-> 
-> In that you should submit both patchses in same patchset. But please
-> wait until I have reviewed the signal strength patch.
+vim +/bit +6038 drivers/net/wireless/ath/ath12k/mac.c
 
-Hi, kalle,
+  5991	
+  5992	static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
+  5993							    struct ieee80211_vif *vif,
+  5994							    struct ieee80211_chanctx_conf *ctx)
+  5995	{
+  5996		struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+  5997		struct ath12k_hw *ah = hw->priv;
+  5998		struct ath12k_base *ab;
+  5999		struct ath12k *ar;
+  6000		int ret;
+  6001		u8 bit;
+  6002	
+  6003		if (arvif->ar) {
+  6004			WARN_ON(!arvif->is_created);
+  6005			goto out;
+  6006		}
+  6007	
+  6008		if (ah->num_radio == 1)
+  6009			ar = ah->radio;
+  6010		else if (ctx)
+  6011			ar = ath12k_get_ar_by_ctx(hw, ctx);
+  6012		else
+  6013			return NULL;
+  6014	
+  6015		if (!ar)
+  6016			goto out;
+  6017	
+  6018		ab = ar->ab;
+  6019	
+  6020		mutex_lock(&ar->conf_mutex);
+  6021	
+  6022		if (vif->type == NL80211_IFTYPE_AP &&
+  6023		    ar->num_peers > (ar->max_num_peers - 1)) {
+  6024			ath12k_warn(ab, "failed to create vdev due to insufficient peer entry resource in firmware\n");
+  6025			ret = -ENOBUFS;
+  6026			goto unlock;
+  6027		}
+  6028	
+  6029		if (ar->num_created_vdevs > (TARGET_NUM_VDEVS - 1)) {
+  6030			ath12k_warn(ab, "failed to create vdev, reached max vdev limit %d\n",
+  6031				    TARGET_NUM_VDEVS);
+  6032			ret = -EBUSY;
+  6033			goto unlock;
+  6034		}
+  6035	
+  6036		ret = ath12k_mac_vdev_create(ar, vif);
+  6037		if (ret) {
+> 6038			ath12k_warn(ab, "failed to create vdev %d ret %d", bit, ret);
+  6039			goto unlock;
+  6040		}
+  6041	
+  6042		/* TODO If the vdev is created during channel assign and not during
+  6043		 * add_interface(), Apply any parameters for the vdev which were received
+  6044		 * after add_interface, corresponding to this vif.
+  6045		 */
+  6046	unlock:
+  6047		mutex_unlock(&ar->conf_mutex);
+  6048	out:
+  6049		return arvif->ar;
+  6050	}
+  6051	
 
-Would you mind if I kindly inquire whether you might have forgotten to 
-review "wifi: ath12k: report signal for iw dev xxx station dump" patch?
-After you review, I can put the two patches into the same patchset:)
-
-Best regards
-Lingbo Kong
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
