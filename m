@@ -4,88 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73518C54E5D
-	for <ath12k@archiver.kernel.org>; Mon, 18 Mar 2024 16:02:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 960C8C54E5D
+	for <ath12k@archiver.kernel.org>; Mon, 18 Mar 2024 16:58:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5uwoDH3kbCTXxeMutaIDHslrE1LQRXq9d9NNePLLkrM=; b=UVnZqnS8HbUIvwnHsO413iqewT
-	MPOHl79lmfu43UVWIef52UZEJAP6XBljf/9h2QexujkVPoeiliq29qfgu0teRzKaSLYDN+fUIX4WR
-	ofEFfF73eHDHqTFRvpDCDGByKVbpN4kyepfBwlYyw0mq972LDafo2gGNLAbOy/yU5OAPSrwKHJ+JG
-	NdKHMK3xuRes8KDc+LcIQmpJHlufNVGa+JAufVHjwS6cCNPypFs4hZizl1XzGGk5XNg5lEqBP+7eF
-	Vh/2uvekkkhDpASh6P/2Q3djr0Yr18fqaOHyYigZoEJCXofY9fuUiQCptq/chmTUHnoe6olSIAgnY
-	KpdXeaJg==;
+	bh=1pks0d5mDPn4LnO3RyuMlci15r0NU85/smAG31ANqiA=; b=mYPH1Z9X2Rwyh0nwE6oXv/R+ej
+	+Wvxzn1VPS+Q8Ap9XISqyAxvdC/ZcItk/WTgxme7vtIeOQNWp1TQUJXgDjycIUe170rbw+TZC2aG6
+	8K+TFS9/a76fzsOR4gvSvIxpZSOC2Rj6aC2YP+BU5D1xad0Ok70L8YZhghmlN+HJn7qOf2NWaJ0gp
+	Pml1CphEG6aTUtnFLQ4hqYhan2HA52HZLv70cOcGJbYRsdMfmoavQz6T2w7PAwC53TMnh2uP2HoRc
+	VG5IBLiEacgaPtPMv78MizviV3z8MYM9ED+9NmgX8ILsDZcejGdxhWscYmGU90N/gjKD0eHecSLMa
+	mM+OQgkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmFRL-000000098jw-0lPq
+	id 1rmGJW-00000009LcS-1IV1
 	for ath12k@archiver.kernel.org;
-	Mon, 18 Mar 2024 16:02:19 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 18 Mar 2024 16:58:18 +0000
+Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmFRH-000000098jX-3seK
+	id 1rmGJS-00000009Laj-3lO0
 	for ath12k@lists.infradead.org;
-	Mon, 18 Mar 2024 16:02:17 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42IBLbNH005204;
-	Mon, 18 Mar 2024 16:02:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=5uwoDH3kbCTXxeMutaIDHslrE1LQRXq9d9NNePLLkrM=; b=jP
-	BN2E5DbSTkXCTrwZz/mHDKCQ46NixffLKnzmuRtgXULJQKVfX+dSmAYIOdLjwt/7
-	1rbxuH3TFxiqsVCwdraFDowiE+TmCg1R17ZnUg6in1wXoZvyzacqm3bVxI8rRivk
-	El1az79gNwBlsHf18UFZdW+qWcjT3aNF8kT+jVESBTa5mD9ItSb6JWOLUxMdoHe1
-	EDnrac85zir2Y7jlv2cEuB1o6He5jYNpDcoz1yOzrKyjkBCDmpIO0cl64PWPl2q/
-	EeSzmKsbstH8+SMAJqIhBeI5hea1LX8WRmFhvIXSGqHvlvNG9Diw0iJH5q05TJDe
-	mU7Bw6U5+EE+hx0tSwZg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wxmnjrmq0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 18 Mar 2024 16:02:14 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42IG2DuC020076
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 18 Mar 2024 16:02:13 GMT
-Received: from [10.110.89.243] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 18 Mar
- 2024 09:02:13 -0700
-Message-ID: <c1b44950-95d2-4185-b906-4296ceec123d@quicinc.com>
-Date: Mon, 18 Mar 2024 09:02:12 -0700
+	Mon, 18 Mar 2024 16:58:16 +0000
+Received: by mail-ed1-x532.google.com with SMTP id 4fb4d7f45d1cf-568d323e7fbso1905427a12.3
+        for <ath12k@lists.infradead.org>; Mon, 18 Mar 2024 09:58:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1710781093; x=1711385893; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=1pks0d5mDPn4LnO3RyuMlci15r0NU85/smAG31ANqiA=;
+        b=cawGKaNYaE8HLK7DAuwh9xSIPliyYS86dfJfI/jRYx0P9IU6V4k/y2WPnV7bzXiBd5
+         TPWTSSzjdrtiuSGxLl7VR0aJIGw1G5nuMtYAa1/CgqO+MmsMjhR9YoRv9tKx/zGnH3iR
+         sBe9/tcvsB9m1Je1QJXtwAuGoTNY1PKaInboqAj8iNX+rffj30iecrfPxFovryd0ENxM
+         gQetnmIV77xKGEpnZrhzAh5T1S+q2ztVunFoe9VTceAbbrZTr2hb8cZI5xo5WQ753Hfn
+         6w94VuwqdZEH2bRROk/DwRQs7kgqvEzUEY7atvaPd6rbvvhkxpz2jvLSQRWl1PT5i1aS
+         mBiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1710781093; x=1711385893;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=1pks0d5mDPn4LnO3RyuMlci15r0NU85/smAG31ANqiA=;
+        b=TuHojqa8PhyrIJtIVXbcdC8b/y9Dj6QWvO15Hh8YQsV2PHWaBTexrfAmCOBZ/n/jO9
+         /ItXRhnpqistvR08MOovFdyf9ebww6czuysTRUY2kJgRTcCWoch3YgUuqguAcvnSJnIm
+         WCcrk0GbqR5LEw9iC5ZY2W9pDgz7zG0N2efd9qROEd0vyeiJnu+pehI2aFUKhyYOm4Yy
+         BQquGNoEZx9NpXbQtJtoLZgzG1O1sO+vRVxmKZsXd9gy4Sl/Fbo9yt11m8tNnm+m9lry
+         k+UZjUD2ACMbilz0ZEoN55OdbkHBNlR98zqF2FWuL7hTtsr5BfYfohVHm1iOwdn4E73l
+         409w==
+X-Forwarded-Encrypted: i=1; AJvYcCWJuQ3Im9SJP2Il5XBw6/WGCuj6UxcnEyZQ0eAG/08uKNojBU26gwq+ehK5Ayz9gYNOPqBk/oYCTQzq/bDmw4PFl5ynrSYFzBAOLA==
+X-Gm-Message-State: AOJu0YxEzNk1gepm3N2ytx+UDlRDvzsXOOZsrmNdsUpw+x5QltbtiqKN
+	Ez+ACo+AdWILvAsw35NiNTaKUKMIaUgyhIbz9EvXhI06vZKMB6mWyvmk8Di63qM9RnIjjaQ3w+7
+	Ns+jHcnwQGuK+Yid8Rkd9bYJ2sEo=
+X-Google-Smtp-Source: AGHT+IEJ5k+KvlpfKETEmjJiZH0O6XNMLKF8aeGQaqR1COwlHvF+blwOvyd6D28sppmUlJJsLH/8jhZ+5DzefzP/g54=
+X-Received: by 2002:a50:c04a:0:b0:567:45e2:c4db with SMTP id
+ u10-20020a50c04a000000b0056745e2c4dbmr8784216edd.39.1710781092609; Mon, 18
+ Mar 2024 09:58:12 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Add firmware coredump collection support
-Content-Language: en-US
-To: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240318060249.1023837-1-quic_ssreeela@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240318060249.1023837-1-quic_ssreeela@quicinc.com>
+References: <CAHohoUjBQ43aX8qvT6WAK5AK3PnOyU1g3eFLuCL1f-UMjnNnwQ@mail.gmail.com>
+ <9dc50652-ac92-4962-b60c-1990c5cece86@quicinc.com> <87le6fcyxc.fsf@kernel.org>
+In-Reply-To: <87le6fcyxc.fsf@kernel.org>
+From: "Owen Mesh." <owen.mesh@gmail.com>
+Date: Mon, 18 Mar 2024 18:58:03 +0200
+Message-ID: <CAHohoUj1K6XyT+3c6+b16v_5nV6P8HwqTjXJ3AgD56bvR_-2Qw@mail.gmail.com>
+Subject: Re: ath12k: driver does not allow the system to switch to
+ suspend/sleep mode
+To: Kalle Valo <kvalo@kernel.org>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org, 
+	Jeff Johnson <jjohnson@kernel.org>, 
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: hsbU_oQyHFKupgA1s5D41EVjVApHtmju
-X-Proofpoint-ORIG-GUID: hsbU_oQyHFKupgA1s5D41EVjVApHtmju
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-18_12,2024-03-18_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- clxscore=1015 mlxscore=0 lowpriorityscore=0 mlxlogscore=600 phishscore=0
- impostorscore=0 bulkscore=0 priorityscore=1501 adultscore=0 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2403140001
- definitions=main-2403180120
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240318_090216_045119_0B733A7A 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240318_095815_262369_43724869 
+X-CRM114-Status: GOOD (  14.55  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,30 +94,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/17/2024 11:02 PM, Sowmiya Sree Elavalagan wrote:
-> In case of firmware assert snapshot of firmware memory is essential for
-> debugging. Add firmware coredump collection support for PCI bus.
-> Collect RDDM and firmware paging dumps from MHI and pack them in TLV
-> format and also pack various memory shared during QMI phase in separate
-> TLVs.  Add necessary header and share the dumps to user space using dev
-> coredump framework. Coredump collection is disabled by default and can
-> be enabled using menuconfig. Dump collected for a radio is 55MB
-> approximately.
-> 
-> Tested-on: qcn9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
-
-b4 shazam reports warnings when applying your patch:
-
-Applying: wifi: ath12k: Add firmware coredump collection support
-/local/mnt/workspace/jjohnson/kernel/ath/.git/rebase-apply/patch:35: new blank line at EOF.
-+
-/local/mnt/workspace/jjohnson/kernel/ath/.git/rebase-apply/patch:230: new blank line at EOF.
-+
-/local/mnt/workspace/jjohnson/kernel/ath/.git/rebase-apply/patch:298: new blank line at EOF.
-+
-warning: 3 lines add whitespace errors.
+Thanks for the info!
+I'll wait to hear about the solution.
+In the meantime,  will use a proven method - run the "sudo modprobe -r
+ath12k" command before leaving home.
 
 
+=D0=BF=D0=BD, 18 =D0=BC=D0=B0=D1=80. 2024=E2=80=AF=D0=B3. =D0=B2 18:00, Kal=
+le Valo <kvalo@kernel.org>:
+>
+> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+>
+> > On 3/18/2024 5:15 AM, Vladimir Mesh. wrote:
+> >> Dear Sirs,
+> >>
+> >> I have a problem using ath12k driver with wcn7850 adapters.
+> >> ath12k driver does not allow the system to switch to suspend/sleep mod=
+e.
+> >> Please fix it!
+> >
+> > This is a known issue both for ath11k and ath12k
+> > https://bugzilla.kernel.org/show_bug.cgi?id=3D214649
+> >
+> > There is already a proposed fix for ath11k that requires changes to oth=
+er
+> > components (MHI & QRTR) that is pending approval from those maintainers=
+:
+> > https://lore.kernel.org/ath11k/20240305021320.3367-1-quic_bqiang@quicin=
+c.com/
+> >
+> > Once that is in place, ath12k can also be addressed.
+>
+> BTW it would be good to submit corresponding ath12k patches as well.
+> That way people could test them and provide feedback.
+>
+> --
+> https://patchwork.kernel.org/project/linux-wireless/list/
+>
+> https://wireless.wiki.kernel.org/en/developers/documentation/submittingpa=
+tches
 
