@@ -4,80 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B1E4C6FD1F
-	for <ath12k@archiver.kernel.org>; Wed, 20 Mar 2024 17:44:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84FA3C6FD1F
+	for <ath12k@archiver.kernel.org>; Wed, 20 Mar 2024 19:10:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KZGaOMPAFwV3vOMUfAiVh3qlzqrNrilrn5QufIsTwic=; b=DGkcEjQv7X911S3fcO4gGjQSCJ
-	KkeoQIjEylgijrVWpIyvyifQaAaDue4fUpomlvYr/SWUvJgUehydSL9Q71DGxfw7nfxommz0Lk5bA
-	U3KcTea74EijfHTIrTuVjiplSnwnRDYScxlrsB1PK1x9gN/Z9XVXgT7nOKYK/TAjDGeDM1HRC1luw
-	/L+Cd1oau4Ho9lDHwP8FCUgzt7iSwRyDzgVNbfcSrNsMRYO0V9r0OeOL34naVDh7GPBeg0Qx/t7Yj
-	7JDgBwIJoDXqwAcjZ8NjC82H9TFh8p80O5VoYJiSahwti0yFpqOGDQVFKaXsxb5x9waW4cB5U4Aju
-	3hvoXRUg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=rnJwfDgc5Fxy6A1s47uO2AdPMaQlLbvtxjYhJPf5uhI=; b=TjkY9cPSa/Ohly3wHdE6pIxWYh
+	Ni0pJ1J5dWshvGidsmXhZZj40NpJguLHY8EdXQbpwP6ux4PZ4pm3SLP6TU+9nkHgRAvQciGQbJX7s
+	TEGTXwClWTn31IfXvug5PBg06aUdh9CK+SaLrOArKbPW0Zme8hqTkwB6hq0691m6mT74/xDfuAeS1
+	XEsiDVWvIiFxjUDd4t5ToVT0UfBpaos3uaTNcCmV9tDtn9PCCdGX4FhharjQLcstW3eESjY1j3rSW
+	Xham9695OfP/JMKXLWVBd+vte9kinbF8f39r9eI0vxVAe7/oj4OvpNqSPmrPadr4Iz3FQQsMRc2IA
+	xiwhQ/nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmzyz-00000000X4Q-0zuj
+	id 1rn1Kh-00000000jWf-0YMF
 	for ath12k@archiver.kernel.org;
-	Wed, 20 Mar 2024 17:44:09 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	Wed, 20 Mar 2024 19:10:39 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmzyv-00000000X3s-3z8u
+	id 1rn1KY-00000000jR0-2IHK
 	for ath12k@lists.infradead.org;
-	Wed, 20 Mar 2024 17:44:07 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-5684ea117a3so94463a12.0
-        for <ath12k@lists.infradead.org>; Wed, 20 Mar 2024 10:44:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1710956643; x=1711561443; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=KZGaOMPAFwV3vOMUfAiVh3qlzqrNrilrn5QufIsTwic=;
-        b=HGjSGWGAtx7b5mz7TcUbmns3nmipvDC6LcE4iqnn8AFmCLsfu8eNrRVsMnqbR5+XBR
-         p5ok4NxoAUB4jrgaPErHNuRP2YM5Ar55uSvLZ+r4wB0+O7f1B+dcWwAM80gamqF9cIqm
-         SMTnA18eTEWe5M3Mr/U9syqM/I8H59288VTSLBLHjrI2XLvrhHXiX4+Z4KaxofgS8t4z
-         rG0qhB3EtA4YrygSJgkw9KBDxNd8zVIAlVkHKCFOgY7fbXeb3STFDej2fez0Nnz98Cot
-         4hhJdWALSDll93zU+w/gC+c1Fs/xE3o5N7qR06xjS93tk6ATsSpKPW2yxKDUMghfgNfX
-         H1yA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1710956643; x=1711561443;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=KZGaOMPAFwV3vOMUfAiVh3qlzqrNrilrn5QufIsTwic=;
-        b=VmIrigqpicTxoo+Xq6Hb1BOOLn8DshFUAKLaaxOVnSa9DmZg2eDax3xX6F26CE+EfT
-         MYc6gzUQLfGh3p+C7Ku7waqzQkFC6YeKk2rNEUhQtkAy7g3sLAud/72RmY51aGe1/RfS
-         8DweiZa52W97N4T9EiDQDUZJbYrY5+XP7kTL0IawR3vDwEx4B/IPmvd73GDGCwQmJoxG
-         Njt0dAHk6Us2lbdFFOAeeqzcox46zfduzrz7WEhE1jmYrFG2DJ0S5L48xZR+kUa0A4sd
-         fuRcLITPASM7q4NNSzn3FGLPUWBzorBLAw4FHeH4LMWW+EYXAKsng9SsUFrVV1iTyv0f
-         5LhQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV/MRKJrD0NxBUDy4PnOrghj3Iobz0Z/hrgdUqcLPmflQ2TTjHtxDNV5NayZ3Hv/C6HZOrWvdEyMrYz3P/dH/CXlU9Xee9wS4m8wA==
-X-Gm-Message-State: AOJu0YyLJMVW9XRrZdsCz7RX+Vc3B09zaWTZHQfKCnqiPsmzBtoGLJBb
-	i4XNpoqAYrPP7Gq4Kcz2YBpjHdYh2kDipnb9Hn5npKDSkCDT6cnvFWvvA30GWqr149cyL2BcV6u
-	XzCbyJs++2KTSK16ELWD8SCluirLMHb4PDIAvfA==
-X-Google-Smtp-Source: AGHT+IFxn6pM2ywqId7rIoiq5xVOCL+uGvBdduOpG7BxjUxA1IPh+JNUiMxR+WHugfZyFyzW2670iqFJC8kM1gONkJk=
-X-Received: by 2002:a05:6402:1ccf:b0:566:1952:694c with SMTP id
- ds15-20020a0564021ccf00b005661952694cmr14108119edb.20.1710956643095; Wed, 20
- Mar 2024 10:44:03 -0700 (PDT)
+	Wed, 20 Mar 2024 19:10:33 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42KI0QBV001324;
+	Wed, 20 Mar 2024 19:09:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding:content-type; s=qcppdkim1; bh=rnJwfDg
+	c5Fxy6A1s47uO2AdPMaQlLbvtxjYhJPf5uhI=; b=QMYkJK40pfHxXxmAOYQRpXN
+	0RUcyqcnVWc6+8dpFg0gTu6heKCVQ9I5SyqbGV0IHIdIQQ2KH1iRnsromao0dNBN
+	sXhxr//J5j9cFCb0smwD9e2h0grB8TBpp7AFVK3D5thenyvYpv6mp1vep+TcyedE
+	rrz/4zYwOpFBvDjpNMYZ4SSLK9nIHG2bDvrQ8vw8nyZkxfcKviHAUEU2mkplJq4/
+	Xxw+N0Io3fJOu3RDipTmj6XqB6Pf2ByUaeixszGETrGpeojGijgX3RVAoOh3UngV
+	l7WmxM3xk9lq+/7ZcdqgRqyDOK0n4HF7CsZsWo7O16Yz3ie9HA2uoB56OooIBZg=
+	=
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wypxq23pg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 20 Mar 2024 19:09:59 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42KJ9vgW006667
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 20 Mar 2024 19:09:57 GMT
+Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Wed, 20 Mar 2024 12:09:56 -0700
+From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+Subject: [PATCH v5 00/12] wifi: ath12k: Add single wiphy support
+Date: Thu, 21 Mar 2024 00:39:31 +0530
+Message-ID: <20240320190943.3850106-1-quic_ramess@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <CAHohoUjGROZ=E-D_qJp3S6dLUwA-PfAWBCU7pAkPVBJqkG=QQg@mail.gmail.com>
- <87sf0kan7d.fsf@kernel.org> <CAHohoUh9nt06n_eqFwVf3k6vbqJb5akxvgS4i8sNHpadDzUOEA@mail.gmail.com>
- <CAHohoUjMaNfhhDoJtNh=8zpzKvAChw89WocBFGxhP3Pi_i21Hg@mail.gmail.com>
-In-Reply-To: <CAHohoUjMaNfhhDoJtNh=8zpzKvAChw89WocBFGxhP3Pi_i21Hg@mail.gmail.com>
-From: "Owen Mesh." <owen.mesh@gmail.com>
-Date: Wed, 20 Mar 2024 20:43:51 +0300
-Message-ID: <CAHohoUgC34=x9Uq5E8a7nnqkGWRjKpir8=ZFC_XCtEF+Cgzcfw@mail.gmail.com>
-Subject: Re: ath12k: driver does not show tx bitrate
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: r9SnIIRNFCNQ0rlVwnE9GMtmuEH5OIud
+X-Proofpoint-GUID: r9SnIIRNFCNQ0rlVwnE9GMtmuEH5OIud
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-20_10,2024-03-18_03,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ lowpriorityscore=0 phishscore=0 clxscore=1015 malwarescore=0
+ priorityscore=1501 mlxlogscore=999 adultscore=0 suspectscore=0 mlxscore=0
+ bulkscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2403140001 definitions=main-2403200154
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240320_104406_017194_82E90DF5 
-X-CRM114-Status: GOOD (  15.69  )
+X-CRM114-CacheID: sfid-20240320_121030_739687_551AB400 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,64 +95,77 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Dear Sirs,
-FYI
-Just tried this patch
-https://patchwork.kernel.org/project/linux-wireless/patch/20240219095802.11=
-47-1-quic_lingbok@quicinc.com/
-iw now shows "tx bitrate: (unknown) 80MHz":
-iw dev wlp6s0 link
-Connected to d4:da:21:a8:06:7e (on wlp6s0)
-    SSID: NETGEAR65
-    freq: 5805.0
-    RX: 398485 bytes (1661 packets)
-    TX: 20994 bytes (192 packets)
-    signal: -25 dBm
-    rx bitrate: 6.0 MBit/s
-    tx bitrate: (unknown) 80MHz
-    bss flags: short-slot-time
-    dtim period: 1
-    beacon int: 100
+From: Sriram R <quic_srirrama@quicinc.com>
 
-I believe this is due to a missing 11BE part in the patch.
-Something like this:
-+    } else if (ts->pkt_type =3D=3D HAL_TX_RATE_STATS_PKT_TYPE_11BE) {
-I have a router with a QCN9274 chip and, I believe, I have an 802.11be
-connection with it.
+With the introduction of Multi Link Operation (MLO) support in
+IEEE802.11be, each EHT AP/non AP interface is capable of
+operating with multiple radio links.
 
-=D1=81=D1=80, 20 =D0=BC=D0=B0=D1=80. 2024=E2=80=AF=D0=B3. =D0=B2 20:08, Owe=
-n Mesh. <owen.mesh@gmail.com>:
->
-> Dear Sirs,
-> I was wondering if it would be possible to add thermal sensor support
-> for the arh12k as it's in the ath11k.
->
-> Thank you and best regards
->
-> =D1=81=D1=80, 20 =D0=BC=D0=B0=D1=80. 2024=E2=80=AF=D0=B3. =D0=B2 19:36, O=
-wen Mesh. <owen.mesh@gmail.com>:
-> >
-> > Thanks, great
-> > I also noticed that a fix for missing "signal strength" is planned!
-> >
-> > Regards
-> >
-> > =D1=81=D1=80, 20 =D0=BC=D0=B0=D1=80. 2024=E2=80=AF=D0=B3. =D0=B2 19:21,=
- Kalle Valo <kvalo@kernel.org>:
-> > >
-> > > "Owen Mesh." <owen.mesh@gmail.com> writes:
-> > >
-> > > > I found a small bug in ath12k driver with wcn7850 adapter.
-> > > > ath12k driver does not show tx bitrate.
-> > >
-> > > We are working on adding it:
-> > >
-> > > https://patchwork.kernel.org/project/linux-wireless/patch/20240219095=
-802.1147-1-quic_lingbok@quicinc.com/
-> > >
-> > > --
-> > > https://patchwork.kernel.org/project/linux-wireless/list/
-> > >
-> > > https://wireless.wiki.kernel.org/en/developers/documentation/submitti=
-ngpatches
+cfg80211/mac80211 expects drivers to abstract the communication
+between such Multi Link HW and mac80211/cfg80211 since it depends
+on different driver/HW implementation. Hence the single wiphy
+abstraction with changes in datastructures were introduced in
+"wifi: ath12k: Introduce hw abstraction"
+
+This patchset extends the implementation to allow combination
+of multiple underlying radios into a single composite hw/wiphy
+for registration. Since now multiple radios are represented by
+a single wiphy, changes are required in various mac ops that the
+driver supports since the driver now needs to learn on how to tunnel
+various mac ops properly to a specific radio.
+
+This patchset covers the basic mac80211 ops for an interface bring up
+and operation.
+
+Note:
+Monitor and hw reconfig support for Single Wiphy will be done in future
+patchsets.
+
+---
+ v5:
+ - Addressed Jeff's comments
+ - Made arvif config cache to be dynamic in PATCH 07/12
+
+ v4:
+ - Updated missing Signed-off details for patches.
+
+ v3:
+  - Rebased on ToT (added additional ar check in PATCH 08/12 for p2p)
+  - Introduced iterator to loop through ars in an ah(for_each_ar())
+  - Addressed comments on reverse xmas tree declaration style.
+
+ v2:
+  - Rebased on ToT and dependent patchset
+
+Karthikeyan Periyasamy (1):
+  wifi: ath12k: add multiple radio support in a single MAC HW
+    un/register
+
+Sriram R (11):
+  wifi: ath12k: Modify add and remove chanctx ops for single wiphy
+    support
+  wifi: ath12k: modify ath12k mac start/stop ops for single wiphy
+  wifi: ath12k: vdev statemachine changes for single wiphy
+  wifi: ath12k: scan statemachine changes for single wiphy
+  wifi: ath12k: fetch correct radio based on vdev status
+  wifi: ath12k: Cache vdev configs before vdev create
+  wifi: ath12k: Add additional checks for vif and sta iterators
+  wifi: ath12k: modify regulatory support for single wiphy architecture
+  wifi: ath12k: Modify set and get antenna mac ops for single wiphy
+  wifi: ath12k: Modify rts threshold mac op for single wiphy
+  wifi: ath12k: support get_survey mac op for single wiphy
+
+ drivers/net/wireless/ath/ath12k/core.h |  38 +-
+ drivers/net/wireless/ath/ath12k/hw.h   |   1 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 946 +++++++++++++++++++------
+ drivers/net/wireless/ath/ath12k/p2p.c  |   3 +-
+ drivers/net/wireless/ath/ath12k/p2p.h  |   1 +
+ drivers/net/wireless/ath/ath12k/reg.c  |  55 +-
+ 6 files changed, 815 insertions(+), 229 deletions(-)
+
+
+base-commit: 4b2f0ce6f2fe0fd906d408a01e494b85c272c7d7
+-- 
+2.25.1
+
 
