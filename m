@@ -4,60 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8298FC54E58
-	for <ath12k@archiver.kernel.org>; Wed, 20 Mar 2024 16:40:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FF9CC6FD1F
+	for <ath12k@archiver.kernel.org>; Wed, 20 Mar 2024 17:08:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nUtkz+PUbm0KIRPdSySl58fbSxHslMdnrvw0EZ6JXgg=; b=ZeGya/5YwUqW8USyNlvSkB3sok
-	fgguiNfBEYux76gDgzMFM2SiANi0wuPFpvPPVpnn657QVLuJDYYkZCb06jENb632isbJMUPcKnhgG
-	ZSJXgRNvdeKyYrxjNb7XVYHGSb6AIQpmX3I1qQDXbh8o9CZSnFAGTzt3m/Wc9htZQX83fePjeKqH/
-	gnmWdgw/cEWmZrW+Tf0uBM6GpHkB3rvmhvdtziwQS9FoQH3/GZT90cY+nmcbkxym2nSy64olbaGYG
-	UjgskAfnFJoeWaYvPh39n5YN6iAappXIgKXCD3a3ESuOVxRPuRxSVOJEucDjih/iCZFjd+GsUfqe9
-	WiMyeHuA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=TYlXtQhS3uUW+uXWomj3PANjtY3Qz54AyiLg0b/GD4I=; b=Omey+ZKCBobo9pf4utE1tlV7qs
+	m3UWSbKPXVQPwwLsrFc/NBzzOjBWmGE0FbE6QJbKNqiejKk+X+H5gV7wThf8rRy9aIg4xY7StnPpN
+	gkkKzCvQyefSLVTfJmGZu9yCdY0eF3ecOiykl0BVsTGu5XlTUe9P0EFk/qr0B1gsM/SnMEup58HBb
+	0AZlEtEG603AtlupqkinUAeJCKbegp+e6Cj4jnRmGyCWphl/wsuq5k+i5xDvKv1b5NmvHJx1QU51Z
+	RuUKjQmjLRpdUR5/RkSBGIjW2FDeM1G7IEwRu/ANpuiE85O9l3FCJBZKlsUS0moORmInqACx5Htg8
+	2M9rxuTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmyyv-00000000LpS-407f
+	id 1rmzQe-00000000Qmb-3XQB
 	for ath12k@archiver.kernel.org;
-	Wed, 20 Mar 2024 16:40:02 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Wed, 20 Mar 2024 17:08:40 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rmyys-00000000Lo8-1GJw
+	id 1rmzQb-00000000Qm2-1jdP
 	for ath12k@lists.infradead.org;
-	Wed, 20 Mar 2024 16:40:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 9B4A9CE1030;
-	Wed, 20 Mar 2024 16:39:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1C6FC43399;
-	Wed, 20 Mar 2024 16:39:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1710952795;
-	bh=pdueHAqME/RXgy8B9mFyZ15nNoudCV+XV4ekjt1t7PU=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=FVc19hfPlD2Pe6iXcWwRKFQRVVTIBwSeK81M7Ns2vV4MoygQSFn9S7DkIGNqU/wfe
-	 dd+qCyPc078egc4X5E2JCEsh3R5ohsY1zvRGUhcReCzm8POz2JWc4EXjj4cNtfTGjj
-	 ettr+m+vnRaZGi31BZPdWVL00f0siVr6Hk8LzcBl/1tl6JYfDod+aYQeTt6ALg3tjo
-	 zzwx8j585+To2OE+ca5IJHVmR+Qzdy8OAav3k3CRM6w7P456VzP7N6NsXkr/B5SDyv
-	 BSBIykRtw7GTM9A3EXuzv0VTfwNreM3GDNkT2pAyjwQUk54iiKc38sHeLYpXETiFgY
-	 15FIDX5s5ezpg==
-From: Kalle Valo <kvalo@kernel.org>
-To: Lingbo Kong <quic_lingbok@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH] wifi: ath12k: report signal for iw dev xxx station dump
-References: <20240219111417.1185-1-quic_lingbok@quicinc.com>
-Date: Wed, 20 Mar 2024 18:39:52 +0200
-In-Reply-To: <20240219111417.1185-1-quic_lingbok@quicinc.com> (Lingbo Kong's
-	message of "Mon, 19 Feb 2024 19:14:17 +0800")
-Message-ID: <87o7b8amcn.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 20 Mar 2024 17:08:38 +0000
+Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-a3fb8b0b7acso7096566b.2
+        for <ath12k@lists.infradead.org>; Wed, 20 Mar 2024 10:08:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1710954514; x=1711559314; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=TYlXtQhS3uUW+uXWomj3PANjtY3Qz54AyiLg0b/GD4I=;
+        b=as3AxY6bvFdA4Y7uPyf2OcEkwrV8cTsPeC/t6W/+FFt+h3jt0UvbJAauKYa0C7yWG7
+         YExdFpAf/buI8kjAYRrTxjxpQHiMXTkIFjnJjlinHN+lZaNWzBaVeY2x/UgqX7RuwUjm
+         CWFck/kfEop0BarmviVqCsM5U/S1egAqVVh2F/hiyg2X5HJ/7y2Pb43JSo5PVJTheInM
+         Dwq2ogTvXvEv1s4A+qp0hawI0/eB+eI2xVmc6damI3NME2CPmdSjpx7x/wSYUYhuolvL
+         jCuTKgQlbKG9CfmgFmNhX6/RYc1h3ixacpro7JZj4+mJN5TvBwlyD2ytDSC7gJqRdFn0
+         /ENQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1710954514; x=1711559314;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=TYlXtQhS3uUW+uXWomj3PANjtY3Qz54AyiLg0b/GD4I=;
+        b=JZFTWmjqzIoKT4hzCXHownQvFen9SbC61xK0nhcKmTQHt4+oY+9vu35PBcMvAv9qLC
+         O3dcveN2qb1xoCOAWMY63WbcreHW9wZa7WcOmT4L08OMzGK2vQDCM/wyFzTjlAp5675T
+         dWdFXq/xFXso7a2+zsQeVjPaOHeLpzeV9/sCAB1DXzzQ6XKZzGI6ytEL32+in55HNdKN
+         2ho+cUdUbAafaGSI4FCtc4dAyQWNPrubVsh9aJcdYdGb45O2aQYvnh7ZvslzOi9Uqslf
+         8vxxCONK6BiRlPlRvRwZURzfIsfyjHzkTvavUrXuJayOyp0dWkv0r8FZVgmP2VGOjzmY
+         5i5g==
+X-Forwarded-Encrypted: i=1; AJvYcCXtBOKlTuheXxAuYSIo9SJtHT6WRQblJ8YXSUPs96w1GxxHPaqVH/Jy+oiCsIdbOW7TXh5x8+fFhdjHl6IPEdM/XZG350Ac9xwBCQ==
+X-Gm-Message-State: AOJu0Ywpz0mtTiD8J9LSzRBzAHACA8+WO6pWXaKOaDDepki8OPJwXCg9
+	9+ZqJ1Qa6Mwpec7wZeYdfYevByUkeZBgQR0XmWvYlxMXpKsyIMEbsNgTDVeO4nzfdJfEYiz1vL7
+	mmU4mQiuKS22uSQ3qzk4KnsuDJj8=
+X-Google-Smtp-Source: AGHT+IFami3nyNXYOBgNlad4+eh1nbBqJtvfb9bZGimNQ0aK5XFtCGPxKVm5m57ykLFwHvLzDbe6vfUMtTWBF+lfw+c=
+X-Received: by 2002:a17:907:9411:b0:a46:dfe1:d4f3 with SMTP id
+ dk17-20020a170907941100b00a46dfe1d4f3mr4322693ejc.59.1710954514383; Wed, 20
+ Mar 2024 10:08:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain
+References: <CAHohoUjGROZ=E-D_qJp3S6dLUwA-PfAWBCU7pAkPVBJqkG=QQg@mail.gmail.com>
+ <87sf0kan7d.fsf@kernel.org> <CAHohoUh9nt06n_eqFwVf3k6vbqJb5akxvgS4i8sNHpadDzUOEA@mail.gmail.com>
+In-Reply-To: <CAHohoUh9nt06n_eqFwVf3k6vbqJb5akxvgS4i8sNHpadDzUOEA@mail.gmail.com>
+From: "Owen Mesh." <owen.mesh@gmail.com>
+Date: Wed, 20 Mar 2024 20:08:22 +0300
+Message-ID: <CAHohoUjMaNfhhDoJtNh=8zpzKvAChw89WocBFGxhP3Pi_i21Hg@mail.gmail.com>
+Subject: Re: ath12k: driver does not show tx bitrate
+To: Kalle Valo <kvalo@kernel.org>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240320_093958_889608_826B649F 
-X-CRM114-Status: GOOD (  19.18  )
+X-CRM114-CacheID: sfid-20240320_100837_474051_C84BA17A 
+X-CRM114-Status: GOOD (  11.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,115 +91,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Lingbo Kong <quic_lingbok@quicinc.com> writes:
+Dear Sirs,
+I was wondering if it would be possible to add thermal sensor support
+for the arh12k as it's in the ath11k.
 
-> The signal of "iw dev xxx station dump" always show 0 dBm. This is because
-> currently signal is only set in ath12k_mgmt_rx_event function, and not set
-> for rx data packet. So, change to get signal from firmware and report to
-> mac80211.
+Thank you and best regards
+
+=D1=81=D1=80, 20 =D0=BC=D0=B0=D1=80. 2024=E2=80=AF=D0=B3. =D0=B2 19:36, Owe=
+n Mesh. <owen.mesh@gmail.com>:
 >
-> After that, "iw dev xxx station dump" show the correct signal such as:
-> signal: -50 dBm
-> signal: -49 dBm
+> Thanks, great
+> I also noticed that a fix for missing "signal strength" is planned!
 >
-> Tested-on: WCN7850 hw2.0 PCI
-> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> Regards
 >
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-
-I'll omit the cosmetics for now and focus on the big picture.
-
-First of all, no mention of WCN7850 and QCN9274 in the commit message.
-Not good.
-
-> --- a/drivers/net/wireless/ath/ath12k/hw.c
-> +++ b/drivers/net/wireless/ath/ath12k/hw.c
-> @@ -920,6 +920,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
->  		.otp_board_id_register = QCN9274_QFPROM_RAW_RFA_PDET_ROW13_LSB,
->  
->  		.supports_sta_ps = false,
-> +
-> +		.supports_rssi_stats = false,
->  	},
->  	{
->  		.name = "wcn7850 hw2.0",
-> @@ -993,6 +995,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
->  		.otp_board_id_register = 0,
->  
->  		.supports_sta_ps = true,
-> +
-> +		.supports_rssi_stats = true,
->  	},
->  	{
->  		.name = "qcn9274 hw2.0",
-> @@ -1061,6 +1065,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
->  		.otp_board_id_register = QCN9274_QFPROM_RAW_RFA_PDET_ROW13_LSB,
->  
->  		.supports_sta_ps = false,
-> +
-> +		.supports_rssi_stats = false,
->  	},
->  };
-
-Ok, based on this you enable this only for WCN7850 hw2.0. Why is that?
-
-We really should get rid of "I work only on WCN7850 and not care about
-QCN9274" mindset. And of course the other team says "I work only on
-QCN9274 and not care about WCN7850", sigh. If you work on ath12k you
-need to consider *BOTH* WCN7850 and QCN9274 families!
-
->  static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
->  					 struct ieee80211_vif *vif,
->  					 struct ieee80211_sta *sta,
->  					 struct station_info *sinfo)
->  {
->  	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
-> +	struct ath12k *ar = arsta->arvif->ar;
-> +	s8 signal;
->  
->  	sinfo->rx_duration = arsta->rx_duration;
->  	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
-> @@ -7473,8 +7503,19 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
->  	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
->  
->  	/* TODO: Use real NF instead of default one. */
-> -	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
-> -	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-> +	signal = arsta->rssi_comb;
-> +
-> +	if (!signal &&
-> +	    arsta->arvif->vdev_type == WMI_VDEV_TYPE_STA &&
-> +	    ar->ab->hw_params->supports_rssi_stats &&
-> +	    !(ath12k_mac_get_fw_stats(ar, ar->pdev->pdev_id, 0,
-> +				      WMI_REQUEST_VDEV_STAT)))
-> +		signal = arsta->rssi_beacon;
-> +
-> +	if (signal) {
-> +		sinfo->signal = signal;
-> +		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-> +	}
->  }
-
-If I'm reading the patch correctly this is the sequence:
-
-1. ath12k_mac_op_sta_statistics() is called
-
-2. WMI_REQUEST_STATS_CMDID is sent to the firmware
-
-3. ath12k_mac_op_sta_statistics() returns
-
-4. firmware sends WMI_UPDATE_STATS_EVENTID to host
-
-5. ath12k_wmi_tlv_fw_stats_data_parse() stores signal to arsta->rssi_beacon
-
-So doesn't this mean that ath12k_mac_op_sta_statistics() actually uses
-the previous value? And if ath12k_mac_op_sta_statistics() is called very
-seldom, like once an hour, the signal value can be one hour wrong?
-
-Also I don't see any protection when accessing arsta->rssi_beacon.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+> =D1=81=D1=80, 20 =D0=BC=D0=B0=D1=80. 2024=E2=80=AF=D0=B3. =D0=B2 19:21, K=
+alle Valo <kvalo@kernel.org>:
+> >
+> > "Owen Mesh." <owen.mesh@gmail.com> writes:
+> >
+> > > I found a small bug in ath12k driver with wcn7850 adapter.
+> > > ath12k driver does not show tx bitrate.
+> >
+> > We are working on adding it:
+> >
+> > https://patchwork.kernel.org/project/linux-wireless/patch/2024021909580=
+2.1147-1-quic_lingbok@quicinc.com/
+> >
+> > --
+> > https://patchwork.kernel.org/project/linux-wireless/list/
+> >
+> > https://wireless.wiki.kernel.org/en/developers/documentation/submitting=
+patches
 
