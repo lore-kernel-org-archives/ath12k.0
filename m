@@ -4,84 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0EB3C6FD1F
-	for <ath12k@archiver.kernel.org>; Thu, 21 Mar 2024 18:47:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C582C54E58
+	for <ath12k@archiver.kernel.org>; Thu, 21 Mar 2024 19:54:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9y+K3lwrNgxkvjio35nX3P6+2bJIVYEt7UZ5Xb1mL8A=; b=uYy/RlvAEDNduS2AgnYZJmqKLJ
-	ZLw1y5Vm8te1vinEnFYyzlP90oJeJ0JthANOypIM5/UAd8dOwcN4nKWo8N74p0R1yTCLBChc8TGYN
-	a15d5tVzP/7xv3WaD4IcGejtuzvGGD94W8kDgXTdm+GgZgCZB8W14QRzraAA8AVZ9Kua2nadrF8b9
-	Sebze3eFOa6i22Jr3ZUCTuWwoPzvz29kuULNtPvhPmlpxRnYg93LkXnKLq+lB12yYdyApy8p6u6TC
-	jlKo5AS/zlZrdYxiP5gPSRMzjRrXlMOBI93cTBav9lyUeg0miYSYUoz/vo/hLsfkfm6x0bRCNez0t
-	7q7tq4/A==;
+	bh=vx6tkd2vEJA5iK9okA7Yg2T0BVYn2Gbbwe3OzsY7z4g=; b=iWvWoAUE/YhePImdvQPkKUPCRS
+	DJjKko5NBk7CfYAC4SRZUBmYuHjNoct1+sFXzvLKIRP6YreqjGVQrnJNBZ3fNiz8SMUXcssq7NHy4
+	ub9CmfyoaaxCrFWZatJO0QILHIgoSot0Rz5fDdFK7GKY1zqZuifx2N1YZJiS+UGAFHzZiuMdYyhTk
+	stNbOpt/pj0twaD71x/rvnWX9D+bxUz0A4f4OVMriNUS5m0RAjdMxum5Gwy4+70Z8vQnTxclVpa0o
+	0D9ykVEGUgJaGRV1+b7IYgRvf3pnXqIPgn5QoRGwbLax29zMzxA7HEHiUzW135gen8uHZf5VcvCU+
+	FmywlWNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnNRv-00000004Iu1-1m7P
+	id 1rnOUk-00000004S05-0aaw
 	for ath12k@archiver.kernel.org;
-	Thu, 21 Mar 2024 18:47:35 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	Thu, 21 Mar 2024 19:54:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rnNRs-00000004IsF-3aKb
+	id 1rnOUg-00000004RzI-2Wxj
 	for ath12k@lists.infradead.org;
-	Thu, 21 Mar 2024 18:47:34 +0000
-Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-56845954ffeso1678480a12.2
-        for <ath12k@lists.infradead.org>; Thu, 21 Mar 2024 11:47:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1711046846; x=1711651646; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9y+K3lwrNgxkvjio35nX3P6+2bJIVYEt7UZ5Xb1mL8A=;
-        b=SzVeFBB/lZ1Whi0hxlFN9AjR/0O557S00RBXwdYCnHdMbshrXI1DZHCzUb0SQHUOlx
-         BPy6KwhDs64KaE/LnqD1mYpWpOn67b2/K7z5R17+RhA8LPDOFnZRVM9xD4gYKcl/NxPv
-         j1elvduwT4I0AH0w67oXb0tIdySjvD/Ey+x5k6d1gwsEAi4OYUiVT0vyBO8CkQ40y/4q
-         pDPdOWGVF5vwwdJzJ50pfivxKUhmvRr1tn23hYQ06hv6BzXgmy9JN+fsoZOD1rZlf7J9
-         dYbSVmEBPfaPnGn3zFm51Kq+qb7f11nAjUebtd7OdKVjtDIiaL20xmuV7tJYrx4MP7A1
-         EvTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1711046846; x=1711651646;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=9y+K3lwrNgxkvjio35nX3P6+2bJIVYEt7UZ5Xb1mL8A=;
-        b=Ddrz4Stsful4iuUbt1JA0z4xaNBI+yA0MHzFpKB37MMKKvdvkvaY/tAzO2KGDlUbtK
-         UNt3++OOkRTdro4Y0Rsr8fVuvIGoI7ZnV/IkW1YSoNrr1T3joNCCLOqSuXrFvNeuMNc4
-         ZEanfaL/9s9EDc69BJqUNKfT6OKadtu8twkJTP0RiErz0MU3PkdQ3bITHr9c6ZYlZf82
-         Mx8Z/Il3YaZFhoRs3dq1ctgcsqlGB1DZq7rlqPbYI9n7hxOtNKJAZn3M3toZ60wM0ulj
-         gNvlVlXAXDo/PpZOwjENh6hP2c5kW/8mEPudQ6etD4b6IDm5fg6GLsRmt39JQd5SUFoL
-         7uLA==
-X-Forwarded-Encrypted: i=1; AJvYcCWTAO3fCiPOw8IsaB5h80x5+ZXybUS29n2CTLfq5hE449523ZR066SeJNUH6XSJMI64MPu+NXDX1oZiqbl7jAOPUURoIyn3xJGjXg==
-X-Gm-Message-State: AOJu0Yz1ZTpADJcmQktEgLrRXC1TZAELxv0g7AEocYqnRHTZVQuUsVjq
-	hDJNlMZ7LaTDVobTkdgaHmDbH+mvyTeKyDoYnUCOapf1kKo8KQcVfpr3s9auzsBjiTKqY5rKjk5
-	zDvNHQAFr9+vWvChtrRwUx4/HXN1LyG3WxlU=
-X-Google-Smtp-Source: AGHT+IGzBXplJbnDGisBv1JHsPFE3c4myUgsaILHNKOX8vYDLvNtR40OlZESn8n8VjEzpY0GphkGqepv/OxRY5cUBSw=
-X-Received: by 2002:a50:8714:0:b0:565:59a:a103 with SMTP id
- i20-20020a508714000000b00565059aa103mr55601edb.33.1711046845887; Thu, 21 Mar
- 2024 11:47:25 -0700 (PDT)
+	Thu, 21 Mar 2024 19:54:32 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42LCtnVJ028785;
+	Thu, 21 Mar 2024 19:54:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=vx6tkd2vEJA5iK9okA7Yg2T0BVYn2Gbbwe3OzsY7z4g=; b=nK
+	I+BBH9mkawQrE3cM9IGn+LVU1RXGwXGC4bvrrCQrCAJYkUeBmw1QqW53lexF2VDn
+	OmjBpOYlGdc5wjUfAFfN4PZhRUGKRUWy7ZSWVZyMkSCjFOhUrYHZ9i/xsd4chYA3
+	Sxra0Iylg2Dz+hhojzQagOw1PqajDps8CPk/CwMPz/2lZ5+/CGLa/+muo24gpxmA
+	+hWkA7RBw3cJ5Cht1ptLzVyzbVwG5ffUD1eDgiVoB5G5SU1RJRSWuFZrbWNXNfs5
+	J9kxPx+0uEm9BJ9AqMZ4Oj9+H1iPTku6R3/Y+iwc+8fpymxBjoKZVeYxXXrQkUCj
+	JTt3D1vD0hohpZGFZLJA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x0nb314m5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 21 Mar 2024 19:54:28 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42LJsS2s007632
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 21 Mar 2024 19:54:28 GMT
+Received: from [10.110.74.135] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Thu, 21 Mar
+ 2024 12:54:27 -0700
+Message-ID: <85e7f591-ed52-4554-bd92-09086eaebcdb@quicinc.com>
+Date: Thu, 21 Mar 2024 12:54:26 -0700
 MIME-Version: 1.0
-References: <CAHohoUjGROZ=E-D_qJp3S6dLUwA-PfAWBCU7pAkPVBJqkG=QQg@mail.gmail.com>
- <87sf0kan7d.fsf@kernel.org> <CAHohoUh9nt06n_eqFwVf3k6vbqJb5akxvgS4i8sNHpadDzUOEA@mail.gmail.com>
- <CAHohoUjMaNfhhDoJtNh=8zpzKvAChw89WocBFGxhP3Pi_i21Hg@mail.gmail.com>
- <CAHohoUgC34=x9Uq5E8a7nnqkGWRjKpir8=ZFC_XCtEF+Cgzcfw@mail.gmail.com>
- <158ebe88-2394-4b1c-8d32-9d8509c11a90@quicinc.com> <CAHohoUjSQdLYt+tSBzNO6LzGgEZcz5E-3WB=xYngE5URveX0XA@mail.gmail.com>
- <f077d1cb-2704-42fe-a77d-b23d0d38a8fa@quicinc.com>
-In-Reply-To: <f077d1cb-2704-42fe-a77d-b23d0d38a8fa@quicinc.com>
-From: "Owen Mesh." <owen.mesh@gmail.com>
-Date: Thu, 21 Mar 2024 19:47:14 +0100
-Message-ID: <CAHohoUjWa8wNhdVTr_Vy8TxsMYqMKkabTuBPH8HhCjgnpciS5A@mail.gmail.com>
-Subject: Re: ath12k: driver does not show tx bitrate
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Lingbo Kong <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org, 
-	Kalle Valo <kvalo@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 05/12] wifi: ath12k: scan statemachine changes for
+ single wiphy
+Content-Language: en-US
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+References: <20240320190943.3850106-1-quic_ramess@quicinc.com>
+ <20240320190943.3850106-6-quic_ramess@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240320190943.3850106-6-quic_ramess@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: uvgS-bHIk2o0dkDEfJmiiTgypvVgoq0_
+X-Proofpoint-ORIG-GUID: uvgS-bHIk2o0dkDEfJmiiTgypvVgoq0_
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-21_12,2024-03-21_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ spamscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0 clxscore=1015
+ impostorscore=0 mlxlogscore=999 mlxscore=0 malwarescore=0 suspectscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2403140001 definitions=main-2403210148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240321_114733_028718_CCE62269 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20240321_125430_698948_684F93DA 
+X-CRM114-Status: GOOD (  24.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,36 +101,85 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Yes, please!
+On 3/20/2024 12:09 PM, Rameshkumar Sundaram wrote:
+> From: Sriram R <quic_srirrama@quicinc.com>
+> 
+> When multiple radios are advertised as a single wiphy which
+> supports various bands, a default scan request to mac80211
+> from cfg80211 will split the driver request based on band,
+> so each request will have channels belonging to the same band.
+> With this supported by default, the ath12k driver on receiving
+> this request checks for one of the channels in the request and
+> selects the corresponding radio(ar) on which the scan is going
+> to be performed and creates a vdev on that radio.
+> 
+> Note that on scan completion this vdev is not deleted. If a new
+> scan request is seen on that same vif for a different band the
+> vdev will be deleted and created on the new radio supporting the
+> request. The vdev delete logic is refactored to have this done
+> dynamically.
+> 
+> The reason for not deleting the vdev on scan stop is to avoid
+> repeated delete-create sequence if the scan is on the same band.
+> Also, during channel assign, new vdev creation can be optimized
+> as well.
+> 
+> Also if the scan is requested when the vdev is in started state,
+> no switching to new radio is allowed and scan on channels only
+> within same radio is allowed.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 211 +++++++++++++++++++++-----
+>  1 file changed, 176 insertions(+), 35 deletions(-)
+...
+> -static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
+> -					   struct ieee80211_vif *vif)
+> +static int ath12k_mac_vdev_delete(struct ath12k *ar, struct ieee80211_vif *vif)
+>  {
+> -	struct ath12k *ar;
+>  	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+> -	struct ath12k_base *ab;
+> +	struct ath12k_base *ab = ar->ab;
+>  	unsigned long time_left;
+>  	int ret;
+>  
+> -	if (!arvif->is_created)
+> -		return;
+> -
+> -	ar = arvif->ar;
+> -	ab = ar->ab;
+> -
+> -	mutex_lock(&ar->conf_mutex);
+> -
+> -	ath12k_dbg(ab, ATH12K_DBG_MAC, "mac remove interface (vdev %d)\n",
+> -		   arvif->vdev_id);
+> -
+> -	if (arvif->vdev_type == WMI_VDEV_TYPE_AP) {
+> -		ret = ath12k_peer_delete(ar, arvif->vdev_id, vif->addr);
+> -		if (ret)
+> -			ath12k_warn(ab, "failed to submit AP self-peer removal on vdev %d: %d\n",
+> -				    arvif->vdev_id, ret);
+> -	}
+> -
+> +	lockdep_assert_held(&ar->conf_mutex);
+>  	reinit_completion(&ar->vdev_delete_done);
+>  
+>  	ret = ath12k_wmi_vdev_delete(ar, arvif->vdev_id);
+>  	if (ret) {
+> -		ath12k_warn(ab, "failed to delete WMI vdev %d: %d\n",
+> +		ath12k_warn(ab, "failed to delete WMI scan vdev %d: %d\n",
 
-On Thu, Mar 21, 2024 at 7:12=E2=80=AFPM Jeff Johnson <quic_jjohnson@quicinc=
-.com> wrote:
->
-> On 3/20/2024 11:33 PM, Owen Mesh. wrote:
-> > Thanks!
-> >
-> > I applied this patch.
-> > It looks great for my configuration/platform!
-> >
-> > iw now shows 802.11be tx and rx bitrates:
-> >
-> > iw dev wlp6s0 link
-> > Connected to d4:da:21:a8:06:7e (on wlp6s0)
-> >     SSID: NETGEAR65
-> >     freq: 5805.0
-> >     RX: 36791 bytes (185 packets)
-> >     TX: 9111 bytes (73 packets)
-> >     signal: -27 dBm
-> >     rx bitrate: 1801.4 MBit/s 80MHz EHT-MCS 11 EHT-NSS 3 EHT-GI 0
-> >     tx bitrate: 1200.9 MBit/s 80MHz EHT-MCS 11 EHT-NSS 2 EHT-GI 0
-> >
-> >     bss flags: short-slot-time
-> >     dtim period: 1
-> >     beacon int: 100
-> >
-> > Best regards
->
-> Is it OK to add the following to the final commit:
-> Tested-by: Owen Mesh <owen.mesh@gmail.com>
->
+this change seems strange. isn't ath12k_mac_vdev_delete() called from both the
+scan logic and from the normal ath12k_mac_op_remove_interface(), so it might
+not be a scan vdev that is being deleted?
+
+>  			    arvif->vdev_id, ret);
+>  		goto err_vdev_del;
+>  	}
+
 
