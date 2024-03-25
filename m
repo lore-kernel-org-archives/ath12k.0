@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E521C54E64
-	for <ath12k@archiver.kernel.org>; Mon, 25 Mar 2024 21:23:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25FC7C54E58
+	for <ath12k@archiver.kernel.org>; Mon, 25 Mar 2024 21:23:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tU23UPfNOPTrO8hM+t0tGI1IwzPcFzJaXNTcLje4Vm0=; b=iTygUrPscOMaQcYTD5oLKy3hVx
-	LpU+cuzUNTzA4mC0sDtpe4hBRFQ6VrltusNCbfaJza6RAzx2eGUjZQhjtGDZQQoUQOTnD4gTLosjO
-	Kf8F5UWPbzGblbpINI+zPYMHuSXMP7okraKZRcdE+rLboisupYVZMW/isu9QvYsW+HBGsIlbUQ0dT
-	wVOgI4gGo/VIsFhOqBBvsSSDpBSTtArFK3t+v57YVoRNAJa7AMkg68S9NS+7IfNZzD6FSYHS6WDxr
-	8uzc2LWvRvIMbvM/R6BXDjuvOVCDJdzoSWPOUnhSOVzqsJkG4EehOnHtCbyvRX1O0LDGmBdVrGeh8
-	Z9abDZOQ==;
+	bh=+INShS/lWUILrQfX0Txy8gxvScszHghVF+5eTxblxzA=; b=JS4PQvRmnNx3soqo0Kmo+pMN7g
+	nSRLBYn7lK+UzzI4p0sFdgBWX8sZQRZ0M6xQwdEz3xMMXJarpTrFKqk/k+mmWTh3CEGF+2sAMU6bj
+	LMvKfaDteJUSisVHbW+WBHK/Rnt/jb98DQnK3S+E0QrbsHMHGNamijB3lVEPfh96wQd0fFK2CtnNA
+	8c2SQjfOkxXdN8RKPAblRXFvX3SIFj/Rpgw09IheRmuihkOqKklTp1PGA6XyhLI7BSU8aGddSn69k
+	VTiNWUlADSWbGLKZfN7ldNUMAvtnx50uzr3dfwgFRZrvH2i83hhWVrpma5MaxP7CxE73ay3LxeDYK
+	xD7WMzZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rormw-000000021A1-0Cqa
+	id 1rormw-000000021AP-31id
 	for ath12k@archiver.kernel.org;
 	Mon, 25 Mar 2024 21:23:26 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rormq-0000000216f-3aFz
+	id 1rormr-0000000216k-1KTY
 	for ath12k@lists.infradead.org;
-	Mon, 25 Mar 2024 21:23:22 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42PKj9r8013346;
+	Mon, 25 Mar 2024 21:23:23 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42PHmj9d015549;
 	Mon, 25 Mar 2024 21:23:20 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-type; s=qcppdkim1; bh=tU23UPfNOPTrO8hM+t0t
-	GI1IwzPcFzJaXNTcLje4Vm0=; b=l+L2uYOC1qIAB63bIx2+0JC0tnbpZAjk+9kR
-	9U0rqMLjjonDP/NQF9qTzmw+Eqj+KFr0SYuwQBolv40DzxyfJgl+qNwu0mIvX+SE
-	EDTyXjt4Dc5kAmSStc4H2jOs30fcbP69T9pGnwrN9/s0qL7rYRkowBuQNI9bwX9s
-	m/uIcwJj1Pk+mSZPC8htdekdIDUXSYRDBk+/XZGPLmzYGZZIWTsSCHjZNPu8Djo/
-	wPJC8KpOWX+78FubwcYUHkPUSGw22FRZRULtVQTpxHcowQ3qKVfnOI23/JgCRr/m
-	5zN1n5Ou9mwOv3qtlwvVPCZRukVfmZaIzrzphxgvs5o3mUP2og==
+	:mime-version:content-type; s=qcppdkim1; bh=+INShS/lWUILrQfX0Txy
+	8gxvScszHghVF+5eTxblxzA=; b=K6ByeJ+62PnM/+xMCYfk5EqdokPXtlaRMbTL
+	Ipgrmf8QIh0vO/v0u1Vjpfwb2fsVgWu1tvcXtSV/5+wHVkvOpdCZqXnQKl8aHqhl
+	da1RvOYZ8x2At/sdLarAwDH9SDSUYXMGSoZVT9j+VuqTvMRaWoq1i/oDKPS9mXRc
+	ehMg8JWvqolSxhGitPDaa+GqxC1HaosAnJOOiFTlMBE09bLaJnWVyPDIjODVEI3m
+	17oINdASZgyPKmMZrS1TUZ5U28vfH0PhoKk3YbI5gYDCS7nSDfmXnAPAPhTQJmGx
+	jzDnsbXqjMEU8wHvQbii9TR8h0gip45Dphnr53Em8V5X9Arwgg==
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x34hssv8g-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x3b0yrt9s-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Mar 2024 21:23:19 +0000 (GMT)
+	Mon, 25 Mar 2024 21:23:20 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42PLNIG3010567
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42PLNJUF010587
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Mar 2024 21:23:18 GMT
+	Mon, 25 Mar 2024 21:23:19 GMT
 Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
@@ -56,11 +56,10 @@ From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Pradeep Kumar Chitrapu
-	<quic_pradeepc@quicinc.com>,
-        Avula Sri Charan <quic_asrichar@quicinc.com>
-Subject: [PATCH 4/6] wifi: ath12k: add 6 GHz params in peer assoc command
-Date: Mon, 25 Mar 2024 14:23:02 -0700
-Message-ID: <20240325212304.28241-5-quic_pradeepc@quicinc.com>
+	<quic_pradeepc@quicinc.com>
+Subject: [PATCH 6/6] wifi: ath12k: support SMPS configuration for 6 GHz
+Date: Mon, 25 Mar 2024 14:23:04 -0700
+Message-ID: <20240325212304.28241-7-quic_pradeepc@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20240325212304.28241-1-quic_pradeepc@quicinc.com>
 References: <20240325212304.28241-1-quic_pradeepc@quicinc.com>
@@ -71,19 +70,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: kdxmGLufTWpprEKQbYdnqL6oR4BAm-Fd
-X-Proofpoint-GUID: kdxmGLufTWpprEKQbYdnqL6oR4BAm-Fd
+X-Proofpoint-ORIG-GUID: mcet0SojEjR8Muy2jk7jnciiIXFGLe3r
+X-Proofpoint-GUID: mcet0SojEjR8Muy2jk7jnciiIXFGLe3r
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-03-25_21,2024-03-21_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
- spamscore=0 phishscore=0 lowpriorityscore=0 mlxscore=0 bulkscore=0
- impostorscore=0 clxscore=1015 mlxlogscore=999 malwarescore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 malwarescore=0
+ mlxscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0 spamscore=0
+ impostorscore=0 phishscore=0 mlxlogscore=999 priorityscore=1501
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2403210001 definitions=main-2403250132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240325_142321_035365_F0A83489 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20240325_142322_318996_7854F715 
+X-CRM114-Status: GOOD (  16.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,102 +97,97 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently A-MPDU aggregation parameters are not being configured
-during peer association for 6 GHz band. Hence, extract these
-parameters from station's capabilities received in association
-request and send to firmware. Without this, A-MPDU aggregation
-is not happening in 6 GHz band.
+Parse SMPS configuration from IEs and configure. Without this,
+SMPS is not enabled for 6 GHz band.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Co-developed-by: Avula Sri Charan <quic_asrichar@quicinc.com>
-Signed-off-by: Avula Sri Charan <quic_asrichar@quicinc.com>
 Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 56 ++++++++++++++++++++++++++-
- 1 file changed, 55 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 25 +++++++++++++++++--------
+ 1 file changed, 17 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 6d7df18ec424..7e296140439a 100644
+index b4114dd22bf0..433b8be74997 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1910,6 +1910,59 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
- 	}
+@@ -1964,12 +1964,17 @@ static void ath12k_peer_assoc_h_he_6ghz(struct ath12k *ar,
  }
  
-+static void ath12k_peer_assoc_h_he_6ghz(struct ath12k *ar,
-+					struct ieee80211_vif *vif,
-+					struct ieee80211_sta *sta,
-+					struct ath12k_wmi_peer_assoc_arg *arg)
-+{
-+	const struct ieee80211_sta_he_cap *he_cap = &sta->deflink.he_cap;
-+	struct cfg80211_chan_def def;
-+	enum nl80211_band band;
-+	u8  ampdu_factor;
-+
-+	if (WARN_ON(ath12k_mac_vif_chan(vif, &def)))
-+		return;
-+
-+	band = def.chan->band;
-+
-+	if (!arg->he_flag || band != NL80211_BAND_6GHZ || !sta->deflink.he_6ghz_capa.capa)
-+		return;
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_40)
-+		arg->bw_40 = true;
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_80)
-+		arg->bw_80 = true;
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_160)
-+		arg->bw_160 = true;
-+
-+	if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_320)
-+		arg->bw_320 = true;
-+
-+	arg->peer_he_caps_6ghz = le16_to_cpu(sta->deflink.he_6ghz_capa.capa);
-+	arg->peer_mpdu_density =
-+		ath12k_parse_mpdudensity(u32_get_bits(arg->peer_he_caps_6ghz,
-+						      IEEE80211_HE_6GHZ_CAP_MIN_MPDU_START));
-+
-+	/* From IEEE Std 802.11ax-2021 - Section 10.12.2: An HE STA shall be capable of
-+	 * receiving A-MPDU where the A-MPDU pre-EOF padding length is up to the value
-+	 * indicated by the Maximum A-MPDU Length Exponent Extension field in the HE
-+	 * Capabilities element and the Maximum A-MPDU Length Exponent field in HE 6 GHz
-+	 * Band Capabilities element in the 6 GHz band.
-+	 *
-+	 * Here, we are extracting the Max A-MPDU Exponent Extension from HE caps and
-+	 * factor is the Maximum A-MPDU Length Exponent from HE 6 GHZ Band capability.
-+	 */
-+	ampdu_factor = u8_get_bits(he_cap->he_cap_elem.mac_cap_info[3],
-+				   IEEE80211_HE_MAC_CAP3_MAX_AMPDU_LEN_EXP_MASK) +
-+			u32_get_bits(arg->peer_he_caps_6ghz,
-+				     IEEE80211_HE_6GHZ_CAP_MAX_AMPDU_LEN_EXP);
-+
-+	arg->peer_max_mpdu = (1u << (IEEE80211_HE_6GHZ_MAX_AMPDU_FACTOR +
-+				     ampdu_factor)) - 1;
-+}
-+
+ static inline int ath12k_get_smps_from_capa(const struct ieee80211_sta_ht_cap *ht_cap,
++					    const struct ieee80211_he_6ghz_capa *he_6ghz_capa,
+ 					    int *smps)
+ {
+-	if (!ht_cap->ht_supported)
++	if (!ht_cap->ht_supported && !he_6ghz_capa->capa)
+ 		return -EOPNOTSUPP;
+ 
+-	*smps = u16_get_bits(ht_cap->cap, IEEE80211_HT_CAP_SM_PS);
++	if (ht_cap->ht_supported)
++		*smps = u16_get_bits(ht_cap->cap, IEEE80211_HT_CAP_SM_PS);
++	else
++		*smps = le16_get_bits(he_6ghz_capa->capa,
++				      IEEE80211_HE_6GHZ_CAP_SM_PS);
+ 
+ 	if (*smps >= ARRAY_SIZE(ath12k_smps_map))
+ 		return -EINVAL;
+@@ -1980,10 +1985,11 @@ static inline int ath12k_get_smps_from_capa(const struct ieee80211_sta_ht_cap *h
  static void ath12k_peer_assoc_h_smps(struct ieee80211_sta *sta,
  				     struct ath12k_wmi_peer_assoc_arg *arg)
  {
-@@ -2382,6 +2435,7 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
- 	ath12k_peer_assoc_h_ht(ar, vif, sta, arg);
- 	ath12k_peer_assoc_h_vht(ar, vif, sta, arg);
- 	ath12k_peer_assoc_h_he(ar, vif, sta, arg);
-+	ath12k_peer_assoc_h_he_6ghz(ar, vif, sta, arg);
- 	ath12k_peer_assoc_h_eht(ar, vif, sta, arg);
- 	ath12k_peer_assoc_h_qos(ar, vif, sta, arg);
- 	ath12k_peer_assoc_h_phymode(ar, vif, sta, arg);
-@@ -8029,7 +8083,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 	ieee80211_hw_set(hw, SUPPORTS_TX_FRAG);
- 	ieee80211_hw_set(hw, REPORTS_LOW_ACK);
++	const struct ieee80211_he_6ghz_capa *he_6ghz_capa = &sta->deflink.he_6ghz_capa;
+ 	const struct ieee80211_sta_ht_cap *ht_cap = &sta->deflink.ht_cap;
+ 	int smps;
  
--	if (ht_cap & WMI_HT_CAP_ENABLED) {
-+	if ((ht_cap & WMI_HT_CAP_ENABLED) || ar->supports_6ghz) {
- 		ieee80211_hw_set(hw, AMPDU_AGGREGATION);
- 		ieee80211_hw_set(hw, TX_AMPDU_SETUP_IN_HW);
- 		ieee80211_hw_set(hw, SUPPORTS_REORDERING_BUFFER);
+-	if (ath12k_get_smps_from_capa(ht_cap, &smps))
++	if (ath12k_get_smps_from_capa(ht_cap, he_6ghz_capa, &smps))
+ 		return;
+ 
+ 	switch (smps) {
+@@ -2457,11 +2463,12 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+ 
+ static int ath12k_setup_peer_smps(struct ath12k *ar, struct ath12k_vif *arvif,
+ 				  const u8 *addr,
+-				  const struct ieee80211_sta_ht_cap *ht_cap)
++				  const struct ieee80211_sta_ht_cap *ht_cap,
++				  const struct ieee80211_he_6ghz_capa *he_6ghz_capa)
+ {
+ 	int smps, ret = 0;
+ 
+-	ret = ath12k_get_smps_from_capa(ht_cap, &smps);
++	ret = ath12k_get_smps_from_capa(ht_cap, he_6ghz_capa, &smps);
+ 	if (ret < 0)
+ 		return ret;
+ 
+@@ -2514,7 +2521,8 @@ static void ath12k_bss_assoc(struct ath12k *ar,
+ 	}
+ 
+ 	ret = ath12k_setup_peer_smps(ar, arvif, bss_conf->bssid,
+-				     &ap_sta->deflink.ht_cap);
++				     &ap_sta->deflink.ht_cap,
++				     &ap_sta->deflink.he_6ghz_capa);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to setup peer SMPS for vdev %d: %d\n",
+ 			    arvif->vdev_id, ret);
+@@ -3677,7 +3685,8 @@ static int ath12k_station_assoc(struct ath12k *ar,
+ 		return 0;
+ 
+ 	ret = ath12k_setup_peer_smps(ar, arvif, sta->addr,
+-				     &sta->deflink.ht_cap);
++				     &sta->deflink.ht_cap,
++				     &sta->deflink.he_6ghz_capa);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to setup peer SMPS for vdev %d: %d\n",
+ 			    arvif->vdev_id, ret);
+@@ -8104,7 +8113,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	 * for each band for a dual band capable radio. It will be tricky to
+ 	 * handle it when the ht capability different for each band.
+ 	 */
+-	if (ht_cap & WMI_HT_CAP_DYNAMIC_SMPS)
++	if (ht_cap & WMI_HT_CAP_DYNAMIC_SMPS || ar->supports_6ghz)
+ 		wiphy->features |= NL80211_FEATURE_DYNAMIC_SMPS;
+ 
+ 	wiphy->max_scan_ssids = WLAN_SCAN_PARAMS_MAX_SSID;
 -- 
 2.17.1
 
