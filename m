@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D070CD1280
-	for <ath12k@archiver.kernel.org>; Mon, 25 Mar 2024 20:11:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA7C6C54E64
+	for <ath12k@archiver.kernel.org>; Mon, 25 Mar 2024 20:11:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=kyOmCvDEsKnvQ3TY7Fr+vH0/fa3PEurubCg3+XGoPRE=; b=fpJDIr6m3PgaSHty3d2VsDBFHX
-	LK8+QxfFIl7qD5o1b7bC7epaLeYTOIyGC63XmffUD8qyXlWMXzkC0aw6VLznuICH/mikgHTatBddS
-	xBgvJQqbsW/qmTpHK7KiNy/8ZVUAl735N3hRgZ3XmPbSkoZz2ylqDcU2MSqNjc2S20plItYx7neQs
-	ly5w6licdpLnmbnaRAzx2QfXo7gbRFV55iGajsluUEQrf1XxjrpRdG2C34Y1Bt1TyHANRg6vbR0E7
-	P17j6LOJ0nUgtEP2loPSRN/uxrJBSAvZwdT81vDVcoZXuf7jrlevYObo6fe/8Ja+rr/1cLNj0WibP
-	xKHFpXFA==;
+	bh=/MNnfOqk+KI7lAxGgduB0wb/9sFI9H60uPFvbyyX8RI=; b=VNHlXUU8XdG9Me+sf8UW3U0Jko
+	1jMVG5bY3/lz3wZjPsFUBamGUX9RwvMv0GXWuBbJZxH4eHhWUjZ8k6wbrfZ42NLjW3DiYuepezNQv
+	GXp5KnOP+xMM0vPRWFhsi/HpPwnpU+myrLj4KEkvMpl73CByqwK/9v9RBj2O5YK8UltPQqR4lgVPr
+	EDO9xJKBBNT9jasjV0aPVwTJk48WtvJyWhRb1v+/gqb/qn0USSCUWkhEuxLywBnXBXAnl1vkd3cdl
+	xmqzSHswBgoOlBmSis27XqUexQUrBTIFL1G4J+MSQwDua2sX6FISy+COVGrYgwdEs9eaLeDTHGGQx
+	UCMh1zAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roqer-00000001jpA-0hoA
+	id 1roqes-00000001jqT-2QQo
 	for ath12k@archiver.kernel.org;
-	Mon, 25 Mar 2024 20:11:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 25 Mar 2024 20:11:02 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roqej-00000001jli-2pak
+	id 1roqek-00000001jmT-3li2
 	for ath12k@lists.infradead.org;
-	Mon, 25 Mar 2024 20:10:55 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42PJOGri020879;
-	Mon, 25 Mar 2024 20:10:53 GMT
+	Mon, 25 Mar 2024 20:10:56 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42PItLrr010002;
+	Mon, 25 Mar 2024 20:10:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-type; s=qcppdkim1; bh=kyOmCvDEsKnvQ3TY7Fr+
-	vH0/fa3PEurubCg3+XGoPRE=; b=GwpyT8K1+LJTFuqw4dPxddsdp5WKEvTf87RQ
-	+Q3bm+2/mFHXyylIbLkLZZt2oJ656IpaL0z2Ai6ZAsSFoBm/5NiV1FrcDv5dvtpt
-	Xmv6NS9o/0KiCk4iac/JHbAEjv/RbxDmGhf7vdyMcc6G/Iig9owB9RiN6OzMiyds
-	FmWN0EHkbxhrnRSunb86xfVyObof173zDfZHCo8HPIRrQktoeM6rJ1Mt1nkob73b
-	Ie6EAyAiWkGCRNaWryTHHqRkl50EgK/eO2IfKmE07RmHmGIsD23s8LlNoqn/cAX2
-	4EZXROQdVXSYw9D30JL6QXPbR5f3EftsgPq69HyYEY9iMl9eZw==
+	:mime-version:content-type; s=qcppdkim1; bh=/MNnfOqk+KI7lAxGgduB
+	0wb/9sFI9H60uPFvbyyX8RI=; b=IgEZdcEJ4tnlD/hCdmK50v5JaxEPmI04r0Ut
+	4zal2NVSbuxy4AEBuJ63WY1EHMExBmyFFx0xQ6VS85BT+bmv3OQLGt7UMcXPQ/hT
+	O8Id/t5C5Vw7u7NuC/KUNYBQsHXGlvUCupDCUsNa0gUYSaSNjQjlJuGcvq2YRQjU
+	FK5Cggksr3irnYy4Lmw6rrRbIQNxsYq1L8l/8HFtCvDgYVouY9e4V3kAHjJVoGRG
+	vb8zW2fXMbg1ycbigks6fPPjDlbffwFNSpVvoToGuyfqmAFdEG6krqAAhpyybWxP
+	TE9vfp0L0Kmi+fbgAs3Er1DHtqtiqQiwXRKxMtKOBTsAGJOiTg==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x35eahmqc-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x34hp1t3v-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Mar 2024 20:10:52 +0000 (GMT)
+	Mon, 25 Mar 2024 20:10:53 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42PKAp9n009861
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42PKArP2010084
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Mar 2024 20:10:51 GMT
+	Mon, 25 Mar 2024 20:10:53 GMT
 Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 25 Mar 2024 13:10:51 -0700
+ 15.2.1118.40; Mon, 25 Mar 2024 13:10:52 -0700
 From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Pradeep Kumar Chitrapu
 	<quic_pradeepc@quicinc.com>,
-        Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH 05/10] wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
-Date: Mon, 25 Mar 2024 13:10:26 -0700
-Message-ID: <20240325201031.10837-6-quic_pradeepc@quicinc.com>
+        P Praneesh <quic_ppranees@quicinc.com>
+Subject: [PATCH 09/10] wifi: ath12k: add support for 160 MHz bandwidth
+Date: Mon, 25 Mar 2024 13:10:30 -0700
+Message-ID: <20240325201031.10837-10-quic_pradeepc@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20240325201031.10837-1-quic_pradeepc@quicinc.com>
 References: <20240325201031.10837-1-quic_pradeepc@quicinc.com>
@@ -71,19 +71,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: -lChyBXLhaeEekiUpq0LJtcAGDMgTcid
-X-Proofpoint-ORIG-GUID: -lChyBXLhaeEekiUpq0LJtcAGDMgTcid
+X-Proofpoint-ORIG-GUID: O5379AwQK5ckGeVNg6gI6Vbf7YANhevj
+X-Proofpoint-GUID: O5379AwQK5ckGeVNg6gI6Vbf7YANhevj
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-03-25_19,2024-03-21_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- adultscore=0 impostorscore=0 bulkscore=0 mlxlogscore=999 malwarescore=0
- spamscore=0 priorityscore=1501 phishscore=0 mlxscore=0 clxscore=1015
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ suspectscore=0 spamscore=0 lowpriorityscore=0 phishscore=0 impostorscore=0
+ priorityscore=1501 clxscore=1015 mlxscore=0 adultscore=0 bulkscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2403210001 definitions=main-2403250123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240325_131053_962861_768DD21B 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20240325_131055_214893_66198724 
+X-CRM114-Status: GOOD (  20.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,90 +98,311 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Generate rx and tx mcs maps in ath12k_mac_set_hemcsmap() based
-on number of supported tx/rx chains and set them in supported
-mcs/nss for HE capabilities.
+Add support to configure maximum NSS in 160 MHz bandwidth.
+Firmware advertizes support for handling NSS ratio information
+as a part of service ready ext event using nss_ratio_enabled
+flag. Save this information in ath12k_pdev_cap to calculate
+NSS ratio.
+
+Additionally, reorder the code by moving
+ath12k_peer_assoc_h_phymode() before ath12k_peer_assoc_h_vht()
+to ensure that arg->peer_phymode correctly reflects the bandwidth
+in the max NSS calculation.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
-Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
+Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 40 ++++++++++++++++++++-------
- 1 file changed, 30 insertions(+), 10 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h |  2 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 85 ++++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/mac.h  |  2 +
+ drivers/net/wireless/ath/ath12k/wmi.c  | 19 +++++-
+ drivers/net/wireless/ath/ath12k/wmi.h  | 28 +++++++++
+ 5 files changed, 124 insertions(+), 12 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 97e5a0ccd233..716982336c75 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -637,6 +637,8 @@ struct ath12k_pdev_cap {
+ 	u32 tx_chain_mask_shift;
+ 	u32 rx_chain_mask_shift;
+ 	struct ath12k_band_cap band[NUM_NL80211_BANDS];
++	bool nss_ratio_enabled;
++	u8 nss_ratio_info;
+ };
+ 
+ struct mlo_timestamp {
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 72b157e60158..46ef2d63a3de 100644
+index 51d3219ac3e6..92b597697603 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4879,20 +4879,40 @@ static __le16 ath12k_mac_setup_he_6ghz_cap(struct ath12k_pdev_cap *pcap,
- 	return cpu_to_le16(bcap->he_6ghz_capa);
+@@ -1677,6 +1677,34 @@ ath12k_peer_assoc_h_vht_limit(u16 tx_mcs_set,
+ 	return tx_mcs_set;
  }
  
--static void ath12k_mac_set_hemcsmap(struct ath12k_band_cap *band_cap,
-+static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
-+				    struct ath12k_pdev_cap *cap,
- 				    struct ieee80211_sta_he_cap *he_cap)
++static u8 ath12k_get_nss_160mhz(struct ath12k *ar,
++				u8 max_nss)
++{
++	u8 nss_ratio_info = ar->pdev->cap.nss_ratio_info;
++	u8 max_sup_nss = 0;
++
++	switch (nss_ratio_info) {
++	case WMI_NSS_RATIO_1BY2_NSS:
++		max_sup_nss = max_nss >> 1;
++		break;
++	case WMI_NSS_RATIO_3BY4_NSS:
++		ath12k_warn(ar->ab, "WMI_NSS_RATIO_3BY4_NSS not supported\n");
++		break;
++	case WMI_NSS_RATIO_1_NSS:
++		max_sup_nss = max_nss;
++		break;
++	case WMI_NSS_RATIO_2_NSS:
++		ath12k_warn(ar->ab, "WMI_NSS_RATIO_2_NSS not supported\n");
++		break;
++	default:
++		ath12k_warn(ar->ab, "invalid nss ratio received from fw: %d\n",
++			    nss_ratio_info);
++		break;
++	}
++
++	return max_sup_nss;
++}
++
+ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
+ 				    struct ieee80211_vif *vif,
+ 				    struct ieee80211_sta *sta,
+@@ -1692,6 +1720,7 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
+ 	u8 max_nss, vht_mcs;
+ 	int i, vht_nss, nss_idx;
+ 	bool user_rate_valid = true;
++	u32 rx_nss, tx_nss, nss_160;
+ 
+ 	if (WARN_ON(ath12k_mac_vif_chan(vif, &def)))
+ 		return;
+@@ -1786,10 +1815,24 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
+ 	/* TODO:  Check */
+ 	arg->tx_max_mcs_nss = 0xFF;
+ 
+-	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vht peer %pM max_mpdu %d flags 0x%x\n",
+-		   sta->addr, arg->peer_max_mpdu, arg->peer_flags);
++	if (arg->peer_phymode == MODE_11AC_VHT160) {
++		tx_nss = ath12k_get_nss_160mhz(ar, max_nss);
++		rx_nss = min(arg->peer_nss, tx_nss);
++		arg->peer_bw_rxnss_override = ATH12K_BW_NSS_MAP_ENABLE;
+ 
+-	/* TODO: rxnss_override */
++		if (!rx_nss) {
++			ath12k_warn(ar->ab, "invalid max_nss\n");
++			return;
++		}
++
++		nss_160 = u32_encode_bits(rx_nss - 1, ATH12K_PEER_RX_NSS_160MHZ);
++		arg->peer_bw_rxnss_override |= nss_160;
++	}
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
++		   "mac vht peer %pM max_mpdu %d flags 0x%x nss_override 0x%x\n",
++		   sta->addr, arg->peer_max_mpdu, arg->peer_flags,
++		   arg->peer_bw_rxnss_override);
+ }
+ 
+ static int ath12k_mac_get_max_he_mcs_map(u16 mcs_map, int nss)
+@@ -1876,6 +1919,7 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
+ 	u16 he_tx_mcs = 0, v = 0;
+ 	int he_nss, nss_idx;
+ 	bool user_rate_valid = true;
++	u32 rx_nss, tx_nss, nss_160;
+ 
+ 	if (WARN_ON(ath12k_mac_vif_chan(vif, &def)))
+ 		return;
+@@ -2055,11 +2099,28 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
+ 		    he_mcs_mask[i])
+ 			max_nss = i + 1;
+ 	}
++	max_nss = min(max_nss, ar->num_tx_chains);
+ 	arg->peer_nss = min(sta->deflink.rx_nss, max_nss);
+ 
++	if (arg->peer_phymode == MODE_11AX_HE160) {
++		tx_nss = ath12k_get_nss_160mhz(ar, max_nss);
++		rx_nss = min(arg->peer_nss, tx_nss);
++		arg->peer_bw_rxnss_override = ATH12K_BW_NSS_MAP_ENABLE;
++
++		if (!rx_nss) {
++			ath12k_warn(ar->ab, "invalid max_nss\n");
++			return;
++		}
++
++		nss_160 = u32_encode_bits(rx_nss - 1, ATH12K_PEER_RX_NSS_160MHZ);
++		arg->peer_bw_rxnss_override |= nss_160;
++	}
++
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
+-		   "mac he peer %pM nss %d mcs cnt %d\n",
+-		   sta->deflink.addr, arg->peer_nss, arg->peer_he_mcs_count);
++		   "mac he peer %pM nss %d mcs cnt %d nss_override 0x%x\n",
++		   sta->deflink.addr, arg->peer_nss,
++		   arg->peer_he_mcs_count,
++		   arg->peer_bw_rxnss_override);
+ }
+ 
+ static void ath12k_peer_assoc_h_smps(struct ieee80211_sta *sta,
+@@ -2520,12 +2581,12 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
+ 	ath12k_peer_assoc_h_basic(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_crypto(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_rates(ar, vif, sta, arg);
++	ath12k_peer_assoc_h_phymode(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_ht(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_vht(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_he(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_eht(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_qos(ar, vif, sta, arg);
+-	ath12k_peer_assoc_h_phymode(ar, vif, sta, arg);
+ 	ath12k_peer_assoc_h_smps(sta, arg);
+ 
+ 	/* TODO: amsdu_disable req? */
+@@ -4909,10 +4970,8 @@ ath12k_create_vht_cap(struct ath12k *ar, u32 rate_cap_tx_chainmask,
+ 
+ 	ath12k_set_vht_txbf_cap(ar, &vht_cap.cap);
+ 
+-	/* TODO: Enable back VHT160 mode once association issues are fixed */
+-	/* Disabling VHT160 and VHT80+80 modes */
+-	vht_cap.cap &= ~IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_MASK;
+-	vht_cap.cap &= ~IEEE80211_VHT_CAP_SHORT_GI_160;
++	/* 80P80 is not supported */
++	vht_cap.cap &= ~IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160_80PLUS80MHZ;
+ 
+ 	rxmcs_map = 0;
+ 	txmcs_map = 0;
+@@ -8452,7 +8511,8 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 	combinations[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
+ 						BIT(NL80211_CHAN_WIDTH_20) |
+ 						BIT(NL80211_CHAN_WIDTH_40) |
+-						BIT(NL80211_CHAN_WIDTH_80);
++						BIT(NL80211_CHAN_WIDTH_80) |
++						BIT(NL80211_CHAN_WIDTH_160);
+ 
+ 	wiphy->iface_combinations = combinations;
+ 	wiphy->n_iface_combinations = 1;
+@@ -8624,6 +8684,9 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	ieee80211_hw_set(hw, SUPPORTS_TX_FRAG);
+ 	ieee80211_hw_set(hw, REPORTS_LOW_ACK);
+ 
++	if (cap->nss_ratio_enabled)
++		ieee80211_hw_set(hw, SUPPORTS_VHT_EXT_NSS_BW);
++
+ 	if (ht_cap & WMI_HT_CAP_ENABLED) {
+ 		ieee80211_hw_set(hw, AMPDU_AGGREGATION);
+ 		ieee80211_hw_set(hw, TX_AMPDU_SETUP_IN_HW);
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index bb3135e50751..d9c25c4de268 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -36,6 +36,8 @@ struct ath12k_generic_iter {
+ #define IEEE80211_DISABLE_VHT_MCS_SUPPORT_0_11	BIT(24)
+ 
+ #define ATH12K_CHAN_WIDTH_NUM			14
++#define ATH12K_BW_NSS_MAP_ENABLE		BIT(31)
++#define ATH12K_PEER_RX_NSS_160MHZ		GENMASK(2, 0)
+ 
+ #define ATH12K_TX_POWER_MAX_VAL	70
+ #define ATH12K_TX_POWER_MIN_VAL	0
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 2e6a45225228..1ab50257ea9d 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -519,6 +519,10 @@ ath12k_pull_mac_phy_cap_svc_ready_ext(struct ath12k_wmi_pdev *wmi_handle,
+ 		pdev_cap->he_mcs = le32_to_cpu(mac_caps->he_supp_mcs_5g);
+ 		pdev_cap->tx_chain_mask = le32_to_cpu(mac_caps->tx_chain_mask_5g);
+ 		pdev_cap->rx_chain_mask = le32_to_cpu(mac_caps->rx_chain_mask_5g);
++		pdev_cap->nss_ratio_enabled =
++			WMI_NSS_RATIO_EN_DIS_GET(mac_caps->nss_ratio);
++		pdev_cap->nss_ratio_info =
++			WMI_NSS_RATIO_INFO_GET(mac_caps->nss_ratio);
+ 	} else {
+ 		return -EINVAL;
+ 	}
+@@ -974,11 +978,24 @@ int ath12k_wmi_vdev_down(struct ath12k *ar, u8 vdev_id)
+ static void ath12k_wmi_put_wmi_channel(struct ath12k_wmi_channel_params *chan,
+ 				       struct wmi_vdev_start_req_arg *arg)
  {
- 	struct ieee80211_he_mcs_nss_supp *mcs_nss = &he_cap->he_mcs_nss_supp;
-+	u16 txmcs_map, rxmcs_map;
-+	u32 i;
++	u32 center_freq1 = arg->band_center_freq1;
 +
-+	rxmcs_map = 0;
-+	txmcs_map = 0;
-+	for (i = 0; i < 8; i++) {
-+		if (i < ar->num_tx_chains &&
-+		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
-+			txmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
+ 	memset(chan, 0, sizeof(*chan));
+ 
+ 	chan->mhz = cpu_to_le32(arg->freq);
+ 	chan->band_center_freq1 = cpu_to_le32(arg->band_center_freq1);
+-	chan->band_center_freq2 = 0;
++	if (arg->mode == MODE_11AX_HE160) {
++		if (arg->freq > center_freq1)
++			chan->band_center_freq1 =
++					cpu_to_le32(center_freq1 + 40);
 +		else
-+			txmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
++			chan->band_center_freq1 =
++					cpu_to_le32(center_freq1 - 40);
 +
-+		if (i < ar->num_rx_chains &&
-+		    (ar->cfg_rx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
-+			rxmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
-+		else
-+			rxmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
++		chan->band_center_freq2 = cpu_to_le32(arg->band_center_freq1);
++	} else {
++		chan->band_center_freq2 = 0;
 +	}
  
--	mcs_nss->rx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
--	mcs_nss->tx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
--	mcs_nss->rx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
--	mcs_nss->tx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
--	mcs_nss->rx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
--	mcs_nss->tx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
-+	mcs_nss->rx_mcs_80 = cpu_to_le16(rxmcs_map & 0xffff);
-+	mcs_nss->tx_mcs_80 = cpu_to_le16(txmcs_map & 0xffff);
-+	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map & 0xffff);
-+	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map & 0xffff);
-+	mcs_nss->rx_mcs_80p80 = cpu_to_le16(rxmcs_map & 0xffff);
-+	mcs_nss->tx_mcs_80p80 = cpu_to_le16(txmcs_map & 0xffff);
- }
+ 	chan->info |= le32_encode_bits(arg->mode, WMI_CHAN_INFO_MODE);
+ 	if (arg->passive)
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 00871d6be3ea..e52ba8d7fba3 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -2253,6 +2253,21 @@ enum wmi_direct_buffer_module {
+ 	WMI_DIRECT_BUF_MAX
+ };
  
--static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
-+static void ath12k_mac_copy_he_cap(struct ath12k *ar,
-+				   struct ath12k_band_cap *band_cap,
- 				   int iftype, u8 num_tx_chains,
- 				   struct ieee80211_sta_he_cap *he_cap)
- {
-@@ -4934,7 +4954,7 @@ static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
- 		break;
- 	}
++/**
++ * enum wmi_nss_ratio - NSS ratio received from FW during service ready ext event
++ * @WMI_NSS_RATIO_1BY2_NSS: Max nss of 160MHz is equals to half of the max nss of 80MHz
++ * @WMI_NSS_RATIO_3BY4_NSS: Max nss of 160MHz is equals to 3/4 of the max nss of 80MHz
++ * @WMI_NSS_RATIO_1_NSS: Max nss of 160MHz is equals to the max nss of 80MHz
++ * @WMI_NSS_RATIO_2_NSS: Max nss of 160MHz is equals to two times the max nss of 80MHz
++ */
++
++enum wmi_nss_ratio {
++	WMI_NSS_RATIO_1BY2_NSS,
++	WMI_NSS_RATIO_3BY4_NSS,
++	WMI_NSS_RATIO_1_NSS,
++	WMI_NSS_RATIO_2_NSS
++};
++
+ struct ath12k_wmi_pdev_band_arg {
+ 	u32 pdev_id;
+ 	u32 start_freq;
+@@ -2558,6 +2573,12 @@ struct ath12k_wmi_hw_mode_cap_params {
+ } __packed;
  
--	ath12k_mac_set_hemcsmap(band_cap, he_cap);
-+	ath12k_mac_set_hemcsmap(ar, &ar->pdev->cap, he_cap);
- 	memset(he_cap->ppe_thres, 0, sizeof(he_cap->ppe_thres));
- 	if (he_cap_elem->phy_cap_info[6] &
- 	    IEEE80211_HE_PHY_CAP6_PPE_THRESHOLD_PRESENT)
-@@ -5123,7 +5143,7 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+ #define WMI_MAX_HECAP_PHY_SIZE                 (3)
++#define WMI_NSS_RATIO_EN_DIS_BITPOS    BIT(0)
++#define WMI_NSS_RATIO_EN_DIS_GET(_val) \
++	le32_get_bits(_val, WMI_NSS_RATIO_EN_DIS_BITPOS)
++#define WMI_NSS_RATIO_INFO_BITPOS              GENMASK(4, 1)
++#define WMI_NSS_RATIO_INFO_GET(_val) \
++	le32_get_bits(_val, WMI_NSS_RATIO_INFO_BITPOS)
  
- 		data[idx].types_mask = BIT(i);
+ /* pdev_id is present in lower 16 bits of pdev_and_hw_link_ids in
+  * ath12k_wmi_mac_phy_caps_params & ath12k_wmi_caps_ext_params.
+@@ -2599,6 +2620,13 @@ struct ath12k_wmi_mac_phy_caps_params {
+ 	__le32 he_cap_info_2g_ext;
+ 	__le32 he_cap_info_5g_ext;
+ 	__le32 he_cap_info_internal;
++	__le32 wireless_modes;
++	__le32 low_2ghz_chan_freq;
++	__le32 high_2ghz_chan_freq;
++	__le32 low_5ghz_chan_freq;
++	__le32 high_5ghz_chan_freq;
++	__le32 nss_ratio;
++
+ } __packed;
  
--		ath12k_mac_copy_he_cap(band_cap, i, ar->num_tx_chains, he_cap);
-+		ath12k_mac_copy_he_cap(ar, band_cap, i, ar->num_tx_chains, he_cap);
- 		if (band == NL80211_BAND_6GHZ) {
- 			data[idx].he_6ghz_capa.capa =
- 				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
+ struct ath12k_wmi_hal_reg_caps_ext_params {
 -- 
 2.17.1
 
