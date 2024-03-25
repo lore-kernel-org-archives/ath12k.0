@@ -4,87 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90D11C54E58
-	for <ath12k@archiver.kernel.org>; Mon, 25 Mar 2024 20:15:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25846C54E64
+	for <ath12k@archiver.kernel.org>; Mon, 25 Mar 2024 21:23:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=VgxrJr7RxCBZbVsl1HuThf/tnvSo8NafdzAd0VT/Vdc=; b=QSTBuv91k2Wnf0gxsf2iu+c184
-	/tlGOzxXDlrvgki1WZQvROnHC8t9fekuwsLWbV0Is7HWeD8KB1GKBvYoag9kGrV42oLCBk80o6pv/
-	mO0ZHPUoACgdM8SNJ8xOpAWn17FtGKBLlrO8IUpGbYNF1t54/SA20Qw1DjazHbiKYnxUuEhV2nkqR
-	QFjdfhDIWUv//1XK8phg0K2l6OnXXHjnTTlSWWWaqaPG882oOdwt5JJUo7hU+TZc9Pf1gmWd7pXTi
-	fv0ESboBqygRreU+45sSTcW+74B0SvKYW5x4pLltFH0hPm4Zh+rZyb+jGvUwcVaUEC6MY9grvSUo0
-	lBgWxlHw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=F2F9+rTOr85Y6kfNpqc/U/01dplHTDZDc2oP0tuEEHI=; b=rczcSv7MqbJlMUzJYsvh1WGq4T
+	Fu0tUrR1TEFjiagcSwYgraVNngkpBvHXnwN2S5kLs4tsPRs4QNk9q1UODuc52+fU9gWMZlxTehlUz
+	fgb+CHeticbwD+lPZtIyDJm5wjIA3VwlT1St2Igm+aut6d1oV0aG+Hs4hkt0r6iirVReCVhx7n5c3
+	r88Lnf23McgxqFhUupQrcGC8ZjYxqXyUKOAOnEpZyczO7Pcl2RDahEpa1TfaA8Ztd5OITEDO7jwMS
+	JxYxW48rkrofUIdEGhp5pkQyW5QVHQL1ZQVrVcBgm7vi6aIXfoeeNUjuaYifiXq0P3bXmx+Z9D7Tw
+	AN6L3Q+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roqjH-00000001lIL-1CS2
+	id 1rormt-0000000218K-31Ay
 	for ath12k@archiver.kernel.org;
-	Mon, 25 Mar 2024 20:15:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 25 Mar 2024 21:23:23 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1roqjE-00000001lHF-0AaM
+	id 1rormp-0000000215O-2Ekq
 	for ath12k@lists.infradead.org;
-	Mon, 25 Mar 2024 20:15:33 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42PJWrB6024198;
-	Mon, 25 Mar 2024 20:15:31 GMT
+	Mon, 25 Mar 2024 21:23:21 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42PLB5aC032232;
+	Mon, 25 Mar 2024 21:23:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=VgxrJr7RxCBZbVsl1HuThf/tnvSo8NafdzAd0VT/Vdc=; b=mL
-	zvcfxw++rG8vdYyWwKKygkocE6rHlrLoR2m1zAB8qQBQezzL2shXK1jwlQ+M/HGG
-	JHy3SKjScJgu3yStI0SLJyO0Rma4dXn7em1As6OYsTqMOIfnF1JOXvmUvR9SO4kK
-	RmmrnhEac3/fDSJBko3kWZnUKeka1J7TlQR/WvGpPcf3BVsVtFPyEBvRTnXQ85Il
-	0iuDnqNtyNr6fvNyaq/XZuVNhRZpbukUHySnkNClskvRT6ivltPsOoV7UtYEsh6Z
-	yei3TLlopMFSECODciVNBtF1XQ6shS/OmJ77eIC0Im3ULJO3Z7HIraFIWXdg33Ov
-	yHABE2pw+XHC7V8wDCDw==
+	from:to:cc:subject:date:message-id:mime-version:content-type; s=
+	qcppdkim1; bh=F2F9+rTOr85Y6kfNpqc/U/01dplHTDZDc2oP0tuEEHI=; b=pW
+	9JxoT/0jLWTkegNBEpdJZ7Bot1hhyZVcOreiP48zShNysVzzxkqwqAz5ClssnDtf
+	AQDIDVVnsvS7CuW9V7JCoaSLW2/I+GlzAjmAnYsniO+bR/ngEd32Sc1eWzMvS5Vv
+	V/O6i/ZN8ty8fXPpuSEk6j7HLfvzcqQmJV46wrrfSlcUqCr/mxg0k3KvKht6dcpk
+	XXzysH39okIrVAy0YA6Lrw2U1OiB1WJ1eDCnInpuWq2NkF+pocX9F8YVgiobj+y7
+	F+ylUV9FYqnvGdoHv3vuqhWRqbRtqJ54+f+Bd6w/vBFze5kL9ui0nlps4lj7cyGE
+	TmIRouCUIjbKUEPDCXjA==
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x3626hjqt-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x34hssv8d-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Mar 2024 20:15:31 +0000 (GMT)
+	Mon, 25 Mar 2024 21:23:17 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42PKFUSH006736
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42PLNGtu022707
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 25 Mar 2024 20:15:30 GMT
-Received: from [10.227.110.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Mon, 25 Mar
- 2024 13:15:29 -0700
-Message-ID: <42eda95a-34a7-4e0a-a57d-6f7c57b8f53a@quicinc.com>
-Date: Mon, 25 Mar 2024 13:15:29 -0700
+	Mon, 25 Mar 2024 21:23:16 GMT
+Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Mon, 25 Mar 2024 14:23:16 -0700
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>
+Subject: [PATCH 0/6] bug fixes and enhancements to 6 GHz band support
+Date: Mon, 25 Mar 2024 14:22:58 -0700
+Message-ID: <20240325212304.28241-1-quic_pradeepc@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3]wifi: ath12k: Add firmware coredump collection support
-Content-Language: en-US
-To: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240325183414.4016663-1-quic_ssreeela@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240325183414.4016663-1-quic_ssreeela@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Ddah0_Vwja2chAd1N6k_CRBqGAxbGPJc
-X-Proofpoint-GUID: Ddah0_Vwja2chAd1N6k_CRBqGAxbGPJc
+X-Proofpoint-ORIG-GUID: CoQn5izX0YTcOa1mvc6s65Yrvc2J9p8O
+X-Proofpoint-GUID: CoQn5izX0YTcOa1mvc6s65Yrvc2J9p8O
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-25_19,2024-03-21_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 bulkscore=0
- mlxlogscore=691 mlxscore=0 priorityscore=1501 phishscore=0 adultscore=0
- clxscore=1015 malwarescore=0 impostorscore=0 suspectscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2403210001 definitions=main-2403250123
+ definitions=2024-03-25_21,2024-03-21_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
+ spamscore=0 phishscore=0 lowpriorityscore=0 mlxscore=0 bulkscore=0
+ impostorscore=0 clxscore=1015 mlxlogscore=999 malwarescore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2403210001 definitions=main-2403250132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240325_131532_147803_85326861 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20240325_142319_750585_B489A793 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,20 +96,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/25/2024 11:34 AM, Sowmiya Sree Elavalagan wrote:
-> In case of firmware assert snapshot of firmware memory is essential for
-> debugging. Add firmware coredump collection support for PCI bus.
-> Collect RDDM and firmware paging dumps from MHI and pack them in TLV
-> format and also pack various memory shared during QMI phase in separate
-> TLVs.  Add necessary header and share the dumps to user space using dev
-> coredump framework. Coredump collection is disabled by default and can
-> be enabled using menuconfig. Dump collected for a radio is 55 MB
-> approximately.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+In 6 GHz band, add support for
+1. channel 2.
+2. Fix packet drop issues.
+3. AMPDU aggregation
+4. SMPS configuration
 
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Pradeep Kumar Chitrapu (6):
+  wifi: ath12k: add channel 2 into 6 GHz channel list
+  wifi: ath12k: Correct 6 GHz frequency value in rx status
+  wifi: ath12k: fix survey dump collection in 6 GHz
+  wifi: ath12k: add 6 GHz params in peer assoc command
+  wifi: ath12k: refactor smps configuration
+  wifi: ath12k: support SMPS configuration for 6 GHz
+
+ drivers/net/wireless/ath/ath12k/core.h  |   2 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.c |   9 +-
+ drivers/net/wireless/ath/ath12k/mac.c   | 115 ++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/wmi.c   |  10 ++-
+ 4 files changed, 111 insertions(+), 25 deletions(-)
+
+
+base-commit: fe7e1b830cf3c0272aa4eaf367c4c7b29c169c3d
+-- 
+2.17.1
 
 
