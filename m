@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0124C47DD9
-	for <ath12k@archiver.kernel.org>; Wed, 27 Mar 2024 17:09:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54F5FC54E67
+	for <ath12k@archiver.kernel.org>; Wed, 27 Mar 2024 17:09:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=z3/lnMI5E9kXNMHD4HDVkf5R8rR8Yl+LoOUITg35Y+4=; b=DybSu5MmQplBgVdlo+6mzDfCHe
-	FrdOfcsYTZ/Rdb1APsukirnUVekh5kVKYJUTEnF/YF8uMX6qcWpEKuW0Py1+SR5X9fk3CF/LP7Wh6
-	uYCVoIYtQ0UD84w0KuB2eFGPX3MCi4DfLnWakLf7g2UgecoXYWzLPQz47QDeHbEMfFud1x4Ka90ub
-	z58KXHQDegT5N8j6AYa1klDyhY2S+yZbHUUILEJyB4L+VDMWP6zAPDK+C/SjSIYyxf8R/bfeRjajz
-	pB1FeVI2sEvH0AVqdZLQPc8d2v4nTEelynzXOy5+hA9jYD8nAbJT2WQq/+oE/mmW5p+MLQl7wb71z
-	NFqaVLXg==;
+	bh=VoAPYPhtd9xvIncO6Ju/RbbEI5wAsH4VEwL1pyW/Eqw=; b=0w/9lR1ypoXnaaZVz1/cr753xV
+	AsWDp2qrKTNHLTGaHRmVBu8t/CjXsuHRmrpS49Z0tpnoiAZT6UxdY6JOhira2gGjK0xny2lgDE5z7
+	yQau0fP4ycN20Ueh8vpbZclKA+0mu+Bj500MyiRwXiXSPJ/G/h86IY4qPdsIXmACZbNNqhHaXN8Zw
+	drG0NuewEvatHtSWTlFFNJjb3B8gNLhv5gSekf+698aBMzmgN9UMW/WkzuZ+GVjB4il1iQok3cOaD
+	B9NoQ84n6v7SbYjoOTBwAxuoBaHy/pQUiPhUp5z06xidZ+Cb0BE9hpXgU96z96bS+WK6Mye3cGvU9
+	c0YWKgZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpWmL-0000000ADls-1SKb
+	id 1rpWmL-0000000ADm7-3iyK
 	for ath12k@archiver.kernel.org;
 	Wed, 27 Mar 2024 17:09:33 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpWmD-0000000ADfu-06Yi
+	id 1rpWmD-0000000ADhe-282K
 	for ath12k@lists.infradead.org;
-	Wed, 27 Mar 2024 17:09:28 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42RGFqvw010464;
-	Wed, 27 Mar 2024 17:09:23 GMT
+	Wed, 27 Mar 2024 17:09:29 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42RBC1rv019803;
+	Wed, 27 Mar 2024 17:09:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-type; s=qcppdkim1; bh=z3/lnMI5E9kXNMHD4HDV
-	kf5R8rR8Yl+LoOUITg35Y+4=; b=moYABlTAiS//47RjVLczL0MCMOlGBDXBU6i/
-	tHk8eAhh4vJLlTbpWRizgL8Z2TvAWMt/aVndKKIQqwZ61twPyIoy7XL51CP6sDMa
-	NzljSNRnlt9A7ZE8dGfoXPWfmiUEdqnXI40y36SWgkKFxtkHybHHHwT3d5yyFZtH
-	rUFKk4/5DOmIl8HIhV5eOKGFytpot860cr3pTL/LQHMyfuvwHjx1UD3jqZwgdmnH
-	/0avDY0SRQUWNrfonFMulDYsy3IdEGvtvtdA20PEmLjbql/Ncj5j2mW3TVCkK6BP
-	RzGWDMLqTOAISam5bfQRtOpgD0anJaQAUO5fF7iXfEgzv7+P2w==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x4etk9hhk-1
+	:mime-version:content-type; s=qcppdkim1; bh=VoAPYPhtd9xvIncO6Ju/
+	RbbEI5wAsH4VEwL1pyW/Eqw=; b=gZCMJmbSBmd8/I6UGtaITk1tbWGiBLcJ9mSK
+	5yb4tRcTPuKz2d3XgKfrg/fu8kcJxdVtnGYLgBcMQsafej4UP609GwHiiP6VRdeu
+	vv1ue3Q4ipZGtnAnQ+QsU1aSYn2l8JG8sFiGb/en+nv1iHlACJQCovN8qouwwzy4
+	Gz1pUNjqIHBD1QmvWdB9eFWIVHPdBicoKeWPHTWmet1kPMaCShliOsGYGSBsvpCz
+	03+sSiPtz1TridYcjrpU3meyoiXyEtJyXkeeOCt0wcUQdySzIoayUtO4DqxSHSgX
+	+NyLVqs/rjmMAUaVM/9B29QNdo8mo61V1nXLIzhaf4SRXmjPgA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x4jcfrxqq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Mar 2024 17:09:23 +0000 (GMT)
+	Wed, 27 Mar 2024 17:09:25 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42RH9Ncf006807
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42RH9O6c016586
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Mar 2024 17:09:23 GMT
+	Wed, 27 Mar 2024 17:09:24 GMT
 Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Wed, 27 Mar 2024 10:09:22 -0700
+ 15.2.1118.40; Wed, 27 Mar 2024 10:09:24 -0700
 From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Pradeep Kumar Chitrapu
 	<quic_pradeepc@quicinc.com>
-Subject: [PATCH v2 06/10] wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
-Date: Wed, 27 Mar 2024 10:09:06 -0700
-Message-ID: <20240327170910.23975-7-quic_pradeepc@quicinc.com>
+Subject: [PATCH v2 10/10] wifi: ath12k: add extended NSS bandwidth support for 160 MHz
+Date: Wed, 27 Mar 2024 10:09:10 -0700
+Message-ID: <20240327170910.23975-11-quic_pradeepc@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20240327170910.23975-1-quic_pradeepc@quicinc.com>
 References: <20240327170910.23975-1-quic_pradeepc@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: IDBm50x1JdRSTE-hTaR9c19vV7Lf77wx
-X-Proofpoint-ORIG-GUID: IDBm50x1JdRSTE-hTaR9c19vV7Lf77wx
+X-Proofpoint-GUID: fOlpNedFCmS83jfAt4shva9uxuOsA_yg
+X-Proofpoint-ORIG-GUID: fOlpNedFCmS83jfAt4shva9uxuOsA_yg
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-03-27_13,2024-03-27_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- bulkscore=0 phishscore=0 spamscore=0 impostorscore=0 mlxlogscore=999
- priorityscore=1501 clxscore=1015 suspectscore=0 lowpriorityscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2403210001 definitions=main-2403270119
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ priorityscore=1501 mlxscore=0 suspectscore=0 spamscore=0
+ lowpriorityscore=0 clxscore=1015 phishscore=0 bulkscore=0 adultscore=0
+ mlxlogscore=999 malwarescore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2403210001 definitions=main-2403270119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240327_100925_176826_70196131 
-X-CRM114-Status: GOOD (  13.09  )
+X-CRM114-CacheID: sfid-20240327_100925_607159_8E030573 
+X-CRM114-Status: GOOD (  16.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,49 +97,97 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the TX and RX MCS rate configurations per peer are
-reversed when sent to the firmware. As a result, RX MCS rates
-are configured for TX, and vice versa. This commit rectifies
-the configuration to match what the firmware expects.
+Currently rx and tx MCS map for 160 MHz under HE capabilities
+are not updating properly, when 160 MHz is configured with NSS
+lesser than max NSS support. Fix this by utilizing
+nss_ratio_enabled and nss_ratio_info fields sent by firmware
+in service ready event.
+
+However, if firmware advertises EXT NSS BW support in VHT caps
+as 1(1x2) and when nss_ratio_info indicates 1:1, reset the EXT
+NSS BW Support in VHT caps to 0 which indicates 1x1. This is
+to avoid incorrectly chosing 1:2 NSS ratio when using the
+default VHT caps advertised by firmware.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 4 ++--
- drivers/net/wireless/ath/ath12k/wmi.h | 2 ++
- 2 files changed, 4 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 33 ++++++++++++++++++++++-----
+ 1 file changed, 27 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 34de3d16efc0..c550ced42084 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -2112,8 +2112,8 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
- 		he_mcs->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_HE_RATE_SET,
- 							    sizeof(*he_mcs));
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 92b597697603..a5044b734868 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -2103,8 +2103,10 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
+ 	arg->peer_nss = min(sta->deflink.rx_nss, max_nss);
  
--		he_mcs->rx_mcs_set = cpu_to_le32(arg->peer_he_rx_mcs_set[i]);
--		he_mcs->tx_mcs_set = cpu_to_le32(arg->peer_he_tx_mcs_set[i]);
-+		he_mcs->rx_mcs_set = cpu_to_le32(arg->peer_he_tx_mcs_set[i]);
-+		he_mcs->tx_mcs_set = cpu_to_le32(arg->peer_he_rx_mcs_set[i]);
- 		ptr += sizeof(*he_mcs);
+ 	if (arg->peer_phymode == MODE_11AX_HE160) {
+-		tx_nss = ath12k_get_nss_160mhz(ar, max_nss);
++		tx_nss = ath12k_get_nss_160mhz(ar, ar->num_tx_chains);
+ 		rx_nss = min(arg->peer_nss, tx_nss);
++
++		arg->peer_nss = min(sta->deflink.rx_nss, ar->num_rx_chains);
+ 		arg->peer_bw_rxnss_override = ATH12K_BW_NSS_MAP_ENABLE;
+ 
+ 		if (!rx_nss) {
+@@ -4993,6 +4995,12 @@ ath12k_create_vht_cap(struct ath12k *ar, u32 rate_cap_tx_chainmask,
+ 	vht_cap.vht_mcs.rx_mcs_map = cpu_to_le16(rxmcs_map);
+ 	vht_cap.vht_mcs.tx_mcs_map = cpu_to_le16(txmcs_map);
+ 
++	/* Check if the HW supports 1:1 NSS ratio and reset
++	 * EXT NSS BW Support field to 0 to indicate 1:1 ratio
++	 */
++	if (ar->pdev->cap.nss_ratio_info == WMI_NSS_RATIO_1_NSS)
++		vht_cap.cap &= ~IEEE80211_VHT_CAP_EXT_NSS_BW_MASK;
++
+ 	return vht_cap;
+ }
+ 
+@@ -5175,11 +5183,12 @@ static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
+ 				    struct ieee80211_sta_he_cap *he_cap)
+ {
+ 	struct ieee80211_he_mcs_nss_supp *mcs_nss = &he_cap->he_mcs_nss_supp;
+-	u16 txmcs_map, rxmcs_map;
++	u8 maxtxnss_160 = ath12k_get_nss_160mhz(ar, ar->num_tx_chains);
++	u8 maxrxnss_160 = ath12k_get_nss_160mhz(ar, ar->num_rx_chains);
++	u16 txmcs_map_160 = 0, rxmcs_map_160 = 0;
++	u16 txmcs_map = 0, rxmcs_map = 0;
+ 	u32 i;
+ 
+-	rxmcs_map = 0;
+-	txmcs_map = 0;
+ 	for (i = 0; i < 8; i++) {
+ 		if (i < ar->num_tx_chains &&
+ 		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
+@@ -5192,12 +5201,24 @@ static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
+ 			rxmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
+ 		else
+ 			rxmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
++
++		if (i < maxtxnss_160 &&
++		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
++			txmcs_map_160 |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
++		else
++			txmcs_map_160 |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
++
++		if (i < maxrxnss_160 &&
++		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
++			rxmcs_map_160 |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
++		else
++			rxmcs_map_160 |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
  	}
  
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 752fc2d53d8f..cf273298227d 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -3863,7 +3863,9 @@ struct ath12k_wmi_vht_rate_set_params {
+ 	mcs_nss->rx_mcs_80 = cpu_to_le16(rxmcs_map & 0xffff);
+ 	mcs_nss->tx_mcs_80 = cpu_to_le16(txmcs_map & 0xffff);
+-	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map & 0xffff);
+-	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map & 0xffff);
++	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map_160 & 0xffff);
++	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map_160 & 0xffff);
+ }
  
- struct ath12k_wmi_he_rate_set_params {
- 	__le32 tlv_header;
-+	/* MCS at which the peer can receive */
- 	__le32 rx_mcs_set;
-+	/* MCS at which the peer can transmit */
- 	__le32 tx_mcs_set;
- } __packed;
- 
+ static void ath12k_mac_copy_he_cap(struct ath12k *ar,
 -- 
 2.17.1
 
