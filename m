@@ -4,71 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E51DCD11DD
-	for <ath12k@archiver.kernel.org>; Thu, 28 Mar 2024 19:32:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27D03CD11DF
+	for <ath12k@archiver.kernel.org>; Thu, 28 Mar 2024 20:03:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HHi1NCcjgbQrsX909aBPkyDgJxO80H1X0GsrKc/s0qk=; b=P2n8ta8fkEMNqhO4bSmWsstdAc
-	eE+FEsQQhnB374dWDQThRhXJzdhzk3J9uOTAFMR/shStGK1pxR24Y15gf3UFxGGdqFpkwlKZJGAew
-	zuDF7h3M0ZjoPfuXTESLEyY8PPH/FUEFsfGcJVPcoeUOkmz/1GRfTMm4/bQtvD5EA/CrBf91z3OaP
-	mP9GZvVnCI+sFQIg3MgUK1O/evyROZNTblCIkKJdgOQAq202qzShi1vOKTlhVcsmjhugxbN8+qXWK
-	1+d77WDSqZW+3v0grH9HbK4q3jA/EyO3ulZlXGLlS/Oo+VctpOatQJl+WOzUFyAdqMJxfdEMuIPmn
-	sL48k9ug==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=rfFSAsJsT2Wmw0hTegLH8ssxfxvZ8MTXjUEz/hkR0cs=; b=Zto6R3mp55LaCt2HKEpyJA5E0V
+	i0YzaFMhrTqFciMHSWIbqM+wSd6HdA714AAVcXWivHh/xo5KWckifc9PUq6J+mA7cKS/oog5BjuO9
+	R6J6WVy2CyQQDC+u+chv/Fn+OrToKUDxApDC8SiFIPVHCkfl1d4HqxZGgAyr1GXXiUAYyUZCZoLWb
+	HiFIAgK+YVVUlCmbr2nRXcuWF7YwYrY9Wdd9ioXi1IFKzH1m1/G+5VmNiXEp+hLOAb+1TOvk/DZQM
+	YuhADQgahl6cCje0zvSwhGt/oTgNfZFeoDqDFIG9hT4cDFKs1fOH6L2E2sUO+wNUbW96Kkyoc6CSW
+	rM5+CZ0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpvUT-0000000FOTz-3sfF
+	id 1rpvyf-0000000FWCe-32XK
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Mar 2024 19:32:45 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Thu, 28 Mar 2024 20:03:57 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpvUQ-0000000FOTO-2rax
-	for ath12k@lists.infradead.org;
-	Thu, 28 Mar 2024 19:32:44 +0000
+	id 1rpuwe-0000000FHZc-0SZy
+	for ath12k@bombadil.infradead.org;
+	Thu, 28 Mar 2024 18:57:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=HHi1NCcjgbQrsX909aBPkyDgJxO80H1X0GsrKc/s0qk=;
-	t=1711654360; x=1712863960; b=RZRn2qb/HIv5TfuCmCKwR5O2g4iw+Oivyk8Gj0G2fc6fJPy
-	ceNuJp2Z4T3zUZnEhBOmmdkfhBgNDGtqTYW8tR2d0dvMIoi6oH3A3wYN8THfeHTGwIbL+esodjL3b
-	t4+6Jovc8vW8If83yrT5JsjFSMWeRmRLcy2/R7PNdniAp+rXSpUceJLDL9n1G6JpUrfGMFqBq13ht
-	TDiHssggkER7pPm1r1TIgJXwVP44IML0rVU3rWrGCLf4oTVvTBs0XpGSAtZSnxn/WucfOhLBgpsuo
-	Aztfm7DQJk+1kfp3Pi4gHD+W22v6S6MB7e2FtenCK39Nc855kVX5V73ArvK6Zlng==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1rpvUL-00000001GkI-02Oy;
-	Thu, 28 Mar 2024 20:32:37 +0100
-Message-ID: <1e0e09fa6c1d4111f48aba93c1e16d906f5f89c3.camel@sipsolutions.net>
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=rfFSAsJsT2Wmw0hTegLH8ssxfxvZ8MTXjUEz/hkR0cs=; b=a7C8FwQkoMW3faOImu2VZcYNRT
+	KWemHVOMsnYhQI2XeDBHlNaJ/uWeO8QLfVvb1ZVsNAJZLcMKdxl7C16BsBL/g2+FLX84dIXri/gqN
+	7uoPkChpnxciBzlMS2hfnHbUs2fvjcghbdFsA1ycRHb+C4Tjnih072CbsksD2fI/HrA81TWZzKX/b
+	ahNu4K7ONK3YpIKziRtsrePYuSiTD9NzXAX7Ygdco6nhGvGKcmLbhTksU1rkV8QNBscKhsi4EQR3K
+	asPopQVtkOyh2mrN9qn6ovy9dgFOiCuFiVpGsXe7/m6N0hV6xG/WSXx/rV6ZftPWvEu/AmQnLO8aB
+	N9F9NkHQ==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1rpuwa-000000017dn-3azH
+	for ath12k@lists.infradead.org;
+	Thu, 28 Mar 2024 18:57:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4F37661847;
+	Thu, 28 Mar 2024 18:57:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A43B2C433C7;
+	Thu, 28 Mar 2024 18:57:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1711652261;
+	bh=g8MZoSOBw83lfy1GQGN+fYvIbwsa4mnyeiq8LMMUAbw=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=ti6Tw9mMMkTBavcMr86LzhVafkUKbgTXs+DJ6l9HnvUJFa5/xg1SngxeY7S0O+Uul
+	 uNPxj6Nm9l3lBPwl+KOM8IHUD8F74Ok4LxdD8acbvwlx6y/18dnrr0rgOExUPDQfrB
+	 s0T7Hw0h6TJcZUNzHAsZd+fAPfpZczhpHXwFyrFU2hy0dO9Nuyj+m6cIXO/NQmRr49
+	 ix6BypTQQpIvqDWp+hWwKWEha/TEU+mQfG/jnEjUTc4PblbILf7d/OfV3tgshCbxQY
+	 kwsvK1xr4+AKzxzfvZdZ+KHUpCNz61MxWnF063i3bTp9g9iw0cs5a6ddzmC42e9Ex4
+	 E1HRQ1jqvy4zQ==
+Date: Thu, 28 Mar 2024 11:57:39 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+ ath12k@lists.infradead.org, linux-wireless@vger.kernel.org, Vasanthakumar
+ Thiagarajan <quic_vthiagar@quicinc.com>, netdev@vger.kernel.org
 Subject: Re: [PATCH 02/13] wifi: nl80211: send underlying multi-hardware
  channel capabilities to user space
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Jakub Kicinski <kuba@kernel.org>
-Cc: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>, 
-	ath12k@lists.infradead.org, linux-wireless@vger.kernel.org, Vasanthakumar
-	Thiagarajan <quic_vthiagar@quicinc.com>, netdev@vger.kernel.org
-Date: Thu, 28 Mar 2024 20:32:35 +0100
-In-Reply-To: <20240328115739.78ec5650@kernel.org>
+Message-ID: <20240328115739.78ec5650@kernel.org>
+In-Reply-To: <485ca445f0f0c47179a338df2538e74d520627ad.camel@sipsolutions.net>
 References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
-	 <20240328072916.1164195-3-quic_periyasa@quicinc.com>
-	 <6d92d0ba4a8764cd91cc20c4bd35613bcc41dfcd.camel@sipsolutions.net>
-	 <9d5c2f9f-19b5-af4d-8018-1eb97fac10d6@quicinc.com>
-	 <9d0f309da45ae657cd2ce0bc11a93d66e856ef64.camel@sipsolutions.net>
-	 <20240328114903.1d0c8af9@kernel.org>
-	 <485ca445f0f0c47179a338df2538e74d520627ad.camel@sipsolutions.net>
-	 <20240328115739.78ec5650@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
+	<20240328072916.1164195-3-quic_periyasa@quicinc.com>
+	<6d92d0ba4a8764cd91cc20c4bd35613bcc41dfcd.camel@sipsolutions.net>
+	<9d5c2f9f-19b5-af4d-8018-1eb97fac10d6@quicinc.com>
+	<9d0f309da45ae657cd2ce0bc11a93d66e856ef64.camel@sipsolutions.net>
+	<20240328114903.1d0c8af9@kernel.org>
+	<485ca445f0f0c47179a338df2538e74d520627ad.camel@sipsolutions.net>
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_123242_818979_893B22D8 
-X-CRM114-Status: UNSURE (   7.89  )
+X-CRM114-CacheID: sfid-20240328_185745_163276_289A9BEA 
+X-CRM114-Status: UNSURE (   5.85  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,19 +96,11 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2024-03-28 at 11:57 -0700, Jakub Kicinski wrote:
-> On Thu, 28 Mar 2024 19:53:33 +0100 Johannes Berg wrote:
-> > I suppose we could even define a
-> >=20
-> > nla_for_each_type(..., type)
->=20
-> That's probably a good idea for the kernel! We already have a bunch of
-> the loops with the if (type !=3D DESIRED) continue, as you mentioned.
+On Thu, 28 Mar 2024 19:53:33 +0100 Johannes Berg wrote:
+> I suppose we could even define a
+> 
+> nla_for_each_type(..., type)
 
-https://lore.kernel.org/r/20240328203144.b5a6c895fb80.I1869b44767379f204998=
-ff44dd239803f39c23e0@changeid
-
-:P
-
-johannes
+That's probably a good idea for the kernel! We already have a bunch of
+the loops with the if (type != DESIRED) continue, as you mentioned.
 
