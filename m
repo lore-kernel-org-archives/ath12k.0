@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B9E2C54E64
-	for <ath12k@archiver.kernel.org>; Thu, 28 Mar 2024 13:43:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54291C54E64
+	for <ath12k@archiver.kernel.org>; Thu, 28 Mar 2024 14:16:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
 	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
 	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y3mavgIZ6BDGJNBJObXPLTocvV0qaxQy/Cey5bC67Sw=; b=CFeXqkYO5LR4eNG80Th1zQMiVi
-	4qrUW8TShMLfM5oIAjxo1A+FOTgtODuxQi2YUR13Nj2+u+Xur7HyOe0lbx7X57ShtpxVK9x5ktl8m
-	/W4tc+CUKy9MOcnxev0Q+lp+MbhYxqPns5kZrOqWBbHc8MP5PK0eSX8G+AESHKA7YHIMlq+iGINyW
-	Y7g6KJC8R1EagXM2zIrx/NWNPzCNqsGK59mQ5RN7aTxaFCh+RisXHum8If+UUpmuzjW4YlA70TB7F
-	mf8yfn9rqlwLc/hPlvGYgOou6i/86q2WnB1IfydVxmWHVlRULP4o2AJYwf6+hur/M2QgjEw3mzjY6
-	CHbMR3oQ==;
+	bh=qFmBhPh8gg8olzgrUk+NQzaUZcs1g3w7206VS3gQTmM=; b=0Y/V9HSRoDETuMXOxZuB689Z7Z
+	yOEM94TaoV0NyjJXgZq3pQGiYDpal5FYGj3Pj7hvEJwlnbHa/Xj2mSuLMSz44jIX/1LL7tehLRegD
+	zFkgpLKWI1zr2c+Lb/pqs0utjranI/AWROn+xVa6heEkMVqv94Zp6jIAgizhPcbCqs/h1s9ywhT27
+	Sn/Ch5tsdhPoa7730LfmOEGOnxbHDLZ4wsF0FPL8QshHymabmGw5MSg6E2w2TuFqPKTlYlI5oKt9b
+	y3gLbDs1Aeph4l6QmG6I6FAZ9bWAEKCaDXzpt5RZi2zEY9cZhwqYpzdmo/tQJGnDR3zsV68jVdL2x
+	dyVZXe+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpq2T-0000000E9zX-00q6
+	id 1rpqYT-0000000EHNt-3kji
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Mar 2024 13:43:29 +0000
+	Thu, 28 Mar 2024 14:16:33 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpq2Q-0000000E9yd-0mLS
+	id 1rpqYQ-0000000EHNP-3udM
 	for ath12k@lists.infradead.org;
-	Thu, 28 Mar 2024 13:43:27 +0000
+	Thu, 28 Mar 2024 14:16:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
 	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=y3mavgIZ6BDGJNBJObXPLTocvV0qaxQy/Cey5bC67Sw=;
-	t=1711633405; x=1712843005; b=oKsBTw3hvYKF8K1cvIYWQA2TZdtfsP6RCE/Cd4P3wVFBxV5
-	nhhTQLusujw2NUUXvkBfaMHu3u6h3atxunJs3+l61ApOHGm3vaskmrvw5VyCnZuv+puL1H52hPDFX
-	1jUWmcLw04d1NVwQyHjPeTfYaFM48/hLkjHC1qIGrKE5p/tqjzuZ0fEpwOqmlChIFqP+Btyh/m2no
-	dyPd2xy1hIX9fsei/rBtRskjuoCe3f9LC1TTrXNXLQvGhZbh+x9aQ9Io9In7Bzx/HNNCseyoHiZ5D
-	3r1WpWRO5vrro831S++KVFWrjGnTsa0DTh7StRMLJm46AFRFBM+QZMq6Qkn694GQ==;
+	Resent-Cc:Resent-Message-ID; bh=qFmBhPh8gg8olzgrUk+NQzaUZcs1g3w7206VS3gQTmM=;
+	t=1711635390; x=1712844990; b=QnlDM0zi8WSmo7P0Itdv35Sw6pobgOlmWOBXdiRgyT2uEoW
+	Km6Mz6GDc3zngyH/DW4HqWu05s9hqdqh8QosCz4ahFVKFIyXdhzrruBYE5LNPklUdnCpFc48BKUZG
+	Ww4g9Zh67j9i4Vc95NbzJs9VcG8IYL/9ucyC+ZM0UwZGEDAYf4P+6ntXgRNe02xtRr9PEGUF4NFCt
+	9T9Ked0CNmKvrKpMyxjh1bTf2uOLoxJzzQ7L98W7L1Nk2ankM73SHTd5+ggyRyo8G2flMPhLPGYDs
+	Lord6DNdpe0JKycLdYN1VdtFK8QB5dsLBn1YpYe/t6watFH+bh2PPoiQjmYnO9Qw==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
 	(Exim 4.97)
 	(envelope-from <johannes@sipsolutions.net>)
-	id 1rpq2M-000000010wi-3fTE;
-	Thu, 28 Mar 2024 14:43:23 +0100
-Message-ID: <e2c5f81882f86b26be4d9bcf3c9d4b1fd6001b22.camel@sipsolutions.net>
-Subject: Re: [PATCH 08/13] wifi: cfg80211: Refactor the iface combination
- iteration helper function
+	id 1rpqYN-000000012MS-2C0b;
+	Thu, 28 Mar 2024 15:16:27 +0100
+Message-ID: <a24b7d967dbe31ef613fae8c331f4ff718482c93.camel@sipsolutions.net>
+Subject: Re: [PATCH 09/13] wifi: cfg80211: Add multi-hardware iface
+ combination support
 From: Johannes Berg <johannes@sipsolutions.net>
 To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>, 
 	ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Vasanthakumar Thiagarajan
 	 <quic_vthiagar@quicinc.com>
-Date: Thu, 28 Mar 2024 14:43:21 +0100
-In-Reply-To: <20240328072916.1164195-9-quic_periyasa@quicinc.com>
+Date: Thu, 28 Mar 2024 15:16:26 +0100
+In-Reply-To: <20240328072916.1164195-10-quic_periyasa@quicinc.com>
 References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
-	 <20240328072916.1164195-9-quic_periyasa@quicinc.com>
+	 <20240328072916.1164195-10-quic_periyasa@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_064326_248244_F1A3BB81 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20240328_071631_071820_E61C5373 
+X-CRM114-Status: GOOD (  29.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,95 +79,179 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On Thu, 2024-03-28 at 12:59 +0530, Karthikeyan Periyasamy wrote:
 >=20
+>   * @new_beacon_int: set this to the beacon interval of a new interface
+>   *	that's not operating yet, if such is to be checked as part of
+>   *	the verification
+> + * @chandef: Channel definition for which the interface combination is t=
+o be
+> + *	checked, when checking during interface preparation on a new channel,
+> + *	for example. This will be used when the driver advertises underlying
+> + *	hw specific interface combination in a multi physical hardware device=
+.
+> + *	This will be NULL when the interface combination check is not due to
+> + *	channel or the interface combination does not include per-hw
+> + *	advertisement.
+
+This is input, so "will be" doesn't make much sense, more like "must
+be"?
+
+But I'm confused as to how that works with num_different_channels being
+here too?
+
+This function was, as far as I can tell, always checking the _full_
+state. Now you're changing that, and I'm neither sure why, nor does it
+seem well documented.
+
+> + * @n_per_hw: number of Per-HW interface combinations.
+> + * @per_hw: @n_per_hw of hw specific interface combinations. Per-hw chan=
+nel
+> + *	list index as advertised in wiphy @hw_chans is used as index
+> + *	in @per_hw to maintain the interface combination of the corresponding
+> + *	hw.
+
+What?
+
+If I'm reading that correctly, which is all but guaranteed, doesn't that
+actually mean you don't need n_per_hw at all, since it necessarily equal
+to n_hw_chans?
+
+> +/**
+> + * cfg80211_per_hw_iface_comb_advertised - if per-hw iface combination s=
+upported
+> + *
+> + * @wiphy: the wiphy
+> + *
+> + * This function is used to check underlying per-hw interface combinatio=
+n is
+> + * advertised by the driver.
+> + */
+> +bool cfg80211_per_hw_iface_comb_advertised(struct wiphy *wiphy);
+
+Is that even worth an export rather than being inline? Is it even needed
+outside of cfg80211 itself?
+
+Also for cfg80211_get_hw_idx_by_chan(), is it really needed?
+
+I'm also wondering if we really should use the "hw_idx" everywhere.
+Maybe that'd be more useful as a pointer to struct
+ieee80211_chans_per_hw in most places (other than nl80211, obviously)?
+
+The index always feels pretty fragile, a pointer at least gives us type-
+checking?
+
+Even in the interface combination advertising, perhaps, though not sure
+how that'd work for the drivers.
+
+> +static const struct ieee80211_iface_per_hw *
+> +cfg80211_get_hw_iface_comb_by_idx(struct wiphy *wiphy,
+> +				  const struct ieee80211_iface_combination *c,
+> +				  int idx)
+> +{
+> +	int i;
+> +
+> +	for (i =3D 0; i < c->n_hw_list; i++)
+> +		if (c->iface_hw_list[i].hw_chans_idx =3D=3D idx)
+> +			break;
+> +
+> +	if (i =3D=3D c->n_hw_list)
+> +		return NULL;
+> +
+> +	return &c->iface_hw_list[i];
+> +}
+
+???
+
+Hint: it's perfectly legal to return directly from a loop.
+
 > +static int
-> +cfg80211_validate_iface_comb_limits(struct wiphy *wiphy,
-> +				    struct iface_combination_params *params,
-> +				    const struct ieee80211_iface_combination *c,
-> +				    u16 num_interfaces, u32 *all_iftypes)
+> +cfg80211_validate_iface_comb_per_hw_limits(struct wiphy *wiphy,
+> +					   struct iface_combination_params *params,
+> +					   const struct ieee80211_iface_combination *c,
+> +					   u16 *num_ifaces, u32 *all_iftypes)
 > +{
 > +	struct ieee80211_iface_limit *limits;
-> +	int ret =3D 0;
+> +	const struct iface_comb_per_hw_params *per_hw;
+> +	const struct ieee80211_iface_per_hw *per_hw_comb;
+> +	int i, ret =3D 0;
 
-That initialization is useless.
+The =3D 0 doesn't seem needed.
 
+> +		ret =3D cfg80211_validate_iface_limits(wiphy,
+> +						     per_hw->iftype_num,
+> +						     limits,
+> +						     per_hw_comb->n_limits,
+> +						     all_iftypes);
 > +
-> +	if (num_interfaces > c->max_interfaces)
-> +		return -EINVAL;
+> +		kfree(limits);
 > +
-> +	if (params->num_different_channels > c->num_different_channels)
-> +		return -EINVAL;
+> +		if (ret)
+> +			goto out;
+> +	}
 > +
-> +	limits =3D kmemdup(c->limits, sizeof(limits[0]) * c->n_limits,
-> +			 GFP_KERNEL);
-> +	if (!limits)
-> +		return -ENOMEM;
-> +
-> +	ret =3D cfg80211_validate_iface_limits(wiphy,
-> +					     params->iftype_num,
-> +					     limits,
-> +					     c->n_limits,
-> +					     all_iftypes);
-> +
-> +	kfree(limits);
-> +
+> +out:
 > +	return ret;
-> +}
-> +
-> +static u16 cfg80211_get_iftype_info(struct wiphy *wiphy,
-> +				    const int iftype_num[NUM_NL80211_IFTYPES],
-> +				    u32 *used_iftypes)
+
+That 'out' label is pointless.
+
+> +static void cfg80211_put_iface_comb_iftypes(u16 *num_ifaces)
 > +{
-> +	enum nl80211_iftype iftype;
-> +	u16 num_interfaces =3D 0;
+> +	kfree(num_ifaces);
+> +}
+
+Not sure I see value in that indirection?
+
+> +static u16*
+
+missing space
+
+> +cfg80211_get_iface_comb_iftypes(struct wiphy *wiphy,
+> +				struct iface_combination_params *params,
+> +				u32 *used_iftypes)
+> +{
+> +	const struct iface_comb_per_hw_params *per_hw;
+> +	u16 *num_ifaces;
+> +	int i;
+> +	u8 num_hw;
 > +
+> +	num_hw =3D params->n_per_hw ? params->n_per_hw : 1;
 
-This should probably set *used_iftypes =3D 0.
+I think we're allowed to use the "?:" shortcut.
 
-> +	for (iftype =3D 0; iftype < NUM_NL80211_IFTYPES; iftype++) {
-> +		num_interfaces +=3D iftype_num[iftype];
-> +		if (iftype_num[iftype] > 0 &&
-> +		    !cfg80211_iftype_allowed(wiphy, iftype, 0, 1))
-> +			*used_iftypes |=3D BIT(iftype);
+> +	num_ifaces =3D kcalloc(num_hw, sizeof(*num_ifaces), GFP_KERNEL);
+> +	if (!num_ifaces)
+> +		return NULL;
 
-and that could really use a rewrite like
+But ... maybe we should just cap num_hw to a reasonable limit (4? 5?)
+and use a static array in the caller instead of allocating here.
 
-		if (!iftype_num[iftype])
-			continue;
+> +	is_per_hw =3D cfg80211_per_hw_iface_comb_advertised(wiphy);
 
-		num_interfaces +=3D ...
+Maybe call that "have_per_hw_combinations" or so? Or "check_per_hw"
+even, "is" seems not clear - "what is?"
 
-		if (!allowed...)
-			*used_iftypes |=3D ...;
+> +	/* check per HW validation */
+> +	if (params->n_per_hw) {
+> +		if (!is_per_hw)
+> +			return -EINVAL;
+> +
+> +		if (params->n_per_hw > wiphy->num_hw)
+> +			return -EINVAL;
+> +	}
+> +
+> +	if (is_per_hw && params->chandef &&
+> +	    cfg80211_chandef_valid(params->chandef))
+> +		hw_chan_idx =3D cfg80211_get_hw_idx_by_chan(wiphy,
+> +							  params->chandef->chan);
+> +
+> +	num_ifaces =3D cfg80211_get_iface_comb_iftypes(wiphy,
+> +						     params,
+> +						     &used_iftypes);
+> +	if (!num_ifaces)
+> +		return -ENOMEM;
 
-I'd say.
-
->  	for (i =3D 0; i < wiphy->n_iface_combinations; i++) {
->  		const struct ieee80211_iface_combination *c;
-> -		struct ieee80211_iface_limit *limits;
->  		u32 all_iftypes =3D 0;
-> =20
->  		c =3D &wiphy->iface_combinations[i];
-> =20
-> -		if (num_interfaces > c->max_interfaces)
-> -			continue;
-> -		if (params->num_different_channels > c->num_different_channels)
-> +		ret =3D cfg80211_validate_iface_comb_limits(wiphy, params,
-> +							  c, num_interfaces,
-> +							  &all_iftypes);
-> +		if (ret =3D=3D -ENOMEM) {
-> +			break;
-> +		} else if (ret) {
-> +			ret =3D 0;
->  			continue;
-
-Seems that 'break' is equivalent to just 'return ret'? And that setting
-ret =3D 0 seems ... strange.
-
-> -	return 0;
-> +	return ret;
->  }
-
-And then you don't need that either which is much nicer anyway...
+But still like I said above, all this code seems really odd to me now,
+it's checking *either* the per-hw and then only for a single HW, *or*
+the global, but ... seems it should do full checks for both, if needed?
 
 johannes
 
