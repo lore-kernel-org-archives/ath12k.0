@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD840C6FD1F
-	for <ath12k@archiver.kernel.org>; Fri, 29 Mar 2024 06:09:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B4A5C6FD1F
+	for <ath12k@archiver.kernel.org>; Fri, 29 Mar 2024 10:34:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=IXvho23lrfCt0ozepxfht/vZqAr9mxHYBoAnEtSbwP0=; b=luX2ytdpZBMSwvOV5I3LURx//7
-	MUgH6hhTJnepNbqrchfSEz2xrKPTAMtq2cPwdIwQc0vqbLEmYELPFxmdCQc94W5rSWcw1b8O4n1jN
-	W8VGkc4oX53SkPizgCNKgcZTJKl6vKJ4vQHSaNr3T7rT3saLtblwT+V2C9tD5mVCtT326yXZbh3dN
-	0pZWORxoh5nq3OHg3mXovGJNxMy5uXvKpwKSeptV0IdrFtO3qoupj8KtplOEGBt4uqib+HI8pcTu8
-	mt9aQGR7DQV3NRDkwO03IJ59ANaF6+txS2rRHW+8MuS84EskT5NPqWPHuniWubJS3P2crfC5tDdql
-	5oI75R9A==;
+	bh=kndjoUvO+S39fVLNLNgN6pRol9ZLbYswoaIPNOv63jM=; b=b70+9bNbEc4caP5tW7th1fZYSU
+	TySLR8UNXmO/gA/WJrAb6oqLm2RRUilI7h6ZBn91GXHVflIaqcKHzdCsyTKzKQ2AU1FoV10+KkXlp
+	VmOJunpALS5KgEbY48DS5fmvX1e06fx360kxbPgSsRYtBsIzrABAsTff/2wN24S433BXjMSMPPnXm
+	sXGvkibpXwO4xfJigXsdnwO7LT/F/xBsyWICdI1boEHKlemafMc76O4aEBHL2fsWKgtmpoq6Mspag
+	hHzkKXp5PDvGujsbO5plDnGTgmx0AD2cHlJ/v7AyIJTj+0lFx0oQpkanc2n9TA/mXF/u1FrFv6d8E
+	b1g6loHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rq5R3-0000000GzFN-217b
+	id 1rq9Yj-000000003XJ-0W1O
 	for ath12k@archiver.kernel.org;
-	Fri, 29 Mar 2024 06:09:53 +0000
+	Fri, 29 Mar 2024 10:34:05 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rq5R0-0000000GzEj-0JLt
+	id 1rq8U0-0000000HTZ6-3ieo
 	for ath12k@lists.infradead.org;
-	Fri, 29 Mar 2024 06:09:51 +0000
+	Fri, 29 Mar 2024 09:25:10 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42T5at90030814;
-	Fri, 29 Mar 2024 06:09:48 GMT
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42T90ONd022880;
+	Fri, 29 Mar 2024 09:25:07 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:mime-version:content-type; s=
-	qcppdkim1; bh=IXvho23lrfCt0ozepxfht/vZqAr9mxHYBoAnEtSbwP0=; b=H4
-	o0G3UQEiRIvfSwt4Mp9vbFa2MMlkbq6B4uqE7XlmKxJRTbpdr1O2JmHxycDli0d9
-	KIflW16GaDWFuoUWt6YDnVet8cmR+0qVKV6SK6LzmRWqNdeIm7bSmHex5L3LNyvp
-	/u/67VZ4LcWd8iSNaXmDc6EDmslKDX12rFd7jxEjKrDRteM7gab5Xw6eCSTizCTT
-	X4Igj/aEnfrJDkK47G0u/FElxflLx63Mtv3+feX9NeQalbd0OjP7UCrq+yop+kVo
-	7J1gR6eeGgWUGQPIFYqN8u08wXQdEbC0VGF4p7Q/AS+nj9rUgZmliDdOqpqYxP2v
-	1pu/M18sXFCgzRiOsR2w==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x5qkwg3hd-1
+	qcppdkim1; bh=kndjoUvO+S39fVLNLNgN6pRol9ZLbYswoaIPNOv63jM=; b=Ds
+	BQy/0gvw4ncKTDYTZMK/iWjMfxah2uV2BsvvPWQ3ywsDkh94xI+l8YIQUea5gFPK
+	7zTbakU/9Iiofw0WYA/6Fe+0SztAsz0b85Haxwxo03M9X1pkheEFyw1NPwwI3Qad
+	7EhrnIAx+C//ouFiEOfWhX8tJbF4cShJR+3JagIbQ4TzKuiok7tn8UnuIYG6wXzm
+	wGDU6FejFRo/P9puE2gjpbJXDCU4oFJcfVBfKQDTlVjeZXGk377v7cq450Qs7xES
+	oUt6HIXvmgdgPLX9VPX8592EtsVuNh7O14QL7JL2pHF8CvFfKBnlBQrIc/tc5Kbw
+	5l4mw/KtY8Ir4XyTKNnQ==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x5qkwgn99-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Mar 2024 06:09:48 +0000 (GMT)
+	Fri, 29 Mar 2024 09:25:06 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42T69mo5022141
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42T9P6S8023727
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Mar 2024 06:09:48 GMT
+	Fri, 29 Mar 2024 09:25:06 GMT
 Received: from hu-nithp-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Thu, 28 Mar 2024 23:09:45 -0700
+ 15.2.1118.40; Fri, 29 Mar 2024 02:25:04 -0700
 From: Nithyanantham P <quic_nithp@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>,
-        Nithyanantham Paramasivam
-	<quic_nithp@quicinc.com>
-Subject: [PATCH] wifi: ath12k: fix mac id extraction when MSDU spillover in rx error path
-Date: Fri, 29 Mar 2024 11:39:22 +0530
-Message-ID: <20240329060922.677091-1-quic_nithp@quicinc.com>
+        Nithyanantham P <quic_nithp@quicinc.com>
+Subject: [PATCH v2] wifi: ath12k: fix mac id extraction when MSDU spillover in rx error path
+Date: Fri, 29 Mar 2024 14:54:32 +0530
+Message-ID: <20240329092432.873710-1-quic_nithp@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 Content-Type: text/plain
@@ -70,19 +69,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: TOmZXpflr0_em-jiwFu5C0n1ndpSGhii
-X-Proofpoint-GUID: TOmZXpflr0_em-jiwFu5C0n1ndpSGhii
+X-Proofpoint-ORIG-GUID: UcRAfJZKDWBypq1mwrw-FYU2AhjL5Xsm
+X-Proofpoint-GUID: UcRAfJZKDWBypq1mwrw-FYU2AhjL5Xsm
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-29_05,2024-03-28_01,2023-05-22_02
+ definitions=2024-03-29_08,2024-03-28_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- phishscore=0 mlxscore=0 mlxlogscore=422 impostorscore=0 clxscore=1011
+ phishscore=0 mlxscore=0 mlxlogscore=433 impostorscore=0 clxscore=1015
  malwarescore=0 spamscore=0 lowpriorityscore=0 suspectscore=0 adultscore=0
  bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2403210001 definitions=main-2403290050
+ engine=8.19.0-2403210001 definitions=main-2403290081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_230950_231714_2600A789 
-X-CRM114-Status: GOOD (  17.06  )
+X-CRM114-CacheID: sfid-20240329_022508_971948_3D0ED6EF 
+X-CRM114-Status: GOOD (  17.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,7 +119,10 @@ into the MSDU list (msdu_list) for further processing.
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Signed-off-by: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
+Signed-off-by: Nithyanantham P <quic_nithp@quicinc.com>
+---
+v2:
+ - Signed-off name change from Nithyanantham Paramasivam to Nithyanantham P
 ---
  drivers/net/wireless/ath/ath12k/dp_rx.c | 60 +++++++++++++++++++++----
  1 file changed, 52 insertions(+), 8 deletions(-)
