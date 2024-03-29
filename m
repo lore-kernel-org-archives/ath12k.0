@@ -4,78 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6A7DCD128A
-	for <ath12k@archiver.kernel.org>; Thu, 28 Mar 2024 23:43:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53DB9CD1288
+	for <ath12k@archiver.kernel.org>; Fri, 29 Mar 2024 01:24:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QnGP+fXueKRTQPkFEnw+1WL16/ezxN9tReae+d970oA=; b=LqabHp2FYjjG0/f4oYSKKnqBm4
-	+L1IfKOVf5GwwLXL2idh2InhKYI8MfMp1SS2Glark9nK5FjiTHb9SV6h5MJSoCi5fRJjAG55cHJYJ
-	+w8LHYPblb+Z9gxGlhmIH08POC0IQWczc9RzVk0cKhBNTqYL2zhyXYy3sLg7B5A5SUjOcv1he9PuR
-	l0nl5KbbVTMX1BhscyptB+HJRLY8VyRXSTKZtpmIKehokk3niJHoy2YoJ8hrk81Rig4Yk0s9qlPQJ
-	jJlCt4bDbRY16V5aBzVCFrcNrYPYj6DzNVhS3bNRFmH+wPWDIDMivZRdD8DcEtFATfsjh8Ph9dKBp
-	WEXyD8Rg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=tZs1IwNSXUf9sxvx7RxwQOKT9KS83SAOymYigY3H/p0=; b=pB8KOFRnCVzi8XpquzEgdQUkYy
+	FlEOJiUGKJ+ru6ZqQBzHQTOLOazTEeUGNzm2ObXelKWmZIBGPCGysiIz9ej1kYmndgYKsS3GS9BqO
+	IUekgFth55XK384u1jnIaDKWwJ0x0AZoP6fqOn8ScF9UXpiYi5tK4AYf4tWs4GE/cYOfqS7UA3m/2
+	95DczBkBOJqfgrl8DsIZiov3ZeCChbDVaiJBPEiS/kFwMin9yTih3pw+UpGF3XLupfO0lJFWmJz5X
+	Wjvpu06y8FxEOz7Yewu7Uk9+O9Mf7KiFvjvQI9O37LfB+kxvC5kGNbxdJocBvjDAb8ZlgHBM+4MNG
+	TRPypW5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpzPH-0000000G6pp-1tXH
+	id 1rq0yh-0000000GNAr-47cN
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Mar 2024 23:43:39 +0000
-Received: from mgamail.intel.com ([192.198.163.18])
+	Fri, 29 Mar 2024 01:24:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rpzPD-0000000G6pI-1ehr
+	id 1rq0ye-0000000GNAJ-16tL
 	for ath12k@lists.infradead.org;
-	Thu, 28 Mar 2024 23:43:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1711669415; x=1743205415;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=I/WZfIyNxjJxFKhS5s+O6KXilxr0kqvm8WeoL63ejdo=;
-  b=VO+vQuixs6zfOqoE2fQ2cUG4HUibAYtXifoc5cYmgv84IOG3KONI3iJh
-   awdj3+jIbUoH/ZX9jW5RpU0eEWNgnwYJ/UDeDTITSzjd1ebUtacTReXsq
-   YW+R8nlFHL4tPKgGRem5LiMGpRN79AgFsKZLg3j+NiUx1ZPpLMSeQxCi+
-   69OtwnvcdliP60Ib7etIicrfrECnpj4D5RSjqUH4910viPtg5+P0ljBdM
-   qYYPN/12KZY4mua/1ZdctfrOdYEvViH+IOR3hN984StPFIwlcJtVo/6h6
-   zBwCBnZMm/nCDOeX1FZLcKJ0YuMyMc2/T98JG8Bz6OrkFuxQJBUbJJyHz
-   g==;
-X-CSE-ConnectionGUID: a2np6OSxRUO/80yDlubyqA==
-X-CSE-MsgGUID: OJNyIvJVS9+MokiAW1xzag==
-X-IronPort-AV: E=McAfee;i="6600,9927,11027"; a="6689762"
-X-IronPort-AV: E=Sophos;i="6.07,162,1708416000"; 
-   d="scan'208";a="6689762"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Mar 2024 16:43:29 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.07,162,1708416000"; 
-   d="scan'208";a="47777412"
-Received: from lkp-server01.sh.intel.com (HELO be39aa325d23) ([10.239.97.150])
-  by orviesa002.jf.intel.com with ESMTP; 28 Mar 2024 16:43:27 -0700
-Received: from kbuild by be39aa325d23 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1rpzP2-0002d0-15;
-	Thu, 28 Mar 2024 23:43:24 +0000
-Date: Fri, 29 Mar 2024 07:42:41 +0800
-From: kernel test robot <lkp@intel.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-	ath12k@lists.infradead.org, johannes@sipsolutions.net
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	linux-wireless@vger.kernel.org,
-	Harshitha Prem <quic_hprem@quicinc.com>,
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Subject: Re: [PATCH 13/13] wifi: ath12k: Advertise multi hardware iface
- combination
-Message-ID: <202403290724.p8vSV474-lkp@intel.com>
-References: <20240328072916.1164195-14-quic_periyasa@quicinc.com>
+	Fri, 29 Mar 2024 01:24:17 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42T1DH9N013784;
+	Fri, 29 Mar 2024 01:24:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding:content-type; s=qcppdkim1; bh=tZs1IwN
+	SXUf9sxvx7RxwQOKT9KS83SAOymYigY3H/p0=; b=WJSMkoHwoWOmxucwT2oVTaC
+	e954vm7uFyh94op4rPHD1M9m6vbdaW/vwmLyh/KAvk8YW122oUvJr2+rVF2bQorW
+	koEPMQ91fCMggo/TewYg44rYkCxi0xA5gDT3WY7T4QmXaLpJNePyyO/e4Wj6qCh9
+	SpkkeDfRFq9dvWyiGNpKz73GyASf9AzjREIUrAyiVzZPs/e2DQop6ANXShLvwImJ
+	tAz79vFyknBeMIlAZeii7jxcLECQ/whc56zEpABYZBZgz6BnEjOSyqFzGpstWZAr
+	E9ZhDYoxNvu/PVbphFFh2ASP8SRBldMWJs9qaBv/uComxc6oFWWBWGJkPWojx0Q=
+	=
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x5aeg9djc-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Mar 2024 01:24:14 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42T1ODqp006784
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Mar 2024 01:24:13 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.40; Thu, 28 Mar 2024 18:24:12 -0700
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH 0/2] wifi: ath12k: refactor the link capable flag
+Date: Fri, 29 Mar 2024 06:53:56 +0530
+Message-ID: <20240329012358.2242354-1-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20240328072916.1164195-14-quic_periyasa@quicinc.com>
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: sQs-2xfUKbUGASetaq1O7k8tstFT4A-A
+X-Proofpoint-GUID: sQs-2xfUKbUGASetaq1O7k8tstFT4A-A
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-03-28_19,2024-03-28_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
+ lowpriorityscore=0 malwarescore=0 priorityscore=1501 mlxscore=0
+ clxscore=1015 mlxlogscore=667 impostorscore=0 adultscore=0 suspectscore=0
+ phishscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2403210001 definitions=main-2403290010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240328_164335_478509_B9A0ADC1 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20240328_182416_332991_4F077D59 
+X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,137 +98,21 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Karthikeyan,
+extend the link capable flag to accommodate inter-chip capability.
 
-kernel test robot noticed the following build warnings:
+Karthikeyan Periyasamy (2):
+  wifi: ath12k: extend the link capable flag
+  wifi: ath12k: fix link capable flags
 
-[auto build test WARNING on d69aef8084cc72df7b0f2583096d9b037c647ec8]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Karthikeyan-Periyasamy/wifi-cfg80211-Add-provision-to-advertise-multiple-radio-in-one-wiphy/20240328-153303
-base:   d69aef8084cc72df7b0f2583096d9b037c647ec8
-patch link:    https://lore.kernel.org/r/20240328072916.1164195-14-quic_periyasa%40quicinc.com
-patch subject: [PATCH 13/13] wifi: ath12k: Advertise multi hardware iface combination
-config: arm64-allyesconfig (https://download.01.org/0day-ci/archive/20240329/202403290724.p8vSV474-lkp@intel.com/config)
-compiler: clang version 19.0.0git (https://github.com/llvm/llvm-project 79ba323bdd0843275019e16b6e9b35133677c514)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240329/202403290724.p8vSV474-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202403290724.p8vSV474-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   In file included from drivers/net/wireless/ath/ath12k/mac.c:7:
-   In file included from include/net/mac80211.h:18:
-   In file included from include/linux/if_ether.h:19:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:8:
-   In file included from include/linux/cacheflush.h:5:
-   In file included from arch/arm64/include/asm/cacheflush.h:11:
-   In file included from include/linux/kgdb.h:19:
-   In file included from include/linux/kprobes.h:28:
-   In file included from include/linux/ftrace.h:13:
-   In file included from include/linux/kallsyms.h:13:
-   In file included from include/linux/mm.h:2188:
-   include/linux/vmstat.h:508:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     508 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     509 |                            item];
-         |                            ~~~~
-   include/linux/vmstat.h:515:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     515 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     516 |                            NR_VM_NUMA_EVENT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/vmstat.h:522:36: warning: arithmetic between different enumeration types ('enum node_stat_item' and 'enum lru_list') [-Wenum-enum-conversion]
-     522 |         return node_stat_name(NR_LRU_BASE + lru) + 3; // skip "nr_"
-         |                               ~~~~~~~~~~~ ^ ~~~
-   include/linux/vmstat.h:527:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     527 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     528 |                            NR_VM_NUMA_EVENT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/vmstat.h:536:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     536 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     537 |                            NR_VM_NUMA_EVENT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~~
->> drivers/net/wireless/ath/ath12k/mac.c:7795:11: warning: variable 'band' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    7795 |         else if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP &&
-         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    7796 |                  ar->supports_6ghz)
-         |                  ~~~~~~~~~~~~~~~~~
-   drivers/net/wireless/ath/ath12k/mac.c:7799:44: note: uninitialized use occurs here
-    7799 |         chans = kzalloc(struct_size(chans, chans, band->n_channels),
-         |                                                   ^~~~
-   include/linux/overflow.h:294:53: note: expanded from macro 'struct_size'
-     294 |                 size_add(sizeof(*(p)), flex_array_size(p, member, count)))
-         |                                                                   ^~~~~
-   include/linux/overflow.h:278:12: note: expanded from macro 'flex_array_size'
-     278 |                 size_mul(count, sizeof(*(p)->member) + __must_be_array((p)->member)))
-         |                          ^~~~~
-   drivers/net/wireless/ath/ath12k/mac.c:7795:7: note: remove the 'if' if its condition is always true
-    7795 |         else if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP &&
-         |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    7796 |                  ar->supports_6ghz)
-         |                  ~~~~~~~~~~~~~~~~~~
-    7797 |                 band = &ar->mac.sbands[NL80211_BAND_6GHZ];
->> drivers/net/wireless/ath/ath12k/mac.c:7795:11: warning: variable 'band' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    7795 |         else if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP &&
-         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/net/wireless/ath/ath12k/mac.c:7799:44: note: uninitialized use occurs here
-    7799 |         chans = kzalloc(struct_size(chans, chans, band->n_channels),
-         |                                                   ^~~~
-   include/linux/overflow.h:294:53: note: expanded from macro 'struct_size'
-     294 |                 size_add(sizeof(*(p)), flex_array_size(p, member, count)))
-         |                                                                   ^~~~~
-   include/linux/overflow.h:278:12: note: expanded from macro 'flex_array_size'
-     278 |                 size_mul(count, sizeof(*(p)->member) + __must_be_array((p)->member)))
-         |                          ^~~~~
-   drivers/net/wireless/ath/ath12k/mac.c:7795:11: note: remove the '&&' if its condition is always true
-    7795 |         else if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP &&
-         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/net/wireless/ath/ath12k/mac.c:7788:39: note: initialize the variable 'band' to silence this warning
-    7788 |         struct ieee80211_supported_band *band;
-         |                                              ^
-         |                                               = NULL
-   7 warnings generated.
+ drivers/net/wireless/ath/ath12k/core.c |  2 +-
+ drivers/net/wireless/ath/ath12k/core.h | 23 ++++++++++++++++++++---
+ drivers/net/wireless/ath/ath12k/mhi.c  |  2 +-
+ drivers/net/wireless/ath/ath12k/qmi.c  |  4 +++-
+ 4 files changed, 25 insertions(+), 6 deletions(-)
 
 
-vim +7795 drivers/net/wireless/ath/ath12k/mac.c
-
-  7783	
-  7784	static
-  7785	struct ieee80211_chans_per_hw *ath12k_setup_per_hw_chan(struct ath12k *ar)
-  7786	{
-  7787		struct ieee80211_chans_per_hw *chans;
-  7788		struct ieee80211_supported_band *band;
-  7789	
-  7790		if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_2G_CAP)
-  7791			band = &ar->mac.sbands[NL80211_BAND_2GHZ];
-  7792		else if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP &&
-  7793			 !ar->supports_6ghz)
-  7794			band = &ar->mac.sbands[NL80211_BAND_5GHZ];
-> 7795		else if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP &&
-  7796			 ar->supports_6ghz)
-  7797			band = &ar->mac.sbands[NL80211_BAND_6GHZ];
-  7798	
-  7799		chans = kzalloc(struct_size(chans, chans, band->n_channels),
-  7800				GFP_KERNEL);
-  7801		if (!chans)
-  7802			return NULL;
-  7803	
-  7804		memcpy(chans->chans, band->channels,
-  7805		       sizeof(*band->channels) * band->n_channels);
-  7806		chans->n_chans = band->n_channels;
-  7807	
-  7808		return chans;
-  7809	}
-  7810	
-
+base-commit: fe7e1b830cf3c0272aa4eaf367c4c7b29c169c3d
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.34.1
+
 
