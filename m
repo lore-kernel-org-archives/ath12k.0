@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC63DCD128A
-	for <ath12k@archiver.kernel.org>; Mon,  1 Apr 2024 19:05:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0FF0CD128D
+	for <ath12k@archiver.kernel.org>; Mon,  1 Apr 2024 19:05:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ZsCY7d7W9giEMF75Uzb0xPUu81j3JE+feSOhpnDFmsw=; b=T5py87yt8EgVXYQHDtZlB7ywGf
-	DsCKQWAa43hOAVI3+rVIOzKA51MjBc483vUh4p0M0mWMzQsORqs64QGTRwOUM8lrElAmL/Z0wSW31
-	PEdyA64QeAjRUYo5NkVblhcQd0DLxqZ/IZIrOYz7Py4FdkTbjCybwx9BOQM56hI5gTzhFpqW4OV8f
-	0dGUCWoXnX2j3I0FRl+M+u2DAW1ibCnHayUNkFOpdY2PQFYSVA/ga2ME8d6yBuEPIoTYM0THJEpII
-	n+xK5pUvkXXAF0k5/7o3AywpJRskipS6H7XgtUiAVEPvodBgWvUsgcDwEzlSH2TxN1/FbwbL2PBwX
-	/ezgIZcg==;
+	bh=jwygHPwgGoT95uLvxAvUjs5JWhQDjWwcbExKoDFjxOQ=; b=sPKS4E/Xe1CuS01vPG2VtVloIS
+	rsJiSLkyoiQ5w56iReE9uGpetN9nIbogA2S0ojWMv8s2Dpz9ZXbtIA0DKvWCxzmyQjatHkxePQ9bX
+	JTk81mtO5n4pBHvMM6UhsSCKIzwnhm0UNGWouQLoZRvpHyAhJJZGFpxnhhgnmCbzMlZ7dCN6VkXVH
+	xvmgpoXs2YDnWFu8uR/J0WNLT2Uz9ARnPfKbFOBskPbKz41n7scrKtBRYvwCmuaLhY7nHi0KGjNrm
+	bUOly4KoTE/YwXOGdOoDEJQ2SwobNMG6IYZwMuvwjonMC2BlvQ42NWkSaQWVOmjyHbK10Nqo3YEXP
+	BcCr2gwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrMy3-00000008dHV-2rXE
+	id 1rrMy4-00000008dI5-1Q0E
 	for ath12k@archiver.kernel.org;
-	Mon, 01 Apr 2024 19:05:15 +0000
+	Mon, 01 Apr 2024 19:05:16 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrMxz-00000008dFI-3JHK
+	id 1rrMy1-00000008dGQ-1kLH
 	for ath12k@lists.infradead.org;
-	Mon, 01 Apr 2024 19:05:13 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 431Bjjmf021006;
-	Mon, 1 Apr 2024 19:05:11 GMT
+	Mon, 01 Apr 2024 19:05:14 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 431DuOf4000324;
+	Mon, 1 Apr 2024 19:05:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=ZsCY7d7W9giEMF75Uzb0xPUu81j3JE+feSOhpnDFmsw=; b=nF
-	eDcT1nY1vFPXd6eLambg0oCEGDPC48AoWY2lBnNi/5GuC9EJQPvScWCAUIFwC/RR
-	WJlg5rlr6u074bkexu3O3OyhF7LdazbkTA4UdnEYDa8sT6jpc5R1mx4Ks7cZsClU
-	MLz2x4jdkdKQ+4bI9ejwEflX593StgOkRgNnF9qZIuhc0I9um0tIgGUWbaTjRpRH
-	vvEprIlAkOUFQwUPjiHD//Pt322BNyQU3XLkpPDJcp5cJF0QBihF3sxGKrEBfKkO
-	PS3WLQ0LbYnGFfIYnHGHsimZlVyLkCqvjKJRyfbcfSACI7dUKq3IrLNeuyYIgM7Q
-	+aIQtYrIKezlz9X21xqA==
+	qcppdkim1; bh=jwygHPwgGoT95uLvxAvUjs5JWhQDjWwcbExKoDFjxOQ=; b=OF
+	uL+lsPAopx0U59qsssYB7fVIYNQuCsV1178xaSIHTBXkqlOtNdcuCAXOAMx3PCqA
+	ivwCG2SVQo0nAIzuDAZx0MBpru9wL8deFPLTLqCIZPxGgDgbA+YgRl++Yq1O0ULM
+	j4jgID8p6Ao2V6yTsxpit7iYcefmi+HLl6XBQCVn5iuUNBykplo3epuFY9VqVz3p
+	6n2JFy+5L66nnfHVKhGrhPuh1PFO9jlGB41dOSlxIivE5e1qiaTIJFwF7qSF/G9Y
+	8TWx8fyomdDe7mqX8PI2Q5EYhCgmba8/k8zlAjH/A/1PSyG2kwtxaIy7Tpvg1qeH
+	5f5xu3Pr/OoYiq71lVOQ==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x7nbq1taf-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x7qgw9ksj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 01 Apr 2024 19:05:10 +0000 (GMT)
+	Mon, 01 Apr 2024 19:05:12 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 431J59CG018243
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 431J5Bbn018272
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 1 Apr 2024 19:05:09 GMT
+	Mon, 1 Apr 2024 19:05:11 GMT
 Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.40; Mon, 1 Apr 2024 12:05:07 -0700
+ 15.2.1118.40; Mon, 1 Apr 2024 12:05:09 -0700
 From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>,
-        Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Subject: [PATCH v6 05/12] wifi: ath12k: scan statemachine changes for single wiphy
-Date: Tue, 2 Apr 2024 00:34:02 +0530
-Message-ID: <20240401190409.2461819-6-quic_ramess@quicinc.com>
+        Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+        Jeff Johnson
+	<quic_jjohnson@quicinc.com>
+Subject: [PATCH v6 06/12] wifi: ath12k: fetch correct radio based on vdev status
+Date: Tue, 2 Apr 2024 00:34:03 +0530
+Message-ID: <20240401190409.2461819-7-quic_ramess@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240401190409.2461819-1-quic_ramess@quicinc.com>
 References: <20240401190409.2461819-1-quic_ramess@quicinc.com>
@@ -71,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: jrrnKe6yCQ_VeKL_eYOzHpmBtQy3lvJ-
-X-Proofpoint-GUID: jrrnKe6yCQ_VeKL_eYOzHpmBtQy3lvJ-
+X-Proofpoint-ORIG-GUID: WFZVaiWTAxp35xc4mfID2N7NtPLA-Ux0
+X-Proofpoint-GUID: WFZVaiWTAxp35xc4mfID2N7NtPLA-Ux0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-01_13,2024-04-01_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- lowpriorityscore=0 suspectscore=0 impostorscore=0 malwarescore=0
- adultscore=0 bulkscore=0 spamscore=0 clxscore=1015 phishscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2403210001 definitions=main-2404010134
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 clxscore=1015
+ priorityscore=1501 bulkscore=0 adultscore=0 suspectscore=0 impostorscore=0
+ spamscore=0 lowpriorityscore=0 malwarescore=0 mlxscore=0 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2403210001
+ definitions=main-2404010134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240401_120511_989794_7CD95A71 
-X-CRM114-Status: GOOD (  33.50  )
+X-CRM114-CacheID: sfid-20240401_120513_663956_10BE22EC 
+X-CRM114-Status: GOOD (  18.98  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,361 +102,189 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sriram R <quic_srirrama@quicinc.com>
 
-When multiple radios are advertised as a single wiphy which
-supports various bands, a default scan request to mac80211
-from cfg80211 will split the driver request based on band,
-so each request will have channels belonging to the same band.
-With this supported by default, the ath12k driver on receiving
-this request checks for one of the channels in the request and
-selects the corresponding radio(ar) on which the scan is going
-to be performed and creates a vdev on that radio.
-
-Note that on scan completion this vdev is not deleted. If a new
-scan request is seen on that same vif for a different band the
-vdev will be deleted and created on the new radio supporting the
-request. The vdev delete logic is refactored to have this done
-dynamically.
-
-The reason for not deleting the vdev on scan stop is to avoid
-repeated delete-create sequence if the scan is on the same band.
-Also, during channel assign, new vdev creation can be optimized
-as well.
-
-Also if the scan is requested when the vdev is in started state,
-no switching to new radio is allowed and scan on channels only
-within same radio is allowed.
+For ops which passes the vif info, fetch the radio(ar)
+to be used for corresponding functions based on the
+the vdev creation status. If the vdev is not created yet,
+which could happen when the ops are called before channel
+is assigned for the vif, the data needs to be cached and this
+is done in followup changes.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Co-developed-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 214 +++++++++++++++++++++-----
- 1 file changed, 176 insertions(+), 38 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 75 +++++++++++++++++++++++----
+ 1 file changed, 64 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 01dff17d4a36..1120c362c4c5 100644
+index 1120c362c4c5..60095d876a43 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -244,6 +244,8 @@ static const u32 ath12k_smps_map[] = {
- static int ath12k_start_vdev_delay(struct ath12k *ar,
- 				   struct ath12k_vif *arvif);
- static void ath12k_mac_stop(struct ath12k *ar);
-+static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif);
-+static int ath12k_mac_vdev_delete(struct ath12k *ar, struct ieee80211_vif *vif);
- 
- static const char *ath12k_mac_phymode_str(enum wmi_phy_mode mode)
- {
-@@ -3009,6 +3011,42 @@ static void ath12k_mac_op_bss_info_changed(struct ieee80211_hw *hw,
- 	mutex_unlock(&ar->conf_mutex);
+@@ -645,6 +645,24 @@ static struct ath12k *ath12k_get_ar_by_ctx(struct ieee80211_hw *hw,
+ 	return ath12k_mac_get_ar_by_chan(hw, ctx->def.chan);
  }
  
-+static struct ath12k*
-+ath12k_mac_select_scan_device(struct ieee80211_hw *hw,
-+			      struct ieee80211_vif *vif,
-+			      struct ieee80211_scan_request *req)
++static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
++					   struct ieee80211_vif *vif)
 +{
-+	struct ath12k_hw *ah = hw->priv;
-+	enum nl80211_band band;
-+	struct ath12k *ar;
-+	int i;
++	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
++	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
 +
++	/* If there is one pdev within ah, then we return
++	 * ar directly.
++	 */
 +	if (ah->num_radio == 1)
 +		return ah->radio;
 +
-+	/* Currently mac80211 supports splitting scan requests into
-+	 * multiple scan requests per band.
-+	 * Loop through first channel and determine the scan radio
-+	 * TODO: There could be 5 GHz low/high channels in that case
-+	 * split the hw request and perform multiple scans
-+	 */
-+
-+	if (req->req.channels[0]->center_freq < ATH12K_MIN_5G_FREQ)
-+		band = NL80211_BAND_2GHZ;
-+	else if (req->req.channels[0]->center_freq < ATH12K_MIN_6G_FREQ)
-+		band = NL80211_BAND_5GHZ;
-+	else
-+		band = NL80211_BAND_6GHZ;
-+
-+	for_each_ar(ah, ar, i) {
-+		/* TODO 5 GHz low high split changes */
-+		if (ar->mac.sbands[band].channels)
-+			return ar;
-+	}
++	if (arvif->is_created)
++		return arvif->ar;
 +
 +	return NULL;
 +}
 +
- void __ath12k_mac_scan_finish(struct ath12k *ar)
+ static void ath12k_pdev_caps_update(struct ath12k *ar)
  {
- 	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
-@@ -3178,15 +3216,68 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
- 				 struct ieee80211_scan_request *hw_req)
+ 	struct ath12k_base *ab = ar->ab;
+@@ -2998,11 +3016,17 @@ static void ath12k_mac_op_bss_info_changed(struct ieee80211_hw *hw,
+ 					   struct ieee80211_bss_conf *info,
+ 					   u64 changed)
  {
- 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
--	struct ath12k *ar;
-+	struct ath12k *ar, *prev_ar;
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
  	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct cfg80211_scan_request *req = &hw_req->req;
- 	struct ath12k_wmi_scan_req_arg arg = {};
- 	int ret;
- 	int i;
-+	bool create = true;
  
 -	ar = ath12k_ah_to_ar(ah, 0);
-+	if (ah->num_radio == 1) {
-+		WARN_ON(!arvif->is_created);
-+		ar = ath12k_ah_to_ar(ah, 0);
-+		goto scan;
-+	}
++	ar = ath12k_get_ar_by_vif(hw, vif);
 +
-+	/* Since the targeted scan device could depend on the frequency
-+	 * requested in the hw_req, select the corresponding radio
++	/* TODO if the vdev is not created on a certain radio,
++	 * cache the info to be updated later on vdev creation
 +	 */
-+	ar = ath12k_mac_select_scan_device(hw, vif, hw_req);
++
++	if (!ar)
++		return;
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 
+@@ -3497,7 +3521,6 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+ 				 struct ieee80211_vif *vif, struct ieee80211_sta *sta,
+ 				 struct ieee80211_key_conf *key)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_base *ab;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+@@ -3514,7 +3537,11 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+ 	    key->cipher == WLAN_CIPHER_SUITE_BIP_CMAC_256)
+ 		return 1;
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		WARN_ON_ONCE(1);
++		return -EINVAL;
++	}
+ 	ab = ar->ab;
+ 
+ 	if (test_bit(ATH12K_FLAG_HW_CRYPTO_DISABLED, &ar->ab->dev_flags))
+@@ -4092,7 +4119,6 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 				   enum ieee80211_sta_state old_state,
+ 				   enum ieee80211_sta_state new_state)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
+@@ -4104,7 +4130,11 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 	     new_state == IEEE80211_STA_NOTEXIST))
+ 		cancel_work_sync(&arsta->update_wk);
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		WARN_ON_ONCE(1);
++		return -EINVAL;
++	}
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 
+@@ -4255,14 +4285,17 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 					struct ieee80211_sta *sta,
+ 					u32 changed)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	struct ath12k_peer *peer;
+ 	u32 bw, smps;
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		WARN_ON_ONCE(1);
++		return;
++	}
+ 
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 
+@@ -4438,12 +4471,15 @@ static int ath12k_mac_op_conf_tx(struct ieee80211_hw *hw,
+ 				 unsigned int link_id, u16 ac,
+ 				 const struct ieee80211_tx_queue_params *params)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k *ar;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	int ret;
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++	if (!ar) {
++		/* TODO cache the info and apply after vdev is created */
++		return -EINVAL;
++	}
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 	ret = ath12k_mac_conf_tx(arvif, link_id, ac, params);
+@@ -6454,6 +6490,10 @@ static int ath12k_mac_op_ampdu_action(struct ieee80211_hw *hw,
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	int ret = -EINVAL;
+ 
++	ar = ath12k_get_ar_by_vif(hw, vif);
 +	if (!ar)
 +		return -EINVAL;
 +
-+	/* If the vif is already assigned to a specific vdev of an ar,
-+	 * check whether its already started, vdev which is started
-+	 * are not allowed to switch to a new radio.
-+	 * If the vdev is not started, but was earlier created on a
-+	 * different ar, delete that vdev and create a new one. We don't
-+	 * delete at the scan stop as an optimization to avoid redundant
-+	 * delete-create vdev's for the same ar, in case the request is
-+	 * always on the same band for the vif
-+	 */
-+	if (arvif->is_created) {
-+		if (WARN_ON(!arvif->ar))
-+			return -EINVAL;
-+
-+		if (ar != arvif->ar && arvif->is_started)
-+			return -EINVAL;
- 
-+		if (ar != arvif->ar) {
-+			/* backup the previously used ar ptr, since the vdev delete
-+			 * would assign the arvif->ar to NULL after the call
-+			 */
-+			prev_ar = arvif->ar;
-+			mutex_lock(&prev_ar->conf_mutex);
-+			ret = ath12k_mac_vdev_delete(prev_ar, vif);
-+			mutex_unlock(&prev_ar->conf_mutex);
-+			if (ret)
-+				ath12k_warn(prev_ar->ab,
-+					    "unable to delete scan vdev %d\n", ret);
-+		} else {
-+			create = false;
-+		}
-+	}
-+	if (create) {
-+		mutex_lock(&ar->conf_mutex);
-+		ret = ath12k_mac_vdev_create(ar, vif);
-+		mutex_unlock(&ar->conf_mutex);
-+		if (ret) {
-+			ath12k_warn(ar->ab, "unable to create scan vdev %d\n", ret);
-+			return -EINVAL;
-+		}
-+	}
-+scan:
- 	mutex_lock(&ar->conf_mutex);
- 
- 	spin_lock_bh(&ar->data_lock);
-@@ -3272,10 +3363,13 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
- static void ath12k_mac_op_cancel_hw_scan(struct ieee80211_hw *hw,
- 					 struct ieee80211_vif *vif)
- {
--	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct ath12k *ar;
- 
--	ar = ath12k_ah_to_ar(ah, 0);
-+	if (!arvif->is_created)
-+		return;
-+
-+	ar = arvif->ar;
+ 	ar = ath12k_ah_to_ar(ah, 0);
  
  	mutex_lock(&ar->conf_mutex);
- 	ath12k_scan_abort(ar);
-@@ -5951,6 +6045,7 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
- 	if (vif->type != NL80211_IFTYPE_MONITOR && ar->monitor_conf_enabled)
- 		ath12k_mac_monitor_vdev_create(ar);
- 
-+	arvif->ar = ar;
- 	return ret;
- 
- err_peer_del:
-@@ -5977,6 +6072,7 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
- 	ath12k_wmi_vdev_delete(ar, arvif->vdev_id);
- 	ar->num_created_vdevs--;
- 	arvif->is_created = false;
-+	arvif->ar = NULL;
- 	ar->allocated_vdev_map &= ~(1LL << arvif->vdev_id);
- 	ab->free_vdev_map |= 1LL << arvif->vdev_id;
- 	ab->free_vdev_stats_id_map &= ~(1LL << arvif->vdev_stats_id);
-@@ -5995,15 +6091,10 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
+@@ -7209,11 +7249,24 @@ static void ath12k_mac_op_flush(struct ieee80211_hw *hw, struct ieee80211_vif *v
+ 				u32 queues, bool drop)
  {
- 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
- 	struct ath12k_hw *ah = hw->priv;
-+	struct ath12k *ar, *prev_ar;
- 	struct ath12k_base *ab;
--	struct ath12k *ar;
- 	int ret;
- 
--	if (arvif->ar) {
--		WARN_ON(!arvif->is_created);
--		goto out;
--	}
--
- 	if (ah->num_radio == 1)
- 		ar = ah->radio;
- 	else if (ctx)
-@@ -6014,8 +6105,43 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
- 	if (!ar)
- 		return NULL;
- 
-+	if (arvif->ar) {
-+		/* This is not expected really */
-+		if (WARN_ON(!arvif->is_created)) {
-+			arvif->ar = NULL;
-+			return NULL;
-+		}
-+
-+		if (ah->num_radio == 1)
-+			return arvif->ar;
-+
-+		/* This can happen as scan vdev gets created during multiple scans
-+		 * across different radios before a vdev is brought up in
-+		 * a certain radio.
-+		 */
-+		if (ar != arvif->ar) {
-+			if (WARN_ON(arvif->is_started))
-+				return NULL;
-+
-+			/* backup the previously used ar ptr since arvif->ar would
-+			 * be set to NULL after vdev delete is done
-+			 */
-+			prev_ar = arvif->ar;
-+			mutex_lock(&prev_ar->conf_mutex);
-+			ret = ath12k_mac_vdev_delete(prev_ar, vif);
-+
-+			if (ret)
-+				ath12k_warn(prev_ar->ab, "unable to delete vdev %d\n",
-+					    ret);
-+			mutex_unlock(&prev_ar->conf_mutex);
-+		}
-+	}
-+
- 	ab = ar->ab;
- 
-+	if (arvif->is_created)
-+		goto out;
-+
- 	mutex_lock(&ar->conf_mutex);
- 
- 	if (vif->type == NL80211_IFTYPE_AP &&
-@@ -6107,33 +6233,14 @@ static void ath12k_mac_vif_unref(struct ath12k_dp *dp, struct ieee80211_vif *vif
- 	}
- }
- 
--static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
--					   struct ieee80211_vif *vif)
-+static int ath12k_mac_vdev_delete(struct ath12k *ar, struct ieee80211_vif *vif)
- {
--	struct ath12k *ar;
- 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
--	struct ath12k_base *ab;
-+	struct ath12k_base *ab = ar->ab;
- 	unsigned long time_left;
- 	int ret;
- 
--	if (!arvif->is_created)
--		return;
--
--	ar = arvif->ar;
--	ab = ar->ab;
--
--	mutex_lock(&ar->conf_mutex);
--
--	ath12k_dbg(ab, ATH12K_DBG_MAC, "mac remove interface (vdev %d)\n",
--		   arvif->vdev_id);
--
--	if (arvif->vdev_type == WMI_VDEV_TYPE_AP) {
--		ret = ath12k_peer_delete(ar, arvif->vdev_id, vif->addr);
--		if (ret)
--			ath12k_warn(ab, "failed to submit AP self-peer removal on vdev %d: %d\n",
--				    arvif->vdev_id, ret);
--	}
--
-+	lockdep_assert_held(&ar->conf_mutex);
- 	reinit_completion(&ar->vdev_delete_done);
- 
- 	ret = ath12k_wmi_vdev_delete(ar, arvif->vdev_id);
-@@ -6150,6 +6257,10 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
- 		goto err_vdev_del;
- 	}
- 
-+	ab->free_vdev_map |= 1LL << arvif->vdev_id;
-+	ar->allocated_vdev_map &= ~(1LL << arvif->vdev_id);
-+	ar->num_created_vdevs--;
-+
- 	if (arvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
- 		ar->monitor_vdev_id = -1;
- 		ar->monitor_vdev_created = false;
-@@ -6157,12 +6268,6 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
- 		ret = ath12k_mac_monitor_vdev_delete(ar);
- 	}
- 
--	ab->free_vdev_map |= 1LL << (arvif->vdev_id);
--	ar->allocated_vdev_map &= ~(1LL << arvif->vdev_id);
--	ab->free_vdev_stats_id_map &= ~(1LL << arvif->vdev_stats_id);
--	ar->num_created_vdevs--;
--	arvif->is_created = false;
--
- 	ath12k_dbg(ab, ATH12K_DBG_MAC, "vdev %pM deleted, vdev_id %d\n",
- 		   vif->addr, arvif->vdev_id);
- 
-@@ -6184,6 +6289,39 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
- 	clear_bit(ATH12K_FLAG_MONITOR_ENABLED, &ar->monitor_flags);
- 
- 	/* TODO: recal traffic pause state based on the available vdevs */
-+	arvif->is_created = false;
-+	arvif->ar = NULL;
-+
-+	return ret;
-+}
-+
-+static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
-+					   struct ieee80211_vif *vif)
-+{
-+	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
-+	struct ath12k_base *ab;
+ 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+-	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
 +	struct ath12k *ar;
-+	int ret;
-+
-+	if (!arvif->is_created)
++	int i;
+ 
+ 	if (drop)
+ 		return;
+ 
++	/* vif can be NULL when flush() is considered for hw */
++	if (!vif) {
++		for_each_ar(ah, ar, i)
++			ath12k_mac_flush(ar);
 +		return;
-+
-+	ar = arvif->ar;
-+	ab = ar->ab;
-+
-+	mutex_lock(&ar->conf_mutex);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_MAC, "mac remove interface (vdev %d)\n",
-+		   arvif->vdev_id);
-+
-+	if (arvif->vdev_type == WMI_VDEV_TYPE_AP) {
-+		ret = ath12k_peer_delete(ar, arvif->vdev_id, vif->addr);
-+		if (ret)
-+			ath12k_warn(ab, "failed to submit AP self-peer removal on vdev %d: %d\n",
-+				    arvif->vdev_id, ret);
 +	}
 +
-+	ath12k_mac_vdev_delete(ar, vif);
- 
- 	mutex_unlock(&ar->conf_mutex);
++	ar = ath12k_get_ar_by_vif(hw, vif);
++
++	if (!ar)
++		return;
++
+ 	ath12k_mac_flush(ar);
  }
+ 
 -- 
 2.25.1
 
