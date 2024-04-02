@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF248C6FD1F
-	for <ath12k@archiver.kernel.org>; Tue,  2 Apr 2024 11:41:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D89AC6FD1F
+	for <ath12k@archiver.kernel.org>; Tue,  2 Apr 2024 11:46:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=U+vFOwAcwR/neOv/XJ2p7mGdv+Q8FIEXyKb0RanDEIU=; b=Tr3MU956HoX3Iy1d9MEZtCO+Ry
-	54mnLbgNKMOujhvZMGoPP0zMdhUtUgYEt0A8ycmmfOSu0V1y3rpDy7z8M7IBZ0zETTpC2Sqe4nWhv
-	E7oHasyKCyJZJNTrK4DTBSuFIdnSkBbMPvgTKNHVYC4zZVaWElY8N8UQ4tpjLnZYIx7CQfb4SIaHG
-	1V/P07YIfFPOZfHlqbz4nK6nmv6APYwX7bb00xM9v6C6XLODBgxZY9uQTLX2AlcnZFwdX0o7gCvVO
-	0L0BHrDZs6q4TjM+gg4Bv1WBSWshbdGghM45KNQgDVC41vhcsj5hEzgu6F15XpXHQ/kg9AEMao9ip
-	EL9STWyg==;
+	bh=iA2+DGz+Ez8zuVmkgGOecQx7LD3u64Urs6Pqa2m/2Fc=; b=JjxLwck+CmNmBXE76qRyUsKQMm
+	44XRJCVw32vGTFGe5cDLfQqGDIemrrKvnoTWwFk6NNJebaMkLqbc8dyWl9zTzIXMyj0F/txxVyMJz
+	xHRrTZmNcgvmJ7Dhqhl0wvWsC9agP9daFYXoSs2/6u03S4SIJD+vZn+JoZhb/IHGM83YM8LhK7eYz
+	M+Ho3vBqxuya5LfNrSg7mKb0FPOVYbxAlSuEA49NuT5eS3egov9jh9RA+6TU4HHVUJ8A9BjRLjhDY
+	FuefUyGEqnB3hJz8Fn/sg7weYcOojWwdq0900MqAADQdrgR0tkvavYYYjQg6lpnIkoF4KM6P90qXS
+	om8I5m1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrcVz-0000000AuEn-1HO5
+	id 1rrcai-0000000AvRT-3B08
 	for ath12k@archiver.kernel.org;
-	Tue, 02 Apr 2024 11:41:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 02 Apr 2024 11:46:12 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrcVx-0000000AuEG-00MK
+	id 1rrcaf-0000000AvR5-0w2N
 	for ath12k@lists.infradead.org;
-	Tue, 02 Apr 2024 11:41:18 +0000
+	Tue, 02 Apr 2024 11:46:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8A3A460DE1;
-	Tue,  2 Apr 2024 11:41:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E90A2C433C7;
-	Tue,  2 Apr 2024 11:41:14 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 146EECE1B21;
+	Tue,  2 Apr 2024 11:46:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5EAF0C433F1;
+	Tue,  2 Apr 2024 11:46:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712058076;
-	bh=gh7Mg3Bq5Y1lBfZpQfzEG8doAdI5MVslWxum7KRfW1Y=;
+	s=k20201202; t=1712058366;
+	bh=ZuTKkEoH1PBM0P+GfAAbMX6nlQ4qj3EKg3MZpaePW7k=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=kA0hMDiVBdhvyaif04T762uzBHERyKSunf48ukdhDnMD1mQ7QYZ4W3Fwiv/ac47mU
-	 RwoqVjYqYUMY+gZDmF3qVPGqf2OpsA8PicG4eN2f2c1zUGis9SzWiy8TgE+M/PRBEX
-	 ubWfM4/5qx8Ge6Y4mOHKPG+Dpnprg4prdUvzQT/KWHjqiQ8cAPp632oHt+F20YojOQ
-	 nrUh+1bDgPGGOcwXSFQXKwpPopUlcY5ktAUPYvkulkim/jTw6XhStpEf/fEmMxsxDA
-	 GYusqqYrwNc/aGt5X+zFWOuXZThrTSB4tcJ7AKc63lfiZ6s34cY1mXF6lGfNuZBovq
-	 jhdyURQrljZYQ==
+	b=CkuyX4dq2xAN5XWVkmILrJe5t3MLyOwtfoHZy2ZfGu+0j+ea8Huvkl5S4QDuw4/aK
+	 sZtHyLhZjYlz/s7h4+kTLHyDNIPNtMethZ/1GYJZxlFiLkG1GdzOQ01d0cK6zv3mJ3
+	 lekPwcwfOY9sPF5xgDCW0pdpCK89KxWiBxMQyI53xE2pUeenxCAgZ/Micrm9Ksi3fa
+	 D9DSfWZZuhy3Syme86UgI7VO92JzoHLismPH0DzrjkJQ30XeBSKceNYNvd51zidSBw
+	 5tjXBodYJa8Yq5IAS+y8HujF7Ax6qaWCgLumbEC4ToKAPhQxUXqYmxO1e6cak2aqX8
+	 EoUyKfArJ2UZg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Muna
- Sinada <quic_msinada@quicinc.com>
-Subject: Re: [PATCH v2 07/10] wifi: ath12k: add support for setting fixed HE
- rate/GI/LTF
-References: <20240327170910.23975-1-quic_pradeepc@quicinc.com>
-	<20240327170910.23975-8-quic_pradeepc@quicinc.com>
-	<a217c752-65fb-4975-8208-c708a0ceeab8@quicinc.com>
-Date: Tue, 02 Apr 2024 14:41:12 +0300
-In-Reply-To: <a217c752-65fb-4975-8208-c708a0ceeab8@quicinc.com> (Jeff
-	Johnson's message of "Fri, 29 Mar 2024 14:34:41 -0700")
-Message-ID: <875xx06lgn.fsf@kernel.org>
+To: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  P
+ Praneesh <quic_ppranees@quicinc.com>
+Subject: Re: [PATCH 1/2] wifi: ath12k: fix BSS chan info request WMI command
+References: <20240331183232.2158756-1-quic_kathirve@quicinc.com>
+	<20240331183232.2158756-2-quic_kathirve@quicinc.com>
+Date: Tue, 02 Apr 2024 14:46:03 +0300
+In-Reply-To: <20240331183232.2158756-2-quic_kathirve@quicinc.com> (Karthikeyan
+	Kathirvel's message of "Mon, 1 Apr 2024 00:02:31 +0530")
+Message-ID: <871q7o6l8k.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_044117_152700_11BAAC5E 
-X-CRM114-Status: GOOD (  25.71  )
+X-CRM114-CacheID: sfid-20240402_044609_562957_C7D40F2C 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,91 +75,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+Karthikeyan Kathirvel <quic_kathirve@quicinc.com> writes:
 
-> On 3/27/2024 10:09 AM, Pradeep Kumar Chitrapu wrote:
->> Add support to set fixed HE rate/GI/LTF values using nl80211.
->> Reuse parts of the existing code path already used for HT/VHT
->> to implement the new helpers symmetrically, similar to how
->> HT/VHT is handled.
->> 
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->> 
->> Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
->> Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
->> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
->> ---
->>  drivers/net/wireless/ath/ath12k/mac.c | 588 ++++++++++++++++++++++++--
->>  drivers/net/wireless/ath/ath12k/wmi.h |  18 +
->>  2 files changed, 562 insertions(+), 44 deletions(-)
->> 
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c
->> b/drivers/net/wireless/ath/ath12k/mac.c
->> index 46ef2d63a3de..72232285d2b1 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> [...]
->> @@ -3888,8 +4130,9 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
->>  	mutex_lock(&ar->conf_mutex);
->>  
->>  	nss = max_t(u32, 1, nss);
->> -	nss = min(nss, max(ath12k_mac_max_ht_nss(ht_mcs_mask),
->> -			   ath12k_mac_max_vht_nss(vht_mcs_mask)));
->> +	nss = min(nss, max3(ath12k_mac_max_ht_nss(ht_mcs_mask),
->> +			    ath12k_mac_max_vht_nss(vht_mcs_mask),
->> +			    ath12k_mac_max_he_nss(he_mcs_mask)));
+> From: P Praneesh <quic_ppranees@quicinc.com>
 >
-> When I run this entire series through ath12k-check I'm getting the following
-> issue here:
+> Currently, the firmware returns incorrect pdev_id information in
+> WMI_PDEV_BSS_CHAN_INFO_EVENTID, leading to incorrect filling of
+> the pdev's survey information.
 >
-> drivers/net/wireless/ath/ath12k/mac.c:4170:15: error: too long token expansion
-> drivers/net/wireless/ath/ath12k/mac.c:4170:15: error: too long token expansion
+> To prevent this issue, when requesting BSS channel information
+> through WMI_PDEV_BSS_CHAN_INFO_REQUEST_CMDID, firmware expects
+> pdev_id as one of the arguments in this WMI command.
 >
-> caeed0eb7fb4d (Pradeep Kumar Chitrapu 2024-03-27 10:09:07 -0700 4170)
-> nss = min(nss, max3(ath12k_mac_max_ht_nss(ht_mcs_mask),
+> Add pdev_id to the struct wmi_pdev_bss_chan_info_req_cmd and fill it
+> during ath12k_wmi_pdev_bss_chan_info_request(). This resolves the
+> issue of sending the correct pdev_id in WMI_PDEV_BSS_CHAN_INFO_EVENTID.
 >
-> I don't see anything wrong with the code.
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 >
-> Even stranger is that when this series is in place, I see this same issue at
-> another place:
-> drivers/net/wireless/ath/ath12k/mac.c:7903:23: error: too long token expansion
-> drivers/net/wireless/ath/ath12k/mac.c:7903:23: error: too long token expansion
+> Fixes: d889913205 ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 >
-> But that is actually pre-existing code from the original ath12k driver drop:
-> d889913205cf7 (Kalle Valo 2022-11-28 17:09:53 +0200 7903) nss =
-> min_t(u32, ar->num_tx_chains,
->
-> And the issue is not flagged when this series is not present.
->
-> However that same logic also caused the same issue in ath11k, and Kalle fixed
-> it there with:
-> https://lore.kernel.org/all/20231214161740.1582340-1-kvalo@kernel.org/
->
-> And one of the MediaTek drivers encountered a similar issue here:
-> https://lore.kernel.org/all/5457b92e41909dd75ab3db7a0e9ec372b917a386.1710858172.git.lorenzo@kernel.org/
->
-> So there is definitely a tooling issue here.
+> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+> Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
 
-IIRC this is due to a statement length limit reached in sparse (or
-something like that) and recently max()/min() macros were modified so
-that their output is longer than before.
-
-> As a local test I added an intermediate step and now I don't see the issue
-> here:
-> -       u32 changed, bw, nss, smps, bw_prev;
-> +       u32 changed, bw, nss, mac_nss, smps, bw_prev;
-> ...
-> -       nss = min(nss, max3(ath12k_mac_max_ht_nss(ht_mcs_mask),
-> -                           ath12k_mac_max_vht_nss(vht_mcs_mask),
-> -                           ath12k_mac_max_he_nss(he_mcs_mask)));
-> +       mac_nss = max3(ath12k_mac_max_ht_nss(ht_mcs_mask),
-> +                      ath12k_mac_max_vht_nss(vht_mcs_mask),
-> +                      ath12k_mac_max_he_nss(he_mcs_mask));
-> +       nss = min(nss, mac_nss);
->
-> So let's add something like that in v3 (perhaps pick a better name)
-
-Yeah, that's a good way to workaround the warning.
+What about backwards compatibility with older firmware? And what about
+WCN7850?
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
