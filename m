@@ -4,61 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9278CD1284
-	for <ath12k@archiver.kernel.org>; Tue,  2 Apr 2024 18:20:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9CA4CD1284
+	for <ath12k@archiver.kernel.org>; Tue,  2 Apr 2024 21:05:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=znheb0BRRCx9FYZXc+sDKkwHIZRdRFwQ6U6WD7NWtrs=; b=SWOdCKcTCNodl04HCdw86wPRF0
-	cQcuDZvTAO8pkRsW0OaMvz4EeZGsQRz6eOhUJFliChnzpjkuiWOZ88iWNfQzFgF2eaGspIdLEI+9e
-	fhbABxFgi7gSJUi8AhD08MNOw3m7+JIvSbOSgpYkphhBKGiVkjiA/D5FrXH8VQ9ZPbHIXFNtP3XUZ
-	mKfH297wQoN7sih5uhHwmf+yuzcFGMAqEufJ0akTMu+B1MuMppbb41bpAUy7P/2U6LHg+BDf8K7w8
-	ywLI9H9udrXn1ILmuH55UQ0WMa3vuIBX5AZ/Ac7q8dhZOttTyY3MQBbts1BKt+Z/tyrxUSjbZN1Ho
-	G/MKEjdQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=VSQJSNdgR9mHGwVZR7iAlXKtcJiMV85s+w7E0lztNl8=; b=lEHLNn1UYzDdZ1iQJ1rwKp6wvh
+	R9ft8Nxoi9Xcoz937tZC+nqzyRbA+0yin06fA/nZOKYdYGnbjY+IPaAiEgSvVymelGO6W5osdX25E
+	mvTzSyT30iOeKwVKQ7WQyjtaiGgI7aKAr0e+fKt7c1DuNjTKz/i2z6hO1Iu/Fe6wcYgt96HOQbCbz
+	rfixKMP6ZOYIJ1K4KSZzbK18y+Me8LAXrjjVeLSkccnd2ig4yMTvy5At5ZhLsSdyXhuPTq3CLZ6p4
+	OKf/Bu5wMGr4HE7CdquUeTsWCuoJo+P/dlLKbNB3unnau1UjBb+HgiIwNadPT5abar2aIZUAAEmb0
+	EVwN9cPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrikb-0000000CLIc-1oZb
+	id 1rrlKQ-0000000Colg-2Srw
 	for ath12k@archiver.kernel.org;
-	Tue, 02 Apr 2024 18:20:49 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 02 Apr 2024 21:05:58 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrikW-0000000CLGe-3evQ;
-	Tue, 02 Apr 2024 18:20:46 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 46ECA61032;
-	Tue,  2 Apr 2024 18:20:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F6E6C433C7;
-	Tue,  2 Apr 2024 18:20:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712082043;
-	bh=AphPWF0A6DVidB63NIiJ3E2oevs+O6X/lp7L6gFJYkU=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=lxncrdBY8WYuU5d26UN/w5OJ5dy0muMsh/gWywMZ93WRpCLl1jeNFjT8IAs6T8SFD
-	 osrd3YvlEF/HpC8Rz1hxzxah/RIVqptvT/zOZ5/uDKycMjPJiMwYhAN8Rbehqc72BE
-	 2+jRiSaYYFlRhTopYFCOF2UhZF8Q4oI30SDCPwE/m0tfredsnS9vxisT8a/4fJyvZl
-	 bqwoe91KdPmYfI6dmJG+GZHakXX9NDATHsdG4Gas+U4S3ASkngbw5FgMF9ymOTz8+j
-	 GlmvPUHK2TSuQehMrqvWHhY63H2izZ64EYjeMtFk6IwvOxFNsN0McZB8mSMZTRFJPN
-	 1/v+OK8qDb5Lw==
-Content-Type: text/plain; charset="utf-8"
+	id 1rrlKK-0000000CohR-1cfD
+	for ath12k@lists.infradead.org;
+	Tue, 02 Apr 2024 21:05:55 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 432KjD0W006382;
+	Tue, 2 Apr 2024 21:05:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	qcppdkim1; bh=VSQJSNdgR9mHGwVZR7iAlXKtcJiMV85s+w7E0lztNl8=; b=l7
+	VH1v1DlUOlECXDVHQennvDkRPd66yXzb7Pm0lFVql3Oc+/vi7fiMrK614T9ZwviR
+	4u+4FAHtY6ekvQJUot/1NRf3V+lW4dEYJiF4TmVRcXoTqRfq03fWIpPPIWHnxIcl
+	27Q4w7mJi2hRy40HCTxAFWZmXM/Ff0U9BO/XekbATL1ZUoYkJwbeKr2EhUgy4e9z
+	gMCm3bsUHVSc8BsV3BEC1mRI9hw+iLi0THWAZyJ/E+oakmoIaOZiORoKt7h2TVfo
+	WrPOXeDsfyeg6VP5qzWlwREfFVy3iZBTguA1Mlh8J0WXFyPQFeE1egEOtUq1iOoN
+	A9E/yupDkMzoP8Qf7iuQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x8ex7t0jq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 02 Apr 2024 21:05:51 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 432L5okc031934
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 2 Apr 2024 21:05:50 GMT
+Received: from alokad-linux.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.4; Tue, 2 Apr 2024 14:05:49 -0700
+From: Aloka Dixit <quic_alokad@quicinc.com>
+To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+CC: Aloka Dixit <quic_alokad@quicinc.com>
+Subject: [PATCH 4/9] wifi: ath12k: create a structure for WMI vdev up parameters
+Date: Tue, 2 Apr 2024 14:05:33 -0700
+Message-ID: <20240402210538.7308-5-quic_alokad@quicinc.com>
+X-Mailer: git-send-email 2.39.0
+In-Reply-To: <20240402210538.7308-1-quic_alokad@quicinc.com>
+References: <20240402210538.7308-1-quic_alokad@quicinc.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: pull-request: ath-next-20240402
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <87sf0366j6.fsf@kernel.org>
-References: <87sf0366j6.fsf@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- ath11k@lists.infradead.org, ath12k@lists.infradead.org,
- quic_jjohnson@quicinc.com
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171208204081.790352.4396441740949174938.kvalo@kernel.org>
-Date: Tue,  2 Apr 2024 18:20:42 +0000 (UTC)
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: h8eAf0BQhUScaocZtSJ98zSHJORXs7M5
+X-Proofpoint-ORIG-GUID: h8eAf0BQhUScaocZtSJ98zSHJORXs7M5
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-02_14,2024-04-01_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ adultscore=0 clxscore=1015 phishscore=0 bulkscore=0 suspectscore=0
+ lowpriorityscore=0 spamscore=0 mlxscore=0 malwarescore=0 impostorscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2403210001 definitions=main-2404020157
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_112045_071723_56FD25B3 
-X-CRM114-Status: GOOD (  15.72  )
+X-CRM114-CacheID: sfid-20240402_140552_965931_146E3AE3 
+X-CRM114-Status: GOOD (  14.06  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,129 +97,181 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> wrote:
+Host needs to send multiple BSSID configurations to firmware for
+each vdev in ath12k_wmi_vdev_up() for AP mode. This function accepts
+individual input parameters hence any new argument will require changes
+to all callers. Most of these will use default value (0 or NULL).
+Create a structure for the function arguments and include objects with
+all members initialized to zero to minimize future changes.
 
-> Hi,
-> 
-> Please pull, more information in the tag below.
-> 
-> Kalle
-> 
-> 
-> The following changes since commit f654e228ed6b822e87e6e6ad8e889bedccae2e16:
-> 
->   Merge tag 'ath-next-20240305' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath (2024-03-05 20:57:28 +0200)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git tags/ath-next-20240402
-> 
-> for you to fetch changes up to f09e3b774fe806ee0b1f2bb69771e8c29961e40a:
-> 
->   wifi: ath9k: eeprom: fix sparse endian warnings (2024-03-25 12:51:37 +0200)
-> 
-> ----------------------------------------------------------------
-> ath.git patches for v6.10
-> 
-> ath drivers now have no remaining sparse warnings, otherwise smaller
-> fixes and some refactoring.
-> 
-> ath11k
-> 
-> * P2P support for QCA6390, WCN6855 and QCA2066
-> 
-> ----------------------------------------------------------------
-> Aloka Dixit (1):
->       wifi: ath12k: use correct flag field for 320 MHz channels
-> 
-> Baochen Qiang (3):
->       wifi: ath10k: poll service ready message before failing
->       wifi: ath11k: don't force enable power save on non-running vdevs
->       wifi: ath11k: do not process consecutive RDDM event
-> 
-> Jeff Johnson (3):
->       wifi: ath12k: remove obsolete struct wmi_start_scan_arg
->       wifi: ath11k: remove obsolete struct wmi_start_scan_arg
->       wifi: ath11k: fix soc_dp_stats debugfs file permission
-> 
-> Kalle Valo (7):
->       wifi: ath6kl: fix sparse warnings
->       wifi: wcn36xx: buff_to_be(): fix sparse warnings
->       wifi: wcn36xx: main: fix sparse warnings
->       wifi: wil6210: fix sparse warnings
->       wifi: ath9k: ath9k_set_moredata(): fix sparse warnings
->       wifi: ath9k: fix ath9k_use_msi declaration
->       wifi: ath9k: eeprom: fix sparse endian warnings
-> 
-> Kang Yang (8):
->       wifi: ath11k: change interface combination for P2P mode
->       wifi: ath11k: add P2P IE in beacon template
->       wifi: ath11k: implement handling of P2P NoA event
->       wifi: ath11k: change WLAN_SCAN_PARAMS_MAX_IE_LEN from 256 to 512
->       wifi: ath11k: change scan flag scan_f_filter_prb_req for QCA6390/WCN6855/QCA2066
->       wifi: ath11k: advertise P2P dev support for QCA6390/WCN6855/QCA2066
->       wifi: ath12k: remove duplicate definitions in wmi.h
->       wifi: ath11k: remove duplicate definitions in wmi.h
-> 
-> Karthikeyan Periyasamy (3):
->       wifi: ath12k: Refactor Rxdma buffer replinish argument
->       wifi: ath12k: Optimize the lock contention of used list in Rx data path
->       wifi: ath12k: Refactor error handler of Rxdma replenish
-> 
-> Kevin Lo (1):
->       wifi: ath11k: adjust a comment to reflect reality
-> 
-> Li Zhijian (1):
->       wifi: ath: Convert sprintf/snprintf to sysfs_emit
-> 
-> Thiraviyam Mariyappan (1):
->       wifi: ath12k: fix desc address calculation in wbm tx completion
-> 
->  drivers/net/wireless/ath/ath10k/thermal.c    |   2 +-
->  drivers/net/wireless/ath/ath10k/wmi.c        |  26 +++-
->  drivers/net/wireless/ath/ath11k/Makefile     |   3 +-
->  drivers/net/wireless/ath/ath11k/core.c       |  20 ++-
->  drivers/net/wireless/ath/ath11k/debugfs.c    |   4 +-
->  drivers/net/wireless/ath/ath11k/mac.c        | 175 +++++++++++++++++++++------
->  drivers/net/wireless/ath/ath11k/mhi.c        |  17 ++-
->  drivers/net/wireless/ath/ath11k/p2p.c        | 149 +++++++++++++++++++++++
->  drivers/net/wireless/ath/ath11k/p2p.h        |  22 ++++
->  drivers/net/wireless/ath/ath11k/pci.h        |   1 +
->  drivers/net/wireless/ath/ath11k/thermal.c    |   2 +-
->  drivers/net/wireless/ath/ath11k/wmi.c        | 107 +++++++++++++++-
->  drivers/net/wireless/ath/ath11k/wmi.h        |  78 ++++++------
->  drivers/net/wireless/ath/ath12k/dp.c         |  31 +++--
->  drivers/net/wireless/ath/ath12k/dp.h         |   7 +-
->  drivers/net/wireless/ath/ath12k/dp_rx.c      | 140 +++++++++++++--------
->  drivers/net/wireless/ath/ath12k/dp_rx.h      |   1 +
->  drivers/net/wireless/ath/ath12k/dp_tx.c      |   2 +-
->  drivers/net/wireless/ath/ath12k/wmi.c        |   2 +-
->  drivers/net/wireless/ath/ath12k/wmi.h        |  34 ------
->  drivers/net/wireless/ath/ath6kl/htc_mbox.c   |   3 +-
->  drivers/net/wireless/ath/ath6kl/htc_pipe.c   |   3 +-
->  drivers/net/wireless/ath/ath9k/ath9k.h       |   1 +
->  drivers/net/wireless/ath/ath9k/eeprom_4k.c   |   2 +-
->  drivers/net/wireless/ath/ath9k/eeprom_9287.c |   4 +-
->  drivers/net/wireless/ath/ath9k/eeprom_def.c  |   6 +-
->  drivers/net/wireless/ath/ath9k/pci.c         |   2 -
->  drivers/net/wireless/ath/ath9k/xmit.c        |  10 +-
->  drivers/net/wireless/ath/wcn36xx/main.c      |   4 +-
->  drivers/net/wireless/ath/wcn36xx/txrx.c      |   4 +-
->  drivers/net/wireless/ath/wcn36xx/wcn36xx.h   |   7 +-
->  drivers/net/wireless/ath/wil6210/cfg80211.c  |   4 +-
->  drivers/net/wireless/ath/wil6210/fw.h        |   1 -
->  drivers/net/wireless/ath/wil6210/fw_inc.c    |   4 +-
->  34 files changed, 660 insertions(+), 218 deletions(-)
->  create mode 100644 drivers/net/wireless/ath/ath11k/p2p.c
->  create mode 100644 drivers/net/wireless/ath/ath11k/p2p.h
+Tested-on : QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Pulled, thanks.
+Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 30 ++++++++++++++++++++-------
+ drivers/net/wireless/ath/ath12k/wmi.c | 10 ++++-----
+ drivers/net/wireless/ath/ath12k/wmi.h |  9 ++++++--
+ 3 files changed, 35 insertions(+), 14 deletions(-)
 
-0ccf50df61f9 Merge tag 'ath-next-20240402' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath
-
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 0a23d0b20f0c..39d1660a78bc 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -810,9 +810,12 @@ static int ath12k_mac_vdev_setup_sync(struct ath12k *ar)
+ 
+ static int ath12k_monitor_vdev_up(struct ath12k *ar, int vdev_id)
+ {
++	struct ath12k_wmi_vdev_up_params params = {};
+ 	int ret;
+ 
+-	ret = ath12k_wmi_vdev_up(ar, vdev_id, 0, ar->mac_addr);
++	params.vdev_id = vdev_id;
++	params.bssid = ar->mac_addr;
++	ret = ath12k_wmi_vdev_up(ar, &params);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to put up monitor vdev %i: %d\n",
+ 			    vdev_id, ret);
+@@ -829,6 +832,7 @@ static int ath12k_mac_monitor_vdev_start(struct ath12k *ar, int vdev_id,
+ {
+ 	struct ieee80211_channel *channel;
+ 	struct wmi_vdev_start_req_arg arg = {};
++	struct ath12k_wmi_vdev_up_params params = {};
+ 	int ret;
+ 
+ 	lockdep_assert_held(&ar->conf_mutex);
+@@ -869,7 +873,9 @@ static int ath12k_mac_monitor_vdev_start(struct ath12k *ar, int vdev_id,
+ 		return ret;
+ 	}
+ 
+-	ret = ath12k_wmi_vdev_up(ar, vdev_id, 0, ar->mac_addr);
++	params.vdev_id = vdev_id;
++	params.bssid = ar->mac_addr;
++	ret = ath12k_wmi_vdev_up(ar, &params);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to put up monitor vdev %i: %d\n",
+ 			    vdev_id, ret);
+@@ -1305,6 +1311,7 @@ static int ath12k_mac_setup_bcn_tmpl(struct ath12k_vif *arvif)
+ static void ath12k_control_beaconing(struct ath12k_vif *arvif,
+ 				     struct ieee80211_bss_conf *info)
+ {
++	struct ath12k_wmi_vdev_up_params params = {};
+ 	struct ath12k *ar = arvif->ar;
+ 	int ret;
+ 
+@@ -1332,8 +1339,10 @@ static void ath12k_control_beaconing(struct ath12k_vif *arvif,
+ 
+ 	ether_addr_copy(arvif->bssid, info->bssid);
+ 
+-	ret = ath12k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+-				 arvif->bssid);
++	params.vdev_id = arvif->vdev_id;
++	params.aid = arvif->aid;
++	params.bssid = arvif->bssid;
++	ret = ath12k_wmi_vdev_up(arvif->ar, &params);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to bring up vdev %d: %i\n",
+ 			    arvif->vdev_id, ret);
+@@ -2411,6 +2420,7 @@ static void ath12k_bss_assoc(struct ath12k *ar,
+ 			     struct ieee80211_bss_conf *bss_conf)
+ {
+ 	struct ieee80211_vif *vif = arvif->vif;
++	struct ath12k_wmi_vdev_up_params params = {};
+ 	struct ath12k_wmi_peer_assoc_arg peer_arg;
+ 	struct ieee80211_sta *ap_sta;
+ 	struct ath12k_peer *peer;
+@@ -2462,7 +2472,10 @@ static void ath12k_bss_assoc(struct ath12k *ar,
+ 	arvif->aid = vif->cfg.aid;
+ 	ether_addr_copy(arvif->bssid, bss_conf->bssid);
+ 
+-	ret = ath12k_wmi_vdev_up(ar, arvif->vdev_id, arvif->aid, arvif->bssid);
++	params.vdev_id = arvif->vdev_id;
++	params.aid = arvif->aid;
++	params.bssid = arvif->bssid;
++	ret = ath12k_wmi_vdev_up(ar, &params);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to set vdev %d up: %d\n",
+ 			    arvif->vdev_id, ret);
+@@ -6561,6 +6574,7 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
+ 			   struct ieee80211_vif_chanctx_switch *vifs,
+ 			   int n_vifs)
+ {
++	struct ath12k_wmi_vdev_up_params params = {};
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct ath12k_vif *arvif;
+ 	int ret;
+@@ -6641,8 +6655,10 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
+ 			ath12k_warn(ab, "failed to update bcn tmpl during csa: %d\n",
+ 				    ret);
+ 
+-		ret = ath12k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+-					 arvif->bssid);
++		params.vdev_id = arvif->vdev_id;
++		params.aid = arvif->aid;
++		params.bssid = arvif->bssid;
++		ret = ath12k_wmi_vdev_up(arvif->ar, &params);
+ 		if (ret) {
+ 			ath12k_warn(ab, "failed to bring vdev up %d: %d\n",
+ 				    arvif->vdev_id, ret);
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index eb515456c65a..429263d5a8b7 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1103,7 +1103,7 @@ int ath12k_wmi_vdev_start(struct ath12k *ar, struct wmi_vdev_start_req_arg *arg,
+ 	return ret;
+ }
+ 
+-int ath12k_wmi_vdev_up(struct ath12k *ar, u32 vdev_id, u32 aid, const u8 *bssid)
++int ath12k_wmi_vdev_up(struct ath12k *ar, struct ath12k_wmi_vdev_up_params *params)
+ {
+ 	struct ath12k_wmi_pdev *wmi = ar->wmi;
+ 	struct wmi_vdev_up_cmd *cmd;
+@@ -1118,14 +1118,14 @@ int ath12k_wmi_vdev_up(struct ath12k *ar, u32 vdev_id, u32 aid, const u8 *bssid)
+ 
+ 	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_VDEV_UP_CMD,
+ 						 sizeof(*cmd));
+-	cmd->vdev_id = cpu_to_le32(vdev_id);
+-	cmd->vdev_assoc_id = cpu_to_le32(aid);
++	cmd->vdev_id = cpu_to_le32(params->vdev_id);
++	cmd->vdev_assoc_id = cpu_to_le32(params->aid);
+ 
+-	ether_addr_copy(cmd->vdev_bssid.addr, bssid);
++	ether_addr_copy(cmd->vdev_bssid.addr, params->bssid);
+ 
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
+ 		   "WMI mgmt vdev up id 0x%x assoc id %d bssid %pM\n",
+-		   vdev_id, aid, bssid);
++		   params->vdev_id, params->aid, params->bssid);
+ 
+ 	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_VDEV_UP_CMDID);
+ 	if (ret) {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index adc72c0f2862..2ad32a717d83 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -2740,6 +2740,12 @@ struct wmi_vdev_delete_cmd {
+ 	__le32 vdev_id;
+ } __packed;
+ 
++struct ath12k_wmi_vdev_up_params {
++	u32 vdev_id;
++	u32 aid;
++	const u8 *bssid;
++};
++
+ struct wmi_vdev_up_cmd {
+ 	__le32 tlv_header;
+ 	__le32 vdev_id;
+@@ -4836,8 +4842,7 @@ int ath12k_wmi_bcn_tmpl(struct ath12k *ar, u32 vdev_id,
+ 			struct ieee80211_mutable_offsets *offs,
+ 			struct sk_buff *bcn);
+ int ath12k_wmi_vdev_down(struct ath12k *ar, u8 vdev_id);
+-int ath12k_wmi_vdev_up(struct ath12k *ar, u32 vdev_id, u32 aid,
+-		       const u8 *bssid);
++int ath12k_wmi_vdev_up(struct ath12k *ar, struct ath12k_wmi_vdev_up_params *params);
+ int ath12k_wmi_vdev_stop(struct ath12k *ar, u8 vdev_id);
+ int ath12k_wmi_vdev_start(struct ath12k *ar, struct wmi_vdev_start_req_arg *arg,
+ 			  bool restart);
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/87sf0366j6.fsf@kernel.org/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.39.0
 
 
