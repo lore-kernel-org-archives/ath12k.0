@@ -4,89 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A532C6FD1F
-	for <ath12k@archiver.kernel.org>; Tue,  2 Apr 2024 10:15:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32160CD1284
+	for <ath12k@archiver.kernel.org>; Tue,  2 Apr 2024 11:03:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Uijq5M5QLexX3lAYXzOTpS2vIYtEEyPlQnabq5Uywcs=; b=N3gOoScO6xUZ6gdNfgqh4TdQPI
-	EBMMIyEGmzamhsNOnGowGkwTOXDu7wtiF1PFlxtcrhE7MYKN0dckddcqLHXVJgybRr89QsQbuUqeN
-	sqmal5P4/O2RqSaKYkplI+CzJSq66komv0qf6GQ65iHOLE5hMTfq2LQ/kD2O8/3sEjtYtSbKd90Ah
-	SUDAtr4nHTXqj1ZmhJJ8z1S7NOuC2wBi/LuKbcgfTPUm6fn70u1S8cuJL0SSg6oI5DiHAKD29D9lc
-	yF/YOEWG2O/TSsGQYbyrt1P8nqep1rFTQaeBXPh1Uu2vHvZ18+nBIC6sE8dGVlcNgrznWZX0NJPo4
-	lG2boBAg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=De2ZxrC9ux4wm+O7UnAzmLtqHWaztDAjJx6r6BSaYhM=; b=JNOR8vOJS4v9YkmPFkqCfa4kSD
+	ODemLJDY0SkYHyAqnRa4H1zE0i4SaO76xznFlkVxBNbBzR/Ch0KNf3D7L5d5MnEp0HFJ6WhH0eqTy
+	X4QO7c0OpNx7IY8NUBQZQagUwRrVrx7XBGX0vxwKW1hGFrKxDwuN7wh6z491y3+C9wAGUAXjiNuyY
+	MNXYQcw03s7BrzCypZLJrMyHz30gb7P/tnjvYILNbUCGO3mOf/5mScfi/6bX85+GgiTSJwr4lXcW5
+	tME9uXJDBRhwzwNMvGE6bmdLKyZgHEGE45G+JHCBc5O/5IdVyHcaLM6gcv9xT8u3tcvhih7CFYmha
+	FOu/siww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrbAd-0000000AbTR-0dGY
+	id 1rrbvS-0000000AnDa-38us
 	for ath12k@archiver.kernel.org;
-	Tue, 02 Apr 2024 10:15:11 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 02 Apr 2024 11:03:34 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrbAZ-0000000AbSA-3k5a
+	id 1rrbvP-0000000An9y-0Tul
 	for ath12k@lists.infradead.org;
-	Tue, 02 Apr 2024 10:15:09 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4324lg7R008194;
-	Tue, 2 Apr 2024 10:15:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=Uijq5M5QLexX3lAYXzOTpS2vIYtEEyPlQnabq5Uywcs=; b=Lx
-	J2mJwPlBXKYqHAo0OwVQOjOr94uAX4Ns9zPjkDGonE2BfS7Ixj3X/O8BvRYjmRmJ
-	cfmOCy/g8Pom4ijf8XB7iP3gytRIa/Xg5MtFcATc1nyZDeM8iPCenlsHcoCNs0tB
-	sbepmMGvH1eYDz9sNXd+oGVK0Fk4v1O/B530qaX7ntiZF+HQRk1TWKqFee3Xfts+
-	3vkO6JmmGV02pBRqqjnoAvd8Cy7MNUHnmiWnWicj4ZeBUvVmep8Pe7+rN8QQJr0w
-	N63CWcQSt9XvoHLPDZRc38NQz6Z3WFttHTN28jHn6DKeOEG9HgYCPG807B20neLg
-	NhUYmWIVv89I2F+53s9g==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x89428y7j-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 02 Apr 2024 10:15:05 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 432AF5G0014714
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 2 Apr 2024 10:15:05 GMT
-Received: from [10.216.58.160] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Tue, 2 Apr
- 2024 03:15:02 -0700
-Message-ID: <71c8c3e2-290a-4866-b4ed-3c7d9f101c77@quicinc.com>
-Date: Tue, 2 Apr 2024 15:44:59 +0530
+	Tue, 02 Apr 2024 11:03:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 8663FCE1B3F;
+	Tue,  2 Apr 2024 11:03:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D23EFC433C7;
+	Tue,  2 Apr 2024 11:03:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712055802;
+	bh=MK9jLxC4ux2EicVUX/VQh7Ssl8aX8z1ATo+jHpj6tAI=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=F6iuDcKaS6GnhXCGnhYwMHRrxa2u4NHJKCz5F2syIMUtN9OlL6pigsuRfE56+QKbA
+	 kLItW1zunVSRJMQjpL3YskQsJ2hQdGysrLr/5hoWkylzIxZrxLkGCvBy0FdoYjaY6M
+	 w3etep8pTdn8W+jd/BhZHx+ZhJ6SSgrQJ4CaRKa8j8EBRn2HRKc2gDoBWBBpAhyfFH
+	 089xlI7zkQj3NiMZuZoQsfjYv3j7wTwyP+s1d+5GMQLYRg5Wvkddljk0apP+wNV+oG
+	 oFkK1g0XCMaFagcmnOgC7NIMOsK+IT25EbN8bHduln/xJQNAI/oPuPSottR9QmDKHX
+	 b/w+plunH+pFQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Lingbo Kong <quic_lingbok@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH] wifi: ath12k: report signal for iw dev xxx station dump
+References: <20240219111417.1185-1-quic_lingbok@quicinc.com>
+	<87o7b8amcn.fsf@kernel.org>
+	<3f5b9e74-d898-416b-9b08-d008883c7e58@quicinc.com>
+Date: Tue, 02 Apr 2024 14:03:19 +0300
+In-Reply-To: <3f5b9e74-d898-416b-9b08-d008883c7e58@quicinc.com> (Lingbo Kong's
+	message of "Wed, 27 Mar 2024 20:54:42 +0800")
+Message-ID: <87a5mc6n7s.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 07/12] wifi: ath12k: Cache vdev configs before vdev
- create
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
-References: <20240401190409.2461819-1-quic_ramess@quicinc.com>
- <20240401190409.2461819-8-quic_ramess@quicinc.com>
- <c5150881-7707-4b8f-b877-e5677039b0ed@quicinc.com>
-Content-Language: en-US
-From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-In-Reply-To: <c5150881-7707-4b8f-b877-e5677039b0ed@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: pvQheEtMFKWYaTI_DLVTdxZvzvwbaMfX
-X-Proofpoint-ORIG-GUID: pvQheEtMFKWYaTI_DLVTdxZvzvwbaMfX
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-02_04,2024-04-01_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
- malwarescore=0 suspectscore=0 mlxlogscore=999 clxscore=1015
- impostorscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
- priorityscore=1501 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2403210001 definitions=main-2404020074
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_031508_013428_F28C803E 
-X-CRM114-Status: GOOD (  22.90  )
+X-CRM114-CacheID: sfid-20240402_040331_939523_6F6DE00A 
+X-CRM114-Status: GOOD (  23.68  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,135 +74,111 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Lingbo Kong <quic_lingbok@quicinc.com> writes:
 
-
-On 4/2/2024 12:56 AM, Jeff Johnson wrote:
-> On 4/1/2024 12:04 PM, Rameshkumar Sundaram wrote:
->> From: Sriram R <quic_srirrama@quicinc.com>
+> On 2024/3/21 0:39, Kalle Valo wrote:
+>> Lingbo Kong <quic_lingbok@quicinc.com> writes:
+>> 
+>>> The signal of "iw dev xxx station dump" always show 0 dBm. This is because
+>>> currently signal is only set in ath12k_mgmt_rx_event function, and not set
+>>> for rx data packet. So, change to get signal from firmware and report to
+>>> mac80211.
+>> 
+>>>   	/* TODO: Use real NF instead of default one. */
+>>> -	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
+>>> -	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
+>>> +	signal = arsta->rssi_comb;
+>>> +
+>>> +	if (!signal &&
+>>> +	    arsta->arvif->vdev_type == WMI_VDEV_TYPE_STA &&
+>>> +	    ar->ab->hw_params->supports_rssi_stats &&
+>>> +	    !(ath12k_mac_get_fw_stats(ar, ar->pdev->pdev_id, 0,
+>>> +				      WMI_REQUEST_VDEV_STAT)))
+>>> +		signal = arsta->rssi_beacon;
+>>> +
+>>> +	if (signal) {
+>>> +		sinfo->signal = signal;
+>>> +		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
+>>> +	}
+>>>   }
+>> If I'm reading the patch correctly this is the sequence:
+>> 1. ath12k_mac_op_sta_statistics() is called
+>> 2. WMI_REQUEST_STATS_CMDID is sent to the firmware
+>> 3. ath12k_mac_op_sta_statistics() returns
+>> 4. firmware sends WMI_UPDATE_STATS_EVENTID to host
+>> 5. ath12k_wmi_tlv_fw_stats_data_parse() stores signal to
+>> arsta->rssi_beacon
+>> So doesn't this mean that ath12k_mac_op_sta_statistics() actually
+>> uses
+>> the previous value? And if ath12k_mac_op_sta_statistics() is called very
+>> seldom, like once an hour, the signal value can be one hour wrong?
 >>
->> Since the vdev create for a corresponding vif is deferred
->> until a channel is assigned, cache the information which
->> are received through mac80211 ops between add_interface()
->> and assign_vif_chanctx() and set them once the vdev is
->> created on one of the ath12k radios as the channel gets
->> assigned via assign_vif_chanctx().
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
->> Co-developed-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
->> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/core.h |  19 +++
->>   drivers/net/wireless/ath/ath12k/mac.c  | 160 +++++++++++++++++++------
->>   2 files changed, 145 insertions(+), 34 deletions(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
->> index 507f08ab3ad5..dd6c474bd507 100644
->> --- a/drivers/net/wireless/ath/ath12k/core.h
->> +++ b/drivers/net/wireless/ath/ath12k/core.h
->> @@ -214,6 +214,24 @@ enum ath12k_monitor_flags {
->>   	ATH12K_FLAG_MONITOR_ENABLED,
->>   };
->>   
->> +struct ath12k_tx_conf {
->> +	bool changed;
->> +	u16 ac;
->> +	struct ieee80211_tx_queue_params tx_queue_params;
->> +};
->> +
->> +struct ath12k_key_conf {
->> +	bool changed;
->> +	enum set_key_cmd cmd;
->> +	struct ieee80211_key_conf *key;
->> +};
->> +
->> +struct ath12k_vif_cache {
->> +	struct ath12k_tx_conf tx_conf;
->> +	struct ath12k_key_conf key_conf;
->> +	u32 bss_conf_changed;
->> +};
->> +
->>   struct ath12k_vif {
->>   	u32 vdev_id;
->>   	enum wmi_vdev_type vdev_type;
->> @@ -268,6 +286,7 @@ struct ath12k_vif {
->>   	u8 vdev_stats_id;
->>   	u32 punct_bitmap;
->>   	bool ps;
->> +	struct ath12k_vif_cache *cache;
->>   };
->>   
->>   struct ath12k_vif_iter {
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->> index 60095d876a43..3f2d1b00ae24 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->> @@ -3018,15 +3018,24 @@ static void ath12k_mac_op_bss_info_changed(struct ieee80211_hw *hw,
->>   {
->>   	struct ath12k *ar;
->>   	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
->> +	struct ath12k_vif_cache *cache = arvif->cache;
->>   
->>   	ar = ath12k_get_ar_by_vif(hw, vif);
->>   
->> -	/* TODO if the vdev is not created on a certain radio,
->> +	/* if the vdev is not created on a certain radio,
->>   	 * cache the info to be updated later on vdev creation
->>   	 */
->>   
->> -	if (!ar)
->> +	if (!ar) {
->> +		if (!cache) {
->> +			cache = kzalloc(sizeof(*cache), GFP_KERNEL);
->> +			if (!cache)
->> +				return;
->> +			arvif->cache = cache;
->> +		}
-> 
-> since you have this core logic in several places, i'd refactor this into a
-> separate function, i.e.
-> ath12k_arvif_get_cache(arvif)
-> 	if (!arvif->cache)
-> 		arvif->cache = kzalloc(sizeof(*arvif->cache), GFP_KERNEL)
-> 	return arvif->cache;
-> 
-> then all of the callers would have simply:
-> 	cache = ath12k_arvif_get_cache(arvif);
-> 	if (!cache) handle error;
-> 	use cache
-> 
-Sure, will add get and put routines for cache and use them.
->> +		arvif->cache->bss_conf_changed |= changed;
->>   		return;
->> +	}
->>   
-> 
-> [...]
-> 
->> @@ -6339,8 +6425,14 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
->>   	struct ath12k *ar;
->>   	int ret;
->>   
->> -	if (!arvif->is_created)
->> +	if (!arvif->is_created) {
->> +		/* if we cached some config but never received assign chanctx,
->> +		 * free the allocated cache.
->> +		 */
->> +		kfree(arvif->cache);
->> +		arvif->cache = NULL;
-> 
-> perhaps for the free code also have:
-> ath12k_arvif_put_cache(arvif)
-> 	kfree(arvif->cache);
-> 	arvif->cache = NULL;
-> 
 >
->>   		return;
->> +	}
->>   
->>   	ar = arvif->ar;
->>   	ab = ar->ab;
-> 
+> Hi, kalle, you're right.
+> Thanks you for pointing this out.
+>
+> I should add a struct completion to make up the synchronization mechanism.
+>
+> So, i add a struct completion in struct ath12k, then modify the
+> ath12k_mac_get_fw_stats() function:
+>
+> +static int ath12k_mac_get_fw_stats(struct ath12k *ar, u32 pdev_id,
+> +                                  u32 vdev_id, u32 stats_id)
+> +{
+> +       struct ath12k_base *ab = ar->ab;
+> +       int ret, left;
+> +
+> +       mutex_lock(&ar->conf_mutex);
+> +
+> +       if (ar->state != ATH12K_STATE_ON) {
+> +               ret = -ENETDOWN;
+> +               goto err_unlock;
+> +       }
+> +
+> +       reinit_completion(&ar->fw_stats_complete);
+> +
+> +       ret = ath12k_wmi_send_stats_request_cmd(ar, stats_id, vdev_id,
+> pdev_id);
+> +
+> +       if (ret) {
+> +               ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
+> +               goto err_unlock;
+> +       }
+> +
+> +       ath12k_dbg(ab, ATH12K_DBG_WMI,
+> +                  "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
+> +                  pdev_id, vdev_id, stats_id);
+> +
+> +       left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
+> +
+> +       if (!left)
+> +               ath12k_warn(ab, "time out while waiting for get fw
+> stats\n");
+> +err_unlock:
+> +
+> +       mutex_unlock(&ar->conf_mutex);
+> +       return ret;
+> +}
+>
+> then add "complete(&ar->fw_stats_complete);" at the end of
+> ath12k_wmi_tlv_fw_stats_data_parse() function.
+>
+> what do you think of this?
+
+I can comment better after seeing the patch but something like is needed.
+
+>> Also I don't see any protection when accessing arsta->rssi_beacon.
+>> 
+>
+> i think add protection is unnecessary when accessing
+> arsta->rssi_beacon in ath12k_mac_op_sta_statistics() function, because
+> we just take its value and don't change it.
+
+But there's also a race that we can return the old value to the user
+space, no?
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
