@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5417DCD1288
-	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 18:17:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BE1ACD128A
+	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 18:17:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
 	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6JVR9Am/YAc4h52RJU+UpM+ZSLJJJ0x+GMEQGCwWOt8=; b=MJRRkYbkJV8FCRfT2vtJ0AQnKT
-	L6DujkbbIOXZk7Hj0MBLr0KhQGqlkWgvbT2jpw8w+6hcP1PA/eVk0lsBN17FS9Qf1yuXA/HgU3RP0
-	3hzvm5VjBBDoMyB61EpcfxK0dSFHAH6jripuAoma4fRhmQL279j3LrpSoj6VqOopY0brk5loJ4MyX
-	t35A57IzgMbdkap/COkktKpzJDeJFERZtb8SlpFbgZsOD54AM/jyuJUEJ++9VPJ2Lika/XzelHHPm
-	gks+BJasbwLavKQxM7Sgi23haVHNUDiqTxA0pX9HFNvvKLLqL2J5Eqakp5j/RDXqN9qozDou+7tih
-	snOVta3Q==;
+	bh=HczcMKXjz1miRBFdxB1P5IIxhUr8+4YJ5V0KLXGsMrM=; b=Yyv9xosa6esUp0LkodV2yySr2b
+	hymlZUeqbg4+wUhpuXU/JW2HBGRJsXCAskPSA8q1+DGYC0Pcx9LxsROjRdcK3qiHZOSMMIo1XnJlj
+	r2uAZOMDFqRLaka54X/mdtY+Ll9BFwrzPiFZiusPGNQypA9Z+ISenpYswkPJk3FgvL3BY8opbxbE6
+	z2jUA3bzLpnEJjKxX6jaNAC6+CtgVn/JGlE2bhgrvORZuMY/p9/KFUHUpz/Yr9RgdxckAmdW6YGgW
+	8f4UzuvYDKls4LTVWtTTVOApsdPwLI0V1zporwrt3iol6Jeh3XxLvTEwM5sJZNnIqepB9VHkSh3uD
+	4Qch8CPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rs5Aw-0000000HLjk-00r3
+	id 1rs5Ay-0000000HLkr-0ABJ
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Apr 2024 18:17:30 +0000
+	Wed, 03 Apr 2024 18:17:32 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rs5As-0000000HLiZ-1RT5
+	id 1rs5Au-0000000HLjG-11Wr
 	for ath12k@lists.infradead.org;
-	Wed, 03 Apr 2024 18:17:27 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 433Fd5KS010152;
-	Wed, 3 Apr 2024 18:17:25 GMT
+	Wed, 03 Apr 2024 18:17:29 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 433DlikU017556;
+	Wed, 3 Apr 2024 18:17:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=6JVR9Am/YAc4h52RJU+UpM+ZSLJJJ0x+GMEQGCwWOt8=; b=WD
-	qfR3rq/B7Lg2+kAzFFs0/H47Iu55RtwF/vlDLJyiInocuP+dabLnazxmLwDY7DcF
-	W1ZS6YjdPLbxZ2K/EzZR1YkDUxsWslvvRZlyllwgzKLb0KfRIg0Wckr5D5K0+F3n
-	RI+AKxU6sxYrhpgO9QCpPW+iHYs64PMCjUCqCTCi7slUs6SIlkBDMf8IYXflZaHH
-	dL8TtRICBl47m86wecvdYDsDVVqXeUKy6XKrkbATJ56lE5ryF5HfwK9Zi6/pkPb5
-	kIsDj1S2CVQNTyH0LQyX0oTpqtdby6TGWZNhSJsM5V4dm7tcZA/ReIvr4Ln3mBL1
-	GsGu6rRFA/kWLH04F++A==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x99xm8ce3-1
+	qcppdkim1; bh=HczcMKXjz1miRBFdxB1P5IIxhUr8+4YJ5V0KLXGsMrM=; b=cw
+	lzUKfxX6V9Vr5ZrCFKH+nbcELGH832zvDQFJ7IiOyTAxxvfG+VF1MaHPpsQgK19J
+	VFQxKHJM1d+WwwNsOTw4U59zKZLL+wIMFtsU1uY2A1sb22GY8e7CZ6GuOLrQ2YEd
+	yu3xVqYFh+OUciZPZh/ASPv/eyfyvvph7u/rHHclFqDjvfGirBZpMyPNV2xksrzQ
+	mgLuR6RNty8nUNwOQAUTU5K9dVyWKGmWhMjvhn0qHH42yEwEDsrXP4nRp6VuDy1X
+	u7qUmS2acZg4zJDxycfF55565F9kAkeDnEvnvm08mfCq+43O5WwYD+2wSeG9FVvc
+	nHFe8msHDO8xlwbZm8NQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x92hb1n7q-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Apr 2024 18:17:25 +0000 (GMT)
+	Wed, 03 Apr 2024 18:17:27 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 433IHOG8023440
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 433IHR5g021096
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Apr 2024 18:17:24 GMT
+	Wed, 3 Apr 2024 18:17:27 GMT
 Received: from [10.227.110.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 3 Apr 2024
- 11:17:24 -0700
-Message-ID: <9ef48dfd-60b6-432d-abd3-8e45c4892310@quicinc.com>
-Date: Wed, 3 Apr 2024 11:17:24 -0700
+ 11:17:26 -0700
+Message-ID: <4ff8db98-3389-4fe1-9cc1-0880d4d6cc22@quicinc.com>
+Date: Wed, 3 Apr 2024 11:17:26 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 8/9] wifi: ath12k: add EMA beacon support
+Subject: Re: [PATCH 9/9] wifi: ath12k: skip sending vdev down for channel
+ switch
 Content-Language: en-US
 To: Aloka Dixit <quic_alokad@quicinc.com>, <ath12k@lists.infradead.org>,
         <linux-wireless@vger.kernel.org>
 References: <20240402210538.7308-1-quic_alokad@quicinc.com>
- <20240402210538.7308-9-quic_alokad@quicinc.com>
+ <20240402210538.7308-10-quic_alokad@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240402210538.7308-9-quic_alokad@quicinc.com>
+In-Reply-To: <20240402210538.7308-10-quic_alokad@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -72,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: mCB1j1075g0HKJv_khPKS1MLiKlFjzeG
-X-Proofpoint-ORIG-GUID: mCB1j1075g0HKJv_khPKS1MLiKlFjzeG
+X-Proofpoint-GUID: rnUwSpDcf24kncxVC0yOVoBKXIcVYjQF
+X-Proofpoint-ORIG-GUID: rnUwSpDcf24kncxVC0yOVoBKXIcVYjQF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-03_19,2024-04-03_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
- adultscore=0 priorityscore=1501 bulkscore=0 phishscore=0 malwarescore=0
- mlxlogscore=775 clxscore=1015 lowpriorityscore=0 suspectscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=663 mlxscore=0
+ clxscore=1015 adultscore=0 spamscore=0 lowpriorityscore=0 phishscore=0
+ malwarescore=0 priorityscore=1501 bulkscore=0 suspectscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2403210001 definitions=main-2404030122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240403_111726_425587_61425014 
-X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-CacheID: sfid-20240403_111728_714857_49AB676F 
+X-CRM114-Status: UNSURE (   6.78  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,15 +102,25 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 4/2/2024 2:05 PM, Aloka Dixit wrote:
-> Add new function ath12k_mac_setup_bcn_tmpl_ema() which retrieves
-> a list of EMA (Enhanced Multi-BSSID Advertisements) beacon templates
-> from mac80211 and sends all to firmware. Add support to send EMA
-> configurations to firmware by adding a new parameter 'ema_params' in
-> struct wmi_bcn_tmpl_cmd.
+> Remove the unnecessary WMI vdev down operation as firmware
+> internally does so already as part of WMI vdev restart.
+> Repeated vdev down results in a firmware crash during channel
+> switch operation when multiple BSSID advertisements are enabled:
+> ath12k_pci 0000:06:00.0: firmware crashed: MHI_CB_SYS_ERROR
+> ath12k_pci 0000:06:00.0: failed to send WMI_VDEV_SET_PARAM_CMDID
+> ath12k_pci 0000:06:00.0: failed to set vdev 5 HE MU mode: -108 param_value 7b
+> ath12k_pci 0000:06:00.0: failed to set he mode vdev 5
+> ath12k_pci 0000:06:00.0: failed to restart vdev 5: -108
+> ath12k_pci 0000:06:00.0: failed to send WMI_VDEV_SET_PARAM_CMDID
+> ath12k_pci 0000:06:00.0: failed to set vdev 4 HE MU mode: -108 param_value 7b
+> ath12k_pci 0000:06:00.0: failed to set he mode vdev 4
+> ath12k_pci 0000:06:00.0: failed to restart vdev 4: -108
+> ath12k_pci 0000:06:00.0: failed to send WMI_VDEV_SET_PARAM_CMDID
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > 
 > Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+
 
 
