@@ -4,66 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 721DCCD1288
-	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 06:46:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D7C7CD128A
+	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 09:59:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:To:From:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aHqopKFcq2IQz4qCDQC4kx5e6ZifsY/PwTBJauqEql0=; b=WeqQiQX62m+vgeWKabXE3Vzxk7
-	LknT5GTxvRfxaqHyEJcNVJGej6+djuL3iJdUDYeQ5HVg+jgwdgQS4ZLc7GQV1KfvYjn4AL+jNOiEE
-	510RjZXB6UfkBlalHaRHZg4Umj+dDJfNYrGxdKMTaanNm7/kM/jhJeoqd78kSmGSYEXIT2+ES2Q+a
-	9+qUpnHZ4YVgHFC9/N7qizWyKnRL2fBLqzODM+M46EBCYc6f9P1BkBMPvc/kGBgho6JQWheKUzFTl
-	5LzmO1eK4d877lsiPl3wwueeUpwr4MTa0AZ8VuSnmzyRetEaIp7DvvHhG91z2Qs99G7auMLJxyyWX
-	cJkVjD8w==;
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=CVoOQL6BL5QltBMYhaBYd0mReQolKmj5oeLMAJ4L9nA=; b=i7J7wUFcs/N2LFfXCIfdRdcvYt
+	cKBFv9gaUW2bQQtbMnsmyni3rg7aGSLxJDlZte/4mGPPXec1h6EUSB+SR87fnYSx0DaN5bAsbp9qt
+	e22gmf0GR63ztkkJ3BOr+8I52YOSZJd30pYC/AL0cJ3YyXNec1D3ku3ZybLK+3J1X05mQylFEOuw4
+	kUYM24z5KqkfnMUYHU6o6aRXFBpDgC59LwdJUS4YnfjswflKlkgZpXJh78CMbU3H2yl460hO5vXtM
+	BzO4nIUWG+QrgNur/tGXQ5Db8AMeghwJszYxWg3N4x19J+1kaNb6Qa9uPlDQeREVisKsKrXRYPvCt
+	SEsnlK4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rruNn-0000000EJBY-0b3t
+	id 1rrxOv-0000000FLVK-0efe
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Apr 2024 06:46:03 +0000
+	Wed, 03 Apr 2024 09:59:25 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rruNj-0000000EJAc-2u97
+	id 1rrxOr-0000000FLRi-41ER
 	for ath12k@lists.infradead.org;
-	Wed, 03 Apr 2024 06:46:01 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4336B1fK019976;
-	Wed, 3 Apr 2024 06:45:58 GMT
+	Wed, 03 Apr 2024 09:59:23 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4334Z6tP005076;
+	Wed, 3 Apr 2024 09:58:56 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:from:to:references
+	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=aHqopKFcq2IQz4qCDQC4kx5e6ZifsY/PwTBJauqEql0=; b=P1
-	n7VxqzMuZfD3UOVFlbEBfamrYAya/yubJNGiM7DcAa1htsZXnosSUc+KKcirdvvr
-	Rp+6nzciUwGUPy51fDvJ0OxVsVFR+QegA3I32BhGitakZClnvRMpQt8EaFAW08ZV
-	jihetH3964HyXZFpDzl8+fg6wRXq0BgLUGf2fQnzLyTFqX4r/sexWhPldK/BxV5R
-	fxE7gbdJ1KJAqah9ymkITsQIQUbrTITJycuwJPGpxxdDjNTWLm2uNArM6hijikf+
-	w/+gmlU0rDN3zE6WAYC+zoBf0R62sosEiqsndGu1DYGiMMXJh/ap/hJZwpGc+5A5
-	fmYDLJ7EoQAsIpe4K3QQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x8ny5hd9t-1
+	qcppdkim1; bh=CVoOQL6BL5QltBMYhaBYd0mReQolKmj5oeLMAJ4L9nA=; b=dV
+	Gnky6KyhGrnAyzXBEu7QfqxGQqVf7+/I5eYZmtLsS8E6yFx+jzKK+IeMvzHLjX3X
+	x+at0RmZIQFqPTPQurU7MnFOpqoe7hXAU9W+2v7J+nsnV51KJNjsfxnhBAiI079E
+	I4Wmb5AgP9Ln2Mz+mtmXNvDu/MLe62S8FZnCQq9w57FlJ7jF2q85ZBC3JOXxxiKs
+	Gl3NhQmsG69gYvTtJvklPyXSwdeFSSFRK0ugtFVjbYGbMr8qYhK/0JtIicxV1SNQ
+	QI/GYGbj3n+XCuvTy8SHOguyta2sE/jLKJsGO6SV5o4RUgY3Tq1eWUf+cLfgV+br
+	n5Lpz5sA9i3FQr4wAFbQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x9077gkwj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Apr 2024 06:45:56 +0000 (GMT)
+	Wed, 03 Apr 2024 09:58:56 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4336jt3q012092
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4339wsPv005015
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Apr 2024 06:45:55 GMT
-Received: from [10.231.195.68] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Wed, 3 Apr 2024 09:58:54 GMT
+Received: from [10.152.205.142] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Tue, 2 Apr 2024
- 23:45:54 -0700
-Message-ID: <adf6e7df-11c7-4692-ab8d-d53eb5675045@quicinc.com>
-Date: Wed, 3 Apr 2024 14:45:51 +0800
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 3 Apr 2024
+ 02:58:52 -0700
+Message-ID: <7bbd676a-748b-a1d6-aa5c-2e8868017159@quicinc.com>
+Date: Wed, 3 Apr 2024 15:28:49 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: WCN7850 disconnects and reconnects in a loop
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-To: Gregoire <gregoire.s93@live.fr>, <ath12k@lists.infradead.org>
-References: <AS8P190MB12051DDBD84CD88E71C40AD7873F2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
- <ac861ea8-5a75-4654-8ab1-05ac0c4846e9@quicinc.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 09/13] wifi: cfg80211: Add multi-hardware iface
+ combination support
 Content-Language: en-US
-In-Reply-To: <ac861ea8-5a75-4654-8ab1-05ac0c4846e9@quicinc.com>
+To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Vasanthakumar Thiagarajan
+	<quic_vthiagar@quicinc.com>
+References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
+ <20240328072916.1164195-10-quic_periyasa@quicinc.com>
+ <a24b7d967dbe31ef613fae8c331f4ff718482c93.camel@sipsolutions.net>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <a24b7d967dbe31ef613fae8c331f4ff718482c93.camel@sipsolutions.net>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
@@ -71,19 +77,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 5sx4mVmJpt09zs1rpgAiT2Aj9etXqOVr
-X-Proofpoint-ORIG-GUID: 5sx4mVmJpt09zs1rpgAiT2Aj9etXqOVr
+X-Proofpoint-GUID: _TYS5nf6FFZMcsC5OfbWM4QKc8JS5NRH
+X-Proofpoint-ORIG-GUID: _TYS5nf6FFZMcsC5OfbWM4QKc8JS5NRH
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-03_05,2024-04-01_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- lowpriorityscore=0 phishscore=0 mlxscore=0 mlxlogscore=606 clxscore=1015
- bulkscore=0 adultscore=0 impostorscore=0 spamscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2403210001
- definitions=main-2404030043
+ definitions=2024-04-03_08,2024-04-01_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ malwarescore=0 adultscore=0 suspectscore=0 clxscore=1015
+ priorityscore=1501 lowpriorityscore=0 spamscore=0 phishscore=0 bulkscore=0
+ impostorscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2403210001 definitions=main-2404030068
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_234559_876194_ED073DE2 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20240403_025922_480471_6659B155 
+X-CRM114-Status: GOOD (  17.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,50 +106,119 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 4/3/2024 2:36 PM, Baochen Qiang wrote:
-> 
-> 
-> On 4/1/2024 5:56 PM, Gregoire wrote:
->> Hello,
->>
->> I have a QCNCM865 card with a WCN7850 chipset. I'm running Arch Linux 
->> version 6.9.0-rc2-1-mainline.
->>
->> I'm experiencing difficulty connecting to any Wi-Fi network; the 
->> device connects and reconnects almost immediately.
->>
->> Here's a gist containing some logs from dmesg and journalctl related 
->> to iwd.
->>
->> https://gist.github.com/GreyXor/5e6dc8e610a00c8aab37a1251d36dbc1
-> 
-> The log below seems strange. Actually we have a patch to fix this issue
-> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/drivers/net/wireless/ath/ath12k?id=a49732b1f1f8128608b1192c562880dd29037c06. So the question is are you still seeing this log with latest Kalle's ath.git?
-> 
-> [ 1132.255250] ath12k_pci 0000:01:00.0: Unknown htt tx status 8
-> 
-> Current logs don't provide enough info.  Could you reproduce it with 
-> full ath12k log and IWD log enabled and share them to us?
-> For ath12k, first unload module and then reload.
->      modprobe -r ath12k
->      modprobe ath12k dyndbg=+pflmt debug_mask=0xffffffff
-> For IWD, simply add '-d' option when starting it. You may directly add 
-> it to the systemd service entry if you like. See 
-> https://iwd.wiki.kernel.org/debugging
-> 
-> Better if you could also capture air sniffer as well.
-> 
-And please share complete kernel/dmesg and IWD log, not need to do grep.
+On 3/28/2024 7:46 PM, Johannes Berg wrote:
 
->>
->> Let me know if you need anything else for debugging
->>
->> I also tried 
->> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git last 
->> week on master, and same problem
->>
->> Thanks
->>
->>
 > 
+>> +static const struct ieee80211_iface_per_hw *
+>> +cfg80211_get_hw_iface_comb_by_idx(struct wiphy *wiphy,
+>> +				  const struct ieee80211_iface_combination *c,
+>> +				  int idx)
+>> +{
+>> +	int i;
+>> +
+>> +	for (i = 0; i < c->n_hw_list; i++)
+>> +		if (c->iface_hw_list[i].hw_chans_idx == idx)
+>> +			break;
+>> +
+>> +	if (i == c->n_hw_list)
+>> +		return NULL;
+>> +
+>> +	return &c->iface_hw_list[i];
+>> +}
+> 
+> ???
+> 
+> Hint: it's perfectly legal to return directly from a loop.
+
+sure
+
+> 
+>> +static int
+>> +cfg80211_validate_iface_comb_per_hw_limits(struct wiphy *wiphy,
+>> +					   struct iface_combination_params *params,
+>> +					   const struct ieee80211_iface_combination *c,
+>> +					   u16 *num_ifaces, u32 *all_iftypes)
+>> +{
+>> +	struct ieee80211_iface_limit *limits;
+>> +	const struct iface_comb_per_hw_params *per_hw;
+>> +	const struct ieee80211_iface_per_hw *per_hw_comb;
+>> +	int i, ret = 0;
+> 
+> The = 0 doesn't seem needed.
+
+sure
+
+> 
+>> +		ret = cfg80211_validate_iface_limits(wiphy,
+>> +						     per_hw->iftype_num,
+>> +						     limits,
+>> +						     per_hw_comb->n_limits,
+>> +						     all_iftypes);
+>> +
+>> +		kfree(limits);
+>> +
+>> +		if (ret)
+>> +			goto out;
+>> +	}
+>> +
+>> +out:
+>> +	return ret;
+> 
+> That 'out' label is pointless.
+
+sure
+
+> 
+>> +static void cfg80211_put_iface_comb_iftypes(u16 *num_ifaces)
+>> +{
+>> +	kfree(num_ifaces);
+>> +}
+> 
+> Not sure I see value in that indirection?
+
+sure
+
+> 
+>> +static u16*
+> 
+> missing space
+
+sure
+
+> 
+>> +cfg80211_get_iface_comb_iftypes(struct wiphy *wiphy,
+>> +				struct iface_combination_params *params,
+>> +				u32 *used_iftypes)
+>> +{
+>> +	const struct iface_comb_per_hw_params *per_hw;
+>> +	u16 *num_ifaces;
+>> +	int i;
+>> +	u8 num_hw;
+>> +
+>> +	num_hw = params->n_per_hw ? params->n_per_hw : 1;
+> 
+> I think we're allowed to use the "?:" shortcut.
+
+sure
+
+> 
+>> +	num_ifaces = kcalloc(num_hw, sizeof(*num_ifaces), GFP_KERNEL);
+>> +	if (!num_ifaces)
+>> +		return NULL;
+> 
+> But ... maybe we should just cap num_hw to a reasonable limit (4? 5?)
+> and use a static array in the caller instead of allocating here.
+> 
+>> +	is_per_hw = cfg80211_per_hw_iface_comb_advertised(wiphy);
+> 
+> Maybe call that "have_per_hw_combinations" or so? Or "check_per_hw"
+> even, "is" seems not clear - "what is?"
+
+sure, will address all the above comments in the next version of the patch.
+
+
+-- 
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
