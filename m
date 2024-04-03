@@ -4,65 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62F96CD128A
-	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 14:00:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B58BCD128A
+	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 15:00:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qH7aIEB6qT6QNNLmKCyjcmOQNMcsaO3lZbdp9yMawN4=; b=cdsNMWJ6ozTMscKV5z3Gl8TBtT
-	WVnOgE0SSoUM4P85j2NlIvHl3DbToLa0WgRR1IWH51wpaZeN1UoesBrLR4bApgzjw/khEgFPjKqzT
-	kiteb7LyCFHOJqha6VmRgj8I9ogcbAlsHZpQugjs3PfHgvEsbLeQb4poSUBK5AcVwNVA7sCd6n2zA
-	dvunoakzcoBDN0tJLx48+yXhsUQkLZIZbULqAynxP9VlUthDlzOaqq+Qqym7KW8K/lm++KJhHf7Gu
-	y96d0DEePB5JVMyRLuiIpzAKrUJQzsYnBuL+foNaXBOl9o/m4GNbg1Gxr9sqNWq9Em59jks2TSDdI
-	bDsUrM6Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=d5lIUhkPkZrQGh5RTSBkxbGqGWRelVvdvHuggsf0q30=; b=Txn7VMTfFUwvjxq26pELtrrB5q
+	Z3QFwltqJV4/l75OmJ1mJsnq+chpSCVenNEqUakfOR9j/Rf8GF0qdG8atT23o2LmCs5Y+q4VTe+sD
+	bIRmNZ7bdmEH2c81aeL5slfzLAb0ZasFg0I5luMWcyh6uSxzdqmOYCUbPleuv/PD6ZbfmKcQbSt1l
+	0hDEVZsbXz17a/MvdnxEoYV01oyCZyXEQHeNQXN2JhgOJ6qSsufnbzjQwdXsWc924G6kPolp8xvjQ
+	SB8pTmn+nxbIefkBSJmY/TyGajHlb2F8+HQbSyyjgA+nGaRSR1kpZpyTpLdQum5BMXjXFlRnDm+7v
+	6onkhijw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rs19o-0000000GLEA-0D84
+	id 1rs26F-0000000GaxF-1LX3
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Apr 2024 14:00:04 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 03 Apr 2024 15:00:27 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rs19j-0000000GLD8-1Wuk
+	id 1rs265-0000000Gart-3tnq
 	for ath12k@lists.infradead.org;
-	Wed, 03 Apr 2024 14:00:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A94F861458;
-	Wed,  3 Apr 2024 13:59:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4EAB6C433F1;
-	Wed,  3 Apr 2024 13:59:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712152798;
-	bh=xWOoflujjPGS0Ej1CAyXYZlgQxQGJxVb6eX5fIZF1SY=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=VItlUmjoFbS3y/XeTK3D42AekqiqqY1poxrXawEqaA+jtI/pFcpy5qyZ7FoELKmMf
-	 +4PJGBj+39OgalEVoJqZx0q2FcByEfg2ehib2Yd5T50i8ysiFU/+2a1a9W6KLb9AOh
-	 hPAWZDY1L+i5z6bkAXd0byx+GgflmUszU9vnNQ5mJ9MBd95zxB1dhL5SQpOQBsORFm
-	 kPFzolqHzOQVLsiRNJjxb4CoypsR6n6BQ4GW3DbeOc7F3NPiFo/Hsvuk/brXcYnT3x
-	 2aJoqEktCAtGNxoMkt+e0hfoypGHuh34dhnSLZ2JrSBBEE8EsAvoNF7Xs9ukaufuzc
-	 jBye5ze7Zd7TA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 1/2] wifi: ath12k: extend the link capable flag
-References: <20240329012358.2242354-1-quic_periyasa@quicinc.com>
-	<20240329012358.2242354-2-quic_periyasa@quicinc.com>
-	<f17ab010-5874-495a-8bd8-3e18e85cc327@quicinc.com>
-	<ebeb7fa3-f0d1-230a-80bc-0877fdab7e62@quicinc.com>
-	<6dac32c7-a2b2-4ac3-9c1f-b02f612ee3ef@quicinc.com>
-Date: Wed, 03 Apr 2024 16:59:55 +0300
-In-Reply-To: <6dac32c7-a2b2-4ac3-9c1f-b02f612ee3ef@quicinc.com> (Jeff
-	Johnson's message of "Tue, 2 Apr 2024 10:41:53 -0700")
-Message-ID: <877che5yxw.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 03 Apr 2024 15:00:19 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 433DmO85014117;
+	Wed, 3 Apr 2024 15:00:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=d5lIUhkPkZrQGh5RTSBkxbGqGWRelVvdvHuggsf0q30=; b=ib
+	bj7TPV1gMexe2aBEYXtWBCqtuBRYk5mqBu0/ZdGA9ZO+SSyleGV7OCREx3wwzId2
+	n2qjbjaaIYI7jYr0yqyZAoGQrh47oO8gfFREO/5t9cuefmCudxizol2NPudR/tpv
+	TBrG+92q3OC8dkM1TGzQesulYnuU84vsL9Mo2CkQD3EAF59FmorgGozyqbm0eEFP
+	0EPjRHNztXsk4EkuHgiIABXcfnkIJaB6eduC8lDuE96529FSkQw62fOpSGQl8XCU
+	vo162rnnS93wmy9xWpWPvD0FCyPOyg4H/79Y1Gy7Sfphc3d3k5apj1DZeg/DkMDx
+	LbdoM+MwmJ+cpTLajqOg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x944e0x8m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 03 Apr 2024 15:00:13 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 433F0CZi019846
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 3 Apr 2024 15:00:12 GMT
+Received: from [10.227.110.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 3 Apr 2024
+ 08:00:12 -0700
+Message-ID: <9dc8f48b-bc94-47ab-a283-773e5623f7e5@quicinc.com>
+Date: Wed, 3 Apr 2024 08:00:11 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/2] [RESEND] wifi: ath12k: refactor the link capable
+ flag
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        Kalle Valo
+	<kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240403042056.1504209-1-quic_periyasa@quicinc.com>
+ <87o7aq68a3.fsf@kernel.org>
+ <9200cdc1-00ae-d3bb-1f3d-abb4ce993cf7@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <9200cdc1-00ae-d3bb-1f3d-abb4ce993cf7@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: P3_gPe0SFgQ6ny-Nkf_gdT1ThGx8DxaV
+X-Proofpoint-GUID: P3_gPe0SFgQ6ny-Nkf_gdT1ThGx8DxaV
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-03_15,2024-04-03_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ spamscore=0 mlxlogscore=725 clxscore=1015 suspectscore=0 mlxscore=0
+ phishscore=0 adultscore=0 priorityscore=1501 malwarescore=0
+ impostorscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2403210001 definitions=main-2404030102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240403_065959_607340_A90B9859 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20240403_080018_125951_FA518FC0 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,74 +104,13 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+On 4/3/2024 4:21 AM, Karthikeyan Periyasamy wrote:
+> On 4/3/2024 4:08 PM, Kalle Valo wrote:
+>> Why the resend? 
+> 
+> I missed the version log in the commit message.
 
-> On 4/2/2024 2:32 AM, Karthikeyan Periyasamy wrote:
->
->> 
->> 
->> On 4/1/2024 10:24 PM, Jeff Johnson wrote:
->>> On 3/28/2024 6:23 PM, Karthikeyan Periyasamy wrote:
->>>> Link capability categorized as Single Link Operation (SLO) and Multi Link
->>>> Operation (MLO).
->>>>
->>>> 	* Intra-chip SLO/MLO refers to links present within a chip
->>>> 	* Inter-chip SLO/MLO refers to links present across multiple chips
->>>
->>> Is "chip" the correct term?
->>>
->>> I'm thinking that this should be called "device" since that is the unit of
->>> hardware that is detected by a bus probe function and which is handled by a
->>> *device* driver.
->>>
->>> Doesn't this make more sense if the references to chip and SoC are changed to
->>> device?
->>>
->> 
->> In the QMI, SLO/MLO parameter exposed as chip only not device. So 
->> followed the same terminology to avoid confusion for code readability.
->> 
->> struct wlfw_host_mlo_chip_info_s_v01 {
->>          u8 chip_id;
->>          u8 num_local_links;
->>          u8 hw_link_id[QMI_WLFW_MAX_NUM_MLO_LINKS_PER_CHIP_V01];
->>          u8 valid_mlo_link_id[QMI_WLFW_MAX_NUM_MLO_LINKS_PER_CHIP_V01];
->> };
->> 
->> struct qmi_wlanfw_host_cap_req_msg_v01 {
->> 
->> ...
->> 
->> u8 mlo_num_chips;
->> 
->> u8 mlo_chip_info_valid;
->> 
->> struct wlfw_host_mlo_chip_info_s_v01 
->> mlo_chip_info[QMI_WLFW_MAX_NUM_MLO_CHIPS_V01];
->> 
->> ...
->> 
->> }
->> 
->
-> Please don't let firmware interface naming drive host driver code naming.
-> And push back on the firmware team when they've introduced poor naming.
->
-> As many Software Engineering experts stress, naming is probably the single
-> most important thing we do. So we need to make sure we are using the correct
-> names for all of the software objects that comprise the driver, especially
-> with this multi-device MLO feature where we now have to represent a multitude
-> of individual devices as a single logical wiphy.
->
-> Lack of a single common term for each object in the architecture makes the
-> code far less maintainable.
+In that case in the future, just reply to your cover letter and say you missed
+including the versioning info, and put it in the reply.
 
-Amen to that. I think we should come up with a terminology list or
-something, otherwise it's hard to keep up with all teams having their
-own terminology.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
