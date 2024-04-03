@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E48CD1288
-	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 04:04:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DE74CD1288
+	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 04:04:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=xbf39CbwInbk5sessCKl3ze+tveoelgISHqsY3taBHw=; b=PywVccFE/BsDcS0GZ0eZ0Lw0tx
-	E/s5MSoG4ciegYS18NncddH3LCEzCfNJnpYCE9LjIbgA9KweIZhUjVABxWAcwuNOb/d5O+48NSzeU
-	zeOOWVJmsOPpn7nUOeDdWwonyJG4mWsX9pxPuQrXkAR14j2nnzrsVJVX0EUVxI8pw+on5TjpdfSkP
-	dK86zvpMqy8YG3Aav3u/xXVkn6qMfs8MndMVUUzt+MhfzZi18Rk2abSoUPPCcRBYrjjQRBFwkA2tv
-	vw+2LH4jUMBBLOoT0X+aWSaWLS3YWXnLOaDcGeZnwq0/FO9Dbl0e71oLNo9aKyhTdB2QqBsZfa2ls
-	siZZvCkA==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=cNedL5Sjf5QiOTnKSHGfDYYWLwCZ8FVoOFYmCVKLYtk=; b=Bd1A/GnQW0mSbAB2iH9PWEGJTR
+	LykSOZZeULiPewfyh6n43Gv6e8pKlj0SyBqQkSnL718H7ddZ1PJd5EQV6Ybwcb8iEf0wLg74e1HtU
+	w1uQMslvpjoTtyU4t9nqZ5syhvfWG3TwOhMgr3MQmWQG9Cr5XPYT1yIaUelBMnkf3erQmdIo8qKO/
+	i0yl4Teu2idsTA4JgT74FJfk4UcM2FMtYDJD4QhcB2PruP20vnzzBj/fkWvO8WE4CQasQwT4LMgt+
+	6dcdXED2E9P7OXZtVy8L6tSOzc1s0IhxDUsTrofL7dbh+gFFDtTOJcbPZkVuNQHNuQQkT/XR6B22D
+	AFWtdUvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrrrV-0000000DtL5-04rm
+	id 1rrrrY-0000000DtM2-2Kj5
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Apr 2024 04:04:33 +0000
+	Wed, 03 Apr 2024 04:04:36 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rrrrS-0000000DtKB-0gVg
+	id 1rrrrV-0000000DtL4-1mWY
 	for ath12k@lists.infradead.org;
-	Wed, 03 Apr 2024 04:04:31 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4330e8LG021471;
-	Wed, 3 Apr 2024 04:04:28 GMT
+	Wed, 03 Apr 2024 04:04:34 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4333Muoe007347;
+	Wed, 3 Apr 2024 04:04:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=xbf39Cb
-	wInbk5sessCKl3ze+tveoelgISHqsY3taBHw=; b=PNCmpAGHe70cYgKP7xg/jsi
-	SPAe9WZpAXXVVTAapMApmKrWEmslMAYQTNHXdy4XJQ68W7m66gxSr5TceQI2sXBN
-	ijoV9ScFIn/mIrqUPEdQBog+j9OHVpCmgkUPOA33Tq6splk1jpVZftIsjmC9ic46
-	joAvdHMS0F34e30IJWB+WCm6GVA+2Zi92Z5kLwUOFupXWniu82GjU+7xQ4LK/1jj
-	RAQXRmrY4Ie2ubVEXFmzmcXeWkTVU+qwbutgeqBF1yUCCALKHh8Sp23nwNwE9ZdJ
-	X2ocm+iOXTRyOgM6Mtwk+DKXO41KItjYJUzc9OE7KJw6BteWqdrXf8Eq6AdUoXQ=
-	=
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	qcppdkim1; bh=cNedL5Sjf5QiOTnKSHGfDYYWLwCZ8FVoOFYmCVKLYtk=; b=kH
+	dLBaT5gA1aejJ1Hj+9q1PxUXGdqc22db4AV7jFjTbeG81sQ2Mmo26J7EYwQe983F
+	zw/7rigrFDVzScwBow0LiOmrERwb4MkwhS+I6IdGl0ZuaweT48Y1H+Cl1JA4aOGY
+	4Cny9TWBGEA05cxBxIGkM3PU/wLLSy/SODTTnwfj1DQVrSTcnrDVanqa4diRitqO
+	IhEBFSj2rv+S3SePY4DqJ1XzxP/VicKP9BG/ifUYMs4zbeEDnhsv4JWBQVNIND+4
+	PkfG/TBhoZSSCa56cv0bf6YB33zy71tfl97xR9OvKj5d51Zux5cZkCuVJLeviRah
+	T/UjMbthryzllBcKH+ag==
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x8ex7tn3s-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x8gn5j760-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Apr 2024 04:04:28 +0000 (GMT)
+	Wed, 03 Apr 2024 04:04:32 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43344RSs014139
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43344VCe014159
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Apr 2024 04:04:27 GMT
+	Wed, 3 Apr 2024 04:04:31 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.4; Tue, 2 Apr 2024 21:04:25 -0700
+ 15.2.1544.4; Tue, 2 Apr 2024 21:04:29 -0700
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>
-Subject: [PATCH v2 0/2] wifi: ath12k: refactor the link capable flag
-Date: Wed, 3 Apr 2024 09:34:10 +0530
-Message-ID: <20240403040412.1488095-1-quic_periyasa@quicinc.com>
+Subject: [PATCH v2 2/2] wifi: ath12k: fix link capable flags
+Date: Wed, 3 Apr 2024 09:34:12 +0530
+Message-ID: <20240403040412.1488095-3-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240403040412.1488095-1-quic_periyasa@quicinc.com>
+References: <20240403040412.1488095-1-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -70,20 +72,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 5xZXU95etA9n06Bm94Sl5dO1Lnbb5gpR
-X-Proofpoint-ORIG-GUID: 5xZXU95etA9n06Bm94Sl5dO1Lnbb5gpR
+X-Proofpoint-GUID: 9H_iokhnHF8TueNEYWzu1NdYVm9nSMQn
+X-Proofpoint-ORIG-GUID: 9H_iokhnHF8TueNEYWzu1NdYVm9nSMQn
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-03_03,2024-04-01_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- adultscore=0 clxscore=1015 phishscore=0 bulkscore=0 suspectscore=0
- lowpriorityscore=0 spamscore=0 mlxscore=0 malwarescore=0 impostorscore=0
- mlxlogscore=624 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 suspectscore=0
+ lowpriorityscore=0 malwarescore=0 adultscore=0 mlxlogscore=999
+ impostorscore=0 mlxscore=0 bulkscore=0 phishscore=0 priorityscore=1501
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2403210001 definitions=main-2404030025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240402_210430_347294_CF70C6A4 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240402_210433_603257_DBF71F25 
+X-CRM114-Status: GOOD (  10.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,20 +99,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-extend the link capable flag to accommodate inter-device capability.
+By default driver supports intra-device SLO/MLO, the link capability flags
+reflect this. When the QMI PHY capability learning fails driver not enable
+the MLO parameter in the host capability QMI request message. In this case,
+reset the device link capability flags to zero (SLO/MLO not support) to
+accurately represent the capabilities.
 
-Karthikeyan Periyasamy (2):
-  wifi: ath12k: extend the link capable flag
-  wifi: ath12k: fix link capable flags
+Found in code review.
 
- drivers/net/wireless/ath/ath12k/core.c |  2 +-
- drivers/net/wireless/ath/ath12k/core.h | 23 ++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/mhi.c  |  2 +-
- drivers/net/wireless/ath/ath12k/qmi.c  |  4 +++-
- 4 files changed, 25 insertions(+), 6 deletions(-)
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
 
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/qmi.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-base-commit: fe7e1b830cf3c0272aa4eaf367c4c7b29c169c3d
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 3f0d2b99127a..db8ba5fec2ae 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2006,6 +2006,8 @@ static void ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+ 	int i;
+ 
+ 	if (!ab->qmi.num_radios || ab->qmi.num_radios == U8_MAX) {
++		ab->mlo_capable_flags = 0;
++
+ 		ath12k_dbg(ab, ATH12K_DBG_QMI,
+ 			   "skip QMI MLO cap due to invalid num_radio %d\n",
+ 			   ab->qmi.num_radios);
 -- 
 2.34.1
 
