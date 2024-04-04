@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 407C8CD128A
-	for <ath12k@archiver.kernel.org>; Wed,  3 Apr 2024 19:29:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFF7ACD1284
+	for <ath12k@archiver.kernel.org>; Thu,  4 Apr 2024 10:07:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=k4vGYDISrYqzlDnedyCCvSufWJp9roVtvbuNg1HGabQ=; b=LeO/KJTtBD2cRpLHwiv1ZMbkzO
-	1k40Yt/99GisJMnIreu/lkN0mBZz7GqHZkDprpT9gvyIh4MNcRZswV4qq4+JEdqvXKrnjMI3nO2BW
-	UAEMxhj224B2HKAVw7TKbvBDibOjUUmy5yLzOiPLuFiRGWOuMKs4loDHIKrSSW9aoTZMqSwsbnluR
-	VVEpcKJnplCkdyulIRpN0pzV/RK6VfVbVNr1wKfki92OnkE9klS8GseDC0j0ZDgwrhjMG3zGjmC9/
-	Il52CLQZqCRRca8PocZC/5BnQJsM4L3FX80i3NsgHbWgxvYjUWkEyk1QGg1TmRODSGa2GP1gIK8W5
-	h6yPeofg==;
+	bh=6tOmAuklxfOyv/MNQtZXy51azx92G8hgWiLrSV16q6I=; b=0O6NC0ME3AkTLFoOHo8Rh5b3d6
+	VXhzd3tExLQiWfKaeBoEOnlChvul2jkLvaTPcaCK7yL0i9O5YXA3nV9qKIDiIbTaFss8f5koQuUfh
+	eMesMpssLTUsa5moJCPOntFD8I5UjAv59CM8rTV+9FVpXkgOh0CcpM5LBg01owatyBmR+K/A7bi0y
+	BsToteXY3Uw0MCH6JRWXIVdpHVUNXN9o9yTiQtqUqfGg1KcfBwwA79Wsj1/Bmz/cVTlqP6nG5WWZj
+	YEeIT3IQQSij9h7epvDtRVodygNb3LWL5UtpRi5CT3SqNmffmqHrY66kqm3UnSEWrPde+DIQhRhGh
+	UrVLhkNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rs6IP-0000000HYso-3uAs
+	id 1rsK0O-000000027pM-1b0k
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Apr 2024 19:29:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 04 Apr 2024 10:07:36 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rs6IL-0000000HYqM-1f2m
+	id 1rsK0K-000000027on-3xfV
 	for ath12k@lists.infradead.org;
-	Wed, 03 Apr 2024 19:29:15 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 433JRUw7020510;
-	Wed, 3 Apr 2024 19:29:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=k4vGYDISrYqzlDnedyCCvSufWJp9roVtvbuNg1HGabQ=; b=gU
-	7A918XpBPm1RPUtAf2luHYVMNiySS7an/vMjZyToDL68Hb9TwJrMUneyPe5mgfUh
-	BijGKDNPe9T5lOIf6gL2RsPAPLjw+AtCSTfMU2/A+Hki1F724b2bNA2ybCXcg9H8
-	ZYwvl8oUj6OcglkUBeUlZvwEnTfqc8zY5Rizp2FNVjmeOK0f170jk/iDe3Gtmzrh
-	zCppMSKAmw8Q6uBA8RtPnsPiQbS0YtAvgWmcOEitVtxvUqlkARidXhtCudaO2150
-	ZeqBTbq7hCAs/jbWL+dnzvBxJimal526TzsJZPxghdNQYAbXfaeiQMH3PhoCwVNu
-	x8zU1KV3p7Afj5eVjpJA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x8xnxt7r3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Apr 2024 19:29:11 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 433JTAeI015729
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Apr 2024 19:29:10 GMT
-Received: from [10.227.110.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 3 Apr 2024
- 12:29:10 -0700
-Message-ID: <259cb770-373c-4549-ab3c-45cfcb00caa6@quicinc.com>
-Date: Wed, 3 Apr 2024 12:29:10 -0700
+	Thu, 04 Apr 2024 10:07:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 0E648CE307D;
+	Thu,  4 Apr 2024 10:07:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 35FF2C433C7;
+	Thu,  4 Apr 2024 10:07:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712225250;
+	bh=XEgOJFtAd5hyX1dGEovuhPvmsdKiprDvZmqlS9wDNQI=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=c9u4v2oKow1m8FOfV3+vm3m7neKDXSA93hj7pjGlY9T+UdS86Z4SH/OKmaN+1hHx8
+	 rBF3gLqFhx4bshxkzVlJqAnpabSIhWogMGI90Idv1X3CZ+FeHko2531gK/YArNXhoJ
+	 RQr6Y4CcmkHR0nyj7XS9trmAFyg3lFwb+fW7AGZu8BvwFAwJlgqoe3G78lmu601eVk
+	 YYJtTA2xG24N2rHtQPQ+QjdgjlckenswgCHshFSSwZoiEoOtzUGQYldZ55WwW/kMXV
+	 SCi09j0deiZkFaOpaIwbsu+q/nPeA3M49rQIsOpaT5mehZcK+Km2eE685Y5zvIvShm
+	 3Q/xS0+N5ZaZw==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] [RESEND] wifi: ath12k: fix link capable flags
-Content-Language: en-US
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240403042056.1504209-1-quic_periyasa@quicinc.com>
- <20240403042056.1504209-3-quic_periyasa@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240403042056.1504209-3-quic_periyasa@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: fHYm2f3U9dtxprnWZN9waJvSZ-ZlTXl4
-X-Proofpoint-GUID: fHYm2f3U9dtxprnWZN9waJvSZ-ZlTXl4
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-03_20,2024-04-03_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 bulkscore=0
- mlxlogscore=994 priorityscore=1501 adultscore=0 phishscore=0 spamscore=0
- suspectscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2403210001 definitions=main-2404030131
+Subject: Re: [PATCH 1/2] wifi: ath12k: Add initial debugfs support in ath12k
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240320171305.655288-2-quic_rgnanase@quicinc.com>
+References: <20240320171305.655288-2-quic_rgnanase@quicinc.com>
+To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+ Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>,
+ Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171222524717.1806092.5883238198294792890.kvalo@kernel.org>
+Date: Thu,  4 Apr 2024 10:07:29 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240403_122913_590041_E1305858 
-X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-CacheID: sfid-20240404_030733_258214_9C710F20 
+X-CRM114-Status: UNSURE (   6.78  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,19 +75,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/2/2024 9:20 PM, Karthikeyan Periyasamy wrote:
-> By default driver supports intra-device SLO/MLO, the link capability flags
-> reflect this. When the QMI PHY capability learning fails driver not enable
-> the MLO parameter in the host capability QMI request message. In this case,
-> reset the device link capability flags to zero (SLO/MLO not support) to
-> accurately represent the capabilities.
-> 
-> Found in code review.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Ramya Gnanasekar <quic_rgnanase@quicinc.com> wrote:
 
+> The initial debugfs infra bringup in ath12k driver and create the ath12k debugfs
+> and soc-specific directories in /sys/kernel/debug/
+> 
+> For each ath12k device, directory will be created in <bus>-<devname>
+> schema under ath12k root directory.
+> 
+> Example with one ath12k device:
+> /sys/kernel/debug/ath12k/pci-0000:06:00.0
+> 
+> ath12k
+> `-- pci-0000:06:00.0
+>     |-- mac0
+> 
+> To enable ath12k debugfs support (CONFIG_ATH12K_DEBUGFS=y)
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
+> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+
+2 patches applied to ath-next branch of ath.git, thanks.
+
+f8bde02a26b9 wifi: ath12k: initial debugfs support
+f51d917b7330 wifi: ath12k: debugfs: radar simulation support
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240320171305.655288-2-quic_rgnanase@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
