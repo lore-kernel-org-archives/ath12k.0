@@ -4,90 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56B55CD1292
-	for <ath12k@archiver.kernel.org>; Thu,  4 Apr 2024 15:43:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62487CD1284
+	for <ath12k@archiver.kernel.org>; Fri,  5 Apr 2024 02:13:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XzUKJ+Hn8Ux1niJRQ/AsBQ4v3JQrU2RMU9q9X+xWbQk=; b=4Q5Q5pPW3EmVarBUTNOs4nYTaI
-	DWistG30GptiKUkeLJKtWVyubsEQckW0uyDFeS8K1QQ82f5+RDtlIuCsr9s8YJ39ItBY1btyEZV6N
-	I1wWtknx7Ottbg+obSuBDL0EXKEJmZ5hmgA80QxaDC5tlro6Xl7tNBxIIFCrj1965yeTwfEL76heL
-	WhRHAesAQIGP1rTuo39nlHtzwnwQuOsvLLV7fAoIv9InOgWw2qBOtKeleR5VBcywaH0naQaVvZOOy
-	/YDjrg5wlPAEfNg8SiqGYtgXGACx3m4WMieq4TcpQhRZC7jHbyW5hwuzIAYGXJ5JgoxPKrht2Gf43
-	LVNirpGg==;
+	bh=/iAnF6RMBMR9Cv+V593XwuDhEfJct5e1WWwMk7XEDjQ=; b=yVt7PcPvk4gEa7i1fIlhsigwq4
+	IhIC43uMdCXW3iBu1OWPgXrirGxISZYeGqsP3iAS7Ae3+Nw+6L4pHQxKjhnCYmXnMFxoh8PiWZF5+
+	pY/HM2QwNZrPKMiz9DCzjuw4wgwaY5yA4zxzSXpGtZQNoa5+b3pBzX/0zrfnj8lCDRvIu7goh++tc
+	B+GkBCpFBrA/K6lG2PryK1HA+wrDBbp3iz7zsmqfp8+FFJ6jcjB1xsqd2D6+Gs/U2Uc2sjH5YzkH5
+	v5GnoMXMn1FECj5c//B7LgYmlSCtZJOxqzTDHZ/NBFP21Uv5nRyneoXR2VN76bpzouc1r7uZXfQld
+	CdVkVw3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsPFU-00000003Hpd-05hy
+	id 1rsZ4h-00000004sib-45WD
 	for ath12k@archiver.kernel.org;
-	Thu, 04 Apr 2024 15:43:32 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 05 Apr 2024 02:13:03 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rsPFP-00000003Hoj-20mv
+	id 1rsZ4d-00000004shX-1qQZ
 	for ath12k@lists.infradead.org;
-	Thu, 04 Apr 2024 15:43:30 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 434BUPHI017241;
-	Thu, 4 Apr 2024 15:43:22 GMT
+	Fri, 05 Apr 2024 02:13:01 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4351mxfx020530;
+	Fri, 5 Apr 2024 02:12:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
+	message-id:date:mime-version:subject:from:to:cc:references
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=XzUKJ+Hn8Ux1niJRQ/AsBQ4v3JQrU2RMU9q9X+xWbQk=; b=Pz
-	ki+MiMNcfE1SXh5HUYp9uX3+F2K05bjMhXdD+WQRIk9g3AR10A+SFu8BCS4BBrIW
-	kUZL4MWhBEMQ5CvJqKcsGmQzocuh6Pcn0tg3weOoXp3U0CkJ3ChKq+EYEK5oL12l
-	8K4T58g6nH11GxGQu6qPPONfEdy2PSA/nJO0o2Cad77BfmyQPv6zOoLr94tMIcOU
-	Ed9R6VoHJz6ojZpnm6wyzU7Tsqf7pthx0wYRmUXsOzCwHHaTrmgAHclu4XDegvZA
-	DiksDbeX1XLj4MRc4TZ5D1Krv30wL/TSt/bhDywH1N+04E+8LJSHNiRHOYPL68JY
-	4xQ/EPYY6+2xBGokzePQ==
+	qcppdkim1; bh=/iAnF6RMBMR9Cv+V593XwuDhEfJct5e1WWwMk7XEDjQ=; b=ZC
+	I2gpH54cW/hFsVOguMvMRIRpZsGjffsTQ6ydCf+wlTbusRuvgzakMbyp+3R/gsfn
+	dykIvSZJzLmZqcZI0JPfYD5Brnq0X9yfbDhug0OoAhbPiZHN+uEKvsm6+dDJGHQr
+	Xrjbnrun9/3L4T5drKajst6rYxG8TMTFx3mgUfKgj1WfWSOJGht7Cca+h7N4Nz43
+	nmXTuKcxahxCRGX+CVWOeQS4JYhAwDbKAOPJd8t2Bw1ItTxbRcE42KcsK9kYVHRT
+	HZ7E/OpgQZ3UBe4drEpShDdeDRrsfMLQHa2jyggMsOx8BYdtLNpnzqxUjVzI/E3k
+	Bpyc1H0+1XjETXAM4KoQ==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x9ep4svjc-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3x9v8jhhgm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 Apr 2024 15:43:22 +0000 (GMT)
+	Fri, 05 Apr 2024 02:12:54 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 434FhLWw032731
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4352CrYV022972
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 4 Apr 2024 15:43:21 GMT
-Received: from [10.110.127.230] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Fri, 5 Apr 2024 02:12:53 GMT
+Received: from [10.216.59.212] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Thu, 4 Apr 2024
- 08:43:20 -0700
-Message-ID: <8ebbfc59-720f-4137-8aff-2014c33e7ffd@quicinc.com>
-Date: Thu, 4 Apr 2024 08:43:20 -0700
+ 19:12:51 -0700
+Message-ID: <65e994e1-8da9-470f-9b1e-b2db20974b2d@quicinc.com>
+Date: Fri, 5 Apr 2024 07:42:31 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3] wifi: ath12k: fix mac id extraction when MSDU
- spillover in rx error path
+Subject: Re: [PATCH v6 00/12] wifi: ath12k: Add single wiphy suppor
+From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+References: <20240401190409.2461819-1-quic_ramess@quicinc.com>
+ <0d1058eb-aced-4e81-9f61-e4b5a08c04a2@quicinc.com>
+ <bdf7abad-3d13-4085-8e75-c0d5ff4b41db@quicinc.com>
 Content-Language: en-US
-To: Nithyanantham Paramasivam <quic_nithp@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-References: <20240404141538.1277258-1-quic_nithp@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240404141538.1277258-1-quic_nithp@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
+In-Reply-To: <bdf7abad-3d13-4085-8e75-c0d5ff4b41db@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: w_KQNaRISUiS8RmYEBe_37IDe96AYAxp
-X-Proofpoint-GUID: w_KQNaRISUiS8RmYEBe_37IDe96AYAxp
+X-Proofpoint-GUID: hbJ3oNkSs0nRI806L6a3Zfhwnz_pPBNA
+X-Proofpoint-ORIG-GUID: hbJ3oNkSs0nRI806L6a3Zfhwnz_pPBNA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-04_11,2024-04-04_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 malwarescore=0
- bulkscore=0 impostorscore=0 clxscore=1015 spamscore=0 mlxscore=0
- priorityscore=1501 lowpriorityscore=0 suspectscore=0 adultscore=0
- mlxlogscore=272 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404040109
+ definitions=2024-04-05_01,2024-04-04_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ spamscore=0 malwarescore=0 phishscore=0 priorityscore=1501 adultscore=0
+ mlxscore=0 clxscore=1011 mlxlogscore=999 impostorscore=0 bulkscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404050015
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240404_084327_691206_CE72DC23 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20240404_191259_534485_798C6D54 
+X-CRM114-Status: GOOD (  17.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,31 +100,62 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/4/2024 7:15 AM, Nithyanantham Paramasivam wrote:
-> From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> 
-> Currently, in the rx error data path, mac id is extracted from the
-> last 64bits of MSDU end description tag for each entry received in
-> the WBM error ring. Then, each entry will be updated into the MSDU
-> list for further processing. The extracted mac id is valid when a
-> single MSDU is not fragmented and received in the WBM error ring.
-> 
-> In scenarios where the size of a single MSDU received exceeds the
-> descriptor buffer size, resulting in fragmented or spillover MSDU
-> entries into the WBM error ring. In this case, the extracted mac id
-> from each spillover entry is invalid except the last spillover entry
-> of the MSDU. This invalid mac id leads to packet rejection.
-> 
-> To address this issue, check if the MSDU continuation flag is set,
-> then extract the valid mac id from the last spillover entry.
-> Propagate the valid mac id to all the spillover entries of the single
-> MSDU in the temporary MSDU list(scatter_msdu_list). Then, update this
-> into the MSDU list (msdu_list) for further processing.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Signed-off-by: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
+
+On 4/2/2024 3:36 PM, Rameshkumar Sundaram wrote:
+> 
+> 
+> On 4/2/2024 1:04 AM, Jeff Johnson wrote:
+>> On 4/1/2024 12:03 PM, Rameshkumar Sundaram wrote:
+>>> From: Sriram R <quic_srirrama@quicinc.com>
+>>>
+>>> With the introduction of Multi Link Operation (MLO) support in
+>>> IEEE802.11be, each EHT AP/non AP interface is capable of
+>>> operating with multiple radio links.
+>>>
+>>> cfg80211/mac80211 expects drivers to abstract the communication
+>>> between such Multi Link HW and mac80211/cfg80211 since it depends
+>>> on different driver/HW implementation. Hence the single wiphy
+>>> abstraction with changes in datastructures were introduced in
+>>> "wifi: ath12k: Introduce hw abstraction"
+>>>
+>>> This patchset extends the implementation to allow combination
+>>> of multiple underlying radios into a single composite hw/wiphy
+>>> for registration. Since now multiple radios are represented by
+>>> a single wiphy, changes are required in various mac ops that the
+>>> driver supports since the driver now needs to learn on how to tunnel
+>>> various mac ops properly to a specific radio.
+>>>
+>>> This patchset covers the basic mac80211 ops for an interface bring up
+>>> and operation.
+>>>
+>>> Note:
+>>> Monitor and hw reconfig support for Single Wiphy will be done in future
+>>> patchsets.
+>>
+>> thinking about this series in the context of some other patches I've been
+>> reviewing recently, I don't think this series should be talking about
+>> supporting multiple radios with a single wiphy, but instead about 
+>> supporting
+>> multiple devices with a single wiphy. After all, the existing logic 
+>> already
+>> supports a single device with multiple radios, so it isn't the 
+>> multitude of
+>> radios that is the issue, it is the multitude of devices.
+> So far we are only combining radios of a device (ab) and registering it 
+> as single HW(ah) to mac80211. Currently ah will only contain radios of 
+> one device. Combining multiple devices into a single HW is different 
+> series (where ag will be introduced).
+> 
+> Having said that, even if multiple devices are combined with ag, at hw 
+> (ah) level there are only radios of multiple devices (ab) and hence 
+> these patches stay generic and call them as radios.
+>>
+>> this would have ramifications on many of the commit messages in this 
+>> series.
+>>
+> 
+Hi Jeff,
+Planning to re-spin v7 to address comments on PATCH 07/12, do you have 
+anymore comments on the commit text or other patches ?
 
