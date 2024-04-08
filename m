@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A83D8C67861
-	for <ath12k@archiver.kernel.org>; Mon,  8 Apr 2024 04:06:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46355CD128A
+	for <ath12k@archiver.kernel.org>; Mon,  8 Apr 2024 06:10:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qsJAqhXSweEBPBg9HK1r7+yGuF+eJzjANpxcUyWZmLw=; b=OCc94SX4S4ofzE4dYOI+XiJWNc
-	qYhV4V1Aibi87+0zLMMsRXrX+PqypnKZogsyuoFBmkYN0xJ0z49VMZ+kov2x405nZjph63bbFNG++
-	WrZNVOUF2W5r1oyfZKBb4UMTu8IrmLrzjmUMs1HpuucXNpYypV/c8IgVqTwQBE7jbXEfuklzun9nd
-	sA6vVgTsV8MHyFk0/DLJgF9gfVKqmiXecOJy33cYJOpwwPE4fDXyHrmBMZw4Jrb3wKboG32KWU55K
-	+TFuYE06JyIfJcWW7VXjnuMz4Cmjj+SUBNgonmPykhLZp5TvzYNZj6/lA/n2oTO+Na/l0DPrC9RbX
-	Za6Y8F9g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0wfZ8rzLe2A5JyPkL2g/V330bdgr7WTFR55jMBA7TEA=; b=e/b0cJKYQmPG1jhzA45ml09u7U
+	12PjXJ/Ei73879XbTGggHo/5gI7RVt5gqK1ltoWGUkZN2F2JgNB4XytjIKGe0CqX9zhFLeFSxXmPh
+	ySWWWJI2RmVVlHLAD9utA1oYglNjHQvh6uKAhGoWOlfDFW5Xo65E0T66qtL3HEw4fAYYwhpTSrcfH
+	0aDpRMjVIpdholuEKUpdtf6sIixCO0JPcOyEO3kbe8P8tqD6Wqk03luWkfo5H7dBqarzRuKUTgyam
+	N3vLMEF6D8VIuNKAUMCx5/w4ydknO+nSYdQehQBiGA0rSSYpN8CSiBDDc5tgx1kIMaTJEL30vE2JS
+	yb6A/5ZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtgGt-0000000EGEt-3GbI
+	id 1rtiCj-0000000EThe-3em7
 	for ath12k@archiver.kernel.org;
-	Mon, 08 Apr 2024 04:06:15 +0000
+	Mon, 08 Apr 2024 06:10:05 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rtgGp-0000000EGBi-0YQi
+	id 1rtiCh-0000000ETgr-3ClE
 	for ath12k@lists.infradead.org;
-	Mon, 08 Apr 2024 04:06:12 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4381xPvi020272;
-	Mon, 8 Apr 2024 04:06:10 GMT
+	Mon, 08 Apr 2024 06:10:05 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 4385iWJm010956;
+	Mon, 8 Apr 2024 06:10:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=qsJAqhXSweEBPBg9HK1r7+yGuF+eJzjANpxcUyWZmLw=; b=Nb
-	srotYqWmGLLZTX4tOuIgK7BDwvs3FP3KvYD+8solJeuL9vtxxV4CJHaqEkYyXKh+
-	xAF8c85xkYXInqXs6oM/2dg2aQllmNP7m5G9XR3KtgI52orywi+tMVbbNS+jT/lZ
-	d7augtmiM89q0tGIIB8R8er+qODumxHGAmrdXgU8rqxZ0isDLbYfyQwE0vcll6WZ
-	DW1MoFiLYD3yLmQOs6krsGNlFOfr+XOPsMu07HFJY3IUDh0qoLCAikzSwAxqnLLm
-	1lHEVRGseKNJ0qGcnQcesMbs1CcttOsVOvudRsY8B3+dXcvlDxyPwtmN4//aUl9y
-	LYGp8xO3rUU4C7KWiFqA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xaypdajuy-1
+	message-id:date:mime-version:subject:to:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=0wfZ8rzLe2A5JyPkL2g/V330bdgr7WTFR55jMBA7TEA=; b=fp
+	3mxkvy377shkTe6NqhDMyK8VQqsTLdPM4AcSZyOlhowD1hcEBxdwWY54maPbd479
+	hL/4i7AVefRc9ktsQAcjFcCo11fMlFe6UaEZM9uSUjplXguFJzYYdAuu3XFqZo4+
+	ttDy6GKUlROsxRhiU8h7BE0+46L9lgi8bRxkIYKAgDLP3lQOhFzU0gNE7SvcztOx
+	x9IefMdIGoSFK7DUMZTVOGHAqQpW1ZNyhMvBytW31rcV8R29dAx2nyYNC5N+UviV
+	eq9ofk/6Sam81bcRmZCVPEXD6feww9YiGnhvTlQFi/0r3dNLXgpQlzVZWFdqBT4b
+	SXUNAVac47dJorC/NuhA==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xc79vgb4t-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 08 Apr 2024 04:06:10 +0000 (GMT)
+	Mon, 08 Apr 2024 06:10:02 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43846A5x026306
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4386A1uO012228
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 8 Apr 2024 04:06:10 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.4; Sun, 7 Apr 2024 21:06:08 -0700
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-Subject: [PATCH 4/4] wifi: ath12k: Refactor data path cmem init
-Date: Mon, 8 Apr 2024 09:35:47 +0530
-Message-ID: <20240408040547.837639-5-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240408040547.837639-1-quic_periyasa@quicinc.com>
-References: <20240408040547.837639-1-quic_periyasa@quicinc.com>
+	Mon, 8 Apr 2024 06:10:01 GMT
+Received: from [10.231.195.68] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Sun, 7 Apr 2024
+ 23:10:00 -0700
+Message-ID: <73d44b87-57d1-4737-b6ff-c312a6b64852@quicinc.com>
+Date: Mon, 8 Apr 2024 14:09:58 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: WCN7850 disconnects and reconnects in a loop
+To: Gregoire Stein <gregoire.s93@live.fr>, <ath12k@lists.infradead.org>
+References: <adf6e7df-11c7-4692-ab8d-d53eb5675045@quicinc.com>
+ <AS8P190MB12056A9DFE1C0A1C6BB12EBB873C2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <AS8P190MB12056A9DFE1C0A1C6BB12EBB873C2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: e9EJzXP75Mi-HTQ3sUQ7CsNb6w00O9Pz
-X-Proofpoint-ORIG-GUID: e9EJzXP75Mi-HTQ3sUQ7CsNb6w00O9Pz
+X-Proofpoint-GUID: 26iqS3EBcr3X53hn5-WjS9jr_Kc5qCI1
+X-Proofpoint-ORIG-GUID: 26iqS3EBcr3X53hn5-WjS9jr_Kc5qCI1
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-08_02,2024-04-05_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- malwarescore=0 phishscore=0 bulkscore=0 clxscore=1015 impostorscore=0
- lowpriorityscore=0 suspectscore=0 spamscore=0 adultscore=0 mlxlogscore=895
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2404080029
+ definitions=2024-04-08_04,2024-04-05_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=965
+ priorityscore=1501 impostorscore=0 mlxscore=0 lowpriorityscore=0
+ malwarescore=0 clxscore=1015 phishscore=0 bulkscore=0 suspectscore=0
+ adultscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404080046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240407_210611_442324_2996B2F8 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20240407_231003_854118_B8BFE5FF 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,100 +99,47 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Move the data path Tx and Rx descriptor primary page table CMEM
-configuration into a helper function. This will make the code more
-scalable for configuring partner device in support of multi-device MLO.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.c | 44 +++++++++++++++++++++++-----
- 1 file changed, 37 insertions(+), 7 deletions(-)
+On 4/4/2024 11:41 PM, Gregoire Stein wrote:
+> Hello,
+> now i'm on the last commit of master-pending 
+> (6.9.0-rc2-wt-ath-1-mainline-g853450ce5ca0)
+> here are the various logs you asked for: 
+> https://gist.github.com/GreyXor/927e7871e70630beabb522aeddc5891e
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index c8b2eb80b160..11d44e180b54 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -14,6 +14,11 @@
- #include "peer.h"
- #include "dp_mon.h"
- 
-+enum ath12k_dp_desc_type {
-+	ATH12K_DP_TX_DESC,
-+	ATH12K_DP_RX_DESC,
-+};
-+
- static void ath12k_dp_htt_htc_tx_complete(struct ath12k_base *ab,
- 					  struct sk_buff *skb)
- {
-@@ -1455,11 +1460,39 @@ static int ath12k_dp_cc_desc_init(struct ath12k_base *ab)
- 	return 0;
- }
- 
-+static void ath12k_dp_cmem_init(struct ath12k_base *ab,
-+				struct ath12k_dp *dp,
-+				enum ath12k_dp_desc_type type)
-+{
-+	u32 cmem_base;
-+	int i, start, end;
-+
-+	cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
-+
-+	switch (type) {
-+	case ATH12K_DP_TX_DESC:
-+		start = ATH12K_TX_SPT_PAGE_OFFSET;
-+		end = start + ATH12K_NUM_TX_SPT_PAGES;
-+		break;
-+	case ATH12K_DP_RX_DESC:
-+		start = ATH12K_RX_SPT_PAGE_OFFSET;
-+		end = start + ATH12K_NUM_RX_SPT_PAGES;
-+		break;
-+	default:
-+		ath12k_err(ab, "invalid descriptor type %d in cmem init\n", type);
-+		return;
-+	}
-+
-+	/* Write to PPT in CMEM */
-+	for (i = start; i < end; i++)
-+		ath12k_hif_write32(ab, cmem_base + ATH12K_PPT_ADDR_OFFSET(i),
-+				   dp->spt_info[i].paddr >> ATH12K_SPT_4K_ALIGN_OFFSET);
-+}
-+
- static int ath12k_dp_cc_init(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
- 	int i, ret = 0;
--	u32 cmem_base;
- 
- 	INIT_LIST_HEAD(&dp->rx_desc_free_list);
- 	spin_lock_init(&dp->rx_desc_lock);
-@@ -1482,8 +1515,6 @@ static int ath12k_dp_cc_init(struct ath12k_base *ab)
- 		return -ENOMEM;
- 	}
- 
--	cmem_base = ab->qmi.dev_mem[ATH12K_QMI_DEVMEM_CMEM_INDEX].start;
--
- 	for (i = 0; i < dp->num_spt_pages; i++) {
- 		dp->spt_info[i].vaddr = dma_alloc_coherent(ab->dev,
- 							   ATH12K_PAGE_SIZE,
-@@ -1500,12 +1531,11 @@ static int ath12k_dp_cc_init(struct ath12k_base *ab)
- 			ret = -EINVAL;
- 			goto free;
- 		}
--
--		/* Write to PPT in CMEM */
--		ath12k_hif_write32(ab, cmem_base + ATH12K_PPT_ADDR_OFFSET(i),
--				   dp->spt_info[i].paddr >> ATH12K_SPT_4K_ALIGN_OFFSET);
- 	}
- 
-+	ath12k_dp_cmem_init(ab, dp, ATH12K_DP_TX_DESC);
-+	ath12k_dp_cmem_init(ab, dp, ATH12K_DP_RX_DESC);
-+
- 	ret = ath12k_dp_cc_desc_init(ab);
- 	if (ret) {
- 		ath12k_warn(ab, "HW CC desc init failed %d", ret);
--- 
-2.34.1
+Thanks for the logs.
+
+ From dmesg and NetworkManager logs, connection and EAPOL frames are 
+good, but DHCP transaction fails. IWD logs show 'Del Station' event 
+received after EAPOL is done. So guessing 3rd party triggers 'Del 
+Station' due to some unkown reasons (DHCP session failed?).
+
+In order to know who triggers 'Del Station', could you help reproduce 
+this issue and collect mac80211/cfg80211 trace?
+
+Below steps for your consideration:
+
+1. enable tracing on mac80211/cfg80211
+	# echo 1 > /sys/kernel/debug/tracing/events/cfg80211/enable
+	# echo 1 > /sys/kernel/debug/tracing/events/mac80211/enable
+
+2. recording trace to local file
+	# cat /sys/kernel/debug/tracing/trace_pipe > trace.log
+
+3. reproduce this issue
+
+4. share full/verbose kernel/ath12k/IWD/NetworkManager logs, just like 
+before, and trace log to us. Air sniffer logs are useful as well if 
+possible.
+
+> There are iwd, networkmanager and dmesg
+> iwd is launched with -d and the ath12k module with the debug flag
+> thanks
+> 
+And one more question, is this issue specific to AP? could you try other 
+APs or could you try other client with this same AP? We can do 
+comparison to narrow down.
+
 
 
