@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E200C67861
-	for <ath12k@archiver.kernel.org>; Tue,  9 Apr 2024 11:39:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FA08C67861
+	for <ath12k@archiver.kernel.org>; Tue,  9 Apr 2024 11:47:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=52K6ZsGlHshOaZhVpxg/PolkAJXc6RGy4HE4PA5BWrs=; b=A3/4fhIORHG7L75/yiBJiouGEa
-	xh2vs2yEToLp0uuzpotYm9BqRJ/BU8jFaftNsBl+ONtzXt29W0Dpz5LzlmJAKkAaT/20PcKRGy9Gs
-	zLV3mWGm7AY+fhVh/lLwrxY92adFRiw5sPE/Xg2pZLkeeK0lb/ZAIGMTQ1Lom5yk6OeDEKoHIQK26
-	Bp4aI1vJzWzK3OZCwl/BmYxXr9TWrhLoC1pJ3B7vaBBoIgXLZ0Bd0IbwPmhrbtHM1OK2Ax6euTbva
-	bl7jJ2M61I/9MdIOcklo6iOEosAf0lKUxAOXQA8EbGP+GBG9GWVEfbXX7BATSkVOA3ZsQcI4yi24B
-	ZZq7uPGQ==;
+	bh=Woe2De6lsflDHKTZq1uvLf+zs7Qou7UleKz7+DFao0I=; b=soRA77cfQ/B4deju1m81vmz0oT
+	IMUvJRC3woLvC6Odxhg+7dyl4npvrZdr8Q3SNmEcjL16WeZAY8Z9G2ytq24WwlxIibVUBBzCvy2x6
+	rqD5eKBN//M3pD0GYElTFnJe++GYH8ZqmvNTh1lRzF+Bnl3sm/rcfkF8XEuPAcVoS8mKy2jwjWRcm
+	E8PqMLvx4A9rqteZmKOjl1b5va186ytO78iZL2ch2Z6U8sjg6OtpoPE8YmFMPD7DersDmsprGLKSJ
+	dXqgFGyw2iRwz+HoDKBG2sfau+7mcESE2O2l+zgAPTeqdpzxeEbN5K37eru54CNcT/nkf4hkRF4mE
+	zUSHPzCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ru9or-00000001jU8-3BHx
+	id 1ru9x0-00000001mWe-4AvO
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Apr 2024 11:39:17 +0000
+	Tue, 09 Apr 2024 11:47:43 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ru9oo-00000001jSO-09Aw
+	id 1ru9ws-00000001mUl-2Ndq
 	for ath12k@lists.infradead.org;
-	Tue, 09 Apr 2024 11:39:15 +0000
+	Tue, 09 Apr 2024 11:47:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2B803616AC;
-	Tue,  9 Apr 2024 11:39:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F1ADC433F1;
-	Tue,  9 Apr 2024 11:39:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 14D92616C2;
+	Tue,  9 Apr 2024 11:47:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4694C433C7;
+	Tue,  9 Apr 2024 11:47:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712662752;
-	bh=52K6ZsGlHshOaZhVpxg/PolkAJXc6RGy4HE4PA5BWrs=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=X7lF7Ui+Bfg2SJ+rdfvhr4yp/THmfMtSGethisFuz9zcMbWsFbpyJqjUrDgjgFoF8
-	 uZ9SD3Wuvip/WO15vQAbn+OtUN6pfnzzbUqPsqkfXlqZPM7v+Dma+7tUHPXABOFILq
-	 /l+B1bRY2eQtvb2twnkSQVJGRkYiELJvK2jaDMYdZ78VboO6OJCRQdcskS/2g2xDAa
-	 klKB5RyovbgqZ+Vu8DLuS12X1gYiRRMl8BN+p/h/LqB61Jc2iJ8rnR/IuUyZJvmGsR
-	 FPEx3Pj1y6AAbHNpbVAIh+w3kYKhSFSorD2IedyQqf82jPi6PbpdRWH2BQFRvxPqQf
-	 2IzfUiwRQGqqg==
-From: Kalle Valo <kvalo@kernel.org>
-To: Gregoire <gregoire.s93@live.fr>
-Cc: ath12k@lists.infradead.org
-Subject: Re: WCN7850 disconnects and reconnects in a loop
-References: <87ttkc1dkp.fsf@kernel.org>
-	<AS8P190MB1205F5A75A6569B2E6F6C02687072@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
-Date: Tue, 09 Apr 2024 14:39:10 +0300
-In-Reply-To: <AS8P190MB1205F5A75A6569B2E6F6C02687072@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
-	(Gregoire's message of "Tue, 9 Apr 2024 12:49:33 +0200")
-Message-ID: <87a5m222ap.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1712663253;
+	bh=NmvLM1sOjZAvzKIwPzVoLWwGrDkjhXoEpGYTq24dtbc=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=Ikt20URzd2sHZawhvH3y3uczgDi/j/XjqzTp+Iq5TqJL8mZz0LV+VlmQ2HiR2Uqz4
+	 4+h2VB4vAGSV1iJ+GsZixeqiRWDVtXLL0nVJ+SwKxwBClnkXb+cjTNmSu0XjzQvAhP
+	 0Rhal7808mZMnxGLEUQlC+3+CbDw4IK5mq0VUp/seeA8We/o7IEdCkVPgGRscxg+gE
+	 zwatwFlPGH4f1oi6MFkw52spbX1mZNQb4EMEKVL0YYewwvc+VEhFmIatRk9MRXBG4x
+	 /3JsfzqSRtMBjtmgYMmsLrYVYDJfHxw6Xpg/6gQcNj71bmqXu4MV3RbJtPv6KfKjud
+	 OszUSkBRFxNRQ==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Subject: Re: [PATCH] wifi: ath12k: correct the capital word typo
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240405144524.1157122-1-quic_periyasa@quicinc.com>
+References: <20240405144524.1157122-1-quic_periyasa@quicinc.com>
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171266325125.3197288.14300733414199687268.kvalo@kernel.org>
+Date: Tue,  9 Apr 2024 11:47:32 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240409_043914_199698_BAAA60CA 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20240409_044734_738587_202DC486 
+X-CRM114-Status: UNSURE (   5.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,26 +75,22 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Gregoire <gregoire.s93@live.fr> writes:
+Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
 
-> I've found a workaround:
-> I had to add
-> [General]
-> =C2=A0ControlPortOverNL80211=3Dfalse
->
-> in my /etc/iwd/main.conf
->
-> And now I can connect and I don't have this issue anymore.
->
-> are there any plans to avoid having to add this option in iwd?
+> Rename the "ATH12k" word to "ATH12K" for consistent capitalization in the
+> word.
+> 
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-To make it easier to track this I recommend filing a bug to bugzilla:
+Patch applied to ath-next branch of ath.git, thanks.
 
-https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugreport
+df1f2b947ffa wifi: ath12k: correct the capital word typo
 
---=20
-https://patchwork.kernel.org/project/linux-wireless/list/
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240405144524.1157122-1-quic_periyasa@quicinc.com/
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
-hes
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
