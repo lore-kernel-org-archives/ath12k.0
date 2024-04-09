@@ -4,94 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D32CCD1284
-	for <ath12k@archiver.kernel.org>; Tue,  9 Apr 2024 12:21:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E297ECD1284
+	for <ath12k@archiver.kernel.org>; Tue,  9 Apr 2024 13:12:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=s4fqpEXDdKyMGZdE5RRDhqIm8vMvf8Nw2PrnW7+njjc=; b=enFrA1P7yuw4oXkXyaQwqH/ulk
-	d+3DMf5HcTeB/YnL7jNslat9E67C2G8pY9Vp3CrTJtmG4wWCND7h1oQCnczF7a9E8gWjbkAWJf+yT
-	4tl8bVQOLaeLqB5dH/d2BhtAdSNspM1qC4gofMWky99Klr5Idhlycxwe6qI3p/PHNlLyT/ru/VP0A
-	CZW+DFaxA0kreO2PDZug0d/P2nSn7G6FVAJ6wq/oC7asCtTR1AJufwft6rlNwaMV281p8iTwpFasD
-	ScreDQCNg/6WlopiRZPNOq/RQh5X1t9czLNvK0LrekDmi7QcpNEs2OlaYNyL8syis9baW5GLkL478
-	YnBgIyKQ==;
+	bh=D05jVT04ubtfeqLgxycRb++touGA4MvlypFtOarNi9M=; b=f49fh+pIYih1OUmlrts1erQYLw
+	Sv3jUfrdVZj6jMXf6V9n8Xk5icfVLNoSoApY9z6ARPmNYPUSThV6E8kAiszD82dBWGEfd5iSNdoT6
+	h2aFrtGBl7a/Mwnq+BLucyLe3z0K3VgybBoxXjSGJio92hBORBlNwRB7NixV4XyvhERTAqSOYEnpY
+	Ml0p8yvyDeY6YH2QmM1raNDuZCNEu0ld23elbUNkkBXfT0YKPD6kycgNsq9vXym3053l61+5YR/80
+	bNtLZc8WfF8LXpVtCULt2mfO6kQ9xgI7xeC2QbZvsFnxSRWQQe5uyajbmpDpST1BWEaZ3GA4zm2fw
+	OUFezMEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruATi-00000001uBD-3HPJ
+	id 1ruBGb-000000024a6-2ZvF
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Apr 2024 12:21:33 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 09 Apr 2024 13:12:01 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruATe-00000001u7B-2911
+	id 1ruBGY-000000024Za-3sNh
 	for ath12k@lists.infradead.org;
-	Tue, 09 Apr 2024 12:21:28 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 439BnMnP026280;
-	Tue, 9 Apr 2024 12:21:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=s4fqpEXDdKyMGZdE5RRDhqIm8vMvf8Nw2PrnW7+njjc=; b=Ts
-	ZDflNxp0vvvfG9VN6DXrZdR16g9d/8VhHqm3/4kr0iY1UmQ5jSjLL+b9xohERQhP
-	nC1mXzedR49z1w0AKhw67O5F3tpAffQsl3olBh4Jw/OmwrsNeE705BiinxAAHpgO
-	owx8qsevMGK2OmekpU2OdniAnxa7wqk+YH9IOgxs9h2XRAPDWMu0fwnxAKiXd8zl
-	Vh2kNvXpzEHdgARelt/EgvtjtyWVfFCQTGtppoMFYltgGE3Uki4aoUUMSmdcRsjC
-	Ksvwl7AHyQmnANzoTPCbdMVwAJ3PJXkzITb80KFSFW/LIYipTrgAJac3W3+DOQzA
-	vTotPfoqKaIH5qxO3e7Q==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xd3nbr7c3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 09 Apr 2024 12:21:21 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 439CLKe6030644
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 9 Apr 2024 12:21:20 GMT
-Received: from [10.110.24.102] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Tue, 9 Apr 2024
- 05:21:19 -0700
-Message-ID: <4038e991-9207-4033-930a-a14eae4a526f@quicinc.com>
-Date: Tue, 9 Apr 2024 20:21:16 +0800
+	Tue, 09 Apr 2024 13:12:00 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1203D61693;
+	Tue,  9 Apr 2024 13:11:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECC47C433F1;
+	Tue,  9 Apr 2024 13:11:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712668317;
+	bh=yNWKLlKli6iMQOIcwUEwFPXvgyeGHeWbC8FzjyW/3LU=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=FiLRhJhbFIFEcuDboqD5uLTzyZZvJksybkUP8jsSVs6shIeTbnSGlcVC8arESbl/o
+	 gvMbB/yNs6laNrKeovF0szUXq38kuYhkxTY+bSnZ/4fzCpzAzszWKdWozUUtmwgZOO
+	 EViqFlBWIB1AaCdSr+2WAkbgpuTSzXpFMvJz3coWoU6JJcA6e9TCt7ZQbEmqYl+c5z
+	 qutGF7hLj9jiFTgx/UoLlghOXGJD05QPBWuOUiZWjrhDnd2jaIQDQKEkPa8jqNMVCI
+	 EX/kuYGWexsjfbeRYLYosomCZEgryjbPnwXhpveUbguF5HXlcxfkmG+ETtOFd6K6dg
+	 JUMpw5O+WkElg==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4] wifi: ath12k: report tx bitrate for iw dev xxx station
- dump
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240219095802.1147-1-quic_lingbok@quicinc.com>
- <87y1b7jkxu.fsf@kernel.org>
- <6f39eb1c-97f7-4029-a5f2-5ab36ff0f0a6@quicinc.com>
- <877ciq9h3e.fsf@kernel.org>
- <4e67118d-80e4-422e-aa39-73b891ee6042@quicinc.com>
- <87a5nkkfs1.fsf@kernel.org>
- <fd8384dc-b35f-477e-aac3-b7a5f49ce712@quicinc.com>
- <87ttl9drii.fsf@kernel.org>
-Content-Language: en-US
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-In-Reply-To: <87ttl9drii.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: a-KKjqNZk0CNyitMZmIZtfi3wPuKA00_
-X-Proofpoint-GUID: a-KKjqNZk0CNyitMZmIZtfi3wPuKA00_
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-09_08,2024-04-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 mlxscore=0
- lowpriorityscore=0 clxscore=1015 phishscore=0 impostorscore=0 bulkscore=0
- spamscore=0 adultscore=0 suspectscore=0 priorityscore=1501 mlxlogscore=980
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2404090079
+Subject: Re: [PATCH] wifi: ath12k: add display tx and rx bitrate for 11be
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240104032202.19472-1-quic_lingbok@quicinc.com>
+References: <20240104032202.19472-1-quic_lingbok@quicinc.com>
+To: Lingbo Kong <quic_lingbok@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171266831537.3271006.6908994091119638561.kvalo@kernel.org>
+Date: Tue,  9 Apr 2024 13:11:56 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240409_052126_673742_4067E02C 
-X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-CacheID: sfid-20240409_061159_103937_B99A04DD 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,55 +73,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Lingbo Kong <quic_lingbok@quicinc.com> wrote:
 
-
-On 2024/3/14 18:41, Kalle Valo wrote:
-> Lingbo Kong <quic_lingbok@quicinc.com> writes:
+> When AP is in 11be state, STA's tx/rx bitrate display error value using iw
+> dev wlan command.
 > 
->>>>>>
->>>>>> Ok, i will apply it in next version. Thanks for pointing out.
->>>>> After rereading my comments maybe keep the title simple like:
->>>>>      wifi: ath12k: report station mode transmit rate
->>>>> But it would be good to clarify in the commit message what modes
->>>>> this is
->>>>> supported. And what hardware families support this.
->>>>
->>>> Hi kalle, Could you please offer your opinion on this commit message?
->>>>
->>>> wifi: ath12k: report station mode transmit rate
->>>>
->>>> Currently, the transmit rate of "iw dev xxx station dump" command
->>>> always show an invalid value.
->>>>
->>>> To address this issue, ath12k parse the info of transmit complete
->>>> report from firmware and indicate the transmit rate to mac80211.
->>>>
->>>> This patch only applies to the WCN7850's station mode.
->>>>
->>>> After that, "iw dev xxx station dump" show the correct transmit rate.
->>>> Such as:
->>>> tx bitrate: 104.0 MBit/s MCS 13
->>>> tx bitrate: 144.4 MBit/s MCS 15 short GI tx bitrate: 626.9 MBit/s
->>>> 80MHz HE-MCS 6 HE-NSS 2 HE-GI 0 HE-DCM 0 tx bitrate: 1921.5 MBit/s
->>>> 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
->>> Looks good, except for readability I would add an empty line after
->>> "Such
->>> as:".
->>> I noticed that the signal patch depends on this patchset:
->>> https://patchwork.kernel.org/project/linux-wireless/patch/20240219111417.1185-1-quic_lingbok@quicinc.com/
->>> In that you should submit both patchses in same patchset. But please
->>> wait until I have reviewed the signal strength patch.
+> In ath12k_dp_tx_update_txcompl() function, not handle the case when
+> pkt_type is equal to HAL_TX_RATE_STATS_PKT_TYPE_11BE, so add a else if
+> statement to handle this situation.
+> 
+> In ath12k_dp_rx_h_rate function, not handle the case when pkt_type is equal
+> to RX_MSDU_START_PKT_TYPE_11BE, so add a case statement to handle this
+> situation.
+> 
+> After that, "iw dev xxx station dump" show the correct tx bitrate such as:
+> tx bitrate: 1441.1 MBit/s 80MHz EHT-MCS 13 EHT-NSS 2 EHT-GI 0
+> rx bitrate: 1441.1 MBit/s 80MHz EHT-MCS 9 EHT-NSS 3 EHT-GI 0
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Tested-by: Owen Mesh <owen.mesh@gmail.com>
 
-Hi Kalle,
-Please ignore the patches submitted separately below.
+Lingbo asked me to drop this patch.
 
-[PATCH v4] wifi: ath12k: report tx bitrate for iw dev xxx station dump
-[PATCH] wifi: ath12k: report signal for iw dev xxx station dump
-[PATCH] wifi: ath12k: add display tx and rx bitrate for 11be
+Patch set to Superseded.
 
-I will resubmit these patches in same patchset:)
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240104032202.19472-1-quic_lingbok@quicinc.com/
 
-Best regards,
-Lingbo Kong
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
