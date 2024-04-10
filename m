@@ -4,103 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DFF2CD11C2
-	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 16:44:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26EEDCD128A
+	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 16:52:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DVcdRZ6eqz+T3w22YHI59T7kAHIRAD7xVI8539GYqXI=; b=r8QGJlRFp1N8Zwvz4uhwszmtFf
-	rqGH3kCBKHnRxKmFWDisSQF1lGuN7xK79JhQcBwUf+nOcaT3TMtJ2NdSAkl4KFS4hoi/YrqvTy31I
-	/NQ/od6s4PrsJNU2w4B2rdZgIr/r61nfmSDJVLXBzhJcdcF35qzve5CxhAh6eucnyaBRU5XNmKMBY
-	kKzsFUGTHygH7pv8dskEWNREsr65OBlB2Wak0vBY9MAqo3mv8CzM4dp49vfbZLlQfAC6gJQBMHALF
-	3Mhew24hBU5pZjLBa08ihcV+iiGOsvClG4OGRaiz9y5GkCUUy6B9EGOyJO4SelwLq39c1kdrGk8xL
-	mu/JOMJQ==;
+	bh=PZ5Xd+5UAr5QCT79N09AiNz7T8/on2P/RvirmiBIQio=; b=BA3GNjucRbe9jH0KhDnZnxAPlF
+	3/NJblAULXv1FnrTnCpC+tT1awldWntogVed1KKuqlx6ilw5ftSLi6ZDGuRXI8T2k/RWRVu/7qO0y
+	SmKp9gowE9p8eYveqVhqibXN1pfNj7D68aJKBzQkLNQHTUpkeZ3khjJOGMIIBR9zYBLxQQM1uwKt7
+	ru52eIlFlY5ocinl0Ad4jzQQfUJIn+mYN/5dFL8mgrhAac7yLaUtS4lTKMgrrinC8iXf/IPj/tXba
+	FepxBiiAyOjRrOWS1JfdfLNC5n+XiKHwV00fBZ1Yssxty/WepjG0qF7oANJBwhvTYYqtOKt9wPlcY
+	cV/p2I2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rub3x-0000000853K-0epE
+	id 1rubBR-000000086CP-3H25
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Apr 2024 16:44:41 +0000
+	Wed, 10 Apr 2024 16:52:25 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rub3u-0000000852d-3TRT
+	id 1rubBL-000000086Ba-3SP8
 	for ath12k@lists.infradead.org;
-	Wed, 10 Apr 2024 16:44:40 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43ABqRqV026347;
-	Wed, 10 Apr 2024 16:44:37 GMT
+	Wed, 10 Apr 2024 16:52:23 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43ACJVCl015865;
+	Wed, 10 Apr 2024 16:52:17 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=DVcdRZ6eqz+T3w22YHI59T7kAHIRAD7xVI8539GYqXI=; b=pQ
-	lmwK6decJ2Npp0PDXMh3/PJsO82k+/9NVgW7yRL0HH8bAf6uRE1/y2sOG72Shmtn
-	03hc2YKWw5hdhDJl3gyJ/wIS2/0W4aKXo2HMJq2gjnxSAFC13nLg4eglSxPi7vFG
-	XXgm14zlIMf6q/OqnCTY0sDBM8GRYXY0PGDDccR277zGP1MmIeuSaH+c0PXr19Cw
-	Ss/JeleuZc3SeinUODbsNqJwY2nxNzzeJFQf/Ku6QHx1oL9LtiERVptb0sOOQT7j
-	BI9kj1AAW+lhytNN9pIgqktF29LFkepkQ27v95Vfpi1ILEuHoEFbXjQd8ILpgoqu
-	5O+dDaNk0ETiPV0biNag==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xdjtmv41x-1
+	qcppdkim1; bh=PZ5Xd+5UAr5QCT79N09AiNz7T8/on2P/RvirmiBIQio=; b=Pa
+	efrWIfS+h+r+4XOBuFAiI5GuZhEuszSzCf490t7rPk6fA8sxaKNTK78NZ4EJuJed
+	5xVPTGTSQ6GHsWl46XYqWYFGD4D9/l2hqRTlFItdSnOXc1pkEn6lKXs8mz7wylh4
+	A+wsOSpBRyfqPkZgE7sVrNWvFqbIRRDQ6ym/ReTAiKc9oFLZEm7Igo6UUcd7sZzn
+	H1VzRzrjUoSGTdJlZcSSuTTOfFB/rgVnTQ5Pm32HseF8vgnNkYAS+pa1zGRAmc4q
+	zj7cqk4KgeoyIwp/1293M6acXLla5hiUJF80Lqyp4H0K3rPBDTiRUz8Mu4nkKrTZ
+	pC1/DlCa6VMQnnor8S6A==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xdrkp9t9c-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Apr 2024 16:44:36 +0000 (GMT)
+	Wed, 10 Apr 2024 16:52:17 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43AGi0IB018974
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43AGqGuP018813
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Apr 2024 16:44:00 GMT
+	Wed, 10 Apr 2024 16:52:16 GMT
 Received: from [10.110.37.144] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 10 Apr
- 2024 09:44:00 -0700
-Message-ID: <0cfe990b-182b-4ceb-b5b4-2989fefedb2f@quicinc.com>
-Date: Wed, 10 Apr 2024 09:43:59 -0700
+ 2024 09:52:15 -0700
+Message-ID: <3c9ea861-3964-4ae3-9c49-06760ef15406@quicinc.com>
+Date: Wed, 10 Apr 2024 09:52:14 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
- radio in one wiphy
+Subject: Re: [PATCH 02/13] wifi: nl80211: send underlying multi-hardware
+ channel capabilities to user space
 Content-Language: en-US
-To: Ben Greear <greearb@candelatech.com>,
-        Johannes Berg
-	<johannes@sipsolutions.net>,
+To: Johannes Berg <johannes@sipsolutions.net>,
         Vasanthakumar Thiagarajan
 	<quic_vthiagar@quicinc.com>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>,
         <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
+CC: <linux-wireless@vger.kernel.org>, <netdev@vger.kernel.org>,
+        Jakub Kicinski
+	<kuba@kernel.org>
 References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
- <20240328072916.1164195-2-quic_periyasa@quicinc.com>
- <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
- <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com>
- <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
- <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com>
- <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
- <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com>
- <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
- <aa9e1d54-bb5f-37cc-335f-c9970ab13789@candelatech.com>
+ <20240328072916.1164195-3-quic_periyasa@quicinc.com>
+ <6d92d0ba4a8764cd91cc20c4bd35613bcc41dfcd.camel@sipsolutions.net>
+ <9d5c2f9f-19b5-af4d-8018-1eb97fac10d6@quicinc.com>
+ <9d0f309da45ae657cd2ce0bc11a93d66e856ef64.camel@sipsolutions.net>
+ <b455f267-9552-be3b-95b0-a036bfa8e14a@quicinc.com>
+ <902dd36fa5ab0503377e558b92505fe499f666fa.camel@sipsolutions.net>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <aa9e1d54-bb5f-37cc-335f-c9970ab13789@candelatech.com>
+In-Reply-To: <902dd36fa5ab0503377e558b92505fe499f666fa.camel@sipsolutions.net>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: B91KCFTd9RwWLgkAcKdn3SK7FDjhGDo4
-X-Proofpoint-ORIG-GUID: B91KCFTd9RwWLgkAcKdn3SK7FDjhGDo4
+X-Proofpoint-GUID: e_vJnnS5KvkjJl3oh0dXumNhbB-g4bzS
+X-Proofpoint-ORIG-GUID: e_vJnnS5KvkjJl3oh0dXumNhbB-g4bzS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-10_04,2024-04-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- impostorscore=0 spamscore=0 bulkscore=0 phishscore=0 mlxlogscore=783
- mlxscore=0 priorityscore=1501 suspectscore=0 adultscore=0
- lowpriorityscore=0 clxscore=1011 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2404010003 definitions=main-2404100123
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
+ bulkscore=0 lowpriorityscore=0 adultscore=0 spamscore=0 malwarescore=0
+ mlxscore=0 mlxlogscore=853 phishscore=0 priorityscore=1501 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
+ definitions=main-2404100123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240410_094438_938923_03AE89B2 
-X-CRM114-Status: GOOD (  32.02  )
+X-CRM114-CacheID: sfid-20240410_095222_121903_9F85CC60 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,99 +113,16 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/10/2024 9:23 AM, Ben Greear wrote:
-> On 4/10/24 08:42, Johannes Berg wrote:
->> On Wed, 2024-04-10 at 07:37 -0700, Ben Greear wrote:
->>> On 4/10/24 00:56, Johannes Berg wrote:
->>>> On Fri, 2024-03-29 at 07:47 -0700, Ben Greear wrote:
->>>>> On 3/29/24 07:30, Johannes Berg wrote:
->>>>>> On Fri, 2024-03-29 at 19:41 +0530, Vasanthakumar Thiagarajan wrote:
->>>>>>>>
->>>>>>>>> + * @hw_chans: list of the channels supported by every constituent underlying
->>>>>>>>> + *	hardware. Drivers abstracting multiple discrete hardware (radio) under
->>>>>>>>> + *	one wiphy can advertise the list of channels supported by each physical
->>>>>>>>> + *	hardware in this list. Underlying hardware specific channel list can be
->>>>>>>>> + *	used while describing interface combination for each of them.
->>>>>>>>
->>>>>>>> I'd expect there to be a limit on channels being within a single band on
->>>>>>>> a single "hardware"?
->>>>>>>>
->>>>>>>
->>>>>>> There are ath12k hardware supporting multiple band which need to be
->>>>>>> registered under one mac80211_hw/wiphy. This design is to support such
->>>>>>> hardware.
->>>>>>
->>>>>> Oh OK, that was something that I didn't have in mind any more, or never
->>>>>> knew or paid attention to.
->>>>>
->>>>> Would it work to leave the phy reporting pretty much as it is now, but add
->>>>> a 'associated_peer_radios' list section, so that each phy could report the phys
->>>>> associated with it?  Then user-space, driver, mac80211 etc could look up the
->>>>> other phys as needed to get a full picture?
->>>>>
->>>>
->>>> There's not really a good way to _do_ that short of creating multiple
->>>> wiphys, but that causes _massive_ complexity in the stack (both cfg80211
->>>> and mac80211) so we rejected it years ago.
->>>
->>> I thought the problem ath12k is trying to fix is that there are currently multiple phys (radios) that needed to be made to
->>> look like a single phy?
->>
->> Correct.
->>
->>> For dual and tri-concurrent radios, I think we will need them to look like 3 individual radios for non-MLO use
->>> cases
->>
->> No, I don't see why, and if you want that we wouldn't support it anyway,
->> you'd have to have a module option or something to decide which way to
->> go.
->>
->> But it really ought to not be needed - the point of these patches is to
->> give userspace enough information to know how to (and where) to create
->> separate BSSes, with or without MLO between them.
-> 
-> If phy0 told user-space that phy1 and phy2 were 'mlo peers', and phy1 and phy2
-> gave similar mapping, couldn't user-space just notice the peer group and then
-> have all the info it needed without the bulk of the patch set in question?
-> 
-> So then if hostapd wants to have 3 radios in an mlo grouping, it can do so.
-> 
-> And if instead it wants three old-style wifi-6 AP interfaces, it could do that
-> as well.  I don't see why it would need any module option, and I also do not
-> see why it could not do both behaviours concurrently (one BSSID being MLO, second one
-> being non MLO, for instance).
-> 
->>> For instance, mt7996 currently reports 3 single-band wiphys, and each can be used independently.
->>> But assuming it starts supporting MLO, then those 3 single band wiphys will need to start acting
->>> at least somewhat like a single entity
->>
->> Yes.
->>
->>> (while also concurrently being able to act as individual
->>> wiphys so that one can do a mix of MLO and non MLO sta/AP.)
->>
->> No.
-> 
-> How will you allow all three bands/phys to host bssids that can talk to
-> wifi-6 and earlier stations if there is only a single phy seen by hostapd?
-> 
-> I definitely want to put STA vdevs on the three individual 7996 phys and have them
-> be able to talk to non MLO APs. This currently works.
-> 
-> I suspect other use cases, such as meshing with non MLO APs may also want
-> this sort of ability.
-> 
-> Thanks,
-> Ben
-> 
+On 4/10/2024 12:59 AM, Johannes Berg wrote:
+> I found the code that needs it later, just that Karthikeyan was using
+> the wrong explanation for it ... I'd hoped he'd understand your own code
+> better ;-)
 
-Ben, the patches we have posted so far allow ath12k to either have each phy
-assigned to a separate wiphy (legacy operation) or have multiple phys assigned
-to a single wiphy (required for MLO operation). In an upcoming patch we'll
-introduce a DT-driven mechanism to perform the mapping of phys to wiphys. So
-the goal is to be able to support both modes of operation.
+Internally I'm stressing the need to provide sufficient information in these
+patches so that you (and I!) can understand the entire scope. Please continue
+to let us know when we are failing.
 
-/jeff
+(bcc to our internal development list)
 
 /jeff
 
