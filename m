@@ -4,69 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83001CD1296
-	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 07:59:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40F4CCD11C2
+	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 08:50:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8yJzNJsbUcZyMZ+JVyPnDvNkzO3Jhk9AuCTJ1rgbO+o=; b=cOZvazaD/T4O8XNOhVO1gBV9W7
-	xf8Gm5nLiw37NdeSdRRcgxUmt9I/DLFVLAGmCpLEV+ZuuxalLj7l62KKavOjMJIOxXxILyEruRPl5
-	bpFAz6TDQizr9xEsuVEME11Fgh15R3DkvBKVhBvxiryWzOpraGQYOxxg3nDDukGX6O070cZEDZiw6
-	qtPIeauSts5TCHq6MiQA9Wrhw9RYxPuGaYfQkZDjNkXcNxNydqlIfnvbmrLeDPw1b82TprTUMko5C
-	jXaBES1XeL1earQfYysOa0igX0XOxLC7TEjTEZqZmpd5iEbfZR4snMI6cuXNjI+iwx/35O1lqtEYT
-	Ms8aX4pA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=PGV7WjLYhT2xFvjYvosxufQsQ61p1QLmZahYYx6DGDA=; b=yiDmEo4qmb9e8FTHQXPyYFtabJ
+	eAl+/oW4nvArWanxc26y5wwuhZMw3EpRxNTkVN3G/DgcvmX/jVLWCsMigZ6JMXLZlDp93gu50Lr2F
+	pyLCpcZ+IPaGGpm2JU3aiVNb/+sWQ7PpKRjqRVPVL3+W0tYrCXpg4O7QVcTx7A1OqWewUP/unvfmX
+	sb5vtb1oGZGEBJENxPaFG8IgDfYQOJ7R01gJ1nEDZYU4x8Bz4kq/ACeF8TcDVK93wI0DlaEtsQ9DB
+	zpB7JizlHhxtjbUERRxbmTLR1XoxDNSHjAwlJrgWCeLtoDhLV6I88+Ic193O2IP0DnrQxcyZRrheU
+	ijDJaAaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruSrN-00000005kRu-0QUr
+	id 1ruTet-00000005yYl-37RU
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Apr 2024 07:59:09 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Wed, 10 Apr 2024 08:50:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruSrK-00000005kPz-16hu
+	id 1ruTeq-00000005yWB-3faZ
 	for ath12k@lists.infradead.org;
-	Wed, 10 Apr 2024 07:59:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=8yJzNJsbUcZyMZ+JVyPnDvNkzO3Jhk9AuCTJ1rgbO+o=;
-	t=1712735946; x=1713945546; b=k5mbr8QHe/KwCdfgNtfhfL8NVYiLGB+01qShwimqjHB+11K
-	4bVWdYo26d+Ghd1bvM9kGm6Wazx/zFrPeAu3l0PRf5+mvBv5yUcJFfS05QADjNrRJ8A829p1F4Iw2
-	56QyaNhGCN58VsPniO2iJI303sVRyIu/i4x1upAvKczzhf4IvM+xJYhpxibyIzueVY3U3BHvBNaCq
-	05slEyymRHVvtNiKKU6zso39wLspIgotmwy8v8/uRLyEgs/YgtUY+Ewc0t/o9C88d3BMY/oQHfuEY
-	G5yCTxMLO67dEZm6IaUEvha76uAJq1qGd6eTtmggoLRMYzOvEqeg1QB3naNUVcnw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1ruSrH-00000001EoS-3zUt;
-	Wed, 10 Apr 2024 09:59:04 +0200
-Message-ID: <902dd36fa5ab0503377e558b92505fe499f666fa.camel@sipsolutions.net>
-Subject: Re: [PATCH 02/13] wifi: nl80211: send underlying multi-hardware
- channel capabilities to user space
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>, Karthikeyan
-	Periyasamy <quic_periyasa@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, netdev@vger.kernel.org, Jakub Kicinski
-	 <kuba@kernel.org>
-Date: Wed, 10 Apr 2024 09:59:02 +0200
-In-Reply-To: <b455f267-9552-be3b-95b0-a036bfa8e14a@quicinc.com>
-References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
-	 <20240328072916.1164195-3-quic_periyasa@quicinc.com>
-	 <6d92d0ba4a8764cd91cc20c4bd35613bcc41dfcd.camel@sipsolutions.net>
-	 <9d5c2f9f-19b5-af4d-8018-1eb97fac10d6@quicinc.com>
-	 <9d0f309da45ae657cd2ce0bc11a93d66e856ef64.camel@sipsolutions.net>
-	 <b455f267-9552-be3b-95b0-a036bfa8e14a@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
+	Wed, 10 Apr 2024 08:50:18 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43A4fSWT002543;
+	Wed, 10 Apr 2024 08:50:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=PGV7WjLYhT2xFvjYvosxufQsQ61p1QLmZahYYx6DGDA=; b=nV
+	VtTss+ECw1q1d47ZYMbhQPpk59lo2BMLOhAgngBL3pJMUXnD36YWmMEcxxnVtnIx
+	lXBg2gfNU5PnCiLxpFuwzQI5JnM4RvDfUJgvgA9z1xLL7Qi9hX37PQO5rHRA40B+
+	yIU9ul6Q0AidpG3Wcejx5Q3t3ayAIJoaOsDEXUIDIz9Ff7V0hwzEdoCfDEWgImGW
+	uJ7lnvxTsh833uUPgE3uagTIx8IfVQxFazSYsFx7kMtPobEQrxoBKAKRXO+W9P6Q
+	zQVIwRetrKJVqXE8n1dmJmEntEf+Hlzv3b0s+MMNFGXSH5H+vCEARwi/nKuyoAzA
+	cqWCtysms5DrabbJLwJg==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xdh6xaea9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 10 Apr 2024 08:50:12 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43A8oBB7018852
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 10 Apr 2024 08:50:11 GMT
+Received: from [10.50.38.146] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 10 Apr
+ 2024 01:50:09 -0700
+Message-ID: <c47aa30f-cebb-4460-a78c-9a8df4f9e85e@quicinc.com>
+Date: Wed, 10 Apr 2024 14:20:05 +0530
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: enable service flag for survey dump stats
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Thiraviyam Mariyappan
+	<quic_tmariyap@quicinc.com>
+References: <20240409175604.3299752-1-quic_kathirve@quicinc.com>
+ <1e515bbc-0119-4114-b44e-d7a449b031f7@quicinc.com>
+Content-Language: en-US
+From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+In-Reply-To: <1e515bbc-0119-4114-b44e-d7a449b031f7@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: KUQCmLgg8CvLKkl3WoEYBFZkG1mYm9hy
+X-Proofpoint-ORIG-GUID: KUQCmLgg8CvLKkl3WoEYBFZkG1mYm9hy
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-10_03,2024-04-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
+ lowpriorityscore=0 malwarescore=0 priorityscore=1501 adultscore=0
+ phishscore=0 impostorscore=0 bulkscore=0 suspectscore=0 clxscore=1015
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404100063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240410_005906_333934_BB84032E 
-X-CRM114-Status: GOOD (  24.71  )
+X-CRM114-CacheID: sfid-20240410_015016_964846_F9DA110B 
+X-CRM114-Status: GOOD (  15.80  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,65 +101,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2024-03-29 at 19:51 +0530, Vasanthakumar Thiagarajan wrote:
->=20
-> On 3/28/2024 5:31 PM, Johannes Berg wrote:
-> > On Thu, 2024-03-28 at 15:48 +0530, Karthikeyan Periyasamy wrote:
-> > > On 3/28/2024 1:19 PM, Johannes Berg wrote:
-> > > > On Thu, 2024-03-28 at 12:59 +0530, Karthikeyan Periyasamy wrote:
-> > > > > +/**
-> > > > > + * nl80211_multi_hw_attrs - multi-hw attributes
-> > > > > + *
-> > > > > + * @NL80211_MULTI_HW_ATTR_INVALID: invalid
-> > > > > + * @NL80211_MULTI_HW_ATTR_IDX: (u8) multi-HW index to refer the =
-underlying HW
-> > > > > + *	for which the supported channel list is advertised. Internall=
-y refer
-> > > > > + *	the index of the wiphy's @hw_chans array.
-> > > > Is there a good reason to expose this? Seems pretty internal to me,=
- and
-> > > > not sure what userspace would do with it?
-> > >=20
-> > > Hostapd use this hw index for the channel switch cmd.
-> >=20
-> > What, where? I don't see that in this patchset? And why??
-> >=20
-> > In any case, unless I just missed it and you're going to tell me to loo=
-k
-> > at patch N, we don't need it here, and then I'd prefer to keep it an
-> > internal detail until it's needed.
-> >=20
-> > > The hw index used as a sanity check to identify whether the user
-> > > requested channel fall under the different hw or not.
-> >=20
-> > You mean within hostapd itself? That doesn't make sense, it can derive
-> > that information differently.
-> >=20
-> > > In split-phy hardware, 5GHz band supported by two physical hardware's=
-.
-> > > First supports 5GHz Low band and second supports 5GHz High band.
-> >=20
-> > In your hardware design anyway, but yeah, I get it.
-> >=20
-> > > In this case, user space cannot use band vise check here to identify
-> > > given channel or freq supported in the given hardware.
-> >=20
-> > No, but it also doesn't need an index assigned by the kernel for that.
-> >=20
->=20
-> The only purpose of hw index is to link hw_chans to per-hardware=20
-> interface combination capability so that each hardware can be
-> identified during interface combination checks capability vs
-> current state. Thinking if we can embed the channel list also
-> into per-hardware interface combination signaling by giving the
-> pointer?
 
-Maybe? It might mean more allocations where the use is concerned since
-it can't be "static const" that way.
 
-I found the code that needs it later, just that Karthikeyan was using
-the wrong explanation for it ... I'd hoped he'd understand your own code
-better ;-)
+On 4/10/2024 5:37 AM, Jeff Johnson wrote:
+> On 4/9/2024 10:56 AM, Karthikeyan Kathirvel wrote:
+>> From: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
+>>
+>> The survey dump statistics does not display channel RX and TX time
+>> properly because the survey flag is not enabled in the firmware service
+>> flag.
+>>
+>> If firmware supports enable the service flag "bss_chan_info" in
+>> wmi_resource_config to fetch and print the stats for specific pdev.
+>>
+>> Enabling WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64 does not have any impact
+>> on WCN7850 since this bit is not utilized by the WCN7850 firmware.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
+>> Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/wmi.c | 3 ++-
+>>   drivers/net/wireless/ath/ath12k/wmi.h | 1 +
+>>   2 files changed, 3 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+>> index a5575ce9eed4..16504786735a 100644
+>> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+>> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+>> @@ -3324,7 +3324,8 @@ ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cf
+>>   	wmi_cfg->bpf_instruction_size = cpu_to_le32(tg_cfg->bpf_instruction_size);
+>>   	wmi_cfg->max_bssid_rx_filters = cpu_to_le32(tg_cfg->max_bssid_rx_filters);
+>>   	wmi_cfg->use_pdev_id = cpu_to_le32(tg_cfg->use_pdev_id);
+>> -	wmi_cfg->flag1 = cpu_to_le32(tg_cfg->atf_config);
+>> +	wmi_cfg->flag1 = cpu_to_le32(tg_cfg->atf_config) |
+>> +				     WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64;
+> 
+> shouldn't that | operation be inside the ) ?
+Yes, will address in next version, thanks for the review Jeff
 
-johannes
+> 
+>>   	wmi_cfg->peer_map_unmap_version = cpu_to_le32(tg_cfg->peer_map_unmap_version);
+>>   	wmi_cfg->sched_params = cpu_to_le32(tg_cfg->sched_params);
+>>   	wmi_cfg->twt_ap_pdev_count = cpu_to_le32(tg_cfg->twt_ap_pdev_count);
+>> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+>> index 78afc94a815d..1283d25b5cc4 100644
+>> --- a/drivers/net/wireless/ath/ath12k/wmi.h
+>> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
+>> @@ -2400,6 +2400,7 @@ struct wmi_init_cmd {
+>>   
+>>   #define WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT 4
+>>   #define WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION		GENMASK(5, 4)
+>> +#define WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64	BIT(5)
+>>   
+>>   struct ath12k_wmi_resource_config_params {
+>>   	__le32 tlv_header;
+>>
+>> base-commit: b36766befd306a606f287b0c0f0e53d994516acb
+> 
 
