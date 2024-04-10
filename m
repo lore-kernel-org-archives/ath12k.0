@@ -4,94 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42085CD1297
-	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 09:16:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B262CD11C2
+	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 12:05:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DuDwGgCvQAuQmeUcTOn0PGeRwAWoOKP+S09llJBOnDM=; b=gJtu750XU8luWY9OxFLNwMBxkR
-	MuwOfiUo1zz42RKsoP8ocVusovEHP0q1QJd2ORhmLoy26rIDLTVJq0qyQPdqII2vgXRg2VWM1ABsa
-	Xq0Umzs9eeUl4sp/47YhCdagSjrG7gehO+U92JUpA9nX2jltctxmWDsx6QLHhMB6bHa1w9stqgTE6
-	fVtwA4XKSEliJ+v7xOnyiQ0j0H9QKF/Dv6scZTe5XKiwcuhqPskpyz41CyuItL+Z7R8YNYffKM9oj
-	Hb5DnzgD9SuxHu0S7Wxfzhj1lFJ985eZCmEaHGtEejMfq0ybpGmn6GvdtT6k/h08BEp0s/PS2wt4C
-	1ehswABg==;
+	bh=GqlF9ltvyfYr20la98qPBUceL3GYzkU6FwVXCNPe+J0=; b=ukyizE6wydKHuE4kqrtVCHhMlj
+	vtL5Uk7qdRw8AaaWCSQ0lbkl9W66K/txyyhDi/OmvxlhnFl2Nxv3WhTgRVwKIKPfZvcYes71vGhQn
+	q6VcbUguY+5M7qYn0XVBGZYcFVcRDZwXWrVEEL61KRisXPzw13ZmQKvhZByxHEx9Mm5JWz2BF82V7
+	qMCXGzJwvNnL3BOjFbLBJyRia47aWQN5Up5T/Zv2Wh/k0Pwvday0pt/WF3qU1dC5rgUlHi/USEMP3
+	iVlAj+x7Cw3Hdz2RdY5Xe0cv/mPo9LVM8N1eoc3XAWjSQsbHv5TYlOwx3QKO1KRIPZ7QuNQkRnDPP
+	UjStIWiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruU3o-000000065nD-3OHK
+	id 1ruWhm-00000006nNP-3Xz0
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Apr 2024 09:16:04 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 10 Apr 2024 12:05:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruU3l-000000065jR-0Nhc
+	id 1ruWhj-00000006nMX-24ZV
 	for ath12k@lists.infradead.org;
-	Wed, 10 Apr 2024 09:16:03 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43A9Ei2m003079;
-	Wed, 10 Apr 2024 09:16:00 GMT
+	Wed, 10 Apr 2024 12:05:29 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43AAQ4hg005304;
+	Wed, 10 Apr 2024 12:05:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=DuDwGgCvQAuQmeUcTOn0PGeRwAWoOKP+S09llJBOnDM=; b=nJ
-	fI8twhb/6EpDojTm1u4TN6MuMbFOHdif30SI0Uk8t5BP6y/QesZTEdaA1plEktWF
-	0PSiPQ3j67gc/kqIdd/8cgGP4RMrFOpsiUdIAmrBjacOaDZRSYkHkd9Eir/qro9P
-	2AcM/IS8s2LNdxaK5EvRaoWaV03B/Z7HarGqXtJRX7sn/RDNrmXTOWKnZ3cAnR9u
-	yIW0ZN31tQWFjvUa6JUo7vrrmDWpm2Ve2SQDvihFX016C2eiv9ZSnJ8JjHFMBA/G
-	MZGkVAc1mdxwg8Kc+pk6qdl+ZjKcxDAlqZSx5o1ekiKcXDe+HZ+v4y5p6PjVAkvq
-	AzZ9vDd+67NPziv0wJiA==
+	qcppdkim1; bh=GqlF9ltvyfYr20la98qPBUceL3GYzkU6FwVXCNPe+J0=; b=RD
+	Da9XFUJMpucWeC+/oMxz/Jl7uaobzkxOXsgN/+sU2hZWxf+TJbC2fSndumuNnpju
+	bNIATLatfaN3aoygp49ZILnYAuGHfZ2cFT1Ma7ismc2+PnJ8fkMECeeEiimbopJB
+	c4k5QOln9nyGzu/53t3Z/T+6kWe3tbN2zHmuU8gTjhhiwbUpHKC+tMEzWXVQYR/y
+	7uzG/Ualm9bskqMiX3VLx91SuBl3+5JAW1mjpuObihETvYFXk80UJAO/AiEVc7LM
+	Tcji25ZkDcbxicbpcZocHrh9WWSYQt7/Ql5qaAeiLcsnZvoU/XockfVlOtQc/waD
+	xt2tERNfGW6DyDP0qWng==
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xdqy7r0bn-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xdh6xbf2k-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Apr 2024 09:15:59 +0000 (GMT)
+	Wed, 10 Apr 2024 12:05:24 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43A9FwDD024209
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43AC5Nsj022326
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Apr 2024 09:15:58 GMT
-Received: from [10.152.205.142] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Wed, 10 Apr 2024 12:05:24 GMT
+Received: from [10.50.38.146] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 10 Apr
- 2024 02:15:56 -0700
-Message-ID: <44733762-19d5-9a8a-dfa3-6700a4deb6b4@quicinc.com>
-Date: Wed, 10 Apr 2024 14:45:53 +0530
+ 2024 05:05:20 -0700
+Message-ID: <3b9fe049-0f96-48f3-b52b-6c0bc6cfff16@quicinc.com>
+Date: Wed, 10 Apr 2024 17:35:16 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
- radio in one wiphy
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: enable service flag for survey dump stats
+To: Kalle Valo <kvalo@kernel.org>
+CC: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>,
+        Thiraviyam Mariyappan
+	<quic_tmariyap@quicinc.com>
+References: <20240409175604.3299752-1-quic_kathirve@quicinc.com>
+ <1e515bbc-0119-4114-b44e-d7a449b031f7@quicinc.com>
+ <c47aa30f-cebb-4460-a78c-9a8df4f9e85e@quicinc.com>
+ <87seztzj35.fsf@kernel.org>
 Content-Language: en-US
-To: Johannes Berg <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Vasanthakumar Thiagarajan
-	<quic_vthiagar@quicinc.com>
-References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
- <20240328072916.1164195-2-quic_periyasa@quicinc.com>
- <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
- <d2e6360b-1092-4e57-47e6-c5f336f32c92@quicinc.com>
- <c2160c4616ef520d7037f9b7606b47d366f02dd6.camel@sipsolutions.net>
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <c2160c4616ef520d7037f9b7606b47d366f02dd6.camel@sipsolutions.net>
+From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+In-Reply-To: <87seztzj35.fsf@kernel.org>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: szdwanENUyP7zzAaKoQax3DkHVGaORe4
-X-Proofpoint-ORIG-GUID: szdwanENUyP7zzAaKoQax3DkHVGaORe4
+X-Proofpoint-GUID: EgNanT9_ATe8kWqKw2w5jHTxG3f9RAug
+X-Proofpoint-ORIG-GUID: EgNanT9_ATe8kWqKw2w5jHTxG3f9RAug
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-10_04,2024-04-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 mlxlogscore=652 suspectscore=0 mlxscore=0 clxscore=1015
- phishscore=0 spamscore=0 adultscore=0 bulkscore=0 impostorscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404100065
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
+ lowpriorityscore=0 malwarescore=0 priorityscore=1501 adultscore=0
+ phishscore=0 impostorscore=0 bulkscore=0 suspectscore=0 clxscore=1011
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404100087
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240410_021601_284776_56247DD9 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20240410_050527_688433_E068099C 
+X-CRM114-Status: GOOD (  14.54  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,25 +106,50 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 4/10/2024 2:39 PM, Johannes Berg wrote:
-> On Wed, 2024-04-10 at 14:38 +0530, Karthikeyan Periyasamy wrote:
->>
->> On 3/28/2024 1:16 PM, Johannes Berg wrote:
->>> That's a big set, not sure I can review it all at once :)
->>>
->>
->> I plan to separate the code refactoring changes from this patchset. Do
->> you have any concerns?
->>
-> If you split it up? I don't see why.
+On 4/10/2024 2:32 PM, Kalle Valo wrote:
+> Karthikeyan Kathirvel <quic_kathirve@quicinc.com> writes:
 > 
-
-Based on the comments, the patch count for the next version is 
-increasing. I believe it would be beneficial to have the refactor 
-patches in a separate submission before sending the next version.
-
--- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+>> On 4/10/2024 5:37 AM, Jeff Johnson wrote:
+>>> On 4/9/2024 10:56 AM, Karthikeyan Kathirvel wrote:
+>>>> From: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
+>>>>
+>>>> The survey dump statistics does not display channel RX and TX time
+>>>> properly because the survey flag is not enabled in the firmware service
+>>>> flag.
+>>>>
+>>>> If firmware supports enable the service flag "bss_chan_info" in
+>>>> wmi_resource_config to fetch and print the stats for specific pdev.
+>>>>
+>>>> Enabling WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64 does not have any impact
+>>>> on WCN7850 since this bit is not utilized by the WCN7850 firmware.
+>>>>
+>>>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>>>
+>>>> Signed-off-by: Thiraviyam Mariyappan <quic_tmariyap@quicinc.com>
+>>>> Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+>>>> ---
+>>>>    drivers/net/wireless/ath/ath12k/wmi.c | 3 ++-
+>>>>    drivers/net/wireless/ath/ath12k/wmi.h | 1 +
+>>>>    2 files changed, 3 insertions(+), 1 deletion(-)
+>>>>
+>>>> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+>>>> index a5575ce9eed4..16504786735a 100644
+>>>> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+>>>> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+>>>> @@ -3324,7 +3324,8 @@ ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cf
+>>>>    	wmi_cfg->bpf_instruction_size = cpu_to_le32(tg_cfg->bpf_instruction_size);
+>>>>    	wmi_cfg->max_bssid_rx_filters = cpu_to_le32(tg_cfg->max_bssid_rx_filters);
+>>>>    	wmi_cfg->use_pdev_id = cpu_to_le32(tg_cfg->use_pdev_id);
+>>>> -	wmi_cfg->flag1 = cpu_to_le32(tg_cfg->atf_config);
+>>>> +	wmi_cfg->flag1 = cpu_to_le32(tg_cfg->atf_config) |
+>>>> +				     WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64;
+>>> shouldn't that | operation be inside the ) ?
+>> Yes, will address in next version, thanks for the review Jeff
+> 
+> BTW ath12k-check should catch these kind of errors. Didn't it warn about
+> it or did you just skip running ath12k-check?
+> 
+I was using checkpatch.pl alone, now moved to ath12k-check, ath12k-check 
+warnings are fixed in "[PATCH v2] wifi: ath12k: enable service flag for 
+survey dump stats"
 
