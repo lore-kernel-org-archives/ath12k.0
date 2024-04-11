@@ -4,63 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC93DC4345F
-	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 16:11:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CD78C4345F
+	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 16:27:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uMMeAP9+yPZOc8eqCWi9xbR+9yNMzW7vAIMbAX8oShE=; b=BVeoaJmQrLgnN2iRAV9gUvJSOy
-	HD/xeBDVJrdT6R7/FlaO8xRz1sSefyyb04GepPrA6mXtS4xj4Hkcnpt4cBbB5zOjLDDh7bKiot9Uv
-	6CazwfE810SKq1ZO3H2rG+J1iqou8MlFKR9IoHxFvorUwlWQ++pKRrLLCvo+ICpVk7swQSE2cHzIx
-	VnYPNsN1/AhdkWX1448UIMhoOmCGyr5YL5Ibo7zS5hX0G7I2xKSLVHjahVowzMCMcFPJnKTWfiqkE
-	OONC6XXiSmr8AVTjkB74i1IPMex9nxyf0lVeS5q6OZQiuPjzGJGUTitR5qInxvqV+z463xtbsQ8Cg
-	2uFAKrRQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=s5pL1GBk8amOh5CVYcd18lEHmXeHom2IBEBMJr627XA=; b=lY5fgGp5NRjoRzChsvcHIFeJJQ
+	nLncz4F5ivtNdYW2OyYSoG4FSSRWvF7BymT8oe5gApd0WkbAnhNbGNNMANv93D+KX9wTa0wa0XjBH
+	r/mfdpUizsptQ6GbMrUmoQ/LgaT5TaDE2LvOsMwbl7cDaTprQG4ARqbr9uXcQc5vTxLyHBvol4jS4
+	VCnk15Q5OxAVS5acrtPcjM8BNqprWo+j++xRXPSWN6xq5yb0bByFVTe4UAMr7YTfKt0Be3CCRoSYb
+	b/mQaTD/60muEnoeLFnmtTWI5syT0KLp1MurTLBtGxrGO6KGJ6ddVFr41wT5XRwcmv4RQm5oOZmWr
+	nzohh0bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rux1n-0000000CzG6-20uG
+	id 1ruxGQ-0000000D4WI-3G9j
 	for ath12k@archiver.kernel.org;
-	Thu, 11 Apr 2024 16:11:55 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 11 Apr 2024 16:27:02 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rux1i-0000000CzEW-1CBL
+	id 1ruxGO-0000000D4Sx-0BhQ
 	for ath12k@lists.infradead.org;
-	Thu, 11 Apr 2024 16:11:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8025E6059A;
-	Thu, 11 Apr 2024 16:11:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D62BC072AA;
-	Thu, 11 Apr 2024 16:11:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712851909;
-	bh=oPu+pMXZ7sRT7O7K/FKCAc6Llc8DXE8N568jWkHtkNY=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=jblsBXOTD+h7jlVDV66ht7fwDJbS60pdTPAcYYxdRC+bgR7AUFjeRj+1fNxFlk50i
-	 UpH9F8gNgdO/wNSV+GmGUo2B20/GnIiX50R3pfJNc3hPBsHl7nnNHyuke8zp16HxGg
-	 y85+d5pP5F/nmJLEQctLufi3Esug2SjgEUiX3sMrIXq4LenzJku8vD0hFX+MQTNEIQ
-	 XZtyGNbTWubk7BqZ4LyVXXW1lUc5GK5buQYkY1/wBPBGy4ZT+2fBqfOo0R33CYxHoP
-	 NdL2zhD6fxTVXKBVXUP8EZkoPbFymz59DAd9xd6Kcp/KQqvN+YzIXVgcdtP8CYH2MS
-	 A41z2OUm1OX+g==
-From: Kalle Valo <kvalo@kernel.org>
-To: Kang Yang <quic_kangyang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH] wifi: ath12k: add support to handle beacon miss for
- WCN7850
-References: <20240319023032.719-1-quic_kangyang@quicinc.com>
-	<8734rsz0gk.fsf@kernel.org>
-	<e7c11c22-0b2c-4c54-b9f5-c01b8ba3a4b5@quicinc.com>
-Date: Thu, 11 Apr 2024 19:11:46 +0300
-In-Reply-To: <e7c11c22-0b2c-4c54-b9f5-c01b8ba3a4b5@quicinc.com> (Kang Yang's
-	message of "Thu, 11 Apr 2024 19:31:41 +0800")
-Message-ID: <87y19jyj3x.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Thu, 11 Apr 2024 16:27:01 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43BE16dA007930;
+	Thu, 11 Apr 2024 16:26:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=s5pL1GBk8amOh5CVYcd18lEHmXeHom2IBEBMJr627XA=; b=By
+	oUD1b1i7VF7tfIExReo6Rj/sw7a0IYF5pyJZLdZrdHhiXagQU1+u80HXutwx27G8
+	kpDt/Xujl02aVILPyClQfdkdJ3gCUSaWnl/sg+63ZfNA8ehyXDM/7H8Ki3fRGLxT
+	BY/lPT3Wp7P425H30aoQifG2sbfpK/iBcwICUlWV6NA+vId1JfExfQqer8iDnV9k
+	PQHDQ4TUs8RunmU4CZuqo3kcdleSeyL8URazNRqu9oJECZEqZJI5P/hnv8aOb2G2
+	c/UUaeOYw9hHXbRx8krv9WHdW/qqChBP8Gzoa6gag8FkxMsyJyKqa9f0sl1S6dh5
+	sLpbIa8xp8zzsmjglNHg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xebqx9r7j-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Apr 2024 16:26:52 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43BGQpq0013575
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Apr 2024 16:26:51 GMT
+Received: from [10.216.26.110] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Thu, 11 Apr
+ 2024 09:26:47 -0700
+Message-ID: <5fc2f2d2-7403-79d2-8909-ddda918ff8d5@quicinc.com>
+Date: Thu, 11 Apr 2024 21:56:42 +0530
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
+ radio in one wiphy
+Content-Language: en-US
+To: <mbizon@freebox.fr>, Jeff Johnson <quic_jjohnson@quicinc.com>,
+        Ben Greear
+	<greearb@candelatech.com>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
+ <20240328072916.1164195-2-quic_periyasa@quicinc.com>
+ <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
+ <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com>
+ <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
+ <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com>
+ <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
+ <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com>
+ <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
+ <aa9e1d54-bb5f-37cc-335f-c9970ab13789@candelatech.com>
+ <0cfe990b-182b-4ceb-b5b4-2989fefedb2f@quicinc.com>
+ <29f7ecb6d7c208c3614f37616943d5f97bb134d3.camel@freebox.fr>
+From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
+In-Reply-To: <29f7ecb6d7c208c3614f37616943d5f97bb134d3.camel@freebox.fr>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: fj1FBxwiLAHRjR5jz6eWOTQlZQ75x7ti
+X-Proofpoint-ORIG-GUID: fj1FBxwiLAHRjR5jz6eWOTQlZQ75x7ti
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-11_09,2024-04-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 mlxlogscore=912 malwarescore=0 phishscore=0 suspectscore=0
+ adultscore=0 spamscore=0 lowpriorityscore=0 clxscore=1011 mlxscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404110121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240411_091150_470879_5BA227B8 
-X-CRM114-Status: GOOD (  13.49  )
+X-CRM114-CacheID: sfid-20240411_092700_127589_1D8F8DE2 
+X-CRM114-Status: GOOD (  14.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,58 +116,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kang Yang <quic_kangyang@quicinc.com> writes:
 
-> On 4/11/2024 5:56 PM, Kalle Valo wrote:
->> kangyang <quic_kangyang@quicinc.com> writes:
->> 
->>> From: Kang Yang <quic_kangyang@quicinc.com>
->>>
->>> When AP goes down or too far away without indication to STA, beacon miss
->>> will be detected. Then for WCN7850's firmware, it will use roam event
->>> to send beacon miss to host.
->>>
->>> If STA doesn't handle the beacon miss, will keep the fake connection
->>> and unable to roam.
->>>
->>> So add support for WCN7850 to trigger disconnection from AP when
->>> receiving this event from firmware.
->>>
->>> It has to be noted that beacon miss event notification for QCN9274
->>> to be handled in a separate patch as it uses STA kickout WMI event
->>> to notify beacon miss and the current STA kickout event is processed
->>> as low_ack.
->>>
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>>
->>> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
->>
->> There were conflicts but I fixed in the pending branch, though I
->> admit I
->> did that hastily:
->> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=e5b7eced753bc7e5af133624f6ff37141c5b3442
->> But now I see warnings like below, I don't if it's caused my
->> conflict
->> fixes or was there originally.
 
-[...]
+On 4/10/2024 11:38 PM, Maxime Bizon wrote:
+> 
+> On Wed, 2024-04-10 at 09:43 -0700, Jeff Johnson wrote:
+> 
+> 
+> Hello Jeff,
+> 
+>> Ben, the patches we have posted so far allow ath12k to either have
+>> each phy assigned to a separate wiphy (legacy operation) or have
+>> multiple phys assigned to a single wiphy (required for MLO
+>> operation). In an upcoming patch we'll introduce a DT-driven
+> 
+> When the physical wiphy are grouped in a logical single wiphy, can we
+> still do "legacy" operations on the individual physical wiphy ?
+> 
 
-> 	I just tried on latest ath.tag. After i fixed conflict, there
-> 	is no warning.
->
->
-> 	I saw conflict only happen at add/remove_interface(). Could
-> 	you show me your conflict fix? I cannot reproduce this
-> 	warning.
+Please note that there will be only one wiphy when all the radios are
+grouped together. However, there can be interfaces working concurrently
+on each underlying radio advertised in this composite wiphy through
+the proposed interface combination capability extensions.
 
-I already gave you the URL of my rebased commit above but here it is again:
+> For example, starting a 5Ghz AP in ax-only mode, and at the same time
+> creating a STA interface on 2.4GHz ?
+> 
 
-https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=e5b7eced753bc7e5af133624f6ff37141c5b3442
+Yes, such use cases continue to be supported in single wiphy mode.
 
-But please submit your rebased version as v2 and I'll test that one.
+> If not that's a regression. Changing DT (imply reboot) does not really
+> fix the issue.
+>   
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+This is not the case really.
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Vasanth
 
