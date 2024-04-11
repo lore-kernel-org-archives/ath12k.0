@@ -4,121 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57829CD1284
-	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 09:52:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06BA4CD1284
+	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 09:57:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:From:Subject:References:To
-	:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TJB6IE4qCaJEbDPMyH0lrY7XC9xkPtGLwVhLusvmVEA=; b=ZJU+2Sk7T7VHTw8FViRRSMBOoU
-	IrRHyIcXpgD4Q9OIrxg9GFhy1f6nsw5ay6r6yrSWQyJ0R6EPc8y3mvCaqMsNikbU2eM99TY/I5EO3
-	Ogf1Vb/Nf1RWCK8U66kvSSIHCGCesksk0gdswWDxEnnticxs0vqN9+/oK4+d10DuiNES1q9iqtEn4
-	d/ZbLX5rsJOpve25usNhaeT3Bq33wfK2kyjt5dAIUqKX4vSHb0bV2jfscRJE9nS4NXPVIgeKd6gRN
-	beKtNWcu+gxpikz4Hm9I8SxcDhB26iak+bZ8ia5NlQ23ULOFguXBk7ZzTVQE5BVSCTGMSdrcSb/eu
-	RtSBXhpw==;
+	bh=N1aDyrrHCZPgyzq6EFBSqfZJSFnmZPmwJlErVmxYo9E=; b=r0KTrRf0Na6Gl7NS8tKzTFTEYH
+	SWC4VclQqYkaJcFZhKSwcd5xv8GS46MtehCzrAMHy8gb7cYLeBhzx0Inaf61yICBtWZVQhGjKZAS/
+	oIF+vOEwML6yb36e69HHI+30/mhAV464+dqtA3kgDbj4U8ABzgtpEA6eUp8B7luoHQ/3GkcrJaT5B
+	BqaehbYSUGKnLqlgr9PYOSHG2xPa1dSwz5OGEj1zB32JxUgHvYGKa1tKRjwypNLcPIEw9/WyTWExm
+	reQpVX6YE2Ge5xVmfUUGMI56k+p9IdciYTcpewUK/z/Co13RGKz0ilbSOLA3jOt7GbEzGaaqksGcx
+	YACd5tIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rur6S-0000000BP5E-44Q6
+	id 1rurB4-0000000BPvR-2WTq
 	for ath12k@archiver.kernel.org;
-	Thu, 11 Apr 2024 09:52:20 +0000
-Received: from mail-vi1eur04olkn20801.outbound.protection.outlook.com ([2a01:111:f403:2e11::801] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	Thu, 11 Apr 2024 09:57:06 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rur6P-0000000BP33-3y49
+	id 1rurB1-0000000BPuD-2dBV
 	for ath12k@lists.infradead.org;
-	Thu, 11 Apr 2024 09:52:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MSDxWOTFsyPSiAQ7XgkUSeO5irjt5DZcNRAOMqjn2AKa96eARnWyu2vDCLypF9c6K4URZX2maxWtJv5ZDZHSBO9Ny38GTmjop25vYceBh000dWp/cx/AynpKktUouR454aYPJ1DIhgS0jFZdsgvjkF/LCaMvDmspz7xtNw0F1ihoyOSDSpbODF8dnOcjY7WWrB2lvzHwByzXI2T4NU6UjLgLJ5D4ei2vaHSs9Kn0OIhpj33C9mh1E830I4nxnvZwTG3YcHTk6oDLPxDW4wKRhyMA6eJ7QsVojkmWSMBa5NORa2a0QyEVMaWkhbGsWvu11T4pRK/940q5XEVwQC+pBQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=TJB6IE4qCaJEbDPMyH0lrY7XC9xkPtGLwVhLusvmVEA=;
- b=MavuqtZPD2bAuFCmcUthVfwufY/iZXmyyeoJ7UB5vdEFZALHN3Re/GentrTAP3X79c9FhD1P1vFMgms/cxfVD+u0OxnTM4xDxpyCuB6klYLFd4CDib1lO1Pg3UkA4WMsELozR9jsvx+VeJul1wiM8SCJrleKpggpMew8UJM29HFm56EXBouHu9PeUVrvjM/nXvsT5vEkLEd832eD5QkzKjkzuk3GwgBUXfgtXYBdeHsZPWa/Wy7jC/m45CNv0EmMVROqUZ1E4QPebWVoO6K+XIkdP18hfwVoM9oOa9VkwSzgyHvu4jOzPt3X7/soL4QvA3SMzKIMi2Sj3F4NBllnvA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=LIVE.FR; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TJB6IE4qCaJEbDPMyH0lrY7XC9xkPtGLwVhLusvmVEA=;
- b=kKse1PWE/FpfWKo9Xtg/wiCiEePgu4TYd2aCTm+SshCqxP7O4SXkKvzMrz4iK/TTYzdXk1E/ZSq7O8h3nF0WFA+T1zsgxnglBPeHvPMFI5d8q2fsWGK487BI9dwEfpCP9x9QwdN5wGNi3+PMvuTF3D9PwplC50YGqrdmnD7RBRjwda093Zkr0gtsph906EkYu17a0BNXekmUQqLgMfSKBX4zs3fDXlNLTPIHrEO/mPQPelAGC8JWFGHBkdbloJXTaIRnG/5DA/hHPx0lEZPht4o1OMPCIduagrTNL5QJv/RjBLatfWMCP6eMOqS+adYMvCOmc6bGhCWbf1Mv019q6Q==
-Received: from AS8P190MB1205.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:2eb::9)
- by AM7P190MB0695.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:113::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.55; Thu, 11 Apr
- 2024 09:52:04 +0000
-Received: from AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- ([fe80::9281:a613:5100:48dd]) by AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- ([fe80::9281:a613:5100:48dd%3]) with mapi id 15.20.7409.053; Thu, 11 Apr 2024
- 09:52:04 +0000
-Message-ID: <AS8P190MB1205C9279683B7A6F2E93AEF87052@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
-Date: Thu, 11 Apr 2024 11:52:02 +0200
-User-Agent: Thunderbird Daily
-To: ath12k@lists.infradead.org
-References: <3a1c916e-b9eb-43b8-a6f8-896d8d889d1b@quicinc.com>
-Subject: Re: WCN7850 disconnects and reconnects in a loop
-Content-Language: en-US
-From: Gregoire <gregoire.s93@live.fr>
-In-Reply-To: <3a1c916e-b9eb-43b8-a6f8-896d8d889d1b@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-TMN: [SixTN8NVToXQu1X1cmQMPJJ61AyvVxoonK9PRHcwxbAoeOEFfrjsDm8VwI2A/CZQ]
-X-ClientProxiedBy: PR3P189CA0062.EURP189.PROD.OUTLOOK.COM
- (2603:10a6:102:b4::7) To AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:20b:2eb::9)
-X-Microsoft-Original-Message-ID: <a477e0ba-0eab-493c-80d4-3ad425799bfd@live.fr>
+	Thu, 11 Apr 2024 09:57:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 12E7961FDD;
+	Thu, 11 Apr 2024 09:57:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC570C433F1;
+	Thu, 11 Apr 2024 09:57:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712829422;
+	bh=9u8rJ9PehIZv2NBL6/zflNH8ikpylUIGCyPDmVXUiJM=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=J5TzdDWxor3IZ4qE8LJDe+94Nfw5VN2p7Ly3QDQKo7RVUX9uRBPEEUmW/gS4SYC+d
+	 M03SrXdKjqfG3ek8DBakg51J6eXkzR/l1hcfAqsBARz+mGFbLlw9WcEM419M4DfXJ2
+	 wHcYvxVVVOnXfauecBaP21pfsC2MmmYH+sg04LQ/G0FTwNvomXbo+L1GkCjA39qBAB
+	 +66lyxD8iM3ztKraxEEg6KdXnhNl7Ulut5wS0nsbirD4b8L879DaZr60ZnWL6jqPsK
+	 5bbDBUT35a6YQ+G10otDM8laz2U9QVx9RHXsRaYQYMeL29i46oL/ZBq5dYNGELZzOX
+	 zc20Gn7LQ6haA==
+From: Kalle Valo <kvalo@kernel.org>
+To: kangyang <quic_kangyang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH] wifi: ath12k: add support to handle beacon miss for
+ WCN7850
+References: <20240319023032.719-1-quic_kangyang@quicinc.com>
+Date: Thu, 11 Apr 2024 12:56:59 +0300
+In-Reply-To: <20240319023032.719-1-quic_kangyang@quicinc.com> (kangyang's
+	message of "Tue, 19 Mar 2024 10:30:32 +0800")
+Message-ID: <8734rsz0gk.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8P190MB1205:EE_|AM7P190MB0695:EE_
-X-MS-Office365-Filtering-Correlation-Id: d8b7b669-2ca7-4e4e-266d-08dc5a0d0a69
-X-MS-Exchange-SLBlob-MailProps: 30ekHghIwFoZfJfhIqsBGJPdSU+u/GRVeDw0/eYGQGSh1QoA1McK27g0bL1xSQOjag4V+PtGptZfHoavdSRz6BbiuzSfb6f70X6AmNuD5vuXwnh7GaksuEAYEXQ18MuqGS+qTrHgZZ30A0vy+f9/MEyLf1/x3rc5A46bQMbD+PEzyDeA+Ech8+8iR+po41k41dfSVPq5420ngO3XWrX9gZG0+6Bqrx7BINkzw2FncgV/lkji4QI37284q+191ZomSlxRiK02V344w/7PXeKP/tPndu0GlIH3DkqVRc+urWKjTL2Rtm+WLqhRNtrZoxE0Fosvx6ZP6yL7sCcxSCHikcW5+7KlDlYDZMgZ9fnuzZSDv2/p+hE1K6xY2FgXgDjCJYGVwBw5K3VfJhvQl+wo2M7T8UIMyRZXo8nZxqypHrGHyDlM4EjN79W70F6r37rvo84MgFYDPUk1sVcohPS9GEaAQvdVAkNPuyh+Azj3w3rPUI1jcIxBJxr83zu3GRGpHYJZEYzOULiI+TzT033Am0Ft/jVQVPz61xdXVa8uQJfPQiU9K1WzLKntEyyT3aW6o824JpvCIKYC9/nl25YgegEJpvbyWwMIQmGDJqhQpDDqui4gMXN552GqQuvybilUl5FHfrNjx/+YUdtFR5TCiB3zK6BQHyRJxKMKY5CUzUcO/U1gNwC7bcYSPn5Rfl9Ugfov8zzj8dxD7OHNdYCnudVhwGlWpbOLQT7VcdkdkZNFs2umutWwc8JdPaN25+77
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: IXald+YbTCRiBMdD0YTcToJprtJOlMDjnlqnKB0AHqhFeMUBR2OA9AglHgFErwB0RcTD0lMzKvl15vgpzECbNJKAH+NvoU4+wXjbJT61YACJ5KFRy7wbkgS4h2y7IVNimoXgoipGI5KBMfV5RNQ5IJDlatecGitRBGX+9aPkP6pzjettcl/6RHfUXigZnmSACJkgfsVJwhJSLZWNP1c/pQ1Gy22uDy/uZIfKGOZAGAi33xxtxh3my9mgmZr1bU6hgquqc81Wr6KpuE6ksnUVBSyjQ0XEv9FMikLRBcS972ltnUKBeIzhm8QRwYQgCQ+APbc5HcfJD78QZNqpj+cOddvappw1K0MTyq6wp/PtkjTKIlwiGUiAoL9vQbrR6TqzIXseXWetY/aMcY1fdSRrGvq3uFrgTjM5fn+zBDItFWmbs437+MG0yV47bf7BMjn0F8gqtp6Atfu5LL01Uulbrn2+1wSP+G14Pa898lR4tZFRn9oSZYOglZpe4Spxe460qjRsb64WnzZ0RWvLhXeGLz+s3rOviY/rw7MccB78CKKcBh9ls33HVycISnJr+huB/ChqrWUfbgUoPYwoeV1CgjZYV0x/qwGmJ7BjqtPKkBU8F74r4njXi1nBAjItkOP5QWyMaM70I73/VXUhK4bNz1JSEEbEyGarFLnFyrHVXPU=
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?NnkxTmJqRmhWeWRpcUxiSG1GdkhORVI2SmxML1hWaHNLYmZsVUwvclc2UklL?=
- =?utf-8?B?MWFJM3Q2UzRvR2Fvbnd3cG9OSnVTMjJHaW90dEZsekJ1TjZpSW4rUWdzR1ph?=
- =?utf-8?B?ZGpGVnVNYVZmRDB1S1NGNjErekZRUXlzM2hoSWJGUGdKdFZHN2c5K2VmcDg4?=
- =?utf-8?B?VFZ2a2J3UjRObW9ScG9reEw0cmFqckJFZzZ6ZU5IUHJ6NEJkem5lRVVTZFlE?=
- =?utf-8?B?bDRGSU1zcWFOc0FjN2RYdnNNdVVZMk9zU0FzQlNXSldqRDBiVzI2a282SFVp?=
- =?utf-8?B?QmVCN3h5RHFaZlRObTlNYXowUkx5MFlna1lHTWtQTDBBZE96d1Rqc1gwZHFn?=
- =?utf-8?B?TXYwZjBONmRrdnBTbXBkMEhzY011RmNUZUpHOGlUZEpTdVlJSnFOR1orZ3FX?=
- =?utf-8?B?T0M3c1lFYjd5MmQrUUlEYWtHZ2FJbkMyZFd3c1FoSXlGWWZXUkFlWC9mVE1J?=
- =?utf-8?B?UEl5eVZreU1BY1NiSEJINDQ4bWVpK2FuVkwwZ1QrekxvQkhYaHR6QVBFYjRl?=
- =?utf-8?B?S2RkQjcweXBvTStMdHZNVVpOaXoyNGVmaHdBTlZWcDRpNkZ5TFdWRGlPWVZq?=
- =?utf-8?B?QzdLR09HN3gyNjNwMmpUMXp4TytUVEVzS3FUUFYvcUJ4dzU0bWVKYXhsaXhv?=
- =?utf-8?B?K0xuOGpEODJkRGhxeitNaDBJZFpGUjZvN3V0Qllza0ZpWmRYRmJUczdjMzlD?=
- =?utf-8?B?b2Zya2tXcm5WRDV0aHlnM1BYK1JRSjluR1cwd0I5eGl1UnZyNmVoV1dQS3ln?=
- =?utf-8?B?UklqdVo4VTY4SlNia3RxczlQZjlUOXhLR0lvd2k4bTZ0UkV0VzZVeFllMXJK?=
- =?utf-8?B?OFlleW56a05mcGdZMk1TYTdtaTN6QUo0UXFTTjdPaXF0L01veTlJeXgrYUpW?=
- =?utf-8?B?dmNHeExTaUJveDJQSlhiTzZMZlc2YitORWpFMTJoQ1d6ekpLWFMyVjAvYVJ5?=
- =?utf-8?B?by9jTzYzVGlrKzd4THBWbXFuRU1tM3haWDFBa0xkR3dhS3hzSFJsWDM2QWhp?=
- =?utf-8?B?bXNic3FjOEVkTlIyZmVuSzdVR0hidHZxTEZEUG9TU0VDUWdtMHM4aWZaR0xS?=
- =?utf-8?B?U2VUZWtXYlNEU1RSV25qbytoeW83Z0dSUDR2UGpCZnNsbk1PaWVpWi9pUVZw?=
- =?utf-8?B?YTBhOVVQOHdXY1hGZVpiNGEyZ3N3dHhEME1zcE1mWmZZUjZVMzVBc1lZV0pu?=
- =?utf-8?B?K3RGUkpoVDQ2dVpldytId2xmenRmS3JFZXROYlh1eEI2ZDcwaFVzbjRkUkJ1?=
- =?utf-8?B?SDRPc2pmNE9POGJrc3FINU9XMWdUTWxkT0VZVE5BMk1DM3VyR3dWdVlva0Nv?=
- =?utf-8?B?dUNXWmFrdzZaaGE4dkFKWWlhZksxYU9TSXgvcUVmMWtLemNGWTEwMTJib1FY?=
- =?utf-8?B?dW5iSk10V2xMNkpkS1AzQ1hkQnovWllmRFF5U1R4VlpBdzJ5c1RwUi9CZEFi?=
- =?utf-8?B?SndYdFVjS25PQ1VrcTNDMHJnckl6cWdWMnJLUXVUSHF5UVFpZ3JaWE83Q05X?=
- =?utf-8?B?ZUF2MmI2bERJdW1qRm82Kzc0Z2YwWjRXNWx1VlNLMnJoYlpEaTl1a2NNUnQr?=
- =?utf-8?B?K2xPdC9IeUNTQlhFYlRWeEI0ZkhoL0syNnRPUmx6Ykc5WVRTOFRXSWoyZ2VM?=
- =?utf-8?B?Ym1DbkZrdUc0dkRrZVVXcU9Ka1FXaXd5TTFudFYzQXpycGI4a04rb3dzQUVF?=
- =?utf-8?B?enRZTVd3dzYwU2kzdWNwRUc0cWpMaFdIakFBcS9zcDdqaktXajJZckNZS2Uz?=
- =?utf-8?Q?1hu7Il8JVcCoX+EdOA=3D?=
-X-OriginatorOrg: sct-15-20-4755-11-msonline-outlook-91991.templateTenant
-X-MS-Exchange-CrossTenant-Network-Message-Id: d8b7b669-2ca7-4e4e-266d-08dc5a0d0a69
-X-MS-Exchange-CrossTenant-AuthSource: AS8P190MB1205.EURP190.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Apr 2024 09:52:04.1469
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7P190MB0695
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240411_025218_037336_2BF46656 
-X-CRM114-Status: UNSURE (   6.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240411_025703_788450_BD10C500 
+X-CRM114-Status: GOOD (  16.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,16 +73,153 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-I'm adding this because I saw it here: 
-https://bbs.archlinux.org/viewtopic.php?pid=2144901#p2144901
+kangyang <quic_kangyang@quicinc.com> writes:
 
-I've been lucky, it's the only one I've changed and now it works 
-perfectly well. I have another problem but it's not related, I think. 
-that when I upload very fast (at 100mb/s, for 30 seconds) then the whole 
-ath12k driver crashes and I have to reboot my system.
+> From: Kang Yang <quic_kangyang@quicinc.com>
+>
+> When AP goes down or too far away without indication to STA, beacon miss
+> will be detected. Then for WCN7850's firmware, it will use roam event
+> to send beacon miss to host.
+>
+> If STA doesn't handle the beacon miss, will keep the fake connection
+> and unable to roam.
+>
+> So add support for WCN7850 to trigger disconnection from AP when
+> receiving this event from firmware.
+>
+> It has to be noted that beacon miss event notification for QCN9274
+> to be handled in a separate patch as it uses STA kickout WMI event
+> to notify beacon miss and the current STA kickout event is processed
+> as low_ack.
+>
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>
+> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
 
-I will make another thread for this, or is there already an existing thread?
+There were conflicts but I fixed in the pending branch, though I admit I
+did that hastily:
 
-Thanks
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=e5b7eced753bc7e5af133624f6ff37141c5b3442
 
+But now I see warnings like below, I don't if it's caused my conflict
+fixes or was there originally.
+
+[ 2248.795411] ------------[ cut here ]------------
+[ 2248.796912] WARNING: CPU: 0 PID: 7431 at kernel/workqueue.c:4201 __flush_work+0x15b/0x170
+[ 2248.797566] Modules linked in: ath12k mac80211 libarc4 cfg80211 qmi_helpers qrtr_mhi mhi qrtr nvme nvme_core [last unloaded: mhi]
+[ 2248.798430] CPU: 0 PID: 7431 Comm: wpa_supplicant Tainted: G        W          6.9.0-rc2-wt-ath+ #1383
+[ 2248.799332] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+[ 2248.800150] RIP: 0010:__flush_work+0x15b/0x170
+[ 2248.800882] Code: 00 00 00 48 8b 55 d0 65 48 2b 14 25 28 00 00 00 75 28 48 81 c4 48 01 00 00 5b 41 5c 41 5d 41 5e 41 5f 5d c3 0f 0b 31 c0 eb b7 <0f> 0b 31 c0 eb b1 e8 3a c4 60 00 e9 55 ff ff ff e8 70 b3 bf 02 55
+[ 2248.802403] RSP: 0018:ffffc900020e70a0 EFLAGS: 00010246
+[ 2248.803186] RAX: dffffc0000000000 RBX: 1ffff9200041ce15 RCX: ffffffffa24c3106
+[ 2248.803986] RDX: 1ffff11024ee5c54 RSI: 0000000000000001 RDI: ffff88812772e2a0
+[ 2248.804788] RBP: ffffc900020e7210 R08: 0000000000000001 R09: fffffbfff6e6fa48
+[ 2248.805575] R10: ffffffffb737d247 R11: 0000000000000006 R12: ffff88812772e288
+[ 2248.806371] R13: 0000000000000001 R14: ffffc900020e71e8 R15: 0000000000000001
+[ 2248.807168] FS:  00007fd218478140(0000) GS:ffff88821ba00000(0000) knlGS:0000000000000000
+[ 2248.807979] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 2248.808780] CR2: 000055cb2ce7aa88 CR3: 000000013a101005 CR4: 00000000003706f0
+[ 2248.809579] Call Trace:
+[ 2248.810422]  <TASK>
+[ 2248.811311]  ? show_regs+0x5b/0x70
+[ 2248.812173]  ? __warn+0xc7/0x300
+[ 2248.813027]  ? reacquire_held_locks+0x4d0/0x4d0
+[ 2248.813897]  ? __flush_work+0x15b/0x170
+[ 2248.814794]  ? report_bug+0x310/0x3f0
+[ 2248.815690]  ? handle_bug+0x71/0x90
+[ 2248.816503]  ? exc_invalid_op+0x18/0x40
+[ 2248.817338]  ? asm_exc_invalid_op+0x1b/0x20
+[ 2248.818200]  ? mark_lock+0xe6/0x1470
+[ 2248.819064]  ? __flush_work+0x15b/0x170
+[ 2248.820032]  ? start_flush_work+0x9c0/0x9c0
+[ 2248.820870]  ? __kasan_check_read+0x11/0x20
+[ 2248.821717]  ? mark_lock+0xe6/0x1470
+[ 2248.822516]  ? mark_lock_irq+0x1cc0/0x1cc0
+[ 2248.823352]  ? detach_if_pending+0x370/0x370
+[ 2248.824170]  ? debug_smp_processor_id+0x17/0x20
+[ 2248.825052]  ? __cancel_work_sync+0x32f/0x480
+[ 2248.825942]  ? __this_cpu_preempt_check+0x13/0x20
+[ 2248.826805]  __cancel_work_sync+0x325/0x480
+[ 2248.827606]  ? flush_rcu_work+0x70/0x70
+[ 2248.828457]  cancel_delayed_work_sync+0xe/0x10
+[ 2248.829294]  ath12k_mac_assign_vif_to_vdev.isra.0+0x318/0xb00 [ath12k]
+[ 2248.830171]  ath12k_mac_op_add_interface+0x2d6/0x410 [ath12k]
+[ 2248.831079]  drv_add_interface+0x141/0x710 [mac80211]
+[ 2248.832043]  ieee80211_do_open+0xf20/0x1720 [mac80211]
+[ 2248.833009]  ? __this_cpu_preempt_check+0x13/0x20
+[ 2248.833931]  ieee80211_start_p2p_device+0x67/0xf0 [mac80211]
+[ 2248.834924]  nl80211_start_p2p_device+0x226/0x4c0 [cfg80211]
+[ 2248.835889]  genl_family_rcv_msg_doit+0x1f0/0x2e0
+[ 2248.836789]  ? genl_family_rcv_msg_attrs_parse.isra.0+0x250/0x250
+[ 2248.837603]  ? ns_capable+0x57/0xd0
+[ 2248.838432]  genl_family_rcv_msg+0x34c/0x600
+[ 2248.839303]  ? genl_family_rcv_msg_dumpit+0x310/0x310
+[ 2248.840117]  ? __lock_acquire+0xd43/0x1dd0
+[ 2248.840974]  ? he_set_mcs_mask.isra.0+0x8d0/0x8d0 [cfg80211]
+[ 2248.841888]  ? nl80211_associate+0x2720/0x2720 [cfg80211]
+[ 2248.842832]  ? cfg80211_external_auth_request+0x690/0x690 [cfg80211]
+[ 2248.843747]  genl_rcv_msg+0xa0/0x130
+[ 2248.844537]  netlink_rcv_skb+0x14c/0x400
+[ 2248.845355]  ? genl_family_rcv_msg+0x600/0x600
+[ 2248.846153]  ? netlink_ack+0xd70/0xd70
+[ 2248.846954]  ? rwsem_optimistic_spin+0x4f0/0x4f0
+[ 2248.847796]  ? genl_rcv+0x14/0x40
+[ 2248.848546]  ? rwsem_down_read_slowpath+0xb10/0xb10
+[ 2248.849348]  ? netlink_deliver_tap+0x143/0x350
+[ 2248.850171]  ? __this_cpu_preempt_check+0x13/0x20
+[ 2248.851022]  genl_rcv+0x23/0x40
+[ 2248.851812]  netlink_unicast+0x45c/0x790
+[ 2248.852514]  ? netlink_attachskb+0x7f0/0x7f0
+[ 2248.853270]  netlink_sendmsg+0x7eb/0xdb0
+[ 2248.854030]  ? netlink_unicast+0x790/0x790
+[ 2248.854739]  ? __this_cpu_preempt_check+0x13/0x20
+[ 2248.855429]  ? selinux_socket_sendmsg+0x31/0x40
+[ 2248.856131]  ? netlink_unicast+0x790/0x790
+[ 2248.856851]  __sock_sendmsg+0xc9/0x160
+[ 2248.857469]  ____sys_sendmsg+0x620/0x9a0
+[ 2248.858150]  ? kernel_sendmsg+0x30/0x30
+[ 2248.858858]  ? __copy_msghdr+0x410/0x410
+[ 2248.859468]  ? reacquire_held_locks+0x4d0/0x4d0
+[ 2248.860137]  ? lock_sync+0x1a0/0x1a0
+[ 2248.860790]  ___sys_sendmsg+0xe9/0x170
+[ 2248.861393]  ? copy_msghdr_from_user+0x120/0x120
+[ 2248.862049]  ? __might_fault+0xc0/0x170
+[ 2248.862694]  ? __kasan_check_write+0x14/0x20
+[ 2248.863306]  ? _copy_from_user+0x5b/0xa0
+[ 2248.863969]  ? copy_from_sockptr_offset.constprop.0+0xe7/0x110
+[ 2248.864600]  ? vfs_getattr+0x50/0x50
+[ 2248.865237]  ? netlink_seq_show+0x330/0x330
+[ 2248.865884]  ? __kasan_check_write+0x14/0x20
+[ 2248.866481]  ? __kasan_check_read+0x11/0x20
+[ 2248.867139]  ? __fget_light+0x53/0x1e0
+[ 2248.867820]  ? __fdget+0xe/0x10
+[ 2248.868412]  ? sockfd_lookup_light+0x1a/0x170
+[ 2248.869100]  __sys_sendmsg+0xd2/0x180
+[ 2248.869770]  ? __sys_sendmsg_sock+0x20/0x20
+[ 2248.870352]  ? __sys_setsockopt+0xf4/0x1b0
+[ 2248.871016]  ? debug_smp_processor_id+0x17/0x20
+[ 2248.871667]  __x64_sys_sendmsg+0x72/0xb0
+[ 2248.872264]  do_syscall_64+0x65/0x130
+[ 2248.872920]  entry_SYSCALL_64_after_hwframe+0x46/0x4e
+[ 2248.873553] RIP: 0033:0x7fd218804807
+[ 2248.874202] Code: 64 89 02 48 c7 c0 ff ff ff ff eb bb 0f 1f 80 00 00 00 00 f3 0f 1e fa 64 8b 04 25 18 00 00 00 85 c0 75 10 b8 2e 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 51 c3 48 83 ec 28 89 54 24 1c 48 89 74 24 10
+[ 2248.875567] RSP: 002b:00007ffd1e970b98 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
+[ 2248.876277] RAX: ffffffffffffffda RBX: 000055cb2ce3dac0 RCX: 00007fd218804807
+[ 2248.877048] RDX: 0000000000000000 RSI: 00007ffd1e970bd0 RDI: 0000000000000006
+[ 2248.877802] RBP: 000055cb2ce3d9d0 R08: 0000000000000004 R09: 00007fd2188d0b80
+[ 2248.878494] R10: 00007ffd1e970ca4 R11: 0000000000000246 R12: 000055cb2ce6d480
+[ 2248.879230] R13: 00007ffd1e970bd0 R14: 00007ffd1e970ca4 R15: 000055cb2ce6d340
+[ 2248.880017]  </TASK>
+[ 2248.880643] irq event stamp: 90483
+[ 2248.881359] hardirqs last  enabled at (90495): [<ffffffffa24f114e>] console_unlock+0x1ae/0x280
+[ 2248.882102] hardirqs last disabled at (90516): [<ffffffffa24f1133>] console_unlock+0x193/0x280
+[ 2248.882899] softirqs last  enabled at (90512): [<ffffffffa4feac7a>] __do_softirq+0x58a/0x8e5
+[ 2248.883608] softirqs last disabled at (90503): [<ffffffffa236f03a>] irq_exit_rcu+0xaa/0x110
+[ 2248.884340] ---[ end trace 0000000000000000 ]---
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
