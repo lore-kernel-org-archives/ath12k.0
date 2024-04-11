@@ -4,85 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95889CD11C2
-	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 02:53:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F631CD1284
+	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 08:35:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ROYZCLXGtlC1DiracPI0XHmB83YI40e2R0UfTaqUWhQ=; b=aUsPS8zGXw35NUqLB0YurTBMUj
-	N8K9XjVJGx1ocU/TL+OL6MkcwUEslsdqVPLg3xTQ2lsMkTFxh5tiZd81GfuAzRirTpg3t3hywCb6X
-	GXM0ZRwOZTppzs+lTaYbv5eltwhf1FoQApshHCaCmNoPH00L26RQMpUK/eEKCetracqHEQE3422Lp
-	2mi2SBxb9EhBPI/k1JWBWowwgQOqF+Wo/m7IbTcOfZCUCQYuEhgqoWhilKb4yHqlgVEloYcBRf/cD
-	6lwOs/NlHTkg1IBarn1CpfFLBidm9cbPoeNwtNg8I+N8JR/w3jpW/YQXBZo3m6kJQhpMNEEvWgnjw
-	9tlzpMSw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=N6IT8ciYCoJC7997daumFC3Mui7/vKTd0mIgDY/1i2Y=; b=1lDdl/B5VwOyegfe0PcMQLdZ99
+	tOtmqY+WJVG6RjjQr78IfNljafqpAav6BIirokIfU2lXi9chxJADZFWIThlOKRzMwYMtR2nBzZdLK
+	qtOj1GRaT6KEnZnVxtMWUa9Z51azxxde95KzDGOA+hnVVU+wFkcF3jzmuzUCS4+9YOYLCTUX84RK0
+	alZpKdi+DPUDEHOwn64T5tj3/TCsFK1vdKNDzCjGD9iv01dcYIf2e8U7BeRmPm1V+5KkfnurMzwdi
+	DrpAKy31xsF0W1Q8/WaOgCrt6cER5HkVP4+D+hacGnDHIubG2jcTYKYdZ9uDW8EIWFd2nxWng3QOh
+	UmVsqCcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rukZZ-0000000A3Qt-1Gge
+	id 1rupu5-0000000B7KY-3o2z
 	for ath12k@archiver.kernel.org;
-	Thu, 11 Apr 2024 02:53:57 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 11 Apr 2024 08:35:29 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rukZV-0000000A3PI-1Pu2
+	id 1rupu3-0000000B7Ii-1GGU
 	for ath12k@lists.infradead.org;
-	Thu, 11 Apr 2024 02:53:54 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43B2kE6n032509;
-	Thu, 11 Apr 2024 02:53:52 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=ROYZCLXGtlC1DiracPI0XHmB83YI40e2R0UfTaqUWhQ=; b=oO
-	NIT/HOCgV/Lx0GoBmFaCiDfdCnTp0ny3i/m+8qdkDusAf+2JnHHq2y2CuRZ9LRWM
-	QT91/GnYyiyYCDPld6Od2HKm6qXbgtkCZ9WTaU4jx/8R96hWC00Xgd19RuuefK5n
-	BNab1MYpYwPqxGcvANxg5K+Zhk9Pm6CKZr+xhMwy+6OzhOtmpM/15CGiC5Inpfk0
-	wlrB+RRD8GajymkXw31JSHvVTujrUCyIStmMTS12tAq4bPWI2Vpcrc0Y9COd/gwH
-	uXDLXxlo9/QTIF94bQSt5hbTZUtSOtQDDtuBvwsLfpXEitXNUed77YW99P2NOAba
-	ms9SxsljpbDTCn/aKKfQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xe5um893q-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 11 Apr 2024 02:53:52 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43B2rpIl021409
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 11 Apr 2024 02:53:51 GMT
-Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.4; Wed, 10 Apr 2024 19:53:50 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH 3/3] wifi: ath12k: report station mode signal strength
-Date: Thu, 11 Apr 2024 10:53:22 +0800
-Message-ID: <20240411025322.33888-4-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240411025322.33888-1-quic_lingbok@quicinc.com>
-References: <20240411025322.33888-1-quic_lingbok@quicinc.com>
+	Thu, 11 Apr 2024 08:35:28 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 954C761FD6;
+	Thu, 11 Apr 2024 08:35:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75496C433F1;
+	Thu, 11 Apr 2024 08:35:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1712824526;
+	bh=N6IT8ciYCoJC7997daumFC3Mui7/vKTd0mIgDY/1i2Y=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=BdOFgHf1/9ot+TvmMZzsXfbiziYh40gHCOFpdfg6ClHUTGXELhPeeIDexGN91arcm
+	 ri9boDtD+hAnzGcKttc5AjmUIih9ouyF/FRPd78FzSZ6UQLwWUmsTGs/wmLu4UG7pM
+	 2nqcUO8Zoft375hJO+f1+UyiTeZ3D2iTrOGZ9CwpifzANnn7e2fOcXhV5/voyRE9rh
+	 Zrr3dYMUOPqZXY4oyxC13qmHk14qX70TxHPMnHdIibd+8QK0ADsyUl2vxoiAymnZFr
+	 1mItVq5/G9Bx+/zwTU38DRs4uShv07E6mQygHEXG7athJy/mAvxg9xO6N6WaIHfE5f
+	 bHWs3YFixwbAQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: david Atkins <david@3adesign.co.uk>,  "ath12k@lists.infradead.org"
+ <ath12k@lists.infradead.org>
+Subject: Re: QCN9274 - x64 - AMD or Intel
+References: <LO0P123MB4057B28CB310E5A1CEEF92F0D6002@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<LO0P123MB40575CCD8D6A3AB863596DE2D6062@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<3ff953f9-d6ce-4e96-9d16-401ddb9ad1d6@quicinc.com>
+Date: Thu, 11 Apr 2024 11:35:23 +0300
+In-Reply-To: <3ff953f9-d6ce-4e96-9d16-401ddb9ad1d6@quicinc.com> (Jeff
+	Johnson's message of "Wed, 10 Apr 2024 09:57:44 -0700")
+Message-ID: <87jzl4z48k.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: yPOfFhPjrkdEHaa-RlL0GmaXNZnuCbQY
-X-Proofpoint-ORIG-GUID: yPOfFhPjrkdEHaa-RlL0GmaXNZnuCbQY
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-10_08,2024-04-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
- spamscore=0 suspectscore=0 bulkscore=0 adultscore=0 lowpriorityscore=0
- priorityscore=1501 clxscore=1015 phishscore=0 malwarescore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404110018
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240410_195353_558495_712CA0E4 
-X-CRM114-Status: GOOD (  21.77  )
+X-CRM114-CacheID: sfid-20240411_013527_408925_FD75F4D7 
+X-CRM114-Status: GOOD (  11.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,374 +76,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the signal strength of "iw dev xxx station dump" always show an
-invalid value.
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
-This is because signal strength is only set in ath12k_mgmt_rx_event()
-function, and not set for received data packet. So, change to get signal
-from firmware and report to mac80211.
+> On 4/10/2024 7:52 AM, david Atkins wrote:
+>
+>>=20
+>> I just built the ath-next branch for my AMD Ryzen 3 4300U system
+>> with an 8devices QCN9274 module, it appears to have a new message
+>>=20
+>> memory type 10 not supported
+>>=20
+>> in the dmesg logs
+>>=20
+>> [=C2=A0=C2=A0=C2=A0 2.705656] ath12k_pci 0000:03:00.0: BAR 0 [mem
+>> 0xfe200000-0xfe3fffff 64bit]: assigned
+>> [=C2=A0=C2=A0=C2=A0 2.705672] ath12k_pci 0000:03:00.0: enabling device (=
+0000 -> 0002)
+>> [=C2=A0=C2=A0=C2=A0 2.705885] ath12k_pci 0000:03:00.0: MSI vectors: 16
+>> [=C2=A0=C2=A0=C2=A0 2.705889] ath12k_pci 0000:03:00.0: Hardware name: qc=
+n9274 hw2.0
+>> [=C2=A0=C2=A0=C2=A0 3.405328] ath12k_pci 0000:03:00.0: memory type 10 no=
+t supported
+>> [=C2=A0=C2=A0=C2=A0 3.410796] ath12k_pci 0000:03:00.0: chip_id 0x0 chip_=
+family 0xb
+>> board_id 0xc soc_id 0x401a2200
+>> [=C2=A0=C2=A0=C2=A0 3.410804] ath12k_pci 0000:03:00.0: fw_version 0x1011=
+001d
+>> fw_build_timestamp 2022-12-02 01:16 fw_build_id
+>> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>> [=C2=A0=C2=A0=C2=A0 3.431347] ath12k_pci 0000:03:00.0: failed to fetch b=
+oard data
+>> for bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D12 from
+>> ath12k/QCN9274/hw2.0/board-2.bin
+>> [=C2=A0=C2=A0=C2=A0 3.431375] ath12k_pci 0000:03:00.0: failed to fetch b=
+oard.bin from QCN9274/hw2.0
+>> [=C2=A0=C2=A0=C2=A0 3.431386] ath12k_pci 0000:03:00.0: qmi failed to loa=
+d bdf:
+>> [=C2=A0=C2=A0=C2=A0 3.431387] ath12k_pci 0000:03:00.0: qmi failed to loa=
+d board data file:-2
+>>=20
+>> I'll try on my other test bed systems, but is it expected that this
+>> will get further than this ?
+>
+> I believe the memory type 10 message can be ignored (I've received
+> conflicting information on that)
 
-After that, "iw dev xxx station dump" show the correct signal strength.
-Such as:
+BTW I noticed the same warning and I reported this to the QCN9274 team a
+long time ago but they didn't do anything, sigh. This needs to be fixed
+ASAP. A driver should not print errors.
 
-Station 00:03:7f:12:03:03 (on wlo1)
-        inactive time:  36 ms
-        rx bytes:       61571
-        rx packets:     336
-        tx bytes:       28204
-        tx packets:     205
-        tx retries:     49
-        tx failed:      0
-        beacon loss:    0
-        beacon rx:      83
-        rx drop misc:   66
-        signal:         -24 dBm
-        beacon signal avg:      -22 dBm
+--=20
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-For WCN7850, the firmware supports db2dbm, so not need to add noise floor.
-For QCN9274, the firmware not support db2dbm, so need to add noise floor.
-
-This patch affects the station mode of WCN7850 and QCN9274.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |   2 +
- drivers/net/wireless/ath/ath12k/mac.c  |  56 ++++++++++-
- drivers/net/wireless/ath/ath12k/wmi.c  | 130 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  48 +++++++++
- 4 files changed, 234 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 20298f1ffbe3..fb10c51ca6df 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -427,6 +427,7 @@ struct ath12k_sta {
- 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
- 	u32 bw_prev;
- 	u32 peer_nss;
-+	s8 rssi_beacon;
- };
- 
- #define ATH12K_MIN_5G_FREQ 4150
-@@ -607,6 +608,7 @@ struct ath12k {
- 	bool monitor_vdev_created;
- 	bool monitor_started;
- 	int monitor_vdev_id;
-+	struct completion fw_stats_complete;
- };
- 
- struct ath12k_hw {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index f7f465eb22a6..4f4eb9cbb9f5 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7561,12 +7561,52 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 	return ret;
- }
- 
-+static int ath12k_mac_get_fw_stats(struct ath12k *ar, u32 pdev_id,
-+				   u32 vdev_id, u32 stats_id)
-+{
-+	struct ath12k_base *ab = ar->ab;
-+	int ret, left;
-+
-+	mutex_lock(&ar->conf_mutex);
-+
-+	if (ar->state != ATH12K_STATE_ON) {
-+		ret = -ENETDOWN;
-+		goto err_unlock;
-+	}
-+
-+	reinit_completion(&ar->fw_stats_complete);
-+
-+	ret = ath12k_wmi_send_stats_request_cmd(ar, stats_id, vdev_id, pdev_id);
-+
-+	if (ret) {
-+		ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
-+		goto err_unlock;
-+	}
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WMI,
-+		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-+		   pdev_id, vdev_id, stats_id);
-+
-+	left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
-+
-+	if (!left)
-+		ath12k_warn(ab, "time out while waiting for get fw stats\n");
-+err_unlock:
-+
-+	mutex_unlock(&ar->conf_mutex);
-+	return ret;
-+}
-+
- static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 					 struct ieee80211_vif *vif,
- 					 struct ieee80211_sta *sta,
- 					 struct station_info *sinfo)
- {
- 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
-+	struct ath12k *ar = arsta->arvif->ar;
-+	s8 signal;
-+	bool db2dbm = test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
-+			       ar->ab->wmi_ab.svc_map);
- 
- 	sinfo->rx_duration = arsta->rx_duration;
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
-@@ -7593,8 +7633,18 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
- 
- 	/* TODO: Use real NF instead of default one. */
--	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
--	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-+	signal = arsta->rssi_comb;
-+
-+	if (!signal &&
-+	    arsta->arvif->vdev_type == WMI_VDEV_TYPE_STA &&
-+	    !(ath12k_mac_get_fw_stats(ar, ar->pdev->pdev_id, 0,
-+				      WMI_REQUEST_VDEV_STAT)))
-+		signal = arsta->rssi_beacon;
-+
-+	if (signal) {
-+		sinfo->signal = db2dbm ? signal : signal + ATH12K_DEFAULT_NOISE_FLOOR;
-+		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-+	}
- }
- 
- static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
-@@ -8232,6 +8282,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 
- 	ath12k_debugfs_register(ar);
- 
-+	init_completion(&ar->fw_stats_complete);
-+
- 	return 0;
- 
- err_unregister_hw:
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index a5575ce9eed4..17c930e11f5c 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -25,6 +25,10 @@ struct ath12k_wmi_svc_ready_parse {
- 	bool wmi_svc_bitmap_done;
- };
- 
-+struct wmi_tlv_fw_stats_parse {
-+	const struct wmi_stats_event *ev;
-+};
-+
- struct ath12k_wmi_dma_ring_caps_parse {
- 	struct ath12k_wmi_dma_ring_caps_params *dma_ring_caps;
- 	u32 n_dma_ring_caps;
-@@ -6459,8 +6463,101 @@ static void ath12k_peer_assoc_conf_event(struct ath12k_base *ab, struct sk_buff
- 	rcu_read_unlock();
- }
- 
-+static int ath12k_wmi_tlv_fw_stats_data_parse(struct ath12k_base *ab,
-+					      struct wmi_tlv_fw_stats_parse *parse,
-+					      const void *ptr,
-+					      u16 len)
-+{
-+	const struct wmi_stats_event *ev = parse->ev;
-+	struct ath12k *ar;
-+	struct ath12k_vif *arvif;
-+	struct ieee80211_sta *sta;
-+	struct ath12k_sta *arsta;
-+	int i, ret = 0;
-+	const void *data = ptr;
-+
-+	if (!ev) {
-+		ath12k_warn(ab, "failed to fetch update stats ev");
-+		return -EPROTO;
-+	}
-+
-+	rcu_read_lock();
-+
-+	ar = ath12k_mac_get_ar_by_pdev_id(ab, le32_to_cpu(ev->pdev_id));
-+	if (!ar) {
-+		ath12k_warn(ab, "invalid pdev id %d in update stats event\n",
-+			    le32_to_cpu(ev->pdev_id));
-+		ret = -EPROTO;
-+		goto exit;
-+	}
-+
-+	for (i = 0; i < le32_to_cpu(ev->num_vdev_stats); i++) {
-+		const struct ath12k_wmi_vdev_stats *src;
-+
-+		src = data;
-+		if (len < sizeof(*src)) {
-+			ret = -EPROTO;
-+			goto exit;
-+		}
-+
-+		arvif = ath12k_mac_get_arvif(ar, le32_to_cpu(src->vdev_id));
-+		if (arvif) {
-+			sta = ieee80211_find_sta_by_ifaddr(ath12k_ar_to_hw(ar),
-+							   arvif->bssid,
-+							   NULL);
-+			if (sta) {
-+				arsta = ath12k_sta_to_arsta(sta);
-+				arsta->rssi_beacon = le32_to_cpu(src->beacon_snr);
-+				ath12k_dbg(ab, ATH12K_DBG_WMI,
-+					   "wmi stats vdev id %d snr %d\n",
-+					   src->vdev_id, src->beacon_snr);
-+			} else {
-+				ath12k_dbg(ab, ATH12K_DBG_WMI,
-+					   "not found station bssid %pM for vdev stat\n",
-+					   arvif->bssid);
-+			}
-+		}
-+
-+		data += sizeof(*src);
-+		len -= sizeof(*src);
-+	}
-+
-+	complete(&ar->fw_stats_complete);
-+exit:
-+	rcu_read_unlock();
-+	return ret;
-+}
-+
-+static int ath12k_wmi_tlv_fw_stats_parse(struct ath12k_base *ab,
-+					 u16 tag, u16 len,
-+					 const void *ptr, void *data)
-+{
-+	struct wmi_tlv_fw_stats_parse *parse = data;
-+	int ret = 0;
-+
-+	switch (tag) {
-+	case WMI_TAG_STATS_EVENT:
-+		parse->ev = ptr;
-+		break;
-+	case WMI_TAG_ARRAY_BYTE:
-+		ret = ath12k_wmi_tlv_fw_stats_data_parse(ab, parse, ptr, len);
-+		break;
-+	default:
-+		break;
-+	}
-+	return ret;
-+}
-+
- static void ath12k_update_stats_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
-+	int ret;
-+	struct wmi_tlv_fw_stats_parse parse = {};
-+
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_tlv_fw_stats_parse,
-+				  &parse);
-+	if (ret)
-+		ath12k_warn(ab, "failed to parse fw stats %d\n", ret);
- }
- 
- /* PDEV_CTL_FAILSAFE_CHECK_EVENT is received from FW when the frequency scanned
-@@ -7183,3 +7280,36 @@ void ath12k_wmi_detach(struct ath12k_base *ab)
- 
- 	ath12k_wmi_free_dbring_caps(ab);
- }
-+
-+int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
-+				      u32 vdev_id, u32 pdev_id)
-+{
-+	struct ath12k_wmi_pdev *wmi = ar->wmi;
-+	struct wmi_request_stats_cmd *cmd;
-+	struct sk_buff *skb;
-+	int ret;
-+
-+	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
-+	if (!skb)
-+		return -ENOMEM;
-+
-+	cmd = (struct wmi_request_stats_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_REQUEST_STATS_CMD,
-+						 sizeof(*cmd));
-+
-+	cmd->stats_id = cpu_to_le32(stats_id);
-+	cmd->vdev_id = cpu_to_le32(vdev_id);
-+	cmd->pdev_id = cpu_to_le32(pdev_id);
-+
-+	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_REQUEST_STATS_CMDID);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to send WMI_REQUEST_STATS cmd\n");
-+		dev_kfree_skb(skb);
-+	}
-+
-+	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-+		   "WMI request stats 0x%x vdev id %d pdev id %d\n",
-+		   stats_id, vdev_id, pdev_id);
-+
-+	return ret;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 78afc94a815d..9016eda03d57 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4811,6 +4811,52 @@ struct wmi_twt_disable_event {
- 	__le32 status;
- } __packed;
- 
-+struct wmi_stats_event {
-+	__le32 stats_id;
-+	__le32 num_pdev_stats;
-+	__le32 num_vdev_stats;
-+	__le32 num_peer_stats;
-+	__le32 num_bcnflt_stats;
-+	__le32 num_chan_stats;
-+	__le32 num_mib_stats;
-+	__le32 pdev_id;
-+	__le32 num_bcn_stats;
-+	__le32 num_peer_extd_stats;
-+	__le32 num_peer_extd2_stats;
-+} __packed;
-+
-+enum wmi_stats_id {
-+	WMI_REQUEST_VDEV_STAT	= BIT(3),
-+};
-+
-+struct wmi_request_stats_cmd {
-+	__le32 tlv_header;
-+	__le32 stats_id;
-+	__le32 vdev_id;
-+	struct ath12k_wmi_mac_addr_params peer_macaddr;
-+	__le32 pdev_id;
-+} __packed;
-+
-+#define WLAN_MAX_AC 4
-+#define MAX_TX_RATE_VALUES 10
-+
-+struct ath12k_wmi_vdev_stats {
-+	__le32 vdev_id;
-+	__le32 beacon_snr;
-+	__le32 data_snr;
-+	__le32 num_tx_frames[WLAN_MAX_AC];
-+	__le32 num_rx_frames;
-+	__le32 num_tx_frames_retries[WLAN_MAX_AC];
-+	__le32 num_tx_frames_failures[WLAN_MAX_AC];
-+	__le32 num_rts_fail;
-+	__le32 num_rts_success;
-+	__le32 num_rx_err;
-+	__le32 num_rx_discard;
-+	__le32 num_tx_not_acked;
-+	__le32 tx_rate_history[MAX_TX_RATE_VALUES];
-+	__le32 beacon_rssi_history[MAX_TX_RATE_VALUES];
-+} __packed;
-+
- void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
- 			     struct ath12k_wmi_resource_config_arg *config);
- void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
-@@ -4932,6 +4978,8 @@ int ath12k_wmi_probe_resp_tmpl(struct ath12k *ar, u32 vdev_id,
- 			       struct sk_buff *tmpl);
- int ath12k_wmi_set_hw_mode(struct ath12k_base *ab,
- 			   enum wmi_host_hw_mode_config_type mode);
-+int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
-+				      u32 vdev_id, u32 pdev_id);
- 
- static inline u32
- ath12k_wmi_caps_ext_get_pdev_id(const struct ath12k_wmi_caps_ext_params *param)
--- 
-2.34.1
-
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
+hes
 
