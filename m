@@ -4,64 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F631CD1284
-	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 08:35:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F885CD1284
+	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 09:33:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=N6IT8ciYCoJC7997daumFC3Mui7/vKTd0mIgDY/1i2Y=; b=1lDdl/B5VwOyegfe0PcMQLdZ99
-	tOtmqY+WJVG6RjjQr78IfNljafqpAav6BIirokIfU2lXi9chxJADZFWIThlOKRzMwYMtR2nBzZdLK
-	qtOj1GRaT6KEnZnVxtMWUa9Z51azxxde95KzDGOA+hnVVU+wFkcF3jzmuzUCS4+9YOYLCTUX84RK0
-	alZpKdi+DPUDEHOwn64T5tj3/TCsFK1vdKNDzCjGD9iv01dcYIf2e8U7BeRmPm1V+5KkfnurMzwdi
-	DrpAKy31xsF0W1Q8/WaOgCrt6cER5HkVP4+D+hacGnDHIubG2jcTYKYdZ9uDW8EIWFd2nxWng3QOh
-	UmVsqCcA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9jg/3+OGwpMsFovVsQFFIYyxCp7g+7VDOtuGV3MWUC8=; b=s6zVGwbd3dpEP5YT+B9/Wq9GV4
+	tR0A42zO/MGyD2Sd1P4CYxWNrNcb3N7De6qDjZp7aIVBTTPILaUJXmkafeJ2dWYk1h0Ln8rEjNOn8
+	0Taz++WXasXL2H3E9qvardpgdD+8/pO89s7zblwiFBPwQcBoVus5E0wlSHwos3Bi6XIHdGYP1UnA/
+	oASn2eao49TMhs/qdy/EtOQNCua785sh03mR8PQDu7ScW8KJEVR203nerP0mpINS7mghFN/W5ypL0
+	7ZpC2W21AOYcUozPVxX42QbOskVVkfIHh4UQmSAXJeLLwnIKbvTwlLG954vhkD83wL/YWTAvGr3iD
+	86wVRyJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rupu5-0000000B7KY-3o2z
+	id 1ruqoY-0000000BLQa-3mlm
 	for ath12k@archiver.kernel.org;
-	Thu, 11 Apr 2024 08:35:29 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 11 Apr 2024 09:33:50 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rupu3-0000000B7Ii-1GGU
+	id 1ruqoV-0000000BLPb-2m3m
 	for ath12k@lists.infradead.org;
-	Thu, 11 Apr 2024 08:35:28 +0000
+	Thu, 11 Apr 2024 09:33:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 954C761FD6;
-	Thu, 11 Apr 2024 08:35:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75496C433F1;
-	Thu, 11 Apr 2024 08:35:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 87E7B62018;
+	Thu, 11 Apr 2024 09:33:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30AD3C433C7;
+	Thu, 11 Apr 2024 09:33:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712824526;
-	bh=N6IT8ciYCoJC7997daumFC3Mui7/vKTd0mIgDY/1i2Y=;
+	s=k20201202; t=1712828026;
+	bh=GC/DqxxpBatPJlbqgZHWoWw7lyNi3WC7bo6SMvypFWI=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=BdOFgHf1/9ot+TvmMZzsXfbiziYh40gHCOFpdfg6ClHUTGXELhPeeIDexGN91arcm
-	 ri9boDtD+hAnzGcKttc5AjmUIih9ouyF/FRPd78FzSZ6UQLwWUmsTGs/wmLu4UG7pM
-	 2nqcUO8Zoft375hJO+f1+UyiTeZ3D2iTrOGZ9CwpifzANnn7e2fOcXhV5/voyRE9rh
-	 Zrr3dYMUOPqZXY4oyxC13qmHk14qX70TxHPMnHdIibd+8QK0ADsyUl2vxoiAymnZFr
-	 1mItVq5/G9Bx+/zwTU38DRs4uShv07E6mQygHEXG7athJy/mAvxg9xO6N6WaIHfE5f
-	 bHWs3YFixwbAQ==
+	b=TWp11hQBIcK/D7zoJPeOyF/lbX6o8+Xcd1V7+Nway/wtKbOrs0aNuqqTcdo5fWbUM
+	 mEw9YbZKD9r7dy2JMU4VbcYeVF4LUtDR0UdfuBHMOzz/7COYtMIdVNvQ/BEHpid1tJ
+	 LJ3Ep6/swo9/yQ20ugkYlhbNFa3RJO+RE1FBmGkUiX8Kab9/B8i+9NHUjPtTIQ3qKZ
+	 SG60oDBwondLc5763eTp8VAXoHEHGuyirqZXZU7pn1TFdE97UB+XfuiF3jWHpVw0sn
+	 vPn/S7oaJJ7LmGtUT4IfhiQMcKviePzjz+zjkgZeG4XL5z2CLXNtCZr7IoSpoKPE8J
+	 XAG54QhMC0Rpg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: david Atkins <david@3adesign.co.uk>,  "ath12k@lists.infradead.org"
- <ath12k@lists.infradead.org>
-Subject: Re: QCN9274 - x64 - AMD or Intel
-References: <LO0P123MB4057B28CB310E5A1CEEF92F0D6002@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	<LO0P123MB40575CCD8D6A3AB863596DE2D6062@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	<3ff953f9-d6ce-4e96-9d16-401ddb9ad1d6@quicinc.com>
-Date: Thu, 11 Apr 2024 11:35:23 +0300
-In-Reply-To: <3ff953f9-d6ce-4e96-9d16-401ddb9ad1d6@quicinc.com> (Jeff
-	Johnson's message of "Wed, 10 Apr 2024 09:57:44 -0700")
-Message-ID: <87jzl4z48k.fsf@kernel.org>
+To: Nithyanantham P <quic_nithp@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
+  Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Subject: Re: [PATCH v2] wifi: ath12k: fix mac id extraction when MSDU
+ spillover in rx error path
+References: <20240329092432.873710-1-quic_nithp@quicinc.com>
+Date: Thu, 11 Apr 2024 12:33:43 +0300
+In-Reply-To: <20240329092432.873710-1-quic_nithp@quicinc.com> (Nithyanantham
+	P.'s message of "Fri, 29 Mar 2024 14:54:32 +0530")
+Message-ID: <87bk6gz1jc.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240411_013527_408925_FD75F4D7 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20240411_023347_893256_67B816AB 
+X-CRM114-Status: GOOD (  17.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,58 +74,91 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+Nithyanantham P <quic_nithp@quicinc.com> writes:
 
-> On 4/10/2024 7:52 AM, david Atkins wrote:
+> From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 >
->>=20
->> I just built the ath-next branch for my AMD Ryzen 3 4300U system
->> with an 8devices QCN9274 module, it appears to have a new message
->>=20
->> memory type 10 not supported
->>=20
->> in the dmesg logs
->>=20
->> [=C2=A0=C2=A0=C2=A0 2.705656] ath12k_pci 0000:03:00.0: BAR 0 [mem
->> 0xfe200000-0xfe3fffff 64bit]: assigned
->> [=C2=A0=C2=A0=C2=A0 2.705672] ath12k_pci 0000:03:00.0: enabling device (=
-0000 -> 0002)
->> [=C2=A0=C2=A0=C2=A0 2.705885] ath12k_pci 0000:03:00.0: MSI vectors: 16
->> [=C2=A0=C2=A0=C2=A0 2.705889] ath12k_pci 0000:03:00.0: Hardware name: qc=
-n9274 hw2.0
->> [=C2=A0=C2=A0=C2=A0 3.405328] ath12k_pci 0000:03:00.0: memory type 10 no=
-t supported
->> [=C2=A0=C2=A0=C2=A0 3.410796] ath12k_pci 0000:03:00.0: chip_id 0x0 chip_=
-family 0xb
->> board_id 0xc soc_id 0x401a2200
->> [=C2=A0=C2=A0=C2=A0 3.410804] ath12k_pci 0000:03:00.0: fw_version 0x1011=
-001d
->> fw_build_timestamp 2022-12-02 01:16 fw_build_id
->> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->> [=C2=A0=C2=A0=C2=A0 3.431347] ath12k_pci 0000:03:00.0: failed to fetch b=
-oard data
->> for bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D12 from
->> ath12k/QCN9274/hw2.0/board-2.bin
->> [=C2=A0=C2=A0=C2=A0 3.431375] ath12k_pci 0000:03:00.0: failed to fetch b=
-oard.bin from QCN9274/hw2.0
->> [=C2=A0=C2=A0=C2=A0 3.431386] ath12k_pci 0000:03:00.0: qmi failed to loa=
-d bdf:
->> [=C2=A0=C2=A0=C2=A0 3.431387] ath12k_pci 0000:03:00.0: qmi failed to loa=
-d board data file:-2
->>=20
->> I'll try on my other test bed systems, but is it expected that this
->> will get further than this ?
+> Currently, in the rx error data path, mac id is extracted from the
+> last 64bits of MSDU end description tag for each entry received in
+> the WBM error ring. Then, each entry will be updated into the MSDU
+> list for further processing. The extracted mac id is valid when a
+> single MSDU is not fragmented and received in the WBM error ring.
 >
-> I believe the memory type 10 message can be ignored (I've received
-> conflicting information on that)
+> In scenarios where the size of a single MSDU received exceeds the
+> descriptor buffer size, resulting in fragmented or spillover MSDU
+> entries into the WBM error ring. In this case, the extracted mac id
+> from each spillover entry is invalid except the last spillover entry
+> of the MSDU. This invalid mac id leads to packet rejection.
+>
+> To address this issue, check if the MSDU continuation flag is set,
+> then extract the valid mac id from the last spillover entry.
+> Propagate the valid mac id to all the spillover entries of the single
+> MSDU in the temporary MSDU list(scatter_msdu_list). Then, update this
+> into the MSDU list (msdu_list) for further processing.
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Signed-off-by: Nithyanantham P <quic_nithp@quicinc.com>
 
-BTW I noticed the same warning and I reported this to the QCN9274 team a
-long time ago but they didn't do anything, sigh. This needs to be fixed
-ASAP. A driver should not print errors.
+[...]
 
---=20
+> @@ -3807,16 +3816,50 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
+>  			continue;
+>  		}
+>  
+> +		msdu_data = (struct hal_rx_desc *)msdu->data;
+>  		rxcb->err_rel_src = err_info.err_rel_src;
+>  		rxcb->err_code = err_info.err_code;
+> -		rxcb->rx_desc = (struct hal_rx_desc *)msdu->data;
+> -
+> -		__skb_queue_tail(&msdu_list, msdu);
+> -
+>  		rxcb->is_first_msdu = err_info.first_msdu;
+>  		rxcb->is_last_msdu = err_info.last_msdu;
+>  		rxcb->is_continuation = err_info.continuation;
+> +		rxcb->rx_desc = msdu_data;
+> +
+> +		if (err_info.continuation) {
+> +			__skb_queue_tail(&scatter_msdu_list, msdu);
+> +		} else {
+> +			mac_id = ath12k_dp_rx_get_msdu_src_link(ab,
+> +								msdu_data);
+> +			if (mac_id >= MAX_RADIOS) {
+> +				dev_kfree_skb_any(msdu);
+> +
+> +				/* In any case continuation bit is set
+> +				 * in the previous record, cleanup scatter_msdu_list
+> +				 */
+> +				ath12k_dp_clean_up_skb_list(&scatter_msdu_list);
+> +				continue;
+> +			}
+> +
+> +			if (!skb_queue_empty(&scatter_msdu_list)) {
+> +				struct sk_buff *msdu;
+> +
+> +				skb_queue_walk(&scatter_msdu_list, msdu) {
+> +					rxcb = ATH12K_SKB_RXCB(msdu);
+> +					rxcb->mac_id = mac_id;
+> +				}
+> +
+> +				skb_queue_splice_tail_init(&scatter_msdu_list,
+> +							   &msdu_list);
+> +			}
+> +
+> +			rxcb = ATH12K_SKB_RXCB(msdu);
+> +			rxcb->mac_id = mac_id;
+> +			__skb_queue_tail(&msdu_list, msdu);
+> +		}
+>  	}
+
+The else branch can be avoided with continue. I did that in the pending
+branch, please check my changes:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=6c677d91adad4817e7f6ef65a85331f52f0237ee
+
+-- 
 https://patchwork.kernel.org/project/linux-wireless/list/
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
-hes
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
