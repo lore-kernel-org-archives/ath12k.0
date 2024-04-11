@@ -4,79 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9093CCD11C2
-	for <ath12k@archiver.kernel.org>; Wed, 10 Apr 2024 21:03:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2E63CD11C2
+	for <ath12k@archiver.kernel.org>; Thu, 11 Apr 2024 02:53:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=izTgOEo84ImOdLY25iFdSLDyXw/6jOD0YwnJBuuly6g=; b=2jczbeoEv0wyTDU1nz3Wx1e6Lu
-	a2vB1h/KViu6QUrF9c6K4VNLIZ0JazHZ8UsEiFbYQcuo5BGMaQWgBZs7JcVZbJpv0PhnrtT9u7q1e
-	IqiLW3Yge5S015VZkqeprCJfV/fgw9oh3RVXrTSWPeimK6NzrMLacoUYx5UpyfXyq8sk/qfJXyvX0
-	s9ICkOhklYsMSzsPOjL4Zen7NWeQtEKB658klrmaTi7dE+IUm3334fKTDxa7aR4q0QnDa7Rdn6WX7
-	AgQyj8SLvkhGcx6UbhbBUwfwr2Ql7aSncT4bYFK3D6x7xlHJaKlOqNAm6+rFZHZZ4aiuWIN7XQwoJ
-	c2KaeyMQ==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=QZB8l1GVaA+ypojqlJVNvNR8qffQAmPNN+Fy48rPUeE=; b=vB4748Bi9mLAPEQgPU0nO33dgx
+	Asr4ndpEiSUiYtHDKCxlvJkm1Pt+Z8W+t+4maAnd3pPUyD1NXJ16171jAz+3aLYelEM1RxO+AQcAt
+	PsD1U9wSKgnU1Aczt9swUj88Ao4IeN82MoRw/ZeVyTd8OTit2FhsN1o/sfnQgHI2X+561FbMIvbc8
+	P3HtT3NvxpPG6MrCMvpbs7//h1hShM+o+ozXqu4qFy5AInMYlW78aWT9DKJWQsdLzP8ilIcjPxlFL
+	brvP/ESXLz+tj9Fa4A7e7DUr1mWwXT4WNY8wtf4y6bi8g5LnOSnRO5OpVn/2MtGfAXngjC0Ipy6ZO
+	mzuW1LDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruf6h-00000008whw-0xry
+	id 1rukZV-0000000A3PU-25V9
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Apr 2024 21:03:47 +0000
-Received: from dispatch1-us1.ppe-hosted.com ([148.163.129.49])
+	Thu, 11 Apr 2024 02:53:53 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ruf6d-00000008wgB-2pUw
+	id 1rukZT-0000000A3OO-1UIv
 	for ath12k@lists.infradead.org;
-	Wed, 10 Apr 2024 21:03:45 +0000
-X-Virus-Scanned: Proofpoint Essentials engine
-Received: from mail3.candelatech.com (mail2.candelatech.com [208.74.158.173])
-	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTP id D0E7C100073;
-	Wed, 10 Apr 2024 21:03:40 +0000 (UTC)
-Received: from [192.168.1.148] (unknown [136.42.28.71])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
-	(No client certificate requested)
-	by mail3.candelatech.com (Postfix) with ESMTPSA id 1540013C2B0;
-	Wed, 10 Apr 2024 14:03:39 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 1540013C2B0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
-	s=default; t=1712783020;
-	bh=qeon5nMw9hqtoeOdYCIVQbMLKMGgy2yvGMQDmRWCUHg=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=oDq5+6x5DT3Hso4hgUSMB2AbNbo5LpS7AGpau6Pfmk/ymlq5x03+AE9dFb9wxA1Lx
-	 ws6vMNSdzt7YqcG8Nfh0GvzNqY79fFjuBrAJVj9rDLUa2N+6YpP4RtGMff+sT4y1Uw
-	 fxC8VBspFi1F8/nGS40dKi057Bwk3NMrZmkAKSNE=
-Message-ID: <72f491f8-dd3a-0c9e-7490-4d51c86f2102@candelatech.com>
-Date: Wed, 10 Apr 2024 14:03:39 -0700
+	Thu, 11 Apr 2024 02:53:52 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43B2JXLJ020499;
+	Thu, 11 Apr 2024 02:53:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:mime-version:content-type
+	:content-transfer-encoding; s=qcppdkim1; bh=QZB8l1GVaA+ypojqlJVN
+	vNR8qffQAmPNN+Fy48rPUeE=; b=o7da8xhsNFewdD67U9KIh153/fin381yiJ4t
+	HN2OHwBEhiXVpqs87Py4cWT6sHl14WjbbfkS4FLCvntrwqlc3KhBXZDOuh3g+Z+s
+	dr7PvB6Cc0AGssSbHnYBBbXqHpLTtVleA3wtOMkSJNhUaPPXNFzQKxT0eswcD2sE
+	8mMIoaO1i73We/FnQdOpovZe0T5QMqdTJWnQ3ttzXiRHx2HX07jrrVvpqWy3l+/i
+	JiytJX7gCLFYEkBOxtYy9nLta9zw+uZoHZ6B48ZJ6VoAXnwREL+pz387koFblXnk
+	WuAtUiMPRjfhEM+IpcgPndmTqJ/v2IBLQSPNFjPQfqXRvocgbQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xdnqtmjjy-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Apr 2024 02:53:48 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43B2rlLa021401
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Apr 2024 02:53:47 GMT
+Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.4; Wed, 10 Apr 2024 19:53:46 -0700
+From: Lingbo Kong <quic_lingbok@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
+Subject: [PATCH 0/3] wifi: ath12k: report station mode stats
+Date: Thu, 11 Apr 2024 10:53:19 +0800
+Message-ID: <20240411025322.33888-1-quic_lingbok@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.2.0
-Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
- radio in one wiphy
-Content-Language: en-MW
-To: Johannes Berg <johannes@sipsolutions.net>,
- Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
- Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
- ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
- <20240328072916.1164195-2-quic_periyasa@quicinc.com>
- <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
- <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com>
- <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
- <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com>
- <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
- <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com>
- <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
-From: Ben Greear <greearb@candelatech.com>
-Organization: Candela Technologies
-In-Reply-To: <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-MDID: 1712783022-zT9Y6Rwlr8VG
-X-MDID-O: us5;ut7;1712783022;zT9Y6Rwlr8VG;<greearb@candelatech.com>;e45dbe21c4fc86b950914d8831baea70
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: M8khZOVWhZoG_aJg0uViFjnJAXSxHQMc
+X-Proofpoint-GUID: M8khZOVWhZoG_aJg0uViFjnJAXSxHQMc
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-10_08,2024-04-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 suspectscore=0
+ lowpriorityscore=0 mlxscore=0 adultscore=0 impostorscore=0 phishscore=0
+ bulkscore=0 priorityscore=1501 malwarescore=0 spamscore=0 mlxlogscore=869
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
+ definitions=main-2404110019
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240410_140343_765862_7808A44F 
-X-CRM114-Status: GOOD (  25.70  )
+X-CRM114-CacheID: sfid-20240410_195351_646627_3AC6A0F7 
+X-CRM114-Status: UNSURE (   6.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,78 +95,55 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/10/24 08:42, Johannes Berg wrote:
-> On Wed, 2024-04-10 at 07:37 -0700, Ben Greear wrote:
->> On 4/10/24 00:56, Johannes Berg wrote:
->>> On Fri, 2024-03-29 at 07:47 -0700, Ben Greear wrote:
->>>> On 3/29/24 07:30, Johannes Berg wrote:
->>>>> On Fri, 2024-03-29 at 19:41 +0530, Vasanthakumar Thiagarajan wrote:
->>>>>>>
->>>>>>>> + * @hw_chans: list of the channels supported by every constituent underlying
->>>>>>>> + *	hardware. Drivers abstracting multiple discrete hardware (radio) under
->>>>>>>> + *	one wiphy can advertise the list of channels supported by each physical
->>>>>>>> + *	hardware in this list. Underlying hardware specific channel list can be
->>>>>>>> + *	used while describing interface combination for each of them.
->>>>>>>
->>>>>>> I'd expect there to be a limit on channels being within a single band on
->>>>>>> a single "hardware"?
->>>>>>>
->>>>>>
->>>>>> There are ath12k hardware supporting multiple band which need to be
->>>>>> registered under one mac80211_hw/wiphy. This design is to support such
->>>>>> hardware.
->>>>>
->>>>> Oh OK, that was something that I didn't have in mind any more, or never
->>>>> knew or paid attention to.
->>>>
->>>> Would it work to leave the phy reporting pretty much as it is now, but add
->>>> a 'associated_peer_radios' list section, so that each phy could report the phys
->>>> associated with it?  Then user-space, driver, mac80211 etc could look up the
->>>> other phys as needed to get a full picture?
->>>>
->>>
->>> There's not really a good way to _do_ that short of creating multiple
->>> wiphys, but that causes _massive_ complexity in the stack (both cfg80211
->>> and mac80211) so we rejected it years ago.
->>
->> I thought the problem ath12k is trying to fix is that there are currently multiple phys (radios) that needed to be made to
->> look like a single phy?
-> 
-> Correct.
-> 
->> For dual and tri-concurrent radios, I think we will need them to look like 3 individual radios for non-MLO use
->> cases
-> 
-> No, I don't see why, and if you want that we wouldn't support it anyway,
-> you'd have to have a module option or something to decide which way to
-> go.
-> 
-> But it really ought to not be needed - the point of these patches is to
-> give userspace enough information to know how to (and where) to create
-> separate BSSes, with or without MLO between them.
-> 
->> For instance, mt7996 currently reports 3 single-band wiphys, and each can be used independently.
->> But assuming it starts supporting MLO, then those 3 single band wiphys will need to start acting
->> at least somewhat like a single entity
-> 
-> Yes.
-> 
->> (while also concurrently being able to act as individual
->> wiphys so that one can do a mix of MLO and non MLO sta/AP.)
-> 
-> No.
+Currently, the transmit rate, the receive rate and signal strength of
+“iw dev xxx station dump” always show an invalid value.
 
-Hello Johannes,
+This is because ath12k has no logic to handle this relevant information.
 
-Is there any design document for the combined phy approach somewhere publicly available?
+To solve this issue, ath12k parses the information passed by the firmware
+and passes it to mac80211.
 
-It is hard to understand the over all goals by just reading patches as they show up on
-the public mailing lists...
+After that, "iw dev xxx station dump" show the correct value.
+Such as:
 
-Thanks,
-Ben
+Station 00:03:7f:12:03:03 (on wlo1)
+        inactive time:  600 ms
+        rx bytes:       4642228
+        rx packets:     23796
+        tx bytes:       933967
+        tx packets:     8761
+        tx retries:     66
+        tx failed:      0
+        beacon loss:    0
+        beacon rx:      8925
+        rx drop misc:   191
+        signal:         -20 dBm
+        beacon signal avg:      -18 dBm
+        tx bitrate:     1441.1 MBit/s 80MHz EHT-MCS 13 EHT-NSS 2 EHT-GI 0
+        tx duration:    0 us
+        rx bitrate:     1801.4 MBit/s 80MHz EHT-MCS 11 EHT-NSS 3 EHT-GI 0
+        rx duration:    0 us
 
+Lingbo Kong (3):
+  wifi: ath12k: report station mode transmit rate
+  wifi: ath12k: report station mode receive rate for IEEE 802.11be
+  wifi: ath12k: report station mode signal strength
+
+ drivers/net/wireless/ath/ath12k/core.h    |   4 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c   |  20 ++-
+ drivers/net/wireless/ath/ath12k/dp_rx.h   |   3 +
+ drivers/net/wireless/ath/ath12k/dp_tx.c   | 147 +++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/hal_tx.h  |   9 +-
+ drivers/net/wireless/ath/ath12k/mac.c     | 180 +++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/mac.h     |   3 +
+ drivers/net/wireless/ath/ath12k/rx_desc.h |   2 +
+ drivers/net/wireless/ath/ath12k/wmi.c     | 130 ++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h     |  48 ++++++
+ 10 files changed, 537 insertions(+), 9 deletions(-)
+
+
+base-commit: dc410c4accd2fe64479a1f4ebc47ec9cd3928f4a
 -- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
+2.34.1
+
 
