@@ -4,83 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7490C00A94
-	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 15:58:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82E16C4345F
+	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 18:05:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=e17BkcMk0jX4uzdxMLVeOaXWwFJ6nkkB0AVjm62ebwo=; b=H1AzXw4+RGi5RmIM3QDJnGRRel
-	LGLO7hLGfs9R8Y6uAljM9N1y+M+CZA+ChVXZaMDLSRdT/GqZksB5QilpqbL76ISFDpC+EUMrfxMnF
-	+n1OMwCX98Ht+/l643HubxJEy6V2SVuAaSOPIn0osfhUpqGrrUKkwWQyYDTVpJ3TwoAG4wj1mrkT2
-	A0hwQCUQJ1MIG9MVV3LWmUnlNLsWEx13cvmlcF38wBCCqnJw8PyQlt4rfr8HKU+PQvVR2ClFn/+T3
-	xU+4xWjyf1a3ePAymYZ4aUJVBYNBz3jB2I8Lm8OPkoX5FGqliVvsbR8HepjbLUg7M21mk8kDMbutm
-	0dtVCHHw==;
+	bh=JMRuDMCMN+0Lx3D+OcNdIJJXhCZRAJFIDfDyf6HMhYY=; b=C6abud7bk+npG/j/atbBJUObBI
+	GXU5UF8BN2AblUFVwBRbaLI9WgQNCeCrrBjlLmU0rAldq14zXCSdGWKJqkxuWSaLOvgoqYnhm2Tnv
+	A8Nlm7OsaNa7yQJCZjH6bsaII44xs+GJE944LaO9Oo1cq2ITaYrGYoNqS4pPk616tzcSzTrw5Hx/a
+	QPjGFx2ifDgcjPrru/02HOe+dHsRtzuX9jCXJSSmWW2akryEx5YmsRx731BXcQMdKiKucmYXzMI6l
+	6o/Yo6++6C+48JCLysODsn6ysWqq4v7o4Coj9ruBdOaU9HXHlljk3fEQ++BW0GPtaX65MnHK1aUy2
+	ObKq1CwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvJIo-00000000Kd3-1roq
+	id 1rvLHG-00000000mk2-0yil
 	for ath12k@archiver.kernel.org;
-	Fri, 12 Apr 2024 15:58:58 +0000
-Received: from dispatch1-us1.ppe-hosted.com ([148.163.129.49])
+	Fri, 12 Apr 2024 18:05:30 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvJIk-00000000KaB-0XOJ
+	id 1rvLHC-00000000mhE-49xA
 	for ath12k@lists.infradead.org;
-	Fri, 12 Apr 2024 15:58:57 +0000
-X-Virus-Scanned: Proofpoint Essentials engine
-Received: from mail3.candelatech.com (mail2.candelatech.com [208.74.158.173])
-	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTP id C6E7CB80079;
-	Fri, 12 Apr 2024 15:58:46 +0000 (UTC)
-Received: from [IPV6:2a00:79e1:abc:12b:612f:d396:1826:730f] (unknown [104.133.8.111])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
-	(No client certificate requested)
-	by mail3.candelatech.com (Postfix) with ESMTPSA id 051C813C2B0;
-	Fri, 12 Apr 2024 08:58:45 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 051C813C2B0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
-	s=default; t=1712937526;
-	bh=lC7qfRnRYrZ1lqblWSWO66MJ19IoysQe93+DAH5MJq8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=k+iXYXxd0JenXP1I1FCrUryQGaFFcBsaCOYDHprsotRqXwxuvV0lECOgxQ+DqF4Wc
-	 yRjTZ18Avp5DTVJyjB1dB1wNr3GKzX5gXEZxUfl7i2kloqZXdTivpUpHNJPI6QsfR+
-	 eo+BhQ9Ri2qvZkV35uJa9AoysJ31+IY7WV0rsou8=
-Message-ID: <dbd51b99-8472-2641-7493-6b91e384b4b6@candelatech.com>
-Date: Fri, 12 Apr 2024 08:58:45 -0700
+	Fri, 12 Apr 2024 18:05:29 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43CEtv30000767;
+	Fri, 12 Apr 2024 18:05:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=JMRuDMCMN+0Lx3D+OcNdIJJXhCZRAJFIDfDyf6HMhYY=; b=Om
+	/aul0LN7qiosg7BSaV4XxVuo0Oeh5JcCaonckwQ0qUw0fF5fpQvtjH+VdNOwOhHD
+	m9uqVqk00d6+NQxJ/IVVatVA3bk7SWryXq6ENULYHz2VdU2hhy+taV/5YyLQSNbp
+	djfnBa8r08FhcTocaPrhByWZrdUxDCyyd1OhgLRufuCBOc45YyutPXLevXscJAgU
+	RzWrVo7pW3um6gEgmSdbiYq3kF0pLYAAc4N1WHSD4qgyKM29b0RTHrXQUYmBEXIf
+	vdF9Ztq4BWM4BqB1krTQ/kQf+quQfYV9thb36Ts8x+hx3M3LiG0QbhAO5hZC60yc
+	4nUpP5KOZOkRbtcSVIFw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xf06phcem-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 12 Apr 2024 18:05:24 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43CI51VC031991
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 12 Apr 2024 18:05:01 GMT
+Received: from [10.110.37.144] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 12 Apr
+ 2024 11:05:01 -0700
+Message-ID: <aea9f68d-4862-439c-a52f-d6463e6edca9@quicinc.com>
+Date: Fri, 12 Apr 2024 11:05:00 -0700
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.2.0
-Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
- radio in one wiphy
-Content-Language: en-MW
-To: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
- Johannes Berg <johannes@sipsolutions.net>,
- Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
- ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
- <20240328072916.1164195-2-quic_periyasa@quicinc.com>
- <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
- <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com>
- <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
- <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com>
- <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
- <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com>
- <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
- <72f491f8-dd3a-0c9e-7490-4d51c86f2102@candelatech.com>
- <cb991a00-fce2-5a3d-c03f-579b44f922f5@quicinc.com>
- <87de72e9-1d3b-b401-a712-9fe8734515b6@candelatech.com>
- <31aa6b18-8ca4-e4ce-f693-e818fc7e6932@quicinc.com>
-From: Ben Greear <greearb@candelatech.com>
-Organization: Candela Technologies
-In-Reply-To: <31aa6b18-8ca4-e4ce-f693-e818fc7e6932@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-MDID: 1712937527-yy6_EIqw-mDM
-X-MDID-O: us5;ut7;1712937527;yy6_EIqw-mDM;<greearb@candelatech.com>;e45dbe21c4fc86b950914d8831baea70
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/10] wifi: ath12k: support suspend/resume
+Content-Language: en-US
+To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240412060620.27519-1-quic_bqiang@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240412060620.27519-1-quic_bqiang@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: KZeWdr7L3bQiJ0ZCM1ODAk1vOJQzig1y
+X-Proofpoint-GUID: KZeWdr7L3bQiJ0ZCM1ODAk1vOJQzig1y
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-12_14,2024-04-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
+ bulkscore=0 phishscore=0 impostorscore=0 suspectscore=0 lowpriorityscore=0
+ malwarescore=0 clxscore=1015 spamscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
+ definitions=main-2404120133
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_085854_262623_C813717C 
-X-CRM114-Status: GOOD (  46.49  )
+X-CRM114-CacheID: sfid-20240412_110527_417897_6E14DAE7 
+X-CRM114-Status: GOOD (  17.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,159 +98,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/12/24 07:31, Vasanthakumar Thiagarajan wrote:
+On 4/11/2024 11:06 PM, Baochen Qiang wrote:
+> Now that the MHI&QRTR patches [1] are merged, we can add
+> suspend/resume support for ath12k.
 > 
+> The whole design is quite similar to that in ath11k: firmware
+> is powered down when going to suspend and powered up when
+> resume, this makes hibernation work as well in addition to
+> suspend.
 > 
-> On 4/12/2024 7:38 PM, Ben Greear wrote:
->> On 4/11/24 21:11, Vasanthakumar Thiagarajan wrote:
->>>
->>>
->>> On 4/11/2024 2:33 AM, Ben Greear wrote:
->>>> On 4/10/24 08:42, Johannes Berg wrote:
->>>>> On Wed, 2024-04-10 at 07:37 -0700, Ben Greear wrote:
->>>>>> On 4/10/24 00:56, Johannes Berg wrote:
->>>>>>> On Fri, 2024-03-29 at 07:47 -0700, Ben Greear wrote:
->>>>>>>> On 3/29/24 07:30, Johannes Berg wrote:
->>>>>>>>> On Fri, 2024-03-29 at 19:41 +0530, Vasanthakumar Thiagarajan wrote:
->>>>>>>>>>>
->>>>>>>>>>>> + * @hw_chans: list of the channels supported by every constituent underlying
->>>>>>>>>>>> + *    hardware. Drivers abstracting multiple discrete hardware (radio) under
->>>>>>>>>>>> + *    one wiphy can advertise the list of channels supported by each physical
->>>>>>>>>>>> + *    hardware in this list. Underlying hardware specific channel list can be
->>>>>>>>>>>> + *    used while describing interface combination for each of them.
->>>>>>>>>>>
->>>>>>>>>>> I'd expect there to be a limit on channels being within a single band on
->>>>>>>>>>> a single "hardware"?
->>>>>>>>>>>
->>>>>>>>>>
->>>>>>>>>> There are ath12k hardware supporting multiple band which need to be
->>>>>>>>>> registered under one mac80211_hw/wiphy. This design is to support such
->>>>>>>>>> hardware.
->>>>>>>>>
->>>>>>>>> Oh OK, that was something that I didn't have in mind any more, or never
->>>>>>>>> knew or paid attention to.
->>>>>>>>
->>>>>>>> Would it work to leave the phy reporting pretty much as it is now, but add
->>>>>>>> a 'associated_peer_radios' list section, so that each phy could report the phys
->>>>>>>> associated with it?  Then user-space, driver, mac80211 etc could look up the
->>>>>>>> other phys as needed to get a full picture?
->>>>>>>>
->>>>>>>
->>>>>>> There's not really a good way to _do_ that short of creating multiple
->>>>>>> wiphys, but that causes _massive_ complexity in the stack (both cfg80211
->>>>>>> and mac80211) so we rejected it years ago.
->>>>>>
->>>>>> I thought the problem ath12k is trying to fix is that there are currently multiple phys (radios) that needed to be made to
->>>>>> look like a single phy?
->>>>>
->>>>> Correct.
->>>>>
->>>>>> For dual and tri-concurrent radios, I think we will need them to look like 3 individual radios for non-MLO use
->>>>>> cases
->>>>>
->>>>> No, I don't see why, and if you want that we wouldn't support it anyway,
->>>>> you'd have to have a module option or something to decide which way to
->>>>> go.
->>>>>
->>>>> But it really ought to not be needed - the point of these patches is to
->>>>> give userspace enough information to know how to (and where) to create
->>>>> separate BSSes, with or without MLO between them.
->>>>>
->>>>>> For instance, mt7996 currently reports 3 single-band wiphys, and each can be used independently.
->>>>>> But assuming it starts supporting MLO, then those 3 single band wiphys will need to start acting
->>>>>> at least somewhat like a single entity
->>>>>
->>>>> Yes.
->>>>>
->>>>>> (while also concurrently being able to act as individual
->>>>>> wiphys so that one can do a mix of MLO and non MLO sta/AP.)
->>>>>
->>>>> No.
->>>>
->>>> Hello Johannes,
->>>>
->>>> Is there any design document for the combined phy approach somewhere publicly available?
->>>>
->>>> It is hard to understand the over all goals by just reading patches as they show up on
->>>> the public mailing lists...
->>>>
->>>
->>> Hi Ben,
->>>
->>> I dont think there is a document for this composite phy approach. But we try to clarify
->>> as much as possible in the commit log and kernel-doc. Pls let us know the area which
->>> is more appropriate to be clarified in the path.
->>>
->>> Vasanth
->>
->> I am worried that the whole approach has problems that would be better solved with different
->> architecture.
+> To summary, this series first does some preparations in the
+> first 8 patches. Then in patch [9/10] suspend/resume callbacks
+> are implemented. And at last in [10/10] we enable suspend/resume
+> functionality for WCN7850 because it's the only chip supporting
+> it for now.
 > 
+> [1] https://lore.kernel.org/linux-wireless/20240305021320.3367-1-quic_bqiang@quicinc.com/
 > 
-> If you see a better approach, please feel free to propose one (preferably some RFC) to solve the problem.
+> Baochen Qiang (10):
+>   wifi: ath12k: rearrange IRQ enable/disable in reset path
+>   wifi: ath12k: remove MHI LOOPBACK channels
+>   wifi: ath12k: do not dump SRNG statistics during resume
+>   wifi: ath12k: fix warning on DMA ring capabilities event
+>   wifi: ath12k: decrease MHI channel buffer length to 8KB
+>   wifi: ath12k: flush all packets before suspend
+>   wifi: ath12k: no need to handle pktlog during suspend/resume
+>   wifi: ath12k: avoid stopping mac80211 queues in ath12k_core_restart()
+>   wifi: ath12k: support suspend/resume
+>   wifi: ath12k: change supports_suspend to true for WCN7850
 > 
->    I understand that someone has made a decision to go with the combined
->> approach,
->> and I am sure they have reasons.  It would be good to see some details about how this combined
->> approach can work in lots of different use cases, including with un-modified user-space,
-> 
-> Unmodified user space sees all bands from same radio. I guess, driver can probably provide
-> some configuration knob to turn this off so that everything works a before but will not
-> be able to operate in MLO. Please note that, user space has to updated to get MLO
-> support anyway.
-> 
->   and
->> including what changes *are* required in user-space to keep current features and control working
->> with combined wiphy approach.
->>
->> My over-all concerns are that I feel user-space is still going to need to understand the individual
->> underlying phys and be able to read/modify them individually.  Older radios will continue to have single phy
->> mappings, so that must be supported pretty much forever.  So it seems there is going to be a huge amount
->> of duplicated code up and down the stack and user-space.
->>
-> 
-> Not sure why there should be any duplication, perhaps when corresponding user space
-> (hostapd) changes will clarify most of these concerns.
-> 
->> Having your team grind on a large patch set that turns out to have fundamental flaws would be
->> a huge waste of time for all involved.
->>
-> 
-> As said, please feel free to propose an alternate solution to address the issue.
+>  drivers/net/wireless/ath/ath12k/core.c  | 108 ++++++++++++++----------
+>  drivers/net/wireless/ath/ath12k/core.h  |   4 +
+>  drivers/net/wireless/ath/ath12k/dp_rx.c |  48 -----------
+>  drivers/net/wireless/ath/ath12k/dp_rx.h |   2 -
 
-I do not know the particulars of your driver or driver's needs, but at high level:
+My Qualcomm Innovation Center copyright checker reports:
+drivers/net/wireless/ath/ath12k/dp_rx.h copyright missing 2024
 
-*  Leave existing wiphy mapping as is.
-*  Allow adding new combined wiphy(s) on top of groups of underlying physical wiphys.  Sort of
-    like bridges on top of Eth ports.
-*  The combined wiphy would report underlying wiphy's capabilities (for instance, a combined wiphy on top of
-    3 single band phys would report itself as tri-band).
-*  The combined wiphy would add new netlink field listing of its underlying wiphys.  User-space wanting to control the combined
-    wiphy would generally configure the underlying phys (to set 2.4g channel to 6, you'd set the underlying 2.4g
-    wiphy to channel 6)
-*  This should require very minimal changes to user space, except of course for new code to actually utilize
-    the new combined wiphy.
-*  MLO links and any other logic that needs the combined view would live on the combined wiphy (I understand
-    from Johannes' comments this is a needed feature.)
-*  Or user can ignore that combined wiphy entirely and directly use underlying wiphys like we use them currently
-    for sniffers, stations, aps, combinations thereof.
-*  Advanced use case could allow combined wiphy to use subset of underlying radios (add combined wiphy on 2.4 and 5g, use 6g for
-    dedicated mesh backhaul/whatever).
-*  Interesting logic would be needed to deal with constraints to properly share the underlying resources (you could not
-    add 16 ap bssid to 2.4 wiphy and also add 16 other ones to the combined wiphy that also uses 2.4 radio most likely,
-    for instance).  But I think that logic has to be written
-    either way and is not overly worse with this approach.
-
-Thanks,
-Ben
-
-
+>  drivers/net/wireless/ath/ath12k/hif.h   |  14 ++-
+>  drivers/net/wireless/ath/ath12k/hw.c    |   2 +-
+>  drivers/net/wireless/ath/ath12k/mac.c   |  28 ++++--
+>  drivers/net/wireless/ath/ath12k/mac.h   |   1 +
+>  drivers/net/wireless/ath/ath12k/mhi.c   |  91 +++++++-------------
+>  drivers/net/wireless/ath/ath12k/mhi.h   |   5 +-
+>  drivers/net/wireless/ath/ath12k/pci.c   |  41 +++++++--
+>  drivers/net/wireless/ath/ath12k/pci.h   |   2 +-
+>  drivers/net/wireless/ath/ath12k/qmi.c   |   3 +-
+>  drivers/net/wireless/ath/ath12k/wmi.c   |   1 +
+>  14 files changed, 175 insertions(+), 175 deletions(-)
 > 
-> Vasanth
 > 
+> base-commit: 363e7193eaf258fe7f04e8db560bd8a282a12cd9
 
+patch 6 of this series conflicts with:
+wifi: ath12k: add support to handle beacon miss for WCN7850
 
--- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
+So I was not able to take this series into my local verification tree
+
+patch 7 of this series conflicts with:
+wifi: ath12k: fix mac id extraction when MSDU spillover in rx error path
+
+So this conflicts with a patch already in the pending branch
+
+So FYI at some point you'll need to rebase.
 
