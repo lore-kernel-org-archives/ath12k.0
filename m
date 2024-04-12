@@ -4,90 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13B2AC4345F
-	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 12:01:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB3D1C4345F
+	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 14:08:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
-	Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CeCAE/QnruiTawWUprbCmFasjXRmO+GRxpSd//EBvAE=; b=QzCs0CxN9YQnC3VSnXdlypqbmz
-	84d+KUwdJbqvfPBSFarlBawmjxIH/2z6PPh0xWGsUDQ6JVeih+PMubNd4ZWcivEV1s6e0k+BUJpaK
-	llL5f20Zwn0xGdFppwIVkgJr0qXbXgweiWQkcw/AzWD1QOyM+Hw3xWavOp13l87XHrVhSR+rN/iNH
-	KWEVlGhS8SPx1b0gD3AEiwkurQnfyQEK3GIiqG0VBcH+e4p5Tkb0QUbyo6EAnLL2LkyJNRN6EpjzS
-	wH+IBAVwximoG2ytBsKvZpFuCibYcSKNal0ecliUDvjQ5YJFbnVa3Vvz+hoQjIXVAo5DfcZNSr6ko
-	sV4+wN4w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=b2qf0rj68jwnFjyQgpXEJ9F1ggPyA/c9pc1FhpVEDOs=; b=RXTcfDCKLenBRQcOoVkCseL2bS
+	H6haGnXaEufTGkuC58WhzD6M+GwhJgUdWlKFuaVzZ9tEOb1gQl0sLuUeemgJ9SZ16MpvaUFLA/DMG
+	/wwCcK7Z1+LW3hvS3aqgRxqnDc5li3lcygki2JxPTeMi9A/BSP0H8r8a84rIjL47ZbQ1uZOerUdDH
+	1q8dtCGPttDEhfKNWt46drGV15YJYuW5zrT8o5yuGYmRc+LHmtCwlUvTYz1pBOv2D0BSTosH9SYJz
+	aUoh0liRaMMmCbH0YYM5H0TjXLigbONl23GeprzGXeXXb5dlB9R/yo9/nY6QS7nsD0oBKgBgisr7N
+	S9KJoEdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvFbB-0000000H2bL-2959
+	id 1rvHZo-0000000HUFP-1ofa
 	for ath12k@archiver.kernel.org;
-	Fri, 12 Apr 2024 12:01:41 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	Fri, 12 Apr 2024 14:08:24 +0000
+Received: from dispatch1-us1.ppe-hosted.com ([67.231.154.184])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvFb5-0000000H2aF-0j2N
+	id 1rvHZk-0000000HUBk-1vQb
 	for ath12k@lists.infradead.org;
-	Fri, 12 Apr 2024 12:01:39 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-56e47843cc7so832909a12.0
-        for <ath12k@lists.infradead.org>; Fri, 12 Apr 2024 05:01:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1712923289; x=1713528089; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=CeCAE/QnruiTawWUprbCmFasjXRmO+GRxpSd//EBvAE=;
-        b=UYSAWpWfEcvBQsI1PuTN7Ee73QBWhSGCILaX/AF02ijQPVwWTLGyZW4V5ZiU1KzJny
-         +Mb8kZId1fh7XExBKFrM+rhu6kufeNxzmx48Ag9HCew1obc2H8gxX4h4WI7F7jUAMdgR
-         DOpDWXH1Qw8ZOT+GCOFHoMALa0Wel0gQNLC2BBA81szddR0ed9Nc2SdQNyNqTbnTfZWd
-         zFhUM61d24H82OyNdDKTC4fASOZLX24KA44rLcoQ6plJab8jMnNy8XwsQkskIUEnOBWi
-         EvrXSsLN4O/HvNWub5i4+1IiJsRI82a50s7/0lRTitb/WKuaahmXkZDbnaWfe4tVtbMr
-         g0uA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712923289; x=1713528089;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=CeCAE/QnruiTawWUprbCmFasjXRmO+GRxpSd//EBvAE=;
-        b=UR++/aBck0qcZpZG6hAOx/Ie+NXwr1RvT2pDyeXtkB7hn+3u19clER9iGY3iP22IqO
-         Y2jU0A9OzwD3oAEFwTi+BXSLcDCDFEnnwZ3gmUlFQgN7SKyeXRes+Uvl6VHHHg4TG/WG
-         A8irDKbXs4etaQ++qm1qkY6WlYOYKoHvYVel2uQgU9TKiYfzoWA1+XXTsxJdTGV1y67h
-         MoNxDP4BjkIE8HxpngyHb4zjVebqifuuVNz3QXKdFjWjlSL0cxYITxcV6JUbLyroXzcU
-         ZQo6CP5xiO+sIUs05FXSLhhhm0z+NfzryM1V7co8EgzS2ApBVlHeia6e+iD6vZR+hRI4
-         MXAw==
-X-Forwarded-Encrypted: i=1; AJvYcCVhtDCdbGVZq7btlIEZk4Q1VN7pzIT+fkWaKjcu9EUkl2xc6GB75g+GuMHVEZqDNVdCGcNkuOB/wYEm+7WWo5Xtc5yrxq+GZ/341w==
-X-Gm-Message-State: AOJu0YxnKwP521wPWraIWUyFxq0Btxq4k/LboZ4cJkVbDrkYMrk94SrK
-	u07120qcWp6gXzl3FdatT1SZdr4asDYcfzl69ihxM8NK68/D/pseE9ikXQCsuTXrFiz1vC5JnE8
-	1k5HCWZhycWmklB020bs7j7rkALo=
-X-Google-Smtp-Source: AGHT+IGp9ewgZpGM/38Ui91s9NpGJHPzveZW2R9MOq9DG0E8jUtcxinpLDwpAwSkcBFFElG4ngUTL9FOj1YrjHUACT0=
-X-Received: by 2002:a17:906:dac1:b0:a52:241b:b450 with SMTP id
- xi1-20020a170906dac100b00a52241bb450mr1886649ejb.36.1712923288360; Fri, 12
- Apr 2024 05:01:28 -0700 (PDT)
+	Fri, 12 Apr 2024 14:08:22 +0000
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from mail3.candelatech.com (mail2.candelatech.com [208.74.158.173])
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTP id 4328CB80079;
+	Fri, 12 Apr 2024 14:08:16 +0000 (UTC)
+Received: from [172.20.4.169] (unknown [69.170.33.158])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by mail3.candelatech.com (Postfix) with ESMTPSA id 18FD413C2B0;
+	Fri, 12 Apr 2024 07:08:15 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 18FD413C2B0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+	s=default; t=1712930895;
+	bh=ncLXrYpIYQhHN17O5DiMgzrK4eT7Tan/ljpIttpbmp8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=JhJHs4zp7nMAxKc1/I5IGXyJtE/hmEF1dCAoNby8CI9b+La3nwWS10X0TxQn4D21n
+	 3XTTQripLn7+DMqIo0JhR4DmbeELKhvwcIT0dNAHZgRzxeOJD7ih4Sy2wUGGTFxUTc
+	 VYI/WM7oQOLzDhuag6Piea2UQFIdswfGGGPpdeCE=
+Message-ID: <87de72e9-1d3b-b401-a712-9fe8734515b6@candelatech.com>
+Date: Fri, 12 Apr 2024 07:08:14 -0700
 MIME-Version: 1.0
-References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
- <20240328072916.1164195-2-quic_periyasa@quicinc.com> <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
- <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com> <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
- <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com> <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
- <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com> <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
- <aa9e1d54-bb5f-37cc-335f-c9970ab13789@candelatech.com> <0cfe990b-182b-4ceb-b5b4-2989fefedb2f@quicinc.com>
- <29f7ecb6d7c208c3614f37616943d5f97bb134d3.camel@freebox.fr>
- <5fc2f2d2-7403-79d2-8909-ddda918ff8d5@quicinc.com> <af70ee81e583f58dada3dde87ac335137c4038b0.camel@freebox.fr>
- <6ff353e2-785a-f2ce-8d3b-acc8e79a64cf@quicinc.com> <D0HZ1KH5VJ8P.2TZZ7NNZXSJA8@gmail.com>
- <816770ca-fb30-e1cc-3f57-51d1fd35f141@quicinc.com>
-In-Reply-To: <816770ca-fb30-e1cc-3f57-51d1fd35f141@quicinc.com>
-From: James Dutton <james.dutton@gmail.com>
-Date: Fri, 12 Apr 2024 13:00:51 +0100
-Message-ID: <CAAMvbhFPdPUOYSnxhO36E0yYJ7cuQLUGt87EqoGhBc=sw7GgHw@mail.gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.2.0
 Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
  radio in one wiphy
-To: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-Cc: Nicolas Escande <nico.escande@gmail.com>, mbizon@freebox.fr, 
-	Jeff Johnson <quic_jjohnson@quicinc.com>, Ben Greear <greearb@candelatech.com>, 
-	Johannes Berg <johannes@sipsolutions.net>, 
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>, ath12k@lists.infradead.org, 
-	linux-wireless@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Language: en-MW
+To: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+ ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
+ <20240328072916.1164195-2-quic_periyasa@quicinc.com>
+ <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
+ <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com>
+ <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
+ <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com>
+ <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
+ <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com>
+ <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
+ <72f491f8-dd3a-0c9e-7490-4d51c86f2102@candelatech.com>
+ <cb991a00-fce2-5a3d-c03f-579b44f922f5@quicinc.com>
+From: Ben Greear <greearb@candelatech.com>
+Organization: Candela Technologies
+In-Reply-To: <cb991a00-fce2-5a3d-c03f-579b44f922f5@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-MDID: 1712930897-Q87u6QB21xs3
+X-MDID-O: us5;at1;1712930897;Q87u6QB21xs3;<greearb@candelatech.com>;e45dbe21c4fc86b950914d8831baea70
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_050135_341086_B0208F6F 
-X-CRM114-Status: GOOD (  31.95  )
+X-CRM114-CacheID: sfid-20240412_070820_688726_CA08B2BA 
+X-CRM114-Status: GOOD (  32.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,132 +93,106 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 12 Apr 2024 at 09:02, Vasanthakumar Thiagarajan
-<quic_vthiagar@quicinc.com> wrote:
-> On 4/12/2024 1:08 PM, Nicolas Escande wrote:
-> > On Fri Apr 12, 2024 at 5:50 AM CEST, Vasanthakumar Thiagarajan wrote:
-> >> On 4/11/2024 10:09 PM, Maxime Bizon wrote:
-> >>>
-> >>> On Thu, 2024-04-11 at 21:56 +0530, Vasanthakumar Thiagarajan wrote:
-> >>>
-> >>> Hello,
-> >>>
-> >>> Thanks for making it clear,
-> >>>
-> >>>
-> >>>>> For example, starting a 5Ghz AP in ax-only mode, and at the same
-> >>>>> time
-> >>>>> creating a STA interface on 2.4GHz ?
-> >>>
-> >>>> Yes, such use cases continue to be supported in single wiphy mode.
-> >>>
-> >>> Understood, but I see some corner cases.
-> >>>
-> >>>
-> >>> For example, assume two bands AP hardware, 2.4GHz and 5GHz.
-> >>>
-> >>> Previously:
-> >>>     - phy0 is 2.4Ghz
-> >>>     - phy1 is 5Ghz
-> >>>     - iw phy phy0 interface create wlan0 type managed
-> >>>     - iw dev wlan0 scan
-> >>>
-> >>> => will only scan 2.4Ghz
-> >>>
-> >>>
-> >>> With single phy approach:
-> >>>     - phy0 is 2.4Ghz + 5Ghz concurrent
-> >>>     - # iw phy phy0 interface create wlan0 type managed
-> >>>     - # iw dev wlan0 scan
-> >>>
-.> >>> => will scan both bands ?
-> >>>
-> >>
-> >> Yes, both the bands will be scanned if freq list is not given
-> >>
-> >>>     - <starting from previous state>
-> >>>     - # iw phy phy0 interface create wlan1 type __ap
-> >>>     - # hostapd -i wlan1 <config>
-> >>>     - # iw dev wlan0 scan
-> >>>
-> >>> => what will happen then ?
-> >>>
-> >>
-> >> Scan will be carried out on all the radios including the one on which AP interface is
-> >> running. Scan with freq list can be used not to disturb the radio of AP interface.
-> >>
-> >>>> Same goes for hostapd ACS, I assume specifying freqlist becomes
-> >>> mandatory or we can't predict which band the AP will be on ?
-> >>>
-> >>
-> >> If no freq list is given, ACS will run through all the bands and select a channel from any
-> >> of the bands. But this can be optimized to do ACS and channels selection on a particular
-> >> band using channellist/freqlist hostapd configurations.
-> > Hello,
-> >
-> > And in a (very unlikely) case that there are two underlying radios that can
-> > operate on the same frequencies, how would freqlist enable us to really select
-> > the underlying radio ?
-> >
->
-> This can not be supported in this approach. As only the radios participating in MLO are
-> supposed to be combined under one wiphy, not sure if we have real use case to combine
-> radios of same frequencies.
->
+On 4/11/24 21:11, Vasanthakumar Thiagarajan wrote:
+> 
+> 
+> On 4/11/2024 2:33 AM, Ben Greear wrote:
+>> On 4/10/24 08:42, Johannes Berg wrote:
+>>> On Wed, 2024-04-10 at 07:37 -0700, Ben Greear wrote:
+>>>> On 4/10/24 00:56, Johannes Berg wrote:
+>>>>> On Fri, 2024-03-29 at 07:47 -0700, Ben Greear wrote:
+>>>>>> On 3/29/24 07:30, Johannes Berg wrote:
+>>>>>>> On Fri, 2024-03-29 at 19:41 +0530, Vasanthakumar Thiagarajan wrote:
+>>>>>>>>>
+>>>>>>>>>> + * @hw_chans: list of the channels supported by every constituent underlying
+>>>>>>>>>> + *    hardware. Drivers abstracting multiple discrete hardware (radio) under
+>>>>>>>>>> + *    one wiphy can advertise the list of channels supported by each physical
+>>>>>>>>>> + *    hardware in this list. Underlying hardware specific channel list can be
+>>>>>>>>>> + *    used while describing interface combination for each of them.
+>>>>>>>>>
+>>>>>>>>> I'd expect there to be a limit on channels being within a single band on
+>>>>>>>>> a single "hardware"?
+>>>>>>>>>
+>>>>>>>>
+>>>>>>>> There are ath12k hardware supporting multiple band which need to be
+>>>>>>>> registered under one mac80211_hw/wiphy. This design is to support such
+>>>>>>>> hardware.
+>>>>>>>
+>>>>>>> Oh OK, that was something that I didn't have in mind any more, or never
+>>>>>>> knew or paid attention to.
+>>>>>>
+>>>>>> Would it work to leave the phy reporting pretty much as it is now, but add
+>>>>>> a 'associated_peer_radios' list section, so that each phy could report the phys
+>>>>>> associated with it?  Then user-space, driver, mac80211 etc could look up the
+>>>>>> other phys as needed to get a full picture?
+>>>>>>
+>>>>>
+>>>>> There's not really a good way to _do_ that short of creating multiple
+>>>>> wiphys, but that causes _massive_ complexity in the stack (both cfg80211
+>>>>> and mac80211) so we rejected it years ago.
+>>>>
+>>>> I thought the problem ath12k is trying to fix is that there are currently multiple phys (radios) that needed to be made to
+>>>> look like a single phy?
+>>>
+>>> Correct.
+>>>
+>>>> For dual and tri-concurrent radios, I think we will need them to look like 3 individual radios for non-MLO use
+>>>> cases
+>>>
+>>> No, I don't see why, and if you want that we wouldn't support it anyway,
+>>> you'd have to have a module option or something to decide which way to
+>>> go.
+>>>
+>>> But it really ought to not be needed - the point of these patches is to
+>>> give userspace enough information to know how to (and where) to create
+>>> separate BSSes, with or without MLO between them.
+>>>
+>>>> For instance, mt7996 currently reports 3 single-band wiphys, and each can be used independently.
+>>>> But assuming it starts supporting MLO, then those 3 single band wiphys will need to start acting
+>>>> at least somewhat like a single entity
+>>>
+>>> Yes.
+>>>
+>>>> (while also concurrently being able to act as individual
+>>>> wiphys so that one can do a mix of MLO and non MLO sta/AP.)
+>>>
+>>> No.
+>>
+>> Hello Johannes,
+>>
+>> Is there any design document for the combined phy approach somewhere publicly available?
+>>
+>> It is hard to understand the over all goals by just reading patches as they show up on
+>> the public mailing lists...
+>>
+> 
+> Hi Ben,
+> 
+> I dont think there is a document for this composite phy approach. But we try to clarify
+> as much as possible in the commit log and kernel-doc. Pls let us know the area which
+> is more appropriate to be clarified in the path.
+> 
 > Vasanth
->
 
-Looking at this discussion, I think it would really be helped with
-some architectural diagrams describing the various combinations of
-components in an RF chain.
+I am worried that the whole approach has problems that would be better solved with different
+architecture.  I understand that someone has made a decision to go with the combined approach,
+and I am sure they have reasons.  It would be good to see some details about how this combined
+approach can work in lots of different use cases, including with un-modified user-space, and
+including what changes *are* required in user-space to keep current features and control working
+with combined wiphy approach.
 
-Let us take a single example.
-We have antennas, analogue front end, and ADCs (Analogue to digital converters)
-The features of those two are:
-1)  Antennas can be optimised for particular frequencies.
-2) The analogue front end has many different parameters, but for this
-discussion, the important one is:
-a) frequencies it can tune to.
-b) instantaneous bandwidth. I.e. When tuned to a particular frequency,
-what is the bandwidth around that frequency that one can receive.
-3) ADC
-a) The Sample rate
+My over-all concerns are that I feel user-space is still going to need to understand the individual
+underlying phys and be able to read/modify them individually.  Older radios will continue to have single phy
+mappings, so that must be supported pretty much forever.  So it seems there is going to be a huge amount
+of duplicated code up and down the stack and user-space.
 
-Once the RF sample are in the digital domain one has the ADC ->
-DIgital Processing -> Output data
-If we assume that the ADC is set to receive the full instantaneous
-bandwidth, the digital processing can do a number of things.
-1) process the full instantaneous bandwidth into a single channel of data.
-2) process the instantaneous bandwidth into multiple sub bands, or
-multiple channels of data.
+Having your team grind on a large patch set that turns out to have fundamental flaws would be
+a huge waste of time for all involved.
 
-There is also the control endpoint that controls all these components.
-There can be multiple front ends for each ADC. multiple ADCs per
-Digital Processing.
+Thanks,
+Ben
 
-A higher level process (maybe hostapd) can then speak to multiple
-Digital Processing and ADC, RF Front end components and then somehow
-has to manage and coordinate them all.
-
-All these capabilities and varying arrangement of the various
-components need to be reported up to a higher level, in a common way,
-that can handle all possible arrangements.
-Once the higher level process has all this information, it can then
-manage to do everything necessary for Multi-Link operation (MLO).
-
-So, to answer some of the questions in this thread.
-Scanning: The high level process should know what capabilities are
-available and what can be done in parallel or not. So it should be
-able to convert a request from a user, into a more detailed request
-down towards the hardware.
-I.e. User asks for scan.  High level process tells which bits of the
-hardware should do the scanning and across which frequencies.
-While it might sound complicated, when implemented correctly, it is
-just a matter of iterating over a  tree with a search match criteria.
-
-My expertise is in managing far more complex RF hardware and not Wifi
-specifically, but the concepts for managing the hardware across all
-the available frequencies is the same. I am just offering a
-perspective of where the problems discussed here have already been
-solved in another domain.
+-- 
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
 
