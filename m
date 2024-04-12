@@ -4,87 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02E5AC4345F
-	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 14:36:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93939C04FF8
+	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 14:39:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uhvahIrlB8uSeCJa0p0eowW6sGuPWsBdrk2P7izv/4Q=; b=uwLtQboq3BBBs5Hi7+T6RLTfNG
-	OItGXvM50IfoMYSvdI06KnfUNhKadu3h+2DsD34O0X717DdzYXq+7XDvNuj0LgdG9aYvdeBhZv3sB
-	IxiZvR7xJi9p8jbxbR0gi2L4FDh55hdkA5U7vm/DJ6guyRJ8wkCqCN9lnJIcko7GcBk0+3Hg6R8Bj
-	fyLN0ZsmwGUWELPs9A81lrCUWL2gL+Liv4/ETEGUg7s/7aCBIDptHHjN4RTmdnn1XQVtOqXay2lwA
-	QAmwF9h6u19rDdJZ7LWJOCKEQPmyRt+zyaNvScEMtrTb2ABLs5OMKPWqjfx5CtOZs87W5/0cwnPYY
-	VRRETtTQ==;
+	bh=gd1ZSzgzh2RKA4xCiVlmx0jdKFZJnll663fP+QHa0b0=; b=L59FpfwMnLkcTzUw4QKjSNc8jU
+	wKuNygref0HKvNeM7q0p5OM+lZxtp1QUkO/wRpILZ6gq9tBXdLUMLYQyDvaAWFi5XGy3K9g6COgFl
+	3OTz8LEFek76PfY1vQdqk10k9OUwi+lBHiR5QvhfeKhPOAbTsekQ9ebGpBjx3859vK075q3qWtjfb
+	X+RWKUle7GvUHVqe3NrHPkhTLj3CdNc4WCOdsCwjbxcCwjU2HEX24CHRRKNejCaiSVKcsu1GNUVN9
+	rqTGhVVlOJhwbCR0Ms3NOh8RUQAAJEPwU2BnnhbFp8VGpx0g3F9LyQ89C/+mAw5pls4WGAAD/jQPH
+	S3BAmiZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvI0u-000000000aV-2yz1
+	id 1rvI44-000000001aM-0RLy
 	for ath12k@archiver.kernel.org;
-	Fri, 12 Apr 2024 14:36:24 +0000
+	Fri, 12 Apr 2024 14:39:40 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvI0s-000000000a9-2s59
+	id 1rvI3z-000000001W9-3FaQ
 	for ath12k@lists.infradead.org;
-	Fri, 12 Apr 2024 14:36:24 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43CClT4n010818;
-	Fri, 12 Apr 2024 14:36:22 GMT
+	Fri, 12 Apr 2024 14:39:38 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43CENwdA014608;
+	Fri, 12 Apr 2024 14:39:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=uhvahIrlB8uSeCJa0p0eowW6sGuPWsBdrk2P7izv/4Q=; b=h1
-	TrNMSk2qvS6j3irvvSNlU5paGVOzdmrVZ+M40ThLpchIBAmaly+6RmD/9Vxaw/Aj
-	zX1XvP3CdG4ndQQAKvML7nHkxc0hRFjJFmZsR7V/93Sxs+RunoKHBvU82iCAb9/t
-	hye7ING1LJe87P/HcM7dEGBPSSk+qgkL3EQcOtTLjopIwNRyONl0B11MmMe3Ldyy
-	RUXh5EI6HCP9ES+vb47FWKgZYVbuX5NUc4vD2+VAlnI/b4u93YkzOh+tMvaSLVHF
-	FkN8XzDiye3Q2Bn7H7e9ACV1kdosm7JwqbLBPZG8xO08NYXhclORQhs4lfvYajqv
-	EEDLqxtF9RXbbITRnupQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xeyev8xww-1
+	qcppdkim1; bh=gd1ZSzgzh2RKA4xCiVlmx0jdKFZJnll663fP+QHa0b0=; b=Hw
+	//TUZoL7LbpKPLwlcyYkb1p4z+Diydn6o6wRf9K3uSZiIAPseh8kmj4BInvwWer5
+	Q1HbkmEwUsdqfWNop35CiltbKqTjxki1+ZCKQt6S1fp7ABpYuB2zfIsWCsHcIK41
+	1wN7IHU56Jz8knFTJ2S+CpNc/opyS8ISiS+YyWf6+rsh7EhDS3VpWpK9af2+ydPp
+	kUFP3dDLyWuSgibFTgmNfcu42/vBzsSRpKvyrRu1unKCvcZrJ1t+uJpCG/bPjMof
+	bN1vZb0N/BdqFRlmyZgIsLGsckAM4TtRZqvCq9ClgtlJ5WvbNI6kFwpLmdjL0uF8
+	pCbSczIbYy8vDOLrYaqg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xewr396w1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 12 Apr 2024 14:36:22 +0000 (GMT)
+	Fri, 12 Apr 2024 14:39:28 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43CEaLtD001153
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43CEdS3Y026107
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 12 Apr 2024 14:36:21 GMT
-Received: from [10.110.37.144] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Fri, 12 Apr 2024 14:39:28 GMT
+Received: from [10.216.26.110] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 12 Apr
- 2024 07:36:20 -0700
-Message-ID: <c6860d94-be1b-4d3b-a840-a7afb143823e@quicinc.com>
-Date: Fri, 12 Apr 2024 07:36:20 -0700
+ 2024 07:39:23 -0700
+Message-ID: <3726f708-8674-e4f2-1561-ca334f27e910@quicinc.com>
+Date: Fri, 12 Apr 2024 20:09:16 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3] wifi: ath12k: add support to handle beacon miss for
- WCN7850
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
+ radio in one wiphy
 Content-Language: en-US
-To: kangyang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240412094447.2063-1-quic_kangyang@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240412094447.2063-1-quic_kangyang@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
+To: James Dutton <james.dutton@gmail.com>
+CC: Nicolas Escande <nico.escande@gmail.com>, <mbizon@freebox.fr>,
+        "Jeff
+ Johnson" <quic_jjohnson@quicinc.com>,
+        Ben Greear <greearb@candelatech.com>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
+ <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
+ <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com>
+ <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
+ <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com>
+ <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
+ <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com>
+ <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
+ <aa9e1d54-bb5f-37cc-335f-c9970ab13789@candelatech.com>
+ <0cfe990b-182b-4ceb-b5b4-2989fefedb2f@quicinc.com>
+ <29f7ecb6d7c208c3614f37616943d5f97bb134d3.camel@freebox.fr>
+ <5fc2f2d2-7403-79d2-8909-ddda918ff8d5@quicinc.com>
+ <af70ee81e583f58dada3dde87ac335137c4038b0.camel@freebox.fr>
+ <6ff353e2-785a-f2ce-8d3b-acc8e79a64cf@quicinc.com>
+ <D0HZ1KH5VJ8P.2TZZ7NNZXSJA8@gmail.com>
+ <816770ca-fb30-e1cc-3f57-51d1fd35f141@quicinc.com>
+ <CAAMvbhFPdPUOYSnxhO36E0yYJ7cuQLUGt87EqoGhBc=sw7GgHw@mail.gmail.com>
+From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
+In-Reply-To: <CAAMvbhFPdPUOYSnxhO36E0yYJ7cuQLUGt87EqoGhBc=sw7GgHw@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: DCvYzYX4uSPnavxznftwkYIErjw8O_9E
-X-Proofpoint-GUID: DCvYzYX4uSPnavxznftwkYIErjw8O_9E
+X-Proofpoint-ORIG-GUID: 75oqmx5GkI6LT20WT3NFcH8-KyKFbj-Y
+X-Proofpoint-GUID: 75oqmx5GkI6LT20WT3NFcH8-KyKFbj-Y
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-12_11,2024-04-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- mlxlogscore=689 priorityscore=1501 phishscore=0 clxscore=1015
- impostorscore=0 adultscore=0 mlxscore=0 suspectscore=0 spamscore=0
- bulkscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ malwarescore=0 phishscore=0 spamscore=0 lowpriorityscore=0 mlxscore=0
+ bulkscore=0 clxscore=1011 adultscore=0 mlxlogscore=794 suspectscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2404010003 definitions=main-2404120106
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_073622_788916_42FAE25A 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20240412_073936_038285_A69B8D39 
+X-CRM114-Status: GOOD (  33.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,28 +123,140 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/12/2024 2:44 AM, kangyang wrote:
-> From: Kang Yang <quic_kangyang@quicinc.com>
-> 
-> When AP goes down or too far away without indication to STA, beacon miss
-> will be detected. Then for WCN7850's firmware, it will use roam event
-> to send beacon miss to host.
-> 
-> If STA doesn't handle the beacon miss, will keep the fake connection
-> and unable to roam.
-> 
-> So add support for WCN7850 to trigger disconnection from AP when
-> receiving this event from firmware.
-> 
-> It has to be noted that beacon miss event notification for QCN9274
-> to be handled in a separate patch as it uses STA kickout WMI event
-> to notify beacon miss and the current STA kickout event is processed
-> as low_ack.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
+On 4/12/2024 5:30 PM, James Dutton wrote:
+> On Fri, 12 Apr 2024 at 09:02, Vasanthakumar Thiagarajan
+> <quic_vthiagar@quicinc.com> wrote:
+>> On 4/12/2024 1:08 PM, Nicolas Escande wrote:
+>>> On Fri Apr 12, 2024 at 5:50 AM CEST, Vasanthakumar Thiagarajan wrote:
+>>>> On 4/11/2024 10:09 PM, Maxime Bizon wrote:
+>>>>>
+>>>>> On Thu, 2024-04-11 at 21:56 +0530, Vasanthakumar Thiagarajan wrote:
+>>>>>
+>>>>> Hello,
+>>>>>
+>>>>> Thanks for making it clear,
+>>>>>
+>>>>>
+>>>>>>> For example, starting a 5Ghz AP in ax-only mode, and at the same
+>>>>>>> time
+>>>>>>> creating a STA interface on 2.4GHz ?
+>>>>>
+>>>>>> Yes, such use cases continue to be supported in single wiphy mode.
+>>>>>
+>>>>> Understood, but I see some corner cases.
+>>>>>
+>>>>>
+>>>>> For example, assume two bands AP hardware, 2.4GHz and 5GHz.
+>>>>>
+>>>>> Previously:
+>>>>>      - phy0 is 2.4Ghz
+>>>>>      - phy1 is 5Ghz
+>>>>>      - iw phy phy0 interface create wlan0 type managed
+>>>>>      - iw dev wlan0 scan
+>>>>>
+>>>>> => will only scan 2.4Ghz
+>>>>>
+>>>>>
+>>>>> With single phy approach:
+>>>>>      - phy0 is 2.4Ghz + 5Ghz concurrent
+>>>>>      - # iw phy phy0 interface create wlan0 type managed
+>>>>>      - # iw dev wlan0 scan
+>>>>>
+> .> >>> => will scan both bands ?
+>>>>>
+>>>>
+>>>> Yes, both the bands will be scanned if freq list is not given
+>>>>
+>>>>>      - <starting from previous state>
+>>>>>      - # iw phy phy0 interface create wlan1 type __ap
+>>>>>      - # hostapd -i wlan1 <config>
+>>>>>      - # iw dev wlan0 scan
+>>>>>
+>>>>> => what will happen then ?
+>>>>>
+>>>>
+>>>> Scan will be carried out on all the radios including the one on which AP interface is
+>>>> running. Scan with freq list can be used not to disturb the radio of AP interface.
+>>>>
+>>>>>> Same goes for hostapd ACS, I assume specifying freqlist becomes
+>>>>> mandatory or we can't predict which band the AP will be on ?
+>>>>>
+>>>>
+>>>> If no freq list is given, ACS will run through all the bands and select a channel from any
+>>>> of the bands. But this can be optimized to do ACS and channels selection on a particular
+>>>> band using channellist/freqlist hostapd configurations.
+>>> Hello,
+>>>
+>>> And in a (very unlikely) case that there are two underlying radios that can
+>>> operate on the same frequencies, how would freqlist enable us to really select
+>>> the underlying radio ?
+>>>
+>>
+>> This can not be supported in this approach. As only the radios participating in MLO are
+>> supposed to be combined under one wiphy, not sure if we have real use case to combine
+>> radios of same frequencies.
+>>
+>> Vasanth
+>>
+> 
+> Looking at this discussion, I think it would really be helped with
+> some architectural diagrams describing the various combinations of
+> components in an RF chain.
+> 
+> Let us take a single example.
+> We have antennas, analogue front end, and ADCs (Analogue to digital converters)
+> The features of those two are:
+> 1)  Antennas can be optimised for particular frequencies.
+> 2) The analogue front end has many different parameters, but for this
+> discussion, the important one is:
+> a) frequencies it can tune to.
+> b) instantaneous bandwidth. I.e. When tuned to a particular frequency,
+> what is the bandwidth around that frequency that one can receive.
+> 3) ADC
+> a) The Sample rate
+> 
+> Once the RF sample are in the digital domain one has the ADC ->
+> DIgital Processing -> Output data
+> If we assume that the ADC is set to receive the full instantaneous
+> bandwidth, the digital processing can do a number of things.
+> 1) process the full instantaneous bandwidth into a single channel of data.
+> 2) process the instantaneous bandwidth into multiple sub bands, or
+> multiple channels of data.
+> 
+> There is also the control endpoint that controls all these components.
+> There can be multiple front ends for each ADC. multiple ADCs per
+> Digital Processing.
+> 
+> A higher level process (maybe hostapd) can then speak to multiple
+> Digital Processing and ADC, RF Front end components and then somehow
+> has to manage and coordinate them all.
+> 
+> All these capabilities and varying arrangement of the various
+> components need to be reported up to a higher level, in a common way,
+> that can handle all possible arrangements.
+> Once the higher level process has all this information, it can then
+> manage to do everything necessary for Multi-Link operation (MLO).
+> 
+
+Exactly, that is what this patch series is trying to do. Advertising
+per-underlying radio's capabilities to upper layer.
+
+> So, to answer some of the questions in this thread.
+> Scanning: The high level process should know what capabilities are
+> available and what can be done in parallel or not. So it should be
+> able to convert a request from a user, into a more detailed request
+> down towards the hardware.
+> I.e. User asks for scan.  High level process tells which bits of the
+> hardware should do the scanning and across which frequencies.
+> While it might sound complicated, when implemented correctly, it is
+> just a matter of iterating over a  tree with a search match criteria.
+> 
+
+Current implementation does not change anything in scan function
+wrt a wiphy. So there will be only one scan at anytime for a wiphy.
+Possible enhancements can be discussed and added in future.
+
+Vasanth
 
