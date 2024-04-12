@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88147C4345F
-	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 09:23:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71AD2C4345F
+	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 09:45:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5WK4hlBESstsIUX+zMhngFDheN5gnJTFx66i5y0Tzm4=; b=yhsFGolBHiFDjYWbreCPCrwINg
-	TN35AiIqSL95V7XcNmlKyTztjI4SlEER/Mpu+OMvU3vtML03T+fcMRyg499NPFMR2PmyvmzaEaUPl
-	4IPNXPBP2h8Ep97XdwauCvRbEuppA/XIehvvLHGWeTwnGsF5WcA9963NCyXzyb/D2hvaCQrQUyD3j
-	uAxSIHuWiHIvsOmS/trjJ89K7Nz10DkZE20iIh7rgwNYu/SqJ0cty/ExjhXVALORyvGu3NcfPbQ3f
-	Ulqz38LM4NnXDGNbn74oI3EIYLfLNkLTZH+ekoVvRKGWURPacNJcA5oeZzto+J6yKyWBVAqRBj8y4
-	QmbRZytQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=yZSEwtpiKncEvtUZEUaB9E4qWaa7/BHVEHmQ7IL6Alc=; b=qcfkLEPNHLdyifx35weGx0rUcx
+	mpGC/IRHY6M/x482xrkIjNe/3qJbtHYZ9Ab+tFgNgpVKWWShEiw2reK7Br1HhA+PUAys2gqXBNw0H
+	1V/KJ/kkkjYY9i8mJ5r/7waDWxR0QQY02xMMXfqdRrC63kc/aROJjJ969/zaByoxkflyzQDNBWW3R
+	f9mXlGQEboojTe8MOH3wym3Z/hXq2eIljP98hvNtrrzyx/48pJGZldInzv9R7pXFkMLTagZknUvRI
+	nWk+8EgwvOXb3SEh26023yEywNWiQg4J6LKH9qYahGAs1eE8cQPWSuAcMgbRl3XSxA8J7vA9QIRYH
+	g1Y7Kc7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvD8Q-0000000GQky-129t
+	id 1rvDTB-0000000GVCk-2roX
 	for ath12k@archiver.kernel.org;
-	Fri, 12 Apr 2024 09:23:50 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	Fri, 12 Apr 2024 09:45:22 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvD8M-0000000GQj8-3AEA
+	id 1rvDT6-0000000GVBi-02eu
 	for ath12k@lists.infradead.org;
-	Fri, 12 Apr 2024 09:23:48 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-417c5aa35f6so5443775e9.3
-        for <ath12k@lists.infradead.org>; Fri, 12 Apr 2024 02:23:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1712913824; x=1713518624; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5WK4hlBESstsIUX+zMhngFDheN5gnJTFx66i5y0Tzm4=;
-        b=CsoybkspunJxaqaXvn3LLAizcQtOxFe5XF+hJsfMiWzRRi63Qib+i2jfA4k6K6v6QZ
-         ljaxvwx5QpvNmviau7P7xBBiQvypgbzA2oYxxA6F2tz1R0R76EWPjFc3aQGdW8ffKg8T
-         i35kWT7UVUhdIcpoh8bqjIhSQAdZU3bDa1Bema29ZqZSqouQjSqs82PMlVPIWX3d17KD
-         WGPavOmWZUWWQt/Dl/QRV+bfza8SPseAvTmOIs8cyQVN3TZM5dFDNvX+XXYdx1xJgmUb
-         5cIasta3iG4XWIOcnb5Qsqv9qbqylz+zl+IBOM8wuHNLDk/ZnwbX2jsydyJv3zLtudMj
-         PxLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1712913824; x=1713518624;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=5WK4hlBESstsIUX+zMhngFDheN5gnJTFx66i5y0Tzm4=;
-        b=MXC8JUCk89R5SKnn8tPasWJkDL44bOD7AwOHWq6ftVFqrjZofwskUZhQg5eGGIwCj1
-         VHmulrkWH93ipxvDnVtdeuorCxiUB0k8aiSApPgSn9/b+xlSWEVE+FX40FyMClhtZZ93
-         QTrYzc24Ji7tRAW25O8C5cBEAIEKGRzQhebsBp06DsGaT8/f11d4nqIQr7UYhdDRn/p0
-         Dn8flwBfF3jM7QpfoiYoZgYB3Lx3gXjJF4J03xiZ97H/7RV1QgDkiyDaz2pxhz312wel
-         nj0PQnYhONzxIbg/Nhxvg2UC/adaake3VuVPfEx1dmYSHy1oN/iSaV+BqXrfbw2kxqAd
-         6Njg==
-X-Forwarded-Encrypted: i=1; AJvYcCVEzB/WBk7umBJunKVY7WZDG7g2G3HlH2DaDPQZtH0zHyQU5s/qejNcX5BUiAEMBARi6UYbVjH3EB2XIJCsoLvJpiZQLG45JNJh3w==
-X-Gm-Message-State: AOJu0YzkT0aJXxZN9eGbPxn+DXKngfDHYRMc+aH0GFV+0Lbmz0sURCb8
-	bXytHBYvwxKhOQMYffZvcPRe2swaLXi5rjdek5f/l8OS60U9m4nI
-X-Google-Smtp-Source: AGHT+IEfd/dQCgUdBpBoWhvCRuRFjBhFLkkyqmM/3BxuR9AAjM3dJ0VKTDcop11fx5p2PgRYfU9Tjg==
-X-Received: by 2002:adf:e2c8:0:b0:343:6e18:5f09 with SMTP id d8-20020adfe2c8000000b003436e185f09mr1261070wrj.12.1712913823801;
-        Fri, 12 Apr 2024 02:23:43 -0700 (PDT)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ea15-20020a0560000ecf00b003438cc1d2b4sm3812598wrb.59.2024.04.12.02.23.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Apr 2024 02:23:43 -0700 (PDT)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Fri, 12 Apr 2024 11:23:43 +0200
-Message-Id: <D0I19V0104BZ.IN8THB2XCFLV@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v2] wifi: ath12k: add support to handle beacon miss for
- WCN7850
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Kang Yang" <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.17.0
-References: <20240412025149.1211-1-quic_kangyang@quicinc.com>
- <D0HYXSPMY8JE.17YSACO3ROKKZ@gmail.com>
- <6ee5664b-997b-45eb-89f9-5f75708c268a@quicinc.com>
-In-Reply-To: <6ee5664b-997b-45eb-89f9-5f75708c268a@quicinc.com>
+	Fri, 12 Apr 2024 09:45:14 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43C6AJ9p005779;
+	Fri, 12 Apr 2024 09:45:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding:content-type; s=qcppdkim1; bh=yZSEwtp
+	iKncEvtUZEUaB9E4qWaa7/BHVEHmQ7IL6Alc=; b=iqFkaG7W2iOXBt5dvOsemjC
+	Ebdod7ZdViwxFYJCs2JcRLBbhRiIASaFqMjcIiGnAk3S2BstsSSedW/lDfansTSw
+	YdxRWXRN2eTuY+fxKw9iVshhFVZp6KSWjQ/fQBxebmO6CJeWaA753ccvzERiYJ+r
+	Hb3tq26U1YH4qJwOZOsWE9lDLa4S9KsJ49YTKy+0ebUFXTQjqmPxwWNixhbZEBF4
+	wkCZk+e3G8p0e2eYEMa1MRrk4kIy+yXs6eYDnVeGXy5ulFM0IVdUNsevz9Yzkual
+	/i06X2bx+k+eS5JMF0hrZ4ZE/amHxanHM8CBB9op96aRpQL1xPg4Ux1aGxC+qbA=
+	=
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xeyev8dkg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 12 Apr 2024 09:45:07 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43C9j62G007059
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 12 Apr 2024 09:45:06 GMT
+Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 12 Apr 2024 02:45:05 -0700
+From: kangyang <quic_kangyang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
+Subject: [PATCH v3] wifi: ath12k: add support to handle beacon miss for WCN7850
+Date: Fri, 12 Apr 2024 17:44:47 +0800
+Message-ID: <20240412094447.2063-1-quic_kangyang@quicinc.com>
+X-Mailer: git-send-email 2.34.1.windows.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Fxj9UfUehBY67ZXYVpjhDnVepsBsgAoM
+X-Proofpoint-GUID: Fxj9UfUehBY67ZXYVpjhDnVepsBsgAoM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-12_06,2024-04-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ mlxlogscore=999 priorityscore=1501 phishscore=0 clxscore=1015
+ impostorscore=0 adultscore=0 mlxscore=0 suspectscore=0 spamscore=0
+ bulkscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404120070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_022346_816191_68C84DDE 
-X-CRM114-Status: GOOD (  15.71  )
+X-CRM114-CacheID: sfid-20240412_024512_324643_8A502249 
+X-CRM114-Status: GOOD (  21.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,70 +95,269 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri Apr 12, 2024 at 10:47 AM CEST, Kang Yang wrote:
->
->
-> On 4/12/2024 3:33 PM, Nicolas Escande wrote:
-> > On Fri Apr 12, 2024 at 4:51 AM CEST, kangyang wrote:
-> > [...]
-> >> @@ -5986,6 +6055,20 @@ static int ath12k_mac_vdev_create(struct ath12k=
- *ar, struct ieee80211_vif *vif)
-> >>   	lockdep_assert_held(&ar->conf_mutex);
-> >>  =20
-> >>   	arvif->ar =3D ar;
-> >> +	arvif->vif =3D vif;
-> >> +
-> >> +	INIT_LIST_HEAD(&arvif->list);
-> >> +	INIT_DELAYED_WORK(&arvif->connection_loss_work,
-> >> +			  ath12k_mac_vif_sta_connection_loss_work);
-> >> +
-> > Is there a need to move the following part ?
-> > Isn't just adding the delay work enough ?
->
->
-> Just checked, you are right, but should add delay work in add_interface()=
-.
->
-> Will change in v3.
->
->
-> >> +	for (i =3D 0; i < ARRAY_SIZE(arvif->bitrate_mask.control); i++) {
-> >> +		arvif->bitrate_mask.control[i].legacy =3D 0xffffffff;
-> >> +		memset(arvif->bitrate_mask.control[i].ht_mcs, 0xff,
-> >> +		       sizeof(arvif->bitrate_mask.control[i].ht_mcs));
-> >> +		memset(arvif->bitrate_mask.control[i].vht_mcs, 0xff,
-> >> +		       sizeof(arvif->bitrate_mask.control[i].vht_mcs));
-> >> +	}
-> >> +
-> >>   	vdev_id =3D __ffs64(ab->free_vdev_map);
-> >>   	arvif->vdev_id =3D vdev_id;
-> >>   	arvif->vdev_subtype =3D WMI_VDEV_SUBTYPE_NONE;
-> >> @@ -6316,16 +6399,6 @@ static int ath12k_mac_op_add_interface(struct i=
-eee80211_hw *hw,
-> >>  =20
-> >>   	arvif->vif =3D vif;
-> >>  =20
-> >> -	INIT_LIST_HEAD(&arvif->list);
-> >> -
-> >> -	for (i =3D 0; i < ARRAY_SIZE(arvif->bitrate_mask.control); i++) {
-> >> -		arvif->bitrate_mask.control[i].legacy =3D 0xffffffff;
-> >> -		memset(arvif->bitrate_mask.control[i].ht_mcs, 0xff,
-> >> -		       sizeof(arvif->bitrate_mask.control[i].ht_mcs));
-> >> -		memset(arvif->bitrate_mask.control[i].vht_mcs, 0xff,
-> >> -		       sizeof(arvif->bitrate_mask.control[i].vht_mcs));
-> >> -	}
-> >> -
-> >>   	/* Allocate Default Queue now and reassign during actual vdev creat=
-e */
-> >>   	vif->cab_queue =3D ATH12K_HW_DEFAULT_QUEUE;
-> >>   	for (i =3D 0; i < ARRAY_SIZE(vif->hw_queue); i++)
-> > [...]
-> >=20
-> > Thanks
+From: Kang Yang <quic_kangyang@quicinc.com>
 
-Yeah, I wasn't clear enough, I meant adding the INIT_DELAY_WORK without mov=
-ing
-the rest of the code around.=20
+When AP goes down or too far away without indication to STA, beacon miss
+will be detected. Then for WCN7850's firmware, it will use roam event
+to send beacon miss to host.
 
-Thanks
+If STA doesn't handle the beacon miss, will keep the fake connection
+and unable to roam.
+
+So add support for WCN7850 to trigger disconnection from AP when
+receiving this event from firmware.
+
+It has to be noted that beacon miss event notification for QCN9274
+to be handled in a separate patch as it uses STA kickout WMI event
+to notify beacon miss and the current STA kickout event is processed
+as low_ack.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+---
+
+v3: move INIT_DELAYED_WORK to add_interface().
+v2: rebased on latest tag: ath-202404101413.
+
+---
+ drivers/net/wireless/ath/ath12k/core.h |  2 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 75 +++++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/mac.h  |  2 +
+ drivers/net/wireless/ath/ath12k/wmi.c  | 34 ++++++------
+ drivers/net/wireless/ath/ath12k/wmi.h  |  3 ++
+ 5 files changed, 98 insertions(+), 18 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 397d8c973265..e125efe20dde 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -46,6 +46,7 @@
+ #define ATH12K_SMBIOS_BDF_EXT_MAGIC "BDF_"
+ 
+ #define ATH12K_INVALID_HW_MAC_ID	0xFF
++#define ATH12K_CONNECTION_LOSS_HZ	(3 * HZ)
+ #define	ATH12K_RX_RATE_TABLE_NUM	320
+ #define	ATH12K_RX_RATE_TABLE_11AX_NUM	576
+ 
+@@ -275,6 +276,7 @@ struct ath12k_vif {
+ 	u32 aid;
+ 	u8 bssid[ETH_ALEN];
+ 	struct cfg80211_bitrate_mask bitrate_mask;
++	struct delayed_work connection_loss_work;
+ 	int num_legacy_stations;
+ 	int rtscts_prot_mode;
+ 	int txpower;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index f15dcd75157d..e8ce9b940753 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -1398,6 +1398,75 @@ static void ath12k_control_beaconing(struct ath12k_vif *arvif,
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vdev %d up\n", arvif->vdev_id);
+ }
+ 
++static void ath12k_mac_handle_beacon_iter(void *data, u8 *mac,
++					  struct ieee80211_vif *vif)
++{
++	struct sk_buff *skb = data;
++	struct ieee80211_mgmt *mgmt = (void *)skb->data;
++	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
++
++	if (vif->type != NL80211_IFTYPE_STATION)
++		return;
++
++	if (!ether_addr_equal(mgmt->bssid, vif->bss_conf.bssid))
++		return;
++
++	cancel_delayed_work(&arvif->connection_loss_work);
++}
++
++void ath12k_mac_handle_beacon(struct ath12k *ar, struct sk_buff *skb)
++{
++	ieee80211_iterate_active_interfaces_atomic(ath12k_ar_to_hw(ar),
++						   IEEE80211_IFACE_ITER_NORMAL,
++						   ath12k_mac_handle_beacon_iter,
++						   skb);
++}
++
++static void ath12k_mac_handle_beacon_miss_iter(void *data, u8 *mac,
++					       struct ieee80211_vif *vif)
++{
++	u32 *vdev_id = data;
++	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
++	struct ath12k *ar = arvif->ar;
++	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
++
++	if (arvif->vdev_id != *vdev_id)
++		return;
++
++	if (!arvif->is_up)
++		return;
++
++	ieee80211_beacon_loss(vif);
++
++	/* Firmware doesn't report beacon loss events repeatedly. If AP probe
++	 * (done by mac80211) succeeds but beacons do not resume then it
++	 * doesn't make sense to continue operation. Queue connection loss work
++	 * which can be cancelled when beacon is received.
++	 */
++	ieee80211_queue_delayed_work(hw, &arvif->connection_loss_work,
++				     ATH12K_CONNECTION_LOSS_HZ);
++}
++
++void ath12k_mac_handle_beacon_miss(struct ath12k *ar, u32 vdev_id)
++{
++	ieee80211_iterate_active_interfaces_atomic(ath12k_ar_to_hw(ar),
++						   IEEE80211_IFACE_ITER_NORMAL,
++						   ath12k_mac_handle_beacon_miss_iter,
++						   &vdev_id);
++}
++
++static void ath12k_mac_vif_sta_connection_loss_work(struct work_struct *work)
++{
++	struct ath12k_vif *arvif = container_of(work, struct ath12k_vif,
++						connection_loss_work.work);
++	struct ieee80211_vif *vif = arvif->vif;
++
++	if (!arvif->is_up)
++		return;
++
++	ieee80211_connection_loss(vif);
++}
++
+ static void ath12k_peer_assoc_h_basic(struct ath12k *ar,
+ 				      struct ieee80211_vif *vif,
+ 				      struct ieee80211_sta *sta,
+@@ -2570,7 +2639,7 @@ static void ath12k_bss_disassoc(struct ath12k *ar,
+ 
+ 	arvif->is_up = false;
+ 
+-	/* TODO: cancel connection_loss_work */
++	cancel_delayed_work(&arvif->connection_loss_work);
+ }
+ 
+ static u32 ath12k_mac_get_rate_hw_value(int bitrate)
+@@ -6317,6 +6386,8 @@ static int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
+ 	arvif->vif = vif;
+ 
+ 	INIT_LIST_HEAD(&arvif->list);
++	INIT_DELAYED_WORK(&arvif->connection_loss_work,
++			  ath12k_mac_vif_sta_connection_loss_work);
+ 
+ 	for (i = 0; i < ARRAY_SIZE(arvif->bitrate_mask.control); i++) {
+ 		arvif->bitrate_mask.control[i].legacy = 0xffffffff;
+@@ -6449,6 +6520,8 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
+ 	ar = arvif->ar;
+ 	ab = ar->ab;
+ 
++	cancel_delayed_work_sync(&arvif->connection_loss_work);
++
+ 	mutex_lock(&ar->conf_mutex);
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MAC, "mac remove interface (vdev %d)\n",
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index 3f5e1be0dff9..bfc655a4dfce 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -78,4 +78,6 @@ enum ath12k_supported_bw ath12k_mac_mac80211_bw_to_ath12k_bw(enum rate_info_bw b
+ enum hal_encrypt_type ath12k_dp_tx_get_encrypt_type(u32 cipher);
+ int ath12k_mac_rfkill_enable_radio(struct ath12k *ar, bool enable);
+ int ath12k_mac_rfkill_config(struct ath12k *ar);
++void ath12k_mac_handle_beacon(struct ath12k *ar, struct sk_buff *skb);
++void ath12k_mac_handle_beacon_miss(struct ath12k *ar, u32 vdev_id);
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index a5575ce9eed4..4fe39e920902 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -5927,10 +5927,8 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
+ 		}
+ 	}
+ 
+-	/* TODO: Pending handle beacon implementation
+-	 *if (ieee80211_is_beacon(hdr->frame_control))
+-	 *	ath12k_mac_handle_beacon(ar, skb);
+-	 */
++	if (ieee80211_is_beacon(hdr->frame_control))
++		ath12k_mac_handle_beacon(ar, skb);
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MGMT,
+ 		   "event mgmt rx skb %pK len %d ftype %02x stype %02x\n",
+@@ -6137,42 +6135,44 @@ static void ath12k_roam_event(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	struct wmi_roam_event roam_ev = {};
+ 	struct ath12k *ar;
++	u32 vdev_id;
++	u8 roam_reason;
+ 
+ 	if (ath12k_pull_roam_ev(ab, skb, &roam_ev) != 0) {
+ 		ath12k_warn(ab, "failed to extract roam event");
+ 		return;
+ 	}
+ 
++	vdev_id = le32_to_cpu(roam_ev.vdev_id);
++	roam_reason = u32_get_bits(le32_to_cpu(roam_ev.reason),
++				   WMI_ROAM_REASON_MASK);
++
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI,
+-		   "wmi roam event vdev %u reason 0x%08x rssi %d\n",
+-		   roam_ev.vdev_id, roam_ev.reason, roam_ev.rssi);
++		   "wmi roam event vdev %u reason %d rssi %d\n",
++		   vdev_id, roam_reason, roam_ev.rssi);
+ 
+ 	rcu_read_lock();
+-	ar = ath12k_mac_get_ar_by_vdev_id(ab, le32_to_cpu(roam_ev.vdev_id));
++	ar = ath12k_mac_get_ar_by_vdev_id(ab, vdev_id);
+ 	if (!ar) {
+-		ath12k_warn(ab, "invalid vdev id in roam ev %d",
+-			    roam_ev.vdev_id);
++		ath12k_warn(ab, "invalid vdev id in roam ev %d", vdev_id);
+ 		rcu_read_unlock();
+ 		return;
+ 	}
+ 
+-	if (le32_to_cpu(roam_ev.reason) >= WMI_ROAM_REASON_MAX)
++	if (roam_reason >= WMI_ROAM_REASON_MAX)
+ 		ath12k_warn(ab, "ignoring unknown roam event reason %d on vdev %i\n",
+-			    roam_ev.reason, roam_ev.vdev_id);
++			    roam_reason, vdev_id);
+ 
+-	switch (le32_to_cpu(roam_ev.reason)) {
++	switch (roam_reason) {
+ 	case WMI_ROAM_REASON_BEACON_MISS:
+-		/* TODO: Pending beacon miss and connection_loss_work
+-		 * implementation
+-		 * ath12k_mac_handle_beacon_miss(ar, vdev_id);
+-		 */
++		ath12k_mac_handle_beacon_miss(ar, vdev_id);
+ 		break;
+ 	case WMI_ROAM_REASON_BETTER_AP:
+ 	case WMI_ROAM_REASON_LOW_RSSI:
+ 	case WMI_ROAM_REASON_SUITABLE_AP_FOUND:
+ 	case WMI_ROAM_REASON_HO_FAILED:
+ 		ath12k_warn(ab, "ignoring not implemented roam event reason %d on vdev %i\n",
+-			    roam_ev.reason, roam_ev.vdev_id);
++			    roam_reason, vdev_id);
+ 		break;
+ 	}
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 78afc94a815d..ebf73ddcadc6 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -4182,6 +4182,9 @@ struct wmi_peer_sta_kickout_event {
+ 	struct ath12k_wmi_mac_addr_params peer_macaddr;
+ } __packed;
+ 
++#define WMI_ROAM_REASON_MASK		GENMASK(3, 0)
++#define WMI_ROAM_SUBNET_STATUS_MASK	GENMASK(5, 4)
++
+ enum wmi_roam_reason {
+ 	WMI_ROAM_REASON_BETTER_AP = 1,
+ 	WMI_ROAM_REASON_BEACON_MISS = 2,
+
+base-commit: 363e7193eaf258fe7f04e8db560bd8a282a12cd9
+-- 
+2.34.1
+
 
