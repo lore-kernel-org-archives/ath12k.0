@@ -4,85 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 988B3C00A94
-	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 10:17:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13B2AC4345F
+	for <ath12k@archiver.kernel.org>; Fri, 12 Apr 2024 12:01:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
+	Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=areZIt5ws///I0F4gDTJf1ZIP/yXCEEzR+Qs87KjB9I=; b=vlikHRbxjZERRFlZJDo6/5yPq7
-	ZyqJOrFsktucHPMEdceTPmegBWCy/3DTdNN53Ul73UIiDCAhAvD815PMP7myTKUy5j5qN9ZaAUnoD
-	khyLTzVC5udCqPU24LkwqbpYcWclIrqFNGGaXfXvA/aqs7wz7bKfbuI7cbVBMiB6PaLfOjmUIt9sn
-	WU5+c7JXvhHxTveml0cgrN4RY1rwfQ9Kmz58KJb+YGItQHS2d2m3Lsu5iEbkqjRIvq7Kv8p5mM3rF
-	ryhZvennYkvnkHK1SF2Uqb4Bryiidfkv7JYkwu7A0Iqk54LaJgAfiiFJN+eiTbR4xRH+8e7UANT8k
-	hAW7cX4w==;
+	bh=CeCAE/QnruiTawWUprbCmFasjXRmO+GRxpSd//EBvAE=; b=QzCs0CxN9YQnC3VSnXdlypqbmz
+	84d+KUwdJbqvfPBSFarlBawmjxIH/2z6PPh0xWGsUDQ6JVeih+PMubNd4ZWcivEV1s6e0k+BUJpaK
+	llL5f20Zwn0xGdFppwIVkgJr0qXbXgweiWQkcw/AzWD1QOyM+Hw3xWavOp13l87XHrVhSR+rN/iNH
+	KWEVlGhS8SPx1b0gD3AEiwkurQnfyQEK3GIiqG0VBcH+e4p5Tkb0QUbyo6EAnLL2LkyJNRN6EpjzS
+	wH+IBAVwximoG2ytBsKvZpFuCibYcSKNal0ecliUDvjQ5YJFbnVa3Vvz+hoQjIXVAo5DfcZNSr6ko
+	sV4+wN4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvDy2-0000000GcRe-0uOv
+	id 1rvFbB-0000000H2bL-2959
 	for ath12k@archiver.kernel.org;
-	Fri, 12 Apr 2024 10:17:10 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 12 Apr 2024 12:01:41 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvDxy-0000000GcQ4-35ci
+	id 1rvFb5-0000000H2aF-0j2N
 	for ath12k@lists.infradead.org;
-	Fri, 12 Apr 2024 10:17:08 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43C9Bbsn003713;
-	Fri, 12 Apr 2024 10:17:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=areZIt5ws///I0F4gDTJf1ZIP/yXCEEzR+Qs87KjB9I=; b=ph
-	6980p1rlndmVUMQj6BcxKT05LN3c4AESMmUvxmiMp1S+13uxLfQE39CttuW8tmLe
-	usJdN2EeTOHc9Li92MefAMeMxEoI/XJNHvNaC4YSB6CxUG8r0Ym5xrXPhAxQoyt5
-	sQ47Z//HvJxq8Bsvgt+4oEjisp9fvzjmf4+P1IPzEL0+B20mXTx8HuwS9mELqR9c
-	3OY7M+qZ40I/6TAT+B6S1SnxzsTHcnCzODO5zkoywqkDFmv0Y3HZJGwEZYQGomv3
-	pXLY4m1TGy5UDqoUuXNxEgkjaVNhGehpxQeJnkgzfIlRs1Xe9u/TaQAr57vspRTB
-	6XiqRj7pprE7Zk063rYg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xesjbs5bb-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 12 Apr 2024 10:17:05 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43CAH40h025104
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 12 Apr 2024 10:17:04 GMT
-Received: from lingbok-Birman-PHX.lan (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 12 Apr 2024 03:17:03 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH v2 3/3] wifi: ath12k: report station mode signal strength
-Date: Fri, 12 Apr 2024 18:16:00 +0800
-Message-ID: <20240412101600.55344-4-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240412101600.55344-1-quic_lingbok@quicinc.com>
-References: <20240412101600.55344-1-quic_lingbok@quicinc.com>
+	Fri, 12 Apr 2024 12:01:39 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-56e47843cc7so832909a12.0
+        for <ath12k@lists.infradead.org>; Fri, 12 Apr 2024 05:01:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1712923289; x=1713528089; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=CeCAE/QnruiTawWUprbCmFasjXRmO+GRxpSd//EBvAE=;
+        b=UYSAWpWfEcvBQsI1PuTN7Ee73QBWhSGCILaX/AF02ijQPVwWTLGyZW4V5ZiU1KzJny
+         +Mb8kZId1fh7XExBKFrM+rhu6kufeNxzmx48Ag9HCew1obc2H8gxX4h4WI7F7jUAMdgR
+         DOpDWXH1Qw8ZOT+GCOFHoMALa0Wel0gQNLC2BBA81szddR0ed9Nc2SdQNyNqTbnTfZWd
+         zFhUM61d24H82OyNdDKTC4fASOZLX24KA44rLcoQ6plJab8jMnNy8XwsQkskIUEnOBWi
+         EvrXSsLN4O/HvNWub5i4+1IiJsRI82a50s7/0lRTitb/WKuaahmXkZDbnaWfe4tVtbMr
+         g0uA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712923289; x=1713528089;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=CeCAE/QnruiTawWUprbCmFasjXRmO+GRxpSd//EBvAE=;
+        b=UR++/aBck0qcZpZG6hAOx/Ie+NXwr1RvT2pDyeXtkB7hn+3u19clER9iGY3iP22IqO
+         Y2jU0A9OzwD3oAEFwTi+BXSLcDCDFEnnwZ3gmUlFQgN7SKyeXRes+Uvl6VHHHg4TG/WG
+         A8irDKbXs4etaQ++qm1qkY6WlYOYKoHvYVel2uQgU9TKiYfzoWA1+XXTsxJdTGV1y67h
+         MoNxDP4BjkIE8HxpngyHb4zjVebqifuuVNz3QXKdFjWjlSL0cxYITxcV6JUbLyroXzcU
+         ZQo6CP5xiO+sIUs05FXSLhhhm0z+NfzryM1V7co8EgzS2ApBVlHeia6e+iD6vZR+hRI4
+         MXAw==
+X-Forwarded-Encrypted: i=1; AJvYcCVhtDCdbGVZq7btlIEZk4Q1VN7pzIT+fkWaKjcu9EUkl2xc6GB75g+GuMHVEZqDNVdCGcNkuOB/wYEm+7WWo5Xtc5yrxq+GZ/341w==
+X-Gm-Message-State: AOJu0YxnKwP521wPWraIWUyFxq0Btxq4k/LboZ4cJkVbDrkYMrk94SrK
+	u07120qcWp6gXzl3FdatT1SZdr4asDYcfzl69ihxM8NK68/D/pseE9ikXQCsuTXrFiz1vC5JnE8
+	1k5HCWZhycWmklB020bs7j7rkALo=
+X-Google-Smtp-Source: AGHT+IGp9ewgZpGM/38Ui91s9NpGJHPzveZW2R9MOq9DG0E8jUtcxinpLDwpAwSkcBFFElG4ngUTL9FOj1YrjHUACT0=
+X-Received: by 2002:a17:906:dac1:b0:a52:241b:b450 with SMTP id
+ xi1-20020a170906dac100b00a52241bb450mr1886649ejb.36.1712923288360; Fri, 12
+ Apr 2024 05:01:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: h7DUP3xpJPF7mf2gzocY2IcFf7vzfQAO
-X-Proofpoint-GUID: h7DUP3xpJPF7mf2gzocY2IcFf7vzfQAO
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-12_06,2024-04-09_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- mlxlogscore=999 clxscore=1015 phishscore=0 mlxscore=0 impostorscore=0
- bulkscore=0 adultscore=0 spamscore=0 malwarescore=0 suspectscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404120074
+References: <20240328072916.1164195-1-quic_periyasa@quicinc.com>
+ <20240328072916.1164195-2-quic_periyasa@quicinc.com> <e36599d3269496de59505b36be46f873976f8706.camel@sipsolutions.net>
+ <033185b0-f878-a50b-d0d9-57fa79439bdf@quicinc.com> <ef6b6a7a4a9d3b01c0eb6abf0991e7e27425e102.camel@sipsolutions.net>
+ <80fe5786-f764-455d-ac44-22adf7aeaf94@candelatech.com> <31f30c0e318904f3a082c7f213576ceb1f407141.camel@sipsolutions.net>
+ <20b56e52-a5e2-70cd-a62a-8c4a3526c2cf@candelatech.com> <614bb8a8f1d9174ad7d87cf7636f657cda7b1ef9.camel@sipsolutions.net>
+ <aa9e1d54-bb5f-37cc-335f-c9970ab13789@candelatech.com> <0cfe990b-182b-4ceb-b5b4-2989fefedb2f@quicinc.com>
+ <29f7ecb6d7c208c3614f37616943d5f97bb134d3.camel@freebox.fr>
+ <5fc2f2d2-7403-79d2-8909-ddda918ff8d5@quicinc.com> <af70ee81e583f58dada3dde87ac335137c4038b0.camel@freebox.fr>
+ <6ff353e2-785a-f2ce-8d3b-acc8e79a64cf@quicinc.com> <D0HZ1KH5VJ8P.2TZZ7NNZXSJA8@gmail.com>
+ <816770ca-fb30-e1cc-3f57-51d1fd35f141@quicinc.com>
+In-Reply-To: <816770ca-fb30-e1cc-3f57-51d1fd35f141@quicinc.com>
+From: James Dutton <james.dutton@gmail.com>
+Date: Fri, 12 Apr 2024 13:00:51 +0100
+Message-ID: <CAAMvbhFPdPUOYSnxhO36E0yYJ7cuQLUGt87EqoGhBc=sw7GgHw@mail.gmail.com>
+Subject: Re: [PATCH 01/13] wifi: cfg80211: Add provision to advertise multiple
+ radio in one wiphy
+To: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
+Cc: Nicolas Escande <nico.escande@gmail.com>, mbizon@freebox.fr, 
+	Jeff Johnson <quic_jjohnson@quicinc.com>, Ben Greear <greearb@candelatech.com>, 
+	Johannes Berg <johannes@sipsolutions.net>, 
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>, ath12k@lists.infradead.org, 
+	linux-wireless@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_031706_959694_BB5A39CF 
-X-CRM114-Status: GOOD (  22.33  )
+X-CRM114-CacheID: sfid-20240412_050135_341086_B0208F6F 
+X-CRM114-Status: GOOD (  31.95  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,378 +102,132 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the signal strength of "iw dev xxx station dump" always show an
-invalid value.
+On Fri, 12 Apr 2024 at 09:02, Vasanthakumar Thiagarajan
+<quic_vthiagar@quicinc.com> wrote:
+> On 4/12/2024 1:08 PM, Nicolas Escande wrote:
+> > On Fri Apr 12, 2024 at 5:50 AM CEST, Vasanthakumar Thiagarajan wrote:
+> >> On 4/11/2024 10:09 PM, Maxime Bizon wrote:
+> >>>
+> >>> On Thu, 2024-04-11 at 21:56 +0530, Vasanthakumar Thiagarajan wrote:
+> >>>
+> >>> Hello,
+> >>>
+> >>> Thanks for making it clear,
+> >>>
+> >>>
+> >>>>> For example, starting a 5Ghz AP in ax-only mode, and at the same
+> >>>>> time
+> >>>>> creating a STA interface on 2.4GHz ?
+> >>>
+> >>>> Yes, such use cases continue to be supported in single wiphy mode.
+> >>>
+> >>> Understood, but I see some corner cases.
+> >>>
+> >>>
+> >>> For example, assume two bands AP hardware, 2.4GHz and 5GHz.
+> >>>
+> >>> Previously:
+> >>>     - phy0 is 2.4Ghz
+> >>>     - phy1 is 5Ghz
+> >>>     - iw phy phy0 interface create wlan0 type managed
+> >>>     - iw dev wlan0 scan
+> >>>
+> >>> => will only scan 2.4Ghz
+> >>>
+> >>>
+> >>> With single phy approach:
+> >>>     - phy0 is 2.4Ghz + 5Ghz concurrent
+> >>>     - # iw phy phy0 interface create wlan0 type managed
+> >>>     - # iw dev wlan0 scan
+> >>>
+.> >>> => will scan both bands ?
+> >>>
+> >>
+> >> Yes, both the bands will be scanned if freq list is not given
+> >>
+> >>>     - <starting from previous state>
+> >>>     - # iw phy phy0 interface create wlan1 type __ap
+> >>>     - # hostapd -i wlan1 <config>
+> >>>     - # iw dev wlan0 scan
+> >>>
+> >>> => what will happen then ?
+> >>>
+> >>
+> >> Scan will be carried out on all the radios including the one on which AP interface is
+> >> running. Scan with freq list can be used not to disturb the radio of AP interface.
+> >>
+> >>>> Same goes for hostapd ACS, I assume specifying freqlist becomes
+> >>> mandatory or we can't predict which band the AP will be on ?
+> >>>
+> >>
+> >> If no freq list is given, ACS will run through all the bands and select a channel from any
+> >> of the bands. But this can be optimized to do ACS and channels selection on a particular
+> >> band using channellist/freqlist hostapd configurations.
+> > Hello,
+> >
+> > And in a (very unlikely) case that there are two underlying radios that can
+> > operate on the same frequencies, how would freqlist enable us to really select
+> > the underlying radio ?
+> >
+>
+> This can not be supported in this approach. As only the radios participating in MLO are
+> supposed to be combined under one wiphy, not sure if we have real use case to combine
+> radios of same frequencies.
+>
+> Vasanth
+>
 
-This is because signal strength is only set in ath12k_mgmt_rx_event()
-function, and not set for received data packet. So, change to get signal
-from firmware and report to mac80211.
+Looking at this discussion, I think it would really be helped with
+some architectural diagrams describing the various combinations of
+components in an RF chain.
 
-After that, "iw dev xxx station dump" show the correct signal strength.
-Such as:
+Let us take a single example.
+We have antennas, analogue front end, and ADCs (Analogue to digital converters)
+The features of those two are:
+1)  Antennas can be optimised for particular frequencies.
+2) The analogue front end has many different parameters, but for this
+discussion, the important one is:
+a) frequencies it can tune to.
+b) instantaneous bandwidth. I.e. When tuned to a particular frequency,
+what is the bandwidth around that frequency that one can receive.
+3) ADC
+a) The Sample rate
 
-Station 00:03:7f:12:03:03 (on wlo1)
-        inactive time:  36 ms
-        rx bytes:       61571
-        rx packets:     336
-        tx bytes:       28204
-        tx packets:     205
-        tx retries:     49
-        tx failed:      0
-        beacon loss:    0
-        beacon rx:      83
-        rx drop misc:   66
-        signal:         -24 dBm
-        beacon signal avg:      -22 dBm
+Once the RF sample are in the digital domain one has the ADC ->
+DIgital Processing -> Output data
+If we assume that the ADC is set to receive the full instantaneous
+bandwidth, the digital processing can do a number of things.
+1) process the full instantaneous bandwidth into a single channel of data.
+2) process the instantaneous bandwidth into multiple sub bands, or
+multiple channels of data.
 
-For WCN7850, the firmware supports db2dbm, so not need to add noise floor.
-For QCN9274, the firmware not support db2dbm, so need to add noise floor.
+There is also the control endpoint that controls all these components.
+There can be multiple front ends for each ADC. multiple ADCs per
+Digital Processing.
 
-This patch affects the station mode of WCN7850 and QCN9274.
+A higher level process (maybe hostapd) can then speak to multiple
+Digital Processing and ADC, RF Front end components and then somehow
+has to manage and coordinate them all.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
+All these capabilities and varying arrangement of the various
+components need to be reported up to a higher level, in a common way,
+that can handle all possible arrangements.
+Once the higher level process has all this information, it can then
+manage to do everything necessary for Multi-Link operation (MLO).
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
-v2:
-1.change name according Naming conventions for structures
+So, to answer some of the questions in this thread.
+Scanning: The high level process should know what capabilities are
+available and what can be done in parallel or not. So it should be
+able to convert a request from a user, into a more detailed request
+down towards the hardware.
+I.e. User asks for scan.  High level process tells which bits of the
+hardware should do the scanning and across which frequencies.
+While it might sound complicated, when implemented correctly, it is
+just a matter of iterating over a  tree with a search match criteria.
 
- drivers/net/wireless/ath/ath12k/core.h |   3 +
- drivers/net/wireless/ath/ath12k/mac.c  |  56 ++++++++++-
- drivers/net/wireless/ath/ath12k/wmi.c  | 130 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h  |  48 +++++++++
- 4 files changed, 235 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 575829a39116..db4d9241ac43 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -448,6 +448,7 @@ struct ath12k_sta {
- 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
- 	u32 bw_prev;
- 	u32 peer_nss;
-+	s8 rssi_beacon;
- };
- 
- #define ATH12K_MIN_5G_FREQ 4150
-@@ -631,6 +632,8 @@ struct ath12k {
- 
- 	u32 freq_low;
- 	u32 freq_high;
-+
-+	struct completion fw_stats_complete;
- };
- 
- struct ath12k_hw {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d55e9a9b293b..50c087e34ce0 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -8020,12 +8020,52 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 	return 0;
- }
- 
-+static int ath12k_mac_get_fw_stats(struct ath12k *ar, u32 pdev_id,
-+				   u32 vdev_id, u32 stats_id)
-+{
-+	struct ath12k_base *ab = ar->ab;
-+	int ret, left;
-+
-+	mutex_lock(&ar->conf_mutex);
-+
-+	if (ar->state != ATH12K_STATE_ON) {
-+		ret = -ENETDOWN;
-+		goto err_unlock;
-+	}
-+
-+	reinit_completion(&ar->fw_stats_complete);
-+
-+	ret = ath12k_wmi_send_stats_request_cmd(ar, stats_id, vdev_id, pdev_id);
-+
-+	if (ret) {
-+		ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
-+		goto err_unlock;
-+	}
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WMI,
-+		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-+		   pdev_id, vdev_id, stats_id);
-+
-+	left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
-+
-+	if (!left)
-+		ath12k_warn(ab, "time out while waiting for get fw stats\n");
-+err_unlock:
-+
-+	mutex_unlock(&ar->conf_mutex);
-+	return ret;
-+}
-+
- static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 					 struct ieee80211_vif *vif,
- 					 struct ieee80211_sta *sta,
- 					 struct station_info *sinfo)
- {
- 	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
-+	struct ath12k *ar = arsta->arvif->ar;
-+	s8 signal;
-+	bool db2dbm = test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
-+			       ar->ab->wmi_ab.svc_map);
- 
- 	sinfo->rx_duration = arsta->rx_duration;
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_DURATION);
-@@ -8052,8 +8092,18 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
- 
- 	/* TODO: Use real NF instead of default one. */
--	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
--	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-+	signal = arsta->rssi_comb;
-+
-+	if (!signal &&
-+	    arsta->arvif->vdev_type == WMI_VDEV_TYPE_STA &&
-+	    !(ath12k_mac_get_fw_stats(ar, ar->pdev->pdev_id, 0,
-+				      WMI_REQUEST_VDEV_STAT)))
-+		signal = arsta->rssi_beacon;
-+
-+	if (signal) {
-+		sinfo->signal = db2dbm ? signal : signal + ATH12K_DEFAULT_NOISE_FLOOR;
-+		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-+	}
- }
- 
- static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
-@@ -8739,6 +8789,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 
- 	ath12k_debugfs_register(ar);
- 
-+	init_completion(&ar->fw_stats_complete);
-+
- 	return 0;
- 
- err_unregister_hw:
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index a5575ce9eed4..b22be8066834 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -25,6 +25,10 @@ struct ath12k_wmi_svc_ready_parse {
- 	bool wmi_svc_bitmap_done;
- };
- 
-+struct wmi_tlv_fw_stats_parse {
-+	const struct wmi_stats_event *ev;
-+};
-+
- struct ath12k_wmi_dma_ring_caps_parse {
- 	struct ath12k_wmi_dma_ring_caps_params *dma_ring_caps;
- 	u32 n_dma_ring_caps;
-@@ -6459,8 +6463,101 @@ static void ath12k_peer_assoc_conf_event(struct ath12k_base *ab, struct sk_buff
- 	rcu_read_unlock();
- }
- 
-+static int ath12k_wmi_tlv_fw_stats_data_parse(struct ath12k_base *ab,
-+					      struct wmi_tlv_fw_stats_parse *parse,
-+					      const void *ptr,
-+					      u16 len)
-+{
-+	const struct wmi_stats_event *ev = parse->ev;
-+	struct ath12k *ar;
-+	struct ath12k_vif *arvif;
-+	struct ieee80211_sta *sta;
-+	struct ath12k_sta *arsta;
-+	int i, ret = 0;
-+	const void *data = ptr;
-+
-+	if (!ev) {
-+		ath12k_warn(ab, "failed to fetch update stats ev");
-+		return -EPROTO;
-+	}
-+
-+	rcu_read_lock();
-+
-+	ar = ath12k_mac_get_ar_by_pdev_id(ab, le32_to_cpu(ev->pdev_id));
-+	if (!ar) {
-+		ath12k_warn(ab, "invalid pdev id %d in update stats event\n",
-+			    le32_to_cpu(ev->pdev_id));
-+		ret = -EPROTO;
-+		goto exit;
-+	}
-+
-+	for (i = 0; i < le32_to_cpu(ev->num_vdev_stats); i++) {
-+		const struct wmi_vdev_stats_event *src;
-+
-+		src = data;
-+		if (len < sizeof(*src)) {
-+			ret = -EPROTO;
-+			goto exit;
-+		}
-+
-+		arvif = ath12k_mac_get_arvif(ar, le32_to_cpu(src->vdev_id));
-+		if (arvif) {
-+			sta = ieee80211_find_sta_by_ifaddr(ath12k_ar_to_hw(ar),
-+							   arvif->bssid,
-+							   NULL);
-+			if (sta) {
-+				arsta = ath12k_sta_to_arsta(sta);
-+				arsta->rssi_beacon = le32_to_cpu(src->beacon_snr);
-+				ath12k_dbg(ab, ATH12K_DBG_WMI,
-+					   "wmi stats vdev id %d snr %d\n",
-+					   src->vdev_id, src->beacon_snr);
-+			} else {
-+				ath12k_dbg(ab, ATH12K_DBG_WMI,
-+					   "not found station bssid %pM for vdev stat\n",
-+					   arvif->bssid);
-+			}
-+		}
-+
-+		data += sizeof(*src);
-+		len -= sizeof(*src);
-+	}
-+
-+	complete(&ar->fw_stats_complete);
-+exit:
-+	rcu_read_unlock();
-+	return ret;
-+}
-+
-+static int ath12k_wmi_tlv_fw_stats_parse(struct ath12k_base *ab,
-+					 u16 tag, u16 len,
-+					 const void *ptr, void *data)
-+{
-+	struct wmi_tlv_fw_stats_parse *parse = data;
-+	int ret = 0;
-+
-+	switch (tag) {
-+	case WMI_TAG_STATS_EVENT:
-+		parse->ev = ptr;
-+		break;
-+	case WMI_TAG_ARRAY_BYTE:
-+		ret = ath12k_wmi_tlv_fw_stats_data_parse(ab, parse, ptr, len);
-+		break;
-+	default:
-+		break;
-+	}
-+	return ret;
-+}
-+
- static void ath12k_update_stats_event(struct ath12k_base *ab, struct sk_buff *skb)
- {
-+	int ret;
-+	struct wmi_tlv_fw_stats_parse parse = {};
-+
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_tlv_fw_stats_parse,
-+				  &parse);
-+	if (ret)
-+		ath12k_warn(ab, "failed to parse fw stats %d\n", ret);
- }
- 
- /* PDEV_CTL_FAILSAFE_CHECK_EVENT is received from FW when the frequency scanned
-@@ -7183,3 +7280,36 @@ void ath12k_wmi_detach(struct ath12k_base *ab)
- 
- 	ath12k_wmi_free_dbring_caps(ab);
- }
-+
-+int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
-+				      u32 vdev_id, u32 pdev_id)
-+{
-+	struct ath12k_wmi_pdev *wmi = ar->wmi;
-+	struct wmi_request_stats_cmd *cmd;
-+	struct sk_buff *skb;
-+	int ret;
-+
-+	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
-+	if (!skb)
-+		return -ENOMEM;
-+
-+	cmd = (struct wmi_request_stats_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_REQUEST_STATS_CMD,
-+						 sizeof(*cmd));
-+
-+	cmd->stats_id = cpu_to_le32(stats_id);
-+	cmd->vdev_id = cpu_to_le32(vdev_id);
-+	cmd->pdev_id = cpu_to_le32(pdev_id);
-+
-+	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_REQUEST_STATS_CMDID);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to send WMI_REQUEST_STATS cmd\n");
-+		dev_kfree_skb(skb);
-+	}
-+
-+	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-+		   "WMI request stats 0x%x vdev id %d pdev id %d\n",
-+		   stats_id, vdev_id, pdev_id);
-+
-+	return ret;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 78afc94a815d..ddab15d03a21 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4811,6 +4811,52 @@ struct wmi_twt_disable_event {
- 	__le32 status;
- } __packed;
- 
-+struct wmi_stats_event {
-+	__le32 stats_id;
-+	__le32 num_pdev_stats;
-+	__le32 num_vdev_stats;
-+	__le32 num_peer_stats;
-+	__le32 num_bcnflt_stats;
-+	__le32 num_chan_stats;
-+	__le32 num_mib_stats;
-+	__le32 pdev_id;
-+	__le32 num_bcn_stats;
-+	__le32 num_peer_extd_stats;
-+	__le32 num_peer_extd2_stats;
-+} __packed;
-+
-+enum wmi_stats_id {
-+	WMI_REQUEST_VDEV_STAT	= BIT(3),
-+};
-+
-+struct wmi_request_stats_cmd {
-+	__le32 tlv_header;
-+	__le32 stats_id;
-+	__le32 vdev_id;
-+	struct ath12k_wmi_mac_addr_params peer_macaddr;
-+	__le32 pdev_id;
-+} __packed;
-+
-+#define WLAN_MAX_AC 4
-+#define MAX_TX_RATE_VALUES 10
-+
-+struct wmi_vdev_stats_event {
-+	__le32 vdev_id;
-+	__le32 beacon_snr;
-+	__le32 data_snr;
-+	__le32 num_tx_frames[WLAN_MAX_AC];
-+	__le32 num_rx_frames;
-+	__le32 num_tx_frames_retries[WLAN_MAX_AC];
-+	__le32 num_tx_frames_failures[WLAN_MAX_AC];
-+	__le32 num_rts_fail;
-+	__le32 num_rts_success;
-+	__le32 num_rx_err;
-+	__le32 num_rx_discard;
-+	__le32 num_tx_not_acked;
-+	__le32 tx_rate_history[MAX_TX_RATE_VALUES];
-+	__le32 beacon_rssi_history[MAX_TX_RATE_VALUES];
-+} __packed;
-+
- void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
- 			     struct ath12k_wmi_resource_config_arg *config);
- void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
-@@ -4932,6 +4978,8 @@ int ath12k_wmi_probe_resp_tmpl(struct ath12k *ar, u32 vdev_id,
- 			       struct sk_buff *tmpl);
- int ath12k_wmi_set_hw_mode(struct ath12k_base *ab,
- 			   enum wmi_host_hw_mode_config_type mode);
-+int ath12k_wmi_send_stats_request_cmd(struct ath12k *ar, u32 stats_id,
-+				      u32 vdev_id, u32 pdev_id);
- 
- static inline u32
- ath12k_wmi_caps_ext_get_pdev_id(const struct ath12k_wmi_caps_ext_params *param)
--- 
-2.34.1
-
+My expertise is in managing far more complex RF hardware and not Wifi
+specifically, but the concepts for managing the hardware across all
+the available frequencies is the same. I am just offering a
+perspective of where the problems discussed here have already been
+solved in another domain.
 
