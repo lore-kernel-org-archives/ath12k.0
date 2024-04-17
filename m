@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C50F4C4345F
-	for <ath12k@archiver.kernel.org>; Wed, 17 Apr 2024 07:32:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABDC1C4345F
+	for <ath12k@archiver.kernel.org>; Wed, 17 Apr 2024 14:22:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lZBtMK/m0FBHCiOq6yjBx7dH9Y4CEmd/5l1j8OocR+o=; b=ye+44zPSMOyz0/WjlS41JtYY8I
-	x1E7DziRJt6g/THUe1+QQdIvIw8VJ7Pb2gZ3Yl5Ir6pXXayoC/O3/5gmiiVENRLDh+AFvIGbb9Gp/
-	qsyM6GAFCfx6n7C0ow9DQ4hUtztyegaZM0S7WkSJqtG3/wyAr1dajxtj5+3oQtDpWlwf9Fm0t/Rk0
-	mWtuqlVntSSGY6Xc3CSbO7ciFgcNbXj8wO7MLcJJpP06Eb5HDJ5EftkSLI2yhCzErO4DZ0qUvJz6j
-	cA9b4XpR2nK+GcnoDJYaxCTWY19/rBXjnkvYsauebLTAfgOBCGH1DULfR1CNDPsQZ4yWbFo19Ub5f
-	yzN7fAKA==;
+	bh=VWRlsweoeTVXDpuOAqP45i83gOg2xfecmbpS+uia0qg=; b=PmZPi6zpn0j/kYNcbumrAohIsP
+	is75gxYg/KIC2hj2EsCZGm8qtc36ag5t2OI+i4+AKR09Lk/0pKSrhpqqBxqKNiUJniTHx/cUhIqc8
+	JRE9lNJBlFNUr3WrdM6JOMnbSb9KZMXQ17r2q6xBSR9/KwDQtmo1Ufze1Ey862RPpbo5dy8LG05wZ
+	3fRvcJzHRIBSycoef+cqVWBDvQGmzByoUKKQMqdzeKug3i4GwEWBFOirjFLwRjtKE9f97Om7I3LUG
+	1gjDk902FGyYcXgUfQC0B6HbW/wBU63gTcdu0wJC/o7yQlwRKSvUPl+pkT82YdkBQdg0chzPs77yD
+	+YVQbiLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwzmo-0000000F2ls-29hD
+	id 1rx6BX-0000000GKTh-1MjU
 	for ath12k@archiver.kernel.org;
-	Wed, 17 Apr 2024 07:32:54 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Wed, 17 Apr 2024 14:22:51 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwzmm-0000000F2kv-1sdB
+	id 1rx6BT-0000000GKTD-2kiU
 	for ath12k@lists.infradead.org;
-	Wed, 17 Apr 2024 07:32:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=lZBtMK/m0FBHCiOq6yjBx7dH9Y4CEmd/5l1j8OocR+o=;
-	t=1713339170; x=1714548770; b=oXMGb/DyQ+KPw+MvVAi4W6Tz7vTTRwAmGzntJTYKsQIgmEX
-	MbVkicW5Km3UTQzILDa2IwQe7VOUbeagDG8f9+XWawbN1XmQQDTkThHrIXDKktWwtW1Zxx66nG98B
-	Nyqqw9nVb6bKxKJROq2JY/BjeMOClEWtdKP+lbkO//xXQsLPXnktVIFkIg8nYsK8spcE4CwD7Bh2L
-	zlEmZo6fvu3QGrBOmZPSwWYPd7koTMarR7P/pidmC0Jbz2oVsD1chTpcGool1cYYWdKbTSwn2M7UY
-	fPfzVxa70E7XR+M1t3eDpIxtinaAzUNNPTGUmp/XDSXHWTApO8guiS+x8msSRLnQ==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1rwzmh-0000000Ak4c-1arl;
-	Wed, 17 Apr 2024 09:32:47 +0200
-Message-ID: <fb1b47b6c06bba25230a5dbf144ca5d6c245b0b2.camel@sipsolutions.net>
-Subject: Re: [PATCH v2] wifi: cfg80211: Clear mlo_links info when STA
- disconnect
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Xin Deng <quic_deng@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Date: Wed, 17 Apr 2024 09:32:46 +0200
-In-Reply-To: <20240410031048.23372-1-quic_deng@quicinc.com>
-References: <20240410031048.23372-1-quic_deng@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
+	Wed, 17 Apr 2024 14:22:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 12DE46142D;
+	Wed, 17 Apr 2024 14:22:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B79C5C072AA;
+	Wed, 17 Apr 2024 14:22:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1713363766;
+	bh=h1ZKhUHRAA/7rGO40L17WijIMpSW0//PNJPxU+MELtI=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=YBh2soYKFd6gFBPbsEczZTamnMWHUvjGMfxHklgeGzfOQJwVnjDy1SVnH0Yk/4T//
+	 mx7JariBsi/IPzmNRGKiMDIWTLAt2Trw3RJIFK9vL44k7T9guFCXs1YONA+B+XDBc/
+	 sfz9gfesFmjJPBxpToUwuuRFnIagmw3Cs3zy9mN0W0/0t/7ARddnjQsl5pIUlsU4KD
+	 e+9e5WXhrbLPhSY3BfCjY+PMxaKxYEfIpPWZyinpIbBpDCWZcMNsC84qEmePtXcHRB
+	 8s7k+J1yqRfAG+xW8SG85tGeMSkas/bP4TBBs6dI957sLjSOaTxY/dLyRZUelsJHCH
+	 j7AFyJkeu6/gg==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Baochen Qiang <quic_bqiang@quicinc.com>,  <ath12k@lists.infradead.org>,
+  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 00/10] wifi: ath12k: support suspend/resume
+References: <20240412060620.27519-1-quic_bqiang@quicinc.com>
+	<aea9f68d-4862-439c-a52f-d6463e6edca9@quicinc.com>
+Date: Wed, 17 Apr 2024 17:22:43 +0300
+In-Reply-To: <aea9f68d-4862-439c-a52f-d6463e6edca9@quicinc.com> (Jeff
+	Johnson's message of "Fri, 12 Apr 2024 11:05:00 -0700")
+Message-ID: <87r0f4vzkc.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240417_003252_642551_79F73813 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240417_072247_758605_A17A1DBE 
+X-CRM114-Status: GOOD (  12.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,27 +74,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2024-04-09 at 20:10 -0700, Xin Deng wrote:
-> wdev->valid_links is not cleared when upper layer disconnect from a
-> wdev->AP MLD. It has been observed that this would prevent offchannel
-> operations like remain-on-channel which would be needed for user space
-> operations with Public Action frame.
-> Clear the wdev->valid_links when STA disconnect.
->=20
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
-OK, so now we have a version that actually _works_.
+> On 4/11/2024 11:06 PM, Baochen Qiang wrote:
+>
+>> Now that the MHI&QRTR patches [1] are merged, we can add
+>> suspend/resume support for ath12k.
+>> 
+>> The whole design is quite similar to that in ath11k: firmware
+>> is powered down when going to suspend and powered up when
+>> resume, this makes hibernation work as well in addition to
+>> suspend.
+>> 
+>> To summary, this series first does some preparations in the
+>> first 8 patches. Then in patch [9/10] suspend/resume callbacks
+>> are implemented. And at last in [10/10] we enable suspend/resume
+>> functionality for WCN7850 because it's the only chip supporting
+>> it for now.
+>> 
+>> [1] https://lore.kernel.org/linux-wireless/20240305021320.3367-1-quic_bqiang@quicinc.com/
+>> 
+>> Baochen Qiang (10):
+>>   wifi: ath12k: rearrange IRQ enable/disable in reset path
+>>   wifi: ath12k: remove MHI LOOPBACK channels
+>>   wifi: ath12k: do not dump SRNG statistics during resume
+>>   wifi: ath12k: fix warning on DMA ring capabilities event
+>>   wifi: ath12k: decrease MHI channel buffer length to 8KB
+>>   wifi: ath12k: flush all packets before suspend
+>>   wifi: ath12k: no need to handle pktlog during suspend/resume
+>>   wifi: ath12k: avoid stopping mac80211 queues in ath12k_core_restart()
+>>   wifi: ath12k: support suspend/resume
+>>   wifi: ath12k: change supports_suspend to true for WCN7850
+>> 
+>>  drivers/net/wireless/ath/ath12k/core.c  | 108 ++++++++++++++----------
+>>  drivers/net/wireless/ath/ath12k/core.h  |   4 +
+>>  drivers/net/wireless/ath/ath12k/dp_rx.c |  48 -----------
+>>  drivers/net/wireless/ath/ath12k/dp_rx.h |   2 -
+>
+> My Qualcomm Innovation Center copyright checker reports:
+> drivers/net/wireless/ath/ath12k/dp_rx.h copyright missing 2024
 
-However, I'm not convinced it's _correct_.
+I fixed this in the pending branch:
 
-You say "on disconnect", but also do it before connect (where maybe it
-makes sense?), on roaming (where it doesn't), on connect result (where
-presumably if we do it correct, it's already 0), and finally on
-disconnect.
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=6b928df55a671d2c9a15edc746f6b42ef544928e
 
-And also in a function that never even mentions anything about doing
-something to links in the name.
+Jeff, what do you think of the patchset? Is it ready to take?
 
-All that doesn't feel right to me.
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-johannes
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
