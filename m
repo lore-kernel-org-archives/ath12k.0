@@ -4,90 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 922E3C4345F
-	for <ath12k@archiver.kernel.org>; Thu, 18 Apr 2024 06:06:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9015DC4345F
+	for <ath12k@archiver.kernel.org>; Thu, 18 Apr 2024 10:43:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=GK+U52lI8JpOHTFvCowd07fBRKPuc+dBk82w2xGfYQs=; b=iocBwM91TX1j1f65pZ4dPSML/9
-	M5ugKqWc68lrflLi3c/UO64dAPEtzmmAmVGQ4jVF4/y6g2GmYi9AccpF7za32tbMTQEoocAw0Ct+h
-	cHXDbBPDZcv/yTtpiea+tzOGivYooyu/nEWfcd6MLNZ5MoNsHUnrc6U/utyU9p2Y7Z3TtMpUABOea
-	yamiOuxHzKvqACXjYSDGLmHxmLXbgVHnpJI0Dv2QRDubUKtxmPGvOy6wqB6X9vVrPlR7ela1xgySK
-	yCyljY3C+2o2Bhru8gCm243Ux94bhGSW1On4VR1e732RRM6Bm4pqm05QqyTFsGOoSYDmpMI/Mu/nX
-	HGI4qUrQ==;
+	bh=re8g6eksaN5KrvXzinPxQ8HXeSH+98qJt2yAot5kHBQ=; b=V/WIo4i2WhVy4xEi+bvq+PEDyW
+	ucDqYJ08iYB+7Q9sLpO8GYdOYvisgz0bdY1pYtFZbIdg5EEjqP6ioCNO/CcpsePbuWiYXBiNXxpJz
+	77yhfO7HPjeyRC9/dRr58zfnmMkra0c47HlgC3e8YCJ5Hkh/PNMum/IJhOUX5OEh0reSWnTW3pDZC
+	a6qD74pgH8tCnTyyqtcQLmw7JzYrfZN0Dgvl1FRHOe0W8TYjXHOSJxrzSZ2WSd/x1GcSss+tFbHJ2
+	T1GQpnsvQktwXTfUMHk/ZzwgZxBu+bT7kjdn0UgSu2BvjTP6TUiqrVA1Jxvt4PyaCBWpPaJYALVDG
+	ZGppLz7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxKuZ-000000013r5-1BTB
+	id 1rxPEl-00000001qwt-0yLY
 	for ath12k@archiver.kernel.org;
-	Thu, 18 Apr 2024 06:06:19 +0000
+	Thu, 18 Apr 2024 10:43:27 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxKuW-000000013qT-1TXB
+	id 1rxPEi-00000001qvo-0x5Y
 	for ath12k@lists.infradead.org;
-	Thu, 18 Apr 2024 06:06:18 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43I1YM8g016155;
-	Thu, 18 Apr 2024 06:06:06 GMT
+	Thu, 18 Apr 2024 10:43:25 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43I4J4bm025706;
+	Thu, 18 Apr 2024 10:43:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:from:to:cc:references
+	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=GK+U52lI8JpOHTFvCowd07fBRKPuc+dBk82w2xGfYQs=; b=GN
-	Dnu3EkYzKSd7l91pqS56cX0xP+v4bWIDo2RfXSF26X0w6lvBuJOiaoFWdb3G2nVi
-	FUyTc2W3OWN4XNE+Qrk/NiZ89wVc1kKqAU1Ks6+wgPqgVa2OQVPntGaQjtYMT9zE
-	cOGqw8mSH5x68HTvLYCVxJSjweSb2o2f4CJIfnIr7O7Om44Llvjau08hNc+sqGpr
-	2401PuO1K6ePa4PxMUkA43oWL7aOl4EoWzgt4yFPNsk+vRqAeNBlqXSGDygMSQTm
-	OI1TPvmoV1UoZZrLSGO9QDSQkiv59BfJYQIVL3hOGc66mGTiTnLE3ZhXkRr/K1sI
-	m9KxfQSNzmP9xpXWQMAw==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xjf8a2hqp-1
+	qcppdkim1; bh=re8g6eksaN5KrvXzinPxQ8HXeSH+98qJt2yAot5kHBQ=; b=A/
+	jUpLTgnOyWndHHw8XiTsD5/c5uROklCxbY42Z+xLf57HKPeAuTWmk/lcQfIab220
+	1OI4gFmLNxJ2OmByquLik93huwkxu2tduJBilf4YQjhgtNJw2A93E/4gloxcwsjy
+	vbJLTyKevZ6ZhdfVvDuP6MowDjiGD0dHkNqBXLXEtJIB6tT1enF0c3+JLyY6ujV0
+	UY2SNEOFJxybGRZOUh8xmINY9dswXT5fiSPC5MXLLZqmt8AJD6WOxq97E49+nRYS
+	JCx44yMBlt1ddkSjlxpVa+CVyM5Ia8frQHQV9A9Cix/9qsqUKSPh0dswWrp4otRs
+	QuEhc26XTHq6y4TyWJug==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xju9m0vvd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Apr 2024 06:06:05 +0000 (GMT)
+	Thu, 18 Apr 2024 10:43:19 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43I6630k021884
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43IAhIVa002827
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Apr 2024 06:06:03 GMT
-Received: from [10.110.20.198] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Thu, 18 Apr 2024 10:43:18 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 17 Apr
- 2024 23:06:03 -0700
-Message-ID: <bbe13506-d8cb-4e3d-9d10-617b77bf042b@quicinc.com>
-Date: Wed, 17 Apr 2024 23:06:02 -0700
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 18 Apr
+ 2024 03:43:17 -0700
+Message-ID: <3f5c8df8-a513-4e04-9aac-57ca44295891@quicinc.com>
+Date: Thu, 18 Apr 2024 18:43:16 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 00/10] wifi: ath12k: support suspend/resume
-Content-Language: en-US
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>
-CC: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>,
-        <linux-wireless@vger.kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
 References: <20240412060620.27519-1-quic_bqiang@quicinc.com>
  <aea9f68d-4862-439c-a52f-d6463e6edca9@quicinc.com>
  <87r0f4vzkc.fsf@kernel.org>
  <b428c741-adbe-41c2-b353-a74b574d12d4@quicinc.com>
-In-Reply-To: <b428c741-adbe-41c2-b353-a74b574d12d4@quicinc.com>
+ <bbe13506-d8cb-4e3d-9d10-617b77bf042b@quicinc.com>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <bbe13506-d8cb-4e3d-9d10-617b77bf042b@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: SnxJqBbchseFQdD0gEfM0uNECWzREN2f
-X-Proofpoint-GUID: SnxJqBbchseFQdD0gEfM0uNECWzREN2f
+X-Proofpoint-GUID: UVXMelX-PDreG4ELETXwj-O7f74pvJKX
+X-Proofpoint-ORIG-GUID: UVXMelX-PDreG4ELETXwj-O7f74pvJKX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-18_04,2024-04-17_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- bulkscore=0 spamscore=0 clxscore=1015 adultscore=0 mlxlogscore=999
- suspectscore=0 mlxscore=0 malwarescore=0 phishscore=0 impostorscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404180040
+ definitions=2024-04-18_08,2024-04-17_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ suspectscore=0 malwarescore=0 mlxscore=0 spamscore=0 adultscore=0
+ priorityscore=1501 mlxlogscore=999 lowpriorityscore=0 impostorscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404180076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240417_230616_466875_69D43BE1 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20240418_034324_324719_5D7D2E15 
+X-CRM114-Status: GOOD (  14.41  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,194 +102,208 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/17/2024 4:32 PM, Jeff Johnson wrote:
-> On 4/17/2024 7:22 AM, Kalle Valo wrote:
->> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
->>> My Qualcomm Innovation Center copyright checker reports:
->>> drivers/net/wireless/ath/ath12k/dp_rx.h copyright missing 2024
->>
->> I fixed this in the pending branch:
->>
->> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?=
-h=3Dpending&id=3D6b928df55a671d2c9a15edc746f6b42ef544928e
->>
->> Jeff, what do you think of the patchset? Is it ready to take?
->=20
-> My laptop didn't boot with this patchset in place, let me debug.
 
-I was originally trying to test with the entire 'pending' branch, but my
-laptop crashes during initial boot.
+On 4/18/2024 2:06 PM, Jeff Johnson wrote:
+> On 4/17/2024 4:32 PM, Jeff Johnson wrote:
+>> On 4/17/2024 7:22 AM, Kalle Valo wrote:
+>>> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+>>>> My Qualcomm Innovation Center copyright checker reports:
+>>>> drivers/net/wireless/ath/ath12k/dp_rx.h copyright missing 2024
+>>> I fixed this in the pending branch:
+>>>
+>>> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/=
+?h=3Dpending&id=3D6b928df55a671d2c9a15edc746f6b42ef544928e
+>>>
+>>> Jeff, what do you think of the patchset? Is it ready to take?
+>> My laptop didn't boot with this patchset in place, let me debug.
+> I was originally trying to test with the entire 'pending' branch, but m=
+y
+> laptop crashes during initial boot.
+>
+> So I just tested with master+the hibernation patchset, and upon resume =
+I'm
+> getting a bunch of the following:
+>
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Requested to power=
+ ON
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Power on setup suc=
+cess
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Wait for device to=
+ enter SBL or Mission mode
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: mhi=
+ notify status reason MHI_CB_EE_MISSION_MODE
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
+ wifi fw qmi service connected
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: no =
+valid response from PHY capability, choose default num_phy 2
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
+ firmware request memory request
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
+ mem seg type 1 size 7077888
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
+ mem seg type 4 size 8454144
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
+ dma allocation failed (7077888 B type 1), will try later with small size=
 
-So I just tested with master+the hibernation patchset, and upon resume I'=
-m
-getting a bunch of the following:
-
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Requested to power O=
-N
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Power on setup succe=
-ss
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Wait for device to e=
-nter SBL or Mission mode
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: mhi n=
-otify status reason MHI_CB_EE_MISSION_MODE
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi w=
-ifi fw qmi service connected
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: no va=
-lid response from PHY capability, choose default num_phy 2
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi f=
-irmware request memory request
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi m=
-em seg type 1 size 7077888
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi m=
-em seg type 4 size 8454144
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi d=
-ma allocation failed (7077888 B type 1), will try later with small size
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: BUG: Bad page state in process=
- kworker/u16:54  pfn:36e80
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page: refcount:1 mapcount:0 ma=
-pping:0000000000000000 index:0x0 pfn:0x36e80
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: flags: 0xfffffe0000000(node=3D=
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: BUG: Bad page state in proce=
+ss kworker/u16:54  pfn:36e80
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page: refcount:1 mapcount:0 =
+mapping:0000000000000000 index:0x0 pfn:0x36e80
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: flags: 0xfffffe0000000(node=3D=
 0|zone=3D1|lastcpupid=3D0x3fffff)
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page_type: 0xffffffff()
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 000fffffe0000000 00000000=
-00000000 dead000000000122 0000000000000000
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 0000000000000000 00000000=
-00000000 00000001ffffffff 0000000000000000
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page dumped because: nonzero _=
-refcount
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Modules linked in: ccm michael=
-_mic bnep amdgpu snd_hda_codec_hdmi amdxcp drm_exec gpu_sched binfmt_misc=
- qrtr_mhi nls_iso8859_1 i915 qrtr ath12k qmi_helpers mac80211 snd_ctl_led=
- ledtrig_audio radeon snd_hda_codec_realtek snd_hda_codec_generic snd_hda=
-_scodec_component intel_rapl_msr intel_rapl_common snd_hda_intel snd_inte=
-l_dspcfg x86_pkg_temp_thermal snd_intel_sdw_acpi intel_powerclamp snd_hda=
-_codec mei_hdcp uvcvideo snd_hda_core cfg80211 snd_hwdep snd_pcm drm_suba=
-lloc_helper coretemp drm_ttm_helper drm_buddy videobuf2_vmalloc btusb crc=
-t10dif_pclmul uvc ttm ghash_clmulni_intel btrtl sha512_ssse3 videobuf2_me=
-mops btintel sha256_ssse3 snd_seq_midi btbcm sha1_ssse3 snd_seq_midi_even=
-t drm_display_helper aesni_intel videobuf2_v4l2 snd_rawmidi videodev btmt=
-k cec snd_seq bluetooth crypto_simd cryptd rc_core videobuf2_common snd_s=
-eq_device rapl drm_kms_helper libarc4 mc snd_timer intel_cstate mhi snd i=
-2c_algo_bit ecdh_generic mei_me ecc joydev input_leds soundcore mei serio=
-_raw at24 wmi_bmof mac_hid wireless_hotkey
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  tpm_infineon sch_fq_codel msr=
- parport_pc ppdev lp drm parport efi_pstore ip_tables x_tables autofs4 cd=
-c_ether usbnet mii rtsx_pci_sdmmc crc32_pclmul video e1000e i2c_i801 psmo=
-use rtsx_pci ahci i2c_smbus libahci xhci_pci lpc_ich xhci_pci_renesas wmi=
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page_type: 0xffffffff()
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 000fffffe0000000 000000=
+0000000000 dead000000000122 0000000000000000
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 0000000000000000 000000=
+0000000000 00000001ffffffff 0000000000000000
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page dumped because: nonzero=
+ _refcount
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Modules linked in: ccm micha=
+el_mic bnep amdgpu snd_hda_codec_hdmi amdxcp drm_exec gpu_sched binfmt_mi=
+sc qrtr_mhi nls_iso8859_1 i915 qrtr ath12k qmi_helpers mac80211 snd_ctl_l=
+ed ledtrig_audio radeon snd_hda_codec_realtek snd_hda_codec_generic snd_h=
+da_scodec_component intel_rapl_msr intel_rapl_common snd_hda_intel snd_in=
+tel_dspcfg x86_pkg_temp_thermal snd_intel_sdw_acpi intel_powerclamp snd_h=
+da_codec mei_hdcp uvcvideo snd_hda_core cfg80211 snd_hwdep snd_pcm drm_su=
+balloc_helper coretemp drm_ttm_helper drm_buddy videobuf2_vmalloc btusb c=
+rct10dif_pclmul uvc ttm ghash_clmulni_intel btrtl sha512_ssse3 videobuf2_=
+memops btintel sha256_ssse3 snd_seq_midi btbcm sha1_ssse3 snd_seq_midi_ev=
+ent drm_display_helper aesni_intel videobuf2_v4l2 snd_rawmidi videodev bt=
+mtk cec snd_seq bluetooth crypto_simd cryptd rc_core videobuf2_common snd=
+_seq_device rapl drm_kms_helper libarc4 mc snd_timer intel_cstate mhi snd=
+ i2c_algo_bit ecdh_generic mei_me ecc joydev input_leds soundcore mei ser=
+io_raw at24 wmi_bmof mac_hid wireless_hotkey
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  tpm_infineon sch_fq_codel m=
+sr parport_pc ppdev lp drm parport efi_pstore ip_tables x_tables autofs4 =
+cdc_ether usbnet mii rtsx_pci_sdmmc crc32_pclmul video e1000e i2c_i801 ps=
+mouse rtsx_pci ahci i2c_smbus libahci xhci_pci lpc_ich xhci_pci_renesas w=
+mi
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: CPU: 2 PID: 55152 Comm: kwor=
+ker/u16:54 Not tainted 6.9.0-rc3-wt-ath+ #28
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Hardware name: Hewlett-Packa=
+rd HP ZBook 14 G2/2216, BIOS M71 Ver. 01.31 02/24/2020
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Workqueue: qmi_msg_handler q=
+mi_data_ready_work [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Call Trace:
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  <TASK>
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack_lvl+0x70/0x90
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack+0x14/0x20
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  bad_page+0x71/0x100
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  free_page_is_bad_report+0x8=
+6/0x90
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages_ok+0x3b3/0x410=
 
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: CPU: 2 PID: 55152 Comm: kworke=
-r/u16:54 Not tainted 6.9.0-rc3-wt-ath+ #28
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Hardware name: Hewlett-Packard=
- HP ZBook 14 G2/2216, BIOS M71 Ver. 01.31 02/24/2020
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Workqueue: qmi_msg_handler qmi=
-_data_ready_work [qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Call Trace:
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  <TASK>
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack_lvl+0x70/0x90
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack+0x14/0x20
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  bad_page+0x71/0x100
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  free_page_is_bad_report+0x86/=
-0x90
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages_ok+0x3b3/0x410
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages+0xe7/0x110
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_direct_free+0xb9/0x180
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_free_attrs+0x3f/0x60
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_free_target_mem_ch=
-unk+0x75/0x140 [ath12k]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_msg_mem_request_cb=
-+0x1fb/0x370 [ath12k]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_invoke_handler+0xa3/0xd0 =
-[qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_handle_message+0x6f/0x190=
- [qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_data_ready_work+0x288/0x4=
-60 [qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? raw_spin_rq_unlock+0x14/0x4=
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages+0xe7/0x110
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_direct_free+0xb9/0x180
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_free_attrs+0x3f/0x60
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_free_target_mem_=
+chunk+0x75/0x140 [ath12k]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_msg_mem_request_=
+cb+0x1fb/0x370 [ath12k]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_invoke_handler+0xa3/0xd=
+0 [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_handle_message+0x6f/0x1=
+90 [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_data_ready_work+0x288/0=
+x460 [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? raw_spin_rq_unlock+0x14/0=
+x40
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  process_one_work+0x1a0/0x3f=
 0
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  process_one_work+0x1a0/0x3f0
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  worker_thread+0x351/0x500
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_worker_thread+0x10/0x=
-10
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  kthread+0xf8/0x130
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork+0x40/0x60
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork_asm+0x1a/0x30
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  </TASK>
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Disabling lock debugging due t=
-o kernel taint
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: BUG: Bad page state in process=
- kworker/u16:54  pfn:36f00
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page: refcount:1 mapcount:0 ma=
-pping:0000000000000000 index:0x0 pfn:0x36f00
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: flags: 0xfffffe0000000(node=3D=
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  worker_thread+0x351/0x500
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_worker_thread+0x10/=
+0x10
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  kthread+0xf8/0x130
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork+0x40/0x60
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork_asm+0x1a/0x30=
+
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  </TASK>
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Disabling lock debugging due=
+ to kernel taint
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: BUG: Bad page state in proce=
+ss kworker/u16:54  pfn:36f00
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page: refcount:1 mapcount:0 =
+mapping:0000000000000000 index:0x0 pfn:0x36f00
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: flags: 0xfffffe0000000(node=3D=
 0|zone=3D1|lastcpupid=3D0x3fffff)
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page_type: 0xffffffff()
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 000fffffe0000000 00000000=
-00000000 dead000000000122 0000000000000000
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 0000000000000000 00000000=
-00000000 00000001ffffffff 0000000000000000
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page dumped because: nonzero _=
-refcount
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Modules linked in: ccm michael=
-_mic bnep amdgpu snd_hda_codec_hdmi amdxcp drm_exec gpu_sched binfmt_misc=
- qrtr_mhi nls_iso8859_1 i915 qrtr ath12k qmi_helpers mac80211 snd_ctl_led=
- ledtrig_audio radeon snd_hda_codec_realtek snd_hda_codec_generic snd_hda=
-_scodec_component intel_rapl_msr intel_rapl_common snd_hda_intel snd_inte=
-l_dspcfg x86_pkg_temp_thermal snd_intel_sdw_acpi intel_powerclamp snd_hda=
-_codec mei_hdcp uvcvideo snd_hda_core cfg80211 snd_hwdep snd_pcm drm_suba=
-lloc_helper coretemp drm_ttm_helper drm_buddy videobuf2_vmalloc btusb crc=
-t10dif_pclmul uvc ttm ghash_clmulni_intel btrtl sha512_ssse3 videobuf2_me=
-mops btintel sha256_ssse3 snd_seq_midi btbcm sha1_ssse3 snd_seq_midi_even=
-t drm_display_helper aesni_intel videobuf2_v4l2 snd_rawmidi videodev btmt=
-k cec snd_seq bluetooth crypto_simd cryptd rc_core videobuf2_common snd_s=
-eq_device rapl drm_kms_helper libarc4 mc snd_timer intel_cstate mhi snd i=
-2c_algo_bit ecdh_generic mei_me ecc joydev input_leds soundcore mei serio=
-_raw at24 wmi_bmof mac_hid wireless_hotkey
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  tpm_infineon sch_fq_codel msr=
- parport_pc ppdev lp drm parport efi_pstore ip_tables x_tables autofs4 cd=
-c_ether usbnet mii rtsx_pci_sdmmc crc32_pclmul video e1000e i2c_i801 psmo=
-use rtsx_pci ahci i2c_smbus libahci xhci_pci lpc_ich xhci_pci_renesas wmi=
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page_type: 0xffffffff()
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 000fffffe0000000 000000=
+0000000000 dead000000000122 0000000000000000
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 0000000000000000 000000=
+0000000000 00000001ffffffff 0000000000000000
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page dumped because: nonzero=
+ _refcount
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Modules linked in: ccm micha=
+el_mic bnep amdgpu snd_hda_codec_hdmi amdxcp drm_exec gpu_sched binfmt_mi=
+sc qrtr_mhi nls_iso8859_1 i915 qrtr ath12k qmi_helpers mac80211 snd_ctl_l=
+ed ledtrig_audio radeon snd_hda_codec_realtek snd_hda_codec_generic snd_h=
+da_scodec_component intel_rapl_msr intel_rapl_common snd_hda_intel snd_in=
+tel_dspcfg x86_pkg_temp_thermal snd_intel_sdw_acpi intel_powerclamp snd_h=
+da_codec mei_hdcp uvcvideo snd_hda_core cfg80211 snd_hwdep snd_pcm drm_su=
+balloc_helper coretemp drm_ttm_helper drm_buddy videobuf2_vmalloc btusb c=
+rct10dif_pclmul uvc ttm ghash_clmulni_intel btrtl sha512_ssse3 videobuf2_=
+memops btintel sha256_ssse3 snd_seq_midi btbcm sha1_ssse3 snd_seq_midi_ev=
+ent drm_display_helper aesni_intel videobuf2_v4l2 snd_rawmidi videodev bt=
+mtk cec snd_seq bluetooth crypto_simd cryptd rc_core videobuf2_common snd=
+_seq_device rapl drm_kms_helper libarc4 mc snd_timer intel_cstate mhi snd=
+ i2c_algo_bit ecdh_generic mei_me ecc joydev input_leds soundcore mei ser=
+io_raw at24 wmi_bmof mac_hid wireless_hotkey
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  tpm_infineon sch_fq_codel m=
+sr parport_pc ppdev lp drm parport efi_pstore ip_tables x_tables autofs4 =
+cdc_ether usbnet mii rtsx_pci_sdmmc crc32_pclmul video e1000e i2c_i801 ps=
+mouse rtsx_pci ahci i2c_smbus libahci xhci_pci lpc_ich xhci_pci_renesas w=
+mi
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: CPU: 2 PID: 55152 Comm: kwor=
+ker/u16:54 Tainted: G    B              6.9.0-rc3-wt-ath+ #28
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Hardware name: Hewlett-Packa=
+rd HP ZBook 14 G2/2216, BIOS M71 Ver. 01.31 02/24/2020
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Workqueue: qmi_msg_handler q=
+mi_data_ready_work [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Call Trace:
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  <TASK>
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack_lvl+0x70/0x90
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack+0x14/0x20
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  bad_page+0x71/0x100
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  free_page_is_bad_report+0x8=
+6/0x90
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages_ok+0x3b3/0x410=
 
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: CPU: 2 PID: 55152 Comm: kworke=
-r/u16:54 Tainted: G    B              6.9.0-rc3-wt-ath+ #28
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Hardware name: Hewlett-Packard=
- HP ZBook 14 G2/2216, BIOS M71 Ver. 01.31 02/24/2020
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Workqueue: qmi_msg_handler qmi=
-_data_ready_work [qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Call Trace:
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  <TASK>
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack_lvl+0x70/0x90
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack+0x14/0x20
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  bad_page+0x71/0x100
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  free_page_is_bad_report+0x86/=
-0x90
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages_ok+0x3b3/0x410
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages+0xe7/0x110
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_direct_free+0xb9/0x180
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_free_attrs+0x3f/0x60
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_free_target_mem_ch=
-unk+0x75/0x140 [ath12k]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_msg_mem_request_cb=
-+0x1fb/0x370 [ath12k]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_invoke_handler+0xa3/0xd0 =
-[qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_handle_message+0x6f/0x190=
- [qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_data_ready_work+0x288/0x4=
-60 [qmi_helpers]
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? raw_spin_rq_unlock+0x14/0x4=
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages+0xe7/0x110
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_direct_free+0xb9/0x180
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_free_attrs+0x3f/0x60
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_free_target_mem_=
+chunk+0x75/0x140 [ath12k]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_msg_mem_request_=
+cb+0x1fb/0x370 [ath12k]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_invoke_handler+0xa3/0xd=
+0 [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_handle_message+0x6f/0x1=
+90 [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_data_ready_work+0x288/0=
+x460 [qmi_helpers]
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? raw_spin_rq_unlock+0x14/0=
+x40
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  process_one_work+0x1a0/0x3f=
 0
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  process_one_work+0x1a0/0x3f0
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  worker_thread+0x351/0x500
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_worker_thread+0x10/0x=
-10
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  kthread+0xf8/0x130
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork+0x40/0x60
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork_asm+0x1a/0x30
-Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  </TASK>
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  worker_thread+0x351/0x500
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_worker_thread+0x10/=
+0x10
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  kthread+0xf8/0x130
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork+0x40/0x60
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork_asm+0x1a/0x30=
 
+> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  </TASK>
 
+Thanks for testing. I am able to reproduce this issue (although not exact=
+ly same crash signature) after disabling DMA remap. Just submit below pat=
+ch to fix this issue, please help review.
+
+=C2=A0=C2=A0=C2=A0=C2=A0 wifi: ath12k: fix kernel crash during resume
+
+>
+>
 
