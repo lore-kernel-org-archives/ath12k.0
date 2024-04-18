@@ -4,90 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9015DC4345F
-	for <ath12k@archiver.kernel.org>; Thu, 18 Apr 2024 10:43:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EDE5C4345F
+	for <ath12k@archiver.kernel.org>; Thu, 18 Apr 2024 12:56:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=re8g6eksaN5KrvXzinPxQ8HXeSH+98qJt2yAot5kHBQ=; b=V/WIo4i2WhVy4xEi+bvq+PEDyW
-	ucDqYJ08iYB+7Q9sLpO8GYdOYvisgz0bdY1pYtFZbIdg5EEjqP6ioCNO/CcpsePbuWiYXBiNXxpJz
-	77yhfO7HPjeyRC9/dRr58zfnmMkra0c47HlgC3e8YCJ5Hkh/PNMum/IJhOUX5OEh0reSWnTW3pDZC
-	a6qD74pgH8tCnTyyqtcQLmw7JzYrfZN0Dgvl1FRHOe0W8TYjXHOSJxrzSZ2WSd/x1GcSss+tFbHJ2
-	T1GQpnsvQktwXTfUMHk/ZzwgZxBu+bT7kjdn0UgSu2BvjTP6TUiqrVA1Jxvt4PyaCBWpPaJYALVDG
-	ZGppLz7w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HTNe+FVQjOMyTUkjet102IyEgdKaxB/3ZRF28LVTWiE=; b=v1rJ/phygfoqPbmdG+SO+k8CJX
+	TvX3R9Gvs+98EdMwNHasSrz8/NsMnIq/iNyS05ArShPTrPhu7pgoAMffPrB0rm/NdFzPkRbs2x3kG
+	01Q7o7tryOm01qs3SVWs4m4iIvJ4dypPvwEjKd0yhibItHxAB1pR5kJQPzUfYBPDWm9nfVxsR0olC
+	Y19vAPOs1EPVUWMzXVmy9Vh5JMvn+xybFGuZH6+DbBPgFVQm4+0b1S3MYHZqJC16bSIgSA2rt7K1q
+	D/ia//cjnZ2SDMIPGi3UC4SKLVKkLxREMAEUTvq+WvmHfJcUeREd1fE3z54aJyjdic7Sj6IiXlGIZ
+	15UtEOhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxPEl-00000001qwt-0yLY
+	id 1rxRJc-00000002GV0-1PCc
 	for ath12k@archiver.kernel.org;
-	Thu, 18 Apr 2024 10:43:27 +0000
+	Thu, 18 Apr 2024 12:56:36 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxPEi-00000001qvo-0x5Y
+	id 1rxRJZ-00000002GTZ-2DwT
 	for ath12k@lists.infradead.org;
-	Thu, 18 Apr 2024 10:43:25 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43I4J4bm025706;
-	Thu, 18 Apr 2024 10:43:19 GMT
+	Thu, 18 Apr 2024 12:56:35 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43ICkuk4010626;
+	Thu, 18 Apr 2024 12:56:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=re8g6eksaN5KrvXzinPxQ8HXeSH+98qJt2yAot5kHBQ=; b=A/
-	jUpLTgnOyWndHHw8XiTsD5/c5uROklCxbY42Z+xLf57HKPeAuTWmk/lcQfIab220
-	1OI4gFmLNxJ2OmByquLik93huwkxu2tduJBilf4YQjhgtNJw2A93E/4gloxcwsjy
-	vbJLTyKevZ6ZhdfVvDuP6MowDjiGD0dHkNqBXLXEtJIB6tT1enF0c3+JLyY6ujV0
-	UY2SNEOFJxybGRZOUh8xmINY9dswXT5fiSPC5MXLLZqmt8AJD6WOxq97E49+nRYS
-	JCx44yMBlt1ddkSjlxpVa+CVyM5Ia8frQHQV9A9Cix/9qsqUKSPh0dswWrp4otRs
-	QuEhc26XTHq6y4TyWJug==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xju9m0vvd-1
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	qcppdkim1; bh=HTNe+FVQjOMyTUkjet102IyEgdKaxB/3ZRF28LVTWiE=; b=gd
+	sPfyG4gUTn5Uhb47QZ0FpVBHkRE2YjKjColXPGbsUAkHK4iD7Hx7UfcrVFTDujGg
+	upbQOqdzbV2uCxYrESNr1/x8VZxIZKYPfDbiAStyOCYuMKvHPi1U58Sa4HBx5miu
+	WS740OSv/Zd7RxIGPlB1yJR+gxaY5dx0ExhrFzuNhUA5cUaEd58h0tuJFzs3NWQi
+	vxqilu2zny9gnqrl6k+QODLpBj2znSUFlyenGr71EXa30VfhJVkjdwsX8uEAEz7L
+	5t00mPLeWaYicQw9F/THcfBDgT5RYXvzx9Wv9GaTPVWV+h6MrgpjrJjy9Gwl2R8c
+	U+WSrm1xmP/xTSmXfW5g==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xk3tx80m3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Apr 2024 10:43:19 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43IAhIVa002827
+	Thu, 18 Apr 2024 12:56:31 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43ICuUA6025104
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Apr 2024 10:43:18 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 18 Apr
- 2024 03:43:17 -0700
-Message-ID: <3f5c8df8-a513-4e04-9aac-57ca44295891@quicinc.com>
-Date: Thu, 18 Apr 2024 18:43:16 +0800
+	Thu, 18 Apr 2024 12:56:30 GMT
+Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 18 Apr 2024 05:56:28 -0700
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Raj Kumar Bhagat
+	<quic_rajkbhag@quicinc.com>
+Subject: [PATCH 1/2] wifi: ath12k: read single_chip_mlo_support parameter from QMI PHY capability
+Date: Thu, 18 Apr 2024 18:26:08 +0530
+Message-ID: <20240418125609.3867730-2-quic_rajkbhag@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240418125609.3867730-1-quic_rajkbhag@quicinc.com>
+References: <20240418125609.3867730-1-quic_rajkbhag@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 00/10] wifi: ath12k: support suspend/resume
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240412060620.27519-1-quic_bqiang@quicinc.com>
- <aea9f68d-4862-439c-a52f-d6463e6edca9@quicinc.com>
- <87r0f4vzkc.fsf@kernel.org>
- <b428c741-adbe-41c2-b353-a74b574d12d4@quicinc.com>
- <bbe13506-d8cb-4e3d-9d10-617b77bf042b@quicinc.com>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <bbe13506-d8cb-4e3d-9d10-617b77bf042b@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: UVXMelX-PDreG4ELETXwj-O7f74pvJKX
-X-Proofpoint-ORIG-GUID: UVXMelX-PDreG4ELETXwj-O7f74pvJKX
+X-Proofpoint-GUID: WWOvBe2xdGqkRJQ7N34JExCKfl6rPTc2
+X-Proofpoint-ORIG-GUID: WWOvBe2xdGqkRJQ7N34JExCKfl6rPTc2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-18_08,2024-04-17_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
- suspectscore=0 malwarescore=0 mlxscore=0 spamscore=0 adultscore=0
- priorityscore=1501 mlxlogscore=999 lowpriorityscore=0 impostorscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404180076
+ definitions=2024-04-18_11,2024-04-17_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 impostorscore=0
+ lowpriorityscore=0 mlxlogscore=999 priorityscore=1501 mlxscore=0
+ clxscore=1015 spamscore=0 adultscore=0 phishscore=0 suspectscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404180092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240418_034324_324719_5D7D2E15 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20240418_055633_597499_76638BF8 
+X-CRM114-Status: GOOD (  14.16  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,208 +99,86 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+New parameter 'single_chip_mlo_support' was added in QMI PHY
+capability response message. This is an optional parameter added
+in QCN9274 firmware. This parameter states if the firmware
+supports Single-Link Operation (SLO) and Multi-Link Operation (MLO)
+within the same device.
 
-On 4/18/2024 2:06 PM, Jeff Johnson wrote:
-> On 4/17/2024 4:32 PM, Jeff Johnson wrote:
->> On 4/17/2024 7:22 AM, Kalle Valo wrote:
->>> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
->>>> My Qualcomm Innovation Center copyright checker reports:
->>>> drivers/net/wireless/ath/ath12k/dp_rx.h copyright missing 2024
->>> I fixed this in the pending branch:
->>>
->>> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/=
-?h=3Dpending&id=3D6b928df55a671d2c9a15edc746f6b42ef544928e
->>>
->>> Jeff, what do you think of the patchset? Is it ready to take?
->> My laptop didn't boot with this patchset in place, let me debug.
-> I was originally trying to test with the entire 'pending' branch, but m=
-y
-> laptop crashes during initial boot.
->
-> So I just tested with master+the hibernation patchset, and upon resume =
-I'm
-> getting a bunch of the following:
->
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Requested to power=
- ON
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Power on setup suc=
-cess
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: mhi mhi0: Wait for device to=
- enter SBL or Mission mode
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: mhi=
- notify status reason MHI_CB_EE_MISSION_MODE
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
- wifi fw qmi service connected
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: no =
-valid response from PHY capability, choose default num_phy 2
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
- firmware request memory request
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
- mem seg type 1 size 7077888
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
- mem seg type 4 size 8454144
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: qmi=
- dma allocation failed (7077888 B type 1), will try later with small size=
+If single_chip_mlo_support = 1, then intra device SLO/MLO is supported
+in the firmware.
+If single_chip_mlo_support = 0, then intra device SLO/MLO is not
+supported in the firmware.
 
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: BUG: Bad page state in proce=
-ss kworker/u16:54  pfn:36e80
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page: refcount:1 mapcount:0 =
-mapping:0000000000000000 index:0x0 pfn:0x36e80
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: flags: 0xfffffe0000000(node=3D=
-0|zone=3D1|lastcpupid=3D0x3fffff)
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page_type: 0xffffffff()
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 000fffffe0000000 000000=
-0000000000 dead000000000122 0000000000000000
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 0000000000000000 000000=
-0000000000 00000001ffffffff 0000000000000000
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page dumped because: nonzero=
- _refcount
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Modules linked in: ccm micha=
-el_mic bnep amdgpu snd_hda_codec_hdmi amdxcp drm_exec gpu_sched binfmt_mi=
-sc qrtr_mhi nls_iso8859_1 i915 qrtr ath12k qmi_helpers mac80211 snd_ctl_l=
-ed ledtrig_audio radeon snd_hda_codec_realtek snd_hda_codec_generic snd_h=
-da_scodec_component intel_rapl_msr intel_rapl_common snd_hda_intel snd_in=
-tel_dspcfg x86_pkg_temp_thermal snd_intel_sdw_acpi intel_powerclamp snd_h=
-da_codec mei_hdcp uvcvideo snd_hda_core cfg80211 snd_hwdep snd_pcm drm_su=
-balloc_helper coretemp drm_ttm_helper drm_buddy videobuf2_vmalloc btusb c=
-rct10dif_pclmul uvc ttm ghash_clmulni_intel btrtl sha512_ssse3 videobuf2_=
-memops btintel sha256_ssse3 snd_seq_midi btbcm sha1_ssse3 snd_seq_midi_ev=
-ent drm_display_helper aesni_intel videobuf2_v4l2 snd_rawmidi videodev bt=
-mtk cec snd_seq bluetooth crypto_simd cryptd rc_core videobuf2_common snd=
-_seq_device rapl drm_kms_helper libarc4 mc snd_timer intel_cstate mhi snd=
- i2c_algo_bit ecdh_generic mei_me ecc joydev input_leds soundcore mei ser=
-io_raw at24 wmi_bmof mac_hid wireless_hotkey
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  tpm_infineon sch_fq_codel m=
-sr parport_pc ppdev lp drm parport efi_pstore ip_tables x_tables autofs4 =
-cdc_ether usbnet mii rtsx_pci_sdmmc crc32_pclmul video e1000e i2c_i801 ps=
-mouse rtsx_pci ahci i2c_smbus libahci xhci_pci lpc_ich xhci_pci_renesas w=
-mi
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: CPU: 2 PID: 55152 Comm: kwor=
-ker/u16:54 Not tainted 6.9.0-rc3-wt-ath+ #28
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Hardware name: Hewlett-Packa=
-rd HP ZBook 14 G2/2216, BIOS M71 Ver. 01.31 02/24/2020
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Workqueue: qmi_msg_handler q=
-mi_data_ready_work [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Call Trace:
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  <TASK>
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack_lvl+0x70/0x90
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack+0x14/0x20
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  bad_page+0x71/0x100
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  free_page_is_bad_report+0x8=
-6/0x90
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages_ok+0x3b3/0x410=
+Hence, add support to read 'single_chip_mlo_support' parameter from
+the QMI PHY capability response message.
 
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages+0xe7/0x110
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_direct_free+0xb9/0x180
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_free_attrs+0x3f/0x60
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_free_target_mem_=
-chunk+0x75/0x140 [ath12k]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_msg_mem_request_=
-cb+0x1fb/0x370 [ath12k]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_invoke_handler+0xa3/0xd=
-0 [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_handle_message+0x6f/0x1=
-90 [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_data_ready_work+0x288/0=
-x460 [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? raw_spin_rq_unlock+0x14/0=
-x40
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  process_one_work+0x1a0/0x3f=
-0
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  worker_thread+0x351/0x500
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_worker_thread+0x10/=
-0x10
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  kthread+0xf8/0x130
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork+0x40/0x60
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork_asm+0x1a/0x30=
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00209-QCAHKSWPL_SILICONZ-1
 
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  </TASK>
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Disabling lock debugging due=
- to kernel taint
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: BUG: Bad page state in proce=
-ss kworker/u16:54  pfn:36f00
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page: refcount:1 mapcount:0 =
-mapping:0000000000000000 index:0x0 pfn:0x36f00
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: flags: 0xfffffe0000000(node=3D=
-0|zone=3D1|lastcpupid=3D0x3fffff)
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page_type: 0xffffffff()
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 000fffffe0000000 000000=
-0000000000 dead000000000122 0000000000000000
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: raw: 0000000000000000 000000=
-0000000000 00000001ffffffff 0000000000000000
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: page dumped because: nonzero=
- _refcount
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Modules linked in: ccm micha=
-el_mic bnep amdgpu snd_hda_codec_hdmi amdxcp drm_exec gpu_sched binfmt_mi=
-sc qrtr_mhi nls_iso8859_1 i915 qrtr ath12k qmi_helpers mac80211 snd_ctl_l=
-ed ledtrig_audio radeon snd_hda_codec_realtek snd_hda_codec_generic snd_h=
-da_scodec_component intel_rapl_msr intel_rapl_common snd_hda_intel snd_in=
-tel_dspcfg x86_pkg_temp_thermal snd_intel_sdw_acpi intel_powerclamp snd_h=
-da_codec mei_hdcp uvcvideo snd_hda_core cfg80211 snd_hwdep snd_pcm drm_su=
-balloc_helper coretemp drm_ttm_helper drm_buddy videobuf2_vmalloc btusb c=
-rct10dif_pclmul uvc ttm ghash_clmulni_intel btrtl sha512_ssse3 videobuf2_=
-memops btintel sha256_ssse3 snd_seq_midi btbcm sha1_ssse3 snd_seq_midi_ev=
-ent drm_display_helper aesni_intel videobuf2_v4l2 snd_rawmidi videodev bt=
-mtk cec snd_seq bluetooth crypto_simd cryptd rc_core videobuf2_common snd=
-_seq_device rapl drm_kms_helper libarc4 mc snd_timer intel_cstate mhi snd=
- i2c_algo_bit ecdh_generic mei_me ecc joydev input_leds soundcore mei ser=
-io_raw at24 wmi_bmof mac_hid wireless_hotkey
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  tpm_infineon sch_fq_codel m=
-sr parport_pc ppdev lp drm parport efi_pstore ip_tables x_tables autofs4 =
-cdc_ether usbnet mii rtsx_pci_sdmmc crc32_pclmul video e1000e i2c_i801 ps=
-mouse rtsx_pci ahci i2c_smbus libahci xhci_pci lpc_ich xhci_pci_renesas w=
-mi
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: CPU: 2 PID: 55152 Comm: kwor=
-ker/u16:54 Tainted: G    B              6.9.0-rc3-wt-ath+ #28
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Hardware name: Hewlett-Packa=
-rd HP ZBook 14 G2/2216, BIOS M71 Ver. 01.31 02/24/2020
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Workqueue: qmi_msg_handler q=
-mi_data_ready_work [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel: Call Trace:
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  <TASK>
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack_lvl+0x70/0x90
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dump_stack+0x14/0x20
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  bad_page+0x71/0x100
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  free_page_is_bad_report+0x8=
-6/0x90
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages_ok+0x3b3/0x410=
+Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/qmi.c | 24 ++++++++++++++++++++++--
+ drivers/net/wireless/ath/ath12k/qmi.h |  2 ++
+ 2 files changed, 24 insertions(+), 2 deletions(-)
 
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  __free_pages+0xe7/0x110
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_direct_free+0xb9/0x180
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  dma_free_attrs+0x3f/0x60
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_free_target_mem_=
-chunk+0x75/0x140 [ath12k]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ath12k_qmi_msg_mem_request_=
-cb+0x1fb/0x370 [ath12k]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_invoke_handler+0xa3/0xd=
-0 [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_handle_message+0x6f/0x1=
-90 [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  qmi_data_ready_work+0x288/0=
-x460 [qmi_helpers]
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? raw_spin_rq_unlock+0x14/0=
-x40
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  process_one_work+0x1a0/0x3f=
-0
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  worker_thread+0x351/0x500
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_worker_thread+0x10/=
-0x10
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  kthread+0xf8/0x130
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork+0x40/0x60
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ? __pfx_kthread+0x10/0x10
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  ret_from_fork_asm+0x1a/0x30=
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index db8ba5fec2ae..a555839dae8e 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -582,6 +582,24 @@ static const struct qmi_elem_info qmi_wlanfw_phy_cap_resp_msg_v01_ei[] = {
+ 		.offset		= offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
+ 					   board_id),
+ 	},
++	{
++		.data_type      = QMI_OPT_FLAG,
++		.elem_len       = 1,
++		.elem_size      = sizeof(u8),
++		.array_type     = NO_ARRAY,
++		.tlv_type       = 0x13,
++		.offset         = offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
++					   single_chip_mlo_support_valid),
++	},
++	{
++		.data_type      = QMI_UNSIGNED_1_BYTE,
++		.elem_len       = 1,
++		.elem_size      = sizeof(u8),
++		.array_type     = NO_ARRAY,
++		.tlv_type       = 0x13,
++		.offset         = offsetof(struct qmi_wlanfw_phy_cap_resp_msg_v01,
++					   single_chip_mlo_support),
++	},
+ 	{
+ 		.data_type	= QMI_EOTI,
+ 		.array_type	= NO_ARRAY,
+@@ -2160,9 +2178,11 @@ static void ath12k_qmi_phy_cap_send(struct ath12k_base *ab)
+ 
+ 	ab->qmi.num_radios = resp.num_phy;
+ 
+-	ath12k_dbg(ab, ATH12K_DBG_QMI, "phy capability resp valid %d num_phy %d valid %d board_id %d\n",
++	ath12k_dbg(ab, ATH12K_DBG_QMI,
++		   "phy capability resp valid %d num_phy %d valid %d board_id %d valid %d single_chip_mlo_support %d\n",
+ 		   resp.num_phy_valid, resp.num_phy,
+-		   resp.board_id_valid, resp.board_id);
++		   resp.board_id_valid, resp.board_id,
++		   resp.single_chip_mlo_support_valid, resp.single_chip_mlo_support);
+ 
+ 	return;
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
+index 6ee33c9851c6..f7a5eb11ce44 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.h
++++ b/drivers/net/wireless/ath/ath12k/qmi.h
+@@ -265,6 +265,8 @@ struct qmi_wlanfw_phy_cap_resp_msg_v01 {
+ 	u8 num_phy;
+ 	u8 board_id_valid;
+ 	u32 board_id;
++	u8 single_chip_mlo_support_valid;
++	u8 single_chip_mlo_support;
+ };
+ 
+ #define QMI_WLANFW_IND_REGISTER_REQ_MSG_V01_MAX_LEN		54
+-- 
+2.34.1
 
-> Apr 17 21:38:04 qca-HP-ZBook-14-G2 kernel:  </TASK>
-
-Thanks for testing. I am able to reproduce this issue (although not exact=
-ly same crash signature) after disabling DMA remap. Just submit below pat=
-ch to fix this issue, please help review.
-
-=C2=A0=C2=A0=C2=A0=C2=A0 wifi: ath12k: fix kernel crash during resume
-
->
->
 
