@@ -4,88 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E82F4C4345F
-	for <ath12k@archiver.kernel.org>; Fri, 19 Apr 2024 14:55:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8242C4345F
+	for <ath12k@archiver.kernel.org>; Fri, 19 Apr 2024 14:57:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7PwKIillDqW2PxE/69AtrzMGuZqPPLn8J52Rt2ukngE=; b=hx9HCvh8gZOM/ypeHy2crMr6s8
-	gVxU3Hbh9L7zni5gHEYnjNh599S9KG75nrA2THZNf5X/XU0SGS7qLeqaQxEHEejPSLJeX0jBEh20E
-	GyPJMGFIJAzltBnBGqvT9/wdaEiB+UHoXmGnw4iOAHGpbPMPFM2WRdhy9Zhj/NVU5r26X9H5lebDA
-	Jo1RBd8yIjbpLrM90eCHp0WAu9G6i9f7m2BggwcaeJsPBRD5u0pJ6Sa3IFHkXLJ1GWP438XLA99ts
-	maAuOy+l+0DjeRp46dvS3C/+Xe5Upj+1TNoMwnLneNEtIkmTu2UBese5l+CWiTDsA/9dGWNfOkdc9
-	4NlxtZXQ==;
+	bh=6F7NHhVAe9nbmFfYRVj8WYErLoLaeRk5UKxOpWra3bY=; b=Z3cBvBrHH1wbTsVa9DDeYbHYK1
+	UvKcGCTPyRv44MiuoTOFiiemqQOJaPHPAnYiP8liNDsKSqkklrkOoDmUjyBJPFK1A4h4N/00WLDCG
+	3wWdXVPs3CDd6gg3BiR4X6nB16uWJTzQQDL3H3ZEF7/OgO8318BzadlkpY1oAVFB7ZBLsPvpqN1at
+	OMXF1k36HCAKgBumvbA1Wbs1Gh0xO3IXPC80vX3p3i9tEoLnzNYXJGtar/CsQkumDtAkpi9Df8X+C
+	dTZxtBQFIALjX9tlIEuMxhGLd/tJkIrXcgWUJrhm+BgAY4wBJJal6PssoaA/UJLOpH4O65swyjHKC
+	AkGZeAVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxpeN-0000000637m-2nEs
+	id 1rxpgX-000000063TT-2k4Y
 	for ath12k@archiver.kernel.org;
-	Fri, 19 Apr 2024 14:55:39 +0000
+	Fri, 19 Apr 2024 14:57:53 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxpeK-0000000637G-3zbM
+	id 1rxpgV-000000063T7-3xUL
 	for ath12k@lists.infradead.org;
-	Fri, 19 Apr 2024 14:55:38 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43J9R8DT020722;
-	Fri, 19 Apr 2024 14:55:35 GMT
+	Fri, 19 Apr 2024 14:57:53 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43J2Gv0Y016749;
+	Fri, 19 Apr 2024 14:57:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=7PwKIillDqW2PxE/69AtrzMGuZqPPLn8J52Rt2ukngE=; b=iL
-	xXh+7nJ8AxGTYdmPCplbpr70XR86pU/p5iKiDDzBsztH7+M5IcQs+9h7ecuL6RbQ
-	qg1IrZqoLGE2JFVmIUP9VUq9uJQH3K+mB2ldFrUnI6lgjUkSgaDAqwpK+FH1degw
-	Q8lPVHXjG1HxAEXMG6VJUpIFSNG6Wg3t+PpSNjg7xvkN0+VAFlpehxJA8shGkQNm
-	2S3NsSRZejZEun5fMQhBK7PcwhdmF69ybJCEgQbvn5uxLyoMta/p6iZBDv8mlM3m
-	sBCh+NJ4qfHHRUs2fnWHkPr+vmJYc2TY11vbvkpj7pVPAfyI+DpPK4KSxRRmDKvO
-	xhtk7hHw2/gZTn9gK0Ow==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xkgd71ag9-1
+	qcppdkim1; bh=6F7NHhVAe9nbmFfYRVj8WYErLoLaeRk5UKxOpWra3bY=; b=e2
+	zyYOon+lncyHvQkcdXmYSD16GK+rPidLgDmcyojiDERDCMjLv4ORpIm+mVIWQTaH
+	DRrpGh4BZ5ZIk8HxoQelT8ccrt6RsZ3dQgZOdgDuzjfX15pZPu7MsfeABrYu4tKR
+	2PIL5jFEDA0zmWv533LPQreHY3ZAYB7ktuHVaYFp99Bd+ToBJy9Fo3taGS+GOY5e
+	ajcOKWZ4GtYRYt0E0tKVPX6O40iIDjbjB6EyeAUt1OBXFdD1M/jXLBlZAkfGjVDV
+	xspgxygJcJ54YRyM92uQCfGsJH8fHMdOdnt97JBBOBdj03I3B9z6dwKwZaPrA/VH
+	+4gDPFeM3kev/Aahh3LA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xk9s7a3yj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Apr 2024 14:55:34 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43JEtY0F005389
+	Fri, 19 Apr 2024 14:57:50 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43JEvnKh011159
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Apr 2024 14:55:34 GMT
-Received: from [10.110.56.161] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+	Fri, 19 Apr 2024 14:57:49 GMT
+Received: from [10.110.91.89] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 19 Apr
- 2024 07:55:33 -0700
-Message-ID: <edda92e8-0508-4028-a3c8-392355436c43@quicinc.com>
-Date: Fri, 19 Apr 2024 07:55:33 -0700
+ 2024 07:57:47 -0700
+Message-ID: <316bae34-617a-4db3-8a55-7045d657adda@quicinc.com>
+Date: Fri, 19 Apr 2024 22:57:45 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 4/4] wifi: ath12k: ACPI band edge channel power support
-Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v8 0/4] wifi: ath12k: ACPI support
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
 References: <20240418162019.1246749-1-kvalo@kernel.org>
- <20240418162019.1246749-5-kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240418162019.1246749-5-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
+ <71414c51-26b2-4ce7-898c-5df0e8e31825@quicinc.com>
+ <87h6fyhtrs.fsf@kernel.org>
+ <a24666f5-503e-46fa-9232-df4748f824bf@quicinc.com>
+Content-Language: en-US
+From: Lingbo Kong <quic_lingbok@quicinc.com>
+In-Reply-To: <a24666f5-503e-46fa-9232-df4748f824bf@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: vweodLGXdPW15VmYVV-kR33CQtafbVSQ
-X-Proofpoint-ORIG-GUID: vweodLGXdPW15VmYVV-kR33CQtafbVSQ
+X-Proofpoint-GUID: wLtRpB1-MUz-Fs4zkW01jnSBJsuArOcE
+X-Proofpoint-ORIG-GUID: wLtRpB1-MUz-Fs4zkW01jnSBJsuArOcE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
  definitions=2024-04-19_10,2024-04-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
- mlxscore=0 bulkscore=0 mlxlogscore=888 priorityscore=1501 malwarescore=0
- lowpriorityscore=0 clxscore=1015 spamscore=0 suspectscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2404190112
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
+ phishscore=0 mlxlogscore=679 priorityscore=1501 adultscore=0
+ impostorscore=0 suspectscore=0 malwarescore=0 lowpriorityscore=0
+ bulkscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404190112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240419_075537_295777_65429DF6 
-X-CRM114-Status: UNSURE (   7.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240419_075752_031256_ABC80F57 
+X-CRM114-Status: GOOD (  12.31  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,20 +101,35 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/18/2024 9:20 AM, Kalle Valo wrote:
-> From: Lingbo Kong <quic_lingbok@quicinc.com>
+
+
+On 2024/4/19 22:51, Jeff Johnson wrote:
+> On 4/18/2024 9:16 PM, Kalle Valo wrote:
+>> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+>>> I can verify this doesn't crash my system, but apparently my ACPI doesn't have
+>>> the underlying settings, so cannot verify actual functionality
+>>
+>> Thanks for testing. I hope Lingbo has a device with proper ACPI settings.
+>>
+>>> Apr 18 15:13:59 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: acpi_evaluate_dsm() failed
+>>> Apr 18 15:13:59 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: failed to get ACPI DSM data: -2
+>>> Apr 18 15:13:59 qca-HP-ZBook-14-G2 kernel: ath12k_pci 0000:03:00.0: acpi failed: -2
+>>
+>> I just want to verify that these are debug messages, right? Normal users
+>> shouldn't see any ACPI errors if there are no ACPI settings in the system.
 > 
-> Currently, ath12k does not have the ability to set band edge channel power
-> for WCN7850. In order to support this, ath12k gets band edge channel power
-> table in ath12k_acpi_dsm_get_data() function and sets pdev_id and
-> param_type_id, then finally sends these data and
-> WMI_PDEV_SET_BIOS_INTERFACE_CMDID to firmware to set band edge channel
-> power.
+> Yes, those were debug messages (I've added ath12k.debug_mask=0xffffeffa to my
+> boot command)
 > 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> Also note my Qualcomm Innovation Center copyright checker reports that the two
+> new files are missing 2024 copyright, so please update
 > 
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> /jeff
+> 
+
+thx jeff, i'll update the copyright.
+
+best regards
+Lingbo Kong
 
 
