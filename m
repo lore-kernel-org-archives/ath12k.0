@@ -4,88 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53CA6C4345F
-	for <ath12k@archiver.kernel.org>; Fri, 19 Apr 2024 18:08:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FEDAC4345F
+	for <ath12k@archiver.kernel.org>; Sat, 20 Apr 2024 08:38:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dkrN5L8U9JNuomuUts6cmhMNhhk6vgPKaArDqv26aA4=; b=b7Izx77CMllWxw6lZKv4HnIwtQ
-	T1oqfS9yBiPP/CwXfz3nINMz05M4pN0Jphd6NYxzBI/MawqRC1Yjpm0zu9c5c9f9rLeh+bFYW7XMz
-	sh7ctEeMfD3pqDSjw6/WU+VoUw09+mIc32TuaNoxOpbk9hmuVA79QOmSC75UEiGbcFAgKr8E84hZE
-	J5G3m6430T3QzA2BPb3V80C6uH69S8Ci0VddXe8Asluh5NWjV2M08yBzdwSsGfLNvAt5F7jox3FB3
-	CzNCx0FXrUHQCGESR3odqFPWEUvXlFCK9Jxlzm4j4j/gV/+NN2k0zVfjkfEzBu32/w07PuaPEkT8M
-	BIC0LjXg==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=bkQ106tqrmq3U9lHE8+tSb5wUbvfkkNs49M8DlOen94=; b=M5ZBivgTvOvK7KiOZR1ROxJE+w
+	JDQU4g+qr7PVG5Yqb1/0oaicJBKtlCfEct5dA33ga4N3UcnNPvoT9040iwTLndICLlC0K19bwk/FM
+	0aNxVNgcdkfGYvmRPmWfvwp5aVSCnc2xlO0VQVyejPDmBTZcYex9pOv8y3YywOLzn7uUx4amawpuZ
+	OsbUHUDlN42ajNQ07hbgR7Ccgg6mnFv6wCECkg7nVdFiULSIvvNrA29FHFYMq50SQhgNubveU7hNH
+	F0rxO8IDFRFlwCvFVcXFrK478tlsEZnlEvYM6G1gdKR2ME9rmLnl/iNLFXCkKyfD75UPGxp7gwJeh
+	zrVaiWRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxsf9-00000006cT6-3kzS
+	id 1ry6EW-000000086qR-3Q4F
 	for ath12k@archiver.kernel.org;
-	Fri, 19 Apr 2024 18:08:39 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Sat, 20 Apr 2024 08:38:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxsf7-00000006cSY-0q6f
+	id 1ry6ET-000000086pM-0iyM
 	for ath12k@lists.infradead.org;
-	Fri, 19 Apr 2024 18:08:38 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43J3TWde008799;
-	Fri, 19 Apr 2024 18:08:35 GMT
+	Sat, 20 Apr 2024 08:38:02 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43K85vBV025115;
+	Sat, 20 Apr 2024 08:37:57 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=dkrN5L8U9JNuomuUts6cmhMNhhk6vgPKaArDqv26aA4=; b=Wm
-	orReolWHf/frtzWE+pg2aERvXb6Wsw97+N1dn1R/jTINASLXC99pV/YXLRWUPNmn
-	ZVCYx0gs7WrzDfqI8Rrf9wViHRErGvqlitGmPwme/AvkU5hswn5S7kbE4xJItA/B
-	49nKVkTaCu+ULu01AdnNO+W/UhDhA+/C4pjVhOdUxu94XMviVwrCTuGLaQ2+I3Rk
-	lqsAhQ6Q5pnf0RTt/TWIVgVxLZ+VIOXfCyvrqowE/wFdLXhT48cLOjkFDy8Ul7I5
-	mz2j/TvkIpVFYuORg4NpIsc3l60r7HBSxCezkZmqlBPSY6JB1+OLLmJQR44oGpWf
-	ap29xZlQdSHRbtttcC8g==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xkgrmhp67-1
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding; s=qcppdkim1; bh=bkQ106tqrmq3U9lHE8+t
+	Sb5wUbvfkkNs49M8DlOen94=; b=DuHUStxlVy+zA2Uc3qVrGRUHJ3s1JsQYimGl
+	J34ugTkh1c/l0OETHH1VaRnIPeeR8t4/c83zPQAIn9blImGNRDvcQhX0w/G6znzW
+	Id/3Fs+yybKa2GqIet8bXQtkvWLFC/yji7munDay5WXZaRQoHcpabp7GjbVmZLRy
+	0Vved1cJlZ4zGHCe4fkaiuF2QZLBsDqB2rj2v6hSJiBZFl44EeahOYt2odZNkOoP
+	iI9NNXpLsbx8R+QmDhDD8s3eYqyKr2TpR1XfHEHV64OtU3vXmAqFPuyHp5ak6mns
+	rrmvoGa7zmAbBnB9lkS9P3/0zZVWydYOwSn2nniKMhvPM2q/AA==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xm70cgagh-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Apr 2024 18:08:35 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43JI8YjF023760
+	Sat, 20 Apr 2024 08:37:57 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 43K8ZpIj028229;
+	Sat, 20 Apr 2024 08:37:53 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3xm6sk95he-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 19 Apr 2024 18:08:34 GMT
-Received: from [10.110.56.161] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 19 Apr
- 2024 11:08:33 -0700
-Message-ID: <b52f04d9-4569-4b4d-9e67-93ebc8775dae@quicinc.com>
-Date: Fri, 19 Apr 2024 11:08:32 -0700
+	Sat, 20 Apr 2024 08:37:53 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 43K8ZpaX028222;
+	Sat, 20 Apr 2024 08:37:53 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-hprem-blr.qualcomm.com [10.190.108.75])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 43K8brAA030172
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 20 Apr 2024 08:37:53 +0000
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 4146166)
+	id D4D4441171; Sat, 20 Apr 2024 14:07:52 +0530 (+0530)
+From: Harshitha Prem <quic_hprem@quicinc.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Harshitha Prem <quic_hprem@quicinc.com>
+Subject: [PATCH 0/8] wifi: ath12k: Introduce device group abstraction
+Date: Sat, 20 Apr 2024 14:07:42 +0530
+Message-Id: <20240420083750.1545670-1-quic_hprem@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: drop failed transmitted frames from metric
- calculation.
-Content-Language: en-US
-To: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240419170314.3117623-1-quic_kathirve@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240419170314.3117623-1-quic_kathirve@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+Content-Transfer-Encoding: 8bit
+X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 57gODWAUUVHYBv2laaOkvGV-3ruO8R1a
-X-Proofpoint-ORIG-GUID: 57gODWAUUVHYBv2laaOkvGV-3ruO8R1a
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: HDGRTJ9A6pgEXKEvLkr72PdUlJBxE7bn
+X-Proofpoint-ORIG-GUID: HDGRTJ9A6pgEXKEvLkr72PdUlJBxE7bn
 X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-19_13,2024-04-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- suspectscore=0 mlxscore=0 phishscore=0 malwarescore=0 lowpriorityscore=0
- adultscore=0 spamscore=0 clxscore=1015 bulkscore=0 priorityscore=1501
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404190139
+ engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-20_07,2024-04-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 adultscore=0 phishscore=0 clxscore=1011 suspectscore=0
+ malwarescore=0 priorityscore=1501 mlxlogscore=702 spamscore=0 bulkscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404200062
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240419_110837_429238_BAA06A11 
-X-CRM114-Status: GOOD (  23.38  )
+X-CRM114-CacheID: sfid-20240420_013801_296255_10C62499 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,125 +100,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/19/2024 10:03 AM, Karthikeyan Kathirvel wrote:
-> In mesh node traffic, internal firmware-transmitted failures are
-> reported as transmitted failures in mesh metric calculation, leading
-> to the breakage of the mesh link.
-> 
-> Fix the issue by dropping the internal firmware-transmitted failures
-> before updating the TX completion status to mac80211, in order to
-> prevent false failure averaging in mesh metric calculation.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-> Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/dp_tx.c    | 38 ++++++++++++++++------
->  drivers/net/wireless/ath/ath12k/hal_desc.h | 20 ++++++++++++
+To support multi-link operation, multiple devices with different bands say
+2 GHz or 5 GHz or 6 GHz can be combined together as a group and provide
+an abstraction to mac80211.
 
-My Qualcomm Innovation Center copyright checker reports:
-drivers/net/wireless/ath/ath12k/hal_desc.h copyright missing 2024
+Device group abstraction - when there are multiple devices that are
+connected by any means of communication interface between them, then these
+devices can be combined together as a single group using a group id to form
+a group abstraction. In ath12k driver, this abstraction would be named as
+ath12k_hw_group (ag).
 
->  2 files changed, 48 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-> index 9b6d7d72f57c..164431b7eb4e 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-> @@ -481,18 +481,36 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
->  	/* skip tx rate update from ieee80211_status*/
->  	info->status.rates[0].idx = -1;
->  
-> -	if (ts->status == HAL_WBM_TQM_REL_REASON_FRAME_ACKED &&
-> -	    !(info->flags & IEEE80211_TX_CTL_NO_ACK)) {
-> -		info->flags |= IEEE80211_TX_STAT_ACK;
-> -		info->status.ack_signal = ATH12K_DEFAULT_NOISE_FLOOR +
-> -					  ts->ack_rssi;
-> -		info->status.flags = IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
-> +	switch (ts->status) {
-> +	case HAL_WBM_TQM_REL_REASON_FRAME_ACKED:
-> +		if (!(info->flags & IEEE80211_TX_CTL_NO_ACK)) {
-> +			info->flags |= IEEE80211_TX_STAT_ACK;
-> +			info->status.ack_signal = ATH12K_DEFAULT_NOISE_FLOOR +
-> +						  ts->ack_rssi;
-> +			info->status.flags = IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
-> +		}
-> +		break;
-> +	case HAL_WBM_TQM_REL_REASON_CMD_REMOVE_TX:
-> +		if (info->flags & IEEE80211_TX_CTL_NO_ACK) {
-> +			info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
-> +			break;
-> +		}
-> +		fallthrough;
-> +	case HAL_WBM_TQM_REL_REASON_CMD_REMOVE_MPDU:
-> +	case HAL_WBM_TQM_REL_REASON_DROP_THRESHOLD:
-> +	case HAL_WBM_TQM_REL_REASON_CMD_REMOVE_AGED_FRAMES:
-> +		/* The failure status is due to internal firmware tx failure
-> +		 * hence drop the frame do not update the status of frame to
+Please find below illustration of device group abstraction with two
+devices.
 
-there is a separator missing here, so should be something like:
-...drop the frame and do not update...
-...drop the frame -- do not update...
-...drop the frame; do not update...
-...drop the frame (do not update...)
+                 Grouping of multiple devices (in future)
++------------------------------------------------------------------------+
+|  +-------------------------------------+       +-------------------+   |
+|  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+|  |   | ar (2GHz) | | | | ar (5GHz) |   |       |   | ar (6GHz) |   |   |
+|  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+|  |          ath12k_base (ab)           |       | ath12k_base (ab)  |   |
+|  |         (Dual band device)          |       |                   |   |
+|  +-------------------------------------+       +-------------------+   |
+|                 ath12k_hw_group (ag) based on group id                 |
++------------------------------------------------------------------------+
 
-> +		 * the upper layer
-> +		 */
-> +		dev_kfree_skb_any(msdu);
-> +		goto exit;
-> +	default:
-> +		ath12k_dbg(ab, ATH12K_DBG_DP_TX, "tx frame is not acked status %d\n",
-> +			   ts->status);
-> +		break;
->  	}
->  
-> -	if (ts->status == HAL_WBM_TQM_REL_REASON_CMD_REMOVE_TX &&
-> -	    (info->flags & IEEE80211_TX_CTL_NO_ACK))
-> -		info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
-> -
->  	/* NOTE: Tx rate status reporting. Tx completion status does not have
->  	 * necessary information (for example nss) to build the tx rate.
->  	 * Might end up reporting it out-of-band from HTT stats.
-> diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
-> index 63340256d3f6..677f31879553 100644
-> --- a/drivers/net/wireless/ath/ath12k/hal_desc.h
-> +++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
-> @@ -2048,6 +2048,19 @@ struct hal_wbm_release_ring {
->   *	fw with fw_reason2.
->   * @HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON3: Remove command initiated by
->   *	fw with fw_reason3.
-> + * @HAL_WBM_TQM_REL_REASON_CMD_DISABLE_QUEUE: Remove command initiated by
-> + *	fw with disable queue.
-> + * @HAL_WBM_TQM_REL_REASON_CMD_TILL_NONMATCHING: Remove command initiated by
-> + *	fw to remove all mpdu until 1st non-match.
-> + * @HAL_WBM_TQM_REL_REASON_DROP_THRESHOLD: Dropped due to drop threshold
-> + *	criteria
-> + * @HAL_WBM_TQM_REL_REASON_DROP_LINK_DESC_UNAVAIL: Dropped due to link desc
-> + *	not available
-> + * @HAL_WBM_TQM_REL_REASON_DROP_OR_INVALID_MSDU: Dropped due drop bit set or
-> + *	null flow
-> + * @HAL_WBM_TQM_REL_REASON_MULTICAST_DROP: Dropped due mcast drop set for VDEV
-> + * @HAL_WBM_TQM_REL_REASON_VDEV_MISMATCH_DROP: Dropped due to being set with
-> + *	'TCL_drop_reason'
->   */
->  enum hal_wbm_tqm_rel_reason {
->  	HAL_WBM_TQM_REL_REASON_FRAME_ACKED,
-> @@ -2058,6 +2071,13 @@ enum hal_wbm_tqm_rel_reason {
->  	HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON1,
->  	HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON2,
->  	HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON3,
-> +	HAL_WBM_TQM_REL_REASON_CMD_DISABLE_QUEUE,
-> +	HAL_WBM_TQM_REL_REASON_CMD_TILL_NONMATCHING,
-> +	HAL_WBM_TQM_REL_REASON_DROP_THRESHOLD,
-> +	HAL_WBM_TQM_REL_REASON_DROP_LINK_DESC_UNAVAIL,
-> +	HAL_WBM_TQM_REL_REASON_DROP_OR_INVALID_MSDU,
-> +	HAL_WBM_TQM_REL_REASON_MULTICAST_DROP,
-> +	HAL_WBM_TQM_REL_REASON_VDEV_MISMATCH_DROP,
->  };
->  
->  struct hal_wbm_buffer_ring {
-> 
-> base-commit: 363e7193eaf258fe7f04e8db560bd8a282a12cd9
-actual code LGTM, will ack a v2 with the nits addressed
+Say for example, device 1 has two radios (2 GHz and 5 GHz band) and
+device 2 has one radio (6 GHz).
+
+In existing code -
+        device 1 will have two hardware abstractions hw1 (2 GHz) and hw2
+        (5 GHz) will be registered separately to mac80211 as phy0 and phy1
+        respectively. Similarly, device 2 will register its hw (6GHz) as
+        phy2 to mac80211.
+
+In future, with multi-link abstraction
+
+        combination 1 - Different group id for device1 and device 2
+                Device 1 will create a single hardware abstraction hw1
+                (2 GHz and  5 GHz) and will be registered to mac80211 as
+                phy0. similarly, device 2 will register its hardware
+                (6 GHz) to mac80211 as phy1.
+
+        combination 2 - Same group id for device1 and device 2
+                Both device details are combined together as a group, say
+                group1, with single hardware abstraction of radios 2 GHz,
+                5 GHz and 6 GHz band details and will be registered to
+                mac80211 as phy0.
+
+Add base infrastructure changes to add device grouping abstraction with
+a single device.
+
+This patch series brings the base code changes with following order:
+        1. Refactor existing code which would facilitate in introducing
+           device group abstraction.
+        2. Create a device group abstraction during device probe.
+        3. Start the device group only after QMI firmware ready event is
+           received for all the devices that are combined in the group.
+        4. Move the hardware abstractions (ath12k_hw - ah) from device
+           (ath12k_base - ab) to device group abstraction (ag) as it would
+           ease in having different combinations of group abstraction that
+           can be registered to mac80211.
+
+
+Depends-on:
+        [PATCH 0/3] wifi: ath12k: Refactor the hardware recovery
+procedures
+
+
+Karthikeyan Periyasamy (8):
+  wifi: ath12k: Refactor core start api
+  wifi: ath12k: Add helpers to get or set ath12k_hw
+  wifi: ath12k: Add ath12k_get_num_hw api
+  wifi: ath12k: Introduce QMI firmware ready flag
+  wifi: ath12k: move ATH12K_FLAG_REGISTERED flag set to mac_register api
+  wifi: ath12k: Introduce device group abstraction
+  wifi: ath12k: refactor core start based on hardware group
+  wifi: ath12k: move ath12k_hw from per soc to group
+
+ drivers/net/wireless/ath/ath12k/core.c | 428 +++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/core.h |  88 ++++-
+ drivers/net/wireless/ath/ath12k/mac.c  | 111 +++++--
+ drivers/net/wireless/ath/ath12k/mac.h  |   9 +-
+ drivers/net/wireless/ath/ath12k/pci.c  |   1 +
+ drivers/net/wireless/ath/ath12k/qmi.c  |  11 +-
+ 6 files changed, 530 insertions(+), 118 deletions(-)
+
+
+base-commit: c416602943dd36fbd13af7496430723935c867a3
+prerequisite-patch-id: a4d62344b11368fb7e549c03b6a31f7ba4c9e2bb
+prerequisite-patch-id: b4a1e18a85d8c1e337fa133c2bd2956c33b11046
+prerequisite-patch-id: b16edd310baa35e2500267e338f60c9a2e6594e1
+-- 
+2.34.1
+
 
