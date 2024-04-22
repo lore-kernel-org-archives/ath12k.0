@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADE65C4345F
-	for <ath12k@archiver.kernel.org>; Sun, 21 Apr 2024 17:37:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E92FC07C79
+	for <ath12k@archiver.kernel.org>; Mon, 22 Apr 2024 03:06:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=bMACCxL/JAYqSr+fsJsG3zIjPA1Z377tUDjZ7FK6H/g=; b=nGl+FmlFhQhTSOPI2a4mLuNLQ8
-	4CNREut+FkUMQVNHiGcl4ygCa5BSNIEKYmhxtdnCcxs2mz/QiBaAc/vguSo5RN5wvaJJGN4RkkluO
-	HKekWqcIVkP9G1OIZIGB1A10DHGbTtc/D6BDnV4YhnPkKOXaUknS9FzvRSzBqVUJk+9lqS+7r1sdr
-	ZLXGN7vVfHowRNtjlA+/xo1dwoFAAfIVitEO+2oBiba9tJMJBPoIcoJJW1LjkyeR/ii637+3waXAf
-	dmOPWgf4u3oU4ToB77LbbZvcfWAbW4rjaH95t5Y+P+/uYwO3WjguUpUerDKnMuGE4iEEUY7tX++Wb
-	iM+Ieh0A==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+Zj4np9Gk1uNo0GfoYQ5nrhvELsEfL6tG8quWvDhzOs=; b=bsIGU7RB0kLUdnESE+uzsK4vV1
+	hVxC2MW+2LuTaCdP89Dxq7PJj3PS3XuQs2aj3KijJuVzgVpUmJWrrUcne8KNQ/LRJL03Xo314h4l+
+	d7W0RZQ0n+erfIKz9hbl3Q7GW/7na4w9OoieZfutHn3pMAhb3zG3u8sG/dFbN1EuN+0Zei1WpX+jm
+	xoRdCjyShdFm0i9LUVuxAT3wsfPtt//JCgCO7lg5kyOsgs8xoHymaNsd4mX85lIzMlmeLRmSUru5C
+	GtJ+I7gwZirNLbsxI1hIs4gGVv+wtbMn5D+sHTiG/5Ue/JyFg73Vjm0nOY51EX/aLcGqBab1pNAMl
+	w2r0kbgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ryb83-0000000Ax8B-0ruT
+	id 1ryk0f-0000000Bp1U-2tr2
 	for ath12k@archiver.kernel.org;
-	Sun, 21 Apr 2024 17:37:27 +0000
+	Mon, 22 Apr 2024 03:06:25 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ryb7z-0000000Ax5R-2SxQ
+	id 1ryk0a-0000000Boz9-0gzx
 	for ath12k@lists.infradead.org;
-	Sun, 21 Apr 2024 17:37:25 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43LHNGEt030738;
-	Sun, 21 Apr 2024 17:37:16 GMT
+	Mon, 22 Apr 2024 03:06:22 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43M1tokD012572;
+	Mon, 22 Apr 2024 03:06:15 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=bMACCxL
-	/JAYqSr+fsJsG3zIjPA1Z377tUDjZ7FK6H/g=; b=b4tin19YF9Uq8vS3myvMh7t
-	+OPsdz2Iuakmy4NeHBhOOlNYbFR3oy99FCex7IeDPVUNBHou6czCFNVnwrtxEgRC
-	ngDgY1qAM2bBGt0kbwxT2Lrr3aCxZLl+IedxK0g1WM1Wp5APHfeJO8T7VgP4d6Kd
-	sYAzXx9t32CEwEGI1lUUATchpg3vDJbWEEPvhkV3jf2Fb1fH2z9kKoXiK5IaFHL+
-	BWaJcTRcnAXPHcHEtROw8W6oJL+gTD8qiUAkmnUuw7FfUE3iVlKfDpDwa0Nlxgm3
-	+7CeB2RTJlJWSZN10jwFIbdeA8tOwG65Nw3qop1WsMmix/4W2dicvniwjK06MEA=
-	=
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xm63a2efc-1
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding:content-type; s=
+	qcppdkim1; bh=+Zj4np9Gk1uNo0GfoYQ5nrhvELsEfL6tG8quWvDhzOs=; b=jL
+	YAZlMQ7RFBuZfxxTRtHWMswIHIWsstz6rNK/7RoeAuz/08aoknDqrjSd73nLAiG6
+	tAYuEj9rvOpDSX+WeXv4XGDhSR9UeVOvnF9+Fsv1ShKqxfE0fMOumPl+5uPvolYI
+	ZmiPr3+ll6dTcx/RAm9cKujfEukj2E15GKl/MfpApY07S7mH4j4n/h1aelbzMBbw
+	iNLCmsPrNVftFpyVJONybxm+zPTPI8dEMtAKlfrmawEXC0kHIWh/y7R3qg557aNT
+	3le1m82Dh98gss2odHQlF+mARaHCwFAbOctODnEau/KXvp7N3KXdbSSvR5ggl+HR
+	zPxu3o0/003lWf9As7fg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xm5sx33cb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 21 Apr 2024 17:37:16 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43LHbEXe031533
+	Mon, 22 Apr 2024 03:06:14 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43M36CaD024497
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 21 Apr 2024 17:37:14 GMT
-Received: from hu-kathirve-hyd.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+	Mon, 22 Apr 2024 03:06:12 GMT
+Received: from lingbok.ap.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 21 Apr 2024 10:37:13 -0700
-From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+ 15.2.1544.9; Sun, 21 Apr 2024 20:06:10 -0700
+From: Lingbo Kong <quic_lingbok@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Kathirvel
-	<quic_kathirve@quicinc.com>
-Subject: [PATCH v2] wifi: ath12k: drop failed transmitted frames from metric calculation.
-Date: Sun, 21 Apr 2024 23:06:59 +0530
-Message-ID: <20240421173659.53674-1-quic_kathirve@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
+Subject: [PATCH v9 3/4] wifi: ath12k: ACPI CCA threshold support
+Date: Mon, 22 Apr 2024 11:05:43 +0800
+Message-ID: <20240422030545.954-4-quic_lingbok@quicinc.com>
+X-Mailer: git-send-email 2.37.3.windows.1
+In-Reply-To: <20240422030545.954-1-quic_lingbok@quicinc.com>
+References: <20240422030545.954-1-quic_lingbok@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: FCFIPwsSE2Yy-tEWL8BafYPFJqNuA76s
-X-Proofpoint-ORIG-GUID: FCFIPwsSE2Yy-tEWL8BafYPFJqNuA76s
+X-Proofpoint-ORIG-GUID: Vuo_1h0wW7tG4KnrzYio9ovy5MKfYgXk
+X-Proofpoint-GUID: Vuo_1h0wW7tG4KnrzYio9ovy5MKfYgXk
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-21_16,2024-04-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
- bulkscore=0 mlxlogscore=999 clxscore=1015 mlxscore=0 malwarescore=0
- adultscore=0 lowpriorityscore=0 spamscore=0 impostorscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404210110
+ definitions=2024-04-21_22,2024-04-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 phishscore=0 clxscore=1015 suspectscore=0 malwarescore=0
+ spamscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0 adultscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404220014
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240421_103723_802279_21463375 
-X-CRM114-Status: GOOD (  16.15  )
+X-CRM114-CacheID: sfid-20240421_200620_387712_FA08CB9D 
+X-CRM114-Status: GOOD (  16.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,128 +97,152 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In mesh node traffic, internal firmware-transmitted failures are
-reported as transmitted failures in mesh metric calculation, leading
-to the breakage of the mesh link.
+Currently, ath12k does not have the ability to adjust Clear Channel Assessment
+(CCA) threshold values to meet the regulatory requirements. Get the values from
+ACPI and send them to the firmware using ath12k_wmi_set_bios_cmd() function.
 
-Fix the issue by dropping the internal firmware-transmitted failures
-before updating the TX completion status to mac80211, in order to
-prevent false failure averaging in mesh metric calculation.
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
-v2:
-	Addressed Jeff's review comments
-		- Updated copyrights of hal_desc.h to 2024
-		- nits addressed
----
- drivers/net/wireless/ath/ath12k/dp_tx.c    | 38 ++++++++++++++++------
- drivers/net/wireless/ath/ath12k/hal_desc.h | 22 ++++++++++++-
- 2 files changed, 49 insertions(+), 11 deletions(-)
+ drivers/net/wireless/ath/ath12k/acpi.c | 37 ++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/acpi.h |  8 ++++++
+ drivers/net/wireless/ath/ath12k/core.h |  1 +
+ drivers/net/wireless/ath/ath12k/wmi.h  |  1 +
+ 4 files changed, 47 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 9b6d7d72f57c..423afdad98e3 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -481,18 +481,36 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 	/* skip tx rate update from ieee80211_status*/
- 	info->status.rates[0].idx = -1;
+diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
+index 177babc50f25..4af80dd13535 100644
+--- a/drivers/net/wireless/ath/ath12k/acpi.c
++++ b/drivers/net/wireless/ath/ath12k/acpi.c
+@@ -79,6 +79,18 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
+ 			memcpy(&ab->acpi.geo_offset_data, obj->buffer.pointer,
+ 			       obj->buffer.length);
  
--	if (ts->status == HAL_WBM_TQM_REL_REASON_FRAME_ACKED &&
--	    !(info->flags & IEEE80211_TX_CTL_NO_ACK)) {
--		info->flags |= IEEE80211_TX_STAT_ACK;
--		info->status.ack_signal = ATH12K_DEFAULT_NOISE_FLOOR +
--					  ts->ack_rssi;
--		info->status.flags = IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
-+	switch (ts->status) {
-+	case HAL_WBM_TQM_REL_REASON_FRAME_ACKED:
-+		if (!(info->flags & IEEE80211_TX_CTL_NO_ACK)) {
-+			info->flags |= IEEE80211_TX_STAT_ACK;
-+			info->status.ack_signal = ATH12K_DEFAULT_NOISE_FLOOR +
-+						  ts->ack_rssi;
-+			info->status.flags = IEEE80211_TX_STATUS_ACK_SIGNAL_VALID;
-+		}
-+		break;
-+	case HAL_WBM_TQM_REL_REASON_CMD_REMOVE_TX:
-+		if (info->flags & IEEE80211_TX_CTL_NO_ACK) {
-+			info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
 +			break;
-+		}
-+		fallthrough;
-+	case HAL_WBM_TQM_REL_REASON_CMD_REMOVE_MPDU:
-+	case HAL_WBM_TQM_REL_REASON_DROP_THRESHOLD:
-+	case HAL_WBM_TQM_REL_REASON_CMD_REMOVE_AGED_FRAMES:
-+		/* The failure status is due to internal firmware tx failure
-+		 * hence drop the frame; do not update the status of frame to
-+		 * the upper layer
-+		 */
-+		dev_kfree_skb_any(msdu);
-+		goto exit;
-+	default:
-+		ath12k_dbg(ab, ATH12K_DBG_DP_TX, "tx frame is not acked status %d\n",
-+			   ts->status);
-+		break;
++		case ATH12K_ACPI_DSM_FUNC_INDEX_CCA:
++			if (obj->buffer.length != ATH12K_ACPI_DSM_CCA_DATA_SIZE) {
++				ath12k_warn(ab, "invalid ACPI DSM CCA data size: %d\n",
++					    obj->buffer.length);
++				ret = -EINVAL;
++				goto out;
++			}
++
++			memcpy(&ab->acpi.cca_data, obj->buffer.pointer,
++			       obj->buffer.length);
++
+ 			break;
+ 		}
+ 	} else {
+@@ -226,6 +238,7 @@ static int ath12k_acpi_set_tas_params(struct ath12k_base *ab)
+ int ath12k_acpi_start(struct ath12k_base *ab)
+ {
+ 	acpi_status status;
++	u8 *buf;
+ 	int ret;
+ 
+ 	if (!ab->hw_params->acpi_guid)
+@@ -297,6 +310,30 @@ int ath12k_acpi_start(struct ath12k_base *ab)
+ 			return ret;
  	}
  
--	if (ts->status == HAL_WBM_TQM_REL_REASON_CMD_REMOVE_TX &&
--	    (info->flags & IEEE80211_TX_CTL_NO_ACK))
--		info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
--
- 	/* NOTE: Tx rate status reporting. Tx completion status does not have
- 	 * necessary information (for example nss) to build the tx rate.
- 	 * Might end up reporting it out-of-band from HTT stats.
-diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
-index 63340256d3f6..71e8c8a091ae 100644
---- a/drivers/net/wireless/ath/ath12k/hal_desc.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #include "core.h"
++	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi, ATH12K_ACPI_FUNC_BIT_CCA)) {
++		ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_INDEX_CCA);
++		if (ret) {
++			ath12k_warn(ab, "failed to get ACPI DSM CCA threshold configuration: %d\n",
++				    ret);
++			return ret;
++		}
++
++		if (ab->acpi.cca_data[0] == ATH12K_ACPI_CCA_THR_VERSION &&
++		    ab->acpi.cca_data[ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET] ==
++		    ATH12K_ACPI_CCA_THR_ENABLE_FLAG) {
++			buf = ab->acpi.cca_data + ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET;
++			ret = ath12k_wmi_set_bios_cmd(ab,
++						      WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE,
++						      buf,
++						      ATH12K_ACPI_CCA_THR_OFFSET_LEN);
++			if (ret) {
++				ath12k_warn(ab, "failed to set ACPI DSM CCA threshold: %d\n",
++					    ret);
++				return ret;
++			}
++		}
++	}
++
+ 	status = acpi_install_notify_handler(ACPI_HANDLE(ab->dev),
+ 					     ACPI_DEVICE_NOTIFY,
+ 					     ath12k_acpi_dsm_notify, ab);
+diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
+index 7ade8b3f640d..0879865fd861 100644
+--- a/drivers/net/wireless/ath/ath12k/acpi.h
++++ b/drivers/net/wireless/ath/ath12k/acpi.h
+@@ -11,11 +11,13 @@
+ #define ATH12K_ACPI_DSM_FUNC_SUPPORT_FUNCS	0
+ #define ATH12K_ACPI_DSM_FUNC_BIOS_SAR		4
+ #define ATH12K_ACPI_DSM_FUNC_GEO_OFFSET		5
++#define ATH12K_ACPI_DSM_FUNC_INDEX_CCA		6
+ #define ATH12K_ACPI_DSM_FUNC_TAS_CFG		8
+ #define ATH12K_ACPI_DSM_FUNC_TAS_DATA		9
  
-@@ -2048,6 +2048,19 @@ struct hal_wbm_release_ring {
-  *	fw with fw_reason2.
-  * @HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON3: Remove command initiated by
-  *	fw with fw_reason3.
-+ * @HAL_WBM_TQM_REL_REASON_CMD_DISABLE_QUEUE: Remove command initiated by
-+ *	fw with disable queue.
-+ * @HAL_WBM_TQM_REL_REASON_CMD_TILL_NONMATCHING: Remove command initiated by
-+ *	fw to remove all mpdu until 1st non-match.
-+ * @HAL_WBM_TQM_REL_REASON_DROP_THRESHOLD: Dropped due to drop threshold
-+ *	criteria
-+ * @HAL_WBM_TQM_REL_REASON_DROP_LINK_DESC_UNAVAIL: Dropped due to link desc
-+ *	not available
-+ * @HAL_WBM_TQM_REL_REASON_DROP_OR_INVALID_MSDU: Dropped due drop bit set or
-+ *	null flow
-+ * @HAL_WBM_TQM_REL_REASON_MULTICAST_DROP: Dropped due mcast drop set for VDEV
-+ * @HAL_WBM_TQM_REL_REASON_VDEV_MISMATCH_DROP: Dropped due to being set with
-+ *	'TCL_drop_reason'
-  */
- enum hal_wbm_tqm_rel_reason {
- 	HAL_WBM_TQM_REL_REASON_FRAME_ACKED,
-@@ -2058,6 +2071,13 @@ enum hal_wbm_tqm_rel_reason {
- 	HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON1,
- 	HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON2,
- 	HAL_WBM_TQM_REL_REASON_CMD_REMOVE_RESEAON3,
-+	HAL_WBM_TQM_REL_REASON_CMD_DISABLE_QUEUE,
-+	HAL_WBM_TQM_REL_REASON_CMD_TILL_NONMATCHING,
-+	HAL_WBM_TQM_REL_REASON_DROP_THRESHOLD,
-+	HAL_WBM_TQM_REL_REASON_DROP_LINK_DESC_UNAVAIL,
-+	HAL_WBM_TQM_REL_REASON_DROP_OR_INVALID_MSDU,
-+	HAL_WBM_TQM_REL_REASON_MULTICAST_DROP,
-+	HAL_WBM_TQM_REL_REASON_VDEV_MISMATCH_DROP,
- };
+ #define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
+ #define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
++#define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
+ #define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
+ #define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
  
- struct hal_wbm_buffer_ring {
-
-base-commit: 363e7193eaf258fe7f04e8db560bd8a282a12cd9
+@@ -26,13 +28,17 @@
+ #define ATH12K_ACPI_TAS_DATA_ENABLE		0x1
+ #define ATH12K_ACPI_POWER_LIMIT_VERSION		0x1
+ #define ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG	0x1
++#define ATH12K_ACPI_CCA_THR_VERSION		0x1
++#define ATH12K_ACPI_CCA_THR_ENABLE_FLAG		0x1
+ 
+ #define ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET	1
+ #define ATH12K_ACPI_DBS_BACKOFF_DATA_OFFSET	2
++#define ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET	5
+ #define ATH12K_ACPI_BIOS_SAR_DBS_BACKOFF_LEN	10
+ #define ATH12K_ACPI_POWER_LIMIT_DATA_OFFSET	12
+ #define ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN	18
+ #define ATH12K_ACPI_BIOS_SAR_TABLE_LEN		22
++#define ATH12K_ACPI_CCA_THR_OFFSET_LEN		36
+ 
+ #define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
+ #define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
+@@ -41,6 +47,8 @@
+ 					      ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN)
+ #define ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE (ATH12K_ACPI_POWER_LIMIT_DATA_OFFSET + \
+ 					    ATH12K_ACPI_BIOS_SAR_TABLE_LEN)
++#define ATH12K_ACPI_DSM_CCA_DATA_SIZE (ATH12K_ACPI_CCA_THR_OFFSET_DATA_OFFSET + \
++				       ATH12K_ACPI_CCA_THR_OFFSET_LEN)
+ 
+ #ifdef CONFIG_ACPI
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index dac4a6cd60f1..0e33cf783f62 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -913,6 +913,7 @@ struct ath12k_base {
+ 		u8 tas_sar_power_table[ATH12K_ACPI_DSM_TAS_DATA_SIZE];
+ 		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
+ 		u8 geo_offset_data[ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE];
++		u8 cca_data[ATH12K_ACPI_DSM_CCA_DATA_SIZE];
+ 	} acpi;
+ 
+ #endif /* CONFIG_ACPI */
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 8ace566f7eb5..6db15a0a4735 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -4805,6 +4805,7 @@ struct wmi_pdev_set_bios_interface_cmd {
+ } __packed;
+ 
+ enum wmi_bios_param_type {
++	WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE	= 0,
+ 	WMI_BIOS_PARAM_TAS_CONFIG_TYPE		= 1,
+ 	WMI_BIOS_PARAM_TAS_DATA_TYPE		= 2,
+ 	WMI_BIOS_PARAM_TYPE_MAX,
 -- 
 2.34.1
 
