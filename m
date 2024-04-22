@@ -4,85 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98330C04FF6
-	for <ath12k@archiver.kernel.org>; Mon, 22 Apr 2024 03:31:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B521C4345F
+	for <ath12k@archiver.kernel.org>; Mon, 22 Apr 2024 07:18:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=64L5h+WZFqfEYAg04oeEc9gJIgzm7hBFsbVYwICLKxY=; b=WWLxSEjUrUFSuo5NEc1YJJkE5w
-	IglE+iDGm6zEkk5iP6B6E21FEiv1gKxtUaeCxE6MPb8ybP01GNeCq4eAl5z/q88x7nP5z0BuuY/tn
-	KXuTN8Bo8HKIx5TkUch2mIIxpzPlAsYW5AszYChbBdjD1PgyPAPySFm06MAD0GxcapVaGlx2tlEK9
-	ShGy3gOk3wG+EfbcV55D+YOu1bKUHJvNxayM31GaV19N/Rs2UylbwaZ8zYVG+TOTOou0Hwmt1NvnT
-	L8uuxRhHdTD88wTUHNzwDZWfE0ejYWBHvVcJVUXidGP5YM2EksUb3tKk7x9pbE8fOtPR9yen+9qu1
-	JFMqK0lw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=rnYQ3RPMH+5kzmpx+wPw6hKyry8my9zlf8oaKHJWBfQ=; b=q9CLnUTZPYbiVTeY2EYfCrH4nS
+	7XqzfqVnfH7/H2khJdhHD9Hm07uqUvHUO8vsHCeQSsT1ZaB26Djp0YZrEUHOk5NaftV3GaG5PFJaF
+	4Ei0XtPN+h7dFRTvFm04W+kT2haSUNSdn8TX5YRdiAN6P+jujDcBZ8hmE/iMBhgwYCgcP4GoqkHpB
+	uKJX2lPKQF72C97qvOo2SQJD3cHTvWcF+duoVv7o+iw+hAyWzxYI2COQTiPDVcM8V1qRy0xTEIcAe
+	esOaPk30VFkeu1lwpgNn/3Z+ikwxCXBfhM2NvVX9eI2YYaSXjdLsCgrYApjrCNRIuQ9YMz4pDrJXg
+	oGW8YWAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rykOn-0000000BrNc-3ZJt
+	id 1rynwP-0000000COuV-0wi0
 	for ath12k@archiver.kernel.org;
-	Mon, 22 Apr 2024 03:31:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 22 Apr 2024 07:18:17 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rykOl-0000000BrML-2aY5
+	id 1rynue-0000000CNu1-19vn
 	for ath12k@lists.infradead.org;
-	Mon, 22 Apr 2024 03:31:21 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43M1MqpT007768;
-	Mon, 22 Apr 2024 03:31:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=64L5h+WZFqfEYAg04oeEc9gJIgzm7hBFsbVYwICLKxY=; b=bE
-	fLJzIYdz60tqW7K1Zj65l/n0XJuNbXfwWMJwtBQvv2uB9Mt/p5mWpVrl/ZZauT7q
-	Mnn2q2BavXT3c0fyzzIeDqhDq+0kSpsqfJ4o3utwcE1IzorK/YtAanKHDWSseDFI
-	1CZtLB/PGUhJt2LJXCmEFXOjnjSPzAePWIbuCOCiU4BAp342DswF7D/0E+VWuYBt
-	z+1qMYxsF3aKFoK5tjNogrdEUliJquLjCqzjqPAjkXXg5pi1Ym3bXhz2BAHjX+sC
-	w9c+DFh2PJB0Z8Vt0jr3IpIln3NTFoJmBfMHub7+ztncd9iOkVfhlBZrr1p+l0oM
-	ootGa+dhnQJplpXzfQaA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xm5sx34k9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Apr 2024 03:31:18 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43M3VHKt010221
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Apr 2024 03:31:17 GMT
-Received: from lingbok.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 21 Apr 2024 20:31:16 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH v10 4/4] wifi: ath12k: ACPI band edge channel power support
-Date: Mon, 22 Apr 2024 11:30:53 +0800
-Message-ID: <20240422033054.979-5-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.37.3.windows.1
-In-Reply-To: <20240422033054.979-1-quic_lingbok@quicinc.com>
-References: <20240422033054.979-1-quic_lingbok@quicinc.com>
+	Mon, 22 Apr 2024 07:16:35 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 4DFE1CE0A0F;
+	Mon, 22 Apr 2024 07:16:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76923C113CC;
+	Mon, 22 Apr 2024 07:16:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1713770185;
+	bh=J7dZFmAv+93dDhYolGELXJSEN4VNpt23HfVHjyK8Bpw=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=KMT2N4++JFVKNhBitPPrb8AqxqRXWUTzWYA5vL4rZjV3MDh44/9207CQBiQ6PGtbx
+	 PzbU43dywqTwTDoIFZw22MoXM1jDb0P4nav1SxiM1DbJeIyJAu7cTM5Tvt0fCiKFYZ
+	 d/NB/9AXnUgFuj17RQ2Sh2+OuIy1Xzw+aOGvVwx8X7Sl1BxkoNnT/Ua4aSsvl6jvm7
+	 yV/iVZCpzYeKvVyQW7bEAi5iUiNd0VrQulRRdbYuy5JM1e+iJ4w+D2l15sXHubXzY9
+	 7fBATMWlZ4ENOsJ95/R0N5bg2pUgmXatrTs6XCC6bF/ovg0ZUgWB8QM3NJqEhP/GYQ
+	 dvz+cY7tGOnfA==
+From: Kalle Valo <kvalo@kernel.org>
+To: Lingbo Kong <quic_lingbok@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  Jeff Johnson <quic_jjohnson@quicinc.com>,
+  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v8 0/4] wifi: ath12k: ACPI support
+References: <91cbda07-0b93-4e0b-adaa-cd9b078a91b8@quicinc.com>
+	<be016fbf-0198-4fe1-84f8-cfb0bf00dc4b@quicinc.com>
+Date: Mon, 22 Apr 2024 10:16:22 +0300
+In-Reply-To: <be016fbf-0198-4fe1-84f8-cfb0bf00dc4b@quicinc.com> (Lingbo Kong's
+	message of "Fri, 19 Apr 2024 17:39:32 +0800")
+Message-ID: <877cgpx3y1.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: KtJVrjNojB8GysgGbzh3GsJNerPTu2z2
-X-Proofpoint-GUID: KtJVrjNojB8GysgGbzh3GsJNerPTu2z2
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-04-21_22,2024-04-19_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 phishscore=0 clxscore=1015 suspectscore=0 malwarescore=0
- spamscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0 adultscore=0
- mlxlogscore=998 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404220016
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240421_203119_799886_5E8A488F 
-X-CRM114-Status: GOOD (  16.70  )
+X-CRM114-CacheID: sfid-20240422_001628_933676_4D971B17 
+X-CRM114-Status: GOOD (  14.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,142 +75,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k does not have the ability to set band edge channel power
-for WCN7850. In order to support this, ath12k gets band edge channel power
-table in ath12k_acpi_dsm_get_data() function and sets pdev_id and
-param_type_id, then finally sends these data and
-WMI_PDEV_SET_BIOS_INTERFACE_CMDID to firmware to set band edge channel
-power.
+Lingbo Kong <quic_lingbok@quicinc.com> writes:
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> On 2024/4/19 14:30, Lingbo Kong wrote:
+>>  > -------- Forwarded Message --------
+>>  > Subject: Re: [PATCH v8 0/4] wifi: ath12k: ACPI support
+>>  > Date: Fri, 19 Apr 2024 07:16:07 +0300
+>>  > From: Kalle Valo <kvalo@kernel.org>
+>>  > To: Jeff Johnson <quic_jjohnson@quicinc.com>
+>>  > CC: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+>>  >
+>>  > Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+>>  >
+>>  > > On 4/18/2024 9:20 AM, Kalle Valo wrote:
+>>  > >
+>>  > >> From: Kalle Valo <quic_kvalo@quicinc.com>
+>>  > >>
+>>  > >> Through reading ACPI tables, implement Time-Average-SAR(TAS), BIOS
+>>  > >> SAR, configuration of CCA threshold and band edge channel power
+>>  > functionalities.
+>>  > >> This is enabled only on WCN7850.
+>>  > >>
+>>  > >> TODO:
+>>  > >>
+>>  > >> * test with ACPI support in hardware (I don't have such hardware),
+>>  > especially
+>>  > >>=C2=A0=C2=A0 suspend and hibernation
+>>  >
+>>  > [...]
+>>  >
+>>  > > I can verify this doesn't crash my system, but apparently my ACPI
+>>  > > doesn't have the underlying settings, so cannot verify actual
+>>  > > functionality
+>>  >
+>>  > Thanks for testing. I hope Lingbo has a device with proper ACPI
+>> settings.
+>>  >
+>> yes, I'll apply these patch then test it.
+>>=20
+>
+> Hi, kalle, i've applied this patchset, set ACPI correctly, then ACPI's
+> functionality is right.
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/acpi.c | 36 ++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/acpi.h |  5 ++++
- drivers/net/wireless/ath/ath12k/core.h |  1 +
- drivers/net/wireless/ath/ath12k/wmi.h  |  4 +++
- 4 files changed, 46 insertions(+)
+Nice, thanks for testing.
 
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
-index 4af80dd13535..443ba12e01f3 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.c
-+++ b/drivers/net/wireless/ath/ath12k/acpi.c
-@@ -91,6 +91,18 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
- 			memcpy(&ab->acpi.cca_data, obj->buffer.pointer,
- 			       obj->buffer.length);
- 
-+			break;
-+		case ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE:
-+			if (obj->buffer.length != ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE) {
-+				ath12k_warn(ab, "invalid ACPI DSM band edge data size: %d\n",
-+					    obj->buffer.length);
-+				ret = -EINVAL;
-+				goto out;
-+			}
-+
-+			memcpy(&ab->acpi.band_edge_power, obj->buffer.pointer,
-+			       obj->buffer.length);
-+
- 			break;
- 		}
- 	} else {
-@@ -334,6 +346,30 @@ int ath12k_acpi_start(struct ath12k_base *ab)
- 		}
- 	}
- 
-+	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi,
-+				       ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER)) {
-+		ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE);
-+		if (ret) {
-+			ath12k_warn(ab, "failed to get ACPI DSM band edge channel power: %d\n",
-+				    ret);
-+			return ret;
-+		}
-+
-+		if (ab->acpi.band_edge_power[0] == ATH12K_ACPI_BAND_EDGE_VERSION &&
-+		    ab->acpi.band_edge_power[1] == ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG) {
-+			ret = ath12k_wmi_set_bios_cmd(ab,
-+						      WMI_BIOS_PARAM_TYPE_BANDEDGE,
-+						      ab->acpi.band_edge_power,
-+						      sizeof(ab->acpi.band_edge_power));
-+			if (ret) {
-+				ath12k_warn(ab,
-+					    "failed to set ACPI DSM band edge channel power: %d\n",
-+					    ret);
-+				return ret;
-+			}
-+		}
-+	}
-+
- 	status = acpi_install_notify_handler(ACPI_HANDLE(ab->dev),
- 					     ACPI_DEVICE_NOTIFY,
- 					     ath12k_acpi_dsm_notify, ab);
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-index 0879865fd861..39e003d86a48 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.h
-+++ b/drivers/net/wireless/ath/ath12k/acpi.h
-@@ -14,12 +14,14 @@
- #define ATH12K_ACPI_DSM_FUNC_INDEX_CCA		6
- #define ATH12K_ACPI_DSM_FUNC_TAS_CFG		8
- #define ATH12K_ACPI_DSM_FUNC_TAS_DATA		9
-+#define ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE		10
- 
- #define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
- #define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
- #define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
- #define ATH12K_ACPI_FUNC_BIT_TAS_CFG			BIT(7)
- #define ATH12K_ACPI_FUNC_BIT_TAS_DATA			BIT(8)
-+#define ATH12K_ACPI_FUNC_BIT_BAND_EDGE_CHAN_POWER	BIT(9)
- 
- #define ATH12K_ACPI_NOTIFY_EVENT			0x86
- #define ATH12K_ACPI_FUNC_BIT_VALID(_acdata, _func)	(((_acdata).func_bit) & (_func))
-@@ -30,6 +32,8 @@
- #define ATH12K_ACPI_POWER_LIMIT_ENABLE_FLAG	0x1
- #define ATH12K_ACPI_CCA_THR_VERSION		0x1
- #define ATH12K_ACPI_CCA_THR_ENABLE_FLAG		0x1
-+#define ATH12K_ACPI_BAND_EDGE_VERSION		0x1
-+#define ATH12K_ACPI_BAND_EDGE_ENABLE_FLAG	0x1
- 
- #define ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET	1
- #define ATH12K_ACPI_DBS_BACKOFF_DATA_OFFSET	2
-@@ -41,6 +45,7 @@
- #define ATH12K_ACPI_CCA_THR_OFFSET_LEN		36
- 
- #define ATH12K_ACPI_DSM_TAS_DATA_SIZE			69
-+#define ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE		100
- #define ATH12K_ACPI_DSM_TAS_CFG_SIZE			108
- 
- #define ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE (ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET + \
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 0e33cf783f62..3333f88520ce 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -914,6 +914,7 @@ struct ath12k_base {
- 		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
- 		u8 geo_offset_data[ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE];
- 		u8 cca_data[ATH12K_ACPI_DSM_CCA_DATA_SIZE];
-+		u8 band_edge_power[ATH12K_ACPI_DSM_BAND_EDGE_DATA_SIZE];
- 	} acpi;
- 
- #endif /* CONFIG_ACPI */
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 6db15a0a4735..b5285ed78534 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4808,6 +4808,10 @@ enum wmi_bios_param_type {
- 	WMI_BIOS_PARAM_CCA_THRESHOLD_TYPE	= 0,
- 	WMI_BIOS_PARAM_TAS_CONFIG_TYPE		= 1,
- 	WMI_BIOS_PARAM_TAS_DATA_TYPE		= 2,
-+
-+	/* bandedge control power */
-+	WMI_BIOS_PARAM_TYPE_BANDEDGE		= 3,
-+
- 	WMI_BIOS_PARAM_TYPE_MAX,
- };
- 
--- 
-2.34.1
+--=20
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
+hes
 
