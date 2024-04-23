@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AABB7C4345F
-	for <ath12k@archiver.kernel.org>; Tue, 23 Apr 2024 20:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B40B5C04FFE
+	for <ath12k@archiver.kernel.org>; Tue, 23 Apr 2024 20:30:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KwhishAK9ZJ5e7hj+OdV92ttsecf4A+xBXA8wTaEueo=; b=35pzNPWC9y+dt2FxNKJh1Hp3Kj
-	G2NzHTKV0bv/4oBTALKRodQnfbOBDo7bVu6K1SDazbnfewvONH1YGpQXD5RllktJM3m3L0XHbFKaF
-	yXthHkifSHi2+TqfeV/XBE7iZ4Ebx8ribZqwsR6xw9AsnKNw/LOzIuK24fALTdHGwDz4y3aJHcNO1
-	Lm071qm2t7xkUe+SR9BywgWZGm6vxuzU+0UKZM/RWlz52tDzmV5YKPhTIVMwEUT4LtOS7xpQgpZI2
-	z692ijS68hPMMKPXDhVZzwsqg07XSXMjPKDlRkIeKPTBaerOlQhojT4ahcP3aj9lmxH03oWcvNmZa
-	VDeAR9Ug==;
+	bh=bAhnD3EruFqUAxnb2yYMsg8kMCiCu2z8DkDHiSAByzc=; b=cwwFOIc6kXKJbZL6fu9WEOKcHK
+	Vg1QXModgaWg49zzGAP/N8najxT8YeZZertiyRSNOd4Ip+lEGVBWW9xDpjCzRGS3qW2hWbUYopQ+w
+	IZkJ5dISKHNx6LioX3z8N+KAM/pNeivJsZ0TM8Bryfal1TokD10/Ee9pIpYEq1Krq7YpLLBVJ/jIk
+	QvsGdegGTUYFBFbZws2jRIQmH+5ac+p9MudO85AiIrvErOs+NBUK2X5hIjiY/4dTtaRX+WP08OVoH
+	qCpM3ph44IiZ9C3WqdIxGEgSdUIeXqaoW8byWllVeve95jjPMGJRwOr/tUv4t3ffQ0wPPu/ajyUq6
+	mv+hFc6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzMmi-00000001Q1M-1K9g
+	id 1rzMmk-00000001Q2F-01Pg
 	for ath12k@archiver.kernel.org;
-	Tue, 23 Apr 2024 20:30:36 +0000
+	Tue, 23 Apr 2024 20:30:38 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzMmf-00000001PzH-27A9
+	id 1rzMmg-00000001Q0f-3jZ4
 	for ath12k@lists.infradead.org;
-	Tue, 23 Apr 2024 20:30:35 +0000
+	Tue, 23 Apr 2024 20:30:36 +0000
 Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43N7vBJi021592;
-	Tue, 23 Apr 2024 20:30:31 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43NJxqbt011590;
+	Tue, 23 Apr 2024 20:30:34 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=KwhishAK9ZJ5e7hj+OdV92ttsecf4A+xBXA8wTaEueo=; b=eA
-	dTFgtTmA3EP2mg8LlzPApDF2c6ESl1jx6ErwzjzSim2lij6ngQY50ZFBNcaiOtGK
-	JKSjH0InofnJdPrhHNiNNaZr09n5OEmrRKgfQJUeBtLbgMJr71VeHp++OMMmxJus
-	gDV/xOawqQvNx04awPmTnAF33qcIq2o5vuqJdjU3Zc8RI0Adrhqfxh9lQrfJmp8c
-	khmZOItltg5sm0WvUNLGlC16fulentCH8GK54As3llHLjaxfAQO8rL8xWfH5785U
-	oSuPAo0t2GaTBLrfegWDn1/8NUATBaCopN9PhAB2ZblU5fMjywMYqCSlEZe1qbGP
-	p65Nd7hoisj9CgkDxoFQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xp91rt7j4-1
+	qcppdkim1; bh=bAhnD3EruFqUAxnb2yYMsg8kMCiCu2z8DkDHiSAByzc=; b=ai
+	J7tD3xI9Z3nHQQAEQBjG3WtGj4LTEc9mS9tZrmLanJU92GNvkqkZ79gfAC6ponuZ
+	8VqR/+GsNQxOuKlOliI76Xvx6qlpy/KtPWkh5WOhMsoCU4TcDnILTVFTmTfGaYu6
+	4Of3dAR0+b2Cjx/4WDgobjYPZMfAn5cF1rOFFAmezGYMEzgXKYPaQxwVIv9Hs9lM
+	XLKhgEjhWbFFR/xa2L+Rqr/PWSA7NQkdNJByjuUsG3zL1SB2ZIILOVF5SdZlkVIN
+	4OBJ/eVtTpoU6iBbNXHLlJ/Dtw3uPdBmDPIC2co8EHgrk0WICSNmrwi1aFtD6JhV
+	WzscSQljIcmEi0DOHo4A==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xp91rt7j7-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 23 Apr 2024 20:30:30 +0000 (GMT)
+	Tue, 23 Apr 2024 20:30:33 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43NKUTpJ032601
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43NKUW2q005635
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 23 Apr 2024 20:30:29 GMT
+	Tue, 23 Apr 2024 20:30:32 GMT
 Received: from [10.110.61.159] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 23 Apr
- 2024 13:30:28 -0700
-Message-ID: <00028ab8-6cef-4b56-b9ba-766fe2317b9e@quicinc.com>
-Date: Tue, 23 Apr 2024 13:30:28 -0700
+ 2024 13:30:31 -0700
+Message-ID: <da99c1e1-7d9a-4c7f-b775-119a329fba1b@quicinc.com>
+Date: Tue, 23 Apr 2024 13:30:31 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/3] wifi: ath12k: prepare vif data structure for MLO
- handling
+Subject: Re: [PATCH 2/3] wifi: ath12k: pass ath12k_link_vif instead of
+ vif/ahvif
 Content-Language: en-US
 To: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
         <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
 References: <20240422125630.1469456-1-quic_ramess@quicinc.com>
- <20240422125630.1469456-2-quic_ramess@quicinc.com>
+ <20240422125630.1469456-3-quic_ramess@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240422125630.1469456-2-quic_ramess@quicinc.com>
+In-Reply-To: <20240422125630.1469456-3-quic_ramess@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -74,19 +74,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 2GC_i75IJlgywu4EIxf5gV0YCJRQNYJk
-X-Proofpoint-ORIG-GUID: 2GC_i75IJlgywu4EIxf5gV0YCJRQNYJk
+X-Proofpoint-GUID: JR-KCe2CBDSwphwzNLTl-6lD7iEHwiKS
+X-Proofpoint-ORIG-GUID: JR-KCe2CBDSwphwzNLTl-6lD7iEHwiKS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-04-23_16,2024-04-23_02,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
- mlxlogscore=999 malwarescore=0 clxscore=1015 phishscore=0 bulkscore=0
+ mlxlogscore=713 malwarescore=0 clxscore=1015 phishscore=0 bulkscore=0
  suspectscore=0 impostorscore=0 spamscore=0 priorityscore=1501
  lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2404010003 definitions=main-2404230049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240423_133033_838841_01228378 
-X-CRM114-Status: GOOD (  23.74  )
+X-CRM114-CacheID: sfid-20240423_133035_214810_EE86790A 
+X-CRM114-Status: GOOD (  10.12  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,96 +104,21 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 On 4/22/2024 5:56 AM, Rameshkumar Sundaram wrote:
 > From: Sriram R <quic_srirrama@quicinc.com>
 > 
-> To prepare the driver for MLO support, split the driver vif
-> data structure to scale for multiple links. This requires changing
-> the use of arvif to per link and not per hw which can now
-> comprise of multiple links.
-> Also since most configurations from mac80211 are done per link, do refactoring
-> of the driver functions to apply these configurations at link level.
+> Currently ieee80211_vif/ahvif is passed as argument for all vif
+> related control path functions that are being called from
+> mac80211 ops. With MLO support being added multiple link vifs can
+> be part of an ieee80211_vif/ahvif and all these functions will need
+> link id along with ieee80211_vif/ahvif to be passed to fetch the
+> corresponding link vif (arvif) to which the control/config applies.
+> Also all these functions need to validate the locking dependency before
+> dereferencing and start using the link vifs.
 > 
-> Split ath12k_vif which is the driver private of ieee80211_vif to store
-> link specific information as ath12k_link_vif. For default use cases
-> the ath12k vif will have a preallocated link vif called deflink which will
-> be used by non ML and the first link vif of ML vif.
-> 
-> With MLO Support to be added, remaining link vifs will be allocated during
-> channel assignment where vdev create/start happens. These link vifs will be
-> freed during interface down.
-> 
->        		Current ath12k_vif(arvif) structure
-> 
->              +---------------+      +---------------+     +---------------+
->              | ieee80211_vif |      | ieee80211_vif |     | ieee80211_vif |
->              | private data  |      | private data  |     | private data  |
->              |               |      |               |     |               |
->              |  ath12k_vif   |      |  ath12k_vif   |     |  ath12k_vif   |
->              |  (arvif)      |      |  (arvif)      |     |  (arvif)      |
->              |               |      |               |     |               |
->              |  +----------+ |      |  +----------+ |     |  +----------+ |
->              |  |*ar (2GHz)| |      |  |*ar (5GHz)| |     |  |*ar (2GHz)| |
->              |  +----------+ |      |  +----------+ |     |  +----------+ |
->              |               |      |               |     |               |
->              +---------------+      +---------------+     +---------------+
-> 
->        	Proposed ath12k_vif(ahvif) containing ath12k_link_vif(s) (arvif)
->        	(deflink is preallocated member which is always the first link if
->        	 ieee80211_vif is MLD and is the only link otherwise)
-> 
->        			+---------------------------------+
->        			|     ieee80211_vif               |
->        			|     private data                |
->        			|                                 |
->        			|   ath12k_vif(ahvif)             |
->        			|                                 |
->        			| +-------------------------------+
->        			| |ath12k_link_vif deflink (arvif)|
->        			| |        +---------------+      |
->        			| |        | *ar(2GHz)     |      |
->        			| +-------------------------------+
->        			| +-------------------------------+
->        			| |  ath12k_link_vif *link (arvif)|
->        			| |        +---------------+      |
->        			| |        | *ar(5GHz)     |      |
->        			| +-------------------------------+
->        			| +-------------------------------+
->        			| |  ath12k_link_vif *link (arvif)|
->        			| |        +---------------+      |
->        			| |        | *ar(6GHz)     |      |
->        			| +-------------------------------+
->        			|                                 |
->        			+---------------------------------+
-> 
-> To refactor existing ath12k_vif to make use of link vifs, following
-> changes are made,
-> 
->  1. ath12k_vif now called by variable name ahvif stores multiple
->  arvifs(ah12k_link_vif) and also has a back pointer to ieee80211_vif.
-> 
->  2. In this patch set, only deflink is used to be on par with the
->  existing code. When MLO support is added the link id will be used to
->  fetch the arvif.
-> 
->  3. For mac80211 ops which doesn't use specific link_id, the config or info
->  is common for the vif, hence apply the config to all link vifs.
->  The links_map in the ahvif, will be used to identify all the link vifs that
->  are setup.
-> 
->  4. Change ath12k_vif_to_arvif() as ath12k_vif_to_ahvif() to fetch the
->  hw level vif. The link vif can be fetched from ahvif->link[], or the
->  deflink can be accessed via ahvif->deflink. API to access link
->  vif(arvif) by passing link_id can be introduced with MLO Support.
-> 
->  5. The ieee80211_vif can be accessed from ahvif using ath12k_vif_to_vif()
-> 
-> Locking:
->  Currently modifications to members of arvif and arsta are protected by ar->conf_mutex
->  and it stays as such.
->  Now with these hw level structure (ahvif) being introduced, any modifications
->  to its members and link objects (i.e., arvifs[] which are dynamically allocated)
->  needs to be protected for writing and ah->conf_mutex is used for the same.
->  Also, atomic contexts(say WMI events and certain mac_ops) that we currently have in driver
->  will not(shouldn't be allowed) do any modifications but can read them and
->  rcu_read_lock() is used for the same.
+> To avoid these redundant link dereferences and validations,
+> limit ieee80211_vif/ahvif argument to mac80211 ops unless
+> otherwise really required. Do link vif dereference and locking only in
+> mac80211 ops.
+> Replace vif arg with ath12k_link_vif and internally fetch ath12k_vif(ahvif)
+> and vif(ieee80211_vif) if required on other functions.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
