@@ -4,90 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D0ADC4345F
-	for <ath12k@archiver.kernel.org>; Wed, 24 Apr 2024 02:54:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31F9AC4345F
+	for <ath12k@archiver.kernel.org>; Wed, 24 Apr 2024 04:39:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=GybkwAUQe6Jova0Ysj+7bmLjb8nEsWF8SsqRolELs+Q=; b=NY8mvuHWFVeSvgcXgMtDvRgVMZ
-	1VAb+fZoZ47b0Nq/+NeEnJkZD9XO3+y4qFHjuImkqKnLh65wWfy4Xl/NERe2cR+ahb4U2HVmleFRo
-	TrEGAfZVwHJVSWXYD4gJzfseFi8U8BDuivbeJpnqKYMHIWG9qELLnXv2oPHWDS2LtHy8uhnGNsbvi
-	saqNRpWhcya9DRr21FJsIYZbG45dkwdr5EyD3MKjDYTcWxQ/olBFqisIt99UyuWQ1+sy46J4UqlmC
-	TSiHvlLy4shw+RSu2f1C7oC1A9rp/Xw6f8aP/FhoLpYK31vkUcQNimN2s/NCoifCYcQTmeqZ1ihhe
-	upt/QAXw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AYFCuVHahzmY2c5xbWoPMDHAPe/fA9uMQU35726/0Ak=; b=C5NuMf0fZUpc8Zfio5FaMHOSnM
+	Rh6ear34+qfIyjkhhcCnjRbxNbaRPudezjzl1uon9+G0+z91sGEWdenNm2t7+wSwF6QWmftlUGFMb
+	QblCbTvBO2HmexcXFqKT6X/nLJcTRmc6sQw4wno1bi3HjnKOd2ETSLjWWSl/okalAV2aqE0uXCSmZ
+	YXGiebcX8kuonB4cSyNAfgFOovuHti8tXa821Gbu9smGuwYyDdwEEryH5v9aAL9/P/MKyooMHXPnH
+	s9sUoqAZ/ct7j3aEt2Z6zQ30PFfNMR8SvTju9D7rQx3ycT+Mer3AIsJPT+rYacuApFbDDPbtWIJw8
+	bGLBElHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzSmL-00000002GL4-3slf
+	id 1rzUPh-00000002YXH-3Io4
 	for ath12k@archiver.kernel.org;
-	Wed, 24 Apr 2024 02:54:37 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 24 Apr 2024 04:39:21 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzSmI-00000002GKa-3lVL
+	id 1rzUPe-00000002YVa-09Hc
 	for ath12k@lists.infradead.org;
-	Wed, 24 Apr 2024 02:54:36 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43O2BwSS020055;
-	Wed, 24 Apr 2024 02:54:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=GybkwAUQe6Jova0Ysj+7bmLjb8nEsWF8SsqRolELs+Q=; b=iC
-	eDQ/8/WXQpz7mjph7NSVw1H1StHu5/HFjTzaWrcAasfh2+0+zeu1MHfmB3Icn3lg
-	9Pl3zE4xvIv9XWSPchhHcqMRGE+SlF9OQbSumjYROr5yhjGvklzskc1B14ghWzpj
-	mgxIsy+5fQbf+WJOXLrfqCKLnH039Nn67FlBRWNsZrXYYyu5QgWpZPzHrZHpLMSK
-	ZsYp3Mqqvm8Ufr+/zJgjoR67xi1mJa4iWNmM7y3HIIwn43C9aUpqzDQLXf7TtND2
-	5iIXGKiXc3XSeo/VfpdAKD2voIk9Pbdw+hyNAG7OkVjeNxBUEogMw4F1b9LD0ksd
-	WVC1HTUSKj66Ag4A81rw==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xp9aa308a-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 24 Apr 2024 02:54:33 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43O2sWEm029918
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 24 Apr 2024 02:54:32 GMT
-Received: from [10.152.205.142] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 23 Apr
- 2024 19:54:30 -0700
-Message-ID: <dab8a1a1-f086-9fe2-5e8a-10c33b620883@quicinc.com>
-Date: Wed, 24 Apr 2024 08:24:27 +0530
+	Wed, 24 Apr 2024 04:39:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id E0952CE138D;
+	Wed, 24 Apr 2024 04:39:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0DF0AC113CE;
+	Wed, 24 Apr 2024 04:39:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1713933555;
+	bh=3pgvSwtH0NW0tIEHpJ4id1LBP+PB/0JJc7zJuFsEEX0=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=Df5hrn0gIckq/xj+8dzLaC9fZXQ8bi8QXm+6KOXZL7DcYGn1HwdqystMEz0ceVdx/
+	 LAim7BPedUoENeZKjXoYNeqgE+Mx+b4/G2Q3r/6wzBD7mNeje63jw+u8KW0Bm8tj/R
+	 h0gvL6dhTbFXbtUaIyFsJiq92mvZe7eGF5NrT2fxxR3DcHcE16ZpJsMt4VDspuFbDz
+	 TULZiRoAw4hh3Wx/wMYgw5tWnS+G6ZtPVbNrIyKDiKihsB5dHQOQUGAbYxggce16J0
+	 OCcRStcrciLxIQ7MBO8iAYIQIr5o/pEPpUnXSaCmQHphg9/77Um1P5aQ2cWmTc5SeT
+	 KTGQuHYIGKyXw==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Harshitha Prem <quic_hprem@quicinc.com>,  <ath12k@lists.infradead.org>,
+  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 0/8] wifi: ath12k: Introduce device group abstraction
+References: <20240420083750.1545670-1-quic_hprem@quicinc.com>
+	<878r14v2o4.fsf@kernel.org>
+	<57002bbf-2c85-4fa7-b249-4bd3f2ba1bcf@quicinc.com>
+Date: Wed, 24 Apr 2024 07:39:11 +0300
+In-Reply-To: <57002bbf-2c85-4fa7-b249-4bd3f2ba1bcf@quicinc.com> (Jeff
+	Johnson's message of "Tue, 23 Apr 2024 14:24:12 -0700")
+Message-ID: <8734rbidcg.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH 0/3] wifi: ath12k: Refactor the hardware recovery
- procedures
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240130060838.3895599-1-quic_periyasa@quicinc.com>
- <3a38abeb-6c00-434b-9704-8bf955c3b38a@quicinc.com>
-Content-Language: en-US
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <3a38abeb-6c00-434b-9704-8bf955c3b38a@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Xy0F4BgnCxelutRzN3SZs8GoEobi6dOL
-X-Proofpoint-ORIG-GUID: Xy0F4BgnCxelutRzN3SZs8GoEobi6dOL
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-23_20,2024-04-23_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=627
- bulkscore=0 mlxscore=0 lowpriorityscore=0 phishscore=0 malwarescore=0
- impostorscore=0 adultscore=0 spamscore=0 suspectscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2404240012
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240423_195435_099229_844E2B17 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240423_213918_281324_922B2E27 
+X-CRM114-Status: GOOD (  12.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,38 +75,42 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
+>>> Depends-on:
+>>>         [PATCH 0/3] wifi: ath12k: Refactor the hardware recovery
+>>> procedures
+>> 
+>> Are you referring to this patchset:
+>> 
+>> https://patchwork.kernel.org/project/linux-wireless/list/?series=821155&state=*&order=date
+>> 
+>> That was sent three months ago and at least I couldn't find a newer
+>> version. So I'll just drop this patchset for now without even looking at
+>> it.
+>> 
+>
+> Yes, I'm stumped as well. the patch specifies:
+>>base-commit: c416602943dd36fbd13af7496430723935c867a3
+>>prerequisite-patch-id: a4d62344b11368fb7e549c03b6a31f7ba4c9e2bb
+>>prerequisite-patch-id: b4a1e18a85d8c1e337fa133c2bd2956c33b11046
+>>prerequisite-patch-id: b16edd310baa35e2500267e338f60c9a2e6594e1
+>
+> but lore is unable to find those prerequisite patch-ids, which leads me to
+> believe that they were rebased internally but never posted.
+>
+> I tried to apply the January series on top of the base-commit:
+> c416602943dd36fbd13af7496430723935c867a3 but it doesn't apply cleanly.
+>
+> So I think we need to have a rebased and updated "Refactor the hardware
+> recovery procedures" first.
 
-On 4/24/2024 2:25 AM, Jeff Johnson wrote:
-> On 1/29/2024 10:08 PM, Karthikeyan Periyasamy wrote:
->> Currently, hardware recovery procedure supports multi wiphy model. However,
->> to support single wiphy model, we need to refactor the hardware recovery
->> procedure. This patchset allows the logic to work both multi wiphy models
->> and future single wiphy models.
->>
->> Karthikeyan Periyasamy (3):
->>    wifi: ath12k: Refactor the hardware recovery procedure
->>    wifi: ath12k: Refactor hardware recovery synchronous
->>    wifi: ath12k: Refactor the hardware state
->>
->>   drivers/net/wireless/ath/ath12k/core.c | 97 ++++++++++++++------------
->>   drivers/net/wireless/ath/ath12k/core.h | 25 +++++--
->>   drivers/net/wireless/ath/ath12k/mac.c  | 95 +++++++++++++++++--------
->>   drivers/net/wireless/ath/ath12k/reg.c  |  5 +-
->>   4 files changed, 137 insertions(+), 85 deletions(-)
->>
->>
->> base-commit: 17f4b952f067b1f87d14e6df4c8c216fe7a245d1
-> 
-> since the "[PATCH 0/8] wifi: ath12k: Introduce device group abstraction"
-> series depends upon this series, is there a plan to re-spin a new version that
-> addresses Kalle's concerns?
-> 
-
-yes, will respin the next version.
+Yeah, it's waste of everyone's time to submit patches like this which
+don't even apply at all due to missing dependencies. Please don't do
+that.
 
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
