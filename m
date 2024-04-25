@@ -4,83 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FE6DC19F4E
-	for <ath12k@archiver.kernel.org>; Wed, 24 Apr 2024 21:31:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11A92C4345F
+	for <ath12k@archiver.kernel.org>; Thu, 25 Apr 2024 02:18:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=IznUM1KaJFLBtlqZQK6fWICbBdx9BMGr92EkCwie1xY=; b=etITL2X8ahf0WYkfJNGSUQCd3K
-	MxY9nOtynT0ZdhZmDxLdKec5NAkqKrccG7ttdery1y8nexYRBjZo6tfoefcx7aOf1l7IKVqJXOqN+
-	cAGQ6DWyY3rZn+AJRA85eVIKPbI9i5gyML4emRgZ89hEDrvqvOYQhz70qJFUGokLMoe72atjuNwQo
-	L4eIOv040OYreilQvN87zhQmeiSI7uJnqpHg4i+h1d+2O9wkyv9e7rDBQh9LFfiRwW/o3G1YUN4K0
-	f4uE/fiXmmXJ+CXt565BdX0lZ0hG2hbd8c1MW9xxqMMcB3D4NspwEuSWBrTPN4byQy62C2/qR1LM6
-	CefcSN1w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=H8ALftPQXLRH0ze9zCdPkHlsjFM3UteZjyxWml5x9rU=; b=z3XQHJoZjkgffyZtvDqSx9DHxS
+	DsUujZ4Z8/JGJqxCQ4ZZMcJL0QqFa5zOs47mhg87q3E4dZBprBSiiHEnH86o2Lgg69k0MoMpu/FYV
+	epJwpfyBAZ3knL8FqqLvhoG/vMlWlKPwOrwSlfRmn5myorN0Z4FXGwSGaHwnRSujBlleStNzLKA/N
+	99Td9TTLfHHpDLEst2fWtj0KECBXQgEzkgXGujzrzCj0+zQVI8quaXuVUcnCgps7T1XhDiqXZlMit
+	ecP0qvLdmzBJFBEYQfznQzMViT0KFdaOoU06krKBCwLphwff8C80bsly8O5c1ahC9SH8469AzRPwr
+	iJuEnJJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzkCy-000000066hP-2on8
+	id 1rzogS-00000006gjS-2ry2
 	for ath12k@archiver.kernel.org;
-	Wed, 24 Apr 2024 21:31:16 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 25 Apr 2024 02:18:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzj6D-00000005t8V-2uSi
+	id 1rzogO-00000006gia-3iiu
 	for ath12k@lists.infradead.org;
-	Wed, 24 Apr 2024 20:20:17 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43OJDEt4004615;
-	Wed, 24 Apr 2024 20:20:11 GMT
+	Thu, 25 Apr 2024 02:17:58 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43P0ptm5023461;
+	Thu, 25 Apr 2024 02:17:52 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version:content-type; s=
-	qcppdkim1; bh=IznUM1KaJFLBtlqZQK6fWICbBdx9BMGr92EkCwie1xY=; b=Xa
-	KnCRLlTK6wbIAIW117xKvQcTkMNoFRd8k+np4h/2iOhawv+A1olTw30RdCjveowD
-	+LcYJrjw92m0v9KhWvR9bINA+iCctUdHqOHWNePAaz04en3/HdCn3O/ajY5LUes+
-	GoRV5Pu0MUtVoNnTMHPxhRJoO0XhhLi9VXVkgxsZKm7LK4HgbsJ++3M+FGdgWx7R
-	PsFxhU3VsW7JnScAwZKOhCpuC0oMCtHG3VpjIpsd/2ak6WPliElVvb9yKv5R/6Ey
-	hWxAdvP35SSvhewADNp8mIDFxOQ3D2pnOMY+yrXa6yKHnCrplTKAGom7vlOgRXHq
-	g/JMPk0BKyMtY7Up26pA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xpv9pj3ep-1
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding:content-type; s=qcppdkim1; bh=H8ALftP
+	QXLRH0ze9zCdPkHlsjFM3UteZjyxWml5x9rU=; b=TI2/rnlNQ+06LV4uE9VRXUn
+	4byrZjV9/hCEIrFvAfK+zPhEYp+X3tebpUQnUG8y1LMTuemmDqN8lBWsxBCxHdmN
+	+F33HqFcApJJo513BXBLuYWqpa1vZ/VzgzuIxUKqfsq5/GL8kVXHYokjeytpo23u
+	RKopEDBO6tE7tnZxYrwETU5+lk/8/YwOLkFNrb8CcGc5Cfu2ytiobn1XgpyAXcoq
+	wG6yDKE+GJOHBoI0TaTdJtsZbnBMXiWfbfsod9I9/jWI0JOX8DMyPYQk66iDllol
+	uvYxmdVpcmmZX8OrcPl5r6ujLxJK+MATVIRxwIWR6xCg409sBSKp7/rfri5zUcA=
+	=
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xq893rkrc-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 24 Apr 2024 20:20:11 +0000 (GMT)
+	Thu, 25 Apr 2024 02:17:52 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43OKKAxs004254
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43P2Hpah007355
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 24 Apr 2024 20:20:10 GMT
-Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
+	Thu, 25 Apr 2024 02:17:51 GMT
+Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 24 Apr 2024 13:20:09 -0700
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+ 15.2.1544.9; Wed, 24 Apr 2024 19:17:50 -0700
+From: Baochen Qiang <quic_bqiang@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Pradeep Kumar Chitrapu
-	<quic_pradeepc@quicinc.com>
-Subject: [PATCH v3 00/10] wifi: ath12k: add MU-MIMO and 160 MHz bandwidth support
-Date: Wed, 24 Apr 2024 13:19:49 -0700
-Message-ID: <20240424201959.935-1-quic_pradeepc@quicinc.com>
-X-Mailer: git-send-email 2.17.1
+CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
+Subject: [PATCH] wifi: ath12k: check M3 buffer size as well whey trying to reuse it
+Date: Thu, 25 Apr 2024 10:17:40 +0800
+Message-ID: <20240425021740.29221-1-quic_bqiang@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: arSF5yNNjHpmaVSpTAeJMhxlEHpNtTdN
-X-Proofpoint-ORIG-GUID: arSF5yNNjHpmaVSpTAeJMhxlEHpNtTdN
+X-Proofpoint-GUID: 9F7_vopMMsCZg5R1U_iquw1oCBwGzPv1
+X-Proofpoint-ORIG-GUID: 9F7_vopMMsCZg5R1U_iquw1oCBwGzPv1
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-24_17,2024-04-24_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- priorityscore=1501 spamscore=0 mlxscore=0 mlxlogscore=999 clxscore=1015
- adultscore=0 malwarescore=0 bulkscore=0 impostorscore=0 phishscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404240101
+ definitions=2024-04-25_01,2024-04-24_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
+ suspectscore=0 bulkscore=0 adultscore=0 mlxlogscore=999 lowpriorityscore=0
+ clxscore=1015 impostorscore=0 phishscore=0 priorityscore=1501 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
+ definitions=main-2404250015
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240424_132013_928924_9FFBCCF0 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20240424_191756_959797_43C3E5FB 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,111 +95,90 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add support for
-1. enabling MU-MIMO in HE and EHT modes from hardware
-2. setting fixed HE rate/GI/LTF
-3. 160 MHz bandwidth in HE mode
-4. extended NSS bandwidth support
+Currently in recovery/resume cases, we do not free M3 buffer but
+instead will reuse it. This is done by checking m3_mem->vaddr: if it
+is not NULL we believe M3 buffer is ready and go ahead to reuse it.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Note that m3_mem->size is not checked. This is safe for now because
+currently M3 reuse logic only gets executed in recovery/resume cases
+and the size keeps unchanged in either of them.
 
-changes in v3:
- - address review comments for fixing ath12k-check issues.
+However ideally the size should be checked as well, to make the code
+safer. So add the check there. Now if that check fails, free old M3
+buffer and reallocate a new one.
 
-changes in v2:
- - Amend mac80211 patch description as the patch is not specific
-   to AP mode.
- - Amend EHT MU-MIMO patch description to specify future support
-   for STA mode.
+Tested-on: WCN6855 hw2.0 PCI WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.30
 
-Pradeep Kumar Chitrapu (10):
-  wifi: mac80211: Add EHT UL MU-MIMO flag in ieee80211_bss_conf
-  wifi: ath12k: push HE MU-MIMO params from hostapd to hardware
-  wifi: ath12k: push EHT MU-MIMO params from hostapd to hardware
-  wifi: ath12k: move HE MCS mapper to a separate function
-  wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
-  wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
-  wifi: ath12k: add support for setting fixed HE rate/GI/LTF
-  wifi: ath12k: clean up 80P80 support
-  wifi: ath12k: add support for 160 MHz bandwidth
-  wifi: ath12k: add extended NSS bandwidth support for 160 MHz
+Fixes: 303c017821d8 ("wifi: ath12k: fix kernel crash during resume")
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/qmi.c | 36 ++++++++++++++++-----------
+ 1 file changed, 21 insertions(+), 15 deletions(-)
 
- drivers/net/wireless/ath/ath12k/core.h |    2 +
- drivers/net/wireless/ath/ath12k/mac.c  | 1043 ++++++++++++++++++++----
- drivers/net/wireless/ath/ath12k/mac.h  |   17 +
- drivers/net/wireless/ath/ath12k/wmi.c  |   24 +-
- drivers/net/wireless/ath/ath12k/wmi.h  |   98 ++-
- include/net/mac80211.h                 |    4 +
- net/mac80211/cfg.c                     |    5 +
- 7 files changed, 986 insertions(+), 207 deletions(-)
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index ebb20fc8e3ba..5484112859a6 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2717,6 +2717,19 @@ static int ath12k_qmi_load_bdf_qmi(struct ath12k_base *ab,
+ 	return ret;
+ }
+ 
++static void ath12k_qmi_m3_free(struct ath12k_base *ab)
++{
++	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
++
++	if (!m3_mem->vaddr)
++		return;
++
++	dma_free_coherent(ab->dev, m3_mem->size,
++			  m3_mem->vaddr, m3_mem->paddr);
++	m3_mem->vaddr = NULL;
++	m3_mem->size = 0;
++}
++
+ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ {
+ 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
+@@ -2747,8 +2760,14 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ 		m3_len = fw->size;
+ 	}
+ 
+-	if (m3_mem->vaddr)
+-		goto skip_m3_alloc;
++	/* In recovery/resume cases, M3 buffer is not freed, try to reuse that */
++	if (m3_mem->vaddr) {
++		if (m3_mem->size >= m3_len)
++			goto skip_m3_alloc;
++
++		/* Old buffer is too small, free and reallocate */
++		ath12k_qmi_m3_free(ab);
++	}
+ 
+ 	m3_mem->vaddr = dma_alloc_coherent(ab->dev,
+ 					   m3_len, &m3_mem->paddr,
+@@ -2772,19 +2791,6 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ 	return ret;
+ }
+ 
+-static void ath12k_qmi_m3_free(struct ath12k_base *ab)
+-{
+-	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
+-
+-	if (!m3_mem->vaddr)
+-		return;
+-
+-	dma_free_coherent(ab->dev, m3_mem->size,
+-			  m3_mem->vaddr, m3_mem->paddr);
+-	m3_mem->vaddr = NULL;
+-	m3_mem->size = 0;
+-}
+-
+ static int ath12k_qmi_wlanfw_m3_info_send(struct ath12k_base *ab)
+ {
+ 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
 
-
-base-commit: 1a17b8f9196db4d5b9f81f69cac885ba8c832da7
-prerequisite-patch-id: 6cb82354d93f2d3d0e61dca59b7939e1bae2f263
-prerequisite-patch-id: b93a6cfb7a9caa843eb4a1df2d400b56b548188f
-prerequisite-patch-id: bbf8aa44334b11e860f4b68c22607110e81498a1
-prerequisite-patch-id: 70140f291ade3c2db0a0f36fe1c7c7d93eedfdeb
-prerequisite-patch-id: c52742e59bc5db2742ab66ec16175e983b88fb72
-prerequisite-patch-id: 8f9c43d387ec6bcf807f53dc17dcaaaa21c8a03f
-prerequisite-patch-id: a36bcb4e892019e5dcc39854088371e1c20e4ebf
-prerequisite-patch-id: 42864cd08f6d37e14f1794d29e13f8a094e489cc
-prerequisite-patch-id: 67eb3991126edab717635666297a6a910adbb8c1
-prerequisite-patch-id: be513e07c8fbbc556d3b61f2356d0a4391901ba5
-prerequisite-patch-id: 6dd663b6660f5f8d49fbd3e49023d0fd851100dc
-prerequisite-patch-id: 77ba10656791f90eeeb88ef749829b1474de4280
-prerequisite-patch-id: ec4c06aca44fecabfbdbf305581c60587cf23e63
-prerequisite-patch-id: f24c686941a9136ff7d800a726fad8c5d5d3b1b1
-prerequisite-patch-id: 14c827bfdc875273056194059bcd0cb042db123a
-prerequisite-patch-id: c1adce3c611529902e3a19a74f775cfffbba69b3
-prerequisite-patch-id: a4ff79eb14ba0e59508ce72e0d0eca56da2b6060
-prerequisite-patch-id: 66d93f366737e1a4b1e3c0a10747994b39bdd49a
-prerequisite-patch-id: 4890b86b151fad62b5a37688d813696f507cd9b1
-prerequisite-patch-id: 58918f67d676fafe5c527c83d1401da8cd30cb41
-prerequisite-patch-id: d6acc523424cd3049f471191406d456625a903ee
-prerequisite-patch-id: ce6f394abfaa9dbf2e818379850b911ea380e8ff
-prerequisite-patch-id: 92fc0dabdc596b6d1f4940a8be86f9558dabede9
-prerequisite-patch-id: 34f4bf81393b8f035604eca6fb13a964dc933fb0
-prerequisite-patch-id: d14a14bb3e1b22afdce181eab811e4151b837b7e
-prerequisite-patch-id: 275f221e85124f4cccac788a2d109dd71bb611f8
-prerequisite-patch-id: a68de371d003e45f93defbadaa164ce016f62b43
-prerequisite-patch-id: d156ad9d641c02cb2b00bb2a9bb3952f1ee1eda5
-prerequisite-patch-id: 022d675781d55b377befb1bfa73cdd13eb544919
-prerequisite-patch-id: cd0f4fc60b3e60fd5daed4c4aef5ff836a1d6afe
-prerequisite-patch-id: 2d8e31915fb462a006aa36a878afc722dae702f1
-prerequisite-patch-id: 6db9ebc02e7aff5b0dd6a791bcb56b174b8f5075
-prerequisite-patch-id: 8ab4b749c404278c6f3284e7626f7fc34f4c168c
-prerequisite-patch-id: 3132da2b7c8c7c62e27c995c81a2805898bbecf5
-prerequisite-patch-id: 47954405bc0dd7a3b89981a1f62b2942c6690321
-prerequisite-patch-id: 9394e4f195275a48ccc6feb79a69391bd5a081ac
-prerequisite-patch-id: 73a8dedb5b3270e36d08453ecde5a1eda1d488df
-prerequisite-patch-id: 0b51e47032752aff3d731c060f9ec63de49d6efa
-prerequisite-patch-id: de40f7811a733a0e14e2bb9e263e632a488c350a
-prerequisite-patch-id: 018f54a2e185dac93eb3ff126a3dcfe830797da7
-prerequisite-patch-id: 65c73a3902c82ed46fd45ba3e02477746b80f43f
-prerequisite-patch-id: 0a3e374a2927cc6b36aa886562ea74197f3e31e1
-prerequisite-patch-id: 197d9f2f52a4f397bcadfb097f66026aec7d8531
-prerequisite-patch-id: 0d2aedbe585ef88c171a8e6e07c88cdbc4269194
-prerequisite-patch-id: 445f5b16f72a183fcf92eadbd1329902267ecfc5
-prerequisite-patch-id: c753615aebcfe5d7419d00f11ef94c41618032d1
-prerequisite-patch-id: b15f736df11c88fb96a180e0d928a6e1cd0c0f34
-prerequisite-patch-id: 6eb961cc481ac73a4e17b2338814fb2f86b02b2a
-prerequisite-patch-id: fdddada4c012b7d7cc79d1e17caccac67ee63bef
-prerequisite-patch-id: ffd8fb7974d49d06574ab4b97b0ca74a3b2e5e21
-prerequisite-patch-id: d56eb0552657a692d6db25fb1badba1f06769c07
-prerequisite-patch-id: 468fad8de3fef4b8c470408fb1db12edd4a195c0
-prerequisite-patch-id: 9f816eb8e25fa683f06c2f5e5317ac7a51d57ab9
-prerequisite-patch-id: 734bba56b6da8d0ba773c335e1da4926fe8b8035
-prerequisite-patch-id: 8db71e2c9424eb2d1296c73100d34c8f9bcdde0b
-prerequisite-patch-id: bdadfa11d95682aeb60202635ce434c98e451c20
-prerequisite-patch-id: 3af02179828c0bb21ab1d4bd9ff61231ef091162
-prerequisite-patch-id: 861aa5786a781f71cf5adfabc531ca6b61ef1c72
-prerequisite-patch-id: b3df68b21838ded80f002482f69d7a458776cf99
-prerequisite-patch-id: 11d0c8923fe6f22cebf2afcd57e3bf7c8f36b4f9
-prerequisite-patch-id: 599e5c0a6a6c9e9a12ee422f4af9340c0b465f67
-prerequisite-patch-id: 13952e429c380cd716c6f449df3dcedaae109479
-prerequisite-patch-id: 07c9ff6fcaf4ba464be993caa19eb49113eedbdf
+base-commit: 326f8f68f28b0b831233acfabffb486a5b0f4717
 -- 
-2.17.1
+2.25.1
 
 
