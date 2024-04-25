@@ -4,83 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11A92C4345F
-	for <ath12k@archiver.kernel.org>; Thu, 25 Apr 2024 02:18:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20842C4345F
+	for <ath12k@archiver.kernel.org>; Thu, 25 Apr 2024 05:58:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=H8ALftPQXLRH0ze9zCdPkHlsjFM3UteZjyxWml5x9rU=; b=z3XQHJoZjkgffyZtvDqSx9DHxS
-	DsUujZ4Z8/JGJqxCQ4ZZMcJL0QqFa5zOs47mhg87q3E4dZBprBSiiHEnH86o2Lgg69k0MoMpu/FYV
-	epJwpfyBAZ3knL8FqqLvhoG/vMlWlKPwOrwSlfRmn5myorN0Z4FXGwSGaHwnRSujBlleStNzLKA/N
-	99Td9TTLfHHpDLEst2fWtj0KECBXQgEzkgXGujzrzCj0+zQVI8quaXuVUcnCgps7T1XhDiqXZlMit
-	ecP0qvLdmzBJFBEYQfznQzMViT0KFdaOoU06krKBCwLphwff8C80bsly8O5c1ahC9SH8469AzRPwr
-	iJuEnJJA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=mWzuNCck3sLo/I39f3dOEObVGU3Ar/55UCY7JchOws0=; b=idzKUuazYF1WRc23jf4+G+7M3+
+	MnvWYZPVgYfsnMP4unUWrXRqrt8YkwA9oTouJMvY1ngb7xVsN4QxzQ5letNMzv8IJPulV0w8jRkYE
+	2/WtIRM244ouN1VUw5xP5MW6yD+GFIHjWRSA9SzjIDYsyrSLxFUcckySzwu54YVbHw1VTc50rOkcM
+	lHBR88MFHRnSUecVIcIp/M+Oh3I2QQpxRDjzZN332i7eQJyWZPV8FLq4tIwhwgjlddXHkWMcyVtvD
+	tTZ8YYAnfEYLxzzMc8TItN3MhMFTYxfchFSnfNcouxksHUDnQOByHHjdu/PzGPCG7UNd4i9V69LEZ
+	Ayu0WcKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzogS-00000006gjS-2ry2
+	id 1rzs7Z-000000073iF-34aP
 	for ath12k@archiver.kernel.org;
-	Thu, 25 Apr 2024 02:18:00 +0000
+	Thu, 25 Apr 2024 05:58:13 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzogO-00000006gia-3iiu
+	id 1rzs7W-000000073fn-2PMG
 	for ath12k@lists.infradead.org;
-	Thu, 25 Apr 2024 02:17:58 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43P0ptm5023461;
-	Thu, 25 Apr 2024 02:17:52 GMT
+	Thu, 25 Apr 2024 05:58:11 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43P5eAKN022086;
+	Thu, 25 Apr 2024 05:58:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding:content-type; s=qcppdkim1; bh=H8ALftP
-	QXLRH0ze9zCdPkHlsjFM3UteZjyxWml5x9rU=; b=TI2/rnlNQ+06LV4uE9VRXUn
-	4byrZjV9/hCEIrFvAfK+zPhEYp+X3tebpUQnUG8y1LMTuemmDqN8lBWsxBCxHdmN
-	+F33HqFcApJJo513BXBLuYWqpa1vZ/VzgzuIxUKqfsq5/GL8kVXHYokjeytpo23u
-	RKopEDBO6tE7tnZxYrwETU5+lk/8/YwOLkFNrb8CcGc5Cfu2ytiobn1XgpyAXcoq
-	wG6yDKE+GJOHBoI0TaTdJtsZbnBMXiWfbfsod9I9/jWI0JOX8DMyPYQk66iDllol
-	uvYxmdVpcmmZX8OrcPl5r6ujLxJK+MATVIRxwIWR6xCg409sBSKp7/rfri5zUcA=
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding; s=qcppdkim1; bh=mWzuNCc
+	k3sLo/I39f3dOEObVGU3Ar/55UCY7JchOws0=; b=CeVAEh38gtA+M8FuZ5SPb8I
+	EdGQvIIqvap0XL9y6aozByZ4ffpEoMS4uXGilC/hCCiUD9obaog2vPWE3X9BA/YT
+	f/S9kyIFEP/vOfbJxCFJTjiReU+4ngfiFb3gu56Pkrp+VxPCsuoYnaB46+dZE6kP
+	m2t0fUyuLGhsrXi4QK2phDM+AgorHPXxoPG0F0SxzK2aD0W/+XBLtE7zgQusGfIl
+	fxXmPDPd3E1K6DLC/Lv74nYdfbmS2SpEMYQoKwMeeaCN3lJY29TYSpWNKqcqiiyp
+	LndttpM26l3jMKEe6UefBDqyPZBOYmj1waYTT1n0N8tMS2PIgEvg8+1V2R7wM6A=
 	=
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xq893rkrc-1
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xqenhgcc9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 25 Apr 2024 02:17:52 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43P2Hpah007355
+	Thu, 25 Apr 2024 05:58:07 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 43P5w4jU031201;
+	Thu, 25 Apr 2024 05:58:04 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3xm6smbfmp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 25 Apr 2024 02:17:51 GMT
-Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 24 Apr 2024 19:17:50 -0700
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
-Subject: [PATCH] wifi: ath12k: check M3 buffer size as well whey trying to reuse it
-Date: Thu, 25 Apr 2024 10:17:40 +0800
-Message-ID: <20240425021740.29221-1-quic_bqiang@quicinc.com>
-X-Mailer: git-send-email 2.25.1
+	Thu, 25 Apr 2024 05:58:04 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 43P5w4av031130;
+	Thu, 25 Apr 2024 05:58:04 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-hprem-blr.qualcomm.com [10.190.108.75])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 43P5w4c1031089
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 25 Apr 2024 05:58:04 +0000
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 4146166)
+	id 563164114F; Thu, 25 Apr 2024 11:28:03 +0530 (+0530)
+From: Harshitha Prem <quic_hprem@quicinc.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        Harshitha Prem <quic_hprem@quicinc.com>
+Subject: [PATCH v2 1/8] wifi: ath12k: Refactor core start api
+Date: Thu, 25 Apr 2024 11:27:52 +0530
+Message-Id: <20240425055759.1181165-2-quic_hprem@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240425055759.1181165-1-quic_hprem@quicinc.com>
+References: <20240425055759.1181165-1-quic_hprem@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 9F7_vopMMsCZg5R1U_iquw1oCBwGzPv1
-X-Proofpoint-ORIG-GUID: 9F7_vopMMsCZg5R1U_iquw1oCBwGzPv1
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 2nBgV1yw8717HWqJvF1-FnTwhHCwnPeo
+X-Proofpoint-GUID: 2nBgV1yw8717HWqJvF1-FnTwhHCwnPeo
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-25_01,2024-04-24_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
- suspectscore=0 bulkscore=0 adultscore=0 mlxlogscore=999 lowpriorityscore=0
- clxscore=1015 impostorscore=0 phishscore=0 priorityscore=1501 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2404250015
+ definitions=2024-04-25_04,2024-04-25_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 clxscore=1015
+ phishscore=0 spamscore=0 adultscore=0 mlxlogscore=999 priorityscore=1501
+ suspectscore=0 impostorscore=0 malwarescore=0 lowpriorityscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404250040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240424_191756_959797_43C3E5FB 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20240424_225810_653623_866589FA 
+X-CRM114-Status: GOOD (  15.72  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,90 +105,188 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently in recovery/resume cases, we do not free M3 buffer but
-instead will reuse it. This is done by checking m3_mem->vaddr: if it
-is not NULL we believe M3 buffer is ready and go ahead to reuse it.
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Note that m3_mem->size is not checked. This is safe for now because
-currently M3 reuse logic only gets executed in recovery/resume cases
-and the size keeps unchanged in either of them.
+Hardware device group abstraction would be introduced, in future,
+where radios across different devices can be grouped together to
+support multi-link operation and register as a device group to mac80211.
 
-However ideally the size should be checked as well, to make the code
-safer. So add the check there. Now if that check fails, free old M3
-buffer and reallocate a new one.
+Currently, ath12k_mac_allocate() and ath12k_mac_register() APIs are part
+of ath12k_core_start() and ath12k_core_pdev_create() respectively and are
+based on per device (ath12k_base). These APIs can be decoupled and moved
+out to ath12k_core_qmi_firmware_ready() itself.
 
-Tested-on: WCN6855 hw2.0 PCI WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.30
+This refactor would be helpful for device group abstraction when mac80211
+allocate and register will be changed from per device (ath12k_base) to
+per device group (ath12k_hw_group).
 
-Fixes: 303c017821d8 ("wifi: ath12k: fix kernel crash during resume")
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Add changes to move allocate and register APIs from existing one and modify
+corresponding deinit sequence.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/qmi.c | 36 ++++++++++++++++-----------
- 1 file changed, 21 insertions(+), 15 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c | 64 +++++++++++++-------------
+ 1 file changed, 31 insertions(+), 33 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index ebb20fc8e3ba..5484112859a6 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2717,6 +2717,19 @@ static int ath12k_qmi_load_bdf_qmi(struct ath12k_base *ab,
- 	return ret;
- }
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index e9aabdb9341c..63f0ba7bb57d 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -563,14 +563,15 @@ u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab)
  
-+static void ath12k_qmi_m3_free(struct ath12k_base *ab)
-+{
-+	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
-+
-+	if (!m3_mem->vaddr)
-+		return;
-+
-+	dma_free_coherent(ab->dev, m3_mem->size,
-+			  m3_mem->vaddr, m3_mem->paddr);
-+	m3_mem->vaddr = NULL;
-+	m3_mem->size = 0;
-+}
-+
- static int ath12k_qmi_m3_load(struct ath12k_base *ab)
+ static void ath12k_core_stop(struct ath12k_base *ab)
  {
- 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
-@@ -2747,8 +2760,14 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
- 		m3_len = fw->size;
+-	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags))
+-		ath12k_qmi_firmware_stop(ab);
+-
+ 	ath12k_acpi_stop(ab);
+ 
++	ath12k_dp_rx_pdev_reo_cleanup(ab);
+ 	ath12k_hif_stop(ab);
+ 	ath12k_wmi_detach(ab);
+-	ath12k_dp_rx_pdev_reo_cleanup(ab);
++	ath12k_dp_free(ab);
++
++	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags))
++		ath12k_qmi_firmware_stop(ab);
+ 
+ 	/* De-Init of components as needed */
+ }
+@@ -672,7 +673,7 @@ static int ath12k_core_soc_create(struct ath12k_base *ab)
+ 
+ static void ath12k_core_soc_destroy(struct ath12k_base *ab)
+ {
+-	ath12k_dp_free(ab);
++	ath12k_hif_power_down(ab, false);
+ 	ath12k_reg_free(ab);
+ 	ath12k_debugfs_soc_destroy(ab);
+ 	ath12k_qmi_deinit_service(ab);
+@@ -682,30 +683,17 @@ static int ath12k_core_pdev_create(struct ath12k_base *ab)
+ {
+ 	int ret;
+ 
+-	ret = ath12k_mac_register(ab);
+-	if (ret) {
+-		ath12k_err(ab, "failed register the radio with mac80211: %d\n", ret);
+-		return ret;
+-	}
+-
+ 	ret = ath12k_dp_pdev_alloc(ab);
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to attach DP pdev: %d\n", ret);
+-		goto err_mac_unregister;
++		return ret;
  	}
  
--	if (m3_mem->vaddr)
--		goto skip_m3_alloc;
-+	/* In recovery/resume cases, M3 buffer is not freed, try to reuse that */
-+	if (m3_mem->vaddr) {
-+		if (m3_mem->size >= m3_len)
-+			goto skip_m3_alloc;
-+
-+		/* Old buffer is too small, free and reallocate */
-+		ath12k_qmi_m3_free(ab);
-+	}
- 
- 	m3_mem->vaddr = dma_alloc_coherent(ab->dev,
- 					   m3_len, &m3_mem->paddr,
-@@ -2772,19 +2791,6 @@ static int ath12k_qmi_m3_load(struct ath12k_base *ab)
- 	return ret;
+ 	return 0;
+-
+-err_mac_unregister:
+-	ath12k_mac_unregister(ab);
+-
+-	return ret;
  }
  
--static void ath12k_qmi_m3_free(struct ath12k_base *ab)
--{
--	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
--
--	if (!m3_mem->vaddr)
--		return;
--
--	dma_free_coherent(ab->dev, m3_mem->size,
--			  m3_mem->vaddr, m3_mem->paddr);
--	m3_mem->vaddr = NULL;
--	m3_mem->size = 0;
--}
--
- static int ath12k_qmi_wlanfw_m3_info_send(struct ath12k_base *ab)
+ static void ath12k_core_pdev_destroy(struct ath12k_base *ab)
  {
- 	struct m3_mem_region *m3_mem = &ab->qmi.m3_mem;
-
-base-commit: 326f8f68f28b0b831233acfabffb486a5b0f4717
+-	ath12k_mac_unregister(ab);
+-	ath12k_hif_irq_disable(ab);
+ 	ath12k_dp_pdev_free(ab);
+ }
+ 
+@@ -763,19 +751,12 @@ static int ath12k_core_start(struct ath12k_base *ab,
+ 		goto err_hif_stop;
+ 	}
+ 
+-	ret = ath12k_mac_allocate(ab);
+-	if (ret) {
+-		ath12k_err(ab, "failed to create new hw device with mac80211 :%d\n",
+-			   ret);
+-		goto err_hif_stop;
+-	}
+-
+ 	ath12k_dp_cc_config(ab);
+ 
+ 	ret = ath12k_dp_rx_pdev_reo_setup(ab);
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to initialize reo destination rings: %d\n", ret);
+-		goto err_mac_destroy;
++		goto err_hif_stop;
+ 	}
+ 
+ 	ath12k_dp_hal_rx_desc_init(ab);
+@@ -818,8 +799,6 @@ static int ath12k_core_start(struct ath12k_base *ab,
+ 
+ err_reo_cleanup:
+ 	ath12k_dp_rx_pdev_reo_cleanup(ab);
+-err_mac_destroy:
+-	ath12k_mac_destroy(ab);
+ err_hif_stop:
+ 	ath12k_hif_stop(ab);
+ err_wmi_detach:
+@@ -873,11 +852,25 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
+ 		goto err_dp_free;
+ 	}
+ 
++	ret = ath12k_mac_allocate(ab);
++	if (ret) {
++		ath12k_err(ab, "failed to create new hw device with mac80211 :%d\n",
++			   ret);
++		goto err_core_stop;
++	}
++
++	ret = ath12k_mac_register(ab);
++	if (ret) {
++		ath12k_err(ab, "failed register the radio with mac80211: %d\n", ret);
++		goto err_mac_destroy;
++	}
++
+ 	ret = ath12k_core_pdev_create(ab);
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to create pdev core: %d\n", ret);
+-		goto err_core_stop;
++		goto err_mac_unregister;
+ 	}
++
+ 	ath12k_hif_irq_enable(ab);
+ 
+ 	ret = ath12k_core_rfkill_config(ab);
+@@ -891,10 +884,14 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
+ 	return 0;
+ 
+ err_core_pdev_destroy:
++	ath12k_hif_irq_disable(ab);
+ 	ath12k_core_pdev_destroy(ab);
++err_mac_unregister:
++	ath12k_mac_unregister(ab);
++err_mac_destroy:
++	ath12k_mac_destroy(ab);
+ err_core_stop:
+ 	ath12k_core_stop(ab);
+-	ath12k_mac_destroy(ab);
+ err_dp_free:
+ 	ath12k_dp_free(ab);
+ 	mutex_unlock(&ab->core_lock);
+@@ -1208,13 +1205,14 @@ void ath12k_core_deinit(struct ath12k_base *ab)
+ {
+ 	mutex_lock(&ab->core_lock);
+ 
++	ath12k_hif_irq_disable(ab);
+ 	ath12k_core_pdev_destroy(ab);
++	ath12k_mac_unregister(ab);
++	ath12k_mac_destroy(ab);
+ 	ath12k_core_stop(ab);
+ 
+ 	mutex_unlock(&ab->core_lock);
+ 
+-	ath12k_hif_power_down(ab, false);
+-	ath12k_mac_destroy(ab);
+ 	ath12k_core_soc_destroy(ab);
+ 	ath12k_fw_unmap(ab);
+ }
 -- 
-2.25.1
+2.34.1
 
 
