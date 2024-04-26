@@ -4,87 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62B0EC4345F
-	for <ath12k@archiver.kernel.org>; Fri, 26 Apr 2024 06:41:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB578C4345F
+	for <ath12k@archiver.kernel.org>; Fri, 26 Apr 2024 07:31:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ps2YyPv7Faq+wIsEonNNjEylmWEy+Iw10a8qpExHhPA=; b=gKD+tBjTDTFD3/+skq1VapbSGz
-	ZRrG4QpLn4Zmz2iq0IJLMTq7YeH/C+caTvH7WhIetUlmWrEUwH7Cr5HVte8KYFrCAeivMJRk7MQFW
-	toIoYDSp30wA8iCNBiEc6jtfssA1kgBqV/QPJuLQrtR+IPnM38DnVmezclgaUaWq2V32cU/8AjlPr
-	vVdIwVffFIWVtSOzKn5AZQ2/LmoU4nUYTsQqpY8iKZmoX++17+IWiraVFbNXo1eW7Nu1qpCwnNnb4
-	+nvTHFE0DaLkCGYhTYQn9QQRu8G+5LAjM5ewFGujg4Q54jjXzV2xZ0ptHq67snYhFy26pSLypbmTR
-	5XjAuVVw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1ugDEdjbF5o9GKH7g2bqMspcfcYi/pY4+2Ul5kvV9nI=; b=HihD+doNRXoA/WnXE6v+AJXfId
+	lPvhj+icn9xlhK2ryzDtu1aWjqvqjx8ouMbkYoRYcEIaXnYesj+za7pEFbYVduqnI2oJpKcvPH4zR
+	ML25v3C2piZHa0W3KT5tswZN7eTUF5yqJAEuAMVLaCtHcD1xrDIHoV89Ni0iRIe0Rgq7XCdGE9OQz
+	hxldQO/TfObnmsxSiQOImUE0zxa5K7k0iar/tmx0R/xJBv57IBrItoqOl1Y0z+CdhCUHWBTH1BHIM
+	3CEAIm1HQUhCpqEz1/7qQZtm5EPkUWJgzfhV8lUAj1egV0pTHagKe4DZPx7oFLC/hna3XhdqHtZ2r
+	ApQGAtQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s0FHN-0000000BLW6-0N7h
+	id 1s0G3R-0000000BTKQ-1tHo
 	for ath12k@archiver.kernel.org;
-	Fri, 26 Apr 2024 06:41:53 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 26 Apr 2024 07:31:33 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s0FHJ-0000000BLUu-3vnI
+	id 1s0G3O-0000000BTIO-0U7t
 	for ath12k@lists.infradead.org;
-	Fri, 26 Apr 2024 06:41:51 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43Q4nvn6003132;
-	Fri, 26 Apr 2024 06:41:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=Ps2YyPv7Faq+wIsEonNNjEylmWEy+Iw10a8qpExHhPA=; b=J9
-	nWuDtzdk6/FaQ6mcSk7GgcD5DZYmWn8gW8v/144x6T8xhYnqxi0vae+7EROe7jLg
-	JMFxVdxLYTbbFzz5HakULD+Maj9kF9PtUUWcTjNtVCLfiQBN+vEXV5Yx48XcE4IT
-	fTZTZpBMW9qNexL6CumuEekoWBg1a+5aeZzlg5s26o5p2noMXx1hu7GbXt/RBBcD
-	Ug/EDQrpSFy58b7sMi72jY72/eIOtqaBCIY00HlSbfd9zblUg5ht8agbypWRMkuq
-	NTAWHUR8JU2yGlzGIYuXK92q41cY4cX/JfDg44pRGZkNT2VzeRRR/M0CK1Rhnbd0
-	7LktzWbmbrwdZ71dlQ4Q==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xqtph9y4w-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 26 Apr 2024 06:41:39 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43Q6fcAQ025195
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 26 Apr 2024 06:41:39 GMT
-Received: from [10.38.245.251] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 25 Apr
- 2024 23:41:37 -0700
-Message-ID: <050ae0d4-c879-40c2-b2ac-1766aaa2c789@quicinc.com>
-Date: Fri, 26 Apr 2024 14:41:33 +0800
+	Fri, 26 Apr 2024 07:31:32 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 18290CE1B73;
+	Fri, 26 Apr 2024 07:31:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1AB3BC113CD;
+	Fri, 26 Apr 2024 07:31:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1714116687;
+	bh=isyzkTMFUUfUJHWC2RVAZbtuOQi2dD5iTcTS2iLN7cE=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=XY5QuWkcV44TfgMONSLttEq/z7XK6MbVSxZLSX5ziO04TfvnJ9us4QUHwmdKGyjBJ
+	 63LRljRq6iW+az1xZnNE+cAJgUENNjV8REkhrX39v2LHxAdZqr9JRfdVlQBT7EMhm1
+	 Lujg54U44l86GAkR9MRhXPAa9u3ZkB4f32mGau+1j7qJk/y7KoQ4C1yNPkP2RpiBp8
+	 0+3jeYWKzIsYLSdsuJGVsV32vF5J9gGqhrINaOH/tbAcbuuIfwCusuMt7xctBAZAH3
+	 L2NZSZ65AJcNZc5CcXJDeZ8IdJXS1kzcBbKqI1Za9vPa9jYY+eDF+2xX+P932IbX5V
+	 dsWk//oX0ovWA==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Muna
+ Sinada <quic_msinada@quicinc.com>
+Subject: Re: [PATCH v3 07/10] wifi: ath12k: add support for setting fixed HE
+ rate/GI/LTF
+References: <20240424201959.935-1-quic_pradeepc@quicinc.com>
+	<20240424201959.935-8-quic_pradeepc@quicinc.com>
+	<72bc6772-8bf7-427d-8f03-01e8dbf30d0c@quicinc.com>
+Date: Fri, 26 Apr 2024 10:31:24 +0300
+In-Reply-To: <72bc6772-8bf7-427d-8f03-01e8dbf30d0c@quicinc.com> (Jeff
+	Johnson's message of "Thu, 25 Apr 2024 15:32:14 -0700")
+Message-ID: <87y190fulv.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 1/3] wifi: ath12k: report station mode transmit rate
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240419032122.7009-1-quic_lingbok@quicinc.com>
- <20240419032122.7009-2-quic_lingbok@quicinc.com> <87bk5xs7qj.fsf@kernel.org>
-Content-Language: en-US
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-In-Reply-To: <87bk5xs7qj.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: SrhhuTs0F8JJ0jRLjCMaowP_k5Ph09A0
-X-Proofpoint-ORIG-GUID: SrhhuTs0F8JJ0jRLjCMaowP_k5Ph09A0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-26_06,2024-04-25_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
- suspectscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0 adultscore=0
- mlxscore=0 phishscore=0 mlxlogscore=999 malwarescore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2404260039
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240425_234150_509628_0F77B52F 
-X-CRM114-Status: GOOD (  17.46  )
+X-CRM114-CacheID: sfid-20240426_003130_627150_CE5A786F 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,241 +77,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
+> On 4/24/2024 1:19 PM, Pradeep Kumar Chitrapu wrote:
+>> Add support to set fixed HE rate/GI/LTF values using nl80211.
+>> Reuse parts of the existing code path already used for HT/VHT
+>> to implement the new helpers symmetrically, similar to how
+>> HT/VHT is handled.
+>> 
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>> 
+>> Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
+>> Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
+>> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+>> ---
+>
+> [...]
+>
+>> @@ -7753,7 +8034,20 @@ ath12k_mac_bitrate_mask_get_single_nss(struct ath12k *ar,
+>>  			return false;
+>>  	}
+>>  
+>> -	if (ht_nss_mask != vht_nss_mask)
+>> +	he_mcs_map = le16_to_cpu(ath12k_mac_get_tx_mcs_map(&sband->iftype_data->he_cap));
+>
+> drivers/net/wireless/ath/ath12k/mac.c:8041:22: warning: incorrect type in argument 1 (different address spaces)
+> drivers/net/wireless/ath/ath12k/mac.c:8041:22:    expected struct ieee80211_sta_he_cap const *he_cap
+> drivers/net/wireless/ath/ath12k/mac.c:8041:22:    got struct ieee80211_sta_he_cap const [noderef] __iftype_data *
 
-On 2024/4/26 0:54, Kalle Valo wrote:
-> Lingbo Kong <quic_lingbok@quicinc.com> writes:
-> 
->> Currently, the transmit rate of "iw dev xxx station dump" command
->> always show an invalid value.
->>
->> To address this issue, ath12k parse the info of transmit complete
->> report from firmware and indicate the transmit rate to mac80211.
->>
->> This patch affects the station mode of WCN7850 and QCN9274.
->>
->> After that, "iw dev xxx station dump" show the correct transmit rate.
->> Such as:
->>
->> Station 00:03:7f:12:03:03 (on wlo1)
->>          inactive time:  872 ms
->>          rx bytes:       219111
->>          rx packets:     1133
->>          tx bytes:       53767
->>          tx packets:     462
->>          tx retries:     51
->>          tx failed:      0
->>          beacon loss:    0
->>          beacon rx:      403
->>          rx drop misc:   74
->>          signal:         -95 dBm
->>          beacon signal avg:      -18 dBm
->>          tx bitrate:     1441.1 MBit/s 80MHz EHT-MCS 13 EHT-NSS 2 EHT-GI 0
->>
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
->>
->> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> 
-> I'm still going throught the patchset, please don't send a new version
-> yet. Few quick comments:
-> 
->> +static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct hal_tx_status *ts)
->> +{
->> +	struct ath12k_base *ab = ar->ab;
->> +	struct ath12k_peer *peer;
->> +	struct ath12k_sta *arsta;
->> +	struct ieee80211_sta *sta;
->> +	u16 rate;
->> +	u8 rate_idx = 0;
->> +	int ret;
->> +
->> +	spin_lock_bh(&ab->base_lock);
-> 
-> Did you analyse how this function, and especially taking the base_lock,
-> affects performance?
-> 
+ALWAYS run ath12k-check, we wrote the tool for a reason. Skipping these
+tests is disrespect for maintainers' time and a great way to get your
+patches to the bottom of the queue.
 
-The base_lock is used here because of the need to look for peers based 
-on the ts->peer_id when calling ath12k_peer_find_by_id() function, which 
-i think might affect performance.
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-Do i need to run a throughput test?
-
->> +enum nl80211_he_ru_alloc ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
->> +{
->> +	enum nl80211_he_ru_alloc ret;
->> +
->> +	switch (ru_tones) {
->> +	case 26:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
->> +		break;
->> +	case 52:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
->> +		break;
->> +	case 106:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
->> +		break;
->> +	case 242:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
->> +		break;
->> +	case 484:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
->> +		break;
->> +	case 996:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
->> +		break;
->> +	case (996 * 2):
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_2x996;
->> +		break;
->> +	default:
->> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
->> +		break;
->> +	}
->> +
->> +	return ret;
->> +}
-> 
-> How does this function compare to ath12k_he_ru_tones_to_nl80211_he_ru_alloc()?
-> 
-
-ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc() is different from 
-ath12k_he_ru_tones_to_nl80211_he_ru_alloc().
-
-the logic of ath12k_he_ru_tones_to_nl80211_he_ru_alloc() is
-
-static inline
-enum nl80211_he_ru_alloc ath12k_he_ru_tones_to_nl80211_he_ru_alloc(u16 
-ru_tones)
-{
-         enum nl80211_he_ru_alloc ret;
-
-         switch (ru_tones) {
-         case RU_52:
-                 ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
-                 break;
-         case RU_106:
-                 ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
-                 break;
-         case RU_242:
-                 ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
-                 break;
-         case RU_484:
-                 ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
-                 break;
-         case RU_996:
-                 ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
-                 break;
-         case RU_26:
-                 fallthrough;
-         default:
-                 ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-                 break;
-         }
-         return ret;
-}
-
-#define RU_26  1
-#define RU_52  2
-#define RU_106 4
-#define RU_242 9
-#define RU_484 18
-#define RU_996 37
-
-
->> +enum nl80211_eht_gi ath12k_mac_eht_gi_to_nl80211_eht_gi(u8 sgi)
->> +{
->> +	enum nl80211_eht_gi ret;
->> +
->> +	switch (sgi) {
->> +	case RX_MSDU_START_SGI_0_8_US:
->> +		ret = NL80211_RATE_INFO_EHT_GI_0_8;
->> +		break;
->> +	case RX_MSDU_START_SGI_1_6_US:
->> +		ret = NL80211_RATE_INFO_EHT_GI_1_6;
->> +		break;
->> +	case RX_MSDU_START_SGI_3_2_US:
->> +		ret = NL80211_RATE_INFO_EHT_GI_3_2;
->> +		break;
->> +	default:
->> +		ret = NL80211_RATE_INFO_EHT_GI_0_8;
->> +		break;
->> +	}
->> +
->> +	return ret;
->> +}
-> 
-> BTW the ret variable is unnessary, this could be simplified to:
-> 
-> switch (foo) {
-> case FOO1:
->          return BAR1;
-> case FOO2:
->          return BAR2;
-> default:
->          return BAR3;
-> }
-> 
->> +enum nl80211_eht_ru_alloc ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(u16 ru_tones)
->> +{
->> +	enum nl80211_eht_ru_alloc ret;
->> +
->> +	switch (ru_tones) {
->> +	case 26:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_26;
->> +		break;
->> +	case 52:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_52;
->> +		break;
->> +	case (52 + 26):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_52P26;
->> +		break;
->> +	case 106:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_106;
->> +		break;
->> +	case (106 + 26):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_106P26;
->> +		break;
->> +	case 242:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_242;
->> +		break;
->> +	case 484:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_484;
->> +		break;
->> +	case (484 + 242):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_484P242;
->> +		break;
->> +	case 996:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_996;
->> +		break;
->> +	case (996 + 484):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_996P484;
->> +		break;
->> +	case (996 + 484 + 242):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_996P484P242;
->> +		break;
->> +	case (2 * 996):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_2x996;
->> +		break;
->> +	case (2 * 996 + 484):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_2x996P484;
->> +		break;
->> +	case (3 * 996):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_3x996;
->> +		break;
->> +	case (3 * 996 + 484):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_3x996P484;
->> +		break;
->> +	case (4 * 996):
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_4x996;
->> +		break;
->> +	default:
->> +		ret = NL80211_RATE_INFO_EHT_RU_ALLOC_26;
->> +	}
->> +
->> +	return ret;
->> +}
-> 
-> Same here.
-> 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
