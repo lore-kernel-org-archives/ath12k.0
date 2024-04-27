@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2B31C4345F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBB9FC19F53
 	for <ath12k@archiver.kernel.org>; Sat, 27 Apr 2024 16:27:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,55 +12,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nFd6ENsGO/cclvnJCgMh9yw2JMm3BjWGly3AxMK9K2w=; b=A3Bx4DRVtJz3F5aG5KDcvRbM/D
-	0GQSY9oywAr47YTlpmoRYM/+8jgg5tFsjxm/XMaOqBVmZtrhTYsOqpGnd3V0dEH904UdxeuNuMb+Y
-	UegMXtaocgf+mYYwLFSSoaxkd1BtLL670caneLxiDHCHTqhJG8E+OeKiQCs+1qhhCIcpz4j/GLCl2
-	+jZrXA3BenU9qRSAgrZBWfWf0UAYZz99L7p+RwZsI0x6U2Zjd/xsH/8Ythglnlg190DTWsKoDl3vC
-	BGGF5CYCKD00Y2DkbU4ivxcm8HAUxHf8eZgYqhQaXT2NhQyq/fbFjoZoG4QN1RHfHQ+ANWiJB7Qmh
-	Gabgo59A==;
+	bh=xoG6O88QwWOX2mC7RY8Vl2PhxJ61CVCdrGl5iBudFXE=; b=iNrZnGcWQnB6idQApSrSjpfoKB
+	8+LLwBf39mqBKs79+Gh4oNhQfW3emdSa1jYcA1OklHRnDKENI6pXsfhJPBv7RqTcB1LD1Zm+HlGFT
+	Ohjs6E9hYbKUxIP+7ucAM6u5M7fYZFnG3262U8cXRw5kh/Zzd5g/Ic+wJLMSF20P1nhLsyZ7X4tpx
+	1lPabUo+8292fAyLvRU+U0K73InDeC8trUz8Z/bRFNrY/iC9leQmWS48jzXnlP265lF7Wn5YqrlmE
+	4Gj4CVHPftAA4GQ9RETMllxW2To0GWLyhVzrlc/A/BC+lkS8hBebda731nqXT5WSeoKYztlbxLdRh
+	q7Hdc7zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s0ktN-0000000Fo6O-1Avc
+	id 1s0ktN-0000000Fo6Y-2j0j
 	for ath12k@archiver.kernel.org;
 	Sat, 27 Apr 2024 16:27:13 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s0ktJ-0000000Fo4Y-3nY3
+	id 1s0ktJ-0000000Fo4t-3nfc
 	for ath12k@lists.infradead.org;
 	Sat, 27 Apr 2024 16:27:11 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43RG85tE005221;
-	Sat, 27 Apr 2024 16:27:05 GMT
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43RGLtae010745;
+	Sat, 27 Apr 2024 16:27:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
 	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=nFd6ENsGO/cclvnJCgMh9yw2JMm3BjWGly3AxMK9K2w=; b=Bx
-	wTvZs99GNcuKHs1QabkL2Y+eg94aYNR+uu6zmV8AgGgek3Z00GVTjwKOEe3aRfUp
-	CfTlFZ11uPNm+5JwrcMieM1fmjuZ8TEy7jtQNYlxe0rvvbFafuVFdJO+Y6e+irCf
-	/biQEOrVG9I/V7ZmlfsA7MJxQIWr6Tso9yDMWf+17/c1RZwANOZDzZYHUNb0cbRt
-	6MKEwqV8+mGljyac5xAkpW5cg3Ui0LO4iXKSyrZl4THzFJstZFnVPmhQhAWRjiJl
-	KFtS3hrtvXifyGOM/7Hun60RjNVHK1+mdrBB3v5gFw43JKKTxg1FT7dx8FoLt+ZD
-	t5R4gUE5siQvlZcT5BIQ==
+	qcppdkim1; bh=xoG6O88QwWOX2mC7RY8Vl2PhxJ61CVCdrGl5iBudFXE=; b=Hq
+	9t4njyDenJL16ZMpzu7GlGlqlwcT2WRqwfQ5T7ZDihIoZJdE+JNVdEtok89VncT7
+	X+lC8BQSpOQJ2nkfOLyr87XD+a0zFcxWgHV0odrlhIQ4mQsEQWMFXjhuZ0m9UmAl
+	jOMg+wU14tbVh0nsBUbGD4zID4JtdIUDMS+BWpXiJg9hqRKSgoIiONXFYyPwQYbj
+	5VWoa1M6YpEv9tcvbwiWxeF6cApbhXqMzwCmOko4dhN7lRGHbMrXffmpNkPB10TP
+	mid1sUSLor7l08g2+Ul+kdB/oi1IzE6zXUJat4r8rSLfbkbmwLSR7O9HxtNehueS
+	Y3OE6q8a7x1iCJG1iWpg==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xrq2k0ufn-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xrsk78p1b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 27 Apr 2024 16:27:05 +0000 (GMT)
+	Sat, 27 Apr 2024 16:27:08 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43RGR3F6026137
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43RGR7mL026514
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 27 Apr 2024 16:27:03 GMT
+	Sat, 27 Apr 2024 16:27:07 GMT
 Received: from hu-tamizhr-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sat, 27 Apr 2024 09:27:01 -0700
+ 15.2.1544.9; Sat, 27 Apr 2024 09:27:05 -0700
 From: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Tamizh Chelvam Raja
 	<quic_tamizhr@quicinc.com>
-Subject: [PATCHv2 1/3] wifi: ath12k: fix calling correct function for rx monitor mode
-Date: Sat, 27 Apr 2024 21:56:42 +0530
-Message-ID: <20240427162644.2470886-2-quic_tamizhr@quicinc.com>
+Subject: [PATCHv2 3/3] wifi: ath12k: Remove unused tcl_*_ring configuration
+Date: Sat, 27 Apr 2024 21:56:44 +0530
+Message-ID: <20240427162644.2470886-4-quic_tamizhr@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240427162644.2470886-1-quic_tamizhr@quicinc.com>
 References: <20240427162644.2470886-1-quic_tamizhr@quicinc.com>
@@ -72,19 +72,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: hmnSK9l7zw4XK6P1RNFc5HIi18bt6lXb
-X-Proofpoint-GUID: hmnSK9l7zw4XK6P1RNFc5HIi18bt6lXb
+X-Proofpoint-GUID: pMV8mSHn4oskGbxse93igWKk-3Y-oJh-
+X-Proofpoint-ORIG-GUID: pMV8mSHn4oskGbxse93igWKk-3Y-oJh-
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-04-27_14,2024-04-26_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxlogscore=999
- impostorscore=0 adultscore=0 malwarescore=0 mlxscore=0 priorityscore=1501
- suspectscore=0 phishscore=0 lowpriorityscore=0 clxscore=1015 spamscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
+ suspectscore=0 priorityscore=1501 mlxlogscore=954 bulkscore=0 phishscore=0
+ spamscore=0 lowpriorityscore=0 adultscore=1 malwarescore=0 impostorscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
  definitions=main-2404270120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240427_092709_988114_7DF95AF8 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20240427_092709_985666_D2DD245C 
+X-CRM114-Status: GOOD (  11.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,33 +99,68 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently in ath12k_dp_tx_htt_monitor_mode_ring_config()
-ath12k_dp_tx_htt_tx_monitor_mode_ring_config() function wrongly called twice.
-Fix that by calling ath12k_dp_tx_htt_rx_monitor_mode_ring_config().
-
-Currently monitor mode is disabled in driver so the change is compile
-tested and boot sequence verified.
+Currently memory allocation for multiple hardware rings done
+in host as these memory will be used by firmware/hardware.
+But in case of tcl_cmd_ring and tcl_status_ring neither firmware
+nor hardware uses host allocated memory and it uses memory
+allocated by firmware itself. So avoid tcl_cmd_ring and
+tcl_status_ring setup in host.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_tx.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/dp.c | 16 ----------------
+ drivers/net/wireless/ath/ath12k/dp.h |  2 --
+ 2 files changed, 18 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 9b6d7d72f57c..2fb9fc42db11 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -1044,7 +1044,7 @@ int ath12k_dp_tx_htt_monitor_mode_ring_config(struct ath12k *ar, bool reset)
- 	struct ath12k_base *ab = ar->ab;
- 	int ret;
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index 963b9ad4dc82..d91d5c308210 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -457,8 +457,6 @@ static void ath12k_dp_srng_common_cleanup(struct ath12k_base *ab)
+ 		ath12k_dp_srng_cleanup(ab, &dp->tx_ring[i].tcl_comp_ring);
+ 		ath12k_dp_srng_cleanup(ab, &dp->tx_ring[i].tcl_data_ring);
+ 	}
+-	ath12k_dp_srng_cleanup(ab, &dp->tcl_status_ring);
+-	ath12k_dp_srng_cleanup(ab, &dp->tcl_cmd_ring);
+ 	ath12k_dp_srng_cleanup(ab, &dp->wbm_desc_rel_ring);
+ }
  
--	ret = ath12k_dp_tx_htt_tx_monitor_mode_ring_config(ar, reset);
-+	ret = ath12k_dp_tx_htt_rx_monitor_mode_ring_config(ar, reset);
- 	if (ret) {
- 		ath12k_err(ab, "failed to setup tx monitor filter %d\n", ret);
- 		return ret;
+@@ -479,20 +477,6 @@ static int ath12k_dp_srng_common_setup(struct ath12k_base *ab)
+ 		goto err;
+ 	}
+ 
+-	ret = ath12k_dp_srng_setup(ab, &dp->tcl_cmd_ring, HAL_TCL_CMD, 0, 0,
+-				   DP_TCL_CMD_RING_SIZE);
+-	if (ret) {
+-		ath12k_warn(ab, "failed to set up tcl_cmd ring :%d\n", ret);
+-		goto err;
+-	}
+-
+-	ret = ath12k_dp_srng_setup(ab, &dp->tcl_status_ring, HAL_TCL_STATUS,
+-				   0, 0, DP_TCL_STATUS_RING_SIZE);
+-	if (ret) {
+-		ath12k_warn(ab, "failed to set up tcl_status ring :%d\n", ret);
+-		goto err;
+-	}
+-
+ 	for (i = 0; i < ab->hw_params->max_tx_ring; i++) {
+ 		map = ab->hw_params->hal_ops->tcl_to_wbm_rbm_map;
+ 		tx_comp_ring_num = map[i].wbm_ring_num;
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index 5cf0d21ef184..21afdb51b6e6 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -327,8 +327,6 @@ struct ath12k_dp {
+ 	struct dp_link_desc_bank link_desc_banks[DP_LINK_DESC_BANKS_MAX];
+ 	struct dp_srng wbm_idle_ring;
+ 	struct dp_srng wbm_desc_rel_ring;
+-	struct dp_srng tcl_cmd_ring;
+-	struct dp_srng tcl_status_ring;
+ 	struct dp_srng reo_reinject_ring;
+ 	struct dp_srng rx_rel_ring;
+ 	struct dp_srng reo_except_ring;
 -- 
 2.34.1
 
