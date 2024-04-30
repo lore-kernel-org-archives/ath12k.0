@@ -4,87 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBC9BC4345F
-	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 09:14:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D392C4345F
+	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 11:42:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xoG6O88QwWOX2mC7RY8Vl2PhxJ61CVCdrGl5iBudFXE=; b=unvTf60vvlTzN6pkzGyeP+kCRA
-	TQUkZBwE2Y/BCI/VhaxISPqYw8X4xXcOOs4dTDanIHLYWjQ96p0SnDSnujlotNxlqDTBz4ecoc8hw
-	/n5jFdhjG05MnXauTEz7m6h+RPBFmvVjwfO4Y53hXeDhs+KJU0MXL/PgxZTgh3ufEtWb6FW+WjSsN
-	R+479y/cRc5EEk3bW98/Z9hM3KjfV2Kq9cgq7hnDV2vTzYNb5BwHbzOq6uuKk7XwPWPW25k7vc76t
-	Xv1vuADnfFX54ibzvdAIpK/bjZw8LnE91QmhoaHKLFnnBKLUX26K5nthghJnVjVSeBuoWRvZmp+3y
-	PpfAUhGA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WPdUtBS3JiyNceoEgE5avHeOVi0sOkqNqMNCE3yRl0s=; b=k1jEqXm6+QywP4IBzQ1nBZWZRl
+	EbMskIkkv0ZPbKoWV5ztxmsq7izbAmbiSpz7MChW8/1Eb1hnKIDbmZ+jbsbopd/hTISWL631SuLpm
+	fsb10Iz9b6mLpJGNgS3lAQIBVdyfP3+3Owg8PXUQs8YoI8V2XI70XN8d9nsigIrc1Az2sxhg1dDqN
+	ae0ONk9CwiSv8cRSCSJ8NfY3C2JT+Z1fZIZGnxgc/OSaZJu6rePc0BuAgGmZLU3ym7sKnXUKnfFfQ
+	ceWV+alF8fX5DBdh7H4RVbp3pzFMDFPc5Bgxbwewa0/rQ6TFiupcGgh4MULD7cISxtLN141eiOQsL
+	C8f2FHjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1jZe-00000005mQf-1r12
+	id 1s1lsL-00000006Cwc-3Fbd
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Apr 2024 09:14:54 +0000
+	Tue, 30 Apr 2024 11:42:21 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1jZc-00000005mMo-19Yh
+	id 1s1ls9-00000006Cpv-08ap
 	for ath12k@lists.infradead.org;
-	Tue, 30 Apr 2024 09:14:53 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43U5rkat023778;
-	Tue, 30 Apr 2024 09:14:37 GMT
+	Tue, 30 Apr 2024 11:42:11 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43UBMD2A008109;
+	Tue, 30 Apr 2024 11:42:03 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=xoG6O88QwWOX2mC7RY8Vl2PhxJ61CVCdrGl5iBudFXE=; b=Dq
-	YJf0u5aO1PAAEy26hrw3+97oBSwRCrh1IP9WSpyhoJ0iTZqQi2HKuTT+WGtxAYtJ
-	wXKV3hGj1SY4gN1cnmNrT6c3ho3lEKMoCZP/Ye81Yp0EpGuUtaNFhG3fSHCCHT/c
-	wklvnOJ6nSP3vw+hJ8eikCwBVIQ27Re1CHItIbaFKlSmqKPy3pDRtpvUyDhYckpU
-	tCdz4y3hIXMef36SHUjh/ZqRkq3qG9vH14WCk4oWmlb3gfWcXDLHwW1RXTqHlDRK
-	TJK9djRHlUXahvFyOgNOv1pYlz6Nm6CWc2ob6hPRRglOYWFilcXstp4vSsCsc5Qt
-	LptW+PiJWZj85DVohrCw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xttw3gdm8-1
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=WPdUtBS3JiyNceoEgE5avHeOVi0sOkqNqMNCE3yRl0s=; b=cM
+	S8frodLKW7QWrGyqTZ0REE4bxnW92fbC8ubN8hqNkh4g5Lx1ufVhQ+YvbxOpWPyz
+	Stcylbgu3pCd/lEss1xVnJdOfHhmN45aCwGrGt4UtMCLWS8YJU0bT2Tn8zlLtSYX
+	d/FQIfbHHBLh+P1mBHc4xVVu5r3H3iuPgcvOSgGjKr04BPeSvG7BisgSJKlDjjMp
+	+Qif4brscm7/qc5tTJBtlnI9tMMcoUl+ayQik4Fj5zrHEWFyXBZGHGRH1HFf1EF4
+	PFqKSRoSZVXL1p+9/XOJixuswU/3t4hQfSwj2WwuK+4ASsiSroiyxXLSHckrw95E
+	qyKHMNn1EsOIrCcJvPfw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xtyptg1wh-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 09:14:37 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43U9EaXQ018985
+	Tue, 30 Apr 2024 11:42:03 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43UBg2CL003435
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 09:14:36 GMT
-Received: from hu-tamizhr-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 30 Apr 2024 02:14:34 -0700
-From: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Tamizh Chelvam Raja
-	<quic_tamizhr@quicinc.com>
-Subject: [PATCHv4 3/3] wifi: ath12k: Remove unused tcl_*_ring configuration
-Date: Tue, 30 Apr 2024 14:44:14 +0530
-Message-ID: <20240430091414.2486196-4-quic_tamizhr@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240430091414.2486196-1-quic_tamizhr@quicinc.com>
-References: <20240430091414.2486196-1-quic_tamizhr@quicinc.com>
+	Tue, 30 Apr 2024 11:42:02 GMT
+Received: from [10.111.170.145] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 30 Apr
+ 2024 04:42:00 -0700
+Message-ID: <9108c1fc-8528-4c79-a401-a0526e7ebea6@quicinc.com>
+Date: Tue, 30 Apr 2024 19:41:56 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 1/3] wifi: ath12k: report station mode transmit rate
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240419032122.7009-1-quic_lingbok@quicinc.com>
+ <20240419032122.7009-2-quic_lingbok@quicinc.com> <87bk5xs7qj.fsf@kernel.org>
+ <050ae0d4-c879-40c2-b2ac-1766aaa2c789@quicinc.com>
+ <87v844qsih.fsf@kernel.org>
+Content-Language: en-US
+From: Lingbo Kong <quic_lingbok@quicinc.com>
+In-Reply-To: <87v844qsih.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: qh35rVjCgoTZcVRmrecfPMetPTAfTww9
-X-Proofpoint-ORIG-GUID: qh35rVjCgoTZcVRmrecfPMetPTAfTww9
+X-Proofpoint-GUID: ChjxlM9MfJqEZR2SGopFes0uP8vVa3LB
+X-Proofpoint-ORIG-GUID: ChjxlM9MfJqEZR2SGopFes0uP8vVa3LB
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-04-30_04,2024-04-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 adultscore=1
- lowpriorityscore=0 clxscore=1015 phishscore=0 impostorscore=0 bulkscore=0
- priorityscore=1501 mlxscore=0 malwarescore=0 suspectscore=0
- mlxlogscore=955 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404300066
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0
+ priorityscore=1501 adultscore=0 clxscore=1015 mlxscore=0 suspectscore=0
+ malwarescore=0 impostorscore=0 lowpriorityscore=0 mlxlogscore=999
+ spamscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404300082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240430_021452_447027_E9E88B95 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20240430_044209_525637_DAA31C27 
+X-CRM114-Status: GOOD (  16.68  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,69 +101,95 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently memory allocation for multiple hardware rings done
-in host as these memory will be used by firmware/hardware.
-But in case of tcl_cmd_ring and tcl_status_ring neither firmware
-nor hardware uses host allocated memory and it uses memory
-allocated by firmware itself. So avoid tcl_cmd_ring and
-tcl_status_ring setup in host.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.c | 16 ----------------
- drivers/net/wireless/ath/ath12k/dp.h |  2 --
- 2 files changed, 18 deletions(-)
+On 2024/4/26 19:21, Kalle Valo wrote:
+> Lingbo Kong <quic_lingbok@quicinc.com> writes:
+> 
+>> On 2024/4/26 0:54, Kalle Valo wrote:
+>>> Lingbo Kong <quic_lingbok@quicinc.com> writes:
+>>>
+>>>> +static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct
+>>>> hal_tx_status *ts)
+>>>> +{
+>>>> +	struct ath12k_base *ab = ar->ab;
+>>>> +	struct ath12k_peer *peer;
+>>>> +	struct ath12k_sta *arsta;
+>>>> +	struct ieee80211_sta *sta;
+>>>> +	u16 rate;
+>>>> +	u8 rate_idx = 0;
+>>>> +	int ret;
+>>>> +
+>>>> +	spin_lock_bh(&ab->base_lock);
+>>>
+>>> Did you analyse how this function, and especially taking the
+>>> base_lock,
+>>> affects performance?
+>>
+>> The base_lock is used here because of the need to look for peers based
+>> on the ts->peer_id when calling ath12k_peer_find_by_id() function,
+>> which i think might affect performance.
+>>
+>> Do i need to run a throughput test?
+> 
+> Ok, so to answer my question: no, you didn't do any performance
+> analysis. Throughput test might not be enough, for example the driver
+> can be used on slower systems and running the test on a fast CPU might
+> not reveal any problem. A proper analysis would be much better.
+> 
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 963b9ad4dc82..d91d5c308210 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -457,8 +457,6 @@ static void ath12k_dp_srng_common_cleanup(struct ath12k_base *ab)
- 		ath12k_dp_srng_cleanup(ab, &dp->tx_ring[i].tcl_comp_ring);
- 		ath12k_dp_srng_cleanup(ab, &dp->tx_ring[i].tcl_data_ring);
- 	}
--	ath12k_dp_srng_cleanup(ab, &dp->tcl_status_ring);
--	ath12k_dp_srng_cleanup(ab, &dp->tcl_cmd_ring);
- 	ath12k_dp_srng_cleanup(ab, &dp->wbm_desc_rel_ring);
- }
- 
-@@ -479,20 +477,6 @@ static int ath12k_dp_srng_common_setup(struct ath12k_base *ab)
- 		goto err;
- 	}
- 
--	ret = ath12k_dp_srng_setup(ab, &dp->tcl_cmd_ring, HAL_TCL_CMD, 0, 0,
--				   DP_TCL_CMD_RING_SIZE);
--	if (ret) {
--		ath12k_warn(ab, "failed to set up tcl_cmd ring :%d\n", ret);
--		goto err;
--	}
--
--	ret = ath12k_dp_srng_setup(ab, &dp->tcl_status_ring, HAL_TCL_STATUS,
--				   0, 0, DP_TCL_STATUS_RING_SIZE);
--	if (ret) {
--		ath12k_warn(ab, "failed to set up tcl_status ring :%d\n", ret);
--		goto err;
--	}
--
- 	for (i = 0; i < ab->hw_params->max_tx_ring; i++) {
- 		map = ab->hw_params->hal_ops->tcl_to_wbm_rbm_map;
- 		tx_comp_ring_num = map[i].wbm_ring_num;
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 5cf0d21ef184..21afdb51b6e6 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -327,8 +327,6 @@ struct ath12k_dp {
- 	struct dp_link_desc_bank link_desc_banks[DP_LINK_DESC_BANKS_MAX];
- 	struct dp_srng wbm_idle_ring;
- 	struct dp_srng wbm_desc_rel_ring;
--	struct dp_srng tcl_cmd_ring;
--	struct dp_srng tcl_status_ring;
- 	struct dp_srng reo_reinject_ring;
- 	struct dp_srng rx_rel_ring;
- 	struct dp_srng reo_except_ring;
--- 
-2.34.1
+hi, kalle,
+i found that ab->base_lock is used in a lot of places in ath12k, so it's 
+complicated to do performance analysis in here.
 
+Do you have any suggestions? I would appreciate your suggestions:)
+
+/lingbo kong
+
+>>>> +enum nl80211_he_ru_alloc
+>>>> ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
+>>>> +{
+>>>> +	enum nl80211_he_ru_alloc ret;
+>>>> +
+>>>> +	switch (ru_tones) {
+>>>> +	case 26:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
+>>>> +		break;
+>>>> +	case 52:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
+>>>> +		break;
+>>>> +	case 106:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
+>>>> +		break;
+>>>> +	case 242:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
+>>>> +		break;
+>>>> +	case 484:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
+>>>> +		break;
+>>>> +	case 996:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
+>>>> +		break;
+>>>> +	case (996 * 2):
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_2x996;
+>>>> +		break;
+>>>> +	default:
+>>>> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
+>>>> +		break;
+>>>> +	}
+>>>> +
+>>>> +	return ret;
+>>>> +}
+>>> How does this function compare to
+>>> ath12k_he_ru_tones_to_nl80211_he_ru_alloc()?
+>>>
+>>
+>> ath12k_mac_he_ru_tones_to_nl80211_he_ru_alloc() is different from
+>> ath12k_he_ru_tones_to_nl80211_he_ru_alloc().
+>>
+>> the logic of ath12k_he_ru_tones_to_nl80211_he_ru_alloc() is
+> 
+> Sure, I can read C. But _why_ do we have two very similar but still
+> different functions. That looks fishy to me.
+> 
 
