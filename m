@@ -4,68 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ADD0C10F16
-	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 06:42:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 806E2C10F16
+	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 07:42:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=U9F3+BJlpYl1A42gqI5Kuc5ruHoD4P6TQ4R/HRTB8d0=; b=KmdJr84ku9F8FuwtxRavclzzSq
-	bDExSoMFrz6FfemfqjRNiNfk4S1qGgaH7xlC9rzOpkmBT/+1sL8Z5F8oQ6czmwMMFmEVZb+uXVYJ3
-	8THySqzbqDqziGKBRLImnlfp/+/4vW4SLwCeChzwHYJIGkN1sWQAsyQfMJasXP10TJzAcNDik3L2N
-	gkWe13tVgeBJSA7T9Yps0znW2hA0foes4u1flXZtXcfGXIdS1/ZnVpT9U1/LUJt8N/UAuIkdtl1Zt
-	biRSMrXrNABnp5a63jJFCz+tHNzWrmpHM+efHI5HrUu5Wrb+v+eOIwFFs5FEdw/JQBsJ+oTzifes8
-	Xr7EHx1w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GSJXyLojc95CzlRegySG57zpsU09ycjRFGSiB4YgGH8=; b=BmV06Kjc/hY9zrX61TFre75Bll
+	9feEtZDnDaZaoLCKWCYBql+jrPcU3S8/KmE3q0oxfIPl2++0zWSlkN6aGWZNywFBkOH728Jqyz4fF
+	mjM4RcjDOiieZTOs9ssdm/uPbmSWpH0DfNTSixwifCtqFDR38dl/MRnEDyx78labcrR+KjWnsvcef
+	YpF5MUjBX1/Ewlm0K8hyIccfwJ8O+eOBiLaK/J0IIem0wqBudTxDyniPV3R3L6C6cSzCX07IqBizD
+	hgqRMXXSJHoPz16OFDzV6+jGp2urhvmCvXywwIP6J+eVqGGgTODwfW/k7CE60xGTAV3ZRKPVbxRev
+	asNbFSzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1hCZ-00000005JSL-3NhK
+	id 1s1i8M-00000005Tay-0AhH
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Apr 2024 06:42:55 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 30 Apr 2024 07:42:38 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1hCW-00000005JQq-46RP
+	id 1s1i8I-00000005Ta0-2gvp
 	for ath12k@lists.infradead.org;
-	Tue, 30 Apr 2024 06:42:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 20F7561447;
-	Tue, 30 Apr 2024 06:42:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D221FC2BBFC;
-	Tue, 30 Apr 2024 06:42:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1714459371;
-	bh=fdQHboO+wwZXDX18KuhgKPneJcVoTv3BPscY3vNMF9M=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=P9evOk1wfx3V5Yyau4PBE3WTeaJ6877CHJVLIU6aT0VxPQHMNI+hHRV2rQ4y5vTjJ
-	 ZsmA6WKpMt2ToYqnjE+DMUL0Aij11nuTCr23vRnVJTlgSokXQmZVPELHK8IaTvk954
-	 Y9j8Zi8R1YlJXvhTkS0dmlDVTXsbtOpEIWwbIJrJdMorfZSf4gpa5ve4F3sFV9IgF3
-	 HLOCTWIlR/egsRRv/njCEQEYqsF7xKXGe96gXE7tOiXr0S/Zai3l8Jvk4qw7LLZPP2
-	 9Z9W/fqGOEHNuhdXRvrOi/Oeh20eKDUgCMrQg0Kjialr5h/71eJTHNGBDYgkFfRq22
-	 CUtfCYwBelm2g==
-From: Kalle Valo <kvalo@kernel.org>
-To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,  <ath12k@lists.infradead.org>,
-  <linux-wireless@vger.kernel.org>,  Muna Sinada <quic_msinada@quicinc.com>
-Subject: Re: [PATCH v3 07/10] wifi: ath12k: add support for setting fixed HE
- rate/GI/LTF
-References: <20240424201959.935-1-quic_pradeepc@quicinc.com>
-	<20240424201959.935-8-quic_pradeepc@quicinc.com>
-	<72bc6772-8bf7-427d-8f03-01e8dbf30d0c@quicinc.com>
-	<87y190fulv.fsf@kernel.org>
-	<198e317f-a849-4fe2-8080-3d1834d07481@quicinc.com>
-	<87sez4fk1o.fsf@kernel.org>
-	<51073e2c-2138-4957-a78c-2708c7742451@quicinc.com>
-Date: Tue, 30 Apr 2024 09:42:47 +0300
-In-Reply-To: <51073e2c-2138-4957-a78c-2708c7742451@quicinc.com> (Pradeep Kumar
-	Chitrapu's message of "Mon, 29 Apr 2024 18:41:37 -0700")
-Message-ID: <87ttjjpd08.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Tue, 30 Apr 2024 07:42:36 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43U7CMH2006602;
+	Tue, 30 Apr 2024 07:42:32 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=GSJXyLojc95CzlRegySG57zpsU09ycjRFGSiB4YgGH8=; b=h8
+	EGiuqC36/gPUEemVrOUrwisrgrDM9EEYnuxlF7S3xO4jVx/gB0u3Y4RucJpCas1l
+	jQjdAinF7l+5bG2F7C1ofEBRKo+ybhV+P3LsjobGyRHghcMfp1g81r3ljX85RcqV
+	b3QQKyWRA0QCcziOEXzmoOwOd5MBwWEJjQg8wz91aiSx2DfOGYoSYsGr+PXmI40B
+	ELGMF0yd751Fx7DS55KLun5zQQ2eMln4ZcRAUT+EyZwTd6IYh6lN3GeyM8eEK+o/
+	uGa9N1+h+v7xxx4gz/AWa7dir+iw4KFGPW6DRUs9l9jaxluMEVLq09aBk/LWb8V6
+	BAE7lWUB/zdi14sYEnvA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xtv1hr20w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 30 Apr 2024 07:42:31 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43U7gUpI018029
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 30 Apr 2024 07:42:30 GMT
+Received: from [10.151.40.42] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 30 Apr
+ 2024 00:42:29 -0700
+Message-ID: <e7d71f62-9de1-413f-9695-96aa490daf63@quicinc.com>
+Date: Tue, 30 Apr 2024 13:12:23 +0530
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/2] wifi: ath12k: drop failed transmitted frames from
+ metric calculation
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240429114841.413901-1-quic_kathirve@quicinc.com>
+ <e1d428ee-0a16-4fc6-be0b-4c41036ff919@quicinc.com>
+Content-Language: en-US
+From: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
+In-Reply-To: <e1d428ee-0a16-4fc6-be0b-4c41036ff919@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: wKG-tLe4c69ARYUve4t-GjdCeokUSn97
+X-Proofpoint-ORIG-GUID: wKG-tLe4c69ARYUve4t-GjdCeokUSn97
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
+ definitions=2024-04-30_04,2024-04-29_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 adultscore=0
+ spamscore=0 clxscore=1015 suspectscore=0 impostorscore=0 phishscore=0
+ bulkscore=0 mlxscore=0 malwarescore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404300055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240429_234253_080159_CB1B1137 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20240430_004234_736907_B7EA96B1 
+X-CRM114-Status: GOOD (  10.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,49 +100,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com> writes:
 
->>> I did run ath12k-check but I don't see these errors. Trying to see if
->>> this is due to version differences. will update further once I have
->>> more information on this.
->>>
->>> This is version I ran:
->>> qca-swiss-army-knife/tools/scripts/ath12k/ath12k-check --version
->>> ath12k-check (md5sum cb8a85242f2ec7343f6f94af9fa5ebb2)
->>>
->>> python:         3.6.9 (default, Mar 10 2023, 16:46:00)
->>> [GCC 8.4.0]
->>> host gcc:       gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
->>> config cc:      gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
->>> sparse:         v0.6.4
->>> checkpatch.pl:  Version: 0.32 (md5sum 12ea394e9bf27280f30a684ff937cc57)
->>> gtags:          gtags (GNU GLOBAL) 6.6.2
->> Your sparse is too old, you need to get the latest from git:
->> https://docs.kernel.org/dev-tools/sparse.html#getting-sparse
->
-> Thanks Kalle and Jeff for sharing the tool versions required..
-> I am able to see the errors reported now..
-> will fix and respin the series..
->
-> ath12k-check (md5sum cb8a85242f2ec7343f6f94af9fa5ebb2)
->
-> python:         3.6.9 (default, Mar 10 2023, 16:46:00)
-> [GCC 8.4.0]
-> host gcc:       gcc (GCC) 13.2.0
-> config cc:      gcc (GCC) 13.2.0
-> sparse:         v0.6.4-66-g0196afe16a50
-> checkpatch.pl:  Version: 0.32 (md5sum 12ea394e9bf27280f30a684ff937cc57)
-> gtags:          gtags (GNU GLOBAL) 6.6.2
 
-I added a section about tools to the wiki:
-
-https://wireless.wiki.kernel.org/en/users/drivers/ath10k/codingstyle#tools
-
-Feedback very welcome, it's important that our documentation is
-understandable for new developers.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+On 4/30/2024 12:16 AM, Jeff Johnson wrote:
+> On 4/29/2024 4:48 AM, Karthikeyan Kathirvel wrote:
+>> - Use ieee80211_free_txskb() instead of dev_kfree_skb_any().
+>> - Drop failed transmitted frames from mesh metric calculation to avoid
+>> false link metric averaging.
+>>
+>> Karthikeyan Kathirvel (1):
+>>    wifi: ath12k: drop failed transmitted frames from metric calculation.
+>>
+>> Sven Eckelmann (1):
+>>    wifi: ath12k: Don't drop tx_status in failure case
+>>
+>>   drivers/net/wireless/ath/ath12k/dp_tx.c    | 43 ++++++++++++++++------
+>>   drivers/net/wireless/ath/ath12k/hal_desc.h | 22 ++++++++++-
+>>   2 files changed, 52 insertions(+), 13 deletions(-)
+>>
+>>
+>> base-commit: 363e7193eaf258fe7f04e8db560bd8a282a12cd9
+> 
+> 'b4' is barfing on this series since you posted 3 patches instead of 2:
+> [PATCH v3 1/2] wifi: ath12k: Don't drop tx_status in failure case
+> [PATCH v3 1/2] wifi: ath12k: Don't drop tx_status when peer cannot be found
+> [PATCH v3 2/2] wifi: ath12k: drop failed transmitted frames from metric calculation.
+> 
+> Why are there two different 1/2 patches?
+Uploaded an invalid patch by mistake, have removed it in next version v4 
+and also replaced a dev_kfree_skb_any() by ieee80211_free_txskb() in 
+ath12k_dp_tx_free_txbuf(),
 
