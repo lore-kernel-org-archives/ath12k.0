@@ -4,87 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3E1AC4345F
-	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 05:48:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ADD0C10F16
+	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 06:42:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2/3ZE7OKDAMMRzmdSaJRPraIPqXd9bNiUxmfhwEheS8=; b=lvCOd8SORstYstuZoM1SzoQJF+
-	JKeKgGNKcJqiizhW6bBE56lQq4A7ORo/lV86EVLDib5+cTGL9+sMBrCPgroGNyMjW0QmeVjoTelxI
-	OcCkBknqzq+ggkeRcIXNDz6V8hFQnsNT/wYgzjDLPJQWGUsjYDrpVeiO5Vii8TmCNzJbwx0VX4EAg
-	VFV7qDB4KCmvPSrxc/uSxgmve0No6Y++XpiBSiAr/UuJinZjncZ12kLy/ckI92qvNjs1iAw7mQT2j
-	7WsqFgYonasmGmKsslBNCKeh6QBPwkBULG10HcTj2uow++Cy5UEOQi9XhAsXwkE35EcOWf9HzNzuE
-	grMYJRcA==;
+	bh=U9F3+BJlpYl1A42gqI5Kuc5ruHoD4P6TQ4R/HRTB8d0=; b=KmdJr84ku9F8FuwtxRavclzzSq
+	bDExSoMFrz6FfemfqjRNiNfk4S1qGgaH7xlC9rzOpkmBT/+1sL8Z5F8oQ6czmwMMFmEVZb+uXVYJ3
+	8THySqzbqDqziGKBRLImnlfp/+/4vW4SLwCeChzwHYJIGkN1sWQAsyQfMJasXP10TJzAcNDik3L2N
+	gkWe13tVgeBJSA7T9Yps0znW2hA0foes4u1flXZtXcfGXIdS1/ZnVpT9U1/LUJt8N/UAuIkdtl1Zt
+	biRSMrXrNABnp5a63jJFCz+tHNzWrmpHM+efHI5HrUu5Wrb+v+eOIwFFs5FEdw/JQBsJ+oTzifes8
+	Xr7EHx1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1gLr-00000005BTL-0bBc
+	id 1s1hCZ-00000005JSL-3NhK
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Apr 2024 05:48:27 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 30 Apr 2024 06:42:55 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1gLn-00000005BSC-3WBT
+	id 1s1hCW-00000005JQq-46RP
 	for ath12k@lists.infradead.org;
-	Tue, 30 Apr 2024 05:48:25 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43U4T7tu032242;
-	Tue, 30 Apr 2024 05:48:23 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=2/3ZE7OKDAMMRzmdSaJRPraIPqXd9bNiUxmfhwEheS8=; b=TF
-	HvqNzEyODf7/nOrLBNL7gSu9hss/dXx7ncV2WfskDZllbQCyPB+KCUQJgJPNc2jr
-	A+f4myrBJ724W/Tmq7o9DpzBomiiLWr5uLiGd79F+44AI/HcyyWSte7mPvD02M+7
-	iI11o5LyAMAgOtMJ6vvzURotnG4CLZmAU/bYqLSvC7tQVn0/YaydJ9OQfm38r3VO
-	vcjQJugwWYrONYgXEAMilsScqzJ8FQt0jbIhnl8T6j1T5RmXqeTPxi2L0Z0rAbJs
-	e/+Vslcj/H0lCy6qRSUO0e5GcMzsADs6uyXXhB40Sf77ifkEwbEMS1yBGMNlKNv8
-	XypvHBZmpeLvCzwB1RNQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xtsnm86qy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 05:48:23 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43U5mM1d013474
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 05:48:22 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 29 Apr 2024 22:48:20 -0700
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-Subject: [PATCH 4/4] wifi: ath12k: add multi device support for WBM idle ring buffer setup
-Date: Tue, 30 Apr 2024 11:17:59 +0530
-Message-ID: <20240430054759.722620-5-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240430054759.722620-1-quic_periyasa@quicinc.com>
-References: <20240430054759.722620-1-quic_periyasa@quicinc.com>
+	Tue, 30 Apr 2024 06:42:54 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 20F7561447;
+	Tue, 30 Apr 2024 06:42:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D221FC2BBFC;
+	Tue, 30 Apr 2024 06:42:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1714459371;
+	bh=fdQHboO+wwZXDX18KuhgKPneJcVoTv3BPscY3vNMF9M=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=P9evOk1wfx3V5Yyau4PBE3WTeaJ6877CHJVLIU6aT0VxPQHMNI+hHRV2rQ4y5vTjJ
+	 ZsmA6WKpMt2ToYqnjE+DMUL0Aij11nuTCr23vRnVJTlgSokXQmZVPELHK8IaTvk954
+	 Y9j8Zi8R1YlJXvhTkS0dmlDVTXsbtOpEIWwbIJrJdMorfZSf4gpa5ve4F3sFV9IgF3
+	 HLOCTWIlR/egsRRv/njCEQEYqsF7xKXGe96gXE7tOiXr0S/Zai3l8Jvk4qw7LLZPP2
+	 9Z9W/fqGOEHNuhdXRvrOi/Oeh20eKDUgCMrQg0Kjialr5h/71eJTHNGBDYgkFfRq22
+	 CUtfCYwBelm2g==
+From: Kalle Valo <kvalo@kernel.org>
+To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,  <ath12k@lists.infradead.org>,
+  <linux-wireless@vger.kernel.org>,  Muna Sinada <quic_msinada@quicinc.com>
+Subject: Re: [PATCH v3 07/10] wifi: ath12k: add support for setting fixed HE
+ rate/GI/LTF
+References: <20240424201959.935-1-quic_pradeepc@quicinc.com>
+	<20240424201959.935-8-quic_pradeepc@quicinc.com>
+	<72bc6772-8bf7-427d-8f03-01e8dbf30d0c@quicinc.com>
+	<87y190fulv.fsf@kernel.org>
+	<198e317f-a849-4fe2-8080-3d1834d07481@quicinc.com>
+	<87sez4fk1o.fsf@kernel.org>
+	<51073e2c-2138-4957-a78c-2708c7742451@quicinc.com>
+Date: Tue, 30 Apr 2024 09:42:47 +0300
+In-Reply-To: <51073e2c-2138-4957-a78c-2708c7742451@quicinc.com> (Pradeep Kumar
+	Chitrapu's message of "Mon, 29 Apr 2024 18:41:37 -0700")
+Message-ID: <87ttjjpd08.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 18cwh1pTeIiJbfYCi865oOBF-b8xMb6K
-X-Proofpoint-ORIG-GUID: 18cwh1pTeIiJbfYCi865oOBF-b8xMb6K
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-30_02,2024-04-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
- suspectscore=0 malwarescore=0 spamscore=0 lowpriorityscore=0
- impostorscore=0 adultscore=0 mlxlogscore=869 phishscore=0 bulkscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404300040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240429_224823_915903_C78EC642 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20240429_234253_080159_CB1B1137 
+X-CRM114-Status: GOOD (  10.60  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,61 +80,49 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, inter device MLO is not supported. Therefore, the WBM idle ring
-buffers choose the implicit return buffer manager (DEV0_IDLE_DESC_LIST).
-However, this implicit return buffer manager design not meeting the
-requirements to support inter device MLO. In inter device MLO, multiple
-devices participate. The device specific WBM idle ring buffers transmit
-to multiple device REO rings. To distinguish between device specific WBM
-idle buffers, the setup configuration need to choose a different return
-buffer manager based on the unique identifier (device index).
+Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com> writes:
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>> I did run ath12k-check but I don't see these errors. Trying to see if
+>>> this is due to version differences. will update further once I have
+>>> more information on this.
+>>>
+>>> This is version I ran:
+>>> qca-swiss-army-knife/tools/scripts/ath12k/ath12k-check --version
+>>> ath12k-check (md5sum cb8a85242f2ec7343f6f94af9fa5ebb2)
+>>>
+>>> python:         3.6.9 (default, Mar 10 2023, 16:46:00)
+>>> [GCC 8.4.0]
+>>> host gcc:       gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+>>> config cc:      gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+>>> sparse:         v0.6.4
+>>> checkpatch.pl:  Version: 0.32 (md5sum 12ea394e9bf27280f30a684ff937cc57)
+>>> gtags:          gtags (GNU GLOBAL) 6.6.2
+>> Your sparse is too old, you need to get the latest from git:
+>> https://docs.kernel.org/dev-tools/sparse.html#getting-sparse
+>
+> Thanks Kalle and Jeff for sharing the tool versions required..
+> I am able to see the errors reported now..
+> will fix and respin the series..
+>
+> ath12k-check (md5sum cb8a85242f2ec7343f6f94af9fa5ebb2)
+>
+> python:         3.6.9 (default, Mar 10 2023, 16:46:00)
+> [GCC 8.4.0]
+> host gcc:       gcc (GCC) 13.2.0
+> config cc:      gcc (GCC) 13.2.0
+> sparse:         v0.6.4-66-g0196afe16a50
+> checkpatch.pl:  Version: 0.32 (md5sum 12ea394e9bf27280f30a684ff937cc57)
+> gtags:          gtags (GNU GLOBAL) 6.6.2
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.c | 20 +++++++++++++++++++-
- 1 file changed, 19 insertions(+), 1 deletion(-)
+I added a section about tools to the wiki:
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 9b9e86cdb380..5812df436d53 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1582,6 +1582,24 @@ static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
- 	return 0;
- }
- 
-+static enum hal_rx_buf_return_buf_manager
-+ath12k_dp_get_idle_link_rbm(struct ath12k_base *ab)
-+{
-+	switch (ab->device_id) {
-+	case 0:
-+		return HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
-+	case 1:
-+		return HAL_RX_BUF_RBM_WBM_DEV1_IDLE_DESC_LIST;
-+	case 2:
-+		return HAL_RX_BUF_RBM_WBM_DEV2_IDLE_DESC_LIST;
-+	default:
-+		ath12k_warn(ab, "invalid %d device id, so choose default rbm\n",
-+			    ab->device_id);
-+		WARN_ON(1);
-+		return HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
-+	}
-+}
-+
- int ath12k_dp_alloc(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
-@@ -1598,7 +1616,7 @@ int ath12k_dp_alloc(struct ath12k_base *ab)
- 	spin_lock_init(&dp->reo_cmd_lock);
- 
- 	dp->reo_cmd_cache_flush_count = 0;
--	dp->idle_link_rbm = HAL_RX_BUF_RBM_WBM_DEV0_IDLE_DESC_LIST;
-+	dp->idle_link_rbm = ath12k_dp_get_idle_link_rbm(ab);
- 
- 	ret = ath12k_wbm_idle_ring_setup(ab, &n_link_desc);
- 	if (ret) {
+https://wireless.wiki.kernel.org/en/users/drivers/ath10k/codingstyle#tools
+
+Feedback very welcome, it's important that our documentation is
+understandable for new developers.
+
 -- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
