@@ -4,89 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A45ECC4345F
-	for <ath12k@archiver.kernel.org>; Tue, 30 Apr 2024 19:38:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E8D7C4345F
+	for <ath12k@archiver.kernel.org>; Wed,  1 May 2024 15:34:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CwttRdqjcJx1cGT3JSFgZLgJk0qdm1CgpZaFkSvuCTg=; b=fxkZxHQpNo1kylkisASOgXgcLn
-	Y3sxTVWqWpIX7idvZSc8coK/OOR8xCk0sY9hsDpAhyJuRmMGk2JVBa8RXWBObOlz4Q8Lj28Hu5VRM
-	JGAeLDOo4qszo8+cGPvLSHKtbbibIVHnGd9eR3g4kxQLrws9OYDw6yxLWF3fsM8gd0x3V3HmXQ3Qu
-	gVfss3N8/nQ9PREDo9hCDKHpHgfWVql0zwLikXGh+Fq4r35TwWVwW20zSq0mYbEvXYvtDq6Pp4TuN
-	yYJIrctuzrNLVZYM5ojrVs3m/35rbbVZaaDeU8Zi1z3mjgoRxXnBUuNQNq5G1xY+7U/1y3vsYCBwC
-	DQNChOnA==;
+	bh=d3z4gnYwvECJLlfvck2YkKbkaGeicKfs2PQmY7Pzr3U=; b=rnP8xWb/KUDADRTqRCP5tkKU43
+	uhJrsrnZaIJ3RYB/SJQ0LlsbeS33m72eb0UxrFon5t6DxCrXOBaJz++0Da0FlXDfxZDjdH8TtzRu/
+	TGdJbvGlplFOdZvB3TH4sqWyjvthEvB1OklkRFYMP7lUUHw3elQKTjmqL+4FdVzq5Vx8GVwGYKeZT
+	970y2DOEAabuuc4qt8VRqrVFe+SDhTRMOkPxfKnjHDT8FcN5LGuxCExm0+ORGB8/g9YFPVqNuXt7U
+	Yg6ojxhIrXIXmjFlUl9O7aXzKW2gVg7Jw0tnWgQGeUqWh6kN/91aqG0gkH/YpM6B3keDABJCpgZpK
+	yQ4Qc5Ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1tIk-00000007kAd-1XvH
+	id 1s2ByW-0000000A09C-0c8q
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Apr 2024 19:38:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 01 May 2024 15:34:28 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1tIg-00000007kAJ-3Car
+	id 1s2ByS-0000000A085-3Z8q
 	for ath12k@lists.infradead.org;
-	Tue, 30 Apr 2024 19:38:04 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43UGMdHT028460;
-	Tue, 30 Apr 2024 19:38:01 GMT
+	Wed, 01 May 2024 15:34:26 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 441Bnx9q009312;
+	Wed, 1 May 2024 15:34:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	message-id:date:mime-version:subject:to:cc:references:from
 	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=CwttRdqjcJx1cGT3JSFgZLgJk0qdm1CgpZaFkSvuCTg=; b=XB
-	xKa+3bjelfpqLFaiklQIgfyVmfrIKXl2jarOFAPPxiv2kjSsHpP460p86uT7z1fW
-	eTRt8QpECKkonrfP/TAnd0hWhLAIFeFibkxg3DfIXYJrDHGugUGHNISHbVdjsRks
-	HHZEGEbxN02DcJc5K/UT1Amit0DU2E5avkr2vy3pJ6r1tbOWYhKhhNnM5mt10WIe
-	mc6hclBNa+THvvrH095+TTKqA+/lv4khE/z89V5iI2ydOUy3q/y0SPfaoJomeLGm
-	FyBe2Tdqn69KOGMf2ZiUn0oQOd3PEVsarMEdhgkFEhElPXWeXHfdn+C6+1baL/DB
-	wRiD16nGm8B2g0BI8ttA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xtsnmabgd-1
+	qcppdkim1; bh=d3z4gnYwvECJLlfvck2YkKbkaGeicKfs2PQmY7Pzr3U=; b=UB
+	99ii33f76hz1+A0dvnwJIkXkm840biV7iRJqVomEqKWQEKJ/UEwv2Xw1Cczjr0AN
+	Z2P3P1txWaxrlKoABxPPXMXpmUTjqSzNhSCVq/UR5ACEXH/GNPQeD0DnbN9/KMAm
+	yfcxdb9NhuUxwuASRtW9wZGOqU+FjUe2mPmRuSvNIKz4kxFCTq0H4RkzdABmchiQ
+	0aXge/BdklzFn2/A3khV2qXldIUSq/gVOnygrOlcbyHgXlXhypKRpG7Lu0GC5Md5
+	h+5WmmT/3fZUQFsiLPQJsvPF2R4E4wWs3/RMlrvvIUEHEINSDZTbeOhsNzBEn61z
+	dmLfxi+WzzbLXbsd9EUQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xueu91570-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 19:38:00 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43UJc0MW009400
+	Wed, 01 May 2024 15:34:10 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 441FY951012602
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 19:38:00 GMT
-Received: from [10.110.13.147] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 30 Apr
- 2024 12:37:59 -0700
-Message-ID: <20086e83-4288-4ce4-a88e-de8aced210c6@quicinc.com>
-Date: Tue, 30 Apr 2024 12:37:59 -0700
+	Wed, 1 May 2024 15:34:09 GMT
+Received: from [10.216.57.16] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 1 May 2024
+ 08:34:07 -0700
+Message-ID: <824269da-c69d-668b-4e6b-d0453c4572c1@quicinc.com>
+Date: Wed, 1 May 2024 21:04:04 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCHv4 3/3] wifi: ath12k: Remove unused tcl_*_ring
- configuration
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.0
+Subject: Re: [PATCH v2 0/8] wifi: ath12k: Introduce device group abstraction
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240425055759.1181165-1-quic_hprem@quicinc.com>
+ <87le4voyka.fsf@kernel.org>
 Content-Language: en-US
-To: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240430091414.2486196-1-quic_tamizhr@quicinc.com>
- <20240430091414.2486196-4-quic_tamizhr@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240430091414.2486196-4-quic_tamizhr@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
+From: Harshitha Prem <quic_hprem@quicinc.com>
+In-Reply-To: <87le4voyka.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 4lxJM519WfVfpTMSzkjo4rOAxQnqZos3
-X-Proofpoint-ORIG-GUID: 4lxJM519WfVfpTMSzkjo4rOAxQnqZos3
+X-Proofpoint-GUID: mcvGBRj7deCRL4nfIv3UFSfP-uUAA35b
+X-Proofpoint-ORIG-GUID: mcvGBRj7deCRL4nfIv3UFSfP-uUAA35b
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-30_12,2024-04-30_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
- suspectscore=0 malwarescore=0 spamscore=0 lowpriorityscore=0
- impostorscore=0 adultscore=0 mlxlogscore=981 phishscore=0 bulkscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404300140
+ definitions=2024-05-01_15,2024-04-30_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=804 malwarescore=0 lowpriorityscore=0 priorityscore=1501
+ clxscore=1015 mlxscore=0 impostorscore=0 adultscore=0 bulkscore=0
+ phishscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2405010110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240430_123802_904174_C1F84702 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20240501_083425_087913_61DDAF3B 
+X-CRM114-Status: UNSURE (   6.82  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,17 +101,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/30/2024 2:14 AM, Tamizh Chelvam Raja wrote:
-> Currently memory allocation for multiple hardware rings done
-> in host as these memory will be used by firmware/hardware.
-> But in case of tcl_cmd_ring and tcl_status_ring neither firmware
-> nor hardware uses host allocated memory and it uses memory
-> allocated by firmware itself. So avoid tcl_cmd_ring and
-> tcl_status_ring setup in host.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
+
+On 4/30/2024 5:24 PM, Kalle Valo wrote:
+> 47] WARNING: possible circular locking dependency detected
+> [  147.211599] 6.9.0-rc5-wt-ath+ #1403 Not tainted
+
+Thank you, Kalle, for sharing the full logs. Unfortunately, I did not 
+see this warning in my testbed with QCN9274.
+
+Seems like during rmmod case, ath12k_core_soc_destroy() is invoked with 
+ag->mutex lock which in-turn invokes ath12k_qmi_deinit_service() where 
+cancel_work_sync for qmi events are called. So, if 
+ATH12K_QMI_EVENT_FW_READY was in queue during rmmod, it would hit a 
+deadlock as in core start it requires ag->mutex lock. But, this scenario 
+is quite unlikely to occur where rmmod and FW_READY event are going to 
+be in parallel. Nevertheless, it has to be addressed. I will check 
+further on this warning and see how to address this.
+
+Thanks,
+Harshitha
 
