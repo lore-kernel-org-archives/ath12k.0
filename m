@@ -4,89 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F8B3C4345F
-	for <ath12k@archiver.kernel.org>; Wed,  1 May 2024 16:55:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC5D1C4345F
+	for <ath12k@archiver.kernel.org>; Thu,  2 May 2024 10:16:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XRpm/sdx8K4n8j1vToaQ8zfiJF4VvppikFnC1BBmYhc=; b=Ly32bUkPfnGv3aPxAenBc66HCK
-	GixnIkznFLRVVRp6PdroFz+DI3s7HoirmmIxznsykgZJvts9LWzp3VQ2bdJ9sTHkyecTPs9pDvZpr
-	woBmbEIneEKlIgUWltJCQ2Vrd0w98lPB2yaxf8fMn8Vzki6UqYrTHhljalToycnqQKagEgcMe3Lya
-	SaaBv48oqwVywuup06VdXgzWbMf7qSg606f9mtY9RcZOEVOhrJxXemN+82OXSWFxb7jrlD3PiR7Bi
-	f6daOT9IwVO+dV04TJuupd08h7p9qhqwj3AKXqghztRO6Pxwy6WqYveqRMnXqViPgbWq907j/gwV3
-	+B/iQ2ow==;
+	bh=SkXpY4A0t0K/IdmfsoA3rc3ydfEz4HjqgcCMAHrsi7Y=; b=el6iS+jfdgilKughfzYgFyNhVn
+	iV+ED/vLvCUV8SSpwcYTXMohpCSRAzmhV7mnF63NIYrVE5nJZgDPOrbeTeNtiUtyrCU+D/BVQPzg6
+	hDPcwCD8Meg8teWabaCVZ2z8CuvNRmgiBxgCuDjfRncHGqvJa8XqmaQopxav6E4GvOxB4uRr86uoj
+	+FgN54F4yP6q98sHFQiM90vmuDhsZjYSAn2iMbypxe8nWx8TW71Ju0FKHyHBg29uwssjWboxKWmsQ
+	Tt5M8LHz0vL2Vw+x6lkDgtjUODLZBHbuy1ZBXMCJjDsSy+iSrePn9hhhnep9BfkHMVEkaX0rmluDC
+	DDP5e4Xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2DF5-0000000AESY-1BQQ
+	id 1s2TUk-0000000CIkA-26WI
 	for ath12k@archiver.kernel.org;
-	Wed, 01 May 2024 16:55:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 02 May 2024 10:16:54 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2DF2-0000000AERF-0Tl3
+	id 1s2TUh-0000000CIjk-06TY
 	for ath12k@lists.infradead.org;
-	Wed, 01 May 2024 16:55:37 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 441Go61Z020952;
-	Wed, 1 May 2024 16:55:32 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=XRpm/sdx8K4n8j1vToaQ8zfiJF4VvppikFnC1BBmYhc=; b=ZS
-	H31iQmRY4scxDiFPwxDu5mRwTv+I0ii1g730E0YluOQsmr6V0VUyRdQCVS4cvXe+
-	eyPAbjCwkNpDmSjuNDprEXPBEv3qd9gaNOUoW9TD9nnfKxL41wuNkxDvd3xHFulc
-	o8IRIIj5VO/rqje8h/YBGvUzc/JAfzwSyn0wspmPvmNoxdUTN33Ydvv1I4mgtHNE
-	JbG69n9qjBfWsyc7ld37Fa9m5BzQzidJ8BfXQH+FI9WqFxXOYL8A7/hi/pID5a7x
-	gIByorwn7LK0XIrIh9VreFcR0XTzS24z12yjG7H09onL0U9i82rLWEaxaUdtECym
-	DzgjAA1m48fJBYte8l9w==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xu71ja0k0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 01 May 2024 16:55:32 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 441GtVNq011542
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 1 May 2024 16:55:31 GMT
-Received: from [10.110.13.147] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 1 May 2024
- 09:55:30 -0700
-Message-ID: <b9fe599c-a0fb-40ad-9cde-0bd311ce17b7@quicinc.com>
-Date: Wed, 1 May 2024 09:55:23 -0700
+	Thu, 02 May 2024 10:16:52 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 0C771CE12F2;
+	Thu,  2 May 2024 10:16:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 165C7C113CC;
+	Thu,  2 May 2024 10:16:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1714645007;
+	bh=RC+YsNvF5u9BaYOcoKiAusrWX9nqtl9ZOmyWCsuEoj4=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=kHR5z81P7ZS/PzfaXM6qZwUMqD7IbD6nBK7h8WN2EHZTglsXeyG/wEo7Q+22V/Lxz
+	 bMs68s3kDk/jNVWWVZ7GQOYRTInuKIxSx+AY/qfvparJls4FTZho4I+u80V0ipOWG3
+	 xj5nT7nwwUDKCibQos9NXyM+OZRU/GYQusQMEeb6Zws0a+0d5EUqqamwllgD6MJN9O
+	 jukiIl7hTKgQJnlFDs8tgCy3fEXgZCF60IfKJvdAC4SYcvn0BaLX0092FO1rE+FCAT
+	 7pqhPGRT9fc9POf6FTneRO3BqgE49OEXcYcJG+tBXLmpDNdBw2CTMfX1QF8eJHyu3w
+	 y/voEH4VqyJHQ==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 0/8] wifi: ath12k: Introduce device group abstraction
-Content-Language: en-US
-To: Harshitha Prem <quic_hprem@quicinc.com>, Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240425055759.1181165-1-quic_hprem@quicinc.com>
- <87le4voyka.fsf@kernel.org>
- <824269da-c69d-668b-4e6b-d0453c4572c1@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <824269da-c69d-668b-4e6b-d0453c4572c1@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 6gbE9shhYxB5viRE32Y36hov9MjMSKw1
-X-Proofpoint-ORIG-GUID: 6gbE9shhYxB5viRE32Y36hov9MjMSKw1
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-01_16,2024-04-30_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- mlxlogscore=621 bulkscore=0 adultscore=0 priorityscore=1501
- impostorscore=0 phishscore=0 mlxscore=0 lowpriorityscore=0 spamscore=0
- clxscore=1015 malwarescore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2404010003 definitions=main-2405010119
+Content-Transfer-Encoding: 8bit
+Subject: Re: [PATCH] wifi: ath12k: fix the problem that down grade phy mode
+ operation
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240425083837.5340-1-quic_lingbok@quicinc.com>
+References: <20240425083837.5340-1-quic_lingbok@quicinc.com>
+To: Lingbo Kong <quic_lingbok@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ <quic_lingbok@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171464500387.548512.12268613053950785024.kvalo@kernel.org>
+Date: Thu,  2 May 2024 10:16:45 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240501_095536_194266_EE437700 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240502_031651_449755_F8E28E22 
+X-CRM114-Status: GOOD (  14.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,19 +74,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 5/1/2024 8:34 AM, Harshitha Prem wrote:
-> 
-> 
-> On 4/30/2024 5:24 PM, Kalle Valo wrote:
->> 47] WARNING: possible circular locking dependency detected
->> [  147.211599] 6.9.0-rc5-wt-ath+ #1403 Not tainted
-> 
-> Thank you, Kalle, for sharing the full logs. Unfortunately, I did not 
-> see this warning in my testbed with QCN9274.
+Lingbo Kong <quic_lingbok@quicinc.com> wrote:
 
-I didn't see it in my testing either, which caused me to look at my .config
-and notice that I didn't have any of the lock debugging enabled.
+> Currently, when using WCN7850 or QCN9274 as AP, ath12k always performs down
+> grade phy mode operation regardless of whether the firmware supports EHT
+> capability or not and then vdev will start in HE mode. When stations that
+> support EHT capability try to connect to the AP, the AP will set phy mode
+> to EHT after receiving the association request packet, and then send
+> WMI_PEER_ASSOC_CMDID command to firmware, AP’s firmware will crash.
+> 
+> This is because when the ath12k_mac_copy_sband_iftype_data() function
+> handles EHT capability, it does not copy the EHT capability into the
+> iftype[band][type] array according to the interface type. So, interface
+> type should not be used as an index to get eht_cap in
+> ath12k_mac_check_down_grade_phy_mode() function.
+> 
+> To address this issue, use types_mask to select the eht_cap in
+> ath12k_mac_check_down_grade_phy_mode() function.
+> 
+> This patch affects QCN9274 and WCN7850 because they have the same issue.
+> 
+> Hostapd log:
+> wlo1: STA 02:03:7f:37:12:34 IEEE 802.11: Could not set STA to kernel driver
+> 
+> Kernel log:
+> [270894.816076] ath12k_pci 0000:03:00.0: failed to send WMI_PEER_SET_PARAM cmd
+> [270894.816111] ath12k_pci 0000:03:00.0: failed to setup peer SMPS for vdev 0: -108
+> [270894.816122] ath12k_pci 0000:03:00.0: Failed to associate station: 02:03:7f:37:12:34
+> [270894.843389] ieee80211 phy5: Hardware restart was requested
+> [270894.843517] ath12k_pci 0000:03:00.0: failed to lookup peer 02:03:7f:37:12:34 on vdev 0
+> [270894.843616] ath12k_pci 0000:03:00.0: failed to send WMI_PEER_DELETE cmd
+> [270894.843650] ath12k_pci 0000:03:00.0: failed to delete peer vdev_id 0 addr 02:03:7f:37:12:34 ret -108
+> [270894.843663] ath12k_pci 0000:03:00.0: Failed to delete peer: 02:03:7f:37:12:34 for VDEV: 0
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Have fixed that now.
+Patch applied to ath-next branch of ath.git, thanks.
+
+bf76b144fe53 wifi: ath12k: fix the problem that down grade phy mode operation
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240425083837.5340-1-quic_lingbok@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
