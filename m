@@ -4,63 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC60DC4345F
-	for <ath12k@archiver.kernel.org>; Fri,  3 May 2024 13:21:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18DAAC4345F
+	for <ath12k@archiver.kernel.org>; Fri,  3 May 2024 14:45:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2nqu2FQ5722jTXlNyWUONf2pbFhQB8TkFtTD7OCOeq8=; b=H7BHwRTcrQvOYk3XJL24q3EWvb
-	+3LjsL5371fno0PIEj+Ts/M3SGQ0PMHCn1YRR5sbrAJU3QuL8N7jGK41kTbf+sbsJ7QmZsDew7sKs
-	jhJOUM8IjT4MABvXVaFD0kHaKWLqGo92jjiAeEvwz9RQb1ZEN7CIbNYE4Jdj6XKqR6g2IUsf+Mt9k
-	/REc8N6xD2KRYVLGXjwgSRXnOKtA+tVKEnS7BMJ2ovnQGJFSP5ZMQmLozKTSKvYlJ5/Df5xB3rc/v
-	pq4grXrBnqRDTCfbHtukBnPZbwzoLyv+KEp4so1N2Lw5SSVHmE4W7AHpHx9WUXYUT/MmD8DJJmZnN
-	+PLyXtwg==;
+	bh=3KH+WKs3dkeXyUiLf3eosfs6mewzmj9qJ50XRDAHZRo=; b=fOf1kK9OHNi1TOBI0QZKOPHncg
+	V0OYuzcNGyi7hAHgTSJ8qTEb9OkWmkudRreR6UkleczMTk15tRBiejpgeWppVauDy28dQ7K8Oneay
+	FcqIdwAlb+a19QDfvz11FL5ucO2W8/weZ/LcoFxRO+wxg9mQWdkHItfxBxHkT2y69O5rh1TFIMExd
+	7+IKvKfvEf1aYkeMqOoF2k8r2e19ieUutAZdkl6kfcr6CTVzosKC0hLOj+vL5xEoOzG9/2DKDR2Jd
+	3yVBKeqe+Ikm5dLEE5IxxaOZ5BeT430Tz7sJQYrTJT2zJB3OzS3d3ENawqn87emBzezhcIXEsDmDc
+	GxFfUw7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2srG-0000000Ge4b-1lou
+	id 1s2u9t-0000000GuCQ-2zjy
 	for ath12k@archiver.kernel.org;
-	Fri, 03 May 2024 13:21:50 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Fri, 03 May 2024 14:45:09 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2srE-0000000Ge3K-1DhS
+	id 1s2u9q-0000000GuBh-0cOx
 	for ath12k@lists.infradead.org;
-	Fri, 03 May 2024 13:21:49 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7A10361BFB;
-	Fri,  3 May 2024 13:21:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BEF62C116B1;
-	Fri,  3 May 2024 13:21:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1714742507;
-	bh=5A+4VMOE5esq7k/mQ4qGrJuFbSYMx+6xtBVixfCxXpQ=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=b9U3vP8rnYJmMMr22HRkOkyFw58eEwGkBktVRbQ+0pjktXhncwH6udbD5laFFKkIe
-	 LHPRna5SQz6L4hUYWz11O+IOusZKDypumhS0pt4QRUA5l8X3ud8MfHFobK+9wnNVFo
-	 9HFebtg57govGRzZhKu/akIu5WI7gFXKN3B1/yddJ93jIfP1Du+LNEZNKmhqae6Qrj
-	 aangT19HnyTd+Ncge9R4Dj8OxyRf1GqH6MaeLHv+YqZ6qu+Pbnkx/mYHpFg3vfCQQs
-	 3yBr0dxQ8DINkYNV8j1bREGMFHT9OrroXyMdvtnActXw5DCgxqUhxWa31khFzS6Xag
-	 TrKDe6EJ1ZL0g==
-Content-Type: text/plain; charset="utf-8"
+	Fri, 03 May 2024 14:45:08 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 443ERXCt006149;
+	Fri, 3 May 2024 14:45:04 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:cc:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=3KH+WKs3dkeXyUiLf3eosfs6mewzmj9qJ50XRDAHZRo=; b=oK
+	mco/UHsTxRCMGinfuzfvKvVFz/7bXUzatWRwlcdttKUY3xhkGjdLyz1lj7UdT97F
+	6i6nZttLuCG4Zrq0JHRgCjX1o8h6qdMhpzRp7y8e/m2IANbuSKc+urn9sA0vtSxJ
+	ofHC/VIImzMyXhEDY2XKpnLj6Ppv0YzOaf9upUSWz52+rB8Bx8SeiH9QtznCXBQM
+	yM12MQWGmR6giD0CMgqkPa8E2tkZlQ7SfOs+vg8TPgmjAlgO9c55kkjWzMHmA4bK
+	Duq7iDD5YJ/6ZpyPBOIHotyIsqSB13QssMTzhNs/KfasKSXWnhiY3dBhTro/RxQm
+	F/Q4UWqukR8yQm2bbKIA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xvawbjt9p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 03 May 2024 14:45:04 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 443Ej3Ua012697
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 3 May 2024 14:45:03 GMT
+Received: from [10.110.94.246] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 3 May 2024
+ 07:45:03 -0700
+Message-ID: <f45e12e1-ad97-4e6c-a8d7-b077f17158cb@quicinc.com>
+Date: Fri, 3 May 2024 07:45:02 -0700
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/3] wifi: ath12k: prepare vif and sta datastructure
+ for MLO handling
+Content-Language: en-US
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+References: <20240502171240.927155-1-quic_ramess@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240502171240.927155-1-quic_ramess@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH v4 1/2] wifi: ath12k: Don't drop tx_status in failure case
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240430074313.885807-2-quic_kathirve@quicinc.com>
-References: <20240430074313.885807-2-quic_kathirve@quicinc.com>
-To: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Sven Eckelmann <sven@narfation.org>,
- Sarika Sharma <quic_sarishar@quicinc.com>, Karthikeyan Kathirvel
-	<quic_kathirve@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171474250421.1512332.1102670293581552421.kvalo@kernel.org>
-Date: Fri,  3 May 2024 13:21:45 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: PZ_ji8_zkPm_ivFLCxuaI-Zse6E9pLa8
+X-Proofpoint-ORIG-GUID: PZ_ji8_zkPm_ivFLCxuaI-Zse6E9pLa8
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
+ definitions=2024-05-03_09,2024-05-03_02,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
+ malwarescore=0 bulkscore=0 suspectscore=0 priorityscore=1501
+ impostorscore=0 lowpriorityscore=0 spamscore=0 clxscore=1015 adultscore=0
+ mlxlogscore=936 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2405030104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240503_062148_433523_31A58BD6 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20240503_074506_239132_7DD11BB8 
+X-CRM114-Status: GOOD (  13.93  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,46 +100,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Kathirvel <quic_kathirve@quicinc.com> wrote:
-
-> When a station idles for a long time, hostapd will try to send
-> a QoS Null frame to the station as "poll". NL80211_CMD_PROBE_CLIENT
-> is used for this purpose.
-> And the skb will be added to ack_status_frame - waiting for a
-> completion via ieee80211_report_ack_skb().
+On 5/2/2024 10:12 AM, Rameshkumar Sundaram wrote:
+> From: Sriram R <quic_srirrama@quicinc.com>
 > 
-> But when the peer was already removed before the tx_complete arrives,
-> the peer will be missing. And when using dev_kfree_skb_any (instead
-> of going through mac80211), the entry will stay inside
-> ack_status_frames thus not clean up related information in its
-> internal data structures. This IDR will therefore run full after
-> 8K request were generated for such clients.
-> At this point, the access point will then just stall and not allow
-> any new clients because idr_alloc() for ack_status_frame will fail.
+> To prepare the driver for MLO support, split the driver vif and sta
+> data structure to scale for multiple links. This requires changing
+> the use of arvif and arsta to per link and not per hw which can now
+> comprise of multiple links.
+> Also since most configurations from mac80211 are done per link,
+> do refactoring of the driver functions to apply these configurations
+> at link level.
+> Add the required locking changes to synchronize the usage of these
+> per link objects.
 > 
-> ieee80211_free_txskb() on the other hand will (when required) call
-> ieee80211_report_ack_skb() and make sure that (when required) remove
-> the entry from the ack_status_frame and clean up related
-> information in its internal data structures.
+> ---
+> v2:
+>  - Rebased PATCH 1/3 on ToT as b0afabc4d7e0 (wifi: ath12k: add support to
+>    handle beacon miss for WCN7850) has introduced few APIs that use
+>    arvif.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > 
-> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-> Signed-off-by: Sven Eckelmann <sven@narfation.org>
-> Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
-> Signed-off-by: Karthikeyan Kathirvel <quic_kathirve@quicinc.com>
-> Link: https://lore.kernel.org/r/20230802-ath11k-ack_status_leak-v2-1-c0af729d6229@narfation.org
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> Sriram R (3):
+>   wifi: ath12k: prepare vif data structure for MLO handling
+>   wifi: ath12k: pass ath12k_link_vif instead of vif/ahvif
+>   wifi: ath12k: prepare sta data structure for MLO handling
+> 
+>  drivers/net/wireless/ath/ath12k/core.h   |  84 ++-
+>  drivers/net/wireless/ath/ath12k/dp.c     |  21 +-
+>  drivers/net/wireless/ath/ath12k/dp.h     |   3 +-
+>  drivers/net/wireless/ath/ath12k/dp_mon.c |  14 +-
+>  drivers/net/wireless/ath/ath12k/dp_rx.c  |  16 +-
+>  drivers/net/wireless/ath/ath12k/dp_rx.h  |   2 +-
+>  drivers/net/wireless/ath/ath12k/dp_tx.c  |   9 +-
+>  drivers/net/wireless/ath/ath12k/dp_tx.h  |   4 +-
+>  drivers/net/wireless/ath/ath12k/mac.c    | 861 +++++++++++++++--------
+>  drivers/net/wireless/ath/ath12k/mac.h    |   9 +-
+>  drivers/net/wireless/ath/ath12k/p2p.c    |  17 +-
+>  drivers/net/wireless/ath/ath12k/p2p.h    |   2 +-
+>  drivers/net/wireless/ath/ath12k/peer.c   |   7 +-
+>  drivers/net/wireless/ath/ath12k/peer.h   |   4 +-
+>  drivers/net/wireless/ath/ath12k/wmi.c    |  12 +-
+>  15 files changed, 684 insertions(+), 381 deletions(-)
+> 
+> 
+> base-commit: 25a42664a2e2587f2582e0717f2a71d0bdcc4be0
 
-2 patches applied to ath-next branch of ath.git, thanks.
-
-5453bbd6fef4 wifi: ath12k: Don't drop tx_status in failure case
-50971dc6694c wifi: ath12k: drop failed transmitted frames from metric calculation.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240430074313.885807-2-quic_kathirve@quicinc.com/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+Kalle, please don't merge this.
+I'm seeing an firmware crash on x86 WCN7850 with this version
 
