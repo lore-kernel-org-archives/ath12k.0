@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D3FBC25B5F
-	for <ath12k@archiver.kernel.org>; Sat,  4 May 2024 18:52:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 068FBC4345F
+	for <ath12k@archiver.kernel.org>; Sat,  4 May 2024 18:52:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tXqFfX4R6UCYqJBpv6ktmXUuaMSGNMfXdNIKq3qdK54=; b=OnYuCO+kdnCfbpBh0E77fBshGM
-	mO2UGhILkZgvd+oVWDzf82RCVyNK/dSUNnnArvyR0MlMMRkVpyENs3zqRRdb6xyV3vxfsdqTKfxGg
-	LnClE8aB2XvD+KuqvPC5dbjSR8mGOCsdVwaEbW3Bmsqc9BH7rU9enapaHsR2nTUCifDqk/KHJUAXI
-	HIYMPLWMAx3TyXl3mO/NpxQyv3xDJJyq/PUrQe6OEDzyDHO+f6FSVCszLd3Hl1JfVtHM36tN9ARSa
-	1wneYclisyXdwXu0UD/9cuzMzVWeWI/upHdhrKo0x6VdiidWxwcAwV9hadmFchjX6rXwp+vcOlsDS
-	+z5eoGNg==;
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=y+Pu2WbaurNiZHtsN5yWF43RlTvIiy0IdncUgCZe1V4=; b=ALvIMD1aROFubF
+	d4CxbikKJ+jNCUKlTiP47FGPOcZdeU9+DLto8OJvfkaKzYeyUNmbRyB8PHnhk7yvBlCk1tfcfgM2d
+	6d5WKdj5GGhXpVoJgYKR6gmP3yqc7ysjYguCQVEQ6OsOuWAAQVqEKyJKEK0jpbHY4k6JPXItcuY0r
+	kUUXlEVHDChZ+WAchxsBpMHoazgll4cpD5PHpOYSERcV5jeRjc4OLv/b+wPwIus8cdWQqZzSuETe0
+	fi0KelqjKk+RiYXUlsu9QDruoZsHkKJPxo8HwsEIjhTbzc8OyAtE93PhoX3ec6S0XujLjP2vhlQzR
+	xwTc+pj+4xZB9DzGSU3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s3KUn-00000002fax-0crp
+	id 1s3KV0-00000002ffp-2fa9
 	for ath12k@archiver.kernel.org;
-	Sat, 04 May 2024 18:52:29 +0000
+	Sat, 04 May 2024 18:52:42 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s3KUi-00000002fZM-37zh;
-	Sat, 04 May 2024 18:52:26 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 444Ho1Ox023598;
-	Sat, 4 May 2024 18:52:21 GMT
+	id 1s3KUx-00000002feD-3X2d;
+	Sat, 04 May 2024 18:52:41 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 444Hpqct010093;
+	Sat, 4 May 2024 18:52:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:date:subject:mime-version:content-type
-	:content-transfer-encoding:message-id:references:in-reply-to:to
-	:cc; s=qcppdkim1; bh=tXqFfX4R6UCYqJBpv6ktmXUuaMSGNMfXdNIKq3qdK54
-	=; b=B/N3M8TNwpumOzhy0Rr5RSooGTotKd1qF774hPhbbludcqnRd8P2gvpNuoV
-	EmWqivsGxrV+3SCSPjp1btVNQ4aFonlIyN+z09KD4jOnOnp/ZeVftUgCiujp6rZy
-	TwIf4nyFyc6epn3B/jFXd7uEKnptpiMm57EBz+MDCJSPr6MioyDxPl2P7GvnCqAP
-	iJx1fq3lzONxjjqymlTmLsxvkMsTdY9si1ZzlTP8AqdvXhC4trePUeYfNov/xa46
-	zV03UBELjg263xZyZez/rIpQOQECaoDYmO7N2k6l8xxSmXDk7mKgLtPpCglAvwlp
-	omO9164qTwwQECAj4tylwR7MANQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xwcbpgyew-1
+	from:subject:date:message-id:mime-version:content-type
+	:content-transfer-encoding:to:cc; s=qcppdkim1; bh=y+Pu2WbaurNiZH
+	tsN5yWF43RlTvIiy0IdncUgCZe1V4=; b=iU6e4UdQlkLK30XcwnZnegIhKfkieT
+	/X+kexxW+pfs8qI85ahjp70cgnTl+fNlAjHlal+3DljT1Blt6nnhm4g2fVYHsn8j
+	0xePjHW0ZCaD7BFBN5GpfvWJSfKjtm3SfSpnE7hGjxjVUQsn4f9nyinVBArigMfE
+	HEleR8nFjXr5747smmQIdPqgyYilWCg0y6f8g023R83jvpOYECpACHbQz9hlfhIS
+	KkOAKmhIT4bAfgQx6ApT5OKBBLExz8L4nZPLSAjzVlGSB7rJ1OoP2ZIGKuAbxdeb
+	uNJMjrtZEcyUcO935iJVkzwR0Up3rvGH+2wCZDA17QOdedlAVPAyGa2g==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xwc1c1080-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 04 May 2024 18:52:21 +0000 (GMT)
+	Sat, 04 May 2024 18:52:36 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 444IqAhm017708
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 444Iq9Z4032308
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 4 May 2024 18:52:10 GMT
+	Sat, 4 May 2024 18:52:09 GMT
 Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 4 May 2024
  11:52:09 -0700
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Date: Sat, 4 May 2024 11:52:09 -0700
-Subject: [PATCH 2/2] wifi: ath11k: initialize 'ret' in
- ath11k_qmi_load_file_target_mem()
+Subject: [PATCH 0/2] wifi: ath1*k: initialize 'ret' in
+ ath1*k_qmi_load_file_target_mem()
+Date: Sat, 4 May 2024 11:52:07 -0700
+Message-ID: <20240504-qmi_load_file_target_mem-v1-0-069fc44c45eb@quicinc.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20240504-qmi_load_file_target_mem-v1-2-069fc44c45eb@quicinc.com>
-References: <20240504-qmi_load_file_target_mem-v1-0-069fc44c45eb@quicinc.com>
-In-Reply-To: <20240504-qmi_load_file_target_mem-v1-0-069fc44c45eb@quicinc.com>
+X-B4-Tracking: v=1; b=H4sIANeDNmYC/42OQQ6DIBREr2JYlwYJtE1XvUdjyBe++hPBCtS0M
+ d696Am6fMnMm1lZwkiY2L1aWcSFEk2hQH2qmB0g9MjJFWZSSCW0UHz2ZMYJnOloRJMh9piNR8+
+ 1dVLpWw3grqzUXxE7+hzqZ1O4hYS8jRDssAs9pIxxDw6U8hS/x4VF7vE/1hbJBVcXaRGVUwL0Y
+ 36TpWDPdvKs2bbtB4HxdjTbAAAA
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
 CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
         <linux-kernel@vger.kernel.org>, <ath11k@lists.infradead.org>,
@@ -73,19 +74,20 @@ X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: NILcRBS6aMCbnrJnrdmYpC3_YSFJvcIb
-X-Proofpoint-GUID: NILcRBS6aMCbnrJnrdmYpC3_YSFJvcIb
+X-Proofpoint-GUID: KFSPXwTnkF6OWmngEcwBFT3AHE4BTtCS
+X-Proofpoint-ORIG-GUID: KFSPXwTnkF6OWmngEcwBFT3AHE4BTtCS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-05-04_15,2024-05-03_02,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- bulkscore=0 malwarescore=0 adultscore=0 impostorscore=0 mlxscore=0
- suspectscore=0 phishscore=0 priorityscore=1501 clxscore=1015 spamscore=0
- mlxlogscore=944 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 spamscore=0
+ lowpriorityscore=0 phishscore=0 suspectscore=0 priorityscore=1501
+ malwarescore=0 mlxlogscore=484 adultscore=0 bulkscore=0 impostorscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2404010003 definitions=main-2405040127
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240504_115224_969402_77895F35 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20240504_115240_081722_884A3830 
+X-CRM114-Status: UNSURE (   7.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,38 +102,19 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-smatch flagged the following issue:
+smatch flagged the following issue in both ath11k and ath12k:
+ath1*k_qmi_load_file_target_mem() error: uninitialized symbol 'ret'
 
-drivers/net/wireless/ath/ath11k/qmi.c:2401 ath11k_qmi_load_file_target_mem() error: uninitialized symbol 'ret'.
-
-The reality is that 'ret' is initialized in every path through
-ath11k_qmi_load_file_target_mem() except one, the case where the input
-'len' is 0, and hence the "while (remaining)" loop is never entered.
-But to make sure this case is also handled, add an initializer to the
-declaration of 'ret'.
-
-No functional changes, compile tested only.
-
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
+Jeff Johnson (2):
+      wifi: ath12k: initialize 'ret' in ath12k_qmi_load_file_target_mem()
+      wifi: ath11k: initialize 'ret' in ath11k_qmi_load_file_target_mem()
+
  drivers/net/wireless/ath/ath11k/qmi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
-index d4a243b64f6c..aa160e6fe24f 100644
---- a/drivers/net/wireless/ath/ath11k/qmi.c
-+++ b/drivers/net/wireless/ath/ath11k/qmi.c
-@@ -2293,7 +2293,7 @@ static int ath11k_qmi_load_file_target_mem(struct ath11k_base *ab,
- 	struct qmi_txn txn;
- 	const u8 *temp = data;
- 	void __iomem *bdf_addr = NULL;
--	int ret;
-+	int ret = 0;
- 	u32 remaining = len;
- 
- 	req = kzalloc(sizeof(*req), GFP_KERNEL);
-
--- 
-2.42.0
+ drivers/net/wireless/ath/ath12k/qmi.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+---
+base-commit: 2c4d8e19cf060744a9db466ffbaea13ab37f25ca
+change-id: 20240504-qmi_load_file_target_mem-5cd24581aad7
 
 
