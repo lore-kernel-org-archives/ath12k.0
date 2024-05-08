@@ -4,89 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 241E5C04FFE
-	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 17:28:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE621C04FFE
+	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 17:32:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/Znukd4a9vLSq9iBLbwtwUpukVCClnHX+oVKK1a4Xt0=; b=GpPyh6W6hn3LD3HuUDSQF8kGbK
-	FLnmgIRKTUObo+hJy/AhNeO8p5M3OwKc5mVBg5jPtNxu/WhBXPvoo8oEb8v2OZC8M0JHJpnIfGnxb
-	2yXqYWJucr0KlgcCzKpOliAH5jSH+4veFn8xSBzbl5m5QyDfT6AN8uzMtxDcG89uFtqZt8J03SLMF
-	8Qz68GewKeX9YFNLfPCMzAgGOk6A2CCnAO2H16xsP6Yi5t9N2sbatofCFxImInK/swC0BSFsk7M5Q
-	PzvLPcex9Q5yNi9VMiwqVxWQsYWgNdrnVaAKlabTeDyluYstjRKyDHD9u8HMBuLDKsrygjiIpllvd
-	Tni3Nu9A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=H03hzERz4JoxgCmruYHpPPyb6baJd5J6GUwTegv6RDc=; b=OZKjVO77GQVnSi6RrcF5/62sz2
+	ySFiYNlfMJCc/KzjFEx+cEJE852aq2iwZO5PxDMZwNPvs1EPCOWSzYD5NTs5ReNCnOfvqn7HICyDc
+	Nc08ABbNoLWs26GxC/o3NpRtn1UUJwmPqh64q9T09LZTZy/IhhsQPeg4Z6v73XkMCNdPp8wR7uKHm
+	fF/Quum+P/EqacX113KrkjGxDxWI96CD4DtcHY3I62AKyFBGJAl99YburVqw0WM2ysZ8WlSlflZ7Z
+	B6M3WNnxaZFOZwwFgQoGl92IM2baOYLsI5b+J3djHXNwge/9mayQ2MqJXqwV0ga768sXX/H0hzmdf
+	gH5EkMvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4l60-0000000GMUI-3Hs0
+	id 1s4l9P-0000000GNMY-1vJm
 	for ath12k@archiver.kernel.org;
-	Wed, 08 May 2024 17:28:48 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 08 May 2024 17:32:19 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4l5t-0000000GMRa-0Tzy
+	id 1s4l9A-0000000GNDR-0D4z
 	for ath12k@lists.infradead.org;
-	Wed, 08 May 2024 17:28:47 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 448AdwGO004571;
-	Wed, 8 May 2024 17:28:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=/Znukd4a9vLSq9iBLbwtwUpukVCClnHX+oVKK1a4Xt0=; b=TF
-	zvu3TMcIOUwm8GBVp/ldWxW36oCkAt4ZOYYTGvC6F3+1sO7FtJb8CAu8VbhWSOIo
-	QfVffpwYP91IfD99gHNMA01AYaD7Ke9/WSDuek/1G3CAAyiYj6UYBp7LAG+A4Rzu
-	pS5NFr96cPwgbVA883vpRbdd3F79RT670FWa5+bw2ZCwn0BovKwdkCEmTs8GwilF
-	umqb1KVhdsAyboNyfDcd/Jm2CozMHyPwlSn+QBqGnoehdIioWWJwWXNSFoAaAjvZ
-	2kuSB36mSJYMj+dJaCQC8cp90m/wcTSLqNWuqjYQvJHGa+cfgEVLScmz7gfHnx/Q
-	gCKn1or/wKIFGVW3qlrg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y07u9905x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 08 May 2024 17:28:33 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 448HSWkJ024231
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 8 May 2024 17:28:32 GMT
-Received: from [10.227.91.203] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 8 May 2024
- 10:28:32 -0700
-Message-ID: <88beaf14-5b78-4d8d-a196-4f3ce4f2c361@quicinc.com>
-Date: Wed, 8 May 2024 10:28:31 -0700
+	Wed, 08 May 2024 17:32:18 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-a5a13921661so4258766b.2
+        for <ath12k@lists.infradead.org>; Wed, 08 May 2024 10:32:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1715189520; x=1715794320; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=H03hzERz4JoxgCmruYHpPPyb6baJd5J6GUwTegv6RDc=;
+        b=VhPuzjpWHof9EX0nKbNsTJ9/wYXJqcVsLAVrQMCk6wt/vmqIIpGwWlCcDMcI77J9hj
+         fcg1hdeaSizXnwuZxA4jKHtI0f4cnSxjqfBdNNw45kMfE5uikcnhWJfzDizRCikqzfua
+         NQkk5xehnablfzVwdTRpickpK9lOaN7c78GtA/g5mgS8qbA4JibjFcR5wUHDN57vPWGC
+         HGoh6xj+/oDS3VHBzoCbXeptm6a95kKgLwD6Rn7XoKLCje7fSnwui33wtqh5OhAA4pIe
+         gq5j85mD1fdcihKOpTIYhdWwTHf5KV9GrFGxZjYTgqW7QOuhiIYqXx+9YTpgdOCn3/0A
+         i5Rw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1715189520; x=1715794320;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=H03hzERz4JoxgCmruYHpPPyb6baJd5J6GUwTegv6RDc=;
+        b=fc+XmJoFOg2CnOlGeIE9tAQ9kkxpcbVyD+KY6ywSiwItvA0TfCbydCe6Uh179lPlJ2
+         DZdotZte78gzbaWy1Jdr32/IZtFEuDw/lhnA0S49jp7GbdFILU7hjOdVtOUFlT0oX9d1
+         xaU1E6gINRdJOKyxAN3BH38x07OGeSJ4wROglisAQ+ql+h9e8qx4QJpYF1owNZWXSRIP
+         OYCXl0pr8LkABevvxhWdTn7Abz60Cq+TLrbg++cpC9S94FsZLilpEO4KcpqGsquJkrxX
+         EZb+W7Wsh74bXl3JCeb4Li47nWOIU+TMc/90+pD6L5ILbrwsvEycOr2d9LefnLS6msMA
+         g3UQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUXSQ5HIgQEOIfrR6upwmm7p+tRWQITtvQuE7n+8PXhz6nPFOxC5UiR7LMOUvk44jCAZYZqlz1L7vATr7HFjrXpOLjJZ8e0TkOHXQ==
+X-Gm-Message-State: AOJu0YwJ5jZxMFUUsttyfv+Bx32BMlJ346HT9l2rTLvZ04vP0qPZ1UXH
+	g4AqdhkWLmzQJXprQXCUaWanr+6SgtuC7xlnOOe6RkdAC6sw6Id4UxHqwL+wcaLJP5KqEXaKP7e
+	B
+X-Google-Smtp-Source: AGHT+IGSX5KYRRlOmtsIHtQh+KlGgLx9KF2+R8ni4Fasp/0KFSTJ1kLt8TkaHr7EIcs++L0+0+8LZg==
+X-Received: by 2002:a50:9ec8:0:b0:56b:fd17:3522 with SMTP id 4fb4d7f45d1cf-5731d9b5d13mr2395210a12.14.1715189520241;
+        Wed, 08 May 2024 10:32:00 -0700 (PDT)
+Received: from localhost ([102.222.70.76])
+        by smtp.gmail.com with ESMTPSA id u1-20020aa7d541000000b00572eebbfc61sm4848712edr.35.2024.05.08.10.31.59
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 08 May 2024 10:31:59 -0700 (PDT)
+Date: Wed, 8 May 2024 20:31:56 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: quic_bqiang@quicinc.com, linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org
+Subject: Re: [bug report] wifi: ath12k: flush all packets before suspend
+Message-ID: <d642bb50-5d79-4968-a001-13bd075c70b0@moroto.mountain>
+References: <7a96ca11-80b5-4751-8cfc-fa637f3aa63a@moroto.mountain>
+ <1abbdd0c-d4cf-4e24-9b68-d732b07300ff@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V4 5/6] wifi: ath12k: refactor SMPS configuration
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240425221902.11553-1-quic_pradeepc@quicinc.com>
- <20240425221902.11553-6-quic_pradeepc@quicinc.com>
- <d7b57775-711d-4180-b3de-5ab59aad0ec6@quicinc.com>
-Content-Language: en-US
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-In-Reply-To: <d7b57775-711d-4180-b3de-5ab59aad0ec6@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: xGDdwCY9mQJIq5d_zXVVA7uCnvROAnfi
-X-Proofpoint-ORIG-GUID: xGDdwCY9mQJIq5d_zXVVA7uCnvROAnfi
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-08_09,2024-05-08_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
- spamscore=0 suspectscore=0 mlxlogscore=865 impostorscore=0 mlxscore=0
- lowpriorityscore=0 bulkscore=0 malwarescore=0 phishscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405080127
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <1abbdd0c-d4cf-4e24-9b68-d732b07300ff@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240508_102842_271653_21FA2BC5 
-X-CRM114-Status: UNSURE (   7.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240508_103204_205563_D508A416 
+X-CRM114-Status: GOOD (  12.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,22 +94,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On Wed, May 08, 2024 at 09:51:33AM -0700, Jeff Johnson wrote:
+> On 5/8/2024 5:29 AM, Dan Carpenter wrote:
+> > Hello Baochen Qiang,
+> > 
+> > Commit 692921ead832 ("wifi: ath12k: flush all packets before
+> > suspend") from Apr 22, 2024 (linux-next), leads to the following
+> > Smatch static checker warning:
+> > 
+> > 	drivers/net/wireless/ath/ath12k/core.c:58 ath12k_core_suspend()
+> > 	warn: sleeping in atomic context
+> 
+> Hi Dan,
+> I'm not seeing this as part of my standard make W=1 C=1
+> 
+> What do I need to do in order to see this?
+> build_kernel_data.sh ??
+>
 
+Yeah.  This is a smatch warning that requires build_kernel_data.sh
+(probably you have to build several times which takes forever).  The
+might_sleep() is in synchronize_net().
 
-On 4/25/2024 4:40 PM, Jeff Johnson wrote:
-> On 4/25/2024 3:19 PM, Pradeep Kumar Chitrapu wrote:
->> Move fetching SMPS value to a new function and use u16_get_bits
->> to extract smps value from capabilities. This will help in
-> 
-> s/smps/SMPS/
-> 
->> extending the functionality when SMPS support in 6 GHz band gets
->> added in subsequent patches.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-> 
-Thanks Jeff..will address in next revision
+It's better to do run time testing.  If you run with
+CONFIG_DEBUG_ATOMIC_SLEEP=y
+then it will trigger a stack trace.
+
+regards,
+dan carpenter
 
