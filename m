@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAAAFC25B5F
-	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 17:37:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 110BAC25B74
+	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 17:37:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AlbyqipWzwbFiknh0sv42kACYHEP0uF4aJXWqbjM/Ro=; b=W1uIdKJwXlncWMtw5ZiG++GNJY
-	TkCZeXnKX4SsBobD03urNDUEpujKXAcyPeZR3fgRbLaLoSOqSmeity/E4c+wVsEHVsQL+/SxxK3+V
-	7E7kWEtN28B1h5fvwVagRyC58Q9yfuh1V1StKCMYCMnG/RSxg26fLQQpmnz8nB7JtQILj8Q1ENze8
-	slIehlCdbvOj3PzchhzJDzgYIaF+X0xCe3US0nhdkaUpacQVRyf/9ANnXkQFa3qrZdnv76loaOZ5k
-	IRlYV5EqhkNQZA4O8SxQyTdyvyHn3M/Eh5/ezT4pMvA7XGdo4jc2i6vq7LoRKCodxgy9b3rFw+Vn4
-	qctZWV7g==;
+	bh=v437SRpFXTG8An2e2fEXByzUV+VVPxzUsB/uKSJEE1s=; b=zPFzFsC3/A59jsm3MJnHl6S5ZV
+	CWm13PduD6v123tRR+FS7OxaJMVzZv/Rti7n7ytZFel9utev/K8EmCJo9q9hmbsB0HCrUer2CmNQz
+	llbuvOVpEHiI6MZN2bhgApB9NvfiPFTIdbY833fhyTn4XpGDgda/R9IRAcTHiqU+a0YP0wKYRTHkt
+	tzMuP8OU9wt9buenPnA4KLtjjS76JQ8z9Eip6oqlfa5gg1G4LdZ+QbC25H3nUjOfiLzIt6y4hI2ST
+	K5NB4JhHGX+k8VhuXtNfzXiveNlmgB31w0Gay0lSI4cOzwkhTxTiY099AvZ9Z3u50Nn79DBVUFyFq
+	XNArn//A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4lEJ-0000000GOQS-23Xs
+	id 1s4lEK-0000000GORQ-2gPy
 	for ath12k@archiver.kernel.org;
-	Wed, 08 May 2024 17:37:23 +0000
+	Wed, 08 May 2024 17:37:24 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4lE7-0000000GOMW-3Qix
+	id 1s4lEC-0000000GOOE-39As
 	for ath12k@lists.infradead.org;
-	Wed, 08 May 2024 17:37:20 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 448G4EqZ024341;
-	Wed, 8 May 2024 17:37:09 GMT
+	Wed, 08 May 2024 17:37:21 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 448FEDSw002378;
+	Wed, 8 May 2024 17:37:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-type; s=qcppdkim1; bh=AlbyqipWzwbFiknh0sv4
-	2kACYHEP0uF4aJXWqbjM/Ro=; b=mKwvNbkipH8bHwM3JPAsfpZiq29AhJo8o/CK
-	qsfmQi37sM106HRSLyycyIpxb6/WcacTa6IK61/d+krDUK8rfjDl/t3cy9n8v8je
-	jtBWMVb5CBXX7cmAemDyoRIC6U7WNIE9WkMqBlfAy1GgAqlo5a4fipQiYKyovMPv
-	MbDpsn+yxnkC94y8VaXvwOI8myZNH+Ct264VUTHHOcVHhI9stIB/AfGfRHkf3liL
-	55fGPqd90gIyFG8QnzJ4HiCSJVsCHAwehmerSDRBQafmtZAnIvYltShhf8+mQNYQ
-	W+I0PRZtXeoT8kj+V40rRD55qQYP0lQIyRdnlcJhZV+XcLaaNQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y07wfryum-1
+	:mime-version:content-type; s=qcppdkim1; bh=v437SRpFXTG8An2e2fEX
+	ByzUV+VVPxzUsB/uKSJEE1s=; b=B2tE+2wzctSewFZoUsNDF+rtvkBsjeURF9oG
+	m297aYDNlBTdfh3/MnXXDolrWhs4NUDyTW1FHQtxOrH+hppRMml48TU8xkPqZzXx
+	Z4KyE+CLjnWYEIx3WC+U8uGLWYSKSP2QRbqDHlBjsTrPa+hjN9zavYYocf015sGp
+	hdba7RflwBt+EQOHIf+Fn0sXS8z0SXXZGqK4pR8oA1uGzB1y8gJ+cVQhIVgWuaI6
+	yYxchM2wEMm52ezJ1q173T9ckAnx7Ilxwr6jeeevECGqsEO2wBD87/gwHaj7Wv/a
+	Nf6M9n1l3yIIrhCZNQjZcal9jq532w7LQOieNY6VfIPPjKChNg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y07u8ryyj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Wed, 08 May 2024 17:37:08 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 448Hb7FW018339
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 448Hb78N009054
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Wed, 8 May 2024 17:37:07 GMT
 Received: from pradeepc2-linux.qualcomm.com (10.80.80.8) by
@@ -57,9 +57,9 @@ To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Pradeep Kumar Chitrapu
 	<quic_pradeepc@quicinc.com>
-Subject: [PATCH V5 2/6] wifi: ath12k: Correct 6 GHz frequency value in rx status
-Date: Wed, 8 May 2024 10:36:51 -0700
-Message-ID: <20240508173655.22191-3-quic_pradeepc@quicinc.com>
+Subject: [PATCH V5 1/6] wifi: ath12k: add channel 2 into 6 GHz channel list
+Date: Wed, 8 May 2024 10:36:50 -0700
+Message-ID: <20240508173655.22191-2-quic_pradeepc@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20240508173655.22191-1-quic_pradeepc@quicinc.com>
 References: <20240508173655.22191-1-quic_pradeepc@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Nob21nLuhdtu_jsdxX6fOM3MXDlVSaAy
-X-Proofpoint-ORIG-GUID: Nob21nLuhdtu_jsdxX6fOM3MXDlVSaAy
+X-Proofpoint-GUID: 4qNpTfHiZHU9xwp6TLPYOgC0_6of1AOB
+X-Proofpoint-ORIG-GUID: 4qNpTfHiZHU9xwp6TLPYOgC0_6of1AOB
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-05-08_09,2024-05-08_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 adultscore=0
- spamscore=0 priorityscore=1501 suspectscore=0 bulkscore=0 phishscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 malwarescore=0 mlxlogscore=999
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 adultscore=0
+ phishscore=0 bulkscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0
+ priorityscore=1501 malwarescore=0 mlxscore=0 suspectscore=0 spamscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2405010000
- definitions=main-2405080127
+ definitions=main-2405080128
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240508_103712_156980_10883136 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20240508_103717_055099_CB1136EF 
+X-CRM114-Status: GOOD (  12.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,79 +97,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The frequency in the rx status is currently being filled
-incorrectly for the 6 GHz band. The channel number received is
-invalid in this case, resulting in packet drops. Fix this
-issue by correcting the frequency calculation.
+Add support for the 6 GHz channel 2 with center frequency
+5935 MHz and operating class 136 per IEEE Std 802.11ax-2021,
+Table E-4.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_rx.c |  9 ++++++---
- drivers/net/wireless/ath/ath12k/wmi.c   | 10 +++++++---
- 2 files changed, 13 insertions(+), 6 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h | 2 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 4 ++++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 952a377b5491..9f3db6c1b7fc 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2359,8 +2359,10 @@ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct hal_rx_desc *rx_desc,
- 	channel_num = meta_data;
- 	center_freq = meta_data >> 16;
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index bb6c1b562baf..50aa9048fd34 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -450,7 +450,7 @@ struct ath12k_sta {
+ #define ATH12K_MIN_5G_FREQ 4150
+ #define ATH12K_MIN_6G_FREQ 5925
+ #define ATH12K_MAX_6G_FREQ 7115
+-#define ATH12K_NUM_CHANS 100
++#define ATH12K_NUM_CHANS 101
+ #define ATH12K_MAX_5G_CHAN 173
  
--	if (center_freq >= 5935 && center_freq <= 7105) {
-+	if (center_freq >= ATH12K_MIN_6G_FREQ &&
-+	    center_freq <= ATH12K_MAX_6G_FREQ) {
- 		rx_status->band = NL80211_BAND_6GHZ;
-+		rx_status->freq = center_freq;
- 	} else if (channel_num >= 1 && channel_num <= 14) {
- 		rx_status->band = NL80211_BAND_2GHZ;
- 	} else if (channel_num >= 36 && channel_num <= 173) {
-@@ -2378,8 +2380,9 @@ void ath12k_dp_rx_h_ppdu(struct ath12k *ar, struct hal_rx_desc *rx_desc,
- 				rx_desc, sizeof(*rx_desc));
- 	}
+ enum ath12k_hw_state {
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 96dc5c2e096f..ae9f41a17b4f 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -91,6 +91,10 @@ static const struct ieee80211_channel ath12k_5ghz_channels[] = {
+ };
  
--	rx_status->freq = ieee80211_channel_to_frequency(channel_num,
--							 rx_status->band);
-+	if (rx_status->band != NL80211_BAND_6GHZ)
-+		rx_status->freq = ieee80211_channel_to_frequency(channel_num,
-+								 rx_status->band);
- 
- 	ath12k_dp_rx_h_rate(ar, rx_desc, rx_status);
- }
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 7a52d2082b79..e88ec9e1201a 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -6022,8 +6022,10 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
- 	if (rx_ev.status & WMI_RX_STATUS_ERR_MIC)
- 		status->flag |= RX_FLAG_MMIC_ERROR;
- 
--	if (rx_ev.chan_freq >= ATH12K_MIN_6G_FREQ) {
-+	if (rx_ev.chan_freq >= ATH12K_MIN_6G_FREQ &&
-+	    rx_ev.chan_freq <= ATH12K_MAX_6G_FREQ) {
- 		status->band = NL80211_BAND_6GHZ;
-+		status->freq = rx_ev.chan_freq;
- 	} else if (rx_ev.channel >= 1 && rx_ev.channel <= 14) {
- 		status->band = NL80211_BAND_2GHZ;
- 	} else if (rx_ev.channel >= 36 && rx_ev.channel <= ATH12K_MAX_5G_CHAN) {
-@@ -6044,8 +6046,10 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
- 
- 	sband = &ar->mac.sbands[status->band];
- 
--	status->freq = ieee80211_channel_to_frequency(rx_ev.channel,
--						      status->band);
-+	if (status->band != NL80211_BAND_6GHZ)
-+		status->freq = ieee80211_channel_to_frequency(rx_ev.channel,
-+							      status->band);
+ static const struct ieee80211_channel ath12k_6ghz_channels[] = {
++	/* Operating Class 136 */
++	CHAN6G(2, 5935, 0),
 +
- 	status->signal = rx_ev.snr + ATH12K_DEFAULT_NOISE_FLOOR;
- 	status->rate_idx = ath12k_mac_bitrate_to_idx(sband, rx_ev.rate / 100);
- 
++	/* Operating Classes 131-135 */
+ 	CHAN6G(1, 5955, 0),
+ 	CHAN6G(5, 5975, 0),
+ 	CHAN6G(9, 5995, 0),
 -- 
 2.17.1
 
