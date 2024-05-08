@@ -4,71 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06C3BC04FFE
-	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 09:54:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D8C1C04FFE
+	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 12:29:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sD2/6sPlr7JEw5uhBN364YYJFLTnmVMqOaL4BzfWeD8=; b=KJoE+JeoaI7WiG7r6kHid7bZHo
-	5PJGOkmIj7g9e/2ismWD3ndFNJQ+tmzvS0BhpdrVvIVClrmIKa4+9OkGTZDR0DkmckwybSrJXfe0Y
-	joB98AhKeIsq3ctZBGKRhrTil1ALhYRPukFvk0rE33Vy+x8zpZVZw2GXAyqi/zBJljBtCKwMj12U0
-	dgEcsf6wvSd/NengFJLebNWzH74AVPflvbWLbQHR1yLKoSdMJB5T7X3fiLwuGkx+FkovNp4L/q9Fd
-	rIMtz4JVYdBEN0smc5SKk99719Wgy7AICzmgwGX3w0kKkiB0pE0PmYNwkxnpXTdOVjDeOl+ksspZk
-	oguWmgAw==;
+	bh=hrrGPAq63QCB3MtkFDf/C+/vtNGFMQ8dGk2GFJgvSrU=; b=o7X/n8woS3FIp86r6Jkd4KKY0i
+	bf02nFlh6oK264GQuD0bAnRiFOq0XSED199k8HthVTgPZUaJtRWObKVbSfLc1yASLqRThOQf0IEwR
+	Zzt9L1LgocBSamHDhMFKNj4uodhZ3n5pggqkqtRGdxKbHkFT3DGKcbuV269eiCWSMquImIjPEznDb
+	S7YTC1sxJWeNiVNdgm/vnhPxknrujYT9qBaLiL9Ackk4oXCp7sO5L7t2KDv1MV2v3W0hm56NACKQl
+	SA4egi8doGYzaDMj4Ba0dFX+ZTE2T8k6eYW2SBg65+Zs3VXkkzQBQD73NmQEHGQo1JvgaK+RYp3Kt
+	0SrbG9lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4e0U-0000000EqTj-35gZ
+	id 1s4gQV-0000000FRBr-0JDb
 	for ath12k@archiver.kernel.org;
-	Wed, 08 May 2024 09:54:38 +0000
-Received: from mail-lf1-f47.google.com ([209.85.167.47])
+	Wed, 08 May 2024 12:29:39 +0000
+Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4e0R-0000000EqSY-1xc3
+	id 1s4gQQ-0000000FRB3-1pFo
 	for ath12k@lists.infradead.org;
-	Wed, 08 May 2024 09:54:37 +0000
-Received: by mail-lf1-f47.google.com with SMTP id 2adb3069b0e04-51f0b6b682fso4404180e87.1
-        for <ath12k@lists.infradead.org>; Wed, 08 May 2024 02:54:34 -0700 (PDT)
+	Wed, 08 May 2024 12:29:37 +0000
+Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-a599eedc8eeso1018521866b.1
+        for <ath12k@lists.infradead.org>; Wed, 08 May 2024 05:29:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1715171369; x=1715776169; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=hrrGPAq63QCB3MtkFDf/C+/vtNGFMQ8dGk2GFJgvSrU=;
+        b=gI+50j2uIVTiSQAXcPjFn5FR/GHZgKkKP6476w/IIoUoO0NnSeb/8+kkGNJl3Vac80
+         QorHTwAKqh5TDWRpwXGue3P31YWfAAQOiG81utJOZcOwRffxnyO5Bso4TH1eo4EIRbWT
+         iGB6HpsAjzVBQJmUybWTUE+fGAu+bzmXq3AozbN0K6zLUyircT2sb76CdVEY8JTG+c3X
+         XnRm9gXbIDaaht/gUdrcdgyZAIKvxPH4NVlgHXAHDk+1FLwvRPLy2wXx/Emr1Nv0CP55
+         D15P2kPJkTG8itpQJJoW9jKwrBMP1XPK8HjOA90trH8sBZXKmpzNQQ+g8GCLrFXM5DT+
+         l1vA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1715162073; x=1715766873;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=sD2/6sPlr7JEw5uhBN364YYJFLTnmVMqOaL4BzfWeD8=;
-        b=YXF2txIQqFupXX4bDRW4yWDsrOlDNXJSF67g2zv52pB8k0o7Kk1apNV4iXHSH815JG
-         1qoYmRo5Thrb/OXfScls02544hu4W/nT+bUix1mmdcQ+N1DmQM9fsrRJjO7SseJOUoXx
-         fKicwFRkPM3FDW9VVol/9HoC4dP7Q250WU+XaAQLRbsKeUds0gH4N/odPuWBiX1qL+hu
-         ZQ1Ef14q1pYXYTO7t5pQt2xi69HtwO5CwmVlDF+ePZYZlQeT5RLGY1FCovgTd0w2NMWG
-         F5YWiI2hk8iJgXmu6Glf5DwF0EemjXsmuzM+uxVt343kzjBbj7hz3zay8vXnFDizDMem
-         3BNg==
-X-Forwarded-Encrypted: i=1; AJvYcCUhBdjnpQ4GJYKTcUE3crXY++vvBszw8ZGrDRABFZ92xLmnMkVnKUJm/0ASk2YtIWGIiKJoPaIsS5pqyVD+IP4Glpa+7l0a5KqeNQ==
-X-Gm-Message-State: AOJu0YzdagpTtRxTj7B1gxXsAJ3L2I/Nyg7eHBF7O4fPukCxxIheyKJu
-	rG9IkTuhbcDyLG6EOO4iAOBsMMbKulCMcG9iBjM8mC7wXiucbL7A
-X-Google-Smtp-Source: AGHT+IHmCf5LAkl84GP171Zeb9C+hU+YlcxP1NLnZdtmzr65qLJvoOCAVJfs5QJwFe5Cm/IGPVi37w==
-X-Received: by 2002:ac2:5929:0:b0:51d:a1ab:98bc with SMTP id 2adb3069b0e04-5217c3733cfmr1876163e87.2.1715162072909;
-        Wed, 08 May 2024 02:54:32 -0700 (PDT)
-Received: from localhost (fwdproxy-lla-119.fbsv.net. [2a03:2880:30ff:77::face:b00c])
-        by smtp.gmail.com with ESMTPSA id d19-20020a17090648d300b00a5a06effd3fsm379569ejt.221.2024.05.08.02.54.32
+        d=1e100.net; s=20230601; t=1715171369; x=1715776169;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=hrrGPAq63QCB3MtkFDf/C+/vtNGFMQ8dGk2GFJgvSrU=;
+        b=rGXnudByejHMokbWhn3ilBbARB4biIQIEEAdvCetR8kXkRGGd0aGBMi5Y/3qbChiNX
+         o2MUFuCuo/9hiKslm9yu0A23psuiwGHnNHacX7j48g3z+D78fKSuEJwhAO/S2OvRHz4O
+         Pkthl+Kj7EY7r7JOpP/OZSaXaNzgopsl94MIhM13uFJsVJncT2D9smQFCFlSjpjVH6P/
+         SF5DQtoyPi2r7DIlxsjvt+kc8aIVvzW0ODaZpwxjtmCFdWswtHOfopeFBonokxX4/7J3
+         VPEntzx1qfXUpFVJbPAE4sPZDJBn5AGMeDiPUubmyQh1SH4T6YmyDj+FfadHGYGTO/kk
+         Ajtw==
+X-Forwarded-Encrypted: i=1; AJvYcCVcgNbtfvnHzMLJt2HAiLS1wKFqd3699eCWgsF+daGYE2HxnG9uJSAdMMJ1Ivt7K2OqekFWHikyFMmbXUkvjl6sbnJY5x5jCKIiXA==
+X-Gm-Message-State: AOJu0YyWzhRD+0IoFWbVdH9T9Hj5Wc35QGOqzAO0FN8riAJm4ZBWGuJR
+	XK4EfOzWA59jPWVVQs7fB7O1s2nIGLuxRLMAARvrN4ZoQtZOGyohTw9L9XbckPo=
+X-Google-Smtp-Source: AGHT+IEXHT82LKEfyEmTpLYruC5p8iUP+itIIbvEMOW/7yXOm0eX3R221ONDVAoP2sIsVt2ksDJSQQ==
+X-Received: by 2002:a17:906:6d04:b0:a59:d3ec:4f33 with SMTP id a640c23a62f3a-a59fb952bd1mr156424466b.39.1715171368851;
+        Wed, 08 May 2024 05:29:28 -0700 (PDT)
+Received: from localhost ([102.222.70.76])
+        by smtp.gmail.com with ESMTPSA id lb14-20020a170906adce00b00a59bc8c01b1sm4562644ejb.82.2024.05.08.05.29.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 May 2024 02:54:32 -0700 (PDT)
-From: Breno Leitao <leitao@debian.org>
-To: horms@kernel.org,
-	Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>
-Cc: netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org (open list:NETWORKING DRIVERS (WIRELESS)),
-	ath12k@lists.infradead.org (open list:QUALCOMM ATH12K WIRELESS DRIVER),
-	linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH wireless-next v2] wifi: ath12k: allocate dummy net_device dynamically
-Date: Wed,  8 May 2024 02:54:09 -0700
-Message-ID: <20240508095410.1923198-1-leitao@debian.org>
-X-Mailer: git-send-email 2.43.0
+        Wed, 08 May 2024 05:29:28 -0700 (PDT)
+Date: Wed, 8 May 2024 15:29:24 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: quic_bqiang@quicinc.com
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+Subject: [bug report] wifi: ath12k: flush all packets before suspend
+Message-ID: <7a96ca11-80b5-4751-8cfc-fa637f3aa63a@moroto.mountain>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240508_025435_534069_7B9F2A09 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20240508_052934_649111_F55FE91F 
+X-CRM114-Status: UNSURE (   5.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,114 +89,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Embedding net_device into structures prohibits the usage of flexible
-arrays in the net_device structure. For more details, see the discussion
-at [1].
+Hello Baochen Qiang,
 
-Un-embed the net_device from struct ath12k_ext_irq_grp by converting it
-into a pointer. Then use the leverage alloc_netdev_dummy() to allocate
-the net_device object at ath12k_pci_ext_irq_config().
+Commit 692921ead832 ("wifi: ath12k: flush all packets before
+suspend") from Apr 22, 2024 (linux-next), leads to the following
+Smatch static checker warning:
 
-The free of the device occurs at ath12k_pci_free_ext_irq().
+	drivers/net/wireless/ath/ath12k/core.c:58 ath12k_core_suspend()
+	warn: sleeping in atomic context
 
-[1] https://lore.kernel.org/all/20240229225910.79e224cf@kernel.org/
+drivers/net/wireless/ath/ath12k/core.c
+    48         int ret, i;
+    49 
+    50         if (!ab->hw_params->supports_suspend)
+    51                 return -EOPNOTSUPP;
+    52 
+    53         rcu_read_lock();
+               ^^^^^^^^^^^^^^^
+Disables preemption.
 
-Signed-off-by: Breno Leitao <leitao@debian.org>
----
-Changelog:
- v2:
-	* Free all the allocated dummy devices if one of them fails to
-	  be allocated (in ath12k_pci_ext_irq_config()), as
-	  pointed by by Simon Horman.
----
- drivers/net/wireless/ath/ath12k/core.h |  2 +-
- drivers/net/wireless/ath/ath12k/pci.c  | 27 +++++++++++++++++++++-----
- 2 files changed, 23 insertions(+), 6 deletions(-)
+    54         for (i = 0; i < ab->num_radios; i++) {
+    55                 ar = ath12k_mac_get_ar_by_pdev_id(ab, i);
+    56                 if (!ar)
+    57                         continue;
+--> 58                 ret = ath12k_mac_wait_tx_complete(ar);
+                                        ^^^^^^^
+Sleeping in atomic context.
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 47dde4401210..6671219c3567 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -146,7 +146,7 @@ struct ath12k_ext_irq_grp {
- 	u32 grp_id;
- 	u64 timestamp;
- 	struct napi_struct napi;
--	struct net_device napi_ndev;
-+	struct net_device *napi_ndev;
- };
- 
- struct ath12k_smbios_bdf {
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 16af046c33d9..ac75e8e3916b 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -350,6 +350,7 @@ static void ath12k_pci_free_ext_irq(struct ath12k_base *ab)
- 			free_irq(ab->irq_num[irq_grp->irqs[j]], irq_grp);
- 
- 		netif_napi_del(&irq_grp->napi);
-+		free_netdev(irq_grp->napi_ndev);
- 	}
- }
- 
-@@ -560,8 +561,9 @@ static irqreturn_t ath12k_pci_ext_interrupt_handler(int irq, void *arg)
- static int ath12k_pci_ext_irq_config(struct ath12k_base *ab)
- {
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
--	int i, j, ret, num_vectors = 0;
-+	int i, j, n, ret, num_vectors = 0;
- 	u32 user_base_data = 0, base_vector = 0, base_idx;
-+	struct ath12k_ext_irq_grp *irq_grp;
- 
- 	base_idx = ATH12K_PCI_IRQ_CE0_OFFSET + CE_COUNT_MAX;
- 	ret = ath12k_pci_get_user_msi_assignment(ab, "DP",
-@@ -572,13 +574,18 @@ static int ath12k_pci_ext_irq_config(struct ath12k_base *ab)
- 		return ret;
- 
- 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
--		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
-+		irq_grp = &ab->ext_irq_grp[i];
- 		u32 num_irq = 0;
- 
- 		irq_grp->ab = ab;
- 		irq_grp->grp_id = i;
--		init_dummy_netdev(&irq_grp->napi_ndev);
--		netif_napi_add(&irq_grp->napi_ndev, &irq_grp->napi,
-+		irq_grp->napi_ndev = alloc_netdev_dummy(0);
-+		if (!irq_grp->napi_ndev) {
-+			ret = -ENOMEM;
-+			goto fail_allocate;
-+		}
-+
-+		netif_napi_add(irq_grp->napi_ndev, &irq_grp->napi,
- 			       ath12k_pci_ext_grp_napi_poll);
- 
- 		if (ab->hw_params->ring_mask->tx[i] ||
-@@ -611,13 +618,23 @@ static int ath12k_pci_ext_irq_config(struct ath12k_base *ab)
- 			if (ret) {
- 				ath12k_err(ab, "failed request irq %d: %d\n",
- 					   vector, ret);
--				return ret;
-+				goto fail_request;
- 			}
- 		}
- 		ath12k_pci_ext_grp_disable(irq_grp);
- 	}
- 
- 	return 0;
-+
-+fail_request:
-+	/* i ->napi_ndev was properly allocated. Free it also */
-+	i += 1;
-+fail_allocate:
-+	for (n = 0; n < i; n++) {
-+		irq_grp = &ab->ext_irq_grp[n];
-+		free_netdev(irq_grp->napi_ndev);
-+	}
-+	return ret;
- }
- 
- static int ath12k_pci_set_irq_affinity_hint(struct ath12k_pci *ab_pci,
--- 
-2.43.0
+    59                 if (ret) {
+    60                         ath12k_warn(ab, "failed to wait tx complete: %d\n", ret);
+    61                         rcu_read_unlock();
+    62                         return ret;
+    63                 }
+    64         }
+    65         rcu_read_unlock();
 
+regards,
+dan carpenter
 
