@@ -4,87 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 776A2C25B77
-	for <ath12k@archiver.kernel.org>; Wed,  8 May 2024 20:29:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65C28C10F1A
+	for <ath12k@archiver.kernel.org>; Thu,  9 May 2024 14:39:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0ZuRNs27s83GbhPaewWhA6paRd7KTiyfKroep0mhOxE=; b=HHAW5VaBcduVCkMxpxERWWV7O/
-	enHq+OshDdyYjDz6nPfVVe4dHgZBJdGS1hWHDjiXpqII3FdSUDXQEfHqK7jgHTDsVyU2UzXyLw73N
-	amyPxTv++VNjKiCoN5PszSo32Q7uleXufLoxH4DNZzzdvI+sP/XW2YDsQqpVsJB1blGI95mc8WLna
-	2FvkVWtBvmoDQrYheSeqg5wf0kZ/tGr2IB+KrorgdnKTv8yXxLFolRQ8zkaD5G4jLfDfmdDlDkhYH
-	Ns5wheAo4X5V3QlJB5d+iupzumL+aeQ1Bprl3bA7rkApA9MT+1wha7AzauohAU+nuR+WE9MnsoD8L
-	8PxDDAGA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=kaKX5pD/wsH8AgtifBxYzaXGEYxu1ITHFtiP2x1Rjiw=; b=UxObQnR+GFAJ+GOpIr4m3LZF3V
+	Gl5K9DqZT6giZCwLFYD7WjS+OVs5tdscYf9ZgOqvEml7vpEqGYRVNbZ3WTzioByX86EhaNsJy0BcD
+	N8p0aY5BFUZk+VQp7GzdrPbGJqDmoA39qgKIz4KVaeurevN98oFrJNsnJaI8D+u+l267FZ/IFKkaT
+	zJk6cnqwUZm5kzS2RjX+9pYx3G60R4RdOrafN5H6CSSSONLkwpfD+TVe5BxuvJiRrq8kJDgQ3tUzz
+	tPtjA74H5fjS6MItesveFJfNMKYG30UjLtQgye+6sxnwRjT2rex+2iJh9pevQowhg+YEU/mNZvm3s
+	NF4/Z3GQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4nv6-0000000GtUr-0fkE
+	id 1s54vU-00000001l3C-0WZq
 	for ath12k@archiver.kernel.org;
-	Wed, 08 May 2024 20:29:44 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 09 May 2024 14:39:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4nuv-0000000GtNL-2zZ7
+	id 1s54vQ-00000001l2Q-3M9l
 	for ath12k@lists.infradead.org;
-	Wed, 08 May 2024 20:29:38 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 448AeOF8008072;
-	Wed, 8 May 2024 20:29:27 GMT
+	Thu, 09 May 2024 14:39:14 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4497BMxN007934;
+	Thu, 9 May 2024 14:39:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding:content-type; s=
-	qcppdkim1; bh=0ZuRNs27s83GbhPaewWhA6paRd7KTiyfKroep0mhOxE=; b=bW
-	6L3g1U+8sPANA8hYT1/xl8gzNs6aY6CkJhPTspq/z/CaliU7iykfTZm5qkM24axM
-	ZpL5c4ZaJNYgQcaLS0QOFxpY4hueWaZ0ECFy8zQrkPhgVhwZx/FSOjXAzTlAgF7m
-	rUT8/dlTEOUwGpEpWzMd/q405ALgMkdzwcHU1jFXhAMKysEDLiI9eCICm9EurbZ6
-	PugwdaeYReMsF8LDlE6gf3NPoprY5y45/dHswLuToyyCz0XoIdmFTygeOupILynl
-	glssJcnMWmG0UmFIgw0s/ZbXOaG18QtF+uUnNgksApGU38AsqYdYCACSdUly6NSO
-	P/ANCbsRkduIhsoSFR7A==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y07u0h9y6-1
+	message-id:date:mime-version:subject:from:to:cc:references
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=kaKX5pD/wsH8AgtifBxYzaXGEYxu1ITHFtiP2x1Rjiw=; b=bo
+	iAOWrVND4rBbPEgpRlN+R6cPFqh4FvoVMe7FmicwmPRMlIR0V8Ev63++zP0fCpWt
+	s1Z2ikcAPif4I0lyTAhZKoBnuTrz0cAofkfy9LUH0IQRPvQ8us1CpoOQnC+nG+C+
+	ZXQOLNynEA6pOiLctZSiJ2aUyJgA6DDofvylLsDVE3+qxqweE47Jbyby2jKqDOCw
+	vxKGKQFKpMnXmXw6/HX6XIpyg/KXdsO1R0V4Lo1LZaKW+QqYwto4Xv6dadmI6ssB
+	xTawiJWf9rj/i9I0QZ7tfD+EM7tpZOqh27seydCVWzBJxdFfdq5S728mTlO85MQ/
+	fbasxWXmRJjtQ67jZE7A==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y09ejtw8h-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 08 May 2024 20:29:27 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 448KTOSC009212
+	Thu, 09 May 2024 14:39:09 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 449Ed9Ef015323
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 8 May 2024 20:29:24 GMT
-Received: from alokad-linux.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 8 May 2024 13:29:24 -0700
-From: Aloka Dixit <quic_alokad@quicinc.com>
-To: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-CC: Aloka Dixit <quic_alokad@quicinc.com>,
-        Jeff Johnson
-	<quic_jjohnson@quicinc.com>
-Subject: [PATCH v2 4/9] wifi: ath12k: create a structure for WMI vdev up parameters
-Date: Wed, 8 May 2024 13:29:07 -0700
-Message-ID: <20240508202912.11902-5-quic_alokad@quicinc.com>
-X-Mailer: git-send-email 2.39.0
-In-Reply-To: <20240508202912.11902-1-quic_alokad@quicinc.com>
-References: <20240508202912.11902-1-quic_alokad@quicinc.com>
+	Thu, 9 May 2024 14:39:09 GMT
+Received: from [10.110.102.9] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 9 May 2024
+ 07:39:08 -0700
+Message-ID: <b96ae3ec-44e0-42e1-8b3f-89144f01c272@quicinc.com>
+Date: Thu, 9 May 2024 07:39:07 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: Fix Tx Completion Ring(WBM2SW) Setup
+ Failure
+Content-Language: en-US
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+To: Nithyanantham Paramasivam <quic_nithp@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240409190922.4180631-1-quic_nithp@quicinc.com>
+ <c5dec609-493a-4246-b006-aa905edfdac3@quicinc.com>
+ <514da0bc-f9f6-41fb-9e3e-72677394695f@quicinc.com>
+In-Reply-To: <514da0bc-f9f6-41fb-9e3e-72677394695f@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: YgDRxmkTKnpV2_pzzqkGdW-HQvHZja5i
-X-Proofpoint-ORIG-GUID: YgDRxmkTKnpV2_pzzqkGdW-HQvHZja5i
+X-Proofpoint-GUID: i-CvSkEb0wCyAFFxzWNamhiFsiLM1pHJ
+X-Proofpoint-ORIG-GUID: i-CvSkEb0wCyAFFxzWNamhiFsiLM1pHJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-08_09,2024-05-08_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- impostorscore=0 priorityscore=1501 malwarescore=0 mlxscore=0
- suspectscore=0 clxscore=1015 spamscore=0 lowpriorityscore=0 phishscore=0
- adultscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405080151
+ definitions=2024-05-09_07,2024-05-09_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 adultscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
+ priorityscore=1501 clxscore=1015 mlxlogscore=660 malwarescore=0
+ bulkscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405010000 definitions=main-2405090098
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240508_132933_919370_B46CDDDB 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20240509_073913_025752_27F72FCF 
+X-CRM114-Status: GOOD (  11.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,182 +102,55 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Host needs to send multiple BSSID configurations to firmware for
-each vdev in ath12k_wmi_vdev_up() for AP mode. This function accepts
-individual input parameters hence any new argument will require changes
-to all callers. Most of these will use default value (0 or NULL).
-Create a structure for the function arguments and include objects with
-all members initialized to zero to minimize future changes.
+On 4/18/2024 10:52 AM, Jeff Johnson wrote:
+> On 4/10/2024 1:25 PM, Jeff Johnson wrote:
+>> On 4/9/2024 12:09 PM, Nithyanantham Paramasivam wrote:
+>>> We observe intermittent ping failures from the access point (AP) to
+>>> station (STA) in any mode(AP-STA or Mesh) configured. Specifically,
+>>> the transmission completion status is not received at Tx completion
+>>> ring id-4(WBM2SW ring4) for the packets transmitted via TCL DATA
+>>> ring id-3. This prevents freeing up Tx descriptors and leads
+>>> to buffer exhaustion.
+>>>
+>>> Currently, during initialization of the WBM2SW ring, we are directly
+>>> mapping the ring number to the ring mask to obtain the ring mask
+>>> group index. This approach is causing setup failures for WBM2SW
+>>> ring-4. Similarly, during runtime, when receiving incoming
+>>> transmission completion status, the validation of the ring number by
+>>> mapping the interrupted ring mask. This is resulting in
+>>> validation failure. Thereby preventing entry into the completion
+>>> handler(ath12k_dp_tx_completion_handler()).
+>>>
+>>> The existing design assumed that the ring numbers would always be
+>>> sequential and could be directly mapped with the ring mask. However,
+>>> this assumption does not hold true for WBM2SW ring-4. Therefore,
+>>> modify the design such that, instead of mapping the ring number,
+>>> the ring ID is mapped with the ring mask.
+>>>
+>>> According to this design:
+>>> 1. During initialization of the WBM2SW ring, mapping the ring ID
+>>> to the ring mask will ensure obtaining the correct ring mask group
+>>> ID.
+>>> 2. During runtime, validating the interrupted ring mask group ID
+>>> within the transmission completion group is sufficient. This
+>>> approach allows the ring ID to be derived from the interrupted ring
+>>> mask and enables entry into the completion handler.
+>>>
+>>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>>
+>>> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+>>> Signed-off-by: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
+>> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+>>
+>>
+> Please remove my Acked-by.
+> 
+> I've bisected a kernel crash on my laptop to this patch
 
-Tested-on : QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+While debugging my crash I've determined the issue isn't with this patch, so
+restore my:
 
-Signed-off-by: Aloka Dixit <quic_alokad@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 30 ++++++++++++++++++++-------
- drivers/net/wireless/ath/ath12k/wmi.c | 10 ++++-----
- drivers/net/wireless/ath/ath12k/wmi.h |  9 ++++++--
- 3 files changed, 35 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 32d370c8e756..8068519828b7 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -863,9 +863,12 @@ static int ath12k_mac_vdev_setup_sync(struct ath12k *ar)
- 
- static int ath12k_monitor_vdev_up(struct ath12k *ar, int vdev_id)
- {
-+	struct ath12k_wmi_vdev_up_params params = {};
- 	int ret;
- 
--	ret = ath12k_wmi_vdev_up(ar, vdev_id, 0, ar->mac_addr);
-+	params.vdev_id = vdev_id;
-+	params.bssid = ar->mac_addr;
-+	ret = ath12k_wmi_vdev_up(ar, &params);
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to put up monitor vdev %i: %d\n",
- 			    vdev_id, ret);
-@@ -882,6 +885,7 @@ static int ath12k_mac_monitor_vdev_start(struct ath12k *ar, int vdev_id,
- {
- 	struct ieee80211_channel *channel;
- 	struct wmi_vdev_start_req_arg arg = {};
-+	struct ath12k_wmi_vdev_up_params params = {};
- 	int ret;
- 
- 	lockdep_assert_held(&ar->conf_mutex);
-@@ -922,7 +926,9 @@ static int ath12k_mac_monitor_vdev_start(struct ath12k *ar, int vdev_id,
- 		return ret;
- 	}
- 
--	ret = ath12k_wmi_vdev_up(ar, vdev_id, 0, ar->mac_addr);
-+	params.vdev_id = vdev_id;
-+	params.bssid = ar->mac_addr;
-+	ret = ath12k_wmi_vdev_up(ar, &params);
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to put up monitor vdev %i: %d\n",
- 			    vdev_id, ret);
-@@ -1358,6 +1364,7 @@ static int ath12k_mac_setup_bcn_tmpl(struct ath12k_vif *arvif)
- static void ath12k_control_beaconing(struct ath12k_vif *arvif,
- 				     struct ieee80211_bss_conf *info)
- {
-+	struct ath12k_wmi_vdev_up_params params = {};
- 	struct ath12k *ar = arvif->ar;
- 	int ret;
- 
-@@ -1385,8 +1392,10 @@ static void ath12k_control_beaconing(struct ath12k_vif *arvif,
- 
- 	ether_addr_copy(arvif->bssid, info->bssid);
- 
--	ret = ath12k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
--				 arvif->bssid);
-+	params.vdev_id = arvif->vdev_id;
-+	params.aid = arvif->aid;
-+	params.bssid = arvif->bssid;
-+	ret = ath12k_wmi_vdev_up(arvif->ar, &params);
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to bring up vdev %d: %i\n",
- 			    arvif->vdev_id, ret);
-@@ -2533,6 +2542,7 @@ static void ath12k_bss_assoc(struct ath12k *ar,
- 			     struct ieee80211_bss_conf *bss_conf)
- {
- 	struct ieee80211_vif *vif = arvif->vif;
-+	struct ath12k_wmi_vdev_up_params params = {};
- 	struct ath12k_wmi_peer_assoc_arg peer_arg;
- 	struct ieee80211_sta *ap_sta;
- 	struct ath12k_peer *peer;
-@@ -2584,7 +2594,10 @@ static void ath12k_bss_assoc(struct ath12k *ar,
- 	arvif->aid = vif->cfg.aid;
- 	ether_addr_copy(arvif->bssid, bss_conf->bssid);
- 
--	ret = ath12k_wmi_vdev_up(ar, arvif->vdev_id, arvif->aid, arvif->bssid);
-+	params.vdev_id = arvif->vdev_id;
-+	params.aid = arvif->aid;
-+	params.bssid = arvif->bssid;
-+	ret = ath12k_wmi_vdev_up(ar, &params);
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to set vdev %d up: %d\n",
- 			    arvif->vdev_id, ret);
-@@ -7110,6 +7123,7 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
- 			   struct ieee80211_vif_chanctx_switch *vifs,
- 			   int n_vifs)
- {
-+	struct ath12k_wmi_vdev_up_params params = {};
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_vif *arvif;
- 	int ret;
-@@ -7190,8 +7204,10 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
- 			ath12k_warn(ab, "failed to update bcn tmpl during csa: %d\n",
- 				    ret);
- 
--		ret = ath12k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
--					 arvif->bssid);
-+		params.vdev_id = arvif->vdev_id;
-+		params.aid = arvif->aid;
-+		params.bssid = arvif->bssid;
-+		ret = ath12k_wmi_vdev_up(arvif->ar, &params);
- 		if (ret) {
- 			ath12k_warn(ab, "failed to bring vdev up %d: %d\n",
- 				    arvif->vdev_id, ret);
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 58c67ede777e..bed5ca00305d 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -1103,7 +1103,7 @@ int ath12k_wmi_vdev_start(struct ath12k *ar, struct wmi_vdev_start_req_arg *arg,
- 	return ret;
- }
- 
--int ath12k_wmi_vdev_up(struct ath12k *ar, u32 vdev_id, u32 aid, const u8 *bssid)
-+int ath12k_wmi_vdev_up(struct ath12k *ar, struct ath12k_wmi_vdev_up_params *params)
- {
- 	struct ath12k_wmi_pdev *wmi = ar->wmi;
- 	struct wmi_vdev_up_cmd *cmd;
-@@ -1118,14 +1118,14 @@ int ath12k_wmi_vdev_up(struct ath12k *ar, u32 vdev_id, u32 aid, const u8 *bssid)
- 
- 	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_VDEV_UP_CMD,
- 						 sizeof(*cmd));
--	cmd->vdev_id = cpu_to_le32(vdev_id);
--	cmd->vdev_assoc_id = cpu_to_le32(aid);
-+	cmd->vdev_id = cpu_to_le32(params->vdev_id);
-+	cmd->vdev_assoc_id = cpu_to_le32(params->aid);
- 
--	ether_addr_copy(cmd->vdev_bssid.addr, bssid);
-+	ether_addr_copy(cmd->vdev_bssid.addr, params->bssid);
- 
- 	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
- 		   "WMI mgmt vdev up id 0x%x assoc id %d bssid %pM\n",
--		   vdev_id, aid, bssid);
-+		   params->vdev_id, params->aid, params->bssid);
- 
- 	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_VDEV_UP_CMDID);
- 	if (ret) {
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 4051ed5a0b0a..12c6cfb943c8 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2763,6 +2763,12 @@ struct wmi_vdev_delete_cmd {
- 	__le32 vdev_id;
- } __packed;
- 
-+struct ath12k_wmi_vdev_up_params {
-+	u32 vdev_id;
-+	u32 aid;
-+	const u8 *bssid;
-+};
-+
- struct wmi_vdev_up_cmd {
- 	__le32 tlv_header;
- 	__le32 vdev_id;
-@@ -4893,8 +4899,7 @@ int ath12k_wmi_bcn_tmpl(struct ath12k *ar, u32 vdev_id,
- 			struct ieee80211_mutable_offsets *offs,
- 			struct sk_buff *bcn);
- int ath12k_wmi_vdev_down(struct ath12k *ar, u8 vdev_id);
--int ath12k_wmi_vdev_up(struct ath12k *ar, u32 vdev_id, u32 aid,
--		       const u8 *bssid);
-+int ath12k_wmi_vdev_up(struct ath12k *ar, struct ath12k_wmi_vdev_up_params *params);
- int ath12k_wmi_vdev_stop(struct ath12k *ar, u8 vdev_id);
- int ath12k_wmi_vdev_start(struct ath12k *ar, struct wmi_vdev_start_req_arg *arg,
- 			  bool restart);
--- 
-2.39.0
-
+/jeff
 
