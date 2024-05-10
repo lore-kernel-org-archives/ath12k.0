@@ -4,88 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EF9DC25B10
-	for <ath12k@archiver.kernel.org>; Fri, 10 May 2024 04:28:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8839C25B10
+	for <ath12k@archiver.kernel.org>; Fri, 10 May 2024 05:08:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=98ux4RVTEfycMVrxdE1Rn98Q3SJei8uNS0QArHTHpYE=; b=Ucvr8bkUmV7IW3ClIX9TC+rFb8
-	NIQcgcvPSIx448XgIDnDqPPeC7mNxI3zK34CK/pTUIDDU22dmkM3plfs/vC800bx7xg48Xu91j47H
-	U92bW/pDc5wdECW1YB0JjkbcKguMf9dzJ3Thmdf5w01BXY12Y/fL78RV72GPmbFq/AE2b9OdVXzXW
-	Te6iiJqSI3yp4EC4cgCA+8/IfVKuLwS18Y++z+aC3c5XfNZdybRPA9XxJAg1TpuAwLEktk/sIwUjR
-	nWY3blINAHNnPPg7pNgJ727b3S9WT6j06ujWw+FbpRvXebwl69Gyf/WIBwzz7z33tPIr55vGg3qKE
-	tRlTSUFg==;
+	bh=1H1ZMOqtqXcnTRzy1xg0vOoah1KZzYfYoiP+OGekrgY=; b=4O8mYNJuO0aflrehQmCQTSkwUL
+	wYicEhk4N7sIKhRc3ll8Ji6ki6nXJLBfz/ZRkAxOMsBxaToANA5r5VTGntUSJ4iZStl/OleY4pq+r
+	ogmOQDhJb5Btp73/LIaDkNzaChFxVN9FuMIPMHDh6oZ6+tXiUJB7Oa+AsUGex9tUqdZ2/hq1IETAy
+	tudGTuLXxlKGUw4pmouxXsqZSBxW6yhLcdzDR8pGiyLKnyRHhrBQIsDbE8UkGN3DQC0hA0TDqePxn
+	4hk34QF1vcjeM/3vlTZRdvOaLfHEOPOPz63RZHfRoDyQPnpOXdb4Ha6bii0icft4wndAEYqhIkovA
+	H2WtoeVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s5HsC-00000003zjW-00C9
+	id 1s5IUa-000000043T1-0mY6
 	for ath12k@archiver.kernel.org;
-	Fri, 10 May 2024 04:28:44 +0000
+	Fri, 10 May 2024 05:08:24 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s5Hs2-00000003zi4-2vO0
+	id 1s5IUV-000000043OB-2cFY
 	for ath12k@lists.infradead.org;
-	Fri, 10 May 2024 04:28:37 +0000
+	Fri, 10 May 2024 05:08:22 +0000
 Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44A2tgMh029548;
-	Fri, 10 May 2024 04:28:31 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44A2tnqZ029691;
+	Fri, 10 May 2024 05:08:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=98ux4RVTEfycMVrxdE1Rn98Q3SJei8uNS0QArHTHpYE=; b=MA
-	jYCPDKQVI8w7DydiMY78KPUpjmE+bKy78feMIjrm71gdpCmCJ4iAUes0gSx850RB
-	4YzOqfFUiWGdXBxIYdk6olIA1QqaKvNSFc6YLB3mG3FvOwYA8sqSWAzqYiPi0Q9o
-	f71eodf/pBAOQUYj7DUWIS54kSqOewH1j1566KWMTDDyyQ5k+mzdmMjRDxQe3eg5
-	A0YUMis7OE2odjc0qZc7RRzJsqiQoEMggRwDSOy9t3l4iQICcgaMWDugnp7AzEUk
-	FHBs/SDSP5nhVTI4P/73b4N9OMLKX705OSxSWo9MXcIdqOpxCIhQC52eaAa4Fh3y
-	vAF/4DM6GFrA0kb+FHcA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y16w18htk-1
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-transfer-encoding; s=qcppdkim1; bh=1H1ZMOq
+	tqXcnTRzy1xg0vOoah1KZzYfYoiP+OGekrgY=; b=RG149Lba21kaI9kb201nSFS
+	F74bqOZxTvPeTjxJnMbPVS8XKy4AocpN6hzmey/SZa1hG8FSE8Vqad55k/s7R/v6
+	umRitNhooRDOvFiQHw6QNS0ZULoLrAAQIGbpS+nlpgGADtXZodBY9h9Dfq7Wg4lV
+	moX4Z1xtm6GqMf9Kjv9jNPDjI1Wtn/4BH2WACd++lOW//EgoDjpTkGteDg4vHD4F
+	VarYT9gZMnKuoEgoXgBkcHXTDuUELU0bKzmXg+pb+0Pnl7XnVf2BRVOrc9UfuRnq
+	wN61ncLk86VwtRJGzX3qb6iOMajWAyPkr4JQqtl4jJ50+z4J7gQF14vGVTkeo0A=
+	=
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y16w18kjr-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 10 May 2024 04:28:30 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44A4STFp023581
+	Fri, 10 May 2024 05:08:13 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 44A58AaA031840;
+	Fri, 10 May 2024 05:08:10 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3xwe3krc50-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 10 May 2024 04:28:30 GMT
-Received: from [10.152.206.169] (10.80.80.8) by nalasex01c.na.qualcomm.com
- (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 9 May 2024
- 21:28:28 -0700
-Message-ID: <f5e7a546-46d0-8f87-7469-1152db27e4f7@quicinc.com>
-Date: Fri, 10 May 2024 09:58:25 +0530
+	Fri, 10 May 2024 05:08:10 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 44A58Ac8031806;
+	Fri, 10 May 2024 05:08:10 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 44A58AgU031800
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 10 May 2024 05:08:10 +0000
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
+	id 0EC404116F; Fri, 10 May 2024 10:38:09 +0530 (+0530)
+From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Lingbo Kong <quic_lingbok@quicinc.com>,
+        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Subject: [PATCH v2 3/5] wifi: ath12k: Fix Pdev id in HTT stats request for WCN7850
+Date: Fri, 10 May 2024 10:38:04 +0530
+Message-Id: <20240510050806.514126-4-quic_rgnanase@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
+References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.0
-Subject: Re: [PATCH v4 0/8] wifi: ath12k: Introduce device group abstraction
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240507045702.2858954-1-quic_hprem@quicinc.com>
- <32270967-c1c8-4681-a282-f33defede3fb@quicinc.com>
-Content-Language: en-US
-From: Harshitha Prem <quic_hprem@quicinc.com>
-In-Reply-To: <32270967-c1c8-4681-a282-f33defede3fb@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
+Content-Transfer-Encoding: 8bit
+X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: hkxTWIxqF9u3g1hYB6hDASJxdUdOMY83
-X-Proofpoint-ORIG-GUID: hkxTWIxqF9u3g1hYB6hDASJxdUdOMY83
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: S--2vKepqsgO2Zugwm7LYbqLNE518Biq
+X-Proofpoint-ORIG-GUID: S--2vKepqsgO2Zugwm7LYbqLNE518Biq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-10_02,2024-05-10_01,2023-05-22_02
+ definitions=2024-05-10_03,2024-05-10_01,2023-05-22_02
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
  impostorscore=0 lowpriorityscore=0 spamscore=0 mlxscore=0 bulkscore=0
  priorityscore=1501 adultscore=0 phishscore=0 mlxlogscore=999
  malwarescore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2405010000 definitions=main-2405100029
+ scancount=1 engine=8.19.0-2405010000 definitions=main-2405100034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240509_212834_895433_A881D525 
-X-CRM114-Status: GOOD (  17.39  )
+X-CRM114-CacheID: sfid-20240509_220819_776627_63FAE0AB 
+X-CRM114-Status: GOOD (  16.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,112 +104,140 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Lingbo Kong <quic_lingbok@quicinc.com>
 
+Pdev id from mac phy capabilities will be sent as a part of
+HTT stats request to firmware. This causes issue with single pdev
+devices where fimrware does not respond to the stats request
+sent from host.
 
-On 5/10/2024 7:56 AM, Jeff Johnson wrote:
-> On 5/6/2024 9:56 PM, Harshitha Prem wrote:
->> To support multi-link operation, multiple devices with different bands say
->> 2 GHz or 5 GHz or 6 GHz can be combined together as a group and provide
->> an abstraction to mac80211.
->>
->> Device group abstraction - when there are multiple devices that are
->> connected by any means of communication interface between them, then these
->> devices can be combined together as a single group using a group id to form
->> a group abstraction. In ath12k driver, this abstraction would be named as
->> ath12k_hw_group (ag).
->>
->> Please find below illustration of device group abstraction with two
->> devices.
->>
->>                   Grouping of multiple devices (in future)
->> +------------------------------------------------------------------------+
->> |  +-------------------------------------+       +-------------------+   |
->> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
->> |  |   | ar (2GHz) | | | | ar (5GHz) |   |       |   | ar (6GHz) |   |   |
->> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
->> |  |          ath12k_base (ab)           |       | ath12k_base (ab)  |   |
->> |  |         (Dual band device)          |       |                   |   |
->> |  +-------------------------------------+       +-------------------+   |
->> |                 ath12k_hw_group (ag) based on group id                 |
->> +------------------------------------------------------------------------+
->>
->> Say for example, device 1 has two radios (2 GHz and 5 GHz band) and
->> device 2 has one radio (6 GHz).
->>
->> In existing code -
->>          device 1 will have two hardware abstractions hw1 (2 GHz) and hw2
->>          (5 GHz) will be registered separately to mac80211 as phy0 and phy1
->>          respectively. Similarly, device 2 will register its hw (6GHz) as
->>          phy2 to mac80211.
->>
->> In future, with multi-link abstraction
->>
->>          combination 1 - Different group id for device1 and device 2
->>                  Device 1 will create a single hardware abstraction hw1
->>                  (2 GHz and  5 GHz) and will be registered to mac80211 as
->>                  phy0. similarly, device 2 will register its hardware
->>                  (6 GHz) to mac80211 as phy1.
->>
->>          combination 2 - Same group id for device1 and device 2
->>                  Both device details are combined together as a group, say
->>                  group1, with single hardware abstraction of radios 2 GHz,
->>                  5 GHz and 6 GHz band details and will be registered to
->>                  mac80211 as phy0.
->>
->> Add base infrastructure changes to add device grouping abstraction with
->> a single device.
->>
->> This patch series brings the base code changes with following order:
->>          1. Refactor existing code which would facilitate in introducing
->>             device group abstraction.
->>          2. Create a device group abstraction during device probe.
->>          3. Start the device group only after QMI firmware ready event is
->>             received for all the devices that are combined in the group.
->>          4. Move the hardware abstractions (ath12k_hw - ah) from device
->>             (ath12k_base - ab) to device group abstraction (ag) as it would
->>             ease in having different combinations of group abstraction that
->>             can be registered to mac80211.
->>
->> v4:
->>    - Modified the cover letter
->> v3:
->>    - Removed depends-on tag of "wifi: ath12k: Refactor the hardware recovery
->>      procedures" as it is merged to ToT
->>    - Addressed the deadlock warning seen during rmmod.
->>
->> v2:
->>   - Rebased to ToT
->>
->> Karthikeyan Periyasamy (8):
->>    wifi: ath12k: Refactor core start api
->>    wifi: ath12k: Add helpers to get or set ath12k_hw
->>    wifi: ath12k: Add ath12k_get_num_hw api
->>    wifi: ath12k: Introduce QMI firmware ready flag
->>    wifi: ath12k: move ATH12K_FLAG_REGISTERED flag set to mac_register api
->>    wifi: ath12k: Introduce device group abstraction
->>    wifi: ath12k: refactor core start based on hardware group
->>    wifi: ath12k: move ath12k_hw from per soc to group
->>
->>   drivers/net/wireless/ath/ath12k/core.c | 433 +++++++++++++++++++++----
->>   drivers/net/wireless/ath/ath12k/core.h |  87 ++++-
->>   drivers/net/wireless/ath/ath12k/mac.c  | 108 ++++--
->>   drivers/net/wireless/ath/ath12k/mac.h  |   9 +-
->>   drivers/net/wireless/ath/ath12k/pci.c  |   2 +
->>   drivers/net/wireless/ath/ath12k/qmi.c  |  10 +-
->>   6 files changed, 534 insertions(+), 115 deletions(-)
->>
->>
->> base-commit: 2c4d8e19cf060744a9db466ffbaea13ab37f25ca
-> 
-> Gentle reminder that when you post a new version of a previous patchset you
-> should propagate any Acked-by/Reviewed-by/Tested-by/etc tags given to the
-> previous patches unless the patches were modified significantly enough to
-> render those tags invalid (in which case document that in the cover letter).
-> 
-> /jeff
+Single pdev devices firmware expects pdev id as 1 for 5GHz/6GHz
+phy and 2 for 2GHz band. Handle pdev id for single phy device
+while sending HTT stats request message to firmware.
 
-Sure, Thank you Jeff. I will take care of these going forward.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Thanks,
-Harshitha
+Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_tx.c |  8 +++-
+ drivers/net/wireless/ath/ath12k/mac.c   | 61 +++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/mac.h   |  3 ++
+ 3 files changed, 71 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index a22fa43c87ec..c570e55c638e 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -1018,6 +1018,7 @@ ath12k_dp_tx_htt_h2t_ext_stats_req(struct ath12k *ar, u8 type,
+ 	struct htt_ext_stats_cfg_cmd *cmd;
+ 	int len = sizeof(*cmd);
+ 	int ret;
++	u32 pdev_id;
+ 
+ 	skb = ath12k_htc_alloc_skb(ab, len);
+ 	if (!skb)
+@@ -1029,7 +1030,12 @@ ath12k_dp_tx_htt_h2t_ext_stats_req(struct ath12k *ar, u8 type,
+ 	memset(cmd, 0, sizeof(*cmd));
+ 	cmd->hdr.msg_type = HTT_H2T_MSG_TYPE_EXT_STATS_CFG;
+ 
+-	cmd->hdr.pdev_mask = 1 << ar->pdev->pdev_id;
++	if (ab->hw_params->single_pdev_only)
++		pdev_id = ath12k_mac_get_target_pdev_id(ar);
++	else
++		pdev_id = ar->pdev->pdev_id;
++
++	cmd->hdr.pdev_mask = 1 << pdev_id;
+ 
+ 	cmd->hdr.stats_type = type;
+ 	cmd->cfg_param0 = cpu_to_le32(cfg_params->cfg0);
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 96dc5c2e096f..11b8b916084d 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -666,6 +666,67 @@ static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
+ 	return NULL;
+ }
+ 
++struct ath12k_vif *ath12k_mac_get_vif_up(struct ath12k_base *ab)
++{
++	struct ath12k *ar;
++	struct ath12k_pdev *pdev;
++	struct ath12k_vif *arvif;
++	int i;
++
++	for (i = 0; i < ab->num_radios; i++) {
++		pdev = &ab->pdevs[i];
++		ar = pdev->ar;
++		list_for_each_entry(arvif, &ar->arvifs, list) {
++			if (arvif->is_up)
++				return arvif;
++		}
++	}
++
++	return NULL;
++}
++
++static bool ath12k_mac_band_match(enum nl80211_band band1, enum WMI_HOST_WLAN_BAND band2)
++{
++	return (((band1 == NL80211_BAND_2GHZ) && (band2 & WMI_HOST_WLAN_2G_CAP)) ||
++		(((band1 == NL80211_BAND_5GHZ) || (band1 == NL80211_BAND_6GHZ)) &&
++		   (band2 & WMI_HOST_WLAN_5G_CAP)));
++}
++
++u8 ath12k_mac_get_target_pdev_id_from_vif(struct ath12k_vif *arvif)
++{
++	struct ath12k *ar = arvif->ar;
++	struct ath12k_base *ab = ar->ab;
++	struct ieee80211_vif *vif = arvif->vif;
++	struct cfg80211_chan_def def;
++	enum nl80211_band band;
++	u8 pdev_id = ab->fw_pdev[0].pdev_id;
++	int i;
++
++	if (WARN_ON(ath12k_mac_vif_chan(vif, &def)))
++		return pdev_id;
++
++	band = def.chan->band;
++
++	for (i = 0; i < ab->fw_pdev_count; i++) {
++		if (ath12k_mac_band_match(band, ab->fw_pdev[i].supported_bands))
++			return ab->fw_pdev[i].pdev_id;
++	}
++
++	return pdev_id;
++}
++
++u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar)
++{
++	struct ath12k_vif *arvif;
++
++	arvif = ath12k_mac_get_vif_up(ar->ab);
++
++	if (arvif)
++		return ath12k_mac_get_target_pdev_id_from_vif(arvif);
++	else
++		return ar->ab->fw_pdev[0].pdev_id;
++}
++
+ static void ath12k_pdev_caps_update(struct ath12k *ar)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index 69fd282b9dd3..f7a6966ba92d 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -81,5 +81,8 @@ int ath12k_mac_rfkill_config(struct ath12k *ar);
+ int ath12k_mac_wait_tx_complete(struct ath12k *ar);
+ void ath12k_mac_handle_beacon(struct ath12k *ar, struct sk_buff *skb);
+ void ath12k_mac_handle_beacon_miss(struct ath12k *ar, u32 vdev_id);
++u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar);
++u8 ath12k_mac_get_target_pdev_id_from_vif(struct ath12k_vif *arvif);
++struct ath12k_vif *ath12k_mac_get_vif_up(struct ath12k_base *ab);
+ 
+ #endif
+-- 
+2.34.1
+
 
