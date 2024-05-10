@@ -4,92 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8839C25B10
-	for <ath12k@archiver.kernel.org>; Fri, 10 May 2024 05:08:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14B34C25B75
+	for <ath12k@archiver.kernel.org>; Fri, 10 May 2024 05:08:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1H1ZMOqtqXcnTRzy1xg0vOoah1KZzYfYoiP+OGekrgY=; b=4O8mYNJuO0aflrehQmCQTSkwUL
-	wYicEhk4N7sIKhRc3ll8Ji6ki6nXJLBfz/ZRkAxOMsBxaToANA5r5VTGntUSJ4iZStl/OleY4pq+r
-	ogmOQDhJb5Btp73/LIaDkNzaChFxVN9FuMIPMHDh6oZ6+tXiUJB7Oa+AsUGex9tUqdZ2/hq1IETAy
-	tudGTuLXxlKGUw4pmouxXsqZSBxW6yhLcdzDR8pGiyLKnyRHhrBQIsDbE8UkGN3DQC0hA0TDqePxn
-	4hk34QF1vcjeM/3vlTZRdvOaLfHEOPOPz63RZHfRoDyQPnpOXdb4Ha6bii0icft4wndAEYqhIkovA
-	H2WtoeVw==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=fsu9WMZe6SKTBEZTTDGdITecpC4SZQYUNKWCx0s+5YQ=; b=mscq6xjX7gAK/adL6u8CFSkzN1
+	Tris/sDYIqzXEnXjtny09QeM0M8QR9plfHLLtezhvsTGwd5ssh9tYbHLnAp+sgxwfJ5JfsYaqjWmf
+	bgcTz8abxhyVnaPfGjmi9Kqc/K3bTsZJHmjOMKyhIXhwxT1/8LAuFKan6bcoRnBopjPctPXBgA4js
+	tAJjL3sg16VCkNw9atBF0QFLDRqnMDkqhBxY1gyPPoMErdcKG2WLVabyoFWk/eJeHUV3DYBq66ZP7
+	Cz8wU9/lIXO6ctFsqSA+RrW7CqBfauRswdqKRV78IhCHA1WqT59ZleQXLDlhQO6qrNsxVMi9lJsPo
+	RA+/IFig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s5IUa-000000043T1-0mY6
+	id 1s5IUa-000000043TF-2lzz
 	for ath12k@archiver.kernel.org;
 	Fri, 10 May 2024 05:08:24 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s5IUV-000000043OB-2cFY
+	id 1s5IUV-000000043OA-2g1Z
 	for ath12k@lists.infradead.org;
 	Fri, 10 May 2024 05:08:22 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44A2tnqZ029691;
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44A2tgjI028327;
 	Fri, 10 May 2024 05:08:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-transfer-encoding; s=qcppdkim1; bh=1H1ZMOq
-	tqXcnTRzy1xg0vOoah1KZzYfYoiP+OGekrgY=; b=RG149Lba21kaI9kb201nSFS
-	F74bqOZxTvPeTjxJnMbPVS8XKy4AocpN6hzmey/SZa1hG8FSE8Vqad55k/s7R/v6
-	umRitNhooRDOvFiQHw6QNS0ZULoLrAAQIGbpS+nlpgGADtXZodBY9h9Dfq7Wg4lV
-	moX4Z1xtm6GqMf9Kjv9jNPDjI1Wtn/4BH2WACd++lOW//EgoDjpTkGteDg4vHD4F
-	VarYT9gZMnKuoEgoXgBkcHXTDuUELU0bKzmXg+pb+0Pnl7XnVf2BRVOrc9UfuRnq
-	wN61ncLk86VwtRJGzX3qb6iOMajWAyPkr4JQqtl4jJ50+z4J7gQF14vGVTkeo0A=
-	=
+	from:to:cc:subject:date:message-id:mime-version
+	:content-transfer-encoding; s=qcppdkim1; bh=fsu9WMZe6SKTBEZTTDGd
+	ITecpC4SZQYUNKWCx0s+5YQ=; b=Ug+RaHOeoY9aiDbNa9XYuW5XD5DNlJEqhNjr
+	e2nBgNkGeaVoQy7tGkJGhEQ368WOqHWUsI0Wkr5N+X/V09FhazfyFmwAoLefcS7o
+	HHmyO8imE5JIxZXQC01G5OAHuEvyBA4zoIJEMOCZUbs0rwM3224cEh/4Za5TEUHX
+	RKz9BZU1FtBJmXCUL87n09U3v2SwwmUN7eIQXRFoxU/qoJjKWQM/FcBM0Esizzzz
+	XLaBj5HcFxr1Pf6lAuccTx8GJDLMGRh50KCGAQAiCmSVfh7Nihrd0Eca5nDU6GNh
+	d1eKXIs/3pBcGbbrvKXYV7ztVsyHYKhte1mExFJxshikkJ/Idg==
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y16w18kjr-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y16w0rkvg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Fri, 10 May 2024 05:08:13 +0000 (GMT)
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 44A58AaA031840;
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 44A58AXD031844;
 	Fri, 10 May 2024 05:08:10 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3xwe3krc50-1
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3xwe3krc4w-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Fri, 10 May 2024 05:08:10 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 44A58Ac8031806;
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 44A58AMR031803;
 	Fri, 10 May 2024 05:08:10 GMT
 Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 44A58AgU031800
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 44A58AQj031796
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Fri, 10 May 2024 05:08:10 +0000
 Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
-	id 0EC404116F; Fri, 10 May 2024 10:38:09 +0530 (+0530)
+	id 0613C4110C; Fri, 10 May 2024 10:38:09 +0530 (+0530)
 From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Lingbo Kong <quic_lingbok@quicinc.com>,
+Cc: linux-wireless@vger.kernel.org,
         Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH v2 3/5] wifi: ath12k: Fix Pdev id in HTT stats request for WCN7850
-Date: Fri, 10 May 2024 10:38:04 +0530
-Message-Id: <20240510050806.514126-4-quic_rgnanase@quicinc.com>
+Subject: [PATCH v2 0/5] wifi: ath12k: Add support to enable debugfs_htt_stats
+Date: Fri, 10 May 2024 10:38:01 +0530
+Message-Id: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
-References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: S--2vKepqsgO2Zugwm7LYbqLNE518Biq
-X-Proofpoint-ORIG-GUID: S--2vKepqsgO2Zugwm7LYbqLNE518Biq
+X-Proofpoint-GUID: yC-GPtX-YE4MvifuS-o10pn9nfggIu9T
+X-Proofpoint-ORIG-GUID: yC-GPtX-YE4MvifuS-o10pn9nfggIu9T
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-05-10_03,2024-05-10_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 lowpriorityscore=0 spamscore=0 mlxscore=0 bulkscore=0
- priorityscore=1501 adultscore=0 phishscore=0 mlxlogscore=999
- malwarescore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2405010000 definitions=main-2405100034
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
+ mlxlogscore=999 clxscore=1015 suspectscore=0 impostorscore=0
+ malwarescore=0 lowpriorityscore=0 adultscore=0 bulkscore=0 phishscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405010000 definitions=main-2405100034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240509_220819_776627_63FAE0AB 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20240509_220819_804313_47772485 
+X-CRM114-Status: GOOD (  10.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,140 +101,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Lingbo Kong <quic_lingbok@quicinc.com>
+Bring in the basic infrastructure necessary for enabling htt_stats via debugfs.
+Patch series bring support to request stats type to firmware, dump the stats
+and request to reset the stats from firmware.
 
-Pdev id from mac phy capabilities will be sent as a part of
-HTT stats request to firmware. This causes issue with single pdev
-devices where fimrware does not respond to the stats request
-sent from host.
+Schema with one ath12k device:
 
-Single pdev devices firmware expects pdev id as 1 for 5GHz/6GHz
-phy and 2 for 2GHz band. Handle pdev id for single phy device
-while sending HTT stats request message to firmware.
+ath12k
+`-- pci-0000:06:00.0
+    |-- mac0
+        `-- htt_stats
+        |-- htt_stats_type
+        |-- htt_stats_reset
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Dinesh Karthikeyan (3):
+  wifi: ath12k: Add support to enable debugfs_htt_stats
+  wifi: ath12k: Add htt_stats_dump file ops support
+  wifi: ath12k: Add support to parse requested stats_type
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp_tx.c |  8 +++-
- drivers/net/wireless/ath/ath12k/mac.c   | 61 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/mac.h   |  3 ++
- 3 files changed, 71 insertions(+), 1 deletion(-)
+Lingbo Kong (1):
+  wifi: ath12k: Fix Pdev id in HTT stats request for WCN7850
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index a22fa43c87ec..c570e55c638e 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -1018,6 +1018,7 @@ ath12k_dp_tx_htt_h2t_ext_stats_req(struct ath12k *ar, u8 type,
- 	struct htt_ext_stats_cfg_cmd *cmd;
- 	int len = sizeof(*cmd);
- 	int ret;
-+	u32 pdev_id;
- 
- 	skb = ath12k_htc_alloc_skb(ab, len);
- 	if (!skb)
-@@ -1029,7 +1030,12 @@ ath12k_dp_tx_htt_h2t_ext_stats_req(struct ath12k *ar, u8 type,
- 	memset(cmd, 0, sizeof(*cmd));
- 	cmd->hdr.msg_type = HTT_H2T_MSG_TYPE_EXT_STATS_CFG;
- 
--	cmd->hdr.pdev_mask = 1 << ar->pdev->pdev_id;
-+	if (ab->hw_params->single_pdev_only)
-+		pdev_id = ath12k_mac_get_target_pdev_id(ar);
-+	else
-+		pdev_id = ar->pdev->pdev_id;
-+
-+	cmd->hdr.pdev_mask = 1 << pdev_id;
- 
- 	cmd->hdr.stats_type = type;
- 	cmd->cfg_param0 = cpu_to_le32(cfg_params->cfg0);
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 96dc5c2e096f..11b8b916084d 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -666,6 +666,67 @@ static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
- 	return NULL;
- }
- 
-+struct ath12k_vif *ath12k_mac_get_vif_up(struct ath12k_base *ab)
-+{
-+	struct ath12k *ar;
-+	struct ath12k_pdev *pdev;
-+	struct ath12k_vif *arvif;
-+	int i;
-+
-+	for (i = 0; i < ab->num_radios; i++) {
-+		pdev = &ab->pdevs[i];
-+		ar = pdev->ar;
-+		list_for_each_entry(arvif, &ar->arvifs, list) {
-+			if (arvif->is_up)
-+				return arvif;
-+		}
-+	}
-+
-+	return NULL;
-+}
-+
-+static bool ath12k_mac_band_match(enum nl80211_band band1, enum WMI_HOST_WLAN_BAND band2)
-+{
-+	return (((band1 == NL80211_BAND_2GHZ) && (band2 & WMI_HOST_WLAN_2G_CAP)) ||
-+		(((band1 == NL80211_BAND_5GHZ) || (band1 == NL80211_BAND_6GHZ)) &&
-+		   (band2 & WMI_HOST_WLAN_5G_CAP)));
-+}
-+
-+u8 ath12k_mac_get_target_pdev_id_from_vif(struct ath12k_vif *arvif)
-+{
-+	struct ath12k *ar = arvif->ar;
-+	struct ath12k_base *ab = ar->ab;
-+	struct ieee80211_vif *vif = arvif->vif;
-+	struct cfg80211_chan_def def;
-+	enum nl80211_band band;
-+	u8 pdev_id = ab->fw_pdev[0].pdev_id;
-+	int i;
-+
-+	if (WARN_ON(ath12k_mac_vif_chan(vif, &def)))
-+		return pdev_id;
-+
-+	band = def.chan->band;
-+
-+	for (i = 0; i < ab->fw_pdev_count; i++) {
-+		if (ath12k_mac_band_match(band, ab->fw_pdev[i].supported_bands))
-+			return ab->fw_pdev[i].pdev_id;
-+	}
-+
-+	return pdev_id;
-+}
-+
-+u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar)
-+{
-+	struct ath12k_vif *arvif;
-+
-+	arvif = ath12k_mac_get_vif_up(ar->ab);
-+
-+	if (arvif)
-+		return ath12k_mac_get_target_pdev_id_from_vif(arvif);
-+	else
-+		return ar->ab->fw_pdev[0].pdev_id;
-+}
-+
- static void ath12k_pdev_caps_update(struct ath12k *ar)
- {
- 	struct ath12k_base *ab = ar->ab;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index 69fd282b9dd3..f7a6966ba92d 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -81,5 +81,8 @@ int ath12k_mac_rfkill_config(struct ath12k *ar);
- int ath12k_mac_wait_tx_complete(struct ath12k *ar);
- void ath12k_mac_handle_beacon(struct ath12k *ar, struct sk_buff *skb);
- void ath12k_mac_handle_beacon_miss(struct ath12k *ar, u32 vdev_id);
-+u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar);
-+u8 ath12k_mac_get_target_pdev_id_from_vif(struct ath12k_vif *arvif);
-+struct ath12k_vif *ath12k_mac_get_vif_up(struct ath12k_base *ab);
- 
- #endif
+Ramya Gnanasekar (1):
+  wifi: ath12k: Dump additional Tx PDEV HTT stats
+
+ drivers/net/wireless/ath/ath12k/Makefile      |   2 +-
+ drivers/net/wireless/ath/ath12k/core.h        |  11 +
+ drivers/net/wireless/ath/ath12k/debugfs.c     |   3 +
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 714 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 300 ++++++++
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  10 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.h       |   4 +
+ drivers/net/wireless/ath/ath12k/dp_tx.c       |   8 +-
+ drivers/net/wireless/ath/ath12k/mac.c         |  61 ++
+ drivers/net/wireless/ath/ath12k/mac.h         |   3 +
+ 10 files changed, 1110 insertions(+), 6 deletions(-)
+ create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+ create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+
+
+base-commit: 1025c616ee13372f3803b158abb1d87ef368ae3d
 -- 
 2.34.1
 
+---
+v2:
+ - Handled pdev id sent in HTT stats request command for WCN7850
+   Added changes as a separate patch #3
+ - Tested in WCN7850 and added Tested-on tag
+ - Rebased on ToT
+---
 
