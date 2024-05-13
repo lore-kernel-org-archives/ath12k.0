@@ -4,63 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9CC4C25B10
-	for <ath12k@archiver.kernel.org>; Mon, 13 May 2024 14:14:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B551C25B10
+	for <ath12k@archiver.kernel.org>; Mon, 13 May 2024 14:19:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wjIku5eYV7xOB9IKFCuRLXcKU5G+Kz397KogYUkOmWU=; b=grVp7wFKffPeMoynP26MjMnIJv
-	iiF4bS3IZRfHisORrv3GfbnwNGVCNVUVrf0X8ksEL7ovtwaGnPJO3/Fj3IgQLgyBSr4j9aRuCPxJB
-	qrJ1Vp7MXgm0vZoI/vKA7N4GNgdWVH7R1AjK0i0gTtQKYeG1yLpT/9JGtj0z2jZVfJDIqRRgHUyIZ
-	/tTa1jquwLvZZ0xTOPlLbhO03daCGN0nOn7+jyAavWofijWLXaI/b/MKWV+AYtWXyHtUolirKqAJc
-	wGgqjTkiSuLZ4crMPmN+IOP0y5xO0kG2nsZhkUoV8PMTWh5ZjA5umkE0AWjne16Fip0ftJ/u/kJdr
-	cpqKmImw==;
+	bh=G7hefxAk8SXTOllndNBwGlrwNJLYft8iZmgjH3bgHCw=; b=Hh771RlzlrPGWGNc9+z4PiBmAn
+	XLZLYwO6nLIXN6sp8ooG75rQWizr5J8yPKoxkteEguusoQy5KEnsgrXWgCR+l8Pta5Mfm1oVkzodW
+	L3cZYwcNAbMsaMml0qFMvOQ8xiegfMsKbhTII8WPddNJLh6a169gnw6TFRAF7YaiuNE0g0F6MpKa/
+	QsOgn/Ilqv8Q0I8QB6G8frAUIG5minFbFZ6i0BBlShp6ziudQEwcco6cWVJ2K6xSANXPd2mG48Nzh
+	NQbYsVYU966rOJhfLtY6uDemu0ee+/iOLiaq52b/+BmVHk9++jg+IITjnLyanDOEpAKY4qy1w4ETv
+	FfJzNi3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6WS8-0000000D9Am-1uUi
+	id 1s6WWY-0000000DAPm-0gmS
 	for ath12k@archiver.kernel.org;
-	Mon, 13 May 2024 14:14:56 +0000
+	Mon, 13 May 2024 14:19:30 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6WS5-0000000D9A0-4BkR
+	id 1s6WWV-0000000DAPH-1Dff
 	for ath12k@lists.infradead.org;
-	Mon, 13 May 2024 14:14:55 +0000
+	Mon, 13 May 2024 14:19:28 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7D57060E07;
-	Mon, 13 May 2024 14:14:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E431CC4AF10;
-	Mon, 13 May 2024 14:14:51 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 10D4460E07;
+	Mon, 13 May 2024 14:19:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27401C4AF0C;
+	Mon, 13 May 2024 14:19:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715609693;
-	bh=UPuauCYh36dyevJphL1EJxVRpRWQSPlcqWsuOaWqJYg=;
+	s=k20201202; t=1715609965;
+	bh=Pf4Q+gCnCQVUE/TMvKBTjzV2HO0RZrZsRGNbNFuqenk=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=kUx2QbRK0U2xWMPGy+9v/76znz5fhfdeGGXl8g4bm5sRXIPEVuPo1yvjLwIcedQdc
-	 qM9lJHG4GrWsNYcRX648GkGYJcxHZ5pHZrocQWl35aTA5TZXfLah5xHJ217FqqCYgT
-	 aEZNs2qSKFif6KmNkRx8KcN2yvHkPcuDIuBgmJzs9bNve2BoSiGyOekQP/BM6tBGzT
-	 TFL6/Jumm80F2Nwza/pWfbzcU+5i8oLXE9y1XFLeTKDjrIqhkSi8d6W1t/9Uga427y
-	 nNhKbegS6z/nZB2N1PeyqQJyuqiGMvvLRZc+QJMJUEVT6JTy5WxRkFw2jWvFeDWM78
-	 xbq5p+bwx4iHA==
+	b=Qp+CnAu9cV1NVsPOJZrdK2r5V2/KW5LKZZ4h3j1wNWkbL1zeOGfNtY99cAXgB9Qdm
+	 gkkWDYxRtB+zzxwUIcB44CKCX0YCNg7+6xnva9IBstu2ONYpO1H1BbNrV83K1U4R5m
+	 XzShutYjN6avTokYFSuCunZwAjr6qRqnO1Hjox71mfDTnxU80aGXV/LY6MkloISZ73
+	 ArH3fXcGeeI1LJA1XXaa4Ef5dXXF4fEJ31lA6kV4qYpllbTM8hf2DkvhrtZzcC62mn
+	 L00e2sqf/0r2olLmt15a4FXC/HcB0OKs9qmJr4NudhuTVAV3UOmffxaXAIzezJk0mz
+	 aL56uKufFmopQ==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH 1/2] wifi: ath12k: fix misspelling of "dma" in
- num_rxmda_per_pdev
+Subject: Re: [PATCH wireless-next v2] wifi: ath12k: allocate dummy net_device
+ dynamically
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240504-ath12k_dp_rxdma_ring_sel_config_wcn7850-ret-v1-1-44d2843a2857@quicinc.com>
-References: <20240504-ath12k_dp_rxdma_ring_sel_config_wcn7850-ret-v1-1-44d2843a2857@quicinc.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, <linux-wireless@vger.kernel.org>,
- <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240508095410.1923198-1-leitao@debian.org>
+References: <20240508095410.1923198-1-leitao@debian.org>
+To: Breno Leitao <leitao@debian.org>
+Cc: horms@kernel.org, Jeff Johnson <jjohnson@kernel.org>,
+ netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org (open list:NETWORKING DRIVERS (WIRELESS)),
+ ath12k@lists.infradead.org (open list:QUALCOMM ATH12K WIRELESS DRIVER),
+ linux-kernel@vger.kernel.org (open list)
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171560969001.1690511.12764694198482040352.kvalo@kernel.org>
-Date: Mon, 13 May 2024 14:14:51 +0000 (UTC)
+Message-ID: <171560996218.1732161.18068750430706487082.kvalo@kernel.org>
+Date: Mon, 13 May 2024 14:19:23 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240513_071454_111211_DFF4C9B1 
-X-CRM114-Status: UNSURE (   5.28  )
+X-CRM114-CacheID: sfid-20240513_071927_532912_B746144F 
+X-CRM114-Status: UNSURE (   6.49  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,23 +78,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
+Breno Leitao <leitao@debian.org> wrote:
 
-> The ath12k_hw_params member num_rxmda_per_pdev contains a misspelling
-> of "dma" so fix it.
+> Embedding net_device into structures prohibits the usage of flexible
+> arrays in the net_device structure. For more details, see the discussion
+> at [1].
 > 
-> No functional changes, compile tested only.
+> Un-embed the net_device from struct ath12k_ext_irq_grp by converting it
+> into a pointer. Then use the leverage alloc_netdev_dummy() to allocate
+> the net_device object at ath12k_pci_ext_irq_config().
 > 
-> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> The free of the device occurs at ath12k_pci_free_ext_irq().
+> 
+> Link: https://lore.kernel.org/all/20240229225910.79e224cf@kernel.org/ [1]
+> Signed-off-by: Breno Leitao <leitao@debian.org>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-2 patches applied to ath-next branch of ath.git, thanks.
+Patch applied to ath-next branch of ath.git, thanks.
 
-ff5fa958d2fd wifi: ath12k: fix misspelling of "dma" in num_rxmda_per_pdev
-3b9344740843 wifi: ath12k: initialize 'ret' in ath12k_dp_rxdma_ring_sel_config_wcn7850()
+4f9206e8c2c1 wifi: ath12k: allocate dummy net_device dynamically
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240504-ath12k_dp_rxdma_ring_sel_config_wcn7850-ret-v1-1-44d2843a2857@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240508095410.1923198-1-leitao@debian.org/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
