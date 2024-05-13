@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4045DC25B78
-	for <ath12k@archiver.kernel.org>; Mon, 13 May 2024 14:13:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C210C25B10
+	for <ath12k@archiver.kernel.org>; Mon, 13 May 2024 14:13:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rWUaDCoz6txJVAgzUWjazEzcnxdlgf+y8FA1qmgDM/Q=; b=PmW49ERJvv/epsIdSzp2WJGkt1
-	ZyAwsgHpR5LFjTqCWZuOd4hyEO8erTyyNtGve9Lo10XnwLiD+MwT3JJgi7nVxEFNMI3KHz6f2j07b
-	oWHxt5mp5fbndfyRLXWiM/lAM3JKDh51c3WTLJlljxrA+2Yl7hDqtGdbCM3+hOZYTnrLxyGzOay64
-	I5itZUgP+abBVNZ5fH7u3pt83YZVjxAuYYFzaE+vFOdjqtODbT6CohPk8GXH29pdwOwaAK3z4Vj+0
-	m7ozoQFNkmGZPgcSJJPLh0WvouPpPZPgbw24mK8xxZ54a7bGJwHRcPUKa8lu4zg0u2w8shULddpKa
-	w0imFTHw==;
+	bh=cLqrMzonII4sTQq+9Ic25mMo0r8UE1nIkWGmgw3UdbE=; b=ukYcb8v5XCEaN6nh8b0ByFrAbI
+	QKGAjtqTh2yAQfvMSIV84jTvhTIgE0sLzUq7GnJQ4o3LLdlI2ezGR5P3JIkabpRZtqwMvs4WH2pfO
+	bfEZcAhtERD1vIyOu53Vb1DBqZD4klrPm5WpSRHGkvzrTqa5h0orsVixaUIWK4krAB845jgejV41l
+	p8RgFl/qidFSN55bipbQcxw37qdGzFtwjY8zvgPZexvqce0pyXqa+rKsn7Ov8Rp/AFPbd48+xmWiP
+	luC7XiN29ReHlVtZb2eYx/JmLZeQIAfO+s67n7qLOm3ttvcMv6JAR2czTp9clg7GXhro2jNcYeWp1
+	b65UK+DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6WQV-0000000D8hm-2xr5
+	id 1s6WQn-0000000D8od-0N7y
 	for ath12k@archiver.kernel.org;
-	Mon, 13 May 2024 14:13:15 +0000
+	Mon, 13 May 2024 14:13:33 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6WQS-0000000D8eV-0hsB;
-	Mon, 13 May 2024 14:13:13 +0000
+	id 1s6WQk-0000000D8nR-3BQ5
+	for ath12k@lists.infradead.org;
+	Mon, 13 May 2024 14:13:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id CF844CE0EBF;
-	Mon, 13 May 2024 14:13:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E59F4C32782;
-	Mon, 13 May 2024 14:12:32 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id DDF43CE0DFF;
+	Mon, 13 May 2024 14:13:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71C15C113CC;
+	Mon, 13 May 2024 14:13:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715609554;
-	bh=cfVkEuuf1nm+2kNAircxmCV5OVM0lYdc8fwZJMocSJw=;
+	s=k20201202; t=1715609586;
+	bh=k5hs2jo2DPrq9jeuC5BRr/1EQid+vELuPYJpggcc5IQ=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=fD/teDXbT0HGcM7y9LjRgxQ5GQ2qDLPuOfKqqrGThMjiDPVKzLgiP3X0wbLDSQdxs
-	 9oM1dd8FDmvO7fVpOHIzYtXVBkusb2DSkBiSWxBSXvVznbHXkYCgGJtFUJxCGq54tq
-	 ctEX3zIqiUKQuSyLdqnOWq+c5mD88YODZ2x/EG4YDXMLCFgtvfKA100coopPNjo8Rm
-	 EdMufQe5hHDNZvBUBX22S1RxJcuF3knWWLOFxVM6fuhiv18AozQG03reW+O4da8Yjm
-	 6RGecGnBmPu3hmeiZLViIhfdgjZ9c3gsQkle9RGjPU5bS4nTaio5VvFwpPxyuFdiCA
-	 hUO8r4FSMdJ8g==
+	b=L1Qq5mYVBoc2UN8qllh8m7QnNxhAHiG7Cg8s1/7TIzQATUIaLh1o1OUvpbldPsQ4g
+	 90FPj9leTVU3TVz84LGLh1W046yr3TLFFHgRg/r8LuTsvGCkI/gL7QoXL7kZt2sb/t
+	 qzbxIlONTmpwYFRVCYXS4sCM6QQFswiE99TjgCdCo1t7EbLaDUXVoBwPnBUqvA963B
+	 AJknkyjHOZVbQePq7lPJFZo33UMPL07Gg2jarhM6PUHSFWyOdvM8LA1ly+YsusMSIy
+	 p9947eIwt5/rV503ZhSF6U9bPOq5K5IgnwUizuAi+tNPNROOrkkIJ8UMYp5PFDh/L/
+	 hq80FusdIrdVQ==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH 1/2] wifi: ath12k: initialize 'ret' in
- ath12k_qmi_load_file_target_mem()
+Subject: Re: [PATCH] wifi: ath12k: avoid double SW2HW_MACID conversion
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240504-qmi_load_file_target_mem-v1-1-069fc44c45eb@quicinc.com>
-References: <20240504-qmi_load_file_target_mem-v1-1-069fc44c45eb@quicinc.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, <linux-wireless@vger.kernel.org>,
- <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <ath11k@lists.infradead.org>, Jeff Johnson
-	<quic_jjohnson@quicinc.com>
+In-Reply-To: <20240506173017.597715-1-quic_periyasa@quicinc.com>
+References: <20240506173017.597715-1-quic_periyasa@quicinc.com>
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171560955084.1690511.16227061715514007364.kvalo@kernel.org>
-Date: Mon, 13 May 2024 14:12:32 +0000 (UTC)
+Message-ID: <171560958344.1690511.4558865719984074214.kvalo@kernel.org>
+Date: Mon, 13 May 2024 14:13:05 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240513_071312_396153_96E9C6D3 
-X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-CacheID: sfid-20240513_071331_043644_B6024736 
+X-CRM114-Status: UNSURE (   8.14  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,30 +75,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
+Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
 
-> smatch flagged the following issue:
+> Currently, ath12k_wmi_pdev_dma_ring_cfg() fails due to an invalid pdev_id
+> parameter passed to the WMI_PDEV_DMA_RING_CFG_REQ_CMDID WMI command. This
+> invalid pdev_id is caused by a double conversion of the MAC ID. Since the
+> the caller of ath12k_wmi_pdev_dma_ring_cfg() already performs the MAC ID
+> conversion, it is unnecessary to do it again within the function. To fix
+> this, remove the software (SW) to hardware (HW) MAC ID conversion from
+> ath12k_wmi_pdev_dma_ring_cfg() to avoid this redundant conversion.
 > 
-> drivers/net/wireless/ath/ath12k/qmi.c:2619 ath12k_qmi_load_file_target_mem() error: uninitialized symbol 'ret'.
+> Found in code review.
 > 
-> The reality is that 'ret' is initialized in every path through
-> ath12k_qmi_load_file_target_mem() except one, the case where the input
-> 'len' is 0, and hence the "while (remaining)" loop is never entered.
-> But to make sure this case is also handled, add an initializer to the
-> declaration of 'ret'.
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > 
-> No functional changes, compile tested only.
-> 
-> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-2 patches applied to ath-next branch of ath.git, thanks.
+Patch applied to ath-next branch of ath.git, thanks.
 
-bb0b0a6b96e6 wifi: ath12k: initialize 'ret' in ath12k_qmi_load_file_target_mem()
-199f149e97dc wifi: ath11k: initialize 'ret' in ath11k_qmi_load_file_target_mem()
+2db7a82fd150 wifi: ath12k: avoid double SW2HW_MACID conversion
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240504-qmi_load_file_target_mem-v1-1-069fc44c45eb@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240506173017.597715-1-quic_periyasa@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
