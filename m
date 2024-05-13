@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C210C25B10
-	for <ath12k@archiver.kernel.org>; Mon, 13 May 2024 14:13:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9CC4C25B10
+	for <ath12k@archiver.kernel.org>; Mon, 13 May 2024 14:14:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cLqrMzonII4sTQq+9Ic25mMo0r8UE1nIkWGmgw3UdbE=; b=ukYcb8v5XCEaN6nh8b0ByFrAbI
-	QKGAjtqTh2yAQfvMSIV84jTvhTIgE0sLzUq7GnJQ4o3LLdlI2ezGR5P3JIkabpRZtqwMvs4WH2pfO
-	bfEZcAhtERD1vIyOu53Vb1DBqZD4klrPm5WpSRHGkvzrTqa5h0orsVixaUIWK4krAB845jgejV41l
-	p8RgFl/qidFSN55bipbQcxw37qdGzFtwjY8zvgPZexvqce0pyXqa+rKsn7Ov8Rp/AFPbd48+xmWiP
-	luC7XiN29ReHlVtZb2eYx/JmLZeQIAfO+s67n7qLOm3ttvcMv6JAR2czTp9clg7GXhro2jNcYeWp1
-	b65UK+DQ==;
+	bh=wjIku5eYV7xOB9IKFCuRLXcKU5G+Kz397KogYUkOmWU=; b=grVp7wFKffPeMoynP26MjMnIJv
+	iiF4bS3IZRfHisORrv3GfbnwNGVCNVUVrf0X8ksEL7ovtwaGnPJO3/Fj3IgQLgyBSr4j9aRuCPxJB
+	qrJ1Vp7MXgm0vZoI/vKA7N4GNgdWVH7R1AjK0i0gTtQKYeG1yLpT/9JGtj0z2jZVfJDIqRRgHUyIZ
+	/tTa1jquwLvZZ0xTOPlLbhO03daCGN0nOn7+jyAavWofijWLXaI/b/MKWV+AYtWXyHtUolirKqAJc
+	wGgqjTkiSuLZ4crMPmN+IOP0y5xO0kG2nsZhkUoV8PMTWh5ZjA5umkE0AWjne16Fip0ftJ/u/kJdr
+	cpqKmImw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6WQn-0000000D8od-0N7y
+	id 1s6WS8-0000000D9Am-1uUi
 	for ath12k@archiver.kernel.org;
-	Mon, 13 May 2024 14:13:33 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Mon, 13 May 2024 14:14:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6WQk-0000000D8nR-3BQ5
+	id 1s6WS5-0000000D9A0-4BkR
 	for ath12k@lists.infradead.org;
-	Mon, 13 May 2024 14:13:32 +0000
+	Mon, 13 May 2024 14:14:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id DDF43CE0DFF;
-	Mon, 13 May 2024 14:13:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71C15C113CC;
-	Mon, 13 May 2024 14:13:05 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7D57060E07;
+	Mon, 13 May 2024 14:14:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E431CC4AF10;
+	Mon, 13 May 2024 14:14:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715609586;
-	bh=k5hs2jo2DPrq9jeuC5BRr/1EQid+vELuPYJpggcc5IQ=;
+	s=k20201202; t=1715609693;
+	bh=UPuauCYh36dyevJphL1EJxVRpRWQSPlcqWsuOaWqJYg=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=L1Qq5mYVBoc2UN8qllh8m7QnNxhAHiG7Cg8s1/7TIzQATUIaLh1o1OUvpbldPsQ4g
-	 90FPj9leTVU3TVz84LGLh1W046yr3TLFFHgRg/r8LuTsvGCkI/gL7QoXL7kZt2sb/t
-	 qzbxIlONTmpwYFRVCYXS4sCM6QQFswiE99TjgCdCo1t7EbLaDUXVoBwPnBUqvA963B
-	 AJknkyjHOZVbQePq7lPJFZo33UMPL07Gg2jarhM6PUHSFWyOdvM8LA1ly+YsusMSIy
-	 p9947eIwt5/rV503ZhSF6U9bPOq5K5IgnwUizuAi+tNPNROOrkkIJ8UMYp5PFDh/L/
-	 hq80FusdIrdVQ==
+	b=kUx2QbRK0U2xWMPGy+9v/76znz5fhfdeGGXl8g4bm5sRXIPEVuPo1yvjLwIcedQdc
+	 qM9lJHG4GrWsNYcRX648GkGYJcxHZ5pHZrocQWl35aTA5TZXfLah5xHJ217FqqCYgT
+	 aEZNs2qSKFif6KmNkRx8KcN2yvHkPcuDIuBgmJzs9bNve2BoSiGyOekQP/BM6tBGzT
+	 TFL6/Jumm80F2Nwza/pWfbzcU+5i8oLXE9y1XFLeTKDjrIqhkSi8d6W1t/9Uga427y
+	 nNhKbegS6z/nZB2N1PeyqQJyuqiGMvvLRZc+QJMJUEVT6JTy5WxRkFw2jWvFeDWM78
+	 xbq5p+bwx4iHA==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: avoid double SW2HW_MACID conversion
+Subject: Re: [PATCH 1/2] wifi: ath12k: fix misspelling of "dma" in
+ num_rxmda_per_pdev
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240506173017.597715-1-quic_periyasa@quicinc.com>
-References: <20240506173017.597715-1-quic_periyasa@quicinc.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
+In-Reply-To: <20240504-ath12k_dp_rxdma_ring_sel_config_wcn7850-ret-v1-1-44d2843a2857@quicinc.com>
+References: <20240504-ath12k_dp_rxdma_ring_sel_config_wcn7850-ret-v1-1-44d2843a2857@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, <linux-wireless@vger.kernel.org>,
+ <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ Jeff Johnson <quic_jjohnson@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171560958344.1690511.4558865719984074214.kvalo@kernel.org>
-Date: Mon, 13 May 2024 14:13:05 +0000 (UTC)
+Message-ID: <171560969001.1690511.12764694198482040352.kvalo@kernel.org>
+Date: Mon, 13 May 2024 14:14:51 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240513_071331_043644_B6024736 
-X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-CacheID: sfid-20240513_071454_111211_DFF4C9B1 
+X-CRM114-Status: UNSURE (   5.28  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,30 +76,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-> Currently, ath12k_wmi_pdev_dma_ring_cfg() fails due to an invalid pdev_id
-> parameter passed to the WMI_PDEV_DMA_RING_CFG_REQ_CMDID WMI command. This
-> invalid pdev_id is caused by a double conversion of the MAC ID. Since the
-> the caller of ath12k_wmi_pdev_dma_ring_cfg() already performs the MAC ID
-> conversion, it is unnecessary to do it again within the function. To fix
-> this, remove the software (SW) to hardware (HW) MAC ID conversion from
-> ath12k_wmi_pdev_dma_ring_cfg() to avoid this redundant conversion.
+> The ath12k_hw_params member num_rxmda_per_pdev contains a misspelling
+> of "dma" so fix it.
 > 
-> Found in code review.
+> No functional changes, compile tested only.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Patch applied to ath-next branch of ath.git, thanks.
+2 patches applied to ath-next branch of ath.git, thanks.
 
-2db7a82fd150 wifi: ath12k: avoid double SW2HW_MACID conversion
+ff5fa958d2fd wifi: ath12k: fix misspelling of "dma" in num_rxmda_per_pdev
+3b9344740843 wifi: ath12k: initialize 'ret' in ath12k_dp_rxdma_ring_sel_config_wcn7850()
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240506173017.597715-1-quic_periyasa@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240504-ath12k_dp_rxdma_ring_sel_config_wcn7850-ret-v1-1-44d2843a2857@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
