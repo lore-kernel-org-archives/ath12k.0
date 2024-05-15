@@ -4,89 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6989DC25B79
-	for <ath12k@archiver.kernel.org>; Wed, 15 May 2024 16:10:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54724C25B77
+	for <ath12k@archiver.kernel.org>; Wed, 15 May 2024 16:52:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ocnp25BKndipHW0hJDja/0FBH5DhK3l/5UBX3iyeZlg=; b=Aiy8kqZ3n8oS35kvcQS53/HTDN
-	ooZwX0I2TftvLy1yi+JS5X15TnIR4rcTabZtxrIDZwsS3UW/8LG0TyyrZwtKyJfCXJow5S/sonyDJ
-	g8Hv1Q2FPHC6GtIunc3JanUjNzTIegGxHEhV6eVS/Kv+5xntZq7NtIBklJqbz2qbQzKt1TtIqVGE3
-	0AzPwmtTsjoXE5Imwl1pmDLroAdlysNHVLfBwyA/INbIlTJ5N9Z5NT+NuYmlwm6VnwKFxXgPi1uLz
-	RYJet5WH8Arq+smL6ivxtslsU4o3oA3eWIDRnV5nP2kH8g7WZ8zvPR6lEXUHDjkCd+SeoTePVK/9V
-	tn/nkEZQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QPNFqMpva86xliftRIBYXJMbBqcCd+VItXf7CDU6HwU=; b=wp7y6sWxdg7gHOFlhTRbwRH3A5
+	+D4L6ChfyawuqWvbM5ysJ9EzttEt3JoqYUyBOH+X+3ZeaAUlnG7xZZLuuoLxOi0Y56TNMaMz9WcH7
+	n4r70C1LZCN70eyzBjT55vCU/vQxXTZYRt6lQjcXBsfKmjtxgkUxPAykAH37iBWrFeO/3KM6VjQaM
+	a5bplWNEg2UzO0WCQk9NFsIDzyAZo0enr4mkizojP/MJEOnN6kwh0ds6Vs5C0k1fM/0FSNQDSu8q5
+	LU/J5+lh9DweS46jy9i7v4QRbqvOZ1hd+rW+5PEYcWXNDH6zutUtZKWIBUapfGystHkKg9QGeuUqF
+	BIhaMyog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s7HDM-000000023oh-43bb
+	id 1s7Hs3-00000002BGw-3blw
 	for ath12k@archiver.kernel.org;
-	Wed, 15 May 2024 16:10:48 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 15 May 2024 16:52:51 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s7HDJ-000000023mp-0j1Z
+	id 1s7Hrz-00000002BCb-2fAS
 	for ath12k@lists.infradead.org;
-	Wed, 15 May 2024 16:10:46 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44F90YQ6026428;
-	Wed, 15 May 2024 16:10:44 GMT
+	Wed, 15 May 2024 16:52:49 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44F90YKg009203;
+	Wed, 15 May 2024 16:52:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=Ocnp25BKndipHW0hJDja/0FBH5DhK3l/5UBX3iyeZlg=; b=Un
-	fC9GOK8Ec0MpyT3Tx+fREcuMwkVyX8EgHBGAc0+EqRKCqth4QjFmzNsPqgp1PGyB
-	dJHXQ2w042fzTwUViTM7f8OxZEXfsMh3p4L937CYFAavnHfswqEebzSpLa5+c1xZ
-	2312lS/S/tkw4ORdYewsNJuH/sWPFhHr/kyq31yISv/TjB4O4gYKQDTBN9TOAAT0
-	U7kd5KvolL7HtGPu5+vrFMF5HXUkC+Mj5icGhJpJTYlvvbnUDSFJKKwHriS1afAm
-	5GKT7kC3/pRUdkBMJWdc8HSmy82cnimR3WhsyTTziHfUEB4Xi5P5tQ+YoSOOToxW
-	u/K0MHRubxJQ0K8Zc/Tg==
+	from:to:cc:subject:date:message-id:in-reply-to:references
+	:mime-version:content-type; s=qcppdkim1; bh=QPNFqMpva86xliftRIBY
+	XJMbBqcCd+VItXf7CDU6HwU=; b=P/g93YxXIeLS0TjMVhjPJc311ateZJ9HwNwD
+	DJIAKtvW7gMmgIBRbH7M+S7hjNd2qAAbaP6NM7rQPfGaH9B8+BspvMU6kyI2k9qc
+	HyPgoq6Pm/bVv2bqcyt1g4c3N3CHBZ/sMXs6iw4KXfYZgcC4m/fB7v4uc/KHhr5P
+	JbL4w7rrX6UNPNfLZ9NUyfbJ0pEP1OlQ2bO2ugMDdJ8r1FUp7t1yOHjFBWlMuS/U
+	IyRi+ymeYSbmGbGH0obW0pRQiNdGq18QFHVB79oQIb59Apd6B8QVsaVgGD+cJAnF
+	PMkb8saUqtqARTv14VyaRRrBgo53+v1yOuJTDul2uXaly4/Q8A==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y47egb8qc-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y3x51mjkd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 May 2024 16:10:44 +0000 (GMT)
+	Wed, 15 May 2024 16:52:43 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44FGAhQD022369
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44FGqgIf015786
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 May 2024 16:10:43 GMT
-Received: from [10.227.108.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 15 May
- 2024 09:10:42 -0700
-Message-ID: <ce6cf9f2-d10d-4459-b894-47b08bcf7af5@quicinc.com>
-Date: Wed, 15 May 2024 09:10:42 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V4 09/10] wifi: ath12k: add support for 160 MHz bandwidth
-Content-Language: en-US
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-References: <20240508002055.17705-1-quic_pradeepc@quicinc.com>
- <20240508002055.17705-10-quic_pradeepc@quicinc.com>
- <4ce44353-994e-4ae5-8f5a-9bb19d31ba9d@quicinc.com>
+	Wed, 15 May 2024 16:52:42 GMT
+Received: from pradeepc-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Wed, 15 May 2024 09:52:42 -0700
 From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-In-Reply-To: <4ce44353-994e-4ae5-8f5a-9bb19d31ba9d@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>,
+        Muna Sinada <quic_msinada@quicinc.com>
+Subject: [PATCH V5 05/10] wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
+Date: Wed, 15 May 2024 09:52:26 -0700
+Message-ID: <20240515165231.12114-6-quic_pradeepc@quicinc.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20240515165231.12114-1-quic_pradeepc@quicinc.com>
+References: <20240515165231.12114-1-quic_pradeepc@quicinc.com>
+MIME-Version: 1.0
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: eO7Psm5oflbqe0PGyyrFGRrroGanUDLc
-X-Proofpoint-ORIG-GUID: eO7Psm5oflbqe0PGyyrFGRrroGanUDLc
+X-Proofpoint-GUID: aB_L9FqTkapp-fkM256VXSR63WvMs2tO
+X-Proofpoint-ORIG-GUID: aB_L9FqTkapp-fkM256VXSR63WvMs2tO
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
  definitions=2024-05-15_10,2024-05-15_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- malwarescore=0 phishscore=0 spamscore=0 mlxlogscore=971 lowpriorityscore=0
- clxscore=1015 impostorscore=0 suspectscore=0 priorityscore=1501
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405150113
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ suspectscore=0 bulkscore=0 spamscore=0 lowpriorityscore=0 phishscore=0
+ mlxscore=0 impostorscore=0 adultscore=0 clxscore=1015 mlxlogscore=999
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405010000 definitions=main-2405150119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240515_091045_754165_92D42F67 
-X-CRM114-Status: UNSURE (   6.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240515_095248_238149_1B536081 
+X-CRM114-Status: GOOD (  14.84  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,15 +98,92 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Generate rx and tx mcs maps in ath12k_mac_set_hemcsmap() based
+on number of supported tx/rx chains and set them in supported
+mcs/nss for HE capabilities.
 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-On 5/13/2024 1:54 PM, Jeff Johnson wrote:
-> On 5/7/2024 5:20 PM, Pradeep Kumar Chitrapu wrote:
->> Add support to configure maximum NSS in 160 MHz bandwidth.
->> Firmware advertizes support for handling NSS ratio information
-> 
-> s/advertizes /advertises /
-> 
-> (one of the exceptions where US English doesn't use z)
-Sure.will address in next revision
+Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
+Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
+Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 40 ++++++++++++++++++++-------
+ 1 file changed, 30 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index e60da45b9c7f..2f99a1c97b85 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -5162,20 +5162,40 @@ static __le16 ath12k_mac_setup_he_6ghz_cap(struct ath12k_pdev_cap *pcap,
+ 	return cpu_to_le16(bcap->he_6ghz_capa);
+ }
+ 
+-static void ath12k_mac_set_hemcsmap(struct ath12k_band_cap *band_cap,
++static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
++				    struct ath12k_pdev_cap *cap,
+ 				    struct ieee80211_sta_he_cap *he_cap)
+ {
+ 	struct ieee80211_he_mcs_nss_supp *mcs_nss = &he_cap->he_mcs_nss_supp;
++	u16 txmcs_map, rxmcs_map;
++	u32 i;
++
++	rxmcs_map = 0;
++	txmcs_map = 0;
++	for (i = 0; i < 8; i++) {
++		if (i < ar->num_tx_chains &&
++		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
++			txmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
++		else
++			txmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
++
++		if (i < ar->num_rx_chains &&
++		    (ar->cfg_rx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
++			rxmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
++		else
++			rxmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
++	}
+ 
+-	mcs_nss->rx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
+-	mcs_nss->tx_mcs_80 = cpu_to_le16(band_cap->he_mcs & 0xffff);
+-	mcs_nss->rx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-	mcs_nss->tx_mcs_160 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-	mcs_nss->rx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
+-	mcs_nss->tx_mcs_80p80 = cpu_to_le16((band_cap->he_mcs >> 16) & 0xffff);
++	mcs_nss->rx_mcs_80 = cpu_to_le16(rxmcs_map & 0xffff);
++	mcs_nss->tx_mcs_80 = cpu_to_le16(txmcs_map & 0xffff);
++	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map & 0xffff);
++	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map & 0xffff);
++	mcs_nss->rx_mcs_80p80 = cpu_to_le16(rxmcs_map & 0xffff);
++	mcs_nss->tx_mcs_80p80 = cpu_to_le16(txmcs_map & 0xffff);
+ }
+ 
+-static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
++static void ath12k_mac_copy_he_cap(struct ath12k *ar,
++				   struct ath12k_band_cap *band_cap,
+ 				   int iftype, u8 num_tx_chains,
+ 				   struct ieee80211_sta_he_cap *he_cap)
+ {
+@@ -5217,7 +5237,7 @@ static void ath12k_mac_copy_he_cap(struct ath12k_band_cap *band_cap,
+ 		break;
+ 	}
+ 
+-	ath12k_mac_set_hemcsmap(band_cap, he_cap);
++	ath12k_mac_set_hemcsmap(ar, &ar->pdev->cap, he_cap);
+ 	memset(he_cap->ppe_thres, 0, sizeof(he_cap->ppe_thres));
+ 	if (he_cap_elem->phy_cap_info[6] &
+ 	    IEEE80211_HE_PHY_CAP6_PPE_THRESHOLD_PRESENT)
+@@ -5406,7 +5426,7 @@ static int ath12k_mac_copy_sband_iftype_data(struct ath12k *ar,
+ 
+ 		data[idx].types_mask = BIT(i);
+ 
+-		ath12k_mac_copy_he_cap(band_cap, i, ar->num_tx_chains, he_cap);
++		ath12k_mac_copy_he_cap(ar, band_cap, i, ar->num_tx_chains, he_cap);
+ 		if (band == NL80211_BAND_6GHZ) {
+ 			data[idx].he_6ghz_capa.capa =
+ 				ath12k_mac_setup_he_6ghz_cap(cap, band_cap);
+-- 
+2.17.1
+
 
