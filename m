@@ -4,72 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4D2CC25B7B
-	for <ath12k@archiver.kernel.org>; Fri, 17 May 2024 18:00:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34D81C25B79
+	for <ath12k@archiver.kernel.org>; Sat, 18 May 2024 01:25:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=w/StxRW/VLxGkt1YAzvKzW9ayexnITae0WPMFzYawxM=; b=dnDmBi+PtEEZx4Ac/NJWMD3w57
-	Pgho5WE7q9LRt2xKb5cZz8wTbMsfYy3L6n6zKNXCcNq0IU5bmEl4sj3I3Sqt7MvK/71gX5grp3XkN
-	ni0PJRJ2LTXUsH0O46uTsh0xQugVE6OaDKkPtLf5hKDll+Fz/z+bAwjPUVZccFNDsfV2Cpm2i2jal
-	e5dRyNp34S5fhbrW03ZVQIzpZgMB+CHCYudNIQ8RtWrfW7neyVckul8Z3NdTu8Q5XDGxd33w3p9dJ
-	y+R6I4ELwjsVmx7+aH87DWALSxiKSXtRWcx2wOHdGp5S6O0IdZ9+DhnHYI+VQDU7jRZ4J5PnwxET6
-	jaOCz+bw==;
+	bh=cJqjedwoYcqSzJKmZSEwT+6hVhtxWLfg/8QtauvSdx4=; b=HkglCvz7paGUWh5C2m8SPYvA6X
+	A9nHnVgGqGgFgn+vVP4BxRlgpHqn7WMYizhqf02nf5oaxh3i47UdGOTPGEo58QB+e7VXyB5FLYS6z
+	BBEPHQ+WXEuhyce28AtZc+UzPSGqME2LC95zJtvhS47ZP0uD15zHYvVDoI+0AuF5Q0KEXI1fmku9g
+	ACYbMUFEyEQiWz/x0iGaZANRE6EjBLDchxMmRK0naXYNjOnM3ZVo2LHb9/kWlIlo9DeYtyc6LW3wy
+	lC/D4aR1GRl/CIAQ9G7DfiPJUzYQsDQH68KeSjxHdDF/VLWSnCWZoOnkUCzOh39w5bPcyEW5jdOCE
+	aD4wEDTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s81sh-00000008eQg-1UVp
+	id 1s88p6-00000009LvS-3Kmb
 	for ath12k@archiver.kernel.org;
-	Fri, 17 May 2024 18:00:35 +0000
-Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
+	Sat, 18 May 2024 01:25:20 +0000
+Received: from mail-oa1-x2e.google.com ([2001:4860:4864:20::2e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s81sc-00000008eOr-1AMg;
-	Fri, 17 May 2024 18:00:32 +0000
-Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-1ec41d82b8bso19755985ad.2;
-        Fri, 17 May 2024 11:00:27 -0700 (PDT)
+	id 1s88p2-00000009Lt9-15JE;
+	Sat, 18 May 2024 01:25:18 +0000
+Received: by mail-oa1-x2e.google.com with SMTP id 586e51a60fabf-24544cb03abso375825fac.3;
+        Fri, 17 May 2024 18:25:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1715968827; x=1716573627; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=w/StxRW/VLxGkt1YAzvKzW9ayexnITae0WPMFzYawxM=;
-        b=PlZ0GZaKuKnrBWjz9OD8OvBfVv5zDmV2wios4VcBSiYDuEiiPycbytcXUe4BXoLZWm
-         AWJvAo+pVmtlBmmnzgBe89sf54NDevn99S84L01ip18bwmolPkOR8YzWMKxo6EZa30ts
-         P3OlEsVCRXQJ4X4d385u8FslaRegMIHleBqi7uSk0TqP1wpr4cAw7GPIlNEwPV4oB8Fq
-         cCjSF6sQ6Z1iQziciD83+A0vXQTJfs8vkiRed2uHmbzZur0RMpr6R67FcvmPwHVyCfhU
-         GvPg0Kpe7Vm0hO6BygRdrPUfiKfFJgVe+MyotyycKkll4vG701NRbLE81g6BldG9p2Vo
-         1DaA==
+        d=gmail.com; s=20230601; t=1715995511; x=1716600311; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=cJqjedwoYcqSzJKmZSEwT+6hVhtxWLfg/8QtauvSdx4=;
+        b=iCkDbhIHq55rYp90OSeq3AAK6xc2uQwZqeAXpqt+MlDuMm365zhQzJiov8OEKFn4b3
+         ljjW2R+WWGGOcws5qOHqvX8bKzMzrTGVZimNPo0u+S9C6HW68hUjL+2kbz0vvZM3BSRk
+         uFSKV93thxNwXw+ZboTcb9hoIJbeSwRjLoIdr0uaW/TSbVHS/oQinLx5v9gQqZNqWIGq
+         YocoKqa9kCjX0gisDYSbakkpseP0KAAli8AjngcIVk/4RIOFbyVqT1BMxqn3f07Z4fD1
+         peY78DSlr7CaxnR5L+Oa1/8xVXsCmbTjjp80dpADZudA7kWt0tVGWYRvYZNlesAOcCIg
+         eFsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1715968827; x=1716573627;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:sender:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20230601; t=1715995511; x=1716600311;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:sender:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=w/StxRW/VLxGkt1YAzvKzW9ayexnITae0WPMFzYawxM=;
-        b=KBQ9anyfCAa/beps+6LioimHT12bwRgYDLiusfx+vwqPUB7AdSGkYTiKSXeGWe3jRi
-         t1HPfUPL/IJVNAcQYbINGZrdnHCS73A+mIznEUpiapBtQTrea+JY85R2ds+67zyQ24Ha
-         Bl/lNFuQ80MnCEJghvxw7nUzuHjbW5tHobJqJzYx3ZD4BWneUAUfE/GvcR5urRSGpyVp
-         brI3fEG92FlMxX8rzzIcNWcZJofa/NoFU7tvwW2pFFWjLCPxWzjPdPibfOaVzRzmOrB9
-         jGx00cyUM0JkCDD9hJXPfj8ejIyjR5ElzJl2QnIs6ugXsq9qctbIuu6boBaR8WIkUa45
-         +5qg==
-X-Forwarded-Encrypted: i=1; AJvYcCUYCkWm2ezLctLT7pko1dqjTVf/7P93BaQ9UDsK8OEM2fBMgToVu30EHh8tU7In6IM5KhbGIcpveoVknX/Hg3MQC/0Zc5krFRnslQzPIaoSQBWFWsG/QW8NlE/1Zc08O0kvDgACXZdwOJpsu2X+PY9ES3yWE/Tsh/+S9W7h0YLu3Vx0
-X-Gm-Message-State: AOJu0YzWPB4A81lSEgUH3YYlEzuWokWQpI/a8/7DUGmnmHbFOZiS66K7
-	FblMrUa8QtmK5u+JJOfpZJAw/dBxyJ5AafCOl74zfM3BMzscdzlk
-X-Google-Smtp-Source: AGHT+IGZDVzcY7OCALKn8Hd9OAI6XcssKSQlDPeH3SNH0EqlCaPwK+7ssdLCEtEMxDGdIwihVzJtAg==
-X-Received: by 2002:a17:903:120e:b0:1e4:6519:816d with SMTP id d9443c01a7336-1ef43f51feamr267718025ad.48.1715968827236;
-        Fri, 17 May 2024 11:00:27 -0700 (PDT)
+        bh=cJqjedwoYcqSzJKmZSEwT+6hVhtxWLfg/8QtauvSdx4=;
+        b=XFlqpBGKmPxHIMKlKLucL5DJfujsUT0oQi4XOVq3m8v5DKeOcCjvoqaGHYyG53VJo7
+         AXEQEuFeDNCzaXYNyVtpFl4XOG98HLGeV6uieKiuSGYulKPwzqXLEblo8zmQbbYWDF27
+         FZW1hH5aVLMvSFxRqRyGXb/luCOIF67LrHsHNXdCmanqf+1S2TIZrePg1iJlWPBbqAvO
+         gKtl9Y3138LapPbOHEU6tbOPJrVm94pdkT6xymkl15sCN3u7wDwaJqeQq2Wlt3j0wRjf
+         QVYH7Yhou0KZ8O89dBPdTKdyGvU1A7y/GvCwdoAdqQTkKWlIiBlrOGPPpCYghYxd2fHE
+         wf/Q==
+X-Forwarded-Encrypted: i=1; AJvYcCXLds/z8qWH2wcE9lsrBN6kVWI5M9Q3HCiLkinYgB7++BehWHAfY/KOmp4kvrDGpSwsofYO5DQdGmp5LOe5PT5j5eeXJzP9PDauDucFzO1dKkDyQ5Xd2+bkLSh81eC1XWPzBFyEFf02OA+2PzSmKGzodSNw0COdRQy/xKesUrNICKeZ
+X-Gm-Message-State: AOJu0YyJvdHHp8IS3rHDX/tNCJmcmyongC+fgFzixeQwbzl4L7J9XFay
+	YxljdEVh/Bw6CXI0uiv/m01odFwZPS0uykm/Oif4lkypvUko/w6P
+X-Google-Smtp-Source: AGHT+IFRaG5+veBhAS+2oO1Mq9a7mnKgK9vX9unu3cCbE/KbyDzrBjSt084GN8tso2cWg108BqN4VA==
+X-Received: by 2002:a05:6870:a3d2:b0:240:c8ff:c96a with SMTP id 586e51a60fabf-241728fc1damr27553351fac.27.1715995510785;
+        Fri, 17 May 2024 18:25:10 -0700 (PDT)
 Received: from ?IPV6:2600:1700:e321:62f0:329c:23ff:fee3:9d7c? ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1ef0bf30bfesm159992895ad.175.2024.05.17.11.00.23
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-6f4d2a66316sm15339938b3a.35.2024.05.17.18.25.07
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 17 May 2024 11:00:26 -0700 (PDT)
-Message-ID: <5cff0ff0-48d1-49f8-84f4-bb33571fdf16@roeck-us.net>
-Date: Fri, 17 May 2024 11:00:22 -0700
+        Fri, 17 May 2024 18:25:09 -0700 (PDT)
+Message-ID: <64db2b94-edb3-4ea3-87cf-bb91746869e6@roeck-us.net>
+Date: Fri, 17 May 2024 18:25:06 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] tracing/treewide: Remove second parameter of
  __assign_str()
+From: Guenter Roeck <linux@roeck-us.net>
 To: Steven Rostedt <rostedt@goodmis.org>
 Cc: LKML <linux-kernel@vger.kernel.org>,
  Linux trace kernel <linux-trace-kernel@vger.kernel.org>,
@@ -100,8 +101,8 @@ Cc: LKML <linux-kernel@vger.kernel.org>,
 References: <20240516133454.681ba6a0@rorschach.local.home>
  <5080f4c5-e0b3-4c2e-9732-f673d7e6ca66@roeck-us.net>
  <20240517134834.43e726dd@gandalf.local.home>
+ <5cff0ff0-48d1-49f8-84f4-bb33571fdf16@roeck-us.net>
 Content-Language: en-US
-From: Guenter Roeck <linux@roeck-us.net>
 Autocrypt: addr=linux@roeck-us.net; keydata=
  xsFNBE6H1WcBEACu6jIcw5kZ5dGeJ7E7B2uweQR/4FGxH10/H1O1+ApmcQ9i87XdZQiB9cpN
  RYHA7RCEK2dh6dDccykQk3bC90xXMPg+O3R+C/SkwcnUak1UZaeK/SwQbq/t0tkMzYDRxfJ7
@@ -145,12 +146,12 @@ Autocrypt: addr=linux@roeck-us.net; keydata=
  WkRwrSuCn7UG+qVWZeKEsFKFOkynOs3pVbcbq1pxbhk3TRWCGRU5JolI4ohy/7JV1TVbjiDI
  HP/aVnm6NC8of26P40Pg8EdAhajZnHHjA7FrJXsy3cyIGqvg9os4rNkUWmrCfLLsZDHD8FnU
  mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
-In-Reply-To: <20240517134834.43e726dd@gandalf.local.home>
+In-Reply-To: <5cff0ff0-48d1-49f8-84f4-bb33571fdf16@roeck-us.net>
 Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240517_110030_365183_C741D1AD 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20240517_182516_325109_421FC696 
+X-CRM114-Status: GOOD (  15.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -165,41 +166,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 5/17/24 10:48, Steven Rostedt wrote:
-> On Fri, 17 May 2024 10:36:37 -0700
-> Guenter Roeck <linux@roeck-us.net> wrote:
-> 
->> Building csky:allmodconfig (and others) ... failed
->> --------------
->> Error log:
->> In file included from include/trace/trace_events.h:419,
->>                   from include/trace/define_trace.h:102,
->>                   from drivers/cxl/core/trace.h:737,
->>                   from drivers/cxl/core/trace.c:8:
->> drivers/cxl/core/./trace.h:383:1: error: macro "__assign_str" passed 2 arguments, but takes just 1
+On 5/17/24 11:00, Guenter Roeck wrote:
+> On 5/17/24 10:48, Steven Rostedt wrote:
+>> On Fri, 17 May 2024 10:36:37 -0700
+>> Guenter Roeck <linux@roeck-us.net> wrote:
 >>
->> This is with the patch applied on top of v6.9-8410-gff2632d7d08e.
->> So far that seems to be the only build failure.
->> Introduced with commit 6aec00139d3a8 ("cxl/core: Add region info to
->> cxl_general_media and cxl_dram events"). Guess we'll see more of those
->> towards the end of the commit window.
+>>> Building csky:allmodconfig (and others) ... failed
+>>> --------------
+>>> Error log:
+>>> In file included from include/trace/trace_events.h:419,
+>>>                   from include/trace/define_trace.h:102,
+>>>                   from drivers/cxl/core/trace.h:737,
+>>>                   from drivers/cxl/core/trace.c:8:
+>>> drivers/cxl/core/./trace.h:383:1: error: macro "__assign_str" passed 2 arguments, but takes just 1
+>>>
+>>> This is with the patch applied on top of v6.9-8410-gff2632d7d08e.
+>>> So far that seems to be the only build failure.
+>>> Introduced with commit 6aec00139d3a8 ("cxl/core: Add region info to
+>>> cxl_general_media and cxl_dram events"). Guess we'll see more of those
+>>> towards the end of the commit window.
+>>
+>> Looks like I made this patch just before this commit was pulled into
+>> Linus's tree.
+>>
+>> Which is why I'll apply and rerun the above again probably on Tuesday of
+>> next week against Linus's latest.
+>>
+>> This patch made it through both an allyesconfig and an allmodconfig, but on
+>> the commit I had applied it to, which was:
+>>
+>>    1b294a1f3561 ("Merge tag 'net-next-6.10' of git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next")
+>>
+>> I'll be compiling those two builds after I update it then.
+>>
 > 
-> Looks like I made this patch just before this commit was pulled into
-> Linus's tree.
-> 
-> Which is why I'll apply and rerun the above again probably on Tuesday of
-> next week against Linus's latest.
-> 
-> This patch made it through both an allyesconfig and an allmodconfig, but on
-> the commit I had applied it to, which was:
-> 
->    1b294a1f3561 ("Merge tag 'net-next-6.10' of git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next")
-> 
-> I'll be compiling those two builds after I update it then.
+> I am currently repeating my test builds with the above errors fixed.
+> That should take a couple of hours. I'll let you know how it goes.
 > 
 
-I am currently repeating my test builds with the above errors fixed.
-That should take a couple of hours. I'll let you know how it goes.
+There are no more build failures caused by this patch after fixing the above
+errors.
+
+Tested-by: Guenter Roeck <linux@roeck-us.net>
 
 Guenter
 
