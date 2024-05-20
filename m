@@ -4,85 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 649ECC25B78
-	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 07:01:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 913ACC04FFE
+	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 09:54:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+qbBM8cQ1qwtSFHCz6eBqi5qLQGoBprKLjDhtJbw5nM=; b=XCuZSVhPTu+RxSadXg+s+k0ES2
-	8ijrpTmyerq3NYHt3gOgXIL94X827zmALu8+Ex0BbRo28M4n8xxvxXQFxdN9y9c4P3sZQqQ8WDfUo
-	p1yqGg4mPuMULmcnUpPXhn/ja2HuuFim7oDvl0o59Bk4oR8bAFH6ZsDkobMaYc8TPXcLXdXwZ/fy/
-	V/gcO7pd9Nk05lvPGG/IfLn+nEEcfrMjZL5aoZwwiWL2RpWoo7zQmjv1tvPxWy7+IUMYzGaPugE4U
-	TqyRWudqz8doWY8+3PNm8kCJ8h/ms4uobR6D7Poo7DJc/pZZf88BPK3pE/X4/QICug8NvsGPD4hyk
-	FroFlR8w==;
+	bh=UdRFkaSybFwbLPWcFNv0naIFdeP3pPZARMUoQI1o0jg=; b=Q3RUNzhVCQM3ftbiL+q6CdUYQa
+	j4ZhTtQ4M+rY+bzyaW4lwF8fO49evb8nlAt7kVdioNdvpT6clnffBaVkdqB40oXyQXxOLUgNtIG02
+	6p/ag+dC4Lp/IVU2m+WyhWdejB8lGiw6C42uu8ENBh0kAiJ+Yx4eEbZSrdXV48de5LpUZNkDXSrZF
+	KviWgyNYdW/v7jTWTQibVzG7T3VIy8rVR5xciN2PuCVP5ShVPA4YfEpNK2Pz4lfLjrQ+ByASqBXtm
+	HQthLQjFTr4Q9OuqFxBUtc3yMrMRALWiXrC0OAHMQUdIqgI2bxvLnKefpPZUpx7rNamn1/N5XFdNF
+	HVUTdKig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s8x1R-0000000DiOd-0R8e
+	id 1s8ziu-0000000E3Ng-0pEK
 	for ath12k@archiver.kernel.org;
-	Mon, 20 May 2024 07:01:25 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 20 May 2024 09:54:28 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s8x1O-0000000DiNd-2oaH
+	id 1s8ziq-0000000E3Li-28Ni
 	for ath12k@lists.infradead.org;
-	Mon, 20 May 2024 07:01:24 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44K0FLTO012012;
-	Mon, 20 May 2024 07:01:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:in-reply-to:references
-	:mime-version:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=+qbBM8cQ1qwtSFHCz6eBqi5qLQGoBprKLjDhtJbw5nM=; b=SK
-	rTHdqcGnvhoGFdB5JnRJSowFS7kaEzpf4e24wLO28Nrl0IQ3Rytgd16AjSs7U2oD
-	6NAq5K6ggvpHwn6JllFHIF9YP2ydBzHfYH2KpkJdTqh4qWajyRJji3uPyju9kMO3
-	QoFNWQr9VJPFnwd2wt1qL1lT6KMrnUuUt8Y1futbFoTlU6WVTWtqrpmLHttmrkhy
-	0Pu4Y8YuZEB7oOmvFtdQwf+bE4vMdCm5FbcE3xbiEuk3v7JZaEwgQVxAH+zqglwQ
-	TldS/Z03or8S1ZOVWfyC5QpnO7JC2lTMdPxh3ZYcjdq17a8WzTh9jBGxsMjxXVps
-	cCYqgaSHDnpUuCMB0Niw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y6psatkxw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 May 2024 07:01:21 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44K71JxA023377
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 May 2024 07:01:19 GMT
-Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 20 May 2024 00:01:18 -0700
-From: P Praneesh <quic_ppranees@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH 3/3] wifi: ath12k: fix firmware crash during reo reinject
-Date: Mon, 20 May 2024 12:30:45 +0530
-Message-ID: <20240520070045.631029-4-quic_ppranees@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240520070045.631029-1-quic_ppranees@quicinc.com>
-References: <20240520070045.631029-1-quic_ppranees@quicinc.com>
+	Mon, 20 May 2024 09:54:26 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 22901CE0B21;
+	Mon, 20 May 2024 09:54:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE7CBC2BD11;
+	Mon, 20 May 2024 09:54:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1716198861;
+	bh=uYrv5PX3Df7ftZ7PfT0kNiA7out8G32lBVtnYUGxOJI=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=K03BJK/hQDuSgtmAWmcgFKZSIYBf6rh2t0Gk7GUSmArsPCecDF9hQR9kX47pQBaR2
+	 9ImBWEVIFTa/lf5tcltRFSHTWB3CrYMVRYahJ4MBqc6VpwL1MwYcMjFxg/C8pfKIyD
+	 +id3Fkg4H7GXJ6wbBvCyTz6moTH/TYel2WIImIRFBNzMS6vdNJlkZ3YGFbW+D1bPRA
+	 pnDgfbKFq2c0iYxZZJoVK1EZ42Bq4U70+JNuXk4vbzzEeh9i/R0ikDKVf+K5+/vteY
+	 Thdn/u1vtXgK1B+x4okOq6mwi7hm6nmmlwQgRywrtwpBgWjRr7JBvt2Tjm+VfijFKf
+	 PQXTGZ20u7Asw==
+From: Kalle Valo <kvalo@kernel.org>
+To: pgupta@hindutool.com
+Cc: ath12k@lists.infradead.org
+Subject: Re: board-2.bin
+References: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
+Date: Mon, 20 May 2024 12:54:18 +0300
+In-Reply-To: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
+	(pgupta@hindutool.com's message of "Mon, 20 May 2024 00:43:16 -0400")
+Message-ID: <87seycerlh.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: S1aTmnDNOrvELhJ4WJkB1nkZ_jKnHGrv
-X-Proofpoint-ORIG-GUID: S1aTmnDNOrvELhJ4WJkB1nkZ_jKnHGrv
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-20_04,2024-05-17_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
- adultscore=0 lowpriorityscore=0 malwarescore=0 mlxlogscore=999
- priorityscore=1501 phishscore=0 impostorscore=0 spamscore=0 clxscore=1015
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405200057
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240520_000122_870345_9149AF1A 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20240520_025424_944934_93EC0599 
+X-CRM114-Status: GOOD (  16.36  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,55 +73,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-When handling fragmented packets, the ath12k driver reassembles each
-fragment into a normal packet and then reinjects it into the HW ring.
-However, a firmware crash occurs during this reinjection process.
-The issue arises because the driver populates peer metadata in
-reo_ent_ring->queue_addr_lo, while the firmware expects the physical
-address obtained from the corresponding peer’s queue descriptor. Fix it
-by filling peer's queue descriptor's physical address in queue_addr_lo.
+"pgupta@hindutool.com" <pgupta@hindutool.com> writes:
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00209-QCAHKSWPL_SILICONZ-1
+> I have been reading through the various posts, and while I found
+> someone who reported the exact same problem, I was unable to find a
+> response from anyone who could present a solution
+>
+> I have a Compex WLW7000E6
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp_rx.c | 14 ++++++--------
- 1 file changed, 6 insertions(+), 8 deletions(-)
+Any recommendations from where it would be easiest to order such board?
+I'm based in Europe and would like to get one.
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 2bfcc19d15ea..2adb6c7d4a42 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2967,7 +2967,7 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struct ath12k *ar,
- 	struct hal_srng *srng;
- 	dma_addr_t link_paddr, buf_paddr;
- 	u32 desc_bank, msdu_info, msdu_ext_info, mpdu_info;
--	u32 cookie, hal_rx_desc_sz, dest_ring_info0;
-+	u32 cookie, hal_rx_desc_sz, dest_ring_info0, queue_addr_hi;
- 	int ret;
- 	struct ath12k_rx_desc_info *desc_info;
- 	enum hal_rx_buf_return_buf_manager idle_link_rbm = dp->idle_link_rbm;
-@@ -3060,13 +3060,11 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struct ath12k *ar,
- 	reo_ent_ring->rx_mpdu_info.peer_meta_data =
- 		reo_dest_ring->rx_mpdu_info.peer_meta_data;
- 
--	/* Firmware expects physical address to be filled in queue_addr_lo in
--	 * the MLO scenario and in case of non MLO peer meta data needs to be
--	 * filled.
--	 * TODO: Need to handle for MLO scenario.
--	 */
--	reo_ent_ring->queue_addr_lo = reo_dest_ring->rx_mpdu_info.peer_meta_data;
--	reo_ent_ring->info0 = le32_encode_bits(dst_ind,
-+	reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
-+	queue_addr_hi = upper_32_bits(rx_tid->paddr);
-+	reo_ent_ring->info0 = le32_encode_bits(queue_addr_hi,
-+					       HAL_REO_ENTR_RING_INFO0_QUEUE_ADDR_HI) |
-+			      le32_encode_bits(dst_ind,
- 					       HAL_REO_ENTR_RING_INFO0_DEST_IND);
- 
- 	reo_ent_ring->info1 = le32_encode_bits(rx_tid->cur_sn,
--- 
-2.25.1
+Is the board otherwise plug&play to an M.2 E-key slot or does it need
+something special?
 
+> and am using the latest kernel version 6.8.0-31-generic (ubuntu 24.04
+> LTS)
+
+BTW in general we don't support distro kernels:
+
+https://linux-regtracking.leemhuis.info/post/frequent-reasons-why-linux-ker=
+nel-bug-reports-are-ignored/#your-kernel-was-apparently-built-by-a-linux-di=
+stributor-or-hardware-vendor
+
+> Despite having the requisite files in /lib/firmware/ath12k/QCN9274/hw2.0:
+>
+> -rw-r--r-- 1 root root 8241152 May 19 23:47 amss.bin
+> -rw-r--r-- 1 root root 2821564 May 20 00:03 amss.bin.zst
+> -rw-r--r-- 1 root root  382856 May 20 00:03 board-2.bin
+> -rw-r--r-- 1 root root=C2=A0=C2=A0 21517 May 20 00:03 board-2.bin.zst
+> -rw-r--r-- 1 root root=C2=A0 421888 May 19 23:47 m3.bin
+> -rw-r--r-- 1 root root=C2=A0 139662 May 20 00:03 m3.bin.zst
+> -rw-r--r-- 1 root root=C2=A0=C2=A0 10699 May 20 00:03 Notice.txt.zst
+> -rw-r--r-- 1 root root=C2=A0=C2=A0 24310 May 19 23:47 regdb.bin
+> -rw-r--r-- 1 root root=C2=A0=C2=A0=C2=A0 3187 May 19 23:47 regdb.bin.zst
+>
+> I continue to receive the following errors:
+>
+> [=C2=A0=C2=A0=C2=A0 5.885930] ath12k_pci 0000:83:00.0: BAR 0 [mem
+> 0xc8000000-0xc81fffff 64bit]: assigned
+> [=C2=A0=C2=A0=C2=A0 5.886287] ath12k_pci 0000:83:00.0: MSI vectors: 16
+> [=C2=A0=C2=A0=C2=A0 5.886294] ath12k_pci 0000:83:00.0: Hardware name: qcn=
+9274 hw2.0
+> [=C2=A0=C2=A0=C2=A0 6.745247] ath12k_pci 0000:83:00.0: memory type 10 not=
+ supported
+> [=C2=A0=C2=A0=C2=A0 6.750101] ath12k_pci 0000:83:00.0: chip_id 0x0 chip_f=
+amily 0xb
+> board_id 0xff soc_id 0x401a2200
+> [=C2=A0=C2=A0=C2=A0 6.750110] ath12k_pci 0000:83:00.0: fw_version 0x10098=
+b57
+> fw_build_timestamp 2022-09-19 18:18 fw_build_id
+> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
+> [=C2=A0=C2=A0=C2=A0 6.761065] ath12k_pci 0000:83:00.0: failed to fetch bo=
+ard data for
+> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
+> ath12k/QCN9274/hw2.0/board-2.bin
+> [=C2=A0=C2=A0=C2=A0 6.761212] ath12k_pci 0000:83:00.0: failed to fetch bo=
+ard-2.bin or
+> board.bin from QCN9274/hw2.0
+> [=C2=A0=C2=A0=C2=A0 6.761247] ath12k_pci 0000:83:00.0: qmi failed to load=
+ bdf:
+> [=C2=A0=C2=A0=C2=A0 6.761250] ath12k_pci 0000:83:00.0: qmi failed to load=
+ board data file:-2
+
+This means that board-2.bin is missing the board file for your device.
+For AP devices like QCN9274 board files handling is difficult, usually
+Device Tree is the only way to get automatic board file loading working.
+
+Did you get any software with your the board? Do you know if the board
+is calibrated or not?
+
+Can you run:
+
+find /lib/firmware/ath12k/ -type f | xargs md5sum
+
+Also read:
+
+https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugreport
+
+> but he zst files were copied over from the WCN7850 directory.
+
+I do not know what these zst files are. And don't copy anything from
+WCN7850 directory, the files are not compatible. The best is to run
+'make install' within ath12k-firmware.git repository, manually fixing
+files will end up into problems.
+
+--=20
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
+hes
 
