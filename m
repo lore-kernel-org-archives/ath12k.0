@@ -4,90 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79B70C04FFE
-	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 13:14:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7BB6C04FFE
+	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 16:59:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sFTvdSEF62ILwFKghcAW8A/Dtt3FTVNkaQBNYPG8hmk=; b=Y0JkC+aXh0d4PKb1zw/Squ37Xz
-	x6lqh5bfB+cAPVEUOibipy7LQqoFcHubXg2pbIEtrfA805nDr9jbvH7P5MjgtK8U3LMr7dCTHAY/P
-	hBoUNx0PfUkVEKkOXZbVAk6oz82Fm1CBSgQyJjC3ObiccWEagtslZ92LQ85vAu4s+qjilw+QsB87m
-	ehIlAr2tdI5gGALuATe1dQfoP5SUDAbbpUW/Ru9nI6119Il6zT13Rzrx6a50ixOPnUbv9OkJLOujv
-	rUGNm1zqqpJ4j9Ch/s2aHxuScrs64kiTn2+SNkWrDQcECjNbng9UvgItYFbqypPfKEMo54PmKW5Ic
-	lhZIbBaA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=dSQ4HfK4tpueihQS7WfBKkz9MuxEaPC221F40Iuww2Y=; b=iT9vNV5Tf93oRSNzwnvoCnT3Pr
+	EtESNXf5XEKXE5WuHLtxLvmGiM7pmlvu2xw5NqozH32yFvlJfmZWW3FPVV0yMKoQHyXymzpmUkpn9
+	/TFxX6XAjLi+rh+yGbDZabM735gC8pekWoFQqOfFGDlCnVH07g9G6KrY6b1tuaWXMz6pd0pGZ5gwg
+	dYkrOFtUKXvulpRIXE2aJ1wo3tuBhi25CsX2906j79ArccYzBS+ri6wREBSnqkV9hNhnBcLPUX+be
+	5a33I9b+OTTX8ON9i9dUlJwmJKY/lIuE9kUUMBTpABcaneacOBM/EaL4CemsAyGl66oFa1oDA/+2E
+	dGHq1SGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s92qO-0000000EYVv-3oYz
+	id 1s96Lw-0000000F48x-2g2a
 	for ath12k@archiver.kernel.org;
-	Mon, 20 May 2024 13:14:25 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 20 May 2024 16:59:12 +0000
+Received: from mail545c25.carrierzone.com ([64.29.147.145])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s92qL-0000000EYUo-2Kgk
+	id 1s96Ls-0000000F483-0Ni7
 	for ath12k@lists.infradead.org;
-	Mon, 20 May 2024 13:14:23 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44KBAV9B030497;
-	Mon, 20 May 2024 13:14:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding; s=qcppdkim1; bh=sFTvdSEF62ILwFKghcAW
-	8A/Dtt3FTVNkaQBNYPG8hmk=; b=lQaJak3bzlhLmFICvZbpdH5itYJq0PH2e1Oe
-	0NizlPbZ6QQSYRfKQdp+c/b/alQq+7mhZBKFS4Iaoex+TA28QUyRtwtjryTzc0KB
-	li0uJUK0RZFpHiaD0yMxywrDRWtsAOxp5iqRNdEhMnyM8EWJq4hfNu9IEwSah7Ge
-	IjUvnAegj1cCMeTgAwuZiM4CESRNsRzDH41Asj6DuA1LmFckaAQtJwlS2c85aE4A
-	nB3NWmvqnBvGUrxF1dfs9Qp2QJqT0EgnM7RlPbozZ80yBbjkmc+LoGvOwip+erzD
-	SBa27npl0mXE9sieptsbGYMjoyd9T7jvSMDBkJq+B6eO+xx6zA==
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y6pq5bate-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 May 2024 13:14:17 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 44KDEDdT021023;
-	Mon, 20 May 2024 13:14:13 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3y6ndk8krp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 May 2024 13:14:13 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 44KDECNs021017;
-	Mon, 20 May 2024 13:14:12 GMT
-Received: from hu-devc-blr-u22-a.qualcomm.com (hu-hprem-blr.qualcomm.com [10.190.108.75])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 44KDECJl021015
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 May 2024 13:14:12 +0000
-Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 4146166)
-	id 2764041124; Mon, 20 May 2024 18:44:11 +0530 (+0530)
-From: Harshitha Prem <quic_hprem@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        Harshitha Prem <quic_hprem@quicinc.com>
-Subject: [PATCH] wifi: ath12k: Send QMI host capability after device group is ready
-Date: Mon, 20 May 2024 18:44:09 +0530
-Message-Id: <20240520131409.676931-1-quic_hprem@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Mon, 20 May 2024 16:59:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=carrierzone.com;
+	s=mailmia; t=1716224338;
+	bh=dSQ4HfK4tpueihQS7WfBKkz9MuxEaPC221F40Iuww2Y=;
+	h=From:To:CC:Subject:Date:In-Reply-To:References:Reply-to:From;
+	b=DCZxHna9FRhdpimUWEXDcnM9L6P1VrazvU2Lz20Y1ZvbFQwEEern5SaNc87U/ueit
+	 y/QkrNf902U4biKhjLfWibicZFBb1hN3ysCrHrp8HIh7glbc2sohnVMXrHdEF13v8m
+	 uqBRqmRn7evRVYQFwFIX+0wVFUDaJgklopZrS7tU=
+Feedback-ID: pgupta@hindutoo
+Received: from mail545c25.carrierzone.com (localhost [127.0.0.1])
+	by mail545c25.carrierzone.com (8.14.9/8.13.1) with ESMTP id 44KGwwDq067277
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Mon, 20 May 2024 16:58:58 +0000
+Received: (from webmail@localhost)
+	by mail545c25.carrierzone.com (8.14.9/8.12.2/Submit) id 44KGwvsE067276;
+	Mon, 20 May 2024 12:58:57 -0400
+From: "pgupta@hindutool.com" <pgupta@hindutool.com>
+To: kvalo@kernel.org, ath12k@lists.infradead.org
+Subject: Re: board-2.bin
+Date: Mon, 20 May 2024 12:58:57 -0400
+Message-ID: <1716224337.zi1iti2l1c0cocko@mailapp03.register.com>
+In-Reply-To: <1716221937.24ib38wrkkgo8sc4@mailapp03.register.com>
+References: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
+ <87seycerlh.fsf@kernel.org>
+ <1716221937.24ib38wrkkgo8sc4@mailapp03.register.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: WlodcaRK6xW8CjbzczfNKQFefxAhFrVY
-X-Proofpoint-ORIG-GUID: WlodcaRK6xW8CjbzczfNKQFefxAhFrVY
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-20_05,2024-05-17_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- malwarescore=0 adultscore=0 lowpriorityscore=0 priorityscore=1501
- suspectscore=0 spamscore=0 clxscore=1015 mlxlogscore=999 mlxscore=0
- bulkscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405200108
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Image-Url: https://mailapp03.register.com/api/storage/pgupta@hindutool.com/profile/picture
+X-VADE-SPAMSTATE: clean
+X-VADE-SPAMSCORE: 0
+X-VADE-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedvledrvdeitddgkedvucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecujffquffvqffrkfetpdfqfgfvpdfgpfggqdevvdehnecuuegrihhlohhuthemuceftddunecunecujfgurhephffvvefufffkjghfgggtgfhrsehtqhertddttdejnecuhfhrohhmpedfphhguhhpthgrsehhihhnughuthhoohhlrdgtohhmfdcuoehpghhuphhtrgeshhhinhguuhhtohholhdrtghomheqnecuggftrfgrthhtvghrnhepvdfhueelfeegtdegjefguefgudfhgfehffffgfetvedvhedvhefhfefhuedtvefhnecuffhomhgrihhnpegtohhmphgvgidrtghomhdrshhgpdgrughtrdhlihhnkhdplhgvvghmhhhuihhsrdhinhhfohdpkhgvrhhnvghlrdhorhhgnecukfhppeduvdejrddtrddtrddunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepuddvjedrtddrtddruddphhgvlhhopehmrghilhehgeehtgdvhedrtggrrhhrihgvrhiiohhnvgdrtghomhdpmhgrihhlfhhrohhmpehpghhuphhtrgeshhhinhguuhhtohholhdrtghomhdpnhgspghrtghpthhtohepvddprhgtphhtthhopegrthhhuddvkheslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehkvhgrlhhosehkvghrnhgvlhdrohhrgh
+X-Origin-Country: Unknown
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240520_061421_640194_CC104CEB 
-X-CRM114-Status: GOOD (  22.30  )
+X-CRM114-CacheID: sfid-20240520_095908_450466_1992AD08 
+X-CRM114-Status: GOOD (  34.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,266 +74,220 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: pgupta@hindutool.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Mr. Valo,
+=20
 
-QMI host capability has the information regarding MLO parameters such as
-device_id, MLO capability, group id and the information of each devices
-involved in the group and sent immediately on QMI server arrive event.
-Currently, only one device is involved in the group and hence, single
-device information is sent as part of MLO capability of host.
+Thank you for responding to my email.
 
-But, in future when multi device group abstraction is introduced, host
-should send all the device information involved in the group as part
-of QMI MLO host capability rather than single device. Hence, sending
-QMI host capability immediately on server arrive of a device might not
-be ideal for multi device group abstraction as the details of other
-devices in the group would not be available.
+I purchased a wifi 7 2.4Ghz, 5Ghz, and 6Ghz directly from compex:
 
-Hence, once QMI server arrive event is received, request for QMI phy
-capabilities of device, and defer the host capability send for that device.
-After QMI phy capability is received for all the devices in the group
-trigger the host capability event for the deferred devices in the group.
+https://shop.compex.com.sg/products
 
-Add changes to defer the QMI host capability event until the device
-group is ready and then resume the QMI exchange for all the device with
-host capabilities.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Pair of 6Ghz Wifi 7 (they are only sold as a pair)
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
----
-Depends-On: [PATCH v4 0/8] wifi: ath12k: Introduce device group abstraction
-Link: https://lore.kernel.org/ath12k/20240507045702.2858954-1-quic_hprem@quicinc.com/
----
- drivers/net/wireless/ath/ath12k/core.c | 22 ++++++
- drivers/net/wireless/ath/ath12k/qmi.c  | 92 ++++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/qmi.h  | 17 +++++
- 3 files changed, 126 insertions(+), 5 deletions(-)
+https://shop.compex.com.sg/product-page/wlw7000e6
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 88b14343d91f..e316c98e3ee6 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -943,6 +943,25 @@ bool ath12k_core_hw_group_start_ready(struct ath12k_hw_group *ag)
- 	return (ag->num_started == ag->num_devices);
- }
- 
-+static void ath12k_core_trigger_partner(struct ath12k_base *ab)
-+{
-+	struct ath12k_hw_group *ag = ab->ag;
-+	struct ath12k_base *partner_ab;
-+	int i;
-+	bool found = false;
-+
-+	for (i = 0; i < ag->num_devices; i++) {
-+		partner_ab = ag->ab[i];
-+		if (!partner_ab)
-+			continue;
-+
-+		if (found)
-+			ath12k_qmi_trigger_host_cap(partner_ab);
-+
-+		found = (partner_ab == ab) ? true : false;
-+	}
-+}
-+
- int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
- {
- 	struct ath12k_hw_group *ag;
-@@ -984,7 +1003,10 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
- 			goto err_core_stop;
- 		}
- 		ath12k_dbg(ab, ATH12K_DBG_BOOT, "group %d started\n", ag->id);
-+	} else {
-+		ath12k_core_trigger_partner(ab);
- 	}
-+
- 	mutex_unlock(&ag->mutex_lock);
- 
- 	return 0;
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index cbe77507c9ec..4e7bf1590e5a 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -3081,9 +3081,65 @@ ath12k_qmi_driver_event_post(struct ath12k_qmi *qmi,
- 	return 0;
- }
- 
-+void ath12k_qmi_trigger_host_cap(struct ath12k_base *ab)
-+{
-+	struct ath12k_qmi *qmi = &ab->qmi;
-+
-+	spin_lock(&qmi->event_lock);
-+
-+	if (ath12k_qmi_get_event_block(qmi))
-+		ath12k_qmi_set_event_block(qmi, false);
-+
-+	spin_unlock(&qmi->event_lock);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_QMI, "Trigger host cap for device id %d\n",
-+		   ab->device_id);
-+
-+	ath12k_qmi_driver_event_post(qmi, ATH12K_QMI_EVENT_HOST_CAP, NULL);
-+}
-+
-+static bool ath12k_qmi_hw_group_host_cap_ready(struct ath12k_hw_group *ag)
-+{
-+	struct ath12k_base *ab;
-+	int i;
-+
-+	for (i = 0; i < ag->num_devices; i++) {
-+		ab = ag->ab[i];
-+
-+		if (!(ab && ab->qmi.num_radios != U8_MAX))
-+			return false;
-+	}
-+	return true;
-+}
-+
-+static struct ath12k_base *
-+ath12k_qmi_hw_group_find_blocked_chip(struct ath12k_hw_group *ag)
-+{
-+	struct ath12k_base *ab;
-+	int i;
-+
-+	lockdep_assert_held(&ag->mutex_lock);
-+
-+	for (i = 0; i < ag->num_devices; i++) {
-+		ab = ag->ab[i];
-+		if (!ab)
-+			continue;
-+
-+		spin_lock(&ab->qmi.event_lock);
-+		if (ath12k_qmi_get_event_block(&ab->qmi)) {
-+			spin_unlock(&ab->qmi.event_lock);
-+			return ab;
-+		}
-+		spin_unlock(&ab->qmi.event_lock);
-+	}
-+
-+	return NULL;
-+}
-+
- static int ath12k_qmi_event_server_arrive(struct ath12k_qmi *qmi)
- {
--	struct ath12k_base *ab = qmi->ab;
-+	struct ath12k_base *ab = qmi->ab, *block_ab;
-+	struct ath12k_hw_group *ag = ab->ag;
- 	int ret;
- 
- 	ath12k_qmi_phy_cap_send(ab);
-@@ -3094,11 +3150,17 @@ static int ath12k_qmi_event_server_arrive(struct ath12k_qmi *qmi)
- 		return ret;
- 	}
- 
--	ret = ath12k_qmi_host_cap_send(ab);
--	if (ret < 0) {
--		ath12k_warn(ab, "qmi failed to send host cap QMI:%d\n", ret);
--		return ret;
-+	spin_lock(&qmi->event_lock);
-+	ath12k_qmi_set_event_block(qmi, true);
-+	spin_unlock(&qmi->event_lock);
-+
-+	mutex_lock(&ag->mutex_lock);
-+	if (ath12k_qmi_hw_group_host_cap_ready(ag)) {
-+		block_ab = ath12k_qmi_hw_group_find_blocked_chip(ag);
-+		if (block_ab)
-+			ath12k_qmi_trigger_host_cap(block_ab);
- 	}
-+	mutex_unlock(&ag->mutex_lock);
- 
- 	return ret;
- }
-@@ -3282,6 +3344,21 @@ static const struct qmi_ops ath12k_qmi_ops = {
- 	.del_server = ath12k_qmi_ops_del_server,
- };
- 
-+static int ath12k_qmi_event_host_cap(struct ath12k_qmi *qmi)
-+{
-+	struct ath12k_base *ab = qmi->ab;
-+	int ret;
-+
-+	ret = ath12k_qmi_host_cap_send(ab);
-+	if (ret < 0) {
-+		ath12k_warn(ab, "failed to send qmi host cap for device id %d: %d\n",
-+			    ab->device_id, ret);
-+		return ret;
-+	}
-+
-+	return ret;
-+}
-+
- static void ath12k_qmi_driver_event_work(struct work_struct *work)
- {
- 	struct ath12k_qmi *qmi = container_of(work, struct ath12k_qmi,
-@@ -3338,6 +3415,11 @@ static void ath12k_qmi_driver_event_work(struct work_struct *work)
- 					&ab->dev_flags);
- 
- 			break;
-+		case ATH12K_QMI_EVENT_HOST_CAP:
-+			ret = ath12k_qmi_event_host_cap(qmi);
-+			if (ret < 0)
-+				set_bit(ATH12K_FLAG_QMI_FAIL, &ab->dev_flags);
-+			break;
- 		default:
- 			ath12k_warn(ab, "invalid event type: %d", event->type);
- 			break;
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index 0dfcbd8cb59b..48fa06d5a30c 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -68,6 +68,7 @@ enum ath12k_qmi_event_type {
- 	ATH12K_QMI_EVENT_FORCE_FW_ASSERT,
- 	ATH12K_QMI_EVENT_POWER_UP,
- 	ATH12K_QMI_EVENT_POWER_DOWN,
-+	ATH12K_QMI_EVENT_HOST_CAP,
- 	ATH12K_QMI_EVENT_MAX,
- };
- 
-@@ -142,6 +143,7 @@ struct ath12k_qmi {
- 	u32 target_mem_mode;
- 	bool target_mem_delayed;
- 	u8 cal_done;
-+	bool block_event;       /* protect by event spinlock */
- 	u8 num_radios;
- 	struct target_info target;
- 	struct m3_mem_region m3_mem;
-@@ -600,5 +602,20 @@ void ath12k_qmi_firmware_stop(struct ath12k_base *ab);
- void ath12k_qmi_deinit_service(struct ath12k_base *ab);
- int ath12k_qmi_init_service(struct ath12k_base *ab);
- void ath12k_qmi_free_resource(struct ath12k_base *ab);
-+void ath12k_qmi_trigger_host_cap(struct ath12k_base *ab);
-+
-+static inline void ath12k_qmi_set_event_block(struct ath12k_qmi *qmi, bool block)
-+{
-+	lockdep_assert_held(&qmi->event_lock);
-+
-+	qmi->block_event = block;
-+}
-+
-+static inline bool ath12k_qmi_get_event_block(struct ath12k_qmi *qmi)
-+{
-+	lockdep_assert_held(&qmi->event_lock);
-+
-+	return qmi->block_event;
-+}
- 
- #endif
 
-base-commit: 0fc6e73fc428f17965ef134a8c10fc383ad19d58
-prerequisite-patch-id: edec2473d32609e4a0379f6c453cc5872e14f72d
-prerequisite-patch-id: 6bde6a3a3e8a1bcdbf07aacdb6d46b2ff8e4515d
-prerequisite-patch-id: 26459ac80933dede57330d872944e7e44b99abf2
-prerequisite-patch-id: a40bd619a2e783ae9503ad68b0f4a855b3078cf2
-prerequisite-patch-id: 82fe7af803884e718257a29c5b94831f736f123b
-prerequisite-patch-id: f42af58e87b862ca40ec0ec16326d129f4e786af
-prerequisite-patch-id: 467cc116c0faa4439b7cdfd293ec95365198ff0f
-prerequisite-patch-id: 0d8c5da758c08aa04e626e5c6a8c14fe634e3067
--- 
-2.17.1
+Pair of 2.4Ghz AND 5Ghz Wifi 7:
 
+https://shop.compex.com.sg/product-page/wlw7000e5
+
+
+These are M.2 E-Key and 4x4 MIMO antenna modules, I am building 2 routers u=
+sing Dell R730xd machines. Because I have two 6GHz modules, one will go in =
+each machine.=C2=A0 I have some old Compex wifi 5 modules that I will put i=
+n one of the servers, while the other server will house NEW 2.4, 5, and 6 G=
+hz Wifi 7 modules.
+
+There is no M.2 E-Key connectors on these machines (as it is generic older =
+generation hardware), so I am using an M.2 E-Key to PCIe riser cable from A=
+DT link to convert the M.2 E-Key to PCIe:
+
+https://www.adt.link/product/R15V4.html=C2=A0 (I will need three of these, =
+one for each module)
+
+
+This will allow connection of the wifi module to the PCIe bus.=C2=A0 I spec=
+ifically chose this machine because it has 3 x16 PCIe 3.0, and 3 x8 Pcie 3=
+=2E0
+
+To maximize throughput, these modules need to be connected to a PCIe 3.0 bu=
+s per Compex
+
+Because these modules only need a x1 connection to the PCIe bus, all three =
+x8 slots will be used for each of the 3 wifi modules.
+
+You can purchase a premade board and wifi module bundle from Compex for aro=
+und $1200, but used my own server hardware because I wanted to customize my=
+ WAN and LAN interfaces, and use all three modules in ONE machine (no pre-m=
+ade board can do this from what I have researched), so I only purchased the=
+ modules only instead of a pre-made board and modules.
+
+I have pictures of this evolving setup and there are specific reasons for c=
+hoosing this machine.=C2=A0 Keep in mind these modules require an external =
+5V power supply which will be supplied by 5V SATA power connectors - I am s=
+till trying to figure this out, but these WiFi 7 modules do come with power=
+ connectors soldered onto the board unlike the previous generation where yo=
+u had to solder on power contacts yourself.
+
+If you are interested, I can take pictures for you so that you can see firs=
+t hand how the setup looks.=C2=A0 I can guarantee the cables work since I a=
+m able to detect the wireless modules via lspci and lshw commands as it suc=
+cessfully connects to.. and is powered by... the PCIe bus.=C2=A0 I just can=
+not get the firmware (board-2.bin) to load.
+
+Interestingly, I had brief success with the firmware loading on Ubuntu 23=
+=2E10, during some trials, but it was one time and I have been unable to re=
+create this.=C2=A0 I'm not sure what I did to get it to work.
+
+One final note, this router is using a server platform as it will house 3 w=
+ifi modules (2.4/5/6 wifi 7), a 2x 100GBe ethernet LAN, 4x 10GB LAN (for a =
+separate subnet), 2x 10GB WAN inputs, and 100GB Inifinband connectivity to =
+an Inifiniband switch.=C2=A0 It will also house VMs for reverse proxy and V=
+PN so it had 2x Xeon E5-26790 V4 and 128GB DDR4 ECC RAM.=C2=A0 This unit is=
+ completely modular and any part can be upgraded at any time. This is why I=
+ went with this setup.=C2=A0 All of this is contained in one machine, no se=
+parate access point - the wifi is built into the router just like a residen=
+tial router.=C2=A0 The antennas will be connected directly to the server vi=
+a u.fl to SMA connectors for each card (each card having 4 antennas for a t=
+otal of 12 antennas connected to the machine).
+
+
+
+A few more points, the .zst files appear to be some sort of new compression=
+ technology that the stock Ubuntu 24.04 ships with.=C2=A0 The files are in =
+this format by default in the WCN directory under /lib/firmware/ath12k.=C2=
+=A0 There are NO .bin files.
+
+Also Interestingly, the ath12k driver is also in this format "ath12k.ko.zst=
+" in the modules section and decompressing it to the .ko extension seems to=
+ disable the driver.=C2=A0This is confirmed using "modinfo ath12k"
+
+Again, sorry for the long winded description.=C2=A0 I work as an Emergency =
+room physician by trade, so I am not always near my machines and can only w=
+ork on this project in my free time.=C2=A0 This wireless module is the last=
+ hurdle.
+
+All of this is very confusing compared to the ath10k which seemed so much m=
+ore straightforward.
+
+All the best, and thank you so much for your reply.=C2=A0 I can forward the=
+ contacts from compex that I spoke with if you so desire.
+
+I wanted to respond to your email as I am grateful you have taken time out =
+of your schedule to reply to my message. I do have some questions regarding=
+ the specifics of rebuilding the kernel, but will address that in=C2=A0 a s=
+eparate email so that noobs like me won't have to go through this.=C2=A0
+
+I have been following your github every since ath10k a few years back, and =
+your firmware was instrumental in helping me get my home wired/wifi router =
+project off the ground.=C2=A0 My current wifi router is actually a desktop =
+using mini-pcie wifi modules attached directly to the desktop PCIe bus.
+
+Prashant Gupta MD/MPH
+
+
+On Mon, 20 May 2024 12:54:18 +0300, Kalle Valo <kvalo@kernel.org> wrote:
+
+>> "pgupta@hindutool.com" writes:
+>>
+>> > I have been reading through the various posts, and while I found
+>> > someone who reported the exact same problem, I was unable to find a
+>> > response from anyone who could present a solution
+>> >
+>> > I have a Compex WLW7000E6
+>>
+>> Any recommendations from where it would be easiest to order such board?
+>> I'm based in Europe and would like to get one.
+>>
+>> Is the board otherwise plug&play to an M.2 E-key slot or does it need
+>> something special?
+>>
+>> > and am using the latest kernel version 6.8.0-31-generic (ubuntu 24.04
+>> > LTS)
+>>
+>> BTW in general we don't support distro kernels:
+>>
+>> https://linux-regtracking.leemhuis.info/post/frequent-reasons-why-linux-=
+kernel-bug-reports-are-ignored/#your-kernel-was-apparently-built-by-a-linux=
+-distributor-or-hardware-vendor
+
+>>
+>> > Despite having the requisite files in /lib/firmware/ath12k/QCN9274/hw2=
+=2E0:
+>> >
+>> > -rw-r--r-- 1 root root 8241152 May 19 23:47 amss.bin
+>> > -rw-r--r-- 1 root root 2821564 May 20 00:03 amss.bin.zst
+>> > -rw-r--r-- 1 root root 382856 May 20 00:03 board-2.bin
+>> > -rw-r--r-- 1 root root =C2=A0 21517 May 20 00:03 board-2.bin.zst
+>> > -rw-r--r-- 1 root root=C2=A0 421888 May 19 23:47 m3.bin
+>> > -rw-r--r-- 1 root root=C2=A0 139662 May 20 00:03 m3.bin.zst
+>> > -rw-r--r-- 1 root root=C2=A0=C2=A0 10699 May 20 00:03 Notice.txt.zst
+>> > -rw-r--r-- 1 root root=C2=A0=C2=A0 24310 May 19 23:47 regdb.bin
+>> > -rw-r--r-- 1 root root=C2=A0=C2=A0=C2=A0 3187 May 19 23:47 regdb.bin=
+=2Ezst
+>> >
+>> > I continue to receive the following errors:
+>> >
+>> > [=C2=A0=C2=A0=C2=A0 5.885930] ath12k_pci 0000:83:00.0: BAR 0 [mem
+>> > 0xc8000000-0xc81fffff 64bit]: assigned
+>> > [=C2=A0=C2=A0=C2=A0 5.886287] ath12k_pci 0000:83:00.0: MSI vectors: 16
+>> > [=C2=A0=C2=A0=C2=A0 5.886294] ath12k_pci 0000:83:00.0: Hardware name: =
+qcn9274 hw2.0
+>> > [=C2=A0=C2=A0=C2=A0 6.745247] ath12k_pci 0000:83:00.0: memory type 10 =
+not supported
+>> > [=C2=A0=C2=A0=C2=A0 6.750101] ath12k_pci 0000:83:00.0: chip_id 0x0 chi=
+p_family 0xb
+>> > board_id 0xff soc_id 0x401a2200
+>> > [=C2=A0=C2=A0=C2=A0 6.750110] ath12k_pci 0000:83:00.0: fw_version 0x10=
+098b57
+>> > fw_build_timestamp 2022-09-19 18:18 fw_build_id
+>> > QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
+>> > [=C2=A0=C2=A0=C2=A0 6.761065] ath12k_pci 0000:83:00.0: failed to fetch=
+ board data for
+>> > bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
+>> > ath12k/QCN9274/hw2.0/board-2.bin
+>> > [=C2=A0=C2=A0=C2=A0 6.761212] ath12k_pci 0000:83:00.0: failed to fetch=
+ board-2.bin or
+>> > board.bin from QCN9274/hw2.0
+>> > [=C2=A0=C2=A0=C2=A0 6.761247] ath12k_pci 0000:83:00.0: qmi failed to l=
+oad bdf:
+>> > [=C2=A0=C2=A0=C2=A0 6.761250] ath12k_pci 0000:83:00.0: qmi failed to l=
+oad board data file:-2
+>>
+>> This means that board-2.bin is missing the board file for your device.
+>> For AP devices like QCN9274 board files handling is difficult, usually
+>> Device Tree is the only way to get automatic board file loading working=
+=2E
+>>
+>> Did you get any software with your the board? Do you know if the board
+>> is calibrated or not?
+>>
+>> Can you run:
+>>
+>> find /lib/firmware/ath12k/ -type f | xargs md5sum
+>>
+>> Also read:
+>>
+>> https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugreport
+
+>>
+>> > but he zst files were copied over from the WCN7850 directory.
+>>
+>> I do not know what these zst files are. And don't copy anything from
+>> WCN7850 directory, the files are not compatible. The best is to run
+>> 'make install' within ath12k-firmware.git repository, manually fixing
+>> files will end up into problems.
+>>
+>> --
+>> https://patchwork.kernel.org/project/linux-wireless/list/
+
+>>
+>> https://wireless.wiki.kernel.org/en/developers/documentation/submittingp=
+atches
 
