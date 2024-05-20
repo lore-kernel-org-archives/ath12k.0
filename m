@@ -4,158 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47835C04FFE
-	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 18:53:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D79FC25B77
+	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 22:06:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pGVggOTGZU+7L2IiPTp2xhSCgABEb9JCtWwTg68qexk=; b=r9uYjNpPwLZVGkqL3eknhnimis
-	X7Xa+B5/K2bWHlkfwKJDxfuAwOwCu0BstUEByHuwxQLSMzIf+VCB94oDOuOWbXmXOrMT6Pmme/Jej
-	OrfM27TnlsPALlvtDKPCbnnBT7llMFF5O76ORZ1/2NFvfEhbw/3d5+PXlAkY6yojNO7XMEYB7CwbK
-	qY3rl2mERaUqEa/UdH/IsqQt5V+UwxEEtfG5wdlRP/ekLYBW5wXJ90ARVOHcIS8f3gbDpn18MPUnV
-	masmqUXGWGeGK0+zxp3gAmzJZ7x2XJzXFlnvj7eNFphGbJ77yz7N3Wzhy/oCeGcVGbIL5XYujrSNg
-	0+qhxQLA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gn2w0lbYWitQg+O9amtlx2Xgz/wz6EXzGc8vOozm2Zw=; b=jZkkkEw/JgKZijzGG8X1GTZpTw
+	vBKoV8HLKTuZ+ReO4Yzz6wuNnGYPN4cn6rTos0jXPIXqBmLWvtaIUr4w3Vs+pQn2V5M6KmqvhKCUI
+	zvofiH661DYCSlEIs3hv+VSwwKIjcbhJBqz1GhcG0KX6NUVAU7SFVg1E9HAM0idi/N2wTugsDWUH8
+	9SHyHvQC6HtR7MbKtyrah+nYkNIhnQ6qUTeQPCCu2ZnEGthWBvwVyYETEN60l2ZMvi8Q3jk2jgZAj
+	TLEJBu0du3knFOSUhSNNS9wYjEcDSKKejDHpvy22y1E8ZnNWtKhiAiOYjcp97FQardoUxI7TL53ae
+	HpCNrgyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9890-0000000FJLx-3DRy
+	id 1s9B9A-0000000Fddq-2aHi
 	for ath12k@archiver.kernel.org;
-	Mon, 20 May 2024 18:53:58 +0000
-Received: from mail-lo4gbr01on20701.outbound.protection.outlook.com ([2a01:111:f403:261a::701] helo=GBR01-LO4-obe.outbound.protection.outlook.com)
+	Mon, 20 May 2024 22:06:20 +0000
+Received: from mail545c25.carrierzone.com ([64.29.147.145])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s988x-0000000FJLE-2Aze
+	id 1s9B96-0000000Fdd2-0BqG
 	for ath12k@lists.infradead.org;
-	Mon, 20 May 2024 18:53:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=gbXimBws8c3uN8C/CSeboG2fxMrZ8UZEAWHRrp0CU3EVtKhl29No8DnxMoVh1a77zRanKNjaFoIQDE2dHCMLeryh5WfK1bAhhYKfbjwWQGERKhOFUa18mcZZkevLxN0fegGyhOy0CUxzGxwoQ/RKyvewcPKxVp4W3MeIRMo59TBO5hhAbS29LbG8ZdXlHYPipaMXcLKn/vDoHRK/9KHeUnB8LDIF2wEqwkS3gjdElxsiRG/1EqwA8c2VC0eTI15zeprK0/GRtEuM3J7ev16YqFqTKof2bnIqngWoiqGOr7Kd2DWu2q/uExe6tmtyv+oDJiuk1vzyK2qAc0wYAsV20g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pGVggOTGZU+7L2IiPTp2xhSCgABEb9JCtWwTg68qexk=;
- b=EdrZ54nQVEF2A/JyYpq5aDJrrQOX48QaMmvgQrkH8caWZeZ6KolhhOpP711MK/ClNbTmWGp5oo4UFsF7IcDUCpsYTxYnU8dWhlSCk5TtELIIyPLXAJmp4ZfbQ2EpZveIkW9zqFbYVu3sK7Sr4yNipJ8I5o8jKkEAGpWv8jleExOqbbz+f0UmtUtnj3nBUF94TWk0YSqMh1o03iBlP4+wA2KSg4+MVPJLN07OW4AIjRr2RKzmp2pUJyWNmNAgRWExp60Zvfu08bPYt7MN8OQQVzFY4ppYokhq7SS9ddiUYkKmtQ0NbVcgOR+Os/IKno5/4ak7oEvluFnEob992/1mpA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=3adesign.co.uk; dmarc=pass action=none
- header.from=3adesign.co.uk; dkim=pass header.d=3adesign.co.uk; arc=none
-Received: from LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:182::14)
- by CW1P123MB7541.GBRP123.PROD.OUTLOOK.COM (2603:10a6:400:1d9::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7587.35; Mon, 20 May
- 2024 18:53:49 +0000
-Received: from LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
- ([fe80::493e:62d6:55a0:48c6]) by LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
- ([fe80::493e:62d6:55a0:48c6%7]) with mapi id 15.20.7587.035; Mon, 20 May 2024
- 18:53:49 +0000
-From: david Atkins <david@3adesign.co.uk>
-To: "pgupta@hindutool.com" <pgupta@hindutool.com>, "kvalo@kernel.org"
-	<kvalo@kernel.org>, "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+	Mon, 20 May 2024 22:06:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=carrierzone.com;
+	s=mailmia; t=1716242768;
+	bh=Qhu9Wb4RUdE50Czjf4MeOMepUQ8Jhn3XFjKJdrnD2Dk=;
+	h=From:To:CC:Subject:Date:In-Reply-To:References:Reply-to:From;
+	b=QK3K5LlXxkiyVImI4iZYM4c5JxjHyUYT6YB4xaSWK0VN3B2oMdilfgt8uj4Q3DMLy
+	 1dhXxXGeCjY9JBLK10chyzE8J0PRiukUg4Yrn1GUCJH7RQ6V9tT1ruCTBvCCPJy7bT
+	 9wx94pr9cRupwWYQNKnBVtCgTvbTjiuCvrpu1khc=
+Feedback-ID: pgupta@hindutoo
+Received: from mail545c25.carrierzone.com (localhost [127.0.0.1])
+	by mail545c25.carrierzone.com (8.14.9/8.13.1) with ESMTP id 44KM67vh018998
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Mon, 20 May 2024 22:06:07 +0000
+Received: (from webmail@localhost)
+	by mail545c25.carrierzone.com (8.14.9/8.12.2/Submit) id 44KM67TM018997;
+	Mon, 20 May 2024 18:06:07 -0400
+From: "pgupta@hindutool.com" <pgupta@hindutool.com>
+To: david@3adesign.co.uk, ath12k@lists.infradead.org
 Subject: RE: board-2.bin
-Thread-Topic: board-2.bin
-Thread-Index: AQHaqnBDwU8vSAJfKUmtM4RNpW3dQrGf4o/tgAB2rF2AAB7gQA==
-Date: Mon, 20 May 2024 18:53:49 +0000
-Message-ID: <LO0P123MB40578D0BBD3B6EDDFED084ABD6E92@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+Date: Mon, 20 May 2024 18:06:07 -0400
+Message-ID: <1716242767.t9j0j77jn6sgs4ws@mailapp03.register.com>
+In-Reply-To: <LO0P123MB40578D0BBD3B6EDDFED084ABD6E92@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
 References: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
  <87seycerlh.fsf@kernel.org>
  <1716221937.24ib38wrkkgo8sc4@mailapp03.register.com>
  <1716224337.zi1iti2l1c0cocko@mailapp03.register.com>
-In-Reply-To: <1716224337.zi1iti2l1c0cocko@mailapp03.register.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=3adesign.co.uk;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: LO0P123MB4057:EE_|CW1P123MB7541:EE_
-x-ms-office365-filtering-correlation-id: 89e7fd6a-cc80-4e00-69d7-08dc78fe2fbb
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230031|376005|366007|1800799015|38070700009;
-x-microsoft-antispam-message-info: =?utf-8?B?RkphQU8wL2dtWE85am53Wnl5MkFHSGlSY0dNRzBMclI5dmJ0cUxZL0FMYjEv?=
- =?utf-8?B?cG93UDNNWnNQL0FWS0p0eTNkRFdabUlpTnZiVGoxTVp1eHVoeitnaWVhazZL?=
- =?utf-8?B?ZFVEMStRZlZyQTlIcWhPbjZJN1NabkMzNFdxMFJwR2NSMFlleTJiYUZpcko4?=
- =?utf-8?B?ZGI2Sk9kME1VWDU4TCtDcmY3ZUNZR2FtUWlLNGIzZ2tkTUMxazVQd0VkakVR?=
- =?utf-8?B?TkZhbFVDamMvVTREYjk5SXpoNEpyU3JLZGs2MUhwY3diK1BwOCtMSFdJYUR2?=
- =?utf-8?B?QkhGcktGL0tyRjFuYkJlZ0lMUHVQU20vRlh5OHh2cGo5dS9hbGVRWTlLc0ti?=
- =?utf-8?B?ZTl2dVdGWkI2d2FQalVjVVJjQWpjTi9obTNZOG9ZK1ZBR3dHZjI5R1Z0MHZw?=
- =?utf-8?B?RXR0MmFDbytwc2lzd0pXWFBieG9QQ045bFMyTktLTmJzWjBDZW1lQnlMTytx?=
- =?utf-8?B?NlNxOU5hcXp1eGtlbXcyYXBwN2J1eTI1NU5QZ05vU216V1pZWXZzdiszb3JS?=
- =?utf-8?B?enFpSGZ1UEZxdmZWOGl0R00vRFlBTllocUdBRzlhQ2p2dkt2VVRnTyszU0da?=
- =?utf-8?B?RE16S3U5NHp1UlRNYkF0QkNHTVRzUGJvZEt4RFBjdUE3akgraXpFWFdBMndF?=
- =?utf-8?B?WFFvaGVkTW41UnVKVUltSHo0VGFzS3kzNkNHb20zRUJ1Y2FuVFBmblBpYldK?=
- =?utf-8?B?N3VWZkY3a3IvcjVUMjVqd2d4UElKQ1ZjL2poVUIwU05FZVJFWmRIZ2hXeS9J?=
- =?utf-8?B?S0Vrc0QzZVJmV21NUG1iWnMxVEZVdWpaTFE4UmVTMEgzQkdCRHF5ZnlMd3Vl?=
- =?utf-8?B?a0dtRXFrODVsbVBqMUxzbzhLR2c2NkI2Z1ZBSERkR0ErQU5kMm1RdktHejZk?=
- =?utf-8?B?V0VwanJhZHcyUXF3dUw0dnN3QVdKeXMwZk04N05sUGxuSHVYSGtIcGh3b2cr?=
- =?utf-8?B?cThycDNqWmVtM1VGUnhVUldEbmM1ZzRsL1FMbU9meEdEaUNlRWRrb1M0L2Nk?=
- =?utf-8?B?aWVLd0lOdXVZSVc5elJlSGFYQkc5SW5HSCtNcVA5cUtmOW9wcldrdDY2dTFz?=
- =?utf-8?B?Ny9kMHV2RjV2VWtTWi8wN3Vic0NncHhhU1lyK0FIQlM3bXhYVUZNeUpySHNz?=
- =?utf-8?B?VmFYZjhadGVvTGpSNzZuZFdRQnJ0WVJtdFZkbUluOFZ1Z2VPbFhKazNLSWd3?=
- =?utf-8?B?elIrUUN1dmtHaWtDd0hiOVdPcWxTOFg5MmlGc3VRdHJEOENxUml6MEZ5SkRF?=
- =?utf-8?B?QkJGMDdsTk1XS0p6bDlORkxRRlBJQ0RLYnQzWVhUVkFDWDdPaG5sVDZHRXVo?=
- =?utf-8?B?S05PSUlPZnZQa3FCWFVlUERrVlpwL0FTcTNQV1QxU01vVUxWakFYRGRmQWhR?=
- =?utf-8?B?QXRMai9iODRNTksxWHNFYUh5N3RreXdGNGxBUWlZV0VHR1dmZFloZElXWHV5?=
- =?utf-8?B?ZHdUa3c1cm9LY01nMlcyaElYcjhCZVFSd0pCalN4dEwyWUMvcHovTUFQaDMw?=
- =?utf-8?B?MUR6aHhmdVdPNFJUZzdpUVZ3UjBsYUJYTUJIYmhjbEtKVUs0aFpsbzlRVHVv?=
- =?utf-8?B?QS9hTitZQ2NHR3JrS2RNajB0YTRRdWVFUy8rdUQ0OXFrZ0FBNDBDZDM0SU9h?=
- =?utf-8?B?cExpTnZ4WWV0K1MxYktvMUxtcUk3VmlYN1Y2bzdoRFpSUTEwUEk4eWpUdi9s?=
- =?utf-8?B?T2Vkd21JREdNRHMrc09YRXE0cm9YbGQ0L0w4VmxzZmk5OEJpOXZDcERRPT0=?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230031)(376005)(366007)(1800799015)(38070700009);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?T05VSnZhQUlvRURWY01QV3BqSnZNSFRicTZhSUZrRzRHejUva0ZJa0RiUFFt?=
- =?utf-8?B?dFV5U2VZMm5sck9RbmJlbGt1eUU5WmxKTGc2ZXRBaHZBZnZsQlN2bnM3Zi8x?=
- =?utf-8?B?K3FFYXdGV1NaYkFWekZsM056anFTQm5CbWU3QmF6bm1XR1ZRSlNPZkJhTXZn?=
- =?utf-8?B?WHEzeDdndU9PeS9FZG42RVJQcXczZ0VrQ3kyRXltanJ0c1lsWHc0bGJtaHVu?=
- =?utf-8?B?VU9xTS9FL1c2aXBqYTlZVzIySElhcWdQeGRuQXNGUTVHNkh4RzNDT050SnVW?=
- =?utf-8?B?NVJ0QjBQQ014eVZ6Q2hmMjRzRlRmSDZoZHNLMkE3RzR4VExreG1DbmNTWjhH?=
- =?utf-8?B?Q3IwMkZjZGw0LzY2TThIVnduT0VjZWVUWm10VVN5UStLNGJYVzhEdHFmTk1N?=
- =?utf-8?B?bDE1RVFSSHd4T3ZCc1JHWGQ3Nkg1MERUcnRneXB6NlA0K3dDOGtCMUtlOEV6?=
- =?utf-8?B?dEZZQVdRMHVSbjIycms0TGZGaElFWGczSWx1SysrNmNYRzB5VklwSkN0SlA3?=
- =?utf-8?B?SzlWUGs5ejVsNWtvL2xLbG8rSUl1ZVlaWjJmK3FjNHJLZFFoWFFDbkExM2hF?=
- =?utf-8?B?RURXUlZ1Njl4OFhSaFlEQnFFakN0NXdML2kvYXo4d053SmJaamtxbU1xMVNu?=
- =?utf-8?B?OU8zRGRBWnBQRmE3VjRhcjh5V005WXBBczMrNGdlckdySlRhV25udUtWVHZV?=
- =?utf-8?B?YWs5TFlseE1oOHlWMzkza1k5aDBLREdDNUhCakxIN1o1Y0VNZGJEWnRwNFd6?=
- =?utf-8?B?cmFOSWdQU0V2dGZiUWRYZ2dxYWh5T1dvTUdleUJISEpPdDZHcmxaVlRwZ2dx?=
- =?utf-8?B?N3pheFN4WXVzT3JWSFZGUks4R3Izb1NhaFI4eGdvZnB0WWkrOHdwRTFUcllP?=
- =?utf-8?B?Unk0NUNJWG5pb0ZkSVRBUWZaTHJYc210MGZpQUtWM3VkZ0RtRStEVmU2TFJh?=
- =?utf-8?B?M3NpK25CUDA5U2JXZUhoZWI2Z2l5UUwxU0JSRG1oSEVtcys4OTQrMVFJVnIr?=
- =?utf-8?B?UFdxSkhtM3VzbnhsQytWUVhIUmdYL3hiM2NCVDV1ckdscnVuc1hhTFdHR1Fa?=
- =?utf-8?B?YXVuMTZPYmpQMjJDUGN5WThVT3pOcXk1QzF4RmEreStjemo3dHFJMjRSNnNl?=
- =?utf-8?B?STdpcTg4L3FVdGZBbndveHU1aXpsSmNnYXBvQ3lzYWhqUEltR29sNDNBM3hF?=
- =?utf-8?B?Z1VLZUVvVVlRTTl2aWRCeDYxaVhBMDZsaXhTOTIvQmVhQWpMRDBoRk9neG5m?=
- =?utf-8?B?SzYzSUVRQnFBc29mYWFHcEJSNExIMm8xcVR4dDhsQzhvTDkxQzQrV2QyblNr?=
- =?utf-8?B?VkNwRUgyTk96cFNMSTZ6b0JsWFZ5cktZdWRHRnM5TUNpTUNpTEtiRnhYamZN?=
- =?utf-8?B?d09NQWJtbDVFWnJjWTd6dmRPeW9JS1M0WHhOYmNrQ2V0SktxTDVha3podWRI?=
- =?utf-8?B?SHZ0Q3I0MXRwekFxU3VtYzJRNHNsTU9ZdjNxRGpJaWNwMy84YVl0VnBBWEIw?=
- =?utf-8?B?cjVaOGdDaFR2Q3IrMEo5emFENms2dWkrME1TZVkrK1pKNlBjSWdSc2UyTk4v?=
- =?utf-8?B?cVFVUmo5NW1SS3Z5TVlrRXBoUGpFOE1SaUdHWXE3MEJPOVA5M2I2Nkw4NVFL?=
- =?utf-8?B?TXhBbmRJL3pVd1dZRitLZmhmZy9pNnQwZmtRNGd3bU54bWVZc0dZbVJ2aEEy?=
- =?utf-8?B?d2pkTW14ZGl4dUVIVHI2dXU1YkFxZVB1dGM5YlliRmo1TisxSWUxZG92YWpa?=
- =?utf-8?B?dFpQVWpHZGU0YVlOSHQzU0w4NWYxZlh1QTF6SXp3YWNMTEhKSW96ZHlxWnRl?=
- =?utf-8?B?aUI2cGJZQTRIMkpzNXdZWFp0Um0rVDlYRXArOEtuYnZ3NE92Q1FyZlJRMU9C?=
- =?utf-8?B?dVFKWmFLam4vUVVFYkg2WGRqZW1HNTZHbkhDRjl0WjcxVWx3THhCaUpRZEkx?=
- =?utf-8?B?SXBYTHVUc3gxbmdzRzdEYjFhbThLRXFNMXdlTFNSL1Q3WG14VjMxNktsTXdC?=
- =?utf-8?B?TUVPZEw1b2RRb3ZuVFIyVC9JQlFVaGEvTVBWSCs5R1ZJK0czc0p3QnE4ZHRY?=
- =?utf-8?B?ZGtHSHJFN1dEMkw3bmtmRkxFWjF2UkFudmE3dUxXM3Zkem9LenFqVStQcGJi?=
- =?utf-8?Q?R5RfV0eWIUDuwFs9lgGTf0buE?=
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ <LO0P123MB40578D0BBD3B6EDDFED084ABD6E92@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
 MIME-Version: 1.0
-X-OriginatorOrg: 3adesign.co.uk
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-Network-Message-Id: 89e7fd6a-cc80-4e00-69d7-08dc78fe2fbb
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2024 18:53:49.7213
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4b153f19-49d1-4c9d-8de6-70aea15d7add
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: gLoxA/MrDXmvb8XI+LyyZpV0OfBQKHzhnt0h3JlvzkkVhw9zTI2XnVt4CFdBVr7L+th3gUB8Mt5S3qGGnRfWfg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CW1P123MB7541
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Image-Url: https://mailapp03.register.com/api/storage/pgupta@hindutool.com/profile/picture
+X-VADE-SPAMSTATE: clean
+X-VADE-SPAMSCORE: 0
+X-VADE-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedvledrvdeiuddgtdehucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecujffquffvqffrkfetpdfqfgfvpdfgpfggqdevvdehnecuuegrihhlohhuthemuceftddunecunecujfgurhephffvvefufffkjghfgggtgfhrsehtqhertddttdejnecuhfhrohhmpedfphhguhhpthgrsehhihhnughuthhoohhlrdgtohhmfdcuoehpghhuphhtrgeshhhinhguuhhtohholhdrtghomheqnecuggftrfgrthhtvghrnhepuddvleetgfduhfdvlefhtedvieegtefgudevffejkeefgfduheefffevjefgkeejnecuffhomhgrihhnpegtohguihgtohdrtghomhdptghomhhpvgigrdgtohhmrdhsghdprgguthdrlhhinhhkpdhlvggvmhhhuhhishdrihhnfhhopdhkvghrnhgvlhdrohhrghenucfkphepuddvjedrtddrtddrudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpeduvdejrddtrddtrddupdhhvghlohepmhgrihhlheeghegtvdehrdgtrghrrhhivghriihonhgvrdgtohhmpdhmrghilhhfrhhomhepphhguhhpthgrsehhihhnughuthhoohhlrdgtohhmpdhnsggprhgtphhtthhopedvpdhrtghpthhtoheprghthhduvdhksehlihhsthhsrdhinhhfrhgruggvrggurdhorhhgpdhrtghpthhtohepuggrvhhiugesfegruggvshhighhnrdgtohdruhhk
+X-Origin-Country: Unknown
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240520_115355_843321_D89AACD8 
-X-CRM114-Status: GOOD (  34.80  )
+X-CRM114-CacheID: sfid-20240520_150616_434646_54686F99 
+X-CRM114-Status: GOOD (  51.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,181 +76,320 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: pgupta@hindutool.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-SGksDQoNCldlIGhhdmUgc291cmNlZCBtb2R1bGVzIGZyb20gUXVhbGNvbW0gZGlyZWN0ICAiSGFt
-aWx0b24iIGNhcmRzDQoNCkkgYWxzbyBoYXZlIDJ4MiBIYW1pbHRvbiBlcXVpdmFsZW50cyBhbmQg
-V2Fpa2lraSBmcm9tIENvZGljbywgdGhlc2UgYXJlIDhkZXZjaWVzIG9yIGNvbXBleCBtb2R1bGVz
-DQoNClRoZXkgc2VsbCBzYW1wbGUgcXVhbnRpdGllcyBlYXNpbHkgb25saW5lDQoNCmh0dHBzOi8v
-d3d3LmNvZGljby5jb20vZW4vbWFudWZhY3R1cmVycy84ZGV2aWNlcz9waW1fYnJhbmQ9OGRldmlj
-ZXMjc2FtcGxlcw0KDQpJIGhhdmUgMyBzZXR1cHMgcnVubmluZywgMiBBTUQgKDEgSGFtaWx0b24g
-MSBXS0spIGFuZCBJbnRlbCB3aXRoIEhhbWlsdG9uDQoNCldlIGFyZSBjb21wYXJpbmcgd2l0aCBJ
-bnRlbCBCRTIwMCBhcyBhbm90aGVyIG9wdGlvbg0KDQpEYXZpZA0KDQo+IC0tLS0tT3JpZ2luYWwg
-TWVzc2FnZS0tLS0tDQo+IEZyb206IGF0aDEyayA8YXRoMTJrLWJvdW5jZXNAbGlzdHMuaW5mcmFk
-ZWFkLm9yZz4gT24gQmVoYWxmIE9mDQo+IHBndXB0YUBoaW5kdXRvb2wuY29tDQo+IFNlbnQ6IE1v
-bmRheSwgTWF5IDIwLCAyMDI0IDU6NTkgUE0NCj4gVG86IGt2YWxvQGtlcm5lbC5vcmc7IGF0aDEy
-a0BsaXN0cy5pbmZyYWRlYWQub3JnDQo+IFN1YmplY3Q6IFJlOiBib2FyZC0yLmJpbg0KPiANCj4g
-TXIuIFZhbG8sDQo+IA0KPiANCj4gVGhhbmsgeW91IGZvciByZXNwb25kaW5nIHRvIG15IGVtYWls
-Lg0KPiANCj4gSSBwdXJjaGFzZWQgYSB3aWZpIDcgMi40R2h6LCA1R2h6LCBhbmQgNkdoeiBkaXJl
-Y3RseSBmcm9tIGNvbXBleDoNCj4gDQo+IGh0dHBzOi8vc2hvcC5jb21wZXguY29tLnNnL3Byb2R1
-Y3RzDQo+IA0KPiANCj4gUGFpciBvZiA2R2h6IFdpZmkgNyAodGhleSBhcmUgb25seSBzb2xkIGFz
-IGEgcGFpcikNCj4gDQo+IGh0dHBzOi8vc2hvcC5jb21wZXguY29tLnNnL3Byb2R1Y3QtcGFnZS93
-bHc3MDAwZTYNCj4gDQo+IA0KPiBQYWlyIG9mIDIuNEdoeiBBTkQgNUdoeiBXaWZpIDc6DQo+IA0K
-PiBodHRwczovL3Nob3AuY29tcGV4LmNvbS5zZy9wcm9kdWN0LXBhZ2Uvd2x3NzAwMGU1DQo+IA0K
-PiANCj4gVGhlc2UgYXJlIE0uMiBFLUtleSBhbmQgNHg0IE1JTU8gYW50ZW5uYSBtb2R1bGVzLCBJ
-IGFtIGJ1aWxkaW5nIDIgcm91dGVycw0KPiB1c2luZyBEZWxsIFI3MzB4ZCBtYWNoaW5lcy4gQmVj
-YXVzZSBJIGhhdmUgdHdvIDZHSHogbW9kdWxlcywgb25lIHdpbGwgZ28gaW4NCj4gZWFjaCBtYWNo
-aW5lLsKgIEkgaGF2ZSBzb21lIG9sZCBDb21wZXggd2lmaSA1IG1vZHVsZXMgdGhhdCBJIHdpbGwg
-cHV0IGluIG9uZQ0KPiBvZiB0aGUgc2VydmVycywgd2hpbGUgdGhlIG90aGVyIHNlcnZlciB3aWxs
-IGhvdXNlIE5FVyAyLjQsIDUsIGFuZCA2IEdoeiBXaWZpIDcNCj4gbW9kdWxlcy4NCj4gDQo+IFRo
-ZXJlIGlzIG5vIE0uMiBFLUtleSBjb25uZWN0b3JzIG9uIHRoZXNlIG1hY2hpbmVzIChhcyBpdCBp
-cyBnZW5lcmljIG9sZGVyDQo+IGdlbmVyYXRpb24gaGFyZHdhcmUpLCBzbyBJIGFtIHVzaW5nIGFu
-IE0uMiBFLUtleSB0byBQQ0llIHJpc2VyIGNhYmxlIGZyb20NCj4gQURUIGxpbmsgdG8gY29udmVy
-dCB0aGUgTS4yIEUtS2V5IHRvIFBDSWU6DQo+IA0KPiBodHRwczovL3d3dy5hZHQubGluay9wcm9k
-dWN0L1IxNVY0Lmh0bWzCoCAoSSB3aWxsIG5lZWQgdGhyZWUgb2YgdGhlc2UsIG9uZSBmb3INCj4g
-ZWFjaCBtb2R1bGUpDQo+IA0KPiANCj4gVGhpcyB3aWxsIGFsbG93IGNvbm5lY3Rpb24gb2YgdGhl
-IHdpZmkgbW9kdWxlIHRvIHRoZSBQQ0llIGJ1cy7CoCBJIHNwZWNpZmljYWxseQ0KPiBjaG9zZSB0
-aGlzIG1hY2hpbmUgYmVjYXVzZSBpdCBoYXMgMyB4MTYgUENJZSAzLjAsIGFuZCAzIHg4IFBjaWUg
-My4wDQo+IA0KPiBUbyBtYXhpbWl6ZSB0aHJvdWdocHV0LCB0aGVzZSBtb2R1bGVzIG5lZWQgdG8g
-YmUgY29ubmVjdGVkIHRvIGEgUENJZSAzLjANCj4gYnVzIHBlciBDb21wZXgNCj4gDQo+IEJlY2F1
-c2UgdGhlc2UgbW9kdWxlcyBvbmx5IG5lZWQgYSB4MSBjb25uZWN0aW9uIHRvIHRoZSBQQ0llIGJ1
-cywgYWxsIHRocmVlDQo+IHg4IHNsb3RzIHdpbGwgYmUgdXNlZCBmb3IgZWFjaCBvZiB0aGUgMyB3
-aWZpIG1vZHVsZXMuDQo+IA0KPiBZb3UgY2FuIHB1cmNoYXNlIGEgcHJlbWFkZSBib2FyZCBhbmQg
-d2lmaSBtb2R1bGUgYnVuZGxlIGZyb20gQ29tcGV4IGZvcg0KPiBhcm91bmQgJDEyMDAsIGJ1dCB1
-c2VkIG15IG93biBzZXJ2ZXIgaGFyZHdhcmUgYmVjYXVzZSBJIHdhbnRlZCB0bw0KPiBjdXN0b21p
-emUgbXkgV0FOIGFuZCBMQU4gaW50ZXJmYWNlcywgYW5kIHVzZSBhbGwgdGhyZWUgbW9kdWxlcyBp
-biBPTkUNCj4gbWFjaGluZSAobm8gcHJlLW1hZGUgYm9hcmQgY2FuIGRvIHRoaXMgZnJvbSB3aGF0
-IEkgaGF2ZSByZXNlYXJjaGVkKSwgc28gSQ0KPiBvbmx5IHB1cmNoYXNlZCB0aGUgbW9kdWxlcyBv
-bmx5IGluc3RlYWQgb2YgYSBwcmUtbWFkZSBib2FyZCBhbmQgbW9kdWxlcy4NCj4gDQo+IEkgaGF2
-ZSBwaWN0dXJlcyBvZiB0aGlzIGV2b2x2aW5nIHNldHVwIGFuZCB0aGVyZSBhcmUgc3BlY2lmaWMg
-cmVhc29ucyBmb3INCj4gY2hvb3NpbmcgdGhpcyBtYWNoaW5lLsKgIEtlZXAgaW4gbWluZCB0aGVz
-ZSBtb2R1bGVzIHJlcXVpcmUgYW4gZXh0ZXJuYWwgNVYNCj4gcG93ZXIgc3VwcGx5IHdoaWNoIHdp
-bGwgYmUgc3VwcGxpZWQgYnkgNVYgU0FUQSBwb3dlciBjb25uZWN0b3JzIC0gSSBhbSBzdGlsbA0K
-PiB0cnlpbmcgdG8gZmlndXJlIHRoaXMgb3V0LCBidXQgdGhlc2UgV2lGaSA3IG1vZHVsZXMgZG8g
-Y29tZSB3aXRoIHBvd2VyDQo+IGNvbm5lY3RvcnMgc29sZGVyZWQgb250byB0aGUgYm9hcmQgdW5s
-aWtlIHRoZSBwcmV2aW91cyBnZW5lcmF0aW9uIHdoZXJlIHlvdQ0KPiBoYWQgdG8gc29sZGVyIG9u
-IHBvd2VyIGNvbnRhY3RzIHlvdXJzZWxmLg0KPiANCj4gSWYgeW91IGFyZSBpbnRlcmVzdGVkLCBJ
-IGNhbiB0YWtlIHBpY3R1cmVzIGZvciB5b3Ugc28gdGhhdCB5b3UgY2FuIHNlZSBmaXJzdCBoYW5k
-DQo+IGhvdyB0aGUgc2V0dXAgbG9va3MuwqAgSSBjYW4gZ3VhcmFudGVlIHRoZSBjYWJsZXMgd29y
-ayBzaW5jZSBJIGFtIGFibGUgdG8NCj4gZGV0ZWN0IHRoZSB3aXJlbGVzcyBtb2R1bGVzIHZpYSBs
-c3BjaSBhbmQgbHNodyBjb21tYW5kcyBhcyBpdCBzdWNjZXNzZnVsbHkNCj4gY29ubmVjdHMgdG8u
-LiBhbmQgaXMgcG93ZXJlZCBieS4uLiB0aGUgUENJZSBidXMuwqAgSSBqdXN0IGNhbm5vdCBnZXQg
-dGhlIGZpcm13YXJlDQo+IChib2FyZC0yLmJpbikgdG8gbG9hZC4NCj4gDQo+IEludGVyZXN0aW5n
-bHksIEkgaGFkIGJyaWVmIHN1Y2Nlc3Mgd2l0aCB0aGUgZmlybXdhcmUgbG9hZGluZyBvbiBVYnVu
-dHUgMjMuMTAsDQo+IGR1cmluZyBzb21lIHRyaWFscywgYnV0IGl0IHdhcyBvbmUgdGltZSBhbmQg
-SSBoYXZlIGJlZW4gdW5hYmxlIHRvIHJlY3JlYXRlDQo+IHRoaXMuwqAgSSdtIG5vdCBzdXJlIHdo
-YXQgSSBkaWQgdG8gZ2V0IGl0IHRvIHdvcmsuDQo+IA0KPiBPbmUgZmluYWwgbm90ZSwgdGhpcyBy
-b3V0ZXIgaXMgdXNpbmcgYSBzZXJ2ZXIgcGxhdGZvcm0gYXMgaXQgd2lsbCBob3VzZSAzIHdpZmkN
-Cj4gbW9kdWxlcyAoMi40LzUvNiB3aWZpIDcpLCBhIDJ4IDEwMEdCZSBldGhlcm5ldCBMQU4sIDR4
-IDEwR0IgTEFOIChmb3IgYQ0KPiBzZXBhcmF0ZSBzdWJuZXQpLCAyeCAxMEdCIFdBTiBpbnB1dHMs
-IGFuZCAxMDBHQiBJbmlmaW5iYW5kIGNvbm5lY3Rpdml0eSB0bw0KPiBhbiBJbmlmaW5pYmFuZCBz
-d2l0Y2guwqAgSXQgd2lsbCBhbHNvIGhvdXNlIFZNcyBmb3IgcmV2ZXJzZSBwcm94eSBhbmQgVlBO
-IHNvIGl0DQo+IGhhZCAyeCBYZW9uIEU1LTI2NzkwIFY0IGFuZCAxMjhHQiBERFI0IEVDQyBSQU0u
-wqAgVGhpcyB1bml0IGlzIGNvbXBsZXRlbHkNCj4gbW9kdWxhciBhbmQgYW55IHBhcnQgY2FuIGJl
-IHVwZ3JhZGVkIGF0IGFueSB0aW1lLiBUaGlzIGlzIHdoeSBJIHdlbnQgd2l0aA0KPiB0aGlzIHNl
-dHVwLsKgIEFsbCBvZiB0aGlzIGlzIGNvbnRhaW5lZCBpbiBvbmUgbWFjaGluZSwgbm8gc2VwYXJh
-dGUgYWNjZXNzIHBvaW50IC0NCj4gdGhlIHdpZmkgaXMgYnVpbHQgaW50byB0aGUgcm91dGVyIGp1
-c3QgbGlrZSBhIHJlc2lkZW50aWFsIHJvdXRlci7CoCBUaGUgYW50ZW5uYXMgd2lsbA0KPiBiZSBj
-b25uZWN0ZWQgZGlyZWN0bHkgdG8gdGhlIHNlcnZlciB2aWEgdS5mbCB0byBTTUEgY29ubmVjdG9y
-cyBmb3IgZWFjaCBjYXJkDQo+IChlYWNoIGNhcmQgaGF2aW5nIDQgYW50ZW5uYXMgZm9yIGEgdG90
-YWwgb2YgMTIgYW50ZW5uYXMgY29ubmVjdGVkIHRvIHRoZQ0KPiBtYWNoaW5lKS4NCj4gDQo+IA0K
-PiANCj4gQSBmZXcgbW9yZSBwb2ludHMsIHRoZSAuenN0IGZpbGVzIGFwcGVhciB0byBiZSBzb21l
-IHNvcnQgb2YgbmV3IGNvbXByZXNzaW9uDQo+IHRlY2hub2xvZ3kgdGhhdCB0aGUgc3RvY2sgVWJ1
-bnR1IDI0LjA0IHNoaXBzIHdpdGguwqAgVGhlIGZpbGVzIGFyZSBpbiB0aGlzIGZvcm1hdA0KPiBi
-eSBkZWZhdWx0IGluIHRoZSBXQ04gZGlyZWN0b3J5IHVuZGVyIC9saWIvZmlybXdhcmUvYXRoMTJr
-LsKgIFRoZXJlIGFyZSBOTw0KPiAuYmluIGZpbGVzLg0KPiANCj4gQWxzbyBJbnRlcmVzdGluZ2x5
-LCB0aGUgYXRoMTJrIGRyaXZlciBpcyBhbHNvIGluIHRoaXMgZm9ybWF0ICJhdGgxMmsua28uenN0
-IiBpbiB0aGUNCj4gbW9kdWxlcyBzZWN0aW9uIGFuZCBkZWNvbXByZXNzaW5nIGl0IHRvIHRoZSAu
-a28gZXh0ZW5zaW9uIHNlZW1zIHRvIGRpc2FibGUNCj4gdGhlIGRyaXZlci7CoFRoaXMgaXMgY29u
-ZmlybWVkIHVzaW5nICJtb2RpbmZvIGF0aDEyayINCj4gDQo+IEFnYWluLCBzb3JyeSBmb3IgdGhl
-IGxvbmcgd2luZGVkIGRlc2NyaXB0aW9uLsKgIEkgd29yayBhcyBhbiBFbWVyZ2VuY3kgcm9vbQ0K
-PiBwaHlzaWNpYW4gYnkgdHJhZGUsIHNvIEkgYW0gbm90IGFsd2F5cyBuZWFyIG15IG1hY2hpbmVz
-IGFuZCBjYW4gb25seSB3b3JrDQo+IG9uIHRoaXMgcHJvamVjdCBpbiBteSBmcmVlIHRpbWUuwqAg
-VGhpcyB3aXJlbGVzcyBtb2R1bGUgaXMgdGhlIGxhc3QgaHVyZGxlLg0KPiANCj4gQWxsIG9mIHRo
-aXMgaXMgdmVyeSBjb25mdXNpbmcgY29tcGFyZWQgdG8gdGhlIGF0aDEwayB3aGljaCBzZWVtZWQg
-c28gbXVjaA0KPiBtb3JlIHN0cmFpZ2h0Zm9yd2FyZC4NCj4gDQo+IEFsbCB0aGUgYmVzdCwgYW5k
-IHRoYW5rIHlvdSBzbyBtdWNoIGZvciB5b3VyIHJlcGx5LsKgIEkgY2FuIGZvcndhcmQgdGhlIGNv
-bnRhY3RzDQo+IGZyb20gY29tcGV4IHRoYXQgSSBzcG9rZSB3aXRoIGlmIHlvdSBzbyBkZXNpcmUu
-DQo+IA0KPiBJIHdhbnRlZCB0byByZXNwb25kIHRvIHlvdXIgZW1haWwgYXMgSSBhbSBncmF0ZWZ1
-bCB5b3UgaGF2ZSB0YWtlbiB0aW1lIG91dCBvZg0KPiB5b3VyIHNjaGVkdWxlIHRvIHJlcGx5IHRv
-IG15IG1lc3NhZ2UuIEkgZG8gaGF2ZSBzb21lIHF1ZXN0aW9ucyByZWdhcmRpbmcNCj4gdGhlIHNw
-ZWNpZmljcyBvZiByZWJ1aWxkaW5nIHRoZSBrZXJuZWwsIGJ1dCB3aWxsIGFkZHJlc3MgdGhhdCBp
-bsKgIGEgc2VwYXJhdGUgZW1haWwNCj4gc28gdGhhdCBub29icyBsaWtlIG1lIHdvbid0IGhhdmUg
-dG8gZ28gdGhyb3VnaCB0aGlzLg0KPiANCj4gSSBoYXZlIGJlZW4gZm9sbG93aW5nIHlvdXIgZ2l0
-aHViIGV2ZXJ5IHNpbmNlIGF0aDEwayBhIGZldyB5ZWFycyBiYWNrLCBhbmQNCj4geW91ciBmaXJt
-d2FyZSB3YXMgaW5zdHJ1bWVudGFsIGluIGhlbHBpbmcgbWUgZ2V0IG15IGhvbWUgd2lyZWQvd2lm
-aSByb3V0ZXINCj4gcHJvamVjdCBvZmYgdGhlIGdyb3VuZC7CoCBNeSBjdXJyZW50IHdpZmkgcm91
-dGVyIGlzIGFjdHVhbGx5IGEgZGVza3RvcCB1c2luZw0KPiBtaW5pLXBjaWUgd2lmaSBtb2R1bGVz
-IGF0dGFjaGVkIGRpcmVjdGx5IHRvIHRoZSBkZXNrdG9wIFBDSWUgYnVzLg0KPiANCj4gUHJhc2hh
-bnQgR3VwdGEgTUQvTVBIDQo+IA0KPiANCj4gT24gTW9uLCAyMCBNYXkgMjAyNCAxMjo1NDoxOCAr
-MDMwMCwgS2FsbGUgVmFsbyA8a3ZhbG9Aa2VybmVsLm9yZz4gd3JvdGU6DQo+IA0KPiA+PiAicGd1
-cHRhQGhpbmR1dG9vbC5jb20iIHdyaXRlczoNCj4gPj4NCj4gPj4gPiBJIGhhdmUgYmVlbiByZWFk
-aW5nIHRocm91Z2ggdGhlIHZhcmlvdXMgcG9zdHMsIGFuZCB3aGlsZSBJIGZvdW5kDQo+ID4+ID4g
-c29tZW9uZSB3aG8gcmVwb3J0ZWQgdGhlIGV4YWN0IHNhbWUgcHJvYmxlbSwgSSB3YXMgdW5hYmxl
-IHRvIGZpbmQgYQ0KPiA+PiA+IHJlc3BvbnNlIGZyb20gYW55b25lIHdobyBjb3VsZCBwcmVzZW50
-IGEgc29sdXRpb24NCj4gPj4gPg0KPiA+PiA+IEkgaGF2ZSBhIENvbXBleCBXTFc3MDAwRTYNCj4g
-Pj4NCj4gPj4gQW55IHJlY29tbWVuZGF0aW9ucyBmcm9tIHdoZXJlIGl0IHdvdWxkIGJlIGVhc2ll
-c3QgdG8gb3JkZXIgc3VjaA0KPiBib2FyZD8NCj4gPj4gSSdtIGJhc2VkIGluIEV1cm9wZSBhbmQg
-d291bGQgbGlrZSB0byBnZXQgb25lLg0KPiA+Pg0KPiA+PiBJcyB0aGUgYm9hcmQgb3RoZXJ3aXNl
-IHBsdWcmcGxheSB0byBhbiBNLjIgRS1rZXkgc2xvdCBvciBkb2VzIGl0IG5lZWQNCj4gPj4gc29t
-ZXRoaW5nIHNwZWNpYWw/DQo+ID4+DQo+ID4+ID4gYW5kIGFtIHVzaW5nIHRoZSBsYXRlc3Qga2Vy
-bmVsIHZlcnNpb24gNi44LjAtMzEtZ2VuZXJpYyAodWJ1bnR1DQo+ID4+ID4gMjQuMDQNCj4gPj4g
-PiBMVFMpDQo+ID4+DQo+ID4+IEJUVyBpbiBnZW5lcmFsIHdlIGRvbid0IHN1cHBvcnQgZGlzdHJv
-IGtlcm5lbHM6DQo+ID4+DQo+ID4+IGh0dHBzOi8vbGludXgtcmVndHJhY2tpbmcubGVlbWh1aXMu
-aW5mby9wb3N0L2ZyZXF1ZW50LXJlYXNvbnMtd2h5LWxpbg0KPiA+PiB1eC1rZXJuZWwtYnVnLXJl
-cG9ydHMtYXJlLWlnbm9yZWQvI3lvdXIta2VybmVsLXdhcy1hcHBhcmVudGx5LWJ1aWx0LWINCj4g
-Pj4geS1hLWxpbnV4LWRpc3RyaWJ1dG9yLW9yLWhhcmR3YXJlLXZlbmRvcg0KPiANCj4gPj4NCj4g
-Pj4gPiBEZXNwaXRlIGhhdmluZyB0aGUgcmVxdWlzaXRlIGZpbGVzIGluDQo+IC9saWIvZmlybXdh
-cmUvYXRoMTJrL1FDTjkyNzQvaHcyLjA6DQo+ID4+ID4NCj4gPj4gPiAtcnctci0tci0tIDEgcm9v
-dCByb290IDgyNDExNTIgTWF5IDE5IDIzOjQ3IGFtc3MuYmluDQo+ID4+ID4gLXJ3LXItLXItLSAx
-IHJvb3Qgcm9vdCAyODIxNTY0IE1heSAyMCAwMDowMyBhbXNzLmJpbi56c3QNCj4gPj4gPiAtcnct
-ci0tci0tIDEgcm9vdCByb290IDM4Mjg1NiBNYXkgMjAgMDA6MDMgYm9hcmQtMi5iaW4NCj4gPj4g
-PiAtcnctci0tci0tIDEgcm9vdCByb290IMKgIDIxNTE3IE1heSAyMCAwMDowMyBib2FyZC0yLmJp
-bi56c3QNCj4gPj4gPiAtcnctci0tci0tIDEgcm9vdCByb290wqAgNDIxODg4IE1heSAxOSAyMzo0
-NyBtMy5iaW4NCj4gPj4gPiAtcnctci0tci0tIDEgcm9vdCByb290wqAgMTM5NjYyIE1heSAyMCAw
-MDowMyBtMy5iaW4uenN0DQo+ID4+ID4gLXJ3LXItLXItLSAxIHJvb3Qgcm9vdMKgwqAgMTA2OTkg
-TWF5IDIwIDAwOjAzIE5vdGljZS50eHQuenN0DQo+ID4+ID4gLXJ3LXItLXItLSAxIHJvb3Qgcm9v
-dMKgwqAgMjQzMTAgTWF5IDE5IDIzOjQ3IHJlZ2RiLmJpbg0KPiA+PiA+IC1ydy1yLS1yLS0gMSBy
-b290IHJvb3TCoMKgwqAgMzE4NyBNYXkgMTkgMjM6NDcgcmVnZGIuYmluLnpzdA0KPiA+PiA+DQo+
-ID4+ID4gSSBjb250aW51ZSB0byByZWNlaXZlIHRoZSBmb2xsb3dpbmcgZXJyb3JzOg0KPiA+PiA+
-DQo+ID4+ID4gW8KgwqDCoCA1Ljg4NTkzMF0gYXRoMTJrX3BjaSAwMDAwOjgzOjAwLjA6IEJBUiAw
-IFttZW0NCj4gPj4gPiAweGM4MDAwMDAwLTB4YzgxZmZmZmYgNjRiaXRdOiBhc3NpZ25lZCBbwqDC
-oMKgIDUuODg2Mjg3XSBhdGgxMmtfcGNpDQo+ID4+ID4gMDAwMDo4MzowMC4wOiBNU0kgdmVjdG9y
-czogMTYgW8KgwqDCoCA1Ljg4NjI5NF0gYXRoMTJrX3BjaQ0KPiA+PiA+IDAwMDA6ODM6MDAuMDog
-SGFyZHdhcmUgbmFtZTogcWNuOTI3NCBodzIuMCBbwqDCoMKgIDYuNzQ1MjQ3XQ0KPiA+PiA+IGF0
-aDEya19wY2kgMDAwMDo4MzowMC4wOiBtZW1vcnkgdHlwZSAxMCBub3Qgc3VwcG9ydGVkIFsNCj4g
-Pj4gPiA2Ljc1MDEwMV0gYXRoMTJrX3BjaSAwMDAwOjgzOjAwLjA6IGNoaXBfaWQgMHgwIGNoaXBf
-ZmFtaWx5IDB4Yg0KPiA+PiA+IGJvYXJkX2lkIDB4ZmYgc29jX2lkIDB4NDAxYTIyMDAgW8KgwqDC
-oCA2Ljc1MDExMF0gYXRoMTJrX3BjaQ0KPiA+PiA+IDAwMDA6ODM6MDAuMDogZndfdmVyc2lvbiAw
-eDEwMDk4YjU3IGZ3X2J1aWxkX3RpbWVzdGFtcCAyMDIyLTA5LTE5DQo+ID4+ID4gMTg6MTggZndf
-YnVpbGRfaWQNCj4gPj4gPiBRQ19JTUFHRV9WRVJTSU9OX1NUUklORz1XTEFOLldCRS4xLjAtMDI5
-MDMtDQo+IFFDQUhLU1dQTF9TSUxJQ09OWi0xDQo+ID4+ID4gW8KgwqDCoCA2Ljc2MTA2NV0gYXRo
-MTJrX3BjaSAwMDAwOjgzOjAwLjA6IGZhaWxlZCB0byBmZXRjaCBib2FyZCBkYXRhDQo+ID4+ID4g
-Zm9yDQo+ID4+ID4gYnVzPXBjaSxxbWktY2hpcC1pZD0wLHFtaS1ib2FyZC1pZD0yNTUgZnJvbQ0K
-PiA+PiA+IGF0aDEyay9RQ045Mjc0L2h3Mi4wL2JvYXJkLTIuYmluIFvCoMKgwqAgNi43NjEyMTJd
-IGF0aDEya19wY2kNCj4gPj4gPiAwMDAwOjgzOjAwLjA6IGZhaWxlZCB0byBmZXRjaCBib2FyZC0y
-LmJpbiBvciBib2FyZC5iaW4gZnJvbQ0KPiA+PiA+IFFDTjkyNzQvaHcyLjAgW8KgwqDCoCA2Ljc2
-MTI0N10gYXRoMTJrX3BjaSAwMDAwOjgzOjAwLjA6IHFtaSBmYWlsZWQgdG8NCj4gPj4gPiBsb2Fk
-IGJkZjoNCj4gPj4gPiBbwqDCoMKgIDYuNzYxMjUwXSBhdGgxMmtfcGNpIDAwMDA6ODM6MDAuMDog
-cW1pIGZhaWxlZCB0byBsb2FkIGJvYXJkDQo+ID4+ID4gZGF0YSBmaWxlOi0yDQo+ID4+DQo+ID4+
-IFRoaXMgbWVhbnMgdGhhdCBib2FyZC0yLmJpbiBpcyBtaXNzaW5nIHRoZSBib2FyZCBmaWxlIGZv
-ciB5b3VyIGRldmljZS4NCj4gPj4gRm9yIEFQIGRldmljZXMgbGlrZSBRQ045Mjc0IGJvYXJkIGZp
-bGVzIGhhbmRsaW5nIGlzIGRpZmZpY3VsdCwNCj4gPj4gdXN1YWxseSBEZXZpY2UgVHJlZSBpcyB0
-aGUgb25seSB3YXkgdG8gZ2V0IGF1dG9tYXRpYyBib2FyZCBmaWxlIGxvYWRpbmcNCj4gd29ya2lu
-Zy4NCj4gPj4NCj4gPj4gRGlkIHlvdSBnZXQgYW55IHNvZnR3YXJlIHdpdGggeW91ciB0aGUgYm9h
-cmQ/IERvIHlvdSBrbm93IGlmIHRoZQ0KPiA+PiBib2FyZCBpcyBjYWxpYnJhdGVkIG9yIG5vdD8N
-Cj4gPj4NCj4gPj4gQ2FuIHlvdSBydW46DQo+ID4+DQo+ID4+IGZpbmQgL2xpYi9maXJtd2FyZS9h
-dGgxMmsvIC10eXBlIGYgfCB4YXJncyBtZDVzdW0NCj4gPj4NCj4gPj4gQWxzbyByZWFkOg0KPiA+
-Pg0KPiA+PiBodHRwczovL3dpcmVsZXNzLndpa2kua2VybmVsLm9yZy9lbi91c2Vycy9kcml2ZXJz
-L2F0aDEyay9idWdyZXBvcnQNCj4gDQo+ID4+DQo+ID4+ID4gYnV0IGhlIHpzdCBmaWxlcyB3ZXJl
-IGNvcGllZCBvdmVyIGZyb20gdGhlIFdDTjc4NTAgZGlyZWN0b3J5Lg0KPiA+Pg0KPiA+PiBJIGRv
-IG5vdCBrbm93IHdoYXQgdGhlc2UgenN0IGZpbGVzIGFyZS4gQW5kIGRvbid0IGNvcHkgYW55dGhp
-bmcgZnJvbQ0KPiA+PiBXQ043ODUwIGRpcmVjdG9yeSwgdGhlIGZpbGVzIGFyZSBub3QgY29tcGF0
-aWJsZS4gVGhlIGJlc3QgaXMgdG8gcnVuDQo+ID4+ICdtYWtlIGluc3RhbGwnIHdpdGhpbiBhdGgx
-MmstZmlybXdhcmUuZ2l0IHJlcG9zaXRvcnksIG1hbnVhbGx5IGZpeGluZw0KPiA+PiBmaWxlcyB3
-aWxsIGVuZCB1cCBpbnRvIHByb2JsZW1zLg0KPiA+Pg0KPiA+PiAtLQ0KPiA+PiBodHRwczovL3Bh
-dGNod29yay5rZXJuZWwub3JnL3Byb2plY3QvbGludXgtd2lyZWxlc3MvbGlzdC8NCj4gDQo+ID4+
-DQo+ID4+IGh0dHBzOi8vd2lyZWxlc3Mud2lraS5rZXJuZWwub3JnL2VuL2RldmVsb3BlcnMvZG9j
-dW1lbnRhdGlvbi9zdWJtaXR0aQ0KPiA+PiBuZ3BhdGNoZXMNCg0K
+David,
+  My three Compex wifi 7 modules are all Waikiki based.=C2=A0 Were you able=
+ to get the ath12k driver and firmware to work with them?=C2=A0 If so how?
+Are you using a custom kernel and custom board?
+
+
+Prashant
+
+
+
+On Mon, 20 May 2024 18:53:49 +0000, david Atkins <david@3adesign.co.uk> wro=
+te:
+
+>> Hi,
+>>
+>> We have sourced modules from Qualcomm direct "Hamilton" cards
+>>
+>> I also have 2x2 Hamilton equivalents and Waikiki from Codico, these are =
+8devcies or compex modules
+>>
+>> They sell sample quantities easily online
+>>
+>> https://www.codico.com/en/manufacturers/8devices?pim_brand=3D8devices#sa=
+mples
+>>
+>> I have 3 setups running, 2 AMD (1 Hamilton 1 WKK) and Intel with Hamilto=
+n
+>>
+>> We are comparing with Intel BE200 as another option
+>>
+>> David
+>>
+>> > -----Original Message-----
+>> > From: ath12k On Behalf Of
+>> > pgupta@hindutool.com
+>> > Sent: Monday, May 20, 2024 5:59 PM
+>> > To: kvalo@kernel.org; ath12k@lists.infradead.org
+>> > Subject: Re: board-2.bin
+>> >
+>> > Mr. Valo,
+>> >
+>> >
+>> > Thank you for responding to my email.
+>> >
+>> > I purchased a wifi 7 2.4Ghz, 5Ghz, and 6Ghz directly from compex:
+>> >
+>> > https://shop.compex.com.sg/products
+>> >
+>> >
+>> > Pair of 6Ghz Wifi 7 (they are only sold as a pair)
+>> >
+>> > https://shop.compex.com.sg/product-page/wlw7000e6
+>> >
+>> >
+>> > Pair of 2.4Ghz AND 5Ghz Wifi 7:
+>> >
+>> > https://shop.compex.com.sg/product-page/wlw7000e5
+>> >
+>> >
+>> > These are M.2 E-Key and 4x4 MIMO antenna modules, I am building 2 rout=
+ers
+>> > using Dell R730xd machines. Because I have two 6GHz modules, one will =
+go in
+>> > each machine. I have some old Compex wifi 5 modules that I will put in=
+ one
+>> > of the servers, while the other server will house NEW 2.4, 5, and 6 Gh=
+z Wifi 7
+>> > modules.
+>> >
+>> > There is no M.2 E-Key connectors on these machines (as it is generic o=
+lder
+>> > generation hardware), so I am using an M.2 E-Key to PCIe riser cable f=
+rom
+>> > ADT link to convert the M.2 E-Key to PCIe:
+>> >
+>> > https://www.adt.link/product/R15V4.html=C2=A0 (I will need three of th=
+ese, one for
+>> > each module)
+>> >
+>> >
+>> > This will allow connection of the wifi module to the PCIe bus.=C2=A0 I=
+ specifically
+>> > chose this machine because it has 3 x16 PCIe 3.0, and 3 x8 Pcie 3.0
+>> >
+>> > To maximize throughput, these modules need to be connected to a PCIe 3=
+=2E0
+>> > bus per Compex
+>> >
+>> > Because these modules only need a x1 connection to the PCIe bus, all t=
+hree
+>> > x8 slots will be used for each of the 3 wifi modules.
+>> >
+>> > You can purchase a premade board and wifi module bundle from Compex fo=
+r
+>> > around $1200, but used my own server hardware because I wanted to
+>> > customize my WAN and LAN interfaces, and use all three modules in ONE
+>> > machine (no pre-made board can do this from what I have researched), s=
+o I
+>> > only purchased the modules only instead of a pre-made board and module=
+s.
+>> >
+>> > I have pictures of this evolving setup and there are specific reasons =
+for
+>> > choosing this machine.=C2=A0 Keep in mind these modules require an ext=
+ernal 5V
+>> > power supply which will be supplied by 5V SATA power connectors - I am=
+ still
+>> > trying to figure this out, but these WiFi 7 modules do come with power
+>> > connectors soldered onto the board unlike the previous generation wher=
+e you
+>> > had to solder on power contacts yourself.
+>> >
+>> > If you are interested, I can take pictures for you so that you can see=
+ first hand
+>> > how the setup looks.=C2=A0 I can guarantee the cables work since I am =
+able to
+>> > detect the wireless modules via lspci and lshw commands as it successf=
+ully
+>> > connects to.. and is powered by... the PCIe bus.=C2=A0 I just cannot g=
+et the firmware
+>> > (board-2.bin) to load.
+>> >
+>> > Interestingly, I had brief success with the firmware loading on Ubuntu=
+ 23.10,
+>> > during some trials, but it was one time and I have been unable to recr=
+eate
+>> > this.=C2=A0 I'm not sure what I did to get it to work.
+>> >
+>> > One final note, this router is using a server platform as it will hous=
+e 3 wifi
+>> > modules (2.4/5/6 wifi 7), a 2x 100GBe ethernet LAN, 4x 10GB LAN (for a
+>> > separate subnet), 2x 10GB WAN inputs, and 100GB Inifinband connectivit=
+y to
+>> > an Inifiniband switch.=C2=A0 It will also house VMs for reverse proxy =
+and VPN so it
+>> > had 2x Xeon E5-26790 V4 and 128GB DDR4 ECC RAM.=C2=A0 This unit is com=
+pletely
+>> > modular and any part can be upgraded at any time. This is why I went w=
+ith
+>> > this setup.=C2=A0 All of this is contained in one machine, no separate=
+ access point -
+>> > the wifi is built into the router just like a residential router.=C2=
+=A0 The antennas will
+>> > be connected directly to the server via u.fl to SMA connectors for eac=
+h card
+>> > (each card having 4 antennas for a total of 12 antennas connected to t=
+he
+>> > machine).
+>> >
+>> >
+>> >
+>> > A few more points, the .zst files appear to be some sort of new compre=
+ssion
+>> > technology that the stock Ubuntu 24.04 ships with.=C2=A0 The files are=
+ in this format
+>> > by default in the WCN directory under /lib/firmware/ath12k.=C2=A0 Ther=
+e are NO
+>> > .bin files.
+>> >
+>> > Also Interestingly, the ath12k driver is also in this format "ath12k=
+=2Eko.zst" in the
+>> > modules section and decompressing it to the .ko extension seems to dis=
+able
+>> > the driver.=C2=A0This is confirmed using "modinfo ath12k"
+>> >
+>> > Again, sorry for the long winded description.=C2=A0 I work as an Emerg=
+ency room
+>> > physician by trade, so I am not always near my machines and can only w=
+ork
+>> > on this project in my free time.=C2=A0 This wireless module is the las=
+t hurdle.
+>> >
+>> > All of this is very confusing compared to the ath10k which seemed so m=
+uch
+>> > more straightforward.
+>> >
+>> > All the best, and thank you so much for your reply.=C2=A0 I can forwar=
+d the contacts
+>> > from compex that I spoke with if you so desire.
+>> >
+>> > I wanted to respond to your email as I am grateful you have taken time=
+ out of
+>> > your schedule to reply to my message. I do have some questions regardi=
+ng
+>> > the specifics of rebuilding the kernel, but will address that in=C2=A0=
+ a separate email
+>> > so that noobs like me won't have to go through this.
+>> >
+>> > I have been following your github every since ath10k a few years back,=
+ and
+>> > your firmware was instrumental in helping me get my home wired/wifi ro=
+uter
+>> > project off the ground.=C2=A0 My current wifi router is actually a des=
+ktop using
+>> > mini-pcie wifi modules attached directly to the desktop PCIe bus.
+>> >
+>> > Prashant Gupta MD/MPH
+>> >
+>> >
+>> > On Mon, 20 May 2024 12:54:18 +0300, Kalle Valo wrote:
+>> >
+>> > >> "pgupta@hindutool.com" writes:
+>> > >>
+>> > >> > I have been reading through the various posts, and while I found
+>> > >> > someone who reported the exact same problem, I was unable to find=
+ a
+>> > >> > response from anyone who could present a solution
+>> > >> >
+>> > >> > I have a Compex WLW7000E6
+>> > >>
+>> > >> Any recommendations from where it would be easiest to order such
+>> > board?
+>> > >> I'm based in Europe and would like to get one.
+>> > >>
+>> > >> Is the board otherwise plug&play to an M.2 E-key slot or does it ne=
+ed
+>> > >> something special?
+>> > >>
+>> > >> > and am using the latest kernel version 6.8.0-31-generic (ubuntu
+>> > >> > 24.04
+>> > >> > LTS)
+>> > >>
+>> > >> BTW in general we don't support distro kernels:
+>> > >>
+>> > >> https://linux-regtracking.leemhuis.info/post/frequent-reasons-why-l=
+in
+>> > >> ux-kernel-bug-reports-are-ignored/#your-kernel-was-apparently-built=
+-b
+>> > >> y-a-linux-distributor-or-hardware-vendor
+>> >
+>> > >>
+>> > >> > Despite having the requisite files in
+>> > /lib/firmware/ath12k/QCN9274/hw2.0:
+>> > >> >
+>> > >> > -rw-r--r-- 1 root root 8241152 May 19 23:47 amss.bin
+>> > >> > -rw-r--r-- 1 root root 2821564 May 20 00:03 amss.bin.zst
+>> > >> > -rw-r--r-- 1 root root 382856 May 20 00:03 board-2.bin
+>> > >> > -rw-r--r-- 1 root root =C2=A0 21517 May 20 00:03 board-2.bin.zst
+>> > >> > -rw-r--r-- 1 root root=C2=A0 421888 May 19 23:47 m3.bin
+>> > >> > -rw-r--r-- 1 root root=C2=A0 139662 May 20 00:03 m3.bin.zst
+>> > >> > -rw-r--r-- 1 root root=C2=A0=C2=A0 10699 May 20 00:03 Notice.txt=
+=2Ezst
+>> > >> > -rw-r--r-- 1 root root=C2=A0=C2=A0 24310 May 19 23:47 regdb.bin
+>> > >> > -rw-r--r-- 1 root root=C2=A0=C2=A0=C2=A0 3187 May 19 23:47 regdb=
+=2Ebin.zst
+>> > >> >
+>> > >> > I continue to receive the following errors:
+>> > >> >
+>> > >> > [=C2=A0=C2=A0=C2=A0 5.885930] ath12k_pci 0000:83:00.0: BAR 0 [mem
+>> > >> > 0xc8000000-0xc81fffff 64bit]: assigned [=C2=A0=C2=A0=C2=A0 5.8862=
+87] ath12k_pci
+>> > >> > 0000:83:00.0: MSI vectors: 16 [=C2=A0=C2=A0=C2=A0 5.886294] ath12=
+k_pci
+>> > >> > 0000:83:00.0: Hardware name: qcn9274 hw2.0 [=C2=A0=C2=A0=C2=A0 6=
+=2E745247]
+>> > >> > ath12k_pci 0000:83:00.0: memory type 10 not supported [
+>> > >> > 6.750101] ath12k_pci 0000:83:00.0: chip_id 0x0 chip_family 0xb
+>> > >> > board_id 0xff soc_id 0x401a2200 [=C2=A0=C2=A0=C2=A0 6.750110] ath=
+12k_pci
+>> > >> > 0000:83:00.0: fw_version 0x10098b57 fw_build_timestamp 2022-09-19
+>> > >> > 18:18 fw_build_id
+>> > >> > QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0-02903-
+>> > QCAHKSWPL_SILICONZ-1
+>> > >> > [=C2=A0=C2=A0=C2=A0 6.761065] ath12k_pci 0000:83:00.0: failed to =
+fetch board data
+>> > >> > for
+>> > >> > bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
+>> > >> > ath12k/QCN9274/hw2.0/board-2.bin [=C2=A0=C2=A0=C2=A0 6.761212] at=
+h12k_pci
+>> > >> > 0000:83:00.0: failed to fetch board-2.bin or board.bin from
+>> > >> > QCN9274/hw2.0 [=C2=A0=C2=A0=C2=A0 6.761247] ath12k_pci 0000:83:00=
+=2E0: qmi failed to
+>> > >> > load bdf:
+>> > >> > [=C2=A0=C2=A0=C2=A0 6.761250] ath12k_pci 0000:83:00.0: qmi failed=
+ to load board
+>> > >> > data file:-2
+>> > >>
+>> > >> This means that board-2.bin is missing the board file for your devi=
+ce.
+>> > >> For AP devices like QCN9274 board files handling is difficult,
+>> > >> usually Device Tree is the only way to get automatic board file loa=
+ding
+>> > working.
+>> > >>
+>> > >> Did you get any software with your the board? Do you know if the
+>> > >> board is calibrated or not?
+>> > >>
+>> > >> Can you run:
+>> > >>
+>> > >> find /lib/firmware/ath12k/ -type f | xargs md5sum
+>> > >>
+>> > >> Also read:
+>> > >>
+>> > >> https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugreport
+>> >
+>> > >>
+>> > >> > but he zst files were copied over from the WCN7850 directory.
+>> > >>
+>> > >> I do not know what these zst files are. And don't copy anything fro=
+m
+>> > >> WCN7850 directory, the files are not compatible. The best is to run
+>> > >> 'make install' within ath12k-firmware.git repository, manually fixi=
+ng
+>> > >> files will end up into problems.
+>> > >>
+>> > >> --
+>> > >> https://patchwork.kernel.org/project/linux-wireless/list/
+>> >
+>> > >>
+>> > >> https://wireless.wiki.kernel.org/en/developers/documentation/submit=
+ti
+>> > >> ngpatches
 
