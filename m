@@ -4,154 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34D81C25B79
-	for <ath12k@archiver.kernel.org>; Sat, 18 May 2024 01:25:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93D34C25B78
+	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 04:43:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cJqjedwoYcqSzJKmZSEwT+6hVhtxWLfg/8QtauvSdx4=; b=HkglCvz7paGUWh5C2m8SPYvA6X
-	A9nHnVgGqGgFgn+vVP4BxRlgpHqn7WMYizhqf02nf5oaxh3i47UdGOTPGEo58QB+e7VXyB5FLYS6z
-	BBEPHQ+WXEuhyce28AtZc+UzPSGqME2LC95zJtvhS47ZP0uD15zHYvVDoI+0AuF5Q0KEXI1fmku9g
-	ACYbMUFEyEQiWz/x0iGaZANRE6EjBLDchxMmRK0naXYNjOnM3ZVo2LHb9/kWlIlo9DeYtyc6LW3wy
-	lC/D4aR1GRl/CIAQ9G7DfiPJUzYQsDQH68KeSjxHdDF/VLWSnCWZoOnkUCzOh39w5bPcyEW5jdOCE
-	aD4wEDTA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
+	CC:To:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XRq/qEe+o0s0GaHXoqzS6P2z86syLpfUdFBBJM0QgRw=; b=De3UWMJGrE3qFt
+	KRm1ascj3sgEbf4mq9CQ6lc4ETiRth72wP2hJj2zoCzmv1/eZzaZfEL7hq5FSqZ3L0zmiOW3vUPRY
+	eFlslsZGPupKzWqd+mYzfKNiAJkiE6nqOoisPufoYIihvQ49RIMRcfPm0T+rT6dyYyyc6kbLI19Jb
+	PZ9OX/0cbRP33MuMcQdMKFJu29JO+iojVfbcj+eqDN6qFL7fvyxK1NAFJ8idCQUdjCDLSek9JEm2P
+	LCjen1okKIOhOrgEsv2eupzK+gYCdk9t2k1OhPbwOFzYTGWjO40+bhvXA8LVhjaVx9JZ3mJxcm4qD
+	Q70/AvLN6ckbo9hNNCYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s88p6-00000009LvS-3Kmb
+	id 1s8urq-0000000DVTi-42Ys
 	for ath12k@archiver.kernel.org;
-	Sat, 18 May 2024 01:25:20 +0000
-Received: from mail-oa1-x2e.google.com ([2001:4860:4864:20::2e])
+	Mon, 20 May 2024 04:43:22 +0000
+Received: from mail214c25.carrierzone.com ([64.29.147.108])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s88p2-00000009Lt9-15JE;
-	Sat, 18 May 2024 01:25:18 +0000
-Received: by mail-oa1-x2e.google.com with SMTP id 586e51a60fabf-24544cb03abso375825fac.3;
-        Fri, 17 May 2024 18:25:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1715995511; x=1716600311; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
-         :references:cc:to:from:subject:user-agent:mime-version:date
-         :message-id:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=cJqjedwoYcqSzJKmZSEwT+6hVhtxWLfg/8QtauvSdx4=;
-        b=iCkDbhIHq55rYp90OSeq3AAK6xc2uQwZqeAXpqt+MlDuMm365zhQzJiov8OEKFn4b3
-         ljjW2R+WWGGOcws5qOHqvX8bKzMzrTGVZimNPo0u+S9C6HW68hUjL+2kbz0vvZM3BSRk
-         uFSKV93thxNwXw+ZboTcb9hoIJbeSwRjLoIdr0uaW/TSbVHS/oQinLx5v9gQqZNqWIGq
-         YocoKqa9kCjX0gisDYSbakkpseP0KAAli8AjngcIVk/4RIOFbyVqT1BMxqn3f07Z4fD1
-         peY78DSlr7CaxnR5L+Oa1/8xVXsCmbTjjp80dpADZudA7kWt0tVGWYRvYZNlesAOcCIg
-         eFsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1715995511; x=1716600311;
-        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
-         :references:cc:to:from:subject:user-agent:mime-version:date
-         :message-id:sender:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=cJqjedwoYcqSzJKmZSEwT+6hVhtxWLfg/8QtauvSdx4=;
-        b=XFlqpBGKmPxHIMKlKLucL5DJfujsUT0oQi4XOVq3m8v5DKeOcCjvoqaGHYyG53VJo7
-         AXEQEuFeDNCzaXYNyVtpFl4XOG98HLGeV6uieKiuSGYulKPwzqXLEblo8zmQbbYWDF27
-         FZW1hH5aVLMvSFxRqRyGXb/luCOIF67LrHsHNXdCmanqf+1S2TIZrePg1iJlWPBbqAvO
-         gKtl9Y3138LapPbOHEU6tbOPJrVm94pdkT6xymkl15sCN3u7wDwaJqeQq2Wlt3j0wRjf
-         QVYH7Yhou0KZ8O89dBPdTKdyGvU1A7y/GvCwdoAdqQTkKWlIiBlrOGPPpCYghYxd2fHE
-         wf/Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXLds/z8qWH2wcE9lsrBN6kVWI5M9Q3HCiLkinYgB7++BehWHAfY/KOmp4kvrDGpSwsofYO5DQdGmp5LOe5PT5j5eeXJzP9PDauDucFzO1dKkDyQ5Xd2+bkLSh81eC1XWPzBFyEFf02OA+2PzSmKGzodSNw0COdRQy/xKesUrNICKeZ
-X-Gm-Message-State: AOJu0YyJvdHHp8IS3rHDX/tNCJmcmyongC+fgFzixeQwbzl4L7J9XFay
-	YxljdEVh/Bw6CXI0uiv/m01odFwZPS0uykm/Oif4lkypvUko/w6P
-X-Google-Smtp-Source: AGHT+IFRaG5+veBhAS+2oO1Mq9a7mnKgK9vX9unu3cCbE/KbyDzrBjSt084GN8tso2cWg108BqN4VA==
-X-Received: by 2002:a05:6870:a3d2:b0:240:c8ff:c96a with SMTP id 586e51a60fabf-241728fc1damr27553351fac.27.1715995510785;
-        Fri, 17 May 2024 18:25:10 -0700 (PDT)
-Received: from ?IPV6:2600:1700:e321:62f0:329c:23ff:fee3:9d7c? ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-6f4d2a66316sm15339938b3a.35.2024.05.17.18.25.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 17 May 2024 18:25:09 -0700 (PDT)
-Message-ID: <64db2b94-edb3-4ea3-87cf-bb91746869e6@roeck-us.net>
-Date: Fri, 17 May 2024 18:25:06 -0700
+	id 1s8urm-0000000DVSp-3RIT
+	for ath12k@lists.infradead.org;
+	Mon, 20 May 2024 04:43:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=carrierzone.com;
+	s=mailmia; t=1716180197;
+	bh=GEM3SZnwdmDpZY9fgxSWzjHYWdA7b2HMwWWUVGPqtcE=;
+	h=From:To:CC:Subject:Date:Reply-to:From;
+	b=qtcI9MAY7M+gsABKtQzZ/za5ZY6HkIyvRhpt/rx0OF3RUmU7wf2pAL+Dn3F3dTyiX
+	 ozJk/rFZdS579w0QNyGhQhjBJmMkhNq6uOpmehX4LDBsFLWhzkH0BSxLmVD+UruX4i
+	 e8Nxsoyvrww9yErxuvRhmVM6Z+q2G3X74giGe4JQ=
+Feedback-ID: pgupta@hindutoo
+Received: from mail214c25.carrierzone.com (localhost [127.0.0.1])
+	by mail214c25.carrierzone.com (8.14.9/8.13.1) with ESMTP id 44K4hGiT088209
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO)
+	for <ath12k@lists.infradead.org>; Mon, 20 May 2024 04:43:17 +0000
+Received: (from webmail@localhost)
+	by mail214c25.carrierzone.com (8.14.9/8.12.2/Submit) id 44K4hGMG088208
+	for ath12k@lists.infradead.org; Mon, 20 May 2024 00:43:16 -0400
+From: "pgupta@hindutool.com" <pgupta@hindutool.com>
+To: ath12k@lists.infradead.org
+CC: 
+Subject: board-2.bin
+Date: Mon, 20 May 2024 00:43:16 -0400
+Message-ID: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] tracing/treewide: Remove second parameter of
- __assign_str()
-From: Guenter Roeck <linux@roeck-us.net>
-To: Steven Rostedt <rostedt@goodmis.org>
-Cc: LKML <linux-kernel@vger.kernel.org>,
- Linux trace kernel <linux-trace-kernel@vger.kernel.org>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, kvm@vger.kernel.org,
- linux-block@vger.kernel.org, linux-cxl@vger.kernel.org,
- linux-media@vger.kernel.org, dri-devel@lists.freedesktop.org,
- amd-gfx@lists.freedesktop.org, intel-gfx@lists.freedesktop.org,
- intel-xe@lists.freedesktop.org, linux-arm-msm@vger.kernel.org,
- freedreno@lists.freedesktop.org, virtualization@lists.linux.dev,
- linux-rdma@vger.kernel.org, linux-pm@vger.kernel.org, iommu@lists.linux.dev,
- linux-tegra@vger.kernel.org, netdev@vger.kernel.org,
- linux-hyperv@vger.kernel.org, ath10k@lists.infradead.org,
- linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org, brcm80211@lists.linux.dev,
- brcm80211-dev-list.pdl@broadcom.com, linux-usb@vger.kernel.org,
- linux-bcachefs@vger.kernel.org, linux-nfs@vger.kernel.org,
- ocfs2-devel@lists.linux.dev, linux-cifs@vger.kernel.org,
- linux-xfs@vger.kernel.org, linux-edac@vger.kernel.org,
- selinux@vger.kernel.org, linux-btrfs@vger.kernel.org,
- linux-erofs@lists.ozlabs.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-hwmon@vger.kernel.org, io-uring@vger.kernel.org,
- linux-sound@vger.kernel.org, bpf@vger.kernel.org,
- linux-wpan@vger.kernel.org, dev@openvswitch.org, linux-s390@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net, Julia Lawall <Julia.Lawall@inria.fr>
-References: <20240516133454.681ba6a0@rorschach.local.home>
- <5080f4c5-e0b3-4c2e-9732-f673d7e6ca66@roeck-us.net>
- <20240517134834.43e726dd@gandalf.local.home>
- <5cff0ff0-48d1-49f8-84f4-bb33571fdf16@roeck-us.net>
-Content-Language: en-US
-Autocrypt: addr=linux@roeck-us.net; keydata=
- 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
- mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
-In-Reply-To: <5cff0ff0-48d1-49f8-84f4-bb33571fdf16@roeck-us.net>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Image-Url: https://mailapp03.register.com/api/storage/pgupta@hindutool.com/profile/picture
+X-VADE-SPAMSTATE: clean
+X-VADE-SPAMSCORE: 0
+X-VADE-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedvledrvdehledgkeehucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecujffquffvqffrkfetpdfqfgfvpdfgpfggqdevvdehnecuuegrihhlohhuthemuceftddunecunecujfgurhephffvvefufffkgggtgfhrsehtqhertddttdejnecuhfhrohhmpedfphhguhhpthgrsehhihhnughuthhoohhlrdgtohhmfdcuoehpghhuphhtrgeshhhinhguuhhtohholhdrtghomheqnecuggftrfgrthhtvghrnhephfdtvdffhfdtieejfefhfedvheegtdejtdetkeejgfeugfetleehleetleegveefnecuffhomhgrihhnpegtohguvghlihhnrghrohdrohhrghenucfkphepuddvjedrtddrtddrudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpeduvdejrddtrddtrddupdhhvghlohepmhgrihhlvddugegtvdehrdgtrghrrhhivghriihonhgvrdgtohhmpdhmrghilhhfrhhomhepphhguhhpthgrsehhihhnughuthhoohhlrdgtohhmpdhnsggprhgtphhtthhopedupdhrtghpthhtoheprghthhduvdhksehlihhsthhsrdhinhhfrhgruggvrggurdhorhhg
+X-Origin-Country: Unknown
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240517_182516_325109_421FC696 
-X-CRM114-Status: GOOD (  15.40  )
+X-CRM114-CacheID: sfid-20240519_214319_061276_A64557EC 
+X-CRM114-Status: UNSURE (   6.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,52 +72,61 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: pgupta@hindutool.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 5/17/24 11:00, Guenter Roeck wrote:
-> On 5/17/24 10:48, Steven Rostedt wrote:
->> On Fri, 17 May 2024 10:36:37 -0700
->> Guenter Roeck <linux@roeck-us.net> wrote:
->>
->>> Building csky:allmodconfig (and others) ... failed
->>> --------------
->>> Error log:
->>> In file included from include/trace/trace_events.h:419,
->>>                   from include/trace/define_trace.h:102,
->>>                   from drivers/cxl/core/trace.h:737,
->>>                   from drivers/cxl/core/trace.c:8:
->>> drivers/cxl/core/./trace.h:383:1: error: macro "__assign_str" passed 2 arguments, but takes just 1
->>>
->>> This is with the patch applied on top of v6.9-8410-gff2632d7d08e.
->>> So far that seems to be the only build failure.
->>> Introduced with commit 6aec00139d3a8 ("cxl/core: Add region info to
->>> cxl_general_media and cxl_dram events"). Guess we'll see more of those
->>> towards the end of the commit window.
->>
->> Looks like I made this patch just before this commit was pulled into
->> Linus's tree.
->>
->> Which is why I'll apply and rerun the above again probably on Tuesday of
->> next week against Linus's latest.
->>
->> This patch made it through both an allyesconfig and an allmodconfig, but on
->> the commit I had applied it to, which was:
->>
->>    1b294a1f3561 ("Merge tag 'net-next-6.10' of git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next")
->>
->> I'll be compiling those two builds after I update it then.
->>
-> 
-> I am currently repeating my test builds with the above errors fixed.
-> That should take a couple of hours. I'll let you know how it goes.
-> 
+Hello,
 
-There are no more build failures caused by this patch after fixing the above
-errors.
+I have been reading through the various posts, and while I found someone wh=
+o reported the exact same problem, I was unable to find a response from any=
+one who could present a solution
 
-Tested-by: Guenter Roeck <linux@roeck-us.net>
+I have a Compex WLW7000E6, and am using the latest kernel version 6.8.0-31-=
+generic (ubuntu 24.04 LTS)
 
-Guenter
+Despite having the requisite files in /lib/firmware/ath12k/QCN9274/hw2.0:
 
+-rw-r--r-- 1 root root 8241152 May 19 23:47 amss.bin
+-rw-r--r-- 1 root root 2821564 May 20 00:03 amss.bin.zst
+-rw-r--r-- 1 root root  382856 May 20 00:03 board-2.bin
+-rw-r--r-- 1 root root=C2=A0=C2=A0 21517 May 20 00:03 board-2.bin.zst
+-rw-r--r-- 1 root root=C2=A0 421888 May 19 23:47 m3.bin
+-rw-r--r-- 1 root root=C2=A0 139662 May 20 00:03 m3.bin.zst
+-rw-r--r-- 1 root root=C2=A0=C2=A0 10699 May 20 00:03 Notice.txt.zst
+-rw-r--r-- 1 root root=C2=A0=C2=A0 24310 May 19 23:47 regdb.bin
+-rw-r--r-- 1 root root=C2=A0=C2=A0=C2=A0 3187 May 19 23:47 regdb.bin.zst
+
+I continue to receive the following errors:
+
+[=C2=A0=C2=A0=C2=A0 5.885930] ath12k_pci 0000:83:00.0: BAR 0 [mem 0xc800000=
+0-0xc81fffff 64bit]: assigned
+[=C2=A0=C2=A0=C2=A0 5.886287] ath12k_pci 0000:83:00.0: MSI vectors: 16
+[=C2=A0=C2=A0=C2=A0 5.886294] ath12k_pci 0000:83:00.0: Hardware name: qcn92=
+74 hw2.0
+[=C2=A0=C2=A0=C2=A0 6.745247] ath12k_pci 0000:83:00.0: memory type 10 not s=
+upported
+[=C2=A0=C2=A0=C2=A0 6.750101] ath12k_pci 0000:83:00.0: chip_id 0x0 chip_fam=
+ily 0xb board_id 0xff soc_id 0x401a2200
+[=C2=A0=C2=A0=C2=A0 6.750110] ath12k_pci 0000:83:00.0: fw_version 0x10098b5=
+7 fw_build_timestamp 2022-09-19 18:18 fw_build_id QC_IMAGE_VERSION_STRING=
+=3DWLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
+[=C2=A0=C2=A0=C2=A0 6.761065] ath12k_pci 0000:83:00.0: failed to fetch boar=
+d data for bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from ath12k/QCN9274=
+/hw2.0/board-2.bin
+[=C2=A0=C2=A0=C2=A0 6.761212] ath12k_pci 0000:83:00.0: failed to fetch boar=
+d-2.bin or board.bin from QCN9274/hw2.0
+[=C2=A0=C2=A0=C2=A0 6.761247] ath12k_pci 0000:83:00.0: qmi failed to load b=
+df:
+[=C2=A0=C2=A0=C2=A0 6.761250] ath12k_pci 0000:83:00.0: qmi failed to load b=
+oard data file:-2
+
+
+All of the binaries have been downloaded from https://git.codelinaro.org/cl=
+o/ath-firmware/ath12k-firmware, but he zst files were copied over from the =
+WCN7850 directory.
+
+Any ideas?
+
+Prashant Gupta (pgupta@hindutool.com)
 
