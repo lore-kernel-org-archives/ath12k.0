@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 913ACC04FFE
-	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 09:54:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30268C04FFE
+	for <ath12k@archiver.kernel.org>; Mon, 20 May 2024 11:55:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UdRFkaSybFwbLPWcFNv0naIFdeP3pPZARMUoQI1o0jg=; b=Q3RUNzhVCQM3ftbiL+q6CdUYQa
-	j4ZhTtQ4M+rY+bzyaW4lwF8fO49evb8nlAt7kVdioNdvpT6clnffBaVkdqB40oXyQXxOLUgNtIG02
-	6p/ag+dC4Lp/IVU2m+WyhWdejB8lGiw6C42uu8ENBh0kAiJ+Yx4eEbZSrdXV48de5LpUZNkDXSrZF
-	KviWgyNYdW/v7jTWTQibVzG7T3VIy8rVR5xciN2PuCVP5ShVPA4YfEpNK2Pz4lfLjrQ+ByASqBXtm
-	HQthLQjFTr4Q9OuqFxBUtc3yMrMRALWiXrC0OAHMQUdIqgI2bxvLnKefpPZUpx7rNamn1/N5XFdNF
-	HVUTdKig==;
+	bh=tjJk3oknQ5vXL8/XnbuT+YTN82yNrQHIUcrSBoiYIG8=; b=2QPpnUE7fm1rzIoHP4/rpJrGHA
+	A8ID4AmeXtnP0Uh34UUOXZyYt1+Wi0tz7+y9skyWAK8PiFnxh+opOhHw0ndwtXlaoiiwASaXiNOY9
+	VvA0I9aFf3n2cXGSEX2JrGENI5adNuAfB1AJCqnFhMeM0wUg/d53mJh9OwwEwguZpM3g76RC8ovaH
+	cLMuBXgtTi9nDMBCHr7RWv1QuVZsaLEqzNwG1Yz0C6msSp167CrUzRKzUU4Qa/o4wuDHByXrGab7Q
+	aPot4sluA5UqSlqaduD7jlW0teuM2lThhl1TkHjyNJ6A/eIoGmUOeAQw8yId6gW1JxiWpKz3Kyzd9
+	HM3UeQBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s8ziu-0000000E3Ng-0pEK
+	id 1s91cG-0000000ENo2-23Sf
 	for ath12k@archiver.kernel.org;
-	Mon, 20 May 2024 09:54:28 +0000
+	Mon, 20 May 2024 11:55:44 +0000
 Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s8ziq-0000000E3Li-28Ni
+	id 1s91cD-0000000ENlw-1O4X
 	for ath12k@lists.infradead.org;
-	Mon, 20 May 2024 09:54:26 +0000
+	Mon, 20 May 2024 11:55:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 22901CE0B21;
-	Mon, 20 May 2024 09:54:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE7CBC2BD11;
-	Mon, 20 May 2024 09:54:20 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 8566ECE0B51;
+	Mon, 20 May 2024 11:55:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0609C2BD10;
+	Mon, 20 May 2024 11:55:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716198861;
-	bh=uYrv5PX3Df7ftZ7PfT0kNiA7out8G32lBVtnYUGxOJI=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=K03BJK/hQDuSgtmAWmcgFKZSIYBf6rh2t0Gk7GUSmArsPCecDF9hQR9kX47pQBaR2
-	 9ImBWEVIFTa/lf5tcltRFSHTWB3CrYMVRYahJ4MBqc6VpwL1MwYcMjFxg/C8pfKIyD
-	 +id3Fkg4H7GXJ6wbBvCyTz6moTH/TYel2WIImIRFBNzMS6vdNJlkZ3YGFbW+D1bPRA
-	 pnDgfbKFq2c0iYxZZJoVK1EZ42Bq4U70+JNuXk4vbzzEeh9i/R0ikDKVf+K5+/vteY
-	 Thdn/u1vtXgK1B+x4okOq6mwi7hm6nmmlwQgRywrtwpBgWjRr7JBvt2Tjm+VfijFKf
-	 PQXTGZ20u7Asw==
-From: Kalle Valo <kvalo@kernel.org>
-To: pgupta@hindutool.com
-Cc: ath12k@lists.infradead.org
-Subject: Re: board-2.bin
-References: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
-Date: Mon, 20 May 2024 12:54:18 +0300
-In-Reply-To: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
-	(pgupta@hindutool.com's message of "Mon, 20 May 2024 00:43:16 -0400")
-Message-ID: <87seycerlh.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1716206138;
+	bh=f1j3Tqo79beaP7NnAvfjwKD3XcqiDwySY4RJO7UpV0c=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=onq/54R+yQZ1NwzqgzJWeaKChFODPwUMqzEXhibs6mld5/qFl2dCxnnNk1empSL5p
+	 kIwxEy59DRE0tH5nL85/2XXpR01mPQwMYguvDHlDFRLo+NUXPrFRIyQL9XM65DEu4j
+	 3pkhHJ+E6WCj8oFfSYee6Le2TqrAZL4/v/Qwpff+9OtNwupeMocY9/MAV5W2RlHqrJ
+	 8DN1umku2j7jsABjccd1Ns6d2Hwyjw4wkZ2vYHdrneH6ZrEdZ4gKMy/U/nw4AkhBln
+	 dNZ8ZirmnWvV4O7YaseZ1ExnKAGjry49OabJJOZjZuJZIkY3pWiLjN/bLW01YDMACI
+	 sdwXayR4DjYGg==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Subject: Re: [PATCH v2] wifi: ath12k: Add Dynamic VLAN support
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240515192830.995013-1-quic_msinada@quicinc.com>
+References: <20240515192830.995013-1-quic_msinada@quicinc.com>
+To: Muna Sinada <quic_msinada@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ Muna Sinada <quic_msinada@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171620613612.3753090.12657165170702284157.kvalo@kernel.org>
+Date: Mon, 20 May 2024 11:55:37 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240520_025424_944934_93EC0599 
-X-CRM114-Status: GOOD (  16.36  )
+X-CRM114-CacheID: sfid-20240520_045541_600708_CBAA2283 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,94 +74,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-"pgupta@hindutool.com" <pgupta@hindutool.com> writes:
+Muna Sinada <quic_msinada@quicinc.com> wrote:
 
-> I have been reading through the various posts, and while I found
-> someone who reported the exact same problem, I was unable to find a
-> response from anyone who could present a solution
->
-> I have a Compex WLW7000E6
+> Add support for dynamic VLAN. VLAN group traffic is encapsulated and
+> encrypted in mac80211 and driver needs to set flags for the VLAN group
+> traffic to skip hardware encapsulation and encryption.
+> 
+> VLAN group traffic utilizes ext MSDU and HTT Metadata to set
+> encapsulation type to RAW and encryption type to OPEN in order to
+> inform firmware to skip hardware encapsulation and encryption.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Any recommendations from where it would be easiest to order such board?
-I'm based in Europe and would like to get one.
+Patch applied to ath-next branch of ath.git, thanks.
 
-Is the board otherwise plug&play to an M.2 E-key slot or does it need
-something special?
+26dd8ccdba4d wifi: ath12k: dynamic VLAN support
 
-> and am using the latest kernel version 6.8.0-31-generic (ubuntu 24.04
-> LTS)
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240515192830.995013-1-quic_msinada@quicinc.com/
 
-BTW in general we don't support distro kernels:
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
-https://linux-regtracking.leemhuis.info/post/frequent-reasons-why-linux-ker=
-nel-bug-reports-are-ignored/#your-kernel-was-apparently-built-by-a-linux-di=
-stributor-or-hardware-vendor
-
-> Despite having the requisite files in /lib/firmware/ath12k/QCN9274/hw2.0:
->
-> -rw-r--r-- 1 root root 8241152 May 19 23:47 amss.bin
-> -rw-r--r-- 1 root root 2821564 May 20 00:03 amss.bin.zst
-> -rw-r--r-- 1 root root  382856 May 20 00:03 board-2.bin
-> -rw-r--r-- 1 root root=C2=A0=C2=A0 21517 May 20 00:03 board-2.bin.zst
-> -rw-r--r-- 1 root root=C2=A0 421888 May 19 23:47 m3.bin
-> -rw-r--r-- 1 root root=C2=A0 139662 May 20 00:03 m3.bin.zst
-> -rw-r--r-- 1 root root=C2=A0=C2=A0 10699 May 20 00:03 Notice.txt.zst
-> -rw-r--r-- 1 root root=C2=A0=C2=A0 24310 May 19 23:47 regdb.bin
-> -rw-r--r-- 1 root root=C2=A0=C2=A0=C2=A0 3187 May 19 23:47 regdb.bin.zst
->
-> I continue to receive the following errors:
->
-> [=C2=A0=C2=A0=C2=A0 5.885930] ath12k_pci 0000:83:00.0: BAR 0 [mem
-> 0xc8000000-0xc81fffff 64bit]: assigned
-> [=C2=A0=C2=A0=C2=A0 5.886287] ath12k_pci 0000:83:00.0: MSI vectors: 16
-> [=C2=A0=C2=A0=C2=A0 5.886294] ath12k_pci 0000:83:00.0: Hardware name: qcn=
-9274 hw2.0
-> [=C2=A0=C2=A0=C2=A0 6.745247] ath12k_pci 0000:83:00.0: memory type 10 not=
- supported
-> [=C2=A0=C2=A0=C2=A0 6.750101] ath12k_pci 0000:83:00.0: chip_id 0x0 chip_f=
-amily 0xb
-> board_id 0xff soc_id 0x401a2200
-> [=C2=A0=C2=A0=C2=A0 6.750110] ath12k_pci 0000:83:00.0: fw_version 0x10098=
-b57
-> fw_build_timestamp 2022-09-19 18:18 fw_build_id
-> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
-> [=C2=A0=C2=A0=C2=A0 6.761065] ath12k_pci 0000:83:00.0: failed to fetch bo=
-ard data for
-> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
-> ath12k/QCN9274/hw2.0/board-2.bin
-> [=C2=A0=C2=A0=C2=A0 6.761212] ath12k_pci 0000:83:00.0: failed to fetch bo=
-ard-2.bin or
-> board.bin from QCN9274/hw2.0
-> [=C2=A0=C2=A0=C2=A0 6.761247] ath12k_pci 0000:83:00.0: qmi failed to load=
- bdf:
-> [=C2=A0=C2=A0=C2=A0 6.761250] ath12k_pci 0000:83:00.0: qmi failed to load=
- board data file:-2
-
-This means that board-2.bin is missing the board file for your device.
-For AP devices like QCN9274 board files handling is difficult, usually
-Device Tree is the only way to get automatic board file loading working.
-
-Did you get any software with your the board? Do you know if the board
-is calibrated or not?
-
-Can you run:
-
-find /lib/firmware/ath12k/ -type f | xargs md5sum
-
-Also read:
-
-https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugreport
-
-> but he zst files were copied over from the WCN7850 directory.
-
-I do not know what these zst files are. And don't copy anything from
-WCN7850 directory, the files are not compatible. The best is to run
-'make install' within ath12k-firmware.git repository, manually fixing
-files will end up into problems.
-
---=20
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
-hes
 
