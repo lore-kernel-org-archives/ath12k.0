@@ -4,83 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4D05C25B74
-	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 08:50:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0C12C25B74
+	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 09:50:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/8E6p7Y+ouLSYIiXoIeFn2ZMIwfFJft8t7wvd/QdN3s=; b=4/BCCYCuQCL86dRQHJ2QOtkgdK
-	KLPRSuvnSSaijJD4TXjYuVZ26gJISaaluBc3zI76tR+PwBZHr8OubLE9YNNpvg+rlGLrgnFam7E7L
-	NSynnH/6a6yBaM9IhRuM2oRtIfhg/OQ+XWfu2Waxa7AKt8UMEBPypp3NFgNnqas9jt1dPopoN1YZy
-	gKaw3gKeXlZWDZUfFtxjU05gK1zYTE9oqu2/GoXUPlfvtrOEnMkUpqXGC57uCrfAE5SeNGJGVD+e1
-	k48gRSn2BV0htVivGLH6Hv1HIxGL8OXy8gflztqGjMXemPjr4wcTZkHS1hlNF/qwWZfdcOLZ/zEhF
-	q3Ri987w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=P9Ho+PMx0tJLkbn2rOXSI7KX+RNY0wPZ6GcZ+cXvtF8=; b=kvQeZZBD4gjjexrjUKUeRGu4wj
+	slzVVYMwZjyCQ3z3mCMiOF547TIaS0NUB+zwdAm6cX8yxMQVjyeWyylhQIL25jdfgscukmdr0Zugt
+	i44fK5k3YzDb4tiecRHvjkI30q8JdjazBYb1RNWiy33IMJXX8/MIT/uY0p2LGblDHfFBxmjmSfU8m
+	OhXSwSIjB4BxS6JVGbX5rqgGS7MSOQNh+ZkgY/k9mxJWALMV/GupXRi3sh+1REQ9FBhxzlbm/pDjD
+	NbZs6s0BIFxJX58FCOZGnaX0eoRyqkIoDY8NmZyxELCARbzDxVEvDKgiBMABq5G3SfXFpKgoCN0vE
+	kUdcqNGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9LCs-0000000GpOE-1yJr
+	id 1s9M8B-0000000GxZG-2YkV
 	for ath12k@archiver.kernel.org;
-	Tue, 21 May 2024 08:50:50 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	Tue, 21 May 2024 09:50:03 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9LCp-0000000GpNA-2Ore
+	id 1s9M87-0000000GxXL-2MCz
 	for ath12k@lists.infradead.org;
-	Tue, 21 May 2024 08:50:48 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-4202cea98daso28127465e9.0
-        for <ath12k@lists.infradead.org>; Tue, 21 May 2024 01:50:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1716281444; x=1716886244; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/8E6p7Y+ouLSYIiXoIeFn2ZMIwfFJft8t7wvd/QdN3s=;
-        b=ETaEswK3yU9cbCuccpcp9Gig89XDhPzILFSfI/giD8mHXr5GVrq1JdHXko78su++tN
-         A1JPYaF0GR0rlK6g0EVHsvgGwSrKo05WZavPIlrxixexrQ8I4zlyATiC+4SXRAztTtWF
-         ToIwk2hV1KecnDtWcY04haBCSN/AmfpZLeEKhM2Kd/fS0tIVnwyUHsWW5C4lFpKjdjje
-         baVcVFY0gR3bXVVTjfAXfCX15La0f5UtkdeYpMBW6aJEyxvql6xZ372xl2Uyaw2B9iVX
-         aWnPGLZiD2X0GEWcsM4jnlquNho05YVCbVye+rRiOlg5lqVKFrGlJj0mOUCPMQ+PVBJa
-         qfHA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716281444; x=1716886244;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=/8E6p7Y+ouLSYIiXoIeFn2ZMIwfFJft8t7wvd/QdN3s=;
-        b=ZbYqs8adg1/ZIn1zmgQe7Kf1jVg3vwZwcdXOh4LJhiO7b9asx2g51qb4VXyDY8pHuN
-         cbYHT/WcxqTYfA//eajr751362LTFOQvwlo17cpMPOgpYd02Il//KmWTZFQOjLwqKTIw
-         bgRnXCGeTL72GFGY57F24Gt+Jl5R8Sj+LUV37ZYbLOmQEwXrsb0LGxFFKcOdXMO4FTEa
-         gPQlMkJout9ciGpB1qdJCcx+ar74MZFDG8xufIB+22RJX5hJuL2ntDGJJzcCABmcT2Gj
-         w2CB4PpMg2PwDzXqlZIywyTiVHfbqc2FYXYkBy6uxHif4wvCCQ2hWejxvQ+2ItKDZF1y
-         2xiA==
-X-Forwarded-Encrypted: i=1; AJvYcCXAktlLvwh1WAt9AZvm0Q98YGB/aUouXx4esW1ST87GIrpxXLJfRBAh4K0dJHzG26z1KEeOOqdJICqdF2Rc7RAlNLXC9sHfH10+jg==
-X-Gm-Message-State: AOJu0YxPCFd5CshB4Zdqf6lApji6OcqKWpflQwHGlOFRKwIng+Lp5bZ3
-	ehton5FeMfnoWIezyi+DCDNq0HAP7GIUfb/WUy6N1XZdeSN2R4UY
-X-Google-Smtp-Source: AGHT+IEg/FD3vmCrHSoKeq7lm5iF6Dw6sxIoc/VEcAkFAmQqWfIfIBzp/KhMcfxlcqVmlnUr61qRDQ==
-X-Received: by 2002:a05:600c:468c:b0:420:1067:d698 with SMTP id 5b1f17b1804b1-4201067d80bmr222351055e9.23.1716281443688;
-        Tue, 21 May 2024 01:50:43 -0700 (PDT)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-351d3bdad9bsm14709572f8f.46.2024.05.21.01.50.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 21 May 2024 01:50:43 -0700 (PDT)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Tue, 21 May 2024 10:50:42 +0200
-Message-Id: <D1F6ZU89YWPF.X1SZ9JNQNPFC@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 3/3] wifi: ath12k: fix firmware crash during reo
- reinject
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "P Praneesh" <quic_ppranees@quicinc.com>, <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.17.0
-References: <20240520070045.631029-1-quic_ppranees@quicinc.com>
- <20240520070045.631029-4-quic_ppranees@quicinc.com>
-In-Reply-To: <20240520070045.631029-4-quic_ppranees@quicinc.com>
+	Tue, 21 May 2024 09:50:01 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 4D387CE0B81;
+	Tue, 21 May 2024 09:49:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0E50C32782;
+	Tue, 21 May 2024 09:49:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1716284996;
+	bh=sm97IK3nGkZ2pmbSic3bAR+DZZxDcLN9M74pZztgUHM=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=ZE3GwsX2bVYNwmghBtmo2/mDt796/agmEKRC26JBt/UCb1OfdrrcJ4QBJa1xXG37s
+	 gxssy+xJQoB0xhoC9RruPrNqzB4JCkosQsBGSqKQ/7K/xsAhbXDb7RGlv2E6W8XtTv
+	 zZchHMg5g+U9sRX8w3992qt8k3adq4PVoHGguajqk28PIca0QkAAB6+XKLq7zKlQOI
+	 2R//XLbyIZDJw2Dg9eA4sq8ITFiYp0UNF8FZ3uou2lEhxYqt8rrW9R+y9wWkZu9Gl0
+	 WG9xgDAjPfMUaRpwtNwQTifc7RQmhFSF6EgZG4OAC+t+aZfBRZwgM4OFNd6ku/ph6S
+	 uTrSjFuCel5DQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 0/7] wifi: ath12k: add support for WoW
+References: <20240510064748.369452-1-quic_bqiang@quicinc.com>
+Date: Tue, 21 May 2024 12:49:54 +0300
+In-Reply-To: <20240510064748.369452-1-quic_bqiang@quicinc.com> (Baochen
+	Qiang's message of "Fri, 10 May 2024 14:47:41 +0800")
+Message-ID: <87h6ercx4t.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240521_015047_635904_A11FD3EC 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20240521_025000_030282_AB154104 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,62 +72,143 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon May 20, 2024 at 9:00 AM CEST, P Praneesh wrote:
-> When handling fragmented packets, the ath12k driver reassembles each
-> fragment into a normal packet and then reinjects it into the HW ring.
-> However, a firmware crash occurs during this reinjection process.
-> The issue arises because the driver populates peer metadata in
-> reo_ent_ring->queue_addr_lo, while the firmware expects the physical
-> address obtained from the corresponding peer=E2=80=99s queue descriptor. =
-Fix it
-> by filling peer's queue descriptor's physical address in queue_addr_lo.
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00209-QCAHKSWPL_SILICONZ-1
->
-> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/dp_rx.c | 14 ++++++--------
->  1 file changed, 6 insertions(+), 8 deletions(-)
->
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wirele=
-ss/ath/ath12k/dp_rx.c
-> index 2bfcc19d15ea..2adb6c7d4a42 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> @@ -2967,7 +2967,7 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struc=
-t ath12k *ar,
->  	struct hal_srng *srng;
->  	dma_addr_t link_paddr, buf_paddr;
->  	u32 desc_bank, msdu_info, msdu_ext_info, mpdu_info;
-> -	u32 cookie, hal_rx_desc_sz, dest_ring_info0;
-> +	u32 cookie, hal_rx_desc_sz, dest_ring_info0, queue_addr_hi;
->  	int ret;
->  	struct ath12k_rx_desc_info *desc_info;
->  	enum hal_rx_buf_return_buf_manager idle_link_rbm =3D dp->idle_link_rbm;
-> @@ -3060,13 +3060,11 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(str=
-uct ath12k *ar,
->  	reo_ent_ring->rx_mpdu_info.peer_meta_data =3D
->  		reo_dest_ring->rx_mpdu_info.peer_meta_data;
-> =20
-> -	/* Firmware expects physical address to be filled in queue_addr_lo in
-> -	 * the MLO scenario and in case of non MLO peer meta data needs to be
-> -	 * filled.
-> -	 * TODO: Need to handle for MLO scenario.
-> -	 */
-> -	reo_ent_ring->queue_addr_lo =3D reo_dest_ring->rx_mpdu_info.peer_meta_d=
-ata;
-> -	reo_ent_ring->info0 =3D le32_encode_bits(dst_ind,
-> +	reo_ent_ring->queue_addr_lo =3D cpu_to_le32(lower_32_bits(rx_tid->paddr=
-));
-> +	queue_addr_hi =3D upper_32_bits(rx_tid->paddr);
-Shouldn't there be a cpu_to_le32 somewhere here ? It just seems asymetrical
-between the two values extracted from rx_tid->paddr
-> +	reo_ent_ring->info0 =3D le32_encode_bits(queue_addr_hi,
-> +					       HAL_REO_ENTR_RING_INFO0_QUEUE_ADDR_HI) |
-> +			      le32_encode_bits(dst_ind,
->  					       HAL_REO_ENTR_RING_INFO0_DEST_IND);
-> =20
->  	reo_ent_ring->info1 =3D le32_encode_bits(rx_tid->cur_sn,
+Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
+> Add support for WoW (Wakeup on Wireless) funtionalities, this including
+> magic-pattern, net-detect, disconnect and patterns, HW data filter, ARP
+> and NS offload, GTK rekey offload.
+>
+> Also enable keepalive before suspend to avoid unexpected kick out by AP.
+
+There was a simple conflict in ath12k_core_suspend() but I fixed that
+(tag ath-pending-202405210818). But I see new warnings:
+
+./include/linux/fortify-string.h:97:33: warning: '__builtin_memcpy' accessing 18446744073709551605 or more bytes at offsets 0 and 0 overlaps 9223372036854775787 bytes at offset -9223372036854775798 [-Wrestrict]
+./include/linux/fortify-string.h:97:33: warning: '__builtin_memcpy' accessing 18446744073709551605 or more bytes at offsets 0 and 0 overlaps 9223372036854775787 bytes at offset -9223372036854775798 [-Wrestrict]
+drivers/net/wireless/ath/ath12k/core.c:69:5: warning: context imbalance in 'ath12k_core_suspend' - different lock contexts for basic block
+
+And in my suspend tests with WCN7850 the kernel crashes (tried two times
+and crashed in both):
+
+[  854.087911] wlan0: associated
+[  854.139498] wlan0: Limiting TX power to 23 (23 - 0) dBm as advertised by <censored>
+[  854.481975] BUG: sleeping function called from invalid context at include/linux/sched/mm.h:315
+[  854.483069] in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 1694, name: wpa_supplicant
+[  854.483524] preempt_count: 0, expected: 0
+[  854.484010] RCU nest depth: 1, expected: 0
+[  854.484416] 2 locks held by wpa_supplicant/1694:
+[  854.484914]  #0: ffffffff9c9e2650 (rtnl_mutex){+.+.}-{3:3}, at: rtnetlink_rcv_msg+0x2c8/0xbf0
+[  854.485512]  #1: ffffffff9c0cd960 (rcu_read_lock){....}-{1:2}, at: atomic_notifier_call_chain+0x28/0x140
+[  854.486290] CPU: 1 PID: 1694 Comm: wpa_supplicant Not tainted 6.9.0-wt-ath+ #1525
+[  854.486707] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+[  854.487195] Call Trace:
+[  854.487467]  <TASK>
+[  854.487734]  dump_stack_lvl+0xa4/0xe0
+[  854.488049]  dump_stack+0x10/0x20
+[  854.488335]  __might_resched+0x363/0x5a0
+[  854.488628]  ? kmalloc_trace+0x4b/0x2d0
+[  854.488978]  __might_sleep+0xad/0x160
+[  854.489282]  kmalloc_trace+0x264/0x2d0
+[  854.489574]  ? ath12k_mac_arvif_get_arp_ns_offload+0x72/0xd0 [ath12k]
+[  854.490071]  ath12k_mac_arvif_get_arp_ns_offload+0x72/0xd0 [ath12k]
+[  854.490543]  ath12k_mac_op_ipv6_changed+0xc7/0x1470 [ath12k]
+[  854.491117]  ? ieee80211_emulate_change_chanctx+0xe0/0xe0 [mac80211]
+[  854.491909]  ieee80211_ifa6_changed+0x1c7/0x3a0 [mac80211]
+[  854.492663]  notifier_call_chain+0x97/0x310
+[  854.492997]  atomic_notifier_call_chain+0x5d/0x140
+[  854.493322]  inet6addr_notifier_call_chain+0x16/0x20
+[  854.493650]  ipv6_add_addr+0x10ec/0x2160
+[  854.493946]  ? reacquire_held_locks+0x4d0/0x4d0
+[  854.494294]  ? inet6_dump_ifaddr+0x10/0x10
+[  854.494599]  ? ip6_route_add+0x75/0x130
+[  854.494910]  ? __kasan_check_write+0x14/0x20
+[  854.495214]  ? ip6_route_add+0x8b/0x130
+[  854.495525]  addrconf_add_linklocal+0xd6/0x300
+[  854.495965]  ? addrconf_add_linklocal+0xd6/0x300
+[  854.496297]  ? addrconf_dad_start+0x110/0x110
+[  854.499635]  ? addrconf_addr_eui48_base+0x80/0xa0
+[  854.503094]  addrconf_addr_gen.constprop.0+0x155/0x260
+[  854.506223]  ? mutex_unlock+0xd/0x10
+[  854.508461]  ? addrconf_add_linklocal+0x300/0x300
+[  854.510681]  addrconf_init_auto_addrs+0x194/0x4e0
+[  854.512414]  addrconf_notify+0xabe/0xdd0
+[  854.514073]  notifier_call_chain+0x97/0x310
+[  854.515733]  ? __unwind_start+0x1f3/0x3d0
+[  854.517070]  raw_notifier_call_chain+0x11/0x20
+[  854.518407]  call_netdevice_notifiers_info+0x8b/0xf0
+[  854.521761]  netdev_state_change+0xe8/0x120
+[  854.522882]  ? call_netdevice_notifiers_info+0xf0/0xf0
+[  854.524019]  netdev_set_operstate+0xdf/0x130
+[  854.525139]  ? rtnl_put_cacheinfo+0x260/0x260
+[  854.526216]  set_operstate+0x8a/0x150
+[  854.527175]  do_setlink+0xf0e/0x2550
+[  854.528130]  ? rtnl_bridge_getlink+0x870/0x870
+[  854.529078]  ? check_prev_add+0x2330/0x2330
+[  854.530011]  ? mark_lock+0xe6/0x1470
+[  854.530919]  ? check_prev_add+0x2330/0x2330
+[  854.531710]  ? __lock_acquire+0xd43/0x1dd0
+[  854.532491]  ? kasan_print_address_stack_frame+0x1d2/0x230
+[  854.533277]  ? nla_get_range_signed+0x340/0x340
+[  854.534046]  ? __kasan_check_read+0x11/0x20
+[  854.534808]  ? mark_lock+0xe6/0x1470
+[  854.535573]  ? __kasan_check_read+0x11/0x20
+[  854.536292]  ? __nla_validate_parse+0x1d0/0x400
+[  854.536980]  rtnl_setlink+0x217/0x330
+[  854.537650]  ? do_setlink+0x2550/0x2550
+[  854.538355]  ? rtnetlink_rcv_msg+0x2c8/0xbf0
+[  854.539010]  ? mutex_lock_io_nested+0x1270/0x1270
+[  854.539657]  ? reacquire_held_locks+0x4d0/0x4d0
+[  854.540290]  ? lock_sync+0x1a0/0x1a0
+[  854.540981]  ? __this_cpu_preempt_check+0x13/0x20
+[  854.541598]  rtnetlink_rcv_msg+0x315/0xbf0
+[  854.542278]  ? check_prev_add+0x2330/0x2330
+[  854.542894]  ? rtnl_link_fill+0x900/0x900
+[  854.543446]  ? __lock_acquire+0xd43/0x1dd0
+[  854.544037]  netlink_rcv_skb+0x14c/0x400
+[  854.544581]  ? rtnl_link_fill+0x900/0x900
+[  854.545132]  ? netlink_ack+0xd70/0xd70
+[  854.545851]  ? debug_smp_processor_id+0x17/0x20
+[  854.546369]  ? __lock_release.isra.0+0x49c/0xae0
+[  854.546939]  ? netlink_deliver_tap+0x143/0x350
+[  854.547478]  ? netlink_deliver_tap+0x143/0x350
+[  854.548062]  ? __this_cpu_preempt_check+0x13/0x20
+[  854.548620]  ? netlink_deliver_tap+0xc8/0x350
+[  854.549149]  rtnetlink_rcv+0x10/0x20
+[  854.549708]  netlink_unicast+0x45c/0x790
+[  854.550211]  ? netlink_attachskb+0x7f0/0x7f0
+[  854.550802]  netlink_sendmsg+0x7eb/0xdb0
+[  854.551302]  ? netlink_unicast+0x790/0x790
+[  854.551847]  ? unix_ioctl+0x358/0x400
+[  854.552338]  ? selinux_socket_sendmsg+0x31/0x40
+[  854.552873]  ? netlink_unicast+0x790/0x790
+[  854.553360]  __sock_sendmsg+0xc9/0x160
+[  854.553901]  ? sock_do_ioctl+0xcf/0x1e0
+[  854.554387]  __sys_sendto+0x1ca/0x290
+[  854.554925]  ? __ia32_sys_getpeername+0xa0/0xa0
+[  854.555413]  ? ioctl_has_perm.constprop.0.isra.0+0x276/0x430
+[  854.556005]  ? sock_ioctl+0x24d/0x540
+[  854.556497]  ? br_ioctl_call+0x90/0x90
+[  854.557047]  ? selinux_file_ioctl+0x108/0x250
+[  854.557538]  ? debug_smp_processor_id+0x17/0x20
+[  854.558076]  __x64_sys_sendto+0xdb/0x1a0
+[  854.558588]  ? __this_cpu_preempt_check+0x13/0x20
+[  854.559170]  ? lockdep_hardirqs_on+0x7d/0x100
+[  854.559716]  x64_sys_call+0x8a2/0x9e0
+[  854.560209]  do_syscall_64+0x65/0x130
+[  854.560807]  entry_SYSCALL_64_after_hwframe+0x4b/0x53
+[  854.561300] RIP: 0033:0x7f0ef17cb750
+[  854.561848] Code: ff eb bc 0f 1f 80 00 00 00 00 f3 0f 1e fa 41 89 ca 64 8b 04 25 18 00 00 00 85 c0 75 1d 45 31 c9 45 31 c0 b8 2c 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 68 c3 0f 1f 80 00 00 00 00 55 48 83 ec 20 48
+[  854.562946] RSP: 002b:00007ffc4306af98 EFLAGS: 00000246 ORIG_RAX: 000000000000002c
+[  854.563506] RAX: ffffffffffffffda RBX: 0000000000000006 RCX: 00007f0ef17cb750
+[  854.564122] RDX: 0000000000000028 RSI: 00007ffc4306afb0 RDI: 0000000000000005
+[  854.564738] RBP: 0000556901de3960 R08: 0000000000000000 R09: 0000000000000000
+[  854.565298] R10: 0000000000000000 R11: 0000000000000246 R12: 00000000ffffffff
+[  854.565945] R13: 00007ffc4306afb0 R14: 0000000000000005 R15: 0000556901e2b1f1
+[  854.566522]  </TASK>
+
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
