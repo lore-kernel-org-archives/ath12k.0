@@ -4,87 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 340BAC25B75
-	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 10:57:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A204C25B74
+	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 11:16:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2y/Bbukbdv3IkRYknhKEfP9uux18FBeNNZ3K+QFIt4Y=; b=1NKHSoDQkGrJKgnKtG6Oi+LGiT
-	YVzgrcNHxeRhsf0RDOjT5e0Ia/u4ChclqsXRcfDhr/OYdxhWxPuSKoz2KzAdwfcxsj+gdADEwSroR
-	MB10+SU1qHpvL/qxCNkHt8qkVoa3ONnD1v3SmLQVS1Um9jsOqh1FrJxI0uATGlc+DtPcL+wuhqCP0
-	kw9NRIZyZYE+3oVY+PpXFETjQsPT0EOx6xC9zxr3B+zuEY4pc1/iK8RjqVHAGN2KaoXDj25jcDSo/
-	ylJrbP/KxLdVEyHS9uYH1DWIcpFcfLtgx+6pgEN896J2ogzRYnUMQFAmFp23L1DyJ58oWLiPaNedY
-	ikPnqbjQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GYBJXPCXHeYgjzaZDvP2LYWydRmRI0fjgxsvcVLQItM=; b=qtudKpx0ts1ot6Nkqe9+REAuXC
+	vCLfn50gHhHiNA3Il65cMZDIowVWuwiO6eCz2B/Y/BTmQAvvoQSi+nteq+qLOayGT7VCuOi9cPB9V
+	Ce9YKAzSzgwdxag++4lcjfY46TBLi6lnq1SQHAwVJXRnY47FozkXzIWzXuHulNE/Qxj2kpBBoeO7Y
+	TeZJwcqz4T9oGdHda3aRS/j54RnRLEO+CaTjDMwiJRBPBQml1X6lnuNFKudYAT8oNlKuhYvU/Qd/7
+	KV3bfGdnaoCQSt3/a+SlkYCk4x6DvjnlX6m1Gxq0lnOQrw397wDFMYHrNUo4UhBLu6jsnyTvjJ4v5
+	8jjI6rzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9NBt-0000000HCrR-3mRh
+	id 1s9NTb-0000000HFmA-3NnY
 	for ath12k@archiver.kernel.org;
-	Tue, 21 May 2024 10:57:57 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 21 May 2024 11:16:15 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9NBr-0000000HCpc-11sX
+	id 1s9NTV-0000000HFie-379E
 	for ath12k@lists.infradead.org;
-	Tue, 21 May 2024 10:57:57 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44LAgn3r022405
-	for <ath12k@lists.infradead.org>; Tue, 21 May 2024 10:57:52 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=2y/Bbukbdv3IkRYknhKEfP9uux18FBeNNZ3K+QFIt4Y=; b=EN
-	aQy+afb+vpXslJUH6L96ong3o2LetGJ+PgH+H22Ukgc/PLSkzH2gEoQF0W3sfuIi
-	knT6QGmuypt4urjwoKCFjRthgvVmeBc4WvMp+ScNJ+5AEaL+fEcWNTa0tO1F5ihD
-	JfHYpJzV6FckBibIPD93ybilafOXta5s9qaZanjqRb8osRYYnMouEa1hghf1xq96
-	3sgsSPRuLBYVqT8XMOd37nCHKv06v58RTLIatKw+PTC3nknRTUoDDbERJj2472CS
-	ljlgtEsFrjiB/LAcMzTW8i1njzxAKBYjg6FOLD/23h56YjUzdWPCGLPn9qsP6IKX
-	uTx6Kjj7w19G+SLpkXqw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y6n3te7jf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 21 May 2024 10:57:52 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44LAvpse025925
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 21 May 2024 10:57:51 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 21 May
- 2024 03:57:50 -0700
-Message-ID: <fcde8606-d986-4fe3-9b91-8ed997ac9f5d@quicinc.com>
-Date: Tue, 21 May 2024 18:57:49 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+	Tue, 21 May 2024 11:16:12 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 39B53CE0F08;
+	Tue, 21 May 2024 11:16:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E78FC2BD11;
+	Tue, 21 May 2024 11:16:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1716290166;
+	bh=1ndINauzntBgfggd2gF7eOcJ7LjbbFCDVoC/Ma0kLxc=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=q7sADBPs3DhAVBatS7PxaM33lBC/zIt6aTF8dTmct1EDqw7Fbbv1PpLGRQU/BGLie
+	 GUejVtNl8iONm5Caf9KWGZeuacrwTYSJGi7/I1gOlxkc4O3UajvDwLgNOBggigNXQ3
+	 bo0BLIVWSc7WZNl5w5CJL0jTHPVLkoYScGbUD8f1dOAWv73pL3SfWw06uYvvC4lZQS
+	 SvzquVaTj02vkN8mOAN1XduFkrpqJvO2PawLOKlINqy+krfx888tWzJmRcChG4CVMj
+	 QjguOVTVOlmAJA7Pc8YRMyLDKNiTbFeAMvf+8m2E9CgYBfsff91nHth9EJkJGa0wuv
+	 bMwu9KTdfWEFA==
+From: Kalle Valo <kvalo@kernel.org>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
 Subject: Re: [PATCH 0/7] wifi: ath12k: add support for WoW
-To: <ath12k@lists.infradead.org>
 References: <20240510064748.369452-1-quic_bqiang@quicinc.com>
- <87h6ercx4t.fsf@kernel.org>
- <5e82ff7c-e14a-44e8-b8e7-c63c832719b3@quicinc.com>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <5e82ff7c-e14a-44e8-b8e7-c63c832719b3@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: S_Pst4E-y7RnugJF_2MQO7UIk_eWTBEX
-X-Proofpoint-ORIG-GUID: S_Pst4E-y7RnugJF_2MQO7UIk_eWTBEX
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
- definitions=2024-05-21_06,2024-05-21_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
- bulkscore=0 priorityscore=1501 malwarescore=0 mlxlogscore=999
- lowpriorityscore=0 phishscore=0 spamscore=0 impostorscore=0 clxscore=1015
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405210082
+	<87h6ercx4t.fsf@kernel.org>
+	<5e82ff7c-e14a-44e8-b8e7-c63c832719b3@quicinc.com>
+Date: Tue, 21 May 2024 14:16:03 +0300
+In-Reply-To: <5e82ff7c-e14a-44e8-b8e7-c63c832719b3@quicinc.com> (Baochen
+	Qiang's message of "Tue, 21 May 2024 18:45:48 +0800")
+Message-ID: <87cypfct58.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240521_035755_495790_D70C986F 
-X-CRM114-Status: GOOD (  18.57  )
+X-CRM114-CacheID: sfid-20240521_041610_667079_B62FDAD9 
+X-CRM114-Status: GOOD (  21.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,47 +74,79 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
-
-On 5/21/2024 6:45 PM, Baochen Qiang wrote:
-> 
-> 
 > On 5/21/2024 5:49 PM, Kalle Valo wrote:
 >> Baochen Qiang <quic_bqiang@quicinc.com> writes:
->>
+>> 
 >>> Add support for WoW (Wakeup on Wireless) funtionalities, this including
 >>> magic-pattern, net-detect, disconnect and patterns, HW data filter, ARP
 >>> and NS offload, GTK rekey offload.
 >>>
 >>> Also enable keepalive before suspend to avoid unexpected kick out by AP.
->>
+>> 
 >> There was a simple conflict in ath12k_core_suspend() but I fixed that
 >> (tag ath-pending-202405210818). But I see new warnings:
->>
->> ./include/linux/fortify-string.h:97:33: warning: '__builtin_memcpy' accessing 18446744073709551605 or more bytes at offsets 0 and 0 overlaps 9223372036854775787 bytes at offset -9223372036854775798 [-Wrestrict]
->> ./include/linux/fortify-string.h:97:33: warning: '__builtin_memcpy' accessing 18446744073709551605 or more bytes at offsets 0 and 0 overlaps 9223372036854775787 bytes at offset -9223372036854775798 [-Wrestrict]
-> I suppose this is run-time warning, right? I don't see them while testing, am I missing something? any configuration or special GCC version?
-Sorry, I was meaning build time warning :)
+>> 
+>> ./include/linux/fortify-string.h:97:33: warning: '__builtin_memcpy'
+>> accessing 18446744073709551605 or more bytes at offsets 0 and 0
+>> overlaps 9223372036854775787 bytes at offset -9223372036854775798
+>> [-Wrestrict]
+>> ./include/linux/fortify-string.h:97:33: warning: '__builtin_memcpy'
+>> accessing 18446744073709551605 or more bytes at offsets 0 and 0
+>> overlaps 9223372036854775787 bytes at offset -9223372036854775798
+>> [-Wrestrict]
+>
+> I suppose this is run-time warning, right? I don't see them while
+> testing, am I missing something? any configuration or special GCC
+> version?
 
-> 
->> drivers/net/wireless/ath/ath12k/core.c:69:5: warning: context imbalance in 'ath12k_core_suspend' - different lock contexts for basic block
-> This is because the conflict you mentioned above is not fixed in a right way: rcu_read_lock() should not be added there in ath12k_core_suspend() in commit https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/drivers?h=ath-pending-202405210818&id=2f77ceb7ece056f20d98519f0b1b696711c88908
-> 
->>
+Yes, this is a warning from GCC. I use currently GCC 13.2 from
+crosstool:
+
+https://wireless.wiki.kernel.org/en/users/drivers/ath10k/codingstyle#tools
+
+The kernel .config I use you should get from our private repository
+where I share my NUC configs. But I guess at least this config is
+important:
+
+CONFIG_FORTIFY_SOURCE=y
+
+But you might need other configs enabled as well, not sure.
+
+>> drivers/net/wireless/ath/ath12k/core.c:69:5: warning: context
+>> imbalance in 'ath12k_core_suspend' - different lock contexts for
+>> basic block
+>
+> This is because the conflict you mentioned above is not fixed in a
+> right way: rcu_read_lock() should not be added there in
+> ath12k_core_suspend() in commit
+> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/drivers?h=ath-pending-202405210818&id=2f77ceb7ece056f20d98519f0b1b696711c88908
+
+Ah, my bad. That's what I get when fixing conflicts hastily. Thanks for
+finding my error :)
+
 >> And in my suspend tests with WCN7850 the kernel crashes (tried two times
 >> and crashed in both):
->>
+>> 
 >> [  854.087911] wlan0: associated
->> [  854.139498] wlan0: Limiting TX power to 23 (23 - 0) dBm as advertised by <censored>
->> [  854.481975] BUG: sleeping function called from invalid context at include/linux/sched/mm.h:315
->> [  854.483069] in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 1694, name: wpa_supplicant
+>> [ 854.139498] wlan0: Limiting TX power to 23 (23 - 0) dBm as
+>> advertised by <censored>
+>> [ 854.481975] BUG: sleeping function called from invalid context at
+>> include/linux/sched/mm.h:315
+>> [ 854.483069] in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid:
+>> 1694, name: wpa_supplicant
 >> [  854.483524] preempt_count: 0, expected: 0
 >> [  854.484010] RCU nest depth: 1, expected: 0
 >> [  854.484416] 2 locks held by wpa_supplicant/1694:
->> [  854.484914]  #0: ffffffff9c9e2650 (rtnl_mutex){+.+.}-{3:3}, at: rtnetlink_rcv_msg+0x2c8/0xbf0
->> [  854.485512]  #1: ffffffff9c0cd960 (rcu_read_lock){....}-{1:2}, at: atomic_notifier_call_chain+0x28/0x140
+>> [ 854.484914] #0: ffffffff9c9e2650 (rtnl_mutex){+.+.}-{3:3}, at:
+>> rtnetlink_rcv_msg+0x2c8/0xbf0
+>> [ 854.485512] #1: ffffffff9c0cd960 (rcu_read_lock){....}-{1:2}, at:
+>> atomic_notifier_call_chain+0x28/0x140
 >> [  854.486290] CPU: 1 PID: 1694 Comm: wpa_supplicant Not tainted 6.9.0-wt-ath+ #1525
->> [  854.486707] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+>> [ 854.486707] Hardware name: Intel(R) Client Systems
+>> NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339
+>> 05/28/2021
 >> [  854.487195] Call Trace:
 >> [  854.487467]  <TASK>
 >> [  854.487734]  dump_stack_lvl+0xa4/0xe0
@@ -236,19 +243,31 @@ Sorry, I was meaning build time warning :)
 >> [  854.560209]  do_syscall_64+0x65/0x130
 >> [  854.560807]  entry_SYSCALL_64_after_hwframe+0x4b/0x53
 >> [  854.561300] RIP: 0033:0x7f0ef17cb750
->> [  854.561848] Code: ff eb bc 0f 1f 80 00 00 00 00 f3 0f 1e fa 41 89 ca 64 8b 04 25 18 00 00 00 85 c0 75 1d 45 31 c9 45 31 c0 b8 2c 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 68 c3 0f 1f 80 00 00 00 00 55 48 83 ec 20 48
->> [  854.562946] RSP: 002b:00007ffc4306af98 EFLAGS: 00000246 ORIG_RAX: 000000000000002c
+>> [ 854.561848] Code: ff eb bc 0f 1f 80 00 00 00 00 f3 0f 1e fa 41 89
+>> ca 64 8b 04 25 18 00 00 00 85 c0 75 1d 45 31 c9 45 31 c0 b8 2c 00 00
+>> 00 0f 05 <48> 3d 00 f0 ff ff 77 68 c3 0f 1f 80 00 00 00 00 55 48 83
+>> ec 20 48
+>> [ 854.562946] RSP: 002b:00007ffc4306af98 EFLAGS: 00000246 ORIG_RAX:
+>> 000000000000002c
 >> [  854.563506] RAX: ffffffffffffffda RBX: 0000000000000006 RCX: 00007f0ef17cb750
 >> [  854.564122] RDX: 0000000000000028 RSI: 00007ffc4306afb0 RDI: 0000000000000005
 >> [  854.564738] RBP: 0000556901de3960 R08: 0000000000000000 R09: 0000000000000000
 >> [  854.565298] R10: 0000000000000000 R11: 0000000000000246 R12: 00000000ffffffff
 >> [  854.565945] R13: 00007ffc4306afb0 R14: 0000000000000005 R15: 0000556901e2b1f1
 >> [  854.566522]  </TASK>
-> Thanks. there is a race here: ath12k_mac_arvif_get_arp_ns_offload() is called by two functions and it allocate memory in the first call. So if it is called firstly by ath12k_mac_op_ipv6_changed(), above bug shows. But if it is called firstly by ath12k_mac_bss_info_changed(), there is no issue. This explains why I did not hit it before.
-> 
+>
+> Thanks. there is a race here: ath12k_mac_arvif_get_arp_ns_offload() is
+> called by two functions and it allocate memory in the first call. So
+> if it is called firstly by ath12k_mac_op_ipv6_changed(), above bug
+> shows. But if it is called firstly by ath12k_mac_bss_info_changed(),
+> there is no issue. This explains why I did not hit it before.
+>
 > Anyway, will fix it in next version.
-> 
->>
->>
-> 
+
+Great, thanks for looking at it.
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
