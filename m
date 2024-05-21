@@ -4,72 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B47BEC25B75
-	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 07:31:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1D22C25B74
+	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 07:40:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=e43fKFWWykcQoN0kfiWxUBlSPYrnotaG5FgX9M2HnK4=; b=otUF/UwwXlJqNFI83tkP1Ayt0V
-	FlHkufi1C6WN5HsN7Iq3i2RGqr7c1McCRgTMubkubJRRzLvtGC+Rcpd8e5wNxVrSlTXwEXCGEL+c4
-	R5Gf8kk35dcWzHKWmdrdwRJ1zMKnSbRa7mKpfjJra29bGnAbpESiWwkf+XnQgQeLY1P9LKiH/oyx5
-	Gwm8pVMfmTRGPtPYHWGLNHHwFatDazXjLo4yUDpzzrOoqEdKCiF8Zw5OuZUcVgEgW2+h0c5nbCcOU
-	6H1ztsG6YfrJ3SRaUeSdT3qYMEpMGU0e2MGN7LdAJ+mzS6VmIIUygbKfaMjkrhSHvkCt4L3UIhKaT
-	MtGUFiQw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=P4dbg0YU+g6DSQBl8UWh/IxeS5WrdMdIANraTi5gQUc=; b=TITzsb01jfZ34gyWkiNfc5U8Rb
+	Yadlvw6C2M+qpJiXhkW2Ne2k+iVoxUb+qWF/0qNXnnyCobe9zmsFUuzubsclEeqHUWYgRK+3vm6eS
+	GqSDCpYg4/1FDjMmyYkAPpaifvBrzTvZoD5nCNfOJE3V8u2vyCz00hfP3HyCVljhNgQ6O0Jy2CyjL
+	+B66ko4v5KVffitr5wTXnItNNhsQ5LGug4nsvIcSTLHwqgYMGMYR+yOVoOjV/BJ5W5S1fikPB+Xjg
+	olSD0LNDEs960Eh6gUJ9fJDd/BappjjRRcWiTGvcmAa09CgUnvOBKsVOYyQ/yx4ENAWY+PGWpLVEL
+	ozORAILA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9JyQ-0000000Gc4k-1sUw
+	id 1s9K6f-0000000GdYX-16DY
 	for ath12k@archiver.kernel.org;
-	Tue, 21 May 2024 07:31:50 +0000
-Received: from mail545c25.carrierzone.com ([64.29.147.145])
+	Tue, 21 May 2024 07:40:21 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9JyM-0000000Gc2b-3Tnr
+	id 1s9K6c-0000000GdY0-1GY6
 	for ath12k@lists.infradead.org;
-	Tue, 21 May 2024 07:31:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=carrierzone.com;
-	s=mailmia; t=1716276698;
-	bh=OUxMI0yCdRbARRzl4IBp85Zo/TM5Y64LHdgTsnY9a2Q=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References:Reply-to:From;
-	b=lZBkFBlgYFo/BNJcW0rSP6B4iJod40LtIqgB40ezxsc1luciLRfH9nCdm6rvgbeZO
-	 +tDTyb0dQwFn/AKTdNIyX7BLnuYLILLXzC6EJAFW5EKv9OUm6VDxP1hz2GgVqVKQ62
-	 5QGqDB7X4i2ryDA14E8s1jbOeijQK+tc4WHkz3LY=
-Feedback-ID: pgupta@hindutoo
-Received: from mail545c25.carrierzone.com (localhost [127.0.0.1])
-	by mail545c25.carrierzone.com (8.14.9/8.13.1) with ESMTP id 44L7VbR7102033
-	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO)
-	for <ath12k@lists.infradead.org>; Tue, 21 May 2024 07:31:37 +0000
-Received: (from webmail@localhost)
-	by mail545c25.carrierzone.com (8.14.9/8.12.2/Submit) id 44L7VbGt101970
-	for ath12k@lists.infradead.org; Tue, 21 May 2024 03:31:37 -0400
-From: "pgupta@hindutool.com" <pgupta@hindutool.com>
-To: ath12k@lists.infradead.org
-CC: 
-Subject: RE: board-2.bin
-Date: Tue, 21 May 2024 03:31:37 -0400
-Message-ID: <1716276697.fqsmqowkhwocwgg0@mailapp03.register.com>
-In-Reply-To: <LO0P123MB40579A82B572982CDCFD8372D6EA2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-References: <1716180196.ixiafmuo0wckk0ws@mailapp03.register.com>
- <87seycerlh.fsf@kernel.org>
- <1716221937.24ib38wrkkgo8sc4@mailapp03.register.com>
- <1716224337.zi1iti2l1c0cocko@mailapp03.register.com>
- <LO0P123MB40578D0BBD3B6EDDFED084ABD6E92@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <1716242767.t9j0j77jn6sgs4ws@mailapp03.register.com>
- <LO0P123MB405723C63196B6A2D87EAEB0D6EA2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <d3aeb02f-4a1e-1388-8206-066e5d352e92@candelatech.com>
- <LO0P123MB40579A82B572982CDCFD8372D6EA2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	Tue, 21 May 2024 07:40:20 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 84034CE0E58;
+	Tue, 21 May 2024 07:40:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C3626C2BD11;
+	Tue, 21 May 2024 07:40:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1716277215;
+	bh=cJQMLDp8B5Cq7Uq8SstPBdSHc04cgKcJ7iRSXdGEc9c=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=qx80fYCD5cI1H/ioGdekYN3Hv8sVe1ODPhGmshQEu9EFd/upEPPijMQTsC7DL1U3n
+	 BayaJ7scKDYvIKHPgGzfDryhA+Wq/md8Nt/x5gsOJFTc1B4/a/bXEAx41ZuepLYeaO
+	 75uuMsb8BXqoonOtNLaa3TJ1HXYIw//cPnP0F8AIrKE2Ici6bx4TQy61XpThwaxTEC
+	 fMc1ntwlVZmMucoab9ZKk+W3bmaLQbizVZCF05XhjIpqp6tUWr/+gs4yFK296yU6AF
+	 y+f9BAXS08Jq8taQ7l/j6p99ZTnaqcHNjzwFR6FsIryqlhvOAoHXbFCKC1OSSsGlZ4
+	 k1XkuEkOkD8Hg==
+From: Kalle Valo <kvalo@kernel.org>
+To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org
+Subject: Re: [PATCH v2 0/5] wifi: ath12k: Add support to enable
+ debugfs_htt_stats
+References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
+Date: Tue, 21 May 2024 10:40:12 +0300
+In-Reply-To: <20240510050806.514126-1-quic_rgnanase@quicinc.com> (Ramya
+	Gnanasekar's message of "Fri, 10 May 2024 10:38:01 +0530")
+Message-ID: <874jarehpf.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
-X-Image-Url: https://mailapp03.register.com/api/storage/pgupta@hindutool.com/profile/picture
-X-VADE-SPAMSTATE: clean
-X-VADE-SPAMSCORE: 0
-X-VADE-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedvledrvdeiuddguddulecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfjqffuvffqrffktedpqfgfvfdpgffpggdqvedvheenuceurghilhhouhhtmecufedtudenucenucfjughrpefhvfevufffkfgjfhggtgfgrhesthhqredttddtjeenucfhrhhomhepfdhpghhuphhtrgeshhhinhguuhhtohholhdrtghomhdfuceophhguhhpthgrsehhihhnughuthhoohhlrdgtohhmqeenucggtffrrghtthgvrhhnpefhheehjefgjeekvdeugfetkeeihfdtjedufeffueefvdeggefhvddtffevueduhfenucffohhmrghinheptghouggvlhhinhgrrhhordhorhhgpdhgihhthhhusgdrtghomhdptghoughitghordgtohhmnecukfhppeduvdejrddtrddtrddunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepuddvjedrtddrtddruddphhgvlhhopehmrghilhehgeehtgdvhedrtggrrhhrihgvrhiiohhnvgdrtghomhdpmhgrihhlfhhrohhmpehpghhuphhtrgeshhhinhguuhhtohholhdrtghomhdpnhgspghrtghpthhtohepuddprhgtphhtthhopegrthhhuddvkheslhhishhtshdrihhnfhhrrgguvggrugdrohhrgh
-X-Origin-Country: Unknown
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240521_003147_211757_71EFB748 
-X-CRM114-Status: GOOD (  56.63  )
+X-CRM114-CacheID: sfid-20240521_004018_763349_23D05A3C 
+X-CRM114-Status: GOOD (  11.97  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,411 +70,136 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: pgupta@hindutool.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-I have reached out to Compex support about board configuration file, once I=
- hear from them I will update everyone with their response.  I am curious t=
-hat if such a file exists, why they would not have brought it to my attenti=
-on.
+Ramya Gnanasekar <quic_rgnanase@quicinc.com> writes:
 
-One more thing, I think when I was able to get the card recognized by ifcon=
-fig, I had all the wireless tools installed, and I think nl80211 may also h=
-ave been on the system.=C2=A0
+> Bring in the basic infrastructure necessary for enabling htt_stats via debugfs.
+> Patch series bring support to request stats type to firmware, dump the stats
+> and request to reset the stats from firmware.
+>
+> Schema with one ath12k device:
+>
+> ath12k
+> `-- pci-0000:06:00.0
+>     |-- mac0
+>         `-- htt_stats
+>         |-- htt_stats_type
+>         |-- htt_stats_reset
+>
+> Dinesh Karthikeyan (3):
+>   wifi: ath12k: Add support to enable debugfs_htt_stats
+>   wifi: ath12k: Add htt_stats_dump file ops support
+>   wifi: ath12k: Add support to parse requested stats_type
+>
+> Lingbo Kong (1):
+>   wifi: ath12k: Fix Pdev id in HTT stats request for WCN7850
+>
+> Ramya Gnanasekar (1):
+>   wifi: ath12k: Dump additional Tx PDEV HTT stats
 
-Lastly I have a question.=C2=A0 Which repository should we use?
+I did a quick test with WCN7850:
 
-https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/tree/main?ref=
-_type=3Dheads
+cd /sys/kernel/debug/ath12k/pci-0000:06:00.0/mac0
+echo 1 > htt_stats_type 
+cat htt_stats
 
-OR
+And in the dmesg I see:
 
-https://github.com/quic/upstream-wifi-fw/tree/main/ath12k-firmware
+[  178.634501] ==================================================================
+[  178.634870] BUG: KASAN: slab-out-of-bounds in skip_spaces+0x105/0x110
+[  178.635156] Read of size 1 at addr ffff888109d4696a by task bash/1474
+[  178.635367] 
+[  178.635513] CPU: 1 PID: 1474 Comm: bash Not tainted 6.9.0-wt-ath+ #1523
+[  178.635747] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+[  178.636078] Call Trace:
+[  178.636238]  <TASK>
+[  178.636393]  dump_stack_lvl+0x7d/0xe0
+[  178.636578]  print_address_description.constprop.0+0x33/0x3a0
+[  178.636786]  print_report+0xb5/0x260
+[  178.637004]  ? kasan_complete_mode_report_info+0x3c/0x1a0
+[  178.637211]  kasan_report+0xd8/0x110
+[  178.637353]  ? skip_spaces+0x105/0x110
+[  178.637392]  ? skip_spaces+0x105/0x110
+[  178.637433]  __asan_report_load1_noabort+0x14/0x20
+[  178.637488]  skip_spaces+0x105/0x110
+[  178.637526]  vsscanf+0x3e9/0x3100
+[  178.637573]  ? ip6_compressed_string+0xb80/0xb80
+[  178.637614]  ? debug_smp_processor_id+0x17/0x20
+[  178.637655]  ? __lock_release.isra.0+0x49c/0xae0
+[  178.637696]  ? reacquire_held_locks+0x4d0/0x4d0
+[  178.637736]  ? lock_sync+0x1a0/0x1a0
+[  178.637774]  sscanf+0xa6/0xd0
+[  178.637809]  ? vsscanf+0x3100/0x3100
+[  178.637846]  ? __might_fault+0x119/0x170
+[  178.637933]  ? __might_fault+0xc0/0x170
+[  178.637983]  ? __kasan_check_write+0x14/0x20
+[  178.638023]  ath12k_write_htt_stats_type+0x122/0x330 [ath12k]
+[  178.638092]  ? ath12k_open_htt_stats+0xbe0/0xbe0 [ath12k]
+[  178.638515]  full_proxy_write+0xf8/0x180
+[  178.638563]  vfs_write+0x220/0x1200
+[  178.638601]  ? do_user_addr_fault+0x3f5/0xbb0
+[  178.638640]  ? reacquire_held_locks+0x220/0x4d0
+[  178.638680]  ? kernel_write+0x680/0x680
+[  178.638720]  ? __kasan_check_read+0x11/0x20
+[  178.638757]  ? __fget_light+0x53/0x1e0
+[  178.638796]  ksys_write+0x10e/0x230
+[  178.638833]  ? __ia32_sys_read+0xa0/0xa0
+[  178.638917]  ? debug_smp_processor_id+0x17/0x20
+[  178.638959]  __x64_sys_write+0x6d/0xa0
+[  178.638997]  ? lockdep_hardirqs_on+0x7d/0x100
+[  178.639036]  x64_sys_call+0x9cf/0x9e0
+[  178.639073]  do_syscall_64+0x65/0x130
+[  178.639111]  entry_SYSCALL_64_after_hwframe+0x4b/0x53
+[  178.639721] RIP: 0033:0x7f35ca96b297
+[  178.640363] Code: 64 89 02 48 c7 c0 ff ff ff ff eb bb 0f 1f 80 00 00 00 00 f3 0f 1e fa 64 8b 04 25 18 00 00 00 85 c0 75 10 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 51 c3 48 83 ec 28 48 89 54 24 18 48 89 74 24
+[  178.641642] RSP: 002b:00007fff7addfa38 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[  178.642327] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007f35ca96b297
+[  178.643013] RDX: 0000000000000002 RSI: 000055c737df4390 RDI: 0000000000000001
+[  178.643652] RBP: 000055c737df4390 R08: 000000000000000a R09: 0000000000000001
+[  178.644332] R10: 000055c703828017 R11: 0000000000000246 R12: 0000000000000002
+[  178.645010] R13: 00007f35caa4a6a0 R14: 00007f35caa464a0 R15: 00007f35caa458a0
+[  178.645643]  </TASK>
+[  178.646321] 
+[  178.646984] Allocated by task 1474 on cpu 1 at 178.634368s:
+[  178.647616]  kasan_save_stack+0x26/0x50
+[  178.648290]  kasan_save_track+0x18/0x60
+[  178.648955]  kasan_save_alloc_info+0x37/0x40
+[  178.649560]  __kasan_kmalloc+0x90/0xa0
+[  178.650197]  __kmalloc+0x1be/0x3f0
+[  178.650765]  ath12k_write_htt_stats_type+0xc1/0x330 [ath12k]
+[  178.651408]  full_proxy_write+0xf8/0x180
+[  178.652029]  vfs_write+0x220/0x1200
+[  178.652583]  ksys_write+0x10e/0x230
+[  178.653181]  __x64_sys_write+0x6d/0xa0
+[  178.653726]  x64_sys_call+0x9cf/0x9e0
+[  178.654319]  do_syscall_64+0x65/0x130
+[  178.654844]  entry_SYSCALL_64_after_hwframe+0x4b/0x53
+[  178.655410] 
+[  178.655970] The buggy address belongs to the object at ffff888109d46968#012[  178.655970]  which belongs to the cache kmalloc-8 of size 8
+[  178.657054] The buggy address is located 0 bytes to the right of#012[  178.657054]  allocated 2-byte region [ffff888109d46968, ffff888109d4696a)
+[  178.658142] 
+[  178.658668] The buggy address belongs to the physical page:
+[  178.659256] page: refcount:1 mapcount:0 mapping:0000000000000000 index:0xffff888109d46a08 pfn:0x109d46
+[  178.659824] flags: 0x200000000000a00(workingset|slab|node=0|zone=2)
+[  178.660438] page_type: 0xffffffff()
+[  178.661053] raw: 0200000000000a00 ffff88810004c3c0 ffffea0004275850 ffff8881000403d0
+[  178.661637] raw: ffff888109d46a08 0000000000190010 00000001ffffffff 0000000000000000
+[  178.662265] page dumped because: kasan: bad access detected
+[  178.662872] 
+[  178.663475] Memory state around the buggy address:
+[  178.664108]  ffff888109d46800: fc fc fc fc fc fa fc fc fc fc fc fc fc fc fc fc
+[  178.664710]  ffff888109d46880: fc fc fc fc fc fc fc fc fc fa fc fc fc fc fc fc
+[  178.665972] >ffff888109d46900: fc fc fc fc fc fc fc fc fc fc fc fc fc 02 fc fc
+[  178.666571]                                                           ^
+[  178.667223]  ffff888109d46980: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+[  178.667836]  ffff888109d46a00: fc fa fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+[  178.668488] ==================================================================
+[  178.669233] Disabling lock debugging due to kernel taint
 
-and what is the "qdss_trace_config.bin" file located in the upstream-wifi-f=
-w repository?
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-Prashant
-
-
-
-On Tue, 21 May 2024 07:09:48 +0000, david Atkins <david@3adesign.co.uk> wro=
-te:
-
->> I have the board files from my supplier, it helped but did not make it w=
-ork....
->>
->> > -----Original Message-----
->> > From: Ben Greear
->> > Sent: Tuesday, May 21, 2024 8:03 AM
->> > To: david Atkins ; pgupta@hindutool.com;
->> > ath12k@lists.infradead.org
->> > Subject: Re: board-2.bin
->> >
->> > On 5/20/24 23:20, david Atkins wrote:
->> > > I do not have them working yet, they show up on latest build but do =
-not
->> > work, I need to do another update as I have seen many changes go throu=
-gh.
->> > >
->> > > David
->> >
->> > Most likely, you need to get the board file(s) from Compex and then ge=
-t it
->> > added to the board-2.bin file.
->> > In my opinion, this is something that the ath12k folks should be takin=
-g care of.
->> >
->> > Thanks,
->> > Ben
->> >
->> > >
->> > >
->> > >> -----Original Message-----
->> > >> From: pgupta@hindutool.com
->> > >> Sent: Monday, May 20, 2024 11:06 PM
->> > >> To: david Atkins ; ath12k@lists.infradead.org
->> > >> Subject: RE: board-2.bin
->> > >>
->> > >> David,
->> > >> My three Compex wifi 7 modules are all Waikiki based. Were you
->> > >> able to get the ath12k driver and firmware to work with them?=C2=A0=
- If so how?
->> > >> Are you using a custom kernel and custom board?
->> > >>
->> > >>
->> > >> Prashant
->> > >>
->> > >>
->> > >>
->> > >> On Mon, 20 May 2024 18:53:49 +0000, david Atkins
->> > >>
->> > >> wrote:
->> > >>
->> > >>>> Hi,
->> > >>>>
->> > >>>> We have sourced modules from Qualcomm direct "Hamilton" cards
->> > >>>>
->> > >>>> I also have 2x2 Hamilton equivalents and Waikiki from Codico, the=
-se
->> > >>>> are 8devcies or compex modules
->> > >>>>
->> > >>>> They sell sample quantities easily online
->> > >>>>
->> > >>>>
->> > >>
->> > https://www.codico.com/en/manufacturers/8devices?pim_brand=3D8devices#=
-s
->> > >>>> amples
->> > >>>>
->> > >>>> I have 3 setups running, 2 AMD (1 Hamilton 1 WKK) and Intel with
->> > >>>> Hamilton
->> > >>>>
->> > >>>> We are comparing with Intel BE200 as another option
->> > >>>>
->> > >>>> David
->> > >>>>
->> > >>>>> -----Original Message-----
->> > >>>>> From: ath12k On Behalf Of
->> > >>>>> pgupta@hindutool.com
->> > >>>>> Sent: Monday, May 20, 2024 5:59 PM
->> > >>>>> To: kvalo@kernel.org; ath12k@lists.infradead.org
->> > >>>>> Subject: Re: board-2.bin
->> > >>>>>
->> > >>>>> Mr. Valo,
->> > >>>>>
->> > >>>>>
->> > >>>>> Thank you for responding to my email.
->> > >>>>>
->> > >>>>> I purchased a wifi 7 2.4Ghz, 5Ghz, and 6Ghz directly from compex=
-:
->> > >>>>>
->> > >>>>> https://shop.compex.com.sg/products
->> > >>>>>
->> > >>>>>
->> > >>>>> Pair of 6Ghz Wifi 7 (they are only sold as a pair)
->> > >>>>>
->> > >>>>> https://shop.compex.com.sg/product-page/wlw7000e6
->> > >>>>>
->> > >>>>>
->> > >>>>> Pair of 2.4Ghz AND 5Ghz Wifi 7:
->> > >>>>>
->> > >>>>> https://shop.compex.com.sg/product-page/wlw7000e5
->> > >>>>>
->> > >>>>>
->> > >>>>> These are M.2 E-Key and 4x4 MIMO antenna modules, I am building =
-2
->> > >>>>> routers using Dell R730xd machines. Because I have two 6GHz
->> > >>>>> modules, one will go in each machine. I have some old Compex wif=
-i
->> > >>>>> 5 modules that I will put in one of the servers, while the other
->> > >>>>> server will house NEW 2.4, 5, and 6 Ghz Wifi 7 modules.
->> > >>>>>
->> > >>>>> There is no M.2 E-Key connectors on these machines (as it is
->> > >>>>> generic older generation hardware), so I am using an M.2 E-Key t=
-o
->> > >>>>> PCIe riser cable from ADT link to convert the M.2 E-Key to PCIe:
->> > >>>>>
->> > >>>>> https://www.adt.link/product/R15V4.html=C2=A0 (I will need three=
- of
->> > >>>>> these, one for each module)
->> > >>>>>
->> > >>>>>
->> > >>>>> This will allow connection of the wifi module to the PCIe bus.=
-=C2=A0 I
->> > >>>>> specifically chose this machine because it has 3 x16 PCIe 3.0, a=
-nd
->> > >>>>> 3 x8 Pcie 3.0
->> > >>>>>
->> > >>>>> To maximize throughput, these modules need to be connected to a
->> > >>>>> PCIe 3.0 bus per Compex
->> > >>>>>
->> > >>>>> Because these modules only need a x1 connection to the PCIe bus,
->> > >>>>> all three
->> > >>>>> x8 slots will be used for each of the 3 wifi modules.
->> > >>>>>
->> > >>>>> You can purchase a premade board and wifi module bundle from
->> > >> Compex
->> > >>>>> for around $1200, but used my own server hardware because I want=
-ed
->> > >>>>> to customize my WAN and LAN interfaces, and use all three module=
-s
->> > >>>>> in ONE machine (no pre-made board can do this from what I have
->> > >>>>> researched), so I only purchased the modules only instead of a
->> > >>>>> pre-made
->> > >> board and modules.
->> > >>>>>
->> > >>>>> I have pictures of this evolving setup and there are specific
->> > >>>>> reasons for choosing this machine.=C2=A0 Keep in mind these modu=
-les
->> > >>>>> require an external 5V power supply which will be supplied by 5V
->> > >>>>> SATA power connectors - I am still trying to figure this out, bu=
-t
->> > >>>>> these WiFi 7 modules do come with power connectors soldered onto
->> > >>>>> the board unlike the previous generation where you had to solder
->> > >>>>> on
->> > >> power contacts yourself.
->> > >>>>>
->> > >>>>> If you are interested, I can take pictures for you so that you c=
-an
->> > >>>>> see first hand how the setup looks.=C2=A0 I can guarantee the ca=
-bles
->> > >>>>> work since I am able to detect the wireless modules via lspci an=
-d
->> > >>>>> lshw commands as it successfully connects to.. and is powered by=
-=2E..
->> > >>>>> the PCIe bus.=C2=A0 I just cannot get the firmware
->> > >>>>> (board-2.bin) to load.
->> > >>>>>
->> > >>>>> Interestingly, I had brief success with the firmware loading on
->> > >>>>> Ubuntu 23.10, during some trials, but it was one time and I have
->> > >>>>> been unable to recreate this.=C2=A0 I'm not sure what I did to g=
-et it to work.
->> > >>>>>
->> > >>>>> One final note, this router is using a server platform as it wil=
-l
->> > >>>>> house 3 wifi modules (2.4/5/6 wifi 7), a 2x 100GBe ethernet LAN,
->> > >>>>> 4x 10GB LAN (for a separate subnet), 2x 10GB WAN inputs, and 100=
-GB
->> > >>>>> Inifinband connectivity to an Inifiniband switch.=C2=A0 It will =
-also
->> > >>>>> house VMs for reverse proxy and VPN so it had 2x Xeon E5-26790 V=
-4
->> > >>>>> and 128GB DDR4 ECC RAM.=C2=A0 This unit is completely modular an=
-d any
->> > >>>>> part can be upgraded at any time. This is why I went with this
->> > >>>>> setup.=C2=A0 All of this is contained in one machine, no separat=
-e
->> > >>>>> access point - the wifi is built into the router just like a
->> > >>>>> residential router.=C2=A0 The antennas will be connected directl=
-y to
->> > >>>>> the server via u.fl to SMA connectors for each card (each card
->> > >>>>> having 4 antennas for a
->> > >> total of 12 antennas connected to the machine).
->> > >>>>>
->> > >>>>>
->> > >>>>>
->> > >>>>> A few more points, the .zst files appear to be some sort of new
->> > >>>>> compression technology that the stock Ubuntu 24.04 ships with.
->> > >>>>> The files are in this format by default in the WCN directory und=
-er
->> > >>>>> /lib/firmware/ath12k.=C2=A0 There are NO .bin files.
->> > >>>>>
->> > >>>>> Also Interestingly, the ath12k driver is also in this format
->> > >>>>> "ath12k.ko.zst" in the modules section and decompressing it to t=
-he
->> > >>>>> .ko extension seems to disable the driver.=C2=A0This is confirme=
-d using
->> > >> "modinfo ath12k"
->> > >>>>>
->> > >>>>> Again, sorry for the long winded description.=C2=A0 I work as an
->> > >>>>> Emergency room physician by trade, so I am not always near my
->> > >>>>> machines and can only work on this project in my free time.=C2=
-=A0 This
->> > >> wireless module is the last hurdle.
->> > >>>>>
->> > >>>>> All of this is very confusing compared to the ath10k which seeme=
-d
->> > >>>>> so much more straightforward.
->> > >>>>>
->> > >>>>> All the best, and thank you so much for your reply.=C2=A0 I can =
-forward
->> > >>>>> the contacts from compex that I spoke with if you so desire.
->> > >>>>>
->> > >>>>> I wanted to respond to your email as I am grateful you have take=
-n
->> > >>>>> time out of your schedule to reply to my message. I do have some
->> > >>>>> questions regarding the specifics of rebuilding the kernel, but
->> > >>>>> will address that in=C2=A0 a separate email so that noobs like m=
-e won't
->> > >>>>> have to
->> > >> go through this.
->> > >>>>>
->> > >>>>> I have been following your github every since ath10k a few years
->> > >>>>> back, and your firmware was instrumental in helping me get my ho=
-me
->> > >>>>> wired/wifi router project off the ground.=C2=A0 My current wifi =
-router
->> > >>>>> is actually a desktop using mini-pcie wifi modules attached
->> > >>>>> directly to the
->> > >> desktop PCIe bus.
->> > >>>>>
->> > >>>>> Prashant Gupta MD/MPH
->> > >>>>>
->> > >>>>>
->> > >>>>> On Mon, 20 May 2024 12:54:18 +0300, Kalle Valo wrote:
->> > >>>>>
->> > >>>>>>> "pgupta@hindutool.com" writes:
->> > >>>>>>>
->> > >>>>>>>> I have been reading through the various posts, and while I
->> > >>>>>>>> found someone who reported the exact same problem, I was
->> > unable
->> > >>>>>>>> to find a response from anyone who could present a solution
->> > >>>>>>>>
->> > >>>>>>>> I have a Compex WLW7000E6
->> > >>>>>>>
->> > >>>>>>> Any recommendations from where it would be easiest to order su=
-ch
->> > >>>>> board?
->> > >>>>>>> I'm based in Europe and would like to get one.
->> > >>>>>>>
->> > >>>>>>> Is the board otherwise plug&play to an M.2 E-key slot or does =
-it
->> > >>>>>>> need something special?
->> > >>>>>>>
->> > >>>>>>>> and am using the latest kernel version 6.8.0-31-generic (ubun=
-tu
->> > >>>>>>>> 24.04
->> > >>>>>>>> LTS)
->> > >>>>>>>
->> > >>>>>>> BTW in general we don't support distro kernels:
->> > >>>>>>>
->> > >>>>>>> https://linux-regtracking.leemhuis.info/post/frequent-reasons-=
-wh
->> > >>>>>>> y-lin
->> > >>>>>>> ux-kernel-bug-reports-are-ignored/#your-kernel-was-apparently-=
-bu
->> > >>>>>>> ilt-b y-a-linux-distributor-or-hardware-vendor
->> > >>>>>
->> > >>>>>>>
->> > >>>>>>>> Despite having the requisite files in
->> > >>>>> /lib/firmware/ath12k/QCN9274/hw2.0:
->> > >>>>>>>>
->> > >>>>>>>> -rw-r--r-- 1 root root 8241152 May 19 23:47 amss.bin
->> > >>>>>>>> -rw-r--r-- 1 root root 2821564 May 20 00:03 amss.bin.zst
->> > >>>>>>>> -rw-r--r-- 1 root root 382856 May 20 00:03 board-2.bin
->> > >>>>>>>> -rw-r--r-- 1 root root =C2=A0 21517 May 20 00:03 board-2.bin=
-=2Ezst
->> > >>>>>>>> -rw-r--r-- 1 root root=C2=A0 421888 May 19 23:47 m3.bin
->> > >>>>>>>> -rw-r--r-- 1 root root=C2=A0 139662 May 20 00:03 m3.bin.zst
->> > >>>>>>>> -rw-r--r-- 1 root root=C2=A0=C2=A0 10699 May 20 00:03 Notice=
-=2Etxt.zst
->> > >>>>>>>> -rw-r--r-- 1 root root=C2=A0=C2=A0 24310 May 19 23:47 regdb=
-=2Ebin
->> > >>>>>>>> -rw-r--r-- 1 root root=C2=A0=C2=A0=C2=A0 3187 May 19 23:47 re=
-gdb.bin.zst
->> > >>>>>>>>
->> > >>>>>>>> I continue to receive the following errors:
->> > >>>>>>>>
->> > >>>>>>>> [=C2=A0=C2=A0=C2=A0 5.885930] ath12k_pci 0000:83:00.0: BAR 0 =
-[mem
->> > >>>>>>>> 0xc8000000-0xc81fffff 64bit]: assigned [=C2=A0=C2=A0=C2=A0 5=
-=2E886287]
->> > >>>>>>>> ath12k_pci
->> > >>>>>>>> 0000:83:00.0: MSI vectors: 16 [=C2=A0=C2=A0=C2=A0 5.886294] a=
-th12k_pci
->> > >>>>>>>> 0000:83:00.0: Hardware name: qcn9274 hw2.0 [=C2=A0=C2=A0=C2=
-=A0 6.745247]
->> > >>>>>>>> ath12k_pci 0000:83:00.0: memory type 10 not supported [
->> > >>>>>>>> 6.750101] ath12k_pci 0000:83:00.0: chip_id 0x0 chip_family 0x=
-b
->> > >>>>>>>> board_id 0xff soc_id 0x401a2200 [=C2=A0=C2=A0=C2=A0 6.750110]=
- ath12k_pci
->> > >>>>>>>> 0000:83:00.0: fw_version 0x10098b57 fw_build_timestamp
->> > >>>>>>>> 2022-09-19
->> > >>>>>>>> 18:18 fw_build_id
->> > >>>>>>>> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.0-02903-
->> > >>>>> QCAHKSWPL_SILICONZ-1
->> > >>>>>>>> [=C2=A0=C2=A0=C2=A0 6.761065] ath12k_pci 0000:83:00.0: failed=
- to fetch board
->> > >>>>>>>> data for
->> > >>>>>>>> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
->> > >>>>>>>> ath12k/QCN9274/hw2.0/board-2.bin [=C2=A0=C2=A0=C2=A0 6.761212=
-] ath12k_pci
->> > >>>>>>>> 0000:83:00.0: failed to fetch board-2.bin or board.bin from
->> > >>>>>>>> QCN9274/hw2.0 [=C2=A0=C2=A0=C2=A0 6.761247] ath12k_pci 0000:8=
-3:00.0: qmi
->> > >>>>>>>> failed to load bdf:
->> > >>>>>>>> [=C2=A0=C2=A0=C2=A0 6.761250] ath12k_pci 0000:83:00.0: qmi fa=
-iled to load
->> > >>>>>>>> board data file:-2
->> > >>>>>>>
->> > >>>>>>> This means that board-2.bin is missing the board file for your=
- device.
->> > >>>>>>> For AP devices like QCN9274 board files handling is difficult,
->> > >>>>>>> usually Device Tree is the only way to get automatic board fil=
-e
->> > >>>>>>> loading
->> > >>>>> working.
->> > >>>>>>>
->> > >>>>>>> Did you get any software with your the board? Do you know if t=
-he
->> > >>>>>>> board is calibrated or not?
->> > >>>>>>>
->> > >>>>>>> Can you run:
->> > >>>>>>>
->> > >>>>>>> find /lib/firmware/ath12k/ -type f | xargs md5sum
->> > >>>>>>>
->> > >>>>>>> Also read:
->> > >>>>>>>
->> > >>>>>>> https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugre=
-po
->> > >>>>>>> rt
->> > >>>>>
->> > >>>>>>>
->> > >>>>>>>> but he zst files were copied over from the WCN7850 directory=
-=2E
->> > >>>>>>>
->> > >>>>>>> I do not know what these zst files are. And don't copy anythin=
-g
->> > >>>>>>> from
->> > >>>>>>> WCN7850 directory, the files are not compatible. The best is t=
-o
->> > >>>>>>> run 'make install' within ath12k-firmware.git repository,
->> > >>>>>>> manually fixing files will end up into problems.
->> > >>>>>>>
->> > >>>>>>> --
->> > >>>>>>> https://patchwork.kernel.org/project/linux-wireless/list/
->> > >>>>>
->> > >>>>>>>
->> > >>>>>>> https://wireless.wiki.kernel.org/en/developers/documentation/s=
-ub
->> > >>>>>>> mitti
->> > >>>>>>> ngpatches
->> >
->> >
->> > --
->> > Ben Greear
->> > Candela Technologies Inc http://www.candelatech.com
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
