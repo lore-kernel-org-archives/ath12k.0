@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47D59C25B75
-	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 07:49:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0FA4C25B74
+	for <ath12k@archiver.kernel.org>; Tue, 21 May 2024 07:54:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CEc0QuVBUd2o7X360MpDYm930EmDXJmlCM84QFnICZU=; b=IfOHzyIHIinAnYMBcyyOeyGmdC
-	eQfV41u2d7FIEByPfrbT5/m/LQiMH+ed/ltd4uRzccXrTmCM4dPA50lvk1hftMyRLzWBkc/DSbbq7
-	i+9Ot2FrhbKgiBb1jMGespcjXq1zMsLi+EsSsGlPNNtFTAdUfhiD96v1Mxm1/fCaBANKKT1pBIbSO
-	9+iMUUD4hK9NosGIgIFD1Cz7gnRIHTmt3dTMsOfmk7e+rVtXBDznBspSGosGMzvEBYpUnEn3lwAFV
-	KoUqQrOQX/EZolk4dGFkM03jeo5U1BYrKxdj8VKVMtuPHrBZqwOWPc1raygS037ah5dLJa2JHoBc2
-	FMqSWIxQ==;
+	bh=kTxB8D4oRbHgus1TGCmKjcQOZw8ddb85M/Tm8Q3vHGE=; b=YfaN5n2TEwaPUXq7AVrjncy28O
+	jnQG4I+NWpXbWq26T/ZOyH6E6SGRMVXeRR+iE6LLWpBCyX4iLbMUGfwXoj38eqcEVyi+zA+GDWVSM
+	7mFzOo1BcHAijn3RGh0N11LSm7HBXCsybBTlb9BXFdb+frw5bidUrFBoaBL4s0n11mQHIU6E8UzQU
+	7P+TJhjpkGVkyhA5GVIokqvid786QqHZOJP2kCedO3igG332WtiXsRuATiK6SAjPKMqWBdS7ebVHy
+	b0SowjmPYXOmhm7Vk8O0bvnkN06V2o8810UMyBi4k9ANcnVmD4Kg7R6LkGU9/GrivYaOjacQWfx9A
+	BlEsCA2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9KFl-0000000Gei6-3mPf
+	id 1s9KK0-0000000GgEv-1tQa
 	for ath12k@archiver.kernel.org;
-	Tue, 21 May 2024 07:49:45 +0000
+	Tue, 21 May 2024 07:54:08 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s9KFi-0000000GehP-0DyK
+	id 1s9KJx-0000000GgDN-0rxg
 	for ath12k@lists.infradead.org;
-	Tue, 21 May 2024 07:49:44 +0000
+	Tue, 21 May 2024 07:54:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id CEA57CE0E58;
-	Tue, 21 May 2024 07:49:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 052A8C2BD11;
-	Tue, 21 May 2024 07:49:37 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 89B2BCE0E58;
+	Tue, 21 May 2024 07:54:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8DB1C2BD11;
+	Tue, 21 May 2024 07:54:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716277779;
-	bh=1pUKTv82FJURgsr0jI314SPDaLC5Gow+Yuxa7TBb6gY=;
+	s=k20201202; t=1716278041;
+	bh=d30O1iXiP/3oLi5EUYET0mR7EIn9+D7O3ZNh0bGwZfE=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=WjQL6EkzTNzIp6IqPBUKkV7iuiiX5ozhGvm+nFryRRfFqIliH2UmoAk40dK9KLi4c
-	 j64vVj/QuaFRyyARbZXnKBifbEcF+xAGEBesPHmTQLupqGu083n8W0z7epYulcU/fj
-	 x4Cjkp1Ckm5vgUnBuRPJXZ3lPg6yJif9NbmmLUbS4ClDMm9+lwAjww8IMSQegtLSD4
-	 EqiMLyFeN7gmDVuxtMkDIHCRha58MiVxLl0CXgDpAxaJQu5lOTXxHTRHKC/9Tnm0rq
-	 cbugK7PhfEkbO2a77xzn5JimRoxd6TBSOoAsWN2rpyphtru3zaW3vl7PTG8JfbOen/
-	 oqEaVpMtJr34g==
+	b=OqJAPeK2RX0K1Jlk924blA+4kRTR0WGfI+b08xWL1ESb3NEQnoMsQUmL8yAY0EUPI
+	 chgCP8z9z9D9EO6yRCcJ9viWlI2evxidXxfIAmUcIR1pCHXpnckmXesxGOD1nk02N3
+	 w3YIq8amga80Asqg335cC9juPKJYK5z1CnVhAAqP/m3cXa6vb2dQ8n0b3zf/aDXXhw
+	 6x3L4JksH5d9nN+odVtT4SxNUi/Z2eq981qH0viXDEHTQKo4tenChWDWbsJeAn1mSW
+	 aWVuOjIIwCnVTkpy7+TQ7JhUS+mxnip6TgaoYhN7zXgqLS/GS6kQi+WahEwhIWprhK
+	 gFL9fOo5VnpkA==
 From: Kalle Valo <kvalo@kernel.org>
 To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org,  Dinesh
  Karthikeyan <quic_dinek@quicinc.com>
-Subject: Re: [PATCH v2 1/5] wifi: ath12k: Add support to enable
- debugfs_htt_stats
+Subject: Re: [PATCH v2 2/5] wifi: ath12k: Add htt_stats_dump file ops support
 References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
-	<20240510050806.514126-2-quic_rgnanase@quicinc.com>
-Date: Tue, 21 May 2024 10:49:36 +0300
-In-Reply-To: <20240510050806.514126-2-quic_rgnanase@quicinc.com> (Ramya
-	Gnanasekar's message of "Fri, 10 May 2024 10:38:02 +0530")
-Message-ID: <87y183d2pb.fsf@kernel.org>
+	<20240510050806.514126-3-quic_rgnanase@quicinc.com>
+Date: Tue, 21 May 2024 10:53:59 +0300
+In-Reply-To: <20240510050806.514126-3-quic_rgnanase@quicinc.com> (Ramya
+	Gnanasekar's message of "Fri, 10 May 2024 10:38:03 +0530")
+Message-ID: <87ttird2i0.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240521_004942_510544_C817AA35 
-X-CRM114-Status: GOOD (  17.32  )
+X-CRM114-CacheID: sfid-20240521_005405_765376_6B398D30 
+X-CRM114-Status: GOOD (  19.97  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,9 +78,19 @@ Ramya Gnanasekar <quic_rgnanase@quicinc.com> writes:
 
 > From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 >
-> Create debugfs_htt_stats file when ath12k debugfs support is enabled.
-> Add basic ath12k_debugfs_htt_stats_init and handle htt_stats_type
-> file operations.
+> Add dump_htt_stats file operation to dump the stats value requested
+> for the requested stats_type.
+> Stats sent from firmware will be cumulative. Hence add debugfs to reset
+> the requested stats type.
+>
+> Example with one ath12k device:
+>
+> ath12k
+> `-- pci-0000:06:00.0
+>     |-- mac0
+>         `-- htt_stats
+>         |-- htt_stats_type
+>         |-- htt_stats_reset
 >
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -89,101 +98,62 @@ Ramya Gnanasekar <quic_rgnanase@quicinc.com> writes:
 > Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 > Co-developed-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 > Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/core.h        |   2 +
+>  .../wireless/ath/ath12k/debugfs_htt_stats.c   | 202 ++++++++++++++++++
+>  .../wireless/ath/ath12k/debugfs_htt_stats.h   |  30 +++
+>  3 files changed, 234 insertions(+)
+>
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 3919bc828620..77c0842e5ab0 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -477,6 +477,8 @@ struct ath12k_fw_stats {
+>  struct ath12k_dbg_htt_stats {
+>  	enum ath12k_dbg_htt_ext_stats_type type;
+>  	u32 cfg_param[4];
+> +	u8 reset;
+> +	struct debug_htt_stats_req *stats_req;
 
-[...]
+Please document with a code comment how these are protected
 
-> +struct ath12k_dbg_htt_stats {
-> +	enum ath12k_dbg_htt_ext_stats_type type;
-> +	u32 cfg_param[4];
-> +	/* protects shared stats req buffer */
-> +	spinlock_t lock;
-> +};
+>  	/* protects shared stats req buffer */
+>  	spinlock_t lock;
 
-Is there a specific reason why a new lock is needed? Why not just use
-struct ath12k::data_lock?
+I'm guessing "stats req buffer" refers to struct
+ath12k_dbg_htt_stats::stats_req. But at least in
+ath12k_release_htt_stats() you are using conf_mutex for protection:
 
-> +
->  struct ath12k_debug {
->  	struct dentry *debugfs_pdev;
-> +	struct ath12k_dbg_htt_stats htt_stats;
->  };
->  
->  struct ath12k_per_peer_tx_stats {
-> diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-> index 8d8ba951093b..30a80f04d824 100644
-> --- a/drivers/net/wireless/ath/ath12k/debugfs.c
-> +++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-> @@ -6,6 +6,7 @@
->  
->  #include "core.h"
->  #include "debugfs.h"
-> +#include "debugfs_htt_stats.h"
->  
->  static ssize_t ath12k_write_simulate_radar(struct file *file,
->  					   const char __user *user_buf,
-> @@ -87,4 +88,6 @@ void ath12k_debugfs_register(struct ath12k *ar)
->  				    ar->debug.debugfs_pdev, ar,
->  				    &fops_simulate_radar);
->  	}
-> +
-> +	ath12k_debugfs_htt_stats_init(ar);
+static int ath12k_release_htt_stats(struct inode *inode,
+				    struct file *file)
+{
+	struct ath12k *ar = inode->i_private;
 
-Let's try to have consistent naming: ath12k_debugfs_htt_stats_register()
+	mutex_lock(&ar->conf_mutex);
+	kfree(file->private_data);
+	ar->debug.htt_stats.stats_req = NULL;
+	mutex_unlock(&ar->conf_mutex);
 
-> +static ssize_t ath12k_read_htt_stats_type(struct file *file,
-> +					  char __user *user_buf,
-> +					  size_t count, loff_t *ppos)
+	return 0;
+}
+
+> +static int ath12k_debugfs_htt_stats_req(struct ath12k *ar)
 > +{
-> +	struct ath12k *ar = file->private_data;
-> +	char buf[32];
-> +	size_t len;
+> +	struct debug_htt_stats_req *stats_req = ar->debug.htt_stats.stats_req;
+> +	enum ath12k_dbg_htt_ext_stats_type type = stats_req->type;
+> +	u64 cookie;
+> +	int ret, pdev_id = ar->pdev->pdev_id;
+> +	struct htt_ext_stats_cfg_params cfg_params = { 0 };
 > +
-> +	len = scnprintf(buf, sizeof(buf), "%u\n", ar->debug.htt_stats.type);
+> +	init_completion(&stats_req->htt_stats_rcvd);
 > +
-> +	return simple_read_from_buffer(user_buf, count, ppos, buf, len);
-> +}
+> +	stats_req->done = false;
+> +	stats_req->pdev_id = pdev_id;
 
-Access to ar->debug.htt_stats.type isn't protected in any way.
+The locking design is not clear for me yet but I suspect this function
+needs:
 
-> +
-> +static ssize_t ath12k_write_htt_stats_type(struct file *file,
-> +					   const char __user *user_buf,
-> +					   size_t count, loff_t *ppos)
-> +{
-> +	struct ath12k *ar = file->private_data;
-> +	enum ath12k_dbg_htt_ext_stats_type type;
-> +	unsigned int cfg_param[4] = {0};
-> +	int num_args;
-> +
-> +	char *buf __free(kfree) = kzalloc(count, GFP_KERNEL);
-> +	if (!buf)
-> +		return -ENOMEM;
-> +
-> +	if (copy_from_user(buf, user_buf, count))
-> +		return -EFAULT;
-> +
-> +	num_args = sscanf(buf, "%u %u %u %u %u\n", &type, &cfg_param[0],
-> +			  &cfg_param[1], &cfg_param[2], &cfg_param[3]);
-> +	if (!num_args || num_args > 5)
-> +		return -EINVAL;
-> +
-> +	if (type >= ATH12K_DBG_HTT_NUM_EXT_STATS)
-> +		return -E2BIG;
-> +
-> +	if (type == ATH12K_DBG_HTT_EXT_STATS_RESET)
-> +		return -EPERM;
-> +
-> +	ar->debug.htt_stats.type = type;
-> +	ar->debug.htt_stats.cfg_param[0] = cfg_param[0];
-> +	ar->debug.htt_stats.cfg_param[1] = cfg_param[1];
-> +	ar->debug.htt_stats.cfg_param[2] = cfg_param[2];
-> +	ar->debug.htt_stats.cfg_param[3] = cfg_param[3];
-> +
-> +	return count;
-> +}
-
-Same here with both type and cfg_param. Maybe it's ok to skip
-protection, I didn't do analysis yet, but this makes me suspicious.
+	lockdep_assert_held(&ar->conf_mutex);
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
