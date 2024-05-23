@@ -4,66 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC39CC25B79
-	for <ath12k@archiver.kernel.org>; Thu, 23 May 2024 12:55:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9029AC25B79
+	for <ath12k@archiver.kernel.org>; Thu, 23 May 2024 13:17:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NH5MqAH8ivRyv9bLoOfIcBVM00gTkUcxV9FFHpWaAt4=; b=UkStA4uUc2FH81pDFOIbJX5HOu
-	9znUHy1lLv4KsEBqW2Tjuv1tfJgLVCV9Ms5k6g0rv5TVoxAwJhB6jNLCdeEYwqKTRMvy/1+OSwy3j
-	nVGl9oXo/1010SOQOpGx/8dIaxcdgZ0Y0ntldi1Q5GZkFhQL55lnlKHCtL3rAKXQD2E8guFI9ek3k
-	/x9WmPKJgwYU1t3Es9+7g3ciwE60RM+hgrgXZCNhWec0sv18lRVXqGWR1VCpWXkhcDgaogJNj5hn+
-	ikNBcmXZobM1OUFDs4txiatqDmsg0usDaUXETKuB4LQ3FMS1tTzeM8CCmSgMORLU51qT89M8O4tnC
-	ixMrsfaQ==;
+	bh=3ecj33QZXZXVevJHdyLfH5OZKEAadHxrsR7tRQqP8K0=; b=czY6VXSeadX3KJCZ9PVKJH/bnW
+	/VAlvy+ENrsCK7q8jJ+msKSSq7GLEixELRLaNd9FcB39+/TKY1Uob9h7JTz/NdcS7QaHLB81+p29x
+	V7yNu3vMl8f5JwGdTegrzoQYIbOezw94qSzVMPRtBj3bXqwxX8hLWt5d7Zp6Ii7LYqbeXLJ2CtYH9
+	quPANibXlIsO/YdZGs7OoPEdnq5ivSpbJuyyPAv/PLl2VeteOUApRofEOOUQJdnXamzP8fiKmS41I
+	FSukTnZcmREKxBvrxhttBvImswKPaHHCiJ7kXUsH2TU9aZyGcUb7/+Aj4JQcs/veD2W8+VyTycrrG
+	xEXUxPQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sA7yl-00000006HiD-1vPC
+	id 1sA8JZ-00000006KuO-0yWu
 	for ath12k@archiver.kernel.org;
-	Thu, 23 May 2024 12:55:31 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 23 May 2024 13:17:01 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sA7yi-00000006Hhn-2G92
+	id 1sA8JW-00000006KtR-0kLl
 	for ath12k@lists.infradead.org;
-	Thu, 23 May 2024 12:55:29 +0000
+	Thu, 23 May 2024 13:16:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DDA7762DFE;
-	Thu, 23 May 2024 12:55:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 94A00C2BD10;
-	Thu, 23 May 2024 12:55:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1508862DF3;
+	Thu, 23 May 2024 13:16:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 011B4C2BD10;
+	Thu, 23 May 2024 13:16:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716468927;
-	bh=H7x7rZBnnIHpTamBE2p08RqJBe/ZOmnl1rL5sp92f+o=;
+	s=k20201202; t=1716470216;
+	bh=J5sH+IM11mBCk3fnWcNmwtCQ+GTlbAmt2HVgytd/hmc=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=Tn9j6Nu5RWnGvfsSGyOmDKzefvjhvyHI4uqR8rZPPlogww0Ou3J9BoJqwCkAubZtW
-	 qoeummKv2LkMNhUby0fAhy9O9qziJtmB6TLxoyb6EZlgifTJI8b4XsJZ9KGVLAfHnb
-	 AoqeQmqlhs4Z2kzSa7ZsX+fdqKSeRsVw2393jszKf4GYikJYYcKB9ihK1xEtpVav6C
-	 ITEmvJF253nv5613BVt4db7s1wwYFJtjijODLZl+0ZlzM2dzlqkCsMvDckF7MchgSJ
-	 lRkAyDrcuQOVKv87fVYrNuqlgDjksNNh792c3GTt0GNVuv+bK0q5N11Zed3zs98oe7
-	 Ofi0UsDiwZDbw==
+	b=emYKTxduxBpDO12T2xwVodY7YjreMBh9rc90N+1HiMMwq4BYKuneR4jiSMezbRv+v
+	 eshWiyqm5GVTsJPBPmqxGQh0B0luEo4WppDy3h66d0KQGNF+vhsQ/OCUnoCa24FUj4
+	 vQYufD+/mAT2lAtLQ6Vj+ARuiYHetzdhldo6dYes+1VWrevYXybWaWPOGjsi46iQ2S
+	 U4IkV5UqqdiVqsI4RMsMP1hy4dAAlmZ+q6ZJClVen3EvvsMP9RP9qAlubqlTSv97yf
+	 QIwbHhwH/+FE5uWJo6Bd2NcoZNdvyMlFkvIWInExWEePPzsIsXIIzyr4UEVrlTO6LL
+	 CkhRJFjA2HeXw==
 From: Kalle Valo <kvalo@kernel.org>
-To: Lingbo Kong <quic_lingbok@quicinc.com>
-Cc: Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v2 3/5] wifi: ath12k: Fix Pdev id in HTT stats request
- for WCN7850
-References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
-	<20240510050806.514126-4-quic_rgnanase@quicinc.com>
-	<87pltfd2bt.fsf@kernel.org>
-	<667cea80-9b62-4ca4-9d28-c5940582832a@quicinc.com>
-Date: Thu, 23 May 2024 15:55:24 +0300
-In-Reply-To: <667cea80-9b62-4ca4-9d28-c5940582832a@quicinc.com> (Lingbo Kong's
-	message of "Thu, 23 May 2024 20:34:51 +0800")
-Message-ID: <87ed9sbscj.fsf@kernel.org>
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 2/2] wifi: ath12k: improve the rx descriptor error
+ information
+References: <20240516000807.1704913-1-quic_periyasa@quicinc.com>
+	<20240516000807.1704913-3-quic_periyasa@quicinc.com>
+Date: Thu, 23 May 2024 16:16:53 +0300
+In-Reply-To: <20240516000807.1704913-3-quic_periyasa@quicinc.com> (Karthikeyan
+	Periyasamy's message of "Thu, 16 May 2024 05:38:07 +0530")
+Message-ID: <87a5kgbrcq.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240523_055528_655606_AB97C7D7 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240523_061658_406973_4AF64AC3 
+X-CRM114-Status: GOOD (  14.84  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,32 +74,59 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Lingbo Kong <quic_lingbok@quicinc.com> writes:
+Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
 
->>> +struct ath12k_vif *ath12k_mac_get_vif_up(struct ath12k_base *ab)
->>> +{
->>> +	struct ath12k *ar;
->>> +	struct ath12k_pdev *pdev;
->>> +	struct ath12k_vif *arvif;
->>> +	int i;
->>> +
->>> +	for (i = 0; i < ab->num_radios; i++) {
->>> +		pdev = &ab->pdevs[i];
->>> +		ar = pdev->ar;
->>> +		list_for_each_entry(arvif, &ar->arvifs, list) {
->>> +			if (arvif->is_up)
->>> +				return arvif;
->>> +		}
->>> +	}
->>> +
->>> +	return NULL;
->>> +}
->> I'm not seeing any protection here, is that on purpose?
+> The ath12k_dp_get_rx_desc() failure log currently contains the same
+> information across multiple Rx data paths and lacks sufficient detail for
+> debugging purposes. To address this, change the ath12k_dp_get_rx_desc()
+> failure log to include cookie information along with Rx path details.
+> This will provide more specific data for debugging purposes.
 >
-> you means there need to add lockdep_assert_held(&ar->conf_mutex)?
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 HW2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/dp_rx.c | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+> index 37205e894afe..85ce6e840efa 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+> @@ -2625,7 +2625,7 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
+>  		if (!desc_info) {
+>  			desc_info = ath12k_dp_get_rx_desc(ab, cookie);
+>  			if (!desc_info) {
+> -				ath12k_warn(ab, "Invalid cookie in manual desc retrieval");
+> +				ath12k_warn(ab, "Rx, invalid cookie 0x%x\n", cookie);
+>  				continue;
+>  			}
+>  		}
+> @@ -3323,7 +3323,7 @@ ath12k_dp_process_rx_err_buf(struct ath12k *ar, struct hal_reo_dest_ring *desc,
+>  	if (!desc_info) {
+>  		desc_info = ath12k_dp_get_rx_desc(ab, cookie);
+>  		if (!desc_info) {
+> -			ath12k_warn(ab, "Invalid cookie in manual desc retrieval");
+> +			ath12k_warn(ab, "Rx Exception, invalid cookie 0x%x\n", cookie);
+>  			return -EINVAL;
+>  		}
+>  	}
+> @@ -3742,7 +3742,8 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
+>  		if (!desc_info) {
+>  			desc_info = ath12k_dp_get_rx_desc(ab, err_info.cookie);
+>  			if (!desc_info) {
+> -				ath12k_warn(ab, "Invalid cookie in manual desc retrieval");
+> +				ath12k_warn(ab, "WBM Rx err, invalid cookie 0x%x\n",
+> +					    err_info.cookie);
+>  				continue;
+>  			}
+>  		}
 
-I mean what's the locking design here? Is it safe to concurrectly access
-ab->pdevs and arvif->is_up?
+In the error messages please try to use full english sentences to make
+them at somehow useful to users. I tried add those now, please check:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=4033754ea78119ede328f09005b8ae1e9dd3f4f2
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
