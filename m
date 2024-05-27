@@ -4,68 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47839C25B74
-	for <ath12k@archiver.kernel.org>; Mon, 27 May 2024 09:39:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23858C25B74
+	for <ath12k@archiver.kernel.org>; Mon, 27 May 2024 10:42:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AwpoCRMzJ8WKNrv7RLuaRsOpeZ9XD9qzNw8j3DzhOfo=; b=i+LNiF237k0DPnlfOQMCfKvGvq
-	9qJ9/dWItCsP81FSw5i6YmUrW/mARwwbMj595XP6jqkMLzO2i5NGfCpFVud8R72gD8I9ueku1u4Wd
-	Nl0v3NI91VzWpfExqe1VyPi4o9Zu3uCelPCNJQAPQO//Wbd/JdxALEFozELbcs0zRd5k2lAFg9FUl
-	lAyYl+sAk+iSrKWPEkSnSQTx1zc8q1ja6SaUGBdFBBAaz6ZdRCdzZDR68vKLjpMJDv0/Tz1133jgg
-	nGLlUVZZDdwDc7sUfo6GibnauO1LVZ0qjqbmfvTLRz/9E6qye8MK1W46Kt1S+cuYccB+dj8tYzKhc
-	cvtuBPXw==;
+	bh=k4cnGNkaK+HeyWfczK1r7lu3cwg2RZlYkGqsqhnn1c4=; b=PvaQJiYFfTqbLC6ysKio/BLvCK
+	NkS59NvGDVOwGhS9sHwFzTFCOUam86P3B+IC5uoTOhH057FjlHTp+BDA9ZQMMz0HRsgjBIbY87ANF
+	qUFAEMdwi3H7c61BM0BMeXIpGN1MYnTuce4v92OrejJPx1etl7h9ZUEoyT3xPqycVR54lTWl3//bt
+	SpFWJN3il9oRMLny5XF4xdO9mNqKtgEBrJSlO3YHDaAFohMA65uzMTOzdwYMAvObvo0mCXoha5ywN
+	t7qkU83irhO8qV9yvQgCv/j20o7kbpaKTXuKpKP7EE6OSrfI+79QXAA96i31UQhnsfU0RXlFqdkhK
+	ODnRMKPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBWp0-0000000ESas-3uw3
+	id 1sBXoN-0000000EccS-2AP7
 	for ath12k@archiver.kernel.org;
-	Mon, 27 May 2024 09:39:14 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 27 May 2024 10:42:39 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBWoy-0000000ESYR-06a2
+	id 1sBXoK-0000000EcbW-3Y98
 	for ath12k@lists.infradead.org;
-	Mon, 27 May 2024 09:39:13 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44R172pq021242;
-	Mon, 27 May 2024 09:39:07 GMT
+	Mon, 27 May 2024 10:42:38 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44R0QCMu020371;
+	Mon, 27 May 2024 10:42:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	AwpoCRMzJ8WKNrv7RLuaRsOpeZ9XD9qzNw8j3DzhOfo=; b=KEgLBtaUKZegRYun
-	56lM6sVqD1pzoucvLnqn8T/50IzJ+/lhstMOtq+q55fOuAkIaUdoW1ozf/HgPOPw
-	pmBMmSz1rkm1s45ra4WiTGHujMiji9PIagRtmT7E1fbF4Ssr4X4AqRTtgojXaFPI
-	DMxCbTmxMI/sB4dZeNv57ujgbsXyFgzmu2cReDeXXli18ZZh2WOnvr58vLy7dtYk
-	32U9C52ZYAEcF7y5ufgJRHXM6WZ0b3W8eDJeustPCpTOn0nwpvaK9UxSNjZe/Vda
-	MLSNio/LfsbshyOScOEZql8h1BGmzva37GpnM/YVKAta5NUfABkDq0Ht/EZ1a6gY
-	/XI/UA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yb9yj36ff-1
+	k4cnGNkaK+HeyWfczK1r7lu3cwg2RZlYkGqsqhnn1c4=; b=DW19be9BjFayDPqx
+	wXS4CxeAu9LZVembPgzgmEBsN05c2ciAT8VSvhxJ64s4cKoM7XtzDwiUmBKkYlAO
+	B7HWSBKPj61nFxbIe+zn35m54MNnqaeRKfGMPw5TWZwYnTPfUvfAdeLPX96qmuu5
+	plucyFKW7NErQdMjn8ykHmvwFCouL7jwkPqdb3JGwK8nQqfUEj1+Dz+dU7V2grVW
+	DcU1QoEGd8kVtKxZoGGw2h1MPmTsaieQEi6YjclfS1w4vVK7TD2NYsRdzqhY3pP3
+	JD/xVzmm5E7Er9p55qtrCzIGd380H4e2A6isSl+BvLfJPyhHaN42bayuq89dxzT2
+	3DMv9Q==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yba2h3ajg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 May 2024 09:39:07 +0000 (GMT)
+	Mon, 27 May 2024 10:42:32 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44R9d6mr008857
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44RAgUBm014665
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 May 2024 09:39:06 GMT
+	Mon, 27 May 2024 10:42:30 GMT
 Received: from [10.152.203.249] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 27 May
- 2024 02:39:04 -0700
-Message-ID: <024e2594-309a-4549-9c69-d527717c5dd4@quicinc.com>
-Date: Mon, 27 May 2024 15:08:40 +0530
+ 2024 03:42:28 -0700
+Message-ID: <9117445e-10b8-4872-903d-fa23f7733f8f@quicinc.com>
+Date: Mon, 27 May 2024 16:12:25 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/5] wifi: ath12k: Dump additional Tx PDEV HTT stats
+Subject: Re: [PATCH v2 1/5] wifi: ath12k: Add support to enable
+ debugfs_htt_stats
 To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Dinesh
+ Karthikeyan <quic_dinek@quicinc.com>
 References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
- <20240510050806.514126-6-quic_rgnanase@quicinc.com>
- <87le43d26u.fsf@kernel.org>
+ <20240510050806.514126-2-quic_rgnanase@quicinc.com>
+ <87y183d2pb.fsf@kernel.org>
 Content-Language: en-US
 From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-In-Reply-To: <87le43d26u.fsf@kernel.org>
+In-Reply-To: <87y183d2pb.fsf@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -73,19 +76,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 4bduNSIneAtzH_cuIE_e4_Y8NZHDDCOx
-X-Proofpoint-ORIG-GUID: 4bduNSIneAtzH_cuIE_e4_Y8NZHDDCOx
+X-Proofpoint-GUID: 5i9and1Z1nqKg8neKbKRtRjQx7bT_xBl
+X-Proofpoint-ORIG-GUID: 5i9and1Z1nqKg8neKbKRtRjQx7bT_xBl
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
  definitions=2024-05-26_09,2024-05-24_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- adultscore=0 mlxscore=0 phishscore=0 mlxlogscore=999 spamscore=0
- clxscore=1011 impostorscore=0 bulkscore=0 suspectscore=0 malwarescore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2405270077
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 phishscore=0
+ spamscore=0 malwarescore=0 bulkscore=0 mlxscore=0 impostorscore=0
+ priorityscore=1501 suspectscore=0 mlxlogscore=999 lowpriorityscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2405270087
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240527_023912_226200_5375CA22 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20240527_034236_932731_E27106A7 
+X-CRM114-Status: GOOD (  17.58  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,108 +105,124 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 5/21/2024 1:30 PM, Kalle Valo wrote:
+On 5/21/2024 1:19 PM, Kalle Valo wrote:
 > Ramya Gnanasekar <quic_rgnanase@quicinc.com> writes:
 > 
->> Support to dump additional Tx PDEV stats through HTT stats debugfs.
->> Following stats dump are supported:
->>         1. PDEV control path stat to dump Tx management frame count
->>         2. Tx PDEV SIFS histogram stats
->>         3. Tx MU MIMO PPDU stats for 802.11ac, 802.11ax and 802.11be
+>> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 >>
->> Sample Output:
->> --------------
->> echo 1 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
->> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
->> HTT_TX_PDEV_STATS_CMN_TLV:
->> mac_id = 0
->> comp_delivered = 0
->> self_triggers = 13
->> ......
->> ......
->> HTT_TX_PDEV_STATS_CTRL_PATH_TX_STATS:
->> fw_tx_mgmt_subtype =  0:1, 1:0, 2:0, 3:0, 4:38, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:1, 12:0, 13:7, 14:0, 15:0,
->>
->> HTT_TX_PDEV_STATS_SIFS_HIST_TLV:
->> sifs_hist_status =  0:237, 1:185, 2:1, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->>
->> HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:
->> ac_mu_mimo_num_seq_posted_nr4 = 0
->> ac_mu_mimo_num_ppdu_posted_per_burst_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ac_mu_mimo_num_ppdu_completed_per_burst_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ac_mu_mimo_num_seq_term_status_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
->>
->> ac_mu_mimo_num_seq_posted_nr8 = 0
->> ac_mu_mimo_num_ppdu_posted_per_burst_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ac_mu_mimo_num_ppdu_completed_per_burst_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ac_mu_mimo_num_seq_term_status_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
->>
->> ax_mu_mimo_num_seq_posted_nr4 = 0
->> ax_mu_mimo_num_ppdu_posted_per_burst_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ax_mu_mimo_num_ppdu_completed_per_burst_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ax_mu_mimo_num_seq_term_status_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
->>
->> ax_mu_mimo_num_seq_posted_nr8 = 0
->> ax_mu_mimo_num_ppdu_posted_per_burst_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ax_mu_mimo_num_ppdu_completed_per_burst_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> ax_mu_mimo_num_seq_term_status_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
->>
->> be_mu_mimo_num_seq_posted_nr4 = 0
->> be_mu_mimo_num_ppdu_posted_per_burst_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> be_mu_mimo_num_ppdu_completed_per_burst_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> be_mu_mimo_num_seq_term_status_nr4 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
->>
->> be_mu_mimo_num_seq_posted_nr8 = 0
->> be_mu_mimo_num_ppdu_posted_per_burst_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> be_mu_mimo_num_ppdu_completed_per_burst_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0,
->> be_mu_mimo_num_seq_term_status_nr8 =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
+>> Create debugfs_htt_stats file when ath12k debugfs support is enabled.
+>> Add basic ath12k_debugfs_htt_stats_init and handle htt_stats_type
+>> file operations.
 >>
 >> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 >> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 >>
+>> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+>> Co-developed-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 >> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 > 
 > [...]
 > 
->> +static inline void
->> +ath12k_htt_print_tx_pdev_mu_ppdu_dist_stats_tlv(const void *tag_buf,
->> +						struct debug_htt_stats_req *stats_req)
+>> +struct ath12k_dbg_htt_stats {
+>> +	enum ath12k_dbg_htt_ext_stats_type type;
+>> +	u32 cfg_param[4];
+>> +	/* protects shared stats req buffer */
+>> +	spinlock_t lock;
+>> +};
+> 
+> Is there a specific reason why a new lock is needed? Why not just use
+> struct ath12k::data_lock?
+
+We can use ath12k::data_lock as well since that is also per radio. I
+will check and address in next version.
+
+> 
+>> +
+>>  struct ath12k_debug {
+>>  	struct dentry *debugfs_pdev;
+>> +	struct ath12k_dbg_htt_stats htt_stats;
+>>  };
+>>  
+>>  struct ath12k_per_peer_tx_stats {
+>> diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
+>> index 8d8ba951093b..30a80f04d824 100644
+>> --- a/drivers/net/wireless/ath/ath12k/debugfs.c
+>> +++ b/drivers/net/wireless/ath/ath12k/debugfs.c
+>> @@ -6,6 +6,7 @@
+>>  
+>>  #include "core.h"
+>>  #include "debugfs.h"
+>> +#include "debugfs_htt_stats.h"
+>>  
+>>  static ssize_t ath12k_write_simulate_radar(struct file *file,
+>>  					   const char __user *user_buf,
+>> @@ -87,4 +88,6 @@ void ath12k_debugfs_register(struct ath12k *ar)
+>>  				    ar->debug.debugfs_pdev, ar,
+>>  				    &fops_simulate_radar);
+>>  	}
+>> +
+>> +	ath12k_debugfs_htt_stats_init(ar);
+> 
+> Let's try to have consistent naming: ath12k_debugfs_htt_stats_register()
+
+Sure Kalle. I will take care in next version.
+> 
+>> +static ssize_t ath12k_read_htt_stats_type(struct file *file,
+>> +					  char __user *user_buf,
+>> +					  size_t count, loff_t *ppos)
 >> +{
->> +	const struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv *htt_stats_buf = tag_buf;
->> +	char *mode;
->> +	u8 j, hw_mode, i, str_buf_len;
->> +	u8 *buf = stats_req->buf;
->> +	u32 len = stats_req->buf_len;
->> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
->> +	u32 stats_value;
->> +	u8 max_ppdu = ATH12K_HTT_STATS_MAX_NUM_MU_PPDU_PER_BURST;
->> +	u8 max_sched = ATH12K_HTT_STATS_MAX_NUM_SCHED_STATUS;
->> +	char str_buf[ATH12K_HTT_MAX_STRING_LEN];
+>> +	struct ath12k *ar = file->private_data;
+>> +	char buf[32];
+>> +	size_t len;
 >> +
->> +	hw_mode = le32_to_cpu(htt_stats_buf->hw_mode);
+>> +	len = scnprintf(buf, sizeof(buf), "%u\n", ar->debug.htt_stats.type);
 >> +
->> +	switch (hw_mode) {
->> +	case ATH12K_HTT_STATS_HWMODE_AC:
->> +		len += scnprintf(buf + len, buf_len - len,
->> +				 "HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:\n");
->> +		mode = "ac";
->> +		break;
->> +	case ATH12K_HTT_STATS_HWMODE_AX:
->> +		mode = "ax";
->> +		break;
->> +	case ATH12K_HTT_STATS_HWMODE_BE:
->> +		mode = "be";
->> +		break;
->> +	default:
->> +		return;
->> +	}
+>> +	return simple_read_from_buffer(user_buf, count, ppos, buf, len);
+>> +}
 > 
-> Why are we not adding "HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:\n" with
-> ax and be modes?
+> Access to ar->debug.htt_stats.type isn't protected in any way.
+
+I will check and address this.
 > 
-Sorry for the delayed response. I was on OoO for a week.
-We will receive this TLV for each hw modes. Since
-"HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:\n" is header and it would be
-suffice to print it once, hence added it inside hw mode ac which will be
-the first hw mode integrated inside the TLV.
+>> +
+>> +static ssize_t ath12k_write_htt_stats_type(struct file *file,
+>> +					   const char __user *user_buf,
+>> +					   size_t count, loff_t *ppos)
+>> +{
+>> +	struct ath12k *ar = file->private_data;
+>> +	enum ath12k_dbg_htt_ext_stats_type type;
+>> +	unsigned int cfg_param[4] = {0};
+>> +	int num_args;
+>> +
+>> +	char *buf __free(kfree) = kzalloc(count, GFP_KERNEL);
+>> +	if (!buf)
+>> +		return -ENOMEM;
+>> +
+>> +	if (copy_from_user(buf, user_buf, count))
+>> +		return -EFAULT;
+>> +
+>> +	num_args = sscanf(buf, "%u %u %u %u %u\n", &type, &cfg_param[0],
+>> +			  &cfg_param[1], &cfg_param[2], &cfg_param[3]);
+>> +	if (!num_args || num_args > 5)
+>> +		return -EINVAL;
+>> +
+>> +	if (type >= ATH12K_DBG_HTT_NUM_EXT_STATS)
+>> +		return -E2BIG;
+>> +
+>> +	if (type == ATH12K_DBG_HTT_EXT_STATS_RESET)
+>> +		return -EPERM;
+>> +
+>> +	ar->debug.htt_stats.type = type;
+>> +	ar->debug.htt_stats.cfg_param[0] = cfg_param[0];
+>> +	ar->debug.htt_stats.cfg_param[1] = cfg_param[1];
+>> +	ar->debug.htt_stats.cfg_param[2] = cfg_param[2];
+>> +	ar->debug.htt_stats.cfg_param[3] = cfg_param[3];
+>> +
+>> +	return count;
+>> +}
+> 
+> Same here with both type and cfg_param. Maybe it's ok to skip
+> protection, I didn't do analysis yet, but this makes me suspicious.>
+Sure Kalle. I will check and address the same.
+
 
