@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21087C25B78
-	for <ath12k@archiver.kernel.org>; Tue, 28 May 2024 17:45:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B3D8C25B78
+	for <ath12k@archiver.kernel.org>; Tue, 28 May 2024 17:45:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=N7USIkEz9VFRzx1ZZBV8sQCBcKUNxWfJqVAwPaQVdf0=; b=nvRTpniVxDURB9acbRcNdhM/mX
-	8cZsKBthJAOvHILHmsbFM2K2S1g/JXwUhDaTQvY4g5le5ih5LIvDpYWxainmMndsm67IQOqVT/uZy
-	I90JOhcAXv4tSwqNhXf/QbDoDDwTfRsaEhabR/y6MTnzsK7QBO/vJQL4/DieFIsXyxQo5/b8fmc+E
-	UbjQDcJIGqoMhxd159IhtBe98QA/II6NxL476+E1l02KW9kB2vSXgvCfNaHEtPtzMSNzfl2hKLjNk
-	ICRRX/wMV9v02zU7veQxhJNwLDTESrmIL2EeTlm9MfqPKXn2DJoLprx+UH8kDsabSuJj3UTBUZpYF
-	O+spOWTg==;
+	bh=f7+MmbYJweCFJZ6FptiJK5ft9rfNuytH0xsHp7M7F+U=; b=yPsN42QupvqFN3Px+PLBgGgVrM
+	Ty9Znxz9Bvmy93pkK9HMv7rQ+mGSxM+MJ0cpXutNaD+KOOnPax7cdJ0CoJAlcOmqpW4aauBSNVn9p
+	krvAkPEmZNNCbN95yJAOJ37cyHQO/B/RX5cWBcXkYVIS1wj6eTlxZ8lcesbZCRMKpB+80gPlftrqB
+	o/UPbEr3TcTTzNqLYeEmRcK1JxA8FMhDvntqz2re56ZG/+I6/A1hMn7QfkCa89Oq33+oZtzyM+F78
+	0dfEgOkP2OevfhkbRHlRk+aY4fgl9ttByZTpW11yL/QtGbo4rTMUzEN0QDYl+GF6yo+EN9dGZJS4o
+	iO+tOfkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sC0so-00000001amx-3OPh
+	id 1sC0tT-00000001as0-0X9A
 	for ath12k@archiver.kernel.org;
-	Tue, 28 May 2024 17:45:10 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 28 May 2024 17:45:51 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sC0sl-00000001amX-2aul
+	id 1sC0tQ-00000001arB-2NRn
 	for ath12k@lists.infradead.org;
-	Tue, 28 May 2024 17:45:09 +0000
+	Tue, 28 May 2024 17:45:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0354362289;
-	Tue, 28 May 2024 17:45:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B62EAC32782;
-	Tue, 28 May 2024 17:45:05 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 9C9E8CE0E7D;
+	Tue, 28 May 2024 17:45:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DADD4C3277B;
+	Tue, 28 May 2024 17:45:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716918306;
-	bh=092slm6u3SuLv+jBx+DbZLRXByFStQ2yboHpj2kR4tg=;
+	s=k20201202; t=1716918345;
+	bh=sKLWwnpnlmhE+bUX9QrAVOLuHKIQAriHb2GHbk54UC0=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=S/zPixi1pXk6vLG7WdKE46o+AmOJT5wWIEEMce5FZcOcfXitt+pP9hALu1o69UaNY
-	 /pp7c2VnvUxJO/7WVW9h4JD/Or3TnRj9aKQyO9J/j/k0yXjMkgjH+jla85vqKIeOAl
-	 XbyRBSo2B0qfTbftgPiGaFk1Y27RvPD65Dn1cBvi0IRkAekDLKVOiSOycGjgkSSfD/
-	 F5WSjrGhvOA9Y7mf1OGJj2JO9U0/Oc1nNNWYIcjJtvx+wdi5OXmRNuUzcUpjGrQvsK
-	 vuS9huuT5HzJSkZ1DcZAZhrRzslAJbKBPhuwnPO69A7wj5Sia6XqGBD9OBrG9okLWm
-	 9NYbKCjuDNvAQ==
+	b=SB6n8E0DKc2y1A29J2akEghPSSOAngxwmBGoXhGOx//9nROxUl+sCay3NiBchHkwz
+	 YqHx/qi7pByY+rsVhd+EdikmbSGv6WC6xLqGpZgRGFt7X/G6p4kCMQ6pBO+V803UFx
+	 tLd45rGxgrwt7NkmuvqX9CF3lBBUphGfLCdpUY9+NW+hpPxTxU1nANhzOaBlao2LYg
+	 j3v3fPn14KUZRoAF1RMctGf/H46VZJzncOmsMZ59Mz5aP2BWim4gL1v4XDx/8xkhrB
+	 iiW3NxxPt1jRYkzo2DXdpxpouP5+3v7jTuCu7C30fu72i/p87tsI0kypNvSAirpJrB
+	 8VDZZ+18bu2ow==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: fix race due to setting
- ATH12K_FLAG_EXT_IRQ_ENABLED too early
+Subject: Re: [PATCH] wifi: ath12k: fix wrong definition of CE ring's base
+ address
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240524023642.37030-1-quic_bqiang@quicinc.com>
-References: <20240524023642.37030-1-quic_bqiang@quicinc.com>
+In-Reply-To: <20240524024021.37711-1-quic_bqiang@quicinc.com>
+References: <20240524024021.37711-1-quic_bqiang@quicinc.com>
 To: Baochen Qiang <quic_bqiang@quicinc.com>
 Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
  <quic_bqiang@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171691830369.1700985.14695281653028868170.kvalo@kernel.org>
-Date: Tue, 28 May 2024 17:45:05 +0000 (UTC)
+Message-ID: <171691834316.1700985.14768410364524258045.kvalo@kernel.org>
+Date: Tue, 28 May 2024 17:45:44 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_104507_869142_D78A82F1 
-X-CRM114-Status: GOOD (  14.63  )
+X-CRM114-CacheID: sfid-20240528_104548_825066_D147E32C 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,48 +77,29 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Baochen Qiang <quic_bqiang@quicinc.com> wrote:
 
-> Commit 5082b3e3027e ("wifi: ath11k: fix race due to setting
-> ATH11K_FLAG_EXT_IRQ_ENABLED too early") fixes a race in ath11k
-> driver. Since ath12k shares the same logic as ath11k, currently
-> the race also exists in ath12k: in ath12k_pci_ext_irq_enable(),
-> ATH12K_FLAG_EXT_IRQ_ENABLED is set before NAPI is enabled.
-> In cases where only one MSI vector is allocated, this results
-> in a race condition: after ATH12K_FLAG_EXT_IRQ_ENABLED is set
-> but before NAPI enabled, CE interrupt breaks in. Since IRQ is
-> shared by CE and data path, ath12k_pci_ext_interrupt_handler()
-> is also called where we call disable_irq_nosync() to disable
-> IRQ. Then napi_schedule() is called but it does nothing because
-> NAPI is not enabled at that time, meaning that
-> ath12k_pci_ext_grp_napi_poll() will never run, so we have
-> no chance to call enable_irq() to enable IRQ back. Since IRQ
-> is shared, all interrupts are disabled and we would finally
-> get no response from target.
+> Base address of CE ring is defined as u32, currently this works
+> because DMA mask configured as 32 bit:
 > 
-> So port ath11k fix here, this is done by setting
-> ATH12K_FLAG_EXT_IRQ_ENABLED after all NAPI and IRQ work are
-> done. With the fix, we are sure that by the time
-> ATH12K_FLAG_EXT_IRQ_ENABLED is set, NAPI is enabled.
+>         #define ATH12K_PCI_DMA_MASK     32
 > 
-> Note that the fix above also introduce some side effects:
-> if ath12k_pci_ext_interrupt_handler() breaks in after NAPI
-> enabled but before ATH12K_FLAG_EXT_IRQ_ENABLED set, nothing
-> will be done by the handler this time, the work will be
-> postponed till the next time the IRQ fires.
+> However this mask could be changed once firmware bugs are fixed
+> to fully support 36 bit DMA addressing. So to protect against any
+> future changes to the DMA mask, change the type of the fields that
+> are dependent upon it.
 > 
-> This is found during code review.
+> This is found during code review. Compile tested only.
 > 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 > Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 > Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
 Patch applied to ath-next branch of ath.git, thanks.
 
-0a993772e0f0 wifi: ath12k: fix race due to setting ATH12K_FLAG_EXT_IRQ_ENABLED too early
+0ae570703754 wifi: ath12k: fix wrong definition of CE ring's base address
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240524023642.37030-1-quic_bqiang@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240524024021.37711-1-quic_bqiang@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
