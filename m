@@ -4,63 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DB2DC25B78
-	for <ath12k@archiver.kernel.org>; Tue, 28 May 2024 11:06:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BB72C25B78
+	for <ath12k@archiver.kernel.org>; Tue, 28 May 2024 16:13:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tc/JWKXjZb2ug8+2X9i0CkFvNk1UAQAZ6eCuCTlUvNw=; b=P4EuJFiv9O6x5aZoh5HwExp1Vo
-	bw+ar12TTI3a/QDnktdTOBxlsCutlez7jxJMobLBKH6o11/dx/qij7sCwWkRYGiz5DF2ni3mV3LTC
-	JBeDGg8gq5uoffSaYKATW+tkmqaYcNA1Y86MIj1wQyEdgPmE9gd6143s+Qw595csZNAEbDtbDObnz
-	TKvaoxhfn9SZtakoRLLgmnxLJr89bEjygbeLZrODipcPZ2oWIWaaNjuyNPI2Qc1+HgEqc7epvKVuq
-	OjxKQmA2SNefpgfMQYFEyzUfpP5h3Gdk9TWMYbKnRKySuTo6HiMBeOlhobdsuFxh1KG35bxWlna88
-	jjSfMo+Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ioWE+gCmPaeniIEWWwHT9GMhHpQSa3vrXzI9uT0XGG8=; b=OSzBk2oglQCEFZBQXOkmipGtRV
+	pF9Bjl7v4X1yT5ipNcYiaBQlAMp9EzS3jPo5MY15V63S2VqEkdt6ypaYDxgTfi2NnvBEjWAXM9+pA
+	nq4i4A/GhpGeFr4r8Es+Aw6UA1Eh2UjdgaRaMsSkv1sv/8wRateCVoPNo3uOCxnOrU2fUTqm/j9NH
+	RNG+yE0hAhlwp8CLV8s0WIBrCxqcGbt8GagAuwomPSaWIgkIIn2x3+jwd5YiFoCAzmuRI2uJJrwNR
+	1CLvR9uuH5R4h8oVzFOs0qHK+4H7QYku67Vt8W8eUiQTz160ZCa9n78AmWNgRgYu+J8zlerylGQf/
+	JiZQdruA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBuez-00000000JC0-3AGS
+	id 1sBzRc-00000001NsE-3DYq
 	for ath12k@archiver.kernel.org;
-	Tue, 28 May 2024 11:06:29 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Tue, 28 May 2024 16:13:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBuew-00000000JB0-1aaZ
+	id 1sBzRZ-00000001NqC-3xtl
 	for ath12k@lists.infradead.org;
-	Tue, 28 May 2024 11:06:28 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 32F34CE127B;
-	Tue, 28 May 2024 11:06:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B33DC3277B;
-	Tue, 28 May 2024 11:06:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716894383;
-	bh=OFv/XQ7TNpRWDLL7BFsEL4AhJkfJ4AV+GjTSjS5J4hQ=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=LuhkYiuwfZIhwJ7aNOWXnj123F88a3WBjc2t4h5ygqe/3cUwlZt6nLVZo/xhtOQkR
-	 +2bP3WvbicsumVeCdGwTt7Nj+WRjRRIBWzLNTUBZqjNOVU5ss0NHSyCU8aZrbhZKCP
-	 E+cnvGzFCDE3NTnBC98u9FN640clFKmWnT1XWqImO4lZzDP8LUArN7MpAyhl3O9VCN
-	 vbsk7vVJ1o28dAB4+tdAIL8tHHrvx+aUOQKRJXb2Rkf4XLmJ74QEWS+YBbVEzORGz2
-	 +cwhnpuxVEakZUdHDSOrhl7K1cw0sY30xyadZXiHd8TZ8e2157sxU7/QwN/Er4K+E7
-	 hmZzqMxUAdVuw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v2 5/5] wifi: ath12k: Dump additional Tx PDEV HTT stats
-References: <20240510050806.514126-1-quic_rgnanase@quicinc.com>
-	<20240510050806.514126-6-quic_rgnanase@quicinc.com>
-	<87le43d26u.fsf@kernel.org>
-	<024e2594-309a-4549-9c69-d527717c5dd4@quicinc.com>
-Date: Tue, 28 May 2024 14:06:20 +0300
-In-Reply-To: <024e2594-309a-4549-9c69-d527717c5dd4@quicinc.com> (Ramya
-	Gnanasekar's message of "Mon, 27 May 2024 15:08:40 +0530")
-Message-ID: <87r0dm6vrn.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Tue, 28 May 2024 16:12:59 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44SBk9mh020271;
+	Tue, 28 May 2024 16:12:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ioWE+gCmPaeniIEWWwHT9GMhHpQSa3vrXzI9uT0XGG8=; b=RpqnIhvJake9D5MO
+	mEoaYGElhBXD4hIhOYPg6d+K2Drre7l+/OroCIUkqqPJI2zugiHtXjlenWEjVjIB
+	H72R+GnzmE3UQzIvLr+gq0+PwouUnaSNPTfkWd11lDQ9AOsu9HLSimTgNDsCzlRB
+	+TQm/kWVdymv8bljruWtF8MmMvjd7XMjB9uL2FAvadhOp2TwHb68PyR5NPHyOoqZ
+	8aP0unwYDdQdrLD7R5qabCopyeUwuRQPh0MPsJdoTUhQ+jj82ymk+mbGTibTT8Ft
+	6tGAFBCEM2rhPO8ax0nAv8imGmPLwtMhcdzDaHuepA9nUGhBntf2sq5WHnkoDmrv
+	PGGiog==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yba2h6kbb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 May 2024 16:12:48 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44SGCm6G017150
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 May 2024 16:12:48 GMT
+Received: from [10.110.122.222] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 28 May
+ 2024 09:12:47 -0700
+Message-ID: <8aebb28f-a4f0-43e8-8b55-a55d7cb1bdc4@quicinc.com>
+Date: Tue, 28 May 2024 09:12:46 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: fix memory leak in
+ ath12k_dp_rx_peer_frag_setup()
+Content-Language: en-US
+To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240526124226.24661-1-quic_bqiang@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240526124226.24661-1-quic_bqiang@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: rzJGbeBv73G30Q_d1g2xv7v2ZjToo4PH
+X-Proofpoint-ORIG-GUID: rzJGbeBv73G30Q_d1g2xv7v2ZjToo4PH
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
+ definitions=2024-05-28_12,2024-05-28_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
+ malwarescore=0 priorityscore=1501 impostorscore=0 suspectscore=0
+ phishscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0 spamscore=0
+ mlxlogscore=763 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2405280121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_040626_695033_BE6FA4BC 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20240528_091258_124444_4FED668A 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,60 +100,15 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Ramya Gnanasekar <quic_rgnanase@quicinc.com> writes:
+On 5/26/2024 5:42 AM, Baochen Qiang wrote:
+> Currently the resource allocated by crypto_alloc_shash() is not
+> freed in case ath12k_peer_find() fails, resulting in memory leak.
+> 
+> Add crypto_free_shash() to fix it.
+> 
+> This is found during code review, compile tested only.
+> 
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
->>> +static inline void
->>> +ath12k_htt_print_tx_pdev_mu_ppdu_dist_stats_tlv(const void *tag_buf,
->>> +						struct debug_htt_stats_req *stats_req)
->>> +{
->>> + const struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv
->>> *htt_stats_buf = tag_buf;
->>> +	char *mode;
->>> +	u8 j, hw_mode, i, str_buf_len;
->>> +	u8 *buf = stats_req->buf;
->>> +	u32 len = stats_req->buf_len;
->>> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
->>> +	u32 stats_value;
->>> +	u8 max_ppdu = ATH12K_HTT_STATS_MAX_NUM_MU_PPDU_PER_BURST;
->>> +	u8 max_sched = ATH12K_HTT_STATS_MAX_NUM_SCHED_STATUS;
->>> +	char str_buf[ATH12K_HTT_MAX_STRING_LEN];
->>> +
->>> +	hw_mode = le32_to_cpu(htt_stats_buf->hw_mode);
->>> +
->>> +	switch (hw_mode) {
->>> +	case ATH12K_HTT_STATS_HWMODE_AC:
->>> +		len += scnprintf(buf + len, buf_len - len,
->>> +				 "HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:\n");
->>> +		mode = "ac";
->>> +		break;
->>> +	case ATH12K_HTT_STATS_HWMODE_AX:
->>> +		mode = "ax";
->>> +		break;
->>> +	case ATH12K_HTT_STATS_HWMODE_BE:
->>> +		mode = "be";
->>> +		break;
->>> +	default:
->>> +		return;
->>> +	}
->> 
->> Why are we not adding "HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:\n" with
->> ax and be modes?
->> 
-> Sorry for the delayed response. I was on OoO for a week.
-
-No worries.
-
-> We will receive this TLV for each hw modes. Since
-> "HTT_TX_PDEV_MU_PPDU_DISTRIBUTION_STATS:\n" is header and it would be
-> suffice to print it once, hence added it inside hw mode ac which will be
-> the first hw mode integrated inside the TLV.
-
-I would have expected that we print that outside of
-ath12k_htt_print_tx_pdev_mu_ppdu_dist_stats_tlv(), before the function
-is called at all.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
