@@ -4,71 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADB15C25B7D
-	for <ath12k@archiver.kernel.org>; Mon, 27 May 2024 14:15:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DEE5C25B78
+	for <ath12k@archiver.kernel.org>; Tue, 28 May 2024 05:34:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iXuwxL+Sd9un+WuLue5a8yZs67NMJIDHM1UEjFrAetA=; b=fGKwXI55hDbM0NPJFCkIDm5Caf
-	FxNvf1d9o2ffSUqmkPG6QWaIccLEcBWmmG4Jm2WoHLBDfy9lim0JwOaKKdQA0zq/WEvaplXfHveRF
-	x4Fg5Mjl+kC2NkxA2/+fKdNv8x95j0b8xyPy4M0BzsbLvP65JIlOzCsxICEGFUBTYYu1SpknwibOG
-	IdYN2Bk5gvff+Ad41VyO1l1ynlsfRLqMyd4LqbYwUBmVK1/x9Rg2TmH7htg0/cKowdsP7n2Le+YX8
-	0Fh7QsMeTSF26jsx2z7Nr1/k4PeqtFm9UchlSog8UfMys8QvdVm+5YzcyaWy+oPLKj+eo00zOXCw7
-	mqQpGaZA==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=peXYxz+cP4L7xYCl62o6tUM+JeoPmbfPKbh/8fMxkI4=; b=pyxC6gGDBQjdbPNfYK91ZQIM8E
+	mpSO9L0/VnICl59GnuVtiLC5SdQ20M7hCHk4fI0m1w+tnoS+AEFfMMw2dEBXudJtlUrhjtbwF9ehW
+	TKRcnnYjxHruuEDTAdvh6JfMoHj6gqz6gD8O/0pSKtX8XghQ9WeCakvUDm0fpOXTHp0S4bMVAOZn1
+	+X+3bgXQhwWbayxiP89muPlWBWtn2x/L3Xv0ekpeqQ2PiP6ZOjBmJdLS8vx+DNfd+Y/Zq86lM9UEq
+	MGBaaRCc2h9DJqChyVEy6/yEyhesiuumy7m9jB1UhRj+Z0l6NmIhzrPaWUuIOKjg1a+EohWJ6v8c6
+	W9HU15JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBb83-0000000FIm4-1Xwv
+	id 1sBpTI-0000000H7by-3LQP
 	for ath12k@archiver.kernel.org;
-	Mon, 27 May 2024 14:15:11 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 28 May 2024 05:34:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBb7y-0000000FIip-0TqS
+	id 1sBpTF-0000000H7aJ-1ju7
 	for ath12k@lists.infradead.org;
-	Mon, 27 May 2024 14:15:07 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 097D861244;
-	Mon, 27 May 2024 14:15:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1E40C32781;
-	Mon, 27 May 2024 14:15:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716819304;
-	bh=LCTo4W6Sd0YOU46uvur/qnfKTRHtLNeR0VCT8BV92P0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=T2Vcm7nKlV4eCccWXvC6m7Uki5xrcOWoA522kj443ohXbFIpbfHP1VuZJXj+MjTn+
-	 YZbuh7EmoQd3byLnEkt0l6mk92TBK6GoWQw2w/RfAS9G7M7RS/o54QH7a42YzRjMdW
-	 3rzVLiLjwxujbxvjjISF5lXPupXJ7Dt2ItLMwFJl708Bca9kJtJWLYCD1vYg6T7XeW
-	 9Hltezbd3yXC8ky7RAWlN9hmoOzDEYJvtlVLHlo8CPhT/xHpdYpUcd4aYXbwyeSV3z
-	 xDh5VHVwonRNgz1BxLId0bwLZ+5fzaK2soQgbcYG3QbPyhX/ITvCkl9t8Mhg/CTzMv
-	 zoLT2Nn1XbSkA==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Lingbo Kong <quic_lingbok@quicinc.com>,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
-	Kalle Valo <quic_kvalo@quicinc.com>,
-	Sasha Levin <sashal@kernel.org>,
-	kvalo@kernel.org,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.8 22/30] wifi: ath12k: fix the problem that down grade phy mode operation
-Date: Mon, 27 May 2024 10:13:31 -0400
-Message-ID: <20240527141406.3852821-22-sashal@kernel.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240527141406.3852821-1-sashal@kernel.org>
-References: <20240527141406.3852821-1-sashal@kernel.org>
+	Tue, 28 May 2024 05:34:02 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44RMhKug029210
+	for <ath12k@lists.infradead.org>; Tue, 28 May 2024 05:33:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	peXYxz+cP4L7xYCl62o6tUM+JeoPmbfPKbh/8fMxkI4=; b=TYNi6FYckTfvKk7y
+	34Mz+FCpkWLxPrCKoN2SQvI6um02h/JM/4LfTIaKEwOZWbFilbE1kvoLUcsW2J/+
+	TfxEVhTqYqi2bHXE0uhkHFE9iukCXlhc8qAKaTaKP2pNBGdZlnecgOijV5xGgUIE
+	WzDsMj1JuNwxJOVXeJLRg9u3HlvPcSFpTVqedl/EvEeasVtEl4PA1z8WRuh/uPX/
+	0Se3QSNDmpHq5Acind+CzlRuWMLnd19Sbf8Xf1+i7BQ2DwY1vWoA9G8DrmTNq5Vv
+	2hXx/5gudSuN0UYZlvc7EwVa5DM/erK/VpCxzTYzq+acN+Yv31vavjUiRZxwdSdb
+	tqMZUg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yba2h5794-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 28 May 2024 05:33:58 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44S5XwVl001524
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 28 May 2024 05:33:58 GMT
+Received: from [10.152.206.169] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 27 May
+ 2024 22:33:57 -0700
+Message-ID: <b7b8454c-47b3-8dd1-8756-ace8a54a0ee4@quicinc.com>
+Date: Tue, 28 May 2024 11:03:53 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.8.11
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.0
+Subject: Re: [PATCH v6 0/8] wifi: ath12k: Introduce device group abstraction
+Content-Language: en-US
+To: Harshitha Prem <quic_hprem@quicinc.com>, <ath12k@lists.infradead.org>
+References: <20240527073723.2520319-1-quic_hprem@quicinc.com>
+From: Harshitha Prem <quic_hprem@quicinc.com>
+In-Reply-To: <20240527073723.2520319-1-quic_hprem@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: OtQ20xvuyUqEIXHnocwvdU1-TVGtlgON
+X-Proofpoint-ORIG-GUID: OtQ20xvuyUqEIXHnocwvdU1-TVGtlgON
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
+ definitions=2024-05-28_03,2024-05-27_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
+ malwarescore=0 priorityscore=1501 impostorscore=0 suspectscore=0
+ phishscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0 spamscore=0
+ mlxlogscore=888 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2405280039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240527_071506_314949_6A83690D 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20240527_223401_517493_178BA518 
+X-CRM114-Status: GOOD (  23.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,87 +98,113 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Lingbo Kong <quic_lingbok@quicinc.com>
 
-[ Upstream commit bf76b144fe53c7f0de9e294947d903fc7724776f ]
 
-Currently, when using WCN7850 or QCN9274 as AP, ath12k always performs down
-grade phy mode operation regardless of whether the firmware supports EHT
-capability or not and then vdev will start in HE mode. When stations that
-support EHT capability try to connect to the AP, the AP will set phy mode
-to EHT after receiving the association request packet, and then send
-WMI_PEER_ASSOC_CMDID command to firmware, AP’s firmware will crash.
+On 5/27/2024 1:07 PM, Harshitha Prem wrote:
+> To support multi-link operation, multiple devices with different bands say
+> 2 GHz or 5 GHz or 6 GHz can be combined together as a group and provide
+> an abstraction to mac80211.
+> 
+> Device group abstraction - when there are multiple devices that are
+> connected by any means of communication interface between them, then these
+> devices can be combined together as a single group using a group id to form
+> a group abstraction. In ath12k driver, this abstraction would be named as
+> ath12k_hw_group (ag).
+> 
+> Please find below illustration of device group abstraction with two
+> devices.
+> 
+>                   Grouping of multiple devices (in future)
+> +------------------------------------------------------------------------+
+> |  +-------------------------------------+       +-------------------+   |
+> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+> |  |   | ar (2GHz) | | | | ar (5GHz) |   |       |   | ar (6GHz) |   |   |
+> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+> |  |          ath12k_base (ab)           |       | ath12k_base (ab)  |   |
+> |  |         (Dual band device)          |       |                   |   |
+> |  +-------------------------------------+       +-------------------+   |
+> |                 ath12k_hw_group (ag) based on group id                 |
+> +------------------------------------------------------------------------+
+> 
+> Say for example, device 1 has two radios (2 GHz and 5 GHz band) and
+> device 2 has one radio (6 GHz).
+> 
+> In existing code -
+>          device 1 will have two hardware abstractions hw1 (2 GHz) and hw2
+>          (5 GHz) will be registered separately to mac80211 as phy0 and phy1
+>          respectively. Similarly, device 2 will register its hw (6GHz) as
+>          phy2 to mac80211.
+> 
+> In future, with multi-link abstraction
+> 
+>          combination 1 - Different group id for device1 and device 2
+>                  Device 1 will create a single hardware abstraction hw1
+>                  (2 GHz and  5 GHz) and will be registered to mac80211 as
+>                  phy0. similarly, device 2 will register its hardware
+>                  (6 GHz) to mac80211 as phy1.
+> 
+>          combination 2 - Same group id for device1 and device 2
+>                  Both device details are combined together as a group, say
+>                  group1, with single hardware abstraction of radios 2 GHz,
+>                  5 GHz and 6 GHz band details and will be registered to
+>                  mac80211 as phy0.
+> 
+> Add base infrastructure changes to add device grouping abstraction with
+> a single device.
+> 
+> This patch series brings the base code changes with following order:
+>          1. Refactor existing code which would facilitate in introducing
+>             device group abstraction.
+>          2. Create a device group abstraction during device probe.
+>          3. Start the device group only after QMI firmware ready event is
+>             received for all the devices that are combined in the group.
+>          4. Move the hardware abstractions (ath12k_hw - ah) from device
+>             (ath12k_base - ab) to device group abstraction (ag) as it would
+>             ease in having different combinations of group abstraction that
+>             can be registered to mac80211.
+> v6:
+>    - Addressed smatch error seen on "[PATCH v5 8/8] wifi: ath12k: move
+>      ath12k_hw from per soc to group"
+>    - Rebased to ToT
+> v5:
+>    - on "[PATCH 8/8] wifi: ath12k: move ath12k_hw from per soc to
+>      group", refactor the ath12k_mac_hw_allocate() api based on ag rather
+>      than ab and update hardware abstraction array size in ath12k_hw_group
+>      as ATH12K_GROUP_MAX_RADIO.
+>    - Rebased to ToT
+> v4:
+>    - Modified the cover letter
+> v3:
+>    - Removed depends-on tag of "wifi: ath12k: Refactor the hardware recovery
+>      procedures" as it is merged to ToT
+>    - Addressed the deadlock warning seen during rmmod.
+> 
+> v2:
+>   - Rebased to ToT
+> 
+> Karthikeyan Periyasamy (8):
+>    wifi: ath12k: Refactor core start api
+>    wifi: ath12k: Add helpers to get or set ath12k_hw
+>    wifi: ath12k: Add ath12k_get_num_hw api
+>    wifi: ath12k: Introduce QMI firmware ready flag
+>    wifi: ath12k: move ATH12K_FLAG_REGISTERED flag set to mac_register api
+>    wifi: ath12k: Introduce device group abstraction
+>    wifi: ath12k: refactor core start based on hardware group
+>    wifi: ath12k: move ath12k_hw from per device to group
+> 
+>   drivers/net/wireless/ath/ath12k/core.c | 431 +++++++++++++++++++++----
+>   drivers/net/wireless/ath/ath12k/core.h |  87 ++++-
+>   drivers/net/wireless/ath/ath12k/dp.c   |  19 +-
+>   drivers/net/wireless/ath/ath12k/dp.h   |   2 +-
+>   drivers/net/wireless/ath/ath12k/mac.c  | 117 ++++---
+>   drivers/net/wireless/ath/ath12k/mac.h  |   9 +-
+>   drivers/net/wireless/ath/ath12k/pci.c  |   2 +
+>   drivers/net/wireless/ath/ath12k/qmi.c  |  10 +-
+>   8 files changed, 544 insertions(+), 133 deletions(-)
+> 
+> 
+> base-commit: f8320064a28242448eeb9fece08abd865ea8a226
 
-This is because when the ath12k_mac_copy_sband_iftype_data() function
-handles EHT capability, it does not copy the EHT capability into the
-iftype[band][type] array according to the interface type. So, interface
-type should not be used as an index to get eht_cap in
-ath12k_mac_check_down_grade_phy_mode() function.
-
-To address this issue, use types_mask to select the eht_cap in
-ath12k_mac_check_down_grade_phy_mode() function.
-
-This patch affects QCN9274 and WCN7850 because they have the same issue.
-
-Hostapd log:
-wlo1: STA 02:03:7f:37:12:34 IEEE 802.11: Could not set STA to kernel driver
-
-Kernel log:
-[270894.816076] ath12k_pci 0000:03:00.0: failed to send WMI_PEER_SET_PARAM cmd
-[270894.816111] ath12k_pci 0000:03:00.0: failed to setup peer SMPS for vdev 0: -108
-[270894.816122] ath12k_pci 0000:03:00.0: Failed to associate station: 02:03:7f:37:12:34
-[270894.843389] ieee80211 phy5: Hardware restart was requested
-[270894.843517] ath12k_pci 0000:03:00.0: failed to lookup peer 02:03:7f:37:12:34 on vdev 0
-[270894.843616] ath12k_pci 0000:03:00.0: failed to send WMI_PEER_DELETE cmd
-[270894.843650] ath12k_pci 0000:03:00.0: failed to delete peer vdev_id 0 addr 02:03:7f:37:12:34 ret -108
-[270894.843663] ath12k_pci 0000:03:00.0: Failed to delete peer: 02:03:7f:37:12:34 for VDEV: 0
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://msgid.link/20240425083837.5340-1-quic_lingbok@quicinc.com
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/wireless/ath/ath12k/mac.c | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index b965fc46ad89a..d67ee0312c1d9 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5911,14 +5911,24 @@ ath12k_mac_check_down_grade_phy_mode(struct ath12k *ar,
- 				     enum nl80211_band band,
- 				     enum nl80211_iftype type)
- {
--	struct ieee80211_sta_eht_cap *eht_cap;
-+	struct ieee80211_sta_eht_cap *eht_cap = NULL;
- 	enum wmi_phy_mode down_mode;
-+	int n = ar->mac.sbands[band].n_iftype_data;
-+	int i;
-+	struct ieee80211_sband_iftype_data *data;
- 
- 	if (mode < MODE_11BE_EHT20)
- 		return mode;
- 
--	eht_cap = &ar->mac.iftype[band][type].eht_cap;
--	if (eht_cap->has_eht)
-+	data = ar->mac.iftype[band];
-+	for (i = 0; i < n; i++) {
-+		if (data[i].types_mask & BIT(type)) {
-+			eht_cap = &data[i].eht_cap;
-+			break;
-+		}
-+	}
-+
-+	if (eht_cap && eht_cap->has_eht)
- 		return mode;
- 
- 	switch (mode) {
--- 
-2.43.0
-
+Please ignore this series. Forgot to cc linux wireless. Will respin a 
+new version.
 
