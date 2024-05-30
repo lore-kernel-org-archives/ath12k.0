@@ -4,73 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D97EC25B74
-	for <ath12k@archiver.kernel.org>; Thu, 30 May 2024 11:02:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDC8AC27C43
+	for <ath12k@archiver.kernel.org>; Thu, 30 May 2024 15:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wdJdpjrFVd2jyJBfi7/1Ypm+QKe5VhIURoGePuM+Fi8=; b=cpWuvEN6jLTCcrY+uHFS1v2WBM
-	YCvIwkyLO3C1LkPQ4ZY+2FtKK0fftMgdiHsNdXSuOMzoMO+y2SXTP3xpj/kf21bcYIsrjx1kjPdQd
-	GtH5qxxAkIAo0lX0cvNKM7CB0yGO58Y9PGsTGkGbOVVnUEpguMI//2bf5bPoGiRwGV+3zPQoSLiez
-	WGBYD+3slZgIyqzg2DhEApjWO0Pm4Pk/TeHZKmby3DAvMn643PIIjx94Pe14sz06ySG7rSosxJW0A
-	NZUw8YRR4pwzFOmgluwHKlPDOKxMdV/W9bqo7CYhZWMYBa7tip9Je3VUBC4XXq1PnmBmN0l2SPSjx
-	nfrnCikg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=UlbYcaGmQGFsV1sehLmZbxnPkjSV0MdjvuWjLVG2/Zs=; b=BTILirdtMsrMRp6he1AccOgqOU
+	WsFQASz22tnez4JTiKg1qRLfivhO1VB2tknNoZNi5Aiv9oLcQ0kXfUqj+w6cGNOT9tD0+WRDGG9a/
+	mMxqaU4+P0M06II2MJnXj6Nt1abaLuXBBlvL/J88CS4PI5IR63DV+efxKovuIBZok2+3jwnx1bNP1
+	Z+6yYTbNR+vbc+B7krXirgjTajA7HmTiLF8ZZLbJGIpkMikbj4XBxgAaXfX/OQXXwTSe2RybYPWSJ
+	FMSlCdNDsnB8wEhh26YDFOII35daDC6wK/4E3t2DOtosc/XimCo3gCFBF/sSVTyxMmEhMCA0bPESl
+	FJsGzGmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCdYb-000000072MX-3nC2
+	id 1sChbz-00000007hQ0-1yCh
 	for ath12k@archiver.kernel.org;
-	Thu, 30 May 2024 11:02:53 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	Thu, 30 May 2024 15:22:39 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCdYU-000000072LK-0PUU
+	id 1sChbu-00000007hNf-48Hw
 	for ath12k@lists.infradead.org;
-	Thu, 30 May 2024 11:02:52 +0000
-Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2e95a7545bdso7224031fa.2
-        for <ath12k@lists.infradead.org>; Thu, 30 May 2024 04:02:43 -0700 (PDT)
+	Thu, 30 May 2024 15:22:37 +0000
+Received: by mail-ed1-x541.google.com with SMTP id 4fb4d7f45d1cf-57a2406f951so807140a12.1
+        for <ath12k@lists.infradead.org>; Thu, 30 May 2024 08:22:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1717066962; x=1717671762; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=wdJdpjrFVd2jyJBfi7/1Ypm+QKe5VhIURoGePuM+Fi8=;
-        b=vlSEa7mEpjwdaEE9+lRCpb5/iZoK0p+r9F8MXMIKNxG0fqgmUWbYDoeF5NzlGdnCCh
-         otfhL5VO1sa/QqUVsm+/sGigr8wZLOkIuUKWzKBbjLexW/tKEvFRaBVYCnO7C7nN8/OA
-         ntSFbDnqpIrfVdADqE+Qk5oaNEtvtraLoyStk4Q2VwQ+5XhLIvxADcn710soUSiRh9Cg
-         yJxRC6/WBZurqMlgqd6H7lxbZYevVzxf4edSC+FHFM+Z4urAbwoW03CxZrzeBgVoc4ZR
-         6quWlc6KVIgdpYCSwEJIAEdvyJgTj5D/3diZ9MqCy1Ar41dg7Q9SuGbB1xAHaZRpU16d
-         QbUw==
+        d=linaro.org; s=google; t=1717082545; x=1717687345; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=UlbYcaGmQGFsV1sehLmZbxnPkjSV0MdjvuWjLVG2/Zs=;
+        b=FyG6OZOvU7pnSqLOC6taH8U1fYqBYrr59GQD1h+UtgHM/Ovif6awRi3D1mu96y6OjV
+         WIvOH5/ySTnB/HaOtlRVMIHTJLinP/AuCkwIsG7go9XJlYu1sCgGiTUwRzZsWxKHhJgD
+         ZN328ISiDPkXvAk+B3GUB8tF/RxDMHuxdS3yGV7am6+4vo5kh7Xz53shTNpMzrNpNv81
+         7bOuJRoRZMxq560lxBdZsylSRghnLQqJrfMaUAW8OevKR3Otv2oT9CqO1lunhAJwB0iG
+         Du3OCzXl9ipyxjEPxJgl/Xktln4wzbrkTwusKoSFVyX7bqj77cnICtXlFUTpaGwIFDYX
+         2Csg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717066962; x=1717671762;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=wdJdpjrFVd2jyJBfi7/1Ypm+QKe5VhIURoGePuM+Fi8=;
-        b=Vnm87UvfpHkfstPfdXy7IYTJNgQgG3ODT0ZpHXvA3fv1g6teCGsmhyPgdswaKrSNBH
-         yGJFGIJzvTYFBQIsmI5+WV9NQtZ8RuQnJZtAiXkf8QRiq+gMZwHcAD+EhBkheoL0SBM7
-         dmt9DnSq9alX+I2fYBHC/pq13BrcSBK9C7X3HKV5/w5CYow6bBCeUgutQkXZoBQlDA02
-         bV0ulHLUdVCc60V/rq1r8/8icm87FyBPAyO2c3Xlsk4PUUS12aTKMPHpDxUcCwPVBPb4
-         B34pPYTW1DpdX/uhWBx1dDxMjmSXgdefy37nuUOz9+R7WEhjtmiudKoVT4+lAsPoows5
-         Uktg==
-X-Forwarded-Encrypted: i=1; AJvYcCWFbMS0IdCi2PC0/Yb6ORBUPHEOCyGGGri8TJhmT4AS+lY03a4B7a+99EqA8yaIMw2jjXFLmB9LW8FR15mNU3hBMpG7evUwZ7x17w==
-X-Gm-Message-State: AOJu0Yw3LEVIFWnOEM30FVQcbwH/+U5bHL0mrubkBs280pqoJ/6dkcuB
-	H9sxHhtZkfWX8wIGV/Riovq5Khww8EFAuZBAv89ApQeFauepQ7LV1fMTinb1xeY=
-X-Google-Smtp-Source: AGHT+IFvRk0G/cssi1T5jykWS+sj3N7w+SJtv/NxzFC1qgP86vHMQCqJ5uR4sfMEFkv8MZ00HcJ33w==
-X-Received: by 2002:a2e:9d89:0:b0:2e5:1dae:1789 with SMTP id 38308e7fff4ca-2ea847f5e1dmr9802301fa.22.1717066962166;
-        Thu, 30 May 2024 04:02:42 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:982:cbb0:6c5:6f34:623a:2f88? ([2a01:e0a:982:cbb0:6c5:6f34:623a:2f88])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-35579d7d88esm17272899f8f.19.2024.05.30.04.02.40
+        d=1e100.net; s=20230601; t=1717082545; x=1717687345;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=UlbYcaGmQGFsV1sehLmZbxnPkjSV0MdjvuWjLVG2/Zs=;
+        b=TtLBDM95cZHhw750b2AYc/awn7ncSnDe78ENnvTA9OKf1bFGiETdTqpLIt1tnkYEnl
+         fFO7Fl7jZ6SrAJy3p87lSYvFvR2LKOa8ns4LMUqSk0pkwtRynjNT7KKm41GBvnFqLj2r
+         9d+MbV9qXBbKfhPrcKxkVDT72mxv3jU3Y6lcoMye7qSDXcqhV5A3OzsYfMRfIZcycPxN
+         E28wNMNT055EQTHwo4DfQ/zo0XvRaUcDSKqeBeEZK48D/H+ieNq3GqyCL+2RsTDsyXdl
+         NGif9AbQc/oarOoIRhHSmjWRMb36RqPAdLoPYRLuXoWhw4kSGS3aML31seZDYrg9P2Qt
+         xx+Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVxtZwsKvflNJoqh0wjlXJkQAWIJ0fV1PnbBG+O4yy8YVcAlx4BYSvKkxYie14/5ivf2NttfKlseBinkXjAPgsqrt7FcCkBCI1gJg==
+X-Gm-Message-State: AOJu0Yw8jTdoKA7mJPmFaGjMZnTjufor2HM5KZQOwbNOEXnsUcJFmVnA
+	dQj/LxcsI6VFbZVjav9oXf4Af/iQxqiZFzngutVj66VNxIsvJa5Pvl8/POdUgdU=
+X-Google-Smtp-Source: AGHT+IG+tJgnNeX8A5ChbrSgXDuYb3kudcf3QBAiphyKUtKgJJjw7Q78kAbnwAtCrj2/WRtZtz86Qw==
+X-Received: by 2002:a17:906:b894:b0:a66:b27:f9d4 with SMTP id a640c23a62f3a-a660b27fbaamr135561966b.42.1717082545053;
+        Thu, 30 May 2024 08:22:25 -0700 (PDT)
+Received: from ?IPV6:2a02:8109:aa0d:be00::8bb3? ([2a02:8109:aa0d:be00::8bb3])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a660947c20fsm62189866b.175.2024.05.30.08.22.22
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 30 May 2024 04:02:41 -0700 (PDT)
-Message-ID: <177a7a7e-9e99-4e2a-9f85-e2994a049892@linaro.org>
-Date: Thu, 30 May 2024 13:02:39 +0200
+        Thu, 30 May 2024 08:22:24 -0700 (PDT)
+Message-ID: <c160155e-bf15-48fb-b4c1-bc8d7bf8776b@linaro.org>
+Date: Thu, 30 May 2024 17:22:21 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
 Subject: Re: [PATCH v8 00/17] power: sequencing: implement the subsystem and
  add first users
 To: Bartosz Golaszewski <brgl@bgdev.pl>, Liam Girdwood <lgirdwood@gmail.com>,
@@ -86,7 +83,7 @@ To: Bartosz Golaszewski <brgl@bgdev.pl>, Liam Girdwood <lgirdwood@gmail.com>,
  Konrad Dybcio <konrad.dybcio@linaro.org>, Bjorn Helgaas
  <bhelgaas@google.com>, Srini Kandagatla <srinivas.kandagatla@linaro.org>,
  Elliot Berman <quic_eberman@quicinc.com>,
- Caleb Connolly <caleb.connolly@linaro.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
  Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Alex Elder <elder@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-bluetooth@vger.kernel.org,
@@ -98,38 +95,14 @@ Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  Amit Pundir <amit.pundir@linaro.org>
 References: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
+Content-Language: en-US
+From: Caleb Connolly <caleb.connolly@linaro.org>
 In-Reply-To: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240530_040250_275815_03654C3E 
-X-CRM114-Status: GOOD (  61.54  )
+X-CRM114-CacheID: sfid-20240530_082235_085392_0965BCF6 
+X-CRM114-Status: GOOD (  70.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,9 +114,10 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
+
+
 
 On 28/05/2024 21:03, Bartosz Golaszewski wrote:
 > Note: I am resending this series in its entirety once more for
@@ -460,12 +434,11 @@ On 28/05/2024 21:03, Bartosz Golaszewski wrote:
 > base-commit: 6dc544b66971c7f9909ff038b62149105272d26a
 > change-id: 20240527-pwrseq-76fc025248a2
 > 
-> Best regards,
+> Best regards
 
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8550-QRD
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-HDK
+Tested-by: Caleb Connolly <caleb.connolly@linaro.org> # OnePlus 8T
 
-Thanks,
-Neil
+
+-- 
+// Caleb (they/them)
 
