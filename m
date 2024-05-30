@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27F33C25B78
-	for <ath12k@archiver.kernel.org>; Thu, 30 May 2024 07:27:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44EF2C25B78
+	for <ath12k@archiver.kernel.org>; Thu, 30 May 2024 07:27:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4dpJIzBu7ym0vJDvAevw/QN2k2SrGNp4vMXHIxMqaqE=; b=u5ixTx7KBS6D0yBFR8XCFy+kBI
-	SNzuX3fZbRotgJ4xmbbeSJ9AtxNwtsP7Hj+yrNQuP0RFO+bXrBqSi0S3YwRdiF56lnfUpwEZeeIlt
-	Na8BbAfN/FOjSINDSclEsOQz1X3/rC9SgDd0RCuSdL//2nGNV+CVrQLxx4R3DbOjL2LJr23NB8zvC
-	bpmnC6pPZ5T7MnvGi/6Ipc8IzL/eHUhtOH+vYqBnhMe5fNz8yCDxYbXkcPov36488Jjp4sU4D/XZl
-	naxCzhEPGZPN4qjkFGHRMmyo0nwcY/lb1H8yxq3r6ByoTeICwC1f/slZmraMaNec4LlAfeKKwh8vj
-	/+U71g5Q==;
+	bh=NBN+fVqAItuKnCGlMNtU49sdo2swJDQQdUObtZYsByA=; b=0rS00W3RSLdN+GVj8FzlhFOXRA
+	pz/xYsLPzJJd5xsWTvhoyui1MK3zNVZwYsMZZ46gDcLsA189xNS1UV2Dp9ku0hs5D7gN5Xg2PlzJU
+	O073qm0lNigpY6zlj5WSl9rEue8rpRhHvA8k3eg3gQpfpCcWBkEiRGNOMHFJYgb500hNZZZwf7akH
+	+YAaLrQ562j6iDcDXVKjtzN0x4K/5y/mTjOjkQOz6twOpzYaSZhQz+dT1+AH2L71FbPgQ8piC83eu
+	sMKDdkAWGauK2iaOJlDrkju7BaWIoNDE5uCIfvKVEZG3zVaUleYrCMhFVvPjdcOQ3UzzH2GFIxKJs
+	O1idssrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCaCL-00000006Vrc-1ymY
+	id 1sCaCP-00000006Vu6-3SJy
 	for ath12k@archiver.kernel.org;
-	Thu, 30 May 2024 07:27:41 +0000
+	Thu, 30 May 2024 07:27:45 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCaCD-00000006Vkz-2X6X
+	id 1sCaCE-00000006VlO-1PQN
 	for ath12k@lists.infradead.org;
-	Thu, 30 May 2024 07:27:38 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44TJGCcj012513;
-	Thu, 30 May 2024 07:27:29 GMT
+	Thu, 30 May 2024 07:27:39 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44TK66l0026099;
+	Thu, 30 May 2024 07:27:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4dpJIzBu7ym0vJDvAevw/QN2k2SrGNp4vMXHIxMqaqE=; b=FDZFKwE/6mSFrZkW
-	mBvS+jja5JQt2icI6RqOMwZGLbuND8W3ez++THTS7q/dCpQtI+g0q7O4djvi4/Dp
-	4klWIexDZRMgn9FHMmKA20/UOgndfubXDl916ZvMvpG9l47oJTvp12YnC16yQ0P1
-	gS/MTIUXOLJ5tTq/js5kPf11yd72EgJADToqpUoUtUl0yLD9wgO5SJ4HbJnUOhyW
-	5xTcK2ahH+Uzj0lzprfKU1rSZctQEt4ZW/44cufqwZo48bd3CXUeCmdFi8flBejF
-	+GoCq1AJ5QeR2VkmCE9fE2NQvOBXCflhkVnU48sLrbOpPvNQGP8CAy+ZTEkYZV4E
-	hnBk/A==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yba0qkaxn-1
+	NBN+fVqAItuKnCGlMNtU49sdo2swJDQQdUObtZYsByA=; b=b/EEu3ibfqQdQmF7
+	/Ie/VKolbm1XIzgBtWv1oNkllAuYPodAVQ2w+8dXyFg9hjK+6LauhBm2xDsm8BiX
+	evJgbec1x0Es+WKoZmQFq13kHMeKkFWsGyFeS3guo3afhSDp+hJyg0obYT5adJQA
+	pY97dzoUAMUF1VLr1h7zn//h8+KsdNGgPwoJE+rqMfgtphhwVI0OZVQ4ZP5Xp+Bz
+	EeFTbWj2grQSD4ZMzH4suE4yLF7xWc+ciSt16NK8EdXel0MwhHhweE+kIQXaycDv
+	UKXZC8cWqhm4n+42fn4rnVWgmPiVEeYrOGwGw0j5/VfjcfR9rNQUDFo+5KGJfcvz
+	bBgm5w==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yb9yjbda7-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 May 2024 07:27:29 +0000 (GMT)
+	Thu, 30 May 2024 07:27:33 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44U7RRBU021152
+	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44U7RWoY024983
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 May 2024 07:27:27 GMT
+	Thu, 30 May 2024 07:27:32 GMT
 Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 30 May 2024 00:27:26 -0700
+ 15.2.1544.9; Thu, 30 May 2024 00:27:30 -0700
 From: Baochen Qiang <quic_bqiang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
-Subject: [PATCH v3 2/8] wifi: ath12k: implement WoW enable and wakeup commands
-Date: Thu, 30 May 2024 15:27:08 +0800
-Message-ID: <20240530072714.25671-3-quic_bqiang@quicinc.com>
+Subject: [PATCH v3 5/8] wifi: ath12k: implement hardware data filter
+Date: Thu, 30 May 2024 15:27:11 +0800
+Message-ID: <20240530072714.25671-6-quic_bqiang@quicinc.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20240530072714.25671-1-quic_bqiang@quicinc.com>
 References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Ji3McE0sltHQFiaaojxoP7rTiXm4GB0F
-X-Proofpoint-ORIG-GUID: Ji3McE0sltHQFiaaojxoP7rTiXm4GB0F
+X-Proofpoint-GUID: hcEjlX4lnr7V4XyqhzjXew7mdhg-x93l
+X-Proofpoint-ORIG-GUID: hcEjlX4lnr7V4XyqhzjXew7mdhg-x93l
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
  definitions=2024-05-30_05,2024-05-28_01,2024-05-17_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- suspectscore=0 lowpriorityscore=0 impostorscore=0 clxscore=1015 mlxscore=0
- mlxlogscore=999 malwarescore=0 spamscore=0 adultscore=0 bulkscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ adultscore=0 mlxscore=0 phishscore=0 mlxlogscore=967 spamscore=0
+ clxscore=1015 impostorscore=0 bulkscore=0 suspectscore=0 malwarescore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2405170001 definitions=main-2405300054
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240530_002733_854340_A82EB569 
-X-CRM114-Status: GOOD (  25.23  )
+X-CRM114-CacheID: sfid-20240530_002734_736177_B196BA8F 
+X-CRM114-Status: GOOD (  15.41  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,504 +97,190 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Implement WoW enable and WoW wakeup commands which are needed
-for suspend/resume.
+Host needs to set hardware data filter before entering WoW to
+let firmware drop needless broadcast/multicast frames to avoid
+frequent wakeup. Host clears hardware data filter when leaving WoW.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
 Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/Makefile |   1 +
- drivers/net/wireless/ath/ath12k/core.c   |   2 +
- drivers/net/wireless/ath/ath12k/core.h   |   4 +
- drivers/net/wireless/ath/ath12k/wmi.c    | 104 ++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h    | 174 +++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wow.c    |  74 ++++++++++
- drivers/net/wireless/ath/ath12k/wow.h    |  30 ++++
- 7 files changed, 389 insertions(+)
- create mode 100644 drivers/net/wireless/ath/ath12k/wow.c
- create mode 100644 drivers/net/wireless/ath/ath12k/wow.h
+ drivers/net/wireless/ath/ath12k/wmi.c | 31 +++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 21 +++++++++
+ drivers/net/wireless/ath/ath12k/wow.c | 66 +++++++++++++++++++++++++++
+ 3 files changed, 118 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index d42480db7463..f0dcc933aa95 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -26,6 +26,7 @@ ath12k-y += core.o \
- ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o
- ath12k-$(CONFIG_ACPI) += acpi.o
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
-+ath12k-$(CONFIG_PM) += wow.o
- 
- # for tracing framework to find trace.h
- CFLAGS_trace.o := -I$(src)
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index e7f628e935e4..3b1ad175a36a 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -16,6 +16,7 @@
- #include "hif.h"
- #include "fw.h"
- #include "debugfs.h"
-+#include "wow.h"
- 
- unsigned int ath12k_debug_mask;
- module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
-@@ -1259,6 +1260,7 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 	timer_setup(&ab->rx_replenish_retry, ath12k_ce_rx_replenish_retry, 0);
- 	init_completion(&ab->htc_suspend);
- 	init_completion(&ab->restart_completed);
-+	init_completion(&ab->wow.wakeup_completed);
- 
- 	ab->dev = dev;
- 	ab->hif.bus = bus;
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 7d20b09c52e6..d94d1527b276 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -764,6 +764,10 @@ struct ath12k_base {
- 		const struct ath12k_hif_ops *ops;
- 	} hif;
- 
-+	struct {
-+		struct completion wakeup_completed;
-+	} wow;
-+
- 	struct ath12k_ce ce;
- 	struct timer_list rx_replenish_retry;
- 	struct ath12k_hal hal;
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 99106b088311..7142d71de5f0 100644
+index 63ce1c76b82c..851f320e73c7 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.c
 +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7029,6 +7029,65 @@ static void ath12k_wmi_twt_disable_event(struct ath12k_base *ab,
- 	kfree(tb);
- }
- 
-+static int ath12k_wmi_wow_wakeup_host_parse(struct ath12k_base *ab,
-+					    u16 tag, u16 len,
-+					    const void *ptr, void *data)
-+{
-+	const struct wmi_wow_ev_pg_fault_param *pf_param;
-+	const struct wmi_wow_ev_param *param;
-+	struct wmi_wow_ev_arg *arg = data;
-+	int pf_len;
-+
-+	switch (tag) {
-+	case WMI_TAG_WOW_EVENT_INFO:
-+		param = ptr;
-+		arg->wake_reason = le32_to_cpu(param->wake_reason);
-+		ath12k_dbg(ab, ATH12K_DBG_WMI, "wow wakeup host reason %d %s\n",
-+			   arg->wake_reason, wow_reason(arg->wake_reason));
-+		break;
-+
-+	case WMI_TAG_ARRAY_BYTE:
-+		if (arg && arg->wake_reason == WOW_REASON_PAGE_FAULT) {
-+			pf_param = ptr;
-+			pf_len = le32_to_cpu(pf_param->len);
-+			if (pf_len > len - sizeof(pf_len) ||
-+			    pf_len < 0) {
-+				ath12k_warn(ab, "invalid page fault buffer len %d\n",
-+					    pf_len);
-+				return -EINVAL;
-+			}
-+			ath12k_dbg(ab, ATH12K_DBG_WMI, "wow data_len = %d\n",
-+				   pf_len);
-+			ath12k_dbg_dump(ab, ATH12K_DBG_WMI,
-+					"wow_event_info_type packet present",
-+					"wow_pg_fault ",
-+					pf_param->data,
-+					pf_len);
-+		}
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	return 0;
-+}
-+
-+static void ath12k_wmi_event_wow_wakeup_host(struct ath12k_base *ab, struct sk_buff *skb)
-+{
-+	struct wmi_wow_ev_arg arg = { };
-+	int ret;
-+
-+	ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-+				  ath12k_wmi_wow_wakeup_host_parse,
-+				  &arg);
-+	if (ret) {
-+		ath12k_warn(ab, "failed to parse wmi wow tlv: %d\n", ret);
-+		return;
-+	}
-+
-+	complete(&ab->wow.wakeup_completed);
-+}
-+
- static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
- {
- 	struct wmi_cmd_hdr *cmd_hdr;
-@@ -7149,6 +7208,9 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
- 	case WMI_DIAG_EVENTID:
- 		ath12k_wmi_diag_event(ab, skb);
- 		break;
-+	case WMI_WOW_WAKEUP_HOST_EVENTID:
-+		ath12k_wmi_event_wow_wakeup_host(ab, skb);
-+		break;
- 	/* TODO: Add remaining events */
- 	default:
- 		ath12k_dbg(ab, ATH12K_DBG_WMI, "Unknown eventid: 0x%x\n", id);
-@@ -7358,3 +7420,45 @@ void ath12k_wmi_detach(struct ath12k_base *ab)
- 
+@@ -7422,6 +7422,37 @@ void ath12k_wmi_detach(struct ath12k_base *ab)
  	ath12k_wmi_free_dbring_caps(ab);
  }
-+
-+int ath12k_wmi_wow_host_wakeup_ind(struct ath12k *ar)
+ 
++int ath12k_wmi_hw_data_filter_cmd(struct ath12k *ar, struct wmi_hw_data_filter_arg *arg)
 +{
-+	struct wmi_wow_host_wakeup_cmd *cmd;
-+	struct sk_buff *skb;
-+	size_t len;
-+
-+	len = sizeof(*cmd);
-+	skb = ath12k_wmi_alloc_skb(ar->wmi->wmi_ab, len);
-+	if (!skb)
-+		return -ENOMEM;
-+
-+	cmd = (struct wmi_wow_host_wakeup_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_WOW_HOSTWAKEUP_FROM_SLEEP_CMD,
-+						 sizeof(*cmd));
-+
-+	ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "wmi tlv wow host wakeup ind\n");
-+
-+	return ath12k_wmi_cmd_send(ar->wmi, skb, WMI_WOW_HOSTWAKEUP_FROM_SLEEP_CMDID);
-+}
-+
-+int ath12k_wmi_wow_enable(struct ath12k *ar)
-+{
-+	struct wmi_wow_enable_cmd *cmd;
++	struct wmi_hw_data_filter_cmd *cmd;
 +	struct sk_buff *skb;
 +	int len;
 +
 +	len = sizeof(*cmd);
 +	skb = ath12k_wmi_alloc_skb(ar->wmi->wmi_ab, len);
++
 +	if (!skb)
 +		return -ENOMEM;
 +
-+	cmd = (struct wmi_wow_enable_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_WOW_ENABLE_CMD,
++	cmd = (struct wmi_hw_data_filter_cmd *)skb->data;
++	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_HW_DATA_FILTER_CMD,
 +						 sizeof(*cmd));
++	cmd->vdev_id = cpu_to_le32(arg->vdev_id);
++	cmd->enable = cpu_to_le32(arg->enable ? 1 : 0);
 +
-+	cmd->enable = cpu_to_le32(1);
-+	cmd->pause_iface_config = cpu_to_le32(WOW_IFACE_PAUSE_ENABLED);
-+	ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "wmi tlv wow enable\n");
++	/* Set all modes in case of disable */
++	if (arg->enable)
++		cmd->hw_filter_bitmap = cpu_to_le32(arg->hw_filter_bitmap);
++	else
++		cmd->hw_filter_bitmap = cpu_to_le32((u32)~0U);
 +
-+	return ath12k_wmi_cmd_send(ar->wmi, skb, WMI_WOW_ENABLE_CMDID);
++	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
++		   "wmi hw data filter enable %d filter_bitmap 0x%x\n",
++		   arg->enable, arg->hw_filter_bitmap);
++
++	return ath12k_wmi_cmd_send(ar->wmi, skb, WMI_HW_DATA_FILTER_CMDID);
 +}
++
+ int ath12k_wmi_wow_host_wakeup_ind(struct ath12k *ar)
+ {
+ 	struct wmi_wow_host_wakeup_cmd *cmd;
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index c2b86e187a03..9cee3a114645 100644
+index 6e5d9a25255e..477e2a37eb9c 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.h
 +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4902,6 +4902,178 @@ struct wmi_twt_disable_event {
- 	__le32 status;
+@@ -5297,6 +5297,25 @@ struct wmi_wow_nlo_config_cmd {
+ 	 */
  } __packed;
  
-+/* WOW structures */
-+enum wmi_wow_wakeup_event {
-+	WOW_BMISS_EVENT = 0,
-+	WOW_BETTER_AP_EVENT,
-+	WOW_DEAUTH_RECVD_EVENT,
-+	WOW_MAGIC_PKT_RECVD_EVENT,
-+	WOW_GTK_ERR_EVENT,
-+	WOW_FOURWAY_HSHAKE_EVENT,
-+	WOW_EAPOL_RECVD_EVENT,
-+	WOW_NLO_DETECTED_EVENT,
-+	WOW_DISASSOC_RECVD_EVENT,
-+	WOW_PATTERN_MATCH_EVENT,
-+	WOW_CSA_IE_EVENT,
-+	WOW_PROBE_REQ_WPS_IE_EVENT,
-+	WOW_AUTH_REQ_EVENT,
-+	WOW_ASSOC_REQ_EVENT,
-+	WOW_HTT_EVENT,
-+	WOW_RA_MATCH_EVENT,
-+	WOW_HOST_AUTO_SHUTDOWN_EVENT,
-+	WOW_IOAC_MAGIC_EVENT,
-+	WOW_IOAC_SHORT_EVENT,
-+	WOW_IOAC_EXTEND_EVENT,
-+	WOW_IOAC_TIMER_EVENT,
-+	WOW_DFS_PHYERR_RADAR_EVENT,
-+	WOW_BEACON_EVENT,
-+	WOW_CLIENT_KICKOUT_EVENT,
-+	WOW_EVENT_MAX,
++/* Definition of HW data filtering */
++enum hw_data_filter_type {
++	WMI_HW_DATA_FILTER_DROP_NON_ARP_BC = BIT(0),
++	WMI_HW_DATA_FILTER_DROP_NON_ICMPV6_MC = BIT(1),
 +};
 +
-+enum wmi_wow_interface_cfg {
-+	WOW_IFACE_PAUSE_ENABLED,
-+	WOW_IFACE_PAUSE_DISABLED
-+};
-+
-+#define C2S(x) case x: return #x
-+
-+static inline const char *wow_wakeup_event(enum wmi_wow_wakeup_event ev)
-+{
-+	switch (ev) {
-+	C2S(WOW_BMISS_EVENT);
-+	C2S(WOW_BETTER_AP_EVENT);
-+	C2S(WOW_DEAUTH_RECVD_EVENT);
-+	C2S(WOW_MAGIC_PKT_RECVD_EVENT);
-+	C2S(WOW_GTK_ERR_EVENT);
-+	C2S(WOW_FOURWAY_HSHAKE_EVENT);
-+	C2S(WOW_EAPOL_RECVD_EVENT);
-+	C2S(WOW_NLO_DETECTED_EVENT);
-+	C2S(WOW_DISASSOC_RECVD_EVENT);
-+	C2S(WOW_PATTERN_MATCH_EVENT);
-+	C2S(WOW_CSA_IE_EVENT);
-+	C2S(WOW_PROBE_REQ_WPS_IE_EVENT);
-+	C2S(WOW_AUTH_REQ_EVENT);
-+	C2S(WOW_ASSOC_REQ_EVENT);
-+	C2S(WOW_HTT_EVENT);
-+	C2S(WOW_RA_MATCH_EVENT);
-+	C2S(WOW_HOST_AUTO_SHUTDOWN_EVENT);
-+	C2S(WOW_IOAC_MAGIC_EVENT);
-+	C2S(WOW_IOAC_SHORT_EVENT);
-+	C2S(WOW_IOAC_EXTEND_EVENT);
-+	C2S(WOW_IOAC_TIMER_EVENT);
-+	C2S(WOW_DFS_PHYERR_RADAR_EVENT);
-+	C2S(WOW_BEACON_EVENT);
-+	C2S(WOW_CLIENT_KICKOUT_EVENT);
-+	C2S(WOW_EVENT_MAX);
-+	default:
-+		return NULL;
-+	}
-+}
-+
-+enum wmi_wow_wake_reason {
-+	WOW_REASON_UNSPECIFIED = -1,
-+	WOW_REASON_NLOD = 0,
-+	WOW_REASON_AP_ASSOC_LOST,
-+	WOW_REASON_LOW_RSSI,
-+	WOW_REASON_DEAUTH_RECVD,
-+	WOW_REASON_DISASSOC_RECVD,
-+	WOW_REASON_GTK_HS_ERR,
-+	WOW_REASON_EAP_REQ,
-+	WOW_REASON_FOURWAY_HS_RECV,
-+	WOW_REASON_TIMER_INTR_RECV,
-+	WOW_REASON_PATTERN_MATCH_FOUND,
-+	WOW_REASON_RECV_MAGIC_PATTERN,
-+	WOW_REASON_P2P_DISC,
-+	WOW_REASON_WLAN_HB,
-+	WOW_REASON_CSA_EVENT,
-+	WOW_REASON_PROBE_REQ_WPS_IE_RECV,
-+	WOW_REASON_AUTH_REQ_RECV,
-+	WOW_REASON_ASSOC_REQ_RECV,
-+	WOW_REASON_HTT_EVENT,
-+	WOW_REASON_RA_MATCH,
-+	WOW_REASON_HOST_AUTO_SHUTDOWN,
-+	WOW_REASON_IOAC_MAGIC_EVENT,
-+	WOW_REASON_IOAC_SHORT_EVENT,
-+	WOW_REASON_IOAC_EXTEND_EVENT,
-+	WOW_REASON_IOAC_TIMER_EVENT,
-+	WOW_REASON_ROAM_HO,
-+	WOW_REASON_DFS_PHYERR_RADADR_EVENT,
-+	WOW_REASON_BEACON_RECV,
-+	WOW_REASON_CLIENT_KICKOUT_EVENT,
-+	WOW_REASON_PAGE_FAULT = 0x3a,
-+	WOW_REASON_DEBUG_TEST = 0xFF,
-+};
-+
-+static inline const char *wow_reason(enum wmi_wow_wake_reason reason)
-+{
-+	switch (reason) {
-+	C2S(WOW_REASON_UNSPECIFIED);
-+	C2S(WOW_REASON_NLOD);
-+	C2S(WOW_REASON_AP_ASSOC_LOST);
-+	C2S(WOW_REASON_LOW_RSSI);
-+	C2S(WOW_REASON_DEAUTH_RECVD);
-+	C2S(WOW_REASON_DISASSOC_RECVD);
-+	C2S(WOW_REASON_GTK_HS_ERR);
-+	C2S(WOW_REASON_EAP_REQ);
-+	C2S(WOW_REASON_FOURWAY_HS_RECV);
-+	C2S(WOW_REASON_TIMER_INTR_RECV);
-+	C2S(WOW_REASON_PATTERN_MATCH_FOUND);
-+	C2S(WOW_REASON_RECV_MAGIC_PATTERN);
-+	C2S(WOW_REASON_P2P_DISC);
-+	C2S(WOW_REASON_WLAN_HB);
-+	C2S(WOW_REASON_CSA_EVENT);
-+	C2S(WOW_REASON_PROBE_REQ_WPS_IE_RECV);
-+	C2S(WOW_REASON_AUTH_REQ_RECV);
-+	C2S(WOW_REASON_ASSOC_REQ_RECV);
-+	C2S(WOW_REASON_HTT_EVENT);
-+	C2S(WOW_REASON_RA_MATCH);
-+	C2S(WOW_REASON_HOST_AUTO_SHUTDOWN);
-+	C2S(WOW_REASON_IOAC_MAGIC_EVENT);
-+	C2S(WOW_REASON_IOAC_SHORT_EVENT);
-+	C2S(WOW_REASON_IOAC_EXTEND_EVENT);
-+	C2S(WOW_REASON_IOAC_TIMER_EVENT);
-+	C2S(WOW_REASON_ROAM_HO);
-+	C2S(WOW_REASON_DFS_PHYERR_RADADR_EVENT);
-+	C2S(WOW_REASON_BEACON_RECV);
-+	C2S(WOW_REASON_CLIENT_KICKOUT_EVENT);
-+	C2S(WOW_REASON_PAGE_FAULT);
-+	C2S(WOW_REASON_DEBUG_TEST);
-+	default:
-+		return NULL;
-+	}
-+}
-+
-+#undef C2S
-+
-+struct wmi_wow_enable_cmd {
++struct wmi_hw_data_filter_cmd {
 +	__le32 tlv_header;
-+	__le32 enable;
-+	__le32 pause_iface_config;
-+	__le32 flags;
-+}  __packed;
-+
-+struct wmi_wow_host_wakeup_cmd {
-+	__le32 tlv_header;
-+	__le32 reserved;
-+} __packed;
-+
-+struct wmi_wow_ev_param {
 +	__le32 vdev_id;
-+	__le32 flag;
-+	__le32 wake_reason;
-+	__le32 data_len;
++	__le32 enable;
++	__le32 hw_filter_bitmap;
 +} __packed;
 +
-+struct wmi_wow_ev_pg_fault_param {
-+	__le32 len;
-+	u8 data[];
-+} __packed;
-+
-+struct wmi_wow_ev_arg {
-+	enum wmi_wow_wake_reason wake_reason;
++struct wmi_hw_data_filter_arg {
++	u32 vdev_id;
++	bool enable;
++	u32 hw_filter_bitmap;
 +};
 +
  void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
  			     struct ath12k_wmi_resource_config_arg *config);
  void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
-@@ -5054,4 +5226,6 @@ ath12k_wmi_mac_phy_get_hw_link_id(const struct ath12k_wmi_mac_phy_caps_params *p
- 			     WMI_CAPS_PARAMS_HW_LINK_ID);
- }
- 
-+int ath12k_wmi_wow_host_wakeup_ind(struct ath12k *ar);
-+int ath12k_wmi_wow_enable(struct ath12k *ar);
+@@ -5460,4 +5479,6 @@ int ath12k_wmi_wow_add_wakeup_event(struct ath12k *ar, u32 vdev_id,
+ 				    u32 enable);
+ int ath12k_wmi_wow_config_pno(struct ath12k *ar, u32 vdev_id,
+ 			      struct wmi_pno_scan_req_arg  *pno_scan);
++int ath12k_wmi_hw_data_filter_cmd(struct ath12k *ar,
++				  struct wmi_hw_data_filter_arg *arg);
  #endif
 diff --git a/drivers/net/wireless/ath/ath12k/wow.c b/drivers/net/wireless/ath/ath12k/wow.c
-new file mode 100644
-index 000000000000..98e36fc87fa6
---- /dev/null
+index 330bd39f75c0..77658a01bb41 100644
+--- a/drivers/net/wireless/ath/ath12k/wow.c
 +++ b/drivers/net/wireless/ath/ath12k/wow.c
-@@ -0,0 +1,74 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
-+/*
-+ * Copyright (c) 2020 The Linux Foundation. All rights reserved.
-+ * Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#include <linux/delay.h>
-+
-+#include "mac.h"
-+#include "core.h"
-+#include "hif.h"
-+#include "debug.h"
-+#include "wmi.h"
-+#include "wow.h"
-+
-+int ath12k_wow_enable(struct ath12k *ar)
+@@ -538,6 +538,59 @@ static int ath12k_wow_nlo_cleanup(struct ath12k *ar)
+ 	return 0;
+ }
+ 
++static int ath12k_wow_set_hw_filter(struct ath12k *ar)
 +{
-+	struct ath12k_base *ab = ar->ab;
-+	int i, ret;
-+
-+	clear_bit(ATH12K_FLAG_HTC_SUSPEND_COMPLETE, &ab->dev_flags);
-+
-+	for (i = 0; i < ATH12K_WOW_RETRY_NUM; i++) {
-+		reinit_completion(&ab->htc_suspend);
-+
-+		ret = ath12k_wmi_wow_enable(ar);
-+		if (ret) {
-+			ath12k_warn(ab, "failed to issue wow enable: %d\n", ret);
-+			return ret;
-+		}
-+
-+		ret = wait_for_completion_timeout(&ab->htc_suspend, 3 * HZ);
-+		if (ret == 0) {
-+			ath12k_warn(ab,
-+				    "timed out while waiting for htc suspend completion\n");
-+			return -ETIMEDOUT;
-+		}
-+
-+		if (test_bit(ATH12K_FLAG_HTC_SUSPEND_COMPLETE, &ab->dev_flags))
-+			/* success, suspend complete received */
-+			return 0;
-+
-+		ath12k_warn(ab, "htc suspend not complete, retrying (try %d)\n",
-+			    i);
-+		msleep(ATH12K_WOW_RETRY_WAIT_MS);
-+	}
-+
-+	ath12k_warn(ab, "htc suspend not complete, failing after %d tries\n", i);
-+
-+	return -ETIMEDOUT;
-+}
-+
-+int ath12k_wow_wakeup(struct ath12k *ar)
-+{
-+	struct ath12k_base *ab = ar->ab;
++	struct wmi_hw_data_filter_arg arg;
++	struct ath12k_vif *arvif;
 +	int ret;
 +
-+	reinit_completion(&ab->wow.wakeup_completed);
++	lockdep_assert_held(&ar->conf_mutex);
 +
-+	ret = ath12k_wmi_wow_host_wakeup_ind(ar);
++	list_for_each_entry(arvif, &ar->arvifs, list) {
++		if (arvif->vdev_type != WMI_VDEV_TYPE_STA)
++			continue;
++
++		arg.vdev_id = arvif->vdev_id;
++		arg.enable = true;
++		arg.hw_filter_bitmap = WMI_HW_DATA_FILTER_DROP_NON_ICMPV6_MC;
++		ret = ath12k_wmi_hw_data_filter_cmd(ar, &arg);
++		if (ret) {
++			ath12k_warn(ar->ab, "failed to set hw data filter on vdev %i: %d\n",
++				    arvif->vdev_id, ret);
++			return ret;
++		}
++	}
++
++	return 0;
++}
++
++static int ath12k_wow_clear_hw_filter(struct ath12k *ar)
++{
++	struct wmi_hw_data_filter_arg arg;
++	struct ath12k_vif *arvif;
++	int ret;
++
++	lockdep_assert_held(&ar->conf_mutex);
++
++	list_for_each_entry(arvif, &ar->arvifs, list) {
++		if (arvif->vdev_type != WMI_VDEV_TYPE_STA)
++			continue;
++
++		arg.vdev_id = arvif->vdev_id;
++		arg.enable = false;
++		arg.hw_filter_bitmap = 0;
++		ret = ath12k_wmi_hw_data_filter_cmd(ar, &arg);
++
++		if (ret) {
++			ath12k_warn(ar->ab, "failed to clear hw data filter on vdev %i: %d\n",
++				    arvif->vdev_id, ret);
++			return ret;
++		}
++	}
++
++	return 0;
++}
++
+ int ath12k_wow_op_suspend(struct ieee80211_hw *hw,
+ 			  struct cfg80211_wowlan *wowlan)
+ {
+@@ -567,6 +620,13 @@ int ath12k_wow_op_suspend(struct ieee80211_hw *hw,
+ 		goto cleanup;
+ 	}
+ 
++	ret = ath12k_wow_set_hw_filter(ar);
 +	if (ret) {
-+		ath12k_warn(ab, "failed to send wow wakeup indication: %d\n",
++		ath12k_warn(ar->ab, "failed to set hw filter: %d\n",
 +			    ret);
-+		return ret;
++		goto cleanup;
 +	}
 +
-+	ret = wait_for_completion_timeout(&ab->wow.wakeup_completed, 3 * HZ);
-+	if (ret == 0) {
-+		ath12k_warn(ab, "timed out while waiting for wow wakeup completion\n");
-+		return -ETIMEDOUT;
+ 	ret = ath12k_wow_enable(ar);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to start wow: %d\n", ret);
+@@ -634,6 +694,12 @@ int ath12k_wow_op_resume(struct ieee80211_hw *hw)
+ 		goto exit;
+ 	}
+ 
++	ret = ath12k_wow_clear_hw_filter(ar);
++	if (ret) {
++		ath12k_warn(ar->ab, "failed to clear hw filter: %d\n", ret);
++		goto exit;
 +	}
 +
-+	return 0;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/wow.h b/drivers/net/wireless/ath/ath12k/wow.h
-new file mode 100644
-index 000000000000..6817ceaa4cfe
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/wow.h
-@@ -0,0 +1,30 @@
-+/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-+/*
-+ * Copyright (c) 2020 The Linux Foundation. All rights reserved.
-+ * Copyright (c) 2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef ATH12K_WOW_H
-+#define ATH12K_WOW_H
-+
-+#define ATH12K_WOW_RETRY_NUM		10
-+#define ATH12K_WOW_RETRY_WAIT_MS	200
-+
-+#ifdef CONFIG_PM
-+
-+int ath12k_wow_enable(struct ath12k *ar);
-+int ath12k_wow_wakeup(struct ath12k *ar);
-+
-+#else
-+
-+static inline int ath12k_wow_enable(struct ath12k *ar)
-+{
-+	return 0;
-+}
-+
-+static inline int ath12k_wow_wakeup(struct ath12k *ar)
-+{
-+	return 0;
-+}
-+#endif /* CONFIG_PM */
-+#endif /* ATH12K_WOW_H */
+ exit:
+ 	if (ret) {
+ 		switch (ah->state) {
 -- 
 2.25.1
 
