@@ -4,89 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77649C25B75
-	for <ath12k@archiver.kernel.org>; Fri, 31 May 2024 05:11:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFDBBC27C44
+	for <ath12k@archiver.kernel.org>; Fri, 31 May 2024 10:05:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bGyszgCXocncdDXygI9xiaUAxlOXQcXtacPXeoOi/i8=; b=QKcZpRy3OLnncBBUjXyy74x19J
-	jAnl2DBGXvrR+Ee/RdN/TnA/SF1eO9B5BStDizNJyDiHAzB4FLwvCCFoXQmta0IHc0O3exgMDuvxP
-	g1eHtR63zFbwD6y2TWc/IvJgJm3buR2zD1mE2ti1skmZS8n5fXhOz8Zu7OSMV5dgvfh2CLyMIpA7P
-	C1KubdDEPlC1PZulKgDvjH8PZiNM5kWC8IM7BRRXFjBoutQK1S6YucNZga/bFPxKUnFO8dIiSIjjy
-	skfJF2Hh1PMmTNfJoB3Cg0Kl5TzkVgrPLAHybTU/9Pmc24go641WF+fF/Krnf7MVJuFcoTiS40yvF
-	XEF+rOTg==;
+	bh=rKVuoKznSNkUWNCln/Gy6NfeFRO+cFje7ysWLbAk9JA=; b=nXk0PnZ0KGFS9sIoIl/+nQrzoV
+	2bNIlq/P5lVG/leXB2a02KnrHeKt4y8hmxGMvJ+PuRKv5stgPNWuNuNVNtq/x48WV/bvGqsVGX5R7
+	ck4lHutpVLXFuiRuL6i+1iDSya4F38r4l55x2/T4pIf7QZoWLFC8+wSAjtwZvA9roNk+p95Z/3ReZ
+	4dCO8MYq2Ydj7uaTnjjcTxTvE24k1pdQbywMudp5d4szogFDtEnv5ICsP8FGKtGqqDfeTBR7XnuGd
+	okMuNvoBs0iOT3SiaiPhRTjO45ty2Q/dok1kJKNhMKAdjoYwU0KVOy6Sq5T85Ht75RgFZ4oc/QC31
+	bguaI/Dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCuXs-00000009GEW-0fE6
+	id 1sCz8j-00000009tJM-1qg2
 	for ath12k@archiver.kernel.org;
-	Fri, 31 May 2024 05:11:16 +0000
+	Fri, 31 May 2024 10:05:37 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCuXp-00000009GE6-23hH
+	id 1sCz8f-00000009tIY-1t9G
 	for ath12k@lists.infradead.org;
-	Fri, 31 May 2024 05:11:15 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44UMGJlC015861;
-	Fri, 31 May 2024 05:11:12 GMT
+	Fri, 31 May 2024 10:05:35 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44V7YD3E003129;
+	Fri, 31 May 2024 10:05:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	bGyszgCXocncdDXygI9xiaUAxlOXQcXtacPXeoOi/i8=; b=bYD9a9w0+SMrIbvE
-	/LXsF2DAIWZ4ulV6NdUUwjUFnyVo00LJeX8RVNl15R2pL2ClNqsreGy/sSVXxEgd
-	VVIgClyf51f6ZwEy+O+HIfyrEIxYfWDBXhL4Cd4Me8Xnx4VnznfKwmED34TKFPBB
-	oK+hdox5lNm+CQhQsCIIKtF0RysN7NW+xJOSlKp5ZVa5luLGLe/ah3zYeZyRgO8O
-	VjAZ6ujtleu86f1kVX/2JfsXBGRbJuBjfnn0MzzHuZSAwgGAGIsR+Y5eZrZ5NdPz
-	02czFWb1HaEnntM8Rkqt5mEzUnJZ/hSZqfYnoDMZnU2kSu04wIvKsk2BpKPn9zNa
-	G3r5Jw==
+	rKVuoKznSNkUWNCln/Gy6NfeFRO+cFje7ysWLbAk9JA=; b=oU1aQy7z5mEnGZcY
+	74gOdzc7LS/HGxZvNxXU0N14uW/OO9meWquAkKR8eDbcUQ5jN+4+gJzOgVAESVE2
+	v9HYLFpXZNe+4tovZJcr3sdipv7uJFelr6yq2ViHs8gXQAnVQLiJZTDGtrsl56gz
+	FlsIH4KXMBht30kdLl2H6J2Uw192kwUhaJK1NHirlXmDM1DBayMeqJG9OMMP0paY
+	1QRaYcq1r48bIg0zwiPR/P0xvt7Q+PdLMSoo2yYVo4EKctJuep47ulmQh2hX4gOO
+	L7cEocnjdi+CN2DwoBWh4+UiufWqbeeq1J8CS/q3QMHTaYxlTRpqzTODfbc1UjpX
+	Eh343g==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yf23srnwr-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yfa9bgct5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 31 May 2024 05:11:11 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44V5BAs2022628
+	Fri, 31 May 2024 10:05:30 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44VA5TOr021904
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 31 May 2024 05:11:10 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 30 May
- 2024 22:11:08 -0700
-Message-ID: <af326e49-df6e-4574-9562-44b6aee10abd@quicinc.com>
-Date: Fri, 31 May 2024 13:11:07 +0800
+	Fri, 31 May 2024 10:05:29 GMT
+Received: from [10.152.206.169] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 31 May
+ 2024 03:05:27 -0700
+Message-ID: <cc0fdf88-7046-eb93-265b-35a2d7299952@quicinc.com>
+Date: Fri, 31 May 2024 15:35:24 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 6/8] wifi: ath12k: support ARP and NS offload
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.0
+Subject: Re: [PATCH v7 0/8] wifi: ath12k: Introduce device group abstraction
+To: Jeff Johnson <quic_jjohnson@quicinc.com>,
+        Baochen Qiang
+	<quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
-References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
- <20240530072714.25671-7-quic_bqiang@quicinc.com>
- <ccf9791b-e050-4844-8c37-35873fb3fcaf@quicinc.com>
- <17721436-19fb-4337-9058-b20f4df2792c@quicinc.com>
+References: <20240528063547.1400700-1-quic_hprem@quicinc.com>
+ <396d645d-6f3b-4c1b-9d4b-d056fad36192@quicinc.com>
+ <7b92a6cd-187d-4b6d-8cfb-af54365751fc@quicinc.com>
+ <d7898dd9-b3d2-45a1-8581-41d16b900a27@quicinc.com>
 Content-Language: en-US
-In-Reply-To: <17721436-19fb-4337-9058-b20f4df2792c@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
+From: Harshitha Prem <quic_hprem@quicinc.com>
+In-Reply-To: <d7898dd9-b3d2-45a1-8581-41d16b900a27@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 5B30odrmLO89knAp3LjqpGLKlYrgBSDq
-X-Proofpoint-GUID: 5B30odrmLO89knAp3LjqpGLKlYrgBSDq
+X-Proofpoint-ORIG-GUID: CJCyKGWWW82jmUWcNyuEk5NA35wG7gHN
+X-Proofpoint-GUID: CJCyKGWWW82jmUWcNyuEk5NA35wG7gHN
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
- definitions=2024-05-31_02,2024-05-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- adultscore=0 spamscore=0 lowpriorityscore=0 priorityscore=1501
- impostorscore=0 phishscore=0 mlxlogscore=848 bulkscore=0 mlxscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2405310038
+ definitions=2024-05-31_06,2024-05-30_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 priorityscore=1501 bulkscore=0 adultscore=0 mlxscore=0
+ phishscore=0 clxscore=1015 spamscore=0 malwarescore=0 suspectscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2405310075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240530_221113_634202_92F918DC 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20240531_030533_722780_1B2E96F3 
+X-CRM114-Status: GOOD (  16.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,22 +106,134 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 5/31/2024 11:42 AM, Baochen Qiang wrote:
->>> +static void ath12k_wow_prepare_ns_offload(struct ath12k_vif *arvif,
->>> +					  struct wmi_arp_ns_offload_arg *offload)
->>> +{
->>> +	struct inet6_dev *idev = arvif->idev;
->> as noted above does it make more sense to get the netdev associated with the
->> arvif and then use in6_dev_get(net_device) to get the inet6_dev rather than
->> caching the pointer from the ipv6_addr_changed() callback?
-> Ah.. I didn't note that we can get inet6_dev in such a way, just thought the only way is to cache it in ipv6_changed() callback.
+On 5/30/2024 3:58 AM, Jeff Johnson wrote:
+> On 5/28/2024 8:13 PM, Baochen Qiang wrote:
+>>
+>>
+>> On 5/29/2024 6:04 AM, Jeff Johnson wrote:
+>>> On 5/27/2024 11:35 PM, Harshitha Prem wrote:
+>>>> To support multi-link operation, multiple devices with different bands say
+>>>> 2 GHz or 5 GHz or 6 GHz can be combined together as a group and provide
+>>>> an abstraction to mac80211.
+>>>>
+>>>> Device group abstraction - when there are multiple devices that are
+>>>> connected by any means of communication interface between them, then these
+>>>> devices can be combined together as a single group using a group id to form
+>>>> a group abstraction. In ath12k driver, this abstraction would be named as
+>>>> ath12k_hw_group (ag).
+>>>>
+>>>> Please find below illustration of device group abstraction with two
+>>>> devices.
+>>>>
+>>>>                   Grouping of multiple devices (in future)
+>>>> +------------------------------------------------------------------------+
+>>>> |  +-------------------------------------+       +-------------------+   |
+>>>> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+>>>> |  |   | ar (2GHz) | | | | ar (5GHz) |   |       |   | ar (6GHz) |   |   |
+>>>> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+>>>> |  |          ath12k_base (ab)           |       | ath12k_base (ab)  |   |
+>>>> |  |         (Dual band device)          |       |                   |   |
+>>>> |  +-------------------------------------+       +-------------------+   |
+>>>> |                 ath12k_hw_group (ag) based on group id                 |
+>>>> +------------------------------------------------------------------------+
+>>>>
+>>>> Say for example, device 1 has two radios (2 GHz and 5 GHz band) and
+>>>> device 2 has one radio (6 GHz).
+>>>>
+>>>> In existing code -
+>>>>          device 1 will have two hardware abstractions hw1 (2 GHz) and hw2
+>>>>          (5 GHz) will be registered separately to mac80211 as phy0 and phy1
+>>>>          respectively. Similarly, device 2 will register its hw (6GHz) as
+>>>>          phy2 to mac80211.
+>>>>
+>>>> In future, with multi-link abstraction
+>>>>
+>>>>          combination 1 - Different group id for device1 and device 2
+>>>>                  Device 1 will create a single hardware abstraction hw1
+>>>>                  (2 GHz and  5 GHz) and will be registered to mac80211 as
+>>>>                  phy0. similarly, device 2 will register its hardware
+>>>>                  (6 GHz) to mac80211 as phy1.
+>>>>
+>>>>          combination 2 - Same group id for device1 and device 2
+>>>>                  Both device details are combined together as a group, say
+>>>>                  group1, with single hardware abstraction of radios 2 GHz,
+>>>>                  5 GHz and 6 GHz band details and will be registered to
+>>>>                  mac80211 as phy0.
+>>>>
+>>>> Add base infrastructure changes to add device grouping abstraction with
+>>>> a single device.
+>>>>
+>>>> This patch series brings the base code changes with following order:
+>>>>          1. Refactor existing code which would facilitate in introducing
+>>>>             device group abstraction.
+>>>>          2. Create a device group abstraction during device probe.
+>>>>          3. Start the device group only after QMI firmware ready event is
+>>>>             received for all the devices that are combined in the group.
+>>>>          4. Move the hardware abstractions (ath12k_hw - ah) from device
+>>>>             (ath12k_base - ab) to device group abstraction (ag) as it would
+>>>>             ease in having different combinations of group abstraction that
+>>>>             can be registered to mac80211.
+>>>>
+>>>> v7:
+>>>>     - Added linux-wireless mailer to cc.
+>>>>     - Removed Acked-by tag from "[PATCH v6 8/8]" as it has minor change.
+>>>>
+>>>> v6:
+>>>>    - Addressed smatch error seen on "[PATCH v5 8/8] wifi: ath12k: move
+>>>>      ath12k_hw from per soc to group"
+>>>>    - Rebased to ToT
+>>>> v5:
+>>>>    - on "[PATCH 8/8] wifi: ath12k: move ath12k_hw from per soc to
+>>>>      group", refactor the ath12k_mac_hw_allocate() api based on ag rather
+>>>>      than ab and update hardware abstraction array size in ath12k_hw_group
+>>>>      as ATH12K_GROUP_MAX_RADIO.
+>>>>    - Rebased to ToT
+>>>> v4:
+>>>>    - Modified the cover letter
+>>>> v3:
+>>>>    - Removed depends-on tag of "wifi: ath12k: Refactor the hardware recovery
+>>>>      procedures" as it is merged to ToT
+>>>>    - Addressed the deadlock warning seen during rmmod.
+>>>>
+>>>> v2:
+>>>>   - Rebased to ToT
+>>>>
+>>>> Karthikeyan Periyasamy (8):
+>>>>    wifi: ath12k: Refactor core start api
+>>>>    wifi: ath12k: Add helpers to get or set ath12k_hw
+>>>>    wifi: ath12k: Add ath12k_get_num_hw api
+>>>>    wifi: ath12k: Introduce QMI firmware ready flag
+>>>>    wifi: ath12k: move ATH12K_FLAG_REGISTERED flag set to mac_register api
+>>>>    wifi: ath12k: Introduce device group abstraction
+>>>>    wifi: ath12k: refactor core start based on hardware group
+>>>>    wifi: ath12k: move ath12k_hw from per device to group
+>>>>
+>>>>   drivers/net/wireless/ath/ath12k/core.c | 431 +++++++++++++++++++++----
+>>>>   drivers/net/wireless/ath/ath12k/core.h |  87 ++++-
+>>>>   drivers/net/wireless/ath/ath12k/dp.c   |  19 +-
+>>>>   drivers/net/wireless/ath/ath12k/dp.h   |   2 +-
+>>>>   drivers/net/wireless/ath/ath12k/mac.c  | 117 ++++---
+>>>>   drivers/net/wireless/ath/ath12k/mac.h  |   9 +-
+>>>>   drivers/net/wireless/ath/ath12k/pci.c  |   2 +
+>>>>   drivers/net/wireless/ath/ath12k/qmi.c  |  10 +-
+>>>>   8 files changed, 544 insertions(+), 133 deletions(-)
+>>>>
+>>>>
+>>>> base-commit: f8320064a28242448eeb9fece08abd865ea8a226
+>>>
+>>> With this series I'm seeing a firmware crash upon resume from hibernation, but
+>>> I'm not sure if it is the same intermittent crash I reported in another thread
+>>> where firmware is not correctly handling a low physical memory address.
+>>>
+>>> Baochen & Kalle, since this issue may be specific to my laptop, can you
+>>> validate hibernation on your setups?
+>> I can also see a firmware crash upon resume. I am using ath-202405281746 as code base.
 > 
-> will get it using the following in next version:
-> 	struct ieee80211_vif *vif = container_of(arvif)
-> 	struct ieee80211_sub_if_data *sub_if_data = container_of(vif)
-> 	struct net_dev *ndev = sub_if_data->dev
-> 	struct inet6_dev *idev = in6_dev_get(ndev)
-Just found that ieee80211_sub_if_data is internal to mac80211, so not possible to get netdev in this way.
-
-any other ideas on how to get netdev?
+> I bisected to:
+> [PATCH v7 7/8] wifi: ath12k: refactor core start based on hardware group
+> 
+> 
+Thank you so much, Jeff. Identified the possible reason that is causing 
+the firmware assert with hibernation scenario and will address it in 
+next version.
 
