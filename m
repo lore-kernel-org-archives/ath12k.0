@@ -4,58 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08469C27C4F
-	for <ath12k@archiver.kernel.org>; Fri, 31 May 2024 17:01:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1901BC25B75
+	for <ath12k@archiver.kernel.org>; Fri, 31 May 2024 17:26:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=antZWW8IGb+9ZCNfPqsl6RlwE3y0DrtIK/3sJKRt72c=; b=ZF4LYye5Q5YWKa556Ms1LpQHcf
-	ja4o/BRC0n+FXL+aZP1hHbGSRGRHFjpjefIuX2yM5ksoqLdrXyZ0iFSSIKvkRoEy9sMaQZH275N8n
-	42Ktpx8fMFGnPTjA3Y3ie4k/L7nG65UB+yvAwt6t/SuqLu4H9zOFagTDhZEmfdeK5fHijTS30GmNA
-	L9KU7Cyg78Cr8cwnrch5h3wfQZS6s80NkTKIo74GhlD6WjKN1CpIr/+B04e2dtzTTMrVcl5a/ESo6
-	FTAqi0099FZSuNrKDFAZTxFwq/o1/n2eFUzHEPXMnTDOdgv7vaORe3rUdZ8xmev8XbjjjB/MDgzyz
-	hxXmkfrQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Kb+iaUW6DdlJnSDpiN1YqPO1vDQ8v64dWbqzF7/lRd0=; b=NPW2WT2H2/Kb6s4OBYRmoNIupD
+	PrXc8F5nAKZNwdXuU6MQ6ERu1dR2Wy5qNpsvefQC30BkNQ3L16nRZAH0nvVTT7jGJBdglRBZAZg3h
+	PL75xO3okE2iZ8V4iso7Ys12nY0aQBW6fKQrKeOJ5Qo2UcTuJyma3+rORMvQnKsas/T6cojwgtCwI
+	uKIkWtQQtR1Ln2InrpqJ3gpKc2ilLeDurv0Z0tF8V9aoq1SXJFaTtzDsB8DDUMHIO+SHaQJeKqPDx
+	F1UD8sCvGoddeTbgR8/r99eSboR50T2VLa/0foAuoeGRhhW3fTuqtXcg7SPIihx8UQk6BeNbvmXTf
+	nm/NF5Jg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sD5ci-0000000AwYj-2L1Q
+	id 1sD61n-0000000B0J1-1lBm
 	for ath12k@archiver.kernel.org;
-	Fri, 31 May 2024 17:01:00 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Fri, 31 May 2024 17:26:55 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sD5ce-0000000AwWM-0dTr;
-	Fri, 31 May 2024 17:00:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id B1ED9CE1D47;
-	Fri, 31 May 2024 17:00:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C767DC4AF0B;
-	Fri, 31 May 2024 17:00:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717174850;
-	bh=npo7uATaKkeSuypMjGQBs62SKdU1v8hnJzTlwcO6QEM=;
-	h=From:To:Cc:Subject:Date:From;
-	b=oDUuhoJTWb3vqDy0rIuhvvDNpIP0eTwVsXJ2Vwd5OOaBMYbd1+sBtJR6gt63LJX6N
-	 YPqnKYB4vWoFxA1hS2E6NEG6HiXX9jy7TNyIeehjisHsY5N2raoTO4J2H6b0+b+AUI
-	 PvpUGTkPDj5HcHDB0P+GBFRU0DU+rDjxPm4Ti8Wd5SPjh3Fgj0+Rx/D7EqLbJoEDyI
-	 EgmpAl+1t2ZbLPOGQ4ZR/rcQapjTgN6Eo4H8iZ5aHxJ+akNSEjPx+O0ZmviXMUoSm1
-	 wnya48XURoAbpY+JFRmBobiGnC14/iDbIYSIYwudZA13OmF2TJYTiM73iYbLRsH0k3
-	 J7WlzUDE+aTAg==
-From: Kalle Valo <kvalo@kernel.org>
-To: linux-wireless@vger.kernel.org
-Cc: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
- ath12k@lists.infradead.org, quic_jjohnson@quicinc.com
-Subject: pull-request: ath-current-20240531
-Date: Fri, 31 May 2024 20:00:46 +0300
-Message-ID: <87ttidvrup.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	id 1sD61k-0000000B0Ia-3bz7
+	for ath12k@lists.infradead.org;
+	Fri, 31 May 2024 17:26:54 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44VFK0KO031709;
+	Fri, 31 May 2024 17:26:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Kb+iaUW6DdlJnSDpiN1YqPO1vDQ8v64dWbqzF7/lRd0=; b=nVKfI3AFYRtZ3hhP
+	ytOauIc97cV6++YlMC5O6FFP15/mJx+m/JwKpTAnlN7JlvY8C4Al8hEzwAhMTza9
+	i1h3OltXFVqH9WPBhWy0+WCDorRsU9Syp+m2d61YLVyCa0WrnQuIOcqdit2GSXlV
+	8qmrfLt2L2S1/9uHVfLDcWNc19QItZr850vL+2SQHLBwMluKBmg/dNNJj6cNvg4f
+	BBwHpX14HLSArWTnEJUM9eX0Nkf5Cw1nNkczoKwDCMWzYDn0x8IUqS43Rc2pr3H8
+	E1im3fhHrb4Jyxvygi1JhWtvtLIxkVgtlrhyWgA9NLWgGB9cIyvF+OjCsmFWCL2E
+	hpU9AQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yf8xa1q1q-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 31 May 2024 17:26:52 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 44VHQp5R030498
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 31 May 2024 17:26:51 GMT
+Received: from [10.110.11.230] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 31 May
+ 2024 10:26:50 -0700
+Message-ID: <29f1a482-2ead-474a-93a1-00616bcf06f8@quicinc.com>
+Date: Fri, 31 May 2024 10:26:49 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 6/8] wifi: ath12k: support ARP and NS offload
+Content-Language: en-US
+To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
+ <20240530072714.25671-7-quic_bqiang@quicinc.com>
+ <ccf9791b-e050-4844-8c37-35873fb3fcaf@quicinc.com>
+ <17721436-19fb-4337-9058-b20f4df2792c@quicinc.com>
+ <af326e49-df6e-4574-9562-44b6aee10abd@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <af326e49-df6e-4574-9562-44b6aee10abd@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: xwQXDhSs0_3H9RE0iaMZbX2RQMZHyxvk
+X-Proofpoint-ORIG-GUID: xwQXDhSs0_3H9RE0iaMZbX2RQMZHyxvk
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
+ definitions=2024-05-31_12,2024-05-30_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=999 mlxscore=0 priorityscore=1501 malwarescore=0 bulkscore=0
+ impostorscore=0 clxscore=1015 lowpriorityscore=0 adultscore=0 phishscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2405310132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240531_100056_393828_5CFE4935 
-X-CRM114-Status: UNSURE (   7.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240531_102652_939345_9DB92B56 
+X-CRM114-Status: GOOD (  12.49  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,46 +102,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On 5/30/2024 10:11 PM, Baochen Qiang wrote:
+> 
+> 
+> On 5/31/2024 11:42 AM, Baochen Qiang wrote:
+>>>> +static void ath12k_wow_prepare_ns_offload(struct ath12k_vif *arvif,
+>>>> +					  struct wmi_arp_ns_offload_arg *offload)
+>>>> +{
+>>>> +	struct inet6_dev *idev = arvif->idev;
+>>> as noted above does it make more sense to get the netdev associated with the
+>>> arvif and then use in6_dev_get(net_device) to get the inet6_dev rather than
+>>> caching the pointer from the ipv6_addr_changed() callback?
+>> Ah.. I didn't note that we can get inet6_dev in such a way, just thought the only way is to cache it in ipv6_changed() callback.
+>>
+>> will get it using the following in next version:
+>> 	struct ieee80211_vif *vif = container_of(arvif)
+>> 	struct ieee80211_sub_if_data *sub_if_data = container_of(vif)
+>> 	struct net_dev *ndev = sub_if_data->dev
+>> 	struct inet6_dev *idev = in6_dev_get(ndev)
+> Just found that ieee80211_sub_if_data is internal to mac80211, so not possible to get netdev in this way.
+> 
+> any other ideas on how to get netdev?
 
-Please pull, more information in the tag below.
+Thinking about this some more, it seems like you'd want to send these down to
+firmware immediately so that they'd be available for NS offload. Does firmware
+support NS offload even when host is awake (I think the downstream Android
+driver supports that)?
 
-Kalle
-
-The following changes since commit 1d60eabb82694e58543e2b6366dae3e7465892a5:
-
-  wifi: mwl8k: initialize cmd->addr[] properly (2024-05-07 15:08:14 +0300)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git tags/ath-current-20240531
-
-for you to fetch changes up to 6e16782d6b4a724f9c9dcd49471219643593b60c:
-
-  wifi: ath11k: move power type check to ASSOC stage when connecting to 6 GHz AP (2024-05-23 15:45:52 +0300)
-
-----------------------------------------------------------------
-Merge ath-current from git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
-
-ath.git fixes for 6.10. Two fixes for user reported regressions in
-ath11k. One dependency fix and one error path fix.
-
-----------------------------------------------------------------
-Baochen Qiang (1):
-      wifi: ath11k: move power type check to ASSOC stage when connecting to 6 GHz AP
-
-Breno Leitao (1):
-      wifi: ath11k: Fix error path in ath11k_pcic_ext_irq_config
-
-Carl Huang (1):
-      wifi: ath11k: fix WCN6750 firmware crash caused by 17 num_vdevs
-
-Dmitry Baryshkov (1):
-      wifi: ath10k: fix QCOM_RPROC_COMMON dependency
-
- drivers/net/wireless/ath/ath10k/Kconfig |  1 +
- drivers/net/wireless/ath/ath11k/core.c  |  2 +-
- drivers/net/wireless/ath/ath11k/mac.c   | 38 ++++++++++++++++++++++-----------
- drivers/net/wireless/ath/ath11k/pcic.c  | 25 +++++++++++++++-------
- 4 files changed, 44 insertions(+), 22 deletions(-)
+So perhaps an alternative approach is to collect the information you need from
+the notification and then schedule a workqueue to actually send the
+information to firmware?
 
