@@ -4,89 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D637C25B75
-	for <ath12k@archiver.kernel.org>; Fri, 31 May 2024 20:26:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96CDAC25B76
+	for <ath12k@archiver.kernel.org>; Sat,  1 Jun 2024 09:58:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=GZ0RZFs20OEEIJoeIXKXEB15DGrZXj4ZUdrDMX8OafE=; b=KaFZImPBR8Q7mri+4Lkobc33hV
-	Il6csX2570LiVw+PdsltgmXj1/BXWhNYzGJhUK6/zisxLBLj8CGgWiTkPNEEDCZyJUIfUIABjm18R
-	mOomwfs/qCQvyCAowCCTAcS0ZLg1Ki0vVOCo7GXKb5LMZA6moy9j6uQt3hVwBwKvPLDNOE8+wuKrP
-	C9+tkyrXwtfc35UniVt+78EG95Hx1GaeDQvI0mvplk//SuMqxlIf0W/dIFihDSyAhKinii7K3/chi
-	40p/huRYzeWrOmsoWfDqBCimhRwgyr8da3/0zSka7GuXrs4eMFBwz7r4TEGlVwolsE2tBgois3jEz
-	ioenlCLw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=S2L8JqRgsNXQ4iLAOjOyP62kdDzzqMsK1S/4VG5J/vU=; b=EYXATcE5gwy2lJlvHr5uELuwtE
+	NeoZagqKYrS31dfepvhrIjQLVH7Rxxfsqd+yrbbmG8D7gd3M9KXEo8XqMeqdvLd9Op7Serw9DJCiJ
+	9w6zTTeS0ax5vlKy3Pc9kMUaHI8Q46okeLr1QR+76s2geD/CQ7ICp3S1JW7qTK25XHI5EUWeiyK81
+	pacatGDr1sCiD1KGGxkmvOX8r3eWVp0f50nAjhMtHFNhvEibXteSHI5/tV7WDIDJMyzAwwR0wSekX
+	3K9TzmbmCqeF7Cnsrh9hXmakOKK5sffN2PfsoYCRR+Iov1AeTMzk34x3dmJaQqP9punroTIWie12/
+	+yWgIGzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sD8pA-0000000BMwE-115J
+	id 1sDLV7-0000000CJ9D-1C9Z
 	for ath12k@archiver.kernel.org;
-	Fri, 31 May 2024 20:26:04 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Sat, 01 Jun 2024 09:58:13 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sD8p6-0000000BMvT-3e0s
-	for ath12k@lists.infradead.org;
-	Fri, 31 May 2024 20:26:02 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44VJ2Kxl023295;
-	Fri, 31 May 2024 20:25:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=GZ0RZFs20OEEIJoeIXKXEB15DGrZXj4ZUdr
-	DMX8OafE=; b=NamcFr8/RR2v1DTjTYWS76huo3tOPdf1ypf/2M9FvVS5zEEd1X/
-	x+ePGnDPQnOJft6bi3jJCmXp1+E9O1XZMaKXCgtixdqUprRrt1TcboIai0D7zb7V
-	UMdQiJPgrvAXRo/IwCOuHjXIU3uWH+U4ZPty3TIO7coImtEHclKRvjCgkPrLjD08
-	4m8D4y/yw0r6av21kHuoeq92nbZ3tSr49NVcR5LLtPrGFU9vDPnqq/L1jFo/wjZ/
-	vQDq6xKrM6jx6aj2zj/lCm2bLUzz2MBr01WUy/YgQtIX8XUhot5QqT3lhLpyRRyQ
-	6uYB8X5Orzej0XqMxRDuiJeLn7cJ1H2q42w==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yba0qr79y-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 31 May 2024 20:25:55 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 44VKPo5R023933;
-	Fri, 31 May 2024 20:25:50 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3yf34np19d-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 31 May 2024 20:25:50 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 44VKPoUK023927;
-	Fri, 31 May 2024 20:25:50 GMT
-Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 44VKPoh9023926
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 31 May 2024 20:25:50 +0000
-Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
-	id C327241148; Sat,  1 Jun 2024 01:55:49 +0530 (+0530)
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH v3 0/5] wifi: ath12k: Add support to enable debugfs_htt_stats
-Date: Sat,  1 Jun 2024 01:55:40 +0530
-Message-Id: <20240531202545.2021028-1-quic_rgnanase@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	id 1sDLV2-0000000CJ8T-2qq3;
+	Sat, 01 Jun 2024 09:58:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id C60D4CE1ACC;
+	Sat,  1 Jun 2024 09:57:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A92D0C116B1;
+	Sat,  1 Jun 2024 09:57:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1717235879;
+	bh=ABPZwTl98JqWjY9l5L1A3Pf6ulH1Xx1AiunqIWYybpw=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=nUEVUUm7eSNS5laRl59xNobBEKQP0WW2fCspCPBBM9SDbjXRDElexohcHagse0Dz4
+	 mcaLPiGc7LkdxgynDO7uhGBoYOx+aoqGpdTnwmlyrr4E8jCtX3vL4uipXK+Dm1kuxf
+	 siPiLDzBRKBaLZA+/YP7naIWhEsFdzXUcsQUpp78tpVNufEl1feSWL4fMdgpY/DgCh
+	 XK9rqSHiptRdzorr1PleYuOzpTHhNYykLQ4K+c/zPpZsb6Nonhm7o5T4kdZjqeJujw
+	 eKJeNg/Kjh8cP77a3D5HUDh/21qKJUrN7c6T1vi2Km41a+A5eRwSvfBFSflkD7IpkJ
+	 fFtPzm3pxSaSA==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: RYme7eswOSjIBaMbEgC2ex4XTMM8CI8R
-X-Proofpoint-ORIG-GUID: RYme7eswOSjIBaMbEgC2ex4XTMM8CI8R
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
- definitions=2024-05-31_13,2024-05-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- suspectscore=0 lowpriorityscore=0 impostorscore=0 clxscore=1015 mlxscore=0
- mlxlogscore=999 malwarescore=0 spamscore=0 adultscore=0 bulkscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2405310154
+Content-Transfer-Encoding: 7bit
+Subject: Re: pull-request: ath-current-20240531
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <87ttidvrup.fsf@kernel.org>
+References: <87ttidvrup.fsf@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+ quic_jjohnson@quicinc.com
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171723587573.967328.5470768065737630382.kvalo@kernel.org>
+Date: Sat,  1 Jun 2024 09:57:57 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240531_132601_103132_99909DD1 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20240601_025808_942387_5EF5B405 
+X-CRM114-Status: GOOD (  11.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,67 +73,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Bring in the basic infrastructure necessary for enabling htt_stats via debugfs.
-Patch series bring support to request stats type to firmware, dump the stats
-and request to reset the stats from firmware.
+Kalle Valo <kvalo@kernel.org> wrote:
 
-Schema with one ath12k device:
+> Hi,
+> 
+> Please pull, more information in the tag below.
+> 
+> Kalle
+> 
+> The following changes since commit 1d60eabb82694e58543e2b6366dae3e7465892a5:
+> 
+>   wifi: mwl8k: initialize cmd->addr[] properly (2024-05-07 15:08:14 +0300)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git tags/ath-current-20240531
+> 
+> for you to fetch changes up to 6e16782d6b4a724f9c9dcd49471219643593b60c:
+> 
+>   wifi: ath11k: move power type check to ASSOC stage when connecting to 6 GHz AP (2024-05-23 15:45:52 +0300)
+> 
+> ----------------------------------------------------------------
+> Merge ath-current from git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
+> 
+> ath.git fixes for 6.10. Two fixes for user reported regressions in
+> ath11k. One dependency fix and one error path fix.
+> 
+> ----------------------------------------------------------------
+> Baochen Qiang (1):
+>       wifi: ath11k: move power type check to ASSOC stage when connecting to 6 GHz AP
+> 
+> Breno Leitao (1):
+>       wifi: ath11k: Fix error path in ath11k_pcic_ext_irq_config
+> 
+> Carl Huang (1):
+>       wifi: ath11k: fix WCN6750 firmware crash caused by 17 num_vdevs
+> 
+> Dmitry Baryshkov (1):
+>       wifi: ath10k: fix QCOM_RPROC_COMMON dependency
+> 
+>  drivers/net/wireless/ath/ath10k/Kconfig |  1 +
+>  drivers/net/wireless/ath/ath11k/core.c  |  2 +-
+>  drivers/net/wireless/ath/ath11k/mac.c   | 38 ++++++++++++++++++++++-----------
+>  drivers/net/wireless/ath/ath11k/pcic.c  | 25 +++++++++++++++-------
+>  4 files changed, 44 insertions(+), 22 deletions(-)
 
-ath12k
-`-- pci-0000:06:00.0
-    |-- mac0
-        `-- htt_stats
-        |-- htt_stats_type
-        |-- htt_stats_reset
+Pulled, thanks.
 
-Dinesh Karthikeyan (3):
-  wifi: ath12k: Add support to enable debugfs_htt_stats
-  wifi: ath12k: Add htt_stats_dump file ops support
-  wifi: ath12k: Add support to parse requested stats_type
+10bc8558b59a Merge tag 'ath-current-20240531' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath
 
-Lingbo Kong (1):
-  wifi: ath12k: Fix Pdev id in HTT stats request for WCN7850
-
-Ramya Gnanasekar (1):
-  wifi: ath12k: Dump additional Tx PDEV HTT stats
-
- drivers/net/wireless/ath/ath12k/Makefile      |   2 +-
- drivers/net/wireless/ath/ath12k/core.h        |  11 +
- drivers/net/wireless/ath/ath12k/debugfs.c     |   3 +
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 714 ++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   | 300 ++++++++
- drivers/net/wireless/ath/ath12k/dp_rx.c       |  10 +-
- drivers/net/wireless/ath/ath12k/dp_rx.h       |   4 +
- drivers/net/wireless/ath/ath12k/dp_tx.c       |   8 +-
- drivers/net/wireless/ath/ath12k/mac.c         |  61 ++
- drivers/net/wireless/ath/ath12k/mac.h         |   3 +
- 10 files changed, 1110 insertions(+), 6 deletions(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
- create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-
-
-base-commit: 2580be9ee6f5d97d6763b5d4ae4f9c0383fdf130
 -- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/patch/87ttidvrup.fsf@kernel.org/
 
----
-v3:
- - Addressed Kalle's comments
-   - Locking is taken care. ar::data_lock is used to protect stats
-     request completion and other HTT debug entities protected using
-     ar::conf_mutex.
-   - Fixed KASAN warning from WCN7580 during stats type write.
-   - Changed header style for MU PPDU stats printing routine
-   - Renamed function ath12k_debugfs_htt_stats_init() to
-     ath12k_debugfs_htt_stats_register()
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
- - Added expected length check while parsing each tag to prevent
-   buffer overread.
-
-v2:
- - Handled pdev id sent in HTT stats request command for WCN7850
-   Added changes as a separate patch #3
- - Tested in WCN7850 and added Tested-on tag
- - Rebased on ToT
----
 
