@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02102C27C4F
-	for <ath12k@archiver.kernel.org>; Mon,  3 Jun 2024 04:42:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06D9DC25B75
+	for <ath12k@archiver.kernel.org>; Mon,  3 Jun 2024 04:42:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4CY7+4jCmbVYFwFSCWxz0p2sVIVHHKnsV7ZEq/0BplE=; b=lEKVkpx8/p1TuHn/JFkReFVxCb
-	Mj/J833X7slGxKVbyF7G7bglh08WKQeTpYyfBTQcEkg6xUXg6lYdQjwcNqnFO37Fuc/LOyhjHfk+8
-	CJ5IETaObbulaG2W/+9RVFftfnwOm4iYe+HNuhIcDqdLdmbqzT/Md/ko4RfoJtbekvBSlkXRpbcA7
-	OPc0IMxaANZ3QO9T1E9gOvEmCfhwyQvtqot9UxUcE+mVNhExOdFug0pP+QOQ32/enBEGnvLj6A4uw
-	WH5jGGia4X7l83dPI1pcUBQzCC3IjG56oVft5ph+1oSR1iChjbd1ZutYsjw/jgXL9e4S8CsYgPLCR
-	oLtYD9qQ==;
+	bh=kNFq9drEM6OPtSEdDc4Yxvf1vgcj931klhMlPDtSmQQ=; b=riHEuBw5uQ13byEnKadVjSTxUi
+	sNRSvVUI1R3A95hH0V451n5SG5HhQSI955nMMbS6wXx8f1mlVvk2AMatm77Lx+BLwGzr2MaNQaqhn
+	B6mqoE2p2F7d/HkUeSBj6Y6w92pQT0WvpzTaZHtrR0c5x/qC6DVCOAsjQecDs1WnwASHIpYgcjIY8
+	Wl2BFOtZtlkVfoXHktE4aZgNI8+YqDCO4YQ4T7/+7Xcb4KQo/5NHf5rAk/v26BkLShu+MiJHlXa+i
+	Fv0Nx0BIjtO/1w2JQsUBKNL+bnq/JixxsL8/2mfwe6XZSNV1Y7MVdhUbZBVF4n2vfRnrRZB658fCV
+	tfem77lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sDzWk-0000000Fd4g-2Xnc
+	id 1sDzWm-0000000Fd68-2xm1
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Jun 2024 04:42:34 +0000
+	Mon, 03 Jun 2024 04:42:36 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sDzWg-0000000Fd1J-0C9z
+	id 1sDzWg-0000000Fd1h-0CSs
 	for ath12k@lists.infradead.org;
-	Mon, 03 Jun 2024 04:42:32 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4530TiY4004549;
-	Mon, 3 Jun 2024 04:42:27 GMT
+	Mon, 03 Jun 2024 04:42:34 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 453002Q2031232;
+	Mon, 3 Jun 2024 04:42:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=4CY7+4jCmbV
-	YFwFSCWxz0p2sVIVHHKnsV7ZEq/0BplE=; b=UqDA8x1jo0jHkFf2ofrexW/QSP2
-	GRrwWmkVnC45zbCLUrAyohEavjwuq/LJ/sJ7/MwV+Q88j6dz8xEY86pLK2DTV/Lt
-	Meq8dd/00oEI9p2xSvgnO/RjJNEbyXnn8tFr+zyqPtujXcYCoY+Dg7+rT1FoHDTa
-	UFnbUOLHx3OISK36JU7WsDfulegvfrTTZz5s9NbZnNJlqNVtVbL8SQt54HQSS1Vs
-	3lVLcUhAuhDOp9lNMgtTrR8duJpwaFqeTWcN83Aa4lA96F59Y1SW8qKvWLE9JTaB
-	/g9jCeu8c72aGTB92ASunGrk/Bm/feI8Zuire6cVPH1Qm8evq+CUS1ZQqEQ==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=kNFq9drEM6O
+	PtSEdDc4Yxvf1vgcj931klhMlPDtSmQQ=; b=Y8597A6gGTlQeZWYisaym8BJg3F
+	zfv3LbN0ZNaukPaVxeXkVHoh6tDDk4RoEKwUyhOxBhU9e3KpWAHIhc5FrgGLZHJN
+	YLXOYde38IU33bvxPEFYlyAIXsVxn0fVu/I3sFCk8gYXE+nVKMcDbcE+ak+fz/Fw
+	HSLeUaDnW4SY351ZnwgCQ3dAgRPElMaWB5hNMQ1bsu2X0fZYdkRR1/0NYqc4wW9x
+	ZxTkZYKhP58YkDCpMTbJYMa67OfZFm/Y+nAyWSR+3PAfV/dvO/Luff9uzuA2bHWa
+	9UP8OMakpFMqxVOpv2I9vHC6tBhcI64AdH96VCIL51+9X0aTaiZavH67Psg==
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yfw4ak57p-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yfw4d33t4-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Jun 2024 04:42:27 +0000 (GMT)
+	Mon, 03 Jun 2024 04:42:28 +0000 (GMT)
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 4534gMa0020253;
-	Mon, 3 Jun 2024 04:42:23 GMT
+	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 4534gOWT020277;
+	Mon, 3 Jun 2024 04:42:25 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3yfvqkfu1h-1
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3yfvqkfu1y-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Jun 2024 04:42:23 +0000
+	Mon, 03 Jun 2024 04:42:25 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4534gMsV020248;
-	Mon, 3 Jun 2024 04:42:23 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4534gMsX020248;
+	Mon, 3 Jun 2024 04:42:25 GMT
 Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4534gNXn020259
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4534gPB6020294
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Jun 2024 04:42:23 +0000
+	Mon, 03 Jun 2024 04:42:25 +0000
 Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
-	id 8298B4116F; Mon,  3 Jun 2024 10:12:22 +0530 (+0530)
+	id 443F54116F; Mon,  3 Jun 2024 10:12:24 +0530 (+0530)
 From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
         Dinesh Karthikeyan <quic_dinek@quicinc.com>,
         Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH v4 1/5] wifi: ath12k: Add support to enable debugfs_htt_stats
-Date: Mon,  3 Jun 2024 10:12:10 +0530
-Message-Id: <20240603044214.960261-2-quic_rgnanase@quicinc.com>
+Subject: [PATCH v4 4/5] wifi: ath12k: Add support to parse requested stats_type
+Date: Mon,  3 Jun 2024 10:12:13 +0530
+Message-Id: <20240603044214.960261-5-quic_rgnanase@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240603044214.960261-1-quic_rgnanase@quicinc.com>
 References: <20240603044214.960261-1-quic_rgnanase@quicinc.com>
@@ -77,19 +77,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Ud0XXjS6lASdVBf9pSgFGucdIMDyZE7k
-X-Proofpoint-ORIG-GUID: Ud0XXjS6lASdVBf9pSgFGucdIMDyZE7k
+X-Proofpoint-ORIG-GUID: kSg2XjQ5DyH2vbzXWxk2WQ4p1-WvX1Bk
+X-Proofpoint-GUID: kSg2XjQ5DyH2vbzXWxk2WQ4p1-WvX1Bk
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
  definitions=2024-06-02_15,2024-05-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- mlxlogscore=999 lowpriorityscore=0 malwarescore=0 priorityscore=1501
- suspectscore=0 mlxscore=0 bulkscore=0 spamscore=0 adultscore=0
- clxscore=1015 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ malwarescore=0 mlxscore=0 adultscore=0 impostorscore=0 bulkscore=0
+ spamscore=0 phishscore=0 clxscore=1015 mlxlogscore=999 suspectscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2405170001 definitions=main-2406030037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240602_214230_324313_EE3738FE 
-X-CRM114-Status: GOOD (  20.53  )
+X-CRM114-CacheID: sfid-20240602_214230_321641_6C935D1A 
+X-CRM114-Status: GOOD (  15.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,9 +106,100 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 
-Create debugfs_htt_stats file when ath12k debugfs support is enabled.
-Add basic ath12k_debugfs_htt_stats_register and handle htt_stats_type
-file operations.
+Add extended htt stats parser and print the corresponding TLVs associated
+with the requested htt_stats_type.
+Add support for TX PDEV related htt stats.
+
+Sample output:
+--------------
+echo 1 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+HTT_TX_PDEV_STATS_CMN_TLV:
+mac_id = 0
+comp_delivered = 0
+self_triggers = 256
+hw_queued = 275
+hw_reaped = 275
+underrun = 241
+hw_paused = 0
+hw_flush = 0
+hw_filt = 1
+tx_abort = 0
+ppdu_ok = 246
+mpdu_requeued = 0
+tx_xretry = 0
+data_rc = 3
+mpdu_dropped_xretry = 0
+illegal_rate_phy_err = 0
+cont_xretry = 0
+tx_timeout = 0
+tx_time_dur_data = 0
+pdev_resets = 0
+phy_underrun = 0
+txop_ovf = 0
+seq_posted = 247
+seq_failed_queueing = 0
+seq_completed = 247
+seq_restarted = 0
+seq_txop_repost_stop = 0
+next_seq_cancel = 0
+dl_mu_mimo_seq_posted = 0
+dl_mu_ofdma_seq_posted = 0
+ul_mu_mimo_seq_posted = 0
+ul_mu_ofdma_seq_posted = 0
+mu_mimo_peer_blacklisted = 0
+seq_qdepth_repost_stop = 0
+seq_min_msdu_repost_stop = 0
+mu_seq_min_msdu_repost_stop = 0
+seq_switch_hw_paused = 0
+next_seq_posted_dsr = 0
+seq_posted_isr = 0
+seq_ctrl_cached = 0
+mpdu_count_tqm = 0
+msdu_count_tqm = 0
+mpdu_removed_tqm = 0
+msdu_removed_tqm = 0
+remove_mpdus_max_retries = 0
+mpdus_sw_flush = 0
+mpdus_hw_filter = 0
+mpdus_truncated = 0
+mpdus_ack_failed = 0
+mpdus_expired = 0
+mpdus_seq_hw_retry = 0
+ack_tlv_proc = 0
+coex_abort_mpdu_cnt_valid = 0
+coex_abort_mpdu_cnt = 5
+num_total_ppdus_tried_ota = 5
+num_data_ppdus_tried_ota = 0
+local_ctrl_mgmt_enqued = 247
+local_ctrl_mgmt_freed = 247
+local_data_enqued = 0
+local_data_freed = 0
+mpdu_tried = 0
+isr_wait_seq_posted = 0
+tx_active_dur_us_low = 0
+tx_active_dur_us_high = 0
+fes_offsets_err_cnt = 0
+
+HTT_TX_PDEV_STATS_URRN_TLV:
+urrn_stats =  0:0, 1:241, 2:0,
+
+HTT_TX_PDEV_STATS_SIFS_TLV:
+sifs_status =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0,
+
+HTT_TX_PDEV_STATS_FLUSH_TLV:
+flush_errs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
+11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0, 21:0, 22:0,
+23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0,
+35:0, 36:0, 37:0, 38:0, 39:0, 40:0, 41:0, 42:0, 43:0, 44:0, 45:0, 46:0,
+47:0, 48:0, 49:0, 50:0, 51:0, 52:0, 53:0, 54:0, 55:0, 56:0, 57:0, 58:0,
+59:0, 60:0, 61:0, 62:0, 63:0, 64:0, 65:0, 66:0, 67:0, 68:0, 69:0, 70:0,
+71:0, 72:0, 73:0, 74:0, 75:0, 76:0, 77:0, 78:0, 79:0, 80:0, 81:0, 82:0,
+83:0, 84:0, 85:0, 86:0, 87:0, 88:0, 89:0, 90:0, 91:0, 92:0, 93:0, 94:0,
+95:0, 96:0, 97:0, 98:0, 99:0, 100:0, 101:0, 102:0, 103:0, 104:0, 105:0,
+106:0, 107:0, 108:0, 109:0, 110:0, 111:0, 112:0, 113:0, 114:0, 115:0,
+116:0, 117:0, 118:0, 119:0, 120:0, 121:0, 122:0, 123:0, 124:0, 125:0,
+126:0, 127:0,
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -117,191 +208,621 @@ Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 Co-developed-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/Makefile      |  2 +-
- drivers/net/wireless/ath/ath12k/core.h        |  7 ++
- drivers/net/wireless/ath/ath12k/debugfs.c     |  3 +
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 83 +++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   | 20 +++++
- 5 files changed, 114 insertions(+), 1 deletion(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
- create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 315 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 211 ++++++++++++
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  10 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.h       |   4 +
+ 4 files changed, 536 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index d42480db7463..3491b8b8a1e2 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -23,7 +23,7 @@ ath12k-y += core.o \
- 	    fw.o \
- 	    p2p.o
- 
--ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o
-+ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o
- ath12k-$(CONFIG_ACPI) += acpi.o
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
- 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 7d20b09c52e6..5abc22d6434e 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -27,6 +27,7 @@
- #include "dbring.h"
- #include "fw.h"
- #include "acpi.h"
-+#include "debugfs_htt_stats.h"
- 
- #define SM(_v, _f) (((_v) << _f##_LSB) & _f##_MASK)
- 
-@@ -471,8 +472,14 @@ struct ath12k_fw_stats {
- 	struct list_head bcn;
- };
- 
-+struct ath12k_dbg_htt_stats {
-+	enum ath12k_dbg_htt_ext_stats_type type;
-+	u32 cfg_param[4];
-+};
-+
- struct ath12k_debug {
- 	struct dentry *debugfs_pdev;
-+	struct ath12k_dbg_htt_stats htt_stats;
- };
- 
- struct ath12k_per_peer_tx_stats {
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 8d8ba951093b..ef9207c2019f 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -6,6 +6,7 @@
- 
- #include "core.h"
- #include "debugfs.h"
-+#include "debugfs_htt_stats.h"
- 
- static ssize_t ath12k_write_simulate_radar(struct file *file,
- 					   const char __user *user_buf,
-@@ -87,4 +88,6 @@ void ath12k_debugfs_register(struct ath12k *ar)
- 				    ar->debug.debugfs_pdev, ar,
- 				    &fops_simulate_radar);
- 	}
-+
-+	ath12k_debugfs_htt_stats_register(ar);
- }
 diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-new file mode 100644
-index 000000000000..3124ea345459
---- /dev/null
+index d98b971cde7d..e0a0acd5eec8 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
 +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -0,0 +1,83 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
-+/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
+@@ -9,6 +9,321 @@
+ #include "debug.h"
+ #include "debugfs_htt_stats.h"
+ #include "dp_tx.h"
++#include "dp_rx.h"
 +
-+#include <linux/vmalloc.h>
-+#include "core.h"
-+#include "debug.h"
-+#include "debugfs_htt_stats.h"
-+
-+static ssize_t ath12k_read_htt_stats_type(struct file *file,
-+					  char __user *user_buf,
-+					  size_t count, loff_t *ppos)
++static u32
++print_array_to_buf(u8 *buf, u32 offset, const char *header,
++		   const __le32 *array, u32 array_len)
 +{
-+	struct ath12k *ar = file->private_data;
-+	enum ath12k_dbg_htt_ext_stats_type type;
-+	char buf[32];
-+	size_t len;
++	int index = 0;
++	u8 i;
 +
-+	mutex_lock(&ar->conf_mutex);
-+	type = ar->debug.htt_stats.type;
-+	mutex_unlock(&ar->conf_mutex);
-+
-+	len = scnprintf(buf, sizeof(buf), "%u\n", type);
-+
-+	return simple_read_from_buffer(user_buf, count, ppos, buf, len);
++	if (header) {
++		index += scnprintf(buf + offset,
++				   ATH12K_HTT_STATS_BUF_SIZE - offset,
++				   "%s = ", header);
++	}
++	for (i = 0; i < array_len; i++) {
++		index += scnprintf(buf + offset + index,
++				   (ATH12K_HTT_STATS_BUF_SIZE - offset) - index,
++				   " %u:%u,", i, le32_to_cpu(array[i]));
++	}
++	index += scnprintf(buf + offset + index,
++			   (ATH12K_HTT_STATS_BUF_SIZE - offset) - index,
++			   "\n\n");
++	return index;
 +}
 +
-+static ssize_t ath12k_write_htt_stats_type(struct file *file,
-+					   const char __user *user_buf,
-+					   size_t count, loff_t *ppos)
++static void
++htt_print_tx_pdev_stats_cmn_tlv(const void *tag_buf, u16 tag_len,
++				struct debug_htt_stats_req *stats_req)
 +{
-+	struct ath12k *ar = file->private_data;
-+	enum ath12k_dbg_htt_ext_stats_type type;
-+	unsigned int cfg_param[4] = {0};
-+	const int size = 32;
-+	int num_args;
++	const struct ath12k_htt_tx_pdev_stats_cmn_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u32 mac_id_word = le32_to_cpu(htt_stats_buf->mac_id__word);
 +
-+	char *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
-+	if (!buf)
-+		return -ENOMEM;
++	if (tag_len < sizeof(struct ath12k_htt_tx_pdev_stats_cmn_tlv))
++		return;
 +
-+	if (copy_from_user(buf, user_buf, count))
-+		return -EFAULT;
++	len += scnprintf(buf + len, buf_len - len, "HTT_TX_PDEV_STATS_CMN_TLV:\n");
++	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
++			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
++	len += scnprintf(buf + len, buf_len - len, "comp_delivered = %u\n",
++			 le32_to_cpu(htt_stats_buf->comp_delivered));
++	len += scnprintf(buf + len, buf_len - len, "self_triggers = %u\n",
++			 le32_to_cpu(htt_stats_buf->self_triggers));
++	len += scnprintf(buf + len, buf_len - len, "hw_queued = %u\n",
++			 le32_to_cpu(htt_stats_buf->hw_queued));
++	len += scnprintf(buf + len, buf_len - len, "hw_reaped = %u\n",
++			 le32_to_cpu(htt_stats_buf->hw_reaped));
++	len += scnprintf(buf + len, buf_len - len, "underrun = %u\n",
++			 le32_to_cpu(htt_stats_buf->underrun));
++	len += scnprintf(buf + len, buf_len - len, "hw_paused = %u\n",
++			 le32_to_cpu(htt_stats_buf->hw_paused));
++	len += scnprintf(buf + len, buf_len - len, "hw_flush = %u\n",
++			 le32_to_cpu(htt_stats_buf->hw_flush));
++	len += scnprintf(buf + len, buf_len - len, "hw_filt = %u\n",
++			 le32_to_cpu(htt_stats_buf->hw_filt));
++	len += scnprintf(buf + len, buf_len - len, "tx_abort = %u\n",
++			 le32_to_cpu(htt_stats_buf->tx_abort));
++	len += scnprintf(buf + len, buf_len - len, "ppdu_ok = %u\n",
++			 le32_to_cpu(htt_stats_buf->ppdu_ok));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_requeued = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_requed));
++	len += scnprintf(buf + len, buf_len - len, "tx_xretry = %u\n",
++			 le32_to_cpu(htt_stats_buf->tx_xretry));
++	len += scnprintf(buf + len, buf_len - len, "data_rc = %u\n",
++			 le32_to_cpu(htt_stats_buf->data_rc));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_dropped_xretry = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_dropped_xretry));
++	len += scnprintf(buf + len, buf_len - len, "illegal_rate_phy_err = %u\n",
++			 le32_to_cpu(htt_stats_buf->illgl_rate_phy_err));
++	len += scnprintf(buf + len, buf_len - len, "cont_xretry = %u\n",
++			 le32_to_cpu(htt_stats_buf->cont_xretry));
++	len += scnprintf(buf + len, buf_len - len, "tx_timeout = %u\n",
++			 le32_to_cpu(htt_stats_buf->tx_timeout));
++	len += scnprintf(buf + len, buf_len - len, "tx_time_dur_data = %u\n",
++			 le32_to_cpu(htt_stats_buf->tx_time_dur_data));
++	len += scnprintf(buf + len, buf_len - len, "pdev_resets = %u\n",
++			 le32_to_cpu(htt_stats_buf->pdev_resets));
++	len += scnprintf(buf + len, buf_len - len, "phy_underrun = %u\n",
++			 le32_to_cpu(htt_stats_buf->phy_underrun));
++	len += scnprintf(buf + len, buf_len - len, "txop_ovf = %u\n",
++			 le32_to_cpu(htt_stats_buf->txop_ovf));
++	len += scnprintf(buf + len, buf_len - len, "seq_posted = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_posted));
++	len += scnprintf(buf + len, buf_len - len, "seq_failed_queueing = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_failed_queueing));
++	len += scnprintf(buf + len, buf_len - len, "seq_completed = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_completed));
++	len += scnprintf(buf + len, buf_len - len, "seq_restarted = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_restarted));
++	len += scnprintf(buf + len, buf_len - len, "seq_txop_repost_stop = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_txop_repost_stop));
++	len += scnprintf(buf + len, buf_len - len, "next_seq_cancel = %u\n",
++			 le32_to_cpu(htt_stats_buf->next_seq_cancel));
++	len += scnprintf(buf + len, buf_len - len, "dl_mu_mimo_seq_posted = %u\n",
++			 le32_to_cpu(htt_stats_buf->mu_seq_posted));
++	len += scnprintf(buf + len, buf_len - len, "dl_mu_ofdma_seq_posted = %u\n",
++			 le32_to_cpu(htt_stats_buf->mu_ofdma_seq_posted));
++	len += scnprintf(buf + len, buf_len - len, "ul_mu_mimo_seq_posted = %u\n",
++			 le32_to_cpu(htt_stats_buf->ul_mumimo_seq_posted));
++	len += scnprintf(buf + len, buf_len - len, "ul_mu_ofdma_seq_posted = %u\n",
++			 le32_to_cpu(htt_stats_buf->ul_ofdma_seq_posted));
++	len += scnprintf(buf + len, buf_len - len, "mu_mimo_peer_blacklisted = %u\n",
++			 le32_to_cpu(htt_stats_buf->num_mu_peer_blacklisted));
++	len += scnprintf(buf + len, buf_len - len, "seq_qdepth_repost_stop = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_qdepth_repost_stop));
++	len += scnprintf(buf + len, buf_len - len, "seq_min_msdu_repost_stop = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_min_msdu_repost_stop));
++	len += scnprintf(buf + len, buf_len - len, "mu_seq_min_msdu_repost_stop = %u\n",
++			 le32_to_cpu(htt_stats_buf->mu_seq_min_msdu_repost_stop));
++	len += scnprintf(buf + len, buf_len - len, "seq_switch_hw_paused = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_switch_hw_paused));
++	len += scnprintf(buf + len, buf_len - len, "next_seq_posted_dsr = %u\n",
++			 le32_to_cpu(htt_stats_buf->next_seq_posted_dsr));
++	len += scnprintf(buf + len, buf_len - len, "seq_posted_isr = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_posted_isr));
++	len += scnprintf(buf + len, buf_len - len, "seq_ctrl_cached = %u\n",
++			 le32_to_cpu(htt_stats_buf->seq_ctrl_cached));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_count_tqm = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_count_tqm));
++	len += scnprintf(buf + len, buf_len - len, "msdu_count_tqm = %u\n",
++			 le32_to_cpu(htt_stats_buf->msdu_count_tqm));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_removed_tqm = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_removed_tqm));
++	len += scnprintf(buf + len, buf_len - len, "msdu_removed_tqm = %u\n",
++			 le32_to_cpu(htt_stats_buf->msdu_removed_tqm));
++	len += scnprintf(buf + len, buf_len - len, "remove_mpdus_max_retries = %u\n",
++			 le32_to_cpu(htt_stats_buf->remove_mpdus_max_retries));
++	len += scnprintf(buf + len, buf_len - len, "mpdus_sw_flush = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdus_sw_flush));
++	len += scnprintf(buf + len, buf_len - len, "mpdus_hw_filter = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdus_hw_filter));
++	len += scnprintf(buf + len, buf_len - len, "mpdus_truncated = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdus_truncated));
++	len += scnprintf(buf + len, buf_len - len, "mpdus_ack_failed = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdus_ack_failed));
++	len += scnprintf(buf + len, buf_len - len, "mpdus_expired = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdus_expired));
++	len += scnprintf(buf + len, buf_len - len, "mpdus_seq_hw_retry = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdus_seq_hw_retry));
++	len += scnprintf(buf + len, buf_len - len, "ack_tlv_proc = %u\n",
++			 le32_to_cpu(htt_stats_buf->ack_tlv_proc));
++	len += scnprintf(buf + len, buf_len - len, "coex_abort_mpdu_cnt_valid = %u\n",
++			 le32_to_cpu(htt_stats_buf->coex_abort_mpdu_cnt_valid));
++	len += scnprintf(buf + len, buf_len - len, "coex_abort_mpdu_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->coex_abort_mpdu_cnt));
++	len += scnprintf(buf + len, buf_len - len, "num_total_ppdus_tried_ota = %u\n",
++			 le32_to_cpu(htt_stats_buf->num_total_ppdus_tried_ota));
++	len += scnprintf(buf + len, buf_len - len, "num_data_ppdus_tried_ota = %u\n",
++			 le32_to_cpu(htt_stats_buf->num_data_ppdus_tried_ota));
++	len += scnprintf(buf + len, buf_len - len, "local_ctrl_mgmt_enqued = %u\n",
++			 le32_to_cpu(htt_stats_buf->local_ctrl_mgmt_enqued));
++	len += scnprintf(buf + len, buf_len - len, "local_ctrl_mgmt_freed = %u\n",
++			 le32_to_cpu(htt_stats_buf->local_ctrl_mgmt_freed));
++	len += scnprintf(buf + len, buf_len - len, "local_data_enqued = %u\n",
++			 le32_to_cpu(htt_stats_buf->local_data_enqued));
++	len += scnprintf(buf + len, buf_len - len, "local_data_freed = %u\n",
++			 le32_to_cpu(htt_stats_buf->local_data_freed));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_tried = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_tried));
++	len += scnprintf(buf + len, buf_len - len, "isr_wait_seq_posted = %u\n",
++			 le32_to_cpu(htt_stats_buf->isr_wait_seq_posted));
++	len += scnprintf(buf + len, buf_len - len, "tx_active_dur_us_low = %u\n",
++			 le32_to_cpu(htt_stats_buf->tx_active_dur_us_low));
++	len += scnprintf(buf + len, buf_len - len, "tx_active_dur_us_high = %u\n",
++			 le32_to_cpu(htt_stats_buf->tx_active_dur_us_high));
++	len += scnprintf(buf + len, buf_len - len, "fes_offsets_err_cnt = %u\n\n",
++			 le32_to_cpu(htt_stats_buf->fes_offsets_err_cnt));
 +
-+	num_args = sscanf(buf, "%u %u %u %u %u\n", &type, &cfg_param[0],
-+			  &cfg_param[1], &cfg_param[2], &cfg_param[3]);
-+	if (!num_args || num_args > 5)
-+		return -EINVAL;
-+
-+	if (type >= ATH12K_DBG_HTT_NUM_EXT_STATS)
-+		return -E2BIG;
-+
-+	if (type == ATH12K_DBG_HTT_EXT_STATS_RESET)
-+		return -EPERM;
-+
-+	mutex_lock(&ar->conf_mutex);
-+
-+	ar->debug.htt_stats.type = type;
-+	ar->debug.htt_stats.cfg_param[0] = cfg_param[0];
-+	ar->debug.htt_stats.cfg_param[1] = cfg_param[1];
-+	ar->debug.htt_stats.cfg_param[2] = cfg_param[2];
-+	ar->debug.htt_stats.cfg_param[3] = cfg_param[3];
-+
-+	mutex_unlock(&ar->conf_mutex);
-+
-+	return count;
++	stats_req->buf_len = len;
 +}
 +
-+static const struct file_operations fops_htt_stats_type = {
-+	.read = ath12k_read_htt_stats_type,
-+	.write = ath12k_write_htt_stats_type,
-+	.open = simple_open,
-+	.owner = THIS_MODULE,
-+	.llseek = default_llseek,
-+};
-+
-+void ath12k_debugfs_htt_stats_register(struct ath12k *ar)
++static void
++htt_print_tx_pdev_stats_urrn_tlv(const void *tag_buf,
++				 u16 tag_len,
++				 struct debug_htt_stats_req *stats_req)
 +{
-+	debugfs_create_file("htt_stats_type", 0600, ar->debug.debugfs_pdev,
-+			    ar, &fops_htt_stats_type);
++	const struct ath12k_htt_tx_pdev_stats_urrn_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u16 num_elems = min_t(u16, (tag_len >> 2),
++			      HTT_TX_PDEV_MAX_URRN_STATS);
++
++	len += scnprintf(buf + len, buf_len - len,
++			"HTT_TX_PDEV_STATS_URRN_TLV:\n");
++
++	len += print_array_to_buf(buf, len, "urrn_stats", htt_stats_buf->urrn_stats,
++				  num_elems);
++
++	stats_req->buf_len = len;
 +}
++
++static void
++htt_print_tx_pdev_stats_flush_tlv(const void *tag_buf,
++				  u16 tag_len,
++				  struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_pdev_stats_flush_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u16 num_elems = min_t(u16, (tag_len >> 2),
++			      ATH12K_HTT_TX_PDEV_MAX_FLUSH_REASON_STATS);
++
++	len += scnprintf(buf + len, buf_len - len,
++			 "HTT_TX_PDEV_STATS_FLUSH_TLV:\n");
++
++	len += print_array_to_buf(buf, len, "flush_errs", htt_stats_buf->flush_errs,
++				  num_elems);
++
++	stats_req->buf_len = len;
++}
++
++static void
++htt_print_tx_pdev_stats_sifs_tlv(const void *tag_buf,
++				 u16 tag_len,
++				 struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_pdev_stats_sifs_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u16 num_elems = min_t(u16, (tag_len >> 2),
++			      ATH12K_HTT_TX_PDEV_MAX_SIFS_BURST_STATS);
++
++	len += scnprintf(buf + len, buf_len - len,
++			 "HTT_TX_PDEV_STATS_SIFS_TLV:\n");
++
++	len += print_array_to_buf(buf, len, "sifs_status", htt_stats_buf->sifs_status,
++				  num_elems);
++
++	stats_req->buf_len = len;
++}
++
++static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
++					  u16 tag, u16 len, const void *tag_buf,
++					  void *user_data)
++{
++	struct debug_htt_stats_req *stats_req = user_data;
++
++	switch (tag) {
++	case HTT_STATS_TX_PDEV_CMN_TAG:
++		htt_print_tx_pdev_stats_cmn_tlv(tag_buf, len, stats_req);
++		break;
++	case HTT_STATS_TX_PDEV_UNDERRUN_TAG:
++		htt_print_tx_pdev_stats_urrn_tlv(tag_buf, len, stats_req);
++		break;
++	case HTT_STATS_TX_PDEV_SIFS_TAG:
++		htt_print_tx_pdev_stats_sifs_tlv(tag_buf, len, stats_req);
++		break;
++	case HTT_STATS_TX_PDEV_FLUSH_TAG:
++		htt_print_tx_pdev_stats_flush_tlv(tag_buf, len, stats_req);
++		break;
++	default:
++		break;
++	}
++
++	return 0;
++}
++
++void ath12k_debugfs_htt_ext_stats_handler(struct ath12k_base *ab,
++					  struct sk_buff *skb)
++{
++	struct ath12k_htt_extd_stats_msg *msg;
++	struct debug_htt_stats_req *stats_req;
++	struct ath12k *ar;
++	u32 len, pdev_id, stats_info;
++	u64 cookie;
++	int ret;
++	bool send_completion = false;
++
++	msg = (struct ath12k_htt_extd_stats_msg *)skb->data;
++	cookie = le64_to_cpu(msg->cookie);
++
++	if (u64_get_bits(cookie, ATH12K_HTT_STATS_COOKIE_MSB) !=
++			 ATH12K_HTT_STATS_MAGIC_VALUE) {
++		ath12k_warn(ab, "received invalid htt ext stats event\n");
++		return;
++	}
++
++	pdev_id = u64_get_bits(cookie, ATH12K_HTT_STATS_COOKIE_LSB);
++	rcu_read_lock();
++	ar = ath12k_mac_get_ar_by_pdev_id(ab, pdev_id);
++	if (!ar) {
++		ath12k_warn(ab, "failed to get ar for pdev_id %d\n", pdev_id);
++		goto exit;
++	}
++
++	stats_req = ar->debug.htt_stats.stats_req;
++	if (!stats_req)
++		goto exit;
++
++	spin_lock_bh(&ar->data_lock);
++
++	stats_info = le32_to_cpu(msg->info1);
++	stats_req->done = u32_get_bits(stats_info, ATH12K_HTT_T2H_EXT_STATS_INFO1_DONE);
++	if (stats_req->done)
++		send_completion = true;
++
++	spin_unlock_bh(&ar->data_lock);
++
++	len = u32_get_bits(stats_info, ATH12K_HTT_T2H_EXT_STATS_INFO1_LENGTH);
++	ret = ath12k_dp_htt_tlv_iter(ab, msg->data, len,
++				     ath12k_dbg_htt_ext_stats_parse,
++				     stats_req);
++	if (ret)
++		ath12k_warn(ab, "Failed to parse tlv %d\n", ret);
++
++	if (send_completion)
++		complete(&stats_req->htt_stats_rcvd);
++exit:
++	rcu_read_unlock();
++}
+ 
+ static ssize_t ath12k_read_htt_stats_type(struct file *file,
+ 					  char __user *user_buf,
 diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-new file mode 100644
-index 000000000000..8610db89289a
---- /dev/null
+index 252c59f5eac8..83060c54d00b 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
 +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -0,0 +1,20 @@
-+/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-+/*
-+ * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+@@ -21,14 +21,134 @@
+ 
+ void ath12k_debugfs_htt_stats_register(struct ath12k *ar);
+ 
++#ifdef CONFIG_ATH12K_DEBUGFS
++void ath12k_debugfs_htt_ext_stats_handler(struct ath12k_base *ab,
++					  struct sk_buff *skb);
++#else /* CONFIG_ATH12K_DEBUGFS */
++static inline void ath12k_debugfs_htt_ext_stats_handler(struct ath12k_base *ab,
++							struct sk_buff *skb)
++{
++}
++#endif
++
++/**
++ * DOC: target -> host extended statistics upload
++ *
++ * The following field definitions describe the format of the HTT
++ * target to host stats upload confirmation message.
++ * The message contains a cookie echoed from the HTT host->target stats
++ * upload request, which identifies which request the confirmation is
++ * for, and a single stats can span over multiple HTT stats indication
++ * due to the HTT message size limitation so every HTT ext stats
++ * indication will have tag-length-value stats information elements.
++ * The tag-length header for each HTT stats IND message also includes a
++ * status field, to indicate whether the request for the stat type in
++ * question was fully met, partially met, unable to be met, or invalid
++ * (if the stat type in question is disabled in the target).
++ * A Done bit 1's indicate the end of the of stats info elements.
++ *
++ *
++ * |31                         16|15    12|11|10 8|7   5|4       0|
++ * |--------------------------------------------------------------|
++ * |                   reserved                   |    msg type   |
++ * |--------------------------------------------------------------|
++ * |                         cookie LSBs                          |
++ * |--------------------------------------------------------------|
++ * |                         cookie MSBs                          |
++ * |--------------------------------------------------------------|
++ * |      stats entry length     | rsvd   | D|  S |   stat type   |
++ * |--------------------------------------------------------------|
++ * |                   type-specific stats info                   |
++ * |                      (see debugfs_htt_stats.h)               |
++ * |--------------------------------------------------------------|
++ * Header fields:
++ *  - MSG_TYPE
++ *    Bits 7:0
++ *    Purpose: Identifies this is a extended statistics upload confirmation
++ *             message.
++ *    Value: 0x1c
++ *  - COOKIE_LSBS
++ *    Bits 31:0
++ *    Purpose: Provide a mechanism to match a target->host stats confirmation
++ *        message with its preceding host->target stats request message.
++ *    Value: MSBs of the opaque cookie specified by the host-side requestor
++ *  - COOKIE_MSBS
++ *    Bits 31:0
++ *    Purpose: Provide a mechanism to match a target->host stats confirmation
++ *        message with its preceding host->target stats request message.
++ *    Value: MSBs of the opaque cookie specified by the host-side requestor
++ *
++ * Stats Information Element tag-length header fields:
++ *  - STAT_TYPE
++ *    Bits 7:0
++ *    Purpose: identifies the type of statistics info held in the
++ *        following information element
++ *    Value: ath12k_dbg_htt_ext_stats_type
++ *  - STATUS
++ *    Bits 10:8
++ *    Purpose: indicate whether the requested stats are present
++ *    Value:
++ *       0 -> The requested stats have been delivered in full
++ *       1 -> The requested stats have been delivered in part
++ *       2 -> The requested stats could not be delivered (error case)
++ *       3 -> The requested stat type is either not recognized (invalid)
++ *  - DONE
++ *    Bits 11
++ *    Purpose:
++ *        Indicates the completion of the stats entry, this will be the last
++ *        stats conf HTT segment for the requested stats type.
++ *    Value:
++ *        0 -> the stats retrieval is ongoing
++ *        1 -> the stats retrieval is complete
++ *  - LENGTH
++ *    Bits 31:16
++ *    Purpose: indicate the stats information size
++ *    Value: This field specifies the number of bytes of stats information
++ *       that follows the element tag-length header.
++ *       It is expected but not required that this length is a multiple of
++ *       4 bytes.
 + */
 +
-+#ifndef DEBUG_HTT_STATS_H
-+#define DEBUG_HTT_STATS_H
++#define ATH12K_HTT_T2H_EXT_STATS_INFO1_DONE		BIT(11)
++#define ATH12K_HTT_T2H_EXT_STATS_INFO1_LENGTH		GENMASK(31, 16)
 +
-+void ath12k_debugfs_htt_stats_register(struct ath12k *ar);
++struct ath12k_htt_extd_stats_msg {
++	__le32 info0;
++	__le64 cookie;
++	__le32 info1;
++	u8 data[];
++} __packed;
 +
-+/* htt_dbg_ext_stats_type */
-+enum ath12k_dbg_htt_ext_stats_type {
-+	ATH12K_DBG_HTT_EXT_STATS_RESET		= 0,
+ /* htt_dbg_ext_stats_type */
+ enum ath12k_dbg_htt_ext_stats_type {
+ 	ATH12K_DBG_HTT_EXT_STATS_RESET		= 0,
++	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX	= 1,
+ 
+ 	/* keep this last */
+ 	ATH12K_DBG_HTT_NUM_EXT_STATS,
+ };
+ 
++enum ath12k_dbg_htt_tlv_tag {
++	HTT_STATS_TX_PDEV_CMN_TAG			= 0,
++	HTT_STATS_TX_PDEV_UNDERRUN_TAG			= 1,
++	HTT_STATS_TX_PDEV_SIFS_TAG			= 2,
++	HTT_STATS_TX_PDEV_FLUSH_TAG			= 3,
 +
-+	/* keep this last */
-+	ATH12K_DBG_HTT_NUM_EXT_STATS,
++	HTT_STATS_MAX_TAG,
 +};
 +
-+#endif
-
-base-commit: 2580be9ee6f5d97d6763b5d4ae4f9c0383fdf130
++#define ATH12K_HTT_STATS_MAC_ID				GENMASK(7, 0)
++
++#define ATH12K_HTT_TX_PDEV_MAX_SIFS_BURST_STATS		9
++#define ATH12K_HTT_TX_PDEV_MAX_FLUSH_REASON_STATS	150
++
++enum ath12k_htt_tx_pdev_underrun_enum {
++	HTT_STATS_TX_PDEV_NO_DATA_UNDERRUN		= 0,
++	HTT_STATS_TX_PDEV_DATA_UNDERRUN_BETWEEN_MPDU	= 1,
++	HTT_STATS_TX_PDEV_DATA_UNDERRUN_WITHIN_MPDU	= 2,
++	HTT_TX_PDEV_MAX_URRN_STATS			= 3,
++};
++
+ enum ath12k_htt_stats_reset_cfg_param_alloc_pos {
+ 	ATH12K_HTT_STATS_RESET_PARAM_CFG_32_BYTES = 1,
+ 	ATH12K_HTT_STATS_RESET_PARAM_CFG_64_BYTES,
+@@ -47,4 +167,95 @@ struct debug_htt_stats_req {
+ 	u8 buf[];
+ };
+ 
++struct ath12k_htt_tx_pdev_stats_cmn_tlv {
++	__le32 mac_id__word;
++	__le32 hw_queued;
++	__le32 hw_reaped;
++	__le32 underrun;
++	__le32 hw_paused;
++	__le32 hw_flush;
++	__le32 hw_filt;
++	__le32 tx_abort;
++	__le32 mpdu_requed;
++	__le32 tx_xretry;
++	__le32 data_rc;
++	__le32 mpdu_dropped_xretry;
++	__le32 illgl_rate_phy_err;
++	__le32 cont_xretry;
++	__le32 tx_timeout;
++	__le32 pdev_resets;
++	__le32 phy_underrun;
++	__le32 txop_ovf;
++	__le32 seq_posted;
++	__le32 seq_failed_queueing;
++	__le32 seq_completed;
++	__le32 seq_restarted;
++	__le32 mu_seq_posted;
++	__le32 seq_switch_hw_paused;
++	__le32 next_seq_posted_dsr;
++	__le32 seq_posted_isr;
++	__le32 seq_ctrl_cached;
++	__le32 mpdu_count_tqm;
++	__le32 msdu_count_tqm;
++	__le32 mpdu_removed_tqm;
++	__le32 msdu_removed_tqm;
++	__le32 mpdus_sw_flush;
++	__le32 mpdus_hw_filter;
++	__le32 mpdus_truncated;
++	__le32 mpdus_ack_failed;
++	__le32 mpdus_expired;
++	__le32 mpdus_seq_hw_retry;
++	__le32 ack_tlv_proc;
++	__le32 coex_abort_mpdu_cnt_valid;
++	__le32 coex_abort_mpdu_cnt;
++	__le32 num_total_ppdus_tried_ota;
++	__le32 num_data_ppdus_tried_ota;
++	__le32 local_ctrl_mgmt_enqued;
++	__le32 local_ctrl_mgmt_freed;
++	__le32 local_data_enqued;
++	__le32 local_data_freed;
++	__le32 mpdu_tried;
++	__le32 isr_wait_seq_posted;
++
++	__le32 tx_active_dur_us_low;
++	__le32 tx_active_dur_us_high;
++	__le32 remove_mpdus_max_retries;
++	__le32 comp_delivered;
++	__le32 ppdu_ok;
++	__le32 self_triggers;
++	__le32 tx_time_dur_data;
++	__le32 seq_qdepth_repost_stop;
++	__le32 mu_seq_min_msdu_repost_stop;
++	__le32 seq_min_msdu_repost_stop;
++	__le32 seq_txop_repost_stop;
++	__le32 next_seq_cancel;
++	__le32 fes_offsets_err_cnt;
++	__le32 num_mu_peer_blacklisted;
++	__le32 mu_ofdma_seq_posted;
++	__le32 ul_mumimo_seq_posted;
++	__le32 ul_ofdma_seq_posted;
++
++	__le32 thermal_suspend_cnt;
++	__le32 dfs_suspend_cnt;
++	__le32 tx_abort_suspend_cnt;
++	__le32 tgt_specific_opaque_txq_suspend_info;
++	__le32 last_suspend_reason;
++} __packed;
++
++struct ath12k_htt_tx_pdev_stats_urrn_tlv {
++	DECLARE_FLEX_ARRAY(__le32, urrn_stats);
++} __packed;
++
++struct ath12k_htt_tx_pdev_stats_flush_tlv {
++	DECLARE_FLEX_ARRAY(__le32, flush_errs);
++} __packed;
++
++struct ath12k_htt_tx_pdev_stats_phy_err_tlv {
++	DECLARE_FLEX_ARRAY(__le32, phy_errs);
++} __packed;
++
++struct ath12k_htt_tx_pdev_stats_sifs_tlv {
++	DECLARE_FLEX_ARRAY(__le32, sifs_status);
++} __packed;
++
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index a52b7b273540..b83b4482aba4 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -17,6 +17,7 @@
+ #include "dp_tx.h"
+ #include "peer.h"
+ #include "dp_mon.h"
++#include "debugfs_htt_stats.h"
+ 
+ #define ATH12K_DP_RX_FRAGMENT_TIMEOUT_MS (2 * HZ)
+ 
+@@ -1268,10 +1269,10 @@ static int ath12k_htt_tlv_ppdu_stats_parse(struct ath12k_base *ab,
+ 	return 0;
+ }
+ 
+-static int ath12k_dp_htt_tlv_iter(struct ath12k_base *ab, const void *ptr, size_t len,
+-				  int (*iter)(struct ath12k_base *ar, u16 tag, u16 len,
+-					      const void *ptr, void *data),
+-				  void *data)
++int ath12k_dp_htt_tlv_iter(struct ath12k_base *ab, const void *ptr, size_t len,
++			   int (*iter)(struct ath12k_base *ar, u16 tag, u16 len,
++				       const void *ptr, void *data),
++			   void *data)
+ {
+ 	const struct htt_tlv *tlv;
+ 	const void *begin = ptr;
+@@ -1741,6 +1742,7 @@ void ath12k_dp_htt_htc_t2h_msg_handler(struct ath12k_base *ab,
+ 		ath12k_htt_pull_ppdu_stats(ab, skb);
+ 		break;
+ 	case HTT_T2H_MSG_TYPE_EXT_STATS_CONF:
++		ath12k_debugfs_htt_ext_stats_handler(ab, skb);
+ 		break;
+ 	case HTT_T2H_MSG_TYPE_MLO_TIMESTAMP_OFFSET_IND:
+ 		ath12k_htt_mlo_offset_event_handler(ab, skb);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
+index 2ff421160181..eb1f92559179 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
+@@ -139,4 +139,8 @@ ath12k_dp_rx_h_find_peer(struct ath12k_base *ab, struct sk_buff *msdu);
+ int ath12k_dp_rxdma_ring_sel_config_qcn9274(struct ath12k_base *ab);
+ int ath12k_dp_rxdma_ring_sel_config_wcn7850(struct ath12k_base *ab);
+ 
++int ath12k_dp_htt_tlv_iter(struct ath12k_base *ab, const void *ptr, size_t len,
++			   int (*iter)(struct ath12k_base *ar, u16 tag, u16 len,
++				       const void *ptr, void *data),
++			   void *data);
+ #endif /* ATH12K_DP_RX_H */
 -- 
 2.34.1
 
