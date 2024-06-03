@@ -4,66 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76DE9C25B75
-	for <ath12k@archiver.kernel.org>; Mon,  3 Jun 2024 07:36:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9740C25B76
+	for <ath12k@archiver.kernel.org>; Mon,  3 Jun 2024 09:15:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MOU4Cshkszd003EzQOCHeVJfUVoNCzZo0doSzm/lJys=; b=SzTDz9WEqkRI7DA548T6SMszqp
-	eMWmRqHIBb5mxanXACP3v1AoaOjxs6pGj5OTYCyKssN5Rw2a0DmzgYaI9+Zgr7VbaxxhejIlslO/Y
-	oKo0bGIxFLY63Yv8I9o9XtMIQ5Jm3PIvMn3/Mg/TrXKvgscOjb96CEgeg/773yy/xSLF1/8nDxMOq
-	ctA1G3Pct8qqoy5qqSNCb044uFVNGmD/sah1N9OFefsY3jgfC+eDYY4IQLQk5ASLPuPdBuGtIvEMe
-	u1SRwwyeLTvEQ89MitYw3mqw8N0rqfdY5PHjK2qIv05Gw8h70tll4MWN736RTCc8rG43JYyyR6Z1d
-	H2eicGwA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=EBvxU/bjOC7unkykGDB8OaKu9iYu2HMPYZvv9CaH4zY=; b=EZuYyn4IHUXLQ4dccj8yF6KgN7
+	7hXnrXlEY2i7TD5JFqLthsFj4oT/cGTvLjya9e0J1q9vCXr9CGZMrqUYHZkrs0qwyLJYksRTuaP6Q
+	7i/Uyd+1kuq+iCItUMxLqSGevjUJTww80mYKF2JqFIF4T9wafIBwWRYIWsr8aUHHcBR8hgf+9t3t6
+	K1K0p/kWCcuADXi9Tb/bbww5THWR48d/ROqjeCB7gAKJtSndlXNENm5tT2NHbWX/v5GdGRVHBuo+/
+	d2AKn1R/cpIuP8/jcU6LkrVZkVSY4KAU7SzqpkEhMv4jk8BEiEGPNM0+sw/8ZMB1+xdUR0VI3eB/h
+	5s9vbqDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sE2FI-0000000FufL-3UhE
+	id 1sE3n6-0000000G9wP-1doa
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Jun 2024 07:36:44 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Mon, 03 Jun 2024 09:15:44 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sE2FG-0000000FueB-2YPm
+	id 1sE3n3-0000000G9vY-35nQ
 	for ath12k@lists.infradead.org;
-	Mon, 03 Jun 2024 07:36:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=MOU4Cshkszd003EzQOCHeVJfUVoNCzZo0doSzm/lJys=;
-	t=1717400202; x=1718609802; b=c6pb2KT/sxmnHVQsmie7wsOx5ClIzFVQGvD94qXtkNicdiP
-	cyekL5R0fyBf9/pY3t27d9qOfr7WOjqP4MOSALFhjodBXrJ5hM2r7RYa1I9aMKtP/+3DqfiDgITMd
-	yLf9epgWpBYjdno+aoPBGT1Mzt2Se/UMJOk4x1umGMUIQnGxY2xmGa7NVDo0cbBFkPydPPUfML0+v
-	2w8rEe+fkH5LM7zzXLb/osYiJjSX4u/UoEtMA/JSoy85IkZfZYtIHJIOQdN5C1Kwoq5t3wLSxTlN1
-	ISpXMbPWAElGCz21/Nm6ZSP4EAysZ1eKpwPfEkC/mB7hWfuFlB4qauXfIZKq+a8Q==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1sE2FD-00000009KjJ-3DFA;
-	Mon, 03 Jun 2024 09:36:40 +0200
-Message-ID: <43680bd3c444da4c1b4e55b4ee4c7043c1186ccd.camel@sipsolutions.net>
-Subject: Re: [PATCH v3 6/8] wifi: ath12k: support ARP and NS offload
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Baochen Qiang <quic_bqiang@quicinc.com>, Jeff Johnson
-	 <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Date: Mon, 03 Jun 2024 09:36:38 +0200
-In-Reply-To: <af326e49-df6e-4574-9562-44b6aee10abd@quicinc.com>
-References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
-	 <20240530072714.25671-7-quic_bqiang@quicinc.com>
-	 <ccf9791b-e050-4844-8c37-35873fb3fcaf@quicinc.com>
-	 <17721436-19fb-4337-9058-b20f4df2792c@quicinc.com>
-	 <af326e49-df6e-4574-9562-44b6aee10abd@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.50.4 (3.50.4-1.fc39) 
+	Mon, 03 Jun 2024 09:15:43 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 452Np6Qj026166;
+	Mon, 3 Jun 2024 09:15:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	EBvxU/bjOC7unkykGDB8OaKu9iYu2HMPYZvv9CaH4zY=; b=ArW4MA/7KsclkynV
+	LPf8mAXm5LSuLgLlSKwELxSvrjsU8z9QDATW5CqgZTFWahV/WhQqqz5/XRew9jLZ
+	mNvkrSf3DNzUe31u/LMi6gCvpeJJLyWyLhxXj4pK8FBgQDWi3/xxoXTkOi9W7/xL
+	6lX5DllXIMZJ2KK0rpIwhQ2ZySyri75u9NJDV/1MWWtDCM+XLL3g7m/IW2h0dC1O
+	q+IW/QS1nZE605hCQ9S6oEkEGwytxwSABZUkd3OCRb2WftCFMCqaOhz9ZfhNy4td
+	CSV+HVemGnvFiuVQC6/Rr/m0RQGZX28Nc3gsjG7lOQkYMOq9W817dMVzB7trFN1d
+	hY2rcQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yfw6qkeje-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 03 Jun 2024 09:15:39 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4539FcDM014517
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 3 Jun 2024 09:15:38 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 3 Jun 2024
+ 02:15:37 -0700
+Message-ID: <695e06f2-5212-45c4-9c1d-84ed36e0b192@quicinc.com>
+Date: Mon, 3 Jun 2024 17:15:35 +0800
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 6/8] wifi: ath12k: support ARP and NS offload
+To: Johannes Berg <johannes@sipsolutions.net>,
+        Jeff Johnson
+	<quic_jjohnson@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
+ <20240530072714.25671-7-quic_bqiang@quicinc.com>
+ <ccf9791b-e050-4844-8c37-35873fb3fcaf@quicinc.com>
+ <17721436-19fb-4337-9058-b20f4df2792c@quicinc.com>
+ <af326e49-df6e-4574-9562-44b6aee10abd@quicinc.com>
+ <43680bd3c444da4c1b4e55b4ee4c7043c1186ccd.camel@sipsolutions.net>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <43680bd3c444da4c1b4e55b4ee4c7043c1186ccd.camel@sipsolutions.net>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: rRhFY1BVYu5hA9wdTHoYpnIuoQyxJL8J
+X-Proofpoint-ORIG-GUID: rRhFY1BVYu5hA9wdTHoYpnIuoQyxJL8J
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
+ definitions=2024-06-03_05,2024-05-30_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 mlxlogscore=872 clxscore=1011 impostorscore=0 malwarescore=0
+ mlxscore=0 adultscore=0 lowpriorityscore=0 suspectscore=0 spamscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2406030077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240603_003642_672916_20F31E54 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20240603_021541_859467_A4F051FD 
+X-CRM114-Status: GOOD (  13.60  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,33 +106,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2024-05-31 at 13:11 +0800, Baochen Qiang wrote:
->=20
-> On 5/31/2024 11:42 AM, Baochen Qiang wrote:
-> > > > +static void ath12k_wow_prepare_ns_offload(struct ath12k_vif *arvif=
-,
-> > > > +					  struct wmi_arp_ns_offload_arg *offload)
-> > > > +{
-> > > > +	struct inet6_dev *idev =3D arvif->idev;
-> > > as noted above does it make more sense to get the netdev associated w=
-ith the
-> > > arvif and then use in6_dev_get(net_device) to get the inet6_dev rathe=
-r than
-> > > caching the pointer from the ipv6_addr_changed() callback?
-> > Ah.. I didn't note that we can get inet6_dev in such a way, just though=
-t the only way is to cache it in ipv6_changed() callback.
-> >=20
-> > will get it using the following in next version:
-> > 	struct ieee80211_vif *vif =3D container_of(arvif)
-> > 	struct ieee80211_sub_if_data *sub_if_data =3D container_of(vif)
-> > 	struct net_dev *ndev =3D sub_if_data->dev
-> > 	struct inet6_dev *idev =3D in6_dev_get(ndev)
-> Just found that ieee80211_sub_if_data is internal to mac80211, so not pos=
-sible to get netdev in this way.
->=20
-> any other ideas on how to get netdev?
 
-You can go via the wdev.
 
-johannes
+On 6/3/2024 3:36 PM, Johannes Berg wrote:
+> On Fri, 2024-05-31 at 13:11 +0800, Baochen Qiang wrote:
+>>
+>> On 5/31/2024 11:42 AM, Baochen Qiang wrote:
+>>>>> +static void ath12k_wow_prepare_ns_offload(struct ath12k_vif *arvif,
+>>>>> +					  struct wmi_arp_ns_offload_arg *offload)
+>>>>> +{
+>>>>> +	struct inet6_dev *idev = arvif->idev;
+>>>> as noted above does it make more sense to get the netdev associated with the
+>>>> arvif and then use in6_dev_get(net_device) to get the inet6_dev rather than
+>>>> caching the pointer from the ipv6_addr_changed() callback?
+>>> Ah.. I didn't note that we can get inet6_dev in such a way, just thought the only way is to cache it in ipv6_changed() callback.
+>>>
+>>> will get it using the following in next version:
+>>> 	struct ieee80211_vif *vif = container_of(arvif)
+>>> 	struct ieee80211_sub_if_data *sub_if_data = container_of(vif)
+>>> 	struct net_dev *ndev = sub_if_data->dev
+>>> 	struct inet6_dev *idev = in6_dev_get(ndev)
+>> Just found that ieee80211_sub_if_data is internal to mac80211, so not possible to get netdev in this way.
+>>
+>> any other ideas on how to get netdev?
+> 
+> You can go via the wdev.
+> 
+Ah, great! I can get it with ieee80211_vif_to_wdev(arvif->vif)->netdev. Thank you for pointing that.
+
+> johannes
+
 
