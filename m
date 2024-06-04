@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 539B1C27C53
-	for <ath12k@archiver.kernel.org>; Tue,  4 Jun 2024 05:54:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D61CC27C54
+	for <ath12k@archiver.kernel.org>; Tue,  4 Jun 2024 05:54:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iYlstza4h/LLWNBBm9RN+5fGeuj4UUFqOLrAmVOlNyM=; b=Fx+O26aQfVV412OMzxUktYG2E5
-	2jGWDThbw6jIpGSDhNZ6u71TmrubRXcQkvgZuqXpbi+KyGscmi0Ek2U3KgwEnlN+uIBI05ZI5NgUH
-	8RSRl1rqID6uuAQfEXQYpWRUwNOPypgYFmfYM038lQm7MPpxfQkz1AlUyhmX6Ao0MZtABjF9jb1go
-	Sj7tgnclY5S22LArBDMvZPTpjCCuKqSYEw3+oNM4PnAXHBVhgD1ZgfOxG1oerrmoHj3mkWrh+nKb5
-	dYRrgBqQWVm0Kb/1XW6viCmBG1JrPKmOpA6W2xdOdTlUPCUKn37XhdAX4olA25wY8656KSpucUS3g
-	QPW5VvJQ==;
+	bh=WEZUzHKJFaTM09su+Fgyae1C4EmDGkXpTxuji0Tic6g=; b=CvND4M8E7yQcCLa5g6ZfJjvJMS
+	FBzKVUjHgYl3mVsWJjYb772BOddjzn3ln2k4FRs3+UAPf+VlJTxvjO4F85PIBKKs98JggnOLm5YtK
+	A6gY/x/nvP31BpzAMKD8fmMYO1pjNm0/EOzTa9gYRqoRZuJpQLAgdHwef0JrNPcqDg3wFPG79wUzD
+	dwWhBkZGJCKaaiNzhcvtKuutlPg7hT9miilN0TRZFhCAx6TsIG6XUWkhTbOzn9ElxZF8U/FVgipvG
+	UpnO0ltPpuf3pecd5D8Axf8INaOCDwYVz/cd5SpFrrvijLZc5Yjy5xweXXhUz1XdzPMiaKYqYEVy9
+	9T/9wLMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEN80-00000001Jqi-09Xn
+	id 1sEN81-00000001JrO-0FwT
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Jun 2024 05:54:36 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 04 Jun 2024 05:54:37 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEN7t-00000001JmS-2fK0
+	id 1sEN7w-00000001JoY-3Yko
 	for ath12k@lists.infradead.org;
-	Tue, 04 Jun 2024 05:54:33 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 453MU2xU021479;
-	Tue, 4 Jun 2024 05:54:28 GMT
+	Tue, 04 Jun 2024 05:54:34 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 453NIl7a012642;
+	Tue, 4 Jun 2024 05:54:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	iYlstza4h/LLWNBBm9RN+5fGeuj4UUFqOLrAmVOlNyM=; b=KIQsUXRjLMyMlQMd
-	Yide2Z9erCOkckC/JJ1yPhog3v2fY68ybekNS64aasqpB5oKGnfpDVi4gbvCtLNp
-	Xv6KdoT0CQX8nOo2aIFqcmAw2xLdo1MwvCL8uXpXbnt08qyryHpvXva7n7Q1dEEV
-	k78+A7zop+I5apX0pZBRhnx0E6fj7Ui18pV2q0cByhRkWQI3IjVc4jO0nFgi+9bo
-	9yP5xdsaGG2ixkEkLTk6j3Z9+Jn8XVqiJ7or4AtoMFNJVjoloJymOAUIUWlypydy
-	F/v+F+ouqKg/M/tpVKGsiRmTQApmYFfNUyDfNChmwce4+G+wOPAz7cLCHwSlpRf+
-	COLQxg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yfw5kp270-1
+	WEZUzHKJFaTM09su+Fgyae1C4EmDGkXpTxuji0Tic6g=; b=Fe7t8pcxT7CrFPPn
+	2fHBYY5MCrOUyTS8WW870/R17aDZ/y0/cLgvrU7+I5kDmCLFdJ6Dv+CjLYStpSpB
+	fmPYHBR10p7NRRTnpGiUpJ0d0xcjpfbkmvTcHRbETAoqLKQPaN89VF8cOfUG/9jw
+	lTtHsTU0SFn6gjfHEZfNtYqfqvh+7X51t8eqib5jHT2mJTYIYzOPC713feSmtZfa
+	SRSWgxtFxvDITx9MabVQo5qF/uvN9zR/lArHdIqSVNxXCRKN7HSi1n2nboXnH5z0
+	piVsellbUS1piVXlsJ7n6p3SGwrk83xgkfdkSu3JuH+DpsMk4/lCpJMVFxtrLG6s
+	FZdu6w==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yfw4ap3uk-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 04 Jun 2024 05:54:28 +0000 (GMT)
+	Tue, 04 Jun 2024 05:54:31 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4545sSdF026043
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4545sUTk029401
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 4 Jun 2024 05:54:28 GMT
+	Tue, 4 Jun 2024 05:54:30 GMT
 Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 3 Jun 2024 22:54:26 -0700
+ 15.2.1544.9; Mon, 3 Jun 2024 22:54:29 -0700
 From: Baochen Qiang <quic_bqiang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
-Subject: [PATCH v4 6/8] wifi: ath12k: support ARP and NS offload
-Date: Tue, 4 Jun 2024 13:54:05 +0800
-Message-ID: <20240604055407.12506-7-quic_bqiang@quicinc.com>
+Subject: [PATCH v4 8/8] wifi: ath12k: handle keepalive during WoWLAN suspend and resume
+Date: Tue, 4 Jun 2024 13:54:07 +0800
+Message-ID: <20240604055407.12506-9-quic_bqiang@quicinc.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20240604055407.12506-1-quic_bqiang@quicinc.com>
 References: <20240604055407.12506-1-quic_bqiang@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: n8haGQqJzLmmtUFJg2qd--_1yklMw49-
-X-Proofpoint-ORIG-GUID: n8haGQqJzLmmtUFJg2qd--_1yklMw49-
+X-Proofpoint-GUID: jq493CaQBZTNpamRvlXnR7GMSl-fCMhY
+X-Proofpoint-ORIG-GUID: jq493CaQBZTNpamRvlXnR7GMSl-fCMhY
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.12.28.16
  definitions=2024-06-04_02,2024-05-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- impostorscore=0 suspectscore=0 malwarescore=0 clxscore=1015 phishscore=0
- mlxscore=0 priorityscore=1501 adultscore=0 bulkscore=0 spamscore=0
- mlxlogscore=412 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ mlxlogscore=999 lowpriorityscore=0 malwarescore=0 priorityscore=1501
+ suspectscore=0 mlxscore=0 bulkscore=0 spamscore=0 adultscore=0
+ clxscore=1015 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2405170001 definitions=main-2406040046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240603_225429_972373_C91326F0 
-X-CRM114-Status: GOOD (  20.72  )
+X-CRM114-CacheID: sfid-20240603_225433_081927_A1EFD116 
+X-CRM114-Status: GOOD (  20.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,466 +97,218 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Support ARP and NS offload in WoW state.
+With WoWLAN enabled and after sleeping for a rather long time,
+we are seeing that with some APs, it is not able to wake up
+the STA though the correct wake up pattern has been configured.
+This is because the host doesn't send keepalive command to
+firmware, thus firmware will not send any packet to the AP and
+after a specific time the AP kicks out the STA.
 
-Tested this way: put machine A with QCA6390 to WoW state,
-ping/ping6 machine A from another machine B, check sniffer to see
-any ARP response and Neighbor Advertisement from machine A.
+So enable keepalive before going to suspend and disable it after
+resume back.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
 Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c |   1 +
- drivers/net/wireless/ath/ath12k/wmi.c | 148 ++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h |  66 +++++++++
- drivers/net/wireless/ath/ath12k/wow.c | 191 ++++++++++++++++++++++++++
- 4 files changed, 406 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 31 ++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/mac.h |  4 +++
+ drivers/net/wireless/ath/ath12k/wmi.c | 38 ++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 46 +++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wow.c | 34 ++++++++++++++++++++
+ 5 files changed, 153 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 56221100c430..e400a9a29e0e 100644
+index 7d7757ff5e51..8b79385bc29a 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -6,6 +6,7 @@
+@@ -9372,3 +9372,34 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
  
- #include <net/mac80211.h>
- #include <linux/etherdevice.h>
-+
- #include "mac.h"
- #include "core.h"
- #include "debug.h"
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index be9cf360262c..aa920af4310a 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7781,3 +7781,151 @@ int ath12k_wmi_wow_config_pno(struct ath12k *ar, u32 vdev_id,
- 
- 	return ath12k_wmi_cmd_send(ar->wmi, skb, WMI_NETWORK_LIST_OFFLOAD_CONFIG_CMDID);
+ 	return ret;
  }
 +
-+static void ath12k_wmi_fill_ns_offload(struct ath12k *ar,
-+				       struct wmi_arp_ns_offload_arg *offload,
-+				       void **ptr,
-+				       bool enable,
-+				       bool ext)
++int ath12k_mac_vif_set_keepalive(struct ath12k_vif *arvif,
++				 enum wmi_sta_keepalive_method method,
++				 u32 interval)
 +{
-+	struct wmi_ns_offload_params *ns;
-+	struct wmi_tlv *tlv;
-+	void *buf_ptr = *ptr;
-+	u32 ns_cnt, ns_ext_tuples;
-+	int i, max_offloads;
++	struct wmi_sta_keepalive_arg arg = {};
++	struct ath12k *ar = arvif->ar;
++	int ret;
 +
-+	ns_cnt = offload->ipv6_count;
++	lockdep_assert_held(&ar->conf_mutex);
 +
-+	tlv  = buf_ptr;
++	if (arvif->vdev_type != WMI_VDEV_TYPE_STA)
++		return 0;
 +
-+	if (ext) {
-+		ns_ext_tuples = offload->ipv6_count - WMI_MAX_NS_OFFLOADS;
-+		tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
-+						 ns_ext_tuples * sizeof(*ns));
-+		i = WMI_MAX_NS_OFFLOADS;
-+		max_offloads = offload->ipv6_count;
-+	} else {
-+		tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
-+						 WMI_MAX_NS_OFFLOADS * sizeof(*ns));
-+		i = 0;
-+		max_offloads = WMI_MAX_NS_OFFLOADS;
++	if (!test_bit(WMI_TLV_SERVICE_STA_KEEP_ALIVE, ar->ab->wmi_ab.svc_map))
++		return 0;
++
++	arg.vdev_id = arvif->vdev_id;
++	arg.enabled = 1;
++	arg.method = method;
++	arg.interval = interval;
++
++	ret = ath12k_wmi_sta_keepalive(ar, &arg);
++	if (ret) {
++		ath12k_warn(ar->ab, "failed to set keepalive on vdev %i: %d\n",
++			    arvif->vdev_id, ret);
++		return ret;
 +	}
 +
-+	buf_ptr += sizeof(*tlv);
-+
-+	for (; i < max_offloads; i++) {
-+		ns = buf_ptr;
-+		ns->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_NS_OFFLOAD_TUPLE,
-+							sizeof(*ns));
-+
-+		if (enable) {
-+			if (i < ns_cnt)
-+				ns->flags |= cpu_to_le32(WMI_NSOL_FLAGS_VALID);
-+
-+			memcpy(ns->target_ipaddr[0], offload->ipv6_addr[i], 16);
-+			memcpy(ns->solicitation_ipaddr, offload->self_ipv6_addr[i], 16);
-+
-+			if (offload->ipv6_type[i])
-+				ns->flags |= cpu_to_le32(WMI_NSOL_FLAGS_IS_IPV6_ANYCAST);
-+
-+			memcpy(ns->target_mac.addr, offload->mac_addr, ETH_ALEN);
-+
-+			if (!is_zero_ether_addr(ns->target_mac.addr))
-+				ns->flags |= cpu_to_le32(WMI_NSOL_FLAGS_MAC_VALID);
-+
-+			ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-+				   "wmi index %d ns_solicited %pI6 target %pI6",
-+				   i, ns->solicitation_ipaddr,
-+				   ns->target_ipaddr[0]);
-+		}
-+
-+		buf_ptr += sizeof(*ns);
-+	}
-+
-+	*ptr = buf_ptr;
++	return 0;
 +}
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index 69fd282b9dd3..2c6cb144827a 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -9,6 +9,7 @@
+ 
+ #include <net/mac80211.h>
+ #include <net/cfg80211.h>
++#include "wmi.h"
+ 
+ struct ath12k;
+ struct ath12k_base;
+@@ -81,5 +82,8 @@ int ath12k_mac_rfkill_config(struct ath12k *ar);
+ int ath12k_mac_wait_tx_complete(struct ath12k *ar);
+ void ath12k_mac_handle_beacon(struct ath12k *ar, struct sk_buff *skb);
+ void ath12k_mac_handle_beacon_miss(struct ath12k *ar, u32 vdev_id);
++int ath12k_mac_vif_set_keepalive(struct ath12k_vif *arvif,
++				 enum wmi_sta_keepalive_method method,
++				 u32 interval);
+ 
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 877ba231830b..6c69167c201a 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -8041,3 +8041,41 @@ int ath12k_wmi_gtk_rekey_getinfo(struct ath12k *ar,
+ 		   arvif->vdev_id);
+ 	return ath12k_wmi_cmd_send(ar->wmi, skb, WMI_GTK_OFFLOAD_CMDID);
+ }
 +
-+static void ath12k_wmi_fill_arp_offload(struct ath12k *ar,
-+					struct wmi_arp_ns_offload_arg *offload,
-+					void **ptr,
-+					bool enable)
++int ath12k_wmi_sta_keepalive(struct ath12k *ar,
++			     const struct wmi_sta_keepalive_arg *arg)
 +{
-+	struct wmi_arp_offload_params *arp;
-+	struct wmi_tlv *tlv;
-+	void *buf_ptr = *ptr;
-+	int i;
-+
-+	/* fill arp tuple */
-+	tlv = buf_ptr;
-+	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
-+					 WMI_MAX_ARP_OFFLOADS * sizeof(*arp));
-+	buf_ptr += sizeof(*tlv);
-+
-+	for (i = 0; i < WMI_MAX_ARP_OFFLOADS; i++) {
-+		arp = buf_ptr;
-+		arp->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_ARP_OFFLOAD_TUPLE,
-+							 sizeof(*arp));
-+
-+		if (enable && i < offload->ipv4_count) {
-+			/* Copy the target ip addr and flags */
-+			arp->flags = cpu_to_le32(WMI_ARPOL_FLAGS_VALID);
-+			memcpy(arp->target_ipaddr, offload->ipv4_addr[i], 4);
-+
-+			ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "wmi arp offload address %pI4",
-+				   arp->target_ipaddr);
-+		}
-+
-+		buf_ptr += sizeof(*arp);
-+	}
-+
-+	*ptr = buf_ptr;
-+}
-+
-+int ath12k_wmi_arp_ns_offload(struct ath12k *ar,
-+			      struct ath12k_vif *arvif,
-+			      struct wmi_arp_ns_offload_arg *offload,
-+			      bool enable)
-+{
-+	struct wmi_set_arp_ns_offload_cmd *cmd;
-+	struct wmi_tlv *tlv;
++	struct wmi_sta_keepalive_arp_resp_params *arp;
++	struct ath12k_wmi_pdev *wmi = ar->wmi;
++	struct wmi_sta_keepalive_cmd *cmd;
 +	struct sk_buff *skb;
-+	void *buf_ptr;
 +	size_t len;
-+	u8 ns_cnt, ns_ext_tuples = 0;
 +
-+	ns_cnt = offload->ipv6_count;
-+
-+	len = sizeof(*cmd) +
-+	      sizeof(*tlv) +
-+	      WMI_MAX_NS_OFFLOADS * sizeof(struct wmi_ns_offload_params) +
-+	      sizeof(*tlv) +
-+	      WMI_MAX_ARP_OFFLOADS * sizeof(struct wmi_arp_offload_params);
-+
-+	if (ns_cnt > WMI_MAX_NS_OFFLOADS) {
-+		ns_ext_tuples = ns_cnt - WMI_MAX_NS_OFFLOADS;
-+		len += sizeof(*tlv) +
-+		       ns_ext_tuples * sizeof(struct wmi_ns_offload_params);
-+	}
-+
-+	skb = ath12k_wmi_alloc_skb(ar->wmi->wmi_ab, len);
++	len = sizeof(*cmd) + sizeof(*arp);
++	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
 +	if (!skb)
 +		return -ENOMEM;
 +
-+	buf_ptr = skb->data;
-+	cmd = buf_ptr;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_SET_ARP_NS_OFFLOAD_CMD,
-+						 sizeof(*cmd));
-+	cmd->flags = cpu_to_le32(0);
-+	cmd->vdev_id = cpu_to_le32(arvif->vdev_id);
-+	cmd->num_ns_ext_tuples = cpu_to_le32(ns_ext_tuples);
++	cmd = (struct wmi_sta_keepalive_cmd *)skb->data;
++	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_STA_KEEPALIVE_CMD, sizeof(*cmd));
++	cmd->vdev_id = cpu_to_le32(arg->vdev_id);
++	cmd->enabled = cpu_to_le32(arg->enabled);
++	cmd->interval = cpu_to_le32(arg->interval);
++	cmd->method = cpu_to_le32(arg->method);
 +
-+	buf_ptr += sizeof(*cmd);
++	arp = (struct wmi_sta_keepalive_arp_resp_params *)(cmd + 1);
++	arp->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_STA_KEEPALVE_ARP_RESPONSE,
++						 sizeof(*arp));
++	if (arg->method == WMI_STA_KEEPALIVE_METHOD_UNSOLICITED_ARP_RESPONSE ||
++	    arg->method == WMI_STA_KEEPALIVE_METHOD_GRATUITOUS_ARP_REQUEST) {
++		arp->src_ip4_addr = cpu_to_le32(arg->src_ip4_addr);
++		arp->dest_ip4_addr = cpu_to_le32(arg->dest_ip4_addr);
++		ether_addr_copy(arp->dest_mac_addr.addr, arg->dest_mac_addr);
++	}
 +
-+	ath12k_wmi_fill_ns_offload(ar, offload, &buf_ptr, enable, 0);
-+	ath12k_wmi_fill_arp_offload(ar, offload, &buf_ptr, enable);
++	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
++		   "wmi sta keepalive vdev %d enabled %d method %d interval %d\n",
++		   arg->vdev_id, arg->enabled, arg->method, arg->interval);
 +
-+	if (ns_ext_tuples)
-+		ath12k_wmi_fill_ns_offload(ar, offload, &buf_ptr, enable, 1);
-+
-+	return ath12k_wmi_cmd_send(ar->wmi, skb, WMI_SET_ARP_NS_OFFLOAD_CMDID);
++	return ath12k_wmi_cmd_send(wmi, skb, WMI_STA_KEEPALIVE_CMDID);
 +}
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 477e2a37eb9c..0542d599d33d 100644
+index 0188dc78139b..7d2da9dfdacb 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.h
 +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -24,6 +24,7 @@
+@@ -5412,6 +5412,50 @@ struct wmi_gtk_rekey_offload_cmd {
+ 	u8 replay_ctr[GTK_REPLAY_COUNTER_BYTES];
+ } __packed;
  
- struct ath12k_base;
- struct ath12k;
-+struct ath12k_vif;
- 
- /* There is no signed version of __le32, so for a temporary solution come
-  * up with our own version. The idea is from fs/ntfs/endian.h.
-@@ -5316,6 +5317,66 @@ struct wmi_hw_data_filter_arg {
- 	u32 hw_filter_bitmap;
- };
- 
-+#define WMI_IPV6_UC_TYPE     0
-+#define WMI_IPV6_AC_TYPE     1
-+
-+#define WMI_IPV6_MAX_COUNT   16
-+#define WMI_IPV4_MAX_COUNT   2
-+
-+struct wmi_arp_ns_offload_arg {
-+	u8  ipv4_addr[WMI_IPV4_MAX_COUNT][4];
-+	u32 ipv4_count;
-+	u32 ipv6_count;
-+	u8  ipv6_addr[WMI_IPV6_MAX_COUNT][16];
-+	u8  self_ipv6_addr[WMI_IPV6_MAX_COUNT][16];
-+	u8  ipv6_type[WMI_IPV6_MAX_COUNT];
-+	bool ipv6_valid[WMI_IPV6_MAX_COUNT];
-+	u8  mac_addr[ETH_ALEN];
-+};
-+
-+#define WMI_MAX_NS_OFFLOADS           2
-+#define WMI_MAX_ARP_OFFLOADS          2
-+
-+#define WMI_ARPOL_FLAGS_VALID              BIT(0)
-+#define WMI_ARPOL_FLAGS_MAC_VALID          BIT(1)
-+#define WMI_ARPOL_FLAGS_REMOTE_IP_VALID    BIT(2)
-+
-+struct wmi_arp_offload_params {
++struct wmi_sta_keepalive_cmd {
 +	__le32 tlv_header;
-+	__le32 flags;
-+	u8 target_ipaddr[4];
-+	u8 remote_ipaddr[4];
-+	struct ath12k_wmi_mac_addr_params target_mac;
-+} __packed;
-+
-+#define WMI_NSOL_FLAGS_VALID               BIT(0)
-+#define WMI_NSOL_FLAGS_MAC_VALID           BIT(1)
-+#define WMI_NSOL_FLAGS_REMOTE_IP_VALID     BIT(2)
-+#define WMI_NSOL_FLAGS_IS_IPV6_ANYCAST     BIT(3)
-+
-+#define WMI_NSOL_MAX_TARGET_IPS    2
-+
-+struct wmi_ns_offload_params {
-+	__le32 tlv_header;
-+	__le32 flags;
-+	u8 target_ipaddr[WMI_NSOL_MAX_TARGET_IPS][16];
-+	u8 solicitation_ipaddr[16];
-+	u8 remote_ipaddr[16];
-+	struct ath12k_wmi_mac_addr_params target_mac;
-+} __packed;
-+
-+struct wmi_set_arp_ns_offload_cmd {
-+	__le32 tlv_header;
-+	__le32 flags;
 +	__le32 vdev_id;
-+	__le32 num_ns_ext_tuples;
-+	/* The TLVs follow:
-+	 * wmi_ns_offload_params  ns[WMI_MAX_NS_OFFLOADS];
-+	 * wmi_arp_offload_params arp[WMI_MAX_ARP_OFFLOADS];
-+	 * wmi_ns_offload_params  ns_ext[num_ns_ext_tuples];
++	__le32 enabled;
++
++	/* WMI_STA_KEEPALIVE_METHOD_ */
++	__le32 method;
++
++	/* in seconds */
++	__le32 interval;
++
++	/* following this structure is the TLV for struct
++	 * wmi_sta_keepalive_arp_resp_params
 +	 */
 +} __packed;
++
++struct wmi_sta_keepalive_arp_resp_params {
++	__le32 tlv_header;
++	__le32 src_ip4_addr;
++	__le32 dest_ip4_addr;
++	struct ath12k_wmi_mac_addr_params dest_mac_addr;
++} __packed;
++
++struct wmi_sta_keepalive_arg {
++	u32 vdev_id;
++	u32 enabled;
++	u32 method;
++	u32 interval;
++	u32 src_ip4_addr;
++	u32 dest_ip4_addr;
++	const u8 dest_mac_addr[ETH_ALEN];
++};
++
++enum wmi_sta_keepalive_method {
++	WMI_STA_KEEPALIVE_METHOD_NULL_FRAME = 1,
++	WMI_STA_KEEPALIVE_METHOD_UNSOLICITED_ARP_RESPONSE = 2,
++	WMI_STA_KEEPALIVE_METHOD_ETHERNET_LOOPBACK = 3,
++	WMI_STA_KEEPALIVE_METHOD_GRATUITOUS_ARP_REQUEST = 4,
++	WMI_STA_KEEPALIVE_METHOD_MGMT_VENDOR_ACTION = 5,
++};
++
++#define WMI_STA_KEEPALIVE_INTERVAL_DEFAULT	30
++#define WMI_STA_KEEPALIVE_INTERVAL_DISABLE	0
 +
  void ath12k_wmi_init_qcn9274(struct ath12k_base *ab,
  			     struct ath12k_wmi_resource_config_arg *config);
  void ath12k_wmi_init_wcn7850(struct ath12k_base *ab,
-@@ -5481,4 +5542,9 @@ int ath12k_wmi_wow_config_pno(struct ath12k *ar, u32 vdev_id,
- 			      struct wmi_pno_scan_req_arg  *pno_scan);
- int ath12k_wmi_hw_data_filter_cmd(struct ath12k *ar,
- 				  struct wmi_hw_data_filter_arg *arg);
-+int ath12k_wmi_arp_ns_offload(struct ath12k *ar,
-+			      struct ath12k_vif *arvif,
-+			      struct wmi_arp_ns_offload_arg *offload,
-+			      bool enable);
-+
+@@ -5585,5 +5629,7 @@ int ath12k_wmi_gtk_rekey_offload(struct ath12k *ar,
+ 				 struct ath12k_vif *arvif, bool enable);
+ int ath12k_wmi_gtk_rekey_getinfo(struct ath12k *ar,
+ 				 struct ath12k_vif *arvif);
++int ath12k_wmi_sta_keepalive(struct ath12k *ar,
++			     const struct wmi_sta_keepalive_arg *arg);
+ 
  #endif
 diff --git a/drivers/net/wireless/ath/ath12k/wow.c b/drivers/net/wireless/ath/ath12k/wow.c
-index 77658a01bb41..39092f71b6a2 100644
+index 85fe6a9dab37..76c31ed09939 100644
 --- a/drivers/net/wireless/ath/ath12k/wow.c
 +++ b/drivers/net/wireless/ath/ath12k/wow.c
-@@ -5,6 +5,10 @@
-  */
- 
- #include <linux/delay.h>
-+#include <linux/inetdevice.h>
-+#include <net/addrconf.h>
-+#include <net/if_inet6.h>
-+#include <net/ipv6.h>
- 
- #include "mac.h"
- 
-@@ -591,6 +595,179 @@ static int ath12k_wow_clear_hw_filter(struct ath12k *ar)
+@@ -812,6 +812,24 @@ static int ath12k_wow_protocol_offload(struct ath12k *ar, bool enable)
  	return 0;
  }
  
-+static void ath12k_wow_generate_ns_mc_addr(struct ath12k_base *ab,
-+					   struct wmi_arp_ns_offload_arg *offload)
++static int ath12k_wow_set_keepalive(struct ath12k *ar,
++				    enum wmi_sta_keepalive_method method,
++				    u32 interval)
 +{
-+	int i;
-+
-+	for (i = 0; i < offload->ipv6_count; i++) {
-+		offload->self_ipv6_addr[i][0] = 0xff;
-+		offload->self_ipv6_addr[i][1] = 0x02;
-+		offload->self_ipv6_addr[i][11] = 0x01;
-+		offload->self_ipv6_addr[i][12] = 0xff;
-+		offload->self_ipv6_addr[i][13] =
-+					offload->ipv6_addr[i][13];
-+		offload->self_ipv6_addr[i][14] =
-+					offload->ipv6_addr[i][14];
-+		offload->self_ipv6_addr[i][15] =
-+					offload->ipv6_addr[i][15];
-+		ath12k_dbg(ab, ATH12K_DBG_WOW, "NS solicited addr %pI6\n",
-+			   offload->self_ipv6_addr[i]);
-+	}
-+}
-+
-+static void ath12k_wow_prepare_ns_offload(struct ath12k_vif *arvif,
-+					  struct wmi_arp_ns_offload_arg *offload)
-+{
-+	struct net_device *ndev = ieee80211_vif_to_wdev(arvif->vif)->netdev;
-+	struct ath12k_base *ab = arvif->ar->ab;
-+	struct inet6_ifaddr *ifa6;
-+	struct ifacaddr6 *ifaca6;
-+	struct inet6_dev *idev;
-+	u32 count = 0, scope;
-+
-+	if (!ndev)
-+		return;
-+
-+	idev = in6_dev_get(ndev);
-+	if (!idev)
-+		return;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WOW, "wow prepare ns offload\n");
-+
-+	read_lock_bh(&idev->lock);
-+
-+	/* get unicast address */
-+	list_for_each_entry(ifa6, &idev->addr_list, if_list) {
-+		if (count >= WMI_IPV6_MAX_COUNT)
-+			goto unlock;
-+
-+		if (ifa6->flags & IFA_F_DADFAILED)
-+			continue;
-+
-+		scope = ipv6_addr_src_scope(&ifa6->addr);
-+		if (scope != IPV6_ADDR_SCOPE_LINKLOCAL &&
-+		    scope != IPV6_ADDR_SCOPE_GLOBAL) {
-+			ath12k_dbg(ab, ATH12K_DBG_WOW,
-+				   "Unsupported ipv6 scope: %d\n", scope);
-+			continue;
-+		}
-+
-+		memcpy(offload->ipv6_addr[count], &ifa6->addr.s6_addr,
-+		       sizeof(ifa6->addr.s6_addr));
-+		offload->ipv6_type[count] = WMI_IPV6_UC_TYPE;
-+		ath12k_dbg(ab, ATH12K_DBG_WOW, "mac count %d ipv6 uc %pI6 scope %d\n",
-+			   count, offload->ipv6_addr[count],
-+			   scope);
-+		count++;
-+	}
-+
-+	/* get anycast address */
-+	rcu_read_lock();
-+
-+	for (ifaca6 = rcu_dereference(idev->ac_list); ifaca6;
-+	     ifaca6 = rcu_dereference(ifaca6->aca_next)) {
-+		if (count >= WMI_IPV6_MAX_COUNT) {
-+			rcu_read_unlock();
-+			goto unlock;
-+		}
-+
-+		scope = ipv6_addr_src_scope(&ifaca6->aca_addr);
-+		if (scope != IPV6_ADDR_SCOPE_LINKLOCAL &&
-+		    scope != IPV6_ADDR_SCOPE_GLOBAL) {
-+			ath12k_dbg(ab, ATH12K_DBG_WOW,
-+				   "Unsupported ipv scope: %d\n", scope);
-+			continue;
-+		}
-+
-+		memcpy(offload->ipv6_addr[count], &ifaca6->aca_addr,
-+		       sizeof(ifaca6->aca_addr));
-+		offload->ipv6_type[count] = WMI_IPV6_AC_TYPE;
-+		ath12k_dbg(ab, ATH12K_DBG_WOW, "mac count %d ipv6 ac %pI6 scope %d\n",
-+			   count, offload->ipv6_addr[count],
-+			   scope);
-+		count++;
-+	}
-+
-+	rcu_read_unlock();
-+
-+unlock:
-+	read_unlock_bh(&idev->lock);
-+
-+	in6_dev_put(idev);
-+
-+	offload->ipv6_count = count;
-+	ath12k_wow_generate_ns_mc_addr(ab, offload);
-+}
-+
-+static void ath12k_wow_prepare_arp_offload(struct ath12k_vif *arvif,
-+					   struct wmi_arp_ns_offload_arg *offload)
-+{
-+	struct ieee80211_vif *vif = arvif->vif;
-+	struct ieee80211_vif_cfg vif_cfg = vif->cfg;
-+	struct ath12k_base *ab = arvif->ar->ab;
-+	u32 ipv4_cnt;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WOW, "wow prepare arp offload\n");
-+
-+	ipv4_cnt = min(vif_cfg.arp_addr_cnt, WMI_IPV4_MAX_COUNT);
-+	memcpy(offload->ipv4_addr, vif_cfg.arp_addr_list, ipv4_cnt * sizeof(u32));
-+	offload->ipv4_count = ipv4_cnt;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_WOW,
-+		   "wow arp_addr_cnt %d vif->addr %pM, offload_addr %pI4\n",
-+		   vif_cfg.arp_addr_cnt, vif->addr, offload->ipv4_addr);
-+}
-+
-+static int ath12k_wow_arp_ns_offload(struct ath12k *ar, bool enable)
-+{
-+	struct wmi_arp_ns_offload_arg *offload;
 +	struct ath12k_vif *arvif;
 +	int ret;
 +
 +	lockdep_assert_held(&ar->conf_mutex);
 +
-+	offload = kmalloc(sizeof(*offload), GFP_KERNEL);
-+	if (!offload)
-+		return -ENOMEM;
-+
 +	list_for_each_entry(arvif, &ar->arvifs, list) {
-+		if (arvif->vdev_type != WMI_VDEV_TYPE_STA)
-+			continue;
-+
-+		memset(offload, 0, sizeof(*offload));
-+
-+		memcpy(offload->mac_addr, arvif->vif->addr, ETH_ALEN);
-+		ath12k_wow_prepare_ns_offload(arvif, offload);
-+		ath12k_wow_prepare_arp_offload(arvif, offload);
-+
-+		ret = ath12k_wmi_arp_ns_offload(ar, arvif, offload, enable);
-+		if (ret) {
-+			ath12k_warn(ar->ab, "failed to set arp ns offload vdev %i: enable %d, ret %d\n",
-+				    arvif->vdev_id, enable, ret);
++		ret = ath12k_mac_vif_set_keepalive(arvif, method, interval);
++		if (ret)
 +			return ret;
-+		}
-+	}
-+
-+	kfree(offload);
-+
-+	return 0;
-+}
-+
-+static int ath12k_wow_protocol_offload(struct ath12k *ar, bool enable)
-+{
-+	int ret;
-+
-+	ret = ath12k_wow_arp_ns_offload(ar, enable);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to offload ARP and NS %d %d\n",
-+			    enable, ret);
-+		return ret;
 +	}
 +
 +	return 0;
@@ -565,28 +317,30 @@ index 77658a01bb41..39092f71b6a2 100644
  int ath12k_wow_op_suspend(struct ieee80211_hw *hw,
  			  struct cfg80211_wowlan *wowlan)
  {
-@@ -614,6 +791,13 @@ int ath12k_wow_op_suspend(struct ieee80211_hw *hw,
+@@ -855,6 +873,14 @@ int ath12k_wow_op_suspend(struct ieee80211_hw *hw,
  		goto cleanup;
  	}
  
-+	ret = ath12k_wow_protocol_offload(ar, true);
++	ret = ath12k_wow_set_keepalive(ar,
++				       WMI_STA_KEEPALIVE_METHOD_NULL_FRAME,
++				       WMI_STA_KEEPALIVE_INTERVAL_DEFAULT);
 +	if (ret) {
-+		ath12k_warn(ar->ab, "failed to set wow protocol offload events: %d\n",
-+			    ret);
++		ath12k_warn(ar->ab, "failed to enable wow keepalive: %d\n", ret);
 +		goto cleanup;
 +	}
 +
- 	ret = ath12k_mac_wait_tx_complete(ar);
+ 	ret = ath12k_wow_enable(ar);
  	if (ret) {
- 		ath12k_warn(ar->ab, "failed to wait tx complete: %d\n", ret);
-@@ -700,6 +884,13 @@ int ath12k_wow_op_resume(struct ieee80211_hw *hw)
+ 		ath12k_warn(ar->ab, "failed to start wow: %d\n", ret);
+@@ -935,6 +961,14 @@ int ath12k_wow_op_resume(struct ieee80211_hw *hw)
  		goto exit;
  	}
  
-+	ret = ath12k_wow_protocol_offload(ar, false);
++	ret = ath12k_wow_set_keepalive(ar,
++				       WMI_STA_KEEPALIVE_METHOD_NULL_FRAME,
++				       WMI_STA_KEEPALIVE_INTERVAL_DISABLE);
 +	if (ret) {
-+		ath12k_warn(ar->ab, "failed to clear wow protocol offload events: %d\n",
-+			    ret);
++		ath12k_warn(ar->ab, "failed to disable wow keepalive: %d\n", ret);
 +		goto exit;
 +	}
 +
