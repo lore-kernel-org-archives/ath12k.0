@@ -4,96 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E9ECC27C52
-	for <ath12k@archiver.kernel.org>; Tue,  4 Jun 2024 18:28:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6AC1C27C52
+	for <ath12k@archiver.kernel.org>; Tue,  4 Jun 2024 21:00:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KtWwyHQ/s1Mo+jSgQ3jPju5LLIQLxY5LIc0kGaj+Rp0=; b=Zzxmst4Il6JuC6t1Fx5/2uLcEG
-	5jhxgR7jzzzQsFayCxP8AC8tTz++qIZX8Iom6Hm4+ypsStfqMOz0JfRiyg7LbmN6GYN9XIoF6l/Pq
-	OqUMhITET1ekoNiE7DCQb0op3CABK43NmaNuIpvASgWsbOUoYcYV9u0zWEOBfsVBO0fYyX0kQP74H
-	BqW6BcNCGaLgQ4BjwLP7s80be4Oap1uLbwsO2fbyoY/w636dTCW5jpRC8IENeax6wNGyRyYBMd/D2
-	8Tw29S5Ht0qLIKf0p38i8JLux3OiSV8NRz3EFJeLvgIUSCZKbxdW1y9MrQTzmEA2NW6x5/RDuKRXG
-	u4hHpsjg==;
+	bh=yH0QXQi5wQVge/0F9LMvZsIKi/BiNXFunMlptnG7OJ8=; b=g4hd1doy6Bj9zF38wa2jHPm6q8
+	tDDpRR8WQ8OcosybFAiMhcdDGL0Xm4nopmunAgLdJyL6lSs0CdHy+TLYSn7gb4Q5vXsT4e9NbIGjH
+	/mqydYLqzbQZAkCN3jgQsia+++EFWDF00+CLz61sUgcad35T9ppazBc4tcpCWFjK7XKLqXf7OE0Uy
+	mDuBRW7J4E6ahEjx9qW8l2VD1vXKmqb3VNRe8PTFaVw/ih1UU6Unk/B5fE4rCPE2Lz+xkvhf1TGt6
+	7iuM9SXRLEizEArfTg11QFODqLw7WSz2saWiZIwlOu9q9v+DkCsUZZT7u8H2LYr/vfM29MXoIqWGw
+	+M7JKegQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEYt8-00000003SKV-42Q5
+	id 1sEbGS-00000003m8F-29xv
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Jun 2024 18:28:02 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	Tue, 04 Jun 2024 21:00:16 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEYt6-00000003SJz-0Uk5
+	id 1sEbGP-00000003m5N-0eEM
 	for ath12k@lists.infradead.org;
-	Tue, 04 Jun 2024 18:28:01 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-2eabd22d441so17397161fa.2
-        for <ath12k@lists.infradead.org>; Tue, 04 Jun 2024 11:27:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1717525678; x=1718130478; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=KtWwyHQ/s1Mo+jSgQ3jPju5LLIQLxY5LIc0kGaj+Rp0=;
-        b=UbAMal5zKcUBxATToRhounEN4jwM1JAW23Nvt7k5d1hS5yX3Kzuzi4A1+nzaWabhw3
-         IDR587z27pAA7X/uzjperO5/UNFV7P6mqD7JHgo2SzHDo/sppOdbkLgQ5cgdto4i+e0V
-         LtgE/tbNgCs1URZKGVCTIppLjby/LnUO2CnW5hWT+16tQaqbECPsxvM0w6g/6M9RNf7v
-         c0hCAbVMd9H0COm9VlsbF3/zHvZpJMa8DR++G/rT9jWhE5GyENP7FB4oF6KT4coDiJsh
-         1J5lAnO3cP5oXVzFxxqgF9ZIuooCbf7FhobiM38MA/32dUk0elUNlt0T726yEC2vWhga
-         4rgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717525678; x=1718130478;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=KtWwyHQ/s1Mo+jSgQ3jPju5LLIQLxY5LIc0kGaj+Rp0=;
-        b=YeQHLuV7WzQj5aFKJHWxzJ0I5eMHJV+cetnuJGK3GKNRvAkUKkaGdEX1cSpGWiqeo2
-         CFA/mRSbHj2+ED18BJxZppYxgk4fevCKKdIkMoy8vnBl/LmERABROOnaAxXf/bkiGbPX
-         V5SaSvx8d32qazReuredTuW+0vbT6SYbMQkj1F716p/hVLD6aWxWb+xv2B5YuwkDw2e9
-         9YjWtRcb9W55Ue3Ivm804fkUxCGbew5bZ5IEKlCLaUKgK2z5yhqWAh/e1c0ZgnQuZ/2N
-         HrwuVHGtlSNzOId+13pk+282NQbceCpAGwZyFdkOEyzMo3+/xU0uw/L3w4+DqPRKqH5g
-         FnGQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV0qv2gDGlARg1gN2AAKLtK+UgWxrYX4oT1oRHu9uj5c0l0VUSb5UluMomvVPsUuKLQXH2vI66Wt7RV4/0m+w+gb6kExZCZJIu/xg==
-X-Gm-Message-State: AOJu0YzvTB8M5PJbiowDZh6ZQZjNSzguZE2Pu4Rf683Qi/qLnNOi+dEa
-	vdk4OKFXrhrhDdSbV/btdD6FZmPfvDd1EIhoLbn6Rsxo7VuNdVYVw5lS0javVqTG5hxItczaxiT
-	2jKiI1IXqvtqM8QHdbbE5LvLsSOYvHTfaRziG8w==
-X-Google-Smtp-Source: AGHT+IEIBmN6Pbw21C48aFo92GeQIhF5kiBTsuKNdmIGqw2sOD28tsikvtBG3m69ha2Gd5/MsgbO+7NQyJOTbJOSXRc=
-X-Received: by 2002:a05:6512:2253:b0:523:9515:4b74 with SMTP id
- 2adb3069b0e04-52bab4ca5e9mr311493e87.14.1717525678190; Tue, 04 Jun 2024
- 11:27:58 -0700 (PDT)
+	Tue, 04 Jun 2024 21:00:15 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 454IHic6006279;
+	Tue, 4 Jun 2024 21:00:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	yH0QXQi5wQVge/0F9LMvZsIKi/BiNXFunMlptnG7OJ8=; b=Z/o1WKH2CRCnI+DW
+	doKtGPAH+qpdpUQ48hLFLfKzqYWeCqw2f0s6dy5gm0lOW9xV36NiUEKcQWnKP90x
+	L2EE8npZv5jJHBnhQTmtviggXlQK36jPuqMtRPqpTZ7NUb6+KtQvPDG2maZpADQC
+	nYAjyicb/rc81GXgwMGNTgNraE5cn1fE6NVGeT35Ds9NaQSiLxI6jBYFk3IyHdSb
+	qYHESB+LKqmVP8JW4AqZNEyw+A/VwVsFqmFeQ39bXb+/4Zrv8k+R3yHFtbWoPOAQ
+	9n2datG9luDpnYqZngmm3CjiY5XIGOf041yb+/ABULYiMz3vAwTJKwGqpNdni4Ey
+	z3y0Qg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yj8300ajt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 04 Jun 2024 21:00:10 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 454KwBrM021122
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 4 Jun 2024 21:00:08 GMT
+Received: from [10.48.241.109] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 4 Jun 2024
+ 13:58:10 -0700
+Message-ID: <78c93382-a3fb-435f-92ac-fa15b0730704@quicinc.com>
+Date: Tue, 4 Jun 2024 13:58:10 -0700
 MIME-Version: 1.0
-References: <20240528-pwrseq-v8-10-d354d52b763c@linaro.org> <20240604174326.GA733165@bhelgaas>
-In-Reply-To: <20240604174326.GA733165@bhelgaas>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Tue, 4 Jun 2024 20:27:47 +0200
-Message-ID: <CAMRc=Mf_n9xcFHofq5Q_X3xs=2jDeor1zfFAd=bM0FywyhFUJA@mail.gmail.com>
-Subject: Re: [PATCH v8 10/17] power: sequencing: implement the pwrseq core
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Marcel Holtmann <marcel@holtmann.org>, Luiz Augusto von Dentz <luiz.dentz@gmail.com>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Balakrishna Godavarthi <quic_bgodavar@quicinc.com>, Rocky Liao <quic_rjliao@quicinc.com>, 
-	Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Srini Kandagatla <srinivas.kandagatla@linaro.org>, 
-	Elliot Berman <quic_eberman@quicinc.com>, Caleb Connolly <caleb.connolly@linaro.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
-	Alex Elder <elder@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org, 
-	linux-pm@vger.kernel.org, linux-pci@vger.kernel.org, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, kernel@quicinc.com, 
-	Amit Pundir <amit.pundir@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: avoid unnecessary MSDU drop in the Rx error
+ process
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240604062641.2956288-1-quic_periyasa@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240604062641.2956288-1-quic_periyasa@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 8BwMm5jMKmWfXIUFHA3bVtCA9gER554R
+X-Proofpoint-ORIG-GUID: 8BwMm5jMKmWfXIUFHA3bVtCA9gER554R
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-06-04_11,2024-06-04_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 suspectscore=0 clxscore=1015 lowpriorityscore=0
+ impostorscore=0 adultscore=0 mlxlogscore=602 mlxscore=0 spamscore=0
+ malwarescore=0 phishscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2405170001 definitions=main-2406040169
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240604_112800_181590_AF5B5000 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20240604_140013_279375_82BA866C 
+X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,45 +101,16 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 4, 2024 at 7:43=E2=80=AFPM Bjorn Helgaas <helgaas@kernel.org> w=
-rote:
->
-> On Tue, May 28, 2024 at 09:03:18PM +0200, Bartosz Golaszewski wrote:
-> > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> >
-> > Implement the power sequencing subsystem allowing devices to share
-> > complex powering-up and down procedures. It's split into the consumer
-> > and provider parts but does not implement any new DT bindings so that
-> > the actual power sequencing is never revealed in the DT representation.
->
-> > +++ b/drivers/power/sequencing/core.c
->
-> > + * Unit - a unit is a discreet chunk of a power sequence. For instance=
- one unit
->
-> s/discreet/discrete/
->
-> > +static struct pwrseq_unit *pwrseq_unit_incref(struct pwrseq_unit *unit=
-)
-> > +{
-> > +     kref_get(&unit->ref);
-> > +
-> > +     return unit;
-> > +}
-> > +
-> > +static void pwrseq_unit_release(struct kref *ref);
-> > +
-> > +static void pwrseq_unit_decref(struct pwrseq_unit *unit)
-> > +{
-> > +     kref_put(&unit->ref, pwrseq_unit_release);
-> > +}
->
-> No existing callers of kref_get() and kref_put() use names that
-> include "incref" or "decref".  Many include "get" and "put", so maybe
-> there would be some value in using that pattern?
+On 6/3/2024 11:26 PM, Karthikeyan Periyasamy wrote:
+> Currently, in the Rx error processing handler, once an MSDU drop is
+> detected, the subsequent MSDUs get unintentionally dropped due to the
+> previous drop flag being retained across all MSDU processing, leading
+> to the discarding of valid MSDUs. To resolve this issue, the drop flag
+> should be reset to false before processing each descriptor.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-These symbols are not exported and I personally dislike the get/put
-pattern. Best I can do is _ref/_unref like what kref does.
-
-Bart
 
