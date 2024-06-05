@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6121FC25B76
-	for <ath12k@archiver.kernel.org>; Wed,  5 Jun 2024 18:30:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17C6AC25B76
+	for <ath12k@archiver.kernel.org>; Wed,  5 Jun 2024 18:31:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FIRzuDDGgqRPaBzKEDg/kxgMBQSLeJdam+0BlfRkoCo=; b=wVTlKmBvcbOjIzk/VR6CagPmYV
-	10sr+YMf9fTMDk8+otG7FNQXmyAPO1SYh9tT0D1qj7knH7iAmbPgl/Jg+Mfxz4AnufXrHc9LY9M+/
-	PhGbHSMdSfAxi8i8w+4uo+/NXHGRGmMImznTRfL34d/OtKJC0yeDBguyLPJnXL8GukyqbNbrX9pK5
-	wHvebAlqP67jjI+O3LEt2tWtaIouUBy6CKPGIKZhjO954sLnT1VQ+Zk/cllQRwDAwuKvw3o7RYWMT
-	H4MirQPe7X75/51YivfvJiperd4H3ghXVp6psbGaBVXxn/BnAHbQRUY53cbLEDhqldqHpkd3L0ROO
-	t2pDpvDw==;
+	bh=BnRLGsQdHzBIFwy2a7a4pMb4QdK2fWR40v5UFjKAhTw=; b=N4K4Q49sNXcfUM0d9csaYnfq+J
+	agzZlj8EPuisfwAM029N+1Q2ZgAwPCwXDy7rg2at8FWrOFaPhWbmsYQvFvKy8jzbfnmidxzjsTKGE
+	x73GuPHEG/5ga5j83QYwYEE4U0G8BPGfM2zov1mXfAfX0xsi7URYSGy3+xBXfMn+z+hqAJaPot8yi
+	7j8JiGPMk66TOP2AD6VHbsLncUK+HLhV2rGrt6IIQpILpjpUiqrCYRzipWn7DE9UwKAU5Q4HQ6QYL
+	ZAU07nB6vWw0eKGto7fnXmGm0RN3l/ce6jPkcV1GClKm/+wxIc1uhR6jazREFfjO2DN6mbIA+b0VS
+	PHxGQ+Nw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEvPU-00000007ALB-0IuP
+	id 1sEvQL-00000007AXV-20kP
 	for ath12k@archiver.kernel.org;
-	Wed, 05 Jun 2024 18:30:56 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Wed, 05 Jun 2024 18:31:49 +0000
+Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEvPP-00000007AKJ-3MDg;
-	Wed, 05 Jun 2024 18:30:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 2FBCECE18E3;
-	Wed,  5 Jun 2024 18:30:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F85EC2BD11;
-	Wed,  5 Jun 2024 18:30:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717612248;
-	bh=dUTV71XmXtlYZZ1TirvFxoo1PTDfrRAJm9sogfuoBiI=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=Nl4VLitUSYhrOwKqITxiY7uKr9VBEwuGX7zeXzMARdOuewIuimA7WtMoFDnSz+d0U
-	 gW/g5LHyQcb0qXqm+9L0FA05qTYh6OFwctKJaQjt6ctcDIYSIOnWIn10BpVHEMsriQ
-	 XceX7uDIxPsSu80LrniK95FIFsJsIitFsImTEHIpSUOeuMJdJnNKbrvk1OoVZCKb5o
-	 kJ3QWK3u24GrY03nUWxC9CE7qxvVGqlEoz6CmrDX0Qpm/u5TuAfpvrwMsX9nlbggur
-	 LU6iyZQqoUUg3eRrEXaiPT7HkHKRK73hZTTedextnbhyeNEya5aPGNQfF31TcD8DkX
-	 NyrJtaVF6vcXg==
-Content-Type: text/plain; charset="utf-8"
+	id 1sEvQI-00000007AUU-0Yon
+	for ath12k@lists.infradead.org;
+	Wed, 05 Jun 2024 18:31:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=BnRLGsQdHzBIFwy2a7a4pMb4QdK2fWR40v5UFjKAhTw=; b=ikmorR7uef0IblnmHSSInTI15l
+	ViKP7BNphia7CZuGYgkMWIe+tiyCXD3vMCbOJmnvrgAA2JYkBJpDa/Nm6S99U9Q2pQ3NpB3GeVwD9
+	uEK11/n9poQiDRmVMLUhUjpMIMD6orrd02OMd7gJ0mjXU7rjfRJk5vYMF0Obt1aqN9dQ=;
+Received: from p4ff130d0.dip0.t-ipconnect.de ([79.241.48.208] helo=localhost.localdomain)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1sEvQA-008Gwq-0w;
+	Wed, 05 Jun 2024 20:31:38 +0200
+From: Felix Fietkau <nbd@nbd.name>
+To: linux-wireless@vger.kernel.org
+Cc: johannes@sipsolutions.net,
+	quic_adisi@quicinc.com,
+	quic_periyasa@quicinc.com,
+	ath12k@lists.infradead.org
+Subject: [RFC v2 4/7] wifi: mac80211: add radio index to ieee80211_chanctx_conf
+Date: Wed,  5 Jun 2024 20:31:27 +0200
+Message-ID: <ef365329657e2f6961b86934750ce74bba7959fe.1717611760.git-series.nbd@nbd.name>
+X-Mailer: git-send-email 2.44.0
+In-Reply-To: <cover.c104c0bb3a14f4ac26aee71f4979846f6ad87742.1717611760.git-series.nbd@nbd.name>
+References: <cover.c104c0bb3a14f4ac26aee71f4979846f6ad87742.1717611760.git-series.nbd@nbd.name>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: pull-request: ath-next-20240605
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <87a5jzs6w2.fsf@kernel.org>
-References: <87a5jzs6w2.fsf@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- ath11k@lists.infradead.org, ath12k@lists.infradead.org,
- quic_jjohnson@quicinc.com
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171761224540.2099453.10305785123277567469.kvalo@kernel.org>
-Date: Wed,  5 Jun 2024 18:30:46 +0000 (UTC)
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240605_113052_795061_E1D4934A 
-X-CRM114-Status: GOOD (  19.00  )
+X-CRM114-CacheID: sfid-20240605_113146_292405_8CED8070 
+X-CRM114-Status: GOOD (  10.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,225 +74,74 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> wrote:
+Will be used to explicitly assign a channel context to a wiphy radio.
 
-> Hi,
-> 
-> Please pull, more information in the tag below.
-> 
-> Kalle
-> 
-> The following changes since commit f1c26960b6afb9c38a4019ad36392c654db6e20e:
-> 
->   Merge tag 'ath-next-20240502' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath (2024-05-03 13:30:19 +0300)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git tags/ath-next-20240605
-> 
-> for you to fetch changes up to 22767241e64427bbcffea2e2d51531ab467bc4ef:
-> 
->   wifi: ath12k: add hw_link_id in ath12k_pdev (2024-06-03 16:15:50 +0300)
-> 
-> ----------------------------------------------------------------
-> ath.git patches for v6.11
-> 
-> ath12k
-> 
-> * remove unsupported tx monitor handling
-> 
-> * channel 2 in 6 GHz band support
-> 
-> * Spatial Multiplexing Power Save (SMPS) in 6 GHz band support
-> 
-> * multiple BSSID (MBSSID) and Enhanced Multi-BSSID Advertisements (EMA) support
-> 
-> * dynamic VLAN support
-> 
-> * add panic handler for resetting the firmware state
-> 
-> ath10k
-> 
-> * add qcom,no-msa-ready-indicator Device Tree property
-> 
-> * LED support for various chipsets
-> 
-> ----------------------------------------------------------------
-> Aloka Dixit (9):
->       wifi: ath12k: advertise driver capabilities for MBSSID and EMA
->       wifi: ath12k: configure MBSSID params in vdev create/start
->       wifi: ath12k: rename MBSSID fields in wmi_vdev_up_cmd
->       wifi: ath12k: create a structure for WMI vdev up parameters
->       wifi: ath12k: configure MBSSID parameters in AP mode
->       wifi: ath12k: refactor arvif security parameter configuration
->       wifi: ath12k: add MBSSID beacon support
->       wifi: ath12k: add EMA beacon support
->       wifi: ath12k: skip sending vdev down for channel switch
-> 
-> Baochen Qiang (9):
->       wifi: ath12k: fix Smatch warnings on ath12k_core_suspend()
->       wifi: ath11k: refactor setting country code logic
->       wifi: ath11k: restore country code during resume
->       wifi: ath11k: fix wrong definition of CE ring's base address
->       wifi: ath12k: fix race due to setting ATH12K_FLAG_EXT_IRQ_ENABLED too early
->       wifi: ath12k: fix wrong definition of CE ring's base address
->       wifi: ath12k: fix memory leak in ath12k_dp_rx_peer_frag_setup()
->       wifi: ath12k: do not process consecutive RDDM event
->       wifi: ath12k: add panic handler
-> 
-> Breno Leitao (2):
->       wifi: wil6210: Do not use embedded netdev in wil6210_priv
->       wifi: ath12k: allocate dummy net_device dynamically
-> 
-> Jeff Johnson (8):
->       wifi: ath11k: refactor CE remap & unmap
->       wifi: ath11k: unmap the CE in ath11k_ahb_probe() error path
->       wifi: ath12k: initialize 'ret' in ath12k_qmi_load_file_target_mem()
->       wifi: ath11k: initialize 'ret' in ath11k_qmi_load_file_target_mem()
->       wifi: ath11k: fix misspelling of "dma" in num_rxmda_per_pdev
->       wifi: ath12k: fix misspelling of "dma" in num_rxmda_per_pdev
->       wifi: ath12k: initialize 'ret' in ath12k_dp_rxdma_ring_sel_config_wcn7850()
->       wifi: ath12k: Fix devmem address prefix when logging
-> 
-> Kalle Valo (1):
->       wifi: ath11k: ath11k_mac_op_ipv6_changed(): use list_for_each_entry()
-> 
-> Kang Yang (5):
->       wifi: ath12k: remove unused variable monitor_flags
->       wifi: ath12k: avoid duplicated vdev stop
->       wifi: ath12k: avoid duplicated vdev down
->       wifi: ath12k: remove invalid peer create logic
->       wifi: ath12k: remove redundant peer delete for WCN7850
-> 
-> Karthikeyan Kathirvel (1):
->       wifi: ath12k: drop failed transmitted frames from metric calculation.
-> 
-> Karthikeyan Periyasamy (13):
->       wifi: ath12k: Refactor the hardware recovery procedure
->       wifi: ath12k: Refactor the hardware state
->       wifi: ath12k: Add lock to protect the hardware state
->       wifi: ath12k: Replace "chip" with "device" in hal Rx return buffer manager
->       wifi: ath12k: Refactor idle ring descriptor setup
->       wifi: ath12k: Introduce device index
->       wifi: ath12k: add multi device support for WBM idle ring buffer setup
->       wifi: ath12k: avoid double SW2HW_MACID conversion
->       wifi: ath12k: remove duplicate definition of MAX_RADIOS
->       wifi: ath12k: use correct MAX_RADIOS
->       wifi: ath12k: refactor rx descriptor CMEM configuration
->       wifi: ath12k: improve the rx descriptor error information
->       wifi: ath12k: add hw_link_id in ath12k_pdev
-> 
-> Lingbo Kong (1):
->       wifi: ath12k: fix ack signal strength calculation
-> 
-> Marc Gonzalez (2):
->       dt-bindings: net: wireless: ath10k: add qcom,no-msa-ready-indicator prop
->       wifi: ath10k: do not always wait for MSA_READY indicator
-> 
-> Muna Sinada (1):
->       wifi: ath12k: dynamic VLAN support
-> 
-> Nithyanantham Paramasivam (1):
->       wifi: ath12k: Fix tx completion ring (WBM2SW) setup failure
-> 
-> P Praneesh (3):
->       wifi: ath12k: change DMA direction while mapping reinjected packets
->       wifi: ath12k: fix invalid memory access while processing fragmented packets
->       wifi: ath12k: fix firmware crash during reo reinject
-> 
-> Pradeep Kumar Chitrapu (6):
->       wifi: ath12k: add channel 2 into 6 GHz channel list
->       wifi: ath12k: Correct 6 GHz frequency value in rx status
->       wifi: ath12k: fix survey dump collection in 6 GHz
->       wifi: ath12k: add 6 GHz params in peer assoc command
->       wifi: ath12k: refactor SMPS configuration
->       wifi: ath12k: support SMPS configuration for 6 GHz
-> 
-> Rob Herring (Arm) (1):
->       dt-bindings: net: wireless: ath11k: Drop "qcom,ipq8074-wcss-pil" from example
-> 
-> Sebastian Gottschall (1):
->       wifi: ath10k: add LED and GPIO controlling support for various chipsets
-> 
-> Sven Eckelmann (1):
->       wifi: ath12k: Don't drop tx_status in failure case
-> 
-> Tamizh Chelvam Raja (3):
->       wifi: ath12k: fix calling correct function for rx monitor mode
->       wifi: ath12k: Remove unsupported tx monitor handling
->       wifi: ath12k: Remove unused tcl_*_ring configuration
-> 
-> Venkateswara Naralasetty (1):
->       wifi: ath11k: skip status ring entry processing
-> 
->  .../bindings/net/wireless/qcom,ath10k.yaml         |   5 +
->  .../bindings/net/wireless/qcom,ath11k.yaml         |   9 -
->  drivers/net/wireless/ath/ath10k/Kconfig            |   6 +
->  drivers/net/wireless/ath/ath10k/Makefile           |   1 +
->  drivers/net/wireless/ath/ath10k/core.c             |  32 ++
->  drivers/net/wireless/ath/ath10k/core.h             |   8 +
->  drivers/net/wireless/ath/ath10k/hw.h               |   1 +
->  drivers/net/wireless/ath/ath10k/leds.c             |  90 ++++
->  drivers/net/wireless/ath/ath10k/leds.h             |  34 ++
->  drivers/net/wireless/ath/ath10k/mac.c              |   1 +
->  drivers/net/wireless/ath/ath10k/qmi.c              |  11 +
->  drivers/net/wireless/ath/ath10k/qmi.h              |   1 +
->  drivers/net/wireless/ath/ath10k/wmi-ops.h          |  32 ++
->  drivers/net/wireless/ath/ath10k/wmi-tlv.c          |   2 +
->  drivers/net/wireless/ath/ath10k/wmi.c              |  54 ++
->  drivers/net/wireless/ath/ath10k/wmi.h              |  35 ++
->  drivers/net/wireless/ath/ath11k/ahb.c              |  57 +-
->  drivers/net/wireless/ath/ath11k/ce.h               |   6 +-
->  drivers/net/wireless/ath/ath11k/core.c             |  49 +-
->  drivers/net/wireless/ath/ath11k/debugfs.c          |   6 +-
->  drivers/net/wireless/ath/ath11k/dp.c               |  12 +-
->  drivers/net/wireless/ath/ath11k/dp_rx.c            | 104 +++-
->  drivers/net/wireless/ath/ath11k/dp_tx.c            |   6 +-
->  drivers/net/wireless/ath/ath11k/hal.c              |  16 +-
->  drivers/net/wireless/ath/ath11k/hal.h              |   2 +
->  drivers/net/wireless/ath/ath11k/hw.h               |   4 +-
->  drivers/net/wireless/ath/ath11k/mac.c              |  19 +-
->  drivers/net/wireless/ath/ath11k/qmi.c              |   2 +-
->  drivers/net/wireless/ath/ath11k/reg.c              |  18 +-
->  drivers/net/wireless/ath/ath11k/reg.h              |   4 +-
->  drivers/net/wireless/ath/ath11k/wmi.c              |   2 +-
->  drivers/net/wireless/ath/ath12k/ce.h               |   6 +-
->  drivers/net/wireless/ath/ath12k/core.c             | 144 ++++--
->  drivers/net/wireless/ath/ath12k/core.h             |  44 +-
->  drivers/net/wireless/ath/ath12k/dp.c               |  83 +--
->  drivers/net/wireless/ath/ath12k/dp.h               |   4 +-
->  drivers/net/wireless/ath/ath12k/dp_mon.c           |  40 +-
->  drivers/net/wireless/ath/ath12k/dp_rx.c            | 115 ++---
->  drivers/net/wireless/ath/ath12k/dp_tx.c            | 165 +++---
->  drivers/net/wireless/ath/ath12k/dp_tx.h            |   5 +-
->  drivers/net/wireless/ath/ath12k/hal.c              |   5 +-
->  drivers/net/wireless/ath/ath12k/hal.h              |  21 +-
->  drivers/net/wireless/ath/ath12k/hal_desc.h         |  47 +-
->  drivers/net/wireless/ath/ath12k/hal_tx.h           |   4 +-
->  drivers/net/wireless/ath/ath12k/hif.h              |   9 +
->  drivers/net/wireless/ath/ath12k/hw.c               |  23 +-
->  drivers/net/wireless/ath/ath12k/hw.h               |   4 +-
->  drivers/net/wireless/ath/ath12k/mac.c              | 574 ++++++++++++++++-----
->  drivers/net/wireless/ath/ath12k/mhi.c              |  11 +
->  drivers/net/wireless/ath/ath12k/pci.c              |  39 +-
->  drivers/net/wireless/ath/ath12k/pci.h              |   1 +
->  drivers/net/wireless/ath/ath12k/qmi.c              |   8 +-
->  drivers/net/wireless/ath/ath12k/reg.c              |  19 +-
->  drivers/net/wireless/ath/ath12k/wmi.c              |  55 +-
->  drivers/net/wireless/ath/ath12k/wmi.h              |  48 +-
->  drivers/net/wireless/ath/wil6210/netdev.c          |  21 +-
->  drivers/net/wireless/ath/wil6210/wil6210.h         |   2 +-
->  57 files changed, 1516 insertions(+), 610 deletions(-)
->  create mode 100644 drivers/net/wireless/ath/ath10k/leds.c
->  create mode 100644 drivers/net/wireless/ath/ath10k/leds.h
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
+---
+ include/net/mac80211.h | 2 ++
+ net/mac80211/chan.c    | 8 +++++---
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
-Pulled, thanks.
-
-a46300b1b09b Merge tag 'ath-next-20240605' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath
-
+diff --git a/include/net/mac80211.h b/include/net/mac80211.h
+index ecfa65ade226..98394970c991 100644
+--- a/include/net/mac80211.h
++++ b/include/net/mac80211.h
+@@ -250,6 +250,7 @@ struct ieee80211_chan_req {
+  * @min_def: the minimum channel definition currently required.
+  * @ap: the channel definition the AP actually is operating as,
+  *	for use with (wider bandwidth) OFDMA
++ * @radio_idx: index of the wiphy radio used used for this channel
+  * @rx_chains_static: The number of RX chains that must always be
+  *	active on the channel to receive MIMO transmissions
+  * @rx_chains_dynamic: The number of RX chains that must be enabled
+@@ -264,6 +265,7 @@ struct ieee80211_chanctx_conf {
+ 	struct cfg80211_chan_def min_def;
+ 	struct cfg80211_chan_def ap;
+ 
++	int radio_idx;
+ 	u8 rx_chains_static, rx_chains_dynamic;
+ 
+ 	bool radar_enabled;
+diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
+index ec16d7676088..574ae961a7cf 100644
+--- a/net/mac80211/chan.c
++++ b/net/mac80211/chan.c
+@@ -638,7 +638,8 @@ ieee80211_chanctx_radar_required(struct ieee80211_local *local,
+ static struct ieee80211_chanctx *
+ ieee80211_alloc_chanctx(struct ieee80211_local *local,
+ 			const struct ieee80211_chan_req *chanreq,
+-			enum ieee80211_chanctx_mode mode)
++			enum ieee80211_chanctx_mode mode,
++			int radio_idx)
+ {
+ 	struct ieee80211_chanctx *ctx;
+ 
+@@ -656,6 +657,7 @@ ieee80211_alloc_chanctx(struct ieee80211_local *local,
+ 	ctx->conf.rx_chains_dynamic = 1;
+ 	ctx->mode = mode;
+ 	ctx->conf.radar_enabled = false;
++	ctx->conf.radio_idx = radio_idx;
+ 	_ieee80211_recalc_chanctx_min_def(local, ctx, NULL);
+ 
+ 	return ctx;
+@@ -696,7 +698,7 @@ ieee80211_new_chanctx(struct ieee80211_local *local,
+ 
+ 	lockdep_assert_wiphy(local->hw.wiphy);
+ 
+-	ctx = ieee80211_alloc_chanctx(local, chanreq, mode);
++	ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
+ 	if (!ctx)
+ 		return ERR_PTR(-ENOMEM);
+ 
+@@ -1126,7 +1128,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 			    !list_empty(&curr_ctx->reserved_links))
+ 				return -EBUSY;
+ 
+-			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode);
++			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
+ 			if (!new_ctx)
+ 				return -ENOMEM;
+ 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/87a5jzs6w2.fsf@kernel.org/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+git-series 0.9.1
 
