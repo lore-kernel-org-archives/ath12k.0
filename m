@@ -4,96 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8617BC27C52
-	for <ath12k@archiver.kernel.org>; Wed,  5 Jun 2024 18:05:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6121FC25B76
+	for <ath12k@archiver.kernel.org>; Wed,  5 Jun 2024 18:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LNBfOsZV2m+6msPbBCsAxl6hJfnlMOUzddiwLhwfpe8=; b=OYJpOYmbfqvnUSJ0kVbtI3RJ7c
-	pgBSBIssv6c3fcATSX5dG4L2LsqqdDHMYKTDCp9/S9YHDF8opW/5nBeZBxjeQAk9nSQm4D/Nl4YYO
-	8BMLvpRl8QpuAU5bQo5jxoQoQm3VvS97JDP1kx4yUxEfO4ccup7Aj2oRm/tpyoaZEbO8Lx/sPoXRv
-	aTLv6b3Y8Eq0hFVUpIwFKo/2hbP765eSKylaywF4N55RSch/4+AePOaKt5ogiMO+vELQY7uffT7Ng
-	ww3cpwXJvDOHMc7pMk1Gg+07UwZjlwSL/sA2BhsY7CO/ywQqIwo1vG20hg64Bmo54MQDiUqENQyof
-	hsZXD8pw==;
+	bh=FIRzuDDGgqRPaBzKEDg/kxgMBQSLeJdam+0BlfRkoCo=; b=wVTlKmBvcbOjIzk/VR6CagPmYV
+	10sr+YMf9fTMDk8+otG7FNQXmyAPO1SYh9tT0D1qj7knH7iAmbPgl/Jg+Mfxz4AnufXrHc9LY9M+/
+	PhGbHSMdSfAxi8i8w+4uo+/NXHGRGmMImznTRfL34d/OtKJC0yeDBguyLPJnXL8GukyqbNbrX9pK5
+	wHvebAlqP67jjI+O3LEt2tWtaIouUBy6CKPGIKZhjO954sLnT1VQ+Zk/cllQRwDAwuKvw3o7RYWMT
+	H4MirQPe7X75/51YivfvJiperd4H3ghXVp6psbGaBVXxn/BnAHbQRUY53cbLEDhqldqHpkd3L0ROO
+	t2pDpvDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEv0j-000000075nS-19jV
+	id 1sEvPU-00000007ALB-0IuP
 	for ath12k@archiver.kernel.org;
-	Wed, 05 Jun 2024 18:05:21 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	Wed, 05 Jun 2024 18:30:56 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEv0g-000000075m3-26ef
-	for ath12k@lists.infradead.org;
-	Wed, 05 Jun 2024 18:05:19 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2e78fe9fc2bso1468081fa.3
-        for <ath12k@lists.infradead.org>; Wed, 05 Jun 2024 11:05:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1717610717; x=1718215517; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=LNBfOsZV2m+6msPbBCsAxl6hJfnlMOUzddiwLhwfpe8=;
-        b=d3khyKp65w9QaEBputwE+yrndr6JIYpcMGwE8dtA1+OiN+v+IbozmmCFUkPky1PxNo
-         LvjmfkTsGKr8wcfBU4XLEiM2gGbdLZvMFk0PX8yvDWRWepjSrNcSm6/v5Lm3JrYiV0Fk
-         9GjpKsze2AcN4XUQ14QYP0GTP9lVtPk8nfy6AAfkKSFJmalRvBnomU6XY471nICM7vof
-         +Z3dnt7PrUs1cZhGj1sOfEoffs2lcB0oc/PGTKJLaRuuBqwZwiI3obUQ05yszTtEhhCv
-         QaJjcOzwRbjTPp55kmUcFegTof8kkmd37h0Yf8en/nK77xXWgNbBXHx1YrZo5XzxxBCT
-         sGaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717610717; x=1718215517;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=LNBfOsZV2m+6msPbBCsAxl6hJfnlMOUzddiwLhwfpe8=;
-        b=vyjFwA25gui2XOf2KEW1Bg1OQ4PVZG+uqq8VxoEatnl+G4j+iIy6B0mUfwh5c8PbnP
-         GQQOghgpSySkfzY0iAX3gk9t8OBIEwlqSRiAor5s01K3KEbNInbqkIds/PPO7eVN1wmo
-         DUhEwaT5sK0MTeD5yjyq68Lce2l+uQG6EqXzY81BN6N96L9d037Yt0/MI9WkTBHiBNqK
-         yZ3x8OfSGm1oGRdntBM79l/HMhxAomLE15tAGhNiXordKTpdt1w+vlA1ODoTQHxumN+U
-         kGEMT5AqTdxIHAjNr89cR3By72A5+Uxejj8yTP7uzMh3nskNRvlv8JzfTn1bvkUYag02
-         Xr4A==
-X-Forwarded-Encrypted: i=1; AJvYcCWWfxNYzgRGHlHfoMfZ+5bhJuRdtfXICZfGXzoEYjuaSOi1itrUCDVn/lJPM6PRJFxNUvuGbE5Qf2b5UmZ7M+2jMZcdtfoLE6ubFA==
-X-Gm-Message-State: AOJu0Ywvok0ZnzzjKeftRbg4CUAe97H1Pb/EvQrI8PrIb9yNlD14Ooai
-	7wAZrB8kRYQjRYkvoI7pZuNFq+wn+llIgct5hE9cA97tfYMRvClsBVRcQ5Oht/ZwIRjGTmupaGN
-	V0LFsyldfw1mhmuA5sU4tWFI47DnjoYiDm7NIGQ==
-X-Google-Smtp-Source: AGHT+IGPHvJeLayk3efrcKgO1Obiv1k65fgMPOv7p9k5Kuf3j8UsHmQHvC67KCL/2EfjazgzdJtjTyy7e7G17peXDnE=
-X-Received: by 2002:a2e:8ed4:0:b0:2ea:7f57:5a74 with SMTP id
- 38308e7fff4ca-2eac7a6c3ccmr18672681fa.42.1717610716971; Wed, 05 Jun 2024
- 11:05:16 -0700 (PDT)
+	id 1sEvPP-00000007AKJ-3MDg;
+	Wed, 05 Jun 2024 18:30:54 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 2FBCECE18E3;
+	Wed,  5 Jun 2024 18:30:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F85EC2BD11;
+	Wed,  5 Jun 2024 18:30:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1717612248;
+	bh=dUTV71XmXtlYZZ1TirvFxoo1PTDfrRAJm9sogfuoBiI=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=Nl4VLitUSYhrOwKqITxiY7uKr9VBEwuGX7zeXzMARdOuewIuimA7WtMoFDnSz+d0U
+	 gW/g5LHyQcb0qXqm+9L0FA05qTYh6OFwctKJaQjt6ctcDIYSIOnWIn10BpVHEMsriQ
+	 XceX7uDIxPsSu80LrniK95FIFsJsIitFsImTEHIpSUOeuMJdJnNKbrvk1OoVZCKb5o
+	 kJ3QWK3u24GrY03nUWxC9CE7qxvVGqlEoz6CmrDX0Qpm/u5TuAfpvrwMsX9nlbggur
+	 LU6iyZQqoUUg3eRrEXaiPT7HkHKRK73hZTTedextnbhyeNEya5aPGNQfF31TcD8DkX
+	 NyrJtaVF6vcXg==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-References: <20240528-pwrseq-v8-15-d354d52b763c@linaro.org> <20240605175757.GA733809@bhelgaas>
-In-Reply-To: <20240605175757.GA733809@bhelgaas>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Wed, 5 Jun 2024 20:05:06 +0200
-Message-ID: <CAMRc=McKD=ZhGzRUeLezT3oKfreDWQeKBvuousf8zsQjJb1QMA@mail.gmail.com>
-Subject: Re: [PATCH v8 15/17] PCI/pwrctl: add PCI power control core code
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Marcel Holtmann <marcel@holtmann.org>, Luiz Augusto von Dentz <luiz.dentz@gmail.com>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Balakrishna Godavarthi <quic_bgodavar@quicinc.com>, Rocky Liao <quic_rjliao@quicinc.com>, 
-	Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Srini Kandagatla <srinivas.kandagatla@linaro.org>, 
-	Elliot Berman <quic_eberman@quicinc.com>, Caleb Connolly <caleb.connolly@linaro.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
-	Alex Elder <elder@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org, 
-	linux-pm@vger.kernel.org, linux-pci@vger.kernel.org, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, kernel@quicinc.com, 
-	Amit Pundir <amit.pundir@linaro.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Subject: Re: pull-request: ath-next-20240605
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <87a5jzs6w2.fsf@kernel.org>
+References: <87a5jzs6w2.fsf@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+ quic_jjohnson@quicinc.com
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171761224540.2099453.10305785123277567469.kvalo@kernel.org>
+Date: Wed,  5 Jun 2024 18:30:46 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240605_110518_722822_0F62F87B 
-X-CRM114-Status: GOOD (  17.10  )
+X-CRM114-CacheID: sfid-20240605_113052_795061_E1D4934A 
+X-CRM114-Status: GOOD (  19.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,32 +73,225 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 5, 2024 at 7:58=E2=80=AFPM Bjorn Helgaas <helgaas@kernel.org> w=
-rote:
->
-> On Tue, May 28, 2024 at 09:03:23PM +0200, Bartosz Golaszewski wrote:
-> > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> >
-> > Some PCI devices must be powered-on before they can be detected on the
-> > bus. Introduce a simple framework reusing the existing PCI OF
-> > infrastructure.
-> >
-> > The way this works is: a DT node representing a PCI device connected to
-> > the port can be matched against its power control platform driver. If
-> > the match succeeds, the driver is responsible for powering-up the devic=
-e
-> > and calling pcie_pwrctl_device_set_ready() which will trigger a PCI bus
->
-> s/pcie_pwrctl_device_set_ready/pci_pwrctl_device_set_ready/
->
+Kalle Valo <kvalo@kernel.org> wrote:
 
-Ah that's a leftover from when it was PCIe specific. Thanks.
+> Hi,
+> 
+> Please pull, more information in the tag below.
+> 
+> Kalle
+> 
+> The following changes since commit f1c26960b6afb9c38a4019ad36392c654db6e20e:
+> 
+>   Merge tag 'ath-next-20240502' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath (2024-05-03 13:30:19 +0300)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git tags/ath-next-20240605
+> 
+> for you to fetch changes up to 22767241e64427bbcffea2e2d51531ab467bc4ef:
+> 
+>   wifi: ath12k: add hw_link_id in ath12k_pdev (2024-06-03 16:15:50 +0300)
+> 
+> ----------------------------------------------------------------
+> ath.git patches for v6.11
+> 
+> ath12k
+> 
+> * remove unsupported tx monitor handling
+> 
+> * channel 2 in 6 GHz band support
+> 
+> * Spatial Multiplexing Power Save (SMPS) in 6 GHz band support
+> 
+> * multiple BSSID (MBSSID) and Enhanced Multi-BSSID Advertisements (EMA) support
+> 
+> * dynamic VLAN support
+> 
+> * add panic handler for resetting the firmware state
+> 
+> ath10k
+> 
+> * add qcom,no-msa-ready-indicator Device Tree property
+> 
+> * LED support for various chipsets
+> 
+> ----------------------------------------------------------------
+> Aloka Dixit (9):
+>       wifi: ath12k: advertise driver capabilities for MBSSID and EMA
+>       wifi: ath12k: configure MBSSID params in vdev create/start
+>       wifi: ath12k: rename MBSSID fields in wmi_vdev_up_cmd
+>       wifi: ath12k: create a structure for WMI vdev up parameters
+>       wifi: ath12k: configure MBSSID parameters in AP mode
+>       wifi: ath12k: refactor arvif security parameter configuration
+>       wifi: ath12k: add MBSSID beacon support
+>       wifi: ath12k: add EMA beacon support
+>       wifi: ath12k: skip sending vdev down for channel switch
+> 
+> Baochen Qiang (9):
+>       wifi: ath12k: fix Smatch warnings on ath12k_core_suspend()
+>       wifi: ath11k: refactor setting country code logic
+>       wifi: ath11k: restore country code during resume
+>       wifi: ath11k: fix wrong definition of CE ring's base address
+>       wifi: ath12k: fix race due to setting ATH12K_FLAG_EXT_IRQ_ENABLED too early
+>       wifi: ath12k: fix wrong definition of CE ring's base address
+>       wifi: ath12k: fix memory leak in ath12k_dp_rx_peer_frag_setup()
+>       wifi: ath12k: do not process consecutive RDDM event
+>       wifi: ath12k: add panic handler
+> 
+> Breno Leitao (2):
+>       wifi: wil6210: Do not use embedded netdev in wil6210_priv
+>       wifi: ath12k: allocate dummy net_device dynamically
+> 
+> Jeff Johnson (8):
+>       wifi: ath11k: refactor CE remap & unmap
+>       wifi: ath11k: unmap the CE in ath11k_ahb_probe() error path
+>       wifi: ath12k: initialize 'ret' in ath12k_qmi_load_file_target_mem()
+>       wifi: ath11k: initialize 'ret' in ath11k_qmi_load_file_target_mem()
+>       wifi: ath11k: fix misspelling of "dma" in num_rxmda_per_pdev
+>       wifi: ath12k: fix misspelling of "dma" in num_rxmda_per_pdev
+>       wifi: ath12k: initialize 'ret' in ath12k_dp_rxdma_ring_sel_config_wcn7850()
+>       wifi: ath12k: Fix devmem address prefix when logging
+> 
+> Kalle Valo (1):
+>       wifi: ath11k: ath11k_mac_op_ipv6_changed(): use list_for_each_entry()
+> 
+> Kang Yang (5):
+>       wifi: ath12k: remove unused variable monitor_flags
+>       wifi: ath12k: avoid duplicated vdev stop
+>       wifi: ath12k: avoid duplicated vdev down
+>       wifi: ath12k: remove invalid peer create logic
+>       wifi: ath12k: remove redundant peer delete for WCN7850
+> 
+> Karthikeyan Kathirvel (1):
+>       wifi: ath12k: drop failed transmitted frames from metric calculation.
+> 
+> Karthikeyan Periyasamy (13):
+>       wifi: ath12k: Refactor the hardware recovery procedure
+>       wifi: ath12k: Refactor the hardware state
+>       wifi: ath12k: Add lock to protect the hardware state
+>       wifi: ath12k: Replace "chip" with "device" in hal Rx return buffer manager
+>       wifi: ath12k: Refactor idle ring descriptor setup
+>       wifi: ath12k: Introduce device index
+>       wifi: ath12k: add multi device support for WBM idle ring buffer setup
+>       wifi: ath12k: avoid double SW2HW_MACID conversion
+>       wifi: ath12k: remove duplicate definition of MAX_RADIOS
+>       wifi: ath12k: use correct MAX_RADIOS
+>       wifi: ath12k: refactor rx descriptor CMEM configuration
+>       wifi: ath12k: improve the rx descriptor error information
+>       wifi: ath12k: add hw_link_id in ath12k_pdev
+> 
+> Lingbo Kong (1):
+>       wifi: ath12k: fix ack signal strength calculation
+> 
+> Marc Gonzalez (2):
+>       dt-bindings: net: wireless: ath10k: add qcom,no-msa-ready-indicator prop
+>       wifi: ath10k: do not always wait for MSA_READY indicator
+> 
+> Muna Sinada (1):
+>       wifi: ath12k: dynamic VLAN support
+> 
+> Nithyanantham Paramasivam (1):
+>       wifi: ath12k: Fix tx completion ring (WBM2SW) setup failure
+> 
+> P Praneesh (3):
+>       wifi: ath12k: change DMA direction while mapping reinjected packets
+>       wifi: ath12k: fix invalid memory access while processing fragmented packets
+>       wifi: ath12k: fix firmware crash during reo reinject
+> 
+> Pradeep Kumar Chitrapu (6):
+>       wifi: ath12k: add channel 2 into 6 GHz channel list
+>       wifi: ath12k: Correct 6 GHz frequency value in rx status
+>       wifi: ath12k: fix survey dump collection in 6 GHz
+>       wifi: ath12k: add 6 GHz params in peer assoc command
+>       wifi: ath12k: refactor SMPS configuration
+>       wifi: ath12k: support SMPS configuration for 6 GHz
+> 
+> Rob Herring (Arm) (1):
+>       dt-bindings: net: wireless: ath11k: Drop "qcom,ipq8074-wcss-pil" from example
+> 
+> Sebastian Gottschall (1):
+>       wifi: ath10k: add LED and GPIO controlling support for various chipsets
+> 
+> Sven Eckelmann (1):
+>       wifi: ath12k: Don't drop tx_status in failure case
+> 
+> Tamizh Chelvam Raja (3):
+>       wifi: ath12k: fix calling correct function for rx monitor mode
+>       wifi: ath12k: Remove unsupported tx monitor handling
+>       wifi: ath12k: Remove unused tcl_*_ring configuration
+> 
+> Venkateswara Naralasetty (1):
+>       wifi: ath11k: skip status ring entry processing
+> 
+>  .../bindings/net/wireless/qcom,ath10k.yaml         |   5 +
+>  .../bindings/net/wireless/qcom,ath11k.yaml         |   9 -
+>  drivers/net/wireless/ath/ath10k/Kconfig            |   6 +
+>  drivers/net/wireless/ath/ath10k/Makefile           |   1 +
+>  drivers/net/wireless/ath/ath10k/core.c             |  32 ++
+>  drivers/net/wireless/ath/ath10k/core.h             |   8 +
+>  drivers/net/wireless/ath/ath10k/hw.h               |   1 +
+>  drivers/net/wireless/ath/ath10k/leds.c             |  90 ++++
+>  drivers/net/wireless/ath/ath10k/leds.h             |  34 ++
+>  drivers/net/wireless/ath/ath10k/mac.c              |   1 +
+>  drivers/net/wireless/ath/ath10k/qmi.c              |  11 +
+>  drivers/net/wireless/ath/ath10k/qmi.h              |   1 +
+>  drivers/net/wireless/ath/ath10k/wmi-ops.h          |  32 ++
+>  drivers/net/wireless/ath/ath10k/wmi-tlv.c          |   2 +
+>  drivers/net/wireless/ath/ath10k/wmi.c              |  54 ++
+>  drivers/net/wireless/ath/ath10k/wmi.h              |  35 ++
+>  drivers/net/wireless/ath/ath11k/ahb.c              |  57 +-
+>  drivers/net/wireless/ath/ath11k/ce.h               |   6 +-
+>  drivers/net/wireless/ath/ath11k/core.c             |  49 +-
+>  drivers/net/wireless/ath/ath11k/debugfs.c          |   6 +-
+>  drivers/net/wireless/ath/ath11k/dp.c               |  12 +-
+>  drivers/net/wireless/ath/ath11k/dp_rx.c            | 104 +++-
+>  drivers/net/wireless/ath/ath11k/dp_tx.c            |   6 +-
+>  drivers/net/wireless/ath/ath11k/hal.c              |  16 +-
+>  drivers/net/wireless/ath/ath11k/hal.h              |   2 +
+>  drivers/net/wireless/ath/ath11k/hw.h               |   4 +-
+>  drivers/net/wireless/ath/ath11k/mac.c              |  19 +-
+>  drivers/net/wireless/ath/ath11k/qmi.c              |   2 +-
+>  drivers/net/wireless/ath/ath11k/reg.c              |  18 +-
+>  drivers/net/wireless/ath/ath11k/reg.h              |   4 +-
+>  drivers/net/wireless/ath/ath11k/wmi.c              |   2 +-
+>  drivers/net/wireless/ath/ath12k/ce.h               |   6 +-
+>  drivers/net/wireless/ath/ath12k/core.c             | 144 ++++--
+>  drivers/net/wireless/ath/ath12k/core.h             |  44 +-
+>  drivers/net/wireless/ath/ath12k/dp.c               |  83 +--
+>  drivers/net/wireless/ath/ath12k/dp.h               |   4 +-
+>  drivers/net/wireless/ath/ath12k/dp_mon.c           |  40 +-
+>  drivers/net/wireless/ath/ath12k/dp_rx.c            | 115 ++---
+>  drivers/net/wireless/ath/ath12k/dp_tx.c            | 165 +++---
+>  drivers/net/wireless/ath/ath12k/dp_tx.h            |   5 +-
+>  drivers/net/wireless/ath/ath12k/hal.c              |   5 +-
+>  drivers/net/wireless/ath/ath12k/hal.h              |  21 +-
+>  drivers/net/wireless/ath/ath12k/hal_desc.h         |  47 +-
+>  drivers/net/wireless/ath/ath12k/hal_tx.h           |   4 +-
+>  drivers/net/wireless/ath/ath12k/hif.h              |   9 +
+>  drivers/net/wireless/ath/ath12k/hw.c               |  23 +-
+>  drivers/net/wireless/ath/ath12k/hw.h               |   4 +-
+>  drivers/net/wireless/ath/ath12k/mac.c              | 574 ++++++++++++++++-----
+>  drivers/net/wireless/ath/ath12k/mhi.c              |  11 +
+>  drivers/net/wireless/ath/ath12k/pci.c              |  39 +-
+>  drivers/net/wireless/ath/ath12k/pci.h              |   1 +
+>  drivers/net/wireless/ath/ath12k/qmi.c              |   8 +-
+>  drivers/net/wireless/ath/ath12k/reg.c              |  19 +-
+>  drivers/net/wireless/ath/ath12k/wmi.c              |  55 +-
+>  drivers/net/wireless/ath/ath12k/wmi.h              |  48 +-
+>  drivers/net/wireless/ath/wil6210/netdev.c          |  21 +-
+>  drivers/net/wireless/ath/wil6210/wil6210.h         |   2 +-
+>  57 files changed, 1516 insertions(+), 610 deletions(-)
+>  create mode 100644 drivers/net/wireless/ath/ath10k/leds.c
+>  create mode 100644 drivers/net/wireless/ath/ath10k/leds.h
 
-Bart
+Pulled, thanks.
 
-> > rescan as well as subscribe to PCI bus notifications.
-> >
-> > When the device is detected and created, we'll make it consume the same
-> > DT node that the platform device did. When the device is bound, we'll
-> > create a device link between it and the parent power control device.
+a46300b1b09b Merge tag 'ath-next-20240605' of git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/87a5jzs6w2.fsf@kernel.org/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
