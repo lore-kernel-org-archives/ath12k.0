@@ -4,75 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00F68C25B76
-	for <ath12k@archiver.kernel.org>; Wed,  5 Jun 2024 07:43:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BDE6C25B76
+	for <ath12k@archiver.kernel.org>; Wed,  5 Jun 2024 08:47:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
 	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iyjciw8omyqWPArx3sDq7VVjOnmIsURoasHM7cx8Qy0=; b=UrIpdVp5t5mBHlTerq/Kp3NYmq
-	ZTOCNdq0028HnbNet+HRCttW1nrphzKgQRR5poctJk+iZ02bbGLqT/D2HX3u0+NeWPWwcWGhnYmWY
-	WSVsDM/0C2nwB2DvdFwYcXbFaAOXnQL559ASbZIpnmehjdhqBSf9v0QsE85cDy/wGUn1GdC5rt9hc
-	z/EJO8AQ5EfDMUHJ2mixXJ5uafl1Dwsp4qEgNTntykShdbTyoMVroDelcArx1HnwYyRtQtKCYU/QY
-	s3a7IEGvHO2pjI9YPMKSOqLs+psVtGnmK0zYesmVGLpuHEBJfUmIJ6r2ZUrWIN5qL8gVnsoaIdk+e
-	JuibhdcQ==;
+	bh=nPra9VnPeBiNtl2fHAj/AHY/htZJd5zpefm5z/7mvlE=; b=zAFn601jCwe8vUsbKTKSpdTw1Y
+	E0pS/Ramrv3sIAm7X8UubIzA/tJCyEerOifw0owuMaM/GKHJ1+gspMphXWqOToJCfII0+jhZp2JdU
+	B6ABgK1MxGHmrtvpCMCUKgxB1wTFP0exwVfCDY4ArC1i/tqMVCqmVZn9RBFiNBIX45+R0LaqxCAgT
+	3v1qG7anDZHqGRWvwVP/lTClI6NOeXjZ5AeFUb+Ki1geZwu+bGpGpEYy+71yYgeu+ENExUYOyzTPJ
+	ACePu6SlvKmeW1KS4FwpJdamt0D2e0FoaKSSFA21dCviGf54kLyFbhKTvLsfDc49u2aOlA0+eygin
+	vXJn3hOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sElIl-000000052Kr-3016
+	id 1sEmJA-00000005Hc9-2b3U
 	for ath12k@archiver.kernel.org;
-	Wed, 05 Jun 2024 07:43:19 +0000
-Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
+	Wed, 05 Jun 2024 08:47:48 +0000
+Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sElIi-000000052IZ-36Sj
+	id 1sEmJ8-00000005Ha1-0Ozk
 	for ath12k@lists.infradead.org;
-	Wed, 05 Jun 2024 07:43:18 +0000
-Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-2ea9386cde0so65802641fa.2
-        for <ath12k@lists.infradead.org>; Wed, 05 Jun 2024 00:43:15 -0700 (PDT)
+	Wed, 05 Jun 2024 08:47:47 +0000
+Received: by mail-lj1-x232.google.com with SMTP id 38308e7fff4ca-2eaad2c670aso23169501fa.1
+        for <ath12k@lists.infradead.org>; Wed, 05 Jun 2024 01:47:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1717573393; x=1718178193; darn=lists.infradead.org;
+        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1717577264; x=1718182064; darn=lists.infradead.org;
         h=content-transfer-encoding:cc:to:subject:message-id:date:from
          :in-reply-to:references:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=iyjciw8omyqWPArx3sDq7VVjOnmIsURoasHM7cx8Qy0=;
-        b=bmjhhXssvh1Uq/RT8Hcq4cJqZa9LBPxdKk8SyBIWlmTp8dCrZxfViOTTsphxj0rjoj
-         0Dj+oIjFnuIKz464JJVnQM7jd7jgqbYXPWO6JJvYU18FfCatDZKggRPoCDSXJX2tc7AE
-         9KfRTSoYiShEhpry9vc8SnCQBeiNIADCCw1a3Z7MbGWo0Kkez5Q0N8FC08EVYKz7CY8V
-         HJIWfmLjVzQFyLDkB9RTBhVSmyYIhNKFX9WOH4cXBrAZvzaKKZNrHu5gjpchFNunzu2M
-         4eEQwCtImXCfXyNV8T+nWPPvWSzjyQBBSNkYvNy83WxK6GLdVv/b/6eAcs12y9JZBmCu
-         /Png==
+        bh=nPra9VnPeBiNtl2fHAj/AHY/htZJd5zpefm5z/7mvlE=;
+        b=XfxTtZ8VuIBJw/7HYBQ4ZiQWeyn1ceeAjRh2luC4Gz8a8zlMICfW9D9fulHx3PPAIg
+         2E3drWlcL3HECWtjnNnIyyNn2O8ymdj5GAJWEyWTez0acWeG5cqOaKJKn0GLhT7MtI3J
+         s4fdtI1uQE1B0K2KPIG7ijIjg3ptq8NSrmGdh15tEbB364/XYzNcGZ9eq3WOfKt79J2C
+         dt0VZx3JZtXLrpEsJPFH7/d5xnVWJlG9ZQ6pU1YAgVoocOu2FFeVf1QUkC7D2wr8p43I
+         65pVLcg2hvPjjMhp2Z8tE+mM9DLZlJTYQ71Dc5IBgb7zIy0H29yo0NNPMiQlp/jnPpwg
+         Fa7g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717573393; x=1718178193;
+        d=1e100.net; s=20230601; t=1717577264; x=1718182064;
         h=content-transfer-encoding:cc:to:subject:message-id:date:from
          :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=iyjciw8omyqWPArx3sDq7VVjOnmIsURoasHM7cx8Qy0=;
-        b=bpcplbmoACWOGGNE+saao+W6cAzzPuE5fajjJme8BoXF+LHyPKEgrsJJWWnd/QuGFF
-         ARkYqnIl667ClU9SGwPMtKSSrDCwDG+2ITvipvtwSkULVy5sZi8yGNhC7u70fksKvLw1
-         d2gNUlCR2mwuZftxl63BsmjAf1Nrth8MnpWaWfjhWRJJkwXtNAfHf340GYtna0RfolCJ
-         D8AVUeeAHUNXRmfNSXnd0r47cB35onbWcm/AaRzejOKQdpUlwD8cNR4A7ZjcMDFEO6B0
-         XudteNBlHzio1NQ1mx1UQfbwcPMV+2JPflVZJ8ZwMxFLhp+bvQgp229exnXaZOU7oBLV
-         kQyA==
-X-Forwarded-Encrypted: i=1; AJvYcCWpy1RKzblFt0R4pepkUGszq4Zwfpm+unM70AI9Jz4Is1uoRapI0mnO3yN9uyFn8wip1c9wUCiMEbBIJ5A7Uk6NQqNEX1G3MmbnUg==
-X-Gm-Message-State: AOJu0Yw8kVCSYfSIoVfL6M0J6w+VZMv0zhbKfLPzo+Tj23rOe0PZIBoy
-	ZcdLZDZxANAF8J68wzWTZN9f7W/1fO10Oz/iZwoaqVC+USNb+og4UNHREDyXJsVmg1TPInpEdW1
-	Q7br3jMCEP0rPAxxeLgbvjI8ipHwKmnD4hY9D/A==
-X-Google-Smtp-Source: AGHT+IFiHKKNVWneGGr50WzFkObsQ9oUM8GSCkWSrf/BaWFo5gFPEh8dKnIHSJrU2YjGwU9b3MU7THwqkd1DB3CAvSE=
-X-Received: by 2002:a2e:2416:0:b0:2e2:72a7:843c with SMTP id
- 38308e7fff4ca-2eac7a54169mr9164901fa.36.1717573393470; Wed, 05 Jun 2024
- 00:43:13 -0700 (PDT)
+        bh=nPra9VnPeBiNtl2fHAj/AHY/htZJd5zpefm5z/7mvlE=;
+        b=cIDg9XOr6quSfl74YZimrJiMVJBsDRvWt+ZxYl0x1iEaqQ7l8+/TnVXNeFr9kqpEOi
+         xCo9ioFdjnKuJrQPvaOF6jvncoo3IRzphp0aIf/grN3M9klzLzsiHK0huLz2vs1ViGoo
+         2T4aDdifXc3AQDoMa7od39XKUCtJ8Woj0+zd1LNHPE2sGLKg2Nz63SdePgw6v9baLRkW
+         rkavUD/JY8FwAc0yxzV3shN/MNqAPc+SStB0FRr0hA3wYk5cOTbBA1+nCnLVXkt/LfMv
+         qnP2P22R1TA88u0bvzux2sudGBXGgp8TGH+5PrVczRKNdZ/SfYtNwIPESwh16da/ZPcW
+         emmQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUaIre9GLTuZZHZ9hcQhheujYja6h+aa3TPMMOiePl1QFToucN3x+8Mn16KBnE6UFIcUCII75GP/clecGdsl/l1CFZBkt8jOTZayQ==
+X-Gm-Message-State: AOJu0YwtIvuBD18QuKFcZyn7tD9M2MGFxh8DgVQqR3binJB7RwE3jKp9
+	CFqQIXNcasuiej2l10CE+L2p4ReVWeai+3Bg368sXGo/PvWsNUrmZy7J+hr3KG6fFiPRIL5lhSV
+	6AWOchfYv4LUVp2Yp+t/0n8+P9xq6+c0rOTSmdw==
+X-Google-Smtp-Source: AGHT+IFvAhNmZjR8e0W7tisE1L2rItCbACVQEOeSPIHCQ/2JT5Lzac0kUX9ZWXyqBUxDLGDW1jONb8JYHYsrWH/7fyo=
+X-Received: by 2002:a2e:7a0a:0:b0:2da:b59c:a94b with SMTP id
+ 38308e7fff4ca-2eac7a2299fmr11245531fa.25.1717577263571; Wed, 05 Jun 2024
+ 01:47:43 -0700 (PDT)
 MIME-Version: 1.0
-References: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org> <20240528-pwrseq-v8-10-d354d52b763c@linaro.org>
- <20240605065245.GB3452034@maili.marvell.com>
-In-Reply-To: <20240605065245.GB3452034@maili.marvell.com>
+References: <CAA8EJpomPLQmQbW8w3_ms_NMKHoSPcqBa7f2OhNTTOUSdB+9Eg@mail.gmail.com>
+ <20240605021346.GA746121@bhelgaas>
+In-Reply-To: <20240605021346.GA746121@bhelgaas>
 From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Wed, 5 Jun 2024 09:43:02 +0200
-Message-ID: <CAMRc=MfyCJgOCBSh7AY4jEujWXGqZBB7Tnkq0VRrAKKCcJ9hAQ@mail.gmail.com>
-Subject: Re: [PATCH v8 10/17] power: sequencing: implement the pwrseq core
-To: Ratheesh Kannoth <rkannoth@marvell.com>
-Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+Date: Wed, 5 Jun 2024 10:47:32 +0200
+Message-ID: <CAMRc=Mckab1QYoBuE3iSv0x+GEjFNBQS5Hw_Mry=r7h5XGHZEQ@mail.gmail.com>
+Subject: Re: [PATCH v8 16/17] PCI/pwrctl: add a PCI power control driver for
+ power sequenced devices
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Liam Girdwood <lgirdwood@gmail.com>, 
+	Mark Brown <broonie@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
 	Marcel Holtmann <marcel@holtmann.org>, Luiz Augusto von Dentz <luiz.dentz@gmail.com>, 
 	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
 	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
@@ -81,20 +83,20 @@ Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
 	Bjorn Helgaas <bhelgaas@google.com>, Srini Kandagatla <srinivas.kandagatla@linaro.org>, 
 	Elliot Berman <quic_eberman@quicinc.com>, Caleb Connolly <caleb.connolly@linaro.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
-	Alex Elder <elder@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org, 
-	linux-pm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Alex Elder <elder@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-bluetooth@vger.kernel.org, 
+	netdev@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	ath11k@lists.infradead.org, Jeff Johnson <quic_jjohnson@quicinc.com>, 
+	ath12k@lists.infradead.org, linux-pm@vger.kernel.org, 
+	linux-pci@vger.kernel.org, 
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, kernel@quicinc.com, 
 	Amit Pundir <amit.pundir@linaro.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240605_004316_950078_20A75E34 
-X-CRM114-Status: GOOD (  21.93  )
+X-CRM114-CacheID: sfid-20240605_014746_357415_B4C4071C 
+X-CRM114-Status: GOOD (  40.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,109 +111,110 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 5, 2024 at 8:52=E2=80=AFAM Ratheesh Kannoth <rkannoth@marvell.c=
-om> wrote:
+On Wed, Jun 5, 2024 at 4:13=E2=80=AFAM Bjorn Helgaas <helgaas@kernel.org> w=
+rote:
 >
-> On 2024-05-29 at 00:33:18, Bartosz Golaszewski (brgl@bgdev.pl) wrote:
-> > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> On Wed, Jun 05, 2024 at 02:34:52AM +0300, Dmitry Baryshkov wrote:
+> > On Wed, 5 Jun 2024 at 02:23, Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > >
+> > > On Tue, May 28, 2024 at 09:03:24PM +0200, Bartosz Golaszewski wrote:
+> > > > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+> > > >
+> > > > Add a PCI power control driver that's capable of correctly powering=
+ up
+> > > > devices using the power sequencing subsystem. The first users of th=
+is
+> > > > driver are the ath11k module on QCA6390 and ath12k on WCN7850.
+>
+> > > > +static const struct of_device_id pci_pwrctl_pwrseq_of_match[] =3D =
+{
+> > > > +     {
+> > > > +             /* ATH11K in QCA6390 package. */
+> > > > +             .compatible =3D "pci17cb,1101",
+> > > > +             .data =3D "wlan",
+> > > > +     },
+> > > > +     {
+> > > > +             /* ATH12K in WCN7850 package. */
+> > > > +             .compatible =3D "pci17cb,1107",
+> > > > +             .data =3D "wlan",
+> > > > +     },
+> > >
+> > > IIUC, "pci17cb,1101" and "pci17cb,1107" exist partly so we can check
+> > > that a DTS conforms to the schema, e.g., a "pci17cb,1101" node
+> > > contains all the required regulators.  For that use, we obviously nee=
+d
+> > > a very specific "compatible" string.
+> > >
+> > > Is there any opportunity to add a more generic "compatible" string in
+> > > addition to those so this list doesn't have to be updated for every
+> > > PMU?  The .data here is "wlan" in both cases, and for this purpose, w=
+e
+> > > don't care whether it's "pci17cb,1101" or "pci17cb,1107".
 > >
-> > Implement the power sequencing subsystem allowing devices to share
-> > complex powering-up and down procedures. It's split into the consumer
-> > and provider parts but does not implement any new DT bindings so that
-> > the actual power sequencing is never revealed in the DT representation.
-> >
-> > Tested-by: Amit Pundir <amit.pundir@linaro.org>
-> > Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> > ---
-> > +
-> > +static struct pwrseq_unit_dep *pwrseq_unit_dep_new(struct pwrseq_unit =
-*unit)
-> nit. pwrseq_unit_dep_alloc/create rhymes well with pwrseq_unit_dep_free()=
-,
-
-So what?
-
-> > +static void pwrseq_unit_free_deps(struct list_head *list)
-> > +{
-> > +     struct pwrseq_unit_dep *dep, *next;
-> > +
-> > +     list_for_each_entry_safe(dep, next, list, list) {
-> no need of 'locks' to protect against simutaneous 'add' ?
-
-No, this only happens once during release.
-
-> > +
-> > +static int pwrseq_unit_setup_deps(const struct pwrseq_unit_data **data=
-,
-> > +                               struct list_head *dep_list,
-> > +                               struct list_head *unit_list,
-> > +                               struct radix_tree_root *processed_units=
-)
-> > +{
-> > +     const struct pwrseq_unit_data *pos;
-> > +     struct pwrseq_unit_dep *dep;
-> > +     struct pwrseq_unit *unit;
-> > +     int i;
-> > +
-> > +     for (i =3D 0; data[i]; i++) {
-> Can we add range for i ? just depending on data[i] to be zero looks to be=
- risky.
+> > These two devices have different set of regulators and different
+> > requirements to power them on.
+>
+> Right, but I don't think pci_pwrctl_pwrseq_probe() knows about those
+> different sets.  It basically looks like:
+>
+>   pci_pwrctl_pwrseq_probe(struct platform_device *pdev)
+>   {
+>     struct pci_pwrctl_pwrseq_data *data;
+>     struct device *dev =3D &pdev->dev;
+>
+>     data->pwrseq =3D devm_pwrseq_get(dev, of_device_get_match_data(dev));
+>     pwrseq_power_on(data->pwrseq);
+>     data->ctx.dev =3D dev;
+>     devm_pci_pwrctl_device_set_ready(dev, &data->ctx);
+>   }
+>
+> I think of_device_get_match_data(dev) will return "wlan" for both
+> "pci17cb,1101" and "pci17cb,1107", so devm_pwrseq_get(),
+> pwrseq_power_on(), and devm_pci_pwrctl_device_set_ready() don't see
+> the distinction between them.
 >
 
-Why? It's perfectly normal to expect users to end the array with a
-NULL pointer. The docs say these arrays must be NULL-terminated.
+These are only the first two users of this generic driver. We may end
+up adding more that will use different targets or even extend the
+match data with additional fields.
 
-> > +             pos =3D data[i];
-> > +
-> > +             unit =3D pwrseq_unit_setup(pos, unit_list, processed_unit=
-s);
-> > +             if (IS_ERR(unit))
-> > +                     return PTR_ERR(unit);
-> > +
-> > +             dep =3D pwrseq_unit_dep_new(unit);
-> > +             if (!dep) {
-> > +                     pwrseq_unit_decref(unit);
-> This frees only one 'unit'. is there any chance for multiple 'unit', then=
- better clean
-> up here ?
+> Of course, they also get "dev", so they can find the device-specifc
+> stuff that way, but I think that's on the drivers/power/sequencing/
+> side, not in this pci-pwrctl-pwrseq driver itself.
+>
+> So what if there were a more generic "compatible" string, e.g., if the
+> DT contained something like this:
+>
+>   wifi@0 {
+>     compatible =3D "pci17cb,1101", "wlan-pwrseq";
 
-The references to those will be dropped in pwrseq_release().
+What even is "pwrseq" in the context of the hardware description? DT
+maintainers would like to have a word with you. :)
 
-> > +
-> > +     /*
-> > +      * From this point onwards the device's release() callback is
-> > +      * responsible for freeing resources.
-> > +      */
-> > +     device_initialize(&pwrseq->dev);
-> > +
-> > +     ret =3D dev_set_name(&pwrseq->dev, "pwrseq.%d", pwrseq->id);
-> > +     if (ret)
-> > +             goto err_put_pwrseq;
-> > +
-> > +     pwrseq->owner =3D config->owner ?: THIS_MODULE;
-> > +     pwrseq->match =3D config->match;
-> > +
-> > +     init_rwsem(&pwrseq->rw_lock);
-> > +     mutex_init(&pwrseq->state_lock);
-> > +     INIT_LIST_HEAD(&pwrseq->targets);
-> > +     INIT_LIST_HEAD(&pwrseq->units);
-> > +
-> > +     ret =3D pwrseq_setup_targets(config->targets, pwrseq);
-> > +     if (ret)
-> > +             goto err_put_pwrseq;
-> > +
-> > +     scoped_guard(rwsem_write, &pwrseq_sem) {
-> > +             ret =3D device_add(&pwrseq->dev);
-> > +             if (ret)
-> > +                     goto err_put_pwrseq;
-> > +     }
-> > +
-> > +     return pwrseq;
-> > +
-> > +err_put_pwrseq:
-> no need to kfree(pwrseq) ?
+>     ...
+>   }
+>
+> and pci_pwrctl_pwrseq_of_match[] had this:
+>
+>   { .compatible =3D "wlan-pwrseq", .data =3D "wlan", }
+>
+> Wouldn't this pci-pwrctl-pwrseq driver work the same?  I'm not a DT
+> whiz, so likely I'm missing something, but it would be nice if we
+> didn't have to update this very generic-looking driver to add every
+> device that needs it.
+>
 
-It's literally put on the next line?
+Device-tree describes hardware, not the implementation. You can see
+elsewhere in this series that we have the PMU described as a PMIC on
+the device tree but we never register with the regulator subsystem nor
+do we create actual regulators in C. The HW description does not have
+to match the C implementation 1:1 but has to be accurate. There's not
+such HW component as "wlan-pwrseq". If you want a good example of such
+generic fallback - it'll be the C45 ethernet PHYs as they actually
+exist: there's a HW definition of what a broader C45 PHY is, even
+though it can be extended in concrete HW designs.
+
+I'd leave this as is.
 
 Bart
 
