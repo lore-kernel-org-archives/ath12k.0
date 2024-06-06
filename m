@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB34EC27C54
-	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 13:04:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96579C27C54
+	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 13:20:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Y4urqivDUMbksuzYWs3bNmVK/WCeVqEsP0D9AsGas6k=; b=wIe/bES5TSwyS10JcFK7vdOyqo
-	xVts7xJd04Lyju6BoUen46lpJcCkPKZZITWFbovQShEjmp4YWc7VUJUDITU4BeMiLBHDH+j89Qvhc
-	8cYQ6MVuOuaGPWxciA6JF3NcbyOZ3/mvTaTtDILXAn7sMS/PYbn801K4Tu+cND1U29fVX+nyuxOcz
-	KgU3xVgE45olix8tlrEercb8sOuvQ5qFwwzE/YE+FlIf6sCIf0gnczqeWFZ/mx2B8HN5rzf0cZa5i
-	81X7mrhR9FUUor6jeAjwySLTR+IXqr3dJ55pIBvMkjdB3UkwNXl2LkQm0M4aWR6f8Chl+FP1lyV9c
-	NpwaWLhg==;
+	bh=w4M673Ds8tqWX/vZRncHFI+K8HRiQlaSAGv6JvB/m+s=; b=AxnlBcL8flMdo7oNSPswKFWX9E
+	A34Eh2AKIu1r6piMuolwSNhCgnRPRk9InXpDTgEubQP8pfsgEYiyWkr2C5VhVAuT4vV8s1jhle+aa
+	cmUeOy8j7vW65HJ1aCGdBU4zquwKUtidrXelEMPxiBQONQjY/ddlT8E2RXJffL3FwcSHE0MR6mD/2
+	qDGFhridqoiC/gskoqq5tIIOdhrV/dnmpHj14CjdeKyEKHSclEfGhwonbIx1L30NO15uFySi4wckK
+	xSXGsYwufFW3Jwr+TKpzhdNUGy7WMGjlyYpAxyiQQ/Rpkz43oY0SexgpQXBKKIQxQA2Yqn19TRl2N
+	mY9XWOZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFCmu-00000009mjA-1mlO
+	id 1sFD2r-00000009qDR-0tvl
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Jun 2024 13:04:16 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Thu, 06 Jun 2024 13:20:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFCmq-00000009mi4-2Itd
+	id 1sFD2n-00000009qCj-2pZn
 	for ath12k@lists.infradead.org;
-	Thu, 06 Jun 2024 13:04:14 +0000
+	Thu, 06 Jun 2024 13:20:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id DA6EDCE1900;
-	Thu,  6 Jun 2024 13:04:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44591C2BD10;
-	Thu,  6 Jun 2024 13:04:07 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id ADF8761DCC;
+	Thu,  6 Jun 2024 13:20:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1CCBCC2BD10;
+	Thu,  6 Jun 2024 13:20:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717679048;
-	bh=oLN/PQHH+GwmUKU1YirPBfQYc0rGJjuyGvIzizBGKPc=;
+	s=k20201202; t=1717680040;
+	bh=p1e4aBHZ3YsRU1nPl3dRfnOZbbOmwhj+LhrDGnUEJMk=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=KmcG1K3RRO6XZL8MpVWMW0ZeNX3aENLbWwq50mtAdkvwzdJF+7pYCcgSQao2iigyL
-	 KTF6mNUTSXXhc8njqvlNxsRDvVj35+3RU2npykK/iZvzEeU+FqTc+mp9VYNXethR+G
-	 gPSP6geCa0wAiaIeVZN0P5jRsNiIn0KXQ6dSUeHNEa/r0J27OcHGOSvjGvNqs0wWT7
-	 4CTTjVy4wKLQpnjE9t+dpc3R1HqbeU6ASDVtOQZWC7KnevS4VK/L2qAMsnMAMy0/zB
-	 gVQJMyMzfT9XwL6owGJAZ5DpGdw+w7bdhn+9fTb3M0IEwIFoo7GaunLaB+wsa4N9mk
-	 qPzzaSIHsI9Kg==
+	b=s6AGzlym0r58jnIRrUSMF7IFB4ZSvYnsCzoMLwCUIPY6GkCeYPnJ5xNi9uJLRTWIN
+	 On5tkRLsrl1JcKJwcq34jHjWSxVs4518r3DTj5w98peESmlSe30d0l23TDcyXKtBxY
+	 dwM8i1ivk6UmGXXIdsRH8UptWMOu+BCv5974UfizoWZinoiMJBmQ2ONEzq27Paexy4
+	 DfB+wvg8+q7UHR4+YfhMfcKAA9nFRsh4QRTgOfC9asR0vofLbE3VIxzpWkLoN8HgMx
+	 hYJRNdzTXi2TQZlKRFHFQpheH6Xy2m8Fexs3A/I53AQOWnxZ7TROJNfSNCCYSBwIeZ
+	 RNcpyCHoDtvUw==
 From: Kalle Valo <kvalo@kernel.org>
 To: Harshitha Prem <quic_hprem@quicinc.com>
 Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org,
-  Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Subject: Re: [PATCH v8 7/8] wifi: ath12k: refactor core start based on
- hardware group
+  Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,  Jeff Johnson
+ <quic_jjohnson@quicinc.com>
+Subject: Re: [PATCH v8 6/8] wifi: ath12k: Introduce device group abstraction
 References: <20240531180411.1149605-1-quic_hprem@quicinc.com>
-	<20240531180411.1149605-8-quic_hprem@quicinc.com>
-Date: Thu, 06 Jun 2024 16:04:05 +0300
-In-Reply-To: <20240531180411.1149605-8-quic_hprem@quicinc.com> (Harshitha
-	Prem's message of "Fri, 31 May 2024 23:34:10 +0530")
-Message-ID: <87plsuql2y.fsf@kernel.org>
+	<20240531180411.1149605-7-quic_hprem@quicinc.com>
+Date: Thu, 06 Jun 2024 16:20:37 +0300
+In-Reply-To: <20240531180411.1149605-7-quic_hprem@quicinc.com> (Harshitha
+	Prem's message of "Fri, 31 May 2024 23:34:09 +0530")
+Message-ID: <87le3iqkbe.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_060413_036516_DABF7BC2 
-X-CRM114-Status: GOOD (  23.58  )
+X-CRM114-CacheID: sfid-20240606_062041_970914_E174B724 
+X-CRM114-Status: GOOD (  26.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,119 +79,109 @@ Harshitha Prem <quic_hprem@quicinc.com> writes:
 
 > From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 >
-> Currently, mac allocate/register and core_pdev_create are initiated
-> immediately when QMI firmware ready event is received for a particular
-> device.
+> Currently, single device is probed and once firmware is ready, the device
+> is registered to mac80211. For multi-link operation, different bands of
+> different devices or same device would be part of a single wiphy and for
+> this, hardware device group abstraction would be helpful.
 >
-> With hardware device group abstraction, QMI firmware ready event can be
-> received simultaneously for different devices in the group and so, it
-> should not be registered immediately rather it has to be deferred until
-> all devices in the group has received QMI firmware ready.
+> Hardware device group abstraction - when there are multiple devices (with
+> single radio or dual radio) that are connected by any means of interface
+> for communicating between them, then these devices can be combined
+> together as a single group using a group id to form a group abstraction
+> and register to mac80211.
 >
-> To handle this, refactor the code of core start to move the following
-> apis inside a wrapper ath12k_core_hw_group_start()
->         * ath12k_mac_allocate()
->         * ath12k_core_pdev_create()
->         * ath12k_core_rfkill_config()
->         * ath12k_mac_register()
->         * ath12k_hif_irq_enable()
+> The grouping information of multiple devices would be based on device tree
+> during device probe. If no such information is available then a single
+> device will be part of group abstraction and registered to mac80211 else
+> multiple devices advertised in device tree are combined and then registered
+> to mac80211.
 >
-> similarly, move the corresponding destroy/unregister/disable apis
-> inside wrapper ath12k_core_hw_group_stop()
+> For device group abstraction, a base structure named ath12k_hw_group (ag)
+> and the following helpers are introduced:
+>         ath12k_core_hw_group_alloc()    : allocate ath12k_hw_group (ag)
+>                                           based on group id and number
+>                                           of devices that are going to
+>                                           be part of this group.
+>         ath12k_core_hw_group_free()     : free ag during deinit.
+>         ath12k_core_assign_hw_group()   : assign/map the details of group
+>                                           to ath12k_base (ab).
+>         ath12k_core_unassign_hw_group() : unassign/unmap the details of ag
+>                                           in ath12k_base (ab).
+>         ath12k_core_hw_group_create()   : create the devices which are part
+>                                           of group (ag).
+>         ath12k_core_hw_group_destroy()  : cleanup the devices in ag
 >
-> Add the device flags to indicate pdev created and IRQ enabled which would
-> be helpful for device clean up during failure cases.
+> These helpers are used during device probe and mapping the group to the
+> devices involved.
+>
+> Please find the illustration of how multiple devices might be combined
+> together in future based on group id.
+>
+>                 Grouping of multiple devices (in future)
+>
+> +------------------------------------------------------------------------+
+> |  +-------------------------------------+       +-------------------+   |
+> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+> |  |   | ar (2GHz) | | | | ar (5GHz) |   |       |   | ar (6GHz) |   |   |
+> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
+> |  |          ath12k_base (ab)           |       | ath12k_base (ab)  |   |
+> |  |         (Dual band device)          |       |                   |   |
+> |  +-------------------------------------+       +-------------------+   |
+> |                 ath12k_hw_group (ag) based on group id                 |
+> +------------------------------------------------------------------------+
+
+This is a good diagram, thanks for that. But how does struct ath12k_hw
+fit into the diagram?
+
+> In the above representation, two devices are combined into single group
+> based on group id.
+>
+> Add base code changes where single device would be part of a group with an
+> invalid group id forming an group abstraction. Multi device grouping will
+> be introduced in future.
 >
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> Tested-on: WCN7850 hw2.0 PCI
+> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 >
 > Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 > Co-developed-by: Harshitha Prem <quic_hprem@quicinc.com>
 > Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/core.c | 210 +++++++++++++++++++------
->  drivers/net/wireless/ath/ath12k/core.h |  32 ++++
->  2 files changed, 191 insertions(+), 51 deletions(-)
->
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index ebe31cbb6435..90c70dbfc50a 100644
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+
+Like I have said before, for adding any new locks there needs to be a
+proper analysis for the locking and good justifications why new locks
+are needed. I don't see any of that above.
+
+BTW I will from now on require proper analysis also for additions to
+enum ath12k_dev_flags.
+
 > --- a/drivers/net/wireless/ath/ath12k/core.c
 > +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -563,6 +563,9 @@ u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab)
+> @@ -21,6 +21,9 @@ unsigned int ath12k_debug_mask;
+>  module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
+>  MODULE_PARM_DESC(debug_mask, "Debugging mask");
 >  
->  static void ath12k_core_stop(struct ath12k_base *ab)
->  {
-> +	clear_bit(ATH12K_FLAG_CORE_STARTED, &ab->dev_flags);
-> +	ath12k_dec_num_core_started(ab);
-> +
->  	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags))
->  		ath12k_qmi_firmware_stop(ab);
->  
-> @@ -689,11 +692,15 @@ static int ath12k_core_pdev_create(struct ath12k_base *ab)
->  		return ret;
->  	}
->  
-> +	set_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags);
-> +
->  	return 0;
->  }
->  
->  static void ath12k_core_pdev_destroy(struct ath12k_base *ab)
->  {
-> +	clear_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags);
-> +
->  	ath12k_dp_pdev_free(ab);
->  }
->  
-> @@ -702,6 +709,8 @@ static int ath12k_core_start(struct ath12k_base *ab,
->  {
->  	int ret;
->  
-> +	lockdep_assert_held(&ab->core_lock);
-> +
->  	ret = ath12k_wmi_attach(ab);
->  	if (ret) {
->  		ath12k_err(ab, "failed to attach wmi: %d\n", ret);
-> @@ -795,6 +804,12 @@ static int ath12k_core_start(struct ath12k_base *ab,
->  		/* ACPI is optional so continue in case of an error */
->  		ath12k_dbg(ab, ATH12K_DBG_BOOT, "acpi failed: %d\n", ret);
->  
-> +	if (!test_bit(ATH12K_FLAG_CORE_STARTED, &ab->dev_flags)) {
-> +		/* Indicate the core start in the appropriate group */
-> +		ath12k_inc_num_core_started(ab);
-> +		set_bit(ATH12K_FLAG_CORE_STARTED, &ab->dev_flags);
-> +	}
-> +
->  	return 0;
->  
->  err_reo_cleanup:
-> @@ -806,6 +821,108 @@ static int ath12k_core_start(struct ath12k_base *ab,
->  	return ret;
->  }
->  
-> +static void ath12k_core_device_cleanup(struct ath12k_base *ab)
-> +{
-> +	mutex_lock(&ab->core_lock);
-> +
-> +	if (test_and_clear_bit(ATH12K_FLAG_CORE_HIF_IRQ_ENABLED, &ab->dev_flags))
-> +		ath12k_hif_irq_disable(ab);
-> +
-> +	if (test_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags))
-> +		ath12k_core_pdev_destroy(ab);
-> +
-> +	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags)) {
-> +		ath12k_mac_unregister(ab);
-> +		ath12k_mac_destroy(ab);
-> +	}
-> +
-> +	mutex_unlock(&ab->core_lock);
-> +}
+> +static DEFINE_MUTEX(ath12k_hw_lock);
+> +static struct list_head ath12k_hw_groups = LIST_HEAD_INIT(ath12k_hw_groups);
 
-This patch is just abusing flags and because of that we have spaghetti
-code. I have been disliking use of enum ath12k_dev_flags before but this
-is just looks too much. I am wondering do we need to cleanup the ath12k
-architecture first, reduce the usage of flags and then revisit this
-patchset?
+I can somehow understand/guess why this mutex is needed (even though
+there's no documentation) but the naming is not really clear as we
+already have struct ath12k_hw::hw_mutex.
+
+> +/* Holds info on the group of devices that are registered as a single wiphy */
+> +struct ath12k_hw_group {
+> +	struct list_head list;
+> +	u8 id;
+> +	u8 num_devices;
+> +	u8 num_probed;
+> +	struct ath12k_base *ab[ATH12K_MAX_SOCS];
+> +	/* To synchronize group create, assign, start, stop */
+> +	struct mutex mutex_lock;
+> +};
+
+But why we really need this mutex? And does it really justify the extra
+complexity it creates?
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
