@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D294C27C54
-	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 16:44:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BDBEC27C54
+	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 18:07:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=td1JCc+xR83J1CfZP9yAbQ9iUkPKoTjfs56I+wfuRkY=; b=dDQ12l15byfusesZZMei8h+2Ab
-	lwaEXkapQMt2U56hfgb4xSc5qGBzPgV7wcFxD9yOVv2DpOobhjCJmpfWMiDW0z+DZTXFxZF5fBZbL
-	K660ULmFvgCpCo6L9ZhATXCk4/ZJujOp0zwcvhKOl8+1TDatOt2Q9ffeJoz1BjJGtPu1NoMAKHBW9
-	etMjpZ0ynH5mJHlzrkhGmku631UjRHnJ2rMN5Ab2Ap7gqvwU0mgLQrlWyMTxp54KjFCFXhlA8H/WW
-	mkjJ2wabib+7M3AG4SLsZeKaZCuZ3hPVD0aIKTfORdrdirEIgH0IfZ4/M4KgvUplxDmfxlDTSZgyL
-	/MrTYcjg==;
+	bh=BnRLGsQdHzBIFwy2a7a4pMb4QdK2fWR40v5UFjKAhTw=; b=ILbjnpVcffrR7EUMvN7sQLLQnX
+	V+zsZfAcOtcCXNrBtEuIk+a7Ms9V1ayctOT289nVrFAyQbDeaH4w4o1iIOnKT96Yj2hvtCPAv3D8H
+	zueNXAz8Axzgzrfmm6bspxZ/wJALtWlH5TmG/O5oXA3jedjLxl7utVMYCQXtQY10NkiR9JfOTAkfi
+	TBRB66Saq8Houjb9FyDKciGToa8AxlWb2E3jcVvkTozv4bs55FHfYNcX9jNaMypl3ugIjQSupsskV
+	Y4wYSu48reVhA/v9a7x+QbXx9N5WBQ89c1wjCSDGHv+V6GSA2C3DOY4LnTMT5d7iOaojS+XwQjYlM
+	PGGdh/Xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFGDk-0000000AZjO-3lBA
+	id 1sFHWH-0000000As4V-10i8
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Jun 2024 16:44:12 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 06 Jun 2024 18:07:25 +0000
+Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFGDh-0000000AZiz-3YoT
+	id 1sFHWD-0000000As1c-3DrV
 	for ath12k@lists.infradead.org;
-	Thu, 06 Jun 2024 16:44:11 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 456AMfZL031654;
-	Thu, 6 Jun 2024 16:44:07 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	td1JCc+xR83J1CfZP9yAbQ9iUkPKoTjfs56I+wfuRkY=; b=gNt6XkIwZ0Mkr2HC
-	CebQzn1y7B/MM+CcWL+xPTt0LOp4Up6cohJJluxeJLcHhByyGMIRJo7e1pW/Ki1w
-	KZeuQW43ixn21usK7dnboTCZUj7uRFiwWHHtcyc2udgo8h90kvTxmPOx3QoTjiV7
-	nsg7LyQ7kB1GUDrNqBBs5Bc+mDW3MmyXNGjUD6JZuVYRD3EKPStiIIVs/EPMjAl4
-	bFvVd9MJFkBZdMRi+3/3yuCVCJ3sbAUhn4HM01UeE8pLpbTR0rElPAuIoH5iZ9hI
-	RnMEFry6LAprBEUKrTH4wTWqSkWTep2f1FbknW8HGVcSMf9sC/25NFbiUEFpW6vX
-	turW4A==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yjk89c8sw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 06 Jun 2024 16:44:07 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 456Gi6VC018319
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 6 Jun 2024 16:44:06 GMT
-Received: from [10.48.241.109] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 6 Jun 2024
- 09:44:05 -0700
-Message-ID: <6bdebf58-1bae-4a8d-b804-fdb0e0557364@quicinc.com>
-Date: Thu, 6 Jun 2024 09:44:04 -0700
+	Thu, 06 Jun 2024 18:07:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=BnRLGsQdHzBIFwy2a7a4pMb4QdK2fWR40v5UFjKAhTw=; b=ULjHJ7UTrCEMtiY3HwI8TdXR17
+	qG+upRIxSdNPWxbOmlJ08J7LmHVkIDB+dJEMWCyw4bUu2l0bAYBUE7A1sRWJA6Zaq//5rRP5ewaOK
+	+cmY3zBQFkPCuMcpO8ZMdxzP86GDgrh/C4UHpdbn964txnnIH+Tc3uqsTqxCeRPl706A=;
+Received: from p4ff130d0.dip0.t-ipconnect.de ([79.241.48.208] helo=localhost.localdomain)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1sFHW7-008aic-1I;
+	Thu, 06 Jun 2024 20:07:15 +0200
+From: Felix Fietkau <nbd@nbd.name>
+To: linux-wireless@vger.kernel.org
+Cc: johannes@sipsolutions.net,
+	quic_adisi@quicinc.com,
+	quic_periyasa@quicinc.com,
+	ath12k@lists.infradead.org
+Subject: [RFC v3 5/8] wifi: mac80211: add radio index to ieee80211_chanctx_conf
+Date: Thu,  6 Jun 2024 20:07:10 +0200
+Message-ID: <2b389cf0e43d37b6d9225392cf82fa23fd3cc385.1717696995.git-series.nbd@nbd.name>
+X-Mailer: git-send-email 2.44.0
+In-Reply-To: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
+References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 5/5] wifi: ath12k: Dump additional Tx PDEV HTT stats
-Content-Language: en-US
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240603044214.960261-1-quic_rgnanase@quicinc.com>
- <20240603044214.960261-6-quic_rgnanase@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240603044214.960261-6-quic_rgnanase@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: wO3hOHu4CRrClsCoZRudqOfjQZEzOh4G
-X-Proofpoint-ORIG-GUID: wO3hOHu4CRrClsCoZRudqOfjQZEzOh4G
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-06_13,2024-06-06_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- spamscore=0 impostorscore=0 phishscore=0 mlxscore=0 bulkscore=0
- adultscore=0 malwarescore=0 priorityscore=1501 clxscore=1015
- suspectscore=0 mlxlogscore=890 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2405170001 definitions=main-2406060119
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_094410_063989_8D03B5E4 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240606_110721_934500_8E0BF845 
+X-CRM114-Status: GOOD (  10.80  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,34 +74,74 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/2/2024 9:42 PM, Ramya Gnanasekar wrote:
-> Support to dump additional Tx PDEV stats through HTT stats debugfs.
-> Following stats dump are supported:
->         1. PDEV control path stat to dump Tx management frame count
->         2. Tx PDEV SIFS histogram stats
->         3. Tx MU MIMO PPDU stats for 802.11ac, 802.11ax and 802.11be
+Will be used to explicitly assign a channel context to a wiphy radio.
 
-again have a new comment in this patch
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
+---
+ include/net/mac80211.h | 2 ++
+ net/mac80211/chan.c    | 8 +++++---
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
-> +static inline void
-> +ath12k_htt_print_tx_pdev_mu_ppdu_dist_stats_tlv(const void *tag_buf, u16 tag_len,
-> +						struct debug_htt_stats_req *stats_req)
-> +{
-> +	const struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv *htt_stats_buf = tag_buf;
-> +	char *mode;
-> +	u8 j, hw_mode, i, str_buf_len;
-> +	u8 *buf = stats_req->buf;
-> +	u32 len = stats_req->buf_len;
-> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-> +	u32 stats_value;
-> +	u8 max_ppdu = ATH12K_HTT_STATS_MAX_NUM_MU_PPDU_PER_BURST;
-> +	u8 max_sched = ATH12K_HTT_STATS_MAX_NUM_SCHED_STATUS;
-> +	char str_buf[ATH12K_HTT_MAX_STRING_LEN];
-> +
-> +	if (tag_len < sizeof(struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv))
-
-sizeof(*htt_stats_buf) is preferred
-
-> +		return;
-
+diff --git a/include/net/mac80211.h b/include/net/mac80211.h
+index ecfa65ade226..98394970c991 100644
+--- a/include/net/mac80211.h
++++ b/include/net/mac80211.h
+@@ -250,6 +250,7 @@ struct ieee80211_chan_req {
+  * @min_def: the minimum channel definition currently required.
+  * @ap: the channel definition the AP actually is operating as,
+  *	for use with (wider bandwidth) OFDMA
++ * @radio_idx: index of the wiphy radio used used for this channel
+  * @rx_chains_static: The number of RX chains that must always be
+  *	active on the channel to receive MIMO transmissions
+  * @rx_chains_dynamic: The number of RX chains that must be enabled
+@@ -264,6 +265,7 @@ struct ieee80211_chanctx_conf {
+ 	struct cfg80211_chan_def min_def;
+ 	struct cfg80211_chan_def ap;
+ 
++	int radio_idx;
+ 	u8 rx_chains_static, rx_chains_dynamic;
+ 
+ 	bool radar_enabled;
+diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
+index ec16d7676088..574ae961a7cf 100644
+--- a/net/mac80211/chan.c
++++ b/net/mac80211/chan.c
+@@ -638,7 +638,8 @@ ieee80211_chanctx_radar_required(struct ieee80211_local *local,
+ static struct ieee80211_chanctx *
+ ieee80211_alloc_chanctx(struct ieee80211_local *local,
+ 			const struct ieee80211_chan_req *chanreq,
+-			enum ieee80211_chanctx_mode mode)
++			enum ieee80211_chanctx_mode mode,
++			int radio_idx)
+ {
+ 	struct ieee80211_chanctx *ctx;
+ 
+@@ -656,6 +657,7 @@ ieee80211_alloc_chanctx(struct ieee80211_local *local,
+ 	ctx->conf.rx_chains_dynamic = 1;
+ 	ctx->mode = mode;
+ 	ctx->conf.radar_enabled = false;
++	ctx->conf.radio_idx = radio_idx;
+ 	_ieee80211_recalc_chanctx_min_def(local, ctx, NULL);
+ 
+ 	return ctx;
+@@ -696,7 +698,7 @@ ieee80211_new_chanctx(struct ieee80211_local *local,
+ 
+ 	lockdep_assert_wiphy(local->hw.wiphy);
+ 
+-	ctx = ieee80211_alloc_chanctx(local, chanreq, mode);
++	ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
+ 	if (!ctx)
+ 		return ERR_PTR(-ENOMEM);
+ 
+@@ -1126,7 +1128,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 			    !list_empty(&curr_ctx->reserved_links))
+ 				return -EBUSY;
+ 
+-			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode);
++			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
+ 			if (!new_ctx)
+ 				return -ENOMEM;
+ 
+-- 
+git-series 0.9.1
 
