@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78BD8C27C55
-	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 16:42:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D294C27C54
+	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 16:44:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2AGY6O6/mL9mrzOqTaKewzUoQejLvRJLBcsERTFTe4Y=; b=h1U3niQu4r1jX8q2FoREA5ZAe/
-	SIWAsGMERjTs8kmLpZrGY2L+ZRUgA+31W8KnEnjSUMGUn5ZiVVfn1TTRxwsTu9WBn0x6noKY/bv6O
-	so1ZY/p+A1KRGlxQ3eiyKLscrQJV6ikcENfUZcwb4yal7EA9VBgnzencjqhHaI2pLZaB6zeSzVTNi
-	d3DOi1CTcF6zks8GCU1KcO6CtJZdDgrKgteqoHj31ASbJbr/9pnhBur/nXV3o0SpNRPZiE7vtQMwD
-	qbxIcEElzZHfRSe3sCKlcFQbOh48/aAakiDj+BrfjfUOxCwq7NDRdAL2p2biIzDEYx5xRh+6KLIZW
-	2Cn/wtrA==;
+	bh=td1JCc+xR83J1CfZP9yAbQ9iUkPKoTjfs56I+wfuRkY=; b=dDQ12l15byfusesZZMei8h+2Ab
+	lwaEXkapQMt2U56hfgb4xSc5qGBzPgV7wcFxD9yOVv2DpOobhjCJmpfWMiDW0z+DZTXFxZF5fBZbL
+	K660ULmFvgCpCo6L9ZhATXCk4/ZJujOp0zwcvhKOl8+1TDatOt2Q9ffeJoz1BjJGtPu1NoMAKHBW9
+	etMjpZ0ynH5mJHlzrkhGmku631UjRHnJ2rMN5Ab2Ap7gqvwU0mgLQrlWyMTxp54KjFCFXhlA8H/WW
+	mkjJ2wabib+7M3AG4SLsZeKaZCuZ3hPVD0aIKTfORdrdirEIgH0IfZ4/M4KgvUplxDmfxlDTSZgyL
+	/MrTYcjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFGBx-0000000AZTi-0sDG
+	id 1sFGDk-0000000AZjO-3lBA
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Jun 2024 16:42:21 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 06 Jun 2024 16:44:12 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFGBt-0000000AZSf-2AO3
+	id 1sFGDh-0000000AZiz-3YoT
 	for ath12k@lists.infradead.org;
-	Thu, 06 Jun 2024 16:42:19 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 456DGnxs009744;
-	Thu, 6 Jun 2024 16:42:16 GMT
+	Thu, 06 Jun 2024 16:44:11 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 456AMfZL031654;
+	Thu, 6 Jun 2024 16:44:07 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2AGY6O6/mL9mrzOqTaKewzUoQejLvRJLBcsERTFTe4Y=; b=MdDcT7SxdB1++qch
-	FapCv2AwHp0lNTQq5Sk7YgX/V2mXnp2O1iHfw8cBlLpRLGV7w9IQIzcwZ++Axwzg
-	VQ/bF+VAEfQDGQBcP41wcGJEf9cBKafeGw8L92XhD6OF2fsCklnPJ+Lbd+J2cXn8
-	ozOyU4sVlRb3ywR5h9LSbMzDVJzm7m7coRLJSmCVLupIrMul65JDEGh+1HjGv1nT
-	bzjrXt3yUkFtHMs33m0KtcYncicPFPwaM6gvgL1xrV2cpijeo/erxFededsJukaI
-	1V4po2x5k6JjoopCEMQo71kwS6hqnTr+fUz5co8FbanCyLkxkF6jILgMtsEwt+A9
-	IB4bhA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yj87rndua-1
+	td1JCc+xR83J1CfZP9yAbQ9iUkPKoTjfs56I+wfuRkY=; b=gNt6XkIwZ0Mkr2HC
+	CebQzn1y7B/MM+CcWL+xPTt0LOp4Up6cohJJluxeJLcHhByyGMIRJo7e1pW/Ki1w
+	KZeuQW43ixn21usK7dnboTCZUj7uRFiwWHHtcyc2udgo8h90kvTxmPOx3QoTjiV7
+	nsg7LyQ7kB1GUDrNqBBs5Bc+mDW3MmyXNGjUD6JZuVYRD3EKPStiIIVs/EPMjAl4
+	bFvVd9MJFkBZdMRi+3/3yuCVCJ3sbAUhn4HM01UeE8pLpbTR0rElPAuIoH5iZ9hI
+	RnMEFry6LAprBEUKrTH4wTWqSkWTep2f1FbknW8HGVcSMf9sC/25NFbiUEFpW6vX
+	turW4A==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yjk89c8sw-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 06 Jun 2024 16:42:16 +0000 (GMT)
+	Thu, 06 Jun 2024 16:44:07 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 456GgFFj014667
+	by NALASPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 456Gi6VC018319
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 6 Jun 2024 16:42:15 GMT
+	Thu, 6 Jun 2024 16:44:06 GMT
 Received: from [10.48.241.109] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 6 Jun 2024
- 09:42:14 -0700
-Message-ID: <7c7ea029-6ef9-4e7b-ac45-bdf341a8256a@quicinc.com>
-Date: Thu, 6 Jun 2024 09:42:07 -0700
+ 09:44:05 -0700
+Message-ID: <6bdebf58-1bae-4a8d-b804-fdb0e0557364@quicinc.com>
+Date: Thu, 6 Jun 2024 09:44:04 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 4/5] wifi: ath12k: Add support to parse requested
- stats_type
+Subject: Re: [PATCH v4 5/5] wifi: ath12k: Dump additional Tx PDEV HTT stats
 Content-Language: en-US
 To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Dinesh Karthikeyan
-	<quic_dinek@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>
 References: <20240603044214.960261-1-quic_rgnanase@quicinc.com>
- <20240603044214.960261-5-quic_rgnanase@quicinc.com>
+ <20240603044214.960261-6-quic_rgnanase@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240603044214.960261-5-quic_rgnanase@quicinc.com>
+In-Reply-To: <20240603044214.960261-6-quic_rgnanase@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.49.16.6]
@@ -75,19 +72,20 @@ X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: I7hwCe8mQO6u65CXcFvCHTO3b2KR5Oja
-X-Proofpoint-ORIG-GUID: I7hwCe8mQO6u65CXcFvCHTO3b2KR5Oja
+X-Proofpoint-GUID: wO3hOHu4CRrClsCoZRudqOfjQZEzOh4G
+X-Proofpoint-ORIG-GUID: wO3hOHu4CRrClsCoZRudqOfjQZEzOh4G
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-06-06_13,2024-06-06_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- suspectscore=0 phishscore=0 impostorscore=0 malwarescore=0 bulkscore=0
- clxscore=1015 spamscore=0 mlxlogscore=999 adultscore=0 lowpriorityscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2406060119
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ spamscore=0 impostorscore=0 phishscore=0 mlxscore=0 bulkscore=0
+ adultscore=0 malwarescore=0 priorityscore=1501 clxscore=1015
+ suspectscore=0 mlxlogscore=890 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2405170001 definitions=main-2406060119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_094217_660962_7B241178 
-X-CRM114-Status: GOOD (  20.82  )
+X-CRM114-CacheID: sfid-20240606_094410_063989_8D03B5E4 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,84 +101,33 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 6/2/2024 9:42 PM, Ramya Gnanasekar wrote:
-> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-> 
-> Add extended htt stats parser and print the corresponding TLVs associated
-> with the requested htt_stats_type.
-> Add support for TX PDEV related htt stats.
-> 
+> Support to dump additional Tx PDEV stats through HTT stats debugfs.
+> Following stats dump are supported:
+>         1. PDEV control path stat to dump Tx management frame count
+>         2. Tx PDEV SIFS histogram stats
+>         3. Tx MU MIMO PPDU stats for 802.11ac, 802.11ax and 802.11be
 
-while reviewing some other patches in the internal pipeline I discovered I had
-overlooked some things in this series, so pointing them out now...
+again have a new comment in this patch
 
-> ---
->  .../wireless/ath/ath12k/debugfs_htt_stats.c   | 315 ++++++++++++++++++
->  .../wireless/ath/ath12k/debugfs_htt_stats.h   | 211 ++++++++++++
->  drivers/net/wireless/ath/ath12k/dp_rx.c       |  10 +-
->  drivers/net/wireless/ath/ath12k/dp_rx.h       |   4 +
->  4 files changed, 536 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> index d98b971cde7d..e0a0acd5eec8 100644
-> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> @@ -9,6 +9,321 @@
->  #include "debug.h"
->  #include "debugfs_htt_stats.h"
->  #include "dp_tx.h"
-> +#include "dp_rx.h"
-> +
-> +static u32
-> +print_array_to_buf(u8 *buf, u32 offset, const char *header,
-> +		   const __le32 *array, u32 array_len)
+> +static inline void
+> +ath12k_htt_print_tx_pdev_mu_ppdu_dist_stats_tlv(const void *tag_buf, u16 tag_len,
+> +						struct debug_htt_stats_req *stats_req)
 > +{
-> +	int index = 0;
-> +	u8 i;
-> +
-> +	if (header) {
-> +		index += scnprintf(buf + offset,
-> +				   ATH12K_HTT_STATS_BUF_SIZE - offset,
-> +				   "%s = ", header);
-> +	}
-> +	for (i = 0; i < array_len; i++) {
-> +		index += scnprintf(buf + offset + index,
-> +				   (ATH12K_HTT_STATS_BUF_SIZE - offset) - index,
-> +				   " %u:%u,", i, le32_to_cpu(array[i]));
-> +	}
-
-note that this will end up with a trailing comma, so suggest you add:
-
-	/* have the next print overwrite the last trailing comma */
-	index--;
-
-> +	index += scnprintf(buf + offset + index,
-> +			   (ATH12K_HTT_STATS_BUF_SIZE - offset) - index,
-> +			   "\n\n");
-> +	return index;
-> +}
-> +
-> +static void
-> +htt_print_tx_pdev_stats_cmn_tlv(const void *tag_buf, u16 tag_len,
-> +				struct debug_htt_stats_req *stats_req)
-> +{
-> +	const struct ath12k_htt_tx_pdev_stats_cmn_tlv *htt_stats_buf = tag_buf;
+> +	const struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv *htt_stats_buf = tag_buf;
+> +	char *mode;
+> +	u8 j, hw_mode, i, str_buf_len;
 > +	u8 *buf = stats_req->buf;
 > +	u32 len = stats_req->buf_len;
 > +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-> +	u32 mac_id_word = le32_to_cpu(htt_stats_buf->mac_id__word);
-
-this dereference has to occur after the length check, otherwise you may have a
-buffer overread
-
+> +	u32 stats_value;
+> +	u8 max_ppdu = ATH12K_HTT_STATS_MAX_NUM_MU_PPDU_PER_BURST;
+> +	u8 max_sched = ATH12K_HTT_STATS_MAX_NUM_SCHED_STATUS;
+> +	char str_buf[ATH12K_HTT_MAX_STRING_LEN];
 > +
-> +	if (tag_len < sizeof(struct ath12k_htt_tx_pdev_stats_cmn_tlv))
+> +	if (tag_len < sizeof(struct ath12k_htt_tx_pdev_mu_ppdu_dist_stats_tlv))
 
 sizeof(*htt_stats_buf) is preferred
 
 > +		return;
-> +
-
-that concludes my new comments
-
 
 
