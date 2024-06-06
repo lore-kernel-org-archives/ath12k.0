@@ -4,88 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7148C25B75
-	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 10:10:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB34EC27C54
+	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 13:04:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4g4K7aqmZkHqVsRvmp3gdemhs1JP6f80sDnvzYse/6o=; b=pyWqCj4J82ke1uHyDZUxhLKat/
-	dJdT/E3v43XJTk5UeYRiEMNHL8G3m7Of0tAlgBnNliF2PeiqxF1jiCskzSR07w+W4bkXGuFaUBhcF
-	d9weenIooMdBX47WTvWBllgGQIRVtEjwsJf34H3r07x05Ed0dtZcDL5WYy+j7gEAafGTXW/HwHz0A
-	hXAQ/ssMdCltEdtmLGTU0+IFavyTxAz39xDaAguPjFai3X0QONTMOUh/Vw5yAo0orw9c4YUaAz7TX
-	nVzi0gXAWkAMa6fTH6jm9Ru2RkxuetY1eaLkD6NsqyhMte2WP2rNIgAg1zn9MgY4J0FB/0ufUCS4U
-	d3oQOutw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Y4urqivDUMbksuzYWs3bNmVK/WCeVqEsP0D9AsGas6k=; b=wIe/bES5TSwyS10JcFK7vdOyqo
+	xVts7xJd04Lyju6BoUen46lpJcCkPKZZITWFbovQShEjmp4YWc7VUJUDITU4BeMiLBHDH+j89Qvhc
+	8cYQ6MVuOuaGPWxciA6JF3NcbyOZ3/mvTaTtDILXAn7sMS/PYbn801K4Tu+cND1U29fVX+nyuxOcz
+	KgU3xVgE45olix8tlrEercb8sOuvQ5qFwwzE/YE+FlIf6sCIf0gnczqeWFZ/mx2B8HN5rzf0cZa5i
+	81X7mrhR9FUUor6jeAjwySLTR+IXqr3dJ55pIBvMkjdB3UkwNXl2LkQm0M4aWR6f8Chl+FP1lyV9c
+	NpwaWLhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFA4q-00000009KmD-2Scq
+	id 1sFCmu-00000009mjA-1mlO
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Jun 2024 10:10:36 +0000
-Received: from nbd.name ([46.4.11.11])
+	Thu, 06 Jun 2024 13:04:16 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFA4n-00000009KlY-1Y4j
+	id 1sFCmq-00000009mi4-2Itd
 	for ath12k@lists.infradead.org;
-	Thu, 06 Jun 2024 10:10:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
-	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=4g4K7aqmZkHqVsRvmp3gdemhs1JP6f80sDnvzYse/6o=; b=FgRTtFAL4l78vS7WG2f5lVcHHt
-	Bza5FfUQEujNNJC7+tt8yYP1Y1u37tB7PuR1AzRaN5HwRjniXXurxkqD+Y4oMLP5bwAda0mXG49Dp
-	10cJZ+zoFttYkQcE3x4/oWN+ncEKqb20K6RMu1phnfawAyTzNlmC8Gc9mS9ZxntzqY1c=;
-Received: from p4ff130d0.dip0.t-ipconnect.de ([79.241.48.208] helo=nf.local)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1sFA4e-008SeL-2h;
-	Thu, 06 Jun 2024 12:10:24 +0200
-Message-ID: <7744b5a1-446a-4e80-83a2-1c5b727906d2@nbd.name>
-Date: Thu, 6 Jun 2024 12:10:24 +0200
+	Thu, 06 Jun 2024 13:04:14 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id DA6EDCE1900;
+	Thu,  6 Jun 2024 13:04:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44591C2BD10;
+	Thu,  6 Jun 2024 13:04:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1717679048;
+	bh=oLN/PQHH+GwmUKU1YirPBfQYc0rGJjuyGvIzizBGKPc=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=KmcG1K3RRO6XZL8MpVWMW0ZeNX3aENLbWwq50mtAdkvwzdJF+7pYCcgSQao2iigyL
+	 KTF6mNUTSXXhc8njqvlNxsRDvVj35+3RU2npykK/iZvzEeU+FqTc+mp9VYNXethR+G
+	 gPSP6geCa0wAiaIeVZN0P5jRsNiIn0KXQ6dSUeHNEa/r0J27OcHGOSvjGvNqs0wWT7
+	 4CTTjVy4wKLQpnjE9t+dpc3R1HqbeU6ASDVtOQZWC7KnevS4VK/L2qAMsnMAMy0/zB
+	 gVQJMyMzfT9XwL6owGJAZ5DpGdw+w7bdhn+9fTb3M0IEwIFoo7GaunLaB+wsa4N9mk
+	 qPzzaSIHsI9Kg==
+From: Kalle Valo <kvalo@kernel.org>
+To: Harshitha Prem <quic_hprem@quicinc.com>
+Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org,
+  Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Subject: Re: [PATCH v8 7/8] wifi: ath12k: refactor core start based on
+ hardware group
+References: <20240531180411.1149605-1-quic_hprem@quicinc.com>
+	<20240531180411.1149605-8-quic_hprem@quicinc.com>
+Date: Thu, 06 Jun 2024 16:04:05 +0300
+In-Reply-To: <20240531180411.1149605-8-quic_hprem@quicinc.com> (Harshitha
+	Prem's message of "Fri, 31 May 2024 23:34:10 +0530")
+Message-ID: <87plsuql2y.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC v2 0/7] cfg80211/mac80211: support defining multiple radios
- per wiphy
-To: Aditya Kumar Singh <quic_adisi@quicinc.com>,
- linux-wireless@vger.kernel.org
-Cc: johannes@sipsolutions.net, quic_periyasa@quicinc.com,
- ath12k@lists.infradead.org
-References: <cover.c104c0bb3a14f4ac26aee71f4979846f6ad87742.1717611760.git-series.nbd@nbd.name>
- <f751d310-4cbb-4562-947b-a0a76edb6b40@quicinc.com>
-Content-Language: en-US
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
- cL98efvrjdstUfTCP2pfetyN
-In-Reply-To: <f751d310-4cbb-4562-947b-a0a76edb6b40@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_031033_503583_B34AC758 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20240606_060413_036516_DABF7BC2 
+X-CRM114-Status: GOOD (  23.58  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,42 +75,126 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 06.06.24 12:00, Aditya Kumar Singh wrote:
-> On 6/6/24 00:01, Felix Fietkau wrote:
->> The prerequisite for MLO support in cfg80211/mac80211 is that all the links
->> participating in MLO must be from the same wiphy/ieee80211_hw. To meet this
->> expectation, some drivers may need to group multiple discrete hardware each
->> acting as a link in MLO under single wiphy.
->> 
->> With this series, the bands and supported frequencies of each individual
->> radio are reported to user space. This allows user space to figure out the
->> limitations of what combination of channels can be used concurrently.
->> 
->> Each mac80211 channel context is assigned to a radio based on radio specific
->> frequency ranges and interface combinations.
->> 
->> This is loosely based on Karthikeyan Periyasamy's series
->> "[PATCH 00/13] wifi: Add multi physical hardware iface combination support"
->> with some differences:
->> 
->>   - a struct wiphy_radio is defined, which holds the frequency ranges and
->>     a full struct ieee80211_iface_combination array
->>   - a channel context is explicitly assigned to a radio when created
->>   - both global and per-radio interface combination limits are checked
->>     and enforced on channel context assignment
->> 
->> Changes since RFC:
->>   - replace static per-radio number of channels limit with full ifcomb
->>     checks
->>   - remove band bitmask in favor of only using freq ranges
-> 
-> What about handling 2 GHz + 5 GHz issue we discussed in v1 related to
-> radar detection width and num chan ctx? Is that taken care?
+Harshitha Prem <quic_hprem@quicinc.com> writes:
 
-Seems that I missed that one. I will take care of it in the next version.
+> From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+>
+> Currently, mac allocate/register and core_pdev_create are initiated
+> immediately when QMI firmware ready event is received for a particular
+> device.
+>
+> With hardware device group abstraction, QMI firmware ready event can be
+> received simultaneously for different devices in the group and so, it
+> should not be registered immediately rather it has to be deferred until
+> all devices in the group has received QMI firmware ready.
+>
+> To handle this, refactor the code of core start to move the following
+> apis inside a wrapper ath12k_core_hw_group_start()
+>         * ath12k_mac_allocate()
+>         * ath12k_core_pdev_create()
+>         * ath12k_core_rfkill_config()
+>         * ath12k_mac_register()
+>         * ath12k_hif_irq_enable()
+>
+> similarly, move the corresponding destroy/unregister/disable apis
+> inside wrapper ath12k_core_hw_group_stop()
+>
+> Add the device flags to indicate pdev created and IRQ enabled which would
+> be helpful for device clean up during failure cases.
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Co-developed-by: Harshitha Prem <quic_hprem@quicinc.com>
+> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/core.c | 210 +++++++++++++++++++------
+>  drivers/net/wireless/ath/ath12k/core.h |  32 ++++
+>  2 files changed, 191 insertions(+), 51 deletions(-)
+>
+> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+> index ebe31cbb6435..90c70dbfc50a 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.c
+> +++ b/drivers/net/wireless/ath/ath12k/core.c
+> @@ -563,6 +563,9 @@ u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab)
+>  
+>  static void ath12k_core_stop(struct ath12k_base *ab)
+>  {
+> +	clear_bit(ATH12K_FLAG_CORE_STARTED, &ab->dev_flags);
+> +	ath12k_dec_num_core_started(ab);
+> +
+>  	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags))
+>  		ath12k_qmi_firmware_stop(ab);
+>  
+> @@ -689,11 +692,15 @@ static int ath12k_core_pdev_create(struct ath12k_base *ab)
+>  		return ret;
+>  	}
+>  
+> +	set_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags);
+> +
+>  	return 0;
+>  }
+>  
+>  static void ath12k_core_pdev_destroy(struct ath12k_base *ab)
+>  {
+> +	clear_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags);
+> +
+>  	ath12k_dp_pdev_free(ab);
+>  }
+>  
+> @@ -702,6 +709,8 @@ static int ath12k_core_start(struct ath12k_base *ab,
+>  {
+>  	int ret;
+>  
+> +	lockdep_assert_held(&ab->core_lock);
+> +
+>  	ret = ath12k_wmi_attach(ab);
+>  	if (ret) {
+>  		ath12k_err(ab, "failed to attach wmi: %d\n", ret);
+> @@ -795,6 +804,12 @@ static int ath12k_core_start(struct ath12k_base *ab,
+>  		/* ACPI is optional so continue in case of an error */
+>  		ath12k_dbg(ab, ATH12K_DBG_BOOT, "acpi failed: %d\n", ret);
+>  
+> +	if (!test_bit(ATH12K_FLAG_CORE_STARTED, &ab->dev_flags)) {
+> +		/* Indicate the core start in the appropriate group */
+> +		ath12k_inc_num_core_started(ab);
+> +		set_bit(ATH12K_FLAG_CORE_STARTED, &ab->dev_flags);
+> +	}
+> +
+>  	return 0;
+>  
+>  err_reo_cleanup:
+> @@ -806,6 +821,108 @@ static int ath12k_core_start(struct ath12k_base *ab,
+>  	return ret;
+>  }
+>  
+> +static void ath12k_core_device_cleanup(struct ath12k_base *ab)
+> +{
+> +	mutex_lock(&ab->core_lock);
+> +
+> +	if (test_and_clear_bit(ATH12K_FLAG_CORE_HIF_IRQ_ENABLED, &ab->dev_flags))
+> +		ath12k_hif_irq_disable(ab);
+> +
+> +	if (test_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags))
+> +		ath12k_core_pdev_destroy(ab);
+> +
+> +	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags)) {
+> +		ath12k_mac_unregister(ab);
+> +		ath12k_mac_destroy(ab);
+> +	}
+> +
+> +	mutex_unlock(&ab->core_lock);
+> +}
 
-Thanks,
+This patch is just abusing flags and because of that we have spaghetti
+code. I have been disliking use of enum ath12k_dev_flags before but this
+is just looks too much. I am wondering do we need to cleanup the ath12k
+architecture first, reduce the usage of flags and then revisit this
+patchset?
 
-- Felix
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
