@@ -4,60 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 931CCC27C6D
-	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 18:07:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1B14C27C55
+	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 18:07:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=CqwUBAgIy/bF068vQeu7eSci844EoGdF2SscwS3MCvs=; b=1ayEdKu9j4bOGvGlVoFpf5Dx0w
-	EEwQXwF+BS8ZNhBCnpbI69ZzBnMw8zDhCyI69lgtRJU6n6qmIbBcphql4sJoPtBMfhmQ2bf0sAqdF
-	kXi9uy1XC5XwEL0ZOnpwH85F4V0NXdKPX1NtfC44//lk77XWj88YtE7xLMpk6wIdalJqbMApqgvQP
-	07eZB3Vk+XrgX8ZrByRbbh0R8aHW7W6vh0qV575kNLS8x2m11l56hLmZQ5f4g7ObeulOTfh3YeAZs
-	v6UZcKEF33qCh/LU6Z2Giidq5kUJYoK02zxQGkT/1Xj+xLI9Ufrb6Lh4p6LVsr41Zqr1pCORhy6X+
-	oAQRr/cA==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=34pDim3q98b+di9DArDJuxpv+10vrgDHS+iLBvplmv0=; b=NXxmBl7Vpek1t/i45JUXdnRq1k
+	UNDr14fR4jKeVVN8z6fGcDjxKkpvfDn5LEU51a0o90N/oHgOeSyZKao+GBhce+bHeQfZu+zUSfigP
+	MIHc3UF/9qKY4aCdibIGguU9YqgXbVyhfMghWKbuvlwaxSPQMaG68oBmcidhVoVCZY2fIImEnMnM4
+	j2IiZ7N7ePqaBCbdyrpHbWzzeJXCHom5sm3uotZiO8Z2mAVUZsQFIl85rNVVYJ4WdYIrUqrpuVbx4
+	PcZC9A/nzQMlvpkEIZV6Pc4xw6dTs9p5gmk1s5gwZW47IrlB9H6uXX8b2fOWGLpsI9yhxUTcCwZnG
+	K4Pmb37A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFHWJ-0000000As5D-08L1
+	id 1sFHWI-0000000As57-2sAs
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Jun 2024 18:07:27 +0000
+	Thu, 06 Jun 2024 18:07:26 +0000
 Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFHWD-0000000As1R-3EHv
+	id 1sFHWD-0000000As1d-3Dj6
 	for ath12k@lists.infradead.org;
 	Thu, 06 Jun 2024 18:07:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:
-	Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=CqwUBAgIy/bF068vQeu7eSci844EoGdF2SscwS3MCvs=; b=K04SaZHNg9fE2Pg0a3GDLStAjS
-	5z5ItaJ1IgYqpvrTT+l/bxtbiZ6r2tQtS7qRNdAbYxtqwFXAvDTWESnR966ljWE2yQmztTNdsaqxN
-	LVfTnD0xPtqL8mL1VZkV/FIAMiNSg7+azZjPCazr2rHeC4EczRWy26FRiKi1Qa90mmoM=;
+	bh=34pDim3q98b+di9DArDJuxpv+10vrgDHS+iLBvplmv0=; b=bzky98Q+WTq3BbrxQqrynQGjLD
+	WgtBYkuIBXJIsewdrSr18yXZ8iN5bOeTEmL41aL7iJbxXzcs/NvrZZF7HEW4rmd1QnLMh7BBOtwk1
+	VtZWPjcwTk5GeUAFAjIXvylWr+kN+SK5IWwrvo5K3W0hCGdqOvRRV7fnIeKBOQkcFBuk=;
 Received: from p4ff130d0.dip0.t-ipconnect.de ([79.241.48.208] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1sFHW5-008aic-32;
-	Thu, 06 Jun 2024 20:07:14 +0200
+	id 1sFHW7-008aic-0R;
+	Thu, 06 Jun 2024 20:07:15 +0200
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
 Cc: johannes@sipsolutions.net,
 	quic_adisi@quicinc.com,
 	quic_periyasa@quicinc.com,
 	ath12k@lists.infradead.org
-Subject: [RFC v3 0/8] cfg80211/mac80211: support defining multiple radios per wiphy
-Date: Thu,  6 Jun 2024 20:07:05 +0200
-Message-ID: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
+Subject: [RFC v3 4/8] wifi: mac80211: add support for DFS with multiple radios
+Date: Thu,  6 Jun 2024 20:07:09 +0200
+Message-ID: <7cc3d89225f365c85b363874725cfbc77c9c1db5.1717696995.git-series.nbd@nbd.name>
 X-Mailer: git-send-email 2.44.0
+In-Reply-To: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
+References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_110721_972254_66696FA3 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20240606_110721_952767_7CB8F230 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,65 +74,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The prerequisite for MLO support in cfg80211/mac80211 is that all the links
-participating in MLO must be from the same wiphy/ieee80211_hw. To meet this
-expectation, some drivers may need to group multiple discrete hardware each
-acting as a link in MLO under single wiphy.
+DFS can be supported with multi-channel combinations, as long as each DFS
+capable radio only supports one channel.
 
-With this series, the bands and supported frequencies of each individual
-radio are reported to user space. This allows user space to figure out the
-limitations of what combination of channels can be used concurrently.
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
+---
+ net/mac80211/main.c | 32 ++++++++++++++++++++++++--------
+ 1 file changed, 24 insertions(+), 8 deletions(-)
 
-Each mac80211 channel context is assigned to a radio based on radio specific
-frequency ranges and interface combinations.
-
-This is loosely based on Karthikeyan Periyasamy's series
-"[PATCH 00/13] wifi: Add multi physical hardware iface combination support"
-with some differences:
-
- - a struct wiphy_radio is defined, which holds the frequency ranges and
-   a full struct ieee80211_iface_combination array
- - a channel context is explicitly assigned to a radio when created
- - both global and per-radio interface combination limits are checked
-   and enforced on channel context assignment
-
-Changes since RFC v2:
- - fix uninitialized variables
- - fix multiple radios with DFS
- - add support for per-radio beacon interval checking
-
-Changes since RFC:
- - replace static per-radio number of channels limit with full ifcomb
-   checks
- - remove band bitmask in favor of only using freq ranges
-
-Felix Fietkau (8):
-  wifi: nl80211: split helper function from nl80211_put_iface_combinations
-  wifi: cfg80211: add support for advertising multiple radios belonging to a wiphy
-  wifi: cfg80211: extend interface combination check for multi-radio
-  wifi: mac80211: add support for DFS with multiple radios
-  wifi: mac80211: add radio index to ieee80211_chanctx_conf
-  wifi: mac80211: extend ifcomb check functions for multi-radio
-  wifi: mac80211: move code in ieee80211_link_reserve_chanctx to a helper
-  wifi: mac80211: add wiphy radio assignment and validation
-
- include/net/cfg80211.h       |  43 +++++++-
- include/net/mac80211.h       |   2 +-
- include/uapi/linux/nl80211.h |  48 ++++++++-
- net/mac80211/cfg.c           |   7 +-
- net/mac80211/chan.c          | 228 +++++++++++++++++++++++-------------
- net/mac80211/ibss.c          |   2 +-
- net/mac80211/ieee80211_i.h   |   6 +-
- net/mac80211/iface.c         |   2 +-
- net/mac80211/main.c          |  32 +++--
- net/mac80211/util.c          | 131 +++++++++++++++------
- net/wireless/nl80211.c       | 190 +++++++++++++++++++++---------
- net/wireless/rdev-ops.h      |  17 +++-
- net/wireless/trace.h         |   5 +-
- net/wireless/util.c          |  36 ++++--
- 14 files changed, 560 insertions(+), 189 deletions(-)
-
-base-commit: 5bcd9a0a59953b5ff55ac226f903397319bf7f40
+diff --git a/net/mac80211/main.c b/net/mac80211/main.c
+index 40fbf397ce74..e9c4cf611e94 100644
+--- a/net/mac80211/main.c
++++ b/net/mac80211/main.c
+@@ -1084,6 +1084,21 @@ static int ieee80211_init_cipher_suites(struct ieee80211_local *local)
+ 	return 0;
+ }
+ 
++static bool
++ieee80211_ifcomb_check_radar(const struct ieee80211_iface_combination *comb,
++			     int n_comb)
++{
++	int i;
++
++	/* DFS is not supported with multi-channel combinations yet */
++	for (i = 0; i < n_comb; i++, comb++)
++		if (comb->radar_detect_widths &&
++		    comb->num_different_channels > 1)
++			return false;
++
++	return true;
++}
++
+ int ieee80211_register_hw(struct ieee80211_hw *hw)
+ {
+ 	struct ieee80211_local *local = hw_to_local(hw);
+@@ -1173,17 +1188,18 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
+ 			if (comb->num_different_channels > 1)
+ 				return -EINVAL;
+ 		}
+-	} else {
+-		/* DFS is not supported with multi-channel combinations yet */
+-		for (i = 0; i < local->hw.wiphy->n_iface_combinations; i++) {
+-			const struct ieee80211_iface_combination *comb;
+-
+-			comb = &local->hw.wiphy->iface_combinations[i];
++	} else if (hw->wiphy->n_radio) {
++		for (i = 0; i < hw->wiphy->n_radio; i++) {
++			const struct wiphy_radio *radio = &hw->wiphy->radio[i];
+ 
+-			if (comb->radar_detect_widths &&
+-			    comb->num_different_channels > 1)
++			if (!ieee80211_ifcomb_check_radar(radio->iface_combinations,
++							  radio->n_iface_combinations))
+ 				return -EINVAL;
+ 		}
++	} else {
++		if (!ieee80211_ifcomb_check_radar(hw->wiphy->iface_combinations,
++						  hw->wiphy->n_iface_combinations))
++			return -EINVAL;
+ 	}
+ 
+ 	/* Only HW csum features are currently compatible with mac80211 */
 -- 
 git-series 0.9.1
 
