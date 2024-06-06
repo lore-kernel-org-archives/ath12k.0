@@ -4,63 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96579C27C54
-	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 13:20:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 461CAC25B75
+	for <ath12k@archiver.kernel.org>; Thu,  6 Jun 2024 13:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=w4M673Ds8tqWX/vZRncHFI+K8HRiQlaSAGv6JvB/m+s=; b=AxnlBcL8flMdo7oNSPswKFWX9E
-	A34Eh2AKIu1r6piMuolwSNhCgnRPRk9InXpDTgEubQP8pfsgEYiyWkr2C5VhVAuT4vV8s1jhle+aa
-	cmUeOy8j7vW65HJ1aCGdBU4zquwKUtidrXelEMPxiBQONQjY/ddlT8E2RXJffL3FwcSHE0MR6mD/2
-	qDGFhridqoiC/gskoqq5tIIOdhrV/dnmpHj14CjdeKyEKHSclEfGhwonbIx1L30NO15uFySi4wckK
-	xSXGsYwufFW3Jwr+TKpzhdNUGy7WMGjlyYpAxyiQQ/Rpkz43oY0SexgpQXBKKIQxQA2Yqn19TRl2N
-	mY9XWOZw==;
+	bh=Vf+z87oWQc4Myzvj0pbB4Pzpk4g3HmaNR5xuAkxSd2c=; b=jvZeCAhEUIJwNZqUEyb2YJ2A97
+	aCT1b7zMQcwPOCyI5QXMFawQXWpcQRUrKlw3pdx4DbayQFtrYp6IU6y28bBTwHoa6TBqaqCgU5RFC
+	YDZ5gsMFuGP95LlBJy/tckcmtuGcqp4l4yd6SRLZT6FNgeP/HmpPo+/eMcFhwbFw8xQnqQCf34iw6
+	6KBLIW6Tiw1NHt21BcSh7kgkHMe9EfcQ9IqTL2ykRKZYmECZ22/UbGJqWV0p97W8f90rtOYCcmlq2
+	1+sHZuYq6M0aDRN66j61UFsvIzYvWcs46Ep90D0+TJJ71pvIMU/7XVReyA+J+HtsIb6Nx3X18DxKR
+	Hjlg1BGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFD2r-00000009qDR-0tvl
+	id 1sFDCh-00000009tMJ-3qu6
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Jun 2024 13:20:45 +0000
+	Thu, 06 Jun 2024 13:30:55 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFD2n-00000009qCj-2pZn
-	for ath12k@lists.infradead.org;
-	Thu, 06 Jun 2024 13:20:43 +0000
+	id 1sFDCe-00000009tKr-2EMg;
+	Thu, 06 Jun 2024 13:30:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id ADF8761DCC;
-	Thu,  6 Jun 2024 13:20:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1CCBCC2BD10;
-	Thu,  6 Jun 2024 13:20:38 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9366A61B91;
+	Thu,  6 Jun 2024 13:30:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5570C2BD10;
+	Thu,  6 Jun 2024 13:30:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717680040;
-	bh=p1e4aBHZ3YsRU1nPl3dRfnOZbbOmwhj+LhrDGnUEJMk=;
+	s=k20201202; t=1717680651;
+	bh=Y6vvUZaqqNzDBcZyJb8uANrd/RPyO8bmsrI9Fy1N1Yk=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=s6AGzlym0r58jnIRrUSMF7IFB4ZSvYnsCzoMLwCUIPY6GkCeYPnJ5xNi9uJLRTWIN
-	 On5tkRLsrl1JcKJwcq34jHjWSxVs4518r3DTj5w98peESmlSe30d0l23TDcyXKtBxY
-	 dwM8i1ivk6UmGXXIdsRH8UptWMOu+BCv5974UfizoWZinoiMJBmQ2ONEzq27Paexy4
-	 DfB+wvg8+q7UHR4+YfhMfcKAA9nFRsh4QRTgOfC9asR0vofLbE3VIxzpWkLoN8HgMx
-	 hYJRNdzTXi2TQZlKRFHFQpheH6Xy2m8Fexs3A/I53AQOWnxZ7TROJNfSNCCYSBwIeZ
-	 RNcpyCHoDtvUw==
+	b=olnGGMhdtaecQNsV+bM/3zqTVm/RI0w4RRa9vWACB38Wf0uBEOySr6sdZhR8A9cj7
+	 yn8cvLmk5kv2p75y9fLzVWJ/vXuSkXyq13NacoZehA7k/kRqH/S2FXD2W5V9XBK2zI
+	 wlV/A0d3b5IiNLGD+vDOTKaq6oNRq6ZFgCPxgV48XlK9URr7ahXL/2plk3xiqsVlGQ
+	 UBna/1PWchiqmOGgCkgELhFUs4TcihpzFBYACSfwQBoll0gaRt4abdXUNtkiHBZHOa
+	 SPOLYbINwGLq1O0bJv0oqR4AHFDiY52YaK2cKdtVt3jo24KuCWOa1N+OfPkMll4EjR
+	 GXpyN+IWu0hpg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Harshitha Prem <quic_hprem@quicinc.com>
-Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org,
-  Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,  Jeff Johnson
- <quic_jjohnson@quicinc.com>
-Subject: Re: [PATCH v8 6/8] wifi: ath12k: Introduce device group abstraction
-References: <20240531180411.1149605-1-quic_hprem@quicinc.com>
-	<20240531180411.1149605-7-quic_hprem@quicinc.com>
-Date: Thu, 06 Jun 2024 16:20:37 +0300
-In-Reply-To: <20240531180411.1149605-7-quic_hprem@quicinc.com> (Harshitha
-	Prem's message of "Fri, 31 May 2024 23:34:09 +0530")
-Message-ID: <87le3iqkbe.fsf@kernel.org>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Cc: "David S . Miller" <davem@davemloft.net>,  Eric Dumazet
+ <edumazet@google.com>,  Jakub Kicinski <kuba@kernel.org>,  Paolo Abeni
+ <pabeni@redhat.com>,  Rob Herring <robh@kernel.org>,  Krzysztof Kozlowski
+ <krzk+dt@kernel.org>,  Conor Dooley <conor+dt@kernel.org>,  Jeff Johnson
+ <jjohnson@kernel.org>,  linux-wireless@vger.kernel.org,
+  netdev@vger.kernel.org,  devicetree@vger.kernel.org,
+  ath11k@lists.infradead.org,  linux-kernel@vger.kernel.org,
+  ath12k@lists.infradead.org,  Bartosz Golaszewski
+ <bartosz.golaszewski@linaro.org>,  Krzysztof Kozlowski
+ <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v9 1/2] dt-bindings: net: wireless: qcom,ath11k:
+ describe the ath11k on QCA6390
+References: <20240605122106.23818-1-brgl@bgdev.pl>
+	<20240605122106.23818-2-brgl@bgdev.pl>
+Date: Thu, 06 Jun 2024 16:30:46 +0300
+In-Reply-To: <20240605122106.23818-2-brgl@bgdev.pl> (Bartosz Golaszewski's
+	message of "Wed, 5 Jun 2024 14:21:04 +0200")
+Message-ID: <87h6e6qjuh.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_062041_970914_E174B724 
-X-CRM114-Status: GOOD (  26.27  )
+X-CRM114-CacheID: sfid-20240606_063052_640397_B4D42190 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,113 +82,46 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Harshitha Prem <quic_hprem@quicinc.com> writes:
+Bartosz Golaszewski <brgl@bgdev.pl> writes:
 
-> From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 >
-> Currently, single device is probed and once firmware is ready, the device
-> is registered to mac80211. For multi-link operation, different bands of
-> different devices or same device would be part of a single wiphy and for
-> this, hardware device group abstraction would be helpful.
+> Add a PCI compatible for the ATH11K module on QCA6390 and describe the
+> power inputs from the PMU that it consumes.
 >
-> Hardware device group abstraction - when there are multiple devices (with
-> single radio or dual radio) that are connected by any means of interface
-> for communicating between them, then these devices can be combined
-> together as a single group using a group id to form a group abstraction
-> and register to mac80211.
->
-> The grouping information of multiple devices would be based on device tree
-> during device probe. If no such information is available then a single
-> device will be part of group abstraction and registered to mac80211 else
-> multiple devices advertised in device tree are combined and then registered
-> to mac80211.
->
-> For device group abstraction, a base structure named ath12k_hw_group (ag)
-> and the following helpers are introduced:
->         ath12k_core_hw_group_alloc()    : allocate ath12k_hw_group (ag)
->                                           based on group id and number
->                                           of devices that are going to
->                                           be part of this group.
->         ath12k_core_hw_group_free()     : free ag during deinit.
->         ath12k_core_assign_hw_group()   : assign/map the details of group
->                                           to ath12k_base (ab).
->         ath12k_core_unassign_hw_group() : unassign/unmap the details of ag
->                                           in ath12k_base (ab).
->         ath12k_core_hw_group_create()   : create the devices which are part
->                                           of group (ag).
->         ath12k_core_hw_group_destroy()  : cleanup the devices in ag
->
-> These helpers are used during device probe and mapping the group to the
-> devices involved.
->
-> Please find the illustration of how multiple devices might be combined
-> together in future based on group id.
->
->                 Grouping of multiple devices (in future)
->
-> +------------------------------------------------------------------------+
-> |  +-------------------------------------+       +-------------------+   |
-> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
-> |  |   | ar (2GHz) | | | | ar (5GHz) |   |       |   | ar (6GHz) |   |   |
-> |  |   +-----------+ | | +-----------+   |       |   +-----------+   |   |
-> |  |          ath12k_base (ab)           |       | ath12k_base (ab)  |   |
-> |  |         (Dual band device)          |       |                   |   |
-> |  +-------------------------------------+       +-------------------+   |
-> |                 ath12k_hw_group (ag) based on group id                 |
-> +------------------------------------------------------------------------+
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-This is a good diagram, thanks for that. But how does struct ath12k_hw
-fit into the diagram?
+[...]
 
-> In the above representation, two devices are combined into single group
-> based on group id.
->
-> Add base code changes where single device would be part of a group with an
-> invalid group id forming an group abstraction. Multi device grouping will
-> be introduced in future.
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI
-> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
->
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Co-developed-by: Harshitha Prem <quic_hprem@quicinc.com>
-> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: pci17cb,1101
+> +    then:
+> +      required:
+> +        - vddrfacmn-supply
+> +        - vddaon-supply
+> +        - vddwlcx-supply
+> +        - vddwlmx-supply
+> +        - vddrfa0p8-supply
+> +        - vddrfa1p2-supply
+> +        - vddrfa1p7-supply
+> +        - vddpcie0p9-supply
+> +        - vddpcie1p8-supply
 
-Like I have said before, for adding any new locks there needs to be a
-proper analysis for the locking and good justifications why new locks
-are needed. I don't see any of that above.
+Not sure if we discussed this before, but based on this I understand
+that there can't be an DT entry for device pci17cb,1101 without all the
+supply properties? But there are QCA6390 devices with PCI id 17cb:1101
+which do not need these supplies and already work. For example, my Dell
+XPS 13 x86 laptop is one. Or anyone who manually installs QCA6390 board
+to their PCI slot and some of them might want to use DT, for example
+setting qcom,ath11k-calibration-variant.
 
-BTW I will from now on require proper analysis also for additions to
-enum ath12k_dev_flags.
-
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -21,6 +21,9 @@ unsigned int ath12k_debug_mask;
->  module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
->  MODULE_PARM_DESC(debug_mask, "Debugging mask");
->  
-> +static DEFINE_MUTEX(ath12k_hw_lock);
-> +static struct list_head ath12k_hw_groups = LIST_HEAD_INIT(ath12k_hw_groups);
-
-I can somehow understand/guess why this mutex is needed (even though
-there's no documentation) but the naming is not really clear as we
-already have struct ath12k_hw::hw_mutex.
-
-> +/* Holds info on the group of devices that are registered as a single wiphy */
-> +struct ath12k_hw_group {
-> +	struct list_head list;
-> +	u8 id;
-> +	u8 num_devices;
-> +	u8 num_probed;
-> +	struct ath12k_base *ab[ATH12K_MAX_SOCS];
-> +	/* To synchronize group create, assign, start, stop */
-> +	struct mutex mutex_lock;
-> +};
-
-But why we really need this mutex? And does it really justify the extra
-complexity it creates?
+This is not a blocker for me, just making sure that we are not breaking
+any existing setups.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
