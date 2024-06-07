@@ -4,64 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3E42C27C53
-	for <ath12k@archiver.kernel.org>; Fri,  7 Jun 2024 09:44:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C53AC27C53
+	for <ath12k@archiver.kernel.org>; Fri,  7 Jun 2024 09:53:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JcyM4J3i8eT5X37rRw9HSt3/1V0+wkACsp31JSdtjMI=; b=eVaaTTvm+zYTo8CLbGGUFbl6ad
-	Rf7FTmI0zEiYq0ckt1UrCSUZvkUJf9Uh/NC6PDYtEKKYpb9dxyYHIn0r4M/f+SxQVOAFz1sauAY+X
-	QMwo/+Zti6UeV2MnhD4nSt8b4uyQzMJDeXYLrUSo5zxgxWQN6IUrc/9OkcrWR+V0HMejR5ZikLi4z
-	QUJDt94mMaD0/Z744wZipekCK5I7ajIlhaqsG+BXqkkjzC69wW7kpEG/Giwf9bO8sK8Ag+5pwmE8k
-	ca6qd6oXmAIh2pM7NEVQ55PpXeRydBawuhLS+mmVQddgRix2UanrcAHvJLHi8uBXwHAPPb6IgItOT
-	mPDWJGSQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gtKIrhZDo3HUPfaEUxWbifFSV2AQTRnni/waVDEvR64=; b=PMYtNH5S6BL+uU9niNk4d32o8r
+	zuMeI5+kgXnSdEIX/PdF3M5TxgejnkcIBAWN+mRBn0QUDT6mGHDM4j2Wc/ugidJysr+ucWO0yr1o1
+	/KFtQys+slxSCr4S7enJO3KNAndyFq5vtzPvYywpUmd8m5OfEZwGkjj6cZlirQmjlJj7OElx3g46o
+	8KtzVE2o3qA0rtvw6Wp8wiVtQlAMnDuSlqhVc/BSnRXmUybhWNT2uclRcH98/RsVar+cjyes2a4s9
+	9JJ9xpNyUB7lqJYMKNUADOWUGpgNGLRE1u5JnRjOrKv1WvAXxqGLA2IdqUH+8A7Ygv7fVPEFRfHUS
+	6G5PdJSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFW8m-0000000DOFz-1Oow
+	id 1sFWHn-0000000DPLA-1R9B
 	for ath12k@archiver.kernel.org;
-	Fri, 07 Jun 2024 09:44:08 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Fri, 07 Jun 2024 09:53:27 +0000
+Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFW8j-0000000DOFZ-2ms6
+	id 1sFWHk-0000000DPKh-0cCP
 	for ath12k@lists.infradead.org;
-	Fri, 07 Jun 2024 09:44:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=JcyM4J3i8eT5X37rRw9HSt3/1V0+wkACsp31JSdtjMI=;
-	t=1717753445; x=1718963045; b=qJWUHnOh6rwJHC4P4OcGETcYQ/U7Bo4VokcSfmKcgAi4Z3v
-	HenAj0QntZ2sIxm1RYBzSplXbMqahNnc9k2cspfUs1OPC1sEhr8o6yx4HmmQM4EGMdfwmipQHWIZo
-	q7MZ1vSKv4kPxlZaZx0l2OdduyF1ONPpb4qFLs7dWcOBhz5lJAcukPnq2S19i4YRr9P3+RNUgg+gY
-	8ftduZjNvhFchqJHA09lcRL36AUBsMSbLnmHta2MrYjEFrOySN2Nr2dZauDPlRwtNNbhui5PA9w0G
-	yFJpGXfjL9GDLiB2BR8K8I4WY1ys6E8XaZFCAbbYbCzZussy0C4SiY0jXXn60mBA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1sFW8e-00000000swZ-3Eyx;
-	Fri, 07 Jun 2024 11:44:00 +0200
-Message-ID: <a1cff51f789c21b2b307c58ee4d743a62874cec6.camel@sipsolutions.net>
+	Fri, 07 Jun 2024 09:53:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=gtKIrhZDo3HUPfaEUxWbifFSV2AQTRnni/waVDEvR64=; b=LV8w1Sub1LSmVc2LdCzHaGGRHJ
+	GiuDO2J8SQxa+c33Gs8a+og9Wz/fNhtAJVOH8YBAjOXuCebvaOwuA9cEL9/LoJWPFUDY82VLnBeVY
+	Znpy7r04g3qC62czXbjOL0faJTNK/b6uoLBCjId7zayv3Gq2cOnvHHNFF4L7Z2oPHipY=;
+Received: from p4ff13226.dip0.t-ipconnect.de ([79.241.50.38] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1sFWHb-008rRA-2Y;
+	Fri, 07 Jun 2024 11:53:15 +0200
+Message-ID: <c5abf1ae-bdda-42b2-95c0-9b1c39659bbd@nbd.name>
+Date: Fri, 7 Jun 2024 11:53:15 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [RFC v3 8/8] wifi: mac80211: add wiphy radio assignment and
  validation
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Felix Fietkau <nbd@nbd.name>, linux-wireless@vger.kernel.org
-Cc: quic_adisi@quicinc.com, quic_periyasa@quicinc.com, 
-	ath12k@lists.infradead.org
-Date: Fri, 07 Jun 2024 11:44:00 +0200
-In-Reply-To: <9b331a61b8d53284b044bc594cf9952c60164e5f.1717696995.git-series.nbd@nbd.name>
+To: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org
+Cc: quic_adisi@quicinc.com, quic_periyasa@quicinc.com,
+ ath12k@lists.infradead.org
 References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
-	 <9b331a61b8d53284b044bc594cf9952c60164e5f.1717696995.git-series.nbd@nbd.name>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.52.2 (3.52.2-1.fc40) 
-MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+ <9b331a61b8d53284b044bc594cf9952c60164e5f.1717696995.git-series.nbd@nbd.name>
+ <a1cff51f789c21b2b307c58ee4d743a62874cec6.camel@sipsolutions.net>
+From: Felix Fietkau <nbd@nbd.name>
+Content-Language: en-US
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <a1cff51f789c21b2b307c58ee4d743a62874cec6.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240607_024405_727566_FB0CEEEF 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20240607_025324_288051_525809EF 
+X-CRM114-Status: GOOD (  19.91  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,83 +100,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2024-06-06 at 20:07 +0200, Felix Fietkau wrote:
->=20
-> +static bool
-> +ieee80211_radio_freq_match(const struct wiphy_radio *radio,
-> +			   const struct ieee80211_chan_req *chanreq)
-> +{
-> +	const struct wiphy_radio_freq_range *r;
-> +	u32 freq;
-> +	int i;
-> +
-> +	freq =3D ieee80211_channel_to_khz(chanreq->oper.chan);
-> +	for (i =3D 0; i < radio->n_freq_range; i++) {
-> +		r =3D &radio->freq_range[i];
-> +		if (freq >=3D r->start_freq && freq <=3D r->end_freq)
-> +			return true;
+On 07.06.24 11:44, Johannes Berg wrote:
+> On Thu, 2024-06-06 at 20:07 +0200, Felix Fietkau wrote:
+>> 
+>> +static bool
+>> +ieee80211_radio_freq_match(const struct wiphy_radio *radio,
+>> +			   const struct ieee80211_chan_req *chanreq)
+>> +{
+>> +	const struct wiphy_radio_freq_range *r;
+>> +	u32 freq;
+>> +	int i;
+>> +
+>> +	freq = ieee80211_channel_to_khz(chanreq->oper.chan);
+>> +	for (i = 0; i < radio->n_freq_range; i++) {
+>> +		r = &radio->freq_range[i];
+>> +		if (freq >= r->start_freq && freq <= r->end_freq)
+>> +			return true;
+> 
+> IMHO should be inclusive only on one side of the range. Can always make
+> it work since channels are at least a few MHz apart, but the purist in
+> me says it's easier to grok if the end is not inclusive :)
 
-IMHO should be inclusive only on one side of the range. Can always make
-it work since channels are at least a few MHz apart, but the purist in
-me says it's easier to grok if the end is not inclusive :)
+Sure, no problem.
 
-Maybe this should be a cfg80211 helper like
+> Maybe this should be a cfg80211 helper like
+> 
+> struct wiphy_radio *wiphy_get_radio(struct wiphy *wiphy, ... *chandef);
 
-struct wiphy_radio *wiphy_get_radio(struct wiphy *wiphy, ... *chandef);
+I didn't add such a helper, in case we get hardware where multiple 
+radios support the same band. That's why ieee80211_find_available_radio 
+loops over all radios until it finds one that matches both the freq 
+range and the ifcomb constraints.
 
-which could also check that the _whole_ chandef fits (though that should
-probably also be handled elsewhere, like chandef_valid), and you can use
-it to get the radio pointer and then check for =3D=3D below.
+> which could also check that the _whole_ chandef fits (though that should
+> probably also be handled elsewhere, like chandef_valid), and you can use
+> it to get the radio pointer and then check for == below.
+> 
+> The point would be to have a single place with this kind of range logic.
+> This is only going to get done by mac80211 now, but it'd really be
+> awkward if some other driver had some other logic later.
 
-The point would be to have a single place with this kind of range logic.
-This is only going to get done by mac80211 now, but it'd really be
-awkward if some other driver had some other logic later.
+I will move a variation of the freq range match helper to cfg80211.
 
->  	if (!curr_ctx || (curr_ctx->replace_state =3D=3D
->  			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
-> @@ -1096,6 +1117,12 @@ ieee80211_replace_chanctx(struct ieee80211_local *=
-local,
->  			if (!list_empty(&ctx->reserved_links))
->  				continue;
-> =20
-> +			if (ctx->conf.radio_idx >=3D 0) {
-> +					radio =3D &wiphy->radio[ctx->conf.radio_idx];
-> +					if (!ieee80211_radio_freq_match(radio, chanreq))
-> +							continue;
-> +			}
+>>  	if (!curr_ctx || (curr_ctx->replace_state ==
+>>  			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
+>> @@ -1096,6 +1117,12 @@ ieee80211_replace_chanctx(struct ieee80211_local *local,
+>>  			if (!list_empty(&ctx->reserved_links))
+>>  				continue;
+>>  
+>> +			if (ctx->conf.radio_idx >= 0) {
+>> +					radio = &wiphy->radio[ctx->conf.radio_idx];
+>> +					if (!ieee80211_radio_freq_match(radio, chanreq))
+>> +							continue;
+>> +			}
+> 
+> something happened to indentation here :)
 
-something happened to indentation here :)
+Will fix :)
 
-> +static bool
-> +ieee80211_find_available_radio(struct ieee80211_local *local,
-> +			       const struct ieee80211_chan_req *chanreq,
-> +			       int *radio_idx)
-> +{
-> +	struct wiphy *wiphy =3D local->hw.wiphy;
-> +	const struct wiphy_radio *radio;
-> +	int i;
-> +
-> +	*radio_idx =3D -1;
-> +	if (!wiphy->n_radio)
-> +		return true;
-> +
-> +	for (i =3D 0; i < wiphy->n_radio; i++) {
-> +		radio =3D &wiphy->radio[i];
-> +		if (!ieee80211_radio_freq_match(radio, chanreq))
-> +			continue;
-> +
-> +		if (!ieee80211_can_create_new_chanctx(local, i))
-> +			continue;
-> +
-> +		*radio_idx =3D i;
-> +		return true;
-> +	}
-> +
-> +	return false;
-> +}
+>> +static bool
+>> +ieee80211_find_available_radio(struct ieee80211_local *local,
+>> +			       const struct ieee80211_chan_req *chanreq,
+>> +			       int *radio_idx)
+>> +{
+>> +	struct wiphy *wiphy = local->hw.wiphy;
+>> +	const struct wiphy_radio *radio;
+>> +	int i;
+>> +
+>> +	*radio_idx = -1;
+>> +	if (!wiphy->n_radio)
+>> +		return true;
+>> +
+>> +	for (i = 0; i < wiphy->n_radio; i++) {
+>> +		radio = &wiphy->radio[i];
+>> +		if (!ieee80211_radio_freq_match(radio, chanreq))
+>> +			continue;
+>> +
+>> +		if (!ieee80211_can_create_new_chanctx(local, i))
+>> +			continue;
+>> +
+>> +		*radio_idx = i;
+>> +		return true;
+>> +	}
+>> +
+>> +	return false;
+>> +}
+> 
+> which would also get used here to find the radio first, though would
+> have to differentiate n_radio still, of course.
 
-which would also get used here to find the radio first, though would
-have to differentiate n_radio still, of course.
+See above
 
-johannes
+- Felix
+
+
 
