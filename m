@@ -4,60 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76DA4C27C55
-	for <ath12k@archiver.kernel.org>; Mon, 10 Jun 2024 14:53:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD190C27C5E
+	for <ath12k@archiver.kernel.org>; Mon, 10 Jun 2024 15:31:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mNp/NfNKrIJICiOCDcHl1fz9Hf5r9KdRBRV+A71ISMM=; b=HQiBJDVdVjQRL7RHbQjmxlE/FB
-	iGAuv6qRdyNFqE0MhNeYRYIP3Vm2t8Jn8TOy2Ze5GZG+eEbBy/9Cg1jvlehsQtcxiYqpyOtl3DXQh
-	bcKYOl8ulq74eQEKB4LjOA+ZB6LEeWZLt4m4mGbatZs/oeCZy07Mf97VoEBPrAxHhyLsS1cos7RgS
-	CHD/gKc4m17kY4TRUuUauv04yU+PamItqawGF+ukvm1jYaQfG++sQoSX3+Dacl/Ct95x3GbQxNqEN
-	UEy2tC/T/6QwgmCbV36IgPfnFu2lHbJxCyTZjiJ+mljA2ZPHiAWGi2GPu9E2zrtxgnt0nimWQ40St
-	5W22DfQQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=zqNSpOGPtweJMOZM82XmSdeqHOnuvDexS4PJsuoyWVA=; b=AQq/Egm/D9eQLNPHSlyz/oBzUT
+	yNt0yysenLTw5Fm+8OTDpMoO3tDzj+A03is+ax1KnnuxW+rO0S0g7aO/NFG81ULYV/RhUphuW7nC0
+	0S/2UtUr8AE+In83TU1rciYULc3iBwbuzqTor8Hlkr7UONH/uZwpq3M2HBcS8xlu4mC0zQveNOpO1
+	UgC/ZszSqzN0+LG29y9+ZV7grYukrW8+jYueWnrY1tTNS1eG53axDMcqmS1rJYx6oi3l0I4EH0lu+
+	ig2eJrE26ZBhvoU6IiR0iGP8PBNjEdWz9F+wTeQpNa6IbucBuZ4NKunlIh42191Bv9dKo12VNpC6t
+	WPRgXv9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sGgOQ-00000005WI5-0sDM
+	id 1sGgzQ-00000005dnC-1KoL
 	for ath12k@archiver.kernel.org;
-	Mon, 10 Jun 2024 14:53:06 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Mon, 10 Jun 2024 15:31:20 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sGgOM-00000005WH5-2nhI
+	id 1sGgzN-00000005dmT-1HJ3
 	for ath12k@lists.infradead.org;
-	Mon, 10 Jun 2024 14:53:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id F244B60AEB;
-	Mon, 10 Jun 2024 14:53:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD198C2BBFC;
-	Mon, 10 Jun 2024 14:53:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718031181;
-	bh=669b0rf7NSQJN24pCR2kgrEbrq2y/L2bXeys+xzqceo=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=ATVlmlFUbxSt73KqWf8Qlo4N1ec2IINHyia28FhGwk2fp9dcAuDKeOcqCrSKVIgvN
-	 3rNLRWFd9n0BhJ5YcieIhjKt/OIxiUg9uJkZEBPD3hCFmCNl/LFGIIi4+Chb+Y1F2a
-	 gOxcTL7H3+RPuC8CTZ0CEE9LGpbHQ2qU8xb/KJliYv/AYZCbRF9Mma1n1j/O1RrZbS
-	 OS6vxAEG6cgoISc1RDj2GS5kxxHsewf/ZTw2BDNQhtnHenZ9QqJyAzjT5QZV7Jhy+M
-	 ECDVaSSMMJ7PWUiiwbPm17yDJGcXNcWRSN+Rt/bWfagTNYriKM3Vt9FZksARZ4mwU5
-	 0nc3j04reVbyg==
-From: Kalle Valo <kvalo@kernel.org>
-To: Zachary Smith <dr.z.smith@gmail.com>
-Cc: ath12k@lists.infradead.org, quic_pradeepc@quicinc.com
-Subject: Re: fail to connect to AP mode in 6.10 on WCN785x (NCM865)
-References: <CAM=znoFPcXrn5GhDmDmo50Syic3-hXpWvD+vkv8KX5o_ZTo8kQ@mail.gmail.com>
-Date: Mon, 10 Jun 2024 17:52:59 +0300
-In-Reply-To: <CAM=znoFPcXrn5GhDmDmo50Syic3-hXpWvD+vkv8KX5o_ZTo8kQ@mail.gmail.com>
-	(Zachary Smith's message of "Sat, 8 Jun 2024 17:37:21 -0700")
-Message-ID: <874ja0q27o.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Mon, 10 Jun 2024 15:31:18 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45AD5cjO027696;
+	Mon, 10 Jun 2024 15:31:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	zqNSpOGPtweJMOZM82XmSdeqHOnuvDexS4PJsuoyWVA=; b=NVObN8tZpU8m9mAk
+	ghGolyKa2zvDlMBBrhwgBAFezJ0XbeemiZWnFo3GQkLamiH/iuxnvrmCsRrVy0Vq
+	i17oxtUlOU3/vLoV+cr9nO/QwqIEtVuY1D3KfeDfUg8pHv7lGcgTumg7AQ22PRtb
+	KaY1BXIHPCxfcjLB8YTdn+YJUUOE65z/8XAJizV3+OrxuLqyGU9tuVkQaGttvHut
+	k9LHW24ji59S/KeNE30+/1nDG3x6jc0XYPoDAn5WH9FIcdOPpfWUVXYrouEYK1tE
+	+2wfByJFuG7loTqyDoegWAuac9+TF5Jc1+ToWjcgX+NW0DdRYPLrXx/3S+QASCn2
+	+fcbDQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ymfh34gub-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Jun 2024 15:31:14 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45AFVDV4032086
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Jun 2024 15:31:13 GMT
+Received: from [10.48.242.196] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 10 Jun
+ 2024 08:31:12 -0700
+Message-ID: <30d1fa5a-2cc4-4ecd-880e-b7177a8eed1b@quicinc.com>
+Date: Mon, 10 Jun 2024 08:31:05 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: modify remain on channel for single wiphy
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>,
+        Rameshkumar Sundaram
+	<quic_ramess@quicinc.com>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240528082739.1226758-1-quic_ramess@quicinc.com>
+ <878qzcq4uc.fsf@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <878qzcq4uc.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Sdht1dIbYyOe5nIKzP8u35SmpOYSL3av
+X-Proofpoint-GUID: Sdht1dIbYyOe5nIKzP8u35SmpOYSL3av
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-06-10_02,2024-06-10_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 lowpriorityscore=0 spamscore=0 malwarescore=0
+ suspectscore=0 clxscore=1015 bulkscore=0 phishscore=0 adultscore=0
+ mlxscore=0 mlxlogscore=524 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2406100118
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240610_075302_799072_93562187 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20240610_083117_522965_09E7EA25 
+X-CRM114-Status: UNSURE (   5.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,70 +102,11 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Zachary Smith <dr.z.smith@gmail.com> writes:
+On 6/10/2024 6:56 AM, Kalle Valo wrote:
+> The pending commit here:
+> 
+> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=9b4ec32e921b34bd7a03d39cc0a75cba7e85dc02
+> 
 
-> $ uname -a
-> Linux athtest 6.10.0-rc1-wt-ath+ #1 SMP PREEMPT_DYNAMIC Fri Jun  7
-> 14:03:56 PDT 2024 x86_64 x86_64 x86_64 GNU/Linux
-
-Technically this is not v6.10. This is ath.git master-pending branch, a
-development branch with test patches, and they _possibly_ go to v6.11.
-
-I got first worried that we have yet another regression in v6.10 :)
-
-> [84599.322219] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
-> [84599.896011] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4
-> board_id 0xff soc_id 0x40170200
-> [84599.896023] ath12k_pci 0000:01:00.0: fw_version 0x100301e1
-> fw_build_timestamp 2023-12-06 04:05 fw_build_id
-> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->
->
-> $ git log --oneline | head -n 5
-> 6f446d0a1af0 Merge branch 'pending' into master-pending
-> cf899366dcc9 wifi: ath11k: use 'time_left' variable with wait_event_timeout()
-> 9e0e90f4ca68 wifi: ath11k: Add firmware coredump collection support
-> c0889b096794 wifi: ath11k: fix RCU documentation in ath11k_mac_op_ipv6_changed()
-> b14f951b2de7 wifi: ath12k: fix ACPI warning when resume
->
-> note this is 2.4ghz
-> $ cat hostapd.conf
-> beacon_int=100
-> ssid=testap5
-> interface=wlp1s0
-> driver=nl80211
-> channel=6
-> ctrl_interface=/tmp/hostapd_ctrl
-> ctrl_interface_group=0
-> ignore_broadcast_ssid=0
-> ap_isolate=0
-> hw_mode=g
-> ieee80211w=0
-> logger_stdout_level=0
->
->
-> $ sudo /usr/sbin/hostapd hostapd.conf
-> wlp1s0: interface state UNINITIALIZED->ENABLED
-> wlp1s0: AP-ENABLED
->
-> <is waiting for connection, then after client connects:>
->
-> wlp1s0: STA 0e:db:91:6f:7f:d7 IEEE 802.11: authentication OK (open system)
-> wlp1s0: STA 0e:db:91:6f:7f:d7 MLME:
-> MLME-AUTHENTICATE.indication(0e:db:91:6f:7f:d7, OPEN_SYSTEM)
-> wlp1s0: STA 0e:db:91:6f:7f:d7 MLME: MLME-DELETEKEYS.request(0e:db:91:6f:7f:d7)
-> wlp1s0: STA 0e:db:91:6f:7f:d7 IEEE 802.11: authenticated
-> wlp1s0: STA 0e:db:91:6f:7f:d7 IEEE 802.11: association OK (aid 1)
-> wlp1s0: STA 0e:db:91:6f:7f:d7 IEEE 802.11: Could not set STA to kernel driver
->
-> Bisecting I found the problem in this commit:
-> 3d887557477 wifi: ath12k: refactor SMPS configuration
-
-Pradeep (CCed) is working on a fix and hopefully he sends it soon.
-Thanks for the report, please keep them coming.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+LGTM
 
