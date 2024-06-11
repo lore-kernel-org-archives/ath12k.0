@@ -4,89 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 413FAC27C78
-	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 20:12:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10402C41513
+	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 22:54:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YA66go1OLv9lBRcUBZWz6pC4YMCi3WcWl5KdoPejptw=; b=4liRfZNEUXmBdz7osHgjneRhC1
-	2QlHOuJv3kgCAPJx4WT6APL4uNYIMiGUyC8s6s5OT9K4SOww/43UwT3K8Tly1v5/d+kdO2xR8isJD
-	uShym7w64Rie8ptb8sr71mvbslfYkorkkHV8pokG7BoHoqq6xJ5ZhV6ANqBUw+9J+3CZeXNayVeCJ
-	Eltos0NzRzMiBYMtb4UJEYryBzjeg6ODWhBrshJIgdVQhKEBgl0gpz6LrFhIiI3Zkt2Z4JarlDIea
-	I9dXpoPT7jSQqxDC83SbMHuISQmze5TOC/AruAWy5RPKNx1tghD4AKI0qOjTftK/M1WSvbfI5Rb9d
-	qWvWlFZA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=j34SkS9dEnFHK61FL+WtnyZs9IIAUympxqFPYU0f4Sc=; b=BsnKDC6XgPgl1+
+	NIs5kBhT6EydWoxs6vEgxbD5hCPALt6Z29KJxORQWUnqBaElHtOaC5JgxvJXDJlkGxo7bAiVpG7Q/
+	QJQrce0pyeqCccpeyqE0v7xMLMcFGf7cB6AoaRChJmwiAGe5Gd2SR9VilEvcoreo40AQmpZ/k40e+
+	GTFc57r4Voh63F05dM1gJU5sgG7HjXlUl2rAeycqZrnTFWEtWeXL25q63ERP9heuwF+ojz9Mg8Qm1
+	MT8MD9b+j2m4OSeZ9f73Y1UW8pMN4SaTK5ucrkJl8GZoS4WsGr6jZTrUHKx89TCYJKMJXbQnF4n+r
+	UqVC6pGZdJ18up0jf6Wg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH7r4-0000000A8Ve-3X0y
+	id 1sHANv-0000000ARoT-3DDG
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Jun 2024 20:12:30 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 11 Jun 2024 22:54:35 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH7r1-0000000A8UG-039u
-	for ath12k@lists.infradead.org;
-	Tue, 11 Jun 2024 20:12:29 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45BF2UqQ006245;
-	Tue, 11 Jun 2024 20:12:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	YA66go1OLv9lBRcUBZWz6pC4YMCi3WcWl5KdoPejptw=; b=d30kiRpB8DS8uuAx
-	CGsf8GGsnTciSqltIHG5S9CSaPmF65/jVD7m3eVCzu6uIZPrSCuQX5/3YKduhrGA
-	4oC9vUfAUkvg60u//2R4jkTVQJb/dEYq8+MM/Oh4gOGPR8T1XqRo/7NULs1QhA8A
-	rFs0/llYiH0ftr5Q5/jwssCTCw+OxRN888fqyYqtbBk0IRtK2RmhW4xFaMS+hEKf
-	xrY5ov/NXIVdUrUZWYaCptqQA7UHHWxUQHOFJGkqfvTypTVp0D6upPpJqlpif2KQ
-	7lNVSj6RrgK1PSTapQp1vmpcQ8xxYCwQo+HDAgPxu4ubyIMVMrr/s/GAa/Rd2cQp
-	bFOkRw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ymcnmyadf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jun 2024 20:12:26 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45BKCPT3017682
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jun 2024 20:12:25 GMT
-Received: from [10.48.243.20] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 11 Jun
- 2024 13:12:24 -0700
-Message-ID: <8733cbe4-19cf-47d0-b95a-914f999117f5@quicinc.com>
-Date: Tue, 11 Jun 2024 13:12:24 -0700
+	id 1sHANs-0000000ARnr-05iw;
+	Tue, 11 Jun 2024 22:54:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3CEA66121F;
+	Tue, 11 Jun 2024 22:54:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6207EC3277B;
+	Tue, 11 Jun 2024 22:54:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718146470;
+	bh=Qk1xtp+Y0CsC+cGSX2bvsS9KRtEFezREYHk2nrDR1VA=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=ghY50bs0RlmiaNDSZwjEm0OI3iVK0UG5GkXzkYk8Z2fu2SwC23ID3ccJ7KaxqUc7Z
+	 J3MCwzZZrcfHEsyzWIanidlCVT1T7Yu6Ur/Uhrls66GtuXhEdWkHV63z0Ho8HXRJo5
+	 ZhyK1sdLS17ioINSFHQnMZAjfnS5XKlxRUgEsAfGzOpaa+k2Za4sPHbYho0cpJBNWc
+	 LbWRItPHXJHKW0fcccqgY/fcov1umU2R9sNliNvFCHK1eFi+hholPLR0aTYcR9xETD
+	 oW0pnaqqFoYbZjge1UzN6manRXLNxrYbrtjRk851t0ENdwsZUdmcCp4nGCWVaiymqM
+	 kV4e15f3vqfdw==
+Date: Tue, 11 Jun 2024 17:54:28 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Balakrishna Godavarthi <quic_bgodavar@quicinc.com>,
+	Rocky Liao <quic_rjliao@quicinc.com>, Kalle Valo <kvalo@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Srini Kandagatla <srinivas.kandagatla@linaro.org>,
+	Elliot Berman <quic_eberman@quicinc.com>,
+	Caleb Connolly <caleb.connolly@linaro.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Alex Elder <elder@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+	Jeff Johnson <quic_jjohnson@quicinc.com>,
+	ath12k@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	kernel@quicinc.com,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Amit Pundir <amit.pundir@linaro.org>
+Subject: Re: [PATCH v8 00/17] power: sequencing: implement the subsystem and
+ add first users
+Message-ID: <20240611225428.GA1005695@bhelgaas>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] wifi: ath12k: fix uninitialize symbol error on
- ath12k_peer_assoc_h_he()
-Content-Language: en-US
-To: Aaradhana Sahu <quic_aarasahu@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240611031017.297927-1-quic_aarasahu@quicinc.com>
- <20240611031017.297927-3-quic_aarasahu@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240611031017.297927-3-quic_aarasahu@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: gJn_0yLTU8J3vGVd0Sd9JrDNHGAcEbqA
-X-Proofpoint-ORIG-GUID: gJn_0yLTU8J3vGVd0Sd9JrDNHGAcEbqA
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-11_09,2024-06-11_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 clxscore=1015 adultscore=0 phishscore=0 spamscore=0
- priorityscore=1501 malwarescore=0 mlxscore=0 mlxlogscore=999 bulkscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2406110137
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_131227_204442_DD76A8CE 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240611_155432_149235_53275446 
+X-CRM114-Status: GOOD (  14.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,26 +100,22 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/10/2024 8:10 PM, Aaradhana Sahu wrote:
-> Smatch throws following errors
+On Tue, May 28, 2024 at 09:03:08PM +0200, Bartosz Golaszewski wrote:
+> Note: I am resending this series in its entirety once more for
+> discussions and reviews. If there won't be any major objections, I'll
+> then start sending individual bits and pieces to appropriate trees.
 > 
-> drivers/net/wireless/ath/ath12k/mac.c:1922 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_80'.
-> drivers/net/wireless/ath/ath12k/mac.c:1922 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_160'.
-> drivers/net/wireless/ath/ath12k/mac.c:1924 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_80'.
-> 
-> In ath12k_peer_assoc_h_he() rx_mcs_80 and rx_mcs_160 variables
-> remain uninitialized in the following conditions:
-> 1. Whenever the value of mcs_80 become equal to
->    IEEE80211_HE_MCS_NOT_SUPPORTED then rx_mcs_80 remains uninitialized.
-> 2. Whenever phy capability is not supported 160 channel width and
->    value of mcs_160 become equal to IEEE80211_HE_MCS_NOT_SUPPORTED
->    then rx_mcs_160 remains uninitialized.
-> 
-> Initialize these variables during declaration.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Merging strategy: The DT binding and DTS changes are a no-brainer, they
+> can go through the wireless, regulator and arm-msm trees separately. The
+> bluetooth and PCI changes have a build-time dependency on the power
+> sequencing code. The bluetooth changes also have a run-time dependency on
+> the PCI pwrctl part. In order to get it into next I plan to pick up the
+> power sequencing code into my own tree and maintain it. I can then
+> provide an immutable tag for the BT and PCI trees to pull. I wouldn't
+> stress about the BT runtime dependency as it will be fixed once all
+> changes are in next.
 
+The PCI changes are very self-contained and any conflicts will be
+trivial, so rather than messing with an immutable tag, how about if I
+just ack them and you can include them in your tree directly?
 
