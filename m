@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E315BC27C65
-	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 22:55:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2343EC27C79
+	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 22:56:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=cYHTv+h+1UsSvEa4km5zLBd2NSwT44Y7Dxj9evrCJ/4=; b=kwkwD+VJKvLBsv
-	KIrZaWkC0gT3gCyPfsjKeyBgYuTZqqAVEoRIBJQejP6ZP6W6logvBJnVLUQDeVGyUPXzKpPXU7msP
-	HaBldPbV4psBZqvTBAtep3yZbMAHJu5sqot8xtMCDgbE+5JCEzYvhgnTb5fQXkwFgWi0u4gpfapPL
-	GYpyG12/x2/wv3gJj43ta3ZRb5chgyq2y1hMUCeFSzCqu9WOdqlVSvHyqQPwyLxdrUNpPuQu+JFwO
-	9uYFpoDpcLGIFCId9y0aLd7dN4nFUX+ZXCW80jCtvYFSCesbOUOCzKsi8ed0fLfq+m4wdjMAK/uzX
-	cOptuVC18YCr9yZOj36A==;
+	List-Owner; bh=WeWY5EYSyRTtVxqmHVyRh0DLGsJX6o+nhbwxLU4W1Ys=; b=i2t55X5Ao1AqWi
+	+dHEjs5DI4L26zExtD0i/Wr7XuYf53rVJolUP5kxmQEamug6NsV3L8ZnbrYyLiBKYQLp4JfrRueP2
+	ZFIWSboyo5NaS7YwcU07PLTMQdIKlte+2+fCRXcncpVFAJA9rEfhBju8lQVc4Qjzv5X4l0mRsEjTG
+	NfJBlzXtVOB4fca0dFyAUMtcbfei6e0H0gPyplYWi4qSQmrzNlqI+jmLgZc2cl4/xniTVM2irCVLO
+	9x1De7IZSclYec9Nbmgw6m0EVPMRzdF3JYiV0AtqICfGtyxxNeywPdqYprcWDtBcYOtrd04VN0oYj
+	XJZK85oK/iaEcVa4pXvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHAP6-0000000AS1Y-2GZk
+	id 1sHAPU-0000000AS8q-3QiT
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Jun 2024 22:55:48 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 11 Jun 2024 22:56:12 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHAP2-0000000ARzS-3NfM;
-	Tue, 11 Jun 2024 22:55:46 +0000
+	id 1sHAPR-0000000AS7T-0spw;
+	Tue, 11 Jun 2024 22:56:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D47ED60E88;
-	Tue, 11 Jun 2024 22:55:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A0C9C2BD10;
-	Tue, 11 Jun 2024 22:55:43 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id ADF41CE137D;
+	Tue, 11 Jun 2024 22:56:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B7F39C2BD10;
+	Tue, 11 Jun 2024 22:56:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718146543;
-	bh=tfmwzXhu9BMvZdNucjHAIFq8O+nZOSTOqKttExZG0P0=;
+	s=k20201202; t=1718146565;
+	bh=e+yEenAa0DBKBAH1JDI7Art8IiR8vko+Q5ejQxwgRgI=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=A7pxdhgDNwl0CRAVasMm9Q18XFML4ebWwMMtwSRB078ntHxIYEfNrp+4t38McKEym
-	 9Mbu/3WwIfhYbMrZlqu3YigWp9p6tLAcrQ8t8fNDVsrNom4keCoxM5P2uaoc3BisfH
-	 Tv1NvrM/CehSzwVFu7gHEYo1MtWv8/9ofoqWcwm7ZwZWCaMHSTgriGAA44d3oC9/l7
-	 xfGAWXlG8hZSKHlh+CZUcvtc3MgVBnyhPwXZyg9L3FuzoLkKbLX0T6yyh1Iyx8D2xA
-	 1r/7dxQE3RbzF2CaEURzoqsdakZBbpuAmP7pxyBtCIwFhtSV5lL1BUgyKr8wESuNwO
-	 493hSgD34nxaw==
-Date: Tue, 11 Jun 2024 17:55:41 -0500
+	b=OvG5hfJPF+ZFKDXc8gWwryQhBayku2+B8u+fC9uzzr7nfGli565gerUMIqyvQ8xhh
+	 D4McVRpS+rqeHTb+xEsXa+HUgAq8qWuH5JZ5NSjWP7kvetD0rpu0Eg7lwgZjjjabw6
+	 YMZ2z4sY4N3Cit6Po1fzGzJevdjLZcddYtqShxtwAvYzkFXaSqWQvdzP+omZjjDbV6
+	 Azwun9MqTlLj0iNAPVD8FT3Hyy/bzNe0znsk1fSHnNkJAPz/YqmS9BV+Rau6GhdoP8
+	 yqy9SCNAiPsSajUpCwQJgO23bSjU7ufbAu1nLTbf2Yx6jE7ZVJMqvjdJq9dKEFqxc/
+	 PCWkwc/rUH6BQ==
+Date: Tue, 11 Jun 2024 17:56:03 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Bartosz Golaszewski <brgl@bgdev.pl>
 Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
@@ -74,16 +74,16 @@ Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
 	linux-pci@vger.kernel.org,
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
 	kernel@quicinc.com, Amit Pundir <amit.pundir@linaro.org>
-Subject: Re: [PATCH v8 12/17] PCI: hold the rescan mutex when scanning for
- the first time
-Message-ID: <20240611225541.GA1005771@bhelgaas>
+Subject: Re: [PATCH v8 13/17] PCI/pwrctl: reuse the OF node for power
+ controlled devices
+Message-ID: <20240611225603.GA1005810@bhelgaas>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20240528-pwrseq-v8-12-d354d52b763c@linaro.org>
+In-Reply-To: <20240528-pwrseq-v8-13-d354d52b763c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_155544_917255_EFD0155E 
-X-CRM114-Status: GOOD (  14.88  )
+X-CRM114-CacheID: sfid-20240611_155609_637652_8DD19AFA 
+X-CRM114-Status: GOOD (  19.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,39 +98,74 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 28, 2024 at 09:03:20PM +0200, Bartosz Golaszewski wrote:
+On Tue, May 28, 2024 at 09:03:21PM +0200, Bartosz Golaszewski wrote:
 > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > 
-> With the introduction of PCI device power control drivers that will be
-> able to trigger the port rescan when probing, we need to hold the rescan
-> mutex during the initial pci_host_probe() too or the two could get in
-> each other's way.
+> With PCI power control we deal with two struct device objects bound to
+> two different drivers but consuming the same OF node. We must not bind
+> the pinctrl twice. To that end: before setting the OF node of the newly
+> instantiated PCI device, check if a platform device consuming the same
+> OF node doesn't already exist on the platform bus and - if so - mark the
+> PCI device as reusing the OF node.
 > 
 > Tested-by: Amit Pundir <amit.pundir@linaro.org>
 > Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-With s/hold the/Hold the/ in subject to match history,
+With s/reuse/Reuse/ in subject to match history,
 
 Acked-by: Bjorn Helgaas <bhelgaas@google.com>
 
+Would be good to get Rob's ack as well.
+
 > ---
->  drivers/pci/probe.c | 2 ++
->  1 file changed, 2 insertions(+)
+>  drivers/pci/of.c | 14 ++++++++++----
+>  1 file changed, 10 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-> index 8e696e547565..604fc96b1098 100644
-> --- a/drivers/pci/probe.c
-> +++ b/drivers/pci/probe.c
-> @@ -3072,7 +3072,9 @@ int pci_host_probe(struct pci_host_bridge *bridge)
->  	struct pci_bus *bus, *child;
->  	int ret;
+> diff --git a/drivers/pci/of.c b/drivers/pci/of.c
+> index 51e3dd0ea5ab..b908fe1ae951 100644
+> --- a/drivers/pci/of.c
+> +++ b/drivers/pci/of.c
+> @@ -6,6 +6,7 @@
+>   */
+>  #define pr_fmt(fmt)	"PCI: OF: " fmt
 >  
-> +	pci_lock_rescan_remove();
->  	ret = pci_scan_root_bus_bridge(bridge);
-> +	pci_unlock_rescan_remove();
->  	if (ret < 0) {
->  		dev_err(bridge->dev.parent, "Scanning root bridge failed");
->  		return ret;
+> +#include <linux/cleanup.h>
+>  #include <linux/irqdomain.h>
+>  #include <linux/kernel.h>
+>  #include <linux/pci.h>
+> @@ -13,6 +14,7 @@
+>  #include <linux/of_irq.h>
+>  #include <linux/of_address.h>
+>  #include <linux/of_pci.h>
+> +#include <linux/platform_device.h>
+>  #include "pci.h"
+>  
+>  #ifdef CONFIG_PCI
+> @@ -25,16 +27,20 @@
+>   */
+>  int pci_set_of_node(struct pci_dev *dev)
+>  {
+> -	struct device_node *node;
+> -
+>  	if (!dev->bus->dev.of_node)
+>  		return 0;
+>  
+> -	node = of_pci_find_child_device(dev->bus->dev.of_node, dev->devfn);
+> +	struct device_node *node __free(device_node) =
+> +		of_pci_find_child_device(dev->bus->dev.of_node, dev->devfn);
+>  	if (!node)
+>  		return 0;
+>  
+> -	device_set_node(&dev->dev, of_fwnode_handle(node));
+> +	struct device *pdev __free(put_device) =
+> +		bus_find_device_by_of_node(&platform_bus_type, node);
+> +	if (pdev)
+> +		dev->bus->dev.of_node_reused = true;
+> +
+> +	device_set_node(&dev->dev, of_fwnode_handle(no_free_ptr(node)));
+>  	return 0;
+>  }
+>  
 > 
 > -- 
 > 2.43.0
