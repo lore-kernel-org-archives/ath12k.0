@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A961DC27C79
-	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 22:56:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00982C27C65
+	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 22:56:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	bh=EBqNYT9tMpq8aw05jSRDe2me24mEsp4wLcEycUytSPA=; b=MAvKuu4TYc8GLsiM9L0yXTbV2o
-	BAXv4+OO3dWJZBzdhaI/hUgHWepNZj+Djea+BKLFPzj17hFrVrSjKUmKXNV5tcOzZv1hPVa4BpezG
-	1lkC2OtoEQMAoyhh0Hcjtj0UFoHas+rRNLzUYNwdEhlanY00qfMDlvkgisqE9TYdEPXXuIDM1r/2v
-	75tYnYk1POq64DPTgoM8a++f+pcvYgAxEU9Tl/M9gPKdbRvIcP0ZIrhXQIp7kkWhRLDi9GL1nZ5NM
-	eKcuQVT7ebqqHFSVN4ifB3yg5bgTfh1BHGpUiwpaw2d1cUGJ2HBqNvM/1K2YCj3V2NgkwpE2q63uG
-	xkuhKGQQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=ZEJDCFXv1cymcJZtVIyNI5noKiXpt9lnCZGSqurXGtQ=; b=v7Xw0j7fQ0i/DC
+	aRh7MXswIjBUItaad+vyOnEMcO5dCzphWADZNCH/XZA8PHmoVWsqni30Seo9mJ6Huleyw01ruWvhP
+	yJVIUq7an8iNb6rxxBR6ynkrTBL9be3aQsAjTYbA5vXW5gMuI8I+zMw8IarN5yItWuDwRA9HLh/zk
+	ZR0KedqPZszULYDIe7fcMvtYpWevdiKkRwm/nl4gS6MNGzaA+10OM/yySJ3+S9aippXGjDR3wq82N
+	6HUKjiPmhL1lc7bOzMkR+SSq3Fu648uo7c1AC0n1lPGLHx5BCJdmQahVVuPYfFr0wrX8H866R4ZlO
+	Bww3EKeZbSZ/qQUxS1rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHAQ1-0000000ASJf-1Qhs
+	id 1sHAQ5-0000000ASMP-2bGt
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Jun 2024 22:56:45 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Tue, 11 Jun 2024 22:56:49 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHAPx-0000000ASIB-3wDe;
-	Tue, 11 Jun 2024 22:56:43 +0000
+	id 1sHAQ1-0000000ASJe-3mqG;
+	Tue, 11 Jun 2024 22:56:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id CFEDCCE137D;
-	Tue, 11 Jun 2024 22:56:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7A8FC3277B;
-	Tue, 11 Jun 2024 22:56:38 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 037A9611E6;
+	Tue, 11 Jun 2024 22:56:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61873C2BD10;
+	Tue, 11 Jun 2024 22:56:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718146599;
-	bh=fTTmy82roNHgpHAIircnr4I4sFYZNjPs3kLCDpI1ztE=;
+	s=k20201202; t=1718146604;
+	bh=4jBM6mXHjYlJoMIZWueS89ZlNO+AUiWEJRKWxa04gKk=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=oEPS95VptOeiB1acpH1GE+ebcl2vKNI2aPXlHGGBxogzerUzv4LasE1Sssg9UskoH
-	 Qv9gl1YoLzDIQwKXyBI5DlmQ+dpttpicGgKUvOEGB3T/lEHAqSeIu1QXPqA8PxIUW9
-	 QzvHTaFml4rhw/Tlq/vwsedAxaGIJ1bU3YFamBZOXnU2FQkuSIQeGvt9dT4nTT2PWF
-	 lm3I2QJF5yF1JzzgpPPF7lLZc7hdrmIKc80kYyol9cZn1s350kzC5uXwQeDFy1Y08M
-	 yyH3EtpAkyLHcpCwIwGFD928yyBIQ1VNrIW2n5jc0Bux851JF/QN8iqD6vXw4y1VIG
-	 ihNf06lncAslw==
-Date: Tue, 11 Jun 2024 17:56:37 -0500
+	b=jC/lBgZD6SkKl7787/66Mot1OAxtctUITyf4UXOQ2JVSa8o2lpp+iWq8ogS7UENCo
+	 yqzTumDF8tEtMA5L412KbnAWTlEICUYUaB6WQxi/iZq3KK051i9I3hdCqNPejgIY4h
+	 Ke9p24cUfRX+tKJ4QPj74HGoZDGWa82+//qPfAT/wSsLNiBhD00oQF6em+0sTCo9Ey
+	 T00111RDYHGIANzLOKvQl9jG1tiRKNY+avJse/GePnxuyh/FbgNapR/wc4e5yK42i4
+	 A9QSPKjwn8ZsN2uOR8Yxm/hvF/Rk0wTUKHu9VUqckeSElV62zzJn/RrNGm/MKg0ARp
+	 fgy3tmBrEJCJw==
+Date: Tue, 11 Jun 2024 17:56:43 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Bartosz Golaszewski <brgl@bgdev.pl>
 Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
@@ -74,16 +74,16 @@ Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
 	linux-pci@vger.kernel.org,
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
 	kernel@quicinc.com, Amit Pundir <amit.pundir@linaro.org>
-Subject: Re: [PATCH v8 15/17] PCI/pwrctl: add PCI power control core code
-Message-ID: <20240611225637.GA1005953@bhelgaas>
+Subject: Re: [PATCH v8 16/17] PCI/pwrctl: add a PCI power control driver for
+ power sequenced devices
+Message-ID: <20240611225643.GA1005995@bhelgaas>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <CAMRc=McKD=ZhGzRUeLezT3oKfreDWQeKBvuousf8zsQjJb1QMA@mail.gmail.com>
+In-Reply-To: <20240528-pwrseq-v8-16-d354d52b763c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_155642_367827_5E9A9FA0 
-X-CRM114-Status: GOOD (  18.10  )
+X-CRM114-CacheID: sfid-20240611_155646_101613_50C6F0B2 
+X-CRM114-Status: GOOD (  27.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,33 +98,151 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 05, 2024 at 08:05:06PM +0200, Bartosz Golaszewski wrote:
-> On Wed, Jun 5, 2024 at 7:58 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> >
-> > On Tue, May 28, 2024 at 09:03:23PM +0200, Bartosz Golaszewski wrote:
-> > > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> > >
-> > > Some PCI devices must be powered-on before they can be detected on the
-> > > bus. Introduce a simple framework reusing the existing PCI OF
-> > > infrastructure.
-> > >
-> > > The way this works is: a DT node representing a PCI device connected to
-> > > the port can be matched against its power control platform driver. If
-> > > the match succeeds, the driver is responsible for powering-up the device
-> > > and calling pcie_pwrctl_device_set_ready() which will trigger a PCI bus
-> >
-> > s/pcie_pwrctl_device_set_ready/pci_pwrctl_device_set_ready/
-> >
+On Tue, May 28, 2024 at 09:03:24PM +0200, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 > 
-> Ah that's a leftover from when it was PCIe specific. Thanks.
+> Add a PCI power control driver that's capable of correctly powering up
+> devices using the power sequencing subsystem. The first users of this
+> driver are the ath11k module on QCA6390 and ath12k on WCN7850.
+> 
+> Tested-by: Amit Pundir <amit.pundir@linaro.org>
+> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-With that typo fixed and s/add PCI/Add/ in subject,
+With s/add/Add/ in subject,
 
 Acked-by: Bjorn Helgaas <bhelgaas@google.com>
 
-> > > rescan as well as subscribe to PCI bus notifications.
-> > >
-> > > When the device is detected and created, we'll make it consume the same
-> > > DT node that the platform device did. When the device is bound, we'll
-> > > create a device link between it and the parent power control device.
+> ---
+>  drivers/pci/pwrctl/Kconfig             |  9 ++++
+>  drivers/pci/pwrctl/Makefile            |  2 +
+>  drivers/pci/pwrctl/pci-pwrctl-pwrseq.c | 89 ++++++++++++++++++++++++++++++++++
+>  3 files changed, 100 insertions(+)
+> 
+> diff --git a/drivers/pci/pwrctl/Kconfig b/drivers/pci/pwrctl/Kconfig
+> index 96195395af69..f1b824955d4b 100644
+> --- a/drivers/pci/pwrctl/Kconfig
+> +++ b/drivers/pci/pwrctl/Kconfig
+> @@ -5,4 +5,13 @@ menu "PCI Power control drivers"
+>  config PCI_PWRCTL
+>  	tristate
+>  
+> +config PCI_PWRCTL_PWRSEQ
+> +	tristate "PCI Power Control driver using the Power Sequencing subsystem"
+> +	select POWER_SEQUENCING
+> +	select PCI_PWRCTL
+> +	default m if ((ATH11K_PCI || ATH12K) && ARCH_QCOM)
+> +	help
+> +	  Enable support for the PCI power control driver for device
+> +	  drivers using the Power Sequencing subsystem.
+> +
+>  endmenu
+> diff --git a/drivers/pci/pwrctl/Makefile b/drivers/pci/pwrctl/Makefile
+> index 52ae0640ef7b..d308aae4800c 100644
+> --- a/drivers/pci/pwrctl/Makefile
+> +++ b/drivers/pci/pwrctl/Makefile
+> @@ -2,3 +2,5 @@
+>  
+>  obj-$(CONFIG_PCI_PWRCTL)		+= pci-pwrctl-core.o
+>  pci-pwrctl-core-y			:= core.o
+> +
+> +obj-$(CONFIG_PCI_PWRCTL_PWRSEQ)		+= pci-pwrctl-pwrseq.o
+> diff --git a/drivers/pci/pwrctl/pci-pwrctl-pwrseq.c b/drivers/pci/pwrctl/pci-pwrctl-pwrseq.c
+> new file mode 100644
+> index 000000000000..c7a113a76c0c
+> --- /dev/null
+> +++ b/drivers/pci/pwrctl/pci-pwrctl-pwrseq.c
+> @@ -0,0 +1,89 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (C) 2024 Linaro Ltd.
+> + */
+> +
+> +#include <linux/device.h>
+> +#include <linux/mod_devicetable.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/pci-pwrctl.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pwrseq/consumer.h>
+> +#include <linux/slab.h>
+> +#include <linux/types.h>
+> +
+> +struct pci_pwrctl_pwrseq_data {
+> +	struct pci_pwrctl ctx;
+> +	struct pwrseq_desc *pwrseq;
+> +};
+> +
+> +static void devm_pci_pwrctl_pwrseq_power_off(void *data)
+> +{
+> +	struct pwrseq_desc *pwrseq = data;
+> +
+> +	pwrseq_power_off(pwrseq);
+> +}
+> +
+> +static int pci_pwrctl_pwrseq_probe(struct platform_device *pdev)
+> +{
+> +	struct pci_pwrctl_pwrseq_data *data;
+> +	struct device *dev = &pdev->dev;
+> +	int ret;
+> +
+> +	data = devm_kzalloc(dev, sizeof(*data), GFP_KERNEL);
+> +	if (!data)
+> +		return -ENOMEM;
+> +
+> +	data->pwrseq = devm_pwrseq_get(dev, of_device_get_match_data(dev));
+> +	if (IS_ERR(data->pwrseq))
+> +		return dev_err_probe(dev, PTR_ERR(data->pwrseq),
+> +				     "Failed to get the power sequencer\n");
+> +
+> +	ret = pwrseq_power_on(data->pwrseq);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret,
+> +				     "Failed to power-on the device\n");
+> +
+> +	ret = devm_add_action_or_reset(dev, devm_pci_pwrctl_pwrseq_power_off,
+> +				       data->pwrseq);
+> +	if (ret)
+> +		return ret;
+> +
+> +	data->ctx.dev = dev;
+> +
+> +	ret = devm_pci_pwrctl_device_set_ready(dev, &data->ctx);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret,
+> +				     "Failed to register the pwrctl wrapper\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id pci_pwrctl_pwrseq_of_match[] = {
+> +	{
+> +		/* ATH11K in QCA6390 package. */
+> +		.compatible = "pci17cb,1101",
+> +		.data = "wlan",
+> +	},
+> +	{
+> +		/* ATH12K in WCN7850 package. */
+> +		.compatible = "pci17cb,1107",
+> +		.data = "wlan",
+> +	},
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, pci_pwrctl_pwrseq_of_match);
+> +
+> +static struct platform_driver pci_pwrctl_pwrseq_driver = {
+> +	.driver = {
+> +		.name = "pci-pwrctl-pwrseq",
+> +		.of_match_table = pci_pwrctl_pwrseq_of_match,
+> +	},
+> +	.probe = pci_pwrctl_pwrseq_probe,
+> +};
+> +module_platform_driver(pci_pwrctl_pwrseq_driver);
+> +
+> +MODULE_AUTHOR("Bartosz Golaszewski <bartosz.golaszewski@linaro.org>");
+> +MODULE_DESCRIPTION("Generic PCI Power Control module for power sequenced devices");
+> +MODULE_LICENSE("GPL");
+> 
+> -- 
+> 2.43.0
+> 
 
