@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DFCCC27C75
-	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 18:43:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B0D5C27C65
+	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 18:45:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ir2sYHxRHZEgcZNLY50nfhOnAfJmuvU5Fv0+iO1NW9U=; b=v0yVI9oHXoJDeddyHeS/Ja1mqw
-	D7whDpObZycf2wYDw6JVLo9sqnnPcMkIc8fylEnQMKAbHuZDdFvNfFOWakXjCyM2mJgfBGwLI36V1
-	Wt70TKH97AIOp0FZnSqY1mxW2r2wLgFORb2ET96bIAG4D9Ejw/QpvodAlQE27u1y0aEILy9XmuaR/
-	xcguOLUfjG7E03MyyCh+JRO50VbeaOS/EXaCNmMHSGQ9j24B0Z9/fChf7Cgro2Ka86yhq64ximGnu
-	ZC3gVH0vTt1M4FtTdh3eLRxAkVNmkYsZRHNJDa4x69oX2GHgQkxTEUODbeDPDgul42H2iasQbLIua
-	Qqtc4WIw==;
+	bh=egxilELPCmP/W4KhrWj5PVa92XuPUKSqDx/SxrW4fvw=; b=lx3PfLZ/UarVAfVWTyMidvdZhF
+	XrSuIQnxPWcQ/qstA0Omp3fXoqnYmJJNjyRJp+q/69+VX8iOiBD2J3JsIGOIP6Qg2AjxEjzMwNL5C
+	4ID/oggigJ0z/3PP23L6trkbG0tYdRNBBXjlFpB5yI0Rvr9s0EnbZZ2btzKPpJd4d+vmF/W+CJPib
+	AfRtoTYnPPaTyViX6z7M2ltuBEqtS2e+/Iaj7eitCiCB2h7mnnF/QdIVO0lJkKSKMo8npynHhZd1S
+	+vAiBY4yg7Ss9JBga9NmqbzJ2S6CRf5FfUI+MBbxtdkZrdIUBOY83LPQnMLqaUwS51fcJpA9y1pjX
+	JXfz7F+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH6SS-00000009shQ-0kSs
+	id 1sH6Ud-00000009tI3-3Add
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Jun 2024 18:43:00 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Tue, 11 Jun 2024 18:45:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH6SP-00000009sfx-11QJ
+	id 1sH6Ub-00000009tH3-1ibX
 	for ath12k@lists.infradead.org;
-	Tue, 11 Jun 2024 18:42:58 +0000
+	Tue, 11 Jun 2024 18:45:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 4BB1ACE1D6E;
-	Tue, 11 Jun 2024 18:42:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2ECFC2BD10;
-	Tue, 11 Jun 2024 18:42:53 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9A578610A7;
+	Tue, 11 Jun 2024 18:45:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C575C2BD10;
+	Tue, 11 Jun 2024 18:45:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718131374;
-	bh=NOoJ/5u2iqT0kvtELbXBuBpqiPxXcNZfz62k2C29M7M=;
+	s=k20201202; t=1718131512;
+	bh=LB+xYWiQgFmIvjz06NaeaI39lPvfaqivVpjZ+4IalEo=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=W99yVoRvIOhW0SSvSzCt4kFrQZpgg+/xDPE2+wrsh2uW3Isu5MYqs/R0iV/gv6HzI
-	 0n+59UFnpXcQDCq8fNxexp24CqsIuASBk00Df2ckUUnavEmtBhD/gXR3Voyx5VGq1H
-	 agxF40OYdq9HeQKAKBkJOhHhJuLTj7ksODDdpTvTlfNFEgBkQxEfcaJAAZBPnpR4sw
-	 nnPCPHfHw85ksPhqtuAJk434mZrivCrkXV/cGjUBYy5Mh9odyJAv7c+4Kj5c8sDZy9
-	 dFc0/tohOiBtPqb2xwwf6WXGk6BZHo3zDtYX939KRTXkjrEHkHZci257dYOWqDbeeY
-	 DGzqhvTwtLzgA==
+	b=BBhojCS5D61lD363LS9h3qLSju+haMi6m0YyMKxom16DzSY5mcrLaYaLL3rTqBeF/
+	 yyRfJN4mjMfvxjrwYhExUELea0lRKDcroBufcqgbZS42VHU+ZpnPUCiaXqpCpEV9ZM
+	 +6IBjxTyZ7vT2xZgtQKv2eZ4uGolj50DO0r//pufW2npVrO3ZdEax3+bnl16VxBbPJ
+	 z9Mnr1VEEOXiQtrPI5FZdGYAYOQiAQzlkiS4TNJ1SkKUagEBwFjiqpUwlwn62ZKkDv
+	 UyBIZMIc1CbPZtjCXBGMpR2disJTOitw6DecMsUdX1n2AEsQnntUR3jhWrNQUz1ZjY
+	 Jn6JioJXvpzIg==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: avoid unnecessary MSDU drop in the Rx error
- process
+Subject: Re: [PATCH 1/3] wifi: ath12k: fix per pdev debugfs registration
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240604062641.2956288-1-quic_periyasa@quicinc.com>
-References: <20240604062641.2956288-1-quic_periyasa@quicinc.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <20240529043043.2488031-2-quic_adisi@quicinc.com>
+References: <20240529043043.2488031-2-quic_adisi@quicinc.com>
+To: Aditya Kumar Singh <quic_adisi@quicinc.com>
 Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
+ Aditya Kumar Singh
+	<quic_adisi@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171813137163.3564613.14473521688819768834.kvalo@kernel.org>
-Date: Tue, 11 Jun 2024 18:42:53 +0000 (UTC)
+Message-ID: <171813150979.3564613.3522946420612603449.kvalo@kernel.org>
+Date: Tue, 11 Jun 2024 18:45:11 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_114257_516907_52DA02AF 
-X-CRM114-Status: UNSURE (   5.49  )
+X-CRM114-CacheID: sfid-20240611_114513_554307_94C02757 
+X-CRM114-Status: UNSURE (   5.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,26 +75,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
+Aditya Kumar Singh <quic_adisi@quicinc.com> wrote:
 
-> Currently, in the Rx error processing handler, once an MSDU drop is
-> detected, the subsequent MSDUs get unintentionally dropped due to the
-> previous drop flag being retained across all MSDU processing, leading
-> to the discarding of valid MSDUs. To resolve this issue, the drop flag
-> should be reset to false before processing each descriptor.
+> Function ath12k_debugfs_register() is called once inside the function
+> ath12k_mac_hw_register(). However, with single wiphy model, there could
+> be multiple pdevs registered under single hardware. Hence, need to register
+> debugfs for each one of them.
+> 
+> Move the caller inside the loop which iterates over all underlying pdevs.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Fixes: f8bde02a26b9 ("wifi: ath12k: initial debugfs support")
+> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 > Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Patch applied to ath-next branch of ath.git, thanks.
+3 patches applied to ath-next branch of ath.git, thanks.
 
-9e32058ae62f wifi: ath12k: avoid unnecessary MSDU drop in the Rx error process
+8dd65ccbdf91 wifi: ath12k: fix per pdev debugfs registration
+4e1eff38d37a wifi: ath12k: unregister per pdev debugfs
+5a16da9cfb40 wifi: ath12k: handle symlink cleanup for per pdev debugfs dentry
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240604062641.2956288-1-quic_periyasa@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240529043043.2488031-2-quic_adisi@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
