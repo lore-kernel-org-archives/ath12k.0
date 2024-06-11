@@ -4,87 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE6EDC27C65
-	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 17:14:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B904C27C65
+	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 18:35:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wPIOMg+8Ni/e1WHiurLDQPppp2nzp6bXSCsbyFa49Bc=; b=pPp86YiUotnerksi00+2G0QfHD
-	YYbCxOUPh8bZ7BFWBKBiaC3BXlBPUX14n1uJM+OSBRRuPhbCZinj16gqBBD0aQs8Ej1B0v+Y8gISs
-	tGdcFwM55shFXt8tJm011TmEwFlYMjI1MQ9sR3Wa6FGK9KCLtVrf22XbKuw0LSYX4WMV2uFXW67lF
-	fr7cCi7rHhf/aa0oCj03HexcTD3EoLmuCRWm5puMgLgj2IkNYUgGBz3Am/NDPdwosnYAwF4uWrmkb
-	TGFFpYnTt+PwOI/bu9F/c4a6jgedQXVL9vRPPotF2JB/M2pBrw8TcuCdEnlLg79GDHTbat+G27w7l
-	gc/hTtYg==;
+	bh=KoLlotROdfdlIZaVb2fp3dw31KVhEvswyUKy1Lc2fYo=; b=DJQHJQ4xJvLcklh6MufG/7tb3x
+	hQW1s2eUTzS73t85LN7SfE6gnzKVTES63pFdSwTnhr7vq45JPQ1OUhBL9+6j5jl6jvHbisvUtuiNc
+	c/nHcu4dHqFOis5U9y+dins9R1w8xtB7/m1V8y+TM2+7gSkDIVOOtHh//C6Py1b4PjjSphiJC3yIV
+	n5A2EvsIBPgm8v13PCaZjEbuibZ4XMznSLAdQtwFEFGJ8vO2nxYVXjGujKx50VphJxV+iM5iZ0dj0
+	k+7XTURS7tVsHGAquUaq1qtCJJVPkMHgFbByRgspU0ImFLZXssys6p1gSHZTiBrr8yYPzqy9W0bCF
+	s1Vhshzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH54R-00000009dEV-3swK
+	id 1sH6L2-00000009rt1-3UZO
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Jun 2024 17:14:07 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 11 Jun 2024 18:35:20 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH54O-00000009dDQ-1kMs
+	id 1sH6Kz-00000009rsf-3hHn
 	for ath12k@lists.infradead.org;
-	Tue, 11 Jun 2024 17:14:05 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45B9bSmv012356;
-	Tue, 11 Jun 2024 17:14:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	wPIOMg+8Ni/e1WHiurLDQPppp2nzp6bXSCsbyFa49Bc=; b=ItfPAEjJ4ZMp0dtQ
-	6bR3bVt8SQc3JLXdEykeWsXQE1ncZFxABvLycjatQqBehSo9vGX1JK5n4MEfHsiw
-	GXilUe+h5mSOopTpcmQ0ghKR/iF6WFAIHJwGFQVFrBZKPVtwjnqTeCtlDId5juUr
-	WlfzSrhrhZ+G1CgGGSf24H/ku66Bfvct2xG4SGDLNudIfQ/G+RSTxwatfGrxsFNB
-	V4SqyQRbv6ppmgWEnanz4ayC4bqAhgOW7ls8YiCfWQ2onMAlnOxwSUbmClTtaqF7
-	AQp6hw/Q7vLYD2w/cV5MeTWl5ifBTgDVRZGxjCkfloUhedpM6rsDwc42J+nk5r68
-	RCObmA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ypm459691-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jun 2024 17:14:01 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45BHDxgi027778
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jun 2024 17:13:59 GMT
-Received: from [10.48.243.20] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 11 Jun
- 2024 10:13:58 -0700
-Message-ID: <1a7c7a49-f6e2-46c8-b198-e9f764b26003@quicinc.com>
-Date: Tue, 11 Jun 2024 10:13:57 -0700
+	Tue, 11 Jun 2024 18:35:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 63A3C6113A;
+	Tue, 11 Jun 2024 18:35:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A802C2BD10;
+	Tue, 11 Jun 2024 18:35:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718130916;
+	bh=Zpmd3ygmkPqb6iypRmQIwESFV41GHfX32oSI6YK1PGw=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=NMN71+0ep7LW/AWi35zkUMmFEEzx7c23IIfKvJfUa1Qwb20YBPuc/VDIRIZX68JQ5
+	 AOcbUppH/HPvsSxrMBrViks4wOy00n4QgU1TmvSfz+iCCzbyhLi7Ca+CsLdbmHN8Fo
+	 6K+vq+hVpz6wVyiisiv9Tl5fN0Aep5WrIjI/xPpu5DuYbckPAfjlfLviaxD1f5f2Ur
+	 PF2NB/8WjQgBRvoIjX8L35hpGQNEuqT/GCnLdi2pLJwA/6LDwv6kaenxDAkJnnDann
+	 2cJQMWmMro9fUXDkg8PnHoBn+1wa6+ZRBGILejJPyXQObbWc+3xudsIKg+9OcVqY0c
+	 XnKKOlfhqrNOg==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Fix pdev id sent to firmware for single phy
- devices
-Content-Language: en-US
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Lingbo Kong <quic_lingbok@quicinc.com>
-References: <20240611043342.2672998-1-quic_rgnanase@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240611043342.2672998-1-quic_rgnanase@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: UpYQlgRrel3RwRdSDJ1jN_fhrm5Oj3VS
-X-Proofpoint-ORIG-GUID: UpYQlgRrel3RwRdSDJ1jN_fhrm5Oj3VS
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-11_09,2024-06-11_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- impostorscore=0 mlxlogscore=954 phishscore=0 malwarescore=0 suspectscore=0
- bulkscore=0 spamscore=0 clxscore=1015 priorityscore=1501 adultscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2406110119
+Subject: Re: [PATCH] wifi: ath12k: modify remain on channel for single wiphy
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240528082739.1226758-1-quic_ramess@quicinc.com>
+References: <20240528082739.1226758-1-quic_ramess@quicinc.com>
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ Rameshkumar Sundaram
+	<quic_ramess@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171813091314.3564613.4590047167429779934.kvalo@kernel.org>
+Date: Tue, 11 Jun 2024 18:35:14 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_101404_609196_D92B5D27 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20240611_113518_025403_E4FF75B2 
+X-CRM114-Status: GOOD (  11.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,23 +74,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/10/2024 9:33 PM, Ramya Gnanasekar wrote:
-> From: Lingbo Kong <quic_lingbok@quicinc.com>
+Rameshkumar Sundaram <quic_ramess@quicinc.com> wrote:
+
+> When multiple radios are advertised as a single wiphy which supports various
+> bands, vdev creation for the vif is deferred until channel is assigned to it.
+> If a remain on channel (RoC) request is received from mac80211, select the
+> corresponding radio (ar) based on channel and create a vdev on that radio to
+> initiate an RoC scan.
 > 
-> Pdev id from mac phy capabilities will be sent as a part of
-> HTT/WMI command to firmware. This causes issue with single pdev
-> devices where firmware does not respond to the WMI/HTT request
-> sent from host.
+> Note that on RoC completion this vdev is not deleted. If a new RoC/hw scan
+> request is seen on that same vif for a different band the vdev will be deleted
+> and created on the new radio supporting the request.
 > 
-> For single pdev devices firmware expects pdev id as 1 for 5 GHz/6 GHz
-> phy and 2 for 2 GHz band. Add wrapper ath12k_mac_get_target_pdev_id()
-> to help fetch right pdev for single pdev devices.
+> Also if the RoC scan is requested when the vdev is in started state, no
+> switching to new radio is allowed and RoC request can be accepted only on
+> channels within same radio.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+
+Patch applied to ath-next branch of ath.git, thanks.
+
+4938ba733ee2 wifi: ath12k: modify remain on channel for single wiphy
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240528082739.1226758-1-quic_ramess@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
