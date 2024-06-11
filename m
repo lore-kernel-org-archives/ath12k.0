@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F0F2C25B76
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2F16C27C65
 	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 08:34:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=tDPsjPzJ9VCj/2mjLljN9/JYw5dtDHCFaig4AQ3sK/I=; b=grYzA+HyXMVrdxBJ16J7mqApOO
-	dycPsS5yuPTAhzKfNKF873E+zboBmmamE4XcQ3LVnGPmFz0tLvPkgD+WOTD3B9KgVgukrUzb+sTHc
-	hua7py2YygN6Suph1QjBs7Ga2MT8sTOWeR8AoTN4oDGghVN5NASeF/nTXaFSArmJ9xpuxS7bmHX5o
-	vZ/w/xz/mWOyLJCbZiSzYxsM6gPfA7jXfvSKORA9NPTRhv6zELE4O506Y4csnUOF8vjiaR1+sPoMR
-	5FX1KasfAGepQPbnsv9zTlGnfVxuMe/sDCIeBKj409JyobUixuedVcK60RSvjjKRjmaN18w/MbYN1
-	jTDTNKNQ==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1BJWrxkvZPclq2yoeXHq2sqrZrdT/tf7U112Bq2JHEg=; b=ZTBJythLGrig/SAwkwDYsstxVn
+	nP/bB3uxiIuUa6Td8ebbH5nNWJH5GNJVGKPcj90ABUIZoWGEKC2Rrs7YMLnrwqeARqyGktLTGPh3P
+	swPhfyqwdsnuakxqgWEUWqF3aIQ0srWJhvMdYBTxM+BLTOxJiNoCsqHDX6+PHaPf+e76KxR4uiqhf
+	tQnAwUqBnr4cgz5jKBwEzt2l6jt/zYtXByRzkrKAzz1CJ+CQK7cVFtslsgClTZpbimLsuBe0ieisb
+	nSuHL9fhgq4hbRzU9S4N/qo1sC05w9sRp9iSk9/QedDdG2JSfX4wsooBTFvVxn804YsufSjCTvVPf
+	Gi5thzjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sGwxy-000000088VW-0KQn
+	id 1sGwxy-000000088Vd-1p3y
 	for ath12k@archiver.kernel.org;
 	Tue, 11 Jun 2024 08:34:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sGwxu-000000088Tg-1cOK
+	id 1sGwxu-000000088Tj-1cJy
 	for ath12k@lists.infradead.org;
 	Tue, 11 Jun 2024 08:34:52 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45B2XQTU019744;
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45B4lcKW025638;
 	Tue, 11 Jun 2024 08:34:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=tDPsjPzJ9VCj/2mjLljN9/
-	JYw5dtDHCFaig4AQ3sK/I=; b=JJBXKsAkPZNp+os/WElcbu4KGu6S05SV0mKjTY
-	MHbQPKIklaDy30m/4qZQwW6EYOB04BRgyCPFU9DoN1H5QYYuqnWO3+/U5nfrnNhE
-	FhDjEKTHAZ0sou2g51Bewjaa8mLPR1aK4anKERVFvaFNTKXM80C1yIrAMZb/rv0f
-	DiWSZwB5w5/D9QSUFqVHd8W6PT26Yz3f4Q6urBVXJhRgDoy7s9+g+LRLpz66a1x+
-	RtcdWukLbI6mUTfcq3x9E3hQAtY2YsZkDdDR7KuY5Ee63TSxJNwC+KglCdyrBCwP
-	+0lLwIS7SdgXm9T9nOOV5ByUE9pq8+RiLJx+AP/2n+HKGN3g==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ymcnmwpq1-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	1BJWrxkvZPclq2yoeXHq2sqrZrdT/tf7U112Bq2JHEg=; b=pOnkP+sf99K1Nd0k
+	/AsUwggr0NGaAg8uNkAnXEG0D1/nvZGrE/6GaNRswxmy6N51kX6GwOFd323X653h
+	LjGqnfITQBYBr1+3/DkUeKsVYDblg8jxjWiSOZSSqLemwKDI8km2ORaZ8D+n6TcI
+	fWTGEgPDQSJlktG5B5OyT12KI2gzPKNDxqQd+dark+x8s/PVV0+k8i7IGbe4iA4n
+	7BbbW/VJ2AoWy4TjqJbDOUAXFTrh+h+LvgCKbVnjh++lWXgX/5wuPPh84wcT8kcP
+	6HQ09OXybFI76Pk5JuvtRZG+/cyq7BHfs4y1LEQsnMiD8sbhajRmTtP9xut3Ggpw
+	UvpdiQ==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ymgk8wvb3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Tue, 11 Jun 2024 08:34:47 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45B8YjQ4000714
+	by NASANPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45B8YldO011503
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Jun 2024 08:34:45 GMT
+	Tue, 11 Jun 2024 08:34:47 GMT
 Received: from hu-aarasahu-blr.qualcomm.com (10.80.80.8) by
  nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 11 Jun 2024 01:34:43 -0700
+ 15.2.1544.9; Tue, 11 Jun 2024 01:34:44 -0700
 From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Aaradhana Sahu
 	<quic_aarasahu@quicinc.com>
-Subject: [PATCH v3 0/4] ath12k: Factory test mode support
-Date: Tue, 11 Jun 2024 14:04:23 +0530
-Message-ID: <20240611083427.881443-1-quic_aarasahu@quicinc.com>
+Subject: [PATCH v3 1/4] wifi: ath: create common testmode_i.h file for ath drivers
+Date: Tue, 11 Jun 2024 14:04:24 +0530
+Message-ID: <20240611083427.881443-2-quic_aarasahu@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240611083427.881443-1-quic_aarasahu@quicinc.com>
+References: <20240611083427.881443-1-quic_aarasahu@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -69,19 +72,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: f2wyKBGN6JOOXzP83xGhNH4e98TleOea
-X-Proofpoint-ORIG-GUID: f2wyKBGN6JOOXzP83xGhNH4e98TleOea
+X-Proofpoint-GUID: O5vovCWkHrjNcb3EaP8YJXc29TNjDUkp
+X-Proofpoint-ORIG-GUID: O5vovCWkHrjNcb3EaP8YJXc29TNjDUkp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-06-11_04,2024-06-11_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 clxscore=1015 adultscore=0 phishscore=0 spamscore=0
- priorityscore=1501 malwarescore=0 mlxscore=0 mlxlogscore=999 bulkscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2406110062
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 mlxlogscore=999 mlxscore=0 adultscore=0 malwarescore=0
+ priorityscore=1501 suspectscore=0 spamscore=0 bulkscore=0 clxscore=1015
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2406110063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_013450_640902_173CCB13 
-X-CRM114-Status: GOOD (  10.21  )
+X-CRM114-CacheID: sfid-20240611_013450_578575_EED3CAEA 
+X-CRM114-Status: GOOD (  22.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,53 +99,306 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Device is booted in factory test mode for calibration.
-The commands are sent from userspace application, which
-is sent to firmware using wmi commands. Firmware sends
-the response to driver as wmi events and driver sends
-these events to the application via netlink message.
+User space application requires that the testmode interface
+is exactly same between ath drivers. Move testmode_i.h file
+in ath directory to ensure that all ath driver uses same testmode
+interface instead of duplicating testmode_i.h for each ath drivers.
 
-Also added changes related to correct pdev id access for
-fw test cmd.
+Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.7.0.1-01744-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 
-Aaradhana Sahu (3):
-  wifi: ath: create common testmode_i.h file for ath drivers
-  wifi: ath12k: export ath12k_wmi_tlv_hdr for testmode
-  wifi: ath12k: add factory test mode support
-
-Rajat Soni (1):
-  wifi: ath12k: Fill pdev id for fw test cmd
-
+Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 ---
-v3:
-  -Rebased on latest ToT
-  -Updated Tested-on Tag
-  -Removed second parameter of ath12k_core_start()
-  -Updated copyright
-v2:
-  -Rebased on latest ath ToT
----
-
- drivers/net/wireless/ath/ath11k/testmode.c    |  78 ++--
- drivers/net/wireless/ath/ath12k/Makefile      |   1 +
- drivers/net/wireless/ath/ath12k/core.c        |  22 +-
- drivers/net/wireless/ath/ath12k/core.h        |  13 +
- drivers/net/wireless/ath/ath12k/debug.h       |   1 +
- drivers/net/wireless/ath/ath12k/dp.c          |   3 +
- drivers/net/wireless/ath/ath12k/mac.c         |  15 +-
- drivers/net/wireless/ath/ath12k/pci.c         |   1 +
- drivers/net/wireless/ath/ath12k/testmode.c    | 422 ++++++++++++++++++
- drivers/net/wireless/ath/ath12k/testmode.h    |  40 ++
- drivers/net/wireless/ath/ath12k/wmi.c         |  39 +-
- drivers/net/wireless/ath/ath12k/wmi.h         |  21 +
- .../wireless/ath/{ath11k => }/testmode_i.h    |  52 +--
- 13 files changed, 634 insertions(+), 74 deletions(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/testmode.c
- create mode 100644 drivers/net/wireless/ath/ath12k/testmode.h
+ drivers/net/wireless/ath/ath11k/testmode.c    | 78 +++++++++----------
+ .../wireless/ath/{ath11k => }/testmode_i.h    | 52 ++++++-------
+ 2 files changed, 65 insertions(+), 65 deletions(-)
  rename drivers/net/wireless/ath/{ath11k => }/testmode_i.h (53%)
 
-
-base-commit: a116bf2be795eb1db75fa6a48aa85c397be001a6
+diff --git a/drivers/net/wireless/ath/ath11k/testmode.c b/drivers/net/wireless/ath/ath11k/testmode.c
+index 302d66092b97..5d0680d4053d 100644
+--- a/drivers/net/wireless/ath/ath11k/testmode.c
++++ b/drivers/net/wireless/ath/ath11k/testmode.c
+@@ -10,18 +10,18 @@
+ #include "wmi.h"
+ #include "hw.h"
+ #include "core.h"
+-#include "testmode_i.h"
++#include "../testmode_i.h"
+ 
+ #define ATH11K_FTM_SEGHDR_CURRENT_SEQ		GENMASK(3, 0)
+ #define ATH11K_FTM_SEGHDR_TOTAL_SEGMENTS	GENMASK(7, 4)
+ 
+-static const struct nla_policy ath11k_tm_policy[ATH11K_TM_ATTR_MAX + 1] = {
+-	[ATH11K_TM_ATTR_CMD]		= { .type = NLA_U32 },
+-	[ATH11K_TM_ATTR_DATA]		= { .type = NLA_BINARY,
+-					    .len = ATH11K_TM_DATA_MAX_LEN },
+-	[ATH11K_TM_ATTR_WMI_CMDID]	= { .type = NLA_U32 },
+-	[ATH11K_TM_ATTR_VERSION_MAJOR]	= { .type = NLA_U32 },
+-	[ATH11K_TM_ATTR_VERSION_MINOR]	= { .type = NLA_U32 },
++static const struct nla_policy ath11k_tm_policy[ATH_TM_ATTR_MAX + 1] = {
++	[ATH_TM_ATTR_CMD]		= { .type = NLA_U32 },
++	[ATH_TM_ATTR_DATA]		= { .type = NLA_BINARY,
++					    .len = ATH_TM_DATA_MAX_LEN },
++	[ATH_TM_ATTR_WMI_CMDID]		= { .type = NLA_U32 },
++	[ATH_TM_ATTR_VERSION_MAJOR]	= { .type = NLA_U32 },
++	[ATH_TM_ATTR_VERSION_MINOR]	= { .type = NLA_U32 },
+ };
+ 
+ static struct ath11k *ath11k_tm_get_ar(struct ath11k_base *ab)
+@@ -73,9 +73,9 @@ static void ath11k_tm_wmi_event_unsegmented(struct ath11k_base *ab, u32 cmd_id,
+ 		goto out;
+ 	}
+ 
+-	if (nla_put_u32(nl_skb, ATH11K_TM_ATTR_CMD, ATH11K_TM_CMD_WMI) ||
+-	    nla_put_u32(nl_skb, ATH11K_TM_ATTR_WMI_CMDID, cmd_id) ||
+-	    nla_put(nl_skb, ATH11K_TM_ATTR_DATA, skb->len, skb->data)) {
++	if (nla_put_u32(nl_skb, ATH_TM_ATTR_CMD, ATH_TM_CMD_WMI) ||
++	    nla_put_u32(nl_skb, ATH_TM_ATTR_WMI_CMDID, cmd_id) ||
++	    nla_put(nl_skb, ATH_TM_ATTR_DATA, skb->len, skb->data)) {
+ 		ath11k_warn(ab, "failed to populate testmode unsegmented event\n");
+ 		kfree_skb(nl_skb);
+ 		goto out;
+@@ -140,7 +140,7 @@ static int ath11k_tm_process_event(struct ath11k_base *ab, u32 cmd_id,
+ 
+ 	data_pos = ab->testmode.data_pos;
+ 
+-	if ((data_pos + datalen) > ATH11K_FTM_EVENT_MAX_BUF_LENGTH) {
++	if ((data_pos + datalen) > ATH_FTM_EVENT_MAX_BUF_LENGTH) {
+ 		ath11k_warn(ab, "Invalid ftm event length at %d: %d\n",
+ 			    data_pos, datalen);
+ 		ret = -EINVAL;
+@@ -172,10 +172,10 @@ static int ath11k_tm_process_event(struct ath11k_base *ab, u32 cmd_id,
+ 		goto out;
+ 	}
+ 
+-	if (nla_put_u32(nl_skb, ATH11K_TM_ATTR_CMD,
+-			ATH11K_TM_CMD_WMI_FTM) ||
+-	    nla_put_u32(nl_skb, ATH11K_TM_ATTR_WMI_CMDID, cmd_id) ||
+-	    nla_put(nl_skb, ATH11K_TM_ATTR_DATA, data_pos,
++	if (nla_put_u32(nl_skb, ATH_TM_ATTR_CMD,
++			ATH_TM_CMD_WMI_FTM) ||
++	    nla_put_u32(nl_skb, ATH_TM_ATTR_WMI_CMDID, cmd_id) ||
++	    nla_put(nl_skb, ATH_TM_ATTR_DATA, data_pos,
+ 		    &ab->testmode.eventdata[0])) {
+ 		ath11k_warn(ab, "failed to populate segmented testmode event");
+ 		kfree_skb(nl_skb);
+@@ -235,23 +235,23 @@ static int ath11k_tm_cmd_get_version(struct ath11k *ar, struct nlattr *tb[])
+ 
+ 	ath11k_dbg(ar->ab, ATH11K_DBG_TESTMODE,
+ 		   "cmd get version_major %d version_minor %d\n",
+-		   ATH11K_TESTMODE_VERSION_MAJOR,
+-		   ATH11K_TESTMODE_VERSION_MINOR);
++		   ATH_TESTMODE_VERSION_MAJOR,
++		   ATH_TESTMODE_VERSION_MINOR);
+ 
+ 	skb = cfg80211_testmode_alloc_reply_skb(ar->hw->wiphy,
+ 						nla_total_size(sizeof(u32)));
+ 	if (!skb)
+ 		return -ENOMEM;
+ 
+-	ret = nla_put_u32(skb, ATH11K_TM_ATTR_VERSION_MAJOR,
+-			  ATH11K_TESTMODE_VERSION_MAJOR);
++	ret = nla_put_u32(skb, ATH_TM_ATTR_VERSION_MAJOR,
++			  ATH_TESTMODE_VERSION_MAJOR);
+ 	if (ret) {
+ 		kfree_skb(skb);
+ 		return ret;
+ 	}
+ 
+-	ret = nla_put_u32(skb, ATH11K_TM_ATTR_VERSION_MINOR,
+-			  ATH11K_TESTMODE_VERSION_MINOR);
++	ret = nla_put_u32(skb, ATH_TM_ATTR_VERSION_MINOR,
++			  ATH_TESTMODE_VERSION_MINOR);
+ 	if (ret) {
+ 		kfree_skb(skb);
+ 		return ret;
+@@ -277,7 +277,7 @@ static int ath11k_tm_cmd_testmode_start(struct ath11k *ar, struct nlattr *tb[])
+ 		goto err;
+ 	}
+ 
+-	ar->ab->testmode.eventdata = kzalloc(ATH11K_FTM_EVENT_MAX_BUF_LENGTH,
++	ar->ab->testmode.eventdata = kzalloc(ATH_FTM_EVENT_MAX_BUF_LENGTH,
+ 					     GFP_KERNEL);
+ 	if (!ar->ab->testmode.eventdata) {
+ 		ret = -ENOMEM;
+@@ -310,25 +310,25 @@ static int ath11k_tm_cmd_wmi(struct ath11k *ar, struct nlattr *tb[],
+ 
+ 	mutex_lock(&ar->conf_mutex);
+ 
+-	if (!tb[ATH11K_TM_ATTR_DATA]) {
++	if (!tb[ATH_TM_ATTR_DATA]) {
+ 		ret = -EINVAL;
+ 		goto out;
+ 	}
+ 
+-	if (!tb[ATH11K_TM_ATTR_WMI_CMDID]) {
++	if (!tb[ATH_TM_ATTR_WMI_CMDID]) {
+ 		ret = -EINVAL;
+ 		goto out;
+ 	}
+ 
+-	buf = nla_data(tb[ATH11K_TM_ATTR_DATA]);
+-	buf_len = nla_len(tb[ATH11K_TM_ATTR_DATA]);
++	buf = nla_data(tb[ATH_TM_ATTR_DATA]);
++	buf_len = nla_len(tb[ATH_TM_ATTR_DATA]);
+ 	if (!buf_len) {
+ 		ath11k_warn(ar->ab, "No data present in testmode wmi command\n");
+ 		ret = -EINVAL;
+ 		goto out;
+ 	}
+ 
+-	cmd_id = nla_get_u32(tb[ATH11K_TM_ATTR_WMI_CMDID]);
++	cmd_id = nla_get_u32(tb[ATH_TM_ATTR_WMI_CMDID]);
+ 
+ 	/* Make sure that the buffer length is long enough to
+ 	 * hold TLV and pdev/vdev id.
+@@ -409,13 +409,13 @@ static int ath11k_tm_cmd_wmi_ftm(struct ath11k *ar, struct nlattr *tb[])
+ 		goto out;
+ 	}
+ 
+-	if (!tb[ATH11K_TM_ATTR_DATA]) {
++	if (!tb[ATH_TM_ATTR_DATA]) {
+ 		ret = -EINVAL;
+ 		goto out;
+ 	}
+ 
+-	buf = nla_data(tb[ATH11K_TM_ATTR_DATA]);
+-	buf_len = nla_len(tb[ATH11K_TM_ATTR_DATA]);
++	buf = nla_data(tb[ATH_TM_ATTR_DATA]);
++	buf_len = nla_len(tb[ATH_TM_ATTR_DATA]);
+ 	cmd_id = WMI_PDEV_UTF_CMDID;
+ 
+ 	ath11k_dbg(ar->ab, ATH11K_DBG_TESTMODE,
+@@ -476,25 +476,25 @@ int ath11k_tm_cmd(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 		  void *data, int len)
+ {
+ 	struct ath11k *ar = hw->priv;
+-	struct nlattr *tb[ATH11K_TM_ATTR_MAX + 1];
++	struct nlattr *tb[ATH_TM_ATTR_MAX + 1];
+ 	int ret;
+ 
+-	ret = nla_parse(tb, ATH11K_TM_ATTR_MAX, data, len, ath11k_tm_policy,
++	ret = nla_parse(tb, ATH_TM_ATTR_MAX, data, len, ath11k_tm_policy,
+ 			NULL);
+ 	if (ret)
+ 		return ret;
+ 
+-	if (!tb[ATH11K_TM_ATTR_CMD])
++	if (!tb[ATH_TM_ATTR_CMD])
+ 		return -EINVAL;
+ 
+-	switch (nla_get_u32(tb[ATH11K_TM_ATTR_CMD])) {
+-	case ATH11K_TM_CMD_GET_VERSION:
++	switch (nla_get_u32(tb[ATH_TM_ATTR_CMD])) {
++	case ATH_TM_CMD_GET_VERSION:
+ 		return ath11k_tm_cmd_get_version(ar, tb);
+-	case ATH11K_TM_CMD_WMI:
++	case ATH_TM_CMD_WMI:
+ 		return ath11k_tm_cmd_wmi(ar, tb, vif);
+-	case ATH11K_TM_CMD_TESTMODE_START:
++	case ATH_TM_CMD_TESTMODE_START:
+ 		return ath11k_tm_cmd_testmode_start(ar, tb);
+-	case ATH11K_TM_CMD_WMI_FTM:
++	case ATH_TM_CMD_WMI_FTM:
+ 		return ath11k_tm_cmd_wmi_ftm(ar, tb);
+ 	default:
+ 		return -EOPNOTSUPP;
+diff --git a/drivers/net/wireless/ath/ath11k/testmode_i.h b/drivers/net/wireless/ath/testmode_i.h
+similarity index 53%
+rename from drivers/net/wireless/ath/ath11k/testmode_i.h
+rename to drivers/net/wireless/ath/testmode_i.h
+index 91b83873d660..bb71efcf5d12 100644
+--- a/drivers/net/wireless/ath/ath11k/testmode_i.h
++++ b/drivers/net/wireless/ath/testmode_i.h
+@@ -4,56 +4,56 @@
+  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+-/* "API" level of the ath11k testmode interface. Bump it after every
++/* "API" level of the ath testmode interface. Bump it after every
+  * incompatible interface change.
+  */
+-#define ATH11K_TESTMODE_VERSION_MAJOR 1
++#define ATH_TESTMODE_VERSION_MAJOR 1
+ 
+ /* Bump this after every _compatible_ interface change, for example
+  * addition of a new command or an attribute.
+  */
+-#define ATH11K_TESTMODE_VERSION_MINOR 1
++#define ATH_TESTMODE_VERSION_MINOR 1
+ 
+-#define ATH11K_TM_DATA_MAX_LEN		5000
+-#define ATH11K_FTM_EVENT_MAX_BUF_LENGTH 2048
++#define ATH_TM_DATA_MAX_LEN		5000
++#define ATH_FTM_EVENT_MAX_BUF_LENGTH	2048
+ 
+-enum ath11k_tm_attr {
+-	__ATH11K_TM_ATTR_INVALID		= 0,
+-	ATH11K_TM_ATTR_CMD			= 1,
+-	ATH11K_TM_ATTR_DATA			= 2,
+-	ATH11K_TM_ATTR_WMI_CMDID		= 3,
+-	ATH11K_TM_ATTR_VERSION_MAJOR		= 4,
+-	ATH11K_TM_ATTR_VERSION_MINOR		= 5,
+-	ATH11K_TM_ATTR_WMI_OP_VERSION		= 6,
++enum ath_tm_attr {
++	__ATH_TM_ATTR_INVALID		= 0,
++	ATH_TM_ATTR_CMD			= 1,
++	ATH_TM_ATTR_DATA		= 2,
++	ATH_TM_ATTR_WMI_CMDID		= 3,
++	ATH_TM_ATTR_VERSION_MAJOR	= 4,
++	ATH_TM_ATTR_VERSION_MINOR	= 5,
++	ATH_TM_ATTR_WMI_OP_VERSION	= 6,
+ 
+ 	/* keep last */
+-	__ATH11K_TM_ATTR_AFTER_LAST,
+-	ATH11K_TM_ATTR_MAX		= __ATH11K_TM_ATTR_AFTER_LAST - 1,
++	__ATH_TM_ATTR_AFTER_LAST,
++	ATH_TM_ATTR_MAX			= __ATH_TM_ATTR_AFTER_LAST - 1,
+ };
+ 
+-/* All ath11k testmode interface commands specified in
+- * ATH11K_TM_ATTR_CMD
++/* All ath testmode interface commands specified in
++ * ATH_TM_ATTR_CMD
+  */
+-enum ath11k_tm_cmd {
+-	/* Returns the supported ath11k testmode interface version in
+-	 * ATH11K_TM_ATTR_VERSION. Always guaranteed to work. User space
++enum ath_tm_cmd {
++	/* Returns the supported ath testmode interface version in
++	 * ATH_TM_ATTR_VERSION. Always guaranteed to work. User space
+ 	 * uses this to verify it's using the correct version of the
+ 	 * testmode interface
+ 	 */
+-	ATH11K_TM_CMD_GET_VERSION = 0,
++	ATH_TM_CMD_GET_VERSION = 0,
+ 
+ 	/* The command used to transmit a WMI command to the firmware and
+ 	 * the event to receive WMI events from the firmware. Without
+ 	 * struct wmi_cmd_hdr header, only the WMI payload. Command id is
+-	 * provided with ATH11K_TM_ATTR_WMI_CMDID and payload in
+-	 * ATH11K_TM_ATTR_DATA.
++	 * provided with ATH_TM_ATTR_WMI_CMDID and payload in
++	 * ATH_TM_ATTR_DATA.
+ 	 */
+-	ATH11K_TM_CMD_WMI = 1,
++	ATH_TM_CMD_WMI = 1,
+ 
+ 	/* Boots the UTF firmware, the netdev interface must be down at the
+ 	 * time.
+ 	 */
+-	ATH11K_TM_CMD_TESTMODE_START = 2,
++	ATH_TM_CMD_TESTMODE_START = 2,
+ 
+ 	/* The command used to transmit a FTM WMI command to the firmware
+ 	 * and the event to receive WMI events from the firmware. The data
+@@ -62,5 +62,5 @@ enum ath11k_tm_cmd {
+ 	 * The data payload size could be large and the driver needs to
+ 	 * send segmented data to firmware.
+ 	 */
+-	ATH11K_TM_CMD_WMI_FTM = 3,
++	ATH_TM_CMD_WMI_FTM = 3,
+ };
 -- 
 2.34.1
 
