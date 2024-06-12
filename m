@@ -4,86 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00982C27C65
-	for <ath12k@archiver.kernel.org>; Tue, 11 Jun 2024 22:56:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1907DC27C53
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 07:11:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ZEJDCFXv1cymcJZtVIyNI5noKiXpt9lnCZGSqurXGtQ=; b=v7Xw0j7fQ0i/DC
-	aRh7MXswIjBUItaad+vyOnEMcO5dCzphWADZNCH/XZA8PHmoVWsqni30Seo9mJ6Huleyw01ruWvhP
-	yJVIUq7an8iNb6rxxBR6ynkrTBL9be3aQsAjTYbA5vXW5gMuI8I+zMw8IarN5yItWuDwRA9HLh/zk
-	ZR0KedqPZszULYDIe7fcMvtYpWevdiKkRwm/nl4gS6MNGzaA+10OM/yySJ3+S9aippXGjDR3wq82N
-	6HUKjiPmhL1lc7bOzMkR+SSq3Fu648uo7c1AC0n1lPGLHx5BCJdmQahVVuPYfFr0wrX8H866R4ZlO
-	Bww3EKeZbSZ/qQUxS1rw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=i6o0FZBPMx+nOIu/mzHBniZ5GdF+FcAxR4uXfrLlAu8=; b=YndL6m9jT0DgxvFrkLuCp+9cys
+	eFMdsfAy5ftSnI1IWI70CNoL6/Qh9SxISeU5zRjd+Bfemvzdz9elxqYKY6yNZPZrTtFAyyJafg56c
+	4Ihl2a+ALq6QrpboIQKdJJ9/NHY0CwPneJB0Ili/0IQgXlo1d1C/8e7II8sFIds1IqkBofjQvshps
+	39x0BP9FlYxlNQx80Jbgg8cPZmuj1fUwWuADRCswYNAf/dFg1u42KmRyAB3vRqmQ+eIikLzZTJoGG
+	8ztQ8KRws9rrTcWiUTwhxGFrYqteNPmFdwfrj+zhDeRzbij4Z3cPnXK+aTkowMXuTeVxxULoSc9Kv
+	ZK0z1log==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHAQ5-0000000ASMP-2bGt
+	id 1sHI8T-0000000BNbB-2vNY
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Jun 2024 22:56:49 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 12 Jun 2024 07:11:09 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHAQ1-0000000ASJe-3mqG;
-	Tue, 11 Jun 2024 22:56:47 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 037A9611E6;
-	Tue, 11 Jun 2024 22:56:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61873C2BD10;
-	Tue, 11 Jun 2024 22:56:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718146604;
-	bh=4jBM6mXHjYlJoMIZWueS89ZlNO+AUiWEJRKWxa04gKk=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=jC/lBgZD6SkKl7787/66Mot1OAxtctUITyf4UXOQ2JVSa8o2lpp+iWq8ogS7UENCo
-	 yqzTumDF8tEtMA5L412KbnAWTlEICUYUaB6WQxi/iZq3KK051i9I3hdCqNPejgIY4h
-	 Ke9p24cUfRX+tKJ4QPj74HGoZDGWa82+//qPfAT/wSsLNiBhD00oQF6em+0sTCo9Ey
-	 T00111RDYHGIANzLOKvQl9jG1tiRKNY+avJse/GePnxuyh/FbgNapR/wc4e5yK42i4
-	 A9QSPKjwn8ZsN2uOR8Yxm/hvF/Rk0wTUKHu9VUqckeSElV62zzJn/RrNGm/MKg0ARp
-	 fgy3tmBrEJCJw==
-Date: Tue, 11 Jun 2024 17:56:43 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Balakrishna Godavarthi <quic_bgodavar@quicinc.com>,
-	Rocky Liao <quic_rjliao@quicinc.com>, Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Srini Kandagatla <srinivas.kandagatla@linaro.org>,
-	Elliot Berman <quic_eberman@quicinc.com>,
-	Caleb Connolly <caleb.connolly@linaro.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Alex Elder <elder@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
-	ath12k@lists.infradead.org, linux-pm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
-	kernel@quicinc.com, Amit Pundir <amit.pundir@linaro.org>
-Subject: Re: [PATCH v8 16/17] PCI/pwrctl: add a PCI power control driver for
- power sequenced devices
-Message-ID: <20240611225643.GA1005995@bhelgaas>
+	id 1sHI8Q-0000000BNZM-2lDA
+	for ath12k@lists.infradead.org;
+	Wed, 12 Jun 2024 07:11:08 +0000
+Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2ebdfe261f9so50085041fa.1
+        for <ath12k@lists.infradead.org>; Wed, 12 Jun 2024 00:11:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1718176264; x=1718781064; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=i6o0FZBPMx+nOIu/mzHBniZ5GdF+FcAxR4uXfrLlAu8=;
+        b=IUgSNOwJADYdJRSlJ67OU5CVmQZnQRa0hascidxSTLcjqpfxmlRqSnjfHckw0I2nR2
+         Xe4EAG3gdJZnRsfrKdJrNSrFGgPal4dHyLkwFy74rIcvznwE7zPoWRsMatQtz0ktRZNv
+         1sRU/aUelv/B85EASgvCxuDuvecbx4UfKCbsVmLbTmcyA8ErmkBl/lEuq17Y9W/Qeykk
+         47dKy3jx1dVQ0Ukc5gUya5ykptYM2MNt9Gcxq60bpMfCFs9Oh/5FAQ2PQ0hgDz5WHRcd
+         BebEwZXJfaxVhf2dbZmAlPW6kJPKoK0oBKtkdxZbkiyhuQKtkE3XDzw7jsYyb/ulyxsm
+         JtSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718176264; x=1718781064;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=i6o0FZBPMx+nOIu/mzHBniZ5GdF+FcAxR4uXfrLlAu8=;
+        b=bC29ALyGhmWgDH8F4cEmEL7nLgrgXnaKDjGv2+WbhQoMmfAE2Ut/pPkp/v5mLvFtzS
+         oQo07CYj5BtQGf1X6ARH2SzVc09CzLyXsD8l8JESyxqYvqxOabyic9aIIKm4UqpQJb/h
+         9ebu6sLWsTCkHugRhNtuVGJuVIAfB3M+aZaEDtCXZuaP3wG3dxrcTMyyq4d8foiYq7vS
+         whfEy16LvGQbRWwLbzMJhtddEg/wQhqUBtRbluiLfKH+/TbrkbrUvKPB7S9mqAbYgk2e
+         /LCvrlXKTY2D0WpWZX08YjWYtoEUjIdWEV81dFJ8j/+TNVE+65fu2OMLYF2fdHKJVM0S
+         hoJQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVC9QgI+pssirGb6vhvheBcojB8A1kdeHQ+2fhWkbhUJy8n1eqcEO5C7ibtKl0NE0Ho735lw2UWXhsR206EL5QYFZDs4p7tjnLPfg==
+X-Gm-Message-State: AOJu0YxexAN66JTTr17sGzsxazEWAI3bhiMg16jvTYiXhceOZ+SpcsD2
+	5iZpQxVmeQuyARg9Ot8zS4J1inlN9ljGsKl9vbdCZGRQcpBpwSJfUAXuIYmTG+8HGjnHw1XOCwp
+	xM0gSi5K2ydGtpLbx+9ZU1RXFaQsG2R2hnkYbzA==
+X-Google-Smtp-Source: AGHT+IGbd4X2fJf6zNeYZx/X1mM77+GhoF1Zhv+mm3RhXCxcJXVvZIgRJjoUptYt08IGG4KjkAvHHP/xFOcuJD7oR1M=
+X-Received: by 2002:ac2:4c4a:0:b0:52c:826f:f3f1 with SMTP id
+ 2adb3069b0e04-52c9a3bfbb7mr898457e87.2.1718176264237; Wed, 12 Jun 2024
+ 00:11:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20240528-pwrseq-v8-16-d354d52b763c@linaro.org>
+References: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org> <20240611225428.GA1005695@bhelgaas>
+In-Reply-To: <20240611225428.GA1005695@bhelgaas>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Wed, 12 Jun 2024 09:10:53 +0200
+Message-ID: <CAMRc=MfE0o=ohK6fpJN6=J7hmywifneBaNdSxOgeGH9iZ1uvTQ@mail.gmail.com>
+Subject: Re: [PATCH v8 00/17] power: sequencing: implement the subsystem and
+ add first users
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Marcel Holtmann <marcel@holtmann.org>, Luiz Augusto von Dentz <luiz.dentz@gmail.com>, 
+	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Balakrishna Godavarthi <quic_bgodavar@quicinc.com>, Rocky Liao <quic_rjliao@quicinc.com>, 
+	Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Srini Kandagatla <srinivas.kandagatla@linaro.org>, 
+	Elliot Berman <quic_eberman@quicinc.com>, Caleb Connolly <caleb.connolly@linaro.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+	Alex Elder <elder@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org, 
+	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+	Jeff Johnson <quic_jjohnson@quicinc.com>, ath12k@lists.infradead.org, 
+	linux-pm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, kernel@quicinc.com, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Amit Pundir <amit.pundir@linaro.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_155646_101613_50C6F0B2 
-X-CRM114-Status: GOOD (  27.05  )
+X-CRM114-CacheID: sfid-20240612_001106_822040_F4DBFA24 
+X-CRM114-Status: GOOD (  20.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,151 +109,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 28, 2024 at 09:03:24PM +0200, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> 
-> Add a PCI power control driver that's capable of correctly powering up
-> devices using the power sequencing subsystem. The first users of this
-> driver are the ath11k module on QCA6390 and ath12k on WCN7850.
-> 
-> Tested-by: Amit Pundir <amit.pundir@linaro.org>
-> Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+On Wed, Jun 12, 2024 at 12:54=E2=80=AFAM Bjorn Helgaas <helgaas@kernel.org>=
+ wrote:
+>
+> On Tue, May 28, 2024 at 09:03:08PM +0200, Bartosz Golaszewski wrote:
+> > Note: I am resending this series in its entirety once more for
+> > discussions and reviews. If there won't be any major objections, I'll
+> > then start sending individual bits and pieces to appropriate trees.
+> >
+> > Merging strategy: The DT binding and DTS changes are a no-brainer, they
+> > can go through the wireless, regulator and arm-msm trees separately. Th=
+e
+> > bluetooth and PCI changes have a build-time dependency on the power
+> > sequencing code. The bluetooth changes also have a run-time dependency =
+on
+> > the PCI pwrctl part. In order to get it into next I plan to pick up the
+> > power sequencing code into my own tree and maintain it. I can then
+> > provide an immutable tag for the BT and PCI trees to pull. I wouldn't
+> > stress about the BT runtime dependency as it will be fixed once all
+> > changes are in next.
+>
+> The PCI changes are very self-contained and any conflicts will be
+> trivial, so rather than messing with an immutable tag, how about if I
+> just ack them and you can include them in your tree directly?
 
-With s/add/Add/ in subject,
+Sure, if you're convinced that eventual conflicts in PCI core won't be
+an issue then it's even better.
 
-Acked-by: Bjorn Helgaas <bhelgaas@google.com>
-
-> ---
->  drivers/pci/pwrctl/Kconfig             |  9 ++++
->  drivers/pci/pwrctl/Makefile            |  2 +
->  drivers/pci/pwrctl/pci-pwrctl-pwrseq.c | 89 ++++++++++++++++++++++++++++++++++
->  3 files changed, 100 insertions(+)
-> 
-> diff --git a/drivers/pci/pwrctl/Kconfig b/drivers/pci/pwrctl/Kconfig
-> index 96195395af69..f1b824955d4b 100644
-> --- a/drivers/pci/pwrctl/Kconfig
-> +++ b/drivers/pci/pwrctl/Kconfig
-> @@ -5,4 +5,13 @@ menu "PCI Power control drivers"
->  config PCI_PWRCTL
->  	tristate
->  
-> +config PCI_PWRCTL_PWRSEQ
-> +	tristate "PCI Power Control driver using the Power Sequencing subsystem"
-> +	select POWER_SEQUENCING
-> +	select PCI_PWRCTL
-> +	default m if ((ATH11K_PCI || ATH12K) && ARCH_QCOM)
-> +	help
-> +	  Enable support for the PCI power control driver for device
-> +	  drivers using the Power Sequencing subsystem.
-> +
->  endmenu
-> diff --git a/drivers/pci/pwrctl/Makefile b/drivers/pci/pwrctl/Makefile
-> index 52ae0640ef7b..d308aae4800c 100644
-> --- a/drivers/pci/pwrctl/Makefile
-> +++ b/drivers/pci/pwrctl/Makefile
-> @@ -2,3 +2,5 @@
->  
->  obj-$(CONFIG_PCI_PWRCTL)		+= pci-pwrctl-core.o
->  pci-pwrctl-core-y			:= core.o
-> +
-> +obj-$(CONFIG_PCI_PWRCTL_PWRSEQ)		+= pci-pwrctl-pwrseq.o
-> diff --git a/drivers/pci/pwrctl/pci-pwrctl-pwrseq.c b/drivers/pci/pwrctl/pci-pwrctl-pwrseq.c
-> new file mode 100644
-> index 000000000000..c7a113a76c0c
-> --- /dev/null
-> +++ b/drivers/pci/pwrctl/pci-pwrctl-pwrseq.c
-> @@ -0,0 +1,89 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (C) 2024 Linaro Ltd.
-> + */
-> +
-> +#include <linux/device.h>
-> +#include <linux/mod_devicetable.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/pci-pwrctl.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/pwrseq/consumer.h>
-> +#include <linux/slab.h>
-> +#include <linux/types.h>
-> +
-> +struct pci_pwrctl_pwrseq_data {
-> +	struct pci_pwrctl ctx;
-> +	struct pwrseq_desc *pwrseq;
-> +};
-> +
-> +static void devm_pci_pwrctl_pwrseq_power_off(void *data)
-> +{
-> +	struct pwrseq_desc *pwrseq = data;
-> +
-> +	pwrseq_power_off(pwrseq);
-> +}
-> +
-> +static int pci_pwrctl_pwrseq_probe(struct platform_device *pdev)
-> +{
-> +	struct pci_pwrctl_pwrseq_data *data;
-> +	struct device *dev = &pdev->dev;
-> +	int ret;
-> +
-> +	data = devm_kzalloc(dev, sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return -ENOMEM;
-> +
-> +	data->pwrseq = devm_pwrseq_get(dev, of_device_get_match_data(dev));
-> +	if (IS_ERR(data->pwrseq))
-> +		return dev_err_probe(dev, PTR_ERR(data->pwrseq),
-> +				     "Failed to get the power sequencer\n");
-> +
-> +	ret = pwrseq_power_on(data->pwrseq);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret,
-> +				     "Failed to power-on the device\n");
-> +
-> +	ret = devm_add_action_or_reset(dev, devm_pci_pwrctl_pwrseq_power_off,
-> +				       data->pwrseq);
-> +	if (ret)
-> +		return ret;
-> +
-> +	data->ctx.dev = dev;
-> +
-> +	ret = devm_pci_pwrctl_device_set_ready(dev, &data->ctx);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret,
-> +				     "Failed to register the pwrctl wrapper\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id pci_pwrctl_pwrseq_of_match[] = {
-> +	{
-> +		/* ATH11K in QCA6390 package. */
-> +		.compatible = "pci17cb,1101",
-> +		.data = "wlan",
-> +	},
-> +	{
-> +		/* ATH12K in WCN7850 package. */
-> +		.compatible = "pci17cb,1107",
-> +		.data = "wlan",
-> +	},
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, pci_pwrctl_pwrseq_of_match);
-> +
-> +static struct platform_driver pci_pwrctl_pwrseq_driver = {
-> +	.driver = {
-> +		.name = "pci-pwrctl-pwrseq",
-> +		.of_match_table = pci_pwrctl_pwrseq_of_match,
-> +	},
-> +	.probe = pci_pwrctl_pwrseq_probe,
-> +};
-> +module_platform_driver(pci_pwrctl_pwrseq_driver);
-> +
-> +MODULE_AUTHOR("Bartosz Golaszewski <bartosz.golaszewski@linaro.org>");
-> +MODULE_DESCRIPTION("Generic PCI Power Control module for power sequenced devices");
-> +MODULE_LICENSE("GPL");
-> 
-> -- 
-> 2.43.0
-> 
+Bart
 
