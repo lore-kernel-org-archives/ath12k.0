@@ -4,86 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4290C27C77
-	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 16:51:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74F01C27C77
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 22:53:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aPOOL93oA55fvJx3l5V5jUffrMIfBbciFg91UPpmXiA=; b=h8+WqiBDr8SVl/F971g4mj9Iw/
-	QksKcxVVTbTE2vhYZ2cpFYEGS0r4dRI9PP8L3WpyO19OEyFKO4n7z+ht79KY/hRAM0MhEAmWOsvH5
-	L7g327XPIsQFbjn8IhQTrtl19eHb+cLc8Cvw4juJ0kFmjHo5Xgzvv8VdEJaX3zQxxdDPmH2B6kIGL
-	HrXW84jNkovvM1JBrlTRp+x1OdZgvFOW1ZCv3bJ2VM0dnJvG3OCDG4WlqL+Lo/pzam9Awd0lVJdEx
-	XlIQWn1r7TqsRs0JtbnSg9bqoWHQucDGVduxayZrdl0s+yLPlelmA9JDYgGKUx4dNEs60w1tJXFai
-	fzfCXb0A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=9oYa6tI8cO56ucuYhLoP+IEPcoOWM0YoZSeApoHMRKI=; b=qh4JfCE4OtfB4Wl1SRkpaUhhf2
+	JpUcfpC9s3Lz02mpKGfENR/MoPJk20Zsvz0rgabRNTDYI/3vhrHFVrT9SFqVn9QFxlAJXJ6w0HYvH
+	OTD3OFrrKR2aVMYw0Lu2ffL4ks4GRF1hqDXYjPxYT8Dacs/b0DlC6bB36GWQX0195YLp1/KO9Rq7P
+	Y0MiDiFvZOYOajXXy3WxOdm3SrTjShzMXoGPh/50D/GpskL1cAiiA4CLJyQujxPNhN2U8/hmwlXgy
+	ZUOncHWuX8z3sL48rrmy/jWHHtg/z+y9IJRpBjM/fP1RQ/XNjVCup6FcIGq0dt3WrQDxc7KqdfX8P
+	osip5RYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHRCH-0000000DRsW-1yrW
+	id 1sHWqp-0000000EObm-47sZ
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Jun 2024 16:51:41 +0000
+	Wed, 12 Jun 2024 22:53:55 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHRCB-0000000DRqk-3LpM
+	id 1sHWqm-0000000EOZe-0CK1
 	for ath12k@lists.infradead.org;
-	Wed, 12 Jun 2024 16:51:39 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45CFND0m015964;
-	Wed, 12 Jun 2024 16:51:34 GMT
+	Wed, 12 Jun 2024 22:53:53 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45CKn7OM001101;
+	Wed, 12 Jun 2024 22:53:48 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	aPOOL93oA55fvJx3l5V5jUffrMIfBbciFg91UPpmXiA=; b=o1YZ/r386P8jKT42
-	YjVDJGG9EEqYVdz5WYAeLrT6CxRU2OV+nyfgQcwi27odhnB5JSDjJ+Sh+xtiRZyZ
-	fg0dboMBFJ7jAPbmunR8u1VS9yXJuxZvTzBoaiSMfn4mkPhyzGKprR94wd45L5Yx
-	BAAtozSIr2HiRAYMr+1G8XDzmUPeJw2MRu/stNVGKUbih/Ws+KpvbzXILu8q1BX0
-	QrjtlQv1qGc9QpDmtZR2DPIFJKu5Tzw+1dJwFurvoeh00w/GRkFOqdM0eCFX9A7o
-	BbezLXPhL54smjCdrxZQd9XTLX/9rNW++GRr0pK6aOBGHSwF8ZWBKZ5t1U7wicnb
-	blgc2A==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yqe93gay2-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=9oYa6tI8cO56ucuYhLoP+I
+	EPcoOWM0YoZSeApoHMRKI=; b=YfanuPq75pYlAGDlKSpLa7RxVcZRySXrnl1Alc
+	/wV/o4/DY3siVAj4bwR9G4H5RygYFOEFy6FIDuA/ryOE+lpU41OGIScc1B9W9Hpq
+	hGPa+njpREzKQU3U0SUPVx3IZsmdAKai3lVX+WNiaqLw6hDEX/dtH4tKYXH+Xt9v
+	BQIG/24ldUdJsk7qTGyRx+m9hm3f82Fo/Z3MuwgHxmzXNnhHJBWgafnVOvNhSb4x
+	IzdL33cDnqYGQ5HFUbiyLjwpM3C7jr7YKrL3jgaMy7ueM6RVC2XzFCxanhTBs0K+
+	yZmFpWpmutuE+s7S5xbx3IHXVAAHIxNslauTfAqLxat3lDqg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ypp87vtey-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Jun 2024 16:51:34 +0000 (GMT)
+	Wed, 12 Jun 2024 22:53:48 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45CGpXZi026441
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45CMrlO6003753
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Jun 2024 16:51:33 GMT
-Received: from [10.48.243.20] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 12 Jun
- 2024 09:51:33 -0700
-Message-ID: <cd77058f-7165-4342-893b-a59a3a18c3c5@quicinc.com>
-Date: Wed, 12 Jun 2024 09:51:32 -0700
+	Wed, 12 Jun 2024 22:53:47 GMT
+Received: from pradeepc-linux2.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Wed, 12 Jun 2024 15:53:46 -0700
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>,
+        Aditya Kumar Singh <quic_adisi@quicinc.com>,
+        Zachary Smith <dr.z.smith@gmail.com>
+Subject: [PATCH] wifi: ath12k: fix legacy peer association due to missing HT or 6 GHz capabilities
+Date: Wed, 12 Jun 2024 15:53:36 -0700
+Message-ID: <20240612225336.2303119-1-quic_pradeepc@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/4] ath12k: Factory test mode support
-Content-Language: en-US
-To: Aaradhana Sahu <quic_aarasahu@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240611083427.881443-1-quic_aarasahu@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240611083427.881443-1-quic_aarasahu@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: CarHVmVqP7xmin0i_6Pn_3dCn7ZD5GSs
-X-Proofpoint-ORIG-GUID: CarHVmVqP7xmin0i_6Pn_3dCn7ZD5GSs
+X-Proofpoint-GUID: lYkiXREXHhJstBfT943psHOzJECjmfb3
+X-Proofpoint-ORIG-GUID: lYkiXREXHhJstBfT943psHOzJECjmfb3
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-12_08,2024-06-12_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 phishscore=0
- lowpriorityscore=0 suspectscore=0 malwarescore=0 mlxlogscore=999
- impostorscore=0 priorityscore=1501 mlxscore=0 bulkscore=0 adultscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405170001 definitions=main-2406120121
+ definitions=2024-06-12_10,2024-06-12_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 malwarescore=0
+ spamscore=0 suspectscore=0 mlxlogscore=999 priorityscore=1501 adultscore=0
+ bulkscore=0 mlxscore=0 clxscore=1011 impostorscore=0 lowpriorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2405170001
+ definitions=main-2406120163
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_095135_959476_FAABC4F4 
-X-CRM114-Status: GOOD (  16.11  )
+X-CRM114-CacheID: sfid-20240612_155352_111905_64D17163 
+X-CRM114-Status: GOOD (  14.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,72 +98,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/11/2024 1:34 AM, Aaradhana Sahu wrote:
-> Device is booted in factory test mode for calibration.
-> The commands are sent from userspace application, which
-> is sent to firmware using wmi commands. Firmware sends
-> the response to driver as wmi events and driver sends
-> these events to the application via netlink message.
-> 
-> Also added changes related to correct pdev id access for
-> fw test cmd.
-> 
-> Aaradhana Sahu (3):
->   wifi: ath: create common testmode_i.h file for ath drivers
->   wifi: ath12k: export ath12k_wmi_tlv_hdr for testmode
->   wifi: ath12k: add factory test mode support
-> 
-> Rajat Soni (1):
->   wifi: ath12k: Fill pdev id for fw test cmd
-> 
-> ---
-> v3:
->   -Rebased on latest ToT
->   -Updated Tested-on Tag
->   -Removed second parameter of ath12k_core_start()
->   -Updated copyright
-> v2:
->   -Rebased on latest ath ToT
-> ---
-> 
->  drivers/net/wireless/ath/ath11k/testmode.c    |  78 ++--
->  drivers/net/wireless/ath/ath12k/Makefile      |   1 +
->  drivers/net/wireless/ath/ath12k/core.c        |  22 +-
->  drivers/net/wireless/ath/ath12k/core.h        |  13 +
->  drivers/net/wireless/ath/ath12k/debug.h       |   1 +
->  drivers/net/wireless/ath/ath12k/dp.c          |   3 +
->  drivers/net/wireless/ath/ath12k/mac.c         |  15 +-
->  drivers/net/wireless/ath/ath12k/pci.c         |   1 +
->  drivers/net/wireless/ath/ath12k/testmode.c    | 422 ++++++++++++++++++
->  drivers/net/wireless/ath/ath12k/testmode.h    |  40 ++
->  drivers/net/wireless/ath/ath12k/wmi.c         |  39 +-
->  drivers/net/wireless/ath/ath12k/wmi.h         |  21 +
->  .../wireless/ath/{ath11k => }/testmode_i.h    |  52 +--
->  13 files changed, 634 insertions(+), 74 deletions(-)
->  create mode 100644 drivers/net/wireless/ath/ath12k/testmode.c
->  create mode 100644 drivers/net/wireless/ath/ath12k/testmode.h
->  rename drivers/net/wireless/ath/{ath11k => }/testmode_i.h (53%)
-> 
-> 
-> base-commit: a116bf2be795eb1db75fa6a48aa85c397be001a6
+Currently SMPS configuration failed when the Information
+Elements (IEs) did not contain HT or 6 GHz capabilities. This
+caused legacy peer association to fail as legacy peers do not
+have HT or 6 GHz capabilities. Fix this by not returning an
+error when SMPS configuration fails due to the absence of HT
+or 6 GHz capabilities.
 
-FYI this series is not applying cleanly in my tree for validation:
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Base: using specified base-commit a116bf2be795eb1db75fa6a48aa85c397be001a6
-Applying: wifi: ath: create common testmode_i.h file for ath drivers
-Using index info to reconstruct a base tree...
-Patch failed at 0001 wifi: ath: create common testmode_i.h file for ath drivers
-When you have resolved this problem, run "git am --continue".
-If you prefer to skip this patch, run "git am --skip" instead.
-To restore the original branch and stop patching, run "git am --abort".
-error: patch failed: drivers/net/wireless/ath/ath11k/testmode_i.h:4
-error: drivers/net/wireless/ath/ath11k/testmode_i.h: patch does not apply
-error: Did you hand edit your patch?
-It does not apply to blobs recorded in its index.
+Fixes: f0e61dc7ecf9 ("wifi: ath12k: refactor SMPS configuration")
+Reported-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Reported-by: Zachary Smith <dr.z.smith@gmail.com>
+Closes: https://lore.kernel.org/all/CAM=znoFPcXrn5GhDmDmo50Syic3-hXpWvD+vkv8KX5o_ZTo8kQ@mail.gmail.com/
+Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-I initially used b4, but tried again directly with git, and it failed for me 
-with both mechanisms.
-Kalle, do you have any issues with this series?
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 2259ce22cc8b..fa9f6656a06f 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -2255,9 +2255,6 @@ static int ath12k_get_smps_from_capa(const struct ieee80211_sta_ht_cap *ht_cap,
+ 				     const struct ieee80211_he_6ghz_capa *he_6ghz_capa,
+ 				     int *smps)
+ {
+-	if (!ht_cap->ht_supported && !he_6ghz_capa->capa)
+-		return -EOPNOTSUPP;
+-
+ 	if (ht_cap->ht_supported)
+ 		*smps = u16_get_bits(ht_cap->cap, IEEE80211_HT_CAP_SM_PS);
+ 	else
+@@ -2277,6 +2274,9 @@ static void ath12k_peer_assoc_h_smps(struct ieee80211_sta *sta,
+ 	const struct ieee80211_sta_ht_cap *ht_cap = &sta->deflink.ht_cap;
+ 	int smps;
+ 
++	if (!ht_cap->ht_supported && !he_6ghz_capa->capa)
++		return;
++
+ 	if (ath12k_get_smps_from_capa(ht_cap, he_6ghz_capa, &smps))
+ 		return;
+ 
+@@ -2756,6 +2756,9 @@ static int ath12k_setup_peer_smps(struct ath12k *ar, struct ath12k_vif *arvif,
+ {
+ 	int smps, ret = 0;
+ 
++	if (!ht_cap->ht_supported && !he_6ghz_capa)
++		return 0;
++
+ 	ret = ath12k_get_smps_from_capa(ht_cap, he_6ghz_capa, &smps);
+ 	if (ret < 0)
+ 		return ret;
 
+base-commit: e72048809ec7355a947415ae6836d2eb7fdcda39
+-- 
+2.34.1
 
 
