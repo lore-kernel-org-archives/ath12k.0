@@ -4,92 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2231DC27C53
-	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 12:52:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 797D3C27C53
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 14:23:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=w4GwlwGfBQlnNfyaS5mrHYpZ8wLq2fCIW70IywjAOXI=; b=JPUFZQW68/rVD7u1kdkGbhWCtV
-	qhEoPxo8cQ8X3rrjKg+x+SdrsnovJTO6+ngv5ggNZASGbYkMzK9hxQSwPqO6Hgv4aGd29TvOIdAZA
-	oUjolQLFWxzJ2gA8VPWZEphYa2qvEy3zPJjOasVUB4dRo+K95KaR/6n5+TlVD914TQvMKc/knA5nv
-	G9u1aivdy5BFfcefnH4k4lxRqyqrh8PHtVhFeQlHSMeyxP3zbbW0hGbUzQgMk00a7nk/kehzHJzii
-	Vsuz/qFXdd4KcaFO+JukFio7yVsLsxj1s1eQ+34tmUnOqUPx4MQ+ZJdpXS2xFOcvGSwtNjeTjfDVg
-	yWsRlqMQ==;
+	bh=lOrzqPrbog8UmhYYC+TSD0vNVh1vf3Up5LY8FNHsu4s=; b=gOUy4TGQbgG+/ucdxuICMbi4h9
+	palwH1UhpqM70v9lwrZrVefwzEkPAAK3m3XWjSbkr03HxKuGJ5cpp+SCGCatRKE56R9OW4eKZAKtT
+	sEUF0U2Y+PHYDTzhokLq4hixErhAoN1RwcwhxcqnbagUJ8qArlZpxFG37aPvVgazQrO0QbQXOp9gu
+	4kpKB773rqADlrs+h10XMNx0rnuGoJN6TjoPwZ6KcosNC4KzxUyxa67AfAyHWGC41ovqixUlG8oPy
+	YCxB3u6xSAMBcwqyyTk5ArE2IMtTwT+xHzV77cvFnH1amCczNlckF0tEjcl7t1VezB9F1aF7oGdCL
+	HBqMOGjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHNSz-0000000Cdpo-2s6O
+	id 1sHOsn-0000000CvoU-0Xwi
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Jun 2024 12:52:41 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	Wed, 12 Jun 2024 14:23:25 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHNSv-0000000CdoT-3weY
+	id 1sHOsk-0000000Cvo5-3EzC
 	for ath12k@lists.infradead.org;
-	Wed, 12 Jun 2024 12:52:40 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-52c9034860dso3603815e87.2
-        for <ath12k@lists.infradead.org>; Wed, 12 Jun 2024 05:52:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1718196755; x=1718801555; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=w4GwlwGfBQlnNfyaS5mrHYpZ8wLq2fCIW70IywjAOXI=;
-        b=s1AS7hdLSJHji3Oy7HPtQQAzRhMqbc+EAgEyfC9PVFJA42c/7gRbopue1d8ozlDBVL
-         1uxgGfQ0ZxpiEuwP2bu/pPDS9ymqgKG3+BRXm7x3aNjqlNF55qQla1mjutmnDhIFLzoH
-         iZO1f61aZLD10+FPnZhKkcGIbnN/h3OIsHMhPibUfvCk3suyZ+hMYoDH3z2FjRzGkdoF
-         HMUcFIMhPU7deSBAejPPNi5P+0DNL7abiewBx6izRJAMdzrReQSoc3fTdpth/OIqbcD/
-         4Rwwm+En4WH/WLNzGk6ChUwaH3NJcUv/wOuD72A/la9F76hAcGb0qet25y/U5HMXqqwg
-         jZZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718196755; x=1718801555;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=w4GwlwGfBQlnNfyaS5mrHYpZ8wLq2fCIW70IywjAOXI=;
-        b=iGtiW+jbndgJNUH/+5izn3wQXLiux/mMkqZQYpHXV74Tf4BRqjRNJo3LIwGxED6R8l
-         Mm8w9n67Rkg0KG9upTlz1Tf4oJ1rNUxpeHTN5r9TgGVbquiZ6E8Dmp4C+LPMsezWnyTD
-         qwJKEb9p3UFmNj2Z2LTQyZr7tvpUxMAVSBjAXv9VwHB5SRG//jAWqRmadqjsggK63FE6
-         fy+pMDIgXsVH8VHB5JmgjOyY3zRCyGR7qchqCM7oKpmfSglXBwDcb0Dcje9FSYOPnsK/
-         9MEW8Vf6YyUYv07yuLmVRxpPh8GOr9aAHd/kTh6qKQi/LskY7iv7vKu9uST+gLwOlM20
-         WSng==
-X-Forwarded-Encrypted: i=1; AJvYcCUo9NjyorAAqr0iC6tLgjNg7bjRa9dTmCh+VwEl2r5WDgYdg3/PD06y13R3Zb6vD9FGxeUXfiVKKcH4EgX5XL1D8HaYtrk6+8D7xQ==
-X-Gm-Message-State: AOJu0YyZ2HZZJFvcddsXBAXt/ujNCr4puUZpKUQYpEzRN1CtJzf+bz0v
-	WRg4qRWPnN9DPDkohsfnmoGY6E83yLezQX0F0LqJNesXjLbnh8RCUhIoXSoTshd8csREoLTsTW3
-	/XT+Jvt97V8La8IM5jI1ICgt2+VACfdCZhfvKiw==
-X-Google-Smtp-Source: AGHT+IFe+r6yKhsmufEY9zI0E5nEG73VhIrL6yR6XIX0JzQBh8t8vS1gVMACOhRz3PdyyC7pIpNTDk6MWfIpHIDS9y8=
-X-Received: by 2002:ac2:46d3:0:b0:52c:9877:71b7 with SMTP id
- 2adb3069b0e04-52c9a40b1e1mr1287628e87.59.1718196754793; Wed, 12 Jun 2024
- 05:52:34 -0700 (PDT)
+	Wed, 12 Jun 2024 14:23:24 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45C8MGvQ012595;
+	Wed, 12 Jun 2024 14:23:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	lOrzqPrbog8UmhYYC+TSD0vNVh1vf3Up5LY8FNHsu4s=; b=O2D5WlnitSw4paSC
+	PUdWjLqV9sQeQk6kDEgDVL+6iNjlcOklZjjCzi4cWO7aZOyo/ePORgLG+F5sfsyg
+	RAUUUEQMm0qEOnrBi1Dee0ZV3kctezJ+BU1wHGv7Oo8YLhkrkGvMzD0f42q0VvPl
+	c7hXh275l0iEjpmCz3RmIeEYIGNctg6aslqTytleUI2vBu18GjkWXeo0S+P1LNuE
+	d653cuBno8iQEOTIU5Gf9lcuJPNsws2ba/faaP6TNJh5UbpUqfVsMvIAx/DnZTu+
+	LPp5XYTaTXwzjg2asYpK+21rlqcWGjCD14kjlUnZy9NmH5ySK8pn/OnzODhiPvrm
+	qeHWwQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yq83wgvb0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Jun 2024 14:23:20 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45CENJJM016302
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Jun 2024 14:23:19 GMT
+Received: from [10.50.27.151] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 12 Jun
+ 2024 07:23:17 -0700
+Message-ID: <3483a69d-6918-c91c-6349-7f268fe44e15@quicinc.com>
+Date: Wed, 12 Jun 2024 19:53:12 +0530
 MIME-Version: 1.0
-References: <20240605122106.23818-1-brgl@bgdev.pl> <20240605122106.23818-2-brgl@bgdev.pl>
- <87h6e6qjuh.fsf@kernel.org> <CAMRc=MdiKxtnN+g92RUTXdOydaPV5M2u5iUdKyE2SNvDkdXAjg@mail.gmail.com>
- <871q5aqiei.fsf@kernel.org> <CAMRc=McacZMP-51hjH+d8=PVe+Wgw4a8xWcv0sRPLJKL_gP=KQ@mail.gmail.com>
- <87sexqoxm9.fsf@kernel.org> <CAMRc=McYAbhL5M1geYtf8LbgJG5x_+ZUFKXRuo7Vff_8ssNoUA@mail.gmail.com>
- <8db01c97-1cb2-4a86-abff-55176449e264@kernel.org> <CAMRc=Mer2HpuBLGiabNtSgSRduzrrtT1AtGoDXeHgYqavWXdrA@mail.gmail.com>
- <87ikyenx5c.fsf@kernel.org>
-In-Reply-To: <87ikyenx5c.fsf@kernel.org>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Wed, 12 Jun 2024 14:52:23 +0200
-Message-ID: <CAMRc=MdPQu-r4aaeag9apYP1-FoQ2-_GAk_qnHqDz-jWibRDFQ@mail.gmail.com>
-Subject: Re: [PATCH v9 1/2] dt-bindings: net: wireless: qcom,ath11k: describe
- the ath11k on QCA6390
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org, 
-	netdev@vger.kernel.org, devicetree@vger.kernel.org, 
-	ath11k@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	ath12k@lists.infradead.org, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [RFC v3 4/8] wifi: mac80211: add support for DFS with multiple
+ radios
+To: Felix Fietkau <nbd@nbd.name>, <linux-wireless@vger.kernel.org>
+CC: <johannes@sipsolutions.net>, <quic_adisi@quicinc.com>,
+        <ath12k@lists.infradead.org>
+References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
+ <7cc3d89225f365c85b363874725cfbc77c9c1db5.1717696995.git-series.nbd@nbd.name>
+Content-Language: en-US
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <7cc3d89225f365c85b363874725cfbc77c9c1db5.1717696995.git-series.nbd@nbd.name>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: tIaClkHHTSZyIbImmjSjsPMUgtbq0owD
+X-Proofpoint-ORIG-GUID: tIaClkHHTSZyIbImmjSjsPMUgtbq0owD
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-06-12_08,2024-06-12_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ bulkscore=0 spamscore=0 mlxlogscore=999 suspectscore=0 clxscore=1015
+ lowpriorityscore=0 malwarescore=0 priorityscore=1501 mlxscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2406120102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_055238_222907_F7F04208 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20240612_072322_955287_BEAE66CB 
+X-CRM114-Status: GOOD (  19.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,53 +102,79 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 12, 2024 at 2:49=E2=80=AFPM Kalle Valo <kvalo@kernel.org> wrote=
-:
->
-> Bartosz Golaszewski <brgl@bgdev.pl> writes:
->
-> >> >> Sure, I don't need DT but that's not my point. My point is why requ=
-ire
-> >> >> these supplies for _all_ devices having PCI id 17cb:1101 (ie. QCA63=
-90)
-> >> >> then clearly there are such devices which don't need it? To me that=
-'s
-> >> >> bad design and, if I'm understanding correctly, prevents use of
-> >> >> qcom,ath11k-calibration-variant property. To me having the supplies
-> >> >> optional in DT is more approriate.
-> >> >>
-> >> >
-> >> > We require them because *they are physically there*.
-> >>
-> >> I understand that for all known DT QCA6390 hardware, the supplies shou=
-ld
-> >> be provided thus they should be required. If in the future we have
-> >> different design or we represent some pluggable PCI card, then:
-> >> 1. Probably that PCI card does not need power sequencing, thus no DT
-> >> description,
-> >> 2. If still needs power sequencing, you can always amend bindings and
-> >> un-require the supplies.
-> >>
-> >>
-> >> Best regards,
-> >> Krzysztof
-> >>
-> >
-> > Kalle, does the above answer your questions? Are these bindings good to=
- go?
->
-> To me most important is that we are on the same page that in some cases
-> (eg. with M.2 boards) the supplies can be optional and we can update the
-> bindings doc once such need arises (but we don't make any changes right
-> now). Based on point 2 from Krzysztof I think we all agree, right?
->
-> Just making sure: if we later change the supplies optional does that
-> create any problems with backwards compatibility? It's important that
-> updates go smoothly.
 
-No, you can always relax the requirements alright. It's only when you
-make them more strict that you'll run into backward compatibility
-issues.
 
-Bart
+On 6/6/2024 11:37 PM, Felix Fietkau wrote:
+> DFS can be supported with multi-channel combinations, as long as each DFS
+> capable radio only supports one channel.
+> 
+> Signed-off-by: Felix Fietkau <nbd@nbd.name>
+> ---
+>   net/mac80211/main.c | 32 ++++++++++++++++++++++++--------
+>   1 file changed, 24 insertions(+), 8 deletions(-)
+> 
+> diff --git a/net/mac80211/main.c b/net/mac80211/main.c
+> index 40fbf397ce74..e9c4cf611e94 100644
+> --- a/net/mac80211/main.c
+> +++ b/net/mac80211/main.c
+> @@ -1084,6 +1084,21 @@ static int ieee80211_init_cipher_suites(struct ieee80211_local *local)
+>   	return 0;
+>   }
+>   
+> +static bool
+> +ieee80211_ifcomb_check_radar(const struct ieee80211_iface_combination *comb,
+> +			     int n_comb)
+> +{
+> +	int i;
+> +
+> +	/* DFS is not supported with multi-channel combinations yet */
+> +	for (i = 0; i < n_comb; i++, comb++)
+> +		if (comb->radar_detect_widths &&
+> +		    comb->num_different_channels > 1)
+> +			return false;
+> +
+> +	return true;
+> +}
+> +
+>   int ieee80211_register_hw(struct ieee80211_hw *hw)
+>   {
+>   	struct ieee80211_local *local = hw_to_local(hw);
+> @@ -1173,17 +1188,18 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
+>   			if (comb->num_different_channels > 1)
+>   				return -EINVAL;
+>   		}
+> -	} else {
+> -		/* DFS is not supported with multi-channel combinations yet */
+> -		for (i = 0; i < local->hw.wiphy->n_iface_combinations; i++) {
+> -			const struct ieee80211_iface_combination *comb;
+> -
+> -			comb = &local->hw.wiphy->iface_combinations[i];
+> +	} else if (hw->wiphy->n_radio) {
+> +		for (i = 0; i < hw->wiphy->n_radio; i++) {
+> +			const struct wiphy_radio *radio = &hw->wiphy->radio[i];
+>   
+> -			if (comb->radar_detect_widths &&
+> -			    comb->num_different_channels > 1)
+> +			if (!ieee80211_ifcomb_check_radar(radio->iface_combinations,
+> +							  radio->n_iface_combinations))
+>   				return -EINVAL;
+>   		}
+
+When driver advertise per radio iface combination, you are not checking 
+the global iface combination. using the uncheck global iface combination 
+lead to unknown issues.
+
+
+> +	} else {
+> +		if (!ieee80211_ifcomb_check_radar(hw->wiphy->iface_combinations,
+> +						  hw->wiphy->n_iface_combinations))
+> +			return -EINVAL;
+>   	}
+>   
+>   	/* Only HW csum features are currently compatible with mac80211 */
+
+-- 
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
