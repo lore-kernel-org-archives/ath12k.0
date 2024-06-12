@@ -4,68 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E85EC27C53
-	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 12:05:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 587D0C27C53
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 12:21:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=E4QnWHv8dLIoq+vheL78UIzoMLHsB6bqRQNiyBcbXwY=; b=2HZNMx3eVN/e7wL6dzslvyiD7Q
-	gsKdPKP4vxp2oRJldV1ftflKtOKF3nQ8EOYwYuFamwaYgtoD+ZtnZTZRqgByKejOcR2FdFyp9zg/T
-	oc//+LDjLdxfA/FRjeQJRXwpw7rHOH7h4WuNWhPXIgzHwh/IF+NgeJfVNVCoaEshfyL4B94Ne0Pwy
-	GEFwubKQLtBClHOP08WQ2IXx6Zd+7L1xhjd8VlvMFlY372Z3XawotJbfWq7+mqBaXoaHf/ozGuHwS
-	tiEubtw+VAzuTFTFLPoEbx+W8yxbVDpk3h/xpyR9Sf6q5kpiPwGRzfb+wyiue+EyVhO+vMT2rDT64
-	XKtFUmMQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=hzrc9Fovnr22Aow7tfPfZWXbpnrzvkkkMfDm1YahJfY=; b=YuuJjUtJ6HLcvBAiFhwrop4T4i
+	9bQJtTAxrpiImMMSHnti+Aktt29aPoKzDLRucohi8wcaJbDpRmj9sTq/pMUQD5095SNTYq2yXmANb
+	/Pf0leXLS2fgEovPZu7/yNOHJXSZapzJKAfKchz22F6S4C2nchkZwhyRLaf3LI4x1zqvHSxPnbxT9
+	ZdzcD9n2HxMaQ3IF1qzQRXIFaDkz1Y3cj7kPoYisOKRp9ImtB40HiCNeBvOfZHbuUS024cqxwU0JU
+	tCX0XISIGZ9lDUPLnoehCBZy0JgdLVjYP72qRwNYlfT1LgYCBe8pJFt6nFOK+NwUrQRwXFivzKFAG
+	qLqFTp5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHMjh-0000000CX1C-0Sh3
+	id 1sHMz4-0000000CZ0u-09Mh
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Jun 2024 12:05:53 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Wed, 12 Jun 2024 12:21:46 +0000
+Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHMje-0000000CWzA-2KG6
+	id 1sHMz1-0000000CYyd-0NlR
 	for ath12k@lists.infradead.org;
-	Wed, 12 Jun 2024 12:05:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=E4QnWHv8dLIoq+vheL78UIzoMLHsB6bqRQNiyBcbXwY=;
-	t=1718193948; x=1719403548; b=HWgPuMBOj9Bf9IVV6/p6ctZdhNAA1l4cwX7bNVzaLfXy9uQ
-	PoL6+w5KDZMbEVyO2AdVLTuOuF0cNoJPvfOxW00wiRbnDJ5/gb7z7FPhjkVAHM/KttkSiFnoVxSEG
-	1cOkuMGXZFKUtIr5zQhxwVVFI1j934y7Q3vjAJbe4qDOYDqN3EIDtFsCnl2yVVSgkuAHAWFfu+dUm
-	eYk3OrZr5lkJoUTvrkU0GYyr2hELwlYnd296fKMjspz6tLagV9CiRIAX7LM8BD9zARDs33u/fDjmh
-	9DJRKF2K2GaPTPwxJOm63XwYFYogoBpu8Y86/JLhxBAjkad/r00qnc1wbXGvRHiA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1sHMjY-0000000AEjC-0yRF;
-	Wed, 12 Jun 2024 14:05:44 +0200
-Message-ID: <fa7c2aeef854f89eeb03a01a21a8d511417c92b6.camel@sipsolutions.net>
+	Wed, 12 Jun 2024 12:21:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=hzrc9Fovnr22Aow7tfPfZWXbpnrzvkkkMfDm1YahJfY=; b=a46BL3wHuE1TpqRyZ4DzTJWHoa
+	WIjArBZ3kTmur14OZpQH4f+GbA6XxUGxgsroBQajBlsrIw4TqEm+rIsQUfCJQHyDraTSN13YnHplM
+	ixmG8cIzwgHBPIAH5UxuiiI7nmwyU82Hhdri7yt4yX+YCJzGtEW0q6u3GSHrOuHOwK2Q=;
+Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1sHMys-00Aq6n-0A;
+	Wed, 12 Jun 2024 14:21:34 +0200
+Message-ID: <91704e4c-b43c-4efc-b78d-e67abc35128d@nbd.name>
+Date: Wed, 12 Jun 2024 14:21:24 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [RFC v3 6/8] wifi: mac80211: extend ifcomb check functions for
  multi-radio
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Felix Fietkau <nbd@nbd.name>, Karthikeyan Periyasamy
-	 <quic_periyasa@quicinc.com>, linux-wireless@vger.kernel.org
+To: Johannes Berg <johannes@sipsolutions.net>,
+ Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+ linux-wireless@vger.kernel.org
 Cc: quic_adisi@quicinc.com, ath12k@lists.infradead.org
-Date: Wed, 12 Jun 2024 14:05:43 +0200
-In-Reply-To: <096940e3-713a-4533-ab0f-e82bd647e205@nbd.name>
 References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
-	 <bc603fc671010bb720e75881ef0e22d81ec6e2eb.1717696995.git-series.nbd@nbd.name>
-	 <a337de2e-fe3e-18ed-b55b-9ea2cd21baed@quicinc.com>
-	 <1f32cb6c-6be8-4e3d-8e8f-2d3c728875a9@nbd.name>
-	 <479752f5-221d-746b-7513-ba27ef547ac1@quicinc.com>
-	 <096940e3-713a-4533-ab0f-e82bd647e205@nbd.name>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.52.2 (3.52.2-1.fc40) 
-MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+ <bc603fc671010bb720e75881ef0e22d81ec6e2eb.1717696995.git-series.nbd@nbd.name>
+ <a337de2e-fe3e-18ed-b55b-9ea2cd21baed@quicinc.com>
+ <1f32cb6c-6be8-4e3d-8e8f-2d3c728875a9@nbd.name>
+ <479752f5-221d-746b-7513-ba27ef547ac1@quicinc.com>
+ <096940e3-713a-4533-ab0f-e82bd647e205@nbd.name>
+ <fa7c2aeef854f89eeb03a01a21a8d511417c92b6.camel@sipsolutions.net>
+Content-Language: en-US
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <fa7c2aeef854f89eeb03a01a21a8d511417c92b6.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_050550_692492_58DDECB7 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20240612_052143_246410_749E179C 
+X-CRM114-Status: GOOD (  15.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,29 +105,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2024-06-07 at 13:04 +0200, Felix Fietkau wrote:
-> > >=20
-> > > Use the sum of the number of interfaces from each radio instead of th=
-e=20
-> > > maximum.
-> >=20
-> > Oh, then legacy user have misconception of the global interfaces
-> > advertised and try to fail for the allowed limits.
->=20
-> Sure, but that might be an issue either way until user space is updated=
-=20
-> and users start looking at the per-radio ifcomb data.
+On 12.06.24 14:05, Johannes Berg wrote:
+> On Fri, 2024-06-07 at 13:04 +0200, Felix Fietkau wrote:
+>> > > 
+>> > > Use the sum of the number of interfaces from each radio instead of the 
+>> > > maximum.
+>> > 
+>> > Oh, then legacy user have misconception of the global interfaces
+>> > advertised and try to fail for the allowed limits.
+>> 
+>> Sure, but that might be an issue either way until user space is updated 
+>> and users start looking at the per-radio ifcomb data.
+> 
+> I'm kind of with Karthikeyan here - this could be understood as a
+> regression, since you're now telling userspace something you can't
+> actually do.
 
-I'm kind of with Karthikeyan here - this could be understood as a
-regression, since you're now telling userspace something you can't
-actually do.
+Well, we can actually do it, just with some extra restrictions - i.e. 
+the interfaces we create need to be spread across radios to match the 
+per-radio limits.
 
-> The global data is simply not enough to describe the details of the=20
-> radio split.
+>> The global data is simply not enough to describe the details of the 
+>> radio split.
+> 
+> Obviously, but that doesn't mean the global data as advertised in the
+> existing attributes must be *wrong*. It could be a subset, and the
+> superset data is only available to new implementations.
+So you'd prefer something like picking one radio and advertising its 
+limits instead?
 
-Obviously, but that doesn't mean the global data as advertised in the
-existing attributes must be *wrong*. It could be a subset, and the
-superset data is only available to new implementations.
-
-johannes
+- Felix
 
