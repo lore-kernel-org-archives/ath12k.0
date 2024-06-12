@@ -4,86 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74F01C27C77
-	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 22:53:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EACCC27C53
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 23:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=9oYa6tI8cO56ucuYhLoP+IEPcoOWM0YoZSeApoHMRKI=; b=qh4JfCE4OtfB4Wl1SRkpaUhhf2
-	JpUcfpC9s3Lz02mpKGfENR/MoPJk20Zsvz0rgabRNTDYI/3vhrHFVrT9SFqVn9QFxlAJXJ6w0HYvH
-	OTD3OFrrKR2aVMYw0Lu2ffL4ks4GRF1hqDXYjPxYT8Dacs/b0DlC6bB36GWQX0195YLp1/KO9Rq7P
-	Y0MiDiFvZOYOajXXy3WxOdm3SrTjShzMXoGPh/50D/GpskL1cAiiA4CLJyQujxPNhN2U8/hmwlXgy
-	ZUOncHWuX8z3sL48rrmy/jWHHtg/z+y9IJRpBjM/fP1RQ/XNjVCup6FcIGq0dt3WrQDxc7KqdfX8P
-	osip5RYg==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=IvgDjovLA8cfD00Rxnptnj2ul1xpdNDLKYaWV9px0Jg=; b=uX/TrRTJls3nCbMjgXV4QFxhDz
+	fFN1b9gHqEUl57jdeC5UqvrR/7+9qhEllXTd2I1MG+vsR0FgPOGc5Y8Ho3vo7UTZUGA9YutXQPrfw
+	hE32YuotZHsUt6cJNXv2QaV0xkeQBPuYtqOL++x84jfr8wxxmEdp5XCx6qLW+MoHyyixqLTRNmBZZ
+	W4ZtlRWFxkISQOtoE96NC5Mwc9uYDkbNUSlRQILixWSbzEZX9SM9D6LE1oPYKDvUnGfhM/VRHGUry
+	mVzxAtfrldpGxeZxR2haLPPAVk3XNtR0CmJbkbsp21ai1eDe4jm8ZcM94+EyivISsQ9yRFbjlr0je
+	vXErnXBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHWqp-0000000EObm-47sZ
+	id 1sHXbl-0000000EVyp-1ehG
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Jun 2024 22:53:55 +0000
+	Wed, 12 Jun 2024 23:42:25 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHWqm-0000000EOZe-0CK1
+	id 1sHXbi-0000000EVwM-2KZb
 	for ath12k@lists.infradead.org;
-	Wed, 12 Jun 2024 22:53:53 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45CKn7OM001101;
-	Wed, 12 Jun 2024 22:53:48 GMT
+	Wed, 12 Jun 2024 23:42:24 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45CKoQl3025500;
+	Wed, 12 Jun 2024 23:42:22 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=9oYa6tI8cO56ucuYhLoP+I
-	EPcoOWM0YoZSeApoHMRKI=; b=YfanuPq75pYlAGDlKSpLa7RxVcZRySXrnl1Alc
-	/wV/o4/DY3siVAj4bwR9G4H5RygYFOEFy6FIDuA/ryOE+lpU41OGIScc1B9W9Hpq
-	hGPa+njpREzKQU3U0SUPVx3IZsmdAKai3lVX+WNiaqLw6hDEX/dtH4tKYXH+Xt9v
-	BQIG/24ldUdJsk7qTGyRx+m9hm3f82Fo/Z3MuwgHxmzXNnhHJBWgafnVOvNhSb4x
-	IzdL33cDnqYGQ5HFUbiyLjwpM3C7jr7YKrL3jgaMy7ueM6RVC2XzFCxanhTBs0K+
-	yZmFpWpmutuE+s7S5xbx3IHXVAAHIxNslauTfAqLxat3lDqg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ypp87vtey-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	IvgDjovLA8cfD00Rxnptnj2ul1xpdNDLKYaWV9px0Jg=; b=YxMsWG3U/xP5gTQJ
+	UcPUqK0xx/CYXUTJd2goX0fuCn/yDrgms88JvC/41BjTBeaUH7kHytD9T3wczB70
+	1w+qlPGbpHemDkF/Hgrx0hdKgGgmB7aqroz5jvMPkWS1BOADg1Dm9qR6NAJjUzEJ
+	OHaQITxYE1OGnR7KmEEUfEg3/l9h73v57kd6EhNQt5XqpseNIKJLKRN9dqGRRgCX
+	aNyveo+EJROmDi1qtJ5R9WhGHxCbzmN6nkQTa3DP8cndLI7czIhp0ac/dexXwIZD
+	1TsKAErktRbSRBi0lyyB+OLhyyGxC/lJdm8MzOD0jTA4t5gR2fFkn0/RhbUHmHuq
+	O6MgJA==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ypmjaw4uy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Jun 2024 22:53:48 +0000 (GMT)
+	Wed, 12 Jun 2024 23:42:21 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45CMrlO6003753
+	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45CNgLHt008026
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Jun 2024 22:53:47 GMT
+	Wed, 12 Jun 2024 23:42:21 GMT
 Received: from pradeepc-linux2.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 12 Jun 2024 15:53:46 -0700
+ 15.2.1544.9; Wed, 12 Jun 2024 16:42:20 -0700
 From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Pradeep Kumar Chitrapu
 	<quic_pradeepc@quicinc.com>,
-        Aditya Kumar Singh <quic_adisi@quicinc.com>,
-        Zachary Smith <dr.z.smith@gmail.com>
-Subject: [PATCH] wifi: ath12k: fix legacy peer association due to missing HT or 6 GHz capabilities
-Date: Wed, 12 Jun 2024 15:53:36 -0700
-Message-ID: <20240612225336.2303119-1-quic_pradeepc@quicinc.com>
+        Muna Sinada <quic_msinada@quicinc.com>,
+        "Jeff
+ Johnson" <quic_jjohnson@quicinc.com>
+Subject: [PATCH V7 2/9] wifi: ath12k: push EHT MU-MIMO params to hardware
+Date: Wed, 12 Jun 2024 16:42:02 -0700
+Message-ID: <20240612234209.2324181-3-quic_pradeepc@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240612234209.2324181-1-quic_pradeepc@quicinc.com>
+References: <20240612234209.2324181-1-quic_pradeepc@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: lYkiXREXHhJstBfT943psHOzJECjmfb3
-X-Proofpoint-ORIG-GUID: lYkiXREXHhJstBfT943psHOzJECjmfb3
+X-Proofpoint-GUID: XZCfz-nQyXBhgyBw9Y4l8BXiehLMI9uB
+X-Proofpoint-ORIG-GUID: XZCfz-nQyXBhgyBw9Y4l8BXiehLMI9uB
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-12_10,2024-06-12_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 malwarescore=0
- spamscore=0 suspectscore=0 mlxlogscore=999 priorityscore=1501 adultscore=0
- bulkscore=0 mlxscore=0 clxscore=1011 impostorscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2405170001
- definitions=main-2406120163
+ definitions=2024-06-12_11,2024-06-12_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 malwarescore=0
+ clxscore=1015 mlxscore=0 impostorscore=0 mlxlogscore=999
+ lowpriorityscore=0 spamscore=0 phishscore=0 bulkscore=0 priorityscore=1501
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2406120169
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_155352_111905_64D17163 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20240612_164222_846524_03F52F03 
+X-CRM114-Status: GOOD (  15.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,60 +102,130 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently SMPS configuration failed when the Information
-Elements (IEs) did not contain HT or 6 GHz capabilities. This
-caused legacy peer association to fail as legacy peers do not
-have HT or 6 GHz capabilities. Fix this by not returning an
-error when SMPS configuration fails due to the absence of HT
-or 6 GHz capabilities.
+Currently, only the EHT IE in management frames is updated with
+respect to MU-MIMO configurations, but this change is not
+reflected in the hardware. Add support to propagate MU-MIMO
+configurations to the hardware as well for AP mode. Similar
+support for STA mode will be added in future.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Fixes: f0e61dc7ecf9 ("wifi: ath12k: refactor SMPS configuration")
-Reported-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Reported-by: Zachary Smith <dr.z.smith@gmail.com>
-Closes: https://lore.kernel.org/all/CAM=znoFPcXrn5GhDmDmo50Syic3-hXpWvD+vkv8KX5o_ZTo8kQ@mail.gmail.com/
+Co-developed-by: Muna Sinada <quic_msinada@quicinc.com>
+Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
 Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 50 +++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 21 +++++++++++
+ 2 files changed, 71 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 2259ce22cc8b..fa9f6656a06f 100644
+index 4197d5aaa40a..3d219952cbdf 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -2255,9 +2255,6 @@ static int ath12k_get_smps_from_capa(const struct ieee80211_sta_ht_cap *ht_cap,
- 				     const struct ieee80211_he_6ghz_capa *he_6ghz_capa,
- 				     int *smps)
- {
--	if (!ht_cap->ht_supported && !he_6ghz_capa->capa)
--		return -EOPNOTSUPP;
--
- 	if (ht_cap->ht_supported)
- 		*smps = u16_get_bits(ht_cap->cap, IEEE80211_HT_CAP_SM_PS);
- 	else
-@@ -2277,6 +2274,9 @@ static void ath12k_peer_assoc_h_smps(struct ieee80211_sta *sta,
- 	const struct ieee80211_sta_ht_cap *ht_cap = &sta->deflink.ht_cap;
- 	int smps;
+@@ -2867,6 +2867,50 @@ static int ath12k_mac_vif_recalc_sta_he_txbf(struct ath12k *ar,
+ 	return 0;
+ }
  
-+	if (!ht_cap->ht_supported && !he_6ghz_capa->capa)
-+		return;
++static int ath12k_mac_set_eht_txbf_conf(struct ath12k_vif *arvif)
++{
++	u32 param = WMI_VDEV_PARAM_SET_EHT_MU_MODE;
++	struct ath12k *ar = arvif->ar;
++	u32 value = 0;
++	int ret;
 +
- 	if (ath12k_get_smps_from_capa(ht_cap, he_6ghz_capa, &smps))
- 		return;
- 
-@@ -2756,6 +2756,9 @@ static int ath12k_setup_peer_smps(struct ath12k *ar, struct ath12k_vif *arvif,
- {
- 	int smps, ret = 0;
- 
-+	if (!ht_cap->ht_supported && !he_6ghz_capa)
++	if (!arvif->vif->bss_conf.eht_support)
 +		return 0;
 +
- 	ret = ath12k_get_smps_from_capa(ht_cap, he_6ghz_capa, &smps);
- 	if (ret < 0)
- 		return ret;
-
-base-commit: e72048809ec7355a947415ae6836d2eb7fdcda39
++	if (arvif->vif->bss_conf.eht_su_beamformer) {
++		value |= u32_encode_bits(EHT_SU_BFER_ENABLE, EHT_MODE_SU_TX_BFER);
++		if (arvif->vif->bss_conf.eht_mu_beamformer &&
++		    arvif->vdev_type == WMI_VDEV_TYPE_AP)
++			value |= u32_encode_bits(EHT_MU_BFER_ENABLE,
++						 EHT_MODE_MU_TX_BFER) |
++				 u32_encode_bits(EHT_DL_MUOFDMA_ENABLE,
++						 EHT_MODE_DL_OFDMA_MUMIMO) |
++				 u32_encode_bits(EHT_UL_MUOFDMA_ENABLE,
++						 EHT_MODE_UL_OFDMA_MUMIMO);
++	}
++
++	if (arvif->vif->type != NL80211_IFTYPE_MESH_POINT) {
++		value |= u32_encode_bits(EHT_DL_MUOFDMA_ENABLE, EHT_MODE_DL_OFDMA) |
++			 u32_encode_bits(EHT_UL_MUOFDMA_ENABLE, EHT_MODE_UL_OFDMA);
++
++		if (arvif->vif->bss_conf.eht_80mhz_full_bw_ul_mumimo)
++			value |= u32_encode_bits(EHT_UL_MUMIMO_ENABLE, EHT_MODE_MUMIMO);
++
++		if (arvif->vif->bss_conf.eht_su_beamformee)
++			value |= u32_encode_bits(EHT_SU_BFEE_ENABLE,
++						 EHT_MODE_SU_TX_BFEE);
++	}
++
++	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id, param, value);
++	if (ret) {
++		ath12k_warn(ar->ab, "failed to set vdev %d EHT MU mode: %d\n",
++			    arvif->vdev_id, ret);
++		return ret;
++	}
++
++	return 0;
++}
++
+ static void ath12k_bss_assoc(struct ath12k *ar,
+ 			     struct ath12k_vif *arvif,
+ 			     struct ieee80211_bss_conf *bss_conf)
+@@ -3257,6 +3301,12 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
+ 				ath12k_warn(ar->ab,
+ 					    "failed to set HE TXBF config for vdev: %d\n",
+ 					    arvif->vdev_id);
++
++			ret = ath12k_mac_set_eht_txbf_conf(arvif);
++			if (ret)
++				ath12k_warn(ar->ab,
++					    "failed to set EHT TXBF config for vdev: %d\n",
++					    arvif->vdev_id);
+ 		}
+ 		ath12k_control_beaconing(arvif, info);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 180798d9059a..a59091016995 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -1138,6 +1138,7 @@ enum wmi_tlv_vdev_param {
+ 	WMI_VDEV_PARAM_BSS_COLOR,
+ 	WMI_VDEV_PARAM_SET_HEMU_MODE,
+ 	WMI_VDEV_PARAM_HEOPS_0_31 = 0x8003,
++	WMI_VDEV_PARAM_SET_EHT_MU_MODE = 0x8005,
+ };
+ 
+ enum wmi_tlv_peer_flags {
+@@ -3004,6 +3005,26 @@ struct ath12k_wmi_rx_reorder_queue_remove_arg {
+ #define HE_MU_BFER_ENABLE	1
+ #define HE_SU_BFER_ENABLE	1
+ 
++#define EHT_MODE_SU_TX_BFEE		BIT(0)
++#define EHT_MODE_SU_TX_BFER		BIT(1)
++#define EHT_MODE_MU_TX_BFEE		BIT(2)
++#define EHT_MODE_MU_TX_BFER		BIT(3)
++#define EHT_MODE_DL_OFDMA		BIT(4)
++#define EHT_MODE_UL_OFDMA		BIT(5)
++#define EHT_MODE_MUMIMO			BIT(6)
++#define EHT_MODE_DL_OFDMA_TXBF		BIT(7)
++#define EHT_MODE_DL_OFDMA_MUMIMO	BIT(8)
++#define EHT_MODE_UL_OFDMA_MUMIMO	BIT(9)
++
++#define EHT_DL_MUOFDMA_ENABLE    1
++#define EHT_UL_MUOFDMA_ENABLE    1
++#define EHT_DL_MUMIMO_ENABLE     1
++#define EHT_UL_MUMIMO_ENABLE     1
++#define EHT_MU_BFEE_ENABLE       1
++#define EHT_SU_BFEE_ENABLE       1
++#define EHT_MU_BFER_ENABLE       1
++#define EHT_SU_BFER_ENABLE       1
++
+ #define HE_VHT_SOUNDING_MODE_ENABLE		1
+ #define HE_SU_MU_SOUNDING_MODE_ENABLE		1
+ #define HE_TRIG_NONTRIG_SOUNDING_MODE_ENABLE	1
 -- 
 2.34.1
 
