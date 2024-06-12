@@ -4,89 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7442DC27C53
-	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 14:30:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A7D3C27C53
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 15:56:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
+	:Date:Message-Id:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FsYk3XY7gXivp40MLnpWyiprt6P3NLhrQSt55fOvMhM=; b=sxWc6J3HN3UkO7oFyhXnzJhOz5
-	Y+aqmxGVcpDSmoCkBlh74uptm84j6MJmpoihScYISzNlNZM8fYW31Eg7VAlQwCNNJJjVkOfI4mE30
-	hcznd5eIBdzos6D2wdphKvSCqZS4/u7moq2DsnTUM5MiIxzbWPybLVNsCpG0Gs1ri3P5YBRuW02Q/
-	zZfgJAUCd4UzmV2C06iA8qmXPCFh6gjzeR2tzBzbQ1NhDaas+KO8ziM0N7fDxI5USlwonQ6teVTEV
-	3Lyx00iaEUpzqzHfZ5Gcb6U1HcUsGNXuhFjCyasq241nTNvZzOzWO7G1FVD3IaH12X5dbLwt7IE/R
-	/rsvvvmA==;
+	bh=u4ZRYpyRksJXAC7eqQUrubX0WAADsS963fxbHZmjvRY=; b=F1TStvCh1pK00rhnp3oxT3RFNn
+	WBe6gaXHsE5287H9A/EA6DCXaSiZiIQsmEjw1HvuIhGhk5PCczZns8ORoUzJaQLQ2tvW32H/YfCst
+	3bJSJqoktXNu6B4kkKrzO9zKWBgIr2bVS+jzazzhask+ZdVQLuqy4vixtYN3lvyW0CcJVeBj9zykj
+	Q5j7M2JrP2zMtnEZxQUsTg8I/11Uj562nRgDQ5DHj7fPr2ADCYqeZPsjy6vErsMHIROcfPMyB7DiV
+	bStZwwqLJbQh1TOpK10kpQ0aGX7TscLSxqFDZeAbq/8qw6dK4cfHJrNkHTFobYh9uAAjxzSjI1ykM
+	5riWPruQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHOzO-0000000Cwzy-03zo
+	id 1sHQKT-0000000DG5o-0NGA
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Jun 2024 14:30:14 +0000
-Received: from nbd.name ([46.4.11.11])
+	Wed, 12 Jun 2024 15:56:05 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHOzL-0000000Cwyy-1bsb
-	for ath12k@lists.infradead.org;
-	Wed, 12 Jun 2024 14:30:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
-	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=FsYk3XY7gXivp40MLnpWyiprt6P3NLhrQSt55fOvMhM=; b=tLrl5wdk/hTR93wFubLeVpRp2C
-	5jF98UU3d8HdaVFsSs9EOgLaKuPxRb4f3u+P+dn3ClRv0eCzl5zykgTneDmZW76YKVhn4gU6Axdd2
-	3um/nuoheGzv2/2nhkWbZXxYCjG09f/nXCbrWvwkX6NwHy/ImMFWCurvP0EQerVLPekA=;
-Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=nf.local)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1sHOzD-00Av5y-18;
-	Wed, 12 Jun 2024 16:30:03 +0200
-Message-ID: <7733fd40-21e7-4ec3-91ee-ceaf4e4b9331@nbd.name>
-Date: Wed, 12 Jun 2024 16:29:57 +0200
+	id 1sHQKO-0000000DG3L-1X3O;
+	Wed, 12 Jun 2024 15:56:02 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id ADF7F614E9;
+	Wed, 12 Jun 2024 15:55:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 7AEC7C4DDE4;
+	Wed, 12 Jun 2024 15:55:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718207757;
+	bh=OGohKvk0MjWf9+Q8+mvrBX+1BAlKKRyUXLbfH75xyb4=;
+	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
+	b=kYWVzenO6v46dav7m+6VeeBQvWtkfZ2ijSROLzZNF2xhVox8NT4g6D7nEQ7Yr1CvD
+	 QbMqbzoNwKvtHxN4oOUSJGsdzFSOiqxLCA02gKqMCQ7TCsZzzusBONx5M/RWdCVpV3
+	 EiLccKqgRHfAnZUsG10WiKCsIr5ffuOoIqg1qhcsU6IhDG8FGsX5pkowWNVMy10FlC
+	 cn2EJB/8N7UtSBq02dCqRuSQs3PZ1MDiLAg7XtxdpzyjShLg11I47hWenlonizyvmL
+	 MeVPPNyid+I2VhiIZBpPj5WbK56sRWz78MH6UY8PKtaaCMSFrdgOOixPo+5vEX+bSG
+	 8/iqEXeUVgsUQ==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 61107C43618;
+	Wed, 12 Jun 2024 15:55:57 +0000 (UTC)
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC v3 4/8] wifi: mac80211: add support for DFS with multiple
- radios
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
- linux-wireless@vger.kernel.org
-Cc: johannes@sipsolutions.net, quic_adisi@quicinc.com,
- ath12k@lists.infradead.org
-References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
- <7cc3d89225f365c85b363874725cfbc77c9c1db5.1717696995.git-series.nbd@nbd.name>
- <3483a69d-6918-c91c-6349-7f268fe44e15@quicinc.com>
-Content-Language: en-US
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
- cL98efvrjdstUfTCP2pfetyN
-In-Reply-To: <3483a69d-6918-c91c-6349-7f268fe44e15@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Subject: Re: [f2fs-dev] [PATCH] tracing/treewide: Remove second parameter of
+ __assign_str()
+From: patchwork-bot+f2fs@kernel.org
+Message-Id: <171820775738.32393.13116890369510221266.git-patchwork-notify@kernel.org>
+Date: Wed, 12 Jun 2024 15:55:57 +0000
+References: <20240516133454.681ba6a0@rorschach.local.home>
+In-Reply-To: <20240516133454.681ba6a0@rorschach.local.home>
+To: Steven Rostedt <rostedt@goodmis.org>
+Cc: linux-kernel@vger.kernel.org, linux-trace-kernel@vger.kernel.org,
+ linux-hyperv@vger.kernel.org, kvm@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, ath10k@lists.infradead.org,
+ Julia.Lawall@inria.fr, linux-s390@vger.kernel.org, dev@openvswitch.org,
+ linux-cifs@vger.kernel.org, linux-bcachefs@vger.kernel.org,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ io-uring@vger.kernel.org, torvalds@linux-foundation.org,
+ iommu@lists.linux.dev, ath11k@lists.infradead.org,
+ linux-media@vger.kernel.org, linux-wpan@vger.kernel.org,
+ linux-pm@vger.kernel.org, selinux@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-erofs@lists.ozlabs.org, virtualization@lists.linux.dev,
+ linux-sound@vger.kernel.org, linux-block@vger.kernel.org,
+ ocfs2-devel@lists.linux.dev, mathieu.desnoyers@efficios.com,
+ linux-cxl@vger.kernel.org, linux-tegra@vger.kernel.org,
+ intel-xe@lists.freedesktop.org, linux-edac@vger.kernel.org,
+ linux-hwmon@vger.kernel.org, brcm80211-dev-list.pdl@broadcom.com,
+ linuxppc-dev@lists.ozlabs.org, linux-usb@vger.kernel.org,
+ linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
+ linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
+ ath12k@lists.infradead.org, tipc-discussion@lists.sourceforge.net,
+ mhiramat@kernel.org, netdev@vger.kernel.org, bpf@vger.kernel.org,
+ freedreno@lists.freedesktop.org, linux-nfs@vger.kernel.org,
+ linux-btrfs@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_073011_538202_D6B23DED 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20240612_085600_484220_5A6FC0DF 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,74 +98,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12.06.24 16:23, Karthikeyan Periyasamy wrote:
-> 
-> 
-> On 6/6/2024 11:37 PM, Felix Fietkau wrote:
->> DFS can be supported with multi-channel combinations, as long as each DFS
->> capable radio only supports one channel.
->> 
->> Signed-off-by: Felix Fietkau <nbd@nbd.name>
->> ---
->>   net/mac80211/main.c | 32 ++++++++++++++++++++++++--------
->>   1 file changed, 24 insertions(+), 8 deletions(-)
->> 
->> diff --git a/net/mac80211/main.c b/net/mac80211/main.c
->> index 40fbf397ce74..e9c4cf611e94 100644
->> --- a/net/mac80211/main.c
->> +++ b/net/mac80211/main.c
->> @@ -1084,6 +1084,21 @@ static int ieee80211_init_cipher_suites(struct ieee80211_local *local)
->>   	return 0;
->>   }
->>   
->> +static bool
->> +ieee80211_ifcomb_check_radar(const struct ieee80211_iface_combination *comb,
->> +			     int n_comb)
->> +{
->> +	int i;
->> +
->> +	/* DFS is not supported with multi-channel combinations yet */
->> +	for (i = 0; i < n_comb; i++, comb++)
->> +		if (comb->radar_detect_widths &&
->> +		    comb->num_different_channels > 1)
->> +			return false;
->> +
->> +	return true;
->> +}
->> +
->>   int ieee80211_register_hw(struct ieee80211_hw *hw)
->>   {
->>   	struct ieee80211_local *local = hw_to_local(hw);
->> @@ -1173,17 +1188,18 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
->>   			if (comb->num_different_channels > 1)
->>   				return -EINVAL;
->>   		}
->> -	} else {
->> -		/* DFS is not supported with multi-channel combinations yet */
->> -		for (i = 0; i < local->hw.wiphy->n_iface_combinations; i++) {
->> -			const struct ieee80211_iface_combination *comb;
->> -
->> -			comb = &local->hw.wiphy->iface_combinations[i];
->> +	} else if (hw->wiphy->n_radio) {
->> +		for (i = 0; i < hw->wiphy->n_radio; i++) {
->> +			const struct wiphy_radio *radio = &hw->wiphy->radio[i];
->>   
->> -			if (comb->radar_detect_widths &&
->> -			    comb->num_different_channels > 1)
->> +			if (!ieee80211_ifcomb_check_radar(radio->iface_combinations,
->> +							  radio->n_iface_combinations))
->>   				return -EINVAL;
->>   		}
-> 
-> When driver advertise per radio iface combination, you are not checking
-> the global iface combination. using the uncheck global iface combination
-> lead to unknown issues.
+Hello:
 
-The only constraint being checked here is num_different_channel > 1 XOR 
-comb->radar_detect_widths != 0.
-The global wiphy needs both being set, since it applies the sum of all 
-radios. For each individual radio, the constraint is enforced, so there 
-should not be any unknown issues.
+This patch was applied to jaegeuk/f2fs.git (dev)
+by Steven Rostedt (Google) <rostedt@goodmis.org>:
 
-- Felix
+On Thu, 16 May 2024 13:34:54 -0400 you wrote:
+> From: "Steven Rostedt (Google)" <rostedt@goodmis.org>
+> 
+> [
+>    This is a treewide change. I will likely re-create this patch again in
+>    the second week of the merge window of v6.10 and submit it then. Hoping
+>    to keep the conflicts that it will cause to a minimum.
+> ]
+> 
+> [...]
+
+Here is the summary with links:
+  - [f2fs-dev] tracing/treewide: Remove second parameter of __assign_str()
+    https://git.kernel.org/jaegeuk/f2fs/c/2c92ca849fcc
+
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
+
+
 
