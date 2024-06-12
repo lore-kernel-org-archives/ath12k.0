@@ -4,93 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 587D0C27C53
-	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 12:21:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D699C27C77
+	for <ath12k@archiver.kernel.org>; Wed, 12 Jun 2024 12:42:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hzrc9Fovnr22Aow7tfPfZWXbpnrzvkkkMfDm1YahJfY=; b=YuuJjUtJ6HLcvBAiFhwrop4T4i
-	9bQJtTAxrpiImMMSHnti+Aktt29aPoKzDLRucohi8wcaJbDpRmj9sTq/pMUQD5095SNTYq2yXmANb
-	/Pf0leXLS2fgEovPZu7/yNOHJXSZapzJKAfKchz22F6S4C2nchkZwhyRLaf3LI4x1zqvHSxPnbxT9
-	ZdzcD9n2HxMaQ3IF1qzQRXIFaDkz1Y3cj7kPoYisOKRp9ImtB40HiCNeBvOfZHbuUS024cqxwU0JU
-	tCX0XISIGZ9lDUPLnoehCBZy0JgdLVjYP72qRwNYlfT1LgYCBe8pJFt6nFOK+NwUrQRwXFivzKFAG
-	qLqFTp5A==;
+	bh=z+KLxZwv3KVjMH+GO5G/9Jy6q5pczKwfg5UxIKL9ucM=; b=cWjFcrO6RTr0c/+BeGW4GckMzo
+	Djay0XxuW4VbLb9SnSLJv1QGVitBrBuOjL8pmU8D+KxVCpYi2L8jFfvdSYDTdrqZuSaAL5ZdY9y45
+	lUeB7MyImZePy56vLxKEXDjFqfP64rGwIPEONNK+Q0bLDhtB2HiiKIxJoNsISEJRgjgmXMxTlF8LJ
+	qeYmH1m224LKnm/jtQUngJOBTn0SB/3mgbRY8PnCDmy4YqTSVTnGw2jcKTdp/GhVejYFJ+gxNE/mm
+	jX3BLxhTLopOG0Q/a7nmWb40vbGIek+GybgaO61d6Ot+m8O7msHwJ3Ya0eXuHuGNr70l9S9ZB9sEF
+	n2LXkqEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHMz4-0000000CZ0u-09Mh
+	id 1sHNJL-0000000Cc2L-06ZG
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Jun 2024 12:21:46 +0000
-Received: from nbd.name ([46.4.11.11])
+	Wed, 12 Jun 2024 12:42:43 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHMz1-0000000CYyd-0NlR
-	for ath12k@lists.infradead.org;
-	Wed, 12 Jun 2024 12:21:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
-	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=hzrc9Fovnr22Aow7tfPfZWXbpnrzvkkkMfDm1YahJfY=; b=a46BL3wHuE1TpqRyZ4DzTJWHoa
-	WIjArBZ3kTmur14OZpQH4f+GbA6XxUGxgsroBQajBlsrIw4TqEm+rIsQUfCJQHyDraTSN13YnHplM
-	ixmG8cIzwgHBPIAH5UxuiiI7nmwyU82Hhdri7yt4yX+YCJzGtEW0q6u3GSHrOuHOwK2Q=;
-Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=nf.local)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1sHMys-00Aq6n-0A;
-	Wed, 12 Jun 2024 14:21:34 +0200
-Message-ID: <91704e4c-b43c-4efc-b78d-e67abc35128d@nbd.name>
-Date: Wed, 12 Jun 2024 14:21:24 +0200
+	id 1sHNJH-0000000Cc1d-3wo2;
+	Wed, 12 Jun 2024 12:42:41 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4F44C61311;
+	Wed, 12 Jun 2024 12:42:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65D9FC3277B;
+	Wed, 12 Jun 2024 12:42:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718196159;
+	bh=z+KLxZwv3KVjMH+GO5G/9Jy6q5pczKwfg5UxIKL9ucM=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=kJkZjo5xs0lK86YklafnNU927mRi4jWdl0SCGkcphfa1Z9n6VxvAqQaJxC1gGKSJL
+	 RoYSkIqL4CUGFKVz5HYkntqCEGAENNgD7w4d4FJS/6uVur/sAgna6t3xIvSZskMA/p
+	 /VwEt3XVxLyFLVDui40jlEas+ijlXkVJ16ZphJ2DNl6vJKAS9MyqzY1eeFgKafp8xn
+	 ZUNWCt5FywUYQkmoATvI1+GZTDKK4AhAsDmmcI8y2Hy7FDnjzSDJE7IgrTAKhAeXnq
+	 cE9u+gLYEpoAJQ7sz1AaBmUwdaD55b90h9Ce+/V39ScOZUkvnLCOKAN/sB93TfGn59
+	 YF6m2J0Q8nbGw==
+From: Kalle Valo <kvalo@kernel.org>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Cc: "David S . Miller" <davem@davemloft.net>,  Eric Dumazet
+ <edumazet@google.com>,  Jakub Kicinski <kuba@kernel.org>,  Paolo Abeni
+ <pabeni@redhat.com>,  Rob Herring <robh@kernel.org>,  Krzysztof Kozlowski
+ <krzk+dt@kernel.org>,  Conor Dooley <conor+dt@kernel.org>,  Jeff Johnson
+ <jjohnson@kernel.org>,  linux-wireless@vger.kernel.org,
+  netdev@vger.kernel.org,  devicetree@vger.kernel.org,
+  ath11k@lists.infradead.org,  linux-kernel@vger.kernel.org,
+  ath12k@lists.infradead.org,  Bartosz Golaszewski
+ <bartosz.golaszewski@linaro.org>,  Krzysztof Kozlowski
+ <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v9 1/2] dt-bindings: net: wireless: qcom,ath11k:
+ describe the ath11k on QCA6390
+References: <20240605122106.23818-1-brgl@bgdev.pl>
+	<20240605122106.23818-2-brgl@bgdev.pl> <87h6e6qjuh.fsf@kernel.org>
+	<CAMRc=MdiKxtnN+g92RUTXdOydaPV5M2u5iUdKyE2SNvDkdXAjg@mail.gmail.com>
+	<871q5aqiei.fsf@kernel.org>
+	<CAMRc=McacZMP-51hjH+d8=PVe+Wgw4a8xWcv0sRPLJKL_gP=KQ@mail.gmail.com>
+	<87sexqoxm9.fsf@kernel.org>
+	<CAMRc=McYAbhL5M1geYtf8LbgJG5x_+ZUFKXRuo7Vff_8ssNoUA@mail.gmail.com>
+Date: Wed, 12 Jun 2024 15:42:33 +0300
+In-Reply-To: <CAMRc=McYAbhL5M1geYtf8LbgJG5x_+ZUFKXRuo7Vff_8ssNoUA@mail.gmail.com>
+	(Bartosz Golaszewski's message of "Thu, 6 Jun 2024 20:08:11 +0200")
+Message-ID: <87msnqnxhi.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC v3 6/8] wifi: mac80211: extend ifcomb check functions for
- multi-radio
-To: Johannes Berg <johannes@sipsolutions.net>,
- Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
- linux-wireless@vger.kernel.org
-Cc: quic_adisi@quicinc.com, ath12k@lists.infradead.org
-References: <cover.386a66ec6a89750d4890f63f0d28582a52b838b5.1717696995.git-series.nbd@nbd.name>
- <bc603fc671010bb720e75881ef0e22d81ec6e2eb.1717696995.git-series.nbd@nbd.name>
- <a337de2e-fe3e-18ed-b55b-9ea2cd21baed@quicinc.com>
- <1f32cb6c-6be8-4e3d-8e8f-2d3c728875a9@nbd.name>
- <479752f5-221d-746b-7513-ba27ef547ac1@quicinc.com>
- <096940e3-713a-4533-ab0f-e82bd647e205@nbd.name>
- <fa7c2aeef854f89eeb03a01a21a8d511417c92b6.camel@sipsolutions.net>
-Content-Language: en-US
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
- cL98efvrjdstUfTCP2pfetyN
-In-Reply-To: <fa7c2aeef854f89eeb03a01a21a8d511417c92b6.camel@sipsolutions.net>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_052143_246410_749E179C 
-X-CRM114-Status: GOOD (  15.51  )
+X-CRM114-CacheID: sfid-20240612_054240_106063_C8CCE568 
+X-CRM114-Status: GOOD (  44.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,34 +88,138 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12.06.24 14:05, Johannes Berg wrote:
-> On Fri, 2024-06-07 at 13:04 +0200, Felix Fietkau wrote:
->> > > 
->> > > Use the sum of the number of interfaces from each radio instead of the 
->> > > maximum.
->> > 
->> > Oh, then legacy user have misconception of the global interfaces
->> > advertised and try to fail for the allowed limits.
->> 
->> Sure, but that might be an issue either way until user space is updated 
->> and users start looking at the per-radio ifcomb data.
-> 
-> I'm kind of with Karthikeyan here - this could be understood as a
-> regression, since you're now telling userspace something you can't
-> actually do.
+Bartosz Golaszewski <brgl@bgdev.pl> writes:
 
-Well, we can actually do it, just with some extra restrictions - i.e. 
-the interfaces we create need to be spread across radios to match the 
-per-radio limits.
+> On Thu, Jun 6, 2024 at 6:16=E2=80=AFPM Kalle Valo <kvalo@kernel.org> wrot=
+e:
+>
+>>
+>> Bartosz Golaszewski <brgl@bgdev.pl> writes:
+>>
+>> > On Thu, Jun 6, 2024 at 4:02=E2=80=AFPM Kalle Valo <kvalo@kernel.org> w=
+rote:
+>> >
+>> >> Sure, I'm not worried about functionality. I'm worried that if I
+>> >> there's, for example, an ARM based setup which uses DT and wants to u=
+se
+>> >> a similar QCA6390 board that I have, and set
+>> >> qcom,ath11k-calibration-variant in DT. In other words, I'm worried if
+>> >> you are looking at this only for Snapdragon family of boards?
+>> >>
+>> >
+>> > No, what I'm looking at is the entire QCA6390 package. That means WLAN
+>> > *and* Bluetooth *and* the PMU that manages power.
+>>
+>> I think we are just looking at this from different point of views. You
+>> are looking at a datasheet (most likely for a Snapdragon based system)
+>> and I'm looking what actual devices there are out in the field.
+>>
+>> > If you're using the QCA6390 on a device-tree system then you should
+>> > probably model at least the WLAN node and the PMU and the problem with
+>> > supplies is fixed.
+>>
+>> But why? If there are boards out there who don't need any of this why
+>> would they still need to model all this in DT?
+>>
+>
+> Because this is what is there? The goal of the device tree is to
+> describe the hardware. The fact we didn't describe it before doesn't
+> make it correct.
+>
+>> Based on the discussions I have heard only Snapdragon systems who
+>> require all this configuration you describe. Of course there can be
+>> other systems but I have not heard about those.
+>>
+>
+> DT is not configuration, it is description of actual hardware. It
+> doesn't matter if Snapdragon systems are the only ones that actually
+> *require* this description to make WLAN/BT functional upstream. The
+> chipset would be the same on any PCIe board, it's just that the host
+> systems wouldn't need to take care with its power sequence. But for a
+> dynamic board like this, you don't need DT.
+>
+>> > But if you don't have the supplies, that's alright for downstream.
+>>
+>> What do you mean downstream in this context?
+>>
+>
+> I mean: if you wanted to upstream the DT sources, then they should
+> include the supplies AND the PMU node. But if you just want to make
+> the WLAN run on some vendor kernel then you don't need to think about
+> it, it will work.
+>
+>> >> Again, I don't see this as a blocker. I just want to understand how t=
+his
+>> >> should work for all types of devices there are out there.
+>> >>
+>> >> > But if you have a QCA6390 then you have its PMU too and the bindings
+>> >> > model the real-world hardware.
+>> >> >
+>> >> > IOW: your laptop should be alright but the supplies are really there
+>> >> > which warrants adding them to the bindings.
+>> >>
+>> >> Sorry, not following here. Can you clarify your comment "the supplies
+>> >> are really there"? You mean inside the PCI board? But that's not visi=
+ble
+>> >> to the kernel in anyway, the PCI board just works after I plug it in.
+>> >> It's like a regular PCI device. So I don't understand why that should=
+ be
+>> >> visible in DT, but I can very well be missing something.
+>> >>
+>> >
+>> > I think you're thinking about some kind of detachable PCIe board with
+>> > this chipset on it.
+>>
+>> Exactly, a lot of WLAN boards are like this.
+>>
+>> > I refer to the QCA6390 chipset itself which is also more than just
+>> > PCI. The Bluetooth interface doesn't use PCI at all. On the boards I'm
+>> > working on, the chipset is just soldered to the main board.
+>>
+>> And I guess you are looking at Snapdragon boards only?
+>>
+>
+> But what is your point?
 
->> The global data is simply not enough to describe the details of the 
->> radio split.
-> 
-> Obviously, but that doesn't mean the global data as advertised in the
-> existing attributes must be *wrong*. It could be a subset, and the
-> superset data is only available to new implementations.
-So you'd prefer something like picking one radio and advertising its 
-limits instead?
+My point (again) is that to me it look likes that you are looking this
+only for Snapdragon type of devices and ignoring the rest. I am looking
+at this to support _all_ type of devices and I want to make sure that we
+don't have any artificial restrictions to use ath11k or ath12k devices
+in upstream Linux.
 
-- Felix
+I could not find a public example of a QCA6390 M.2 board like I have, but
+here's one for QCA2066:
+
+https://compex.com.sg/shop/wifi-module/wlt206h-wifi6-ble5-1-11ax-qca2062-qc=
+a2065/
+
+QCA2066 is a mobile chipset supported by ath11k, similarly like QCA6390.
+It's just newer and different features, and with a different PCI id. In
+the past using these kind of M.2 boards for Wi-Fi has been quite common
+but don't know how commit it is nowadays.
+
+>> > If your detachable board "just works" then it must be wired in a way
+>> > that enables WLAN the moment it's plugged in but this doesn't happen
+>> > over PCI. The chipset has a power input and GPIOs to enable each
+>> > module.
+>>
+>> I don't know how the boards are implemented but it could be so. But from
+>> host system point of view it's just a regular PCI device.
+>>
+>
+> And you don't need DT anyway for this type of devices.
+
+I wish we wouldn't need to use DT for such M.2 boards, but we do need to
+use qcom,ath11k-calibration-variant in some cases when the device (or
+the firmware) doesn't provide unique enough identifier to choose the
+correct board file automatically. I already mentioned the property in my
+earlier emails.
+
+I hope this clears up what I'm trying to say.
+
+--=20
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
+hes
 
