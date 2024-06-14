@@ -4,92 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16C00C27C77
-	for <ath12k@archiver.kernel.org>; Fri, 14 Jun 2024 07:18:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBAD8C27C77
+	for <ath12k@archiver.kernel.org>; Fri, 14 Jun 2024 17:32:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wqLPYteu3ayqHey69yCKfVVfVBHj/xWhI8yDdx19SLE=; b=FgAOtlNjceLjOJRwYXubW87mi1
-	FXpX+HjSrdmPdBSVMoypdsNDEA//CEwpDqQaA+3vXzACJu4rYANxp2SbxdTn1LmKB3MbXYW71zHeM
-	4Mb6Egtr5PSwAZVJFmsqQEMNDx6jVW0GqikEKlKIdlp5AtdhR+xXAP3MaHFMldi4lMwVZNT0ZdHaI
-	fqmVrdBHp/tD71fZwlnP3/qYn1NPFseMFq0EAF20Dqfw3VUx2fuVM9QHtqozqyxBTBeiJsI3GueQF
-	J/M0xmlOhkutE6Iq2CWK+uktgzZcpP3Fcn/AF9f6GZkKi5dFm2AG9zQUTPFgQUwQq3eah0lAJNaTD
-	zkCCwqZw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=hHcGiX8UBCwxh//a18tmbSzvIIZ91QoZrb+Pr6rgKAk=; b=esDCiNem8s4Y3e8tlvjBRsE3I+
+	9p9MAMPQEUnC5RMk+D4PceVnM9BkYcHlfMDkI/61ruhMLlznW87CfhGNHPjGRaJay+Ntwzef3vTWt
+	Q+IKT7EZYgd/daweQsIdmDcGxtgfZYdRO94aFETD7FIOwtK1QyP5fuxjcwy9vUkbu139XEpZb5MJA
+	d9ZPrUIPIxtv8+sOFqmms6fzB7KkeoObhb47KyYeRzr65iZrUEDrOQQbIQnd/gfwS+SAV1VCwSwHw
+	p7dxOkEwTmm4jM8E0X76cxCiFTha3U1XthyWQp+mmIUMT/Qm7NI4c/34nIIGD1EBHmabSNyaigN6k
+	vsQ++NgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI1Ci-00000001j76-2MWa
+	id 1sIAmt-00000003e0y-249G
 	for ath12k@archiver.kernel.org;
-	Fri, 14 Jun 2024 07:18:32 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	Fri, 14 Jun 2024 17:32:31 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI1Cf-00000001j4p-35K6
+	id 1sIAmp-00000003dzj-3eWp
 	for ath12k@lists.infradead.org;
-	Fri, 14 Jun 2024 07:18:31 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id 38308e7fff4ca-2eaafda3b5cso21118051fa.3
-        for <ath12k@lists.infradead.org>; Fri, 14 Jun 2024 00:18:27 -0700 (PDT)
+	Fri, 14 Jun 2024 17:32:29 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-35f090093d8so1945841f8f.0
+        for <ath12k@lists.infradead.org>; Fri, 14 Jun 2024 10:32:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1718349505; x=1718954305; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=wqLPYteu3ayqHey69yCKfVVfVBHj/xWhI8yDdx19SLE=;
-        b=emWj6rCyTci6yFa5CqD1cRPy724Tw+mNtMIfF8w7abUJhyzd2KBl44JoDimod53lYA
-         hF50KnptBYl9LRLcTZIDzhn8icT1TFTUAfUtvI4rsrSVs3uvIMAnjLAcNtDpbX+EFp2r
-         V9BB34YlLOunDAA/Jirlx0QI+1NbuSMbaJZJzOGFLg1r0Z4Kt+PdcQF/2cLTrqBLx3rW
-         mCPKYMsklb+IKf+63ESmwdvcaUFL8le0gRAkXgH7BRP8IuklCFyP8zmvWnTkfU0DpIEk
-         KI2CBGHE5gpP8BC6HVQP2WLgyvHiqdtxK8lQQ10D/gb3V8fma5g+rDR28o3HtAc6u3tV
-         biRw==
+        d=linaro.org; s=google; t=1718386344; x=1718991144; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=hHcGiX8UBCwxh//a18tmbSzvIIZ91QoZrb+Pr6rgKAk=;
+        b=Ybj4rmLbtlJTBzcTmLpq3ydXjUQZuC2V3cEqwJxvvGWynybyheE+UeMPGH6dfhxN/Z
+         TPoqCSMadt2Y1TEhnQ/AU5wxJaFFgTL8ihYDyVFax86WIAcy+2f2Q25DEcQWWXtkMVeW
+         3+ZR7OW8oxKla0vxUz82XSscxoT5Cr56ydkKGaKLLQwnZxyVUn2170z5cLxRUhRR3WEC
+         bkCPucVwvj6s8Qmr1EBho9Y5GUqiN/wIq2Sn6gG79l67uxlhZm+gRBXoeW2i5EYAHnlo
+         jdyV0Cvz+qe15ayKf3BQ4X3qq4ydAQjYa4t7F72Q/e0ihrXpYSftkLNRrk7Z23LUNcBm
+         ioeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718349505; x=1718954305;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=wqLPYteu3ayqHey69yCKfVVfVBHj/xWhI8yDdx19SLE=;
-        b=w8PppFTqC991cLAPVlywTIAWXd6UDFja2Xs2omcw9YAQodWlqvt875InuOIAP6wRmM
-         oRuVXhu3kzBi7V+gNbWF2GM6glOw2EY0aGl+BDlw7eYChPhHfyXs1MNNz3t45pqYJche
-         /+Xz2lka1EABvgTGAql2bUA4Z56qCyXBMcwbr5cAUroGe7zZ6X/fJqFFlS9MJVStyPf4
-         yiPkOERLbChskm/vGvGvfNsdNanhAkOFjyqhk1mEx7v3hF2bRbDfA7kIPXj3DnzYuYkX
-         FPLWk2suy+W+D9EugdyUzlSHDeErbqlfXLQ2BwHNK0pRQqNHywplSN7rkcZ+XVejQ0KI
-         fhSg==
-X-Forwarded-Encrypted: i=1; AJvYcCV4Pc757BePzMDZq+zGW6Q6TjqyYdMgh2abh7VAo3B4ztxcok+ofmLVdoWy4pwH1k6nf+FH7L5CfKdNYuqtkSSKpL7rBzVJBZsbFQ==
-X-Gm-Message-State: AOJu0YxJFu2g2Md93Q5IIQxLW0OwOxLZXQ9UalIwMpq0IJfF2oZr1Nh1
-	A7MRqhSM4ZBrrpvYmNUV0X4vipiCfJvKT4mlgYQejp6aX8PqGYq7OAaLVNPKEXi6kNRTDFcE0FV
-	bDPSMdVzlufMWI+wFFZsmff2IPLo6+9jYyEGnhg==
-X-Google-Smtp-Source: AGHT+IEqAc/IITHR5XH5IcyBzMofjdG67Sdge1uWmTB4/BihRUG9JruUjf29s0w2MnX3meX/UPaZVWsbSfUHTarWmeA=
-X-Received: by 2002:a2e:8886:0:b0:2ec:492:3fee with SMTP id
- 38308e7fff4ca-2ec0e47c209mr11243421fa.30.1718349505123; Fri, 14 Jun 2024
- 00:18:25 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1718386344; x=1718991144;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=hHcGiX8UBCwxh//a18tmbSzvIIZ91QoZrb+Pr6rgKAk=;
+        b=BCn/7O2XP0V/2XCRM8WEGVQ0oHgu69sur/I5e9RVyVUZbL3jzUFLW9wcZ1RVHntC4A
+         qV+8jZ7OXLMxvUo9IOlgO744s/LjtvLoDRWtUCx7d4KcixrmG6SH4STAUB7UH3gEoFMV
+         coMi5lWkrXKySnxA1Jfk4Ro5AzFiYoD+mQaML7VHSq9yCZWCxFiqLHFRsCGFhQ/Z20E3
+         /vOrDqfofepQLe7I8XZY0UmefqsF9iUZvf+dWxy03wTvy8Avu3bTT3wjCWw3/R2QT0Co
+         qvblNPLCVShpVpxryy3x9IwFtQk7PlM8PxHEymX2q9WKJImLScJsuBUznJpjUybcOYiI
+         BYYw==
+X-Forwarded-Encrypted: i=1; AJvYcCW0zfFxfEFc5aomZPRQeONp+QiWFKctX/u/EYkMvjAMrCWtqiEOZ7yFb5ZYDkKbEEJt+HH2M/olmaVUHrFfdn6l9m4ti8o/cD5F6A==
+X-Gm-Message-State: AOJu0Yx0pK8de2C9Bp6Vpiq2ikh9XCyWlhw5qX6NBD5k4lk6UZf0q4F7
+	vz6/etoZHbE1qsGT3yjBrL2gEQhMH7l6Fhrng/KX5KRgyg7cGccLFgyPUHhH8x4=
+X-Google-Smtp-Source: AGHT+IHsxqX+vfK6OLdZouSmAaBnwPbFYWG7SuDtV+LLd1ZQ2QpbCa6D9qdoNvt9IQdsKez/NQ86Ww==
+X-Received: by 2002:a5d:6da6:0:b0:360:83cd:ea2d with SMTP id ffacd0b85a97d-36083cded29mr2374785f8f.24.1718386344226;
+        Fri, 14 Jun 2024 10:32:24 -0700 (PDT)
+Received: from localhost ([102.222.70.76])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-360751152d9sm5045341f8f.116.2024.06.14.10.32.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Jun 2024 10:32:23 -0700 (PDT)
+Date: Fri, 14 Jun 2024 20:32:20 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Cc: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+	linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: fix potential NULL dereference
+Message-ID: <4428a7ab-eb67-4f0e-992f-35577ea2b564@moroto.mountain>
 MIME-Version: 1.0
-References: <20240605122106.23818-1-brgl@bgdev.pl> <20240605122106.23818-2-brgl@bgdev.pl>
- <87h6e6qjuh.fsf@kernel.org> <CAMRc=MdiKxtnN+g92RUTXdOydaPV5M2u5iUdKyE2SNvDkdXAjg@mail.gmail.com>
- <871q5aqiei.fsf@kernel.org> <CAMRc=McacZMP-51hjH+d8=PVe+Wgw4a8xWcv0sRPLJKL_gP=KQ@mail.gmail.com>
- <87sexqoxm9.fsf@kernel.org> <CAMRc=McYAbhL5M1geYtf8LbgJG5x_+ZUFKXRuo7Vff_8ssNoUA@mail.gmail.com>
- <8db01c97-1cb2-4a86-abff-55176449e264@kernel.org> <CAMRc=Mer2HpuBLGiabNtSgSRduzrrtT1AtGoDXeHgYqavWXdrA@mail.gmail.com>
- <87ikyenx5c.fsf@kernel.org> <CAMRc=MdPQu-r4aaeag9apYP1-FoQ2-_GAk_qnHqDz-jWibRDFQ@mail.gmail.com>
-In-Reply-To: <CAMRc=MdPQu-r4aaeag9apYP1-FoQ2-_GAk_qnHqDz-jWibRDFQ@mail.gmail.com>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Fri, 14 Jun 2024 09:18:14 +0200
-Message-ID: <CAMRc=Mfsqnfy-Q++QyZNmsYoV72hUoNFEDCW6KZ0H_MEHEe5Rw@mail.gmail.com>
-Subject: Re: [PATCH v9 1/2] dt-bindings: net: wireless: qcom,ath11k: describe
- the ath11k on QCA6390
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, "David S . Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org, 
-	netdev@vger.kernel.org, devicetree@vger.kernel.org, 
-	ath11k@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	ath12k@lists.infradead.org, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240614_001829_854134_77DA429C 
-X-CRM114-Status: GOOD (  24.75  )
+X-CRM114-CacheID: sfid-20240614_103227_950135_CC7394FD 
+X-CRM114-Status: GOOD (  10.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,66 +91,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 12, 2024 at 2:52=E2=80=AFPM Bartosz Golaszewski <brgl@bgdev.pl>=
- wrote:
->
-> On Wed, Jun 12, 2024 at 2:49=E2=80=AFPM Kalle Valo <kvalo@kernel.org> wro=
-te:
-> >
-> > Bartosz Golaszewski <brgl@bgdev.pl> writes:
-> >
-> > >> >> Sure, I don't need DT but that's not my point. My point is why re=
-quire
-> > >> >> these supplies for _all_ devices having PCI id 17cb:1101 (ie. QCA=
-6390)
-> > >> >> then clearly there are such devices which don't need it? To me th=
-at's
-> > >> >> bad design and, if I'm understanding correctly, prevents use of
-> > >> >> qcom,ath11k-calibration-variant property. To me having the suppli=
-es
-> > >> >> optional in DT is more approriate.
-> > >> >>
-> > >> >
-> > >> > We require them because *they are physically there*.
-> > >>
-> > >> I understand that for all known DT QCA6390 hardware, the supplies sh=
-ould
-> > >> be provided thus they should be required. If in the future we have
-> > >> different design or we represent some pluggable PCI card, then:
-> > >> 1. Probably that PCI card does not need power sequencing, thus no DT
-> > >> description,
-> > >> 2. If still needs power sequencing, you can always amend bindings an=
-d
-> > >> un-require the supplies.
-> > >>
-> > >>
-> > >> Best regards,
-> > >> Krzysztof
-> > >>
-> > >
-> > > Kalle, does the above answer your questions? Are these bindings good =
-to go?
-> >
-> > To me most important is that we are on the same page that in some cases
-> > (eg. with M.2 boards) the supplies can be optional and we can update th=
-e
-> > bindings doc once such need arises (but we don't make any changes right
-> > now). Based on point 2 from Krzysztof I think we all agree, right?
-> >
-> > Just making sure: if we later change the supplies optional does that
-> > create any problems with backwards compatibility? It's important that
-> > updates go smoothly.
->
-> No, you can always relax the requirements alright. It's only when you
-> make them more strict that you'll run into backward compatibility
-> issues.
->
-> Bart
+In this condition if "sband" is NULL then it leads to a NULL dereference
+on the next line when it does "idx -= sband->n_channels;".
 
-Kalle,
+The condition can just be deleted, because if "sband" is NULL or the
+"idx" is out of bounds, then the correct thing is to at this point is to
+return -ENOENT.  There are no additional sbands available to try.
 
-Is that ok with you? Can we get that queued to avoid the new
-check_dtbs warnings in next when the DTS changes land?
+Fixes: 70e3be54bbdd ("wifi: ath12k: fix survey dump collection in 6 GHz")
+Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
-Bart
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 509c02bffdae..e5456383dabd 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -8314,11 +8314,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+ 
+ 	if (!sband)
+ 		sband = hw->wiphy->bands[NL80211_BAND_6GHZ];
+-	if (!sband || idx >= sband->n_channels) {
+-		idx -= sband->n_channels;
+-		sband = NULL;
+-	}
+-
+ 	if (!sband || idx >= sband->n_channels)
+ 		return -ENOENT;
+ 
+-- 
+2.43.0
+
 
