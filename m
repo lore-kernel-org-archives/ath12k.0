@@ -4,76 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1B31C27C6E
-	for <ath12k@archiver.kernel.org>; Fri, 14 Jun 2024 17:33:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 160ECC27C4F
+	for <ath12k@archiver.kernel.org>; Sat, 15 Jun 2024 22:41:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=jY/QbSZMgnMs/xjpVGCgeJX/KzlA4fpVpqJPjRmLi4k=; b=iFU7iff0I5Vbi747MjRse9KlZ6
-	s/vL+fUB5MIagaMfQaI3Z60/NdBjWmnPzDNKuY5bpcwgKQS+kk3Ha/w/160R51IkPJbY31u20fjB3
-	/kvHWwNlpXQNUgbdKufQ13qHeb9IklxW1EXkTRZW1Tx5OOOvLC+BYLwirj+UKiykyxYCHpIwaNMxZ
-	s6dFz4yWiNLl1F9cdevjSgPG7JWR3WWo0c+yPlhpMmHljP9g1x4ZDRSKHzBAObBQue9GJ7MtQifgN
-	s/2R8S+GF1NrK5cu514g25eMJXtzXiQbopi2qVx25xvP70JgMmFKnuSAjFIFSJNxwoVX3p6EkLQTJ
-	U4oqJAsA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4AtUIj6+jb5pJN+Yhpmk82WIhOJoGk8n1f7dla6Xlm0=; b=Q60ZpzDERciZ0t7AgBcEm5PzQm
+	ZRrcfdh8StM148hr22GVtgkYPpMZsGZnGTEl4PBnB+y6qncBirXqUq5E5EKIIsrkTdWmssz91B5vI
+	pkLvCX4JVCzOv7aiqYTiprPBszEnnbVA/6VevKxaOhqcKCWesWvNPhkc4d4bFdxpqENz4VI6iBc7E
+	er73LtgCisJSsw7DmxP5uJi785cQW0zi/SpS1y5VIcxNSiD29dRVTtIKhosCD/tkSL7LaOKzIwOIu
+	7iN8O/wJp7zQOejG8JCwY11/alAi4SYTK0Fq3dDtNlBbgBUNDouPecYESS4keoHMmq+OPZBvIBzGO
+	8BGJPJyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sIAnm-00000003egf-207m
+	id 1sIc5k-00000006E8M-2PCr
 	for ath12k@archiver.kernel.org;
-	Fri, 14 Jun 2024 17:33:26 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	Sat, 15 Jun 2024 22:41:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sIAnh-00000003eaW-38sm
+	id 1sIc5h-00000006E7r-00Il
 	for ath12k@lists.infradead.org;
-	Fri, 14 Jun 2024 17:33:24 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4217136a74dso21851515e9.2
-        for <ath12k@lists.infradead.org>; Fri, 14 Jun 2024 10:33:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1718386400; x=1718991200; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=jY/QbSZMgnMs/xjpVGCgeJX/KzlA4fpVpqJPjRmLi4k=;
-        b=t69fpIKLXw0aHL0DZg8H7trV0pogduCN49JkNZJj5GOnTJxIMVWrmCU9av5MGX9bhV
-         nEB74G/+XJ5CNmGtqADtWm+xzf19UCZZKbBasBFjw+n7UD21d4l+VLuDBDz2FuPdUcJo
-         QJEI6aqb4Al/K7+VcuNaBVOED351ektYPo25CE5QjmRcgLqiEO6jUbCbA6Xgc9VzeVEg
-         LaPdhPqDnwOpqP3g87JH3P0BbJuiBQzMQEnz28yFnH624CbYjbQ/owzQQ3nHTiMnZ1bR
-         jq6Bp1RTkC6gt+Cw3AlGAoPXB8ut/rojrPCmoPT/MmHURONfAUazzoR2qNRsICpdfZ5t
-         w5Mw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718386400; x=1718991200;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=jY/QbSZMgnMs/xjpVGCgeJX/KzlA4fpVpqJPjRmLi4k=;
-        b=a6Drde1jddCZLYET8Z4PkyU2lLv/2WK8zNaAsCOGoFivt9ugzTl4H89OHz1lcTmLQR
-         7xCPg58mf1gRftnlWHnwZW95Ylg1X7rVtDTaLPe0O5MnSTcGFb5W5vb0RCCXGJUpG/pV
-         +O7i0OprJNbipaTv4YHF5cXOjs5WyePP0A5BnHYmLyvEF8Nk5ORy027P+VQaKhnWitVR
-         29ib+ZG5DdcxCUZmv2E7dI6uBmyvuEHql6ZzzzBLRp4vtsvtaSrnZncYAPsVBaLTTmyw
-         f082Zka3yblYzieUR6BYpRc1X1DHbvq3MaksyS0zo5gKOlNUOpr1Io+sEY379UthLcNp
-         ecXg==
-X-Gm-Message-State: AOJu0Yx7DO7yL/OBIZWF7Idiz4dLgnS53mMklGqfxDGNDmbjt8TP2aad
-	tu4zSN+Dv+wXbCHqxAN4sHUFzMnsrDgFA3P9glGePFQZHTyP5GUC0Vs2hVkQ0vg=
-X-Google-Smtp-Source: AGHT+IG99PpqC9FXjB1ffB8b+2PDXBZ7EXpcEU/5YMwlaoVeWmB6aEMWdCTkMkJWU2I8rppL3ZR9og==
-X-Received: by 2002:a7b:c3da:0:b0:420:139e:9eda with SMTP id 5b1f17b1804b1-42304827da4mr30202045e9.12.1718386399594;
-        Fri, 14 Jun 2024 10:33:19 -0700 (PDT)
-Received: from localhost ([102.222.70.76])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-422f6320bfdsm69043695e9.37.2024.06.14.10.33.18
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Jun 2024 10:33:18 -0700 (PDT)
-Date: Fri, 14 Jun 2024 20:33:15 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: Kalle Valo <quic_kvalo@quicinc.com>
-Cc: ath12k@lists.infradead.org
-Subject: [bug report] wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices
-Message-ID: <882baf56-c922-465b-86a7-7cc787afd12e@moroto.mountain>
+	Sat, 15 Jun 2024 22:41:46 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45FMZqK2010384;
+	Sat, 15 Jun 2024 22:41:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	4AtUIj6+jb5pJN+Yhpmk82WIhOJoGk8n1f7dla6Xlm0=; b=iR21zgFOVht0G1Ui
+	XjJS54b5VR0MYNZs30FiK4NRDdgMwxvqkAd9LJtztyJRyuD/0dGEiHN7z4bTtyLM
+	Y0YRf9IuFGfzd6RiPosAdTaleqeXTXoIL9zhy9Tga7Gdl2U7MaELRh+79E51f8AN
+	cBbumSku2iAJWaCOfSIkn+MGpe5F6GUU73xffHwxE7OJd1O63akblDz8KRmQ9SYJ
+	n1dbe+Lx8MSzcIYQQFFcezmOXKGu+DK48so4afTR8r8o80BHqr7R4XER5A535slH
+	jKhlz79puLB7UQH3d3TzDH6YC0hdE5Z8UJFJv82063Ney1ph4EXqAKrRmFUKl6GS
+	u4geGg==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ys0an1bm9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 15 Jun 2024 22:41:39 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45FMfc4W017091
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 15 Jun 2024 22:41:38 GMT
+Received: from [10.48.243.167] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 15 Jun
+ 2024 15:41:37 -0700
+Message-ID: <b26cbfac-b9cd-4682-86a4-4686c3ec15bb@quicinc.com>
+Date: Sat, 15 Jun 2024 15:41:36 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: fix potential NULL dereference
+Content-Language: en-US
+To: Dan Carpenter <dan.carpenter@linaro.org>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>
+CC: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+        <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <kernel-janitors@vger.kernel.org>
+References: <4428a7ab-eb67-4f0e-992f-35577ea2b564@moroto.mountain>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <4428a7ab-eb67-4f0e-992f-35577ea2b564@moroto.mountain>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: aC2NQg2k6GFhXZI6RfdtvCdTC5lHxb_t
+X-Proofpoint-ORIG-GUID: aC2NQg2k6GFhXZI6RfdtvCdTC5lHxb_t
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-06-15_16,2024-06-14_03,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
+ bulkscore=0 impostorscore=0 priorityscore=1501 spamscore=0 clxscore=1015
+ suspectscore=0 mlxscore=0 adultscore=0 lowpriorityscore=0 mlxlogscore=735
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2405170001
+ definitions=main-2406150173
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240614_103322_000804_A8310E00 
-X-CRM114-Status: UNSURE (   5.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240615_154145_265116_5EF96270 
+X-CRM114-Status: GOOD (  16.69  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,74 +102,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello Kalle Valo,
-
-Commit d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7
-devices") from Nov 28, 2022 (linux-next), leads to the following
-Smatch static checker warning:
-
-	drivers/net/wireless/ath/ath12k/ce.c:303 ath12k_ce_rx_post_pipe()
-	error: we previously assumed 'pipe->dest_ring' could be null (see line 278)
-
-drivers/net/wireless/ath/ath12k/ce.c
-    271 static int ath12k_ce_rx_post_pipe(struct ath12k_ce_pipe *pipe)
-    272 {
-    273         struct ath12k_base *ab = pipe->ab;
-    274         struct sk_buff *skb;
-    275         dma_addr_t paddr;
-    276         int ret = 0;
-    277 
-    278         if (!(pipe->dest_ring || pipe->status_ring))
-
-This is the same as:
-
-	if (!pipe->dest_ring && !pipe->status_ring)
-
-Imagine that ->dest_ring is NULL but ->status_ring isn't.
-
-    279                 return 0;
-    280 
-    281         spin_lock_bh(&ab->ce.ce_lock);
-    282         while (pipe->rx_buf_needed) {
-    283                 skb = dev_alloc_skb(pipe->buf_sz);
-    284                 if (!skb) {
-    285                         ret = -ENOMEM;
-    286                         goto exit;
-    287                 }
-    288 
-    289                 WARN_ON_ONCE(!IS_ALIGNED((unsigned long)skb->data, 4));
-    290 
-    291                 paddr = dma_map_single(ab->dev, skb->data,
-    292                                        skb->len + skb_tailroom(skb),
-    293                                        DMA_FROM_DEVICE);
-    294                 if (unlikely(dma_mapping_error(ab->dev, paddr))) {
-    295                         ath12k_warn(ab, "failed to dma map ce rx buf\n");
-    296                         dev_kfree_skb_any(skb);
-    297                         ret = -EIO;
-    298                         goto exit;
-    299                 }
-    300 
-    301                 ATH12K_SKB_RXCB(skb)->paddr = paddr;
-    302 
---> 303                 ret = ath12k_ce_rx_buf_enqueue_pipe(pipe, skb, paddr);
-                                                            ^^^^
-Unchecked dereference of pipe->dest_ring inside the function.
-
-    304                 if (ret) {
-    305                         ath12k_warn(ab, "failed to enqueue rx buf: %d\n", ret);
-    306                         dma_unmap_single(ab->dev, paddr,
-    307                                          skb->len + skb_tailroom(skb),
-    308                                          DMA_FROM_DEVICE);
-    309                         dev_kfree_skb_any(skb);
-    310                         goto exit;
-    311                 }
-    312         }
-    313 
-    314 exit:
-    315         spin_unlock_bh(&ab->ce.ce_lock);
-    316         return ret;
-    317 }
-
-regards,
-dan carpenter
+On 6/14/2024 10:32 AM, Dan Carpenter wrote:
+> In this condition if "sband" is NULL then it leads to a NULL dereference
+> on the next line when it does "idx -= sband->n_channels;".
+> 
+> The condition can just be deleted, because if "sband" is NULL or the
+> "idx" is out of bounds, then the correct thing is to at this point is to
+> return -ENOENT.  There are no additional sbands available to try.
+> 
+> Fixes: 70e3be54bbdd ("wifi: ath12k: fix survey dump collection in 6 GHz")
+> Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 5 -----
+>  1 file changed, 5 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 509c02bffdae..e5456383dabd 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -8314,11 +8314,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
+>  
+>  	if (!sband)
+>  		sband = hw->wiphy->bands[NL80211_BAND_6GHZ];
+> -	if (!sband || idx >= sband->n_channels) {
+> -		idx -= sband->n_channels;
+> -		sband = NULL;
+> -	}
+> -
+>  	if (!sband || idx >= sband->n_channels)
+>  		return -ENOENT;
+>  
+This duplicates
+https://lore.kernel.org/all/20240611031017.297927-2-quic_aarasahu@quicinc.com/
 
