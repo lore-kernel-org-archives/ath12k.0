@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33E38C2BA1A
-	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 282CDC2BA18
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mssQG0ePFtkfU1+YGOVKXuRtNO6XYOyVvFzpGYrXr5o=; b=uNlagwCAyZuDu5QDVLUZHRf4PN
-	i5B6QDCVzoW5D3ydPV1ZCK4yHjbIm8Z820gvWQrfAMfkDA5Zfk/mcxvaOxydb5+o4fCzA4Z4CrHHi
-	Zes1gVbl7vstj4oomwZdSXGIuKEWdYuPlCN/JxawFXz8/+yBLIQild8o2uUxY3/kmKkI/7D/VR143
-	x4F+R9sxCDE7jeTN2N/rAWhAuk13f6ySudv11YMXgxrF3C37ltkkmqZgE1TmMWvqoT/j/0VXYooHM
-	ZqxljId1npCf22j2FkfgBpDqARGOYX4Mm/4GcJDp0epFnb98j8uhLuL0btlMdxXyREXIgnnTw+hVp
-	7bfr2Rvg==;
+	bh=iIp6DVH6aovjTFFgjMa6l0Q85W4VVor71jAp1WCT3Co=; b=aZQy5Mi6rwdyjq9bRYm40MlB62
+	BdEa6j/KnmFKS3LXVTGxl9ldZ9blYi8VH06u3Oq/5jTV8SCGFQYk2qSgZpSfmwwNT/L7t7aeOZtUJ
+	Twr/51mrMXJoxpOA7H25nwBrSeV8lhBDA0Z66ND3od15G1p3eLoqbF3qARFcOuSPra4fiBpM1nvK4
+	9twhrsZ8lAh8jHGPlHB8Iye+1ZC9dJxKM+6hAZJteG9LkecQQ+BnVkd82yzWmZltBKa09GMvIxa5f
+	oZQDNVtmP7lFC7cFZWCwnjPGtrgp7oxiPgH2HkY/scMYQx/T5mAufhbVn5IH/5tEPvZb0DWReJImm
+	MKZWnx7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFhd-00000004hZW-2rVh
+	id 1sKFhe-00000004haC-2jGI
 	for ath12k@archiver.kernel.org;
-	Thu, 20 Jun 2024 11:11:41 +0000
+	Thu, 20 Jun 2024 11:11:42 +0000
 Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFhU-00000004hQ5-0Wxg
+	id 1sKFhU-00000004hQK-1QUL
 	for ath12k@lists.infradead.org;
-	Thu, 20 Jun 2024 11:11:35 +0000
+	Thu, 20 Jun 2024 11:11:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=mssQG0ePFtkfU1+YGOVKXuRtNO6XYOyVvFzpGYrXr5o=; b=mr9QkvKPkO/pabpzvcif9WoPqp
-	IeKnZcnobvddyvW4nEH2Ms7Bz9vjXcQsEidZZA3+Dv3njAsLnG/kTxsU31Ns+Ys0+V48Us9eDLtIA
-	ZF8zBq0BPsAo2SjfBBpfLrhVU3Yy3EqTmO83ch/fZxxcryLKqPfciTDFMd5UmCAHI3Kg=;
+	bh=iIp6DVH6aovjTFFgjMa6l0Q85W4VVor71jAp1WCT3Co=; b=OMsWNeKkKS96UXuFjpXFvV6VYh
+	wNFzV2azRVMa/s0o7wORcvZi3gj8f3/e1vKd1Ye1GnPhxYoeynpcy+ZUFAb+dKVZe4LZvHazFq2Al
+	9O/GhBOcyVix6YldCcu/NCgzzjELeGZaUPZ9ScgPR+UrCi/04DMaSCNIITTD6IvNYqzQ=;
 Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1sKFhM-00Ei9k-1T;
+	id 1sKFhM-00Ei9k-0e;
 	Thu, 20 Jun 2024 13:11:24 +0200
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
@@ -49,17 +49,17 @@ Cc: johannes@sipsolutions.net,
 	quic_adisi@quicinc.com,
 	quic_periyasa@quicinc.com,
 	ath12k@lists.infradead.org
-Subject: [PATCH 03/10] wifi: cfg80211: extend interface combination check for multi-radio
-Date: Thu, 20 Jun 2024 13:11:15 +0200
-Message-ID: <47e02b920cce18ed56e3fa7c93537124ce10024a.1718881762.git-series.nbd@nbd.name>
+Subject: [PATCH 02/10] wifi: cfg80211: add support for advertising multiple radios belonging to a wiphy
+Date: Thu, 20 Jun 2024 13:11:14 +0200
+Message-ID: <defa3f593a3b9bd42099cb945d3fede22f22f072.1718881762.git-series.nbd@nbd.name>
 X-Mailer: git-send-email 2.44.0
 In-Reply-To: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 References: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_041132_585534_EC72DA14 
-X-CRM114-Status: GOOD (  21.91  )
+X-CRM114-CacheID: sfid-20240620_041132_725280_FDF677F5 
+X-CRM114-Status: GOOD (  26.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,207 +74,318 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add a field in struct iface_combination_params to check per-radio
-interface combinations instead of per-wiphy ones.
+The prerequisite for MLO support in cfg80211/mac80211 is that all the links
+participating in MLO must be from the same wiphy/ieee80211_hw. To meet this
+expectation, some drivers may need to group multiple discrete hardware each
+acting as a link in MLO under single wiphy.
+
+With this change, supported frequencies and interface combinations of each
+individual radio are reported to user space. This allows user space to figure
+out the limitations of what combination of channels can be used concurrently.
+
+Even for non-MLO devices, this improves support for devices capable of
+running on multiple channels at the same time.
 
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- include/net/cfg80211.h  |  4 ++++
- net/mac80211/util.c     |  5 ++++-
- net/wireless/rdev-ops.h | 17 +++++++++++++++++
- net/wireless/trace.h    |  5 +++++
- net/wireless/util.c     | 33 ++++++++++++++++++++++++++-------
- 5 files changed, 56 insertions(+), 8 deletions(-)
+ include/net/cfg80211.h       |  38 ++++++++++++++-
+ include/uapi/linux/nl80211.h |  61 ++++++++++++++++++++++-
+ net/wireless/nl80211.c       | 100 +++++++++++++++++++++++++++++++++---
+ 3 files changed, 193 insertions(+), 6 deletions(-)
 
 diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-index 8a9ef59413d8..307b77e166c1 100644
+index 5da9bb0ac6a4..8a9ef59413d8 100644
 --- a/include/net/cfg80211.h
 +++ b/include/net/cfg80211.h
-@@ -1595,6 +1595,7 @@ struct cfg80211_color_change_settings {
-  *
-  * Used to pass interface combination parameters
-  *
-+ * @radio_idx: wiphy radio index or -1 for global
-  * @num_different_channels: the number of different channels we want
-  *	to use for verification
-  * @radar_detect: a bitmap where each bit corresponds to a channel
-@@ -1608,6 +1609,7 @@ struct cfg80211_color_change_settings {
-  *	the verification
-  */
- struct iface_combination_params {
-+	int radio_idx;
- 	int num_different_channels;
- 	u8 radar_detect;
- 	int iftype_num[NUM_NL80211_IFTYPES];
-@@ -4577,6 +4579,7 @@ struct mgmt_frame_regs {
-  *
-  * @set_hw_timestamp: Enable/disable HW timestamping of TM/FTM frames.
-  * @set_ttlm: set the TID to link mapping.
-+ * @get_radio_mask: get bitmask of radios in use
-  */
- struct cfg80211_ops {
- 	int	(*suspend)(struct wiphy *wiphy, struct cfg80211_wowlan *wow);
-@@ -4938,6 +4941,7 @@ struct cfg80211_ops {
- 				    struct cfg80211_set_hw_timestamp *hwts);
- 	int	(*set_ttlm)(struct wiphy *wiphy, struct net_device *dev,
- 			    struct cfg80211_ttlm_params *params);
-+	u32	(*get_radio_mask)(struct wiphy *wiphy, struct net_device *dev);
+@@ -5403,6 +5403,38 @@ struct wiphy_iftype_akm_suites {
+ 	int n_akm_suites;
  };
  
- /*
-diff --git a/net/mac80211/util.c b/net/mac80211/util.c
-index 927f752a0209..0d2927e53114 100644
---- a/net/mac80211/util.c
-+++ b/net/mac80211/util.c
-@@ -3940,6 +3940,7 @@ int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
- 	int total = 1;
- 	struct iface_combination_params params = {
- 		.radar_detect = radar_detect,
-+		.radio_idx = -1,
- 	};
- 
- 	lockdep_assert_wiphy(local->hw.wiphy);
-@@ -4030,7 +4031,9 @@ int ieee80211_max_num_channels(struct ieee80211_local *local)
- 	struct ieee80211_chanctx *ctx;
- 	u32 max_num_different_channels = 1;
- 	int err;
--	struct iface_combination_params params = {0};
-+	struct iface_combination_params params = {
-+		.radio_idx = -1,
-+	};
- 
- 	lockdep_assert_wiphy(local->hw.wiphy);
- 
-diff --git a/net/wireless/rdev-ops.h b/net/wireless/rdev-ops.h
-index 43897a5269b6..56ac6410f4b0 100644
---- a/net/wireless/rdev-ops.h
-+++ b/net/wireless/rdev-ops.h
-@@ -1542,4 +1542,21 @@ rdev_set_ttlm(struct cfg80211_registered_device *rdev,
- 
- 	return ret;
- }
++/**
++ * struct wiphy_radio_freq_range - wiphy frequency range
++ * @start_freq:  start range edge frequency (kHz)
++ * @end_freq:    end range edge frequency (kHz)
++ */
++struct wiphy_radio_freq_range {
++	u32 start_freq;
++	u32 end_freq;
++};
 +
-+static inline u32
-+rdev_get_radio_mask(struct cfg80211_registered_device *rdev,
-+		    struct net_device *dev)
-+{
-+	struct wiphy *wiphy = &rdev->wiphy;
-+	u32 ret;
 +
-+	if (!rdev->ops->get_radio_mask)
-+		return 0;
++/**
++ * struct wiphy_radio - physical radio of a wiphy
++ * This structure describes a physical radio belonging to a wiphy.
++ * It is used to describe concurrent-channel capabilities. Only one channel
++ * can be active on the radio described by struct wiphy_radio.
++ *
++ * @freq_range: frequency range that the radio can operate on.
++ * @n_freq_range: number of elements in @freq_range
++ *
++ * @iface_combinations: Valid interface combinations array, should not
++ *	list single interface types.
++ * @n_iface_combinations: number of entries in @iface_combinations array.
++ */
++struct wiphy_radio {
++	const struct wiphy_radio_freq_range *freq_range;
++	int n_freq_range;
 +
-+	trace_rdev_get_radio_mask(wiphy, dev);
-+	ret = rdev->ops->get_radio_mask(wiphy, dev);
-+	trace_rdev_return_int(wiphy, ret);
++	const struct ieee80211_iface_combination *iface_combinations;
++	int n_iface_combinations;
++};
 +
-+	return ret;
-+}
- #endif /* __CFG80211_RDEV_OPS */
-diff --git a/net/wireless/trace.h b/net/wireless/trace.h
-index 14cfa0aba93a..12081e81f9c5 100644
---- a/net/wireless/trace.h
-+++ b/net/wireless/trace.h
-@@ -4081,6 +4081,11 @@ TRACE_EVENT(cfg80211_links_removed,
- 		  __entry->link_mask)
- );
+ #define CFG80211_HW_TIMESTAMP_ALL_PEERS	0xffff
  
-+DEFINE_EVENT(wiphy_netdev_evt, rdev_get_radio_mask,
-+	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev),
-+	TP_ARGS(wiphy, netdev)
-+);
+ /**
+@@ -5621,6 +5653,9 @@ struct wiphy_iftype_akm_suites {
+  *	A value of %CFG80211_HW_TIMESTAMP_ALL_PEERS indicates the driver
+  *	supports enabling HW timestamping for all peers (i.e. no need to
+  *	specify a mac address).
++ *
++ * @radio: radios belonging to this wiphy
++ * @n_radio: number of radios
+  */
+ struct wiphy {
+ 	struct mutex mtx;
+@@ -5771,6 +5806,9 @@ struct wiphy {
+ 
+ 	u16 hw_timestamp_max_peers;
+ 
++	const struct wiphy_radio *radio;
++	int n_radio;
 +
- #endif /* !__RDEV_OPS_TRACE || TRACE_HEADER_MULTI_READ */
+ 	char priv[] __aligned(NETDEV_ALIGN);
+ };
  
- #undef TRACE_INCLUDE_PATH
-diff --git a/net/wireless/util.c b/net/wireless/util.c
-index 2bde8a354631..3da04ceb6054 100644
---- a/net/wireless/util.c
-+++ b/net/wireless/util.c
-@@ -2305,13 +2305,16 @@ static int cfg80211_wdev_bi(struct wireless_dev *wdev)
+diff --git a/include/uapi/linux/nl80211.h b/include/uapi/linux/nl80211.h
+index f917bc6c9b6f..8e8b135b0fc0 100644
+--- a/include/uapi/linux/nl80211.h
++++ b/include/uapi/linux/nl80211.h
+@@ -2052,6 +2052,10 @@ enum nl80211_commands {
+  * @NL80211_ATTR_INTERFACE_COMBINATIONS: Nested attribute listing the supported
+  *	interface combinations. In each nested item, it contains attributes
+  *	defined in &enum nl80211_if_combination_attrs.
++ *	If the wiphy uses multiple radios (@NL80211_ATTR_WIPHY_RADIOS is set),
++ *	this attribute contains the interface combinations of the first radio.
++ *	See @NL80211_ATTR_WIPHY_INTERFACE_COMBINATIONS for the global wiphy
++ *	combinations for the sum of all radios.
+  * @NL80211_ATTR_SOFTWARE_IFTYPES: Nested attribute (just like
+  *	%NL80211_ATTR_SUPPORTED_IFTYPES) containing the interface types that
+  *	are managed in software: interfaces of these types aren't subject to
+@@ -2856,6 +2860,14 @@ enum nl80211_commands {
+  *	%NL80211_CMD_ASSOCIATE indicating the SPP A-MSDUs
+  *	are used on this connection
+  *
++ * @NL80211_ATTR_WIPHY_RADIOS: Nested attribute describing physical radios
++ *	belonging to this wiphy. See &enum nl80211_wiphy_radio_attrs.
++ *
++ * @NL80211_ATTR_WIPHY_INTERFACE_COMBINATIONS: Nested attribute listing the
++ *	supported interface combinations for all radios combined. In each
++ *	nested item, it contains attributes defined in
++ *	&enum nl80211_if_combination_attrs.
++ *
+  * @NUM_NL80211_ATTR: total number of nl80211_attrs available
+  * @NL80211_ATTR_MAX: highest attribute number currently defined
+  * @__NL80211_ATTR_AFTER_LAST: internal use
+@@ -3401,6 +3413,9 @@ enum nl80211_attrs {
  
- static void cfg80211_calculate_bi_data(struct wiphy *wiphy, u32 new_beacon_int,
- 				       u32 *beacon_int_gcd,
--				       bool *beacon_int_different)
-+				       bool *beacon_int_different,
-+				       int radio_idx)
+ 	NL80211_ATTR_ASSOC_SPP_AMSDU,
+ 
++	NL80211_ATTR_WIPHY_RADIOS,
++	NL80211_ATTR_WIPHY_INTERFACE_COMBINATIONS,
++
+ 	/* add attributes here, update the policy in nl80211.c */
+ 
+ 	__NL80211_ATTR_AFTER_LAST,
+@@ -7999,4 +8014,50 @@ enum nl80211_ap_settings_flags {
+ 	NL80211_AP_SETTINGS_SA_QUERY_OFFLOAD_SUPPORT	= 1 << 1,
+ };
+ 
++/**
++ * enum nl80211_wiphy_radio_attrs - wiphy radio attributes
++ *
++ * @__NL80211_WIPHY_RADIO_ATTR_INVALID: Invalid
++ *
++ * @NL80211_WIPHY_RADIO_ATTR_FREQ_RANGES: Nested array of frequency ranges
++ *	supported by this radio.
++ * @NL80211_WIPHY_RADIO_ATTR_INTERFACE_COMBINATIONS: Nested attribute listing
++ *	the supported interface combinations for this radio. In each nested item,
++ *	it contains attributes defined in &enum nl80211_if_combination_attrs.
++ *
++ * @__NL80211_WIPHY_RADIO_ATTR_LAST: Internal
++ * @NL80211_WIPHY_RADIO_ATTR_MAX: Highest attribute
++ */
++enum nl80211_wiphy_radio_attrs {
++	__NL80211_WIPHY_RADIO_ATTR_INVALID,
++
++	NL80211_WIPHY_RADIO_ATTR_FREQ_RANGES,
++	NL80211_WIPHY_RADIO_ATTR_INTERFACE_COMBINATIONS,
++
++	/* keep last */
++	__NL80211_WIPHY_RADIO_ATTR_LAST,
++	NL80211_WIPHY_RADIO_ATTR_MAX = __NL80211_WIPHY_RADIO_ATTR_LAST - 1,
++};
++
++/**
++ * enum nl80211_wiphy_radio_freq_range - wiphy radio frequency range
++ *
++ * @__NL80211_WIPHY_RADIO_FREQ_ATTR_INVALID: Invalid
++ *
++ * @NL80211_WIPHY_RADIO_FREQ_ATTR_START: Frequency range start
++ * @NL80211_WIPHY_RADIO_FREQ_ATTR_END: Frequency range end
++ *
++ * @__NL80211_WIPHY_RADIO_FREQ_ATTR_LAST: Internal
++ * @NL80211_WIPHY_RADIO_FREQ_ATTR_MAX: Highest attribute
++ */
++enum nl80211_wiphy_radio_freq_range {
++	__NL80211_WIPHY_RADIO_FREQ_ATTR_INVALID,
++
++	NL80211_WIPHY_RADIO_FREQ_ATTR_START,
++	NL80211_WIPHY_RADIO_FREQ_ATTR_END,
++
++	__NL80211_WIPHY_RADIO_FREQ_ATTR_LAST,
++	NL80211_WIPHY_RADIO_FREQ_ATTR_MAX = __NL80211_WIPHY_RADIO_FREQ_ATTR_LAST - 1,
++};
++
+ #endif /* __LINUX_NL80211_H */
+diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
+index 7b0ba0fff082..4639f3435e67 100644
+--- a/net/wireless/nl80211.c
++++ b/net/wireless/nl80211.c
+@@ -1680,19 +1680,26 @@ static int nl80211_put_ifcomb_data(struct sk_buff *msg, bool large, int idx,
+ 
+ static int nl80211_put_iface_combinations(struct wiphy *wiphy,
+ 					  struct sk_buff *msg,
++					  int attr, int radio,
+ 					  bool large)
  {
-+	struct cfg80211_registered_device *rdev;
- 	struct wireless_dev *wdev;
++	const struct ieee80211_iface_combination *c;
+ 	struct nlattr *nl_combis;
+-	int i;
++	int i, n;
  
- 	*beacon_int_gcd = 0;
- 	*beacon_int_different = false;
+-	nl_combis = nla_nest_start_noflag(msg,
+-					  NL80211_ATTR_INTERFACE_COMBINATIONS);
++	nl_combis = nla_nest_start_noflag(msg, attr);
+ 	if (!nl_combis)
+ 		goto nla_put_failure;
  
-+	rdev = wiphy_to_rdev(wiphy);
- 	list_for_each_entry(wdev, &wiphy->wdev_list, list) {
- 		int wdev_bi;
- 
-@@ -2319,6 +2322,11 @@ static void cfg80211_calculate_bi_data(struct wiphy *wiphy, u32 new_beacon_int,
- 		if (wdev->valid_links)
- 			continue;
- 
-+		/* skip wdevs not active on the given wiphy radio */
-+		if (radio_idx >= 0 &&
-+		    !(rdev_get_radio_mask(rdev, wdev->netdev) & BIT(radio_idx)))
-+			continue;
-+
- 		wdev_bi = cfg80211_wdev_bi(wdev);
- 
- 		if (!wdev_bi)
-@@ -2366,14 +2374,19 @@ int cfg80211_iter_combinations(struct wiphy *wiphy,
- 					    void *data),
- 			       void *data)
- {
-+	const struct wiphy_radio *radio = NULL;
-+	const struct ieee80211_iface_combination *c, *cs;
- 	const struct ieee80211_regdomain *regdom;
- 	enum nl80211_dfs_regions region = 0;
--	int i, j, iftype;
-+	int i, j, n, iftype;
- 	int num_interfaces = 0;
- 	u32 used_iftypes = 0;
- 	u32 beacon_int_gcd;
- 	bool beacon_int_different;
- 
-+	if (params->radio_idx >= 0)
-+		radio = &wiphy->radio[params->radio_idx];
-+
- 	/*
- 	 * This is a bit strange, since the iteration used to rely only on
- 	 * the data given by the driver, but here it now relies on context,
-@@ -2385,7 +2398,8 @@ int cfg80211_iter_combinations(struct wiphy *wiphy,
- 	 * interfaces (while being brought up) and channel/radar data.
- 	 */
- 	cfg80211_calculate_bi_data(wiphy, params->new_beacon_int,
--				   &beacon_int_gcd, &beacon_int_different);
-+				   &beacon_int_gcd, &beacon_int_different,
-+				   params->radio_idx);
- 
- 	if (params->radar_detect) {
- 		rcu_read_lock();
-@@ -2402,13 +2416,18 @@ int cfg80211_iter_combinations(struct wiphy *wiphy,
- 			used_iftypes |= BIT(iftype);
- 	}
- 
--	for (i = 0; i < wiphy->n_iface_combinations; i++) {
--		const struct ieee80211_iface_combination *c;
-+	if (radio) {
-+		cs = radio->iface_combinations;
-+		n = radio->n_iface_combinations;
+-	for (i = 0; i < wiphy->n_iface_combinations; i++)
+-		if (nl80211_put_ifcomb_data(msg, large, i + 1,
+-					    &wiphy->iface_combinations[i]))
++	if (radio >= 0) {
++		c = wiphy->radio[0].iface_combinations;
++		n = wiphy->radio[0].n_iface_combinations;
 +	} else {
-+		cs = wiphy->iface_combinations;
++		c = wiphy->iface_combinations;
 +		n = wiphy->n_iface_combinations;
 +	}
-+	for (i = 0; i < n; i++) {
- 		struct ieee80211_iface_limit *limits;
- 		u32 all_iftypes = 0;
++	for (i = 0; i < n; i++)
++		if (nl80211_put_ifcomb_data(msg, large, i + 1, &c[i]))
+ 			goto nla_put_failure;
  
--		c = &wiphy->iface_combinations[i];
--
-+		c = &cs[i];
- 		if (num_interfaces > c->max_interfaces)
- 			continue;
- 		if (params->num_different_channels > c->num_different_channels)
+ 	nla_nest_end(msg, nl_combis);
+@@ -2399,6 +2406,79 @@ static int nl80211_put_mbssid_support(struct wiphy *wiphy, struct sk_buff *msg)
+ 	return -ENOBUFS;
+ }
+ 
++static int nl80211_put_radio(struct wiphy *wiphy, struct sk_buff *msg, int idx)
++{
++	const struct wiphy_radio *r = &wiphy->radio[idx];
++	struct nlattr *radio, *freqs, *freq;
++	int i;
++
++	radio = nla_nest_start(msg, idx);
++	if (!radio)
++		return -ENOBUFS;
++
++	freqs = nla_nest_start_noflag(msg, NL80211_WIPHY_RADIO_ATTR_FREQ_RANGES);
++	if (!freqs)
++		goto nla_put_failure;
++
++	for (i = 0; i < r->n_freq_range; i++) {
++		const struct wiphy_radio_freq_range *range = &r->freq_range[i];
++		int ret;
++
++		freq = nla_nest_start(msg, i);
++		ret = nla_put_u32(msg, NL80211_WIPHY_RADIO_FREQ_ATTR_START,
++				  range->start_freq) ||
++		      nla_put_u32(msg, NL80211_WIPHY_RADIO_FREQ_ATTR_END,
++				  range->end_freq);
++		nla_nest_end(msg, freq);
++
++		if (ret)
++			goto nla_put_failure;
++	}
++
++	nla_nest_end(msg, freqs);
++
++	if (nl80211_put_iface_combinations(wiphy, msg,
++					   NL80211_WIPHY_RADIO_ATTR_INTERFACE_COMBINATIONS,
++					   idx, true))
++		goto nla_put_failure;
++
++	nla_nest_end(msg, radio);
++	return 0;
++
++nla_put_failure:
++	return -ENOBUFS;
++}
++
++static int nl80211_put_radios(struct wiphy *wiphy, struct sk_buff *msg)
++{
++	struct nlattr *radios;
++	int i;
++
++	if (!wiphy->n_radio)
++		return 0;
++
++	radios = nla_nest_start(msg, NL80211_ATTR_WIPHY_RADIOS);
++	if (!radios)
++		return -ENOBUFS;
++
++	for (i = 0; i < wiphy->n_radio; i++)
++		if (nl80211_put_radio(wiphy, msg, i))
++			goto fail;
++
++	nla_nest_end(msg, radios);
++
++	if (nl80211_put_iface_combinations(wiphy, msg,
++					   NL80211_ATTR_WIPHY_INTERFACE_COMBINATIONS,
++					   -1, true))
++		return -ENOBUFS;
++
++	return 0;
++
++fail:
++	nla_nest_cancel(msg, radios);
++	return -ENOBUFS;
++}
++
+ struct nl80211_dump_wiphy_state {
+ 	s64 filter_wiphy;
+ 	long start;
+@@ -2694,6 +2774,8 @@ static int nl80211_send_wiphy(struct cfg80211_registered_device *rdev,
+ 			goto nla_put_failure;
+ 
+ 		if (nl80211_put_iface_combinations(&rdev->wiphy, msg,
++						   NL80211_ATTR_INTERFACE_COMBINATIONS,
++						   rdev->wiphy.n_radio ? 0 : -1,
+ 						   state->split))
+ 			goto nla_put_failure;
+ 
+@@ -3008,6 +3090,12 @@ static int nl80211_send_wiphy(struct cfg80211_registered_device *rdev,
+ 				rdev->wiphy.hw_timestamp_max_peers))
+ 			goto nla_put_failure;
+ 
++		state->split_start++;
++		break;
++	case 17:
++		if (nl80211_put_radios(&rdev->wiphy, msg))
++			goto nla_put_failure;
++
+ 		/* done */
+ 		state->split_start = 0;
+ 		break;
 -- 
 git-series 0.9.1
 
