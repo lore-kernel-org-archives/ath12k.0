@@ -4,77 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E86FC2BA18
-	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 14:30:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D9CFC27C79
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 16:53:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
-	:Date:Message-Id:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=K/8F6EwNwQcG3yU/Kbwf8OIaW1KdmtgE0Iw3cobe324=; b=19JyDiDY5M0U3YWai2zQh/EBGS
-	7qFYycxm6UV7d/4Yhmw3T1AAxlgt8KOUk2em3LU5dvuaoC9l3EfBkiB/5k7ZYoI2MzDuVUBqVdbgS
-	o/ke7sIF/14Xlbt1GgryUP49LXbOZMpG3c0s8GzlMg6iIGzKdLRueAxpVri3/eXSYBwC5HilEdDHB
-	5ewt7pubBteC3Qg2z21x1JkVwriBjeXQP/1tubeuCuoqxRLEjzo7N0SJu0O4N150iThUX6IrF+swm
-	aGucGRsdoECpUkCQ8PsNS6cLy31JX1kZfCf4xUOLJpxXms5yzGc94dm5j9szbVV2efclUeJxNiEQV
-	4Ef0L4oQ==;
+	bh=jWXhfazn4/mALi8WcvHnr+n4EOcEu2PGpjjS3xu8N3U=; b=GMfgq3rUa7wPkr3gtV7xoP6EQT
+	av1WZmmuacM45KEJoWAIWo5vOP9Ybm67cWltTfXQy2WdtykJoxL+qgNhmqpLKpMA3T8APMXnYeZsG
+	BRjeW57erWq3HwBnfT2Xs8stvKPS/uLXF52h1eGBrN0PJe6VyHWm6BtvN9XvcAYu4dILKGgxD5FjK
+	XYC2PIWwxD/kt7MHxOPJlFvhfC2E4Oqpfl3yULv9w0mydVMsV9Vn7BJF8333p9nse+/m2edAn3cVy
+	kbXBkDSn4hE/TNKBJ1naWIxoX7Gx0d8puVy6mscer+puzfFsMZL0e7tGu6Jn0/Od5Ju7nQnpkevpE
+	H0EAO8LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKIoS-00000005SlR-0Xyo
+	id 1sKL1v-00000005wxI-3bBg
 	for ath12k@archiver.kernel.org;
-	Thu, 20 Jun 2024 14:30:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 20 Jun 2024 16:52:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKIoO-00000005Sjw-2BnF;
-	Thu, 20 Jun 2024 14:30:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 366CD621CD;
-	Thu, 20 Jun 2024 14:30:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 7E671C4AF0B;
-	Thu, 20 Jun 2024 14:30:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718893850;
-	bh=lFnvmyEqgdYMJeF8dWD9Fuq9BZ+u9+Ev069om7FPMpQ=;
-	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
-	b=AutipYDt61pdZCchXMSoqgfIdvPa6FKNlhIbdWjsyMmefRUobYSzMDwsaDlyod2kv
-	 sCAqR265rGA6cmHjiRX/iqw4Iqk36RSjWfZ+3ySyVatuPBKp2M1wRPmwzFf9XLTH9E
-	 GoDQGMn/l7y4tHjhFyNij9Esy2NciNDerQmXvuJphkNx9mAlyMqlJcLFNj2qgKPy7E
-	 FRFInMLlYQDRf8ye/ThTL3pQ8O3zaPnYVU22bzjphx0K2SuSbdId/iapNsodUAx523
-	 +K3J38wVFzunMlN5qEtbaf17DADoKcPKWbXk0aRxVztFFunpGHuyDmDb1WhazTy3I/
-	 4QAhhUTNKrDaA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 67D0FC39563;
-	Thu, 20 Jun 2024 14:30:50 +0000 (UTC)
-Content-Type: text/plain; charset="utf-8"
+	id 1sKL1s-00000005wwL-2gYD
+	for ath12k@lists.infradead.org;
+	Thu, 20 Jun 2024 16:52:58 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45K9v7ji009875;
+	Thu, 20 Jun 2024 16:52:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	jWXhfazn4/mALi8WcvHnr+n4EOcEu2PGpjjS3xu8N3U=; b=XPQEfs82LU2zWDXd
+	XiYAT3crhVqy8b0szDQJDO6RandIMuvsUHssRuQzP5L6ZVubwRqaBj8+xaZGucXi
+	LSKlh2yiK+GG89DBiL3zC97YoWi19Lvqc6BEZkBNOm6IiTEa5SbgLDw28FtEY7Ym
+	LtTbYap/OiceZNygeHBRXDteWs76FFlXlWF1LGCdBBlreH9jcs21XTbsk+l23yrN
+	voBTEbrP30+0Ufoh5i6TS5CtUspjvDpPukvq0vBPO+7T0tX/81dcL0vQxYVFBVqU
+	/hJTMLPWpqjXv/g8lL9nslmBrKc4PgiQdU1v27Qlrm5gwdZwEtNMTyluRRyXePZ7
+	rGGHRA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yv8h4a55p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 20 Jun 2024 16:52:54 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45KGqr1l015274
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 20 Jun 2024 16:52:53 GMT
+Received: from [10.216.57.43] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 20 Jun
+ 2024 09:52:51 -0700
+Message-ID: <8c6c4394-a55d-41a6-bbcb-17adc67ac513@quicinc.com>
+Date: Thu, 20 Jun 2024 22:22:47 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Subject: Re: [PATCH v8 00/17] power: sequencing: implement the subsystem and
- add first users
-From: patchwork-bot+bluetooth@kernel.org
-Message-Id: <171889385042.4585.381673079448841277.git-patchwork-notify@kernel.org>
-Date: Thu, 20 Jun 2024 14:30:50 +0000
-References: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org>
-In-Reply-To: <20240528-pwrseq-v8-0-d354d52b763c@linaro.org>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Cc: lgirdwood@gmail.com, broonie@kernel.org, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, marcel@holtmann.org,
- luiz.dentz@gmail.com, davem@davemloft.net, edumazet@google.com,
- kuba@kernel.org, pabeni@redhat.com, quic_bgodavar@quicinc.com,
- quic_rjliao@quicinc.com, kvalo@kernel.org, jjohnson@kernel.org,
- andersson@kernel.org, konrad.dybcio@linaro.org, bhelgaas@google.com,
- srinivas.kandagatla@linaro.org, quic_eberman@quicinc.com,
- caleb.connolly@linaro.org, neil.armstrong@linaro.org,
- dmitry.baryshkov@linaro.org, elder@kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
- quic_jjohnson@quicinc.com, ath12k@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-pci@vger.kernel.org,
- bartosz.golaszewski@linaro.org, kernel@quicinc.com,
- krzysztof.kozlowski@linaro.org, amit.pundir@linaro.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 1/3] wifi: ath12k: prepare vif data structure for MLO
+ handling
+To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+References: <20240617131650.3288118-1-quic_ramess@quicinc.com>
+ <20240617131650.3288118-2-quic_ramess@quicinc.com>
+ <3754f5f3-0e67-4c5e-9b56-888ad5071622@quicinc.com>
+Content-Language: en-US
+From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+In-Reply-To: <3754f5f3-0e67-4c5e-9b56-888ad5071622@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: vrxzlZAkG60PjStQ53OCYfhBiCu1-Y44
+X-Proofpoint-GUID: vrxzlZAkG60PjStQ53OCYfhBiCu1-Y44
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-06-20_08,2024-06-20_04,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ phishscore=0 mlxlogscore=999 clxscore=1015 priorityscore=1501 spamscore=0
+ adultscore=0 malwarescore=0 suspectscore=0 impostorscore=0 mlxscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2405170001 definitions=main-2406200120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_073052_706864_65C37048 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20240620_095256_865361_1A938ECD 
+X-CRM114-Status: GOOD (  30.55  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,68 +101,316 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello:
 
-This series was applied to bluetooth/bluetooth-next.git (master)
-by Luiz Augusto von Dentz <luiz.von.dentz@intel.com>:
 
-On Tue, 28 May 2024 21:03:08 +0200 you wrote:
-> Note: I am resending this series in its entirety once more for
-> discussions and reviews. If there won't be any major objections, I'll
-> then start sending individual bits and pieces to appropriate trees.
+On 6/18/2024 1:17 PM, Baochen Qiang wrote:
 > 
-> Merging strategy: The DT binding and DTS changes are a no-brainer, they
-> can go through the wireless, regulator and arm-msm trees separately. The
-> bluetooth and PCI changes have a build-time dependency on the power
-> sequencing code. The bluetooth changes also have a run-time dependency on
-> the PCI pwrctl part. In order to get it into next I plan to pick up the
-> power sequencing code into my own tree and maintain it. I can then
-> provide an immutable tag for the BT and PCI trees to pull. I wouldn't
-> stress about the BT runtime dependency as it will be fixed once all
-> changes are in next.
 > 
-> [...]
+> On 6/17/2024 9:16 PM, Rameshkumar Sundaram wrote:
+>> From: Sriram R <quic_srirrama@quicinc.com>
+>>
+>> To prepare the driver for MLO support, split the driver vif
+>> data structure to scale for multiple links. This requires changing
+>> the use of arvif to per link and not per hw which can now
+>> comprise of multiple links.
+>> Also since most configurations from mac80211 are done per link, do refactoring
+>> of the driver functions to apply these configurations at link level.
+>>
+>> Split ath12k_vif which is the driver private of ieee80211_vif to store
+>> link specific information as ath12k_link_vif. For default use cases
+>> the ath12k vif will have a preallocated link vif called deflink which will
+>> be used by non ML and the first link vif of ML vif.
+>>
+>> With MLO Support to be added, remaining link vifs will be allocated during
+>> channel assignment where vdev create/start happens. These link vifs will be
+>> freed during interface down.
+>>
+>>         		Current ath12k_vif(arvif) structure
+>>
+>>               +---------------+      +---------------+     +---------------+
+>>               | ieee80211_vif |      | ieee80211_vif |     | ieee80211_vif |
+>>               | private data  |      | private data  |     | private data  |
+>>               |               |      |               |     |               |
+>>               |  ath12k_vif   |      |  ath12k_vif   |     |  ath12k_vif   |
+>>               |  (arvif)      |      |  (arvif)      |     |  (arvif)      |
+>>               |               |      |               |     |               |
+>>               |  +----------+ |      |  +----------+ |     |  +----------+ |
+>>               |  |*ar (2GHz)| |      |  |*ar (5GHz)| |     |  |*ar (2GHz)| |
+>>               |  +----------+ |      |  +----------+ |     |  +----------+ |
+>>               |               |      |               |     |               |
+>>               +---------------+      +---------------+     +---------------+
+>>
+>>         	Proposed ath12k_vif(ahvif) containing ath12k_link_vif(s) (arvif)
+>>         	(deflink is preallocated member which is always the first link if
+>>         	 ieee80211_vif is MLD and is the only link otherwise)
+>>
+>>         			+---------------------------------+
+>>         			|     ieee80211_vif               |
+>>         			|     private data                |
+>>         			|                                 |
+>>         			|   ath12k_vif(ahvif)             |
+>>         			|                                 |
+>>         			| +-------------------------------+
+>>         			| |ath12k_link_vif deflink (arvif)|
+>>         			| |        +---------------+      |
+>>         			| |        | *ar(2GHz)     |      |
+>>         			| +-------------------------------+
+>>         			| +-------------------------------+
+>>         			| |  ath12k_link_vif *link (arvif)|
+>>         			| |        +---------------+      |
+>>         			| |        | *ar(5GHz)     |      |
+>>         			| +-------------------------------+
+>>         			| +-------------------------------+
+>>         			| |  ath12k_link_vif *link (arvif)|
+>>         			| |        +---------------+      |
+>>         			| |        | *ar(6GHz)     |      |
+>>         			| +-------------------------------+
+>>         			|                                 |
+>>         			+---------------------------------+
+>>
+>> To refactor existing ath12k_vif to make use of link vifs, following
+>> changes are made,
+>>
+>>   1. ath12k_vif now called by variable name ahvif stores multiple
+>>   arvifs(ah12k_link_vif) and also has a back pointer to ieee80211_vif.
+>>
+>>   2. In this patch set, only deflink is used to be on par with the
+>>   existing code. When MLO support is added the link id will be used to
+>>   fetch the arvif.
+>>
+>>   3. For mac80211 ops which doesn't use specific link_id, the config or info
+>>   is common for the vif, hence apply the config to all link vifs.
+>>   The links_map in the ahvif, will be used to identify all the link vifs that
+>>   are setup.
+>>
+>>   4. Change ath12k_vif_to_arvif() as ath12k_vif_to_ahvif() to fetch the
+>>   hw level vif. The link vif can be fetched from ahvif->link[], or the
+>>   deflink can be accessed via ahvif->deflink. API to access link
+>>   vif(arvif) by passing link_id can be introduced with MLO Support.
+>>
+>>   5. The ieee80211_vif can be accessed from ahvif using ath12k_vif_to_vif()
+>>
+>> Locking:
+>>   Currently modifications to members of arvif and arsta are protected by ar->conf_mutex
+>>   and it stays as such.
+>>   Now with these hw level structure (ahvif) being introduced, any modifications
+>>   to its members and link objects (i.e., arvifs[] which are dynamically allocated)
+>>   needs to be protected for writing and ah->conf_mutex is used for the same.
+>>   Also, atomic contexts(say WMI events and certain mac_ops) that we currently have in driver
+>>   will not(shouldn't be allowed) do any modifications but can read them and
+>>   rcu_read_lock() is used for the same.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+>> Co-developed-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+>> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/core.h  |  69 ++-
+>>   drivers/net/wireless/ath/ath12k/dp.c    |  21 +-
+>>   drivers/net/wireless/ath/ath12k/dp.h    |   3 +-
+>>   drivers/net/wireless/ath/ath12k/dp_rx.c |   2 +-
+>>   drivers/net/wireless/ath/ath12k/dp_rx.h |   2 +-
+>>   drivers/net/wireless/ath/ath12k/dp_tx.c |   9 +-
+>>   drivers/net/wireless/ath/ath12k/dp_tx.h |   2 +-
+>>   drivers/net/wireless/ath/ath12k/mac.c   | 733 ++++++++++++++++--------
+>>   drivers/net/wireless/ath/ath12k/mac.h   |   9 +-
+>>   drivers/net/wireless/ath/ath12k/p2p.c   |  17 +-
+>>   drivers/net/wireless/ath/ath12k/p2p.h   |   2 +-
+>>   drivers/net/wireless/ath/ath12k/peer.c  |   7 +-
+>>   drivers/net/wireless/ath/ath12k/peer.h  |   4 +-
+>>   drivers/net/wireless/ath/ath12k/wmi.c   |  12 +-
+>>   14 files changed, 592 insertions(+), 300 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+>> index b483899ca136..d47b6413aaad 100644
+>> --- a/drivers/net/wireless/ath/ath12k/core.h
+>> +++ b/drivers/net/wireless/ath/ath12k/core.h
+>> @@ -229,10 +229,8 @@ struct ath12k_vif_cache {
+>>   	u32 bss_conf_changed;
+>>   };
+>>   
+>> -struct ath12k_vif {
+>> +struct ath12k_link_vif {
+>>   	u32 vdev_id;
+>> -	enum wmi_vdev_type vdev_type;
+>> -	enum wmi_vdev_subtype vdev_subtype;
+>>   	u32 beacon_interval;
+>>   	u32 dtim_period;
+>>   	u16 ast_hash;
+>> @@ -242,13 +240,38 @@ struct ath12k_vif {
+>>   	u8 search_type;
+>>   
+>>   	struct ath12k *ar;
+>> -	struct ieee80211_vif *vif;
+>>   
+>>   	int bank_id;
+>>   	u8 vdev_id_check_en;
+>>   
+>>   	struct wmi_wmm_params_all_arg wmm_params;
+>>   	struct list_head list;
+>> +
+>> +	bool is_created;
+>> +	bool is_started;
+>> +	bool is_up;
+>> +	u8 bssid[ETH_ALEN];
+>> +	struct cfg80211_bitrate_mask bitrate_mask;
+>> +	struct delayed_work connection_loss_work;
+>> +	int num_legacy_stations;
+>> +	int rtscts_prot_mode;
+>> +	int txpower;
+>> +	bool rsnie_present;
+>> +	bool wpaie_present;
+>> +	struct ieee80211_chanctx_conf chanctx;
+>> +	u8 vdev_stats_id;
+>> +	u32 punct_bitmap;
+>> +	u8 link_id;
+>> +	struct ath12k_vif *ahvif;
+>> +	struct ath12k_vif_cache *cache;
+>> +};
+>> +
+>> +struct ath12k_vif {
+>> +	enum wmi_vdev_type vdev_type;
+>> +	enum wmi_vdev_subtype vdev_subtype;
+>> +	struct ieee80211_vif *vif;
+>> +	struct ath12k_hw *ah;
+>> +
+>>   	union {
+>>   		struct {
+>>   			u32 uapsd;
+>> @@ -266,31 +289,21 @@ struct ath12k_vif {
+>>   		} ap;
+>>   	} u;
+>>   
+>> -	bool is_created;
+>> -	bool is_started;
+>> -	bool is_up;
+>>   	u32 aid;
+>> -	u8 bssid[ETH_ALEN];
+>> -	struct cfg80211_bitrate_mask bitrate_mask;
+>> -	struct delayed_work connection_loss_work;
+>> -	int num_legacy_stations;
+>> -	int rtscts_prot_mode;
+>> -	int txpower;
+>> -	bool rsnie_present;
+>> -	bool wpaie_present;
+>> -	struct ieee80211_chanctx_conf chanctx;
+>>   	u32 key_cipher;
+>>   	u8 tx_encap_type;
+>> -	u8 vdev_stats_id;
+>> -	u32 punct_bitmap;
+>>   	bool ps;
+>> -	struct ath12k_vif_cache *cache;
+>> +
+>> +	struct ath12k_link_vif deflink;
+>> +	struct ath12k_link_vif __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
+>> +	/* indicates bitmap of link vif created in FW */
+>> +	u16 links_map;
+>>   };
+>>   
+>>   struct ath12k_vif_iter {
+>>   	u32 vdev_id;
+>>   	struct ath12k *ar;
+>> -	struct ath12k_vif *arvif;
+>> +	struct ath12k_link_vif *arvif;
+>>   };
+>>   
+>>   #define HAL_AST_IDX_INVALID	0xFFFF
+>> @@ -426,7 +439,7 @@ struct ath12k_wbm_tx_stats {
+>>   };
+>>   
+>>   struct ath12k_sta {
+>> -	struct ath12k_vif *arvif;
+>> +	struct ath12k_link_vif *arvif;
+>>   
+>>   	/* the following are protected by ar->data_lock */
+>>   	u32 changed; /* IEEE80211_RC_* */
+>> @@ -543,7 +556,7 @@ struct ath12k {
+>>   	 */
+>>   	struct mutex conf_mutex;
+>>   	/* protects the radio specific data like debug stats, ppdu_stats_info stats,
+>> -	 * vdev_stop_status info, scan data, ath12k_sta info, ath12k_vif info,
+>> +	 * vdev_stop_status info, scan data, ath12k_sta info, ath12k_link_vif info,
+>>   	 * channel context data, survey info, test mode data.
+>>   	 */
+>>   	spinlock_t data_lock;
+>> @@ -639,6 +652,11 @@ struct ath12k_hw {
+>>   	enum ath12k_hw_state state;
+>>   	bool regd_updated;
+>>   	bool use_6ghz_regd;
+>> +
+>> +	/* To synchronize concurrent access of ahvif->link[]
+>> +	 * between mac80211 operations.
+>> +	 */
+>> +	struct mutex conf_mutex;
+>>   	u8 num_radio;
+>>   
+>>   	/* Keep last */
+>> @@ -995,7 +1013,7 @@ static inline struct ath12k_skb_rxcb *ATH12K_SKB_RXCB(struct sk_buff *skb)
+>>   	return (struct ath12k_skb_rxcb *)skb->cb;
+>>   }
+>>   
+>> -static inline struct ath12k_vif *ath12k_vif_to_arvif(struct ieee80211_vif *vif)
+>> +static inline struct ath12k_vif *ath12k_vif_to_ahvif(struct ieee80211_vif *vif)
+>>   {
+>>   	return (struct ath12k_vif *)vif->drv_priv;
+>>   }
+>> @@ -1005,6 +1023,11 @@ static inline struct ath12k_sta *ath12k_sta_to_arsta(struct ieee80211_sta *sta)
+>>   	return (struct ath12k_sta *)sta->drv_priv;
+>>   }
+>>   
+>> +static inline struct ieee80211_vif *ath12k_vif_to_vif(struct ath12k_vif *ahvif)
+> better naming as ath12k_ahvif_to_vif()?
+> 
+Sure, make sense will change as suggested.
 
-Here is the summary with links:
-  - [v8,01/17] regulator: dt-bindings: describe the PMU module of the QCA6390 package
-    (no matching commit)
-  - [v8,02/17] regulator: dt-bindings: describe the PMU module of the WCN7850 package
-    (no matching commit)
-  - [v8,03/17] dt-bindings: net: bluetooth: qualcomm: describe regulators for QCA6390
-    https://git.kernel.org/bluetooth/bluetooth-next/c/251180e6dba5
-  - [v8,04/17] dt-bindings: net: wireless: qcom,ath11k: describe the ath11k on QCA6390
-    (no matching commit)
-  - [v8,05/17] dt-bindings: net: wireless: describe the ath12k PCI module
-    (no matching commit)
-  - [v8,06/17] arm64: dts: qcom: sm8550-qrd: add the Wifi node
-    (no matching commit)
-  - [v8,07/17] arm64: dts: qcom: sm8650-qrd: add the Wifi node
-    (no matching commit)
-  - [v8,08/17] arm64: dts: qcom: sm8650-hdk: add the Wifi node
-    (no matching commit)
-  - [v8,09/17] arm64: dts: qcom: qrb5165-rb5: add the Wifi node
-    (no matching commit)
-  - [v8,10/17] power: sequencing: implement the pwrseq core
-    (no matching commit)
-  - [v8,11/17] power: pwrseq: add a driver for the PMU module on the QCom WCN chipsets
-    (no matching commit)
-  - [v8,12/17] PCI: hold the rescan mutex when scanning for the first time
-    (no matching commit)
-  - [v8,13/17] PCI/pwrctl: reuse the OF node for power controlled devices
-    (no matching commit)
-  - [v8,14/17] PCI/pwrctl: create platform devices for child OF nodes of the port node
-    (no matching commit)
-  - [v8,15/17] PCI/pwrctl: add PCI power control core code
-    (no matching commit)
-  - [v8,16/17] PCI/pwrctl: add a PCI power control driver for power sequenced devices
-    (no matching commit)
-  - [v8,17/17] Bluetooth: qca: use the power sequencer for QCA6390
-    https://git.kernel.org/bluetooth/bluetooth-next/c/4029dba6b6f1
+>> +{
+>> +	return container_of((void *)ahvif, struct ieee80211_vif, drv_priv);
+>> +}
+>> +
+>>   static inline struct ath12k *ath12k_ab_to_ar(struct ath12k_base *ab,
+>>   					     int mac_id)
+>>   {
+>> diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+>> index 61aa78d8bd8c..30aac0dd5a80 100644
+>> --- a/drivers/net/wireless/ath/ath12k/dp.c
+>> +++ b/drivers/net/wireless/ath/ath12k/dp.c
+>> @@ -327,20 +327,22 @@ int ath12k_dp_srng_setup(struct ath12k_base *ab, struct dp_srng *ring,
+>>   }
+>>   
+...
 
-You are awesome, thank you!
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/patchwork/pwbot.html
-
-
+>>   
+>> @@ -4655,11 +4787,14 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+>>   		return;
+>>   	}
+>>   
+>> +	rcu_read_lock();
+>> +	arvif = &ahvif->deflink;
+> does ath12k_vif::deflink need rcu protect? note it is not declared as rcu*, and even mac80211 uses it without holding such lock. See
+Not needed, but this is going to be link specific once MLO changes are 
+in and ideally we should now be obtaining ahvif->link[0] (which is 
+anyway deflink as of now) as a preperation for that. Will change this to 
+use link[0].
+> 	ieee80211_mgd_auth() {
+> 		struct ieee80211_link_data *link;
+> 		...
+> 		if()
+> 			...
+> 		else
+> 			link = &sdata->deflink;
+> 
+> 		...
+> 	}
+> 
+>>   	spin_lock_bh(&ar->ab->base_lock);
+>>   
+>>   	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+>>   	if (!peer) {
+>>   		spin_unlock_bh(&ar->ab->base_lock);
+>> +		rcu_read_unlock();
+>>   		ath12k_warn(ar->ab, "mac sta rc update failed to find peer %pM on vdev %i\n",
+>>   			    sta->addr, arvif->vdev_id);
+>>   		return;
 
