@@ -4,62 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72AF3C27C79
-	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D2CCC2D0CE
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wE/YU98+K8BqdghEcxaZaMQZPrB2kjkbkWY/y+8Q9Vk=; b=GmPzYJ4Dg1gc6w3l1IFe9JhL0C
-	EF9TYWanakG8njghcffMGH0OT+/dkRbxHZWmCnD04oLLF3nU4DP1iLU1c62FJ8hyOv+/lUz37dqaK
-	F4k3NgwyTodCsJ3zW/LliJKjdnEpARJ7MlI+NZ/qU/faYR1QIPiYA1bnyaRIE7BQQ/CV7RFMG1VgY
-	Ud3znJFT/UaYanAnrZW9HSBexwU/nadLAKLBhEObbCcO3cyRr3MtyHMujzIcJ2e7WYCQPPO4r9oJ7
-	YpFbNnhD3ezdky17fRBRd5JG8gxEcvv7POf+K11ZH2L878H/Ntz/oPqvQaSVURypVX+jEsweb5NQJ
-	+xXNxVBQ==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=HGaqhr+0RrBuPHuYIAQV/iwE8YYIt8jMNvsZUis/wMI=; b=183kmwplpTWzDHWAA8CsPo8EhW
+	h1y0Xh1pbd18bztMMw+G6coKemeDGFw5lvA/BxfkQOz0GdiZwwapZIHOZznrLVPB8oBhfyE2TYWo+
+	Dm26Can3f7SpsPxws2TNO+m3qNQzUfsArc4K+Xadz56Qr25TK3rMHA+gEISRN7bCD9NokoVHNGP22
+	8c8BgosBnFdhht/GRXNG+h4w24C1jgokW2oEbk8/RlF3KYLeaVK8llgBlzNyjU+1gJiCyuoUkaEp5
+	n0M3pLqx67schZaCqYK7FSkRKEoDfXe6sbYl1eA2zL3ns8w3gwQ+m/6o21mplqHRa2eqbKKKLHsLv
+	lNWgAXYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFhg-00000004hbN-0AUc
+	id 1sKFhg-00000004hbl-2ske
 	for ath12k@archiver.kernel.org;
 	Thu, 20 Jun 2024 11:11:44 +0000
-Received: from nbd.name ([46.4.11.11])
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFhU-00000004hQP-2vxz
-	for ath12k@lists.infradead.org;
+	id 1sKFhZ-00000004hVH-1j26
+	for ath12k@bombadil.infradead.org;
 	Thu, 20 Jun 2024 11:11:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=HGaqhr+0RrBuPHuYIAQV/iwE8YYIt8jMNvsZUis/wMI=; b=CmcIy2Ntd4RKf7LkavvhHQKYPP
+	o0W4AE6LdC9IJmLrCGc1w6bI8stYCRDTahTbRKDFB3rlbUjwpthCqV5gdSo3WzzTz98ILgF8PiXr6
+	uOeyO2rHfPPcSzJvU12/Jv4BJxpDv03VF6uIt9coUob0ZZB8ed77Ox+3jCh6GJ4k5OB4Y2k+Ra4ZS
+	5Tl7miWRoXMtrRDag2V00kpqMp6PVKY6sGx8/ECXjBMc7rOA6ZWmm2pLLXFJdpq+J+D1r0jx6wymf
+	Az8YUXf/pxAfYiLP9M804cv/q9mZ4doBbaUSAEaDVm9dH6nEb5PhJoYXhLi9KEiwvtj/FzOUGhMjV
+	jKIL1bhA==;
+Received: from nbd.name ([46.4.11.11])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sKFhV-00000007XRS-3KL2
+	for ath12k@lists.infradead.org;
+	Thu, 20 Jun 2024 11:11:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:
+	Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=wE/YU98+K8BqdghEcxaZaMQZPrB2kjkbkWY/y+8Q9Vk=; b=reOMbX/NsZB0ZrYBH25oSb/Rd6
-	e0EX9Km6XqXsHk3+0H6STyXMvC7Qj63PJ9qQw97ZqQT9ikiy3UAVU+KoZCXyiwlCCQNUWkp8oTp6j
-	16SXOi43kHYqi/DCxxkTasw7d7KYQk8aVYkV76bJNdB2sGFdgA1rb3XezJJTVS8+njjk=;
+	bh=HGaqhr+0RrBuPHuYIAQV/iwE8YYIt8jMNvsZUis/wMI=; b=Su7Nh402fj6k5HqJNmgjNfq48E
+	k+VoDY5OrXAF52Sj1HYvurpKSCf0XiPy9xFxSG0868LwGQhH6VoNwl/pCpI5bn+FXOdcEosc+bq0M
+	H3CIVSDjtLaYvaVOBe2ROw4loxbmfoM/X0jLii2zg17ImFmficENs2YYZrb3VeGbAld0=;
 Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1sKFhN-00Ei9k-1T;
-	Thu, 20 Jun 2024 13:11:25 +0200
+	id 1sKFhL-00Ei9k-28;
+	Thu, 20 Jun 2024 13:11:23 +0200
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
 Cc: johannes@sipsolutions.net,
 	quic_adisi@quicinc.com,
 	quic_periyasa@quicinc.com,
 	ath12k@lists.infradead.org
-Subject: [PATCH 07/10] wifi: mac80211: extend ifcomb check functions for multi-radio
-Date: Thu, 20 Jun 2024 13:11:19 +0200
-Message-ID: <00214fb990f346875bc3215354d14c757ebb9e9d.1718881762.git-series.nbd@nbd.name>
+Subject: [PATCH 00/10] cfg80211/mac80211: support defining multiple radios per wiphy
+Date: Thu, 20 Jun 2024 13:11:12 +0200
+Message-ID: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 X-Mailer: git-send-email 2.44.0
-In-Reply-To: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
-References: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_041133_023037_D97A41D8 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20240620_121134_139014_441493B3 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,340 +87,86 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add support for counting global and per-radio max/current number of
-channels, as well as checking radio-specific interface combinations.
+The prerequisite for MLO support in cfg80211/mac80211 is that all the links
+participating in MLO must be from the same wiphy/ieee80211_hw. To meet this
+expectation, some drivers may need to group multiple discrete hardware each
+acting as a link in MLO under single wiphy.
 
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
----
- net/mac80211/cfg.c         |   7 +-
- net/mac80211/chan.c        |  17 +++--
- net/mac80211/ibss.c        |   2 +-
- net/mac80211/ieee80211_i.h |   5 +-
- net/mac80211/iface.c       |   2 +-
- net/mac80211/util.c        | 126 ++++++++++++++++++++++++++------------
- 6 files changed, 108 insertions(+), 51 deletions(-)
+With this change, supported frequencies and interface combinations of each
+individual radio are reported to user space. This allows user space to figure
+out the limitations of what combination of channels can be used concurrently.
 
-diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
-index 62119e957cd8..950b7b72f0b8 100644
---- a/net/mac80211/cfg.c
-+++ b/net/mac80211/cfg.c
-@@ -263,7 +263,7 @@ static int ieee80211_start_p2p_device(struct wiphy *wiphy,
- 
- 	lockdep_assert_wiphy(sdata->local->hw.wiphy);
- 
--	ret = ieee80211_check_combinations(sdata, NULL, 0, 0);
-+	ret = ieee80211_check_combinations(sdata, NULL, 0, 0, -1);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -285,7 +285,7 @@ static int ieee80211_start_nan(struct wiphy *wiphy,
- 
- 	lockdep_assert_wiphy(sdata->local->hw.wiphy);
- 
--	ret = ieee80211_check_combinations(sdata, NULL, 0, 0);
-+	ret = ieee80211_check_combinations(sdata, NULL, 0, 0, -1);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -4001,7 +4001,7 @@ __ieee80211_channel_switch(struct wiphy *wiphy, struct net_device *dev,
- 		goto out;
- 
- 	/* if reservation is invalid then this will fail */
--	err = ieee80211_check_combinations(sdata, NULL, chanctx->mode, 0);
-+	err = ieee80211_check_combinations(sdata, NULL, chanctx->mode, 0, -1);
- 	if (err) {
- 		ieee80211_link_unreserve_chanctx(link_data);
- 		goto out;
-@@ -5199,4 +5199,5 @@ const struct cfg80211_ops mac80211_config_ops = {
- 	.del_link_station = ieee80211_del_link_station,
- 	.set_hw_timestamp = ieee80211_set_hw_timestamp,
- 	.set_ttlm = ieee80211_set_ttlm,
-+	.get_radio_mask = ieee80211_get_radio_mask,
- };
-diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
-index 574ae961a7cf..0e899c07bc2b 100644
---- a/net/mac80211/chan.c
-+++ b/net/mac80211/chan.c
-@@ -47,24 +47,29 @@ int ieee80211_chanctx_refcount(struct ieee80211_local *local,
- 	       ieee80211_chanctx_num_reserved(local, ctx);
- }
- 
--static int ieee80211_num_chanctx(struct ieee80211_local *local)
-+static int ieee80211_num_chanctx(struct ieee80211_local *local, int radio_idx)
- {
- 	struct ieee80211_chanctx *ctx;
- 	int num = 0;
- 
- 	lockdep_assert_wiphy(local->hw.wiphy);
- 
--	list_for_each_entry(ctx, &local->chanctx_list, list)
-+	list_for_each_entry(ctx, &local->chanctx_list, list) {
-+		if (radio_idx >= 0 && ctx->conf.radio_idx != radio_idx)
-+			continue;
- 		num++;
-+	}
- 
- 	return num;
- }
- 
--static bool ieee80211_can_create_new_chanctx(struct ieee80211_local *local)
-+static bool ieee80211_can_create_new_chanctx(struct ieee80211_local *local,
-+					     int radio_idx)
- {
- 	lockdep_assert_wiphy(local->hw.wiphy);
- 
--	return ieee80211_num_chanctx(local) < ieee80211_max_num_channels(local);
-+	return ieee80211_num_chanctx(local, radio_idx) <
-+	       ieee80211_max_num_channels(local, radio_idx);
- }
- 
- static struct ieee80211_chanctx *
-@@ -1072,7 +1077,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
- 
- 	new_ctx = ieee80211_find_reservation_chanctx(local, chanreq, mode);
- 	if (!new_ctx) {
--		if (ieee80211_can_create_new_chanctx(local)) {
-+		if (ieee80211_can_create_new_chanctx(local, -1)) {
- 			new_ctx = ieee80211_new_chanctx(local, chanreq, mode,
- 							false);
- 			if (IS_ERR(new_ctx))
-@@ -1767,7 +1772,7 @@ int _ieee80211_link_use_channel(struct ieee80211_link_data *link,
- 	link->radar_required = ret;
- 
- 	ret = ieee80211_check_combinations(sdata, &chanreq->oper, mode,
--					   radar_detect_width);
-+					   radar_detect_width, -1);
- 	if (ret < 0)
- 		goto out;
- 
-diff --git a/net/mac80211/ibss.c b/net/mac80211/ibss.c
-index bf338f3d4dd3..522e964bb186 100644
---- a/net/mac80211/ibss.c
-+++ b/net/mac80211/ibss.c
-@@ -1745,7 +1745,7 @@ int ieee80211_ibss_join(struct ieee80211_sub_if_data *sdata,
- 		IEEE80211_CHANCTX_SHARED : IEEE80211_CHANCTX_EXCLUSIVE;
- 
- 	ret = ieee80211_check_combinations(sdata, &params->chandef, chanmode,
--					   radar_detect_width);
-+					   radar_detect_width, -1);
- 	if (ret < 0)
- 		return ret;
- 
-diff --git a/net/mac80211/ieee80211_i.h b/net/mac80211/ieee80211_i.h
-index 3fd7b1adbfab..d8cb93e5e255 100644
---- a/net/mac80211/ieee80211_i.h
-+++ b/net/mac80211/ieee80211_i.h
-@@ -2038,6 +2038,7 @@ static inline bool ieee80211_sdata_running(struct ieee80211_sub_if_data *sdata)
- {
- 	return test_bit(SDATA_STATE_RUNNING, &sdata->state);
- }
-+u32 ieee80211_get_radio_mask(struct wiphy *wiphy, struct net_device *dev);
- 
- /* link handling */
- void ieee80211_link_setup(struct ieee80211_link_data *link);
-@@ -2620,8 +2621,8 @@ void ieee80211_recalc_dtim(struct ieee80211_local *local,
- int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
- 				 const struct cfg80211_chan_def *chandef,
- 				 enum ieee80211_chanctx_mode chanmode,
--				 u8 radar_detect);
--int ieee80211_max_num_channels(struct ieee80211_local *local);
-+				 u8 radar_detect, int radio_idx);
-+int ieee80211_max_num_channels(struct ieee80211_local *local, int radio_idx);
- void ieee80211_recalc_chanctx_chantype(struct ieee80211_local *local,
- 				       struct ieee80211_chanctx *ctx);
- 
-diff --git a/net/mac80211/iface.c b/net/mac80211/iface.c
-index d1a49ee4a194..5dc85f9409cd 100644
---- a/net/mac80211/iface.c
-+++ b/net/mac80211/iface.c
-@@ -397,7 +397,7 @@ static int ieee80211_check_concurrent_iface(struct ieee80211_sub_if_data *sdata,
- 		}
- 	}
- 
--	return ieee80211_check_combinations(sdata, NULL, 0, 0);
-+	return ieee80211_check_combinations(sdata, NULL, 0, 0, -1);
- }
- 
- static int ieee80211_check_queues(struct ieee80211_sub_if_data *sdata,
-diff --git a/net/mac80211/util.c b/net/mac80211/util.c
-index 0d2927e53114..d9e41cb03676 100644
---- a/net/mac80211/util.c
-+++ b/net/mac80211/util.c
-@@ -3928,19 +3928,99 @@ static u8 ieee80211_chanctx_radar_detect(struct ieee80211_local *local,
- 	return radar_detect;
- }
- 
-+static u32
-+__ieee80211_get_radio_mask(struct ieee80211_sub_if_data *sdata)
-+{
-+	struct ieee80211_bss_conf *link_conf;
-+	struct ieee80211_chanctx_conf *conf;
-+	unsigned int link_id;
-+	u32 mask = 0;
-+
-+	for_each_vif_active_link(&sdata->vif, link_conf, link_id) {
-+		conf = rcu_dereference(link_conf->chanctx_conf);
-+		if (!conf || conf->radio_idx < 0)
-+			continue;
-+
-+		mask |= BIT(conf->radio_idx);
-+	}
-+
-+	return mask;
-+}
-+
-+u32 ieee80211_get_radio_mask(struct wiphy *wiphy, struct net_device *dev)
-+{
-+	struct ieee80211_sub_if_data *sdata = IEEE80211_DEV_TO_SUB_IF(dev);
-+
-+	return __ieee80211_get_radio_mask(sdata);
-+}
-+
-+static bool
-+ieee80211_sdata_uses_radio(struct ieee80211_sub_if_data *sdata, int radio_idx)
-+{
-+	if (radio_idx < 0)
-+		return true;
-+
-+	return __ieee80211_get_radio_mask(sdata) & BIT(radio_idx);
-+}
-+
-+static void
-+ieee80211_fill_ifcomb_params(struct ieee80211_local *local,
-+			     struct iface_combination_params *params,
-+			     const struct cfg80211_chan_def *chandef,
-+			     struct ieee80211_sub_if_data *sdata)
-+{
-+	struct ieee80211_sub_if_data *sdata_iter;
-+	struct ieee80211_chanctx *ctx;
-+
-+	list_for_each_entry(ctx, &local->chanctx_list, list) {
-+		if (ctx->replace_state == IEEE80211_CHANCTX_WILL_BE_REPLACED)
-+			continue;
-+
-+		if (params->radio_idx >= 0 &&
-+		    ctx->conf.radio_idx != params->radio_idx)
-+			continue;
-+
-+		if (chandef &&
-+		    cfg80211_chandef_compatible(chandef, &ctx->conf.def))
-+			continue;
-+
-+		params->num_different_channels++;
-+
-+		params->radar_detect |=
-+			ieee80211_chanctx_radar_detect(local, ctx);
-+	}
-+
-+	list_for_each_entry_rcu(sdata_iter, &local->interfaces, list) {
-+		struct wireless_dev *wdev_iter;
-+
-+		wdev_iter = &sdata_iter->wdev;
-+
-+		if (sdata_iter == sdata ||
-+		    !ieee80211_sdata_running(sdata_iter) ||
-+		    cfg80211_iftype_allowed(local->hw.wiphy,
-+					    wdev_iter->iftype, 0, 1))
-+			continue;
-+
-+		if (!ieee80211_sdata_uses_radio(sdata_iter, params->radio_idx))
-+			continue;
-+
-+		params->iftype_num[wdev_iter->iftype]++;
-+	}
-+}
-+
- int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
- 				 const struct cfg80211_chan_def *chandef,
- 				 enum ieee80211_chanctx_mode chanmode,
--				 u8 radar_detect)
-+				 u8 radar_detect, int radio_idx)
- {
-+	bool shared = chanmode == IEEE80211_CHANCTX_SHARED;
- 	struct ieee80211_local *local = sdata->local;
--	struct ieee80211_sub_if_data *sdata_iter;
- 	enum nl80211_iftype iftype = sdata->wdev.iftype;
- 	struct ieee80211_chanctx *ctx;
- 	int total = 1;
- 	struct iface_combination_params params = {
- 		.radar_detect = radar_detect,
--		.radio_idx = -1,
-+		.radio_idx = radio_idx,
- 	};
- 
- 	lockdep_assert_wiphy(local->hw.wiphy);
-@@ -3978,6 +4058,8 @@ int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
- 	if (iftype != NL80211_IFTYPE_UNSPECIFIED)
- 		params.iftype_num[iftype] = 1;
- 
-+	ieee80211_fill_ifcomb_params(local, &params, shared ? chandef : NULL,
-+				     sdata);
- 	list_for_each_entry(ctx, &local->chanctx_list, list) {
- 		if (ctx->replace_state == IEEE80211_CHANCTX_WILL_BE_REPLACED)
- 			continue;
-@@ -3987,28 +4069,9 @@ int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
- 			params.num_different_channels++;
- 			continue;
- 		}
--		if (chandef && chanmode == IEEE80211_CHANCTX_SHARED &&
--		    cfg80211_chandef_compatible(chandef,
--						&ctx->conf.def))
--			continue;
- 		params.num_different_channels++;
- 	}
- 
--	list_for_each_entry_rcu(sdata_iter, &local->interfaces, list) {
--		struct wireless_dev *wdev_iter;
--
--		wdev_iter = &sdata_iter->wdev;
--
--		if (sdata_iter == sdata ||
--		    !ieee80211_sdata_running(sdata_iter) ||
--		    cfg80211_iftype_allowed(local->hw.wiphy,
--					    wdev_iter->iftype, 0, 1))
--			continue;
--
--		params.iftype_num[wdev_iter->iftype]++;
--		total++;
--	}
--
- 	if (total == 1 && !params.radar_detect)
- 		return 0;
- 
-@@ -4025,30 +4088,17 @@ ieee80211_iter_max_chans(const struct ieee80211_iface_combination *c,
- 					  c->num_different_channels);
- }
- 
--int ieee80211_max_num_channels(struct ieee80211_local *local)
-+int ieee80211_max_num_channels(struct ieee80211_local *local, int radio_idx)
- {
--	struct ieee80211_sub_if_data *sdata;
--	struct ieee80211_chanctx *ctx;
- 	u32 max_num_different_channels = 1;
- 	int err;
- 	struct iface_combination_params params = {
--		.radio_idx = -1,
-+		.radio_idx = radio_idx,
- 	};
- 
- 	lockdep_assert_wiphy(local->hw.wiphy);
- 
--	list_for_each_entry(ctx, &local->chanctx_list, list) {
--		if (ctx->replace_state == IEEE80211_CHANCTX_WILL_BE_REPLACED)
--			continue;
--
--		params.num_different_channels++;
--
--		params.radar_detect |=
--			ieee80211_chanctx_radar_detect(local, ctx);
--	}
--
--	list_for_each_entry_rcu(sdata, &local->interfaces, list)
--		params.iftype_num[sdata->wdev.iftype]++;
-+	ieee80211_fill_ifcomb_params(local, &params, NULL, NULL);
- 
- 	err = cfg80211_iter_combinations(local->hw.wiphy, &params,
- 					 ieee80211_iter_max_chans,
+Each mac80211 channel context is assigned to a radio based on radio specific
+frequency ranges and interface combinations.
+
+Even for non-MLO devices, this improves support for devices capable of
+running on multiple channels at the same time.
+
+This is loosely based on Karthikeyan Periyasamy's series
+"[PATCH 00/13] wifi: Add multi physical hardware iface combination support"
+with some differences:
+
+ - a struct wiphy_radio is defined, which holds the frequency ranges and
+   a full struct ieee80211_iface_combination array
+ - a channel context is explicitly assigned to a radio when created
+ - both global and per-radio interface combination limits are checked
+   and enforced on channel context assignment
+ - improve comments/docs and attributes
+ - add cfg80211 helper for checking radio freq range
+
+Changes since RFC v4:
+ - report the first radio's ifcomb as main ifcomb for legacy compatibility
+ - report the global wiphy ifcomb separately
+ - add mac80211_hwsim support
+
+Changes since RFC v3:
+ - fix __ieee80211_get_radio_mask to return per-vif radio mask
+ - fix params->radio in ieee80211_check_combinations()
+ - fix indentation
+ - pass radio_idx in struct iface_combination_params
+ - improve get_radio_mask callback
+
+Changes since RFC v2:
+ - fix uninitialized variables
+ - fix multiple radios with DFS
+ - add support for per-radio beacon interval checking
+
+Changes since RFC:
+ - replace static per-radio number of channels limit with full ifcomb
+   checks
+ - remove band bitmask in favor of only using freq ranges
+
+Felix Fietkau (10):
+  wifi: nl80211: split helper function from nl80211_put_iface_combinations
+  wifi: cfg80211: add support for advertising multiple radios belonging to a wiphy
+  wifi: cfg80211: extend interface combination check for multi-radio
+  wifi: cfg80211: add helper for checking if a chandef is valid on a radio
+  wifi: mac80211: add support for DFS with multiple radios
+  wifi: mac80211: add radio index to ieee80211_chanctx_conf
+  wifi: mac80211: extend ifcomb check functions for multi-radio
+  wifi: mac80211: move code in ieee80211_link_reserve_chanctx to a helper
+  wifi: mac80211: add wiphy radio assignment and validation
+  wifi: mac80211_hwsim: add support for multi-radio wiphy
+
+ drivers/net/wireless/virtual/mac80211_hwsim.c |  77 ++++++-
+ drivers/net/wireless/virtual/mac80211_hwsim.h |   3 +-
+ include/net/cfg80211.h                        |  51 +++++-
+ include/net/mac80211.h                        |   2 +-
+ include/uapi/linux/nl80211.h                  |  61 ++++++-
+ net/mac80211/cfg.c                            |   7 +-
+ net/mac80211/chan.c                           | 210 +++++++++++--------
+ net/mac80211/ibss.c                           |   2 +-
+ net/mac80211/ieee80211_i.h                    |   5 +-
+ net/mac80211/iface.c                          |   2 +-
+ net/mac80211/main.c                           |  32 ++-
+ net/mac80211/util.c                           | 127 +++++++----
+ net/wireless/nl80211.c                        | 197 +++++++++++++-----
+ net/wireless/rdev-ops.h                       |  17 ++-
+ net/wireless/trace.h                          |   5 +-
+ net/wireless/util.c                           |  68 +++++-
+ 16 files changed, 666 insertions(+), 200 deletions(-)
+
+base-commit: 5bcd9a0a59953b5ff55ac226f903397319bf7f40
 -- 
 git-series 0.9.1
 
