@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C3F1C2BA1A
-	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 09:08:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE3B9C2BA18
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WaQCLFxOzvafy7SADQ6EevO2dk1dnT58SpJoAHNL6TY=; b=NFtwQpt/qAdsBDlEEkIzJoquzE
-	zmowj3iP45bK2r+uIW3ibqnzOoopSG5qnYLYRHmstTIQmbptSP8VmOXmtzCI4J4JFe7EfJzEhXxbO
-	KvE44mjerj+t1LyKMU00ZKdwZN7NKxt1G5ZyWoQ03brfNyqQQPaz2LluZm9mJm51b95lyO9vI3O/b
-	/7fNtZ+yOwAMF4GhARweaMkrf0RNGOnVo6sRxZUSmIM3+EPIVLDmYrlE7hdo4d3+tvnZ+24nth9Xb
-	yCNyvRRdvoM4MkzDvidobe4MKMc/CQMy02bQFhrp50gF2sQfnr0Mxea+RjU1g6DeC2x4MHRH2Jn48
-	p8DnQ9CA==;
+	bh=bQml3jgMPuILzVt2o/a+88AI799pXTxCAQfKb9WbzeE=; b=hQ8xyoCadNAJi4ptCo1svtGBtS
+	fWqn6KvTi6F1h1p5A9VsdkdR7OGHLWjEuWqioJ8KuPkfbSs8wNApkfhvmF95s8knZ4jFm4Lno/PsS
+	6N0F++0pHxDkMpBOf0QAon2Dz8TKmiwrIgL5aewd0bu4vpD8sY3hHQ5/OSJ4ugP3sEFDjBckst0KX
+	HGN7qjGPBUaCWATHhIkwVCWQeyVRsKY46Ngpt8t5PwAd5S+qIxNxZXJXoRZHACy9ubdpNmMeTBaqY
+	GRUpMlUirbqz5KEzd6m5jn3QjNCIYFnid4CvDGZ2UHJrNOTiqG62siJQ4XuVzzxeoKGQiEo6rJ6tB
+	BeW8AReQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKDlx-00000004KDJ-36Aw
+	id 1sKFgz-00000004hIH-2FVC
 	for ath12k@archiver.kernel.org;
-	Thu, 20 Jun 2024 09:08:01 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Thu, 20 Jun 2024 11:11:01 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKDlv-00000004KCS-03cg
+	id 1sKFgw-00000004hHj-3SgQ
 	for ath12k@lists.infradead.org;
-	Thu, 20 Jun 2024 09:08:00 +0000
+	Thu, 20 Jun 2024 11:11:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 2E8BFCE23E8;
-	Thu, 20 Jun 2024 09:07:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93B3AC2BD10;
-	Thu, 20 Jun 2024 09:07:55 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 2DC30CE1F2E;
+	Thu, 20 Jun 2024 11:10:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6FBA7C2BD10;
+	Thu, 20 Jun 2024 11:10:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718874476;
-	bh=627u7/0jEcYoiKFGgf9woOedEhyyb1h7Agco3kbB6nw=;
+	s=k20201202; t=1718881855;
+	bh=HaRyeGCSmJfjAMezDKhTuUXcvEjf+Qs3/osMB2Fr9Uc=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=fW14+hRhREOHBr880vl19z8aBPjF6eqvV2ucdhaf9wKNztUXuXy9LHNbhO1l5hj1p
-	 0UqQUcDI5tSLs1C4cjuLis84SxZ5OZnKjyT6ZBscxmQB7y8hYwVDL7q+i5QsejMIVl
-	 d4f4mVd+W03zJZMzY4XExurRcD1dcodYakrirvJXh+xNCcR8g2LbJ464bbAqqxktnL
-	 LftAv74xROHOWIXWNVlsk4FiwHlzpK29igm07EW3a0zvQ2pIkU3yuZqm4P9Oq50WUM
-	 bs97k+75rlXRZgOS1auJGpO6rOO++BFOAWoBcytPX7gimeHAsosVZBJ0wDFbIRGKIA
-	 GVZMt9Wssx+Uw==
+	b=bnodb2Vhu81Hg96+7GH1ZyvE770Un6qWmTRIoC2J1jN6zBF89XE+ATY17qxe+tC01
+	 kNlrFIpbc9mPnRIuL3zLoTC8UgovaVs/FmRVs4XLxLcLR/547BozKHl6kRqJllgFdp
+	 R7C5Y5TvDKaQOD4U1lReJAysdZGc5WXcfR0Vjo82ypTNnJfxX9bmFQDW1eCMslar5p
+	 xu97TpDxYBAUddC+qIPEKjlxwiHpNC1NQwONaFSdmDlyxtyhl+b8JsRYYwOSdxavHW
+	 8P9HeNI5I1aSW5/rnGu0DVQGGr93AyC2gdu2oX532oQ7vIFoCr8JpxbNcKAeEbOiXA
+	 qASJvyxqGLP+w==
 From: Kalle Valo <kvalo@kernel.org>
 To: Baochen Qiang <quic_bqiang@quicinc.com>
 Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v4 2/8] wifi: ath12k: implement WoW enable and wakeup
- commands
-References: <20240604055407.12506-1-quic_bqiang@quicinc.com>
-	<20240604055407.12506-3-quic_bqiang@quicinc.com>
-	<87msnjn0qs.fsf@kernel.org>
-	<f66c2719-f413-4348-8440-97a169430043@quicinc.com>
-Date: Thu, 20 Jun 2024 12:07:53 +0300
-In-Reply-To: <f66c2719-f413-4348-8440-97a169430043@quicinc.com> (Baochen
-	Qiang's message of "Tue, 18 Jun 2024 13:49:30 +0800")
-Message-ID: <87plscj82e.fsf@kernel.org>
+Subject: Re: [PATCH v3 4/8] wifi: ath12k: add WoW net-detect functionality
+References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
+	<20240530072714.25671-5-quic_bqiang@quicinc.com>
+Date: Thu, 20 Jun 2024 14:10:52 +0300
+In-Reply-To: <20240530072714.25671-5-quic_bqiang@quicinc.com> (Baochen Qiang's
+	message of "Thu, 30 May 2024 15:27:10 +0800")
+Message-ID: <87le2zkgxv.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_020759_254180_5A11C712 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20240620_041059_481550_5ABF357C 
+X-CRM114-Status: GOOD (  26.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,54 +75,223 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
->>> +int ath12k_wow_enable(struct ath12k *ar)
->>> +{
->>> +	struct ath12k_base *ab = ar->ab;
->>> +	int i, ret;
->>> +
->>> +	clear_bit(ATH12K_FLAG_HTC_SUSPEND_COMPLETE, &ab->dev_flags);
->>> +
->>> +	for (i = 0; i < ATH12K_WOW_RETRY_NUM; i++) {
->>> +		reinit_completion(&ab->htc_suspend);
->>> +
->>> +		ret = ath12k_wmi_wow_enable(ar);
->>> +		if (ret) {
->>> +			ath12k_warn(ab, "failed to issue wow enable: %d\n", ret);
->>> +			return ret;
->>> +		}
->>> +
->>> +		ret = wait_for_completion_timeout(&ab->htc_suspend, 3 * HZ);
->>> +		if (ret == 0) {
->>> +			ath12k_warn(ab,
->>> + "timed out while waiting for htc suspend completion\n");
->>> +			return -ETIMEDOUT;
->>> +		}
->>> +
->>> +		if (test_bit(ATH12K_FLAG_HTC_SUSPEND_COMPLETE, &ab->dev_flags))
->>> +			/* success, suspend complete received */
->>> +			return 0;
->>> +
->>> +		ath12k_warn(ab, "htc suspend not complete, retrying (try %d)\n",
->>> +			    i);
->>> +		msleep(ATH12K_WOW_RETRY_WAIT_MS);
->>> +	}
->>> +
->>> +	ath12k_warn(ab, "htc suspend not complete, failing after %d tries\n", i);
->>> +
->>> +	return -ETIMEDOUT;
->>> +}
->> 
->> Why the loop here? Looks really odd to me and no explanation why it's
->> needed. ATH12K_WOW_RETRY_NUM seems to be 10 so this can loop a lot.
+> Implement net-detect feature by setting flag
+> WIPHY_WOWLAN_NET_DETECT if firmware supports this
+> feature. Driver sets the related PNO configuration
+> to firmware before entering WoW and firmware then
+> scans periodically and wakes up host if a specific
+> SSID is found.
 >
-> Host asks firmware to enter WoW mode using a WMI command. While
-> receiving it, firmware might be busy so that can not enter WoW
-> immediately. In that case firmware notifies host of
-> ATH12K_HTC_MSG_NACK_SUSPEND message, asking host to try again later.
-> Per firmware team there could be up to 10 loops.
+> Note that firmware crashes if we enable it for both
+> P2P vdev and station vdev simultaneously because
+> firmware can only support one vdev at a time. Since
+> there is rare scenario for a P2P vdev to do net-detect,
+> skip it for P2P vdevs.
+>
+> Tested-on: WCN7850 hw2.0 PCI
+> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 
-Not really a good firmware interface, oh well. I added a comment to
-ath12k_wow_enable() explaining, thanks.
+[...]
+
+> +struct wmi_wow_nlo_config_cmd {
+> +	__le32 tlv_header;
+> +	__le32 flags;
+> +	__le32 vdev_id;
+> +	__le32 fast_scan_max_cycles;
+> +	__le32 active_dwell_time;
+> +	__le32 passive_dwell_time;
+> +	__le32 probe_bundle_size;
+> +
+> +	/* ART = IRT */
+> +	__le32 rest_time;
+
+What's ART and IRT in this context? The comments are supposed to answer
+to questions but this is just adding more questions.
+
+> +
+> +	/* Max value that can be reached after SBM */
+> +	__le32 max_rest_time;
+
+It's good to avoid acronyms so I changed this to:
+
+	/* max value that can be reached after scan_backoff_multiplier */
+	__le32 max_rest_time;
+
+> +	/* SBM */
+> +	__le32 scan_backoff_multiplier;
+> +
+> +	/* SCBM */
+> +	__le32 fast_scan_period;
+
+These two comments are not really providing any extra information I
+removed them.
+
+> +static int
+> +ath12k_wow_pno_check_and_convert(struct ath12k *ar, u32 vdev_id,
+> +				 const struct cfg80211_sched_scan_request *nd_config,
+> +				 struct wmi_pno_scan_req_arg *pno)
+> +{
+> +	int i, j;
+> +	u8 ssid_len;
+> +
+> +	pno->enable = 1;
+> +	pno->vdev_id = vdev_id;
+> +	pno->uc_networks_count = nd_config->n_match_sets;
+> +
+> +	if (!pno->uc_networks_count ||
+> +	    pno->uc_networks_count > WMI_PNO_MAX_SUPP_NETWORKS)
+> +		return -EINVAL;
+> +
+> +	if (nd_config->n_channels > WMI_PNO_MAX_NETW_CHANNELS_EX)
+> +		return -EINVAL;
+> +
+> +	/* Filling per profile params */
+> +	for (i = 0; i < pno->uc_networks_count; i++) {
+> +		ssid_len = nd_config->match_sets[i].ssid.ssid_len;
+> +
+> +		if (ssid_len == 0 || ssid_len > 32)
+> +			return -EINVAL;
+> +
+> +		pno->a_networks[i].ssid.ssid_len = ssid_len;
+> +
+> +		memcpy(pno->a_networks[i].ssid.ssid,
+> +		       nd_config->match_sets[i].ssid.ssid,
+> +		       ssid_len);
+> +		pno->a_networks[i].authentication = 0;
+> +		pno->a_networks[i].encryption     = 0;
+> +		pno->a_networks[i].bcast_nw_type  = 0;
+> +
+> +		/* Copying list of valid channel into request */
+> +		pno->a_networks[i].channel_count = nd_config->n_channels;
+> +		pno->a_networks[i].rssi_threshold = nd_config->match_sets[i].rssi_thold;
+> +
+> +		for (j = 0; j < nd_config->n_channels; j++) {
+> +			pno->a_networks[i].channels[j] =
+> +					nd_config->channels[j]->center_freq;
+> +		}
+> +	}
+> +
+> +	/* set scan to passive if no SSIDs are specified in the request */
+> +	if (nd_config->n_ssids == 0)
+> +		pno->do_passive_scan = true;
+> +	else
+> +		pno->do_passive_scan = false;
+> +
+> +	for (i = 0; i < nd_config->n_ssids; i++) {
+> +		j = 0;
+> +		while (j < pno->uc_networks_count) {
+> +			if (pno->a_networks[j].ssid.ssid_len ==
+> +				nd_config->ssids[i].ssid_len &&
+> +			    !memcmp(pno->a_networks[j].ssid.ssid,
+> +				    nd_config->ssids[i].ssid,
+> +				    pno->a_networks[j].ssid.ssid_len)) {
+> +				pno->a_networks[j].bcast_nw_type = BCAST_HIDDEN;
+> +				break;
+> +			}
+> +			j++;
+> +		}
+> +	}
+
+The while loop is just a simple for loop so I changed it to use for statement.
+
+> +
+> +	if (nd_config->n_scan_plans == 2) {
+> +		pno->fast_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
+> +		pno->fast_scan_max_cycles = nd_config->scan_plans[0].iterations;
+> +		pno->slow_scan_period =
+> +			nd_config->scan_plans[1].interval * MSEC_PER_SEC;
+> +	} else if (nd_config->n_scan_plans == 1) {
+> +		pno->fast_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
+> +		pno->fast_scan_max_cycles = 1;
+> +		pno->slow_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
+> +	} else {
+> +		ath12k_warn(ar->ab, "Invalid number of scan plans %d !!",
+> +			    nd_config->n_scan_plans);
+> +	}
+
+I cleaned up the error message here.
+
+> +static int ath12k_wow_vdev_clean_nlo(struct ath12k *ar, u32 vdev_id)
+> +{
+> +	int ret = 0;
+> +
+> +	if (ar->nlo_enabled) {
+> +		struct wmi_pno_scan_req_arg *pno =
+> +			kzalloc(sizeof(*pno), GFP_KERNEL);
+> +		if (!pno)
+> +			return -ENOMEM;
+> +
+> +		pno->enable = 0;
+> +		ar->nlo_enabled = false;
+> +		ret = ath12k_wmi_wow_config_pno(ar, vdev_id, pno);
+> +		kfree(pno);
+> +	}
+> +
+> +	return ret;
+> +}
+
+Avoid initialising ret variables and minimise the indentation. I changed
+this to:
+
+static int ath12k_wow_vdev_clean_nlo(struct ath12k *ar, u32 vdev_id)
+{
+	struct wmi_pno_scan_req_arg *pno;
+	int ret;
+
+	if (!ar->nlo_enabled)
+		return 0;
+
+	pno = kzalloc(sizeof(*pno), GFP_KERNEL);
+	if (!pno)
+		return -ENOMEM;
+
+	pno->enable = 0;
+	ret = ath12k_wmi_wow_config_pno(ar, vdev_id, pno);
+	if (ret) {
+		ath12k_warn(ar->ab, "failed to disable PNO: %d", ret);
+		goto out;
+	}
+
+	ar->nlo_enabled = false;
+
+out:
+	kfree(pno);
+	return ret;
+}
+
+> +static int ath12k_wow_vif_clean_nlo(struct ath12k_vif *arvif)
+> +{
+> +	struct ath12k *ar = arvif->ar;
+> +	int ret = 0;
+> +
+> +	switch (arvif->vdev_type) {
+> +	case WMI_VDEV_TYPE_STA:
+> +		ret = ath12k_wow_vdev_clean_nlo(ar, arvif->vdev_id);
+> +		break;
+> +	default:
+> +		break;
+> +	}
+> +	return ret;
+> +}
+
+ret variable is not really needed:
+
+static int ath12k_wow_vif_clean_nlo(struct ath12k_vif *arvif)
+{
+	struct ath12k *ar = arvif->ar;
+
+	switch (arvif->vdev_type) {
+	case WMI_VDEV_TYPE_STA:
+		return ath12k_wow_vdev_clean_nlo(ar, arvif->vdev_id);
+	default:
+		return 0;
+	}
+}
+
+In the pending branch I did also some minor cosmetic changes to this and
+earlier patches, too many to list here.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
