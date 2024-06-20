@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE3B9C2BA18
-	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87A75C27C79
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bQml3jgMPuILzVt2o/a+88AI799pXTxCAQfKb9WbzeE=; b=hQ8xyoCadNAJi4ptCo1svtGBtS
-	fWqn6KvTi6F1h1p5A9VsdkdR7OGHLWjEuWqioJ8KuPkfbSs8wNApkfhvmF95s8knZ4jFm4Lno/PsS
-	6N0F++0pHxDkMpBOf0QAon2Dz8TKmiwrIgL5aewd0bu4vpD8sY3hHQ5/OSJ4ugP3sEFDjBckst0KX
-	HGN7qjGPBUaCWATHhIkwVCWQeyVRsKY46Ngpt8t5PwAd5S+qIxNxZXJXoRZHACy9ubdpNmMeTBaqY
-	GRUpMlUirbqz5KEzd6m5jn3QjNCIYFnid4CvDGZ2UHJrNOTiqG62siJQ4XuVzzxeoKGQiEo6rJ6tB
-	BeW8AReQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=H9Ks4PmBveZAlHQui94XwD5dy02OUcuU876KxxPP2nc=; b=mVTDT225060WYLJbogLkMSwC0W
+	xYsNrK6OBLTGpuyp9shHM380bNkNfroeZjmIjU4bbEApPn7GWJ3reN7ZTCsfKNR1OMADZK65drE/7
+	0DQNjpRP8G/SxKfmwfvHNGxjDP2jEIRBGcT7a6iUwyV7mHr+2bK6KKoOE3YOCK+qED+EcaHXU6/ZF
+	/tc3KUwPTGyNvQLhoELte3kwB1fww9xjv0l7RZWVsiUno1hq+BiXIC8dL0Pi1zl8laT2197p1nAwq
+	XMVeq7NzD53K29qeMnCf5UplTHJVj9NbhSUuiR+ByWiDM4zBXvWf2N+F9T7gs+ilO69Op1HtwQwFx
+	uDL3K4NA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFgz-00000004hIH-2FVC
+	id 1sKFhX-00000004hUq-2C1B
 	for ath12k@archiver.kernel.org;
-	Thu, 20 Jun 2024 11:11:01 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Thu, 20 Jun 2024 11:11:35 +0000
+Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFgw-00000004hHj-3SgQ
+	id 1sKFhU-00000004hQh-02Uq
 	for ath12k@lists.infradead.org;
-	Thu, 20 Jun 2024 11:11:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 2DC30CE1F2E;
-	Thu, 20 Jun 2024 11:10:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6FBA7C2BD10;
-	Thu, 20 Jun 2024 11:10:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718881855;
-	bh=HaRyeGCSmJfjAMezDKhTuUXcvEjf+Qs3/osMB2Fr9Uc=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=bnodb2Vhu81Hg96+7GH1ZyvE770Un6qWmTRIoC2J1jN6zBF89XE+ATY17qxe+tC01
-	 kNlrFIpbc9mPnRIuL3zLoTC8UgovaVs/FmRVs4XLxLcLR/547BozKHl6kRqJllgFdp
-	 R7C5Y5TvDKaQOD4U1lReJAysdZGc5WXcfR0Vjo82ypTNnJfxX9bmFQDW1eCMslar5p
-	 xu97TpDxYBAUddC+qIPEKjlxwiHpNC1NQwONaFSdmDlyxtyhl+b8JsRYYwOSdxavHW
-	 8P9HeNI5I1aSW5/rnGu0DVQGGr93AyC2gdu2oX532oQ7vIFoCr8JpxbNcKAeEbOiXA
-	 qASJvyxqGLP+w==
-From: Kalle Valo <kvalo@kernel.org>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v3 4/8] wifi: ath12k: add WoW net-detect functionality
-References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
-	<20240530072714.25671-5-quic_bqiang@quicinc.com>
-Date: Thu, 20 Jun 2024 14:10:52 +0300
-In-Reply-To: <20240530072714.25671-5-quic_bqiang@quicinc.com> (Baochen Qiang's
-	message of "Thu, 30 May 2024 15:27:10 +0800")
-Message-ID: <87le2zkgxv.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Thu, 20 Jun 2024 11:11:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=H9Ks4PmBveZAlHQui94XwD5dy02OUcuU876KxxPP2nc=; b=eK6/1hKbrDJ4e30mXMi/0qe67M
+	YjzJIkFycfq7+CBJ4NaWzFmDBLyGYoCB5urCo7YdzB7l2VBx53vsFHB2MoZSX3DDrB5/WCqth4Ojk
+	RWpge+WWAxusbIB7DMnTKRIK1OQHfgYw84BDkj0/o03Y389rqlaJf1pmc+A7nWtABVn0=;
+Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=localhost.localdomain)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1sKFhN-00Ei9k-2I;
+	Thu, 20 Jun 2024 13:11:25 +0200
+From: Felix Fietkau <nbd@nbd.name>
+To: linux-wireless@vger.kernel.org
+Cc: johannes@sipsolutions.net,
+	quic_adisi@quicinc.com,
+	quic_periyasa@quicinc.com,
+	ath12k@lists.infradead.org
+Subject: [PATCH 08/10] wifi: mac80211: move code in ieee80211_link_reserve_chanctx to a helper
+Date: Thu, 20 Jun 2024 13:11:20 +0200
+Message-ID: <47a67465bfc062e61c73da668a1259b56c5cde00.1718881762.git-series.nbd@nbd.name>
+X-Mailer: git-send-email 2.44.0
+In-Reply-To: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
+References: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_041059_481550_5ABF357C 
-X-CRM114-Status: GOOD (  26.34  )
+X-CRM114-CacheID: sfid-20240620_041132_332851_29CEC0AC 
+X-CRM114-Status: GOOD (  15.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,228 +74,181 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Baochen Qiang <quic_bqiang@quicinc.com> writes:
+Reduces indentation in preparation for further changes
 
-> Implement net-detect feature by setting flag
-> WIPHY_WOWLAN_NET_DETECT if firmware supports this
-> feature. Driver sets the related PNO configuration
-> to firmware before entering WoW and firmware then
-> scans periodically and wakes up host if a specific
-> SSID is found.
->
-> Note that firmware crashes if we enable it for both
-> P2P vdev and station vdev simultaneously because
-> firmware can only support one vdev at a time. Since
-> there is rare scenario for a P2P vdev to do net-detect,
-> skip it for P2P vdevs.
->
-> Tested-on: WCN7850 hw2.0 PCI
-> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
->
-> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
+---
+ net/mac80211/chan.c | 141 ++++++++++++++++++++++-----------------------
+ 1 file changed, 72 insertions(+), 69 deletions(-)
 
-[...]
-
-> +struct wmi_wow_nlo_config_cmd {
-> +	__le32 tlv_header;
-> +	__le32 flags;
-> +	__le32 vdev_id;
-> +	__le32 fast_scan_max_cycles;
-> +	__le32 active_dwell_time;
-> +	__le32 passive_dwell_time;
-> +	__le32 probe_bundle_size;
-> +
-> +	/* ART = IRT */
-> +	__le32 rest_time;
-
-What's ART and IRT in this context? The comments are supposed to answer
-to questions but this is just adding more questions.
-
-> +
-> +	/* Max value that can be reached after SBM */
-> +	__le32 max_rest_time;
-
-It's good to avoid acronyms so I changed this to:
-
-	/* max value that can be reached after scan_backoff_multiplier */
-	__le32 max_rest_time;
-
-> +	/* SBM */
-> +	__le32 scan_backoff_multiplier;
-> +
-> +	/* SCBM */
-> +	__le32 fast_scan_period;
-
-These two comments are not really providing any extra information I
-removed them.
-
-> +static int
-> +ath12k_wow_pno_check_and_convert(struct ath12k *ar, u32 vdev_id,
-> +				 const struct cfg80211_sched_scan_request *nd_config,
-> +				 struct wmi_pno_scan_req_arg *pno)
-> +{
-> +	int i, j;
-> +	u8 ssid_len;
-> +
-> +	pno->enable = 1;
-> +	pno->vdev_id = vdev_id;
-> +	pno->uc_networks_count = nd_config->n_match_sets;
-> +
-> +	if (!pno->uc_networks_count ||
-> +	    pno->uc_networks_count > WMI_PNO_MAX_SUPP_NETWORKS)
-> +		return -EINVAL;
-> +
-> +	if (nd_config->n_channels > WMI_PNO_MAX_NETW_CHANNELS_EX)
-> +		return -EINVAL;
-> +
-> +	/* Filling per profile params */
-> +	for (i = 0; i < pno->uc_networks_count; i++) {
-> +		ssid_len = nd_config->match_sets[i].ssid.ssid_len;
-> +
-> +		if (ssid_len == 0 || ssid_len > 32)
-> +			return -EINVAL;
-> +
-> +		pno->a_networks[i].ssid.ssid_len = ssid_len;
-> +
-> +		memcpy(pno->a_networks[i].ssid.ssid,
-> +		       nd_config->match_sets[i].ssid.ssid,
-> +		       ssid_len);
-> +		pno->a_networks[i].authentication = 0;
-> +		pno->a_networks[i].encryption     = 0;
-> +		pno->a_networks[i].bcast_nw_type  = 0;
-> +
-> +		/* Copying list of valid channel into request */
-> +		pno->a_networks[i].channel_count = nd_config->n_channels;
-> +		pno->a_networks[i].rssi_threshold = nd_config->match_sets[i].rssi_thold;
-> +
-> +		for (j = 0; j < nd_config->n_channels; j++) {
-> +			pno->a_networks[i].channels[j] =
-> +					nd_config->channels[j]->center_freq;
-> +		}
-> +	}
-> +
-> +	/* set scan to passive if no SSIDs are specified in the request */
-> +	if (nd_config->n_ssids == 0)
-> +		pno->do_passive_scan = true;
-> +	else
-> +		pno->do_passive_scan = false;
-> +
-> +	for (i = 0; i < nd_config->n_ssids; i++) {
-> +		j = 0;
-> +		while (j < pno->uc_networks_count) {
-> +			if (pno->a_networks[j].ssid.ssid_len ==
-> +				nd_config->ssids[i].ssid_len &&
-> +			    !memcmp(pno->a_networks[j].ssid.ssid,
-> +				    nd_config->ssids[i].ssid,
-> +				    pno->a_networks[j].ssid.ssid_len)) {
-> +				pno->a_networks[j].bcast_nw_type = BCAST_HIDDEN;
-> +				break;
-> +			}
-> +			j++;
-> +		}
-> +	}
-
-The while loop is just a simple for loop so I changed it to use for statement.
-
-> +
-> +	if (nd_config->n_scan_plans == 2) {
-> +		pno->fast_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
-> +		pno->fast_scan_max_cycles = nd_config->scan_plans[0].iterations;
-> +		pno->slow_scan_period =
-> +			nd_config->scan_plans[1].interval * MSEC_PER_SEC;
-> +	} else if (nd_config->n_scan_plans == 1) {
-> +		pno->fast_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
-> +		pno->fast_scan_max_cycles = 1;
-> +		pno->slow_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
-> +	} else {
-> +		ath12k_warn(ar->ab, "Invalid number of scan plans %d !!",
-> +			    nd_config->n_scan_plans);
-> +	}
-
-I cleaned up the error message here.
-
-> +static int ath12k_wow_vdev_clean_nlo(struct ath12k *ar, u32 vdev_id)
-> +{
-> +	int ret = 0;
-> +
-> +	if (ar->nlo_enabled) {
-> +		struct wmi_pno_scan_req_arg *pno =
-> +			kzalloc(sizeof(*pno), GFP_KERNEL);
-> +		if (!pno)
-> +			return -ENOMEM;
-> +
-> +		pno->enable = 0;
-> +		ar->nlo_enabled = false;
-> +		ret = ath12k_wmi_wow_config_pno(ar, vdev_id, pno);
-> +		kfree(pno);
-> +	}
-> +
-> +	return ret;
-> +}
-
-Avoid initialising ret variables and minimise the indentation. I changed
-this to:
-
-static int ath12k_wow_vdev_clean_nlo(struct ath12k *ar, u32 vdev_id)
-{
-	struct wmi_pno_scan_req_arg *pno;
-	int ret;
-
-	if (!ar->nlo_enabled)
-		return 0;
-
-	pno = kzalloc(sizeof(*pno), GFP_KERNEL);
-	if (!pno)
-		return -ENOMEM;
-
-	pno->enable = 0;
-	ret = ath12k_wmi_wow_config_pno(ar, vdev_id, pno);
-	if (ret) {
-		ath12k_warn(ar->ab, "failed to disable PNO: %d", ret);
-		goto out;
-	}
-
-	ar->nlo_enabled = false;
-
-out:
-	kfree(pno);
-	return ret;
-}
-
-> +static int ath12k_wow_vif_clean_nlo(struct ath12k_vif *arvif)
-> +{
-> +	struct ath12k *ar = arvif->ar;
-> +	int ret = 0;
-> +
-> +	switch (arvif->vdev_type) {
-> +	case WMI_VDEV_TYPE_STA:
-> +		ret = ath12k_wow_vdev_clean_nlo(ar, arvif->vdev_id);
-> +		break;
-> +	default:
-> +		break;
-> +	}
-> +	return ret;
-> +}
-
-ret variable is not really needed:
-
-static int ath12k_wow_vif_clean_nlo(struct ath12k_vif *arvif)
-{
-	struct ath12k *ar = arvif->ar;
-
-	switch (arvif->vdev_type) {
-	case WMI_VDEV_TYPE_STA:
-		return ath12k_wow_vdev_clean_nlo(ar, arvif->vdev_id);
-	default:
-		return 0;
-	}
-}
-
-In the pending branch I did also some minor cosmetic changes to this and
-earlier patches, too many to list here.
-
+diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
+index 0e899c07bc2b..ac49c2c71d2b 100644
+--- a/net/mac80211/chan.c
++++ b/net/mac80211/chan.c
+@@ -1060,6 +1060,71 @@ int ieee80211_link_unreserve_chanctx(struct ieee80211_link_data *link)
+ 	return 0;
+ }
+ 
++static struct ieee80211_chanctx *
++ieee80211_replace_chanctx(struct ieee80211_local *local,
++			  const struct ieee80211_chan_req *chanreq,
++			  enum ieee80211_chanctx_mode mode,
++			  struct ieee80211_chanctx *curr_ctx)
++{
++	struct ieee80211_chanctx *new_ctx, *ctx;
++
++	if (!curr_ctx || (curr_ctx->replace_state ==
++			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
++	    !list_empty(&curr_ctx->reserved_links)) {
++		/*
++		 * Another link already requested this context for a
++		 * reservation. Find another one hoping all links assigned
++		 * to it will also switch soon enough.
++		 *
++		 * TODO: This needs a little more work as some cases
++		 * (more than 2 chanctx capable devices) may fail which could
++		 * otherwise succeed provided some channel context juggling was
++		 * performed.
++		 *
++		 * Consider ctx1..3, link1..6, each ctx has 2 links. link1 and
++		 * link2 from ctx1 request new different chandefs starting 2
++		 * in-place reserations with ctx4 and ctx5 replacing ctx1 and
++		 * ctx2 respectively. Next link5 and link6 from ctx3 reserve
++		 * ctx4. If link3 and link4 remain on ctx2 as they are then this
++		 * fails unless `replace_ctx` from ctx5 is replaced with ctx3.
++		 */
++		list_for_each_entry(ctx, &local->chanctx_list, list) {
++			if (ctx->replace_state !=
++			    IEEE80211_CHANCTX_REPLACE_NONE)
++				continue;
++
++			if (!list_empty(&ctx->reserved_links))
++				continue;
++
++			curr_ctx = ctx;
++			break;
++		}
++	}
++
++	/*
++	 * If that's true then all available contexts already have reservations
++	 * and cannot be used.
++	 */
++	if (!curr_ctx || (curr_ctx->replace_state ==
++			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
++	    !list_empty(&curr_ctx->reserved_links))
++		return ERR_PTR(-EBUSY);
++
++	new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
++	if (!new_ctx)
++		return ERR_PTR(-ENOMEM);
++
++	new_ctx->replace_ctx = curr_ctx;
++	new_ctx->replace_state = IEEE80211_CHANCTX_REPLACES_OTHER;
++
++	curr_ctx->replace_ctx = new_ctx;
++	curr_ctx->replace_state = IEEE80211_CHANCTX_WILL_BE_REPLACED;
++
++	list_add_rcu(&new_ctx->list, &local->chanctx_list);
++
++	return new_ctx;
++}
++
+ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 				   const struct ieee80211_chan_req *chanreq,
+ 				   enum ieee80211_chanctx_mode mode,
+@@ -1067,7 +1132,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ {
+ 	struct ieee80211_sub_if_data *sdata = link->sdata;
+ 	struct ieee80211_local *local = sdata->local;
+-	struct ieee80211_chanctx *new_ctx, *curr_ctx, *ctx;
++	struct ieee80211_chanctx *new_ctx, *curr_ctx;
+ 
+ 	lockdep_assert_wiphy(local->hw.wiphy);
+ 
+@@ -1077,76 +1142,14 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 
+ 	new_ctx = ieee80211_find_reservation_chanctx(local, chanreq, mode);
+ 	if (!new_ctx) {
+-		if (ieee80211_can_create_new_chanctx(local, -1)) {
++		if (ieee80211_can_create_new_chanctx(local, -1))
+ 			new_ctx = ieee80211_new_chanctx(local, chanreq, mode,
+ 							false);
+-			if (IS_ERR(new_ctx))
+-				return PTR_ERR(new_ctx);
+-		} else {
+-			if (!curr_ctx ||
+-			    (curr_ctx->replace_state ==
+-			     IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
+-			    !list_empty(&curr_ctx->reserved_links)) {
+-				/*
+-				 * Another link already requested this context
+-				 * for a reservation. Find another one hoping
+-				 * all links assigned to it will also switch
+-				 * soon enough.
+-				 *
+-				 * TODO: This needs a little more work as some
+-				 * cases (more than 2 chanctx capable devices)
+-				 * may fail which could otherwise succeed
+-				 * provided some channel context juggling was
+-				 * performed.
+-				 *
+-				 * Consider ctx1..3, link1..6, each ctx has 2
+-				 * links. link1 and link2 from ctx1 request new
+-				 * different chandefs starting 2 in-place
+-				 * reserations with ctx4 and ctx5 replacing
+-				 * ctx1 and ctx2 respectively. Next link5 and
+-				 * link6 from ctx3 reserve ctx4. If link3 and
+-				 * link4 remain on ctx2 as they are then this
+-				 * fails unless `replace_ctx` from ctx5 is
+-				 * replaced with ctx3.
+-				 */
+-				list_for_each_entry(ctx, &local->chanctx_list,
+-						    list) {
+-					if (ctx->replace_state !=
+-					    IEEE80211_CHANCTX_REPLACE_NONE)
+-						continue;
+-
+-					if (!list_empty(&ctx->reserved_links))
+-						continue;
+-
+-					curr_ctx = ctx;
+-					break;
+-				}
+-			}
+-
+-			/*
+-			 * If that's true then all available contexts already
+-			 * have reservations and cannot be used.
+-			 */
+-			if (!curr_ctx ||
+-			    (curr_ctx->replace_state ==
+-			     IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
+-			    !list_empty(&curr_ctx->reserved_links))
+-				return -EBUSY;
+-
+-			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
+-			if (!new_ctx)
+-				return -ENOMEM;
+-
+-			new_ctx->replace_ctx = curr_ctx;
+-			new_ctx->replace_state =
+-					IEEE80211_CHANCTX_REPLACES_OTHER;
+-
+-			curr_ctx->replace_ctx = new_ctx;
+-			curr_ctx->replace_state =
+-					IEEE80211_CHANCTX_WILL_BE_REPLACED;
+-
+-			list_add_rcu(&new_ctx->list, &local->chanctx_list);
+-		}
++		else
++			new_ctx = ieee80211_replace_chanctx(local, chanreq,
++							    mode, curr_ctx);
++		if (IS_ERR(new_ctx))
++			return PTR_ERR(new_ctx);
+ 	}
+ 
+ 	list_add(&link->reserved_chanctx_list, &new_ctx->reserved_links);
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+git-series 0.9.1
 
