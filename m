@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87A75C27C79
-	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EDE6C2BA18
+	for <ath12k@archiver.kernel.org>; Thu, 20 Jun 2024 11:11:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=H9Ks4PmBveZAlHQui94XwD5dy02OUcuU876KxxPP2nc=; b=mVTDT225060WYLJbogLkMSwC0W
-	xYsNrK6OBLTGpuyp9shHM380bNkNfroeZjmIjU4bbEApPn7GWJ3reN7ZTCsfKNR1OMADZK65drE/7
-	0DQNjpRP8G/SxKfmwfvHNGxjDP2jEIRBGcT7a6iUwyV7mHr+2bK6KKoOE3YOCK+qED+EcaHXU6/ZF
-	/tc3KUwPTGyNvQLhoELte3kwB1fww9xjv0l7RZWVsiUno1hq+BiXIC8dL0Pi1zl8laT2197p1nAwq
-	XMVeq7NzD53K29qeMnCf5UplTHJVj9NbhSUuiR+ByWiDM4zBXvWf2N+F9T7gs+ilO69Op1HtwQwFx
-	uDL3K4NA==;
+	bh=jO2vhMaVvl/vQmUG+SrrjOxh6ONrrAkIS1HZcuEVUY8=; b=sQNFNqkOQjmDtx8Gclz27G7QhG
+	RTZupQ2lrXz+/B+yIkvQLDz/y8X7Pn8Ez0S4Qmfv8VeB2m/sFFv6LTZueVCwouLauY/oIyITPTpMC
+	6vBrzXb+wCKSm1KqZPAZLzh75bbs5fyAJzD9ktTXBIB8TUdBu7u+BeGhhgdU0MFL4si9pnCnSQzX8
+	jJm0yZEaDUppqWDl1JroKP3988PcKlu3ffgOKNaFnyzCe98kCrgX88CWC2X8FRYKcs+giYeLSM4Fy
+	//nkhoYIX8uZkywkN/K/9p+SusIPbqDdArKAfxZGLU0bShD4JR/lIECJMnysk8Pp+Urcv2QiuHw+z
+	9nlNuA3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFhX-00000004hUq-2C1B
+	id 1sKFhY-00000004hVW-3GDR
 	for ath12k@archiver.kernel.org;
-	Thu, 20 Jun 2024 11:11:35 +0000
+	Thu, 20 Jun 2024 11:11:36 +0000
 Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKFhU-00000004hQh-02Uq
+	id 1sKFhT-00000004hPs-3OOF
 	for ath12k@lists.infradead.org;
 	Thu, 20 Jun 2024 11:11:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
@@ -34,32 +34,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=H9Ks4PmBveZAlHQui94XwD5dy02OUcuU876KxxPP2nc=; b=eK6/1hKbrDJ4e30mXMi/0qe67M
-	YjzJIkFycfq7+CBJ4NaWzFmDBLyGYoCB5urCo7YdzB7l2VBx53vsFHB2MoZSX3DDrB5/WCqth4Ojk
-	RWpge+WWAxusbIB7DMnTKRIK1OQHfgYw84BDkj0/o03Y389rqlaJf1pmc+A7nWtABVn0=;
+	bh=jO2vhMaVvl/vQmUG+SrrjOxh6ONrrAkIS1HZcuEVUY8=; b=l/HIHeyG+5c5eW3SY51h4xx8uR
+	iVhysJU49YZWBRSheDhZMbME+Iruy+O9SIEK4HAChW9yLSLFPZbYtAaqEPNK0gV9lRj0xeVnBI0wd
+	AXpOm0spdaDxfoqmXvOHoCOvHGqgeHNJPIO3DkyKAzM25rzsUM64sgLdE+J+xcvrcViY=;
 Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1sKFhN-00Ei9k-2I;
-	Thu, 20 Jun 2024 13:11:25 +0200
+	id 1sKFhL-00Ei9k-2z;
+	Thu, 20 Jun 2024 13:11:23 +0200
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
 Cc: johannes@sipsolutions.net,
 	quic_adisi@quicinc.com,
 	quic_periyasa@quicinc.com,
 	ath12k@lists.infradead.org
-Subject: [PATCH 08/10] wifi: mac80211: move code in ieee80211_link_reserve_chanctx to a helper
-Date: Thu, 20 Jun 2024 13:11:20 +0200
-Message-ID: <47a67465bfc062e61c73da668a1259b56c5cde00.1718881762.git-series.nbd@nbd.name>
+Subject: [PATCH 01/10] wifi: nl80211: split helper function from nl80211_put_iface_combinations
+Date: Thu, 20 Jun 2024 13:11:13 +0200
+Message-ID: <2160a27fc614e2a9a3cba9902e14d305db15530e.1718881762.git-series.nbd@nbd.name>
 X-Mailer: git-send-email 2.44.0
 In-Reply-To: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 References: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_041132_332851_29CEC0AC 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20240620_041132_235187_3A5DF3A5 
+X-CRM114-Status: GOOD (  12.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,181 +74,150 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Reduces indentation in preparation for further changes
+Create a helper function that puts the data from struct
+ieee80211_iface_combination to a nl80211 message.
+This will be used for adding per-radio interface combination data.
 
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- net/mac80211/chan.c | 141 ++++++++++++++++++++++-----------------------
- 1 file changed, 72 insertions(+), 69 deletions(-)
+ net/wireless/nl80211.c | 111 ++++++++++++++++++++++--------------------
+ 1 file changed, 59 insertions(+), 52 deletions(-)
 
-diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
-index 0e899c07bc2b..ac49c2c71d2b 100644
---- a/net/mac80211/chan.c
-+++ b/net/mac80211/chan.c
-@@ -1060,6 +1060,71 @@ int ieee80211_link_unreserve_chanctx(struct ieee80211_link_data *link)
- 	return 0;
+diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
+index 8ff5f79d446a..7b0ba0fff082 100644
+--- a/net/wireless/nl80211.c
++++ b/net/wireless/nl80211.c
+@@ -1622,71 +1622,78 @@ static int nl80211_put_iftypes(struct sk_buff *msg, u32 attr, u16 ifmodes)
+ 	return -ENOBUFS;
  }
  
-+static struct ieee80211_chanctx *
-+ieee80211_replace_chanctx(struct ieee80211_local *local,
-+			  const struct ieee80211_chan_req *chanreq,
-+			  enum ieee80211_chanctx_mode mode,
-+			  struct ieee80211_chanctx *curr_ctx)
-+{
-+	struct ieee80211_chanctx *new_ctx, *ctx;
-+
-+	if (!curr_ctx || (curr_ctx->replace_state ==
-+			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
-+	    !list_empty(&curr_ctx->reserved_links)) {
-+		/*
-+		 * Another link already requested this context for a
-+		 * reservation. Find another one hoping all links assigned
-+		 * to it will also switch soon enough.
-+		 *
-+		 * TODO: This needs a little more work as some cases
-+		 * (more than 2 chanctx capable devices) may fail which could
-+		 * otherwise succeed provided some channel context juggling was
-+		 * performed.
-+		 *
-+		 * Consider ctx1..3, link1..6, each ctx has 2 links. link1 and
-+		 * link2 from ctx1 request new different chandefs starting 2
-+		 * in-place reserations with ctx4 and ctx5 replacing ctx1 and
-+		 * ctx2 respectively. Next link5 and link6 from ctx3 reserve
-+		 * ctx4. If link3 and link4 remain on ctx2 as they are then this
-+		 * fails unless `replace_ctx` from ctx5 is replaced with ctx3.
-+		 */
-+		list_for_each_entry(ctx, &local->chanctx_list, list) {
-+			if (ctx->replace_state !=
-+			    IEEE80211_CHANCTX_REPLACE_NONE)
-+				continue;
-+
-+			if (!list_empty(&ctx->reserved_links))
-+				continue;
-+
-+			curr_ctx = ctx;
-+			break;
-+		}
-+	}
-+
-+	/*
-+	 * If that's true then all available contexts already have reservations
-+	 * and cannot be used.
-+	 */
-+	if (!curr_ctx || (curr_ctx->replace_state ==
-+			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
-+	    !list_empty(&curr_ctx->reserved_links))
-+		return ERR_PTR(-EBUSY);
-+
-+	new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
-+	if (!new_ctx)
-+		return ERR_PTR(-ENOMEM);
-+
-+	new_ctx->replace_ctx = curr_ctx;
-+	new_ctx->replace_state = IEEE80211_CHANCTX_REPLACES_OTHER;
-+
-+	curr_ctx->replace_ctx = new_ctx;
-+	curr_ctx->replace_state = IEEE80211_CHANCTX_WILL_BE_REPLACED;
-+
-+	list_add_rcu(&new_ctx->list, &local->chanctx_list);
-+
-+	return new_ctx;
-+}
-+
- int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
- 				   const struct ieee80211_chan_req *chanreq,
- 				   enum ieee80211_chanctx_mode mode,
-@@ -1067,7 +1132,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+-static int nl80211_put_iface_combinations(struct wiphy *wiphy,
+-					  struct sk_buff *msg,
+-					  bool large)
++static int nl80211_put_ifcomb_data(struct sk_buff *msg, bool large, int idx,
++				   const struct ieee80211_iface_combination *c)
  {
- 	struct ieee80211_sub_if_data *sdata = link->sdata;
- 	struct ieee80211_local *local = sdata->local;
--	struct ieee80211_chanctx *new_ctx, *curr_ctx, *ctx;
-+	struct ieee80211_chanctx *new_ctx, *curr_ctx;
+-	struct nlattr *nl_combis;
+-	int i, j;
++	struct nlattr *nl_combi, *nl_limits;
++	int i;
  
- 	lockdep_assert_wiphy(local->hw.wiphy);
+-	nl_combis = nla_nest_start_noflag(msg,
+-					  NL80211_ATTR_INTERFACE_COMBINATIONS);
+-	if (!nl_combis)
++	nl_combi = nla_nest_start_noflag(msg, idx);
++	if (!nl_combi)
+ 		goto nla_put_failure;
  
-@@ -1077,76 +1142,14 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+-	for (i = 0; i < wiphy->n_iface_combinations; i++) {
+-		const struct ieee80211_iface_combination *c;
+-		struct nlattr *nl_combi, *nl_limits;
++	nl_limits = nla_nest_start_noflag(msg, NL80211_IFACE_COMB_LIMITS);
++	if (!nl_limits)
++		goto nla_put_failure;
  
- 	new_ctx = ieee80211_find_reservation_chanctx(local, chanreq, mode);
- 	if (!new_ctx) {
--		if (ieee80211_can_create_new_chanctx(local, -1)) {
-+		if (ieee80211_can_create_new_chanctx(local, -1))
- 			new_ctx = ieee80211_new_chanctx(local, chanreq, mode,
- 							false);
--			if (IS_ERR(new_ctx))
--				return PTR_ERR(new_ctx);
--		} else {
--			if (!curr_ctx ||
--			    (curr_ctx->replace_state ==
--			     IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
--			    !list_empty(&curr_ctx->reserved_links)) {
--				/*
--				 * Another link already requested this context
--				 * for a reservation. Find another one hoping
--				 * all links assigned to it will also switch
--				 * soon enough.
--				 *
--				 * TODO: This needs a little more work as some
--				 * cases (more than 2 chanctx capable devices)
--				 * may fail which could otherwise succeed
--				 * provided some channel context juggling was
--				 * performed.
--				 *
--				 * Consider ctx1..3, link1..6, each ctx has 2
--				 * links. link1 and link2 from ctx1 request new
--				 * different chandefs starting 2 in-place
--				 * reserations with ctx4 and ctx5 replacing
--				 * ctx1 and ctx2 respectively. Next link5 and
--				 * link6 from ctx3 reserve ctx4. If link3 and
--				 * link4 remain on ctx2 as they are then this
--				 * fails unless `replace_ctx` from ctx5 is
--				 * replaced with ctx3.
--				 */
--				list_for_each_entry(ctx, &local->chanctx_list,
--						    list) {
--					if (ctx->replace_state !=
--					    IEEE80211_CHANCTX_REPLACE_NONE)
--						continue;
+-		c = &wiphy->iface_combinations[i];
++	for (i = 0; i < c->n_limits; i++) {
++		struct nlattr *nl_limit;
+ 
+-		nl_combi = nla_nest_start_noflag(msg, i + 1);
+-		if (!nl_combi)
++		nl_limit = nla_nest_start_noflag(msg, i + 1);
++		if (!nl_limit)
+ 			goto nla_put_failure;
 -
--					if (!list_empty(&ctx->reserved_links))
--						continue;
--
--					curr_ctx = ctx;
--					break;
--				}
--			}
--
--			/*
--			 * If that's true then all available contexts already
--			 * have reservations and cannot be used.
--			 */
--			if (!curr_ctx ||
--			    (curr_ctx->replace_state ==
--			     IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
--			    !list_empty(&curr_ctx->reserved_links))
--				return -EBUSY;
--
--			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
--			if (!new_ctx)
--				return -ENOMEM;
--
--			new_ctx->replace_ctx = curr_ctx;
--			new_ctx->replace_state =
--					IEEE80211_CHANCTX_REPLACES_OTHER;
--
--			curr_ctx->replace_ctx = new_ctx;
--			curr_ctx->replace_state =
--					IEEE80211_CHANCTX_WILL_BE_REPLACED;
--
--			list_add_rcu(&new_ctx->list, &local->chanctx_list);
+-		nl_limits = nla_nest_start_noflag(msg,
+-						  NL80211_IFACE_COMB_LIMITS);
+-		if (!nl_limits)
++		if (nla_put_u32(msg, NL80211_IFACE_LIMIT_MAX, c->limits[i].max))
+ 			goto nla_put_failure;
++		if (nl80211_put_iftypes(msg, NL80211_IFACE_LIMIT_TYPES,
++					c->limits[i].types))
++			goto nla_put_failure;
++		nla_nest_end(msg, nl_limit);
++	}
+ 
+-		for (j = 0; j < c->n_limits; j++) {
+-			struct nlattr *nl_limit;
++	nla_nest_end(msg, nl_limits);
+ 
+-			nl_limit = nla_nest_start_noflag(msg, j + 1);
+-			if (!nl_limit)
+-				goto nla_put_failure;
+-			if (nla_put_u32(msg, NL80211_IFACE_LIMIT_MAX,
+-					c->limits[j].max))
+-				goto nla_put_failure;
+-			if (nl80211_put_iftypes(msg, NL80211_IFACE_LIMIT_TYPES,
+-						c->limits[j].types))
+-				goto nla_put_failure;
+-			nla_nest_end(msg, nl_limit);
 -		}
-+		else
-+			new_ctx = ieee80211_replace_chanctx(local, chanreq,
-+							    mode, curr_ctx);
-+		if (IS_ERR(new_ctx))
-+			return PTR_ERR(new_ctx);
- 	}
++	if (c->beacon_int_infra_match &&
++	    nla_put_flag(msg, NL80211_IFACE_COMB_STA_AP_BI_MATCH))
++		goto nla_put_failure;
++	if (nla_put_u32(msg, NL80211_IFACE_COMB_NUM_CHANNELS,
++			c->num_different_channels) ||
++	    nla_put_u32(msg, NL80211_IFACE_COMB_MAXNUM,
++			c->max_interfaces))
++		goto nla_put_failure;
++	if (large &&
++	    (nla_put_u32(msg, NL80211_IFACE_COMB_RADAR_DETECT_WIDTHS,
++			c->radar_detect_widths) ||
++	     nla_put_u32(msg, NL80211_IFACE_COMB_RADAR_DETECT_REGIONS,
++			c->radar_detect_regions)))
++		goto nla_put_failure;
++	if (c->beacon_int_min_gcd &&
++	    nla_put_u32(msg, NL80211_IFACE_COMB_BI_MIN_GCD,
++			c->beacon_int_min_gcd))
++		goto nla_put_failure;
  
- 	list_add(&link->reserved_chanctx_list, &new_ctx->reserved_links);
+-		nla_nest_end(msg, nl_limits);
++	nla_nest_end(msg, nl_combi);
+ 
+-		if (c->beacon_int_infra_match &&
+-		    nla_put_flag(msg, NL80211_IFACE_COMB_STA_AP_BI_MATCH))
+-			goto nla_put_failure;
+-		if (nla_put_u32(msg, NL80211_IFACE_COMB_NUM_CHANNELS,
+-				c->num_different_channels) ||
+-		    nla_put_u32(msg, NL80211_IFACE_COMB_MAXNUM,
+-				c->max_interfaces))
+-			goto nla_put_failure;
+-		if (large &&
+-		    (nla_put_u32(msg, NL80211_IFACE_COMB_RADAR_DETECT_WIDTHS,
+-				c->radar_detect_widths) ||
+-		     nla_put_u32(msg, NL80211_IFACE_COMB_RADAR_DETECT_REGIONS,
+-				c->radar_detect_regions)))
+-			goto nla_put_failure;
+-		if (c->beacon_int_min_gcd &&
+-		    nla_put_u32(msg, NL80211_IFACE_COMB_BI_MIN_GCD,
+-				c->beacon_int_min_gcd))
+-			goto nla_put_failure;
++	return 0;
++nla_put_failure:
++	return -ENOBUFS;
++}
+ 
+-		nla_nest_end(msg, nl_combi);
+-	}
++static int nl80211_put_iface_combinations(struct wiphy *wiphy,
++					  struct sk_buff *msg,
++					  bool large)
++{
++	struct nlattr *nl_combis;
++	int i;
++
++	nl_combis = nla_nest_start_noflag(msg,
++					  NL80211_ATTR_INTERFACE_COMBINATIONS);
++	if (!nl_combis)
++		goto nla_put_failure;
++
++	for (i = 0; i < wiphy->n_iface_combinations; i++)
++		if (nl80211_put_ifcomb_data(msg, large, i + 1,
++					    &wiphy->iface_combinations[i]))
++			goto nla_put_failure;
+ 
+ 	nla_nest_end(msg, nl_combis);
+ 
 -- 
 git-series 0.9.1
 
