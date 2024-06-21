@@ -4,87 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06D01C27C4F
-	for <ath12k@archiver.kernel.org>; Fri, 21 Jun 2024 05:26:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B17CC2BA1A
+	for <ath12k@archiver.kernel.org>; Fri, 21 Jun 2024 10:28:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tbvxEEmrf1WUVKjVz0HBTxc9t3fYIPzHdn1Hn+ZaVOs=; b=EFPMIkWpqqNjvh+eIvIX9kTDkB
-	Yo8NZP6205ErMemKZvxCX0mA5lwsiq2jPzr5TbisJG1o+5iXYGr0zkNo1NDdKjY0Bx8vU4splJlpa
-	EliH12deHd5hdAQ8V/VJCzVGCjR+LjbIVo6UnwHydyTiXPr8UMuJlNO05KoKIFbbi6+eCK21N3AwG
-	RRCT4Hrn364XlcCfdMrDsx0DXFfk7i1aajCpa7GrV7MTIjxX9iH5VIp/4LyUnP9Bmu60o/est0Y2k
-	/36Dj3lgheBvXJJNGVlWnxkzA/hXz85kvLSjiX2DEBmSi+0YBF6P0iKDL0xHiEg6B3pW8JegQv894
-	ECoVIrhQ==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=mRA1HZXsl2V0hmg48lYdjzuM13cxSnGOq2YsSrNH+7o=; b=vLGEn5nHm22mIGc064r7xeRX6c
+	OpeE0+/CD4EV1clY2AvnQBtlyeON0YbAP2AcISUKTQLW/pvejeGZJhAGLSC1UirxDv8PkJ4P7olBA
+	OHNWhEZeKts4GaHY+o8qhRAw6kGdjv8/wdR/6zZGR+oX0U5U2Z1Yaofss/qlSPgbofIJ9yQh3Hen+
+	7GQN2btwvwqWysxuIfXUTU/HKpbjeS08Yin3MfNzzooW1ENNyx5CDp/tppwruRpm6duOwulSctaZw
+	H9kPR/pCy6QWtI3aFVloZ/VzqY+m+nhqxoU7JTEFmeHYlUJjOtCMzkfWWizTRe2ZFGOmbj513S5fN
+	aupL17gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKWnW-00000007lt0-2ORo
+	id 1sKbVr-00000008mHF-0NqS
 	for ath12k@archiver.kernel.org;
-	Fri, 21 Jun 2024 05:26:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 21 Jun 2024 10:28:59 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKWnR-00000007lpT-0uaU
+	id 1sKbVo-00000008mGN-1Zga
 	for ath12k@lists.infradead.org;
-	Fri, 21 Jun 2024 05:26:52 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45KHC42j013885;
-	Fri, 21 Jun 2024 05:26:45 GMT
+	Fri, 21 Jun 2024 10:28:57 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45L67AAo018160;
+	Fri, 21 Jun 2024 10:28:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tbvxEEmrf1WUVKjVz0HBTxc9t3fYIPzHdn1Hn+ZaVOs=; b=VNJ5WxVBzpN1dvE6
-	K+YYkXxzcCYO5Z3KCwalS/+BE55gnuzbG7k4XoWYfW6Ge6iJ8eu3ZthekjRovz83
-	KU9PzIvfdc/O4BTB8+cjXl1ZBjpGpcMANHZUj+utPZXWBE4OnOxdxHnyupi1uvCY
-	e8wBqFt0gLqRSxA0sk9nYVVrPo9c4GQvLqXRvRG98DzW35lynlwE2rAABbqpHPW9
-	IqnzewhUEgVvLLnhr1g70/Wso5G0GDZN/KqDMpl7bzmVJt3SXt9Dbc/C5CmXaHVh
-	DtJF8p/tNcCPmluVmuvSbTo+Gq0RH31tGcVXCy2RITSW2nm5KVLvFiwZYLeojgEp
-	9c4Aqg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yvrm7scv2-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=mRA1HZXsl2V0hmg48lYdjzuM13cxSnGOq2Y
+	sSrNH+7o=; b=DaWdTXWS8TIKb8MxpYUnuGNuXFhTArQcZLR6MDX4WQEvZNbCDMk
+	eLEHuC4rgjmex+kNLmam36nxZ9BbEsQdBjpFgYnkyFyej5en9C3kHHQIrmyGIXP/
+	jbaQFd2T1czR9umEZ8QzmbH8yWNJv/2z36pkjo+c0FcMTk0yzEyRqszyeeW1cOzp
+	zG3bDoz8Zd11pEmLmPKQOuGMlKvYpgPrUcYR/PdxBfQwoN82HYsu6GYJzyH04W04
+	L2XiRmIuHD/Og9lnaaMKPttXT+hTO7dNKWRXApIy2WUBu8TZ1bxOWTcetpqsuODF
+	1UGIx+Kd+cCm8eWPIO/vSmN1fVd/Hojo2Hg==
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3yvrp1a9as-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jun 2024 05:26:44 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45L5Qh6v021871
+	Fri, 21 Jun 2024 10:28:53 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTP id 45LASn5u007849;
+	Fri, 21 Jun 2024 10:28:49 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3ys41mbaew-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Jun 2024 05:26:43 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 20 Jun
- 2024 22:26:42 -0700
-Message-ID: <778a1696-bc91-46f7-93c9-67c4d3e93788@quicinc.com>
-Date: Fri, 21 Jun 2024 13:26:41 +0800
+	Fri, 21 Jun 2024 10:28:49 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 45LASms5007843;
+	Fri, 21 Jun 2024 10:28:49 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 45LASmsx007842
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 21 Jun 2024 10:28:48 +0000
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
+	id C324D41149; Fri, 21 Jun 2024 15:58:47 +0530 (+0530)
+From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Lingbo Kong <quic_lingbok@quicinc.com>,
+        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Subject: [PATCH v2] wifi: ath12k: Fix pdev id sent to firmware for single phy devices
+Date: Fri, 21 Jun 2024 15:58:09 +0530
+Message-Id: <20240621102809.3984004-1-quic_rgnanase@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 4/8] wifi: ath12k: add WoW net-detect functionality
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240530072714.25671-1-quic_bqiang@quicinc.com>
- <20240530072714.25671-5-quic_bqiang@quicinc.com> <87le2zkgxv.fsf@kernel.org>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <87le2zkgxv.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+Content-Transfer-Encoding: 8bit
+X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: _E5FtySxWrTdcyiRd0jITcS7wWeerI6J
-X-Proofpoint-GUID: _E5FtySxWrTdcyiRd0jITcS7wWeerI6J
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: aWoannXO4upzofr0_lDdb_Cdvw54QoEw
+X-Proofpoint-ORIG-GUID: aWoannXO4upzofr0_lDdb_Cdvw54QoEw
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-20_12,2024-06-20_04,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
- phishscore=0 mlxscore=0 lowpriorityscore=0 bulkscore=0 clxscore=1015
- priorityscore=1501 impostorscore=0 malwarescore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2406210038
+ definitions=2024-06-21_04,2024-06-20_04,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
+ lowpriorityscore=0 malwarescore=0 mlxscore=0 phishscore=0 mlxlogscore=999
+ bulkscore=0 spamscore=0 clxscore=1015 impostorscore=0 priorityscore=1501
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2406210077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_222649_606182_F18728A3 
-X-CRM114-Status: GOOD (  29.96  )
+X-CRM114-CacheID: sfid-20240621_032856_507745_89A58670 
+X-CRM114-Status: GOOD (  16.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,229 +101,138 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Lingbo Kong <quic_lingbok@quicinc.com>
 
+Pdev id from mac phy capabilities will be sent as a part of
+HTT/WMI command to firmware. This causes issue with single pdev
+devices where firmware does not respond to the WMI/HTT request
+sent from host.
 
-On 6/20/2024 7:10 PM, Kalle Valo wrote:
-> Baochen Qiang <quic_bqiang@quicinc.com> writes:
-> 
->> Implement net-detect feature by setting flag
->> WIPHY_WOWLAN_NET_DETECT if firmware supports this
->> feature. Driver sets the related PNO configuration
->> to firmware before entering WoW and firmware then
->> scans periodically and wakes up host if a specific
->> SSID is found.
->>
->> Note that firmware crashes if we enable it for both
->> P2P vdev and station vdev simultaneously because
->> firmware can only support one vdev at a time. Since
->> there is rare scenario for a P2P vdev to do net-detect,
->> skip it for P2P vdevs.
->>
->> Tested-on: WCN7850 hw2.0 PCI
->> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
->>
->> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-> 
-> [...]
-> 
->> +struct wmi_wow_nlo_config_cmd {
->> +	__le32 tlv_header;
->> +	__le32 flags;
->> +	__le32 vdev_id;
->> +	__le32 fast_scan_max_cycles;
->> +	__le32 active_dwell_time;
->> +	__le32 passive_dwell_time;
->> +	__le32 probe_bundle_size;
->> +
->> +	/* ART = IRT */
->> +	__le32 rest_time;
-> 
-> What's ART and IRT in this context? The comments are supposed to answer
-> to questions but this is just adding more questions.
-> 
->> +
->> +	/* Max value that can be reached after SBM */
->> +	__le32 max_rest_time;
-> 
-> It's good to avoid acronyms so I changed this to:
-> 
-> 	/* max value that can be reached after scan_backoff_multiplier */
-> 	__le32 max_rest_time;
-> 
->> +	/* SBM */
->> +	__le32 scan_backoff_multiplier;
->> +
->> +	/* SCBM */
->> +	__le32 fast_scan_period;
-> 
-> These two comments are not really providing any extra information I
-> removed them.
-> 
->> +static int
->> +ath12k_wow_pno_check_and_convert(struct ath12k *ar, u32 vdev_id,
->> +				 const struct cfg80211_sched_scan_request *nd_config,
->> +				 struct wmi_pno_scan_req_arg *pno)
->> +{
->> +	int i, j;
->> +	u8 ssid_len;
->> +
->> +	pno->enable = 1;
->> +	pno->vdev_id = vdev_id;
->> +	pno->uc_networks_count = nd_config->n_match_sets;
->> +
->> +	if (!pno->uc_networks_count ||
->> +	    pno->uc_networks_count > WMI_PNO_MAX_SUPP_NETWORKS)
->> +		return -EINVAL;
->> +
->> +	if (nd_config->n_channels > WMI_PNO_MAX_NETW_CHANNELS_EX)
->> +		return -EINVAL;
->> +
->> +	/* Filling per profile params */
->> +	for (i = 0; i < pno->uc_networks_count; i++) {
->> +		ssid_len = nd_config->match_sets[i].ssid.ssid_len;
->> +
->> +		if (ssid_len == 0 || ssid_len > 32)
->> +			return -EINVAL;
->> +
->> +		pno->a_networks[i].ssid.ssid_len = ssid_len;
->> +
->> +		memcpy(pno->a_networks[i].ssid.ssid,
->> +		       nd_config->match_sets[i].ssid.ssid,
->> +		       ssid_len);
->> +		pno->a_networks[i].authentication = 0;
->> +		pno->a_networks[i].encryption     = 0;
->> +		pno->a_networks[i].bcast_nw_type  = 0;
->> +
->> +		/* Copying list of valid channel into request */
->> +		pno->a_networks[i].channel_count = nd_config->n_channels;
->> +		pno->a_networks[i].rssi_threshold = nd_config->match_sets[i].rssi_thold;
->> +
->> +		for (j = 0; j < nd_config->n_channels; j++) {
->> +			pno->a_networks[i].channels[j] =
->> +					nd_config->channels[j]->center_freq;
->> +		}
->> +	}
->> +
->> +	/* set scan to passive if no SSIDs are specified in the request */
->> +	if (nd_config->n_ssids == 0)
->> +		pno->do_passive_scan = true;
->> +	else
->> +		pno->do_passive_scan = false;
->> +
->> +	for (i = 0; i < nd_config->n_ssids; i++) {
->> +		j = 0;
->> +		while (j < pno->uc_networks_count) {
->> +			if (pno->a_networks[j].ssid.ssid_len ==
->> +				nd_config->ssids[i].ssid_len &&
->> +			    !memcmp(pno->a_networks[j].ssid.ssid,
->> +				    nd_config->ssids[i].ssid,
->> +				    pno->a_networks[j].ssid.ssid_len)) {
->> +				pno->a_networks[j].bcast_nw_type = BCAST_HIDDEN;
->> +				break;
->> +			}
->> +			j++;
->> +		}
->> +	}
-> 
-> The while loop is just a simple for loop so I changed it to use for statement.
-> 
->> +
->> +	if (nd_config->n_scan_plans == 2) {
->> +		pno->fast_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
->> +		pno->fast_scan_max_cycles = nd_config->scan_plans[0].iterations;
->> +		pno->slow_scan_period =
->> +			nd_config->scan_plans[1].interval * MSEC_PER_SEC;
->> +	} else if (nd_config->n_scan_plans == 1) {
->> +		pno->fast_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
->> +		pno->fast_scan_max_cycles = 1;
->> +		pno->slow_scan_period = nd_config->scan_plans[0].interval * MSEC_PER_SEC;
->> +	} else {
->> +		ath12k_warn(ar->ab, "Invalid number of scan plans %d !!",
->> +			    nd_config->n_scan_plans);
->> +	}
-> 
-> I cleaned up the error message here.
-> 
->> +static int ath12k_wow_vdev_clean_nlo(struct ath12k *ar, u32 vdev_id)
->> +{
->> +	int ret = 0;
->> +
->> +	if (ar->nlo_enabled) {
->> +		struct wmi_pno_scan_req_arg *pno =
->> +			kzalloc(sizeof(*pno), GFP_KERNEL);
->> +		if (!pno)
->> +			return -ENOMEM;
->> +
->> +		pno->enable = 0;
->> +		ar->nlo_enabled = false;
->> +		ret = ath12k_wmi_wow_config_pno(ar, vdev_id, pno);
->> +		kfree(pno);
->> +	}
->> +
->> +	return ret;
->> +}
-> 
-> Avoid initialising ret variables and minimise the indentation. I changed
-> this to:
-> 
-> static int ath12k_wow_vdev_clean_nlo(struct ath12k *ar, u32 vdev_id)
-> {
-> 	struct wmi_pno_scan_req_arg *pno;
-> 	int ret;
-> 
-> 	if (!ar->nlo_enabled)
-> 		return 0;
-> 
-> 	pno = kzalloc(sizeof(*pno), GFP_KERNEL);
-> 	if (!pno)
-> 		return -ENOMEM;
-> 
-> 	pno->enable = 0;
-> 	ret = ath12k_wmi_wow_config_pno(ar, vdev_id, pno);
-> 	if (ret) {
-> 		ath12k_warn(ar->ab, "failed to disable PNO: %d", ret);
-> 		goto out;
-> 	}
-> 
-> 	ar->nlo_enabled = false;
-> 
-> out:
-> 	kfree(pno);
-> 	return ret;
-> }
-> 
->> +static int ath12k_wow_vif_clean_nlo(struct ath12k_vif *arvif)
->> +{
->> +	struct ath12k *ar = arvif->ar;
->> +	int ret = 0;
->> +
->> +	switch (arvif->vdev_type) {
->> +	case WMI_VDEV_TYPE_STA:
->> +		ret = ath12k_wow_vdev_clean_nlo(ar, arvif->vdev_id);
->> +		break;
->> +	default:
->> +		break;
->> +	}
->> +	return ret;
->> +}
-> 
-> ret variable is not really needed:
-> 
-> static int ath12k_wow_vif_clean_nlo(struct ath12k_vif *arvif)
-> {
-> 	struct ath12k *ar = arvif->ar;
-> 
-> 	switch (arvif->vdev_type) {
-> 	case WMI_VDEV_TYPE_STA:
-> 		return ath12k_wow_vdev_clean_nlo(ar, arvif->vdev_id);
-> 	default:
-> 		return 0;
-> 	}
-> }
-> 
-> In the pending branch I did also some minor cosmetic changes to this and
-> earlier patches, too many to list here.
-Thanks. All these changes look OK to me.
+For single pdev devices firmware expects pdev id as 1 for 5 GHz/6 GHz
+phy and 2 for 2 GHz band. Add wrapper ath12k_mac_get_target_pdev_id()
+to help fetch right pdev for single pdev devices.
 
-> 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+---
+v2:
+   - Addressed Kalle's comments
+     - Function protoype changed to static
+     - Coding style changed for better readability
+
+Note: Wrapper ath12k_mac_get_target_pdev_id() will be used when driver sends
+pdev id while requesting stats such as HTT or WMI control path stats.
+Adding wrapper as a separate patch to eliminate depedency for future
+development.
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 76 +++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/mac.h |  1 +
+ 2 files changed, 77 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 17b7fab03d50..278087c15bc3 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -670,6 +670,82 @@ static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
+ 	return NULL;
+ }
+ 
++static struct ath12k_vif *ath12k_mac_get_vif_up(struct ath12k *ar)
++{
++	struct ath12k_vif *arvif;
++
++	lockdep_assert_held(&ar->conf_mutex);
++	list_for_each_entry(arvif, &ar->arvifs, list) {
++		if (arvif->is_up)
++			return arvif;
++	}
++
++	return NULL;
++}
++
++static bool ath12k_mac_band_match(enum nl80211_band band1, enum WMI_HOST_WLAN_BAND band2)
++{
++	switch (band1) {
++	case NL80211_BAND_2GHZ:
++		if (band2 & WMI_HOST_WLAN_2G_CAP)
++			return true;
++		break;
++	case NL80211_BAND_5GHZ:
++	case NL80211_BAND_6GHZ:
++		if (band2 & WMI_HOST_WLAN_5G_CAP)
++			return true;
++		break;
++	default:
++		return false;
++	}
++
++	return false;
++}
++
++static u8 ath12k_mac_get_target_pdev_id_from_vif(struct ath12k_vif *arvif)
++{
++	struct ath12k *ar = arvif->ar;
++	struct ath12k_base *ab = ar->ab;
++	struct ieee80211_vif *vif = arvif->vif;
++	struct cfg80211_chan_def def;
++	enum nl80211_band band;
++	u8 pdev_id = ab->fw_pdev[0].pdev_id;
++	int i;
++
++	if (WARN_ON(ath12k_mac_vif_chan(vif, &def)))
++		return pdev_id;
++
++	band = def.chan->band;
++
++	for (i = 0; i < ab->fw_pdev_count; i++) {
++		if (ath12k_mac_band_match(band, ab->fw_pdev[i].supported_bands))
++			return ab->fw_pdev[i].pdev_id;
++	}
++
++	return pdev_id;
++}
++
++u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar)
++{
++	struct ath12k_vif *arvif;
++	struct ath12k_base *ab = ar->ab;
++
++	if (!ab->hw_params->single_pdev_only)
++		return ar->pdev->pdev_id;
++
++	arvif = ath12k_mac_get_vif_up(ar);
++
++	/* fw_pdev array has pdev ids derived from phy capability
++	 * service ready event (pdev_and_hw_link_ids).
++	 * If no vif is active, return default first index.
++	 */
++	if (!arvif)
++		return ar->ab->fw_pdev[0].pdev_id;
++
++	/* If active vif is found, return the pdev id matching chandef band */
++	return ath12k_mac_get_target_pdev_id_from_vif(arvif);
++}
++
+ static void ath12k_pdev_caps_update(struct ath12k *ar)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index 69fd282b9dd3..5c543fc87b35 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -81,5 +81,6 @@ int ath12k_mac_rfkill_config(struct ath12k *ar);
+ int ath12k_mac_wait_tx_complete(struct ath12k *ar);
+ void ath12k_mac_handle_beacon(struct ath12k *ar, struct sk_buff *skb);
+ void ath12k_mac_handle_beacon_miss(struct ath12k *ar, u32 vdev_id);
++u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar);
+ 
+ #endif
+
+base-commit: cac9bfd02678adbcca9a7dce770609b9f7434d37
+-- 
+2.34.1
+
 
