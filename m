@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73A19C3064D
-	for <ath12k@archiver.kernel.org>; Wed, 26 Jun 2024 15:42:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6ED1C27C4F
+	for <ath12k@archiver.kernel.org>; Wed, 26 Jun 2024 17:04:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QH4Lt6/3FNqxL+c2s9xt/0nUW2LqnuT/llcvDvLItKE=; b=wYS0kooTAIzSSeIRNHEOhRqBuF
-	1tGv83MFXnocGaiIhnRvrwJ0sPBMbIo/wNkwjVbbj5Mb0YqZuZoUqSymonN0TF65tTMBaaxnaw8PM
-	g5KSBoGe9fRLsSoeeJJ0yc3Cu0PkPJSAuHxc84+zPU2YTD4Kj2B02IkBQMs29MFRtqupiMaWntunS
-	S1nsTIJ28HhQSJQ3TEmX7uNeEPcNMP7F2DSNJ3ok1Dvuw8y+qWAOeXcvXt3WBHSOa1KHxlW2v2Tls
-	DfhDOShOOb7dIqjYqF0WIVHTpaLbnGXFYEUefJrHl9DjrhXuaesCOjLfuPMVr32SuMJ8ZNgvBLSi7
-	UZLFvfeg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ShcvxZcGH+6xlgEBw0Zbc7r8/Np4rQKFuegers1OEEY=; b=4D4Od0mkSDen2jycG9pJwvZcLQ
+	CSuFmqBZNIO99JUz1v6BS494Oeyf8UvyGGVeYxR2VT8P4VUrO8T6Hlz3x/a2xgofIhb6I44xAB/6M
+	+3hdhQnOhfAAc2nj+sBXfLVXzmHO+oBWzH1qwOgy8wI2ktzDMr3L+DDDAN77DVb16l4CFi5HHB9vx
+	G7x0ggdA2L3twDxDiK/ZfVCS2qytptqh9I9hVUr/jmCJqSqvFsa9SXUNHSphCYTdxomuSeXUQhn0m
+	UpqoFY4tJUVFPFKaTWe6+IZpRsMVs8TC54knzpGHc+/IOJsx+hbSeURvN5rXjka5fHj/AijXeK3jf
+	B603UW3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMUnH-00000007RYi-0Zha
+	id 1sMW3v-00000007ha1-2Qjn
 	for ath12k@archiver.kernel.org;
-	Wed, 26 Jun 2024 15:42:47 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Wed, 26 Jun 2024 17:04:03 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMUnD-00000007RXQ-39r8
+	id 1sMW3s-00000007hZY-1Qqs
 	for ath12k@lists.infradead.org;
-	Wed, 26 Jun 2024 15:42:45 +0000
+	Wed, 26 Jun 2024 17:04:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id E86C6CE2256;
-	Wed, 26 Jun 2024 15:42:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 270F5C116B1;
-	Wed, 26 Jun 2024 15:42:39 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4559061986;
+	Wed, 26 Jun 2024 17:03:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 32165C116B1;
+	Wed, 26 Jun 2024 17:03:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719416561;
-	bh=dunIfLY+4WRNsvU6UNanCIkOKgAbPpLCv27myTPXqqw=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=HzJPmUq5yly+7rVr5TFSBN0ug/fF72MijF8hBtZ4AnyFQcy0NMSqeGmxRUtd8QgQ2
-	 rjz0Uz2suCHIQvG3nLBIE2EuTIUy2xna3G5Z5jkJIRApsdmHslhU8oHurYB5eoFerI
-	 Tb5dTapBaVJ2XQB7ADTOE6vWkbqTSfk5/XKvbAT5aONnvXbIVmivkG+l0O5zof3UGz
-	 ZXZE5G3ucQGlVWtgvo4xTY7B9P7ocyz8jyExhOMuaE7D+574X9P76gCfxQy6R9wkXS
-	 4D+qQtfsrTqYLYuIVpZfAB6xMD7tvfolk+fbMPORFz1GUNb6O0WVTQ75KSkykun4+k
-	 oGWH7GKCzBI2A==
-Content-Type: text/plain; charset="utf-8"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: fix peer metadata parsing
+	s=k20201202; t=1719421439;
+	bh=O/JMJLqh89mNtl6LKLku7p7JoYjoNabBTBJGMNJ9xV8=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=pEjtRCcaVMK3g0o0DgpUtD2426dTbxm+qQJubHIWJFd4gKoJMseBiWG1fKAKAYKay
+	 zl9g0U/+giszXpRRQBjrOLIl/9//hc0V5Oc3qICA4PmnFMfSJURKKoaEUjTAP5ZDFm
+	 KZKvHM6UTw2PT5L4bTLQNU/UdNceNnujZwqZLoAf/rNFDdma9ZftqrLikm893T2J14
+	 dnrtVbbEfIeErg9xAu10qKL/eptEV/MuNzZkD3u5M3VwTNCEakeYmipS3RhkVSSM46
+	 VG8ei1wmzTH+bYrMZi1FNB32b2l6BrhJOm7ypzk+9Kgnv+xeFpK71ac3B2cxbjuyON
+	 6NjuP+eZKB1qg==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240624145418.2043461-1-quic_periyasa@quicinc.com>
-References: <20240624145418.2043461-1-quic_periyasa@quicinc.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171941655813.1568703.13556661762295389272.kvalo@kernel.org>
-Date: Wed, 26 Jun 2024 15:42:39 +0000 (UTC)
+To: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v3 0/4] ath12k: Factory test mode support
+References: <20240611083427.881443-1-quic_aarasahu@quicinc.com>
+Date: Wed, 26 Jun 2024 20:03:56 +0300
+In-Reply-To: <20240611083427.881443-1-quic_aarasahu@quicinc.com> (Aaradhana
+	Sahu's message of "Tue, 11 Jun 2024 14:04:23 +0530")
+Message-ID: <87v81vhc03.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240626_084244_011979_E235A83D 
-X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-CacheID: sfid-20240626_100400_475557_A8E76178 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,29 +73,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
+Aaradhana Sahu <quic_aarasahu@quicinc.com> writes:
 
-> Currently, the Rx data path only supports parsing peer metadata of version
-> zero. However, the QCN9274 platform configures the peer metadata version
-> as V1B. When V1B peer metadata is parsed using the version zero logic,
-> invalid data is populated, causing valid packets to be dropped. To address
-> this issue, refactor the peer metadata version and add the version based
-> parsing to populate the data from peer metadata correctly.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Fixes: 287033810990 ("wifi: ath12k: add support for peer meta data version")
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> Device is booted in factory test mode for calibration.
+> The commands are sent from userspace application, which
+> is sent to firmware using wmi commands. Firmware sends
+> the response to driver as wmi events and driver sends
+> these events to the application via netlink message.
+>
+> Also added changes related to correct pdev id access for
+> fw test cmd.
+>
+> Aaradhana Sahu (3):
+>   wifi: ath: create common testmode_i.h file for ath drivers
+>   wifi: ath12k: export ath12k_wmi_tlv_hdr for testmode
+>   wifi: ath12k: add factory test mode support
+>
+> Rajat Soni (1):
+>   wifi: ath12k: Fill pdev id for fw test cmd
 
-Patch applied to ath-next branch of ath.git, thanks.
+BTW these are now in pending branch, there were some conflict but a new warning
+because of wow patches. No need to resend because of this, I'll fix the
+warning later.
 
-1eeafd64c7b4 wifi: ath12k: fix peer metadata parsing
+drivers/net/wireless/ath/ath12k/wow.c: In function 'ath12k_wow_op_resume':
+drivers/net/wireless/ath/ath12k/wow.c:982:17: warning: enumeration value 'ATH12K_HW_STATE_TM' not handled in switch [-Wswitch]
+  982 |                 switch (ah->state) {
+      |                 ^~~~~~
+
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240624145418.2043461-1-quic_periyasa@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/list/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
 
