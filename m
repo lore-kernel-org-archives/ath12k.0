@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5305FC30659
-	for <ath12k@archiver.kernel.org>; Wed, 26 Jun 2024 10:26:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBC2EC27C4F
+	for <ath12k@archiver.kernel.org>; Wed, 26 Jun 2024 15:10:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=w6bHykmFpxm9lToAX+RDYxNiXrku/NfShteEDvucaqM=; b=vPZSxO66qgYz7I8lkLEb3QEqDL
-	olUxNABCLqyCdwegUyEXHyj+tln8GNKPsIDrFEM6dQ0debZzU1LqKmIXi3t12dhK1FuOEOb+Z5Zf2
-	qVue3PDG1G2Kf/gE80JsWEIgsB63ckSG/HxvaWBRx3F+2lMEjsYA44pG8am+SynDE3Afg+legUqty
-	EnpyCht9r+mIWZIupBQ7OkUQIqud5BvlgPDOV7ta3pd/vuzVBG9evIL7C8Wad6PPiARXKvFezj1Jn
-	58kuuYfzk3wsKCTDLF1ar/L85eHhR/m/ZfbviKzInAxQCubVY/hpAgq8U2xIX2g8ADNU22lCX4nBh
-	45lnYfxA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sCxoyt+6hdSIy0f1yvmtnasJ3iIV/gS9vdvgdiwDU+E=; b=ELAnh9wTcAT+XT8GLx7jeqPpWU
+	Jg3V+CU1VrdcshijpzQP83+bL21n+QzAzudB7SW7Eqo01BE6jGdz1pVPHcf7cmRJkTMi5asn6Cnus
+	ELBbXqJh/wygx7O7VfULz49cbW0f89nmiocRnytgyJS+or/OvFvKyGfxhvHweNiUGfMYZsTbdMIAN
+	J7GOyS3Z8fnln1lJPg43AbrqP01ckB16RN7iMJPEcgOnmQDa26/9Of1Z1xS7ULHTXhuBIGNgqPGHR
+	Wh5y04/j/oPlU7W47Cg8EVvNJjNAtLVMm1M+0oHkrAL6gLTrTo9kz9NpBnSJay/VmZTvi+Uy+zF32
+	BjX70l8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMPrP-00000006Jol-3u7l
+	id 1sMUHe-00000007Kt1-2Dyr
 	for ath12k@archiver.kernel.org;
-	Wed, 26 Jun 2024 10:26:43 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Wed, 26 Jun 2024 15:10:06 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMPrK-00000006Jmd-1UV5;
-	Wed, 26 Jun 2024 10:26:41 +0000
+	id 1sMUHa-00000007Ks0-3IJB
+	for ath12k@lists.infradead.org;
+	Wed, 26 Jun 2024 15:10:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 51B01CE20FE;
-	Wed, 26 Jun 2024 10:26:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C369C2BD10;
-	Wed, 26 Jun 2024 10:26:34 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id ACEB2CE1F2F;
+	Wed, 26 Jun 2024 15:09:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0C8C5C116B1;
+	Wed, 26 Jun 2024 15:09:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719397595;
-	bh=wpLxNH25+HaRa7MjpsRH1I6HxeVwu5+Y08nX+fLKDaU=;
-	h=From:To:Cc:Subject:Date:From;
-	b=H/awx/1YmMEbnTyHDxRVuydFD0IfLgN6zc3jnBnJwEqAhboqX/8pVoKVAKglqya5a
-	 G4nxLw+AMjDKycUxkHZ7zaSvKQ/G0PvmwwoWUHfvhKTAIwWeuL29Eklz0o932Ys6VK
-	 VuJlU1MMjRXpuFCO155ZG8MIx6DRaPWt8F82013fYzwQ0/3LXGMyfb2FBkKvwNT5Py
-	 ILemdjnRKi0ZeAqRk6hfOBsUZ6HbuxegqcOJHsXIdV2VLsClsywxgwvYUunxZbI6sm
-	 xviDMWAaJJVldxsvqX2jVSEZF8s77bxR4DgV5KpLtC8E0pTJWs+FK8eqGzI/1whnMf
-	 1FMqHBfmEXoLA==
+	s=k20201202; t=1719414598;
+	bh=dAaV7NJ8n4m+NUsZ+yEVeSS+mfxg2Qsepxc3hxxXOe4=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=rSuiBWyoNIUlgCl6oLC1LvCNdOdiEu5OPktcuBlLVgP23xCqpzHfAzRQk1i6KhEh3
+	 vMM3HU6MsalG0km2GlPUXvx3uhc+tLChaRRzTk6b8Tdq6BQXZpnp9IYydjxpvUsPP8
+	 vC5RbWQGX1n35afAX7ChpGVnzcrRPdG0zSWgE1Vxq2ic4OtNDn9xwoXJuvmKX96ZgV
+	 MIP3T1VmL4OJDUuFKBfSbfO5w9JA1ExKJA5ABs9VA7ldjUnsauM9guc1E+7Tn6QBqS
+	 WT7/WwkSD1WCwuSLIlPG8c+mBRF/uXhVBF1s8aKjJZFXJdgV2kegwL4SMoYAdc3fHk
+	 LHjFuWlMQyH7g==
 From: Kalle Valo <kvalo@kernel.org>
-To: ath10k@lists.infradead.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH wireless] MAINTAINERS: wifi: update ath.git location
-Date: Wed, 26 Jun 2024 13:26:32 +0300
-Message-Id: <20240626102632.1554485-1-kvalo@kernel.org>
-X-Mailer: git-send-email 2.39.2
+To: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH v3]wifi: ath12k: Add firmware coredump collection support
+References: <20240325183414.4016663-1-quic_ssreeela@quicinc.com>
+	<171889253841.918573.15918536206746856053.kvalo@kernel.org>
+Date: Wed, 26 Jun 2024 18:09:56 +0300
+In-Reply-To: <171889253841.918573.15918536206746856053.kvalo@kernel.org>
+	(Kalle Valo's message of "Thu, 20 Jun 2024 14:08:59 +0000 (UTC)")
+Message-ID: <87zfr7hha3.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240626_032639_011730_C0620EB9 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240626_081003_480429_F07DF1E3 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,58 +73,99 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath.git tree has moved to a new location. The old location will be an alias to
-the new location and will work at least until end of 2024, but best to update
-git trees already now.
+Kalle Valo <kvalo@kernel.org> writes:
 
-Signed-off-by: Kalle Valo <kvalo@kernel.org>
----
- MAINTAINERS | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+> Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com> wrote:
+>
+>> In case of firmware assert snapshot of firmware memory is essential for
+>> debugging. Add firmware coredump collection support for PCI bus.
+>> Collect RDDM and firmware paging dumps from MHI and pack them in TLV
+>> format and also pack various memory shared during QMI phase in separate
+>> TLVs.  Add necessary header and share the dumps to user space using dev
+>> coredump framework. Coredump collection is disabled by default and can
+>> be enabled using menuconfig. Dump collected for a radio is 55 MB
+>> approximately.
+>> 
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
+>> 
+>> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+>> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+>
+> This didn't compile for me, I added this to pci.c:
+>
+> +#include <linux/vmalloc.h>
+>
+> Also in the pending branch I made some whitespace in struct ath12k_dump_file_data:
+>
+> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=44ae07628b68375f476895f4fc1e89a570790ac0
+>
+> Any tips how to test this until we have the debugfs interface to crash the firmware?
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index d6c90161c7bf..969412b75c46 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -18376,7 +18376,7 @@ M:	Jeff Johnson <jjohnson@kernel.org>
- L:	ath12k@lists.infradead.org
- S:	Supported
- W:	https://wireless.wiki.kernel.org/en/users/Drivers/ath12k
--T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
-+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git
- F:	drivers/net/wireless/ath/ath12k/
- N:	ath12k
- 
-@@ -18386,7 +18386,7 @@ M:	Jeff Johnson <jjohnson@kernel.org>
- L:	ath10k@lists.infradead.org
- S:	Supported
- W:	https://wireless.wiki.kernel.org/en/users/Drivers/ath10k
--T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
-+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git
- F:	drivers/net/wireless/ath/ath10k/
- N:	ath10k
- 
-@@ -18397,7 +18397,7 @@ L:	ath11k@lists.infradead.org
- S:	Supported
- W:	https://wireless.wiki.kernel.org/en/users/Drivers/ath11k
- B:	https://wireless.wiki.kernel.org/en/users/Drivers/ath11k/bugreport
--T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
-+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git
- F:	drivers/net/wireless/ath/ath11k/
- N:	ath11k
- 
-@@ -18406,7 +18406,7 @@ M:	Toke Høiland-Jørgensen <toke@toke.dk>
- L:	linux-wireless@vger.kernel.org
- S:	Maintained
- W:	https://wireless.wiki.kernel.org/en/users/Drivers/ath9k
--T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git
-+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git
- F:	Documentation/devicetree/bindings/net/wireless/qca,ath9k.yaml
- F:	drivers/net/wireless/ath/ath9k/
- 
+I was able to get patch 'wifi: ath12k: Add support to simulate firmware
+crash' (not yet public) and did a quick test with it. There seems to be
+a KASAN warning but I can't debug this further at this time.
 
-base-commit: 321028bc45f01edb9e57b0ae5c11c5c3600d00ca
+[ 8091.304272] ath12k_pci 0000:06:00.0: simulating firmware assert crash
+[ 8091.722245] ==================================================================
+[ 8091.722329] BUG: KASAN: vmalloc-out-of-bounds in ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
+[ 8091.722433] Write of size 4 at addr ffffc9000644b28c by task kworker/u32:0/11
+[ 8091.722517] 
+[ 8091.722552] CPU: 0 PID: 11 Comm: kworker/u32:0 Not tainted 6.10.0-rc4-wt-ath+ #1663
+[ 8091.722604] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+[ 8091.722670] Workqueue: ath12k_aux_wq ath12k_core_reset [ath12k]
+[ 8091.722742] Call Trace:
+[ 8091.722778]  <TASK>
+[ 8091.722832]  dump_stack_lvl+0x7d/0xe0
+[ 8091.722920]  print_address_description.constprop.0+0x33/0x3a0
+[ 8091.722999]  print_report+0xb5/0x260
+[ 8091.723069]  ? kasan_addr_to_slab+0xd/0x80
+[ 8091.723146]  kasan_report+0xd8/0x110
+[ 8091.723217]  ? ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
+[ 8091.723301]  ? ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
+[ 8091.723386]  __asan_report_store_n_noabort+0x12/0x20
+[ 8091.723461]  ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
+[ 8091.723563]  ? ath12k_pci_coredump_calculate_size+0x730/0x730 [ath12k]
+[ 8091.723632]  ? __this_cpu_preempt_check+0x13/0x20
+[ 8091.723677]  ath12k_coredump_collect+0x60/0x73 [ath12k]
+[ 8091.724276]  ath12k_core_reset+0x1b1/0x880 [ath12k]
+[ 8091.724921]  ? _raw_spin_unlock_irq+0x22/0x50
+[ 8091.725503]  ? __this_cpu_preempt_check+0x13/0x20
+[ 8091.726126]  process_one_work+0x8d7/0x19f0
+[ 8091.726718]  ? pwq_dec_nr_in_flight+0x580/0x580
+[ 8091.727346]  ? move_linked_works+0x128/0x2c0
+[ 8091.727998]  ? assign_work+0x15e/0x270
+[ 8091.728601]  worker_thread+0x715/0x1270
+[ 8091.729244]  ? rescuer_thread+0xdb0/0xdb0
+[ 8091.729905]  kthread+0x2fa/0x3f0
+[ 8091.730520]  ? kthread_insert_work_sanity_check+0xd0/0xd0
+[ 8091.731192]  ret_from_fork+0x31/0x70
+[ 8091.731856]  ? kthread_insert_work_sanity_check+0xd0/0xd0
+[ 8091.732525]  ret_from_fork_asm+0x11/0x20
+[ 8091.733212]  </TASK>
+[ 8091.733909] 
+[ 8091.734559] The buggy address belongs to the virtual mapping at#012[ 8091.734559]  [ffffc9000500b000, ffffc9000644d000) created by:#012[ 8091.734559]  ath12k_pci_coredump_download+0x147/0x1330 [ath12k]
+[ 8091.736558] 
+[ 8091.737272] The buggy address belongs to the physical page:
+[ 8091.738016] page: refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x15a485
+[ 8091.738730] flags: 0x200000000000000(node=0|zone=2)
+[ 8091.739481] raw: 0200000000000000 0000000000000000 dead000000000122 0000000000000000
+[ 8091.740256] raw: 0000000000000000 0000000000000000 00000001ffffffff 0000000000000000
+[ 8091.741043] page dumped because: kasan: bad access detected
+[ 8091.741786] 
+[ 8091.742529] Memory state around the buggy address:
+[ 8091.743296]  ffffc9000644b180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[ 8091.744087]  ffffc9000644b200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[ 8091.744834] >ffffc9000644b280: 00 04 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
+[ 8091.745598]                       ^
+[ 8091.746359]  ffffc9000644b300: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
+[ 8091.747152]  ffffc9000644b380: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
+[ 8091.747932] ==================================================================
+[ 8091.748688] Disabling lock debugging due to kernel taint
+[ 8091.749699] ath12k_pci 0000:06:00.0: Uploading coredump
+
 -- 
-2.39.2
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
