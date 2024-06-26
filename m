@@ -4,88 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F20C6C2BBCA
-	for <ath12k@archiver.kernel.org>; Wed, 26 Jun 2024 00:36:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A10CDC2BBCA
+	for <ath12k@archiver.kernel.org>; Wed, 26 Jun 2024 02:43:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TbdLEe27pad8QYvgFcmoFIfhy5+V7lkkbl31wZ/GXRI=; b=mr03aYKbjWZBULgMe0KpFqxl78
-	EuqlICztN0ohHRKns2Sfh0W8uxYRwtxxG1skQfR21ILkn2FUjwcHfrow7R6jtySec9gFsFGQO1jV/
-	CMwNTDdJITdqgv2rbcnSo9IOBlO/dVOuVPBCiWgoVoOsr059OWSp1pioMfOWwuxPiVs87nnYgbVjL
-	cGsF5be2lrtHYSGjXi7RYT3UdB/f2RlItWFyKq75y+ikkBJIyU3JWQo7h/Iong2w8WA+f0ETNSv4N
-	oSII6OUWR5YfQZMFH9XjtQdwJVwPeFFFBiL0AZV9CFaFzmIO1uF5wH+lL/EVWsF8zqgne0NQg+HhI
-	xk1kfbZQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=JZaL+Uz4Gft+NTwOiNV1nmxyKgDdx04JKJFeZgGRb2s=; b=Lk7Q2fQWhR7f7HPpnbasSgtUVM
+	xmUTo1lFaJRCE0CQlSbUZjy3540ZpAcKYdK2/ZvtLo010pyruSypDWVvhd3lTFxXwApgFB1G0YZgV
+	Z9+YjUryRrR3NxY7f2blcl6EkWvYX8NrwhbZzjkR99+QI0Fdq0pEzFNbkSiJ6BETRDCdij128vqYN
+	DlMGrUeiUoKUF7ArqEmvBUB5GWJvt3F4jRAn6al1G6aJ4Ror+Hd0IKWZ4ZZ7z45wBzmQXhczcwCMt
+	Qd+3HA/7qWBnkUrlpVmDl5exO+wWBn5ljczw9h7XGAede+aO0Qj6h84LCYvA42Jw8Ce3dN181K31L
+	fDNSJEog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMGeW-00000004uaZ-2EYt
+	id 1sMId6-000000058XH-0a2o
 	for ath12k@archiver.kernel.org;
-	Wed, 26 Jun 2024 00:36:48 +0000
+	Wed, 26 Jun 2024 02:43:28 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMGeS-00000004uZy-463V
+	id 1sMId1-000000058Ul-3JFU
 	for ath12k@lists.infradead.org;
-	Wed, 26 Jun 2024 00:36:46 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45PH4j7I018178;
-	Wed, 26 Jun 2024 00:36:40 GMT
+	Wed, 26 Jun 2024 02:43:25 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45PGkooH020273;
+	Wed, 26 Jun 2024 02:43:21 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TbdLEe27pad8QYvgFcmoFIfhy5+V7lkkbl31wZ/GXRI=; b=g7OUPIdq271QZX88
-	pnrmryJ/yH6YpMj9da3Npyt/mTTkOzz1oy1z2NCaN4jIzY6+CIUCMvZW7TPDGKDl
-	4+FUyxvVXxFIlnN6kcMV9A7/3JwaCrbV0ZNM8VM3QdXl6k1XNb0SKoXiqH6hzAt9
-	P6PEjBzw+rhKby9kcBWaDqt9gHGsiZN622K9sQeQChdSnn6YZbob6WEYVgkxvbEe
-	ftZ7BCgj7tij7jRwBBpFhldO+Go5kTGPIQYdUmueBANmKWDUUBmPYs9D6Af0HJnI
-	3a2Bt70hUufpyP/doOsrEnTcZ5/zKnd19Fk98adYWcvKqvZfRT/sr3KymjrK/DU1
-	8eKC2Q==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ywkyn84mp-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=JZaL+Uz4Gft+NTwOiNV1nm
+	xyKgDdx04JKJFeZgGRb2s=; b=IHQFfkgxTe9vm4fRLWyfE65oH8ep6f8G3sRaMp
+	rOT8sW8CjNE2f+Qi4a0M8VuLP1VgpVe5T2lSYjGsNl0EBSr5+u/Vlhz7Vm164+qs
+	pLxsOnM4T/PefiZS32c3ElhPkRNpKnuObrfBfpb5jnQBt2dsaGybsVUCZYDC+zhw
+	rvtJOrzPRKE8+L83dZYBemXitd0TY1ghV0SyYmazdZdqvrJGNlZvAo3EjX6uLYtW
+	VR5IKDrvbT43mNID6ZmJgMcqTi67zcrvBLUY9tnY62dCx3DxoUD0/ezbHKnCWTQz
+	mjrhjLB0Ri7pu+Z3kmhRbBkh8TIw3vnKUlTU9BOBkupJ9ceg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ywp6yr5jg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Jun 2024 00:36:40 +0000 (GMT)
+	Wed, 26 Jun 2024 02:43:21 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45Q0adPb006280
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45Q2hKlv025955
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Jun 2024 00:36:39 GMT
-Received: from [10.50.50.182] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 25 Jun
- 2024 17:36:37 -0700
-Message-ID: <42e80698-5667-5cf9-f8e1-38c9816889c0@quicinc.com>
-Date: Wed, 26 Jun 2024 06:06:33 +0530
+	Wed, 26 Jun 2024 02:43:20 GMT
+Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 25 Jun 2024 19:43:18 -0700
+From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Rameshkumar Sundaram
+	<quic_ramess@quicinc.com>,
+        <stable@vger.kernel.org>
+Subject: [PATCH] wifi: ath12k: Allow driver initialization for WoW unsupported devices
+Date: Wed, 26 Jun 2024 08:12:57 +0530
+Message-ID: <20240626024257.709460-1-quic_ramess@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH] wifi: ath12k: fix peer metadata parsing
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240624145418.2043461-1-quic_periyasa@quicinc.com>
- <87frt1hvc9.fsf@kernel.org>
-Content-Language: en-US
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <87frt1hvc9.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: G28z-W2S3iTUR94GSMZTtVOFE6XPK73w
-X-Proofpoint-GUID: G28z-W2S3iTUR94GSMZTtVOFE6XPK73w
+X-Proofpoint-GUID: 6TvUo3_tAQEJWjqD_o3y_ja8Jvee9WZi
+X-Proofpoint-ORIG-GUID: 6TvUo3_tAQEJWjqD_o3y_ja8Jvee9WZi
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-25_19,2024-06-25_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
- mlxscore=0 impostorscore=0 phishscore=0 lowpriorityscore=0 adultscore=0
- mlxlogscore=999 spamscore=0 clxscore=1015 suspectscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2406260003
+ definitions=2024-06-26_01,2024-06-25_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=826 bulkscore=0
+ phishscore=0 adultscore=0 mlxscore=0 suspectscore=0 malwarescore=0
+ clxscore=1011 lowpriorityscore=0 spamscore=0 priorityscore=1501
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2406260020
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240625_173645_179058_8560BCB8 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20240625_194323_970694_C6192FCC 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,54 +97,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Currently during driver initialization, mac registration is allowed
+only for devices that advertise WMI_TLV_SERVICE_WOW, but QCN9274
+doesn't support WoW and hence mac registration is aborted and driver
+is de-initialized.
 
+Allow mac registration to proceed without WoW Support for devices
+that don't advertise WMI_TLV_SERVICE_WOW.
 
-On 6/25/2024 9:23 PM, Kalle Valo wrote:
-> Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
-> 
->> Currently, the Rx data path only supports parsing peer metadata of version
->> zero. However, the QCN9274 platform configures the peer metadata version
->> as V1B. When V1B peer metadata is parsed using the version zero logic,
->> invalid data is populated, causing valid packets to be dropped. To address
->> this issue, refactor the peer metadata version and add the version based
->> parsing to populate the data from peer metadata correctly.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->>
->> Fixes: 287033810990 ("wifi: ath12k: add support for peer meta data version")
->> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> 
-> [...]
-> 
->> +static u16 ath12k_dp_rx_get_peer_id(enum ath12k_peer_metadata_version ver,
->> +				    __le32 peer_metadata)
->> +{
->> +	switch (ver) {
->> +	default:
->> +		WARN_ON(1);
->> +		fallthrough;
-> 
-> I'm a bit wary of using WARN_ON() in data path, so in the pending branch
-> I changed this to ath12k_warn():
-> 
-> 	default:
-> 		ath12k_warn(ab, "Unknown peer metadata version: %d", ver);
-> 		fallthrough;
-> 
-> The benefit is also that now we print the unknown value. Would this
-> work?
-> 
-> Please check:
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=0228ca402186a123e5c90187f952121de50bf64f
-> 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Looks fine to me.
+Cc: stable@vger.kernel.org
+Fixes: 4a3c212eee0e ("wifi: ath12k: add basic WoW functionalities")
+Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/wow.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Thanks.
+diff --git a/drivers/net/wireless/ath/ath12k/wow.c b/drivers/net/wireless/ath/ath12k/wow.c
+index 685e8e98d845..c5cba825a84a 100644
+--- a/drivers/net/wireless/ath/ath12k/wow.c
++++ b/drivers/net/wireless/ath/ath12k/wow.c
+@@ -1001,8 +1001,8 @@ int ath12k_wow_op_resume(struct ieee80211_hw *hw)
+ 
+ int ath12k_wow_init(struct ath12k *ar)
+ {
+-	if (WARN_ON(!test_bit(WMI_TLV_SERVICE_WOW, ar->wmi->wmi_ab->svc_map)))
+-		return -EINVAL;
++	if (!test_bit(WMI_TLV_SERVICE_WOW, ar->wmi->wmi_ab->svc_map))
++		return 0;
+ 
+ 	ar->wow.wowlan_support = ath12k_wowlan_support;
+ 
 
+base-commit: dadc1101eabb54ace51aa6fc58c902bf43ac0ed7
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+2.25.1
+
 
