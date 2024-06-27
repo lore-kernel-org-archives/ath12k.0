@@ -4,91 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A04F7C3064D
-	for <ath12k@archiver.kernel.org>; Thu, 27 Jun 2024 17:18:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D23ACC2BD09
+	for <ath12k@archiver.kernel.org>; Thu, 27 Jun 2024 17:44:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=G0Br9967218n6mEH7vOOAaDurSsNku77pGhgMHS9D3E=; b=t/BW+mUZiR6UYOVoQ9CgrxmwfT
-	ktnPmJtE6TysX6O/VSE+aeK3oP1uLmS56vqYiP8y2iUC5bx9AjPbQObq2Pf74Rd+wiDCgq2P/9ZiI
-	E8KFqIL8fGazduanQhcPbj6O6Pqp0ID1QfxsAk2V1XiGSCXoN4eBiXK/Qi3P9V5RplfGnaKWu6Ma1
-	/yZ2bsF1BS4WEw3lg/x0gAqfd2IV/4St+nuAw0QnwMjcuCZX4aGux9Q434pL8hJ8dk9typv1EiQ6d
-	noqjIrX/JUkC8g93Y28zjZVnRXbQHBJ96iLKSHaUkB87kcmCQe8coAzaGrY9aAp0zUbWmu2JPp8b7
-	w6f2pZHg==;
+	bh=F6C0HwtMCxp+deLNLyQ/xDv6sug7jMmZcW15Wk+QhRA=; b=nbqSRe3Hgyzt2WGf+wdyWDE/ni
+	1mY/ZnatUlvIH+PUM++wfj8mFMbHKdPhG2oHgHyQYnXNU9YjA7F4eZk2E3xGnou2VkbZrS78purBn
+	7FGS94jxI4U94NxjXo/CPeV5kCkJ+seoloLZtFnttyDvoHxFM9dCLJUlvkZ1ijWDQ3V7m82jLT6KB
+	8yN6w4ZrdviBT9BDxeTwuxOclJjNf7L/n5zvfi6UkN4KD41Ehi/Eb3ujAeu5ShOCnHjDB2kduUVPP
+	jHd4uDQeuPrZStQ0YMNLkbRBMF7zHqtK/tv3QPzF23SJeAsGeqBBipg9TS9Ga7bO3UcRBwlnJA8kN
+	wuX7h/pA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMslE-0000000BAwe-1FmG
+	id 1sMtAC-0000000BHAr-1WoR
 	for ath12k@archiver.kernel.org;
-	Thu, 27 Jun 2024 17:18:16 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 27 Jun 2024 17:44:04 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMslA-0000000BAuW-33h8
+	id 1sMtAA-0000000BHAQ-1I51
 	for ath12k@lists.infradead.org;
-	Thu, 27 Jun 2024 17:18:14 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45RCCTV1025820;
-	Thu, 27 Jun 2024 17:18:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	G0Br9967218n6mEH7vOOAaDurSsNku77pGhgMHS9D3E=; b=oJbvgIKrV2/PRgJ+
-	ID7w0G2kVdFLAJsF0CcjhbTOeaxb52vGKCuVvBBF10PKuvbXx8fwU1pNKWCfV9wB
-	ad4NWT8IcLr4PFeQCoiYtFY4/d//JMcjPtaCI8tBxb3kNVX1I5owOZE1Wa9UQZk4
-	/t54tsfsRaf4YLey7gFJC7gWdsL4iCIsrRaTiWVJN7SVUjQLCUsEVT+FSdmWDK0H
-	YSGhlZvXLY7k6SnGwVJ7fn2SWo/LIT+JLNZK5+Ik3d9jG/1Ho5kLc3a53SAX7Yk3
-	S8BYxKtsnh0FCEToZWPcajBjKCIR2Uc04QdTHNH3hEDC2ZwnYNZY6cmMLu6r2FOi
-	mO0g+g==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ywnjs4k2c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Jun 2024 17:18:11 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45RHIB7H008254
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Jun 2024 17:18:11 GMT
-Received: from [10.48.244.230] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 27 Jun
- 2024 10:18:10 -0700
-Message-ID: <7957aadb-2ab1-4c2c-b799-10fa283a007a@quicinc.com>
-Date: Thu, 27 Jun 2024 10:18:10 -0700
+	Thu, 27 Jun 2024 17:44:03 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 48C5FCE338F;
+	Thu, 27 Jun 2024 17:44:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8566DC2BBFC;
+	Thu, 27 Jun 2024 17:43:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1719510239;
+	bh=XGBF4GFzPS+lpA68bAhNFUcHmk0+0gf0K6RVl3Httmw=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=NSsLewCqmaIaii72vpwEpE8/Nly5FkRszug9HhMhN1+TT7EcnnnOWJtXUyVhWzsF0
+	 kRAidIj34Jadp77iomLAMxoDT9KgkqDU/uXPg+v+rv/jlc84ZvaEUTSrpvxZ5D0pCd
+	 1BbPhvTKVZekbnbRJ6KizUy7LhyVfQSf+UqsyFBQcWDCBB4YLXtdQ7KhXyxgPNP3MF
+	 6LvR1BUjSMf8qJI3lrZh441669FctXoCYzRsaaUgKjHQ2mZyvunlNsAYOj4EWDYSbv
+	 C63gCc5rqE2e+dE+2Y8veu+PIp8izs0Uy6/oAhZIrTVFPAh3CrktsdrIz+/+H1Vt/e
+	 C3ccZUzg9eGRA==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 3/4] wifi: ath12k: Add support to parse requested
- stats_type
-Content-Language: en-US
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Dinesh Karthikeyan
-	<quic_dinek@quicinc.com>
-References: <20240626085854.2500681-1-quic_rgnanase@quicinc.com>
- <20240626085854.2500681-4-quic_rgnanase@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240626085854.2500681-4-quic_rgnanase@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: wuHUJ_qUH--Jmz7zwCcVX5VaLeWJYmCP
-X-Proofpoint-ORIG-GUID: wuHUJ_qUH--Jmz7zwCcVX5VaLeWJYmCP
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-27_13,2024-06-27_03,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- clxscore=1015 mlxscore=0 suspectscore=0 adultscore=0 mlxlogscore=999
- impostorscore=0 bulkscore=0 malwarescore=0 spamscore=0 phishscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2406270131
+Subject: Re: [PATCH v5 3/4] wifi: ath12k: add factory test mode support
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <20240624095305.37189-4-quic_aarasahu@quicinc.com>
+References: <20240624095305.37189-4-quic_aarasahu@quicinc.com>
+To: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ Aaradhana Sahu
+	<quic_aarasahu@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <171951023642.2426772.2204079316674415145.kvalo@kernel.org>
+Date: Thu, 27 Jun 2024 17:43:58 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_101812_849260_EC22966C 
-X-CRM114-Status: UNSURE (   7.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240627_104402_561603_BFCF5FD2 
+X-CRM114-Status: GOOD (  13.08  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,111 +74,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/26/2024 1:58 AM, Ramya Gnanasekar wrote:
-> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+Aaradhana Sahu <quic_aarasahu@quicinc.com> wrote:
+
+> Add support to process factory test mode commands(FTM) for calibration.
+> By default firmware start with MISSION mode and to process the FTM commands
+> firmware needs to be restarted in FTM mode using module parameter ftm_mode.
+> The pre-request is all the radios should be down before starting the test.
 > 
-> Add extended htt stats parser and print the corresponding TLVs associated
-> with the requested htt_stats_type.
-> Add support for TX PDEV related htt stats.
+> All ath12k test mode interface related commands specified in enum
+> ath_tm_cmd.
 > 
-> Sample output:
-> --------------
-> echo 1 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> When start command ATH_TM_CMD_TESTMODE_START is received, ar state
+> is set to test Mode and FTM daemon sends test mode command to wifi
+> driver via cfg80211. Wifi driver sends these command to firmware as
+> wmi events. If it is segmented commands it will be broken down into
+> multiple segments and encoded with TLV header else it is sent to
+> firmware as it is.
 > 
-> HTT_TX_PDEV_STATS_CMN_TLV:
-> mac_id = 0
-> comp_delivered = 0
-> self_triggers = 256
-> hw_queued = 275
-> hw_reaped = 275
-> underrun = 241
-> hw_paused = 0
-> hw_flush = 0
-> hw_filt = 1
-> tx_abort = 0
-> ppdu_ok = 246
-> mpdu_requeued = 0
-> tx_xretry = 0
-> data_rc = 3
-> mpdu_dropped_xretry = 0
-> illegal_rate_phy_err = 0
-> cont_xretry = 0
-> tx_timeout = 0
-> tx_time_dur_data = 0
-> pdev_resets = 0
-> phy_underrun = 0
-> txop_ovf = 0
-> seq_posted = 247
-> seq_failed_queueing = 0
-> seq_completed = 247
-> seq_restarted = 0
-> seq_txop_repost_stop = 0
-> next_seq_cancel = 0
-> dl_mu_mimo_seq_posted = 0
-> dl_mu_ofdma_seq_posted = 0
-> ul_mu_mimo_seq_posted = 0
-> ul_mu_ofdma_seq_posted = 0
-> mu_mimo_peer_blacklisted = 0
-> seq_qdepth_repost_stop = 0
-> seq_min_msdu_repost_stop = 0
-> mu_seq_min_msdu_repost_stop = 0
-> seq_switch_hw_paused = 0
-> next_seq_posted_dsr = 0
-> seq_posted_isr = 0
-> seq_ctrl_cached = 0
-> mpdu_count_tqm = 0
-> msdu_count_tqm = 0
-> mpdu_removed_tqm = 0
-> msdu_removed_tqm = 0
-> remove_mpdus_max_retries = 0
-> mpdus_sw_flush = 0
-> mpdus_hw_filter = 0
-> mpdus_truncated = 0
-> mpdus_ack_failed = 0
-> mpdus_expired = 0
-> mpdus_seq_hw_retry = 0
-> ack_tlv_proc = 0
-> coex_abort_mpdu_cnt_valid = 0
-> coex_abort_mpdu_cnt = 5
-> num_total_ppdus_tried_ota = 5
-> num_data_ppdus_tried_ota = 0
-> local_ctrl_mgmt_enqued = 247
-> local_ctrl_mgmt_freed = 247
-> local_data_enqued = 0
-> local_data_freed = 0
-> mpdu_tried = 0
-> isr_wait_seq_posted = 0
-> tx_active_dur_us_low = 0
-> tx_active_dur_us_high = 0
-> fes_offsets_err_cnt = 0
+> Firmware response via UTF events, wifi driver creates skb and send
+> to cfg80211, cfg80211 sends firmware response to FTM daemon via
+> netlink message.
 > 
-> HTT_TX_PDEV_STATS_URRN_TLV:
-> urrn_stats =  0:0, 1:241, 2:0
+> Command to boot in ftm mode
+> insmod ath12k ftm_mode=1
 > 
-> HTT_TX_PDEV_STATS_SIFS_TLV:
-> sifs_status =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 > 
-> HTT_TX_PDEV_STATS_FLUSH_TLV:
-> flush_errs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
-> 11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0, 21:0, 22:0,
-> 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0,
-> 35:0, 36:0, 37:0, 38:0, 39:0, 40:0, 41:0, 42:0, 43:0, 44:0, 45:0, 46:0,
-> 47:0, 48:0, 49:0, 50:0, 51:0, 52:0, 53:0, 54:0, 55:0, 56:0, 57:0, 58:0,
-> 59:0, 60:0, 61:0, 62:0, 63:0, 64:0, 65:0, 66:0, 67:0, 68:0, 69:0, 70:0,
-> 71:0, 72:0, 73:0, 74:0, 75:0, 76:0, 77:0, 78:0, 79:0, 80:0, 81:0, 82:0,
-> 83:0, 84:0, 85:0, 86:0, 87:0, 88:0, 89:0, 90:0, 91:0, 92:0, 93:0, 94:0,
-> 95:0, 96:0, 97:0, 98:0, 99:0, 100:0, 101:0, 102:0, 103:0, 104:0, 105:0,
-> 106:0, 107:0, 108:0, 109:0, 110:0, 111:0, 112:0, 113:0, 114:0, 115:0,
-> 116:0, 117:0, 118:0, 119:0, 120:0, 121:0, 122:0, 123:0, 124:0, 125:0,
-> 126:0, 127:0
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-> Co-developed-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+
+Now that the wow patchset was applied I saw a new warning:
+
+drivers/net/wireless/ath/ath12k/wow.c: In function 'ath12k_wow_op_resume':
+drivers/net/wireless/ath/ath12k/wow.c:982:17: warning: enumeration value 'ATH12K_HW_STATE_TM' not handled in switch [-Wswitch]
+
+I fixed it adding the new state to ath12k_wow_op_resume(), please check:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=882f310572b27564412e1d6158d1e9709861b7a7
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/20240624095305.37189-4-quic_aarasahu@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
