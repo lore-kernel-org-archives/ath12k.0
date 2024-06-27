@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDFE1C3064D
-	for <ath12k@archiver.kernel.org>; Thu, 27 Jun 2024 16:22:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38145C2BD09
+	for <ath12k@archiver.kernel.org>; Thu, 27 Jun 2024 16:31:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zZQvxiNdKDUPBmYVD0vxiABvhrgr/USoR9JXofU3gM4=; b=sG6OUuArvEfkiqvjqXfwgdh+Cy
-	wTa1RWPoLXgaiHllvQwu/YcAKBH6WSghanfW3IfqlfRYqJOG2v/h9ypGa/iuezcTl0BOMAbPiuYO8
-	KJcdlxn2a9Ql8PerXTVe0a1R8H5t1s8L9H+DQ+zrTGUbd1MU7vR0dj4e83UIHgV16XLbnm+wQ1qdz
-	uacF1ymjX8IveKoPaz2VF+7wd6VhwW0gNTku7BhAz2sw7/IVTtEoALnGq2+kbmC3COWHIBWIV8ryY
-	KcZUgRDelaU0yBBQNNPbjXk2C56HAxTPKFCXQM20C6KuYjiqsBSQuSGFlHLNGbI6W/cvZnojfNfIg
-	gxfZf9xA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=a57StgKJ3dq8cRcEZkqPTFMtN7l27yvAG/NOM6JZ4sE=; b=HE6I+RtGVhbNtWXL3VcxGeFfXW
+	JcIwdUF/0EFsJuJ7llp1/DZfu/F0vYsxdOOsXVrw/5UefSVG4/9wOKvvrZhX45BprN0PMr/BK2S/Q
+	I0OJK5+Ww8jWFzq4KWZhvsMhP5VUbpIPwJhaIgMBSObGV5icZKGlvSuyLK0qa94mW9cRI0rD/VQ3n
+	M+TwJBt4HkmI4/KYCzZvTa0/Bcrz0/Ks+BNQWgdrrIs1/icHNnohmLKMoJfKowJzkT6SunSFRfqGJ
+	tRhqMYfPB/ygMDXlI1j7MIvu1JD3iLXGPF+T7VmOT7m5IPTk37Mbl3z019o17+gwYgU98bDrGSAi2
+	6fXOxMpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrst-0000000B16p-222T
+	id 1sMs1s-0000000B3mm-3uSC
 	for ath12k@archiver.kernel.org;
-	Thu, 27 Jun 2024 16:22:07 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 27 Jun 2024 16:31:24 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrsq-0000000B14p-39qi
+	id 1sMs1o-0000000B3lu-2lC6
 	for ath12k@lists.infradead.org;
-	Thu, 27 Jun 2024 16:22:06 +0000
+	Thu, 27 Jun 2024 16:31:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 31FAD61E1B;
-	Thu, 27 Jun 2024 16:22:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B13C4C2BBFC;
-	Thu, 27 Jun 2024 16:22:01 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id D04D761E13;
+	Thu, 27 Jun 2024 16:31:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 837A9C2BBFC;
+	Thu, 27 Jun 2024 16:31:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719505322;
-	bh=kVLYV7wBgQxmFh3aypgRbiiiHGjW8/Z2O0qs1JuDPUI=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=oEQyaSPPC/uxDY8WI+6LGF11pXkgny5Urm0SRMnJYYhCQihD/dFusuB07/b0XCV+Y
-	 RHV1jE7DBuMJMuhWFehTn2kk+//p6ka/ndvF3zJGSFZMcTLYEd7uyBFi8SfWmgqzjL
-	 aCaoeR2jCJuTakPgMPFF16GLW6vSogFGLgIZgiDpsWP+2JryLVK10k+LETrt0EY26X
-	 crGCMrQpomQtgscKvC0xdqgWvHIc4VQD3HTXeB2CGLtVZG79fZDWDJF+GatFv/Vp47
-	 lar/8aJBpdisdN832DPHlos20tu0T9bJTwt493SIKwUpmbMWD4YegXg9+sFMz4eB5X
-	 337v150xiokmA==
-Content-Type: text/plain; charset="utf-8"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] wifi: ath12k: Allow driver initialization for WoW
- unsupported
- devices
+	s=k20201202; t=1719505879;
+	bh=PTfSZMp3jafutVyry1fb2Jx4NzvL0t1ODQaqXdP9FxE=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=ZgzWJScU6J5Nd4VMrBLl3jgvPjnEw6WS6ajngOF56fz9euZndjdJed2BYLWxTSUyq
+	 aCHKH7BHEAVVT0M2aOSSSb6cOvX1/TSsXPHqRlf5+huLpGT0UKm09mi96cdNCEQGw7
+	 ypnMMYGW95sCWlH5W7Wpj8K9PwXAVNctv0DPRLp+Pwu281bxksOfDNL41kZwurqSsT
+	 HKkhEvXVrTv1Eu9uCUoHPC9fh4cEwwxgRCEeUzBLzrxYZnXwEsfoHHqCTViw/I9F2R
+	 eNCDfeL5+ySkh24Q6vvwigh+69NeiswDnorTJEskVaupYQMx3K4gDcIkR6fo/VOuEh
+	 tHfqtYdI6KiEA==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240626024257.709460-1-quic_ramess@quicinc.com>
-References: <20240626024257.709460-1-quic_ramess@quicinc.com>
-To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Rameshkumar Sundaram
-	<quic_ramess@quicinc.com>, <stable@vger.kernel.org>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <171950531986.2164695.17835818417025337826.kvalo@kernel.org>
-Date: Thu, 27 Jun 2024 16:22:01 +0000 (UTC)
+To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Rajat
+ Soni <quic_rajson@quicinc.com>
+Subject: Re: [PATCH] wifi: ath12k: Add WMI control path stats infra
+References: <20240529180920.1472003-1-quic_rgnanase@quicinc.com>
+	<8d3fc6d4-abcc-4551-9837-afe7dc482cbe@quicinc.com>
+Date: Thu, 27 Jun 2024 19:31:16 +0300
+In-Reply-To: <8d3fc6d4-abcc-4551-9837-afe7dc482cbe@quicinc.com> (Ramya
+	Gnanasekar's message of "Thu, 27 Jun 2024 17:31:28 +0530")
+Message-ID: <87ed8igxez.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_092204_949904_BA9F1926 
-X-CRM114-Status: UNSURE (   6.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240627_093120_944743_8BB0333C 
+X-CRM114-Status: GOOD (  10.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,30 +74,64 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Rameshkumar Sundaram <quic_ramess@quicinc.com> wrote:
+Ramya Gnanasekar <quic_rgnanase@quicinc.com> writes:
 
-> Commit 4a3c212eee0e ("wifi: ath12k: add basic WoW functionalities") broke
-> driver initialization, now mac registration is allowed only for devices that
-> advertise WMI_TLV_SERVICE_WOW, but QCN9274 doesn't support WoW and hence mac
-> registration is aborted and driver is de-initialized.
-> 
-> Allow mac registration to proceed without WoW Support for devices
-> that don't advertise WMI_TLV_SERVICE_WOW.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Fixes: 4a3c212eee0e ("wifi: ath12k: add basic WoW functionalities")
-> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> On 5/29/2024 11:39 PM, Ramya Gnanasekar wrote:
+>> From: Rajat Soni <quic_rajson@quicinc.com>
+>> 
+>> Currently, firmware stats is requested by host through HTT interface.
+>> Since HTT interface is already overloaded for data path stats,
+>> leveraging control path to request other stats through WMI interface.
+>> 
+>> Add debugfs to request the stats and dump the stats forwarded by firmware.
+>> 
+>> ath12k
+>> `-- pci-0000:06:00.0
+>>     |-- mac0
+>>         `-- wmi_ctrl_stats
+>> 
+>> This patch also adds support to request PDEV Tx stats, parse and dump
+>> the data sent from firmware.
+>> 
+>> Usage:
+>> echo <stats id> <action> > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/wmi_ctrl_stats
+>> 
+>> Sample:
+>> echo 1 1 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/wmi_ctrl_stats
+>> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/wmi_ctrl_stats
+>> WMI_CTRL_PATH_PDEV_TX_STATS:
+>> fw_tx_mgmt_subtype =  0:0, 1:2, 2:0, 3:0, 4:0, 5:37, 6:0, 7:0, 8:908, 9:0, 10:0, 11:18, 12:2, 13:3, 14:0, 15:0,
+>> fw_rx_mgmt_subtype =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0,
+>> scan_fail_dfs_violation_time_ms = 0
+>> nol_chk_fail_last_chan_freq = 0
+>> nol_chk_fail_time_stamp_ms = 0
+>> tot_peer_create_cnt = 7
+>> tot_peer_del_cnt = 7
+>> tot_peer_del_resp_cnt = 7
+>> vdev_pause_fail_rt_to_sched_algo_fifo_full_cnt = 0
+>> 
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>> 
+>> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+>> Co-developed-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+>> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+>> ---
+>> Depends-On: [PATCH v2 3/5] wifi: ath12k: Fix Pdev id in HTT stats request for WCN7850
+>> Link: https://lore.kernel.org/linux-wireless/20240510050806.514126-1-quic_rgnanase@quicinc.com
 
-Patch applied to ath-next branch of ath.git, thanks.
+[removing over 600 lines unnecessary quotes]
 
-9783e0407421 wifi: ath12k: fix driver initialization for WoW unsupported devices
+> Please drop this patch. I'll send a re-based version
+
+Dropped, thanks for letting us know. But please edit your quotes,
+including the full patch in the reply makes the use of patchwork
+practically unusable:
+
+https://patchwork.kernel.org/project/linux-wireless/patch/20240529180920.1472003-1-quic_rgnanase@quicinc.com/
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240626024257.709460-1-quic_ramess@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/list/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
 
