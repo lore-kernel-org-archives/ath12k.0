@@ -4,87 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C11F5C2BD09
-	for <ath12k@archiver.kernel.org>; Fri, 28 Jun 2024 03:20:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF812C3064D
+	for <ath12k@archiver.kernel.org>; Fri, 28 Jun 2024 08:01:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KtmOB7samA+g9cu1NDQwjdxpz140sFdW3VaqxWB261k=; b=WrCS+7TlF1xhvzqtWFSdUAYwAR
-	Rn66wWqVcC4X28eliLGEIoDgz5OqnB3T/a2ooHdpE2yUM8epHmnvAh5DR0Yd7X1RqWO3oUL+ltPnU
-	9dmXYut9gHroA6qzRSB4MJiBhwV3fAzE/o1vcsBCtz80+/JG/r9lSTqN60uBJZ9jIToB692YIDelI
-	xLoNgA4c6bet8t9Q0P8kut1n/IspS5jUbXnXMIGvF7gAYxiYkwD2XNHtlVCFNMTvQulxF4B+6E72o
-	BwwNx7Joo2uRTSIzswaiDc9TfaRwqBAtHICVy8zbZiUDuup3moLk7BCxKNQyoIIWk/KGCJiP48XOl
-	pHfsKmwQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=uZyxT8ItNiF9TeT/7R/54tZccSvg3dFdAq5unyzBKrk=; b=js/VU4D/E7cVUk2soMHy8HMVTe
+	iDEyXdD39gDb9rGMs6vDbv6+/M8gPWGCF0R/L6Rao5fmidjFrAvZbN1Z/VJ4rTRnEdDLjbxnXidON
+	i6FIHUET1loQjXB3iwqltHEOaZVMZEKs6noUOgU+pY9cgKZem/uDzonspF6A6R5Tw55t5cifiXFeU
+	GgsWjanogrexMp2Nf3Zut2yH/Rdhkyir1+ezNa466VMIEWJeFx8RdGZ1cuPuc1Hp+gZw7Drg1e30M
+	GG2Xxe/hYpfQfyMgXHGQ2+m9G5mwQkRzqiqMiJsk/ElVS04aWO0JxC2FVYtwWP0ALlK9EHm9hAoTG
+	+b6RryEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sN29Y-0000000CR6O-1doq
+	id 1sN6YH-0000000CzOt-0vD0
 	for ath12k@archiver.kernel.org;
-	Fri, 28 Jun 2024 03:20:00 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 28 Jun 2024 08:01:49 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sN29V-0000000CR4H-0jyI
+	id 1sN6YE-0000000CzOC-1OTr
 	for ath12k@lists.infradead.org;
-	Fri, 28 Jun 2024 03:19:59 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45RGd6VX026182;
-	Fri, 28 Jun 2024 03:19:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	KtmOB7samA+g9cu1NDQwjdxpz140sFdW3VaqxWB261k=; b=bslcY1j2qICrkzhu
-	6BijWHm/J7O5Y6JMQy8iWeHqkRiQao8G6w0QMsjQtDCA2OiC0fh+rrh0zG8tSUgv
-	mDvZwXF3HjqX/xoBZMHvcQqbhzJDcPfhHEG55/uCyEe7jDtBVybcLx55vUj91CRj
-	5hvnnpfq2GBgz3lP9vZdPeaVeuvDlf1orAOdFiz2L5n6gGXZ64RUsV2yFHgXgmlo
-	PktqvuC+sOGiKrphAvFt60oX1oO/kmTW2iy/xlzXPmzCp5VgnvgLyspXm8upwy5G
-	EXg8hhYHvbnNBrPwpVQSN5vbwq+r8MKgtwl1cRjcqsc5N3m66PTbpRl0nJptIx/C
-	eDvepA==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ywqw9nn3q-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Jun 2024 03:19:53 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45S3Jqce007376
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Jun 2024 03:19:52 GMT
-Received: from [10.152.193.243] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 27 Jun
- 2024 20:19:51 -0700
-Message-ID: <303ef176-39f0-4571-9594-201d64e69262@quicinc.com>
-Date: Fri, 28 Jun 2024 08:49:41 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 3/4] wifi: ath12k: add factory test mode support
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240624095305.37189-4-quic_aarasahu@quicinc.com>
- <171951023642.2426772.2204079316674415145.kvalo@kernel.org>
-Content-Language: en-US
-From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
-In-Reply-To: <171951023642.2426772.2204079316674415145.kvalo@kernel.org>
+	Fri, 28 Jun 2024 08:01:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=uZyxT8ItNiF9TeT/7R/54tZccSvg3dFdAq5unyzBKrk=;
+	t=1719561704; x=1720771304; b=HHllmuPD4/++GjLxNtlHJiCQsiJ/VWNSE3PBspKwOicCIHM
+	FCi5KkH1GkMOeRedvwZvH6EnQ+BYvXNA5TjHajcFUwv1gWK0YQYGqFvgKbZS1ZIbjjJ+ZXYpT7dhx
+	LCkUOD46S/Tpx4KwfbbMUqkyV7xugk6xOTA1DO0mrxQxxlVaCZnZKz1mQn97+bD1tsuWxD7ASjWso
+	WA0vO4SFF4UxXOurpbQpp6JcbW15h7i0SzpkIpHYhqP+nH7l1/ZV++QWx6vwa8ZAi4SH4ZlRP4vlp
+	zz8E2ctKAs5n0f4alhF15yUV9IgOfVamNeKrUwq9P8DNETWXokdyiy2nWKzy4h7g==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.97)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1sN6Y8-00000009TIJ-2QJ8;
+	Fri, 28 Jun 2024 10:01:40 +0200
+Message-ID: <59d364472721ab469da0a794baa8c33d78716434.camel@sipsolutions.net>
+Subject: Re: [PATCH 01/10] wifi: nl80211: split helper function from
+ nl80211_put_iface_combinations
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Felix Fietkau <nbd@nbd.name>, linux-wireless@vger.kernel.org
+Cc: quic_adisi@quicinc.com, quic_periyasa@quicinc.com, 
+	ath12k@lists.infradead.org
+Date: Fri, 28 Jun 2024 10:01:39 +0200
+In-Reply-To: <2160a27fc614e2a9a3cba9902e14d305db15530e.1718881762.git-series.nbd@nbd.name>
+References: <cover.a7730420cfba0f204a60e4c30e6b0e07b441ff6b.1718881762.git-series.nbd@nbd.name>
+	 <2160a27fc614e2a9a3cba9902e14d305db15530e.1718881762.git-series.nbd@nbd.name>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 6DzWIS-wBlcR31LKfAZmntJA7LjzN31-
-X-Proofpoint-GUID: 6DzWIS-wBlcR31LKfAZmntJA7LjzN31-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-27_16,2024-06-27_03,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
- priorityscore=1501 clxscore=1015 impostorscore=0 mlxscore=0
- lowpriorityscore=0 malwarescore=0 mlxlogscore=999 phishscore=0 bulkscore=0
- adultscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2406140001 definitions=main-2406280023
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.52.2 (3.52.2-1.fc40) 
+MIME-Version: 1.0
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_201957_363729_DD73B1BB 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20240628_010146_593441_9F54AEDD 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,48 +76,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On Thu, 2024-06-20 at 13:11 +0200, Felix Fietkau wrote:
+>=20
+> +static int nl80211_put_ifcomb_data(struct sk_buff *msg, bool large, int =
+idx,
+> +				   const struct ieee80211_iface_combination *c)
+>  {
+> -	struct nlattr *nl_combis;
+> -	int i, j;
+> +	struct nlattr *nl_combi, *nl_limits;
+> +	int i;
+> =20
+> -	nl_combis =3D nla_nest_start_noflag(msg,
+> -					  NL80211_ATTR_INTERFACE_COMBINATIONS);
+> -	if (!nl_combis)
+> +	nl_combi =3D nla_nest_start_noflag(msg, idx);
+> +	if (!nl_combi)
+>  		goto nla_put_failure;
 
+Not sure why the diff looks so much different here between my git and
+yours, but anyway ...
 
-On 6/27/2024 11:13 PM, Kalle Valo wrote:
-> Aaradhana Sahu <quic_aarasahu@quicinc.com> wrote:
-> 
->> Add support to process factory test mode commands(FTM) for calibration.
->> By default firmware start with MISSION mode and to process the FTM commands
->> firmware needs to be restarted in FTM mode using module parameter ftm_mode.
->> The pre-request is all the radios should be down before starting the test.
->>
->> All ath12k test mode interface related commands specified in enum
->> ath_tm_cmd.
->>
->> When start command ATH_TM_CMD_TESTMODE_START is received, ar state
->> is set to test Mode and FTM daemon sends test mode command to wifi
->> driver via cfg80211. Wifi driver sends these command to firmware as
->> wmi events. If it is segmented commands it will be broken down into
->> multiple segments and encoded with TLV header else it is sent to
->> firmware as it is.
->>
->> Firmware response via UTF events, wifi driver creates skb and send
->> to cfg80211, cfg80211 sends firmware response to FTM daemon via
->> netlink message.
->>
->> Command to boot in ftm mode
->> insmod ath12k ftm_mode=1
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
->>
->> Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
->> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
->> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> 
-> Now that the wow patchset was applied I saw a new warning:
-> 
-> drivers/net/wireless/ath/ath12k/wow.c: In function 'ath12k_wow_op_resume':
-> drivers/net/wireless/ath/ath12k/wow.c:982:17: warning: enumeration value 'ATH12K_HW_STATE_TM' not handled in switch [-Wswitch]
-> 
-> I fixed it adding the new state to ath12k_wow_op_resume(), please check:
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=882f310572b27564412e1d6158d1e9709861b7a7
-> 
+Even if it's ugly here, I do think you should add an argument to the
+function
 
-Looks fine for me, thanks!
+	..., u16 nested
+
+pass 0 for the existing user, and NLA_F_NESTED for the later new users,
+and use
+
+	nla_nest_start_noflag(msg, idx | nested);
+
+etc. for all the nla_nest_start_noflag() calls in this function. I
+really don't want to propagate the _noflag() API further.
+
+(The above was the simplest I could come up with, maybe you can find a
+better solution, but callikng nla_nest_start() conditionally seemed
+worse)
+
+johannes
 
