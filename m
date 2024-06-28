@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AF6FC3064D
-	for <ath12k@archiver.kernel.org>; Thu, 27 Jun 2024 18:29:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C11F5C2BD09
+	for <ath12k@archiver.kernel.org>; Fri, 28 Jun 2024 03:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4JpbleYAslI1zFFxkc8UhYKmB5BMTJaOvLOp/rXMwRk=; b=SXNlkUIzUaid9KEVncGm/MIXyq
-	/urZEuuBZGGyRqV/8Lsp+qIpozgrnYrKK/QF9ie4+cuPhe/kQk+wpKCl6gIR5t7d3wbU5gm6AqyvO
-	deA3vHmljW06lA91ReIX01LTpGgiNrex/PIwR2cbyy6H6zygjaPOebxLChIB5Hs5l+vSzoYS8CtGI
-	nGXPMpnxEznp5Pi8jsGkZnR5eNumKk2aErhA3TZO4qn0Qd5QQobeyolahhFsw2bShBxoEi8z4Le6v
-	ZRm47n7z6YfMbYvns3tuxcNrrtm/X/8Ya7b2ut0aSfpPuSpIWuVQbNbA8qZ8sNUQviXdvUfQj5z2B
-	8RbuwFaA==;
+	bh=KtmOB7samA+g9cu1NDQwjdxpz140sFdW3VaqxWB261k=; b=WrCS+7TlF1xhvzqtWFSdUAYwAR
+	Rn66wWqVcC4X28eliLGEIoDgz5OqnB3T/a2ooHdpE2yUM8epHmnvAh5DR0Yd7X1RqWO3oUL+ltPnU
+	9dmXYut9gHroA6qzRSB4MJiBhwV3fAzE/o1vcsBCtz80+/JG/r9lSTqN60uBJZ9jIToB692YIDelI
+	xLoNgA4c6bet8t9Q0P8kut1n/IspS5jUbXnXMIGvF7gAYxiYkwD2XNHtlVCFNMTvQulxF4B+6E72o
+	BwwNx7Joo2uRTSIzswaiDc9TfaRwqBAtHICVy8zbZiUDuup3moLk7BCxKNQyoIIWk/KGCJiP48XOl
+	pHfsKmwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMtsc-0000000BOpp-2sB2
+	id 1sN29Y-0000000CR6O-1doq
 	for ath12k@archiver.kernel.org;
-	Thu, 27 Jun 2024 18:29:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 28 Jun 2024 03:20:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMtsZ-0000000BOp9-0sEj
+	id 1sN29V-0000000CR4H-0jyI
 	for ath12k@lists.infradead.org;
-	Thu, 27 Jun 2024 18:29:57 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45RBeIQF023502;
-	Thu, 27 Jun 2024 18:29:51 GMT
+	Fri, 28 Jun 2024 03:19:59 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 45RGd6VX026182;
+	Fri, 28 Jun 2024 03:19:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4JpbleYAslI1zFFxkc8UhYKmB5BMTJaOvLOp/rXMwRk=; b=ODEByM9EptbAN5uy
-	PEjiMn5kYKn1FioqNnuxSALfTDFEmdASVjcquzJuM1rn0ZMHNmtsedWxGeGLbbOJ
-	MiNt6Qrv/9oDX63yb83w62+GF30Oc4rxY5CnT/Ju2plXYAkZ+dNk4me9Rv/Po9z5
-	LxIxdjmAcsCcDVwBZWx9G0KiDXdOyqG2r3qWNOumzSPrh6AifUmnHFJmypKw/k1C
-	Aj9Yg9uwVmLHL7cKNABZLkN47eJWI4w7czwvFFT7HZ3xAbozdtDZJPeyy/BSUYMr
-	cphtidxWHtIMxfhL8AKouyKby/n7uCDMiJav6Lxp4GajC9XcB0DZAhYYEP9sqaK8
-	KheF+Q==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 400f90mfu1-1
+	KtmOB7samA+g9cu1NDQwjdxpz140sFdW3VaqxWB261k=; b=bslcY1j2qICrkzhu
+	6BijWHm/J7O5Y6JMQy8iWeHqkRiQao8G6w0QMsjQtDCA2OiC0fh+rrh0zG8tSUgv
+	mDvZwXF3HjqX/xoBZMHvcQqbhzJDcPfhHEG55/uCyEe7jDtBVybcLx55vUj91CRj
+	5hvnnpfq2GBgz3lP9vZdPeaVeuvDlf1orAOdFiz2L5n6gGXZ64RUsV2yFHgXgmlo
+	PktqvuC+sOGiKrphAvFt60oX1oO/kmTW2iy/xlzXPmzCp5VgnvgLyspXm8upwy5G
+	EXg8hhYHvbnNBrPwpVQSN5vbwq+r8MKgtwl1cRjcqsc5N3m66PTbpRl0nJptIx/C
+	eDvepA==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3ywqw9nn3q-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Jun 2024 18:29:51 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45RITo4j015081
+	Fri, 28 Jun 2024 03:19:53 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 45S3Jqce007376
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Jun 2024 18:29:50 GMT
-Received: from [10.48.244.230] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+	Fri, 28 Jun 2024 03:19:52 GMT
+Received: from [10.152.193.243] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 27 Jun
- 2024 11:29:49 -0700
-Message-ID: <7ac1fa0d-0c5c-4f24-9ec1-4e80e785254f@quicinc.com>
-Date: Thu, 27 Jun 2024 11:29:48 -0700
+ 2024 20:19:51 -0700
+Message-ID: <303ef176-39f0-4571-9594-201d64e69262@quicinc.com>
+Date: Fri, 28 Jun 2024 08:49:41 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v5 3/4] wifi: ath12k: add factory test mode support
-Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>, Aaradhana Sahu <quic_aarasahu@quicinc.com>
+To: Kalle Valo <kvalo@kernel.org>
 CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
 References: <20240624095305.37189-4-quic_aarasahu@quicinc.com>
  <171951023642.2426772.2204079316674415145.kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
+Content-Language: en-US
+From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 In-Reply-To: <171951023642.2426772.2204079316674415145.kvalo@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: CGdtMPY4xWRf41N7ffD7RsYebj5ImLoZ
-X-Proofpoint-GUID: CGdtMPY4xWRf41N7ffD7RsYebj5ImLoZ
+X-Proofpoint-ORIG-GUID: 6DzWIS-wBlcR31LKfAZmntJA7LjzN31-
+X-Proofpoint-GUID: 6DzWIS-wBlcR31LKfAZmntJA7LjzN31-
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-06-27_14,2024-06-27_03,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 suspectscore=0
- spamscore=0 malwarescore=0 mlxlogscore=999 mlxscore=0 adultscore=0
- impostorscore=0 lowpriorityscore=0 phishscore=0 priorityscore=1501
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2406270138
+ definitions=2024-06-27_16,2024-06-27_03,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 clxscore=1015 impostorscore=0 mlxscore=0
+ lowpriorityscore=0 malwarescore=0 mlxlogscore=999 phishscore=0 bulkscore=0
+ adultscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2406140001 definitions=main-2406280023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_112955_513776_4F5D70BF 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20240627_201957_363729_DD73B1BB 
+X-CRM114-Status: GOOD (  14.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,7 +99,9 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/27/2024 10:43 AM, Kalle Valo wrote:
+
+
+On 6/27/2024 11:13 PM, Kalle Valo wrote:
 > Aaradhana Sahu <quic_aarasahu@quicinc.com> wrote:
 > 
 >> Add support to process factory test mode commands(FTM) for calibration.
@@ -139,5 +141,6 @@ On 6/27/2024 10:43 AM, Kalle Valo wrote:
 > 
 > https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=882f310572b27564412e1d6158d1e9709861b7a7
 > 
-LGTM, thanks!
+
+Looks fine for me, thanks!
 
