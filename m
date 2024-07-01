@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C284C2BD09
-	for <ath12k@archiver.kernel.org>; Mon,  1 Jul 2024 13:39:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E2F8C2BD09
+	for <ath12k@archiver.kernel.org>; Mon,  1 Jul 2024 13:43:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
 	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
 	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lv/xWp67jD+3LKhR3cr2e3EDo3WK450xk+C/um+LvvM=; b=0B7m9mYoWWdB4mnwMwcqN/beTs
-	2W3+X14MdF409Q60TE7eoIUg1FJKfI4lfhy8AUCzuiXVHZmAOZl1C/9YPzMHbwwO/t8MgWDdPxw2g
-	v54JZgNVunVPRnfADk3rq50ZXHmSB9qPUM2CvIWsV8mL+r37V+8DV5xD6v+0JcvQCO675y+ONpq2m
-	QaH3Hhd/+HedDHgNQx3aUwwqo/rZMJ43vjE3ngdsH92d1QNy5OPXRy1a5SjvXfe6zhv/Ssq5EZHSr
-	ploQItjUt2WRp0vxGlyqTNgbv+GKmuf0NiNv5WVpUNJTi0VHHyvbmr+sSqCxbKvy7YykWxBXTrf2c
-	TYi27TEQ==;
+	bh=GS0gvai3FpUXlWITG0+rNA8YHXwBihMeWS5NcwHHw0Y=; b=V4Ayem4nx736FsC964LfOWZ6uQ
+	IyIKcy3ogaFCwN9Z4P1lddCQ6xQWMg461mUHEJNLmkRF0I2EQTxgzqSHjFR5W2V9MaDrGbjNW9vwC
+	qaHJ6oQZXBgeKbESOJdMMHKddvHWHTC6jLiwcnmCCwAa7MZfOyna4cm9mW/mVV0MmdeWJjsFheYaG
+	oet0lRrAzmpl9wOGy9tGMqhDZpxI77ksOqFQDMWgBkMPG3xWTcdwbf0AHUVDFQzKBUT7o4oTB+d1M
+	lrvuH0R4zcPxDxQLge4Pf017uL0wW0FAq8sd2C6H82awOUbBtZLosPL//PILcYJUWrhKcs7kz8HSs
+	aS6G39Zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOHFx-00000003WzS-2mzK
+	id 1sOHJI-00000003Xjx-46R5
 	for ath12k@archiver.kernel.org;
-	Mon, 01 Jul 2024 13:39:45 +0000
+	Mon, 01 Jul 2024 13:43:12 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOHFv-00000003WyD-0eiw
+	id 1sOHJA-00000003Xfy-0dKx
 	for ath12k@lists.infradead.org;
-	Mon, 01 Jul 2024 13:39:44 +0000
+	Mon, 01 Jul 2024 13:43:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
 	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=lv/xWp67jD+3LKhR3cr2e3EDo3WK450xk+C/um+LvvM=;
-	t=1719841182; x=1721050782; b=TTLgGGDLfwcXGpote3Mi13ndcSJbKS3pi78k4gm89gJ1wwo
-	0N8lnJ47P6+L3bXrgmFyrWD3YYoL1EeHJ7fkMmiMcQ+tQFiKAhWg5oAYRFTHJNyPn7CUCb3A/MbO1
-	o+0Yq1uVFhGCikQDtS8vWqsTCM90p9Z8XwVCz+G78Tqfg8ilh/b5gu4dmo25S2ra1xeFdVV+uBu1+
-	cPR/USI4/nC3tMfYyZzMFGI1/dJF3ekjb0KlH/aAzQIJ1V02kskafs7iGhwlmnoHs0M9N2CMWSApI
-	GmEZJYzA2oP0dfzFFKk9xCAWEDnqtCk7eEpGilx14L+bOb0eNlLmIYe2gkpvlAbw==;
+	Resent-Cc:Resent-Message-ID; bh=GS0gvai3FpUXlWITG0+rNA8YHXwBihMeWS5NcwHHw0Y=;
+	t=1719841383; x=1721050983; b=WAlHgB6iZf+85Y5xuhDqnF6t9ZYyYpKeAWf8kM8wEC71rny
+	w8RTOk/HexXISggwWdjsEvQOpTyO3naHmIKHbuyC49GumyVJdLPQvl/x/aenXORF3gY3RKDLbfVRV
+	82hyhseTXTDX8FV1K/F2jCWMKKSUL4+t6jm6HPD8M+PqZP85/mJxzmEzo/x8UQey3Rzv9txuXOfrI
+	zwA1gkeUrldtbesAm/Zt/Hm4PJDZtedVNJh/3mvfdrBtaS6oiUBmSOtKg3btodljxXwAZTP/Qk4e3
+	dCD5sM+Wq2xsKQCwngpNDbERemufjdAui5eXkDjt50Yx9n29pN2/nP2D7E+cOEmA==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
 	(Exim 4.97)
 	(envelope-from <johannes@sipsolutions.net>)
-	id 1sOHFq-00000002HCB-30iR;
-	Mon, 01 Jul 2024 15:39:39 +0200
-Message-ID: <5912f046e25d33ca429904483d95c2a648db5962.camel@sipsolutions.net>
-Subject: Re: [PATCH v2 07/10] wifi: mac80211: extend ifcomb check functions
- for multi-radio
+	id 1sOHJ6-00000002Hju-2UP2;
+	Mon, 01 Jul 2024 15:43:00 +0200
+Message-ID: <b5d1ea21c5cbbceac0e5a4f94a68ee9e2c182e3b.camel@sipsolutions.net>
+Subject: Re: [PATCH v2 10/10] wifi: mac80211_hwsim: add support for
+ multi-radio wiphy
 From: Johannes Berg <johannes@sipsolutions.net>
 To: Felix Fietkau <nbd@nbd.name>, linux-wireless@vger.kernel.org
 Cc: quic_adisi@quicinc.com, quic_periyasa@quicinc.com, 
 	ath12k@lists.infradead.org
-Date: Mon, 01 Jul 2024 15:39:37 +0200
-In-Reply-To: <b136fe952d4a202da8831b18f3b17012354372c6.1719733819.git-series.nbd@nbd.name>
+Date: Mon, 01 Jul 2024 15:42:59 +0200
+In-Reply-To: <816345bafb43d5ef5078f94ca309d5d3da2619e7.1719733819.git-series.nbd@nbd.name>
 References: <cover.692a4cf1c6bce46eadecbcbf0f3e9e599099f8c4.1719733819.git-series.nbd@nbd.name>
-	 <b136fe952d4a202da8831b18f3b17012354372c6.1719733819.git-series.nbd@nbd.name>
+	 <816345bafb43d5ef5078f94ca309d5d3da2619e7.1719733819.git-series.nbd@nbd.name>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 User-Agent: Evolution 3.52.2 (3.52.2-1.fc40) 
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240701_063943_220384_17A18038 
-X-CRM114-Status: GOOD (  18.15  )
+X-CRM114-CacheID: sfid-20240701_064304_210921_B89282EC 
+X-CRM114-Status: GOOD (  12.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,125 +77,44 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On Sun, 2024-06-30 at 09:50 +0200, Felix Fietkau wrote:
+> This registers one wiphy radio per supported band. Number of different
+> channels is set per radio.
 >=20
-> +++ b/net/mac80211/ieee80211_i.h
-> @@ -2043,6 +2043,7 @@ static inline bool ieee80211_sdata_running(struct i=
-eee80211_sub_if_data *sdata)
->  {
->  	return test_bit(SDATA_STATE_RUNNING, &sdata->state);
->  }
-> +u32 ieee80211_get_radio_mask(struct wiphy *wiphy, struct net_device *dev=
-);
-
-nit: I feel like maybe there's a better place, and even if not there
-should be a blank line? :)
-
+> Signed-off-by: Felix Fietkau <nbd@nbd.name>
+> ---
+>  drivers/net/wireless/virtual/mac80211_hwsim.c | 78 +++++++++++++++++---
+>  drivers/net/wireless/virtual/mac80211_hwsim.h |  4 +-
+>  2 files changed, 71 insertions(+), 11 deletions(-)
+>=20
+> diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.c b/drivers/net/=
+wireless/virtual/mac80211_hwsim.c
+> index 8491eb32f760..50aa2f838e9e 100644
+> --- a/drivers/net/wireless/virtual/mac80211_hwsim.c
+> +++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
+> @@ -69,6 +69,9 @@ static bool mlo;
+>  module_param(mlo, bool, 0444);
+>  MODULE_PARM_DESC(mlo, "Support MLO");
 > =20
->  /* link handling */
->  void ieee80211_link_setup(struct ieee80211_link_data *link);
-> @@ -2640,8 +2641,8 @@ void ieee80211_recalc_dtim(struct ieee80211_local *=
-local,
->  int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
->  				 const struct cfg80211_chan_def *chandef,
->  				 enum ieee80211_chanctx_mode chanmode,
-> -				 u8 radar_detect);
-> -int ieee80211_max_num_channels(struct ieee80211_local *local);
-> +				 u8 radar_detect, int radio_idx);
-> +int ieee80211_max_num_channels(struct ieee80211_local *local, int radio_=
-idx);
->  void ieee80211_recalc_chanctx_chantype(struct ieee80211_local *local,
->  				       struct ieee80211_chanctx *ctx);
+> +static bool multi_radio;
+> +module_param(multi_radio, bool, 0444);
+> +MODULE_PARM_DESC(mlo, "Support Multiple Radios per wiphy");
+>  /**
 
-but maybe just put it next to ieee80211_max_num_channels()?
+nit: keep a blank line
 
-> +static u32
-> +__ieee80211_get_radio_mask(struct ieee80211_sub_if_data *sdata)
-> +{
-> +	struct ieee80211_bss_conf *link_conf;
-> +	struct ieee80211_chanctx_conf *conf;
-> +	unsigned int link_id;
-> +	u32 mask =3D 0;
+> @@ -5423,8 +5442,41 @@ static int mac80211_hwsim_new_radio(struct genl_in=
+fo *info,
+>  		mac80211_hwsim_sband_capab(sband);
+> =20
+>  		hw->wiphy->bands[band] =3D sband;
 > +
-> +	for_each_vif_active_link(&sdata->vif, link_conf, link_id) {
-> +		conf =3D rcu_dereference(link_conf->chanctx_conf);
-> +		if (!conf || conf->radio_idx < 0)
+> +		if (!param->multi_radio)
 > +			continue;
 > +
-> +		mask |=3D BIT(conf->radio_idx);
-> +	}
-> +
-> +	return mask;
-> +}
-> +
-> +u32 ieee80211_get_radio_mask(struct wiphy *wiphy, struct net_device *dev=
-)
-> +{
-> +	struct ieee80211_sub_if_data *sdata =3D IEEE80211_DEV_TO_SUB_IF(dev);
-> +
-> +	return __ieee80211_get_radio_mask(sdata);
+> +		if (WARN_ON_ONCE(n_bands >=3D ARRAY_SIZE(data->radio))) {
 
-Here's the context stuff I was talking about - you're using
-rcu_dereference() when it almost seems it should be sdata_dereference()
-(or so, it's all equivalent now with wiphy dereference)?
-
-I'm not sure how this even gets to be in an RCU critical section, e.g.
-when called via
-
-> +static bool
-> +ieee80211_sdata_uses_radio(struct ieee80211_sub_if_data *sdata, int radi=
-o_idx)
-> +{
-> +	if (radio_idx < 0)
-> +		return true;
-> +
-> +	return __ieee80211_get_radio_mask(sdata) & BIT(radio_idx);
-> +}
-
-...
-
-> +static void
-> +ieee80211_fill_ifcomb_params(struct ieee80211_local *local,
-> +			     struct iface_combination_params *params,
-> +			     const struct cfg80211_chan_def *chandef,
-> +			     struct ieee80211_sub_if_data *sdata)
-> +{
-
-...
-
-> +	list_for_each_entry_rcu(sdata_iter, &local->interfaces, list) {
-> +		struct wireless_dev *wdev_iter;
-> +
-> +		wdev_iter =3D &sdata_iter->wdev;
-> +
-> +		if (sdata_iter =3D=3D sdata ||
-> +		    !ieee80211_sdata_running(sdata_iter) ||
-> +		    cfg80211_iftype_allowed(local->hw.wiphy,
-> +					    wdev_iter->iftype, 0, 1))
-> +			continue;
-> +
-> +		if (!ieee80211_sdata_uses_radio(sdata_iter, params->radio_idx))
-> +			continue;
-
-
-here?
-
-Also the list_for_each_entry_rcu() seems weird (although I see that we
-even have pre-existing code like that now), because e.g.
-
- ieee80211_open()
--> ieee80211_check_concurrent_iface()
--> ieee80211_check_combinations()
-
-is called outside RCU critical section? There's an existing
-list_for_each_entry_rcu() inside of it which seems like it should be a
-problem, so maybe I'm missing something?
-
-... investigates a bit ...
-
-yeah I can't get even CONFIG_PROVE_RCU_LIST to spit out warnings, but
-checking manually, we (generally) aren't in RCU critical section here,
-at least not unconditionally.
+Not sure you should WARN_ON for userspace stuff; it's hwsim, but syzbot
+will complain. Could use GENL_SET_ERR_MSG() though.
 
 johannes
-
 
