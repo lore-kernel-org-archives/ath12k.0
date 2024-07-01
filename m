@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA996C30653
-	for <ath12k@archiver.kernel.org>; Mon,  1 Jul 2024 14:13:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7553DC3065F
+	for <ath12k@archiver.kernel.org>; Mon,  1 Jul 2024 14:13:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Tojz4OudxD5DBp2PA2+KRIAkcR1dJrFxmA0POn6n400=; b=HubKWyuIt+jxcus19BNvMQ/Vpj
-	5SN71nDIUypYXt2r/4EB4D3+Gh/swMksl6GiR4+z+idKBklN5k8IVxLtsMizQZ9osTF/xy4iTpZak
-	rks+54r4gEOYWlRiB++Mo7XDtmH9w3fOkrny7d8fY8I4L4EiN64JdLfeB6O3PDZKU39UJ8+QEuCua
-	IJqPxfN2SfYdhv8/YySokqVlWutssP6RlyKFAkKG0IBxFM6QHqdpEzOeLVSVTwkOkWsd1VPf8pmw/
-	CS71P2/SmbctLFzNz2V3KosMh9FBTNTO7BqSIvR3pkVXsknhnhdDHVgs6PKkQ9a3vx1YohH10K3Sz
-	TdoFmiTw==;
+	bh=SBRjVM0iFUMY2+yuroIWllgnt6Y3JiWSjurhpm0ox9w=; b=uJagdy+nqRhKZtOULiSoL9xGzB
+	/dbdCjtrN8g4DnDkxvR0J/60j1HbG1+qOOrZrSrhBWnzFmJUXis/EUXzv8hGjPsFNw5eZCCrf1VfS
+	lusUzsWt9sgwZhWNlqjqjDjhhU8u4zQBjpfBN3OsgqJwYf55UZOIBKCj7BO6Ql3j7G+ls7VCNrJoX
+	Z6Q0NGSc/BqItec7dgY8CAUZuNOjOd1tXVANcMc3z42yvbqo6GdaCOGmQsLjtjl1pcBEaFXQ7CkCt
+	RBTRrfiFTTBLOzA++zpNBLkZW4vfUY2BrbAIpgpAnNUOTOaDaFx61aaoeiNFcfsnXa23ehDejLt0o
+	Wu/vwQ6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOHmq-00000003g46-1s1Z
+	id 1sOHmr-00000003g4m-0lSl
 	for ath12k@archiver.kernel.org;
-	Mon, 01 Jul 2024 14:13:44 +0000
+	Mon, 01 Jul 2024 14:13:45 +0000
 Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOHmi-00000003fwm-0ndN
+	id 1sOHmi-00000003fwz-45iv
 	for ath12k@lists.infradead.org;
-	Mon, 01 Jul 2024 14:13:40 +0000
+	Mon, 01 Jul 2024 14:13:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=Tojz4OudxD5DBp2PA2+KRIAkcR1dJrFxmA0POn6n400=; b=jiorGqoZi+CSQ84RJtKJ1bkpuA
-	5XUXfU179hwSeNR5tKPC35Ju0uTOkYCkCe9C2Ith5clNJJ4y0tRWNEidk9lSTxTeO4huX9jFbeC0m
-	68MtsTDJ9UrPCBkln05wkQVNYkPHRZFx5eoG0tI4weOmkOC1JjW2BjGxFUBobQytGNt8=;
+	bh=SBRjVM0iFUMY2+yuroIWllgnt6Y3JiWSjurhpm0ox9w=; b=i27Fcr+3OEjPr9BoSrHhkUrDkg
+	S4863mWeh/FyD5lzbhEREEYN3jbg0PAPDmkHZsGf9JpvaDvtbRJewTmVK/gGzr55buuAigJSRh/l8
+	jL5fGhv6a9qoepVHvR8Dn/Z4K9lZDWDX8EbxfiZ/E8n1TmOcVSizEw5BjulJg5l9hjOU=;
 Received: from p4ff13dca.dip0.t-ipconnect.de ([79.241.61.202] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1sOHma-001Qfu-0J;
-	Mon, 01 Jul 2024 16:13:28 +0200
+	id 1sOHmZ-001Qfu-1r;
+	Mon, 01 Jul 2024 16:13:27 +0200
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
 Cc: johannes@sipsolutions.net,
 	quic_adisi@quicinc.com,
 	quic_periyasa@quicinc.com,
 	ath12k@lists.infradead.org
-Subject: [PATCH v3 06/10] wifi: mac80211: add radio index to ieee80211_chanctx_conf
-Date: Mon,  1 Jul 2024 16:13:21 +0200
-Message-ID: <5e82c58a18e6684537415a5cfd17a55de90bdcbc.1719843147.git-series.nbd@nbd.name>
+Subject: [PATCH v3 04/10] wifi: cfg80211: add helper for checking if a chandef is valid on a radio
+Date: Mon,  1 Jul 2024 16:13:19 +0200
+Message-ID: <eb4cfb174f0241d69842feee7fc30d8af4fb0371.1719843147.git-series.nbd@nbd.name>
 X-Mailer: git-send-email 2.44.0
 In-Reply-To: <cover.a50ea6fd728e14cfdaafeb9cfac003364713c8e7.1719843147.git-series.nbd@nbd.name>
 References: <cover.a50ea6fd728e14cfdaafeb9cfac003364713c8e7.1719843147.git-series.nbd@nbd.name>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240701_071336_812432_B73C54F4 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20240701_071337_240971_8B73F6AA 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,74 +74,77 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Will be used to explicitly assign a channel context to a wiphy radio.
+Check if the full channel width is in the radio's frequency range.
 
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- include/net/mac80211.h | 2 ++
- net/mac80211/chan.c    | 8 +++++---
- 2 files changed, 7 insertions(+), 3 deletions(-)
+ include/net/cfg80211.h |  9 +++++++++
+ net/wireless/util.c    | 35 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 44 insertions(+)
 
-diff --git a/include/net/mac80211.h b/include/net/mac80211.h
-index bd0f8aefa797..e78ccbe38d6d 100644
---- a/include/net/mac80211.h
-+++ b/include/net/mac80211.h
-@@ -250,6 +250,7 @@ struct ieee80211_chan_req {
-  * @min_def: the minimum channel definition currently required.
-  * @ap: the channel definition the AP actually is operating as,
-  *	for use with (wider bandwidth) OFDMA
-+ * @radio_idx: index of the wiphy radio used used for this channel
-  * @rx_chains_static: The number of RX chains that must always be
-  *	active on the channel to receive MIMO transmissions
-  * @rx_chains_dynamic: The number of RX chains that must be enabled
-@@ -264,6 +265,7 @@ struct ieee80211_chanctx_conf {
- 	struct cfg80211_chan_def min_def;
- 	struct cfg80211_chan_def ap;
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index bb3b803e5468..f39e4d1b2793 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -6507,6 +6507,15 @@ static inline bool cfg80211_channel_is_psc(struct ieee80211_channel *chan)
+ }
  
-+	int radio_idx;
- 	u8 rx_chains_static, rx_chains_dynamic;
- 
- 	bool radar_enabled;
-diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
-index 06a65dc6f6c6..6c4d02cb07bb 100644
---- a/net/mac80211/chan.c
-+++ b/net/mac80211/chan.c
-@@ -656,7 +656,8 @@ ieee80211_chanctx_radar_required(struct ieee80211_local *local,
- static struct ieee80211_chanctx *
- ieee80211_alloc_chanctx(struct ieee80211_local *local,
- 			const struct ieee80211_chan_req *chanreq,
--			enum ieee80211_chanctx_mode mode)
-+			enum ieee80211_chanctx_mode mode,
-+			int radio_idx)
- {
- 	struct ieee80211_chanctx *ctx;
- 
-@@ -674,6 +675,7 @@ ieee80211_alloc_chanctx(struct ieee80211_local *local,
- 	ctx->conf.rx_chains_dynamic = 1;
- 	ctx->mode = mode;
- 	ctx->conf.radar_enabled = false;
-+	ctx->conf.radio_idx = radio_idx;
- 	_ieee80211_recalc_chanctx_min_def(local, ctx, NULL, false);
- 
- 	return ctx;
-@@ -714,7 +716,7 @@ ieee80211_new_chanctx(struct ieee80211_local *local,
- 
- 	lockdep_assert_wiphy(local->hw.wiphy);
- 
--	ctx = ieee80211_alloc_chanctx(local, chanreq, mode);
-+	ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
- 	if (!ctx)
- 		return ERR_PTR(-ENOMEM);
- 
-@@ -1155,7 +1157,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
- 			    !list_empty(&curr_ctx->reserved_links))
- 				return -EBUSY;
- 
--			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode);
-+			new_ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
- 			if (!new_ctx)
- 				return -ENOMEM;
- 
+ /**
++ * cfg80211_radio_chandef_valid - Check if the radio supports the chandef
++ *
++ * @radio: wiphy radio
++ * @chandef: chandef for current channel
++ */
++bool cfg80211_radio_chandef_valid(const struct wiphy_radio *radio,
++				  const struct cfg80211_chan_def *chandef);
++
++/**
+  * ieee80211_get_response_rate - get basic rate for a given rate
+  *
+  * @sband: the band to look for rates in
+diff --git a/net/wireless/util.c b/net/wireless/util.c
+index 2492f259621f..9a7c3adc8a3b 100644
+--- a/net/wireless/util.c
++++ b/net/wireless/util.c
+@@ -2886,3 +2886,38 @@ cfg80211_get_iftype_ext_capa(struct wiphy *wiphy, enum nl80211_iftype type)
+ 	return NULL;
+ }
+ EXPORT_SYMBOL(cfg80211_get_iftype_ext_capa);
++
++static bool
++ieee80211_radio_freq_range_valid(const struct wiphy_radio *radio,
++				 u32 freq, u32 width)
++{
++	const struct wiphy_radio_freq_range *r;
++	int i;
++
++	for (i = 0; i < radio->n_freq_range; i++) {
++		r = &radio->freq_range[i];
++		if (freq - width / 2 >= r->start_freq &&
++		    freq + width / 2 <= r->end_freq)
++			return true;
++	}
++
++	return false;
++}
++
++bool cfg80211_radio_chandef_valid(const struct wiphy_radio *radio,
++				  const struct cfg80211_chan_def *chandef)
++{
++	u32 freq, width;
++
++	freq = ieee80211_chandef_to_khz(chandef);
++	width = nl80211_chan_width_to_mhz(chandef->width);
++	if (!ieee80211_radio_freq_range_valid(radio, freq, width))
++		return false;
++
++	freq = MHZ_TO_KHZ(chandef->center_freq2);
++	if (freq && !ieee80211_radio_freq_range_valid(radio, freq, width))
++		return false;
++
++	return true;
++}
++EXPORT_SYMBOL(cfg80211_radio_chandef_valid);
 -- 
 git-series 0.9.1
 
