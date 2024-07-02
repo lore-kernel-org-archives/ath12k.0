@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AA19C3064D
-	for <ath12k@archiver.kernel.org>; Tue,  2 Jul 2024 11:06:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0680C3064D
+	for <ath12k@archiver.kernel.org>; Tue,  2 Jul 2024 11:07:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qJWA/vikia2eqeHvikmHerHmNek53snfgPTJOf61hUo=; b=BtXl8kZZK9TJNeb0v8Zm0x4f0k
-	Hsdr3oernIDYnVXxO7IrUe5XTmLdQ8xdi3lW94WiirK99cm/SphEYgKDpPv8McTZ3OuZvfZd6hj0J
-	eXoSlJcSFPrtjhHdhkvmKxx/sT1z20rKKDaLfhGXIKav8Cx+J16nXYQS7sLiDF7cl5Bp5DN/DuGV6
-	OdROlHGVnZhan0bwjlq7sfGiUXjL5ace51URzReQdBojySDVj0EKmdYwHhdROyG6Icyxpi95C0oBL
-	3uK+T4PjchoNFccLDafdP3FfwXY8gclpgC5rOq6BJW7RszFO4S6tPUrEsfDp4EWhKkuaJNCLqAPcC
-	LjyPyUHA==;
+	bh=DPUwk9Bg7NOVcMjpKZiBrNcQqZRu3Q+f17SRCYvy4Hg=; b=tFKl6cf6647iY2KNatHrmA7zf+
+	RYz9upw58a1nJXNZx0fVj8vIVzjT2idnJPff1gDLeyBhy4W9d5qoD2SSHbWAfKXOn7Udya7NtpdrF
+	FslNGkO24YmZecIbac01Uu+c8sS/iTS11kQlurDpNzDrurI84GPbZ5FVUspi2k5YiHVZzXI2OWqPt
+	9VHnr0TZOv04vz18N3cHqrjz5VrUsxX0YKBpkpJsvn8sEZ2uRCYmFc+KQZdVmpWCL7Al8Cp2JtTQ1
+	O9by1mhYF5vQkBw4Y2UT5GUo2N3F+RrF0W0/EGdEyJbS7Uc94qn3oOcWMi+i18RuB8vIj+IWt3wX4
+	7IS17GDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sObKt-00000006QrO-04rc
+	id 1sObMZ-00000006R2p-2dt0
 	for ath12k@archiver.kernel.org;
-	Tue, 02 Jul 2024 11:06:11 +0000
+	Tue, 02 Jul 2024 11:07:55 +0000
 Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sObKo-00000006Qqr-2WnI
+	id 1sObMX-00000006R2D-0NBm
 	for ath12k@lists.infradead.org;
-	Tue, 02 Jul 2024 11:06:09 +0000
+	Tue, 02 Jul 2024 11:07:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
 	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
 	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=qJWA/vikia2eqeHvikmHerHmNek53snfgPTJOf61hUo=; b=I3PjfW7FKF5Cto6UHhOsC5VGLh
-	GyOFkmtY+Y2hArw/72W2zcHCw+AjawiH4t2eTQXz0sK5J+ap0whQg4TZfADrvGb34kycLV0PLZhBm
-	Axt1sqVvkap86x6pU8+LpwWx0G0m9E0BR0FSNdO97l/VJHcPGTEzTEanvKrIO3axITWc=;
+	bh=DPUwk9Bg7NOVcMjpKZiBrNcQqZRu3Q+f17SRCYvy4Hg=; b=WgAZ5E4pb2qeFoMJwG+hj3zA+x
+	6HSxi23BxTpnDkp++Y6FnSbWuG+kx5Bqq5+UfuyWqQ+dX/swc/2JYLf1BMgzfeBz4rAkN6C9fWBI5
+	Mr7MOuTZLQ3mGiounH4jomoqx9CRrOVMk4m4s1l0/0XPWwEqDWVLDbFAm/Zqn1wHcuyE=;
 Received: from p54ae9766.dip0.t-ipconnect.de ([84.174.151.102] helo=nf.local)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1sObKg-001kdO-0A;
-	Tue, 02 Jul 2024 13:05:58 +0200
-Message-ID: <f6cab718-2336-44db-b8a4-bad6a4d626a2@nbd.name>
-Date: Tue, 2 Jul 2024 13:05:57 +0200
+	id 1sObMQ-001kfi-2w;
+	Tue, 02 Jul 2024 13:07:46 +0200
+Message-ID: <a57d5571-f252-49b7-b182-75df6dd2d96a@nbd.name>
+Date: Tue, 2 Jul 2024 13:07:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 07/10] wifi: mac80211: extend ifcomb check functions
- for multi-radio
+Subject: Re: [PATCH v3 05/10] wifi: mac80211: add support for DFS with
+ multiple radios
 To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
  linux-wireless@vger.kernel.org
 Cc: johannes@sipsolutions.net, quic_adisi@quicinc.com,
  ath12k@lists.infradead.org
 References: <cover.a50ea6fd728e14cfdaafeb9cfac003364713c8e7.1719843147.git-series.nbd@nbd.name>
- <15d63cd77aad2d2eef503676a3f3fbabe78d5828.1719843147.git-series.nbd@nbd.name>
- <9c3da9ac-490a-d4aa-a830-7272c1a67b9c@quicinc.com>
+ <61899e29de4e0f5437643d578999d2a3d4d7d7b2.1719843147.git-series.nbd@nbd.name>
+ <bbb93003-807b-b6af-2096-20837de902f0@quicinc.com>
 Content-Language: en-US
 From: Felix Fietkau <nbd@nbd.name>
 Autocrypt: addr=nbd@nbd.name; keydata=
@@ -81,12 +81,12 @@ Autocrypt: addr=nbd@nbd.name; keydata=
  TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
  GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
  cL98efvrjdstUfTCP2pfetyN
-In-Reply-To: <9c3da9ac-490a-d4aa-a830-7272c1a67b9c@quicinc.com>
+In-Reply-To: <bbb93003-807b-b6af-2096-20837de902f0@quicinc.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_040606_752605_456B6C2C 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20240702_040753_164183_AF2B400C 
+X-CRM114-Status: GOOD (  15.76  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,67 +101,80 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 02.07.24 12:32, Karthikeyan Periyasamy wrote:
+On 02.07.24 12:58, Karthikeyan Periyasamy wrote:
 > 
 > 
 > On 7/1/2024 7:43 PM, Felix Fietkau wrote:
->> Add support for counting global and per-radio max/current number of
->> channels, as well as checking radio-specific interface combinations.
+>> DFS can be supported with multi-channel combinations, as long as each DFS
+>> capable radio only supports one channel.
 >> 
 >> Signed-off-by: Felix Fietkau <nbd@nbd.name>
 >> ---
->>   net/mac80211/cfg.c         |   7 +-
->>   net/mac80211/chan.c        |  17 +++--
->>   net/mac80211/ibss.c        |   2 +-
->>   net/mac80211/ieee80211_i.h |   5 +-
->>   net/mac80211/iface.c       |   2 +-
->>   net/mac80211/util.c        | 126 ++++++++++++++++++++++++++------------
->>   6 files changed, 108 insertions(+), 51 deletions(-)
+>>   net/mac80211/main.c | 32 ++++++++++++++++++++++++--------
+>>   1 file changed, 24 insertions(+), 8 deletions(-)
 >> 
-> 
-> ...
-> 
->> @@ -3982,6 +4062,8 @@ int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
->>   	if (iftype != NL80211_IFTYPE_UNSPECIFIED)
->>   		params.iftype_num[iftype] = 1;
+>> diff --git a/net/mac80211/main.c b/net/mac80211/main.c
+>> index 7578ea56c12f..58bebfdaa062 100644
+>> --- a/net/mac80211/main.c
+>> +++ b/net/mac80211/main.c
+>> @@ -1091,6 +1091,21 @@ static int ieee80211_init_cipher_suites(struct ieee80211_local *local)
+>>   	return 0;
+>>   }
 >>   
->> +	ieee80211_fill_ifcomb_params(local, &params, shared ? chandef : NULL,
->> +				     sdata);
->>   	list_for_each_entry(ctx, &local->chanctx_list, list) {
->>   		if (ctx->replace_state == IEEE80211_CHANCTX_WILL_BE_REPLACED)
->>   			continue;
->> @@ -3991,28 +4073,9 @@ int ieee80211_check_combinations(struct ieee80211_sub_if_data *sdata,
->>   			params.num_different_channels++;
->>   			continue;
+>> +static bool
+>> +ieee80211_ifcomb_check_radar(const struct ieee80211_iface_combination *comb,
+>> +			     int n_comb)
+>> +{
+>> +	int i;
+>> +
+>> +	/* DFS is not supported with multi-channel combinations yet */
+>> +	for (i = 0; i < n_comb; i++, comb++)
+>> +		if (comb->radar_detect_widths &&
+>> +		    comb->num_different_channels > 1)
+>> +			return false;
+>> +
+>> +	return true;
+>> +}
+>> +
+>>   int ieee80211_register_hw(struct ieee80211_hw *hw)
+>>   {
+>>   	struct ieee80211_local *local = hw_to_local(hw);
+>> @@ -1177,17 +1192,18 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
+>>   			if (comb->num_different_channels > 1)
+>>   				return -EINVAL;
 >>   		}
->> -		if (chandef && chanmode == IEEE80211_CHANCTX_SHARED &&
->> -		    cfg80211_chandef_compatible(chandef,
->> -						&ctx->conf.def))
->> -			continue;
->>   		params.num_different_channels++;
+>> -	} else {
+>> -		/* DFS is not supported with multi-channel combinations yet */
+>> -		for (i = 0; i < local->hw.wiphy->n_iface_combinations; i++) {
+>> -			const struct ieee80211_iface_combination *comb;
+>> -
+>> -			comb = &local->hw.wiphy->iface_combinations[i];
+>> +	} else if (hw->wiphy->n_radio) {
+>> +		for (i = 0; i < hw->wiphy->n_radio; i++) {
+>> +			const struct wiphy_radio *radio = &hw->wiphy->radio[i];
+>>   
+>> -			if (comb->radar_detect_widths &&
+>> -			    comb->num_different_channels > 1)
+>> +			if (!ieee80211_ifcomb_check_radar(radio->iface_combinations,
+>> +							  radio->n_iface_combinations))
+>>   				return -EINVAL;
+>>   		}
+>> +	} else {
+>> +		if (!ieee80211_ifcomb_check_radar(hw->wiphy->iface_combinations,
+>> +						  hw->wiphy->n_iface_combinations))
+>> +			return -EINVAL;
 >>   	}
 >>   
->> -	list_for_each_entry_rcu(sdata_iter, &local->interfaces, list) {
->> -		struct wireless_dev *wdev_iter;
->> -
->> -		wdev_iter = &sdata_iter->wdev;
->> -
->> -		if (sdata_iter == sdata ||
->> -		    !ieee80211_sdata_running(sdata_iter) ||
->> -		    cfg80211_iftype_allowed(local->hw.wiphy,
->> -					    wdev_iter->iftype, 0, 1))
->> -			continue;
->> -
->> -		params.iftype_num[wdev_iter->iftype]++;
->> -		total++;
->> -	}
->> -
->>   	if (total == 1 && !params.radar_detect)
+>>   	/* Only HW csum features are currently compatible with mac80211 */
 > 
-> Here, total is always 1. no ?
+> In ieee80211_register_hw(), mac80211 check the global iface combination
+> against the IBSS interface max.
+> 
+> This check may fail for the radio specific iface combination
+> advertisement since global iface combination is sum of all radio
+> capabilities, no ?
 
-Yes, seems that I forgot to delete a few lines here.
-Will fix in the next version.
+You're right, will fix.
 
 Thanks,
 
