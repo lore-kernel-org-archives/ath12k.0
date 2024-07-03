@@ -4,63 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92B68C31D97
-	for <ath12k@archiver.kernel.org>; Wed,  3 Jul 2024 07:14:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19A46C2BD09
+	for <ath12k@archiver.kernel.org>; Wed,  3 Jul 2024 09:20:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gCaQlshmePyQDB6ovrNsJ5/VaZp8xkilWo/C5ufKmIY=; b=gI3KxA5Q9IPSH/HHhKNrthEnjy
-	37aDoiE3km2Hu+9qi2sy9LSBXwW0u6FZbADRchiuy1p5a9wpG2+G+Zvex+QI01Z85Udv1K3VpCuOC
-	LUNkQhcHVJaLTGY+gBjARDczpx5qAf8dbxl/Z7R2uZLbDXgvgekuuZrTHlMLSjEPDwIhIaIIzIqO7
-	vu0j0Z0FG7tPfhAeu4klsAIvduGRyUKG3UkwD7hB4WHpF3Ija6A/JvDtEmbwRwoVE/WBv0KskSJ6q
-	Lxu6xy+EyqhPxZOifUBGui0Rn7ISmTJZOre3WfrB3mpOcprjcTFndMjv5ws5QBEccv+1pL6x5Pt7Y
-	gCb/Aczw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=hY0/9ZM/YXqyB5o3uYII/z7Pf9Qrq7ksgaSNFP43ils=; b=eob2UUM77HKuBWlhOMVI+An6Ek
+	PT4AcaZvJkDzyOvl/MPsSj/FO0BG0VQmGtJpax6K/dPi8QQ6FIpB4T5s7iXHw74zxvfFh3JIbdsxA
+	9qy8biVlcwQhesImBul+AAgPzMMaAZUkQXiy3cNGKy2daTVzOMCMLIcuJvgFtqxvHrB1xQpNdwrTs
+	nVo3yRwUvybH7NN+HPeTI5Ycyh6X6SY71LB9IZdAL/kD797VFAS0aKWbHwvAIMpVNf8430TDDIa8u
+	CtO8CVU28oqUKeOChXj5ZfwQBES7AuNMSlF/V2wEUniQk4ce7gHM6SzSYC8A+zNk0vRbS0hFhl0HK
+	HYcT5L0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOuCQ-00000009J61-1GHY
+	id 1sOw9v-00000009XfV-3Q0T
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Jul 2024 07:14:42 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Wed, 03 Jul 2024 09:20:15 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOuCL-00000009J4p-3wTO;
-	Wed, 03 Jul 2024 07:14:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 1168CCE1D4E;
-	Wed,  3 Jul 2024 07:14:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BF794C2BD10;
-	Wed,  3 Jul 2024 07:14:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719990875;
-	bh=x+1Z0OH2iTgkOWjPo7qguUcayPfUY6MxGUvlYB4Er9U=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=Ekvw+WdQ2FH0lUhpQUPwlryZvnC0zVEx3AVCDmPFolSc0F6dnzOq5U1MvgtGXpsSY
-	 NFRAdF24djUA2rpP8DlBk/4H/lJWEGtQfCxuRDuDpcKZlhDT27chfOvhYy2VsJ7s6P
-	 4qhTirqvwSNnyeC1liCyanoUmx7ls76ySdL7DcsElc69Hxw4UlsNndkYHGXExA6yLY
-	 il5YAIPK+85e+g20b5/cPoyDAgH0McKmfcNjxQ/j6PqS/aa93rOxH1auwrjRhXtfic
-	 CefBDu8i9Rl53pYHjisFxmOHqtC1Hzq2yYnQnVeeniLLOWBm3stV2Y0CRnB4jzCkht
-	 304GsGKjOkWdA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: <linux-wireless@vger.kernel.org>,  <ath10k@lists.infradead.org>,
-  <ath11k@lists.infradead.org>,  <ath12k@lists.infradead.org>,
-  <quic_kvalo@quicinc.com>,  Bartosz Golaszewski
- <bartosz.golaszewski@linaro.org>
-Subject: Re: pull-request: ath-next-20240702
-References: <812acd8a-fc26-4611-8a7a-c3a1d6197d00@quicinc.com>
-	<87zfqzdkgh.fsf@kernel.org>
-Date: Wed, 03 Jul 2024 10:14:32 +0300
-In-Reply-To: <87zfqzdkgh.fsf@kernel.org> (Kalle Valo's message of "Wed, 03 Jul
-	2024 10:05:18 +0300")
-Message-ID: <87v81ndk13.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	id 1sOw9t-00000009XeX-0pfA
+	for ath12k@lists.infradead.org;
+	Wed, 03 Jul 2024 09:20:14 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-58bac81f419so2182327a12.0
+        for <ath12k@lists.infradead.org>; Wed, 03 Jul 2024 02:20:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1719998411; x=1720603211; darn=lists.infradead.org;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=hY0/9ZM/YXqyB5o3uYII/z7Pf9Qrq7ksgaSNFP43ils=;
+        b=GLEMGNSpT1rp9HX9JmshInTqO2B/7HiwpK12+j2T74Q2V1qkQFh/OLikKNW43Z60nc
+         Qg7fWG21gF2fbfE1cM7wU8JHnYhH3AGqJBWq4wV36qV4fAvg9GBsty9IR5+1nUukNzGf
+         X8kW7oATj3LoZz+JRriplQdwRMmghliSNNJeE8t+Lp05WfAiAR0OcVImRQtgUr6wn+PV
+         aVS5KlpoQon3ldYGrXry+RlyI8ZaCLZpPS1a2NaS3TLV6zgT0FhyboPf8UxEZgdi7mPI
+         OE0WlU0u6c76UJ6cAbh+YXrG01s8tYNH67etUznt5koEVc/SFUAHO9FQT+sfTm2ynCxF
+         6b5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1719998411; x=1720603211;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=hY0/9ZM/YXqyB5o3uYII/z7Pf9Qrq7ksgaSNFP43ils=;
+        b=pkDsGJ+DqhBJwyGo/hzqSB7AOlCGmbk6NzS3YIdBHYbaxWz/mEQLhp6MAvDJ1aTmFG
+         zCHQxgdvBM3dhDidtrSBYrJqgusVWkU52UMEsqd4i3pqk1/6jUfPx1/0A5PbeNPdLuW8
+         P0g4cmgQgSJhN+zOGCJWIEmbQqZVpIZ9FLID32YCOBfFQMhhMK7nrp5gwu6CPBA+ePG+
+         5MTAEweSIE3Vrv5R4/p5k79lc+spJfLefEjSpa2MldasIETNn7EkRcClUhsfgo9bod3+
+         eY6E0UJSHAbEbVH5bIkU6NBYF2LayYrwYAkPuBdBgMJcaQVdwB6vud+StuU+s3mmMdI5
+         rGGA==
+X-Gm-Message-State: AOJu0YxOxFJTpoP5WDgi966Pmcf8Y6xHX/xnozqlRvuJ0htuibzNIJyo
+	3WalMf2H12HuEvrWpRZ+tfueKLDsgVlaagWOnetk7CLM9EVVxDNW9PExCTG0fk40hvKEEk4kj7o
+	7ujeL2YcHHHKrJWI2jPbP+IJ7hDpgOJ6c
+X-Google-Smtp-Source: AGHT+IGKRdGMfoIeFIbj+oOfmYINkr8syVbYNFxx2vv3ZMqVmjPpVozQSNTUQndwfpNau73uc0WdhOrZgM8dk2B4G94=
+X-Received: by 2002:a05:6402:278d:b0:582:8078:b44a with SMTP id
+ 4fb4d7f45d1cf-5879c465a01mr9056634a12.0.1719998410968; Wed, 03 Jul 2024
+ 02:20:10 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain
+From: Janusz Dziedzic <janusz.dziedzic@gmail.com>
+Date: Wed, 3 Jul 2024 11:19:59 +0200
+Message-ID: <CAFED-jk4n61WGtBOcT2OAbtmY-QdaKT+osadhSqLGDRMV7Q-NQ@mail.gmail.com>
+Subject: WCN7850 - station mode MLO/MLD support
+To: ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240703_001438_177944_796D3242 
-X-CRM114-Status: GOOD (  12.61  )
+X-CRM114-CacheID: sfid-20240703_022013_385786_BAFAE790 
+X-CRM114-Status: UNSURE (   5.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,66 +84,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
+Hello,
 
-> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
->
->> The following changes since commit bb678f01804ccaa861b012b2b9426d69673d8a84:
->>
->>   Merge branch 'intel-wired-lan-driver-updates-2024-06-03'
->> (2024-06-10 19:52:50 -0700)
->>
->> are available in the Git repository at:
->>
->>   git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20240702
->>
->> for you to fetch changes up to 5344fc76f8944249026884157f846f88489edfc0:
->>
->>   wifi: ath12k: Support TQM stats (2024-07-01 21:57:28 +0300)
->>
->> ----------------------------------------------------------------
->> ath.git patches for v6.11
->>
->> We have moved to a new group-managed repo, and this is the first pull
->> request from that repo, and from me. Fingers crossed...
->>
->> We have some new features in ath12k along with some cleanups in ath11k
->> and ath12k. Also notable are some device-tree changes to allow certain
->> ath11k and ath12k devices to work with a new power sequencing
->> subsystem.
->>
->> Major changes:
->>
->> ath12k
->>
->> * DebugFS support for datapath statistics
->> * WCN7850: support for WoW (Wake on WLAN)
->> * WCN7850: device-tree bindings
->>
->> ath11k
->>
->> * QCA6390: device-tree bindings
->>
->> ----------------------------------------------------------------
->
-> I see a weird warning from gpg which I have never seen before:
->
-> merged tag 'ath-next-20240702'
-> gpg: Signature made Tue 02 Jul 2024 05:55:42 PM EEST
-> gpg:                using EDDSA key 3F9AD487CCF522D7A21F0C492C15BBA0898CCB7B
-> gpg:                issuer "jjohnson@kernel.org"
-> gpg: Good signature from "Jeff Johnson <quic_jjohnson@quicinc.com>" [full]
-> gpg: WARNING: We do NOT trust this key!
-> gpg:          The signature is probably a FORGERY.
->
-> It first says that the signature is good and then claims it's a forgery,
-> odd. Is this a problem between using different email addresses or what?
+I have this card:
+0001:01:00.0 Network controller: Qualcomm Technologies, Inc WCN785x
+Wi-Fi 7(802.11be) 320MHz 2x2 [FastConnect 7800] (rev 01)
 
-I did 'gpg --refresh-keys', now your key contains your kernel.org
-address and I don't see the warning anymore.
+and kernel
+6.10.0-rc4-next
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+and FW
+WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Using it as a test client.
+I don't see WIPHY_FLAG_SUPPORTS_MLO is set in the driver.
+Could I simply enable it and MLO should work correctly more or less?
+Or I need special firmware with MLO support?
+
+BR
+Janusz
 
