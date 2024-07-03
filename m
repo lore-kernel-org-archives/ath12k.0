@@ -4,89 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D254EC2BD09
-	for <ath12k@archiver.kernel.org>; Wed,  3 Jul 2024 12:18:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19DFDC31D97
+	for <ath12k@archiver.kernel.org>; Wed,  3 Jul 2024 13:57:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ViieTyU/0/dwGBFWkaxFYEXy2oe3MMeZ0ZkIFrkbYfQ=; b=N6y9iDD0+fdnsuOVf1J+0GDKLv
-	+BKzFYn9SH6w+xsF/dYHF622e554qzstj0Yqv9uj+h4adjXwaxfThmBog6JcYFYPIy/TV1wqMt8jG
-	EiKEkjPRh8g1koquTcDF2pMSJkX0AzFS+ElscpUyWSy3GMkk8TDHd2GL8KN8OHh/CbAmMowr8U9D9
-	N9SBG5Nfcrok6XHhmlsTphIIssqBlorMHKlhGg1181ArmQEkBiclcRN0I5RR2i835IJS9duQg5B0f
-	cAJO5Cr2Yj8nAQ+djJ/oZYotYGU1+yT0oR6WDTalo1zOAZzLYLCfBCoLZ5mhysSjXwF+PIQTz6l+U
-	CJjbZyaA==;
+	bh=uIIt7UxsMutUGFGlmTLTXp4QmO6Uexc1k0fzGyd2Sz4=; b=TqoLuGU2jaDp1mPapNE2n90X6m
+	VSdpVmzcVZlc68ZW/MkC0EqyfVcgW7D+USeMQtY72aN568++KXd92Dth2lq++fEEbAotoJvAL3YOk
+	Oti6zD1UBziRGtFs4mWof13n9SpIFne/Av7adXHkTdmM6dGi0HI/28/XQp3VB24xr0f5HMGGkL4mz
+	csvvl1iZYNyy1Iqk+XG+0/MYShWagL5M49ScbRRdKhK7VjMl39nowmmDfuQtOT9DqqWNyefrpSMPx
+	n/CxWnsiIa52Im1yjql8GwFjtkakVRBdYKVE1zmVuu4qV1cyoGNQodKpGCOmIz+/q0Pn7Y7sCqTNu
+	2qqfgZFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOywk-0000000A8Jf-1DbS
+	id 1sP0Ud-0000000ANgz-3MBh
 	for ath12k@archiver.kernel.org;
-	Wed, 03 Jul 2024 12:18:50 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 03 Jul 2024 13:57:55 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOywh-0000000A8IJ-0KxE
-	for ath12k@lists.infradead.org;
-	Wed, 03 Jul 2024 12:18:48 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4635J129023274;
-	Wed, 3 Jul 2024 12:18:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ViieTyU/0/dwGBFWkaxFYEXy2oe3MMeZ0ZkIFrkbYfQ=; b=TVSuwEJhBkr+TlWA
-	d7QNnLX/CcXFKV1wYiSEpjjBmkPZiOlwPQfGDSr0G3jT2mhMhGmxOW1yNib5fyT9
-	392CjvqIzciFQCkuBY3CkxbB/OP2zhVCorWMB+QwfZEq5WA96RoDQTgEjUs8KYio
-	T8s3KHw+ZAv2Naly11wax7pLF4XcVAdSaJfdrXR1sTlZAn5NUXBwgOx7pj5O16gL
-	C/bJibXOVvWnSac2PY78NdJUWhT4GmYyd4ErghJy3UbISyGxo39UjGLCLyP7N6w4
-	jMq3kp4Rttwz3vpXEjV19MaazIK8WYicf4ABC6j5hM9iRHoj+jMQsVrH1SO1NIsn
-	dB4ZAQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4050cy90d3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Jul 2024 12:18:42 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 463CIfpa004178
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Jul 2024 12:18:41 GMT
-Received: from [10.152.203.156] (10.80.80.8) by nalasex01c.na.qualcomm.com
- (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 3 Jul 2024
- 05:18:39 -0700
-Message-ID: <3ae1b380-fdc0-c0e4-037e-4c27fd3ca16d@quicinc.com>
-Date: Wed, 3 Jul 2024 17:48:36 +0530
+	id 1sP0UQ-0000000ANe3-42EI;
+	Wed, 03 Jul 2024 13:57:44 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id DA6C361E00;
+	Wed,  3 Jul 2024 13:57:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D36ABC2BD10;
+	Wed,  3 Jul 2024 13:57:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1720015061;
+	bh=0ghaEkln6muWfC3OI81no2MWCwPisboChG+ZgTv+5GY=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=RuauIKrGtL3QwP+hft0nomDS/ic+9Y4AFfMW0vgfjnVF3DGiY1QpQfEJs+Gl8r1C3
+	 8Q3IL4RlW1QS6021izmkr08dRqXBWKH0w36slu4onjSLV/TvgbQdZgZN2162wEtB3x
+	 xNLVIOxxXg13s1qo2YDsQMey3jqbTWliRsCS5qnywUo2B2/PgguJYVxHVg2ynkcb7W
+	 InDnXORbQzku7sJ1isWn3eYL4Olksqv0MpfSPe3PSRUzoffn+8ObBF52WeAbqjLpn0
+	 7NO6AYN4ymnrZvGWfcTUclpQibamNDNs7io1MGERJ/BvVXWSl6rrjuryQ0k8v0g8dJ
+	 X353rxOyqAmog==
+Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: [PATCH v3]wifi: ath12k: Add firmware coredump collection support
-Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20240325183414.4016663-1-quic_ssreeela@quicinc.com>
- <171889253841.918573.15918536206746856053.kvalo@kernel.org>
- <87zfr7hha3.fsf@kernel.org>
-From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
-In-Reply-To: <87zfr7hha3.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 8tXei02I9ZwdQtaJiEWlKLO46Sb5Bpfa
-X-Proofpoint-ORIG-GUID: 8tXei02I9ZwdQtaJiEWlKLO46Sb5Bpfa
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-03_07,2024-07-03_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
- mlxlogscore=999 priorityscore=1501 adultscore=0 mlxscore=0 impostorscore=0
- spamscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2406140001
- definitions=main-2407030090
+Subject: Re: pull-request: ath-next-20240702
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <812acd8a-fc26-4611-8a7a-c3a1d6197d00@quicinc.com>
+References: <812acd8a-fc26-4611-8a7a-c3a1d6197d00@quicinc.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: <linux-wireless@vger.kernel.org>, <ath10k@lists.infradead.org>,
+ <ath11k@lists.infradead.org>, <ath12k@lists.infradead.org>,
+ <quic_jjohnson@quicinc.com>, <quic_kvalo@quicinc.com>, Bartosz Golaszewski
+	<bartosz.golaszewski@linaro.org>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <172001505815.3343449.10854537825180902753.kvalo@kernel.org>
+Date: Wed,  3 Jul 2024 13:57:39 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240703_051847_268981_49A06195 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20240703_065743_144383_D67673B1 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,114 +74,153 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 6/26/2024 8:39 PM, Kalle Valo wrote:
-> Kalle Valo <kvalo@kernel.org> writes:
-> 
->> Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com> wrote:
->>
->>> In case of firmware assert snapshot of firmware memory is essential for
->>> debugging. Add firmware coredump collection support for PCI bus.
->>> Collect RDDM and firmware paging dumps from MHI and pack them in TLV
->>> format and also pack various memory shared during QMI phase in separate
->>> TLVs.  Add necessary header and share the dumps to user space using dev
->>> coredump framework. Coredump collection is disabled by default and can
->>> be enabled using menuconfig. Dump collected for a radio is 55 MB
->>> approximately.
->>>
->>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
->>>
->>> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
->>> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
->>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->>
->> This didn't compile for me, I added this to pci.c:
->>
->> +#include <linux/vmalloc.h>
->>
->> Also in the pending branch I made some whitespace in struct ath12k_dump_file_data:
->>
->> https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/commit/?h=pending&id=44ae07628b68375f476895f4fc1e89a570790ac0
->>
->> Any tips how to test this until we have the debugfs interface to crash the firmware?
-> 
-> I was able to get patch 'wifi: ath12k: Add support to simulate firmware
-> crash' (not yet public) and did a quick test with it. There seems to be
-> a KASAN warning but I can't debug this further at this time.
-> 
-> [ 8091.304272] ath12k_pci 0000:06:00.0: simulating firmware assert crash
-> [ 8091.722245] ==================================================================
-> [ 8091.722329] BUG: KASAN: vmalloc-out-of-bounds in ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
-> [ 8091.722433] Write of size 4 at addr ffffc9000644b28c by task kworker/u32:0/11
-> [ 8091.722517] 
-> [ 8091.722552] CPU: 0 PID: 11 Comm: kworker/u32:0 Not tainted 6.10.0-rc4-wt-ath+ #1663
-> [ 8091.722604] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
-> [ 8091.722670] Workqueue: ath12k_aux_wq ath12k_core_reset [ath12k]
-> [ 8091.722742] Call Trace:
-> [ 8091.722778]  <TASK>
-> [ 8091.722832]  dump_stack_lvl+0x7d/0xe0
-> [ 8091.722920]  print_address_description.constprop.0+0x33/0x3a0
-> [ 8091.722999]  print_report+0xb5/0x260
-> [ 8091.723069]  ? kasan_addr_to_slab+0xd/0x80
-> [ 8091.723146]  kasan_report+0xd8/0x110
-> [ 8091.723217]  ? ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
-> [ 8091.723301]  ? ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
-> [ 8091.723386]  __asan_report_store_n_noabort+0x12/0x20
-> [ 8091.723461]  ath12k_pci_coredump_download+0x1071/0x1330 [ath12k]
-> [ 8091.723563]  ? ath12k_pci_coredump_calculate_size+0x730/0x730 [ath12k]
-> [ 8091.723632]  ? __this_cpu_preempt_check+0x13/0x20
-> [ 8091.723677]  ath12k_coredump_collect+0x60/0x73 [ath12k]
-> [ 8091.724276]  ath12k_core_reset+0x1b1/0x880 [ath12k]
-> [ 8091.724921]  ? _raw_spin_unlock_irq+0x22/0x50
-> [ 8091.725503]  ? __this_cpu_preempt_check+0x13/0x20
-> [ 8091.726126]  process_one_work+0x8d7/0x19f0
-> [ 8091.726718]  ? pwq_dec_nr_in_flight+0x580/0x580
-> [ 8091.727346]  ? move_linked_works+0x128/0x2c0
-> [ 8091.727998]  ? assign_work+0x15e/0x270
-> [ 8091.728601]  worker_thread+0x715/0x1270
-> [ 8091.729244]  ? rescuer_thread+0xdb0/0xdb0
-> [ 8091.729905]  kthread+0x2fa/0x3f0
-> [ 8091.730520]  ? kthread_insert_work_sanity_check+0xd0/0xd0
-> [ 8091.731192]  ret_from_fork+0x31/0x70
-> [ 8091.731856]  ? kthread_insert_work_sanity_check+0xd0/0xd0
-> [ 8091.732525]  ret_from_fork_asm+0x11/0x20
-> [ 8091.733212]  </TASK>
-> [ 8091.733909] 
-> [ 8091.734559] The buggy address belongs to the virtual mapping at#012[ 8091.734559]  [ffffc9000500b000, ffffc9000644d000) created by:#012[ 8091.734559]  ath12k_pci_coredump_download+0x147/0x1330 [ath12k]
-> [ 8091.736558] 
-> [ 8091.737272] The buggy address belongs to the physical page:
-> [ 8091.738016] page: refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x15a485
-> [ 8091.738730] flags: 0x200000000000000(node=0|zone=2)
-> [ 8091.739481] raw: 0200000000000000 0000000000000000 dead000000000122 0000000000000000
-> [ 8091.740256] raw: 0000000000000000 0000000000000000 00000001ffffffff 0000000000000000
-> [ 8091.741043] page dumped because: kasan: bad access detected
-> [ 8091.741786] 
-> [ 8091.742529] Memory state around the buggy address:
-> [ 8091.743296]  ffffc9000644b180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> [ 8091.744087]  ffffc9000644b200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> [ 8091.744834] >ffffc9000644b280: 00 04 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
-> [ 8091.745598]                       ^
-> [ 8091.746359]  ffffc9000644b300: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
-> [ 8091.747152]  ffffc9000644b380: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
-> [ 8091.747932] ==================================================================
-> [ 8091.748688] Disabling lock debugging due to kernel taint
-> [ 8091.749699] ath12k_pci 0000:06:00.0: Uploading coredump
-> 
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-Hi Kalle,
+> The following changes since commit bb678f01804ccaa861b012b2b9426d69673d8a84:
+> 
+>   Merge branch 'intel-wired-lan-driver-updates-2024-06-03' (2024-06-10 19:52:50 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20240702
+> 
+> for you to fetch changes up to 5344fc76f8944249026884157f846f88489edfc0:
+> 
+>   wifi: ath12k: Support TQM stats (2024-07-01 21:57:28 +0300)
+> 
+> ----------------------------------------------------------------
+> ath.git patches for v6.11
+> 
+> We have moved to a new group-managed repo, and this is the first pull
+> request from that repo, and from me. Fingers crossed...
+> 
+> We have some new features in ath12k along with some cleanups in ath11k
+> and ath12k. Also notable are some device-tree changes to allow certain
+> ath11k and ath12k devices to work with a new power sequencing
+> subsystem.
+> 
+> Major changes:
+> 
+> ath12k
+> 
+> * DebugFS support for datapath statistics
+> * WCN7850: support for WoW (Wake on WLAN)
+> * WCN7850: device-tree bindings
+> 
+> ath11k
+> 
+> * QCA6390: device-tree bindings
+> 
+> ----------------------------------------------------------------
+> Aaradhana Sahu (3):
+>       wifi: ath12k: Fix WARN_ON during firmware crash in split-phy
+>       wifi: ath12k: fix NULL pointer access in ath12k_mac_op_get_survey()
+>       wifi: ath12k: fix uninitialize symbol error on ath12k_peer_assoc_h_he()
+> 
+> Aditya Kumar Singh (3):
+>       wifi: ath12k: fix per pdev debugfs registration
+>       wifi: ath12k: unregister per pdev debugfs
+>       wifi: ath12k: handle symlink cleanup for per pdev debugfs dentry
+> 
+> Ajith C (1):
+>       wifi: ath12k: fix firmware crash due to invalid peer nss
+> 
+> Baochen Qiang (11):
+>       wifi: ath12k: fix ACPI warning when resume
+>       wifi: ath11k: fix RCU documentation in ath11k_mac_op_ipv6_changed()
+>       wifi: ath11k: fix wrong handling of CCMP256 and GCMP ciphers
+>       wifi: ath12k: add ATH12K_DBG_WOW log level
+>       wifi: ath12k: implement WoW enable and wakeup commands
+>       wifi: ath12k: add basic WoW functionalities
+>       wifi: ath12k: add WoW net-detect functionality
+>       wifi: ath12k: implement hardware data filter
+>       wifi: ath12k: support ARP and NS offload
+>       wifi: ath12k: support GTK rekey offload
+>       wifi: ath12k: handle keepalive during WoWLAN suspend and resume
+> 
+> Bartosz Golaszewski (2):
+>       dt-bindings: net: wireless: qcom,ath11k: describe the ath11k on QCA6390
+>       dt-bindings: net: wireless: describe the ath12k PCI module
+> 
+> Dinesh Karthikeyan (6):
+>       wifi: ath12k: Add support to enable debugfs_htt_stats
+>       wifi: ath12k: Add htt_stats_dump file ops support
+>       wifi: ath12k: Add support to parse requested stats_type
+>       wifi: ath12k: Support Transmit Scheduler stats
+>       wifi: ath12k: Support pdev error stats
+>       wifi: ath12k: Support TQM stats
+> 
+> Harshitha Prem (1):
+>       wifi: ath12k: Remove unused ath12k_base from ath12k_hw
+> 
+> Karthikeyan Periyasamy (3):
+>       wifi: ath12k: avoid unnecessary MSDU drop in the Rx error process
+>       wifi: ath12k: fix mbssid max interface advertisement
+>       wifi: ath12k: fix peer metadata parsing
+> 
+> Lingbo Kong (3):
+>       wifi: ath11k: fix ack signal strength calculation
+>       wifi: ath11k: modify the calculation of the average signal strength in station mode
+>       wifi: ath12k: Fix pdev id sent to firmware for single phy devices
+> 
+> Pradeep Kumar Chitrapu (1):
+>       wifi: ath12k: fix legacy peer association due to missing HT or 6 GHz capabilities
+> 
+> Rameshkumar Sundaram (2):
+>       wifi: ath12k: modify remain on channel for single wiphy
+>       wifi: ath12k: fix driver initialization for WoW unsupported devices
+> 
+> Ramya Gnanasekar (1):
+>       wifi: ath12k: Dump additional Tx PDEV HTT stats
+> 
+> Wolfram Sang (1):
+>       wifi: ath11k: use 'time_left' variable with wait_event_timeout()
+> 
+>  .../bindings/net/wireless/qcom,ath11k-pci.yaml     |   46 +
+>  .../bindings/net/wireless/qcom,ath12k.yaml         |   99 ++
+>  drivers/net/wireless/ath/ath11k/dp_rx.c            |    3 +-
+>  drivers/net/wireless/ath/ath11k/dp_rx.h            |    3 +
+>  drivers/net/wireless/ath/ath11k/dp_tx.c            |   16 +-
+>  drivers/net/wireless/ath/ath11k/dp_tx.h            |    4 +-
+>  drivers/net/wireless/ath/ath11k/hal_tx.h           |    4 +-
+>  drivers/net/wireless/ath/ath11k/mac.c              |   29 +-
+>  drivers/net/wireless/ath/ath11k/qmi.c              |   20 +-
+>  drivers/net/wireless/ath/ath12k/Makefile           |    3 +-
+>  drivers/net/wireless/ath/ath12k/acpi.c             |    2 +
+>  drivers/net/wireless/ath/ath12k/core.c             |   71 +-
+>  drivers/net/wireless/ath/ath12k/core.h             |   34 +-
+>  drivers/net/wireless/ath/ath12k/debug.h            |    3 +-
+>  drivers/net/wireless/ath/ath12k/debugfs.c          |   19 +-
+>  drivers/net/wireless/ath/ath12k/debugfs.h          |    6 +-
+>  .../net/wireless/ath/ath12k/debugfs_htt_stats.c    | 1540 ++++++++++++++++++++
+>  .../net/wireless/ath/ath12k/debugfs_htt_stats.h    |  567 +++++++
+>  drivers/net/wireless/ath/ath12k/dp.h               |    1 +
+>  drivers/net/wireless/ath/ath12k/dp_rx.c            |   54 +-
+>  drivers/net/wireless/ath/ath12k/dp_rx.h            |    4 +
+>  drivers/net/wireless/ath/ath12k/dp_tx.c            |    4 +-
+>  drivers/net/wireless/ath/ath12k/hal_desc.h         |   26 +-
+>  drivers/net/wireless/ath/ath12k/htc.c              |    6 +
+>  drivers/net/wireless/ath/ath12k/hw.h               |    2 -
+>  drivers/net/wireless/ath/ath12k/mac.c              |  302 +++-
+>  drivers/net/wireless/ath/ath12k/mac.h              |    5 +
+>  drivers/net/wireless/ath/ath12k/wmi.c              |  728 ++++++++-
+>  drivers/net/wireless/ath/ath12k/wmi.h              |  586 +++++++-
+>  drivers/net/wireless/ath/ath12k/wow.c              | 1026 +++++++++++++
+>  drivers/net/wireless/ath/ath12k/wow.h              |   62 +
+>  31 files changed, 5156 insertions(+), 119 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>  create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>  create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+>  create mode 100644 drivers/net/wireless/ath/ath12k/wow.c
+>  create mode 100644 drivers/net/wireless/ath/ath12k/wow.h
 
-Can you please share the configs to reproduce the above KASAN issue in my local setup. I tried with below KASAN configs enabled, but I couldn't reproduce the above warning in my x86 setup.
+Pulled, thanks.
 
-CONFIG_HAVE_ARCH_KASAN=y
-CONFIG_HAVE_ARCH_KASAN_VMALLOC=y
-CONFIG_CC_HAS_KASAN_GENERIC=y
-CONFIG_KASAN=y
-CONFIG_KASAN_GENERIC=y
-CONFIG_KASAN_INLINE=y
-CONFIG_KASAN_STACK=y
-CONFIG_KASAN_VMALLOC=y
-CONFIG_KASAN_EXTRA_INFO=y
+c1cacb01f355 Merge tag 'ath-next-20240702' of git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath
 
-Thanks,
-Sowmiya Sree
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/812acd8a-fc26-4611-8a7a-c3a1d6197d00@quicinc.com/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 
