@@ -4,70 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05D31C2BD09
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 07:32:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D1D9C2BD09
+	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 08:38:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=o4oE+M8pAsQAIv82liUyoMI38SoKZlDrdXu8W+OvHpU=; b=vbcbgGVwuJRRNq3K09WdmVCXHW
-	QuwHt559oub9PeIqb76ykERwjZnkkS+Ol1f5Lo1N6TL642DUUimhA01UKuaOD0N7GxccptRvQBdOK
-	FStA6CEjIpReAj9L4TmArly/gvX8jwzRvRHVwD/20GfMg0j0/1z1dva66qkTz0rZFMR6RO0uq5sIw
-	reGdSSVTtSHiCsZ1GkrN85jCG0V2vrBk5hXKbDAhumL3pQLApL5ezXRr6yw67HJKPC+rMfQpmTL/V
-	ijl5vKLU/aBU5KUX5ewk0JdFYqEfypNeCou8s8CPDcPvYNqbszaGlQsCc3ULlN0te+gt+qSBQ5xqd
-	QG1ERhOA==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fftS+K84L8nIjshhrNW3mFUzxBeeo1mJn4mMKCfM9i4=; b=ShBIcXkk6Htpe1qTKG579fzWWY
+	pWnijidmmX/65RSi2FtMJoxVe1kM2XohqI+0QRf6dV14y6MspqGSSbTtoJnVZLTlnDaV7lR/a2BGR
+	YdpOIARh85NmcfnNYc0hsLsX8C+l8gArdAUmIvnXVE+Zjda/bz8xNSYoEC0jASVY6xd4hZnAr+At3
+	SEUdVR/+YTvjA1WwaquacwGjvePnC+Hy0Ds6cAqurzQHHyvLuGTukNFDybhAaoOt8C1IsOGosakM8
+	7NAzD+lhD6gdGOOjumw+Ru9xhiY2v8uRHiOoeqiOaZcSCHzZYOPH6SSXlgImv9WI93Ix3EPWGSW7A
+	uFgqe9JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sR5KS-00000006Epc-30uW
+	id 1sR6NB-00000006QgJ-3Svt
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Jul 2024 07:32:00 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 09 Jul 2024 08:38:53 +0000
+Received: from nbd.name ([46.4.11.11])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sR5KQ-00000006Ep7-27N3
+	id 1sR6N8-00000006Qcq-1sin
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jul 2024 07:31:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 09DDC60F3E;
-	Tue,  9 Jul 2024 07:31:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0754C3277B;
-	Tue,  9 Jul 2024 07:31:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720510316;
-	bh=tOLVytebM6kjmTjWDA4Ja4R2xGEMQnffElBDnEJ7wsY=;
-	h=From:To:Cc:Subject:Date:From;
-	b=J4UzD6tEXnPoolrRlbkm+09zsThJvA73SHeBDe+68+28HiqnYomNrq+97ptCL3FTr
-	 V5gcr5rvOLM9Xl5sEMjC1vORw82foCIPUtC7JNmV4Uq5PiUoGBTvR1DDSf/LFsh6Qt
-	 MghhjV3ZqvNv7wcSnNiQq52/OK5P9qgLSvmobZJuhXT+O1OnWnSmMQ8KrtUOrLLc05
-	 UzPlpj+Sru3ntWQ8ekhIzQ1lJy2j42rDe8XgJU+UMsIb6ZmAuoq/FW1DEfmBTvjW1u
-	 GWazb6ftAzj245PW1rJ9xOenOXC9sNJdOSJLMMFrtUoTbPV/49pZ+kj2T+hvSDK3tm
-	 02XtA7qDT5RmA==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1sR5KT-000000002OW-21T0;
-	Tue, 09 Jul 2024 09:32:02 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>
-Cc: Bhagavathi Perumal S <quic_bperumal@quicinc.com>,
-	Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-	Wen Gong <quic_wgong@quicinc.com>,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>,
-	stable@vger.kernel.org
-Subject: [PATCH] wifi: ath12k: fix soft lockup on suspend
-Date: Tue,  9 Jul 2024 09:31:32 +0200
-Message-ID: <20240709073132.9168-1-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.44.1
+	Tue, 09 Jul 2024 08:38:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=fftS+K84L8nIjshhrNW3mFUzxBeeo1mJn4mMKCfM9i4=; b=iFIWzC703HikBcgnEOL8oM1K/N
+	EJWmsCfaCpLGvEJWrP7Y93SSOysC6xshk5mPfbj5JVaXt29xjQ1IweZbEgPHGcoZIGt4fhYOazpJH
+	EYyzll8trFbT4WTzx6qsUbqGPWHspWI3mm4Ar35diNCouWHF7qRG5rRYf5dDD7z6VZVw=;
+Received: from p54ae937c.dip0.t-ipconnect.de ([84.174.147.124] helo=localhost.localdomain)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1sR6N0-004Ln4-0M;
+	Tue, 09 Jul 2024 10:38:42 +0200
+From: Felix Fietkau <nbd@nbd.name>
+To: linux-wireless@vger.kernel.org
+Cc: johannes@sipsolutions.net,
+	quic_adisi@quicinc.com,
+	quic_periyasa@quicinc.com,
+	ath12k@lists.infradead.org
+Subject: [PATCH v5 09/10] wifi: mac80211: add wiphy radio assignment and validation
+Date: Tue,  9 Jul 2024 10:38:37 +0200
+Message-ID: <1d3e9ba70a30ce18aaff337f0a76d7aeb311bafb.1720514221.git-series.nbd@nbd.name>
+X-Mailer: git-send-email 2.44.0
+In-Reply-To: <cover.8f108602e7f90e91332f131cc9fa115a669a2bf4.1720514221.git-series.nbd@nbd.name>
+References: <cover.8f108602e7f90e91332f131cc9fa115a669a2bf4.1720514221.git-series.nbd@nbd.name>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240709_003158_630106_6E1748B9 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20240709_013850_667163_F1F46A9B 
+X-CRM114-Status: GOOD (  13.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,39 +74,135 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The ext interrupts are enabled when the firmware has been started, but
-this may never happen, for example, if the board configuration file is
-missing.
+Validate number of channels and interface combinations per radio.
+Assign each channel context to a radio.
 
-When the system is later suspended, the driver unconditionally tries to
-disable interrupts, which results in an irq disable imbalance and causes
-the driver to spin indefinitely in napi_synchronize().
-
-Make sure that the interrupts have been enabled before attempting to
-disable them.
-
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Cc: stable@vger.kernel.org	# 6.3
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ net/mac80211/chan.c | 52 +++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 47 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 16af046c33d9..55fde0d33183 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -472,7 +472,8 @@ static void __ath12k_pci_ext_irq_disable(struct ath12k_base *ab)
+diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
+index 9aa3b9e25228..e8567723e94d 100644
+--- a/net/mac80211/chan.c
++++ b/net/mac80211/chan.c
+@@ -714,14 +714,15 @@ static struct ieee80211_chanctx *
+ ieee80211_new_chanctx(struct ieee80211_local *local,
+ 		      const struct ieee80211_chan_req *chanreq,
+ 		      enum ieee80211_chanctx_mode mode,
+-		      bool assign_on_failure)
++		      bool assign_on_failure,
++		      int radio_idx)
  {
- 	int i;
+ 	struct ieee80211_chanctx *ctx;
+ 	int err;
  
--	clear_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags);
-+	if (!test_and_clear_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags))
-+		return;
+ 	lockdep_assert_wiphy(local->hw.wiphy);
  
- 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
- 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+-	ctx = ieee80211_alloc_chanctx(local, chanreq, mode, -1);
++	ctx = ieee80211_alloc_chanctx(local, chanreq, mode, radio_idx);
+ 	if (!ctx)
+ 		return ERR_PTR(-ENOMEM);
+ 
+@@ -1096,6 +1097,8 @@ ieee80211_replace_chanctx(struct ieee80211_local *local,
+ 			  struct ieee80211_chanctx *curr_ctx)
+ {
+ 	struct ieee80211_chanctx *new_ctx, *ctx;
++	struct wiphy *wiphy = local->hw.wiphy;
++	const struct wiphy_radio *radio;
+ 
+ 	if (!curr_ctx || (curr_ctx->replace_state ==
+ 			  IEEE80211_CHANCTX_WILL_BE_REPLACED) ||
+@@ -1125,6 +1128,12 @@ ieee80211_replace_chanctx(struct ieee80211_local *local,
+ 			if (!list_empty(&ctx->reserved_links))
+ 				continue;
+ 
++			if (ctx->conf.radio_idx >= 0) {
++				radio = &wiphy->radio[ctx->conf.radio_idx];
++				if (!cfg80211_radio_chandef_valid(radio, &chanreq->oper))
++					continue;
++			}
++
+ 			curr_ctx = ctx;
+ 			break;
+ 		}
+@@ -1154,6 +1163,34 @@ ieee80211_replace_chanctx(struct ieee80211_local *local,
+ 	return new_ctx;
+ }
+ 
++static bool
++ieee80211_find_available_radio(struct ieee80211_local *local,
++			       const struct ieee80211_chan_req *chanreq,
++			       int *radio_idx)
++{
++	struct wiphy *wiphy = local->hw.wiphy;
++	const struct wiphy_radio *radio;
++	int i;
++
++	*radio_idx = -1;
++	if (!wiphy->n_radio)
++		return true;
++
++	for (i = 0; i < wiphy->n_radio; i++) {
++		radio = &wiphy->radio[i];
++		if (!cfg80211_radio_chandef_valid(radio, &chanreq->oper))
++			continue;
++
++		if (!ieee80211_can_create_new_chanctx(local, i))
++			continue;
++
++		*radio_idx = i;
++		return true;
++	}
++
++	return false;
++}
++
+ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 				   const struct ieee80211_chan_req *chanreq,
+ 				   enum ieee80211_chanctx_mode mode,
+@@ -1162,6 +1199,7 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 	struct ieee80211_sub_if_data *sdata = link->sdata;
+ 	struct ieee80211_local *local = sdata->local;
+ 	struct ieee80211_chanctx *new_ctx, *curr_ctx;
++	int radio_idx;
+ 
+ 	lockdep_assert_wiphy(local->hw.wiphy);
+ 
+@@ -1171,9 +1209,10 @@ int ieee80211_link_reserve_chanctx(struct ieee80211_link_data *link,
+ 
+ 	new_ctx = ieee80211_find_reservation_chanctx(local, chanreq, mode);
+ 	if (!new_ctx) {
+-		if (ieee80211_can_create_new_chanctx(local, -1))
++		if (ieee80211_can_create_new_chanctx(local, -1) &&
++		    ieee80211_find_available_radio(local, chanreq, &radio_idx))
+ 			new_ctx = ieee80211_new_chanctx(local, chanreq, mode,
+-							false);
++							false, radio_idx);
+ 		else
+ 			new_ctx = ieee80211_replace_chanctx(local, chanreq,
+ 							    mode, curr_ctx);
+@@ -1810,6 +1849,7 @@ int _ieee80211_link_use_channel(struct ieee80211_link_data *link,
+ 	struct ieee80211_chanctx *ctx;
+ 	u8 radar_detect_width = 0;
+ 	bool reserved = false;
++	int radio_idx;
+ 	int ret;
+ 
+ 	lockdep_assert_wiphy(local->hw.wiphy);
+@@ -1840,9 +1880,11 @@ int _ieee80211_link_use_channel(struct ieee80211_link_data *link,
+ 	/* Note: context is now reserved */
+ 	if (ctx)
+ 		reserved = true;
++	else if (!ieee80211_find_available_radio(local, chanreq, &radio_idx))
++		ctx = ERR_PTR(-EBUSY);
+ 	else
+ 		ctx = ieee80211_new_chanctx(local, chanreq, mode,
+-					    assign_on_failure);
++					    assign_on_failure, radio_idx);
+ 	if (IS_ERR(ctx)) {
+ 		ret = PTR_ERR(ctx);
+ 		goto out;
 -- 
-2.44.1
-
+git-series 0.9.1
 
