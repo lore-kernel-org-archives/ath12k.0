@@ -4,65 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6686C2BD09
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 16:19:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D1E9C2BD09
+	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 17:27:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Rm5kXQo9P938BAZImCI9WcdQttRAWgDFl8YcnvJorLU=; b=y9r5y3NTWJ2+EfT/LyySaPzFYR
-	FgGawliHKHnA8qhV4QmrRVgduSozN5dWdxZTacKWIsUalSG6TIuA0984lw0f+r6yUk0+W+e8hhZ/+
-	7w0Dl6LHhlYBzzcp7azvENdm4kzLQjaHo4fLagzw6JvrmzMEuolaS2z9Q/34zJiuL8ISeWZIWegAP
-	jPKQJtIVkbvgsY4rASjh5cgUWwzuol2nW2gIWXaf+a6NfItkPisp9EHlsi2t9LaS+T/gKtnbEOAEW
-	0pNJ8inBUmceIz5i8RhzaAcvbd1u9YnLOOLQpVbmLkzlIePJWKMmrq9/yvGfORcXppVnP9CGcAp+5
-	+Xf1tvgA==;
+	bh=1QC5I7G2by0WGX09u+fLGFLR8tKH0MYQOa6mI3KF9aI=; b=n9HDQYBdfuptqLdoOVFb9Gs7Oy
+	tHaNKPX/XkmlyIcn9Y/sxMPOUZBv2Hx4+7MQIzOxMalpQwmRJ+yJwOJmraCsrOUSjHUlFEyFITJfL
+	7OiGbhKDyqMRWeh4ONSSQfw1XFS2KXqaOCczYAuB6udN9ETL3FOyt/HkIsK1NK5HhjRRLEgJWj8HS
+	QQ0/uCrw7RMQuqoA4DqD15KSmohpy46MqsLBIhTSnk5AIfjopJF3b0HoMPqhCmenvDVgeWYvGAxZY
+	Sd6YhBDb/X/Cjly7oLAiKxtTl9056RhlPBTpANG8fsV6qPlxPP4NuPmr1xbF0fPpZb/IWLxwZs1lR
+	c8Ia1tlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRDYU-00000007uFC-47kV
+	id 1sREcT-00000008Ab8-3dum
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Jul 2024 16:19:03 +0000
+	Tue, 09 Jul 2024 17:27:14 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRDYR-00000007uDx-26Ba
+	id 1sREcQ-00000008AYf-1tI6
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jul 2024 16:19:00 +0000
+	Tue, 09 Jul 2024 17:27:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 45A72CE0ACB;
-	Tue,  9 Jul 2024 16:18:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67BC9C3277B;
-	Tue,  9 Jul 2024 16:18:52 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 87C12CE127A;
+	Tue,  9 Jul 2024 17:27:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83B6FC3277B;
+	Tue,  9 Jul 2024 17:27:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720541933;
-	bh=6CxWOEITHjIhWLXILz9JbgNImfhmSiAYeuju8IvNgdY=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=dhXmN2A3Wvh0y2X9vbMZiyQeSdcg1nqJe6GWH3VlzbevWZqh6yyqznzdwXptak8W2
-	 OKOhijmjiyHw+BKcffio4QTHn1aZx+UuKa0TIxoRP8EAu/L+yZLSug+XAXHss+RA4B
-	 b9IHLQYSUv8uTf8eTX0Jx4qd0chTbdp7iefVrtnXNmsbBaXcHyYqow5cOLUKeeRwZx
-	 RdRVWDGHfBrGUio9Q8fZwbN/sFNADfrJtGNXn662ovDKDCHwE/7hCqJEqLn4OnSs3U
-	 b1XeExMVPSdRSoZDZbGMU4Q8GomsQG32dwQK5LVr3HJlq7h+15UEucAcWzjG1kSkBH
-	 tZ97xTsfv0zqQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Arnd Bergmann <arnd@arndb.de>,  <linux-kernel@vger.kernel.org>,
-  <ath12k@lists.infradead.org>
-Subject: Re: crosstool: x86 kernel compiled with GCC 14.1 fails to boot
-References: <87y16bbvgb.fsf@kernel.org>
-	<917565ee-732a-4df0-a717-a71fbb34fd79@quicinc.com>
-	<837cd2e4-d231-411a-8af4-64b950c4066a@quicinc.com>
-	<c9b23ee3-6790-404d-80a3-4ca196327546@app.fastmail.com>
-	<0e0150ca-fdfa-40cb-ad7f-6ac695b702e4@quicinc.com>
-Date: Tue, 09 Jul 2024 19:18:50 +0300
-In-Reply-To: <0e0150ca-fdfa-40cb-ad7f-6ac695b702e4@quicinc.com> (Jeff
-	Johnson's message of "Tue, 9 Jul 2024 08:29:25 -0700")
-Message-ID: <87le2abkt1.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1720546027;
+	bh=fRD0QtuTFpWTIbbNvqJ42bfrkfmvGDAk+6WRXY40IxQ=;
+	h=Date:From:To:Cc:Subject:Reply-To:References:In-Reply-To:From;
+	b=PtDY+Xgybjud64Zo0AKzyeiTuQ+p43u9Yf7/WkHV3BQsFFeIsF8Vs83/oJv2uTW1L
+	 zc0KjhRqmbrVrGQ7H8l2RwneDn9PCdzIanz3rQRo0vzyKDjOHW5rDAiuHYp10cke9F
+	 LX5oYh6KMdk8UbvO5Gi7Q6/IjpEtBSGuBqR5rcgcmCIYDr7Oo/U8UjpYKIv4rV+abg
+	 Ob01G2gzGkHi3gLaVjlduy5tiSynXRB2KA/cCgbmlP6ZLGoSA9mz5b4RL5vBlJJfUB
+	 m5oXDsBWtaPCZmAZmghAaverqMwGsMxkHKjVyAz68jYmMKzQ/WovxgVukWTuJ+XLyU
+	 Mkx8Ej3u5IkuQ==
+Received: by paulmck-ThinkPad-P17-Gen-1.home (Postfix, from userid 1000)
+	id 2CE02CE0A45; Tue,  9 Jul 2024 10:27:07 -0700 (PDT)
+Date: Tue, 9 Jul 2024 10:27:07 -0700
+From: "Paul E. McKenney" <paulmck@kernel.org>
+To: Kalle Valo <kvalo@kernel.org>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+	kees@kernel.org, sfr@canb.auug.org.au, linux-next@vger.kernel.org
+Subject: Re: [PATCH RFC] wifi: ath12k: workaround fortify warnings in
+ ath12k_wow_convert_8023_to_80211()
+Message-ID: <241ec41b-c37a-46e2-bf28-9e18130ea4ca@paulmck-laptop>
+References: <20240704144341.207317-1-kvalo@kernel.org>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20240704144341.207317-1-kvalo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240709_091859_741224_91728AE2 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20240709_102710_889680_934BF832 
+X-CRM114-Status: GOOD (  20.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,45 +73,90 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: paulmck@kernel.org
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+On Thu, Jul 04, 2024 at 05:43:41PM +0300, Kalle Valo wrote:
+> From: Kalle Valo <quic_kvalo@quicinc.com>
+> 
+> Johannes reported with GCC 11.4 there's a fortify warning below. The warning is
+> not seen with GCC 12.1 nor 13.2. Weirdly moving the other operand of sum to the
+> other side the warning goes away. This is safe to do as the value of the
+> operand is check earlier. But the code looks worse with this so I'm not sure
+> what to do.
+> 
+> In file included from ./include/linux/string.h:374,
+>                  from ./include/linux/bitmap.h:13,
+>                  from ./include/linux/cpumask.h:13,
+>                  from ./include/linux/sched.h:16,
+>                  from ./include/linux/delay.h:23,
+>                  from drivers/net/wireless/ath/ath12k/wow.c:7:
+> drivers/net/wireless/ath/ath12k/wow.c: In function ‘ath12k_wow_convert_8023_to_80211.constprop’:
+> ./include/linux/fortify-string.h:114:33: error: ‘__builtin_memcpy’ accessing 18446744073709551611 or more bytes at offsets 0 and 0 overlaps 9223372036854775799 bytes at offset -9223372036854775804 [-Werror=restrict]
+>   114 | #define __underlying_memcpy     __builtin_memcpy
+>       |                                 ^
+> ./include/linux/fortify-string.h:637:9: note: in expansion of macro ‘__underlying_memcpy’
+>   637 |         __underlying_##op(p, q, __fortify_size);                              |         ^~~~~~~~~~~~~
+> ./include/linux/fortify-string.h:682:26: note: in expansion of macro ‘__fortify_memcpy_chk’
+>   682 | #define memcpy(p, q, s)  __fortify_memcpy_chk(p, q, s,                        |                          ^~~~~~~~~~~~~~~~~~~~
+> drivers/net/wireless/ath/ath12k/wow.c:190:25: note: in expansion of macro ‘memcpy’
+>   190 |                         memcpy(pat, eth_pat, eth_pat_len);
+>       |                         ^~~~~~
+> ./include/linux/fortify-string.h:114:33: error: ‘__builtin_memcpy’ accessing 18446744073709551605 or more bytes at offsets 0 and 0 overlaps 9223372036854775787 bytes at offset -9223372036854775798 [-Werror=restrict]
+>   114 | #define __underlying_memcpy     __builtin_memcpy
+>       |                                 ^
+> ./include/linux/fortify-string.h:637:9: note: in expansion of macro ‘__underlying_memcpy’
+>   637 |         __underlying_##op(p, q, __fortify_size);                              |         ^~~~~~~~~~~~~
+> ./include/linux/fortify-string.h:682:26: note: in expansion of macro ‘__fortify_memcpy_chk’
+>   682 | #define memcpy(p, q, s)  __fortify_memcpy_chk(p, q, s,                        |                          ^~~~~~~~~~~~~~~~~~~~
+> drivers/net/wireless/ath/ath12k/wow.c:232:25: note: in expansion of macro ‘memcpy’
+>   232 |                         memcpy(pat, eth_pat, eth_pat_len);
+>       |                         ^~~~~~
+> 
+> Compile tested only.
+> 
+> Reported-by: Johannes Berg <johannes@sipsolutions.net>
+> Fixes: 4a3c212eee0e ("wifi: ath12k: add basic WoW functionalities")
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-> On 7/8/2024 10:44 PM, Arnd Bergmann wrote:
->> On Tue, Jul 9, 2024, at 05:55, Jeff Johnson wrote:
->>> On 7/8/2024 6:57 PM, Jeff Johnson wrote:
->>>> We tend to enable a lot of debug config options, so I'm wondering if one of
->>>> them is contributing to the issue? Guess I'll turn off a bunch of those
->>>> options and try again.
->>>
->>> OK, with a bunch of debug turned off my image boots.
->>>
->>> Now to find the culprit.
->>>
->>> Current diff between original config and working config:
->> 
->> Nice! I've tried the reverse now, turning on the options
->> you have turned off on top of my defconfig. This version
->> still works for me, booting with a plain
->> 'qemu-system-x86_64 -kernel arch/x86_64/boot/bzImage'
->> and building with my arm64-to-x86 cross compiler.
->
-> I picked my favorite to begin with, enabling KASAN (which in turn enabled a
-> few others). The resulting kernel did not boot for me (just saw a black screen
-> after the GRUB menu). Diff between working and non-working config is below.
->
-> I then downloaded and built the config you supplied. With that I have the same
-> behavior as my original config, the display is frozen with:
-> Loading initial ramdisk ...
->
->
-> [jjohnson:laptop 1966] diff .config.old .config
+Reviewed-by: Paul E. McKenney <paulmck@kernel.org>
 
-BTW there's also scripts/diffconfig which provides a prettier diff.
+(Also compile retested, for whatever that is worth.)
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+This still shows up in allmodconfig next-20240709 builds.
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+						Thanx, Paul
+
+> ---
+>  drivers/net/wireless/ath/ath12k/wow.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/wow.c b/drivers/net/wireless/ath/ath12k/wow.c
+> index c5cba825a84a..e9588bb7561c 100644
+> --- a/drivers/net/wireless/ath/ath12k/wow.c
+> +++ b/drivers/net/wireless/ath/ath12k/wow.c
+> @@ -186,7 +186,7 @@ ath12k_wow_convert_8023_to_80211(struct ath12k *ar,
+>  	if (eth_pkt_ofs < ETH_ALEN) {
+>  		pkt_ofs = eth_pkt_ofs + a1_ofs;
+>  
+> -		if (eth_pkt_ofs + eth_pat_len < ETH_ALEN) {
+> +		if (eth_pat_len < ETH_ALEN - eth_pkt_ofs) {
+>  			memcpy(pat, eth_pat, eth_pat_len);
+>  			memcpy(bytemask, eth_bytemask, eth_pat_len);
+>  
+> @@ -228,7 +228,7 @@ ath12k_wow_convert_8023_to_80211(struct ath12k *ar,
+>  	} else if (eth_pkt_ofs < prot_ofs) {
+>  		pkt_ofs = eth_pkt_ofs - ETH_ALEN + a3_ofs;
+>  
+> -		if (eth_pkt_ofs + eth_pat_len < prot_ofs) {
+> +		if (eth_pat_len < prot_ofs - eth_pkt_ofs) {
+>  			memcpy(pat, eth_pat, eth_pat_len);
+>  			memcpy(bytemask, eth_bytemask, eth_pat_len);
+>  
+> 
+> base-commit: c1cacb01f35589bd41360cdb7535afc792c08a7c
+> -- 
+> 2.39.2
+> 
 
