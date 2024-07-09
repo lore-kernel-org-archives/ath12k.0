@@ -4,88 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51B78C2BD09
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 03:55:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F8C9C3DA41
+	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 05:44:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O8irW42RvadE8r+wXPbl5Wsx3skZMveAA7LvsEbNT3Q=; b=Zjws/um9WwSpC/QRSioeYdK/o5
-	+XaAvOJ82xm1DNinvpq30fdnXThTwbkfrcHBLQUqH4rtl3EqGT5hEXImLTjat7xOIgBib6N6fFvES
-	PRfVeD+RZvwm8cT5GChYMGV66OABvveZSIKofvMmRG4/mjbZBj+t1SpbNaxL9+M13nehTgcurRoOG
-	wtyafN4AIvOZSeY4F/KeJ2RK5CEN2NpMZbLt4f/qJwTg/e5q9TdHAeMtl4AKAhb2mpG3DEyIG3QNK
-	w1aVeNAmA3CSm/LGNfr9NeC9D3H7a43dqCK1c5/esBMtHeYDqhANYBT4HHHySTOlKfYmwjsv83I1v
-	X78O608Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Subject:Cc:To:
+	From:Date:References:In-Reply-To:Message-Id:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=EQg+heZbs2EC/+pnCCFYU3qmOYvuWSX7hGE78f/KJ+U=; b=Q6/W/ivvBa7jog4hMom1tiME0F
+	ztSOP3jHFH6MlZDJft7+uzgE2CfifecNzhsj8Llf5o5gDsUo6+8JrsUJfFqftjzYwvezlngDXea7t
+	x3tb/1DgoV/qAGcvEOBVllEjoNsElnRBcphmhivu25RusgTmopoDB9GaxU2Wlz0ySoBUkDZ5AC0xe
+	IWOBMpm3HbX3yTmaamn6NDBPG8jDSXJn71TdkcQT4psYrkPdUY0SQ9Lswpw3Kx4KZHd7LGzc5Q4oD
+	EmRbS3siNTrcC3/GY3NH89+F5G+ngDZYYXv5NikQlqjBKaxFmKA8PYXxaNIw1aIk7w5gC/PVfwTJI
+	k/RhE20w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sR1wj-00000005neP-3q9z
+	id 1sR3eo-00000005yK7-2gj5
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Jul 2024 03:55:18 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 09 Jul 2024 05:44:55 +0000
+Received: from fhigh8-smtp.messagingengine.com ([103.168.172.159])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sR1wg-00000005ndn-3T5U
+	id 1sR3el-00000005yJP-3MD8
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jul 2024 03:55:16 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4693c44x030713;
-	Tue, 9 Jul 2024 03:55:10 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	O8irW42RvadE8r+wXPbl5Wsx3skZMveAA7LvsEbNT3Q=; b=Ea+9Z1udYS2g81Z6
-	cZ+vbym+Hs8hFgnmg0w3rpSLdPv0j9eCx20jcCxICMq06B9x64oYwXym6UYzhpPf
-	xjd4caFN29VqAIrwz5Nti/CGo85/Nc7bpWEb9aIt9lzHdGuX4Ah7clBpTR2S5EMW
-	EHOJhC4mydoaL0DlMEZqvL0afJ4gahqJ68yZOXPJqkOrSH8S6B67cUBx9HW4m2gH
-	QcYvj9IFlKQ95io7MH6zwlT/OGIa4QGcuvcjmlUGqJx7qCPWOQL1E6bpdD7U+xDv
-	OWbCH5VNniUY0I/LPgWhcAGXVtSUIETaJ/w0eqRUcsuHVXe8HqdDkbhM59VdfFOn
-	5GX2Yw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406we8w738-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 09 Jul 2024 03:55:09 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 4693t89F027252
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 9 Jul 2024 03:55:08 GMT
-Received: from [10.48.245.228] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 8 Jul 2024
- 20:55:08 -0700
-Message-ID: <837cd2e4-d231-411a-8af4-64b950c4066a@quicinc.com>
-Date: Mon, 8 Jul 2024 20:55:07 -0700
+	Tue, 09 Jul 2024 05:44:53 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id 4F1F41141F45;
+	Tue,  9 Jul 2024 01:44:50 -0400 (EDT)
+Received: from imap51 ([10.202.2.101])
+  by compute5.internal (MEProxy); Tue, 09 Jul 2024 01:44:50 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:subject
+	:subject:to:to; s=fm1; t=1720503890; x=1720590290; bh=EQg+heZbs2
+	EC/+pnCCFYU3qmOYvuWSX7hGE78f/KJ+U=; b=k9p8pifMnsy9TRykfAmacOI1JJ
+	5L1z4Z3Q3PGCysLJRtSjO0ImV11WmaMekkc0byRibOTxkX1qW3F4t0/smPC5zwI5
+	rCuP/aNytAd/Ls4TS48vBokAjLZnCge6gqR5CEFeLzAeI4Jmyf37H7BJqkMo3JTF
+	7jjTJnlRdYGER7PF1E1KZZEJuC+KvvOnHrmiOlF4FjyvsInt2kYYpe1SOdWBAGc4
+	JBdfyRKIoCPq7TnsLLRMnN/L/h5XMFYukyAbztQ8Q9S2WicUfkzA3D/dC5QaBJ4y
+	uoUhvgknW6imHEN7OJlZ20ASQ+ESh468HXCW2DLWJme1E31FAJp4EaGBcacA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm2; t=1720503890; x=1720590290; bh=EQg+heZbs2EC/+pnCCFYU3qmOYvu
+	WSX7hGE78f/KJ+U=; b=IxK2FCUsv3okkVDB69gIdNGachdklt9gETgx58SBJj10
+	oLaLSr2ryLTU2wFBn0dGtrnXHpE6Mwj91UX8zfhFQ3TAv44PjE6C27clCGBlhUBk
+	M38dJ0Msz37kDJAD6nlNojkSz/5mggk8FcjgH4DLIAioiRBp6k3aVfjii5zfr/yS
+	GMtV65B150fcEzK1dAF5pENrBzP9Xsa59GtfcUni5J3ue6OxLyjpwBRtK0y6OF8W
+	MCN1/51uld3dW4Xig75Owsjcb9LeptPWfdIvUyjvv3VwgFyKecIYr2jEyjdSVE2B
+	KVccPsUR7A8mMPY3nQszIVyggf0Ql+/03PmSr/f+vg==
+X-ME-Sender: <xms:Uc6MZkcmPvGdaV1tKK-h9hWrswjbcNr8l9zV--dsnI7BPN2Pq5AAZA>
+    <xme:Uc6MZmMyRLEqQSMkjBRoZXWwxW-XOF2A5la-Ql6oLEhhpBTY0P6-jlhoMa1EahO7D
+    5Qmu1CB9ZAb5yC_h5A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeftddrvdekgdellecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpefofgggkfgjfhffhffvvefutgesthdtredtreertdenucfhrhhomhepfdetrhhn
+    ugcuuegvrhhgmhgrnhhnfdcuoegrrhhnugesrghrnhgusgdruggvqeenucggtffrrghtth
+    gvrhhnpeegteeihfejvdfhfeffhfdvvddvfffgtedvteeigfehhfehudffleejueduvdel
+    gfenucffohhmrghinhepphgrshhtvggsihhnrdgtohhmnecuvehluhhsthgvrhfuihiivg
+    eptdenucfrrghrrghmpehmrghilhhfrhhomheprghrnhgusegrrhhnuggsrdguvg
+X-ME-Proxy: <xmx:Uc6MZli-8gPvFepooNBluxa6xExXDcrxHtii-K4bD9FX4cVN8NKSuQ>
+    <xmx:Uc6MZp-HYdOQymONY2UFA_jcGWWAO19d7KwCuDNBam53IAHld3aYDg>
+    <xmx:Uc6MZgtdN8UGUM0oizJWz6n9MZcFubvEk9v9TeOIpUN-RZhcaIYwEg>
+    <xmx:Uc6MZgEcNYcDZjVud32ciNUKyfZ1Y0dnUCYLRq7NKK-NEl1S2qQMIg>
+    <xmx:Us6MZsKgCvtMvK8TI7h1arObqxvvaBq6UC17dpeRhJeFxkh8UX9oejM7>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+	id 03F4AB6008F; Tue,  9 Jul 2024 01:44:49 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.11.0-alpha0-568-g843fbadbe-fm-20240701.003-g843fbadb
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: crosstool: x86 kernel compiled with GCC 14.1 fails to boot
-Content-Language: en-US
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>, Arnd Bergmann <arnd@arndb.de>
-CC: <linux-kernel@vger.kernel.org>, <ath12k@lists.infradead.org>
+Message-Id: <c9b23ee3-6790-404d-80a3-4ca196327546@app.fastmail.com>
+In-Reply-To: <837cd2e4-d231-411a-8af4-64b950c4066a@quicinc.com>
 References: <87y16bbvgb.fsf@kernel.org>
  <917565ee-732a-4df0-a717-a71fbb34fd79@quicinc.com>
-In-Reply-To: <917565ee-732a-4df0-a717-a71fbb34fd79@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: -QpUbxONPt72TVycUvDZO8pk63ESEXhq
-X-Proofpoint-GUID: -QpUbxONPt72TVycUvDZO8pk63ESEXhq
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-08_15,2024-07-08_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 impostorscore=0
- bulkscore=0 spamscore=0 suspectscore=0 lowpriorityscore=0 phishscore=0
- priorityscore=1501 mlxlogscore=999 malwarescore=0 mlxscore=0 clxscore=1015
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2406140001
- definitions=main-2407090023
+ <837cd2e4-d231-411a-8af4-64b950c4066a@quicinc.com>
+Date: Tue, 09 Jul 2024 07:44:27 +0200
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Jeff Johnson" <quic_jjohnson@quicinc.com>,
+ "Kalle Valo" <kvalo@kernel.org>
+Cc: linux-kernel@vger.kernel.org, ath12k@lists.infradead.org
+Subject: Re: crosstool: x86 kernel compiled with GCC 14.1 fails to boot
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240708_205515_048706_AC62AC9D 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240708_224452_157473_ABA669CD 
+X-CRM114-Status: GOOD (  12.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,189 +106,238 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 7/8/2024 6:57 PM, Jeff Johnson wrote:
-> We tend to enable a lot of debug config options, so I'm wondering if one of
-> them is contributing to the issue? Guess I'll turn off a bunch of those
-> options and try again.
+On Tue, Jul 9, 2024, at 05:55, Jeff Johnson wrote:
+> On 7/8/2024 6:57 PM, Jeff Johnson wrote:
+>> We tend to enable a lot of debug config options, so I'm wondering if one of
+>> them is contributing to the issue? Guess I'll turn off a bunch of those
+>> options and try again.
+>
+> OK, with a bunch of debug turned off my image boots.
+>
+> Now to find the culprit.
+>
+> Current diff between original config and working config:
 
-OK, with a bunch of debug turned off my image boots.
+Nice! I've tried the reverse now, turning on the options
+you have turned off on top of my defconfig. This version
+still works for me, booting with a plain
+'qemu-system-x86_64 -kernel arch/x86_64/boot/bzImage'
+and building with my arm64-to-x86 cross compiler.
 
-Now to find the culprit.
+I have turned off most drivers here to get faster builds,
+but it's enough to get console output.
+See https://pastebin.com/p2GFjAc3 for the full .config
 
-Current diff between original config and working config:
+     Arnd
 
-20d19
-< CONFIG_CONSTRUCTORS=y
-328d326
-< CONFIG_GENERIC_CSUM=y
-337d334
-< CONFIG_KASAN_SHADOW_OFFSET=0xdffffc0000000000
-858a856
-> CONFIG_VMAP_STACK=y
-10938,10940d10935
-< CONFIG_STACKDEPOT=y
-< CONFIG_STACKDEPOT_ALWAYS_INIT=y
-< CONFIG_STACKDEPOT_MAX_FRAMES=64
-10996,10997d10990
-< CONFIG_ARCH_WANT_FRAME_POINTERS=y
-< CONFIG_FRAME_POINTER=y
-10999d10991
-< CONFIG_STACK_VALIDATION=y
-11040a11033
-> # CONFIG_KCSAN is not set
-11056,11057c11049
-< CONFIG_SLUB_DEBUG=y
-< # CONFIG_SLUB_DEBUG_ON is not set
+19a20
+> CONFIG_CONSTRUCTORS=y
+290a292
+> CONFIG_GENERIC_CSUM=y
+298a301
+> CONFIG_KASAN_SHADOW_OFFSET=0xdffffc0000000000
+394a398
+> # CONFIG_ARCH_MEMORY_PROBE is not set
+441c445
+< CONFIG_RANDOMIZE_MEMORY_PHYSICAL_PADDING=0x0
 ---
-> # CONFIG_SLUB_DEBUG is not set
-11060c11052
-< CONFIG_PAGE_POISONING=y
+> CONFIG_RANDOMIZE_MEMORY_PHYSICAL_PADDING=0xa
+537a542
+> # CONFIG_ACPI_HOTPLUG_MEMORY is not set
+748d752
+< CONFIG_HAVE_RELIABLE_STACKTRACE=y
+903a908,909
+> CONFIG_NUMA_KEEP_MEMINFO=y
+> CONFIG_MEMORY_ISOLATION=y
+906c912,916
+< # CONFIG_MEMORY_HOTPLUG is not set
 ---
-> # CONFIG_PAGE_POISONING is not set
-11064c11056
-< CONFIG_DEBUG_WX=y
+> CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE=y
+> CONFIG_MEMORY_HOTPLUG=y
+> # CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE is not set
+> # CONFIG_MEMORY_HOTREMOVE is not set
+> CONFIG_MHP_MEMMAP_ON_MEMORY=y
+914a925
+> CONFIG_CONTIG_ALLOC=y
+1238a1250,1251
+> # CONFIG_MOUSE_APPLETOUCH is not set
+> # CONFIG_MOUSE_BCM5974 is not set
+1242a1256
+> # CONFIG_MOUSE_SYNAPTICS_USB is not set
+1264a1279,1280
+> # CONFIG_JOYSTICK_XPAD is not set
+> # CONFIG_JOYSTICK_PXRC is not set
+1269a1286,1290
+> # CONFIG_TABLET_USB_ACECAD is not set
+> # CONFIG_TABLET_USB_AIPTEK is not set
+> # CONFIG_TABLET_USB_HANWANG is not set
+> # CONFIG_TABLET_USB_KBTAB is not set
+> # CONFIG_TABLET_USB_PEGASUS is not set
+1313a1335
+> # CONFIG_TOUCHSCREEN_USB_COMPOSITE is not set
+1336a1359,1360
+> # CONFIG_INPUT_ATI_REMOTE2 is not set
+> # CONFIG_INPUT_KEYSPAN_REMOTE is not set
+1337a1362,1364
+> # CONFIG_INPUT_POWERMATE is not set
+> # CONFIG_INPUT_YEALINK is not set
+> # CONFIG_INPUT_CM109 is not set
+1922c1949,1970
+< # CONFIG_USB_SUPPORT is not set
 ---
-> # CONFIG_DEBUG_WX is not set
-11066d11057
-< CONFIG_PTDUMP_CORE=y
-11069,11072c11060
-< CONFIG_DEBUG_KMEMLEAK=y
-< CONFIG_DEBUG_KMEMLEAK_MEM_POOL_SIZE=16000
-< # CONFIG_DEBUG_KMEMLEAK_DEFAULT_OFF is not set
-< CONFIG_DEBUG_KMEMLEAK_AUTO_SCAN=y
+> CONFIG_USB_SUPPORT=y
+> # CONFIG_USB_ULPI_BUS is not set
+> CONFIG_USB_ARCH_HAS_HCD=y
+> # CONFIG_USB is not set
+> 
+> #
+> # USB dual-mode controller drivers
+> #
+> 
+> #
+> # USB port drivers
+> #
+> 
+> #
+> # USB Physical Layer drivers
+> #
+> # CONFIG_NOP_USB_XCEIV is not set
+> # end of USB Physical Layer drivers
+> 
+> # CONFIG_USB_GADGET is not set
+> # CONFIG_TYPEC is not set
+> # CONFIG_USB_ROLE_SWITCH is not set
+2243a2292
+> # CONFIG_USB_LGM_PHY is not set
+2829a2879
+> CONFIG_STACKDEPOT_ALWAYS_INIT=y
+2873a2924,2925
+> CONFIG_ARCH_WANT_FRAME_POINTERS=y
+> CONFIG_FRAME_POINTER=y
+2874a2927
+> # CONFIG_STACK_VALIDATION is not set
+2896d2948
+< # CONFIG_KCSAN is not set
+2922c2974,2977
+< # CONFIG_DEBUG_KMEMLEAK is not set
 ---
-> # CONFIG_DEBUG_KMEMLEAK is not set
-11074,11081c11062
-< CONFIG_DEBUG_OBJECTS=y
-< # CONFIG_DEBUG_OBJECTS_SELFTEST is not set
-< # CONFIG_DEBUG_OBJECTS_FREE is not set
-< CONFIG_DEBUG_OBJECTS_TIMERS=y
-< CONFIG_DEBUG_OBJECTS_WORK=y
-< CONFIG_DEBUG_OBJECTS_RCU_HEAD=y
-< CONFIG_DEBUG_OBJECTS_PERCPU_COUNTER=y
-< CONFIG_DEBUG_OBJECTS_ENABLE_DEFAULT=1
+> CONFIG_DEBUG_KMEMLEAK=y
+> CONFIG_DEBUG_KMEMLEAK_MEM_POOL_SIZE=16000
+> # CONFIG_DEBUG_KMEMLEAK_DEFAULT_OFF is not set
+> CONFIG_DEBUG_KMEMLEAK_AUTO_SCAN=y
+2924c2979,2986
+< # CONFIG_DEBUG_OBJECTS is not set
 ---
-> # CONFIG_DEBUG_OBJECTS is not set
-11084c11065
-< CONFIG_SCHED_STACK_END_CHECK=y
+> CONFIG_DEBUG_OBJECTS=y
+> # CONFIG_DEBUG_OBJECTS_SELFTEST is not set
+> # CONFIG_DEBUG_OBJECTS_FREE is not set
+> CONFIG_DEBUG_OBJECTS_TIMERS=y
+> CONFIG_DEBUG_OBJECTS_WORK=y
+> CONFIG_DEBUG_OBJECTS_RCU_HEAD=y
+> CONFIG_DEBUG_OBJECTS_PERCPU_COUNTER=y
+> CONFIG_DEBUG_OBJECTS_ENABLE_DEFAULT=1
+2927c2989
+< # CONFIG_SCHED_STACK_END_CHECK is not set
 ---
-> # CONFIG_SCHED_STACK_END_CHECK is not set
-11091c11072
-< CONFIG_MEMORY_NOTIFIER_ERROR_INJECT=m
----
+> CONFIG_SCHED_STACK_END_CHECK=y
+2933a2996
 > # CONFIG_MEMORY_NOTIFIER_ERROR_INJECT is not set
-11099,11107c11080
-< CONFIG_KASAN=y
-< CONFIG_CC_HAS_KASAN_MEMINTRINSIC_PREFIX=y
-< CONFIG_KASAN_GENERIC=y
-< # CONFIG_KASAN_OUTLINE is not set
-< CONFIG_KASAN_INLINE=y
-< CONFIG_KASAN_STACK=y
-< # CONFIG_KASAN_VMALLOC is not set
-< # CONFIG_KASAN_MODULE_TEST is not set
-< # CONFIG_KASAN_EXTRA_INFO is not set
+2943c3006,3014
+< # CONFIG_KASAN is not set
 ---
-> # CONFIG_KASAN is not set
-11109,11114c11082
-< CONFIG_KFENCE=y
-< CONFIG_KFENCE_SAMPLE_INTERVAL=0
-< CONFIG_KFENCE_NUM_OBJECTS=255
-< # CONFIG_KFENCE_DEFERRABLE is not set
-< # CONFIG_KFENCE_STATIC_KEYS is not set
-< CONFIG_KFENCE_STRESS_TEST_FAULTS=0
+> CONFIG_KASAN=y
+> CONFIG_CC_HAS_KASAN_MEMINTRINSIC_PREFIX=y
+> CONFIG_KASAN_GENERIC=y
+> # CONFIG_KASAN_OUTLINE is not set
+> CONFIG_KASAN_INLINE=y
+> CONFIG_KASAN_STACK=y
+> CONFIG_KASAN_VMALLOC=y
+> # CONFIG_KASAN_MODULE_TEST is not set
+> # CONFIG_KASAN_EXTRA_INFO is not set
+2945c3016,3020
+< # CONFIG_KFENCE is not set
 ---
-> # CONFIG_KFENCE is not set
-11126,11128c11094
-< CONFIG_LOCKUP_DETECTOR=y
-< CONFIG_SOFTLOCKUP_DETECTOR=y
-< # CONFIG_BOOTPARAM_SOFTLOCKUP_PANIC is not set
+> CONFIG_KFENCE=y
+> CONFIG_KFENCE_SAMPLE_INTERVAL=0
+> CONFIG_KFENCE_NUM_OBJECTS=255
+> # CONFIG_KFENCE_DEFERRABLE is not set
+> CONFIG_KFENCE_STRESS_TEST_FAULTS=0
+2957c3032,3034
+< # CONFIG_SOFTLOCKUP_DETECTOR is not set
 ---
-> # CONFIG_SOFTLOCKUP_DETECTOR is not set
-11130,11135c11096
-< CONFIG_HARDLOCKUP_DETECTOR=y
-< # CONFIG_HARDLOCKUP_DETECTOR_PREFER_BUDDY is not set
-< CONFIG_HARDLOCKUP_DETECTOR_PERF=y
-< # CONFIG_HARDLOCKUP_DETECTOR_BUDDY is not set
-< # CONFIG_HARDLOCKUP_DETECTOR_ARCH is not set
-< CONFIG_HARDLOCKUP_DETECTOR_COUNTS_HRTIMER=y
+> CONFIG_LOCKUP_DETECTOR=y
+> CONFIG_SOFTLOCKUP_DETECTOR=y
+> # CONFIG_BOOTPARAM_SOFTLOCKUP_PANIC is not set
+2959c3036,3041
+< # CONFIG_HARDLOCKUP_DETECTOR is not set
 ---
-> # CONFIG_HARDLOCKUP_DETECTOR is not set
-11137,11140c11098
-< # CONFIG_BOOTPARAM_HARDLOCKUP_PANIC is not set
-< CONFIG_DETECT_HUNG_TASK=y
-< CONFIG_DEFAULT_HUNG_TASK_TIMEOUT=120
-< # CONFIG_BOOTPARAM_HUNG_TASK_PANIC is not set
+> CONFIG_HARDLOCKUP_DETECTOR=y
+> # CONFIG_HARDLOCKUP_DETECTOR_PREFER_BUDDY is not set
+> CONFIG_HARDLOCKUP_DETECTOR_PERF=y
+> # CONFIG_HARDLOCKUP_DETECTOR_BUDDY is not set
+> # CONFIG_HARDLOCKUP_DETECTOR_ARCH is not set
+> CONFIG_HARDLOCKUP_DETECTOR_COUNTS_HRTIMER=y
+2961c3043,3046
+< # CONFIG_DETECT_HUNG_TASK is not set
 ---
-> # CONFIG_DETECT_HUNG_TASK is not set
-11149c11107
-< CONFIG_SCHED_DEBUG=y
+> # CONFIG_BOOTPARAM_HARDLOCKUP_PANIC is not set
+> CONFIG_DETECT_HUNG_TASK=y
+> CONFIG_DEFAULT_HUNG_TASK_TIMEOUT=120
+> # CONFIG_BOOTPARAM_HUNG_TASK_PANIC is not set
+2970c3055
+< # CONFIG_SCHED_DEBUG is not set
 ---
-> # CONFIG_SCHED_DEBUG is not set
-11151c11109
-< CONFIG_SCHEDSTATS=y
+> CONFIG_SCHED_DEBUG=y
+2982c3067,3068
+< # CONFIG_PROVE_LOCKING is not set
 ---
-> # CONFIG_SCHEDSTATS is not set
-11161,11162c11119
-< CONFIG_PROVE_LOCKING=y
-< # CONFIG_PROVE_RAW_LOCK_NESTING is not set
+> CONFIG_PROVE_LOCKING=y
+> # CONFIG_PROVE_RAW_LOCK_NESTING is not set
+2984,2989c3070,3082
+< # CONFIG_DEBUG_RT_MUTEXES is not set
+< # CONFIG_DEBUG_SPINLOCK is not set
+< # CONFIG_DEBUG_MUTEXES is not set
+< # CONFIG_DEBUG_WW_MUTEX_SLOWPATH is not set
+< # CONFIG_DEBUG_RWSEMS is not set
+< # CONFIG_DEBUG_LOCK_ALLOC is not set
 ---
-> # CONFIG_PROVE_LOCKING is not set
-11164,11176c11121,11126
-< CONFIG_DEBUG_RT_MUTEXES=y
-< CONFIG_DEBUG_SPINLOCK=y
-< CONFIG_DEBUG_MUTEXES=y
-< CONFIG_DEBUG_WW_MUTEX_SLOWPATH=y
-< CONFIG_DEBUG_RWSEMS=y
-< CONFIG_DEBUG_LOCK_ALLOC=y
-< CONFIG_LOCKDEP=y
-< CONFIG_LOCKDEP_BITS=15
-< CONFIG_LOCKDEP_CHAINS_BITS=16
-< CONFIG_LOCKDEP_STACK_TRACE_BITS=19
-< CONFIG_LOCKDEP_STACK_TRACE_HASH_BITS=14
-< CONFIG_LOCKDEP_CIRCULAR_QUEUE_BITS=12
-< # CONFIG_DEBUG_LOCKDEP is not set
+> CONFIG_DEBUG_RT_MUTEXES=y
+> CONFIG_DEBUG_SPINLOCK=y
+> CONFIG_DEBUG_MUTEXES=y
+> CONFIG_DEBUG_WW_MUTEX_SLOWPATH=y
+> CONFIG_DEBUG_RWSEMS=y
+> CONFIG_DEBUG_LOCK_ALLOC=y
+> CONFIG_LOCKDEP=y
+> CONFIG_LOCKDEP_BITS=15
+> CONFIG_LOCKDEP_CHAINS_BITS=16
+> CONFIG_LOCKDEP_STACK_TRACE_BITS=19
+> CONFIG_LOCKDEP_STACK_TRACE_HASH_BITS=14
+> CONFIG_LOCKDEP_CIRCULAR_QUEUE_BITS=12
+> # CONFIG_DEBUG_LOCKDEP is not set
+2997a3091,3092
+> CONFIG_TRACE_IRQFLAGS=y
+> CONFIG_TRACE_IRQFLAGS_NMI=y
+3002a3098
+> # CONFIG_DEBUG_KOBJECT_RELEASE is not set
+3016a3113
+> CONFIG_PROVE_RCU=y
+3051a3149
+> CONFIG_PREEMPTIRQ_TRACEPOINTS=y
+3104,3105c3202,3203
+< CONFIG_IO_DELAY_0X80=y
+< # CONFIG_IO_DELAY_0XED is not set
 ---
-> # CONFIG_DEBUG_RT_MUTEXES is not set
-> # CONFIG_DEBUG_SPINLOCK is not set
-> # CONFIG_DEBUG_MUTEXES is not set
-> # CONFIG_DEBUG_WW_MUTEX_SLOWPATH is not set
-> # CONFIG_DEBUG_RWSEMS is not set
-> # CONFIG_DEBUG_LOCK_ALLOC is not set
-11185,11186d11134
-< CONFIG_TRACE_IRQFLAGS=y
-< CONFIG_TRACE_IRQFLAGS_NMI=y
-11192d11139
-< # CONFIG_DEBUG_KOBJECT_RELEASE is not set
-11208d11154
-< CONFIG_PROVE_RCU=y
-11248d11193
-< CONFIG_PREEMPTIRQ_TRACEPOINTS=y
-11327d11271
-< # CONFIG_SAMPLE_KMEMLEAK is not set
-11337d11280
-< CONFIG_EARLY_PRINTK_USB=y
-11339,11341c11282
-< CONFIG_EARLY_PRINTK=y
-< CONFIG_EARLY_PRINTK_DBGP=y
-< CONFIG_EARLY_PRINTK_USB_XDBC=y
+> # CONFIG_IO_DELAY_0X80 is not set
+> CONFIG_IO_DELAY_0XED=y
+3113,3114c3211,3212
+< CONFIG_UNWINDER_ORC=y
+< # CONFIG_UNWINDER_FRAME_POINTER is not set
 ---
-> # CONFIG_EARLY_PRINTK is not set
-11347,11348c11288,11289
-< # CONFIG_IO_DELAY_0X80 is not set
-< CONFIG_IO_DELAY_0XED=y
+> # CONFIG_UNWINDER_ORC is not set
+> CONFIG_UNWINDER_FRAME_POINTER=y
+3121c3219,3220
+< # CONFIG_NOTIFIER_ERROR_INJECTION is not set
 ---
-> CONFIG_IO_DELAY_0X80=y
-> # CONFIG_IO_DELAY_0XED is not set
-11355,11358c11296,11300
-< CONFIG_X86_DEBUG_FPU=y
-< CONFIG_PUNIT_ATOM_DEBUG=m
-< # CONFIG_UNWINDER_ORC is not set
-< CONFIG_UNWINDER_FRAME_POINTER=y
----
-> # CONFIG_X86_DEBUG_FPU is not set
-> # CONFIG_PUNIT_ATOM_DEBUG is not set
-> CONFIG_UNWINDER_ORC=y
-> # CONFIG_UNWINDER_FRAME_POINTER is not set
-> # CONFIG_UNWINDER_GUESS is not set
-
+> CONFIG_NOTIFIER_ERROR_INJECTION=m
+> CONFIG_PM_NOTIFIER_ERROR_INJECT=m
 
