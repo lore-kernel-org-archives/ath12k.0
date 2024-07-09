@@ -4,62 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7EF2C2BD09
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 08:55:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 979E5C2BD09
+	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 10:16:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JV/ANj3jKAjuMpJ11DXLC1T9vhymTAa8DJXksYH6ngI=; b=dkqIcKiNjOTHq9Hx/VBQv2Z7hh
-	J8TzPrzJSxlTmIiHzPfL5OAAw1AtJZtzEdcvd0exRHHp7Bq14/he9/o2Mijak7/zXb4jVgUMLtOri
-	skpHOeDiJW7EzKHaAZKFKT7ryuV7xgR8z5aRarr5/551VG/lvrw+69osWIJE2wVtoeejd42V/zXUg
-	TnY1kHwvaaKeDp+dSzUzWrsl353Lz+8Tp8UcrD0FB3EMdjesoIOLxuL5bqmpw3E0o4GchPTkmjEBR
-	q0x4mrLG0vgqDcXTy7mWdvAgmuiScuDLRppSdbcpHNknhVd+rNHYC+I03XLgWF306U2eIjt0BaKsN
-	NdNeNK+A==;
+	bh=rPup1kK2+RcF+K0PkB3iX3bl7hY61xPiPlbCxOCCQ/4=; b=OeD8Q/Tw1r59dr5SjaMPIdGokw
+	NUzqneu2GcIMrpkNl+yCZqIYxLyWh6NfdPEQkn4HGGyJdVQ8BQIMvHX07svZGZTCo50cfV/oJZgdU
+	Ifqw4hxkQabRTuxRDOrjEP4290eULHYXe+cIV5iwavBC2TSTLV1cxVW8UT/BB7Ygw/iKIcquLBifH
+	lmOuIEipmUMAD8h+yGjZ49a7MOArbWHxgwgkm6zv4f5wTdwxZopAfuaq0Dlv/MGxHXL+/ENqEJWGA
+	jIKM3mjgr4y3uuE872UuO23y5ptF3t+iVrVtXglT4d19GviYjdd9cKcckaW4XzFNx1M5Vw2wpKztj
+	N0UbMSzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sR6dC-00000006UaG-22X0
+	id 1sR7tK-00000006mWu-1OoZ
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Jul 2024 08:55:26 +0000
-Received: from nbd.name ([46.4.11.11])
+	Tue, 09 Jul 2024 10:16:10 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sR6d9-00000006UYJ-3ALC
+	id 1sR7tD-00000006mVg-47Yz
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jul 2024 08:55:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=JV/ANj3jKAjuMpJ11DXLC1T9vhymTAa8DJXksYH6ngI=; b=rFG/XDAE7DD3et21DujH4hPzRM
-	qKcgJbGrhM85UXpcfgAgCQj24aOIBQ23cC2MdnKJhUjT4J+2wddnLyRIFf2D86NsmpuonhJAtzfkl
-	QwQFM0vTfJgaRgWxSw+oAUZrsuOZr9m4G9aqxXtZRrEyfJS4p7DIcvWQcYG5GnMBSn8M=;
-Received: from p54ae937c.dip0.t-ipconnect.de ([84.174.147.124] helo=localhost.localdomain)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1sR6N0-004Ln4-1G;
-	Tue, 09 Jul 2024 10:38:42 +0200
-From: Felix Fietkau <nbd@nbd.name>
-To: linux-wireless@vger.kernel.org
-Cc: johannes@sipsolutions.net,
-	quic_adisi@quicinc.com,
-	quic_periyasa@quicinc.com,
-	ath12k@lists.infradead.org
-Subject: [PATCH v5 10/10] wifi: mac80211_hwsim: add support for multi-radio wiphy
-Date: Tue,  9 Jul 2024 10:38:38 +0200
-Message-ID: <3a16838bb7a7d1a072bd7c9d586d17f70fcd8a60.1720514221.git-series.nbd@nbd.name>
-X-Mailer: git-send-email 2.44.0
-In-Reply-To: <cover.8f108602e7f90e91332f131cc9fa115a669a2bf4.1720514221.git-series.nbd@nbd.name>
-References: <cover.8f108602e7f90e91332f131cc9fa115a669a2bf4.1720514221.git-series.nbd@nbd.name>
+	Tue, 09 Jul 2024 10:16:08 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46910wxb001714;
+	Tue, 9 Jul 2024 10:16:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	rPup1kK2+RcF+K0PkB3iX3bl7hY61xPiPlbCxOCCQ/4=; b=o0SZFiUe/woS6Aav
+	97jWIcyNVhIk5jTqQehKS0hUIZxyw980v9WWng5KiYq++k0hiViv2cBdQzwFbORS
+	eATMGuKevA4BR4hzOaEF49qynhSuobQ1P26yAcsPvRfumeowWncKWjHXj9NAxeHA
+	I7rXgsm8ZB3sqgagrNoZjn8o7CgRc9JuAo2Iv2Gz2bnumrsRntL/FWRKgwq8yZgn
+	uc36Cn0K5kI7Vo/3e48fN0sfj9LfCH/rKB2XIcqkw1m5vCOFQEcU+bPyN/HsJXXT
+	OnSHx3U/TtZS4/fUWBPpIDAEvdFbUfVR7WroMkt/v7yDi0yIDjGuNoLl6nbjtiaP
+	KOIiFw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406xa6614d-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 09 Jul 2024 10:15:59 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 469AFwlk006165
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 9 Jul 2024 10:15:58 GMT
+Received: from [10.152.206.169] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 9 Jul 2024
+ 03:15:56 -0700
+Message-ID: <4f0963ff-a822-49b8-3d45-5d90e2c2d511@quicinc.com>
+Date: Tue, 9 Jul 2024 15:44:20 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.0
+Subject: Re: [PATCH v8 7/8] wifi: ath12k: refactor core start based on
+ hardware group
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+References: <20240531180411.1149605-1-quic_hprem@quicinc.com>
+ <20240531180411.1149605-8-quic_hprem@quicinc.com> <87plsuql2y.fsf@kernel.org>
+ <dd2488bb-43f9-d546-7617-2a54ca3d1a1d@quicinc.com>
+ <87ed8ae8ye.fsf@kernel.org>
+From: Harshitha Prem <quic_hprem@quicinc.com>
+In-Reply-To: <87ed8ae8ye.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: XyANtJGN_oqNyLr1i7nIBbA4qzsiBqa2
+X-Proofpoint-ORIG-GUID: XyANtJGN_oqNyLr1i7nIBbA4qzsiBqa2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-09_01,2024-07-08_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=951
+ suspectscore=0 lowpriorityscore=0 impostorscore=0 phishscore=0 spamscore=0
+ clxscore=1015 adultscore=0 malwarescore=0 mlxscore=0 bulkscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407090070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240709_015523_970118_DE1A1B7A 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20240709_031604_195893_21BCF854 
+X-CRM114-Status: GOOD (  19.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,208 +104,83 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This registers one wiphy radio per supported band. Number of different
-channels is set per radio.
 
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
----
- drivers/net/wireless/virtual/mac80211_hwsim.c | 74 +++++++++++++++++---
- drivers/net/wireless/virtual/mac80211_hwsim.h |  4 +-
- 2 files changed, 67 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.c b/drivers/net/wireless/virtual/mac80211_hwsim.c
-index 8491eb32f760..86ff0ad5992e 100644
---- a/drivers/net/wireless/virtual/mac80211_hwsim.c
-+++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
-@@ -69,6 +69,10 @@ static bool mlo;
- module_param(mlo, bool, 0444);
- MODULE_PARM_DESC(mlo, "Support MLO");
- 
-+static bool multi_radio;
-+module_param(multi_radio, bool, 0444);
-+MODULE_PARM_DESC(mlo, "Support Multiple Radios per wiphy");
-+
- /**
-  * enum hwsim_regtest - the type of regulatory tests we offer
-  *
-@@ -669,6 +673,10 @@ struct mac80211_hwsim_data {
- 	struct ieee80211_iface_limit if_limits[3];
- 	int n_if_limits;
- 
-+	struct ieee80211_iface_combination if_combination_radio;
-+	struct wiphy_radio_freq_range radio_range[NUM_NL80211_BANDS];
-+	struct wiphy_radio radio[NUM_NL80211_BANDS];
-+
- 	u32 ciphers[ARRAY_SIZE(hwsim_ciphers)];
- 
- 	struct mac_address addresses[2];
-@@ -917,6 +925,7 @@ static const struct nla_policy hwsim_genl_policy[HWSIM_ATTR_MAX + 1] = {
- 	[HWSIM_ATTR_MLO_SUPPORT] = { .type = NLA_FLAG },
- 	[HWSIM_ATTR_PMSR_SUPPORT] = NLA_POLICY_NESTED(hwsim_pmsr_capa_policy),
- 	[HWSIM_ATTR_PMSR_RESULT] = NLA_POLICY_NESTED(hwsim_pmsr_peers_result_policy),
-+	[HWSIM_ATTR_MULTI_RADIO] = { .type = NLA_FLAG },
- };
- 
- #if IS_REACHABLE(CONFIG_VIRTIO)
-@@ -4018,6 +4027,7 @@ struct hwsim_new_radio_params {
- 	bool reg_strict;
- 	bool p2p_device;
- 	bool use_chanctx;
-+	bool multi_radio;
- 	bool destroy_on_close;
- 	const char *hwname;
- 	bool no_vif;
-@@ -4094,6 +4104,12 @@ static int append_radio_msg(struct sk_buff *skb, int id,
- 			return ret;
- 	}
- 
-+	if (param->multi_radio) {
-+		ret = nla_put_flag(skb, HWSIM_ATTR_MULTI_RADIO);
-+		if (ret < 0)
-+			return ret;
-+	}
-+
- 	if (param->hwname) {
- 		ret = nla_put(skb, HWSIM_ATTR_RADIO_NAME,
- 			      strlen(param->hwname), param->hwname);
-@@ -5114,6 +5130,7 @@ static int mac80211_hwsim_new_radio(struct genl_info *info,
- 	struct net *net;
- 	int idx, i;
- 	int n_limits = 0;
-+	int n_bands = 0;
- 
- 	if (WARN_ON(param->channels > 1 && !param->use_chanctx))
- 		return -EINVAL;
-@@ -5217,22 +5234,22 @@ static int mac80211_hwsim_new_radio(struct genl_info *info,
- 		n_limits++;
- 	}
- 
-+	data->if_combination.radar_detect_widths =
-+				BIT(NL80211_CHAN_WIDTH_5) |
-+				BIT(NL80211_CHAN_WIDTH_10) |
-+				BIT(NL80211_CHAN_WIDTH_20_NOHT) |
-+				BIT(NL80211_CHAN_WIDTH_20) |
-+				BIT(NL80211_CHAN_WIDTH_40) |
-+				BIT(NL80211_CHAN_WIDTH_80) |
-+				BIT(NL80211_CHAN_WIDTH_160);
-+
- 	if (data->use_chanctx) {
- 		hw->wiphy->max_scan_ssids = 255;
- 		hw->wiphy->max_scan_ie_len = IEEE80211_MAX_DATA_LEN;
- 		hw->wiphy->max_remain_on_channel_duration = 1000;
--		data->if_combination.radar_detect_widths = 0;
- 		data->if_combination.num_different_channels = data->channels;
- 	} else {
- 		data->if_combination.num_different_channels = 1;
--		data->if_combination.radar_detect_widths =
--					BIT(NL80211_CHAN_WIDTH_5) |
--					BIT(NL80211_CHAN_WIDTH_10) |
--					BIT(NL80211_CHAN_WIDTH_20_NOHT) |
--					BIT(NL80211_CHAN_WIDTH_20) |
--					BIT(NL80211_CHAN_WIDTH_40) |
--					BIT(NL80211_CHAN_WIDTH_80) |
--					BIT(NL80211_CHAN_WIDTH_160);
- 	}
- 
- 	if (!n_limits) {
-@@ -5350,6 +5367,9 @@ static int mac80211_hwsim_new_radio(struct genl_info *info,
- 
- 	for (band = NL80211_BAND_2GHZ; band < NUM_NL80211_BANDS; band++) {
- 		struct ieee80211_supported_band *sband = &data->bands[band];
-+		struct wiphy_radio_freq_range *radio_range;
-+		const struct ieee80211_channel *c;
-+		struct wiphy_radio *radio;
- 
- 		sband->band = band;
- 
-@@ -5423,8 +5443,36 @@ static int mac80211_hwsim_new_radio(struct genl_info *info,
- 		mac80211_hwsim_sband_capab(sband);
- 
- 		hw->wiphy->bands[band] = sband;
-+
-+		if (!param->multi_radio)
-+			continue;
-+
-+		c = sband->channels;
-+		radio_range = &data->radio_range[n_bands];
-+		radio_range->start_freq = ieee80211_channel_to_khz(c) - 10000;
-+
-+		c += sband->n_channels - 1;
-+		radio_range->end_freq = ieee80211_channel_to_khz(c) + 10000;
-+
-+		radio = &data->radio[n_bands++];
-+		radio->freq_range = radio_range;
-+		radio->n_freq_range = 1;
-+		radio->iface_combinations = &data->if_combination_radio;
-+		radio->n_iface_combinations = 1;
- 	}
- 
-+	if (param->multi_radio) {
-+		hw->wiphy->radio = data->radio;
-+		hw->wiphy->n_radio = n_bands;
-+
-+		memcpy(&data->if_combination_radio, &data->if_combination,
-+		       sizeof(data->if_combination));
-+		data->if_combination.num_different_channels *= n_bands;
-+	}
-+
-+	if (data->use_chanctx)
-+		data->if_combination.radar_detect_widths = 0;
-+
- 	/* By default all radios belong to the first group */
- 	data->group = 1;
- 	mutex_init(&data->mutex);
-@@ -6042,6 +6090,9 @@ static int hwsim_new_radio_nl(struct sk_buff *msg, struct genl_info *info)
- 	else
- 		param.use_chanctx = (param.channels > 1);
- 
-+	if (info->attrs[HWSIM_ATTR_MULTI_RADIO])
-+		param.multi_radio = true;
-+
- 	if (info->attrs[HWSIM_ATTR_REG_HINT_ALPHA2])
- 		param.reg_alpha2 =
- 			nla_data(info->attrs[HWSIM_ATTR_REG_HINT_ALPHA2]);
-@@ -6122,7 +6173,7 @@ static int hwsim_new_radio_nl(struct sk_buff *msg, struct genl_info *info)
- 
- 	param.mlo = info->attrs[HWSIM_ATTR_MLO_SUPPORT];
- 
--	if (param.mlo)
-+	if (param.mlo || param.multi_radio)
- 		param.use_chanctx = true;
- 
- 	if (info->attrs[HWSIM_ATTR_RADIO_NAME]) {
-@@ -6815,7 +6866,8 @@ static int __init init_mac80211_hwsim(void)
- 
- 		param.p2p_device = support_p2p_device;
- 		param.mlo = mlo;
--		param.use_chanctx = channels > 1 || mlo;
-+		param.multi_radio = multi_radio;
-+		param.use_chanctx = channels > 1 || mlo || multi_radio;
- 		param.iftypes = HWSIM_IFTYPE_SUPPORT_MASK;
- 		if (param.p2p_device)
- 			param.iftypes |= BIT(NL80211_IFTYPE_P2P_DEVICE);
-diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.h b/drivers/net/wireless/virtual/mac80211_hwsim.h
-index 28c1db482e79..f32fc3a492b0 100644
---- a/drivers/net/wireless/virtual/mac80211_hwsim.h
-+++ b/drivers/net/wireless/virtual/mac80211_hwsim.h
-@@ -157,6 +157,9 @@ enum hwsim_commands {
-  *	to provide details about peer measurement request (nl80211_peer_measurement_attrs)
-  * @HWSIM_ATTR_PMSR_RESULT: nested attributed used with %HWSIM_CMD_REPORT_PMSR
-  *	to provide peer measurement result (nl80211_peer_measurement_attrs)
-+ * @HWSIM_ATTR_MULTI_RADIO: Register multiple wiphy radios (flag).
-+ *	Adds one radio for each band. Number of supported channels will be set for
-+ *	each radio instead of for the wiphy.
-  * @__HWSIM_ATTR_MAX: enum limit
-  */
- enum hwsim_attrs {
-@@ -189,6 +192,7 @@ enum hwsim_attrs {
- 	HWSIM_ATTR_PMSR_SUPPORT,
- 	HWSIM_ATTR_PMSR_REQUEST,
- 	HWSIM_ATTR_PMSR_RESULT,
-+	HWSIM_ATTR_MULTI_RADIO,
- 	__HWSIM_ATTR_MAX,
- };
- #define HWSIM_ATTR_MAX (__HWSIM_ATTR_MAX - 1)
--- 
-git-series 0.9.1
+On 7/3/2024 9:58 PM, Kalle Valo wrote:
+> Harshitha Prem <quic_hprem@quicinc.com> writes:
+> 
+>>>>    +static void ath12k_core_device_cleanup(struct ath12k_base *ab)
+>>>> +{
+>>>> +	mutex_lock(&ab->core_lock);
+>>>> +
+>>>> +	if (test_and_clear_bit(ATH12K_FLAG_CORE_HIF_IRQ_ENABLED, &ab->dev_flags))
+>>>> +		ath12k_hif_irq_disable(ab);
+>>>> +
+>>>> +	if (test_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags))
+>>>> +		ath12k_core_pdev_destroy(ab);
+>>>> +
+>>>> +	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags)) {
+>>>> +		ath12k_mac_unregister(ab);
+>>>> +		ath12k_mac_destroy(ab);
+>>>> +	}
+>>>> +
+>>>> +	mutex_unlock(&ab->core_lock);
+>>>> +}
+>>> This patch is just abusing flags and because of that we have
+>>> spaghetti
+>>> code. I have been disliking use of enum ath12k_dev_flags before but this
+>>> is just looks too much. I am wondering do we need to cleanup the ath12k
+>>> architecture first, reduce the usage of flags and then revisit this
+>>> patchset?
+>>>
+>> yeah., more dev flags :( but flags were needed for the race conditions
+>> when multiple devices where involved in a group, some devices would
+>> have completed till pdev create some might not. Some crashes were seen
+>> because hif_irq_disable was called for a device in a group but that
+>> device was not even at the stage of core register. Will check the
+>> possibility to  reduce the flag usage but it seemed necessary for
+>> multiple device group clean up.
+> 
+> I think the core problem here is of mixing enum ath12k_hw_state and enum
+> ath12k_dev_flags, it's just a mess even before this patchset. For
+> example, these flags look like they should be part enum ath12k_hw_state
+> instead:
+> 
+> 	ATH12K_FLAG_RECOVERY,
+> 	ATH12K_FLAG_UNREGISTERING,
+> 	ATH12K_FLAG_REGISTERED,
+> 	ATH12K_FLAG_QMI_FAIL,
+> 
+> If we have an enum plus set of flags to handle the actual state then it
+> will become difficult to manage it all. Instead we should just have the
+> enum for tracking the state of the driver.
+> 
+
+ath12k_hw_state is the driver state representation which is used to 
+indicate whether driver has started or in restarting from mac80211 
+prespective where as ath12k_dev_flags closely related to devices and its 
+q6 states.
+
+So, ATH12K_FLAG_RECOVERY, ATH12K_FLAG_QMI_FAIL should be in 
+ath12k_dev_flags because these are specific to Q6 crashes and failure. 
+ATH12K_FLAG_UNREGISTERING is actually used to indicate pci_remove is 
+initiated and we should not process any QMI events but may be naming is 
+creating the confusion. ATH12K_FLAG_REGISTERED flag is used whether to 
+recover or not with the information available in mac80211 to reconfig.
+
+With hardware abstraction, it can be like 3 devices (ath12k_base) in one 
+ath12k_hw and with ath12k_hw_states alone we might not be able to 
+handle. Because, say device1 is in recovery, device2 is already till QMI 
+firmware ready after device probing and these two devices are not 
+registered to  mac80211 then we cannot set the ath12k_hw_state as ON/OFF 
+or anything else.
+
+Hence, we may require two distinct flags, where one holds the driver 
+abstraction state and other is device states. With grouping complexity 
+would increases as we have to sync between the devices and we require 
+two flags. Please let me know your thoughts.
+
+
+Thanks,
+Harshitha
 
