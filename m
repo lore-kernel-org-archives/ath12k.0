@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DFA9C3DA42
-	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 16:29:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CBCFC3DA42
+	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 16:31:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=q6Rn/bJCuLHmyP71FdbZN2E5X2MK6Vg0AP2VOTXKTGc=; b=zaubrEseOUUua4pTXZiT8njHmg
-	xpBvEX1b1mkaNFdBFpIFqX55UoaYO/D1xBgbU0xwro6PW/vqwGG7OIDjRcFsoZh64m7yfLiLxzdwC
-	+6mhYN5S2wn7h8m8p8FT5PU37OeDbgz7xjwpZP6ckqlq9841ARPk2j/AkW+rzTsWfFo4tEZvHve4O
-	L2BN62c0cudnzNJSP5OweHxNd75C0dV9egKP+qpA/6UnFuiQP6LLYlkNDzdGf14SWsm8M3QC1F0jU
-	0DElEF2NereyzTCszJVwuNj8MtzqfAJcAl2eBMfZawi4RZM/so+lxmKploxpPM2ppMR5WYLMvKRr4
-	rEDq4dIw==;
+	bh=IMLLvlmd/se95Hp6t8XEQ/J5sIDfKBmp+tPe6j1zUsE=; b=nmrsSVelL7l6gU0mVkz9TcaMf0
+	s3f1oEbY9lLKCsDNj7SsJFphruzuBPSwdnbIA3Quk4He6qzlAzo40xUvvOz7VK0TAZIlg38iXl6st
+	parQHOAOzHoPaLI9y4i9mntyDKbkUOSb5vUoO14P7EMuxwnO3EE4MDKuRzrjCDjVVf/tBV2OfM5Vy
+	Xkcr9xGmKfcQgdslIo5gBz3f14YUaSxI41+DupZzdyY3EvluRg95DmAj8U7+EZICu4rA5Dj5s7j0X
+	tzvbGxR6TIM8Osl+/3jKBd/rFpkh/iRA49QQLTBD0LnVeEdJvQb/ew47wAso4pXrMzkrvnf3hCZ6i
+	T/lLL2FA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaBl-0000000B9t2-3HeW
+	id 1sRaEF-0000000BAhC-0TFC
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Jul 2024 16:29:05 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 10 Jul 2024 16:31:39 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaBS-0000000B9kW-17gx;
-	Wed, 10 Jul 2024 16:29:03 +0000
+	id 1sRaDb-0000000BAXl-0Ot7
+	for ath12k@lists.infradead.org;
+	Wed, 10 Jul 2024 16:31:37 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8D45561489;
-	Wed, 10 Jul 2024 16:28:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2294FC32786;
-	Wed, 10 Jul 2024 16:28:43 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 93178CE1714;
+	Wed, 10 Jul 2024 16:30:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E59FC4AF07;
+	Wed, 10 Jul 2024 16:30:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720628925;
-	bh=EgdzbU+3yPs9BQQAdZ0RzeqYD2FW6i/xT6qw+amuVHo=;
+	s=k20201202; t=1720629049;
+	bh=RIfeF0gvxy9BzoF97850w13AzsyU+nnXz4c10sLPe5Y=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=oi9/eEpaRAr5Vfg+21ANwLl8HQbTTFLz2DGjObapagXWPGGZWdXCWDc6KBqVOOLUK
-	 poGhOkpOY4Yjvjt8oS+hZPEGWyDuYl7MdlsX5EYqSl/VGSylOs4wGVYPGK5pzLKXMp
-	 wV3Wim0rNsssrtKBJVLSKmNKt073dbr6Lcx553BO8OkHG2ybPhlpbzOWLRuwD/65WV
-	 AliNsL6HAKgkU/bonY4ofnhmoVOr9j1y3V59b4V+CXGXD8CH7h40ctukG4PWLfRVY9
-	 M8HxIT+Z+ztSADWLRHBSb2+bxSk4QQSIHrIQhRFwjV/MqdI2nds0pS0obB8N4Ozjhu
-	 MXCdY0R/AQHLw==
+	b=fzF+BBSUcBn+0kvjD1qkyvPvaN5956DMgQi8GzZ7WJmvdUQ8LoKbnuHJmOubH6Vqu
+	 Qn+eUXdLfUOvqvUo8n79mGPqtPrKuuKDHyQndZDKtPJ9q/rbO3989Moxwje2uNSiI6
+	 M4ky5bevxRBIazm4jqcgJaU7SYo8n7tBtSNepR9vbgf9VSHCSfQxnu9KJOboZgu+Ch
+	 y8zlsasypgHrdppgtxTlKhaK/rF6FhxbHrZLsNk+oxVKeMCA0q9riZmRDe5E9oQvvM
+	 Nw6Xldf3rdomHaocSghetU/Nr73k8NgRzLZtsZbvNZcfYRkYoeFiOjN9xNOGipPktS
+	 k0WekHkoBr9vw==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH 1/2] wifi: ath12k: fix array out-of-bound access in SoC
- stats
+Subject: Re: [PATCH v2] wifi: ath12k: Support Transmit DE stats
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240704070811.4186543-2-quic_periyasa@quicinc.com>
-References: <20240704070811.4186543-2-quic_periyasa@quicinc.com>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <ath11k@lists.infradead.org>,
- <linux-wireless@vger.kernel.org>, Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>
+In-Reply-To: <20240704090535.827680-1-quic_rdevanat@quicinc.com>
+References: <20240704090535.827680-1-quic_rdevanat@quicinc.com>
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ Dinesh Karthikeyan
+	<quic_dinek@quicinc.com>, Roopni Devanathan <quic_rdevanat@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <172062892254.1204645.1517943007872278005.kvalo@kernel.org>
-Date: Wed, 10 Jul 2024 16:28:43 +0000 (UTC)
+Message-ID: <172062904694.1204645.4938880576628428164.kvalo@kernel.org>
+Date: Wed, 10 Jul 2024 16:30:48 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240710_092847_209712_A30DB240 
-X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-CacheID: sfid-20240710_093059_359972_7F2B14D8 
+X-CRM114-Status: UNSURE (   6.37  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,28 +75,76 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
+Roopni Devanathan <quic_rdevanat@quicinc.com> wrote:
 
-> Currently, the ath12k_soc_dp_stats::hal_reo_error array is defined with a
-> maximum size of DP_REO_DST_RING_MAX. However, the ath12k_dp_rx_process()
-> function access ath12k_soc_dp_stats::hal_reo_error using the REO
-> destination SRNG ring ID, which is incorrect. SRNG ring ID differ from
-> normal ring ID, and this usage leads to out-of-bounds array access. To
-> fix this issue, modify ath12k_dp_rx_process() to use the normal ring ID
-> directly instead of the SRNG ring ID to avoid out-of-bounds array access.
+> Add support to request transmit DE stats from firmware through HTT stats
+> type 8. These stats give information about enqueued packets, discarded
+> packets, failed packets and other information such as power, bandwidth
+> information, number of retries, etc.
+> 
+> Sample output:
+> -------------
+> echo 8 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> HTT_TX_DE_CMN_STATS_TLV:
+> mac_id = 0
+> tcl2fw_entry_count = 0
+> not_to_fw = 0
+> .....
+> 
+> HTT_TX_DE_EAPOL_PACKETS_STATS_TLV:
+> m1_packets = 0
+> m2_packets = 0
+> m3_packets = 0
+> .....
+> 
+> HTT_TX_DE_CLASSIFY_STATS_TLV:
+> arp_packets = 0
+> igmp_packets = 0
+> dhcp_packets = 0
+> .....
+> 
+> HTT_TX_DE_CLASSIFY_FAILED_STATS_TLV:
+> ap_bss_peer_not_found = 0
+> ap_bcast_mcast_no_peer = 0
+> sta_delete_in_progress = 0
+> .....
+> 
+> HTT_TX_DE_CLASSIFY_STATUS_STATS_TLV:
+> eok = 0
+> classify_done = 0
+> lookup_failed = 0
+> .....
+> 
+> HTT_TX_DE_ENQUEUE_PACKETS_STATS_TLV:
+> enqueued_pkts = 0
+> to_tqm = 0
+> to_tqm_bypass = 0
+> 
+> HTT_TX_DE_ENQUEUE_DISCARD_STATS_TLV:
+> discarded_pkts = 0
+> local_frames = 0
+> is_ext_msdu = 0
+> 
+> HTT_TX_DE_COMPL_STATS_TLV:
+> tcl_dummy_frame = 0
+> tqm_dummy_frame = 0
+> tqm_notify_frame = 0
+> .....
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-2 patches applied to ath-next branch of ath.git, thanks.
+Patch applied to ath-next branch of ath.git, thanks.
 
-e106b7ad13c1 wifi: ath12k: fix array out-of-bound access in SoC stats
-69f253e46af9 wifi: ath11k: fix array out-of-bound access in SoC stats
+04aee7a84779 wifi: ath12k: Support Transmit DE stats
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240704070811.4186543-2-quic_periyasa@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/patch/20240704090535.827680-1-quic_rdevanat@quicinc.com/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
