@@ -4,78 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F955C3DA41
-	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 17:45:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54475C3DA42
+	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 17:58:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IPDAhHwnIGHF+OqRUn1d97N0QJzPsxKjNmfENi5T4Dc=; b=qF/RzeguEpUostyY1FBe0JlvrJ
-	BV3T+S2XGK2mRN1uZqH1vbFRQ9C+2SzT7+weZXdTU5x8pYeoQkbSmD/ZK2QBDo2h5WvfkLVk7khkG
-	zxxwgy2g3QZcFO707S5J91O93tfjQZL7UQWuzZXt/zMbWwY9TDsEmczSZsr2ss3IkPIAmc58ChAuA
-	7NUd4y4czVnx+1u//JoCSV2MGyRnamNoVnRV3vXI+ipNhMm33p8fI1ifEXsEBehdu4h9sI73Hkx42
-	14OuoMOuOCS5ifil6VMbAtGGoevjqqAP33Cklqh2KmysCSIrJmWUG7N0MTnJp+ggj0zp0BoWDKnvu
-	4SErLVyg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=NMR0+Nqp8/pr/39H9jGS3q31+RjxVbuhes6M+549Es4=; b=li/3iQmedLwzxbrly2fCZ0l6Cv
+	z0mqoYEvTN3MLroUU0RpnzzN4sRMSQQ+WhDGnRTvJQg4RCLVakp3omwNZFkPOS7XDj4T8FOlNUKVo
+	tCIfV8t+r6tF9QOasC2fw4qIQ2whx+/T7qQIfz6ZqJGS7hdfOVC83oLfoU7svtxxj4oC+oWIXW4N2
+	uXeebpxpj3Ngii+36aiQTMyDOKGq7STcKmSzDUgWcykuTOl5SEStrBjCI6NMqQT2WzTN0Kfbrq1J2
+	0fYLaRBQUOXyvFzc1KY6y/bD8i1E7Jj/ddLxdx+bJuZJvxWICA/WTLXrATTCC9yZLg9GcXqxEyKPH
+	LZAzGnSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRbNq-0000000BLaE-3sXU
+	id 1sRbZo-0000000BMrU-0Hmi
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Jul 2024 17:45:39 +0000
+	Wed, 10 Jul 2024 17:58:00 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaEw-0000000BAs7-2zeM
+	id 1sRbZm-0000000BMrL-1PAL
 	for ath12k@bombadil.infradead.org;
-	Wed, 10 Jul 2024 16:32:22 +0000
+	Wed, 10 Jul 2024 17:57:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Date:Message-ID:Cc:To:References:
-	In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:Content-Type:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=IPDAhHwnIGHF+OqRUn1d97N0QJzPsxKjNmfENi5T4Dc=; b=LLXR/7rmSD85KKxEyBa1o+sf37
-	k9vnUzy+V5Oib7F/QQ8gO1txWPvzUidyPUn4IFTgbUOVhQtRNSVTHGIV+lOoCKK/pQQSuSinwYKWK
-	KUI0ePWAEGBg42tteL0TX+v0TrerrucuOK6AIBqvTIV89QehefavFClg4USpWI6DXxJBcVznL0o0o
-	/sgNzIT+ddTuMtN/8fPCT7sSGCD6IzARXahfmdHGgWUhh7EgsMFL3rQwvSjLwYIWj/82d1CetLovk
-	gU7onxYtPcemH4Ee0B4VFT0c7FtnDtzg+a6GdzmOAxdKUyL9LXsOZawoVPY8RCNOLEunu+37Czbo6
-	3L3uDwtw==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=NMR0+Nqp8/pr/39H9jGS3q31+RjxVbuhes6M+549Es4=; b=E4Ip6RZaec/WVbV8PMyielbKgC
+	NEDSNMkGATjxDhh1JMTux5l6gWSDwED5ukJE1bRRLWNwdXg8Ku0UFh0PhlXqyCydrVtTHuW0xbQ84
+	AOaqrjmoQJ1nBLg55qSWpXuH8eCjQkCtcWhQCHiY9V3i3G9em/F0bPEmibwaj0cQWUuTKcjFzg4Gm
+	9vefZrpjHLW2GT4Y4E/c1zFrmLpJg1QNRh/vQenDrF8J28wNjf2rMq1GryUwU+AUWpk4bCxRbgX3t
+	Kh20m5H7G0gSu6/upiHfTP2q7v50CvdGiNICkRfaOJqg/wlcYcxV8iNZ+g6ETeQTbpPVcBNGAsKrm
+	CzGCAjNQ==;
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaEt-00000000veb-1pUI
+	id 1sRbZi-00000000wia-3lPj
 	for ath12k@lists.infradead.org;
-	Wed, 10 Jul 2024 16:32:21 +0000
+	Wed, 10 Jul 2024 17:57:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 13FBE61B54;
-	Wed, 10 Jul 2024 16:32:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA39AC4AF09;
-	Wed, 10 Jul 2024 16:32:14 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 5A65BCE175C;
+	Wed, 10 Jul 2024 17:57:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1829C32781;
+	Wed, 10 Jul 2024 17:57:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720629135;
-	bh=hnFP08ghhmLsCPktOQYbAMkrQPAkxrxRGDxqtFHLWac=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=H/z9ozLaJnE23FtzBCAXlGJ5lif8GD9qsSc3lu+FnjV/xmskjTy+S0xpOH40adZPJ
-	 kHonytW6QO0KljhbZequgS3jb3zNszoiSlG8IXcBcUTG6ize6w8ZK3AipWW17IF6qa
-	 9UZoVkT2WLW5En2ngA2RFuC6Vy+0J/+Knte7LaZBOJ2Z8AZJNO4u92VXkEyLKL9HoV
-	 W1Igv+Yky9awZAMZUIjjDfxRS+yat220cSKMXU294aijVHYAFtA15YwmqMMank9iq1
-	 61KI94qNZGvEqrDyMhjK9B10e+t1Xz7ulFW9M1w4V+Y1/KpTBi2ohkYlrG6xN74TDD
-	 unXQOERVoCLEg==
-Content-Type: text/plain; charset="utf-8"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH v2] wifi: ath12k: Support Transmit DE stats
+	s=k20201202; t=1720634270;
+	bh=gdLqjCpDLwxbDF582YXqZlohACs8bz6oUymsKUdbgG4=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=DVs7nBHddK/GKjqTkSLRYtWLisEIEh3vZZZfKCFpDc0uHXZ7cXVwRNZa9mppcEW92
+	 brpydQZjPolQiKrsmlnMuV1LwOtoaLoQkqkCMlgExgzXCopNfvKuLy//l1ogeuuFSH
+	 +w0S/XfaC7cj5uNawweHZSldVk5pDaHozNkyeM1nlP7/W9qqcUex7qy3soUtCqh4xw
+	 IdcWCG83l1MZmd1FqpcUsts5+fma+OEGPHw5VvxvIdZ/WHgfI7wlZTLFGV/Um7dvkO
+	 81xT7dhBmETe3d57H2UrJ61okbfOGSrN4OazJW2E5n5L+17Tt8ZdDtV+0e4FCy+Dxk
+	 yx5S0RZFG7xiw==
 From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <20240704090535.827680-1-quic_rdevanat@quicinc.com>
-References: <20240704090535.827680-1-quic_rdevanat@quicinc.com>
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
- Dinesh Karthikeyan
-	<quic_dinek@quicinc.com>, Roopni Devanathan <quic_rdevanat@quicinc.com>
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <172062913268.1204645.7974155470467589425.kvalo@kernel.org>
-Date: Wed, 10 Jul 2024 16:32:14 +0000 (UTC)
+To: "Arnd Bergmann" <arnd@arndb.de>
+Cc: "Kees Cook" <kees@kernel.org>,  ath12k@lists.infradead.org,
+  linux-wireless@vger.kernel.org
+Subject: Re: [PATCH RFC] wifi: ath12k: workaround fortify warnings in
+ ath12k_wow_convert_8023_to_80211()
+References: <20240704144341.207317-1-kvalo@kernel.org>
+	<202407041551.1DC8C03D@keescook> <877cdvdgpz.fsf@kernel.org>
+	<202407081226.94B1FB24@keescook>
+	<973f9a20-0807-4302-a286-d3ff6478529f@app.fastmail.com>
+Date: Wed, 10 Jul 2024 20:57:47 +0300
+In-Reply-To: <973f9a20-0807-4302-a286-d3ff6478529f@app.fastmail.com> (Arnd
+	Bergmann's message of "Mon, 08 Jul 2024 21:47:44 +0200")
+Message-ID: <87v81d9lk4.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240710_173219_686941_E6C3C6E7 
-X-CRM114-Status: UNSURE (   6.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240710_185755_338383_749E779D 
+X-CRM114-Status: GOOD (  20.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,76 +92,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Roopni Devanathan <quic_rdevanat@quicinc.com> wrote:
+"Arnd Bergmann" <arnd@arndb.de> writes:
 
-> Add support to request transmit DE stats from firmware through HTT stats
-> type 8. These stats give information about enqueued packets, discarded
-> packets, failed packets and other information such as power, bandwidth
-> information, number of retries, etc.
-> 
-> Sample output:
-> -------------
-> echo 8 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-> HTT_TX_DE_CMN_STATS_TLV:
-> mac_id = 0
-> tcl2fw_entry_count = 0
-> not_to_fw = 0
-> .....
-> 
-> HTT_TX_DE_EAPOL_PACKETS_STATS_TLV:
-> m1_packets = 0
-> m2_packets = 0
-> m3_packets = 0
-> .....
-> 
-> HTT_TX_DE_CLASSIFY_STATS_TLV:
-> arp_packets = 0
-> igmp_packets = 0
-> dhcp_packets = 0
-> .....
-> 
-> HTT_TX_DE_CLASSIFY_FAILED_STATS_TLV:
-> ap_bss_peer_not_found = 0
-> ap_bcast_mcast_no_peer = 0
-> sta_delete_in_progress = 0
-> .....
-> 
-> HTT_TX_DE_CLASSIFY_STATUS_STATS_TLV:
-> eok = 0
-> classify_done = 0
-> lookup_failed = 0
-> .....
-> 
-> HTT_TX_DE_ENQUEUE_PACKETS_STATS_TLV:
-> enqueued_pkts = 0
-> to_tqm = 0
-> to_tqm_bypass = 0
-> 
-> HTT_TX_DE_ENQUEUE_DISCARD_STATS_TLV:
-> discarded_pkts = 0
-> local_frames = 0
-> is_ext_msdu = 0
-> 
-> HTT_TX_DE_COMPL_STATS_TLV:
-> tcl_dummy_frame = 0
-> tqm_dummy_frame = 0
-> tqm_notify_frame = 0
-> .....
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+> On Mon, Jul 8, 2024, at 21:31, Kees Cook wrote:
+>> On Mon, Jul 08, 2024 at 06:51:52PM +0300, Kalle Valo wrote:
+>>
+>> I suspect this won't be the only place in the kernel where -Wrestrict
+>> will give weird results with GCC 11, and there are still plenty of folks
+>> using GCC 11. I think the best option would probably be to version-check
+>> GCC to gate the addition of -Wrestrict.
+>>
+>> Arnd, what do you think? This looks like a more extreme version of
+>> commit f9fc1ec28bae ("crypto: drivers - avoid memcpy size warning")
+>
+> The f9fc1ec28bae patch was the other way around, it showed up
+> in new compilers but not old ones. I don't think I've seen
+> more gcc-11 -Wrestrict warnings during testing, but I'm currently
+> not set up to do a thorough search. If it's the only one, then
+> Kalle's suggested workaround is probably best, but if there
+> are additional warnings on gcc-11, making the warning depend
+> newer compilers is also fine. 
 
-In the future, please include Acked-by from v1 unless there are major changes:
+Honestly I was hoping that we could disable the warning for GCC 11 :)
 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240626042221.3090812-1-quic_rdevanat@quicinc.com/
+I feel bad making the code worse due to a compiler problem. For example,
+Intel's zero day bot doesn't seem to use GCC 11 that much anymore, so it
+might surprise more people than just us ath12k folks. (The bot said
+everything was fine but Johannes saw the warning when the code was
+pulled to wireless-next.)
+
+> I just don't want to give up the warning for new compilers altogether.
+
+Me neither. I'm just hoping that we could disable it for GCC 11. But of
+course if you think it's better to add the workaround to ath12k, I can
+submit a proper (non-RFC) patch to do that.
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/patch/20240704090535.827680-1-quic_rdevanat@quicinc.com/
+https://patchwork.kernel.org/project/linux-wireless/list/
 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
 
