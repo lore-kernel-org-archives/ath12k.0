@@ -4,45 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CBCFC3DA42
-	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 16:31:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F955C3DA41
+	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 17:45:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
 	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
 	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IMLLvlmd/se95Hp6t8XEQ/J5sIDfKBmp+tPe6j1zUsE=; b=nmrsSVelL7l6gU0mVkz9TcaMf0
-	s3f1oEbY9lLKCsDNj7SsJFphruzuBPSwdnbIA3Quk4He6qzlAzo40xUvvOz7VK0TAZIlg38iXl6st
-	parQHOAOzHoPaLI9y4i9mntyDKbkUOSb5vUoO14P7EMuxwnO3EE4MDKuRzrjCDjVVf/tBV2OfM5Vy
-	Xkcr9xGmKfcQgdslIo5gBz3f14YUaSxI41+DupZzdyY3EvluRg95DmAj8U7+EZICu4rA5Dj5s7j0X
-	tzvbGxR6TIM8Osl+/3jKBd/rFpkh/iRA49QQLTBD0LnVeEdJvQb/ew47wAso4pXrMzkrvnf3hCZ6i
-	T/lLL2FA==;
+	bh=IPDAhHwnIGHF+OqRUn1d97N0QJzPsxKjNmfENi5T4Dc=; b=qF/RzeguEpUostyY1FBe0JlvrJ
+	BV3T+S2XGK2mRN1uZqH1vbFRQ9C+2SzT7+weZXdTU5x8pYeoQkbSmD/ZK2QBDo2h5WvfkLVk7khkG
+	zxxwgy2g3QZcFO707S5J91O93tfjQZL7UQWuzZXt/zMbWwY9TDsEmczSZsr2ss3IkPIAmc58ChAuA
+	7NUd4y4czVnx+1u//JoCSV2MGyRnamNoVnRV3vXI+ipNhMm33p8fI1ifEXsEBehdu4h9sI73Hkx42
+	14OuoMOuOCS5ifil6VMbAtGGoevjqqAP33Cklqh2KmysCSIrJmWUG7N0MTnJp+ggj0zp0BoWDKnvu
+	4SErLVyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaEF-0000000BAhC-0TFC
+	id 1sRbNq-0000000BLaE-3sXU
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Jul 2024 16:31:39 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Wed, 10 Jul 2024 17:45:39 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaDb-0000000BAXl-0Ot7
+	id 1sRaEw-0000000BAs7-2zeM
+	for ath12k@bombadil.infradead.org;
+	Wed, 10 Jul 2024 16:32:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Date:Message-ID:Cc:To:References:
+	In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:Content-Type:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=IPDAhHwnIGHF+OqRUn1d97N0QJzPsxKjNmfENi5T4Dc=; b=LLXR/7rmSD85KKxEyBa1o+sf37
+	k9vnUzy+V5Oib7F/QQ8gO1txWPvzUidyPUn4IFTgbUOVhQtRNSVTHGIV+lOoCKK/pQQSuSinwYKWK
+	KUI0ePWAEGBg42tteL0TX+v0TrerrucuOK6AIBqvTIV89QehefavFClg4USpWI6DXxJBcVznL0o0o
+	/sgNzIT+ddTuMtN/8fPCT7sSGCD6IzARXahfmdHGgWUhh7EgsMFL3rQwvSjLwYIWj/82d1CetLovk
+	gU7onxYtPcemH4Ee0B4VFT0c7FtnDtzg+a6GdzmOAxdKUyL9LXsOZawoVPY8RCNOLEunu+37Czbo6
+	3L3uDwtw==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sRaEt-00000000veb-1pUI
 	for ath12k@lists.infradead.org;
-	Wed, 10 Jul 2024 16:31:37 +0000
+	Wed, 10 Jul 2024 16:32:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 93178CE1714;
-	Wed, 10 Jul 2024 16:30:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E59FC4AF07;
-	Wed, 10 Jul 2024 16:30:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 13FBE61B54;
+	Wed, 10 Jul 2024 16:32:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA39AC4AF09;
+	Wed, 10 Jul 2024 16:32:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720629049;
-	bh=RIfeF0gvxy9BzoF97850w13AzsyU+nnXz4c10sLPe5Y=;
+	s=k20201202; t=1720629135;
+	bh=hnFP08ghhmLsCPktOQYbAMkrQPAkxrxRGDxqtFHLWac=;
 	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=fzF+BBSUcBn+0kvjD1qkyvPvaN5956DMgQi8GzZ7WJmvdUQ8LoKbnuHJmOubH6Vqu
-	 Qn+eUXdLfUOvqvUo8n79mGPqtPrKuuKDHyQndZDKtPJ9q/rbO3989Moxwje2uNSiI6
-	 M4ky5bevxRBIazm4jqcgJaU7SYo8n7tBtSNepR9vbgf9VSHCSfQxnu9KJOboZgu+Ch
-	 y8zlsasypgHrdppgtxTlKhaK/rF6FhxbHrZLsNk+oxVKeMCA0q9riZmRDe5E9oQvvM
-	 Nw6Xldf3rdomHaocSghetU/Nr73k8NgRzLZtsZbvNZcfYRkYoeFiOjN9xNOGipPktS
-	 k0WekHkoBr9vw==
+	b=H/z9ozLaJnE23FtzBCAXlGJ5lif8GD9qsSc3lu+FnjV/xmskjTy+S0xpOH40adZPJ
+	 kHonytW6QO0KljhbZequgS3jb3zNszoiSlG8IXcBcUTG6ize6w8ZK3AipWW17IF6qa
+	 9UZoVkT2WLW5En2ngA2RFuC6Vy+0J/+Knte7LaZBOJ2Z8AZJNO4u92VXkEyLKL9HoV
+	 W1Igv+Yky9awZAMZUIjjDfxRS+yat220cSKMXU294aijVHYAFtA15YwmqMMank9iq1
+	 61KI94qNZGvEqrDyMhjK9B10e+t1Xz7ulFW9M1w4V+Y1/KpTBi2ohkYlrG6xN74TDD
+	 unXQOERVoCLEg==
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -55,11 +70,11 @@ Cc: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
  Dinesh Karthikeyan
 	<quic_dinek@quicinc.com>, Roopni Devanathan <quic_rdevanat@quicinc.com>
 User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <172062904694.1204645.4938880576628428164.kvalo@kernel.org>
-Date: Wed, 10 Jul 2024 16:30:48 +0000 (UTC)
+Message-ID: <172062913268.1204645.7974155470467589425.kvalo@kernel.org>
+Date: Wed, 10 Jul 2024 16:32:14 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240710_093059_359972_7F2B14D8 
-X-CRM114-Status: UNSURE (   6.37  )
+X-CRM114-CacheID: sfid-20240710_173219_686941_E6C3C6E7 
+X-CRM114-Status: UNSURE (   6.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -137,11 +152,10 @@ Roopni Devanathan <quic_rdevanat@quicinc.com> wrote:
 > 
 > Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 > Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-Patch applied to ath-next branch of ath.git, thanks.
+In the future, please include Acked-by from v1 unless there are major changes:
 
-04aee7a84779 wifi: ath12k: Support Transmit DE stats
+https://patchwork.kernel.org/project/linux-wireless/patch/20240626042221.3090812-1-quic_rdevanat@quicinc.com/
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/patch/20240704090535.827680-1-quic_rdevanat@quicinc.com/
