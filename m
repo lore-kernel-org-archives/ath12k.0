@@ -4,101 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42D29C2BD09
-	for <ath12k@archiver.kernel.org>; Tue,  9 Jul 2024 19:33:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A30A3C3DA41
+	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 02:18:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Subject:Cc:To:
-	From:Date:References:In-Reply-To:Message-Id:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AE0fFzRZO99KbEKs+v9clAHq1pXfvPK0Ierrsu1abhs=; b=vxke92Rr/I4tqkpUB9Yyfsnkcy
-	84r2TRKR5nOVSJhVGQ+h65u6+LUx0+87aJtQVkFBS1FUtW6TZzCFO+RKmFKYyHLSGiTnJWZO437+W
-	mKx/LtxjULMgO0oqow9Uu4Nn3EItOOgQiITOUov33o6oyhxK18x7g2Gut6YJioFySEuSsqdOVUukD
-	rAF6tG1EFY7mqsU1sNPn88XJvQwlvbnS1yYDwAAJEtm4pzxHIrE7RgbEViKI/beRiLAV8v3ZUsmAD
-	5DQmC4ujvZ5SaMhkULxQODqmb5pjLZj1pIHsGqclRuZaLMEFVy4Gx6Im45dp53sXxmLfD7TGHLCKq
-	uN7UVesA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=74zCitBFb9ZjqhxUh6FLuePgb223C7VIcVMrRZVNv9Y=; b=e089blEgEjkLhoCmWpCZIJI6Cf
+	J31Zw3waQZPW4w7V1AgJkyzq/K2i+FWZL+i4JFrZh4lbZHHG+rQ5Uu9ZzB+RWjmQZKvcuqYVG3Szv
+	6PY/MDFq1mhzYVfLl/JXuQplt/gAGZU7QL9YOiojso1K/PGrow1xH0N9srm7FLR4kLcY+eYNYl2Ya
+	lAVBsK7RbQY07GRGYXTiBLwZQDYIvhFeEVkg+gX32X8bEdQvACM2eOVkNH7lapAyjQE03EGHjJtJE
+	SPVRwSvJdBXz3nv/v2WtANLjpWdFVAr8Wgye3Fz6hF15C2dCYxgyX7at0T5ZE5w7t56QPewGNos+l
+	JO3h4sFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRGat-00000008PDE-44Cv
+	id 1sRMuv-00000009AIe-1RZC
 	for ath12k@archiver.kernel.org;
-	Tue, 09 Jul 2024 19:33:43 +0000
-Received: from fhigh8-smtp.messagingengine.com ([103.168.172.159])
+	Wed, 10 Jul 2024 02:18:49 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRGac-00000008P9X-2us3
+	id 1sRMus-00000009AHh-18X6
 	for ath12k@lists.infradead.org;
-	Tue, 09 Jul 2024 19:33:28 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
-	by mailfhigh.nyi.internal (Postfix) with ESMTP id BA6ED1140138;
-	Tue,  9 Jul 2024 15:33:23 -0400 (EDT)
-Received: from imap51 ([10.202.2.101])
-  by compute5.internal (MEProxy); Tue, 09 Jul 2024 15:33:23 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:subject
-	:subject:to:to; s=fm1; t=1720553603; x=1720640003; bh=AE0fFzRZO9
-	9KbEKs+v9clAHq1pXfvPK0Ierrsu1abhs=; b=nch44eC1+Zbz0IdTfvfecqBNjX
-	YpXM7HfjV2RciRb0wXchwubHQzpnH6PsvZHaW2jiMaSutbhGYPkhFgNlggZLphkF
-	ka2kBNm81rXrOEukmnBzavFh0WgXb4hW6PxEopZ8YB/+5MG9IwLiKo9Exe8xrHY+
-	s7EMJCQEOba+aIs7L1ZhTAtROrenuQTPOfWAef+5Tb5/i8gm8OH5uw0y36kOtgSe
-	njIGjb3XJkKkw8JuK8Q6fJsIq8fF0ZlgOdDiIapJ9FDonaSEfhlLc2PtX09g7e+Z
-	kPFTnoy2/AN6g4kcb8IiUzGJhNsYNLWEG05LcZ1iFZaSRhmt4aCiKnd66a0A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm2; t=1720553603; x=1720640003; bh=AE0fFzRZO99KbEKs+v9clAHq1pXf
-	vPK0Ierrsu1abhs=; b=BPwP3bQn0yC3nVNRRRTrZkI7J45R1r79uxSCNIOfwTX/
-	Pf/vybLFrBjHGHYBFGFefAIufoSNeY+eOh1iR8OIW2uBmICIykw+b46SFnORVyBf
-	DQmqAW8s19+7AP9EaD+uqrQZlYwhZlDJjnT4SUeauxLj3TC/YUM0O9ueWtUPaV9F
-	gAWIwDSwpXbbEIpVuzG0uIhiHFmFnUQPnYevbcRuJ8A9MuY8wyYPqnOC5ymgsX6X
-	sqgbzu9H2rUkXoxmx7WtGNNJoklgBL3yVZwsrdRMm7HnayPetzYF6PEvITva/c7k
-	aylQh60k0iUAJJ3AI6hT9iauRp8VpPwRVoiLC8PArA==
-X-ME-Sender: <xms:gpCNZoCXVKxZYgd-tL_p2k9_uAle5NRuWFn4b8oB91ZexvboAwvAow>
-    <xme:gpCNZqidF1K-9jUuTpzLvnQflD26Kb9sEmupPhPbyGA9GSp03Apa1q1viLXpquDUZ
-    AokqUCeyiJz8LMOVVg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeftddrvdelgddufeelucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepofgfggfkjghffffhvfevufgtsehttdertderredtnecuhfhrohhmpedftehr
-    nhguuceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrth
-    htvghrnhepffehueegteeihfegtefhjefgtdeugfegjeelheejueethfefgeeghfektdek
-    teffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprg
-    hrnhgusegrrhhnuggsrdguvg
-X-ME-Proxy: <xmx:gpCNZrlo8ynwoKGV2tVyoVZMt7SWJuifyw3wICL6bMUVIvZwXZo-jA>
-    <xmx:gpCNZuw4KcrMuigBpuH5fvIFjqsotTvmBsQtqM4r_KdKiRkHuKaHIQ>
-    <xmx:gpCNZtQIhXrJAMWS_snE1w-VQFd1vK5gHYOcGo9BFyaUAxzSgEFSjQ>
-    <xmx:gpCNZpbW6SzaKP6FffvTqJOfe6Ku42gxdzjTMmwUfEj0O7Ox92ndQQ>
-    <xmx:g5CNZq9s7g6T8sbAgzbFYlPgW05GWwkwxKheEFU6xYuovRAa8A8CY_up>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
-	id 2F097B6008D; Tue,  9 Jul 2024 15:33:22 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.11.0-alpha0-568-g843fbadbe-fm-20240701.003-g843fbadb
+	Wed, 10 Jul 2024 02:18:47 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46A1nhgo017547;
+	Wed, 10 Jul 2024 02:18:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=74zCitBFb9ZjqhxUh6FLue
+	Pgb223C7VIcVMrRZVNv9Y=; b=XW5eNj9cNzR7zRuGkRNcl9ogvhbG5M9XlTWDCx
+	/TCGu7Wi0w1ws4eOl8jfwk9qgU6zYX46+0RGn3BQxBwmPTgzBdjJsI8e2eKkfM4N
+	7/FMPefmAKM3YEkPRsStTURDYVhOvdHt+ArfrURIkGYA9++uAZpSafOFzmvGC6ON
+	djicKLfh1gZPYwCc2c13Sbl1mAkwPza3lZ0HNu3glPRWdoHAkR1OY/ZCuMNYiwK7
+	SJ9LRaYY79vshgzZelbXP+t7Gyw34cMynXzXmisAOTbrwDVFD3Sy3yTpH0u+VW9m
+	BSWnBF/ZHfwNItfYLtUQAHxfvvWmfXrvk52b2UtUE/X31Cjg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406wg407k2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 10 Jul 2024 02:18:44 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46A2IhHa022120
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 10 Jul 2024 02:18:43 GMT
+Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 9 Jul 2024 19:18:42 -0700
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
+Subject: [PATCH] wifi: ath12k: fix invalid AMPDU factor calculation in ath12k_peer_assoc_h_he()
+Date: Wed, 10 Jul 2024 10:18:19 +0800
+Message-ID: <20240710021819.87216-1-quic_bqiang@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Message-Id: <5bfebbd4-d12e-4735-acab-549a7cf9604a@app.fastmail.com>
-In-Reply-To: <0e0150ca-fdfa-40cb-ad7f-6ac695b702e4@quicinc.com>
-References: <87y16bbvgb.fsf@kernel.org>
- <917565ee-732a-4df0-a717-a71fbb34fd79@quicinc.com>
- <837cd2e4-d231-411a-8af4-64b950c4066a@quicinc.com>
- <c9b23ee3-6790-404d-80a3-4ca196327546@app.fastmail.com>
- <0e0150ca-fdfa-40cb-ad7f-6ac695b702e4@quicinc.com>
-Date: Tue, 09 Jul 2024 21:33:01 +0200
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Jeff Johnson" <quic_jjohnson@quicinc.com>,
- "Kalle Valo" <kvalo@kernel.org>
-Cc: linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
- kasan-dev@googlegroups.com, "Andrey Ryabinin" <ryabinin.a.a@gmail.com>,
- "Alexander Potapenko" <glider@google.com>,
- "Andrey Konovalov" <andreyknvl@gmail.com>,
- "Dmitry Vyukov" <dvyukov@google.com>,
- "Vincenzo Frascino" <vincenzo.frascino@arm.com>
-Subject: Re: crosstool: x86 kernel compiled with GCC 14.1 fails to boot
+Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 8mg2sFKn-IDCCw-vX9zAgxe2KWhWtQgx
+X-Proofpoint-GUID: 8mg2sFKn-IDCCw-vX9zAgxe2KWhWtQgx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-09_12,2024-07-09_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ mlxlogscore=999 clxscore=1011 impostorscore=0 malwarescore=0 mlxscore=0
+ bulkscore=0 spamscore=0 adultscore=0 suspectscore=0 lowpriorityscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407100016
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240709_123327_001411_A045DE44 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20240709_191846_334787_32F1C00B 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,37 +94,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 9, 2024, at 17:29, Jeff Johnson wrote:
-> On 7/8/2024 10:44 PM, Arnd Bergmann wrote:
->> On Tue, Jul 9, 2024, at 05:55, Jeff Johnson wrote:
->
-> I picked my favorite to begin with, enabling KASAN (which in turn enabled a
-> few others). The resulting kernel did not boot for me (just saw a black screen
-> after the GRUB menu). Diff between working and non-working config is below.
+Currently ampdu_factor is wrongly calculated in
+ath12k_peer_assoc_h_he(), fix it.
 
-Ok, good to know. I've added the KASAN developers to Cc now, maybe
-they have already seen reports of x86 kernels failing with gcc-14?
+This is found during code review.
 
-> I then downloaded and built the config you supplied. With that I have the same
-> behavior as my original config, the display is frozen with:
-> Loading initial ramdisk ...
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-Interesting, so the same config that works for me fails on your
-machine. I can see three possible reasons for this:
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-- qemu vs hardware -- Can you try running this kernel in
-  qemu-system-x86_64 to see if that still boots
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 8106297f0bc1..a7b86e6a2655 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -2196,9 +2196,8 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
+ 	 * request, then use MAX_AMPDU_LEN_FACTOR as 16 to calculate max_ampdu
+ 	 * length.
+ 	 */
+-	ampdu_factor = (he_cap->he_cap_elem.mac_cap_info[3] &
+-			IEEE80211_HE_MAC_CAP3_MAX_AMPDU_LEN_EXP_MASK) >>
+-			IEEE80211_HE_MAC_CAP3_MAX_AMPDU_LEN_EXP_MASK;
++	ampdu_factor = u8_get_bits(he_cap->he_cap_elem.mac_cap_info[3],
++				   IEEE80211_HE_MAC_CAP3_MAX_AMPDU_LEN_EXP_MASK);
+ 
+ 	if (ampdu_factor) {
+ 		if (sta->deflink.vht_cap.vht_supported)
 
-- kernel version -- it's possible that this is a known bug
-  that was already fixed in the 6.10-rc7 kernel source I
-  tried, or that your source tree has a new bug that I don't.
-  Which version did you try?
+base-commit: 9fddbf081f2da3a20fecda0b58adacbf1379e304
+-- 
+2.25.1
 
-- cross-compile vs native compile -- It's possible that my
-  cross-built native x86_64 compiler has a bug that is not
-  in natively built gcc binaries, or in the cross compiler
-  I have on ARM. I've mostly ruled this one out by building
-  the same kernel using the x86 compilers through qemu-user.
-
-     Arnd
 
