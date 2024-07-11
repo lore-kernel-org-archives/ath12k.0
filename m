@@ -4,80 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54475C3DA42
-	for <ath12k@archiver.kernel.org>; Wed, 10 Jul 2024 17:58:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34403C3DA41
+	for <ath12k@archiver.kernel.org>; Thu, 11 Jul 2024 05:26:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NMR0+Nqp8/pr/39H9jGS3q31+RjxVbuhes6M+549Es4=; b=li/3iQmedLwzxbrly2fCZ0l6Cv
-	z0mqoYEvTN3MLroUU0RpnzzN4sRMSQQ+WhDGnRTvJQg4RCLVakp3omwNZFkPOS7XDj4T8FOlNUKVo
-	tCIfV8t+r6tF9QOasC2fw4qIQ2whx+/T7qQIfz6ZqJGS7hdfOVC83oLfoU7svtxxj4oC+oWIXW4N2
-	uXeebpxpj3Ngii+36aiQTMyDOKGq7STcKmSzDUgWcykuTOl5SEStrBjCI6NMqQT2WzTN0Kfbrq1J2
-	0fYLaRBQUOXyvFzc1KY6y/bD8i1E7Jj/ddLxdx+bJuZJvxWICA/WTLXrATTCC9yZLg9GcXqxEyKPH
-	LZAzGnSg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=G75HM4Q6C/7DItwF6dPXh5M4bArJMfbAySOzxAcs4T4=; b=4IuX87xbpzVpjnrFHwsQfL6uik
+	RxI/k46aEVenPXXudMRJKeGpChxd/Z4NCS1sEG1KJ547jCbmU0F2SsqR4FyA6lLi9Q8zgJYr+//5h
+	/630Y8RAF9M0PB5XJ9yRFb4cZ0tcNfBttr8j9JLyResoyuw/oWAOZ0Qdy0BYzQt4wiuFjO2Ym9reT
+	db78+3qB29OC6V040eULH1FzFoe2PZ6JNxatjgfssHWsjugKMshJSUT8M9iTiFvk6tlfR6KaXGZ2V
+	WlpKVkV3w1mXf1DgtI7/xOhGgxsJFro6WdlAe4SuxlcA0El1jgVagbtkBFpFe4Y7bO6nHX0fAirMS
+	g3wNcL4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRbZo-0000000BMrU-0Hmi
+	id 1sRmJs-0000000Clvg-2vHg
 	for ath12k@archiver.kernel.org;
-	Wed, 10 Jul 2024 17:58:00 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Thu, 11 Jul 2024 05:26:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRbZm-0000000BMrL-1PAL
-	for ath12k@bombadil.infradead.org;
-	Wed, 10 Jul 2024 17:57:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=NMR0+Nqp8/pr/39H9jGS3q31+RjxVbuhes6M+549Es4=; b=E4Ip6RZaec/WVbV8PMyielbKgC
-	NEDSNMkGATjxDhh1JMTux5l6gWSDwED5ukJE1bRRLWNwdXg8Ku0UFh0PhlXqyCydrVtTHuW0xbQ84
-	AOaqrjmoQJ1nBLg55qSWpXuH8eCjQkCtcWhQCHiY9V3i3G9em/F0bPEmibwaj0cQWUuTKcjFzg4Gm
-	9vefZrpjHLW2GT4Y4E/c1zFrmLpJg1QNRh/vQenDrF8J28wNjf2rMq1GryUwU+AUWpk4bCxRbgX3t
-	Kh20m5H7G0gSu6/upiHfTP2q7v50CvdGiNICkRfaOJqg/wlcYcxV8iNZ+g6ETeQTbpPVcBNGAsKrm
-	CzGCAjNQ==;
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRbZi-00000000wia-3lPj
+	id 1sRmJo-0000000Cltm-32Dl
 	for ath12k@lists.infradead.org;
-	Wed, 10 Jul 2024 17:57:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 5A65BCE175C;
-	Wed, 10 Jul 2024 17:57:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1829C32781;
-	Wed, 10 Jul 2024 17:57:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720634270;
-	bh=gdLqjCpDLwxbDF582YXqZlohACs8bz6oUymsKUdbgG4=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=DVs7nBHddK/GKjqTkSLRYtWLisEIEh3vZZZfKCFpDc0uHXZ7cXVwRNZa9mppcEW92
-	 brpydQZjPolQiKrsmlnMuV1LwOtoaLoQkqkCMlgExgzXCopNfvKuLy//l1ogeuuFSH
-	 +w0S/XfaC7cj5uNawweHZSldVk5pDaHozNkyeM1nlP7/W9qqcUex7qy3soUtCqh4xw
-	 IdcWCG83l1MZmd1FqpcUsts5+fma+OEGPHw5VvxvIdZ/WHgfI7wlZTLFGV/Um7dvkO
-	 81xT7dhBmETe3d57H2UrJ61okbfOGSrN4OazJW2E5n5L+17Tt8ZdDtV+0e4FCy+Dxk
-	 yx5S0RZFG7xiw==
-From: Kalle Valo <kvalo@kernel.org>
-To: "Arnd Bergmann" <arnd@arndb.de>
-Cc: "Kees Cook" <kees@kernel.org>,  ath12k@lists.infradead.org,
-  linux-wireless@vger.kernel.org
-Subject: Re: [PATCH RFC] wifi: ath12k: workaround fortify warnings in
- ath12k_wow_convert_8023_to_80211()
-References: <20240704144341.207317-1-kvalo@kernel.org>
-	<202407041551.1DC8C03D@keescook> <877cdvdgpz.fsf@kernel.org>
-	<202407081226.94B1FB24@keescook>
-	<973f9a20-0807-4302-a286-d3ff6478529f@app.fastmail.com>
-Date: Wed, 10 Jul 2024 20:57:47 +0300
-In-Reply-To: <973f9a20-0807-4302-a286-d3ff6478529f@app.fastmail.com> (Arnd
-	Bergmann's message of "Mon, 08 Jul 2024 21:47:44 +0200")
-Message-ID: <87v81d9lk4.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Thu, 11 Jul 2024 05:26:15 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46B4xAF6017597;
+	Thu, 11 Jul 2024 05:26:10 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	G75HM4Q6C/7DItwF6dPXh5M4bArJMfbAySOzxAcs4T4=; b=eygbobCTOQB8CX/G
+	dm+YaCa+HTvu+OQaTazaC/ZESlA3K/x8TOAndqzO+3CAp869UItTKies5E730B1T
+	BktMxWliAXfRzI54EAP8U25nPRI6sFZ5Bzeph3ypl5Gg+sAR/ZUwEyO+9wDzTpbw
+	iPriNRz/X8jwNJZu0mAwJBxzFzGGW7Ty20aMonogr6brqbqx17sPL7S++KeG1ZSz
+	Q987YjkG2TAQNfct16Uvlf0tBllGVn/43SIJMqVDNyAFlcrCZm5uu90eLsCAY9zX
+	MFmQoqmzXHRfYtfFapnv7SheCapLQZic1KEZ9DFRmBUDFs3U1HJqiyyMEDjwfLe9
+	iElc2g==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40a8uhr1as-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Jul 2024 05:26:09 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46B5Q8ms008229
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Jul 2024 05:26:08 GMT
+Received: from [10.48.246.254] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 10 Jul
+ 2024 22:26:08 -0700
+Message-ID: <a04ecf46-39d9-4785-824c-c53c17362abf@quicinc.com>
+Date: Wed, 10 Jul 2024 22:26:01 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 1/3] wifi: ath12k: prepare vif data structure for MLO
+ handling
+Content-Language: en-US
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>
+References: <20240709120659.1564434-1-quic_ramess@quicinc.com>
+ <20240709120659.1564434-2-quic_ramess@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240709120659.1564434-2-quic_ramess@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: jkwb540qWvfOX1HHq3wFXU0zR5TriMCr
+X-Proofpoint-ORIG-GUID: jkwb540qWvfOX1HHq3wFXU0zR5TriMCr
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-11_02,2024-07-10_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 bulkscore=0 clxscore=1015 mlxscore=0 malwarescore=0
+ mlxlogscore=999 lowpriorityscore=0 suspectscore=0 spamscore=0 phishscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407110035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240710_185755_338383_749E779D 
-X-CRM114-Status: GOOD (  20.37  )
+X-CRM114-CacheID: sfid-20240710_222612_953931_5D84D715 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,43 +101,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-"Arnd Bergmann" <arnd@arndb.de> writes:
+On 7/9/2024 5:06 AM, Rameshkumar Sundaram wrote:
+...
+> @@ -4569,12 +4685,17 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+>  				   enum ieee80211_sta_state old_state,
+>  				   enum ieee80211_sta_state new_state)
+>  {
+> +	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+> +	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+>  	struct ath12k *ar;
+> -	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+>  	struct ath12k_sta *arsta = ath12k_sta_to_arsta(sta);
+> +	struct ath12k_link_vif *arvif;
+>  	struct ath12k_peer *peer;
+>  	int ret = 0;
+>  
+> +	mutex_lock(&ah->conf_mutex);
+> +	arvif = &ahvif->deflink;
+> +
+>  	/* cancel must be done outside the mutex to avoid deadlock */
 
-> On Mon, Jul 8, 2024, at 21:31, Kees Cook wrote:
->> On Mon, Jul 08, 2024 at 06:51:52PM +0300, Kalle Valo wrote:
->>
->> I suspect this won't be the only place in the kernel where -Wrestrict
->> will give weird results with GCC 11, and there are still plenty of folks
->> using GCC 11. I think the best option would probably be to version-check
->> GCC to gate the addition of -Wrestrict.
->>
->> Arnd, what do you think? This looks like a more extreme version of
->> commit f9fc1ec28bae ("crypto: drivers - avoid memcpy size warning")
->
-> The f9fc1ec28bae patch was the other way around, it showed up
-> in new compilers but not old ones. I don't think I've seen
-> more gcc-11 -Wrestrict warnings during testing, but I'm currently
-> not set up to do a thorough search. If it's the only one, then
-> Kalle's suggested workaround is probably best, but if there
-> are additional warnings on gcc-11, making the warning depend
-> newer compilers is also fine. 
+this is now inside the ah->conf_mutex -- is that ok?
+seems this comment should be updated to explain *which* mutex(es) the cancel
+must be done outside of?
 
-Honestly I was hoping that we could disable the warning for GCC 11 :)
+>  	if ((old_state == IEEE80211_STA_NONE &&
+>  	     new_state == IEEE80211_STA_NOTEXIST))
+> @@ -4583,9 +4704,9 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+>  	ar = ath12k_get_ar_by_vif(hw, vif);
+>  	if (!ar) {
+>  		WARN_ON_ONCE(1);
+> +		mutex_unlock(&ah->conf_mutex);
 
-I feel bad making the code worse due to a compiler problem. For example,
-Intel's zero day bot doesn't seem to use GCC 11 that much anymore, so it
-might surprise more people than just us ath12k folks. (The bot said
-everything was fine but Johannes saw the warning when the code was
-pulled to wireless-next.)
+unlock before the WARN -- the WARN is not part of the critical section
 
-> I just don't want to give up the warning for new compilers altogether.
+>  		return -EINVAL;
+>  	}
+> -
+>  	mutex_lock(&ar->conf_mutex);
+>  
+>  	if (old_state == IEEE80211_STA_NOTEXIST &&
 
-Me neither. I'm just hoping that we could disable it for GCC 11. But of
-course if you think it's better to add the workaround to ath12k, I can
-submit a proper (non-RFC) patch to do that.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
