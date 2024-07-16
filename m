@@ -4,85 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EB8BC3DA60
-	for <ath12k@archiver.kernel.org>; Tue, 16 Jul 2024 02:46:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB87DC3DA59
+	for <ath12k@archiver.kernel.org>; Tue, 16 Jul 2024 06:40:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nCinq3VXdXXiOE1QbnbN3s88mnvCORNXxJZXdKjeeds=; b=lZmmbwQ7nFoiGSn0t8h4+Le85i
-	tr+7aswHn4Xl81XQpoIvcUSp/8Lk3FSj9FT27lc8E3AimhwNFBIafcBcmUi8C4Wo3cr3Xk9sMfTNq
-	MYlx5gXp3pTOijMm9N3DT06fKGUecNUZwy8HU3OohjXV0KOAmnIZTFos9rJ3uoCBMzd8SQuUQnpF7
-	jzHehEAnKoJ+FSszk9tDM9vJWoQ8JSXE/73L2qpVWsETKd5KZoYm8fC1tkbdWDTzu6USA25r7Rrs+
-	B/8h/JKAHswP7yD1inmWwg7djKKjKpUv5zNHW7Yk9FwHimz/BgCOhBjRFPxm/Qh2VABNOZXM0c3JR
-	L9/MhcOw==;
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=jQqscWtS2RDYE+1vkv3vrhsNJOXtOINKfjbKAMfv6tQ=; b=YtIwB+Pkc/OY4+JKqaV/MaGyjK
+	Z8UDCph5AwJOZR8MjYBgiEKWMb1suUaMrJv0INJ1X9Y/4yIDjW3bZcE8yYJvEcd3seIsRg5+27LlF
+	U39skiZ93ylBbf6fnGef9ky4Q4xKMGivaYFoFztZwtt+wn9uJgfdBbp7DDCsLOnlKlAWQZKRryFe9
+	lK7cKdjx8N037m9xsDJZhhLaQ9bXEP59hOQUQm94iDLqCMcwkm2rCwwhP3FiR+8wRLIJpFxkGmgiP
+	NtX5uT88rmjsLP0DJUnToKunCNUTtF+5mNbk/3jJnugqLd7kHQFuVD6m8GLZsdjXcfnrIIN7NluEJ
+	fFwAy6Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTYCZ-00000009615-0up3
+	id 1sTbrY-00000009UJD-1wwI
 	for ath12k@archiver.kernel.org;
-	Tue, 16 Jul 2024 02:46:03 +0000
+	Tue, 16 Jul 2024 06:40:36 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTYCW-000000095zV-02i1
+	id 1sTbrU-00000009UIb-32KO
 	for ath12k@lists.infradead.org;
-	Tue, 16 Jul 2024 02:46:02 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46FH8lDZ014108;
-	Tue, 16 Jul 2024 02:45:58 GMT
+	Tue, 16 Jul 2024 06:40:35 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46G4WLjj029449;
+	Tue, 16 Jul 2024 06:40:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	nCinq3VXdXXiOE1QbnbN3s88mnvCORNXxJZXdKjeeds=; b=hskueiWGYxT/MPVz
-	3ilMMr5R5/ghOghbk41UhP4Bp25iQaBFtEzq3c7ukcWS9cxF23VwIGHjhKAd0FKQ
-	T+JVkA6wpppmi6diqu78lENBcAOCvxGG2g7GbOFbHge5AsHU6Tm0i09AWJ456ra1
-	/R1NDXjLBIO1U0Ln0vY8sO1f4qt6Pp2cSAit4CFEIvkYq+C9WAdnWuRddadTWnGG
-	H/T7xhG4VNPC2dPVRyqMWD/vp6t0DbsQKy12eSj4TXaj/wbOPV5vguGAtg6cSgpk
-	NceUG/IYlurlqX4f+8JbM66is5RtNsgi6Mr+r4oiPOifV0WL3fUs9KLXi1U02flc
-	0o8gog==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40bhnunuxb-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=jQqscWtS2RDYE+1vkv3vrh
+	sNJOXtOINKfjbKAMfv6tQ=; b=PBKboaze9wflgIqddP2VGdl07HYp0nu+3lgmBD
+	CLRADmHON/dEj/RR0RKhu7malU002gfe+vMUT9w9JSbHSuimzUnYLEQTG9GpnqAa
+	ktJB20JLIGbXU8rClTkaDIobiTRySzOkiBWCNwvpC1xEPAQ2fJy8/RL2AJUn+HT4
+	wY7EGrlk0DfrYoIJ6QTM70T2QEW8eVm5AloD5wHYeR+BJ0FNrytMHeFWml65w+DD
+	3yO4k6iXSsI34ga3NBbV1GoSABdMUKeCMOy4gH3dI3MYKQARhCyz6VCE/59tCyyj
+	vKgu14lb7vtUVqXox1NcMXtwrDP+3JCVS1B+ekD9KZ/tSueg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40bexnef6h-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 16 Jul 2024 02:45:58 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46G2jvjm003255
+	Tue, 16 Jul 2024 06:40:30 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46G6eKqX002772
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 16 Jul 2024 02:45:57 GMT
-Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+	Tue, 16 Jul 2024 06:40:20 GMT
+Received: from hu-ssreeela-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 15 Jul 2024 19:45:56 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
+ 15.2.1544.9; Mon, 15 Jul 2024 23:40:18 -0700
+From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH 2/3] wifi: ath12k: Dump PDEV receive rate HTT stats
-Date: Tue, 16 Jul 2024 10:45:41 +0800
-Message-ID: <20240716024542.30339-3-quic_lingbok@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>,
+        Sowmiya Sree Elavalagan
+	<quic_ssreeela@quicinc.com>
+Subject: [PATCH v4] wifi: ath12k: Add firmware coredump collection support
+Date: Tue, 16 Jul 2024 12:09:32 +0530
+Message-ID: <20240716063932.2627087-1-quic_ssreeela@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240716024542.30339-1-quic_lingbok@quicinc.com>
-References: <20240716024542.30339-1-quic_lingbok@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 4hl0VKpySZyqxXVxW_K4cQn0khKNH_sR
-X-Proofpoint-GUID: 4hl0VKpySZyqxXVxW_K4cQn0khKNH_sR
+X-Proofpoint-ORIG-GUID: ZJMarpeLCQ0WLAlrNbjcJBO4G5Iik_Ra
+X-Proofpoint-GUID: ZJMarpeLCQ0WLAlrNbjcJBO4G5Iik_Ra
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-07-15_19,2024-07-11_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 mlxscore=0 lowpriorityscore=0 mlxlogscore=781
- suspectscore=0 phishscore=0 clxscore=1015 spamscore=0 malwarescore=0
- adultscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2407160021
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ priorityscore=1501 adultscore=0 clxscore=1015 suspectscore=0 bulkscore=0
+ spamscore=0 phishscore=0 mlxlogscore=999 lowpriorityscore=0 mlxscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407160049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240715_194600_224269_BA08DD00 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20240715_234032_922061_3D895786 
+X-CRM114-Status: GOOD (  28.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,460 +96,546 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Support to dump PDEV receive rate stats through HTT debugfs stats type 10.
+In case of firmware assert snapshot of firmware memory is essential for
+debugging. Add firmware coredump collection support for PCI bus.
+Collect RDDM and firmware paging dumps from MHI and pack them in TLV
+format and also pack various memory shared during QMI phase in separate
+TLVs.  Add necessary header and share the dumps to user space using dev
+coredump framework. Coredump collection is disabled by default and can
+be enabled using menuconfig. Dump collected for a radio is 55 MB
+approximately.
 
-Sample output:
------------------
-echo 10 > /sys/kernel/debug/ath12k/pci-0000\:03\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:03\:00.0/mac0/htt_stats
-HTT_RX_PDEV_RATE_STATS_TLV:
-mac_id = 0
-nsts = 0
-rx_ldpc = 96
-rts_cnt = 0
-rssi_mgmt = 4294967240
-rssi_data = 4294967250
-rssi_comb = 4294967239
-rssi_in_dbm = -46
-rx_evm_nss_count = 0
-rx_evm_pilot_count = 0
-rx_11ax_su_ext = 0
-rx_11ac_mumimo = 0
-rx_11ax_mumimo = 0
-rx_11ax_ofdma = 0
-txbf = 0
-rx_su_ndpa = 0
-rx_mu_ndpa = 0
-rx_br_poll = 0
-rx_active_dur_us_low = 1000106
-rx_active_dur_us_high = 0
-rx_11ax_ul_ofdma = 0
-ul_ofdma_rx_stbc = 0
-ul_ofdma_rx_ldpc = 0
-per_chain_rssi_pkt_type = 0x88
-rx_nss =  0:40, 1:56, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_dcm =  0:0, 1:0, 2:0, 3:0, 4:0
-rx_stbc =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_bw =  0:1175, 1:0, 2:0, 3:0
-rx_pream =  0:435, 1:644, 2:0, 3:0, 4:96, 5:0, 6:0
-rx_11ax_su_txbf_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_11ax_mu_txbf_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_legacy_cck_rate =  0:641, 1:0, 2:3, 3:0
-rx_legacy_ofdm_rate =  0:267, 1:0, 2:72, 3:0, 4:96, 5:0, 6:0, 7:0
-ul_ofdma_rx_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_nss =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-ul_ofdma_rx_bw =  0:0, 1:0, 2:0, 3:0
-rx_ulofdma_non_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_mpdu_ok =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_mpdu_fail =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_non_data_nusers =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_data_nusers =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_11ax_dl_ofdma_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_11ax_dl_ofdma_ru =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0
-rx_ulmumimo_non_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulmumimo_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulmumimo_mpdu_ok =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulmumimo_mpdu_fail =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_mcs =  0:0, 1:0, 2:0, 3:0, 4:28, 5:8, 6:37, 7:21, 8:2, 9:0, 10:0, 11:0, 12:0, 13:0
-pilot_evm_db[0] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[1] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[2] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[3] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[4] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[5] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[6] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[7] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db_mean = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rssi_chain_in_db[0] =  0: 196, 1: 29, 2: 29, 3: 29
-rssi_chain_in_db[1] =  0: 196, 1: 29, 2: 29, 3: 29
-rssi_chain_in_db[2] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[3] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[4] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[5] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[6] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[7] =  0: 128, 1: 128, 2: 128, 3: 128
-rx_gi[0] =  0:0, 1:0, 2:0, 3:0, 4:28, 5:8, 6:37, 7:21, 8:2, 9:0, 10:0, 11:0
-rx_gi[1] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_gi[2] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_gi[3] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[0] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[1] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[2] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[3] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_ul_fd_rssi: nss[0] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[1] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[2] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[3] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[4] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[5] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[6] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[7] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_per_chain_rssi_in_dbm[0] = 0:-60, 1:29, 2:29, 3:29
-rx_per_chain_rssi_in_dbm[1] = 0:-60, 1:29, 2:29, 3:29
-rx_per_chain_rssi_in_dbm[2] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[3] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[4] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[5] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[6] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[7] = 0:-128, 1:-128, 2:-128, 3:-128
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 ---
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 222 ++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   |  82 +++++++
- 2 files changed, 304 insertions(+)
+v4:
+  - Fixed Kasan warning vmalloc-out-of-bounds in ath12k_pci_coredump_download
+  - Rebased on ToT
+v3:
+  - Fixed SPDX comment style for coredump.c file
+    Changed Kconfig description.
+v2:
+  - Fixed errors shown by ath12k-check
+---
+ drivers/net/wireless/ath/ath12k/Kconfig    |  10 ++
+ drivers/net/wireless/ath/ath12k/Makefile   |   1 +
+ drivers/net/wireless/ath/ath12k/core.c     |   2 +
+ drivers/net/wireless/ath/ath12k/core.h     |   5 +
+ drivers/net/wireless/ath/ath12k/coredump.c |  51 ++++++
+ drivers/net/wireless/ath/ath12k/coredump.h |  80 +++++++++
+ drivers/net/wireless/ath/ath12k/hif.h      |   6 +
+ drivers/net/wireless/ath/ath12k/hw.c       |   4 +-
+ drivers/net/wireless/ath/ath12k/mhi.c      |   5 +
+ drivers/net/wireless/ath/ath12k/mhi.h      |   2 +-
+ drivers/net/wireless/ath/ath12k/pci.c      | 186 +++++++++++++++++++++
+ 11 files changed, 349 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/net/wireless/ath/ath12k/coredump.c
+ create mode 100644 drivers/net/wireless/ath/ath12k/coredump.h
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 67e2c47fd2b0..3b1cedc9de60 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -1648,6 +1648,225 @@ ath12k_htt_print_tx_pdev_rate_stats_tlv(const void *tag_buf, u16 tag_len,
- 	stats_req->buf_len = len;
- }
+diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
+index eceab9153e98..3e6be4d4e52b 100644
+--- a/drivers/net/wireless/ath/ath12k/Kconfig
++++ b/drivers/net/wireless/ath/ath12k/Kconfig
+@@ -41,3 +41,13 @@ config ATH12K_TRACING
  
-+static inline void
-+ath12k_htt_print_rx_pdev_rate_stats_tlv(const void *tag_buf, u16 tag_len,
-+					struct debug_htt_stats_req *stats_req)
+ 	  If unsure, say Y to make it easier to debug problems. But if
+ 	  you want optimal performance choose N.
++
++config ATH12K_COREDUMP
++	bool "ath12k coredump"
++	depends on ATH12K
++	select WANT_DEV_COREDUMP
++	help
++	  Enable ath12k coredump collection
++
++	  If unsure, say Y to make it easier to debug problems. But if
++	  dump collection not required choose N.
+diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
+index 5a1ed20d730e..b5bb3e2599cd 100644
+--- a/drivers/net/wireless/ath/ath12k/Makefile
++++ b/drivers/net/wireless/ath/ath12k/Makefile
+@@ -27,6 +27,7 @@ ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o
+ ath12k-$(CONFIG_ACPI) += acpi.o
+ ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
+ ath12k-$(CONFIG_PM) += wow.o
++ath12k-$(CONFIG_ATH12K_COREDUMP) += coredump.o
+ 
+ # for tracing framework to find trace.h
+ CFLAGS_trace.o := -I$(src)
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 51252e8bc1ae..9d920c1af07b 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1188,6 +1188,7 @@ static void ath12k_core_reset(struct work_struct *work)
+ 	ab->is_reset = true;
+ 	atomic_set(&ab->recovery_count, 0);
+ 
++	ath12k_coredump_collect(ab);
+ 	ath12k_core_pre_reconfigure_recovery(ab);
+ 
+ 	ath12k_core_post_reconfigure_recovery(ab);
+@@ -1312,6 +1313,7 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
+ 	INIT_WORK(&ab->restart_work, ath12k_core_restart);
+ 	INIT_WORK(&ab->reset_work, ath12k_core_reset);
+ 	INIT_WORK(&ab->rfkill_work, ath12k_rfkill_work);
++	INIT_WORK(&ab->dump_work, ath12k_coredump_upload);
+ 
+ 	timer_setup(&ab->rx_replenish_retry, ath12k_ce_rx_replenish_retry, 0);
+ 	init_completion(&ab->htc_suspend);
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index cdfd43a7321a..52dea69a312f 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -30,6 +30,7 @@
+ #include "acpi.h"
+ #include "wow.h"
+ #include "debugfs_htt_stats.h"
++#include "coredump.h"
+ 
+ #define SM(_v, _f) (((_v) << _f##_LSB) & _f##_MASK)
+ 
+@@ -776,6 +777,10 @@ struct ath12k_base {
+ 	/* HW channel counters frequency value in hertz common to all MACs */
+ 	u32 cc_freq_hz;
+ 
++	struct ath12k_dump_file_data *dump_data;
++	size_t ath12k_coredump_len;
++	struct work_struct dump_work;
++
+ 	struct ath12k_htc htc;
+ 
+ 	struct ath12k_dp dp;
+diff --git a/drivers/net/wireless/ath/ath12k/coredump.c b/drivers/net/wireless/ath/ath12k/coredump.c
+new file mode 100644
+index 000000000000..72d675d15e64
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/coredump.c
+@@ -0,0 +1,51 @@
++// SPDX-License-Identifier: BSD-3-Clause-Clear
++/*
++ * Copyright (c) 2020 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++#include <linux/devcoredump.h>
++#include "hif.h"
++#include "coredump.h"
++#include "debug.h"
++
++enum
++ath12k_fw_crash_dump_type ath12k_coredump_get_dump_type(enum ath12k_qmi_target_mem type)
 +{
-+	const struct ath12k_htt_rx_pdev_rate_stats_tlv *htt_stats_buf = tag_buf;
-+	u8 *buf = stats_req->buf;
-+	u32 len = stats_req->buf_len;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u8 i, j;
-+	u32 mac_id_word;
++	enum ath12k_fw_crash_dump_type dump_type;
 +
-+	if (tag_len < sizeof(*htt_stats_buf))
-+		return;
-+
-+	mac_id_word = le32_to_cpu(htt_stats_buf->mac_id_word);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_RX_PDEV_RATE_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
-+			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
-+	len += scnprintf(buf + len, buf_len - len, "nsts = %u\n",
-+			 le32_to_cpu(htt_stats_buf->nsts));
-+	len += scnprintf(buf + len, buf_len - len, "rx_ldpc = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_ldpc));
-+	len += scnprintf(buf + len, buf_len - len, "rts_cnt = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rts_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_mgmt = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_mgmt));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_data = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_data));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_comb = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_comb));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_in_dbm = %d\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_in_dbm));
-+	len += scnprintf(buf + len, buf_len - len, "rx_evm_nss_count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->nss_count));
-+	len += scnprintf(buf + len, buf_len - len, "rx_evm_pilot_count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->pilot_count));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_su_ext = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_su_ext));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ac_mumimo = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ac_mumimo));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_mumimo = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_mumimo));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_ofdma = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_ofdma));
-+	len += scnprintf(buf + len, buf_len - len, "txbf = %u\n",
-+			 le32_to_cpu(htt_stats_buf->txbf));
-+	len += scnprintf(buf + len, buf_len - len, "rx_su_ndpa = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_su_ndpa));
-+	len += scnprintf(buf + len, buf_len - len, "rx_mu_ndpa = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_mu_ndpa));
-+	len += scnprintf(buf + len, buf_len - len, "rx_br_poll = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_br_poll));
-+	len += scnprintf(buf + len, buf_len - len, "rx_active_dur_us_low = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_active_dur_us_low));
-+	len += scnprintf(buf + len, buf_len - len, "rx_active_dur_us_high = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_active_dur_us_high));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_ul_ofdma = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_ul_ofdma));
-+	len += scnprintf(buf + len, buf_len - len, "ul_ofdma_rx_stbc = %u\n",
-+			 le32_to_cpu(htt_stats_buf->ul_ofdma_rx_stbc));
-+	len += scnprintf(buf + len, buf_len - len, "ul_ofdma_rx_ldpc = %u\n",
-+			 le32_to_cpu(htt_stats_buf->ul_ofdma_rx_ldpc));
-+	len += scnprintf(buf + len, buf_len - len, "per_chain_rssi_pkt_type = %#x\n",
-+			 le32_to_cpu(htt_stats_buf->per_chain_rssi_pkt_type));
-+
-+	len += print_array_to_buf(buf, len, "rx_nss", htt_stats_buf->rx_nss,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_dcm", htt_stats_buf->rx_dcm,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_DCM_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_stbc", htt_stats_buf->rx_stbc,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_bw", htt_stats_buf->rx_bw,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_pream", htt_stats_buf->rx_pream,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_PREAMBLE_TYPES, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_su_txbf_mcs",
-+				  htt_stats_buf->rx_11ax_su_txbf_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_mu_txbf_mcs",
-+				  htt_stats_buf->rx_11ax_mu_txbf_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_legacy_cck_rate",
-+				  htt_stats_buf->rx_legacy_cck_rate,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_legacy_ofdm_rate",
-+				  htt_stats_buf->rx_legacy_ofdm_rate,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS, "\n");
-+	len += print_array_to_buf(buf, len, "ul_ofdma_rx_mcs",
-+				  htt_stats_buf->ul_ofdma_rx_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "ul_ofdma_rx_nss",
-+				  htt_stats_buf->ul_ofdma_rx_nss,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS, "\n");
-+	len += print_array_to_buf(buf, len, "ul_ofdma_rx_bw",
-+				  htt_stats_buf->ul_ofdma_rx_bw,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_non_data_ppdu",
-+				  htt_stats_buf->rx_ulofdma_non_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_data_ppdu",
-+				  htt_stats_buf->rx_ulofdma_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_mpdu_ok",
-+				  htt_stats_buf->rx_ulofdma_mpdu_ok,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_mpdu_fail",
-+				  htt_stats_buf->rx_ulofdma_mpdu_fail,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_non_data_nusers",
-+				  htt_stats_buf->rx_ulofdma_non_data_nusers,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_data_nusers",
-+				  htt_stats_buf->rx_ulofdma_data_nusers,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_dl_ofdma_mcs",
-+				  htt_stats_buf->rx_11ax_dl_ofdma_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_dl_ofdma_ru",
-+				  htt_stats_buf->rx_11ax_dl_ofdma_ru,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_RU_SIZE_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_non_data_ppdu",
-+				  htt_stats_buf->rx_ulmumimo_non_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_data_ppdu",
-+				  htt_stats_buf->rx_ulmumimo_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_mpdu_ok",
-+				  htt_stats_buf->rx_ulmumimo_mpdu_ok,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_mpdu_fail",
-+				  htt_stats_buf->rx_ulmumimo_mpdu_fail,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+
-+	len += print_array_to_buf(buf, len, "rx_mcs",
-+				  htt_stats_buf->rx_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, NULL);
-+	for (j = 0; j < ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS; j++)
-+		len += scnprintf(buf + len, buf_len - len, ", %u:%u",
-+				 j + ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS,
-+				 le32_to_cpu(htt_stats_buf->rx_mcs_ext[j]));
-+	len += scnprintf(buf + len, buf_len - len, "\n");
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "pilot_evm_db[%u] =", j);
-+		len += print_array_to_buf(buf, len, NULL,
-+					  htt_stats_buf->rx_pil_evm_db[j],
-+					  ATH12K_HTT_RX_PDEV_STATS_RXEVM_MAX_PILOTS_NSS,
-+					  "\n");
++	switch (type) {
++	case HOST_DDR_REGION_TYPE:
++		dump_type = FW_CRASH_DUMP_REMOTE_MEM_DATA;
++		break;
++	case M3_DUMP_REGION_TYPE:
++		dump_type = FW_CRASH_DUMP_M3_DUMP;
++		break;
++	case PAGEABLE_MEM_REGION_TYPE:
++		dump_type = FW_CRASH_DUMP_PAGEABLE_DATA;
++		break;
++	case BDF_MEM_REGION_TYPE:
++	case CALDB_MEM_REGION_TYPE:
++		dump_type = FW_CRASH_DUMP_NONE;
++		break;
++	default:
++		dump_type = FW_CRASH_DUMP_TYPE_MAX;
++		break;
 +	}
 +
-+	len += scnprintf(buf + len, buf_len - len, "pilot_evm_db_mean =");
-+	for (i = 0; i < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; i++)
-+		len += scnprintf(buf + len,
-+				 buf_len - len,
-+				 " %u:%d,", i,
-+				 le32_to_cpu(htt_stats_buf->rx_pilot_evm_db_mean[i]));
-+	len--;
-+	len += scnprintf(buf + len, buf_len - len, "\n");
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rssi_chain_in_db[%u] = ", j);
-+		for (i = 0; i < ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS; i++)
-+			len += scnprintf(buf + len,
-+					 buf_len - len,
-+					 " %u: %d,", i,
-+					 htt_stats_buf->rssi_chain_in_db[j][i]);
-+		len--;
-+		len += scnprintf(buf + len, buf_len - len, "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rx_gi[%u] = ", j);
-+		len += print_array_to_buf(buf, len, NULL,
-+					  htt_stats_buf->rx_gi[j],
-+					  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS,
-+					  "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "ul_ofdma_rx_gi[%u] = ", j);
-+		len += print_array_to_buf(buf, len, NULL,
-+					  htt_stats_buf->ul_ofdma_rx_gi[j],
-+					  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS,
-+					  "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rx_ul_fd_rssi: nss[%u] = ", j);
-+		for (i = 0; i < ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER; i++)
-+			len += scnprintf(buf + len,
-+					 buf_len - len,
-+					 " %u:%d,",
-+					 i, htt_stats_buf->rx_ul_fd_rssi[j][i]);
-+		len--;
-+		len += scnprintf(buf + len, buf_len - len, "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rx_per_chain_rssi_in_dbm[%u] =", j);
-+		for (i = 0; i < ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS; i++)
-+			len += scnprintf(buf + len,
-+					 buf_len - len,
-+					 " %u:%d,",
-+					 i,
-+					 htt_stats_buf->rx_per_chain_rssi_in_dbm[j][i]);
-+		len--;
-+		len += scnprintf(buf + len, buf_len - len, "\n");
-+	}
-+
-+	stats_req->buf_len = len;
++	return dump_type;
 +}
 +
- static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 					  u16 tag, u16 len, const void *tag_buf,
- 					  void *user_data)
-@@ -1756,6 +1975,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_TX_PDEV_RATE_STATS_TAG:
- 		ath12k_htt_print_tx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_RX_PDEV_RATE_STATS_TAG:
-+		ath12k_htt_print_rx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
-+		break;
- 	default:
- 		break;
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index a773be6384c9..9272a9e82749 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -130,6 +130,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TQM	= 6,
- 	ATH12K_DBG_HTT_EXT_STATS_TX_DE_INFO	= 8,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_RATE   = 9,
-+	ATH12K_DBG_HTT_EXT_STATS_PDEV_RX_RATE   = 10,
- 
- 	/* keep this last */
- 	ATH12K_DBG_HTT_NUM_EXT_STATS,
-@@ -153,6 +154,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_TX_DE_ENQUEUE_DISCARD_TAG		= 22,
- 	HTT_STATS_TX_DE_CMN_TAG				= 23,
- 	HTT_STATS_TX_PDEV_RATE_STATS_TAG                = 34,
-+	HTT_STATS_RX_PDEV_RATE_STATS_TAG                = 35,
- 	HTT_STATS_TX_PDEV_SCHEDULER_TXQ_STATS_TAG	= 36,
- 	HTT_STATS_TX_SCHED_CMN_TAG			= 37,
- 	HTT_STATS_SCHED_TXQ_CMD_POSTED_TAG		= 39,
-@@ -394,6 +396,86 @@ struct ath12k_htt_tx_pdev_rate_stats_tlv {
- 	__le32 tx_bw_320mhz;
- };
- 
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS		4
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS		8
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS		12
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS		4
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_DCM_COUNTERS		5
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS		4
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS		8
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_PREAMBLE_TYPES		7
-+#define ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER			8
-+#define ATH12K_HTT_RX_PDEV_STATS_RXEVM_MAX_PILOTS_NSS		16
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_RU_SIZE_COUNTERS		6
-+#define ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER		8
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS		2
++void ath12k_coredump_upload(struct work_struct *work)
++{
++	struct ath12k_base *ab = container_of(work, struct ath12k_base, dump_work);
 +
-+struct ath12k_htt_rx_pdev_rate_stats_tlv {
-+	__le32 mac_id_word;
-+	__le32 nsts;
-+	__le32 rx_ldpc;
-+	__le32 rts_cnt;
-+	__le32 rssi_mgmt;
-+	__le32 rssi_data;
-+	__le32 rssi_comb;
-+	__le32 rx_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_nss[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS];
-+	__le32 rx_dcm[ATH12K_HTT_RX_PDEV_STATS_NUM_DCM_COUNTERS];
-+	__le32 rx_stbc[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_bw[ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 rx_pream[ATH12K_HTT_RX_PDEV_STATS_NUM_PREAMBLE_TYPES];
-+	u8 rssi_chain_in_db[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+		     [ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 rx_gi[ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS]
-+		[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rssi_in_dbm;
-+	__le32 rx_11ax_su_ext;
-+	__le32 rx_11ac_mumimo;
-+	__le32 rx_11ax_mumimo;
-+	__le32 rx_11ax_ofdma;
-+	__le32 txbf;
-+	__le32 rx_legacy_cck_rate[ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS];
-+	__le32 rx_legacy_ofdm_rate[ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS];
-+	__le32 rx_active_dur_us_low;
-+	__le32 rx_active_dur_us_high;
-+	__le32 rx_11ax_ul_ofdma;
-+	__le32 ul_ofdma_rx_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 ul_ofdma_rx_gi[ATH12K_HTT_TX_PDEV_STATS_NUM_GI_COUNTERS]
-+			  [ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 ul_ofdma_rx_nss[ATH12K_HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS];
-+	__le32 ul_ofdma_rx_bw[ATH12K_HTT_TX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 ul_ofdma_rx_stbc;
-+	__le32 ul_ofdma_rx_ldpc;
-+	__le32 rx_ulofdma_non_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_mpdu_ok[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_mpdu_fail[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 nss_count;
-+	__le32 pilot_count;
-+	__le32 rx_pil_evm_db[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+			   [ATH12K_HTT_RX_PDEV_STATS_RXEVM_MAX_PILOTS_NSS];
-+	__le32 rx_pilot_evm_db_mean[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS];
-+	s8 rx_ul_fd_rssi[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+			[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 per_chain_rssi_pkt_type;
-+	s8 rx_per_chain_rssi_in_dbm[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+				   [ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 rx_su_ndpa;
-+	__le32 rx_11ax_su_txbf_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_mu_ndpa;
-+	__le32 rx_11ax_mu_txbf_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_br_poll;
-+	__le32 rx_11ax_dl_ofdma_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_11ax_dl_ofdma_ru[ATH12K_HTT_RX_PDEV_STATS_NUM_RU_SIZE_COUNTERS];
-+	__le32 rx_ulmumimo_non_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulmumimo_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulmumimo_mpdu_ok[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulmumimo_mpdu_fail[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulofdma_non_data_nusers[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_data_nusers[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_mcs_ext[ATH12K_HTT_RX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS];
++	ath12k_info(ab, "Uploading coredump\n");
++	/* dev_coredumpv() takes ownership of the buffer */
++	dev_coredumpv(ab->dev, ab->dump_data, ab->ath12k_coredump_len, GFP_KERNEL);
++	ab->dump_data = NULL;
++}
++
++void ath12k_coredump_collect(struct ath12k_base *ab)
++{
++	ath12k_hif_coredump_download(ab);
++}
+diff --git a/drivers/net/wireless/ath/ath12k/coredump.h b/drivers/net/wireless/ath/ath12k/coredump.h
+new file mode 100644
+index 000000000000..5d6003b1c12d
+--- /dev/null
++++ b/drivers/net/wireless/ath/ath12k/coredump.h
+@@ -0,0 +1,80 @@
++/* SPDX-License-Identifier: BSD-3-Clause-Clear */
++/*
++ * Copyright (c) 2020 The Linux Foundation. All rights reserved.
++ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++#ifndef _ATH12K_COREDUMP_H_
++#define _ATH12K_COREDUMP_H_
++
++#define ATH12K_FW_CRASH_DUMP_V2      2
++
++enum ath12k_fw_crash_dump_type {
++	FW_CRASH_DUMP_PAGING_DATA,
++	FW_CRASH_DUMP_RDDM_DATA,
++	FW_CRASH_DUMP_REMOTE_MEM_DATA,
++	FW_CRASH_DUMP_PAGEABLE_DATA,
++	FW_CRASH_DUMP_M3_DUMP,
++	FW_CRASH_DUMP_NONE,
++
++	/* keep last */
++	FW_CRASH_DUMP_TYPE_MAX,
 +};
 +
- #define ATH12K_HTT_TX_PDEV_STATS_SCHED_PER_TXQ_MAC_ID	GENMASK(7, 0)
- #define ATH12K_HTT_TX_PDEV_STATS_SCHED_PER_TXQ_ID	GENMASK(15, 8)
++#define COREDUMP_TLV_HDR_SIZE 8
++
++struct ath12k_tlv_dump_data {
++	/* see ath11k_fw_crash_dump_type above */
++	__le32 type;
++
++	/* in bytes */
++	__le32 tlv_len;
++
++	/* pad to 32-bit boundaries as needed */
++	u8 tlv_data[];
++} __packed;
++
++struct ath12k_dump_file_data {
++	/* "ATH12K-FW-DUMP" */
++	char df_magic[16];
++	/* total dump len in bytes */
++	__le32 len;
++	/* file dump version */
++	__le32 version;
++	/* pci device id */
++	__le32 chip_id;
++	/* qrtr instance id */
++	__le32 qrtr_id;
++	/* pci domain id */
++	__le32 bus_id;
++	guid_t guid;
++	/* time-of-day stamp */
++	__le64 tv_sec;
++	/* time-of-day stamp, nano-seconds */
++	__le64 tv_nsec;
++	/* room for growth w/out changing binary format */
++	u8 unused[128];
++	u8 data[];
++} __packed;
++
++#ifdef CONFIG_ATH12K_COREDUMP
++enum ath12k_fw_crash_dump_type ath12k_coredump_get_dump_type
++						(enum ath12k_qmi_target_mem type);
++void ath12k_coredump_upload(struct work_struct *work);
++void ath12k_coredump_collect(struct ath12k_base *ab);
++#else
++static inline enum ath12k_fw_crash_dump_type ath12k_coredump_get_dump_type
++							(enum ath12k_qmi_target_mem type)
++{
++	return FW_CRASH_DUMP_TYPE_MAX;
++}
++
++static inline void ath12k_coredump_upload(struct work_struct *work)
++{
++}
++
++static inline void ath12k_coredump_collect(struct ath12k_base *ab)
++{
++}
++#endif
++
++#endif
+diff --git a/drivers/net/wireless/ath/ath12k/hif.h b/drivers/net/wireless/ath/ath12k/hif.h
+index 0e53ec269fa4..e8840fab6061 100644
+--- a/drivers/net/wireless/ath/ath12k/hif.h
++++ b/drivers/net/wireless/ath/ath12k/hif.h
+@@ -31,6 +31,7 @@ struct ath12k_hif_ops {
+ 	void (*ce_irq_disable)(struct ath12k_base *ab);
+ 	void (*get_ce_msi_idx)(struct ath12k_base *ab, u32 ce_id, u32 *msi_idx);
+ 	int (*panic_handler)(struct ath12k_base *ab);
++	void (*coredump_download)(struct ath12k_base *ab);
+ };
  
+ static inline int ath12k_hif_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
+@@ -156,4 +157,9 @@ static inline int ath12k_hif_panic_handler(struct ath12k_base *ab)
+ 	return ab->hif.ops->panic_handler(ab);
+ }
+ 
++static inline void ath12k_hif_coredump_download(struct ath12k_base *ab)
++{
++	if (ab->hif.ops->coredump_download)
++		ab->hif.ops->coredump_download(ab);
++}
+ #endif /* ATH12K_HIF_H */
+diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+index 2e11ea763574..3ff25ed5e2af 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.c
++++ b/drivers/net/wireless/ath/ath12k/hw.c
+@@ -913,7 +913,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 		.rfkill_cfg = 0,
+ 		.rfkill_on_level = 0,
+ 
+-		.rddm_size = 0,
++		.rddm_size = 0x600000,
+ 
+ 		.def_num_link = 0,
+ 		.max_mlo_peer = 256,
+@@ -1061,7 +1061,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 		.rfkill_cfg = 0,
+ 		.rfkill_on_level = 0,
+ 
+-		.rddm_size = 0,
++		.rddm_size = 0x600000,
+ 
+ 		.def_num_link = 0,
+ 		.max_mlo_peer = 256,
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
+index df96b0f91f54..2f6d14382ed7 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.c
++++ b/drivers/net/wireless/ath/ath12k/mhi.c
+@@ -649,3 +649,8 @@ void ath12k_mhi_resume(struct ath12k_pci *ab_pci)
+ {
+ 	ath12k_mhi_set_state(ab_pci, ATH12K_MHI_RESUME);
+ }
++
++void ath12k_mhi_coredump(struct mhi_controller *mhi_ctrl, bool in_panic)
++{
++	mhi_download_rddm_image(mhi_ctrl, in_panic);
++}
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.h b/drivers/net/wireless/ath/ath12k/mhi.h
+index 9362ad1958c3..7358b8477536 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.h
++++ b/drivers/net/wireless/ath/ath12k/mhi.h
+@@ -43,5 +43,5 @@ void ath12k_mhi_clear_vector(struct ath12k_base *ab);
+ 
+ void ath12k_mhi_suspend(struct ath12k_pci *ar_pci);
+ void ath12k_mhi_resume(struct ath12k_pci *ar_pci);
+-
++void ath12k_mhi_coredump(struct mhi_controller *mhi_ctrl, bool in_panic);
+ #endif
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 876c029f58f6..d2e3ba80f329 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -7,6 +7,8 @@
+ #include <linux/module.h>
+ #include <linux/msi.h>
+ #include <linux/pci.h>
++#include <linux/time.h>
++#include <linux/vmalloc.h>
+ 
+ #include "pci.h"
+ #include "core.h"
+@@ -1257,6 +1259,186 @@ void ath12k_pci_write32(struct ath12k_base *ab, u32 offset, u32 value)
+ 		ab_pci->pci_ops->release(ab);
+ }
+ 
++#ifdef CONFIG_ATH12K_COREDUMP
++static int ath12k_pci_coredump_calculate_size(struct ath12k_base *ab, u32 *dump_seg_sz)
++{
++	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
++	struct mhi_controller *mhi_ctrl = ab_pci->mhi_ctrl;
++	struct image_info *rddm_img, *fw_img;
++	struct ath12k_tlv_dump_data *dump_tlv;
++	enum ath12k_fw_crash_dump_type mem_type;
++	u32 len = 0, rddm_tlv_sz = 0, paging_tlv_sz = 0;
++	struct ath12k_dump_file_data *file_data;
++	int i;
++
++	rddm_img = mhi_ctrl->rddm_image;
++	if (!rddm_img) {
++		ath12k_err(ab, "No RDDM dump found\n");
++		return 0;
++	}
++
++	fw_img = mhi_ctrl->fbc_image;
++
++	for (i = 0; i < fw_img->entries ; i++) {
++		if (!fw_img->mhi_buf[i].buf)
++			continue;
++
++		paging_tlv_sz += fw_img->mhi_buf[i].len;
++	}
++	dump_seg_sz[FW_CRASH_DUMP_PAGING_DATA] = paging_tlv_sz;
++
++	for (i = 0; i < rddm_img->entries; i++) {
++		if (!rddm_img->mhi_buf[i].buf)
++			continue;
++
++		rddm_tlv_sz += rddm_img->mhi_buf[i].len;
++	}
++	dump_seg_sz[FW_CRASH_DUMP_RDDM_DATA] = rddm_tlv_sz;
++
++	for (i = 0; i < ab->qmi.mem_seg_count; i++) {
++		mem_type = ath12k_coredump_get_dump_type(ab->qmi.target_mem[i].type);
++
++		if (mem_type == FW_CRASH_DUMP_NONE)
++			continue;
++
++		if (mem_type == FW_CRASH_DUMP_TYPE_MAX) {
++			ath12k_dbg(ab, ATH12K_DBG_PCI,
++				   "target mem region type %d not supported",
++				   ab->qmi.target_mem[i].type);
++			continue;
++		}
++
++		if (!ab->qmi.target_mem[i].paddr)
++			continue;
++
++		dump_seg_sz[mem_type] += ab->qmi.target_mem[i].size;
++	}
++
++	for (i = 0; i < FW_CRASH_DUMP_TYPE_MAX; i++) {
++		if (!dump_seg_sz[i])
++			continue;
++
++		len += sizeof(*dump_tlv) + dump_seg_sz[i];
++	}
++
++	if (len)
++		len += sizeof(*file_data);
++
++	return len;
++}
++
++static void ath12k_pci_coredump_download(struct ath12k_base *ab)
++{
++	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
++	struct mhi_controller *mhi_ctrl = ab_pci->mhi_ctrl;
++	struct image_info *rddm_img, *fw_img;
++	struct timespec64 timestamp;
++	int i, len, mem_idx;
++	enum ath12k_fw_crash_dump_type mem_type;
++	struct ath12k_dump_file_data *file_data;
++	struct ath12k_tlv_dump_data *dump_tlv;
++	size_t hdr_len = sizeof(*file_data);
++	void *buf;
++	u32 dump_seg_sz[FW_CRASH_DUMP_TYPE_MAX] = { 0 };
++
++	ath12k_mhi_coredump(mhi_ctrl, false);
++
++	len = ath12k_pci_coredump_calculate_size(ab, dump_seg_sz);
++	if (!len) {
++		ath12k_warn(ab, "No crash dump data found for devcoredump");
++		return;
++	}
++
++	rddm_img = mhi_ctrl->rddm_image;
++	fw_img = mhi_ctrl->fbc_image;
++
++	/* dev_coredumpv() requires vmalloc data */
++	buf = vzalloc(len);
++	if (!buf)
++		return;
++
++	ab->dump_data = buf;
++	ab->ath12k_coredump_len = len;
++	file_data = ab->dump_data;
++	strscpy(file_data->df_magic, "ATH12K-FW-DUMP", sizeof(file_data->df_magic));
++	file_data->len = cpu_to_le32(len);
++	file_data->version = cpu_to_le32(ATH12K_FW_CRASH_DUMP_V2);
++	file_data->chip_id = cpu_to_le32(ab_pci->dev_id);
++	file_data->qrtr_id = cpu_to_le32(ab_pci->ab->qmi.service_ins_id);
++	file_data->bus_id = cpu_to_le32(pci_domain_nr(ab_pci->pdev->bus));
++	guid_gen(&file_data->guid);
++	ktime_get_real_ts64(&timestamp);
++	file_data->tv_sec = cpu_to_le64(timestamp.tv_sec);
++	file_data->tv_nsec = cpu_to_le64(timestamp.tv_nsec);
++	buf += hdr_len;
++	dump_tlv = buf;
++	dump_tlv->type = cpu_to_le32(FW_CRASH_DUMP_PAGING_DATA);
++	dump_tlv->tlv_len = cpu_to_le32(dump_seg_sz[FW_CRASH_DUMP_PAGING_DATA]);
++	buf += COREDUMP_TLV_HDR_SIZE;
++
++	/* append all segments together as they are all part of a single contiguous
++	 * block of memory
++	 */
++	for (i = 0; i < fw_img->entries ; i++) {
++		if (!fw_img->mhi_buf[i].buf)
++			continue;
++
++		memcpy_fromio(buf, (void const __iomem *)fw_img->mhi_buf[i].buf,
++			      fw_img->mhi_buf[i].len);
++		buf += fw_img->mhi_buf[i].len;
++	}
++
++	dump_tlv = buf;
++	dump_tlv->type = cpu_to_le32(FW_CRASH_DUMP_RDDM_DATA);
++	dump_tlv->tlv_len = cpu_to_le32(dump_seg_sz[FW_CRASH_DUMP_RDDM_DATA]);
++	buf += COREDUMP_TLV_HDR_SIZE;
++
++	/* append all segments together as they are all part of a single contiguous
++	 * block of memory
++	 */
++	for (i = 0; i < rddm_img->entries; i++) {
++		if (!rddm_img->mhi_buf[i].buf)
++			continue;
++
++		memcpy_fromio(buf, (void const __iomem *)rddm_img->mhi_buf[i].buf,
++			      rddm_img->mhi_buf[i].len);
++		buf += rddm_img->mhi_buf[i].len;
++	}
++
++	mem_idx = FW_CRASH_DUMP_REMOTE_MEM_DATA;
++	for (; mem_idx < FW_CRASH_DUMP_TYPE_MAX; mem_idx++) {
++		if (!dump_seg_sz[i] || mem_idx == FW_CRASH_DUMP_NONE)
++			continue;
++
++		dump_tlv = buf;
++		dump_tlv->type = cpu_to_le32(mem_idx);
++		dump_tlv->tlv_len = cpu_to_le32(dump_seg_sz[mem_idx]);
++		buf += COREDUMP_TLV_HDR_SIZE;
++
++		for (i = 0; i < ab->qmi.mem_seg_count; i++) {
++			mem_type = ath12k_coredump_get_dump_type
++							(ab->qmi.target_mem[i].type);
++
++			if (mem_type != mem_idx)
++				continue;
++
++			if (!ab->qmi.target_mem[i].paddr) {
++				ath12k_dbg(ab, ATH12K_DBG_PCI,
++					   "Skipping mem region type %d",
++					   ab->qmi.target_mem[i].type);
++				continue;
++			}
++
++			memcpy_fromio(buf, ab->qmi.target_mem[i].v.ioaddr,
++				      ab->qmi.target_mem[i].size);
++			buf += ab->qmi.target_mem[i].size;
++		}
++	}
++
++	queue_work(ab->workqueue, &ab->dump_work);
++}
++#endif
++
+ int ath12k_pci_power_up(struct ath12k_base *ab)
+ {
+ 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
+@@ -1327,6 +1509,9 @@ static const struct ath12k_hif_ops ath12k_pci_hif_ops = {
+ 	.ce_irq_disable = ath12k_pci_hif_ce_irq_disable,
+ 	.get_ce_msi_idx = ath12k_pci_get_ce_msi_idx,
+ 	.panic_handler = ath12k_pci_panic_handler,
++#ifdef CONFIG_ATH12K_COREDUMP
++	.coredump_download = ath12k_pci_coredump_download,
++#endif
+ };
+ 
+ static
+@@ -1536,6 +1721,7 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
+ 	set_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags);
+ 
+ 	cancel_work_sync(&ab->reset_work);
++	cancel_work_sync(&ab->dump_work);
+ 	ath12k_core_deinit(ab);
+ 
+ qmi_fail:
 -- 
 2.34.1
 
