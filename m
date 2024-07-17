@@ -4,89 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA86EC3DA42
-	for <ath12k@archiver.kernel.org>; Wed, 17 Jul 2024 14:28:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23371C3DA42
+	for <ath12k@archiver.kernel.org>; Wed, 17 Jul 2024 15:08:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=dQK8yMvfNSGnf1p8xmBjaXGXDPSD2BgTqAqf2SxlXE0=; b=tgRMTc/SWrJ6U9rX2re3SBE53e
-	h6ZxIhRpMcHoP+s+9Pm7o6qMXJG8MweMcELL4e4fdScfGIReLJahBT1zoqqs044DaDbNNts3ouwOs
-	gFFAswZMvZO8nTY/7EFjRL3d4YhJEn/UuGwPpjkjOE43Mdrpw7iyH9KYS00wEQd+R64iB46JN26Jw
-	39Idlctgb2/CTEck/03gDeo9u0riF5Ifm01zLEuyaGgPqjykXvnsL1Eap/UxNFXgiVqDqHQlaFFZm
-	1CS1cMhJ6kRxnod6gR969yCVub2zntiYItZ+x6IJetKgvnBAzJyi2XmYq50RsVVjDn/Q5yFGd56ZL
-	wju76DOg==;
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+rBxdj8sna4d8/MbJXn5rNGqttdPkP/3DQmjT2oB7F4=; b=ilrXFQ3lfhOwIYZWrvq7Quyf1d
+	6M7U+h/kBhb4I7prDVl0jg5TVKQkcP3zQSL/ndqzH9HJ8DXiSA+yspFKSmvGcTTU7H8/PY0z3dD3w
+	vLQN+YEcMkx0oJzKWWybJ+feGA3KSabz4+CFfyOVvVnCGUE78/sIntQLucH8GzE87YuhS/rDnv3OG
+	g9ICcqza538G8bV7elbdAOfYlTlZrLU5VG4R6EelF21lM4I9nx79DHmFNPnbGOUWUSHP/MMsxMvW7
+	ifbExQ04qeATr8Ng2IGX3/uCELzanUlf+P6I5BSsVjKbjFtr6Ig0MNhbIsUpJl+AR376/e9lsOVzV
+	if2ImGkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sU5dr-0000000E2HC-0usx
+	id 1sU6Gt-0000000E9NC-2nD4
 	for ath12k@archiver.kernel.org;
-	Wed, 17 Jul 2024 14:28:27 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	Wed, 17 Jul 2024 15:08:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sU5do-0000000E2G6-0XS8
+	id 1sU6Gq-0000000E9M9-2uMs
 	for ath12k@lists.infradead.org;
-	Wed, 17 Jul 2024 14:28:26 +0000
-Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-595856e2332so8693882a12.1
-        for <ath12k@lists.infradead.org>; Wed, 17 Jul 2024 07:28:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1721226502; x=1721831302; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=dQK8yMvfNSGnf1p8xmBjaXGXDPSD2BgTqAqf2SxlXE0=;
-        b=A+Ci+fsxDK2nTLewouy4O+0TH8Fr8CQbmo3vQokaw2NtrndRviNh9gak9vD2XPf+HC
-         CiBGOdN6GSX4zukToQX9oij3t9Y5T7cji5W0fVtIbBY8kSBubQsvyu/bNKVfdFtTtj3A
-         sIq8mY5wWWrUR8sXqQTfMTx1GgU9l5aZvPH2lt7/01yibFxdteD56SxreQFrndM3mf9d
-         Na3V96O9Es+R38TBt1rCINXntXfJRmqNHAp37ngUu6xwuDziSTI26oC2ml1FK8pQ8do2
-         3tAnyrOsfOnusAsNGOITpgvlkQorbxrfkM+GcPaHkaQ6xnzCIUoq3w9ifn7jtSQNCboR
-         PeAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1721226502; x=1721831302;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=dQK8yMvfNSGnf1p8xmBjaXGXDPSD2BgTqAqf2SxlXE0=;
-        b=TDFwwuSIiRFGrO1WP3sHIyZ1nhzWIsTYIYaToX86ngydf3GoaDtZ20zGQGh2hWd1Mk
-         OjvTq2vgvBDORcFtGWRWf4U3OhrJ4PHkGTnbwE4tkbNBAmMrYpIasO9p2gzRQ1oEghKX
-         IfeNUd5TVmXTozJuklWx9diq5iUTCMWawn3HLhgOMlJU4JsPkK7c22a4+TMTyVLWtcA2
-         MGMBrI0i98HzjIuWJpWovaomCwoRCf8o/M34lN/wyYdQOqFfu9OO6MWuiKPvRshRRuvj
-         f/RbpahiUUikBx+q8l3Ixl9zzB2grpUjO3m0Cy8fM5QJhLiVZAApR3EBcB6aehjJF+/h
-         DJnA==
-X-Forwarded-Encrypted: i=1; AJvYcCXi+UAPOu9Wm9oN+sTtisXabwQDThKoboxwkzSBg7DQxyroaOB/95ArVM68kVCJDNa/lJHwupWbPH/MSdP1qCxuWVxdpRZPE51bWg==
-X-Gm-Message-State: AOJu0Yw4ca1NfPmuqvknC2zQYlhi03EVGnSOdy0SqkFpPp/wy+7/pcwI
-	qJqto7WGCvleBTpHVO3UwK7i7qguz2u4G6l+uh7niKBJZUX5AKGDIb79+WTK3DY=
-X-Google-Smtp-Source: AGHT+IEK/bN6IEN43Wu/w+EWQWY6ZbHG9Yf5L4yiFAlZ6pQdzhejiqRLZguK2GdSYUetyx0LtYORFA==
-X-Received: by 2002:a50:aad2:0:b0:57d:3791:e8e4 with SMTP id 4fb4d7f45d1cf-5a05ce11c1emr1053460a12.32.1721226501700;
-        Wed, 17 Jul 2024 07:28:21 -0700 (PDT)
-Received: from brgl-uxlite.home ([2a01:cb1d:dc:7e00:6724:3f6f:5a36:d95d])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-59b268a276bsm7011640a12.62.2024.07.17.07.28.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Jul 2024 07:28:21 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>,
-	Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	Bjorn Helgaas <bhelgaas@google.com>
-Cc: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	linux-pci@vger.kernel.org,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
-	Linus Torvalds <torvalds@linux-foundation.org>
-Subject: [PATCH v2] Kconfig: reduce the amount of power sequencing noise
-Date: Wed, 17 Jul 2024 16:28:03 +0200
-Message-ID: <20240717142803.53248-1-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.43.0
+	Wed, 17 Jul 2024 15:08:46 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46H7ELOu004017;
+	Wed, 17 Jul 2024 15:08:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+rBxdj8sna4d8/MbJXn5rNGqttdPkP/3DQmjT2oB7F4=; b=FsGV0rhSilmlxAEX
+	oCstjcz/b0YF1S35KYVht0lHeuiR0YXe/Eax0iDMNMrtngtSUkmC4PUj8rf7IDvf
+	JohgzAZascmEP3pJPAbpsXVhuDrxC8tQpx2RoDohMquekVFAxtnLDJIgcx422pwc
+	YrkU9jp9U/HaXdlZEGnhk1SV+kA0qF2mY6L2Hfl2Vsx6gfQjRgZvBY8XlqukB+Ym
+	2HYWcil3R4eAvuNk9tlyFhF6zSXl+6buezO0XkzKtYXdLQvZY3aNhFYlvhdbBjOp
+	ScAZ1Q8IJ/qOnCFRWP9v8LZhe4Q5aYqHZI+onfQ4zsIDWkSj5/x4PS0xUwGafXuH
+	+sFOcg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40dwfpar7f-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 17 Jul 2024 15:08:41 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46HF8eSR030313
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 17 Jul 2024 15:08:40 GMT
+Received: from [10.48.247.102] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 17 Jul
+ 2024 08:08:40 -0700
+Message-ID: <f77ed82f-299b-4f99-bc83-39c053b8042b@quicinc.com>
+Date: Wed, 17 Jul 2024 08:08:39 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5] wifi: ath12k: Add firmware coredump collection support
+Content-Language: en-US
+To: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240717085604.4131642-1-quic_ssreeela@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240717085604.4131642-1-quic_ssreeela@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: G9ryPcexIjyqkmR3Z6Okp3INdIG4XW-L
+X-Proofpoint-GUID: G9ryPcexIjyqkmR3Z6Okp3INdIG4XW-L
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-17_11,2024-07-17_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ malwarescore=0 clxscore=1015 impostorscore=0 priorityscore=1501
+ bulkscore=0 suspectscore=0 adultscore=0 mlxlogscore=669 spamscore=0
+ phishscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2407170116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240717_072824_416895_82EB524B 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20240717_080844_780087_20A74705 
+X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,104 +100,20 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-
-Kconfig will ask the user twice about power sequencing: once for the QCom
-WCN power sequencing driver and then again for the PCI power control
-driver using it.
-
-Let's automate the selection of PCI_PWRCTL by introducing a new hidden
-symbol: HAVE_PWRCTL which should be selected by all platforms that have
-the need to include PCI power control code (right now: only ARCH_QCOM).
-
-The pwrseq-based PCI pwrctl driver itself will then be selected by the
-drivers binding to devices that may require external handling of the
-power-up sequence (currently: ath11k and ath12k) based on the value
-of HAVE_PWRCTL.
-
-Make all PCI pwrctl Kconfig symbols hidden so that no questions are
-asked during configuration.
-
-Fixes: 4565d2652a37 ("PCI/pwrctl: Add PCI power control core code")
-Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
-Closes: https://lore.kernel.org/lkml/CAHk-=wjWc5dzcj2O1tEgNHY1rnQW63JwtuZi_vAZPqy6wqpoUQ@mail.gmail.com/
-Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
----
-I'm sending it as a single patch for more clarity as it most likely will
-end up being picked up by Linus directly.
-
-Changes in v2:
-- introduce new HAVE_PWRCTL symbol and select it from ARCH_QCOM
-- select PCI_PWRCTL from the relevant drivers
-
- arch/arm64/Kconfig.platforms            |  1 +
- drivers/net/wireless/ath/ath11k/Kconfig |  1 +
- drivers/net/wireless/ath/ath12k/Kconfig |  1 +
- drivers/pci/pwrctl/Kconfig              | 11 +++--------
- 4 files changed, 6 insertions(+), 8 deletions(-)
-
-diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-index d1461335e78f..53d9f4bfd6fe 100644
---- a/arch/arm64/Kconfig.platforms
-+++ b/arch/arm64/Kconfig.platforms
-@@ -266,6 +266,7 @@ config ARCH_QCOM
- 	bool "Qualcomm Platforms"
- 	select GPIOLIB
- 	select PINCTRL
-+	select HAVE_PWRCTL
- 	help
- 	  This enables support for the ARMv8 based Qualcomm chipsets.
- 
-diff --git a/drivers/net/wireless/ath/ath11k/Kconfig b/drivers/net/wireless/ath/ath11k/Kconfig
-index 27f0523bf967..2e935d381b6b 100644
---- a/drivers/net/wireless/ath/ath11k/Kconfig
-+++ b/drivers/net/wireless/ath/ath11k/Kconfig
-@@ -24,6 +24,7 @@ config ATH11K_PCI
- 	select MHI_BUS
- 	select QRTR
- 	select QRTR_MHI
-+	select PCI_PWRCTL_PWRSEQ if HAVE_PWRCTL
- 	help
- 	  This module adds support for PCIE bus
- 
-diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
-index eceab9153e98..f64e7c322216 100644
---- a/drivers/net/wireless/ath/ath12k/Kconfig
-+++ b/drivers/net/wireless/ath/ath12k/Kconfig
-@@ -7,6 +7,7 @@ config ATH12K
- 	select MHI_BUS
- 	select QRTR
- 	select QRTR_MHI
-+	select PCI_PWRCTL_PWRSEQ if HAVE_PWRCTL
- 	help
- 	  Enable support for Qualcomm Technologies Wi-Fi 7 (IEEE
- 	  802.11be) family of chipsets, for example WCN7850 and
-diff --git a/drivers/pci/pwrctl/Kconfig b/drivers/pci/pwrctl/Kconfig
-index f1b824955d4b..54589bb2403b 100644
---- a/drivers/pci/pwrctl/Kconfig
-+++ b/drivers/pci/pwrctl/Kconfig
-@@ -1,17 +1,12 @@
- # SPDX-License-Identifier: GPL-2.0-only
- 
--menu "PCI Power control drivers"
-+config HAVE_PWRCTL
-+	bool
- 
- config PCI_PWRCTL
- 	tristate
- 
- config PCI_PWRCTL_PWRSEQ
--	tristate "PCI Power Control driver using the Power Sequencing subsystem"
-+	tristate
- 	select POWER_SEQUENCING
- 	select PCI_PWRCTL
--	default m if ((ATH11K_PCI || ATH12K) && ARCH_QCOM)
--	help
--	  Enable support for the PCI power control driver for device
--	  drivers using the Power Sequencing subsystem.
--
--endmenu
--- 
-2.43.0
+On 7/17/2024 1:56 AM, Sowmiya Sree Elavalagan wrote:
+> In case of firmware assert snapshot of firmware memory is essential for
+> debugging. Add firmware coredump collection support for PCI bus.
+> Collect RDDM and firmware paging dumps from MHI and pack them in TLV
+> format and also pack various memory shared during QMI phase in separate
+> TLVs.  Add necessary header and share the dumps to user space using dev
+> coredump framework. Coredump collection is disabled by default and can
+> be enabled using menuconfig. Dump collected for a radio is 55 MB
+> approximately.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.2.1-00201-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
