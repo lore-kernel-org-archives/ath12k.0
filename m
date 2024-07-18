@@ -4,85 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5434C3DA60
-	for <ath12k@archiver.kernel.org>; Thu, 18 Jul 2024 06:47:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA0CEC3DA60
+	for <ath12k@archiver.kernel.org>; Thu, 18 Jul 2024 11:58:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=l24drcXUFZ4bKfYJ1QOAgpbpoys1oAAf7hNhb+WsQik=; b=Pn037Xs6m3MEUWTR/407v8Zd7/
-	DIKUSuWxsHxTxlJjZEHQtCUT3S3fttA4h4f7wH3xkbNcuvSeBFkByu6kbgmMU4V08b+evo02J+J7Y
-	d4nkNeiV3x1nqPJrZeJep/oInOZR67aV4dvyjmmU/iE2vgQ+/RGFReY7UYhWLfPzEq62LF0v9zxAk
-	E2D4Ger5U9MNbdtPYVJlsBLV1MM18eqP8caouKBVnI8U6mTeBEFXb15r3tw9y5Xp3pNE2yumCbhXJ
-	yBcJXPQzeHEo2LXwXRR9CllORW11splGLIDYo91hHNHkAx3nw6MSi1sXYPttiOGgvnOeMnk23G/R/
-	/VAFFlBQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eT3/r8iq9vh5IHb+laarDBOv4FqNaSgzXd7Frm5ubA4=; b=YuvxrQ0mrjGnokA+3OW+MfOoZT
+	b29nJiMBzCu/x9UK4pdOwMPKF6UR+WZidJYwTjdBG6zq1eh7LI5Y+nj86GSsp3jBQra/Brqeq5kw0
+	Rjw/CwtuP1S5RdQi25IyMU+QUBWS7tyzcJ4pDZddlousQeYZ4D+OUakNk4Ofb2RT81idXaX+vU0nJ
+	Elallk9kL8woko7CnidQYj4eghujnYwYHU89LOIM+KY2I+A6R26GzWB1Ah9o4LD2WgoCAhcICZ1k1
+	+PHW9aBwx1gg21T75iqhMv7hF+hQZi3P5PlZEBhm50y74Za0p765aFcLyfyUs6SOiWa+2oBgLV6V2
+	DTodK9dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUKvI-0000000G1nK-1d92
+	id 1sUPmN-0000000Gu9J-1JGj
 	for ath12k@archiver.kernel.org;
-	Thu, 18 Jul 2024 06:47:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 18 Jul 2024 11:58:35 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUKvC-0000000G1iv-1Hzz
+	id 1sUPmJ-0000000Gu89-1reI
 	for ath12k@lists.infradead.org;
-	Thu, 18 Jul 2024 06:47:24 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46HNvP4E002464;
-	Thu, 18 Jul 2024 06:47:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	l24drcXUFZ4bKfYJ1QOAgpbpoys1oAAf7hNhb+WsQik=; b=WPrqk5VnV6JWn0GZ
-	392Te28t1zjlA7rEooEqmKIXnG9FsDH/faEi+aXZpu7QlE30o6ay6FpZPuN7ALVa
-	lhE7IGpsAVQuPhI4GDEwq4jKU3oZLf9riJIuQb5E/fbMPMGSd6BnvaGlV425x+hP
-	mj5Qw6aFjSYTptOB1Npuq5qzbzZLlQ/ERg8Vvf2KOjPMp02AZm37P2cLZW/gCryP
-	K0lhkvtwm99l55I+851NdV6cijt74wNDPVI5iEvBlzdNvcAkfyCSMbO8r/l/csU+
-	yIVbQqsbgRcJxXClcsA2JMnY4+84kbXzWrAFm7diekXEZEU4MjlqAWmJLQgNi2VC
-	mSET2w==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40dwfpmkwy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Jul 2024 06:47:21 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46I6lJTh003886
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 18 Jul 2024 06:47:19 GMT
-Received: from lingbok-Birman-PHX.lan (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 17 Jul 2024 23:47:18 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH v2 2/3] wifi: ath12k: Dump PDEV receive rate HTT stats
-Date: Thu, 18 Jul 2024 14:46:58 +0800
-Message-ID: <20240718064659.109893-3-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240718064659.109893-1-quic_lingbok@quicinc.com>
-References: <20240718064659.109893-1-quic_lingbok@quicinc.com>
+	Thu, 18 Jul 2024 11:58:33 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-42122ac2f38so1575235e9.1
+        for <ath12k@lists.infradead.org>; Thu, 18 Jul 2024 04:58:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1721303909; x=1721908709; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=eT3/r8iq9vh5IHb+laarDBOv4FqNaSgzXd7Frm5ubA4=;
+        b=STk0tuknfpd66z9mnNll+aZ0+Dizs7w8N0BGy5C3YQ8ZJhzqUoUBcCTlPhhnFFc07a
+         nmVf9Z0wgrcvv2CHUnEtqluj5f+dPQU6hO2kV6IcpPmfuKoixm5lvzpBP2s32a3gYU/e
+         I3T4tIFl8Dvc5UmyHHT5uPRXJaGcFdCE50bj5PnYBBlHMmu9zbV9Phk815hP4UPj7rLw
+         GHTFfd1uy6F7afxswfmMCPAfkyVPuwVF6qJvGOWnuafq81insMW1Cj5K+x3ADwqccD5U
+         c4B8BAo9QG0pHKT55gsSHNWuYix8pjKwtAard59367CpS4T+mIc+J+hFlA5yhdLpkEVb
+         FUWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1721303909; x=1721908709;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=eT3/r8iq9vh5IHb+laarDBOv4FqNaSgzXd7Frm5ubA4=;
+        b=XrDt2ye3vV84wJnKIopHSNQqof8Zl6YSs9ug4d8KD7uVBj0UwIzQ5b5Hmyfgf1RJR3
+         Q878lW+UYKKgAQgArL6ZCimPOHqOixxPBMziytbyMywhP3RC33+put8Eu50KykvsD7cD
+         uBNrJuqbGvu3UcgVMiT/1W/r4XL1voYcpjlOcLc/yzBcfG+/XTre1e0gM69lEJ2PDsQ/
+         wTrdIw8r0OKeF2T8iXOg72FW3MbD9JDd9uoOOEUaAiChil02qnrUxU1gaW2YlPLhUYJQ
+         jDJc+f6Ap063nRZFDFI8q4xSsTTjs0ps+DzwIzDVwfB1UL8FK1ulGjqe+gZZU7WKaAks
+         tD+w==
+X-Forwarded-Encrypted: i=1; AJvYcCXtnzHxvXEJJcIASEdFZOqmNABLM6XE/Eui60dIyWj2ocLlp72kg1D2TiNiBPrl0th0kVU8D2nPHt/ey+niYll7gzgffti7lCdHHg==
+X-Gm-Message-State: AOJu0Yy9BF/DKtQNVFeuQwK7TM7SyF8nrPVqbadbp9PzB0++ArjBw9Qj
+	wZZ+Z61qT/KdworxCuVEBN/9Z4c+8WxGQUqeoO//Wf1AkMQUCCeMltEnHHZAhLg=
+X-Google-Smtp-Source: AGHT+IHpOFhVVOR50WDCPfi6DXrjDJkGmwaqmpgdsmAo5+FCsTxtL42b6u3Rfj/yngP1z/p7fq9EnA==
+X-Received: by 2002:a05:600c:4751:b0:426:5cc7:82f with SMTP id 5b1f17b1804b1-427d2b527demr5295885e9.13.1721303909431;
+        Thu, 18 Jul 2024 04:58:29 -0700 (PDT)
+Received: from brgl-uxlite.home ([2a01:cb1d:dc:7e00:58d4:2f84:5fcd:8259])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-368467a34dcsm2258703f8f.109.2024.07.18.04.58.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 18 Jul 2024 04:58:29 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>,
+	Kalle Valo <kvalo@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Bartosz Golaszewski <brgl@bgdev.pl>
+Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	linux-pci@vger.kernel.org,
+	Linus Torvalds <torvalds@linux-foundation.org>
+Subject: Re: [PATCH v2] Kconfig: reduce the amount of power sequencing noise
+Date: Thu, 18 Jul 2024 13:58:27 +0200
+Message-ID: <172130382340.64067.7765392027721457700.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240717142803.53248-1-brgl@bgdev.pl>
+References: <20240717142803.53248-1-brgl@bgdev.pl>
 MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: n6J19yfLvf9n9Yjju3eC_5gic2tB5cLA
-X-Proofpoint-GUID: n6J19yfLvf9n9Yjju3eC_5gic2tB5cLA
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-18_03,2024-07-17_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 suspectscore=0 clxscore=1015 bulkscore=0 mlxscore=0
- adultscore=0 phishscore=0 spamscore=0 malwarescore=0 mlxlogscore=791
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2407180045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240717_234722_502458_898261E1 
-X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-CacheID: sfid-20240718_045831_493575_640939DF 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,464 +106,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Support to dump PDEV receive rate stats through HTT debugfs stats type 10.
+From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-Sample output:
------------------
-echo 10 > /sys/kernel/debug/ath12k/pci-0000\:03\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:03\:00.0/mac0/htt_stats
-HTT_RX_PDEV_RATE_STATS_TLV:
-mac_id = 0
-nsts = 0
-rx_ldpc = 96
-rts_cnt = 0
-rssi_mgmt = 4294967240
-rssi_data = 4294967250
-rssi_comb = 4294967239
-rssi_in_dbm = -46
-rx_evm_nss_count = 0
-rx_evm_pilot_count = 0
-rx_11ax_su_ext = 0
-rx_11ac_mumimo = 0
-rx_11ax_mumimo = 0
-rx_11ax_ofdma = 0
-txbf = 0
-rx_su_ndpa = 0
-rx_mu_ndpa = 0
-rx_br_poll = 0
-rx_active_dur_us_low = 1000106
-rx_active_dur_us_high = 0
-rx_11ax_ul_ofdma = 0
-ul_ofdma_rx_stbc = 0
-ul_ofdma_rx_ldpc = 0
-per_chain_rssi_pkt_type = 0x88
-rx_nss =  0:40, 1:56, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_dcm =  0:0, 1:0, 2:0, 3:0, 4:0
-rx_stbc =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_bw =  0:1175, 1:0, 2:0, 3:0
-rx_pream =  0:435, 1:644, 2:0, 3:0, 4:96, 5:0, 6:0
-rx_11ax_su_txbf_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_11ax_mu_txbf_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_legacy_cck_rate =  0:641, 1:0, 2:3, 3:0
-rx_legacy_ofdm_rate =  0:267, 1:0, 2:72, 3:0, 4:96, 5:0, 6:0, 7:0
-ul_ofdma_rx_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_nss =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-ul_ofdma_rx_bw =  0:0, 1:0, 2:0, 3:0
-rx_ulofdma_non_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_mpdu_ok =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_mpdu_fail =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_non_data_nusers =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulofdma_data_nusers =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_11ax_dl_ofdma_mcs =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_11ax_dl_ofdma_ru =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0
-rx_ulmumimo_non_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulmumimo_data_ppdu =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulmumimo_mpdu_ok =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ulmumimo_mpdu_fail =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_mcs =  0:0, 1:0, 2:0, 3:0, 4:28, 5:8, 6:37, 7:21, 8:2, 9:0, 10:0, 11:0, 12:0, 13:0
-pilot_evm_db[0] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[1] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[2] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[3] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[4] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[5] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[6] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db[7] = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0
-pilot_evm_db_mean = 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rssi_chain_in_db[0] =  0: 196, 1: 29, 2: 29, 3: 29
-rssi_chain_in_db[1] =  0: 196, 1: 29, 2: 29, 3: 29
-rssi_chain_in_db[2] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[3] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[4] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[5] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[6] =  0: 128, 1: 128, 2: 128, 3: 128
-rssi_chain_in_db[7] =  0: 128, 1: 128, 2: 128, 3: 128
-rx_gi[0] =  0:0, 1:0, 2:0, 3:0, 4:28, 5:8, 6:37, 7:21, 8:2, 9:0, 10:0, 11:0
-rx_gi[1] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_gi[2] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_gi[3] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[0] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[1] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[2] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-ul_ofdma_rx_gi[3] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0
-rx_ul_fd_rssi: nss[0] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[1] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[2] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[3] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[4] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[5] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[6] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_ul_fd_rssi: nss[7] =  0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
-rx_per_chain_rssi_in_dbm[0] = 0:-60, 1:29, 2:29, 3:29
-rx_per_chain_rssi_in_dbm[1] = 0:-60, 1:29, 2:29, 3:29
-rx_per_chain_rssi_in_dbm[2] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[3] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[4] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[5] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[6] = 0:-128, 1:-128, 2:-128, 3:-128
-rx_per_chain_rssi_in_dbm[7] = 0:-128, 1:-128, 2:-128, 3:-128
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+On Wed, 17 Jul 2024 16:28:03 +0200, Bartosz Golaszewski wrote:
+> Kconfig will ask the user twice about power sequencing: once for the QCom
+> WCN power sequencing driver and then again for the PCI power control
+> driver using it.
+> 
+> Let's automate the selection of PCI_PWRCTL by introducing a new hidden
+> symbol: HAVE_PWRCTL which should be selected by all platforms that have
+> the need to include PCI power control code (right now: only ARCH_QCOM).
+> 
+> [...]
 
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
-v2:
-1.use TAB to be consistent with existing code
+I'm picking this up into my pwrseq/for-current branch. I'll be off next week
+so I want to give the autobuilders the chance to play with this and I'll send
+a PR to Linus with another pwrseq fix I have queued tomorrow evening.
 
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 222 ++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   |  82 +++++++
- 2 files changed, 304 insertions(+)
+Let me know if there are any objections.
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 67e2c47fd2b0..3b1cedc9de60 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -1648,6 +1648,225 @@ ath12k_htt_print_tx_pdev_rate_stats_tlv(const void *tag_buf, u16 tag_len,
- 	stats_req->buf_len = len;
- }
- 
-+static inline void
-+ath12k_htt_print_rx_pdev_rate_stats_tlv(const void *tag_buf, u16 tag_len,
-+					struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_rx_pdev_rate_stats_tlv *htt_stats_buf = tag_buf;
-+	u8 *buf = stats_req->buf;
-+	u32 len = stats_req->buf_len;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u8 i, j;
-+	u32 mac_id_word;
-+
-+	if (tag_len < sizeof(*htt_stats_buf))
-+		return;
-+
-+	mac_id_word = le32_to_cpu(htt_stats_buf->mac_id_word);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_RX_PDEV_RATE_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
-+			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
-+	len += scnprintf(buf + len, buf_len - len, "nsts = %u\n",
-+			 le32_to_cpu(htt_stats_buf->nsts));
-+	len += scnprintf(buf + len, buf_len - len, "rx_ldpc = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_ldpc));
-+	len += scnprintf(buf + len, buf_len - len, "rts_cnt = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rts_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_mgmt = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_mgmt));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_data = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_data));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_comb = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_comb));
-+	len += scnprintf(buf + len, buf_len - len, "rssi_in_dbm = %d\n",
-+			 le32_to_cpu(htt_stats_buf->rssi_in_dbm));
-+	len += scnprintf(buf + len, buf_len - len, "rx_evm_nss_count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->nss_count));
-+	len += scnprintf(buf + len, buf_len - len, "rx_evm_pilot_count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->pilot_count));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_su_ext = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_su_ext));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ac_mumimo = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ac_mumimo));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_mumimo = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_mumimo));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_ofdma = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_ofdma));
-+	len += scnprintf(buf + len, buf_len - len, "txbf = %u\n",
-+			 le32_to_cpu(htt_stats_buf->txbf));
-+	len += scnprintf(buf + len, buf_len - len, "rx_su_ndpa = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_su_ndpa));
-+	len += scnprintf(buf + len, buf_len - len, "rx_mu_ndpa = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_mu_ndpa));
-+	len += scnprintf(buf + len, buf_len - len, "rx_br_poll = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_br_poll));
-+	len += scnprintf(buf + len, buf_len - len, "rx_active_dur_us_low = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_active_dur_us_low));
-+	len += scnprintf(buf + len, buf_len - len, "rx_active_dur_us_high = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_active_dur_us_high));
-+	len += scnprintf(buf + len, buf_len - len, "rx_11ax_ul_ofdma = %u\n",
-+			 le32_to_cpu(htt_stats_buf->rx_11ax_ul_ofdma));
-+	len += scnprintf(buf + len, buf_len - len, "ul_ofdma_rx_stbc = %u\n",
-+			 le32_to_cpu(htt_stats_buf->ul_ofdma_rx_stbc));
-+	len += scnprintf(buf + len, buf_len - len, "ul_ofdma_rx_ldpc = %u\n",
-+			 le32_to_cpu(htt_stats_buf->ul_ofdma_rx_ldpc));
-+	len += scnprintf(buf + len, buf_len - len, "per_chain_rssi_pkt_type = %#x\n",
-+			 le32_to_cpu(htt_stats_buf->per_chain_rssi_pkt_type));
-+
-+	len += print_array_to_buf(buf, len, "rx_nss", htt_stats_buf->rx_nss,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_dcm", htt_stats_buf->rx_dcm,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_DCM_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_stbc", htt_stats_buf->rx_stbc,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_bw", htt_stats_buf->rx_bw,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_pream", htt_stats_buf->rx_pream,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_PREAMBLE_TYPES, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_su_txbf_mcs",
-+				  htt_stats_buf->rx_11ax_su_txbf_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_mu_txbf_mcs",
-+				  htt_stats_buf->rx_11ax_mu_txbf_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_legacy_cck_rate",
-+				  htt_stats_buf->rx_legacy_cck_rate,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_legacy_ofdm_rate",
-+				  htt_stats_buf->rx_legacy_ofdm_rate,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS, "\n");
-+	len += print_array_to_buf(buf, len, "ul_ofdma_rx_mcs",
-+				  htt_stats_buf->ul_ofdma_rx_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "ul_ofdma_rx_nss",
-+				  htt_stats_buf->ul_ofdma_rx_nss,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS, "\n");
-+	len += print_array_to_buf(buf, len, "ul_ofdma_rx_bw",
-+				  htt_stats_buf->ul_ofdma_rx_bw,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_non_data_ppdu",
-+				  htt_stats_buf->rx_ulofdma_non_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_data_ppdu",
-+				  htt_stats_buf->rx_ulofdma_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_mpdu_ok",
-+				  htt_stats_buf->rx_ulofdma_mpdu_ok,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_mpdu_fail",
-+				  htt_stats_buf->rx_ulofdma_mpdu_fail,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_non_data_nusers",
-+				  htt_stats_buf->rx_ulofdma_non_data_nusers,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulofdma_data_nusers",
-+				  htt_stats_buf->rx_ulofdma_data_nusers,
-+				  ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_dl_ofdma_mcs",
-+				  htt_stats_buf->rx_11ax_dl_ofdma_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_11ax_dl_ofdma_ru",
-+				  htt_stats_buf->rx_11ax_dl_ofdma_ru,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_RU_SIZE_COUNTERS, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_non_data_ppdu",
-+				  htt_stats_buf->rx_ulmumimo_non_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_data_ppdu",
-+				  htt_stats_buf->rx_ulmumimo_data_ppdu,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_mpdu_ok",
-+				  htt_stats_buf->rx_ulmumimo_mpdu_ok,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+	len += print_array_to_buf(buf, len, "rx_ulmumimo_mpdu_fail",
-+				  htt_stats_buf->rx_ulmumimo_mpdu_fail,
-+				  ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER, "\n");
-+
-+	len += print_array_to_buf(buf, len, "rx_mcs",
-+				  htt_stats_buf->rx_mcs,
-+				  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS, NULL);
-+	for (j = 0; j < ATH12K_HTT_TX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS; j++)
-+		len += scnprintf(buf + len, buf_len - len, ", %u:%u",
-+				 j + ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS,
-+				 le32_to_cpu(htt_stats_buf->rx_mcs_ext[j]));
-+	len += scnprintf(buf + len, buf_len - len, "\n");
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "pilot_evm_db[%u] =", j);
-+		len += print_array_to_buf(buf, len, NULL,
-+					  htt_stats_buf->rx_pil_evm_db[j],
-+					  ATH12K_HTT_RX_PDEV_STATS_RXEVM_MAX_PILOTS_NSS,
-+					  "\n");
-+	}
-+
-+	len += scnprintf(buf + len, buf_len - len, "pilot_evm_db_mean =");
-+	for (i = 0; i < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; i++)
-+		len += scnprintf(buf + len,
-+				 buf_len - len,
-+				 " %u:%d,", i,
-+				 le32_to_cpu(htt_stats_buf->rx_pilot_evm_db_mean[i]));
-+	len--;
-+	len += scnprintf(buf + len, buf_len - len, "\n");
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rssi_chain_in_db[%u] = ", j);
-+		for (i = 0; i < ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS; i++)
-+			len += scnprintf(buf + len,
-+					 buf_len - len,
-+					 " %u: %d,", i,
-+					 htt_stats_buf->rssi_chain_in_db[j][i]);
-+		len--;
-+		len += scnprintf(buf + len, buf_len - len, "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rx_gi[%u] = ", j);
-+		len += print_array_to_buf(buf, len, NULL,
-+					  htt_stats_buf->rx_gi[j],
-+					  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS,
-+					  "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "ul_ofdma_rx_gi[%u] = ", j);
-+		len += print_array_to_buf(buf, len, NULL,
-+					  htt_stats_buf->ul_ofdma_rx_gi[j],
-+					  ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS,
-+					  "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rx_ul_fd_rssi: nss[%u] = ", j);
-+		for (i = 0; i < ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER; i++)
-+			len += scnprintf(buf + len,
-+					 buf_len - len,
-+					 " %u:%d,",
-+					 i, htt_stats_buf->rx_ul_fd_rssi[j][i]);
-+		len--;
-+		len += scnprintf(buf + len, buf_len - len, "\n");
-+	}
-+
-+	for (j = 0; j < ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS; j++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "rx_per_chain_rssi_in_dbm[%u] =", j);
-+		for (i = 0; i < ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS; i++)
-+			len += scnprintf(buf + len,
-+					 buf_len - len,
-+					 " %u:%d,",
-+					 i,
-+					 htt_stats_buf->rx_per_chain_rssi_in_dbm[j][i]);
-+		len--;
-+		len += scnprintf(buf + len, buf_len - len, "\n");
-+	}
-+
-+	stats_req->buf_len = len;
-+}
-+
- static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 					  u16 tag, u16 len, const void *tag_buf,
- 					  void *user_data)
-@@ -1756,6 +1975,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_TX_PDEV_RATE_STATS_TAG:
- 		ath12k_htt_print_tx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_RX_PDEV_RATE_STATS_TAG:
-+		ath12k_htt_print_rx_pdev_rate_stats_tlv(tag_buf, len, stats_req);
-+		break;
- 	default:
- 		break;
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index 2c3c1dd9d207..a993b26c274c 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -130,6 +130,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TQM	= 6,
- 	ATH12K_DBG_HTT_EXT_STATS_TX_DE_INFO	= 8,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_RATE	= 9,
-+	ATH12K_DBG_HTT_EXT_STATS_PDEV_RX_RATE	= 10,
- 
- 	/* keep this last */
- 	ATH12K_DBG_HTT_NUM_EXT_STATS,
-@@ -153,6 +154,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_TX_DE_ENQUEUE_DISCARD_TAG		= 22,
- 	HTT_STATS_TX_DE_CMN_TAG				= 23,
- 	HTT_STATS_TX_PDEV_RATE_STATS_TAG		= 34,
-+	HTT_STATS_RX_PDEV_RATE_STATS_TAG		= 35,
- 	HTT_STATS_TX_PDEV_SCHEDULER_TXQ_STATS_TAG	= 36,
- 	HTT_STATS_TX_SCHED_CMN_TAG			= 37,
- 	HTT_STATS_SCHED_TXQ_CMD_POSTED_TAG		= 39,
-@@ -394,6 +396,86 @@ struct ath12k_htt_tx_pdev_rate_stats_tlv {
- 	__le32 tx_bw_320mhz;
- };
- 
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS		4
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS		8
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS		12
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS		4
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_DCM_COUNTERS		5
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS		4
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS		8
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_PREAMBLE_TYPES		7
-+#define ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER			8
-+#define ATH12K_HTT_RX_PDEV_STATS_RXEVM_MAX_PILOTS_NSS		16
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_RU_SIZE_COUNTERS		6
-+#define ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER		8
-+#define ATH12K_HTT_RX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS		2
-+
-+struct ath12k_htt_rx_pdev_rate_stats_tlv {
-+	__le32 mac_id_word;
-+	__le32 nsts;
-+	__le32 rx_ldpc;
-+	__le32 rts_cnt;
-+	__le32 rssi_mgmt;
-+	__le32 rssi_data;
-+	__le32 rssi_comb;
-+	__le32 rx_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_nss[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS];
-+	__le32 rx_dcm[ATH12K_HTT_RX_PDEV_STATS_NUM_DCM_COUNTERS];
-+	__le32 rx_stbc[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_bw[ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 rx_pream[ATH12K_HTT_RX_PDEV_STATS_NUM_PREAMBLE_TYPES];
-+	u8 rssi_chain_in_db[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+		     [ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 rx_gi[ATH12K_HTT_RX_PDEV_STATS_NUM_GI_COUNTERS]
-+		[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rssi_in_dbm;
-+	__le32 rx_11ax_su_ext;
-+	__le32 rx_11ac_mumimo;
-+	__le32 rx_11ax_mumimo;
-+	__le32 rx_11ax_ofdma;
-+	__le32 txbf;
-+	__le32 rx_legacy_cck_rate[ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_CCK_STATS];
-+	__le32 rx_legacy_ofdm_rate[ATH12K_HTT_RX_PDEV_STATS_NUM_LEGACY_OFDM_STATS];
-+	__le32 rx_active_dur_us_low;
-+	__le32 rx_active_dur_us_high;
-+	__le32 rx_11ax_ul_ofdma;
-+	__le32 ul_ofdma_rx_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 ul_ofdma_rx_gi[ATH12K_HTT_TX_PDEV_STATS_NUM_GI_COUNTERS]
-+			  [ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 ul_ofdma_rx_nss[ATH12K_HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS];
-+	__le32 ul_ofdma_rx_bw[ATH12K_HTT_TX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 ul_ofdma_rx_stbc;
-+	__le32 ul_ofdma_rx_ldpc;
-+	__le32 rx_ulofdma_non_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_mpdu_ok[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_mpdu_fail[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 nss_count;
-+	__le32 pilot_count;
-+	__le32 rx_pil_evm_db[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+			   [ATH12K_HTT_RX_PDEV_STATS_RXEVM_MAX_PILOTS_NSS];
-+	__le32 rx_pilot_evm_db_mean[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS];
-+	s8 rx_ul_fd_rssi[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+			[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 per_chain_rssi_pkt_type;
-+	s8 rx_per_chain_rssi_in_dbm[ATH12K_HTT_RX_PDEV_STATS_NUM_SPATIAL_STREAMS]
-+				   [ATH12K_HTT_RX_PDEV_STATS_NUM_BW_COUNTERS];
-+	__le32 rx_su_ndpa;
-+	__le32 rx_11ax_su_txbf_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_mu_ndpa;
-+	__le32 rx_11ax_mu_txbf_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_br_poll;
-+	__le32 rx_11ax_dl_ofdma_mcs[ATH12K_HTT_RX_PDEV_STATS_NUM_MCS_COUNTERS];
-+	__le32 rx_11ax_dl_ofdma_ru[ATH12K_HTT_RX_PDEV_STATS_NUM_RU_SIZE_COUNTERS];
-+	__le32 rx_ulmumimo_non_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulmumimo_data_ppdu[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulmumimo_mpdu_ok[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulmumimo_mpdu_fail[ATH12K_HTT_RX_PDEV_MAX_ULMUMIMO_NUM_USER];
-+	__le32 rx_ulofdma_non_data_nusers[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_ulofdma_data_nusers[ATH12K_HTT_RX_PDEV_MAX_OFDMA_NUM_USER];
-+	__le32 rx_mcs_ext[ATH12K_HTT_RX_PDEV_STATS_NUM_EXTRA_MCS_COUNTERS];
-+};
-+
- #define ATH12K_HTT_TX_PDEV_STATS_SCHED_PER_TXQ_MAC_ID	GENMASK(7, 0)
- #define ATH12K_HTT_TX_PDEV_STATS_SCHED_PER_TXQ_ID	GENMASK(15, 8)
- 
+[1/1] Kconfig: reduce the amount of power sequencing noise
+      commit: ed70aaac7c359540d3d8332827fa60b6a45e15f2
+
+Best regards,
 -- 
-2.34.1
-
+Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
