@@ -4,87 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7195DC3DA70
-	for <ath12k@archiver.kernel.org>; Mon, 22 Jul 2024 23:55:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B480C3DA61
+	for <ath12k@archiver.kernel.org>; Wed, 24 Jul 2024 04:28:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IR9rMEYaL9m/+8vajLloZbrKGZKzChbQXGwKLaZZOa8=; b=1mU6dKixi9fZPdGW3tStmpQrKF
-	ObOCdQR6DOHXGAulFXsSov1Chvj4MiVcV5uDOJ4BKeVtXSVqZRkaE9XvuI2pGbYQDCddeYT5EpAl2
-	e7Nk2UCSzQCesXGxIyE2yolzAbOJJriWjNAiaFXABJMc3ojn0ehliXRJK5FaDfr/l5TcG2KrzOQKU
-	XogtT4tD87ni6wYssq0MdIGU+C6P5sWixAlZ1AWaWBW+N0Auf3TYbCIJi7+zM/K+VbGhTljc+5sqv
-	rMt5T7odi/6cXpF3psen7JBCyRMRqYtKIqwgg8FYZIWsr02nzQjia/w532QRR473f6RG0z62zfGiV
-	iBjOeo9A==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=PrL5RGX2RLMZA5pLUV+dy6xuSDchD52B0HvPp81FacE=; b=wYGgtcf4AhDLywdbLMLpNR9Ect
+	y5AnJUyvqJZGEcwm2vtE9mBT608UXP9TvSel8vfBzeAnz9BAzbs1lvR1dF0s1Aaj4gdQkKSwAeFsL
+	PPZdIw/tGiVx8+tUtu5O6CiQRcTK7VHda4miOqMlmBZhL33b4li05qdeoWonZM28QtpmL7hy1cP4E
+	M6PDfrITZZdUecnMJgS7oE2t3Q/9nwP3JwnP3skX6w71vK83/l4eeOhV+CqlmxgY8O5ktOGA0uHzf
+	OGiNMuXDBEKd8klHicpatDc++fP6UDf6vgRX6/vwCqS5Bj/AWjMAQ/COPWbQ7OnPxs78tB+Sz84r9
+	ztzmbqLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sW2sU-0000000AuEY-0fGZ
+	id 1sWTcK-0000000EKd6-0EVo
 	for ath12k@archiver.kernel.org;
-	Mon, 22 Jul 2024 23:55:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 24 Jul 2024 04:28:44 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sW2sR-0000000AuE2-1yP2
+	id 1sWTcG-0000000EKcF-23Wx
 	for ath12k@lists.infradead.org;
-	Mon, 22 Jul 2024 23:55:37 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46MN7aOP000501;
-	Mon, 22 Jul 2024 23:55:35 GMT
+	Wed, 24 Jul 2024 04:28:41 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46NHevIX011010;
+	Wed, 24 Jul 2024 04:28:38 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IR9rMEYaL9m/+8vajLloZbrKGZKzChbQXGwKLaZZOa8=; b=BgljlqoCko9p5TQx
-	af5YEV1UqSr3qf6SCRgYawzkWp7z/5w2NpdaEQQcmIoLTXJ0SoCrPvV7LHpFK3+S
-	CXZyHNBC+dlarl/t39S6W1u+VAPXL0Bt0z3fGpHOUcUudONE5oyvwIhcZEXRFwOR
-	xlMopkrZKxqA5lC+OxU5U8SO9C2Hb9ZIdFdbImtt+a8OV53QstEM5eZbw2VNzMtx
-	MUFlKEY8CAqZ+2llaVQ6Aurb0PkCls//BULi4+FHECgAPFpBsXA31SKgwqpBIBMi
-	F/VSSDcNpp06BbcmPe9lYGKD2WutdkyTqAZfryciCYPTQyQ3WzhIk2xwP7L/rmG2
-	CM2hiQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40g46s54da-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=PrL5RGX2RLMZA5pLUV+dy6xuSDchD52B0Hv
+	Pp81FacE=; b=KIoAWjMInI4ka999uOXp7RTqzWJrrSRbCrvQzPZcknaPQm6DgEA
+	ixO9MLW0Y1um0tGbzS8TUzOdRQfH51ujiq6XRzKObbY305hMuyrLLXAmYzYkFBkD
+	L27rdOtO21Q0LMjoHcbOtWmS4VPmTBoGl3PMhuHQiwIcYrqIisC4R9f/Aeny57D/
+	qiB6+Dj4jFDM6wWlizxMHMM8kMrVuifjHbiTlGmKJo5a53zXSzteDAzM1jhaQ61b
+	QFhJLEvY/bElT13ZyGY4tPwkDPMFUAkfu/ieHpNFPy6Rp5fQaoe5GjI/w/1ZwWQn
+	U0puNs/jHU2vd+wShbobD6DlQUGZU9WIOUw==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40g2kn16hp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Jul 2024 23:55:34 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46MNtXXe005808
+	Wed, 24 Jul 2024 04:28:37 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTP id 46O4SXRK023169;
+	Wed, 24 Jul 2024 04:28:33 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 40g6aky655-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Jul 2024 23:55:33 GMT
-Received: from [10.111.176.36] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 22 Jul
- 2024 16:55:33 -0700
-Message-ID: <9812b341-6a74-41fe-8d09-43e514107e20@quicinc.com>
-Date: Mon, 22 Jul 2024 16:55:32 -0700
+	Wed, 24 Jul 2024 04:28:33 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 46O4SX9F023163;
+	Wed, 24 Jul 2024 04:28:33 GMT
+Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 46O4SXFq023162
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 24 Jul 2024 04:28:33 +0000
+Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
+	id 9A86441107; Wed, 24 Jul 2024 09:58:32 +0530 (+0530)
+From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
+        Dinesh Karthikeyan <quic_dinek@quicinc.com>
+Subject: [PATCH] wifi: ath12k: Support transmit hardware queue stats
+Date: Wed, 24 Jul 2024 09:58:09 +0530
+Message-Id: <20240724042809.3716580-1-quic_rgnanase@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix reusing outside iterator in
- ath12k_wow_vif_set_wakeups()
-Content-Language: en-US
-To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20240722033332.6273-1-quic_bqiang@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20240722033332.6273-1-quic_bqiang@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+Content-Transfer-Encoding: 8bit
+X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 36J3TJ_RHlaluNhJejhzsqqjELXJpsQf
-X-Proofpoint-ORIG-GUID: 36J3TJ_RHlaluNhJejhzsqqjELXJpsQf
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 0IwsTDMeT9iucij5mDUbReYB3DAI6Ap2
+X-Proofpoint-GUID: 0IwsTDMeT9iucij5mDUbReYB3DAI6Ap2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-22_17,2024-07-22_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
- lowpriorityscore=0 bulkscore=0 clxscore=1015 malwarescore=0
- priorityscore=1501 phishscore=0 adultscore=0 suspectscore=0 spamscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2407220178
+ definitions=2024-07-24_02,2024-07-23_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ spamscore=0 mlxscore=0 priorityscore=1501 impostorscore=0 suspectscore=0
+ adultscore=0 clxscore=1011 mlxlogscore=999 lowpriorityscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2407240032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240722_165535_555261_B77C7D6A 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20240723_212840_696932_998F7FE2 
+X-CRM114-Status: GOOD (  14.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,55 +102,367 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 7/21/2024 8:33 PM, Baochen Qiang wrote:
-> Smatch throws below warning:
-> 
-> 	drivers/net/wireless/ath/ath12k/wow.c:434 ath12k_wow_vif_set_wakeups()
-> 	warn: reusing outside iterator: 'i'
-> 
-> 	drivers/net/wireless/ath/ath12k/wow.c
-> 	    411         default:
-> 	    412                 break;
-> 	    413         }
-> 	    414
-> 	    415         for (i = 0; i < wowlan->n_patterns; i++) {
-> 	                            ^^^^^^^^^^^^^^^^^^^^^^
-> 	Here we loop until ->n_patterns
-> 
-> 	    416                 const struct cfg80211_pkt_pattern *eth_pattern = &patterns[i];
-> 	    417                 struct ath12k_pkt_pattern new_pattern = {};
-> 	    418
-> 	    419                 if (WARN_ON(eth_pattern->pattern_len > WOW_MAX_PATTERN_SIZE))
-> 	    420                         return -EINVAL;
-> 	    421
-> 	    422                 if (ar->ab->wow.wmi_conf_rx_decap_mode ==
-> 	    423                     ATH12K_HW_TXRX_NATIVE_WIFI) {
-> 	    424                         ath12k_wow_convert_8023_to_80211(ar, eth_pattern,
-> 	    425                                                          &new_pattern);
-> 	    426
-> 	    427                         if (WARN_ON(new_pattern.pattern_len > WOW_MAX_PATTERN_SIZE))
-> 	    428                                 return -EINVAL;
-> 	    429                 } else {
-> 	    430                         memcpy(new_pattern.pattern, eth_pattern->pattern,
-> 	    431                                eth_pattern->pattern_len);
-> 	    432
-> 	    433                         /* convert bitmask to bytemask */
-> 	--> 434                         for (i = 0; i < eth_pattern->pattern_len; i++)
-> 	    435                                 if (eth_pattern->mask[i / 8] & BIT(i % 8))
-> 	    436                                         new_pattern.bytemask[i] = 0xff;
-> 
-> 	This loop re-uses i and the loop ends with i == eth_pattern->pattern_len.
-> 	This looks like a bug.
-> 
-> Change to use a new iterator 'j' for the inner loop to fix it.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Fixes: 4a3c212eee0e ("wifi: ath12k: add basic WoW functionalities")
-> Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-> Closes: https://lore.kernel.org/all/d4975b95-9c43-45af-a0ab-80253f18c7f2@stanley.mountain/
-> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Add support to request firmware hardware stats through HTT
+stats and display the stats information in debugfs.
 
+Sample Output:
+-------------
+echo 3 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_reset
+cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+
+HTT_TX_HWQ_STATS_CMN_TLV:
+mac_id = 0
+hwq_id = 0
+xretry = 0
+underrun_cnt = 42
+flush_cnt = 0
+filt_cnt = 0
+null_mpdu_bmap = 0
+user_ack_failure = 42
+ack_tlv_proc = 0
+sched_id_proc = 0
+null_mpdu_tx_count = 42
+mpdu_bmap_not_recvd = 0
+num_bar = 0
+rts = 0
+cts2self = 0
+qos_null = 0
+mpdu_tried_cnt = 0
+mpdu_queued_cnt = 42
+mpdu_ack_fail_cnt = 0
+mpdu_filt_cnt = 0
+false_mpdu_ack_count = 0
+txq_timeout = 0
+
+HTT_TX_HWQ_CMD_RESULT_STATS_TLV:
+cmd_result =  0:42, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0
+
+HTT_TX_HWQ_CMD_STALL_STATS_TLV:
+cmd_stall_status =  0:0, 1:0, 2:0, 3:0, 4:0
+
+HTT_TX_HWQ_FES_RESULT_STATS_TLV:
+fes_result =  0:42, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0
+
+HTT_TX_HWQ_STATS_CMN_TLV:
+mac_id = 0
+hwq_id = 1
+xretry = 0
+underrun_cnt = 0
+flush_cnt = 0
+filt_cnt = 0
+null_mpdu_bmap = 0
+user_ack_failure = 0
+ack_tlv_proc = 0
+sched_id_proc = 0
+null_mpdu_tx_count = 0
+mpdu_bmap_not_recvd = 0
+num_bar = 0
+rts = 0
+cts2self = 0
+qos_null = 0
+mpdu_tried_cnt = 0
+mpdu_queued_cnt = 0
+mpdu_ack_fail_cnt = 0
+mpdu_filt_cnt = 0
+false_mpdu_ack_count = 0
+txq_timeout = 0
+
+.....
+.....
+
+HTT_TX_HWQ_STATS_CMN_TLV:
+mac_id = 0
+hwq_id = 20
+xretry = 0
+underrun_cnt = 0
+.....
+.....
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+---
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 164 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   |  46 +++++
+ 2 files changed, 210 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index f1b7e74aefe4..2d56d4d01c26 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -1447,6 +1447,134 @@ ath12k_htt_print_tx_de_compl_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	stats_req->buf_len = len;
+ }
+ 
++static void
++htt_print_tx_hwq_stats_cmn_tlv(const void *tag_buf, u16 tag_len,
++			       struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_hwq_stats_cmn_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u32 mac_id_word;
++
++	if (tag_len < sizeof(*htt_stats_buf))
++		return;
++
++	mac_id_word = le32_to_cpu(htt_stats_buf->mac_id__hwq_id__word);
++
++	len += scnprintf(buf + len, buf_len - len, "HTT_TX_HWQ_STATS_CMN_TLV:\n");
++	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
++			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
++	len += scnprintf(buf + len, buf_len - len, "hwq_id = %u\n",
++			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_HWQ_ID));
++	len += scnprintf(buf + len, buf_len - len, "xretry = %u\n",
++			 le32_to_cpu(htt_stats_buf->xretry));
++	len += scnprintf(buf + len, buf_len - len, "underrun_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->underrun_cnt));
++	len += scnprintf(buf + len, buf_len - len, "flush_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->flush_cnt));
++	len += scnprintf(buf + len, buf_len - len, "filt_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->filt_cnt));
++	len += scnprintf(buf + len, buf_len - len, "null_mpdu_bmap = %u\n",
++			 le32_to_cpu(htt_stats_buf->null_mpdu_bmap));
++	len += scnprintf(buf + len, buf_len - len, "user_ack_failure = %u\n",
++			 le32_to_cpu(htt_stats_buf->user_ack_failure));
++	len += scnprintf(buf + len, buf_len - len, "ack_tlv_proc = %u\n",
++			 le32_to_cpu(htt_stats_buf->ack_tlv_proc));
++	len += scnprintf(buf + len, buf_len - len, "sched_id_proc = %u\n",
++			 le32_to_cpu(htt_stats_buf->sched_id_proc));
++	len += scnprintf(buf + len, buf_len - len, "null_mpdu_tx_count = %u\n",
++			 le32_to_cpu(htt_stats_buf->null_mpdu_tx_count));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_bmap_not_recvd = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_bmap_not_recvd));
++	len += scnprintf(buf + len, buf_len - len, "num_bar = %u\n",
++			 le32_to_cpu(htt_stats_buf->num_bar));
++	len += scnprintf(buf + len, buf_len - len, "rts = %u\n",
++			 le32_to_cpu(htt_stats_buf->rts));
++	len += scnprintf(buf + len, buf_len - len, "cts2self = %u\n",
++			 le32_to_cpu(htt_stats_buf->cts2self));
++	len += scnprintf(buf + len, buf_len - len, "qos_null = %u\n",
++			 le32_to_cpu(htt_stats_buf->qos_null));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_tried_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_tried_cnt));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_queued_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_queued_cnt));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_ack_fail_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_ack_fail_cnt));
++	len += scnprintf(buf + len, buf_len - len, "mpdu_filt_cnt = %u\n",
++			 le32_to_cpu(htt_stats_buf->mpdu_filt_cnt));
++	len += scnprintf(buf + len, buf_len - len, "false_mpdu_ack_count = %u\n",
++			 le32_to_cpu(htt_stats_buf->false_mpdu_ack_count));
++	len += scnprintf(buf + len, buf_len - len, "txq_timeout = %u\n\n",
++			 le32_to_cpu(htt_stats_buf->txq_timeout));
++
++	stats_req->buf_len = len;
++}
++
++static void
++htt_print_tx_hwq_cmd_result_stats_tlv(const void *tag_buf,
++				      u16 tag_len,
++				      struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_hwq_cmd_result_stats_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u16 num_elems = min_t(u16, (tag_len >> 2),
++				    ATH12K_HTT_TX_HWQ_MAX_CMD_RESULT_STATS);
++
++	len += scnprintf(buf + len, buf_len - len,
++			 "HTT_TX_HWQ_CMD_RESULT_STATS_TLV:\n");
++
++	len += print_array_to_buf(buf, len, "cmd_result", htt_stats_buf->cmd_result,
++				  num_elems, "\n\n");
++
++	stats_req->buf_len = len;
++}
++
++static void
++htt_print_tx_hwq_cmd_stall_stats_tlv(const void *tag_buf,
++				     u16 tag_len,
++				     struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_hwq_cmd_stall_stats_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u16 num_elems = min_t(u16, (tag_len >> 2),
++				    ATH12K_HTT_TX_HWQ_MAX_CMD_STALL_STATS);
++
++	len += scnprintf(buf + len, buf_len - len,
++			 "HTT_TX_HWQ_CMD_STALL_STATS_TLV:\n");
++
++	len += print_array_to_buf(buf, len, "cmd_stall_status",
++				  htt_stats_buf->cmd_stall_status,
++				  num_elems, "\n\n");
++
++	stats_req->buf_len = len;
++}
++
++static void
++htt_print_tx_hwq_fes_result_stats_tlv(const void *tag_buf,
++				      u16 tag_len,
++				      struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_tx_hwq_fes_result_stats_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u16 num_elems = min_t(u16, (tag_len >> 2),
++				    ATH12K_HTT_TX_HWQ_MAX_FES_RESULT_STATS);
++
++	len += scnprintf(buf + len, buf_len - len,
++			 "HTT_TX_HWQ_FES_RESULT_STATS_TLV:\n");
++
++	len += print_array_to_buf(buf, len, "fes_result", htt_stats_buf->fes_result,
++				  num_elems, "\n\n");
++
++	stats_req->buf_len = len;
++}
++
+ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
+ 					  u16 tag, u16 len, const void *tag_buf,
+ 					  void *user_data)
+@@ -1552,6 +1680,18 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
+ 	case HTT_STATS_TX_DE_COMPL_STATS_TAG:
+ 		ath12k_htt_print_tx_de_compl_stats_tlv(tag_buf, len, stats_req);
+ 		break;
++	case HTT_STATS_TX_HWQ_CMN_TAG:
++		htt_print_tx_hwq_stats_cmn_tlv(tag_buf, len, stats_req);
++		break;
++	case HTT_STATS_TX_HWQ_CMD_RESULT_TAG:
++		htt_print_tx_hwq_cmd_result_stats_tlv(tag_buf, len, stats_req);
++		break;
++	case HTT_STATS_TX_HWQ_CMD_STALL_TAG:
++		htt_print_tx_hwq_cmd_stall_stats_tlv(tag_buf, len, stats_req);
++		break;
++	case HTT_STATS_TX_HWQ_FES_STATUS_TAG:
++		htt_print_tx_hwq_fes_result_stats_tlv(tag_buf, len, stats_req);
++		break;
+ 	default:
+ 		break;
+ 	}
+@@ -1683,6 +1823,24 @@ static const struct file_operations fops_htt_stats_type = {
+ 	.llseek = default_llseek,
+ };
+ 
++static int ath12k_prep_htt_stats_cfg_params(struct ath12k *ar,
++					    enum ath12k_dbg_htt_ext_stats_type type,
++					    struct htt_ext_stats_cfg_params *cfg_params)
++{
++	if (!cfg_params)
++		return -EINVAL;
++
++	switch (type) {
++	case ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_HWQ:
++		cfg_params->cfg0 = HTT_STAT_DEFAULT_CFG0_ALL_HWQS;
++		break;
++	default:
++		break;
++	}
++
++	return 0;
++}
++
+ static int ath12k_debugfs_htt_stats_req(struct ath12k *ar)
+ {
+ 	struct debug_htt_stats_req *stats_req = ar->debug.htt_stats.stats_req;
+@@ -1703,6 +1861,12 @@ static int ath12k_debugfs_htt_stats_req(struct ath12k *ar)
+ 				 ATH12K_HTT_STATS_COOKIE_MSB);
+ 	cookie |= u64_encode_bits(pdev_id, ATH12K_HTT_STATS_COOKIE_LSB);
+ 
++	ret = ath12k_prep_htt_stats_cfg_params(ar, type, &cfg_params);
++	if (ret) {
++		ath12k_warn(ar->ab, "failed to set htt stats cfg params: %d\n", ret);
++		return ret;
++	}
++
+ 	if (stats_req->override_cfg_param) {
+ 		cfg_params.cfg0 = stats_req->cfg_param[0];
+ 		cfg_params.cfg1 = stats_req->cfg_param[1];
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+index d52b26b23e65..525a8c615bfd 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+@@ -125,6 +125,7 @@ struct ath12k_htt_extd_stats_msg {
+ enum ath12k_dbg_htt_ext_stats_type {
+ 	ATH12K_DBG_HTT_EXT_STATS_RESET		= 0,
+ 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX	= 1,
++	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_HWQ	= 3,
+ 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_SCHED	= 4,
+ 	ATH12K_DBG_HTT_EXT_STATS_PDEV_ERROR	= 5,
+ 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TQM	= 6,
+@@ -139,6 +140,10 @@ enum ath12k_dbg_htt_tlv_tag {
+ 	HTT_STATS_TX_PDEV_UNDERRUN_TAG			= 1,
+ 	HTT_STATS_TX_PDEV_SIFS_TAG			= 2,
+ 	HTT_STATS_TX_PDEV_FLUSH_TAG			= 3,
++	HTT_STATS_TX_HWQ_CMN_TAG			= 6,
++	HTT_STATS_TX_HWQ_CMD_RESULT_TAG			= 8,
++	HTT_STATS_TX_HWQ_CMD_STALL_TAG			= 9,
++	HTT_STATS_TX_HWQ_FES_STATUS_TAG			= 10,
+ 	HTT_STATS_TX_TQM_GEN_MPDU_TAG			= 11,
+ 	HTT_STATS_TX_TQM_LIST_MPDU_TAG			= 12,
+ 	HTT_STATS_TX_TQM_LIST_MPDU_CNT_TAG		= 13,
+@@ -172,6 +177,7 @@ enum ath12k_dbg_htt_tlv_tag {
+ };
+ 
+ #define ATH12K_HTT_STATS_MAC_ID				GENMASK(7, 0)
++#define ATH12K_HTT_STATS_HWQ_ID				GENMASK(15, 8)
+ 
+ #define ATH12K_HTT_TX_PDEV_MAX_SIFS_BURST_STATS		9
+ #define ATH12K_HTT_TX_PDEV_MAX_FLUSH_REASON_STATS	150
+@@ -690,4 +696,44 @@ struct ath12k_htt_tx_de_compl_stats_tlv {
+ 	__le32 tqm_bypass_frame;
+ } __packed;
+ 
++#define ATH12K_HTT_TX_HWQ_MAX_CMD_RESULT_STATS		13
++#define ATH12K_HTT_TX_HWQ_MAX_CMD_STALL_STATS		5
++#define ATH12K_HTT_TX_HWQ_MAX_FES_RESULT_STATS		10
++
++struct ath12k_htt_tx_hwq_stats_cmn_tlv {
++	__le32 mac_id__hwq_id__word;
++	__le32 xretry;
++	__le32 underrun_cnt;
++	__le32 flush_cnt;
++	__le32 filt_cnt;
++	__le32 null_mpdu_bmap;
++	__le32 user_ack_failure;
++	__le32 ack_tlv_proc;
++	__le32 sched_id_proc;
++	__le32 null_mpdu_tx_count;
++	__le32 mpdu_bmap_not_recvd;
++	__le32 num_bar;
++	__le32 rts;
++	__le32 cts2self;
++	__le32 qos_null;
++	__le32 mpdu_tried_cnt;
++	__le32 mpdu_queued_cnt;
++	__le32 mpdu_ack_fail_cnt;
++	__le32 mpdu_filt_cnt;
++	__le32 false_mpdu_ack_count;
++	__le32 txq_timeout;
++} __packed;
++
++struct ath12k_htt_tx_hwq_cmd_result_stats_tlv {
++	DECLARE_FLEX_ARRAY(__le32, cmd_result);
++} __packed;
++
++struct ath12k_htt_tx_hwq_cmd_stall_stats_tlv {
++	DECLARE_FLEX_ARRAY(__le32, cmd_stall_status);
++} __packed;
++
++struct ath12k_htt_tx_hwq_fes_result_stats_tlv {
++	DECLARE_FLEX_ARRAY(__le32, fes_result);
++} __packed;
++
+ #endif
+
+base-commit: db1ce56e6e1d395dd42a3cd6332a871d9be59c45
+-- 
+2.34.1
 
 
