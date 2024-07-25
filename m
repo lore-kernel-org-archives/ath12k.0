@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 815C6C3DA49
-	for <ath12k@archiver.kernel.org>; Thu, 25 Jul 2024 12:01:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 535E3C52CDA
+	for <ath12k@archiver.kernel.org>; Thu, 25 Jul 2024 12:01:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fcJgsuGYJifMQU507Q45xqvyY9WgRFd9SdPoGyOI/Ww=; b=HJdbYa2A0DSK4+182IyvyoR7qd
-	WSgBJnsxitafl/RMpTkApgznOgsCfTeKuUzZzBb6Q/pfoX1sInad9JONrTRDqUFBP5eRAnL535GQ1
-	fM72oQzBAAT5nIwJVy/NUEfgC5kmMxlF6P3tw4TIm/fDWK7V+mRpexXzNFZQE02VF70iwkPkh7rL1
-	O7XW8y3g5iy39HaW1VOfdRgc7+PySYWhDUmKDLCN03aGnXcuYH0VKhXZG/XAxkbRfBWByEfHWUsjd
-	Ovc9+Ro3Wr7QmG8Pu2iUtkgZHSskEC0aIFcOISy5wB1TFpTcF/Tk6y2f7ljdPTWpuS3qGI4//Jhvk
-	/z9HdDQg==;
+	bh=1sXm2ERfsX9ChBwv85AsK4QaVXxGlZTrBCssjGnDfM4=; b=TyuLkIBeTrWhh89eeGjg0h3a2p
+	wghHtCZ+8IAogTVtBsusPGW9MDt0XVbH342O9j2vX08fqTEY11FNKOHxz83Wwz+VelkHbblf3XKZN
+	NI1avSzAeylyyOdS3JjpjbfQtFR3siO8cPPKsx2utbKUDmxNyvrniDNqmdcPk6/HSy5XObkunWPXI
+	Bnasm5miAe24UO4uMtSWMgSf8B7CRwGtXPNzzA3JpnHtSgayAmyTqXVsjDDh+qi2aj1t4Nz6JULUL
+	LxTRLzYORc+IHyChp6kZZSHevFEoFo/LPwLliQsWO5DeuM7JLka11619iEuH9xF7u98ZNVRz/GBll
+	CcXBRwbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWx9u-00000000q4o-0pA4
+	id 1sWx9u-00000000q5S-44PO
 	for ath12k@archiver.kernel.org;
 	Thu, 25 Jul 2024 12:01:22 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWx9i-00000000pzF-48XP
+	id 1sWx9n-00000000q0w-093z
 	for ath12k@lists.infradead.org;
-	Thu, 25 Jul 2024 12:01:12 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46P9B5fP018291;
-	Thu, 25 Jul 2024 12:01:10 GMT
+	Thu, 25 Jul 2024 12:01:16 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46P9W5jL011243;
+	Thu, 25 Jul 2024 12:01:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	fcJgsuGYJifMQU507Q45xqvyY9WgRFd9SdPoGyOI/Ww=; b=cIUu2S/097vLT6jy
-	/+86HvJfpz12XKdmrH3SXJhwW/nuDm9e9aWlfoHvEFykfLLtq7TOtm96p8x8jGf/
-	7Cu8UY7Asll2LlDuE3bmBuHzacVbm2Otl1E2rEcXJBdp5zHCWwMA0rA56uxMqqOs
-	7wN4qEcg/IvuFAv33+4Z79CjYBeX1LAppC2PT+czKx+A5jS/wz4yfgwNuhGYHNCB
-	Fv1MlTxCfp+n8simc0kMteuxhv+csG9QRCEhKyOdVEdeU5YPeAicWekQUueTN+sM
-	lKYK/wUzqCxNKlA0FjVKxkcG/C3XzctppyNBEGlkzFX/veR7mQtWwSkb6pD/eGYD
-	3GbTeQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40g2xen8sf-1
+	1sXm2ERfsX9ChBwv85AsK4QaVXxGlZTrBCssjGnDfM4=; b=PvGx9yOa7eBkvGmS
+	bWQm4hB6jkcDfTZaO9c4Y0fh6LIYuuDLHDZ11QX40M+V8DVvchJqVnQV60iW5FxD
+	0m+ZVN8xMz5mPpn2Ls5fBExN4e8GTMKZ6FuH8jmSOZUjgCjvY2RP2Qf+gESv8sfq
+	xRso60SV9P3f76Al613jhe1IQSibgSiykSVNKLRa1MyTclYvcvH4hS8FKsQyx9uz
+	kzZbGTObEewUv/T/2ZeOwxT/XxgjmMqlh8uQ1JgyaIJ4gxFqLS9xmGjfkHkqZKU9
+	ah0K3XVurBx5r378ol0Gf9gVFWuRHBD664NB7I1YLtOSI9KJfYBEAKnz/N0OdKLN
+	PE9NdQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40jyrfkegc-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 25 Jul 2024 12:01:10 +0000 (GMT)
+	Thu, 25 Jul 2024 12:01:14 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46PC19qT013652
+	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46PC1DX3006210
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 25 Jul 2024 12:01:09 GMT
+	Thu, 25 Jul 2024 12:01:13 GMT
 Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 25 Jul 2024 05:01:08 -0700
+ 15.2.1544.9; Thu, 25 Jul 2024 05:01:12 -0700
 From: kangyang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH 07/11] wifi: ath12k: properly handling the state variables of monitor mode
-Date: Thu, 25 Jul 2024 20:00:31 +0800
-Message-ID: <20240725120035.493-8-quic_kangyang@quicinc.com>
+Subject: [PATCH 10/11] wifi: ath12k: fix A-MSDU indication in monitor mode
+Date: Thu, 25 Jul 2024 20:00:34 +0800
+Message-ID: <20240725120035.493-11-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1.windows.1
 In-Reply-To: <20240725120035.493-1-quic_kangyang@quicinc.com>
 References: <20240725120035.493-1-quic_kangyang@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: vQhPLetgxIFWTCx2s0oXSt5TVQjmyDzQ
-X-Proofpoint-ORIG-GUID: vQhPLetgxIFWTCx2s0oXSt5TVQjmyDzQ
+X-Proofpoint-GUID: Cq7ZGVG_VC73g21LdUfCwXhdUYZWo33L
+X-Proofpoint-ORIG-GUID: Cq7ZGVG_VC73g21LdUfCwXhdUYZWo33L
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-07-25_11,2024-07-25_03,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
- lowpriorityscore=0 bulkscore=0 mlxlogscore=999 mlxscore=0 adultscore=0
- phishscore=0 priorityscore=1501 malwarescore=0 suspectscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
+ mlxlogscore=908 malwarescore=0 clxscore=1015 suspectscore=0
+ lowpriorityscore=0 impostorscore=0 adultscore=0 phishscore=0 spamscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2407110000 definitions=main-2407250082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240725_050111_080236_2A04B603 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20240725_050115_110844_29C0992F 
+X-CRM114-Status: GOOD (  14.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,82 +99,69 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Kang Yang <quic_kangyang@quicinc.com>
 
-Now monitor mode has some status variables, such as monitor_started,
-monitor_vdev_created. They are not always handled correctly.
+In monitor mode, host will reap MSDUs and then the MSDUs with same PPDU
+ID will be aggregated into an A-MSDU in ath12k_dp_mon_rx_merg_msdus().
 
-For monitor_started, it should be true when driver works in monitor
-mode, and should be false at other times.
+However, ath12k_dp_mon_rx_merg_msdus() doesn't calculate the total
+length of the A-MSDU. This causes Wireshark to display the A-MSDU
+incorrectly.
 
-For monitor_vdev_id, it should be -1 when driver doesn't work in monitor
-mode.
-
-For monitor_vdev_created, it should be true after monitor vdev is
-created successfully and should be false at other times.
-
-For monitor_conf_enabled, it should be true when mac80211 sets
-IEEE80211_CONF_MONITOR, and should be false at other times.
-
-Handle those state variables according to above descriptions.
+Therefore, need to add calculation of the A-MSDU length.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c |  5 +++++
- drivers/net/wireless/ath/ath12k/mac.c  | 10 ++++++++++
- 2 files changed, 15 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 51252e8bc1ae..6965876137ce 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1060,6 +1060,11 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 				     ath12k_mac_tx_mgmt_pending_free, ar);
- 			idr_destroy(&ar->txmgmt_idr);
- 			wake_up(&ar->txmgmt_empty_waitq);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 1f989bcf795b..6ebfded60397 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -870,11 +870,11 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar, u32 mac_id,
+ 			    struct ieee80211_rx_status *rxs, bool *fcs_err)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+-	struct sk_buff *msdu, *mpdu_buf, *prev_buf;
++	struct sk_buff *msdu, *mpdu_buf, *prev_buf, *head_frag_list;
+ 	struct hal_rx_desc *rx_desc, *tail_rx_desc;
+ 	u8 *hdr_desc, *dest, decap_format;
+ 	struct ieee80211_hdr_3addr *wh;
+-	u32 err_bitmap;
++	u32 err_bitmap, frag_list_sum_len = 0;
+ 
+ 	mpdu_buf = NULL;
+ 
+@@ -897,10 +897,15 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar, u32 mac_id,
+ 
+ 		prev_buf = head_msdu;
+ 		msdu = head_msdu->next;
++		head_frag_list = NULL;
+ 
+ 		while (msdu) {
+ 			ath12k_dp_mon_rx_msdus_set_payload(ar, msdu, tail_msdu);
+ 
++			if (!head_frag_list)
++				head_frag_list = msdu;
 +
-+			ar->monitor_vdev_id = -1;
-+			ar->monitor_started = false;
-+			ar->monitor_vdev_created = false;
-+			ar->monitor_conf_enabled = false;
++			frag_list_sum_len += msdu->len;
+ 			prev_buf = msdu;
+ 			msdu = msdu->next;
  		}
- 	}
+@@ -908,6 +913,12 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar, u32 mac_id,
+ 		prev_buf->next = NULL;
  
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 8106297f0bc1..642d756db663 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -6565,6 +6565,9 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
- 			goto err_peer_del;
- 		}
- 		break;
-+	case WMI_VDEV_TYPE_MONITOR:
-+		ar->monitor_vdev_created = true;
-+		break;
- 	default:
- 		break;
- 	}
-@@ -6614,6 +6617,8 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
- err_vdev_del:
- 	ath12k_wmi_vdev_delete(ar, arvif->vdev_id);
- 	ar->num_created_vdevs--;
-+	ar->monitor_vdev_created = false;
-+	ar->monitor_vdev_id = -1;
- 	arvif->is_created = false;
- 	arvif->ar = NULL;
- 	ar->allocated_vdev_map &= ~(1LL << arvif->vdev_id);
-@@ -9330,6 +9335,11 @@ static void ath12k_mac_setup(struct ath12k *ar)
+ 		skb_trim(prev_buf, prev_buf->len - HAL_RX_FCS_LEN);
++		if (head_frag_list) {
++			skb_shinfo(head_msdu)->frag_list = head_frag_list;
++			head_msdu->data_len = frag_list_sum_len;
++			head_msdu->len += head_msdu->data_len;
++			head_msdu->next = NULL;
++		}
+ 	} else if (decap_format == DP_RX_DECAP_TYPE_NATIVE_WIFI) {
+ 		u8 qos_pkt = 0;
  
- 	INIT_WORK(&ar->wmi_mgmt_tx_work, ath12k_mgmt_over_wmi_tx_work);
- 	skb_queue_head_init(&ar->wmi_mgmt_tx_queue);
-+
-+	ar->monitor_vdev_id = -1;
-+	ar->monitor_started = false;
-+	ar->monitor_vdev_created = false;
-+	ar->monitor_conf_enabled = false;
- }
- 
- int ath12k_mac_register(struct ath12k_base *ab)
 -- 
 2.34.1
 
