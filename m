@@ -4,91 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF7F3C3DA49
-	for <ath12k@archiver.kernel.org>; Fri, 26 Jul 2024 17:04:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13CEFC3DA61
+	for <ath12k@archiver.kernel.org>; Sun, 28 Jul 2024 00:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BfklB0R9Y8l/WhmWGxJRvZsF0hUQx43qiR62ONI2yHc=; b=lP/aZ1r0Vn7CIhC2qgHSCyK00x
-	Gmj4SHtHjPfxYGELJgLJ8nW/oNykJSYhdF8riMbw072J8x+L78pVNhr67ZAqbp5+K9dTyx5u7DOEw
-	26atlomS+vn7jMXOwWYLelXFERUIU+KVRvbamH4tbQN1lw4fxgl853Wh7eKCw8sVLKwuPKSr2eAcq
-	tJOcoTmpDxavj+tVFYo59hZXvu45tCgK2VK7/8BGq2tUfYlUNTewvnfiyrZ52U4BTcIAojMYBV11t
-	aUoZgtUQ0jvaCrjeG/zYl/PAuAO94zIz3bUsGn8bWZAIJoJNtSavTjEBUc1J1O3wodaMveTq34bPe
-	JHYefzCQ==;
+	bh=jRG9Jf9NCD5c6XFyIbYd/4/Q3r/eWKD0xjeFCXSITyU=; b=W9xpfasQXFCWtlZcgTrFUuCrMn
+	87ZsK8kXwic5BPraf3jzTLd1711vFW/p2nNkAAOdic87frYx8UEkVCPcgm2/F8FBlJyRPapFLppEz
+	eTAQQkhcLAUq2jkJWIcJLANu+WzEy42rgwaPOZGxqdBkAy8AJhHgS+3zdSfQfcz1SQ1ZimqrdNhFw
+	ckguxiGs75vrOiMWCDbSx/ZXLyEHDfkA9ORPRVvm/du9Beq0KiJnqVYNF5rGmS6CdBeRPhMAC7yPr
+	/bS8mI095KhMKqChcTshFrHSNdUWF5fPxyrHj9CHLrzRK6eZa+S0wNd3hOkmtU++K+kpC6DFrA7Pf
+	Biduk9Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXOMg-00000004UDk-2OUb
+	id 1sXsAM-00000007aap-3B0F
 	for ath12k@archiver.kernel.org;
-	Fri, 26 Jul 2024 17:04:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Sun, 28 Jul 2024 00:53:38 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXOMd-00000004UDL-11dS
+	id 1sXsAJ-00000007aZn-4Ago
 	for ath12k@lists.infradead.org;
-	Fri, 26 Jul 2024 17:04:21 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46QBsJKL023079;
-	Fri, 26 Jul 2024 17:04:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	BfklB0R9Y8l/WhmWGxJRvZsF0hUQx43qiR62ONI2yHc=; b=BRwFYJ6aTHCYt+2S
-	LfkQGPyhudplo0y3JrICnQgZGcxKE0NbfIiUaRqrumw2vVPYVV83LOTE/d99YcYz
-	VUcA8SnA9dAFgk5MZLppkrnnFhiFRfNOmFLCua6ZOzT6QLwvq8mtUSS8FIqc9emd
-	uFlYaFz/GUuu/l3bkJiBoqCxjQp+egkNgMiOpquWFDflw47M0RRPihXTQdBfHDTf
-	xAYQzjboMBASFlfrlZcETB2BtknUB6080zVV7OAbwGO1/NcQ2gZR4cE3jIgCFPHK
-	OeIdDMG8wjwiYzeAOB7S+lHinUFkDqFYNkGMl4Et59LFJBri4kW7yzfs/2+lQXms
-	aJKgcw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40m1sv214t-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 26 Jul 2024 17:04:17 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46QH4GYj001303
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 26 Jul 2024 17:04:16 GMT
-Received: from [10.111.176.158] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 26 Jul
- 2024 10:04:15 -0700
-Message-ID: <43f5cb3a-e601-4a13-a1bf-c89dcc0cff7b@quicinc.com>
-Date: Fri, 26 Jul 2024 10:04:15 -0700
+	Sun, 28 Jul 2024 00:53:37 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id D54DA6121F;
+	Sun, 28 Jul 2024 00:53:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3341CC4AF0B;
+	Sun, 28 Jul 2024 00:53:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722128014;
+	bh=N8fZ0Qatlz+54nOb3qZAMay+Eh4I1PbadnR0ZEvnSW4=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=BcfBQVqmqawEZPvH025A9tjyb+iLiRZYvyma438EWhsmvO8JGhWhQJop7v/2duQ5Q
+	 iIP+8dhZaJ/6KxUvDB2G5OoMdhQjvIqMFuR1hqSbKBepJPCViwnRx76joJpCpR1MtS
+	 UvJW4VmTOJ/XY7HfBIHjk6175EkvVlBQULZWcVIjyGCCJj+nsK3NSq7vrBtLh0OUIt
+	 mbxx9kgI/ONwzLB3ckLfaHrdgxj88ZiFKGn7zjsY8OVny50AsB60b3LSpPKEyCurCy
+	 HnElfk4FYLA5Pihn4sAU/k2E2f9s4JdDakRz/N4M/OQBpjcMxZJcnH1jCywpcE3jDe
+	 v31RYL0DIoQdg==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Baochen Qiang <quic_bqiang@quicinc.com>,
+	Jeff Johnson <quic_jjohnson@quicinc.com>,
+	Kalle Valo <quic_kvalo@quicinc.com>,
+	Sasha Levin <sashal@kernel.org>,
+	kvalo@kernel.org,
+	jjohnson@kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.10 02/27] wifi: ath12k: fix race due to setting ATH12K_FLAG_EXT_IRQ_ENABLED too early
+Date: Sat, 27 Jul 2024 20:52:45 -0400
+Message-ID: <20240728005329.1723272-2-sashal@kernel.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240728005329.1723272-1-sashal@kernel.org>
+References: <20240728005329.1723272-1-sashal@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 11/11] wifi: ath12k: delete mon reap timer
-Content-Language: en-US
-To: Ping-Ke Shih <pkshih@realtek.com>, kangyang <quic_kangyang@quicinc.com>,
-        "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-References: <20240725120035.493-1-quic_kangyang@quicinc.com>
- <20240725120035.493-12-quic_kangyang@quicinc.com>
- <2a44b24b-f122-44de-a053-fee07753eb7e@quicinc.com>
- <52318022dbe745da8b18892c26d78bec@realtek.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <52318022dbe745da8b18892c26d78bec@realtek.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 2xt1GbjVCk1gyFfAAOu25hA207K7jzWb
-X-Proofpoint-GUID: 2xt1GbjVCk1gyFfAAOu25hA207K7jzWb
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-26_12,2024-07-26_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- mlxlogscore=485 mlxscore=0 suspectscore=0 impostorscore=0 bulkscore=0
- phishscore=0 priorityscore=1501 lowpriorityscore=0 spamscore=0
- adultscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2407260114
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.10.2
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240726_100419_455502_89E039F0 
-X-CRM114-Status: UNSURE (   6.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240727_175336_300678_B55CC0F4 
+X-CRM114-Status: GOOD (  14.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,13 +82,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 7/25/2024 6:57 PM, Ping-Ke Shih wrote:
+From: Baochen Qiang <quic_bqiang@quicinc.com>
 
-> Not sure if you send out this mail incompletely. Lore [1] doesn't have complete
-> message neither.
-> 
-> [1] https://lore.kernel.org/linux-wireless/2a44b24b-f122-44de-a053-fee07753eb7e@quicinc.com/T/#m1011a89113009a14c9d450dba31d8d11d36b5b6b
+[ Upstream commit 0a993772e0f0934d730c0d451622c80e03a40ab1 ]
 
-Thanks for catching this, now sent with my Acked-by properly added.
+Commit 5082b3e3027e ("wifi: ath11k: fix race due to setting
+ATH11K_FLAG_EXT_IRQ_ENABLED too early") fixes a race in ath11k
+driver. Since ath12k shares the same logic as ath11k, currently
+the race also exists in ath12k: in ath12k_pci_ext_irq_enable(),
+ATH12K_FLAG_EXT_IRQ_ENABLED is set before NAPI is enabled.
+In cases where only one MSI vector is allocated, this results
+in a race condition: after ATH12K_FLAG_EXT_IRQ_ENABLED is set
+but before NAPI enabled, CE interrupt breaks in. Since IRQ is
+shared by CE and data path, ath12k_pci_ext_interrupt_handler()
+is also called where we call disable_irq_nosync() to disable
+IRQ. Then napi_schedule() is called but it does nothing because
+NAPI is not enabled at that time, meaning that
+ath12k_pci_ext_grp_napi_poll() will never run, so we have
+no chance to call enable_irq() to enable IRQ back. Since IRQ
+is shared, all interrupts are disabled and we would finally
+get no response from target.
+
+So port ath11k fix here, this is done by setting
+ATH12K_FLAG_EXT_IRQ_ENABLED after all NAPI and IRQ work are
+done. With the fix, we are sure that by the time
+ATH12K_FLAG_EXT_IRQ_ENABLED is set, NAPI is enabled.
+
+Note that the fix above also introduce some side effects:
+if ath12k_pci_ext_interrupt_handler() breaks in after NAPI
+enabled but before ATH12K_FLAG_EXT_IRQ_ENABLED set, nothing
+will be done by the handler this time, the work will be
+postponed till the next time the IRQ fires.
+
+This is found during code review.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Link: https://msgid.link/20240524023642.37030-1-quic_bqiang@quicinc.com
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/net/wireless/ath/ath12k/pci.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 16af046c33d9e..b08e64a5c8932 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -1090,14 +1090,14 @@ void ath12k_pci_ext_irq_enable(struct ath12k_base *ab)
+ {
+ 	int i;
+ 
+-	set_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags);
+-
+ 	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath12k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
+ 
+ 		napi_enable(&irq_grp->napi);
+ 		ath12k_pci_ext_grp_enable(irq_grp);
+ 	}
++
++	set_bit(ATH12K_FLAG_EXT_IRQ_ENABLED, &ab->dev_flags);
+ }
+ 
+ void ath12k_pci_ext_irq_disable(struct ath12k_base *ab)
+-- 
+2.43.0
 
 
