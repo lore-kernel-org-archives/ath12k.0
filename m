@@ -4,71 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81328C3DA61
-	for <ath12k@archiver.kernel.org>; Sun, 28 Jul 2024 00:54:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76D3EC3DA49
+	for <ath12k@archiver.kernel.org>; Tue, 30 Jul 2024 03:49:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qpwPvhyBtDnP1kIvVqvjtOxHF5ogsJxp5aXBVrXziPk=; b=VEBGzS2D5P2EX/yV1G7+D/Zswc
-	2n2bJyZUCzeQYymFK/a9Stsa/yaGPh2BET6PLnUr3gAVKjFatWvQGmu/LEXCiphW65WM7vXb26EZ8
-	cMchylDHeiX7GF73r6v1ULMiv443PKu0pzGhb3YpW3okraTGIToYuEHkVy2NurjKSsOZDQ55SvEH8
-	q2YfAStUWiNUXyMt1c9BAsP8ytTr0DooisvI4f5LwnH9GTPcVMPU15MVpQZYz7EzRMtI9HB0+Epsq
-	OOWCfD6DF1eP4DFjst/aaMzuXVXgv1rGwTqCm38Td1WAVm1nZG9cmzqMc5ZdbD0jsKS1zGTXviatm
-	cIjSJKwg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=QlOXAqIAke/i/+55iXYKdr6UqllRFLxYXFdthomviN4=; b=SCrjetr0M0FoGSV891mOuX3WLP
+	ACtKSPAPsYkQjBcTwkeOPoTXlHKeCUX4EUo1NYv4GUgk1CoPT3Ciia6iAwg6aNlQ3IEbvS8oqQmZt
+	56F+4Tcoprwk+Zs8Xtwpt0RXuHSC9OU0Ez31jkrfcsAsjtGRxaXDeAvtqw2YLmPo3zRzVSgChq1+U
+	pauBv4qZBRIllaFiru73+zgFhj6+KNpS50lHB0z9r0T5akUGCEhXr3UW2V9xFJKeAlZz77C1cumSX
+	RiEyibrm0zDRXDjwV5KcY4EcUG9O0ds9qLpLSZnbR3GZ1qitCp0z33OI6G7lkKoPpZLgxDdcM3CMy
+	JyA8w+Aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXsBb-00000007axR-0vKF
+	id 1sYdrt-0000000DWDL-3rre
 	for ath12k@archiver.kernel.org;
-	Sun, 28 Jul 2024 00:54:55 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Tue, 30 Jul 2024 03:49:46 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXsBY-00000007aw4-2zQD
+	id 1sYdrr-0000000DWCm-0wKA
 	for ath12k@lists.infradead.org;
-	Sun, 28 Jul 2024 00:54:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id EE067CE0921;
-	Sun, 28 Jul 2024 00:54:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F17F4C4AF0E;
-	Sun, 28 Jul 2024 00:54:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722128089;
-	bh=UFjFLGyWMrNDUcEKM4QvLGE1aXNITIWrX5TYMzsTATw=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=RBufl0blouI9ulLRK6WumMOCzyhapaB5MDpVlDJkzfKzofYHbbfF17DaaQON7sXMj
-	 w42ddZlL6vXU8e9kMZo5LJrbhNEItVJTCnnhFSMOP/ec5bap9I5utUfJrD4Vke4naS
-	 tIGzAeJYd7i3y1P8vahfeKMwqSPaCiwzxGQ1400xxYF6j12yHTHx3F9rkUUFpCFIq3
-	 Gcvmwa6IWIO4RrVKYHheu2/hhZYSd9x3NhGve4qez5FLMbTDiYedRzDEYviBItBpjo
-	 IGmCwmmYXAWLw6+qU6B7eOtXBTiewTO4JXHUTPm65GFJuNy4utgH5OBNirEwRsY4zT
-	 j4RKp+zwyzZxA==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Baochen Qiang <quic_bqiang@quicinc.com>,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
-	Kalle Valo <quic_kvalo@quicinc.com>,
-	Sasha Levin <sashal@kernel.org>,
-	kvalo@kernel.org,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 03/15] wifi: ath12k: fix memory leak in ath12k_dp_rx_peer_frag_setup()
-Date: Sat, 27 Jul 2024 20:54:24 -0400
-Message-ID: <20240728005442.1729384-3-sashal@kernel.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240728005442.1729384-1-sashal@kernel.org>
-References: <20240728005442.1729384-1-sashal@kernel.org>
+	Tue, 30 Jul 2024 03:49:44 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46TMlaju012347
+	for <ath12k@lists.infradead.org>; Tue, 30 Jul 2024 03:49:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=QlOXAqIAke/i/+55iXYKdr
+	6UqllRFLxYXFdthomviN4=; b=cwnxsjGn+6HenRuQyR/1aHiS82XBWcUCkRAO2s
+	typdUT0s0ENCiU9xDj2AdzkgR1wD+Fh4XpNM7a/V7vPXQiJkKBNcbjNpjZb/+Ryd
+	LCbux348ehA9hHpSMoSTFN8V/79f8zkAsIBDJNKdwIaBXKtO4nKeDju6KQJoyjkn
+	A5FeUdIri8HjXfhQrmjy6hHwdr2S3Jh02/8nV3ZVjf5oYsc8IU12wxZ87REOJjGe
+	mngbUgJIHqFXHWAJzVb9R4vWN+cx1e1rqrNrd6oRAqPDXsMOJ2SuG8klUp5zW2gv
+	dUrmRiy+w/OoSomyUqAQrFPch80U/J/GMZ/qQba6CV1igeLg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40mr7gp49m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 30 Jul 2024 03:49:40 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46U3ndTU004361
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 30 Jul 2024 03:49:39 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Mon, 29 Jul 2024 20:49:38 -0700
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Subject: [PATCH] wifi: ath12k: Modify print_array_to_buf() to support arrays with 1-based semantics
+Date: Tue, 30 Jul 2024 09:19:01 +0530
+Message-ID: <20240730034901.3723428-1-quic_rdevanat@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.6.43
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: FPPA_1TWA4aGRTKTWe_iraWI0jgLOOXO
+X-Proofpoint-GUID: FPPA_1TWA4aGRTKTWe_iraWI0jgLOOXO
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-30_03,2024-07-26_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ impostorscore=0 adultscore=0 mlxscore=0 lowpriorityscore=0 malwarescore=0
+ spamscore=0 clxscore=1011 priorityscore=1501 mlxlogscore=886 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2407110000
+ definitions=main-2407300026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240727_175452_998306_2568FCE5 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240729_204943_418614_7CC38480 
+X-CRM114-Status: GOOD (  13.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,39 +94,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Baochen Qiang <quic_bqiang@quicinc.com>
+The API print_array_to_buf() currently supports printing
+arrays with 0 indexing. In some cases, a few arrays need
+to be printed with 1-based indexing, i.e., array should be
+printed, starting with 1.
 
-[ Upstream commit 3d60041543189438cd1b03a1fa40ff6681c77970 ]
+Add a new version of print_array_to_buf(), named
+print_array_to_buf_v2(), which implements the functionality
+of print_array_to_buf(), but with an extra variable,
+pointing to the index starting with which the array should
+be printed. Modify print_array_to_buf() to call
+print_array_to_buf_v2() with 0 as the starting index.
 
-Currently the resource allocated by crypto_alloc_shash() is not
-freed in case ath12k_peer_find() fails, resulting in memory leak.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Add crypto_free_shash() to fix it.
-
-This is found during code review, compile tested only.
-
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://msgid.link/20240526124226.24661-1-quic_bqiang@quicinc.com
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_rx.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index dbcbe7e0cd2a7..a5b6e2e078d33 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2756,6 +2756,7 @@ int ath12k_dp_rx_peer_frag_setup(struct ath12k *ar, const u8 *peer_mac, int vdev
- 	peer = ath12k_peer_find(ab, vdev_id, peer_mac);
- 	if (!peer) {
- 		spin_unlock_bh(&ab->base_lock);
-+		crypto_free_shash(tfm);
- 		ath12k_warn(ab, "failed to find the peer to set up fragment info\n");
- 		return -ENOENT;
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index f1b7e74aefe4..4d7fe4b4f320 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -12,8 +12,8 @@
+ #include "dp_rx.h"
+ 
+ static u32
+-print_array_to_buf(u8 *buf, u32 offset, const char *header,
+-		   const __le32 *array, u32 array_len, const char *footer)
++print_array_to_buf_v2(u8 *buf, u32 offset, const char *header, u32 stats_index,
++		      const __le32 *array, u32 array_len, const char *footer)
+ {
+ 	int index = 0;
+ 	u8 i;
+@@ -26,7 +26,7 @@ print_array_to_buf(u8 *buf, u32 offset, const char *header,
+ 	for (i = 0; i < array_len; i++) {
+ 		index += scnprintf(buf + offset + index,
+ 				   (ATH12K_HTT_STATS_BUF_SIZE - offset) - index,
+-				   " %u:%u,", i, le32_to_cpu(array[i]));
++				   " %u:%u,", stats_index++, le32_to_cpu(array[i]));
  	}
+ 	/* To overwrite the last trailing comma */
+ 	index--;
+@@ -40,6 +40,13 @@ print_array_to_buf(u8 *buf, u32 offset, const char *header,
+ 	return index;
+ }
+ 
++static u32
++print_array_to_buf(u8 *buf, u32 offset, const char *header,
++		   const __le32 *array, u32 array_len, const char *footer)
++{
++	return print_array_to_buf_v2(buf, offset, header, 0, array, array_len, footer);
++}
++
+ static void
+ htt_print_tx_pdev_stats_cmn_tlv(const void *tag_buf, u16 tag_len,
+ 				struct debug_htt_stats_req *stats_req)
+
+base-commit: db1ce56e6e1d395dd42a3cd6332a871d9be59c45
 -- 
-2.43.0
+2.25.1
 
 
