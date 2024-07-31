@@ -4,66 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B60E8C3DA64
-	for <ath12k@archiver.kernel.org>; Wed, 31 Jul 2024 16:14:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 059DEC3DA7F
+	for <ath12k@archiver.kernel.org>; Wed, 31 Jul 2024 17:42:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rEdKaRIneemqvFiZ/vNw4vIdjyO8P9d0HCSUYM2Xz58=; b=s3qtPi/YUmFCjis1fr/Z9+wQwO
-	/XtAmVrs7StXVy5sojfyuQr2UEmp1osY8iN7+8Dl30/+GD4kBk4eqcVlptj1XX7TMHYk+cPfH9xGD
-	KLjvD/Q1YLZpzhAlS5sxPtKjPUFou25/hNEddO7HmZjPpf33qLWP40FZogbURRB6C7nZpOZWpOVJ8
-	3JxC0/c3PhShJYV8h6h9xYxdDo+cNVu1k3skAZt6oF/ZSuTb71I8U650SBH9Gm82yU8f8PstQ09nL
-	d3Y/qdzJHucMinI1tPEOgYnjOhglsauregm0zsqakElQfJryyUE93HAc28X8WADvpiOmurvsDZMeU
-	DXI4+8lQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HKYj1Vo3t4XJmzCKEDfy/TnSk+QVSotG6sA0LSp/Zv0=; b=livIFEOHd0i3hwO4iaTMrjGL4p
+	k+f3osv2z9H+0o9NqpAzRloDMe4QWnQh5kz4Fzb5V4fUHybmp5ivMmECrvhQEsk23Dgyxf4RJTtbP
+	a4Vq+G4zkA30GPKb2z/Cnk1uD2ewIgxZdkIoUF+die6hHsuaKDjmb1Yi/+EzXpAXuSt/HH5VzY8GH
+	RiCmm7+Il/J7OxEUShOQWwWxD6zVrq9GlZdsR9E7d+2A7hlK0GgJcW3E3dxYdhfr0U0lAmSgfcIy3
+	wx7whOwmvgC5tuNrfnHIEcBgq+pDfMTdquBa7oF7XbZbqJ2AlLVVDMf36nC6OO7a9hv3dNljeqzox
+	azSLVwpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZBxp-00000001pVl-1pSG
+	id 1sZDLW-0000000238A-2TIH
 	for ath12k@archiver.kernel.org;
-	Wed, 31 Jul 2024 16:14:09 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	Wed, 31 Jul 2024 17:42:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZBxm-00000001pV1-2noy
+	id 1sZDLU-0000000237g-04pT
 	for ath12k@lists.infradead.org;
-	Wed, 31 Jul 2024 16:14:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 533B3CE1766;
-	Wed, 31 Jul 2024 16:14:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 518FDC116B1;
-	Wed, 31 Jul 2024 16:14:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722442443;
-	bh=FI4to2s/kw3JnehGaIGMy9gv9Bjt9lTDL7rbCa8lSBo=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=r4fqyeEn6UuM1nr5vTH369N+YnegkQy5R0JFuxZEoFG8HTWG7RVyBtnAwDY0c+b4j
-	 EhxxD7O//qobp+G3A5VSFsYv97TFF3+SY1E8E+TKtGE/15rhBPG74sFinIDTBmNwek
-	 5nfpzO0j5nwbWZM7cUrudF2nwV94C6CvM1V5qxF6L7ADSMhGoxeGn5tBqpSR0l6kaC
-	 pJMD7K6p+L3ywN7FZFro4Owju8QWo/F3LE3orPER1muDlaCyBt7I4RrykNOU8/i5a1
-	 4xhTFTD8UikIv6rE9h/Sb6+U+4Jw9hzcCt/kJVVL9frVuOCE5/AnVWFs71WiDNb91g
-	 d1mqJJHfm1N7w==
-From: Kalle Valo <kvalo@kernel.org>
-To: "Arnd Bergmann" <arnd@arndb.de>
-Cc: "Kees Cook" <kees@kernel.org>,  ath12k@lists.infradead.org,
-  linux-wireless@vger.kernel.org
-Subject: Re: [PATCH RFC] wifi: ath12k: workaround fortify warnings in
- ath12k_wow_convert_8023_to_80211()
-References: <20240704144341.207317-1-kvalo@kernel.org>
-	<202407041551.1DC8C03D@keescook> <877cdvdgpz.fsf@kernel.org>
-	<202407081226.94B1FB24@keescook>
-	<973f9a20-0807-4302-a286-d3ff6478529f@app.fastmail.com>
-	<87v81d9lk4.fsf@kernel.org>
-Date: Wed, 31 Jul 2024 19:14:00 +0300
-In-Reply-To: <87v81d9lk4.fsf@kernel.org> (Kalle Valo's message of "Wed, 10 Jul
-	2024 20:57:47 +0300")
-Message-ID: <87r0b98rp3.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 31 Jul 2024 17:42:41 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46VGuq6o029956;
+	Wed, 31 Jul 2024 17:42:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	HKYj1Vo3t4XJmzCKEDfy/TnSk+QVSotG6sA0LSp/Zv0=; b=Qnt2RbZ5xGWBb0W/
+	Uf4gkKTUQzS+25ShDtUPMeWgpdu2KBUuiHoSofc7KD3PvxD0kba74baiHpfj7ZSa
+	5Td+e5YruHJHSZC02V+V5Ff5KDmXxUCswFSrheUiaZ5KERVVztADLMeh357c4u4v
+	JkkrTZcb5V0PG/F7OdbsoPKcJidpb2IAzSp2Dj3bSEy/x9aw8ujir0G+rHpvgwVa
+	TW8ZjwTj05kaV8f68a3SwtApOtGaDLKgnlfnyHg+kV1Ug7fa/lnANV12eSinSmTA
+	42G5rCfxLD1RdLH+Ka3kMN/0MhzEPsmxa3/H1J+j8rMJTuJbbb/+d8cwVPnpvPdT
+	Ide9Nw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40pq5268ha-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 31 Jul 2024 17:42:39 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46VHgc8d015638
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 31 Jul 2024 17:42:38 GMT
+Received: from [10.111.177.34] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 31 Jul
+ 2024 10:42:38 -0700
+Message-ID: <37472d36-1649-411f-afbe-ce3c176b4db8@quicinc.com>
+Date: Wed, 31 Jul 2024 10:42:37 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 1/3] wifi: ath12k: report station mode transmit rate
+Content-Language: en-US
+To: Lingbo Kong <quic_lingbok@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240731113645.54738-1-quic_lingbok@quicinc.com>
+ <20240731113645.54738-2-quic_lingbok@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240731113645.54738-2-quic_lingbok@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: Z6urOeq5TNJftNgAmTFtI0Ia1dr0aDLJ
+X-Proofpoint-ORIG-GUID: Z6urOeq5TNJftNgAmTFtI0Ia1dr0aDLJ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-31_10,2024-07-31_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=999
+ adultscore=0 priorityscore=1501 spamscore=0 bulkscore=0 mlxscore=0
+ lowpriorityscore=0 clxscore=1015 malwarescore=0 suspectscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2407310123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_091406_931655_231F3809 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20240731_104240_102764_12E83AE7 
+X-CRM114-Status: GOOD (  12.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,49 +99,62 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
+On 7/31/2024 4:36 AM, Lingbo Kong wrote:
+...
+> +static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct hal_tx_status *ts)
+> +{
+...
+> +
+> +	if (ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11A ||
+> +	    ts->pkt_type == HAL_TX_RATE_STATS_PKT_TYPE_11B) {
 
-> "Arnd Bergmann" <arnd@arndb.de> writes:
->
->> On Mon, Jul 8, 2024, at 21:31, Kees Cook wrote:
->>> On Mon, Jul 08, 2024 at 06:51:52PM +0300, Kalle Valo wrote:
->>>
->>> I suspect this won't be the only place in the kernel where -Wrestrict
->>> will give weird results with GCC 11, and there are still plenty of folks
->>> using GCC 11. I think the best option would probably be to version-check
->>> GCC to gate the addition of -Wrestrict.
->>>
->>> Arnd, what do you think? This looks like a more extreme version of
->>> commit f9fc1ec28bae ("crypto: drivers - avoid memcpy size warning")
->>
->> The f9fc1ec28bae patch was the other way around, it showed up
->> in new compilers but not old ones. I don't think I've seen
->> more gcc-11 -Wrestrict warnings during testing, but I'm currently
->> not set up to do a thorough search. If it's the only one, then
->> Kalle's suggested workaround is probably best, but if there
->> are additional warnings on gcc-11, making the warning depend
->> newer compilers is also fine. 
->
-> Honestly I was hoping that we could disable the warning for GCC 11 :)
->
-> I feel bad making the code worse due to a compiler problem. For example,
-> Intel's zero day bot doesn't seem to use GCC 11 that much anymore, so it
-> might surprise more people than just us ath12k folks. (The bot said
-> everything was fine but Johannes saw the warning when the code was
-> pulled to wireless-next.)
->
->> I just don't want to give up the warning for new compilers altogether.
->
-> Me neither. I'm just hoping that we could disable it for GCC 11. But of
-> course if you think it's better to add the workaround to ath12k, I can
-> submit a proper (non-RFC) patch to do that.
+I think this if else if else if else if would this be clearer as:
 
-For the archives: Paolo found a nicer way which is now commited:
+	switch (ts->pkt_type) {
+	case HAL_TX_RATE_STATS_PKT_TYPE_11A:
+	case HAL_TX_RATE_STATS_PKT_TYPE_11B:
+		...
+		break;
+	case HAL_TX_RATE_STATS_PKT_TYPE_11N:
+		...
+		break;
 
-https://git.kernel.org/linus/b49991d83bba
+...
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+> @@ -610,10 +723,23 @@ static void ath12k_dp_tx_status_parse(struct ath12k_base *ab,
+>  
+>  	ts->ppdu_id = le32_get_bits(desc->info1,
+>  				    HAL_WBM_COMPL_TX_INFO1_TQM_STATUS_NUMBER);
+> -	if (le32_to_cpu(desc->rate_stats.info0) & HAL_TX_RATE_STATS_INFO0_VALID)
+> -		ts->rate_stats = le32_to_cpu(desc->rate_stats.info0);
+> -	else
+> -		ts->rate_stats = 0;
+> +
+> +	ts->peer_id = le32_get_bits(desc->info3, HAL_WBM_COMPL_TX_INFO3_PEER_ID);
+> +
+> +	if (le32_to_cpu(desc->rate_stats.info0) & HAL_TX_RATE_STATS_INFO0_VALID) {
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+since you are extracting multiple fields from info0, suggest you have a local
+u32 info0 = le32_to_cpu(desc->rate_stats.info0) and then use u32_get_bits()
+everywhere. note this will have no impact on LE systems but would potentially
+be better for BE systems.
+
+> +		ts->pkt_type = le32_get_bits(desc->rate_stats.info0,
+> +					     HAL_TX_RATE_STATS_INFO0_PKT_TYPE);
+> +		ts->mcs = le32_get_bits(desc->rate_stats.info0,
+> +					HAL_TX_RATE_STATS_INFO0_MCS);
+> +		ts->sgi = le32_get_bits(desc->rate_stats.info0,
+> +					HAL_TX_RATE_STATS_INFO0_SGI);
+> +		ts->bw = le32_get_bits(desc->rate_stats.info0,
+> +				       HAL_TX_RATE_STATS_INFO0_BW);
+> +		ts->tones = le32_get_bits(desc->rate_stats.info0,
+> +					  HAL_TX_RATE_STATS_INFO0_TONES_IN_RU);
+> +		ts->ofdma = le32_get_bits(desc->rate_stats.info0,
+> +					  HAL_TX_RATE_STATS_INFO0_OFDMA_TX);
+> +	}
+>  }
+
+/jeff
+
+
 
