@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58F71C3DA7F
-	for <ath12k@archiver.kernel.org>; Wed, 31 Jul 2024 11:19:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECE09C3DA7F
+	for <ath12k@archiver.kernel.org>; Wed, 31 Jul 2024 11:22:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=umLAQk7qYpEqcwV1hOOVYw0kMGjAkVVPARKMbpMlbNU=; b=1LwsHJHwpPBQGvZJKvUPuGDjPz
-	yIibkZ4wmFUizEE2aH0cyl+T42sc4CRmC1lzXLVG0u8nt+iShlbT7GdlUlehvwViY5EK7t/eM6RW/
-	tCVNVnJtZP7oEvyUUTvEwrcTSLupLIoSSvrnD3HdB5UuZMVjWDAUmeIczep287iIQrNC9tF49nItX
-	WmdZoOdKXaS+S5qFZiwLRnIB4k652lauiA2UpDgaILwVqsucD+pGK76tViAksdaEsBwDMHzpUfN41
-	tZRXgEVSoZmRRlZMEqu8g1vfU8Br54KmNVOVw5BSGkU1WPwq5Jvwcobw/aiciTrqia3vwaqfO+Zx8
-	ObaiwfdQ==;
+	bh=vsrC8OaT+VraNG5Rp92PLAvVoTBY41KKfDCvcOMqxyo=; b=qmyii18HlQDbY7NfKfOQRew2FI
+	JPdtkBGbqJXZb3kPMnDBEMXbm/ONNFZPr0QGlYep1kaUiTK4K8YyJtpkO4U3oH/eid6LfIIG9JzgM
+	lBB1BY2c/pmAPTmwgbO1c/fghZJocEF77IuzfrXWYrbGPGL3BBBaBSA48QY0QNIOK1VYl+s/6xGEc
+	8IhylLOcAKcU6RII2Mo56GjTKgAIW8QDCWl5qmg0wm5/oJ/fizyus3DlfapiO6lqxpWSmUdiO3rzK
+	Vg18P0LmW9sPmWsm2+MV5XBdu6FAWgF7op1dIgkQia+HMPVZekY/18DHVQGYM9tSPCUBpvq9UJ2td
+	MQNIOuNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ7Mq-00000000sXv-3vzG
+	id 1sZ7PL-00000000svV-2Vu6
 	for ath12k@archiver.kernel.org;
-	Wed, 31 Jul 2024 11:19:40 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 31 Jul 2024 11:22:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ7Mo-00000000sWk-2IEX
+	id 1sZ7PJ-00000000suX-0W5I
 	for ath12k@lists.infradead.org;
-	Wed, 31 Jul 2024 11:19:39 +0000
+	Wed, 31 Jul 2024 11:22:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0AF7762353;
-	Wed, 31 Jul 2024 11:19:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2B9DC4AF53;
-	Wed, 31 Jul 2024 11:19:36 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 672CA6235E;
+	Wed, 31 Jul 2024 11:22:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5175DC116B1;
+	Wed, 31 Jul 2024 11:22:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722424777;
-	bh=onrtjqff1hh2cQljKWEadBWXOvbJbehuEl0q2QesV9w=;
+	s=k20201202; t=1722424932;
+	bh=RWov2fP2Ldj1Wjq1BbyCVDc90LthzJbmJPb+GphqrOQ=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=iO+2jLwx6YlwOfkeP8Rt4jKROpna2x/x5EKTHTJZVmjm/As+u240SqA0DEGZC+HdF
-	 ctYY4QBXomhLFoqXKyfHjXkGn2SiRXMh8Twc9N9FNdODkp0J38O/j5/qEjL1r7vmvd
-	 rxxZGA236YJHuCXM77hhVDo0b4iCURHsvmOSWC6s17oP+Vc7kB3D5hC6UIqOc+DFW7
-	 2GeUn4nZe0jmLp06jh5zTOQaVH1BQyv6Phr2yR4nhTaAjvRXGWX9oD6oLfwcVWhhLG
-	 p5uKbeq+XbY8OSN9vTtxUhivqPr2tPUlWBWdl7alt6CvoyblIejR7DBdcn+bI4yN+K
-	 kNxYGd7qrSKeQ==
+	b=ihwMH75SI14u2a7MmgbNO7U8ZBfBN6DTK2sBWMZCo3pMEXMI7vBrmBNAF3SDpflQZ
+	 5av66Gcs5Pfbz/1YsBxx8zJ5TI9gUo6+18Rkg3nV0mK4p8SCgi7DVL6//Jv6TbiiF1
+	 iban1ygQwqXPUrdCMQi8MIFzk3Te2R0is0sYAOEejudRVLWifxV9ewSw1xd5iRvuEK
+	 V57kh73ln/RYYhGXnuPDTRiLzHMwdxUgGSLqeM0tMeLll7eviquiaJSYB2yzQ//jwN
+	 UyQirh7WrfqJ/DmoOp1fQbORbR57Z6l+3FaFhWa5K3QOM5j1Opju3pcuQtDNM5L4vF
+	 OQzQ4ACADj/MA==
 From: Kalle Valo <kvalo@kernel.org>
-To: kangyang <quic_kangyang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 00/11] wifi: ath12k: some fixes and clean up for monitor
- mode
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: kangyang <quic_kangyang@quicinc.com>,  <ath12k@lists.infradead.org>,
+  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 04/11] wifi: ath12k: fix struct hal_rx_ppdu_start
 References: <20240725120035.493-1-quic_kangyang@quicinc.com>
-Date: Wed, 31 Jul 2024 14:19:35 +0300
-In-Reply-To: <20240725120035.493-1-quic_kangyang@quicinc.com> (kangyang's
-	message of "Thu, 25 Jul 2024 20:00:24 +0800")
-Message-ID: <87ttg5kdvc.fsf@kernel.org>
+	<20240725120035.493-5-quic_kangyang@quicinc.com>
+	<aa2b6791-9d18-479b-a80d-722b99592cb8@quicinc.com>
+	<87y15hkdyf.fsf@kernel.org>
+Date: Wed, 31 Jul 2024 14:22:09 +0300
+In-Reply-To: <87y15hkdyf.fsf@kernel.org> (Kalle Valo's message of "Wed, 31 Jul
+	2024 14:17:44 +0300")
+Message-ID: <87plqtkdr2.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_041938_645249_1164EA60 
-X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-CacheID: sfid-20240731_042213_249428_A812F0F9 
+X-CRM114-Status: UNSURE (   6.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,21 +77,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-kangyang <quic_kangyang@quicinc.com> writes:
+Kalle Valo <kvalo@kernel.org> writes:
 
-> From: Kang Yang <quic_kangyang@quicinc.com>
+> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 >
-> This patch set does some fixes and clean up for monitor mode.
+>> On 7/25/2024 5:00 AM, kangyang wrote:
+>>> From: Kang Yang <quic_kangyang@quicinc.com>
+>>> 
+>>> Current struct hal_rx_ppdu_start in hal_rx.h is not matched with
+>>> hardware descriptor definition.
+>>> 
+>>> So update this structure and related code.
+>>> 
+>>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>> 
+>>> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+>>
+>>
+>
+> Jeff, your reply was empty.
 
-Please fix your SMTP From header, it's currently:
-
-kangyang <quic_kangyang@quicinc.com>
-
-It should be:
-
-Kang Yang <quic_kangyang@quicinc.com>
-
-When you fix that git won't include the extra From header to the mail body.
+Actually I saw several empty replies in this patchset.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
