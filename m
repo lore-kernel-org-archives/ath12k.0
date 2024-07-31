@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E93B3C52D1D
-	for <ath12k@archiver.kernel.org>; Tue, 30 Jul 2024 17:10:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BF71C3DA64
+	for <ath12k@archiver.kernel.org>; Wed, 31 Jul 2024 11:16:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=VRJICve9km9GMkDyqwPgk85TMbA5mtb5w4Sz9lgQGw4=; b=CSiK2PQcDxKjSQvgStAkA5Qi/p
-	AGXPNZNygBcuv6mSPvNivs6G1YHXRO0QzbnXEWzEmw1dq6EKYQX0gbnDV6HjXZBohn571fJbhofKM
-	5k4dFXuaEgWMKQcxfc0oYFqkArMvGvhlZXubo7ZMlVtSrxcl6KCk2DMN7WLcLdpNUKLR/XSQmr38v
-	DS6X27HvBjldkuyIYaoLYLCen0WvxxyF+jz0vguChgzIDZUPLXR6S+Gec/T2wJt/z6XsmKR+LM3kk
-	dhYcAaxvzJBuFo4n6f3JHM2siYuO9wAKGzvA9iLqbhX+aihuQSzC7wHzOVvcEqTUckYgbthORwAPK
-	VELm08ow==;
+	bh=w73lBCBvubkJszbXM31TYGKQ+ivOf0oCzgnHkj4sJGc=; b=F8eBOyyWf54VsNBIK7fEqH/suz
+	dEU95PgK49EhJ19FV338qUcBHWjTqOGclMeHcHOzH4RoNyQavabdz5eo28aZmwnCt6sLqJGczoj+b
+	QghZ2Kc0OpG+zvH4vP71yOHo0gGoGt919y0Wl1JHsL6/KvuDgR/BfxsBXeFgIvBeafbnuAFqPTHpr
+	PGSCJSn0u1uPTjANBJ6vrHztG0vLPBNtaD7mYMsSPcKgJbCmgrHbtzu2VWodXCgHEMUKexXDY6woV
+	EX7CsK/2G+3T5hn5dkdNNTxi5UAV2zR7xbtKwHxcV5fOrLp6scoNWpWRwQun+OvgGTB0PLI9x5oX5
+	7OgP005g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sYqML-0000000Fypu-2FGD
+	id 1sZ7JR-00000000s2T-0dRb
 	for ath12k@archiver.kernel.org;
-	Tue, 30 Jul 2024 17:10:01 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 31 Jul 2024 11:16:09 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sYqM7-0000000Fyi5-3cOt
+	id 1sZ7JO-00000000s1o-2Rpv
 	for ath12k@lists.infradead.org;
-	Tue, 30 Jul 2024 17:10:00 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46UEZvde027549;
-	Tue, 30 Jul 2024 17:09:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	VRJICve9km9GMkDyqwPgk85TMbA5mtb5w4Sz9lgQGw4=; b=LFNlfBK7peCAY9/N
-	g68JUPFrac+hoFWATJ7WgiebAn9mCNEQ9GEmk6skWi4tS1RHttXFZ8RYHtA8Nju4
-	OTrYjLRu4C7eKwMN/VOBsVUybATUb6fstpq+PBlmpkCCwRQp93jcwIaLZkmjEZU3
-	pjrp9jI/uSGKmSa+wzcZNCztwjubKkjM0G/ZNUoTLD7ktLNZrI45Inz2xis0GB0i
-	4Ff4lV+2wTElaPAw7ixwXxygCiTWP5Et92CCrnNg6tdMENHVsVr+BTG5LoqjaAIf
-	eaY+Cl26vFgSe008qYmRMzPtnDfjtoGhCDK5YMm6r+gD+Sr0Ry3MEYaeXc8xrtjS
-	yUZcqg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40q232rhb3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Jul 2024 17:09:47 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46UH9ksp026353
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Jul 2024 17:09:46 GMT
-Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 30 Jul 2024 10:09:44 -0700
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [PATCH 2/2] wifi: ath12k: Add support to allocate MLO global memory region
-Date: Tue, 30 Jul 2024 22:39:10 +0530
-Message-ID: <20240730170910.3281816-3-quic_rajkbhag@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240730170910.3281816-1-quic_rajkbhag@quicinc.com>
-References: <20240730170910.3281816-1-quic_rajkbhag@quicinc.com>
+	Wed, 31 Jul 2024 11:16:08 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 4E2B0CE136C;
+	Wed, 31 Jul 2024 11:16:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEDA6C116B1;
+	Wed, 31 Jul 2024 11:16:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722424563;
+	bh=SUPI4qo4qkr7r16Mtzw0x6BO36Kq+wQPNTi45oAOZJw=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=pzaWflu+iKV/lLZb7deprPg0CKrMgCZr/tKMMe7wxpd/q31Kc7T7lo2MLYv0Loo1T
+	 h/5aN0k/TW+oY/PngbooHY+spwN+PbQ1ohDLNxcXPIDnxFbQrJlv0+Aap7krXDRjVq
+	 06DZGRzJkBMDBjtLfqVm+CE7GrLQFv3+/H04ni0iV6P9d5gS2vT899aMZxn5GmrjoD
+	 WyH6und6+cUl83WAfRXeC1Uo+P0tJ2fjB8G9LczeUahybouVUzLjSqTmJhE/j57Xbz
+	 DkIAuJrIAIoN6A6je4firzS7BJCynkAEvAaUy/WBrEnk3PJNnmeqG83Rqzs7HCyQsG
+	 e2YdsAtfewwIw==
+From: Kalle Valo <kvalo@kernel.org>
+To: david Atkins <david@3adesign.co.uk>
+Cc: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+Subject: Re: [PATCH] wifi: ath12k: Support Rx PDEV HTT stats
+References: <20240725054227.986851-1-quic_rgnanase@quicinc.com>
+	<LO0P123MB40573B6A94FB2775E73F0211D6AB2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+Date: Wed, 31 Jul 2024 14:16:01 +0300
+In-Reply-To: <LO0P123MB40573B6A94FB2775E73F0211D6AB2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	(david Atkins's message of "Thu, 25 Jul 2024 06:27:48 +0000")
+Message-ID: <8734nplslq.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Tkm2o04zbEYPzOfooTaOQsztsEg4iAhp
-X-Proofpoint-ORIG-GUID: Tkm2o04zbEYPzOfooTaOQsztsEg4iAhp
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-30_13,2024-07-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
- malwarescore=0 bulkscore=0 priorityscore=1501 spamscore=0 adultscore=0
- mlxscore=0 mlxlogscore=999 clxscore=1015 suspectscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2407110000
- definitions=main-2407300117
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240730_100948_224484_EC4DEC08 
-X-CRM114-Status: GOOD (  21.94  )
+X-CRM114-CacheID: sfid-20240731_041606_816646_2E94AD1E 
+X-CRM114-Status: UNSURE (   7.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,228 +74,17 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+david Atkins <david@3adesign.co.uk> writes:
 
-To enable Multi Link Operation (MLO), QCN9274 firmware requests MLO
-global memory (MLO_GLOBAL_MEM_REGION_TYPE). This memory region is
-shared across all the firmware (SoC) that are participation in the
-MLO.
+> Just retested the WCN7850 on systems to see if its working on Wifi-7 for me.
+>
+> Initial results promising but driver fails after a few minutes, do see 1 giga bit/s for a while with iperf3
 
-Hence, add support to allocate and free MLO global memory region.
-Allocate one MLO global memory per ath12k_hw_group and assign the same
-memory to all firmware in the same ath12k_hw_group. WCN7850 firmware
-does not request this memory type, therefore this change will have no
-impact on WCN7850 device.
+Please start a new thread about your problems, don't hijack an existing
+thread.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Co-developed-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |   7 ++
- drivers/net/wireless/ath/ath12k/qmi.c  | 118 ++++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/qmi.h  |   1 +
- 3 files changed, 116 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 27bd0a14b9f4..c8cd687847e7 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -758,6 +758,12 @@ struct ath12k_soc_dp_stats {
- 	struct ath12k_soc_dp_tx_err_stats tx_err;
- };
- 
-+struct ath12k_mlo_memory {
-+	struct target_mem_chunk chunk[ATH12K_QMI_WLANFW_MAX_NUM_MEM_SEG_V01];
-+	int mlo_mem_size;
-+	bool init_done;
-+};
-+
- /* Holds info on the group of devices that are registered as a single wiphy */
- struct ath12k_hw_group {
- 	struct list_head list;
-@@ -786,6 +792,7 @@ struct ath12k_hw_group {
- 	 */
- 	struct ath12k_hw *ah[ATH12K_GROUP_MAX_RADIO];
- 	u8 num_hw;
-+	struct ath12k_mlo_memory mlo_mem;
- };
- 
- /**
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 11bf16eaadd9..da61ea60e5f8 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2350,19 +2350,61 @@ static int ath12k_qmi_respond_fw_mem_request(struct ath12k_base *ab)
- 	return ret;
- }
- 
-+static void ath12k_qmi_free_mlo_mem_chunk(struct ath12k_base *ab,
-+					  struct target_mem_chunk *chunk,
-+					  int idx)
-+{
-+	struct ath12k_hw_group *ag = ab->ag;
-+	struct target_mem_chunk *mlo_chunk;
-+
-+	lockdep_assert_held(&ag->mutex_lock);
-+	if (!ag->mlo_mem.init_done || ag->num_started)
-+		return;
-+
-+	if (idx >= ARRAY_SIZE(ag->mlo_mem.chunk)) {
-+		ath12k_warn(ab, "invalid idx %d for MLO memory chunk free\n", idx);
-+		return;
-+	}
-+
-+	mlo_chunk = &ag->mlo_mem.chunk[idx];
-+	if (mlo_chunk->v.addr) {
-+		dma_free_coherent(ab->dev,
-+				  mlo_chunk->size,
-+				  mlo_chunk->v.addr,
-+				  mlo_chunk->paddr);
-+		mlo_chunk->v.addr = NULL;
-+	}
-+	mlo_chunk->paddr = 0;
-+	mlo_chunk->size = 0;
-+	chunk->v.addr = NULL;
-+	chunk->paddr = 0;
-+	chunk->size = 0;
-+}
-+
- static void ath12k_qmi_free_target_mem_chunk(struct ath12k_base *ab)
- {
--	int i;
-+	struct ath12k_hw_group *ag = ab->ag;
-+	int i, mlo_idx;
- 
--	for (i = 0; i < ab->qmi.mem_seg_count; i++) {
-+	for (i = 0, mlo_idx = 0; i < ab->qmi.mem_seg_count; i++) {
- 		if (!ab->qmi.target_mem[i].v.addr)
- 			continue;
- 
--		dma_free_coherent(ab->dev,
--				  ab->qmi.target_mem[i].prev_size,
--				  ab->qmi.target_mem[i].v.addr,
--				  ab->qmi.target_mem[i].paddr);
--		ab->qmi.target_mem[i].v.addr = NULL;
-+		if (ab->qmi.target_mem[i].type == MLO_GLOBAL_MEM_REGION_TYPE) {
-+			ath12k_qmi_free_mlo_mem_chunk(ab,
-+						      &ab->qmi.target_mem[i],
-+						      mlo_idx++);
-+		} else {
-+			dma_free_coherent(ab->dev,
-+					  ab->qmi.target_mem[i].prev_size,
-+					  ab->qmi.target_mem[i].v.addr,
-+					  ab->qmi.target_mem[i].paddr);
-+			ab->qmi.target_mem[i].v.addr = NULL;
-+		}
-+	}
-+	if (!ag->num_started && ag->mlo_mem.init_done) {
-+		ag->mlo_mem.init_done = false;
-+		ag->mlo_mem.mlo_mem_size = 0;
- 	}
- }
- 
-@@ -2409,12 +2451,21 @@ static int ath12k_qmi_alloc_chunk(struct ath12k_base *ab,
- 
- static int ath12k_qmi_alloc_target_mem_chunk(struct ath12k_base *ab)
- {
--	int i, ret = 0;
--	struct target_mem_chunk *chunk;
-+	struct ath12k_hw_group *ag = ab->ag;
-+	struct target_mem_chunk *chunk, *mlo_chunk;
-+	int i, mlo_idx, ret;
-+	int mlo_size = 0;
-+
-+	mutex_lock(&ag->mutex_lock);
-+
-+	if (!ag->mlo_mem.init_done) {
-+		memset(ag->mlo_mem.chunk, 0, sizeof(ag->mlo_mem.chunk));
-+		ag->mlo_mem.init_done = true;
-+	}
- 
- 	ab->qmi.target_mem_delayed = false;
- 
--	for (i = 0; i < ab->qmi.mem_seg_count; i++) {
-+	for (i = 0, mlo_idx = 0; i < ab->qmi.mem_seg_count; i++) {
- 		chunk = &ab->qmi.target_mem[i];
- 
- 		/* Allocate memory for the region and the functionality supported
-@@ -2427,6 +2478,37 @@ static int ath12k_qmi_alloc_target_mem_chunk(struct ath12k_base *ab)
- 		case PAGEABLE_MEM_REGION_TYPE:
- 		case CALDB_MEM_REGION_TYPE:
- 			ret = ath12k_qmi_alloc_chunk(ab, chunk);
-+			if (ret)
-+				goto out;
-+			break;
-+		case MLO_GLOBAL_MEM_REGION_TYPE:
-+			mlo_size += chunk->size;
-+			if (ag->mlo_mem.mlo_mem_size &&
-+			    mlo_size > ag->mlo_mem.mlo_mem_size) {
-+				ret = -EINVAL;
-+				ath12k_err(ab, "qmi MLO mem err, req size %d is more than alloc size %d",
-+					   mlo_size, ag->mlo_mem.mlo_mem_size);
-+				goto out;
-+			}
-+			mlo_chunk = &ag->mlo_mem.chunk[mlo_idx];
-+			if (mlo_chunk->paddr) {
-+				if (chunk->size != mlo_chunk->size) {
-+					ret = -EINVAL;
-+					ath12k_err(ab, "qmi MLO mem err, mlo_idx %d, req chunk %d, alloc chunk %d",
-+						   mlo_idx, chunk->size, mlo_chunk->size);
-+					goto out;
-+				}
-+			} else {
-+				mlo_chunk->size = chunk->size;
-+				mlo_chunk->type = chunk->type;
-+				ret = ath12k_qmi_alloc_chunk(ab, mlo_chunk);
-+				if (ret)
-+					goto out;
-+				memset(mlo_chunk->v.addr, 0, mlo_chunk->size);
-+			}
-+			chunk->paddr = mlo_chunk->paddr;
-+			chunk->v.addr = mlo_chunk->v.addr;
-+			mlo_idx++;
- 			break;
- 		default:
- 			ath12k_warn(ab, "memory type %u not supported\n",
-@@ -2436,6 +2518,22 @@ static int ath12k_qmi_alloc_target_mem_chunk(struct ath12k_base *ab)
- 			break;
- 		}
- 	}
-+
-+	if (!ag->mlo_mem.mlo_mem_size) {
-+		ag->mlo_mem.mlo_mem_size = mlo_size;
-+	} else if (ag->mlo_mem.mlo_mem_size != mlo_size) {
-+		ath12k_err(ab, "qmi MLO mem err, expected size %d, req size %d",
-+			   ag->mlo_mem.mlo_mem_size, mlo_size);
-+		ret = -EINVAL;
-+		goto out;
-+	}
-+
-+	mutex_unlock(&ag->mutex_lock);
-+	return 0;
-+
-+out:
-+	ath12k_qmi_free_target_mem_chunk(ab);
-+	mutex_unlock(&ag->mutex_lock);
- 	return ret;
- }
- 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index 0dfcbd8cb59b..d8f78794e67e 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -167,6 +167,7 @@ enum ath12k_qmi_target_mem {
- 	BDF_MEM_REGION_TYPE = 0x2,
- 	M3_DUMP_REGION_TYPE = 0x3,
- 	CALDB_MEM_REGION_TYPE = 0x4,
-+	MLO_GLOBAL_MEM_REGION_TYPE = 0x8,
- 	PAGEABLE_MEM_REGION_TYPE = 0x9,
- };
- 
 -- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
