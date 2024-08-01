@@ -4,71 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15D4EC3DA7F
-	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 00:25:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E95DC3DA4A
+	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 06:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QIssoUCmJYGbk+qqHU+mDBz1hMntp4bh6xf18F+EVQY=; b=ZfuYx8udOhmhS71THSbcGrs/kz
-	WSrdrZ7aE13GX9nOYN7U9HAW19KLHim6RVpzxIHSrA8lnspNpRSz2nbT2VkSTNi2mdEa8rk37H5ch
-	Qt7EirkC18i39yCMkhSJCuqGXXU7jR6NpnNe1ExcIrs2lSdG987aBz3kBWtKs1ynejwAyRMpbWq0G
-	UhDXOtblulALq1PEJ9fy5BB4ctQbma7eUj3W79FZd6nmjwH7UHiAL/fj1mKVqb3Xf7tCKEdD7sLJl
-	gkAS0g9K9ZzVWt48TsMMUYC7aoqIvBdvf+5c2sYBFiYB+u0Ul7qopHal36fXb+RXDsISb9VyPWIC8
-	c1nHScyw==;
+	bh=jNo6/gxM1rLGBcliP3cTqkYZyKg9Syd+5iPaCoyo5m8=; b=VxLyfbcFoXXaqNVIOic+twMQ7h
+	OMpxb1cbNZvpCCj5TBFYVSCureQzZHzrPprkdViKke8ayXGHG6Tbc+WjARBPVdHKv0UWU6+LgYCJF
+	CwZEpxX1CiBT5ucN/ZtPiryul6irQ2S6jIOD4U1pd89L53oJtI3BtBB3Z1FhGWG0bMSRjHJFqZfYS
+	R+V+CaxWNHaCRHni8OeLuHuR7XlrgkVO7PQ5VAVGFpG+Gfxoj5zuyzyueF7zUQJyfqI1/s38x3zE2
+	iBgpci1eFXdMMQVM73avygfN/u/RVHhdY35cv8oMlLmrSg6uLyLlpbZxRdBpcY+DV70Qy801E1AP1
+	z8duro0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJd7-00000002z5C-2cck
+	id 1sZP09-00000003rgS-1QdS
 	for ath12k@archiver.kernel.org;
-	Thu, 01 Aug 2024 00:25:17 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 01 Aug 2024 06:09:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJd4-00000002z3u-1kCW
+	id 1sZOzm-00000003rV5-2tm9
 	for ath12k@lists.infradead.org;
-	Thu, 01 Aug 2024 00:25:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B606D61BD9;
-	Thu,  1 Aug 2024 00:25:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 580B7C116B1;
-	Thu,  1 Aug 2024 00:25:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722471913;
-	bh=CS0tl7iB7NP5U40I27ijngRzJAdRKaIBmMsT+b4PXfE=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=o+RS/rCGXf3dkY4IQt7MoXpq6qbF753KGIkaRhsBgKH9h8i2sO9ZIGlso8ESFBDQ/
-	 z36AzoBHU5ho4hvygarxoVjGgL0sbvU864j7a2i+9/WGk461p8xvSTsklE9Vv/XJul
-	 /Lfm4YwFdVi8io2thzznMgDcBbfEY8wts62VmaFBEiXsur+B/1jVdqAOHjDWoLaLS7
-	 7OWmz4wJOkIRnHpmwgmjLQSbKFXNOg9NjBQb+hRIuADZ+a8Moo8DBuspj4JJ+e9VdF
-	 HBXDs/DIvRDNI9y8vhVt+VG+Mxj8xX9VeHrzhM3spDEN6eOJcavQGAHh3XdvWIw+AI
-	 sQ7w5CBZr8fzg==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Aaradhana Sahu <quic_aarasahu@quicinc.com>,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
-	Kalle Valo <quic_kvalo@quicinc.com>,
-	Sasha Levin <sashal@kernel.org>,
-	kvalo@kernel.org,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 59/83] wifi: ath12k: fix uninitialize symbol error on ath12k_peer_assoc_h_he()
-Date: Wed, 31 Jul 2024 20:18:14 -0400
-Message-ID: <20240801002107.3934037-59-sashal@kernel.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240801002107.3934037-1-sashal@kernel.org>
-References: <20240801002107.3934037-1-sashal@kernel.org>
+	Thu, 01 Aug 2024 06:09:04 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46VNMb5Y030523;
+	Thu, 1 Aug 2024 06:08:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	jNo6/gxM1rLGBcliP3cTqkYZyKg9Syd+5iPaCoyo5m8=; b=l6JUvGm2xDHl9R4F
+	29LorhF/5Yjtn96DzBhLMUXAzCcjDvOIz0nnj6uV/XeLhICSctA4l6egOiv6jipQ
+	Q/CTCUjm/PNk3PbAiiulmUsdpC/e1FaS4R99aT44i84BDFwrzEZWq4MCmDI6hQsl
+	kF/1S6HjrAr6uciM698H1rzkEBuQZ6iZLJ0dK6v6vhnzwBKZmORYjjczhNQZxzgA
+	THnAMi09z4tu0Y/83WkcYc29z0qD1dyEdpJtWrRSYRKAkOsLN8JjV22McUs/aUoU
+	7f6ymjpGRVRaj26Zz6cuaYR489MED3oe7vK/f4VV5liR7ybIhDLZ8wVXuGpteD9o
+	NJgK0A==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40qm082ss9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 01 Aug 2024 06:08:58 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 47168vtE023335
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 1 Aug 2024 06:08:57 GMT
+Received: from [10.110.121.28] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 31 Jul
+ 2024 23:08:56 -0700
+Message-ID: <4e92994e-33d0-4104-a0a9-5f75833e09f3@quicinc.com>
+Date: Thu, 1 Aug 2024 14:08:54 +0800
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.6.43
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/11] wifi: ath12k: some fixes and clean up for monitor
+ mode
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20240725120035.493-1-quic_kangyang@quicinc.com>
+ <87ttg5kdvc.fsf@kernel.org>
+Content-Language: en-US
+From: Kang Yang <quic_kangyang@quicinc.com>
+In-Reply-To: <87ttg5kdvc.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: OyYX_VDZ5d51Y02P08JRVoDbYkm54BWz
+X-Proofpoint-ORIG-GUID: OyYX_VDZ5d51Y02P08JRVoDbYkm54BWz
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-01_03,2024-07-31_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 bulkscore=0
+ mlxscore=0 priorityscore=1501 mlxlogscore=773 spamscore=0 clxscore=1011
+ malwarescore=0 impostorscore=0 phishscore=0 lowpriorityscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2408010034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_172514_554471_99E6C3D6 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240731_230902_769511_A9AE6FEA 
+X-CRM114-Status: GOOD (  11.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,53 +100,25 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 
-[ Upstream commit 19b77e7c656a3e125319cc3ef347b397cf042bf6 ]
 
-Smatch throws following errors
+On 7/31/2024 7:19 PM, Kalle Valo wrote:
+> kangyang <quic_kangyang@quicinc.com> writes:
+> 
+>> From: Kang Yang <quic_kangyang@quicinc.com>
+>>
+>> This patch set does some fixes and clean up for monitor mode.
+> 
+> Please fix your SMTP From header, it's currently:
+> 
+> kangyang <quic_kangyang@quicinc.com>
+> 
+> It should be:
+> 
+> Kang Yang <quic_kangyang@quicinc.com>
+> 
+> When you fix that git won't include the extra From header to the mail body.
+> 
 
-drivers/net/wireless/ath/ath12k/mac.c:1922 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_80'.
-drivers/net/wireless/ath/ath12k/mac.c:1922 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_160'.
-drivers/net/wireless/ath/ath12k/mac.c:1924 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_80'.
-
-In ath12k_peer_assoc_h_he() rx_mcs_80 and rx_mcs_160 variables
-remain uninitialized in the following conditions:
-1. Whenever the value of mcs_80 become equal to
-   IEEE80211_HE_MCS_NOT_SUPPORTED then rx_mcs_80 remains uninitialized.
-2. Whenever phy capability is not supported 160 channel width and
-   value of mcs_160 become equal to IEEE80211_HE_MCS_NOT_SUPPORTED
-   then rx_mcs_160 remains uninitialized.
-
-Initialize these variables during declaration.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://patch.msgid.link/20240611031017.297927-3-quic_aarasahu@quicinc.com
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/wireless/ath/ath12k/mac.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 61435e4489b9f..5bcfc1cf5adc8 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1614,7 +1614,9 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
- {
- 	const struct ieee80211_sta_he_cap *he_cap = &sta->deflink.he_cap;
- 	int i;
--	u8 ampdu_factor, rx_mcs_80, rx_mcs_160, max_nss;
-+	u8 ampdu_factor, max_nss;
-+	u8 rx_mcs_80 = IEEE80211_HE_MCS_NOT_SUPPORTED;
-+	u8 rx_mcs_160 = IEEE80211_HE_MCS_NOT_SUPPORTED;
- 	u16 mcs_160_map, mcs_80_map;
- 	bool support_160;
- 	u16 v;
--- 
-2.43.0
-
+Thanks for the reminder, changed.
 
