@@ -4,62 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8927AC3DA4A
-	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 15:08:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6902DC3DA4A
+	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 15:11:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FraHFqBgfANVv4CNZcOgorSpEPz8lP7in7o6xlkAOCs=; b=MfwJGjqipeoKD3eaEJ7CivQ+Et
-	ZUwxvQ1a6ly5shrTYO4oaDv3JRAp7r6Hyo0gO2vJsdTg43mc6XLvHV3+/DwyCKgeB4KUgHCaSSJ+m
-	LIB4E9UjxQ07PV7UOw0W5Nwix+Yxqtzimw/R6VHhTmUZf6+yqZUNTp5V5FGgBgYHGGIOG85k1IUr7
-	/5QNKKgk3Vl4MrDGW8RWbI8ct9h+V/rDulpAoVKBkE9IrvirmIYhPXLkgASpvfjbknMqYJyZMDicq
-	/VS/EWb44cu1Ju91Z/KGi1VtKtljlrO/1UIYT+Z2adeetW70U95RurpwNwGFhSp4N2SfgQPMz2GD6
-	GHO55gkA==;
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3k00E0ZAyejCQbuNZ6reASVxJSUQ4aiLO7htHc371Mw=; b=v0KW4dCyOL5doyArITZq/efmoI
+	vZM/N6L5oju9rf4WW95izojzTfjqKVXa6iFpBW4Xw9XRLBPRR6jh5HKhB4i3vrkpxB8qfTPUebyLR
+	k9Q1pHJs/7hl+EalSlktux+J/le67M9MEu+jYnZbZQ3Tr2TwfxeJhjH/12eD9J6TWcrbnXQRAzVWE
+	/Vg1Lm/3AaaKKZJQv5REb+SRr370KGusYtTJF/pJ5ogD+chAOj61wmOXhLkDwm/XWIcRoRcmVWz/+
+	kNhT48BTmxalMC6rkScPcLk+nGPzklkbu2ne1VwTFexFvxMBhJoUxi8yHl/IRZTub6YFLPeE6wzR/
+	xjq0/q7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZXPT-00000005nSj-0MiL
+	id 1sZXSc-00000005o2m-0USC
 	for ath12k@archiver.kernel.org;
-	Thu, 01 Aug 2024 15:08:07 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Thu, 01 Aug 2024 15:11:22 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZXPP-00000005nRy-2W8b
+	id 1sZXSY-00000005o1N-3v6V
 	for ath12k@lists.infradead.org;
-	Thu, 01 Aug 2024 15:08:05 +0000
+	Thu, 01 Aug 2024 15:11:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id F3AF1CE19CF;
-	Thu,  1 Aug 2024 15:08:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30BFCC32786;
-	Thu,  1 Aug 2024 15:08:00 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 118816288B
+	for <ath12k@lists.infradead.org>; Thu,  1 Aug 2024 15:11:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E272C4AF09
+	for <ath12k@lists.infradead.org>; Thu,  1 Aug 2024 15:11:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722524881;
-	bh=iubcbZDOWuaOtrwRjZEqiG4hMbLkd3IFWhnJGzWd94k=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=MWbSPhKzRZAkCp1R/fruWbJiyTLqgerwsWIXcJgsJRJDvqGQpiHleO4xv89zMGUwi
-	 2LrkVKvaxIHL6NsR27bW/2vu9iRO4LUp/ycuzEnLjMwLmHOP2P5p9r9CHguY1RTjcD
-	 8/g7zUxyfzLrw+HvP27shxLqClrnWPBNmzC2eCkcrIFb1icKoKi/TQE9vv5hCVadxs
-	 Na0yo3HThSWcwJJcIl7KbLiUJe76+vJofkfqaRXvRfDnEHE2Hvj8Qp80QfwbZGaDeX
-	 w8mougg74N3wHtAAt+P0BefMszbuoC3kqBq92F126lO6Gb1m6GwxESRUuXHqoKEZoX
-	 3y1zgQjyO1c2A==
+	s=k20201202; t=1722525077;
+	bh=Q8bqQ9rPYgjuWyh8m3PzSZAaVusZ6YzHDst3uL9o18U=;
+	h=From:To:Subject:Date:From;
+	b=qQ55LgCMZ7MKcvBjwJqKXe2cJ/JRVyf1vPy6KYvfNsK2z+pc7udI38C9YLLvwL76b
+	 sqZYJnJr74FNDO0lSB6uQIB+X823bRBX9ywApZ9vNaxn0kcOPlPV3lMYpgx6LoHyA3
+	 7MlrutMDYejDgND8c+2pnjdKPi+Q3ec5KvTOLHl1isbtjvYqQMiCEl0f1yY4H6Zm9L
+	 VYhftPNK8VHX67LDGw2A5TU4ipxzWGCPnYF6BQzg9wtRlZnLGoZy44dJGFAA1BNtV1
+	 lYFSbQ/mYW9JNSwGd3EWe/sz8rl5XoXw43b98B+apsKbQ1b3/v+P0Arse2Z+cax1Se
+	 9hNry5P1coWnQ==
 From: Kalle Valo <kvalo@kernel.org>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
-  <kernel@quicinc.com>,  <netdev@vger.kernel.org>
-Subject: Re: [PATCH] wifi: ath12k: use 128 bytes aligned iova in transmit
- path for WCN7850
-References: <20240715023814.20242-1-quic_bqiang@quicinc.com>
-Date: Thu, 01 Aug 2024 18:07:58 +0300
-In-Reply-To: <20240715023814.20242-1-quic_bqiang@quicinc.com> (Baochen Qiang's
-	message of "Mon, 15 Jul 2024 10:38:14 +0800")
-Message-ID: <87ed788enl.fsf@kernel.org>
+To: ath12k@lists.infradead.org
+Subject: New warning in v6.11-rc1: BUG: using smp_processor_id() in
+ preemptible [00000000] code: rtcwake/2121
+Date: Thu, 01 Aug 2024 18:11:15 +0300
+Message-ID: <87a5hw8ei4.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_080804_081434_72026626 
-X-CRM114-Status: GOOD (  23.92  )
+X-CRM114-CacheID: sfid-20240801_081119_059640_7D769248 
+X-CRM114-Status: UNSURE (   5.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,97 +70,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Baochen Qiang <quic_bqiang@quicinc.com> writes:
+Hi,
 
-> In transmit path, it is likely that the iova is not aligned to PCIe TLP
-> max payload size, which is 128 for WCN7850. Normally in such cases hardware
-> is expected to split the packet into several parts in a manner such that
-> they, other than the first one, have aligned iova. However due to hardware
-> limitations, WCN7850 does not behave like that properly with some specific
-> unaligned iova in transmit path. This easily results in target hang in a
-> KPI transmit test: packet send/receive failure, WMI command send timeout
-> etc. Also fatal error seen in PCIe level:
->
-> 	...
-> 	Capabilities: ...
-> 		...
-> 		DevSta: ... FatalErr+ ...
-> 		...
-> 	...
->
-> Work around this by manually moving/reallocating payload buffer such that
-> we can map it to a 128 bytes aligned iova. The moving requires sufficient
-> head room or tail room in skb: for the former we can do ourselves a favor
-> by asking some extra bytes when registering with mac80211, while for the
-> latter we can do nothing.
->
-> Moving/reallocating buffer consumes additional CPU cycles, but the good news
-> is that an aligned iova increases PCIe efficiency. In my tests on some X86
-> platforms the KPI results are almost consistent.
->
-> Since this is seen only with WCN7850, add a new hardware parameter to
-> differentiate from others.
->
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->
-> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Just to make sure everyone is aware. I just updated the ath.git main
+branch to v6.11-rc1 and I see a new warning in our suspend tests:
 
-[...]
+[  546.233940] BUG: using smp_processor_id() in preemptible [00000000] code: rtcwake/2121
+[  546.233960] caller is debug_smp_processor_id+0x17/0x20
+[  546.233970] CPU: 5 UID: 0 PID: 2121 Comm: rtcwake Not tainted 6.11.0-rc1 #1685
+[  546.233975] Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+[  546.233978] Call Trace:
+[  546.233981]  <TASK>
+[  546.233985]  dump_stack_lvl+0xa4/0xe0
+[  546.233991]  dump_stack+0x10/0x20
+[  546.233995]  check_preemption_disabled+0xce/0xe0
+[  546.234003]  debug_smp_processor_id+0x17/0x20
+[  546.234008]  hotplug_cpu__broadcast_tick_pull+0x20/0x280
+[  546.234017]  takedown_cpu+0x197/0x410
 
-> --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-> @@ -162,6 +162,60 @@ static int ath12k_dp_prepare_htt_metadata(struct sk_buff *skb)
->  	return 0;
->  }
->  
-> +static void ath12k_dp_tx_move_payload(struct sk_buff *skb,
-> +				      unsigned long delta,
-> +				      bool head)
-> +{
-> +	unsigned long len = skb->len;
-> +
-> +	if (head) {
-> +		skb_push(skb, delta);
-> +		memmove(skb->data, skb->data + delta, len);
-> +		skb_trim(skb, len);
-> +	} else {
-> +		skb_put(skb, delta);
-> +		memmove(skb->data + delta, skb->data, len);
-> +		skb_pull(skb, delta);
-> +	}
-> +}
+There's a fix already which hopefully will be in v6.11-rc2:
 
-I'm nitpicking, but usually booleans like the head variable here don't
-help with readability. Having two separate functions would be easier to
-read, but this is fine as it's so small.
+Subject: [PATCH] tick/broadcast: Move per CPU pointer access into the atomic section
 
-> @@ -279,6 +334,23 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_vif *arvif,
->  		goto fail_remove_tx_buf;
->  	}
->  
-> +	if (iova_mask &&
-> +	    (unsigned long)skb->data & iova_mask) {
-> +		ret = ath12k_dp_tx_align_payload(ab, &skb);
-> +		if (ret) {
-> +			dev_warn_once(ab->dev, "failed to align TX buffer %d\n", ret);
-
-Why dev_warn_once()? I changed it to ath12k_warn() in the pending
-branch.
-
-> --- a/drivers/net/wireless/ath/ath12k/hw.h
-> +++ b/drivers/net/wireless/ath/ath12k/hw.h
-> @@ -96,6 +96,8 @@
->  #define ATH12K_M3_FILE			"m3.bin"
->  #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
->  
-> +#define PCIE_MAX_PAYLOAD_SIZE		128
-
-PCIE prefix implies that this is in PCI subsystem. I renamed it to
-ATH12K_PCIE_MAX_PAYLOAD_SIZE.
-
-Please check my changes:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=b603c1e0d94fb1eb0576ef48ebe37c8c1ce86328
+https://lore.kernel.org/all/87ttg56ers.ffs@tglx/
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
