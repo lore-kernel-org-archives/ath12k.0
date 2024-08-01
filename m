@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50081C3DA64
-	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 00:25:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15D4EC3DA7F
+	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 00:25:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cQkL0kBUu57PYke6ItGlTwZ6mBXrxiglrNA5pwGsQZI=; b=o4+FI4CYLzrh+LL0koq7w+Tbll
-	zHjx4P5YRkOUfQCm5V4ZuzYJx7HbnMkrVwZZNE3TpvbWrC2pw8t9kSH62USMjSUrlX5vE5XL6bood
-	WlyOpC7BscVssYhh1LDnuIXWjGxNzgoWPeFWGo0LmazZburVdJoDUzTprnC6PlBYxhCwtcxsEqgrp
-	WNROpOypg77i0ii0P7NQdAXImCWZ3VW/842ngPobf7hZ0nhDI6dI2WSzFL64ks+lJ5w4SEmJ1rY56
-	EnXi+dLF8ChmhPSIUM7zue9LcgYm9cMWKKly/9qfx42gH6/B/EY13BQWQ+yh4yCEoxQ8xvGt3fCPu
-	wJt+0jxQ==;
+	bh=QIssoUCmJYGbk+qqHU+mDBz1hMntp4bh6xf18F+EVQY=; b=ZfuYx8udOhmhS71THSbcGrs/kz
+	WSrdrZ7aE13GX9nOYN7U9HAW19KLHim6RVpzxIHSrA8lnspNpRSz2nbT2VkSTNi2mdEa8rk37H5ch
+	Qt7EirkC18i39yCMkhSJCuqGXXU7jR6NpnNe1ExcIrs2lSdG987aBz3kBWtKs1ynejwAyRMpbWq0G
+	UhDXOtblulALq1PEJ9fy5BB4ctQbma7eUj3W79FZd6nmjwH7UHiAL/fj1mKVqb3Xf7tCKEdD7sLJl
+	gkAS0g9K9ZzVWt48TsMMUYC7aoqIvBdvf+5c2sYBFiYB+u0Ul7qopHal36fXb+RXDsISb9VyPWIC8
+	c1nHScyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJd7-00000002z5K-4Bw1
+	id 1sZJd7-00000002z5C-2cck
 	for ath12k@archiver.kernel.org;
-	Thu, 01 Aug 2024 00:25:18 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJd6-00000002z4Y-0OAq
-	for ath12k@lists.infradead.org;
 	Thu, 01 Aug 2024 00:25:17 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sZJd4-00000002z3u-1kCW
+	for ath12k@lists.infradead.org;
+	Thu, 01 Aug 2024 00:25:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8696E62436;
-	Thu,  1 Aug 2024 00:25:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0FC80C116B1;
+	by dfw.source.kernel.org (Postfix) with ESMTP id B606D61BD9;
 	Thu,  1 Aug 2024 00:25:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 580B7C116B1;
+	Thu,  1 Aug 2024 00:25:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722471915;
-	bh=uWsydtAxAezU/3Ux0EYTJiH3XD7NZxOj5OAzoHq4vDw=;
+	s=k20201202; t=1722471913;
+	bh=CS0tl7iB7NP5U40I27ijngRzJAdRKaIBmMsT+b4PXfE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=AGj87hUETbWCAaB92vXAcQGQ8nXb9WD5wJIkl1oX+ye3WwLZrr0ThT7Qa+IFjNB0v
-	 CdQBZIEudUrUgAmYUsSxV6SrU5Q8eluZ7r5Bnfr7pwgy6NDxR9a8iZh0XN2ZUitotA
-	 aNYTyg/CY1T8bu6tLpR1Tzi73FUKozi5MqY37YVsltrizUiNALu2bEaCS5S7Z2AYgo
-	 6mqgTjskXZcuaSJ/kQwR187RbxTHxPGObPs4aFOWO42J3JlAve/bd/cYaJJnvp58DU
-	 b7MSAChX+LtTPsC1MPwvThxSmCRNg802JAS357GkGCV/03wd6TrwGMJyNXgvsa4BrU
-	 hemuduCt80yTA==
+	b=o+RS/rCGXf3dkY4IQt7MoXpq6qbF753KGIkaRhsBgKH9h8i2sO9ZIGlso8ESFBDQ/
+	 z36AzoBHU5ho4hvygarxoVjGgL0sbvU864j7a2i+9/WGk461p8xvSTsklE9Vv/XJul
+	 /Lfm4YwFdVi8io2thzznMgDcBbfEY8wts62VmaFBEiXsur+B/1jVdqAOHjDWoLaLS7
+	 7OWmz4wJOkIRnHpmwgmjLQSbKFXNOg9NjBQb+hRIuADZ+a8Moo8DBuspj4JJ+e9VdF
+	 HBXDs/DIvRDNI9y8vhVt+VG+Mxj8xX9VeHrzhM3spDEN6eOJcavQGAHh3XdvWIw+AI
+	 sQ7w5CBZr8fzg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Ajith C <quic_ajithc@quicinc.com>,
+Cc: Aaradhana Sahu <quic_aarasahu@quicinc.com>,
 	Jeff Johnson <quic_jjohnson@quicinc.com>,
 	Kalle Valo <quic_kvalo@quicinc.com>,
 	Sasha Levin <sashal@kernel.org>,
@@ -54,9 +54,9 @@ Cc: Ajith C <quic_ajithc@quicinc.com>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 60/83] wifi: ath12k: fix firmware crash due to invalid peer nss
-Date: Wed, 31 Jul 2024 20:18:15 -0400
-Message-ID: <20240801002107.3934037-60-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.6 59/83] wifi: ath12k: fix uninitialize symbol error on ath12k_peer_assoc_h_he()
+Date: Wed, 31 Jul 2024 20:18:14 -0400
+Message-ID: <20240801002107.3934037-59-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240801002107.3934037-1-sashal@kernel.org>
 References: <20240801002107.3934037-1-sashal@kernel.org>
@@ -66,8 +66,9 @@ X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.6.43
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_172516_255495_5D3E2A64 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20240731_172514_554471_99E6C3D6 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,55 +83,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Ajith C <quic_ajithc@quicinc.com>
+From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 
-[ Upstream commit db163a463bb93cd3e37e1e7b10b9726fb6f95857 ]
+[ Upstream commit 19b77e7c656a3e125319cc3ef347b397cf042bf6 ]
 
-Currently, if the access point receives an association
-request containing an Extended HE Capabilities Information
-Element with an invalid MCS-NSS, it triggers a firmware
-crash.
+Smatch throws following errors
 
-This issue arises when EHT-PHY capabilities shows support
-for a bandwidth and MCS-NSS set for that particular
-bandwidth is filled by zeros and due to this, driver obtains
-peer_nss as 0 and sending this value to firmware causes
-crash.
+drivers/net/wireless/ath/ath12k/mac.c:1922 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_80'.
+drivers/net/wireless/ath/ath12k/mac.c:1922 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_160'.
+drivers/net/wireless/ath/ath12k/mac.c:1924 ath12k_peer_assoc_h_he() error: uninitialized symbol 'rx_mcs_80'.
 
-Address this issue by implementing a validation step for
-the peer_nss value before passing it to the firmware. If
-the value is greater than zero, proceed with forwarding
-it to the firmware. However, if the value is invalid,
-reject the association request to prevent potential
-firmware crashes.
+In ath12k_peer_assoc_h_he() rx_mcs_80 and rx_mcs_160 variables
+remain uninitialized in the following conditions:
+1. Whenever the value of mcs_80 become equal to
+   IEEE80211_HE_MCS_NOT_SUPPORTED then rx_mcs_80 remains uninitialized.
+2. Whenever phy capability is not supported 160 channel width and
+   value of mcs_160 become equal to IEEE80211_HE_MCS_NOT_SUPPORTED
+   then rx_mcs_160 remains uninitialized.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Initialize these variables during declaration.
 
-Signed-off-by: Ajith C <quic_ajithc@quicinc.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://patch.msgid.link/20240613053528.2541645-1-quic_ajithc@quicinc.com
+Link: https://patch.msgid.link/20240611031017.297927-3-quic_aarasahu@quicinc.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 5bcfc1cf5adc8..0f4ba1c11f728 100644
+index 61435e4489b9f..5bcfc1cf5adc8 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3357,6 +3357,11 @@ static int ath12k_station_assoc(struct ath12k *ar,
- 
- 	ath12k_peer_assoc_prepare(ar, vif, sta, &peer_arg, reassoc);
- 
-+	if (peer_arg.peer_nss < 1) {
-+		ath12k_warn(ar->ab,
-+			    "invalid peer NSS %d\n", peer_arg.peer_nss);
-+		return -EINVAL;
-+	}
- 	ret = ath12k_wmi_send_peer_assoc_cmd(ar, &peer_arg);
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to run peer assoc for STA %pM vdev %i: %d\n",
+@@ -1614,7 +1614,9 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
+ {
+ 	const struct ieee80211_sta_he_cap *he_cap = &sta->deflink.he_cap;
+ 	int i;
+-	u8 ampdu_factor, rx_mcs_80, rx_mcs_160, max_nss;
++	u8 ampdu_factor, max_nss;
++	u8 rx_mcs_80 = IEEE80211_HE_MCS_NOT_SUPPORTED;
++	u8 rx_mcs_160 = IEEE80211_HE_MCS_NOT_SUPPORTED;
+ 	u16 mcs_160_map, mcs_80_map;
+ 	bool support_160;
+ 	u16 v;
 -- 
 2.43.0
 
