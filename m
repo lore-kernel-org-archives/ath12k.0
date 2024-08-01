@@ -4,83 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CD44C3DA64
-	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 11:30:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8927AC3DA4A
+	for <ath12k@archiver.kernel.org>; Thu,  1 Aug 2024 15:08:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=L9KqPaLeZ/wyDaEx9hBzYweYRZOmfngUM+JDRh+SkTc=; b=0Lb0iqQs48S+UTzCoFNf/7HZ1S
-	b6EDnWiafi/N2zhFczma0/9lTqnG8HUuidTXC2jpRIBIxGcJuzS+eUldtYHcwxJlbP/trEDHpe9k0
-	Z7/EWRNG05C52p8SBD5HpVkYftn8AFtW2P3eYaIVLxbX5x5XquDKP4T/WGL3aPPguihc7mg1tcS/9
-	GjjXC7q1CwNrnbtcKvSGexwZ39zO+93T589vJ0gJFBM1NXxTcmNarWTCITXjDFb0xZ33nCWo6D51T
-	kts5ItS3rrgJNnCb7cSAh853Cj6/isrqC6+fBb/GC5X4KMKUKQ00yx/SsHq28UwD9w+5+BAMSjrmP
-	ebPe4NKQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=FraHFqBgfANVv4CNZcOgorSpEPz8lP7in7o6xlkAOCs=; b=MfwJGjqipeoKD3eaEJ7CivQ+Et
+	ZUwxvQ1a6ly5shrTYO4oaDv3JRAp7r6Hyo0gO2vJsdTg43mc6XLvHV3+/DwyCKgeB4KUgHCaSSJ+m
+	LIB4E9UjxQ07PV7UOw0W5Nwix+Yxqtzimw/R6VHhTmUZf6+yqZUNTp5V5FGgBgYHGGIOG85k1IUr7
+	/5QNKKgk3Vl4MrDGW8RWbI8ct9h+V/rDulpAoVKBkE9IrvirmIYhPXLkgASpvfjbknMqYJyZMDicq
+	/VS/EWb44cu1Ju91Z/KGi1VtKtljlrO/1UIYT+Z2adeetW70U95RurpwNwGFhSp4N2SfgQPMz2GD6
+	GHO55gkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZU11-00000004utx-0e1u
+	id 1sZXPT-00000005nSj-0MiL
 	for ath12k@archiver.kernel.org;
-	Thu, 01 Aug 2024 11:30:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 01 Aug 2024 15:08:07 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZTzs-00000004uVg-0D1i
+	id 1sZXPP-00000005nRy-2W8b
 	for ath12k@lists.infradead.org;
-	Thu, 01 Aug 2024 11:30:01 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47178ISV030656;
-	Thu, 1 Aug 2024 11:29:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=L9KqPaLeZ/wyDaEx9hBzYw
-	eYRZOmfngUM+JDRh+SkTc=; b=kHHGsKqi8AY0PuCn/iAH7LZINSjTzxDiz15X9F
-	dXi7fdChffLx46dCquqrSJdOdpx4S1gCVU/DIaMO7U+fmfNBg7sYE05mzWGaj7Yu
-	pfVONgHdZ5nXDlvVJ+ykOuFVBQIjo2jVuYJXTAyt+ZE79TDjj8uqkdJdfI0Jfps0
-	hYvq/XWyf0FyYNcXqTHz0hA61QIoC4rvjIQ5CjCLrJCztEKujKt8NqiQVYlmCSRB
-	efQCWQ6DTD49Za+fScIE2RxlpJyeESLqzCYpw0dzHqz8pjQfxRC/jptvp2nhKEU9
-	FNf0hNba8j17Nf7+st8QFUSfCGC0dfgyYQyaFCMa5IYsXg3w==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40ms43eq91-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 01 Aug 2024 11:29:26 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 471BTPTs029289
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 1 Aug 2024 11:29:25 GMT
-Received: from lingbok-Birman-PHX.lan (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 1 Aug 2024 04:29:24 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH v7 0/3] wifi: ath12k: report station mode stats
-Date: Thu, 1 Aug 2024 19:28:50 +0800
-Message-ID: <20240801112853.85508-1-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Thu, 01 Aug 2024 15:08:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id F3AF1CE19CF;
+	Thu,  1 Aug 2024 15:08:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30BFCC32786;
+	Thu,  1 Aug 2024 15:08:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722524881;
+	bh=iubcbZDOWuaOtrwRjZEqiG4hMbLkd3IFWhnJGzWd94k=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=MWbSPhKzRZAkCp1R/fruWbJiyTLqgerwsWIXcJgsJRJDvqGQpiHleO4xv89zMGUwi
+	 2LrkVKvaxIHL6NsR27bW/2vu9iRO4LUp/ycuzEnLjMwLmHOP2P5p9r9CHguY1RTjcD
+	 8/g7zUxyfzLrw+HvP27shxLqClrnWPBNmzC2eCkcrIFb1icKoKi/TQE9vv5hCVadxs
+	 Na0yo3HThSWcwJJcIl7KbLiUJe76+vJofkfqaRXvRfDnEHE2Hvj8Qp80QfwbZGaDeX
+	 w8mougg74N3wHtAAt+P0BefMszbuoC3kqBq92F126lO6Gb1m6GwxESRUuXHqoKEZoX
+	 3y1zgQjyO1c2A==
+From: Kalle Valo <kvalo@kernel.org>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
+  <kernel@quicinc.com>,  <netdev@vger.kernel.org>
+Subject: Re: [PATCH] wifi: ath12k: use 128 bytes aligned iova in transmit
+ path for WCN7850
+References: <20240715023814.20242-1-quic_bqiang@quicinc.com>
+Date: Thu, 01 Aug 2024 18:07:58 +0300
+In-Reply-To: <20240715023814.20242-1-quic_bqiang@quicinc.com> (Baochen Qiang's
+	message of "Mon, 15 Jul 2024 10:38:14 +0800")
+Message-ID: <87ed788enl.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: JYf3n1KbitBBTQSfiiCN8-XgvUl-LG5i
-X-Proofpoint-ORIG-GUID: JYf3n1KbitBBTQSfiiCN8-XgvUl-LG5i
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-01_08,2024-07-31_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- impostorscore=0 spamscore=0 bulkscore=0 lowpriorityscore=0 adultscore=0
- mlxlogscore=879 suspectscore=0 phishscore=0 priorityscore=1501
- clxscore=1015 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2408010073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_042928_115102_81A26500 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240801_080804_081434_72026626 
+X-CRM114-Status: GOOD (  23.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,85 +74,100 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the transmit rate, the receive rate and signal strength of "iw
-dev xxx station dump" always show an invalid value. 
+Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
-This is because ath12k has no logic to handle this relevant information.
+> In transmit path, it is likely that the iova is not aligned to PCIe TLP
+> max payload size, which is 128 for WCN7850. Normally in such cases hardware
+> is expected to split the packet into several parts in a manner such that
+> they, other than the first one, have aligned iova. However due to hardware
+> limitations, WCN7850 does not behave like that properly with some specific
+> unaligned iova in transmit path. This easily results in target hang in a
+> KPI transmit test: packet send/receive failure, WMI command send timeout
+> etc. Also fatal error seen in PCIe level:
+>
+> 	...
+> 	Capabilities: ...
+> 		...
+> 		DevSta: ... FatalErr+ ...
+> 		...
+> 	...
+>
+> Work around this by manually moving/reallocating payload buffer such that
+> we can map it to a 128 bytes aligned iova. The moving requires sufficient
+> head room or tail room in skb: for the former we can do ourselves a favor
+> by asking some extra bytes when registering with mac80211, while for the
+> latter we can do nothing.
+>
+> Moving/reallocating buffer consumes additional CPU cycles, but the good news
+> is that an aligned iova increases PCIe efficiency. In my tests on some X86
+> platforms the KPI results are almost consistent.
+>
+> Since this is seen only with WCN7850, add a new hardware parameter to
+> differentiate from others.
+>
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 
-To solve this issue, ath12k parses the information passed by the firmware
-and passes it to mac80211.
+[...]
 
-After that, "iw dev xxx station dump" show the correct value.
-Such as:
+> --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+> @@ -162,6 +162,60 @@ static int ath12k_dp_prepare_htt_metadata(struct sk_buff *skb)
+>  	return 0;
+>  }
+>  
+> +static void ath12k_dp_tx_move_payload(struct sk_buff *skb,
+> +				      unsigned long delta,
+> +				      bool head)
+> +{
+> +	unsigned long len = skb->len;
+> +
+> +	if (head) {
+> +		skb_push(skb, delta);
+> +		memmove(skb->data, skb->data + delta, len);
+> +		skb_trim(skb, len);
+> +	} else {
+> +		skb_put(skb, delta);
+> +		memmove(skb->data + delta, skb->data, len);
+> +		skb_pull(skb, delta);
+> +	}
+> +}
 
-Station 00:03:7f:12:03:03 (on wlo1)
-        inactive time:  600 ms
-        rx bytes:       4642228
-        rx packets:     23796
-        tx bytes:       933967
-        tx packets:     8761
-        tx retries:     66
-        tx failed:      0
-        beacon loss:    0
-        beacon rx:      8925
-        rx drop misc:   191
-        signal:         -20 dBm
-        beacon signal avg:      -18 dBm
-        tx bitrate:     1441.1 MBit/s 80MHz EHT-MCS 13 EHT-NSS 2 EHT-GI 0
-        tx duration:    0 us
-        rx bitrate:     1801.4 MBit/s 80MHz EHT-MCS 11 EHT-NSS 3 EHT-GI 0
-        rx duration:    0 us
+I'm nitpicking, but usually booleans like the head variable here don't
+help with readability. Having two separate functions would be easier to
+read, but this is fine as it's so small.
 
-Depends-on:[v6,0/3] wifi: ath12k: prepare vif and sta datastructure
-Link: https://patchwork.kernel.org/project/linux-wireless/cover/20240711165511.3100433-1-quic_ramess@quicinc.com/
+> @@ -279,6 +334,23 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_vif *arvif,
+>  		goto fail_remove_tx_buf;
+>  	}
+>  
+> +	if (iova_mask &&
+> +	    (unsigned long)skb->data & iova_mask) {
+> +		ret = ath12k_dp_tx_align_payload(ab, &skb);
+> +		if (ret) {
+> +			dev_warn_once(ab->dev, "failed to align TX buffer %d\n", ret);
 
-v7:
-1.use switch statement
-2.use guard(mutex)(&ah->hw_mutex)
-3.use info0 = le32_to_cpu(desc->rate_stats.info0) and then use u32_get_bits() everywhere
-4.replace time with time_left
+Why dev_warn_once()? I changed it to ath12k_warn() in the pending
+branch.
 
-v6:
-1.rebase against wifi: ath12k: prepare sta data structure for MLO handling
+> --- a/drivers/net/wireless/ath/ath12k/hw.h
+> +++ b/drivers/net/wireless/ath/ath12k/hw.h
+> @@ -96,6 +96,8 @@
+>  #define ATH12K_M3_FILE			"m3.bin"
+>  #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
+>  
+> +#define PCIE_MAX_PAYLOAD_SIZE		128
 
-v5:
-1.use ieee80211_find_sta_by_ifaddr() to avoid using base_lock
+PCIE prefix implies that this is in PCI subsystem. I renamed it to
+ATH12K_PCIE_MAX_PAYLOAD_SIZE.
 
-v4:
-1.rebase ath-pending-202404181533
-2.change ATH12K_EHT_MCS_MAX from 13 to 15
+Please check my changes:
 
-v3:
-1.change wmi_vdev_stats_event to wmi_vdev_stats_params
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=b603c1e0d94fb1eb0576ef48ebe37c8c1ce86328
 
-v2:
-1.change copyright
-2.change name according Naming conventions for structures
-
-Lingbo Kong (3):
-  wifi: ath12k: report station mode transmit rate
-  wifi: ath12k: report station mode receive rate for IEEE 802.11be
-  wifi: ath12k: report station mode signal strength
-
- drivers/net/wireless/ath/ath12k/core.h    |   5 +
- drivers/net/wireless/ath/ath12k/dp_rx.c   |  20 +++-
- drivers/net/wireless/ath/ath12k/dp_rx.h   |   3 +
- drivers/net/wireless/ath/ath12k/dp_tx.c   | 139 +++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/hal_rx.h  |   5 +-
- drivers/net/wireless/ath/ath12k/hal_tx.h  |   7 +-
- drivers/net/wireless/ath/ath12k/mac.c     | 136 ++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/mac.h     |   4 +-
- drivers/net/wireless/ath/ath12k/rx_desc.h |   3 +
- drivers/net/wireless/ath/ath12k/wmi.c     | 132 ++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h     |  48 ++++++++
- 11 files changed, 492 insertions(+), 10 deletions(-)
-
-
-base-commit: db1ce56e6e1d395dd42a3cd6332a871d9be59c45
-prerequisite-patch-id: f87638504028796f96a183930bf1799f55b9d268
-prerequisite-patch-id: dc15d6df954760395ff72d9bcf14aace5adefbe7
-prerequisite-patch-id: b43d0571ad6b42c80a16e65dc2c54657f3cd3dc5
 -- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
