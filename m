@@ -4,144 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0725DC3DA64
-	for <ath12k@archiver.kernel.org>; Tue,  6 Aug 2024 08:06:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C417C3DA64
+	for <ath12k@archiver.kernel.org>; Tue,  6 Aug 2024 11:44:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zJgNI6HnSvBr8hKl3Yl6VBiCWpW5gQN92Z40fXb3r+I=; b=DzOUhsAbqTPQUk1yoT3NkVKqQ1
-	/WycIlqxb2rlmR/OeOoI/UlB4M5JtmogFzceDoXUdKGciM5qMbSvYcoC5DEpOw3cm6e27ugSFaq6C
-	0JPrGXDRekZNWtpnUwZlgrFbwQqptzF2WupKZOK1W0GGOW1JxnCPkA8cpowAOaHsD11YJBWCox02d
-	4YWmZqwLl55RnofEZ5VPoMjIEmTihIcNO/fFjv1WeJBCCeo1pVsFHLBESLvWr3A43G08onu/KFiKY
-	UW64U96aVIoF6C7rtx2EJPuj37LlaKK8YwSts+VcoCLZBOujw4/hzTj+I3879HaXdruSQiU4f9YvY
-	HJ5ZpAOQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WmLcSkLFCG1BhCumOi1Mmi74vgBmmeesT3B0kaLQ/Qk=; b=AOi+0VHD+9Pzm2NWYze2GIvISk
+	sx/i6WSUJxJoeUKX6Stj4kceqGs27Ym08Z1PiRT0LIcEbijQaiPHxMHJWuOmlsjHXW2Bqgirbp7ma
+	yqwboKRliYpMo5kihMGMkzQeXgwyttatRGE1tdnYBwc//S+OvVaf0GlYWfR6VvgsVqepBN1C471mP
+	CafN3B5COQ0VdoPFSQiApzqdc2h/MR6rrn8LWR55A4dKLSS1bGdLXs0K4/ylW1ocwvFShoqW9u0uW
+	VburFOkFc5Dgn6UciNGEcVTC7eU8e6oaS+SI3bWfC1zF3e2cuEvOY12SanKuwadGb+IyWl36T2XsF
+	rU151ddA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbFDP-00000000siJ-322g
+	id 1sbIcA-00000001OSA-0DBX
 	for ath12k@archiver.kernel.org;
-	Tue, 06 Aug 2024 08:06:43 +0000
-Received: from mail-lo4gbr01on20701.outbound.protection.outlook.com ([2a01:111:f403:261a::701] helo=GBR01-LO4-obe.outbound.protection.outlook.com)
+	Tue, 06 Aug 2024 11:44:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbFD9-00000000sdp-24Uv
+	id 1sbIbj-00000001OOH-1Wfw
 	for ath12k@lists.infradead.org;
-	Tue, 06 Aug 2024 08:06:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=fMJAkgGZvMvlT/vC+VvfuldNtE7+bnaoeABFk+IN9AxyzxXckuvFqo56z91qhwbCYpjwtYyhVv2dnycM4c7tQNcu5RkO/WZwqi8qwQb8ZmdZMGSUI9eEfRve0BOi/oVNxKWgceJvdHeYRJ0iMiJVDzrDkxDsQon1dkqDnDdDd3qj4Eu/s3KNEZn/YtP4UEt6PTgcZCgYLGPyrjX9jH+awXZG8TcN1X+bhat+13+h+ijx82OIYI4WfUAOOAXjXYdAJvBbjKzSbWUstBeedlDTogyksn9arSBoczaAkQFxVx0xQL1hyoA1HZXcKmif8qcg3K5/BsKVKE7Aq0RRc7kKjQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=zJgNI6HnSvBr8hKl3Yl6VBiCWpW5gQN92Z40fXb3r+I=;
- b=QwKaIYUNDio0UCPJCUtEBUxXIJp+dJPZ9SI5ys8XywO/o2pGl7H77Xs5ikXncLN8vfoyxjGxRA0AJT2814KeyYmfzcpD0PKgdB0YUNquipOl3RaygKSBrFc/SM2LoiTC2KM9XwVNSmTqpjYCzm4VON7pJOsGuvjPkXUWMkkOIyKrXlUVpMU0NlCd7mI1Lafzo1vrjPJnSp3RGY4oTlVsUGUJfgeY8ochepxoLcRWr3fr71K//r9mus8YbJoaSk75cn8dMLX9UQDj+j9HhtRO6eBQNmJFBDkzUZZdAryJOJ+FeORnKUiI9342FnTXBeVmRXroXgZhZtPbtqwINoW6iQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=3adesign.co.uk; dmarc=pass action=none
- header.from=3adesign.co.uk; dkim=pass header.d=3adesign.co.uk; arc=none
-Received: from LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:182::14)
- by LO0P123MB4203.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:155::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.28; Tue, 6 Aug
- 2024 08:06:21 +0000
-Received: from LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
- ([fe80::493e:62d6:55a0:48c6]) by LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
- ([fe80::493e:62d6:55a0:48c6%3]) with mapi id 15.20.7828.023; Tue, 6 Aug 2024
- 08:06:21 +0000
-From: david Atkins <david@3adesign.co.uk>
-To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
-Subject: wcn7850  issues 
-Thread-Topic: wcn7850  issues 
-Thread-Index: Adrny0FwHnce1PsLQ021YkDT6GU++wADCGTg
-Date: Tue, 6 Aug 2024 08:06:21 +0000
-Message-ID: <LO0P123MB4057122D4C7D07C7114F5ABED6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-References: <LO0P123MB4057D6C2F6FEFF335B30EE7CD6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-In-Reply-To: <LO0P123MB4057D6C2F6FEFF335B30EE7CD6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=3adesign.co.uk;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: LO0P123MB4057:EE_|LO0P123MB4203:EE_
-x-ms-office365-filtering-correlation-id: 1727d1c8-0f36-4f72-5b40-08dcb5eea856
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|376014|38070700018;
-x-microsoft-antispam-message-info: =?iso-8859-1?Q?avgpv95JXtjG59B2TGVDIIktKcm0s21fvmjPVbfxXfavkd/R61QUNCK8im?=
- =?iso-8859-1?Q?xXsZ0UrSc+38PIHkFRJsVR0u4MTiX+xSY9GapUmvOVETTUvNMIJnzWy/g8?=
- =?iso-8859-1?Q?kbmFY1l/jfJSbKvc6E/1VMCBlMMCDqDICKMzFIGv6KAj8n+L0rwtYNZk8g?=
- =?iso-8859-1?Q?sHiR/Ik1GgolYIu1TjJWxZmhK2Xj0c2WCX7KHG9RuvFG4fessZo9NYIGFy?=
- =?iso-8859-1?Q?NHbyd3AnDlsjvwjo4JUTZZs+peMX4KB3Xl23+wuhGZ821uPoROdmCb6OeB?=
- =?iso-8859-1?Q?uibKo3aw+v09BCq4TFbcg68WS9994x4wkIQ14BFIBtQlBP+VzUHOQf+5lf?=
- =?iso-8859-1?Q?0NTn2opqC4O9t4+yUlIwHT88/WdodKdsaI3qYTZjYKTEuZ+RCm/jWFG46o?=
- =?iso-8859-1?Q?7+z+hYWa++43/pTdIB8XgHAM610JBfxBHfVERnv8fF8Vs0prIIcekGrGqo?=
- =?iso-8859-1?Q?DJqnT8JmCm/Q5WN8xaVzjUVZ6iHz0PLnym725ZmY2XewZU1GD+vwztCKwE?=
- =?iso-8859-1?Q?LPLQKQA/wrVm0HRHNIdcd1C5NM7fORduAqpb3a1lHr7g406eaSjaneBY0c?=
- =?iso-8859-1?Q?tI017DujfTa5XSxxDZz27IFqr/zYZ2ampVEP6sd7MTM9XWY75z4IXEoPMC?=
- =?iso-8859-1?Q?lNR6vlUdrtlxuMIvspry6JfY7U3BYmDYRA1U0Y6rukVPZZ2z3Layu/OT0E?=
- =?iso-8859-1?Q?WZn/cUS1fqArbaz+DEuPdKvEymXrjYU+zXy+kbYvZ6Qk5mEgtIHu/Kq62x?=
- =?iso-8859-1?Q?c8qn6bbbPWuQaLT9yIOpZ+DrmOyNDsLoiRQa75rxSx++RKAiOrs6Clv5CH?=
- =?iso-8859-1?Q?EVS5O6KxvL4AeCLufF0sL0niCH8VrMp1CjL4JLpN9epu3MRiUYvrEOxiwg?=
- =?iso-8859-1?Q?AvQ1bI+L87ggap5n5tOrByo0V6ieVgqoV2MvI4gm85BLrsClBQlEvsLD0g?=
- =?iso-8859-1?Q?HEECRtl4YBwl3GVgZXgEI1FgBKOWJ7wvkImxIRB1ThqLMp8TwIIwtoPS0R?=
- =?iso-8859-1?Q?3wzWbpkBRC7Uy2wB1bGPlnD467JW9MtXlvKG2jbLyAvp5YR+UF3SyM/XDA?=
- =?iso-8859-1?Q?nUNzSex54xEMiMmCUXwao6PEYxoPEc4k0p5stRFUR2awvDUAE2D5Whql/9?=
- =?iso-8859-1?Q?UlceAwP+LlEDTiC3GV7wzsvdCtD9gKyud0kEv0Lgh5AHu2bl+einb5Gfud?=
- =?iso-8859-1?Q?BI9PngljcKVKWeDmLo9q8AENAGtTdkWge2JjMnXf7VIjldsjgxjVd0y030?=
- =?iso-8859-1?Q?fwRnzwk86Nb1pfGKzAWYeETZLcg7qPlEjhXRUMyTk5pQLfsEP2gsPpy2Id?=
- =?iso-8859-1?Q?jjClCargWkPjFg+msvKfW9hgBr5OcEjFecqxVUv231xIzy3H0H6aMOwPKY?=
- =?iso-8859-1?Q?4tOYVUKWVyOrrB74WrIDD3d+n5EDMlU6SFJXRtxKn3MWb8KAHxsyxobiIN?=
- =?iso-8859-1?Q?UQkDrekzLROCvQmXbQGed0naWzkdy796G73CQg=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(38070700018);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?bmFl4jWS8evZhPy+7VRiEvpxvxMk4OGU6oH2btWHGDCBushcDWYBgq8ekl?=
- =?iso-8859-1?Q?PsqtJ7QFyARwEw33/x7k7W5qj82HZk2gKHEA1I/YLVOX7XUOWXCdVK1+Cb?=
- =?iso-8859-1?Q?t9HQ34y1/KljAwC5rQt+lW/eKrPdoArluQsEWQ9FXhFkCHI3dTjP7a+Y++?=
- =?iso-8859-1?Q?JQd4gm0mHbGmZX4xC1JV2DoG79iokhs0KKLuxPyLTPvyWreBrUPmCIVOwM?=
- =?iso-8859-1?Q?GPAvIdj8/chTm0SYhoMHJVpjWAMpMRErb5Iojv9q5KDqP5k/4zwqHB9Xv6?=
- =?iso-8859-1?Q?1iDIxQc5HvMzT4jBvYqfcMYWRZ3+aE1nOGplBBaSdhDiSbuMhim0uEFrkc?=
- =?iso-8859-1?Q?TmdYd8NU7s1JiFAT9SNU1cTG0G5fLFMh3cFWzP+EDSb06CO5EyUQRQtO0Q?=
- =?iso-8859-1?Q?qYrQRaXjsYz3TKvvt/zmSW3uXgcC+VQmwaho3TEo9KkoXJtpv7I0GMPcyk?=
- =?iso-8859-1?Q?BtD7JpSlIUtqs3LYH729gwNGH6996aC2DOpGeKGJPbtopgp37PiewxDMRF?=
- =?iso-8859-1?Q?OVe4IuAhO03VsjQ/D96WCeEv+UtcFMGY7lgMe4U2PuvzbbPD0qdnP/tOFK?=
- =?iso-8859-1?Q?Xb87B62rGZ+14phqaDqYZs/St2djVs734j+mvXTf174Fc9nx9MjuIrSu6L?=
- =?iso-8859-1?Q?GdTqWDT9xHSL9d50bemHM5MEqhEXyNTZT9Ef59E6wQGTNKakBe0VymegLR?=
- =?iso-8859-1?Q?ZeqqXNcAv/MD2dEA/YdjTSR80QPmK3clV/er7GMrl7F9qnTpEI0J24Palq?=
- =?iso-8859-1?Q?g6COjfkxrG/LuUTjRyPQ59mGOd/y9FP95Wzj5LtGbOpPzYZQftxELoybV+?=
- =?iso-8859-1?Q?Sd82jOGV0ubqV8CrvGQtc1uY/gh1w6aP3zUQkeRStnbh0z1U/1rZ5BdA+j?=
- =?iso-8859-1?Q?Bl3zm0ojIJQwtnr0TTaJosJvOwKpx+jR/IYrnbV4RjK74m2d9CLMMs6v6T?=
- =?iso-8859-1?Q?PfKk48O9A/r3zKYWgxnMVWT8n5FXy7IdYrwLfoH8lyyvKGdmy3hiIR37JQ?=
- =?iso-8859-1?Q?Oy7Wdow1JI9fNXEwKr3V350oy79sb4WYVdJrfOCsdzzEwsw+gy69URVlYt?=
- =?iso-8859-1?Q?my2Yw9ZASL0YqTA9U4iAB2L9AgQ4AMA1CtzavgW6RMQIw76mHC6mt9/8Mi?=
- =?iso-8859-1?Q?MCMZ7ZwJLUNeC02it6mBvaFEiMseR0wner/iiLTcrYgYQd1GDeab02jpyK?=
- =?iso-8859-1?Q?eaecMOuDAjip/mCK8xhJ0h0keLO4pxmt9LtnwdAsNzzxBdB74zpQxZEvb/?=
- =?iso-8859-1?Q?psEEU5lMrG3xCyGkHWbpmJ3lODlB5aVBzfqrXb1P3cjjhgGbz+F+0OwFU6?=
- =?iso-8859-1?Q?vBJquk2T9TKIPUqCv+2G3aL3qyoxTyYIlVed01lNTtUhuTx1wFqsBPQ6KN?=
- =?iso-8859-1?Q?tZmh7pfDs7xpTA3+BxyJnvpf3C5f6j9IVAwwOq1pzZcvs9DejeXpTCl1/9?=
- =?iso-8859-1?Q?RbGlu0jZkhvkJ9jPF3TjEDg5Qtz6bivHMjSHCh+kKj1AXLY2LThKo7XZcJ?=
- =?iso-8859-1?Q?GWeoBX96yJXJIadOPb+a0mEUYnBhIbjGxwmHYcn+ze+2ZsqvPD8CdtM6DK?=
- =?iso-8859-1?Q?GnOxm2Qbh2ub20CxzHItFMrrKAlrYMA+Ai91guXH0KSIMIS15UGkQrhYyz?=
- =?iso-8859-1?Q?OLV+9p0sh5hY7LdDljMBPFw3fiWOposW9u?=
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+	Tue, 06 Aug 2024 11:44:29 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 476BOd9x014249;
+	Tue, 6 Aug 2024 11:43:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	WmLcSkLFCG1BhCumOi1Mmi74vgBmmeesT3B0kaLQ/Qk=; b=p7LLklAspT/3msir
+	+qOYisqTmQAfYJBZc0ligmdgTA3B4UJxfrdGvnG20OVf7uaUsW10stpugPpWu1TD
+	njG5qQgfXaOz8QL/h0DbyniWr/e83KpsNSVBtZ9Qi1uIoiS4OLmKwpO9AQilJBAm
+	5b51geLHWMzsLrO2GOH1P+jimd9jQiCDMXIhBIkpaSE6Mj567GLPmAmja7YH67dv
+	srxzMHw0daFAp+S6farOvlqDZzRc3TxerIx6RLkeQcDv1zG7PhQ0kw2/Q8xMIVZ1
+	y6jKGBaRc34lk+xTnCFf1bO/Xiw/6lukAy9J26oK67iJ7tlB8XLsmQ8F7dZFz8vM
+	gOAecg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40sdu971ej-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 06 Aug 2024 11:43:59 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 476Bhwkb004145
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 6 Aug 2024 11:43:58 GMT
+Received: from [10.152.206.169] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 6 Aug 2024
+ 04:43:56 -0700
+Message-ID: <b2e9ea45-f043-ed40-f03b-af4b25929e16@quicinc.com>
+Date: Tue, 6 Aug 2024 17:13:53 +0530
 MIME-Version: 1.0
-X-OriginatorOrg: 3adesign.co.uk
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1727d1c8-0f36-4f72-5b40-08dcb5eea856
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Aug 2024 08:06:21.0358
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4b153f19-49d1-4c9d-8de6-70aea15d7add
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: O9kDQjNmbpTLhA05ZNHPX2T6L5iHWwFhmafXvq8syrJqvVA7hjG9eE3GV7IktFzKBCuDK0/JyGVc4SiKDvILnA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO0P123MB4203
-X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.0
+Subject: Re: [PATCH v8 7/8] wifi: ath12k: refactor core start based on
+ hardware group
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+References: <20240531180411.1149605-1-quic_hprem@quicinc.com>
+ <20240531180411.1149605-8-quic_hprem@quicinc.com> <87plsuql2y.fsf@kernel.org>
+ <dd2488bb-43f9-d546-7617-2a54ca3d1a1d@quicinc.com>
+ <87ed8ae8ye.fsf@kernel.org>
+ <4f0963ff-a822-49b8-3d45-5d90e2c2d511@quicinc.com>
+ <8734ni6vdg.fsf@kernel.org>
+From: Harshitha Prem <quic_hprem@quicinc.com>
+In-Reply-To: <8734ni6vdg.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: AWm1PmNvVOH0ONeZuXsWPaIcrk3quDkb
+X-Proofpoint-GUID: AWm1PmNvVOH0ONeZuXsWPaIcrk3quDkb
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-06_08,2024-08-06_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
+ lowpriorityscore=0 mlxlogscore=999 suspectscore=0 malwarescore=0
+ clxscore=1011 phishscore=0 spamscore=0 bulkscore=0 mlxscore=0
+ impostorscore=0 priorityscore=1501 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2407110000 definitions=main-2408060081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240806_010627_727058_023CA418 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240806_044403_519134_A21D3590 
+X-CRM114-Status: GOOD (  46.31  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,521 +107,192 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-Hi,
 
-I have updated the kernel we use for testing today to main from https://git=
-.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/, the base install is th=
-e ubuntu 24.04 desktop release=20
+On 8/6/2024 11:33 AM, Kalle Valo wrote:
+> Harshitha Prem <quic_hprem@quicinc.com> writes:
+> 
+>> On 7/3/2024 9:58 PM, Kalle Valo wrote:
+>>> Harshitha Prem <quic_hprem@quicinc.com> writes:
+>>>
+>>>>>>     +static void ath12k_core_device_cleanup(struct ath12k_base *ab)
+>>>>>> +{
+>>>>>> +	mutex_lock(&ab->core_lock);
+>>>>>> +
+>>>>>> +	if (test_and_clear_bit(ATH12K_FLAG_CORE_HIF_IRQ_ENABLED, &ab->dev_flags))
+>>>>>> +		ath12k_hif_irq_disable(ab);
+>>>>>> +
+>>>>>> +	if (test_bit(ATH12K_FLAG_PDEV_CREATED, &ab->dev_flags))
+>>>>>> +		ath12k_core_pdev_destroy(ab);
+>>>>>> +
+>>>>>> +	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags)) {
+>>>>>> +		ath12k_mac_unregister(ab);
+>>>>>> +		ath12k_mac_destroy(ab);
+>>>>>> +	}
+>>>>>> +
+>>>>>> +	mutex_unlock(&ab->core_lock);
+>>>>>> +}
+>>>>> This patch is just abusing flags and because of that we have
+>>>>> spaghetti
+>>>>> code. I have been disliking use of enum ath12k_dev_flags before but this
+>>>>> is just looks too much. I am wondering do we need to cleanup the ath12k
+>>>>> architecture first, reduce the usage of flags and then revisit this
+>>>>> patchset?
+>>>>>
+>>>> yeah., more dev flags :( but flags were needed for the race conditions
+>>>> when multiple devices where involved in a group, some devices would
+>>>> have completed till pdev create some might not. Some crashes were seen
+>>>> because hif_irq_disable was called for a device in a group but that
+>>>> device was not even at the stage of core register. Will check the
+>>>> possibility to  reduce the flag usage but it seemed necessary for
+>>>> multiple device group clean up.
+>>> I think the core problem here is of mixing enum ath12k_hw_state and
+>>> enum
+>>> ath12k_dev_flags, it's just a mess even before this patchset. For
+>>> example, these flags look like they should be part enum ath12k_hw_state
+>>> instead:
+>>> 	ATH12K_FLAG_RECOVERY,
+>>> 	ATH12K_FLAG_UNREGISTERING,
+>>> 	ATH12K_FLAG_REGISTERED,
+>>> 	ATH12K_FLAG_QMI_FAIL,
+>>> If we have an enum plus set of flags to handle the actual state then
+>>> it
+>>> will become difficult to manage it all. Instead we should just have the
+>>> enum for tracking the state of the driver.
+>>>
+>>
+>> ath12k_hw_state is the driver state representation which is used to
+>> indicate whether driver has started or in restarting from mac80211
+>> prespective where as ath12k_dev_flags closely related to devices and
+>> its q6 states.
+>>
+>> So, ATH12K_FLAG_RECOVERY, ATH12K_FLAG_QMI_FAIL should be in
+>> ath12k_dev_flags because these are specific to Q6 crashes and failure.
+>> ATH12K_FLAG_UNREGISTERING is actually used to indicate pci_remove is
+>> initiated and we should not process any QMI events but may be naming
+>> is creating the confusion. ATH12K_FLAG_REGISTERED flag is used whether
+>> to recover or not with the information available in mac80211 to
+>> reconfig.
+>>
+>> With hardware abstraction, it can be like 3 devices (ath12k_base) in
+>> one ath12k_hw and with ath12k_hw_states alone we might not be able to
+>> handle. Because, say device1 is in recovery, device2 is already till
+>> QMI firmware ready after device probing and these two devices are not
+>> registered to  mac80211 then we cannot set the ath12k_hw_state as
+>> ON/OFF or anything else.
+>>
+>> Hence, we may require two distinct flags, where one holds the driver
+>> abstraction state and other is device states. With grouping complexity
+>> would increases as we have to sync between the devices and we require
+>> two flags. Please let me know your thoughts.
+> 
+> Can you elaborate, for example provide exact state machine description
+> for all these states? I just can't understand how using several flags in
+> addition of an enum as different states makes anything easier to manage.
+> To me that sounds just like spaghetti code.
+> 
+No new flags are introduced in this patchset, I have revisited and 
+removed it any new flags. But, there are some existing flags which seems 
+to be necessary in case of firmware crash or QMI handshake failure 
+scenario.
 
-Kernel reports as=20
+Please find the details of how each flags/state in device 
+(ath12k_dev_flags) is used currently :
 
+  1. ATH12K_CAC_RUNNING - This is used to indicate whether any ongoing 
+CAC is in progress for the radio in device, if yes, then we should not 
+handle any data packets or management packets that are received over dp 
+rx or wmi event respectively during this state.
+The state is set during vdev start that is initiated via 
+assign_vif_chanctx or switch_vif_chanctx. here, the vif_chanctx is from 
+mac80211 but the data rx or wmi event is from the device which are both 
+different context. We cannot sync between them, so this flag helps in 
+avoiding processing the packets.
 
-openwrt@wifi7-amd:~$ uname -a
-Linux wifi7-amd 6.11.0-rc2-wt-ath+ #2 SMP PREEMPT_DYNAMIC Mon Aug=A0 5 12:0=
-2:22 BST 2024 x86_64 x86_64 x86_64 GNU/Linux
+  2. ATH12K_FLAG_CRASH_FLUSH - this is used to indicate that the QMI 
+connection between the host driver and Q6 is lost. This is set as soon 
+as driver receives an QMI server exit event. So, once this is set we 
+have to ensure that no data packets to be queued for hardware and no WMI 
+commands are posted to firmware. All the calls to send any WMI command 
+or data packet would be from mac80211.
 
-Ath12k from Dmesg
+3. ATH12K_FLAG_RAW_MODE - this flag indicates that the firmware or 
+hardware operates in RAW mode. Based on this we have to set the rx/tx 
+decap type to indicate firmware how to handle packets from this type of 
+vif. (Do we necessary need to keep in dev_flags? may be dev_mode)
 
-mailto:openwrt@wifi7-amd:~/datkins/kalo/ath/.git$ sudo dmesg | grep ath12k
-[=A0=A0=A0 3.823988] ath12k_pci 0000:01:00.0: BAR 0 [mem 0xfc600000-0xfc7ff=
-fff 64bit]: assigned
-[=A0=A0=A0 3.824006] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002=
-)
-[=A0=A0=A0 3.824305] ath12k_pci 0000:01:00.0: MSI vectors: 16
-[=A0=A0=A0 3.824310] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
-[=A0=A0=A0 4.372789] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 b=
-oard_id 0x10e soc_id 0x40170200
-[=A0=A0=A0 4.372796] ath12k_pci 0000:01:00.0: fw_version 0x100301e1 fw_buil=
-d_timestamp 2023-12-06 04:05 fw_build_id QC_IMAGE_VERSION_STRING=3DWLAN.HMT=
-.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-[=A0=A0=A0 4.580233] ath12k_pci 0000:01:00.0 wlp1s0: renamed from wlan0
+4. ATH12K_FLAG_HW_CRYPTO_DISABLED - this indicates whether software 
+encryption is set or not in raw mode.
 
-Ip a shows
+5. ATH12K_FLAG_RECOVERY - This is set during QMI server exit but not 
+used anywhere. (Unused. Remove?)
 
-3: wlp1s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state U=
-P group default qlen 1000
-=A0=A0=A0 link/ether 00:03:7f:58:34:42 brd ff:ff:ff:ff:ff:ff
-=A0=A0=A0 inet 192.168.1.144/24 brd 192.168.1.255 scope global dynamic nopr=
-efixroute wlp1s0
-=A0=A0=A0=A0=A0=A0 valid_lft 82448sec preferred_lft 82448sec
-=A0=A0=A0 inet6 fd78:4c15:7f9d::2cf/128 scope global dynamic noprefixroute
-=A0=A0=A0=A0=A0=A0 valid_lft 82450sec preferred_lft 39250sec
-=A0=A0=A0 inet6 fd78:4c15:7f9d:0:3f2d:65f7:eb00:3928/64 scope global tempor=
-ary dynamic
-=A0=A0=A0=A0=A0=A0 valid_lft 600850sec preferred_lft 82358sec
-=A0=A0=A0 inet6 fd78:4c15:7f9d:0:a184:9d87:7861:846b/64 scope global mngtmp=
-addr noprefixroute
-=A0=A0=A0=A0=A0=A0 valid_lft forever preferred_lft forever
-=A0=A0=A0 inet6 fe80::f662:5464:1669:4fab/64 scope link noprefixroute
-=A0=A0=A0=A0=A0=A0 valid_lft forever preferred_lft forever
+6. ATH12K_FLAG_UNREGISTERING - this is set during pci remove. if this 
+flag is set driver should avoid handling any mhi events/QMI events 
+received from the target/hardware. (May be rename to pci shutdown?)
 
-I have set region to GB
+7. ATH12K_FLAG_REGISTERED - this is set once the device is successfully 
+registered to mac80211. So, later if this device encounters any firmware 
+crash, it can be recovered smoothly without registering. Also, this flag 
+is used during pci_suspend scenario. If device crashes even before 
+registering to mac80211 we have to avoid recovering it and this flags 
+helps the same.
 
-sudo iw reg set GB
+Once firmware crash is occurred, after collecting the dumps again the 
+QMI handshake for that device will start from QMI server arrive to 
+ATH12K_QMI_EVENT_FW_READY and in firmware ready we should not start the 
+core again rather init only few and try to reconfigure the device with 
+available data from mac80211.
 
-so we get=20
+8. ATH12K_FLAG_QMI_FAIL - this is set when any of the QMI handshakes 
+fail and tested in rmmod case to skip the cleanup process.
 
-mailto:openwrt@wifi7-amd:~/datkins/kalo/ath/.git$ sudo iw reg get
-global
-country GB: DFS-ETSI
-=A0=A0=A0=A0=A0=A0=A0 (2400 - 2483 @ 40), (N/A, 20), (N/A)
-=A0=A0=A0=A0=A0=A0=A0 (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUT=
-O-BW
-=A0=A0=A0=A0=A0=A0=A0 (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DF=
-S, AUTO-BW
-=A0=A0=A0=A0=A0=A0=A0 (5470 - 5730 @ 160), (N/A, 26), (0 ms), DFS
-=A0=A0=A0=A0=A0=A0=A0 (5725 - 5850 @ 80), (N/A, 23), (N/A), NO-OUTDOOR
-=A0=A0=A0=A0=A0=A0=A0 (5925 - 6425 @ 160), (N/A, 23), (N/A), NO-OUTDOOR
-=A0=A0=A0=A0=A0=A0=A0 (57000 - 71000 @ 2160), (N/A, 40), (N/A)
+The following flags are added by MCC team, I am not so clear on the use 
+case seems like there are few cases in suspend use case where they need 
+these states.
 
-phy#0 (self-managed)
-country na: DFS-UNSET
-=A0=A0=A0=A0=A0=A0=A0 (2402 - 2472 @ 40), (N/A, 20), (N/A)
-=A0=A0=A0=A0=A0=A0=A0 (2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
-=A0=A0=A0=A0=A0=A0=A0 (5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSI=
-VE-SCAN
-=A0=A0=A0=A0=A0=A0=A0 (5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSI=
-VE-SCAN
-=A0=A0=A0=A0=A0=A0=A0 (5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSI=
-VE-SCAN
-=A0=A0=A0=A0=A0=A0=A0 (5945 - 7125 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSI=
-VE-SCAN
-=A0=A0=A0=A0=A0=A0=A0 (5945 - 7125 @ 320), (N/A, 30), (N/A), AUTO-BW, PASSI=
-VE-SCAN
-
-Station dump gives me
-
-mailto:openwrt@wifi7-amd:~/datkins/kalo/ath/.git$=A0 sudo iw dev wlp1s0 sta=
-tion dump
-Station ac:91:9b:b7:05:b0 (on wlp1s0)
-=A0=A0=A0=A0=A0=A0=A0 inactive time:=A0 1126 ms
-=A0=A0=A0=A0=A0=A0=A0 rx bytes:=A0=A0=A0=A0=A0=A0 4832450328
-=A0=A0=A0=A0=A0=A0=A0 rx packets:=A0=A0=A0=A0 3281108
-=A0=A0=A0=A0=A0=A0=A0 tx bytes:=A0=A0=A0=A0=A0=A0 4592467521
-=A0=A0=A0=A0=A0=A0=A0 tx packets:=A0=A0=A0=A0 3152967
-=A0=A0=A0=A0=A0=A0=A0 tx retries:=A0=A0=A0=A0 38
-=A0=A0=A0=A0=A0=A0=A0 tx failed:=A0=A0=A0=A0=A0 0
-=A0=A0=A0=A0=A0=A0=A0 beacon loss:=A0=A0=A0 0
-=A0=A0=A0=A0=A0=A0=A0 beacon rx:=A0=A0=A0=A0=A0 3267
-=A0=A0=A0=A0=A0=A0=A0 rx drop misc:=A0=A0 1
-=A0=A0=A0=A0=A0=A0=A0 signal:=A0=A0=A0=A0=A0=A0=A0=A0 0 dBm
-=A0=A0=A0=A0=A0=A0=A0 beacon signal avg:=A0=A0=A0=A0=A0 -24 dBm
-=A0=A0=A0=A0=A0=A0=A0 tx duration:=A0=A0=A0 0 us
-=A0=A0=A0=A0=A0=A0=A0 rx bitrate:=A0=A0=A0=A0 3602.9 MBit/s 160MHz HE-MCS 1=
-1 HE-NSS 3 HE-GI 0 HE-DCM 0
-=A0=A0=A0=A0=A0=A0=A0 rx duration:=A0=A0=A0 0 us
-=A0=A0=A0=A0=A0=A0=A0 authorized:=A0=A0=A0=A0 yes
-=A0=A0=A0=A0=A0=A0=A0 authenticated:=A0 yes
-=A0=A0=A0=A0=A0=A0=A0 associated:=A0=A0=A0=A0 yes
-=A0=A0=A0=A0=A0=A0=A0 preamble:=A0=A0=A0=A0=A0=A0 long
-=A0=A0=A0=A0=A0=A0=A0 WMM/WME:=A0=A0=A0=A0=A0=A0=A0 yes
-=A0=A0=A0=A0=A0=A0=A0 MFP:=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 yes
-=A0=A0=A0=A0=A0=A0=A0 TDLS peer:=A0=A0=A0=A0=A0 no
-=A0=A0=A0=A0=A0=A0=A0 DTIM period:=A0=A0=A0 2
-=A0=A0=A0=A0=A0=A0=A0 beacon interval:100
-=A0=A0=A0=A0=A0=A0=A0 short slot time:yes
-=A0=A0=A0=A0=A0=A0=A0 connected time: 4038 seconds
-=A0=A0=A0=A0=A0=A0=A0 associated at [boottime]:=A0=A0=A0=A0=A0=A0 13.805s
-=A0=A0=A0=A0=A0=A0=A0 associated at:=A0 1722856637791 ms
-=A0=A0=A0=A0=A0=A0=A0 current time:=A0=A0 1722860675019 ms
-
-
-and iw dev wlp1s0 link gives me
-
-Connected to ac:91:9b:b7:05:b0 (on wlp1s0)
-=A0=A0=A0=A0=A0=A0=A0 SSID: EE-CN589H
-=A0=A0=A0=A0=A0=A0=A0 freq: 6295.0
-=A0=A0=A0=A0=A0=A0=A0 RX: 537531156 bytes (3281227 packets)
-=A0=A0=A0=A0=A0=A0=A0 TX: 297500287 bytes (3152968 packets)
-=A0=A0=A0=A0=A0=A0=A0 signal: 0 dBm
-=A0=A0=A0=A0=A0=A0=A0 rx bitrate: 3602.9 MBit/s 160MHz HE-MCS 11 HE-NSS 3 H=
-E-GI 0 HE-DCM 0
-=A0=A0=A0=A0=A0=A0=A0 bss flags: short-slot-time
-=A0=A0=A0=A0=A0=A0=A0 dtim period: 2
-=A0=A0=A0=A0=A0=A0=A0 beacon int: 100
-
-Concerned we have a report of =A0"HE-NSS 3", wifi 7 should be eht and we ha=
-ve a wcn7850 which has only 2 antenna ports.
-
-My understanding is that 160MHz HE-MCS 11 @ 160Mhz will give us 1200 Mbit/s=
- so the report of 3602 suggests its assuming it has 3 spatial streams which=
- would be incorrect
-
-The signal level looks wrong
-
-=A0=A0=A0=A0=A0=A0=A0 signal:=A0=A0=A0=A0=A0=A0=A0=A0 0 dBm
-=A0=A0=A0=A0=A0=A0=A0 beacon signal avg:=A0=A0=A0=A0=A0 -24 dBm
-
-we would expect that to agree with the beacon level, we see the beacon chan=
-ge but the signal is always 0, I note from recent messages on the thread th=
-at this has been fixed, what branch should I use to check this?
-
-I have also seen this in dmesg during association with the AP,=20
-
-[=A0=A0 13.049675] wlp1s0: required MCSes not supported, disabling EHT
-[=A0=A0 13.304272] wlp1s0: authenticate with ac:91:9b:b7:05:b0 (local addre=
-ss=3D00:03:7f:58:34:42)
-[=A0=A0 13.304281] wlp1s0: send auth to ac:91:9b:b7:05:b0 (try 1/3)
-[=A0=A0 13.312345] wlp1s0: authenticate with ac:91:9b:b7:05:b0 (local addre=
-ss=3D00:03:7f:58:34:42)
-[=A0=A0 13.312352] wlp1s0: send auth to ac:91:9b:b7:05:b0 (try 1/3)
-[=A0=A0 13.314787] wlp1s0: authenticated
-[=A0=A0 13.315249] wlp1s0: associate with ac:91:9b:b7:05:b0 (try 1/3)
-[=A0=A0 13.321883] wlp1s0: RX AssocResp from ac:91:9b:b7:05:b0 (capab=3D0x1=
-111 status=3D0 aid=3D6)
-[=A0=A0 13.334818] wlp1s0: associated
-
-Iw scan shows this for the AP in the 6Ghz band
-
-BSS ac:91:9b:b7:05:b0(on wlp1s0) -- associated
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 TSF: 56186843682 usec (0d, 15:36:26=
-)
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 freq: 6135.0
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 beacon interval: 100 TUs
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 capability: ESS Privacy SpectrumMgm=
-t RadioMeasure (0x1111)
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 signal: -28.00 dBm
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 last seen: 128 ms ago
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Information elements from Probe Res=
-ponse frame:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 SSID: EE-CN589H
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Supported rates: 6.0* 9.0 12.0* 18.=
-0 24.0* 36.0 48.0 54.0=20
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Country: GB=A0=A0=A0=A0=A0 Environm=
-ent: bogus
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 Extension ID: 201 Regulatory Class: 137 Coverage class: 0 (up to =
-0m)
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Power constraint: 0 dB
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Extended supported rates: 61.5*=20
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 RSN:=A0=A0=A0=A0 * Version: 1
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Group cipher: CCMP
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Pairwise ciphers: CCMP
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Authentication suites: SAE
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Capabilities: 16-PTKSA-RC 1-GTKSA-RC MFP-required MFP-capable (=
-0x00cc)
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 BSS Load:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * station count: 1
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * channel utilisation: 3/255
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * available admission capacity: 0 [*32us]
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 RM enabled capabilities:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 Capabilities: 0x72 0x00 0x00 0x00 0x00
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Neighbor Report
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Beacon Passive Measurem=
-ent
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Beacon Active Measureme=
-nt
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Beacon Table Measuremen=
-t
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 Nonoperating Channel Max Measurement Duration: 0
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 Measurement Pilot Capability: 0
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Supported operating classes:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * current operating class: 137
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Extended capabilities:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Extended Channel Switching
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * BSS Transition
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Multiple BSSID
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * SSID List
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Interworking
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * WNM-Notification
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * Operating Mode Notification
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * TWT Responder Support
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * 80
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * 83
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 802.11u Interworking:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 Network Options: 0x0
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Network Type: 0 (Privat=
-e)
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 802.11u Advertisement:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 Query Response Info: 0x7f
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Query Response Length L=
-imit: 127
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ANQP
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Transmit Power Envelope:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Transmit Power Envelope:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE capabilities:
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 HE MAC Capabilities (0x000d9a181840):
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 +HTC HE Supported
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 TWT Responder
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Dynamic BA Fragementati=
-on Level: 1
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 BSR
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Broadcast TWT
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 OM Control
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Maximum A-MPDU Length E=
-xponent: 3
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 RX Control Frame to Mul=
-tiBSS
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 A-MSDU in A-MPDU
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 UL 2x996-Tone RU
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 OM Control UL MU Data D=
-isable RX
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 HE PHY Capabilities: (0x0c634088fedb831c110c00):
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE40/HE80/5GHz
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE160/5GHz
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Punctured Preamble RX: =
-3
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 LDPC Coding in Payload
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE SU PPDU with 1x HE-L=
-TF and 0.8us GI
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Full Bandwidth UL MU-MI=
-MO
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 DCM Max Constellation R=
-x: 1
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 SU Beamformer
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 MU Beamformer
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Beamformee STS <=3D 80M=
-hz: 7
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Beamformee STS > 80Mhz:=
- 7
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Sounding Dimensions <=
-=3D 80Mhz: 3
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Sounding Dimensions > 8=
-0Mhz: 3
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Ng =3D 16 SU Feedback
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Ng =3D 16 MU Feedback
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Codebook Size SU Feedba=
-ck
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Codebook Size MU Feedba=
-ck
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PPE Threshold Present
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE SU PPDU & HE PPDU 4x=
- HE-LTF 0.8us GI
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Max NC: 3
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE ER SU PPDU 4x HE-LTF=
- 0.8us GI
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HE ER SU PPDU 1x HE-LTF=
- 0.8us GI
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 TX 1024-QAM
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 RX 1024-QAM
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 HE RX MCS and NSS set <=3D 80 MHz
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 1 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 2 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 3 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 4 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 5 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 6 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 7 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 8 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 HE TX MCS and NSS set <=3D 80 MHz
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 1 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 2 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 3 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 4 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 5 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 6 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 7 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 8 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 HE RX MCS and NSS set 160 MHz
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 1 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 2 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 3 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 4 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 5 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 6 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 7 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 8 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 HE TX MCS and NSS set 160 MHz
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 1 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 2 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 3 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 4 streams: MCS 0-11
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 5 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 6 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 7 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 8 streams: not supporte=
-d
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 PPE Threshold 0x7b 0x1c 0xc7 0x71 0x1c 0xc7 0x71 0x1c 0xc7 0x71 0=
-x1c 0xc7 0x71=20
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 WMM:=A0 * Parameter version 1
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * u-APSD
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * BE: CW 15-1023, AIFSN 3
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * BK: CW 15-1023, AIFSN 7
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * VI: CW 7-15, AIFSN 2, TXOP 3008 usec
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 * VO: CW 3-7, AIFSN 2, TXOP 1504 usec
-
-No support for EHT and therefore no MSC 12 or 13 which fits with the dmesg =
-warning about it not being supported, is this a card firmware issue rather =
-than the driver?
-
-I carried out some iperf tests with a server with 2.5gb ethernet to the AP,=
-=20
+9. ATH12K_FLAG_HTC_SUSPEND_COMPLETE - Used for htc suspend case.
+10. ATH12K_FLAG_CE_IRQ_ENABLED
+11. ATH12K_FLAG_EXT_IRQ_ENABLED
 
 
-If I run iperf against the access point with one antenna at H and one at V,=
- approx. 1000mm from the access point I see similar performance on up and d=
-own stream sessions, with single and multiple parallel streams.
+So, these device states are more closely related to the 
+hardware/firmware in which state it is whether firmware crashed after 
+mac80211 register or before and based on it whether driver can process 
+the dp tx/rx or wmi tx/rx as these would be from different context. Not 
+sure, how we will be able to sync among various contexts/threads without 
+these flags, please let me know your thoughts?
 
-The iperf server is connected by 2.5gb ethernet to the access point and tha=
-t has been tested to an aggregate of 3.6bit on wifi 7 using other cards.
 
-openwrt@wifi7-amd:~$ iperf3 -c 192.168.1.168 -p 5002
-Connecting to host 192.168.1.168, port 5002
-[=A0 5] local 192.168.1.144 port 46802 connected to 192.168.1.168 port 5002
-[ ID] Interval=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Transfer=A0=A0=A0=A0 Bitrate=
-=A0=A0=A0=A0=A0=A0=A0=A0 Retr=A0 Cwnd
-[=A0 5]=A0=A0 0.00-1.00=A0=A0 sec=A0=A0 142 MBytes=A0 1.19 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 1.00-2.00=A0=A0 sec=A0=A0 136 MBytes=A0 1.14 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 2.00-3.00=A0=A0 sec=A0=A0 134 MBytes=A0 1.13 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 3.00-4.00=A0=A0 sec=A0=A0 132 MBytes=A0 1.10 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 4.00-5.00=A0=A0 sec=A0=A0 136 MBytes=A0 1.15 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 5.00-6.00=A0=A0 sec=A0=A0 131 MBytes=A0 1.10 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 6.00-7.00=A0=A0 sec=A0=A0 130 MBytes=A0 1.09 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 7.00-8.00=A0=A0 sec=A0=A0 132 MBytes=A0 1.10 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 8.00-9.00=A0=A0 sec=A0=A0 134 MBytes=A0 1.13 Gbits/sec=A0=A0=
-=A0 0=A0=A0 2.63 MBytes
-[=A0 5]=A0=A0 9.00-10.00=A0 sec=A0=A0 132 MBytes=A0 1.11 Gbits/sec=A0=A0=A0=
- 0=A0=A0 2.63 MBytes
-- - - - - - - - - - - - - - - - - - - - - - - - -
-[ ID] Interval=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 Transfer=A0=A0=A0=A0 Bitrate=
-=A0=A0=A0=A0=A0=A0=A0=A0 Retr
-[=A0 5]=A0=A0 0.00-10.00=A0 sec=A0 1.31 GBytes=A0 1.12 Gbits/sec=A0=A0=A0 0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 sender
-[=A0 5]=A0=A0 0.00-10.01=A0 sec=A0 1.31 GBytes=A0 1.12 Gbits/sec=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 receiver
+Now, on the otherhand, we have ath12k_hw_state which is used by mac80211 
+during recovery or driver start or stop.
 
-Happy to run tests as needed to check but need input on what code to use et=
-c.
 
-Should I try another branch, I note that results in this list do show signa=
-l levels so assume there may be a more advanced version.
+In multiple device grouping, say if we have 3 pci devices connected  and 
+grouped, each of them will be probed separately and core_init would be 
+done for each. During core_init, QMI init would be called. So, now 
+device1, device2 and device3 would have invoked the QMI init. Since the 
+QMI handshake happens between host and Q6 processor separately for each 
+device (QMI handshake would be in order for that particular device but 
+is asynchronous between the devices in group), driver would not have 
+control on which device (whether device1/device2/device3) will receive 
+the QMI server arrive event first. Hence, we are using mutex as well as 
+defer mechanism to sync the devices as some of the MLO partner device 
+params has to be filled in QMI host cap. Kindly refer below patchset.
 
-Can I access a more recent firmware build?
+https://patchwork.kernel.org/project/linux-wireless/patch/20240520131409.676931-1-quic_hprem@quicinc.com/
 
-Thanks in advance,
+> What I'm thinking is we should cleanup ath12k_core_start(). Now it's
+> basically asynchronous (ie. qmi.c calls
+> ath12k_core_qmi_firmware_ready()) but if we change it to be synchronous
+> (using completions etc.) I believe we could get rid of lots of these
+> annoying flags. In other words, if ath12k_core_start() returns with zero
+> then the firmware has booted succesfully.
+> 
+Sorry, I could not get your question, because already 
+ath12k_core_start() is called from ath12k_core_qmi_firmware_ready() 
+which means firmware has booted successfully and in core_start we 
+register to mac80211 and enable the irqs.
 
-David Atkins
-
+Thanks,
+Harshitha
 
