@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A996C3DA64
-	for <ath12k@archiver.kernel.org>; Tue,  6 Aug 2024 12:28:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E044FC52D70
+	for <ath12k@archiver.kernel.org>; Tue,  6 Aug 2024 15:55:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DL6JD4J0/c4/ln9lyy3BlO698kTweg8ML3al9nmemHs=; b=4L79EpRtOXo46gyBuBI2pQR8Cl
-	kUZnGtK68QAVogmpOkrEZKXtyUcbOp7c+fr9veDGKDKTiKx0fB86RkOi8fW3zvxj/Yd+eicnyvmzj
-	eFxC/T/4xioi4V4hBtPkk627OHsKRbl6ntCtbgr9riUK5cvx0mWxOwyyrfQSqRxJgY9FK9dKR9mgi
-	TVKEUK+UsMi58/c9afAdtVSsp5fZL/B4LJ9+X9NrdunW1bw/Qwt7SH9ISAnNIS+3514ArvgSp7i9K
-	FqrwkZ0HdnPkPDD2wNsPfXSA3dEN9BL5moKXIw+aVpDud+O/2HmqOXxIj0rk11xUesggrUCzKs0AP
-	YWDXQa4g==;
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=/sv6gYkp7yTjivrZVJtBmBg2T3ZWK+a7WwzkedgCgi4=; b=dQ6dYWU1dYpvFr1DWFkk7mh26s
+	h9DqEheZDSE/75uN5qLXa5z6jqFKaow2f/K4F87NWrStvbipoD0yT1krj63gDETACSI0t/NgIOXuY
+	nsT6yxB2texATISsM0aW3zaZx4a/wUwHsGiwMW2wfksS2KkAYbfXJ/5Who55rbc2UPIRfk8FjELlw
+	2IU67367K9ILeU/Vnpd8a9Fc/Utuy8sPlQ+TWYIx1tjLo0cW+wFxjCzB1YNuSXjlkH2IC3MKlsbOD
+	SsoS3QGO1pRv8eUnxy+lFFhOCSOSgP4pbRuetTkBLFCWePVBtD7fG1ySB3gD6kYyA3FpQ2ACoPVOL
+	9hCIJmaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbJIt-00000001VSb-1ADO
+	id 1sbMXK-00000002FJS-2cuR
 	for ath12k@archiver.kernel.org;
-	Tue, 06 Aug 2024 12:28:39 +0000
+	Tue, 06 Aug 2024 15:55:46 +0000
 Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbJIr-00000001VRd-02Mq
+	id 1sbMXI-00000002FIN-1oUO
 	for ath12k@lists.infradead.org;
-	Tue, 06 Aug 2024 12:28:38 +0000
+	Tue, 06 Aug 2024 15:55:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id CBA3ACE0C72;
-	Tue,  6 Aug 2024 12:28:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 280DAC32786;
-	Tue,  6 Aug 2024 12:28:32 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 4C319CE0CE8;
+	Tue,  6 Aug 2024 15:55:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20337C4AF0D;
+	Tue,  6 Aug 2024 15:55:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722947314;
-	bh=HdTMVRdc12tPj1LHH7gWkcRksixd5PCo1Ix+DBmm/+4=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=JAUK+xEqzffYMK0JpAmf0IiZmXUkA4DKE0Ed5a0/XqTk5Yfo+R59TUIcJ/XfR4w4O
-	 1eyta/Wktf3cPl+SXAgFmJXAlZK0r225qcLDiiQVwDJcpLk6Smb6566pf2CT7JMD6M
-	 lXWa7P+4sRA5Nz2v1HCRYA0rShYxh1ZJ1VN0+INFrGeNNFgb6CDkKGD8RL1EHjlNwr
-	 4aWz/i+/IR5mockfRaBCauxO6lpaHHmqJYKpK36ZFWAT9i9yhbpTUYgyHhOq9NHu1A
-	 j66+kZkz3KLcv8bet3Efh5BMaOOrfREZEeH9POlJx4yKRVsPgT4vbU3bVsVwpN1xXc
-	 ksfXUwk1OhN0A==
+	s=k20201202; t=1722959741;
+	bh=/sv6gYkp7yTjivrZVJtBmBg2T3ZWK+a7WwzkedgCgi4=;
+	h=From:To:Cc:Subject:Date:From;
+	b=AM6gUj4zDo8RBtW/yokd4Wp3CxllTGy0yjxcNIbFloc1CEQc8GSrusZ/bNNJCEZ11
+	 BzxwBuxP3TNzIZ/+i9lNKX25xgFeVpivK4mR4ZZX5NB19E4e+DVlGscpUdHq4lBgBz
+	 w3VuODDqaCYQ8UnNzygR0BIUbn1M1vqk1Wt43pzA7Vmbdmy9HopaQRBKlW9ryvZ/eJ
+	 tp+8FsBCXSU0MUf+PUJA8S5Z9ftkcP7Ub3nOnKai5Tv0AyqI5QTnwmoecJ0KJ45qAW
+	 dkPMhAajKPvKsCjWnqZnE6Swpg0xdW3u8CQIcD/NZQY2mVW44H9ezUHAB0ERXjWt2E
+	 QzamZ+4dVd3bg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Sriram
- R <quic_srirrama@quicinc.com>
-Subject: Re: [PATCH v6 1/3] wifi: ath12k: prepare vif data structure for MLO
- handling
-References: <20240711165511.3100433-1-quic_ramess@quicinc.com>
-	<20240711165511.3100433-2-quic_ramess@quicinc.com>
-Date: Tue, 06 Aug 2024 15:28:31 +0300
-In-Reply-To: <20240711165511.3100433-2-quic_ramess@quicinc.com> (Rameshkumar
-	Sundaram's message of "Thu, 11 Jul 2024 22:25:09 +0530")
-Message-ID: <87plql6djk.fsf@kernel.org>
+To: Stephen Rothwell <sfr@canb.auug.org.au>
+Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,
+    ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+    linux-kernel@vger.kernel.org
+Subject: linux-next: request to include ath.git tree
+Date: Tue, 06 Aug 2024 18:55:38 +0300
+Message-ID: <87ed7163yd.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240806_052837_245395_C2FB1AD3 
-X-CRM114-Status: GOOD (  12.18  )
+X-CRM114-CacheID: sfid-20240806_085544_668007_B0FBCD1E 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,51 +72,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
+Hi Stephen,
 
-> From: Sriram R <quic_srirrama@quicinc.com>
->
-> To prepare the driver for MLO support, split the driver vif
-> data structure to scale for multiple links. This requires changing
-> the use of arvif to per link and not per hw which can now
-> comprise of multiple links.
-> Also since most configurations from mac80211 are done per link, do refactoring
-> of the driver functions to apply these configurations at link level.
+ath.git is a tree for Atheros and Qualcomm Wi-Fi drivers residing under
+drivers/net/wireless/ath/. Jeff and I are the maintainers. Over the
+years multiple people have been requesting including the tree to
+linux-next and finally we are biting the bullet.
 
-Something I noticed while reviewing this patchset:
+So we are requesting to pull two branches from our ath.git tree to linux-next:
 
->  static int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
->  				       struct ieee80211_vif *vif)
->  {
-> -	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
-> +	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
-> +	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-> +	struct ath12k_link_vif *arvif;
->  	int i;
->  
-> -	memset(arvif, 0, sizeof(*arvif));
-> +	mutex_lock(&ah->conf_mutex);
-> +	memset(ahvif, 0, sizeof(*ahvif));
+git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-current
+git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
 
-Here we are we clearing ahvif so ahvif->deflink is NULL.
+for-current feeds the wireless tree and for-next feeds the wireless-next
+tree.
 
-> -	arvif->vif = vif;
-> +	ahvif->ah = ah;
-> +	ahvif->vif = vif;
-> +	arvif = &ahvif->deflink;
+Because our for-next branch is very active one problem with is that the
+chances of having conflicts between the branches is high and that would
+be extra work for you :/ Do you have any suggestions for this? For
+example, should we create temporary merges for you or something like
+that? Just for this reason we do try to keep the number of patches going
+to for-current minimal and only take important fixes.
 
-So here we assign arvif to NULL.
-
-> +	arvif->ahvif = ahvif;
-
-And because arvif is NULL this is a null pointer reference, right? Or am
-I missing something?
-
-I'm still reviewing the patchset, please don't submit a new version
-until I have said that the review is done.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Kalle
 
