@@ -4,91 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02CF8C52D7B
-	for <ath12k@archiver.kernel.org>; Thu,  8 Aug 2024 16:42:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82807C52D7B
+	for <ath12k@archiver.kernel.org>; Fri,  9 Aug 2024 01:59:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TErOO3BhCJh/V9NoDcPUFKZgt/FunBQixzxy79apBUo=; b=GGvYEzEUL7DDjom5CkT9x+caDA
-	3bvYIgUOGxzX4Q/XtAYEsfhFxDX7qNwsGt5JzX/vWwH3//+8QCA1F8wGt+WAkoav9DtevH3VfdF1P
-	SlMKjj0JswPBsfN8A1qlblKGyGTUZSpKWpbPF5U1a1iLMfqUqV34VXB2wY59sUKLIimFMIZrNoTVv
-	DtXjkiLMT4WucTcHBJ3Gy7GksR13ZcloSrBR/UrUeWrc1/aCvwYFezoxYSuy5N2NebykQmF7IWzIp
-	wZeQdVxGBkM2UBeHy6tg11Li1b6gS8/Lqa0gzJDoA/yTD25z8lQfPxtk41ClIGPhV5uC+nvEt0KFK
-	azeMRDuw==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=JsK2lFmtgL+7AkK63XN9CoHNikFvEzeT+OelMzry9Tg=; b=Wc7FKA2WEMBVM6J7aEGawJ9G+p
+	z05jt0oKI0fcexUWci6gGMSEPblXxK6a9NUKcHVyoRCAWJcDZxqh0u3MPnQiw70YrHtUUbXQGbAmD
+	JB8G8uCOJNR3SdFXhYaXJ3eMSsnBYvXtPBxRVWo5QH73wzGTStulxykYEXt2sgbu+TJNf2QeNiRV9
+	DlYrtiT4+rkLmcgAcg4DezoAX4GZ9xjw6YuDOPI+JL7eTc1VRUA7lEx+JeX6Y6gWmUAKaOETcOqiL
+	nXQ7hjXee7hiog/wXQGSMTqfTEYNFsXzyaIIKLxXOQT8HYww7dJxX6v+lE3OpXAXPeruy0v3Y/T6x
+	vQ5F6ECg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sc6Do-00000008yv0-33QN
+	id 1scEuM-0000000A00j-0em8
 	for ath12k@archiver.kernel.org;
-	Thu, 08 Aug 2024 16:42:40 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 09 Aug 2024 01:59:10 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sc6Dm-00000008yuT-0qKR
+	id 1scEuI-00000009zzt-3wrU
 	for ath12k@lists.infradead.org;
-	Thu, 08 Aug 2024 16:42:39 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4788LI45015951;
-	Thu, 8 Aug 2024 16:42:34 GMT
+	Fri, 09 Aug 2024 01:59:08 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4790fsXV021835;
+	Fri, 9 Aug 2024 01:59:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TErOO3BhCJh/V9NoDcPUFKZgt/FunBQixzxy79apBUo=; b=JAgvpV9s/zuiUI/m
-	/W8J/gWD4Z2OhGuLeD6k6pZohlQdQlsfPIcGOX9UZLnlgWxNlPtLIOK2Hw6j1LLE
-	breUKcBKEdGuZFlAsKAfrhIbt7cqC/f7NlUC/mcpPQrHvMaGVYVQxASQVYCXGMLw
-	vMfQTXbdU8sSjbsAGOxqfSlx7cnkNPm1wvMf4apK9hbpvDIGllATu/v1VJbCbd3z
-	abeH/4l5/fSOFW3yQfcXL/n9LfhD0GOE+fSpjKdeLUWEKx9XqMw09gwQ3c3jypY7
-	4q1ONqjB74PpNZBWhEoUxVpqxMrBIpH5wirUIsU3hBxMLf6SC+IrpFFX/0ZjhNAo
-	A0p7jQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40vdupk2g4-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=JsK2lFmtgL+7AkK63XN9Co
+	HNikFvEzeT+OelMzry9Tg=; b=XVLnUUO37cQKipcedjpR1Rqzi1lRhVKRzAeTQv
+	Ss1J9iUfKf3a3x448Uh74ZHz+YSfu6ykIXC6NrXi0O+rny1e/kvEVxdVPEoJkBHz
+	vq//Pp/Q1Xa2J08HCyEsWWrAB1OsuT8iPWHscwSP2cZw4eaQkBukkt9soMcxR8pO
+	m7zt28IpDB5g+399iUbaNJpxdzpKueTpjGM6WWI3kuvmafChxrTEje05ykq4z4n7
+	v48FTIQzTBCH2Z6JCwnlMv0keV0d8szLfT+o0OJHQrRIaskYhJnmO4e/pz+HAVJ6
+	IyB88SxDLfTaxsbM0ME1Szg2S+dy+PFBZuRTeNI76xiKHStg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40vuwat5df-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 08 Aug 2024 16:42:34 +0000 (GMT)
+	Fri, 09 Aug 2024 01:59:02 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 478GgXkD006968
+	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 4791x1vg030227
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 8 Aug 2024 16:42:33 GMT
-Received: from [10.216.6.228] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 8 Aug 2024
- 09:42:31 -0700
-Message-ID: <2b78c227-ef2e-4d98-baf3-762e4f5bd155@quicinc.com>
-Date: Thu, 8 Aug 2024 22:12:26 +0530
+	Fri, 9 Aug 2024 01:59:01 GMT
+Received: from Z2-SFF-G9-MQ.ap.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 8 Aug 2024 18:58:59 -0700
+From: Miaoqing Pan <quic_miaoqing@quicinc.com>
+To: <kvalo@kernel.org>
+CC: <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>,
+        Miaoqing Pan <quic_miaoqing@quicinc.com>
+Subject: [PATCH] wifi: ath12k: fix the stack frame size warning in ath12k_mac_op_hw_scan
+Date: Fri, 9 Aug 2024 09:58:41 +0800
+Message-ID: <20240809015841.2671448-1-quic_miaoqing@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 1/3] wifi: ath12k: prepare vif data structure for MLO
- handling
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        Sriram R
-	<quic_srirrama@quicinc.com>
-References: <20240711165511.3100433-1-quic_ramess@quicinc.com>
- <20240711165511.3100433-2-quic_ramess@quicinc.com>
- <87frrj70nz.fsf@kernel.org> <87sevf2seg.fsf@kernel.org>
-Content-Language: en-US
-From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-In-Reply-To: <87sevf2seg.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: fOLUs39lLBhegDJIMfjyyRBqBiFVXVp4
-X-Proofpoint-GUID: fOLUs39lLBhegDJIMfjyyRBqBiFVXVp4
+X-Proofpoint-ORIG-GUID: nqD8XbVpepE96o3-4bk_np5UcXGbXVAT
+X-Proofpoint-GUID: nqD8XbVpepE96o3-4bk_np5UcXGbXVAT
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-08_17,2024-08-07_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- priorityscore=1501 suspectscore=0 phishscore=0 impostorscore=0 mlxscore=0
- clxscore=1015 mlxlogscore=999 spamscore=0 bulkscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2407110000
- definitions=main-2408080119
+ definitions=2024-08-08_25,2024-08-07_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1011
+ mlxscore=0 phishscore=0 adultscore=0 bulkscore=0 impostorscore=0
+ mlxlogscore=999 suspectscore=0 priorityscore=1501 spamscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2408090013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240808_094238_347176_95972DF9 
-X-CRM114-Status: GOOD (  18.91  )
+X-CRM114-CacheID: sfid-20240808_185907_232556_455E770C 
+X-CRM114-Status: GOOD (  15.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,64 +96,119 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Fix the following W=1 kernel build warning:
 
+drivers/net/wireless/ath/ath12k/mac.c: In function ‘ath12k_mac_op_hw_scan’:
+drivers/net/wireless/ath/ath12k/mac.c:3806:1: warning: the frame size of 1040 bytes is larger than 1024 bytes [-Wframe-larger-than=]
 
-On 8/8/2024 4:27 PM, Kalle Valo wrote:
-> Kalle Valo <kvalo@kernel.org> writes:
-> 
->> Rameshkumar Sundaram <quic_ramess@quicinc.com> writes:
->>
->>> Locking:
->>>   Currently modifications to members of arvif and arsta are protected by ar->conf_mutex
->>>   and it stays as such.
->>>   Now with these hw level structure (ahvif) being introduced, any modifications
->>>   to its members and link objects (i.e., arvifs[] which are dynamically allocated)
->>>   needs to be protected for writing and ah->conf_mutex is used for the same.
->>>   Also, atomic contexts(say WMI events and certain mac_ops) that we currently have in driver
->>>   will not(shouldn't be allowed) do any modifications but can read them and
->>>   rcu_read_lock() is used for the same.
->>
->> Please elaborate more about your locking design. Because of past bad
->> contributions from Qualcomm the bar is really high for adding any new
->> locks. I'm doing the locking analysis right now but it would help a lot
->> if you could provide your own analysis.
->>
-The new ah->conf_mutex is particularly introduced to protect the members 
-and dynamically allocated link objects of ahvif and ahsta 
-(ahvif/sta->links[]) in process context (i.e. between call backs from 
-mac80211 and ath12k's workers)
-The same is protected by rcu in case of atomic contexts(tasklets of WMI 
-and in datapath)
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-The usage ar->conf_mutex remains as such, and replacing ar->conf_mutex 
-with ah->conf_mutex was not considered, as few of the workers(e.g, 
-ath12k_sta_rc_update_wk) rely only on ar lock and wouldn't really need 
-to wait for other ar's to complete the same task.
+Signed-off-by: Miaoqing Pan <quic_miaoqing@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 54 +++++++++++++++------------
+ 1 file changed, 30 insertions(+), 24 deletions(-)
 
->> My first impressions:
->>
->> It's really confusing to have two locks with the same name (conf_mutex
->> in struct ath12k_hw and struct ath12k).
->>
-Makes sense we could rename the new lock to distinguish.
->> struct ath12k_hw already has hw_mutex so I'm even more suspicious about
->> this locking design. That's not explained at all in commit messages.
-> 
-Ah yes, by the time i wrote initial version of the patch hw_mutex wasn't 
-there so missed it, Seems we can use the same lock for this too, will 
-check the feasibility further and update/send v7.
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 8106297f0bc1..37edf9f7c78c 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -3664,7 +3664,7 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+ 	struct ath12k *ar, *prev_ar;
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 	struct cfg80211_scan_request *req = &hw_req->req;
+-	struct ath12k_wmi_scan_req_arg arg = {};
++	struct ath12k_wmi_scan_req_arg *arg = NULL;
+ 	int ret;
+ 	int i;
+ 	bool create = true;
+@@ -3746,42 +3746,47 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+ 	if (ret)
+ 		goto exit;
+ 
+-	ath12k_wmi_start_scan_init(ar, &arg);
+-	arg.vdev_id = arvif->vdev_id;
+-	arg.scan_id = ATH12K_SCAN_ID;
++	arg = kzalloc(sizeof(*arg), GFP_KERNEL);
++	if (!arg) {
++		ret = -ENOMEM;
++		goto exit;
++	}
++
++	ath12k_wmi_start_scan_init(ar, arg);
++	arg->vdev_id = arvif->vdev_id;
++	arg->scan_id = ATH12K_SCAN_ID;
+ 
+ 	if (req->ie_len) {
+-		arg.extraie.ptr = kmemdup(req->ie, req->ie_len, GFP_KERNEL);
+-		if (!arg.extraie.ptr) {
++		arg->extraie.ptr = kmemdup(req->ie, req->ie_len, GFP_KERNEL);
++		if (!arg->extraie.ptr) {
+ 			ret = -ENOMEM;
+ 			goto exit;
+ 		}
+-		arg.extraie.len = req->ie_len;
++		arg->extraie.len = req->ie_len;
+ 	}
+ 
+ 	if (req->n_ssids) {
+-		arg.num_ssids = req->n_ssids;
+-		for (i = 0; i < arg.num_ssids; i++)
+-			arg.ssid[i] = req->ssids[i];
++		arg->num_ssids = req->n_ssids;
++		for (i = 0; i < arg->num_ssids; i++)
++			arg->ssid[i] = req->ssids[i];
+ 	} else {
+-		arg.scan_f_passive = 1;
++		arg->scan_f_passive = 1;
+ 	}
+ 
+ 	if (req->n_channels) {
+-		arg.num_chan = req->n_channels;
+-		arg.chan_list = kcalloc(arg.num_chan, sizeof(*arg.chan_list),
+-					GFP_KERNEL);
+-
+-		if (!arg.chan_list) {
++		arg->num_chan = req->n_channels;
++		arg->chan_list = kcalloc(arg->num_chan, sizeof(*arg->chan_list),
++					 GFP_KERNEL);
++		if (!arg->chan_list) {
+ 			ret = -ENOMEM;
+ 			goto exit;
+ 		}
+ 
+-		for (i = 0; i < arg.num_chan; i++)
+-			arg.chan_list[i] = req->channels[i]->center_freq;
++		for (i = 0; i < arg->num_chan; i++)
++			arg->chan_list[i] = req->channels[i]->center_freq;
+ 	}
+ 
+-	ret = ath12k_start_scan(ar, &arg);
++	ret = ath12k_start_scan(ar, arg);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to start hw scan: %d\n", ret);
+ 		spin_lock_bh(&ar->data_lock);
+@@ -3791,14 +3796,15 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+ 
+ 	/* Add a margin to account for event/command processing */
+ 	ieee80211_queue_delayed_work(ath12k_ar_to_hw(ar), &ar->scan.timeout,
+-				     msecs_to_jiffies(arg.max_scan_time +
++				     msecs_to_jiffies(arg->max_scan_time +
+ 						      ATH12K_MAC_SCAN_TIMEOUT_MSECS));
+ 
+ exit:
+-	kfree(arg.chan_list);
+-
+-	if (req->ie_len)
+-		kfree(arg.extraie.ptr);
++	if (arg) {
++		kfree(arg->chan_list);
++		kfree(arg->extraie.ptr);
++		kfree(arg);
++	}
+ 
+ 	mutex_unlock(&ar->conf_mutex);
+ 
+-- 
+2.25.1
 
-> I didn't get any replies, and my own analysis is still ongoing,
-Sorry, was off for last couple of days and didn't get a chance to check 
-this out.
-  but the
-> more I look at this, the more I feel using two overlapping mutexes is
-> overkill. I'm starting to wonder if we would convert to using
-> wiphy_lock()? That might simplify things significantly. I should have an
-> old patchset doing that stored somewhere.
-> 
-Hmm, i remember usage of wiphy lock globally had lockup situations in 
-ath12k last time around, if we could think of a solution for that i 
-guess we could try to replace ah->conf_mutex with combination for 
-wiphy_lock and rcu.
 
