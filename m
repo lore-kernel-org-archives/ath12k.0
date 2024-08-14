@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E148C3DA4A
-	for <ath12k@archiver.kernel.org>; Wed, 14 Aug 2024 09:44:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C51C3C531DC
+	for <ath12k@archiver.kernel.org>; Wed, 14 Aug 2024 09:44:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XsQmLkCCJ7EGh1Yc1vgDhvoJKL1nGzJzdm896rIsz1s=; b=dkU4tv6GfvD1dy48f9Zw9YDZtH
-	Yx/Vun/DeO1RE/MUC/6jJBELrr51G8pwkqkMDssLgWG6yCQPfMhcz7olkgOSRmRacL4jzV8XTTYxJ
-	iwdlGZygOsE76lK3I7HZzixr75CH/JWauXI5O6DTmzP/rIIOP1Ky1UyipewpM8XB6AeCsj8w0UAxH
-	x+379iGUEzp/aCUKms2j1fbLy3pcc9MMWBg/PeDkYA3w+Lg3o7OV/KtQa3yHiMvUWtFLtMbJ2iwIn
-	0fM37i8UTvCWDeKMnEgKl3fKwpa36qb11o7kibJRALpBiaYByfsfOiG56Dfkp6Qgyt9FheDC78e7a
-	YaxnbAQw==;
+	bh=6CZ3wsDki4Yjq6d7XGf9ovEe9RqWs2nfDi6Xyl1OkuE=; b=Uj+pjKN8Hyn+ck0fQ0XWXbxxUc
+	w3yQ3ke5XgnxlqXOswg85GcsjdA2iopVAbE3qmyAlbEJdePwtOl8DEJtr3rJLuS4jQAzW0nF6R07j
+	Ugaj/SYWv0FVfSuwyB2Ub4bO7fWb4V7MxL8Kk9ADvmTsgSV0O/HPuVmE7rnnm6Vu76qFDwsA7v9DU
+	KrbvYWGLgbBJK6X2f9zFCEdPw8NH3wSYPwoywe3EwP32xugmhmmHDAILrXGcZSyzWSN7k/0+ACCTH
+	LgvwNnu1txPQriubzGXFXQCljUdgWPXfuPMTsWMWctC5rULaSEMSgIM2Bf4ADuKWGg31BtV8a/4Xi
+	dEsOgnZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seAYr-00000006Rkq-00Bd
+	id 1seAYs-00000006Rlr-1ySz
 	for ath12k@archiver.kernel.org;
-	Wed, 14 Aug 2024 09:44:57 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 14 Aug 2024 09:44:58 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seAYo-00000006Ril-3fZo
+	id 1seAYp-00000006Rk4-44Pi
 	for ath12k@lists.infradead.org;
-	Wed, 14 Aug 2024 09:44:56 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47DNFd8w021210;
-	Wed, 14 Aug 2024 09:44:54 GMT
+	Wed, 14 Aug 2024 09:44:57 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47E2clv2016977;
+	Wed, 14 Aug 2024 09:44:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	XsQmLkCCJ7EGh1Yc1vgDhvoJKL1nGzJzdm896rIsz1s=; b=oWudwYOCfrbB5sVq
-	85Yg7oH9XlXTkDONpfhxe3hAP8p0y3C1L5bvcba8XkVnHIRy6FPuy6FLsWNmWz37
-	CNp+kjyBaV2PLcUdm5R54vvGKQ1B3ZIeZNvF0azsPVQnTb6CwNZ0xTVCEyHzz1Jg
-	+SIt95F4XJyKz23PoF3UdvMfkDCJE4o6fM/3JFpaUXYZs2EN5WzXI8WjkjPyrnCy
-	rT9h+916ORPi843pO29j20uJJgSaeXGsAhcgHi3tdY4RwhW1JEuDTIcB+Faf+wiM
-	ITlaUOZLSImX/NmSfAqrtkuwG1AP53FVO6heE011wskK6yPMoAzZBkIm1vKVkl1m
-	rnMGHA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40x1d4jpk0-1
+	6CZ3wsDki4Yjq6d7XGf9ovEe9RqWs2nfDi6Xyl1OkuE=; b=IojmXFl9SbHo7oNk
+	gX3u6KGa4FUzL7aJqX1Xk6VrFw5J6xJW9fkhvhwugvWt5XimhfeoEP2eBZBUDSYm
+	PONl3nZrxHY5y5lciecy3cW1Wl6OAGoDKzpFjzltcZs7CysMjfNfdvzHaiJmvS5X
+	aKXtuk42ocfuDC6eenSVhEne4zK97QR3lDQ9Z1jHwHyxakU8+f8qlqq5TWWQyTZp
+	efutjXedHX0PwaPTkIGJQh8WOO37czYz6Ubigj5wYGevUQGFVISlVlIvBOckcwgN
+	ReyLmIVV5eMSkzBKV2dKt15eVTTC4ZzCV0PKYIf5qp2+EZa1sgWV1w0wvMgbQO+K
+	TJP1aQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 410kywgyr1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 14 Aug 2024 09:44:53 +0000 (GMT)
+	Wed, 14 Aug 2024 09:44:55 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47E9iq7Z017494
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47E9isot010723
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 14 Aug 2024 09:44:52 GMT
+	Wed, 14 Aug 2024 09:44:54 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 14 Aug 2024 02:44:50 -0700
+ 15.2.1544.9; Wed, 14 Aug 2024 02:44:52 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Raj Kumar Bhagat
 	<quic_rajkbhag@quicinc.com>
-Subject: [RFC PATCH 15/18] wifi: ath12k: add support to read board_id from device-tree
-Date: Wed, 14 Aug 2024 15:13:20 +0530
-Message-ID: <20240814094323.3927603-16-quic_rajkbhag@quicinc.com>
+Subject: [RFC PATCH 16/18] wifi: ath12k: convert tasklet to BH workqueue for CE interrupts
+Date: Wed, 14 Aug 2024 15:13:21 +0530
+Message-ID: <20240814094323.3927603-17-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
 References: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
@@ -72,19 +72,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: SAsRXV78RIfxn9y2nu01ClWwHTtLG_30
-X-Proofpoint-GUID: SAsRXV78RIfxn9y2nu01ClWwHTtLG_30
+X-Proofpoint-ORIG-GUID: nT2fBkIlei8ng7udHneMYK64H_SbBArh
+X-Proofpoint-GUID: nT2fBkIlei8ng7udHneMYK64H_SbBArh
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-08-14_07,2024-08-13_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 impostorscore=0
- adultscore=0 phishscore=0 suspectscore=0 mlxscore=0 mlxlogscore=999
- malwarescore=0 bulkscore=0 priorityscore=1501 clxscore=1015
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
+ impostorscore=0 mlxscore=0 phishscore=0 malwarescore=0 clxscore=1015
+ mlxlogscore=984 priorityscore=1501 bulkscore=0 lowpriorityscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2407110000 definitions=main-2408140067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240814_024455_116515_F5F28171 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20240814_024456_038220_4B56CC90 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,54 +99,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, QMI target board_id is read from firmware during QMI
-target capability request. If the board_id is not fused in WiFi
-device, firmware responds with the default board id (0xFF). Due to
-this, "board-2.bin" board data download fails if "board-2.bin" does
-not have board data for the default board id (0xFF).
+Currently in Ath12k, tasklet is used to handle the BH context of CE
+interrupts. However the tasklet is marked deprecated and has some
+design flaws. To replace tasklets, BH workqueue support has been
+added. BH workqueue behaves similarly to regular workqueues except
+that the queued work items are executed in the BH context.
 
-Hence, add support to read board_id from device-tree. If the board_id
-is not fused in WiFi device, use device-tree to read board_id.
+Hence, convert the tasklet to BH workqueue for handling CE interrupts
+in the BH context.
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/qmi.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/ce.h  |  2 +-
+ drivers/net/wireless/ath/ath12k/pci.c | 14 +++++++-------
+ 2 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 7a039659dbec..428d081f722f 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2566,7 +2566,8 @@ static int ath12k_qmi_request_target_cap(struct ath12k_base *ab)
- 	struct qmi_wlanfw_cap_req_msg_v01 req = {};
- 	struct qmi_wlanfw_cap_resp_msg_v01 resp = {};
- 	struct qmi_txn txn;
--	unsigned int board_id = ATH12K_BOARD_ID_DEFAULT;
-+	struct device *dev = ab->dev;
-+	u32 board_id = ATH12K_BOARD_ID_DEFAULT;
- 	int ret = 0;
- 	int r;
- 	int i;
-@@ -2606,9 +2607,13 @@ static int ath12k_qmi_request_target_cap(struct ath12k_base *ab)
+diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
+index 9dd71056e1c5..75c9f8f1f7c6 100644
+--- a/drivers/net/wireless/ath/ath12k/ce.h
++++ b/drivers/net/wireless/ath/ath12k/ce.h
+@@ -159,7 +159,7 @@ struct ath12k_ce_pipe {
+ 	void (*send_cb)(struct ath12k_ce_pipe *pipe);
+ 	void (*recv_cb)(struct ath12k_base *ab, struct sk_buff *skb);
+ 
+-	struct tasklet_struct intr_tq;
++	struct work_struct intr_wq;
+ 	struct ath12k_ce_ring *src_ring;
+ 	struct ath12k_ce_ring *dest_ring;
+ 	struct ath12k_ce_ring *status_ring;
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 0c393bc30f92..9a50d813e9b4 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -425,9 +425,9 @@ static void ath12k_pci_sync_ce_irqs(struct ath12k_base *ab)
  	}
+ }
  
- 	if (resp.board_info_valid)
--		ab->qmi.target.board_id = resp.board_info.board_id;
--	else
--		ab->qmi.target.board_id = board_id;
-+		board_id = resp.board_info.board_id;
-+	if (board_id == ATH12K_BOARD_ID_DEFAULT || ~board_id == 0)
-+		of_property_read_u32(dev->of_node, "qcom,board_id", &board_id);
-+	if (board_id == ATH12K_BOARD_ID_DEFAULT || ~board_id == 0)
-+		ath12k_warn(ab, "unable to read board_id, using default board_id: 0x%x\n",
-+			    board_id);
-+	ab->qmi.target.board_id = board_id;
+-static void ath12k_pci_ce_tasklet(struct tasklet_struct *t)
++static void ath12k_pci_ce_workqueue(struct work_struct *work)
+ {
+-	struct ath12k_ce_pipe *ce_pipe = from_tasklet(ce_pipe, t, intr_tq);
++	struct ath12k_ce_pipe *ce_pipe = from_work(ce_pipe, work, intr_wq);
+ 	int irq_idx = ATH12K_PCI_IRQ_CE0_OFFSET + ce_pipe->pipe_num;
  
- 	if (resp.soc_info_valid)
- 		ab->qmi.target.soc_id = resp.soc_info.soc_id;
+ 	ath12k_ce_per_engine_service(ce_pipe->ab, ce_pipe->pipe_num);
+@@ -449,7 +449,7 @@ static irqreturn_t ath12k_pci_ce_interrupt_handler(int irq, void *arg)
+ 
+ 	disable_irq_nosync(ab->irq_num[irq_idx]);
+ 
+-	tasklet_schedule(&ce_pipe->intr_tq);
++	queue_work(system_bh_wq, &ce_pipe->intr_wq);
+ 
+ 	return IRQ_HANDLED;
+ }
+@@ -675,7 +675,7 @@ static int ath12k_pci_config_irq(struct ath12k_base *ab)
+ 
+ 		irq_idx = ATH12K_PCI_IRQ_CE0_OFFSET + i;
+ 
+-		tasklet_setup(&ce_pipe->intr_tq, ath12k_pci_ce_tasklet);
++		INIT_WORK(&ce_pipe->intr_wq, ath12k_pci_ce_workqueue);
+ 
+ 		ret = request_irq(irq, ath12k_pci_ce_interrupt_handler,
+ 				  ab_pci->irq_flags, irq_name[irq_idx],
+@@ -962,7 +962,7 @@ static void ath12k_pci_aspm_restore(struct ath12k_pci *ab_pci)
+ 						   PCI_EXP_LNKCTL_ASPMC);
+ }
+ 
+-static void ath12k_pci_kill_tasklets(struct ath12k_base *ab)
++static void ath12k_pci_cancel_workqueue(struct ath12k_base *ab)
+ {
+ 	int i;
+ 
+@@ -972,7 +972,7 @@ static void ath12k_pci_kill_tasklets(struct ath12k_base *ab)
+ 		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
+ 			continue;
+ 
+-		tasklet_kill(&ce_pipe->intr_tq);
++		cancel_work_sync(&ce_pipe->intr_wq);
+ 	}
+ }
+ 
+@@ -980,7 +980,7 @@ static void ath12k_pci_ce_irq_disable_sync(struct ath12k_base *ab)
+ {
+ 	ath12k_pci_ce_irqs_disable(ab);
+ 	ath12k_pci_sync_ce_irqs(ab);
+-	ath12k_pci_kill_tasklets(ab);
++	ath12k_pci_cancel_workqueue(ab);
+ }
+ 
+ int ath12k_pci_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
 -- 
 2.34.1
 
