@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 623FDC52D7F
-	for <ath12k@archiver.kernel.org>; Wed, 14 Aug 2024 09:44:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 201DFC3DA4A
+	for <ath12k@archiver.kernel.org>; Wed, 14 Aug 2024 09:44:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ruobBHAS8VjEFB/idSuc+6IADdPnXTQMBprjGttCPHw=; b=MmpIOzn8wbCXoHNe3FfMuHsFM0
-	LqeR6roycbzqHAikhit/J4hClVElogkLyFZi/dWz4SiW61i8OYazAXHIXsnUj+wrlYNaYIiH2GBv+
-	SB8xs1tddpETnOmAHDoMe3YMkTRquHwFkOSmZl6hu+BfXNXvPJc8IHRzrBLj03H1uiR7eOLu8JWJM
-	rFPgXQoAwAL51plZIMHzrqRDaldTy25LQGGEA6FnNqlbbNcsAHCPN+cgMJLubYslxDS8n3S8S82el
-	aldWDesAA47SV50ooV2YRZ7UisaUe4Spz1Qes7sauAuXtHJUee0Qw5y3EZIDByLIkWFMcFNdsBy68
-	DmOxZLWg==;
+	bh=xClKrImUtc44X5iqyTi8E6N/vSHmiTLWDklL03Pd5NA=; b=s02uErG6r/BFhNFixvTrEh4rCU
+	Y0mZOjQm3Fa51cA5n5SfUruvN5FLxFPV6BVKWfu0zgsIhp2CfNkVO0SiWDN0HY2iUaw5avb7Uol2A
+	CUvx4YaZnn948EN4JKyDf9+h13ReACmlZDe5r2/hvZMJcDkOR3xQojbePF1jeCwLhjjFM08aUU/5B
+	IarSK/eJ9gyKXDn0n3zcsl2Lf0bd6WdZbKNShErU3+qCKlqmane78mKfi9xy5dLI1SBGDi9Vn6+06
+	hlqaeePUhbXCG/4ANRk3putiW4T2VGsj2d6kmZmMFvlRONHYt1IdGxfCKKtp/nPNkJ6Dk65r+P0vA
+	eVDiLGRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seAYi-00000006Rds-0T9N
+	id 1seAYj-00000006Rf6-3UwK
 	for ath12k@archiver.kernel.org;
-	Wed, 14 Aug 2024 09:44:48 +0000
+	Wed, 14 Aug 2024 09:44:49 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seAYf-00000006Rc4-26zG
+	id 1seAYh-00000006RdM-2JcF
 	for ath12k@lists.infradead.org;
-	Wed, 14 Aug 2024 09:44:46 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47DNFaeB031044;
-	Wed, 14 Aug 2024 09:44:45 GMT
+	Wed, 14 Aug 2024 09:44:48 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47E2ht6v021402;
+	Wed, 14 Aug 2024 09:44:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ruobBHAS8VjEFB/idSuc+6IADdPnXTQMBprjGttCPHw=; b=EjA4RRqjBafFqiCC
-	st86fJ1dRyqseTzNv7Mx2y5gJVOzMbJ/VED/iE05DQ70sUMKCcyYe/6/BNcfHFFV
-	GuXhjj5IAwZaDb4WPp/vIyBJmwmvjefoltcJv1ZkdVXVV6MCO8hjyDiNQvXxF+s0
-	rJY02e42CQGkwC5+Y+pwIrrdtl5RGGX5l5A8Ux9yuYf2et7Myh5+VQOQysCzNWrG
-	OpsNCrXw9cDJrydo3yw3vBysYyVNgnjaDNW6gcf2ovOq6MMBBdTY+kqY7xliBHa0
-	TWkDYgagolKvcGYmT5C1UrXcny/W+eUIKQJS1AE1i+gGwFyvkbo5mpKdCbrnkBc+
-	rLZt5g==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4103ws3ujg-1
+	xClKrImUtc44X5iqyTi8E6N/vSHmiTLWDklL03Pd5NA=; b=G4Sb9wzCudKldnu6
+	Z696gpQbaHubcC5fhd4QqG7WngA3ExruPcXr8WJVYSRksnPw45mNldAXF5v4YxOt
+	HBNuNH9pAeqQtz9QGgyAC9UIvxDWLOZJG9zJ3M8EEP845d7ldjIG28FjKnQi7L6G
+	0iNjDJLLsDRjHIVUKjhqUi9iU/Y8/rJeqJyfh5xevnwz8xNIrv+iUbqxTqQiMFhZ
+	ajfkYXZMcXvZ01AlLIK3IY+5q5r9JnIvAvUbXU66yOxXL3ll6XX8RinJwTh2LcJn
+	JuL+LsGdqOhOS6Lpkn6lfdrKCQe74ebFg3gAiaZK8PrdQ06LBVUD1HKETSApjycz
+	RD5q0Q==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 410m290y86-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 14 Aug 2024 09:44:44 +0000 (GMT)
+	Wed, 14 Aug 2024 09:44:46 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47E9iifP000785
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47E9ikm5010634
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 14 Aug 2024 09:44:44 GMT
+	Wed, 14 Aug 2024 09:44:46 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 14 Aug 2024 02:44:42 -0700
+ 15.2.1544.9; Wed, 14 Aug 2024 02:44:44 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Balamurugan S
 	<quic_bselvara@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>,
-        "Raj
- Kumar Bhagat" <quic_rajkbhag@quicinc.com>
-Subject: [RFC PATCH 11/18] wifi: ath12k: remap CMEM register space for IPQ5332
-Date: Wed, 14 Aug 2024 15:13:16 +0530
-Message-ID: <20240814094323.3927603-12-quic_rajkbhag@quicinc.com>
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: [RFC PATCH 12/18] wifi: ath12k: fix incorrect CE addresses
+Date: Wed, 14 Aug 2024 15:13:17 +0530
+Message-ID: <20240814094323.3927603-13-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
 References: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
@@ -75,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: T6jWspMdOoJ6s2kpxJYv4UGbvK_QRM8n
-X-Proofpoint-ORIG-GUID: T6jWspMdOoJ6s2kpxJYv4UGbvK_QRM8n
+X-Proofpoint-GUID: oDlZtdq8dnsjgSZnVMjBaofpTQHeE5Q8
+X-Proofpoint-ORIG-GUID: oDlZtdq8dnsjgSZnVMjBaofpTQHeE5Q8
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-08-14_07,2024-08-13_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 malwarescore=0 mlxscore=0 lowpriorityscore=0 spamscore=0
- mlxlogscore=999 bulkscore=0 adultscore=0 priorityscore=1501 clxscore=1015
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 clxscore=1015
+ spamscore=0 priorityscore=1501 mlxscore=0 bulkscore=0 adultscore=0
+ impostorscore=0 phishscore=0 malwarescore=0 mlxlogscore=823
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2407110000 definitions=main-2408140067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240814_024445_574331_64734D3F 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20240814_024447_627293_9873911B 
+X-CRM114-Status: GOOD (  12.80  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,125 +102,38 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Balamurugan S <quic_bselvara@quicinc.com>
 
-In IPQ5332 CMEM region is outside of WCSS register block. Hence, add
-hardware param cmem_remap for IPQ5332. This parameter would be used
-by Ath12k AHB driver to remap the CMEM registers to a new space for
-accessing them.
+In the current ath12k implementation, the CE addresses
+CE_HOST_IE_ADDRESS and CE_HOST_IE_2_ADDRESS are incorrect. These
+values were inherited from ath11k, but ath12k does not currently use
+them.
+
+However, the Ath12k AHB support relies on these addresses. Therefore,
+corrects the CE addresses for ath12k.
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h | 7 +++++++
- drivers/net/wireless/ath/ath12k/hal.h  | 4 ++++
- drivers/net/wireless/ath/ath12k/hw.c   | 9 +++++++++
- drivers/net/wireless/ath/ath12k/hw.h   | 1 +
- 4 files changed, 21 insertions(+)
+ drivers/net/wireless/ath/ath12k/ce.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 6fa13165149d..0493c0c522e3 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -719,6 +719,11 @@ struct ath12k_pdev {
- 	struct mlo_timestamp timestamp;
- };
+diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
+index 1d9542e1c21a..46fd1f49ec4a 100644
+--- a/drivers/net/wireless/ath/ath12k/ce.h
++++ b/drivers/net/wireless/ath/ath12k/ce.h
+@@ -39,8 +39,8 @@
+ #define PIPEDIR_INOUT_H2H	4 /* bidirectional, host to host */
  
-+struct cmem_remap {
-+	u32 base;
-+	u32 size;
-+};
-+
- struct ath12k_fw_pdev {
- 	u32 pdev_id;
- 	u32 phy_id;
-@@ -784,6 +789,8 @@ struct ath12k_base {
- 	void __iomem *mem;
- 	unsigned long mem_len;
+ /* CE address/mask */
+-#define CE_HOST_IE_ADDRESS	0x00A1803C
+-#define CE_HOST_IE_2_ADDRESS	0x00A18040
++#define CE_HOST_IE_ADDRESS	0x75804C
++#define CE_HOST_IE_2_ADDRESS	0x758050
+ #define CE_HOST_IE_3_ADDRESS	CE_HOST_IE_ADDRESS
  
-+	void __iomem *mem_cmem;
-+
- 	struct {
- 		enum ath12k_bus bus;
- 		const struct ath12k_hif_ops *ops;
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 69579f118b81..2184da129966 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -372,6 +372,10 @@ struct ath12k_base;
-  * ath12k_hal_rx_desc_get_err().
-  */
- 
-+#define HAL_IPQ5332_CMEM_REG_BASE	0xC100000
-+#define HAL_IPQ5332_CMEM_SIZE		0x40000
-+#define HAL_IPQ5332_CMEM_BASE		0x100000
-+
- enum hal_srng_ring_id {
- 	HAL_SRNG_RING_ID_REO2SW0 = 0,
- 	HAL_SRNG_RING_ID_REO2SW1,
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 58ffdef3efcb..6be0d15d87ae 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1223,6 +1223,11 @@ static const struct ath12k_hw_hal_params ath12k_hw_hal_params_ipq5332 = {
- 			    HAL_WBM_SW_COOKIE_CONV_CFG_WBM2SW4_EN,
- };
- 
-+static const struct cmem_remap ath12k_cmem_remap_ipq5332 = {
-+	.base = HAL_IPQ5332_CMEM_REG_BASE,
-+	.size = HAL_IPQ5332_CMEM_SIZE,
-+};
-+
- static const struct ath12k_hw_params ath12k_hw_params[] = {
- 	{
- 		.name = "qcn9274 hw1.0",
-@@ -1300,6 +1305,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.supports_aspm = false,
- 
- 		.m3_fw_support = true,
-+		.cmem_remap = NULL,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -1381,6 +1387,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.supports_aspm = true,
- 
- 		.m3_fw_support = true,
-+		.cmem_remap = NULL,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -1458,6 +1465,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.supports_aspm = false,
- 
- 		.m3_fw_support = true,
-+		.cmem_remap = NULL,
- 	},
- 	{
- 		.name = "ipq5332 hw1.0",
-@@ -1531,6 +1539,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.supports_aspm = false,
- 
- 		.m3_fw_support = false,
-+		.cmem_remap = &ath12k_cmem_remap_ipq5332,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 22bd0a91b3e9..e30bec688b74 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -222,6 +222,7 @@ struct ath12k_hw_params {
- 	u32 iova_mask;
- 
- 	bool m3_fw_support;
-+	const struct cmem_remap *cmem_remap;
- };
- 
- struct ath12k_hw_ops {
+ #define CE_HOST_IE_3_SHIFT	0xC
 -- 
 2.34.1
 
