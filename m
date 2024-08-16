@@ -4,72 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A67AC3DA4A
-	for <ath12k@archiver.kernel.org>; Fri, 16 Aug 2024 10:30:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFD48C3DA4A
+	for <ath12k@archiver.kernel.org>; Fri, 16 Aug 2024 11:33:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=W7E6ocmgezyajEfonG+9MdqqGOchPcb53jmvFtvjgaE=; b=bXRxqsUe7s6aImDlXB5DQsVV3b
-	ZITgrrDzLw6qZR97Hs9cWWCVnQ5QtL7aerExNv/iwResI8z0EEk1wS4pjKx9Bs0l+pj/9Ra7XiPtG
-	nYmSU1Lzt9QI+DgbqRA4aonIdGZ3qJsqTzb3tSw950ahOvrk5PEChoZGoR7K6INY2aaVmf1RsbPFW
-	4yVdsC6ZyOAJaw7Um1qU3lWXTs9aRg3MiIZy29BKoojAftKh/K58NbUjeAUBgKeU28F3nYv7ZnoFL
-	mXom3vsji5VhIWEvBjmNc6D8qIjK/Rrb8y2gXjcUXG/xBm3t1fADm2IRmIrkJsUOE8NslYjhLgmVn
-	LsOTqo0A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Date:References:In-Reply-To:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1bktqQayWYWtMAKqssvWuw4y7zQFT4lfZb54Csz+S70=; b=SLVGKEX+AYXTa9tAh2wXHkLM95
+	txwWDjjBDzxuSVOKpE41iPGlo60jzLKR7uvUSScBdumBF5JbGp49Pn3/mY4DU2WmrYOZDs2aqcwSF
+	2y/HNxaWf8ENYDrd7anyWxY0c3bOV3djTrm1gzmWQGwifGQpplqxR1suKlX4Ut3l4XZ1zIBsbrijX
+	yvVm4Q5gRvuYnQQzpFcetUu5vKe/kwqg5OPDq+y3kr3AVw5aUldyZmoEg3XD7Oa2sB8r6ey4zhOjl
+	h2HhjanVIbT9yz7o+LegvXmE5aDRi5+33oyhsoVS5jKTYju5BuI7pVPcSXfAMHha97tJEenDg1ajL
+	eVyYje/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seuEQ-0000000CaxY-0CPr
+	id 1sevCe-0000000Cm7a-2MyK
 	for ath12k@archiver.kernel.org;
-	Fri, 16 Aug 2024 10:30:54 +0000
-Received: from mgamail.intel.com ([192.198.163.9])
+	Fri, 16 Aug 2024 11:33:08 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seuEN-0000000Cax6-3MHD
+	id 1sevCP-0000000Cm6R-2ob1
+	for ath12k@bombadil.infradead.org;
+	Fri, 16 Aug 2024 11:32:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
+	Date:References:In-Reply-To:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=1bktqQayWYWtMAKqssvWuw4y7zQFT4lfZb54Csz+S70=; b=Bt7syVxU1wDak7a5gWPeUNhOPv
+	BBe7own69MDU92DJgYrzjbyIM4OPpVYnYMZN2m+ABUbJlb8urasYQxB1UB9+qTZS8tbjZG9F1CD2j
+	zd65a3J/qs1aG2jlnlu3NfbnZF0+CDKjmN3rVbdq7k+wDKDhM2INdz6jzvhvIYbYv+GkaMejrE2mX
+	EngCM5Alg1dMWuFlpQ5v8EtDLWdVsu82d6st9sgBDr02fI/8rN77sAuAD/6/EpXl5FJLJsqjsTZ2S
+	j0LcFwENm2uh2/nXb6zCWR7zF5K9FaTc5k/zyvzkr+IjA5FSLy3jcPHcHWaZtIMRSTLxlJibXBx8g
+	SHIz+VWQ==;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sevCM-00000008dbq-0yIC
 	for ath12k@lists.infradead.org;
-	Fri, 16 Aug 2024 10:30:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1723804252; x=1755340252;
-  h=date:from:to:cc:subject:message-id;
-  bh=qYqI4sawu4Xb1iSDyV8qzaKpQfnwWeuLEBVA/fdQJXs=;
-  b=AwYXIA6+y+bIl/OMnrLN6qA4juksna0h2tp26sCjHIM5qhM9Tjekg800
-   QMm1/5pNtLGuLUzfgvUsHL2P4btMkKf1GNgIBW090T1M0Ebms+1J5LcUU
-   MetGaKGFVK18FfLomdBzm70JG4Ymj/KsKKMMjBoHNHZWlJkxEnGwa+lIc
-   44Xu4UqVzEr7XWMv0kb/qK50EgvB/9Cy3UUnXMpCyQr6ScGpEFvVWfZPU
-   qyCu45OjBUrX9ljLhP1S0vKC1aNohtqaimb5xxnJXlJEi/L/VEGNqmozl
-   TT3cTE8yeH+MN0XhheyTrKWyCDiCVfugU0zZFbTMSWOLPrnwaLT4Lo4pU
-   Q==;
-X-CSE-ConnectionGUID: g1UCzVVkS8WPUFQPVn2Kmw==
-X-CSE-MsgGUID: 1vSod5q+QE6/SZI0RWdriw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11165"; a="32770321"
-X-IronPort-AV: E=Sophos;i="6.10,151,1719903600"; 
-   d="scan'208";a="32770321"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Aug 2024 03:30:50 -0700
-X-CSE-ConnectionGUID: HXbK7XRbSjSmB6MrhHQEFA==
-X-CSE-MsgGUID: 0JrnTk0XRPaj2Ec8rpzZew==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.10,151,1719903600"; 
-   d="scan'208";a="64581282"
-Received: from lkp-server01.sh.intel.com (HELO 9a732dc145d3) ([10.239.97.150])
-  by orviesa004.jf.intel.com with ESMTP; 16 Aug 2024 03:30:49 -0700
-Received: from kbuild by 9a732dc145d3 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1seuEI-0006Ig-0j;
-	Fri, 16 Aug 2024 10:30:46 +0000
-Date: Fri, 16 Aug 2024 18:29:50 +0800
-From: kernel test robot <lkp@intel.com>
-To: Kalle Valo <quic_kvalo@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- 5e15b8555b2e464426a66f2dda3496b193ef2b76
-Message-ID: <202408161847.JNfac6PE-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Fri, 16 Aug 2024 11:32:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1723807959;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1bktqQayWYWtMAKqssvWuw4y7zQFT4lfZb54Csz+S70=;
+	b=gC1oyIPOJNDuINvU6LB8EoJiG02L4PJfZK/al08Ht5+8FIQbjm77P3Ks7NyPGsDh5lmZO8
+	T55NfztGCE8N7/PBKOVmfxXySQmGQGLEqAtUb1rXfmuhSdWXIn/UVaPdj8o3kGflCOKL83
+	rwEjUrUxlEGr/6lT3iXjQzBx6kDR5yI=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1723807966;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1bktqQayWYWtMAKqssvWuw4y7zQFT4lfZb54Csz+S70=;
+	b=HxK6WbHr50Aw0sbkw4d9VJtBij/2SQp/dU7UFUa4ss0fCX4SRreaiwvoaYfd44L8eVs98l
+	b+bzdj+D9wpSB1Os7o4+xNk82JYkVRY1xStuCNxfSEFjzDv+LRm9Fy2+UAGzZ7HOoAuLSO
+	xwxwLhK89ghK0AIp49L/zDyJpkiXMT8=
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-554-bPMkunF2POGjkjbUlTKDjg-1; Fri, 16 Aug 2024 07:31:04 -0400
+X-MC-Unique: bPMkunF2POGjkjbUlTKDjg-1
+Received: by mail-wr1-f71.google.com with SMTP id ffacd0b85a97d-3719ce5627eso122850f8f.1
+        for <ath12k@lists.infradead.org>; Fri, 16 Aug 2024 04:31:04 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1723807863; x=1724412663;
+        h=mime-version:message-id:date:references:in-reply-to:subject:cc:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1bktqQayWYWtMAKqssvWuw4y7zQFT4lfZb54Csz+S70=;
+        b=Kx1ZyS65ZhjLnq6gf54zY3Bl0cJ5Q6FdZkaNncFCwfUXoxJYcRiE79x0tj11PZCy0S
+         Gq6n3ziAZfqDOiFPPs6EMvTg1vGHQiShVdhZdY5u9jqfrNWXtmSfbdIFlyOei7xdxSbi
+         0lj/qGkesGvVsHNsLWxCGmz45wrmAmSFdtcK3JmJ7+D/iqHLCyccLw+ulzXZWIse+QJ+
+         36/QQ0gGXjNIYREAMXsmTNiy38ixnq7oy+1kY9vvpzB5e2/TY5iehdGDuWaOy2xizIvJ
+         RDgcjGyBiC7EDdMJlAdOwiOsE93EP23RYn+eZeBM+xYdrZ2CU83rgDUX0C90jtJsylVz
+         ARug==
+X-Forwarded-Encrypted: i=1; AJvYcCWUxaMDaICYi3hiUdnUcGnO0ERTCC8hwKHY47dD9OAfh3qEz5tmgOFQupHaGo50NbjTKU6UFwkHxR+30bA4Pen7Uy03Ij1jxJFXeg==
+X-Gm-Message-State: AOJu0Yxl8Zx6hykvwVtX4nSyWLWIyGoSHusTBlVsxEfExCIt0Qvg25J6
+	ji1Pyn2tSphdR1YQ1cYj4ycA/OUAKeJl0qizoZbqv6c9YDlDv7z8/offe8z41ezu5/IId2KLiFD
+	eT+e4iYi6Kag/khiDUJFLIStftdmT1/AbTyzB02IFgcKFWQDWxe9WS6iSEOo=
+X-Received: by 2002:a5d:5110:0:b0:34d:ae98:4e7 with SMTP id ffacd0b85a97d-3719469531fmr1542920f8f.41.1723807863421;
+        Fri, 16 Aug 2024 04:31:03 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGSxwNIUjnAJ8rcUcO6moPhGgsuq5H2/SGprZmmZkrEska1ZBtlsqGNAmMt0ivJktdwkOTeew==
+X-Received: by 2002:a5d:5110:0:b0:34d:ae98:4e7 with SMTP id ffacd0b85a97d-3719469531fmr1542903f8f.41.1723807862844;
+        Fri, 16 Aug 2024 04:31:02 -0700 (PDT)
+Received: from alrua-x1.borgediget.toke.dk ([45.145.92.2])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-429ded7dae0sm74202835e9.44.2024.08.16.04.31.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 16 Aug 2024 04:31:02 -0700 (PDT)
+Received: by alrua-x1.borgediget.toke.dk (Postfix, from userid 1000)
+	id DD75114AE084; Fri, 16 Aug 2024 13:31:01 +0200 (CEST)
+From: Toke =?utf-8?Q?H=C3=B8iland-J=C3=B8rgensen?= <toke@redhat.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>, Johannes Berg
+ <johannes@sipsolutions.net>, "David S. Miller" <davem@davemloft.net>, Eric
+ Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo
+ Abeni <pabeni@redhat.com>, Michael Braun <michael-dev@fami-braun.de>
+Cc: Harsh Kumar Bijlani <hbijlani@qti.qualcomm.com>, Kalyan Tallapragada
+ <ktallapr@qti.qualcomm.com>, Jyothi Chukkapalli
+ <jchukkap@qti.qualcomm.com>, Anirban Sirkhell <anirban@qti.qualcomm.com>,
+ Johannes Berg <johannes.berg@intel.com>, linux-wireless@vger.kernel.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ ath12k@lists.infradead.org, Jeff Johnson <quic_jjohnson@quicinc.com>
+Subject: Re: [PATCH] wifi: mac80211: Fix ieee80211_convert_to_unicast() logic
+In-Reply-To: <20240815-ieee80211_convert_to_unicast-v1-1-648f0c195474@quicinc.com>
+References: <20240815-ieee80211_convert_to_unicast-v1-1-648f0c195474@quicinc.com>
+X-Clacks-Overhead: GNU Terry Pratchett
+Date: Fri, 16 Aug 2024 13:31:01 +0200
+Message-ID: <877ccgd7re.fsf@toke.dk>
+MIME-Version: 1.0
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240816_033051_911199_9EA05854 
-X-CRM114-Status: UNSURE (   3.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240816_123250_490688_9C92FA89 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,128 +132,33 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: 5e15b8555b2e464426a66f2dda3496b193ef2b76  Add localversion-wireless-testing-ath
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
-elapsed time: 1038m
+> The current logic in ieee80211_convert_to_unicast() uses skb_clone()
+> to obtain an skb for each individual destination of a multicast
+> frame, and then updates the destination address in the cloned skb's
+> data buffer before placing that skb on the provided queue.
+>
+> This logic is flawed since skb_clone() shares the same data buffer
+> with the original and the cloned skb, and hence each time the
+> destination address is updated, it overwrites the previous destination
+> address in this shared buffer. As a result, due to the special handing
+> of the first valid destination, all of the skbs will eventually be
+> sent to that first destination.
 
-configs tested: 108
-configs skipped: 1
+Did you actually observe this happen in practice? ieee80211_change_da()
+does an skb_ensure_writable() check on the Ethernet header before
+writing it, so AFAICT it does not, in fact, overwrite the data of the
+original frame.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+> Fix this issue by using skb_copy() instead of skb_clone(). This will
+> result in a duplicate data buffer being allocated for each
+> destination, and hence each skb will be transmitted to the proper
+> destination.
 
-tested configs:
-alpha                             allnoconfig   gcc-13.3.0
-alpha                            allyesconfig   gcc-13.3.0
-arc                              allmodconfig   gcc-13.2.0
-arc                               allnoconfig   gcc-13.2.0
-arc                              allyesconfig   gcc-13.2.0
-arc                   randconfig-001-20240816   gcc-13.2.0
-arc                   randconfig-002-20240816   gcc-13.2.0
-arm                              allmodconfig   gcc-14.1.0
-arm                               allnoconfig   clang-20
-arm                              allyesconfig   gcc-14.1.0
-arm                   randconfig-001-20240816   clang-20
-arm                   randconfig-002-20240816   clang-20
-arm                   randconfig-003-20240816   clang-20
-arm                   randconfig-004-20240816   clang-20
-arm64                            allmodconfig   clang-20
-arm64                             allnoconfig   gcc-14.1.0
-arm64                 randconfig-001-20240816   clang-20
-arm64                 randconfig-002-20240816   clang-20
-arm64                 randconfig-003-20240816   clang-20
-arm64                 randconfig-004-20240816   clang-20
-csky                              allnoconfig   gcc-14.1.0
-csky                  randconfig-001-20240816   gcc-14.1.0
-csky                  randconfig-002-20240816   gcc-14.1.0
-hexagon                          allmodconfig   clang-20
-hexagon                           allnoconfig   clang-20
-hexagon                          allyesconfig   clang-20
-hexagon               randconfig-001-20240816   clang-20
-hexagon               randconfig-002-20240816   clang-20
-i386                             allmodconfig   gcc-12
-i386                              allnoconfig   gcc-12
-i386                             allyesconfig   gcc-12
-i386         buildonly-randconfig-001-20240816   gcc-12
-i386         buildonly-randconfig-002-20240816   clang-18
-i386         buildonly-randconfig-003-20240816   clang-18
-i386         buildonly-randconfig-004-20240816   clang-18
-i386         buildonly-randconfig-005-20240816   gcc-11
-i386         buildonly-randconfig-006-20240816   gcc-12
-i386                                defconfig   clang-18
-i386                  randconfig-001-20240816   clang-18
-i386                  randconfig-002-20240816   gcc-12
-i386                  randconfig-003-20240816   gcc-11
-i386                  randconfig-004-20240816   gcc-12
-i386                  randconfig-005-20240816   clang-18
-i386                  randconfig-006-20240816   gcc-11
-i386                  randconfig-011-20240816   gcc-12
-i386                  randconfig-012-20240816   clang-18
-i386                  randconfig-013-20240816   clang-18
-i386                  randconfig-014-20240816   gcc-12
-i386                  randconfig-015-20240816   gcc-12
-i386                  randconfig-016-20240816   gcc-12
-loongarch                        allmodconfig   gcc-14.1.0
-loongarch                         allnoconfig   gcc-14.1.0
-loongarch             randconfig-001-20240816   gcc-14.1.0
-loongarch             randconfig-002-20240816   gcc-14.1.0
-m68k                             allmodconfig   gcc-14.1.0
-m68k                              allnoconfig   gcc-14.1.0
-m68k                             allyesconfig   gcc-14.1.0
-microblaze                       allmodconfig   gcc-14.1.0
-microblaze                        allnoconfig   gcc-14.1.0
-microblaze                       allyesconfig   gcc-14.1.0
-mips                              allnoconfig   gcc-14.1.0
-nios2                             allnoconfig   gcc-14.1.0
-nios2                 randconfig-001-20240816   gcc-14.1.0
-nios2                 randconfig-002-20240816   gcc-14.1.0
-openrisc                          allnoconfig   gcc-14.1.0
-openrisc                         allyesconfig   gcc-14.1.0
-parisc                           allmodconfig   gcc-14.1.0
-parisc                            allnoconfig   gcc-14.1.0
-parisc                           allyesconfig   gcc-14.1.0
-parisc                randconfig-001-20240816   gcc-14.1.0
-parisc                randconfig-002-20240816   gcc-14.1.0
-powerpc                          allmodconfig   gcc-14.1.0
-powerpc                           allnoconfig   gcc-14.1.0
-powerpc                          allyesconfig   clang-20
-powerpc               randconfig-001-20240816   gcc-14.1.0
-powerpc               randconfig-002-20240816   clang-20
-powerpc               randconfig-003-20240816   gcc-14.1.0
-powerpc64             randconfig-001-20240816   gcc-14.1.0
-powerpc64             randconfig-002-20240816   clang-20
-powerpc64             randconfig-003-20240816   gcc-14.1.0
-riscv                            allmodconfig   clang-20
-riscv                             allnoconfig   gcc-14.1.0
-riscv                            allyesconfig   clang-20
-riscv                 randconfig-001-20240816   clang-20
-riscv                 randconfig-002-20240816   clang-20
-s390                             allmodconfig   clang-20
-s390                              allnoconfig   clang-20
-s390                             allyesconfig   gcc-14.1.0
-s390                  randconfig-001-20240816   gcc-14.1.0
-s390                  randconfig-002-20240816   clang-20
-sh                               allmodconfig   gcc-14.1.0
-sh                                allnoconfig   gcc-14.1.0
-sh                               allyesconfig   gcc-14.1.0
-sh                    randconfig-001-20240816   gcc-14.1.0
-sh                    randconfig-002-20240816   gcc-14.1.0
-sparc                            allmodconfig   gcc-14.1.0
-sparc64               randconfig-001-20240816   gcc-14.1.0
-sparc64               randconfig-002-20240816   gcc-14.1.0
-um                               allmodconfig   clang-20
-um                                allnoconfig   clang-17
-um                               allyesconfig   gcc-12
-um                    randconfig-001-20240816   clang-20
-um                    randconfig-002-20240816   gcc-12
-x86_64                            allnoconfig   clang-18
-x86_64                           allyesconfig   clang-18
-x86_64                              defconfig   gcc-11
-x86_64                          rhel-8.3-rust   clang-18
-xtensa                            allnoconfig   gcc-14.1.0
+Cf the above, it seems this change will just lead to more needless
+copying.
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+-Toke
+
 
