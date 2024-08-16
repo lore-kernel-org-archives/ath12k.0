@@ -4,55 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 494E6C531DC
-	for <ath12k@archiver.kernel.org>; Fri, 16 Aug 2024 05:44:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23768C3DA4A
+	for <ath12k@archiver.kernel.org>; Fri, 16 Aug 2024 05:47:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xrEG0Sk1M+q/Idt1kMeOIfjH139gscrB5ZYH627dQNE=; b=JztQ0HxE5AHymaVD0CiNdG0rKG
-	JcZ85oK5MRkSPGlEZ14cjaQordVsDpXgyvxptiv3kzWNOAAGHSl1Y1zwFdL0hhQ2ENrJTa4bbuRqr
-	FF6B+S02mUSOoyq2UrY2Fdmry/RPj57YPZwvkMwvzoh/6Qc3BTR3bKAzzrkT91QahznDGH5LHqU0/
-	2qKUNPYaJdtlURMnmKaEKIuBlpjucnqnnAul0xR8HqZLDtCxAo70FZTpNbtnjqdrlAk4LGqvc47pj
-	ZnXlkef3OColDdPFZmbuNkl2dV0UBSffsrVWObsIvTfF0XRXC0UAVJkOAQyeBXZk6glXGf0yHy5W4
-	FXYZxzcQ==;
+	bh=JxY1K6LYzcJhhKUk6Qwh9XijDKiMMBPUGJlntGaRTdk=; b=O9goDj6J4zmMT/oey+Vaa5gx2v
+	kyjx1r7Ya+WXCtdwKHAWy+9FRuRiDfSxTeHXEhjQtfDcLjYHhApRkyDcp4Vp4/7TC7i0O0bqa7Qik
+	p9y0RJqc97cIQezeSe6wRUcZV35PGhrGLzUzSEoBhS8lDd3IHUgNeYCrn7PLkz5/MG28lONr+zfVt
+	bl31U50ryI1+uYkHBEM64FaljHUirkSPe2+u3K3gGJ11BMjxdQNIGPIluHRM3eMEs6bmCs8UgLine
+	Ro7sP1Reltm67UE214DwylbVUpem+CDNaBOu70LQq35ELhPT5u6HSgYrL1/vGirXbrDcLxILUqXFK
+	S1VPd/4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sepl9-0000000BsP8-3udv
+	id 1sepoc-0000000Bsh5-3Xzk
 	for ath12k@archiver.kernel.org;
-	Fri, 16 Aug 2024 05:44:23 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Fri, 16 Aug 2024 05:47:58 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sepl7-0000000BsOM-361K
+	id 1sepoa-0000000Bsgf-13Fd
 	for ath12k@lists.infradead.org;
-	Fri, 16 Aug 2024 05:44:23 +0000
+	Fri, 16 Aug 2024 05:47:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0595861F1C;
-	Fri, 16 Aug 2024 05:44:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39CE4C4AF12;
-	Fri, 16 Aug 2024 05:44:18 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 790BE62049;
+	Fri, 16 Aug 2024 05:47:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E9649C32782;
+	Fri, 16 Aug 2024 05:47:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723787060;
-	bh=qi9OoUi7XRpT1E7MS+2WAzcwoACaKXuN/fUb5erHvbk=;
+	s=k20201202; t=1723787275;
+	bh=92a7aBdQFq48BVB/sYWG26/IpMudoG1+WVLK0hzRr10=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lDc1DmHpzjfRBKwG4U6PMhDdcuBXTgSv4QgbP/xF45GmnJSPd48tXzxP0iQG8bbok
-	 Lv/+gVSAeFWLlhz8JCHNqfY2NmyOkYxJf5yFNA8s1EHh/PpxjbPXVsmJUMe3wCtC5e
-	 GJka6ujN3uH0fClWKNSokwONR4aLaJPJgV6NfNfEMSSf/mk6JKZeUNZ3s/41w9rM3F
-	 VsA3VeLocewicpuugJbGN+VVQRXKoWoG7kYu6SDkon/j1wMfFjTbXOnFgSqadOzpVp
-	 2XIbabYL22lG7NzFCPd7NAqB4Y4U8VcvQsn5KHuBCIDdTtND9aYKm0jAZeG5iaZJWO
-	 3J37p0RTXUdVQ==
-Message-ID: <6c56b162-11c8-4798-918b-95a7a8d99a46@kernel.org>
-Date: Fri, 16 Aug 2024 07:44:18 +0200
+	b=t9duNJnVJ7P+DH+b6l+JT8NGnj1S2iEeUGZjJkMf6el9Sme+1InBdtqaR1Bra4LOm
+	 CyYpDdl1cu5Sj962h5bHs3rxy4aJThbevEkrEBKbq8pB6lF2q5OlGZdnmCD49uzsXj
+	 6Iut8iDT7+PiMm4rxmIIFBGxL0zDZGKgOqG0Qw92nZupfn/b14ZgwacVZ0AVbpdWvy
+	 AL0Cp1uT57GLZ5Aaw+03mgRZHiSfXRvyKo2P6jXNUAyVJ/KhIGHDlI364li7xGafz9
+	 pX2AfWObB0RYIwF7RvKJwK9o1THCM+auvpvwfUFk25gIns5gkUjlXR5rQGxFZMnTul
+	 1aTzHb449esDg==
+Message-ID: <68e114c3-0f0b-42a0-9397-69f8bc6d8f5b@kernel.org>
+Date: Fri, 16 Aug 2024 07:47:50 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 02/18] arm64: dts: qcom: add wifi node for IPQ5332
- based RDP441
+Subject: Re: [RFC PATCH 17/18] wifi: ath12k: add AHB driver support for
+ IPQ5332
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+Cc: linux-wireless@vger.kernel.org, Balamurugan S
+ <quic_bselvara@quicinc.com>, P Praneesh <quic_ppranees@quicinc.com>
 References: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
- <20240814094323.3927603-3-quic_rajkbhag@quicinc.com>
+ <20240814094323.3927603-18-quic_rajkbhag@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -98,13 +99,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240814094323.3927603-3-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20240814094323.3927603-18-quic_rajkbhag@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240815_224421_959887_000F8AB9 
-X-CRM114-Status: UNSURE (   7.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240815_224756_692275_767EF9A1 
+X-CRM114-Status: GOOD (  17.12  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,45 +120,194 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 14/08/2024 11:43, Raj Kumar Bhagat wrote:
-> +
-> +	/*                 Default Profile
-> +	 * +============+==============+=====================+
-> +	 * |            |              |                     |
-> +	 * | Region     | Start Offset |       Size          |
-> +	 * |            |              |                     |
-> +	 * +------------+--------------+---------------------+
-> +	 * |            |              |                     |
-> +	 * |            |              |                     |
-> +	 * |            |              |                     |
-> +	 * | WLAN Q6    |  0x4A900000  |       35MB          |
-> +	 * |            |              |                     |
-> +	 * |            |              |                     |
-> +	 * +------------+--------------+---------------------+
-> +	 * | M3 Dump    |  0x4CC00000  |       1MB           |
-> +	 * +============+==============+=====================+
-> +	 * |                                                 |
-> +	 * |                                                 |
-> +	 * |                                                 |
-> +	 * |            Rest of memory for Linux             |
-> +	 * |                                                 |
-> +	 * |                                                 |
-> +	 * |                                                 |
-> +	 * +=================================================+
-> +	 */
-> +
-> +	reserved-memory {
-> +		#address-cells = <2>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +
-> +		q6_region: wcnss@4a900000 {
-> +			no-map;
-> +			reg = <0x0 0x4a900000 0x0 0x02300000>;
-> +		};
-> +
-> +		m3_dump: m3_dump@4cc00000 {
+> From: Balamurugan S <quic_bselvara@quicinc.com>
+> 
+> Add Initial Ath12k AHB driver support for IPQ5332. IPQ5332 is AHB
+> based IEEE802.11be 2 GHz 2x2 WiFi device.
+> 
+> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
+> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+> Co-developed-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> ---
 
-Follow DTS coding style.
+...
+
+
+> +
+> +	of_id = of_match_device(ath12k_ahb_of_match, &pdev->dev);
+> +	if (!of_id) {
+> +		dev_err(&pdev->dev, "Failed to find matching device tree id\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	hw_rev = (enum ath12k_hw_rev)of_id->data;
+
+Just use wrapper to get match data.
+> +
+> +	switch (hw_rev) {
+> +	case ATH12K_HW_IPQ5332_HW10:
+> +		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
+> +		break;
+> +	default:
+> +		dev_err(&pdev->dev, "Unsupported device type %d\n", hw_rev);
+> +		return -EOPNOTSUPP;
+> +	}
+> +
+> +	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "Failed to set 32-bit consistent dma\n");
+> +		return ret;
+> +	}
+> +
+> +	ab = ath12k_core_alloc(&pdev->dev, sizeof(struct ath12k_ahb),
+> +			       ATH12K_BUS_AHB);
+> +	if (!ab) {
+> +		dev_err(&pdev->dev, "failed to allocate ath12k base\n");
+> +		return -ENOMEM;
+> +	}
+> +
+> +	ab->hif.ops = hif_ops;
+> +	ab->pdev = pdev;
+> +	ab->hw_rev = hw_rev;
+> +	platform_set_drvdata(pdev, ab);
+> +
+> +	/* Set fixed_mem_region to true for platforms that support fixed memory
+> +	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
+> +	 * need not to allocate memory.
+> +	 */
+> +	if (!of_property_read_u32(ab->dev->of_node, "memory-region", &addr)) {
+> +		set_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags);
+> +		mem_node = of_find_node_by_name(NULL, "mlo_global_mem_0");
+> +		if (!mem_node)
+> +			ab->mlo_capable_flags = 0;
+> +	}
+> +
+> +	ret = ath12k_core_pre_init(ab);
+> +	if (ret)
+> +		goto err_core_free;
+> +
+> +	ret = ath12k_ahb_resource_init(ab);
+> +	if (ret)
+> +		goto err_core_free;
+> +
+> +	ret = ath12k_hal_srng_init(ab);
+> +	if (ret)
+> +		goto err_resource_deinit;
+> +
+> +	ret = ath12k_ce_alloc_pipes(ab);
+> +	if (ret) {
+> +		ath12k_err(ab, "failed to allocate ce pipes: %d\n", ret);
+> +		goto err_hal_srng_deinit;
+> +	}
+> +
+> +	ath12k_ahb_init_qmi_ce_config(ab);
+> +
+> +	ret = ath12k_core_get_rproc(ab);
+> +	if (ret) {
+> +		ath12k_err(ab, "failed to get rproc: %d\n", ret);
+> +		goto err_ce_free;
+> +	}
+> +
+> +	ret = ath12k_ahb_config_irq(ab);
+> +	if (ret) {
+> +		ath12k_err(ab, "failed to configure irq: %d\n", ret);
+> +		goto err_ce_free;
+> +	}
+> +
+> +	ret = ath12k_core_init(ab);
+> +	if (ret) {
+> +		ath12k_err(ab, "failed to init core: %d\n", ret);
+> +		goto err_ce_free;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_ce_free:
+> +	ath12k_ce_free_pipes(ab);
+> +
+> +err_hal_srng_deinit:
+> +	ath12k_hal_srng_deinit(ab);
+> +
+> +err_resource_deinit:
+> +	ath12k_ahb_resource_deinit(ab);
+> +
+> +err_core_free:
+> +	ath12k_core_free(ab);
+> +	platform_set_drvdata(pdev, NULL);
+> +
+> +	return ret;
+> +}
+> +
+> +static void ath12k_ahb_remove_prepare(struct ath12k_base *ab)
+> +{
+> +	unsigned long left;
+> +
+> +	if (test_bit(ATH12K_FLAG_RECOVERY, &ab->dev_flags)) {
+> +		left = wait_for_completion_timeout(&ab->driver_recovery,
+> +						   ATH12K_AHB_RECOVERY_TIMEOUT);
+> +		if (!left)
+> +			ath12k_warn(ab, "failed to receive recovery response completion\n");
+> +	}
+> +
+> +	set_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags);
+> +	cancel_work_sync(&ab->restart_work);
+> +	cancel_work_sync(&ab->qmi.event_work);
+> +}
+> +
+> +static void ath12k_ahb_free_resources(struct ath12k_base *ab)
+> +{
+> +	struct platform_device *pdev = ab->pdev;
+> +
+> +	ath12k_ahb_free_irq(ab);
+> +	ath12k_hal_srng_deinit(ab);
+> +	ath12k_ce_free_pipes(ab);
+> +	ath12k_ahb_resource_deinit(ab);
+> +	ath12k_core_free(ab);
+> +	platform_set_drvdata(pdev, NULL);
+> +}
+> +
+> +static void ath12k_ahb_remove(struct platform_device *pdev)
+> +{
+> +	struct ath12k_base *ab = platform_get_drvdata(pdev);
+> +
+> +	if (test_bit(ATH12K_FLAG_QMI_FAIL, &ab->dev_flags)) {
+> +		ath12k_ahb_power_down(ab, false);
+> +		ath12k_qmi_deinit_service(ab);
+> +		goto qmi_fail;
+> +	}
+> +
+> +	ath12k_ahb_remove_prepare(ab);
+> +	ath12k_core_deinit(ab);
+> +
+> +qmi_fail:
+> +	ath12k_ahb_free_resources(ab);
+> +}
+> +
+> +static void ath12k_ahb_shutdown(struct platform_device *pdev)
+> +{
+> +	struct ath12k_base *ab = platform_get_drvdata(pdev);
+> +
+> +	/* platform shutdown() & remove() are mutually exclusive.
+> +	 * remove() is invoked during rmmod & shutdown() during
+> +	 * system reboot/shutdown.
+> +	 */
+> +	ath12k_ahb_remove_prepare(ab);
+> +
+> +	if (!(test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags)))
+> +		goto free_resources;
+> +
+> +	ath12k_core_deinit(ab);
+> +
+> +free_resources:
+> +	ath12k_ahb_free_resources(ab);
+
+Why? It's shutdown, we do not care about cleanup. Why do you need this
+shutdown callback in the first place?
 
 
 Best regards,
