@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ADD4C3DA4A
-	for <ath12k@archiver.kernel.org>; Fri, 16 Aug 2024 05:44:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 494E6C531DC
+	for <ath12k@archiver.kernel.org>; Fri, 16 Aug 2024 05:44:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=i6eyuZBsOETn3axXMusPqYFDbuRpUUy4w9q2lZgM2z4=; b=4c7VZzX1dwqKmG5TDfP7hDLLaR
-	B10QcZrqIJOYstW8HIM99GYYCswAfbflK0dOcd0znDTOHRuP2BtnY5CrOXFwEiGQYC+if49wSyZq9
-	sBGk29THEJCsU/ZaQNsiD9xTWifga/aejH/AwHLhYyqCURkYBe2VvIogPUdorTszJ4uimWU5bIoKG
-	zolZqFT2mX3Vw39dqY90uRM8mMydQlIaMG5pogIfysZwsoWkpIYJKNKaUWx8LJPwhSUrx0SrpEBJC
-	t9Sp6P1psjIxoH2tJLNE/5c65DprkorxPbGwYG1QlZKuOj/wkZSZx5/N4URsSnXz94bdeESkDD8Uf
-	X+jELTgA==;
+	bh=xrEG0Sk1M+q/Idt1kMeOIfjH139gscrB5ZYH627dQNE=; b=JztQ0HxE5AHymaVD0CiNdG0rKG
+	JcZ85oK5MRkSPGlEZ14cjaQordVsDpXgyvxptiv3kzWNOAAGHSl1Y1zwFdL0hhQ2ENrJTa4bbuRqr
+	FF6B+S02mUSOoyq2UrY2Fdmry/RPj57YPZwvkMwvzoh/6Qc3BTR3bKAzzrkT91QahznDGH5LHqU0/
+	2qKUNPYaJdtlURMnmKaEKIuBlpjucnqnnAul0xR8HqZLDtCxAo70FZTpNbtnjqdrlAk4LGqvc47pj
+	ZnXlkef3OColDdPFZmbuNkl2dV0UBSffsrVWObsIvTfF0XRXC0UAVJkOAQyeBXZk6glXGf0yHy5W4
+	FXYZxzcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sepl5-0000000BsNc-0nRJ
+	id 1sepl9-0000000BsP8-3udv
 	for ath12k@archiver.kernel.org;
-	Fri, 16 Aug 2024 05:44:19 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	Fri, 16 Aug 2024 05:44:23 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sepl2-0000000BsNA-1ghY
+	id 1sepl7-0000000BsOM-361K
 	for ath12k@lists.infradead.org;
-	Fri, 16 Aug 2024 05:44:17 +0000
+	Fri, 16 Aug 2024 05:44:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id A6C07CE1EC3;
-	Fri, 16 Aug 2024 05:44:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A61DC32782;
-	Fri, 16 Aug 2024 05:44:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0595861F1C;
+	Fri, 16 Aug 2024 05:44:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39CE4C4AF12;
+	Fri, 16 Aug 2024 05:44:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723787053;
-	bh=hsph4kAXV+4AbfHS4AFCIRAyx77EJYF0EIGfOFfk7Sc=;
+	s=k20201202; t=1723787060;
+	bh=qi9OoUi7XRpT1E7MS+2WAzcwoACaKXuN/fUb5erHvbk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lF1yzI1b8mHMC0ox1x6txGkelZ8mmwxHOHu5Txw5iG+uO+0AE0Odd6r6/05B8T7MB
-	 KH1AP+JHEWo65SDeL5EZ3ei6cRJGyIHQcVCdAGyAzb/W1MrIfqbXwENnXPPrQnxbdJ
-	 esegQ9fQb5W+vjSbucTUdH9utK6qIPooHa2LZQp9q5aP4XCR+V3fJUzEgMJlhnMXY3
-	 iQF9unYqgQvv+YP8DFG+uRmbp334+vUwWfqCKRL8uuPMY9zP1bcihfYCVurm/bjocL
-	 /y+3j26Z4sxUOAgdgxhQ56z/yu+Kd3aC6ynrD87gwnQ08VwF2tO7i8hb2UQHzbLrym
-	 VGZzHFujU5dBA==
-Message-ID: <f8cd9c3d-47e1-4709-9334-78e4790acef0@kernel.org>
-Date: Fri, 16 Aug 2024 07:44:09 +0200
+	b=lDc1DmHpzjfRBKwG4U6PMhDdcuBXTgSv4QgbP/xF45GmnJSPd48tXzxP0iQG8bbok
+	 Lv/+gVSAeFWLlhz8JCHNqfY2NmyOkYxJf5yFNA8s1EHh/PpxjbPXVsmJUMe3wCtC5e
+	 GJka6ujN3uH0fClWKNSokwONR4aLaJPJgV6NfNfEMSSf/mk6JKZeUNZ3s/41w9rM3F
+	 VsA3VeLocewicpuugJbGN+VVQRXKoWoG7kYu6SDkon/j1wMfFjTbXOnFgSqadOzpVp
+	 2XIbabYL22lG7NzFCPd7NAqB4Y4U8VcvQsn5KHuBCIDdTtND9aYKm0jAZeG5iaZJWO
+	 3J37p0RTXUdVQ==
+Message-ID: <6c56b162-11c8-4798-918b-95a7a8d99a46@kernel.org>
+Date: Fri, 16 Aug 2024 07:44:18 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 01/18] dt-bindings: net: wireless: describe the ath12k
- AHB module
+Subject: Re: [RFC PATCH 02/18] arm64: dts: qcom: add wifi node for IPQ5332
+ based RDP441
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
 References: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
- <20240814094323.3927603-2-quic_rajkbhag@quicinc.com>
+ <20240814094323.3927603-3-quic_rajkbhag@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -98,12 +98,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240814094323.3927603-2-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20240814094323.3927603-3-quic_rajkbhag@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240815_224416_828816_D172FE7A 
-X-CRM114-Status: UNSURE (   3.88  )
+X-CRM114-CacheID: sfid-20240815_224421_959887_000F8AB9 
+X-CRM114-Status: UNSURE (   7.71  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -120,12 +120,46 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 14/08/2024 11:43, Raj Kumar Bhagat wrote:
-> +  qcom,bdf-addr:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      System RAM memory address reserved for board data.
+> +
+> +	/*                 Default Profile
+> +	 * +============+==============+=====================+
+> +	 * |            |              |                     |
+> +	 * | Region     | Start Offset |       Size          |
+> +	 * |            |              |                     |
+> +	 * +------------+--------------+---------------------+
+> +	 * |            |              |                     |
+> +	 * |            |              |                     |
+> +	 * |            |              |                     |
+> +	 * | WLAN Q6    |  0x4A900000  |       35MB          |
+> +	 * |            |              |                     |
+> +	 * |            |              |                     |
+> +	 * +------------+--------------+---------------------+
+> +	 * | M3 Dump    |  0x4CC00000  |       1MB           |
+> +	 * +============+==============+=====================+
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * |            Rest of memory for Linux             |
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * +=================================================+
+> +	 */
+> +
+> +	reserved-memory {
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		q6_region: wcnss@4a900000 {
+> +			no-map;
+> +			reg = <0x0 0x4a900000 0x0 0x02300000>;
+> +		};
+> +
+> +		m3_dump: m3_dump@4cc00000 {
 
-Also drop. We do not store RAM offsets in DT.
+Follow DTS coding style.
+
 
 Best regards,
 Krzysztof
