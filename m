@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B56EC52D7C
-	for <ath12k@archiver.kernel.org>; Wed, 21 Aug 2024 15:37:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F96DC54722
+	for <ath12k@archiver.kernel.org>; Wed, 21 Aug 2024 15:38:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EoM5RbvqQodHgn5DG78M9HOQXUVDAJu7FCXIy/NFttY=; b=dPM1MpRgFw+ZwXqjoa1HBPyDX2
-	oWv05SsspB/HbgqMXZv63FittGiLjhENPi8T0SgF0ZI8HjWUC0EBSRPTp0vMbM3q19r9IILaG2m8h
-	w61Qe9aJFF4alO3xEvhSZXGf/tbUXkHoQl9bXss9eDiF77KiKMAK3M5giio3svlcV7lEYC4othrTw
-	d0nYda5H9FBTZdgiL3SW6GneISXxwf0svoby9RIuDhDrS7eHQTrus9IqzKZQ6/3Jc68qIlC6Ky5yi
-	K/OJqmyjNyObZAHA+5JAtW4nxm7Hdy/6fFsjaYGR4pjqnAmttklt1ZZJvvIE+37/NxJ94hFtW5+NS
-	No7rDp8g==;
+	bh=hfJbLLvF9DMAmJeOHH0OEjy2hfBwbHscusleBFp9um8=; b=T1qRrKrZX1m9vKwdlBN2RKQ9aj
+	UsIen+bafdF9tnFjWL34KS1sCh6IRREK/2TEtwDmPe3h5VbLHlt3Q7ejPhZBa9uxpWj1rLVp9QMsv
+	tsNjgFdn8p3J24C2CaNWjf6ye/cJrHz0mt0xgslzrE4s4qLGvusLZ2Eb3zFwWYpa6fZ6eqpVGslfB
+	gy/3HOaATwaooyoby0TDQ1g0YxrzKEZtlqhghUUdxhWX+T1cwYMUUlJyRAGrIC9Z1VMf3QTm3SYgF
+	y0eDAQsdPCXKwKk6yAmupzl5cKjGoAwYT4wKCJQbKhTLbPKkp/iBG5smSX3jhYOhi7Aus+wwL+gt6
+	JMTwXiYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgnPK-00000009WZr-3oGO
+	id 1sgnPM-00000009Wag-03BU
 	for ath12k@archiver.kernel.org;
-	Wed, 21 Aug 2024 15:37:58 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 21 Aug 2024 15:38:00 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgnOw-00000009WRR-3mw9
+	id 1sgnOy-00000009WSd-3A5O
 	for ath12k@lists.infradead.org;
-	Wed, 21 Aug 2024 15:37:36 +0000
+	Wed, 21 Aug 2024 15:37:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0579460E88
-	for <ath12k@lists.infradead.org>; Wed, 21 Aug 2024 15:37:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22B83C4AF09;
-	Wed, 21 Aug 2024 15:37:32 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0351661088
+	for <ath12k@lists.infradead.org>; Wed, 21 Aug 2024 15:37:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E14CC32786;
+	Wed, 21 Aug 2024 15:37:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724254653;
-	bh=ZW9dPyWMG1cmVlTQ++lm7oUNqXWUy6HqWXeKCAZrp0k=;
+	s=k20201202; t=1724254655;
+	bh=hc1QliZ+Mc1C+sQ0pZCAmEAaGgIxjNk7WBgmSijLWD0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=pUUTpGO31evVjp35X9JL282GG4TqEke9eMy8jbyMtK/SEneg1jiN8UOpXIsoNFyO1
-	 x4voocrGIbt+8aQPvYoYJHXCKjm4NXUnQxzHemP43J3Kt8Ikv1hOOwbCRAksqGAOM/
-	 C/jiqGNM7sJh+jckMp+GBd/4uvEUt1ItQ8rdpLLnqwIzoGPk/FzKb3S/jgwQnnJZID
-	 19DWKT74n1fP5AosIwjxFwF2FO3i+s5zYKL9Uwh0q7+SzgPmLhVEdGUO9FDw48tO/w
-	 B1TENO0U/0Z0M1dS5ndCezhHR2GN5SS1iJRo8PSOUJT2qwRxvGazkR7YdFbieCqxLy
-	 FpUuytUwEj95Q==
+	b=VnEpLudFFkbuN8hJwwMT0nEkDpH5bQjmsj56rKIWk5QQa5GuFxeBs5nAfoPszaEsn
+	 FQJTT7ZOGaTUFiWG8kzvCuhbPHqUxy6JclHetOCfaOqdw7R/S4jJWE37h/BolL7fPv
+	 FacsIEy94EEwOYC2J4uGQpaXNGMQPX2CpyTu+Fszwc43LGaM/ZbrLVPYjy0XlXmoC2
+	 SPd/hOvlxSHQDnPpcfVRulyPcxMkEH4/BFiSN6k2fHDX+98wJwzdPmbCKDjBVNFxpx
+	 PyaMB3TA8bddX06yRafejjTFIv+SeuZ0b5OW/gT9z4J1us3SUypH0EISbkzZKam+zQ
+	 ooTPSBCHDf0lw==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH RFC 2/4] wifi: ath12k: cleanup unneeded labels
-Date: Wed, 21 Aug 2024 18:37:26 +0300
-Message-Id: <20240821153728.2121600-3-kvalo@kernel.org>
+Subject: [PATCH RFC 4/4] wifi: ath12k: convert struct ath12k_sta::update_wk to use struct wiphy_work
+Date: Wed, 21 Aug 2024 18:37:28 +0300
+Message-Id: <20240821153728.2121600-5-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20240821153728.2121600-1-kvalo@kernel.org>
 References: <20240821153728.2121600-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240821_083735_059236_8B3CE70A 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20240821_083736_957888_94C81BC8 
+X-CRM114-Status: GOOD (  12.86  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,231 +73,97 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Kalle Valo <quic_kvalo@quicinc.com>
 
-After removing the conf_mutex in the previous patch there are no unnecessary
-labels in mac.c. Sparse also warns one instance of it:
-
-drivers/net/wireless/ath/ath12k/mac.c:6635:1: warning: statement expected after label
-
-Remove the labels and instead use directly return.
+As ath12k is now converted to use wiphy lock we can convert
+ath12k_sta_rc_update_wk() to use wiphy_work_queue(). This is just for
+consistency.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 61 ++++++++++-----------------
- 1 file changed, 23 insertions(+), 38 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h |  2 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 17 +++++++++--------
+ 2 files changed, 10 insertions(+), 9 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 7fad2150d9bd..cc28185be650 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -445,7 +445,7 @@ struct ath12k_sta {
+ 	u32 smps;
+ 	enum hal_pn_type pn_type;
+ 
+-	struct work_struct update_wk;
++	struct wiphy_work update_wk;
+ 	struct rate_info txrate;
+ 	struct rate_info last_txrate;
+ 	u64 rx_duration;
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 7bb181092ead..a9d37a59a8c2 100644
+index 80db9004cdd7..8bf7b026f8e4 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1279,24 +1279,23 @@ static int ath12k_mac_config(struct ath12k *ar, u32 changed)
- 		ar->monitor_conf_enabled = conf->flags & IEEE80211_CONF_MONITOR;
- 		if (ar->monitor_conf_enabled) {
- 			if (ar->monitor_vdev_created)
--				goto exit;
-+				return ret;
- 			ret = ath12k_mac_monitor_vdev_create(ar);
- 			if (ret)
--				goto exit;
-+				return ret;
- 			ret = ath12k_mac_monitor_start(ar);
- 			if (ret)
- 				goto err_mon_del;
- 		} else {
- 			if (!ar->monitor_vdev_created)
--				goto exit;
-+				return ret;
- 			ret = ath12k_mac_monitor_stop(ar);
- 			if (ret)
--				goto exit;
-+				return ret;
- 			ath12k_mac_monitor_vdev_delete(ar);
- 		}
- 	}
- 
--exit:
- 	return ret;
- 
- err_mon_del:
-@@ -4716,10 +4715,9 @@ static int ath12k_mac_op_sta_set_txpwr(struct ieee80211_hw *hw,
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to set tx power for station ret: %d\n",
- 			    ret);
--		goto out;
-+		return ret;
- 	}
- 
--out:
- 	return ret;
- }
- 
-@@ -6472,7 +6470,7 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
- 	if (ret) {
- 		ath12k_warn(ab, "failed to create WMI vdev %d: %d\n",
- 			    arvif->vdev_id, ret);
--		goto err;
-+		return ret;
- 	}
- 
- 	ar->num_created_vdevs++;
-@@ -6589,13 +6587,13 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
- 		if (ret) {
- 			ath12k_warn(ar->ab, "failed to delete peer vdev_id %d addr %pM\n",
- 				    arvif->vdev_id, vif->addr);
--			goto err;
-+			return ret;
- 		}
- 
- 		ret = ath12k_wait_for_peer_delete_done(ar, arvif->vdev_id,
- 						       vif->addr);
- 		if (ret)
--			goto err;
-+			return ret;
- 
- 		ar->num_peers--;
- 	}
-@@ -7547,7 +7545,7 @@ static void ath12k_mac_op_change_chanctx(struct ieee80211_hw *hw,
- 	 * switch_vif_chanctx().
- 	 */
- 	if (WARN_ON(changed & IEEE80211_CHANCTX_CHANGE_CHANNEL))
--		goto unlock;
-+		return;
- 
- 	if (changed & IEEE80211_CHANCTX_CHANGE_WIDTH ||
- 	    changed & IEEE80211_CHANCTX_CHANGE_RADAR ||
-@@ -7555,8 +7553,6 @@ static void ath12k_mac_op_change_chanctx(struct ieee80211_hw *hw,
- 		ath12k_mac_update_active_vif_chan(ar, ctx);
- 
- 	/* TODO: Recalc radar detection */
--
--unlock:
- }
- 
- static int ath12k_start_vdev_delay(struct ath12k *ar,
-@@ -7629,21 +7625,18 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
- 	    arvif->vdev_type != WMI_VDEV_TYPE_MONITOR &&
- 	    !ath12k_peer_exist_by_vdev_id(ab, arvif->vdev_id)) {
- 		memcpy(&arvif->chanctx, ctx, sizeof(*ctx));
--		ret = 0;
--		goto out;
-+		return 0;
- 	}
- 
--	if (WARN_ON(arvif->is_started)) {
--		ret = -EBUSY;
--		goto out;
--	}
-+	if (WARN_ON(arvif->is_started))
-+		return -EBUSY;
- 
- 	if (arvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
- 		ret = ath12k_mac_monitor_start(ar);
- 		if (ret)
--			goto out;
-+			return ret;
- 		arvif->is_started = true;
--		goto out;
-+		return ret;
- 	}
- 
- 	ret = ath12k_mac_vdev_start(arvif, ctx);
-@@ -7651,7 +7644,7 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
- 		ath12k_warn(ab, "failed to start vdev %i addr %pM on freq %d: %d\n",
- 			    arvif->vdev_id, vif->addr,
- 			    ctx->def.chan->center_freq, ret);
--		goto out;
-+		return ret;
- 	}
- 
- 	if (arvif->vdev_type != WMI_VDEV_TYPE_MONITOR && ar->monitor_vdev_created)
-@@ -7661,7 +7654,6 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
- 
- 	/* TODO: Setup ps and cts/rts protection */
- 
--out:
- 	return ret;
- }
- 
-@@ -8129,10 +8121,8 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 	ldpc = !!(ar->ht_cap_info & WMI_HT_CAP_LDPC);
- 
- 	sgi = mask->control[band].gi;
--	if (sgi == NL80211_TXRATE_FORCE_LGI) {
--		ret = -EINVAL;
--		goto out;
--	}
-+	if (sgi == NL80211_TXRATE_FORCE_LGI)
-+		return -EINVAL;
- 
- 	/* mac80211 doesn't support sending a fixed HT/VHT MCS alone, rather it
- 	 * requires passing at least one of used basic rates along with them.
-@@ -8148,7 +8138,7 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 		if (ret) {
- 			ath12k_warn(ar->ab, "failed to get single legacy rate for vdev %i: %d\n",
- 				    arvif->vdev_id, ret);
--			goto out;
-+			return ret;
- 		}
- 		ieee80211_iterate_stations_atomic(hw,
- 						  ath12k_mac_disable_peer_fixed_rate,
-@@ -8193,8 +8183,7 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 			 */
- 			ath12k_warn(ar->ab,
- 				    "Setting more than one MCS Value in bitrate mask not supported\n");
--			ret = -EINVAL;
--			goto out;
-+			return -EINVAL;
- 		}
- 
- 		ieee80211_iterate_stations_atomic(hw,
-@@ -8213,7 +8202,6 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 			    arvif->vdev_id, ret);
- 	}
- 
--out:
- 	return ret;
- }
- 
-@@ -8373,7 +8361,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
- 	if (ar->rx_channel == survey->channel)
- 		survey->filled |= SURVEY_INFO_IN_USE;
- 
--exit:
+@@ -4258,9 +4258,9 @@ static int ath12k_station_disassoc(struct ath12k *ar,
  	return 0;
  }
  
-@@ -8525,7 +8512,7 @@ static int ath12k_mac_op_remain_on_channel(struct ieee80211_hw *hw,
+-static void ath12k_sta_rc_update_wk(struct work_struct *wk)
++static void ath12k_sta_rc_update_wk(struct wiphy *wiphy, struct wiphy_work *work)
+ {
+-	struct ath12k *ar;
++	struct ath12k *ar = wiphy_priv(wiphy);
+ 	struct ath12k_vif *arvif;
+ 	struct ath12k_sta *arsta;
+ 	struct ieee80211_sta *sta;
+@@ -4274,10 +4274,11 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
+ 	struct ath12k_wmi_peer_assoc_arg peer_arg;
+ 	enum wmi_phy_mode peer_phymode;
+ 
+-	arsta = container_of(wk, struct ath12k_sta, update_wk);
++	lockdep_assert_wiphy(wiphy);
++
++	arsta = container_of(work, struct ath12k_sta, update_wk);
+ 	sta = container_of((void *)arsta, struct ieee80211_sta, drv_priv);
+ 	arvif = arsta->arvif;
+-	ar = arvif->ar;
+ 
+ 	if (WARN_ON(ath12k_mac_vif_chan(arvif->vif, &def)))
+ 		return;
+@@ -4571,7 +4572,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 	/* cancel must be done outside the mutex to avoid deadlock */
+ 	if ((old_state == IEEE80211_STA_NONE &&
+ 	     new_state == IEEE80211_STA_NOTEXIST))
+-		cancel_work_sync(&arsta->update_wk);
++		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
+ 
+ 	ar = ath12k_get_ar_by_vif(hw, vif);
+ 	if (!ar) {
+@@ -4585,7 +4586,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+ 	    new_state == IEEE80211_STA_NONE) {
+ 		memset(arsta, 0, sizeof(*arsta));
+ 		arsta->arvif = arvif;
+-		INIT_WORK(&arsta->update_wk, ath12k_sta_rc_update_wk);
++		wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
+ 
+ 		ret = ath12k_mac_station_add(ar, vif, sta);
+ 		if (ret)
+@@ -4792,7 +4793,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 
  	spin_unlock_bh(&ar->data_lock);
  
- 	if (ret)
--		goto exit;
-+		return ret;
- 
- 	scan_time_msec = hw->wiphy->max_remain_on_channel_duration * 2;
- 
-@@ -8534,10 +8521,8 @@ static int ath12k_mac_op_remain_on_channel(struct ieee80211_hw *hw,
- 	arg.num_chan = 1;
- 	arg.chan_list = kcalloc(arg.num_chan, sizeof(*arg.chan_list),
- 				GFP_KERNEL);
--	if (!arg.chan_list) {
--		ret = -ENOMEM;
--		goto exit;
--	}
-+	if (!arg.chan_list)
-+		return -ENOMEM;
- 
- 	arg.vdev_id = arvif->vdev_id;
- 	arg.scan_id = ATH12K_SCAN_ID;
-@@ -8575,7 +8560,7 @@ static int ath12k_mac_op_remain_on_channel(struct ieee80211_hw *hw,
- 
- free_chan_list:
- 	kfree(arg.chan_list);
--exit:
-+
- 	return ret;
+-	ieee80211_queue_work(hw, &arsta->update_wk);
++	wiphy_work_queue(hw->wiphy, &arsta->update_wk);
  }
  
+ static int ath12k_conf_tx_uapsd(struct ath12k_vif *arvif,
+@@ -8065,7 +8066,7 @@ static void ath12k_mac_set_bitrate_mask_iter(void *data,
+ 	arsta->changed |= IEEE80211_RC_SUPP_RATES_CHANGED;
+ 	spin_unlock_bh(&ar->data_lock);
+ 
+-	ieee80211_queue_work(ath12k_ar_to_hw(ar), &arsta->update_wk);
++	wiphy_work_queue(ath12k_ar_to_hw(ar)->wiphy, &arsta->update_wk);
+ }
+ 
+ static void ath12k_mac_disable_peer_fixed_rate(void *data,
 -- 
 2.39.2
 
