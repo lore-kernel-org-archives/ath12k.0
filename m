@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2E38C52D7C
-	for <ath12k@archiver.kernel.org>; Fri, 23 Aug 2024 18:10:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9731C5321E
+	for <ath12k@archiver.kernel.org>; Mon, 26 Aug 2024 03:05:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ULYQELyVUyWgHfDeuJJCwuYVuaLB/jXSe8cof8/NKCg=; b=drrX4APn4jG5wKPtrHCdwbfpLG
-	5slXWWr9pH/JaPuXWFNz0bNAXl9sPR2lyHg5/ylPlp3iMe1XKxAEaUjO3iwQsxkh8O3wC18ZH/TdE
-	JJuORUdCDtz8bZm3jzHDeIopqIIKEKytjWilfCY7OkjtHsNPOlL5IyyWJHThnF0JbQXE6Cdd5p4q6
-	t6FCoVVnzzzjLsh9ip/1vK4oE4dscH+TRzHC5l0Wx1PGiMHC2gCvgxLQi/br8jXR6Bnr6dxNmFs0N
-	lAOkpHdUVEp9sTMDg380zJE8sPmDIU6k0zyrgqDsWqnQ3QGzmg8Edn6MwpOskCc1ZmGCB7EYSdeIB
-	5WtSgi2w==;
+	bh=aizQnuz/qzViwPkiNWxfqvDhyuY/B2cAggz0wcFedkU=; b=ITyk6L0+k7zoMeHpln/bhjO63T
+	vn8PuM6D2Ez6jgH3UeiviiEf/OF0TpMay7KaGMFXurmdVVHcCHOILcft2N0xA/yA/RN+PyEE/5QXp
+	dtCzlZtFzN2VkR6svUOh1qU0igtLk42w+BZZrSeVubjA/dALAae2aOhrD74AG8LGNKGbUSInfP6Hs
+	wR77FnBM6OUMH/qEmiVTKdb/uVnWb+hU2PXVhFDYkjZNP+bNBZZpe8hiusl+RfOdEqUKvva8NmSf1
+	+eI9SUoJ222TfADoZoQ4lZAwU3TECCiTuOFlSqYwwQcATW8/CzpyCq1vGR34vftTPsG1ia2JMPoet
+	cEaQm9mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shYjg-00000000FSI-0SLC
+	id 1siQ2P-00000005c95-2DJA
 	for ath12k@archiver.kernel.org;
-	Fri, 23 Aug 2024 18:10:08 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 26 Aug 2024 03:05:01 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shYjd-00000000FRU-2IU1
+	id 1siQ2L-00000005c8M-3tfo
 	for ath12k@lists.infradead.org;
-	Fri, 23 Aug 2024 18:10:07 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47NAbhNr006699;
-	Fri, 23 Aug 2024 18:09:59 GMT
+	Mon, 26 Aug 2024 03:04:59 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47PNdsPH027007;
+	Mon, 26 Aug 2024 03:04:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ULYQELyVUyWgHfDeuJJCwuYVuaLB/jXSe8cof8/NKCg=; b=iuNFuf5vKc+4W+UH
-	yl7J1ef4WDEF4ofV7+IrdeV4dfsZk8KhoDl+rMTtusynM2jnn9xol0cQG62CTWyy
-	VPlbiY+34koZXmkDyjwuIoJrwT4n4izcPgQFaDmtSlWpu/dgLRHkb04NvHtfXPkT
-	73ssfNwdepgkFFupA4gnGRLCL3mJNJncS3Ry8QwoDdRVbV0AU51LJB0cOXp1mZgf
-	5aP4pkfX3vuCPAoJAfAjU3SJhvvQ4anlSQHDYJeKc54EFAYMa71FI8rBKgFIWom1
-	71cdiRrgfJa2g21YHJW2RDtT1ktIzaew6FAWgg9rI0Swg+Zj5jY02YRriJVgAlwa
-	9mt7FA==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 415bkwgsbt-1
+	aizQnuz/qzViwPkiNWxfqvDhyuY/B2cAggz0wcFedkU=; b=PW4Z4JtHyi891lXn
+	Cd1oWAjES0EpLhKS32XYlAxOPxForjC8/VUrVuDydKde/XR3Q7RkDRJbBVq6g6ud
+	eaJUbghVvuxt2+JvNFZ0qf9xvVbwHFttTJt8J+uyScwR3iAuJMuW6faUtK9P904H
+	JXCAefViEPhqNezUpRQPX5zKTwDBU1jJ7yDmdu7eVDbSZEpdVLhmTt/rlsc0t9Cv
+	04G5NBS7ecxevv3t6sRv797ZTq8yXOuvYN65wiZ6qCkWFNkiZlXUtXFBhlE7ag1v
+	Zv5YHB0uNyySWrVemde1OcEnkXQPJ5Zm8Kje7/nGxNtWlTPDtwSls0PW8F11QT7J
+	DvhQQg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41796kt9sg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Aug 2024 18:09:59 +0000 (GMT)
+	Mon, 26 Aug 2024 03:04:46 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47NI9wSF029057
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47Q34jo5009812
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Aug 2024 18:09:58 GMT
-Received: from [10.111.180.26] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Mon, 26 Aug 2024 03:04:45 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 23 Aug
- 2024 11:09:58 -0700
-Message-ID: <2890dfef-bd0a-41df-b269-72bccead2046@quicinc.com>
-Date: Fri, 23 Aug 2024 11:09:57 -0700
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 25 Aug
+ 2024 20:04:43 -0700
+Message-ID: <d3ceaead-5619-4413-acce-64567c08fb27@quicinc.com>
+Date: Mon, 26 Aug 2024 11:04:41 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 1/3] wifi: ath11k: Set IRQ affinity hint after requesting
@@ -62,33 +62,32 @@ Subject: Re: [PATCH 1/3] wifi: ath11k: Set IRQ affinity hint after requesting
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
         <kvalo@kernel.org>, <jjohnson@kernel.org>
 CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>,
-        Baochen Qiang <quic_bqiang@quicinc.com>
+        <linux-kernel@vger.kernel.org>
 References: <20240823155502.57333-1-manivannan.sadhasivam@linaro.org>
  <20240823155502.57333-2-manivannan.sadhasivam@linaro.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
 Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
 In-Reply-To: <20240823155502.57333-2-manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ROxrMKPjdxDr5nLfShA7QOMwArct1_Bv
-X-Proofpoint-GUID: ROxrMKPjdxDr5nLfShA7QOMwArct1_Bv
+X-Proofpoint-GUID: l7ApslopMnCS61v-ZRsFfZUBR7eAYbFx
+X-Proofpoint-ORIG-GUID: l7ApslopMnCS61v-ZRsFfZUBR7eAYbFx
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-23_14,2024-08-22_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
- mlxscore=0 mlxlogscore=999 bulkscore=0 malwarescore=0 priorityscore=1501
- adultscore=0 phishscore=0 impostorscore=0 lowpriorityscore=0 clxscore=1015
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2407110000
- definitions=main-2408230134
+ definitions=2024-08-25_20,2024-08-23_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ malwarescore=0 impostorscore=0 phishscore=0 adultscore=0
+ priorityscore=1501 lowpriorityscore=0 suspectscore=0 bulkscore=0
+ spamscore=0 clxscore=1011 mlxscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2407110000 definitions=main-2408260023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240823_111005_705637_3003D789 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20240825_200458_217044_7C11C782 
+X-CRM114-Status: GOOD (  25.54  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,7 +102,9 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/23/2024 8:55 AM, Manivannan Sadhasivam wrote:
+
+
+On 8/23/2024 11:55 PM, Manivannan Sadhasivam wrote:
 > If a shared IRQ is used by the driver due to platform limitation, then the
 > IRQ affinity hint is set right after the allocation of IRQ vectors in
 > ath11k_pci_alloc_msi(). This does no harm unless one of the functions
@@ -141,15 +142,6 @@ On 8/23/2024 8:55 AM, Manivannan Sadhasivam wrote:
 > [   30.081017] x5 : 0000000000000030 x4 : ffff646302b13580 x3 : ffff646301431c98
 > [   30.088339] x2 : 0000000000200880 x1 : ffff646301431c00 x0 : ffffd8d8f2b2c1b8
 > [   30.095662] Call trace:
-
-refer to:
-https://www.kernel.org/doc/html/latest/process/submitting-patches.html#backtraces-in-commit-messages
-
-per that guidance can we remove the "distracting information like timestamps, module lists, register and stack dumps"
-
-removing the module list will fix the checkpatch issue:
-WARNING:TYPO_SPELLING: 'fo' may be misspelled - perhaps 'of'?
-
 > [   30.098183]  free_irq+0x278/0x29c
 > [   30.101595]  ath11k_pcic_free_irq+0x70/0x10c [ath11k]
 > [   30.106800]  ath11k_pci_probe+0x800/0x820 [ath11k_pci]
@@ -185,12 +177,84 @@ WARNING:TYPO_SPELLING: 'fo' may be misspelled - perhaps 'of'?
 > So to fix this, let's set the IRQ affinity hint after requesting all the
 > shared IRQ. This will make sure that the affinity hint gets cleared in the
 > error path before freeing the IRQ.
+if you check 39564b475ac5 ("wifi: ath11k: fix boot failure with one MSI vector") you would see that the hint is set before requesting any IRQ for a purpose.
+
 > 
 > Tested-on: QCA6390 hw2.0 PCI WLAN.HST.1.0.1-05266-QCAHSTSWPLZ_V2_TO_X86-1
 > 
 > Cc: Baochen Qiang <quic_bqiang@quicinc.com>
 > Fixes: e94b07493da3 ("ath11k: Set IRQ affinity to CPU0 in case of one MSI vector")
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-
-Actual patch LGTM but I want Baochen to give a Reviewed-by before I ack
+> ---
+>  drivers/net/wireless/ath/ath11k/pci.c | 24 ++++++++++++------------
+>  1 file changed, 12 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath11k/pci.c b/drivers/net/wireless/ath/ath11k/pci.c
+> index 8d63b84d1261..0c22e18e65c7 100644
+> --- a/drivers/net/wireless/ath/ath11k/pci.c
+> +++ b/drivers/net/wireless/ath/ath11k/pci.c
+> @@ -886,16 +886,10 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
+>  	if (ret)
+>  		goto err_pci_disable_msi;
+>  
+> -	ret = ath11k_pci_set_irq_affinity_hint(ab_pci, cpumask_of(0));
+> -	if (ret) {
+> -		ath11k_err(ab, "failed to set irq affinity %d\n", ret);
+> -		goto err_pci_disable_msi;
+> -	}
+> -
+>  	ret = ath11k_mhi_register(ab_pci);
+>  	if (ret) {
+>  		ath11k_err(ab, "failed to register mhi: %d\n", ret);
+> -		goto err_irq_affinity_cleanup;
+> +		goto err_pci_disable_msi;
+>  	}
+>  
+>  	ret = ath11k_hal_srng_init(ab);
+> @@ -916,6 +910,12 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
+>  		goto err_ce_free;
+>  	}
+>  
+> +	ret = ath11k_pci_set_irq_affinity_hint(ab_pci, cpumask_of(0));
+> +	if (ret) {
+> +		ath11k_err(ab, "failed to set irq affinity %d\n", ret);
+> +		goto err_free_irq;
+> +	}
+> +
+>  	/* kernel may allocate a dummy vector before request_irq and
+>  	 * then allocate a real vector when request_irq is called.
+>  	 * So get msi_data here again to avoid spurious interrupt
+> @@ -924,17 +924,20 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
+>  	ret = ath11k_pci_config_msi_data(ab_pci);
+>  	if (ret) {
+>  		ath11k_err(ab, "failed to config msi_data: %d\n", ret);
+> -		goto err_free_irq;
+> +		goto err_irq_affinity_cleanup;
+>  	}
+>  
+>  	ret = ath11k_core_init(ab);
+>  	if (ret) {
+>  		ath11k_err(ab, "failed to init core: %d\n", ret);
+> -		goto err_free_irq;
+> +		goto err_irq_affinity_cleanup;
+>  	}
+>  	ath11k_qmi_fwreset_from_cold_boot(ab);
+>  	return 0;
+>  
+> +err_irq_affinity_cleanup:
+> +	ath11k_pci_set_irq_affinity_hint(ab_pci, NULL);
+> +
+>  err_free_irq:
+>  	ath11k_pcic_free_irq(ab);
+>  
+> @@ -947,9 +950,6 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
+>  err_mhi_unregister:
+>  	ath11k_mhi_unregister(ab_pci);
+>  
+> -err_irq_affinity_cleanup:
+> -	ath11k_pci_set_irq_affinity_hint(ab_pci, NULL);
+> -
+>  err_pci_disable_msi:
+>  	ath11k_pci_free_msi(ab_pci);
+>  
 
