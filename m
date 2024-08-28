@@ -4,64 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 369A3C5320E
-	for <ath12k@archiver.kernel.org>; Tue, 27 Aug 2024 07:26:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D636CC5AE5A
+	for <ath12k@archiver.kernel.org>; Wed, 28 Aug 2024 14:04:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=R5vvbYmxp5hwEF1nbOL23vruQUfxpseVZhywwx1V2Bw=; b=zcDGNkXnE3IVF/ShdBnCATad3I
-	KUlU+E70/apggMt5yf8uZDJlnMTsfnkQikw3TcTJLee+eYyqqOLTwD8iAHYueN+oiYio/pjdaB0WW
-	mT8/h+g/49rdOpiuq8RPArcoqdAKdpav96ydK74dxFYqFrDyWp6tfyhODVc83V5gUTA5u2PYtfD1I
-	8ThOv1xj2kMIMxA3DX/EHqGW64YPgmiqqJ5OYcsmkXFLqCJ6Vo2AqwfK3GBSWjRzMB+9OyxEEi77S
-	yXxqeyYeHJE8Yvj45tusKY3Y42wcq8ESRFNCclhQADT1q9lR+CLj3k4mHVJtkb6KbzT6c6ANFOMg/
-	29ilmbsA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Cc:
+	Message-Id:Date:Content-Type:Content-Transfer-Encoding:Mime-Version:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=lQM9MIZLBikEi8rsEgQZhLNDSikGXn5E7ngG5ZQC2gk=; b=aMgt5LtEj/rrhE2HXM7JPTcHJy
+	qzhsuvL3In8oZCbc40ce65MNOtbfRQphVHrp6adAnTTglSDNVZdByydiF+WC0xv6GjnWTqOFBKquM
+	AQlKSqYb20R9wXcT3fhUuGhZHflWlLxRUxNWFIJv8tHVyEGwZ32CzLoOceoZ68zcFespxQa25UPVA
+	jkOwCIMQ+IwGBmruv4c3zYJGvP6tcoeZbdECf0oGMe5Szv2PW8KUwUODBYv9LviXq4dEi9yfu1MIm
+	lAZ7FZ1PxDe2p1+BKxkmaGLlI11QMWnD/6wgsc3hYtlfrnEeVMCXn8OtYtaywKfEDFQ/oNvZEXb2i
+	7NadhPcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siqaW-0000000ACfb-3Qp5
+	id 1sjJHP-0000000Fej4-2Pf8
 	for ath12k@archiver.kernel.org;
-	Tue, 27 Aug 2024 07:26:00 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Wed, 28 Aug 2024 14:04:11 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siqaT-0000000ACeb-364y
+	id 1sjJHM-0000000Feh9-3Eiv
 	for ath12k@lists.infradead.org;
-	Tue, 27 Aug 2024 07:25:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 1D416A41618;
-	Tue, 27 Aug 2024 07:25:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7B09C8B7A0;
-	Tue, 27 Aug 2024 07:25:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724743556;
-	bh=UxIqPjbE7yc2BSiMKNN58LGK55SZ+G7dzpy1yF5nK6Y=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=pp29kis8SwjoE4Rz3yn4HB7huYcr9vqqp9T+mr/VobH5QLCCgLZ3+OiZm7KWO7q1Z
-	 lxsKOOzQKMEng9/GVjHj0C5+J1MRLhL9jsRi+7cdGnR7sIAeqyz67Dj8bEKWOdnc9k
-	 saXRXR9ygB+ULqVKF8P3+xbb3BiguJWFJWAyTYSDCi9YMg+zgYdqwbqavc+ODNSk7t
-	 v8tdKoGydOeLNHGL+7e/3E0kR2eFZN4cqby7Z50NY006hscbjfO986CarBGqmLCTYo
-	 TU+0dgsU5Pistq/lxmPi4Fm/M+991yG6zCTPrYtUvTeVdSGAPZKz/hrIphvtz8nKDl
-	 fsAtpyhh8Ss0A==
-From: Kalle Valo <kvalo@kernel.org>
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 1/3] wifi: ath12k: Introduce iface combination cleanup
- helper
-References: <20240814103423.3980958-2-quic_periyasa@quicinc.com>
-	<172434561175.2469785.10367608474646125650.kvalo@kernel.org>
-	<68bf6f43-d851-f2a5-54db-61538cfb46ce@quicinc.com>
-Date: Tue, 27 Aug 2024 10:25:53 +0300
-In-Reply-To: <68bf6f43-d851-f2a5-54db-61538cfb46ce@quicinc.com> (Karthikeyan
-	Periyasamy's message of "Mon, 26 Aug 2024 11:34:16 +0530")
-Message-ID: <87frqqv33y.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+	Wed, 28 Aug 2024 14:04:10 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-5334c018913so6531131e87.0
+        for <ath12k@lists.infradead.org>; Wed, 28 Aug 2024 07:04:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1724853846; x=1725458646; darn=lists.infradead.org;
+        h=to:from:subject:cc:message-id:date:content-transfer-encoding
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=lQM9MIZLBikEi8rsEgQZhLNDSikGXn5E7ngG5ZQC2gk=;
+        b=gyzB5GO3LXCEAsY+/D1TxHCUFfnCFCkXTzoozWCf6NPR8J9IhSTXgkHX+aw8HD6KM0
+         KPDognlqHIzMROZP/QFD1eLXxESisFta7HOH5zfGpcY2DzmkWv7lJ3WGyGyjQ9S9SFk1
+         WDqZ7U6EGnVQgupFAQ0h/cxjEzoCxsiq1loQHH7A1W/FOAdq7o9M/PGP0/CBJOZ9tu3V
+         5kSu8hWLN+Ec/4Tw/pDE8KEJ0VZvkZcxZWJfl50LqHw2h6zZJQbQAHdLDmmCrAbVUcWN
+         IgbVmAJ7qC5iPZJ++TzJjdIl1H8QOv43iQv3iw74n7PaBCKsIhZUKo77IEL3sQPhtpku
+         yZZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724853846; x=1725458646;
+        h=to:from:subject:cc:message-id:date:content-transfer-encoding
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=lQM9MIZLBikEi8rsEgQZhLNDSikGXn5E7ngG5ZQC2gk=;
+        b=scOCjj99zWcCBKvP/Cc7dVgTvJs3P/OviSAzLOmBpSyMx67ZlCZ4PVLDDpQkUwll4U
+         otg8bJ8dtoovNbEH1bOz2zBtpkpRpjS9iNa2gCWHSsKjsWpOS9lqLPSght7+gAj/hRON
+         quzFRzgGE1tmn68yzwjUwspsZqUCCjOdug5WFv2gzh7ILQlQiw7xsl5qD2zHudptThIy
+         reYLQHPYulYg1yzNb+TWCsIM0HXOV/VtxM/g0EGf1erp2ewtTU4fIBOxYGy/Xu6qIksE
+         yIOMBVpyA5kXrkSGN4vjBdb7hgQMuJ+04ZAPQXuOgFj4LJ48yoyKid37nwGTdMV61zuf
+         zMxg==
+X-Gm-Message-State: AOJu0YyPELd2QcV9gYLhCPsJ3HwTMwi9JM0Sw9UUKYq6ApNvrPVC8CFL
+	8FOcf7A9RAoy8o5Q7MppvyQd6BC/3j1aT2hjnPODQ/iuTd5OVuEa6vCMSQ==
+X-Google-Smtp-Source: AGHT+IG1zIY2W0UY//oOX6N8Y8EePo8XFBLow6H+HH79MACjTiplR027L2DVYkBgh3texGrLCyVEzA==
+X-Received: by 2002:a05:6512:ad2:b0:52c:e3bd:c70b with SMTP id 2adb3069b0e04-5343882e2ecmr10004181e87.1.1724853845264;
+        Wed, 28 Aug 2024 07:04:05 -0700 (PDT)
+Received: from localhost ([2a01:e0a:0:2100:21ef:6d50:511c:bd79])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-42ba63abea3sm23047875e9.28.2024.08.28.07.04.04
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 28 Aug 2024 07:04:04 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Wed, 28 Aug 2024 16:04:04 +0200
+Message-Id: <D3RLNOZ847AF.2I0ITYUMJNK52@gmail.com>
+Cc: <repk@triplefau.lt>
+Subject: Wrong place for rxbaddr/txbaddr to be in struct ath12k_spt_info
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: <ath12k@lists.infradead.org>
+X-Mailer: aerc 0.18.2-0-ge037c095a049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240827_002557_858876_53BADE9A 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240828_070408_833802_5D82D4CB 
+X-CRM114-Status: GOOD (  13.50  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,32 +89,138 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
+Hi there,
 
-> On 8/22/2024 10:23 PM, Kalle Valo wrote:
->> Karthikeyan Periyasamy <quic_periyasa@quicinc.com> wrote:
->> 
->>> Introduce a cleanup helper function to avoid redundant code for iface
->>> combination cleanup. Remove the cleanup code from
->>> ath12k_mac_hw_unregister() and ath12k_mac_hw_register() and replace it
->>> with new cleanup helper function.
->>>
->>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00188-QCAHKSWPL_SILICONZ-1
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00183-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
->>>
->>> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
->>> Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
->>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->> I'll drop this patchset because of MLO cleanup.
->
-> This change not related to MLO dependency. Its a basic to group
-> multiple radio under a wiphy.
+Looking into a problem we have on an ath12k platform at work with a colleag=
+ue,
+I stumbled upon something that seems weird.
 
-Ok, but it's still good to look at this together with rest of the MLO patches.
+The interresting parts of dh.h:
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+struct ath12k_spt_info {
+	dma_addr_t paddr;
+	u64 *vaddr;
+	struct ath12k_rx_desc_info *rxbaddr[ATH12K_NUM_RX_SPT_PAGES];
+	struct ath12k_tx_desc_info *txbaddr[ATH12K_NUM_TX_SPT_PAGES];
+};
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-https://docs.kernel.org/process/submitting-patches.html
+...
+
+struct ath12k_dp {
+	struct ath12k_base *ab;
+	...
+	struct ath12k_spt_info *spt_info;
+	u32 num_spt_pages;
+	u32 rx_ppt_base;
+	...
+};
+
+In dp.c we have ath12k_dp_cc_desc_init that allocs arrays of ath12k_rx_desc=
+_info
+stores the addresses of the individual desc in each of the spt entries usin=
+g
+ath12k_dp_cc_get_desc_addr_ptr(), but we also save the address of the whole
+array for later cleanup by dp->spt_info->rxbaddr[i] =3D &rx_descs[0];
+
+Surely this is wrong, with the current code we always use the first element=
+ of
+dp->spt_info to store all the descriptors arrays. And the same goes for txb=
+addr.
+I mean it works, but we loose memory for no purpose & make this part of the
+driver harder to understand.
+
+It should be something like:
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/at=
+h/ath12k/dp.c
+index 61aa78d8bd8c..ecd3b5c76d26 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -1162,7 +1162,7 @@ static void ath12k_dp_cc_cleanup(struct ath12k_base *=
+ab)
+ 	spin_lock_bh(&dp->rx_desc_lock);
+=20
+ 	for (i =3D 0; i < ATH12K_NUM_RX_SPT_PAGES; i++) {
+-		desc_info =3D dp->spt_info->rxbaddr[i];
++		desc_info =3D dp->rxbaddr[i];
+=20
+ 		for (j =3D 0; j < ATH12K_MAX_SPT_ENTRIES; j++) {
+ 			if (!desc_info[j].in_use) {
+@@ -1181,11 +1181,11 @@ static void ath12k_dp_cc_cleanup(struct ath12k_base=
+ *ab)
+ 	}
+=20
+ 	for (i =3D 0; i < ATH12K_NUM_RX_SPT_PAGES; i++) {
+-		if (!dp->spt_info->rxbaddr[i])
++		if (!dp->rxbaddr[i])
+ 			continue;
+=20
+-		kfree(dp->spt_info->rxbaddr[i]);
+-		dp->spt_info->rxbaddr[i] =3D NULL;
++		kfree(dp->rxbaddr[i]);
++		dp->rxbaddr[i] =3D NULL;
+ 	}
+=20
+ 	spin_unlock_bh(&dp->rx_desc_lock);
+@@ -1220,11 +1220,11 @@ static void ath12k_dp_cc_cleanup(struct ath12k_base=
+ *ab)
+=20
+ 		for (i =3D 0; i < ATH12K_TX_SPT_PAGES_PER_POOL; i++) {
+ 			tx_spt_page =3D i + pool_id * ATH12K_TX_SPT_PAGES_PER_POOL;
+-			if (!dp->spt_info->txbaddr[tx_spt_page])
++			if (!dp->txbaddr[tx_spt_page])
+ 				continue;
+=20
+-			kfree(dp->spt_info->txbaddr[tx_spt_page]);
+-			dp->spt_info->txbaddr[tx_spt_page] =3D NULL;
++			kfree(dp->txbaddr[tx_spt_page]);
++			dp->txbaddr[tx_spt_page] =3D NULL;
+ 		}
+=20
+ 		spin_unlock_bh(&dp->tx_desc_lock[pool_id]);
+@@ -1415,7 +1415,7 @@ static int ath12k_dp_cc_desc_init(struct ath12k_base =
+*ab)
+=20
+ 		ppt_idx =3D ATH12K_RX_SPT_PAGE_OFFSET + i;
+ 		cookie_ppt_idx =3D dp->rx_ppt_base + ppt_idx;
+-		dp->spt_info->rxbaddr[i] =3D &rx_descs[0];
++		dp->rxbaddr[i] =3D &rx_descs[0];
+=20
+ 		for (j =3D 0; j < ATH12K_MAX_SPT_ENTRIES; j++) {
+ 			rx_descs[j].cookie =3D ath12k_dp_cc_cookie_gen(cookie_ppt_idx, j);
+@@ -1445,7 +1445,7 @@ static int ath12k_dp_cc_desc_init(struct ath12k_base =
+*ab)
+ 			tx_spt_page =3D i + pool_id * ATH12K_TX_SPT_PAGES_PER_POOL;
+ 			ppt_idx =3D ATH12K_TX_SPT_PAGE_OFFSET + tx_spt_page;
+=20
+-			dp->spt_info->txbaddr[tx_spt_page] =3D &tx_descs[0];
++			dp->txbaddr[tx_spt_page] =3D &tx_descs[0];
+=20
+ 			for (j =3D 0; j < ATH12K_MAX_SPT_ENTRIES; j++) {
+ 				tx_descs[j].desc_id =3D ath12k_dp_cc_cookie_gen(ppt_idx, j);
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/at=
+h/ath12k/dp.h
+index b77497c14ac4..28c8bf22810c 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -300,8 +300,6 @@ struct ath12k_tx_desc_info {
+ struct ath12k_spt_info {
+ 	dma_addr_t paddr;
+ 	u64 *vaddr;
+-	struct ath12k_rx_desc_info *rxbaddr[ATH12K_NUM_RX_SPT_PAGES];
+-	struct ath12k_tx_desc_info *txbaddr[ATH12K_NUM_TX_SPT_PAGES];
+ };
+=20
+ struct ath12k_reo_queue_ref {
+@@ -352,6 +350,8 @@ struct ath12k_dp {
+ 	struct ath12k_spt_info *spt_info;
+ 	u32 num_spt_pages;
+ 	u32 rx_ppt_base;
++	struct ath12k_rx_desc_info *rxbaddr[ATH12K_NUM_RX_SPT_PAGES];
++	struct ath12k_tx_desc_info *txbaddr[ATH12K_NUM_TX_SPT_PAGES];
+ 	struct list_head rx_desc_free_list;
+ 	/* protects the free desc list */
+ 	spinlock_t rx_desc_lock;
+
+Right ?
 
