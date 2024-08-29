@@ -4,89 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3139AC7114C
-	for <ath12k@archiver.kernel.org>; Thu, 29 Aug 2024 00:21:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C5E7C7EE30
+	for <ath12k@archiver.kernel.org>; Thu, 29 Aug 2024 07:18:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
+	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9+p5NV++J3f9Rbydqekiod11lL7F4Q98IMfjqdNIw5c=; b=QsFw2AQYqiMG7q6Kk/tqPVBBNL
-	AgGa6/641OTwfY9Esgp8KlAEsP4OhEtIWxq2HdrCenggyG6AD/HOd1CEuznRYUDydLf7WtYFqN4Hv
-	87Qb3KQZRA20+XWX/gelHqfUD4IH4A6nwLRSd75tLn2PWB4pGbzAEEZohRZWb7/HG/iq8mbooSwR2
-	EpdlmaaZYbhedpgMTb2vot8BKXZ6UxA9Mc+ub3OUtFRgXgnFqYcuI+NjmGYKeI0DLJwpS9rmga2nv
-	VIk2u8lY5fCrW9V42rDwViPROOPwy2YgNXFHZshHq/Cbjq5Zp/v1Vs50psYtpz1WSKTRphGyKLg5R
-	4c6m+p7g==;
+	bh=uukU0bNksXYozDXTDSnIzaMz330oN6FYcdKxZQowx7k=; b=PbUpPuseGgAY/bVqePHWfOJsdK
+	eLcHImtigsIs5bq84k/1NLyuGaEOMI+D7ojkl7+9DYqg61X2B/TCoUijRainUrUffWyF1idxD31Wn
+	O2WCtfHjZez2Q1rXB8vw+dZobXwe+jrC77z5uo0OnKUlO47pB9JJ3jCTY6V6IUZ2INMsbMc+CHT3V
+	Z1TSQ2WdfamxeonP8pxhSZn/jrGMIt6XxEE2sbv5sE6rxZkgWla3q9waJrnwJq9WlsXQJAPtSd8ix
+	lL6MtntKLfgEkOySPFuC17OzxG3OmDu6Eks2sxjyImREChl8rXMINPomL3NyJ0AU0RC8c2HMHdX+0
+	/MEEeLuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjSuc-0000000Ha80-3cVQ
+	id 1sjZPu-00000000ulI-0hRy
 	for ath12k@archiver.kernel.org;
-	Thu, 29 Aug 2024 00:21:18 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 29 Aug 2024 07:18:02 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjSuZ-0000000Ha7E-2cCS
+	id 1sjZPr-00000000uki-3EIY
 	for ath12k@lists.infradead.org;
-	Thu, 29 Aug 2024 00:21:17 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47SJMTYZ014298;
-	Thu, 29 Aug 2024 00:21:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9+p5NV++J3f9Rbydqekiod11lL7F4Q98IMfjqdNIw5c=; b=e8HfcbmRexx0yL5q
-	WhpCTqXxFgyinNsz+Q/AIuNfDPBOiZUnZX3hMEj7GQQTgL6Sir1F2UHls6NzGd7y
-	L+NfQYTXvzn+RD1F4SViFUDGP8yCr7b9r7AhpV4JeVJLILXRvrNuzqNcU/eixIhF
-	iS5Y4PY9ZbSXy82ClMYwuazNNPsFiFHxZRx3fSeWh9wloVLNsjTj4+HjDLUJK+uz
-	sXy+YrqWyUstLQP72mf0zdqRYzfuiEKkbpmgI8RVPqTzYRirbXROfNTtJ/aTXiPb
-	3OZIb7Ym3zveb5QHQG+sbUE5bjeBBsxYC+drY5bd7JlEQ7n2ajhSStQzzwsKihEN
-	uInplg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419pv13cxn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Aug 2024 00:21:13 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47T0LCPp013956
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Aug 2024 00:21:12 GMT
-Received: from [10.50.8.200] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 28 Aug
- 2024 17:21:11 -0700
-Message-ID: <f5bf9d37-6420-392b-e318-7e7656ca57f3@quicinc.com>
-Date: Thu, 29 Aug 2024 05:51:07 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
+	Thu, 29 Aug 2024 07:18:01 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-37193ef72a4so223016f8f.1
+        for <ath12k@lists.infradead.org>; Thu, 29 Aug 2024 00:17:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1724915878; x=1725520678; darn=lists.infradead.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=uukU0bNksXYozDXTDSnIzaMz330oN6FYcdKxZQowx7k=;
+        b=G4rXqGFfQBaJOySHLJzWx0foDwqxDMcoSA1BOZU9PA8YdrbhAXC1ivrlSs6WzRa0wc
+         GU9EKKPxRBDzYEUf6ZGosuEKrSt6MDhlUHJIiAD4/bkDMsXPWyTGS/Tq3mTN7HP04SRW
+         iZCeRNeOuvnf8DhjvoQUWCgi52mkfdJNT8RXOYcUxE9QCt6y9JOMJJREVMe2niEZWTU5
+         MYV0eKFunjGPAPDwknSlPjJJTfSU6Vj29BKQV2DYRcSQ7SoZzQD2JnJKHoX/3fluUAXG
+         +lBT2yRA4H1xe38f83j1NUP0ZhQY7WAnjYPzOAkt/0yZ8CNJ4ddSO778aNYV0zOLdsL8
+         2Ebg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724915878; x=1725520678;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=uukU0bNksXYozDXTDSnIzaMz330oN6FYcdKxZQowx7k=;
+        b=rTu/AGt2EYPB6ea/b5xUvukKr7sbABZOopkRXuvvK5OmxtJcVPKpsM1+rlkdp0swwN
+         MzSaJPJu3TEed7ZCLalWddd6yiaxqHNifHkm45F3506phpo+QRgIJUBNyVSju4UVS4TT
+         sDW7AXYa/3Mrgf9YwvXAvoVImOgLE2IZ9HcbFtzVYJrk2+mhS1MNcsy1Nc7EvROlcnYt
+         GzIo0mYr51Kmtoc9r7opmktT7t0qdP5K5gTIvstre3RCNwmOU7Sb8bUCG+ZAo427HtPD
+         2MYCJpjCpI8QBhOBMPk9LHNnNwDp+80Q5YpaK6hCuj1zYSvyTAUNb7UAb/5wJDom/fDV
+         aXjw==
+X-Forwarded-Encrypted: i=1; AJvYcCUS0DRjNW+JC51NAm4I69duGTG9ItWjDqP41OKMtf32E1aRDJhUVUObDEup/zQ26rD3t0SO3Yw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy+2GG9HwBkUPnPUR3ZRc2DqiVc8C066oISTAioJpLoxbxtvwVG
+	ZZX13jC08KquH5CcUGsxsYWuAUl4522eh17lISryLubXZBktFPyRbEjvWA==
+X-Google-Smtp-Source: AGHT+IFHZ82jou3fdw3aQRnEprokA1lBXxnUAbuSSW3E2qg1JtRY4vdJxiC+T+3TQLDKnlvgcC+Vfw==
+X-Received: by 2002:a05:6000:11c9:b0:373:53a:8966 with SMTP id ffacd0b85a97d-3749b585654mr1404494f8f.54.1724915877761;
+        Thu, 29 Aug 2024 00:17:57 -0700 (PDT)
+Received: from localhost ([2a01:e0a:0:2100:21ef:6d50:511c:bd79])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3749ef7e940sm650747f8f.66.2024.08.29.00.17.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 29 Aug 2024 00:17:57 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Thu, 29 Aug 2024 09:17:56 +0200
+Message-Id: <D3S7NA6WFNVL.1ZZWXBAH66467@gmail.com>
+Cc: <repk@triplefau.lt>, <ath12k@lists.infradead.org>
 Subject: Re: Wrong place for rxbaddr/txbaddr to be in struct ath12k_spt_info
-To: Nicolas Escande <nico.escande@gmail.com>
-CC: <repk@triplefau.lt>, <ath12k@lists.infradead.org>
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Karthikeyan Periyasamy" <quic_periyasa@quicinc.com>
+X-Mailer: aerc 0.18.2-0-ge037c095a049
 References: <D3RLNOZ847AF.2I0ITYUMJNK52@gmail.com>
  <ce8201cc-f01f-77e1-f5eb-ab0d6e0bd36a@quicinc.com>
  <D3RUKAFELUWP.XTR6V4GB7JXS@gmail.com>
-Content-Language: en-US
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <D3RUKAFELUWP.XTR6V4GB7JXS@gmail.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: JAheXcJyxf5257-PdJLP2Agjyz-TFBX-
-X-Proofpoint-ORIG-GUID: JAheXcJyxf5257-PdJLP2Agjyz-TFBX-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-28_10,2024-08-28_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- suspectscore=0 clxscore=1015 lowpriorityscore=0 mlxscore=0 bulkscore=0
- mlxlogscore=842 impostorscore=0 malwarescore=0 spamscore=0 phishscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2408290001
+ <f5bf9d37-6420-392b-e318-7e7656ca57f3@quicinc.com>
+In-Reply-To: <f5bf9d37-6420-392b-e318-7e7656ca57f3@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240828_172115_774601_22B8112E 
-X-CRM114-Status: GOOD (  13.70  )
+X-CRM114-CacheID: sfid-20240829_001759_828199_B6DC3751 
+X-CRM114-Status: UNSURE (   5.63  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,69 +97,11 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On Thu Aug 29, 2024 at 2:21 AM CEST, Karthikeyan Periyasamy wrote:
+>
+[...]
+>
+> Agree your point, can move rxbaddr[], txbaddr[] out of the spt_info.
 
-
-On 8/29/2024 2:32 AM, Nicolas Escande wrote:
-> On Wed Aug 28, 2024 at 6:58 PM CEST, Karthikeyan Periyasamy wrote:
->>
->>
->> On 8/28/2024 7:34 PM, Nicolas Escande wrote:
->>> Hi there,
->>>
->>> Looking into a problem we have on an ath12k platform at work with a colleague,
->>> I stumbled upon something that seems weird.
->>>
->>> The interresting parts of dh.h:
->>>
->>> struct ath12k_spt_info {
->>> 	dma_addr_t paddr;
->>> 	u64 *vaddr;
->>> 	struct ath12k_rx_desc_info *rxbaddr[ATH12K_NUM_RX_SPT_PAGES];
->>> 	struct ath12k_tx_desc_info *txbaddr[ATH12K_NUM_TX_SPT_PAGES];
->>> };
->>>
->>> ...
->>>
->>> struct ath12k_dp {
->>> 	struct ath12k_base *ab;
->>> 	...
->>> 	struct ath12k_spt_info *spt_info;
->>> 	u32 num_spt_pages;
->>> 	u32 rx_ppt_base;
->>> 	...
->>> };
->>>
->>> In dp.c we have ath12k_dp_cc_desc_init that allocs arrays of ath12k_rx_desc_info
->>> stores the addresses of the individual desc in each of the spt entries using
->>> ath12k_dp_cc_get_desc_addr_ptr(), but we also save the address of the whole
->>> array for later cleanup by dp->spt_info->rxbaddr[i] = &rx_descs[0];
->>>
->>> Surely this is wrong, with the current code we always use the first element of
->>> dp->spt_info to store all the descriptors arrays. And the same goes for txbaddr.
->>> I mean it works, but we loose memory for no purpose & make this part of the
->>> driver harder to understand.
->>>
->>> It should be something like:
->>>
-> ...
-> 
->>>
->>> Right ?
->>>
->>
->> Yes, we always use the first element of dp->spt_info to store all the
->> descriptors arrays.
-> 
-> Well that was not what I expected. So please enlighten me, what's the rationale
-> behind deliberately wasting around ATH12K_NUM_SPT_PAGES * sizeof(uintptr_t) *
-> (ATH12K_NUM_RX_SPT_PAGES + ATH12K_NUM_TX_SPT_PAGES) of memory ? I'm quite
-> puzzled by this decision... I feel it really doesn't help understanding this
-> already complicated enough piece of code.
-
-Agree your point, can move rxbaddr[], txbaddr[] out of the spt_info.
-
--- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+Thanks, I'll send a patch for this then.
 
