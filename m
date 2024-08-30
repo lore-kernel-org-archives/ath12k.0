@@ -4,90 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3D16C8300F
-	for <ath12k@archiver.kernel.org>; Thu, 29 Aug 2024 08:44:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1F8BCA0ED0
+	for <ath12k@archiver.kernel.org>; Fri, 30 Aug 2024 02:39:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=XLcLOdG8Ov8LVUAi8KltLGD30AHzlsYsx2KgqDQrB2U=; b=w8v7DdPoX92E5ueum9zw7YRhbl
-	Dlex1oKrpCTVbDwJOiTp1HI6qTvn8x3z8cEEkzanfsqKlO0Sp1Ka6zRgAontjKQGunLJDOxHlonP9
-	B9uz8wg/gEyWQBWf56vdsksMyXCfkbRqy9kavE1sxSOkCwuNCSNJbb3V5Nw3fNo0dG7ZMEI09DUYA
-	r0BKRq6QTrhHVcIxWDK956qiDGtFAOqS8ms771fMb8sa/IuCijGsIV8DUXwegUl5Zk+ruvjegFBJZ
-	GPkvYkuUwwm4PPXIj/9rAEaTlgBLTq8bL1nD9+X02eaZZmymuRptb9ZXAdYL9+8m5dckkRuh2gbW9
-	zwOZPhjQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=4ry96/rvnbCRnQuoRQuiIC2RmpYFaVXg5FQdsyPce3E=; b=12zKsDXAt0x3I/Zokr++5Z0fQj
+	+++Ebayq9iHmWTwuMFn2jISzXiJCR/QX1QpspsWZW+kqWbn5xF60r5q/GiCEryJjD+Jz+yM8ZT5vw
+	/hDRUJqepCw+9udZi211JxqkYPYcZDZX8OEWXBrLeTvIi0253Ps6fXtxfjUmL5wMwcQiYUSy8f8qg
+	y5QYA0RxM5yxYqSEtuorp3Z/YkulSyou9bY9wFQCP71OqprcZV10YRzp0dU/OjFZSzxlZ3mC8lY+E
+	BU2hU/aqkCV00n0JeAVL1x3tdY6sJk7nbg0muP3vwJCWwb/EBHo26Ahw46VhytRpBlqWlOFKSKJfu
+	5FFiuc9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjalW-00000001COt-2TCh
+	id 1sjrXl-00000004QgR-2HVn
 	for ath12k@archiver.kernel.org;
-	Thu, 29 Aug 2024 08:44:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 30 Aug 2024 02:39:21 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjalT-00000001CNf-1VKZ
+	id 1sjrXi-00000004Qfo-3VPo
 	for ath12k@lists.infradead.org;
-	Thu, 29 Aug 2024 08:44:25 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47T8IoPO003416;
-	Thu, 29 Aug 2024 08:44:22 GMT
+	Fri, 30 Aug 2024 02:39:20 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47TI3gQ6009653;
+	Fri, 30 Aug 2024 02:39:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=XLcLOdG8Ov8LVUAi8KltLGD30AHzlsYsx2K
-	gqDQrB2U=; b=pTnEpfHpMt5zZjzrNb4XMSk87Wjw8rMDFievZphZr7uUQzoUyi6
-	3MDUYNWl86dKlt4E+AL7guj6O5pZpXuhIR/PjOwDSB1zb293kfobfVIhlywIvcG+
-	HJYjx3d7lBx43HI3Dmr/jk+LEIQBFXg4QR6L1nP52Xi7jg8xCVONsmUKgHeZ9KvE
-	O1xinjOqsjB7SpxpynVQvgb7QBunJaLJ2NPcgtW15+QmvEOTP++eOJGBrPh4lxmf
-	aasSVdTl0zFB4Twl0VbsboD4Z1kmcaVKzZO2KyLE2hBHJr0IVvPbmOscGuMFgbCa
-	/vCqp7ET4z7XgOlpT4oa5/RW/OI72V9tVTw==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419putvk4t-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=4ry96/rvnbCRnQuoRQuiIC
+	2RmpYFaVXg5FQdsyPce3E=; b=ht1wXSBsmP31cko+TFZIBlo9+Fna6DfvcIkypO
+	PRaQTVL3LFJUs2FdByF2a1euieBEp8Lp3R/9M3s3iKBIaTMVkODqxjPGAOmq0qK2
+	o66Z0y4SpUjJois9JhtGBk3HZJp49GiPlmz9D3wKv6v9j8z9aJ7F1KfDCLc9EzjF
+	NhakBPg3R3+FTKc2N0D7pTXiMj3xMund/clQX8myHRil58KKwqgw77IueN+RA/AG
+	Yzrr56nmViC0tFCgsUO8rGp/loW+PHWYQjC76JU0qj01YlryCWRrlZbMECm8dbHM
+	cdfUoP2F/mEsleedlSNf4lW6ANP4Tyyojh3q2ZeBvuBDNnPA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419pv0f7jf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Aug 2024 08:44:21 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 47T8iIWh008418;
-	Thu, 29 Aug 2024 08:44:18 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 4178kmc8y2-1
+	Fri, 30 Aug 2024 02:39:16 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47U2dFii017200
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Aug 2024 08:44:18 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 47T8iImK008412;
-	Thu, 29 Aug 2024 08:44:18 GMT
-Received: from hu-devc-blr-u22-a.qualcomm.com (hu-rgnanase-blr.qualcomm.com [10.190.106.79])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 47T8iIY6008411
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 29 Aug 2024 08:44:18 +0000
-Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 2378837)
-	id 58B5741144; Thu, 29 Aug 2024 14:14:17 +0530 (+0530)
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Dinesh Karthikeyan <quic_dinek@quicinc.com>,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Subject: [PATCH] wifi: ath12k: Add support to simulate firmware crash
-Date: Thu, 29 Aug 2024 14:14:11 +0530
-Message-Id: <20240829084411.3521261-1-quic_rgnanase@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Fri, 30 Aug 2024 02:39:15 GMT
+Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 29 Aug 2024 19:39:13 -0700
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
+Subject: [PATCH] wifi: ath12k: avoid deadlock during regulatory update in ath12k_regd_update()
+Date: Fri, 30 Aug 2024 10:39:01 +0800
+Message-ID: <20240830023901.204746-1-quic_bqiang@quicinc.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-QCInternal: smtphost
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: hyrjN-el_Izze-4sz97aOYT2svDcLAL8
-X-Proofpoint-GUID: hyrjN-el_Izze-4sz97aOYT2svDcLAL8
+X-Proofpoint-GUID: YhfKptEDqQEDr26b0iQrx08Kipm9iax2
+X-Proofpoint-ORIG-GUID: YhfKptEDqQEDr26b0iQrx08Kipm9iax2
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-29_02,2024-08-29_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- mlxlogscore=999 suspectscore=0 phishscore=0 spamscore=0 bulkscore=0
- clxscore=1011 mlxscore=0 malwarescore=0 lowpriorityscore=0 impostorscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2408290064
+ definitions=2024-08-29_06,2024-08-29_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 clxscore=1015
+ priorityscore=1501 impostorscore=0 suspectscore=0 lowpriorityscore=0
+ malwarescore=0 spamscore=0 mlxlogscore=999 mlxscore=0 bulkscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2408300018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_014423_436758_90810C89 
-X-CRM114-Status: GOOD (  18.95  )
+X-CRM114-CacheID: sfid-20240829_193919_025336_B0718EC0 
+X-CRM114-Status: GOOD (  20.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,158 +94,153 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+From: Wen Gong <quic_wgong@quicinc.com>
 
-Add debugfs support to simulate firmware crash to test firmware restart.
+Running this test in a loop it is easy to reproduce an rtnl deadlock:
 
-Usage:
------
-echo assert > /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/simulate_fw_crash
+iw reg set FI
+ifconfig wlan0 down
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+What happens is that thread A (workqueue) tries to update the regulatory:
+
+    try to acquire the rtnl_lock of ar->regd_update_work
+
+    rtnl_lock
+    ath12k_regd_update [ath12k]
+    ath12k_regd_update_work [ath12k]
+    process_one_work
+    worker_thread
+    kthread
+    ret_from_fork
+
+And thread B (ifconfig) tries to stop the interface:
+
+    try to cancel_work_sync(&ar->regd_update_work) in ath12k_mac_op_stop().
+    ifconfig  3109 [003]  2414.232506: probe:
+
+    ath12k_mac_op_stop [ath12k]
+    drv_stop [mac80211]
+    ieee80211_do_stop [mac80211]
+    ieee80211_stop [mac80211]
+
+The sequence of deadlock is:
+
+1. Thread B calls rtnl_lock().
+
+2. Thread A starts to run and calls rtnl_lock() from within
+   ath12k_regd_update_work(), then enters wait state because the lock is owned by
+   thread B.
+
+3. Thread B tries to call cancel_work_sync(&ar->regd_update_work), but thread A is in
+   ath12k_regd_update_work() waiting for rtnl_lock(). So cancel_work_sync()
+   forever waits for ath12k_regd_update_work() to finish and we have a deadlock.
+
+Change to use regulatory_set_wiphy_regd(), which is the asynchronous version of
+regulatory_set_wiphy_regd_sync(). This way rtnl & wiphy locks are not required so can
+be removed, and in the end the deadlock issue can be avoided.
+
+But a side effect introduced by the asynchronous regd update is that, some essential
+information used in ath12k_reg_update_chan_list(), which would be called later in
+ath12k_regd_update(), might has not been updated by cfg80211, as a result wrong
+channel parameters sent to firmware.
+
+To handle this side effect, move ath12k_reg_update_chan_list() to ath12k_reg_notifier(),
+and advertise WIPHY_FLAG_NOTIFY_REGDOM_BY_DRIVER to cfg80211. This works because,
+in the process of the asynchronous regd update, after the new regd is processed,
+cfg80211 will notify ath12k by calling ath12k_reg_notifier(). Since all essential
+information is updated at that time, we are good to do channel list update.
+
+Please note ath12k_reg_notifier() could also be called due to other reasons, like
+core/beacon/user hints etc. For them we are not allowed to call
+ath12k_reg_update_chan_list() because regd has not been updated. This is done by
+verifying  the initiator.
+
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+Co-developed-by: Baochen Qiang <quic_bqiang@quicinc.com>
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 ---
-Depends-On: [PATCH v5] wifi: ath12k: Add firmware coredump collection support
-Link: https://lore.kernel.org/linux-wireless/f77ed82f-299b-4f99-bc83-39c053b8042b@quicinc.com/
----
- drivers/net/wireless/ath/ath12k/debugfs.c | 76 +++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/debugfs.h |  4 ++
- drivers/net/wireless/ath/ath12k/mac.c     |  2 +
- 3 files changed, 82 insertions(+)
+ drivers/net/wireless/ath/ath12k/reg.c | 35 +++++++++++++++------------
+ 1 file changed, 20 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 2a977c36af00..4d1cd4d5e3df 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -6,6 +6,7 @@
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 439d61f284d8..ea03f3f50e50 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -55,6 +55,24 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_REG,
+ 		   "Regulatory Notification received for %s\n", wiphy_name(wiphy));
  
- #include "core.h"
- #include "debugfs.h"
-+#include "debug.h"
- #include "debugfs_htt_stats.h"
- 
- static ssize_t ath12k_write_simulate_radar(struct file *file,
-@@ -31,6 +32,81 @@ static const struct file_operations fops_simulate_radar = {
- 	.open = simple_open
- };
- 
-+static ssize_t ath12k_read_simulate_fw_crash(struct file *file,
-+					     char __user *user_buf,
-+					     size_t count, loff_t *ppos)
-+{
-+	const char buf[] =
-+		 "To simulate firmware crash write one of the keywords to this file:\n"
-+		 "`assert` - send WMI_FORCE_FW_HANG_CMDID to firmware to cause assert.\n";
++	if (request->initiator == NL80211_REGDOM_SET_BY_DRIVER) {
++		ath12k_dbg(ar->ab, ATH12K_DBG_REG,
++			   "driver initiated regd update\n");
++		if (ah->state != ATH12K_HW_STATE_ON)
++			return;
 +
-+	return simple_read_from_buffer(user_buf, count, ppos, buf, strlen(buf));
-+}
-+
-+static ssize_t ath12k_write_simulate_fw_crash(struct file *file,
-+					      const char __user *user_buf,
-+					      size_t count, loff_t *ppos)
-+{
-+	struct ath12k_base *ab = file->private_data;
-+	struct ath12k_pdev *pdev;
-+	struct ath12k *ar = NULL;
-+	char buf[32] = {0};
-+	int i, ret;
-+	ssize_t rc;
-+
-+	/* filter partial writes and invalid commands */
-+	if (*ppos != 0 || count >= sizeof(buf) || count == 0)
-+		return -EINVAL;
-+
-+	rc = simple_write_to_buffer(buf, sizeof(buf) - 1, ppos, user_buf, count);
-+	if (rc < 0)
-+		return rc;
-+
-+	/* drop the possible '\n' from the end */
-+	if (buf[*ppos - 1] == '\n')
-+		buf[*ppos - 1] = '\0';
-+
-+	for (i = 0; i < ab->num_radios; i++) {
-+		pdev = &ab->pdevs[i];
-+		ar = pdev->ar;
-+		if (ar)
-+			break;
++		for_each_ar(ah, ar, i) {
++			ret = ath12k_reg_update_chan_list(ar);
++			if (ret) {
++				ath12k_warn(ar->ab,
++					    "failed to update chan list for pdev %u, ret %d\n",
++					    i, ret);
++				break;
++			}
++		}
++		return;
 +	}
 +
-+	if (!ar)
-+		return -ENETDOWN;
-+
-+	if (!strcmp(buf, "assert")) {
-+		ath12k_info(ab, "simulating firmware assert crash\n");
-+		ret = ath12k_wmi_force_fw_hang_cmd(ar,
-+						   ATH12K_WMI_FW_HANG_ASSERT_TYPE,
-+						   ATH12K_WMI_FW_HANG_DELAY);
-+	} else {
-+		return -EINVAL;
-+	}
-+
-+	if (ret) {
-+		ath12k_warn(ab, "failed to simulate firmware crash: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return count;
-+}
-+
-+static const struct file_operations fops_simulate_fw_crash = {
-+	.read = ath12k_read_simulate_fw_crash,
-+	.write = ath12k_write_simulate_fw_crash,
-+	.open = simple_open,
-+	.owner = THIS_MODULE,
-+	.llseek = default_llseek,
-+};
-+
-+void ath12k_debugfs_pdev_create(struct ath12k_base *ab)
-+{
-+	debugfs_create_file("simulate_fw_crash", 0600, ab->debugfs_soc, ab,
-+			    &fops_simulate_fw_crash);
-+}
-+
- void ath12k_debugfs_soc_create(struct ath12k_base *ab)
+ 	/* Currently supporting only General User Hints. Cell base user
+ 	 * hints to be handled later.
+ 	 * Hints from other sources like Core, Beacons are not expected for
+@@ -211,7 +229,6 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
+ 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
+ 	int ret, regd_len, pdev_id;
+ 	struct ath12k_base *ab;
+-	int i;
+ 
+ 	ab = ar->ab;
+ 
+@@ -275,11 +292,7 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
+ 		goto err;
+ 	}
+ 
+-	rtnl_lock();
+-	wiphy_lock(hw->wiphy);
+-	ret = regulatory_set_wiphy_regd_sync(hw->wiphy, regd_copy);
+-	wiphy_unlock(hw->wiphy);
+-	rtnl_unlock();
++	ret = regulatory_set_wiphy_regd(hw->wiphy, regd_copy);
+ 
+ 	kfree(regd_copy);
+ 
+@@ -290,15 +303,6 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
+ 		goto skip;
+ 
+ 	ah->regd_updated = true;
+-	/* Apply the new regd to all the radios, this is expected to be received only once
+-	 * since we check for ah->regd_updated and allow here only once.
+-	 */
+-	for_each_ar(ah, ar, i) {
+-		ab = ar->ab;
+-		ret = ath12k_reg_update_chan_list(ar);
+-		if (ret)
+-			goto err;
+-	}
+ skip:
+ 	return 0;
+ err:
+@@ -770,6 +774,7 @@ void ath12k_regd_update_work(struct work_struct *work)
+ void ath12k_reg_init(struct ieee80211_hw *hw)
  {
- 	bool dput_needed;
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.h b/drivers/net/wireless/ath/ath12k/debugfs.h
-index 8d64ba03aa9a..4b59906c03d6 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.h
-@@ -12,6 +12,7 @@ void ath12k_debugfs_soc_create(struct ath12k_base *ab);
- void ath12k_debugfs_soc_destroy(struct ath12k_base *ab);
- void ath12k_debugfs_register(struct ath12k *ar);
- void ath12k_debugfs_unregister(struct ath12k *ar);
-+void ath12k_debugfs_pdev_create(struct ath12k_base *ab);
- #else
- static inline void ath12k_debugfs_soc_create(struct ath12k_base *ab)
- {
-@@ -29,6 +30,9 @@ static inline void ath12k_debugfs_unregister(struct ath12k *ar)
- {
+ 	hw->wiphy->regulatory_flags = REGULATORY_WIPHY_SELF_MANAGED;
++	hw->wiphy->flags |= WIPHY_FLAG_NOTIFY_REGDOM_BY_DRIVER;
+ 	hw->wiphy->reg_notifier = ath12k_reg_notifier;
  }
  
-+static inline void ath12k_debugfs_pdev_create(struct ath12k_base *ab)
-+{
-+}
- #endif /* CONFIG_ATH12K_DEBUGFS */
- 
- #endif /* _ATH12K_DEBUGFS_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 137394c36460..8947ca308dbb 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -9347,6 +9347,8 @@ int ath12k_mac_register(struct ath12k_base *ab)
- 	if (test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags))
- 		return 0;
- 
-+	ath12k_debugfs_pdev_create(ab);
-+
- 	/* Initialize channel counters frequency value in hertz */
- 	ab->cc_freq_hz = 320000;
- 	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS)) - 1;
+
+base-commit: 8fb3b2b8d6d489416a7ff8a28cd4083340ad9e55
 -- 
-2.34.1
+2.25.1
 
 
