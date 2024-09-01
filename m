@@ -4,88 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C47DCA0EF3
-	for <ath12k@archiver.kernel.org>; Fri, 30 Aug 2024 21:27:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F948CD3425
+	for <ath12k@archiver.kernel.org>; Sun,  1 Sep 2024 00:18:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=E8CD1M5m7jGd03r4TpkDea5q75477vrNXG5ZOkrO0PI=; b=QQH/lzbInaMQz/R8bMakmJhzuA
-	DHnE/4iGbBGhSMcMtClQ0qg4qu476DqB8jFvPrefYJwuNGC1QGSqD52pFFqisAOnXD05SbTQmiVpT
-	EGOKPECTbw/5zWzU8Jj5/D5NZ/aaGhQ8bdy/kAWMT/e/caT53jQfmWXwyu4ALAzqck2N6fd29Mkit
-	kQnlLEkwYW0y7XXsH6MyxbiZoZmyqqHp3zjHh9I7AZELkvAzwGce+YOcmtFai50EK6fU0r36pybEG
-	uPYSAzb/IJlufir4pRoV3Nstu/BOkyiz+ajGQXy/5joE9m+NLdO1obE2sJ0xXdYLlbe6OnQhHOf6e
-	xpSiJvYA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=/+wJ6AR7svraLzBqoSxTlSNuZJRPbCuZdc9E6g2kDY0=; b=1GN6wqpLh6sqNKtRVCo+I2QmLy
+	pAXHKh7mMPTfNDy2j3xF2v4TPuElK7GkYGVAlF9A9PPEz/Bu7Gj55jEWzvM+nnfIFeEsoHTArEyD2
+	I7tNIkMByt5qDu+KbEjKJ5Ek1RMkavD3bN+yUqMTdRmM6larkNz6iYYX/8Jaz2sUtqdN8ZpyGqYrf
+	mjl1hAnB8t+jFo4ulH9xaoyfrTVlK/Gn6ql5umDLNQC8hwvHGYQ9Ote/EHCdJTqoVmwnzmGlbwuK7
+	WtbSggbqOBQebKJ8kQaEUg9fqzsPC501j6lFNvKffBgakJbmJ2B1J7agF3U5OcQcLEsI+7UHNJA9m
+	y1EygRMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sk99L-00000007izv-2Ttf
+	id 1skYIa-0000000APvX-2vph
 	for ath12k@archiver.kernel.org;
-	Fri, 30 Aug 2024 21:27:19 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Sun, 01 Sep 2024 00:18:32 +0000
+Received: from mgamail.intel.com ([198.175.65.15])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sk99H-00000007izT-3nUO
+	id 1skYIX-0000000APus-3mE4
 	for ath12k@lists.infradead.org;
-	Fri, 30 Aug 2024 21:27:17 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47UF7GuD013777;
-	Fri, 30 Aug 2024 21:27:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	E8CD1M5m7jGd03r4TpkDea5q75477vrNXG5ZOkrO0PI=; b=pwvtLQ+3d3LUnomH
-	NFxwrvDHKbsDN7g9xFu3IkW2AT2+pWu7mGJM0SHMQHNh1eeMaNugcbk75fM70hkC
-	Bmd1nKUwt+E1avXl0eu1nG9/kPZRtG2DRo1f/l21y/52jJWU7vE8/FvDiTc2WbwB
-	z2ILxnUdvBfepLAzyZNVdg+H/vfyCWIqB4V4p4AiBFny6vecZDNiEO8kAXqCpQb8
-	5MAXrIbKPY6O+RKviihcnBVnSO1OIp1Bcous8a1a2mnDDMLGPTOuBK3XHyPFWiCg
-	c95bFU6ysDfqDDussieQUh3MA7ZoG8jIxsTciM/EFPB9x6LLFrw63zvIcfIBp5K0
-	UY8ksg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419pv0tdn4-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 30 Aug 2024 21:27:14 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47ULRD6w026941
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 30 Aug 2024 21:27:13 GMT
-Received: from [10.111.180.95] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 30 Aug
- 2024 14:27:12 -0700
-Message-ID: <e7390faf-fdcb-4de4-b15a-ce849afef406@quicinc.com>
-Date: Fri, 30 Aug 2024 14:27:11 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Add support to simulate firmware crash
-To: Ramya Gnanasekar <quic_rgnanase@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Dinesh Karthikeyan
-	<quic_dinek@quicinc.com>
-References: <20240829084411.3521261-1-quic_rgnanase@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <20240829084411.3521261-1-quic_rgnanase@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ZOEQU5q47-Fc1YYWotq47GlMQoTPpWNx
-X-Proofpoint-ORIG-GUID: ZOEQU5q47-Fc1YYWotq47GlMQoTPpWNx
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-30_10,2024-08-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- mlxlogscore=998 bulkscore=0 impostorscore=0 phishscore=0 clxscore=1015
- mlxscore=0 spamscore=0 suspectscore=0 malwarescore=0 adultscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2408300166
+	Sun, 01 Sep 2024 00:18:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1725149911; x=1756685911;
+  h=date:from:to:cc:subject:message-id;
+  bh=mRuxLTxcTlJFZZQoAwSRi5RyGnQ62R7Pebb+NjcH3p0=;
+  b=DVRR19My0SGhgI6b/WKqfIqbqgnk5rZBxRpliYNE4tRj124ROgV4vvPp
+   +fqm6y2MH5TYFMxwimadrT11vDdUJwrePnKXUoeVd0w196Ku0lutPE8+l
+   3RI+3ICZ55jJ2tNwnkRrAJWmxDbwKZm5kOKmRgJGgmho0BMipnArourgj
+   wVOFyOQ4GTlN9JbFVN70/Y1jiFkKE/JAhxydn1zxmSq7Rs2X8kK2t7JV8
+   nix5cybxJRt6lM3T4898G1rNMAsYJqQgRTaNinrZ6JbW6q5i9A1WJTgum
+   EcH6zEyRjVer1DK5xWdMOsyWr8UXpr1hztomYuWLOiglwWLI+3CKaITGT
+   A==;
+X-CSE-ConnectionGUID: rWgzq2xgT0y+JTV5n+PDtA==
+X-CSE-MsgGUID: dt5FwWGaQwSVLj9/ejEmyQ==
+X-IronPort-AV: E=McAfee;i="6700,10204,11181"; a="27523218"
+X-IronPort-AV: E=Sophos;i="6.10,193,1719903600"; 
+   d="scan'208";a="27523218"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Aug 2024 17:18:26 -0700
+X-CSE-ConnectionGUID: /lY5BG2qSOaQUwbSan9dHA==
+X-CSE-MsgGUID: WnhhjfUPSuWcT5r4FC7wOA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.10,193,1719903600"; 
+   d="scan'208";a="64279960"
+Received: from lkp-server01.sh.intel.com (HELO 9c6b1c7d3b50) ([10.239.97.150])
+  by fmviesa009.fm.intel.com with ESMTP; 31 Aug 2024 17:18:23 -0700
+Received: from kbuild by 9c6b1c7d3b50 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1skYIP-0003DN-1l;
+	Sun, 01 Sep 2024 00:18:21 +0000
+Date: Sun, 01 Sep 2024 08:18:18 +0800
+From: kernel test robot <lkp@intel.com>
+To: Kalle Valo <quic_kvalo@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ 13276569e05eefcd271f683169f4883606c244c1
+Message-ID: <202409010816.XM9ZM7cc-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_142716_106092_6844ACEE 
-X-CRM114-Status: UNSURE (   6.84  )
+X-CRM114-CacheID: sfid-20240831_171830_041761_3BBF340B 
+X-CRM114-Status: UNSURE (   4.03  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,20 +84,146 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 8/29/2024 1:44 AM, Ramya Gnanasekar wrote:
-> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-> 
-> Add debugfs support to simulate firmware crash to test firmware restart.
-> 
-> Usage:
-> -----
-> echo assert > /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/simulate_fw_crash
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-> Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: 13276569e05eefcd271f683169f4883606c244c1  Merge branch 'pending' into main-pending
 
+elapsed time: 868m
+
+configs tested: 126
+configs skipped: 4
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+tested configs:
+alpha                             allnoconfig   gcc-14.1.0
+alpha                            allyesconfig   clang-20
+alpha                               defconfig   gcc-14.1.0
+arc                              allmodconfig   clang-20
+arc                               allnoconfig   gcc-14.1.0
+arc                              allyesconfig   clang-20
+arc                                 defconfig   gcc-14.1.0
+arc                            hsdk_defconfig   gcc-14.1.0
+arm                              allmodconfig   clang-20
+arm                               allnoconfig   gcc-14.1.0
+arm                              allyesconfig   clang-20
+arm                       aspeed_g5_defconfig   clang-20
+arm                         at91_dt_defconfig   clang-20
+arm                        clps711x_defconfig   clang-20
+arm                     davinci_all_defconfig   clang-20
+arm                                 defconfig   gcc-14.1.0
+arm                            dove_defconfig   gcc-14.1.0
+arm                          exynos_defconfig   clang-20
+arm                       multi_v4t_defconfig   gcc-14.1.0
+arm                           sama5_defconfig   gcc-14.1.0
+arm                           stm32_defconfig   gcc-14.1.0
+arm64                            alldefconfig   clang-20
+arm64                            allmodconfig   clang-20
+arm64                             allnoconfig   gcc-14.1.0
+arm64                               defconfig   gcc-14.1.0
+csky                              allnoconfig   gcc-14.1.0
+csky                                defconfig   gcc-14.1.0
+hexagon                          allmodconfig   clang-20
+hexagon                           allnoconfig   gcc-14.1.0
+hexagon                          allyesconfig   clang-20
+hexagon                             defconfig   gcc-14.1.0
+i386                             allmodconfig   clang-18
+i386                              allnoconfig   clang-18
+i386                             allyesconfig   clang-18
+i386         buildonly-randconfig-001-20240901   clang-18
+i386         buildonly-randconfig-002-20240901   clang-18
+i386         buildonly-randconfig-003-20240901   clang-18
+i386         buildonly-randconfig-004-20240901   clang-18
+i386         buildonly-randconfig-005-20240901   clang-18
+i386         buildonly-randconfig-006-20240901   clang-18
+i386                                defconfig   clang-18
+i386                  randconfig-001-20240901   clang-18
+i386                  randconfig-002-20240901   clang-18
+i386                  randconfig-003-20240901   clang-18
+i386                  randconfig-004-20240901   clang-18
+i386                  randconfig-005-20240901   clang-18
+i386                  randconfig-006-20240901   clang-18
+i386                  randconfig-011-20240901   clang-18
+i386                  randconfig-012-20240901   clang-18
+i386                  randconfig-013-20240901   clang-18
+i386                  randconfig-014-20240901   clang-18
+i386                  randconfig-015-20240901   clang-18
+i386                  randconfig-016-20240901   clang-18
+loongarch                        allmodconfig   gcc-14.1.0
+loongarch                         allnoconfig   gcc-14.1.0
+loongarch                           defconfig   gcc-14.1.0
+m68k                             allmodconfig   gcc-14.1.0
+m68k                              allnoconfig   gcc-14.1.0
+m68k                             allyesconfig   gcc-14.1.0
+m68k                                defconfig   gcc-14.1.0
+m68k                          hp300_defconfig   clang-20
+m68k                        m5272c3_defconfig   gcc-14.1.0
+microblaze                       allmodconfig   gcc-14.1.0
+microblaze                        allnoconfig   gcc-14.1.0
+microblaze                       allyesconfig   gcc-14.1.0
+microblaze                          defconfig   gcc-14.1.0
+mips                              allnoconfig   gcc-14.1.0
+mips                       bmips_be_defconfig   gcc-14.1.0
+mips                           ci20_defconfig   clang-20
+nios2                             allnoconfig   gcc-14.1.0
+nios2                               defconfig   gcc-14.1.0
+openrisc                          allnoconfig   clang-20
+openrisc                         allyesconfig   gcc-14.1.0
+openrisc                            defconfig   gcc-12
+parisc                           allmodconfig   gcc-14.1.0
+parisc                            allnoconfig   clang-20
+parisc                           allyesconfig   gcc-14.1.0
+parisc                              defconfig   gcc-12
+parisc64                            defconfig   gcc-14.1.0
+powerpc                          allmodconfig   gcc-14.1.0
+powerpc                           allnoconfig   clang-20
+powerpc                          allyesconfig   gcc-14.1.0
+powerpc                 canyonlands_defconfig   gcc-14.1.0
+powerpc                        fsp2_defconfig   clang-20
+powerpc                    gamecube_defconfig   gcc-14.1.0
+powerpc                   motionpro_defconfig   gcc-14.1.0
+powerpc                 mpc832x_rdb_defconfig   clang-20
+powerpc                     tqm8540_defconfig   clang-20
+powerpc                     tqm8555_defconfig   gcc-14.1.0
+powerpc                         wii_defconfig   clang-20
+riscv                            alldefconfig   gcc-14.1.0
+riscv                            allmodconfig   gcc-14.1.0
+riscv                             allnoconfig   clang-20
+riscv                            allyesconfig   gcc-14.1.0
+riscv                               defconfig   gcc-12
+riscv                               defconfig   gcc-14.1.0
+s390                             allmodconfig   gcc-14.1.0
+s390                              allnoconfig   clang-20
+s390                             allyesconfig   gcc-14.1.0
+s390                                defconfig   gcc-12
+sh                               allmodconfig   gcc-14.1.0
+sh                                allnoconfig   gcc-14.1.0
+sh                               allyesconfig   gcc-14.1.0
+sh                                  defconfig   gcc-12
+sh                         ecovec24_defconfig   clang-20
+sh                               j2_defconfig   clang-20
+sh                          kfr2r09_defconfig   clang-20
+sh                  sh7785lcr_32bit_defconfig   gcc-14.1.0
+sh                        sh7785lcr_defconfig   gcc-14.1.0
+sh                          urquell_defconfig   clang-20
+sparc                            allmodconfig   gcc-14.1.0
+sparc64                             defconfig   gcc-12
+um                               allmodconfig   clang-20
+um                                allnoconfig   clang-20
+um                               allyesconfig   clang-20
+um                                  defconfig   gcc-12
+um                             i386_defconfig   gcc-12
+um                           x86_64_defconfig   gcc-12
+x86_64                            allnoconfig   clang-18
+x86_64                           allyesconfig   clang-18
+x86_64                              defconfig   clang-18
+x86_64                                  kexec   gcc-12
+x86_64                          rhel-8.3-rust   clang-18
+x86_64                               rhel-8.3   gcc-12
+xtensa                            allnoconfig   gcc-14.1.0
+xtensa                       common_defconfig   gcc-14.1.0
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
