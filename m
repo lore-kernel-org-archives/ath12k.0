@@ -4,81 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 724B0CD3420
-	for <ath12k@archiver.kernel.org>; Tue,  3 Sep 2024 10:08:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F9D0CD13CF
+	for <ath12k@archiver.kernel.org>; Tue,  3 Sep 2024 10:09:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/mIxV0yaj4AJS/251JR33tvnQbbnW/Q57frWK3lyk4I=; b=hnltm9mrUPQphbLDGAWUoDxBSa
-	2oqLvKKKBmP7hCP2WYYhe6u/uYoo+Yflo4Lk7E7XQ9+tCoH17K8wDSEwhppnu/U37uEl+thz9Kt5m
-	/d9JyXFWD9+okAWc/CZkLG4o/wcCsorlu69zaDqiSWX7WNRWBsD2VIp+eHJ7wam6badQwc1WCVcpc
-	STC5KWRdy9KwDkAIZua7oIwa0onUwW68iOWqtXi1Tsd/JKhMEw4KiuDYonnda7IC56twjq3iF+/sO
-	19eMn8mk/MivmipJ8oiPRamwL1P1NhMtlJEpPbfHbNC8+U80VQKz6eEnlXJ2+ZvdON0aMwiTSjoFS
-	7e9MzHiA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DvXqurzoPHBtpX+mlWHMpAsH6Is+5Yv2hEuwcNu+6gs=; b=u0c+9Tz01jTYUG2is/UiYhmseU
+	HA6Z3OLH+fxq3mwEqoznokT+gkYWv6J5wAGQ++o0jsj2F9Am8cdiiWcij3AqSY5V0T4clR4zrnJrH
+	z6BtZDw7zim5YNzdyzXHUPzlvMaA3ncpYyAofuvnwzfnoaB+42fQZrZSG5JLoPhNZphBUrNc3GuXj
+	A8OFuU/bsmR73lVsO4mLxiiiQ9/yEFevhNbtNequXP0FnrWzomzRGBoIRzJACykEnagCrlhSBAnnA
+	optk4ZkNpMqMGsUugGEaM3u2ZxkGGGOxy4r8mSJw23qCoLuO7Hkr3THlBgESQqY0iNeONujUfjGis
+	zhUe0l8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slQSG-0000000HHqP-0hxX
+	id 1slQTj-0000000HI30-385a
 	for ath12k@archiver.kernel.org;
-	Tue, 03 Sep 2024 10:08:08 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Tue, 03 Sep 2024 10:09:39 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slQS0-0000000HHpD-3GWh
+	id 1slQTg-0000000HI2Y-3gVZ
 	for ath12k@lists.infradead.org;
-	Tue, 03 Sep 2024 10:07:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=/mIxV0yaj4AJS/251JR33tvnQbbnW/Q57frWK3lyk4I=;
-	t=1725358072; x=1726567672; b=pzuVIF5INjg9POzIjNY//t/N5KH2lXxWgcOTBMWUzNtzV8W
-	KtI7tg5fk1Tt4UL8nnBNC7kKUoOhfIx/OO7cHxTRKjt8hFTSkzzW/KbSTtaoEW5gzkcSKEbD6nz/K
-	7X8iGSKKbXakkcGb8LPFPDAxglBvvVazjliswXEmG8BM1etT6zbzrCmL9WWm8efNdQj4CMaI+vK2b
-	YFmYGDl06XcOOB9jOvf/rCaV/+9/vjZpBaWha5ghE9HebJh8eo1OCIBahTtUSc8idE0uhX4YAwg0c
-	toaC21VmoEMqpFrRC804JT//Lf1eWPJ8qbqS261bkAT88mjQwFjMFER6rGwf72aA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1slQRv-00000002Ciy-1wCq;
-	Tue, 03 Sep 2024 12:07:47 +0200
-Message-ID: <5bd14f29b58a127ee04d2591a1a59f67b9e44d4d.camel@sipsolutions.net>
-Subject: Re: wcn7850 issues
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Janusz Dziedzic <janusz.dziedzic@gmail.com>, Kalle Valo
- <kvalo@kernel.org>
-Cc: david Atkins <david@3adesign.co.uk>, Baochen Qiang
+	Tue, 03 Sep 2024 10:09:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id F3C7DA41FB9;
+	Tue,  3 Sep 2024 10:09:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A249CC4CEC4;
+	Tue,  3 Sep 2024 10:09:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1725358175;
+	bh=p/r5DqaUFcOB7OWIjOI7gSXaQQ65xVjhglSd+Mb6m9s=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=KP8uh5njvFEeq0IJTPzkDIt7XwxgQh3nRcWOfFhMQRDJVueA1d7kG0NTEVjSgmvtG
+	 iVh8dIiYhIOd7kRhyAP5J/Z3TscyTzwzBRHeqsjNdJv1tmOKCkqiHXVCJ5uDKGySIV
+	 nSpR6VlcSpicMvLLFTz8jjTwy9AeCkowHQG8RfOIOOVf68HB160j9SnVkQWpmOMWyr
+	 u5au2g1ezNUd/mIk5lR1WdAg9t5iGBor4AhA2dhEu2qYwP0Es+gRtzM+9pBgEINcaZ
+	 yYzp+7aqD1P6hXSO+fu1E4VdbFGacUPHpnt17HgHI+7R32eVkBZGBjTa8243VB1Cz8
+	 u927RO9P6Frag==
+From: Kalle Valo <kvalo@kernel.org>
+To: Janusz Dziedzic <janusz.dziedzic@gmail.com>
+Cc: david Atkins <david@3adesign.co.uk>,  Baochen Qiang
  <quic_bqiang@quicinc.com>,  "ath12k@lists.infradead.org"
- <ath12k@lists.infradead.org>, linux-wireless@vger.kernel.org
-Date: Tue, 03 Sep 2024 12:07:46 +0200
-In-Reply-To: <CAFED-j=i+jZwtFVzoiqXrVAubmDdxhqqVpAPSCRPMPoa6G_chQ@mail.gmail.com>
+ <ath12k@lists.infradead.org>,  linux-wireless@vger.kernel.org
+Subject: Re: wcn7850 issues
 References: <LO0P123MB4057D6C2F6FEFF335B30EE7CD6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <LO0P123MB4057122D4C7D07C7114F5ABED6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <be53813c-3edc-4734-b59d-83f43f14ea91@quicinc.com>
-	 <LO0P123MB4057C3085F445434F5E87B3AD6872@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <26bb8ec7-7170-4a09-ada3-c7c753c16e87@quicinc.com>
-	 <LO0P123MB40573F46A6D63145363C6B13D6812@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <cfe8e314-a28b-4ea3-85b2-9f5b4ac2db09@quicinc.com>
-	 <LO0P123MB405769E063E48B0F7AE18C5FD68C2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <LO0P123MB4057E823BDB7B9ECCCD75840D6972@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <a6c609fc-150b-4779-b3f6-dddbd6ce93dc@quicinc.com>
-	 <LO0P123MB40578A6CEC43AEFE301F9ED8D6912@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <86bc1623-8845-43fa-9aad-a8a6066b1448@quicinc.com>
-	 <LO0P123MB4057266AFF389FA69FDC84B8D6922@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <fb455a66-b29b-4eb0-984c-254f9a1c5626@quicinc.com>
-	 <LO0P123MB40578B26075CD4C9C66D144BD6932@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-	 <871q21kwk8.fsf@kernel.org>
-	 <CAFED-j=i+jZwtFVzoiqXrVAubmDdxhqqVpAPSCRPMPoa6G_chQ@mail.gmail.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.52.4 (3.52.4-1.fc40) 
+	<LO0P123MB4057122D4C7D07C7114F5ABED6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<be53813c-3edc-4734-b59d-83f43f14ea91@quicinc.com>
+	<LO0P123MB4057C3085F445434F5E87B3AD6872@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<26bb8ec7-7170-4a09-ada3-c7c753c16e87@quicinc.com>
+	<LO0P123MB40573F46A6D63145363C6B13D6812@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<cfe8e314-a28b-4ea3-85b2-9f5b4ac2db09@quicinc.com>
+	<LO0P123MB405769E063E48B0F7AE18C5FD68C2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<LO0P123MB4057E823BDB7B9ECCCD75840D6972@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<a6c609fc-150b-4779-b3f6-dddbd6ce93dc@quicinc.com>
+	<LO0P123MB40578A6CEC43AEFE301F9ED8D6912@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<86bc1623-8845-43fa-9aad-a8a6066b1448@quicinc.com>
+	<LO0P123MB4057266AFF389FA69FDC84B8D6922@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<fb455a66-b29b-4eb0-984c-254f9a1c5626@quicinc.com>
+	<LO0P123MB40578B26075CD4C9C66D144BD6932@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+	<871q21kwk8.fsf@kernel.org>
+	<CAFED-j=i+jZwtFVzoiqXrVAubmDdxhqqVpAPSCRPMPoa6G_chQ@mail.gmail.com>
+Date: Tue, 03 Sep 2024 13:09:32 +0300
+In-Reply-To: <CAFED-j=i+jZwtFVzoiqXrVAubmDdxhqqVpAPSCRPMPoa6G_chQ@mail.gmail.com>
+	(Janusz Dziedzic's message of "Tue, 3 Sep 2024 11:57:35 +0200")
+Message-ID: <87seuhjbfn.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240903_030752_834568_B14F18F4 
-X-CRM114-Status: UNSURE (   5.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240903_030937_068644_BE2BBED6 
+X-CRM114-Status: GOOD (  18.16  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,20 +91,77 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
->=20
+Janusz Dziedzic <janusz.dziedzic@gmail.com> writes:
+
+> wt., 3 wrz 2024 o 09:47 Kalle Valo <kvalo@kernel.org> napisa=C5=82(a):
+>>
+>> + linux-wireless
+>>
+>> david Atkins <david@3adesign.co.uk> writes:
+>>
+>> > ...
+>> >> >>>         Ext Tag: EHT Operation (802.11be D3.0)
+>> >> >>>             Ext Tag length: 8 (Tag len: 9)
+>> >> >>>             Ext Tag Number: EHT Operation (802.11be D3.0) (106)
+>> >> >>>             EHT Operation Parameters: 0x01, EHT Operation Informa=
+tion
+>> >> Present
+>> >> >>>                 .... ...1 =3D EHT Operation Information Present: =
+True
+>> >> >>>                 .... ..0. =3D Disabled Subchannel Bitmap Present:=
+ False
+>> >> >>>                 .... .0.. =3D EHT Default PE Duration: False
+>> >> >>>                 .... 0... =3D Group Addressed BU Indication Limit=
+: False
+>> >> >>>                 ..00 .... =3D Group Addressed BU Indication Expon=
+ent: 0
+>> >> >>>                 00.. .... =3D Reserved: 0x0
+>> >> >>>             Basic EHT-MCS And Nss Set: 0x44444444
+>> >> >>>             Control: 0x02, Channel Width: 80 MHz EHT BSS bandwidth
+>> >> >>>                 .... .010 =3D Channel Width: 80 MHz EHT BSS bandw=
+idth (2)
+>> >> >>>                 0000 0... =3D Reserved: 0x00
+>> >> >>>
+>> >> >>> Are you saying the ath12k driver does not support these features?=
+ If
+>> >> >>> not can
+>> >> >> you clarify the issue so I can raise with the AP team.
+>> >> >>>
+>> >> >> ath12k/WCN7850 supports EHT, but with NSS only 2. Here the AP
+>> >> >> requires NSS to be no less than 4, that is why EHT connection was =
+disabled.
+>> >> >
+>> >> > Which field is requiring NSS of 4, I'm only seeing a maximum of 4, =
+the
+>> >> Qualcomm windows driver will connect to the same AP, we had assumed t=
+hat
+>> >> that ath12k would do the same.
+>> >> Basic EHT-MCS And Nss Set: 0x44444444
+>> >
+>> > My understanding of the spec is that there are maximum numbers of
+>> > streams though, are you saying the AP has to advertise 0x22222222
+>> > which would then prevent a 4x4 client (say an extender) from
+>> > connecting with 4 streams? I note that the Qualcomm windows driver for
+>> > Hamilton works with the AP and an Intel BE200 also works both of which
+>> > will be in at most 2x2
+>>
+>> Did you test Intel BE200 with the Windows driver? Johannes mentioned
+>> that ieee80211_verify_sta_eht_mcs_support() in mac80211 checks this so I
+>> would assume that iwlwifi also behaves like ath12k.
+>
 > Yes, this is AP issue - hostapd fix required - advertise 0x11111 ...
->=20
+> In other case station  < 4nss will drop to HE only.
 
-You probably don't even want 0x11111111, that would require all MCSes,
-which some stations might not support.
+Thanks. And Johannes pointed out that you had even discussed about this
+before:
 
-Since some things are mandatory, I'm not sure I see a lot of value in
-advertising anything non-zero, certainly not by default, and only set it
-if specifically want to require something in the BSS that's _not_
-already otherwise mandatory.
+https://lore.kernel.org/linux-wireless/CAFED-jk8pJheJEViESnE54f-K+JgRMiWoiC=
+Sa0GBt=3DRKaCn7sw@mail.gmail.com/
 
-I mean, maybe you do want to require 4 NSS and all MCSes like the
-0x44444444 does, so that regular clients cannot connect ;)
+--=20
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-johannes
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
+hes
+https://docs.kernel.org/process/submitting-patches.html
 
