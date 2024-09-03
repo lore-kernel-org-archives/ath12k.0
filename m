@@ -4,63 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28B58CA0ED3
-	for <ath12k@archiver.kernel.org>; Mon,  2 Sep 2024 06:21:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 464C4CA101E
+	for <ath12k@archiver.kernel.org>; Tue,  3 Sep 2024 06:29:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9t2D83CQaFKJivRGar1z49qtl/HhoAFw6u3EDVryhS0=; b=1qrxcgvYeFutqnkvtpaVCRvJI7
-	scW47s4Kg8RSbZSOGLsD+h2fxlafRCbikMy7x8lhe/VRntfNM10I3ocG67Uwug16nlioRTB4jBDU/
-	aq3hBzU0NfahajJnpC+HIAmsBYa4RXK1tswwVBFReWkP8LiqOUCI+eixVOCDIVKMooPGJcR4daRz2
-	gKLvXN0Mwg/chtjj/w2ppGvsjQmWFqwlY8LOXIXkkzojFR6oeW9DjR29/Kf/MrCk7fI449iDQfTl7
-	dBB6LWY2skWFhDiahr/di3P69zndVcGBxgZOEw0u+zkfhhbwmy8W0Hkfvz0A4C0XcG0W/krIrEH7E
-	lkbEFK3A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ARWztaqpqt6+Et2KPbZYq3BeALYixaYk4aF2nMYTYhM=; b=VjCDhgFByAI9xujy1z0u9Nxh4u
+	rBjbi2XOEA224vr3RORC3Uty3R7u3M+2GaFl2Wos6QvLIJIYuemZoXlXISZCGsQar8tad69Mxf3mA
+	o7Pt1VENHbCR/nvHavRJ+XrrK4cwLEfnLrUXia1hFl6BkUO+yzbH1m99/jO24/qi32E7pFBjjzhm8
+	izq0kfnQMF25Xd+YS2lwkJaCK63xDgtgW9T+4mH25sDp7m3RZBU1OpYEJMnnKHbJLo4jz6d1BqYMZ
+	U575izK08Un6xeX3RJW8+w6oqxyqwoQpN7+PPMNE2en4zb+a57ncsGjxYrEnps11RYjEGAHxdcRLa
+	74j8A7yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sl0RZ-0000000D8X5-2nzL
+	id 1slN2n-0000000GT1h-47PR
 	for ath12k@archiver.kernel.org;
-	Mon, 02 Sep 2024 06:21:41 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 03 Sep 2024 06:29:37 +0000
+Received: from mail-cwxgbr01on2072f.outbound.protection.outlook.com ([2a01:111:f403:261b::72f] helo=GBR01-CWX-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sl0Qu-0000000D8SG-2gJx
+	id 1slN2l-0000000GT0n-2XWk
 	for ath12k@lists.infradead.org;
-	Mon, 02 Sep 2024 06:21:23 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 481N55Wc010842;
-	Mon, 2 Sep 2024 06:20:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9t2D83CQaFKJivRGar1z49qtl/HhoAFw6u3EDVryhS0=; b=WYNGd9J2Xvoe1viz
-	LR/TBqVmXp36MO8YwmoVK1qjHt1AFwRT1xxPu2sso0vWFj2nZ3E7jlNInYRmA7+M
-	CsrztgUJOQbm7Oe9iY/1V3/raTRgewkMn08IN4ACzRK22j1InffbiA4Bu6AYdvny
-	UIGgzZY8FwRhlRtyCP2NjZc89jKrjnbJQ1O/43XX89jgRYo/7qt6YkWopLw2EFjy
-	UB36rzUn4LaqmDuuyYWEKgY0UZi97CdwWceRzTj3islWqylc94KeimKC4m77N3eI
-	d91V769+s2k6REdtCOu6ROD6OEiL2QTnzvlcug528E2n5xJyBRChqj+Ok4B3VInh
-	VbiB+g==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41bud2kn77-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 02 Sep 2024 06:20:56 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4826KtRU031302
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 2 Sep 2024 06:20:55 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 1 Sep 2024
- 23:20:54 -0700
-Message-ID: <fb455a66-b29b-4eb0-984c-254f9a1c5626@quicinc.com>
-Date: Mon, 2 Sep 2024 14:20:52 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: wcn7850 issues
-To: david Atkins <david@3adesign.co.uk>,
-        "ath12k@lists.infradead.org"
+	Tue, 03 Sep 2024 06:29:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=IUtd0yEOF5Un+qC/rSRYeLpRkDc04xxmYnaK4sRrNpas93t+w840mRQo/XJQIBYaqIBHsJ3imh1nldYrk83rhOoHnep/ktcww7mN91DNRXofl9GjPSPNDjOTszQGT0L47BmthQAxng634+tdG4bgpIILWyXsoJ4Oo4QKLJhA97ldN4kuDTsLPw9Qc5o6TGyfLf7zHjYs6Y//3qPPz41dp26d3PPs7FN0Uuw1b244rv855IE8SkFL6VrD96kCSxpjyQUif5RFnOAzH5WihF2CmKQsp3z0ozmN2wv7ZdpiFNrFaOxEeBs1yQ4nPMdgRqWmiQctuqFOS+N9e/4/LRbldA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ARWztaqpqt6+Et2KPbZYq3BeALYixaYk4aF2nMYTYhM=;
+ b=uJQ4a6hOaAmdkFgntHpmYgxKTbeNj4iyExJkJjdq/owYxrFbVljjapmTjS85i8odYGqgugYrT5JuAAfUj1LGNnpL3WUNxHaDaribrHOeJ3gA0eegkkIkEYbOuXETu3CAOj2+io/yzTRHXtVIE7bikF/gxgEmb10gsc7GBklUjnAKTCds34ZbvwJDqLduf0rhmnxspy6+TWt8ngRAJUdrafsBE+KoGUWW6StKYcO5SFPFbzWU9w6ATIXCaSVer6hIucPBO/bpBDtpluygZlCmyZm1xPNsc8d3ylTtxtVVrZdgzFHJFVe2fAoNr2H4EhYho3FCpOQf09HUe+vy64TyHA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=3adesign.co.uk; dmarc=pass action=none
+ header.from=3adesign.co.uk; dkim=pass header.d=3adesign.co.uk; arc=none
+Received: from LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:182::14)
+ by CWLP123MB3410.GBRP123.PROD.OUTLOOK.COM (2603:10a6:400:73::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.26; Tue, 3 Sep
+ 2024 06:29:29 +0000
+Received: from LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
+ ([fe80::493e:62d6:55a0:48c6]) by LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
+ ([fe80::493e:62d6:55a0:48c6%6]) with mapi id 15.20.7918.024; Tue, 3 Sep 2024
+ 06:29:29 +0000
+From: david Atkins <david@3adesign.co.uk>
+To: Baochen Qiang <quic_bqiang@quicinc.com>, "ath12k@lists.infradead.org"
 	<ath12k@lists.infradead.org>
+Subject: RE: wcn7850 issues
+Thread-Topic: wcn7850 issues
+Thread-Index: AQHa7kGb/waLDsK5rUe0AflzG3bOpLInNsxggABezQCAAjnlIIAEFF+AgACLnWCAEPZAAIAAFKQAgAMsa8CAATNCgIAARKCwgAAFVgCAAZPVMA==
+Date: Tue, 3 Sep 2024 06:29:29 +0000
+Message-ID: <LO0P123MB40578B26075CD4C9C66D144BD6932@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
 References: <LO0P123MB4057D6C2F6FEFF335B30EE7CD6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
  <LO0P123MB4057122D4C7D07C7114F5ABED6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
  <be53813c-3edc-4734-b59d-83f43f14ea91@quicinc.com>
@@ -74,29 +68,107 @@ References: <LO0P123MB4057D6C2F6FEFF335B30EE7CD6BF2@LO0P123MB4057.GBRP123.PROD.O
  <LO0P123MB40578A6CEC43AEFE301F9ED8D6912@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
  <86bc1623-8845-43fa-9aad-a8a6066b1448@quicinc.com>
  <LO0P123MB4057266AFF389FA69FDC84B8D6922@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
+ <fb455a66-b29b-4eb0-984c-254f9a1c5626@quicinc.com>
+In-Reply-To: <fb455a66-b29b-4eb0-984c-254f9a1c5626@quicinc.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <LO0P123MB4057266AFF389FA69FDC84B8D6922@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: vzBvEF5I9DTXvcwMCgL04FP-nZDW2NOI
-X-Proofpoint-ORIG-GUID: vzBvEF5I9DTXvcwMCgL04FP-nZDW2NOI
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-09-01_06,2024-08-30_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
- clxscore=1015 spamscore=0 mlxlogscore=999 malwarescore=0 mlxscore=0
- bulkscore=0 priorityscore=1501 phishscore=0 impostorscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2409020052
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=3adesign.co.uk;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: LO0P123MB4057:EE_|CWLP123MB3410:EE_
+x-ms-office365-filtering-correlation-id: 960d3aea-f5e2-4d01-d638-08dccbe1c419
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|376014|38070700018;
+x-microsoft-antispam-message-info: =?utf-8?B?RXdnYzl2cGtCM2VMMXk3YlVlaVN1RU8zZ3MwNkpsa29NdUlnM3BoZmRBWjMx?=
+ =?utf-8?B?R1BMMTRQOC90dEpMclR0eVRtbittVnlNRUxBU3BLOFppUWdwNVVpM1NvK0o0?=
+ =?utf-8?B?RmxKbDhDWmxFSFVHRHlmNlFwUGNCSFFRWXpoeVM0TTNxYjliUkRXWGQ4UmxK?=
+ =?utf-8?B?UUNTeDlsUHk2Qm42Mi9KZzdzbHJBNHNQT0JGZ0tXenI0L0RLd3gxSmFkU0lu?=
+ =?utf-8?B?L0NFZEtxUU04azd6Q0xkeVRwMDZ0c2RFQVRuMXNENml6eVVwNEFQTWxzZ2NL?=
+ =?utf-8?B?V29taGNrMmRYck1WR0w0cWVRRS9jM1RVaWFiR2djbzRTY2k1T3MxYjZ5M1Vy?=
+ =?utf-8?B?b2lYZ1VQVklvaDd0cnFJOCtDTjVZUXhNQ0tFaWF0ZW9lZmhpVFIxKzNDNDlT?=
+ =?utf-8?B?N25takJqR0tDUXNlR0E5aG5BM1BuN3Y2NWVkTjh4K0IzM2FzNDBsY2lvb2c5?=
+ =?utf-8?B?NnpJQ1F1NUpWUlRxNFd5VXU0U3l2ZVZQa0hzZEkyUXRjMERHZ0RaaVNWbGZP?=
+ =?utf-8?B?NFJYQ0Rhb2Vobkc5alNuanNaYkdReVc0bHBDd3NLM3VhZGs3cWZaNHBkaFdu?=
+ =?utf-8?B?WEFma0FaQUZBazdRdDZUbGJVVFlmNm1vT1pObDdmellQeWZGRFRCN2ZaN3My?=
+ =?utf-8?B?N3JtOTFtd1hzbXZsWWlDQU5za3ZCL2l6L05kWVRPNTBjMkNRUExHYkxocFpU?=
+ =?utf-8?B?T0JrWUc2bUNhNFo1QnZpU0NpRkFlNVR5NEMwWUVjR0VUU0FFd1pPazcyT01p?=
+ =?utf-8?B?UGp3Y1EzWS9jYWU3UkJhUVdYMlgreVRtdUQxeEowTkVHRitkMnFmcTNjWjZx?=
+ =?utf-8?B?S3RKS05jOXJkdmE2ZHc5cGJOWTI4T2ZObzgwNDNXa2hFcVkxNUl6VURVaENJ?=
+ =?utf-8?B?NEkzMjZtSU8zUnNYWmNEN252VHlxVVd3ellLeG9rMjYvbWxMMzk3b2d5L2RY?=
+ =?utf-8?B?dW1qNFlPQkdaWm12NWdxaFNZdVNHRld6QkhBVmx4WGRLKzg1TVRNbEVzcWho?=
+ =?utf-8?B?Z0pnS2laaUp5OUsvZ1dFbHVxZ0J1eFV4TWcxNzVkRzB2V3REdzFLMldDdXho?=
+ =?utf-8?B?Tll6bmd5WGZ3TXhYRnhmbG40NnhQY2tiOS9POEZIY1JBWHRpNGlmRFFka3FP?=
+ =?utf-8?B?VWM1Q2VETFJ5aW1hNmtMVURnWStUODV3blBaK1hJYy9YNVNIQ3cxZjdlTFBP?=
+ =?utf-8?B?V0t6ajk0YWh1YmhpbGpmYmhxWFh3Qzc0a3N0U1dwcnNDVFhlNmNXS1JoM3Zl?=
+ =?utf-8?B?UVZ5bE40eXlxNmFVdGt2QlhkclQweU1RTDBiV3dSTG1CVGtFdGdDY1BhL2Na?=
+ =?utf-8?B?cjBZOVMwMVhTTHNOMVM1dTRSc3ZMWFBRbWJ2ejBZTENDampUSzVla0prdlRW?=
+ =?utf-8?B?VXY5aUl6UzdDQWpPSUpOMEJWQjZqNXZqSEFweTRZSmVTR0NZeUIyanczcjZy?=
+ =?utf-8?B?WmsrRzJNY1VRb2pnSEx1U0ZIdEpoSVAxS2FOMnFreXFjRmpjZmFXT3g4TVNU?=
+ =?utf-8?B?eTZpanVlNnQ3RUxPRVJ2SU9QTkF5ME8xNkcwVUZ0VG5wZTBoUnViZlVFc05V?=
+ =?utf-8?B?U1ZCSlVHV2tUODc0M0hCdDBoWmZOQTBXREhWdjlwaW14RUh1WUo4OTlCTWlG?=
+ =?utf-8?B?YlowOVYxbFdnYW1ES0FEZksrd05BdDliWkRqSlBsdE83eHpmZTIvcitaODEr?=
+ =?utf-8?B?bWU2TVVRRGRCS09HckN4ank5STgwQ1BMT25NMTRJVWM1czU0N0NWdlBjS0p6?=
+ =?utf-8?B?Smt2MnJyckljaXAwQTEvdUFDMjZQNWFkVWxjTlVlUWhYSHkwQU1kK2lJUjhF?=
+ =?utf-8?B?VHFiajZMVWhoTmltRzhQaXArcVRzYVVXeGQ5b3ZXc0tHOWRQQ1ZnZ1FINzdm?=
+ =?utf-8?B?bEFwVkw4blRRdWx5OTZVL1g2WHdZMzVYQVE1KzRLZDVUTmc9PQ==?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?eVZIcDFaR29JMmNYRGwzT1kvdk90K2JpSUl4elFwemJsRUcrajJlYlhjSW1W?=
+ =?utf-8?B?eTJqRlJsQTd5VkNNMVJ1bHhSUkxpekZ2OU1iQkxIeHYzQ1RYR2RVRTNCbkhP?=
+ =?utf-8?B?c3NPU1FJcjJUcGFtZzA1V2RkNDlXR2JZamtYZUh1SWdqaVROU01aMzF0NlZ6?=
+ =?utf-8?B?Tk41SE45V1AvZUxRMW5YcElJZ2ZTTnB6L2hMWnh2YlRsWFoxSlJ6WDhpNm16?=
+ =?utf-8?B?U1J3dDJhZmxHRnoxVU1NL3ZZUlMxc3NucE5aUHpyc0FmV1NtQjBpRDdySkZh?=
+ =?utf-8?B?WTRXSmxnY0JqNjR4OUlacGhacURuMTd6c3NQWDNvWThnUEZhdWNZT3lTYzRr?=
+ =?utf-8?B?eFRvYlkxK3lrQjZtb0RIc2wreWY4WTFqOWNzb2ZzTnFXaGp2ZE5XNThlN0FE?=
+ =?utf-8?B?VmJmRkNhcWJIRlpVOEpwVi9yUmJCN0FpWjVLV1lHZXBzdEhnMkRnVmlCeCtn?=
+ =?utf-8?B?Z1FXc3lHTW1vZjJQSlVkT01USnArTlJ1NkpEWkl3ajlBSW9wc0ZlemNRTzJM?=
+ =?utf-8?B?bUYzcno1Q1JvVi90TExKVzNzWjI1WEk1VUtQUDhLalBvWlJGZTFESUZOQnhR?=
+ =?utf-8?B?OTI4aU1lNE9zdFpvVEpNVzc2RXZtR1l4MWVmcVFDci9BbHR1enBidGlsbjBt?=
+ =?utf-8?B?WW1WcTVFV2MyQi9nQ0ZaZnYzZGRrZTh4ZW56SGpjc2xQTExpMWViSFBxYUYx?=
+ =?utf-8?B?UVVBZlh1VEtNVk10NWl6QVBVTmdwWWN2WUdOK1A2dmxnMUM4OFZQSExjNVAz?=
+ =?utf-8?B?QWF5MytQMzRtSzVnV2pqUkRQVTducTE2dlMyTVhRNUxKUlV4emg3bGcyQnVr?=
+ =?utf-8?B?MXZKT1BDVFdTK2hDUTdwYXZJUThwVzNBRnVUK3dpSE1jMEFBMitaTmVUTUg3?=
+ =?utf-8?B?dHp0cGxiMWdOS1J4ME83NTFJWjFhSkxaaEZVRWgrd1c5VDBjYjB0eFJlM0xk?=
+ =?utf-8?B?bTd6WlNqNGx4ZGx2bnV4YUdGckIyU3NWSU9leVd6dTYxTG4wSnNHM29XcStp?=
+ =?utf-8?B?ZklhcVZNWnR4bzBicTJOZ1lTZ3FxTkg1R0NkQ1dqSGVUZkRoMWJRbGRCbUF2?=
+ =?utf-8?B?QXE5Y0hXcG5zdVZFaCtUZFF6eGhhY3djWEpFNGpCazdqYVBpaXc4MWFvUGMy?=
+ =?utf-8?B?ZFMyc1d1TlA5QldjSFpHVEZ5UnUrK1ZPVUt0UXBwRmowSzZxMEFqenQwK2R4?=
+ =?utf-8?B?MDdRN0gyTExWZ1dQc1ZOQXE2WWkxZ2kyQjdZUm43VktVdjVNWXJyWjZkVFJI?=
+ =?utf-8?B?bjBuaTN0MHU4eHpqVjAyUHd2RytYZ1NCODNBVVNkWkJFWGV5VnN0Mzgwc29i?=
+ =?utf-8?B?dEtNWksyQUNBdHZUdkR1Q2xTandUT2NpaHRnMUZncmxRZHMvS0xFU3lYK3Fi?=
+ =?utf-8?B?OXgyeWk0ME1wekJIMmJaZzVqNEhkVjZmdW5sQXdwakFUMGxjcUgzblVMaEFi?=
+ =?utf-8?B?VVFSWDViT0NMd3RwdHAxKzNrNCtra0ZNT1JsbURCdyt2UVhBZml2RWErQ2Nw?=
+ =?utf-8?B?eU1sYWxKVElybFlsSEJlTjJUcWlaZ2NaYzc4Sy8vaVM2RHJwazBkSHhKcEdz?=
+ =?utf-8?B?RUt6UDc1cFR0cjMza1dDT2t4ci9iOW9RWUMzMEFRd2loMTYyOEtLS3ZDUkto?=
+ =?utf-8?B?RGU2UXNnWjVZKzF2dlVrQk5vcWV3ckthcTExMGFCT0hrYUZxOUhPL25iYVhk?=
+ =?utf-8?B?RGtlR0xvQ2Rzclh1Q0NxQ0U0UzQwVy9GZkpaMGpFQ3VnN2g2ZGk3aU9GeVhC?=
+ =?utf-8?B?ZUdJRTl0MkdkenZDSW5iV01DMGFoMFlQczhKTDg0TDV5TzNiMW1kTWhQVTJW?=
+ =?utf-8?B?YzVwVmlvdnVyb2QrczE1WnI4SGt1UWFRa0xLcmNnTFcveEJYUjFSTWU5TFZJ?=
+ =?utf-8?B?OHJKU1hHVGVtY3JIdFBXZVVDb1h1dEQ2emE3cUNubGZHejhINFBnZmtPQU5l?=
+ =?utf-8?B?aGdLaVo5cDh3a2U5dEFtM1JnUU9RZmFtcmlGdVgwakF3SnpacmJGL2J1elFJ?=
+ =?utf-8?B?aFBYSzFTVG1XZ0IwcjIxYlVMTlJuNDhoTGFIVGNZODJnMFFGak9wUVZ4RUxH?=
+ =?utf-8?B?MlowbWRsb1licVh1VUd2ZW9UZC9sbnRwdnVaOVZvK0xTQWxXNWJMYUl5Y2xS?=
+ =?utf-8?Q?H0cGiEgshMfwZJUHYZPu+t/2P?=
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+X-OriginatorOrg: 3adesign.co.uk
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 960d3aea-f5e2-4d01-d638-08dccbe1c419
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2024 06:29:29.7813
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4b153f19-49d1-4c9d-8de6-70aea15d7add
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: HlQE55x0hMEZFKVgBudPKXBV+3WCglYTINh0ZkgEFijPVwiMleZi1J5zl3gsFAkKCCJIV+AEZ81tsaDUvwONew==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWLP123MB3410
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240901_232100_791345_45A045B2 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20240902_232935_671731_1AFC798E 
+X-CRM114-Status: GOOD (  13.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,70 +183,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 9/2/2024 2:03 PM, david Atkins wrote:
->> On 9/1/2024 3:39 PM, david Atkins wrote:
->>>> On 8/30/2024 1:55 PM, david Atkins wrote:
->>>>> Any updates on this? We still cannot register a Hamilton card with
->>>>> ath12k driver with a 4x4 AP
->>>>
->>>> The 'Basic EHT-MCS And Nss Set' indicate the minimal requirement, not
->>>> the max, see spec:
->>>>
->>>> 35.15 EHT BSS operation
->>>> 35.15.1 Basic EHT BSS operation
->>>>
->>>> An EHT STA has dot11EHTOptionImplemented equal to true.
->>>> The basic EHT-MCS and NSS set is the set of <EHT-MCS, NSS> tuples
->>>> that are supported by all EHT STAs that are members of an EHT BSS. ...
->>>>
->>>> An EHT STA shall not attempt to join (MLME-JOIN.request primitive) a
->>>> BSS unless it supports (i.e., is able to both transmit and receive
->>>> using) all of the <EHT-MCS, NSS> tuples in the basic EHT-MCS and NSS set.
->>>
->>> I'm unsure what's missing here, this is the beacon data relating to
->>> EHT MCS/NSS
->>>
->>>             Supported EHT-MCS and NSS Set
->>>                 EHT-MCS Map (BW <= 80MHz): 0x444444
->>>                     .... .... .... .... .... 0100 = Rx Max Nss That Supports EHT-MCS 0-9:
->> 4
->>>                     .... .... .... .... 0100 .... = Tx Max Nss That Supports EHT-MCS 0-9: 4
->>>                     .... .... .... 0100 .... .... = Rx Max Nss That Supports EHT-MCS 10-
->> 11: 4
->>>                     .... .... 0100 .... .... .... = Tx Max Nss That Supports EHT-MCS 10-
->> 11: 4
->>>                     .... 0100 .... .... .... .... = Rx Max Nss That Supports EHT-MCS 12-
->> 13: 4
->>>                     0100 .... .... .... .... .... = Tx Max Nss That Supports EHT-MCS 12-
->> 13: 4
->>>         Ext Tag: EHT Operation (802.11be D3.0)
->>>             Ext Tag length: 8 (Tag len: 9)
->>>             Ext Tag Number: EHT Operation (802.11be D3.0) (106)
->>>             EHT Operation Parameters: 0x01, EHT Operation Information Present
->>>                 .... ...1 = EHT Operation Information Present: True
->>>                 .... ..0. = Disabled Subchannel Bitmap Present: False
->>>                 .... .0.. = EHT Default PE Duration: False
->>>                 .... 0... = Group Addressed BU Indication Limit: False
->>>                 ..00 .... = Group Addressed BU Indication Exponent: 0
->>>                 00.. .... = Reserved: 0x0
->>>             Basic EHT-MCS And Nss Set: 0x44444444
->>>             Control: 0x02, Channel Width: 80 MHz EHT BSS bandwidth
->>>                 .... .010 = Channel Width: 80 MHz EHT BSS bandwidth (2)
->>>                 0000 0... = Reserved: 0x00
->>>
->>> Are you saying the ath12k driver does not support these features? If not can
->> you clarify the issue so I can raise with the AP team.
->>>
->> ath12k/WCN7850 supports EHT, but with NSS only 2. Here the AP requires NSS
->> to be no less than 4, that is why EHT connection was disabled.
-> 
-> Which field is requiring NSS of 4, I'm only seeing a maximum of 4, the Qualcomm windows driver will connect to the same AP, we had assumed that that ath12k would do the same.
-Basic EHT-MCS And Nss Set: 0x44444444
-
-> 
-> 
-> 
-> 
+Li4uDQo+ID4+PiAgICAgICAgIEV4dCBUYWc6IEVIVCBPcGVyYXRpb24gKDgwMi4xMWJlIEQzLjAp
+DQo+ID4+PiAgICAgICAgICAgICBFeHQgVGFnIGxlbmd0aDogOCAoVGFnIGxlbjogOSkNCj4gPj4+
+ICAgICAgICAgICAgIEV4dCBUYWcgTnVtYmVyOiBFSFQgT3BlcmF0aW9uICg4MDIuMTFiZSBEMy4w
+KSAoMTA2KQ0KPiA+Pj4gICAgICAgICAgICAgRUhUIE9wZXJhdGlvbiBQYXJhbWV0ZXJzOiAweDAx
+LCBFSFQgT3BlcmF0aW9uIEluZm9ybWF0aW9uDQo+IFByZXNlbnQNCj4gPj4+ICAgICAgICAgICAg
+ICAgICAuLi4uIC4uLjEgPSBFSFQgT3BlcmF0aW9uIEluZm9ybWF0aW9uIFByZXNlbnQ6IFRydWUN
+Cj4gPj4+ICAgICAgICAgICAgICAgICAuLi4uIC4uMC4gPSBEaXNhYmxlZCBTdWJjaGFubmVsIEJp
+dG1hcCBQcmVzZW50OiBGYWxzZQ0KPiA+Pj4gICAgICAgICAgICAgICAgIC4uLi4gLjAuLiA9IEVI
+VCBEZWZhdWx0IFBFIER1cmF0aW9uOiBGYWxzZQ0KPiA+Pj4gICAgICAgICAgICAgICAgIC4uLi4g
+MC4uLiA9IEdyb3VwIEFkZHJlc3NlZCBCVSBJbmRpY2F0aW9uIExpbWl0OiBGYWxzZQ0KPiA+Pj4g
+ICAgICAgICAgICAgICAgIC4uMDAgLi4uLiA9IEdyb3VwIEFkZHJlc3NlZCBCVSBJbmRpY2F0aW9u
+IEV4cG9uZW50OiAwDQo+ID4+PiAgICAgICAgICAgICAgICAgMDAuLiAuLi4uID0gUmVzZXJ2ZWQ6
+IDB4MA0KPiA+Pj4gICAgICAgICAgICAgQmFzaWMgRUhULU1DUyBBbmQgTnNzIFNldDogMHg0NDQ0
+NDQ0NA0KPiA+Pj4gICAgICAgICAgICAgQ29udHJvbDogMHgwMiwgQ2hhbm5lbCBXaWR0aDogODAg
+TUh6IEVIVCBCU1MgYmFuZHdpZHRoDQo+ID4+PiAgICAgICAgICAgICAgICAgLi4uLiAuMDEwID0g
+Q2hhbm5lbCBXaWR0aDogODAgTUh6IEVIVCBCU1MgYmFuZHdpZHRoICgyKQ0KPiA+Pj4gICAgICAg
+ICAgICAgICAgIDAwMDAgMC4uLiA9IFJlc2VydmVkOiAweDAwDQo+ID4+Pg0KPiA+Pj4gQXJlIHlv
+dSBzYXlpbmcgdGhlIGF0aDEyayBkcml2ZXIgZG9lcyBub3Qgc3VwcG9ydCB0aGVzZSBmZWF0dXJl
+cz8gSWYNCj4gPj4+IG5vdCBjYW4NCj4gPj4geW91IGNsYXJpZnkgdGhlIGlzc3VlIHNvIEkgY2Fu
+IHJhaXNlIHdpdGggdGhlIEFQIHRlYW0uDQo+ID4+Pg0KPiA+PiBhdGgxMmsvV0NONzg1MCBzdXBw
+b3J0cyBFSFQsIGJ1dCB3aXRoIE5TUyBvbmx5IDIuIEhlcmUgdGhlIEFQDQo+ID4+IHJlcXVpcmVz
+IE5TUyB0byBiZSBubyBsZXNzIHRoYW4gNCwgdGhhdCBpcyB3aHkgRUhUIGNvbm5lY3Rpb24gd2Fz
+IGRpc2FibGVkLg0KPiA+DQo+ID4gV2hpY2ggZmllbGQgaXMgcmVxdWlyaW5nIE5TUyBvZiA0LCBJ
+J20gb25seSBzZWVpbmcgYSBtYXhpbXVtIG9mIDQsIHRoZQ0KPiBRdWFsY29tbSB3aW5kb3dzIGRy
+aXZlciB3aWxsIGNvbm5lY3QgdG8gdGhlIHNhbWUgQVAsIHdlIGhhZCBhc3N1bWVkIHRoYXQNCj4g
+dGhhdCBhdGgxMmsgd291bGQgZG8gdGhlIHNhbWUuDQo+IEJhc2ljIEVIVC1NQ1MgQW5kIE5zcyBT
+ZXQ6IDB4NDQ0NDQ0NDQNCg0KTXkgdW5kZXJzdGFuZGluZyBvZiB0aGUgc3BlYyBpcyB0aGF0IHRo
+ZXJlIGFyZSBtYXhpbXVtIG51bWJlcnMgb2Ygc3RyZWFtcyB0aG91Z2gsIGFyZSB5b3Ugc2F5aW5n
+IHRoZSBBUCBoYXMgdG8gYWR2ZXJ0aXNlIDB4MjIyMjIyMjIgd2hpY2ggd291bGQgdGhlbiBwcmV2
+ZW50IGEgNHg0IGNsaWVudCAoc2F5IGFuIGV4dGVuZGVyKSBmcm9tIGNvbm5lY3Rpbmcgd2l0aCA0
+IHN0cmVhbXM/IEkgbm90ZSB0aGF0IHRoZSBRdWFsY29tbSB3aW5kb3dzIGRyaXZlciBmb3IgSGFt
+aWx0b24gd29ya3Mgd2l0aCB0aGUgQVAgYW5kIGFuIEludGVsIEJFMjAwIGFsc28gd29ya3MgYm90
+aCBvZiB3aGljaCB3aWxsIGJlIGluIGF0IG1vc3QgMngyDQo=
 
