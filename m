@@ -4,91 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F129CA0ED3
-	for <ath12k@archiver.kernel.org>; Wed,  4 Sep 2024 07:09:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A218BCD3431
+	for <ath12k@archiver.kernel.org>; Wed,  4 Sep 2024 07:24:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=OAQ1XPeOuW1suoDPDn70c8OJsrNRAiX0NGHVqlphyVc=; b=WQjaPsxKNumjygLC+vUjdj+49J
-	+9svaWv/EeheRvnS8qwk3d7KuTRIyMG7Vs/SvOrqp2enkRNrJX7ztuV7+/S8EmpLNud1uuB7U9Vc1
-	uIbUKXXS+Y1HZe4UMXpI/p7d3Ew91JvYLi9oR3E8waV4I/CfDrR7PORdkdITUuBzTZ0Ok1hxC5AAE
-	WqK98GcGJgQGysoaTL6ItKPVEM19Ka8zHM8nIadZ+puj+UR0hNw4fqYH/5EwtcOdhIceme7xZnmrO
-	KX20M9r++jdcOYUJxMYfb/rD4SKA0ZoXQ6DC/h9xuXwi8HDAR2OlV3yOVfU/7Alg7pCHKS2QESxol
-	RYMyGw1g==;
+	bh=zuox1+60c1BB5UiUAJWGfFhuvc1YXy5uYwQHCjmJhUI=; b=dijBFLKOaCWyahTLPqx2TkbBta
+	qWaswMgiyn8HX8AYMTSgY1fBeBBAEp6aiNDxdU6d1BTr4068dLNPnA0BaMnqjWqFMYLi502Vf7IT3
+	2Y006yltZmio5/nmjyqwwzJh3Sot+WSd97h2II5BwGYTmpVRambs0BrwpbGGX0fs0qlWPqvAfStSw
+	CGA89niHtZ378u5WKVBRKrgIY8oz6tfJDVqngLTj5DJyfpQRz4Eg6KHLkJ7/eqNuFS58h6aX0tpGM
+	6wMqxy32y7ZvY7BFQ7cErf05kklKVKq0ePyU6k3VXchZ075lmapDt1AONsunW7cdNz4nj9w4sT96P
+	3TqPkUcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slk8c-000000037gP-49LL
+	id 1slkN0-00000003Avp-1c8O
 	for ath12k@archiver.kernel.org;
-	Wed, 04 Sep 2024 07:09:10 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	Wed, 04 Sep 2024 07:24:02 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slk8a-000000037fX-0uAK
+	id 1slkMP-00000003Apz-0goE
 	for ath12k@lists.infradead.org;
-	Wed, 04 Sep 2024 07:09:09 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-a86acbaddb4so744355466b.1
-        for <ath12k@lists.infradead.org>; Wed, 04 Sep 2024 00:09:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1725433746; x=1726038546; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=OAQ1XPeOuW1suoDPDn70c8OJsrNRAiX0NGHVqlphyVc=;
-        b=AzPar3BsmSvX/GSsUQLeMhrGvH9GV1SRKH27sOD4HKFe5LS+UUrG6MNf+rp1JnTN7y
-         1cmUUUh7GYGuWVi5jTo4/S884I5eu+60c8YXfeE6YBMcqA5uJJlCCr71aYybXeqmSRJT
-         1YxRbBbw9qLNX0vzQl3OOcDahgwUqePXH0tqyDfH/FDmhtbjikfMwwxxG33V+vZz8XJn
-         3RaCJESxPCFiOjFaUZn37iztmIIo4sM5DgK6D+Una2WC3tJERNi4fr44FC7x8Zk/XrH0
-         mPzwY7nuRF+8iypK5917w7gHC2DzQSXueRUlxgBDEKIbXigA9dwTTKygwYebLKxNHSO+
-         2TZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725433746; x=1726038546;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=OAQ1XPeOuW1suoDPDn70c8OJsrNRAiX0NGHVqlphyVc=;
-        b=UqHOawxvqEvCbOXSa9RpTU6ckcOaeDzDV77p2OJ7eBcsiwz9s2X52/zySDDncBJPgw
-         Nt96CQGPnAlqumHBP3GZvzp9IPRYL0SurrajEs43BXgqVMGUeTaqoE6xp/uDYuTznWgS
-         EgvYJbdO17miwRrjRGWggdD1iDFuF2w+9avbzv4lWvjgySTZRNEr8Vb5P+dznlF4AOUx
-         ryXl+dOlsKKKnMUtpCRAs7uqpUeXA1OebRGwAmtos0+TBwiHGUVEGeLJyb322RKKRpWx
-         HxPBrBjhIW6PD4p/ClRIrVLJmKWEDdHP0yfIruq13//Gzth14y4HpGsSiR1MseFrpPQ2
-         Z3Ug==
-X-Forwarded-Encrypted: i=1; AJvYcCX7T8YTjV1EM/H3lA6YSlDdH/cslIYMPvlYiXXYjjOmqUpDomvmcybaIKIAAGMqLD2TKbiCJAw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw7TiAX1qz+7gEPRtAgKT9uAeO6KiBb7u3uhRCf/OkLZH2zxRAi
-	6rCDJK9+0fGudf/gLsBEWg+oXcwcuB7GNurF6XC4JHjmzRPvXNWrvQ4Y2uW15PwAUazxAw8/Xrg
-	wSpn1PT9tS6H/W31uKDkhQGwusaE=
-X-Google-Smtp-Source: AGHT+IH8DRIxNELexKn1ec0F9xVaOEcsY/HJn4AZsJ8JApAOePnppTC4rgDGU5L8Z7UGOZNtFZiY9gh3goA8HXOQneE=
-X-Received: by 2002:a17:907:6088:b0:a7a:bb54:c858 with SMTP id
- a640c23a62f3a-a897f84d6e0mr1521756766b.26.1725433745986; Wed, 04 Sep 2024
- 00:09:05 -0700 (PDT)
+	Wed, 04 Sep 2024 07:23:27 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 483L0deo026048;
+	Wed, 4 Sep 2024 07:23:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	zuox1+60c1BB5UiUAJWGfFhuvc1YXy5uYwQHCjmJhUI=; b=Vo2HuwOOPVrDGPqh
+	Kefe5Gj+IKeHh6QBYxFUhfIibklfdTTmG5GJBTuJxcfGmVynR9OqNCQ8aa143c9G
+	0/W6+bpujacLjwxqCuf0vUcz8KO7tZZHuaDCmIWKaJw6faqmL1Oy/BCLguvbPz2x
+	eqywln7ybEOq25VEpNFDWN67Qaa8rxQodwK52monfsdhLZ8IiFNtIgLa31Pvqaz9
+	bGpVT3pWH10P5z4hjdRQjI/cnOFwXt3OdDQQGTeIlWLSF9P6gqZNUZTzGzFb0Qs1
+	J+IjPhCkChMene6GwzRogw9InyCIGgLD+TUz4c0c69CgR6fqz2icVCGTrIStSWYv
+	GH3oBg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41bud2sxwj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 04 Sep 2024 07:23:14 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4847NDNv030834
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 4 Sep 2024 07:23:13 GMT
+Received: from [10.216.28.224] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 4 Sep 2024
+ 00:23:12 -0700
+Message-ID: <cecf0e32-b84c-423e-89c3-61eab9f1928a@quicinc.com>
+Date: Wed, 4 Sep 2024 12:53:00 +0530
 MIME-Version: 1.0
-References: <LO0P123MB4057D6C2F6FEFF335B30EE7CD6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <LO0P123MB4057122D4C7D07C7114F5ABED6BF2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <be53813c-3edc-4734-b59d-83f43f14ea91@quicinc.com> <LO0P123MB4057C3085F445434F5E87B3AD6872@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <26bb8ec7-7170-4a09-ada3-c7c753c16e87@quicinc.com> <LO0P123MB40573F46A6D63145363C6B13D6812@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <cfe8e314-a28b-4ea3-85b2-9f5b4ac2db09@quicinc.com> <LO0P123MB405769E063E48B0F7AE18C5FD68C2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <LO0P123MB4057E823BDB7B9ECCCD75840D6972@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <a6c609fc-150b-4779-b3f6-dddbd6ce93dc@quicinc.com> <LO0P123MB40578A6CEC43AEFE301F9ED8D6912@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <86bc1623-8845-43fa-9aad-a8a6066b1448@quicinc.com> <LO0P123MB4057266AFF389FA69FDC84B8D6922@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <fb455a66-b29b-4eb0-984c-254f9a1c5626@quicinc.com> <LO0P123MB40578B26075CD4C9C66D144BD6932@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <871q21kwk8.fsf@kernel.org> <CAFED-j=i+jZwtFVzoiqXrVAubmDdxhqqVpAPSCRPMPoa6G_chQ@mail.gmail.com>
- <87seuhjbfn.fsf@kernel.org> <LO0P123MB4057552A6B51BCC3C75A0013D6932@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
- <CAFED-jnkQRV-_cfSuuOG5YxhA0O6Pxw7GyNyZ3AYoC+-Txn5yw@mail.gmail.com> <LO0P123MB4057091D9028417A192B0E60D69C2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-In-Reply-To: <LO0P123MB4057091D9028417A192B0E60D69C2@LO0P123MB4057.GBRP123.PROD.OUTLOOK.COM>
-From: Janusz Dziedzic <janusz.dziedzic@gmail.com>
-Date: Wed, 4 Sep 2024 09:08:54 +0200
-Message-ID: <CAFED-jnOLFp7VVJoscspeb7dYj_3Qxgd25ji78+7gx5uJdiaqQ@mail.gmail.com>
-Subject: Re: wcn7850 issues
-To: david Atkins <david@3adesign.co.uk>
-Cc: Kalle Valo <kvalo@kernel.org>, Baochen Qiang <quic_bqiang@quicinc.com>, 
-	"ath12k@lists.infradead.org" <ath12k@lists.infradead.org>, 
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH 01/18] dt-bindings: net: wireless: describe the ath12k
+ AHB module
+To: Krzysztof Kozlowski <krzk@kernel.org>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20240814094323.3927603-1-quic_rajkbhag@quicinc.com>
+ <20240814094323.3927603-2-quic_rajkbhag@quicinc.com>
+ <6a740dee-464a-4a10-9c25-ee6f0d22b279@kernel.org>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <6a740dee-464a-4a10-9c25-ee6f0d22b279@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 3oCSoZZCKTntLiPE3hUTi7wqpnkK1EOE
+X-Proofpoint-ORIG-GUID: 3oCSoZZCKTntLiPE3hUTi7wqpnkK1EOE
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-04_05,2024-09-03_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
+ clxscore=1011 spamscore=0 mlxlogscore=999 malwarescore=0 mlxscore=0
+ bulkscore=0 priorityscore=1501 phishscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2409040055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_000908_286668_4A0D5F17 
-X-CRM114-Status: GOOD (  26.19  )
+X-CRM114-CacheID: sfid-20240904_002325_338069_B6577A8A 
+X-CRM114-Status: GOOD (  29.50  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,121 +101,410 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-=C5=9Br., 4 wrz 2024 o 08:04 david Atkins <david@3adesign.co.uk> napisa=C5=
-=82(a):
->
-> > > > >> > ...
-> > > > >> >> >>>         Ext Tag: EHT Operation (802.11be D3.0)
-> > > > >> >> >>>             Ext Tag length: 8 (Tag len: 9)
-> > > > >> >> >>>             Ext Tag Number: EHT Operation (802.11be D3.0)=
- (106)
-> > > > >> >> >>>             EHT Operation Parameters: 0x01, EHT Operation
-> > > > >> >> >>> Information
-> > > > >> >> Present
-> > > > >> >> >>>                 .... ...1 =3D EHT Operation Information P=
-resent: True
-> > > > >> >> >>>                 .... ..0. =3D Disabled Subchannel Bitmap =
-Present: False
-> > > > >> >> >>>                 .... .0.. =3D EHT Default PE Duration: Fa=
-lse
-> > > > >> >> >>>                 .... 0... =3D Group Addressed BU Indicati=
-on Limit: False
-> > > > >> >> >>>                 ..00 .... =3D Group Addressed BU Indicati=
-on Exponent: 0
-> > > > >> >> >>>                 00.. .... =3D Reserved: 0x0
-> > > > >> >> >>>             Basic EHT-MCS And Nss Set: 0x44444444
-> > > > >> >> >>>             Control: 0x02, Channel Width: 80 MHz EHT BSS
-> > bandwidth
-> > > > >> >> >>>                 .... .010 =3D Channel Width: 80 MHz EHT B=
-SS bandwidth
-> > (2)
-> > > > >> >> >>>                 0000 0... =3D Reserved: 0x00
-> > > > >> >> >>>
-> > > > >> >> >>> Are you saying the ath12k driver does not support these
-> > > > >> >> >>> features? If not can
-> > > > >> >> >> you clarify the issue so I can raise with the AP team.
-> > > > >> >> >>>
-> > > > >> >> >> ath12k/WCN7850 supports EHT, but with NSS only 2. Here the
-> > > > >> >> >> AP requires NSS to be no less than 4, that is why EHT
-> > > > >> >> >> connection was
-> > > > disabled.
-> > > > >> >> >
-> > > > >> >> > Which field is requiring NSS of 4, I'm only seeing a maximu=
-m
-> > > > >> >> > of 4, the
-> > > > >> >> Qualcomm windows driver will connect to the same AP, we had
-> > > > >> >> assumed that that ath12k would do the same.
-> > > > >> >> Basic EHT-MCS And Nss Set: 0x44444444
-> > > > >> >
-> > > > >> > My understanding of the spec is that there are maximum numbers
-> > > > >> > of streams though, are you saying the AP has to advertise
-> > > > >> > 0x22222222 which would then prevent a 4x4 client (say an
-> > > > >> > extender) from connecting with 4 streams? I note that the
-> > > > >> > Qualcomm windows driver for Hamilton works with the AP and an
-> > > > >> > Intel BE200 also works both of which will be in at most 2x2
-> > > > >>
-> > > > >> Did you test Intel BE200 with the Windows driver? Johannes
-> > > > >> mentioned that ieee80211_verify_sta_eht_mcs_support() in mac8021=
-1
-> > > > >> checks this so I would assume that iwlwifi also behaves like ath=
-12k.
-> > > > >
-> > > > > Yes, this is AP issue - hostapd fix required - advertise 0x11111 =
-...
-> > > > > In other case station  < 4nss will drop to HE only.
-> > > >
-> > > > Thanks. And Johannes pointed out that you had even discussed about
-> > > > this
-> > > > before:
-> > > >
-> > > > https://lore.kernel.org/linux-wireless/CAFED-jk8pJheJEViESnE54f-
-> > > > K+JgRMiWoiCSa0GBt=3DRKaCn7sw@mail.gmail.com/
-> > > >
-> > >
-> > > So this
-> > >
-> > > Basic EHT-MCS And Nss Set: 0x44444444
-> > >
-> > > Should be 0x11111111 ? and it defines the minimum number of streams
-> > needed to connect?
-> > >
-> > > This the defines the max streams ?
-> > >
-> > >             Supported EHT-MCS and NSS Set
-> > >                 EHT-MCS Map (BW <=3D 80MHz): 0x444444
-> > >                     .... .... .... .... .... 0100 =3D Rx Max Nss That=
- Supports EHT-MCS 0-9:
-> > 4
-> > >                     .... .... .... .... 0100 .... =3D Tx Max Nss That=
- Supports EHT-MCS 0-9: 4
-> > >                     .... .... .... 0100 .... .... =3D Rx Max Nss That=
- Supports EHT-MCS 10-
-> > 11: 4
-> > >                     .... .... 0100 .... .... .... =3D Tx Max Nss That=
- Supports EHT-MCS 10-
-> > 11: 4
-> > >                     .... 0100 .... .... .... .... =3D Rx Max Nss That=
- Supports EHT-MCS 12-
-> > 13: 4
-> > >                     0100 .... .... .... .... .... =3D Tx Max Nss That
-> > > Supports EHT-MCS 12-13: 4
-> > >
-> > You mix different things:
-> >
-> > Supported EHT-MCS and NSS set  vs Basic EHT-MCS And Nss Set
->
-> So the basic set is the minimum?
->
+On 8/16/2024 11:12 AM, Krzysztof Kozlowski wrote:
+> On 14/08/2024 11:43, Raj Kumar Bhagat wrote:
+>> Add device-tree bindings for the ATH12K module found in the IPQ5332
+>> device.
+>>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> 
+> <form letter>
+> Please use scripts/get_maintainers.pl to get a list of necessary people
+> and lists to CC. It might happen, that command when run on an older
+> kernel, gives you outdated entries. Therefore please be sure you base
+> your patches on recent Linux kernel.
+> 
+> Tools like b4 or scripts/get_maintainer.pl provide you proper list of
+> people, so fix your workflow. Tools might also fail if you work on some
+> ancient tree (don't, instead use mainline) or work on fork of kernel
+> (don't, instead use mainline). Just use b4 and everything should be
+> fine, although remember about `b4 prep --auto-to-cc` if you added new
+> patches to the patchset.
+> 
+> You missed at least devicetree list (maybe more), so this won't be
+> tested by automated tooling. Performing review on untested code might be
+> a waste of time.
+> 
+> Please kindly resend and include all necessary To/Cc entries.
+> </form letter>
+> 
+Thanks for the information. In next version we will use the script
+"scripts/get_maintainers.pl" to get the list.
 
-linux mac80211 check it as minimum - if not pass disable client EHT
+>> ---
+>>  .../net/wireless/qcom,ath12k-ahb.yaml         | 325 ++++++++++++++++++
+>>  1 file changed, 325 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+>> new file mode 100644
+>> index 000000000000..8cecc50b6341
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+>> @@ -0,0 +1,325 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/net/wireless/qcom,ath12k-ahb.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Qualcomm Technologies ath12k wireless devices (AHB)
+>> +
+>> +maintainers:
+>> +  - Kalle Valo <kvalo@kernel.org>
+>> +  - Jeff Johnson <jjohnson@kernel.org>
+>> +
+>> +description:
+>> +  Qualcomm Technologies IEEE 802.11be AHB devices.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    enum:
+>> +      - qcom,ipq5332-wifi
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    minItems: 1
+>> +    maxItems: 2
+>> +
+>> +  clock-names:
+>> +    minItems: 1
+>> +    maxItems: 2
+>> +
+>> +  interrupts:
+>> +    minItems: 32
+>> +    maxItems: 56
+>> +
+>> +  interrupt-names:
+>> +    minItems: 32
+>> +    maxItems: 56
+>> +
+>> +  memory-region:
+>> +    minItems: 1
+>> +    description:
+>> +      phandle to a node describing reserved memory (System RAM memory)
+>> +      used by ath12k firmware (see bindings/reserved-memory/reserved-memory.txt)
+>> +
+>> +  qcom,bdf-addr:
+>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>> +    description:
+>> +      System RAM memory address reserved for board data.
+>> +
+>> +  qcom,board_id:
+>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>> +    description:
+>> +      Board id value, it identifies the variant of ath12k WiFi device.
+> 
+> Please do not upstream whatever you have in your vendor tree... You even
+> copied its style! There is no such property in upstream.
+> 
+> NAK, you are duplicating compatibles.
+> 
+> 
 
-OS hostapd set is as 0x00000011 but there is some TODO - so maybe
-someone else should describe it more :)
-https://w1.fi/cgit/hostap/tree/src/ap/ieee802_11_eht.c#n235
+qcom,board_id is a new parameter introduced to distinguish between different variants
+of ath12k devices that share the same compatible value. This differentiation is crucial
+as these variants have different qcom,board_id values (with the same compatible) based
+on WiFi frequency bands capability. For example, 2 GHz, 5 GHz, 6 GHz, or multi-band
+variants of ath12k devices have different qcom,board_id values.
 
-So, eg. OpenWrt/main EHT AP on mt7996e use 0x00000011, and Intel
-BE200/WCN7850 connect using EHT
+In the next version, I will include the above information in the qcom,board_id
+description.
 
-BR
-Janusz
+> 
+>> +
+>> +  qcom,rproc:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>> +    description:
+>> +      DT entry of a WCSS node. WCSS node is the child node of q6 remoteproc driver.
+>> +      (see bindings/remoteproc/qcom,multipd-pil.yaml)
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - memory-region
+>> +  - qcom,board_id
+>> +  - qcom,rproc
+>> +
+>> +additionalProperties: false
+>> +
+>> +allOf:
+>> +  - $ref: ieee80211.yaml#
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,ipq5332-wifi
+> 
+> Why? You have only one variant, why this if?
+
+sure, in next version we will remove the if handing as we are currently
+adding only one compatible.
+
+>> +    then:
+>> +      properties:
+>> +        clocks:
+>> +          items:
+>> +            - description: gcc_xo_clk used for copy engine
+>> +            - description: gcc_im_sleep_clk used for q6.
+>> +
+>> +        clock-names:
+>> +          items:
+>> +            - const: gcc_xo_clk
+>> +            - const: gcc_im_sleep_clk
+>> +
+>> +        interrupts:
+>> +          items:
+>> +            - description: misc-pulse1 interrupt events
+>> +            - description: misc-latch interrupt events
+>> +            - description: sw exception interrupt events
+>> +            - description: interrupt event for ring CE0
+>> +            - description: interrupt event for ring CE1
+>> +            - description: interrupt event for ring CE2
+>> +            - description: interrupt event for ring CE3
+>> +            - description: interrupt event for ring CE4
+>> +            - description: interrupt event for ring CE5
+>> +            - description: interrupt event for ring CE6
+>> +            - description: interrupt event for ring CE7
+>> +            - description: interrupt event for ring CE8
+>> +            - description: interrupt event for ring CE9
+>> +            - description: interrupt event for ring CE10
+>> +            - description: interrupt event for ring CE11
+>> +            - description: interrupt event for ring host2wbm-desc-feed
+>> +            - description: interrupt event for ring host2reo-re-injection
+>> +            - description: interrupt event for ring host2reo-command
+>> +            - description: interrupt event for ring host2rxdma-monitor-ring1
+>> +            - description: interrupt event for ring reo2ost-exception
+>> +            - description: interrupt event for ring wbm2host-rx-release
+>> +            - description: interrupt event for ring reo2host-status
+>> +            - description: interrupt event for ring reo2host-destination-ring4
+>> +            - description: interrupt event for ring reo2host-destination-ring3
+>> +            - description: interrupt event for ring reo2host-destination-ring2
+>> +            - description: interrupt event for ring reo2host-destination-ring1
+>> +            - description: interrupt event for ring rxdma2host-monitor-destination-mac3
+>> +            - description: interrupt event for ring rxdma2host-monitor-destination-mac2
+>> +            - description: interrupt event for ring rxdma2host-monitor-destination-mac1
+>> +            - description: interrupt event for ring host2rxdma-host-buf-ring-mac3
+>> +            - description: interrupt event for ring host2rxdma-host-buf-ring-mac2
+>> +            - description: interrupt event for ring host2rxdma-host-buf-ring-mac1
+>> +            - description: interrupt event for ring host2tcl-input-ring4
+>> +            - description: interrupt event for ring host2tcl-input-ring3
+>> +            - description: interrupt event for ring host2tcl-input-ring2
+>> +            - description: interrupt event for ring host2tcl-input-ring1
+>> +            - description: interrupt event for ring wbm2host-tx-completions-ring4
+>> +            - description: interrupt event for ring wbm2host-tx-completions-ring3
+>> +            - description: interrupt event for ring wbm2host-tx-completions-ring2
+>> +            - description: interrupt event for ring wbm2host-tx-completions-ring1
+>> +            - description: interrupt event for ring host2tx-monitor-ring1
+>> +            - description: interrupt event for ring txmon2host-monitor-destination-mac3
+>> +            - description: interrupt event for ring txmon2host-monitor-destination-mac2
+>> +            - description: interrupt event for ring txmon2host-monitor-destination-mac1
+>> +            - description: interrupt event for umac_reset
+>> +        interrupt-names:
+>> +          items:
+>> +            - const: misc-pulse1
+>> +            - const: misc-latch
+>> +            - const: sw-exception
+>> +            - const: ce0
+>> +            - const: ce1
+>> +            - const: ce2
+>> +            - const: ce3
+>> +            - const: ce4
+>> +            - const: ce5
+>> +            - const: ce6
+>> +            - const: ce7
+>> +            - const: ce8
+>> +            - const: ce9
+>> +            - const: ce10
+>> +            - const: ce11
+>> +            - const: host2wbm-desc-feed
+>> +            - const: host2reo-re-injection
+>> +            - const: host2reo-command
+>> +            - const: host2rxdma-monitor-ring1
+>> +            - const: reo2ost-exception
+>> +            - const: wbm2host-rx-release
+>> +            - const: reo2host-status
+>> +            - const: reo2host-destination-ring4
+>> +            - const: reo2host-destination-ring3
+>> +            - const: reo2host-destination-ring2
+>> +            - const: reo2host-destination-ring1
+>> +            - const: rxdma2host-monitor-destination-mac3
+>> +            - const: rxdma2host-monitor-destination-mac2
+>> +            - const: rxdma2host-monitor-destination-mac1
+>> +            - const: host2rxdma-host-buf-ring-mac3
+>> +            - const: host2rxdma-host-buf-ring-mac2
+>> +            - const: host2rxdma-host-buf-ring-mac1
+>> +            - const: host2tcl-input-ring4
+>> +            - const: host2tcl-input-ring3
+>> +            - const: host2tcl-input-ring2
+>> +            - const: host2tcl-input-ring1
+>> +            - const: wbm2host-tx-completions-ring4
+>> +            - const: wbm2host-tx-completions-ring3
+>> +            - const: wbm2host-tx-completions-ring2
+>> +            - const: wbm2host-tx-completions-ring1
+>> +            - const: host2tx-monitor-ring1
+>> +            - const: txmon2host-monitor-destination-mac3
+>> +            - const: txmon2host-monitor-destination-mac2
+>> +            - const: txmon2host-monitor-destination-mac1
+>> +            - const: umac_reset
+>> +
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,ipq5332-wifi
+>> +    then:
+>> +      required:
+>> +        - clocks
+>> +        - clock-names
+>> +        - interrupts
+>> +        - interrupt-names
+>> +        - qcom,bdf-addr
+>> +
+>> +examples:
+>> +  - |
+>> +
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
+>> +
+>> +    reserved-memory {
+>> +        #address-cells = <2>;
+>> +        #size-cells = <2>;
+>> +
+>> +        q6_region: wcnss@4a900000 {
+>> +            no-map;
+>> +            reg = <0x0 0x4a900000 0x0 0x02300000>;
+>> +        };
+>> +
+>> +        m3_dump: m3_dump@4cc00000 {
+>> +            no-map;
+>> +            reg = <0x0 0x4CC00000 0x0 0x100000>;
+>> +        };
+>> +    };
+> 
+> Drop
+> 
+Sure, will drop reserved-memory for example.
+
+>> +
+>> +    wifi0: wifi@c0000000 {
+>> +        compatible = "qcom,ipq5332-wifi";
+>> +        reg = <0xc000000 0x1000000>;
+>> +        clocks = <&gcc GCC_XO_CLK>,
+>> +                 <&gcc GCC_IM_SLEEP_CLK>;
+>> +        clock-names = "gcc_xo_clk",
+>> +                      "gcc_im_sleep_clk";
+>> +        interrupts = <GIC_SPI 559 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 560 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 561 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 422 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 423 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 424 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 425 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 426 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 427 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 428 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 429 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 430 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 431 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 432 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 433 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 491 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 495 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 493 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 544 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 457 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 466 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 497 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 454 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 453 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 452 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 451 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 488 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 488 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 484 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 554 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 554 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 549 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 507 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 500 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 499 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 498 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 450 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 449 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 447 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 543 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 486 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 486 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 482 IRQ_TYPE_EDGE_RISING>,
+>> +                     <GIC_SPI 419 IRQ_TYPE_EDGE_RISING>;
+>> +        interrupt-names = "misc-pulse1",
+>> +                          "misc-latch",
+>> +                          "sw-exception",
+>> +                          "ce0",
+>> +                          "ce1",
+>> +                          "ce2",
+>> +                          "ce3",
+>> +                          "ce4",
+>> +                          "ce5",
+>> +                          "ce6",
+>> +                          "ce7",
+>> +                          "ce8",
+>> +                          "ce9",
+>> +                          "ce10",
+>> +                          "ce11",
+>> +                          "host2wbm-desc-feed",
+>> +                          "host2reo-re-injection",
+>> +                          "host2reo-command",
+>> +                          "host2rxdma-monitor-ring1",
+>> +                          "reo2ost-exception",
+>> +                          "wbm2host-rx-release",
+>> +                          "reo2host-status",
+>> +                          "reo2host-destination-ring4",
+>> +                          "reo2host-destination-ring3",
+>> +                          "reo2host-destination-ring2",
+>> +                          "reo2host-destination-ring1",
+>> +                          "rxdma2host-monitor-destination-mac3",
+>> +                          "rxdma2host-monitor-destination-mac2",
+>> +                          "rxdma2host-monitor-destination-mac1",
+>> +                          "host2rxdma-host-buf-ring-mac3",
+>> +                          "host2rxdma-host-buf-ring-mac2",
+>> +                          "host2rxdma-host-buf-ring-mac1",
+>> +                          "host2tcl-input-ring4",
+>> +                          "host2tcl-input-ring3",
+>> +                          "host2tcl-input-ring2",
+>> +                          "host2tcl-input-ring1",
+>> +                          "wbm2host-tx-completions-ring4",
+>> +                          "wbm2host-tx-completions-ring3",
+>> +                          "wbm2host-tx-completions-ring2",
+>> +                          "wbm2host-tx-completions-ring1",
+>> +                          "host2tx-monitor-ring1",
+>> +                          "txmon2host-monitor-destination-mac3",
+>> +                          "txmon2host-monitor-destination-mac2",
+>> +                          "txmon2host-monitor-destination-mac1",
+>> +                          "umac_reset";
+>> +
+>> +        memory-region = <&q6_region>;
+>> +        qcom,bdf-addr = <0x4B500000>;
+>> +        qcom,board_id = <0x12>;
+>> +        qcom,rproc = <&q6_wcss_pd1>;
+>> +        status = "okay";
+> 
+> Drop
+> 
+sure will drop the status.
+
+>> +    };
+> 
+> Best regards,
+> Krzysztof
+> 
+> 
+
 
