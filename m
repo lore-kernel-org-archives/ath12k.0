@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 725B7CD4F4F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8FCFCD4F50
 	for <ath12k@archiver.kernel.org>; Thu,  5 Sep 2024 02:36:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,53 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ZaMTgbbrDzVqTQTNgTgZFEHDPaIuScUvLOPP1jl/AbU=; b=Hu27f2XgE30MOzOfuU98cTXJAJ
-	oHRKovoZ1vf3KRRcAQ3d239zD834jeyxg+peijaDT8JxyisfrWbwj0ckDGz/oLj0kkJ+KvHZTl9hL
-	9Rl3FOP+ur4elR3Fg74dTOfwNaDuRiXehw+5QTSDpPOjPXDu2B8+2gduHd0ERFYrfLzATEn+k2r3i
-	Xr3BoVrUQPCOMUE0cR31jo8nW+gnXAiGzShlQg0h+x1jJ2hDkxgjM8YwsLzFJYUk4mciKXrMs7UQ8
-	/4dT01nxCtX7JUplvm3Ef1tvdHb1V3B42uHrVOtWu6w1tk1R+s1cs3TBOB7tFb4hx2BVN2WdkCX7R
-	ntbk2D/w==;
+	bh=No6X3gHpioHamjfMDccV8LJEZBGk/uDqbZ/fuGUTvJM=; b=sDV+wO0s71JnaQa03LUzZAVLue
+	eieq/cgjPdQMKNtBGS+FKk2er2b4NXGu+fWpEDpZaB0C+KwOB9xvTkDAlBPkl0UWL98BxOi7Ptgw2
+	dvNI1p2kUOLmCRYHHotn6kTntwe+8bTd/YaiMWxc2P4IRNcI6kav1gLLvJo4c7rmmknC4y2yyar6A
+	yjMykcQz5KTY0Cd2NPc+px/RQCIgrZ7f84cTCC7s9xbJSLRz/ILyVjGHUHWsN8nXrxfFZoJZi4bWE
+	XY9yWScRp0CH1RRMC3rNUHNVdVRkeKEdE72TGqVPBCpd6T7Klhavr3GMf/uE7lCKF8nNV7Dtrp98I
+	pY6LHx7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm2M6-00000006i9D-0naH
+	id 1sm2M6-00000006i9P-2L9h
 	for ath12k@archiver.kernel.org;
 	Thu, 05 Sep 2024 02:36:18 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm2M2-00000006i7h-3m94
+	id 1sm2M2-00000006i6X-1FZn
 	for ath12k@lists.infradead.org;
 	Thu, 05 Sep 2024 02:36:16 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 484ECcxM010623;
-	Thu, 5 Sep 2024 02:36:14 GMT
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 484MRZwS008193;
+	Thu, 5 Sep 2024 02:36:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ZaMTgbbrDzVqTQTNgTgZFEHDPaIuScUvLOPP1jl/AbU=; b=WXb4zVPwTPA4cZ3s
-	q0+ufW+V5Iv3LM53H7hhcjqUDAeJic8a4hfkyivjaptE6w0m9X092ke2liQaugkY
-	HmbCeDP68A62D2ln1XDYIKN/XnkWk3SnNf8F97avggrykH21tALblh9hK8HqC8O5
-	b0WEkNCpuyejYnSRlqGDEjWr26WD5N81Asxr1cHjDf9VxP3q6X6GWfZhxpYi9lNo
-	sHnQT4cJ8+xpKGQTfDPG7MnegfE5Y77ylNjndEKUkEgklIlqaqIxni9j33zYpz94
-	Tj4pVkrSgxWvr9DTa2pI6N1hg2xt0stOMqvwDl24dPZ90WyQNcl/nsM/z5UR03zv
-	uw2f+g==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41egmrjxr3-1
+	No6X3gHpioHamjfMDccV8LJEZBGk/uDqbZ/fuGUTvJM=; b=E5hktrdmmOb3KcP6
+	Qi3M5Y06Yd8RxNJTps8WMEoXZ7xzROVuhmRmlG/mw21NjBMTTMgtjcaen/n8Anj3
+	Ash1VFK6s7PrLcwoUT/uui6hzleGE+X9Wh8DJXYnZKKWmeQ+8E0yEzNR0kt9FG0n
+	S+asFc8VYEJHid6QDNAfM9e4JqJgU3NGXYJBTBM2lpdbqeWU7LEYnVTGCqvOPaH2
+	K+QDwvNiNeXlqbaxnqCYimUrSDnTbSUoiVxSpTe9/muWWAB+6YuUbXRfTceqgcd1
+	xFIOE1KrtAowMOk5mO3tn6Tjl7nJzewVUm9hncBRfynP8k2jt1xosMezL42dmb56
+	a9VWLQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41bt674mq1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 05 Sep 2024 02:36:14 +0000 (GMT)
+	Thu, 05 Sep 2024 02:36:11 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4852aDMv013842
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4852aAdV010181
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 5 Sep 2024 02:36:13 GMT
+	Thu, 5 Sep 2024 02:36:10 GMT
 Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 4 Sep 2024 19:36:12 -0700
+ 15.2.1544.9; Wed, 4 Sep 2024 19:36:09 -0700
 From: Kang Yang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v3 3/4] wifi: ath12k: use correct WMI command to set country code for WCN7850
-Date: Thu, 5 Sep 2024 10:35:10 +0800
-Message-ID: <20240905023511.362-4-quic_kangyang@quicinc.com>
+Subject: [PATCH v3 1/4] wifi: ath12k: add configure country code for WCN7850
+Date: Thu, 5 Sep 2024 10:35:08 +0800
+Message-ID: <20240905023511.362-2-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1.windows.1
 In-Reply-To: <20240905023511.362-1-quic_kangyang@quicinc.com>
 References: <20240905023511.362-1-quic_kangyang@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: tSCK9ZgzFjt3dhXUa1T5tk9R9uB5p8Xg
-X-Proofpoint-ORIG-GUID: tSCK9ZgzFjt3dhXUa1T5tk9R9uB5p8Xg
+X-Proofpoint-ORIG-GUID: FzfHe7cZy6IUVu8IKORVKLxkYG9f8WUl
+X-Proofpoint-GUID: FzfHe7cZy6IUVu8IKORVKLxkYG9f8WUl
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-05_01,2024-09-04_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
- suspectscore=0 lowpriorityscore=0 mlxlogscore=947 priorityscore=1501
- spamscore=0 malwarescore=0 adultscore=0 bulkscore=0 impostorscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ bulkscore=0 mlxscore=0 impostorscore=0 suspectscore=0 phishscore=0
+ mlxlogscore=999 lowpriorityscore=0 spamscore=0 clxscore=1015
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2407110000 definitions=main-2409050018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_193614_972620_81C3D0BF 
-X-CRM114-Status: GOOD (  20.51  )
+X-CRM114-CacheID: sfid-20240904_193614_474562_D1A0CEBD 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,122 +99,96 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Wen Gong <quic_wgong@quicinc.com>
 
-When userspace try to set country code by NL80211_REGDOM_SET_BY_USER
-hint(like iw reg set XX), it will pass new country code to ath12k.
-Then ath12k will set this new country code to firmware by
-WMI_SET_INIT_COUNTRY_CMDID. But for WCN7850, this WMI command won't
-take effect.
-
-For AP based chips(QCN92xx), WMI_SET_INIT_COUNTRY_CMDID is the correct
-command. However, for STATION based chips(WCN7850), it need to use
-WMI_SET_CURRENT_COUNTRY_CMDID.
-
-Add flag current_cc_support in hardware parameters. It is used to
-distinguish AP/STA platform. After that, the firmware will work
-normal and the regulatory feature works well for WCN7850.
+Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID to firmware, which
+is used for WCN7850 to update country code.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
 Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hw.c  |  3 +++
- drivers/net/wireless/ath/ath12k/hw.h  |  1 +
- drivers/net/wireless/ath/ath12k/reg.c | 29 ++++++++++++++++-----------
- 3 files changed, 21 insertions(+), 12 deletions(-)
+ drivers/net/wireless/ath/ath12k/wmi.c | 36 +++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 13 ++++++++++
+ 2 files changed, 49 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index f2a0f28b27d2..9e4e0ebdd895 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -927,6 +927,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index a76413320dbf..69cdef4907ac 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -3084,6 +3084,42 @@ int ath12k_wmi_send_init_country_cmd(struct ath12k *ar,
+ 	return ret;
+ }
  
- 		.iova_mask = 0,
- 		.supports_aspm = false,
-+		.current_cc_support = false,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -1006,6 +1007,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 
- 		.iova_mask = ATH12K_PCIE_MAX_PAYLOAD_SIZE - 1,
- 		.supports_aspm = true,
-+		.current_cc_support = true,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -1081,6 +1083,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 
- 		.iova_mask = 0,
- 		.supports_aspm = false,
-+		.current_cc_support = false,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 8d52182e28ae..8067b103e266 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -190,6 +190,7 @@ struct ath12k_hw_params {
- 	bool reoq_lut_support:1;
- 	bool supports_shadow_regs:1;
- 	bool supports_aspm:1;
-+	bool current_cc_support:1;
- 
- 	u32 num_tcl_banks;
- 	u32 max_tx_ring;
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index aecfd55aef59..c7b0d66f4874 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -48,6 +48,7 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- {
- 	struct ieee80211_hw *hw = wiphy_to_ieee80211_hw(wiphy);
- 	struct ath12k_wmi_init_country_arg arg;
-+	struct wmi_set_current_country_arg current_arg = {};
- 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
- 	struct ath12k *ar = ath12k_ah_to_ar(ah, 0);
- 	int ret, i;
-@@ -77,23 +78,27 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 		return;
- 	}
- 
--	/* Set the country code to the firmware and wait for
--	 * the WMI_REG_CHAN_LIST_CC EVENT for updating the
--	 * reg info
--	 */
--	arg.flags = ALPHA_IS_SET;
--	memcpy(&arg.cc_info.alpha2, request->alpha2, 2);
--	arg.cc_info.alpha2[2] = 0;
--
- 	/* Allow fresh updates to wiphy regd */
- 	ah->regd_updated = false;
- 
- 	/* Send the reg change request to all the radios */
- 	for_each_ar(ah, ar, i) {
--		ret = ath12k_wmi_send_init_country_cmd(ar, &arg);
--		if (ret)
--			ath12k_warn(ar->ab,
--				    "INIT Country code set to fw failed : %d\n", ret);
-+		if (ar->ab->hw_params->current_cc_support) {
-+			memcpy(&current_arg.alpha2, request->alpha2, 2);
-+			ret = ath12k_wmi_send_set_current_country_cmd(ar, &current_arg);
-+			if (ret)
-+				ath12k_warn(ar->ab,
-+					    "failed set current country code: %d\n", ret);
-+		} else {
-+			arg.flags = ALPHA_IS_SET;
-+			memcpy(&arg.cc_info.alpha2, request->alpha2, 2);
-+			arg.cc_info.alpha2[2] = 0;
++int ath12k_wmi_send_set_current_country_cmd(struct ath12k *ar,
++					    struct wmi_set_current_country_arg *arg)
++{
++	struct ath12k_wmi_pdev *wmi = ar->wmi;
++	struct wmi_set_current_country_cmd *cmd;
++	struct sk_buff *skb;
++	int ret;
 +
-+			ret = ath12k_wmi_send_init_country_cmd(ar, &arg);
-+			if (ret)
-+				ath12k_warn(ar->ab,
-+					    "failed set INIT Country code: %d\n", ret);
-+		}
++	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
++	if (!skb)
++		return -ENOMEM;
++
++	cmd = (struct wmi_set_current_country_cmd *)skb->data;
++	cmd->tlv_header =
++		ath12k_wmi_tlv_cmd_hdr(WMI_TAG_SET_CURRENT_COUNTRY_CMD,
++				       sizeof(*cmd));
++
++	cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
++	memcpy(&cmd->new_alpha2, &arg->alpha2, sizeof(arg->alpha2));
++	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_SET_CURRENT_COUNTRY_CMDID);
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
++		   "set current country pdev id %d alpha2 %c%c\n",
++		   ar->pdev->pdev_id,
++		   arg->alpha2[0],
++		   arg->alpha2[1]);
++
++	if (ret) {
++		ath12k_warn(ar->ab,
++			    "failed to send WMI_SET_CURRENT_COUNTRY_CMDID: %d\n", ret);
++		dev_kfree_skb(skb);
++	}
++
++	return ret;
++}
++
+ int
+ ath12k_wmi_send_twt_enable_cmd(struct ath12k *ar, u32 pdev_id)
+ {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 6a913f9b8315..1797f5c88fb5 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -3945,6 +3945,16 @@ struct ath12k_wmi_eht_rate_set_params {
+ #define MAX_6G_REG_RULES 5
+ #define REG_US_5G_NUM_REG_RULES 4
  
- 		wiphy_lock(wiphy);
- 		ath12k_mac_11d_scan_stop(ar);
++struct wmi_set_current_country_arg {
++	u8 alpha2[REG_ALPHA2_LEN];
++};
++
++struct wmi_set_current_country_cmd {
++	__le32 tlv_header;
++	__le32 pdev_id;
++	__le32 new_alpha2;
++} __packed;
++
+ enum wmi_start_event_param {
+ 	WMI_VDEV_START_RESP_EVENT = 0,
+ 	WMI_VDEV_RESTART_RESP_EVENT,
+@@ -5547,6 +5557,9 @@ int ath12k_wmi_send_bcn_offload_control_cmd(struct ath12k *ar,
+ 					    u32 vdev_id, u32 bcn_ctrl_op);
+ int ath12k_wmi_send_init_country_cmd(struct ath12k *ar,
+ 				     struct ath12k_wmi_init_country_arg *arg);
++int
++ath12k_wmi_send_set_current_country_cmd(struct ath12k *ar,
++					struct wmi_set_current_country_arg *arg);
+ int ath12k_wmi_peer_rx_reorder_queue_setup(struct ath12k *ar,
+ 					   int vdev_id, const u8 *addr,
+ 					   dma_addr_t paddr, u8 tid,
 -- 
 2.34.1
 
