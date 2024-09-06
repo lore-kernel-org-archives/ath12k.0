@@ -4,88 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF86BC54FC6
-	for <ath12k@archiver.kernel.org>; Fri,  6 Sep 2024 04:00:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 835D3E6FE2F
+	for <ath12k@archiver.kernel.org>; Fri,  6 Sep 2024 16:18:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gUoG6A4IofdxHvhdvlVmr7RWja6gyJ5ExgPr+sv5u30=; b=GozIgQB1ognqCLbnmeX4x8AZKJ
-	qt4WFRY3iPPOdP709XqOm3zpfDHcNuQ+PdAzFjb1w0WXx10pZy3oCBTAl1VVRnQoQayP4XIth6yg6
-	nNLtprRM9npPEyz0DmxK/w0FSBmkB2xGwX6NA0Mmm0PwCrs4EKTqj80GsnQaGdkvUWX1Y4cnjfg0n
-	93HcUDupKDM0Z7zeuUn6T+OREw7gmACDdLnRs0c7Ib6mavbU250MBV5d2APpdNFivkchgmh+OR4Eb
-	cqhfojsQHf8jN8Br/h8rvQ+kIOUgG/jhn7l6hjerIgRa9BoH6aIOuwv5rG44cKEhFvA3uC87Y7oSl
-	/Luajdmw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=baw+SVvOAk5efVAO4tua1i5gHWYTfxpU8bwwqfxNki4=; b=1baeJ1V/Tbfd4zSHci1iZoCx77
+	RJIpP4UBf4wDHh0MrXePtt/Yl4SeV2SUt509pyQRBnIPnejIVjmgA9YPLSyXHLA04+psluz20Wq6o
+	mimiok9Whh+iXCGzTMnHVFACh34t7M4vDN+g3wuVVQoTc9ReqH8u/s+1pafr6L0k7Reeyrzb7x1Qy
+	N3rZ2PPEcz07Av1nijirKZa96cfnwOPu0SwltAMz4oWGyO0OJFJ1FEqUHywCPWBpDA1DAvgEvtunE
+	bRQe4sEfeTZFfunQw1V9CfExUGsddfnPihtKkTkCS91pxYDF+Cb56f338fzppnpjsjZ2G1LBZUhjI
+	PM6SzpNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smQ9N-0000000Aa70-2pnq
+	id 1smbfa-0000000CwLf-18AH
 	for ath12k@archiver.kernel.org;
-	Fri, 06 Sep 2024 04:00:45 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 06 Sep 2024 16:18:46 +0000
+Received: from e3i110.smtp2go.com ([158.120.84.110])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smQ9K-0000000Aa6Y-1QOf
+	id 1smbVY-0000000CtTY-1IZO
 	for ath12k@lists.infradead.org;
-	Fri, 06 Sep 2024 04:00:43 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 485IQWqN008673
-	for <ath12k@lists.infradead.org>; Fri, 6 Sep 2024 04:00:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	gUoG6A4IofdxHvhdvlVmr7RWja6gyJ5ExgPr+sv5u30=; b=O/W7WJ5260Z6tJ1K
-	Olizt6ZVHV5pGJWjeUE7sKghWXzrh0JjBfGAqdSgTf9Xw7HTIIxemYaEJFTOz4nV
-	rlTW1N/MCFe9tdvxhXY09yAOHcs0HsL6dJx5RgRKrc7jMpACeFnar870VfOLg+SS
-	3+DWV/6Yg8nNFTGBDCU0riR2wJP6XbfbYbS//iOHU0eOtKuEoCV6dr0xAubkHXNj
-	P2iabepihEWkJlHHP1400/y5diSdOudFt7W8hwntOeW+TrxnyQofW+WvyuWR2X4f
-	bd9XSAj27QjZ16qDum8bA9kM6sxlFJWSWzwAe8FrcbVnxXtzmyJz/My99oA8UyN8
-	h40v8A==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41fhx210t6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 06 Sep 2024 04:00:40 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48640dOa008324
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 6 Sep 2024 04:00:39 GMT
-Received: from [10.50.0.244] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 5 Sep 2024
- 21:00:38 -0700
-Message-ID: <8c83ec2e-6461-394c-2bc1-f4d2db37cc71@quicinc.com>
-Date: Fri, 6 Sep 2024 09:30:33 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
+	Fri, 06 Sep 2024 16:08:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=smtpservice.net;
+ i=@smtpservice.net; q=dns/txt; s=a1-4; t=1725638890; h=feedback-id :
+ x-smtpcorp-track : date : message-id : to : subject : from : reply-to
+ : sender : list-unsubscribe : list-unsubscribe-post;
+ bh=baw+SVvOAk5efVAO4tua1i5gHWYTfxpU8bwwqfxNki4=;
+ b=JKZxz+ye4JTBw7k4txdct/O5TVi6dfUvlRrkPkSBYKe5KSg1yecf2OigzsajuXem8u2P4
+ JJV/Da4WB1IinLVtPqagPRAnwVIDGAL+VqVGzRVw0r/SYXADTbru1X1nXfIuVTzfSd5fmsl
+ EEbOufk+Ia/Y1L0JQmloxKh9TrfxHYp4NRTCeCVK2keAABe8N5AHNcy2H9HfAshLUKrHPTQ
+ MvOfJ6OBwOMbPO2FPbETfNbRHra3xjjnhirBwST/VG5ASLusCdYVyIWfEcJvazEO6ULySXm
+ jy6A180npeFvlQ0HtOcR/P6jMBh6MLLmyfQsNpI+yllDODQtvNJ64ZGfEWMQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=triplefau.lt;
+ i=@triplefau.lt; q=dns/txt; s=s510616; t=1725638890; h=from : subject
+ : to : message-id : date;
+ bh=baw+SVvOAk5efVAO4tua1i5gHWYTfxpU8bwwqfxNki4=;
+ b=OyFLsGyWCgLsykNz1m3RDnvvOnQykn2IwzddFpFAbsI5VOLYwosTC9TmZtRR65umJjAP1
+ jGmzAefpey2J+G9xeceAlFUKFK8v0lJVP2LZreWtP8K6iV5fGGXnN4ZgFALSLZqWyc0kwER
+ EQrGusz7gaknvxf3InahUSu1k4vwX8jsBgZL+4YnBH69+tMnZHmEvdf/7tvkQzquZkzEVlC
+ uHHaUg5u92wc2I66fYXRyDk0j+UnE4s/Q1+bdkryOktZ6agH6A2KmCzwViIulRTtfD9A4ge
+ bpGV9q4Hp21vvqsjKcViPjnPHcpjY84beeknxMi4BZDcmOl7zwnifbB7TL9w==
+Received: from [10.12.239.196] (helo=localhost)
+	by smtpcorp.com with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.97.1-S2G)
+	(envelope-from <repk@triplefau.lt>)
+	id 1smbVH-4o5NDgrrXyh-niKz
+	for ath12k@lists.infradead.org;
+	Fri, 06 Sep 2024 16:08:07 +0000
+Date: Fri, 6 Sep 2024 18:09:54 +0200
+From: Remi Pommarel <repk@triplefau.lt>
+To: ath12k@lists.infradead.org
 Subject: Re: Allocating more RX descriptors that can fit in their related
  rings
-Content-Language: en-US
-To: <ath12k@lists.infradead.org>
+Message-ID: <ZtspUm079-A1WTHw@pilgrim>
 References: <ZtigjqSbAWZYU_KQ@pilgrim>
  <daa579b2-c98a-5c7d-1bee-68c305e058b6@quicinc.com>
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <daa579b2-c98a-5c7d-1bee-68c305e058b6@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+ <8c83ec2e-6461-394c-2bc1-f4d2db37cc71@quicinc.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: FB4yf0DnC8XOzEzqqJiKdG1cAMKjbHiS
-X-Proofpoint-GUID: FB4yf0DnC8XOzEzqqJiKdG1cAMKjbHiS
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-05_17,2024-09-05_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 phishscore=0
- lowpriorityscore=0 malwarescore=0 clxscore=1015 spamscore=0 bulkscore=0
- suspectscore=0 mlxlogscore=647 priorityscore=1501 mlxscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409060028
+In-Reply-To: <8c83ec2e-6461-394c-2bc1-f4d2db37cc71@quicinc.com>
+X-Report-Abuse: Please forward a copy of this message, including all headers, to <abuse-report@smtp2go.com>
+Feedback-ID: 510616m:510616apGKSTK:510616s-35jRxIPg
+X-smtpcorp-track: dBrPrcxGr-We.EKQHQH53l_tn.72MtqQb8QDs
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240905_210042_537202_DEBB8984 
-X-CRM114-Status: GOOD (  16.72  )
+X-CRM114-CacheID: sfid-20240906_090824_707941_A2175D41 
+X-CRM114-Status: GOOD (  29.35  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,60 +88,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-corrected the statement below
+On Fri, Sep 06, 2024 at 09:30:33AM +0530, Karthikeyan Periyasamy wrote:
+> On 9/6/2024 9:27 AM, Karthikeyan Periyasamy wrote:
+> > 
+> > 
+> > On 9/4/2024 11:31 PM, Remi Pommarel wrote:
+> > > Hello,
+> > > 
+> > > As far as I understand a bunch (ATH12K_RX_DESC_COUNT) of rx descriptors
+> > > gets allocated, then CMEM is configured for those descriptors cookie
+> > > conversion and is kept available in dp->rx_desc_free_list pool.
+> > > 
+> > > Those descriptors seem to be used to fed two different rings, the
+> > > rx_refill_buf_ring ring via ath12k_dp_rx_bufs_replenish() and the
+> > > reo_reinject_ring one with ath12k_dp_rx_h_defrag_reo_reinject(). While
+> > > the former is kept fully used if possible the latter is only used on
+> > > demand (i.e. reinjection of defragmented MPDU).
+> > > 
+> > > It seems that the number of RX descriptors ATH12K_RX_DESC_COUNT (12288)
+> > > is higher than what those two rings can fit (DP_REO_REINJECT_RING_SIZE +
+> > > DP_RXDMA_BUF_RING_SIZE = 4096 + 32 = 4128).
+> > > 
+> > > My question is why are we allocating that much (12288) buffer if only a
+> > > small part (4128) can be used in worst case ?
+> > > > Wouldn't it be ok to only allocate just enough RX descriptors to fill
+> > > both ring (with proper 512 alignment to ease CMEM configuration) as
+> > > below ?
+> > > 
+> > >   #define ATH12K_RX_DESC_COUNT   ALIGN(DP_REO_REINJECT_RING_SIZE + \
+> > >                                        DP_RXDMA_BUF_RING_SIZE, \
+> > >                                        ATH12K_MAX_SPT_ENTRIES)
+> > > 
+> > > Or am I missing something and this is going to impact performances ?
+> > > 
 
-On 9/6/2024 9:27 AM, Karthikeyan Periyasamy wrote:
-> 
-> 
-> On 9/4/2024 11:31 PM, Remi Pommarel wrote:
->> Hello,
->>
->> As far as I understand a bunch (ATH12K_RX_DESC_COUNT) of rx descriptors
->> gets allocated, then CMEM is configured for those descriptors cookie
->> conversion and is kept available in dp->rx_desc_free_list pool.
->>
->> Those descriptors seem to be used to fed two different rings, the
->> rx_refill_buf_ring ring via ath12k_dp_rx_bufs_replenish() and the
->> reo_reinject_ring one with ath12k_dp_rx_h_defrag_reo_reinject(). While
->> the former is kept fully used if possible the latter is only used on
->> demand (i.e. reinjection of defragmented MPDU).
->>
->> It seems that the number of RX descriptors ATH12K_RX_DESC_COUNT (12288)
->> is higher than what those two rings can fit (DP_REO_REINJECT_RING_SIZE +
->> DP_RXDMA_BUF_RING_SIZE = 4096 + 32 = 4128).
->>
->> My question is why are we allocating that much (12288) buffer if only a
->> small part (4128) can be used in worst case ?
->> > Wouldn't it be ok to only allocate just enough RX descriptors to fill
->> both ring (with proper 512 alignment to ease CMEM configuration) as
->> below ?
->>
->>   #define ATH12K_RX_DESC_COUNT   ALIGN(DP_REO_REINJECT_RING_SIZE + \
->>                                        DP_RXDMA_BUF_RING_SIZE, \
->>                                        ATH12K_MAX_SPT_ENTRIES)
->>
->> Or am I missing something and this is going to impact performances ?
->>
+...
+
 > 
 > Yes, it will impact performance.
 > 
-> Host replenish RxDMA buffers to the HW and after processing it given 
-> back to Rx path (REO, WBM Error, Rx Error). So it can be relate to 
-> one-to-one direct mapping. HW consume in-progress Rx buffer depend on 
-> Data rate mode. If RxDMA buffers not available then it impact 
+> Host replenish RxDMA buffers to the HW and after processing it given
+> back to Rx path (REO, WBM Error, Rx Error). So it cannot be relate to
+> one-to-one direct mapping. HW consume in-progress Rx buffer depend on
+> Data rate mode. If RxDMA buffers not available then it impact
 > performance due to Out-of-order Rx error due to RxDMA buffer unavailable.
-> 
 
-Yes, it will impact performance.
+Thanks for the clarification.
 
-Host replenish RxDMA buffers to the HW and after processing it given
-back to Rx path (REO, WBM Error, Rx Error). So it cannot be relate to
-one-to-one direct mapping. HW consume in-progress Rx buffer depend on
-Data rate mode. If RxDMA buffers not available then it impact
-performance due to Out-of-order Rx error due to RxDMA buffer unavailable.
+I think I do see your point, I though the only way to fill descriptors
+to HW was in ath12k_dp_rx_process() by giving back the rx desc after it
+has been used. In that case having extra buffer wouldn't be needed as it
+wouldn't be possible to refill faster that processing those descriptors.
+
+But it seems that there is a disctinct irq group (i.e. pci*_wlan_dp_3)
+that is used to process RE0, WBM Error, Rx error but also to replenish
+buffers if the refill ring is 3/4 empty (called host2rxdma).
+
+So hypothetically here, if you isolate this irq to a specific CPU (e.g.
+having more that 4 CPU one for each RX data rings and an extra one for
+error and host2rxdma refill) you could have scenarios where the data
+ring processing ath12k_dp_rx_process() could lag enough to be needed
+this extra buffer refilling, is that correct ?
+
+If this is right then that would explain why I didn't see any
+performance difference as with only 4 CPUs (one RX ring processing per
+CPU) the extra buffer refilling couldn't be faster than just giving the
+used descriptor back.
+
+Thanks
 
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+Remi
 
