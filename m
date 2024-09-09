@@ -4,86 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA14DCFC502
-	for <ath12k@archiver.kernel.org>; Mon, 14 Oct 2024 07:18:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 747E1CD4F4C
+	for <ath12k@archiver.kernel.org>; Mon,  9 Sep 2024 05:40:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=caa6yMf65OcFiIwziS5rDTIxTb3ZxY5gFIiSVOcNJU8=; b=mX2sSpMsGbmaPyK8nrnFX8sRFA
-	jOKuA9vznNfT52H+tNoS2/6Rc6tgNBJ/rawZfHr1Z020pOFnfpnrv/0aF5z9fvtja3NtkjcuZEQbx
-	gIAvX0Ah3GFJRzGjBKI2V3AezEZpHsnsqIWCh6M9hS/Fi5H1+GoLoTJqNBN6M6LqYNE8HWY+f3jI4
-	FcwYCaJbycRToIxNL+9r07sbqrChTzwBL00TbMxYfcuuYoB1m2eDEWAXbmpfzT4A6kui+fNZJKnqH
-	wKgKhnzer5286iVeyPuJLdhXQsHmane7WD/+6aicgXEFUGURsIH9oZYAc76DC1bcRgiMZTyMM6KE/
-	wiwtU6mA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:Message-ID:Date:Subject:To:From:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LTg2rKi/yK0nj1tZoNwqJP6azFTq9lyfLGpO96FJ4vo=; b=ZR39IaXaLWCZwi
+	u54z2z366HRioXqv4WrtSpf1SPypy6VaEjSdQ2FPRGKiDKhUBegYLCaVIe/2rvQUr3oAVerQUZ8xU
+	A2kFuk26sOuzZG8V7jqc1hPoBTGkbNZnTrYUomgN6o5vH/I2F4Et20p1i7B+uZQmRyqJLEl7qUKdO
+	MIgTAI2XCAa16xoiNP7fvwmooUUrPerg/svljHINyPK6vBbCJRQhGPkVKeSBbEiIjB+PaTp/5Y9Me
+	azGrb88Zlrn3Y/Hs5/VFeDkVnkWYg/Ip8oLt/rlo4qWMiANh+5LzJ5wH8dab7TFal97GxqYFgiUAm
+	8l/g/o8xD98pLBmYMTag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0FL7-000000041h7-1RgH
+	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1snX8x-00000000XWi-0WbU
 	for ath12k@archiver.kernel.org;
-	Mon, 14 Oct 2024 07:18:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0FKq-000000041b2-3TIJ
+	Mon, 09 Sep 2024 05:40:55 +0000
+Received: from b2202.mx.srv.dfn.de ([194.95.235.50])
+	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1snX8u-00000000XW8-2LRx
 	for ath12k@lists.infradead.org;
-	Mon, 14 Oct 2024 07:17:46 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49DNo2Zl023892;
-	Mon, 14 Oct 2024 07:17:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	caa6yMf65OcFiIwziS5rDTIxTb3ZxY5gFIiSVOcNJU8=; b=ay2NyVwvRsjDh7r2
-	UjAOK4ReIEz8+z0Ix80GOy7kvAjE5VTF/sJp2SpBS8ONwp/Wol1t9bXMmhc2GhS6
-	/Ummt7+nW26mDWZQ2yDzqdeJYFxmeq3le3PloZjkxzOP6gg6TZzmMT+c82oZ4jFP
-	GIA0DneFUKIYLnYrDtYrDKHdaI4gwHCTzS9FQWzh3Uj5ba8lke+n+qbApZiCux3C
-	iNv9UTDbCBw3Krgo0nVe6YUc9kgI/UpQpVg94uh4MikLIhVablk9fCrfXZnj/KYs
-	fPHgyIhUk7U4aXwY9jY8KbqLs5XWL3om31INgYzxLCfuI5x6Ldpr38UJGWTdgXKj
-	N7brMA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 427g45bn5v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Oct 2024 07:17:43 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49E7Hgtc030387
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Oct 2024 07:17:42 GMT
-Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 14 Oct 2024 00:17:40 -0700
-From: Roopni Devanathan <quic_rdevanat@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Rajat Soni <quic_rajson@quicinc.com>,
-        Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: [PATCH v3 2/2] wifi: ath12k: Support pdev Puncture Stats
-Date: Mon, 14 Oct 2024 12:47:20 +0530
-Message-ID: <20241014071720.3991199-3-quic_rdevanat@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241014071720.3991199-1-quic_rdevanat@quicinc.com>
-References: <20241014071720.3991199-1-quic_rdevanat@quicinc.com>
+	Mon, 09 Sep 2024 05:40:54 +0000
+Received: from mailout2.hs-ulm.de (mailout2.HS-Ulm.DE [141.59.88.27])
+	by b2202.mx.srv.dfn.de (Postfix) with ESMTPS id 6FBA860088
+	for <ath12k@lists.infradead.org>; Mon,  9 Sep 2024 07:40:47 +0200 (CEST)
+Received: from smtp.hs-ulm.de (rz-msx-12.hs-ulm.de [141.59.85.12])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mailout2.hs-ulm.de (Postfix) with ESMTPS id 1C440E00F7
+	for <ath12k@lists.infradead.org>; Mon,  9 Sep 2024 07:40:47 +0200 (CEST)
+Received: from rz-msx-11.hs-ulm.de (141.59.85.11) by rz-msx-12.hs-ulm.de
+ (141.59.85.12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.11; Mon, 9 Sep
+ 2024 07:40:46 +0200
+Received: from rz-msx-11.hs-ulm.de ([fe80::d7e5:8b45:bbf9:c264]) by
+ rz-msx-11.hs-ulm.de ([fe80::d7e5:8b45:bbf9:c264%8]) with mapi id
+ 15.02.1544.011; Mon, 9 Sep 2024 07:40:46 +0200
+From: "Wieland, Jens" <Jens.Wieland@thu.de>
+To: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+Subject: 
+Thread-Index: AQHbAnrEYyGM3qpWB0CDvRDJaFxfmg==
+Date: Mon, 9 Sep 2024 05:40:46 +0000
+Message-ID: <4f8f6cd76d0045e5babad8556392abbe@thu.de>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [141.59.88.111]
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: W9Pr1GRe_JBzhxqepHLrxAuATXa67_t7
-X-Proofpoint-ORIG-GUID: W9Pr1GRe_JBzhxqepHLrxAuATXa67_t7
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- lowpriorityscore=0 malwarescore=0 spamscore=0 impostorscore=0 bulkscore=0
- mlxscore=0 priorityscore=1501 adultscore=0 clxscore=1015 suspectscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410140052
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_001745_019776_E531C801 
-X-CRM114-Status: GOOD (  14.04  )
+X-CRM114-CacheID: sfid-20240908_224052_760084_47B49BBD 
+X-CRM114-Status: UNSURE (   4.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,284 +75,6 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Rajat Soni <quic_rajson@quicinc.com>
 
-Add support to request pdev puncture stats from firmware through
-HTT stats type 46. These stats give the count of number of
-subbands used in different wifi standards.
-
-Sample output:
--------------
-echo 46 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-HTT_PDEV_PUNCTURE_STATS_TLV:
-mac_id = 0
-tx_ofdm_su_last_used_pattern_mask = 0x00000001
-tx_ofdm_su_num_subbands_used_cnt_01 = 217
-tx_ofdm_su_num_subbands_used_cnt_02 = 0
-tx_ofdm_su_num_subbands_used_cnt_03 = 0
-.....
-
-HTT_PDEV_PUNCTURE_STATS_TLV:
-mac_id = 0
-tx_ax_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
-tx_ax_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
-tx_ax_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
-tx_ax_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
-.....
-
-HTT_PDEV_PUNCTURE_STATS_TLV:
-mac_id = 0
-tx_be_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
-tx_be_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
-tx_be_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
-tx_be_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
-.....
-
-HTT_PDEV_PUNCTURE_STATS_TLV:
-mac_id = 0
-rx_ax_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
-rx_ax_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
-rx_ax_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
-rx_ax_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
-.....
-
-HTT_PDEV_PUNCTURE_STATS_TLV:
-mac_id = 0
-rx_be_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
-rx_be_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
-rx_be_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
-rx_be_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
-.....
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-
-Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
----
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 138 ++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   |  38 +++++
- 2 files changed, 176 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 60f0260550bb..b85b55ea7bf5 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -2641,6 +2641,141 @@ ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
- 	stats_req->buf_len = len;
- }
- 
-+static const char*
-+ath12k_htt_get_punct_dir_type_str(enum ath12k_htt_stats_direction direction,
-+				  struct debug_htt_stats_req *stats_req)
-+{
-+	const char *direction_str = "unknown";
-+	u32 len = stats_req->buf_len;
-+
-+	switch (direction) {
-+	case ATH12K_HTT_STATS_DIRECTION_TX:
-+		direction_str = "tx";
-+		break;
-+	case ATH12K_HTT_STATS_DIRECTION_RX:
-+		direction_str = "rx";
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	stats_req->buf_len = len;
-+	return direction_str;
-+}
-+
-+static const char*
-+ath12k_htt_get_punct_ppdu_type_str(enum ath12k_htt_stats_ppdu_type ppdu_type,
-+				   struct debug_htt_stats_req *stats_req)
-+{
-+	const char *ppdu_type_str = "unknown";
-+	u32 len = stats_req->buf_len;
-+
-+	switch (ppdu_type) {
-+	case ATH12K_HTT_STATS_PPDU_TYPE_MODE_SU:
-+		ppdu_type_str = "su";
-+		break;
-+	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_MIMO:
-+		ppdu_type_str = "dl_mu_mimo";
-+		break;
-+	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_MIMO:
-+		ppdu_type_str = "ul_mu_mimo";
-+		break;
-+	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_OFDMA:
-+		ppdu_type_str = "dl_mu_ofdma";
-+		break;
-+	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_OFDMA:
-+		ppdu_type_str = "ul_mu_ofdma";
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	stats_req->buf_len = len;
-+	return ppdu_type_str;
-+}
-+
-+static const char*
-+ath12k_htt_get_punct_pream_type_str(enum ath12k_htt_stats_param_type pream_type,
-+				    struct debug_htt_stats_req *stats_req)
-+{
-+	const char *pream_type_str = "unknown";
-+	u32 len = stats_req->buf_len;
-+
-+	switch (pream_type) {
-+	case ATH12K_HTT_STATS_PREAM_OFDM:
-+		pream_type_str = "ofdm";
-+		break;
-+	case ATH12K_HTT_STATS_PREAM_CCK:
-+		pream_type_str = "cck";
-+		break;
-+	case ATH12K_HTT_STATS_PREAM_HT:
-+		pream_type_str = "ht";
-+		break;
-+	case ATH12K_HTT_STATS_PREAM_VHT:
-+		pream_type_str = "ac";
-+		break;
-+	case ATH12K_HTT_STATS_PREAM_HE:
-+		pream_type_str = "ax";
-+		break;
-+	case ATH12K_HTT_STATS_PREAM_EHT:
-+		pream_type_str = "be";
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	stats_req->buf_len = len;
-+	return pream_type_str;
-+}
-+
-+static void
-+ath12k_htt_print_puncture_stats_tlv(const void *tag_buf, u16 tag_len,
-+				    struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_pdev_puncture_stats_tlv *stats_buf = tag_buf;
-+	u8 *buf = stats_req->buf;
-+	u32 len = stats_req->buf_len;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	int i;
-+	const char *direction;
-+	const char *preamble;
-+	const char *ppdu_type;
-+	u32 mac_id__word;
-+	u32 subband_limit;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	mac_id__word = le32_to_cpu(stats_buf->mac_id__word);
-+	subband_limit = min(le32_to_cpu(stats_buf->subband_cnt),
-+			    ATH12K_HTT_PUNCT_STATS_MAX_SUBBAND_CNT);
-+
-+	direction = ath12k_htt_get_punct_dir_type_str(le32_to_cpu(stats_buf->direction),
-+						      stats_req);
-+	ppdu_type = ath12k_htt_get_punct_ppdu_type_str(le32_to_cpu(stats_buf->ppdu_type),
-+						       stats_req);
-+	preamble = ath12k_htt_get_punct_pream_type_str(le32_to_cpu(stats_buf->preamble),
-+						       stats_req);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_PDEV_PUNCTURE_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
-+			 u32_get_bits(mac_id__word, ATH12K_HTT_STATS_MAC_ID));
-+	len += scnprintf(buf + len, buf_len - len,
-+			 "%s_%s_%s_last_used_pattern_mask = 0x%08x\n",
-+			 direction, preamble, ppdu_type,
-+			 le32_to_cpu(stats_buf->last_used_pattern_mask));
-+
-+	for (i = 0; i < subband_limit; i++) {
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "%s_%s_%s_num_subbands_used_cnt_%02d = %u\n",
-+				 direction, preamble, ppdu_type, i + 1,
-+				 le32_to_cpu(stats_buf->num_subbands_used_cnt[i]));
-+	}
-+	len += scnprintf(buf + len, buf_len - len, "\n");
-+
-+	stats_req->buf_len = len;
-+}
-+
- static void
- ath12k_htt_print_pdev_sched_algo_ofdma_stats_tlv(const void *tag_buf, u16 tag_len,
- 						 struct debug_htt_stats_req *stats_req)
-@@ -2936,6 +3071,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_DMAC_RESET_STATS_TAG:
- 		ath12k_htt_print_dmac_reset_stats_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_PDEV_PUNCTURE_STATS_TAG:
-+		ath12k_htt_print_puncture_stats_tlv(tag_buf, len, stats_req);
-+		break;
- 	case HTT_STATS_PDEV_SCHED_ALGO_OFDMA_STATS_TAG:
- 		ath12k_htt_print_pdev_sched_algo_ofdma_stats_tlv(tag_buf, len, stats_req);
- 		break;
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index 6978c3243ee3..e6e2bcbe95a7 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -137,6 +137,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_OBSS_PD_STATS	= 23,
- 	ATH12K_DBG_HTT_EXT_AST_ENTRIES			= 41,
- 	ATH12K_DBG_HTT_EXT_STATS_SOC_ERROR		= 45,
-+	ATH12K_DBG_HTT_DBG_PDEV_PUNCTURE_STATS		= 46,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_SCHED_ALGO	= 49,
- 	ATH12K_DBG_HTT_EXT_STATS_MANDATORY_MUOFDMA	= 51,
- 
-@@ -203,6 +204,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_TX_SELFGEN_BE_STATS_TAG		= 138,
- 	HTT_STATS_TX_SELFGEN_BE_SCHED_STATUS_STATS_TAG	= 139,
- 	HTT_STATS_DMAC_RESET_STATS_TAG			= 155,
-+	HTT_STATS_PDEV_PUNCTURE_STATS_TAG		= 158,
- 	HTT_STATS_PDEV_SCHED_ALGO_OFDMA_STATS_TAG	= 165,
- 
- 	HTT_STATS_MAX_TAG,
-@@ -1140,4 +1142,40 @@ struct ath12k_htt_ast_entry_tlv {
- 	__le32 info;
- } __packed;
- 
-+enum ath12k_htt_stats_direction {
-+	ATH12K_HTT_STATS_DIRECTION_TX,
-+	ATH12K_HTT_STATS_DIRECTION_RX
-+};
-+
-+enum ath12k_htt_stats_ppdu_type {
-+	ATH12K_HTT_STATS_PPDU_TYPE_MODE_SU,
-+	ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_MIMO,
-+	ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_MIMO,
-+	ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_OFDMA,
-+	ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_OFDMA
-+};
-+
-+enum ath12k_htt_stats_param_type {
-+	ATH12K_HTT_STATS_PREAM_OFDM,
-+	ATH12K_HTT_STATS_PREAM_CCK,
-+	ATH12K_HTT_STATS_PREAM_HT,
-+	ATH12K_HTT_STATS_PREAM_VHT,
-+	ATH12K_HTT_STATS_PREAM_HE,
-+	ATH12K_HTT_STATS_PREAM_EHT,
-+	ATH12K_HTT_STATS_PREAM_RSVD1,
-+	ATH12K_HTT_STATS_PREAM_COUNT,
-+};
-+
-+#define ATH12K_HTT_PUNCT_STATS_MAX_SUBBAND_CNT	32
-+
-+struct ath12k_htt_pdev_puncture_stats_tlv {
-+	__le32 mac_id__word;
-+	__le32 direction;
-+	__le32 preamble;
-+	__le32 ppdu_type;
-+	__le32 subband_cnt;
-+	__le32 last_used_pattern_mask;
-+	__le32 num_subbands_used_cnt[ATH12K_HTT_PUNCT_STATS_MAX_SUBBAND_CNT];
-+} __packed;
-+
- #endif
--- 
-2.25.1
-
+subscribe=
 
