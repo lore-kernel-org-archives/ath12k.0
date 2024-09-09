@@ -4,78 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44F05ECE579
-	for <ath12k@archiver.kernel.org>; Mon,  9 Sep 2024 13:12:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A0E1ECE579
+	for <ath12k@archiver.kernel.org>; Mon,  9 Sep 2024 15:12:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=p8XujAoZu0Ug6FtVY5CTudey2C8BQXbywdIx9v/f/Nc=; b=sVdxrNjhi/5GELP8IWttDNV049
-	o2HwUGXhKuXiTB9ji4yXqihcNQWsPJvlddXZsCMsIa/PRsaKHSkkA45cLF21v6hDKVxhoxFRkdN1d
-	bAIXPrhh14t2/ONLW5SL+XfE3fo7nplgD1D/4q/RP5ohkfSiLIFH0T3QkSz9BQSSDeqpJ30yFQdIF
-	Z1lWukj7w6SUDE2nC83jG3fkG/9K+5F9NqKV+or1ArChVnaURAP/cAEWx/dIvQXJhmGu7ZwKO+cv7
-	IZ2ujHo11o/+QB4aiZncqFlgGOzq5Kn30IlLQfo7xkYKnXjm1ljeLJI4vs5sZcZQatRT+I+8y60+x
-	DhcSbNXw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Subject:CC:To:From:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=A7QaaZrrEyCSWOUzDG1W4t46JElHBefqJS0I36xNoKA=; b=NRIbZoBnPfmG/EeGio9bl86nHK
+	9u3+rSdpKpI4x1R73Kc+8ZPQk4SaWR5tKGOKWH8ZpfKL8DDNrBh0EyQGrx6Div+Sd+tT/9MljlsaM
+	+zgbZ6Fsh9VKU6FQh53C8R3lK16acoYDj66q5Y2dwggVwtmz+OPKQl/5d7m5/vZgKZV8CkOEhv6Ti
+	Vdrq8h0bl0cfZplSXkBrdmVlmJPhR3cdFg96hRsSzfN+KZXUxqV+Bk2B+yjuFGaR1xvDUEwdJW4HF
+	W51Iyg6XEIkLNe4Am8CaA1O0+t8yz5q5LWCxiR8iycPMPFTf3HwPgRRKRzYy11ibVhemRyRINp9SN
+	jnJk7Kcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sneBW-000000020mV-45dw
+	id 1sng4E-00000002POk-43mc
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Sep 2024 13:12:02 +0000
-Received: from e3i110.smtp2go.com ([158.120.84.110])
+	Mon, 09 Sep 2024 15:12:38 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sneBT-000000020bD-3DLB
-	for ath12k@lists.infradead.org;
-	Mon, 09 Sep 2024 13:12:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=smtpservice.net;
- i=@smtpservice.net; q=dns/txt; s=a1-4; t=1725887460; h=feedback-id :
- x-smtpcorp-track : date : message-id : to : subject : from : reply-to
- : sender : list-unsubscribe : list-unsubscribe-post;
- bh=p8XujAoZu0Ug6FtVY5CTudey2C8BQXbywdIx9v/f/Nc=;
- b=tsZbWgQ+3OULzu7yNDxn1QorDZor3jh1B3f5Eoywgkd0sfP4xZbbr5MNY+zxnuJuZSDnA
- BZxRYAgjB63JAIccNu6p+l3dsH+eUGifW56k0QWyz2mKpPHqDvo/GquKoY8tJ4FggJNaYj/
- NAH+4JRePLk/ozn3yzi+4aynM1Ep62iegMu2DKuwQwmiD4Inn1PdTyOwM47xQq2fPCM0Efk
- 55zgNxYwizOLEi3XRUaOMUNGF/cS7XQxO2Rnfpzza7nDP4V2dE+d09gVaC3bFeA2yktjEPM
- KM2eHdHsliesY+uZnk/rCvPReca91za/lzYWxMjxZz2lsZPrwwjD/ldMvT8w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=triplefau.lt;
- i=@triplefau.lt; q=dns/txt; s=s510616; t=1725887460; h=from : subject
- : to : message-id : date;
- bh=p8XujAoZu0Ug6FtVY5CTudey2C8BQXbywdIx9v/f/Nc=;
- b=JShYsIFbE9huN8M30CkTPlGqS1XpJrvaOJG/0z7CR/zpTyFRpOlEZeVROphShzNlLasrK
- 8ujyXXrAtjQ7NMTaQhqD3dlYL2O1fvSMC974ILTfTh381SPQZvzUllcJ+Csc/QM9VhtPBfI
- 2yqwoVVew0zrtwC9s5hZZXlHbmfuOYxgiZ2cKHg/YgAzqmNkklsT399FULm94R4vikEInV0
- 66bsfs2+VZNug0WrCoiI0qf+32/3442NXuP/K2MLfx82QHN5R7U5OJATrAiGs8ppvXBwhwW
- 02D/ig9986a7GAG8pJ0TnvY9iPx+speXdT6M4g4yW/LJysoGFQLLDDy0cqBQ==
-Received: from [10.12.239.196] (helo=localhost)
-	by smtpcorp.com with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97.1-S2G)
-	(envelope-from <repk@triplefau.lt>)
-	id 1sneAU-FnQW0hPnAAO-oEom
-	for ath12k@lists.infradead.org;
-	Mon, 09 Sep 2024 13:10:59 +0000
-Date: Mon, 9 Sep 2024 15:12:39 +0200
-From: Remi Pommarel <repk@triplefau.lt>
-To: ath12k@lists.infradead.org
-Subject: Re: Allocating more RX descriptors that can fit in their related
- rings
-Message-ID: <Zt70R7tEfl6gxCOn@pilgrim>
-References: <ZtigjqSbAWZYU_KQ@pilgrim>
- <daa579b2-c98a-5c7d-1bee-68c305e058b6@quicinc.com>
- <8c83ec2e-6461-394c-2bc1-f4d2db37cc71@quicinc.com>
- <ZtspUm079-A1WTHw@pilgrim>
- <9d6b7eb0-89c3-006b-cd05-15c072f45b33@quicinc.com>
+	id 1sng4B-00000002PNf-3eZi;
+	Mon, 09 Sep 2024 15:12:37 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 489DRRC1024766;
+	Mon, 9 Sep 2024 15:12:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=A7QaaZrrEyCSWOUzDG1W4t
+	46JElHBefqJS0I36xNoKA=; b=kKLesKZ73051ALJNzYuZoA3bre0Pb+bwvBKspy
+	16LTdaoBxbOkYjMD+2KTTq/TTejqtdWi61bRYukuPfQukCdsFieZRAhUIHiZL0ce
+	TX5loq/2dmd3iyFKj8r21Bt2rTd7SlQQsxeZ30203Ms+Qnu7kZoVc8+f/aaIC61X
+	vNwEvnXKP2/9L6FEG8QAygSYwVZ12Z2u+WfCJm3P6woc6yvUXvQSnHBsFqkqZQcS
+	RZLKMg977OACUEAcpOUsxNntaNPP9la1qvddb0JXEH91OF6bjv1zTWsshex0Fvxv
+	VIrCONalwPpwhXwfP5JYFLtyMnxf4jYtKWLmWpi/0wZvo6tg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41gy5rb480-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 09 Sep 2024 15:12:33 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 489FCLdn028693
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 9 Sep 2024 15:12:21 GMT
+Received: from [10.111.181.163] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 9 Sep 2024
+ 08:12:20 -0700
+Message-ID: <13914e4d-92d4-4ccd-a7d5-86c5a17426e8@quicinc.com>
+Date: Mon, 9 Sep 2024 08:12:19 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+To: <linux-wireless@vger.kernel.org>
+CC: <ath10k@lists.infradead.org>, <ath11k@lists.infradead.org>,
+        <ath12k@lists.infradead.org>, <quic_jjohnson@quicinc.com>,
+        <quic_kvalo@quicinc.com>
+Subject: pull-request: ath-next-20240909
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <9d6b7eb0-89c3-006b-cd05-15c072f45b33@quicinc.com>
-X-Report-Abuse: Please forward a copy of this message, including all headers, to <abuse-report@smtp2go.com>
-Feedback-ID: 510616m:510616apGKSTK:510616s-35jRxIPg
-X-smtpcorp-track: WgwfBDMSPihu.Gj3bu8_tf4Tj.yOo-2wuVAqj
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 5QM2Emhz1KwsWLxtp7a-Hz-PKffyJOfl
+X-Proofpoint-ORIG-GUID: 5QM2Emhz1KwsWLxtp7a-Hz-PKffyJOfl
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ clxscore=1015 malwarescore=0 bulkscore=0 lowpriorityscore=0 adultscore=0
+ mlxscore=0 impostorscore=0 priorityscore=1501 mlxlogscore=798 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2408220000
+ definitions=main-2409090120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240909_061200_246330_AF372482 
-X-CRM114-Status: GOOD (  39.71  )
+X-CRM114-CacheID: sfid-20240909_081236_062906_16B4CEDE 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,112 +97,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 07, 2024 at 08:09:15AM +0530, Karthikeyan Periyasamy wrote:
-> 
-> 
-> On 9/6/2024 9:39 PM, Remi Pommarel wrote:
-> > On Fri, Sep 06, 2024 at 09:30:33AM +0530, Karthikeyan Periyasamy wrote:
-> > > On 9/6/2024 9:27 AM, Karthikeyan Periyasamy wrote:
-> > > > 
-> > > > 
-> > > > On 9/4/2024 11:31 PM, Remi Pommarel wrote:
-> > > > > Hello,
-> > > > > 
-> > > > > As far as I understand a bunch (ATH12K_RX_DESC_COUNT) of rx descriptors
-> > > > > gets allocated, then CMEM is configured for those descriptors cookie
-> > > > > conversion and is kept available in dp->rx_desc_free_list pool.
-> > > > > 
-> > > > > Those descriptors seem to be used to fed two different rings, the
-> > > > > rx_refill_buf_ring ring via ath12k_dp_rx_bufs_replenish() and the
-> > > > > reo_reinject_ring one with ath12k_dp_rx_h_defrag_reo_reinject(). While
-> > > > > the former is kept fully used if possible the latter is only used on
-> > > > > demand (i.e. reinjection of defragmented MPDU).
-> > > > > 
-> > > > > It seems that the number of RX descriptors ATH12K_RX_DESC_COUNT (12288)
-> > > > > is higher than what those two rings can fit (DP_REO_REINJECT_RING_SIZE +
-> > > > > DP_RXDMA_BUF_RING_SIZE = 4096 + 32 = 4128).
-> > > > > 
-> > > > > My question is why are we allocating that much (12288) buffer if only a
-> > > > > small part (4128) can be used in worst case ?
-> > > > > > Wouldn't it be ok to only allocate just enough RX descriptors to fill
-> > > > > both ring (with proper 512 alignment to ease CMEM configuration) as
-> > > > > below ?
-> > > > > 
-> > > > >    #define ATH12K_RX_DESC_COUNT   ALIGN(DP_REO_REINJECT_RING_SIZE + \
-> > > > >                                         DP_RXDMA_BUF_RING_SIZE, \
-> > > > >                                         ATH12K_MAX_SPT_ENTRIES)
-> > > > > 
-> > > > > Or am I missing something and this is going to impact performances ?
-> > > > > 
-> > 
-> > ...
-> > 
-> > > 
-> > > Yes, it will impact performance.
-> > > 
-> > > Host replenish RxDMA buffers to the HW and after processing it given
-> > > back to Rx path (REO, WBM Error, Rx Error). So it cannot be relate to
-> > > one-to-one direct mapping. HW consume in-progress Rx buffer depend on
-> > > Data rate mode. If RxDMA buffers not available then it impact
-> > > performance due to Out-of-order Rx error due to RxDMA buffer unavailable.
-> > 
-> > Thanks for the clarification.
-> > 
-> > I think I do see your point, I though the only way to fill descriptors
-> > to HW was in ath12k_dp_rx_process() by giving back the rx desc after it
-> > has been used. In that case having extra buffer wouldn't be needed as it
-> > wouldn't be possible to refill faster that processing those descriptors.
-> > 
-> 
-> Explicit hw irq request is there to refill the Rx buffer, processed by
-> host2rxdma[grp_id] under ath12k_dp_service_srng().
-> 
-> Whenever HW need refill it raise explicit hw irq.
-> 
-> > But it seems that there is a disctinct irq group (i.e. pci*_wlan_dp_3)
-> > that is used to process RE0, WBM Error, Rx error but also to replenish
-> > buffers if the refill ring is 3/4 empty (called host2rxdma).
-> 
-> above one
+The following changes since commit ae98f5c9fd8ba84cd408b41faa77e65bf1b4cdfa:
 
-I do think it is when refill ring is 3/4 empty if I understand the
-following excerpt from ath12k_dp_rx_bufs_replenish() correctly:
+  Merge tag 'ath-next-20240812' of git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath (2024-08-13 12:58:32 +0300)
 
-	if (!req_entries && (num_free > (rx_ring->bufs_max * 3) / 4))
-		req_entries = num_free;
+are available in the Git repository at:
 
-> 
-> > 
-> > So hypothetically here, if you isolate this irq to a specific CPU (e.g.
-> > having more that 4 CPU one for each RX data rings and an extra one for
-> > error and host2rxdma refill) you could have scenarios where the data
-> > ring processing ath12k_dp_rx_process() could lag enough to be needed
-> > this extra buffer refilling, is that correct ?
-> 
-> Depends on the data rate traffic you pump.
-> 
-> But you can experiment the reduced count Rx buffer and see the behavior and
-> conclude the performance impact. Also consider the small size frame traffic
-> with highest data rate, here more Rx descriptors used for the traffic.
+  git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-next-20240909
 
-You right small packet traffic could increase the rx descriptors ring
-pressure and there rx buffer starvation could possibly happen in one to
-one mapping.
+for you to fetch changes up to 02f454f9aa6255d99611d6a4e37edd08812878df:
 
-Thanks for your clarifications.
+  wifi: ath12k: Avoid -Wflex-array-member-not-at-end warnings (2024-09-05 19:20:21 +0300)
 
-This question came from the fact that we are using a Qualcomm internal
-patch (not apply to mainline yet) that introduces a 512MB memory profile
-config for which the opposite situation happen (less RX descriptor than
-room in the DP_RXDMA_BUF_RING_SIZE) causing fragmented packet to be drop
-(all rx descriptors being used for rxdma buf reception and none left for
-ath12k_dp_rx_h_defrag_reo_reinject()).
+----------------------------------------------------------------
+ath.git patches for v6.12
 
-So as long as ATH12K_RX_DESC_COUNT is higher than the sum of
-rx_refill_buf_ring and reo_reinject_ring size that is fine with me.
+This is once again a fairly light pull request since ath12k is still
+working on MLO-related changes, and the other drivers are mostly in
+maintenance mode.
 
-Maybe that is worth to be asserted at build time ?
+ath12k
 
--- 
-Remi
+* Fix a frame-larger-than warning seen with debug builds
+* Fix flex-array-member-not-at-end warnings
+
+ath11k
+
+* Fix flex-array-member-not-at-end warnings
+
+ath9k
+
+* Fix a syzbot-reported issue on USB-based devices
+
+----------------------------------------------------------------
+Gustavo A. R. Silva (2):
+      wifi: ath11k: Avoid -Wflex-array-member-not-at-end warnings
+      wifi: ath12k: Avoid -Wflex-array-member-not-at-end warnings
+
+Miaoqing Pan (1):
+      wifi: ath12k: fix the stack frame size warning in ath12k_mac_op_hw_scan
+
+Toke Høiland-Jørgensen (1):
+      wifi: ath9k_htc: Use __skb_set_length() for resetting urb before resubmit
+
+ drivers/net/wireless/ath/ath11k/core.h   |  8 ++++-
+ drivers/net/wireless/ath/ath11k/dp.h     | 23 --------------
+ drivers/net/wireless/ath/ath12k/core.h   |  8 ++++-
+ drivers/net/wireless/ath/ath12k/dp.h     | 12 -------
+ drivers/net/wireless/ath/ath12k/mac.c    | 54 ++++++++++++++++++--------------
+ drivers/net/wireless/ath/ath9k/hif_usb.c |  6 ++--
+ 6 files changed, 46 insertions(+), 65 deletions(-)
 
