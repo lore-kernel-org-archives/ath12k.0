@@ -4,64 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A00AECE57B
-	for <ath12k@archiver.kernel.org>; Mon,  9 Sep 2024 09:08:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3CFAECE579
+	for <ath12k@archiver.kernel.org>; Mon,  9 Sep 2024 10:23:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DP3+0KfPojHejo/zlzYwalITZTi8mrYd6w9ZH6gKIpo=; b=0J5N45FmIdZKYL5lLRgNLUo0pg
-	kZOR9mCU6u0VlbDKyonns67Hnd4zOE2A47vXnmGYR3fSHG1q01o2oNbZo58XTw2Apq3E9MopWwn1s
-	9+PLL/cOqL02tmL924/FP9CzvGpz7Pc0GAy2WVQcBs2u2aVBKwwcDDZs8QJS9lexxAd83N6ofWziO
-	+dh13v5b29ei8KW6lmbjQT1aEetB0YQ5tb7eGGU4lgSJprmKtDKbTk2F6WdoIwTKwxll4UcfSYW84
-	C5y3GqU8Ga5tGSlFQ/p0/LD8CqD9IiJ/sVDN6t0vAYUtLTW3KlEmxRk4eGGxsaahKS81EsF/AaHh/
-	oROca1qQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To
+	:From:Subject:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=oiNp6Bs5OiARYdGamLrScaqZ2kHMNObdVSq851tJm40=; b=N+jO9a3LwMft3O2PK6y+9Y/vE1
+	CD8sHjkdVrA6YsllSXOfTrWJuJQkv/t2GcWEar0Owk/lmE+KSnAAF9kXRs1rXkA9qic9FxyxleNO3
+	7qA3Y+wji2zb0RoBsrVXxTwHscaTJ+9/UL9JiZ9cE1ADc/nBuE++CusrHBqiwb5FdLflacoABD0Ws
+	Qr3bvEdnwRISYuuFqATjlZFB64Z5oc2TirSo/wrmLKBCc/AV9jfcHn92fqCy6AvuFh6xjMSDOirU3
+	qAkTgbpsUmjqK1CV/gxwO+Q6YJN6uIeXYOK6QpQsDNZUXB9LLmGFzsnLKSvsLGQWlumJEEbvkR5ps
+	zJns1CRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snaNR-00000001Eha-49LS
+	id 1snbYo-00000001Uf0-0xjw
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Sep 2024 09:08:05 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Mon, 09 Sep 2024 10:23:54 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snaNO-00000001EfG-30DO
+	id 1snbYl-00000001UeW-1dZM
 	for ath12k@lists.infradead.org;
-	Mon, 09 Sep 2024 09:08:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 45A85A42944;
-	Mon,  9 Sep 2024 09:07:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3FF05C4CEC6;
-	Mon,  9 Sep 2024 09:08:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725872881;
-	bh=aMXIYRngvNW5mNgwQ1XXr2MOsadY5DrTWID8JdS5+40=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=QfvJjYSe92yYekweG8olMivv0KOalcSzNq6yaikJeYh5DQqVErTdh/5igBcgzlHtl
-	 4FDwtyNWpz7hOHF4tVDVvIQx9TlDT508VbZy6M12gE4MUKirq2yM/OfKj5+8pjOH/U
-	 Sds1bbclhiHhGC00pbXlgInaKkkH+cO/xLhiIMxfrOglc46h62RTYMUKoyk3b/yohw
-	 S2hgYIJFQeSihEprMIiM2o1YitTVub1TejcVBO9HJqx0IkRsejnWzEQbdDz/c2UykK
-	 61LqqqLpySLjRE3rkc+93KSBNZJ0JUew23MvbH+H3vuk6XXEPHkizwJsODfRiu4hsi
-	 N8Jmg1sQV+3rQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: "Nicolas Escande" <nico.escande@gmail.com>
-Cc: "Santhosh Ramesh" <quic_santrame@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
-  "Sathishkumar Muruganandam" <quic_murugana@quicinc.com>
+	Mon, 09 Sep 2024 10:23:53 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-42cb6f3a5bcso10420715e9.2
+        for <ath12k@lists.infradead.org>; Mon, 09 Sep 2024 03:23:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1725877429; x=1726482229; darn=lists.infradead.org;
+        h=in-reply-to:references:cc:to:from:subject:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=oiNp6Bs5OiARYdGamLrScaqZ2kHMNObdVSq851tJm40=;
+        b=SQdnvokNHRJnu2k3ETX9cvA/VZPZnaGNosXCSIHs22qE3NCtn3eNXIL/nciy/i6d4t
+         AhXqObTGhpPVMr4/HQ9TookPg+J6ZkSgQofUGO1IvbY7Ctdgy6OEBQdDDFeODXVhxZ1N
+         DXdcsEF4XwRPqvpDJl6BbwarBnGt1OMD0Mx/ti/HcqelpXU6xObKvVqX8L7DZHgEmODK
+         Ep42mF3lLQk5a0WbDlQDdQ3RbUDmy03h2qZNmCqu82IKSTh+RMU6gFusorODNejj5rsN
+         /my6aCKida/pxkWv2qTDAZDNQEo9XgVtjBhcI5n6+ifjrzVuVo/gXZxfgV9O02/JLzeO
+         uUXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725877429; x=1726482229;
+        h=in-reply-to:references:cc:to:from:subject:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=oiNp6Bs5OiARYdGamLrScaqZ2kHMNObdVSq851tJm40=;
+        b=nStQIUFfWhiRuVrjyA3/IKipzw+5RVfyCeaYRwfabJIarDocNVGiHe6M59kydUvy+O
+         d3Dlnh2nOaaNHe395Ou6AETiS9QT2FTY7xPAV+gSJN4RXNg4Il9XtXkuOydJARQ7e85C
+         nixMbH/w3M9tq5xYXocne/a0POpCumXmQ3klx7j4IZdAoJ4G8GtV+dqQ/hqqJiSTR9Pi
+         or/7K0uZKe9coolBs/NylGFuGI4jDst/8IKZOMuUs5tCdToQr5Xeq1IhKCczisHeUwIS
+         nuWKrGEh5wG+0CVkJtxgVzeYCqEOKQZDMfDmhE/dwMJ0QOFScdLUM6qWS//ED0HZGMO5
+         +/eA==
+X-Forwarded-Encrypted: i=1; AJvYcCVbjbG5Kk/V0744cEusH63dgukl1UoujyF2P7hwRkavl1EjICVdhJbIvVIPyeuIWSAE9K28Jrw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyTQdu1GRo8AfXpbT8oroIpZeAMuAmYPR6Z0+ZiakhSiR0/7f96
+	Ur3vMmATHuzW3v7sLBtyKR/s2/c3LEm+fmXF0GESolJt3JVVwjva
+X-Google-Smtp-Source: AGHT+IFDDHzFypmB0ayJiExvuzqMfUAgm499uUtVMHqaG8+AfQm2YmSU8hxvh56gKCcg1m6keIUmzQ==
+X-Received: by 2002:a05:6000:2:b0:374:d254:61b3 with SMTP id ffacd0b85a97d-378922a6603mr5577585f8f.14.1725877429113;
+        Mon, 09 Sep 2024 03:23:49 -0700 (PDT)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-378956de3aesm5644202f8f.110.2024.09.09.03.23.48
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Sep 2024 03:23:48 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Mon, 09 Sep 2024 12:23:48 +0200
+Message-Id: <D41OHKZYZR9E.2JD7SQKZBBYGH@gmail.com>
 Subject: Re: [PATCH] wifi: ath12k: fix tx power, max reg power update to
  firmware
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Kalle Valo" <kvalo@kernel.org>
+Cc: "Santhosh Ramesh" <quic_santrame@quicinc.com>,
+ <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+ "Sathishkumar Muruganandam" <quic_murugana@quicinc.com>
+X-Mailer: aerc 0.18.2-0-ge037c095a049
 References: <20240909073049.3423035-1-quic_santrame@quicinc.com>
-	<D41LUTO0MIC3.12475D2J3VNX3@gmail.com>
-Date: Mon, 09 Sep 2024 12:07:58 +0300
-In-Reply-To: <D41LUTO0MIC3.12475D2J3VNX3@gmail.com> (Nicolas Escande's message
-	of "Mon, 09 Sep 2024 10:20:02 +0200")
-Message-ID: <87mskhgpox.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+ <D41LUTO0MIC3.12475D2J3VNX3@gmail.com> <87mskhgpox.fsf@kernel.org>
+In-Reply-To: <87mskhgpox.fsf@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240909_020802_842693_2D3D289E 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20240909_032351_470186_A2350365 
+X-CRM114-Status: GOOD (  15.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,37 +97,42 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-"Nicolas Escande" <nico.escande@gmail.com> writes:
-
-> On Mon Sep 9, 2024 at 9:30 AM CEST, Santhosh Ramesh wrote:
+On Mon Sep 9, 2024 at 11:07 AM CEST, Kalle Valo wrote:
+> "Nicolas Escande" <nico.escande@gmail.com> writes:
 >
-> [...]
+> > On Mon Sep 9, 2024 at 9:30 AM CEST, Santhosh Ramesh wrote:
+> >
+> > [...]
+> >
+> >> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wirel=
+ess/ath/ath12k/mac.c
+> >> index 137394c36460..6d7a005d83b4 100644
+> >> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> >> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> >> @@ -7217,9 +7217,9 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif =
+*arvif,
+> >>  							chandef->chan->band,
+> >>  							arvif->vif->type);
+> >>  	arg.min_power =3D 0;
+> >> -	arg.max_power =3D chandef->chan->max_power * 2;
+> >> -	arg.max_reg_power =3D chandef->chan->max_reg_power * 2;
+> >> -	arg.max_antenna_gain =3D chandef->chan->max_antenna_gain * 2;
+> >> +	arg.max_power =3D chandef->chan->max_power;
+> >> +	arg.max_reg_power =3D chandef->chan->max_reg_power;
+> >> +	arg.max_antenna_gain =3D chandef->chan->max_antenna_gain;
+> >> =20
+> >
+> > For what it's worth, I already got a similar patch from QCA a few month=
+ ago, and
+> > it fixed some tx power problems when scanning so I know there is truth =
+in this.
 >
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->> index 137394c36460..6d7a005d83b4 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->> @@ -7217,9 +7217,9 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
->>  							chandef->chan->band,
->>  							arvif->vif->type);
->>  	arg.min_power = 0;
->> -	arg.max_power = chandef->chan->max_power * 2;
->> -	arg.max_reg_power = chandef->chan->max_reg_power * 2;
->> -	arg.max_antenna_gain = chandef->chan->max_antenna_gain * 2;
->> +	arg.max_power = chandef->chan->max_power;
->> +	arg.max_reg_power = chandef->chan->max_reg_power;
->> +	arg.max_antenna_gain = chandef->chan->max_antenna_gain;
->>  
->
-> For what it's worth, I already got a similar patch from QCA a few month ago, and
-> it fixed some tx power problems when scanning so I know there is truth in this.
+> What hardware and what firmware did you use? The firmware branches can
+> behave differently so whenever testing something it's good to include
+> that info.
 
-What hardware and what firmware did you use? The firmware branches can
-behave differently so whenever testing something it's good to include
-that info.
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Well what I tested was with the additionnal patch provided. So depending on
+Santhosh response, I'll either give the proprer tested by tag, or if the pa=
+tch
+isn't needed. I'll need to find some time to test it :)
 
