@@ -4,124 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4CD3C3ABB2
-	for <ath12k@archiver.kernel.org>; Mon, 16 Sep 2024 13:14:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6BEEC3ABA2
+	for <ath12k@archiver.kernel.org>; Mon, 16 Sep 2024 13:40:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	References:In-Reply-To:Subject:Cc:To:From:Message-ID:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Irbl9EoTjr+urz93WnqRS2vptqXGtuqNgIQPPWPNPfg=; b=FtS+ZlnG8k58OYJAAYy3uRYoed
-	noqb9U9Xg3SWeOzeqK2kmA5LNV+ZRhbwNmBevrbVM0viyHj033AqlI2awPTt1YzGqMzRILxAY6UDX
-	4GZsnnz2Z3FgOqi7CAi4Dvfo25yBDLkrZTkQXig7lb3r2arhq5I4LKW9G2L8p/dFvFEVxMDN5NtwJ
-	DbFjBFESQDivSjs4ptn0uHZLIWb0dIDGVU7d4pAyIKZfYjr/7Ec921PPzISvUoKLBJhS50jBYBwoy
-	w0wLrOTWgH0Wj4mBlq4dwJkVsWbTskW5edDoDhYm49dAjrktiKBCZUU1ZPnhkSV7B1bf9Pzpp6lJf
-	P9IbpHcQ==;
+	bh=eobP6Tsu+oV7rsG6psbuxT51TunBXfd/7Ldz4WKEOsM=; b=K/Rz1MOQHNvPOnytcIzlP1rCBf
+	GA5UwqOu6AsCcXNUyavsqu1MuoXk8RmP2N4jF+HBfcKzq3zng5saaKMqUQxkct8xOIpUfN2qOUgWy
+	z0UElmo2R1yG0qrtWKomh3zStLiL5L8a7aIKkI24jXq4Bm051WJVDRE5W4JE2Sz5Xl4Vs9JeUcbG8
+	LpX6CbZKNIMN1ewWiSRaqaXuUDquxmq1Mg5XKCh2uMqM+O42ugklRo9v22eOPjDbcj89HQeoI4v6y
+	2kktP0SOsskM41aHWZaaF1MXm7DpFEbeIDXwWTD5FS29XnvDiDQiCDORvarOGIiE86u6Vuj6Rjrlx
+	cF1zmFVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqBYU-000000043Tf-1djY
+	id 1sqBxS-000000045Rz-1Orn
 	for ath12k@archiver.kernel.org;
-	Mon, 16 Sep 2024 13:14:14 +0000
-Received: from smtp-out1.suse.de ([2a07:de40:b251:101:10:150:64:1])
+	Mon, 16 Sep 2024 13:40:02 +0000
+Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqBYM-000000043Pd-46FJ
+	id 1sqBxO-000000045RO-4608
 	for ath12k@lists.infradead.org;
-	Mon, 16 Sep 2024 13:14:12 +0000
-Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org [IPv6:2a07:de40:b281:104:10:150:64:97])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by smtp-out1.suse.de (Postfix) with ESMTPS id 31D5B21A93;
-	Mon, 16 Sep 2024 13:14:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.de; s=susede2_rsa;
-	t=1726492445; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Irbl9EoTjr+urz93WnqRS2vptqXGtuqNgIQPPWPNPfg=;
-	b=05DyxjdAUjHbaUwLetQECpGMe7fNtoHZaUuHXtJVKzsY1yZ1+tlMlkx61arbHHgSX5T37R
-	E/XmjdBpFTda5pi3F6Q/gC/Q6lqR8Z+R+okK9PYs8pfhpjqz4xMC0UiAS5O5EgG5niuP5v
-	KakscmbIBPcAN0pP3MfEDeh6e9GN/J8=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.de;
-	s=susede2_ed25519; t=1726492445;
-	h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Irbl9EoTjr+urz93WnqRS2vptqXGtuqNgIQPPWPNPfg=;
-	b=72jIsFByJbiFSGLtWKTueuQ/BM8xm4PGtc1+ybn+n5VPR/umA9YMKqfvJRpzltW7/rf0qo
-	VmQy5yfxH4yO1fDg==
-Authentication-Results: smtp-out1.suse.de;
-	dkim=pass header.d=suse.de header.s=susede2_rsa header.b=05DyxjdA;
-	dkim=pass header.d=suse.de header.s=susede2_ed25519 header.b=72jIsFBy
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.de; s=susede2_rsa;
-	t=1726492445; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Irbl9EoTjr+urz93WnqRS2vptqXGtuqNgIQPPWPNPfg=;
-	b=05DyxjdAUjHbaUwLetQECpGMe7fNtoHZaUuHXtJVKzsY1yZ1+tlMlkx61arbHHgSX5T37R
-	E/XmjdBpFTda5pi3F6Q/gC/Q6lqR8Z+R+okK9PYs8pfhpjqz4xMC0UiAS5O5EgG5niuP5v
-	KakscmbIBPcAN0pP3MfEDeh6e9GN/J8=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.de;
-	s=susede2_ed25519; t=1726492445;
-	h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Irbl9EoTjr+urz93WnqRS2vptqXGtuqNgIQPPWPNPfg=;
-	b=72jIsFByJbiFSGLtWKTueuQ/BM8xm4PGtc1+ybn+n5VPR/umA9YMKqfvJRpzltW7/rf0qo
-	VmQy5yfxH4yO1fDg==
-Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 06A071397F;
-	Mon, 16 Sep 2024 13:14:04 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
-	by imap1.dmz-prg2.suse.org with ESMTPSA
-	id aI9qOxwv6GZFGgAAD6G6ig
-	(envelope-from <tiwai@suse.de>); Mon, 16 Sep 2024 13:14:04 +0000
-Date: Mon, 16 Sep 2024 15:14:55 +0200
-Message-ID: <875xqvivu8.wl-tiwai@suse.de>
-From: Takashi Iwai <tiwai@suse.de>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Takashi Iwai <tiwai@suse.de>,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org
-Subject: Re: ath12k firmware regression with update 82318c966fd1
-In-Reply-To: <875xqveok5.fsf@kernel.org>
-References: <87bk0nc1yb.wl-tiwai@suse.de>
-	<875xqveok5.fsf@kernel.org>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/27.2 Mule/6.0
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
-Content-Type: text/plain; charset=US-ASCII
-X-Rspamd-Queue-Id: 31D5B21A93
-X-Spamd-Result: default: False [-5.51 / 50.00];
-	BAYES_HAM(-3.00)[99.99%];
-	DWL_DNSWL_MED(-2.00)[suse.de:dkim];
-	MID_CONTAINS_FROM(1.00)[];
-	NEURAL_HAM_LONG(-1.00)[-1.000];
-	R_DKIM_ALLOW(-0.20)[suse.de:s=susede2_rsa,suse.de:s=susede2_ed25519];
-	NEURAL_HAM_SHORT(-0.20)[-1.000];
-	MIME_GOOD(-0.10)[text/plain];
-	MX_GOOD(-0.01)[];
-	FUZZY_BLOCKED(0.00)[rspamd.com];
-	MIME_TRACE(0.00)[0:+];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
-	TO_DN_SOME(0.00)[];
-	ARC_NA(0.00)[];
-	RCVD_TLS_ALL(0.00)[];
-	DKIM_SIGNED(0.00)[suse.de:s=susede2_rsa,suse.de:s=susede2_ed25519];
-	FROM_EQ_ENVFROM(0.00)[];
-	FROM_HAS_DN(0.00)[];
-	RCPT_COUNT_THREE(0.00)[4];
-	RCVD_COUNT_TWO(0.00)[2];
-	TO_MATCH_ENVRCPT_ALL(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[imap1.dmz-prg2.suse.org:helo,imap1.dmz-prg2.suse.org:rdns,suse.de:email,suse.de:dkim,suse.de:mid,suse.com:url,archlinux.org:url];
-	DKIM_TRACE(0.00)[suse.de:+]
-X-Rspamd-Server: rspamd2.dmz-prg2.suse.org
-X-Rspamd-Action: no action
+	Mon, 16 Sep 2024 13:40:01 +0000
+Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2f759688444so37633171fa.1
+        for <ath12k@lists.infradead.org>; Mon, 16 Sep 2024 06:39:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=perenite-com.20230601.gappssmtp.com; s=20230601; t=1726493996; x=1727098796; darn=lists.infradead.org;
+        h=content-transfer-encoding:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=eobP6Tsu+oV7rsG6psbuxT51TunBXfd/7Ldz4WKEOsM=;
+        b=nJRfuaGZ5keLX/EcUTT2r1fe2jmZbBCS1HoaGGMMF6GqMoZB2MCpyklLrkLDGXbDRm
+         lZ0gePvpNafZECLW8n25guExCRj5cVa7MUrbWZgrb4ADKOIeBfsKtE4KukDsTL1EfMkE
+         NG8mjwP1xpS4EK2KkhdAzsy/VL/r9j9m/beyL5yh+jYd4tDPxSWyp7Ic5QQxlJiL6AIK
+         3C0tJYR0cAaWIYiN7Ujxc5EjD9ENPurRzVEj+TNggHsvotbHXppYE2ki58BEy4I5JgNI
+         q8ukcMQHAgAaTVyVWa/CI7Jddngpd8JAjC1G69NNQouQ75KEylkIKwJM6V880hTsfokM
+         duXg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726493996; x=1727098796;
+        h=content-transfer-encoding:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=eobP6Tsu+oV7rsG6psbuxT51TunBXfd/7Ldz4WKEOsM=;
+        b=dR3jtHhA6Efc906F4h3riUF/WM7QvGT2Mhtl75pq+LIVIOyO5AdD0kJSBlzSBTgpWj
+         Uj244euzBkIw3cbyNVz2q1QHD32t4DI8xA3sPpBQweTghGzacUzViONgYENx86LwgRHa
+         bDQHm3xUCBgprvjN7ZgEZ8J5YYAOlEQ870XjkPez0cfJZg32mAU/k4wtZvtG2sUy4URm
+         beZNwR+i7QsBXAKDAftRkBJhNIwNKHMkpcvv4RfBD7ttqnjoN23NHRUmx3CoiP6/ogV6
+         xQe36b1UNBduXzn28s2O8jdw2OXDW4dejmFLgjWtCoNCfEAR81cbnHkkKJR4nVIs2npH
+         B2Yg==
+X-Gm-Message-State: AOJu0Yzel46tvBvpBet7D88Qk9eES6zlhyXLnsVZFWXbwfe+tM9tJg3O
+	wCt+rJByo3xDAWuJzfZzGFLWsXaZDgwSEAqDreiw3lh9LNHqdwtJ7ayp8t+7BeIfiNacm/xurWV
+	KFIIBDua281sqQ5VJ+q4Y2niwQUFcAc34tI260lkDKr6oAqA=
+X-Google-Smtp-Source: AGHT+IHA1fiPD770N3Bn6hIuzF19SbDSBux0aSDTZvzOwBoqSTHNo5n3ZS7v2GkX3acg4TR5d7j5kMgOM63axxXImf8=
+X-Received: by 2002:a05:6512:334f:b0:536:7c0d:e554 with SMTP id
+ 2adb3069b0e04-5367c0de894mr5245226e87.45.1726493995459; Mon, 16 Sep 2024
+ 06:39:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAGHj7OK5tvjfUkb_oFMwk041mo_41WV0Uu-h2v_0_YQqjTrFyA@mail.gmail.com>
+ <87msk8dmts.fsf@kernel.org> <CAGHj7OK2dwy9LbbZWC_WdV0evhmKfjwyn2bTy4Dz5-XNxtcsyQ@mail.gmail.com>
+In-Reply-To: <CAGHj7OK2dwy9LbbZWC_WdV0evhmKfjwyn2bTy4Dz5-XNxtcsyQ@mail.gmail.com>
+From: Benoit Masson <benoitm@perenite.com>
+Date: Mon, 16 Sep 2024 15:39:44 +0200
+Message-ID: <CAGHj7OLRyHScHTYpzWEyj1RhfoW1hce761b+eKKcDe0WA943mA@mail.gmail.com>
+Subject: Fwd: ath12k driver on Debian 12 - High ping latency and MLO support
+ query on 6.11rc7
+To: ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240916_061407_409487_70BB38A8 
-X-CRM114-Status: GOOD (  18.06  )
+X-CRM114-CacheID: sfid-20240916_063959_311410_F02E8E13 
+X-CRM114-Status: GOOD (  25.35  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,40 +91,216 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon, 16 Sep 2024 15:05:46 +0200,
-Kalle Valo wrote:
-> 
-> Takashi Iwai <tiwai@suse.de> writes:
-> 
-> > it seems that the recent update of ath12k WCN7850 board-2.bin update
-> > broke WiFi on Lenovo Thinkpad 14 Gen 5 AMD.  Reverting to the older
-> > firmware seems fixing the issue.
-> 
-> Just to clarify, reverting to an older board-2.bin seems to fix the
-> issue. (Board files are basically calibration data)
-> 
-> > The report for openSUSE Tumbleweed is found at
-> >   https://bugzilla.suse.com/show_bug.cgi?id=1230596
-> > and for Arch
-> >   https://bbs.archlinux.org/viewtopic.php?id=299286
-> 
-> For easier tracking can someone file a bug to bugzilla.kernel.org? Also
-> please include more information:
-> 
-> https://wireless.wiki.kernel.org/en/users/drivers/ath12k/bugreport
+Hi Kalle thanks a million for answering and taking the time!
 
-Opened now:
-  https://bugzilla.kernel.org/show_bug.cgi?id=219282
+On Mon, Sep 16, 2024 at 10:28=E2=80=AFAM Kalle Valo <kvalo@kernel.org> wrot=
+e:
+>
+> Benoit Masson <benoitm@perenite.com> writes:
+>
+> > Hello ath12k developers,
+> >
+> > I'm testing the ath12k driver on Debian 12 with a custom 6.11rc7
+> > kernel for an M2 QCNCM865 card.
+>
+> You didn't provide any dmesg out but I assume this has a WCN7850
+> chipset. Please provide output from 'dmesg | grep ath12k' so that we
+> know what firmware etc you are using.
 
-> > Let me know if it's already handled in Qualcomm and the fix is
-> > expected shortly.  Otherwise I'll try to revert the change locally for
-> > TW as a temporary solution.
-> 
-> This is the first time I'm hearing about this and to my knowledge there
-> is not fix pending.
+Sure here is the dmesg message:
+dmesg | grep ath12k
+[   49.185903] ath12k_pci 0000:02:00.0: BAR 0 [mem
+0xdc600000-0xdc7fffff 64bit]: assigned
+[   49.185920] ath12k_pci 0000:02:00.0: enabling device (0000 -> 0002)
+[   49.186714] ath12k_pci 0000:02:00.0: MSI vectors: 16
+[   49.186718] ath12k_pci 0000:02:00.0: Hardware name: wcn7850 hw2.0
+[   49.747963] ath12k_pci 0000:02:00.0: chip_id 0x2 chip_family 0x4
+board_id 0xff soc_id 0x40170200
+[   49.747977] ath12k_pci 0000:02:00.0: fw_version 0x100301e1
+fw_build_timestamp 2023-12-06 04:05 fw_build_id
+QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICO=
+NZ-3
+[   50.188095] ath12k_pci 0000:02:00.0 wlp2s0: renamed from wlan0
+[16865.398653] ath12k_pci 0000:02:00.0: chip_id 0x2 chip_family 0x4
+board_id 0xff soc_id 0x40170200
+[16865.398658] ath12k_pci 0000:02:00.0: fw_version 0x100301e1
+fw_build_timestamp 2023-12-06 04:05 fw_build_id
+QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICO=
+NZ-3
+[20300.513950] ath12k_pci 0000:02:00.0: failed to send
+HAL_REO_CMD_FLUSH_CACHE cmd, tid 15 (-105)
+[20300.513965] ath12k_pci 0000:02:00.0: failed to send
+HAL_REO_CMD_FLUSH_CACHE cmd, tid 16 (-105)
+[28269.690504] ath12k_pci 0000:02:00.0: Spurious quick kickout for STA
+3a:23:51:73:23:26
+[28278.156974] ath12k_pci 0000:02:00.0: failed to send
+HAL_REO_CMD_FLUSH_CACHE, tid 15 (-105)
+[29715.843960] ath12k_pci 0000:02:00.0: failed to send
+HAL_REO_CMD_FLUSH_CACHE, tid 15 (-105)
+[29715.843974] ath12k_pci 0000:02:00.0: failed to send
+HAL_REO_CMD_FLUSH_CACHE, tid 15 (-105)
+[45013.847353] ath12k_pci 0000:02:00.0: chip_id 0x2 chip_family 0x4
+board_id 0xff soc_id 0x40170200
+[45013.847355] ath12k_pci 0000:02:00.0: fw_version 0x100301e1
+fw_build_timestamp 2023-12-06 04:05 fw_build_id
+QC_IMAGE_VERSION_STRING=3DWLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICO=
+NZ-3
 
-OK, thanks for the information!
+I also grep the interface name in case and only found this error:
+# dmesg | grep wlp2s0
+[27660.154844] wlp2s0: AP bug: VHT capa missing from AssocResp
+[27660.154845] wlp2s0: AP bug: VHT operation missing from AssocResp
 
 
-Takashi
+> > While generally stable, I'm encountering two issues:
+> >
+> > 1. High ping latency/jitter:
+> > - ath12k: 3.5ms to 55ms (40ms jitter)
+>
+> Is this from network to ath12k or from ath12k to network? I recommend
+> testing both.
+
+Below the test both way;
+1) From station to access point:
+ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=3D1 ttl=3D64 time=3D13.7 ms
+64 bytes from 192.168.1.1: icmp_seq=3D2 ttl=3D64 time=3D15.5 ms
+64 bytes from 192.168.1.1: icmp_seq=3D3 ttl=3D64 time=3D3.70 ms
+64 bytes from 192.168.1.1: icmp_seq=3D4 ttl=3D64 time=3D12.2 ms
+64 bytes from 192.168.1.1: icmp_seq=3D5 ttl=3D64 time=3D23.4 ms
+64 bytes from 192.168.1.1: icmp_seq=3D6 ttl=3D64 time=3D12.8 ms
+64 bytes from 192.168.1.1: icmp_seq=3D7 ttl=3D64 time=3D13.2 ms
+64 bytes from 192.168.1.1: icmp_seq=3D8 ttl=3D64 time=3D12.0 ms
+64 bytes from 192.168.1.1: icmp_seq=3D9 ttl=3D64 time=3D11.9 ms
+64 bytes from 192.168.1.1: icmp_seq=3D10 ttl=3D64 time=3D23.3 ms
+64 bytes from 192.168.1.1: icmp_seq=3D11 ttl=3D64 time=3D12.9 ms
+64 bytes from 192.168.1.1: icmp_seq=3D12 ttl=3D64 time=3D12.2 ms
+64 bytes from 192.168.1.1: icmp_seq=3D13 ttl=3D64 time=3D6.48 ms
+
+2) from access point to station:
+ping 192.168.1.169
+PING 192.168.1.169 (192.168.1.169): 56 data bytes
+64 bytes from 192.168.1.169: seq=3D0 ttl=3D64 time=3D5.582 ms
+64 bytes from 192.168.1.169: seq=3D1 ttl=3D64 time=3D4.469 ms
+64 bytes from 192.168.1.169: seq=3D2 ttl=3D64 time=3D357.588 ms
+64 bytes from 192.168.1.169: seq=3D3 ttl=3D64 time=3D398.582 ms
+64 bytes from 192.168.1.169: seq=3D4 ttl=3D64 time=3D419.028 ms
+64 bytes from 192.168.1.169: seq=3D5 ttl=3D64 time=3D449.935 ms
+64 bytes from 192.168.1.169: seq=3D6 ttl=3D64 time=3D21.677 ms
+64 bytes from 192.168.1.169: seq=3D7 ttl=3D64 time=3D3.836 ms
+64 bytes from 192.168.1.169: seq=3D8 ttl=3D64 time=3D370.563 ms
+64 bytes from 192.168.1.169: seq=3D9 ttl=3D64 time=3D17.126 ms
+64 bytes from 192.168.1.169: seq=3D10 ttl=3D64 time=3D3.833 ms
+64 bytes from 192.168.1.169: seq=3D11 ttl=3D64 time=3D58.386 ms
+64 bytes from 192.168.1.169: seq=3D12 ttl=3D64 time=3D81.823 ms
+64 bytes from 192.168.1.169: seq=3D13 ttl=3D64 time=3D107.806 ms
+64 bytes from 192.168.1.169: seq=3D14 ttl=3D64 time=3D170.339 ms
+64 bytes from 192.168.1.169: seq=3D15 ttl=3D64 time=3D52.075 ms
+64 bytes from 192.168.1.169: seq=3D16 ttl=3D64 time=3D7.189 ms
+
+> Usually Power Save Mode causes latency, have you tried disabling that?
+
+Indeed after disabling power_save with command below
+# iw dev wlp2s0 set power_save off
+# iw dev wlp2s0 get power_save
+Power save: off
+
+then new ping are much better:
+3) From station to access point power_save off:
+ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=3D1 ttl=3D64 time=3D4.25 ms
+64 bytes from 192.168.1.1: icmp_seq=3D2 ttl=3D64 time=3D4.08 ms
+64 bytes from 192.168.1.1: icmp_seq=3D3 ttl=3D64 time=3D4.65 ms
+64 bytes from 192.168.1.1: icmp_seq=3D4 ttl=3D64 time=3D5.37 ms
+64 bytes from 192.168.1.1: icmp_seq=3D5 ttl=3D64 time=3D9.99 ms
+64 bytes from 192.168.1.1: icmp_seq=3D6 ttl=3D64 time=3D4.43 ms
+64 bytes from 192.168.1.1: icmp_seq=3D7 ttl=3D64 time=3D3.33 ms
+64 bytes from 192.168.1.1: icmp_seq=3D8 ttl=3D64 time=3D4.79 ms
+64 bytes from 192.168.1.1: icmp_seq=3D9 ttl=3D64 time=3D37.9 ms
+64 bytes from 192.168.1.1: icmp_seq=3D10 ttl=3D64 time=3D14.1 ms
+64 bytes from 192.168.1.1: icmp_seq=3D11 ttl=3D64 time=3D3.83 ms
+
+4) from access point to station power_save off:
+ping 192.168.1.169
+PING 192.168.1.169 (192.168.1.169): 56 data bytes
+64 bytes from 192.168.1.169: seq=3D0 ttl=3D64 time=3D16.917 ms
+64 bytes from 192.168.1.169: seq=3D1 ttl=3D64 time=3D5.478 ms
+64 bytes from 192.168.1.169: seq=3D2 ttl=3D64 time=3D3.910 ms
+64 bytes from 192.168.1.169: seq=3D3 ttl=3D64 time=3D3.938 ms
+64 bytes from 192.168.1.169: seq=3D4 ttl=3D64 time=3D8.326 ms
+64 bytes from 192.168.1.169: seq=3D5 ttl=3D64 time=3D3.745 ms
+64 bytes from 192.168.1.169: seq=3D6 ttl=3D64 time=3D3.909 ms
+64 bytes from 192.168.1.169: seq=3D7 ttl=3D64 time=3D8.720 ms
+64 bytes from 192.168.1.169: seq=3D8 ttl=3D64 time=3D11.626 ms
+64 bytes from 192.168.1.169: seq=3D9 ttl=3D64 time=3D6.859 ms
+64 bytes from 192.168.1.169: seq=3D10 ttl=3D64 time=3D4.573 ms
+64 bytes from 192.168.1.169: seq=3D11 ttl=3D64 time=3D3.864 ms
+64 bytes from 192.168.1.169: seq=3D12 ttl=3D64 time=3D3.757 ms
+
+Which made me look at Tp link access point settings and remember there
+is a 'TWT' option described as : "Target Wake Time allows 802.11ax
+routers and clients to negotiate their periods to transmit and receive
+data packets. Clients only wake up at TWT sessions and remain in sleep
+mode for the rest of the time, which significantly extend their
+battery life."
+
+Disabling it seems to have a big impact on ping latency even with
+power_save is on, in the end disabling TWT and power_save give very
+nice ping both ways:
+
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=3D1 ttl=3D64 time=3D2.88 ms
+64 bytes from 192.168.1.1: icmp_seq=3D2 ttl=3D64 time=3D3.42 ms
+64 bytes from 192.168.1.1: icmp_seq=3D3 ttl=3D64 time=3D3.46 ms
+64 bytes from 192.168.1.1: icmp_seq=3D4 ttl=3D64 time=3D2.99 ms
+64 bytes from 192.168.1.1: icmp_seq=3D5 ttl=3D64 time=3D3.59 ms
+PING 192.168.1.169 (192.168.1.169): 56 data bytes
+64 bytes from 192.168.1.169: seq=3D99 ttl=3D64 time=3D4.957 ms
+64 bytes from 192.168.1.169: seq=3D100 ttl=3D64 time=3D3.602 ms
+64 bytes from 192.168.1.169: seq=3D101 ttl=3D64 time=3D2.924 ms
+64 bytes from 192.168.1.169: seq=3D102 ttl=3D64 time=3D3.093 ms
+64 bytes from 192.168.1.169: seq=3D103 ttl=3D64 time=3D3.767 ms
+
+Thanks a million for having me to look in this direction ! Any thoughs
+on power_saving settings for ath12k and best way to make those value
+kept after boot if any in firmware or config of the driver or module
+parameters ? Indeed that would be great to have TWT activated for
+phone and tablet battery saving but ath12k on desktop to ignore it.
+
+
+> > 2. MLO support:
+> > - When connected via MLO, performance mirrors 6GHz-only connection
+> > - Doesn't appear to utilize all three bands
+> >
+> > Questions:
+> > 1. Are there any recent patches addressing the latency issue for
+> > kernel 6.11rc7?
+>
+> At least I can't think of any fix right now.
+
+Thanks for lettings me know, any though about the firmware binary are
+there beta firmware somewhere that would make sense to test or is the
+linux-firmware git main branch the more recent one ?
+
+> > 2. Is MLO fully supported by Linux/Qualcomm for this hardware? I'm
+> > willing to test any proposed solutions or gather additional data if
+> > needed.
+>
+> MLO is not yet supported. Once there is something to test we will
+> announce it in this ath12k list.
+
+Perfect I'll be reading the mailing list, if you need tester able to
+compile a kernel and module don't hesitate. or need tester with wifi7
+access point (I only own TP-Link BE800 but is it in beta firmware mode
+with terminal access so I can also do some test the device)
+
+Have a great day!
+Benoit
+> --
+> https://patchwork.kernel.org/project/linux-wireless/list/
+>
+> https://wireless.wiki.kernel.org/en/developers/documentation/submittingpa=
+tches
 
