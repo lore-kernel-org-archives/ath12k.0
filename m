@@ -4,72 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4C0CC3ABBB
-	for <ath12k@archiver.kernel.org>; Mon, 16 Sep 2024 01:32:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0F72C3ABB2
+	for <ath12k@archiver.kernel.org>; Mon, 16 Sep 2024 08:28:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=1Pkd/rF6zLC9lpR+G21JPd8sUSz5esY0t5/V1YYoG0U=; b=ddvn5EarytwRsHjnQw2eGCh2eX
-	TMiCk5iOAeX2bfgqVSTislSiGynfDG5Ey46s8Mwb5aJo5Kso7N8i0BxUNgKSlZnHHlAkFC6KfWuhL
-	WaqpucUv4pITmQ3utK/ehL0MI59clZj0TFpaehaUzWsgH0ZyTtfX0IOq7dEaUA/HGuaNKKNBuEfxj
-	GDRo9ax2P09kY0mzh1WNn2xHMOs3bY3JYBEAZytVzsdhc1AdiViHpV2tQTbrTRoMYBvZLDpeEswxI
-	O9wk4AFTnk5hhuWXrBy48k9IJoWuObCIvo47/xAJBVqZ5/wtLrZomLJCQQMooreyh54DEpCMk217j
-	IVGEKwdQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0ZqcnlsLJqjXmYvJ05qRNpVPNDl25zfeySVBi1qo0m4=; b=enCgY8PdFflwBGc7PNjXrpvCXH
+	mI2vJwzNSK1MVpvccNex2gBuh8Fy1x8QNM6uaRx2MFDnlj2i1KDG8x3sTPzWX9Q4L6AOofI1faie9
+	NrxV6UZoeVpqKVKmYRiLWhn//TdHB+fah4xAkZpaMxrBeLaAeOQl7zDQfcBQXLFSrhKLPVMlwrNDN
+	9JphrNOlxghEmT2bmB4UEfUSFHWx5KcpAwVHc5Xsb5Tb3eZkHtxywf7kfm0Ycx0VpDQ0zxMYrxcVu
+	kJN2dVTE3S9ipgoTE8A19Y1Id49SqYFCyMRB8GPN+h7E0mPHFRM3jQ+ozR5cSRzfZkIYYDPjsan/u
+	CW/8YP2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sq0bE-00000002uHN-1BX0
+	id 1sq765-00000003QVq-2Bqo
 	for ath12k@archiver.kernel.org;
-	Mon, 16 Sep 2024 01:32:20 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	Mon, 16 Sep 2024 08:28:37 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sq0bA-00000002uGy-2WFJ
+	id 1sq762-00000003QVS-44Uz
 	for ath12k@lists.infradead.org;
-	Mon, 16 Sep 2024 01:32:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1726450337; x=1757986337;
-  h=date:from:to:cc:subject:message-id;
-  bh=NCltDPRXMIZvdg6KKg2IUQef6OFwddwna78r1HGqcK4=;
-  b=DhqCMJ4ft/SsDIE1Y3R3T09hrxIP0aoAQRrOM9y8YpZ+zmRJKtF/LrK/
-   fjqqeIw4hnWkG24SkgofNhnysg+bPUADcAduOCHhQeJCFSNoKA9Ez+89s
-   pSSUE0NVicbw7S5r/LiS2nKTx9BH7BjU928eO6bauvPI19UIN20GHI/ko
-   pgW8rm4VFa0hbbNaCqBMorF/U2jWR36KzKzoStESPzfZTgwP9R8ne7Eof
-   B+0/nd8jRtv49hoyL9iglRHXJVAUueMG87PJHInK1zRqLED551dCNVoTT
-   BfAG9Eaq/wZ/Og7XrzG3QrruyA3yBdnc48ypLeDsd5Onbnh9wf3W6SMPc
-   Q==;
-X-CSE-ConnectionGUID: jSLGnAEvRGqrt3LcO/00YA==
-X-CSE-MsgGUID: djB6rROgRj6iIa/3wfV4Ew==
-X-IronPort-AV: E=McAfee;i="6700,10204,11196"; a="35856238"
-X-IronPort-AV: E=Sophos;i="6.10,232,1719903600"; 
-   d="scan'208";a="35856238"
-Received: from fmviesa008.fm.intel.com ([10.60.135.148])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Sep 2024 18:32:09 -0700
-X-CSE-ConnectionGUID: etMmGbGVSpOm24SqCtDfWQ==
-X-CSE-MsgGUID: /xyafD4qR6+3CBhhFlWwyQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.10,232,1719903600"; 
-   d="scan'208";a="68836043"
-Received: from lkp-server01.sh.intel.com (HELO 53e96f405c61) ([10.239.97.150])
-  by fmviesa008.fm.intel.com with ESMTP; 15 Sep 2024 18:32:07 -0700
-Received: from kbuild by 53e96f405c61 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1sq0az-0009DR-1K;
-	Mon, 16 Sep 2024 01:32:05 +0000
-Date: Mon, 16 Sep 2024 09:31:50 +0800
-From: kernel test robot <lkp@intel.com>
-To: Kalle Valo <quic_kvalo@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:ath12k-mlo] BUILD SUCCESS WITH WARNING
- 8f61af03fddc0a30bdf49e06a13eafff3cec91b0
-Message-ID: <202409160944.6PsOKKLw-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Mon, 16 Sep 2024 08:28:36 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3EE5BA419FE;
+	Mon, 16 Sep 2024 08:28:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F0ADC4CEC4;
+	Mon, 16 Sep 2024 08:28:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1726475313;
+	bh=XCBP1xoBGDEuQab2cXOiryeiFZLSAn77N8KmjwrQdOk=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=fgUNOLomUjdTKVVWTmo8IX3WvYh2SDFoh8PWeMyrFGH+1JWI7Z1tPy0LMElNTTDpG
+	 WwsDQYWH00YTqy9oXtj6HSO+oFZYHR8atNS0e/xLxwCyv7M7XR577gUENtbh/eyv4n
+	 4E/qdgAadwFIs5AUScZz1Wws5cHdM8hg4Ogtbmtx4viuzaKy4tjiIX595KiY0uRX4z
+	 1qDa5NskxDerlAoKiW4O2FM9CeaxWVtSADsBcCNaFjOXB/qALL2ChFqlTW6LF/dcW2
+	 JJ9CM5vkAxK03fVDY5HEQvgk1XvndBwY8oTiZydq4buZGHBYxRhuxzIP7fjTQJk5Ik
+	 L8ZsTbEA5JEZw==
+From: Kalle Valo <kvalo@kernel.org>
+To: Benoit Masson <benoitm@perenite.com>
+Cc: ath12k@lists.infradead.org
+Subject: Re: ath12k driver on Debian 12 - High ping latency and MLO support
+ query on 6.11rc7
+References: <CAGHj7OK5tvjfUkb_oFMwk041mo_41WV0Uu-h2v_0_YQqjTrFyA@mail.gmail.com>
+Date: Mon, 16 Sep 2024 11:28:31 +0300
+In-Reply-To: <CAGHj7OK5tvjfUkb_oFMwk041mo_41WV0Uu-h2v_0_YQqjTrFyA@mail.gmail.com>
+	(Benoit Masson's message of "Sun, 15 Sep 2024 18:30:18 +0200")
+Message-ID: <87msk8dmts.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240915_183216_715535_12626CC5 
-X-CRM114-Status: UNSURE (   2.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240916_012835_097313_F3FCB063 
+X-CRM114-Status: GOOD (  13.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,148 +73,46 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo
-branch HEAD: 8f61af03fddc0a30bdf49e06a13eafff3cec91b0  wifi: ath12k: pass link ID during MLO while delivering skb
+Benoit Masson <benoitm@perenite.com> writes:
 
-Warning (recently discovered and may have been fixed):
+> Hello ath12k developers,
+>
+> I'm testing the ath12k driver on Debian 12 with a custom 6.11rc7
+> kernel for an M2 QCNCM865 card.
 
-    https://lore.kernel.org/oe-kbuild-all/202409151616.hnCxh90B-lkp@intel.com
-    https://lore.kernel.org/oe-kbuild-all/202409151853.OfodBWj3-lkp@intel.com
+You didn't provide any dmesg out but I assume this has a WCN7850
+chipset. Please provide output from 'dmesg | grep ath12k' so that we
+know what firmware etc you are using.
 
-    drivers/net/wireless/ath/ath12k/mac.c:3981:8: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
-    drivers/net/wireless/ath/ath12k/mac.c:4289:8: warning: variable 'ret' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+> While generally stable, I'm encountering two issues:
+>
+> 1. High ping latency/jitter:
+> - ath12k: 3.5ms to 55ms (40ms jitter)
 
-Warning ids grouped by kconfigs:
+Is this from network to ath12k or from ath12k to network? I recommend
+testing both.
 
-recent_errors
-|-- powerpc-allyesconfig
-|   |-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-uninitialized-when-used-here
-|   `-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-used-uninitialized-whenever-if-condition-is-true
-|-- riscv-allmodconfig
-|   |-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-uninitialized-when-used-here
-|   `-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-used-uninitialized-whenever-if-condition-is-true
-|-- riscv-allyesconfig
-|   |-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-uninitialized-when-used-here
-|   `-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-used-uninitialized-whenever-if-condition-is-true
-|-- x86_64-allmodconfig
-|   |-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-uninitialized-when-used-here
-|   `-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-used-uninitialized-whenever-if-condition-is-true
-`-- x86_64-allyesconfig
-    |-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-uninitialized-when-used-here
-    `-- drivers-net-wireless-ath-ath12k-mac.c:warning:variable-ret-is-used-uninitialized-whenever-if-condition-is-true
+Usually Power Save Mode causes latency, have you tried disabling that?
 
-elapsed time: 1918m
+> 2. MLO support:
+> - When connected via MLO, performance mirrors 6GHz-only connection
+> - Doesn't appear to utilize all three bands
+>
+> Questions:
+> 1. Are there any recent patches addressing the latency issue for
+> kernel 6.11rc7?
 
-configs tested: 104
-configs skipped: 4
+At least I can't think of any fix right now.
 
-tested configs:
-alpha                   allnoconfig    gcc-13.3.0
-alpha                  allyesconfig    gcc-13.3.0
-arc                    allmodconfig    gcc-13.2.0
-arc                     allnoconfig    gcc-13.2.0
-arc                    allyesconfig    gcc-13.2.0
-arc         randconfig-001-20240916    gcc-13.2.0
-arc         randconfig-002-20240916    gcc-13.2.0
-arc          vdk_hs38_smp_defconfig    gcc-13.2.0
-arm                    allmodconfig    gcc-14.1.0
-arm                     allnoconfig    clang-20
-arm                    allyesconfig    gcc-14.1.0
-arm              clps711x_defconfig    clang-20
-arm                gemini_defconfig    clang-20
-arm                moxart_defconfig    gcc-14.1.0
-arm             multi_v4t_defconfig    clang-20
-arm         randconfig-001-20240916    gcc-14.1.0
-arm         randconfig-002-20240916    clang-20
-arm         randconfig-003-20240916    gcc-14.1.0
-arm         randconfig-004-20240916    gcc-14.1.0
-arm                sp7021_defconfig    gcc-14.1.0
-arm64                  allmodconfig    clang-20
-arm64                   allnoconfig    gcc-14.1.0
-arm64       randconfig-001-20240916    gcc-14.1.0
-arm64       randconfig-002-20240916    clang-20
-arm64       randconfig-003-20240916    clang-20
-arm64       randconfig-004-20240916    clang-20
-csky                    allnoconfig    gcc-14.1.0
-csky        randconfig-001-20240916    gcc-14.1.0
-csky        randconfig-002-20240916    gcc-14.1.0
-hexagon                allmodconfig    clang-20
-hexagon                 allnoconfig    clang-20
-hexagon                allyesconfig    clang-20
-hexagon     randconfig-001-20240916    clang-20
-hexagon     randconfig-002-20240916    clang-20
-i386                   allmodconfig    gcc-12
-i386                    allnoconfig    gcc-12
-i386                   allyesconfig    gcc-12
-i386                      defconfig    clang-18
-loongarch              allmodconfig    gcc-14.1.0
-loongarch               allnoconfig    gcc-14.1.0
-loongarch   randconfig-001-20240916    gcc-14.1.0
-loongarch   randconfig-002-20240916    gcc-14.1.0
-m68k                   allmodconfig    gcc-14.1.0
-m68k                    allnoconfig    gcc-14.1.0
-m68k                   allyesconfig    gcc-14.1.0
-m68k                sun3x_defconfig    gcc-14.1.0
-microblaze             allmodconfig    gcc-14.1.0
-microblaze              allnoconfig    gcc-14.1.0
-microblaze             allyesconfig    gcc-14.1.0
-mips                    allnoconfig    gcc-14.1.0
-nios2                   allnoconfig    gcc-14.1.0
-nios2       randconfig-001-20240916    gcc-14.1.0
-nios2       randconfig-002-20240916    gcc-14.1.0
-openrisc                allnoconfig    gcc-14.1.0
-openrisc               allyesconfig    gcc-14.1.0
-openrisc                  defconfig    gcc-14.1.0
-parisc                 allmodconfig    gcc-14.1.0
-parisc                  allnoconfig    gcc-14.1.0
-parisc                 allyesconfig    gcc-14.1.0
-parisc                    defconfig    gcc-14.1.0
-parisc      generic-64bit_defconfig    gcc-14.1.0
-parisc      randconfig-001-20240916    gcc-14.1.0
-parisc      randconfig-002-20240916    gcc-14.1.0
-powerpc                allmodconfig    gcc-14.1.0
-powerpc                 allnoconfig    gcc-14.1.0
-powerpc                allyesconfig    clang-20
-powerpc     randconfig-003-20240916    clang-20
-powerpc64   randconfig-001-20240916    gcc-14.1.0
-powerpc64   randconfig-002-20240916    clang-20
-powerpc64   randconfig-003-20240916    gcc-14.1.0
-riscv                  allmodconfig    clang-20
-riscv                   allnoconfig    gcc-14.1.0
-riscv                  allyesconfig    clang-20
-riscv                     defconfig    clang-20
-riscv       randconfig-001-20240916    clang-20
-riscv       randconfig-002-20240916    clang-20
-s390                   allmodconfig    clang-20
-s390                    allnoconfig    clang-20
-s390                   allyesconfig    gcc-14.1.0
-s390                      defconfig    clang-20
-s390        randconfig-001-20240916    gcc-14.1.0
-s390        randconfig-002-20240916    gcc-14.1.0
-sh                     allmodconfig    gcc-14.1.0
-sh                      allnoconfig    gcc-14.1.0
-sh                     allyesconfig    gcc-14.1.0
-sh                        defconfig    gcc-14.1.0
-sh          randconfig-001-20240916    gcc-14.1.0
-sh          randconfig-002-20240916    gcc-14.1.0
-sparc                  allmodconfig    gcc-14.1.0
-sparc64                   defconfig    gcc-14.1.0
-sparc64     randconfig-001-20240916    gcc-14.1.0
-sparc64     randconfig-002-20240916    gcc-14.1.0
-um                     allmodconfig    clang-20
-um                      allnoconfig    clang-17
-um                     allyesconfig    gcc-12
-um                        defconfig    clang-20
-um          randconfig-001-20240916    clang-14
-um          randconfig-002-20240916    gcc-12
-x86_64                  allnoconfig    clang-18
-x86_64                 allyesconfig    clang-18
-x86_64                    defconfig    gcc-11
-x86_64                rhel-8.3-rust    clang-18
-xtensa                  allnoconfig    gcc-14.1.0
-xtensa      randconfig-001-20240916    gcc-14.1.0
+> 2. Is MLO fully supported by Linux/Qualcomm for this hardware? I'm
+> willing to test any proposed solutions or gather additional data if
+> needed.
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+MLO is not yet supported. Once there is something to test we will
+announce it in this ath12k list.
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
