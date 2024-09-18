@@ -4,57 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71136CAC595
-	for <ath12k@archiver.kernel.org>; Tue, 17 Sep 2024 18:20:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81DDCAC5B5
+	for <ath12k@archiver.kernel.org>; Wed, 18 Sep 2024 03:06:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=+oo0Z82OsBWaJ8CxqodFzKN2Abf81DP+5dSsbuuW9i0=; b=VB95td8UQcSgA6bpgLa0OKt9oD
-	Lbba0xBQci3yC9eSGgDbpz68HIAuw23eCTeQaL/6JripixO6iF95amKotlVhsUbRbB3WMZp/O4eMo
-	js7uySp1CqRWM/c9HNF9jaZOW4UYz2zYunO8me+gOS8qheZbx4OEHWEw+97BowWbhUHr6sLysxoTU
-	hM6MGQzCXgWydDbzzzbnk8Wzm4t9VYaTHoVUCkfNg3m2TgyQ71fIiVEwLmV19jx2YjhpGXAyTRt7G
-	dX/C4Ave6D55lLvS+QzZ4/SbpqwycL4rwoIyZvGB7Z6cv1x3dGPHXKKI0tLv8Riz/+4kZdKwz3Mfn
-	+SbPh6uQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Ji+S/8uP1cN9CTE92uVBGjy7oW7DWsdrd2yCNoOMh8c=; b=Im6i7a3tm5W3+SDdcyCe7vy9gG
+	p2mDOhZUOo4AXnqcoNx5DPBbvmY0HgqxQxkD+cI12tn3lcxpHu+x1YoB8+mwpPvGQRuqqrg3+pFP/
+	MtieoolYd0YSj3gEkBfBmayILix+K5tL5XohiOfhGj8NTHn6kPkSe8x1sJcok75DnnSucaW5ZxVgc
+	/gPAu2jhpdiO6f1s26WC9xkdofSnLGeBT5XT1/ie2xDV4560csUQFgWtmmHaFblSkk6TTqPkpAu0b
+	EJjOtBEzrp/hfCyjU48mt2dZKyt5bO/jDzLS/XvxHUD2XUih9Z0hgZo6pP07hcpjSYZxSLNnV9g7v
+	0uPbqnEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqcoq-00000006gR9-0Ru0
+	id 1sql1Q-00000007MOh-225t
 	for ath12k@archiver.kernel.org;
-	Tue, 17 Sep 2024 18:20:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 18 Sep 2024 03:06:28 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqcon-00000006gQR-1rfn
+	id 1sql1N-00000007MOI-1CuM
 	for ath12k@lists.infradead.org;
-	Tue, 17 Sep 2024 18:20:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0D83C5C5B07
-	for <ath12k@lists.infradead.org>; Tue, 17 Sep 2024 18:20:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E997BC4CEC5
-	for <ath12k@lists.infradead.org>; Tue, 17 Sep 2024 18:20:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1726597252;
-	bh=+oo0Z82OsBWaJ8CxqodFzKN2Abf81DP+5dSsbuuW9i0=;
-	h=From:To:Subject:Date:From;
-	b=h6bxOJYa/k2N+R7Wqo4ELA2alrJy9Wa64Oi9NC/0IxKacso23QS2JReZYfaLawE4a
-	 uVP2V75+WroGHAHJ4IAbDgNdpp8VgsmDU+BbG6HRIU6etjgo8/6zWssNn8RXZPOYZa
-	 8O2iGheUjB+0cVp+GkadBa+lbD5ouL/8VsGx2SRS553GlP4gZjLGaBKN6kEIIrGX3B
-	 P5bztLZ50vQhbDPF5f94HfpA2nRa3Yktb6q7OrUCfqg7gav9tZq/KoALo2Tbl3mdIZ
-	 Ier/OPy7PdmLpOeTJA580aUkmATJiToVctIUCWVMKxMxEgUVqOknIdgiYN4ak9shXM
-	 68JB4QcgF4xlg==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Subject: ath12k MLO testing
-Date: Tue, 17 Sep 2024 21:20:50 +0300
-Message-ID: <875xqucfb1.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 18 Sep 2024 03:06:26 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48HHk45S022323;
+	Wed, 18 Sep 2024 03:06:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Ji+S/8uP1cN9CTE92uVBGjy7oW7DWsdrd2yCNoOMh8c=; b=JMHZyn18gma0wICA
+	/lZuuMmndravjAGOjqeNnj3Cft4Y9HdAwRVJ/ol7qVeIK+kPs6T0yaOBhilIySvs
+	aXcUOVK1kgPfgUv4Jwzr2YxLv272NbOTUbpTQPVpN14VESzASwTKaduLJi1bwEhN
+	icEEgJWFgGCZInGvOQ52kGr/LdHVL+fnlkrhDALlHvmi86mh+He5xZR/RXOZR+2E
+	ToI1Ro4d8lWLvewQ0gLXhTUbZSQaBQxghpsLHN1+gSH6FxtzxvmP+p/4S5qe9XCN
+	S83JTzp2EpQR07C42IwlAPjTGDijzIfLHduXsijfpij88TtXItBzora2WEUYbXqp
+	R1thZQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4gd0jqe-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Sep 2024 03:06:22 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48I36Ltq015028
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Sep 2024 03:06:21 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 17 Sep
+ 2024 20:06:19 -0700
+Message-ID: <2e42483d-39b2-4042-b2b2-4c6be8e5ca60@quicinc.com>
+Date: Wed, 18 Sep 2024 11:06:17 +0800
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k firmware regression with update 82318c966fd1
+To: Takashi Iwai <tiwai@suse.de>, Kalle Valo <kvalo@qca.qualcomm.com>,
+        <maxwang@qti.qualcomm.com>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <87bk0nc1yb.wl-tiwai@suse.de>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <87bk0nc1yb.wl-tiwai@suse.de>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: JAo1wBWUTnY6TC2IilUT__dvxGJ5W8oL
+X-Proofpoint-GUID: JAo1wBWUTnY6TC2IilUT__dvxGJ5W8oL
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ bulkscore=0 clxscore=1011 spamscore=0 adultscore=0 lowpriorityscore=0
+ mlxlogscore=849 impostorscore=0 mlxscore=0 priorityscore=1501 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2408220000
+ definitions=main-2409180017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240917_112053_566190_F115B668 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240917_200625_374470_267EADE0 
+X-CRM114-Status: GOOD (  12.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,31 +99,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-We are currently working on getting ath12k MLO implementation ready for
-public review, but for now only QCN9274 AP mode is supported. In case
-someone wants to test this, the patches are in ath12k-mlo-qcn9274
-branch:
 
-https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=ath12k-mlo-qcn9274
+On 9/16/2024 6:44 PM, Takashi Iwai wrote:
+> Hi,
+> 
+> it seems that the recent update of ath12k WCN7850 board-2.bin update
+> broke WiFi on Lenovo Thinkpad 14 Gen 5 AMD.  Reverting to the older
+> firmware seems fixing the issue.
+> 
+> The report for openSUSE Tumbleweed is found at
+>   https://bugzilla.suse.com/show_bug.cgi?id=1230596
+> and for Arch
+>   https://bbs.archlinux.org/viewtopic.php?id=299286
+> 
+> Let me know if it's already handled in Qualcomm and the fix is
+> expected shortly.  Otherwise I'll try to revert the change locally for
+> TW as a temporary solution.
+> 
+This is a known issue and has been root caused. 
 
-And this is the firmware:
++Max to be aware of.
 
-https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/tree/main/QCN9274/hw2.0/1.3.1/WLAN.WBE.1.3.1-00162-QCAHKSWPL_SILICONZ-1?ref_type=heads
+Kalle, will also Cc you in the internal thread.
 
-Consider these as alpha level for now, there are still major bugs and
-things might get accidentally broken while we are working on the
-patches.
 
-The changelogs are available in this thread:
-
-https://lore.kernel.org/ath12k/87a5g6cqe9.fsf@kernel.org/T/#t
-
-As always, feedback is very welcome. Then reporting something please
-include the tag you used:
-
-git describe --tags
-
-Kalle
+> 
+> thanks,
+> 
+> Takashi
+> 
 
