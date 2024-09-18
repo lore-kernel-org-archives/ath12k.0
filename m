@@ -4,59 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51AF1CDD552
-	for <ath12k@archiver.kernel.org>; Wed, 18 Sep 2024 18:10:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0931CDD556
+	for <ath12k@archiver.kernel.org>; Wed, 18 Sep 2024 21:21:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QJhCgDNmWbegI0QE5ZCasNBj6dWabTDP+aN6Gab0V80=; b=ucM4QVJfgnE6WneWx3FZQFOD8T
-	am9IvY0XFcCX2ZLcZVklVYLkt3SZqTLTF4VpwFrYtEc1CVuDU3jORBBJJOu6VK1b+P0Ts93FH1wc9
-	4KZaTmHAyNaRqihBKcUyv9yC/bFUsWZ3TxXsWI+QsOUYPyLBQT/Hwiv3JW4pR3xDHsiCJDnahXZ47
-	5qU18gMC8oJ+KLlv2QSNJvOqzqCHxk48yxkkdPzIJcggP+uKwMejiJsyDuEMy8Qs8JXWdPVmjyyw/
-	VUKG9UnV7e9AJeddPjteDIT9OxxRzhmLMEizP611ELIfoO+5Bs6Oyh1rg5a3UAU74RxCD7HqHS1b3
-	v1nl8OoA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=fpRB9P4LKO9dVJDXRIEG4n5SM2FpQ2EXGPAbxAAwOlo=; b=UhbcbORfC3u0BeZT9MUZ6/GZDi
+	ZbpQZMA+x7I6pHomRP7CirJocsQSShZMnIXU1osR3OqaXS58Cu/M+r/YUknmAAqrQDspBCq8fj+a/
+	PW1MdDfLbcpUvgeFHgPuo7QNG5raFJxwEUP728d1PAx8RjkOCl6xiHW95VH0p7hCGS8P/WJYGgkiG
+	rwbf5KQwD3vsiMJBfXntvdmalH/iXf785dJ2C/QOmbAWi6/Gz6r5z/9cjbvo3ci0x0cdtmF/jFXFO
+	E2j/Cezh12sXHE5/eMug+AjfQUePexf8DD2u0UdQmTADz9c6Qdp6MeSMFYRQXJCZ6U5R4ozMhzEU+
+	6WWvi38g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqz8g-00000008n36-3Sd7
+	id 1sr26r-000000090pW-18nx
 	for ath12k@archiver.kernel.org;
-	Wed, 18 Sep 2024 18:10:54 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Wed, 18 Sep 2024 21:21:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqz8c-00000008mzY-1YQ6
+	id 1sr26n-000000090mg-0Fnv
 	for ath12k@lists.infradead.org;
-	Wed, 18 Sep 2024 18:10:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B30D8A438B2
-	for <ath12k@lists.infradead.org>; Wed, 18 Sep 2024 18:10:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACCFCC4CEC2;
-	Wed, 18 Sep 2024 18:10:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1726683049;
-	bh=qUczHlsEy8fEkQChpwjpyaXMav5RgCU0UhYt5rStH64=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=eTCONex2dRsmJt4SwrqfY/dnmYAS3Im+lomlfc2fMtqrPnPjRDFyBbiEDnVVWH0th
-	 KJx6H3PrgbVPzV/ZVfskiOBi3TnHhEy8pVu5OadC0PzNc/83kktLCoRCQY6XoJ1x2z
-	 NFf0NMlypSy22zzUDkbM/Yu9FMjAZOxDlhVvBbT7YHUdq4VmfJu/ivqER/vsNpZCia
-	 0giG2fs4CL64Uef/uZvqHJ+dRFMVe0NiRIO72C3Ppk4T9Bvyqc613VQqoaDU86Ms+z
-	 aF87/JtVh+CAFE9NpnGXR2ITYT9O9vCyVRw1vISlnyS/Q0g7sY12ov9VDm2fxiy81k
-	 HDdPIVUMbstVg==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH RFC v2 4/4] wifi: ath12k: convert struct ath12k_sta::update_wk to use struct wiphy_work
-Date: Wed, 18 Sep 2024 21:10:42 +0300
-Message-Id: <20240918181042.91891-5-kvalo@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20240918181042.91891-1-kvalo@kernel.org>
-References: <20240918181042.91891-1-kvalo@kernel.org>
+	Wed, 18 Sep 2024 21:21:11 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48IJ1jXQ019170;
+	Wed, 18 Sep 2024 21:21:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=fpRB9P4LKO9dVJDXRIEG4n
+	5SM2FpQ2EXGPAbxAAwOlo=; b=Pa31xcFq0RE0AgHlj4n0LRmywwY+UR4a56Ua7s
+	urFAcHm+Ra6Yj53xxaN5mM+AehpNW+1T514yRWZjV0mPKcRNi4FSXJywKhGs37LF
+	wpscXbm0Mat3VnYqMsJgBuugj+Q6VYTAdAfji5Bts5zKvgPllVy8wJqiGDzwbMjC
+	TRAHKXR1q7XOKanRwA/vqxxhu9r78OGiH8Niimi3ReI4KksT9cQNCUPsMgXi5Dd9
+	qjx90pZ9u0TEaIymsAZ11lO77QigA/7BlezTDv9zy1pZqeUXVJtAKeZb+Y2AmmgF
+	T6JHCbJe04Q6777a1LBOaPFaohILxDzDaGvvy8UIe7z0o8oQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4jdu9pw-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Sep 2024 21:21:06 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48ILL6cA005078
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Sep 2024 21:21:06 GMT
+Received: from ath12k-linux1.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Wed, 18 Sep 2024 14:21:05 -0700
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Pradeep Kumar Chitrapu
+	<quic_pradeepc@quicinc.com>
+Subject: [PATCH V8 0/9] wifi: ath12k: add MU-MIMO and 160 MHz bandwidth support
+Date: Wed, 18 Sep 2024 14:20:47 -0700
+Message-ID: <20240918212056.4137076-1-quic_pradeepc@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: MBfOoNS-78nArbd0EmMoj7tB8l7U1NkG
+X-Proofpoint-GUID: MBfOoNS-78nArbd0EmMoj7tB8l7U1NkG
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
+ clxscore=1011 adultscore=0 mlxscore=0 suspectscore=0 malwarescore=0
+ priorityscore=1501 spamscore=0 bulkscore=0 lowpriorityscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2409180140
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240918_111050_613521_C0CF154D 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20240918_142109_131346_7F246D9F 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,94 +96,65 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Kalle Valo <quic_kvalo@quicinc.com>
+Add support for
+1. enabling MU-MIMO in HE and EHT modes from hardware
+2. setting fixed HE rate/GI/LTF
+3. 160 MHz bandwidth in HE mode
+4. extended NSS bandwidth support
 
-As ath12k is now converted to use wiphy lock we can convert
-ath12k_sta_rc_update_wk() to use wiphy_work_queue(). This is just for
-consistency.
-
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |  2 +-
- drivers/net/wireless/ath/ath12k/mac.c  | 14 ++++++++------
- 2 files changed, 9 insertions(+), 7 deletions(-)
+changes in v8:
+ - rebase and resolve KASAN warnings reported by Jeff in v7, in patch 6/9.
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 7551494716b5..ebfc1e370acc 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -451,7 +451,7 @@ struct ath12k_sta {
- 	u32 smps;
- 	enum hal_pn_type pn_type;
- 
--	struct work_struct update_wk;
-+	struct wiphy_work update_wk;
- 	struct rate_info txrate;
- 	struct rate_info last_txrate;
- 	u64 rx_duration;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 80db9004cdd7..e70b4212ae80 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -4258,7 +4258,7 @@ static int ath12k_station_disassoc(struct ath12k *ar,
- 	return 0;
- }
- 
--static void ath12k_sta_rc_update_wk(struct work_struct *wk)
-+static void ath12k_sta_rc_update_wk(struct wiphy *wiphy, struct wiphy_work *work)
- {
- 	struct ath12k *ar;
- 	struct ath12k_vif *arvif;
-@@ -4274,7 +4274,9 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
- 	struct ath12k_wmi_peer_assoc_arg peer_arg;
- 	enum wmi_phy_mode peer_phymode;
- 
--	arsta = container_of(wk, struct ath12k_sta, update_wk);
-+	lockdep_assert_wiphy(wiphy);
-+
-+	arsta = container_of(work, struct ath12k_sta, update_wk);
- 	sta = container_of((void *)arsta, struct ieee80211_sta, drv_priv);
- 	arvif = arsta->arvif;
- 	ar = arvif->ar;
-@@ -4571,7 +4573,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- 	/* cancel must be done outside the mutex to avoid deadlock */
- 	if ((old_state == IEEE80211_STA_NONE &&
- 	     new_state == IEEE80211_STA_NOTEXIST))
--		cancel_work_sync(&arsta->update_wk);
-+		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
- 
- 	ar = ath12k_get_ar_by_vif(hw, vif);
- 	if (!ar) {
-@@ -4585,7 +4587,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
- 	    new_state == IEEE80211_STA_NONE) {
- 		memset(arsta, 0, sizeof(*arsta));
- 		arsta->arvif = arvif;
--		INIT_WORK(&arsta->update_wk, ath12k_sta_rc_update_wk);
-+		wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
- 
- 		ret = ath12k_mac_station_add(ar, vif, sta);
- 		if (ret)
-@@ -4792,7 +4794,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
- 
- 	spin_unlock_bh(&ar->data_lock);
- 
--	ieee80211_queue_work(hw, &arsta->update_wk);
-+	wiphy_work_queue(hw->wiphy, &arsta->update_wk);
- }
- 
- static int ath12k_conf_tx_uapsd(struct ath12k_vif *arvif,
-@@ -8065,7 +8067,7 @@ static void ath12k_mac_set_bitrate_mask_iter(void *data,
- 	arsta->changed |= IEEE80211_RC_SUPP_RATES_CHANGED;
- 	spin_unlock_bh(&ar->data_lock);
- 
--	ieee80211_queue_work(ath12k_ar_to_hw(ar), &arsta->update_wk);
-+	wiphy_work_queue(ath12k_ar_to_hw(ar)->wiphy, &arsta->update_wk);
- }
- 
- static void ath12k_mac_disable_peer_fixed_rate(void *data,
+changes in v7:
+ - rebase and remove patch 01/10 which was merged already.
+
+changes in v6:
+ - Change comment in patch 01/10 to represent only AP mode
+   implementation.
+
+changes in v5:
+ - Fix column length to 80 in patch 01/10
+ - Fix advertises spelling in patch 09/10
+ - Fix choosing spelling in patch 10/10
+
+changes in v4:
+ - Fix ath12k-check warnings in patch 2/10 and 7/10
+ - remove "hostapd" reference in patches 2/10 and 3/10
+ - remove redundant prerequisite-patch-id's in cover letter
+
+changes in v3:
+ - address review comments for fixing ath12k-check issues.
+
+changes in v2:
+ - Amend mac80211 patch description as the patch is not specific
+   to AP mode.
+ - Amend EHT MU-MIMO patch description to specify future support
+   for STA mode.
+
+Pradeep Kumar Chitrapu (9):
+  wifi: ath12k: push HE MU-MIMO params to hardware
+  wifi: ath12k: push EHT MU-MIMO params to hardware
+  wifi: ath12k: move HE MCS mapper to a separate function
+  wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
+  wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
+  wifi: ath12k: add support for setting fixed HE rate/GI/LTF
+  wifi: ath12k: clean up 80P80 support
+  wifi: ath12k: add support for 160 MHz bandwidth
+  wifi: ath12k: add extended NSS bandwidth support for 160 MHz
+
+ drivers/net/wireless/ath/ath12k/core.h |    2 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 1052 ++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/mac.h  |   17 +
+ drivers/net/wireless/ath/ath12k/wmi.c  |   24 +-
+ drivers/net/wireless/ath/ath12k/wmi.h  |   98 ++-
+ 5 files changed, 985 insertions(+), 208 deletions(-)
+
+
+base-commit: 92de67902177c2ea65000a87a6b24fed17d48a18
 -- 
-2.39.5
+2.34.1
 
 
