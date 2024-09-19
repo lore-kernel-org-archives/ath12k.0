@@ -4,72 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E637FCE8D4C
-	for <ath12k@archiver.kernel.org>; Thu, 19 Sep 2024 05:54:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 200BBCE8D52
+	for <ath12k@archiver.kernel.org>; Thu, 19 Sep 2024 07:06:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=KgCAeLLIIk5l5a0LbvKnxYlQMkIO7Fgw9HjEDKEFXnY=; b=OwhU/GIKUyKRfpYEcyPQpAKl67
-	rGA/ZrklBUzcsmGsIq12MDyEYRwVslFhqaXVfaXYEM9C04d/xzVQuCJftKWbsQc0W/lU5/1mwZ6ep
-	/CDVyf1KRk0kF9tQfRYqE4H+2B61J5/hPXv6Pyb20PmfoS20cWAi+DSYyMhRA+zPf5GvWcFFQjJco
-	YZroFDuWeScIin+JcNr3Hu2Abom8DnCB1jLFcMVXmeiGoWg32JLt/pI0nu+u0pMvsViS0nOUmVuTj
-	064r973kMKeExvExX0jryx33NQTepdLyZie6rCsIlvmjKz7Q/8myknezRc295x/DhkYJvr9xXIFv2
-	tdekPyQw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QAcwBEQlh8BzPu5oyXiEdaBTUkwwQtlV8qpAo1Ux/0A=; b=LkvjTxD3OvKewBPGPytGOMgEIM
+	FI+JZ7Lkg5F9BOyhiBeOtPg3AFheicP7cn1USEvSN5mVEBU1MAnGQjWC1cuGGHUwmrmv1VSNP1aSb
+	5yxbO1/vYl8c9nSHjiprE7UqhUYmK4ajOJrTuwwgDq9NL6Ma+tEC71CBsiI1a1Om0mquwzFLKBduN
+	h4JyaD+jcq02tPOv3U8WtNr3U6LLexl4eOudytH0r2I/i6GaF+IVKiDPYwLmYc21QJMDu2KrJidh0
+	bl7PDrcEXjZ1a7IVY1YAeikFyjS04N/uL5zY8tfo15FO0nPRvfBjd4pxxehlJZZpzHrfUJ2sWD4XH
+	6vgLrlpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1srA7h-00000009VXZ-1MoU
+	id 1srBFC-00000009cLj-2yCH
 	for ath12k@archiver.kernel.org;
-	Thu, 19 Sep 2024 05:54:37 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	Thu, 19 Sep 2024 07:06:26 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1srA7d-00000009VWo-3OB7
+	id 1srBFA-00000009cL8-0LOQ
 	for ath12k@lists.infradead.org;
-	Thu, 19 Sep 2024 05:54:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1726725274; x=1758261274;
-  h=date:from:to:cc:subject:message-id;
-  bh=jGET59Yo0F1VSuqt/KKv2iLYQhfva/507feAv8+MzCU=;
-  b=fbsh4xJxV5SllWiUBUXqSMECU2Cpbc7J4D5Gmyv2RfKGSVK2TzEa0SQ0
-   ecT711NOTDYLGpCBZCNk9+Rn6X6q9Mzyq6zLGTZW0xwbCBQs/GUhJCbRf
-   p4ERPnj2N0eHNgKnTqSrcQ8UFmQNKZYws1/PBTO4adBf8l49g558ogM9P
-   bV8s4yWjs7tTgapj8Yu3k3gZOO18F1yL0wQvZgGxht9roRxKw5wcFw+X8
-   alpDOdD0RQQD3eUnYViw8pyUP0hrGPiSFskLAd4XhzPgFtFgfV9HcBbHK
-   hk/uGhr3W3Krp9xPmkqvlo14hzFhd6iCsU8MMrNpXRMvdVdwHOuWPhjmc
-   g==;
-X-CSE-ConnectionGUID: IdjUeQolSL+vRfMRHw35PQ==
-X-CSE-MsgGUID: iAK6PsQ5QBGHYwomX4bQ+g==
-X-IronPort-AV: E=McAfee;i="6700,10204,11199"; a="51078690"
-X-IronPort-AV: E=Sophos;i="6.10,240,1719903600"; 
-   d="scan'208";a="51078690"
-Received: from fmviesa010.fm.intel.com ([10.60.135.150])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Sep 2024 22:54:26 -0700
-X-CSE-ConnectionGUID: q/oVPajORRGVQO4yylkwxA==
-X-CSE-MsgGUID: jl12OZVhRD+8RAHflmW0Yg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.10,240,1719903600"; 
-   d="scan'208";a="70062061"
-Received: from lkp-server01.sh.intel.com (HELO 53e96f405c61) ([10.239.97.150])
-  by fmviesa010.fm.intel.com with ESMTP; 18 Sep 2024 22:54:24 -0700
-Received: from kbuild by 53e96f405c61 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1srA7S-000CyW-1b;
-	Thu, 19 Sep 2024 05:54:22 +0000
-Date: Thu, 19 Sep 2024 13:53:26 +0800
-From: kernel test robot <lkp@intel.com>
-To: Kalle Valo <quic_kvalo@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:ath12k-mlo-qcn9274] BUILD SUCCESS
- 955bc29c6df31fc983fc80608b5e7efe545639c8
-Message-ID: <202409191321.aWhCkiZt-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Thu, 19 Sep 2024 07:06:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=QAcwBEQlh8BzPu5oyXiEdaBTUkwwQtlV8qpAo1Ux/0A=;
+	t=1726729583; x=1727939183; b=P/LPsmmv+OCWaSgL30hTzfsoqKZJzgzDBu+FoAgzawvEIa4
+	4/ViDjxA5uluOf5iiQd13Yj1R5nUuCLP4U9djan5e72sUDWjwpMnVJsSCeDdV23W6ciK33dAqD0FX
+	YJr60FMyiO4yso+WJUDq8Dsgx/OwBgSbAYJZljSQ8wZA74wTgWgexBhg46fWReVLaH6+LIWFP7sVn
+	G5Mns+X6cEDBKGXRsFQX1roSSAVrrLQZ4HMEVRTNqbl494ZcNi4b8qPFf8loafsl5Ug/PKU35PAhW
+	yXHaDT9NmZxCjj/wHTw85DgF+aEzuOEV63pd+TKIySm1vK3mxtthpr9cZI1420zw==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.97)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1srBF8-00000003Qm1-0Qv5;
+	Thu, 19 Sep 2024 09:06:22 +0200
+Message-ID: <33ea3a62b4257b6ef789c30fa8f7bf7e9f1865b5.camel@sipsolutions.net>
+Subject: Re: [PATCH RFC v2 1/4] wifi: ath12k: switch to using wiphy_lock()
+ and remove ar->conf_mutex
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Date: Thu, 19 Sep 2024 09:06:21 +0200
+In-Reply-To: <20240918181042.91891-2-kvalo@kernel.org>
+References: <20240918181042.91891-1-kvalo@kernel.org>
+	 <20240918181042.91891-2-kvalo@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.52.4 (3.52.4-1.fc40) 
+MIME-Version: 1.0
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240918_225433_883526_3AAFF334 
-X-CRM114-Status: UNSURE (   4.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240919_000624_168098_0AB3FA17 
+X-CRM114-Status: GOOD (  18.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,132 +75,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-qcn9274
-branch HEAD: 955bc29c6df31fc983fc80608b5e7efe545639c8  wifi: ath12k: use arsta->addr instead of sta->addr where ever possible
+On Wed, 2024-09-18 at 21:10 +0300, Kalle Valo wrote:
+>=20
+> There is now a new sparse warning, but to keep this long patch simple the
+> labels will be cleaned up in following patches:
+>=20
+> drivers/net/wireless/ath/ath12k/mac.c:6635:1: warning: statement expected=
+ after label
 
-elapsed time: 2370m
+I believe this is a compiler error on some compilers (in particular
+clang), so you probably need to combine patches a little bit.
 
-configs tested: 112
-configs skipped: 3
+> +++ b/drivers/net/wireless/ath/ath12k/debugfs.c
+> @@ -15,14 +15,14 @@ static ssize_t ath12k_write_simulate_radar(struct fil=
+e *file,
+>  	struct ath12k *ar =3D file->private_data;
+>  	int ret;
+> =20
+> -	mutex_lock(&ar->conf_mutex);
+> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+I don't think this is an issue here, but I'm not sure if you're aware
+that in general, locking the wiphy mutex in some debugfs file handlers
+can lead to deadlocks, specifically if those files are later _removed_
+while holding the wiphy lock, as is e.g. the case for station, netdev
+and link debugfs files. For this, we have wiphy_locked_debugfs_read()
+and wiphy_locked_debugfs_write() [1].
 
-tested configs:
-alpha                             allnoconfig    gcc-13.3.0
-alpha                            allyesconfig    gcc-13.3.0
-arc                               allnoconfig    gcc-13.2.0
-arc                   randconfig-001-20240919    gcc-13.2.0
-arc                   randconfig-002-20240919    gcc-13.2.0
-arm                               allnoconfig    clang-20
-arm                   randconfig-001-20240919    clang-20
-arm                   randconfig-002-20240919    clang-20
-arm                   randconfig-003-20240919    clang-20
-arm                   randconfig-004-20240919    clang-20
-arm64                             allnoconfig    gcc-14.1.0
-arm64                 randconfig-001-20240919    gcc-14.1.0
-arm64                 randconfig-002-20240919    clang-15
-arm64                 randconfig-003-20240919    clang-20
-arm64                 randconfig-004-20240919    gcc-14.1.0
-csky                              allnoconfig    gcc-14.1.0
-csky                  randconfig-001-20240919    gcc-14.1.0
-csky                  randconfig-002-20240919    gcc-14.1.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    clang-20
-hexagon                          allyesconfig    clang-20
-hexagon               randconfig-001-20240919    clang-20
-hexagon               randconfig-002-20240919    clang-20
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20240918    clang-18
-i386        buildonly-randconfig-002-20240918    gcc-12
-i386        buildonly-randconfig-003-20240918    gcc-12
-i386        buildonly-randconfig-004-20240918    gcc-12
-i386        buildonly-randconfig-005-20240918    clang-18
-i386        buildonly-randconfig-006-20240918    gcc-12
-i386                                defconfig    clang-18
-i386                  randconfig-001-20240918    clang-18
-i386                  randconfig-002-20240918    clang-18
-i386                  randconfig-003-20240918    clang-18
-i386                  randconfig-004-20240918    gcc-12
-i386                  randconfig-005-20240918    gcc-12
-i386                  randconfig-006-20240918    clang-18
-i386                  randconfig-011-20240918    gcc-12
-i386                  randconfig-012-20240918    clang-18
-i386                  randconfig-013-20240918    gcc-12
-i386                  randconfig-014-20240918    clang-18
-i386                  randconfig-015-20240918    clang-18
-i386                  randconfig-016-20240918    clang-18
-loongarch                        allmodconfig    gcc-14.1.0
-loongarch                         allnoconfig    gcc-14.1.0
-loongarch             randconfig-001-20240919    gcc-14.1.0
-loongarch             randconfig-002-20240919    gcc-14.1.0
-m68k                             allmodconfig    gcc-14.1.0
-m68k                              allnoconfig    gcc-14.1.0
-m68k                             allyesconfig    gcc-14.1.0
-m68k                        m5407c3_defconfig    gcc-14.1.0
-microblaze                       allmodconfig    gcc-14.1.0
-microblaze                        allnoconfig    gcc-14.1.0
-microblaze                       allyesconfig    gcc-14.1.0
-mips                              allnoconfig    gcc-14.1.0
-mips                         cobalt_defconfig    gcc-13.2.0
-mips                         db1xxx_defconfig    clang-20
-mips                     loongson1c_defconfig    gcc-13.2.0
-mips                malta_qemu_32r6_defconfig    gcc-13.2.0
-nios2                             allnoconfig    gcc-14.1.0
-nios2                 randconfig-001-20240919    gcc-14.1.0
-nios2                 randconfig-002-20240919    gcc-14.1.0
-openrisc                          allnoconfig    gcc-14.1.0
-openrisc                         allyesconfig    gcc-14.1.0
-openrisc                            defconfig    gcc-14.1.0
-openrisc                       virt_defconfig    gcc-14.1.0
-parisc                           allmodconfig    gcc-14.1.0
-parisc                            allnoconfig    gcc-14.1.0
-parisc                           allyesconfig    gcc-14.1.0
-parisc                              defconfig    gcc-14.1.0
-powerpc                          allmodconfig    gcc-14.1.0
-powerpc                           allnoconfig    gcc-14.1.0
-powerpc                          allyesconfig    clang-20
-powerpc                      ep88xc_defconfig    gcc-14.1.0
-powerpc                      ppc64e_defconfig    gcc-14.1.0
-powerpc                    sam440ep_defconfig    gcc-14.1.0
-riscv                            allmodconfig    clang-20
-riscv                             allnoconfig    gcc-14.1.0
-riscv                            allyesconfig    clang-20
-riscv                               defconfig    clang-20
-s390                             allmodconfig    clang-20
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.1.0
-s390                                defconfig    clang-20
-sh                               allmodconfig    gcc-14.1.0
-sh                                allnoconfig    gcc-14.1.0
-sh                               allyesconfig    gcc-14.1.0
-sh                                  defconfig    gcc-14.1.0
-sh                               j2_defconfig    gcc-14.1.0
-sh                 kfr2r09-romimage_defconfig    gcc-14.1.0
-sh                           se7705_defconfig    gcc-14.1.0
-sh                           se7722_defconfig    gcc-14.1.0
-sh                   secureedge5410_defconfig    gcc-14.1.0
-sh                             sh03_defconfig    gcc-14.1.0
-sparc                            alldefconfig    gcc-14.1.0
-sparc                            allmodconfig    gcc-14.1.0
-sparc64                             defconfig    gcc-14.1.0
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-17
-um                                  defconfig    clang-20
-um                             i386_defconfig    gcc-12
-um                           x86_64_defconfig    clang-15
-x86_64                            allnoconfig    clang-18
-x86_64                           allyesconfig    clang-18
-x86_64                              defconfig    gcc-11
-x86_64                           rhel-8.3-bpf    gcc-12
-x86_64                         rhel-8.3-kunit    gcc-12
-x86_64                           rhel-8.3-ltp    gcc-12
-x86_64                          rhel-8.3-rust    clang-18
-xtensa                            allnoconfig    gcc-14.1.0
+[1] you are not required to understand how they are implemented ;-)
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> @@ -4310,7 +4301,7 @@ static void ath12k_sta_rc_update_wk(struct work_str=
+uct *wk)
+> =20
+>  	spin_unlock_bh(&ar->data_lock);
+> =20
+> -	mutex_lock(&ar->conf_mutex);
+> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
+
+Baochen already pointed out that you seem to not remove this later in
+patch 4, but in this patch alone you also introduce a bug (that lockdep
+should point out to you), which is that you cancel_work_sync() this in
+ath12k_mac_op_sta_state(), which clearly holds the wiphy mutex already.
+
+This causes a deadlock. It's fine after patch 4:
+
+>  	/* cancel must be done outside the mutex to avoid deadlock */
+>  	if ((old_state =3D=3D IEEE80211_STA_NONE &&
+>  	     new_state =3D=3D IEEE80211_STA_NOTEXIST))
+> -		cancel_work_sync(&arsta->update_wk);
+> +		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
+
+since for wiphy work it's required to ca<ll it with the mutex held./
+
+You really should remove that comment too though, and perhaps then the
+code can be simplified by moving this to the later code also handling
+removal (none->notexist transition).
+
+johannes
 
