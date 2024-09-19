@@ -4,87 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1460FCDD56E
-	for <ath12k@archiver.kernel.org>; Thu, 19 Sep 2024 03:01:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E637FCE8D4C
+	for <ath12k@archiver.kernel.org>; Thu, 19 Sep 2024 05:54:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FsUfgKidG4jpRKsu1Gd654cSHqYQPIg/wTCO6kLZdyM=; b=vc2MJY32nUhSva5lfctA1eYOUe
-	DHlEJJbVf5bvZrwusLFRLxfCVzrF8ngWGXGMwxsZBYaGeLzxCXYF/EaEI/LTKfi78J7ERhCi4maWw
-	E4bMXcv8NGnHRhrbA6/ztHO4CQi8LfWhxbC0XLsuq4wTiqP8MUmVFiQ8xD/KOtb2QoTuBppPp9UzJ
-	K/qP/Ph1h5b+1JOlKGLAG6Pc+j+u84mRSfhWTJDIZq+w4tKvbmf65/YKqqYz5fHY4BB+8PLkh8gxT
-	2FjI4Jf0B+pzdNXnT1cJZdrRDIWVOWU28sQaxIyeKkYyB7ryFiyE4ROJeHDxJAGyJIPrx/IUK9M+x
-	PYlR4txA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=KgCAeLLIIk5l5a0LbvKnxYlQMkIO7Fgw9HjEDKEFXnY=; b=OwhU/GIKUyKRfpYEcyPQpAKl67
+	rGA/ZrklBUzcsmGsIq12MDyEYRwVslFhqaXVfaXYEM9C04d/xzVQuCJftKWbsQc0W/lU5/1mwZ6ep
+	/CDVyf1KRk0kF9tQfRYqE4H+2B61J5/hPXv6Pyb20PmfoS20cWAi+DSYyMhRA+zPf5GvWcFFQjJco
+	YZroFDuWeScIin+JcNr3Hu2Abom8DnCB1jLFcMVXmeiGoWg32JLt/pI0nu+u0pMvsViS0nOUmVuTj
+	064r973kMKeExvExX0jryx33NQTepdLyZie6rCsIlvmjKz7Q/8myknezRc295x/DhkYJvr9xXIFv2
+	tdekPyQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sr7Pt-00000009KvV-2Zh7
+	id 1srA7h-00000009VXZ-1MoU
 	for ath12k@archiver.kernel.org;
-	Thu, 19 Sep 2024 03:01:13 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 19 Sep 2024 05:54:37 +0000
+Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sr7Pq-00000009Kun-1ngU
+	id 1srA7d-00000009VWo-3OB7
 	for ath12k@lists.infradead.org;
-	Thu, 19 Sep 2024 03:01:11 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48IKwIqX022941
-	for <ath12k@lists.infradead.org>; Thu, 19 Sep 2024 03:01:09 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	FsUfgKidG4jpRKsu1Gd654cSHqYQPIg/wTCO6kLZdyM=; b=eRQbEVWjqW50mKFW
-	fA5Dnyc7qS+HnCOtHvI7nqb7iLT7eOjG8gRpxXbYgqACKsIL7Z+YRCl8oySBZT7p
-	GM/p4CFvJ8jmyukyLhqT+ffODrfsa7hduCJq0OUarI/vh+4nedoadQgYk2DqHldm
-	u1ReXMHhgAOusn3nggXix75a8sOYPadMNW1D4hthHgX0rKqYmnCs8yMnz2SCjrBo
-	z2x94uXiyu0J0f9U61fTk9D0BuSA/+aCDnJC2igrVuQn4a+pvAQMSTQ16RBavVvH
-	OC5IZ9xg0O8PFv6NJlxivH0b24bkqge7VYz7L25FjZ+obfdWgSmY2DH7aMmoZDFE
-	SCMDVg==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4gnuudc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 19 Sep 2024 03:01:09 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48J318f3013902
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 19 Sep 2024 03:01:08 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 18 Sep
- 2024 20:01:07 -0700
-Message-ID: <96cf0f76-764f-44a7-8adc-1ec647afc809@quicinc.com>
-Date: Thu, 19 Sep 2024 11:01:06 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC v2 4/4] wifi: ath12k: convert struct
- ath12k_sta::update_wk to use struct wiphy_work
-To: <ath12k@lists.infradead.org>
-References: <20240918181042.91891-1-kvalo@kernel.org>
- <20240918181042.91891-5-kvalo@kernel.org>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <20240918181042.91891-5-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: sYcnpAHY9jW8r4Mhl03kUz-85QdFAKCR
-X-Proofpoint-ORIG-GUID: sYcnpAHY9jW8r4Mhl03kUz-85QdFAKCR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- mlxlogscore=999 malwarescore=0 suspectscore=0 clxscore=1015 phishscore=0
- lowpriorityscore=0 bulkscore=0 impostorscore=0 priorityscore=1501
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409190019
+	Thu, 19 Sep 2024 05:54:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1726725274; x=1758261274;
+  h=date:from:to:cc:subject:message-id;
+  bh=jGET59Yo0F1VSuqt/KKv2iLYQhfva/507feAv8+MzCU=;
+  b=fbsh4xJxV5SllWiUBUXqSMECU2Cpbc7J4D5Gmyv2RfKGSVK2TzEa0SQ0
+   ecT711NOTDYLGpCBZCNk9+Rn6X6q9Mzyq6zLGTZW0xwbCBQs/GUhJCbRf
+   p4ERPnj2N0eHNgKnTqSrcQ8UFmQNKZYws1/PBTO4adBf8l49g558ogM9P
+   bV8s4yWjs7tTgapj8Yu3k3gZOO18F1yL0wQvZgGxht9roRxKw5wcFw+X8
+   alpDOdD0RQQD3eUnYViw8pyUP0hrGPiSFskLAd4XhzPgFtFgfV9HcBbHK
+   hk/uGhr3W3Krp9xPmkqvlo14hzFhd6iCsU8MMrNpXRMvdVdwHOuWPhjmc
+   g==;
+X-CSE-ConnectionGUID: IdjUeQolSL+vRfMRHw35PQ==
+X-CSE-MsgGUID: iAK6PsQ5QBGHYwomX4bQ+g==
+X-IronPort-AV: E=McAfee;i="6700,10204,11199"; a="51078690"
+X-IronPort-AV: E=Sophos;i="6.10,240,1719903600"; 
+   d="scan'208";a="51078690"
+Received: from fmviesa010.fm.intel.com ([10.60.135.150])
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Sep 2024 22:54:26 -0700
+X-CSE-ConnectionGUID: q/oVPajORRGVQO4yylkwxA==
+X-CSE-MsgGUID: jl12OZVhRD+8RAHflmW0Yg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.10,240,1719903600"; 
+   d="scan'208";a="70062061"
+Received: from lkp-server01.sh.intel.com (HELO 53e96f405c61) ([10.239.97.150])
+  by fmviesa010.fm.intel.com with ESMTP; 18 Sep 2024 22:54:24 -0700
+Received: from kbuild by 53e96f405c61 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1srA7S-000CyW-1b;
+	Thu, 19 Sep 2024 05:54:22 +0000
+Date: Thu, 19 Sep 2024 13:53:26 +0800
+From: kernel test robot <lkp@intel.com>
+To: Kalle Valo <quic_kvalo@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:ath12k-mlo-qcn9274] BUILD SUCCESS
+ 955bc29c6df31fc983fc80608b5e7efe545639c8
+Message-ID: <202409191321.aWhCkiZt-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240918_200110_520982_58FA38AE 
-X-CRM114-Status: GOOD (  22.02  )
+X-CRM114-CacheID: sfid-20240918_225433_883526_3AAFF334 
+X-CRM114-Status: UNSURE (   4.64  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,107 +84,132 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-qcn9274
+branch HEAD: 955bc29c6df31fc983fc80608b5e7efe545639c8  wifi: ath12k: use arsta->addr instead of sta->addr where ever possible
 
+elapsed time: 2370m
 
-On 9/19/2024 2:10 AM, Kalle Valo wrote:
-> From: Kalle Valo <quic_kvalo@quicinc.com>
-> 
-> As ath12k is now converted to use wiphy lock we can convert
-> ath12k_sta_rc_update_wk() to use wiphy_work_queue(). This is just for
-> consistency.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/core.h |  2 +-
->  drivers/net/wireless/ath/ath12k/mac.c  | 14 ++++++++------
->  2 files changed, 9 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 7551494716b5..ebfc1e370acc 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -451,7 +451,7 @@ struct ath12k_sta {
->  	u32 smps;
->  	enum hal_pn_type pn_type;
->  
-> -	struct work_struct update_wk;
-> +	struct wiphy_work update_wk;
->  	struct rate_info txrate;
->  	struct rate_info last_txrate;
->  	u64 rx_duration;
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 80db9004cdd7..e70b4212ae80 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -4258,7 +4258,7 @@ static int ath12k_station_disassoc(struct ath12k *ar,
->  	return 0;
->  }
->  
-> -static void ath12k_sta_rc_update_wk(struct work_struct *wk)
-> +static void ath12k_sta_rc_update_wk(struct wiphy *wiphy, struct wiphy_work *work)
->  {
->  	struct ath12k *ar;
->  	struct ath12k_vif *arvif;
-> @@ -4274,7 +4274,9 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
->  	struct ath12k_wmi_peer_assoc_arg peer_arg;
->  	enum wmi_phy_mode peer_phymode;
->  
-> -	arsta = container_of(wk, struct ath12k_sta, update_wk);
-> +	lockdep_assert_wiphy(wiphy);
-> +
-> +	arsta = container_of(work, struct ath12k_sta, update_wk);
->  	sta = container_of((void *)arsta, struct ieee80211_sta, drv_priv);
->  	arvif = arsta->arvif;
->  	ar = arvif->ar;
-> @@ -4571,7 +4573,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
->  	/* cancel must be done outside the mutex to avoid deadlock */
-remove this comment
+configs tested: 112
+configs skipped: 3
 
->  	if ((old_state == IEEE80211_STA_NONE &&
->  	     new_state == IEEE80211_STA_NOTEXIST))
-> -		cancel_work_sync(&arsta->update_wk);
-> +		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-with wiphy lock used, the race condition with ar->conf_mutex is gone so deadlock is not possible. therefore we don;t need to do work cancel individually here, better to squash this hunk into the other one. This also achieves symmetry.
+tested configs:
+alpha                             allnoconfig    gcc-13.3.0
+alpha                            allyesconfig    gcc-13.3.0
+arc                               allnoconfig    gcc-13.2.0
+arc                   randconfig-001-20240919    gcc-13.2.0
+arc                   randconfig-002-20240919    gcc-13.2.0
+arm                               allnoconfig    clang-20
+arm                   randconfig-001-20240919    clang-20
+arm                   randconfig-002-20240919    clang-20
+arm                   randconfig-003-20240919    clang-20
+arm                   randconfig-004-20240919    clang-20
+arm64                             allnoconfig    gcc-14.1.0
+arm64                 randconfig-001-20240919    gcc-14.1.0
+arm64                 randconfig-002-20240919    clang-15
+arm64                 randconfig-003-20240919    clang-20
+arm64                 randconfig-004-20240919    gcc-14.1.0
+csky                              allnoconfig    gcc-14.1.0
+csky                  randconfig-001-20240919    gcc-14.1.0
+csky                  randconfig-002-20240919    gcc-14.1.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon                          allyesconfig    clang-20
+hexagon               randconfig-001-20240919    clang-20
+hexagon               randconfig-002-20240919    clang-20
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20240918    clang-18
+i386        buildonly-randconfig-002-20240918    gcc-12
+i386        buildonly-randconfig-003-20240918    gcc-12
+i386        buildonly-randconfig-004-20240918    gcc-12
+i386        buildonly-randconfig-005-20240918    clang-18
+i386        buildonly-randconfig-006-20240918    gcc-12
+i386                                defconfig    clang-18
+i386                  randconfig-001-20240918    clang-18
+i386                  randconfig-002-20240918    clang-18
+i386                  randconfig-003-20240918    clang-18
+i386                  randconfig-004-20240918    gcc-12
+i386                  randconfig-005-20240918    gcc-12
+i386                  randconfig-006-20240918    clang-18
+i386                  randconfig-011-20240918    gcc-12
+i386                  randconfig-012-20240918    clang-18
+i386                  randconfig-013-20240918    gcc-12
+i386                  randconfig-014-20240918    clang-18
+i386                  randconfig-015-20240918    clang-18
+i386                  randconfig-016-20240918    clang-18
+loongarch                        allmodconfig    gcc-14.1.0
+loongarch                         allnoconfig    gcc-14.1.0
+loongarch             randconfig-001-20240919    gcc-14.1.0
+loongarch             randconfig-002-20240919    gcc-14.1.0
+m68k                             allmodconfig    gcc-14.1.0
+m68k                              allnoconfig    gcc-14.1.0
+m68k                             allyesconfig    gcc-14.1.0
+m68k                        m5407c3_defconfig    gcc-14.1.0
+microblaze                       allmodconfig    gcc-14.1.0
+microblaze                        allnoconfig    gcc-14.1.0
+microblaze                       allyesconfig    gcc-14.1.0
+mips                              allnoconfig    gcc-14.1.0
+mips                         cobalt_defconfig    gcc-13.2.0
+mips                         db1xxx_defconfig    clang-20
+mips                     loongson1c_defconfig    gcc-13.2.0
+mips                malta_qemu_32r6_defconfig    gcc-13.2.0
+nios2                             allnoconfig    gcc-14.1.0
+nios2                 randconfig-001-20240919    gcc-14.1.0
+nios2                 randconfig-002-20240919    gcc-14.1.0
+openrisc                          allnoconfig    gcc-14.1.0
+openrisc                         allyesconfig    gcc-14.1.0
+openrisc                            defconfig    gcc-14.1.0
+openrisc                       virt_defconfig    gcc-14.1.0
+parisc                           allmodconfig    gcc-14.1.0
+parisc                            allnoconfig    gcc-14.1.0
+parisc                           allyesconfig    gcc-14.1.0
+parisc                              defconfig    gcc-14.1.0
+powerpc                          allmodconfig    gcc-14.1.0
+powerpc                           allnoconfig    gcc-14.1.0
+powerpc                          allyesconfig    clang-20
+powerpc                      ep88xc_defconfig    gcc-14.1.0
+powerpc                      ppc64e_defconfig    gcc-14.1.0
+powerpc                    sam440ep_defconfig    gcc-14.1.0
+riscv                            allmodconfig    clang-20
+riscv                             allnoconfig    gcc-14.1.0
+riscv                            allyesconfig    clang-20
+riscv                               defconfig    clang-20
+s390                             allmodconfig    clang-20
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.1.0
+s390                                defconfig    clang-20
+sh                               allmodconfig    gcc-14.1.0
+sh                                allnoconfig    gcc-14.1.0
+sh                               allyesconfig    gcc-14.1.0
+sh                                  defconfig    gcc-14.1.0
+sh                               j2_defconfig    gcc-14.1.0
+sh                 kfr2r09-romimage_defconfig    gcc-14.1.0
+sh                           se7705_defconfig    gcc-14.1.0
+sh                           se7722_defconfig    gcc-14.1.0
+sh                   secureedge5410_defconfig    gcc-14.1.0
+sh                             sh03_defconfig    gcc-14.1.0
+sparc                            alldefconfig    gcc-14.1.0
+sparc                            allmodconfig    gcc-14.1.0
+sparc64                             defconfig    gcc-14.1.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-17
+um                                  defconfig    clang-20
+um                             i386_defconfig    gcc-12
+um                           x86_64_defconfig    clang-15
+x86_64                            allnoconfig    clang-18
+x86_64                           allyesconfig    clang-18
+x86_64                              defconfig    gcc-11
+x86_64                           rhel-8.3-bpf    gcc-12
+x86_64                         rhel-8.3-kunit    gcc-12
+x86_64                           rhel-8.3-ltp    gcc-12
+x86_64                          rhel-8.3-rust    clang-18
+xtensa                            allnoconfig    gcc-14.1.0
 
-
-	} else if ((old_state == IEEE80211_STA_NONE &&
-		    new_state == IEEE80211_STA_NOTEXIST)) {
-		...
-		/* I mean here */
-		...
-	}
-
->  
->  	ar = ath12k_get_ar_by_vif(hw, vif);
->  	if (!ar) {
-> @@ -4585,7 +4587,7 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
->  	    new_state == IEEE80211_STA_NONE) {
->  		memset(arsta, 0, sizeof(*arsta));
->  		arsta->arvif = arvif;
-> -		INIT_WORK(&arsta->update_wk, ath12k_sta_rc_update_wk);
-> +		wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
->  
->  		ret = ath12k_mac_station_add(ar, vif, sta);
->  		if (ret)
-> @@ -4792,7 +4794,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
->  
->  	spin_unlock_bh(&ar->data_lock);
->  
-> -	ieee80211_queue_work(hw, &arsta->update_wk);
-> +	wiphy_work_queue(hw->wiphy, &arsta->update_wk);
->  }
->  
->  static int ath12k_conf_tx_uapsd(struct ath12k_vif *arvif,
-> @@ -8065,7 +8067,7 @@ static void ath12k_mac_set_bitrate_mask_iter(void *data,
->  	arsta->changed |= IEEE80211_RC_SUPP_RATES_CHANGED;
->  	spin_unlock_bh(&ar->data_lock);
->  
-> -	ieee80211_queue_work(ath12k_ar_to_hw(ar), &arsta->update_wk);
-> +	wiphy_work_queue(ath12k_ar_to_hw(ar)->wiphy, &arsta->update_wk);
->  }
->  
->  static void ath12k_mac_disable_peer_fixed_rate(void *data,
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
