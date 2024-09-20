@@ -4,72 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9798CF58F1
-	for <ath12k@archiver.kernel.org>; Fri, 20 Sep 2024 08:53:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B0E0C78837
+	for <ath12k@archiver.kernel.org>; Fri, 20 Sep 2024 12:46:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=FXxeLzyOgngD1ImWqHmI/fucHHFak52KOOkslt1IU4M=; b=cJtYkyCHgRTSCjauPHCgKl80fp
-	+ccLSG9Nk1ulUJ98CbN+TjOZvSIfLZgXZshGXukTw3Dec8TLFjySoiSUN8v8P5yGBUoW+3hjssEj/
-	dOy6eIpx0u0TiBvxxoMeOmlgbNCjAgBCrp0y5cj+Xn00TnMPVPG+RWiFPfUk+Mn4QkQVA14HExRrW
-	5qgSPwRKGJFk5NGSnMYejUrl4leOw8R7wGnAl+PHEXXc99QDGBl9w3fgxm1Ik6r3CHPSXh1TKUibs
-	9ZpKdwsDWhDPAc23a3H9GsbvfjkCwn0NiMW0zg7dTravmfEhyMxX/sebhg+3hkEo6QpoMCzdsJ9rP
-	Eu09TpuA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:
+	Content-Transfer-Encoding:Content-Type:In-Reply-To:References:To:From:Subject
+	:MIME-Version:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Ita0D8YFfERtlRUbb5e1tlbXbt8U+n75gBzvQtgEr8M=; b=WPN94bKu8cfKSvnUdqwt52bl5T
+	ACUQ5Pp3zljWkcZPqP4xxKnhABnzJTIqW/VR88jr6K40QL3CmYCDdKh/AgI+4o4wzYRP5I8wlW1pN
+	4MXlXLU1SqGkp3kXvIUH+6xyYaYIsC7BT7IQmxbxNDIEYnFYCYvReWOLwv9YnGPimP1ec1neyy0vw
+	H76iZDWRkb3gTlIHH0+uPxMLpSv+CGT5mf0G9H7UrpxVBd9yakuM96aDnPGuifkzMTI8fAoSpHMsN
+	0n/VQle5vTgGUzRnNvtC8e7MoHFKsolMSXPTkW+Wjxzdt5mOF411+tdW+yBoLV8W2kqlWUgjx1iuz
+	73vXwO6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1srZOa-0000000Bq1f-2F8Q
+	id 1srd24-0000000CC2z-3iAO
 	for ath12k@archiver.kernel.org;
-	Fri, 20 Sep 2024 08:53:44 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	Fri, 20 Sep 2024 12:46:44 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1srZ9u-0000000BnTu-43Jx
+	id 1srd10-0000000CBjs-12gg
 	for ath12k@lists.infradead.org;
-	Fri, 20 Sep 2024 08:38:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1726821515; x=1758357515;
-  h=date:from:to:cc:subject:message-id;
-  bh=10M9qvy7TuEYDf4sXN8FcAPIf+e+y7ZglJTit7c3DbU=;
-  b=TtVbRAgKJkN4BC4VhPvqSyP/DxHqpqkswhLgoHqZ6cE3BRWOxu5M5D8N
-   VV6FGFCF9PY1Zbo3F1YGsphlAen2AMMYjzT0VkZxiUAM8SreOEtAKUami
-   bBI8L9KJZgZsk+AqFcELwQ8Dwtkqj0k6AXYCILOKXUT7UvuBMHV30yV9w
-   7zSkblYFcfv6Me19nVSkoktOpd4uPk2JjD1HWOmYD/B6wvn8+4l5162OD
-   kVbnQjWignXH+FBWMsKkW4nBQW4xhcaVRZV5LC6zEOKbvM/8b2phWtVSJ
-   cpLFdzUR3BiD7h1j5RlzpzOPtVckh/tVgVh0ujuX+CreNgqStq1UursLH
-   w==;
-X-CSE-ConnectionGUID: iHE18XxTTI6nK0v3iOj2jw==
-X-CSE-MsgGUID: +4hl7wqmSpWa3HXm5qz3GA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11200"; a="25642249"
-X-IronPort-AV: E=Sophos;i="6.10,243,1719903600"; 
-   d="scan'208";a="25642249"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Sep 2024 01:38:34 -0700
-X-CSE-ConnectionGUID: N1q4m3vLRm+UC5PT9YI5sA==
-X-CSE-MsgGUID: n7CMZGL2QSSPNzoDmUpiLg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.10,243,1719903600"; 
-   d="scan'208";a="70674426"
-Received: from lkp-server01.sh.intel.com (HELO 53e96f405c61) ([10.239.97.150])
-  by orviesa007.jf.intel.com with ESMTP; 20 Sep 2024 01:38:33 -0700
-Received: from kbuild by 53e96f405c61 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1srZ9r-000E8y-08;
-	Fri, 20 Sep 2024 08:38:31 +0000
-Date: Fri, 20 Sep 2024 16:38:11 +0800
-From: kernel test robot <lkp@intel.com>
-To: Kalle Valo <quic_kvalo@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- d35bb26e150d7fb7434959fad9fcaeaac99906e6
-Message-ID: <202409201605.8OJfYiZO-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Fri, 20 Sep 2024 12:45:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=online.de;
+	s=s42582890; t=1726836330; x=1727441130; i=dknueppel@online.de;
+	bh=Ita0D8YFfERtlRUbb5e1tlbXbt8U+n75gBzvQtgEr8M=;
+	h=X-UI-Sender-Class:Date:MIME-Version:Subject:From:To:References:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-ID:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=ijkVn2tcjfnn6aJa87h0gHhHHoRi+qVvNj8IVrVXP7tT6I4bw+rhh2S/ityv9cAV
+	 wx4ksO9e2YX1n9v/1p3Qd7P6WogmvTXeR3XCeQCL6ENzYrRfadMvRwrWM4dPIlivm
+	 l/G12i4MuTWuyL4lrpp2RfvFRyn84qCKRocFnlK+P/Zu0d/B4xfEiIJ2SajNsoJk7
+	 S1WLDW7ILLjGXCAuJG1gpzw1tUHlc+HpYHPOjMAbdx1VlAmfkPVqJOwldqUZB7c8h
+	 kYRIPtxQ+WAP56xjA3HCxJcetIDk5s35qVS0P2ZsFWq1bBtpjXA4e43dPqgvt5WcB
+	 JN5nXf/HbGqOzUhBTQ==
+X-UI-Sender-Class: 6003b46c-3fee-4677-9b8b-2b628d989298
+Received: from xXx ([87.122.99.196]) by mrelayeu.kundenserver.de (mreue107
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MXHBo-1sSmKS1zhe-00YM15; Fri, 20
+ Sep 2024 14:45:30 +0200
+Authentication-Results: kalliope-7.home.xx;
+	auth=pass smtp.auth=dknueppel@home.xx smtp.mailfrom=dknueppel@home.xx
+Date: Fri, 20 Sep 2024 14:45:29 +0200
+MIME-Version: 1.0
+Subject: Re: ath12k - HTT timeout error with NCM86
+From: Dieter Knueppel <dknueppel@online.de>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>,
+ Dieter Knueppel <dknueppel@online.de>, linux-wireless@vger.kernel.org,
+ "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+References: <14e17e9a-638b-4bfe-8a2a-99b524a20acf@home.xx>
+ <1MvJjz-1s0CoP3EEz-00rhmL@mrelayeu.kundenserver.de>
+ <7488ed13-82dd-4b41-97c7-5692cacfa631@quicinc.com>
+ <6d3f1f33-2a9a-4b62-a0a0-02e65bd1b461@quicinc.com>
+ <eb1c8576-bf2f-4ec0-8651-62e97446e940@home.xx>
+ <2271e7e8-2e25-42e5-a162-e79f65ee8798@home.xx>
+Content-Language: en-US
+In-Reply-To: <2271e7e8-2e25-42e5-a162-e79f65ee8798@home.xx>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: quoted-printable
+X-Spamd-Bar: ---
+X-Spamd-Result: default: False [-3.10 / 6.00];
+	BAYES_HAM(-3.00)[99.99%];
+	MIME_GOOD(-0.10)[text/plain];
+	FROM_HAS_DN(0.00)[];
+	ARC_NA(0.00)[];
+	TO_DN_EQ_ADDR_SOME(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	RCVD_COUNT_ZERO(0.00)[0];
+	MID_RHS_MATCH_FROM(0.00)[];
+	TO_MATCH_ENVRCPT_ALL(0.00)[];
+	TO_DN_SOME(0.00)[];
+	FROM_EQ_ENVFROM(0.00)[];
+	RCPT_COUNT_THREE(0.00)[4]
+X-Rspamd-Action: no action
+X-Rspamd-Server: kalliope-7
+X-Rspamd-Queue-Id: BCE5E418A8
+Message-ID: <1N4h7p-1rrEib2AJr-01163u@mrelayeu.kundenserver.de>
+X-Provags-ID: V03:K1:rEGZ/OAO1ToqEMdc/aLHY7ydx4FhN9t+grX9lVgpojFhdC5OrMJ
+ up8KbENl+ISddgqJKg8JvX/ZhVncuvdEMxnMFLYIDFlxJs+NZbCi49WdBS1Kt96JlqYCi2v
+ PtoVA1WSJaqycFKlFmqHq9ZdDnR200gCNlgAp64jMYm3p1OWJ8rqmQRuD3aTOVjx3PJT8fm
+ 60VI2GVUSw+xlLv2atcJA==
+UI-OutboundReport: notjunk:1;M01:P0:BcGcGO6sRfY=;zk5m6zvk6M7G52BwNTd1q4d/9aj
+ X2tQoxBFmJU1Ew5uu0n5ZodQ2m54oQeqcIae0MLjQWg5T8M/mErlnt1VjMTdLVOezhH+Av7CA
+ 2hu/ujuupuo3vCOvDe8heU9wp+EOXrGP1sbn7FrYfNYl+wtRL1bHa5s/o0sJcRExoW+Rxdjmg
+ +JdD2gmb3f6d4catyskGDyvfDvHPiUALSpOIo+kw82iwhJXBaLGFjABD4bIjmYlZgpgwLj7zU
+ DH54B3w4TgLdaQcVhCy6fvE/iAydVlWc7l0OVQ/62Qka7GD/EnceRHDml6zD2lYDIFH6yHgwK
+ Sk/kpJS0sDmCC3lcFhqSwU9XLX+RsY4l9upmxmAQrq4uPMa8PGr/We0liVk4m3wzL3v5cxCCr
+ TlRSnAxqzDBnH0bnEf4jj6K5KCZh/3e8yl+Ndi14x1nyHTAI86Vwg9BwRe3Vl+CfaQrXvc8bR
+ 1w+wtIHKEBWgKpAArAsLF4wR16IbTHCkhUkH0Y36y7QtgCdlt2z6zsXG0PTo9tFCMMaLYPf7s
+ pjd6AZMtlm0lC6ZckISncrFdp/ysXNuhAHojkuMqqgLnqSmfznz6bJQnh7/yE23vJ07dkkqW4
+ +ZrpohjO/Ady3KBCghI/A6a4yjf7BpSxbEDab51ueN121n8qZIe9XGnAYXoh6u7f5xwjMy3wZ
+ TkZYuZGHgFMgP1Aow63Mom61CMZGeXMEwOS15X6bjAsFPIQCAnukpUZ1Kqh3eNFeYuymx6CfZ
+ AIDN5lOWqcc9/D8dSq9WTU+Cphcl+TXPQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240920_013835_087902_68401D82 
-X-CRM114-Status: UNSURE (   3.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240920_054538_689430_BFEF19CB 
+X-CRM114-Status: GOOD (  20.24  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,144 +115,115 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: d35bb26e150d7fb7434959fad9fcaeaac99906e6  Add localversion-wireless-testing-ath
+I'm wondering, is this the correct mailing list for my questions?
 
-elapsed time: 961m
+I know you are all working on best effort basis, but at least my
+questions related to supported HW shouldn't be too complicated to answer.
 
-configs tested: 124
-configs skipped: 3
+The information I found so far are almost not existent, stone old,
+misleading or even proofed to be wrong (e.g.
+https://wikidevi.wi-cat.ru/Ath12k, 17cb:1107 equals HERALD-BE as well,
+not sure who maintains this page).
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+I'm almost at the point moving back to my legacy HW.
 
-tested configs:
-alpha                             allnoconfig    gcc-14.1.0
-alpha                            allyesconfig    clang-20
-arc                              allmodconfig    clang-20
-arc                               allnoconfig    gcc-14.1.0
-arc                              allyesconfig    clang-20
-arm                              allmodconfig    clang-20
-arm                               allnoconfig    gcc-14.1.0
-arm                              allyesconfig    clang-20
-arm                        mvebu_v7_defconfig    gcc-14.1.0
-arm                           spitz_defconfig    gcc-14.1.0
-arm                           stm32_defconfig    gcc-14.1.0
-arm                         vf610m4_defconfig    gcc-14.1.0
-arm64                            allmodconfig    clang-20
-arm64                             allnoconfig    gcc-14.1.0
-csky                              allnoconfig    gcc-14.1.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    gcc-14.1.0
-hexagon                          allyesconfig    clang-20
-i386                             allmodconfig    clang-18
-i386                              allnoconfig    clang-18
-i386                             allyesconfig    clang-18
-i386        buildonly-randconfig-001-20240920    gcc-12
-i386        buildonly-randconfig-002-20240920    gcc-12
-i386        buildonly-randconfig-003-20240920    gcc-12
-i386        buildonly-randconfig-004-20240920    gcc-12
-i386        buildonly-randconfig-005-20240920    gcc-12
-i386        buildonly-randconfig-006-20240920    gcc-12
-i386                                defconfig    clang-18
-i386                  randconfig-001-20240920    gcc-12
-i386                  randconfig-002-20240920    gcc-12
-i386                  randconfig-003-20240920    gcc-12
-i386                  randconfig-004-20240920    gcc-12
-i386                  randconfig-005-20240920    gcc-12
-i386                  randconfig-006-20240920    gcc-12
-i386                  randconfig-011-20240920    gcc-12
-i386                  randconfig-012-20240920    gcc-12
-i386                  randconfig-013-20240920    gcc-12
-i386                  randconfig-014-20240920    gcc-12
-i386                  randconfig-015-20240920    gcc-12
-i386                  randconfig-016-20240920    gcc-12
-loongarch                        allmodconfig    gcc-14.1.0
-loongarch                         allnoconfig    gcc-14.1.0
-m68k                             allmodconfig    gcc-14.1.0
-m68k                              allnoconfig    gcc-14.1.0
-m68k                             allyesconfig    gcc-14.1.0
-microblaze                       allmodconfig    gcc-14.1.0
-microblaze                        allnoconfig    gcc-14.1.0
-microblaze                       allyesconfig    gcc-14.1.0
-mips                              allnoconfig    gcc-14.1.0
-mips                          ath79_defconfig    gcc-14.1.0
-mips                  cavium_octeon_defconfig    gcc-14.1.0
-mips                      fuloong2e_defconfig    gcc-14.1.0
-mips                        qi_lb60_defconfig    gcc-14.1.0
-nios2                             allnoconfig    gcc-14.1.0
-openrisc                          allnoconfig    clang-20
-openrisc                         allyesconfig    gcc-14.1.0
-openrisc                            defconfig    gcc-12
-parisc                           allmodconfig    gcc-14.1.0
-parisc                            allnoconfig    clang-20
-parisc                           allyesconfig    gcc-14.1.0
-parisc                              defconfig    gcc-12
-powerpc                          allmodconfig    gcc-14.1.0
-powerpc                           allnoconfig    clang-20
-powerpc                          allyesconfig    gcc-14.1.0
-powerpc                 mpc836x_rdk_defconfig    gcc-14.1.0
-powerpc                 mpc837x_rdb_defconfig    gcc-14.1.0
-riscv                            allmodconfig    gcc-14.1.0
-riscv                             allnoconfig    clang-20
-riscv                            allyesconfig    gcc-14.1.0
-riscv                               defconfig    gcc-12
-s390                             allmodconfig    gcc-14.1.0
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.1.0
-s390                                defconfig    gcc-12
-sh                               allmodconfig    gcc-14.1.0
-sh                                allnoconfig    gcc-14.1.0
-sh                               allyesconfig    gcc-14.1.0
-sh                                  defconfig    gcc-12
-sh                          sdk7780_defconfig    gcc-14.1.0
-sh                           se7206_defconfig    gcc-14.1.0
-sh                           se7724_defconfig    gcc-14.1.0
-sh                            titan_defconfig    gcc-14.1.0
-sh                          urquell_defconfig    gcc-14.1.0
-sparc                            allmodconfig    gcc-14.1.0
-sparc64                             defconfig    gcc-12
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-20
-um                               allyesconfig    clang-20
-um                                  defconfig    gcc-12
-um                             i386_defconfig    gcc-12
-um                           x86_64_defconfig    gcc-12
-x86_64                            allnoconfig    clang-18
-x86_64                           allyesconfig    clang-18
-x86_64      buildonly-randconfig-001-20240920    gcc-12
-x86_64      buildonly-randconfig-002-20240920    gcc-12
-x86_64      buildonly-randconfig-003-20240920    gcc-12
-x86_64      buildonly-randconfig-004-20240920    gcc-12
-x86_64      buildonly-randconfig-005-20240920    gcc-12
-x86_64      buildonly-randconfig-006-20240920    gcc-12
-x86_64                              defconfig    clang-18
-x86_64                                  kexec    clang-18
-x86_64                randconfig-001-20240920    gcc-12
-x86_64                randconfig-002-20240920    gcc-12
-x86_64                randconfig-003-20240920    gcc-12
-x86_64                randconfig-004-20240920    gcc-12
-x86_64                randconfig-005-20240920    gcc-12
-x86_64                randconfig-006-20240920    gcc-12
-x86_64                randconfig-011-20240920    gcc-12
-x86_64                randconfig-012-20240920    gcc-12
-x86_64                randconfig-013-20240920    gcc-12
-x86_64                randconfig-014-20240920    gcc-12
-x86_64                randconfig-015-20240920    gcc-12
-x86_64                randconfig-016-20240920    gcc-12
-x86_64                randconfig-071-20240920    gcc-12
-x86_64                randconfig-072-20240920    gcc-12
-x86_64                randconfig-073-20240920    gcc-12
-x86_64                randconfig-074-20240920    gcc-12
-x86_64                randconfig-075-20240920    gcc-12
-x86_64                randconfig-076-20240920    gcc-12
-x86_64                               rhel-8.3    gcc-12
-x86_64                          rhel-8.3-rust    clang-18
-xtensa                            allnoconfig    gcc-14.1.0
-xtensa                  audio_kc705_defconfig    gcc-14.1.0
-xtensa                    smp_lx200_defconfig    gcc-14.1.0
+Anyway, I would still be very happy to receive any feedback :-)
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Thanks a lot,
+
+Dieter
+
+
+P.S.: Due to my background in mobile networks radio interface, i would
+have a good starting point to contribute myself. Unfortunately I'm
+involved in plenty of other things and don't have the time for another
+job :-(.
+
+
+
+
+
+Am 19.09.2024 um 11:41 schrieb Dieter Knueppel:
+> Minor update:
+>
+> I just figured out, that even the physical machine with std. Ubuntu
+> 24.04 server (before the VM gets started and PCI device vanishes on
+> PM) reports: "Unknown hardware version found for WCN7850: 0xf"
+>
+> Hence the earlier question, whether "MSI HERALD-BE" or "Gigabyte
+> GC-WIFI7" is supported, seems still to be valid.
+>
+>
+> Am 18.09.2024 um 19:54 schrieb Dieter Knueppel:
+>> Hi Jeff,
+>>
+>> thanks a lot for your update on ath11/ath12 related vfio support.
+>>
+>> That's actually bad news!
+>>
+>> Do you know whether vfio support vanished per accident or intention?
+>>
+>> I.e. I'm wondering on why the ath11 patch haven't made it into mainline=
+?
+>>
+>> Assume there are no other 802.11be Chipsets supported by Linux, which
+>> can be used as AP within a VM?
+>>
+>> Kind regards,
+>>
+>> Dieter
+>>
+>>
+>> Am 18.09.2024 um 18:13 schrieb Jeff Johnson:
+>>> Resend since I had a typo in the ath12k e-mail list
+>>>
+>>> On 9/18/2024 9:05 AM, Jeff Johnson wrote:
+>>>> On 9/18/2024 7:40 AM, Dieter Knueppel wrote:
+>>>>> Dear developer team,
+>>>>>
+>>>>> I have to admit, the earlier post "HTT timeout error with NCM86"
+>>>>> is my
+>>>>> fault, sorry for causing confusion.
+>>>>>
+>>>>> Due to earlier tests with legacy cards, the PCIe slot was still
+>>>>> forced
+>>>>> to Gen2 :-(
+>>>>>
+>>>>> Putting it back to <auto>, with "MSI HERALD-BE", similar to "Gigabyt=
+e
+>>>>> WC-WIFI7" i
+>>>>>
+>>>>> consistently get: "Unknown hardware version found for WCN7850: 0xf"
+>>>>>
+>>>>> Which nails down to the question whether any of these adapter is
+>>>>> already
+>>>>> supported?
+>>>>>
+>>>>> The M.2 NCM865 card as such seems to be supported.
+>>>>>
+>>>>> I'm wondering about the difference, as there seems to be no
+>>>>> additional
+>>>>> logic compiled
+>>>>>
+>>>>> on one of the two PCIe boards, just bit of glue logic.
+>>>> For better support on ath12k driver issues please include the
+>>>> ath12k driver
+>>>> list (I've added it to this reply).
+>>>>
+>>>> In your original e-mail you said:
+>>>>> I'm trying to get "MSI HERALD-BE NCM865" up and running within a kvm
+>>>> The ath12k driver does not support running in a VM. Even prior
+>>>> ath11k-based
+>>>> hardware doesn't support it.
+>>>>
+>>>> For ath11k there are some manual steps that have made it work, so
+>>>> if you are
+>>>> adventurous you can try doing something similar with ath12k. Refer to=
+:
+>>>> https://lore.kernel.org/all/adcb785e-4dc7-4c4a-b341-d53b72e13467@gmai=
+l.com/
+>>>>
+>>>>
+>>>> /jeff
+>>>>
 
