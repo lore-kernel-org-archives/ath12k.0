@@ -4,91 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F41F9CF3964
-	for <ath12k@archiver.kernel.org>; Fri, 20 Sep 2024 02:19:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 301F8CF58CC
+	for <ath12k@archiver.kernel.org>; Fri, 20 Sep 2024 04:43:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zWfyaWfAAiZJgYnTFRJOTLzuk+98hNolpFxwrqckyjk=; b=Xv770fVkJOf5YaxgfM0h95WvtH
-	a9cgKyHvvyF4bcCTtb+y4uR1MSHUNxyIk8DbmJSZdUJL0YG5NsV496N4F1n/7Pne9jQw0u09BvxUm
-	v2zyQT+cXzI0AgGucOCXWGohvfX1VLLyjal0KikPoJSGatnjLZv7bh7Gbb5Qy55LiEZ1QbOlQ8NZ5
-	ptChQyKwiJ5kNXsYOVYuPFB6vV8Qv6YTWuySDYP/gcc+1GhwXJpNKelZGG6J5ecNgMS1NcUTW/kee
-	2vxF6cj/iKz+yQIE8pYV5V2uVYVnJu1fQsLPrj8YG+jxEdVEN5SNvrCEJDY9z+0fmQCVwI/2YrepJ
-	j+fTKAnQ==;
+	Content-Type:In-Reply-To:CC:To:From:References:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xpRWGD7dSGr/XgSvqmIAk4vXt7jhrYqUrp1WdW/shdY=; b=n29X6SveJ8bjaHagbi9OGpcmX5
+	67Mkv6aa1Czx965IDWOa0ygxF6XnBNigGSJoVZnDOdeUJCBF7I3c78tn0eV8viMYHU2Etd6ci4uay
+	dND5i5oQWWt8OXWCS9II6Mvo9rtoToUAKflNE8ZL0jDzh++5UwtVsOekkKQTXmfGjAtBt86x5QG3H
+	pYsSKAUpve/DDEQ2zZ3qU9LpnTwSroHrRw0YOWYCloWz/Z0FfGaoLIrWf+JfIj940Eq0kBZID1n/j
+	kwJjlh1qF+o8TjFYsO/HU2a3Ve+ZHKusIPJEY0Z6U/AYWelYG7/98rrKaWf64bioqeEpX5TI/mlNy
+	QoYjmCWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1srTFO-0000000BIaF-2zGG
+	id 1srVUr-0000000BR4N-32LB
 	for ath12k@archiver.kernel.org;
-	Fri, 20 Sep 2024 02:19:50 +0000
+	Fri, 20 Sep 2024 04:43:57 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1srTFM-0000000BIZe-2u13
+	id 1srVUo-0000000BR3s-2Y7W
 	for ath12k@lists.infradead.org;
-	Fri, 20 Sep 2024 02:19:50 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48JKjb9S022842
-	for <ath12k@lists.infradead.org>; Fri, 20 Sep 2024 02:19:47 GMT
+	Fri, 20 Sep 2024 04:43:56 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48JJ3rCK022695;
+	Fri, 20 Sep 2024 04:43:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	zWfyaWfAAiZJgYnTFRJOTLzuk+98hNolpFxwrqckyjk=; b=KfUb+semG/X/w+Fn
-	ykRvYSFf3JWBN2CO4jAcg4yw/4KPNjccsTWXNe9kf+WLW3Pex3G4c/wI73MI9z+0
-	M7/0JOxjoPIKuUgH3vux793ea21nBNBUbHZbDnusRkQ1TUp2b9ZTW89d/GwhHVO+
-	yJNuSrPZMkSihVuQira6o0GchhuPs1Vh4KRCf0L17Pw7I/plkUHXS8NzqbRPThI7
-	E7IkbmKFkAqcXeL3a7CLTxg94PjLo1mYMHhy1tfxZ+AqwTnnol4sTjQtAqMAbIoy
-	JE3J25e2KkvijL4+KhUZD6VCv/HXFYftyVPeq1b9YsvNNgksIdm6fghTSqNOGX3L
-	7KRRvA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4hfqej6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 20 Sep 2024 02:19:47 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48K2Jk21025323
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 20 Sep 2024 02:19:46 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+	xpRWGD7dSGr/XgSvqmIAk4vXt7jhrYqUrp1WdW/shdY=; b=mDfJ2M08+XRVDHQe
+	FkK+LnjUNLr3kFsZVY86tLWuDtBdwIqyBm/8mxbjcTuJ+UoeNovFcK95Zs8bHnSt
+	VBjJADx+IHMci9A1yS3ZfaCFjogRHQYFceV7R8auG8IjQhNw6dsb47i51705QnFl
+	U9qHTJzqwUU0Hn4/XiHv6JEU0J0lEJ6cBn97w6OjHNnRy0PYEhjgkU7LiM/p06uC
+	Demnt7ogzzC5TInOqV1iNKNGHwjsVVM41Azy6bZkdt2NAhpQioDKOz34m0CLBmW8
+	w69bcWCB/KkZtnEiWsUE2JrI32E5Aq5hht8UcyqWeFobfx+FgloJiyNIgO7umgnD
+	8U7jaQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4gnyqd0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Sep 2024 04:43:50 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48K4hnhl026870
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Sep 2024 04:43:49 GMT
+Received: from [10.216.21.130] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 19 Sep
- 2024 19:19:46 -0700
-Message-ID: <a8ad7603-f18d-4aa8-a0e7-46ed397503dc@quicinc.com>
-Date: Fri, 20 Sep 2024 10:19:43 +0800
+ 2024 21:43:47 -0700
+Message-ID: <51afbe69-e770-0344-6ca0-0fe5cd721d2d@quicinc.com>
+Date: Fri, 20 Sep 2024 10:13:43 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: ath12k - HTT timeout error with NCM86
-To: <ath12k@lists.infradead.org>
-References: <14e17e9a-638b-4bfe-8a2a-99b524a20acf@home.xx>
- <1MvJjz-1s0CoP3EEz-00rhmL@mrelayeu.kundenserver.de>
- <7488ed13-82dd-4b41-97c7-5692cacfa631@quicinc.com>
- <6d3f1f33-2a9a-4b62-a0a0-02e65bd1b461@quicinc.com>
- <eb1c8576-bf2f-4ec0-8651-62e97446e940@home.xx>
- <1MI41P-1sn33411oV-00GW5c@mrelayeu.kundenserver.de>
- <ede25d7a-ad59-4cb9-abb5-be5fb50b2f2c@quicinc.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH] wifi: ath12k: fix tx power, max reg power update to
+ firmware
 Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <ede25d7a-ad59-4cb9-abb5-be5fb50b2f2c@quicinc.com>
+References: <D41LUTO0MIC3.12475D2J3VNX3@gmail.com>
+ <93d580b4-cf7a-471f-8f3a-673d456f726f@quicinc.com>
+From: Santhosh Ramesh <quic_santrame@quicinc.com>
+To: Nicolas Escande <nico.escande@gmail.com>
+CC: <quic_santrame@quicinc.com>,
+        "ath12k@lists.infradead.org"
+	<ath12k@lists.infradead.org>,
+        "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>,
+        <quic_murugana@quicinc.com>
+In-Reply-To: <93d580b4-cf7a-471f-8f3a-673d456f726f@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Ldm3QrpA1LxkPFzxqRRG1v7MMccTk73p
-X-Proofpoint-ORIG-GUID: Ldm3QrpA1LxkPFzxqRRG1v7MMccTk73p
+X-Proofpoint-GUID: QpTxwQbQwW6ru8-soRiXoLgkb5DZxSnA
+X-Proofpoint-ORIG-GUID: QpTxwQbQwW6ru8-soRiXoLgkb5DZxSnA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- clxscore=1015 phishscore=0 malwarescore=0 mlxlogscore=885 mlxscore=0
- impostorscore=0 adultscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409200015
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
+ mlxlogscore=638 malwarescore=0 suspectscore=0 clxscore=1011 phishscore=0
+ lowpriorityscore=0 bulkscore=0 impostorscore=0 priorityscore=1501
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2409200031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240919_191948_768203_7559DCF5 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20240919_214354_784126_F4A05B3A 
+X-CRM114-Status: GOOD (  22.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,33 +106,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 9/20/2024 10:13 AM, Baochen Qiang wrote:
+"Nicolas Escande" <nico.escande@gmail.com> writes:
+> On Mon Sep 9, 2024 at 9:30 AM CEST, Santhosh Ramesh wrote:
 > 
+> [...]
 > 
-> On 9/19/2024 5:41 PM, Dieter Knueppel wrote:
->> Minor update:
+>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+>> index 137394c36460..6d7a005d83b4 100644
+>> --- a/drivers/net/wireless/ath/ath12k/mac.c
+>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+>> @@ -7217,9 +7217,9 @@ ath12k_mac_vdev_start_restart(struct ath12k_vif *arvif,
+>>  							chandef->chan->band,
+>>  							arvif->vif->type);
+>>  	arg.min_power = 0;
+>> -	arg.max_power = chandef->chan->max_power * 2;
+>> -	arg.max_reg_power = chandef->chan->max_reg_power * 2;
+>> -	arg.max_antenna_gain = chandef->chan->max_antenna_gain * 2;
+>> +	arg.max_power = chandef->chan->max_power;
+>> +	arg.max_reg_power = chandef->chan->max_reg_power;
+>> +	arg.max_antenna_gain = chandef->chan->max_antenna_gain;
+>>  
+> 
+> For what it's worth, I already got a similar patch from QCA a few month ago, and
+> it fixed some tx power problems when scanning so I know there is truth in this.
+> 
+>>  	arg.pref_tx_streams = ar->num_tx_chains;
+>>  	arg.pref_rx_streams = ar->num_rx_chains;
 >>
->> I just figured out, that even the physical machine with std. Ubuntu
->> 24.04 server (before the VM gets started and PCI device vanishes on PM)
->> reports: "Unknown hardware version found for WCN7850: 0xf"
-> is this a output of lspci? 
-ah, just find that is a log from ath12k.
+>> base-commit: 903aaf66edc97dd5b9e3118d19677291051a9c40
+> 
+> But there also was more in the patch:
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index a97e1399eeed..87e3ae49afa5 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -2563,6 +2563,8 @@ int ath12k_wmi_send_scan_chan_list_cmd(struct ath12k *ar,
+>  						  WMI_CHAN_REG_INFO1_REG_CLS);
+>  			*reg2 |= le32_encode_bits(channel_arg->antennamax,
+>  						  WMI_CHAN_REG_INFO2_ANT_MAX);
+> +			*reg2 |= le32_encode_bits(channel_arg->maxregpower,
+> +						  WMI_CHAN_REG_INFO2_MAX_TX_PWR);
+>  
+>  			ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
+>  				   "WMI chan scan list chan[%d] = %u, chan_info->info %8x\n",
+> 
+> It seems that ath11k has a similar piece of code in the equivalent function
+> ath11k_wmi_send_scan_chan_list_cmd . Isn't this needed ?
 
-so I guess the 0xf indicates  the PCIe link is not working. Have you tried if a cold reboot could resolve this issue?
-
-and please also share lspci output:
-
-	sudo lspci -s <WCN7850 PCI BDF> -vvvxxx
+This change is in a separate patch, which will be sent for public review soon.
 
 > 
-> could you share kernel dmesg logs?
+> Also I see that in ath12k/reg.c in ath12k_reg_update_chan_list we also send to
+> the firmware:
+> 			ch->maxpower = channel->max_power * 2;
+> 			ch->maxregpower = channel->max_reg_power * 2;
+> 			ch->antennamax = channel->max_antenna_gain * 2;
 > 
->>
->> Hence the earlier question, whether "MSI HERALD-BE" or "Gigabyte
->> GC-WIFI7" is supported, seems still to be valid.
-> these "MSI HERALD-BE" and "Gigabyte GC-WIFI7" are with WCN7850 chip?
+> As it is in a different wmi message, I guess the units are different. 0.5 dBm
+> increment in struct ath12k_wmi_channel_arg right ? Or should we remove the '*2'
 > 
-> 
+
+Yes, the firmware expects these values in 0.5 dBm increments, so we multiply 
+them by 2 in the ath12k_reg_update_chan_list function.
 
