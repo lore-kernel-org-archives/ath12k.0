@@ -4,105 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0284ECF9C5B
-	for <ath12k@archiver.kernel.org>; Sat, 21 Sep 2024 10:29:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4688DCF9C69
+	for <ath12k@archiver.kernel.org>; Sat, 21 Sep 2024 14:43:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:To:Subject
-	:MIME-Version:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nroEnhjnvQNnCk8gNeOcxvGvp7KFXgRaHzfE/4hXkC0=; b=Z4uwm4jYiRlGPzoEXtTqIongGX
-	PvkO6yGGF94rejFVBovNYb3pn0McfOMCtQaiI8uZrxR3wn7zuD7oTEIX/haziL8ptbokfMtDWAVup
-	f9CoIcRle7pJeEb1nN2mdwCVtoKwPHIe7SpdUMonfyIBxpWU89gPEGDdxCujUa3dnrB4EiRaof/nV
-	FwYQGGP/9IFZeKLjYFMjHXH57azmGJcPbMDzY6Bg8xPNJLEXd0brAspAwxjt8HKUWVd9DAifrTIL4
-	Om9DF/CkSK3M2m8dBHmTXO7MYeH2wFDQ5FO1bIHTjaxpn+jTO1rrq/4BerSeyOqwr9dhV5uyndDsY
-	RtKs1ZSw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Subject:From:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Ze5CkP7MQHmwCuO1XBfTk19h4/iqKy8mgsPeFXpqRQg=; b=0x+heUQmpi7OmQuG6QLX+9ZVzI
+	9aWvfL9t1L14jPGHOqqhDLk7HCB9qZdfFbNREzBi2P2MD7UfR3dRCgk81TAfD/t4bkWT8v9bA3ZUk
+	8irGFjbuPHUCj34cZGAxpt0fOa4O7E61dJuvyjQMVLJLdlR61V3pbL6S9y0gjwi1WZBDNVY3i0EZZ
+	yRzJVOnbyeefYnc1B7W0vuOZXOArxZa+zoApfP624zzl9DAcUnjMwnNlq0+5a+ZeOTEi8M6vELvTA
+	zn2hDV91hZVEX+oVlPaPGFQ/DqHH4CjsxqeGbRFfRQVIj7OzHbV6rHLl+mQ7uc3W1ieWdWA3UUSK7
+	iai3bwhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1srxMK-0000000DcML-2RUk
+	id 1ss1Kc-0000000Dnlz-3pwY
 	for ath12k@archiver.kernel.org;
-	Sat, 21 Sep 2024 10:29:00 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	Sat, 21 Sep 2024 14:43:30 +0000
+Received: from mout.web.de ([212.227.15.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1srxMG-0000000DcLy-2vPL
-	for ath12k@lists.infradead.org;
-	Sat, 21 Sep 2024 10:28:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=online.de;
-	s=s42582890; t=1726914519; x=1727519319; i=dknueppel@online.de;
-	bh=nroEnhjnvQNnCk8gNeOcxvGvp7KFXgRaHzfE/4hXkC0=;
-	h=X-UI-Sender-Class:Date:MIME-Version:Subject:To:References:From:
-	 In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-ID:cc:
+	id 1ss1KZ-0000000Dnky-3SHo;
+	Sat, 21 Sep 2024 14:43:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1726929801; x=1727534601; i=markus.elfring@web.de;
+	bh=Ze5CkP7MQHmwCuO1XBfTk19h4/iqKy8mgsPeFXpqRQg=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:From:
+	 Subject:Content-Type:Content-Transfer-Encoding:cc:
 	 content-transfer-encoding:content-type:date:from:message-id:
 	 mime-version:reply-to:subject:to;
-	b=eeC0Zbu2F+dbW5B2TqhrMn05xw61Z6kUacoMtFE/g0MUMjs/wnt02ez94Y2wexQT
-	 AEoZysAgh7MGZsWPnrFMyabVMrST2TK4I2syW/JqkZFO0lUXZIv2UE0Q3pAYNZpDJ
-	 YFKXC+aGu7nQx6nx1tfeihPyZGxN3Ad+lTMSdDzKJeGSWXRS5TQ4IPBDlm6HqdJAW
-	 sbK3/wgI4g1gKOqaR5bFBdNuBtymzDWdTS4Nlql+ihWJ+ctArNXs2H6bBqfITNW2Y
-	 c240/CbxXRkrI20E3v8mlj3NuqIgEo990GSpMmFXB2WhzAlxRwq9NKOCQuyl+Ym//
-	 85sSdrzPrn6I0aRlDg==
-X-UI-Sender-Class: 6003b46c-3fee-4677-9b8b-2b628d989298
-Received: from xXx ([87.122.97.75]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MeC5x-1sHEp73uul-00fUEe; Sat, 21
- Sep 2024 12:28:38 +0200
-Authentication-Results: kalliope-7.home.xx;
-	auth=pass smtp.auth=dknueppel@home.xx smtp.mailfrom=dknueppel@home.xx
-Date: Sat, 21 Sep 2024 12:28:37 +0200
+	b=G5drAkqfR3T4Lzq/W+k4zvI48iRxKH9NhGenbapWZpTC+mRt3vs9RdVJcssk9Vk2
+	 u2kS4OSLTf8WNfhBPqoGf4VWPd3OWMXh34CrdaRs8TqyT37myKPPj2OM4OGgKPONM
+	 2+mjN73NJobh2mubr4SIZcvwj/9KK9PDDCTs9Kjk7ytbg4TbXGEuHGPvmHq5gp1lh
+	 8RxqzGLgSf2cKLnnXtzEhn/iI7AYjS05ub2B4wlpxj53vUsalO7Hy3VO4aID24YQC
+	 TgvLoaGMclKcymfy1SJHW+zPZHMgtJcLpy3arOot/FSx9J57l8voTfSjuv7A/kHd8
+	 4/NcLCjPtpgX6tGbMg==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.91.95]) by smtp.web.de (mrweb005
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1MtPre-1rxA3C3fcE-014EHH; Sat, 21
+ Sep 2024 16:43:20 +0200
+Message-ID: <6658a046-9d4e-4f18-8405-f5dadcf410ee@web.de>
+Date: Sat, 21 Sep 2024 16:43:20 +0200
 MIME-Version: 1.0
-Subject: Re: ath12k - HTT timeout error with NCM86
-To: pgupta@hindutool.com, dknueppel@online.de, quic_jjohnson@quicinc.com,
- linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
-References: <14e17e9a-638b-4bfe-8a2a-99b524a20acf@home.xx>
- <1MvJjz-1s0CoP3EEz-00rhmL@mrelayeu.kundenserver.de>
- <7488ed13-82dd-4b41-97c7-5692cacfa631@quicinc.com>
- <6d3f1f33-2a9a-4b62-a0a0-02e65bd1b461@quicinc.com>
- <eb1c8576-bf2f-4ec0-8651-62e97446e940@home.xx>
- <2271e7e8-2e25-42e5-a162-e79f65ee8798@home.xx>
- <1N4h7p-1rrEib2AJr-01163u@mrelayeu.kundenserver.de>
- <1920f9bd1b8.285f.40f506ff0c43803c7e4cd5785e25da93@hindutool.com>
- <1726839690.xnskyi9sg84wgsw4@mailapp03.register.com>
-Content-Language: en-US
-From: Dieter Knueppel <dknueppel@online.de>
-In-Reply-To: <1726839690.xnskyi9sg84wgsw4@mailapp03.register.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+User-Agent: Mozilla Thunderbird
+To: ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+ linux-wireless@vger.kernel.org, Jeff Johnson <jjohnson@kernel.org>,
+ Kalle Valo <kvalo@kernel.org>
+Content-Language: en-GB
+Cc: LKML <linux-kernel@vger.kernel.org>, Julia Lawall <julia.lawall@inria.fr>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] wifi: ath: Use dev_kfree_skb_any(skb) call only once in three
+ functions
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: quoted-printable
-X-Spamd-Bar: -------
-X-Spamd-Result: default: False [-7.10 / 6.00];
-	REPLY(-4.00)[];
-	BAYES_HAM(-3.00)[99.99%];
-	MIME_GOOD(-0.10)[text/plain];
-	ARC_NA(0.00)[];
-	RCVD_COUNT_ZERO(0.00)[0];
-	MID_RHS_MATCH_FROM(0.00)[];
-	FROM_HAS_DN(0.00)[];
-	TO_MATCH_ENVRCPT_ALL(0.00)[];
-	MIME_TRACE(0.00)[0:+];
-	FROM_EQ_ENVFROM(0.00)[];
-	TO_DN_NONE(0.00)[];
-	RCPT_COUNT_FIVE(0.00)[5]
-X-Rspamd-Action: no action
-X-Rspamd-Server: kalliope-7
-X-Rspamd-Queue-Id: 43D69418CC
-Message-ID: <1MGyl3-1snIOL45Y3-009Sn2@mrelayeu.kundenserver.de>
-X-Provags-ID: V03:K1:oRg55dOJqyl6Fa0363AqC9gHxikTKCeKcnyArx0AS3potAElr5T
- zFKiH5i7fkyJVPHB1mxohIThD90KfvELq47lLIwPYTmB986I2mOegrrFBPV2wRIOyLoOp7i
- S9BTdeCcKY1IYA+Qv4jVixmJGyUrb2FoB55MMywXBkasOScfCiEimuUMaevPaqAL3Aqt19/
- IPB59iclcMjr95tqtHKoA==
-UI-OutboundReport: notjunk:1;M01:P0:OQVGFM2BloI=;LgdXCpo6DuZKUJnhRhw6VQgSBhI
- gdx/BtYRmQtpwiONclTSuQebVXjnN74tsJpssyHXLI2WS7hnT1AdQJ13SAkcgPoi9+JWXw/HY
- uLr0bcH8vmxrNVdcQD45nCx9/WTJzpmIVzTWGkBIMjwmt2fK4v4BiHJ/mqRuJd0XEtAPFMD8E
- 6UPKP7mS11WoSsaBQCoE0gVdMUSfU60dHCIBTA5jSMwuzZu2uojT38Jk+fk6G2DlZP4CYa3Xv
- /8M4djJfsILyxjWhm2SCaYI0tuuU9ZE0rY2gOdMOmzgJjPn+7A/9vLeM3wtqGy6fMcPza7EqP
- yb03fKYk5cWDKQdHau9g0tyw2gMXJfbIHGzXrc6ck/A5jUasjjptWBgFOk4NCzwzTUEtET3QK
- C+FYrund+4b0y2OoTfC1t598/X7SqtHDlN1dDlggUbid8d84dnJzYBRVxx+rTEJldUh7/uaT6
- +i5Ke8CzHH8YsoHg2LpD1n/iy6dxgSU1bONPIQoy3zKx4NysClGjaGMOCB9+rY+qKqmnuPP1U
- csbjYpZ8OZM8PVM+g0TQPQlUCOZ5/vdMhmNLOOOOAzrmICNicdekRSZgN0AWFDepMEVigEgFc
- DPpkzUOosE/GCfNU9Tlpj3nhlTxiGQbkP5fDHzZ1SW6Ybv4bU0WMrYXzzv9Yn9hF7xOZWAU98
- eCTS8Df0S0+T8jr02RAMqRstA1XAPHBdzuYOVobawu6nctIifxe3RgUEUrsFIde009Ksmi83+
- iNToD9Y8mey2KEPtqrM6uZS7xzAHz7rEQ==
+X-Provags-ID: V03:K1:y0mbzl/D0kDzSIz9D2uwsK9cknnXkWfSJZHPGL5XJMRJJAIdscy
+ +8DFodCZeGr6Wqe7bh7idUQQpYUkJhOR2atAs/O0QSaeUF8eg87hnkzt945WatRXdo1lzFW
+ hxGVI0XOwZnVnSWOl8Piok6njIJVA/QPmn5ZOL70Dxzw1D2Js+hET8+H5Ll1DCV8ojMUQje
+ hiC/6o05XlXklUeT5k14g==
+UI-OutboundReport: notjunk:1;M01:P0:2UyM1PGgl5E=;0iXHIZBz4wWxEax5Cnp5LoA5N3L
+ ig9vOrQ27CnYRQczpkylS0WkR9ZigT+00f2fqrRj3Igps62vsdCdEvJ8fFYOBMSXuVAbYnb1O
+ ZbphnlosBXm3ZENoWjHQe/Q1B698OHtFjQ43OZJ7X5kEWJUGt0C5xA8pD2UHjyAFxpHc5LD+7
+ y5lYpprn72gOJAuURoMFo9p9XByK/2YGDPs8HL9rBtZ9vR1gbwCNpMqVDtPV6WVHQee1suBBG
+ DVWjKmTEeU3pz28r6ZsYOk8UAxw9n8uoD171QPtgvGv5K03Rmo5IqkQ2klJvQm2x3w24ad/hF
+ bBKaxp2HJW5jn1gClzdI1xnAlcfNKWVqrJZnPMkHqG+/vZvIyvGCmJNjHmJmMvoIAAuLet6vR
+ CHGuFM69WsvUGaC5iIK2PCMVIQe29R83TFr0F80QnbzXtJ0lE/5mAD9Ii4wYkjAt109/+MPa0
+ gYCCgSf4evynNpmrIswOSZb1izL8MGrGjxd79BZyQS5W1zso+nmOqAxTUYMg+DUri58vPOxch
+ YFo69Fe76byWPGJPklWs1hz2Q5Xx4YWeYU75f+jMIv2FrQqI2W3pPIElpwApW/fYh855c9lhe
+ hFXwtaDRzpOhdwE7Ukguq60UGeaIF9PQnU+ZRf0SiwIKxli2Vttj5JuvEWAYdHKExwGMNQ5ad
+ J3xOJkTsOrzhQQ4nTje15miz+mSMG6OVNfMNMgndEJ2tjbvJ/hxkxD9NoQkeS8Bo3skbwyqSm
+ elIvE5mxY2amLC20Sj6vpLL8SamElNcYSd9RJ31JhjTReDkvVnOW+2RUbxFL0xN8WnAKiBxZe
+ XF3/1GseKFM4oIS6S/WQdwjw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240921_032857_138811_7D90DBA7 
-X-CRM114-Status: GOOD (  39.61  )
+X-CRM114-CacheID: sfid-20240921_074328_256551_F323F851 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,168 +93,88 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Prashant,
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Sat, 21 Sep 2024 16:32:09 +0200
 
-thanks for confirmation and sharing my pain ;-)
-
-Earlier i patched the ath12k driver in HW detection, i.e. to not
-complain about version 0xf, but continue as if it would be version 2.
-
-Driver then crashed more deeper in the code. That might have been the
-case, due to missing ath12k vfio support.
-
-As my physical machine hosts a bunch of VMs, per design I keep this
-machine as slim as possible.
-
-Custom kernel or driver would break this design, hence i have to keep
-the adapter hosted within a VM.
-
-Up to now i had a QWA-AC2600 (with two QCA9984 onboard), perfect for
-dual band concurrent AP.
-
-Unfortunately newer kernel prevent pass through for this card, probably
-due to onboard PCI switch limitation (investigation ongoing as well).
-
-Now I'm looking in parallel for legacy PCE AC-88 adapter .. to be
-continued :-(
-
-Kind regards,
-
-Dieter
-
-
-
-
-
-Am 20.09.2024 um 15:41 schrieb pgupta@hindutool.com:
-> I purchased my hw modules (2.4, 5, 6 GHz) from compex. They were not rec=
-ognized on my std Ubuntu 24.04 installation. According to compex the hw bi=
-t needs to either be hard coded into the module or a software patch applie=
-d. Because I am using all three modules in one machine (Dell R730xd) and u=
-sing PCIE to M.2 riser cables they had to hardcode the identification bit =
-and I had to send the modules back. I would ask your hardware manufacturer=
-. I was told that the encoding will vary depending on the use of the modul=
-e.  You are right in that Wifi 7 has proved to be exceedingly difficult co=
-mpared to the wifi 5 router I built. I have almost given up myself but con=
-tinue to fight the good fight.
->
-> Cheers
->
-> Prashant gupta
->
->
->
-> On September 20, 2024 6:17:01 PM Dieter Knueppel <dknueppel@online.de> w=
-rote:
->
-> I'm wondering, is this the correct mailing list for my questions?
->
-> I know you are all working on best effort basis, but at least my
-> questions related to supported HW shouldn't be too complicated to answer=
+A dev_kfree_skb_any(skb) call was immediately used after a return code
+check in three function implementations.
+Thus use such a function call only once instead directly before the checks=
 .
->
-> The information I found so far are almost not existent, stone old,
-> misleading or even proofed to be wrong (e.g.
-> https://wikidevi.wi-cat.ru/Ath12k, 17cb:1107 equals HERALD-BE as well,
-> not sure who maintains this page).
->
-> I'm almost at the point moving back to my legacy HW.
->
-> Anyway, I would still be very happy to receive any feedback :-)
->
-> Thanks a lot,
->
-> Dieter
->
->
-> P.S.: Due to my background in mobile networks radio interface, i would
-> have a good starting point to contribute myself. Unfortunately I'm
-> involved in plenty of other things and don't have the time for another
-> job :-(.
->
->
->
->
->
-> Am 19.09.2024 um 11:41 schrieb Dieter Knueppel:
-> Minor update:
->
-> I just figured out, that even the physical machine with std. Ubuntu
-> 24.04 server (before the VM gets started and PCI device vanishes on
-> PM) reports: "Unknown hardware version found for WCN7850: 0xf"
->
-> Hence the earlier question, whether "MSI HERALD-BE" or "Gigabyte
-> GC-WIFI7" is supported, seems still to be valid.
->
->
-> Am 18.09.2024 um 19:54 schrieb Dieter Knueppel:
-> Hi Jeff,
->
-> thanks a lot for your update on ath11/ath12 related vfio support.
->
-> That's actually bad news!
->
-> Do you know whether vfio support vanished per accident or intention?
->
-> I.e. I'm wondering on why the ath11 patch haven't made it into mainline?
->
-> Assume there are no other 802.11be Chipsets supported by Linux, which
-> can be used as AP within a VM?
->
-> Kind regards,
->
-> Dieter
->
->
-> Am 18.09.2024 um 18:13 schrieb Jeff Johnson:
-> Resend since I had a typo in the ath12k e-mail list
->
-> On 9/18/2024 9:05 AM, Jeff Johnson wrote:
-> On 9/18/2024 7:40 AM, Dieter Knueppel wrote:
-> Dear developer team,
->
-> I have to admit, the earlier post "HTT timeout error with NCM86"
-> is my
-> fault, sorry for causing confusion.
->
-> Due to earlier tests with legacy cards, the PCIe slot was still
-> forced
-> to Gen2 :-(
->
-> Putting it back to <auto>, with "MSI HERALD-BE", similar to "Gigabyte
-> WC-WIFI7" i
->
-> consistently get: "Unknown hardware version found for WCN7850: 0xf"
->
-> Which nails down to the question whether any of these adapter is
-> already
-> supported?
->
-> The M.2 NCM865 card as such seems to be supported.
->
-> I'm wondering about the difference, as there seems to be no
-> additional
-> logic compiled
->
-> on one of the two PCIe boards, just bit of glue logic.
-> For better support on ath12k driver issues please include the
-> ath12k driver
-> list (I've added it to this reply).
->
-> In your original e-mail you said:
-> I'm trying to get "MSI HERALD-BE NCM865" up and running within a kvm
-> The ath12k driver does not support running in a VM. Even prior
-> ath11k-based
-> hardware doesn't support it.
->
-> For ath11k there are some manual steps that have made it work, so
-> if you are
-> adventurous you can try doing something similar with ath12k. Refer to:
-> https://lore.kernel.org/all/adcb785e-4dc7-4c4a-b341-d53b72e13467@gmail.c=
-om/
->
->
-> /jeff
->
->
+
+This issue was transformed by using the Coccinelle software.
+
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+=2D--
+ drivers/net/wireless/ath/ath11k/dp_rx.c  | 6 ++----
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 4 +---
+ drivers/net/wireless/ath/ath12k/dp_rx.c  | 6 ++----
+ 3 files changed, 5 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireles=
+s/ath/ath11k/dp_rx.c
+index c087d8a0f5b2..eb8e5fbdd77a 100644
+=2D-- a/drivers/net/wireless/ath/ath11k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
+@@ -1808,11 +1808,9 @@ static int ath11k_dp_rx_msdu_coalesce(struct ath11k=
+ *ar,
+ 		/* Free up all buffers of the MSDU */
+ 		while ((skb =3D __skb_dequeue(msdu_list)) !=3D NULL) {
+ 			rxcb =3D ATH11K_SKB_RXCB(skb);
+-			if (!rxcb->is_continuation) {
+-				dev_kfree_skb_any(skb);
+-				break;
+-			}
+ 			dev_kfree_skb_any(skb);
++			if (!rxcb->is_continuation)
++				break;
+ 		}
+ 		return -ENOMEM;
+ 	}
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wirele=
+ss/ath/ath12k/dp_mon.c
+index 5c6749bc4039..21780f06b4ae 100644
+=2D-- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -2102,16 +2102,14 @@ int ath12k_dp_mon_srng_process(struct ath12k *ar, =
+int mac_id, int *budget,
+ 								  skb, napi, ppdu_id);
+
+ 			peer =3D ath12k_peer_find_by_id(ab, ppdu_info->peer_id);
+-
++			dev_kfree_skb_any(skb);
+ 			if (!peer || !peer->sta) {
+ 				ath12k_dbg(ab, ATH12K_DBG_DATA,
+ 					   "failed to find the peer with peer_id %d\n",
+ 					   ppdu_info->peer_id);
+-				dev_kfree_skb_any(skb);
+ 				continue;
+ 			}
+
+-			dev_kfree_skb_any(skb);
+ 			pmon->dest_skb_q[i] =3D NULL;
+ 		}
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireles=
+s/ath/ath12k/dp_rx.c
+index 91e3393f7b5f..c0b59ac247bf 100644
+=2D-- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1804,11 +1804,9 @@ static int ath12k_dp_rx_msdu_coalesce(struct ath12k=
+ *ar,
+ 		/* Free up all buffers of the MSDU */
+ 		while ((skb =3D __skb_dequeue(msdu_list)) !=3D NULL) {
+ 			rxcb =3D ATH12K_SKB_RXCB(skb);
+-			if (!rxcb->is_continuation) {
+-				dev_kfree_skb_any(skb);
+-				break;
+-			}
+ 			dev_kfree_skb_any(skb);
++			if (!rxcb->is_continuation)
++				break;
+ 		}
+ 		return -ENOMEM;
+ 	}
+=2D-
+2.46.0
+
 
