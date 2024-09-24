@@ -4,89 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 244CCCF9C6E
-	for <ath12k@archiver.kernel.org>; Mon, 23 Sep 2024 11:23:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41A3ACF9C71
+	for <ath12k@archiver.kernel.org>; Tue, 24 Sep 2024 09:13:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=OtNRlmbviwP8o4k0dvGhwCzoZWzFrX7wowByBQILtxQ=; b=dZ3Oh+wRfVo6v0zm55A503sF4U
-	SlgRdDHqtvuHRKjOQGgGLcYvnUVWZ5376PvI14GVEFIdrJy+oLv2uzeq6PpyJDt0sF8D517gLLCi1
-	CwBRE1jgL5wyBgxaoztjhT0dcKHU+fBaEO4AcXP8Suk5dWQFs1IPPBy9xrAeDj/sBmSM5/+7NK/GJ
-	Wi+zk3m74GBMYb/NaLSbfv5buSjtvQtsMb1FzOqkFBsmMYGHVbxnBPadGeh8sPBcq4MO9FvIpW0FM
-	ZbznVK9DHsdYXds8IYbvCii4JL63Tb27lsgG1MV7+zvrwWRmbEiASjowGSnrQ5faXz2hC7IquxL71
-	W0LIG5NA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=v9wOe+IO/eo+MAr1nVEI1JV0uxJldoPbeMrTpl+iu3c=; b=Wod6ThDrceL69a5PN5zyxSBp1v
+	uYUME5cAXWFcSR2z+Pll2bvTDuI68bdt5isuwv52sPFWdEJJu62hhmmA0k1Z+estV1Eqbc89Gg5Jj
+	C1c/EQ9uKaioSP3mlF8OcYzN77Rl7mmmL7+sp9KeqbZhnaoTkxd9vvFuq8fqL6pdXri2uxRFjgzCa
+	4q4HPlcZ8ovX3+zO3XEDVuIdn8J4x0llSwrGWPN4KiYEQI+hjdMJguDj3kf6vlgOjR9BjI25dq46S
+	XVx/EuUO101XAN1d+ddb6sg+I920Mgimel8sBsa7PSCxIp+pGWp3UmbNgDmBhL+BldP/CO/1VN8Cm
+	LVq9nDrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sshA0-0000000H44W-3do4
+	id 1st1bf-00000001kjy-45iG
 	for ath12k@archiver.kernel.org;
-	Mon, 23 Sep 2024 11:23:20 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 24 Sep 2024 09:13:15 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ssh9x-0000000H447-2fo4
+	id 1st1Zl-00000001kEy-2uSX
 	for ath12k@lists.infradead.org;
-	Mon, 23 Sep 2024 11:23:19 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48N0qAIN014296;
-	Mon, 23 Sep 2024 11:23:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	OtNRlmbviwP8o4k0dvGhwCzoZWzFrX7wowByBQILtxQ=; b=J7iMDqVX9qpNxJtd
-	ojY6zdoowfW7KIUnauju3mh9NmuokVN637QeB6vcdjSK7uJw+opUhCmY1lFFCexm
-	O66+OWdlZ5kEuB4s8YVz5yxRXI6mB1I/oWNhhDYibeRLGLmFaHrmHTvk42FrzC9x
-	3kcYWWtQvXYwvsed5RJTUXJF5+7151bBxK+hL+pL+9f5FV5RL8RVB7Ys2EYZSNi6
-	YphUlTuW53X7G0bfgCO0p0G7oyXDrLilqMbVYQ3oel4/rrhOSVkn59BP9kFBkow0
-	1yLOHS1wUKfRsqbYb274yck7yn3wtIvKHLPfZPyUcRkj2ewu4ZDQfbM+8apOIaPY
-	+TgiQg==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41snfgvt26-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Sep 2024 11:23:10 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48NBN9xl006990
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Sep 2024 11:23:09 GMT
-Received: from [10.151.40.197] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 23 Sep
- 2024 04:23:07 -0700
-Message-ID: <38ff45d4-0114-c9a5-72ea-3330f16e1ed7@quicinc.com>
-Date: Mon, 23 Sep 2024 16:53:04 +0530
+	Tue, 24 Sep 2024 09:11:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 2C94D5C5477;
+	Tue, 24 Sep 2024 09:11:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07964C4CEC4;
+	Tue, 24 Sep 2024 09:11:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1727169076;
+	bh=E+OVsVTME16mVT99zvFxAxUSip6UlzcwqZUbZKjr/Dw=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=qgf1IvBlVj19NZirdVOdPALXM09jI9ECp+/v7AjJhp62aazjb1Mn80VORcXEqxG5E
+	 ZO/W1/oJ33i+5b55hwmyoRI3mnrIJoNJOA3qLnjVcQjSVCItmkYo2o/aeUH59aV3Xt
+	 kd92rzHq2rkHjb+parUOJczWm1GPjpyRgVSA/0CDEiwqXGWf7qdfuFJw9w1N+SeifV
+	 SVS1hGyPp6o97WB64C31dGYDMBCoKKZL4CE21+V8PwvGcaa2Qdu6mej7ZoeuuB91aD
+	 IvFFPZO0HVSLJBKGLryspua7bo+bv4H1Dwj2ShZLDNA8ETRwt1s8HEXQef5aViNrjo
+	 TWXLPPtNpTghQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org
+Subject: Re: [PATCH RFC v2 1/4] wifi: ath12k: switch to using wiphy_lock()
+ and remove ar->conf_mutex
+References: <20240918181042.91891-1-kvalo@kernel.org>
+	<20240918181042.91891-2-kvalo@kernel.org>
+	<33ea3a62b4257b6ef789c30fa8f7bf7e9f1865b5.camel@sipsolutions.net>
+Date: Tue, 24 Sep 2024 12:11:14 +0300
+In-Reply-To: <33ea3a62b4257b6ef789c30fa8f7bf7e9f1865b5.camel@sipsolutions.net>
+	(Johannes Berg's message of "Thu, 19 Sep 2024 09:06:21 +0200")
+Message-ID: <87o74da025.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [ath:ath12k-mlo] BUILD SUCCESS
- 71a66ca2c46d815d17e234a10726ca6c94af5272
-Content-Language: en-US
-To: kernel test robot <lkp@intel.com>, Kalle Valo <quic_kvalo@quicinc.com>
-CC: Jeff Johnson <jjohnson@kernel.org>, <ath12k@lists.infradead.org>
-References: <202409221856.8mu802Fi-lkp@intel.com>
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <202409221856.8mu802Fi-lkp@intel.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: WLw7yva2YdWdrDL1HHmu3o_uK6vaz6or
-X-Proofpoint-GUID: WLw7yva2YdWdrDL1HHmu3o_uK6vaz6or
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 adultscore=0
- lowpriorityscore=0 priorityscore=1501 malwarescore=0 mlxscore=0
- suspectscore=0 impostorscore=0 spamscore=0 phishscore=0 mlxlogscore=570
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409230084
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240923_042317_909897_AD4D977C 
-X-CRM114-Status: UNSURE (   6.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240924_021117_845506_52E2C399 
+X-CRM114-Status: GOOD (  29.52  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,31 +75,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Johannes Berg <johannes@sipsolutions.net> writes:
 
+> On Wed, 2024-09-18 at 21:10 +0300, Kalle Valo wrote:
+>> 
+>> There is now a new sparse warning, but to keep this long patch simple the
+>> labels will be cleaned up in following patches:
+>> 
+>> drivers/net/wireless/ath/ath12k/mac.c:6635:1: warning: statement expected after label
+>
+> I believe this is a compiler error on some compilers (in particular
+> clang), so you probably need to combine patches a little bit.
 
-On 9/22/2024 4:29 PM, kernel test robot wrote:
-> tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo
-> branch HEAD: 71a66ca2c46d815d17e234a10726ca6c94af5272  wifi: ath12k: pass link ID during MLO while delivering skb
-> 
-> Unverified Warning (likely false positive, kindly check if interested):
-> 
->      net/wireless/core.c:719 wiphy_verify_combinations() error: uninitialized symbol 'ret'.
-> 
-> Warning ids grouped by kconfigs:
-> 
-> recent_errors
-> `-- x86_64-randconfig-161-20240922
->      `-- net-wireless-core.c-wiphy_verify_combinations()-error:uninitialized-symbol-ret-.
-> 
+I had actually already fixed this but forgot to update the commit
+message, did that now in v3.
 
-It is a false positive warning.
+>> +++ b/drivers/net/wireless/ath/ath12k/debugfs.c
+>> @@ -15,14 +15,14 @@ static ssize_t ath12k_write_simulate_radar(struct file *file,
+>>  	struct ath12k *ar = file->private_data;
+>>  	int ret;
+>>  
+>> -	mutex_lock(&ar->conf_mutex);
+>> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
+>
+> I don't think this is an issue here, but I'm not sure if you're aware
+> that in general, locking the wiphy mutex in some debugfs file handlers
+> can lead to deadlocks, specifically if those files are later _removed_
+> while holding the wiphy lock, as is e.g. the case for station, netdev
+> and link debugfs files. For this, we have wiphy_locked_debugfs_read()
+> and wiphy_locked_debugfs_write() [1].
+>
+> [1] you are not required to understand how they are implemented ;-)
 
-The 'ret' is initialized in both if {} else {} condition statement. So 
-there is no such scenario to have 'ret' as uninitialized.
+Thanks, this is good to know. I'm not that worried about that, at least
+it's not showing up in my tests, so my plan is to fix that in a separate
+patchset.
 
+>> @@ -4310,7 +4301,7 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
+>>  
+>>  	spin_unlock_bh(&ar->data_lock);
+>>  
+>> -	mutex_lock(&ar->conf_mutex);
+>> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
+>
+> Baochen already pointed out that you seem to not remove this later in
+> patch 4, but in this patch alone you also introduce a bug (that lockdep
+> should point out to you), which is that you cancel_work_sync() this in
+> ath12k_mac_op_sta_state(), which clearly holds the wiphy mutex already.
+>
+> This causes a deadlock. It's fine after patch 4:
+>
+>>  	/* cancel must be done outside the mutex to avoid deadlock */
+>>  	if ((old_state == IEEE80211_STA_NONE &&
+>>  	     new_state == IEEE80211_STA_NOTEXIST))
+>> -		cancel_work_sync(&arsta->update_wk);
+>> +		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
+>
+> since for wiphy work it's required to ca<ll it with the mutex held./
+
+Excellent find! I fixed it so that I moved this patch before switching
+to use wiphy_lock(). There should not be a deadlock anymore, hopefully
+:)
+
+> You really should remove that comment too though, and perhaps then the
+> code can be simplified by moving this to the later code also handling
+> removal (none->notexist transition).
+
+Good point. In v3 I added a new patch for this.
+
+Thanks again for the review, I owe you so many beers[1] that it's starting
+to get difficult to store them ;)
+
+[1] https://en.wikipedia.org/wiki/Karhu_(beer)
 
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
