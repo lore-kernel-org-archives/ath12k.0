@@ -4,63 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41A3ACF9C71
-	for <ath12k@archiver.kernel.org>; Tue, 24 Sep 2024 09:13:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A506CF9C71
+	for <ath12k@archiver.kernel.org>; Tue, 24 Sep 2024 09:32:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=v9wOe+IO/eo+MAr1nVEI1JV0uxJldoPbeMrTpl+iu3c=; b=Wod6ThDrceL69a5PN5zyxSBp1v
-	uYUME5cAXWFcSR2z+Pll2bvTDuI68bdt5isuwv52sPFWdEJJu62hhmmA0k1Z+estV1Eqbc89Gg5Jj
-	C1c/EQ9uKaioSP3mlF8OcYzN77Rl7mmmL7+sp9KeqbZhnaoTkxd9vvFuq8fqL6pdXri2uxRFjgzCa
-	4q4HPlcZ8ovX3+zO3XEDVuIdn8J4x0llSwrGWPN4KiYEQI+hjdMJguDj3kf6vlgOjR9BjI25dq46S
-	XVx/EuUO101XAN1d+ddb6sg+I920Mgimel8sBsa7PSCxIp+pGWp3UmbNgDmBhL+BldP/CO/1VN8Cm
-	LVq9nDrg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Mmh4ZlQDYBkvXCsB0vJM8wX80hdxafSxiyZWEpfUmwc=; b=inCTGRnjSYfZ+1j5Xj796Tl2DB
+	2F/D7ZhIyKwBH/Beq9KZvgbSVADTRKIpz8ujjMzcxQBz54jssomAaQXesy9Dnt0ggkXx8sCDbXnEH
+	J3axohRresDPQEeM2x/cy9SI8rfIdPrUWrviOLbqcWnmGV9p2lGBwUuddgwR+NH3BWvkPb5Pmf3Ss
+	e13MICcYriK+QfX0MpjcP2VbtfcAu6U+av+vuXS0nPj/5l4NIwtZLITQp6Oudr7EPQcEGbP8M6LZE
+	qKa/YslkEvQGfDxBUPlYN2m5/BvZt30UESXK9wJ7wFuJupRtjVFBDktmhaS/QulImc9rBg8B6a7xz
+	P43fF/Hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1st1bf-00000001kjy-45iG
+	id 1st1uD-00000001oVK-1N6o
 	for ath12k@archiver.kernel.org;
-	Tue, 24 Sep 2024 09:13:15 +0000
+	Tue, 24 Sep 2024 09:32:25 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1st1Zl-00000001kEy-2uSX
+	id 1st1nK-00000001muF-2CtR
 	for ath12k@lists.infradead.org;
-	Tue, 24 Sep 2024 09:11:19 +0000
+	Tue, 24 Sep 2024 09:25:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2C94D5C5477;
-	Tue, 24 Sep 2024 09:11:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07964C4CEC4;
-	Tue, 24 Sep 2024 09:11:15 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 19F895C5BA8
+	for <ath12k@lists.infradead.org>; Tue, 24 Sep 2024 09:25:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22D56C4CEC4;
+	Tue, 24 Sep 2024 09:25:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1727169076;
-	bh=E+OVsVTME16mVT99zvFxAxUSip6UlzcwqZUbZKjr/Dw=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=qgf1IvBlVj19NZirdVOdPALXM09jI9ECp+/v7AjJhp62aazjb1Mn80VORcXEqxG5E
-	 ZO/W1/oJ33i+5b55hwmyoRI3mnrIJoNJOA3qLnjVcQjSVCItmkYo2o/aeUH59aV3Xt
-	 kd92rzHq2rkHjb+parUOJczWm1GPjpyRgVSA/0CDEiwqXGWf7qdfuFJw9w1N+SeifV
-	 SVS1hGyPp6o97WB64C31dGYDMBCoKKZL4CE21+V8PwvGcaa2Qdu6mej7ZoeuuB91aD
-	 IvFFPZO0HVSLJBKGLryspua7bo+bv4H1Dwj2ShZLDNA8ETRwt1s8HEXQef5aViNrjo
-	 TWXLPPtNpTghQ==
+	s=k20201202; t=1727169917;
+	bh=glQD8WRL31UdYqkiq9YK+0QDTotbN41o2t2NZ3Fysko=;
+	h=From:To:Cc:Subject:Date:From;
+	b=V5vzvn/qeNQaa+Faw7puQp/YzpAhQNyfFVRBHax8BN1K+3ET3H5o0WhOFdyEZ7XD8
+	 xF/4/2ccbQ3+Ijg/dSpoquzOGKpq63SKgWoXRfzid7x9b+tj/gbECBQ7EjgAfHPbvN
+	 NdW2u6R723QnnRDoBlcJVNFp8KcybCN8L0TMleu7FPJ3Wsl+FVewRCj/zTeIqYKPBn
+	 lBcLINQoN1BvZdBMWcenmBG7pRclaazRoaDBUZqHOyyjWGbLVtU4bESVFMo+9JbcgB
+	 mHLqbVoFkkcdAml78Y19FoP7t07qhQAyUBoniW7uo8f9uN2H0kH7Pd9/DQLsGvApkO
+	 Us8Ks0imBxJmQ==
 From: Kalle Valo <kvalo@kernel.org>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org
-Subject: Re: [PATCH RFC v2 1/4] wifi: ath12k: switch to using wiphy_lock()
- and remove ar->conf_mutex
-References: <20240918181042.91891-1-kvalo@kernel.org>
-	<20240918181042.91891-2-kvalo@kernel.org>
-	<33ea3a62b4257b6ef789c30fa8f7bf7e9f1865b5.camel@sipsolutions.net>
-Date: Tue, 24 Sep 2024 12:11:14 +0300
-In-Reply-To: <33ea3a62b4257b6ef789c30fa8f7bf7e9f1865b5.camel@sipsolutions.net>
-	(Johannes Berg's message of "Thu, 19 Sep 2024 09:06:21 +0200")
-Message-ID: <87o74da025.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH RFC v3 0/6] wifi: ath12k: switch to using wiphy_lock()
+Date: Tue, 24 Sep 2024 12:25:09 +0300
+Message-Id: <20240924092515.1049885-1-kvalo@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_021117_845506_52E2C399 
-X-CRM114-Status: GOOD (  29.52  )
+X-CRM114-CacheID: sfid-20240924_022518_635492_D11F9F6D 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,81 +70,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Johannes Berg <johannes@sipsolutions.net> writes:
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-> On Wed, 2024-09-18 at 21:10 +0300, Kalle Valo wrote:
->> 
->> There is now a new sparse warning, but to keep this long patch simple the
->> labels will be cleaned up in following patches:
->> 
->> drivers/net/wireless/ath/ath12k/mac.c:6635:1: warning: statement expected after label
->
-> I believe this is a compiler error on some compilers (in particular
-> clang), so you probably need to combine patches a little bit.
+Convert all uses of struct ath12k::conf_mutex to use struct wiphy::mtx, which
+is already used by mac80211, and remove conf_mutex from ath12k. This way we
+have one mutex less in ath12k and simpler locking design.
 
-I had actually already fixed this but forgot to update the commit
-message, did that now in v3.
+I'm submitting this as RFC as I have only tested these patches and need
+to investigate how this affects MLO implementation.
 
->> +++ b/drivers/net/wireless/ath/ath12k/debugfs.c
->> @@ -15,14 +15,14 @@ static ssize_t ath12k_write_simulate_radar(struct file *file,
->>  	struct ath12k *ar = file->private_data;
->>  	int ret;
->>  
->> -	mutex_lock(&ar->conf_mutex);
->> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
->
-> I don't think this is an issue here, but I'm not sure if you're aware
-> that in general, locking the wiphy mutex in some debugfs file handlers
-> can lead to deadlocks, specifically if those files are later _removed_
-> while holding the wiphy lock, as is e.g. the case for station, netdev
-> and link debugfs files. For this, we have wiphy_locked_debugfs_read()
-> and wiphy_locked_debugfs_write() [1].
->
-> [1] you are not required to understand how they are implemented ;-)
+v3:
 
-Thanks, this is good to know. I'm not that worried about that, at least
-it's not showing up in my tests, so my plan is to fix that in a separate
-patchset.
+* new patch: wifi: ath12k: fix atomic calls in ath12k_mac_op_set_bitrate_mask()
 
->> @@ -4310,7 +4301,7 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
->>  
->>  	spin_unlock_bh(&ar->data_lock);
->>  
->> -	mutex_lock(&ar->conf_mutex);
->> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
->
-> Baochen already pointed out that you seem to not remove this later in
-> patch 4, but in this patch alone you also introduce a bug (that lockdep
-> should point out to you), which is that you cancel_work_sync() this in
-> ath12k_mac_op_sta_state(), which clearly holds the wiphy mutex already.
->
-> This causes a deadlock. It's fine after patch 4:
->
->>  	/* cancel must be done outside the mutex to avoid deadlock */
->>  	if ((old_state == IEEE80211_STA_NONE &&
->>  	     new_state == IEEE80211_STA_NOTEXIST))
->> -		cancel_work_sync(&arsta->update_wk);
->> +		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
->
-> since for wiphy work it's required to ca<ll it with the mutex held./
+* new patch: wifi: ath12k: ath12k_mac_op_sta_state(): clean up update_wk cancellation
 
-Excellent find! I fixed it so that I moved this patch before switching
-to use wiphy_lock(). There should not be a deadlock anymore, hopefully
-:)
+* patch 3: ath12k_core_post_reconfigure_recovery(): take wiphy lock before hw_mutex to
+  avoid a lockdep warning
 
-> You really should remove that comment too though, and perhaps then the
-> code can be simplified by moving this to the later code also handling
-> removal (none->notexist transition).
+* patch 3: ath12k_sta_rc_update_wk(): remove extra wiphy_lock() calls
 
-Good point. In v3 I added a new patch for this.
+* patch 3: update commit message, especially remove the sparse warning which was already fixed
 
-Thanks again for the review, I owe you so many beers[1] that it's starting
-to get difficult to store them ;)
+* rebase to ath-202409191620
 
-[1] https://en.wikipedia.org/wiki/Karhu_(beer)
+v2: https://patchwork.kernel.org/project/linux-wireless/cover/20240918181042.91891-1-kvalo@kernel.org/
 
+* rebase to ath-202409051620
+
+* patch 1: ath12k_wow_op_suspend(): remove extra wiphy_lock()/unlock() (Baochen)
+
+* patch 1: fix clang warnings about unused labels (Johannes)
+
+* patch 2: s/no/now/ (Jeff)
+
+* patch 4: ath12k_sta_rc_update_wk(): fix wiphy_priv() usage
+
+v1: https://patchwork.kernel.org/project/linux-wireless/cover/20240821153728.2121600-1-kvalo@kernel.org/
+
+Kalle Valo (6):
+  wifi: ath12k: fix atomic calls in ath12k_mac_op_set_bitrate_mask()
+  wifi: ath12k: convert struct ath12k_sta::update_wk to use struct
+    wiphy_work
+  wifi: ath12k: switch to using wiphy_lock() and remove ar->conf_mutex
+  wifi: ath12k: cleanup unneeded labels
+  wifi: ath12k: ath12k_mac_op_set_key(): remove exit label
+  wifi: ath12k: ath12k_mac_op_sta_state(): clean up update_wk
+    cancellation
+
+ drivers/net/wireless/ath/ath12k/core.c        |   7 +-
+ drivers/net/wireless/ath/ath12k/core.h        |   7 +-
+ drivers/net/wireless/ath/ath12k/debugfs.c     |   4 +-
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   |  26 +-
+ drivers/net/wireless/ath/ath12k/mac.c         | 388 +++++++-----------
+ drivers/net/wireless/ath/ath12k/peer.c        |   6 +-
+ drivers/net/wireless/ath/ath12k/wow.c         |  26 +-
+ 7 files changed, 192 insertions(+), 272 deletions(-)
+
+
+base-commit: d35bb26e150d7fb7434959fad9fcaeaac99906e6
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+2.39.5
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
