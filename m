@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83ABECF9C6B
-	for <ath12k@archiver.kernel.org>; Tue, 24 Sep 2024 10:08:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC8D5CF9C6B
+	for <ath12k@archiver.kernel.org>; Tue, 24 Sep 2024 10:30:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Cx5Y7JgKOK1uRExEWKlQz1jiXuygi1eUAT04rWF+9Kg=; b=X/IE2OpDUBmoFhW7TIoAN1+7mz
-	QMGovtPSCNzjYsowmhGJCqsFXWUEgb1+cU/B5TRiCurTqPOOXHAuUjuUX7sYXIbR2/wErTlLxbeGd
-	/DQE57KgSp+PwlrKrZz7+iXEmG0dlnB0t042cAY2NZG1yEk189YSPiQmBE7lyjDpdE5V1dtK0NCbO
-	vkLraf6J7pbXJOMqbWTz1qRq7UoDkFY0sNAUWgZ3G7bXzB7uKo8xNOH1VWTYijBUner/ZfS/CD8JX
-	7dDnYpwYrO1fTT+nILBL0guRgSEnYuFTAXpSJrZjB4azqDEbG1B9ek6tZ7/ac5bdvet9CplL4UtTW
-	DpE2LLBw==;
+	bh=dLSN6aKvWEAWG/OaCv6nHLEInGFls1mSq25bVQJTH6M=; b=duh0cVOf17tCzwYdoA9FKu8AGK
+	0oCaYHKsvZsJhcZJ+rmKr6rdbBdxBEs52RzqtgUR2JQlLhbZDBbExWwXcnewfsYAOWs0TdelUdh8U
+	nNHEPFaAaitoCjfpN6+4Uwt187yEePZplcUEV+6HekCUIxAaPa4pce4f8wNp/kcfR7KbS2M9c/h48
+	FxuS9ST/70/I7rdlQVkgVj7heTtXgysQu6Eb1LVSSlKC9TrlmMiJJn2qaJ4WMBVl0MWUI1WMWsLkW
+	4ytdtOIWn4a/8gy8PyBZIcEsfIAUTmAwEJAHuQqlv0osd7kBLJgYkmfK3y1ZFvNxmHOmEqnnUgybX
+	Njntyx8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1st2Tb-00000001wu0-0vTs
+	id 1st2oQ-000000020KL-1n3w
 	for ath12k@archiver.kernel.org;
-	Tue, 24 Sep 2024 10:08:59 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 24 Sep 2024 10:30:30 +0000
+Received: from s3.sipsolutions.net ([168.119.38.16] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1st2OX-00000001vMl-1bKc
+	id 1st1dn-00000001lAZ-2YUQ
 	for ath12k@lists.infradead.org;
-	Tue, 24 Sep 2024 10:03:47 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D44D75C0C37;
-	Tue, 24 Sep 2024 10:03:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC614C4CEC4;
-	Tue, 24 Sep 2024 10:03:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1727172224;
-	bh=ShGbu8Qt1hiH26jaSyQZaGCXLqy48t6HW8OjvCJTT7o=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=KMzyiYxPKj5nflUq3KlEl9JUV3HUAL+zMLNWfxuqLyqWzZyVT4beqrvWeApy80on+
-	 9af49WN2urTaa/JluZj9gdWm7Ny/6xiCFzbZSHuAjoAOysWD7y3sRImjW1vn+U+E/p
-	 iVmTuuxkWhuJwv5vJPOFuYhEsMqcsXJKXGeiQ0kf+eZd3d4Zp7+vx1ya3JTty+0zUv
-	 biEJDKRj2wHpkXFRHFiLTm87ScomcByNAhGGtAy5SqKSZE16/z6mF61Au14djm6jla
-	 7jA1njC9Fr5n8sncBNL/6jACqyAcqSd8j3DTcCpGo9oHIZUhRiafFZZ2u/F0bsKxnc
-	 CVhUon4dNZ6yQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+	Tue, 24 Sep 2024 09:15:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=dLSN6aKvWEAWG/OaCv6nHLEInGFls1mSq25bVQJTH6M=;
+	t=1727169325; x=1728378925; b=o766YaqdwANzFv/d4YN20tK5AoqOzXC/z9xysR4w5NKwSht
+	qzLHZeSu4/+0hMlax2sF2zHE1jyXC5GdSFBxp0tHksCIdFHn6gNcbHveVBe749E4XzmfsDbGDIHzL
+	N2srp5EJBDbD/mhPkQkAzOgnGCLpZ1mh4qnxT/TysXLJvgwSZFma5/eHaUshVBIEgB42ddxd/RmpE
+	k09VC/NCZQO1D91Tyg3eQ9FW42Qw+pC1ljadVlx+MJ38BSqeGz4MsebQfVRIJuww1tmF2RvsU9OBi
+	+syO+uTddVBKtP5qqfYQCMD9OuYK952MqBwROAZAC3cFacEp0EGYt5+2RhEAsm9w==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.97)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1st1di-0000000FyHH-2n3D;
+	Tue, 24 Sep 2024 11:15:23 +0200
+Message-ID: <9ba6cee6834966401f125a697308cf9faed0d078.camel@sipsolutions.net>
 Subject: Re: [PATCH RFC v2 1/4] wifi: ath12k: switch to using wiphy_lock()
  and remove ar->conf_mutex
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Kalle Valo <kvalo@kernel.org>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+Date: Tue, 24 Sep 2024 11:15:21 +0200
+In-Reply-To: <87o74da025.fsf@kernel.org>
 References: <20240918181042.91891-1-kvalo@kernel.org>
-	<20240918181042.91891-2-kvalo@kernel.org>
-	<33963bc8-7cc9-434a-8910-cbcfc6fa965e@quicinc.com>
-	<87setpa0pm.fsf@kernel.org>
-Date: Tue, 24 Sep 2024 13:03:41 +0300
-In-Reply-To: <87setpa0pm.fsf@kernel.org> (Kalle Valo's message of "Tue, 24 Sep
-	2024 11:57:09 +0300")
-Message-ID: <87frpp9xmq.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	 <20240918181042.91891-2-kvalo@kernel.org>
+	 <33ea3a62b4257b6ef789c30fa8f7bf7e9f1865b5.camel@sipsolutions.net>
+	 <87o74da025.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.52.4 (3.52.4-1.fc40) 
 MIME-Version: 1.0
-Content-Type: text/plain
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_030345_482977_A33499C6 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20240924_021527_674503_EF1169DB 
+X-CRM114-Status: GOOD (  15.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,35 +77,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
+On Tue, 2024-09-24 at 12:11 +0300, Kalle Valo wrote:
+> > I don't think this is an issue here, but I'm not sure if you're aware
+> > that in general, locking the wiphy mutex in some debugfs file handlers
+> > can lead to deadlocks, specifically if those files are later _removed_
+> > while holding the wiphy lock, as is e.g. the case for station, netdev
+> > and link debugfs files. For this, we have wiphy_locked_debugfs_read()
+> > and wiphy_locked_debugfs_write() [1].
+> >=20
+> > [1] you are not required to understand how they are implemented ;-)
+>=20
+> Thanks, this is good to know. I'm not that worried about that, at least
+> it's not showing up in my tests, so my plan is to fix that in a separate
+> patchset.
 
-> Baochen Qiang <quic_bqiang@quicinc.com> writes:
->
->> On 9/19/2024 2:10 AM, Kalle Valo wrote:
->>> @@ -4310,7 +4301,7 @@ static void ath12k_sta_rc_update_wk(struct work_struct *wk)
->>>  
->>>  	spin_unlock_bh(&ar->data_lock);
->>>  
->>> -	mutex_lock(&ar->conf_mutex);
->>> +	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
->>
->> note in patch 4/4 ath12k_sta::update_wk is converted to use
->> wiphy_work. While a wiphy work item is running wiphy lock is held
->> already. So here try to acquire wiphy lock once again will lead to a
->> deadlock.
->
-> Ouch again, thanks for catching this! This time I actually tested
-> changing bitrates and it shouldn't deadlock in v3. But I did notice
-> sleeping while atomic warnings (even without this patchset) and decided
-> to fix those in the same patchset as well.
->
-> Oh, and WCN6855 firmware was also crashing whenever I tried to change
-> the bitrates. But let's handle that separately.
+I don't think you'd ever even find that in tests, as far as I know
+lockdep cannot track these dependencies, and to actually deadlock you'd
+have to have the debugfs file(s) kept open by userspace while they're
+removed.
 
-Bah, I of course mean WCN7850. Too many chipsets...
+In any case, just wanted to give a heads-up that this might be required
+in some (future) cases, I didn't see any here where it was needed.
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+johannes
 
