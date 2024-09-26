@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 270C8CCF9E9
-	for <ath12k@archiver.kernel.org>; Thu, 26 Sep 2024 07:23:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71CD3CCF9E9
+	for <ath12k@archiver.kernel.org>; Thu, 26 Sep 2024 11:23:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=A8bsI6wAqvnTzEOWjvItI7YfdhyAo59fdReExs5Njqg=; b=JphBItklQZtV1tOONqTRRHmaPo
-	AmTaGcSFqv+whRsnta+olFFlcL3qRZvkN+aRGpqyiUhKVL9kynT7pMBYCLgtmKTCENZ5Ug4P1I8W4
-	Ukuzr5nvpat9pX5cV3sLiIRtXks1Vl07dvcT9cSy6u7BAAh3pHy8gHBA4lbffShhwpcp0eijobJ4C
-	JjtYbL74B1LSNlNDhpla1QDIFObYr0mw14XHiya/Nqj9EutU1i72QKtFa8HXbuO4YnNRCYKEBZvFI
-	zQsGT9YnL0IxPgBbqsvQlWBY1tAikxYFCyc7YJTJqkDlae15qKt8dLfPL4BJMejTlpbHml7Us7Lhs
-	Kas0eYFg==;
+	bh=r2sf9A9N2JG5CrYDw5NX2xL2psIMP92sEIWysTU8r1E=; b=tmW5auYgqYUMAB3HverqjKwnJD
+	AQw7trVxthgih4Wvt6BBCdEm5u9FGM8nnSk/YG+AtlRm360LCMlQDWn4qtYGi+B644Kmo4JS3GWA9
+	D3MP9ZkKKR1Pv4qjitNkWAKJzLvAgL3t/rqelsJysW4XoxEmrVw/ffGIWOiP97L/9ILcmeIRXKeJG
+	fZTP2Cu8ydDt41XfGCOqn9gaYD7avXU3Ap0K3K8/Lt/TdLaXk95d2THzhcBdxn4QXgtRI+qM2oKgh
+	88V9CZy2/XVrjZVLJEXV4ExTtZ+lZCFo0XjzN+yYquvcX0w2ccOMYlZFsOskanpodiicxpcWbnUid
+	nO9tbpCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1stiqc-00000007Uhu-2wUx
+	id 1stmat-00000008DzF-1X3O
 	for ath12k@archiver.kernel.org;
-	Thu, 26 Sep 2024 07:23:34 +0000
-Received: from mgamail.intel.com ([198.175.65.13])
+	Thu, 26 Sep 2024 11:23:35 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1stinD-00000007UA4-3GZv
+	id 1stmZc-00000008DS6-1wgV
 	for ath12k@lists.infradead.org;
-	Thu, 26 Sep 2024 07:20:05 +0000
+	Thu, 26 Sep 2024 11:22:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1727335204; x=1758871204;
+  t=1727349736; x=1758885736;
   h=date:from:to:cc:subject:message-id;
-  bh=c+Xwygxi1RaaTKsziAXPACjW/Glhj/jSpbdOG6MWprE=;
-  b=OUQMNqX0mbAS1ixYI81/NixwKJz9Olu5QJFc0QQupcD50ElukQdhnxo3
-   SrFcEVZ/oSKars0mPMQTYgkpMizjFgdQGB0owFJ6rK1/HTWVJErOZP9xP
-   nRNjU004kkVErazB+72sCb4SiZv1b1gAjk/Ku/vjgfIPUg+Li91r3Fq0C
-   fDNGEyh2u/DODDOTYwbWrTZqGg4iXsZOrR26SQIbeEFjE9OJc0clWH0RK
-   kAde80lDeY5FRPr5r9hqWkhUSa4bkKhO6wSJCE7V0Wa81tIFzfrirTodC
-   /prUoq+7hKP4GOcCeqV2+DA8XffG3/n8fFMF4HuzWYX2er3bKU9bgpGe4
-   Q==;
-X-CSE-ConnectionGUID: vNzeyI7iQZaa6NXWTNtEfg==
-X-CSE-MsgGUID: XrhB3raWQ72GRM0o36aqfw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11206"; a="37557796"
-X-IronPort-AV: E=Sophos;i="6.10,259,1719903600"; 
-   d="scan'208";a="37557796"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Sep 2024 00:20:03 -0700
-X-CSE-ConnectionGUID: B3I/be65TX6Gld/Vf6z7NA==
-X-CSE-MsgGUID: M9tBGUWaSeuM55/y95F0kA==
+  bh=fTu1xg+6sPz7mBc1//oxyWaimDQmm+0+DSRHkTGDS+w=;
+  b=d6Yr80dhIHwcVjtxyOGBok0ns0330rszvCcpewRV2ytOCdo5PDA4+az6
+   SjqH6JwJh6eMTp6tGNo7zM1H24GWqFd3cbL4aMHPr/atgfkYLoV3UnHff
+   BYV59+Ydg4yyy2x4G7bMQ/IMJVHcWlYnN1wdTE0Y0pqOyjKVpSOKhNEDg
+   0w7fKEMLI7YcR7TJCPj9R/540zmkyIdKiUbNuiYKBmvafxQLLFdG6mQfB
+   us0MjLP0o2Uhv1aIigkH2eaqIc+jyJmuv6w9wmkt4mrCJvt9diFHYf3fv
+   oYDcFpARX8MtH9aaSc1XZI7ATrR/3eA3FbU8Ew6FPIX03LpRCnhb8xOWq
+   A==;
+X-CSE-ConnectionGUID: suDBBq0hRGa5p9QqaOlDvw==
+X-CSE-MsgGUID: THpF6xAxQyiCw1M86lX78A==
+X-IronPort-AV: E=McAfee;i="6700,10204,11206"; a="29325738"
+X-IronPort-AV: E=Sophos;i="6.10,155,1719903600"; 
+   d="scan'208";a="29325738"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Sep 2024 04:22:12 -0700
+X-CSE-ConnectionGUID: q/ByzMarSRiaWdsyvb8nJQ==
+X-CSE-MsgGUID: F1lMraVETU6Sp5BMbQNoYQ==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.10,259,1719903600"; 
-   d="scan'208";a="76962296"
+X-IronPort-AV: E=Sophos;i="6.10,155,1719903600"; 
+   d="scan'208";a="76933938"
 Received: from lkp-server01.sh.intel.com (HELO 53e96f405c61) ([10.239.97.150])
-  by orviesa004.jf.intel.com with ESMTP; 26 Sep 2024 00:20:02 -0700
+  by orviesa003.jf.intel.com with ESMTP; 26 Sep 2024 04:22:11 -0700
 Received: from kbuild by 53e96f405c61 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1stin9-000KOH-0P;
-	Thu, 26 Sep 2024 07:19:59 +0000
-Date: Thu, 26 Sep 2024 15:19:45 +0800
+	id 1stmZU-000KdP-2T;
+	Thu, 26 Sep 2024 11:22:08 +0000
+Date: Thu, 26 Sep 2024 19:22:04 +0800
 From: kernel test robot <lkp@intel.com>
 To: Kalle Valo <quic_kvalo@quicinc.com>
 Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- e643530a76baa26ad70b9f8b66f77edfef92bfdf
-Message-ID: <202409261534.Pr2C6wqZ-lkp@intel.com>
+Subject: [ath:pending] BUILD SUCCESS
+ df6ba0a68ac75692bea052d456837711fff86d08
+Message-ID: <202409261959.IWIJXg7F-lkp@intel.com>
 User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240926_002003_913582_FD73F4D0 
-X-CRM114-Status: UNSURE (   4.08  )
+X-CRM114-CacheID: sfid-20240926_042216_546562_6D23BDF0 
+X-CRM114-Status: UNSURE (   4.24  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,12 +84,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: e643530a76baa26ad70b9f8b66f77edfef92bfdf  Merge branch 'pending' into main-pending
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: df6ba0a68ac75692bea052d456837711fff86d08  dt-bindings: net: ath11k: document the inputs of the ath11k on WCN6855
 
-elapsed time: 1206m
+elapsed time: 1448m
 
-configs tested: 128
+configs tested: 135
 configs skipped: 3
 
 The following configs have been built successfully.
@@ -107,6 +107,8 @@ arc                   randconfig-002-20240926    gcc-13.2.0
 arm                              allmodconfig    gcc-14.1.0
 arm                               allnoconfig    clang-20
 arm                              allyesconfig    gcc-14.1.0
+arm                          moxart_defconfig    gcc-14.1.0
+arm                       multi_v4t_defconfig    clang-20
 arm                   randconfig-001-20240926    gcc-14.1.0
 arm                   randconfig-002-20240926    gcc-14.1.0
 arm                   randconfig-003-20240926    gcc-14.1.0
@@ -178,18 +180,23 @@ parisc                randconfig-002-20240926    gcc-14.1.0
 powerpc                          allmodconfig    gcc-14.1.0
 powerpc                           allnoconfig    gcc-14.1.0
 powerpc                          allyesconfig    clang-20
+powerpc                   bluestone_defconfig    clang-20
+powerpc                       maple_defconfig    clang-20
 powerpc               randconfig-001-20240926    gcc-14.1.0
 powerpc               randconfig-002-20240926    gcc-14.1.0
 powerpc               randconfig-003-20240926    clang-20
+powerpc                     stx_gp3_defconfig    clang-20
+powerpc                     tqm5200_defconfig    gcc-14.1.0
+powerpc                     tqm8548_defconfig    clang-20
+powerpc                     tqm8555_defconfig    clang-20
+powerpc                         wii_defconfig    gcc-14.1.0
 powerpc64             randconfig-001-20240926    gcc-14.1.0
 powerpc64             randconfig-002-20240926    gcc-14.1.0
-powerpc64             randconfig-003-20240926    gcc-14.1.0
-riscv                            allmodconfig    clang-20
 riscv                             allnoconfig    gcc-14.1.0
-riscv                            allyesconfig    clang-20
 riscv                               defconfig    clang-20
 riscv                 randconfig-001-20240926    clang-20
 riscv                 randconfig-002-20240926    gcc-14.1.0
+s390                             alldefconfig    gcc-14.1.0
 s390                             allmodconfig    clang-20
 s390                              allnoconfig    clang-20
 s390                             allyesconfig    gcc-14.1.0
@@ -199,6 +206,7 @@ s390                  randconfig-002-20240926    clang-15
 sh                               allmodconfig    gcc-14.1.0
 sh                                allnoconfig    gcc-14.1.0
 sh                               allyesconfig    gcc-14.1.0
+sh                         ap325rxa_defconfig    gcc-14.1.0
 sh                                  defconfig    gcc-14.1.0
 sh                    randconfig-001-20240926    gcc-14.1.0
 sh                    randconfig-002-20240926    gcc-14.1.0
@@ -219,7 +227,6 @@ x86_64                           allyesconfig    clang-18
 x86_64                              defconfig    gcc-11
 x86_64                                  kexec    clang-18
 x86_64                               rhel-8.3    gcc-12
-x86_64                    rhel-8.3-kselftests    gcc-12
 x86_64                          rhel-8.3-rust    clang-18
 xtensa                            allnoconfig    gcc-14.1.0
 xtensa                randconfig-001-20240926    gcc-14.1.0
