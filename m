@@ -4,84 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB435CEB2EA
-	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 04:16:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0C05CE837A
+	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 06:36:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=pOAg6CghdZ8jVcFP9juOozuVc21VeFryg9IVCz5IDkA=; b=QbvtfZouLa2TL1DXEFprePTeaf
-	qqrtlOT6MtQO/702UV2ZQdojtc2RwO3fOydS4W7S1F45DcV9Vs5gTw8Q8U7STabal0sXU61iJv4jp
-	j74C9Wck4sjRTFld1jQJoeeB8ZPeRRiK0ThqRSfxyeB4htec7NKsyW3xNyM/c1agxcjtzDx52Dw7I
-	o9OlpYTbOXi9zGFyRyG7QnoDLCqUcvNTo7HcB1DtaUTCfBoTVxy/s0LCY6/rG9IBtrxbVxEYu085d
-	azeOXIoYuQJGrQi2SM9J95DfNfcJeqRA2CdhpaHNTeKzFeHXxj9CbI7QVTsRWdSCWgp2ngjHLKWVJ
-	7qzLhisg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=bPR4N0J//5OXmR29nCGbEoccpWjo/sFzUSHK6PXL0V0=; b=hJ3/3GktrjV4MVIsg5kxUmsLGM
+	6ki2lbI+EdbN1/6tDK2pQV9gW6nK4a3xhwoXRrLMAlSF8eVl2qkFhDi5AYlIV2BFWTipSi7u2u4U0
+	OcQZociNmjJvHnaNf8qKQDGbvicZprkMecEbdBLLzpTJBTHRFpkzurD9BMx30dGk1dEUbnaJ8VZNk
+	u9pjjCGjxp24Tdgs7XQH06yX28ovsG9a7nrt8cJ00GBGpKnZS+//4ZRzcodr8ov4ODIDwaIbP1otn
+	4cuo5uSAhvPNyt8TgLe/XqCeFXQcOojATCccv2xY3tznSKGzvXQF+VTmtEfL6x4WPCD6FatuLSNR/
+	1CuKJ7/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svUJ1-00000001XsM-1wn6
+	id 1svWUY-00000001ltx-1t7L
 	for ath12k@archiver.kernel.org;
-	Tue, 01 Oct 2024 04:16:11 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 01 Oct 2024 06:36:14 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svUIx-00000001Xrt-3YRo
+	id 1svWPn-00000001lG0-06fS
 	for ath12k@lists.infradead.org;
-	Tue, 01 Oct 2024 04:16:09 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48UMU7jC018290;
-	Tue, 1 Oct 2024 04:16:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=pOAg6CghdZ8jVcFP9juOoz
-	uVc21VeFryg9IVCz5IDkA=; b=C65A70yVZlrQ3xPUzFXu74pLbnNdrc4vtP3xmc
-	CAbpcQhkSnPy1Uovi93vTA2M0yeggHn6RIwBtmbu+QitCPdECwZ21WICRILkdX6c
-	oPQaeybY3szX6NQ9yHxeN0EtONbDY5bIkUva9XgbQ2EVHeHwfZNk/hm0CX7+tfFn
-	bUNG5/wMtJS3a2GtNtAhhldLwhxiCMD74Da5AlRF1jyHG64JSz5Vwl98KJ1ir8jR
-	DIAkkGs49l+KF57DVVls6TCRqDjFGTYvIrQi/l+JdbQVFdYK15SkApklS+yDhwL/
-	4KAq9LyfPAGdYG3WvCbYo8nhnggGRbAQRMhB58dZmeX2sYdg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41x8t6q017-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Oct 2024 04:16:05 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4914G3vA008426
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 1 Oct 2024 04:16:03 GMT
-Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 30 Sep 2024 21:16:01 -0700
-From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-To: <johannes@sipsolutions.net>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        "Aditya
- Kumar Singh" <quic_adisi@quicinc.com>
-Subject: [PATCH] wifi: mac80211: fix assigning channel in activate links
-Date: Tue, 1 Oct 2024 09:45:18 +0530
-Message-ID: <20241001041518.2236297-1-quic_adisi@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 01 Oct 2024 06:31:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=bPR4N0J//5OXmR29nCGbEoccpWjo/sFzUSHK6PXL0V0=;
+	t=1727764276; x=1728973876; b=uk/R4vUMBrnEtEFryvGFtKbm0TjZ9FrbW6F3ycVaDdE6G+4
+	hGQ+n4x3qwz72Ptcl4504i4L8KNJxQ+VRHtWiFjiLhcybgwR86csbKhCDqXEOIKhOp1ECrapq3xoi
+	7QYBVDakpaJJPv3pMGYI4kxjuATUMumVPZ7Y0jekaHz+A3Qb4NDoFeNAuYjh9Neehd6NWWQdqPbuZ
+	IK0jvyn8Sj40Dcurt/4fRbWdMq6tgJ5fpKxcrn6yogJn5hr3Ho4aclY/atmQssCX5+o21NQZofeZk
+	V9rbPyo44GTF3+cHiwkvbl2igFSgiRawYKGqMpzc+ccMGlCrWDtwCLKNOXFW+R7A==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1svWPh-0000000Ed7L-0MFX;
+	Tue, 01 Oct 2024 08:31:13 +0200
+Message-ID: <0353d31db76afbd5d9bb2e7d42246ae3c8e14044.camel@sipsolutions.net>
+Subject: Re: [PATCH] wifi: mac80211: fix assigning channel in activate links
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+Date: Tue, 01 Oct 2024 08:31:12 +0200
+In-Reply-To: <20241001041518.2236297-1-quic_adisi@quicinc.com>
+References: <20241001041518.2236297-1-quic_adisi@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.52.4 (3.52.4-1.fc40) 
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: aHd-icj-y_ucmgh5IdT1amjxjN8dEUOC
-X-Proofpoint-ORIG-GUID: aHd-icj-y_ucmgh5IdT1amjxjN8dEUOC
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
- impostorscore=0 lowpriorityscore=0 mlxlogscore=999 bulkscore=0
- priorityscore=1501 suspectscore=0 phishscore=0 adultscore=0 spamscore=0
- clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2410010027
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240930_211608_037820_C51882F8 
-X-CRM114-Status: GOOD (  21.02  )
+X-CRM114-CacheID: sfid-20240930_233119_098380_D9D8B34A 
+X-CRM114-Status: GOOD (  10.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,141 +73,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The current flow in _ieee80211_set_active_links() does not align with the
-operational requirements of drivers that groups multiple hardware
-under a single wiphy. These drivers (e.g ath12k) rely on channel
-assignment to determine the appropriate hardware for each link. Without
-this, the drivers cannot correctly establish the link interface.
 
-Currently in _ieee80211_set_active_links(), after calling
-drv_change_vif_links() on the driver, the state of all connected stations
-is updated via drv_change_sta_links(). This is followed by handling keys
-in the links, and finally, assigning the channel to the links.
-Consequently, drv_change_sta_links() prompts drivers to create the station
-entry at their level and within their firmware. However, since channels
-have not yet been assigned to links at this stage, drivers have not
-created the necessary link interface for establishing link stations,
-leading to failures in activating the links.
+> +		/*
+> +		 * inform about the link info changed parameters after all
+> +		 * stations are also added
+> +		 */
 
-Therefore, modify the logic so that after drv_change_vif_links(), channels
-are assigned to all links. Following this, the flow should proceed to
-station handling.
+I don't understand that comment - you're not doing anything with the
+stations here? And per the commit log it's explicitly _not_ after doing
+the AP station. I'm not sure we should set up everything before the AP
+station?
 
-Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
----
- net/mac80211/link.c | 89 ++++++++++++++++++++++++---------------------
- 1 file changed, 47 insertions(+), 42 deletions(-)
+> +						  BSS_CHANGED_HE_BSS_COLOR);
+> +
+> +	}
 
-diff --git a/net/mac80211/link.c b/net/mac80211/link.c
-index 0bbac64d5fa0..38c496cb28fa 100644
---- a/net/mac80211/link.c
-+++ b/net/mac80211/link.c
-@@ -363,6 +363,53 @@ static int _ieee80211_set_active_links(struct ieee80211_sub_if_data *sdata,
- 		}
- 	}
- 
-+	for_each_set_bit(link_id, &add, IEEE80211_MLD_MAX_NUM_LINKS) {
-+		struct ieee80211_link_data *link;
-+
-+		link = sdata_dereference(sdata->link[link_id], sdata);
-+
-+		/*
-+		 * This call really should not fail. Unfortunately, it appears
-+		 * that this may happen occasionally with some drivers. Should
-+		 * it happen, we are stuck in a bad place as going backwards is
-+		 * not really feasible.
-+		 *
-+		 * So lets just tell link_use_channel that it must not fail to
-+		 * assign the channel context (from mac80211's perspective) and
-+		 * assume the driver is going to trigger a recovery flow if it
-+		 * had a failure.
-+		 * That really is not great nor guaranteed to work. But at least
-+		 * the internal mac80211 state remains consistent and there is
-+		 * a chance that we can recover.
-+		 */
-+		ret = _ieee80211_link_use_channel(link,
-+						  &link->conf->chanreq,
-+						  IEEE80211_CHANCTX_SHARED,
-+						  true);
-+		WARN_ON_ONCE(ret);
-+
-+		/*
-+		 * inform about the link info changed parameters after all
-+		 * stations are also added
-+		 */
-+		ieee80211_mgd_set_link_qos_params(link);
-+		ieee80211_link_info_change_notify(sdata, link,
-+						  BSS_CHANGED_ERP_CTS_PROT |
-+						  BSS_CHANGED_ERP_PREAMBLE |
-+						  BSS_CHANGED_ERP_SLOT |
-+						  BSS_CHANGED_HT |
-+						  BSS_CHANGED_BASIC_RATES |
-+						  BSS_CHANGED_BSSID |
-+						  BSS_CHANGED_CQM |
-+						  BSS_CHANGED_QOS |
-+						  BSS_CHANGED_TXPOWER |
-+						  BSS_CHANGED_BANDWIDTH |
-+						  BSS_CHANGED_TWT |
-+						  BSS_CHANGED_HE_OBSS_PD |
-+						  BSS_CHANGED_HE_BSS_COLOR);
-+
-+	}
-+
- 	for_each_set_bit(link_id, &rem, IEEE80211_MLD_MAX_NUM_LINKS) {
- 		struct ieee80211_link_data *link;
- 
-@@ -423,48 +470,6 @@ static int _ieee80211_set_active_links(struct ieee80211_sub_if_data *sdata,
- 		__ieee80211_sta_recalc_aggregates(sta, active_links);
- 	}
- 
--	for_each_set_bit(link_id, &add, IEEE80211_MLD_MAX_NUM_LINKS) {
--		struct ieee80211_link_data *link;
--
--		link = sdata_dereference(sdata->link[link_id], sdata);
--
--		/*
--		 * This call really should not fail. Unfortunately, it appears
--		 * that this may happen occasionally with some drivers. Should
--		 * it happen, we are stuck in a bad place as going backwards is
--		 * not really feasible.
--		 *
--		 * So lets just tell link_use_channel that it must not fail to
--		 * assign the channel context (from mac80211's perspective) and
--		 * assume the driver is going to trigger a recovery flow if it
--		 * had a failure.
--		 * That really is not great nor guaranteed to work. But at least
--		 * the internal mac80211 state remains consistent and there is
--		 * a chance that we can recover.
--		 */
--		ret = _ieee80211_link_use_channel(link,
--						  &link->conf->chanreq,
--						  IEEE80211_CHANCTX_SHARED,
--						  true);
--		WARN_ON_ONCE(ret);
--
--		ieee80211_mgd_set_link_qos_params(link);
--		ieee80211_link_info_change_notify(sdata, link,
--						  BSS_CHANGED_ERP_CTS_PROT |
--						  BSS_CHANGED_ERP_PREAMBLE |
--						  BSS_CHANGED_ERP_SLOT |
--						  BSS_CHANGED_HT |
--						  BSS_CHANGED_BASIC_RATES |
--						  BSS_CHANGED_BSSID |
--						  BSS_CHANGED_CQM |
--						  BSS_CHANGED_QOS |
--						  BSS_CHANGED_TXPOWER |
--						  BSS_CHANGED_BANDWIDTH |
--						  BSS_CHANGED_TWT |
--						  BSS_CHANGED_HE_OBSS_PD |
--						  BSS_CHANGED_HE_BSS_COLOR);
--	}
--
- 	old_active = sdata->vif.active_links;
- 	sdata->vif.active_links = active_links;
- 
+You make it look like you just moved code but also snuck in a new blank
+line :)
 
-base-commit: 5a4d42c1688c88f3be6aef46b0ea6c32694cd2b8
--- 
-2.34.1
+johannes
 
+> +
+>  	for_each_set_bit(link_id, &rem, IEEE80211_MLD_MAX_NUM_LINKS) {
+>  		struct ieee80211_link_data *link;
+
+I also think you put this code too early now - you're now first using
+more channel contexts by way of _ieee80211_link_use_channel() before you
+even release the ones from deactivated ("rem" bitmap in this code)
+links. That doesn't seem like it could work correctly in general.
+
+johannes
 
