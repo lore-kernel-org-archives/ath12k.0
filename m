@@ -4,88 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AED4BCE7D0B
-	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 10:20:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83C2CCE7D12
+	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 11:57:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=GysN16ZrVCbTXlibSYQpK3+5Q7D+Y4qUkimj6BuQZQ0=; b=BIncRG+abTx3DyRFVNuedFsaNE
-	GSaWXuMtTj9Ta5dAMCjJJ34LxAjYP4Q7Pn8dxAjqvOG/pzHH0J1NWt95z34Zd3Awmw3/Zqu/W3+el
-	M8CzMNf8Gmw586X/yGs0plSJNHRmmlmSpR3a0X7drt2hokVQ8N+PkILevkgYgRjruuoYg+GqaOYrd
-	HqrOA5wbhEiffGmYrZ+q2CXYd5742C/Au9aMifl/6kBLGCgk+fVSkEJ8kUA4KDcfQGM2A750B0m+G
-	ME+2ZZQ2AgBBVvD89T70aqHi+YIfB6zszaz/G2AKPPQbPFli7fnxAYQw6bxMRAeFY1qcvm1PTCIDX
-	qhZqH/Og==;
+	Content-Type:Subject:From:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3e8bkKCVqm+SsiEA9CKci4eqGjzjQ0+wNEOsn7FxGJQ=; b=HIpbpMCxcDIo//xX8eR5gfGsjN
+	j9fVeWQav1zYNZs0+01XjEls3GO9BBIMKVkVkS/L0yTkE8J2qkSI48M41RldSFJ5eCAdD4kPGnwU2
+	ZDQo1noW96rxjTp1S2pd29FA3g5s+e+8zeIV+bJwdmqHuSSeQCqKNT7GS/qtTbnTj2Gk1Jo+Y4ZYm
+	BY7nkU9LHf03NoRQOt8Vzg2gcq3p6IWU7lBpi292nsZ7Nlpr+s+ouPw9cx/X3tfKJA2/QxPEeo5xA
+	JaFRtzvy9BObsb0at1VNksnUBmtZrDxPrB1YoQDNicoHuFTJDvfKmOCvQzH8ZOug+h2WU/InPgoM5
+	3vOewghQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svZzU-00000002KZT-1jqn
+	id 1svbVe-00000002bvx-0SQT
 	for ath12k@archiver.kernel.org;
-	Tue, 01 Oct 2024 10:20:24 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 01 Oct 2024 11:57:42 +0000
+Received: from mout.web.de ([212.227.15.3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svZyT-00000002KVV-2i5E
-	for ath12k@lists.infradead.org;
-	Tue, 01 Oct 2024 10:19:23 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4910xvvW007005;
-	Tue, 1 Oct 2024 10:19:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	GysN16ZrVCbTXlibSYQpK3+5Q7D+Y4qUkimj6BuQZQ0=; b=aFjxoIq2UM8x7E0M
-	x4sIPNZRIpo1N7EekhYSurlHh+iSJ7boIMDZ5WRXDjj5OCVHS6zFho6PnWnrnwoi
-	2RIFxnl/Ke0XMgmOmoUdmYCC6PquqCU9YJvbmX2lMEtmvO/Rl6pdgfa8fCb5k/UJ
-	bnCdIe6UXUAsgbD1pJ8DMt7Wf9Z84yBkvvD6T/qINShoGWZGeCAnqGL5hSB9CxjZ
-	wfcCzeOV/+TNEGwkbwEN09Dv2ctvm1QZI0Vqgb9+aJQLtw6F/syX01rUZtajynG3
-	lKhVI9WbYKC/EhVnLRhncajKR3gSM1WGvnY2hoktJT+9e4Tx/2W61BmgTyJ/HeEO
-	ts6QRw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41x9vu7v0j-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Oct 2024 10:19:20 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 491AJIlk019627
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 1 Oct 2024 10:19:18 GMT
-Received: from [10.152.202.18] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 1 Oct 2024
- 03:19:17 -0700
-Message-ID: <6504caf7-e9d5-49ff-983e-73335f8ee3a1@quicinc.com>
-Date: Tue, 1 Oct 2024 15:49:13 +0530
+	id 1svbUW-00000002bjw-2X4V;
+	Tue, 01 Oct 2024 11:56:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1727783788; x=1728388588; i=markus.elfring@web.de;
+	bh=3e8bkKCVqm+SsiEA9CKci4eqGjzjQ0+wNEOsn7FxGJQ=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:From:
+	 Subject:Content-Type:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=oeiuehifYPB+uM1Y4kYDMH9vUkgNfZpZkjLTdqNg+7HXOjsnBFQ8rsgC7zXVVE8u
+	 qiGC+7Dx99nWUeE/MF6UO1VjTLKx3FAYFPwjKZWRu9x9x6wF+oCTveWSZOmfZVCwN
+	 Ynw/6EpsWVEkkW3Ln8Aq1BQZKMMztnt8BsvDcnSjrJE586V/T8k3cCPQtu59adp8D
+	 9MJ8NE7SJDyFASDjXHYLCOCTuywimoszmIpJ9bwAAB5yHV3EAImQU5ztOm5A43TVv
+	 ERvL9jn+PWiY9oeUYjmvfmmPlzpMa4xA1b8VClKvSab2ghze//sB+LGH/PJJ2o2t0
+	 ofE1ap54ZVtoDE5wJw==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.81.95]) by smtp.web.de (mrweb005
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1MVJRb-1sVNUa3IPf-00QhjI; Tue, 01
+ Oct 2024 13:56:27 +0200
+Message-ID: <45074762-ce4b-4eaa-9e41-965a6da0a59c@web.de>
+Date: Tue, 1 Oct 2024 13:56:27 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: mac80211: re-order assigning channel in activate
- links
-To: Johannes Berg <johannes@sipsolutions.net>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>
-References: <20241001085034.2745669-1-quic_adisi@quicinc.com>
- <93df47a867ee1f8d84cabdbc953707eab2ea3704.camel@sipsolutions.net>
-Content-Language: en-US
-From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-In-Reply-To: <93df47a867ee1f8d84cabdbc953707eab2ea3704.camel@sipsolutions.net>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: wR3G7j3XeXT6qn8MSO-4iewg5H2RlxH1
-X-Proofpoint-ORIG-GUID: wR3G7j3XeXT6qn8MSO-4iewg5H2RlxH1
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxlogscore=999
- lowpriorityscore=0 clxscore=1015 spamscore=0 suspectscore=0 phishscore=0
- priorityscore=1501 malwarescore=0 adultscore=0 mlxscore=0 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2408220000
- definitions=main-2410010066
+To: ath10k@lists.infradead.org, ath11k@lists.infradead.org,
+ ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+ Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>
+Content-Language: en-GB
+Cc: LKML <linux-kernel@vger.kernel.org>, kernel-janitors@vger.kernel.org,
+ Simon Horman <horms@kernel.org>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH net-next] wifi: ath: Use common kfree() code in 53 functions
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Provags-ID: V03:K1:yciOZViKVc9zBzW2H5fwEAewDf5c+zSl9c7lI5GQGrDY0lh6swR
+ cwApGvrF4vwNRdL93IAsfDiLUioP6PLvWUMXlu0s96CXyYFhiSYvvl4UNh50fRdVsDrfc7Y
+ FxbbAGZzSm+ckexKWc0ptkGnm5kMbV2d2nDp5y88vVjdhzYKZaNrXgeEPPHvNQoHbPorAuX
+ BKGcKBSxbwx/tXNJk9I5w==
+UI-OutboundReport: notjunk:1;M01:P0:zgixpsLapKA=;4RgqoAwMZEcw8JJfHC161toG1DP
+ izKJeApLXgwylJvJbeVZS6/WaPvM/9JFXMYBBVCKYK+q8E0xJCdI6ea+Q0H9pMAxd2rSkHkMw
+ 5vsKMR/Potmo8HAOxOQVqr6A+erI/l2wCx5Wbcew9N0FBMxsfu1J5jSn1Wzk0KUzmEoFlLsKw
+ ZAg6vANJ94csTMeVzZxwBkslSv3pRCKdGyIrD4MttvLRJt5fzwymfSFdOl5Zn/J2rMTVssuNZ
+ ZFxFLls/Lwg8kcZssHFEZEcVDs9gQO+7AxOfQoK/pb3ypt/LDCelLJisc1s3uKdcPVC0XqafG
+ cjWK/OKOF/SRQXcXq12cZV8PXtNqL4Y3/mxPRpBvphJqTXHrWdZs2YYD/V3KKB5nnRiGOoDR+
+ iUmuc0v1x7jIpOg+uiRtW18rrXTTFrfQdIYJl73W3dRlFEwRFqLXrOepAAOrsQy890kn58hHL
+ SBxL6i6mm8WC2LsjTQD5buIJnN0nscAmH17eKj8KwydYQKgPvhEbQDHt2PxNI5OH3VCAJ621u
+ q7nNHiWvwjIal6r/abeyy0IbB/broNmedq5iqYAw5LfubhFogOd4k3HDFtmfFj/LmjcXIeb7V
+ zk220jzszyZu1Dr4w+n0NsNKK2Iw0xIwqC+YcmU3bZI23ul1pW0xSfr7+1PAYH3nVANPkFhVq
+ NBi4g4tfbDMO/yv9w3TCMxIsQjnmZ/HwPcdhaHCx7m3L4MopTPdsUEFOIGP3kfmwDTEuhx012
+ tvQsmLvwiAuL9df6jiP5/nqiu09GsAHlOfh543FCLYSlZEkXNlbsW6HU7v1+MbxKOSZtJCHd3
+ T4fNR3sx8YWmJe85O6GRUibA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241001_031921_849402_4B1EAC93 
-X-CRM114-Status: GOOD (  25.80  )
+X-CRM114-CacheID: sfid-20241001_045633_627941_BD3225EB 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,63 +92,1614 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/1/24 15:29, Johannes Berg wrote:
-> On Tue, 2024-10-01 at 14:20 +0530, Aditya Kumar Singh wrote:
->> The current flow in _ieee80211_set_active_links() does not align with the
->> operational requirements of drivers that groups multiple hardware
->> under a single wiphy. These drivers (e.g ath12k) rely on channel
->> assignment to determine the appropriate hardware for each link. Without
->> this, the drivers cannot correctly establish the link interface.
->>
->> Currently in _ieee80211_set_active_links(), after calling
->> drv_change_vif_links() on the driver, the state of all connected stations
->> is updated via drv_change_sta_links(). This is followed by handling keys
->> in the links, and finally, assigning the channel to the links.
->> Consequently, drv_change_sta_links() prompts drivers to create the station
->> entry at their level and within their firmware. However, since channels
->> have not yet been assigned to links at this stage, drivers have not
->> created the necessary link interface for establishing link stations,
->> leading to failures in activating the links.
->>
->> Therefore, re-order the logic so that after drv_change_vif_links() and
->> removing the old links, channels are assigned to newly added links.
->> Following this, the flow proceeds to station handling.
->>
-> 
-> I tried this again but I fear it fundamentally cannot work with iwlwifi.
-> 
-> We have this comment:
-> 
->          /* Initialize rate control for the AP station, since we might be
->           * doing a link switch here - we cannot initialize it before since
->           * this needs the phy context assigned (and in FW?), and we cannot
->           * do it later because it needs to be initialized as soon as we're
->           * able to TX on the link, i.e. when active.
->           */
-> 
-> which sort of indicates that we're working around it, but it also
-> correctly says that we cannot activate a link before we have the (link)
-> station.
-> 
-> In the flow as you changed it we'd activate the link in firmware before
-> the stations are added, but that isn't allowed. There's not really a
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Tue, 1 Oct 2024 13:38:27 +0200
 
-Is this a generic expectation? And that too only for ML STA? Since at 
-least for ML AP, we could have links in firmware active and later when 
-station connects, we create link stations.
+Add a label so that a bit of exception handling can be better reused
+at the end of 53 function implementations.
 
-> good place to hook into after the station is added, unless we somehow
-> want to activate the link from the station change, but that seems ...
-> odd to say the least? Though I guess it's already somewhat odd to init
-> rate control here as written now...
-> 
-> Maybe we can hook into the later link info change. This seems to
-> initially work, but still doing more tests:
-> 
+This issue was transformed by using the Coccinelle software.
 
-sure, hoping that it passes all ;)
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+=2D--
+ drivers/net/wireless/ath/ath10k/bmi.c     |   7 +-
+ drivers/net/wireless/ath/ath10k/usb.c     |  15 +-
+ drivers/net/wireless/ath/ath10k/wmi-tlv.c | 170 +++++++++++---------
+ drivers/net/wireless/ath/ath11k/wmi.c     | 179 ++++++++++++----------
+ drivers/net/wireless/ath/ath12k/wmi.c     | 166 +++++++++++---------
+ drivers/net/wireless/ath/ath6kl/usb.c     |  15 +-
+ 6 files changed, 306 insertions(+), 246 deletions(-)
 
--- 
-Aditya
+diff --git a/drivers/net/wireless/ath/ath10k/bmi.c b/drivers/net/wireless/=
+ath/ath10k/bmi.c
+index 9a4f8e815412..01715ba4309f 100644
+=2D-- a/drivers/net/wireless/ath/ath10k/bmi.c
++++ b/drivers/net/wireless/ath/ath10k/bmi.c
+@@ -375,17 +375,18 @@ static int ath10k_bmi_lz_data_large(struct ath10k *a=
+r, const void *buffer, u32 l
+ 						  NULL, NULL);
+ 		if (ret) {
+ 			ath10k_warn(ar, "unable to write to the device\n");
+-			kfree(cmd);
+-			return ret;
++			goto free_cmd;
+ 		}
+
+ 		buffer +=3D txlen;
+ 		length -=3D txlen;
+ 	}
+
++	ret =3D 0;
++free_cmd:
+ 	kfree(cmd);
+
+-	return 0;
++	return ret;
+ }
+
+ int ath10k_bmi_lz_data(struct ath10k *ar, const void *buffer, u32 length)
+diff --git a/drivers/net/wireless/ath/ath10k/usb.c b/drivers/net/wireless/=
+ath/ath10k/usb.c
+index 3b51b7f52130..b4ef0fdae144 100644
+=2D-- a/drivers/net/wireless/ath/ath10k/usb.c
++++ b/drivers/net/wireless/ath/ath10k/usb.c
+@@ -504,13 +504,14 @@ static int ath10k_usb_submit_ctrl_out(struct ath10k =
+*ar,
+ 	if (ret < 0) {
+ 		ath10k_warn(ar, "Failed to submit usb control message: %d\n",
+ 			    ret);
+-		kfree(buf);
+-		return ret;
++		goto free_buf;
+ 	}
+
++	ret =3D 0;
++free_buf:
+ 	kfree(buf);
+
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_usb_submit_ctrl_in(struct ath10k *ar,
+@@ -538,15 +539,15 @@ static int ath10k_usb_submit_ctrl_in(struct ath10k *=
+ar,
+ 	if (ret < 0) {
+ 		ath10k_warn(ar, "Failed to read usb control message: %d\n",
+ 			    ret);
+-		kfree(buf);
+-		return ret;
++		goto free_buf;
+ 	}
+
+ 	memcpy((u8 *)data, buf, size);
+-
++	ret =3D 0;
++free_buf:
+ 	kfree(buf);
+
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_usb_ctrl_msg_exchange(struct ath10k *ar,
+diff --git a/drivers/net/wireless/ath/ath10k/wmi-tlv.c b/drivers/net/wirel=
+ess/ath/ath10k/wmi-tlv.c
+index dbaf26d6a7a6..87c4573e923f 100644
+=2D-- a/drivers/net/wireless/ath/ath10k/wmi-tlv.c
++++ b/drivers/net/wireless/ath/ath10k/wmi-tlv.c
+@@ -184,8 +184,8 @@ static int ath10k_wmi_tlv_event_bcn_tx_status(struct a=
+th10k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_OFFLOAD_BCN_TX_STATUS_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	tx_status =3D __le32_to_cpu(ev->tx_status);
+@@ -209,8 +209,10 @@ static int ath10k_wmi_tlv_event_bcn_tx_status(struct =
+ath10k *ar,
+ 	if (arvif && arvif->is_up && arvif->vif->bss_conf.csa_active)
+ 		ieee80211_queue_work(ar->hw, &arvif->ap_csa_work);
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath10k_wmi_tlv_event_vdev_delete_resp(struct ath10k *ar,
+@@ -279,8 +281,8 @@ static int ath10k_wmi_tlv_op_pull_peer_stats_info(stru=
+ct ath10k *ar,
+ 	data =3D tb[WMI_TLV_TAG_ARRAY_STRUCT];
+
+ 	if (!ev || !data) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	num_peer_stats =3D __le32_to_cpu(ev->num_peers);
+@@ -296,8 +298,10 @@ static int ath10k_wmi_tlv_op_pull_peer_stats_info(str=
+uct ath10k *ar,
+ 	if (ret)
+ 		ath10k_warn(ar, "failed to parse stats info tlv: %d\n", ret);
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath10k_wmi_tlv_event_peer_stats_info(struct ath10k *ar,
+@@ -327,8 +331,8 @@ static int ath10k_wmi_tlv_event_diag_data(struct ath10=
+k *ar,
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_DIAG_DATA_CONTAINER_EVENT];
+ 	data =3D tb[WMI_TLV_TAG_ARRAY_BYTE];
+ 	if (!ev || !data) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	num_items =3D __le32_to_cpu(ev->num_items);
+@@ -367,8 +371,10 @@ static int ath10k_wmi_tlv_event_diag_data(struct ath1=
+0k *ar,
+ 		ath10k_warn(ar, "failed to parse diag data event: num_items %d len %d\n=
+",
+ 			    num_items, len);
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_event_diag(struct ath10k *ar,
+@@ -387,16 +393,17 @@ static int ath10k_wmi_tlv_event_diag(struct ath10k *=
+ar,
+
+ 	data =3D tb[WMI_TLV_TAG_ARRAY_BYTE];
+ 	if (!data) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+ 	len =3D ath10k_wmi_tlv_len(data);
+
+ 	ath10k_dbg(ar, ATH10K_DBG_WMI, "wmi tlv diag event len %d\n", len);
+ 	trace_ath10k_wmi_diag(ar, data, len);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_event_p2p_noa(struct ath10k *ar,
+@@ -418,8 +425,8 @@ static int ath10k_wmi_tlv_event_p2p_noa(struct ath10k =
+*ar,
+ 	noa =3D tb[WMI_TLV_TAG_STRUCT_P2P_NOA_INFO];
+
+ 	if (!ev || !noa) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	vdev_id =3D __le32_to_cpu(ev->vdev_id);
+@@ -429,8 +436,10 @@ static int ath10k_wmi_tlv_event_p2p_noa(struct ath10k=
+ *ar,
+ 		   vdev_id, noa->num_descriptors);
+
+ 	ath10k_p2p_noa_update_by_vdev_id(ar, vdev_id, noa);
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_event_tx_pause(struct ath10k *ar,
+@@ -450,8 +459,8 @@ static int ath10k_wmi_tlv_event_tx_pause(struct ath10k=
+ *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_TX_PAUSE_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	pause_id =3D __le32_to_cpu(ev->pause_id);
+@@ -494,8 +503,10 @@ static int ath10k_wmi_tlv_event_tx_pause(struct ath10=
+k *ar,
+ 		break;
+ 	}
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath10k_wmi_tlv_event_rfkill_state_change(struct ath10k *ar,
+@@ -821,8 +832,8 @@ static int ath10k_wmi_tlv_op_pull_scan_ev(struct ath10=
+k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_SCAN_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->event_type =3D ev->event_type;
+@@ -831,9 +842,10 @@ static int ath10k_wmi_tlv_op_pull_scan_ev(struct ath1=
+0k *ar,
+ 	arg->scan_req_id =3D ev->scan_req_id;
+ 	arg->scan_id =3D ev->scan_id;
+ 	arg->vdev_id =3D ev->vdev_id;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -853,8 +865,8 @@ ath10k_wmi_tlv_op_pull_mgmt_tx_compl_ev(struct ath10k =
+*ar, struct sk_buff *skb,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_MGMT_TX_COMPL_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->desc_id =3D ev->desc_id;
+@@ -865,8 +877,10 @@ ath10k_wmi_tlv_op_pull_mgmt_tx_compl_ev(struct ath10k=
+ *ar, struct sk_buff *skb,
+ 	if (test_bit(WMI_SERVICE_TX_DATA_ACK_RSSI, ar->wmi.svc_map))
+ 		arg->ack_rssi =3D ev->ack_rssi;
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ struct wmi_tlv_tx_bundle_compl_parse {
+@@ -963,8 +977,8 @@ static int ath10k_wmi_tlv_op_pull_mgmt_rx_ev(struct at=
+h10k *ar,
+ 	frame =3D tb[WMI_TLV_TAG_ARRAY_BYTE];
+
+ 	if (!ev || !frame) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->channel =3D ev->channel;
+@@ -980,8 +994,8 @@ static int ath10k_wmi_tlv_op_pull_mgmt_rx_ev(struct at=
+h10k *ar,
+ 	msdu_len =3D __le32_to_cpu(arg->buf_len);
+
+ 	if (skb->len < (frame - skb->data) + msdu_len) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	/* shift the sk_buff to point to `frame` */
+@@ -989,9 +1003,10 @@ static int ath10k_wmi_tlv_op_pull_mgmt_rx_ev(struct =
+ath10k *ar,
+ 	skb_put(skb, frame - skb->data);
+ 	skb_pull(skb, frame - skb->data);
+ 	skb_put(skb, msdu_len);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_op_pull_ch_info_ev(struct ath10k *ar,
+@@ -1011,8 +1026,8 @@ static int ath10k_wmi_tlv_op_pull_ch_info_ev(struct =
+ath10k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_CHAN_INFO_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->err_code =3D ev->err_code;
+@@ -1025,8 +1040,10 @@ static int ath10k_wmi_tlv_op_pull_ch_info_ev(struct=
+ ath10k *ar,
+ 		     ar->running_fw->fw_file.fw_features))
+ 		arg->mac_clk_mhz =3D ev->mac_clk_mhz;
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -1046,8 +1063,8 @@ ath10k_wmi_tlv_op_pull_vdev_start_ev(struct ath10k *=
+ar, struct sk_buff *skb,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_VDEV_START_RESPONSE_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	skb_pull(skb, sizeof(*ev));
+@@ -1055,9 +1072,10 @@ ath10k_wmi_tlv_op_pull_vdev_start_ev(struct ath10k =
+*ar, struct sk_buff *skb,
+ 	arg->req_id =3D ev->req_id;
+ 	arg->resp_type =3D ev->resp_type;
+ 	arg->status =3D ev->status;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_op_pull_peer_kick_ev(struct ath10k *ar,
+@@ -1077,14 +1095,15 @@ static int ath10k_wmi_tlv_op_pull_peer_kick_ev(str=
+uct ath10k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_PEER_STA_KICKOUT_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->mac_addr =3D ev->peer_macaddr.addr;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ struct wmi_tlv_swba_parse {
+@@ -1227,8 +1246,8 @@ static int ath10k_wmi_tlv_op_pull_phyerr_ev_hdr(stru=
+ct ath10k *ar,
+ 	phyerrs =3D tb[WMI_TLV_TAG_ARRAY_BYTE];
+
+ 	if (!ev || !phyerrs) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->num_phyerrs  =3D __le32_to_cpu(ev->num_phyerrs);
+@@ -1236,9 +1255,10 @@ static int ath10k_wmi_tlv_op_pull_phyerr_ev_hdr(str=
+uct ath10k *ar,
+ 	arg->tsf_u32 =3D __le32_to_cpu(ev->tsf_u32);
+ 	arg->buf_len =3D __le32_to_cpu(ev->buf_len);
+ 	arg->phyerrs =3D phyerrs;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ #define WMI_TLV_ABI_VER_NS0 0x5F414351
+@@ -1402,17 +1422,18 @@ static int ath10k_wmi_tlv_op_pull_rdy_ev(struct at=
+h10k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_READY_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->sw_version =3D ev->abi.abi_ver0;
+ 	arg->abi_version =3D ev->abi.abi_ver1;
+ 	arg->status =3D ev->status;
+ 	arg->mac_addr =3D ev->mac_addr.addr;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_svc_avail_parse(struct ath10k *ar, u16 tag, u16=
+ len,
+@@ -1515,8 +1536,8 @@ static int ath10k_wmi_tlv_op_pull_fw_stats(struct at=
+h10k *ar,
+ 	data =3D tb[WMI_TLV_TAG_ARRAY_BYTE];
+
+ 	if (!ev || !data) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	data_len =3D ath10k_wmi_tlv_len(data);
+@@ -1539,8 +1560,8 @@ static int ath10k_wmi_tlv_op_pull_fw_stats(struct at=
+h10k *ar,
+
+ 		src =3D data;
+ 		if (data_len < sizeof(*src)) {
+-			kfree(tb);
+-			return -EPROTO;
++			ret =3D -EPROTO;
++			goto free_tb;
+ 		}
+
+ 		data +=3D sizeof(*src);
+@@ -1562,8 +1583,8 @@ static int ath10k_wmi_tlv_op_pull_fw_stats(struct at=
+h10k *ar,
+
+ 		src =3D data;
+ 		if (data_len < sizeof(*src)) {
+-			kfree(tb);
+-			return -EPROTO;
++			ret =3D -EPROTO;
++			goto free_tb;
+ 		}
+
+ 		data +=3D sizeof(*src);
+@@ -1583,8 +1604,8 @@ static int ath10k_wmi_tlv_op_pull_fw_stats(struct at=
+h10k *ar,
+
+ 		src =3D data;
+ 		if (data_len < sizeof(*src)) {
+-			kfree(tb);
+-			return -EPROTO;
++			ret =3D -EPROTO;
++			goto free_tb;
+ 		}
+
+ 		data +=3D sizeof(*src);
+@@ -1621,8 +1642,10 @@ static int ath10k_wmi_tlv_op_pull_fw_stats(struct a=
+th10k *ar,
+ 		list_add_tail(&dst->list, &stats->peers);
+ 	}
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_op_pull_roam_ev(struct ath10k *ar,
+@@ -1642,16 +1665,17 @@ static int ath10k_wmi_tlv_op_pull_roam_ev(struct a=
+th10k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_ROAM_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->vdev_id =3D ev->vdev_id;
+ 	arg->reason =3D ev->reason;
+ 	arg->rssi =3D ev->rssi;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -1671,17 +1695,18 @@ ath10k_wmi_tlv_op_pull_wow_ev(struct ath10k *ar, s=
+truct sk_buff *skb,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_WOW_EVENT_INFO];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->vdev_id =3D __le32_to_cpu(ev->vdev_id);
+ 	arg->flag =3D __le32_to_cpu(ev->flag);
+ 	arg->wake_reason =3D __le32_to_cpu(ev->wake_reason);
+ 	arg->data_len =3D __le32_to_cpu(ev->data_len);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath10k_wmi_tlv_op_pull_echo_ev(struct ath10k *ar,
+@@ -1701,14 +1726,15 @@ static int ath10k_wmi_tlv_op_pull_echo_ev(struct a=
+th10k *ar,
+
+ 	ev =3D tb[WMI_TLV_TAG_STRUCT_ECHO_EVENT];
+ 	if (!ev) {
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->value =3D ev->value;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static struct sk_buff *
+diff --git a/drivers/net/wireless/ath/ath11k/wmi.c b/drivers/net/wireless/=
+ath/ath11k/wmi.c
+index 87abfa547529..5ce507b49d20 100644
+=2D-- a/drivers/net/wireless/ath/ath11k/wmi.c
++++ b/drivers/net/wireless/ath/ath11k/wmi.c
+@@ -5130,8 +5130,8 @@ static int ath11k_pull_vdev_start_resp_tlv(struct at=
+h11k_base *ab, struct sk_buf
+ 	ev =3D tb[WMI_TAG_VDEV_START_RESPONSE_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch vdev start resp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	memset(vdev_rsp, 0, sizeof(*vdev_rsp));
+@@ -5146,9 +5146,10 @@ static int ath11k_pull_vdev_start_resp_tlv(struct a=
+th11k_base *ab, struct sk_buf
+ 	vdev_rsp->cfgd_tx_streams =3D ev->cfgd_tx_streams;
+ 	vdev_rsp->cfgd_rx_streams =3D ev->cfgd_rx_streams;
+ 	vdev_rsp->max_allowed_tx_power =3D ev->max_allowed_tx_power;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath11k_print_reg_rule(struct ath11k_base *ab, const char *ban=
+d,
+@@ -5230,8 +5231,8 @@ static int ath11k_pull_reg_chan_list_update_ev(struc=
+t ath11k_base *ab,
+ 	chan_list_event_hdr =3D tb[WMI_TAG_REG_CHAN_LIST_CC_EVENT];
+ 	if (!chan_list_event_hdr) {
+ 		ath11k_warn(ab, "failed to fetch reg chan list update ev\n");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	reg_info->num_2ghz_reg_rules =3D chan_list_event_hdr->num_2ghz_reg_rules=
+;
+@@ -5239,8 +5240,8 @@ static int ath11k_pull_reg_chan_list_update_ev(struc=
+t ath11k_base *ab,
+
+ 	if (!(reg_info->num_2ghz_reg_rules + reg_info->num_5ghz_reg_rules)) {
+ 		ath11k_warn(ab, "No regulatory rules available in the event info\n");
+-		kfree(tb);
+-		return -EINVAL;
++		ret =3D -EINVAL;
++		goto free_tb;
+ 	}
+
+ 	memcpy(reg_info->alpha2, &chan_list_event_hdr->alpha2,
+@@ -5289,9 +5290,9 @@ static int ath11k_pull_reg_chan_list_update_ev(struc=
+t ath11k_base *ab,
+ 				create_reg_rules_from_wmi(num_2ghz_reg_rules,
+ 							  wmi_reg_rule);
+ 		if (!reg_info->reg_rules_2ghz_ptr) {
+-			kfree(tb);
+ 			ath11k_warn(ab, "Unable to Allocate memory for 2 GHz rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+
+ 		ath11k_print_reg_rule(ab, "2 GHz",
+@@ -5305,9 +5306,9 @@ static int ath11k_pull_reg_chan_list_update_ev(struc=
+t ath11k_base *ab,
+ 				create_reg_rules_from_wmi(num_5ghz_reg_rules,
+ 							  wmi_reg_rule);
+ 		if (!reg_info->reg_rules_5ghz_ptr) {
+-			kfree(tb);
+ 			ath11k_warn(ab, "Unable to Allocate memory for 5 GHz rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+
+ 		ath11k_print_reg_rule(ab, "5 GHz",
+@@ -5316,9 +5317,10 @@ static int ath11k_pull_reg_chan_list_update_ev(stru=
+ct ath11k_base *ab,
+ 	}
+
+ 	ath11k_dbg(ab, ATH11K_DBG_WMI, "processed regulatory channel list\n");
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static struct cur_reg_rule
+@@ -5406,8 +5408,8 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 	ev =3D tb[WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch reg chan list ext update ev\n");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	reg_info->num_2ghz_reg_rules =3D ev->num_2ghz_reg_rules;
+@@ -5438,8 +5440,8 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 	    (num_5ghz_reg_rules > MAX_REG_RULES)) {
+ 		ath11k_warn(ab, "Num reg rules for 2.4 GHz/5 GHz exceeds max limit (num=
+_2ghz_reg_rules: %d num_5ghz_reg_rules: %d max_rules: %d)\n",
+ 			    num_2ghz_reg_rules, num_5ghz_reg_rules, MAX_REG_RULES);
+-		kfree(tb);
+-		return -EINVAL;
++		ret =3D -EINVAL;
++		goto free_tb;
+ 	}
+
+ 	for (i =3D 0; i < WMI_REG_CURRENT_MAX_AP_TYPE; i++) {
+@@ -5448,8 +5450,8 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 		if (num_6ghz_reg_rules_ap[i] > MAX_6GHZ_REG_RULES) {
+ 			ath11k_warn(ab, "Num 6 GHz reg rules for AP mode(%d) exceeds max limit=
+ (num_6ghz_reg_rules_ap: %d, max_rules: %d)\n",
+ 				    i, num_6ghz_reg_rules_ap[i], MAX_6GHZ_REG_RULES);
+-			kfree(tb);
+-			return -EINVAL;
++			ret =3D -EINVAL;
++			goto free_tb;
+ 		}
+
+ 		total_reg_rules +=3D num_6ghz_reg_rules_ap[i];
+@@ -5476,15 +5478,15 @@ static int ath11k_pull_reg_chan_list_ext_update_ev=
+(struct ath11k_base *ab,
+ 			ath11k_warn(ab,
+ 				    "Num 6 GHz client reg rules exceeds max limit, for client(type: %=
+d)\n",
+ 				    i);
+-			kfree(tb);
+-			return -EINVAL;
++			ret =3D -EINVAL;
++			goto free_tb;
+ 		}
+ 	}
+
+ 	if (!total_reg_rules) {
+ 		ath11k_warn(ab, "No reg rules available\n");
+-		kfree(tb);
+-		return -EINVAL;
++		ret =3D -EINVAL;
++		goto free_tb;
+ 	}
+
+ 	memcpy(reg_info->alpha2, &ev->alpha2, REG_ALPHA2_LEN);
+@@ -5597,9 +5599,9 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 						      ext_wmi_reg_rule);
+
+ 		if (!reg_info->reg_rules_2ghz_ptr) {
+-			kfree(tb);
+ 			ath11k_warn(ab, "Unable to Allocate memory for 2 GHz rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+
+ 		ath11k_print_reg_rule(ab, "2 GHz",
+@@ -5636,9 +5638,9 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 						      ext_wmi_reg_rule);
+
+ 		if (!reg_info->reg_rules_5ghz_ptr) {
+-			kfree(tb);
+ 			ath11k_warn(ab, "Unable to Allocate memory for 5 GHz rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+
+ 		ath11k_print_reg_rule(ab, "5 GHz",
+@@ -5659,9 +5661,9 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 						      ext_wmi_reg_rule);
+
+ 		if (!reg_info->reg_rules_6ghz_ap_ptr[i]) {
+-			kfree(tb);
+ 			ath11k_warn(ab, "Unable to Allocate memory for 6 GHz AP rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+
+ 		ath11k_print_reg_rule(ab, ath11k_6ghz_ap_type_to_str(i),
+@@ -5681,9 +5683,9 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(s=
+truct ath11k_base *ab,
+ 							      ext_wmi_reg_rule);
+
+ 			if (!reg_info->reg_rules_6ghz_client_ptr[j][i]) {
+-				kfree(tb);
+ 				ath11k_warn(ab, "Unable to Allocate memory for 6 GHz client rules\n")=
+;
+-				return -ENOMEM;
++				ret =3D -ENOMEM;
++				goto free_tb;
+ 			}
+
+ 			ath11k_print_reg_rule(ab,
+@@ -5740,9 +5742,10 @@ static int ath11k_pull_reg_chan_list_ext_update_ev(=
+struct ath11k_base *ab,
+ 		   ath11k_super_reg_6ghz_to_str(reg_info->domain_code_6ghz_super_id));
+
+ 	ath11k_dbg(ab, ATH11K_DBG_WMI, "processed regulatory ext channel list\n"=
+);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_peer_del_resp_ev(struct ath11k_base *ab, struct sk=
+_buff *skb,
+@@ -5762,8 +5765,8 @@ static int ath11k_pull_peer_del_resp_ev(struct ath11=
+k_base *ab, struct sk_buff *
+ 	ev =3D tb[WMI_TAG_PEER_DELETE_RESP_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch peer delete resp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	memset(peer_del_resp, 0, sizeof(*peer_del_resp));
+@@ -5771,9 +5774,10 @@ static int ath11k_pull_peer_del_resp_ev(struct ath1=
+1k_base *ab, struct sk_buff *
+ 	peer_del_resp->vdev_id =3D ev->vdev_id;
+ 	ether_addr_copy(peer_del_resp->peer_macaddr.addr,
+ 			ev->peer_macaddr.addr);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_vdev_del_resp_ev(struct ath11k_base *ab,
+@@ -5794,14 +5798,15 @@ static int ath11k_pull_vdev_del_resp_ev(struct ath=
+11k_base *ab,
+ 	ev =3D tb[WMI_TAG_VDEV_DELETE_RESP_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch vdev delete resp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_id =3D ev->vdev_id;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_bcn_tx_status_ev(struct ath11k_base *ab,
+@@ -5822,15 +5827,16 @@ static int ath11k_pull_bcn_tx_status_ev(struct ath=
+11k_base *ab,
+ 	ev =3D tb[WMI_TAG_OFFLOAD_BCN_TX_STATUS_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch bcn tx status ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_id   =3D ev->vdev_id;
+ 	*tx_status =3D ev->tx_status;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_vdev_stopped_param_tlv(struct ath11k_base *ab, str=
+uct sk_buff *skb,
+@@ -5850,14 +5856,15 @@ static int ath11k_pull_vdev_stopped_param_tlv(stru=
+ct ath11k_base *ab, struct sk_
+ 	ev =3D tb[WMI_TAG_VDEV_STOPPED_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch vdev stop ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_id =3D  ev->vdev_id;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_wmi_tlv_mgmt_rx_parse(struct ath11k_base *ab,
+@@ -6004,17 +6011,18 @@ static int ath11k_pull_mgmt_tx_compl_param_tlv(str=
+uct ath11k_base *ab,
+ 	ev =3D tb[WMI_TAG_MGMT_TX_COMPL_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch mgmt tx compl ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	param->pdev_id =3D ev->pdev_id;
+ 	param->desc_id =3D ev->desc_id;
+ 	param->status =3D ev->status;
+ 	param->ack_rssi =3D ev->ack_rssi;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath11k_wmi_event_scan_started(struct ath11k *ar)
+@@ -6180,8 +6188,8 @@ static int ath11k_pull_scan_ev(struct ath11k_base *a=
+b, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_SCAN_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch scan ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	scan_evt_param->event_type =3D ev->event_type;
+@@ -6191,9 +6199,10 @@ static int ath11k_pull_scan_ev(struct ath11k_base *=
+ab, struct sk_buff *skb,
+ 	scan_evt_param->scan_id =3D ev->scan_id;
+ 	scan_evt_param->vdev_id =3D ev->vdev_id;
+ 	scan_evt_param->tsf_timestamp =3D ev->tsf_timestamp;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_peer_sta_kickout_ev(struct ath11k_base *ab, struct=
+ sk_buff *skb,
+@@ -6213,14 +6222,15 @@ static int ath11k_pull_peer_sta_kickout_ev(struct =
+ath11k_base *ab, struct sk_buf
+ 	ev =3D tb[WMI_TAG_PEER_STA_KICKOUT_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch peer sta kickout ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->mac_addr =3D ev->peer_macaddr.addr;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_roam_ev(struct ath11k_base *ab, struct sk_buff *sk=
+b,
+@@ -6240,16 +6250,17 @@ static int ath11k_pull_roam_ev(struct ath11k_base =
+*ab, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_ROAM_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch roam ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	roam_ev->vdev_id =3D ev->vdev_id;
+ 	roam_ev->reason =3D ev->reason;
+ 	roam_ev->rssi =3D ev->rssi;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int freq_to_idx(struct ath11k *ar, int freq)
+@@ -6288,8 +6299,8 @@ static int ath11k_pull_chan_info_ev(struct ath11k_ba=
+se *ab, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_CHAN_INFO_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch chan info ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	ch_info_ev->err_code =3D ev->err_code;
+@@ -6304,9 +6315,10 @@ static int ath11k_pull_chan_info_ev(struct ath11k_b=
+ase *ab, struct sk_buff *skb,
+ 	ch_info_ev->tx_frame_cnt =3D ev->tx_frame_cnt;
+ 	ch_info_ev->mac_clk_mhz =3D ev->mac_clk_mhz;
+ 	ch_info_ev->vdev_id =3D ev->vdev_id;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -6327,8 +6339,8 @@ ath11k_pull_pdev_bss_chan_info_ev(struct ath11k_base=
+ *ab, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_PDEV_BSS_CHAN_INFO_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch pdev bss chan info ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	bss_ch_info_ev->pdev_id =3D ev->pdev_id;
+@@ -6344,9 +6356,10 @@ ath11k_pull_pdev_bss_chan_info_ev(struct ath11k_bas=
+e *ab, struct sk_buff *skb,
+ 	bss_ch_info_ev->rx_cycle_count_high =3D ev->rx_cycle_count_high;
+ 	bss_ch_info_ev->rx_bss_cycle_count_low =3D ev->rx_bss_cycle_count_low;
+ 	bss_ch_info_ev->rx_bss_cycle_count_high =3D ev->rx_bss_cycle_count_high;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -6367,8 +6380,8 @@ ath11k_pull_vdev_install_key_compl_ev(struct ath11k_=
+base *ab, struct sk_buff *sk
+ 	ev =3D tb[WMI_TAG_VDEV_INSTALL_KEY_COMPLETE_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch vdev install key compl ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->vdev_id =3D ev->vdev_id;
+@@ -6376,9 +6389,10 @@ ath11k_pull_vdev_install_key_compl_ev(struct ath11k=
+_base *ab, struct sk_buff *sk
+ 	arg->key_idx =3D ev->key_idx;
+ 	arg->key_flags =3D ev->key_flags;
+ 	arg->status =3D ev->status;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath11k_pull_peer_assoc_conf_ev(struct ath11k_base *ab, struct =
+sk_buff *skb,
+@@ -6398,15 +6412,16 @@ static int ath11k_pull_peer_assoc_conf_ev(struct a=
+th11k_base *ab, struct sk_buff
+ 	ev =3D tb[WMI_TAG_PEER_ASSOC_CONF_EVENT];
+ 	if (!ev) {
+ 		ath11k_warn(ab, "failed to fetch peer assoc conf ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	peer_assoc_conf->vdev_id =3D ev->vdev_id;
+ 	peer_assoc_conf->macaddr =3D ev->peer_macaddr.addr;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath11k_wmi_pull_pdev_stats_base(const struct wmi_pdev_stats_b=
+ase *src,
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/=
+ath/ath12k/wmi.c
+index 190439ad7f23..c4578be1676e 100644
+=2D-- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -4628,14 +4628,15 @@ static int ath12k_pull_vdev_start_resp_tlv(struct =
+ath12k_base *ab, struct sk_buf
+ 	ev =3D tb[WMI_TAG_VDEV_START_RESPONSE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev start resp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_rsp =3D *ev;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static struct ath12k_reg_rule
+@@ -4706,8 +4707,8 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 	ev =3D tb[WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch reg chan list ext update ev\n");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	reg_info->num_2g_reg_rules =3D le32_to_cpu(ev->num_2g_reg_rules);
+@@ -4736,8 +4737,8 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 	if (num_2g_reg_rules > MAX_REG_RULES || num_5g_reg_rules > MAX_REG_RULES=
+) {
+ 		ath12k_warn(ab, "Num reg rules for 2G/5G exceeds max limit (num_2g_reg_=
+rules: %d num_5g_reg_rules: %d max_rules: %d)\n",
+ 			    num_2g_reg_rules, num_5g_reg_rules, MAX_REG_RULES);
+-		kfree(tb);
+-		return -EINVAL;
++		ret =3D -EINVAL;
++		goto free_tb;
+ 	}
+
+ 	for (i =3D 0; i < WMI_REG_CURRENT_MAX_AP_TYPE; i++) {
+@@ -4746,8 +4747,8 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 		if (num_6g_reg_rules_ap[i] > MAX_6G_REG_RULES) {
+ 			ath12k_warn(ab, "Num 6G reg rules for AP mode(%d) exceeds max limit (n=
+um_6g_reg_rules_ap: %d, max_rules: %d)\n",
+ 				    i, num_6g_reg_rules_ap[i], MAX_6G_REG_RULES);
+-			kfree(tb);
+-			return -EINVAL;
++			ret =3D -EINVAL;
++			goto free_tb;
+ 		}
+
+ 		total_reg_rules +=3D num_6g_reg_rules_ap[i];
+@@ -4771,15 +4772,15 @@ static int ath12k_pull_reg_chan_list_ext_update_ev=
+(struct ath12k_base *ab,
+ 		    num_6g_reg_rules_cl[WMI_REG_VLP_AP][i] >  MAX_6G_REG_RULES) {
+ 			ath12k_warn(ab, "Num 6g client reg rules exceeds max limit, for client=
+(type: %d)\n",
+ 				    i);
+-			kfree(tb);
+-			return -EINVAL;
++			ret =3D -EINVAL;
++			goto free_tb;
+ 		}
+ 	}
+
+ 	if (!total_reg_rules) {
+ 		ath12k_warn(ab, "No reg rules available\n");
+-		kfree(tb);
+-		return -EINVAL;
++		ret =3D -EINVAL;
++		goto free_tb;
+ 	}
+
+ 	memcpy(reg_info->alpha2, &ev->alpha2, REG_ALPHA2_LEN);
+@@ -4894,9 +4895,9 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 						      ext_wmi_reg_rule);
+
+ 		if (!reg_info->reg_rules_2g_ptr) {
+-			kfree(tb);
+ 			ath12k_warn(ab, "Unable to Allocate memory for 2g rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+ 	}
+
+@@ -4907,9 +4908,9 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 						      ext_wmi_reg_rule);
+
+ 		if (!reg_info->reg_rules_5g_ptr) {
+-			kfree(tb);
+ 			ath12k_warn(ab, "Unable to Allocate memory for 5g rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+ 	}
+
+@@ -4921,9 +4922,9 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 						      ext_wmi_reg_rule);
+
+ 		if (!reg_info->reg_rules_6g_ap_ptr[i]) {
+-			kfree(tb);
+ 			ath12k_warn(ab, "Unable to Allocate memory for 6g ap rules\n");
+-			return -ENOMEM;
++			ret =3D -ENOMEM;
++			goto free_tb;
+ 		}
+
+ 		ext_wmi_reg_rule +=3D num_6g_reg_rules_ap[i];
+@@ -4936,9 +4937,9 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(s=
+truct ath12k_base *ab,
+ 							      ext_wmi_reg_rule);
+
+ 			if (!reg_info->reg_rules_6g_client_ptr[j][i]) {
+-				kfree(tb);
+ 				ath12k_warn(ab, "Unable to Allocate memory for 6g client rules\n");
+-				return -ENOMEM;
++				ret =3D -ENOMEM;
++				goto free_tb;
+ 			}
+
+ 			ext_wmi_reg_rule +=3D num_6g_reg_rules_cl[j][i];
+@@ -4970,9 +4971,10 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(=
+struct ath12k_base *ab,
+ 		   reg_info->client_type, reg_info->domain_code_6g_super_id);
+
+ 	ath12k_dbg(ab, ATH12K_DBG_WMI, "processed regulatory ext channel list\n"=
+);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_peer_del_resp_ev(struct ath12k_base *ab, struct sk=
+_buff *skb,
+@@ -4992,8 +4994,8 @@ static int ath12k_pull_peer_del_resp_ev(struct ath12=
+k_base *ab, struct sk_buff *
+ 	ev =3D tb[WMI_TAG_PEER_DELETE_RESP_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch peer delete resp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	memset(peer_del_resp, 0, sizeof(*peer_del_resp));
+@@ -5001,9 +5003,10 @@ static int ath12k_pull_peer_del_resp_ev(struct ath1=
+2k_base *ab, struct sk_buff *
+ 	peer_del_resp->vdev_id =3D ev->vdev_id;
+ 	ether_addr_copy(peer_del_resp->peer_macaddr.addr,
+ 			ev->peer_macaddr.addr);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_vdev_del_resp_ev(struct ath12k_base *ab,
+@@ -5024,14 +5027,15 @@ static int ath12k_pull_vdev_del_resp_ev(struct ath=
+12k_base *ab,
+ 	ev =3D tb[WMI_TAG_VDEV_DELETE_RESP_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev delete resp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_id =3D le32_to_cpu(ev->vdev_id);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_bcn_tx_status_ev(struct ath12k_base *ab,
+@@ -5052,15 +5056,16 @@ static int ath12k_pull_bcn_tx_status_ev(struct ath=
+12k_base *ab,
+ 	ev =3D tb[WMI_TAG_OFFLOAD_BCN_TX_STATUS_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch bcn tx status ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_id =3D le32_to_cpu(ev->vdev_id);
+ 	*tx_status =3D le32_to_cpu(ev->tx_status);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_vdev_stopped_param_tlv(struct ath12k_base *ab, str=
+uct sk_buff *skb,
+@@ -5080,14 +5085,15 @@ static int ath12k_pull_vdev_stopped_param_tlv(stru=
+ct ath12k_base *ab, struct sk_
+ 	ev =3D tb[WMI_TAG_VDEV_STOPPED_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev stop ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	*vdev_id =3D le32_to_cpu(ev->vdev_id);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_wmi_tlv_mgmt_rx_parse(struct ath12k_base *ab,
+@@ -5224,16 +5230,17 @@ static int ath12k_pull_mgmt_tx_compl_param_tlv(str=
+uct ath12k_base *ab,
+ 	ev =3D tb[WMI_TAG_MGMT_TX_COMPL_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch mgmt tx compl ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	param->pdev_id =3D ev->pdev_id;
+ 	param->desc_id =3D ev->desc_id;
+ 	param->status =3D ev->status;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath12k_wmi_event_scan_started(struct ath12k *ar)
+@@ -5405,8 +5412,8 @@ static int ath12k_pull_scan_ev(struct ath12k_base *a=
+b, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_SCAN_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch scan ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	scan_evt_param->event_type =3D ev->event_type;
+@@ -5416,9 +5423,10 @@ static int ath12k_pull_scan_ev(struct ath12k_base *=
+ab, struct sk_buff *skb,
+ 	scan_evt_param->scan_id =3D ev->scan_id;
+ 	scan_evt_param->vdev_id =3D ev->vdev_id;
+ 	scan_evt_param->tsf_timestamp =3D ev->tsf_timestamp;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_peer_sta_kickout_ev(struct ath12k_base *ab, struct=
+ sk_buff *skb,
+@@ -5438,14 +5446,15 @@ static int ath12k_pull_peer_sta_kickout_ev(struct =
+ath12k_base *ab, struct sk_buf
+ 	ev =3D tb[WMI_TAG_PEER_STA_KICKOUT_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch peer sta kickout ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->mac_addr =3D ev->peer_macaddr.addr;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_roam_ev(struct ath12k_base *ab, struct sk_buff *sk=
+b,
+@@ -5465,16 +5474,17 @@ static int ath12k_pull_roam_ev(struct ath12k_base =
+*ab, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_ROAM_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch roam ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	roam_ev->vdev_id =3D ev->vdev_id;
+ 	roam_ev->reason =3D ev->reason;
+ 	roam_ev->rssi =3D ev->rssi;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int freq_to_idx(struct ath12k *ar, int freq)
+@@ -5517,8 +5527,8 @@ static int ath12k_pull_chan_info_ev(struct ath12k_ba=
+se *ab, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_CHAN_INFO_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch chan info ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	ch_info_ev->err_code =3D ev->err_code;
+@@ -5533,9 +5543,10 @@ static int ath12k_pull_chan_info_ev(struct ath12k_b=
+ase *ab, struct sk_buff *skb,
+ 	ch_info_ev->tx_frame_cnt =3D ev->tx_frame_cnt;
+ 	ch_info_ev->mac_clk_mhz =3D ev->mac_clk_mhz;
+ 	ch_info_ev->vdev_id =3D ev->vdev_id;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -5556,8 +5567,8 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_base=
+ *ab, struct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_PDEV_BSS_CHAN_INFO_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch pdev bss chan info ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	bss_ch_info_ev->pdev_id =3D ev->pdev_id;
+@@ -5573,9 +5584,10 @@ ath12k_pull_pdev_bss_chan_info_ev(struct ath12k_bas=
+e *ab, struct sk_buff *skb,
+ 	bss_ch_info_ev->rx_cycle_count_high =3D ev->rx_cycle_count_high;
+ 	bss_ch_info_ev->rx_bss_cycle_count_low =3D ev->rx_bss_cycle_count_low;
+ 	bss_ch_info_ev->rx_bss_cycle_count_high =3D ev->rx_bss_cycle_count_high;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -5596,8 +5608,8 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k_=
+base *ab, struct sk_buff *sk
+ 	ev =3D tb[WMI_TAG_VDEV_INSTALL_KEY_COMPLETE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch vdev install key compl ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	arg->vdev_id =3D le32_to_cpu(ev->vdev_id);
+@@ -5605,9 +5617,10 @@ ath12k_pull_vdev_install_key_compl_ev(struct ath12k=
+_base *ab, struct sk_buff *sk
+ 	arg->key_idx =3D le32_to_cpu(ev->key_idx);
+ 	arg->key_flags =3D le32_to_cpu(ev->key_flags);
+ 	arg->status =3D le32_to_cpu(ev->status);
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int ath12k_pull_peer_assoc_conf_ev(struct ath12k_base *ab, struct =
+sk_buff *skb,
+@@ -5627,15 +5640,16 @@ static int ath12k_pull_peer_assoc_conf_ev(struct a=
+th12k_base *ab, struct sk_buff
+ 	ev =3D tb[WMI_TAG_PEER_ASSOC_CONF_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch peer assoc conf ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
+ 	peer_assoc_conf->vdev_id =3D le32_to_cpu(ev->vdev_id);
+ 	peer_assoc_conf->macaddr =3D ev->peer_macaddr.addr;
+-
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static int
+@@ -5655,12 +5669,14 @@ ath12k_pull_pdev_temp_ev(struct ath12k_base *ab, s=
+truct sk_buff *skb,
+ 	ev =3D tb[WMI_TAG_PDEV_TEMPERATURE_EVENT];
+ 	if (!ev) {
+ 		ath12k_warn(ab, "failed to fetch pdev temp ev");
+-		kfree(tb);
+-		return -EPROTO;
++		ret =3D -EPROTO;
++		goto free_tb;
+ 	}
+
++	ret =3D 0;
++free_tb:
+ 	kfree(tb);
+-	return 0;
++	return ret;
+ }
+
+ static void ath12k_wmi_op_ep_tx_credits(struct ath12k_base *ab)
+diff --git a/drivers/net/wireless/ath/ath6kl/usb.c b/drivers/net/wireless/=
+ath/ath6kl/usb.c
+index 5220809841a6..ea27eb535a02 100644
+=2D-- a/drivers/net/wireless/ath/ath6kl/usb.c
++++ b/drivers/net/wireless/ath/ath6kl/usb.c
+@@ -892,13 +892,14 @@ static int ath6kl_usb_submit_ctrl_out(struct ath6kl_=
+usb *ar_usb,
+
+ 	if (ret < 0) {
+ 		ath6kl_warn("Failed to submit usb control message: %d\n", ret);
+-		kfree(buf);
+-		return ret;
++		goto free_buf;
+ 	}
+
++	ret =3D 0;
++free_buf:
+ 	kfree(buf);
+
+-	return 0;
++	return ret;
+ }
+
+ static int ath6kl_usb_submit_ctrl_in(struct ath6kl_usb *ar_usb,
+@@ -924,15 +925,15 @@ static int ath6kl_usb_submit_ctrl_in(struct ath6kl_u=
+sb *ar_usb,
+
+ 	if (ret < 0) {
+ 		ath6kl_warn("Failed to read usb control message: %d\n", ret);
+-		kfree(buf);
+-		return ret;
++		goto free_buf;
+ 	}
+
+ 	memcpy((u8 *) data, buf, size);
+-
++	ret =3D 0;
++free_buf:
+ 	kfree(buf);
+
+-	return 0;
++	return ret;
+ }
+
+ static int ath6kl_usb_ctrl_msg_exchange(struct ath6kl_usb *ar_usb,
+=2D-
+2.46.1
 
 
