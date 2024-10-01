@@ -4,84 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57EE6CE7CFB
-	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 09:27:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED904CE7D07
+	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 09:59:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=77KAl9WNIh+ryKl/Z/b0mLIrSKbidlpmzl11FBr6qrQ=; b=X0VA16Ixv4mOUpXzcZeCRCVhmG
-	kZkJFYTbQwuM3F67HjuJLr5eJQtmCXNC0Yfe7O5CQkD8NEb8W+ZG0kA2xr+NqkQOcObR0d1lhTLF9
-	TCWc3amSTbH/Ds9sJzouN7RYkUEeCI9nWzoqrX6na5veID5zaCsSkvBAlpu95Pt9mEQs5w+iVxwdz
-	o+Oox7PhSILQAmx+HOsWhoQ0FKiHgv51SER2yVod+r50yUvJtqm8zLkutax7i+VicGy+zyxknZm1v
-	XLLF5uWIsq7Z5p/jb5MfOdl7xqmRVuHyPeR91V1jDr5W/fIF5xo0I9LZcla8Gr/2OXvIEP2mTHipA
-	7W+A9UqA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=nCnBD1U7QvNvLUmdBdi6Nq3cRHnR8hJD3Ky8Id7tHF8=; b=HrfGQmnfljjG5vrJtGMqkkTFt5
+	9FlEudKOSXYS6tq+zwNS78rn/gkJemC3Nn1sjVfo/Zcape/nroiU22INTL2Ft1h8oI68BJPYhpaIk
+	ZGK6n01o8hBrTANSf+PcaCytuOhWwmjr/qi8ul0yD42JO1cEV4rkQm29GWgfACQ24v1FkMxxm73G4
+	E8lTl/0DPWn9lVynT90keDUGddGpwsUszQovxbUBKI0r+8fsCt3W3GgKiQi89ZZ8X3L4yqr/Dp0sh
+	3qcGIRwTFIqcuTiPjtmHaFgwfxG4qW6VC+RI6zrXo3rlvGktMC/DN+mRJo34GSUZw2K5wz1mDdtNi
+	xC/sgs0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svZAT-00000002E3U-0JTO
+	id 1svZfC-00000002Ht3-2qfJ
 	for ath12k@archiver.kernel.org;
-	Tue, 01 Oct 2024 09:27:41 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 01 Oct 2024 09:59:26 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svZAQ-00000002E30-2oOi
+	id 1svZf9-00000002Hsa-3E7S
 	for ath12k@lists.infradead.org;
-	Tue, 01 Oct 2024 09:27:39 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48UNr61p017398;
-	Tue, 1 Oct 2024 09:27:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=77KAl9WNIh+ryKl/Z/b0mL
-	IrSKbidlpmzl11FBr6qrQ=; b=e6tN1/vpEWaCFzMRwWRDsScHwp9/pilif5V639
-	J3Gry28qGcRNqSxjBUFe1eMPgrCoNAQMurK5bcphk04pjPn6CO7y6NsmMEdUZliM
-	ghyUgLWxiU1p1E63OwqTtJMHQuFNqK5SGhYLgjnNYsGLCQJVg1Tnd9UU9tccjxpN
-	K/FJG+rjzVeYmZ+ovmR1kTjsM1tJ85tbohIcljLS/4+wGoi0dxCXhcj4myHG/A20
-	83zbWFybemRAriajbrBUQlo5Uq3uPw9tcsKnipshRJ4lJxIba6kx9OFXvLZw42sy
-	zUgLv87iJcUGgjVcUs57J03UTXGT2lbRXgsgas39dQoPb6vg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41xa12qsc5-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Oct 2024 09:27:36 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4919RZAY028680
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 1 Oct 2024 09:27:35 GMT
-Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 1 Oct 2024 02:27:33 -0700
-From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Rameshkumar Sundaram
-	<quic_ramess@quicinc.com>
-Subject: [PATCH v2] wifi: ath12k: fix use-after-free in ath12k_dp_cc_cleanup()
-Date: Tue, 1 Oct 2024 14:56:52 +0530
-Message-ID: <20241001092652.3134334-1-quic_ramess@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 01 Oct 2024 09:59:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=nCnBD1U7QvNvLUmdBdi6Nq3cRHnR8hJD3Ky8Id7tHF8=;
+	t=1727776763; x=1728986363; b=VJD4nBFXXFtQ2wu09WBIG+XyY2Jap2d7FY1+pck8J+DdTX5
+	44UkS1+SxD2c6gqir/2zWUIiYM0c+hopf6pAaaaFDNof3OKIBzlosUECRvxZzQUTz6WxXT2gJM/Aa
+	UEkuhWnvhnxbJgIYcqgvQ1dHcDMbFCM8BmgAr7j4MKBYgdXIKWahaW1K4AD+re49GlwJUpgA6p3Mc
+	OIW+3k8ItMfLoXz4HL4ZfvDGOBBSKGOyK7PnuS7LOB9vmdCv5VdJxfwh4on8EP7dnVph8vA5S3u/Z
+	6yGFmVCmX9F1otpeW7v8YqL8kU6S6KTmoRhTNIW/uQVWL2tbjcBGT0Y0Aj0fG5lg==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1svZf5-0000000Ei2N-3UIk;
+	Tue, 01 Oct 2024 11:59:20 +0200
+Message-ID: <93df47a867ee1f8d84cabdbc953707eab2ea3704.camel@sipsolutions.net>
+Subject: Re: [PATCH v2] wifi: mac80211: re-order assigning channel in
+ activate links
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+Date: Tue, 01 Oct 2024 11:59:19 +0200
+In-Reply-To: <20241001085034.2745669-1-quic_adisi@quicinc.com>
+References: <20241001085034.2745669-1-quic_adisi@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.52.4 (3.52.4-1.fc40) 
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 4t2yKACM63F7Pda9huGAcN9LBBXPwE0C
-X-Proofpoint-GUID: 4t2yKACM63F7Pda9huGAcN9LBBXPwE0C
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- impostorscore=0 priorityscore=1501 lowpriorityscore=0 suspectscore=0
- bulkscore=0 malwarescore=0 spamscore=0 clxscore=1015 mlxscore=0
- adultscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2410010061
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241001_022738_754823_295A42A6 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20241001_025923_837301_59CCF39B 
+X-CRM114-Status: GOOD (  24.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,112 +74,119 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-During ath12k module removal, in ath12k_core_deinit(),
-ath12k_mac_destroy() un-registers ah->hw from mac80211 and frees
-the ah->hw as well as all the ar's in it. After this
-ath12k_core_soc_destroy()-> ath12k_dp_free()-> ath12k_dp_cc_cleanup()
-tries to access one of the freed ar's from pending skb.
+On Tue, 2024-10-01 at 14:20 +0530, Aditya Kumar Singh wrote:
+> The current flow in _ieee80211_set_active_links() does not align with the
+> operational requirements of drivers that groups multiple hardware
+> under a single wiphy. These drivers (e.g ath12k) rely on channel
+> assignment to determine the appropriate hardware for each link. Without
+> this, the drivers cannot correctly establish the link interface.
+>=20
+> Currently in _ieee80211_set_active_links(), after calling
+> drv_change_vif_links() on the driver, the state of all connected stations
+> is updated via drv_change_sta_links(). This is followed by handling keys
+> in the links, and finally, assigning the channel to the links.
+> Consequently, drv_change_sta_links() prompts drivers to create the statio=
+n
+> entry at their level and within their firmware. However, since channels
+> have not yet been assigned to links at this stage, drivers have not
+> created the necessary link interface for establishing link stations,
+> leading to failures in activating the links.
+>=20
+> Therefore, re-order the logic so that after drv_change_vif_links() and
+> removing the old links, channels are assigned to newly added links.
+> Following this, the flow proceeds to station handling.
+>=20
 
-This is because during mac destroy, driver failed to flush few
-data packets, which were accessed later in ath12k_dp_cc_cleanup()
-and freed, but using ar from the packet led to this use-after-free.
+I tried this again but I fear it fundamentally cannot work with iwlwifi.
 
-BUG: KASAN: use-after-free in ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
-Write of size 4 at addr ffff888150bd3514 by task modprobe/8926
-CPU: 0 UID: 0 PID: 8926 Comm: modprobe Not tainted
-6.11.0-rc2-wt-ath+ #1746
-Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS
-HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
+We have this comment:
 
-Call Trace:
-  <TASK>
-  dump_stack_lvl+0x7d/0xe0
-  print_address_description.constprop.0+0x33/0x3a0
-  print_report+0xb5/0x260
-  ? kasan_addr_to_slab+0x24/0x80
-  kasan_report+0xd8/0x110
-  ? ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
-  ? ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
-  kasan_check_range+0xf3/0x1a0
-  __kasan_check_write+0x14/0x20
-  ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
-  ath12k_dp_free+0x178/0x420 [ath12k]
-  ath12k_core_stop+0x176/0x200 [ath12k]
-  ath12k_core_deinit+0x13f/0x210 [ath12k]
-  ath12k_pci_remove+0xad/0x1c0 [ath12k]
-  pci_device_remove+0x9b/0x1b0
-  device_remove+0xbf/0x150
-  device_release_driver_internal+0x3c3/0x580
-  ? __kasan_check_read+0x11/0x20
-  driver_detach+0xc4/0x190
-  bus_remove_driver+0x130/0x2a0
-  driver_unregister+0x68/0x90
-  pci_unregister_driver+0x24/0x240
-  ? find_module_all+0x13e/0x1e0
-  ath12k_pci_exit+0x10/0x20 [ath12k]
-  __do_sys_delete_module+0x32c/0x580
-  ? module_flags+0x2f0/0x2f0
-  ? kmem_cache_free+0xf0/0x410
-  ? __fput+0x56f/0xab0
-  ? __fput+0x56f/0xab0
-  ? debug_smp_processor_id+0x17/0x20
-  __x64_sys_delete_module+0x4f/0x70
-  x64_sys_call+0x522/0x9f0
-  do_syscall_64+0x64/0x130
-  entry_SYSCALL_64_after_hwframe+0x4b/0x53
-RIP: 0033:0x7f8182c6ac8b
+        /* Initialize rate control for the AP station, since we might be
+         * doing a link switch here - we cannot initialize it before since
+         * this needs the phy context assigned (and in FW?), and we cannot
+         * do it later because it needs to be initialized as soon as we're
+         * able to TX on the link, i.e. when active.
+         */
 
-Commit 24de1b7b231c ("wifi: ath12k: fix flush failure in recovery
-scenarios") added the change to decrement the pending packets count
-in case of recovery which make sense as ah->hw as well all
-ar's in it are intact during recovery, but during core deinit there
-is no use in decrementing packets count or waking up the empty waitq
-as the module is going to be removed also ar's from pending skb's
-can't be used and the packets should just be released back.
+which sort of indicates that we're working around it, but it also
+correctly says that we cannot activate a link before we have the (link)
+station.
 
-To fix this, avoid accessing ar from skb->cb when driver is being
-unregistered.
+In the flow as you changed it we'd activate the link in firmware before
+the stations are added, but that isn't allowed. There's not really a
+good place to hook into after the station is added, unless we somehow
+want to activate the link from the station change, but that seems ...
+odd to say the least? Though I guess it's already somewhat odd to init
+rate control here as written now...
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Maybe we can hook into the later link info change. This seems to
+initially work, but still doing more tests:
 
-Fixes: 24de1b7b231c ("wifi: ath12k: fix flush failure in recovery scenarios")
-Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
----
-v2:
- - Skipped skb accounting with UNREGISTERING flag instead of vif check.
----
- drivers/net/wireless/ath/ath12k/dp.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index ecd3b5c76d26..2ab2a7d45be9 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1202,10 +1202,16 @@ static void ath12k_dp_cc_cleanup(struct ath12k_base *ab)
- 			if (!skb)
- 				continue;
- 
--			skb_cb = ATH12K_SKB_CB(skb);
--			ar = skb_cb->ar;
--			if (atomic_dec_and_test(&ar->dp.num_tx_pending))
--				wake_up(&ar->dp.tx_empty_waitq);
-+			/* if we are unregistering, hw would've been destroyed and
-+			 * ar is no longer valid.
-+			 */
-+			if (!(test_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags))) {
-+				skb_cb = ATH12K_SKB_CB(skb);
-+				ar = skb_cb->ar;
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/mld-mac80211.c b/driver=
+s/net/wireless/intel/iwlwifi/mvm/mld-mac80211.c
+index 9753d2c1df3e..5d90fb53b762 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/mld-mac80211.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/mld-mac80211.c
+@@ -343,33 +343,20 @@ __iwl_mvm_mld_assign_vif_chanctx(struct iwl_mvm *mvm,
+ 	if (ret)
+ 		goto out;
+=20
+-	/* Initialize rate control for the AP station, since we might be
+-	 * doing a link switch here - we cannot initialize it before since
+-	 * this needs the phy context assigned (and in FW?), and we cannot
+-	 * do it later because it needs to be initialized as soon as we're
+-	 * able to TX on the link, i.e. when active.
++	/*
++	 * if link switching (link not active yet) we'll activate it in
++	 * firmware later on link-info change, which mac80211 guarantees
++	 * for link switch after the stations are set up
+ 	 */
+-	if (mvmvif->ap_sta) {
+-		struct ieee80211_link_sta *link_sta;
+-
+-		rcu_read_lock();
+-		link_sta =3D rcu_dereference(mvmvif->ap_sta->link[link_id]);
+-
+-		if (!WARN_ON_ONCE(!link_sta))
+-			iwl_mvm_rs_rate_init(mvm, vif, mvmvif->ap_sta,
+-					     link_conf, link_sta,
+-					     phy_ctxt->channel->band);
+-		rcu_read_unlock();
++	if (ieee80211_vif_link_active(vif, link_conf->link_id)) {
++		ret =3D iwl_mvm_link_changed(mvm, vif, link_conf,
++					   LINK_CONTEXT_MODIFY_ACTIVE |
++					   LINK_CONTEXT_MODIFY_RATES_INFO,
++					   true);
++		if (ret)
++			goto out;
+ 	}
+=20
+-	/* then activate */
+-	ret =3D iwl_mvm_link_changed(mvm, vif, link_conf,
+-				   LINK_CONTEXT_MODIFY_ACTIVE |
+-				   LINK_CONTEXT_MODIFY_RATES_INFO,
+-				   true);
+-	if (ret)
+-		goto out;
+-
+ 	if (vif->type =3D=3D NL80211_IFTYPE_STATION)
+ 		iwl_mvm_send_ap_tx_power_constraint_cmd(mvm, vif,
+ 							link_conf,
+@@ -786,6 +773,11 @@ iwl_mvm_mld_link_info_changed_station(struct iwl_mvm *=
+mvm,
+ 	if (WARN_ON_ONCE(!mvmvif->link[link_conf->link_id]))
+ 		return;
+=20
++	/* not yet marked active in vif means during link switch */
++	if (!ieee80211_vif_link_active(vif, link_conf->link_id) &&
++	    vif->cfg.assoc && mvmvif->link[link_conf->link_id]->phy_ctxt)
++		link_changes |=3D LINK_CONTEXT_MODIFY_ACTIVE;
 +
-+				if (atomic_dec_and_test(&ar->dp.num_tx_pending))
-+					wake_up(&ar->dp.tx_empty_waitq);
-+			}
- 
- 			dma_unmap_single(ab->dev, ATH12K_SKB_CB(skb)->paddr,
- 					 skb->len, DMA_TO_DEVICE);
+ 	has_he =3D link_conf->he_support && !iwlwifi_mod_params.disable_11ax;
+ 	has_eht =3D link_conf->eht_support && !iwlwifi_mod_params.disable_11be;
+=20
 
-base-commit: 8ed36fe71fd60c851540839b105fd1fddc870c61
--- 
-2.34.1
 
+johannes
 
