@@ -4,88 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66AA9CF3188
-	for <ath12k@archiver.kernel.org>; Tue,  1 Oct 2024 22:16:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B5A3CF318A
+	for <ath12k@archiver.kernel.org>; Wed,  2 Oct 2024 01:01:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=p+R9xUtQWR+Sw1XdO5QF5AXylA7stnEwUMbRSf4or5M=; b=CgONdz85zKLv9cckchUuiuF1pZ
-	aEDoAZrkqEs44tCcsY6xQnrGEX45u0G5A5a0G5jLs6lgFF0iZ5/ML8o8p1kpkle3PIxKZgWWXPKS5
-	GnPNXNvFsTIBQXI8lk93aFk95NtjlqgdXVuxlv435dJYucnGZVB1nLjt+Y+NokAMrNtKhox2vkqqS
-	tsyR+blQB0dE1Jd/idqItTPEov6g80mY5c47LaNF7tj5lCGuVMEWjZ3+5WfyGPI/Ih2LBflUkQIJ1
-	u8QrnKWCRpqZmW4TDX7+bOCFDhx6mm3O27eAuV5F0BZw0K7glvTJv4wpWoRfOb+UcGUM7QMBlph2Z
-	hSsRQiuA==;
+	bh=7hBtFRQ/pODJPlMZDaeE7XDB0qJUQKZqYSGjobKZhKU=; b=45/D2WWjYPajfmglgAHKG0M7k7
+	Z9n6Z31fsGlEUq6mFoDTboaR5HsHXgP2JQdBBqMx4A3umC6ItIR64kecsQCz4LZyaGWZtCcL3QkLE
+	94XsjRW6yrs6RAi8kXgh1mEOLii6/Y7T1+O4RtJhwgILElDfHa3jqE+3ZVkXBjFgbfzDfB0EikHlW
+	f/Sv/IU90LmC15/AAo38mBKGGgEZRXYAkLRChF1qvX7BrI9rbdvD1tUvYogB5GPYL7XCLCLEeyLeF
+	8V9BJltQ5B9ZYFwj2QjaD5d4EOgDo6gC9IgClfp2vfHkuYQOsbG8dVBHnryGy4GyQfHvfG4Dv+sWM
+	seLgp1LA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svlAt-00000004BnH-0EVX
+	id 1svnkP-00000004Ule-0g2a
 	for ath12k@archiver.kernel.org;
-	Tue, 01 Oct 2024 22:16:55 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 02 Oct 2024 01:01:45 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svlAp-00000004BmY-3pxa
+	id 1svmQ4-00000004Nen-2QIH
+	for ath12k@bombadil.infradead.org;
+	Tue, 01 Oct 2024 23:36:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=7hBtFRQ/pODJPlMZDaeE7XDB0qJUQKZqYSGjobKZhKU=; b=opMUXpPEokMzVpdVYl8rmsRK1i
+	yt+GE9GKNXT21wke5J2KbgAihyYyDfm6fsFwDdiEuQFRLfnNdnQZzGhY2g/hW5Nv0J6zj9LxJ4fRQ
+	eEef2UG6iRqkmZcNTIVlly2CLw6lNT3QrPiETcDrPlvsvmntyPL/4G2EI/9DTYyFMOskI0eNgYq1h
+	sfsE1ZGNK/+9vbz9YOVmn9DZCQCKUTeZP49j/PRn7SlXlHW2htmNmFaxSVatvy2TUTZRa/Yjyw8XY
+	U1penm0wmTsGmeG0Z86CM4XKSy8VAA7WW2eNvaIPm7z7yIrkr8uNJdzo7CO+3aBRRCoSGuNxK4e97
+	25IwR+Sw==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1svmQ0-00000003MCK-3YQq
 	for ath12k@lists.infradead.org;
-	Tue, 01 Oct 2024 22:16:53 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 491BTbjc008088;
-	Tue, 1 Oct 2024 22:16:50 GMT
+	Tue, 01 Oct 2024 23:36:39 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 491N7ZBT013853;
+	Tue, 1 Oct 2024 23:36:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	p+R9xUtQWR+Sw1XdO5QF5AXylA7stnEwUMbRSf4or5M=; b=U/2/B+3lqTCU3nc2
-	PRIvUxyo07oztN0ftkdC226BU5kiqgvK4CBsmJB7IvGCUQwjAvW1O0sjKTsbtCo8
-	yEIfV0UZhJZOT6lavV1iav2H0DgI89z3iPME2BkDDpWFS71jh3aj9Y6M8d+W2L9J
-	vwCgMNGfQ1xVXly3PbdARMk3lFbqoyhejx+MdImcUwMb62GdNv8QV217ctH3BxxM
-	VJeZI6sgB6lSHe6TKptt4L8ZacaMSZjc+njCFqAFsKh8Ie+cHXiH/Mjg+4ZORiUP
-	JcO/l5lsXaeZYx0dDZ4fNsLGxmpEIfhBUJT92xF1jAxVpwSWF22J6rkZ1xPTtNgv
-	/khaoQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41xa679tqy-1
+	7hBtFRQ/pODJPlMZDaeE7XDB0qJUQKZqYSGjobKZhKU=; b=Ei2CyyJARHDXWJI6
+	CrxSHN1mZNBgz/uAT5rZM8EFWrQ+3IVVaHnGaaugFJHLutG3gq7uz8QvhWZxIxav
+	ZINP5kb/EQWXzVF6NJYKUB4Y8LfXRmnQqxj1m8jSXIzy55NiD8pahMssDjQM95ka
+	t/Hyo6T51kB01+NxfNog5NNkiL4RfnIieHD28J58cAG54qPgNEoorDJQ5aDjfVH8
+	j6BwC/ZtLan4PBtu5RfhWIxS2T4wOi9IeIofHBtu+2S4hY37CRCaWdD6INMBF+0r
+	zt8Vr4q8Czju/z1sye9Lw4tt8aTH4SWN+g8dPSxR/Pwm7u+1zWhJJSZZo7jeaK9e
+	5wJe9g==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41x94hj18t-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Oct 2024 22:16:49 +0000 (GMT)
+	Tue, 01 Oct 2024 23:36:29 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 491MGliv020504
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 491NaQBl015538
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 1 Oct 2024 22:16:47 GMT
+	Tue, 1 Oct 2024 23:36:26 GMT
 Received: from [10.111.183.230] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 1 Oct 2024
- 15:16:46 -0700
-Message-ID: <14db82b4-dfc0-4f21-a6aa-d6ed80f42638@quicinc.com>
-Date: Tue, 1 Oct 2024 15:16:46 -0700
+ 16:36:25 -0700
+Message-ID: <36130760-b396-4c4e-ad1a-dbe8415fdcb7@quicinc.com>
+Date: Tue, 1 Oct 2024 16:36:25 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath12k: fix use-after-free in
- ath12k_dp_cc_cleanup()
-To: Rameshkumar Sundaram <quic_ramess@quicinc.com>,
+Subject: Re: [PATCH] wifi: ath12k: Support DMAC Reset Stats
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
         <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241001092652.3134334-1-quic_ramess@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>, Rajat Soni <quic_rajson@quicinc.com>
+References: <20240926051110.2477814-1-quic_rdevanat@quicinc.com>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
 Content-Language: en-US
-In-Reply-To: <20241001092652.3134334-1-quic_ramess@quicinc.com>
+In-Reply-To: <20240926051110.2477814-1-quic_rdevanat@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: bekQMfh69v7Qf9libl6MpJg52gyuMD6P
-X-Proofpoint-ORIG-GUID: bekQMfh69v7Qf9libl6MpJg52gyuMD6P
+X-Proofpoint-GUID: qwoguz48oYRNsv7ypag8f-xh4VipsMeM
+X-Proofpoint-ORIG-GUID: qwoguz48oYRNsv7ypag8f-xh4VipsMeM
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 impostorscore=0
- lowpriorityscore=0 mlxlogscore=901 malwarescore=0 mlxscore=0
- priorityscore=1501 bulkscore=0 clxscore=1015 adultscore=0 suspectscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2410010147
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
+ mlxscore=0 malwarescore=0 mlxlogscore=999 priorityscore=1501
+ impostorscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0 suspectscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2410010156
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241001_151652_188975_EE2770A1 
-X-CRM114-Status: GOOD (  16.59  )
+X-CRM114-CacheID: sfid-20241002_003637_459866_BD3EAD2C 
+X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,78 +115,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/1/2024 2:26 AM, Rameshkumar Sundaram wrote:
-> During ath12k module removal, in ath12k_core_deinit(),
-> ath12k_mac_destroy() un-registers ah->hw from mac80211 and frees
-> the ah->hw as well as all the ar's in it. After this
-> ath12k_core_soc_destroy()-> ath12k_dp_free()-> ath12k_dp_cc_cleanup()
-> tries to access one of the freed ar's from pending skb.
+On 9/25/2024 10:11 PM, Roopni Devanathan wrote:
+> From: Rajat Soni <quic_rajson@quicinc.com>
 > 
-> This is because during mac destroy, driver failed to flush few
-> data packets, which were accessed later in ath12k_dp_cc_cleanup()
-> and freed, but using ar from the packet led to this use-after-free.
+> Add support to request DMAC reset stats from firmware through HTT stats
+> type 45. These stats give debug SoC error stats such as reset count, reset
+> time, engage time and count, disengage time and count and destination
+> ring mask.
 > 
-> BUG: KASAN: use-after-free in ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
-> Write of size 4 at addr ffff888150bd3514 by task modprobe/8926
-> CPU: 0 UID: 0 PID: 8926 Comm: modprobe Not tainted
-> 6.11.0-rc2-wt-ath+ #1746
-> Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS
-> HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
-> 
-> Call Trace:
->   <TASK>
->   dump_stack_lvl+0x7d/0xe0
->   print_address_description.constprop.0+0x33/0x3a0
->   print_report+0xb5/0x260
->   ? kasan_addr_to_slab+0x24/0x80
->   kasan_report+0xd8/0x110
->   ? ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
->   ? ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
->   kasan_check_range+0xf3/0x1a0
->   __kasan_check_write+0x14/0x20
->   ath12k_dp_cc_cleanup.part.0+0x5e2/0xd40 [ath12k]
->   ath12k_dp_free+0x178/0x420 [ath12k]
->   ath12k_core_stop+0x176/0x200 [ath12k]
->   ath12k_core_deinit+0x13f/0x210 [ath12k]
->   ath12k_pci_remove+0xad/0x1c0 [ath12k]
->   pci_device_remove+0x9b/0x1b0
->   device_remove+0xbf/0x150
->   device_release_driver_internal+0x3c3/0x580
->   ? __kasan_check_read+0x11/0x20
->   driver_detach+0xc4/0x190
->   bus_remove_driver+0x130/0x2a0
->   driver_unregister+0x68/0x90
->   pci_unregister_driver+0x24/0x240
->   ? find_module_all+0x13e/0x1e0
->   ath12k_pci_exit+0x10/0x20 [ath12k]
->   __do_sys_delete_module+0x32c/0x580
->   ? module_flags+0x2f0/0x2f0
->   ? kmem_cache_free+0xf0/0x410
->   ? __fput+0x56f/0xab0
->   ? __fput+0x56f/0xab0
->   ? debug_smp_processor_id+0x17/0x20
->   __x64_sys_delete_module+0x4f/0x70
->   x64_sys_call+0x522/0x9f0
->   do_syscall_64+0x64/0x130
->   entry_SYSCALL_64_after_hwframe+0x4b/0x53
-> RIP: 0033:0x7f8182c6ac8b
-> 
-> Commit 24de1b7b231c ("wifi: ath12k: fix flush failure in recovery
-> scenarios") added the change to decrement the pending packets count
-> in case of recovery which make sense as ah->hw as well all
-> ar's in it are intact during recovery, but during core deinit there
-> is no use in decrementing packets count or waking up the empty waitq
-> as the module is going to be removed also ar's from pending skb's
-> can't be used and the packets should just be released back.
-> 
-> To fix this, avoid accessing ar from skb->cb when driver is being
-> unregistered.
+> Sample output:
+> -------------
+> echo 45 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> HTT_DMAC_RESET_STATS_TLV:
+> reset_count = 1
+> reset_time_ms = 8036717648
+> disengage_time_ms = 8036717648
+> engage_time_ms = 8036717649
+> disengage_count = 1
+> engage_count = 1
+> drain_dest_ring_mask = 0x0
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 > 
-> Fixes: 24de1b7b231c ("wifi: ath12k: fix flush failure in recovery scenarios")
-> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
