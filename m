@@ -4,59 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0395CFA76F
-	for <ath12k@archiver.kernel.org>; Fri,  4 Oct 2024 11:45:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24A67CF8843
+	for <ath12k@archiver.kernel.org>; Fri,  4 Oct 2024 14:59:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:To:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bcfN/Sk6EzwKg01e/BlgvWYaDlEwunudxmcxFg4RYgk=; b=lsSmqrut8U5fzZMxw0RFlroTTW
-	2ziZBHTCOd6JSTfpdKtbVGEfGJCx8xnxs++BAlOoTjeN3SQLUmlcxVwyOjtQjiaP/A3ZHVbJkdt8J
-	Vd6UTiTVScoedAAGDzZzn/Og8YTQKl8lSUA7cZuwrarNVe1BF2s1+qX7JR10IuWWSuRYc1XAuSyS+
-	2FKGm9P5br4kUKAnGL3WXVC6loeI9YZjKSsT4mV+unBBjO3N1wTFwk6HNAELPIY5dnQNnZR63t//5
-	mCeeXcAUnEK/hJSUucVpFQjPH2bilSt5CudMN/4aonVNBhPwZlRJNMTLG6M0GyNBdMb712dvmto3d
-	FFiar34Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=PPkEEubB+Qn7f17MVY71oPegIujKTX2Ut2BdJPkA/4Q=; b=Ta4t5/nBWPbt71PeQVE7BxJlkM
+	RkjDG43yaPcfNnr1bQWqGQE7m19twGdLA8LpXahXyMV/s+hL6w8lrY7VsX2kTeSGAU0jh22cqNczv
+	atb+h3ubpD4RwrcG7twQf562nVrp9PRzJNm7OAQ6x7JGWaPkp2cMSFXPy3VTWURkCNC2vb1uYObs1
+	tD3tCLbkUx7QyYLKJ3g2YCGt834iKH6e0pc4L3ynef7Wz1O6AzoqSYoGMVPyouWI5NF/xTSdklVie
+	hHoRyV8AxC3R+9LLBEtFcMftYl4w+pIQLxef9zvjYflt9A1Od3dWDC6CbjhcRsW+nnQ5QOFdAh5aG
+	5V1Foasg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swgkD-0000000CAKh-27By
+	id 1swjlx-0000000CtpS-3W3A
 	for ath12k@archiver.kernel.org;
-	Fri, 04 Oct 2024 11:45:13 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Fri, 04 Oct 2024 14:59:13 +0000
+Received: from mgamail.intel.com ([192.198.163.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swgkA-0000000CAJA-1q9r
+	id 1swjhN-0000000CsYb-3gjr
 	for ath12k@lists.infradead.org;
-	Fri, 04 Oct 2024 11:45:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C8440A44899
-	for <ath12k@lists.infradead.org>; Fri,  4 Oct 2024 11:45:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59652C4CECE
-	for <ath12k@lists.infradead.org>; Fri,  4 Oct 2024 11:45:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728042308;
-	bh=AsoKt4bSGAaNuoI4WuYmP/lU5GMuqL79Ym+njXbQJEI=;
-	h=From:To:Subject:References:Date:In-Reply-To:From;
-	b=MfaqX+aZSmKlEz+xuYR+y8gSNhfeUqYB8hh6ZAcsnA4HnF7EnolDbO/RkePm7u2Nc
-	 KCD3OyD0v/sm9r4sKHa73NRgi0suactWDhAUSqF7rnAr6KQo6iJxVblg7k0x3YMQxV
-	 DjWZeYJE84apMYC2Tdllh5RNY1czmGRYsJtB39HhYM/MMw7yr+xOd/QGwli8A4u7g8
-	 Jm6pZgc4NNa8+xPTW3sMVoBLJMj6FFvhvStnpXrQ1719kpLc3DXTS/2NeoT4eXyDRc
-	 SglJP3jW/AekLdStbV4g4l3cztXdd/psOOBJtyuINuyCKlY19MXjHPZzACk0KP/GOi
-	 ZIi05kqOh/dkg==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Subject: Re: ath12k-mlo branch ChangeLog
-References: <87wmjbd3jc.fsf@kernel.org>
-Date: Fri, 04 Oct 2024 14:45:06 +0300
-In-Reply-To: <87wmjbd3jc.fsf@kernel.org> (Kalle Valo's message of "Mon, 16 Sep
-	2024 18:25:11 +0300")
-Message-ID: <87ed4w5by5.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+	Fri, 04 Oct 2024 14:54:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1728053670; x=1759589670;
+  h=date:from:to:cc:subject:message-id;
+  bh=9F5AHuu+sbAUK5drU3ocyMY9zJqjwca5NYKdMVDUd3c=;
+  b=dKIC0509KGbeV/2wwinzcYZOzlmWIpbIq9Unno3MI3xi1wBiMHtC5oIE
+   f3jyPZwJ6JT8lzLKI+EEsThTBpH1URSIfFGKI39p8tkqr6zeYdlETrzXO
+   UCPuDZjjUBhQE/u2FKsMp8t/qtwoMZaJ5aZKHFnsBO9+NI4f27O2K5FUs
+   XLgdsdIEk4U5c0JBFJlbxDO8aslF1c6A0IzMsJztYKOsURoduknzWm2d9
+   DtW2g05Sy5mP5liX82tUwNt6uHmuL9FDOUb4zXdB7JmoBToKWcdk8+LHq
+   sbBpD73/N2P67Vkiu0kPNecW1wOUyvRwSo8PYbyjIox29ZVQDX08pjgr+
+   Q==;
+X-CSE-ConnectionGUID: 7wU2P+4kS6imYlnX/7+hGQ==
+X-CSE-MsgGUID: mrykupecSk+gwkCigEHjFA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11215"; a="26746439"
+X-IronPort-AV: E=Sophos;i="6.11,177,1725346800"; 
+   d="scan'208";a="26746439"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Oct 2024 07:54:24 -0700
+X-CSE-ConnectionGUID: xJdWFBdwTt2bMbwnc+JYhg==
+X-CSE-MsgGUID: muVHTYR9Tz+Mdejpp3s9AQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,177,1725346800"; 
+   d="scan'208";a="74719627"
+Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
+  by orviesa009.jf.intel.com with ESMTP; 04 Oct 2024 07:54:23 -0700
+Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1swjhE-0001ms-2y;
+	Fri, 04 Oct 2024 14:54:20 +0000
+Date: Fri, 04 Oct 2024 22:53:54 +0800
+From: kernel test robot <lkp@intel.com>
+To: Kalle Valo <quic_kvalo@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:ath12k-mlo-preparation] BUILD SUCCESS
+ 33d69326329ca2646b5d2d9e990b9e536149d789
+Message-ID: <202410042240.RpgMsMRu-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_044510_638980_4B7C4FDC 
-X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-CacheID: sfid-20241004_075429_964683_71D6CFF1 
+X-CRM114-Status: UNSURE (   3.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -72,256 +84,143 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-= ath12k-mlo-preparation branch =
-
-ath12k-mlo-preparation-202410031115
-
-	* rebase to ath-202409280926
-
-	* new patch:
-
-	wifi: ath12k: add missing lockdep_assert_wiphy() for ath12k_mac_op_ functions
-
-	* take patches from ath12k-mlo branch:
-
-	wifi: cfg80211: check radio iface combination for multi radio per wiphy
-	wifi: mac80211: fix assigning channel in activate links
-
-ath12k-mlo-preparation-202409301854
-
-	* new patch:
-
-	wifi: ath12k: fix use-after-free in ath12k_dp_cc_cleanup()
-
-ath12k-mlo-preparation-202409301516
-
-	* add patchset [v3] wifi: ath12k: switch to using wiphy_lock()
-
-	https://patchwork.kernel.org/project/linux-wireless/cover/20240924092515.1049885-1-kvalo@kernel.org/
-
-ath12k-mlo-preparation-202409241331
-
-	* rebase to ath-202409191620
-
-ath12k-mlo-preparation-202409171414
-
-	* initial import, based on tag ath-202408100722
-
-= ath12k-mlo branch =
-
-ath12k-mlo-202410041141
-
-	* remove struct ath12k_hw::conf_mutex and instead use wiphy_lock()
-
-	* new patch:
-
-	wifi: ath12k: convert struct ath12k::wmi_mgmt_tx_work to struct	wiphy_work
-
-ath12k-mlo-202410031116
-
-	* rebase to ath12k-mlo-preparation-202410031115
-
-ath12k-mlo-202410021750
-
-	* new patches:
-
-	wifi: ath12k: rename mlo_capable_flags to single_chip_mlo_supp
-	wifi: ath12k: add ATH12K_FW_FEATURE_MLO capability firmware feature
-
-ath12k-mlo-202409301855
-
-	* rebase to ath12k-mlo-preparation-202409301854
-
-        * [wifi: ath12k: handle mac_op_flush for MLO] add missing flush_worker() in mac_op_flush
-
-	* [wifi: ath12k: Use mac80211 sta's link_sta instead of deflink]
-	  add '!' to he_cap->has_he test
-
-ath12k-mlo-202409301518
-
-	* rebase to ath12k-mlo-preparation-202409301516
-
-	* convert to ar->scan.vdev_clean_wk use wiphy_work_queue()
-
-	* [wifi: ath12k: handle ath12k_bss_assoc for MLO]
-	  ath12k_bss_assoc(): rcu_dereference_protected() needs to use use
-	  ah->conf_mutex instead ar->conf_mutex
-
-ath12k-mlo-202409241332
-
-	* rebase to ath12k-mlo-preparation-202409241331, few simple conflicts to fix
-
-ath12k-mlo-202409241059
-
-	* new patches:
-
-	wifi: ath12k: remove warning print in htt mlo offset event message
-	wifi: ath12k: add no-op without debug print in WMI Rx event
-	wifi: ath12k: add can_activate_links mac ops
-	wifi: ath12k: symmetrize scan vdev creation and deletion during HW scan
-	wifi: ath12k: handle ath12k_bss_assoc for MLO
-
-	* fixes to existing patches:
-
-	use scan link in case of non-ML vif as well
-	adjust mac_op_sta_state handler for ML STA support
-	fix mac_op_set_key to use active link STA
-
-ath12k-mlo-202409201616
-
-	* [wifi: ath12k: Add helper function to init partner cmem
-	configuration] fix partner device init (Karthikeyan)
-
-	* [wifi: ath12k: Add MLO station state change handling] fix leak
-	of rx_stats memory in ath12k_mac_station_add() (Rameshkumar)
-
-ath12k-mlo-202409191433
-
-	* [wifi: ath12k: use arsta instead of sta] squash patch 'wifi:
-	ath12k: use arsta->addr instead of sta->addr where ever possible'
-	into this one
-
-	* [wifi: ath12k: add multi-link flag in peer create command] zero
-	initialize peer param in vdev create (Aditya)
-
-	* [wifi: ath12k: modify link arvif creation and removal for MLO]
-	clean up unsed ret testing blocks (Aditya)
-
-ath12k-mlo-202409171412
-
-	* [ath12k: Add MLO WMI setup and teardown helper APIs] add 'wifi:'
-	prefix to the title (Jeff)
-
-	* [wifi: ath12k: modify link arvif creation and removal for MLO]
-	spelling fixes (Jeff)
-
-	* [wifi: ath12k: do not return invalid link id for scan link]
-	spelling fixes (Jeff)
-
-	* several fixes from Aditya to multiple different patches:
-
-use arsta->addr instead of sta->addr where ever possible
-fix WMI command formation during peer assoc
-fix WMI command formation during peer create
-fix lockdep_assert_held warning
-fix deadlock issue during station connect
-fix logical error while adding link sta
-fix logical error while creating link sta
-fix ML link peer delete
-remove redundant clear keys logic
-fix logic of ar->supports_6ghz usage during hw register
-
-ath12k-mlo-202409161316
-
-	* [wifi: ath12k: modify ath12k_mac_op_set_key for MLO] 'ret' is
-	used uninitialized
-
-	* [wifi: ath12k: modify link arvif creation and removal for MLO] 'ret' is uninitialized
-
-	* [wifi: ath12k: add primary link for data path operations] ath12k_peer_create(): use rcu_deference() to fix warning:
-
-drivers/net/wireless/ath/ath12k/peer.c:369:23: warning: incorrect type in assignment (different address spaces)
-
-	* [lots of patches] fix most of the checkpatch warnings, except line length
-	warnings. To workaround line length warning I temporarily changed
-	--max-line-length to 110 in ath12k-check.
-
-drivers/net/wireless/ath/ath12k/qmi.c:2020: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/qmi.c:2043: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2043: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2044: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2044: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2045: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2045: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2046: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2046: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2047: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2047: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2097: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2097: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2098: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2098: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2100: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2100: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2101: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2101: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2103: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2103: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2104: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2104: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2106: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2106: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2107: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2107: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2108: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2108: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2109: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2109: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2110: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2110: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2111: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2111: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2112: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2112: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2113: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2113: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2115: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2115: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2116: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2116: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2118: code indent should use tabs where possible
-drivers/net/wireless/ath/ath12k/qmi.c:2118: please, no spaces at the start of a line
-drivers/net/wireless/ath/ath12k/qmi.c:2120: Blank lines aren't necessary before a close brace '}'
-drivers/net/wireless/ath/ath12k/wmi.h:3732: Macros with complex values should be enclosed in parentheses
-drivers/net/wireless/ath/ath12k/wmi.c:2302: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:3372: Please use a blank line after function/struct/union/enum declarations
-drivers/net/wireless/ath/ath12k/mac.c:3394: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:4679: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:4681: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:4710: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:5570: Blank lines aren't necessary after an open brace '{'
-drivers/net/wireless/ath/ath12k/mac.c:6094: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:7726: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:7990: Alignment should match open parenthesis
-drivers/net/wireless/ath/ath12k/mac.c:9680: Alignment should match open parenthesis
-
-	* [wifi: ath12k: htt: remove value field from struct htt_tlv] new patch
-
-ath12k-mlo-202409141647
-
-	* Initial import
-
-= ath12k-mlo-qcn9274 branch =
-
-ath12k-mlo-qcn9274-202410041143
-
-	* rebase to ath12k-mlo-202410041141
-
-ath12k-mlo-qcn9274-202410031118
-
-	* rebase to ath12k-mlo-202410031116
-
-ath12k-mlo-qcn9274-202410021750
-
-	* rebase to ath12k-mlo-202410021750
-
-ath12k-mlo-qcn9274-202409301856
-
-	* rebase to ath12k-mlo-202409301855
-
-ath12k-mlo-qcn9274-202409301519
-
-	* rebase to ath12k-mlo-202409301518
-
-ath12k-mlo-qcn9274-202409241333
-
-	* rebase to ath12k-mlo-202409241332
-
-ath12k-mlo-qcn9274-202409241102
-
-	* rebase to ath12k-mlo-202409241059
-
-ath12k-mlo-qcn9274-202409171417
-
-	* initial import, based on tag ath12k-mlo-202409171412
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-preparation
+branch HEAD: 33d69326329ca2646b5d2d9e990b9e536149d789  wifi: cfg80211: check radio iface combination for multi radio per wiphy
+
+elapsed time: 1592m
+
+configs tested: 123
+configs skipped: 2
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+tested configs:
+alpha                             allnoconfig    gcc-13.3.0
+alpha                            allyesconfig    gcc-13.3.0
+alpha                               defconfig    gcc-13.3.0
+arc                              allmodconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-13.2.0
+arc                              allyesconfig    gcc-13.2.0
+arc                        nsimosci_defconfig    gcc-13.2.0
+arc                   randconfig-001-20241004    gcc-13.2.0
+arc                   randconfig-002-20241004    gcc-13.2.0
+arm                              alldefconfig    gcc-14.1.0
+arm                               allnoconfig    clang-20
+arm                          gemini_defconfig    clang-20
+arm                        multi_v5_defconfig    gcc-14.1.0
+arm                   randconfig-001-20241004    clang-20
+arm                   randconfig-002-20241004    clang-20
+arm                   randconfig-003-20241004    clang-20
+arm                   randconfig-004-20241004    clang-20
+arm64                             allnoconfig    gcc-14.1.0
+arm64                 randconfig-001-20241004    gcc-14.1.0
+arm64                 randconfig-002-20241004    gcc-14.1.0
+arm64                 randconfig-003-20241004    gcc-14.1.0
+arm64                 randconfig-004-20241004    gcc-14.1.0
+csky                              allnoconfig    gcc-14.1.0
+csky                  randconfig-001-20241004    gcc-14.1.0
+csky                  randconfig-002-20241004    gcc-14.1.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon                          allyesconfig    clang-20
+hexagon               randconfig-001-20241004    clang-20
+hexagon               randconfig-002-20241004    clang-20
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20241004    clang-18
+i386        buildonly-randconfig-002-20241004    gcc-12
+i386        buildonly-randconfig-003-20241004    gcc-12
+i386        buildonly-randconfig-004-20241004    gcc-12
+i386        buildonly-randconfig-005-20241004    clang-18
+i386        buildonly-randconfig-006-20241004    clang-18
+i386                                defconfig    clang-18
+i386                  randconfig-001-20241004    gcc-12
+i386                  randconfig-002-20241004    clang-18
+i386                  randconfig-003-20241004    gcc-12
+i386                  randconfig-004-20241004    gcc-12
+i386                  randconfig-005-20241004    gcc-12
+i386                  randconfig-006-20241004    gcc-12
+i386                  randconfig-011-20241004    clang-18
+i386                  randconfig-012-20241004    clang-18
+i386                  randconfig-013-20241004    clang-18
+i386                  randconfig-014-20241004    gcc-12
+i386                  randconfig-015-20241004    clang-18
+i386                  randconfig-016-20241004    clang-18
+loongarch                        allmodconfig    gcc-14.1.0
+loongarch                         allnoconfig    gcc-14.1.0
+loongarch             randconfig-001-20241004    gcc-14.1.0
+loongarch             randconfig-002-20241004    gcc-14.1.0
+m68k                             allmodconfig    gcc-14.1.0
+m68k                              allnoconfig    gcc-14.1.0
+m68k                             allyesconfig    gcc-14.1.0
+m68k                        mvme16x_defconfig    gcc-14.1.0
+microblaze                       allmodconfig    gcc-14.1.0
+microblaze                        allnoconfig    gcc-14.1.0
+microblaze                       allyesconfig    gcc-14.1.0
+mips                              allnoconfig    gcc-14.1.0
+mips                           jazz_defconfig    clang-20
+mips                    maltaup_xpa_defconfig    gcc-13.2.0
+nios2                             allnoconfig    gcc-14.1.0
+nios2                 randconfig-001-20241004    gcc-14.1.0
+nios2                 randconfig-002-20241004    gcc-14.1.0
+openrisc                          allnoconfig    gcc-14.1.0
+openrisc                         allyesconfig    gcc-14.1.0
+openrisc                            defconfig    gcc-14.1.0
+parisc                           allmodconfig    gcc-14.1.0
+parisc                            allnoconfig    gcc-14.1.0
+parisc                           allyesconfig    gcc-14.1.0
+parisc                              defconfig    gcc-14.1.0
+parisc                randconfig-001-20241004    gcc-14.1.0
+parisc                randconfig-002-20241004    gcc-14.1.0
+powerpc                          allmodconfig    gcc-14.1.0
+powerpc                           allnoconfig    gcc-14.1.0
+powerpc                          allyesconfig    clang-20
+powerpc                 mpc836x_rdk_defconfig    clang-20
+powerpc                  mpc866_ads_defconfig    clang-20
+powerpc               randconfig-001-20241004    clang-20
+powerpc               randconfig-002-20241004    gcc-14.1.0
+powerpc               randconfig-003-20241004    clang-20
+powerpc                     tqm8560_defconfig    gcc-14.1.0
+powerpc                      tqm8xx_defconfig    clang-20
+powerpc64             randconfig-001-20241004    gcc-14.1.0
+powerpc64             randconfig-002-20241004    clang-16
+powerpc64             randconfig-003-20241004    gcc-14.1.0
+riscv                            allmodconfig    clang-20
+riscv                             allnoconfig    gcc-14.1.0
+riscv                            allyesconfig    clang-20
+riscv                               defconfig    clang-20
+s390                             allmodconfig    clang-20
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.1.0
+s390                                defconfig    clang-20
+sh                               allmodconfig    gcc-14.1.0
+sh                                allnoconfig    gcc-14.1.0
+sh                               allyesconfig    gcc-14.1.0
+sh                                  defconfig    gcc-14.1.0
+sh                               j2_defconfig    gcc-14.1.0
+sh                          rsk7264_defconfig    gcc-14.1.0
+sh                          sdk7786_defconfig    gcc-14.1.0
+sh                           se7751_defconfig    gcc-14.1.0
+sh                   sh7770_generic_defconfig    gcc-14.1.0
+sparc                            allmodconfig    gcc-14.1.0
+sparc64                             defconfig    gcc-14.1.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-17
+um                               allyesconfig    gcc-12
+um                                  defconfig    clang-20
+um                             i386_defconfig    gcc-12
+um                           x86_64_defconfig    clang-15
+x86_64                            allnoconfig    clang-18
+x86_64                           allyesconfig    clang-18
+x86_64                              defconfig    gcc-11
+x86_64                                  kexec    clang-18
+x86_64                               rhel-8.3    gcc-12
+x86_64                          rhel-8.3-rust    clang-18
+xtensa                            allnoconfig    gcc-14.1.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
