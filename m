@@ -4,63 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94F8ACF8862
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D37D9CF886F
 	for <ath12k@archiver.kernel.org>; Sat,  5 Oct 2024 11:15:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=zxQkgdJjKlFWJ/KlRWoJTz2m3MWx1hfG7PcrvAkcK+I=; b=l0MzRFtFHARNDAwKg+nqluGwcJ
-	aBkWuJmJiPk9BWlB7AdMWi5GcFO6H7DWfoF/Ws5b4yXncQlIMxyyiOjbgnBojfJUU3PkaCeD733Bt
-	WO122Jpe/o9uO5nAw9Hav6LYOSs8+UGNX7aZ98Y8O7m4jshCnj+4f2QWGhpw+izr83lNTNPc1ShAB
-	iHeoGumaNummOdXqDV1W1O22SGElzmDd1g6i4NhNNchTIQE+jrAPuFcBKSOF7J0ojyUcVYxq+PqRO
-	n7g+mGNd6PmWwqJhP6oF92LP9RMLyBS6t358VjnFhqygtxCpEL1OvGIJ663cYZJK532konHE+3QIt
-	GIu3XtYw==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=/9sZsbd6xMKJcKO0QaZnAJbd+VPjeNDDwRWoJVT1+2s=; b=ss89REHfrCsl8lenDgqicdRJFA
+	BqVtotOz/A67ZwS+nB/EBnPCEawzHZ8TgN20lUt3jFtqTQ6XWxuFR6qaVSE+bYoWVFdqqiXF90O4e
+	sn17fGgukRquR9muA/FRCIDvyWU4oT7Sh4BeyWOfS6MEH9oG+igtwum/Dd1nlomQ/865avZbP6huw
+	dH+oW7gfkvrn38jmwpv6ZkarH9935atHCPwzeVz62bwTeiGI7nkyiXlqPMCdVOY7KYWmjVjya1gza
+	xsxUMpF4CcVId7m86VyRWD1UyIrOoJW4mM34b2RC86CFFPwoXTFYb1Bp67nPPI7Lv3ZUrlBnDzln7
+	xj+9F+rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sx2kz-0000000FG1o-0cTj
+	id 1sx2kz-0000000FG2B-2QmP
 	for ath12k@archiver.kernel.org;
 	Sat, 05 Oct 2024 11:15:29 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sx2kv-0000000FG0M-2t7w
+	id 1sx2kx-0000000FG0g-1xfO
 	for ath12k@lists.infradead.org;
-	Sat, 05 Oct 2024 11:15:27 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 495B1O4i024108;
-	Sat, 5 Oct 2024 11:15:25 GMT
+	Sat, 05 Oct 2024 11:15:28 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 495AfNit020926;
+	Sat, 5 Oct 2024 11:15:27 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=zxQkgdJjKlFWJ/KlRWoJTz
-	2m3MWx1hfG7PcrvAkcK+I=; b=kcmP2DJPgJsvnQnHzlif9JHMW0gtSki6S3kjL+
-	T8rKSbQWnghghskha+uqa/jskqR4/WmVaMj709Uoy+mTdJyoGGtGM2vQNICa9RDs
-	RjAjxYl6+m/QvqOnhIxb5/r27iq4OBJC5irTbWir3SDx4GsyV/kdRfCjJwO6Vqa1
-	aNuPtkes4P2POFy1jazu9zNw71O9b7TVJM0Yx1Ao+h3z71/MkZiKGnG7YYsrLyOp
-	caTcWBBFPSeXLN3GXz2uf07w+llkUnN5+pq8B8rDll7GaPryq6Ar92lL9SR4yLSR
-	sHhB3rkuRhUxzlbf9NtQZqBL+gQscT4s6/G+JuJFIxwZtqoA==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xr5genq-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/9sZsbd6xMKJcKO0QaZnAJbd+VPjeNDDwRWoJVT1+2s=; b=oQDIm6AZepxdZoxT
+	kKXIqUkX4LzOg/OL/pT8FOZUVhlytGWgyq7SJWiuIB9myAlCvDuwQm1uDwzdLhda
+	qYT1k5fzoq0xHE8gONLV2IGXqMoLGzRlEKnBd8rIs81eLhqzUuVi9D1vvLUnh9zG
+	frhWa1ZQ2PIKMt0nuoDLEUQQ9Dg+tYUeQGWVD8bL1cSy1mIA258/A3jU8FWNyT/1
+	sawQqVRsOqdrugFmrWE2fxtWJgJNLXCamajX9zPMcBti7PdN5MjgwipUddrFAoH+
+	zzAvqTfUEgzbSe+dUmr3GeE/absaUyGKBNu1wNai/M+LMItJNDV3SMW3qGQ6ntQ5
+	wyuqcg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xs80evm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 05 Oct 2024 11:15:24 +0000 (GMT)
+	Sat, 05 Oct 2024 11:15:26 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 495BFORL007078
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 495BFQBr018584
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 5 Oct 2024 11:15:24 GMT
+	Sat, 5 Oct 2024 11:15:26 GMT
 Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sat, 5 Oct 2024 04:15:22 -0700
+ 15.2.1544.9; Sat, 5 Oct 2024 04:15:24 -0700
 From: Roopni Devanathan <quic_rdevanat@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
-        Roopni Devanathan
-	<quic_rdevanat@quicinc.com>
-Subject: [PATCH v2 0/2] wifi: ath12k: Support pdev Rate, Scheduled Algorithm Stats
-Date: Sat, 5 Oct 2024 16:45:04 +0530
-Message-ID: <20241005111506.3361688-1-quic_rdevanat@quicinc.com>
+        Sidhanta Sahu
+	<quic_sidhanta@quicinc.com>,
+        Roopni Devanathan <quic_rdevanat@quicinc.com>
+Subject: [PATCH v2 1/2] wifi: ath12k: Support Pdev Scheduled Algorithm Stats
+Date: Sat, 5 Oct 2024 16:45:05 +0530
+Message-ID: <20241005111506.3361688-2-quic_rdevanat@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241005111506.3361688-1-quic_rdevanat@quicinc.com>
+References: <20241005111506.3361688-1-quic_rdevanat@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -69,20 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: rCTUhQ2vdP7aV1ms2fEujuK2zRHxrsvd
-X-Proofpoint-ORIG-GUID: rCTUhQ2vdP7aV1ms2fEujuK2zRHxrsvd
+X-Proofpoint-GUID: _hj9IEVhqS0IkEU5qjTSCxWEh5WhVstq
+X-Proofpoint-ORIG-GUID: _hj9IEVhqS0IkEU5qjTSCxWEh5WhVstq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
- clxscore=1015 mlxlogscore=783 priorityscore=1501 impostorscore=0
- adultscore=0 mlxscore=0 phishscore=0 malwarescore=0 lowpriorityscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 spamscore=0
+ priorityscore=1501 phishscore=0 mlxlogscore=999 clxscore=1015
+ impostorscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0
+ suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2409260000 definitions=main-2410050083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241005_041525_758768_A1B959F0 
-X-CRM114-Status: UNSURE (   6.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241005_041527_545328_D0FEC8B1 
+X-CRM114-Status: GOOD (  13.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,45 +100,176 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add support to request HTT stats type 49 and 51 from firmware. These
-stats give scheduled algorithm stats and BE OFDMA rate of pdev, respectively.
+From: Sidhanta Sahu <quic_sidhanta@quicinc.com>
 
-v2:
- - Modified the API print_array_to_buf_v2() to print_array_to_buf_index().
- - Updated dependencies.
+Add support to request scheduled algorithm stats from firmware
+through HTT stats type 49. These stats give information such
+as count of DLOFDMA enabled, disabled, probed and monitored
+based on rate and latency, consecutive number of MPDUs tried
+and succeeded, etc.
 
-Depends-on:
-[PATCH v2] wifi: ath12k: Modify print_array_to_buf() to support arrays with 1-based semantics
-Link: https://lore.kernel.org/all/20241004085915.1788951-1-quic_rdevanat@quicinc.com/
+Note: WCN7850 firmware version -
+WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+does not support HTT stats type 49.
 
-[PATCH v2 0/4] wifi: ath12k: Support Ring, SFM, Transmit MU, SelfGen stats, CCA stats
-Link: https://lore.kernel.org/ath12k/20241005101816.3314728-1-quic_rdevanat@quicinc.com/
+Sample output:
+-------------
+echo 49 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+HTT_PDEV_SCHED_ALGO_TLV:
+mac_id = 0
+rate_based_dlofdma_enabled_count =  0:0, 1:0, 2:0, 3:0
+rate_based_dlofdma_disabled_count =  0:0, 1:0, 2:0, 3:0
+rate_based_dlofdma_probing_count =  0:0, 1:0, 2:0, 3:0
+rate_based_dlofdma_monitoring_count =  0:0, 1:0, 2:0, 3:0
+chan_acc_lat_based_dlofdma_enabled_count =  0:0, 1:0, 2:0, 3:0
+chan_acc_lat_based_dlofdma_disabled_count =  0:0, 1:0, 2:0, 3:0
+chan_acc_lat_based_dlofdma_monitoring_count =  0:0, 1:0, 2:0, 3:0
+downgrade_to_dl_su_ru_alloc_fail =  0:0, 1:0, 2:0, 3:0
+candidate_list_single_user_disable_ofdma =  0:0, 1:0, 2:0, 3:0
+dl_cand_list_dropped_high_ul_qos_weight =  0:0, 1:0, 2:0, 3:0
+ax_dlofdma_disabled_due_to_pipelining =  0:0, 1:0, 2:0, 3:0
+dlofdma_disabled_su_only_eligible =  0:0, 1:0, 2:0, 3:0
+dlofdma_disabled_consec_no_mpdus_tried =  0:0, 1:0, 2:0, 3:0
+dlofdma_disabled_consec_no_mpdus_success =  0:0, 1:0, 2:0, 3:0
 
-[PATCH v2] wifi: ath12k: Support Pdev OBSS Stats
-Link: https://lore.kernel.org/ath12k/20241005104206.3327143-1-quic_rdevanat@quicinc.com/
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
 
-[PATCH v2] wifi: ath12k: Support DMAC Reset Stats
-Link: https://lore.kernel.org/ath12k/20241005105207.3350790-1-quic_rdevanat@quicinc.com/
+Signed-off-by: Sidhanta Sahu <quic_sidhanta@quicinc.com>
+Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+---
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 67 +++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 20 ++++++
+ 2 files changed, 87 insertions(+)
 
-Pradeep Kumar Chitrapu (1):
-  wifi: ath12k: Support BE OFDMA Pdev Rate Stats
-
-Sidhanta Sahu (1):
-  wifi: ath12k: Support Pdev Scheduled Algorithm Stats
-
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 162 ++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   |  59 +++++++
- 2 files changed, 221 insertions(+)
-
-
-base-commit: 8ed36fe71fd60c851540839b105fd1fddc870c61
-prerequisite-patch-id: faf46024c8b5c094e201d392109e7f94dcecdd49
-prerequisite-patch-id: c4662f64bc7be141322b7e37145e52ea4ab4e182
-prerequisite-patch-id: 4d37990775694f110ce3e87096231fe8855f09f5
-prerequisite-patch-id: 5959fd18b497d29cad98d36dcce59a876ffe8ca2
-prerequisite-patch-id: ecac67f6fce1dd4d5089dbc3da840e311f6a7218
-prerequisite-patch-id: 0537ae604d2617e42bef13bfb791aad4d11bf6e1
-prerequisite-patch-id: da5a4e5cc3097994bfcba4b37680c90b0675ccf9
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index 2debb253185c..b4d8fc0760ab 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -2540,6 +2540,70 @@ ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	stats_req->buf_len = len;
+ }
+ 
++static void
++ath12k_htt_print_pdev_sched_algo_ofdma_stats_tlv(const void *tag_buf, u16 tag_len,
++						 struct debug_htt_stats_req *stats_req)
++{
++	const struct ath12k_htt_pdev_sched_algo_ofdma_stats_tlv *htt_stats_buf = tag_buf;
++	u8 *buf = stats_req->buf;
++	u32 len = stats_req->buf_len;
++	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
++	u32 mac_id_word;
++
++	if (tag_len < sizeof(*htt_stats_buf))
++		return;
++
++	mac_id_word = le32_to_cpu(htt_stats_buf->mac_id__word);
++
++	len += scnprintf(buf + len, buf_len - len, "HTT_PDEV_SCHED_ALGO_TLV:\n");
++	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
++			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
++	len += print_array_to_buf(buf, len, "rate_based_dlofdma_enabled_count",
++				  htt_stats_buf->rate_based_dlofdma_enabled_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "rate_based_dlofdma_disabled_count",
++				  htt_stats_buf->rate_based_dlofdma_disabled_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "rate_based_dlofdma_probing_count",
++				  htt_stats_buf->rate_based_dlofdma_disabled_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "rate_based_dlofdma_monitoring_count",
++				  htt_stats_buf->rate_based_dlofdma_monitor_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "chan_acc_lat_based_dlofdma_enabled_count",
++				  htt_stats_buf->chan_acc_lat_based_dlofdma_enabled_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "chan_acc_lat_based_dlofdma_disabled_count",
++				  htt_stats_buf->chan_acc_lat_based_dlofdma_disabled_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "chan_acc_lat_based_dlofdma_monitoring_count",
++				  htt_stats_buf->chan_acc_lat_based_dlofdma_monitor_cnt,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "downgrade_to_dl_su_ru_alloc_fail",
++				  htt_stats_buf->downgrade_to_dl_su_ru_alloc_fail,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "candidate_list_single_user_disable_ofdma",
++				  htt_stats_buf->candidate_list_single_user_disable_ofdma,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "dl_cand_list_dropped_high_ul_qos_weight",
++				  htt_stats_buf->dl_cand_list_dropped_high_ul_qos_weight,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "ax_dlofdma_disabled_due_to_pipelining",
++				  htt_stats_buf->ax_dlofdma_disabled_due_to_pipelining,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "dlofdma_disabled_su_only_eligible",
++				  htt_stats_buf->dlofdma_disabled_su_only_eligible,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "dlofdma_disabled_consec_no_mpdus_tried",
++				  htt_stats_buf->dlofdma_disabled_consec_no_mpdus_tried,
++				  ATH12K_HTT_NUM_AC_WMM, "\n");
++	len += print_array_to_buf(buf, len, "dlofdma_disabled_consec_no_mpdus_success",
++				  htt_stats_buf->dlofdma_disabled_consec_no_mpdus_success,
++				  ATH12K_HTT_NUM_AC_WMM, "\n\n");
++
++	stats_req->buf_len = len;
++}
++
+ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
+ 					  u16 tag, u16 len, const void *tag_buf,
+ 					  void *user_data)
+@@ -2716,6 +2780,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
+ 	case HTT_STATS_DMAC_RESET_STATS_TAG:
+ 		ath12k_htt_print_dmac_reset_stats_tlv(tag_buf, len, stats_req);
+ 		break;
++	case HTT_STATS_PDEV_SCHED_ALGO_OFDMA_STATS_TAG:
++		ath12k_htt_print_pdev_sched_algo_ofdma_stats_tlv(tag_buf, len, stats_req);
++		break;
+ 	default:
+ 		break;
+ 	}
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+index 120615fbe853..ae738396b10a 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
+@@ -136,6 +136,7 @@ enum ath12k_dbg_htt_ext_stats_type {
+ 	ATH12K_DBG_HTT_EXT_STATS_PDEV_CCA_STATS		= 19,
+ 	ATH12K_DBG_HTT_EXT_STATS_PDEV_OBSS_PD_STATS	= 23,
+ 	ATH12K_DBG_HTT_EXT_STATS_SOC_ERROR		= 45,
++	ATH12K_DBG_HTT_EXT_STATS_PDEV_SCHED_ALGO	= 49,
+ 
+ 	/* keep this last */
+ 	ATH12K_DBG_HTT_NUM_EXT_STATS,
+@@ -198,6 +199,7 @@ enum ath12k_dbg_htt_tlv_tag {
+ 	HTT_STATS_TX_SELFGEN_BE_STATS_TAG		= 138,
+ 	HTT_STATS_TX_SELFGEN_BE_SCHED_STATUS_STATS_TAG	= 139,
+ 	HTT_STATS_DMAC_RESET_STATS_TAG			= 155,
++	HTT_STATS_PDEV_SCHED_ALGO_OFDMA_STATS_TAG	= 165,
+ 
+ 	HTT_STATS_MAX_TAG,
+ };
+@@ -1063,4 +1065,22 @@ struct ath12k_htt_dmac_reset_stats_tlv {
+ 	__le32 drain_dest_ring_mask;
+ } __packed;
+ 
++struct ath12k_htt_pdev_sched_algo_ofdma_stats_tlv {
++	__le32 mac_id__word;
++	__le32 rate_based_dlofdma_enabled_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 rate_based_dlofdma_disabled_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 rate_based_dlofdma_probing_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 rate_based_dlofdma_monitor_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 chan_acc_lat_based_dlofdma_enabled_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 chan_acc_lat_based_dlofdma_disabled_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 chan_acc_lat_based_dlofdma_monitor_cnt[ATH12K_HTT_NUM_AC_WMM];
++	__le32 downgrade_to_dl_su_ru_alloc_fail[ATH12K_HTT_NUM_AC_WMM];
++	__le32 candidate_list_single_user_disable_ofdma[ATH12K_HTT_NUM_AC_WMM];
++	__le32 dl_cand_list_dropped_high_ul_qos_weight[ATH12K_HTT_NUM_AC_WMM];
++	__le32 ax_dlofdma_disabled_due_to_pipelining[ATH12K_HTT_NUM_AC_WMM];
++	__le32 dlofdma_disabled_su_only_eligible[ATH12K_HTT_NUM_AC_WMM];
++	__le32 dlofdma_disabled_consec_no_mpdus_tried[ATH12K_HTT_NUM_AC_WMM];
++	__le32 dlofdma_disabled_consec_no_mpdus_success[ATH12K_HTT_NUM_AC_WMM];
++} __packed;
++
+ #endif
 -- 
 2.25.1
 
