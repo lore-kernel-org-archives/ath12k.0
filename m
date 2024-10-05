@@ -4,85 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 277D2CF8862
-	for <ath12k@archiver.kernel.org>; Sat,  5 Oct 2024 11:27:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 257EBCFB43C
+	for <ath12k@archiver.kernel.org>; Sat,  5 Oct 2024 22:02:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=5HOkquft4CO27nngsUaabGKpL6aScG6VxhIedhbKSZU=; b=VrAHPocApjD/IQvqplhL15W/Ao
-	U5bd1AOQKMVXspfKuM40X+iUl90sNYoWnztcQUVgrTcc/UhE9Xw+a+jfFRblmd+bnSVuONn4Xv6Eg
-	LygOI9c6jVvpUzc0cMXt4YpxIGovthqq7q+E5zEn+CLvma8ES54vaVMFNb/czn1BPFPf0JJBwixpC
-	FuY5yn5eILR3ANVfix0uzbvOMygrFDG+ESwx5MaXcRkRZ1OTr0QrZReMJUpmHXLhE89T0nuRMPlDl
-	nlbIpEzjeNkAj2CLXNaNojXthj5D7cVt+G7L5GNPQCv/BiQVf4VzjwK61HjpETleR/n4DFRzADjLF
-	4DoVPfnA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=upiCy4XCLf9EqMXSIZD/d4bidDwoLphVGmu+DXVkZDg=; b=m6FXHamn3+8FYld4sko0A9ANho
+	u7fLceQY/X+x8+KoSTa6tlMHjt3V8Ww+7wyIyGo7/1OmmTNXpx8IwcFVGvmRHWkLh4HNB/H60RYFx
+	B0QcDOoT0MeMcsaJVm9I6SPyyaKUiPcOyKFU9TdBzcn0NpPaCsr+G5wmWxP+sxKYXosl97Z5Lrb/j
+	JgB7eVfGamIzkk3DvXiO0ktXcPgJ0bI5x8AfoWEo7lOfZjzLA3/WdyNZp01CFcRbndPXP9yLF7FCa
+	yArs+ZzeERJ6v0VbXUgfiqSeMT01KTtWAzP1s7Xo08IgUTE32wDbkx66SThE32LFhD+15GARxpOHY
+	vbL0RHug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sx2wc-0000000FGyp-3ZM0
+	id 1sxCqt-0000000G2FR-2ze6
 	for ath12k@archiver.kernel.org;
-	Sat, 05 Oct 2024 11:27:30 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Sat, 05 Oct 2024 22:02:15 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sx2wa-0000000FGxp-1Qu3
+	id 1sxBlY-0000000Fwns-3SQL
+	for ath12k@bombadil.infradead.org;
+	Sat, 05 Oct 2024 20:52:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Message-ID:Subject:Cc:To:From:Date:
+	Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:In-Reply-To:References;
+	bh=upiCy4XCLf9EqMXSIZD/d4bidDwoLphVGmu+DXVkZDg=; b=H1FxXxiIays1S497z/kBsPJWjI
+	EA8242uXLawoKqgda1IytTLpWahihOw1JBRCkgInLl5Xcrhn2tiKP8igYgI/Uz4GmSJznV1pN/XBe
+	ToRsRyHdFL1nhh6iY9OLOieIkN5lFmkqAmdSAjeR3RDfKtVsAovzIAchPBeGWUgJ3YyqGpQO//Wuo
+	EWE9TRG8+p4pPkiEFOh4lEzSrX8DC6cfA8T7C1BSzj7fov0nu+GRXwjqVA+WT1fnE+fQTX5S7cEc8
+	4uHhmsDwQEb9/dqi/3v/rnwoeaQAbSwm2jnHaobsFzIpvOwLHXgMcT5mwSoU74eoDJwoeGd3wMNeE
+	5Fp2DNgw==;
+Received: from mgamail.intel.com ([198.175.65.20])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1sxBlU-000000047HS-2gaE
 	for ath12k@lists.infradead.org;
-	Sat, 05 Oct 2024 11:27:30 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 495AwgMc028719;
-	Sat, 5 Oct 2024 11:27:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=5HOkquft4CO27nngsUaabG
-	KpL6aScG6VxhIedhbKSZU=; b=bRzQKn39Rbs7pQiPPLMlqBrNGiMD1AtvNzRqFE
-	NBVARz6BqSKeHmUulyds010H50V5yUl/fXqbRpWwSiFIp/ApM4aoawJZ1YbTYhfa
-	5cCmjkJwRZIMJ3IqSuMwfm+xm/Kl3Z6X3+mjrv7F9H4bnqbJZ1b5KuivLfdjlhKX
-	cPWXJ+D29IUFMnhpWIJH5fug/CKc8uBU5dUt38EoEKKyM1AwwgN87mV5hvgcOsMC
-	t6PpVL33u25jVX5TvClhi1E72k6QTttXcDcxM5dUbvpSjdSpvaAXRbkTP+zwG3J0
-	EOWiy+hz7TfBgmEJp9Wh4Hq7/p66gcRGgN3tGM1/8pTC15fQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xq9rfcf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 05 Oct 2024 11:27:27 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 495BRQpl020172
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 5 Oct 2024 11:27:26 GMT
-Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sat, 5 Oct 2024 04:27:24 -0700
-From: Roopni Devanathan <quic_rdevanat@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Sidhanta Sahu
-	<quic_sidhanta@quicinc.com>,
-        Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: [PATCH] wifi: ath12k: Support MBSSID Control Frame Stats
-Date: Sat, 5 Oct 2024 16:56:51 +0530
-Message-ID: <20241005112651.3379404-1-quic_rdevanat@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: dPyMeUpnwTgO8_G5Wg9kkhB4h8aivFli
-X-Proofpoint-GUID: dPyMeUpnwTgO8_G5Wg9kkhB4h8aivFli
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
- spamscore=0 lowpriorityscore=0 priorityscore=1501 impostorscore=0
- bulkscore=0 suspectscore=0 malwarescore=0 adultscore=0 mlxlogscore=999
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410050085
+	Sat, 05 Oct 2024 20:52:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1728161557; x=1759697557;
+  h=date:from:to:cc:subject:message-id;
+  bh=3L1z4AF5CIJPYetoTmkrx9aymVI25u5LixFCyaZBI0Y=;
+  b=kFaoYpsd9dw+N6gZ8OsuWw+cF8obm7iWAcKkG6restqiSpKJgkz9JxGu
+   3ilRAz0JA6hbcH3D9bS0YSQIQ9Dnr/+ovzb4baWPnafm5NuhjPOcQj4ZO
+   TDfLTKS6kp5XSUQoyyRmfru0kk9iTL2f+pK+Lgb4pz9Rotu0Pica3ypgr
+   ISofFjbRn8JKEViowaGWNYR6GiXzsFYAF9Pst1++lvfZtu71zTQiBDVtF
+   beSj6moSAf4XBjIY2KdetUSfRwXuBoo1syONqKkdATJ9pVLAVSMBJwhbQ
+   z90yiu6KiXkZQM4aYVWfChSOdaONRKpPSUieBa8xooxsYB0LI3P8KVE76
+   w==;
+X-CSE-ConnectionGUID: ExmWh+R1QY6fPu5KDBrXHg==
+X-CSE-MsgGUID: AshcwGnPRo2zAONyHD9wSg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11216"; a="27166924"
+X-IronPort-AV: E=Sophos;i="6.11,181,1725346800"; 
+   d="scan'208";a="27166924"
+Received: from orviesa005.jf.intel.com ([10.64.159.145])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Oct 2024 13:52:28 -0700
+X-CSE-ConnectionGUID: svVDypudSTuDkeg4/cKyzA==
+X-CSE-MsgGUID: z2rRKudRRxSoa/zNrwwy8g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,181,1725346800"; 
+   d="scan'208";a="79828300"
+Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
+  by orviesa005.jf.intel.com with ESMTP; 05 Oct 2024 13:52:27 -0700
+Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1sxBlI-0003Le-2Q;
+	Sat, 05 Oct 2024 20:52:24 +0000
+Date: Sun, 06 Oct 2024 04:51:56 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ c8b4c8253a14f28f97dc7d6130d69632b7207e04
+Message-ID: <202410060440.a0PiEnCB-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241005_042728_423614_4DE53158 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20241005_215237_373744_E6D1FB50 
+X-CRM114-Status: UNSURE (   3.11  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,172 +99,148 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sidhanta Sahu <quic_sidhanta@quicinc.com>
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: c8b4c8253a14f28f97dc7d6130d69632b7207e04  Merge branch 'pending' into main-pending
 
-Add support to request MBSSID control frame stats from firmware
-through HTT stats type 54. These stats give information such as
-basic trigger, BSR trigger, multi-user RTS and uplink MUMIMO
-trigger within and across various BSS.
+elapsed time: 1650m
 
-Note: WCN7850 firmware version -
-WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4 does not
-support HTT stats type 54.
+configs tested: 128
+configs skipped: 4
 
-Sample output:
--------------
-echo 54 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-HTT_MBSSID_CTRL_FRAME_STATS_TLV:
-mac_id = 0
-basic_trigger_across_bss = 0
-basic_trigger_within_bss = 0
-bsr_trigger_across_bss = 0
-bsr_trigger_within_bss = 0
-mu_rts_across_bss = 0
-mu_rts_within_bss = 0
-ul_mumimo_trigger_across_bss = 0
-ul_mumimo_trigger_within_bss = 0
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
+tested configs:
+alpha                             allnoconfig    gcc-13.3.0
+alpha                            allyesconfig    gcc-13.3.0
+alpha                               defconfig    gcc-13.3.0
+arc                              allmodconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-13.2.0
+arc                              allyesconfig    gcc-13.2.0
+arc                                 defconfig    gcc-13.2.0
+arc                   randconfig-001-20241006    gcc-13.2.0
+arc                   randconfig-002-20241006    gcc-13.2.0
+arc                           tb10x_defconfig    gcc-13.2.0
+arm                              allmodconfig    gcc-14.1.0
+arm                               allnoconfig    clang-20
+arm                              allyesconfig    gcc-14.1.0
+arm                       aspeed_g5_defconfig    gcc-14.1.0
+arm                                 defconfig    clang-14
+arm                       multi_v4t_defconfig    clang-20
+arm                   randconfig-001-20241006    gcc-14.1.0
+arm                   randconfig-002-20241006    clang-14
+arm64                            allmodconfig    clang-20
+arm64                             allnoconfig    gcc-14.1.0
+arm64                               defconfig    gcc-14.1.0
+csky                              allnoconfig    gcc-14.1.0
+csky                                defconfig    gcc-14.1.0
+hexagon                          alldefconfig    clang-15
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon                          allyesconfig    clang-20
+hexagon                             defconfig    clang-20
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20241005    clang-18
+i386        buildonly-randconfig-002-20241005    clang-18
+i386        buildonly-randconfig-003-20241005    clang-18
+i386        buildonly-randconfig-004-20241005    clang-18
+i386        buildonly-randconfig-005-20241005    gcc-12
+i386        buildonly-randconfig-006-20241005    gcc-12
+i386                                defconfig    clang-18
+i386                  randconfig-001-20241005    gcc-11
+i386                  randconfig-002-20241005    clang-18
+i386                  randconfig-003-20241005    gcc-12
+i386                  randconfig-004-20241005    clang-18
+i386                  randconfig-005-20241005    clang-18
+i386                  randconfig-006-20241005    clang-18
+i386                  randconfig-011-20241005    gcc-12
+i386                  randconfig-012-20241005    clang-18
+i386                  randconfig-013-20241005    clang-18
+i386                  randconfig-014-20241005    gcc-12
+i386                  randconfig-015-20241005    gcc-12
+i386                  randconfig-016-20241005    gcc-12
+loongarch                        allmodconfig    gcc-14.1.0
+loongarch                         allnoconfig    gcc-14.1.0
+loongarch                           defconfig    gcc-14.1.0
+m68k                             allmodconfig    gcc-14.1.0
+m68k                              allnoconfig    gcc-14.1.0
+m68k                             allyesconfig    gcc-14.1.0
+m68k                                defconfig    gcc-14.1.0
+microblaze                       allmodconfig    gcc-14.1.0
+microblaze                        allnoconfig    gcc-14.1.0
+microblaze                       allyesconfig    gcc-14.1.0
+microblaze                          defconfig    gcc-14.1.0
+mips                              allnoconfig    gcc-14.1.0
+mips                          ath79_defconfig    gcc-14.1.0
+mips                         rt305x_defconfig    clang-20
+nios2                             allnoconfig    gcc-14.1.0
+nios2                               defconfig    gcc-14.1.0
+openrisc                          allnoconfig    gcc-14.1.0
+openrisc                         allyesconfig    gcc-14.1.0
+openrisc                            defconfig    gcc-14.1.0
+parisc                           allmodconfig    gcc-14.1.0
+parisc                            allnoconfig    gcc-14.1.0
+parisc                           allyesconfig    gcc-14.1.0
+parisc                              defconfig    gcc-14.1.0
+parisc64                            defconfig    gcc-14.1.0
+powerpc                          allmodconfig    gcc-14.1.0
+powerpc                           allnoconfig    gcc-14.1.0
+powerpc                          allyesconfig    clang-20
+riscv                            allmodconfig    clang-20
+riscv                             allnoconfig    gcc-14.1.0
+riscv                            allyesconfig    clang-20
+riscv                               defconfig    clang-20
+s390                             allmodconfig    clang-20
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.1.0
+s390                                defconfig    clang-20
+sh                               allmodconfig    gcc-14.1.0
+sh                                allnoconfig    gcc-14.1.0
+sh                               allyesconfig    gcc-14.1.0
+sh                                  defconfig    gcc-14.1.0
+sparc                            allmodconfig    gcc-14.1.0
+sparc64                             defconfig    gcc-14.1.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-17
+um                               allyesconfig    gcc-12
+um                                  defconfig    clang-20
+um                             i386_defconfig    gcc-12
+um                           x86_64_defconfig    clang-15
+x86_64                            allnoconfig    clang-18
+x86_64                           allyesconfig    clang-18
+x86_64      buildonly-randconfig-001-20241006    clang-18
+x86_64      buildonly-randconfig-002-20241006    gcc-12
+x86_64      buildonly-randconfig-003-20241006    gcc-12
+x86_64      buildonly-randconfig-004-20241006    clang-18
+x86_64      buildonly-randconfig-005-20241006    gcc-12
+x86_64      buildonly-randconfig-006-20241006    gcc-12
+x86_64                              defconfig    gcc-11
+x86_64                                  kexec    clang-18
+x86_64                randconfig-001-20241006    clang-18
+x86_64                randconfig-002-20241006    gcc-12
+x86_64                randconfig-003-20241006    gcc-12
+x86_64                randconfig-004-20241006    clang-18
+x86_64                randconfig-005-20241006    clang-18
+x86_64                randconfig-006-20241006    gcc-12
+x86_64                randconfig-011-20241006    gcc-12
+x86_64                randconfig-012-20241006    gcc-12
+x86_64                randconfig-013-20241006    clang-18
+x86_64                randconfig-014-20241006    clang-18
+x86_64                randconfig-015-20241006    clang-18
+x86_64                randconfig-016-20241006    gcc-12
+x86_64                randconfig-071-20241006    clang-18
+x86_64                randconfig-072-20241006    gcc-12
+x86_64                randconfig-073-20241006    gcc-12
+x86_64                randconfig-074-20241006    clang-18
+x86_64                randconfig-075-20241006    clang-18
+x86_64                               rhel-8.3    gcc-12
+x86_64                    rhel-8.3-kselftests    gcc-12
+x86_64                          rhel-8.3-rust    clang-18
+xtensa                            allnoconfig    gcc-14.1.0
 
-Signed-off-by: Sidhanta Sahu <quic_sidhanta@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
----
-Depends-on:
-[PATCH v2] wifi: ath12k: Modify print_array_to_buf() to support arrays with 1-based semantics
-Link: https://lore.kernel.org/all/20241004085915.1788951-1-quic_rdevanat@quicinc.com/
-
-[PATCH v2 0/4] wifi: ath12k: Support Ring, SFM, Transmit MU, SelfGen stats, CCA stats
-Link: https://lore.kernel.org/ath12k/20241005101816.3314728-1-quic_rdevanat@quicinc.com/
-
-[PATCH v2] wifi: ath12k: Support Pdev OBSS Stats
-Link: https://lore.kernel.org/ath12k/20241005104206.3327143-1-quic_rdevanat@quicinc.com/
-
-[PATCH v2] wifi: ath12k: Support DMAC Reset Stats
-Link: https://lore.kernel.org/ath12k/20241005105207.3350790-1-quic_rdevanat@quicinc.com/
-
-[PATCH v2 0/2] wifi: ath12k: Support pdev Rate, Scheduled Algorithm Stats
-Link: https://lore.kernel.org/ath12k/20241005111506.3361688-1-quic_rdevanat@quicinc.com/
-
-[PATCH v2 0/2] wifi: ath12k: Support AST and Puncture Stats
-Link: https://lore.kernel.org/ath12k/20241005112234.3379043-1-quic_rdevanat@quicinc.com/
----
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 43 +++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   | 14 ++++++
- 2 files changed, 57 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 42d504d93c52..0d7ca78036ea 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -2884,6 +2884,45 @@ ath12k_htt_print_tx_pdev_rate_stats_be_ofdma_tlv(const void *tag_buf, u16 tag_le
- 	stats_req->buf_len = len;
- }
- 
-+static void
-+ath12k_htt_print_pdev_mbssid_ctrl_frame_stats_tlv(const void *tag_buf, u16 tag_len,
-+						  struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_pdev_mbssid_ctrl_frame_tlv *htt_stats_buf = tag_buf;
-+	u8 *buf = stats_req->buf;
-+	u32 len = stats_req->buf_len;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 mac_id_word;
-+
-+	if (tag_len < sizeof(*htt_stats_buf))
-+		return;
-+
-+	mac_id_word = le32_to_cpu(htt_stats_buf->mac_id__word);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_MBSSID_CTRL_FRAME_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "mac_id = %u\n",
-+			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
-+	len += scnprintf(buf + len, buf_len - len, "basic_trigger_across_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->basic_trigger_across_bss));
-+	len += scnprintf(buf + len, buf_len - len, "basic_trigger_within_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->basic_trigger_within_bss));
-+	len += scnprintf(buf + len, buf_len - len, "bsr_trigger_across_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->bsr_trigger_across_bss));
-+	len += scnprintf(buf + len, buf_len - len, "bsr_trigger_within_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->bsr_trigger_within_bss));
-+	len += scnprintf(buf + len, buf_len - len, "mu_rts_across_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->mu_rts_across_bss));
-+	len += scnprintf(buf + len, buf_len - len, "mu_rts_within_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->mu_rts_within_bss));
-+	len += scnprintf(buf + len, buf_len - len, "ul_mumimo_trigger_across_bss = %u\n",
-+			 le32_to_cpu(htt_stats_buf->ul_mumimo_trigger_across_bss));
-+	len += scnprintf(buf + len, buf_len - len,
-+			 "ul_mumimo_trigger_within_bss = %u\n\n",
-+			 le32_to_cpu(htt_stats_buf->ul_mumimo_trigger_within_bss));
-+
-+	stats_req->buf_len = len;
-+}
-+
- static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 					  u16 tag, u16 len, const void *tag_buf,
- 					  void *user_data)
-@@ -3072,6 +3111,10 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_TX_PDEV_RATE_STATS_BE_OFDMA_TAG:
- 		ath12k_htt_print_tx_pdev_rate_stats_be_ofdma_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_PDEV_MBSSID_CTRL_FRAME_STATS_TAG:
-+		ath12k_htt_print_pdev_mbssid_ctrl_frame_stats_tlv(tag_buf, len,
-+								  stats_req);
-+		break;
- 	default:
- 		break;
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index e6e2bcbe95a7..85838c01e925 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -140,6 +140,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_DBG_PDEV_PUNCTURE_STATS		= 46,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_SCHED_ALGO	= 49,
- 	ATH12K_DBG_HTT_EXT_STATS_MANDATORY_MUOFDMA	= 51,
-+	ATH12K_DGB_HTT_EXT_STATS_PDEV_MBSSID_CTRL_FRAME	= 54,
- 
- 	/* keep this last */
- 	ATH12K_DBG_HTT_NUM_EXT_STATS,
-@@ -206,6 +207,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_DMAC_RESET_STATS_TAG			= 155,
- 	HTT_STATS_PDEV_PUNCTURE_STATS_TAG		= 158,
- 	HTT_STATS_PDEV_SCHED_ALGO_OFDMA_STATS_TAG	= 165,
-+	HTT_STATS_PDEV_MBSSID_CTRL_FRAME_STATS_TAG	= 176,
- 
- 	HTT_STATS_MAX_TAG,
- };
-@@ -1178,4 +1180,16 @@ struct ath12k_htt_pdev_puncture_stats_tlv {
- 	__le32 num_subbands_used_cnt[ATH12K_HTT_PUNCT_STATS_MAX_SUBBAND_CNT];
- } __packed;
- 
-+struct ath12k_htt_pdev_mbssid_ctrl_frame_tlv {
-+	__le32 mac_id__word;
-+	__le32 basic_trigger_across_bss;
-+	__le32 basic_trigger_within_bss;
-+	__le32 bsr_trigger_across_bss;
-+	__le32 bsr_trigger_within_bss;
-+	__le32 mu_rts_across_bss;
-+	__le32 mu_rts_within_bss;
-+	__le32 ul_mumimo_trigger_across_bss;
-+	__le32 ul_mumimo_trigger_within_bss;
-+} __packed;
-+
- #endif
-
-base-commit: 8ed36fe71fd60c851540839b105fd1fddc870c61
-prerequisite-patch-id: faf46024c8b5c094e201d392109e7f94dcecdd49
-prerequisite-patch-id: c4662f64bc7be141322b7e37145e52ea4ab4e182
-prerequisite-patch-id: 4d37990775694f110ce3e87096231fe8855f09f5
-prerequisite-patch-id: 5959fd18b497d29cad98d36dcce59a876ffe8ca2
-prerequisite-patch-id: ecac67f6fce1dd4d5089dbc3da840e311f6a7218
-prerequisite-patch-id: 0537ae604d2617e42bef13bfb791aad4d11bf6e1
-prerequisite-patch-id: da5a4e5cc3097994bfcba4b37680c90b0675ccf9
-prerequisite-patch-id: fcd0ce1adcc63e80c95e4636bd4614bd5b732ffa
-prerequisite-patch-id: a6303524834f6e01b2ae1469ee437d586dd5d522
-prerequisite-patch-id: d08cf80b89c5b8a8896f84449033a18455f3c394
-prerequisite-patch-id: 00097b59822c40089419d22b97f109c26b7f0a10
--- 
-2.25.1
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
