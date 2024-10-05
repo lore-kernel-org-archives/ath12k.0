@@ -4,88 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87712CF8843
-	for <ath12k@archiver.kernel.org>; Fri,  4 Oct 2024 15:17:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59C2ACF8851
+	for <ath12k@archiver.kernel.org>; Sat,  5 Oct 2024 06:37:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Vp6Gt+/SMIfQbQpp+5lbiqXacAPxYGZdjp+gs5lPSXQ=; b=ZsZqtTC+vqElIOVKcuQt/UNZhj
-	i/w9Ku6RwoPEfRWEkzS7i+RXefpG9I33atBAzEqrpFMyJWJBXxGVaFKzYP0Eatvsku1j28n+4OGrF
-	1/bHQyo1jO2Fvzo3SnjQqm8mxt1EZBZLFL4fPXV3BSkjU9cVUAT2ddDnJ+1v4cIxGm2QktBM6RLlM
-	wv9juM8WtTiLVmH30VP49a7hdWUmauQAoC3j6tmA7HdBQ+ctq6dW8LoYuGcM658TGVh+ozyKPgXbz
-	HwdCY/s2fG284mb3SCZrKqgxCMhJXR8x2AjlTcikW+DLRj7DJkA2uNE4ZDp8HK/VF4EAf0BDJH37Q
-	VgGii3FA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=PCso79n17X/N8JWteRLQfO4Sql9Xx75+fjCbLJQPrpw=; b=hT4lmlKENP1Z640Ke/RYdRQOP7
+	XE1SDw5RjflNN99eT+HriZKlVCxNzgjneq7C4NPRg6gVlyw5BmEjmmydTxG1U1FgpuWWClGq6KNOv
+	UGdB1GsrrzIpJEY2RuJbb1DyqNWeseP94yR8TOiqolUs5h+XIiqBB0GXiWOz4FLmM6ebmwyU6NCpx
+	Vk4I6lIIC4jUydkydCsN5ToN5T0E1L2u9s7S14jqoWaestiQRjlZe6J0QVyx/ElXJVDCqPTuJQiSQ
+	h7LYx5uBs+gIQpCiHZP59qKvQ18Y+Aac82LhVxOIq8O5GRe3FMq4v6mqm4RrHJVjKYLs51UpKfXLn
+	0iXdwIiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swk3p-0000000CxW3-0q59
+	id 1swyPc-0000000Eshm-0GFe
 	for ath12k@archiver.kernel.org;
-	Fri, 04 Oct 2024 15:17:41 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Sat, 05 Oct 2024 06:37:08 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swk3U-0000000CxRg-25b3
+	id 1swyPY-0000000EshK-3uRS
 	for ath12k@lists.infradead.org;
-	Fri, 04 Oct 2024 15:17:22 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 494Am131014162;
-	Fri, 4 Oct 2024 15:17:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Vp6Gt+/SMIfQbQpp+5lbiqXacAPxYGZdjp+gs5lPSXQ=; b=j7t5RFQrcCRBDV87
-	OCk/dxG0WBh3xgAioxx4AWjCB9rYh6W1SJkaz8eRr0dc/OuJ+DdXgjf5/88+bd6j
-	8gRqwucwrEglgI02ZBsITDO8elmIW8b3VAwKTjlzKo94AHOGNP0MP2rp2kmrP0FV
-	JjnA3gVETOdXBtmH1km/XYUHMFllDPRIMjVK4pJ2PmldJ8lJnjohz/5kdK6GTu99
-	Gi/ET9kaHQakMfBlPZnB1wLEmNSa52FIBcbGIMappqNRVeUXMVCfkyXaBZAWGW3Z
-	fUvABtAD/Vx38jVSzsC+Me7iUxjpTVizyQXOBzmLmTHlA7F5eyBwBmeF4JlUcWfh
-	TqQ/mg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42205e2h8h-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 04 Oct 2024 15:17:17 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 494FHFMY026445
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 4 Oct 2024 15:17:15 GMT
-Received: from [10.111.183.136] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 4 Oct 2024
- 08:17:15 -0700
-Message-ID: <a291a502-0fa8-4984-a9c3-9a720c76c60b@quicinc.com>
-Date: Fri, 4 Oct 2024 08:17:14 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath12k: Modify print_array_to_buf() to support
- arrays with 1-based semantics
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241004085915.1788951-1-quic_rdevanat@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <20241004085915.1788951-1-quic_rdevanat@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: j4xjBgHx52gcSk53o4yxexV3F4oxxiki
-X-Proofpoint-ORIG-GUID: j4xjBgHx52gcSk53o4yxexV3F4oxxiki
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- lowpriorityscore=0 spamscore=0 suspectscore=0 phishscore=0 mlxlogscore=999
- mlxscore=0 adultscore=0 bulkscore=0 priorityscore=1501 clxscore=1015
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410040105
+	Sat, 05 Oct 2024 06:37:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1728110225; x=1759646225;
+  h=date:from:to:cc:subject:message-id;
+  bh=nq5xzcaxIiiycwLyZyGmd/0AI56U5eH81Di+nGv5Fsw=;
+  b=TKHad1z02h8Q/QmYANwmdbqd/+1g25K+8mOSlxaxlkydC4xUthyqy9LL
+   VXRgoWaCY0kk3ixNpVdbmuOtRmMhHD6OS66ey8N2nLZW0cowIozbtpt3t
+   aagstyNncbaU6b6plLTY9f+aD9d2e5FnY5KIcB8EPkn/Z1MsYFziEK/7w
+   e0Pd8B/3ofmqA9rXIQnmmgpcLr0mqy+q6IliG16oN0tKb3Mb6VUCkQgca
+   eoeC5vslxxLEBbgQEExSpvI2vZfVSyDumFV5l2u8uqmHjYrPtwNu85q22
+   j35n13czDduWRZ0U2PMfSRmGYSi025rj1yGN58EsR4+yydIEEGJqpEIbo
+   w==;
+X-CSE-ConnectionGUID: YQSueNuXTcS0id5CR3V0Lg==
+X-CSE-MsgGUID: YDsY9ir8Smy+CMD6EnKqPg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11215"; a="30216889"
+X-IronPort-AV: E=Sophos;i="6.11,179,1725346800"; 
+   d="scan'208";a="30216889"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Oct 2024 23:37:00 -0700
+X-CSE-ConnectionGUID: XCb6phO+SnWNrtjVvOuTYQ==
+X-CSE-MsgGUID: wYjH5MMoRZWMknmBrWhcsg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,179,1725346800"; 
+   d="scan'208";a="75165282"
+Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
+  by orviesa006.jf.intel.com with ESMTP; 04 Oct 2024 23:36:58 -0700
+Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1swyPQ-0002f8-13;
+	Sat, 05 Oct 2024 06:36:56 +0000
+Date: Sat, 05 Oct 2024 14:36:27 +0800
+From: kernel test robot <lkp@intel.com>
+To: Kalle Valo <quic_kvalo@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:ath12k-mlo-qcn9274] BUILD SUCCESS
+ 4ad14f50820745f9c2f425ba07ca8431bf2409ed
+Message-ID: <202410051412.gXtD1pG1-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_081720_691494_852F11B6 
-X-CRM114-Status: GOOD (  19.67  )
+X-CRM114-CacheID: sfid-20241004_233705_194285_B501F095 
+X-CRM114-Status: UNSURE (   3.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,67 +84,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/4/2024 1:59 AM, Roopni Devanathan wrote:
-> The API print_array_to_buf() currently supports printing
-> arrays with 0 indexing. In some cases, a few arrays need
-> to be printed with 1-based indexing, i.e., array should be
-> printed, starting with 1.
-> 
-> Add a new version of print_array_to_buf(), named
-> print_array_to_buf_index(), which implements the functionality
-> of print_array_to_index(), but with an extra variable, pointing
-> to the index starting with which the array should be printed.
-> Modify print_array_to_buf() to call
-> print_array_to_buf_index() with 0 as the starting index.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
-> ---
->  .../net/wireless/ath/ath12k/debugfs_htt_stats.c    | 14 +++++++++++---
->  1 file changed, 11 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> index f1b7e74aefe4..ec7add76ec85 100644
-> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> @@ -12,8 +12,8 @@
->  #include "dp_rx.h"
->  
->  static u32
-> -print_array_to_buf(u8 *buf, u32 offset, const char *header,
-> -		   const __le32 *array, u32 array_len, const char *footer)
-> +print_array_to_buf_index(u8 *buf, u32 offset, const char *header, u32 stats_index,
-> +			 const __le32 *array, u32 array_len, const char *footer)
->  {
->  	int index = 0;
->  	u8 i;
-> @@ -26,7 +26,7 @@ print_array_to_buf(u8 *buf, u32 offset, const char *header,
->  	for (i = 0; i < array_len; i++) {
->  		index += scnprintf(buf + offset + index,
->  				   (ATH12K_HTT_STATS_BUF_SIZE - offset) - index,
-> -				   " %u:%u,", i, le32_to_cpu(array[i]));
-> +				   " %u:%u,", stats_index++, le32_to_cpu(array[i]));
->  	}
->  	/* To overwrite the last trailing comma */
->  	index--;
-> @@ -40,6 +40,14 @@ print_array_to_buf(u8 *buf, u32 offset, const char *header,
->  	return index;
->  }
->  
-> +static u32
-> +print_array_to_buf(u8 *buf, u32 offset, const char *header,
-> +		   const __le32 *array, u32 array_len, const char *footer)
-> +{
-> +	return print_array_to_buf_index(buf, offset, header, 0, array, array_len,
-> +					footer);
-> +}
-> +
->  static void
->  htt_print_tx_pdev_stats_cmn_tlv(const void *tag_buf, u16 tag_len,
->  				struct debug_htt_stats_req *stats_req)
-> 
-> base-commit: 8ed36fe71fd60c851540839b105fd1fddc870c61
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-qcn9274
+branch HEAD: 4ad14f50820745f9c2f425ba07ca8431bf2409ed  wifi: ath12k: convert struct ath12k::wmi_mgmt_tx_work to struct wiphy_work
 
-LGTM, please rebase your other debugfs_htt_stats changes on top of this
+elapsed time: 1079m
+
+configs tested: 78
+configs skipped: 3
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+tested configs:
+alpha               allnoconfig    gcc-14.1.0
+alpha              allyesconfig    clang-20
+alpha                 defconfig    gcc-14.1.0
+arc                allmodconfig    clang-20
+arc                 allnoconfig    gcc-14.1.0
+arc                allyesconfig    clang-20
+arc                   defconfig    gcc-14.1.0
+arm                allmodconfig    clang-20
+arm                 allnoconfig    gcc-14.1.0
+arm                allyesconfig    clang-20
+arm                   defconfig    gcc-14.1.0
+arm64              allmodconfig    clang-20
+arm64               allnoconfig    gcc-14.1.0
+arm64                 defconfig    gcc-14.1.0
+csky                allnoconfig    gcc-14.1.0
+csky                  defconfig    gcc-14.1.0
+hexagon            allmodconfig    clang-20
+hexagon             allnoconfig    gcc-14.1.0
+hexagon            allyesconfig    clang-20
+hexagon               defconfig    gcc-14.1.0
+i386               allmodconfig    clang-18
+i386                allnoconfig    clang-18
+i386               allyesconfig    clang-18
+i386                  defconfig    clang-18
+loongarch          allmodconfig    gcc-14.1.0
+loongarch           allnoconfig    gcc-14.1.0
+loongarch             defconfig    gcc-14.1.0
+m68k               allmodconfig    gcc-14.1.0
+m68k                allnoconfig    gcc-14.1.0
+m68k               allyesconfig    gcc-14.1.0
+m68k                  defconfig    gcc-14.1.0
+microblaze         allmodconfig    gcc-14.1.0
+microblaze          allnoconfig    gcc-14.1.0
+microblaze         allyesconfig    gcc-14.1.0
+microblaze            defconfig    gcc-14.1.0
+mips                allnoconfig    gcc-14.1.0
+nios2               allnoconfig    gcc-14.1.0
+nios2                 defconfig    gcc-14.1.0
+openrisc            allnoconfig    gcc-14.1.0
+openrisc           allyesconfig    gcc-14.1.0
+openrisc              defconfig    gcc-12
+parisc             allmodconfig    gcc-14.1.0
+parisc              allnoconfig    gcc-14.1.0
+parisc             allyesconfig    gcc-14.1.0
+parisc                defconfig    gcc-12
+parisc64              defconfig    gcc-14.1.0
+powerpc            allmodconfig    gcc-14.1.0
+powerpc             allnoconfig    gcc-14.1.0
+powerpc            allyesconfig    gcc-14.1.0
+riscv              allmodconfig    gcc-14.1.0
+riscv               allnoconfig    gcc-14.1.0
+riscv              allyesconfig    gcc-14.1.0
+riscv                 defconfig    gcc-12
+s390               allmodconfig    gcc-14.1.0
+s390                allnoconfig    clang-20
+s390               allyesconfig    gcc-14.1.0
+s390                  defconfig    gcc-12
+sh                 allmodconfig    gcc-14.1.0
+sh                  allnoconfig    gcc-14.1.0
+sh                 allyesconfig    gcc-14.1.0
+sh                    defconfig    gcc-12
+sparc              allmodconfig    gcc-14.1.0
+sparc64               defconfig    gcc-12
+um                 allmodconfig    clang-20
+um                  allnoconfig    clang-17
+um                 allyesconfig    clang-20
+um                    defconfig    gcc-12
+um               i386_defconfig    gcc-12
+um             x86_64_defconfig    gcc-12
+x86_64              allnoconfig    clang-18
+x86_64             allyesconfig    clang-18
+x86_64                defconfig    clang-18
+x86_64                    kexec    clang-18
+x86_64                    kexec    gcc-12
+x86_64                 rhel-8.3    gcc-12
+x86_64      rhel-8.3-kselftests    gcc-12
+x86_64            rhel-8.3-rust    clang-18
+xtensa              allnoconfig    gcc-14.1.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
