@@ -4,97 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84BF2CED242
-	for <ath12k@archiver.kernel.org>; Mon,  7 Oct 2024 21:43:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8D1ACED247
+	for <ath12k@archiver.kernel.org>; Mon,  7 Oct 2024 23:06:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-ID:Subject:References:In-Reply-To:CC:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yVDSPx6cXwuYsEAcMa9+AEfdYg+qCvtyRFW1/8tXxvM=; b=np023V/Lf0OLXYg/0bSppF6K5h
-	4ecNMaqK/c65LZYBg2mWvOmmEu2Kf2JBWPa260nzu5bln6zqZczbxpAIy9zOxsUEuJBkHESWjujT5
-	JrJej2xv/d/HnV5D5IK6WJrmO1D4GtqMEynqWMk0nr6Z2ndzrfqc+k7nTvJ2yIj4wyRxnaDSMGBID
-	mD0Q1XABScNaJfZ2IcJd6+E9kXxQf99SOIxWIvyUyukVZ5uUe3xjWNfSEN0eENhTGGfszNaJf5x+a
-	IpFItUzPsNDfmxYKYPP1+27CE9VoR8omZeEsSNeHWoFm9/5yobz1CsGuvYGp6eeCrfpTvuSiQIqoV
-	MKNF/mOA==;
+	bh=f2ts6yjT2lwkrcAK7dwQ6qLUhy9HnAHO7NfATKePO/Y=; b=tsDm84+lQ/QbCHmbHy0QgVwr8d
+	F98kDN90/IMbi1iTaY+qtCBgda44JIN0+UrtKBXnotazBszpVC8CpezVJNAR/c8fqqXs5b9v2lfPi
+	zqfkjWf/w6EDi9LqzB39/FE9FiAKjextg+doY1nylu0iySmgK6cBdFOhHdpkg5JBL/euTzQXCiP2R
+	soDwi4khhrIfwJe7XhQjdhiRuvZfny4Pi77thNYYdPzK/lNsLDJjGnmMY2n1u5A0BphW7MJa7zaOK
+	nXVBBFxhB4WomyqDqmvfuViUmXeKsnFWFG/sryXmLBFiVEi7uhhC8VtARopNAwskKoKdD2RdPIzei
+	bl4d5dLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxvVh-00000003rIm-17ho
+	id 1sxwoP-00000003yJh-1Wwn
 	for ath12k@archiver.kernel.org;
-	Mon, 07 Oct 2024 21:43:21 +0000
+	Mon, 07 Oct 2024 23:06:45 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxvVf-00000003rHl-0HSJ
+	id 1sxwoL-00000003yJF-3WYB
 	for ath12k@lists.infradead.org;
-	Mon, 07 Oct 2024 21:43:20 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 497ErML0026919;
-	Mon, 7 Oct 2024 21:43:14 GMT
+	Mon, 07 Oct 2024 23:06:43 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 497F42R0025511;
+	Mon, 7 Oct 2024 23:06:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	yVDSPx6cXwuYsEAcMa9+AEfdYg+qCvtyRFW1/8tXxvM=; b=Zv8Zb1DkaBBBIYdm
-	RikhO7uR3sdkGPaatmJTBk2cvMaaTAa/WFtFIx4sLSbqxwkdGOItep+ukY6fb6bm
-	WSLEy9zYsoOVSuLvwLhsRvdCg1ZJ3UbJVBBcxk4eyyh0E0E+hHVcuL58awAFj6R8
-	y+5DC7D2/0Qe/vNYzxRHz7URg1NelQvM6/Qp5N930UisYGx9Ijl8e+nZvzNcEt/M
-	n0sAysWJ+rbUACSV4Vmd5j/A2d/RVe6+x5FMPXArNkTFoit+FxEkKSSr66N/x9p0
-	TgqyjJe1lgf3Crkox3dQOrvD+SkotHKrfp0qys2AE9Eh7G6vzW2+mz146/jBIG3g
-	MFAkMQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xq9wcy9-1
+	f2ts6yjT2lwkrcAK7dwQ6qLUhy9HnAHO7NfATKePO/Y=; b=EBm71lZN6JQnGoiP
+	xPYQYgZUn3xWqp9fIhHtYFyi3wAGuBnOUTDCrkFUPf0ys7R48EUsN7ay3HSuD3dv
+	QcmlXuxLn1O8UX+vMmUsvTA6koQwhCNtPF5JTH60Z8Yq9vSi3R3KwjdVeFOc6hST
+	T2p13sw1pGkOdd/LtZtkdp8SzaI/diCsxUQk8aNXwEnHD8vu9PUK3hSLJ6FctmRi
+	P1f1Xz9Hyve8XuiXdEvwWpwtSIhIEo57w5H3qd1GbzqRUulKDh7hI8JnGDpRmD5Z
+	aIe5fPa0Q+a79F/qoXlJ5W9PVyC1z2JjOJnooARegzX3gJDIGSjTfSD66u38twiw
+	SmzaRQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xs85gd7-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 07 Oct 2024 21:43:13 +0000 (GMT)
+	Mon, 07 Oct 2024 23:06:41 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 497LhDFa030138
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 497N6eaH026908
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 7 Oct 2024 21:43:13 GMT
-Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Mon, 7 Oct 2024 23:06:40 GMT
+Received: from [10.48.240.101] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 7 Oct 2024
- 14:43:12 -0700
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        "Jakub
- Kicinski" <kuba@kernel.org>, Kees Cook <kees@kernel.org>,
-        Paolo Abeni
-	<pabeni@redhat.com>,
-        Baochen Qiang <quic_bqiang@quicinc.com>,
-        Arnd Bergmann
-	<arnd@kernel.org>
-CC: Arnd Bergmann <arnd@arndb.de>,
-        Rameshkumar Sundaram
-	<quic_ramess@quicinc.com>,
-        <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-In-Reply-To: <20241004095420.637091-1-arnd@kernel.org>
-References: <20241004095420.637091-1-arnd@kernel.org>
-Subject: Re: [PATCH] wifi: ath12k: fix one more memcpy size error
-Message-ID: <172833739297.2581613.4397682908224722962.b4-ty@quicinc.com>
-Date: Mon, 7 Oct 2024 14:43:12 -0700
+ 16:06:39 -0700
+Message-ID: <e350c2c5-47e8-4fd2-aa8c-b63ab228d718@quicinc.com>
+Date: Mon, 7 Oct 2024 16:06:39 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath12k: Support DMAC Reset Stats
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Rajat Soni <quic_rajson@quicinc.com>
+References: <20241005105207.3350790-1-quic_rdevanat@quicinc.com>
+ <a6190d4e-aff9-48bc-b674-071656090c74@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <a6190d4e-aff9-48bc-b674-071656090c74@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
 X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: xv8KleO3pv__tTsy16lyVkRdlU1eV_Cx
-X-Proofpoint-GUID: xv8KleO3pv__tTsy16lyVkRdlU1eV_Cx
+X-Proofpoint-GUID: qlpu_mTKdV-TDz65cbf5k2CJaaR1J86G
+X-Proofpoint-ORIG-GUID: qlpu_mTKdV-TDz65cbf5k2CJaaR1J86G
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 phishscore=0
- spamscore=0 lowpriorityscore=0 priorityscore=1501 impostorscore=0
- bulkscore=0 suspectscore=0 malwarescore=0 adultscore=0 mlxlogscore=684
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410070149
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 spamscore=0
+ priorityscore=1501 phishscore=0 mlxlogscore=999 clxscore=1015
+ impostorscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0
+ suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410070159
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_144319_150602_54A4A436 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241007_160641_930691_73403025 
+X-CRM114-Status: GOOD (  19.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,31 +100,152 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 04 Oct 2024 09:54:13 +0000, Arnd Bergmann wrote:
-> A previous patch addressed a fortified-memcpy warning on older compilers,
-> but there is still a warning on gcc-14 in some configurations:
+On 10/7/2024 8:37 AM, Jeff Johnson wrote:
+> On 10/5/2024 3:52 AM, Roopni Devanathan wrote:
+>> From: Rajat Soni <quic_rajson@quicinc.com>
+>>
+>> Add support to request DMAC reset stats from firmware through HTT stats
+>> type 45. These stats give debug SoC error stats such as reset count, reset
+>> time, engage time and count, disengage time and count and destination
+>> ring mask.
+>>
+>> Sample output:
+>> -------------
+>> echo 45 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+>> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+>> HTT_DMAC_RESET_STATS_TLV:
+>> reset_count = 1
+>> reset_time_ms = 8036717648
+>> disengage_time_ms = 8036717648
+>> engage_time_ms = 8036717649
+>> disengage_count = 1
+>> engage_count = 1
+>> drain_dest_ring_mask = 0x0
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>>
+>> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+>> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+>> ---
+>> v2:
+>>  - Updated dependencies. No change in code.
+>> ---
+>> Depends-on:
+>> [PATCH v2] wifi: ath12k: Modify print_array_to_buf() to support arrays with 1-based semantics
+>> Link: https://lore.kernel.org/all/20241004085915.1788951-1-quic_rdevanat@quicinc.com/
+>>
+>> [PATCH v2 0/4] wifi: ath12k: Support Ring, SFM, Transmit MU, SelfGen stats, CCA stats
+>> Link: https://lore.kernel.org/ath12k/20241005101816.3314728-1-quic_rdevanat@quicinc.com/
+>>
+>> [PATCH v2] wifi: ath12k: Support Pdev OBSS Stats
+>> Link: https://lore.kernel.org/ath12k/20241005104206.3327143-1-quic_rdevanat@quicinc.com/
+>> ---
+>> ---
+>>  .../wireless/ath/ath12k/debugfs_htt_stats.c   | 41 +++++++++++++++++++
+>>  .../wireless/ath/ath12k/debugfs_htt_stats.h   | 15 +++++++
+>>  2 files changed, 56 insertions(+)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>> index d890679a3f16..2debb253185c 100644
+>> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>> @@ -2502,6 +2502,44 @@ ath12k_htt_print_pdev_obss_pd_stats_tlv(const void *tag_buf, u16 tag_len,
+>>  	stats_req->buf_len = len;
+>>  }
+>>  
+>> +static void
+>> +ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
+>> +				      struct debug_htt_stats_req *stats_req)
+>> +{
+>> +	const struct ath12k_htt_dmac_reset_stats_tlv *htt_stats_buf = tag_buf;
+>> +	u8 *buf = stats_req->buf;
+>> +	u32 len = stats_req->buf_len;
+>> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
+>> +	unsigned long time;
+>> +
+>> +	if (tag_len < sizeof(*htt_stats_buf))
+>> +		return;
+>> +
+>> +	len += scnprintf(buf + len, buf_len - len, "HTT_DMAC_RESET_STATS_TLV:\n");
+>> +	len += scnprintf(buf + len, buf_len - len, "reset_count = %u\n",
+>> +			 le32_to_cpu(htt_stats_buf->reset_count));
+>> +	time = ((unsigned long)le32_to_cpu(htt_stats_buf->reset_time_hi_ms) << 32) |
+>> +		le32_to_cpu(htt_stats_buf->reset_time_lo_ms);
 > 
-> In file included from include/linux/string.h:390,
->                  from drivers/net/wireless/ath/ath12k/wow.c:7:
-> drivers/net/wireless/ath/ath12k/wow.c: In function 'ath12k_wow_convert_8023_to_80211.isra':
-> include/linux/fortify-string.h:114:33: error: '__builtin_memcpy' accessing 18446744073709551610 or more bytes at offsets 0 and 0 overlaps 9223372036854775797 bytes at offset -9223372036854775803 [-Werror=restrict]
-> include/linux/fortify-string.h:679:26: note: in expansion of macro '__fortify_memcpy_chk'
->   679 | #define memcpy(p, q, s)  __fortify_memcpy_chk(p, q, s,                  \
->       |                          ^~~~~~~~~~~~~~~~~~~~
-> drivers/net/wireless/ath/ath12k/wow.c:199:25: note: in expansion of macro 'memcpy'
->   199 |                         memcpy(pat + a3_ofs - pkt_ofs,
->       |                         ^~~~~~
+> The v1 version was flagged by the Intel 0-DAY CI Kernel Test Service:
+> https://lore.kernel.org/all/202410040200.Mwb85JzQ-lkp@intel.com/
 > 
-> [...]
+> I believe you need to use u64 instead of unsigned long since unsigned long
+> will only be 32 bits on a 32-bit system. Also suggest you refactor into a
+> helper function to remove any ambiguity about the order of operations between
+> (typecast) and <<, i.e.:
+> 
+> /* untested */
+> static u64 ath12k_le32hilo_to_u64(__le32 hi, __le32 lo)
+> {
+> 	u64 hi64 = le32_to_cpu(hi);
+> 	u64 lo64 = le32_to_cpu(lo);
+> 
+> 	return (hi64 << 32) | lo64;
+> }
 
-Applied, thanks!
+compile tested the following diff against your patch:
 
-[1/1] wifi: ath12k: fix one more memcpy size error
-      commit: 19c23eb61fa4c802e6e0aaf74d6f7dcbe99f0ba3
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index 8dc158675e12..9c54c457af30 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -2542,6 +2542,13 @@ ath12k_htt_print_pdev_obss_pd_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	stats_req->buf_len = len;
+ }
+ 
++static u64 ath12k_le32hilo_to_u64(__le32 hi, __le32 lo)
++{
++	u64 hi64 = le32_to_cpu(hi);
++	u64 lo64 = le32_to_cpu(lo);
++
++	return (hi64 << 32) | lo64;
++}
+ static void
+ ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
+ 				      struct debug_htt_stats_req *stats_req)
+@@ -2550,7 +2557,7 @@ ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	u8 *buf = stats_req->buf;
+ 	u32 len = stats_req->buf_len;
+ 	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
+-	unsigned long time;
++	u64 time;
+ 
+ 	if (tag_len < sizeof(*htt_stats_buf))
+ 		return;
+@@ -2558,17 +2565,17 @@ ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_DMAC_RESET_STATS_TLV:\n");
+ 	len += scnprintf(buf + len, buf_len - len, "reset_count = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->reset_count));
+-	time = ((unsigned long)le32_to_cpu(htt_stats_buf->reset_time_hi_ms) << 32) |
+-		le32_to_cpu(htt_stats_buf->reset_time_lo_ms);
+-	len += scnprintf(buf + len, buf_len - len, "reset_time_ms = %ld\n", time);
++	time = ath12k_le32hilo_to_u64(htt_stats_buf->reset_time_hi_ms,
++				      htt_stats_buf->reset_time_lo_ms);
++	len += scnprintf(buf + len, buf_len - len, "reset_time_ms = %llu\n", time);
+ 
+-	time = ((unsigned long)le32_to_cpu(htt_stats_buf->disengage_time_hi_ms) << 32) |
+-		le32_to_cpu(htt_stats_buf->disengage_time_lo_ms);
+-	len += scnprintf(buf + len, buf_len - len, "disengage_time_ms = %ld\n", time);
++	time = ath12k_le32hilo_to_u64(htt_stats_buf->disengage_time_hi_ms,
++				      htt_stats_buf->disengage_time_lo_ms);
++	len += scnprintf(buf + len, buf_len - len, "disengage_time_ms = %llu\n", time);
+ 
+-	time = ((unsigned long)le32_to_cpu(htt_stats_buf->engage_time_hi_ms) << 32) |
+-		le32_to_cpu(htt_stats_buf->engage_time_lo_ms);
+-	len += scnprintf(buf + len, buf_len - len, "engage_time_ms = %ld\n", time);
++	time = ath12k_le32hilo_to_u64(htt_stats_buf->engage_time_hi_ms,
++				      htt_stats_buf->engage_time_lo_ms);
++	len += scnprintf(buf + len, buf_len - len, "engage_time_ms = %llu\n", time);
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "disengage_count = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->disengage_count));
 
-Best regards,
--- 
-Jeff Johnson <quic_jjohnson@quicinc.com>
 
 
