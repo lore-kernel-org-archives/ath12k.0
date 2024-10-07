@@ -4,62 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37F60CFB443
-	for <ath12k@archiver.kernel.org>; Mon,  7 Oct 2024 14:47:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA531CFB446
+	for <ath12k@archiver.kernel.org>; Mon,  7 Oct 2024 15:38:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=beKEKKKUI96mL4yCmoRM9zvlrs/OghZLvqgIUgINyDs=; b=jstoAyGxI4+5jzOebNI3GIrao6
-	okiEjfNPDL54vMR9bRLdO1hjk+mfTQIGsJaFmFPQbP+LrzfvOYNjyONKyVfn/wfM/nbtOF/8rCmwW
-	Buiiomc3Te8eaerrbD0Ou9bWDcTRh16Ay3ddkt6Yu6a3I4v85D9C9l6tSotV4qZewUTRTuXXl1b3h
-	VLLVtEcv2VlaA8D2Kv0IcBUa5GWjtazyXb/lb2fNbaHn9zGPso0F4uUsL5s3zISp8qm89RrG6UCCk
-	qFEENXz2Oe089yaZZOvesuFZyhYnwTwtnZObltWYGrDfFEG/mzlfDnGEWNqc7UAwLlv4tN4bM5VwL
-	qSTR/0rA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=R1Eplt5jSrHG+ETZBKvNMSfHB1rzYkLDGtLmplynIEc=; b=aizfdMRxSqpApaY5R0fqsJwX5m
+	LnTIXVb/XcbKjVwFgaykeFxATz14GDXEVQ33QkhBNDcN6AL0DwFEV1jV8WpJQVw0bMJLdNWiVKFNM
+	uCxZNi+2iNjztEgTnHgEzDDOSyo56s8CeXr5+VXZbwAbKQaSxUhehiAdUjP1zDOvsVuTLW2XOlW0e
+	iF1UoHLY47erA+G4Hi+PZWorCtJWX4Yre/3CrRMYVPAR+WwdrxdFnoHhDZdMoHMLiGOicIbpvCvba
+	DNBXSl/fEd01z5MFzszSpvu3xw2hz4PTdgNehBIxo2WsgktE/xgCYQyxesgMC5HA2NJ4h4Ijyzw2b
+	fjWc3Csw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxp1g-00000002n6D-3Wam
+	id 1sxpoQ-00000002ytB-1yNu
 	for ath12k@archiver.kernel.org;
-	Mon, 07 Oct 2024 14:47:56 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Mon, 07 Oct 2024 15:38:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxp1e-00000002n57-2jE2
+	id 1sxpo3-00000002yqX-1dVZ
 	for ath12k@lists.infradead.org;
-	Mon, 07 Oct 2024 14:47:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 2D6A4A40EA9
-	for <ath12k@lists.infradead.org>; Mon,  7 Oct 2024 14:47:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C5724C4CECC;
-	Mon,  7 Oct 2024 14:47:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728312473;
-	bh=kta8IrAtkDDz8HEN0uJc8OGNkCcT/daoqsaHxC+ytP0=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=foNpH4tsH5efDFICChO/4CUQkKmxxdiVQO4Lab9BCGpF3oLMEijZKIXhaNlCSVIs3
-	 A29o6ADurF6j4oTh2gfs2/2OmD/zD7IFZy8+b+Q/ktfvZKVqlzCQ4gzzh5sFbeYvL6
-	 xAhHLFZT2VSQm9mq6K8t7D/5gMt/LwApkdPO99rXmSWyP/G3ANJ/bwNoCS1ra5go9x
-	 i1Tmgh5t277aOj0x9q6voVq1ag5j2/1HiWe43ysOV4FNGa5gSb2n0doEkajzhOA09r
-	 bFE+ruG+gUwDewSsUnRA9arb1F+BkhThihoBvYoO4c0P6pszuxnrdQ/QosnwUiLtf4
-	 puKRqMILHBZlQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH RFC v3 3/6] wifi: ath12k: switch to using wiphy_lock()
- and remove ar->conf_mutex
-References: <20240924092515.1049885-1-kvalo@kernel.org>
-	<20240924092515.1049885-4-kvalo@kernel.org>
-Date: Mon, 07 Oct 2024 17:47:50 +0300
-In-Reply-To: <20240924092515.1049885-4-kvalo@kernel.org> (Kalle Valo's message
-	of "Tue, 24 Sep 2024 12:25:12 +0300")
-Message-ID: <87v7y43r6x.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Mon, 07 Oct 2024 15:37:57 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 497EU5M5015709;
+	Mon, 7 Oct 2024 15:37:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	R1Eplt5jSrHG+ETZBKvNMSfHB1rzYkLDGtLmplynIEc=; b=E3Dz8ZT38P8cgqI+
+	H84l5j+qxxm05hSfw6NyYwc9t1kjM3D51UP+TFXr2GmdfBxM6IXKvx59tuVUEU7T
+	6TW8PTpUiuSz3DOqo3Br2PQ1AOBbadtAKLTI2rpZE5c8Lgz9wFX7AExbmwkLvnAl
+	M8sryHU5RfAGvSoETJbPf+2Js6vmFsLY0NKMiAzSjnVmvWgLCZW9GO+Bm4zJXImP
+	KR4G2e9ZyzWaqYGNSppeDMgVij9MDB4cf5LV6jL6qJeyO3uxbeKasdCvhtLWu8Ie
+	zvgB8A8d9UJyC9CL133khJAiCQzRWZel5hW48oy+2pthN40q+tREYSr9qjZepuzK
+	3C+Udw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xs74ktr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 07 Oct 2024 15:37:53 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 497Fbq38006139
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 7 Oct 2024 15:37:52 GMT
+Received: from [10.48.240.101] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 7 Oct 2024
+ 08:37:52 -0700
+Message-ID: <a6190d4e-aff9-48bc-b674-071656090c74@quicinc.com>
+Date: Mon, 7 Oct 2024 08:37:51 -0700
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath12k: Support DMAC Reset Stats
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Rajat Soni <quic_rajson@quicinc.com>
+References: <20241005105207.3350790-1-quic_rdevanat@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <20241005105207.3350790-1-quic_rdevanat@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: uDdFa9LoDLjYkiiKp9j7A6fAOiYUI63z
+X-Proofpoint-GUID: uDdFa9LoDLjYkiiKp9j7A6fAOiYUI63z
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
+ suspectscore=0 priorityscore=1501 bulkscore=0 mlxlogscore=999
+ clxscore=1015 malwarescore=0 spamscore=0 lowpriorityscore=0 phishscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410070110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_074754_777325_A6C318F1 
-X-CRM114-Status: GOOD (  14.63  )
+X-CRM114-CacheID: sfid-20241007_083755_493619_00EA4F39 
+X-CRM114-Status: GOOD (  18.89  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,53 +99,93 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
-
-> From: Kalle Valo <quic_kvalo@quicinc.com>
->
-> Switch from using driver specific ar->conf_mutex to wiphy->mtx. The benefits are:
->
-> * one lock less and simplified locking
->
-> * possibility to use wiphy_work_queue() without other locks
->
-> Most of the mac80211 ops are called within wiphy_lock(), most notable exception
-> being tx op. This can be checked with lockdep_assert_wiphy() from
-> net/mac80211/driver-ops.[ch] and I veried that by manually going through all
-> the ops in ath12k_ops which had lockdep_assert_wiphy().
->
-> The conversion was simple:
->
-> * All conf_mutex lock() and unlock() calls which
->   already were called under wiphy_lock() I replaced with
->   lockdep_assert_wiphy().
->
-> * The rest of conf_mutex calls I replaced with wiphy_lock() and wiphy_unlock().
->
-> * All lockdep_asset_held(conf_mutex) calls I replaced with
->   lockdep_assert_wiphy().
->
-> One exception was in ath12k_core_post_reconfigure_recovery() where the wiphy
-> lock needs to be taken before hw_mutex to avoid a lockdep warning.
->
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-
-[...]
-
-> @@ -6432,7 +6411,8 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
->  	int i;
->  	int ret, vdev_id;
+On 10/5/2024 3:52 AM, Roopni Devanathan wrote:
+> From: Rajat Soni <quic_rajson@quicinc.com>
+> 
+> Add support to request DMAC reset stats from firmware through HTT stats
+> type 45. These stats give debug SoC error stats such as reset count, reset
+> time, engage time and count, disengage time and count and destination
+> ring mask.
+> 
+> Sample output:
+> -------------
+> echo 45 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> HTT_DMAC_RESET_STATS_TLV:
+> reset_count = 1
+> reset_time_ms = 8036717648
+> disengage_time_ms = 8036717648
+> engage_time_ms = 8036717649
+> disengage_count = 1
+> engage_count = 1
+> drain_dest_ring_mask = 0x0
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+> ---
+> v2:
+>  - Updated dependencies. No change in code.
+> ---
+> Depends-on:
+> [PATCH v2] wifi: ath12k: Modify print_array_to_buf() to support arrays with 1-based semantics
+> Link: https://lore.kernel.org/all/20241004085915.1788951-1-quic_rdevanat@quicinc.com/
+> 
+> [PATCH v2 0/4] wifi: ath12k: Support Ring, SFM, Transmit MU, SelfGen stats, CCA stats
+> Link: https://lore.kernel.org/ath12k/20241005101816.3314728-1-quic_rdevanat@quicinc.com/
+> 
+> [PATCH v2] wifi: ath12k: Support Pdev OBSS Stats
+> Link: https://lore.kernel.org/ath12k/20241005104206.3327143-1-quic_rdevanat@quicinc.com/
+> ---
+> ---
+>  .../wireless/ath/ath12k/debugfs_htt_stats.c   | 41 +++++++++++++++++++
+>  .../wireless/ath/ath12k/debugfs_htt_stats.h   | 15 +++++++
+>  2 files changed, 56 insertions(+)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+> index d890679a3f16..2debb253185c 100644
+> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+> @@ -2502,6 +2502,44 @@ ath12k_htt_print_pdev_obss_pd_stats_tlv(const void *tag_buf, u16 tag_len,
+>  	stats_req->buf_len = len;
+>  }
 >  
-> -	lockdep_assert_held(&ar->conf_mutex);
-> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-> +	lockdep_assert_wiphy(hw->wiphy);
+> +static void
+> +ath12k_htt_print_dmac_reset_stats_tlv(const void *tag_buf, u16 tag_len,
+> +				      struct debug_htt_stats_req *stats_req)
+> +{
+> +	const struct ath12k_htt_dmac_reset_stats_tlv *htt_stats_buf = tag_buf;
+> +	u8 *buf = stats_req->buf;
+> +	u32 len = stats_req->buf_len;
+> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
+> +	unsigned long time;
+> +
+> +	if (tag_len < sizeof(*htt_stats_buf))
+> +		return;
+> +
+> +	len += scnprintf(buf + len, buf_len - len, "HTT_DMAC_RESET_STATS_TLV:\n");
+> +	len += scnprintf(buf + len, buf_len - len, "reset_count = %u\n",
+> +			 le32_to_cpu(htt_stats_buf->reset_count));
+> +	time = ((unsigned long)le32_to_cpu(htt_stats_buf->reset_time_hi_ms) << 32) |
+> +		le32_to_cpu(htt_stats_buf->reset_time_lo_ms);
 
-The assert is twice, I'll fix that in v3.
+The v1 version was flagged by the Intel 0-DAY CI Kernel Test Service:
+https://lore.kernel.org/all/202410040200.Mwb85JzQ-lkp@intel.com/
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+I believe you need to use u64 instead of unsigned long since unsigned long
+will only be 32 bits on a 32-bit system. Also suggest you refactor into a
+helper function to remove any ambiguity about the order of operations between
+(typecast) and <<, i.e.:
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+/* untested */
+static u64 ath12k_le32hilo_to_u64(__le32 hi, __le32 lo)
+{
+	u64 hi64 = le32_to_cpu(hi);
+	u64 lo64 = le32_to_cpu(lo);
+
+	return (hi64 << 32) | lo64;
+}
+
 
