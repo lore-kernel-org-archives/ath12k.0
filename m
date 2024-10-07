@@ -4,81 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB7D6CFB449
-	for <ath12k@archiver.kernel.org>; Mon,  7 Oct 2024 15:53:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44AAFCFB44E
+	for <ath12k@archiver.kernel.org>; Mon,  7 Oct 2024 17:00:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=//T52fMC7WWMt5dTJqaCQlvm8B4Es11mRMKUi0xW2E4=; b=Cu7miOYY4qIz7V3hqcNyd3is98
-	vLEweYclvh8FkEJ4aoIur42mX7PLH5hMgXt/L0jmIF1MRkn9kW+yaJ8Pw4zZgv0zG+Lk+b0g/MsMX
-	Pt26Jrkwto0yDbt3cCpJr0tbEz1kVLf9Qi0HGcJfKKDgn80XTqgKamAoSAKedhFJQ09ih5pgfHtgK
-	CSPn1gM9fPdjiobr/YZaIcqh0R5BGB2GpHP3Cl+Hgn+sTI/7vc/m++260+AtZKfGhFF6DisqkAisM
-	rLgVdVLNbOTZKrx0VbIt/+aMfmafEr3ppAoPLIQvJxmGUm97ZNrWsrw3xDVWMejUwx0USd6Mr2j5l
-	Ug/17Oxg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=cdIiES5xWfYB/U0lDBQxZjQLS5GFDWZhaSuHXwWWKTA=; b=O4FU61UvMGpZQPCJHsZAgEqjwX
+	0MKwewIcenBNJXknlK/tQVpcD3zZX8a+mYbvsU6ds7z3h/0ozV3PJqgw1OHs7PddIW7poj+v9PqCr
+	nHBb7TNcSiwGYZthBm9DVhCAxBM4cu7IDiAAgyU5GaXvrjepDs7PjOif/U0dR/XtwGqHxxOkzXXfP
+	gjWm+VCTL935d4G4uOPEn1EUC1Y7EqgGMHKccXJd6+kYi3uBzRt4GexHWVM3ByfRKWUJ8FFNY6uHI
+	gzvZ5I4/imPeZ4o9z+xYSjl4GWNKw5xTahX8a7Yd1icZUk5+28pJF45SFiWBSVu/7ti0fapcbXUHa
+	C+rIV/Wg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxq2g-000000032Wj-1nB0
+	id 1sxr5o-00000003GRc-3qfr
 	for ath12k@archiver.kernel.org;
-	Mon, 07 Oct 2024 15:53:02 +0000
+	Mon, 07 Oct 2024 17:00:20 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxq0G-0000000326c-3bMn
+	id 1sxr5A-00000003GKM-3kqw
 	for ath12k@bombadil.infradead.org;
-	Mon, 07 Oct 2024 15:50:32 +0000
+	Mon, 07 Oct 2024 16:59:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=//T52fMC7WWMt5dTJqaCQlvm8B4Es11mRMKUi0xW2E4=; b=XCxfdxbuLnRD6WZjN7h0odt3mD
-	mg84rBQ5vN6yfkyOhmBXLnRb/MZeneTsf1/eOOwgWSbNPiJGKMycfSQ+DHpRhGmaVy19FJpvDbQd5
-	hbP16c08YL7CytMrkgHVDSf+Lfrq8ixzG/bY6zMDw5KYWTX6oCn6tXqds5KkdKsPw3rfDK198sJ2z
-	QQoIoqWkk1Og73+CihnoNugLhtQVk4mOdprmNYWeR+ellKRspana85iMt9drA8TtdHerkUI8pJlQc
-	vxTN4caeTBLhVlqpS1kXrz4h6vYndIK8qxroht9Lp8bRQPJsBSfqkd4yVvrgZTkvGOQNxgpamnjhN
-	hwuBw3/Q==;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=cdIiES5xWfYB/U0lDBQxZjQLS5GFDWZhaSuHXwWWKTA=; b=E1SofkaZnAczD3SDZetVxVSlUX
+	NEkYL23ptJ5yQwFK3LN14HjNKbJS427d7/W4Qw9HlrDL+D50elSJl/ZynF8Q3Lt7Y840BRJYY0BH6
+	hnmX8EvEoDjvjnuUaCu/m+IjDDI0EWDP0UfAE7X6Z5C8MD7i+8BXqmICrYJ8yVLzulYfwz/BSw7yi
+	AvOEECxgUA+/rntU33tjbegi94/K3KzywOq3sjA3QZHWOomAYE8buwPebi07GMzGZmFYUE/4o6S3t
+	mE1NBrcl0by37l1VvjBD/7PBOaJ+Am10iRPhpzpoGCOUwnCO+dfnq5iwFBOXUosQtla2J4Y5MSe9U
+	oRWZczgQ==;
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxq0D-00000004Rbg-1zCW
+	id 1sxr56-00000004Sk2-2ZcA
 	for ath12k@lists.infradead.org;
-	Mon, 07 Oct 2024 15:50:31 +0000
+	Mon, 07 Oct 2024 16:59:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 33BF7A40E1A;
-	Mon,  7 Oct 2024 15:50:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E138EC4CECF;
-	Mon,  7 Oct 2024 15:50:22 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 8B83CA416F5
+	for <ath12k@lists.infradead.org>; Mon,  7 Oct 2024 16:59:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BE7CC4CEC6;
+	Mon,  7 Oct 2024 16:59:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728316224;
-	bh=qML5pkxadoNVXdBJ5X/OIyBz8I3Rh1mFnP9bs/fG8nY=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=nuf0xLZLVBjmI45TNxIWsfPslO8ijInXjZaK9oSH7BFKHZ3xx26S+JP6RgklMW9RC
-	 O5ZOEaqjwxXDHfQSK+BJdS225ubGrTLrutwVwOS86IWRkd1e6Wn/93jQ08rBxdKyUJ
-	 un+i9GRIbyIuKUFTa4+l6N+nLrd0rkTT9BVkScExx95iBUG/vZePYQtbxbpacajHTr
-	 XVbYtadPq5RwmRbEJvgydCFRNyANtn8mlKLOMP7VZ4qaqEJH2mlzgD4/3+xEK9LDSV
-	 CvWlkKwAj++mE24AjVjvSf4KdR2dSTETLN2LxbjEDnq4+cLIEnCrAdW6gAkr+RTnpE
-	 4lrxzka9bYZiA==
+	s=k20201202; t=1728320374;
+	bh=24oXcR1cCTS8ICxr6auGrAJBYBfCWfHURTnHc2VMI34=;
+	h=From:To:Cc:Subject:Date:From;
+	b=YfpkFJkXOdExaRc805PhA68WhExpv4+eD2YXCdGb8ZV3bjpH95ekDHWkoEqVox+Zw
+	 lM/NrROY/OYHanyQ8j34b6QTKGe+8vrXiNIMhyIHYl4vxDiZsYQ9s74B+xub/tRCrI
+	 u3zg89s7auUvpbSujR6Kt1WAWNIAELYmK25nniLZ3D4HOlA38P/hmSrIydBzrPOidF
+	 eabyQUaqlRCpiNNpS7t7VUhnSnJT9+1Ow2lLbSBCU28dP5y8/N/jwaw5XqtFmGedHq
+	 I0wqFfxbP/KnX81KMQESs6A8VUR4Slh/EchuwNky9gX2XnlOgZfgJNJnbAhWvdWqr0
+	 dGwQ0ysfMibAg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: kernel test robot <lkp@intel.com>,  Rajat Soni
- <quic_rajson@quicinc.com>,  <oe-kbuild-all@lists.linux.dev>,  Jeff Johnson
- <jjohnson@kernel.org>,  <ath12k@lists.infradead.org>,  Roopni Devanathan
- <quic_rdevanat@quicinc.com>
-Subject: Re: [ath:pending 8/12]
- drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c:2515:77: warning: left
- shift count >= width of type
-References: <202410040200.Mwb85JzQ-lkp@intel.com>
-	<9db6842d-ddc6-4f0e-a818-c13298eedd8b@quicinc.com>
-Date: Mon, 07 Oct 2024 18:50:21 +0300
-In-Reply-To: <9db6842d-ddc6-4f0e-a818-c13298eedd8b@quicinc.com> (Jeff
-	Johnson's message of "Mon, 7 Oct 2024 08:40:30 -0700")
-Message-ID: <87iku352v6.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH v4 0/6] wifi: ath12k: switch to using wiphy_lock()
+Date: Mon,  7 Oct 2024 19:59:26 +0300
+Message-Id: <20241007165932.78081-1-kvalo@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_165029_854569_135488ED 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20241007_175937_001965_05383406 
+X-CRM114-Status: UNSURE (   7.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,48 +85,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-> On 10/3/2024 11:37 AM, kernel test robot wrote:
->
->> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
->> head:   08dd5d93509f962500dc983864b4effb2600831a
->> commit: f6a46bc3719cc6b445cb071a7dd6968891ffb169 [8/12] wifi: ath12k: Support DMAC Reset Stats
->> config: i386-allmodconfig
->> (https://download.01.org/0day-ci/archive/20241004/202410040200.Mwb85JzQ-lkp@intel.com/config)
->> compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
->> reproduce (this is a W=1 build):
->> (https://download.01.org/0day-ci/archive/20241004/202410040200.Mwb85JzQ-lkp@intel.com/reproduce)
->> 
->> If you fix the issue in a separate patch/commit (i.e. not just a new version of
->> the same patch/commit), kindly add following tags
->> | Reported-by: kernel test robot <lkp@intel.com>
->> | Closes: https://lore.kernel.org/oe-kbuild-all/202410040200.Mwb85JzQ-lkp@intel.com/
->> 
->> All warnings (new ones prefixed by >>):
->> 
->>    drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c: In function 'ath12k_htt_print_dmac_reset_stats_tlv':
->>>> drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c:2515:77: warning: left shift count >= width of type [-Wshift-count-overflow]
->>     2515 |         time = ((unsigned long)le32_to_cpu(htt_stats_buf->reset_time_hi_ms) << 32) |
->>          |                                                                             ^~
->>    drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c:2519:81:
->> warning: left shift count >= width of type [-Wshift-count-overflow]
->>     2519 |         time = ((unsigned long)le32_to_cpu(htt_stats_buf->disengage_time_hi_ms) << 32) |
->>          |                                                                                 ^~
->>    drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c:2523:78:
->> warning: left shift count >= width of type [-Wshift-count-overflow]
->>     2523 |         time = ((unsigned long)le32_to_cpu(htt_stats_buf->engage_time_hi_ms) << 32) |
->>          |                                                                              ^~
->
-> Out of curiosity is there a way to tell if this is a 32-bit build vs a 64-bit
-> build? I just want to verify that the issue is that unsigned long is 32-bits
-> and not that the shift occurs before the typecast
+Convert all uses of struct ath12k::conf_mutex to use struct wiphy::mtx, which
+is already used by mac80211, and remove conf_mutex from ath12k. This way we
+have one mutex less in ath12k and simpler locking design.
 
-The config is i386-allmodconfig so it has to be 32-bit. The report also
-includes link to the actual .config file.
+v4:
 
+* patch 2: s/praparation/preparation/
+
+* ath12k_mac_op_assign_vif_chanctx(): lockdep_assert_wiphy() was twice
+
+* ath12k_mac_vdev_create()(): lockdep_assert_wiphy() was twice
+
+* as this is now tested with MLO remove RFC tag, this patchset should be ready now
+
+v3: https://patchwork.kernel.org/project/linux-wireless/cover/20240924092515.1049885-1-kvalo@kernel.org/
+
+* new patch: wifi: ath12k: fix atomic calls in ath12k_mac_op_set_bitrate_mask()
+
+* new patch: wifi: ath12k: ath12k_mac_op_sta_state(): clean up update_wk cancellation
+
+* patch 3: ath12k_core_post_reconfigure_recovery(): take wiphy lock before hw_mutex to
+  avoid a lockdep warning
+
+* patch 3: ath12k_sta_rc_update_wk(): remove extra wiphy_lock() calls
+
+* patch 3: update commit message, especially remove the sparse warning which was already fixed
+
+* rebase to ath-202409191620
+
+v2: https://patchwork.kernel.org/project/linux-wireless/cover/20240918181042.91891-1-kvalo@kernel.org/
+
+* rebase to ath-202409051620
+
+* patch 1: ath12k_wow_op_suspend(): remove extra wiphy_lock()/unlock() (Baochen)
+
+* patch 1: fix clang warnings about unused labels (Johannes)
+
+* patch 2: s/no/now/ (Jeff)
+
+* patch 4: ath12k_sta_rc_update_wk(): fix wiphy_priv() usage
+
+v1: https://patchwork.kernel.org/project/linux-wireless/cover/20240821153728.2121600-1-kvalo@kernel.org/
+
+Kalle Valo (6):
+  wifi: ath12k: fix atomic calls in ath12k_mac_op_set_bitrate_mask()
+  wifi: ath12k: convert struct ath12k_sta::update_wk to use struct
+    wiphy_work
+  wifi: ath12k: switch to using wiphy_lock() and remove ar->conf_mutex
+  wifi: ath12k: cleanup unneeded labels
+  wifi: ath12k: ath12k_mac_set_key(): remove exit label
+  wifi: ath12k: ath12k_mac_op_sta_state(): clean up update_wk
+    cancellation
+
+ drivers/net/wireless/ath/ath12k/core.c        |   7 +-
+ drivers/net/wireless/ath/ath12k/core.h        |   7 +-
+ drivers/net/wireless/ath/ath12k/debugfs.c     |   4 +-
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   |  26 +-
+ drivers/net/wireless/ath/ath12k/mac.c         | 387 +++++++-----------
+ drivers/net/wireless/ath/ath12k/peer.c        |   6 +-
+ drivers/net/wireless/ath/ath12k/wow.c         |  26 +-
+ 7 files changed, 190 insertions(+), 273 deletions(-)
+
+
+base-commit: 1a0c640ce1cdcde3eb131a0c1e70ca1ed7cf27cb
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+2.39.5
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
