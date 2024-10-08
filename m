@@ -4,82 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ACBCCEF142
-	for <ath12k@archiver.kernel.org>; Tue,  8 Oct 2024 09:31:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDFD3CEF16C
+	for <ath12k@archiver.kernel.org>; Tue,  8 Oct 2024 13:05:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=JKc8DPrFU9ORtxrw5BuKDZKaecX1dP/9rb4dY/DdSNg=; b=ItTBcc5h8yh5OAlNRAt0T432gc
-	Naj4c6g9qY8AL1ZAVoXu7kEeovKsqZyk5sPeyPq4KFUXd3MofFZ+w2zd8dWaaxdYEdo9T9qQldH2y
-	OmL0h0neM5tcc/b8Vooiwt/RVp+qoaY3PcXJEYHN+ZFg/f4gjfIkovl0iZM9XmLJjX3RWYrgmOM0x
-	lj2gXvrdqcSohVbBXBncFBXhqEZ7UllyZTSjMc0btgelkuNlumEpEcdwXBWCMArDiaC4lphxl3qMy
-	2bJdHiyBv4zp6kBFkKZy4n3tsPYLV/2IO5mkQTipVUzvi6NayV57itL8aD0+St5O6QJ4jLHavqD8T
-	Qo2bdbaw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=ReMHXzy/xLyFkDD6JkM3P5c6crcWMdhbVuAZ58vbNl4=; b=D0ur6RWU6vSi6j1Z8cNBD4l1xp
+	LFv4EBT3Q59WbdSrci2PBeYjAmHCu1lxinP4Ft1jiwkmHy84SExg7Gs0IhjGp287rYx6Y/r/Tk1Bh
+	8J7Bpa6tn4wJnXx/oaiMfDl33ai9UXeZuxy5FTy4FngyDNMGm/tOx16dTbh6p5tSyYb7xZklrd1TL
+	DbuwtGXtjCYeLs5K1jrHsnvi+UoFYcH6qGMaXrUKhDZUehAiQZYIti6tiemyfW6pY1XL/4xRcoS/d
+	rZxEsend54wjJwtCptUmTV6f2A6qxD7sJX+uh2aCPi4VHCc9geQlahxAUkf+COZQYuZY/Dt9wvaFg
+	X4ccaLjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy6YW-00000005Jjg-4C2N
+	id 1sy9u4-00000005usO-2MRm
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Oct 2024 09:31:01 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 08 Oct 2024 13:05:28 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy6YU-00000005Jj6-26K8
+	id 1sy9nX-00000005tUM-0It9
 	for ath12k@lists.infradead.org;
-	Tue, 08 Oct 2024 09:31:00 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49852rSN013602;
-	Tue, 8 Oct 2024 09:30:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=JKc8DPrFU9ORtxrw5BuKDZ
-	KaecX1dP/9rb4dY/DdSNg=; b=WpjIBcJuBrNcN5cF0/r26NEmCxkzZ5c08uhLUv
-	CgFb953hcvxdH/gn2355j35n3TpmP3ngycJ1laaDjwxE/mOBDd1aAbHuNAgBByaj
-	4A18FNS6Sm6W5lPUJ/lheDVRQO7YpbnEFLwkQg+/fXhzcp1rJqDCqqHBw/1xYoWr
-	niCctpO1uLObLycKaW9egzQ/P7UcwLA+enr/l9/LvNViUOA7ROPoo2pQ2qvi4Bv9
-	jhkZR9hOOJLEdUVPG6Ly4NyBX872AXerJ4Zc3ZgE4YJ45C2hWyyg/nBajVdFLwT/
-	FCHvmau63pyY+6Msm7WAB/RoazoOE0R1E9bMp2Hdin4stvVQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 424x7rrn7p-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Oct 2024 09:30:57 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4989UuaD002217
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Oct 2024 09:30:56 GMT
-Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 8 Oct 2024 02:30:54 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH] wifi: ath12k: remove msdu_end structure for WCN7850
-Date: Tue, 8 Oct 2024 17:30:39 +0800
-Message-ID: <20241008093039.11076-1-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 08 Oct 2024 12:58:44 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-37cdac05af9so5283388f8f.0
+        for <ath12k@lists.infradead.org>; Tue, 08 Oct 2024 05:58:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1728392320; x=1728997120; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ReMHXzy/xLyFkDD6JkM3P5c6crcWMdhbVuAZ58vbNl4=;
+        b=A207gmoc6WY/+b2fDlfyZtwBm2VOg7vOsTIHR/4OLqQB88lxjCIC7hgS6OATp+2ZgJ
+         ZyvSt8li0FgYpV5C6BCFGxRrA6AZJwodavkT0yMBsBAXnAs0GdjD6MN07QLJzoa/UjV4
+         76GW5Kn99h8pJz4vZpOpYPtfcEGDi0XUK8dc1zc+GcyM0uGSXOLpBtywL4ciSQ8ZWC4Z
+         MuPE765gsOMNyRA76EXx67ZVPNojqh7ZumJrgSJbdmsKGAAr9eJuW4WjPqqGD7uU0tLY
+         IVLZEHyds6HXrF/cteTQKs9TK4vEoeZvgVg5PaRAzdqVoaaqHPsuJUOsIeECdPpRs2j0
+         AbtQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728392320; x=1728997120;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ReMHXzy/xLyFkDD6JkM3P5c6crcWMdhbVuAZ58vbNl4=;
+        b=Bk/W33m/t3HPp9UdBF4e4T7QMyxM3zylTYECTfDqOwCW7q8K9E/9lN9L8wjvxg4Mr+
+         13MYw2aQSiYtdx6x0jkqCaL79CsbDsrQcgxgC8rUHqrVJelGlx/5BBkBoQ9/7xP44eTE
+         9s/f78VQZ70Y7eOWOTTRnTX1GVtIBlKWyM8jjbHgwgh+zOXWAwdBSAOqEJEEfolnENU0
+         0W67CKAaPzvOpVQ1rmG5ekS9Q55/Kl5c5A5wArZzruiG39H2YGePkSFif1vSnSpzH9rA
+         HREobqz/BGbY6YRMLzTpefqEjcUw0cgw+QPw07G3lsORPKHd+2CetJGxj82x5MqrI8ku
+         bIjg==
+X-Forwarded-Encrypted: i=1; AJvYcCUNM5mM6AlHCjX9FZa8HCgfK0d+mefwnrekTV0qxGTMEkkk5mILI9Z7ChQNYxiRHmFbX1HxW/0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwMjNwMmsN8NaH8LfstLWhCmsYl2NtBwE2CZcWl7c7aXiPIv1Lr
+	TIkpP6SrUrBoKIVfDdEDmq8zHtZydR7KWMCejp/eKI0+wbousMj7sWrQ14cBHSo=
+X-Google-Smtp-Source: AGHT+IHQ2iBxXrIrseZ96mgtxzYQp8FfKJjmT9um9xPqnI+veUBTlMl3+aPZrS4hSFMmULIIpLA0lw==
+X-Received: by 2002:adf:a447:0:b0:37c:cce6:997d with SMTP id ffacd0b85a97d-37d0e72f6damr12739368f8f.20.1728392320204;
+        Tue, 08 Oct 2024 05:58:40 -0700 (PDT)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37d16920be2sm8085548f8f.60.2024.10.08.05.58.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 08 Oct 2024 05:58:39 -0700 (PDT)
+Date: Tue, 8 Oct 2024 15:58:16 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: oe-kbuild@lists.linux.dev,
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
+	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+	ath12k@lists.infradead.org, Kalle Valo <quic_kvalo@quicinc.com>,
+	Harshitha Prem <quic_hprem@quicinc.com>
+Subject: [ath:ath12k-mlo-qcn9274 22/81]
+ drivers/net/wireless/ath/ath12k/mac.c:9400 ath12k_mac_destroy() error: we
+ previously assumed 'ab' could be null (see line 9389)
+Message-ID: <d5ea9564-f66d-4d55-9c93-7d088c4a3ac4@stanley.mountain>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: -Cw3RGmGOM8O8eTyNV1lAKrkcfpF4vCh
-X-Proofpoint-ORIG-GUID: -Cw3RGmGOM8O8eTyNV1lAKrkcfpF4vCh
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
- phishscore=0 mlxlogscore=999 spamscore=0 clxscore=1011 malwarescore=0
- lowpriorityscore=0 priorityscore=1501 mlxscore=0 adultscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410080062
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_023058_572426_7CF4F1AE 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20241008_055843_208028_756061E5 
+X-CRM114-Status: UNSURE (   6.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,236 +95,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, when ath12k retrieves values from the structure
-rx_msdu_end_wcn7850, the information obtained is incorrect. This is because
-the definition of the rx_msdu_end_wcn7850 structure in ath12k is incorrect.
-In fact, the rx_msdu_end structure used by WCN7850 is the same as the
-rx_msdu_end structure of QCN9274.
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-qcn9274
+head:   4ad14f50820745f9c2f425ba07ca8431bf2409ed
+commit: 6c252823bedb7f8f34d53dddadd65761f85bd3c4 [22/81] wifi: ath12k: move ath12k_hw from per device to group
+config: csky-randconfig-r072-20241008 (https://download.01.org/0day-ci/archive/20241008/202410081858.ShABiCCT-lkp@intel.com/config)
+compiler: csky-linux-gcc (GCC) 14.1.0
 
-Commit ed823fd113b7 ("wifi: ath12k: add msdu_end structure for WCN7850")
-introduced this structure. The original issue trying to be fixed with that
-commit is that the TID information retrieved from the rx_msdu_end structure
-was incorrect, and it was thought that the structure wasn't correct, so a
-supposedly correct structure was introduced. However it was subsequently
-discovered that the TID information is only guaranteed to be valid in the
-rx_msdu_start structure, so that commit added the logic to retrieve the TID
-from the rx_msdu_start, but unfortunately kept the rx_msdu_end_wcn7850
-structure.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+| Closes: https://lore.kernel.org/r/202410081858.ShABiCCT-lkp@intel.com/
 
-To address this issue, revert the code related to the rx_msdu_end_wcn7850
-structure, retaining the TID retrieval logic.
+New smatch warnings:
+drivers/net/wireless/ath/ath12k/mac.c:9400 ath12k_mac_destroy() error: we previously assumed 'ab' could be null (see line 9389)
 
-This patch does not affect QCN9274.
+vim +/ab +9400 drivers/net/wireless/ath/ath12k/mac.c
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9380  void ath12k_mac_destroy(struct ath12k_hw_group *ag)
+8a742a79f90e3d Karthikeyan Periyasamy 2024-01-14  9381  {
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9382  	struct ath12k_pdev *pdev;
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9383  	struct ath12k_base *ab = ag->ab[0];
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9384  	int i, j;
+01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9385  	struct ath12k_hw *ah;
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9386  
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9387  	for (i = 0; i < ag->num_devices; i++) {
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9388  		ab = ag->ab[i];
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12 @9389  		if (!ab)
+                                                                             ^^
+ab can be NULL
 
-Fixes: ed823fd113b7 ("wifi: ath12k: add msdu_end structure for WCN7850")
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/hal.c     | 12 ++--
- drivers/net/wireless/ath/ath12k/rx_desc.h | 88 ++++-------------------
- 2 files changed, 20 insertions(+), 80 deletions(-)
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9390  			continue;
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9391  
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9392  		for (j = 0; j < ab->num_radios; j++) {
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9393  			pdev = &ab->pdevs[j];
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9394  			if (!pdev->ar)
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9395  				continue;
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9396  			pdev->ar = NULL;
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9397  		}
+6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9398  	}
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9399  
+e46d266981a601 Karthikeyan Periyasamy 2024-04-12 @9400  	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
+                                                                                                  ^^
+Dereferenced inside function
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index ca04bfae8bdc..fd98fac16dd5 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -385,13 +385,13 @@ static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_pkt_type(struct hal_rx_desc *desc)
- static u8 ath12k_hw_qcn9274_rx_desc_get_msdu_nss(struct hal_rx_desc *desc)
- {
- 	return le32_get_bits(desc->u.qcn9274.msdu_end.info12,
--			     RX_MSDU_END_QCN9274_INFO12_MIMO_SS_BITMAP);
-+			     RX_MSDU_END_INFO12_MIMO_SS_BITMAP);
- }
- 
- static u8 ath12k_hw_qcn9274_rx_desc_get_mpdu_tid(struct hal_rx_desc *desc)
- {
- 	return le16_get_bits(desc->u.qcn9274.msdu_end.info5,
--			    RX_MSDU_END_QCN9274_INFO5_TID);
-+			    RX_MSDU_END_INFO5_TID);
- }
- 
- static u16 ath12k_hw_qcn9274_rx_desc_get_mpdu_peer_id(struct hal_rx_desc *desc)
-@@ -846,13 +846,13 @@ static u8 ath12k_hw_qcn9274_compact_rx_desc_get_msdu_pkt_type(struct hal_rx_desc
- static u8 ath12k_hw_qcn9274_compact_rx_desc_get_msdu_nss(struct hal_rx_desc *desc)
- {
- 	return le32_get_bits(desc->u.qcn9274_compact.msdu_end.info12,
--			     RX_MSDU_END_QCN9274_INFO12_MIMO_SS_BITMAP);
-+			     RX_MSDU_END_INFO12_MIMO_SS_BITMAP);
- }
- 
- static u8 ath12k_hw_qcn9274_compact_rx_desc_get_mpdu_tid(struct hal_rx_desc *desc)
- {
- 	return le16_get_bits(desc->u.qcn9274_compact.msdu_end.info5,
--			     RX_MSDU_END_QCN9274_INFO5_TID);
-+			     RX_MSDU_END_INFO5_TID);
- }
- 
- static u16 ath12k_hw_qcn9274_compact_rx_desc_get_mpdu_peer_id(struct hal_rx_desc *desc)
-@@ -1198,7 +1198,7 @@ static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_pkt_type(struct hal_rx_desc *desc)
- static u8 ath12k_hw_wcn7850_rx_desc_get_msdu_nss(struct hal_rx_desc *desc)
- {
- 	return le32_get_bits(desc->u.wcn7850.msdu_end.info12,
--			     RX_MSDU_END_WCN7850_INFO12_MIMO_SS_BITMAP);
-+			     RX_MSDU_END_INFO12_MIMO_SS_BITMAP);
- }
- 
- static u8 ath12k_hw_wcn7850_rx_desc_get_mpdu_tid(struct hal_rx_desc *desc)
-@@ -1216,7 +1216,7 @@ static void ath12k_hw_wcn7850_rx_desc_copy_end_tlv(struct hal_rx_desc *fdesc,
- 						   struct hal_rx_desc *ldesc)
- {
- 	memcpy(&fdesc->u.wcn7850.msdu_end, &ldesc->u.wcn7850.msdu_end,
--	       sizeof(struct rx_msdu_end_wcn7850));
-+	       sizeof(struct rx_msdu_end_qcn9274));
- }
- 
- static u32 ath12k_hw_wcn7850_rx_desc_get_mpdu_start_tag(struct hal_rx_desc *desc)
-diff --git a/drivers/net/wireless/ath/ath12k/rx_desc.h b/drivers/net/wireless/ath/ath12k/rx_desc.h
-index a0db6702a189..10366bbe9999 100644
---- a/drivers/net/wireless/ath/ath12k/rx_desc.h
-+++ b/drivers/net/wireless/ath/ath12k/rx_desc.h
-@@ -684,18 +684,17 @@ enum rx_msdu_start_reception_type {
- 
- #define RX_MSDU_END_INFO5_SA_IDX_TIMEOUT	BIT(0)
- #define RX_MSDU_END_INFO5_DA_IDX_TIMEOUT	BIT(1)
-+#define RX_MSDU_END_INFO5_TO_DS			BIT(2)
-+#define RX_MSDU_END_INFO5_TID			GENMASK(6, 3)
- #define RX_MSDU_END_INFO5_SA_IS_VALID		BIT(7)
- #define RX_MSDU_END_INFO5_DA_IS_VALID		BIT(8)
- #define RX_MSDU_END_INFO5_DA_IS_MCBC		BIT(9)
- #define RX_MSDU_END_INFO5_L3_HDR_PADDING	GENMASK(11, 10)
- #define RX_MSDU_END_INFO5_FIRST_MSDU		BIT(12)
- #define RX_MSDU_END_INFO5_LAST_MSDU		BIT(13)
-+#define RX_MSDU_END_INFO5_FROM_DS		BIT(14)
- #define RX_MSDU_END_INFO5_IP_CHKSUM_FAIL_COPY	BIT(15)
- 
--#define RX_MSDU_END_QCN9274_INFO5_TO_DS         BIT(2)
--#define RX_MSDU_END_QCN9274_INFO5_TID           GENMASK(6, 3)
--#define RX_MSDU_END_QCN9274_INFO5_FROM_DS       BIT(14)
--
- #define RX_MSDU_END_INFO6_MSDU_DROP		BIT(0)
- #define RX_MSDU_END_INFO6_REO_DEST_IND		GENMASK(5, 1)
- #define RX_MSDU_END_INFO6_FLOW_IDX		GENMASK(25, 6)
-@@ -709,14 +708,14 @@ enum rx_msdu_start_reception_type {
- #define RX_MSDU_END_INFO7_FLOW_AGGR_CONTN	BIT(8)
- #define RX_MSDU_END_INFO7_FISA_TIMEOUT		BIT(9)
- 
--#define RX_MSDU_END_QCN9274_INFO7_TCPUDP_CSUM_FAIL_CPY	BIT(10)
--#define RX_MSDU_END_QCN9274_INFO7_MSDU_LIMIT_ERROR	BIT(11)
--#define RX_MSDU_END_QCN9274_INFO7_FLOW_IDX_TIMEOUT	BIT(12)
--#define RX_MSDU_END_QCN9274_INFO7_FLOW_IDX_INVALID	BIT(13)
--#define RX_MSDU_END_QCN9274_INFO7_CCE_MATCH		BIT(14)
--#define RX_MSDU_END_QCN9274_INFO7_AMSDU_PARSER_ERR	BIT(15)
-+#define RX_MSDU_END_INFO7_TCPUDP_CSUM_FAIL_CPY	BIT(10)
-+#define RX_MSDU_END_INFO7_MSDU_LIMIT_ERROR	BIT(11)
-+#define RX_MSDU_END_INFO7_FLOW_IDX_TIMEOUT	BIT(12)
-+#define RX_MSDU_END_INFO7_FLOW_IDX_INVALID	BIT(13)
-+#define RX_MSDU_END_INFO7_CCE_MATCH		BIT(14)
-+#define RX_MSDU_END_INFO7_AMSDU_PARSER_ERR	BIT(15)
- 
--#define RX_MSDU_END_QCN9274_INFO8_KEY_ID		GENMASK(7, 0)
-+#define RX_MSDU_END_INFO8_KEY_ID		GENMASK(7, 0)
- 
- #define RX_MSDU_END_INFO9_SERVICE_CODE		GENMASK(14, 6)
- #define RX_MSDU_END_INFO9_PRIORITY_VALID	BIT(15)
-@@ -758,8 +757,8 @@ enum rx_msdu_start_reception_type {
- #define RX_MSDU_END_INFO12_RECV_BW		GENMASK(20, 18)
- #define RX_MSDU_END_INFO12_RECEPTION_TYPE	GENMASK(23, 21)
- 
--#define RX_MSDU_END_QCN9274_INFO12_MIMO_SS_BITMAP	GENMASK(30, 24)
--#define RX_MSDU_END_QCN9274_INFO12_MIMO_DONE_COPY	BIT(31)
-+#define RX_MSDU_END_INFO12_MIMO_SS_BITMAP	GENMASK(30, 24)
-+#define RX_MSDU_END_INFO12_MIMO_DONE_COPY	BIT(31)
- 
- #define RX_MSDU_END_INFO13_FIRST_MPDU		BIT(0)
- #define RX_MSDU_END_INFO13_MCAST_BCAST		BIT(2)
-@@ -791,7 +790,7 @@ enum rx_msdu_start_reception_type {
- #define RX_MSDU_END_INFO13_UNDECRYPT_FRAME_ERR	BIT(30)
- #define RX_MSDU_END_INFO13_FCS_ERR		BIT(31)
- 
--#define RX_MSDU_END_QCN9274_INFO13_WIFI_PARSER_ERR      BIT(15)
-+#define RX_MSDU_END_INFO13_WIFI_PARSER_ERR      BIT(15)
- 
- #define RX_MSDU_END_INFO14_DECRYPT_STATUS_CODE	GENMASK(12, 10)
- #define RX_MSDU_END_INFO14_RX_BITMAP_NOT_UPDED	BIT(13)
-@@ -889,65 +888,6 @@ struct rx_msdu_end_qcn9274_compact {
- 	__le32 info14;
- } __packed;
- 
--/* These macro definitions are only used for WCN7850 */
--#define RX_MSDU_END_WCN7850_INFO2_KEY_ID			BIT(7, 0)
--
--#define RX_MSDU_END_WCN7850_INFO5_MSDU_LIMIT_ERR		BIT(2)
--#define RX_MSDU_END_WCN7850_INFO5_IDX_TIMEOUT			BIT(3)
--#define RX_MSDU_END_WCN7850_INFO5_IDX_INVALID			BIT(4)
--#define RX_MSDU_END_WCN7850_INFO5_WIFI_PARSE_ERR		BIT(5)
--#define RX_MSDU_END_WCN7850_INFO5_AMSDU_PARSER_ERR		BIT(6)
--#define RX_MSDU_END_WCN7850_INFO5_TCPUDP_CSUM_FAIL_CPY		BIT(14)
--
--#define RX_MSDU_END_WCN7850_INFO12_MIMO_SS_BITMAP		GENMASK(31, 24)
--
--#define RX_MSDU_END_WCN7850_INFO13_FRAGMENT_FLAG		BIT(13)
--#define RX_MSDU_END_WCN7850_INFO13_CCE_MATCH			BIT(15)
--
--struct rx_msdu_end_wcn7850 {
--	__le16 info0;
--	__le16 phy_ppdu_id;
--	__le16 ip_hdr_cksum;
--	__le16 info1;
--	__le16 info2;
--	__le16 cumulative_l3_checksum;
--	__le32 rule_indication0;
--	__le32 rule_indication1;
--	__le16 info3;
--	__le16 l3_type;
--	__le32 ipv6_options_crc;
--	__le32 tcp_seq_num;
--	__le32 tcp_ack_num;
--	__le16 info4;
--	__le16 window_size;
--	__le16 tcp_udp_chksum;
--	__le16 info5;
--	__le16 sa_idx;
--	__le16 da_idx_or_sw_peer_id;
--	__le32 info6;
--	__le32 fse_metadata;
--	__le16 cce_metadata;
--	__le16 sa_sw_peer_id;
--	__le16 info7;
--	__le16 rsvd0;
--	__le16 cumulative_l4_checksum;
--	__le16 cumulative_ip_length;
--	__le32 info9;
--	__le32 info10;
--	__le32 info11;
--	__le32 toeplitz_hash_2_or_4;
--	__le32 flow_id_toeplitz;
--	__le32 info12;
--	__le32 ppdu_start_timestamp_31_0;
--	__le32 ppdu_start_timestamp_63_32;
--	__le32 phy_meta_data;
--	__le16 vlan_ctag_ci;
--	__le16 vlan_stag_ci;
--	__le32 rsvd[3];
--	__le32 info13;
--	__le32 info14;
--} __packed;
--
- /* rx_msdu_end
-  *
-  * rxpcu_mpdu_filter_in_category
-@@ -1578,7 +1518,7 @@ struct rx_pkt_hdr_tlv {
- 
- struct hal_rx_desc_wcn7850 {
- 	__le64 msdu_end_tag;
--	struct rx_msdu_end_wcn7850 msdu_end;
-+	struct rx_msdu_end_qcn9274 msdu_end;
- 	u8 rx_padding0[RX_BE_PADDING0_BYTES];
- 	__le64 mpdu_start_tag;
- 	struct rx_mpdu_start_qcn9274 mpdu_start;
+01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9401  		ah = ath12k_ab_to_ah(ab, i);
+01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9402  		if (!ah)
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9403  			continue;
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9404  
+01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9405  		ath12k_mac_hw_destroy(ah);
+01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9406  		ath12k_ab_set_ah(ab, i, NULL);
+6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9407  	}
+8a742a79f90e3d Karthikeyan Periyasamy 2024-01-14  9408  }
 
-base-commit: b9545f4570fcfebe982439de7c9106e55b4bf756
 -- 
-2.34.1
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 
