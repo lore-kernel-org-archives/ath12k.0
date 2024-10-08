@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8259BCED275
-	for <ath12k@archiver.kernel.org>; Tue,  8 Oct 2024 07:49:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FCE0CED27A
+	for <ath12k@archiver.kernel.org>; Tue,  8 Oct 2024 07:49:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mkM7VGiX5kW/dPIRm3EI1z1B/TLEZxxgapdk2i8mJ+g=; b=ycygGxoTMNzSJm6S/EH9cI1Ph5
-	blhljUNeKVnReK3qbsBnQW9si4cp6ffJomEyeBGMAvlL3z2Et8zfloC6ngbTVcgTjJhCne5f/LxEL
-	znRGb4/SOqMB43FbMtikKfWEFO3zHJiLlmqPg5H1aw5Ffk6EVTiL75WLhtVc24bS2keibmM00qnxC
-	K9w3sqC9v1nxiDaGJrn+MnSKNfw+VMlJBX0tgQ7h+6Eiu7lwx66wE9IgSA+w6CXXfEx+7llckvWPj
-	tRJb7Y6A7qRUR1uuSVLP9eBavPvm74KR1cPZxWa6Jyzv9LICjCa9OGE1QKu9TOtNb5nSCddZXqmwW
-	bWBpRu3Q==;
+	bh=PkYjWUfeckB0xwDB86Xq5qNJ2J/s2Nay9l2ypLnvcEI=; b=dOXdakWuUD2yCKcEQe8KNhYEXG
+	UWlLbCXaSmhL1rQ1E6v5lR/E6H+DsZS4IhkSjqQjklmXWDhr1jf6pGmOFZeIKbxBu5bp6gqEt81wB
+	iGtdyYsrpswhtVU3WYqisTcUEjCTyQ08sqNQH7eUzjf9Qd3WfEaqu5E9+JSYfus6DOIt++UNvobPx
+	6zUzmz2Uf/ueHk3Zq5EitqfvmNZxGLd3ohBgWArDzJ/V+XJltz7PnGr6gCi9Ste0r/+q+cZZcuza/
+	kHwSdwM9oUXvMjg6UREYpjzpjCDn13xfxXPtjyYFXsDDdLua3IYOEpKzADmMUAFvz/hWUzmgRdC6H
+	CmCi6nww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4yO-00000004s0B-3UU3
+	id 1sy4yP-00000004s0f-3Ayp
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Oct 2024 07:49:36 +0000
+	Tue, 08 Oct 2024 07:49:37 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4lO-00000004ohw-1ieR
+	id 1sy4lQ-00000004ojD-08ej
 	for ath12k@lists.infradead.org;
-	Tue, 08 Oct 2024 07:36:11 +0000
+	Tue, 08 Oct 2024 07:36:13 +0000
 Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49860vmc025530;
-	Tue, 8 Oct 2024 07:36:10 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4986HT72025511;
+	Tue, 8 Oct 2024 07:36:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mkM7VGiX5kW/dPIRm3EI1z1B/TLEZxxgapdk2i8mJ+g=; b=ZZJVmV9YHE8EoehQ
-	lRqioQ0Rug1MI/zq1omBUQm4k9DDdErToxlINxAjgaAqDeXIpfQ67AswxHLx+4ww
-	HxfqhwoS+iLyoTBQhXUk5wgwUDr2+BluPDJ67W4Y5PMFDrj+TmgbhAz8ZI2uk1kT
-	VYDSamZFnDKj+CpAUkf1LgPjDMWZ707IpJcp2LeCGepKZR6ST+d+RakJff/0L0MP
-	mPF4p/iUIILatZvB25blCk3cGh3Wp//k24R3r7XjRzfIS2kTEUfn/XKOn+saZGpF
-	Z3Bhp5IuwQWyP67IuttuTwDeZxvkMeOwfBikh2v7RoYG4XpWhkdAhgUAloYHmmBt
-	80w7/w==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xs86h32-1
+	PkYjWUfeckB0xwDB86Xq5qNJ2J/s2Nay9l2ypLnvcEI=; b=DDyAyrmRtYPi2t5w
+	TEUTZy046c7VatkPArdUXHptjW0xb814BMURB2dqDEffSGnu1GAkS9gY3iHQzy89
+	3Ji9bS9cAjYpa2QjeJDB0J6k83GethdUt7hkXc+vIzZbJUf6ZlwnZuUJZi30PPwr
+	o3oPNWhp6oZrs7gzIys/t93oQDgJcYNfh+yQImVD0BuBoQjhiNJZG/SiK5LwOrKg
+	tvtRYEMPZw3o2Ya7cXd8Dy3MuU2B8W1XB/lryooGHinQMjIuuthbn9tr28BDWZKV
+	ovCPU5OgaY7g05Az1BoT3x6wQIiC7huc+GdQwbYngT1lcA47sr9Tw2iEV3CO0hFt
+	nC7IuQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 422xs86h33-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Oct 2024 07:36:09 +0000 (GMT)
+	Tue, 08 Oct 2024 07:36:11 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4987a9vL024073
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4987aAje010751
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Oct 2024 07:36:09 GMT
+	Tue, 8 Oct 2024 07:36:10 GMT
 Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 8 Oct 2024 00:36:07 -0700
+ 15.2.1544.9; Tue, 8 Oct 2024 00:36:09 -0700
 From: Kang Yang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v2 06/11] wifi: ath12k: fix struct hal_rx_mpdu_start
-Date: Tue, 8 Oct 2024 15:35:29 +0800
-Message-ID: <20241008073534.1195-7-quic_kangyang@quicinc.com>
+Subject: [PATCH v2 07/11] wifi: ath12k: properly handling the state variables of monitor mode
+Date: Tue, 8 Oct 2024 15:35:30 +0800
+Message-ID: <20241008073534.1195-8-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1.windows.1
 In-Reply-To: <20241008073534.1195-1-quic_kangyang@quicinc.com>
 References: <20241008073534.1195-1-quic_kangyang@quicinc.com>
@@ -70,20 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: AmoR7fZ5um3PeflY0mLnctjysNrMlT2F
-X-Proofpoint-ORIG-GUID: AmoR7fZ5um3PeflY0mLnctjysNrMlT2F
+X-Proofpoint-GUID: S4T81q0BpS-z8uYP30Me7TASsGBNhaLh
+X-Proofpoint-ORIG-GUID: S4T81q0BpS-z8uYP30Me7TASsGBNhaLh
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 spamscore=0
- priorityscore=1501 phishscore=0 mlxlogscore=668 clxscore=1015
+ priorityscore=1501 phishscore=0 mlxlogscore=999 clxscore=1015
  impostorscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0
  suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2409260000 definitions=main-2410080048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_003610_484614_42D2C670 
-X-CRM114-Status: UNSURE (   9.10  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241008_003612_106057_7C06A8A0 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,45 +97,83 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Current struct hal_rx_mpdu_start in hal_rx.h is not matched with
-hardware descriptor definition.
+Now monitor mode has some status variables, such as monitor_started,
+monitor_vdev_created. They are not always handled correctly.
 
-So update this structure and related code.
+For monitor_started, it should be true when driver works in monitor
+mode, and should be false at other times.
+
+For monitor_vdev_id, it should be -1 when driver doesn't work in monitor
+mode.
+
+For monitor_vdev_created, it should be true after monitor vdev is
+created successfully and should be false at other times.
+
+For monitor_conf_enabled, it should be true when mac80211 sets
+IEEE80211_CONF_MONITOR, and should be false at other times.
+
+Handle those state variables according to above descriptions.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hal_rx.h | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  5 +++++
+ drivers/net/wireless/ath/ath12k/mac.c  | 10 ++++++++++
+ 2 files changed, 15 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index c69df852ae69..2de7b0eba9f2 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -452,15 +452,16 @@ struct hal_rx_phyrx_rssi_legacy_info {
- 	__le32 rsvd1;
- } __packed;
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 51252e8bc1ae..6965876137ce 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1060,6 +1060,11 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
+ 				     ath12k_mac_tx_mgmt_pending_free, ar);
+ 			idr_destroy(&ar->txmgmt_idr);
+ 			wake_up(&ar->txmgmt_empty_waitq);
++
++			ar->monitor_vdev_id = -1;
++			ar->monitor_started = false;
++			ar->monitor_vdev_created = false;
++			ar->monitor_conf_enabled = false;
+ 		}
+ 	}
  
--#define HAL_RX_MPDU_START_INFO0_PPDU_ID	GENMASK(31, 16)
--#define HAL_RX_MPDU_START_INFO1_PEERID	GENMASK(31, 16)
--#define HAL_RX_MPDU_START_INFO2_MPDU_LEN GENMASK(13, 0)
-+#define HAL_RX_MPDU_START_INFO0_PPDU_ID			GENMASK(31, 16)
-+#define HAL_RX_MPDU_START_INFO1_PEERID			GENMASK(31, 16)
-+#define HAL_RX_MPDU_START_INFO2_MPDU_LEN		GENMASK(13, 0)
- struct hal_rx_mpdu_start {
-+	__le32 rsvd0[9];
- 	__le32 info0;
- 	__le32 info1;
--	__le32 rsvd1[11];
-+	__le32 rsvd1[2];
- 	__le32 info2;
--	__le32 rsvd2[9];
-+	__le32 rsvd2[16];
- } __packed;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 6d0784a21558..2001d82f8d40 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -6573,6 +6573,9 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
+ 			goto err_peer_del;
+ 		}
+ 		break;
++	case WMI_VDEV_TYPE_MONITOR:
++		ar->monitor_vdev_created = true;
++		break;
+ 	default:
+ 		break;
+ 	}
+@@ -6622,6 +6625,8 @@ static int ath12k_mac_vdev_create(struct ath12k *ar, struct ieee80211_vif *vif)
+ err_vdev_del:
+ 	ath12k_wmi_vdev_delete(ar, arvif->vdev_id);
+ 	ar->num_created_vdevs--;
++	ar->monitor_vdev_created = false;
++	ar->monitor_vdev_id = -1;
+ 	arvif->is_created = false;
+ 	arvif->ar = NULL;
+ 	ar->allocated_vdev_map &= ~(1LL << arvif->vdev_id);
+@@ -9339,6 +9344,11 @@ static void ath12k_mac_setup(struct ath12k *ar)
  
- #define HAL_RX_PPDU_END_DURATION	GENMASK(23, 0)
+ 	INIT_WORK(&ar->wmi_mgmt_tx_work, ath12k_mgmt_over_wmi_tx_work);
+ 	skb_queue_head_init(&ar->wmi_mgmt_tx_queue);
++
++	ar->monitor_vdev_id = -1;
++	ar->monitor_started = false;
++	ar->monitor_vdev_created = false;
++	ar->monitor_conf_enabled = false;
+ }
+ 
+ int ath12k_mac_register(struct ath12k_base *ab)
 -- 
 2.34.1
 
