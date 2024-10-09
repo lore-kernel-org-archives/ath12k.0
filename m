@@ -4,82 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDFD3CEF16C
-	for <ath12k@archiver.kernel.org>; Tue,  8 Oct 2024 13:05:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F990CF042D
+	for <ath12k@archiver.kernel.org>; Wed,  9 Oct 2024 00:07:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ReMHXzy/xLyFkDD6JkM3P5c6crcWMdhbVuAZ58vbNl4=; b=D0ur6RWU6vSi6j1Z8cNBD4l1xp
-	LFv4EBT3Q59WbdSrci2PBeYjAmHCu1lxinP4Ft1jiwkmHy84SExg7Gs0IhjGp287rYx6Y/r/Tk1Bh
-	8J7Bpa6tn4wJnXx/oaiMfDl33ai9UXeZuxy5FTy4FngyDNMGm/tOx16dTbh6p5tSyYb7xZklrd1TL
-	DbuwtGXtjCYeLs5K1jrHsnvi+UoFYcH6qGMaXrUKhDZUehAiQZYIti6tiemyfW6pY1XL/4xRcoS/d
-	rZxEsend54wjJwtCptUmTV6f2A6qxD7sJX+uh2aCPi4VHCc9geQlahxAUkf+COZQYuZY/Dt9wvaFg
-	X4ccaLjQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=UJ+c4vwFUZN9wVYMkMLmdRgOZf37ZiHqiqhHu5kQKlA=; b=Nkqttipm+VOvBtykvowI1J0PWT
+	P63+WKieioV73wI5O3jgGtI2IYF4F/c1AvNMne+4ULP+0rLcUEfEptUeyaaJD6Aux5B9zkJ8oxnL/
+	jL559BUbFT40uaztV7Ody4Rywobn9RUjPP7nA6sQRs2czqTnIgxo1K1L4cFqGld+zbpnAr/RLUGhd
+	d9Uw9Vw1Jpr4v7lpBp1kTYRWHgQgsRwWpdhKitYNI1yFzNLUPXQ5XvW1tiFKCBXk7WamzhIVccw5O
+	kSCtgEaicxesb0SJn8L0f+lglq9M/7fHEkMTHXiO4vuFI0xnWOzZTI+jAphzJ26o6DGpky6N0ndU/
+	/Q5G3A2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy9u4-00000005usO-2MRm
+	id 1syKEz-00000007Ud9-3az9
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Oct 2024 13:05:28 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	Wed, 09 Oct 2024 00:07:45 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy9nX-00000005tUM-0It9
+	id 1syKEx-00000007Ucm-1HBB
+	for ath12k@bombadil.infradead.org;
+	Wed, 09 Oct 2024 00:07:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=UJ+c4vwFUZN9wVYMkMLmdRgOZf37ZiHqiqhHu5kQKlA=; b=bpathw19MBkazU3Wva2wWI6jIl
+	o0YRDlKDyE03yhKEDVFT8FNg6QN97s2OilhkwZ9f0wu6ed85QxcDzyotNItYlefbfJ4qQ81At89MA
+	oF05DarU1gkWc3r4JAW0N0mydojDcyQOMqcWpC236h7ra0+dGbYpJxlmYLEVtDdjbNyyjenVqDJYe
+	Yn1CKaynciAubw9XF4JMHUa4tuVXvRf7xPkGjcHn/gLShDmjxHHBXrJMLKZnn+78s1vbr51I4twxe
+	mXFZ1VKY88tH1rv3q6lJCx/Z1bF94EwZbYMo6TAxC++PYXmdHrVRMaoUxZ10mUP9lJu2Bt0mqjgHO
+	2vBvc08g==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1syKEL-00000004lfp-0t3q
 	for ath12k@lists.infradead.org;
-	Tue, 08 Oct 2024 12:58:44 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-37cdac05af9so5283388f8f.0
-        for <ath12k@lists.infradead.org>; Tue, 08 Oct 2024 05:58:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1728392320; x=1728997120; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ReMHXzy/xLyFkDD6JkM3P5c6crcWMdhbVuAZ58vbNl4=;
-        b=A207gmoc6WY/+b2fDlfyZtwBm2VOg7vOsTIHR/4OLqQB88lxjCIC7hgS6OATp+2ZgJ
-         ZyvSt8li0FgYpV5C6BCFGxRrA6AZJwodavkT0yMBsBAXnAs0GdjD6MN07QLJzoa/UjV4
-         76GW5Kn99h8pJz4vZpOpYPtfcEGDi0XUK8dc1zc+GcyM0uGSXOLpBtywL4ciSQ8ZWC4Z
-         MuPE765gsOMNyRA76EXx67ZVPNojqh7ZumJrgSJbdmsKGAAr9eJuW4WjPqqGD7uU0tLY
-         IVLZEHyds6HXrF/cteTQKs9TK4vEoeZvgVg5PaRAzdqVoaaqHPsuJUOsIeECdPpRs2j0
-         AbtQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728392320; x=1728997120;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ReMHXzy/xLyFkDD6JkM3P5c6crcWMdhbVuAZ58vbNl4=;
-        b=Bk/W33m/t3HPp9UdBF4e4T7QMyxM3zylTYECTfDqOwCW7q8K9E/9lN9L8wjvxg4Mr+
-         13MYw2aQSiYtdx6x0jkqCaL79CsbDsrQcgxgC8rUHqrVJelGlx/5BBkBoQ9/7xP44eTE
-         9s/f78VQZ70Y7eOWOTTRnTX1GVtIBlKWyM8jjbHgwgh+zOXWAwdBSAOqEJEEfolnENU0
-         0W67CKAaPzvOpVQ1rmG5ekS9Q55/Kl5c5A5wArZzruiG39H2YGePkSFif1vSnSpzH9rA
-         HREobqz/BGbY6YRMLzTpefqEjcUw0cgw+QPw07G3lsORPKHd+2CetJGxj82x5MqrI8ku
-         bIjg==
-X-Forwarded-Encrypted: i=1; AJvYcCUNM5mM6AlHCjX9FZa8HCgfK0d+mefwnrekTV0qxGTMEkkk5mILI9Z7ChQNYxiRHmFbX1HxW/0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwMjNwMmsN8NaH8LfstLWhCmsYl2NtBwE2CZcWl7c7aXiPIv1Lr
-	TIkpP6SrUrBoKIVfDdEDmq8zHtZydR7KWMCejp/eKI0+wbousMj7sWrQ14cBHSo=
-X-Google-Smtp-Source: AGHT+IHQ2iBxXrIrseZ96mgtxzYQp8FfKJjmT9um9xPqnI+veUBTlMl3+aPZrS4hSFMmULIIpLA0lw==
-X-Received: by 2002:adf:a447:0:b0:37c:cce6:997d with SMTP id ffacd0b85a97d-37d0e72f6damr12739368f8f.20.1728392320204;
-        Tue, 08 Oct 2024 05:58:40 -0700 (PDT)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37d16920be2sm8085548f8f.60.2024.10.08.05.58.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 08 Oct 2024 05:58:39 -0700 (PDT)
-Date: Tue, 8 Oct 2024 15:58:16 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev,
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
-	ath12k@lists.infradead.org, Kalle Valo <quic_kvalo@quicinc.com>,
-	Harshitha Prem <quic_hprem@quicinc.com>
-Subject: [ath:ath12k-mlo-qcn9274 22/81]
- drivers/net/wireless/ath/ath12k/mac.c:9400 ath12k_mac_destroy() error: we
- previously assumed 'ab' could be null (see line 9389)
-Message-ID: <d5ea9564-f66d-4d55-9c93-7d088c4a3ac4@stanley.mountain>
+	Wed, 09 Oct 2024 00:07:30 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 498E7t4v010559;
+	Wed, 9 Oct 2024 00:06:47 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	UJ+c4vwFUZN9wVYMkMLmdRgOZf37ZiHqiqhHu5kQKlA=; b=fCy9W5JkBcsMoiO+
+	osAijdE7+gkajOQ0Zqy/okdWVhNzdv56oAD/yw6qoxoPCVHAGuDCoFa3sLOtXN4+
+	3oCrsqGcLXez9alaHjdmjtzRSdiTqFGzHhkr0CNVqjXJ2+2ZVdlfba6GTiMvh5yl
+	fTtHLudC3YcL7xnso9tmYPcdI9xYSR44nz+1qdl9PSSqY9JAET1SLKjQ8og5xmZv
+	6ezOfH9pm7T6FmHWmaxd9PLOi1dy931O7yA1KJg7MEwRBZS9GPBffK1R+aqiB44h
+	rDJ16e369DUpJ/HP6T5/WVarGHg60Z6Rr2JiJISMIQahsy6h36mQ+zELx/AdcBPT
+	nomAJA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 424x7rtxqu-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 09 Oct 2024 00:06:47 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49906XP7021932
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 9 Oct 2024 00:06:33 GMT
+Received: from [10.48.240.101] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 8 Oct 2024
+ 17:06:33 -0700
+Message-ID: <11b8e952-25ed-405d-b730-4aa4f1ed7820@quicinc.com>
+Date: Tue, 8 Oct 2024 17:06:32 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/2] wifi: ath12k: Support AST and Puncture Stats
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20241005112234.3379043-1-quic_rdevanat@quicinc.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <20241005112234.3379043-1-quic_rdevanat@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: YtyrqHR1-EDxSzbRexAWtxXiRK1_2BeA
+X-Proofpoint-ORIG-GUID: YtyrqHR1-EDxSzbRexAWtxXiRK1_2BeA
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
+ phishscore=0 mlxlogscore=950 spamscore=0 clxscore=1015 malwarescore=0
+ lowpriorityscore=0 priorityscore=1501 mlxscore=0 adultscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410080157
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_055843_208028_756061E5 
-X-CRM114-Status: UNSURE (   6.90  )
+X-CRM114-CacheID: sfid-20241009_010716_748389_9EA2FD74 
+X-CRM114-Status: UNSURE (   8.31  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,61 +115,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-qcn9274
-head:   4ad14f50820745f9c2f425ba07ca8431bf2409ed
-commit: 6c252823bedb7f8f34d53dddadd65761f85bd3c4 [22/81] wifi: ath12k: move ath12k_hw from per device to group
-config: csky-randconfig-r072-20241008 (https://download.01.org/0day-ci/archive/20241008/202410081858.ShABiCCT-lkp@intel.com/config)
-compiler: csky-linux-gcc (GCC) 14.1.0
+On 10/5/2024 4:22 AM, Roopni Devanathan wrote:
+> Add support to request HTT stats type 41 and 46 from firmware. These
+> stats give Address Search Table(AST) entries stats and pdev puncture
+> stats, respectively.
+> 
+> Depends-on:
+> [PATCH v2] wifi: ath12k: Modify print_array_to_buf() to support arrays with 1-based semantics
+> Link: https://lore.kernel.org/all/20241004085915.1788951-1-quic_rdevanat@quicinc.com/
+> 
+> [PATCH v2 0/4] wifi: ath12k: Support Ring, SFM, Transmit MU, SelfGen stats, CCA stats
+> Link: https://lore.kernel.org/ath12k/20241005101816.3314728-1-quic_rdevanat@quicinc.com/
+> 
+> [PATCH v2] wifi: ath12k: Support Pdev OBSS Stats
+> Link: https://lore.kernel.org/ath12k/20241005104206.3327143-1-quic_rdevanat@quicinc.com/
+> 
+> [PATCH v2] wifi: ath12k: Support DMAC Reset Stats
+> Link: https://lore.kernel.org/ath12k/20241005105207.3350790-1-quic_rdevanat@quicinc.com/
+> 
+> [PATCH v2 0/2] wifi: ath12k: Support pdev Rate, Scheduled Algorithm Stats
+> Link: https://lore.kernel.org/ath12k/20241005111506.3361688-1-quic_rdevanat@quicinc.com/
+> 
+> Dinesh Karthikeyan (1):
+>   wifi: ath12k: Support AST Entry Stats
+> 
+> Rajat Soni (1):
+>   wifi: ath12k: Support pdev Puncture Stats
+> 
+>  .../wireless/ath/ath12k/debugfs_htt_stats.c   | 194 ++++++++++++++++++
+>  .../wireless/ath/ath12k/debugfs_htt_stats.h   |  56 +++++
+>  drivers/net/wireless/ath/ath12k/dp.h          |  12 ++
+>  3 files changed, 262 insertions(+)
+> 
+> 
+> base-commit: 8ed36fe71fd60c851540839b105fd1fddc870c61
+> prerequisite-patch-id: faf46024c8b5c094e201d392109e7f94dcecdd49
+> prerequisite-patch-id: c4662f64bc7be141322b7e37145e52ea4ab4e182
+> prerequisite-patch-id: 4d37990775694f110ce3e87096231fe8855f09f5
+> prerequisite-patch-id: 5959fd18b497d29cad98d36dcce59a876ffe8ca2
+> prerequisite-patch-id: ecac67f6fce1dd4d5089dbc3da840e311f6a7218
+> prerequisite-patch-id: 0537ae604d2617e42bef13bfb791aad4d11bf6e1
+> prerequisite-patch-id: da5a4e5cc3097994bfcba4b37680c90b0675ccf9
+> prerequisite-patch-id: fcd0ce1adcc63e80c95e4636bd4614bd5b732ffa
+> prerequisite-patch-id: a6303524834f6e01b2ae1469ee437d586dd5d522
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202410081858.ShABiCCT-lkp@intel.com/
-
-New smatch warnings:
-drivers/net/wireless/ath/ath12k/mac.c:9400 ath12k_mac_destroy() error: we previously assumed 'ab' could be null (see line 9389)
-
-vim +/ab +9400 drivers/net/wireless/ath/ath12k/mac.c
-
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9380  void ath12k_mac_destroy(struct ath12k_hw_group *ag)
-8a742a79f90e3d Karthikeyan Periyasamy 2024-01-14  9381  {
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9382  	struct ath12k_pdev *pdev;
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9383  	struct ath12k_base *ab = ag->ab[0];
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9384  	int i, j;
-01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9385  	struct ath12k_hw *ah;
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9386  
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9387  	for (i = 0; i < ag->num_devices; i++) {
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9388  		ab = ag->ab[i];
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12 @9389  		if (!ab)
-                                                                             ^^
-ab can be NULL
-
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9390  			continue;
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9391  
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9392  		for (j = 0; j < ab->num_radios; j++) {
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9393  			pdev = &ab->pdevs[j];
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9394  			if (!pdev->ar)
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9395  				continue;
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9396  			pdev->ar = NULL;
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9397  		}
-6c252823bedb7f Karthikeyan Periyasamy 2024-04-12  9398  	}
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9399  
-e46d266981a601 Karthikeyan Periyasamy 2024-04-12 @9400  	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
-                                                                                                  ^^
-Dereferenced inside function
-
-01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9401  		ah = ath12k_ab_to_ah(ab, i);
-01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9402  		if (!ah)
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9403  			continue;
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9404  
-01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9405  		ath12k_mac_hw_destroy(ah);
-01f062770f9740 Karthikeyan Periyasamy 2024-04-12  9406  		ath12k_ab_set_ah(ab, i, NULL);
-6db6e70a17f6fb Karthikeyan Periyasamy 2024-01-18  9407  	}
-8a742a79f90e3d Karthikeyan Periyasamy 2024-01-14  9408  }
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+FYI this patchset is not applying cleanly on top of the ath12k-mlo branch, and
+hence I won't bring it into pending until after the ath12k-mlo branch has merged.
 
 
