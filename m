@@ -4,81 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C85F6D1F9C5
-	for <ath12k@archiver.kernel.org>; Tue, 15 Oct 2024 19:35:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C828D2069E
+	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 06:26:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=lN1bH/cSXd06vWBgv09b0nbi6rv9Bqx5gJyYzJHnxSE=; b=SIt6T5FvnYc95ljJ+S6ZreOPGN
-	g/+z0SwB3UywqXfkYxxlIUUs+zRcOO3TIOI8yaBkmIZyqVu3GQjX8QraHxx/ipAEsFo7qY5yAItuW
-	9Whf8UqU/vHoi2UgtxzLiqUrAskpuIeB4rJVMR2dV/UC/kaPtYRHHQQxpe1jvt9v5a+mea1l3M9iW
-	qrXPeBN3KNh3lT8UGRlnw6MBixZfey6OtYCU9B9wCVxknBT1IgdmAr+gym09H44xnonda0Hm1kNjJ
-	StEfEJ9OrVIuglaD6nAZM8uQEl7arkNpSdGr6u5LpK+vfBms6cmkadukNY/RjmnU0tEuGiRbI2vp7
-	rHL6Fcgg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=nH9zU1xKm7V58WPec/ZmbzDY+qNbOSNWp3wH+4m9xZg=; b=KRqomT3CO7V+IACXLpI7hAhFjD
+	FMB6q0BtsjurEH0uy1VnBWMpeqCkLX1yaDilizTa+OMfZQZHfQvJMNSrWYccN75pXTsrZ3JYDiS8x
+	2Y7R45xzshdPWriez1kWUpc3XMCehY2JXUZsk+QMZmmaQeEGTntlIcmT8rNSun+jA5flYvinVu2Sn
+	knnvpAbKr6ksLwfiSCoVsV4HK23XvRbkYeHRhoOeMu8zR4SvuQNoxVFRpj/P+r6ajFwba5eYOtwOu
+	Amm47PzuOg+hYu0PXtcYWJAiKE/ZYjWTg8vExIDxmbP5IRJuGr+OPVl2e9mpIdKrS38dxZ7jiA+NZ
+	ZLO5TNQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0nKf-00000009PRE-24m9
+	id 1t0xUc-0000000AgjD-0ciC
 	for ath12k@archiver.kernel.org;
-	Tue, 15 Oct 2024 19:35:49 +0000
-Received: from mail-lf1-f52.google.com ([209.85.167.52])
+	Wed, 16 Oct 2024 06:26:46 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0n7g-00000009NVE-1ysm
+	id 1t0xUY-0000000AgiQ-2JAL
 	for ath12k@lists.infradead.org;
-	Tue, 15 Oct 2024 19:22:25 +0000
-Received: by mail-lf1-f52.google.com with SMTP id 2adb3069b0e04-539ebb5a20aso3310489e87.2
-        for <ath12k@lists.infradead.org>; Tue, 15 Oct 2024 12:22:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1729020141; x=1729624941; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=lN1bH/cSXd06vWBgv09b0nbi6rv9Bqx5gJyYzJHnxSE=;
-        b=M/ephdMtlyIcyLAnokxsRb3gDkZFXaFUgVTCWJfM+F7EZzkUur9+t/UPX+vlgmPvMM
-         8hM0U/G+PoXYkCzb9Q973Iiy+QkGTsQwP+88Sfr2UwwJGX7sGzUKk+uz/nSyw8WKZhXD
-         tjKGQ034pyc04PRwXcfBKBJY6cr5qJskMl2JcCqLxguTfHvvX2Ptq4nNy1cf8+aIBF/u
-         Cd19mNCskpcq9Coc1GGxRyWi3ykh08HprxH28RlfK2Hi64EJy8TqS7Uo/elZPi2CnFuT
-         gINdJpfr9RTbUyHmAFEWEeFrxwuxzBPW47nqZQXH0o8bw485Zw/d+F1Rst/FI92QIAPi
-         IlRg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729020141; x=1729624941;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=lN1bH/cSXd06vWBgv09b0nbi6rv9Bqx5gJyYzJHnxSE=;
-        b=jhNEqKvo/9PpBqmLEOGQyVtO53Q66o7DcE2leSyXtgzGN3BAj3Mzj/gdNalQGvCxDQ
-         kr/2xG/gc1Rs09p6YNq9DpcKmnX6eIMljlulKivG87dXSye1DH+4fyofee7S8U1DlrXk
-         mC/O6R+vqw8xo3k9+pysEvy48TAaAPihGw9GxV1IPpcDnH+XQSevCR/n7DHnsl7uJHHX
-         DNkVmOy1sXKzGLpAlG5ZmqCVuJxvAaHSyAcR51FP6tBLadbyLO3IuGweXpJUYKLAJNeq
-         jdl9Ni+eUA4Z21XPxIHOtntoGREfBXOjvCSD8YMUqotukrIB2LQMzt3qYcig9WozkaIG
-         fn/g==
-X-Forwarded-Encrypted: i=1; AJvYcCWdRItFDjV6GhtSXtf8hjepyeImbK+EchacowF287Vg7nuS2z3/SCOUtz0gz0jVsk9KT/sZDCs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzmdvL3x+/hzwfQh+43c1kanYZ4GVBcRJ/TNSAU7r71Bucx5WGN
-	P8bndlgIjrsatsxsLOVpfGrR6GMXPKpUaa92tT/v2xlYHoxI77BX
-X-Google-Smtp-Source: AGHT+IFq/iItMESBszKIBLEXDdkFl2SMGGkViVgXD51kYJiMz3z6FTkaSXkqQp9KqMhRnsQCsahyNg==
-X-Received: by 2002:a05:6512:280c:b0:52e:7448:e137 with SMTP id 2adb3069b0e04-539e54d77a1mr6547243e87.6.1729020140985;
-        Tue, 15 Oct 2024 12:22:20 -0700 (PDT)
-Received: from localhost.localdomain ([83.168.79.145])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5c98d4f7f19sm982334a12.23.2024.10.15.12.22.19
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 15 Oct 2024 12:22:19 -0700 (PDT)
-From: Karol Przybylski <karprzy7@gmail.com>
-To: kvalo@kernel.org,
-	jjohnson@kernel.org
-Cc: Karol Przybylski <karprzy7@gmail.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] wifi: ath12k: Fix for out-of bound access error
-Date: Tue, 15 Oct 2024 21:21:55 +0200
-Message-Id: <20241015192155.3643363-1-karprzy7@gmail.com>
+	Wed, 16 Oct 2024 06:26:43 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49G60G5P007419;
+	Wed, 16 Oct 2024 06:26:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=nH9zU1xKm7V58WPec/Zmbz
+	DY+qNbOSNWp3wH+4m9xZg=; b=iT1RMR+wz3eZcARwFXsZFYAIHAoH2FtaI08jzy
+	Mi/8fDwMjc5+sU0JsSjY+9hjT/hCu9zH080RXKidhcf4OcDWh7CWlVxcHTgT17c2
+	o+Wgajcy1DpDMxFUcvQxGzCbSg8HeIpUH5/gICrVm/38lV+WVKWTY3mbulC1qjKa
+	WPthNARld7l368SrDgPhe/fhzcfx1wKOSZxvrCHgNJ4dnsYcT0ZAGxeA7RCY+t2K
+	7lCGFnF+R/DjYr3MMqaRYG0MLNBp+ahNk5a+B2Wuz7JisYvIf2X6uk3jN8OHlsmH
+	7WavBOHkql3kn68130qasGokPwgpLktw1Xkb9P4hAfE2pDhg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 429mh53erg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 16 Oct 2024 06:26:40 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49G6Qd4L004891
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 16 Oct 2024 06:26:39 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 15 Oct 2024 23:26:38 -0700
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH 0/4] wifi: ath12k: Support Pager, Counter, SoC, Transmit Rate Stats
+Date: Wed, 16 Oct 2024 11:56:13 +0530
+Message-ID: <20241016062617.2726252-1-quic_rdevanat@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: bDWXgOfvLzj3VryVQOYG8QRVe7Lli8ym
+X-Proofpoint-ORIG-GUID: bDWXgOfvLzj3VryVQOYG8QRVe7Lli8ym
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 clxscore=1015
+ spamscore=0 priorityscore=1501 adultscore=0 mlxlogscore=784
+ lowpriorityscore=0 mlxscore=0 phishscore=0 malwarescore=0 suspectscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410160040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241015_122224_529453_F38F8B64 
-X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-CacheID: sfid-20241015_232642_728685_77A1DDB2 
+X-CRM114-Status: UNSURE (   5.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,29 +97,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Size of array passed to print_array_to_buf_index is decremented by 1
+Add support to request HTT stats type 36, 37, 38 and 40 from firmware.
+These stat types give downlink pager stats, counter and TPC stats, SoC
+common stats and Transmit PER rate stats, respectively.
 
-Discovered in coverity scan, CID 1600742
+Depends-on:
+Depends-on:
+[PATCH v3] wifi: ath12k: Support DMAC Reset Stats
+Link: https://lore.kernel.org/ath12k/20241014065259.3968727-1-quic_rdevanat@quicinc.com/
 
-Signed-off-by: Karol Przybylski <karprzy7@gmail.com>
----
- drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[PATCH v3 0/2] wifi: ath12k: Support pdev Rate, Scheduled Algorithm Stats
+Link: https://lore.kernel.org/ath12k/20241014070610.3982173-1-quic_rdevanat@quicinc.com/
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index b2be7dade79f..74767ba9ec2b 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -1550,7 +1550,7 @@ ath12k_htt_print_tx_selfgen_ax_stats_tlv(const void *tag_buf, u16 tag_len,
- 			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp));
- 	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
- 					htt_stats_buf->ax_mu_mimo_brpoll,
--					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
-+					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS-1, "\n");
- 	len += scnprintf(buf + len, buf_len - len, "ax_basic_trigger = %u\n",
- 			 le32_to_cpu(htt_stats_buf->ax_basic_trigger));
- 	len += scnprintf(buf + len, buf_len - len, "ax_ulmumimo_total_trigger = %u\n",
+[PATCH v3 0/2] wifi: ath12k: Support AST and Puncture Stats
+Link: https://lore.kernel.org/ath12k/20241014071720.3991199-1-quic_rdevanat@quicinc.com/
+
+[PATCH] wifi: ath12k: Support MBSSID Control Frame Stats
+Link: https://lore.kernel.org/ath12k/20241005112651.3379404-1-quic_rdevanat@quicinc.com/
+
+Dinesh Karthikeyan (4):
+  wifi: ath12k: Support Downlink Pager Stats
+  wifi: ath12k: Support phy counter and TPC stats
+  wifi: ath12k: Support SoC Common Stats
+  wifi: ath12k: Support Transmit PER Rate Stats
+
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 625 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 201 ++++++
+ 2 files changed, 826 insertions(+)
+
+
+base-commit: 69eabe24843f238e79a6dbbd2b3fcc8eef39d6b8
+prerequisite-patch-id: d2dd6093ab264e75918406abce52bb9ee8199b7e
+prerequisite-patch-id: fcd0ce1adcc63e80c95e4636bd4614bd5b732ffa
+prerequisite-patch-id: a6303524834f6e01b2ae1469ee437d586dd5d522
+prerequisite-patch-id: 1b0f9e702388d0121427f42e7b6a2bc090b62c80
+prerequisite-patch-id: 00097b59822c40089419d22b97f109c26b7f0a10
+prerequisite-patch-id: d3c55f51a5dbb58d547fe1c6b8a3ce10313bae36
 -- 
-2.34.1
+2.25.1
 
 
