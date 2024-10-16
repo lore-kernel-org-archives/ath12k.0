@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EA00D2069F
-	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 06:36:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30AB8D2069E
+	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 06:36:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=TAnV2ukSO4vvGKlgvm3p1YBMFelYJ6Dod5kwnBuPw7A=; b=tcFg/7S70t+k4i0GPk5Cr3QhXu
-	NKKM1Z7n/dI9/Amgmdl3jihuCrs/LMhs6LFsEjw0/OwnLYDnXlr74eWe8vGpc3WxpS7tkCBUpALiZ
-	BS9xWOrfIilSrw6mKoD1+CBRgWHECs5FuQwW8e4ZPO/RyXkbzsImZB2B8Hzxnu1g+1VonjSn4a5Vi
-	IfNzsa0aDpQuT3eA5fUYMmN2Cf0sF1zM0FkgtcojZJJsF8XQuivyJ46b7o8qrttZdpE0F3lX5Xu6B
-	iraIvYnpiJJx8wUPqx7i9xrvM3IU8TegZz0sTf+ZwNQ358fS1QUbuVnuG+xIupEvC5HWsG5Ctn9yV
-	OuC6YLyQ==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+3Fm1e4oIUsaj6mAZylxDP6aBaTfJFMzhZB6qGFVJQs=; b=sMSbioZMNBCnd40AeqBiQxrS8B
+	2LCL2IxdGJyZG0q+qWT+iUAiFC8oWda/y4l9C9uZvhpV1VQSQIkAdBrodeG6Ayr/E1tT/5dd9SI3L
+	VlOCWOX0WXsz8rkbYaT70EGbuiADI3MeW7BjNIANIsi+bRYImRCqJGZItBmjURM5PA0cdKwyF+NYg
+	RHLgT4fJaJWFw9qa++WSn10L2qOtiCRBDtw03x3MetTlKnjwlAqZNcsWvIgVa+uGePRxBRVyQ7S1n
+	gj4m1EzhaC8tFXtOmvbnk0Y8+uUZZrejiVlkpNVx3fg0zd+BYA2Ftl6ghuhe/nozca66CvTfYNpdL
+	9WL97XNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0xeN-0000000AhY0-0Qa7
+	id 1t0xeT-0000000AhZL-3ngO
 	for ath12k@archiver.kernel.org;
-	Wed, 16 Oct 2024 06:36:51 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 16 Oct 2024 06:36:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0xeJ-0000000AhXG-17m5
+	id 1t0xeQ-0000000AhYa-3od7
 	for ath12k@lists.infradead.org;
-	Wed, 16 Oct 2024 06:36:48 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49FJEipb020093;
-	Wed, 16 Oct 2024 06:36:41 GMT
+	Wed, 16 Oct 2024 06:36:56 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49G3pg40019227;
+	Wed, 16 Oct 2024 06:36:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=TAnV2ukSO4vvGKlgvm3p1Y
-	BMFelYJ6Dod5kwnBuPw7A=; b=mune/E6BEtAe9skpiewMhGYoqS+ee/BOEep95E
-	htBeIrTvJ75I4FD5blt5y5JpmlPPkHoUYhfk4GFjswiCPt3HUMCI1lPLQQzuaKtZ
-	0Fl39mATJi9XyVOpJR37BQio1p9OGdRsNHf5aMRFUOi29T3yRVcuCfcy8tYaxlj9
-	gIliXd4TuKbxsTaFgR1AHJo6iy0P2RDzrThMASeis5THNOTaYbzHWVTKjlLZO8XX
-	k2kYJvSS1Iqc+UTzTam2j/ApnyiP42b+bQfR26gXeCImu5d+RGdmd74mtE1NF3kV
-	We3iqxQ5BrHAv3P7ymMIEnQ32/tD1UIUd5st05dMz+WA3miA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 429nm3kb0n-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+3Fm1e4oIUsaj6mAZylxDP6aBaTfJFMzhZB6qGFVJQs=; b=Ge5R/SBfWQomzzod
+	BOk/qNLADeDsyHxsZ2VMQ310Bynno5oftX4drEMpTTzrCtxox6HhCsFxPLR39+pw
+	f/9ew4qN21WmYZuiLF1X3RyEBUByiH7EAgO1Kanafg6A+pi278YB5t2XGuqYeF4W
+	At51UObGelOWGLSWGj+ihbytIGh13L20kyY0bMAp+5gof1kJ2x3JGv6Uiz+GXgxA
+	Y+S0eVOlxF/kAuB45yDW8hL/t00n3Oftd+njnRnHTItVpz1HZxPivh9H/05esRTj
+	dav3xg4NbIiwFbGNwJQyZjGyIDZC9S68Mzgrze816CI9L0gVSKYk3mElfsixZhiZ
+	JTgAuQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42a5xygb07-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Oct 2024 06:36:40 +0000 (GMT)
+	Wed, 16 Oct 2024 06:36:54 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49G6ad0Z026513
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49G6afDB004576
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Oct 2024 06:36:39 GMT
+	Wed, 16 Oct 2024 06:36:41 GMT
 Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 15 Oct 2024 23:36:38 -0700
+ 15.2.1544.9; Tue, 15 Oct 2024 23:36:39 -0700
 From: Kang Yang <quic_kangyang@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v5 0/4] wifi: ath12k: add 11d scan offload support and handle country code for WCN7850
-Date: Wed, 16 Oct 2024 14:35:02 +0800
-Message-ID: <20241016063506.1037-1-quic_kangyang@quicinc.com>
+Subject: [PATCH v5 1/4] wifi: ath12k: add configure country code for WCN7850
+Date: Wed, 16 Oct 2024 14:35:03 +0800
+Message-ID: <20241016063506.1037-2-quic_kangyang@quicinc.com>
 X-Mailer: git-send-email 2.34.1.windows.1
+In-Reply-To: <20241016063506.1037-1-quic_kangyang@quicinc.com>
+References: <20241016063506.1037-1-quic_kangyang@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -67,20 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: fErcd6FIgW8jZbXAXGdNr3Rvq5zaPdyz
-X-Proofpoint-ORIG-GUID: fErcd6FIgW8jZbXAXGdNr3Rvq5zaPdyz
+X-Proofpoint-GUID: GoqnWoCe17NgGz4A7GSRKiv6QH-kUL4R
+X-Proofpoint-ORIG-GUID: GoqnWoCe17NgGz4A7GSRKiv6QH-kUL4R
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 clxscore=1015
- lowpriorityscore=0 malwarescore=0 adultscore=0 phishscore=0
- priorityscore=1501 mlxscore=0 spamscore=0 suspectscore=0 bulkscore=0
- mlxlogscore=889 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410160041
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ mlxlogscore=999 lowpriorityscore=0 mlxscore=0 bulkscore=0 malwarescore=0
+ suspectscore=0 priorityscore=1501 phishscore=0 clxscore=1015 adultscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410160042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241015_233647_447859_9F499895 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241015_233654_981852_EDD51704 
+X-CRM114-Status: GOOD (  11.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,51 +97,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This patch-set mainly does four things:
-1. Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID to firmware.
-2. Implement 11d scan offload, and report country code to firmware by
-WMI command WMI_SET_CURRENT_COUNTRY_CMDID.
-3. Use WMI_SET_CURRENT_COUNTRY_CMDID to set country code for WCN7850.
-4. Store country code, and update it to firmware after device recovery.
+From: Wen Gong <quic_wgong@quicinc.com>
 
-With this patch-set, WCN7850 can do 11d offload scan and update country
-code to firmware successfully.
+Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID to firmware, which
+is used for WCN7850 to update country code.
 
-Note: This patch-set is an old patch-set in public review written by
-Wen Gong. Just resend it for him.
-Link: https://patchwork.kernel.org/project/linux-wireless/cover/20230914090746.23560-1-quic_wgong@quicinc.com/
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-v5: rebase on tag: ath/main(ath-202410111606).
-v4: rebase on tag: ath-202410072115.
-v3:
-    1. use wiphy::mtx lock instead of adding a new lock(patch#2).
-    2. rename struct according to wmi naming convention(patch#1, #2).
-    3. update copyright in reg.h
-    4. modifiy patch#3, #4 due to struct name change.
-v2: change per Jeff.
-    1. change alpha2 length from 3 to 2.
-    2. change wmi_11d_new_cc_ev to wmi_11d_new_cc_event.
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/wmi.c | 36 +++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 13 ++++++++++
+ 2 files changed, 49 insertions(+)
 
-Wen Gong (4):
-  wifi: ath12k: add configure country code for WCN7850
-  wifi: ath12k: add 11d scan offload support
-  wifi: ath12k: use correct WMI command to set country code for WCN7850
-  wifi: ath12k: store and send country code to firmware after recovery
-
- drivers/net/wireless/ath/ath12k/core.c |  34 ++++-
- drivers/net/wireless/ath/ath12k/core.h |  17 +++
- drivers/net/wireless/ath/ath12k/hw.c   |   6 +
- drivers/net/wireless/ath/ath12k/hw.h   |   1 +
- drivers/net/wireless/ath/ath12k/mac.c  | 167 ++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/mac.h  |   7 ++
- drivers/net/wireless/ath/ath12k/reg.c  |  70 ++++++++---
- drivers/net/wireless/ath/ath12k/reg.h  |   4 +-
- drivers/net/wireless/ath/ath12k/wmi.c  | 158 ++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/wmi.h  |  38 ++++++
- 10 files changed, 480 insertions(+), 22 deletions(-)
-
-
-base-commit: 69eabe24843f238e79a6dbbd2b3fcc8eef39d6b8
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 190439ad7f23..f7b6e0a45f7c 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -3084,6 +3084,42 @@ int ath12k_wmi_send_init_country_cmd(struct ath12k *ar,
+ 	return ret;
+ }
+ 
++int ath12k_wmi_send_set_current_country_cmd(struct ath12k *ar,
++					    struct wmi_set_current_country_arg *arg)
++{
++	struct ath12k_wmi_pdev *wmi = ar->wmi;
++	struct wmi_set_current_country_cmd *cmd;
++	struct sk_buff *skb;
++	int ret;
++
++	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
++	if (!skb)
++		return -ENOMEM;
++
++	cmd = (struct wmi_set_current_country_cmd *)skb->data;
++	cmd->tlv_header =
++		ath12k_wmi_tlv_cmd_hdr(WMI_TAG_SET_CURRENT_COUNTRY_CMD,
++				       sizeof(*cmd));
++
++	cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
++	memcpy(&cmd->new_alpha2, &arg->alpha2, sizeof(arg->alpha2));
++	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_SET_CURRENT_COUNTRY_CMDID);
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
++		   "set current country pdev id %d alpha2 %c%c\n",
++		   ar->pdev->pdev_id,
++		   arg->alpha2[0],
++		   arg->alpha2[1]);
++
++	if (ret) {
++		ath12k_warn(ar->ab,
++			    "failed to send WMI_SET_CURRENT_COUNTRY_CMDID: %d\n", ret);
++		dev_kfree_skb(skb);
++	}
++
++	return ret;
++}
++
+ int
+ ath12k_wmi_send_twt_enable_cmd(struct ath12k *ar, u32 pdev_id)
+ {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 6a913f9b8315..1797f5c88fb5 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -3945,6 +3945,16 @@ struct ath12k_wmi_eht_rate_set_params {
+ #define MAX_6G_REG_RULES 5
+ #define REG_US_5G_NUM_REG_RULES 4
+ 
++struct wmi_set_current_country_arg {
++	u8 alpha2[REG_ALPHA2_LEN];
++};
++
++struct wmi_set_current_country_cmd {
++	__le32 tlv_header;
++	__le32 pdev_id;
++	__le32 new_alpha2;
++} __packed;
++
+ enum wmi_start_event_param {
+ 	WMI_VDEV_START_RESP_EVENT = 0,
+ 	WMI_VDEV_RESTART_RESP_EVENT,
+@@ -5547,6 +5557,9 @@ int ath12k_wmi_send_bcn_offload_control_cmd(struct ath12k *ar,
+ 					    u32 vdev_id, u32 bcn_ctrl_op);
+ int ath12k_wmi_send_init_country_cmd(struct ath12k *ar,
+ 				     struct ath12k_wmi_init_country_arg *arg);
++int
++ath12k_wmi_send_set_current_country_cmd(struct ath12k *ar,
++					struct wmi_set_current_country_arg *arg);
+ int ath12k_wmi_peer_rx_reorder_queue_setup(struct ath12k *ar,
+ 					   int vdev_id, const u8 *addr,
+ 					   dma_addr_t paddr, u8 tid,
 -- 
 2.34.1
 
