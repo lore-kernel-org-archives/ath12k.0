@@ -4,85 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2B04D206A5
-	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 07:01:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60F89D206A0
+	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 07:01:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hCzamOmM54smxihbV3UXPmSDdgC8JIUJYRBoNKSP21U=; b=Rz3/iTVfggj1rKegfyKAgWs0iE
-	/AvEvbmQuYUL8kDQPt+xdUwKMWbuGNbqxay2GWRWrzLc/taCWV0bAlO7+mrBjbna0amUno0Hi2KsK
-	lCL303e1EIEbSFXtNc+BFY5idIZ8EEas5bYveDrygJCSG5t1Elr0nwpP31pz+lsaZOxBnG0kSzBwr
-	UuHfYEW0D4R0h6Vv0s10GY2zalS9EiHKa+cC3/Mtsoqzsh0c5UUMAFguUPqzxjgRf4VpeG4K+1RDb
-	0fM/cXt9djvj3BPxIBhYGkescMF17AYcDJ2CylmwZZD9nguC5m+L/bsFstiRMVgoX2zGiqfu5qM4V
-	K6mzEf5w==;
+	bh=URoL4kc75JBiMYaV9D7L8FDVRkzXGlbv6y20+QpwBfQ=; b=sRMbt0eLd2Ty+DAkoFhrlCHhBi
+	kFZAv1O7a/D8Rnk+b9axl2F7vML5GCKdnYCYxrev88tF7SQzDBiZOI9/Re5CyHMZHEbZmUBBub+PX
+	ER+ljFLEGOyr29xp/ZeYeiXds+OjzwtlnnnvIBFHOds1L7/mbL/s3EeSuBuGqW1jl8BSdIHN2HfoL
+	vBED5kC7neYVT6UGcs7VCFXuXuvnWcmnnRWCZsT/43V6XwFjrm6s9sTbKyhSX9+S+UrR7AsJWSrsr
+	2jw/lYq3oTDfzzn6S/PnSHgwWLpapcosdr1OYfIp8sGBBW0BarwIb5/5QP/PXA+D1x/w+Wzniw7Ts
+	ux9co5YA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0y1q-0000000AlfY-1adk
+	id 1t0y1r-0000000Algb-1yvx
 	for ath12k@archiver.kernel.org;
-	Wed, 16 Oct 2024 07:01:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 16 Oct 2024 07:01:07 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0xyN-0000000Akh0-3rT3
+	id 1t0xyO-0000000Akgv-0OK7
 	for ath12k@lists.infradead.org;
 	Wed, 16 Oct 2024 06:57:33 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49G2Lpvm029360;
-	Wed, 16 Oct 2024 06:57:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hCzamOmM54smxihbV3UXPmSDdgC8JIUJYRBoNKSP21U=; b=o4uviXJufSy/pOkB
-	wiBuEjkJp7o/Oqfw1dFDE4IsD4W9YMFfO5RTA+ZLhgO0d2oBh5Z/FoE4o/y3/W3B
-	Fb54XKL9atJUbiIcODFpXDBViFx0kdjZhukOC1w+yetQSOFlZih/pGYdHbJ7bRPm
-	uw/xAKMG+dEt2Kn287jbgqYGnaW1X0Y48g+4cb/SIkwgBha8nkHk0IgC8bAcWZTg
-	XicZXb5LMektVVtGmI0ynrP4/FXJYDsKdiS9twbvxmngB5G2DlvT2d3jnSkqWces
-	Xxtq4WpGiadkZ8vdXdkHfenstHxwxKP0FWDsOFHMP798/47uCyzDPBjcz6DS2Uuz
-	FjpIkg==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 429k7w3sah-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Oct 2024 06:57:31 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49G6vURQ028877
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Oct 2024 06:57:30 GMT
-Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 15 Oct 2024 23:57:29 -0700
-From: Kang Yang <quic_kangyang@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v3 04/11] wifi: ath12k: fix struct hal_rx_ppdu_start
-Date: Wed, 16 Oct 2024 14:56:53 +0800
-Message-ID: <20241016065700.1090-5-quic_kangyang@quicinc.com>
-X-Mailer: git-send-email 2.34.1.windows.1
-In-Reply-To: <20241016065700.1090-1-quic_kangyang@quicinc.com>
-References: <20241016065700.1090-1-quic_kangyang@quicinc.com>
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0484E5C313E;
+	Wed, 16 Oct 2024 06:57:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5067EC4CEC5;
+	Wed, 16 Oct 2024 06:57:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1729061851;
+	bh=nueV4zW9DYaKNQYqepHGVVpmRCUZwWuMQ6ahTdofusk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fCnTvzidshFBNh5H2Dwnz5y11dT8NyAFjt5jPCgNdiPfN432LHzDuivAILLKq/LVl
+	 uQIn6u5fQ7SLcYtOIv6XsuIjCymgNBgbDQEStSiDpn1zqVtFqRf4vmFXAZwYMPGzxs
+	 2uaf2M2saJOrZpdXlYl5cFhDoqgPG46UN19TYAXNBB0WHYN7SBk/1PWhATsxOeNFhI
+	 NKSqhXLJPmb8ryrZn1Hmq1vzq+N3eTBlyv2gKau7czgPt9DTbkZGP6e/ycbfxws+MG
+	 0XAqujvHS0UCrU/H58qO/oYZsufioCZlhNnnWERReb3anQuGTAUP4cEISvfylGuGX6
+	 8/ZrhRDDlHyFA==
+Date: Wed, 16 Oct 2024 08:57:27 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org, 
+	Kalle Valo <kvalo@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Jeff Johnson <jjohnson@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH v2 00/22] wifi: ath12k: add Ath12k AHB driver support for
+ IPQ5332
+Message-ID: <ou5kgedz5aga4dtda6k23uhybcjy7mfwie74p6q3qyn5bdajz7@ftejp7lqrise>
+References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: fP5Ovz0nQ_i9xibiApz-wjuafP0nf3-W
-X-Proofpoint-ORIG-GUID: fP5Ovz0nQ_i9xibiApz-wjuafP0nf3-W
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
- clxscore=1015 priorityscore=1501 phishscore=0 adultscore=1
- lowpriorityscore=0 impostorscore=0 suspectscore=0 bulkscore=0
- malwarescore=0 mlxlogscore=543 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2409260000 definitions=main-2410160044
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+In-Reply-To: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241015_235731_985321_22A9D9B0 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20241015_235732_205334_25AB1072 
+X-CRM114-Status: GOOD (  11.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,81 +77,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Current struct hal_rx_ppdu_start in hal_rx.h is not matched with
-hardware descriptor definition.
+On Tue, Oct 15, 2024 at 11:56:15PM +0530, Raj Kumar Bhagat wrote:
+> Currently, Ath12k driver only supports WiFi devices that are based on
+> PCI bus. New Ath12k device IPQ5332 is based on AHB bus. Hence, add
+> Ath12k AHB support for IPQ5332.
+> 
+> IPQ5332 is IEEE802.11be 2 GHz 2x2 Wifi device. To bring-up IPQ5332
+> device:
+> - Add hardware parameters for IPQ5332.
+> - CE and CMEM register address space in IPQ5332 is separate from WCSS
+>   register space. Hence, add logic to remap CE and CMEM register
+>   address.
+> - Add support for fixed QMI firmware memory for IPQ5332.
+> - Support userPD handling for WCSS secure PIL driver to enable ath12k
+>   AHB support.
+> 
+> Depends-On: [PATCH V7 0/5] remove unnecessary q6 clocks
+> Depends-On: [PATCH V2 0/4] Add new driver for WCSS secure PIL loading
+> Link: https://lore.kernel.org/all/20240820055618.267554-1-quic_gokulsri@quicinc.com/
+> Link: https://lore.kernel.org/all/20240829134021.1452711-1-quic_gokulsri@quicinc.com/
 
-So update this structure and related code.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+These are series targetting other subsystems. I do not understand why
+you created such dependency. It does not look needed and for sure is not
+good: nothing here can be tested, nothing can be applied.
 
-Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp_mon.c | 16 ++++++++++++----
- drivers/net/wireless/ath/ath12k/hal_rx.h | 11 ++++++++---
- 2 files changed, 20 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 8d0d3c849c90..d40da3a059c6 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -593,12 +593,20 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k_base *ab,
- 		struct hal_rx_ppdu_start *ppdu_start =
- 			(struct hal_rx_ppdu_start *)tlv_data;
- 
-+		u64 ppdu_ts = __le32_to_cpu(ppdu_start->ppdu_start_ts_31_0) |
-+			(u64)(__le32_to_cpu(ppdu_start->ppdu_start_ts_63_32)) << 32;
-+
- 		info[0] = __le32_to_cpu(ppdu_start->info0);
- 
--		ppdu_info->ppdu_id =
--			u32_get_bits(info[0], HAL_RX_PPDU_START_INFO0_PPDU_ID);
--		ppdu_info->chan_num = __le32_to_cpu(ppdu_start->chan_num);
--		ppdu_info->ppdu_ts = __le32_to_cpu(ppdu_start->ppdu_start_ts);
-+		ppdu_info->ppdu_id = u32_get_bits(info[0],
-+						  HAL_RX_PPDU_START_INFO0_PPDU_ID);
-+
-+		info[1] = __le32_to_cpu(ppdu_start->info1);
-+		ppdu_info->chan_num = u32_get_bits(info[1],
-+						   HAL_RX_PPDU_START_INFO1_CHAN_NUM);
-+		ppdu_info->freq = u32_get_bits(info[1],
-+					       HAL_RX_PPDU_START_INFO1_CHAN_FREQ);
-+		ppdu_info->ppdu_ts = ppdu_ts;
- 
- 		if (ppdu_info->ppdu_id != ppdu_info->last_ppdu_id) {
- 			ppdu_info->last_ppdu_id = ppdu_info->ppdu_id;
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index 837ba4adba88..6ab33d5f1b2a 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -156,6 +156,7 @@ struct hal_rx_mon_ppdu_info {
- 	u32 preamble_type;
- 	u32 mpdu_len;
- 	u16 chan_num;
-+	u16 freq;
- 	u16 tcp_msdu_count;
- 	u16 tcp_ack_msdu_count;
- 	u16 udp_msdu_count;
-@@ -232,12 +233,16 @@ struct hal_rx_mon_ppdu_info {
- 	u8 medium_prot_type;
- };
- 
--#define HAL_RX_PPDU_START_INFO0_PPDU_ID		GENMASK(15, 0)
-+#define HAL_RX_PPDU_START_INFO0_PPDU_ID			GENMASK(15, 0)
-+#define HAL_RX_PPDU_START_INFO1_CHAN_NUM		GENMASK(15, 0)
-+#define HAL_RX_PPDU_START_INFO1_CHAN_FREQ		GENMASK(31, 16)
- 
- struct hal_rx_ppdu_start {
- 	__le32 info0;
--	__le32 chan_num;
--	__le32 ppdu_start_ts;
-+	__le32 info1;
-+	__le32 ppdu_start_ts_31_0;
-+	__le32 ppdu_start_ts_63_32;
-+	__le32 rsvd[2];
- } __packed;
- 
- #define HAL_RX_PPDU_END_USER_STATS_INFO0_MPDU_CNT_FCS_ERR	GENMASK(26, 16)
--- 
-2.34.1
+Best regards,
+Krzysztof
 
 
