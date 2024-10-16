@@ -4,85 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB34CD206A2
-	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 07:01:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 534ACD206A0
+	for <ath12k@archiver.kernel.org>; Wed, 16 Oct 2024 07:01:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=m3U6rPU3HhybJ+a7bMUlP2WqxIygpKdaBH7FlJeAR50=; b=eoukRdTWB/Quei+uecVGr0jKP7
-	dtdXm6EoADcMh7ZSkXGNHO7k6vVbwluvmmSJPBo2KMX9qxFtzMDkD/RGgMZcjBNJ1mtomJmZfmnzP
-	CqZ6ehiTH0yCCKvXSDRuaAcPCE2Cybrp6MwDaklbjhlicwmGEznbA+6Aet8awVU/H77sd4+82y41Q
-	6Yt8vjM+8I5/xMueg2DQxClCeN9HBtWReWJrV585fggiuBLscu3aYVx/fsg8ds3wi20Wr0vjuVQcA
-	pT3hK7+GpEXExKNV1aUKGCFLDO8a6h63vkT5kKkmWKxRzM2xQqn8VQjVk8FCNEr1dT1kLhHtETDJd
-	U2qY+BXg==;
+	bh=UTfhJkpppr5J9r326n/2fNQ+X9QHl21x1MyGewIgX9M=; b=ER5Yq5U4+cS0M+R717bV2NveIc
+	GcRA/soTMu9fMCMdSoeIjlZkbypZZtZ7dXcICvIyiA0F3UtHvu1H4QYt9hx5VaTenYkscimcMjx0N
+	1pm+hz7HSfQuDGGMNTaQBN6qy84N9gcmr+GDZdmalw64gdqSh9vwsYrJ8pOgr9aVe4h2YJEooY3jd
+	QPIzboQgS7PRw3nkjFHWhnykzCakSxTAEM0bUgBPx1ua5cq8T9kFav79IZo0okm+cU0Ppc22mK/FB
+	zJK9nLLyFexNUnt71RTyZIb3JWRuK8+Wu3nQr7e4LwgS9p2OHMrzVAD0zMI7kSKiNAgv/mBU5WcVL
+	+ZR9+yQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0y21-0000000AlqR-3m6H
+	id 1t0y23-0000000Als7-3Izc
 	for ath12k@archiver.kernel.org;
-	Wed, 16 Oct 2024 07:01:17 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 16 Oct 2024 07:01:19 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0xyZ-0000000AkmG-0yeS
+	id 1t0xzJ-0000000Akww-2wY5
 	for ath12k@lists.infradead.org;
-	Wed, 16 Oct 2024 06:57:44 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49G6uZ4h023612;
-	Wed, 16 Oct 2024 06:57:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	m3U6rPU3HhybJ+a7bMUlP2WqxIygpKdaBH7FlJeAR50=; b=RoILlZVY0I7IjdMp
-	kxrclGcRbRc35+YCc38UjaZNgjFi7bGkf86eSa6225/mQubCM3AFvDBA8ULxolYq
-	TpIyZb/OLEJtfaMwmF9FBFzI21J+aPlKqyN/YnFZUsqsFavKW7n1XSg069Hh7cM4
-	ue2l7LMzVQDHfiEcbNMJSqYH+u/uxyM5RQm+sXx61bYahCECCFyoms23fgi/PkVz
-	MSJtPYQGPTU6zN+OG3zcUYfZw/dPZgFLWzhgU8feY5DCZxVuRLD76/ys+QstsFn2
-	467DKD9HKMQAemW7jf8TxOiUtJW7DnVRZnqiNI9yLOz/dTQTOPvWWssIGSNnBLwM
-	mvmayg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42a8nq0068-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Oct 2024 06:57:42 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49G6vgNl019518
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Oct 2024 06:57:42 GMT
-Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 15 Oct 2024 23:57:40 -0700
-From: Kang Yang <quic_kangyang@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v3 11/11] wifi: ath12k: delete mon reap timer
-Date: Wed, 16 Oct 2024 14:57:00 +0800
-Message-ID: <20241016065700.1090-12-quic_kangyang@quicinc.com>
-X-Mailer: git-send-email 2.34.1.windows.1
-In-Reply-To: <20241016065700.1090-1-quic_kangyang@quicinc.com>
-References: <20241016065700.1090-1-quic_kangyang@quicinc.com>
+	Wed, 16 Oct 2024 06:58:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id DE01CA42567;
+	Wed, 16 Oct 2024 06:58:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A5C93C4CEC5;
+	Wed, 16 Oct 2024 06:58:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1729061908;
+	bh=WfFXzP8/c3J6x7qT5BMt6TQD7XOC91zd+5me5pZif4U=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AUjsCVTXoxv908D/ByuH8Dh7gzXSKGadgwOvAqCmNK35myX33J45uDHXIPm7mDJQ1
+	 hKEdofn2ShES8lnHcGoGVGq4mxfQSckwZ85dKYkkz8C5ca3o1hSraRZk69bLELzopE
+	 RI2QpZKhTlk2NzZ7JrHeCr86AI701yCnAEP6hrpR92O0VWqL94ivu9D5b5/SBa74wo
+	 XdvG9vh2ig618pjARQs3qewdQtxdAwIV+KGS1eF9AvXMHHRKK0Fb8GnUvLXyHj6JI0
+	 X1syHiQZIXJdjJwkj0hY3vBy/UudnN2/+Wr9n+IxFyQSg2kYpBtKP1xLABEv0fYpYg
+	 BvZkOPS+mdlDA==
+Date: Wed, 16 Oct 2024 08:58:25 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org, 
+	Kalle Valo <kvalo@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Jeff Johnson <jjohnson@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH v2 02/22] arm64: dts: qcom: add wifi node for IPQ5332
+ based RDP441
+Message-ID: <ftvwsizfupm7veg662adnzc6jpulk5shga3xmvbtom3saclnf6@bmatmqw5lp72>
+References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
+ <20241015182637.955753-3-quic_rajkbhag@quicinc.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: s4oCDWx6Ujf4ilbomcYWLAdeCWwLvf3J
-X-Proofpoint-GUID: s4oCDWx6Ujf4ilbomcYWLAdeCWwLvf3J
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- malwarescore=0 impostorscore=0 mlxlogscore=698 priorityscore=1501
- suspectscore=0 adultscore=0 spamscore=0 bulkscore=0 clxscore=1015
- mlxscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410160044
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+In-Reply-To: <20241015182637.955753-3-quic_rajkbhag@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241015_235743_304088_811FD2C6 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20241015_235829_823676_88515F26 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,82 +79,20 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently mon reap timer is not used, and it is not needed anymore.
+On Tue, Oct 15, 2024 at 11:56:17PM +0530, Raj Kumar Bhagat wrote:
+> RDP441 is based on IPQ5332. It has inbuilt AHB bus based IPQ5332 WiFi
+> device.
+> 
+> Describe and add WiFi node for RDP441. Also, reserve the memory
+> required by IPQ5332 firmware.
+> 
+> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 
-So remove related code.
+Don't send one DTS patch in 22 patchset targetting different subsystem.
+Imagine, how wireless maintainers are supposed to apply their bits? 21
+commands instead of one command?
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |  2 --
- drivers/net/wireless/ath/ath12k/dp.c   | 25 -------------------------
- 2 files changed, 27 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 0c39b37d6a47..87240fb57c73 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -891,8 +891,6 @@ struct ath12k_base {
- 	struct ath12k_dbring_cap *db_caps;
- 	u32 num_db_cap;
- 
--	struct timer_list mon_reap_timer;
--
- 	struct completion htc_suspend;
- 
- 	u64 fw_soc_drop_count;
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 2ab2a7d45be9..099a1fcd88b4 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -974,8 +974,6 @@ void ath12k_dp_pdev_free(struct ath12k_base *ab)
- {
- 	int i;
- 
--	del_timer_sync(&ab->mon_reap_timer);
--
- 	for (i = 0; i < ab->num_radios; i++)
- 		ath12k_dp_rx_pdev_free(ab, i);
- }
-@@ -1020,27 +1018,6 @@ void ath12k_dp_hal_rx_desc_init(struct ath12k_base *ab)
- 		ab->hal_rx_ops->rx_desc_get_desc_size();
- }
- 
--static void ath12k_dp_service_mon_ring(struct timer_list *t)
--{
--	struct ath12k_base *ab = from_timer(ab, t, mon_reap_timer);
--	int i;
--
--	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++)
--		ath12k_dp_mon_process_ring(ab, i, NULL, DP_MON_SERVICE_BUDGET,
--					   ATH12K_DP_RX_MONITOR_MODE);
--
--	mod_timer(&ab->mon_reap_timer, jiffies +
--		  msecs_to_jiffies(ATH12K_MON_TIMER_INTERVAL));
--}
--
--static void ath12k_dp_mon_reap_timer_init(struct ath12k_base *ab)
--{
--	if (ab->hw_params->rxdma1_enable)
--		return;
--
--	timer_setup(&ab->mon_reap_timer, ath12k_dp_service_mon_ring, 0);
--}
--
- int ath12k_dp_pdev_alloc(struct ath12k_base *ab)
- {
- 	struct ath12k *ar;
-@@ -1051,8 +1028,6 @@ int ath12k_dp_pdev_alloc(struct ath12k_base *ab)
- 	if (ret)
- 		goto out;
- 
--	ath12k_dp_mon_reap_timer_init(ab);
--
- 	/* TODO: Per-pdev rx ring unlike tx ring which is mapped to different AC's */
- 	for (i = 0; i < ab->num_radios; i++) {
- 		ar = ab->pdevs[i].ar;
--- 
-2.34.1
+Best regards,
+Krzysztof
 
 
