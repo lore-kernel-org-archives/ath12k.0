@@ -4,71 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B955D21274
-	for <ath12k@archiver.kernel.org>; Thu, 17 Oct 2024 10:27:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E11B2D374A0
+	for <ath12k@archiver.kernel.org>; Thu, 17 Oct 2024 14:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=3Ax65v1t3Xypn7Mxo23EgFXfR6ADa5j+lJqBjPNfPNM=; b=N3X9ZjR4RFXG275NAISG/JWJ0d
-	PcuzkLpLvysQPpJCrnB30WoNfcK0zek35lrgzmOdv+dWz3cBzKER+nWKSELD5Zn5BxSa3pwAx4AwO
-	Wgxr0t2pjcWIORuDW7oa6RczOy0LaNUqIuUvw35eBaO8oMyl7U1W33FIC7GQesiK4pi1ADn/m9ygY
-	+J3xu9KFZg8td0AFmG761nvRwEuppj1XsNo986qoVa90CVCIBWx/Qcbmz8HJmEEDSkZpCEkd8xohg
-	/GWBNrUPultv1zQKaP4oZ0naW1TpD0d6ccKlpCkKJUgzae//Y9aQo81zcabjm0Bu2KyRnNuJRji/T
-	yIpRoHVQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
+	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
+	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AzbsOsQIWvMjhCBmqr/bvH8kbxpl/7q482cnO1TVMSk=; b=YN88efpycyAHCZkMy9dKydVh5M
+	HoXGcO0d+d7kO62oFWzXHt8/iLCrg/8K48Zs2Xx9JrgZgbQlPxdebneDYN4MQmYPBLznxoi+5WFzv
+	qh2bztYrcrU8t/ZUH4sTQvUk8pUg+WcUmtEO5To2HUeLSpktjWFHN14nXnN7W+AVTq16ZnOpEhXGB
+	pt6pCuc3lJCpu67+F8r+NS1deRBYSEUPkS9caX8rsFbpX1LQh0P+zq0m7UDnoWCOa3UwRLyC9dfYG
+	sGwdCW5AzSVCfjHB9kPyQYcncJmASgto3tdEPl4L/XJCxMSvW37vo9JSFQLcISNY51LT/sNscg1It
+	PM8F4okQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1NjC-0000000EVrK-3gL4
+	id 1t1RTD-0000000F6lv-2We3
 	for ath12k@archiver.kernel.org;
-	Thu, 17 Oct 2024 10:27:34 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	Thu, 17 Oct 2024 14:27:19 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1NOb-0000000ESvd-23ZT
-	for ath12k@lists.infradead.org;
-	Thu, 17 Oct 2024 10:06:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1729159578; x=1760695578;
-  h=date:from:to:cc:subject:message-id;
-  bh=mSGg1teHK40vaZWz5A9p+KW9ShDDV0nO9z0F9inUSXo=;
-  b=hrKz0H1IXXzYXhlWclO9SYV8Nf62DtRGoArFMDCqIRztdi+pmo5moAJd
-   NUsXHddxapPseJSlSNouSiOHSetUx6hG+7EWMAgULoRh1OitK6s7qTLIR
-   Eq4GReDuezvNeyUxIIklLDy1oIoU90RmuRABlGbcy5KP7gS1XL7q+BhaR
-   q1exQ2N+fRpIzMHte2XVcMflxQkOjV6XmNGHSd8K3zecvDcHMxk21AIIH
-   v4KmyTYC62jLjIiNJgwI6OTsXGDMKCgt3EJkyzjWbS/rVisi/uKT6zHWR
-   9EJhOetS9BTcKvc0pzA2kK/KPBIJGokiaw7giNcVxKLLmJMLyTLXTEmHP
-   g==;
-X-CSE-ConnectionGUID: nCKmydXhSCOJHr7+5B/uYA==
-X-CSE-MsgGUID: TcPqkYc+S4STLJsMNmh77Q==
-X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="28426326"
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="28426326"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Oct 2024 03:06:14 -0700
-X-CSE-ConnectionGUID: VjqylZ5mTmGw/BBY34ADsw==
-X-CSE-MsgGUID: An+mHhOHTaW7JxKYL1QrHA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,210,1725346800"; 
-   d="scan'208";a="83057144"
-Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
-  by fmviesa005.fm.intel.com with ESMTP; 17 Oct 2024 03:06:13 -0700
-Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1t1NOU-000MAX-2Y;
-	Thu, 17 Oct 2024 10:06:10 +0000
-Date: Thu, 17 Oct 2024 18:05:41 +0800
-From: kernel test robot <lkp@intel.com>
+	id 1t1RS1-0000000F6f0-1eM1;
+	Thu, 17 Oct 2024 14:26:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 30A89A43A04;
+	Thu, 17 Oct 2024 14:25:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E67EC4CEC7;
+	Thu, 17 Oct 2024 14:26:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1729175163;
+	bh=ICXkrsXNnojjdPLcTUdfr92shgtN7o7vqH9yRvnuhVs=;
+	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+	b=cmV7ieoASYhIh9KQ1UX3edFptGCC5G3yzJQusjGH9tL+W457eyXZZ8Yu3btqeMccN
+	 YywWWQkNGHTAjL3cJhY6vvdVrQfslEATqA8SwhLUaklq6fjayuSxYYVxLVJR4M+pup
+	 d9PG3HZ7rqvS93Pk3IV+Yvc0CnBDBNg5JIzNA39ruplH/Xt6d3ZXD5FnaSI8XapnTW
+	 qJwC0SoUFLuvXjkCtiOaQTylz2I8c/lqOb5ahfKYgK7BBstcZxHm4DGZhN7t2HB6Ni
+	 P2iGpul1xBx2i8YMGsZyMSx2CMj2CPgiWi1rcx7wyaBoWAoAVbNKRsXRGrIkL4B90s
+	 h8DV2r+FCe/tw==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Re: pull-request: ath-current-20241016
+From: Kalle Valo <kvalo@kernel.org>
+In-Reply-To: <0ea819f9-d563-46c1-9a68-3800c81565dd@quicinc.com>
+References: <0ea819f9-d563-46c1-9a68-3800c81565dd@quicinc.com>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-current] BUILD SUCCESS
- befd716ed429b26eca7abde95da6195c548470de
-Message-ID: <202410171833.8JKgjFuG-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+Cc: <linux-wireless@vger.kernel.org>, <ath10k@lists.infradead.org>,
+ <ath11k@lists.infradead.org>, <ath12k@lists.infradead.org>,
+ <quic_jjohnson@quicinc.com>, <quic_kvalo@quicinc.com>
+User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
+Message-ID: <172917516046.799221.17034758455768979128.kvalo@kernel.org>
+Date: Thu, 17 Oct 2024 14:26:02 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_030617_621071_6944CB1B 
-X-CRM114-Status: UNSURE (   3.81  )
+X-CRM114-CacheID: sfid-20241017_072605_537986_84764BFF 
+X-CRM114-Status: UNSURE (   9.47  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,150 +74,44 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-current
-branch HEAD: befd716ed429b26eca7abde95da6195c548470de  wifi: ath11k: Fix invalid ring usage in full monitor mode
+Jeff Johnson <quic_jjohnson@quicinc.com> wrote:
 
-elapsed time: 1168m
+> The following changes since commit 2f833e8948d6c88a3a257d4e426c9897b4907d5a:
+> 
+>   Revert "wifi: ath11k: support hibernation" (2024-09-02 19:33:00 +0300)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-current-20241016
+> 
+> for you to fetch changes up to befd716ed429b26eca7abde95da6195c548470de:
+> 
+>   wifi: ath11k: Fix invalid ring usage in full monitor mode (2024-10-16 07:30:31 -0700)
+> 
+> ----------------------------------------------------------------
+> ath.git patches for v6.12-rc4
+> 
+> Fix two instances of memory leaks, one in ath10k and one in ath11k.
+> 
+> ----------------------------------------------------------------
+> Manikanta Pubbisetty (1):
+>       wifi: ath10k: Fix memory leak in management tx
+> 
+> Remi Pommarel (1):
+>       wifi: ath11k: Fix invalid ring usage in full monitor mode
+> 
+>  drivers/net/wireless/ath/ath10k/wmi-tlv.c | 7 ++++++-
+>  drivers/net/wireless/ath/ath10k/wmi.c     | 2 ++
+>  drivers/net/wireless/ath/ath11k/dp_rx.c   | 7 +++++--
+>  3 files changed, 13 insertions(+), 3 deletions(-)
 
-configs tested: 130
-configs skipped: 5
+Pulled, thanks.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+a940b3a1ad0f Merge tag 'ath-current-20241016' of git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath
 
-tested configs:
-alpha                             allnoconfig    gcc-14.1.0
-alpha                            allyesconfig    clang-20
-alpha                               defconfig    gcc-14.1.0
-arc                              allmodconfig    clang-20
-arc                               allnoconfig    gcc-14.1.0
-arc                              allyesconfig    clang-20
-arc                                 defconfig    gcc-14.1.0
-arc                            hsdk_defconfig    gcc-14.1.0
-arc                    vdk_hs38_smp_defconfig    gcc-14.1.0
-arm                              allmodconfig    clang-20
-arm                               allnoconfig    gcc-14.1.0
-arm                              allyesconfig    clang-20
-arm                         axm55xx_defconfig    gcc-14.1.0
-arm                                 defconfig    gcc-14.1.0
-arm                            mmp2_defconfig    gcc-14.1.0
-arm                       spear13xx_defconfig    gcc-14.1.0
-arm64                            allmodconfig    clang-20
-arm64                             allnoconfig    gcc-14.1.0
-arm64                               defconfig    gcc-14.1.0
-csky                              allnoconfig    gcc-14.1.0
-csky                                defconfig    gcc-14.1.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    gcc-14.1.0
-hexagon                          allyesconfig    clang-20
-hexagon                             defconfig    gcc-14.1.0
-i386                             allmodconfig    clang-18
-i386                              allnoconfig    clang-18
-i386                             allyesconfig    clang-18
-i386        buildonly-randconfig-001-20241017    clang-18
-i386        buildonly-randconfig-002-20241017    clang-18
-i386        buildonly-randconfig-003-20241017    clang-18
-i386        buildonly-randconfig-004-20241017    clang-18
-i386        buildonly-randconfig-005-20241017    clang-18
-i386        buildonly-randconfig-006-20241017    clang-18
-i386                                defconfig    clang-18
-i386                  randconfig-001-20241017    clang-18
-i386                  randconfig-002-20241017    clang-18
-i386                  randconfig-003-20241017    clang-18
-i386                  randconfig-004-20241017    clang-18
-i386                  randconfig-005-20241017    clang-18
-i386                  randconfig-006-20241017    clang-18
-i386                  randconfig-011-20241017    clang-18
-i386                  randconfig-012-20241017    clang-18
-i386                  randconfig-013-20241017    clang-18
-i386                  randconfig-014-20241017    clang-18
-i386                  randconfig-015-20241017    clang-18
-i386                  randconfig-016-20241017    clang-18
-loongarch                        allmodconfig    gcc-14.1.0
-loongarch                         allnoconfig    gcc-14.1.0
-loongarch                           defconfig    gcc-14.1.0
-m68k                             allmodconfig    gcc-14.1.0
-m68k                              allnoconfig    gcc-14.1.0
-m68k                             allyesconfig    gcc-14.1.0
-m68k                       bvme6000_defconfig    gcc-14.1.0
-m68k                                defconfig    gcc-14.1.0
-m68k                        m5407c3_defconfig    gcc-14.1.0
-microblaze                       allmodconfig    gcc-14.1.0
-microblaze                        allnoconfig    gcc-14.1.0
-microblaze                       allyesconfig    gcc-14.1.0
-microblaze                          defconfig    gcc-14.1.0
-mips                              allnoconfig    gcc-14.1.0
-mips                           ip28_defconfig    gcc-14.1.0
-mips                          rb532_defconfig    gcc-14.1.0
-nios2                             allnoconfig    gcc-14.1.0
-nios2                               defconfig    gcc-14.1.0
-openrisc                          allnoconfig    clang-20
-openrisc                         allyesconfig    gcc-14.1.0
-openrisc                            defconfig    gcc-12
-parisc                           allmodconfig    gcc-14.1.0
-parisc                            allnoconfig    clang-20
-parisc                           allyesconfig    gcc-14.1.0
-parisc                              defconfig    gcc-12
-parisc64                            defconfig    gcc-14.1.0
-powerpc                          allmodconfig    gcc-14.1.0
-powerpc                           allnoconfig    clang-20
-powerpc                          allyesconfig    gcc-14.1.0
-riscv                            allmodconfig    gcc-14.1.0
-riscv                             allnoconfig    clang-20
-riscv                            allyesconfig    gcc-14.1.0
-riscv                               defconfig    gcc-12
-s390                             allmodconfig    gcc-14.1.0
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.1.0
-s390                                defconfig    gcc-12
-sh                               allmodconfig    gcc-14.1.0
-sh                                allnoconfig    gcc-14.1.0
-sh                               allyesconfig    gcc-14.1.0
-sh                                  defconfig    gcc-12
-sh                      rts7751r2d1_defconfig    gcc-14.1.0
-sh                             sh03_defconfig    gcc-14.1.0
-sh                   sh7724_generic_defconfig    gcc-14.1.0
-sparc                            allmodconfig    gcc-14.1.0
-sparc64                             defconfig    gcc-12
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-20
-um                               allyesconfig    clang-20
-um                                  defconfig    gcc-12
-um                             i386_defconfig    gcc-12
-um                           x86_64_defconfig    gcc-12
-x86_64                            allnoconfig    clang-18
-x86_64                           allyesconfig    clang-18
-x86_64      buildonly-randconfig-001-20241017    gcc-12
-x86_64      buildonly-randconfig-002-20241017    gcc-12
-x86_64      buildonly-randconfig-003-20241017    gcc-12
-x86_64      buildonly-randconfig-004-20241017    gcc-12
-x86_64      buildonly-randconfig-005-20241017    gcc-12
-x86_64      buildonly-randconfig-006-20241017    gcc-12
-x86_64                              defconfig    clang-18
-x86_64                                  kexec    gcc-12
-x86_64                randconfig-001-20241017    gcc-12
-x86_64                randconfig-002-20241017    gcc-12
-x86_64                randconfig-003-20241017    gcc-12
-x86_64                randconfig-004-20241017    gcc-12
-x86_64                randconfig-005-20241017    gcc-12
-x86_64                randconfig-006-20241017    gcc-12
-x86_64                randconfig-011-20241017    gcc-12
-x86_64                randconfig-012-20241017    gcc-12
-x86_64                randconfig-013-20241017    gcc-12
-x86_64                randconfig-014-20241017    gcc-12
-x86_64                randconfig-015-20241017    gcc-12
-x86_64                randconfig-016-20241017    gcc-12
-x86_64                randconfig-071-20241017    gcc-12
-x86_64                randconfig-072-20241017    gcc-12
-x86_64                randconfig-073-20241017    gcc-12
-x86_64                randconfig-074-20241017    gcc-12
-x86_64                randconfig-075-20241017    gcc-12
-x86_64                randconfig-076-20241017    gcc-12
-x86_64                               rhel-8.3    gcc-12
-xtensa                            allnoconfig    gcc-14.1.0
-xtensa                         virt_defconfig    gcc-14.1.0
+-- 
+https://patchwork.kernel.org/project/linux-wireless/patch/0ea819f9-d563-46c1-9a68-3800c81565dd@quicinc.com/
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
