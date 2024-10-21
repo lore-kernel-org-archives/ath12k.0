@@ -4,68 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4173D0E6D1
-	for <ath12k@archiver.kernel.org>; Mon, 21 Oct 2024 09:07:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CD53D0E6D1
+	for <ath12k@archiver.kernel.org>; Mon, 21 Oct 2024 09:08:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=kFkSNYrzwHBHmzYOasDsS6567z5AdnI+gjgGVWIVASI=; b=3DhxINMCOJDCYRU8Np+mpatMEv
-	Sr27yz7Z6nNl2gtFtPAbDpnUoazBZKJOwDwDTUWOmfFqOt89XVoUn4RlBtvYMTO0RYEadflgwXwb8
-	J6sPg2+KqsJ28c/CTE8ChN592cJ1A2RRz+tQzPBr0Yd/PFiS97ZfHpfrU1KqGC/gE97dKWJV0s8GQ
-	O9YQQZhhTOw1raCC7Ts+a6qRIkqcROozlUj8BYTm0F9pU2zLg5NE4EIVde/ZEkVPe6J+PNOMl1myw
-	7TlCl0ZQi78F2b8yocoGFOjEaM383aKyL8Bsj+xI+niMkDR3EMxwT3leZdXfADK5mQAalC7MvK1Pv
-	0h/KHfkA==;
+	bh=xaTg288/HQhQnXmZf0cBOHZ/yiUyhF7GlQNNm1ZAnJg=; b=og3VeSvy5Y5oQ4uKpB/zthVTfU
+	ajjjfnPmVPWsT2U+rZgRSoedDGtNDhZcx4nPdRZ4/xVG+enxJUSvsr4PYDhWBwZf9MtpsrLuFUcYs
+	sr7P0wy8yiIInNqgf4/NuPj335WqglmnJBeDPQu8Pe/ru+nRiEtdtKoM1evCTawTTFGgTsmsxEcf/
+	1mr442UioGIHBInFeVVySqUwfRLECu1iAHaNyJTbVjvidsIG/Hpm2JNj6RNqMW3APgfrh78KEXK42
+	W0LDKF8lCk227VmcWjJzBZIZpbvXWoRffGTNX4LKHVPGJp71AQhBQTxm6tIKrPIWBSRjUFhStgvQJ
+	ESBVtW2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2oNu-00000006ehp-2Hq7
+	id 1t2oON-00000006euC-39gl
 	for ath12k@archiver.kernel.org;
-	Mon, 21 Oct 2024 09:07:30 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Mon, 21 Oct 2024 09:07:59 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2oN9-00000006eWo-1Ptj
+	id 1t2oOJ-00000006et4-3rju
 	for ath12k@lists.infradead.org;
-	Mon, 21 Oct 2024 09:06:44 +0000
+	Mon, 21 Oct 2024 09:07:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3351C5C5B47;
-	Mon, 21 Oct 2024 09:06:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 94912C4CEC3;
-	Mon, 21 Oct 2024 09:06:39 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id E40465C5BBC;
+	Mon, 21 Oct 2024 09:07:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D4C14C4CEC7;
+	Mon, 21 Oct 2024 09:07:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729501602;
-	bh=+ZMNc1CMzmELhjMB7j/skx2+yKwY4xJ6OUJftzt0FZA=;
+	s=k20201202; t=1729501675;
+	bh=qJJnzJLApLm/pC+hOcBl9ymUBb/nq+DK3zkjkMbl4xg=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=l2LO2f7CuDmW1chxODWB1XEmOgaTtTbOnvzYwSwMTRYvFNlPbhSYMidmE8Kbzfest
-	 2qrf9PcLNYyKn0qTAmYqKw9f7qCE06P562Wt2SoV2hekNOd9+AZsbkBuMFhZDFXgR8
-	 zaeWA+WWA2+IhkT8HzpJYInm26OtrxDQRpI8Inn8mA/668VSfU4CLjpnURsaYQAT4R
-	 /yjKJ8ZFn6I1QMqZ3z8cOyxU8vQUFSwmIJB/tgsgm7H1tf8WiC+rXau24VgoPXHmun
-	 iEu8W0lg5dN3DSLjW4ch47xsApsQqk+kInjGXec3J+AzeUqU5mgRLMCqvmNFibyy0l
-	 P/TlCqlt9h6Ug==
+	b=ewvHbr943bKfo7CFKbWFsUXxk+/pOh9bc2GAX26iN+K1Sw1FgA/ahvkd4SRJSODdz
+	 vN+n9NomPM/V5UvDa44rhYDiJOzDtZLfhrEw0hB5ebC/y887eVAjR99dlY9WPeYVLh
+	 BNLpb5XRNZx81op/PJ+kE73I2sng0EXEtxGUisQy5KTGJxzL7zK7t73g0+Vnv7TJ6v
+	 JqtvNNZ78U7wYZrqB4uxQXXxXpRbvDqUn8eBJADEK1Rzq0F8UfYluRovc/zNVzUR+5
+	 yoK7fazYvBO6QTS7puSua1KQLuMSX/xWe5FY2yfdVBp7vATiBF2cZ9sMl17o668xmq
+	 Sr9YKVBc1QlNg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  "Rob
- Herring" <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>,
-  "Conor Dooley" <conor+dt@kernel.org>,  Jeff Johnson
- <jjohnson@kernel.org>,  "Bjorn Andersson" <andersson@kernel.org>,  Konrad
- Dybcio <konradybcio@kernel.org>,  <devicetree@vger.kernel.org>,
-  <linux-kernel@vger.kernel.org>,  <linux-arm-msm@vger.kernel.org>
-Subject: Re: [PATCH v2 16/22] wifi: ath12k: convert tasklet to BH workqueue
- for CE interrupts
-References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
-	<20241015182637.955753-17-quic_rajkbhag@quicinc.com>
-Date: Mon, 21 Oct 2024 12:06:37 +0300
-In-Reply-To: <20241015182637.955753-17-quic_rajkbhag@quicinc.com> (Raj Kumar
-	Bhagat's message of "Tue, 15 Oct 2024 23:56:31 +0530")
-Message-ID: <877ca1q0yq.fsf@kernel.org>
+To: Karol Przybylski <karprzy7@gmail.com>
+Cc: jjohnson@kernel.org,  linux-wireless@vger.kernel.org,
+  ath12k@lists.infradead.org,  linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] wifi: ath12k: Fix for out-of bound access error
+References: <20241015192155.3643363-1-karprzy7@gmail.com>
+Date: Mon, 21 Oct 2024 12:07:51 +0300
+In-Reply-To: <20241015192155.3643363-1-karprzy7@gmail.com> (Karol Przybylski's
+	message of "Tue, 15 Oct 2024 21:21:55 +0200")
+Message-ID: <8734kpq0wo.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241021_020643_440543_367DD4ED 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241021_020756_025503_47356405 
+X-CRM114-Status: GOOD (  12.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,25 +73,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Raj Kumar Bhagat <quic_rajkbhag@quicinc.com> writes:
+Karol Przybylski <karprzy7@gmail.com> writes:
 
-> Currently in Ath12k, tasklet is used to handle the BH context of CE
-> interrupts. However the tasklet is marked deprecated and has some
-> design flaws. To replace tasklets, BH workqueue support has been
-> added. BH workqueue behaves similarly to regular workqueues except
-> that the queued work items are executed in the BH context.
+> Size of array passed to print_array_to_buf_index is decremented by 1
 >
-> Hence, convert the tasklet to BH workqueue for handling CE interrupts
-> in the BH context.
+> Discovered in coverity scan, CID 1600742
 >
-> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
+> Signed-off-by: Karol Przybylski <karprzy7@gmail.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+> index b2be7dade79f..74767ba9ec2b 100644
+> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+> @@ -1550,7 +1550,7 @@ ath12k_htt_print_tx_selfgen_ax_stats_tlv(const void *tag_buf, u16 tag_len,
+>  			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp));
+>  	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
+>  					htt_stats_buf->ax_mu_mimo_brpoll,
+> -					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
+> +					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS-1, "\n");
 
-22 patches is a lot and I'm not going to look at this in detail, please
-reduce your patchset size. 10-12 patches is recommended. For example,
-this could be easily submitted separately.
+A space before and after '-', please.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
