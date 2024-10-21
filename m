@@ -4,176 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E684CD15D90
-	for <ath12k@archiver.kernel.org>; Mon, 21 Oct 2024 13:41:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DAD6D17122
+	for <ath12k@archiver.kernel.org>; Mon, 21 Oct 2024 18:24:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nyC7N2hz+/WsPdXOknuF3Ss0F+Np26FogPfxxsjIHt8=; b=zGQ9QluICeenM4U3k4kropfdra
-	S0fCs7GV9JkJe2kd6zl8sgvttrTf8cL89hWvxImXCJt6RqXPJa1oinCth29T2gae72+78Kihy3qni
-	J9Pnh3itiX9SCF9qpIzL0dI2KJDVzKbmWZ57xb2RGnjl5gq4ThzyefIvcb31mvIsF70fpQUErdAdy
-	xrcZDfhE/t/upsMCkjj9H1tsw1JgkLmaFBeC/1HUM0098IclhU7AMpTzRE8UJyHMFDwgvtoOkeJvP
-	rktKewEu7vuFtpruO4UpKPEPMFGkZYzIvxjpI9t83/YAlDjUuRF7By02qKlxaK5UPq7G9Yx+NmSe6
-	6PUxt5cw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Cc:To:Subject:
+	Date:From:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=f0zoKbpbDyK9gdfNUv6FQFMN/3eHLKWrP0wapzjM8/M=; b=B/t2W4RMYwGvdgpOOs6WOFvskY
+	HdfHusOzC1Gw96HE0GGuRIuyCgxYvReeYcdwLrOmY6kG0RyW45vNokj7p7DiQ1EE3uqXcmP3upPFH
+	K5ZtVGjhmNyPOvoIOqudQmCv+KxrnAfEjAN0J+q7hvkWrsxmQn/VrSMGWHvVQxSyBpd2JWqI4Rm2M
+	d8ZYJHhwLIKgtT4ahoPHbDbNrLAXaEKCVPpnR3IO8Ec8p9c++f3kw7ILucrC8VWA++bmsjNYjyVAw
+	StokNZ2HYMhrTVj9uLqgIlauHlMgUJsmieid/E6BpAFgggwx6/kue+5DetvADDykXARInUMaMQGRT
+	MMafh5qA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2sf6-00000007SMf-2bF8
+	id 1t2x4w-00000008IRA-4682
 	for ath12k@archiver.kernel.org;
-	Mon, 21 Oct 2024 13:41:32 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2sPH-00000007PWc-2hI7
-	for ath12k@bombadil.infradead.org;
-	Mon, 21 Oct 2024 13:25:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=nyC7N2hz+/WsPdXOknuF3Ss0F+Np26FogPfxxsjIHt8=; b=bLDxiCgwAIqgvxFSQh3yuJ6bvw
-	0a1suCX93q5K+1P6HHuP/U12eC7BdoAAoEAxbNfXbZRFm6YNHFjTcUplZAi89dd+GbvugT38RGSOd
-	E5w9VtaIqj7luQAOthWbGvN+j/xWfct2ekBZ511ouyceOJ7SzmC0p45y+kSkcQmfs1nTXc8SdTILK
-	+Tr0IhD9uBqECS7os4PTNO475F9fhg5H1gpDRVgVL6gSXgKM9Ocz8ueloo+XmwO6k2rq+02wJu3fU
-	wqaF7YX90jkxfq0Lyx23l0253ZgJZTgUOb216BKXQjL2s8O5kNgdqNR1xCing2U1RhxA88fXDJPcy
-	1/N4s1yQ==;
-Received: from mail-co1nam11on20600.outbound.protection.outlook.com ([2a01:111:f403:2416::600] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2sPE-00000007xDX-0Ulb
+	Mon, 21 Oct 2024 18:24:30 +0000
+Received: from bout3.ijzerbout.nl ([136.144.140.114])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1t2x4t-00000008IOY-0EWz
 	for ath12k@lists.infradead.org;
-	Mon, 21 Oct 2024 13:25:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=GnGghAfCJKdT+5BBH3flN+wn6EuoNQMmcnfoXkC0izBBlXJHy03n8J9mtMn7p837NlotXM9hntK7YLdvEkA1YrYAyrSnIn4PJgy6xX4H2wjRYZX6q1IuW30dfM1e7QuRZ7iOupsUPBs/xwwrBsd+XoeVln1VN/h1aWw5QVZxL/7lUuDqqRiSsPupM/UX0LAoWb6pHOTeNBdL7Xnd/AaPyL+mX2ie/Tdjm2jdrC27lMugGxp1J7CaFhJrND76grDtArkqwIMw6rGHJxJ3ajNCQTvLRXFWNv4uz4qRddHGOENnSPbCtppdAQie75EMqNRh8Jop9TW0K4KNeM1E8Hdbgg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=nyC7N2hz+/WsPdXOknuF3Ss0F+Np26FogPfxxsjIHt8=;
- b=scQ4F7lSZO41KrKg5ewbDgM4LWqsVWmkis4fJKTV6fTNk19qDDoXqOO8ocEJqolmSquluUofpxmQ1ZySssYRYF+U85X6r1nKZAijeDmLcuYmlJgnUMmM3NoL0AQcaXpr/RYxFFMWH1pAcGkN/kGXLpy7Sq5p56CiDx2e6kf0+yndrOnlJy5BAjdSNiviFpBm2B2tydfNeiNYLGnFE+q8hSrxHDp30Cgu0WVRQUxgrV08u1bs9fiRLU293pf4YP/NK2qGPeKatPIQPjDZJG8zzmVcLm/TvDm4oMnVXxMPtO0ftf1MMb8r3vt8UAbWXmTeKMrbY4nc6GtIC2OdpYM9rg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nyC7N2hz+/WsPdXOknuF3Ss0F+Np26FogPfxxsjIHt8=;
- b=t0jpYZ1cLsCJPz6KKEMd1CYl42CIHpEU9sJrZfu4B4lMsDJOLPhEPd1C8cKIj5w468SkDH/Bwj3WZyvcBFN8FRNHBwOu4mHzWelObSxJ7dyRzEninJIoPnKb0Tu+5L6fuLjh2n3xaotqwhAmRMwprg19LRdhIZy4a9WFfK+1Sew=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-Received: from DS7PR12MB6095.namprd12.prod.outlook.com (2603:10b6:8:9c::19) by
- SN7PR12MB8148.namprd12.prod.outlook.com (2603:10b6:806:351::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8069.28; Mon, 21 Oct
- 2024 13:24:55 +0000
-Received: from DS7PR12MB6095.namprd12.prod.outlook.com
- ([fe80::c48a:6eaf:96b0:8405]) by DS7PR12MB6095.namprd12.prod.outlook.com
- ([fe80::c48a:6eaf:96b0:8405%6]) with mapi id 15.20.8069.027; Mon, 21 Oct 2024
- 13:24:55 +0000
-Message-ID: <42dad05e-8f4a-41f2-95b7-55cedadfb46b@amd.com>
-Date: Mon, 21 Oct 2024 08:24:53 -0500
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PULL linux-firmware] ath12k firmware 20241009
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>, linux-firmware@kernel.org,
- ath12k@lists.infradead.org, Jeff Johnson <jjohnson@kernel.org>
-References: <015383e1-f37e-4a1d-b2de-f3261f5ea1f4@quicinc.com>
- <d496a87e-73a1-45e7-8ebb-b907d58dd4f2@amd.com> <87bjzdq1d3.fsf@kernel.org>
-Content-Language: en-US
-From: Mario Limonciello <mario.limonciello@amd.com>
-In-Reply-To: <87bjzdq1d3.fsf@kernel.org>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-ClientProxiedBy: SN7PR18CA0019.namprd18.prod.outlook.com
- (2603:10b6:806:f3::30) To DS7PR12MB6095.namprd12.prod.outlook.com
- (2603:10b6:8:9c::19)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DS7PR12MB6095:EE_|SN7PR12MB8148:EE_
-X-MS-Office365-Filtering-Correlation-Id: 74082937-11f4-49fe-7f8b-08dcf1d3c075
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|1800799024;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?RU1uS2I4MC8rbjRhNjFrZXFpVzVqODVHdkduVFZ0eW9ERWRKVXNYMElWU1Rh?=
- =?utf-8?B?NytabW1kMnNrZzhMVjlGbWgzM1AwRE1MQTlhbDVJMVJNTXB5N3RGaFFPQnQr?=
- =?utf-8?B?cWd1eGdNMHg0QXM1SjNhQ2JvdnJuYWdRWXJwZVZIclp0dlF1UTV6OEk4UEl4?=
- =?utf-8?B?QUloaFpoSmdpRnpXbng1a1JvM0hUVU9aeDdoZk82SWhZa3hWViswR2dXMEsz?=
- =?utf-8?B?T09ENDUzMWgvZEI4NkJtTi9Kc1pYYnlHNHpKL3huMG10dGRTNkhLOTQrSmRD?=
- =?utf-8?B?NURVZ3QwMS9ZVVRnRnFSZ1QrQ2ZwK3B6b3d0cXcwTWlWYjRJSEYwNGpCQWZs?=
- =?utf-8?B?bVF3RmxWQkNmZStNdVhVMTlpcGRGOWZCdVJYVHNlRFgwQkhlZEFyTkhVY3pt?=
- =?utf-8?B?V3NvdEt4UTJJc3ZpV2VTSVB2aS9jNFNXRUZXWk9nWEhFa3diZEN4eWhQQVdz?=
- =?utf-8?B?VGNUd0NnVEhjWTlkMXpQeWQ1a2RWZ0ZJQmtWWWRpVk9Ec1N1SFF2TVM0Z0FS?=
- =?utf-8?B?RlpMUTdOVnc1VVU0bXNyOUZlSThHOXc3dlR3Zjg2YkpDSEcxVC91RXkrL29w?=
- =?utf-8?B?RTNSc0dackYvVFBNK29BWUk1U3g3L2xhTmtUbmdDWWVhT3ozdnZ1U05iSUtS?=
- =?utf-8?B?cmcrNzJvbmVzbndkdWRkS0Q2QkVwYUt4bUdwbktoUEdUVUpqRWpZY1NnRE5i?=
- =?utf-8?B?Z3RHRTJlUUcxRExmZzF2aCs1SUVCVTZOZ0FOenJHRkxxUktTdVN4eFcvRzVH?=
- =?utf-8?B?U0l3RmlwSlVpTGxqRGFSWVA3ZHRNZXI2VVJxWnFQRTNNY0kzQmlTQjNlT1JB?=
- =?utf-8?B?UWNyQW0wN3Nxc1NVUGg4d1FHTzdMeUR1UXp5czFVUTY3aDljV2FFNXdWRGhM?=
- =?utf-8?B?LzNjUnlZSVQ3Rm9RalBwQ1YyUWdVM0dza0txRkZ2aWNjTDBFR3d1U2x2MWhV?=
- =?utf-8?B?S2VCMzBXcXVVQjk1dkpRZURNTkVNNzJyTk5GN1pITDNEMDJoOUJJWEdOZCs0?=
- =?utf-8?B?VWNuaG9NcVMyd2RodDZ5YWJVNklQUC82U1pmNTE3Z3hxN1RmVnVEWWIvbklw?=
- =?utf-8?B?UDBreklSeGtwaGpkMUJ3SWJXVjROZXMxTm9hOVhJR1lKRGd5SmVEQnJHMHkx?=
- =?utf-8?B?N2JFMi9Cd1VRNE1pZzNxVCtLYmdoZlIzTU5kYjJnRU9UbHdyQWs0NkJYWWVj?=
- =?utf-8?B?ZHpPVDB0WFRiS21hakFOMyswVzhydERycGtzSVhFbndudnpRZ0tVeVNUSGl0?=
- =?utf-8?B?bWdyMm4vZ21tWlVja1hjV3BVS2JlRm5ZcHFqZEVaSUEvejF0SHc2Mlh4SHZs?=
- =?utf-8?B?UytxbHNUS1h5Y2ZVTWZ3UVRuWDk3UURpZHE3WWxOWjJaOTBVc1FhazF2cHI4?=
- =?utf-8?B?TVl1VUpKeWFGSDFoZ3UraE9QOER4bDAzMFp4WjdEYmNxcERORkN4UzNpaGdM?=
- =?utf-8?B?TlBpMHhoTHp4U2xRdCtaZWZmM3VTbDlxczNnTmQ0TjZQMDA5eUx0NTJyRGFP?=
- =?utf-8?B?eTdkelZPNUtCZVg4cHhwMklDVFo3T29NQk1lNVNRNnhlaXVDRC9qd1VwdXBD?=
- =?utf-8?B?QlBTWU1qbDZmeHI4Yk44K3ArNmoreGFuYzVOeDFUWnhaalZzenhvc0N0ajRE?=
- =?utf-8?B?bDM0c3lTK1UzdzJJaXo2aUF0SDJIb1RJZys3V2p3N2IwUlFpRzJvMGRwMFl6?=
- =?utf-8?B?RGJsYVYwV3N2eFBvdGtrZGRKdnMzOHN6QndhL1F6SFBaYnlrUkozcHRoaDlS?=
- =?utf-8?Q?S8eTjXZ6h+Ttm5CDae+YqbqLIsSIAMDDVKi+SdF?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS7PR12MB6095.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?dUhJQmQzMmJYUlZXUkswRHhXL2xWVzV3VnUyUWl4Y081MzduSFBjdnY0Z0hp?=
- =?utf-8?B?eERqeEVmeXF6V21yODVSaHlReldNQ0dyNXZ2QVlpaHZlNlVWaWV1enYxZnNV?=
- =?utf-8?B?bVJpWGpMWSs5TlNERGVzTlMwWXE0RjNsd3ZEWldhVlYraVZHOVQ0T2NRSTQ4?=
- =?utf-8?B?VWhMTUQyNS84V2kyWjJHcEJHa0xnWTFnWFFDVEt6QWhjZUd1UlArMDc0bG83?=
- =?utf-8?B?eklaU2xvM0VPRjhTUEM4a3R4N2lsS3NablRDUEVuYlJzb1RXRk1QSE5RaVlV?=
- =?utf-8?B?MUEydi8zbmxwYUFVR3J3MXBXVGFtSU9SeFRBNk9hR1JmTDU5SysvV3hqaUdw?=
- =?utf-8?B?cHNoWGtRZ3UxeXBOUm9KRTlHS2xSSUo2bW1GUHZTQ0JhN2tScUhNN3FzY2Uz?=
- =?utf-8?B?THU1aUNpcUlhZkFTMUhUdVBINDRTUVF0Ump3SUdsWktuN3lXNWlNUk5Qbzhr?=
- =?utf-8?B?ZVNTWlRyK2JVZTJPb3NlQi9CVlhGVWp0Ymt0MXhGZGJOTlBEdmNxbkJLWkYv?=
- =?utf-8?B?TjdWOVhmb0djWmdPSXA3cHFjVjdTMk1zMCt4ZzBEbFVxWGkybUplYTJ0Szk0?=
- =?utf-8?B?dDV1dzV2MWdNd3VrVnpFcDlMc0p1SFROTFEyNnpWZk4zTGFsanZGWXpDMjgz?=
- =?utf-8?B?cDNrcThrK3p1dVhlWGFHakxGZzdJUFI3cy9MMjBBWFpXc3g1REhyMlRtLzcy?=
- =?utf-8?B?TUYyNUNlUURIeDEyVGZFTWZQcUlOLzhFQkowbW1qNVBmTkFpZFpJZm50Tk1l?=
- =?utf-8?B?aVlOWW5VYTR5RU5aNm10c29YWkRkY05pUDRxQkhmZzdLc2J4WWRRekhFUWNO?=
- =?utf-8?B?ZkdsWGxOUzBUYis5aVRMTitGL1V5WjF4NEJsUzFBNkg3V01BQ1FtR0dDYXVE?=
- =?utf-8?B?elJOMElFN3RaM1dnYmwxdXBWUkxwajd4bzIrSFk3NVdCYVhvWTh1emozcTJG?=
- =?utf-8?B?Z2ZsMXd4QTBYZXFNbUU3WVJyWUUwcEFIcyswQ2V5NktubDFqSXVrSlNyZW1Y?=
- =?utf-8?B?UVprZDNnQjZmZGRRdmhSWkFobyt1RjViNC9IYzZnWC9CRjJhT2lNdFdYNFQv?=
- =?utf-8?B?Z0lSRmVkeGV3TEgrUnNCbXRJQnNBQkN0ako5M1B4dTJLRHJSRVFUVzVNSlEy?=
- =?utf-8?B?YlY0Zkxad1htK3dUTkxOTFVkWTR5MGN4NGdjRU5lUXZTeE5CQjZKTTF2WjlT?=
- =?utf-8?B?WEFwZzZMZHg2THY2ZUUyMFMzYUh3bVJoM0RiZHdlZGt6d2xoV1JhMnFZS01x?=
- =?utf-8?B?VVovSlZBcjVYQmlTeDV4dmljbXBlTENPRVhyQitIRVpyTjl1WVBIcEErZm13?=
- =?utf-8?B?UFFyM2liWXdGdjY0Y0QrQy9HU1g0RWxGL0V0SEN1YkZWaTBOaTNTT1lTM1I0?=
- =?utf-8?B?NmpjN2JyV3JPdFA2a2NkQWJVcmgvaVI2ay9za1RHaExXK1B0VG93WFRReENk?=
- =?utf-8?B?ajNqVkU3RTdyQWlHNGErOEFjRi9pc3FidGhETDdPWGtVMjREL0M5emRkU1ht?=
- =?utf-8?B?bG1ZZ0hEVGRvZER3cmZ6YkMva0o0Q2dUV1JXU3FsT3FMVHpmMGFaZ2NPTnBK?=
- =?utf-8?B?Qm55bUZLVWJkN2VJM3o5SlRSSU1HSVMyOWRjbXNjbEVGQ2pjOVRJMlFNeUQx?=
- =?utf-8?B?LytJK0ZHSVByTlpsZWxVeklualYwWS9FamQ1UFJtZ1VXRlg5MVBkSGVoSElW?=
- =?utf-8?B?UmFUSGh6SW53T2NPcWl6V0RuOXpuNk5INHRiOFZraE5NK0dhTTRHSmhSNG5K?=
- =?utf-8?B?RHB1eEpWWmM2U1VEYUVKTTZhUVZrSHdtR3dSaDVjTTBmR2JyWG45Ry9GbEQw?=
- =?utf-8?B?NjZZYW1DNFZoVE1EdzhiSlVBdnVsMnpFeDlhNDNTdDFBTmZEZjlFekFHVHU4?=
- =?utf-8?B?aUl3Q21sS2NXT1pCT08xWVc3RGdubFFMUXFYcEJsdXp0MlFkdEljbzE3ZGRp?=
- =?utf-8?B?UFVDYk1LVjVWb2JIdXhTOU81a251L1VxRGNoY2Nwa0Nsa3ZpaEVMSE90aFBx?=
- =?utf-8?B?TzJGbFFmd2FIcWphNy9VT2U0czNrR0cxdktIM1hXT0hqL0ZqVGVCQ3FrU01j?=
- =?utf-8?B?VEJNdU82ZzRyRmVqbDdCMHBPbmx6d01EaG9KVFdheFEyTkZ2eTlDcGwwTnh2?=
- =?utf-8?Q?DDbtFK8jQJ6FVpGq4qEH8qHIp?=
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 74082937-11f4-49fe-7f8b-08dcf1d3c075
-X-MS-Exchange-CrossTenant-AuthSource: DS7PR12MB6095.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Oct 2024 13:24:55.0552
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: wSXfOY+GYA+ahRw1OeE3UBHc/WpI2KzR08b8dI4btHsU/Uy1PXKDt2/ijCssHShvo28XwfAWv+sbiQw7PzRtkA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR12MB8148
+	Mon, 21 Oct 2024 18:24:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ijzerbout.nl; s=key;
+	t=1729535055; bh=veAn5eXDFXBnxn5x03OwA04d2afhsSpljcNXZw4LdEM=;
+	h=From:Date:Subject:To:Cc:From;
+	b=k87dkKA416RnZDfCPZfPPspI/YHq/QuSSYiuAZlwW2bND795IIwBBzL/n+KN2Cz32
+	 Mdlke01z1R+b+zfmH0uX6iQOT/PNUq+gGvO00p77+ukDEgtdyE3iWSrvQgylJYKzn+
+	 3Auit3aLQb2SkRsBrXp3m/N8ywwKoZRiUgXY/dpWvSaAQIDcgRSNPdJnKLZTo9byuT
+	 QYT9b4JScYxlvkc3YZBJK43NoPs2OxbchMKJFuoq55aXuH10nqRjVyeuj/sWLhS4nB
+	 vcNazijkcfwW/I5j5avPVxllUMM5jtD8vPCjzh9vbGkQQHkH14o4wyBDDLqMBtjlYf
+	 GwA/R1ixidxZvOgb2ezjl8YZjyjw/hvVm/RXzYXw5RIkMDnCkCQTizmxRRNP/BMhsP
+	 AtZ8CReHA8JS8bZsqid/vVkvUsopqiInvOk8ZNFUOxQ0AGY2fZKjsGasdyVRysMQ75
+	 qpwbI91vMU8m9sK2JXIBCihk1YfAPczWoHOkM4czQKYnk/pRFew2Hc4ox3GwCLRKJ8
+	 GB+N+MYWnlBNn4UtYaSH+/2ou/kjcMnlNBled/HncHpIxxaBVbIQehp2YqAneW+8BQ
+	 33DqgFArXTZXNeFXiDpITN1UPqVfWr0GPCd1835umqIRCfwGWDKaUJePeU5s90UqXM
+	 DAyKuq9s9jwFu8kh5ibiF31U=
+Received: by bout3.ijzerbout.nl (Postfix, from userid 1000)
+	id 6993818DB71; Mon, 21 Oct 2024 20:24:15 +0200 (CEST)
+From: Kees Bakker <kees@ijzerbout.nl>
+Date: Mon, 21 Oct 2024 20:11:49 +0200
+Subject: [PATCH] wifi: ath12k: Introduce a helper macro for print functions
+To: ATH12K <ath12k@lists.infradead.org>,
+    Linux Wireless <linux-wireless@vger.kernel.org>
+Cc: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+    Roopni Devanathan <quic_rdevanat@quicinc.com>
+Message-Id: <20241021182415.6993818DB71@bout3.ijzerbout.nl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241021_142508_279333_C458C4CA 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20241021_112427_672872_9CAE6D9B 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -188,43 +69,554 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/21/2024 03:58, Kalle Valo wrote:
-> Mario Limonciello <mario.limonciello@amd.com> writes:
-> 
->> On 10/10/2024 13:49, Jeff Johnson wrote:
->>> Hi,
->>> Here's a pull request for ath12k. We have a new ath12k hardware
->>> QCN9274 hw2.0 and an updated board file for WCN7850 hw2.0 which
->>> addresses the issue described at:
->>> https://lore.kernel.org/all/44ae68d2-24b6-49d2-a4f9-ae9cbf6f9950@heusel.eu/
->>> The following changes since commit
->>> 919f79f9fb5536c1928a15ac82a2e53183b213cf:
->>>     Merge branch 'amd-staging' into 'main' (2024-10-04 21:12:04
->>> +0000)
->>> are available in the Git repository at:
->>>     git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git
->>> ath-20241009
->>> for you to fetch changes up to
->>> 42d754dc98e77e43bcb86def5ea60e009cc49be2:
->>>     ath12k: WCN7850 hw2.0: update board-2.bin (2024-10-09 14:24:59
->>> -0700)
->>>
->>
->> Hi,
->>
->> This is pulled after a rebase to main.  FYI we had a revert in place
->> upstream for that board-2.bin because of the regressions.
->>
->> You can double check the result looks good.
-> 
-> Could you cc the ath12k list if you make changes to ath12k files,
-> please? That way we would have avoided the conflict in the first place.
-> 
+The functions print_array_to_buf_index and print_array_to_buf are now
+wrapped by macro's to avoid mistakes with passing the array size. The
+actual cause was this mistake
+	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
+					htt_stats_buf->ax_mu_mimo_brpoll,
+					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
+The problem is that the size of array ax_mu_mimo_brpoll is
+ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS - 1.
+That is an easy error to make and the consequence is that the print
+function is trying to access more array entries than there actually are.
 
-Normally this doesn't happen but there was noise I was hearing 
-downstream in distros where people couldn't use their wireless because 
-of this upgrade in addition to the kernel Bugzilla.
+The new macro is taking care of finding the array size using ARRAY_SIZE.
+The new code becomes cleaner.
+	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
+					htt_stats_buf->ax_mu_mimo_brpoll,
+					"\n");
 
-But yes if it comes up sure thing, in the future will tag you on Gitlab 
-if we do something like this again.
+The incorrect array size was detected by Coverity, CID 1600742
+
+Signed-off-by: Kees Bakker <kees@ijzerbout.nl>
+---
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 226 +++++++-----------
+ 1 file changed, 93 insertions(+), 133 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index 799b865b89e5..a50ffbc081f7 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -11,8 +11,13 @@
+ #include "dp_tx.h"
+ #include "dp_rx.h"
+ 
++#define print_array_to_buf_index(buf, offset, header, stats_index, \
++			 array, footer) \
++	_print_array_to_buf_index(buf, offset, header, stats_index, \
++		array, ARRAY_SIZE(array), footer \
++	)
+ static u32
+-print_array_to_buf_index(u8 *buf, u32 offset, const char *header, u32 stats_index,
++_print_array_to_buf_index(u8 *buf, u32 offset, const char *header, u32 stats_index,
+ 			 const __le32 *array, u32 array_len, const char *footer)
+ {
+ 	int index = 0;
+@@ -40,11 +45,16 @@ print_array_to_buf_index(u8 *buf, u32 offset, const char *header, u32 stats_inde
+ 	return index;
+ }
+ 
++#define print_array_to_buf(buf, offset, header, array, footer) \
++	_print_array_to_buf(buf, offset, header, \
++		array, ARRAY_SIZE(array), \
++		footer \
++	)
+ static u32
+-print_array_to_buf(u8 *buf, u32 offset, const char *header,
++_print_array_to_buf(u8 *buf, u32 offset, const char *header,
+ 		   const __le32 *array, u32 array_len, const char *footer)
+ {
+-	return print_array_to_buf_index(buf, offset, header, 0, array, array_len,
++	return _print_array_to_buf_index(buf, offset, header, 0, array, array_len,
+ 					footer);
+ }
+ 
+@@ -253,7 +263,7 @@ htt_print_tx_pdev_stats_urrn_tlv(const void *tag_buf,
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			"HTT_TX_PDEV_STATS_URRN_TLV:\n");
+ 
+-	len += print_array_to_buf(buf, len, "urrn_stats", htt_stats_buf->urrn_stats,
++	len += _print_array_to_buf(buf, len, "urrn_stats", htt_stats_buf->urrn_stats,
+ 				  num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -274,7 +284,7 @@ htt_print_tx_pdev_stats_flush_tlv(const void *tag_buf,
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_TX_PDEV_STATS_FLUSH_TLV:\n");
+ 
+-	len += print_array_to_buf(buf, len, "flush_errs", htt_stats_buf->flush_errs,
++	len += _print_array_to_buf(buf, len, "flush_errs", htt_stats_buf->flush_errs,
+ 				  num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -295,7 +305,7 @@ htt_print_tx_pdev_stats_sifs_tlv(const void *tag_buf,
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_TX_PDEV_STATS_SIFS_TLV:\n");
+ 
+-	len += print_array_to_buf(buf, len, "sifs_status", htt_stats_buf->sifs_status,
++	len += _print_array_to_buf(buf, len, "sifs_status", htt_stats_buf->sifs_status,
+ 				  num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -407,7 +417,7 @@ htt_print_tx_pdev_stats_sifs_hist_tlv(const void *tag_buf,
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_TX_PDEV_STATS_SIFS_HIST_TLV:\n");
+ 
+-	len += print_array_to_buf(buf, len, "sifs_hist_status",
++	len += _print_array_to_buf(buf, len, "sifs_hist_status",
+ 				  htt_stats_buf->sifs_hist_status, num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -429,7 +439,7 @@ htt_print_pdev_ctrl_path_tx_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 "HTT_TX_PDEV_STATS_CTRL_PATH_TX_STATS:\n");
+ 	len += print_array_to_buf(buf, len, "fw_tx_mgmt_subtype",
+ 				 htt_stats_buf->fw_tx_mgmt_subtype,
+-				 ATH12K_HTT_STATS_SUBTYPE_MAX, "\n\n");
++				 "\n\n");
+ 
+ 	stats_req->buf_len = len;
+ }
+@@ -557,7 +567,7 @@ ath12k_htt_print_sched_txq_cmd_posted_tlv(const void *tag_buf,
+ 	u16 num_elements = tag_len >> 2;
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_SCHED_TXQ_CMD_POSTED_TLV:\n");
+-	len += print_array_to_buf(buf, len, "sched_cmd_posted",
++	len += _print_array_to_buf(buf, len, "sched_cmd_posted",
+ 				  htt_stats_buf->sched_cmd_posted, num_elements, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -575,7 +585,7 @@ ath12k_htt_print_sched_txq_cmd_reaped_tlv(const void *tag_buf,
+ 	u16 num_elements = tag_len >> 2;
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_SCHED_TXQ_CMD_REAPED_TLV:\n");
+-	len += print_array_to_buf(buf, len, "sched_cmd_reaped",
++	len += _print_array_to_buf(buf, len, "sched_cmd_reaped",
+ 				  htt_stats_buf->sched_cmd_reaped, num_elements, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -595,7 +605,7 @@ ath12k_htt_print_sched_txq_sched_order_su_tlv(const void *tag_buf,
+ 
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_SCHED_TXQ_SCHED_ORDER_SU_TLV:\n");
+-	len += print_array_to_buf(buf, len, "sched_order_su",
++	len += _print_array_to_buf(buf, len, "sched_order_su",
+ 				  htt_stats_buf->sched_order_su,
+ 				  sched_order_su_num_entries, "\n\n");
+ 
+@@ -616,7 +626,7 @@ ath12k_htt_print_sched_txq_sched_ineligibility_tlv(const void *tag_buf,
+ 
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_SCHED_TXQ_SCHED_INELIGIBILITY:\n");
+-	len += print_array_to_buf(buf, len, "sched_ineligibility",
++	len += _print_array_to_buf(buf, len, "sched_ineligibility",
+ 				  htt_stats_buf->sched_ineligibility,
+ 				  sched_ineligibility_num_entries, "\n\n");
+ 
+@@ -638,7 +648,7 @@ ath12k_htt_print_sched_txq_supercycle_trigger_tlv(const void *tag_buf,
+ 
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_SCHED_TXQ_SUPERCYCLE_TRIGGER:\n");
+-	len += print_array_to_buf(buf, len, "supercycle_triggers",
++	len += _print_array_to_buf(buf, len, "supercycle_triggers",
+ 				  htt_stats_buf->supercycle_triggers, num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -1043,7 +1053,7 @@ ath12k_htt_print_tx_tqm_gen_mpdu_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	u16 num_elements = tag_len >> 2;
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_TX_TQM_GEN_MPDU_STATS_TLV:\n");
+-	len += print_array_to_buf(buf, len, "gen_mpdu_end_reason",
++	len += _print_array_to_buf(buf, len, "gen_mpdu_end_reason",
+ 				  htt_stats_buf->gen_mpdu_end_reason, num_elements,
+ 				  "\n\n");
+ 
+@@ -1062,7 +1072,7 @@ ath12k_htt_print_tx_tqm_list_mpdu_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			      ATH12K_HTT_TX_TQM_MAX_LIST_MPDU_END_REASON);
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_TX_TQM_LIST_MPDU_STATS_TLV:\n");
+-	len += print_array_to_buf(buf, len, "list_mpdu_end_reason",
++	len += _print_array_to_buf(buf, len, "list_mpdu_end_reason",
+ 				  htt_stats_buf->list_mpdu_end_reason, num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -1080,7 +1090,7 @@ ath12k_htt_print_tx_tqm_list_mpdu_cnt_tlv(const void *tag_buf, u16 tag_len,
+ 			      ATH12K_HTT_TX_TQM_MAX_LIST_MPDU_CNT_HISTOGRAM_BINS);
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_TX_TQM_LIST_MPDU_CNT_TLV_V:\n");
+-	len += print_array_to_buf(buf, len, "list_mpdu_cnt_hist",
++	len += _print_array_to_buf(buf, len, "list_mpdu_cnt_hist",
+ 				  htt_stats_buf->list_mpdu_cnt_hist, num_elems, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+@@ -1562,7 +1572,7 @@ ath12k_htt_print_tx_selfgen_ac_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->ac_mu_mimo_ndp));
+ 	len += print_array_to_buf_index(buf, len, "ac_mu_mimo_brpollX_tried = ", 1,
+ 					htt_stats_buf->ac_mu_mimo_brpoll,
+-					ATH12K_HTT_TX_NUM_AC_MUMIMO_USER_STATS, "\n\n");
++					"\n\n");
+ 
+ 	stats_req->buf_len = len;
+ }
+@@ -1590,7 +1600,7 @@ ath12k_htt_print_tx_selfgen_ax_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp));
+ 	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
+ 					htt_stats_buf->ax_mu_mimo_brpoll,
+-					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
++					"\n");
+ 	len += scnprintf(buf + len, buf_len - len, "ax_basic_trigger = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->ax_basic_trigger));
+ 	len += scnprintf(buf + len, buf_len - len, "ax_ulmumimo_total_trigger = %u\n",
+@@ -1636,15 +1646,12 @@ ath12k_htt_print_tx_selfgen_be_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->be_mu_mimo_ndp));
+ 	len += print_array_to_buf_index(buf, len, "be_mu_mimo_brpollX_queued = ", 1,
+ 					htt_stats_buf->be_mu_mimo_brpoll_queued,
+-					ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS - 1,
+ 					"\n");
+ 	len += print_array_to_buf_index(buf, len, "be_mu_mimo_brpollX_tried = ", 1,
+ 					htt_stats_buf->be_mu_mimo_brpoll,
+-					ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS - 1,
+ 					"\n");
+ 	len += print_array_to_buf(buf, len, "be_ul_mumimo_trigger = ",
+-				  htt_stats_buf->be_ul_mumimo_trigger,
+-				  ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS, "\n");
++				  htt_stats_buf->be_ul_mumimo_trigger, "\n");
+ 	len += scnprintf(buf + len, buf_len - len, "be_basic_trigger = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->be_basic_trigger));
+ 	len += scnprintf(buf + len, buf_len - len, "be_ulmumimo_total_trigger = %u\n",
+@@ -1713,7 +1720,6 @@ ath12k_htt_print_tx_selfgen_ax_err_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp_err));
+ 	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpX_err", 1,
+ 					htt_stats_buf->ax_mu_mimo_brp_err,
+-					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS - 1,
+ 					"\n");
+ 	len += scnprintf(buf + len, buf_len - len, "ax_basic_trigger_err = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->ax_basic_trigger_err));
+@@ -1760,18 +1766,14 @@ ath12k_htt_print_tx_selfgen_be_err_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->be_mu_mimo_ndp_flushed));
+ 	len += print_array_to_buf_index(buf, len, "be_mu_mimo_brpX_err", 1,
+ 					htt_stats_buf->be_mu_mimo_brp_err,
+-					ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS - 1,
+ 					"\n");
+ 	len += print_array_to_buf_index(buf, len, "be_mu_mimo_brpollX_flushed", 1,
+ 					htt_stats_buf->be_mu_mimo_brpoll_flushed,
+-					ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS - 1,
+ 					"\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_mimo_num_cbf_rcvd_on_brp_err",
+-				  htt_stats_buf->be_mu_mimo_brp_err_num_cbf_rxd,
+-				  ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS, "\n");
++				  htt_stats_buf->be_mu_mimo_brp_err_num_cbf_rxd, "\n");
+ 	len += print_array_to_buf(buf, len, "be_ul_mumimo_trigger_err",
+-				  htt_stats_buf->be_ul_mumimo_trigger_err,
+-				  ATH12K_HTT_TX_NUM_BE_MUMIMO_USER_STATS, "\n");
++				  htt_stats_buf->be_ul_mumimo_trigger_err, "\n");
+ 	len += scnprintf(buf + len, buf_len - len, "be_basic_trigger_err = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->be_basic_trigger_err));
+ 	len += scnprintf(buf + len, buf_len - len, "be_ulmumimo_total_trig_err = %u\n",
+@@ -1802,29 +1804,21 @@ ath12k_htt_print_tx_selfgen_ac_sched_status_stats_tlv(const void *tag_buf, u16 t
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_TX_SELFGEN_AC_SCHED_STATUS_STATS_TLV:\n");
+ 	len += print_array_to_buf(buf, len, "ac_su_ndpa_sch_status",
+-				  htt_stats_buf->ac_su_ndpa_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ac_su_ndpa_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_su_ndp_sch_status",
+-				  htt_stats_buf->ac_su_ndp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ac_su_ndp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_mu_mimo_ndpa_sch_status",
+-				  htt_stats_buf->ac_mu_mimo_ndpa_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ac_mu_mimo_ndpa_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_mu_mimo_ndp_sch_status",
+-				  htt_stats_buf->ac_mu_mimo_ndp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ac_mu_mimo_ndp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_mu_mimo_brp_sch_status",
+-				  htt_stats_buf->ac_mu_mimo_brp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ac_mu_mimo_brp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_su_ndp_sch_flag_err",
+-				  htt_stats_buf->ac_su_ndp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ac_su_ndp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_mu_mimo_ndp_sch_flag_err",
+-				  htt_stats_buf->ac_mu_mimo_ndp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ac_mu_mimo_ndp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ac_mu_mimo_brp_sch_flag_err",
+-				  htt_stats_buf->ac_mu_mimo_brp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n\n");
++				  htt_stats_buf->ac_mu_mimo_brp_sch_flag_err, "\n\n");
+ 
+ 	stats->buf_len = len;
+ }
+@@ -1845,47 +1839,33 @@ ath12k_htt_print_tx_selfgen_ax_sched_status_stats_tlv(const void *tag_buf, u16 t
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_TX_SELFGEN_AX_SCHED_STATUS_STATS_TLV:\n");
+ 	len += print_array_to_buf(buf, len, "ax_su_ndpa_sch_status",
+-				  htt_stats_buf->ax_su_ndpa_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_su_ndpa_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_su_ndp_sch_status",
+-				  htt_stats_buf->ax_su_ndp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_su_ndp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_mimo_ndpa_sch_status",
+-				  htt_stats_buf->ax_mu_mimo_ndpa_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_mu_mimo_ndpa_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_mimo_ndp_sch_status",
+-				  htt_stats_buf->ax_mu_mimo_ndp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_mu_mimo_ndp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_brp_sch_status",
+-				  htt_stats_buf->ax_mu_brp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_mu_brp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_bar_sch_status",
+-				  htt_stats_buf->ax_mu_bar_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_mu_bar_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_basic_trig_sch_status",
+-				  htt_stats_buf->ax_basic_trig_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_basic_trig_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_su_ndp_sch_flag_err",
+-				  htt_stats_buf->ax_su_ndp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ax_su_ndp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_mimo_ndp_sch_flag_err",
+-				  htt_stats_buf->ax_mu_mimo_ndp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ax_mu_mimo_ndp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_brp_sch_flag_err",
+-				  htt_stats_buf->ax_mu_brp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ax_mu_brp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_mu_bar_sch_flag_err",
+-				  htt_stats_buf->ax_mu_bar_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ax_mu_bar_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_basic_trig_sch_flag_err",
+-				  htt_stats_buf->ax_basic_trig_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->ax_basic_trig_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_ulmumimo_trig_sch_status",
+-				  htt_stats_buf->ax_ulmumimo_trig_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->ax_ulmumimo_trig_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "ax_ulmumimo_trig_sch_flag_err",
+-				  htt_stats_buf->ax_ulmumimo_trig_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n\n");
++				  htt_stats_buf->ax_ulmumimo_trig_sch_flag_err, "\n\n");
+ 
+ 	stats->buf_len = len;
+ }
+@@ -1906,47 +1886,33 @@ ath12k_htt_print_tx_selfgen_be_sched_status_stats_tlv(const void *tag_buf, u16 t
+ 	len += scnprintf(buf + len, buf_len - len,
+ 			 "HTT_TX_SELFGEN_BE_SCHED_STATUS_STATS_TLV:\n");
+ 	len += print_array_to_buf(buf, len, "be_su_ndpa_sch_status",
+-				  htt_stats_buf->be_su_ndpa_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_su_ndpa_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_su_ndp_sch_status",
+-				  htt_stats_buf->be_su_ndp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_su_ndp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_mimo_ndpa_sch_status",
+-				  htt_stats_buf->be_mu_mimo_ndpa_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_mu_mimo_ndpa_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_mimo_ndp_sch_status",
+-				  htt_stats_buf->be_mu_mimo_ndp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_mu_mimo_ndp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_brp_sch_status",
+-				  htt_stats_buf->be_mu_brp_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_mu_brp_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_bar_sch_status",
+-				  htt_stats_buf->be_mu_bar_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_mu_bar_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_basic_trig_sch_status",
+-				  htt_stats_buf->be_basic_trig_sch_status,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_basic_trig_sch_status, "\n");
+ 	len += print_array_to_buf(buf, len, "be_su_ndp_sch_flag_err",
+-				  htt_stats_buf->be_su_ndp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->be_su_ndp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_mimo_ndp_sch_flag_err",
+-				  htt_stats_buf->be_mu_mimo_ndp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->be_mu_mimo_ndp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_brp_sch_flag_err",
+-				  htt_stats_buf->be_mu_brp_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->be_mu_brp_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "be_mu_bar_sch_flag_err",
+-				  htt_stats_buf->be_mu_bar_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->be_mu_bar_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "be_basic_trig_sch_flag_err",
+-				  htt_stats_buf->be_basic_trig_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n");
++				  htt_stats_buf->be_basic_trig_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "be_basic_trig_sch_flag_err",
+-				  htt_stats_buf->be_basic_trig_sch_flag_err,
+-				  ATH12K_HTT_TX_PDEV_STATS_NUM_TX_ERR_STATUS, "\n");
++				  htt_stats_buf->be_basic_trig_sch_flag_err, "\n");
+ 	len += print_array_to_buf(buf, len, "be_ulmumimo_trig_sch_flag_err",
+-				  htt_stats_buf->be_ulmumimo_trig_sch_flag_err,
+-				  ATH12K_HTT_TX_SELFGEN_SCH_TSFLAG_ERR_STATS, "\n\n");
++				  htt_stats_buf->be_ulmumimo_trig_sch_flag_err, "\n\n");
+ 
+ 	stats->buf_len = len;
+ }
+@@ -2116,7 +2082,7 @@ ath12k_htt_print_sfm_client_user_tlv(const void *tag_buf, u16 tag_len,
+ 	u16 num_elems = tag_len >> 2;
+ 
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_SFM_CLIENT_USER_TLV:\n");
+-	len += print_array_to_buf(buf, len, "dwords_used_by_user_n",
++	len += _print_array_to_buf(buf, len, "dwords_used_by_user_n",
+ 				  htt_stats_buf->dwords_used_by_user_n,
+ 				  num_elems, "\n\n");
+ 
+@@ -2256,33 +2222,28 @@ ath12k_htt_print_tx_pdev_mumimo_grp_stats_tlv(const void *tag_buf, u16 tag_len,
+ 	len += scnprintf(buf + len, buf_len - len, "HTT_TX_PDEV_MUMIMO_GRP_STATS:\n");
+ 	len += print_array_to_buf(buf, len,
+ 				  "dl_mumimo_grp_tputs_observed (per bin = 300 mbps)",
+-				  htt_stats_buf->dl_mumimo_grp_tputs,
+-				  ATH12K_HTT_STATS_MUMIMO_TPUT_NUM_BINS, "\n");
++				  htt_stats_buf->dl_mumimo_grp_tputs, "\n");
+ 	len += print_array_to_buf(buf, len, "dl_mumimo_grp eligible",
+-				  htt_stats_buf->dl_mumimo_grp_eligible,
+-				  ATH12K_HTT_STATS_NUM_MAX_MUMIMO_SZ, "\n");
++				  htt_stats_buf->dl_mumimo_grp_eligible, "\n");
+ 	len += print_array_to_buf(buf, len, "dl_mumimo_grp_ineligible",
+-				  htt_stats_buf->dl_mumimo_grp_ineligible,
+-				  ATH12K_HTT_STATS_NUM_MAX_MUMIMO_SZ, "\n");
++				  htt_stats_buf->dl_mumimo_grp_ineligible, "\n");
+ 	len += scnprintf(buf + len, buf_len - len, "dl_mumimo_grp_invalid:\n");
+ 	for (j = 0; j < ATH12K_HTT_STATS_NUM_MAX_MUMIMO_SZ; j++) {
+ 		len += scnprintf(buf + len, buf_len - len, "grp_id = %u", j);
+-		len += print_array_to_buf(buf, len, "",
++		len += _print_array_to_buf(buf, len, "",
+ 					  htt_stats_buf->dl_mumimo_grp_invalid,
+ 					  ATH12K_HTT_STATS_MAX_INVALID_REASON_CODE,
+ 					  "\n");
+ 	}
+ 
+ 	len += print_array_to_buf(buf, len, "ul_mumimo_grp_best_grp_size",
+-				  htt_stats_buf->ul_mumimo_grp_best_grp_size,
+-				  ATH12K_HTT_STATS_NUM_MAX_MUMIMO_SZ, "\n");
++				  htt_stats_buf->ul_mumimo_grp_best_grp_size, "\n");
+ 	len += print_array_to_buf_index(buf, len, "ul_mumimo_grp_best_num_usrs = ", 1,
+ 					htt_stats_buf->ul_mumimo_grp_best_usrs,
+-					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
++					"\n");
+ 	len += print_array_to_buf(buf, len,
+ 				  "ul_mumimo_grp_tputs_observed (per bin = 300 mbps)",
+-				  htt_stats_buf->ul_mumimo_grp_tputs,
+-				  ATH12K_HTT_STATS_MUMIMO_TPUT_NUM_BINS, "\n\n");
++				  htt_stats_buf->ul_mumimo_grp_tputs, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+ }
+@@ -2608,46 +2569,46 @@ ath12k_htt_print_pdev_sched_algo_ofdma_stats_tlv(const void *tag_buf, u16 tag_le
+ 			 u32_get_bits(mac_id_word, ATH12K_HTT_STATS_MAC_ID));
+ 	len += print_array_to_buf(buf, len, "rate_based_dlofdma_enabled_count",
+ 				  htt_stats_buf->rate_based_dlofdma_enabled_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "rate_based_dlofdma_disabled_count",
+ 				  htt_stats_buf->rate_based_dlofdma_disabled_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "rate_based_dlofdma_probing_count",
+ 				  htt_stats_buf->rate_based_dlofdma_disabled_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "rate_based_dlofdma_monitoring_count",
+ 				  htt_stats_buf->rate_based_dlofdma_monitor_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "chan_acc_lat_based_dlofdma_enabled_count",
+ 				  htt_stats_buf->chan_acc_lat_based_dlofdma_enabled_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "chan_acc_lat_based_dlofdma_disabled_count",
+ 				  htt_stats_buf->chan_acc_lat_based_dlofdma_disabled_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "chan_acc_lat_based_dlofdma_monitoring_count",
+ 				  htt_stats_buf->chan_acc_lat_based_dlofdma_monitor_cnt,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "downgrade_to_dl_su_ru_alloc_fail",
+ 				  htt_stats_buf->downgrade_to_dl_su_ru_alloc_fail,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "candidate_list_single_user_disable_ofdma",
+ 				  htt_stats_buf->candidate_list_single_user_disable_ofdma,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "dl_cand_list_dropped_high_ul_qos_weight",
+ 				  htt_stats_buf->dl_cand_list_dropped_high_ul_qos_weight,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "ax_dlofdma_disabled_due_to_pipelining",
+ 				  htt_stats_buf->ax_dlofdma_disabled_due_to_pipelining,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "dlofdma_disabled_su_only_eligible",
+ 				  htt_stats_buf->dlofdma_disabled_su_only_eligible,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "dlofdma_disabled_consec_no_mpdus_tried",
+ 				  htt_stats_buf->dlofdma_disabled_consec_no_mpdus_tried,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "dlofdma_disabled_consec_no_mpdus_success",
+ 				  htt_stats_buf->dlofdma_disabled_consec_no_mpdus_success,
+-				  ATH12K_HTT_NUM_AC_WMM, "\n\n");
++				  "\n\n");
+ 
+ 	stats_req->buf_len = len;
+ }
+@@ -2676,10 +2637,10 @@ ath12k_htt_print_tx_pdev_rate_stats_be_ofdma_tlv(const void *tag_buf, u16 tag_le
+ 			 le32_to_cpu(htt_stats_buf->be_ofdma_tx_ldpc));
+ 	len += print_array_to_buf(buf, len, "be_ofdma_tx_mcs",
+ 				  htt_stats_buf->be_ofdma_tx_mcs,
+-				  ATH12K_HTT_TX_PDEV_NUM_BE_MCS_CNTRS, "\n");
++				  "\n");
+ 	len += print_array_to_buf(buf, len, "be_ofdma_eht_sig_mcs",
+ 				  htt_stats_buf->be_ofdma_eht_sig_mcs,
+-				  ATH12K_HTT_TX_PDEV_NUM_EHT_SIG_MCS_CNTRS, "\n");
++				  "\n");
+ 	len += scnprintf(buf + len, buf_len - len, "be_ofdma_tx_ru_size = ");
+ 	for (i = 0; i < ATH12K_HTT_TX_RX_PDEV_NUM_BE_RU_SIZE_CNTRS; i++)
+ 		len += scnprintf(buf + len, buf_len - len, " %s:%u ",
+@@ -2688,15 +2649,14 @@ ath12k_htt_print_tx_pdev_rate_stats_be_ofdma_tlv(const void *tag_buf, u16 tag_le
+ 	len += scnprintf(buf + len, buf_len - len, "\n");
+ 	len += print_array_to_buf_index(buf, len, "be_ofdma_tx_nss = ", 1,
+ 					htt_stats_buf->be_ofdma_tx_nss,
+-					ATH12K_HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS,
+ 					"\n");
+ 	len += print_array_to_buf(buf, len, "be_ofdma_tx_bw",
+ 				  htt_stats_buf->be_ofdma_tx_bw,
+-				  ATH12K_HTT_TX_PDEV_NUM_BE_BW_CNTRS, "\n");
++				  "\n");
+ 	for (i = 0; i < ATH12K_HTT_TX_PDEV_NUM_GI_CNTRS; i++) {
+ 		len += scnprintf(buf + len, buf_len - len,
+ 				 "be_ofdma_tx_gi[%u]", i);
+-		len += print_array_to_buf(buf, len, "", htt_stats_buf->gi[i],
++		len += _print_array_to_buf(buf, len, "", htt_stats_buf->gi[i],
+ 					  ATH12K_HTT_TX_PDEV_NUM_BE_MCS_CNTRS, "\n");
+ 	}
+ 	len += scnprintf(buf + len, buf_len - len, "\n");
+-- 
+2.47.0
+
 
