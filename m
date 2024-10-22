@@ -4,88 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3535D1714B
-	for <ath12k@archiver.kernel.org>; Tue, 22 Oct 2024 00:03:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72FD9D1CDA1
+	for <ath12k@archiver.kernel.org>; Tue, 22 Oct 2024 07:15:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6WM7Ott1G6v7WRCxJzN5NLSNfN64lKptPUJSvoYiAnY=; b=CDzYNA13Rx6bV+e+dgdT4gcmXr
-	YFA9nkmcdqd52nrp9KiBolB4wVsZvZm3nldKS7wVlK0kfLFsFYWp1nuXzPGWIaAHmOIfIpHV/+SRy
-	iVfTBaRiQsBHmxStLH/35OadguISen0OKbVnvB9pV/fzM4lZUyJBZkdPKt4WvUSrOb7+LmvZK3QEm
-	jWPVDLrvsIV3MzEdfIH38dMx0nmmgwJwGrOV+q10MkLR/foW+a/bEGkhrY4FhoDSc8DVMMHAOnwSc
-	pYUyHeiKpZEd3tCr27i1CXmoqyRy3cfYYmBJm9SB2qHDSV+Zm7kVfKwGSDn0fprUCuG/+sFcMie97
-	dfaP0qwQ==;
+	bh=2OQf0si/CIXxYVkyVvj9sbbdpTRNuvie33M0zB2wTuk=; b=hiUmWpXHRo/RwjwNHmBG06NKY9
+	FULqQ7sRT0PLZ5f+vzFnVbh4tBGNh7cj5izTyA17k4jbtCqutg3eNNTKzFrA0d75aKgyF8B2Lq7rj
+	kWWLhhEFgEyOMe8DtUFx4plZn+DARGKPpmheSoB//8ixTdeQgG4xsfGNlhRfG5eyBEoqTxm5tVCsC
+	MT4IFyFWhtQV68APEXG3M+BkCHfC3LdjZfvCCGN0XC8XwCW9yuRG0CnF8EEd3MVPEzCKSTxhp/RSp
+	YZ+9PDtZcUcRITzLtbDLrXbn0F/009+mzsaOgfLIw6MtbD0vJbMtf5fxUFdjNVRSeWnMmjRzVakcI
+	26BCgVEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t32NM-000000090av-1RMx
+	id 1t396f-00000009wNo-0m0N
 	for ath12k@archiver.kernel.org;
-	Tue, 22 Oct 2024 00:03:52 +0000
+	Tue, 22 Oct 2024 07:15:05 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t32NK-000000090aQ-0SSD
+	id 1t395v-00000009wCY-1CTf
 	for ath12k@lists.infradead.org;
-	Tue, 22 Oct 2024 00:03:51 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49LNGOBC019303;
-	Tue, 22 Oct 2024 00:03:42 GMT
+	Tue, 22 Oct 2024 07:14:20 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49M6uVqZ019049;
+	Tue, 22 Oct 2024 07:14:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6WM7Ott1G6v7WRCxJzN5NLSNfN64lKptPUJSvoYiAnY=; b=M2jKoMSkxeNVv/Tx
-	cTLDFq9+lIsQjTGy3+3mO6ajMQmNHRaRroS6nG+O3iTe6uh/BWyk2qO2FT9G1+gm
-	oAlFHMj5j3frWYjbX1Vierj7dyTLK4cwWoSizJmnBFxWWkga0zU3j8lOdLOzHD2W
-	jq2qmxhXKhOUlW9aReqRiQtB/mNGqNujdAaPiRrX1Jvg71y7R3WaRg/zFWteq8L2
-	TXcLHaYhPfvC7DVESaXZf3FBVf3NQm+TBFq4LZe0l7ihOBGFNIRKIQkZLkLuM1k7
-	QRqQLK+cl3v+dFB6r+2b7YS8KpOQHIDrxm0ceJvVI4r18W/hGrGWeHZU6OGT7+hn
-	9SHMzA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42c6tsp987-1
+	2OQf0si/CIXxYVkyVvj9sbbdpTRNuvie33M0zB2wTuk=; b=CnZLv6wRZlLSPWbP
+	azI4Ryr3rzSb5MJECbNKX3AtFZErqfropwue0i0kbznUMcqc4RT4FFg04Sw9v6v3
+	LOMMtWAvioq48XZDgw2MzpztdpZ5uNUCEAOSzUjsd9HFUkE8jGzdBzENwnGvV7R9
+	48RvAqBCEQBbWmH+kwR2BWe9IO9nftszC1DbWWowSI10MTAZwM7yQGt57kLIqGtJ
+	RjLNOhJqcK3u41ezFei+w0zFCV8Gje/5Hxj3YDgU2rn3voqMtd40r8+xHaTmZqO7
+	ktiYhyw7371VoV0WvlMz2rss/bqyvSNRaKXvHMpcev/VQ3u8CjswqbaTwPgaOlt1
+	8AfGIw==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42e77pg2ge-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 22 Oct 2024 00:03:42 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49M03fm1018799
+	Tue, 22 Oct 2024 07:14:16 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49M7EFWn024228
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 22 Oct 2024 00:03:41 GMT
-Received: from [10.48.242.6] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 21 Oct
- 2024 17:03:40 -0700
-Message-ID: <08767ff7-f764-473d-a44b-c3c3b1695008@quicinc.com>
-Date: Mon, 21 Oct 2024 17:03:40 -0700
+	Tue, 22 Oct 2024 07:14:15 GMT
+Received: from [10.151.40.160] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 22 Oct
+ 2024 00:14:12 -0700
+Message-ID: <09be6843-52c0-4d84-bcba-e6cbd0cb51a9@quicinc.com>
+Date: Tue, 22 Oct 2024 12:43:36 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath12k: Fix for out-of bound access error
-To: Karol Przybylski <karprzy7@gmail.com>, <kvalo@kernel.org>,
-        <jjohnson@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <skhan@linuxfoundation.org>
-References: <20241021204814.728090-1-karprzy7@gmail.com>
+Subject: Re: [PATCH v2 16/22] wifi: ath12k: convert tasklet to BH workqueue
+ for CE interrupts
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Rob
+ Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor
+ Dooley <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Bjorn
+ Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
+References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
+ <20241015182637.955753-17-quic_rajkbhag@quicinc.com>
+ <877ca1q0yq.fsf@kernel.org>
 Content-Language: en-US
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-In-Reply-To: <20241021204814.728090-1-karprzy7@gmail.com>
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <877ca1q0yq.fsf@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: t92Cu2D_BIIKJ-HhCGNFxRK1kDKhwOGQ
-X-Proofpoint-ORIG-GUID: t92Cu2D_BIIKJ-HhCGNFxRK1kDKhwOGQ
+X-Proofpoint-GUID: ds6dUeqqETgxjzzffRHEvUQO7UndozCn
+X-Proofpoint-ORIG-GUID: ds6dUeqqETgxjzzffRHEvUQO7UndozCn
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- suspectscore=0 spamscore=0 mlxlogscore=719 phishscore=0 adultscore=0
- mlxscore=0 clxscore=1011 bulkscore=0 malwarescore=0 impostorscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410210168
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
+ suspectscore=0 impostorscore=0 adultscore=0 bulkscore=0 phishscore=0
+ mlxlogscore=967 spamscore=0 malwarescore=0 priorityscore=1501
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410220045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241021_170350_191576_F41899FF 
-X-CRM114-Status: GOOD (  17.28  )
+X-CRM114-CacheID: sfid-20241022_001419_375232_0C2619D4 
+X-CRM114-Status: GOOD (  12.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,51 +111,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/21/2024 1:48 PM, Karol Przybylski wrote:
-> Size of array passed to print_array_to_buf_index is decremented by 1
-
-This is not a clear commit message.
-Please follow the order normally used in the kernel:
-1) describe the current code
-2) describe the problem with the current code
-3) describe how to fix the code (in imperative voice)
-
+On 10/21/2024 2:36 PM, Kalle Valo wrote:
+> Raj Kumar Bhagat <quic_rajkbhag@quicinc.com> writes:
 > 
-> Discovered in coverity scan, CID 1600742
-> ---
-> Changes in v2:
-> - Code style: added spaces before and after '-'
-> - Link to v1: https://lore.kernel.org/all/8734kpq0wo.fsf@kernel.org/
-> ---
+>> Currently in Ath12k, tasklet is used to handle the BH context of CE
+>> interrupts. However the tasklet is marked deprecated and has some
+>> design flaws. To replace tasklets, BH workqueue support has been
+>> added. BH workqueue behaves similarly to regular workqueues except
+>> that the queued work items are executed in the BH context.
+>>
+>> Hence, convert the tasklet to BH workqueue for handling CE interrupts
+>> in the BH context.
+>>
+>> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 > 
-> Signed-off-by: Karol Przybylski <karprzy7@gmail.com>
-
-SOB needs to be before the first "---"
-
-> ---
->  drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> 22 patches is a lot and I'm not going to look at this in detail, please
+> reduce your patchset size. 10-12 patches is recommended. For example,
+> this could be easily submitted separately.
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> index 799b865b89e5..8371df570c42 100644
-> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> @@ -1590,7 +1590,7 @@ ath12k_htt_print_tx_selfgen_ax_stats_tlv(const void *tag_buf, u16 tag_len,
->  			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp));
->  	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
->  					htt_stats_buf->ax_mu_mimo_brpoll,
-> -					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
-> +					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS - 1, "\n");
->  	len += scnprintf(buf + len, buf_len - len, "ax_basic_trigger = %u\n",
->  			 le32_to_cpu(htt_stats_buf->ax_basic_trigger));
->  	len += scnprintf(buf + len, buf_len - len, "ax_ulmumimo_total_trigger = %u\n",
 
-Aren't there more than this one? This also looks suspect:
+Sure Kalle,
 
-	len += print_array_to_buf_index(buf, len, "ac_mu_mimo_brpollX_tried = ", 1,
-					htt_stats_buf->ac_mu_mimo_brpoll,
-					ATH12K_HTT_TX_NUM_AC_MUMIMO_USER_STATS, "\n\n");
+We are working on other review comments in this series, in the next version
+we will reduce the number of patches.
 
-
-
+This patch we will be sending separately as v3.
 
