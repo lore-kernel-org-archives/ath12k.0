@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9272D2E016
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:04:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F06ED2E016
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:04:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rs3dR3lIk9LXliUg7JlV/IabmOYVvaAGYWji+hb3VLU=; b=4/zguR8E53IqOREBzetgN2nuoF
-	VHzMA5tvZqDOZfxAcwJM+dFVTOccXP8Gw334Xy2hP1Q87BnmNsuC/oJDT6eOOi6Jooo2qfgklcrj7
-	HO7aPX1EOJL2dlh6C7dH3vs9fcV1DbvN6Xt8uy5Ksa8qC9ieYC70q84qf7AvQbTBs3NIk+vX6IC8u
-	NhsWJ9sXHfQwnrLZYjN+cuPJ0p5zKu37GYDEzzx63WmoXUxxEo0mByFv3zlSa5C9qwZTstRVjaLQK
-	PZHiaTgnYii9NG1kr62U/xNvlUBVTjx+zzoxGOlpBlOI8KDjM49GfaXga+VGLYNc71B26jfzY+Kox
-	QvA5m4fg==;
+	bh=gzWrTatuMnIeEeP+iJiyK8aHdkKFKKlqQNYSM8pc2qw=; b=fESuUNoZ7a7GhtGHzG/HOvQksC
+	9+KRCmNBT/NaZRfSWzAlOlscj3Yyw7YCmQ+L5yXIX3IbgUTu42KG3OeV+L6h457ucQ8LOzhMfQwMl
+	Qji15UwdN9c2HMgfjapT6TKdZb2ufPwcXpELB2X8e9YCxva7/Q69CgmPqw5IdFsyfJsmT98Lew46b
+	bjbJmAaObNRVpWkjJcYjp2l8+PDOmaz0K8hFjvsIQ3vUFEfTnbUtyQCL7yjaDbQaf8nZ/ke+7rq2g
+	ZcBcn0mT6Y8OIY4mHFZrVVepVz3PP5iSsXiDrA1TOQIBrBSHTNLKC8nrOTOsFFTTXnmsNCv0sFLWC
+	tcnhvpvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3UTv-0000000D8Lf-25Dg
+	id 1t3UU1-0000000D8NL-0Fhn
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 06:04:31 +0000
+	Wed, 23 Oct 2024 06:04:37 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3UTs-0000000D8Ke-38Re
+	id 1t3UTx-0000000D8ML-2yz3
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 06:04:30 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49MLaFPI016699;
-	Wed, 23 Oct 2024 06:04:26 GMT
+	Wed, 23 Oct 2024 06:04:35 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49MLejUe018635;
+	Wed, 23 Oct 2024 06:04:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rs3dR3lIk9LXliUg7JlV/IabmOYVvaAGYWji+hb3VLU=; b=g2UDNZgHklG8+79d
-	ZDJAfilKlPk74U5KsbX/jTOuemg+e0CRxPF5rcTGgAdtksEDUfE8ZCQljTOqdAEf
-	ILB9Fb0pVrHTyZ1FXeG+odZnYTdK4uLv4PwlTxTPehrilVvyt8n24QSth58PJ743
-	POa7bMcLIQMAgG4Q3ZCAh/+U/MIvy1TsZSkulXo/Cee0OGbP49gdTIh+bhF6Vqxk
-	rMJ7Kood6sFbD1BqyFzkFMVZUEGpqKGcMLKJ2atRHL9HY2by6g01fUdDodW9YLUU
-	6h1by5RUKsGSmbvWdbiSjqUjJY0czprumYMB60/nuEpiTbPpvkVzBAxxrBx6dAeK
-	JeMDgA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3xh115-1
+	gzWrTatuMnIeEeP+iJiyK8aHdkKFKKlqQNYSM8pc2qw=; b=P8h7Nkhh/6VnIuhe
+	LZJW2KLp/8oydv8FjObxF0webGt/bJ2IYQJVtjX4YGaabWh0/Bi8orCk8FuzpkRb
+	sSj2FB3PywkUDu4TgrHNxdIZvdF5Iv/hwo+MBblLBh6q39om05i7flh/ISoMxlK9
+	58kjOkOPfDGMFSqDvVh8ArJyOqu041l449PIyU6B50xy4z5jdF1lmnl/TFOW5o4A
+	x7gPsyyURaERS/tE+itBLfMHcjWc9uZhEnW+PkkSjN1/7QmIOOYs2c70FpuNAVX+
+	yUY8gCgStnTrKdniaLP34TJVXuHaJhGxjhPPfh2kBg5sa/bBWw/JmPcT1V8y42cS
+	1+ff4w==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em6691g8-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 06:04:26 +0000 (GMT)
+	Wed, 23 Oct 2024 06:04:31 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49N64Phl019400
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49N64UFw017585
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 06:04:25 GMT
+	Wed, 23 Oct 2024 06:04:30 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 22 Oct 2024 23:04:21 -0700
+ 15.2.1544.9; Tue, 22 Oct 2024 23:04:25 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
@@ -66,10 +66,13 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
  Andersson" <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [RFC PATCH 2/6] dt-bindings: net: wireless: ath12k: describe WSI property for QCN9274
-Date: Wed, 23 Oct 2024 11:33:48 +0530
-Message-ID: <20241023060352.605019-3-quic_rajkbhag@quicinc.com>
+        Harshitha Prem <quic_hprem@quicinc.com>,
+        Aditya Kumar Singh <quic_adisi@quicinc.com>,
+        Kalle Valo
+	<quic_kvalo@quicinc.com>
+Subject: [RFC PATCH 3/6] wifi: ath12k: parse multiple device information from device tree
+Date: Wed, 23 Oct 2024 11:33:49 +0530
+Message-ID: <20241023060352.605019-4-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
 References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
@@ -81,19 +84,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: QUhtInOjT1dhVnFOagTK6imMalmgsB9W
-X-Proofpoint-ORIG-GUID: QUhtInOjT1dhVnFOagTK6imMalmgsB9W
+X-Proofpoint-ORIG-GUID: tmW-yvm3k45P6V7vEcs6YQNQE5baTuNG
+X-Proofpoint-GUID: tmW-yvm3k45P6V7vEcs6YQNQE5baTuNG
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
- impostorscore=0 mlxscore=0 bulkscore=0 spamscore=0 lowpriorityscore=0
- mlxlogscore=999 malwarescore=0 priorityscore=1501 adultscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410230034
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ adultscore=0 phishscore=0 impostorscore=0 malwarescore=0 mlxlogscore=999
+ suspectscore=0 clxscore=1015 mlxscore=0 bulkscore=0 priorityscore=1501
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410230035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241022_230428_819239_8A5A26E6 
-X-CRM114-Status: GOOD (  13.69  )
+X-CRM114-CacheID: sfid-20241022_230433_787962_A3CB961C 
+X-CRM114-Status: GOOD (  25.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,112 +111,196 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-QCN9274 device has WSI support. WSI stands for WLAN Serial Interface.
-It is used for the exchange of specific control information across
-radios based on the doorbell mechanism. This WSI connection is
-essential to exchange control information among these devices
+From: Harshitha Prem <quic_hprem@quicinc.com>
 
-Hence, describe WSI interface supported in QCN9274 with the following
-properties:
+Currently, single device is part of device group abstraction but for multi
+link operation, multiple devices have to be combined together. Information
+of how many devices involved in grouping can be parsed from device tree and
+it would have the valid group id information as well.
 
- - qcom,wsi-group-id: It represents the identifier assigned to the WSI
-   connection. All the ath12k devices connected to same WSI connection
-   have the same wsi-group-id.
+Add changes to parse devices involved and group id from device tree file
+to form device group
 
- - qcom,wsi-index: It represents the identifier assigned to ath12k
-   device in the order of the WSI connection.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
- - qcom,wsi-num-devices: Number of devices connected through WSI in
-   the same group ID.
-
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
+Co-developed-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- .../bindings/net/wireless/qcom,ath12k.yaml    | 61 +++++++++++++++++++
- 1 file changed, 61 insertions(+)
+ drivers/net/wireless/ath/ath12k/core.c | 106 ++++++++++++++++++++++---
+ drivers/net/wireless/ath/ath12k/core.h |   2 +
+ 2 files changed, 98 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-index ecf38af747f7..6c8f97865075 100644
---- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-+++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-@@ -19,6 +19,7 @@ properties:
-   compatible:
-     enum:
-       - pci17cb,1107  # WCN7850
-+      - pci17cb,1109  # QCN9274
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 3f0f44cbdb4c..b7b2d552205c 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1403,6 +1403,7 @@ ath12k_core_hw_group_alloc(u8 id, u8 max_devices)
+ 	ag->num_devices = max_devices;
+ 	list_add(&ag->list, &ath12k_hw_group_list);
+ 	mutex_init(&ag->mutex_lock);
++	ag->mlo_capable = false;
  
-   reg:
-     maxItems: 1
-@@ -50,6 +51,41 @@ properties:
-   vddpcie1p8-supply:
-     description: VDD_PCIE_1P8 supply regulator handle
+ 	return ag;
+ }
+@@ -1417,23 +1418,94 @@ static void ath12k_core_hw_group_free(struct ath12k_hw_group *ag)
+ 	mutex_unlock(&ath12k_ag_list_lock);
+ }
  
-+  wsi:
-+    type: object
-+    description:
-+      The ath12k devices (QCN9274) feature WSI support. WSI stands for
-+      WLAN Serial Interface. It is used for the exchange of specific
-+      control information across radios based on the doorbell mechanism.
-+      This WSI connection is essential to exchange control information
-+      among these devices.
++/* This function needs to be used only when dt has multi chip grouping information */
++static struct ath12k_hw_group *ath12k_core_hw_group_find_by_id(u8 group_id)
++{
++	struct ath12k_hw_group *ag;
 +
-+    properties:
-+      qcom,wsi-group-id:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          It represents the identifier assigned to the WSI connection. All
-+          the ath12k devices connected to same WSI connection have the
-+          same wsi-group-id.
++	/* group ids will be unique only for multi chip group */
++	list_for_each_entry(ag, &ath12k_hw_group_list, list) {
++		if (group_id == ag->id && ag->num_devices > 1)
++			return ag;
++	}
 +
-+      qcom,wsi-index:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          It represents the identifier assigned to ath12k device in the
-+          order of the WSI connection.
++	return NULL;
++}
 +
-+      qcom,wsi-num-devices:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          Number of devices connected through WSI in the same group ID.
+ static struct ath12k_hw_group *ath12k_core_assign_hw_group(struct ath12k_base *ab)
+ {
+ 	struct ath12k_hw_group *ag;
+-	u32 group_id = ATH12K_INVALID_GROUP_ID;
++	u32 group_id = ATH12K_INVALID_GROUP_ID, num_devices;
++	struct device *dev = ab->dev;
++	struct device_node *mlo;
+ 
+ 	lockdep_assert_held(&ath12k_ag_list_lock);
+ 
+-	/* The grouping of multiple devices will be done based on device tree file.
+-	 * TODO: device tree file parsing to know about the devices involved in group.
+-	 *
+-	 * The platforms that do not have any valid group information would have each
+-	 * device to be part of its own invalid group.
++	/* The grouping of multiple devices will be done based on device
++	 * tree file.
+ 	 *
+-	 * Currently, we are not parsing any device tree information and hence, grouping
+-	 * of multiple devices is not involved. Thus, single device is added to device
+-	 * group.
++	 * The platforms that do not have any valid group information would
++	 * have each device to be part of its own invalid group.
+ 	 */
++	mlo = of_get_child_by_name(dev->of_node, "wsi");
++	if (!mlo) {
++		goto invalid_group;
++	} else {
++		if (of_property_read_u32(mlo, "qcom,wsi-group-id", &group_id)) {
++			ath12k_err(ab, "wsi-group-id not found\n");
++			goto invalid_group;
++		}
++	}
 +
-+    required:
-+      - qcom,wsi-group-id
-+      - qcom,wsi-index
-+      - qcom,wsi-num-devices
++	if (of_property_read_u32(mlo, "qcom,wsi-num-devices", &num_devices)) {
++		ath12k_err(ab, "wsi-num-devices not found\n");
++		group_id = ATH12K_INVALID_GROUP_ID;
++		goto invalid_group;
++	}
 +
-+    additionalProperties: false
++	if (num_devices > ATH12K_MAX_SOCS) {
++		ath12k_warn(ab, "num_devices advertised %d is more than limit %d\n",
++			    num_devices, ATH12K_MAX_SOCS);
++		group_id = ATH12K_INVALID_GROUP_ID;
++		goto invalid_group;
++	}
 +
- required:
-   - compatible
-   - reg
-@@ -108,3 +144,28 @@ examples:
-             };
-         };
-     };
++	if (of_property_read_u32(mlo, "qcom,wsi-index", &ab->wsi_index)) {
++		ath12k_err(ab, "qcom,wsi-index not found\n");
++		group_id = ATH12K_INVALID_GROUP_ID;
++		goto invalid_group;
++	}
 +
-+  - |
-+    pcie {
-+        #address-cells = <3>;
-+        #size-cells = <2>;
++	ath12k_dbg(ab, ATH12K_DBG_BOOT,
++		   "WSI info: group-id: %d, num-devices: %d, index: %d",
++		   group_id, num_devices, ab->wsi_index);
 +
-+        pcie@0 {
-+            device_type = "pci";
-+            reg = <0x0 0x0 0x0 0x0 0x0>;
-+            #address-cells = <3>;
-+            #size-cells = <2>;
-+            ranges;
++	/* Currently only one group of multiple devices are supported,
++	 * since we use group id ATH12K_INVALID_GROUP_ID for single
++	 * device group which didn't have dt entry, there could be many
++	 * groups with same group id, i.e ATH12K_INVALID_GROUP_ID. So
++	 * default group id of ATH12K_INVALID_GROUP_ID combined with
++	 * num devices in ath12k_hw_group determines if the group is
++	 * multi device or single device group
++	 */
++	ag = ath12k_core_hw_group_find_by_id(group_id);
++	if (!ag) {
++		ag = ath12k_core_hw_group_alloc(group_id, num_devices);
++		if (!ag) {
++			ath12k_warn(ab, "unable to create new hw group\n");
++			return NULL;
++		}
++		goto exit;
++	} else if (test_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags)) {
++		ath12k_dbg(ab, ATH12K_DBG_BOOT, "group id %d in unregister state\n",
++			   ag->id);
++		group_id = ATH12K_INVALID_GROUP_ID;
++		goto invalid_group;
++	} else {
++		goto exit;
++	}
 +
-+            wifi@0 {
-+                compatible = "pci17cb,1109";
-+                reg = <0x0 0x0 0x0 0x0 0x0>;
++invalid_group:
+ 	ag = ath12k_core_hw_group_alloc(group_id, 1);
+ 	if (!ag) {
+ 		ath12k_warn(ab, "unable to create new hw group\n");
+@@ -1441,10 +1513,16 @@ static struct ath12k_hw_group *ath12k_core_assign_hw_group(struct ath12k_base *a
+ 	}
+ 	ath12k_dbg(ab, ATH12K_DBG_BOOT, "Single device is added to hardware group\n");
+ 
++exit:
++	if (ag->num_probed >= ag->num_devices) {
++		ath12k_warn(ab, "unable to add new device to group, max limit reached\n");
++		group_id = ATH12K_INVALID_GROUP_ID;
++		goto invalid_group;
++	}
 +
-+                wsi {
-+                    qcom,wsi-group-id = <0>;
-+                    qcom,wsi-index = <0>;
-+                    qcom,wsi-num-devices = <3>;
-+                };
-+            };
-+        };
-+    };
+ 	ab->device_id = ag->num_probed++;
+ 	ag->ab[ab->device_id] = ab;
+ 	ab->ag = ag;
+-	ag->mlo_capable = false;
+ 
+ 	return ag;
+ }
+@@ -1511,6 +1589,14 @@ static void ath12k_core_hw_group_cleanup(struct ath12k_hw_group *ag)
+ 		return;
+ 
+ 	mutex_lock(&ag->mutex_lock);
++
++	if (test_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags)) {
++		mutex_unlock(&ag->mutex_lock);
++		return;
++	}
++
++	set_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags);
++
+ 	ath12k_core_hw_group_stop(ag);
+ 
+ 	for (i = 0; i < ag->num_devices; i++) {
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index cde35616ba56..09fc1c29368f 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -211,6 +211,7 @@ enum ath12k_scan_state {
+ 
+ enum ath12k_hw_group_flags {
+ 	ATH12K_GROUP_FLAG_REGISTERED,
++	ATH12K_GROUP_FLAG_UNREGISTER,
+ };
+ 
+ enum ath12k_dev_flags {
+@@ -1026,6 +1027,7 @@ struct ath12k_base {
+ 	struct notifier_block panic_nb;
+ 
+ 	struct ath12k_hw_group *ag;
++	u32 wsi_index;
+ 
+ 	/* must be last */
+ 	u8 drv_priv[] __aligned(sizeof(void *));
 -- 
 2.34.1
 
