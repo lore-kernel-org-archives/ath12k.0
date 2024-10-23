@@ -4,87 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14CECCFA44F
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:11:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 144E2CFA44F
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:21:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=r9IGZ1M/M+pjgYg9K6nxTz9/fpazjw8lIhdvsgYDPfE=; b=kP0VUaeTd+QMG3tSmg5takbRTh
-	cnqVivaX6N8h1nIfurtFfr6S8KW54zR9HvVEePkfsXSbNX1PzWZztzFlgk80JJdfBqx588bDvvZmZ
-	Kf2PFujwJfoejQzs2xMPmupWg3zxlyhPMshc93OhaXuWVAhMIkQY2Du5VZTKnkXKjLvh0YKE1MBct
-	5RholB/nxwfH0/HMyE6kjVuuGxJaT+MdTpbz9F2sS/uP7t+clpsaflySEnzKqBbLtswTI553Dac7y
-	/Sj3RUAXCmnZ2XmN5vmRJdO32UhqZYkMCIsWuGYPZLkZIzDoScuKC2EccWdxxSlJGwbJf9wdEwGHc
-	K0JvVGhQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-Id:
+	Date:Content-Type:Content-Transfer-Encoding:Mime-Version:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=TF/FBLQpQTpb18qDl8W4BRtUr06P4aRYzhiuLxFGNRw=; b=jrkg/aamQ6/cFFFOif40XBOQMH
+	7ILKpQ/hRjEGhdewSIEIt08Q8lIR+pIuN2miDuR4IoklZIA8zxIDOBbcISvUwrcdstgTPosDhhmuf
+	TTV95REvupY5263nWeOD2jRqfF/1B4PnVtK+yUvHqi7obfqy87VyB5oFIaFKh3GBzYIGwIxvTNuOT
+	rN6l+Dwv9XsUl7zZRdCMSYWwz2QVNeq7tkyBLn4QPFr5IEp+J+y2AI+wwSJISJQ2jTuaSj3ukP7p9
+	IALCpeCGIkzMMMl4xtOjWO8EGV7tdPOruGagl+M/noFWzYjCaObw4ELIYMzVjcFuM5rXSYMjphEzM
+	nadl1g5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3dx6-0000000F5g2-3E0l
+	id 1t3e6y-0000000F7Ob-3IGd
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 16:11:16 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 23 Oct 2024 16:21:28 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3d8g-0000000Evah-0SDy
+	id 1t3dPx-0000000EzD3-3q4x
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 15:19:12 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9xkVH025452;
-	Wed, 23 Oct 2024 15:19:04 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	r9IGZ1M/M+pjgYg9K6nxTz9/fpazjw8lIhdvsgYDPfE=; b=Tzfe8kQqof4le7T3
-	ouRNDyELhmbn0KYo9+o4fg/IpXlQKHP/N8TIdI2mcfKIThmRonUCJkWpZKNhzRYm
-	fXlXs+B3W+PDtp09hfQ/cmwxOJjJfYmGNoVYN0GbgNJGhTpKRRXOOmMfz2iDGKqX
-	yfpoBthqM8uGT0Fq+bM8RELOqjz8TPU9hW+0O8RPYIk1mlNKsHEOfoqyAVVxnR+/
-	CVgGbFTgJzqOqK/1KCCobKmfoyddlln6jYp2mm1cu/TZjJm1aHhThwndWOoHxFd0
-	hJJPJWLv0XFFUNg1cM6iQSh67KRnOPMAtqbwvcGoTZ2THLw3oZcPZszSJgoNq1HI
-	PYE9kg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em41tmex-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 15:19:04 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NFJ3Q6005409
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 15:19:03 GMT
-Received: from [10.48.242.6] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
- 2024 08:19:03 -0700
-Message-ID: <b79d33c6-a7cc-4a23-9b85-b2481c508d07@quicinc.com>
-Date: Wed, 23 Oct 2024 08:19:02 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/8] wifi: ath12k: MLO vdev bringup changes
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241023133004.2253830-1-kvalo@kernel.org>
- <20241023133004.2253830-3-kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <20241023133004.2253830-3-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: MysBE0BicdJKfjxOQW58Pc41gcm4KGzQ
-X-Proofpoint-ORIG-GUID: MysBE0BicdJKfjxOQW58Pc41gcm4KGzQ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- malwarescore=0 clxscore=1015 mlxscore=0 suspectscore=0 phishscore=0
- mlxlogscore=999 bulkscore=0 adultscore=0 lowpriorityscore=0 spamscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410230093
+	Wed, 23 Oct 2024 15:37:03 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43161c0068bso56037905e9.1
+        for <ath12k@lists.infradead.org>; Wed, 23 Oct 2024 08:37:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1729697820; x=1730302620; darn=lists.infradead.org;
+        h=to:from:subject:message-id:date:content-transfer-encoding
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=TF/FBLQpQTpb18qDl8W4BRtUr06P4aRYzhiuLxFGNRw=;
+        b=KFjkC/B0MIOEqC/vId7PTjk4NWW9PHpsVXZ1rUj4GnDj1w0Sikdy9KVwRDuRuPZPsa
+         Ra6J7OlqKLLyS3WZVOnQwAr1oD4u9ko6PUDC3U7+7sHZDRejuZ1Wtp1MgEtyx11H5827
+         zypYOeKNUHP6ZrsNwK3pdfOCM6dF2SHd0qwJqxsKsqXa7jw+KseooJE519KX3Zw8NdMU
+         iKapwVnojBeXUW048Tn5QMuhP3F89+cCNNYBaSxvnjg9y24r1Rk9nQIiYsPSoVj5RSr3
+         BxAFnxa3gaDtB/femlIYj04iX8zmLNso5cQlFty7KUzYYLVqGxPiGAr+b5xZWoQiR5wi
+         Ke9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1729697820; x=1730302620;
+        h=to:from:subject:message-id:date:content-transfer-encoding
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=TF/FBLQpQTpb18qDl8W4BRtUr06P4aRYzhiuLxFGNRw=;
+        b=fBfGgi1SjUJBusR1jzU36YWYysYBHi7Sd2nxQmTEcje/GXlp8fYzLrg3IalIyo1n8G
+         DBLCW1sChTzMlpAEbWOy1hUlIJZ6cPVO22h1oSQ+SnA+Y6iBoVJL/IJ2pN0MlpVC8cVw
+         aPCAgGXxAZt6F34+mGM58ZgqsRBY1XnpQVf5RmjJBBrQ8oFtwHwmaaUGqGTZqosg9K6U
+         mXLm5v7C/txNzIC/7BVEStsgTMd/39pI51efWQFK/wooDItUfI5lGFW1S5h/G8WMzlBb
+         RG84DlhDjqURFWq6Yu9PSCCX2kTedzs7iaBmYovCkdxflpCKvFxMEjMSUTXEO5EeOYLX
+         j74w==
+X-Gm-Message-State: AOJu0YzI0E89tUNeFIsqFXq4spYWpXM2KJ4ClGbhM//2FguAiXA4qnAK
+	JmMUwOUWh8L/Fc2GsjUypgB0e8t66N8lzkrErS0NiF2HRYrAwWTiAW9YQA==
+X-Google-Smtp-Source: AGHT+IHfNnLn0He0yvDmEJ46VjVCMV8diRZXS/OywUaI/bL0fAqJnhwnKFOo6gWGGiC6PbMA6PSF7A==
+X-Received: by 2002:a05:600c:34d4:b0:431:5533:8f0b with SMTP id 5b1f17b1804b1-43184246647mr30555055e9.32.1729697819588;
+        Wed, 23 Oct 2024 08:36:59 -0700 (PDT)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43186bfd059sm19456945e9.27.2024.10.23.08.36.58
+        for <ath12k@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 23 Oct 2024 08:36:58 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Wed, 23 Oct 2024 17:36:58 +0200
+Message-Id: <D53APBVN76LR.1NVIJSAOI4ENB@gmail.com>
+Subject: QCN9274 targetted firmware version for MLO
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: <ath12k@lists.infradead.org>
+X-Mailer: aerc 0.18.2-0-ge037c095a049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_081910_320471_CC38440E 
-X-CRM114-Status: GOOD (  28.02  )
+X-CRM114-CacheID: sfid-20241023_083701_973088_FA0BE7B4 
+X-CRM114-Status: UNSURE (   5.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,447 +90,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/23/2024 6:29 AM, Kalle Valo wrote:
-> From: Sriram R <quic_srirrama@quicinc.com>
-> 
-> Add changes to add the link vdevs dynamically whenever a channel is assigned
-> from mac80211 for a link vdev. During vdev create, update ML address of the
-> vdev to firmware using the new WMI parameter (WMI_TAG_MLO_VDEV_CREATE_PARAMS).
-> 
-> During vdev start, notify the firmware that this link vdev is newly added and
-> also indicate all its known partners so that the firmware can take necessary
-> actions to internally update the partners on the new link being added.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Co-developed-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/mac.c | 90 ++++++++++++++++++++++++++-
->  drivers/net/wireless/ath/ath12k/wmi.c | 85 ++++++++++++++++++++++++-
->  drivers/net/wireless/ath/ath12k/wmi.h | 74 ++++++++++++++++++++++
->  3 files changed, 244 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index f45f32f3b5f6..d4aa4540c8e6 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -648,6 +648,18 @@ struct ath12k *ath12k_mac_get_ar_by_pdev_id(struct ath12k_base *ab, u32 pdev_id)
->  	return NULL;
->  }
->  
-> +static bool ath12k_mac_is_ml_arvif(struct ath12k_link_vif *arvif)
-> +{
-> +	struct ath12k_vif *ahvif = arvif->ahvif;
-> +
-> +	lockdep_assert_wiphy(ahvif->ah->hw->wiphy);
+Hello,
 
-should we have helper functions ath12k_<foo>_to_wiphy() to abstract out the
-underlying linkages?
+I'm wondering what will be the firmware version that will be used for MLO
+support with ath12k on AP side.
 
-> +
-> +	if (ahvif->vif->valid_links & BIT(arvif->link_id))
-> +		return true;
-> +
-> +	return false;
-> +}
-> +
->  static struct ath12k *ath12k_mac_get_ar_by_chan(struct ieee80211_hw *hw,
->  						struct ieee80211_channel *channel)
->  {
-> @@ -1512,7 +1524,8 @@ static int ath12k_mac_setup_bcn_tmpl_ema(struct ath12k_link_vif *arvif)
->  	tx_ahvif = ath12k_vif_to_ahvif(ahvif->vif->mbssid_tx_vif);
->  	tx_arvif = &tx_ahvif->deflink;
->  	beacons = ieee80211_beacon_get_template_ema_list(ath12k_ar_to_hw(tx_arvif->ar),
-> -							 tx_ahvif->vif, 0);
-> +							 tx_ahvif->vif,
-> +							 tx_arvif->link_id);
->  	if (!beacons || !beacons->cnt) {
->  		ath12k_warn(arvif->ar->ab,
->  			    "failed to get ema beacon templates from mac80211\n");
-> @@ -1577,7 +1590,7 @@ static int ath12k_mac_setup_bcn_tmpl(struct ath12k_link_vif *arvif)
->  	}
->  
->  	bcn = ieee80211_beacon_get_template(ath12k_ar_to_hw(tx_arvif->ar), tx_ahvif->vif,
-> -					    &offs, 0);
-> +					    &offs, tx_arvif->link_id);
->  	if (!bcn) {
->  		ath12k_warn(ab, "failed to get beacon template from mac80211\n");
->  		return -EPERM;
-> @@ -1658,7 +1671,7 @@ static void ath12k_control_beaconing(struct ath12k_link_vif *arvif,
->  
->  	ahvif->aid = 0;
->  
-> -	ether_addr_copy(arvif->bssid, info->bssid);
-> +	ether_addr_copy(arvif->bssid, info->addr);
->  
->  	params.vdev_id = arvif->vdev_id;
->  	params.aid = ahvif->aid;
-> @@ -6671,6 +6684,8 @@ static int ath12k_mac_setup_vdev_create_arg(struct ath12k_link_vif *arvif,
->  	struct ath12k_vif *ahvif = arvif->ahvif;
->  	int ret;
->  
-> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-> +
->  	arg->if_id = arvif->vdev_id;
->  	arg->type = ahvif->vdev_type;
->  	arg->subtype = ahvif->vdev_subtype;
-> @@ -6702,6 +6717,17 @@ static int ath12k_mac_setup_vdev_create_arg(struct ath12k_link_vif *arvif,
->  	}
->  
->  	arg->if_stats_id = ath12k_mac_get_vdev_stats_id(arvif);
-> +
-> +	if (ath12k_mac_is_ml_arvif(arvif)) {
-> +		if (hweight16(ahvif->vif->valid_links) > ATH12K_WMI_MLO_MAX_LINKS) {
-> +			ath12k_warn(ar->ab, "too many MLO links during setting up vdev: %d",
-> +				    ahvif->vif->valid_links);
-> +			return -EINVAL;
-> +		}
-> +
-> +		ether_addr_copy(arg->mld_addr, ahvif->vif->addr);
-> +	}
-> +
->  	return 0;
->  }
->  
-> @@ -7639,6 +7665,61 @@ ath12k_mac_check_down_grade_phy_mode(struct ath12k *ar,
->  	return down_mode;
->  }
->  
-> +static void
-> +ath12k_mac_mlo_get_vdev_args(struct ath12k_link_vif *arvif,
-> +			     struct wmi_ml_arg *ml_arg)
-> +{
-> +	struct ath12k_vif *ahvif = arvif->ahvif;
-> +	struct wmi_ml_partner_info *partner_info;
-> +	struct ieee80211_bss_conf *link_conf;
-> +	struct ath12k_link_vif *arvif_p;
-> +	unsigned long links;
-> +	u8 link_id;
-> +
-> +	lockdep_assert_wiphy(ahvif->ah->hw->wiphy);
-> +
-> +	if (!ath12k_mac_is_ml_arvif(arvif))
-> +		return;
-> +
-> +	if (hweight16(ahvif->vif->valid_links) > ATH12K_WMI_MLO_MAX_LINKS)
-> +		return;
-> +
-> +	rcu_read_lock();
+I see that the mlo patches posted by Kalle [0] are tested against and old o=
+ne:
+  - WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-what is this protecting?
+I see that curently in linux-firmware [1] we have a recent one:
+  - WLAN.WBE.1.3.1-00162-QCAHKSWPL_SILICONZ-1
 
-do all of the statements between here and the for loop really need RCU protection?
+And on code linaro [2] there is an even newer one:
+  - WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-> +
-> +	ml_arg->enabled = true;
-> +
-> +	/* Driver always add a new link via VDEV START, FW takes
-> +	 * care of internally adding this link to existing
-> +	 * link vdevs which are advertised as partners below
-> +	 */
-> +	ml_arg->link_add = true;
-> +	partner_info = ml_arg->partner_info;
-> +
-> +	links = ahvif->links_map;
-> +	for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-> +		arvif_p = rcu_dereference(ahvif->link[link_id]);
-> +
-> +		if (WARN_ON(!arvif_p))
-> +			continue;
-> +
-> +		if (arvif == arvif_p)
-> +			continue;
-> +
-> +		link_conf = rcu_dereference(ahvif->vif->link_conf[arvif_p->link_id]);
-> +
-> +		if (!link_conf)
-> +			continue;
-> +
-> +		partner_info->vdev_id = arvif_p->vdev_id;
-> +		partner_info->hw_link_id = arvif_p->ar->pdev->hw_link_id;
-> +		ether_addr_copy(partner_info->addr, link_conf->addr);
-> +		ml_arg->num_partner_links++;
-> +		partner_info++;
-> +	}
-> +
-> +	rcu_read_unlock();
-> +}
-> +
->  static int
->  ath12k_mac_vdev_start_restart(struct ath12k_link_vif *arvif,
->  			      struct ieee80211_chanctx_conf *ctx,
-> @@ -7717,6 +7798,9 @@ ath12k_mac_vdev_start_restart(struct ath12k_link_vif *arvif,
->  
->  	arg.passive |= !!(chandef->chan->flags & IEEE80211_CHAN_NO_IR);
->  
-> +	if (!restart)
-> +		ath12k_mac_mlo_get_vdev_args(arvif, &arg.ml);
-> +
->  	ath12k_dbg(ab, ATH12K_DBG_MAC,
->  		   "mac vdev %d start center_freq %d phymode %s punct_bitmap 0x%x\n",
->  		   arg.vdev_id, arg.freq,
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-> index dced2aa9ba1a..e089b58bbea1 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.c
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> @@ -821,6 +821,8 @@ int ath12k_wmi_vdev_create(struct ath12k *ar, u8 *macaddr,
->  	struct wmi_vdev_create_cmd *cmd;
->  	struct sk_buff *skb;
->  	struct ath12k_wmi_vdev_txrx_streams_params *txrx_streams;
-> +	bool is_ml_vdev = is_valid_ether_addr(args->mld_addr);
-> +	struct wmi_vdev_create_mlo_params *ml_params;
->  	struct wmi_tlv *tlv;
->  	int ret, len;
->  	void *ptr;
-> @@ -830,7 +832,8 @@ int ath12k_wmi_vdev_create(struct ath12k *ar, u8 *macaddr,
->  	 * both the bands.
->  	 */
->  	len = sizeof(*cmd) + TLV_HDR_SIZE +
-> -		(WMI_NUM_SUPPORTED_BAND_MAX * sizeof(*txrx_streams));
-> +		(WMI_NUM_SUPPORTED_BAND_MAX * sizeof(*txrx_streams)) +
-> +		(is_ml_vdev ? TLV_HDR_SIZE + sizeof(*ml_params) : 0);
->  
->  	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
->  	if (!skb)
-> @@ -879,6 +882,21 @@ int ath12k_wmi_vdev_create(struct ath12k *ar, u8 *macaddr,
->  	txrx_streams->supported_rx_streams =
->  				cpu_to_le32(args->chains[NL80211_BAND_5GHZ].rx);
->  
-> +	ptr += WMI_NUM_SUPPORTED_BAND_MAX * sizeof(*txrx_streams);
-> +
-> +	if (is_ml_vdev) {
-> +		tlv = ptr;
-> +		tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
-> +						 sizeof(*ml_params));
-> +		ptr += TLV_HDR_SIZE;
-> +		ml_params = ptr;
-> +
-> +		ml_params->tlv_header =
-> +			ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_VDEV_CREATE_PARAMS,
-> +					       sizeof(*ml_params));
-> +		ether_addr_copy(ml_params->mld_macaddr.addr, args->mld_addr);
-> +	}
-> +
->  	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
->  		   "WMI vdev create: id %d type %d subtype %d macaddr %pM pdevid %d\n",
->  		   args->if_id, args->type, args->subtype,
-> @@ -1020,19 +1038,27 @@ static void ath12k_wmi_put_wmi_channel(struct ath12k_wmi_channel_params *chan,
->  int ath12k_wmi_vdev_start(struct ath12k *ar, struct wmi_vdev_start_req_arg *arg,
->  			  bool restart)
->  {
-> +	struct wmi_vdev_start_mlo_params *ml_params;
-> +	struct wmi_partner_link_info *partner_info;
->  	struct ath12k_wmi_pdev *wmi = ar->wmi;
->  	struct wmi_vdev_start_request_cmd *cmd;
->  	struct sk_buff *skb;
->  	struct ath12k_wmi_channel_params *chan;
->  	struct wmi_tlv *tlv;
->  	void *ptr;
-> -	int ret, len;
-> +	int ret, len, i, ml_arg_size = 0;
->  
->  	if (WARN_ON(arg->ssid_len > sizeof(cmd->ssid.ssid)))
->  		return -EINVAL;
->  
->  	len = sizeof(*cmd) + sizeof(*chan) + TLV_HDR_SIZE;
->  
-> +	if (!restart && arg->ml.enabled) {
-> +		ml_arg_size = TLV_HDR_SIZE + sizeof(*ml_params) +
-> +			      TLV_HDR_SIZE + (arg->ml.num_partner_links *
-> +					      sizeof(*partner_info));
-> +		len += ml_arg_size;
-> +	}
->  	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
->  	if (!skb)
->  		return -ENOMEM;
-> @@ -1085,6 +1111,61 @@ int ath12k_wmi_vdev_start(struct ath12k *ar, struct wmi_vdev_start_req_arg *arg,
->  
->  	ptr += sizeof(*tlv);
->  
-> +	if (ml_arg_size) {
-> +		tlv = ptr;
-> +		tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
-> +						 sizeof(*ml_params));
-> +		ptr += TLV_HDR_SIZE;
-> +
-> +		ml_params = ptr;
-> +
-> +		ml_params->tlv_header =
-> +			ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_VDEV_START_PARAMS,
-> +					       sizeof(*ml_params));
-> +
-> +		ml_params->flags = le32_encode_bits(arg->ml.enabled,
-> +						    ATH12K_WMI_FLAG_MLO_ENABLED) |
-> +				   le32_encode_bits(arg->ml.assoc_link,
-> +						    ATH12K_WMI_FLAG_MLO_ASSOC_LINK) |
-> +				   le32_encode_bits(arg->ml.mcast_link,
-> +						    ATH12K_WMI_FLAG_MLO_MCAST_VDEV) |
-> +				   le32_encode_bits(arg->ml.link_add,
-> +						    ATH12K_WMI_FLAG_MLO_LINK_ADD);
-> +
-> +		ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "vdev %d start ml flags 0x%x\n",
-> +			   arg->vdev_id, ml_params->flags);
-> +
-> +		ptr += sizeof(*ml_params);
-> +
-> +		tlv = ptr;
-> +		tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
-> +						 arg->ml.num_partner_links *
-> +						 sizeof(*partner_info));
-> +		ptr += TLV_HDR_SIZE;
-> +
-> +		partner_info = ptr;
-> +
-> +		for (i = 0; i < arg->ml.num_partner_links; i++) {
-> +			partner_info->tlv_header =
-> +				ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_PARTNER_LINK_PARAMS,
-> +						       sizeof(*partner_info));
-> +			partner_info->vdev_id =
-> +				cpu_to_le32(arg->ml.partner_info[i].vdev_id);
-> +			partner_info->hw_link_id =
-> +				cpu_to_le32(arg->ml.partner_info[i].hw_link_id);
-> +			ether_addr_copy(partner_info->vdev_addr.addr,
-> +					arg->ml.partner_info[i].addr);
-> +
-> +			ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "partner vdev %d hw_link_id %d macaddr%pM\n",
-> +				   partner_info->vdev_id, partner_info->hw_link_id,
-> +				   partner_info->vdev_addr.addr);
-> +
-> +			partner_info++;
-> +		}
-> +
-> +		ptr = partner_info;
-> +	}
-> +
->  	ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "vdev %s id 0x%x freq 0x%x mode 0x%x\n",
->  		   restart ? "restart" : "start", arg->vdev_id,
->  		   arg->freq, arg->mode);
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-> index 6f55dbdf629d..33b9643644c6 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.h
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-> @@ -1929,6 +1929,19 @@ enum wmi_tlv_tag {
->  	WMI_TAG_REGULATORY_RULE_EXT_STRUCT = 0x3A9,
->  	WMI_TAG_REG_CHAN_LIST_CC_EXT_EVENT,
->  	WMI_TAG_EHT_RATE_SET = 0x3C4,
-> +	WMI_TAG_DCS_AWGN_INT_TYPE = 0x3C5,
-> +	WMI_TAG_MLO_TX_SEND_PARAMS,
-> +	WMI_TAG_MLO_PARTNER_LINK_PARAMS,
-> +	WMI_TAG_MLO_PARTNER_LINK_PARAMS_PEER_ASSOC,
-> +	WMI_TAG_MLO_SETUP_CMD = 0x3C9,
-> +	WMI_TAG_MLO_SETUP_COMPLETE_EVENT,
-> +	WMI_TAG_MLO_READY_CMD,
-> +	WMI_TAG_MLO_TEARDOWN_CMD,
-> +	WMI_TAG_MLO_TEARDOWN_COMPLETE,
-> +	WMI_TAG_MLO_PEER_ASSOC_PARAMS = 0x3D0,
-> +	WMI_TAG_MLO_PEER_CREATE_PARAMS = 0x3D5,
-> +	WMI_TAG_MLO_VDEV_START_PARAMS = 0x3D6,
-> +	WMI_TAG_MLO_VDEV_CREATE_PARAMS = 0x3D7,
->  	WMI_TAG_PDEV_SET_BIOS_SAR_TABLE_CMD = 0x3D8,
->  	WMI_TAG_PDEV_SET_BIOS_GEO_TABLE_CMD = 0x3D9,
->  	WMI_TAG_PDEV_SET_BIOS_INTERFACE_CMD = 0x3FB,
-> @@ -2740,6 +2753,7 @@ struct ath12k_wmi_vdev_create_arg {
->  	u8 if_stats_id;
->  	u32 mbssid_flags;
->  	u32 mbssid_tx_vdev_id;
-> +	u8 mld_addr[ETH_ALEN];
->  };
->  
->  #define ATH12K_MAX_VDEV_STATS_ID	0x30
-> @@ -2766,6 +2780,44 @@ struct ath12k_wmi_vdev_txrx_streams_params {
->  	__le32 supported_rx_streams;
->  } __packed;
->  
-> +/* 2 word representation of MAC addr */
-> +struct wmi_mac_addr {
-> +	union {
-> +		u8 addr[6];
-> +		struct {
-> +			u32 word0;
-> +			u32 word1;
-> +		} __packed;
-> +	} __packed;
-> +} __packed;
+Is it decided yet ? Any pointers ?
 
-we already have:
-/* 2 word representation of MAC addr */
-struct ath12k_wmi_mac_addr_params {
-	u8 addr[ETH_ALEN];
-	u8 padding[2];
-} __packed;
+Thanks
 
-why aren't we consistently using that?
-
-> +
-> +struct wmi_vdev_create_mlo_params {
-> +	__le32 tlv_header;
-> +	struct wmi_mac_addr mld_macaddr;
-> +} __packed;
-> +
-> +#define ATH12K_WMI_FLAG_MLO_ENABLED			BIT(0)
-> +#define ATH12K_WMI_FLAG_MLO_ASSOC_LINK			BIT(1)
-> +#define ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC		BIT(2)
-> +#define ATH12K_WMI_FLAG_MLO_LOGICAL_LINK_IDX_VALID	BIT(3)
-> +#define ATH12K_WMI_FLAG_MLO_PEER_ID_VALID		BIT(4)
-> +#define ATH12K_WMI_FLAG_MLO_MCAST_VDEV			BIT(5)
-> +#define ATH12K_WMI_FLAG_MLO_EMLSR_SUPPORT		BIT(6)
-> +#define ATH12K_WMI_FLAG_MLO_FORCED_INACTIVE		BIT(7)
-> +#define ATH12K_WMI_FLAG_MLO_LINK_ADD			BIT(8)
-> +
-> +struct wmi_vdev_start_mlo_params {
-> +	__le32 tlv_header;
-> +	__le32 flags;
-> +} __packed;
-> +
-> +struct wmi_partner_link_info {
-> +	__le32 tlv_header;
-> +	__le32 vdev_id;
-> +	__le32 hw_link_id;
-> +	struct wmi_mac_addr vdev_addr;
-> +} __packed;
-> +
->  struct wmi_vdev_delete_cmd {
->  	__le32 tlv_header;
->  	__le32 vdev_id;
-> @@ -2909,6 +2961,27 @@ enum wmi_phy_mode {
->  	MODE_MAX = 33,
->  };
->  
-> +#define ATH12K_WMI_MLO_MAX_LINKS 4
-> +
-> +struct wmi_ml_partner_info {
-> +	u32 vdev_id;
-> +	u32 hw_link_id;
-> +	u8 addr[ETH_ALEN];
-> +	bool assoc_link;
-> +	bool primary_umac;
-> +	bool logical_link_idx_valid;
-> +	u32 logical_link_idx;
-> +};
-> +
-> +struct wmi_ml_arg {
-> +	bool enabled;
-> +	bool assoc_link;
-> +	bool mcast_link;
-> +	bool link_add;
-> +	u8 num_partner_links;
-> +	struct wmi_ml_partner_info partner_info[ATH12K_WMI_MLO_MAX_LINKS];
-> +};
-> +
->  struct wmi_vdev_start_req_arg {
->  	u32 vdev_id;
->  	u32 freq;
-> @@ -2946,6 +3019,7 @@ struct wmi_vdev_start_req_arg {
->  	u32 mbssid_flags;
->  	u32 mbssid_tx_vdev_id;
->  	u32 punct_bitmap;
-> +	struct wmi_ml_arg ml;
->  };
->  
->  struct ath12k_wmi_peer_create_arg {
-
+[0] https://lore.kernel.org/ath12k/20241023133004.2253830-9-kvalo@kernel.or=
+g/
+[1] https://gitlab.com/kernel-firmware/linux-firmware/-/commit/a2d650c9cbad=
+5faede89a44bfc5eea32483a0f83
+[2] https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/commit/3e=
+e26f4705a4bf8c3ee1c935f5d21bad9b6d2612
 
