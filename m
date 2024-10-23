@@ -4,72 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4C31CF5366
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 12:20:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F1B0CF5365
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 12:22:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=RizzMatfiEQuua+kbvmQduc7hgdQwKgVWFtO3lkKSkg=; b=INA+m89KgNyEC8IVMOYYoM/KAA
-	3pr/VZvEUrHtaztFZOX/SFAg8cKkKcf/ItE/N3nlbMC/mFIG68clvZ8oyyanYW/unRWwGTbbL9RSg
-	GAllHqecwEbIHXdKvpGcm5jENx0bAqvP801soxuWo4APkppqbSFmP7YVu33hioABqAx0OFE+wwpc7
-	zCQ6CCVJSycjNYw6gu7MUYqxvt9o60Ntr0EjqdiBat+mncreCdLwFudYeoxqOaORTBYdbSlb6p1Wb
-	BGRpApDckOCuIWBfURbO3lN3/HiZBTnidy6fYr/QH9obdnhjnE9v6UDMdPzcE5hNNYijZh1xaEK2n
-	5IWTcYiw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=iTht4jf6MVYNx9CnrbRM5YEqmjgvAAa/perOIHWuwqI=; b=HVOGvml+2W7QIsdZDn/YEb0Hej
+	Tm4mUYXr+0UF0tySl5br3wUw9aYM9Ep08h8Q/6nHB5qvjOntC5SCClQNPx3ILJc21ixxa9c6HZRRY
+	Gjvn3YlWETtGNcO5qv7wGpLyF9qw1zRe0Tz6w7v8204kHE969TKp+UXl9Bkly2WmTXgkaKB8wHONa
+	yiQ1d5le73XXFMimJGmlGT1wwecpof9cCTKHSNr8PcdsVqhsRfUJ9iDYE39zeAXQiwr1FixBKwMf4
+	84IahsE4B7pkzS1Vb4xt4f5uj4t/XbeQrB8HgU10Nh7sHfj0jlWgZiE3qULrjLHxsDNZzQX5/2WzK
+	94KD24LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3aM9-0000000EJ8R-1MhC
+	id 1t3aNe-0000000EJpP-0CRr
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 12:20:53 +0000
-Received: from mgamail.intel.com ([198.175.65.17])
+	Wed, 23 Oct 2024 12:22:26 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3aHK-0000000EHkz-22Cz
+	id 1t3aNb-0000000EJov-0fkc
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 12:15:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1729685754; x=1761221754;
-  h=date:from:to:cc:subject:message-id;
-  bh=vL/Zo8lrYfgGfScNN7X4DuWqGeoKUljsg0H4oRU54Pk=;
-  b=Jq738N+TjTCV3IBZ+vsA+ATjw3BcDcIXay7lrPdDmyJunSnWhJrTP8po
-   73Ohdb29n6hkJFwb1c0TDlX7qB1bwVXRitP4ZoZTlHUC6vU6Kz1GdTikB
-   /LDQy327Gp4bq6DTcHpLgxzLviBUulwSa/DhtSJ1wfiDH0ianufTPSrzI
-   jSnWUpBu6nWreA5GeH3EQL02ymcC1AmZBq4mPj/8pg9RoaBYjmIfBksyk
-   Ib0COzhBemXqSHfx5aXYgXeDpfFQiSWyhtn660Q4fGFP3hyfC4X1Ds+HQ
-   uhx0C/fE7+cp916ASxNpuvK1xe6Zt53h9mVHdP9VEb0CHoxD8SRsSTA+M
-   A==;
-X-CSE-ConnectionGUID: OFuJsXRLRxmRE9MHnZNgUQ==
-X-CSE-MsgGUID: v6subSW5SW68AFfE8uAlqQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11234"; a="29370402"
-X-IronPort-AV: E=Sophos;i="6.11,226,1725346800"; 
-   d="scan'208";a="29370402"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2024 05:15:53 -0700
-X-CSE-ConnectionGUID: GMJZT8FFQcSOTGKktSVshA==
-X-CSE-MsgGUID: u85o4uGDQzmshjDNLiSPRw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,226,1725346800"; 
-   d="scan'208";a="111019802"
-Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
-  by orviesa002.jf.intel.com with ESMTP; 23 Oct 2024 05:15:52 -0700
-Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1t3aHF-000Uta-2C;
-	Wed, 23 Oct 2024 12:15:49 +0000
-Date: Wed, 23 Oct 2024 20:15:35 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- cd8aa3af7491a1f7a5b81e53dbe62a38433c2d4b
-Message-ID: <202410232027.Le4dppOL-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Wed, 23 Oct 2024 12:22:24 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9ijY1030354;
+	Wed, 23 Oct 2024 12:22:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	iTht4jf6MVYNx9CnrbRM5YEqmjgvAAa/perOIHWuwqI=; b=KjVNMZmx5W6T/hx9
+	qFM5Ssj5c7Ibw53lWnXBtjvQE7kikPtZJN3J/0cNQ7uf1P+iu1OSASbEfV6SLS9b
+	jAexoHHg46KkFBQ3TU6qrIAAfVsYlMAl8oHGvEgFVqFZTzzP4PAEU6RM5TlRkEU+
+	dygswS8TFpWOAjgZ8mhyblYGzeEdo1URz1AOY09sIvAlJIj1xKHLuoYCa9fmsWb/
+	cUlBa9im7A+D1SEPn4hrRHvDwRTIMG3WhdCBR3yOlaDxHW6NopjV1v5qXIZqT7bR
+	MkpHAKCSua1eJ//QXZSONhIJ4w8yAJzizWugPgBfTJtX6ADenFoixi8HVvN+Hdm9
+	8v2i5Q==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3w25y7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Oct 2024 12:22:17 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NCMH7Q014294
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Oct 2024 12:22:17 GMT
+Received: from [10.152.207.135] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
+ 2024 05:22:12 -0700
+Message-ID: <9c06fdac-df4f-449c-8d58-b57c375c1751@quicinc.com>
+Date: Wed, 23 Oct 2024 17:52:07 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH 2/6] dt-bindings: net: wireless: ath12k: describe WSI
+ property for QCN9274
+To: Krzysztof Kozlowski <krzk@kernel.org>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        Rob
+ Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor
+ Dooley <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Bjorn
+ Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
+References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
+ <20241023060352.605019-3-quic_rajkbhag@quicinc.com>
+ <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: s3FSzHXtIQ2CGqrun3lATKRRWpRaFwCS
+X-Proofpoint-GUID: s3FSzHXtIQ2CGqrun3lATKRRWpRaFwCS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxlogscore=999
+ priorityscore=1501 impostorscore=0 bulkscore=0 lowpriorityscore=0
+ clxscore=1015 suspectscore=0 spamscore=0 malwarescore=0 mlxscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410230073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_051554_592964_544EC1F4 
-X-CRM114-Status: UNSURE (   3.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241023_052223_233085_A1B231CF 
+X-CRM114-Status: GOOD (  28.17  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,177 +111,190 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: cd8aa3af7491a1f7a5b81e53dbe62a38433c2d4b  Add localversion-wireless-testing-ath
+On 10/23/2024 12:08 PM, Krzysztof Kozlowski wrote:
+> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
+>> QCN9274 device has WSI support. WSI stands for WLAN Serial Interface.
+>> It is used for the exchange of specific control information across
+>> radios based on the doorbell mechanism. This WSI connection is
+>> essential to exchange control information among these devices
+>>
+>> Hence, describe WSI interface supported in QCN9274 with the following
+>> properties:
+>>
+>>  - qcom,wsi-group-id: It represents the identifier assigned to the WSI
+>>    connection. All the ath12k devices connected to same WSI connection
+>>    have the same wsi-group-id.
+>>
+>>  - qcom,wsi-index: It represents the identifier assigned to ath12k
+>>    device in the order of the WSI connection.
+>>
+>>  - qcom,wsi-num-devices: Number of devices connected through WSI in
+>>    the same group ID.
+> 
+> You should have separate binding.
+> 
 
-elapsed time: 1236m
+Based on the discussion in previous patch [1/6]. If required we will have
+separate binding.
 
-configs tested: 157
-configs skipped: 3
+>>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+>>  .../bindings/net/wireless/qcom,ath12k.yaml    | 61 +++++++++++++++++++
+>>  1 file changed, 61 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> index ecf38af747f7..6c8f97865075 100644
+>> --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> @@ -19,6 +19,7 @@ properties:
+>>    compatible:
+>>      enum:
+>>        - pci17cb,1107  # WCN7850
+>> +      - pci17cb,1109  # QCN9274
+>>  
+>>    reg:
+>>      maxItems: 1
+>> @@ -50,6 +51,41 @@ properties:
+>>    vddpcie1p8-supply:
+>>      description: VDD_PCIE_1P8 supply regulator handle
+>>  
+>> +  wsi:
+>> +    type: object
+>> +    description:
+>> +      The ath12k devices (QCN9274) feature WSI support. WSI stands for
+>> +      WLAN Serial Interface. It is used for the exchange of specific
+>> +      control information across radios based on the doorbell mechanism.
+>> +      This WSI connection is essential to exchange control information
+>> +      among these devices.
+>> +
+>> +    properties:
+>> +      qcom,wsi-group-id:
+>> +        $ref: /schemas/types.yaml#/definitions/uint32
+>> +        description:
+>> +          It represents the identifier assigned to the WSI connection. All
+>> +          the ath12k devices connected to same WSI connection have the
+>> +          same wsi-group-id.
+> 
+> Why it cannot be implied by compatible?
+> 
+>> +
+>> +      qcom,wsi-index:
+>> +        $ref: /schemas/types.yaml#/definitions/uint32
+>> +        description:
+>> +          It represents the identifier assigned to ath12k device in the
+>> +          order of the WSI connection.
+> 
+> No, we do not have indices in DTS.
+> 
+>> +
+>> +      qcom,wsi-num-devices:
+>> +        $ref: /schemas/types.yaml#/definitions/uint32
+>> +        description:
+>> +          Number of devices connected through WSI in the same group ID.
+> 
+> Wait, why? Number of devices is visible from DTS. You are missing some
+> diagram showing this but it looks like you stuff multiple nodes into one
+> node.
+> 
+> 
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+To discuss the above comments, let me provide a diagram that is part of the
+commit log of DTS patch [6/6].
 
-tested configs:
-alpha                             allnoconfig    gcc-13.3.0
-alpha                             allnoconfig    gcc-14.1.0
-alpha                            allyesconfig    clang-20
-alpha                               defconfig    gcc-14.1.0
-arc                              allmodconfig    clang-20
-arc                               allnoconfig    gcc-13.2.0
-arc                               allnoconfig    gcc-14.1.0
-arc                              allyesconfig    clang-20
-arc                          axs103_defconfig    clang-20
-arc                                 defconfig    gcc-14.1.0
-arm                              allmodconfig    clang-20
-arm                               allnoconfig    clang-20
-arm                               allnoconfig    gcc-14.1.0
-arm                              allyesconfig    clang-20
-arm                                 defconfig    gcc-14.1.0
-arm                       imx_v4_v5_defconfig    clang-20
-arm                        shmobile_defconfig    clang-20
-arm                    vt8500_v6_v7_defconfig    clang-20
-arm64                            allmodconfig    clang-20
-arm64                             allnoconfig    gcc-14.1.0
-arm64                               defconfig    gcc-14.1.0
-csky                              allnoconfig    gcc-14.1.0
-csky                                defconfig    gcc-14.1.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    clang-20
-hexagon                           allnoconfig    gcc-14.1.0
-hexagon                          allyesconfig    clang-20
-hexagon                             defconfig    gcc-14.1.0
-i386                             allmodconfig    clang-18
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    clang-18
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    clang-18
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20241023    clang-18
-i386        buildonly-randconfig-002-20241023    clang-18
-i386        buildonly-randconfig-003-20241023    clang-18
-i386        buildonly-randconfig-003-20241023    gcc-12
-i386        buildonly-randconfig-004-20241023    clang-18
-i386        buildonly-randconfig-004-20241023    gcc-12
-i386        buildonly-randconfig-005-20241023    clang-18
-i386        buildonly-randconfig-006-20241023    clang-18
-i386                                defconfig    clang-18
-i386                  randconfig-001-20241023    clang-18
-i386                  randconfig-001-20241023    gcc-12
-i386                  randconfig-002-20241023    clang-18
-i386                  randconfig-003-20241023    clang-18
-i386                  randconfig-004-20241023    clang-18
-i386                  randconfig-005-20241023    clang-18
-i386                  randconfig-006-20241023    clang-18
-i386                  randconfig-006-20241023    gcc-12
-i386                  randconfig-011-20241023    clang-18
-i386                  randconfig-012-20241023    clang-18
-i386                  randconfig-012-20241023    gcc-12
-i386                  randconfig-013-20241023    clang-18
-i386                  randconfig-013-20241023    gcc-12
-i386                  randconfig-014-20241023    clang-18
-i386                  randconfig-015-20241023    clang-18
-i386                  randconfig-016-20241023    clang-18
-loongarch                        allmodconfig    gcc-14.1.0
-loongarch                         allnoconfig    gcc-14.1.0
-loongarch                           defconfig    gcc-14.1.0
-m68k                             alldefconfig    clang-20
-m68k                             allmodconfig    gcc-14.1.0
-m68k                              allnoconfig    gcc-14.1.0
-m68k                             allyesconfig    gcc-14.1.0
-m68k                         apollo_defconfig    clang-20
-m68k                                defconfig    gcc-14.1.0
-m68k                           sun3_defconfig    clang-20
-microblaze                       allmodconfig    gcc-14.1.0
-microblaze                        allnoconfig    gcc-14.1.0
-microblaze                       allyesconfig    gcc-14.1.0
-microblaze                          defconfig    gcc-14.1.0
-mips                              allnoconfig    gcc-14.1.0
-mips                  cavium_octeon_defconfig    clang-20
-mips                            gpr_defconfig    clang-20
-mips                           ip28_defconfig    clang-20
-nios2                             allnoconfig    gcc-14.1.0
-nios2                               defconfig    gcc-14.1.0
-openrisc                          allnoconfig    clang-20
-openrisc                          allnoconfig    gcc-14.1.0
-openrisc                         allyesconfig    gcc-14.1.0
-openrisc                            defconfig    gcc-12
-parisc                           allmodconfig    gcc-14.1.0
-parisc                            allnoconfig    clang-20
-parisc                            allnoconfig    gcc-14.1.0
-parisc                           allyesconfig    gcc-14.1.0
-parisc                              defconfig    gcc-12
-parisc64                            defconfig    gcc-14.1.0
-powerpc                    adder875_defconfig    clang-20
-powerpc                          allmodconfig    gcc-14.1.0
-powerpc                           allnoconfig    clang-20
-powerpc                           allnoconfig    gcc-14.1.0
-powerpc                          allyesconfig    gcc-14.1.0
-powerpc                       holly_defconfig    clang-20
-riscv                            allmodconfig    gcc-14.1.0
-riscv                             allnoconfig    clang-20
-riscv                             allnoconfig    gcc-14.1.0
-riscv                            allyesconfig    gcc-14.1.0
-riscv                               defconfig    gcc-12
-s390                             allmodconfig    gcc-14.1.0
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.1.0
-s390                                defconfig    gcc-12
-sh                               allmodconfig    gcc-14.1.0
-sh                                allnoconfig    gcc-14.1.0
-sh                               allyesconfig    gcc-14.1.0
-sh                                  defconfig    gcc-12
-sh                             espt_defconfig    clang-20
-sh                          kfr2r09_defconfig    clang-20
-sh                           se7724_defconfig    clang-20
-sparc                            allmodconfig    gcc-14.1.0
-sparc64                             defconfig    gcc-12
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-17
-um                                allnoconfig    clang-20
-um                               allyesconfig    clang-20
-um                                  defconfig    gcc-12
-um                             i386_defconfig    gcc-12
-um                           x86_64_defconfig    clang-20
-um                           x86_64_defconfig    gcc-12
-x86_64                            allnoconfig    clang-18
-x86_64                           allyesconfig    clang-18
-x86_64      buildonly-randconfig-001-20241023    gcc-12
-x86_64      buildonly-randconfig-002-20241023    gcc-12
-x86_64      buildonly-randconfig-003-20241023    gcc-12
-x86_64      buildonly-randconfig-004-20241023    gcc-12
-x86_64      buildonly-randconfig-005-20241023    gcc-12
-x86_64      buildonly-randconfig-006-20241023    gcc-12
-x86_64                              defconfig    clang-18
-x86_64                              defconfig    gcc-11
-x86_64                                  kexec    clang-18
-x86_64                                  kexec    gcc-12
-x86_64                randconfig-001-20241023    gcc-12
-x86_64                randconfig-002-20241023    gcc-12
-x86_64                randconfig-003-20241023    gcc-12
-x86_64                randconfig-004-20241023    gcc-12
-x86_64                randconfig-005-20241023    gcc-12
-x86_64                randconfig-006-20241023    gcc-12
-x86_64                randconfig-011-20241023    gcc-12
-x86_64                randconfig-012-20241023    gcc-12
-x86_64                randconfig-013-20241023    gcc-12
-x86_64                randconfig-014-20241023    gcc-12
-x86_64                randconfig-015-20241023    gcc-12
-x86_64                randconfig-016-20241023    gcc-12
-x86_64                randconfig-071-20241023    gcc-12
-x86_64                randconfig-072-20241023    gcc-12
-x86_64                randconfig-073-20241023    gcc-12
-x86_64                randconfig-074-20241023    gcc-12
-x86_64                randconfig-075-20241023    gcc-12
-x86_64                randconfig-076-20241023    gcc-12
-x86_64                               rhel-8.3    gcc-12
-x86_64                           rhel-8.3-bpf    clang-18
-x86_64                         rhel-8.3-kunit    clang-18
-x86_64                           rhel-8.3-ltp    clang-18
-x86_64                          rhel-8.3-rust    clang-18
-xtensa                            allnoconfig    gcc-14.1.0
+The WSI connection in RDP433 is represented below:
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+          +-------+        +-------+        +-------+
+          | pcie2 |        | pcie3 |        | pcie1 |
+          |       |        |       |        |       |
+   +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
+   |      | idx 0 |        | idx 1 |        | idx 2 |     |
+   |      +-------+        +-------+        +-------+     |
+   +------------------------------------------------------+
+
+The above three blocks represent the QCN9274 WiFi devices connected to their
+respective PCI slots. The dotted line represents the WSI connection that connects
+these three devices together. Hence, the WSI interface is part of the QCN9274 device.
+
+To describe this WSI hardware connection in the device tree, we are adding three
+properties inside the WSI object:
+
+1. qcom,wsi-group-id:
+   In the above diagram, we have one WSI connection connecting all three devices.
+   Hence, “qcom,wsi-group-id” for all three devices can be 0.
+
+   This cannot be implied by the compatible property, as explained below:
+   Let’s take the case of a platform that can have four QCN9274 WiFi devices. Below
+   is one possibility of a WSI connection:
+
+         +-------+       +-------+          +-------+      +-------+
+         | pcie2 |       | pcie3 |          | pcie1 |      | pcie0 |
+         |       |       |       |          |       |      |       |
+   +---->|  wsi  |------>|  wsi  |--+   +-->|  wsi  |----->|  wsi  |----+
+   |     | idx 0 |       | idx 1 |  |   |   | idx 0 |      | idx 1 |    |
+   |     +-------+       +-------+  |   |   +-------+      +-------+    |
+   +--------------------------------+   +-------------------------------+
+
+   In this case, QCN9274 devices connected in PCIe2 and PCIe3 will have the same
+   “qcom,wsi-group-id”. This group-id will be different from the “qcom,wsi-group-id”
+   of QCN9274 devices connected at PCIe1 and PCIe0.
+
+2. qcom,wsi-index:
+   This is a unique identifier of the device within the same group. The value of
+   wsi-idx is represented in both the above cases (RDP433 and the 4 WiFi device
+   platform) in the diagram itself.
+
+3. qcom,wsi-num-devices:
+   Represents the number of devices connected through WSI within the same WSI group to
+   which the device belongs.
+   
+   In the case of RDP433, all devices will have this number as 3.
+   For the second example with four WiFi devices but with two WSI connections, the
+   value of “qcom,wsi-num-devices” for each device will be 2.
+
+> 
+>> +
+>> +    required:
+>> +      - qcom,wsi-group-id
+>> +      - qcom,wsi-index
+>> +      - qcom,wsi-num-devices
+>> +
+>> +    additionalProperties: false
+>> +
+>>  required:
+>>    - compatible
+>>    - reg
+>> @@ -108,3 +144,28 @@ examples:
+>>              };
+>>          };
+>>      };
+>> +
+>> +  - |
+>> +    pcie {
+>> +        #address-cells = <3>;
+>> +        #size-cells = <2>;
+>> +
+>> +        pcie@0 {
+>> +            device_type = "pci";
+>> +            reg = <0x0 0x0 0x0 0x0 0x0>;
+>> +            #address-cells = <3>;
+>> +            #size-cells = <2>;
+>> +            ranges;
+>> +
+>> +            wifi@0 {
+>> +                compatible = "pci17cb,1109";
+>> +                reg = <0x0 0x0 0x0 0x0 0x0>;
+>> +
+>> +                wsi {
+>> +                    qcom,wsi-group-id = <0>;
+>> +                    qcom,wsi-index = <0>;
+>> +                    qcom,wsi-num-devices = <3>;
+> 
+> So what are the other 2 devices? Where are they documented?
+> 
+
+In the example, we have represented only one WiFi node. Although it indicates
+that there are a total of three devices in the same WSI connection with group-id
+0, we can add all three WiFi nodes in the next version if required.
+
 
