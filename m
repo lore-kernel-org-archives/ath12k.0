@@ -4,59 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE8DECF5386
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 13:30:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD0DECFA445
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 15:56:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TYT0EBM8E3P9+Vf2uv3pEZYWSOEatkyUnGTEyeT9HIE=; b=BbV9RkQmoiXApaRxP13AiVHE+I
-	WFXVJPgD7JajSRwQZiVfftd5bUvP/tAxVn831hRdVG/KYWQkdw7cCrTufz+Sf2cYh6NAd/Mj2GcTO
-	RFmVhAZEAmV+oxutKsUfPmeeMwpmbCg80kzM9f2sUIO63kVJ1pZ8ycJWMX50GMgTVhAPQST13wC39
-	j9ZLuJcVmY/ZFInx5dPdIDyOA6znZ3O/LI7QqPY3bu7N7gxx1I7AwkkeYZPRa0dC1Rj8oKnfWc6pe
-	oaIZ2MTfOewfK1E1Rwqkz/rBkhvLVIi98/q7nF45IZTXesGl20rwEom8oIG3E8iyH+jW+WL3qY9BZ
-	ExBT53Wg==;
+	bh=62S6iCnytL5p/vW3jA+z1gQwxHIHLxFaI69oZ3vFQd4=; b=W3lHXECTLk13nTNsu4J+/lrz9r
+	xC5xpPVMAtMCecMLDfIGeq0n812MvEgqFQdIbexw3sS4SXIBrjruWwC7UksXi/CJe3woC7zBy+bbj
+	dHD3HrivLf13Fs9YZmvxAWuZ5W4slfUxLRO6b9dTQ2rZfccwvD97RQjDu695tC8ALbxgw+xrpsFGv
+	G5c+G09xy68j7WoRoEkrPxr2LyFGUFFGTitAZoEtJENLXZtitybKiisgpcGvJ+M2aGC1OMmy7gzR9
+	eitELqkGh1KZdvN9w0PTDFVOBmnLmvHnxflYrxOX1SSQfpmA9WEqbK8E12O9gSQCgu7nEcQRF0PEm
+	Hja3PoFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3bRQ-0000000EYEW-1Ztj
+	id 1t3dij-0000000F3OC-1eg5
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 13:30:24 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 23 Oct 2024 15:56:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3bRI-0000000EY7x-0x7Z
+	id 1t3crG-0000000ErEe-1G6d
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 13:30:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 22F675C5F01
-	for <ath12k@lists.infradead.org>; Wed, 23 Oct 2024 13:30:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1834C4CECD;
-	Wed, 23 Oct 2024 13:30:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729690215;
-	bh=Ag9DclzY7/2/pGnRv0ABMCHxmHrgQzR27GgVipjegnE=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZOiyncwYccSkw/QrFSEPY8wrcl+/g+OHpXnfuw6Fsje4Ed+8Oy4iuvzedzLOBPqvW
-	 2IA7Na/gL/JhFKE9Tf+Lv6H8FRSPVofCgQokEj9XsgpmgGZEsv0ni/WT5TTgWCmoSR
-	 mrJvytL4KOcDN+ca+HAgoZ2q+vmknZjkiMgFMGFBpPOl/m+KTY47Hl+3TaxlccsHwK
-	 jRFe14/VHrpwA4RcIgoKoNUZybItK+efvt2CrxrHwfz3e+cLnh9o5/L6rxQZxtx84F
-	 0wSHDGyq829ySOgUDtw/KP61dHbFhiXsKOrJ8WQPXWo/sI0W+QiNGQVnOUjAjWqlnB
-	 7qf0drolDdZeg==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 8/8] wifi: ath12k: Add MLO peer assoc command support
-Date: Wed, 23 Oct 2024 16:30:04 +0300
-Message-Id: <20241023133004.2253830-9-kvalo@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20241023133004.2253830-1-kvalo@kernel.org>
-References: <20241023133004.2253830-1-kvalo@kernel.org>
+	Wed, 23 Oct 2024 15:01:11 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9qFLT020080;
+	Wed, 23 Oct 2024 15:01:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	62S6iCnytL5p/vW3jA+z1gQwxHIHLxFaI69oZ3vFQd4=; b=LM+uW4tqSpO7oUJF
+	6K6u361UT97bJenTSLtvOFA/L/xKUzi6MIvPn+AFvpQKuAXeSRJvA/1vzmd3oYnk
+	ob0Oc4ykWLoIm75ZaPEJjKcCm2ybhvCj/wBaQPQ6PzilmI23W0ebngI7+mplNVnk
+	x4nUEY2E7mbmEYoZId139fcF47uhSxmo/7Cq0wz51DEudCb/2FwJrkm+lRAWU8WN
+	a7YBJKPvkh/k2dFt9YCqlVku7zOQDYQ5piQDYDBWGFBnU3bgESQHXuEtGvbIZjek
+	xIzOCCXBtlxRH6zujvuO2vjC/AYGhby8wsq+kU0G5Atb/b10bn0oss8/bp1HOZwG
+	ZrwjTQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em66akby-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Oct 2024 15:01:07 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NF16Td011985
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Oct 2024 15:01:06 GMT
+Received: from [10.48.242.6] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
+ 2024 08:01:06 -0700
+Message-ID: <ab8f3e88-f55b-4945-b4bb-a784d1466a27@quicinc.com>
+Date: Wed, 23 Oct 2024 08:01:05 -0700
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/8] wifi: ath12k: ath12k_mac_vdev_create(): use goto for
+ error handling
+To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20241023133004.2253830-1-kvalo@kernel.org>
+ <20241023133004.2253830-2-kvalo@kernel.org>
+Content-Language: en-US
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20241023133004.2253830-2-kvalo@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 1LpIDylBV3dx0a5UIByjgau_gycP_Pcy
+X-Proofpoint-GUID: 1LpIDylBV3dx0a5UIByjgau_gycP_Pcy
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ adultscore=0 phishscore=0 impostorscore=0 malwarescore=0 mlxlogscore=999
+ suspectscore=0 clxscore=1015 mlxscore=0 bulkscore=0 priorityscore=1501
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410230092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_063016_551210_9873ACAB 
-X-CRM114-Status: GOOD (  16.55  )
+X-CRM114-CacheID: sfid-20241023_080110_529265_F6D8830C 
+X-CRM114-Status: GOOD (  17.81  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,317 +100,65 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sriram R <quic_srirrama@quicinc.com>
+On 10/23/2024 6:29 AM, Kalle Valo wrote:
+> From: Kalle Valo <quic_kvalo@quicinc.com>
+> 
+> In commit 477cabfdb776 ("wifi: ath12k: modify link arvif creation and removal
+> for MLO") I had accidentally left one personal TODO comment about using goto
+> instead of ret. Switch to use goto to be consistent with the error handling in
+> the function.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/mac.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index f5f96a8b1d61..f45f32f3b5f6 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -7047,8 +7047,7 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
+>  		ret = ath12k_wait_for_peer_delete_done(ar, arvif->vdev_id,
+>  						       arvif->bssid);
+>  		if (ret)
+> -			/* KVALO: why not goto err? */
+> -			return ret;
+> +			goto err;
 
-Add changes to send MLO peer assoc command with partner link details and
-primary umac details
+why does this goto err instead of err_vdev_del?
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>  
+>  		ar->num_peers--;
+>  	}
 
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.h |  7 +++
- drivers/net/wireless/ath/ath12k/mac.c  | 62 ++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.c  | 79 ++++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/wmi.h  | 46 +++++++++++++++
- 4 files changed, 188 insertions(+), 6 deletions(-)
+looking at the context for this patch I have a question about a different part
+of this function:
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 0a0c1a1594f2..e7a2d43e7b8a 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -487,9 +487,16 @@ struct ath12k_link_sta {
- 	struct ath12k_rx_peer_stats *rx_stats;
- 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
- 	u32 bw_prev;
-+
-+	/* For now the assoc link will be considered primary */
-+	bool is_assoc_link;
-+
-+	 /* for firmware use only */
-+	u8 link_idx;
- };
- 
- struct ath12k_sta {
-+	struct ath12k_vif *ahvif;
- 	enum hal_pn_type pn_type;
- 	struct ath12k_link_sta deflink;
- 	struct ath12k_link_sta __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index b628bc2fd0f5..2e79849974f0 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -2873,6 +2873,67 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
- 	arg->punct_bitmap = ~arvif->punct_bitmap;
- }
- 
-+static void ath12k_peer_assoc_h_mlo(struct ath12k_link_sta *arsta,
-+				    struct ath12k_wmi_peer_assoc_arg *arg)
-+{
-+	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
-+	struct peer_assoc_mlo_params *ml = &arg->ml;
-+	struct ath12k_sta *ahsta = arsta->ahsta;
-+	struct ath12k_link_sta *arsta_p;
-+	struct ath12k_link_vif *arvif;
-+	unsigned long links;
-+	u8 link_id;
-+	int i;
-+
-+	if (!sta->mlo || ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID)
-+		return;
-+
-+	ml->enabled = true;
-+	ml->assoc_link = arsta->is_assoc_link;
-+
-+	/* For now considering the primary umac based on assoc link */
-+	ml->primary_umac = arsta->is_assoc_link;
-+	ml->peer_id_valid = true;
-+	ml->logical_link_idx_valid = true;
-+
-+	ether_addr_copy(ml->mld_addr, sta->addr);
-+	ml->logical_link_idx = arsta->link_idx;
-+	ml->ml_peer_id = ahsta->ml_peer_id;
-+	ml->ieee_link_id = arsta->link_id;
-+	ml->num_partner_links = 0;
-+	links = ahsta->links_map;
-+
-+	rcu_read_lock();
-+
-+	i = 0;
-+
-+	for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-+		if (i >= ATH12K_WMI_MLO_MAX_LINKS)
-+			break;
-+
-+		arsta_p = rcu_dereference(ahsta->link[link_id]);
-+		arvif = rcu_dereference(ahsta->ahvif->link[link_id]);
-+
-+		if (arsta_p == arsta)
-+			continue;
-+
-+		if (!arvif->is_started)
-+			continue;
-+
-+		ml->partner_info[i].vdev_id = arvif->vdev_id;
-+		ml->partner_info[i].hw_link_id = arvif->ar->pdev->hw_link_id;
-+		ml->partner_info[i].assoc_link = arsta_p->is_assoc_link;
-+		ml->partner_info[i].primary_umac = arsta_p->is_assoc_link;
-+		ml->partner_info[i].logical_link_idx_valid = true;
-+		ml->partner_info[i].logical_link_idx = arsta_p->link_idx;
-+		ml->num_partner_links++;
-+
-+		i++;
-+	}
-+
-+	rcu_read_unlock();
-+}
-+
- static void ath12k_peer_assoc_prepare(struct ath12k *ar,
- 				      struct ath12k_link_vif *arvif,
- 				      struct ath12k_link_sta *arsta,
-@@ -2897,6 +2958,7 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
- 	ath12k_peer_assoc_h_qos(ar, arvif, arsta, arg);
- 	ath12k_peer_assoc_h_phymode(ar, arvif, arsta, arg);
- 	ath12k_peer_assoc_h_smps(arsta, arg);
-+	ath12k_peer_assoc_h_mlo(arsta, arg);
- 
- 	/* TODO: amsdu_disable req? */
- }
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 0583d832fac7..73c1c6bcf48b 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -2101,12 +2101,15 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
- 	struct ath12k_wmi_vht_rate_set_params *mcs;
- 	struct ath12k_wmi_he_rate_set_params *he_mcs;
- 	struct ath12k_wmi_eht_rate_set_params *eht_mcs;
-+	struct wmi_peer_assoc_mlo_params *ml_params;
-+	struct wmi_peer_assoc_mlo_partner_info *partner_info;
- 	struct sk_buff *skb;
- 	struct wmi_tlv *tlv;
- 	void *ptr;
- 	u32 peer_legacy_rates_align;
- 	u32 peer_ht_rates_align;
- 	int i, ret, len;
-+	__le32 v;
- 
- 	peer_legacy_rates_align = roundup(arg->peer_legacy_rates.num_rates,
- 					  sizeof(u32));
-@@ -2118,8 +2121,13 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
- 	      TLV_HDR_SIZE + (peer_ht_rates_align * sizeof(u8)) +
- 	      sizeof(*mcs) + TLV_HDR_SIZE +
- 	      (sizeof(*he_mcs) * arg->peer_he_mcs_count) +
--	      TLV_HDR_SIZE + (sizeof(*eht_mcs) * arg->peer_eht_mcs_count) +
--	      TLV_HDR_SIZE + TLV_HDR_SIZE;
-+	      TLV_HDR_SIZE + (sizeof(*eht_mcs) * arg->peer_eht_mcs_count);
-+
-+	if (arg->ml.enabled)
-+		len += TLV_HDR_SIZE + sizeof(*ml_params) +
-+		       TLV_HDR_SIZE + (arg->ml.num_partner_links * sizeof(*partner_info));
-+	else
-+		len += (2 * TLV_HDR_SIZE);
- 
- 	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
- 	if (!skb)
-@@ -2243,12 +2251,38 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
- 		ptr += sizeof(*he_mcs);
- 	}
- 
--	/* MLO header tag with 0 length */
--	len = 0;
- 	tlv = ptr;
-+	len = arg->ml.enabled ? sizeof(*ml_params) : 0;
- 	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT, len);
- 	ptr += TLV_HDR_SIZE;
-+	if (!len)
-+		goto skip_ml_params;
- 
-+	ml_params = ptr;
-+	ml_params->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_PEER_ASSOC_PARAMS,
-+						       len);
-+	ml_params->flags = cpu_to_le32(ATH12K_WMI_FLAG_MLO_ENABLED);
-+
-+	if (arg->ml.assoc_link)
-+		ml_params->flags |= cpu_to_le32(ATH12K_WMI_FLAG_MLO_ASSOC_LINK);
-+
-+	if (arg->ml.primary_umac)
-+		ml_params->flags |= cpu_to_le32(ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC);
-+
-+	if (arg->ml.logical_link_idx_valid)
-+		ml_params->flags |=
-+			cpu_to_le32(ATH12K_WMI_FLAG_MLO_LOGICAL_LINK_IDX_VALID);
-+
-+	if (arg->ml.peer_id_valid)
-+		ml_params->flags |= cpu_to_le32(ATH12K_WMI_FLAG_MLO_PEER_ID_VALID);
-+
-+	ether_addr_copy(ml_params->mld_addr.addr, arg->ml.mld_addr);
-+	ml_params->logical_link_idx = cpu_to_le32(arg->ml.logical_link_idx);
-+	ml_params->ml_peer_id = cpu_to_le32(arg->ml.ml_peer_id);
-+	ml_params->ieee_link_id = cpu_to_le32(arg->ml.ieee_link_id);
-+	ptr += sizeof(*ml_params);
-+
-+skip_ml_params:
- 	/* Loop through the EHT rate set */
- 	len = arg->peer_eht_mcs_count * sizeof(*eht_mcs);
- 	tlv = ptr;
-@@ -2265,12 +2299,45 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
- 		ptr += sizeof(*eht_mcs);
- 	}
- 
--	/* ML partner links tag with 0 length */
--	len = 0;
- 	tlv = ptr;
-+	len = arg->ml.enabled ? arg->ml.num_partner_links * sizeof(*partner_info) : 0;
-+	/* fill ML Partner links */
- 	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT, len);
- 	ptr += TLV_HDR_SIZE;
- 
-+	if (len == 0)
-+		goto send;
-+
-+	for (i = 0; i < arg->ml.num_partner_links; i++) {
-+		u32 cmd = WMI_TAG_MLO_PARTNER_LINK_PARAMS_PEER_ASSOC;
-+
-+		partner_info = ptr;
-+		partner_info->tlv_header = ath12k_wmi_tlv_cmd_hdr(cmd,
-+								  sizeof(*partner_info));
-+		partner_info->vdev_id = cpu_to_le32(arg->ml.partner_info[i].vdev_id);
-+		partner_info->hw_link_id =
-+			cpu_to_le32(arg->ml.partner_info[i].hw_link_id);
-+		partner_info->flags = cpu_to_le32(ATH12K_WMI_FLAG_MLO_ENABLED);
-+
-+		if (arg->ml.partner_info[i].assoc_link)
-+			partner_info->flags |=
-+				cpu_to_le32(ATH12K_WMI_FLAG_MLO_ASSOC_LINK);
-+
-+		if (arg->ml.partner_info[i].primary_umac)
-+			partner_info->flags |=
-+				cpu_to_le32(ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC);
-+
-+		if (arg->ml.partner_info[i].logical_link_idx_valid) {
-+			v = cpu_to_le32(ATH12K_WMI_FLAG_MLO_LINK_ID_VALID);
-+			partner_info->flags |= v;
-+		}
-+
-+		partner_info->logical_link_idx =
-+			cpu_to_le32(arg->ml.partner_info[i].logical_link_idx);
-+		ptr += sizeof(*partner_info);
-+	}
-+
-+send:
- 	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
- 		   "wmi peer assoc vdev id %d assoc id %d peer mac %pM peer_flags %x rate_caps %x peer_caps %x listen_intval %d ht_caps %x max_mpdu %d nss %d phymode %d peer_mpdu_density %d vht_caps %x he cap_info %x he ops %x he cap_info_ext %x he phy %x %x %x peer_bw_rxnss_override %x peer_flags_ext %x eht mac_cap %x %x eht phy_cap %x %x %x\n",
- 		   cmd->vdev_id, cmd->peer_associd, arg->peer_mac,
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 07bd275608bf..e93f74e97771 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -3698,6 +3698,24 @@ struct wmi_vdev_install_key_arg {
- #define WMI_HECAP_TXRX_MCS_NSS_IDX_160		1
- #define WMI_HECAP_TXRX_MCS_NSS_IDX_80_80	2
- 
-+#define ATH12K_WMI_MLO_MAX_PARTNER_LINKS \
-+	(ATH12K_WMI_MLO_MAX_LINKS + ATH12K_MAX_NUM_BRIDGE_LINKS - 1)
-+
-+struct peer_assoc_mlo_params {
-+	bool enabled;
-+	bool assoc_link;
-+	bool primary_umac;
-+	bool peer_id_valid;
-+	bool logical_link_idx_valid;
-+	bool bridge_peer;
-+	u8 mld_addr[ETH_ALEN];
-+	u32 logical_link_idx;
-+	u32 ml_peer_id;
-+	u32 ieee_link_id;
-+	u8 num_partner_links;
-+	struct wmi_ml_partner_info partner_info[ATH12K_WMI_MLO_MAX_LINKS];
-+};
-+
- struct wmi_rate_set_arg {
- 	u32 num_rates;
- 	u8 rates[WMI_MAX_SUPPORTED_RATES];
-@@ -3772,8 +3790,36 @@ struct ath12k_wmi_peer_assoc_arg {
- 	u32 peer_eht_tx_mcs_set[WMI_MAX_EHTCAP_RATE_SET];
- 	struct ath12k_wmi_ppe_threshold_arg peer_eht_ppet;
- 	u32 punct_bitmap;
-+	bool is_assoc;
-+	struct peer_assoc_mlo_params ml;
- };
- 
-+#define ATH12K_WMI_FLAG_MLO_ENABLED			BIT(0)
-+#define ATH12K_WMI_FLAG_MLO_ASSOC_LINK			BIT(1)
-+#define ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC		BIT(2)
-+#define ATH12K_WMI_FLAG_MLO_LINK_ID_VALID		BIT(3)
-+#define ATH12K_WMI_FLAG_MLO_PEER_ID_VALID		BIT(4)
-+
-+struct wmi_peer_assoc_mlo_partner_info {
-+	__le32 tlv_header;
-+	__le32 vdev_id;
-+	__le32 hw_link_id;
-+	__le32 flags;
-+	__le32 logical_link_idx;
-+} __packed;
-+
-+struct wmi_peer_assoc_mlo_params {
-+	__le32 tlv_header;
-+	__le32 flags;
-+	struct wmi_mac_addr mld_addr;
-+	__le32 logical_link_idx;
-+	__le32 ml_peer_id;
-+	__le32 ieee_link_id;
-+	__le32 emlsr_trans_timeout_us;
-+	__le32 emlsr_trans_delay_us;
-+	__le32 emlsr_padding_delay_us;
-+} __packed;
-+
- struct wmi_peer_assoc_complete_cmd {
- 	__le32 tlv_header;
- 	struct ath12k_wmi_mac_addr_params peer_macaddr;
--- 
-2.39.5
+	param_id = WMI_VDEV_PARAM_RTS_THRESHOLD;
+	param_value = hw->wiphy->rts_threshold;
+	ret = ath12k_wmi_vdev_set_param_cmd(ar, arvif->vdev_id,
+					    param_id, param_value);
+	if (ret) {
+		ath12k_warn(ar->ab, "failed to set rts threshold for vdev %d: %d\n",
+			    arvif->vdev_id, ret);
+
+NOTE: no return or goto
+
+	}
+
+	ath12k_dp_vdev_tx_attach(ar, arvif);
+	if (vif->type != NL80211_IFTYPE_MONITOR && ar->monitor_conf_enabled)
+		ath12k_mac_monitor_vdev_create(ar);
+
+	return ret;
+
+NOTE: this can return an error if the RTS threshold set fails, but fails
+without cleaning up (dp vdev still attached and monitor vdev created)
+
+Seems either we need error handling if the set param fails, or we should ret 0
+at this point
+
 
 
