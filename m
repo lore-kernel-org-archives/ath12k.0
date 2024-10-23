@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75EF8D2E01B
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:40:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0160CD2E018
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:41:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Wa+xxggOWq4dWlupHRrq1Np0R9BOfXJIuaFVSBhidWs=; b=HULSEXLdwVvYgEwlSzNvAAOlJw
-	DT/G5Qz5ffiAXLAVeVtbrUyzr1nEBtdXrR4SxHEmzlOyCEPTI+l7wlOUxhuMjD1WAnbmY0GnA/t3x
-	UEMAsjNJY2cTAIVli7jiuitjWs5y2eWBPMTTDZBY9/xAmV8ShTCnGk77l+Mdcdyuix5/IL7rBHcQ8
-	A81LDI09PiCrOnXzneAmETq0x0HK55TSZTSZLyyPaXho1SnWvjg43z5Ft5U4sa8cpOhZpRIYcsZ6p
-	cjIB8ZbYrsXU1duBlF0QG3o8jde/7eCk7TnF75qM8NCf0GAFVkpKU7vJLxiLoN0TjX/8ez0CPzkU5
-	NMzPwfIw==;
+	bh=P6hT5SFwOxmw0v3AUlz6KHHisPjfsNVFr6/mHvVGwTM=; b=BVWlocewqAy2d8u9OZZanO+/kW
+	+K/xOSGotSXLy/jYPxk4HqqDhqkZ+WtAsSoG6hY1PfctkRVEN7w7y+FePUs4E9h+GyFyLlziyt1dR
+	L/CQaLa4HPy9818CS2XoYwp9rMZHIjbsSBA/pv5VL1w9Jaoulq64eZSV+Lt8RK5vIYpeL5NUI2Pah
+	S6NxJ19X+ak5WqB5n7rHjRZfqHepk0RBPN4TD6PZQ8nHeicLYvu6usQlfwYyT6Y9RaiLbA2c8jK1O
+	dYOOlFCV9WpEeaRjrL20XKazmLh0bGn4iYEWsMmWFL35JBgGHLxhSLpSQaWP+B7To3S+H3oGFijZd
+	EbzBxT3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3V2w-0000000DDtA-0k0T
+	id 1t3V3T-0000000DE7N-31qY
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 06:40:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 23 Oct 2024 06:41:15 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3V1W-0000000DDTf-0yuy
+	id 1t3V3Q-0000000DE69-3Ilk
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 06:39:15 +0000
+	Wed, 23 Oct 2024 06:41:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 32AC65C593A;
-	Wed, 23 Oct 2024 06:39:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6712CC4CEC6;
-	Wed, 23 Oct 2024 06:39:07 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 0F7A5A44A19;
+	Wed, 23 Oct 2024 06:41:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CEBDC4CEC6;
+	Wed, 23 Oct 2024 06:41:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729665553;
-	bh=YyJ2c+OEV+keQkB9Twu8QLXop4Jf2DCqJOghGxpoQsU=;
+	s=k20201202; t=1729665670;
+	bh=DLIbk2m4l/8zlZ4Op5mzDc/5R/137dwD9AaXbcfI8As=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UK77Yxgo0TIk3gLkWsXyF1hj+xYyFxu1mAQj5GznSlvcaX8VVUW3xAdkUD4Macb7I
-	 swCDbTmd9APjV4p7rF0WUnG6qeJUCFS+3LmVfeb1SLVxiT+k89vUSg0VM3AV08OGeZ
-	 seUWIApdTnujuBam7/B2A2qjwT2IrQ2AuwWjRiA5fJkEACQUN4Z/Mm0bJ+ZLqMzPk5
-	 LjJCrnaXrhpJNCx6Ar8rfLW1LNm8Y0jwav8llr6zFeFrObvT6+1rVnLYcDppcckH8M
-	 KXaXUSZ+z7aLtWGRzlMOMNcNVGpggtePQPc69LQBMLxrBq8UwMThyb1ePMkja1I+2i
-	 tIWqrTpH/EOSA==
-Message-ID: <d2f0ceaf-800c-4e06-83df-a4354abc3c01@kernel.org>
-Date: Wed, 23 Oct 2024 08:39:04 +0200
+	b=EqcQ8Vt5ytzNA8NzmjQ/9SscqYHZ1pKcv54Trvqvrvv6ncchYraZk8pqMSPSCjVJm
+	 BOx5De/GrwMl7+x8AkAua7MwSjLutE078jCOGyorxbhrEdQJzlgLZ3nz+/3ClbW08R
+	 dWILXN7hD8U3w0GluLEDjlPBzamX1aSiSInr9cYZ/qjjXRvqPeI8dc1JuNWjRpEIbY
+	 plrYC1EP5l4a7wviUHqa4xQu1O0thJZkDjup8rBelVwWRF0bvy2qEoTTheMLwhLmhr
+	 j9Dt2Kgrj36weQecvafxetD0P1jL4ot0YwFQbrwnnF7pGGq47V65RluuudMZnf17Ns
+	 z/IxfyZtUY0tA==
+Message-ID: <11d4fde9-ea5d-4abe-b43c-7c5c17d45ac2@kernel.org>
+Date: Wed, 23 Oct 2024 08:41:02 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 3/6] wifi: ath12k: parse multiple device information
- from device tree
+Subject: Re: [RFC PATCH 6/6] arm64: dts: qcom: ipq9574: Add WiFi nodes for
+ RDP433
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
  Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- Harshitha Prem <quic_hprem@quicinc.com>,
- Aditya Kumar Singh <quic_adisi@quicinc.com>,
- Kalle Valo <quic_kvalo@quicinc.com>
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
 References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
- <20241023060352.605019-4-quic_rajkbhag@quicinc.com>
+ <20241023060352.605019-7-quic_rajkbhag@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,13 +103,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241023060352.605019-4-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20241023060352.605019-7-quic_rajkbhag@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241022_233914_398429_B27999AB 
-X-CRM114-Status: UNSURE (   8.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241022_234112_987527_83E5CC47 
+X-CRM114-Status: GOOD (  17.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,28 +124,80 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
-> From: Harshitha Prem <quic_hprem@quicinc.com>
+> The RDP433 is a Qualcomm Reference Design Platform based on the
+> IPQ9574. It has three QCN9274 WiFi devices connected to PCIe1, PCIe2,
+> and PCIe3. These devices are also connected among themselves via
+> WSI connection. This WSI connection is essential to exchange control
+> information among these devices
 > 
-> Currently, single device is part of device group abstraction but for multi
-> link operation, multiple devices have to be combined together. Information
-> of how many devices involved in grouping can be parsed from device tree and
-> it would have the valid group id information as well.
+> The WSI connection in RDP433 is represented below:
 > 
-> Add changes to parse devices involved and group id from device tree file
-> to form device group
+>           +-------+        +-------+        +-------+
+>           | pcie2 |        | pcie3 |        | pcie1 |
+>           |       |        |       |        |       |
+>    +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
+>    |      | idx 0 |        | idx 1 |        | idx 2 |     |
+>    |      +-------+        +-------+        +-------+     |
+>    +------------------------------------------------------+
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Based on the above, the WSI properties for QCN9274 at pcie2 are:
+>  qcom,wsi-group-id = 0
+>  qcom,wsi-index = 0
+>  qcom,wsi-num-devices = 3;
 > 
-> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-> Co-developed-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
-> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> Hence, add WiFi nodes with WSI properties for all three QCN9274
+> devices connected to RDP433.
+> 
+> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> ---
+>  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 62 ++++++++++++++++++++-
+>  1 file changed, 61 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> index 165ebbb59511..2241e20ad42a 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> @@ -3,7 +3,7 @@
+>   * IPQ9574 RDP433 board device tree source
+>   *
+>   * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
+> - * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+> + * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+>   */
+>  
+>  /dts-v1/;
+> @@ -27,6 +27,26 @@ &pcie1 {
+>  	perst-gpios = <&tlmm 26 GPIO_ACTIVE_LOW>;
+>  	wake-gpios = <&tlmm 27 GPIO_ACTIVE_LOW>;
+>  	status = "okay";
+> +
+> +	pcie@0 {
+> +		device_type = "pci";
+> +		reg = <0x0 0x0 0x0 0x0 0x0>;
+> +		#address-cells = <3>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		wifi1@0 {
+> +			compatible = "pci17cb,1109";
+> +			reg = <0x0 0x0 0x0 0x0 0x0>;
+> +			status = "okay";
 
-Missing SoB.
+Why?
 
-What does Kalle SoB do here?
+> +
+> +			wsi {
+> +				qcom,wsi-group-id = <0>;
 
-Please read carefully submitting patches.
+So all devices have the same group id? No other group id? So hard-code
+it at 0?
+
+> +				qcom,wsi-index = <2>;
+> +				qcom,wsi-num-devices = <3>;
+
+All this looks opposite how we organize usually DTS. Instead of phandles
+you pass some sort of indices. Instead of re-using some existing
+properties for remoteproc-related stuff, you add three more.
 
 
 Best regards,
