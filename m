@@ -4,99 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8696ED2E01B
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:46:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13374D2E01B
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:47:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WKer+qmsX85eCHTIFwvdJ15J6kE+HZrwwYYsPxb0rqE=; b=b16F8zh8sZb/GYJ6cjBmQiq3NX
-	Ek9za26hEKZToBShRSLrMFPa+uvoDlw2vVXJ7GKKV/OTULbycFXGZFxzD6Z3UFiUm/dDFxZqsK4f2
-	mlgNo6AQN8mmKCOzPTatG+H/fdPQkmu6Ao0u7q9tRgMnLbT168jpXdWPo9AXWkVt746HLdcjaQmz/
-	faQbmlCO60f/Xn88SQsDumCnTBGRxWzk4iF/pFuOrZkaUCGvYjvx3Zo4kvlj0NH0XuWDkzunI/zcQ
-	HsC1m910mdEMpY7OUQ8uirNiKq+/XusaxPxLWDzyqirAVuMtc/p+tV+BY1yECOVO/sh3ra/IhEZ6o
-	pHRFvkmw==;
+	bh=1OH+mQtWfTbWNCHf+mYYfF1TVK3hkJXKMZ7zZGIcFyc=; b=07s1R+LVkR1KvRUsUNp66PbdDw
+	9hkuEc5ErAiDc2T41U/Ii1vqyq572XjLqd0wwbzRD0Y09aHdJ7Gs+YI6B9v8U2NQJx7gFpaEV976X
+	gdDyAdo8WccMPkTpbqwBH4DJdp7IKcAXG1wUrJ01VRSqBVR5IGvVxvo6oX+IvAjhbYq5HNZY1t/oy
+	S2r380PhYaQNk9FkcUmjzg6FWeV6yb1iVZC/uo2nuWeLlXucnx2qaAEU+dTxvr4zJ+pVrcHB/UUmI
+	ivW1xVkmDsLW2z3AwzDUJkYXIPmsMLurzjVcDstdYg+iJ9LYt4iU8jlgZvJ6di7T90fYigXCvwZq+
+	Cr3engUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3V8V-0000000DFgo-11bA
+	id 1t3V9t-0000000DFzQ-3KuX
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 06:46:27 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 23 Oct 2024 06:47:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3V7T-0000000DFJp-3yUo
+	id 1t3V9r-0000000DFye-0SUi
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 06:45:26 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49MLasTt019397;
-	Wed, 23 Oct 2024 06:45:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	WKer+qmsX85eCHTIFwvdJ15J6kE+HZrwwYYsPxb0rqE=; b=em1ummYvKwdsqeZ6
-	cil+dhFZaQQ2kXKRyh3tchblFvNkQ5pugpJNSolVjPq91xu1QSDJ0qrjuNBqk8Kw
-	4S67tM0wY0XUcf2qUsjaH5RKV09KZUtFi6pKQvCfKFx44TUlb+20EavIBbLISTrd
-	WC+v+AmF0LLSBCHeu/EYz+gi5nnl97f3IsMEFXsadBBZvZgMuVZjm4ireYyReW7P
-	4WH20XPjCZ/ZEf2kq8l23/BTsqytgzn5GWnR0eNSF3tePR3dc0r8XAD5/MUZkhOn
-	m9LEVGlYJyn36pxvNNpLrWlU91Zfx4idXTP1FjunBPBTeXThQbtP0Y3rANALF+5r
-	UGSDtA==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3w945u-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 06:45:20 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49N6jJLk020788
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 06:45:19 GMT
-Received: from [10.151.40.160] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 22 Oct
- 2024 23:45:15 -0700
-Message-ID: <e2c1ce1a-89af-4feb-a21a-9ca2578430e7@quicinc.com>
-Date: Wed, 23 Oct 2024 12:15:12 +0530
+	Wed, 23 Oct 2024 06:47:52 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id AB6925C585A;
+	Wed, 23 Oct 2024 06:47:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFCE4C4CEC6;
+	Wed, 23 Oct 2024 06:47:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1729666069;
+	bh=OxAGPVbWTddvd95i3jWrteGHADWQjtbxcSMV+whoLVY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=LPgZj9KqVf17Ko69gT61DtQHv9m9v0L/5INbvgShufpCnFzLgbIa8JJoQ/h6eI/kI
+	 TEr9crL57BcwwFGtqR4nLSBw7Mo23BuAwQEtS1yViNc7L62mOhzMficcvUEOra5g/Y
+	 gnXtumOGisgGg9d4IdFjvQs7+jiM4VrtRvdt1VBXTaduKAybyHIWzWE9UXnEphT2ZD
+	 1Y68SCkt0hv3uj9/c7wDPAz1Q7eFq/9LdplT8YONy5tMR34ArI5ILJZeWHUPRXt9Ww
+	 upPPVWtTuKpEftxM2cIRwQzH/UcuZI9dLRlDusp0Mk8rmScvDD60IHzqQplwQaeu0r
+	 bVbIJoktazIzA==
+Message-ID: <b97b8350-3925-40b0-8f87-f89df429a52a@kernel.org>
+Date: Wed, 23 Oct 2024 08:47:42 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [RFC PATCH 1/6] dt-bindings: net: wireless: update required
  properties for ath12k PCI module
-To: Krzysztof Kozlowski <krzk@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
-        Rob
- Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor
- Dooley <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Bjorn
- Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
 References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
  <20241023060352.605019-2-quic_rajkbhag@quicinc.com>
  <87db3d68-ab1a-4cc4-9857-416de39cea0f@kernel.org>
+ <e2c1ce1a-89af-4feb-a21a-9ca2578430e7@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <87db3d68-ab1a-4cc4-9857-416de39cea0f@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <e2c1ce1a-89af-4feb-a21a-9ca2578430e7@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 9iAiefvrxc4lCyFXutX_lbqBdZ0e_L1y
-X-Proofpoint-ORIG-GUID: 9iAiefvrxc4lCyFXutX_lbqBdZ0e_L1y
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- mlxscore=0 lowpriorityscore=0 phishscore=0 impostorscore=0 clxscore=1011
- priorityscore=1501 mlxlogscore=707 suspectscore=0 bulkscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2410230040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241022_234524_156795_A75F7C38 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20241022_234751_275248_D2C2ED4A 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,27 +125,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/23/2024 12:05 PM, Krzysztof Kozlowski wrote:
-> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
->> The current device-tree bindings for the Ath12K module list many
->> WCN7850-specific properties as required. However, these properties are
->> not applicable to other Ath12K devices.
+On 23/10/2024 08:45, Raj Kumar Bhagat wrote:
+> On 10/23/2024 12:05 PM, Krzysztof Kozlowski wrote:
+>> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
+>>> The current device-tree bindings for the Ath12K module list many
+>>> WCN7850-specific properties as required. However, these properties are
+>>> not applicable to other Ath12K devices.
+>>>
+>>> Hence, remove WCN7850-specific properties from the required section,
+>>> retaining only generic properties valid across all Ath12K devices.
+>>> WCN7850-specific properties will remain required based on the device's
+>>> compatible enum.
+>> Just not true. These apply to all devices described in this binding.
 >>
->> Hence, remove WCN7850-specific properties from the required section,
->> retaining only generic properties valid across all Ath12K devices.
->> WCN7850-specific properties will remain required based on the device's
->> compatible enum.
-> Just not true. These apply to all devices described in this binding.
+>> NAK.
+>>
+>> Don't send patches for your downstream stuff.
 > 
-> NAK.
+> This is not for downstream. This series is the per-requisite for ath12k
+> MLO support in upstream.
 > 
-> Don't send patches for your downstream stuff.
+> In the subsequent patch [2/6] we are adding new device (QCN9274) in this
+> binding that do not require the WCN7850 specific properties.
+> 
+> This is a refactoring patch for the next patch [2/6].
 
-This is not for downstream. This series is the per-requisite for ath12k
-MLO support in upstream.
+It's just wrong. Not true. At this point of patch there are no other
+devices. Don't refactor uselessly introducing incorrect hardware
+description.
 
-In the subsequent patch [2/6] we are adding new device (QCN9274) in this
-binding that do not require the WCN7850 specific properties.
+Best regards,
+Krzysztof
 
-This is a refactoring patch for the next patch [2/6].
 
