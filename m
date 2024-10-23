@@ -4,87 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87EEBCFA450
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:58:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E3DCCFA455
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:58:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bIfVHdpxCpK+zcFiZWmxDhwEivfsNnyWJqTHhB3s/ZY=; b=whUVP2grTBrXbDpsqnIV63xlXm
-	8TUasumvEf4Pz/wAw6ib11Em4AbaTrA6S4gIQ9VMU0CBZlk7XCrTiHaWRqQCVE3DlpKq9hHkeV8G7
-	X/VN1/ZVIUimQsI8QcrZaG5ZzPZOi6VuiUQ7SiZ5jlj3b+uQEiZ0kDv1imIEQGfIIAZOCHzy9hPL/
-	DbvWWliZHGjWKaj3lbOocP/Fc/ay+dcfm4a1iRFU6vlndV8ewQFTDOpoRmkoUKYS2YVhFpFvKW7UW
-	PhVVIgmalO0Y/77rdraV4G1jGya3xj5HhL/Av72z2oinPApPIfcLNklvPzZRYkHPd/w5AkTcdycp9
-	5Pt2vq6w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=7U9PGU94B4BoeweqjDBO1eS+8iqNNrORoGAi2zQ7Fl8=; b=Z+tbHkYJyCnDB0U2/RDnIG4btb
+	GTsENPEhorTQYKMN5iJfK5q3e1Zwa5IK1zcB95ZW8fILbuN3dEEKl7qZMkSZEwr+HJ6OTMMXvoXyj
+	eRPn5Pw+YR6zeY8sWn41O5bQkLGTxRuz/CxQQdYyjGKizGzbZVMpzOpg1q2AT+IMzCC4gicrGK1b9
+	X1PZ60ROvPW145mgOdJLupY0jPhLBYPB0U2TCr8n3MggMT7EEEaPFqk88Wxybl8e+uaYSIy8FhAtX
+	wTuTkrz0ohfPt4NBQ+jy0ZgJPNEjJIOFG/D54lHl7JqhOYAVNnZbtNsSvpJb0R1imlm99kcuh+lNy
+	tG4JXnVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3ege-0000000FFVi-0gWc
+	id 1t3egk-0000000FFbs-1xTe
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 16:58:20 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 23 Oct 2024 16:58:26 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3dw6-0000000F5Wb-1OlH
+	id 1t3e1W-0000000F6RN-1JtI
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 16:10:15 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9wuki016177;
-	Wed, 23 Oct 2024 16:10:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	bIfVHdpxCpK+zcFiZWmxDhwEivfsNnyWJqTHhB3s/ZY=; b=TtRZVHdUIOxfKIiM
-	zFuYNhFhFdrI1c3/vIHJ6kbDluzoI0/yok9NHkusbKb+3d25XzZyOje9aB5O3PjK
-	FUCa7b/8r3Ez2RDlUnG73WKuWJav7nElcoQDUOM+PgfnpA/t58mGp0XE6+OksEn8
-	9Aiyv7GWLitX8csulqpBY1KeV8VbgZLS6TYU9LNwWc8Iw9yVI29JXwFo42EnlcuH
-	fmQKvKavJlXWl46GTsR6i34kifchJZXmKE2gYQDxfd+wSH5zCJ6fNIdqJ/kVvV+S
-	zd97RwlbJuUVrcLX0TrPBSqihWtCAy1oTRND1/a49DUQm6AFqJIiIgosoQ+P2r0J
-	73UKqw==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3xjsrt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 16:10:10 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NGAAcl014268
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 16:10:10 GMT
-Received: from [10.48.242.6] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
- 2024 09:10:09 -0700
-Message-ID: <cb386a9b-2290-4640-8f08-7834cf4e79df@quicinc.com>
-Date: Wed, 23 Oct 2024 09:10:09 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 8/8] wifi: ath12k: Add MLO peer assoc command support
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241023133004.2253830-1-kvalo@kernel.org>
- <20241023133004.2253830-9-kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <20241023133004.2253830-9-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: aoUDjNnLolHy-5y9QNU0k5pKGHNOe_Qi
-X-Proofpoint-ORIG-GUID: aoUDjNnLolHy-5y9QNU0k5pKGHNOe_Qi
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
- impostorscore=0 mlxscore=0 bulkscore=0 spamscore=0 lowpriorityscore=0
- mlxlogscore=999 malwarescore=0 priorityscore=1501 adultscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410230100
+	Wed, 23 Oct 2024 16:15:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1729700150; x=1761236150;
+  h=date:from:to:cc:subject:message-id;
+  bh=KDb7FFID7vIP9UzyDvR1hU20chddmd1EFMWx9UkOZac=;
+  b=X540N0wd4dmcgSMM2k+gZfxtdfXA/bQgNdy2R55NdxcBbjXNL+cUMk3f
+   c9bQTsqU3g8mXs4VhNE5Q5nqYSlejH1pDRLDypan/ItznBa8BeWgaMqIA
+   En/deSHYEQQBcGBkw1ef7oCX+ZTLOCnsheGvz1LdfKe/pJfaFVTvdhoSS
+   X6VlbGGVxrZcTgCD7gBn60N1+gLnZPf9jPICKoa95Pn0AIxc0gp9yUUeQ
+   l+KZIM5pc+7/OhUTSb0CUOC1ibSEVdyqXcOKWuGQvya73Rhvu+C6tiasH
+   8O0NmrxqNmUesZevwHPRJEZOgy3AeBrXr3c0mAsG/9hqafHk6gKeetZSW
+   g==;
+X-CSE-ConnectionGUID: XkCmUGCmQaacwkuc2/eX6g==
+X-CSE-MsgGUID: tZ1UOyBYQ6i9g+ajZaTT6w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11234"; a="29197133"
+X-IronPort-AV: E=Sophos;i="6.11,226,1725346800"; 
+   d="scan'208";a="29197133"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2024 09:15:48 -0700
+X-CSE-ConnectionGUID: mAKjWXaeTCuBBvwWUuGZmw==
+X-CSE-MsgGUID: aP+lxegPQAW878Jb78ItGA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,226,1725346800"; 
+   d="scan'208";a="80199491"
+Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
+  by orviesa009.jf.intel.com with ESMTP; 23 Oct 2024 09:15:46 -0700
+Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1t3e1Q-000V8M-0i;
+	Wed, 23 Oct 2024 16:15:44 +0000
+Date: Thu, 24 Oct 2024 00:15:32 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:for-next] BUILD SUCCESS
+ ca68ce0d9f4bcd032fd1334441175ae399642a06
+Message-ID: <202410240024.PiFzOiU2-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_091014_429474_08E86B15 
-X-CRM114-Status: GOOD (  26.68  )
+X-CRM114-CacheID: sfid-20241023_091550_394654_1265D4E3 
+X-CRM114-Status: UNSURE (   3.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,326 +84,136 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/23/2024 6:30 AM, Kalle Valo wrote:
-> From: Sriram R <quic_srirrama@quicinc.com>
-> 
-> Add changes to send MLO peer assoc command with partner link details and
-> primary umac details
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/core.h |  7 +++
->  drivers/net/wireless/ath/ath12k/mac.c  | 62 ++++++++++++++++++++
->  drivers/net/wireless/ath/ath12k/wmi.c  | 79 ++++++++++++++++++++++++--
->  drivers/net/wireless/ath/ath12k/wmi.h  | 46 +++++++++++++++
->  4 files changed, 188 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 0a0c1a1594f2..e7a2d43e7b8a 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -487,9 +487,16 @@ struct ath12k_link_sta {
->  	struct ath12k_rx_peer_stats *rx_stats;
->  	struct ath12k_wbm_tx_stats *wbm_tx_stats;
->  	u32 bw_prev;
-> +
-> +	/* For now the assoc link will be considered primary */
-> +	bool is_assoc_link;
-> +
-> +	 /* for firmware use only */
-> +	u8 link_idx;
->  };
->  
->  struct ath12k_sta {
-> +	struct ath12k_vif *ahvif;
->  	enum hal_pn_type pn_type;
->  	struct ath12k_link_sta deflink;
->  	struct ath12k_link_sta __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index b628bc2fd0f5..2e79849974f0 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -2873,6 +2873,67 @@ static void ath12k_peer_assoc_h_eht(struct ath12k *ar,
->  	arg->punct_bitmap = ~arvif->punct_bitmap;
->  }
->  
-> +static void ath12k_peer_assoc_h_mlo(struct ath12k_link_sta *arsta,
-> +				    struct ath12k_wmi_peer_assoc_arg *arg)
-> +{
-> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
-> +	struct peer_assoc_mlo_params *ml = &arg->ml;
-> +	struct ath12k_sta *ahsta = arsta->ahsta;
-> +	struct ath12k_link_sta *arsta_p;
-> +	struct ath12k_link_vif *arvif;
-> +	unsigned long links;
-> +	u8 link_id;
-> +	int i;
-> +
-> +	if (!sta->mlo || ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID)
-> +		return;
-> +
-> +	ml->enabled = true;
-> +	ml->assoc_link = arsta->is_assoc_link;
-> +
-> +	/* For now considering the primary umac based on assoc link */
-> +	ml->primary_umac = arsta->is_assoc_link;
-> +	ml->peer_id_valid = true;
-> +	ml->logical_link_idx_valid = true;
-> +
-> +	ether_addr_copy(ml->mld_addr, sta->addr);
-> +	ml->logical_link_idx = arsta->link_idx;
-> +	ml->ml_peer_id = ahsta->ml_peer_id;
-> +	ml->ieee_link_id = arsta->link_id;
-> +	ml->num_partner_links = 0;
-> +	links = ahsta->links_map;
-> +
-> +	rcu_read_lock();
-> +
-> +	i = 0;
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
+branch HEAD: ca68ce0d9f4bcd032fd1334441175ae399642a06  wifi: ath12k: fix warning when unbinding
 
-nit: setting i=0 doesn't need to be RCU protected
+elapsed time: 1476m
 
-> +
-> +	for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-> +		if (i >= ATH12K_WMI_MLO_MAX_LINKS)
-> +			break;
-> +
-> +		arsta_p = rcu_dereference(ahsta->link[link_id]);
-> +		arvif = rcu_dereference(ahsta->ahvif->link[link_id]);
-> +
-> +		if (arsta_p == arsta)
-> +			continue;
-> +
-> +		if (!arvif->is_started)
-> +			continue;
-> +
-> +		ml->partner_info[i].vdev_id = arvif->vdev_id;
-> +		ml->partner_info[i].hw_link_id = arvif->ar->pdev->hw_link_id;
-> +		ml->partner_info[i].assoc_link = arsta_p->is_assoc_link;
-> +		ml->partner_info[i].primary_umac = arsta_p->is_assoc_link;
-> +		ml->partner_info[i].logical_link_idx_valid = true;
-> +		ml->partner_info[i].logical_link_idx = arsta_p->link_idx;
-> +		ml->num_partner_links++;
-> +
-> +		i++;
-> +	}
-> +
-> +	rcu_read_unlock();
-> +}
-> +
->  static void ath12k_peer_assoc_prepare(struct ath12k *ar,
->  				      struct ath12k_link_vif *arvif,
->  				      struct ath12k_link_sta *arsta,
-> @@ -2897,6 +2958,7 @@ static void ath12k_peer_assoc_prepare(struct ath12k *ar,
->  	ath12k_peer_assoc_h_qos(ar, arvif, arsta, arg);
->  	ath12k_peer_assoc_h_phymode(ar, arvif, arsta, arg);
->  	ath12k_peer_assoc_h_smps(arsta, arg);
-> +	ath12k_peer_assoc_h_mlo(arsta, arg);
->  
->  	/* TODO: amsdu_disable req? */
->  }
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-> index 0583d832fac7..73c1c6bcf48b 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.c
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> @@ -2101,12 +2101,15 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
->  	struct ath12k_wmi_vht_rate_set_params *mcs;
->  	struct ath12k_wmi_he_rate_set_params *he_mcs;
->  	struct ath12k_wmi_eht_rate_set_params *eht_mcs;
-> +	struct wmi_peer_assoc_mlo_params *ml_params;
-> +	struct wmi_peer_assoc_mlo_partner_info *partner_info;
->  	struct sk_buff *skb;
->  	struct wmi_tlv *tlv;
->  	void *ptr;
->  	u32 peer_legacy_rates_align;
->  	u32 peer_ht_rates_align;
->  	int i, ret, len;
-> +	__le32 v;
->  
->  	peer_legacy_rates_align = roundup(arg->peer_legacy_rates.num_rates,
->  					  sizeof(u32));
-> @@ -2118,8 +2121,13 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
->  	      TLV_HDR_SIZE + (peer_ht_rates_align * sizeof(u8)) +
->  	      sizeof(*mcs) + TLV_HDR_SIZE +
->  	      (sizeof(*he_mcs) * arg->peer_he_mcs_count) +
-> -	      TLV_HDR_SIZE + (sizeof(*eht_mcs) * arg->peer_eht_mcs_count) +
-> -	      TLV_HDR_SIZE + TLV_HDR_SIZE;
-> +	      TLV_HDR_SIZE + (sizeof(*eht_mcs) * arg->peer_eht_mcs_count);
-> +
-> +	if (arg->ml.enabled)
-> +		len += TLV_HDR_SIZE + sizeof(*ml_params) +
-> +		       TLV_HDR_SIZE + (arg->ml.num_partner_links * sizeof(*partner_info));
-> +	else
-> +		len += (2 * TLV_HDR_SIZE);
->  
->  	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
->  	if (!skb)
-> @@ -2243,12 +2251,38 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
->  		ptr += sizeof(*he_mcs);
->  	}
->  
-> -	/* MLO header tag with 0 length */
-> -	len = 0;
->  	tlv = ptr;
-> +	len = arg->ml.enabled ? sizeof(*ml_params) : 0;
->  	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT, len);
->  	ptr += TLV_HDR_SIZE;
-> +	if (!len)
-> +		goto skip_ml_params;
->  
-> +	ml_params = ptr;
-> +	ml_params->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_PEER_ASSOC_PARAMS,
-> +						       len);
+configs tested: 116
+configs skipped: 3
 
-this is another instance where we are using the same length for two
-consecutive TLVs -- that doesn't seem right
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-> +	ml_params->flags = cpu_to_le32(ATH12K_WMI_FLAG_MLO_ENABLED);
-> +
-> +	if (arg->ml.assoc_link)
-> +		ml_params->flags |= cpu_to_le32(ATH12K_WMI_FLAG_MLO_ASSOC_LINK);
-> +
-> +	if (arg->ml.primary_umac)
-> +		ml_params->flags |= cpu_to_le32(ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC);
-> +
-> +	if (arg->ml.logical_link_idx_valid)
-> +		ml_params->flags |=
-> +			cpu_to_le32(ATH12K_WMI_FLAG_MLO_LOGICAL_LINK_IDX_VALID);
-> +
-> +	if (arg->ml.peer_id_valid)
-> +		ml_params->flags |= cpu_to_le32(ATH12K_WMI_FLAG_MLO_PEER_ID_VALID);
-> +
-> +	ether_addr_copy(ml_params->mld_addr.addr, arg->ml.mld_addr);
-> +	ml_params->logical_link_idx = cpu_to_le32(arg->ml.logical_link_idx);
-> +	ml_params->ml_peer_id = cpu_to_le32(arg->ml.ml_peer_id);
-> +	ml_params->ieee_link_id = cpu_to_le32(arg->ml.ieee_link_id);
-> +	ptr += sizeof(*ml_params);
-> +
-> +skip_ml_params:
->  	/* Loop through the EHT rate set */
->  	len = arg->peer_eht_mcs_count * sizeof(*eht_mcs);
->  	tlv = ptr;
-> @@ -2265,12 +2299,45 @@ int ath12k_wmi_send_peer_assoc_cmd(struct ath12k *ar,
->  		ptr += sizeof(*eht_mcs);
->  	}
->  
-> -	/* ML partner links tag with 0 length */
-> -	len = 0;
->  	tlv = ptr;
-> +	len = arg->ml.enabled ? arg->ml.num_partner_links * sizeof(*partner_info) : 0;
-> +	/* fill ML Partner links */
->  	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT, len);
->  	ptr += TLV_HDR_SIZE;
->  
-> +	if (len == 0)
-> +		goto send;
-> +
-> +	for (i = 0; i < arg->ml.num_partner_links; i++) {
-> +		u32 cmd = WMI_TAG_MLO_PARTNER_LINK_PARAMS_PEER_ASSOC;
-> +
-> +		partner_info = ptr;
-> +		partner_info->tlv_header = ath12k_wmi_tlv_cmd_hdr(cmd,
-> +								  sizeof(*partner_info));
-> +		partner_info->vdev_id = cpu_to_le32(arg->ml.partner_info[i].vdev_id);
-> +		partner_info->hw_link_id =
-> +			cpu_to_le32(arg->ml.partner_info[i].hw_link_id);
-> +		partner_info->flags = cpu_to_le32(ATH12K_WMI_FLAG_MLO_ENABLED);
-> +
-> +		if (arg->ml.partner_info[i].assoc_link)
-> +			partner_info->flags |=
-> +				cpu_to_le32(ATH12K_WMI_FLAG_MLO_ASSOC_LINK);
-> +
-> +		if (arg->ml.partner_info[i].primary_umac)
-> +			partner_info->flags |=
-> +				cpu_to_le32(ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC);
-> +
-> +		if (arg->ml.partner_info[i].logical_link_idx_valid) {
-> +			v = cpu_to_le32(ATH12K_WMI_FLAG_MLO_LINK_ID_VALID);
-> +			partner_info->flags |= v;
-> +		}
-> +
-> +		partner_info->logical_link_idx =
-> +			cpu_to_le32(arg->ml.partner_info[i].logical_link_idx);
-> +		ptr += sizeof(*partner_info);
-> +	}
-> +
-> +send:
->  	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
->  		   "wmi peer assoc vdev id %d assoc id %d peer mac %pM peer_flags %x rate_caps %x peer_caps %x listen_intval %d ht_caps %x max_mpdu %d nss %d phymode %d peer_mpdu_density %d vht_caps %x he cap_info %x he ops %x he cap_info_ext %x he phy %x %x %x peer_bw_rxnss_override %x peer_flags_ext %x eht mac_cap %x %x eht phy_cap %x %x %x\n",
->  		   cmd->vdev_id, cmd->peer_associd, arg->peer_mac,
-> diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-> index 07bd275608bf..e93f74e97771 100644
-> --- a/drivers/net/wireless/ath/ath12k/wmi.h
-> +++ b/drivers/net/wireless/ath/ath12k/wmi.h
-> @@ -3698,6 +3698,24 @@ struct wmi_vdev_install_key_arg {
->  #define WMI_HECAP_TXRX_MCS_NSS_IDX_160		1
->  #define WMI_HECAP_TXRX_MCS_NSS_IDX_80_80	2
->  
-> +#define ATH12K_WMI_MLO_MAX_PARTNER_LINKS \
-> +	(ATH12K_WMI_MLO_MAX_LINKS + ATH12K_MAX_NUM_BRIDGE_LINKS - 1)
-> +
-> +struct peer_assoc_mlo_params {
-> +	bool enabled;
-> +	bool assoc_link;
-> +	bool primary_umac;
-> +	bool peer_id_valid;
-> +	bool logical_link_idx_valid;
-> +	bool bridge_peer;
-> +	u8 mld_addr[ETH_ALEN];
-> +	u32 logical_link_idx;
-> +	u32 ml_peer_id;
-> +	u32 ieee_link_id;
-> +	u8 num_partner_links;
-> +	struct wmi_ml_partner_info partner_info[ATH12K_WMI_MLO_MAX_LINKS];
-> +};
-> +
->  struct wmi_rate_set_arg {
->  	u32 num_rates;
->  	u8 rates[WMI_MAX_SUPPORTED_RATES];
-> @@ -3772,8 +3790,36 @@ struct ath12k_wmi_peer_assoc_arg {
->  	u32 peer_eht_tx_mcs_set[WMI_MAX_EHTCAP_RATE_SET];
->  	struct ath12k_wmi_ppe_threshold_arg peer_eht_ppet;
->  	u32 punct_bitmap;
-> +	bool is_assoc;
-> +	struct peer_assoc_mlo_params ml;
->  };
->  
-> +#define ATH12K_WMI_FLAG_MLO_ENABLED			BIT(0)
-> +#define ATH12K_WMI_FLAG_MLO_ASSOC_LINK			BIT(1)
-> +#define ATH12K_WMI_FLAG_MLO_PRIMARY_UMAC		BIT(2)
-> +#define ATH12K_WMI_FLAG_MLO_LINK_ID_VALID		BIT(3)
-> +#define ATH12K_WMI_FLAG_MLO_PEER_ID_VALID		BIT(4)
-> +
-> +struct wmi_peer_assoc_mlo_partner_info {
+tested configs:
+alpha                             allnoconfig    gcc-13.3.0
+alpha                             allnoconfig    gcc-14.1.0
+alpha                            allyesconfig    clang-20
+alpha                               defconfig    gcc-14.1.0
+arc                              alldefconfig    clang-20
+arc                              allmodconfig    clang-20
+arc                               allnoconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-14.1.0
+arc                              allyesconfig    clang-20
+arc                                 defconfig    gcc-14.1.0
+arm                              allmodconfig    clang-20
+arm                               allnoconfig    clang-20
+arm                               allnoconfig    gcc-14.1.0
+arm                              allyesconfig    clang-20
+arm                                 defconfig    gcc-14.1.0
+arm                      footbridge_defconfig    clang-20
+arm                      jornada720_defconfig    clang-20
+arm                       multi_v4t_defconfig    clang-20
+arm                         mv78xx0_defconfig    clang-20
+arm                           sunxi_defconfig    clang-20
+arm64                            allmodconfig    clang-20
+arm64                             allnoconfig    gcc-14.1.0
+arm64                               defconfig    gcc-14.1.0
+csky                              allnoconfig    gcc-14.1.0
+csky                                defconfig    gcc-14.1.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon                           allnoconfig    gcc-14.1.0
+hexagon                          allyesconfig    clang-20
+hexagon                             defconfig    gcc-14.1.0
+i386                             allmodconfig    clang-18
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    clang-18
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    clang-18
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20241023    clang-18
+i386        buildonly-randconfig-002-20241023    clang-18
+i386        buildonly-randconfig-003-20241023    gcc-12
+i386        buildonly-randconfig-004-20241023    gcc-12
+i386        buildonly-randconfig-005-20241023    clang-18
+i386        buildonly-randconfig-006-20241023    clang-18
+i386                                defconfig    clang-18
+i386                  randconfig-001-20241023    gcc-12
+i386                  randconfig-002-20241023    clang-18
+i386                  randconfig-003-20241023    clang-18
+i386                  randconfig-004-20241023    clang-18
+i386                  randconfig-005-20241023    clang-18
+i386                  randconfig-006-20241023    gcc-12
+i386                  randconfig-011-20241023    clang-18
+i386                  randconfig-012-20241023    gcc-12
+i386                  randconfig-013-20241023    gcc-12
+i386                  randconfig-014-20241023    clang-18
+i386                  randconfig-015-20241023    clang-18
+i386                  randconfig-016-20241023    clang-18
+loongarch                        allmodconfig    gcc-14.1.0
+loongarch                         allnoconfig    gcc-14.1.0
+loongarch                           defconfig    gcc-14.1.0
+m68k                             allmodconfig    gcc-14.1.0
+m68k                              allnoconfig    gcc-14.1.0
+m68k                             allyesconfig    gcc-14.1.0
+m68k                                defconfig    gcc-14.1.0
+microblaze                       allmodconfig    gcc-14.1.0
+microblaze                        allnoconfig    gcc-14.1.0
+microblaze                       allyesconfig    gcc-14.1.0
+microblaze                          defconfig    gcc-14.1.0
+mips                              allnoconfig    gcc-14.1.0
+mips                           ip30_defconfig    clang-20
+mips                           jazz_defconfig    clang-20
+nios2                         3c120_defconfig    clang-20
+nios2                             allnoconfig    gcc-14.1.0
+nios2                               defconfig    gcc-14.1.0
+openrisc                          allnoconfig    clang-20
+openrisc                          allnoconfig    gcc-14.1.0
+openrisc                            defconfig    gcc-12
+parisc                            allnoconfig    clang-20
+parisc                            allnoconfig    gcc-14.1.0
+parisc                              defconfig    gcc-12
+parisc64                            defconfig    gcc-14.1.0
+powerpc                           allnoconfig    clang-20
+powerpc                           allnoconfig    gcc-14.1.0
+powerpc                    gamecube_defconfig    clang-20
+powerpc                      ppc44x_defconfig    clang-20
+powerpc                     redwood_defconfig    clang-20
+riscv                             allnoconfig    clang-20
+riscv                             allnoconfig    gcc-14.1.0
+riscv                               defconfig    gcc-12
+s390                             allmodconfig    gcc-14.1.0
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.1.0
+s390                                defconfig    gcc-12
+sh                               allmodconfig    gcc-14.1.0
+sh                                allnoconfig    gcc-14.1.0
+sh                               allyesconfig    gcc-14.1.0
+sh                                  defconfig    gcc-12
+sh                           se7722_defconfig    clang-20
+sh                           se7724_defconfig    clang-20
+sh                        sh7785lcr_defconfig    clang-20
+sparc                            allmodconfig    gcc-14.1.0
+sparc64                             defconfig    gcc-12
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-17
+um                                allnoconfig    clang-20
+um                               allyesconfig    clang-20
+um                                  defconfig    gcc-12
+um                             i386_defconfig    gcc-12
+um                           x86_64_defconfig    gcc-12
+x86_64                            allnoconfig    clang-18
+x86_64                           allyesconfig    clang-18
+x86_64                              defconfig    clang-18
+x86_64                              defconfig    gcc-11
+x86_64                                  kexec    clang-18
+x86_64                                  kexec    gcc-12
+x86_64                               rhel-8.3    gcc-12
+x86_64                    rhel-8.3-kselftests    gcc-12
+xtensa                            allnoconfig    gcc-14.1.0
 
-this doesn't follow the WMI naming convention, should be _params
-
-> +	__le32 tlv_header;
-> +	__le32 vdev_id;
-> +	__le32 hw_link_id;
-> +	__le32 flags;
-> +	__le32 logical_link_idx;
-> +} __packed;
-> +
-> +struct wmi_peer_assoc_mlo_params {
-> +	__le32 tlv_header;
-> +	__le32 flags;
-> +	struct wmi_mac_addr mld_addr;
-> +	__le32 logical_link_idx;
-> +	__le32 ml_peer_id;
-> +	__le32 ieee_link_id;
-> +	__le32 emlsr_trans_timeout_us;
-> +	__le32 emlsr_trans_delay_us;
-> +	__le32 emlsr_padding_delay_us;
-> +} __packed;
-> +
->  struct wmi_peer_assoc_complete_cmd {
->  	__le32 tlv_header;
->  	struct ath12k_wmi_mac_addr_params peer_macaddr;
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
