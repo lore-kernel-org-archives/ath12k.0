@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14CCECFA44F
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:21:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82E12CFA44E
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:21:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QSgiKCqlVzFV8sXcx6hw5LFFjJAWoVBYu8gEsbHn6aQ=; b=2hwJl2Wc+NqzEXk8Dn8Y5sudkz
-	j0KaIYxuC8ZlHH4jFFnsFg98Z+XnXL9ocp5upjY55bHmO6WxpryOBLL2n3L2RHhBPriUnyUIW8UQA
-	U3tESIf46UVWG22Ek40GIji7WaZ9+MkTLnwR79OgS7+IDpNMlB3QjhrQCWt/0snr2zc5AM2OGqczt
-	D/+pQK8+OVguLRhnUYjysY0Go7kdVfq2Qm6AJByfwPMWC5NCVOUyxwN/TbfYexG5yNd2sm4YpzYHQ
-	XsEos9RozKk5nqY2awFdg3w5QkuddntIveKbjB3CGaIoRzDEIL9uJh8ycmon8dO/ShjB2nu/JRobv
-	xco8FlLw==;
+	bh=sHduossKecf4hbXroik6u8ZzJxDWaenUn4RABmxCs4Y=; b=xRaPWGK3+V5mGLDVrwaemvB8oT
+	D+nzm1Y1sVNy5ZWro5WbXP86XWu/kSHS1wWE2xg2xnIHbPeWqN7lVLGb7WYZX+X0dkLrZfhTekP+X
+	LyFr/tyAEFSD7ocWY0+9xapaQjFNZA/dCF2dWngkp7u5Zp86c8sepvKrmkktfsNAGymXS9UcBNoum
+	tquUxCBvTpmreQHAhVU3rh0qlbUM2LSktBSyD1aFyEAG0Ny2dsGLsouTfsy3AT37A1IymKDNwXLxk
+	B53mfjXMfVir/awDnmsfES9wQXAd0DuFb4Yx3B+acBiRZyJloMMsRExxs8TG6p0nJrzC6zrX+bhHR
+	KESu6yiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3e70-0000000F7Po-2yb0
+	id 1t3e70-0000000F7PJ-0Rrm
 	for ath12k@archiver.kernel.org;
 	Wed, 23 Oct 2024 16:21:30 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3dRT-0000000EzVm-3xr9
+	id 1t3dR8-0000000EzRW-3cLZ
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 15:38:37 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9k8ZX025445;
-	Wed, 23 Oct 2024 15:38:34 GMT
+	Wed, 23 Oct 2024 15:38:17 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9v3aJ016005;
+	Wed, 23 Oct 2024 15:38:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	QSgiKCqlVzFV8sXcx6hw5LFFjJAWoVBYu8gEsbHn6aQ=; b=WcAR4o6ZczVoxE+a
-	C/4hR8g/rbFPy6Bf3KazWrbpl1lIdTNHqACoHgR9NUQo0bGL9rZ19hkccfmUhRRH
-	BEWs1MdB2LW7mAwqLQq2ZhArEWPs8iObWCaNaFhkXvx0YnpS/uK9OmhK7IpnlswJ
-	fK2eeIJ/ZxbbGd6BavTePkRcEHnwQE9smxN72G+5jC9+A9EIhIwqE1rqOdxzewQz
-	Gd/1ciVZFc6wzIntjILxk5whaz5MVEl3WCv5YPOyyMnZsfyjJ2VpdSLBI0I4rlsz
-	9243jyI9w1ghBQS1V4wRaep9B71F6a9/q/c38ondglDbiiwrWRnBjbov90oTGmIa
-	zcYeLQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em40aq75-1
+	sHduossKecf4hbXroik6u8ZzJxDWaenUn4RABmxCs4Y=; b=AdP6a243VFKV5k6M
+	hH/uo/Gno9Lv+Qlr7rNktxQ3J4v7fzgC889NvMliRdPDiT55uuaZVJrTIMqKT216
+	S0M8up0NC7SQoDhomiBvjpMTJkt3U6WhuQIYDlJsXw+nJAwffjGI36ne8WlJtKFi
+	3EcHPttpO1gQHpcuFMDRjEoPQP7n8xM9vMp4aG6dND1S2NP1ahrVCvsQfr6Z9VN7
+	kNX4h6DGmyC717JyH7ap8gUeoTx22YGM+PivNck1RASYY6uJMcuFT3/2lNMCn5ie
+	vs1FtiPDWYfsYY6pKuJhhzxMYnSkHgnvsCP7QbvSHd+rdfjJhe/lLoeO/p0JUng8
+	g17hhQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3xjpy6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 15:38:33 +0000 (GMT)
+	Wed, 23 Oct 2024 15:38:11 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NFcXeR031607
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NFcAdd020429
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 15:38:33 GMT
+	Wed, 23 Oct 2024 15:38:10 GMT
 Received: from [10.48.242.6] (10.49.16.6) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
- 2024 08:38:32 -0700
-Message-ID: <b989b83c-f911-4d67-b703-1ac3ee219559@quicinc.com>
-Date: Wed, 23 Oct 2024 08:38:32 -0700
+ 2024 08:38:10 -0700
+Message-ID: <a4b92b80-ec57-4db3-acd7-9c6c7644d7c9@quicinc.com>
+Date: Wed, 23 Oct 2024 08:38:09 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/8] wifi: ath12k: introduce ath12k_hw_warn()
+Subject: Re: [PATCH 3/8] wifi: ath12k: Refactor sta state machine
 To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>
 References: <20241023133004.2253830-1-kvalo@kernel.org>
- <20241023133004.2253830-5-kvalo@kernel.org>
+ <20241023133004.2253830-4-kvalo@kernel.org>
 From: Jeff Johnson <quic_jjohnson@quicinc.com>
 Content-Language: en-US
-In-Reply-To: <20241023133004.2253830-5-kvalo@kernel.org>
+In-Reply-To: <20241023133004.2253830-4-kvalo@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.49.16.6]
@@ -72,19 +72,19 @@ X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: hfqgwRpWNka-6thcBbDiiFVg4qqMHYT_
-X-Proofpoint-GUID: hfqgwRpWNka-6thcBbDiiFVg4qqMHYT_
+X-Proofpoint-GUID: 5gQrdkBJhrp3g4VgTnC9HzPQU0yqwjHw
+X-Proofpoint-ORIG-GUID: 5gQrdkBJhrp3g4VgTnC9HzPQU0yqwjHw
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- impostorscore=0 spamscore=0 phishscore=0 mlxlogscore=980
- lowpriorityscore=0 clxscore=1015 malwarescore=0 bulkscore=0 suspectscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ impostorscore=0 mlxscore=0 bulkscore=0 spamscore=0 lowpriorityscore=0
+ mlxlogscore=999 malwarescore=0 priorityscore=1501 adultscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2409260000 definitions=main-2410230096
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_083836_029257_BFA75EC3 
-X-CRM114-Status: GOOD (  20.77  )
+X-CRM114-CacheID: sfid-20241023_083814_976315_BC44F02C 
+X-CRM114-Status: GOOD (  30.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,97 +99,483 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/23/2024 6:30 AM, Kalle Valo wrote:
-> From: Kalle Valo <quic_kvalo@quicinc.com>
+On 10/23/2024 6:29 AM, Kalle Valo wrote:
+> From: Sriram R <quic_srirrama@quicinc.com>
 > 
-> In the following patch we need to use ath12k_warn() but don't easily have
-> access to struct ath12k_base (ab) but do have access to struct ath12k_hw (ah).
-> So add a new warning helper ath12_hw_warn() which takes the latter but the log
-> output is still identical but uses the struct device pointer stored to struct
-> ath12k_hw.
+> Refactor ath12k_mac_op_sta_state(), with generic wrappers which can be used for
+> both multi link stations and non-ML stations.
 > 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
+> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 > Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 > ---
->  drivers/net/wireless/ath/ath12k/core.h  | 2 ++
->  drivers/net/wireless/ath/ath12k/debug.c | 4 ++--
-
-Qualcomm Innovation Center copyright missing 2024
-
->  drivers/net/wireless/ath/ath12k/debug.h | 5 ++++-
->  drivers/net/wireless/ath/ath12k/mac.c   | 2 ++
->  4 files changed, 10 insertions(+), 3 deletions(-)
+>  drivers/net/wireless/ath/ath12k/core.h |   3 +
+>  drivers/net/wireless/ath/ath12k/mac.c  | 341 +++++++++++++++++--------
+>  2 files changed, 242 insertions(+), 102 deletions(-)
 > 
 > diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 6faa46b9adc9..9c4e5fae8930 100644
+> index 06b637ba8b8f..6faa46b9adc9 100644
 > --- a/drivers/net/wireless/ath/ath12k/core.h
 > +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -684,6 +684,8 @@ struct ath12k {
+> @@ -461,6 +461,9 @@ struct ath12k_link_sta {
+>  	struct ath12k_link_vif *arvif;
+>  	struct ath12k_sta *ahsta;
 >  
->  struct ath12k_hw {
->  	struct ieee80211_hw *hw;
-> +	struct device *dev;
+> +	/* link address similar to ieee80211_link_sta */
+> +	u8 addr[ETH_ALEN];
 > +
->  	/* Protect the write operation of the hardware state ath12k_hw::state
->  	 * between hardware start<=>reconfigure<=>stop transitions.
->  	 */
-> diff --git a/drivers/net/wireless/ath/ath12k/debug.c b/drivers/net/wireless/ath/ath12k/debug.c
-> index fe5a732ba9ec..c5c8c7624cdb 100644
-> --- a/drivers/net/wireless/ath/ath12k/debug.c
-> +++ b/drivers/net/wireless/ath/ath12k/debug.c
-> @@ -36,7 +36,7 @@ void ath12k_err(struct ath12k_base *ab, const char *fmt, ...)
->  	va_end(args);
->  }
->  
-> -void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...)
-> +void __ath12k_warn(struct device *dev, const char *fmt, ...)
->  {
->  	struct va_format vaf = {
->  		.fmt = fmt,
-> @@ -45,7 +45,7 @@ void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...)
->  
->  	va_start(args, fmt);
->  	vaf.va = &args;
-> -	dev_warn_ratelimited(ab->dev, "%pV", &vaf);
-> +	dev_warn_ratelimited(dev, "%pV", &vaf);
->  	/* TODO: Trace the log */
->  	va_end(args);
->  }
-> diff --git a/drivers/net/wireless/ath/ath12k/debug.h b/drivers/net/wireless/ath/ath12k/debug.h
-> index f7005917362c..90e801136bc6 100644
-> --- a/drivers/net/wireless/ath/ath12k/debug.h
-> +++ b/drivers/net/wireless/ath/ath12k/debug.h
-> @@ -31,7 +31,10 @@ enum ath12k_debug_mask {
->  
->  __printf(2, 3) void ath12k_info(struct ath12k_base *ab, const char *fmt, ...);
->  __printf(2, 3) void ath12k_err(struct ath12k_base *ab, const char *fmt, ...);
-> -__printf(2, 3) void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...);
-> +__printf(2, 3) void __ath12k_warn(struct device *dev, const char *fmt, ...);
-> +
-> +#define ath12k_warn(ab, fmt, ...) __ath12k_warn((ab)->dev, fmt, ##__VA_ARGS__)
-> +#define ath12k_hw_warn(ah, fmt, ...) __ath12k_warn((ah)->dev, fmt, ##__VA_ARGS__)
-
-for consistency should we do this for the other log levels as well?
-
-are there places where we currently retrieve ab just for logging where we
-already have ah, and hence could avoid the extra dereference?
-
->  
->  extern unsigned int ath12k_debug_mask;
->  
+>  	/* the following are protected by ar->data_lock */
+>  	u32 changed; /* IEEE80211_RC_* */
+>  	u32 bw;
 > diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 3de6d605cd74..19c445cf52f1 100644
+> index d4aa4540c8e6..3de6d605cd74 100644
 > --- a/drivers/net/wireless/ath/ath12k/mac.c
 > +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -10193,6 +10193,8 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
->  			goto err;
->  		}
+> @@ -4519,10 +4519,10 @@ ath12k_mac_set_peer_vht_fixed_rate(struct ath12k_link_vif *arvif,
+>  	return ret;
+>  }
 >  
-> +		ah->dev = ab->dev;
-> +
->  		ab->ah[i] = ah;
+> -static int ath12k_station_assoc(struct ath12k *ar,
+> -				struct ath12k_link_vif *arvif,
+> -				struct ath12k_link_sta *arsta,
+> -				bool reassoc)
+> +static int ath12k_mac_station_assoc(struct ath12k *ar,
+> +				    struct ath12k_link_vif *arvif,
+> +				    struct ath12k_link_sta *arsta,
+> +				    bool reassoc)
+>  {
+>  	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+>  	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> @@ -4609,28 +4609,19 @@ static int ath12k_station_assoc(struct ath12k *ar,
+>  	return 0;
+>  }
+>  
+> -static int ath12k_station_disassoc(struct ath12k *ar,
+> -				   struct ath12k_link_vif *arvif,
+> -				   struct ath12k_link_sta *arsta)
+> +static int ath12k_mac_station_disassoc(struct ath12k *ar,
+> +				       struct ath12k_link_vif *arvif,
+> +				       struct ath12k_link_sta *arsta)
+>  {
+>  	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> -	int ret;
+>  
+>  	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>  
+>  	if (!sta->wme) {
+>  		arvif->num_legacy_stations--;
+> -		ret = ath12k_recalc_rtscts_prot(arvif);
+> -		if (ret)
+> -			return ret;
+> +		return ath12k_recalc_rtscts_prot(arvif);
 >  	}
 >  
+> -	ret = ath12k_clear_peer_keys(arvif, sta->addr);
+> -	if (ret) {
+> -		ath12k_warn(ar->ab, "failed to clear all peer keys for vdev %i: %d\n",
+> -			    arvif->vdev_id, ret);
+> -		return ret;
+> -	}
+>  	return 0;
+>  }
+>  
+> @@ -4826,6 +4817,145 @@ static void ath12k_mac_dec_num_stations(struct ath12k_link_vif *arvif,
+>  	ar->num_stations--;
+>  }
+>  
+> +static void ath12k_mac_station_post_remove(struct ath12k *ar,
+> +					   struct ath12k_link_vif *arvif,
+> +					   struct ath12k_link_sta *arsta)
+> +{
+> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> +	struct ath12k_sta *ahsta = arsta->ahsta;
+> +	struct ath12k_peer *peer;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	ath12k_mac_dec_num_stations(arvif, arsta);
+> +
+> +	spin_lock_bh(&ar->ab->base_lock);
+> +
+> +	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+> +	if (peer && peer->sta == sta) {
+> +		ath12k_warn(ar->ab, "Found peer entry %pM n vdev %i after it was supposedly removed\n",
+> +			    vif->addr, arvif->vdev_id);
+> +		peer->sta = NULL;
+> +		list_del(&peer->list);
+> +		kfree(peer);
+> +		ar->num_peers--;
+> +	}
+> +
+> +	spin_unlock_bh(&ar->ab->base_lock);
+> +
+> +	kfree(arsta->rx_stats);
+> +	arsta->rx_stats = NULL;
+> +
+> +	if (arsta->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
+> +		rcu_assign_pointer(ahsta->link[arsta->link_id], NULL);
+> +		synchronize_rcu();
+
+I've mentioned this in the past in some internal discussion and seems now is a
+good time to bring this to light.
+
+It concerns me that this happens so late in the process. In theory another
+thread could already have a valid arsta pointer and could be trying to
+dereference that pointer while the code above is destroying underlying data
+(i.e. arsta->rx_stats).
+
+Should we set this to NULL and synchronize RCU at the beginning of the process
+so that we know all access to the struct has finished before we start
+destroying the data?
+
+Or can this not actually happen in practice due to other synchronization
+mechansims? And if so, should we document that somewhere?
+
+
+> +		ahsta->links_map &= ~(BIT(arsta->link_id));
+> +		arsta->link_id = ATH12K_INVALID_LINK_ID;
+> +		arsta->ahsta = NULL;
+> +	}
+> +}
+> +
+> +static int ath12k_mac_station_unauthorize(struct ath12k *ar,
+> +					  struct ath12k_link_vif *arvif,
+> +					  struct ath12k_link_sta *arsta)
+> +{
+> +	struct ath12k_peer *peer;
+> +	int ret;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	spin_lock_bh(&ar->ab->base_lock);
+> +
+> +	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, arsta->addr);
+> +	if (peer)
+> +		peer->is_authorized = false;
+> +
+> +	spin_unlock_bh(&ar->ab->base_lock);
+> +
+> +	/* Driver should clear the peer keys during mac80211's ref ptr
+> +	 * gets cleared in __sta_info_destroy_part2 (trans from
+> +	 * IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC)
+
+I'm unable to understand this comment
+
+> +	 */
+> +	ret = ath12k_clear_peer_keys(arvif, arsta->addr);
+> +	if (ret) {
+> +		ath12k_warn(ar->ab, "failed to clear all peer keys for vdev %i: %d\n",
+> +			    arvif->vdev_id, ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int ath12k_mac_station_authorize(struct ath12k *ar,
+> +					struct ath12k_link_vif *arvif,
+> +					struct ath12k_link_sta *arsta)
+> +{
+> +	struct ath12k_peer *peer;
+> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> +	int ret;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	spin_lock_bh(&ar->ab->base_lock);
+> +
+> +	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+> +	if (peer)
+> +		peer->is_authorized = true;
+> +
+> +	spin_unlock_bh(&ar->ab->base_lock);
+> +
+> +	if (vif->type == NL80211_IFTYPE_STATION && arvif->is_up) {
+> +		ret = ath12k_wmi_set_peer_param(ar, sta->addr,
+> +						arvif->vdev_id,
+> +						WMI_PEER_AUTHORIZE,
+> +						1);
+> +		if (ret) {
+> +			ath12k_warn(ar->ab, "Unable to authorize peer %pM vdev %d: %d\n",
+> +				    sta->addr, arvif->vdev_id, ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int ath12k_mac_station_remove(struct ath12k *ar,
+> +				     struct ath12k_link_vif *arvif,
+> +				     struct ath12k_link_sta *arsta)
+> +{
+> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> +	struct ath12k_vif *ahvif = arvif->ahvif;
+> +	int ret;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	wiphy_work_cancel(ar->ah->hw->wiphy, &arsta->update_wk);
+> +
+> +	if (ahvif->vdev_type == WMI_VDEV_TYPE_STA) {
+> +		ath12k_bss_disassoc(ar, arvif);
+> +		ret = ath12k_mac_vdev_stop(arvif);
+> +		if (ret)
+> +			ath12k_warn(ar->ab, "failed to stop vdev %i: %d\n",
+> +				    arvif->vdev_id, ret);
+> +	}
+> +
+> +	ath12k_dp_peer_cleanup(ar, arvif->vdev_id, sta->addr);
+> +
+> +	ret = ath12k_peer_delete(ar, arvif->vdev_id, sta->addr);
+> +	if (ret)
+> +		ath12k_warn(ar->ab, "Failed to delete peer: %pM for VDEV: %d\n",
+> +			    sta->addr, arvif->vdev_id);
+> +	else
+> +		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "Removed peer: %pM for VDEV: %d\n",
+> +			   sta->addr, arvif->vdev_id);
+> +
+> +	ath12k_mac_station_post_remove(ar, arvif, arsta);
+> +
+> +	return ret;
+> +}
+> +
+>  static int ath12k_mac_station_add(struct ath12k *ar,
+>  				  struct ath12k_link_vif *arvif,
+>  				  struct ath12k_link_sta *arsta)
+> @@ -4933,31 +5063,37 @@ static u32 ath12k_mac_ieee80211_sta_bw_to_wmi(struct ath12k *ar,
+>  	return bw;
+>  }
+>  
+> -static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+> -				   struct ieee80211_vif *vif,
+> -				   struct ieee80211_sta *sta,
+> -				   enum ieee80211_sta_state old_state,
+> -				   enum ieee80211_sta_state new_state)
+> +static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
+> +					    struct ath12k_link_vif *arvif,
+> +					    struct ath12k_link_sta *arsta,
+> +					    enum ieee80211_sta_state old_state,
+> +					    enum ieee80211_sta_state new_state)
+>  {
+> -	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+> -	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
+> -	struct ath12k *ar;
+> -	struct ath12k_link_vif *arvif;
+> -	struct ath12k_link_sta *arsta;
+> -	struct ath12k_peer *peer;
+> +	struct ath12k *ar = arvif->ar;
+> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> +	struct ath12k_sta *ahsta = arsta->ahsta;
+>  	int ret = 0;
+>  
+>  	lockdep_assert_wiphy(hw->wiphy);
+>  
+> -	arvif = &ahvif->deflink;
+> -	arsta = &ahsta->deflink;
+> +	/* IEEE80211_STA_NONE -> IEEE80211_STA_NOTEXIST: Remove the station
+> +	 * from driver
+> +	 */
+> +	if ((old_state == IEEE80211_STA_NONE &&
+> +	     new_state == IEEE80211_STA_NOTEXIST)) {
+> +		/* ML sta needs separate handling */
+> +		if (sta->mlo)
+> +			return 0;
+>  
+> -	ar = ath12k_get_ar_by_vif(hw, vif);
+> -	if (!ar) {
+> -		WARN_ON_ONCE(1);
+> -		return -EINVAL;
+> +		ret = ath12k_mac_station_remove(ar, arvif, arsta);
+> +		if (ret) {
+> +			ath12k_warn(ar->ab, "Failed to remove station: %pM for VDEV: %d\n",
+> +				    arsta->addr, arvif->vdev_id);
+> +		}
+>  	}
+>  
+> +	/* IEEE80211_STA_NOTEXIST -> IEEE80211_STA_NONE: Add new station to driver */
+>  	if (old_state == IEEE80211_STA_NOTEXIST &&
+>  	    new_state == IEEE80211_STA_NONE) {
+>  		memset(arsta, 0, sizeof(*arsta));
+> @@ -4975,56 +5111,16 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+>  		if (ret)
+>  			ath12k_warn(ar->ab, "Failed to add station: %pM for VDEV: %d\n",
+>  				    sta->addr, arvif->vdev_id);
+> -	} else if ((old_state == IEEE80211_STA_NONE &&
+> -		    new_state == IEEE80211_STA_NOTEXIST)) {
+> -		wiphy_work_cancel(hw->wiphy, &arsta->update_wk);
+>  
+> -		if (ahvif->vdev_type == WMI_VDEV_TYPE_STA) {
+> -			ath12k_bss_disassoc(ar, arvif);
+> -			ret = ath12k_mac_vdev_stop(arvif);
+> -			if (ret)
+> -				ath12k_warn(ar->ab, "failed to stop vdev %i: %d\n",
+> -					    arvif->vdev_id, ret);
+> -		}
+> -		ath12k_dp_peer_cleanup(ar, arvif->vdev_id, sta->addr);
+> -
+> -		ret = ath12k_peer_delete(ar, arvif->vdev_id, sta->addr);
+> -		if (ret)
+> -			ath12k_warn(ar->ab, "Failed to delete peer: %pM for VDEV: %d\n",
+> -				    sta->addr, arvif->vdev_id);
+> -		else
+> -			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "Removed peer: %pM for VDEV: %d\n",
+> -				   sta->addr, arvif->vdev_id);
+> -
+> -		ath12k_mac_dec_num_stations(arvif, arsta);
+> -		spin_lock_bh(&ar->ab->base_lock);
+> -		peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+> -		if (peer && peer->sta == sta) {
+> -			ath12k_warn(ar->ab, "Found peer entry %pM n vdev %i after it was supposedly removed\n",
+> -				    vif->addr, arvif->vdev_id);
+> -			peer->sta = NULL;
+> -			list_del(&peer->list);
+> -			kfree(peer);
+> -			ar->num_peers--;
+> -		}
+> -		spin_unlock_bh(&ar->ab->base_lock);
+> -
+> -		kfree(arsta->rx_stats);
+> -		arsta->rx_stats = NULL;
+> -
+> -		if (arsta->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
+> -			rcu_assign_pointer(ahsta->link[arsta->link_id], NULL);
+> -			synchronize_rcu();
+> -			ahsta->links_map &= ~(BIT(arsta->link_id));
+> -			arsta->link_id = ATH12K_INVALID_LINK_ID;
+> -			arsta->ahsta = NULL;
+> -		}
+> +	/* IEEE80211_STA_AUTH -> IEEE80211_STA_ASSOC: Send station assoc command for
+> +	 * peer associated to AP/Mesh/ADHOC vif type.
+> +	 */
+>  	} else if (old_state == IEEE80211_STA_AUTH &&
+>  		   new_state == IEEE80211_STA_ASSOC &&
+>  		   (vif->type == NL80211_IFTYPE_AP ||
+>  		    vif->type == NL80211_IFTYPE_MESH_POINT ||
+>  		    vif->type == NL80211_IFTYPE_ADHOC)) {
+> -		ret = ath12k_station_assoc(ar, arvif, arsta, false);
+> +		ret = ath12k_mac_station_assoc(ar, arvif, arsta, false);
+>  		if (ret)
+>  			ath12k_warn(ar->ab, "Failed to associate station: %pM\n",
+>  				    sta->addr);
+> @@ -5035,40 +5131,32 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+>  		arsta->bw_prev = sta->deflink.bandwidth;
+>  
+>  		spin_unlock_bh(&ar->data_lock);
+> +
+> +	/* IEEE80211_STA_ASSOC -> IEEE80211_STA_AUTHORIZED: set peer status as
+> +	 * authorized
+> +	 */
+>  	} else if (old_state == IEEE80211_STA_ASSOC &&
+>  		   new_state == IEEE80211_STA_AUTHORIZED) {
+> -		spin_lock_bh(&ar->ab->base_lock);
+> +		ret = ath12k_mac_station_authorize(ar, arvif, arsta);
+> +		if (ret)
+> +			ath12k_warn(ar->ab, "Failed to authorize station: %pM\n",
+> +				    sta->addr);
+>  
+> -		peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+> -		if (peer)
+> -			peer->is_authorized = true;
+> -
+> -		spin_unlock_bh(&ar->ab->base_lock);
+> -
+> -		if (vif->type == NL80211_IFTYPE_STATION && arvif->is_up) {
+> -			ret = ath12k_wmi_set_peer_param(ar, sta->addr,
+> -							arvif->vdev_id,
+> -							WMI_PEER_AUTHORIZE,
+> -							1);
+> -			if (ret)
+> -				ath12k_warn(ar->ab, "Unable to authorize peer %pM vdev %d: %d\n",
+> -					    sta->addr, arvif->vdev_id, ret);
+> -		}
+> +	/* IEEE80211_STA_AUTHORIZED -> IEEE80211_STA_ASSOC: station may be in removal,
+> +	 * deauthorize it.
+> +	 */
+>  	} else if (old_state == IEEE80211_STA_AUTHORIZED &&
+>  		   new_state == IEEE80211_STA_ASSOC) {
+> -		spin_lock_bh(&ar->ab->base_lock);
+> -
+> -		peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+> -		if (peer)
+> -			peer->is_authorized = false;
+> -
+> -		spin_unlock_bh(&ar->ab->base_lock);
+> +		ath12k_mac_station_unauthorize(ar, arvif, arsta);
+> +	/* IEEE80211_STA_ASSOC -> IEEE80211_STA_AUTH: disassoc peer connected to
+> +	 * AP/mesh/ADHOC vif type.
+> +	 */
+>  	} else if (old_state == IEEE80211_STA_ASSOC &&
+>  		   new_state == IEEE80211_STA_AUTH &&
+>  		   (vif->type == NL80211_IFTYPE_AP ||
+>  		    vif->type == NL80211_IFTYPE_MESH_POINT ||
+>  		    vif->type == NL80211_IFTYPE_ADHOC)) {
+> -		ret = ath12k_station_disassoc(ar, arvif, arsta);
+> +		ret = ath12k_mac_station_disassoc(ar, arvif, arsta);
+>  		if (ret)
+>  			ath12k_warn(ar->ab, "Failed to disassociate station: %pM\n",
+>  				    sta->addr);
+> @@ -5077,6 +5165,55 @@ static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+>  	return ret;
+>  }
+>  
+> +static int ath12k_mac_op_sta_state(struct ieee80211_hw *hw,
+> +				   struct ieee80211_vif *vif,
+> +				   struct ieee80211_sta *sta,
+> +				   enum ieee80211_sta_state old_state,
+> +				   enum ieee80211_sta_state new_state)
+> +{
+> +	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+> +	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
+> +	struct ath12k_link_vif *arvif;
+> +	struct ath12k_link_sta *arsta;
+> +	int ret;
+> +	u8 link_id = 0;
+> +
+> +	lockdep_assert_wiphy(hw->wiphy);
+> +
+> +	if (ieee80211_vif_is_mld(vif) && sta->valid_links) {
+> +		WARN_ON(!sta->mlo && hweight16(sta->valid_links) != 1);
+> +		link_id = ffs(sta->valid_links) - 1;
+> +	}
+> +
+> +	/* Handle for non-ML station */
+> +	if (!sta->mlo) {
+> +		arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> +		arsta = &ahsta->deflink;
+> +		arsta->ahsta = ahsta;
+> +
+> +		if (WARN_ON(!arvif || !arsta)) {
+> +			ret = -EINVAL;
+> +			goto exit;
+> +		}
+> +
+> +		/* vdev might be in deleted */
+> +		if (WARN_ON(!arvif->ar)) {
+> +			ret = -EINVAL;
+> +			goto exit;
+> +		}
+> +
+> +		ret = ath12k_mac_handle_link_sta_state(hw, arvif, arsta,
+> +						       old_state, new_state);
+> +		if (ret)
+> +			goto exit;
+> +	}
+> +
+> +	ret = 0;
+> +
+> +exit:
+> +	return ret;
+> +}
+> +
+>  static int ath12k_mac_op_sta_set_txpwr(struct ieee80211_hw *hw,
+>  				       struct ieee80211_vif *vif,
+>  				       struct ieee80211_sta *sta)
 
 
