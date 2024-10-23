@@ -4,51 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13374D2E01B
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:47:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD473D2E018
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:48:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1OH+mQtWfTbWNCHf+mYYfF1TVK3hkJXKMZ7zZGIcFyc=; b=07s1R+LVkR1KvRUsUNp66PbdDw
-	9hkuEc5ErAiDc2T41U/Ii1vqyq572XjLqd0wwbzRD0Y09aHdJ7Gs+YI6B9v8U2NQJx7gFpaEV976X
-	gdDyAdo8WccMPkTpbqwBH4DJdp7IKcAXG1wUrJ01VRSqBVR5IGvVxvo6oX+IvAjhbYq5HNZY1t/oy
-	S2r380PhYaQNk9FkcUmjzg6FWeV6yb1iVZC/uo2nuWeLlXucnx2qaAEU+dTxvr4zJ+pVrcHB/UUmI
-	ivW1xVkmDsLW2z3AwzDUJkYXIPmsMLurzjVcDstdYg+iJ9LYt4iU8jlgZvJ6di7T90fYigXCvwZq+
-	Cr3engUA==;
+	bh=FYXO3RiGkDV74bLV2Lo8+7OlBmeQBbjN3E98oHRiqP4=; b=tk9/Es9NcJtNTNSO8gjbM3jCpo
+	LkDQSk92ygyeuO9U3HK8py6CCm1Q2Vs9x08I8R5SmpsL0H6BJSgonjt6sWKEEkw8SnQKzHY7LU64t
+	VCTfItkLHNAp7nv+ssKod4Ano5fRxG+PKqpvYN7++d4CUWanYTBm+x9cj5GvKAiYsrfMpyFOFfKWY
+	ojTqQ4/p7iXZsWU9hVbXwLvXP/DJdhvCJ63zGjj/2lQh7Yw2gi7jwCr1BFWCBVbOQKX0Of89YcHgS
+	/Ds98qXIXCg2IA3NQdXLyKgndN8Xu/mk5Cgyat6KLcZqLfssEj6vr2bkpKyUn5cIcpDnduyVkObFv
+	+Dtx+Q4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3V9t-0000000DFzQ-3KuX
+	id 1t3VAH-0000000DG6d-1ei4
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 06:47:53 +0000
+	Wed, 23 Oct 2024 06:48:17 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3V9r-0000000DFye-0SUi
+	id 1t3VAF-0000000DG5r-1kxv
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 06:47:52 +0000
+	Wed, 23 Oct 2024 06:48:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AB6925C585A;
-	Wed, 23 Oct 2024 06:47:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFCE4C4CEC6;
-	Wed, 23 Oct 2024 06:47:44 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5B5355C5B2F;
+	Wed, 23 Oct 2024 06:48:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3B33C4CEC6;
+	Wed, 23 Oct 2024 06:48:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729666069;
-	bh=OxAGPVbWTddvd95i3jWrteGHADWQjtbxcSMV+whoLVY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=LPgZj9KqVf17Ko69gT61DtQHv9m9v0L/5INbvgShufpCnFzLgbIa8JJoQ/h6eI/kI
-	 TEr9crL57BcwwFGtqR4nLSBw7Mo23BuAwQEtS1yViNc7L62mOhzMficcvUEOra5g/Y
-	 gnXtumOGisgGg9d4IdFjvQs7+jiM4VrtRvdt1VBXTaduKAybyHIWzWE9UXnEphT2ZD
-	 1Y68SCkt0hv3uj9/c7wDPAz1Q7eFq/9LdplT8YONy5tMR34ArI5ILJZeWHUPRXt9Ww
-	 upPPVWtTuKpEftxM2cIRwQzH/UcuZI9dLRlDusp0Mk8rmScvDD60IHzqQplwQaeu0r
-	 bVbIJoktazIzA==
-Message-ID: <b97b8350-3925-40b0-8f87-f89df429a52a@kernel.org>
-Date: Wed, 23 Oct 2024 08:47:42 +0200
+	s=k20201202; t=1729666094;
+	bh=WpTnFxz1chkAQNFeW1luDVAAg4aD5B5WCT5CGZNetPY=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=uJtx+TAej8qLG0kTz//Xf3wrppf92/UOauayg55vRlVOKuAVIazebHTCBMjkIGuwK
+	 lHjm7kK7vzu/1Pn/MNMshIooc2V/HmQjiiLtlt0+cF2t8PIUx/zhKzMkyMR4MBwUtX
+	 CB/MklEFeOEt2x55FrcCQbneDTuV7/aF/eZSShmWrmX4cwwnLZ6xtvvkOY8q9imKnA
+	 H62LO1twXIrTsMI2CeA0c+wpwTBtUWC3f0Pjse9FbO7MsRTPQ9wStVyl2tTYd2iXYQ
+	 we6NtA3fUalFm6GZ1uu2LoM4uPU2ZfAP62H5y32p0U5bF8UGOFFZ4XC2ssPPq6DCm9
+	 r/fAn5TbKZfsw==
+Message-ID: <83c91325-9044-484c-8efa-819746c6ae03@kernel.org>
+Date: Wed, 23 Oct 2024 08:48:07 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 1/6] dt-bindings: net: wireless: update required
- properties for ath12k PCI module
+Subject: Re: [RFC PATCH 2/6] dt-bindings: net: wireless: ath12k: describe WSI
+ property for QCN9274
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -57,10 +58,8 @@ Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
 References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
- <20241023060352.605019-2-quic_rajkbhag@quicinc.com>
- <87db3d68-ab1a-4cc4-9857-416de39cea0f@kernel.org>
- <e2c1ce1a-89af-4feb-a21a-9ca2578430e7@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <20241023060352.605019-3-quic_rajkbhag@quicinc.com>
+ <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -105,12 +104,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <e2c1ce1a-89af-4feb-a21a-9ca2578430e7@quicinc.com>
+In-Reply-To: <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241022_234751_275248_D2C2ED4A 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20241022_234815_577986_35F3F8E2 
+X-CRM114-Status: GOOD (  11.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,34 +124,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 23/10/2024 08:45, Raj Kumar Bhagat wrote:
-> On 10/23/2024 12:05 PM, Krzysztof Kozlowski wrote:
->> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
->>> The current device-tree bindings for the Ath12K module list many
->>> WCN7850-specific properties as required. However, these properties are
->>> not applicable to other Ath12K devices.
->>>
->>> Hence, remove WCN7850-specific properties from the required section,
->>> retaining only generic properties valid across all Ath12K devices.
->>> WCN7850-specific properties will remain required based on the device's
->>> compatible enum.
->> Just not true. These apply to all devices described in this binding.
+On 23/10/2024 08:38, Krzysztof Kozlowski wrote:
+> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
+>> QCN9274 device has WSI support. WSI stands for WLAN Serial Interface.
+>> It is used for the exchange of specific control information across
+>> radios based on the doorbell mechanism. This WSI connection is
+>> essential to exchange control information among these devices
 >>
->> NAK.
+>> Hence, describe WSI interface supported in QCN9274 with the following
+>> properties:
 >>
->> Don't send patches for your downstream stuff.
+>>  - qcom,wsi-group-id: It represents the identifier assigned to the WSI
+>>    connection. All the ath12k devices connected to same WSI connection
+>>    have the same wsi-group-id.
+>>
+>>  - qcom,wsi-index: It represents the identifier assigned to ath12k
+>>    device in the order of the WSI connection.
+>>
+>>  - qcom,wsi-num-devices: Number of devices connected through WSI in
+>>    the same group ID.
 > 
-> This is not for downstream. This series is the per-requisite for ath12k
-> MLO support in upstream.
+> You should have separate binding.
 > 
-> In the subsequent patch [2/6] we are adding new device (QCN9274) in this
-> binding that do not require the WCN7850 specific properties.
-> 
-> This is a refactoring patch for the next patch [2/6].
+>>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+>>  .../bindings/net/wireless/qcom,ath12k.yaml    | 61 +++++++++++++++++++
+>>  1 file changed, 61 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> index ecf38af747f7..6c8f97865075 100644
+>> --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> @@ -19,6 +19,7 @@ properties:
+>>    compatible:
+>>      enum:
+>>        - pci17cb,1107  # WCN7850
+>> +      - pci17cb,1109  # QCN9274
+>>  
+>>    reg:
+>>      maxItems: 1
+>> @@ -50,6 +51,41 @@ properties:
+>>    vddpcie1p8-supply:
+>>      description: VDD_PCIE_1P8 supply regulator handle
+>>  
+>> +  wsi:
+>> +    type: object
 
-It's just wrong. Not true. At this point of patch there are no other
-devices. Don't refactor uselessly introducing incorrect hardware
-description.
+Plus this entire wsi has to be dropped - it's useless. No bus here.
 
 Best regards,
 Krzysztof
