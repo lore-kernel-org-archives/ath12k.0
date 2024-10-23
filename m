@@ -4,54 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AACD9D2E015
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D19E7D2E017
 	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 06:04:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UaioJ0eVyiCTzLLnBGtidDZNDYJqhP4CKzB3Elszs1M=; b=fSZJ4z+E8bABgZqT+yE8hEsLKT
-	giG44lfBU/lqJIXwNOMwXn3+Vvzd7tEsQRtx66icrCqz1AOOcZiRTGQ3Y3pOk3GcOCOoBEFy3c+rP
-	aabP0C2/8j96CLlPsQ82JgsaMkILwc4DBgrB7k6APHyDlB+heOUeUOCWbjpA0Dot13QJyPBGkN6AC
-	KLVnFxQ1zqqlvJBYnXZzJZifaYceubye4bpnKxj9WDbs4xxjR7/fLN3XwNzKuNHXeiy5GCKwqwc3+
-	YIdj6RJVn5puJZImTGiCnyi0am+mK0KPLuy9F4HhtUNjiDNG9QMHzBZrreFYIM3GOxYhuGiSC32W8
-	trYm+vWg==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2MlZa3dNLdwiSMgj2PMGkDGf7M38y7kDPQ5kmRSQk30=; b=pZrd/qBwljBZp9SOaxCDmYIne9
+	AO9CZCjXd7CuSExBL7iacCudgkCEXMo6EjhYx2f322G0ELTtO4nwKqsJzh7JqZsEUbCjgJ1Az7LwH
+	QwjWuMIOlAZU8722vBnrDNimUFXkr9FLTS+OQ87r59sDOJGHZpl0AGn+DU6fRH+NyhDQH7gVSa/xV
+	6ilzLVWKBoHYwfgeB/AReXkYIQap2rXa9FLG8WURySAUxkqLkqXZImfTFvSgncbjf1pAX+a7fbxAb
+	fbQnk6aR8sZutR63dOU7BIOBYIufqmOwBNx8+25v5g+yuytZe5EraGaKv8yXnHycpSMSiGv6fueiv
+	D5xh/kcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3UTr-0000000D8Jy-0Qo2
+	id 1t3UTr-0000000D8KB-2FQZ
 	for ath12k@archiver.kernel.org;
 	Wed, 23 Oct 2024 06:04:27 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3UTn-0000000D8JA-2I8S
+	id 1t3UTo-0000000D8JR-1UEK
 	for ath12k@lists.infradead.org;
 	Wed, 23 Oct 2024 06:04:25 +0000
 Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49MLZk30023371;
-	Wed, 23 Oct 2024 06:04:18 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49MLa5Wd024348;
+	Wed, 23 Oct 2024 06:04:22 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=UaioJ0eVyiCTzLLnBGtidD
-	ZNDYJqhP4CKzB3Elszs1M=; b=LC8nnm22KXQFxhsaIausQP2I6Uggge/iHeQHqS
-	iaAmnUZX7isCXSPDpLqC5k+4+krAxJ8lel9m1YJ/iOeq7FpcIg1mxpbRJ68y4zIq
-	80geLh1VCKjHhYmNwKQdJJCT+fCmzppNMgT16zmmthqq0L1td72m7PGaxQOBLuj4
-	wzv9+XT0XvOovLyJOOLZpFsSpsS6BMj017aBrddBNQARcrk7cOd6CzKDQ0QFI9aE
-	1DvRhbP888D9JRtyIXTSHcI7kWL3OSyK9VHxyEEOCkIvey2ZVQMMG3ReJvgcgTOG
-	LRXdIKzmOYPOi3sjzRVktzxOR4yyvB2WdINKLNxIjsMiUqhA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3uh110-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	2MlZa3dNLdwiSMgj2PMGkDGf7M38y7kDPQ5kmRSQk30=; b=Sdf5ntYSqxX9G/2S
+	cx6AtERC/AH16QXh1GeZNeGuxP4IsZRUYPNTrjt9uCUT9nbOULvG844tK84GWws6
+	gVqoIGF0iiJUnbcUYexBqIOWRMYQH7CCzykSCuBdt5zYnBVjzHty+pbS4mUrTmDU
+	S9CNugGGKwkFxEmBsVxRlisWO8+6RrwpGzcxcDJOAp0smG93x+M+XKnYlL5JyvL+
+	2YKp2sBPP9uBwwpIr0hbtMzm6GYIBA8HStkwjr0z01JmGa6jT1SDg279CjnGlj27
+	zFfur7jnIxE/63xQ7pKFRP/l0ATktltC5X36GwqIrTEms8v8AJ0yXmq1flrpQuNM
+	9gmFTA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3uh115-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 06:04:17 +0000 (GMT)
+	Wed, 23 Oct 2024 06:04:22 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49N64HBE019296
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49N64LRh008447
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Oct 2024 06:04:17 GMT
+	Wed, 23 Oct 2024 06:04:21 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 22 Oct 2024 23:04:12 -0700
+ 15.2.1544.9; Tue, 22 Oct 2024 23:04:17 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
@@ -66,10 +67,12 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
         Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [RFC PATCH 0/6] wifi: ath12k: Add WSI node for QCN9274 in RDP433 for MLO
-Date: Wed, 23 Oct 2024 11:33:46 +0530
-Message-ID: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
+Subject: [RFC PATCH 1/6] dt-bindings: net: wireless: update required properties for ath12k PCI module
+Date: Wed, 23 Oct 2024 11:33:47 +0530
+Message-ID: <20241023060352.605019-2-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
+References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -78,19 +81,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 9x18enGXEG3xKUqG5yFVdx8wNvnIt8lU
-X-Proofpoint-ORIG-GUID: 9x18enGXEG3xKUqG5yFVdx8wNvnIt8lU
+X-Proofpoint-GUID: 5RMuoJIn9Nf3-Qb7y-NA-waFCgEbFqGz
+X-Proofpoint-ORIG-GUID: 5RMuoJIn9Nf3-Qb7y-NA-waFCgEbFqGz
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
  impostorscore=0 lowpriorityscore=0 spamscore=0 bulkscore=0 adultscore=0
- suspectscore=0 phishscore=0 clxscore=1015 mlxscore=0 mlxlogscore=999
+ suspectscore=0 phishscore=0 clxscore=1015 mlxscore=0 mlxlogscore=840
  malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2409260000 definitions=main-2410230035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241022_230423_613518_C85E0261 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20241022_230424_422386_5196F4F1 
+X-CRM114-Status: GOOD (  11.69  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,58 +108,69 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The RDP433 is a Qualcomm Reference Design Platform based on the
-IPQ9574. It features three QCN9274 WiFi devices connected to PCIe1,
-PCIe2, and PCIe3. These devices are also interconnected via a WLAN
-Serial Interface (WSI) connection. This WSI connection is essential
-to exchange control information among these devices.
+The current device-tree bindings for the Ath12K module list many
+WCN7850-specific properties as required. However, these properties are
+not applicable to other Ath12K devices.
 
-This patch series describes the WSI interface found in QCN9274 and
-uses this device-tree node in the Ath12k driver to provide details
-of adjacent devices in Multi Link Operation (MLO) among multiple
-QCN9274 devices.
+Hence, remove WCN7850-specific properties from the required section,
+retaining only generic properties valid across all Ath12K devices.
+WCN7850-specific properties will remain required based on the device's
+compatible enum.
 
-NOTES:
-1. As ath12k MLO patches are not ready yet, this patchset does not apply
-   to the ath.git ath-next branch and that's why the patchset is marked
-   as RFC. These are the work-in-progress patches we have at the moment.
-   The full set of MLO patches is available at:
-   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=ath12k-mlo-qcn9274
+Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+---
+ .../bindings/net/wireless/qcom,ath12k.yaml    | 29 +++++++++++++------
+ 1 file changed, 20 insertions(+), 9 deletions(-)
 
-2. The dependency marked below applies only to the DTS patch. The
-   dt-bindings patches do not have this dependency.
-
-Depends-On: [PATCH V7 0/4] Add PCIe support for IPQ9574
-Link: https://lore.kernel.org/linux-pci/20240801054803.3015572-1-quic_srichara@quicinc.com/
-
-Aditya Kumar Singh (1):
-  wifi: ath12k: assign unique hardware link IDs during QMI host cap
-
-Harshitha Prem (1):
-  wifi: ath12k: parse multiple device information from device tree
-
-Karthikeyan Periyasamy (1):
-  wifi: ath12k: Send partner device details in QMI MLO capability
-
-Raj Kumar Bhagat (3):
-  dt-bindings: net: wireless: update required properties for ath12k PCI
-    module
-  dt-bindings: net: wireless: ath12k: describe WSI property for QCN9274
-  arm64: dts: qcom: ipq9574: Add WiFi nodes for RDP433
-
- .../bindings/net/wireless/qcom,ath12k.yaml    |  90 +++++++++++++--
- arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts   |  62 +++++++++-
- drivers/net/wireless/ath/ath12k/core.c        | 106 ++++++++++++++++--
- drivers/net/wireless/ath/ath12k/core.h        |   2 +
- drivers/net/wireless/ath/ath12k/qmi.c         |  98 +++++++++++++---
- 5 files changed, 322 insertions(+), 36 deletions(-)
-
-
-base-commit: 7603a9349b2fc64152a734f253cf8d8e5befb6db
-prerequisite-patch-id: d1334693a2e8da65ae7b458ee4adb459850ad2e7
-prerequisite-patch-id: 87f73b342f67c2636390a7da1294cee90f1fff48
-prerequisite-patch-id: 46d8302766527d16cdd90c59ded6cbae0ec4ad70
-prerequisite-patch-id: b17db6783b1c35f3e8812f621730fe0a1a57a14e
+diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+index 1b5884015b15..ecf38af747f7 100644
+--- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
++++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+@@ -1,5 +1,6 @@
+ # SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+ # Copyright (c) 2024 Linaro Limited
++# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ %YAML 1.2
+ ---
+ $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml#
+@@ -52,18 +53,28 @@ properties:
+ required:
+   - compatible
+   - reg
+-  - vddaon-supply
+-  - vddwlcx-supply
+-  - vddwlmx-supply
+-  - vddrfacmn-supply
+-  - vddrfa0p8-supply
+-  - vddrfa1p2-supply
+-  - vddrfa1p8-supply
+-  - vddpcie0p9-supply
+-  - vddpcie1p8-supply
+ 
+ additionalProperties: false
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - pci17cb,1107
++    then:
++      required:
++        - vddaon-supply
++        - vddwlcx-supply
++        - vddwlmx-supply
++        - vddrfacmn-supply
++        - vddrfa0p8-supply
++        - vddrfa1p2-supply
++        - vddrfa1p8-supply
++        - vddpcie0p9-supply
++        - vddpcie1p8-supply
++
+ examples:
+   - |
+     #include <dt-bindings/clock/qcom,rpmh.h>
 -- 
 2.34.1
 
