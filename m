@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A43A0CF536A
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 12:20:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92254CF5366
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 12:20:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=QCexdIMXIEHOymQtxHMhFRA1uoX5G8cjpyCSoD0Rxpc=; b=r+UvheLsWFM7q2pcJfDKOlBFeg
-	xgebN91fhpHn6AOTYhokKDmrRk+vQGZRp6eflAfIewZ9GpyziIPEKIuIyrcux9DNgXftUrv9giuHk
-	WH8n/6CfdYDpXnOBh1ApKUmg+xzF9sA6RFTOVLxoTQ8foXgIC9HurLjz7mFFO0py/0aYtvUO+2RVC
-	CQa/skO+AZKmk8EG50+cL+SrZZXwgrCmQSlNkL9+6NRzuEYZWxGPnGQZYUG5vzLtAy3BgkAF+U2xR
-	jhlu4QtjG5kxZbLLkHeJcMDWilvr1JE5QHeWF7UNZ/pNlHrr0cbEAixbFWEhrTMxf6HYDyZ1KvgK5
-	QO/0tf1Q==;
+	bh=vjnsVWtXd7q/h8hWEAp7Q7++HeeSoIs5pYqpkZfCtK8=; b=pmQFNkc45YBQb2pZlB1fRHOqET
+	7BU9fPniU+W48gqKmnzkVCG810qmk/4H+PzcbA1RkCMjWR6ttdtJ51spH2JSGLfEvyz3PfLsRxlq3
+	wcphRIyu9dLnUd2cXQxVjQYVfGTWdfQZVotoJbDQ86gosTtp9dZ9ZV0KfdIuLUAvIsjx4ptnM7Xdg
+	EMm0e+akwb+zkuVf5k1abO+7DUGF7kHjrNFdhnuD3J4XI24cxsV5EOcVO/qWOfY6m3+JUZykZjTVu
+	nVhWJ+aP0lgIyxiyH+RNfT+U9F3lqUqzv5TR9AGTEu/qVge+VQszlTZesMlpBlu6zTqgf1QLmBZX+
+	YzCzjAEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3aLe-0000000EIb4-0Z76
+	id 1t3aLy-0000000EIxI-3PH1
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 12:20:22 +0000
-Received: from mgamail.intel.com ([198.175.65.12])
+	Wed, 23 Oct 2024 12:20:42 +0000
+Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3a7c-0000000EGJB-2h34
+	id 1t3a8a-0000000EGNk-2kFj
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 12:05:55 +0000
+	Wed, 23 Oct 2024 12:06:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1729685153; x=1761221153;
+  t=1729685213; x=1761221213;
   h=date:from:to:cc:subject:message-id;
-  bh=BB6VBZ4US5iFrxn8uFsKdYAZJkw6RlR/qBy28jV1ZBA=;
-  b=AWHJ2Bq/WXi8EStzD58uPd+gKWdIUnGcJqhDkqGgnQEisfRBCSL+k0iu
-   X2nFWR93LJzx4bAGrMy+zrMlp6YpS5Om+OzFuTqPiCZa3JjhJ+UQ7MWbS
-   0wtp5rVkBfya+KUUDv6dMHUv2vh5QSk72IAgr1FDJeuS9iGC/3jxhuK7J
-   kkVTRlvaUlEukMR6mkFv9XX9xGAC0fWUG6kQ3AxLZde2k6yQLDMb/QDBs
-   6MO4nWLw02RZyss2PUus9j/KTCtUcjYhalDwmr61f/DzWaXtYibUKuJu9
-   mPszDrTqJZHIyIN4DMBsWB7b1OWLQSmB+UXuMKgwpVkqAkce/7SFTwCGK
-   A==;
-X-CSE-ConnectionGUID: XTW9KhphSBOO+yl2Moa2UQ==
-X-CSE-MsgGUID: R6JQIiDdQnGagXrl3UPxvg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11234"; a="40658730"
-X-IronPort-AV: E=Sophos;i="6.11,226,1725346800"; 
-   d="scan'208";a="40658730"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2024 05:05:51 -0700
-X-CSE-ConnectionGUID: 8+aSrjmTSqmC6U3ieAX/5g==
-X-CSE-MsgGUID: YQQr+/eqRiO4hYPW7eTb5g==
+  bh=8CmrnF2hIFJO92jOEbFg7D4MwzTa8c1X66XOM33ukBw=;
+  b=TDIUr+bK3lPEPpyKnYif//cUwEx/9aDuqgC52WBiclu9UErbUnEgsBuY
+   td9hlYC672kgOhflcY421uGSpTewhOSnUTCcnURfOnm1K9eEsqliaEizi
+   0/tnJSP8w+9ZmAWMRXohPPm7zEnays5HDdr4LqZficpDhA2KAwaRkHqOV
+   jFxtxrwpYEOwwSjpusgPUV5+PAps96CbJtJuXXy5PWjC/+1s6bE4FMWOT
+   bapceCl+gdjqJs/xQ+/ix1Ofgnk16JUk1rhFnHZHyQLZ+3vxsJrL6AzyP
+   or8C/8xFIH4tE6N1wwas/W/wJ9sS0wyvNI6jnRyI+ofzMUeU1kODULU4v
+   g==;
+X-CSE-ConnectionGUID: l/fV6qK+Sf2wSQI64W1veg==
+X-CSE-MsgGUID: KdHDVrrTQvC2Ovc7WQ83NA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="29426696"
+X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
+   d="scan'208";a="29426696"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2024 05:06:52 -0700
+X-CSE-ConnectionGUID: fjLn93rnQM2QMV3MCtMYGw==
+X-CSE-MsgGUID: iLAlnPiOTxOll7jgToJApw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.11,226,1725346800"; 
-   d="scan'208";a="80591525"
+   d="scan'208";a="80110724"
 Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
-  by orviesa007.jf.intel.com with ESMTP; 23 Oct 2024 05:05:50 -0700
+  by orviesa010.jf.intel.com with ESMTP; 23 Oct 2024 05:06:50 -0700
 Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1t3a7Y-000UsM-0A;
-	Wed, 23 Oct 2024 12:05:48 +0000
-Date: Wed, 23 Oct 2024 20:05:30 +0800
+	id 1t3a8W-000UsW-0Y;
+	Wed, 23 Oct 2024 12:06:48 +0000
+Date: Wed, 23 Oct 2024 20:06:38 +0800
 From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- 6c6139365a4d387b0e963182dcfbbd52c87a13e9
-Message-ID: <202410232021.WNtjotgR-lkp@intel.com>
+To: Kalle Valo <quic_kvalo@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:ath12k-mlo] BUILD SUCCESS
+ 52cca6057b82fdfc9350c4815be5ba21dfe27759
+Message-ID: <202410232030.DvxYQ0RO-lkp@intel.com>
 User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_050552_774348_1A83606F 
-X-CRM114-Status: UNSURE (   3.38  )
+X-CRM114-CacheID: sfid-20241023_050652_772958_176BD3EA 
+X-CRM114-Status: UNSURE (   3.48  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,12 +84,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: 6c6139365a4d387b0e963182dcfbbd52c87a13e9  Merge branch 'pending' into main-pending
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo
+branch HEAD: 52cca6057b82fdfc9350c4815be5ba21dfe27759  wifi: ath12k: handle ath12k_bss_assoc for MLO
 
-elapsed time: 1083m
+elapsed time: 1010m
 
-configs tested: 151
+configs tested: 146
 configs skipped: 3
 
 The following configs have been built successfully.
@@ -170,24 +170,20 @@ mips                           ip28_defconfig    clang-20
 nios2                             allnoconfig    gcc-14.1.0
 nios2                               defconfig    gcc-14.1.0
 openrisc                          allnoconfig    clang-20
-openrisc                          allnoconfig    gcc-14.1.0
 openrisc                         allyesconfig    gcc-14.1.0
 openrisc                            defconfig    gcc-12
 parisc                           allmodconfig    gcc-14.1.0
 parisc                            allnoconfig    clang-20
-parisc                            allnoconfig    gcc-14.1.0
 parisc                           allyesconfig    gcc-14.1.0
 parisc                              defconfig    gcc-12
 parisc64                            defconfig    gcc-14.1.0
 powerpc                    adder875_defconfig    clang-20
 powerpc                          allmodconfig    gcc-14.1.0
 powerpc                           allnoconfig    clang-20
-powerpc                           allnoconfig    gcc-14.1.0
 powerpc                          allyesconfig    gcc-14.1.0
 powerpc                       holly_defconfig    clang-20
 riscv                            allmodconfig    gcc-14.1.0
 riscv                             allnoconfig    clang-20
-riscv                             allnoconfig    gcc-14.1.0
 riscv                            allyesconfig    gcc-14.1.0
 riscv                               defconfig    gcc-12
 s390                             allmodconfig    gcc-14.1.0
@@ -204,7 +200,6 @@ sh                           se7724_defconfig    clang-20
 sparc                            allmodconfig    gcc-14.1.0
 sparc64                             defconfig    gcc-12
 um                               allmodconfig    clang-20
-um                                allnoconfig    clang-17
 um                                allnoconfig    clang-20
 um                               allyesconfig    clang-20
 um                                  defconfig    gcc-12
