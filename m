@@ -4,78 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 144E2CFA44F
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:21:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14CCECFA44F
+	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 16:21:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-Id:
-	Date:Content-Type:Content-Transfer-Encoding:Mime-Version:Reply-To:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=TF/FBLQpQTpb18qDl8W4BRtUr06P4aRYzhiuLxFGNRw=; b=jrkg/aamQ6/cFFFOif40XBOQMH
-	7ILKpQ/hRjEGhdewSIEIt08Q8lIR+pIuN2miDuR4IoklZIA8zxIDOBbcISvUwrcdstgTPosDhhmuf
-	TTV95REvupY5263nWeOD2jRqfF/1B4PnVtK+yUvHqi7obfqy87VyB5oFIaFKh3GBzYIGwIxvTNuOT
-	rN6l+Dwv9XsUl7zZRdCMSYWwz2QVNeq7tkyBLn4QPFr5IEp+J+y2AI+wwSJISJQ2jTuaSj3ukP7p9
-	IALCpeCGIkzMMMl4xtOjWO8EGV7tdPOruGagl+M/noFWzYjCaObw4ELIYMzVjcFuM5rXSYMjphEzM
-	nadl1g5Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QSgiKCqlVzFV8sXcx6hw5LFFjJAWoVBYu8gEsbHn6aQ=; b=2hwJl2Wc+NqzEXk8Dn8Y5sudkz
+	j0KaIYxuC8ZlHH4jFFnsFg98Z+XnXL9ocp5upjY55bHmO6WxpryOBLL2n3L2RHhBPriUnyUIW8UQA
+	U3tESIf46UVWG22Ek40GIji7WaZ9+MkTLnwR79OgS7+IDpNMlB3QjhrQCWt/0snr2zc5AM2OGqczt
+	D/+pQK8+OVguLRhnUYjysY0Go7kdVfq2Qm6AJByfwPMWC5NCVOUyxwN/TbfYexG5yNd2sm4YpzYHQ
+	XsEos9RozKk5nqY2awFdg3w5QkuddntIveKbjB3CGaIoRzDEIL9uJh8ycmon8dO/ShjB2nu/JRobv
+	xco8FlLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3e6y-0000000F7Ob-3IGd
+	id 1t3e70-0000000F7Po-2yb0
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 16:21:28 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	Wed, 23 Oct 2024 16:21:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3dPx-0000000EzD3-3q4x
+	id 1t3dRT-0000000EzVm-3xr9
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 15:37:03 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43161c0068bso56037905e9.1
-        for <ath12k@lists.infradead.org>; Wed, 23 Oct 2024 08:37:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1729697820; x=1730302620; darn=lists.infradead.org;
-        h=to:from:subject:message-id:date:content-transfer-encoding
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=TF/FBLQpQTpb18qDl8W4BRtUr06P4aRYzhiuLxFGNRw=;
-        b=KFjkC/B0MIOEqC/vId7PTjk4NWW9PHpsVXZ1rUj4GnDj1w0Sikdy9KVwRDuRuPZPsa
-         Ra6J7OlqKLLyS3WZVOnQwAr1oD4u9ko6PUDC3U7+7sHZDRejuZ1Wtp1MgEtyx11H5827
-         zypYOeKNUHP6ZrsNwK3pdfOCM6dF2SHd0qwJqxsKsqXa7jw+KseooJE519KX3Zw8NdMU
-         iKapwVnojBeXUW048Tn5QMuhP3F89+cCNNYBaSxvnjg9y24r1Rk9nQIiYsPSoVj5RSr3
-         BxAFnxa3gaDtB/femlIYj04iX8zmLNso5cQlFty7KUzYYLVqGxPiGAr+b5xZWoQiR5wi
-         Ke9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729697820; x=1730302620;
-        h=to:from:subject:message-id:date:content-transfer-encoding
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=TF/FBLQpQTpb18qDl8W4BRtUr06P4aRYzhiuLxFGNRw=;
-        b=fBfGgi1SjUJBusR1jzU36YWYysYBHi7Sd2nxQmTEcje/GXlp8fYzLrg3IalIyo1n8G
-         DBLCW1sChTzMlpAEbWOy1hUlIJZ6cPVO22h1oSQ+SnA+Y6iBoVJL/IJ2pN0MlpVC8cVw
-         aPCAgGXxAZt6F34+mGM58ZgqsRBY1XnpQVf5RmjJBBrQ8oFtwHwmaaUGqGTZqosg9K6U
-         mXLm5v7C/txNzIC/7BVEStsgTMd/39pI51efWQFK/wooDItUfI5lGFW1S5h/G8WMzlBb
-         RG84DlhDjqURFWq6Yu9PSCCX2kTedzs7iaBmYovCkdxflpCKvFxMEjMSUTXEO5EeOYLX
-         j74w==
-X-Gm-Message-State: AOJu0YzI0E89tUNeFIsqFXq4spYWpXM2KJ4ClGbhM//2FguAiXA4qnAK
-	JmMUwOUWh8L/Fc2GsjUypgB0e8t66N8lzkrErS0NiF2HRYrAwWTiAW9YQA==
-X-Google-Smtp-Source: AGHT+IHfNnLn0He0yvDmEJ46VjVCMV8diRZXS/OywUaI/bL0fAqJnhwnKFOo6gWGGiC6PbMA6PSF7A==
-X-Received: by 2002:a05:600c:34d4:b0:431:5533:8f0b with SMTP id 5b1f17b1804b1-43184246647mr30555055e9.32.1729697819588;
-        Wed, 23 Oct 2024 08:36:59 -0700 (PDT)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43186bfd059sm19456945e9.27.2024.10.23.08.36.58
-        for <ath12k@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Oct 2024 08:36:58 -0700 (PDT)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Wed, 23 Oct 2024 17:36:58 +0200
-Message-Id: <D53APBVN76LR.1NVIJSAOI4ENB@gmail.com>
-Subject: QCN9274 targetted firmware version for MLO
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.18.2-0-ge037c095a049
+	Wed, 23 Oct 2024 15:38:37 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49N9k8ZX025445;
+	Wed, 23 Oct 2024 15:38:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	QSgiKCqlVzFV8sXcx6hw5LFFjJAWoVBYu8gEsbHn6aQ=; b=WcAR4o6ZczVoxE+a
+	C/4hR8g/rbFPy6Bf3KazWrbpl1lIdTNHqACoHgR9NUQo0bGL9rZ19hkccfmUhRRH
+	BEWs1MdB2LW7mAwqLQq2ZhArEWPs8iObWCaNaFhkXvx0YnpS/uK9OmhK7IpnlswJ
+	fK2eeIJ/ZxbbGd6BavTePkRcEHnwQE9smxN72G+5jC9+A9EIhIwqE1rqOdxzewQz
+	Gd/1ciVZFc6wzIntjILxk5whaz5MVEl3WCv5YPOyyMnZsfyjJ2VpdSLBI0I4rlsz
+	9243jyI9w1ghBQS1V4wRaep9B71F6a9/q/c38ondglDbiiwrWRnBjbov90oTGmIa
+	zcYeLQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em40aq75-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Oct 2024 15:38:33 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49NFcXeR031607
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Oct 2024 15:38:33 GMT
+Received: from [10.48.242.6] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
+ 2024 08:38:32 -0700
+Message-ID: <b989b83c-f911-4d67-b703-1ac3ee219559@quicinc.com>
+Date: Wed, 23 Oct 2024 08:38:32 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 4/8] wifi: ath12k: introduce ath12k_hw_warn()
+To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20241023133004.2253830-1-kvalo@kernel.org>
+ <20241023133004.2253830-5-kvalo@kernel.org>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <20241023133004.2253830-5-kvalo@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: hfqgwRpWNka-6thcBbDiiFVg4qqMHYT_
+X-Proofpoint-GUID: hfqgwRpWNka-6thcBbDiiFVg4qqMHYT_
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
+ impostorscore=0 spamscore=0 phishscore=0 mlxlogscore=980
+ lowpriorityscore=0 clxscore=1015 malwarescore=0 bulkscore=0 suspectscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410230096
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_083701_973088_FA0BE7B4 
-X-CRM114-Status: UNSURE (   5.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241023_083836_029257_BFA75EC3 
+X-CRM114-Status: GOOD (  20.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,29 +99,97 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hello,
+On 10/23/2024 6:30 AM, Kalle Valo wrote:
+> From: Kalle Valo <quic_kvalo@quicinc.com>
+> 
+> In the following patch we need to use ath12k_warn() but don't easily have
+> access to struct ath12k_base (ab) but do have access to struct ath12k_hw (ah).
+> So add a new warning helper ath12_hw_warn() which takes the latter but the log
+> output is still identical but uses the struct device pointer stored to struct
+> ath12k_hw.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/core.h  | 2 ++
+>  drivers/net/wireless/ath/ath12k/debug.c | 4 ++--
 
-I'm wondering what will be the firmware version that will be used for MLO
-support with ath12k on AP side.
+Qualcomm Innovation Center copyright missing 2024
 
-I see that the mlo patches posted by Kalle [0] are tested against and old o=
-ne:
-  - WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>  drivers/net/wireless/ath/ath12k/debug.h | 5 ++++-
+>  drivers/net/wireless/ath/ath12k/mac.c   | 2 ++
+>  4 files changed, 10 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 6faa46b9adc9..9c4e5fae8930 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -684,6 +684,8 @@ struct ath12k {
+>  
+>  struct ath12k_hw {
+>  	struct ieee80211_hw *hw;
+> +	struct device *dev;
+> +
+>  	/* Protect the write operation of the hardware state ath12k_hw::state
+>  	 * between hardware start<=>reconfigure<=>stop transitions.
+>  	 */
+> diff --git a/drivers/net/wireless/ath/ath12k/debug.c b/drivers/net/wireless/ath/ath12k/debug.c
+> index fe5a732ba9ec..c5c8c7624cdb 100644
+> --- a/drivers/net/wireless/ath/ath12k/debug.c
+> +++ b/drivers/net/wireless/ath/ath12k/debug.c
+> @@ -36,7 +36,7 @@ void ath12k_err(struct ath12k_base *ab, const char *fmt, ...)
+>  	va_end(args);
+>  }
+>  
+> -void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...)
+> +void __ath12k_warn(struct device *dev, const char *fmt, ...)
+>  {
+>  	struct va_format vaf = {
+>  		.fmt = fmt,
+> @@ -45,7 +45,7 @@ void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...)
+>  
+>  	va_start(args, fmt);
+>  	vaf.va = &args;
+> -	dev_warn_ratelimited(ab->dev, "%pV", &vaf);
+> +	dev_warn_ratelimited(dev, "%pV", &vaf);
+>  	/* TODO: Trace the log */
+>  	va_end(args);
+>  }
+> diff --git a/drivers/net/wireless/ath/ath12k/debug.h b/drivers/net/wireless/ath/ath12k/debug.h
+> index f7005917362c..90e801136bc6 100644
+> --- a/drivers/net/wireless/ath/ath12k/debug.h
+> +++ b/drivers/net/wireless/ath/ath12k/debug.h
+> @@ -31,7 +31,10 @@ enum ath12k_debug_mask {
+>  
+>  __printf(2, 3) void ath12k_info(struct ath12k_base *ab, const char *fmt, ...);
+>  __printf(2, 3) void ath12k_err(struct ath12k_base *ab, const char *fmt, ...);
+> -__printf(2, 3) void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...);
+> +__printf(2, 3) void __ath12k_warn(struct device *dev, const char *fmt, ...);
+> +
+> +#define ath12k_warn(ab, fmt, ...) __ath12k_warn((ab)->dev, fmt, ##__VA_ARGS__)
+> +#define ath12k_hw_warn(ah, fmt, ...) __ath12k_warn((ah)->dev, fmt, ##__VA_ARGS__)
 
-I see that curently in linux-firmware [1] we have a recent one:
-  - WLAN.WBE.1.3.1-00162-QCAHKSWPL_SILICONZ-1
+for consistency should we do this for the other log levels as well?
 
-And on code linaro [2] there is an even newer one:
-  - WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+are there places where we currently retrieve ab just for logging where we
+already have ah, and hence could avoid the extra dereference?
 
-Is it decided yet ? Any pointers ?
+>  
+>  extern unsigned int ath12k_debug_mask;
+>  
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 3de6d605cd74..19c445cf52f1 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -10193,6 +10193,8 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
+>  			goto err;
+>  		}
+>  
+> +		ah->dev = ab->dev;
+> +
+>  		ab->ah[i] = ah;
+>  	}
+>  
 
-Thanks
-
-[0] https://lore.kernel.org/ath12k/20241023133004.2253830-9-kvalo@kernel.or=
-g/
-[1] https://gitlab.com/kernel-firmware/linux-firmware/-/commit/a2d650c9cbad=
-5faede89a44bfc5eea32483a0f83
-[2] https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/commit/3e=
-e26f4705a4bf8c3ee1c935f5d21bad9b6d2612
 
