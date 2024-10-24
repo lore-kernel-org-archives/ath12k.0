@@ -4,63 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BA2CCDDE6A
-	for <ath12k@archiver.kernel.org>; Thu, 24 Oct 2024 09:58:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B42FCE8E6E
+	for <ath12k@archiver.kernel.org>; Thu, 24 Oct 2024 12:49:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wq3EFFsdwR+z5EEZSz4e61xf5Ku7uJg777ge//8CJvk=; b=Y1zb2BW1epJs023d02Xlo/dEcA
-	jHJF3SHTRAZxeoa+x6f7oShGQKJXmMZ/hBf3ZB8tXuHArd5Yc5TU3uiBqlFgOeAQOIO6z2Uplr06M
-	siiml9RdKYS8J3KGjfHpJu1iqqj09Ak3gIJmzXp+Twd52wOb/zYfO/CLh09024sfcRx37hPd3gEPL
-	DnC7iJmZRHRQVDuBLsS0dXp9wuyyIVx7oAtAtVJ0gdBGXxV4YnSmst1f2pBwhdfqsR1IVUuClGoLF
-	mJv1a+/hYTS6I9LsM53Id8qqIJH5EjUbn1I4+EYmqXadCN89TzHlKDpeyRIK/YXBOc8PBAxW4+9gf
-	QpT4qZzg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=7gNqXl39Wea5oUQeb1Avw9ZGupM+tGeVdDiIGyumlFA=; b=gk778ckFzBDShZ4PZ5w99jVPML
+	psQWtV3VVgFAUwR8af1NRrUSs0KnmTMF5UUtrsdaIj+bIhBpCQsEbXy06E1Ej5s3u+24URk0p3eVU
+	Btsta0MsVwbMGt2yqVuQIJYx8coJA7mNxCZ+03Yq6F48NVwLRPXch621c/IFY9cbIk+B/xyCpfcS/
+	YAtNiu6rtppBJvq4IMRAvWUBxSe1CRLUb0NP7qB/oEwp2AtCElSRoigoWgX7/ZfWxZgA1whzroYwn
+	16+VxFjDKwKgIK4jT0hyAaMjCX48s0W9bCOw5Xg5zwz5ZhR/VskwxkuVWAZLfE6YTxTaVteHGWnIH
+	VAeQEHwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3uc9-0000000Ha8W-033T
+	id 1t3xGu-00000000Otv-3LGk
 	for ath12k@archiver.kernel.org;
-	Thu, 24 Oct 2024 09:58:45 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Thu, 24 Oct 2024 12:49:00 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3uSE-0000000HXvt-2Dos
+	id 1t3xGr-00000000OsH-3YRa
 	for ath12k@lists.infradead.org;
-	Thu, 24 Oct 2024 09:48:32 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 8AA9BA45296;
-	Thu, 24 Oct 2024 09:48:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D7AEC4CEC7;
-	Thu, 24 Oct 2024 09:48:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729763309;
-	bh=kGeIHMWd4A1zAwUB34qoIGbCj+6EFwJ/Rf1fl0x7NB4=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=QRRDLTIp2RZ4t3cPh2SbLbVa+6a1eovn7HIII4ssBKMljvaE+xxl1q+Cbj9hXv+L0
-	 AV1Lc3qnMzakLnKC1V0HLckyoGnwoOaeJO0bTPtAeIvXSGq3MJJj0DxhRh7GP7Syfm
-	 As6SDHca1gqkYg9SZKTEIwuPOZce6dZNDqx3DyG2UFqPm46clD6WjXwoj7iNdtgoQl
-	 wxRmW1HtjYroXNjVI3yxQnldSgCvkqkjw0im6wmpMOUffYiDQbtTuKBH9tTonPPVQX
-	 UwnZo3ebLXi/HhpoGL8/bvpN5rmccgnD7jnpCyrmwIvhgylHESj9lp9vFiXGfNoJDC
-	 uwS1myPpD4E3Q==
-From: Kalle Valo <kvalo@kernel.org>
+	Thu, 24 Oct 2024 12:48:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1729774138; x=1761310138;
+  h=date:from:to:cc:subject:message-id;
+  bh=jklh4o4U9dVXGHshvcACHhnY47fVArdyb+C6Zm+ICB4=;
+  b=l3IAP1YCXTQ2cHFR8dCkX1nG5y3ih+nbX3cH+zGn5Fj/h4faKjlugTR0
+   s2sPbl+lgK+kbFPMbnKN/QZkEfZvQo0EOeKN6LGJPCfMwlkju5nH5LGmC
+   imhV5TO739x0xp1C0LLW0hY4361FJ0tie+0ksEX/ESUKR06JDJH1jFhyW
+   G6w0+vwxULprI/gwITTSD2Js2LxXGACKbr9oTnaOmMJw/zVaw0wJLG675
+   ieyOZVJclNZDvMNWnZJ3cdwCeeXdwrTB+QjttuQ3cj1UayY1cdxRN1pww
+   LKXQis/RWK8pH5DV2b0Pwz+hTBgV1YtfgHlPSRrhk0ebUN0FXRPUOG7fF
+   Q==;
+X-CSE-ConnectionGUID: pgybqahETXSYl7czPoTujg==
+X-CSE-MsgGUID: 9jK8oU9+Qn+7n7y0ZYgqig==
+X-IronPort-AV: E=McAfee;i="6700,10204,11235"; a="29302167"
+X-IronPort-AV: E=Sophos;i="6.11,229,1725346800"; 
+   d="scan'208";a="29302167"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Oct 2024 05:48:55 -0700
+X-CSE-ConnectionGUID: EfZULZuFSw+w1/6O0tRuwg==
+X-CSE-MsgGUID: CmYutIj7Tb+cMOdBVI7r5A==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,229,1725346800"; 
+   d="scan'208";a="85701365"
+Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
+  by orviesa004.jf.intel.com with ESMTP; 24 Oct 2024 05:48:54 -0700
+Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1t3xGl-000WQm-2i;
+	Thu, 24 Oct 2024 12:48:51 +0000
+Date: Thu, 24 Oct 2024 20:48:45 +0800
+From: kernel test robot <lkp@intel.com>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-  <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH v3] wifi: ath12k: convert tasklet to BH workqueue for CE
- interrupts
-References: <20241022072406.3231450-1-quic_rajkbhag@quicinc.com>
-	<d5fffc97-2603-4614-95cd-333c86435534@quicinc.com>
-Date: Thu, 24 Oct 2024 12:48:25 +0300
-In-Reply-To: <d5fffc97-2603-4614-95cd-333c86435534@quicinc.com> (Jeff
-	Johnson's message of "Wed, 23 Oct 2024 10:14:34 -0700")
-Message-ID: <87froln85y.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:for-next] BUILD SUCCESS
+ f7b982d13df72dbf8c1f3f98fadc9d9155608ecc
+Message-ID: <202410242036.Tg5Jffip-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_024830_652641_E0B7C2A6 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20241024_054857_977615_BA422AB4 
+X-CRM114-Status: UNSURE (   3.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,34 +84,171 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
+branch HEAD: f7b982d13df72dbf8c1f3f98fadc9d9155608ecc  wifi: ath12k: fix A-MSDU indication in monitor mode
 
-> On 10/22/2024 12:24 AM, Raj Kumar Bhagat wrote:
->> Currently in Ath12k, tasklet is used to handle the BH context of CE
->> interrupts. However the tasklet is marked deprecated and has some
->> design flaws. To replace tasklets, BH workqueue support has been
->> added. BH workqueue behaves similarly to regular workqueues except
->> that the queued work items are executed in the BH context.
->> 
->> Hence, convert the tasklet to BH workqueue for handling CE interrupts
->> in the BH context.
->> 
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->
-> (Not sure how to stress-test this, but it does survive multiple rmmod/insmod
-> with a Youtube video stream running)
+elapsed time: 1145m
 
-Raj, did you notice any changes in throughput?
+configs tested: 151
+configs skipped: 3
 
-Passes my tests as well:
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Acked-by: Kalle Valo <kvalo@kernel.org>
+tested configs:
+alpha                             allnoconfig    gcc-14.1.0
+alpha                            allyesconfig    clang-20
+alpha                               defconfig    gcc-14.1.0
+arc                              allmodconfig    clang-20
+arc                               allnoconfig    gcc-14.1.0
+arc                              allyesconfig    clang-20
+arc                                 defconfig    gcc-14.1.0
+arc                   randconfig-001-20241024    gcc-14.1.0
+arc                   randconfig-002-20241024    gcc-14.1.0
+arm                              allmodconfig    clang-20
+arm                               allnoconfig    gcc-14.1.0
+arm                              allyesconfig    clang-20
+arm                                 defconfig    gcc-14.1.0
+arm                          ixp4xx_defconfig    gcc-14.1.0
+arm                           omap1_defconfig    gcc-14.1.0
+arm                   randconfig-001-20241024    gcc-14.1.0
+arm                   randconfig-002-20241024    gcc-14.1.0
+arm                   randconfig-003-20241024    gcc-14.1.0
+arm                   randconfig-004-20241024    gcc-14.1.0
+arm64                            allmodconfig    clang-20
+arm64                             allnoconfig    gcc-14.1.0
+arm64                               defconfig    gcc-14.1.0
+arm64                 randconfig-001-20241024    gcc-14.1.0
+arm64                 randconfig-002-20241024    gcc-14.1.0
+arm64                 randconfig-003-20241024    gcc-14.1.0
+arm64                 randconfig-004-20241024    gcc-14.1.0
+csky                              allnoconfig    gcc-14.1.0
+csky                                defconfig    gcc-14.1.0
+csky                  randconfig-001-20241024    gcc-14.1.0
+csky                  randconfig-002-20241024    gcc-14.1.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    gcc-14.1.0
+hexagon                          allyesconfig    clang-20
+hexagon                             defconfig    gcc-14.1.0
+hexagon               randconfig-001-20241024    gcc-14.1.0
+hexagon               randconfig-002-20241024    gcc-14.1.0
+i386                             allmodconfig    clang-19
+i386                              allnoconfig    clang-19
+i386                             allyesconfig    clang-19
+i386                                defconfig    clang-19
+loongarch                        allmodconfig    gcc-14.1.0
+loongarch                         allnoconfig    gcc-14.1.0
+loongarch                           defconfig    gcc-14.1.0
+loongarch             randconfig-001-20241024    gcc-14.1.0
+loongarch             randconfig-002-20241024    gcc-14.1.0
+m68k                             allmodconfig    gcc-14.1.0
+m68k                              allnoconfig    gcc-14.1.0
+m68k                             allyesconfig    gcc-14.1.0
+m68k                                defconfig    gcc-14.1.0
+microblaze                       allmodconfig    gcc-14.1.0
+microblaze                        allnoconfig    gcc-14.1.0
+microblaze                       allyesconfig    gcc-14.1.0
+microblaze                          defconfig    gcc-14.1.0
+mips                              allnoconfig    gcc-14.1.0
+mips                          eyeq5_defconfig    gcc-14.1.0
+nios2                             allnoconfig    gcc-14.1.0
+nios2                               defconfig    gcc-14.1.0
+nios2                 randconfig-001-20241024    gcc-14.1.0
+nios2                 randconfig-002-20241024    gcc-14.1.0
+openrisc                          allnoconfig    clang-20
+openrisc                         allyesconfig    gcc-14.1.0
+openrisc                            defconfig    gcc-12
+parisc                           allmodconfig    gcc-14.1.0
+parisc                            allnoconfig    clang-20
+parisc                           allyesconfig    gcc-14.1.0
+parisc                              defconfig    gcc-12
+parisc                randconfig-001-20241024    gcc-14.1.0
+parisc                randconfig-002-20241024    gcc-14.1.0
+parisc64                         alldefconfig    gcc-14.1.0
+parisc64                            defconfig    gcc-14.1.0
+powerpc                     akebono_defconfig    gcc-14.1.0
+powerpc                          allmodconfig    gcc-14.1.0
+powerpc                           allnoconfig    clang-20
+powerpc                          allyesconfig    gcc-14.1.0
+powerpc                       ebony_defconfig    gcc-14.1.0
+powerpc                      ep88xc_defconfig    gcc-14.1.0
+powerpc               randconfig-001-20241024    gcc-14.1.0
+powerpc               randconfig-002-20241024    gcc-14.1.0
+powerpc               randconfig-003-20241024    gcc-14.1.0
+powerpc                     tqm8540_defconfig    gcc-14.1.0
+powerpc                     tqm8548_defconfig    gcc-14.1.0
+powerpc64             randconfig-001-20241024    gcc-14.1.0
+powerpc64             randconfig-002-20241024    gcc-14.1.0
+powerpc64             randconfig-003-20241024    gcc-14.1.0
+riscv                            allmodconfig    gcc-14.1.0
+riscv                             allnoconfig    clang-20
+riscv                            allyesconfig    gcc-14.1.0
+riscv                               defconfig    gcc-12
+riscv                    nommu_k210_defconfig    gcc-14.1.0
+riscv                 randconfig-001-20241024    gcc-14.1.0
+riscv                 randconfig-002-20241024    gcc-14.1.0
+s390                             allmodconfig    gcc-14.1.0
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.1.0
+s390                                defconfig    gcc-12
+s390                  randconfig-001-20241024    gcc-14.1.0
+s390                  randconfig-002-20241024    gcc-14.1.0
+sh                               allmodconfig    gcc-14.1.0
+sh                                allnoconfig    gcc-14.1.0
+sh                               allyesconfig    gcc-14.1.0
+sh                        apsh4ad0a_defconfig    gcc-14.1.0
+sh                                  defconfig    gcc-12
+sh                    randconfig-001-20241024    gcc-14.1.0
+sh                    randconfig-002-20241024    gcc-14.1.0
+sh                      rts7751r2d1_defconfig    gcc-14.1.0
+sh                           se7750_defconfig    gcc-14.1.0
+sh                             shx3_defconfig    gcc-14.1.0
+sparc                            allmodconfig    gcc-14.1.0
+sparc64                             defconfig    gcc-12
+sparc64               randconfig-001-20241024    gcc-14.1.0
+sparc64               randconfig-002-20241024    gcc-14.1.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-20
+um                               allyesconfig    clang-20
+um                                  defconfig    gcc-12
+um                             i386_defconfig    gcc-12
+um                    randconfig-001-20241024    gcc-14.1.0
+um                    randconfig-002-20241024    gcc-14.1.0
+um                           x86_64_defconfig    gcc-12
+x86_64                            allnoconfig    clang-19
+x86_64                           allyesconfig    clang-19
+x86_64      buildonly-randconfig-001-20241024    gcc-12
+x86_64      buildonly-randconfig-002-20241024    gcc-12
+x86_64      buildonly-randconfig-003-20241024    gcc-12
+x86_64      buildonly-randconfig-004-20241024    gcc-12
+x86_64      buildonly-randconfig-005-20241024    gcc-12
+x86_64      buildonly-randconfig-006-20241024    gcc-12
+x86_64                              defconfig    clang-19
+x86_64                                  kexec    clang-18
+x86_64                randconfig-001-20241024    gcc-12
+x86_64                randconfig-002-20241024    gcc-12
+x86_64                randconfig-003-20241024    gcc-12
+x86_64                randconfig-004-20241024    gcc-12
+x86_64                randconfig-005-20241024    gcc-12
+x86_64                randconfig-006-20241024    gcc-12
+x86_64                randconfig-011-20241024    gcc-12
+x86_64                randconfig-012-20241024    gcc-12
+x86_64                randconfig-013-20241024    gcc-12
+x86_64                randconfig-014-20241024    gcc-12
+x86_64                randconfig-015-20241024    gcc-12
+x86_64                randconfig-016-20241024    gcc-12
+x86_64                randconfig-071-20241024    gcc-12
+x86_64                randconfig-072-20241024    gcc-12
+x86_64                randconfig-073-20241024    gcc-12
+x86_64                randconfig-074-20241024    gcc-12
+x86_64                randconfig-075-20241024    gcc-12
+x86_64                randconfig-076-20241024    gcc-12
+x86_64                               rhel-8.3    gcc-12
+xtensa                            allnoconfig    gcc-14.1.0
+xtensa                randconfig-001-20241024    gcc-14.1.0
+xtensa                randconfig-002-20241024    gcc-14.1.0
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
