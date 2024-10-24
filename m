@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B42FCE8E6E
-	for <ath12k@archiver.kernel.org>; Thu, 24 Oct 2024 12:49:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A3F5CE8E78
+	for <ath12k@archiver.kernel.org>; Thu, 24 Oct 2024 14:01:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=7gNqXl39Wea5oUQeb1Avw9ZGupM+tGeVdDiIGyumlFA=; b=gk778ckFzBDShZ4PZ5w99jVPML
-	psQWtV3VVgFAUwR8af1NRrUSs0KnmTMF5UUtrsdaIj+bIhBpCQsEbXy06E1Ej5s3u+24URk0p3eVU
-	Btsta0MsVwbMGt2yqVuQIJYx8coJA7mNxCZ+03Yq6F48NVwLRPXch621c/IFY9cbIk+B/xyCpfcS/
-	YAtNiu6rtppBJvq4IMRAvWUBxSe1CRLUb0NP7qB/oEwp2AtCElSRoigoWgX7/ZfWxZgA1whzroYwn
-	16+VxFjDKwKgIK4jT0hyAaMjCX48s0W9bCOw5Xg5zwz5ZhR/VskwxkuVWAZLfE6YTxTaVteHGWnIH
-	VAeQEHwQ==;
+	bh=ooANpeN2k7TYm/B1r6kmE2Pr7iQFy/7faCn6FobMGP8=; b=VpPfw3QpHLVq1z2H7AmCNQZ2Vb
+	xEGRwfKyVhHRcSJRNaIbwmQD/IIYS+Dn7dWvGu27r1KM/ZAvRI/qT73+J1saPB7UmJgooC+RIlphx
+	dTQz7+A8zt36IGJlSe4JVv0PXZoNAXbm/7A83U6qHGorgdoDZ5MSDc6pQURKASukn7NyH7iSOUtTZ
+	vCIGDncoVi1efMIyg6PVT3dhQNMURBJEM/St4vOp/bAw6OxdvYDDfb8GirbT4jaB8D+dBTWuIKeYB
+	OTgFGXrtbl7qwnSsM0V6b2QrFVuF1yqMr/TObyTVnmY3zfGGvETGElUuwha4VBW0ftuZ+QFf0LxSX
+	vrWdqdqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3xGu-00000000Otv-3LGk
+	id 1t3yOe-00000000bON-3zoD
 	for ath12k@archiver.kernel.org;
-	Thu, 24 Oct 2024 12:49:00 +0000
+	Thu, 24 Oct 2024 14:01:04 +0000
 Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3xGr-00000000OsH-3YRa
+	id 1t3xGt-00000000OsH-29BG
 	for ath12k@lists.infradead.org;
-	Thu, 24 Oct 2024 12:48:59 +0000
+	Thu, 24 Oct 2024 12:49:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1729774138; x=1761310138;
+  t=1729774139; x=1761310139;
   h=date:from:to:cc:subject:message-id;
-  bh=jklh4o4U9dVXGHshvcACHhnY47fVArdyb+C6Zm+ICB4=;
-  b=l3IAP1YCXTQ2cHFR8dCkX1nG5y3ih+nbX3cH+zGn5Fj/h4faKjlugTR0
-   s2sPbl+lgK+kbFPMbnKN/QZkEfZvQo0EOeKN6LGJPCfMwlkju5nH5LGmC
-   imhV5TO739x0xp1C0LLW0hY4361FJ0tie+0ksEX/ESUKR06JDJH1jFhyW
-   G6w0+vwxULprI/gwITTSD2Js2LxXGACKbr9oTnaOmMJw/zVaw0wJLG675
-   ieyOZVJclNZDvMNWnZJ3cdwCeeXdwrTB+QjttuQ3cj1UayY1cdxRN1pww
-   LKXQis/RWK8pH5DV2b0Pwz+hTBgV1YtfgHlPSRrhk0ebUN0FXRPUOG7fF
-   Q==;
-X-CSE-ConnectionGUID: pgybqahETXSYl7czPoTujg==
-X-CSE-MsgGUID: 9jK8oU9+Qn+7n7y0ZYgqig==
-X-IronPort-AV: E=McAfee;i="6700,10204,11235"; a="29302167"
+  bh=AzYuCkXCALiaO77OY7d/vrW6Cl7enVGfwGOjeXdbe+0=;
+  b=QKa+3RGoWjg8fx4I4YaWgm7MNaRDWttbcMOFlaMu56bU3P2TiVxoxQwz
+   RwgaKNmCWIf4nwxUUmN9z6MKJjF36tkJ1cYWH5jC+vWCpbdSVXmuaXXNr
+   141yjryg2vR1bUIIvnsz5MdCYCYufDFDhJI4JPkbA+n5/0zBFDn4zSmIo
+   Mc56clGf1gOJEIFgmcZ1sAK4TOkoYKvGZh5HJppL7XifwRp1SL2jTESt2
+   Hes/DBF4X06/j7+3RRsUBPrZUTGn4CSTfbbP4icMdfrIWEV8UdSSCWINe
+   DZO3deURYj43M6+0js2XCABsYp96Fg3cVBf5DN2oTyQNtkG2p0EQBhgbw
+   w==;
+X-CSE-ConnectionGUID: cJ8SBfcVQ62P8sjSfMPpCA==
+X-CSE-MsgGUID: qvK0xMeuSoGwbfuXugVR+Q==
+X-IronPort-AV: E=McAfee;i="6700,10204,11235"; a="29302169"
 X-IronPort-AV: E=Sophos;i="6.11,229,1725346800"; 
-   d="scan'208";a="29302167"
+   d="scan'208";a="29302169"
 Received: from orviesa004.jf.intel.com ([10.64.159.144])
   by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Oct 2024 05:48:55 -0700
-X-CSE-ConnectionGUID: EfZULZuFSw+w1/6O0tRuwg==
-X-CSE-MsgGUID: CmYutIj7Tb+cMOdBVI7r5A==
+X-CSE-ConnectionGUID: 9RhQ/PonRQG72j2FFUanlA==
+X-CSE-MsgGUID: yam3NAZRTNi0OegTUACRSQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.11,229,1725346800"; 
-   d="scan'208";a="85701365"
+   d="scan'208";a="85701366"
 Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
   by orviesa004.jf.intel.com with ESMTP; 24 Oct 2024 05:48:54 -0700
 Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1t3xGl-000WQm-2i;
+	id 1t3xGl-000WQo-2m;
 	Thu, 24 Oct 2024 12:48:51 +0000
-Date: Thu, 24 Oct 2024 20:48:45 +0800
+Date: Thu, 24 Oct 2024 20:48:17 +0800
 From: kernel test robot <lkp@intel.com>
 To: Jeff Johnson <quic_jjohnson@quicinc.com>
 Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-next] BUILD SUCCESS
- f7b982d13df72dbf8c1f3f98fadc9d9155608ecc
-Message-ID: <202410242036.Tg5Jffip-lkp@intel.com>
+Subject: [ath:pending] BUILD SUCCESS
+ d93ffa358fffafb2817649508cac55415940a2fb
+Message-ID: <202410242009.ChpVBqz4-lkp@intel.com>
 User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_054857_977615_BA422AB4 
-X-CRM114-Status: UNSURE (   3.80  )
+X-CRM114-CacheID: sfid-20241024_054859_673729_C49D0CBA 
+X-CRM114-Status: UNSURE (   3.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,10 +84,10 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
-branch HEAD: f7b982d13df72dbf8c1f3f98fadc9d9155608ecc  wifi: ath12k: fix A-MSDU indication in monitor mode
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: d93ffa358fffafb2817649508cac55415940a2fb  wifi: ath12k: convert tasklet to BH workqueue for CE interrupts
 
-elapsed time: 1145m
+elapsed time: 1071m
 
 configs tested: 151
 configs skipped: 3
