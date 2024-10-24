@@ -4,113 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA977CFA45F
-	for <ath12k@archiver.kernel.org>; Wed, 23 Oct 2024 19:22:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F249D0BB4F
+	for <ath12k@archiver.kernel.org>; Thu, 24 Oct 2024 02:59:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KMJk5qVo0r7Znw6gSWn1vrlOWXqT2qNHf0RdgDTE+C8=; b=DmKnsbjZBsoKOEq43vSFnc3nDz
-	oMMPeJQWvy98W/IC5yundN2CPR3+zV+XTj0FD0uRSa00TF5iv81wtXUkwSoJ4UOhwTzcaaS62B26a
-	xvvmS4ZsRPvZqtTzqSaXF9qdJKxAjbvQ0AeEiif73TPrLT2SQU/huNNFLz2Z7Or5ho4H534WsbIjx
-	liyJss9HIPeWBZzjoPS8+ghRT/uZ0pl2QqZnD5LEm9egQxFqHG5QCkzmy8pOWOxl9WHqc8louebYA
-	20Vo0KMqYdFPRLjI9JppjnlEnu47B574l8u1JZJ+DY+060EAOQG7+AClWZOHGKjRnssD0VoSol0Bj
-	aFhqZRcQ==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=oYx3LNkNkAC6ghH/84DmDc4zUZuUy4VKE78EUGVz7hk=; b=lsdu1u2/0T3uclkl93E8CGTPZf
+	bYHAxROiij/3HCUuW5vm92KjwExTPCv46zLkIMs1sjLghcbTOvd+Tvoh0+3SeALaBbMOmhrMwBk59
+	4CocsTcKilZVKVD9am1jd/dylSROE1ah9uZAFEtcHDXRpb4W7kPGQ7cuptiSorIz+zWsyfYkiBeuC
+	5xbrqSeorKc5wfkc/5DIx54W5bn4yosZ6uYzkdwUBlwWjE1CPcJmEZ9UOUMb4p7ilG6kytHsIjsdQ
+	Kxb3S5CnINL4PXNi5GCsvMx4haR5nA6avK45kY+kdFmppQ5KsVV4++qFebLVJiO9LCUoAQu8Wyhuc
+	JIB6IbSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3gwF-0000000FexI-1XYS
+	id 1t3o41-0000000GZlq-33O3
 	for ath12k@archiver.kernel.org;
-	Wed, 23 Oct 2024 19:22:35 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Thu, 24 Oct 2024 02:59:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3fcG-0000000FS1D-0A0T
+	id 1t3o3y-0000000GZlM-0CId
 	for ath12k@lists.infradead.org;
-	Wed, 23 Oct 2024 17:57:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 721FFA43A64;
-	Wed, 23 Oct 2024 17:57:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACA50C4CEC6;
-	Wed, 23 Oct 2024 17:57:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729706270;
-	bh=Ow7dsLqq7Zsk5PZkn0UMRVaiewoe1yrdqAyhv9jztmQ=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=T5/tPdYwrOGLJFAlrnQpxlUUjgHlvKSE4JDpYVD447G0bBzAumXcdGCZEF1sGcm3m
-	 ZIbXyDm6Do41Ly8ZSTHvnH38EFVaM7RnzEXEY902DQOR9NBrQ2Z/Oy9kvcDIqzPmvI
-	 8NGaosi4FbuHIHfJPuSFo9PTkEVImPU9+VtPYvl0lw7N6PhG2A9H8mRY8grhM1g0Dg
-	 Lcv9452NQJP6GgKddJunhTvU5j1iicr8AJl05tE4LzEgdkVk9Py3LnCeVOhxOo9jRw
-	 DUoWNjRz5HShkSBw6ZEPxY7lpLilQxIBigWQJuSxwJPr+PH9D9UaP8Cbhz8oqvvsoo
-	 w91eBn+yuj/lQ==
-Message-ID: <808cfb83-a80f-431c-be69-ee3da964482a@kernel.org>
-Date: Wed, 23 Oct 2024 19:57:43 +0200
+	Thu, 24 Oct 2024 02:59:03 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49NLNK1F025624
+	for <ath12k@lists.infradead.org>; Thu, 24 Oct 2024 02:58:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	oYx3LNkNkAC6ghH/84DmDc4zUZuUy4VKE78EUGVz7hk=; b=XXqKuxYys/7f3iSd
+	esRA8Yf6qpnRqUY7ewCIr7v2M5QXl0D6wgXGHBki7A53yFiq4ss5cmC22DLzRyCt
+	guvNMRzRCDsGUgNK+/1XksTcWzwQ5IKmiRJB6Z4bxZ76vOg5PXWm/Funk50lWSeq
+	E7McpZaq6QEa/Yzz17Fuvn3Z/pYJZTYRPvblTJPx5Z5Bm7qkyKyZRsrnRvdo/sNQ
+	2u3gJGiYBsoC33x8gOeCLh/4pUh8KPm+RERSkow6/aB5pc7YNEhJwzfCpzlGyoqL
+	RmP0RRW4J3EmKM0+Qyu42SO+P3PRoBDu3FDmsBJm+hza7lvJHUjkPNva45xDD/Lf
+	qHYQWg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em40c67r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 24 Oct 2024 02:58:59 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49O2wwME030493
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 24 Oct 2024 02:58:58 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
+ 2024 19:58:57 -0700
+Message-ID: <e886a4c0-14f9-4299-97ef-f8cd811c94e6@quicinc.com>
+Date: Thu, 24 Oct 2024 10:58:56 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 2/6] dt-bindings: net: wireless: ath12k: describe WSI
- property for QCN9274
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
- <20241023060352.605019-3-quic_rajkbhag@quicinc.com>
- <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
- <9c06fdac-df4f-449c-8d58-b57c375c1751@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 3/8] wifi: ath12k: Refactor sta state machine
+To: <ath12k@lists.infradead.org>
+References: <20241023133004.2253830-1-kvalo@kernel.org>
+ <20241023133004.2253830-4-kvalo@kernel.org>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <9c06fdac-df4f-449c-8d58-b57c375c1751@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <20241023133004.2253830-4-kvalo@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: HnVAudOz_KW8loohzKTQcq-TK7yt-Q22
+X-Proofpoint-GUID: HnVAudOz_KW8loohzKTQcq-TK7yt-Q22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
+ impostorscore=0 spamscore=0 phishscore=0 mlxlogscore=659
+ lowpriorityscore=0 clxscore=1011 malwarescore=0 bulkscore=0 suspectscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410240020
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_105752_233949_3A6A3265 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20241023_195902_133948_7606C3BF 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,66 +99,49 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 23/10/2024 14:22, Raj Kumar Bhagat wrote:
-> 
-> The above three blocks represent the QCN9274 WiFi devices connected to their
-> respective PCI slots. The dotted line represents the WSI connection that connects
-> these three devices together. Hence, the WSI interface is part of the QCN9274 device.
-> 
-> To describe this WSI hardware connection in the device tree, we are adding three
-> properties inside the WSI object:
-> 
-> 1. qcom,wsi-group-id:
->    In the above diagram, we have one WSI connection connecting all three devices.
->    Hence, “qcom,wsi-group-id” for all three devices can be 0.
-> 
->    This cannot be implied by the compatible property, as explained below:
->    Let’s take the case of a platform that can have four QCN9274 WiFi devices. Below
->    is one possibility of a WSI connection:
-> 
->          +-------+       +-------+          +-------+      +-------+
->          | pcie2 |       | pcie3 |          | pcie1 |      | pcie0 |
->          |       |       |       |          |       |      |       |
->    +---->|  wsi  |------>|  wsi  |--+   +-->|  wsi  |----->|  wsi  |----+
->    |     | idx 0 |       | idx 1 |  |   |   | idx 0 |      | idx 1 |    |
->    |     +-------+       +-------+  |   |   +-------+      +-------+    |
->    +--------------------------------+   +-------------------------------+
-> 
->    In this case, QCN9274 devices connected in PCIe2 and PCIe3 will have the same
->    “qcom,wsi-group-id”. This group-id will be different from the “qcom,wsi-group-id”
->    of QCN9274 devices connected at PCIe1 and PCIe0.
 
-Thanks, this explains why group-id cannot be same...
 
-> 
-> 2. qcom,wsi-index:
->    This is a unique identifier of the device within the same group. The value of
->    wsi-idx is represented in both the above cases (RDP433 and the 4 WiFi device
->    platform) in the diagram itself.
+On 10/23/2024 9:29 PM, Kalle Valo wrote:
+> +static void ath12k_mac_station_post_remove(struct ath12k *ar,
+> +					   struct ath12k_link_vif *arvif,
+> +					   struct ath12k_link_sta *arsta)
+> +{
+> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+> +	struct ath12k_sta *ahsta = arsta->ahsta;
+> +	struct ath12k_peer *peer;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	ath12k_mac_dec_num_stations(arvif, arsta);
+> +
+> +	spin_lock_bh(&ar->ab->base_lock);
+> +
+> +	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+> +	if (peer && peer->sta == sta) {
+> +		ath12k_warn(ar->ab, "Found peer entry %pM n vdev %i after it was supposedly removed\n",
+> +			    vif->addr, arvif->vdev_id);
+> +		peer->sta = NULL;
+> +		list_del(&peer->list);
+> +		kfree(peer);
+> +		ar->num_peers--;
+> +	}
+> +
+> +	spin_unlock_bh(&ar->ab->base_lock);
+> +
+> +	kfree(arsta->rx_stats);
+> +	arsta->rx_stats = NULL;
+> +
+> +	if (arsta->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
+> +		rcu_assign_pointer(ahsta->link[arsta->link_id], NULL);
+> +		synchronize_rcu();
+> +		ahsta->links_map &= ~(BIT(arsta->link_id));
+should we put this ahead of rcu_assign_pointer()?
 
-But still any device-indexing is in general not accepted (and was
-mentioned during reviews multiple times).
-
-This looks like circular list, so phandle will be enough. You only need
-to mark devices being part of the same chain.
-
-Actually graph with endpoints would be more suitable, assuming above
-diagram represents connections.
-
-Please include that diagram in binding description.
-
-> 
-> 3. qcom,wsi-num-devices:
->    Represents the number of devices connected through WSI within the same WSI group to
->    which the device belongs.
->    
->    In the case of RDP433, all devices will have this number as 3.
->    For the second example with four WiFi devices but with two WSI connections, the
->    value of “qcom,wsi-num-devices” for each device will be 2.
-
-Not needed, just iterate over the graph children.
-
-Best regards,
-Krzysztof
+> +		arsta->link_id = ATH12K_INVALID_LINK_ID;
+> +		arsta->ahsta = NULL;
+> +	}
+> +}
+> +
 
 
