@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44143D0C5F8
-	for <ath12k@archiver.kernel.org>; Fri, 25 Oct 2024 10:08:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23D08D0C5F8
+	for <ath12k@archiver.kernel.org>; Fri, 25 Oct 2024 10:09:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=06IkTi//D5tgGoX99HX3f2NLiU6Qz5QmsybYsvP4yx4=; b=Iq2wQImqYvC8ojHnSMbtO/7lYC
-	mZVrFejTGqrK7wILPSRwCC8aC/yaepBsasMNuRJWa7HOudOekDqFzYZdYFxSZVzrsowBD0Y7k7qNc
-	0Jv+rF720STAb36q0vrMoRCGUbRWTlhpj1BngUXz2fDyGi7zqrs617Mt4OgPi1OCRuR89tX9zrMVT
-	sQENztduK6ToVbm/GUkXj6LSWxs0uhVYeoA71py6RD/nejs6n2CuYPI1Pz98fHl6pIokj0DXQjLlw
-	weuz/PEVt45f1Jux9AimKfbF7wRYtp6fTBataOCGEXhPr8xCT++EY1S2iU0qk6OySJnpgSI3ys5xd
-	fy5gmMMg==;
+	bh=6IgLGyzdm/Oz8+57j6vgG+Bixk6o1KsOnA+JBxBzS9Y=; b=DmUuxqP/kti1ZOCq8yUNe9MLfV
+	FJvJSPALrLUTHCaHtGJPlkdEewXp/E/q5AWm0WFfCZzVr7q2subYB3DirSghmgcYIOhyG1lXnb4OY
+	pAm/yMNmKBlYiMBYc/aNub7aWVeXcoctlDW1uw48fsAEFYm+IhW1R6TCd7vweMJF0bG5pPUJjMnhT
+	+HP+nizqKSjoWtkjiVFFWCOHn094gJPtSSMva/1FOmZxgL7Cro8ptKLw03/lq+Q5M9SvIwRzvxo7a
+	cZBsrCQvQH92ITtD0UtbAWfasC+V9XT6XjA70HDrjsTtLq1/ORlATGYXUTMWyoFUu3bJkw8gi/4+K
+	35gT7eLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4HF7-00000003J4W-49sB
+	id 1t4HGA-00000003JX6-3UeE
 	for ath12k@archiver.kernel.org;
-	Fri, 25 Oct 2024 10:08:29 +0000
+	Fri, 25 Oct 2024 10:09:34 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4HDn-00000003Itr-1zrU
+	id 1t4HFN-00000003J9x-2iIe
 	for ath12k@lists.infradead.org;
-	Fri, 25 Oct 2024 10:07:08 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49OKTs2E007551;
-	Fri, 25 Oct 2024 10:07:04 GMT
+	Fri, 25 Oct 2024 10:08:49 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49P0mmpb004988;
+	Fri, 25 Oct 2024 10:08:42 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	06IkTi//D5tgGoX99HX3f2NLiU6Qz5QmsybYsvP4yx4=; b=kc9hnEmmI6kMNPiM
-	Lns4TJrZ0xpa4dY8PIXKRCaM+eDcUE7ehigiiNRcUslUsjkuKtN2zagk1vUvv64K
-	Z3Y0LMnBy9ZHYX9KaaRXP9wzmF+tZWq+oSp69SsT8uMq+DGmZGQ4haRvU5GXN/1R
-	aIu4J5E0vvDItSioR0Sb12KJ3IU31DrYqmdXLF9bgzmVcER0esrpoKcRHtkrV2oQ
-	lPVUevsjbMhSFaaZ34+zKaLUQg3vbcNwqG+VLFqVkbxQKYA3c3iIDIWDvIXwqyYB
-	3vLxMAcBChNXxTO4BjYRtZwWzXnVi/ryRfuSZTPOWE1+3STE/we/3cxIMVJyLA/X
-	V8d03Q==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42fk52keer-1
+	6IgLGyzdm/Oz8+57j6vgG+Bixk6o1KsOnA+JBxBzS9Y=; b=hAmoK8NpDQkVoM+C
+	Gp+hHQSnPI2SOW/HB95nsNQSpeApGf1zR8iS+ZgzCyImmVCQsnqj7QpvmcoF7dl5
+	5XOvf2fzxd0SXntL6RfhcauMFytd9mzQs01NvdjywUzIjtyOKtpFxR2X8JuK+T4V
+	AQxI7yYM6AJz6KJ3gQDhVIKmjFo754A54/9GFeJYvKnj3lDhvHM9kOR+R2t4KTQk
+	H2agamty4Uiv+KvWuW/03W2+59kI8hxCqfK2WmOIDxK+eyc3ZaASCWg3IAazZG2Q
+	Qt243QgSRDRvPeIc6gAtlWVnvLCkl9Rh7n+h6Dk1MhgvZzOwDmF3hTOnm1KEEDjJ
+	pk5SjA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em688gvd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Oct 2024 10:07:03 +0000 (GMT)
+	Fri, 25 Oct 2024 10:08:42 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49PA72Jf016166
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49PA8fKp025900
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Oct 2024 10:07:02 GMT
+	Fri, 25 Oct 2024 10:08:41 GMT
 Received: from [10.151.41.25] (10.80.80.8) by nalasex01b.na.qualcomm.com
  (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 25 Oct
- 2024 03:06:58 -0700
-Message-ID: <88489191-2dbd-4018-b35b-84f43f8eb55e@quicinc.com>
-Date: Fri, 25 Oct 2024 15:36:55 +0530
+ 2024 03:08:37 -0700
+Message-ID: <db0a6797-0e51-45b2-bf8a-58d53d8cf959@quicinc.com>
+Date: Fri, 25 Oct 2024 15:38:33 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [RFC PATCH 2/6] dt-bindings: net: wireless: ath12k: describe WSI
@@ -73,32 +73,30 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
 References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
  <20241023060352.605019-3-quic_rajkbhag@quicinc.com>
- <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
- <9c06fdac-df4f-449c-8d58-b57c375c1751@quicinc.com>
- <808cfb83-a80f-431c-be69-ee3da964482a@kernel.org>
+ <c7c6bf7e-0f79-44b1-aed4-db1fdbedc9a8@kernel.org>
 Content-Language: en-US
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <808cfb83-a80f-431c-be69-ee3da964482a@kernel.org>
+In-Reply-To: <c7c6bf7e-0f79-44b1-aed4-db1fdbedc9a8@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: arokTUZefxQ1lTB77yWMn0wb53_-RvuU
-X-Proofpoint-ORIG-GUID: arokTUZefxQ1lTB77yWMn0wb53_-RvuU
+X-Proofpoint-ORIG-GUID: cTudtVr9yD2hfIhIKlDkE9f4wgUtdiAW
+X-Proofpoint-GUID: cTudtVr9yD2hfIhIKlDkE9f4wgUtdiAW
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
- lowpriorityscore=0 malwarescore=0 impostorscore=0 phishscore=0
- adultscore=0 mlxlogscore=999 priorityscore=1501 spamscore=0 bulkscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
+ priorityscore=1501 adultscore=0 bulkscore=0 phishscore=0 mlxscore=0
+ lowpriorityscore=0 mlxlogscore=999 impostorscore=0 suspectscore=0
  clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410250077
+ engine=8.19.0-2409260000 definitions=main-2410250078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241025_030707_668526_CF46B13B 
-X-CRM114-Status: GOOD (  17.85  )
+X-CRM114-CacheID: sfid-20241025_030845_982481_DB24A4DE 
+X-CRM114-Status: GOOD (  13.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,68 +111,46 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/23/2024 11:27 PM, Krzysztof Kozlowski wrote:
-> On 23/10/2024 14:22, Raj Kumar Bhagat wrote:
->> The above three blocks represent the QCN9274 WiFi devices connected to their
->> respective PCI slots. The dotted line represents the WSI connection that connects
->> these three devices together. Hence, the WSI interface is part of the QCN9274 device.
+On 10/23/2024 12:30 PM, Krzysztof Kozlowski wrote:
+> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
+>> QCN9274 device has WSI support. WSI stands for WLAN Serial Interface.
+>> It is used for the exchange of specific control information across
+>> radios based on the doorbell mechanism. This WSI connection is
+>> essential to exchange control information among these devices
 >>
->> To describe this WSI hardware connection in the device tree, we are adding three
->> properties inside the WSI object:
+>> Hence, describe WSI interface supported in QCN9274 with the following
+>> properties:
 >>
->> 1. qcom,wsi-group-id:
->>    In the above diagram, we have one WSI connection connecting all three devices.
->>    Hence, “qcom,wsi-group-id” for all three devices can be 0.
+>>  - qcom,wsi-group-id: It represents the identifier assigned to the WSI
+>>    connection. All the ath12k devices connected to same WSI connection
+>>    have the same wsi-group-id.
 >>
->>    This cannot be implied by the compatible property, as explained below:
->>    Let’s take the case of a platform that can have four QCN9274 WiFi devices. Below
->>    is one possibility of a WSI connection:
+>>  - qcom,wsi-index: It represents the identifier assigned to ath12k
+>>    device in the order of the WSI connection.
 >>
->>          +-------+       +-------+          +-------+      +-------+
->>          | pcie2 |       | pcie3 |          | pcie1 |      | pcie0 |
->>          |       |       |       |          |       |      |       |
->>    +---->|  wsi  |------>|  wsi  |--+   +-->|  wsi  |----->|  wsi  |----+
->>    |     | idx 0 |       | idx 1 |  |   |   | idx 0 |      | idx 1 |    |
->>    |     +-------+       +-------+  |   |   +-------+      +-------+    |
->>    +--------------------------------+   +-------------------------------+
+>>  - qcom,wsi-num-devices: Number of devices connected through WSI in
+>>    the same group ID.
 >>
->>    In this case, QCN9274 devices connected in PCIe2 and PCIe3 will have the same
->>    “qcom,wsi-group-id”. This group-id will be different from the “qcom,wsi-group-id”
->>    of QCN9274 devices connected at PCIe1 and PCIe0.
-> Thanks, this explains why group-id cannot be same...
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+>>  .../bindings/net/wireless/qcom,ath12k.yaml    | 61 +++++++++++++++++++
+>>  1 file changed, 61 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> index ecf38af747f7..6c8f97865075 100644
+>> --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+>> @@ -19,6 +19,7 @@ properties:
+>>    compatible:
+>>      enum:
+>>        - pci17cb,1107  # WCN7850
+>> +      - pci17cb,1109  # QCN9274
 > 
->> 2. qcom,wsi-index:
->>    This is a unique identifier of the device within the same group. The value of
->>    wsi-idx is represented in both the above cases (RDP433 and the 4 WiFi device
->>    platform) in the diagram itself.
-> But still any device-indexing is in general not accepted (and was
-> mentioned during reviews multiple times).
-> 
-> This looks like circular list, so phandle will be enough. You only need
-> to mark devices being part of the same chain.
-> 
-> Actually graph with endpoints would be more suitable, assuming above
-> diagram represents connections.
+> Missing supplies. How does the device take power? Everything through
+> standard PCI pins? Are you sure? Please submit complete binding, so with
+> all required properties.
 > 
 
-Thanks for suggesting "graph will endpoints" approach for representing WSI
-connections.
-
-I will check on this and come back.
-
-> Please include that diagram in binding description.
-> 
-
-Sure will include the above diagram in next version.
-
->> 3. qcom,wsi-num-devices:
->>    Represents the number of devices connected through WSI within the same WSI group to
->>    which the device belongs.
->>    
->>    In the case of RDP433, all devices will have this number as 3.
->>    For the second example with four WiFi devices but with two WSI connections, the
->>    value of “qcom,wsi-num-devices” for each device will be 2.
-> Not needed, just iterate over the graph children.
-
-Thanks, based on "graph with endpoints" implementation will have this as well.
+QCN9274 gets powered from the standard Pcie (3.3 V) supply. No additional
+regulators are required.
 
