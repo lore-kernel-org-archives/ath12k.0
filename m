@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DCFED0C5F9
-	for <ath12k@archiver.kernel.org>; Fri, 25 Oct 2024 10:05:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44143D0C5F8
+	for <ath12k@archiver.kernel.org>; Fri, 25 Oct 2024 10:08:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PwYWGdB45qg/3CamTEfHajoG/yYk5oPu6x2vS9FthPY=; b=xS5+IhavCWZyM5hnNHEUncJfox
-	fgfWjCFgwQrFsEIkuLhY5wGQVtW+92LQ1xEO+VMT+kZUVkdyCbVpOm8z9eYS0GkIQ10Mp0V/hNPt/
-	+Vs/YamkrEeKuiUOuyIqxfNzNBfRX48fbIpgBeXc6FgIix88FEJVauoGlZRmX8waRUSJhENb1l3VS
-	3Fryp8+8Fjr2g1SFIUgt0+mp31oWEqCXSzQ2cdhNNSkPu1iCI3LFV0xhfd84sN3y5mneQdFDk6+/O
-	CgFKi5Ptw83MwZQv2drHE0Tkjj1X9MasAwqIlYAyb5sXW+bQX/UrtUgbTO8FLI2hgwVMtr1W4PJak
-	BnCXrbAA==;
+	bh=06IkTi//D5tgGoX99HX3f2NLiU6Qz5QmsybYsvP4yx4=; b=Iq2wQImqYvC8ojHnSMbtO/7lYC
+	mZVrFejTGqrK7wILPSRwCC8aC/yaepBsasMNuRJWa7HOudOekDqFzYZdYFxSZVzrsowBD0Y7k7qNc
+	0Jv+rF720STAb36q0vrMoRCGUbRWTlhpj1BngUXz2fDyGi7zqrs617Mt4OgPi1OCRuR89tX9zrMVT
+	sQENztduK6ToVbm/GUkXj6LSWxs0uhVYeoA71py6RD/nejs6n2CuYPI1Pz98fHl6pIokj0DXQjLlw
+	weuz/PEVt45f1Jux9AimKfbF7wRYtp6fTBataOCGEXhPr8xCT++EY1S2iU0qk6OySJnpgSI3ys5xd
+	fy5gmMMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4HBy-00000003ISL-3wSx
+	id 1t4HF7-00000003J4W-49sB
 	for ath12k@archiver.kernel.org;
-	Fri, 25 Oct 2024 10:05:14 +0000
+	Fri, 25 Oct 2024 10:08:29 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4H6x-00000003HDQ-2gFU
+	id 1t4HDn-00000003Itr-1zrU
 	for ath12k@lists.infradead.org;
-	Fri, 25 Oct 2024 10:00:05 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49P1BrSe004522;
-	Fri, 25 Oct 2024 09:59:58 GMT
+	Fri, 25 Oct 2024 10:07:08 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49OKTs2E007551;
+	Fri, 25 Oct 2024 10:07:04 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	PwYWGdB45qg/3CamTEfHajoG/yYk5oPu6x2vS9FthPY=; b=G3TRUDixCpwVp/37
-	eY2953pgVDCWctZFVnwujl30TbLM7k3Hpsf5X5T4RnafIpoMNhu8okxsTXNwk/y1
-	WFn3/aBkknSS119Y6ZoozDkRlKhQuCoAVRiKmdzjmepTwiuQ1eZ01SQlln8iMuwZ
-	opeAR+8ovLlW90i/jyerf9H7yz3zct9ylkgXNnQyY1m0aGNvIrTZzQIj/0To82K1
-	xfJ1IgfY9n1Gu15hNJYtx5Tf04Fz2TV8hFpz+/dHp1081Ss8AFMkym6hG2nF6+vE
-	eAQG6JQ547jiV/YHfQcmVMeu70uFlldtEHCUYeLJOgLM8a3jStv6MQo9uz0lW+Gu
-	VoIvFA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em688g37-1
+	06IkTi//D5tgGoX99HX3f2NLiU6Qz5QmsybYsvP4yx4=; b=kc9hnEmmI6kMNPiM
+	Lns4TJrZ0xpa4dY8PIXKRCaM+eDcUE7ehigiiNRcUslUsjkuKtN2zagk1vUvv64K
+	Z3Y0LMnBy9ZHYX9KaaRXP9wzmF+tZWq+oSp69SsT8uMq+DGmZGQ4haRvU5GXN/1R
+	aIu4J5E0vvDItSioR0Sb12KJ3IU31DrYqmdXLF9bgzmVcER0esrpoKcRHtkrV2oQ
+	lPVUevsjbMhSFaaZ34+zKaLUQg3vbcNwqG+VLFqVkbxQKYA3c3iIDIWDvIXwqyYB
+	3vLxMAcBChNXxTO4BjYRtZwWzXnVi/ryRfuSZTPOWE1+3STE/we/3cxIMVJyLA/X
+	V8d03Q==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42fk52keer-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Oct 2024 09:59:57 +0000 (GMT)
+	Fri, 25 Oct 2024 10:07:03 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49P9xua0011713
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49PA72Jf016166
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Oct 2024 09:59:56 GMT
+	Fri, 25 Oct 2024 10:07:02 GMT
 Received: from [10.151.41.25] (10.80.80.8) by nalasex01b.na.qualcomm.com
  (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 25 Oct
- 2024 02:59:52 -0700
-Message-ID: <b2a18ac5-727d-4f5b-9465-c360e6432dc5@quicinc.com>
-Date: Fri, 25 Oct 2024 15:29:49 +0530
+ 2024 03:06:58 -0700
+Message-ID: <88489191-2dbd-4018-b35b-84f43f8eb55e@quicinc.com>
+Date: Fri, 25 Oct 2024 15:36:55 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH 1/6] dt-bindings: net: wireless: update required
- properties for ath12k PCI module
+Subject: Re: [RFC PATCH 2/6] dt-bindings: net: wireless: ath12k: describe WSI
+ property for QCN9274
 To: Krzysztof Kozlowski <krzk@kernel.org>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
         Rob
@@ -72,37 +72,33 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
 References: <20241023060352.605019-1-quic_rajkbhag@quicinc.com>
- <20241023060352.605019-2-quic_rajkbhag@quicinc.com>
- <87db3d68-ab1a-4cc4-9857-416de39cea0f@kernel.org>
- <e2c1ce1a-89af-4feb-a21a-9ca2578430e7@quicinc.com>
- <b97b8350-3925-40b0-8f87-f89df429a52a@kernel.org>
- <e7b27f57-efb2-45ea-bbe0-e5aeb90cbff9@quicinc.com>
- <606083d8-4332-45e4-be41-08ca5425cc03@kernel.org>
- <94defe49-c87a-44f6-8768-03f3d6687ac3@quicinc.com>
- <50c0f184-030b-4a19-bf8a-077505170f03@kernel.org>
+ <20241023060352.605019-3-quic_rajkbhag@quicinc.com>
+ <b42da7f0-2034-467b-ab17-fb13ef7800c4@kernel.org>
+ <9c06fdac-df4f-449c-8d58-b57c375c1751@quicinc.com>
+ <808cfb83-a80f-431c-be69-ee3da964482a@kernel.org>
 Content-Language: en-US
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <50c0f184-030b-4a19-bf8a-077505170f03@kernel.org>
+In-Reply-To: <808cfb83-a80f-431c-be69-ee3da964482a@kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: DTVJxZ-XF8nN1HLYhmgfBnExrhPnEtDh
-X-Proofpoint-GUID: DTVJxZ-XF8nN1HLYhmgfBnExrhPnEtDh
+X-Proofpoint-GUID: arokTUZefxQ1lTB77yWMn0wb53_-RvuU
+X-Proofpoint-ORIG-GUID: arokTUZefxQ1lTB77yWMn0wb53_-RvuU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- priorityscore=1501 adultscore=0 bulkscore=0 phishscore=0 mlxscore=0
- lowpriorityscore=0 mlxlogscore=533 impostorscore=0 suspectscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
+ lowpriorityscore=0 malwarescore=0 impostorscore=0 phishscore=0
+ adultscore=0 mlxlogscore=999 priorityscore=1501 spamscore=0 bulkscore=0
  clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410250076
+ engine=8.19.0-2409260000 definitions=main-2410250077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241025_030003_856616_98E56D6C 
-X-CRM114-Status: GOOD (  19.34  )
+X-CRM114-CacheID: sfid-20241025_030707_668526_CF46B13B 
+X-CRM114-Status: GOOD (  17.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,63 +113,68 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/23/2024 5:38 PM, Krzysztof Kozlowski wrote:
-> On 23/10/2024 12:28, Raj Kumar Bhagat wrote:
->> On 10/23/2024 12:29 PM, Krzysztof Kozlowski wrote:
->>> On 23/10/2024 08:53, Raj Kumar Bhagat wrote:
->>>> On 10/23/2024 12:17 PM, Krzysztof Kozlowski wrote:
->>>>> On 23/10/2024 08:45, Raj Kumar Bhagat wrote:
->>>>>> On 10/23/2024 12:05 PM, Krzysztof Kozlowski wrote:
->>>>>>> On 23/10/2024 08:03, Raj Kumar Bhagat wrote:
->>>>>>>> The current device-tree bindings for the Ath12K module list many
->>>>>>>> WCN7850-specific properties as required. However, these properties are
->>>>>>>> not applicable to other Ath12K devices.
->>>>>>>>
->>>>>>>> Hence, remove WCN7850-specific properties from the required section,
->>>>>>>> retaining only generic properties valid across all Ath12K devices.
->>>>>>>> WCN7850-specific properties will remain required based on the device's
->>>>>>>> compatible enum.
->>>>>>> Just not true. These apply to all devices described in this binding.
->>>>>>>
->>>>>>> NAK.
->>>>>>>
->>>>>>> Don't send patches for your downstream stuff.
->>>>>> This is not for downstream. This series is the per-requisite for ath12k
->>>>>> MLO support in upstream.
->>>>>>
->>>>>> In the subsequent patch [2/6] we are adding new device (QCN9274) in this
->>>>>> binding that do not require the WCN7850 specific properties.
->>>>>>
->>>>>> This is a refactoring patch for the next patch [2/6].
->>>>> It's just wrong. Not true. At this point of patch there are no other
->>>>> devices. Don't refactor uselessly introducing incorrect hardware
->>>> Ok then, If we squash this patch with the next patch [2/6], that actually adding
->>>> the new device, then this patch changes are valid right?
->>> Yes, except I asked to have separate binding for devices with different
->>> interface (WSI). You add unrelated devices to same binding, growing it
->>> into something tricky to manage. Your second patch misses if:then
->>> disallwing all this WSI stuff for existing device... and then you should
->>> notice there is absolutely *nothing* in common.
->>>
->> I understand your point about having separate bindings if there are no common
->> properties. However, the title and description of this binding indicate that it
->> is intended for Qualcomm ath12k wireless devices with a PCI bus. Given this, the
->> QCN9274 seems to fit within the same binding.
-> Feel free to fix it. Or add common schema used by multiple bindings.
+On 10/23/2024 11:27 PM, Krzysztof Kozlowski wrote:
+> On 23/10/2024 14:22, Raj Kumar Bhagat wrote:
+>> The above three blocks represent the QCN9274 WiFi devices connected to their
+>> respective PCI slots. The dotted line represents the WSI connection that connects
+>> these three devices together. Hence, the WSI interface is part of the QCN9274 device.
+>>
+>> To describe this WSI hardware connection in the device tree, we are adding three
+>> properties inside the WSI object:
+>>
+>> 1. qcom,wsi-group-id:
+>>    In the above diagram, we have one WSI connection connecting all three devices.
+>>    Hence, “qcom,wsi-group-id” for all three devices can be 0.
+>>
+>>    This cannot be implied by the compatible property, as explained below:
+>>    Let’s take the case of a platform that can have four QCN9274 WiFi devices. Below
+>>    is one possibility of a WSI connection:
+>>
+>>          +-------+       +-------+          +-------+      +-------+
+>>          | pcie2 |       | pcie3 |          | pcie1 |      | pcie0 |
+>>          |       |       |       |          |       |      |       |
+>>    +---->|  wsi  |------>|  wsi  |--+   +-->|  wsi  |----->|  wsi  |----+
+>>    |     | idx 0 |       | idx 1 |  |   |   | idx 0 |      | idx 1 |    |
+>>    |     +-------+       +-------+  |   |   +-------+      +-------+    |
+>>    +--------------------------------+   +-------------------------------+
+>>
+>>    In this case, QCN9274 devices connected in PCIe2 and PCIe3 will have the same
+>>    “qcom,wsi-group-id”. This group-id will be different from the “qcom,wsi-group-id”
+>>    of QCN9274 devices connected at PCIe1 and PCIe0.
+> Thanks, this explains why group-id cannot be same...
 > 
->> Additionally, there will likely be more properties added in the future that could
->> be common. For example, the “qcom,ath12k-calibration-variant” property (which the
-> You are supposed to add them now, not later. See writing bindings. They
-> are supposed to be complete.
+>> 2. qcom,wsi-index:
+>>    This is a unique identifier of the device within the same group. The value of
+>>    wsi-idx is represented in both the above cases (RDP433 and the 4 WiFi device
+>>    platform) in the diagram itself.
+> But still any device-indexing is in general not accepted (and was
+> mentioned during reviews multiple times).
+> 
+> This looks like circular list, so phandle will be enough. You only need
+> to mark devices being part of the same chain.
+> 
+> Actually graph with endpoints would be more suitable, assuming above
+> diagram represents connections.
 > 
 
-Sure will add "qcom,ath12k-calibration-variant" in next version.
+Thanks for suggesting "graph will endpoints" approach for representing WSI
+connections.
 
->> ath12k host currently doesn’t support reading and using, hence we are not adding it
->> now) could be a common property.
-> What is "host"? Either the device has this property or not. Whether host
-> supports something does not really matter, right? You have hardware
-> property or you have it *not*.
+I will check on this and come back.
 
-Ah, my bad. I meant to say “ath12k driver”.
+> Please include that diagram in binding description.
+> 
+
+Sure will include the above diagram in next version.
+
+>> 3. qcom,wsi-num-devices:
+>>    Represents the number of devices connected through WSI within the same WSI group to
+>>    which the device belongs.
+>>    
+>>    In the case of RDP433, all devices will have this number as 3.
+>>    For the second example with four WiFi devices but with two WSI connections, the
+>>    value of “qcom,wsi-num-devices” for each device will be 2.
+> Not needed, just iterate over the graph children.
+
+Thanks, based on "graph with endpoints" implementation will have this as well.
 
