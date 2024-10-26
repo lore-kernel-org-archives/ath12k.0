@@ -4,86 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79916D149E8
-	for <ath12k@archiver.kernel.org>; Fri, 25 Oct 2024 19:55:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71736D10BEC
+	for <ath12k@archiver.kernel.org>; Sat, 26 Oct 2024 09:08:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-ID:Subject:References:In-Reply-To:CC:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=p8x3WVkVoyIe5L83o8I4+/CGXpddJbCkokvyFk5WPck=; b=JivkIV3fbYOBPBbfIfLh/sIOfo
-	y89scgildAMZc3lJAKVUpZLiBftCnunbVlq6SqnZFr7A3h7yPVqNEpnvD+AwfE0wtqSWwhSpM3q+E
-	RuoS3bq0JqWx+IRFWq0Y1cZIztRgeA3RdUCcl3c05DjBNDD9Fh83a/hnTp7f6F0J2yJnA+tBjxMeE
-	283o4ewVp7vOc+e66JMtwf3Z04w/wPwDHp1Sv4r+SNSA7kQF1vfl0L7TmvRzhQQ8bjTT4jm6Tgaaw
-	nLlAw0mhOSnMQzjklVH6yvbkwIkUR5FlbENP4/hmmNegmVrFGZPPLY3qHc/pCvedjxhnza0ymbKCX
-	p8mQVzbg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=btuFwdi+NfuAQ8uNsSIeJuVZklWu4qKd6lUc99MXsVM=; b=SDOkt0dmL0c3Q+t2RitaOa9S2j
+	4LjSE7BAX7I8NLmwPju71qCnDRacj2lLiHCg0FDVXfkQfn/dn/HAh3I98v5acll8PXt13G3vd5mwO
+	QMwOUaap4oopvnefQoBLBJK6+h7DLkD0yBNdWRzvQW+s1ytE4R9AxzEULZev4CRgXRJYoZ8IBK3v7
+	LQIPDXr6sO1d20zNkbh8vWAlcf224DFhHC2UvyoBDAxykqeFHzjAn4uGafw9qBSqq3DrRRO9jdUYM
+	Crs4B/4pKuE5crL5hsqLv02Vys12j2mdRjLx5r2+49eO42rqSG2ARVsXwKswNqRWbwEcpjw6YDBg5
+	KqRqWe1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4QP8-0000000535D-0mUI
+	id 1t4cms-00000006Gka-3SbB
 	for ath12k@archiver.kernel.org;
-	Fri, 25 Oct 2024 19:55:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Sat, 26 Oct 2024 09:08:46 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4PwG-00000004yWQ-19QU
+	id 1t4cmp-00000006Gk7-1Wzw
 	for ath12k@lists.infradead.org;
-	Fri, 25 Oct 2024 19:25:37 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49PB2H54001156;
-	Fri, 25 Oct 2024 19:25:35 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	p8x3WVkVoyIe5L83o8I4+/CGXpddJbCkokvyFk5WPck=; b=EgbbVWLUkIDjOyPA
-	+8vTJRYSMNd1thxy66cj9XgQHt/0q6jIkbCPJEwAP3M1tYoE0CJ/z5ypJfuF2/c3
-	X97HNHZF7iv2VeWjNkkqE1Dj1CK8Fz8CRYU0DqWNbzRZb13q5ki2jJt6leyMtoPm
-	VoKiic6aNi9nDyLWZY+ZaRumM1cc8HohJMxujJO7ewBfROtQmpEWJ1DCXp6x1rLu
-	DAhYKiEuq7HL3Pr5nhj4CRLaLCzF+b3YcCcGuWXATSTmaN3uBC8dGvf/Q6tLasJD
-	xouvnW/fhW88WjhQ5wHD85WXL9MU+09w5JO1JKm4K8kohxU8G5yZL/i/2AKtXdzg
-	tmtndQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42ga3s1e8e-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Oct 2024 19:25:35 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49PJPZYh010762
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 25 Oct 2024 19:25:35 GMT
-Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 25 Oct
- 2024 12:25:34 -0700
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-To: <ath12k@lists.infradead.org>, Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-CC: <linux-wireless@vger.kernel.org>
-In-Reply-To: <20241022072406.3231450-1-quic_rajkbhag@quicinc.com>
-References: <20241022072406.3231450-1-quic_rajkbhag@quicinc.com>
-Subject: Re: [PATCH v3] wifi: ath12k: convert tasklet to BH workqueue for
- CE interrupts
-Message-ID: <172988433462.1407878.10004847719683728035.b4-ty@quicinc.com>
-Date: Fri, 25 Oct 2024 12:25:34 -0700
+	Sat, 26 Oct 2024 09:08:45 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 14C815C4CFB;
+	Sat, 26 Oct 2024 09:07:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B517C4CEC6;
+	Sat, 26 Oct 2024 09:08:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1729933721;
+	bh=MbVYq5hP582/qyZUS1tqQD3SG2ii9UrEUkQvpbS/jLE=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=ij1JNBhb2toHdck78qZ13KU3D4f0OmZljPlCtnHY4Rm0piNHUzBQLKSvWMMkYQfxz
+	 DNq2wg+6RZvO64GD63O+gQjoT0DEaFwfXed1L7UeANUeIJVCE4LdyMDCV9zKKC4sJb
+	 B7kKkVxum1wgwJONabJWoigxFNd/MaejU2eZZmx4hRxM3MtKtBmnSL9IxE/fYfifxc
+	 y31C/z1Gi7XHFrvJf11J1U3iU2nnksPbVOal8qQoMBXe8NPBTYMKzppuItFbjRK+a1
+	 78dEAkBanNccZUpOeDVR5LY9k/A/klay3Sv3tqdnNvgNRPnc2UMPaBqJMyutC4Llnm
+	 5ps7oIBRdeltg==
+From: Kalle Valo <kvalo@kernel.org>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>, linux-wireless@vger.kernel.org
+Subject: Re: [PATCH 3/8] wifi: ath12k: Refactor sta state machine
+References: <20241023133004.2253830-1-kvalo@kernel.org>
+	<20241023133004.2253830-4-kvalo@kernel.org>
+	<e886a4c0-14f9-4299-97ef-f8cd811c94e6@quicinc.com>
+Date: Sat, 26 Oct 2024 12:08:39 +0300
+In-Reply-To: <e886a4c0-14f9-4299-97ef-f8cd811c94e6@quicinc.com> (Baochen
+	Qiang's message of "Thu, 24 Oct 2024 10:58:56 +0800")
+Message-ID: <87o737kz8o.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: GReO3n0zVMpT1VOt8qmknqIyHPZWSUQx
-X-Proofpoint-GUID: GReO3n0zVMpT1VOt8qmknqIyHPZWSUQx
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 clxscore=1015
- impostorscore=0 bulkscore=0 mlxlogscore=645 malwarescore=0 suspectscore=0
- phishscore=0 lowpriorityscore=0 mlxscore=0 priorityscore=1501 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2410250149
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241025_122536_365897_9B3A54F8 
-X-CRM114-Status: UNSURE (   7.90  )
+X-CRM114-CacheID: sfid-20241026_020843_472230_B01A60B1 
+X-CRM114-Status: UNSURE (   8.37  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,26 +75,50 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
-On Tue, 22 Oct 2024 12:54:06 +0530, Raj Kumar Bhagat wrote:
-> Currently in Ath12k, tasklet is used to handle the BH context of CE
-> interrupts. However the tasklet is marked deprecated and has some
-> design flaws. To replace tasklets, BH workqueue support has been
-> added. BH workqueue behaves similarly to regular workqueues except
-> that the queued work items are executed in the BH context.
-> 
-> Hence, convert the tasklet to BH workqueue for handling CE interrupts
-> in the BH context.
-> 
-> [...]
+> On 10/23/2024 9:29 PM, Kalle Valo wrote:
+>> +static void ath12k_mac_station_post_remove(struct ath12k *ar,
+>> +					   struct ath12k_link_vif *arvif,
+>> +					   struct ath12k_link_sta *arsta)
+>> +{
+>> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+>> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+>> +	struct ath12k_sta *ahsta = arsta->ahsta;
+>> +	struct ath12k_peer *peer;
+>> +
+>> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>> +
+>> +	ath12k_mac_dec_num_stations(arvif, arsta);
+>> +
+>> +	spin_lock_bh(&ar->ab->base_lock);
+>> +
+>> +	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
+>> +	if (peer && peer->sta == sta) {
+>> +		ath12k_warn(ar->ab, "Found peer entry %pM n vdev %i after it was supposedly removed\n",
+>> +			    vif->addr, arvif->vdev_id);
+>> +		peer->sta = NULL;
+>> +		list_del(&peer->list);
+>> +		kfree(peer);
+>> +		ar->num_peers--;
+>> +	}
+>> +
+>> +	spin_unlock_bh(&ar->ab->base_lock);
+>> +
+>> +	kfree(arsta->rx_stats);
+>> +	arsta->rx_stats = NULL;
+>> +
+>> +	if (arsta->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
+>> +		rcu_assign_pointer(ahsta->link[arsta->link_id], NULL);
+>> +		synchronize_rcu();
+>> +		ahsta->links_map &= ~(BIT(arsta->link_id));
+>
+> should we put this ahead of rcu_assign_pointer()?
 
-Applied, thanks!
+I agree, I'll do that in v2.
 
-[1/1] wifi: ath12k: convert tasklet to BH workqueue for CE interrupts
-      commit: cdad737160571a98cc4933a62c9f2728e965ab27
-
-Best regards,
 -- 
-Jeff Johnson <quic_jjohnson@quicinc.com>
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
