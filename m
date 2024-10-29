@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8748D3A68E
-	for <ath12k@archiver.kernel.org>; Tue, 29 Oct 2024 19:00:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E6EFD3A68D
+	for <ath12k@archiver.kernel.org>; Tue, 29 Oct 2024 19:00:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=a7YFTapu5MbB2+8OZOMzwkscLMrLRTsJfiYPYzEC6SY=; b=HfJPyfBAGmiifhp0gSVyJSxkKk
-	sinYuIQ2mCJypWjIUKr6yyCTibRNRZlzwYGKBFxSv7+lceXougbeAsBCgf97N3yNLL7JAtYzs/Kbs
-	ESkge9cFXvkaADELsEl9YAi1+sbCVJL7KgeYfERDWVv2hdmQFNlopAANeNdNH202HPgYIDRrVxuVS
-	MQBTasO9kao5HAzXSOVvR3x3ADUBUnLhpRs1JbgzBkjY/6md8efVksZ8EnJLx1752lvP+wrgSrIwR
-	2Oa91yE7EBIgCh0LUApQZ/PkSkK/C4C2ngGpMgZjosT6jSEaTS1n/crUW44+/Em008qPC0cIytzxt
-	W2zsnR8g==;
+	bh=fyem2iYbOt+HlPyPpzOriiVm0gJnGY9hYBLl3hvkas0=; b=GYCBS3BCKrShqIxkf+53uDdzNq
+	nHoQuG2wlUk+5o7XtQlpp5uXrdS9Y2bhLiFmRRzzez6om+kV92a4rmMusvMx2/eDaVTS0sVigssw6
+	IWajA5EljjLmrDIgbD4VPjeTjL2akGe22duyh7JNRW9kC6YWCqJNJNw1+T3WEU7cM2K7XpJweqbpa
+	iHUIyTRWUF7+sGI6mdnzgZhyE8ciMQMHi7GqUWUFI9HXdb1IXDxApxcdEC/YSIxuTtAcQHW/KMOgV
+	zDAh3jp/3RYRnF38IRujZq+zL2gCEtRFe4wRAYKSb6fcahUofGR0CPexd/NmxfqUZYCxpVxTF9r4V
+	bXyYwE5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5rSI-0000000FbFC-1tXx
+	id 1t5rSI-0000000FbFP-3jhf
 	for ath12k@archiver.kernel.org;
 	Tue, 29 Oct 2024 19:00:38 +0000
 Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5qOa-0000000FO8b-0giV
+	id 1t5qPR-0000000FOb2-2O1H
 	for ath12k@lists.infradead.org;
-	Tue, 29 Oct 2024 17:52:45 +0000
+	Tue, 29 Oct 2024 17:53:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id BC0B6A431A3;
-	Tue, 29 Oct 2024 17:50:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F540C4CECD;
-	Tue, 29 Oct 2024 17:52:37 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 8D893A431A8;
+	Tue, 29 Oct 2024 17:51:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55519C4CECD;
+	Tue, 29 Oct 2024 17:53:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1730224362;
-	bh=JFFzzl4Y52ZVnegDHi82oJJUqr3xGdEYAQL4WOBiKC8=;
+	s=k20201202; t=1730224415;
+	bh=L3A6Dqjh7x00tz4XPxgwKp7I396o8/4nJPLUOjhSnuA=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=iS6g92jRiZ2sdckjC6a0TGhUadZSgLSncPGUraVTUoGyigoxlqcwGRdosGj0Pk66d
-	 Z7JEpb514VEus4LQOtsuuqD1OH9DKdq81bzkpOCjErHNNp1pVlXHubbqeYjTb1UDo/
-	 N0NQtxRc3ws1lZSNyiQsgJBBKMi8fPINo2IxaLqLcT4LurWt9v2rwhJvKQz6mWRI5c
-	 +0NGDG8D87qjZ+D8VpMWGVOYsTv1RnZFMUWIh+wN76FMFs6MwUSlzsCY+qiLmjf7zt
-	 YKDto92Uykys+cOmW2cd10ld4c5CZIVuxWJ8aYeWyOV4+ycRxA8Q4o/O+AZoZdy5Yj
-	 +243lUKrmyNjw==
-Message-ID: <764f8f22-146d-4edc-9d46-7fe3c7d9a2f2@kernel.org>
-Date: Tue, 29 Oct 2024 18:52:34 +0100
+	b=ATjRJVjMhKbRUzYtUhsrjQQ0yTZC9BLN8dbxjqCi1drA/gwNCDSZiAnQxGn2AKPqk
+	 YijT+pw7W+xlc9xYNPqqVYIWAAiMhzpMvOgUujLM0Rbs2QF7E78R6KNabhkIy513gd
+	 wvQ/5v6I9c4V8XbrFBnqPqPVA6SNNB7oK8BYueWzjfEy8GUBvy0FASImNmJypM4F1H
+	 WvL2QUie6jvGuLCqFZY6Coh4aij7ZG1ku3xBQ8cGXFl2q5U5pB7FHhrLXNfW3yQ0Mg
+	 3Mes+QOp+mCCcivH4r6ZjrVPw+tLHaWHv0HJ7Lz1C6WVaPNobJD3Sv1kpDmfglBmoQ
+	 gjLlmcWiuPHlg==
+Message-ID: <fba4fa62-476d-4def-9b78-87ae99bef770@kernel.org>
+Date: Tue, 29 Oct 2024 18:53:29 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v2 1/5] dt-bindings: net: wireless: ath12k: describe
- WSI properties for QCN9274
+Subject: Re: [RFC PATCH v2 5/5] arm64: dts: qcom: ipq9574: Add WiFi nodes for
+ RDP433
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -57,7 +57,7 @@ Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
 References: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
- <20241029173050.2188150-2-quic_rajkbhag@quicinc.com>
+ <20241029173050.2188150-6-quic_rajkbhag@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,12 +103,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241029173050.2188150-2-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20241029173050.2188150-6-quic_rajkbhag@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_105244_378929_53A69B7C 
-X-CRM114-Status: GOOD (  29.05  )
+X-CRM114-CacheID: sfid-20241029_105337_768823_CEA390C3 
+X-CRM114-Status: GOOD (  17.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,238 +124,69 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 29/10/2024 18:30, Raj Kumar Bhagat wrote:
-> QCN9274 device has WSI support. WSI stands for WLAN Serial Interface.
-> It is used for the exchange of specific control information across
-> radios based on the doorbell mechanism. This WSI connection is
-> essential to exchange control information among these devices
+> The RDP433 is a Qualcomm Reference Design Platform based on the
+> IPQ9574. It has three QCN9274 WiFi devices connected to PCIe1, PCIe2,
+> and PCIe3. These devices are also connected among themselves via
+> WSI connection. This WSI connection is essential to exchange control
+> information among these devices
 > 
-> Hence, describe WSI interface supported in QCN9274 with the following
-> properties:
+> The WSI connection in RDP433 is represented below:
 > 
->  - qcom,wsi-group-id: It represents the identifier assigned to the WSI
->    connection. All the ath12k devices connected to same WSI connection
->    have the same wsi-group-id.
+>           +-------+        +-------+        +-------+
+>           | pcie2 |        | pcie3 |        | pcie1 |
+>           |       |        |       |        |       |
+>    +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
+>    |      | grp 0 |        | grp 0 |        | grp 0 |     |
+>    |      +-------+        +-------+        +-------+     |
+>    +------------------------------------------------------+
 > 
->  - qcom,wsi-master: Indicates if this device is the WSI master.
+> Based on the above, the WSI properties for QCN9274 at pcie2 are
+> (considering QCN9274 at pcie2 is WSI master):
 > 
->  - ports: This is a graph ports schema that has two ports: TX (port@0)
->    and RX (port@1). This represents the actual WSI connection among
->    multiple devices.
-
-Describe the hardware, not the contents of the patch/binding. We see it
-easily, but what we do not see is the hardware.
-
+>  qcom,wsi-group-id = 0
+>  qcom,wsi-master
+>  ports:
+>     tx-port (port@0): endpoint at pcie3 RX port.
+>     rx-port (port@1): endpoint at pcie1 TX port.
 > 
-> Also, describe the ath12k device property
-> "qcom,ath12k-calibration-variant". This is a common property among
-> ath12k devices.
-
-Why do you describe it? What you do is easily visible. We do not see why.
-
+> Hence, add WiFi nodes with WSI properties for all three QCN9274
+> devices connected to RDP433.
 > 
 > Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 > ---
->  .../bindings/net/wireless/qcom,ath12k.yaml    | 241 +++++++++++++++++-
->  1 file changed, 232 insertions(+), 9 deletions(-)
+>  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 116 +++++++++++++++++++-
+>  1 file changed, 115 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-> index 1b5884015b15..42bcd73dd159 100644
-> --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-> @@ -1,5 +1,6 @@
->  # SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->  # Copyright (c) 2024 Linaro Limited
-> +# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
->  %YAML 1.2
->  ---
->  $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml#
-> @@ -18,10 +19,17 @@ properties:
->    compatible:
->      enum:
->        - pci17cb,1107  # WCN7850
-> +      - pci17cb,1109  # QCN9274
-
-I asked for separate binding because it is quite a different device.
-Unless it is not... but then commit msg is quite not precise here.
-
+> diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> index 165ebbb59511..d0ecaefe5b41 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
+> @@ -3,7 +3,7 @@
+>   * IPQ9574 RDP433 board device tree source
+>   *
+>   * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
+> - * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+> + * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+>   */
 >  
->    reg:
->      maxItems: 1
->  
-> +  qcom,ath12k-calibration-variant:
-> +    $ref: /schemas/types.yaml#/definitions/string
-> +    description: |
+>  /dts-v1/;
+> @@ -27,6 +27,44 @@ &pcie1 {
+>  	perst-gpios = <&tlmm 26 GPIO_ACTIVE_LOW>;
+>  	wake-gpios = <&tlmm 27 GPIO_ACTIVE_LOW>;
+>  	status = "okay";
+> +
+> +	pcie@0 {
+> +		device_type = "pci";
+> +		reg = <0x0 0x0 0x0 0x0 0x0>;
+> +		#address-cells = <3>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		wifi1@0 {
 
-Do not need '|' unless you need to preserve formatting.
-
-> +      string to uniquely identify variant of the calibration data for designs
-> +      with colliding bus and device ids
-> +
->    vddaon-supply:
->      description: VDD_AON supply regulator handle
->  
-> @@ -49,21 +57,100 @@ properties:
->    vddpcie1p8-supply:
->      description: VDD_PCIE_1P8 supply regulator handle
->  
-> +  wsi:
-
-Not much improved here. I asked to drop the node.
-
-> +    type: object
-> +    description: |
-> +      The ath12k devices (QCN9274) feature WSI support. WSI stands for
-> +      WLAN Serial Interface. It is used for the exchange of specific
-> +      control information across radios based on the doorbell mechanism.
-> +      This WSI connection is essential to exchange control information
-> +      among these devices.
-> +
-> +      Diagram to represent one WSI connection (one WSI group) among
-> +      three devices.
-> +
-> +               +-------+        +-------+        +-------+
-> +               | pcie2 |        | pcie3 |        | pcie1 |
-> +               |       |        |       |        |       |
-> +        +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
-> +        |      | grp 0 |        | grp 0 |        | grp 2 |     |
-> +        |      +-------+        +-------+        +-------+     |
-> +        +------------------------------------------------------+
-> +
-> +      Diagram to represent two WSI connections (two separate WSI groups)
-> +      among four devices.
-> +
-> +           +-------+    +-------+          +-------+    +-------+
-> +           | pcie2 |    | pcie3 |          | pcie1 |    | pcie0 |
-> +           |       |    |       |          |       |    |       |
-> +       +-->|  wsi  |--->|  wsi  |--+   +-->|  wsi  |--->|  wsi  |--+
-> +       |   | grp 0 |    | grp 0 |  |   |   | grp 1 |    | grp 1 |  |
-> +       |   +-------+    +-------+  |   |   +-------+    +-------+  |
-> +       +---------------------------+   +---------------------------+
-> +
-> +    properties:
-> +      qcom,wsi-group-id:
-> +        $ref: /schemas/types.yaml#/definitions/uint32
-> +        description:
-> +          It represents the identifier assigned to the WSI connection. All
-> +          the ath12k devices connected to same WSI connection have the
-> +          same wsi-group-id.
-
-That's not needed according to description. Entire group is defined by
-graph.
-
-> +
-> +      qcom,wsi-master:
-> +        type: boolean
-> +        description:
-> +          Indicates if this device is the WSI master.
-> +
-
-This copies property name. Why being master is important?
-
-Also, use some different name: see preferred names in kernel coding style.
-
-> +      ports:
-> +        $ref: /schemas/graph.yaml#/properties/ports
-> +        description:
-> +          These ports are used to connect multiple WSI supported devices to
-> +          form the WSI group.
-> +
-> +        properties:
-> +          port@0:
-> +            $ref: /schemas/graph.yaml#/properties/port
-> +            description:
-> +              This is the TX port of WSI interface. It is attached to the RX
-> +              port of the next device in the WSI connection.
-> +
-> +          port@1:
-> +            $ref: /schemas/graph.yaml#/properties/port
-> +            description:
-> +              This is the RX port of WSI interface. It is attached to the TX
-> +              port of the previous device in the WSI connection.
-> +
-> +    required:
-> +      - qcom,wsi-group-id
-> +      - ports
-> +
-> +    additionalProperties: false
-> +
->  required:
->    - compatible
->    - reg
-> -  - vddaon-supply
-> -  - vddwlcx-supply
-> -  - vddwlmx-supply
-> -  - vddrfacmn-supply
-> -  - vddrfa0p8-supply
-> -  - vddrfa1p2-supply
-> -  - vddrfa1p8-supply
-> -  - vddpcie0p9-supply
-> -  - vddpcie1p8-supply
->  
->  additionalProperties: false
->  
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - pci17cb,1107
-> +    then:
-> +      required:
-> +        - vddaon-supply
-> +        - vddwlcx-supply
-> +        - vddwlmx-supply
-> +        - vddrfacmn-supply
-> +        - vddrfa0p8-supply
-> +        - vddrfa1p2-supply
-> +        - vddrfa1p8-supply
-> +        - vddpcie0p9-supply
-> +        - vddpcie1p8-supply
-
-Commit says WSI applies only to new variant, so properties should be
-disallowed... or just follow my feedback last time: separate binding.
-
-> +
->  examples:
->    - |
->      #include <dt-bindings/clock/qcom,rpmh.h>
-> @@ -97,3 +184,139 @@ examples:
->              };
->          };
->      };
-> +
-> +  - |
-> +    pcie1 {
-
-pcie {
-and keep all nodes here
-
-> +        #address-cells = <3>;
-> +        #size-cells = <2>;
-> +
-> +        pcie@0 {
-> +            device_type = "pci";
-> +            reg = <0x0 0x0 0x0 0x0 0x0>;
-> +            #address-cells = <3>;
-> +            #size-cells = <2>;
-> +            ranges;
-> +
-> +            wifi1@0 {
-
-wifi@
-
-Same in other places.
-
-> +                compatible = "pci17cb,1109";
-> +                reg = <0x0 0x0 0x0 0x0 0x0>;
-> +
-> +                qcom,ath12k-calibration-variant = "RDP433_1";
-> +
-> +                wsi {
-
-No resources here? Not a bus? You already got comment about it.
-
+Node names should be generic. See also an explanation and list of
+examples (not exhaustive) in DT specification:
+https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
 
 Best regards,
 Krzysztof
