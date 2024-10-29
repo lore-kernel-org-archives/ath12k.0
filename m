@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1166AD3A678
-	for <ath12k@archiver.kernel.org>; Tue, 29 Oct 2024 17:54:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32EDDD3A678
+	for <ath12k@archiver.kernel.org>; Tue, 29 Oct 2024 17:54:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gqoCXZKM8qva/zeHoKoQD0B0r7y7M1nqa2ZEdcXkf1M=; b=OcXNP+sHKLd5nw8k2Z8ae/NCZ1
-	TnnHou3G9yBPrv+UMd+u5VD2k0D+59rAeXXCE3FE1j1S/WMk9hvXEh3jRB0s9abUebVbANk5UHD3b
-	n7illDol3oALhmuQrqVVwfxTmLtW6k7SULzGExKl8tbAcK6g1/4sK6KX9v3t+6iztpA/3emGc4RKs
-	l1cfJgJJKD9eFSbb8DO+K/b2UyW9GFbUrD7phGF/P4PokPYpzW5VRPq5NKVPCROluIhquJkEaZ//G
-	uV1RNhEwub8tHr7NBSnO8Qg4VApK7pxuvKuzQeQ2ZqqaqyyrG3jKx0fqv84UUqmaHJzrO6dlXXzo+
-	JgROEgow==;
+	bh=HLdFqyiE2PDOXEBR5r3Kh/7ADCF/CV30mk2ocFyKoYw=; b=uvsYohfwulA1TUEz8t2lp8SPjy
+	rKbXOFCArw6D8qwu0UikaBj8nCmpOmD1oQ9Mnw/JypuwgRJPckyRSBygBL+bvrpNwQ6oCFFjMETnv
+	SfXtFoZtrZJeGYgZ609xGHi6EfKGaq/PgtdKkNSGBsIy8DFuLcuZX2EC6cVUDUKIdXF/ZlaSGy+e8
+	4Ca9QqyYSACvfBuVzn+J4ILWSQ4z1CbGpWDBuMEW+xQsonVwBu/8F6QWskn7yxYDdaWRghQYn+d8R
+	QImA+ohQxvKG3fGQjKvca7Vd8G4Vse/W6MJpfNtp0Wd+Vx8bvIB6Dl7EX1qcFUxA6sYOVLc5L18Tn
+	G/94Terw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5qQM-0000000FPD0-0wNB
+	id 1t5qQS-0000000FPKU-1YHQ
 	for ath12k@archiver.kernel.org;
-	Tue, 29 Oct 2024 17:54:34 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 29 Oct 2024 17:54:40 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5q49-0000000FGa6-3RQI
+	id 1t5q4K-0000000FGd5-21Cc
 	for ath12k@lists.infradead.org;
-	Tue, 29 Oct 2024 17:31:39 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49T91x8K025437;
-	Tue, 29 Oct 2024 17:31:35 GMT
+	Tue, 29 Oct 2024 17:31:49 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49TA3nZ2020162;
+	Tue, 29 Oct 2024 17:31:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	gqoCXZKM8qva/zeHoKoQD0B0r7y7M1nqa2ZEdcXkf1M=; b=Nd+No7WcxeIH9Ba+
-	zOkwvvvHI68f22RtEtB013FAHzjUCwEJThsmyf3dpXmjosoUTS5gnk4wopfNNLji
-	uPnxBzj4DVDQmEXD/IHxXwnUpsm5+5Kf1EmS8NPR+vIUWxEnubiasu7z4rdqDuBp
-	p5C5M4SeH2cUmDa8jBkzDQ0GplRxUgtPHMrFaiyaoris7WsazhbSJExQOKIN2AbT
-	5Iq71jLTHthZhEMTrn1Qt+9AIOv9leSHys+gWgQ/uDkPtxyjZtXkMYiQCwUJofHL
-	g1b3zTQ050qhFea+dX2FooxXANODFr/xLBCpYmO+XtdtIfG86nNmQiWa0OEBGazA
-	GqkhBQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42gsq8h7cd-1
+	HLdFqyiE2PDOXEBR5r3Kh/7ADCF/CV30mk2ocFyKoYw=; b=BRyOpK6Haps3ej6T
+	OGL+7gkv7yFx3ovemwbEFlCR6C7tD2Jx2Ui+Ayky5L1Z3/lar7yrWUXUUP45yUOl
+	04rXSl3zHK6AiOZAnYaYdIr/Cy9TWFzQEBUQ6iKxCgbJ9Z8IIPr0+TZabAq3JtJ7
+	ECwLXp5cA9Vm2wXv0zEV2QuEg8bHj7u4hY8GEAParrkmSRQkuxr/RIb+qvMml9eo
+	UiBmXv39u2TVuVOQ2wR4jPRVsOoTTKestHe1pk0y6+r1NJLMnHet29FFkN0krR4l
+	VD/DRjc39QEF6okXaiksm+vpsXGh2je6knd/ag44/N08oTKYj9bkckKTMwUZ0HgI
+	IP2fVA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42gqrgs479-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 29 Oct 2024 17:31:35 +0000 (GMT)
+	Tue, 29 Oct 2024 17:31:44 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49THVYOO014400
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49THVhiN023929
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 29 Oct 2024 17:31:34 GMT
+	Tue, 29 Oct 2024 17:31:43 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 29 Oct 2024 10:31:29 -0700
+ 15.2.1544.9; Tue, 29 Oct 2024 10:31:39 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
@@ -66,13 +66,11 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
  Andersson" <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        Harshitha Prem <quic_hprem@quicinc.com>,
         Aditya Kumar Singh <quic_adisi@quicinc.com>,
-        Raj Kumar Bhagat
-	<quic_rajkbhag@quicinc.com>
-Subject: [RFC PATCH v2 2/5] wifi: ath12k: parse multiple device information from device tree
-Date: Tue, 29 Oct 2024 23:00:47 +0530
-Message-ID: <20241029173050.2188150-3-quic_rajkbhag@quicinc.com>
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: [RFC PATCH v2 4/5] wifi: ath12k: assign unique hardware link IDs during QMI host cap
+Date: Tue, 29 Oct 2024 23:00:49 +0530
+Message-ID: <20241029173050.2188150-5-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
 References: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
@@ -84,19 +82,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: y_0fJK20BVlxY6NaDtJ3Uo952n0uLcvh
-X-Proofpoint-ORIG-GUID: y_0fJK20BVlxY6NaDtJ3Uo952n0uLcvh
+X-Proofpoint-ORIG-GUID: j-StXGOofRnYFjKidNKwKqAkL1JahYmy
+X-Proofpoint-GUID: j-StXGOofRnYFjKidNKwKqAkL1JahYmy
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
- adultscore=0 mlxscore=0 priorityscore=1501 mlxlogscore=999 impostorscore=0
- lowpriorityscore=0 malwarescore=0 clxscore=1015 spamscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2410290132
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
+ clxscore=1015 impostorscore=0 suspectscore=0 spamscore=0 mlxscore=0
+ adultscore=0 priorityscore=1501 mlxlogscore=999 phishscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410290132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_103138_003541_80F73FBA 
-X-CRM114-Status: GOOD (  28.40  )
+X-CRM114-CacheID: sfid-20241029_103148_668493_9A799954 
+X-CRM114-Status: GOOD (  20.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,264 +109,130 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Harshitha Prem <quic_hprem@quicinc.com>
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
 
-Currently, single device is part of device group abstraction but for multi
-link operation, multiple devices have to be combined together. Information
-of how many devices involved in grouping can be parsed from device tree and
-it would have the valid group id information as well.
+Currently, in the QMI host capability, the device index, the number of
+local links, and the corresponding hardware link IDs are sent. The
+hardware link ID assignment is based on the local variable `hw_link_id`,
+which starts from 0 and ranges up to `num_local_links` in the device.
+Starting from 0 is not ideal because it can result in the same link ID
+being assigned to different devices in certain scenarios (e.g., split MAC).
+Additionally, for multi link operations the firmware expects the hardware
+link IDs in the same order as the Wireless Serial Interface (WSI)
+connection.
 
-Add changes to parse devices involved and group id from device tree file
-to form device group
+Hence, for MLO to function seamlessly, the hardware link IDs across
+devices need to be unique and should follow the order of the WSI
+connection.
+
+To address this, a previous change read the WSI index from the Device Tree
+(DT) and stored it. Use this WSI index to determine the starting hardware
+link IDs for each device, ensuring uniqueness and correct order across all
+devices.
+
+While at it, add debug prints to clearly show the MLO capability
+advertisement sent during QMI host capability exchange.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-Co-developed-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 Co-developed-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 154 +++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/core.h |   8 ++
- 2 files changed, 151 insertions(+), 11 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h |  2 ++
+ drivers/net/wireless/ath/ath12k/qmi.c  | 41 ++++++++++++++++++++++++--
+ 2 files changed, 40 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 3f0f44cbdb4c..91950ee50bf3 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -9,6 +9,7 @@
- #include <linux/remoteproc.h>
- #include <linux/firmware.h>
- #include <linux/of.h>
-+#include <linux/of_graph.h>
- #include "core.h"
- #include "dp_tx.h"
- #include "dp_rx.h"
-@@ -1403,6 +1404,7 @@ ath12k_core_hw_group_alloc(u8 id, u8 max_devices)
- 	ag->num_devices = max_devices;
- 	list_add(&ag->list, &ath12k_hw_group_list);
- 	mutex_init(&ag->mutex_lock);
-+	ag->mlo_capable = false;
- 
- 	return ag;
- }
-@@ -1417,34 +1419,156 @@ static void ath12k_core_hw_group_free(struct ath12k_hw_group *ag)
- 	mutex_unlock(&ath12k_ag_list_lock);
- }
- 
-+/* This function needs to be used only when dt has multi chip grouping information */
-+static struct ath12k_hw_group *ath12k_core_hw_group_find_by_id(u8 group_id)
-+{
-+	struct ath12k_hw_group *ag;
-+
-+	/* group ids will be unique only for multi chip group */
-+	list_for_each_entry(ag, &ath12k_hw_group_list, list) {
-+		if (group_id == ag->id && ag->num_devices > 1)
-+			return ag;
-+	}
-+
-+	return NULL;
-+}
-+
-+static int ath12k_core_get_wsi_info(struct ath12k_base *ab,
-+				    struct ath12k_wsi_info *wsi_info)
-+{
-+	struct device_node *wsi_dev, *next_wsi_dev;
-+	struct device_node *tx_endpoint, *next_rx_endpoint;
-+	int device_count = 0, wsi_master_index = -1;
-+
-+	wsi_dev = of_get_child_by_name(ab->dev->of_node, "wsi");
-+	if (!wsi_dev)
-+		return -ENODEV;
-+
-+	if (of_property_read_u32(wsi_dev, "qcom,wsi-group-id",
-+				 &wsi_info->group_id)) {
-+		of_node_put(wsi_dev);
-+		return -EINVAL;
-+	}
-+
-+	next_wsi_dev = wsi_dev;
-+
-+	do {
-+		if (of_property_read_bool(next_wsi_dev, "qcom,wsi-master"))
-+			wsi_master_index = device_count;
-+
-+		tx_endpoint = of_graph_get_endpoint_by_regs(next_wsi_dev, 0, -1);
-+		if (!tx_endpoint) {
-+			of_node_put(next_wsi_dev);
-+			return -ENODEV;
-+		}
-+
-+		next_rx_endpoint = of_graph_get_remote_endpoint(tx_endpoint);
-+		if (!next_rx_endpoint) {
-+			of_node_put(next_wsi_dev);
-+			of_node_put(tx_endpoint);
-+			return -ENODEV;
-+		}
-+
-+		of_node_put(tx_endpoint);
-+		of_node_put(next_wsi_dev);
-+		next_wsi_dev = of_graph_get_port_parent(next_rx_endpoint);
-+		if (!next_wsi_dev) {
-+			of_node_put(next_rx_endpoint);
-+			return -ENODEV;
-+		}
-+		of_node_put(next_rx_endpoint);
-+
-+		device_count++;
-+		if (device_count > ATH12K_MAX_SOCS) {
-+			ath12k_warn(ab, "device count in DT %d is more than limit %d\n",
-+				    device_count, ATH12K_MAX_SOCS);
-+			of_node_put(next_wsi_dev);
-+			return -EINVAL;
-+		}
-+	} while (wsi_dev != next_wsi_dev);
-+
-+	of_node_put(next_wsi_dev);
-+	if (wsi_master_index == -1) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "no WSI master defined in DT");
-+		return -EINVAL;
-+	}
-+
-+	wsi_info->num_devices = device_count;
-+	wsi_info->index = (device_count - wsi_master_index) % device_count;
-+	return 0;
-+}
-+
- static struct ath12k_hw_group *ath12k_core_assign_hw_group(struct ath12k_base *ab)
- {
- 	struct ath12k_hw_group *ag;
--	u32 group_id = ATH12K_INVALID_GROUP_ID;
-+	struct ath12k_wsi_info *wsi = &ab->wsi_info;
-+	int ret;
- 
- 	lockdep_assert_held(&ath12k_ag_list_lock);
- 
--	/* The grouping of multiple devices will be done based on device tree file.
--	 * TODO: device tree file parsing to know about the devices involved in group.
--	 *
--	 * The platforms that do not have any valid group information would have each
--	 * device to be part of its own invalid group.
-+	/* The grouping of multiple devices will be done based on device
-+	 * tree file.
- 	 *
--	 * Currently, we are not parsing any device tree information and hence, grouping
--	 * of multiple devices is not involved. Thus, single device is added to device
--	 * group.
-+	 * The platforms that do not have any valid group information would
-+	 * have each device to be part of its own invalid group.
-+	 */
-+	ret = ath12k_core_get_wsi_info(ab, wsi);
-+	if (ret) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT,
-+			   "unable to get complete WSI Info from DT, err = %d", ret);
-+		wsi->group_id = ATH12K_INVALID_GROUP_ID;
-+		wsi->num_devices = 1;
-+		wsi->index = 0;
-+		goto invalid_group;
-+	}
-+
-+	ath12k_dbg(ab, ATH12K_DBG_BOOT,
-+		   "WSI info: group-id: %d, num-devices: %d, index: %d",
-+		   wsi->group_id, wsi->num_devices, wsi->index);
-+
-+	/* Currently only one group of multiple devices are supported,
-+	 * since we use group id ATH12K_INVALID_GROUP_ID for single
-+	 * device group which didn't have dt entry, there could be many
-+	 * groups with same group id, i.e ATH12K_INVALID_GROUP_ID. So
-+	 * default group id of ATH12K_INVALID_GROUP_ID combined with
-+	 * num devices in ath12k_hw_group determines if the group is
-+	 * multi device or single device group
- 	 */
--	ag = ath12k_core_hw_group_alloc(group_id, 1);
-+	ag = ath12k_core_hw_group_find_by_id(wsi->group_id);
-+	if (!ag) {
-+		ag = ath12k_core_hw_group_alloc(wsi->group_id, wsi->num_devices);
-+		if (!ag) {
-+			ath12k_warn(ab, "unable to create new hw group\n");
-+			return NULL;
-+		}
-+		goto exit;
-+	} else if (test_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags)) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "group id %d in unregister state\n",
-+			   ag->id);
-+		wsi->group_id = ATH12K_INVALID_GROUP_ID;
-+		goto invalid_group;
-+	} else {
-+		goto exit;
-+	}
-+
-+invalid_group:
-+	ag = ath12k_core_hw_group_alloc(wsi->group_id, 1);
- 	if (!ag) {
- 		ath12k_warn(ab, "unable to create new hw group\n");
- 		return NULL;
- 	}
- 	ath12k_dbg(ab, ATH12K_DBG_BOOT, "Single device is added to hardware group\n");
- 
-+exit:
-+	if (ag->num_probed >= ag->num_devices) {
-+		ath12k_warn(ab, "unable to add new device to group, max limit reached\n");
-+		wsi->group_id = ATH12K_INVALID_GROUP_ID;
-+		goto invalid_group;
-+	}
-+
- 	ab->device_id = ag->num_probed++;
- 	ag->ab[ab->device_id] = ab;
- 	ab->ag = ag;
--	ag->mlo_capable = false;
- 
- 	return ag;
- }
-@@ -1511,6 +1635,14 @@ static void ath12k_core_hw_group_cleanup(struct ath12k_hw_group *ag)
- 		return;
- 
- 	mutex_lock(&ag->mutex_lock);
-+
-+	if (test_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags)) {
-+		mutex_unlock(&ag->mutex_lock);
-+		return;
-+	}
-+
-+	set_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags);
-+
- 	ath12k_core_hw_group_stop(ag);
- 
- 	for (i = 0; i < ag->num_devices; i++) {
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index cde35616ba56..6ade7a3cf6ff 100644
+index 6ade7a3cf6ff..a4f772ad96c0 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -211,6 +211,7 @@ enum ath12k_scan_state {
- 
- enum ath12k_hw_group_flags {
- 	ATH12K_GROUP_FLAG_REGISTERED,
-+	ATH12K_GROUP_FLAG_UNREGISTER,
- };
- 
- enum ath12k_dev_flags {
-@@ -845,6 +846,12 @@ struct ath12k_hw_group {
+@@ -844,12 +844,14 @@ struct ath12k_hw_group {
+ 	struct ath12k_hw *ah[ATH12K_GROUP_MAX_RADIO];
+ 	u8 num_hw;
  	bool mlo_capable;
++	bool hw_link_id_init_done;
  };
  
-+struct ath12k_wsi_info {
-+	u32 group_id;
-+	u32 num_devices;
-+	u32 index;
-+};
-+
+ struct ath12k_wsi_info {
+ 	u32 group_id;
+ 	u32 num_devices;
+ 	u32 index;
++	u32 hw_link_id_base;
+ };
+ 
  /* Master structure to hold the hw data which may be used in core module */
- struct ath12k_base {
- 	enum ath12k_hw_rev hw_rev;
-@@ -1026,6 +1033,7 @@ struct ath12k_base {
- 	struct notifier_block panic_nb;
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 689171b7b19f..7ecb539f60f2 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2016,6 +2016,25 @@ static const struct qmi_elem_info qmi_wlanfw_wlan_ini_resp_msg_v01_ei[] = {
+ 	},
+ };
  
- 	struct ath12k_hw_group *ag;
-+	struct ath12k_wsi_info wsi_info;
++static void ath12k_host_cap_hw_link_id_init(struct ath12k_hw_group *ag)
++{
++	struct ath12k_base *ab, *partner_ab;
++	int i, j, hw_id_base;
++
++	for (i = 0; i < ag->num_devices; i++) {
++		hw_id_base = 0;
++		ab = ag->ab[i];
++		for (j = 0; j < ag->num_devices; j++) {
++			partner_ab = ag->ab[j];
++			if (partner_ab->wsi_info.index >= ab->wsi_info.index)
++				continue;
++			hw_id_base += partner_ab->qmi.num_radios;
++		}
++		ab->wsi_info.hw_link_id_base = hw_id_base;
++	}
++	ag->hw_link_id_init_done = true;
++}
++
+ static int ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+ 				     struct qmi_wlanfw_host_cap_req_msg_v01 *req)
+ {
+@@ -2060,7 +2079,17 @@ static int ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+ 	req->mlo_num_chips_valid = 1;
+ 	req->mlo_num_chips = ag->num_devices;
  
- 	/* must be last */
- 	u8 drv_priv[] __aligned(sizeof(void *));
++	ath12k_dbg(ab, ATH12K_DBG_QMI, "MLO Capability advertisement:");
++	ath12k_dbg(ab, ATH12K_DBG_QMI, " * device_id: %d", req->mlo_chip_id);
++	ath12k_dbg(ab, ATH12K_DBG_QMI, " * group_id: %d", req->mlo_group_id);
++	ath12k_dbg(ab, ATH12K_DBG_QMI, " * num_devices: %d", req->mlo_num_chips);
++	ath12k_dbg(ab, ATH12K_DBG_QMI, " * Devices info:");
++
+ 	mutex_lock(&ag->mutex_lock);
++
++	if (!ag->hw_link_id_init_done)
++		ath12k_host_cap_hw_link_id_init(ag);
++
+ 	for (i = 0; i < ag->num_devices; i++) {
+ 		info = &req->mlo_chip_info[i];
+ 		partner_ab = ag->ab[i];
+@@ -2074,13 +2103,19 @@ static int ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+ 		info->chip_id = partner_ab->device_id;
+ 		info->num_local_links = partner_ab->qmi.num_radios;
+ 
+-		ath12k_dbg(ab, ATH12K_DBG_QMI, "MLO device id %d num_link %d\n",
+-			   info->chip_id, info->num_local_links);
++		ath12k_dbg(ab, ATH12K_DBG_QMI, "   * device_id: %d",
++			   info->chip_id);
++		ath12k_dbg(ab, ATH12K_DBG_QMI, "     * num_links: %d",
++			   info->num_local_links);
+ 
+ 		for (j = 0; j < info->num_local_links; j++) {
+-			info->hw_link_id[j] = hw_link_id;
++			info->hw_link_id[j] = partner_ab->wsi_info.hw_link_id_base + j;
+ 			info->valid_mlo_link_id[j] = 1;
+ 
++			ath12k_dbg(ab, ATH12K_DBG_QMI,
++				   "       * hw_link_id: %d\n",
++				   info->hw_link_id[j]);
++
+ 			hw_link_id++;
+ 		}
+ 	}
 -- 
 2.34.1
 
