@@ -4,111 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E6EFD3A68D
-	for <ath12k@archiver.kernel.org>; Tue, 29 Oct 2024 19:00:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BF8AD74954
+	for <ath12k@archiver.kernel.org>; Wed, 30 Oct 2024 02:55:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fyem2iYbOt+HlPyPpzOriiVm0gJnGY9hYBLl3hvkas0=; b=GYCBS3BCKrShqIxkf+53uDdzNq
-	nHoQuG2wlUk+5o7XtQlpp5uXrdS9Y2bhLiFmRRzzez6om+kV92a4rmMusvMx2/eDaVTS0sVigssw6
-	IWajA5EljjLmrDIgbD4VPjeTjL2akGe22duyh7JNRW9kC6YWCqJNJNw1+T3WEU7cM2K7XpJweqbpa
-	iHUIyTRWUF7+sGI6mdnzgZhyE8ciMQMHi7GqUWUFI9HXdb1IXDxApxcdEC/YSIxuTtAcQHW/KMOgV
-	zDAh3jp/3RYRnF38IRujZq+zL2gCEtRFe4wRAYKSb6fcahUofGR0CPexd/NmxfqUZYCxpVxTF9r4V
-	bXyYwE5w==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=u3LZpCuW9bTjSRKdTnqsve/i3hWOKJOhEPVbGSQAXMM=; b=aWkudhcGx6gVXKhDspfVhZJPYx
+	E1ryjfB4cYn6zyIwt0dtzL1mLHFfhSSv/iiZEXrt9J3a1w2zWHqluuA3qlsT2uRQ5ZVfJVca63972
+	h2UYI4TkchCUIaqWtKl2xI4I+7Ki1jF5v+S2CqTsbs+W8aJlhlKS0q5nt6PntxX0kcbD2GjQKIRAC
+	aF4tjKKcBWJhRezuiOrUpEyE0WyMRdfD4pS4N0/zAHpdiIM2a+RIJ9jEQhK9/4cp3U6Mpgidi5YWo
+	IUF1gqta+J9Mvs/kLkQGjtdPDnWUv/aD9yuPih2l6QE9RyyWaIPw9S+VZkaHn/3YZUC8erwgfDctB
+	5N9dQk7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5rSI-0000000FbFP-3jhf
+	id 1t5yrz-0000000GYsr-3kuc
 	for ath12k@archiver.kernel.org;
-	Tue, 29 Oct 2024 19:00:38 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Wed, 30 Oct 2024 02:55:39 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5qPR-0000000FOb2-2O1H
+	id 1t5yrx-0000000GYsV-0Ql2
 	for ath12k@lists.infradead.org;
-	Tue, 29 Oct 2024 17:53:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 8D893A431A8;
-	Tue, 29 Oct 2024 17:51:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55519C4CECD;
-	Tue, 29 Oct 2024 17:53:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1730224415;
-	bh=L3A6Dqjh7x00tz4XPxgwKp7I396o8/4nJPLUOjhSnuA=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=ATjRJVjMhKbRUzYtUhsrjQQ0yTZC9BLN8dbxjqCi1drA/gwNCDSZiAnQxGn2AKPqk
-	 YijT+pw7W+xlc9xYNPqqVYIWAAiMhzpMvOgUujLM0Rbs2QF7E78R6KNabhkIy513gd
-	 wvQ/5v6I9c4V8XbrFBnqPqPVA6SNNB7oK8BYueWzjfEy8GUBvy0FASImNmJypM4F1H
-	 WvL2QUie6jvGuLCqFZY6Coh4aij7ZG1ku3xBQ8cGXFl2q5U5pB7FHhrLXNfW3yQ0Mg
-	 3Mes+QOp+mCCcivH4r6ZjrVPw+tLHaWHv0HJ7Lz1C6WVaPNobJD3Sv1kpDmfglBmoQ
-	 gjLlmcWiuPHlg==
-Message-ID: <fba4fa62-476d-4def-9b78-87ae99bef770@kernel.org>
-Date: Tue, 29 Oct 2024 18:53:29 +0100
+	Wed, 30 Oct 2024 02:55:38 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49TMZPcb023870;
+	Wed, 30 Oct 2024 02:55:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=u3LZpCuW9bTjSRKdTnqsve
+	/i3hWOKJOhEPVbGSQAXMM=; b=DMgBQ5Xu96bN0jUIGJAzOpL+uw/2b0zra/Rw2T
+	TpmfrgDnXWNpu5pmLzN1L+c+Fwb9hGpddstZFE63/XuXGos1I4q53D3tCZmQUpkt
+	O6WhCTHerLvdKxHNxY0l22m5tqpfqBvwjSrd8YY3KDW7BVKr/rk59gStvncfZaKE
+	eLeyLEXELzial9gDbmSuXxnATh7YACeNmpSgp+Tbqk169aGO4VgnJkRelgjYUj7E
+	Po+cn54opBMIPlBZQg+AnFjnQejuUq26l+gYJ5tKRXu/w1pFLCvgxABiN+9PuN7b
+	yigqzWNgxRyhR8+3kDLaKGEPp1gcDFe8GI6e8aq7S8tGxqtQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42gsq8jd3u-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 30 Oct 2024 02:55:34 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49U2tY6W027378
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 30 Oct 2024 02:55:34 GMT
+Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 29 Oct 2024 19:55:28 -0700
+From: Lingbo Kong <quic_lingbok@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
+Subject: [PATCH] wifi: cfg80211: Correctly handle Medium Synchronization Delay
+Date: Wed, 30 Oct 2024 10:55:15 +0800
+Message-ID: <20241030025515.16004-1-quic_lingbok@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v2 5/5] arm64: dts: qcom: ipq9574: Add WiFi nodes for
- RDP433
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
- <20241029173050.2188150-6-quic_rajkbhag@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20241029173050.2188150-6-quic_rajkbhag@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 1DFGsIZ29JwZqFT6aPJYABNHMPVtAWch
+X-Proofpoint-ORIG-GUID: 1DFGsIZ29JwZqFT6aPJYABNHMPVtAWch
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ adultscore=0 mlxscore=0 priorityscore=1501 mlxlogscore=999 impostorscore=0
+ lowpriorityscore=0 malwarescore=0 clxscore=1011 spamscore=0 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2410300021
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_105337_768823_CEA390C3 
-X-CRM114-Status: GOOD (  17.22  )
+X-CRM114-CacheID: sfid-20241029_195537_201927_73D059EC 
+X-CRM114-Status: GOOD (  22.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,72 +94,155 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 29/10/2024 18:30, Raj Kumar Bhagat wrote:
-> The RDP433 is a Qualcomm Reference Design Platform based on the
-> IPQ9574. It has three QCN9274 WiFi devices connected to PCIe1, PCIe2,
-> and PCIe3. These devices are also connected among themselves via
-> WSI connection. This WSI connection is essential to exchange control
-> information among these devices
-> 
-> The WSI connection in RDP433 is represented below:
-> 
->           +-------+        +-------+        +-------+
->           | pcie2 |        | pcie3 |        | pcie1 |
->           |       |        |       |        |       |
->    +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
->    |      | grp 0 |        | grp 0 |        | grp 0 |     |
->    |      +-------+        +-------+        +-------+     |
->    +------------------------------------------------------+
-> 
-> Based on the above, the WSI properties for QCN9274 at pcie2 are
-> (considering QCN9274 at pcie2 is WSI master):
-> 
->  qcom,wsi-group-id = 0
->  qcom,wsi-master
->  ports:
->     tx-port (port@0): endpoint at pcie3 RX port.
->     rx-port (port@1): endpoint at pcie1 TX port.
-> 
-> Hence, add WiFi nodes with WSI properties for all three QCN9274
-> devices connected to RDP433.
-> 
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> ---
->  arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts | 116 +++++++++++++++++++-
->  1 file changed, 115 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> index 165ebbb59511..d0ecaefe5b41 100644
-> --- a/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> +++ b/arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts
-> @@ -3,7 +3,7 @@
->   * IPQ9574 RDP433 board device tree source
->   *
->   * Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
-> - * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-> + * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
->   */
->  
->  /dts-v1/;
-> @@ -27,6 +27,44 @@ &pcie1 {
->  	perst-gpios = <&tlmm 26 GPIO_ACTIVE_LOW>;
->  	wake-gpios = <&tlmm 27 GPIO_ACTIVE_LOW>;
->  	status = "okay";
-> +
-> +	pcie@0 {
-> +		device_type = "pci";
-> +		reg = <0x0 0x0 0x0 0x0 0x0>;
-> +		#address-cells = <3>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +
-> +		wifi1@0 {
+Currently, when the driver attempts to connect to an AP MLD with multiple
+APs, the cfg80211_mlme_check_mlo_compat() function requires the Medium
+Synchronization Delay values from different APs of the same AP MLD to be
+equal, which may result in connection failures.
 
-Node names should be generic. See also an explanation and list of
-examples (not exhaustive) in DT specification:
-https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
+This is because when the driver receives a multi-link probe response from
+an AP MLD with multiple APs, cfg80211 updates the Elements for each AP
+based on the multi-link probe response. If the Medium Synchronization Delay
+is set in the multi-link probe response, the Elements for each AP belonging
+to the same AP MLD will have the Medium Synchronization Delay set
+simultaneously. If non-multi-link probe responses are received from
+different APs of the same MLD AP, cfg80211 will still update the Elements
+based on the non-multi-link probe response. Since the non-multi-link probe
+response does not set the Medium Synchronization Delay
+(IEEE 802.11be-2024-35.3.4.4), if the Elements from a non-multi-link probe
+response overwrite those from a multi-link probe response that has set the
+Medium Synchronization Delay, the Medium Synchronization Delay values for
+APs belonging to the same AP MLD will not be equal. This discrepancy causes
+the cfg80211_mlme_check_mlo_compat() function to fail, leading to
+connection failures. Commit ccb964b4ab16
+("wifi: cfg80211: validate MLO connections better") did not take this into
+account.
 
-Best regards,
-Krzysztof
+To address this issue, add a u16 type member to the struct cfg80211_bss to
+store the Medium Synchronization Delay. When the driver receives a probe
+response with the Medium Synchronization Delay set, update this member’s
+value; otherwise, do not update it. Additionally, modify the parameter list
+of cfg80211_mlme_check_mlo_compat() so that this member variable can be
+directly accessed within the cfg80211_mlme_check_mlo_compat() function viaq
+a pointer to the struct cfg80211_bss. This will allow checking whether the
+Medium Synchronization Delay values from different APs of the same AP MLD
+are equal.
+
+Fixes: ccb964b4ab16 ("wifi: cfg80211: validate MLO connections better")
+Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
+---
+ include/net/cfg80211.h |  4 ++++
+ net/wireless/mlme.c    | 11 +++++++----
+ net/wireless/scan.c    | 15 +++++++++++++++
+ 3 files changed, 26 insertions(+), 4 deletions(-)
+
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index 27acf1292a5c..ebeb305c1d0c 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -2956,6 +2956,8 @@ struct cfg80211_bss_ies {
+  * @cannot_use_reasons: the reasons (bitmap) for not being able to connect,
+  *	if @restrict_use is set and @use_for is zero (empty); may be 0 for
+  *	unspecified reasons; see &enum nl80211_bss_cannot_use_reasons
++ * @med_sync_delay: Medium Synchronization delay as described in
++ *	IEEE 802.11be-2024 Figure 9-1074q.
+  * @priv: private area for driver use, has at least wiphy->bss_priv_size bytes
+  */
+ struct cfg80211_bss {
+@@ -2986,6 +2988,8 @@ struct cfg80211_bss {
+ 	u8 use_for;
+ 	u8 cannot_use_reasons;
+ 
++	u16 med_sync_delay;
++
+ 	u8 priv[] __aligned(sizeof(void *));
+ };
+ 
+diff --git a/net/wireless/mlme.c b/net/wireless/mlme.c
+index 4dac81854721..ae00c36779d2 100644
+--- a/net/wireless/mlme.c
++++ b/net/wireless/mlme.c
+@@ -326,7 +326,9 @@ void cfg80211_oper_and_vht_capa(struct ieee80211_vht_cap *vht_capa,
+ }
+ 
+ static int
+-cfg80211_mlme_check_mlo_compat(const struct ieee80211_multi_link_elem *mle_a,
++cfg80211_mlme_check_mlo_compat(const struct cfg80211_bss *bss_a,
++			       const struct cfg80211_bss *bss_b,
++			       const struct ieee80211_multi_link_elem *mle_a,
+ 			       const struct ieee80211_multi_link_elem *mle_b,
+ 			       struct netlink_ext_ack *extack)
+ {
+@@ -340,8 +342,7 @@ cfg80211_mlme_check_mlo_compat(const struct ieee80211_multi_link_elem *mle_a,
+ 		return -EINVAL;
+ 	}
+ 
+-	if (ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_a) !=
+-	    ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_b)) {
++	if (bss_a->med_sync_delay != bss_b->med_sync_delay) {
+ 		NL_SET_ERR_MSG(extack, "link EML medium sync delay mismatch");
+ 		return -EINVAL;
+ 	}
+@@ -426,7 +427,9 @@ static int cfg80211_mlme_check_mlo(struct net_device *dev,
+ 		if (WARN_ON(!mles[i]))
+ 			goto error;
+ 
+-		if (cfg80211_mlme_check_mlo_compat(mles[req->link_id], mles[i],
++		if (cfg80211_mlme_check_mlo_compat(req->links[req->link_id].bss,
++						   req->links[i].bss,
++						   mles[req->link_id], mles[i],
+ 						   extack)) {
+ 			req->links[i].error = -EINVAL;
+ 			goto error;
+diff --git a/net/wireless/scan.c b/net/wireless/scan.c
+index 1c6fd45aa809..6ad935475484 100644
+--- a/net/wireless/scan.c
++++ b/net/wireless/scan.c
+@@ -1899,6 +1899,13 @@ cfg80211_update_known_bss(struct cfg80211_registered_device *rdev,
+ 	 */
+ 	if (signal_valid)
+ 		known->pub.signal = new->pub.signal;
++
++	/* update medium synchronization delay when its value is not
++	 * the default.
++	 */
++	if (new->pub.med_sync_delay != IEEE80211_MED_SYNC_DELAY_DEFAULT)
++		known->pub.med_sync_delay = new->pub.med_sync_delay;
++
+ 	known->pub.capability = new->pub.capability;
+ 	known->ts = new->ts;
+ 	known->ts_boottime = new->ts_boottime;
+@@ -2224,6 +2231,7 @@ cfg80211_inform_single_bss_data(struct wiphy *wiphy,
+ 	int bss_type;
+ 	bool signal_valid;
+ 	unsigned long ts;
++	const struct element *ml;
+ 
+ 	if (WARN_ON(!wiphy))
+ 		return NULL;
+@@ -2267,6 +2275,7 @@ cfg80211_inform_single_bss_data(struct wiphy *wiphy,
+ 	tmp.pub.use_for = data->use_for;
+ 	tmp.pub.cannot_use_reasons = data->cannot_use_reasons;
+ 	tmp.bss_source = data->bss_source;
++	tmp.pub.med_sync_delay = IEEE80211_MED_SYNC_DELAY_DEFAULT;
+ 
+ 	switch (data->bss_source) {
+ 	case BSS_SOURCE_MBSSID:
+@@ -2321,6 +2330,12 @@ cfg80211_inform_single_bss_data(struct wiphy *wiphy,
+ 		break;
+ 	case CFG80211_BSS_FTYPE_PRESP:
+ 		rcu_assign_pointer(tmp.pub.proberesp_ies, ies);
++		ml = cfg80211_find_ext_elem(WLAN_EID_EXT_EHT_MULTI_LINK,
++					    ies->data, ies->len);
++		if (ml)
++			tmp.pub.med_sync_delay =
++				ieee80211_mle_get_eml_med_sync_delay(ml->data + 1);
++
+ 		break;
+ 	}
+ 	rcu_assign_pointer(tmp.pub.ies, ies);
+
+base-commit: e7e2957f403ba4655199f2ba9920c1a015a7be44
+-- 
+2.34.1
 
 
