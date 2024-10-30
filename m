@@ -4,82 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BF8AD74954
-	for <ath12k@archiver.kernel.org>; Wed, 30 Oct 2024 02:55:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92457D7495C
+	for <ath12k@archiver.kernel.org>; Wed, 30 Oct 2024 04:07:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=u3LZpCuW9bTjSRKdTnqsve/i3hWOKJOhEPVbGSQAXMM=; b=aWkudhcGx6gVXKhDspfVhZJPYx
-	E1ryjfB4cYn6zyIwt0dtzL1mLHFfhSSv/iiZEXrt9J3a1w2zWHqluuA3qlsT2uRQ5ZVfJVca63972
-	h2UYI4TkchCUIaqWtKl2xI4I+7Ki1jF5v+S2CqTsbs+W8aJlhlKS0q5nt6PntxX0kcbD2GjQKIRAC
-	aF4tjKKcBWJhRezuiOrUpEyE0WyMRdfD4pS4N0/zAHpdiIM2a+RIJ9jEQhK9/4cp3U6Mpgidi5YWo
-	IUF1gqta+J9Mvs/kLkQGjtdPDnWUv/aD9yuPih2l6QE9RyyWaIPw9S+VZkaHn/3YZUC8erwgfDctB
-	5N9dQk7g==;
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5Rdo6ulYw0tRvnn2Gcx4YZ8PYC9DH6YfHABu8VFgs04=; b=T+Zh1X3lstGe9e4ahA5bWankQ0
+	Rx2RoGa43LOuCgXygMxEEWIPoWyhe3vKdPsUwVcSRuV5sRxpDs0VNxvi6Fouc/vbJXXa9d2Z2Jtlv
+	ok0XiJJMurAhXohtgTUymH3FzNefBRWH9et32D62K8ag89cvzAtDPAXmw8Yvpk376KLl0A3tFMwph
+	4r1Acf7jsnGLeJRvHS8IzrQdEClxbGubeL9M4Sqrzcfht9ErnaTrnDClOG23o7dkFhjmG0y9EL+5D
+	SfEWBcO0bMb0OMBSbHa9VYk9Dw6E8Dc8QSrTt+84uaWnmOlLCk1sVk34vVmE0qi9cO7fE/CPbvsm0
+	JKBUfahQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5yrz-0000000GYsr-3kuc
+	id 1t5zzM-0000000Ge1H-0vNm
 	for ath12k@archiver.kernel.org;
-	Wed, 30 Oct 2024 02:55:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 30 Oct 2024 04:07:20 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5yrx-0000000GYsV-0Ql2
+	id 1t5zxt-0000000Gdqu-0nhh
 	for ath12k@lists.infradead.org;
-	Wed, 30 Oct 2024 02:55:38 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49TMZPcb023870;
-	Wed, 30 Oct 2024 02:55:35 GMT
+	Wed, 30 Oct 2024 04:05:51 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49TEebdZ027398;
+	Wed, 30 Oct 2024 04:05:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=u3LZpCuW9bTjSRKdTnqsve
-	/i3hWOKJOhEPVbGSQAXMM=; b=DMgBQ5Xu96bN0jUIGJAzOpL+uw/2b0zra/Rw2T
-	TpmfrgDnXWNpu5pmLzN1L+c+Fwb9hGpddstZFE63/XuXGos1I4q53D3tCZmQUpkt
-	O6WhCTHerLvdKxHNxY0l22m5tqpfqBvwjSrd8YY3KDW7BVKr/rk59gStvncfZaKE
-	eLeyLEXELzial9gDbmSuXxnATh7YACeNmpSgp+Tbqk169aGO4VgnJkRelgjYUj7E
-	Po+cn54opBMIPlBZQg+AnFjnQejuUq26l+gYJ5tKRXu/w1pFLCvgxABiN+9PuN7b
-	yigqzWNgxRyhR8+3kDLaKGEPp1gcDFe8GI6e8aq7S8tGxqtQ==
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	5Rdo6ulYw0tRvnn2Gcx4YZ8PYC9DH6YfHABu8VFgs04=; b=Pg7M2n1tyW31/7Do
+	5Kqjgkr1RJj4WUGMqQIkIRF46/PTxPrO3XH2Dj6b6d32lDtXfWRSOJffuL3iL9M4
+	a8CxVQQmpW4rsENusO1/oz0QxXAAggLZzUZh7dGSG5ih/PSiavdxxoPaRbcSBihz
+	qt0Qtny3GhwhxVjWMqWaOa6097OnYacJQcTLAZ7DUYeLOyiZwjZfbhP7s3bFpTIj
+	3zNfXrVOG6Zw1V7GTMduHFlO6jYUDQLKAA0IXFV30jS49V9enoP+TbhFBR/Bc+Iu
+	1b+G84I/uN7CfRLcUtq8HjFInmGcREdK7GcsCDkOSiB19rszfWEswNfx0x8MFr59
+	udeNZw==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42gsq8jd3u-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42k1p31vwf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 30 Oct 2024 02:55:34 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49U2tY6W027378
+	Wed, 30 Oct 2024 04:05:43 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49U45gbE026513
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 30 Oct 2024 02:55:34 GMT
-Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 29 Oct 2024 19:55:28 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH] wifi: cfg80211: Correctly handle Medium Synchronization Delay
-Date: Wed, 30 Oct 2024 10:55:15 +0800
-Message-ID: <20241030025515.16004-1-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Wed, 30 Oct 2024 04:05:42 GMT
+Received: from [10.152.202.18] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 29 Oct
+ 2024 21:05:40 -0700
+Message-ID: <cd19db4a-953d-4230-85b1-695140bb185c@quicinc.com>
+Date: Wed, 30 Oct 2024 09:35:37 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/8] wifi: ath12k: Refactor sta state machine
+To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <quic_jjohnson@quicinc.com>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20241023133004.2253830-1-kvalo@kernel.org>
+ <20241023133004.2253830-4-kvalo@kernel.org>
+ <a4b92b80-ec57-4db3-acd7-9c6c7644d7c9@quicinc.com>
+ <875xpahqc5.fsf@kernel.org>
+Content-Language: en-US
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
+In-Reply-To: <875xpahqc5.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1DFGsIZ29JwZqFT6aPJYABNHMPVtAWch
-X-Proofpoint-ORIG-GUID: 1DFGsIZ29JwZqFT6aPJYABNHMPVtAWch
+X-Proofpoint-GUID: 3BeXbF90L541wORic7JaI7Qa7sRYVaBd
+X-Proofpoint-ORIG-GUID: 3BeXbF90L541wORic7JaI7Qa7sRYVaBd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
- adultscore=0 mlxscore=0 priorityscore=1501 mlxlogscore=999 impostorscore=0
- lowpriorityscore=0 malwarescore=0 clxscore=1011 spamscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2410300021
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ adultscore=0 spamscore=0 lowpriorityscore=0 mlxscore=0 malwarescore=0
+ phishscore=0 clxscore=1011 impostorscore=0 mlxlogscore=999 suspectscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410300029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_195537_201927_73D059EC 
-X-CRM114-Status: GOOD (  22.03  )
+X-CRM114-CacheID: sfid-20241029_210549_387949_809D1D2E 
+X-CRM114-Status: GOOD (  16.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,155 +101,74 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, when the driver attempts to connect to an AP MLD with multiple
-APs, the cfg80211_mlme_check_mlo_compat() function requires the Medium
-Synchronization Delay values from different APs of the same AP MLD to be
-equal, which may result in connection failures.
+On 10/29/24 21:08, Kalle Valo wrote:
+> + aditya
+> 
+> Jeff Johnson <quic_jjohnson@quicinc.com> writes:
+> 
+>>> +static int ath12k_mac_station_unauthorize(struct ath12k *ar,
+>>> +					  struct ath12k_link_vif *arvif,
+>>> +					  struct ath12k_link_sta *arsta)
+>>> +{
+>>> +	struct ath12k_peer *peer;
+>>> +	int ret;
+>>> +
+>>> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>>> +
+>>> +	spin_lock_bh(&ar->ab->base_lock);
+>>> +
+>>> +	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, arsta->addr);
+>>> +	if (peer)
+>>> +		peer->is_authorized = false;
+>>> +
+>>> +	spin_unlock_bh(&ar->ab->base_lock);
+>>> +
+>>> +	/* Driver should clear the peer keys during mac80211's ref ptr
+>>> +	 * gets cleared in __sta_info_destroy_part2 (trans from
+>>> +	 * IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC)
+>>
+>> I'm unable to understand this comment
+> 
+> Indeed, that's weird. Aditya, do you have any idea what the comment is
+> trying to say?
+> 
 
-This is because when the driver receives a multi-link probe response from
-an AP MLD with multiple APs, cfg80211 updates the Elements for each AP
-based on the multi-link probe response. If the Medium Synchronization Delay
-is set in the multi-link probe response, the Elements for each AP belonging
-to the same AP MLD will have the Medium Synchronization Delay set
-simultaneously. If non-multi-link probe responses are received from
-different APs of the same MLD AP, cfg80211 will still update the Elements
-based on the non-multi-link probe response. Since the non-multi-link probe
-response does not set the Medium Synchronization Delay
-(IEEE 802.11be-2024-35.3.4.4), if the Elements from a non-multi-link probe
-response overwrite those from a multi-link probe response that has set the
-Medium Synchronization Delay, the Medium Synchronization Delay values for
-APs belonging to the same AP MLD will not be equal. This discrepancy causes
-the cfg80211_mlme_check_mlo_compat() function to fail, leading to
-connection failures. Commit ccb964b4ab16
-("wifi: cfg80211: validate MLO connections better") did not take this into
-account.
+At present, ath12k clear the keys in ath12k_station_disassoc() which 
+gets executed in state change from IEEE80211_STA_ASSOC to 
+IEEE80211_STA_AUTH.
 
-To address this issue, add a u16 type member to the struct cfg80211_bss to
-store the Medium Synchronization Delay. When the driver receives a probe
-response with the Medium Synchronization Delay set, update this member’s
-value; otherwise, do not update it. Additionally, modify the parameter list
-of cfg80211_mlme_check_mlo_compat() so that this member variable can be
-directly accessed within the cfg80211_mlme_check_mlo_compat() function viaq
-a pointer to the struct cfg80211_bss. This will allow checking whether the
-Medium Synchronization Delay values from different APs of the same AP MLD
-are equal.
+However, in mac80211, once the station moves from 
+IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC itself, the keys are 
+deleted. Please see - __sta_info_destroy_part2() -> 
+ieee80211_free_sta_keys().
 
-Fixes: ccb964b4ab16 ("wifi: cfg80211: validate MLO connections better")
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
- include/net/cfg80211.h |  4 ++++
- net/wireless/mlme.c    | 11 +++++++----
- net/wireless/scan.c    | 15 +++++++++++++++
- 3 files changed, 26 insertions(+), 4 deletions(-)
+Now, ath12k peer object (struct ath12k_peer) holds the key reference 
+from mac80211 (see ath12k_peer::keys[]). Hence, once mac80211 deletes 
+the key, driver should not keep a reference to it or else it could lead 
+to issues.
 
-diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-index 27acf1292a5c..ebeb305c1d0c 100644
---- a/include/net/cfg80211.h
-+++ b/include/net/cfg80211.h
-@@ -2956,6 +2956,8 @@ struct cfg80211_bss_ies {
-  * @cannot_use_reasons: the reasons (bitmap) for not being able to connect,
-  *	if @restrict_use is set and @use_for is zero (empty); may be 0 for
-  *	unspecified reasons; see &enum nl80211_bss_cannot_use_reasons
-+ * @med_sync_delay: Medium Synchronization delay as described in
-+ *	IEEE 802.11be-2024 Figure 9-1074q.
-  * @priv: private area for driver use, has at least wiphy->bss_priv_size bytes
+Therefore, it is important that the driver should clear the peer keys 
+during transition from IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC 
+it self since we know that once we return from here, mac80211 is going 
+to remove the keys.
+
+ath12k_mac_station_unauthorize() gets called when station moves from 
+state IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC hence call to 
+ath12k_clear_peer_keys() is moved from ath12k_station_disassoc() to 
+ath12k_mac_station_unauthorize().
+
+Is this clear now?
+
+May be the comment in the code could be re-written as below?
+
+/* Driver must clear the keys during the state change from
+  * IEEE80211_STA_AUTHORIZED to IEEE80211_STA_ASSOC, since after
+  * returning from here, mac80211 is going to delete the keys
+  * in __sta_info_destroy_part2(). This will ensure that the driver does
+  * not retain stale key references after mac80211 deletes the keys.
   */
- struct cfg80211_bss {
-@@ -2986,6 +2988,8 @@ struct cfg80211_bss {
- 	u8 use_for;
- 	u8 cannot_use_reasons;
- 
-+	u16 med_sync_delay;
-+
- 	u8 priv[] __aligned(sizeof(void *));
- };
- 
-diff --git a/net/wireless/mlme.c b/net/wireless/mlme.c
-index 4dac81854721..ae00c36779d2 100644
---- a/net/wireless/mlme.c
-+++ b/net/wireless/mlme.c
-@@ -326,7 +326,9 @@ void cfg80211_oper_and_vht_capa(struct ieee80211_vht_cap *vht_capa,
- }
- 
- static int
--cfg80211_mlme_check_mlo_compat(const struct ieee80211_multi_link_elem *mle_a,
-+cfg80211_mlme_check_mlo_compat(const struct cfg80211_bss *bss_a,
-+			       const struct cfg80211_bss *bss_b,
-+			       const struct ieee80211_multi_link_elem *mle_a,
- 			       const struct ieee80211_multi_link_elem *mle_b,
- 			       struct netlink_ext_ack *extack)
- {
-@@ -340,8 +342,7 @@ cfg80211_mlme_check_mlo_compat(const struct ieee80211_multi_link_elem *mle_a,
- 		return -EINVAL;
- 	}
- 
--	if (ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_a) !=
--	    ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_b)) {
-+	if (bss_a->med_sync_delay != bss_b->med_sync_delay) {
- 		NL_SET_ERR_MSG(extack, "link EML medium sync delay mismatch");
- 		return -EINVAL;
- 	}
-@@ -426,7 +427,9 @@ static int cfg80211_mlme_check_mlo(struct net_device *dev,
- 		if (WARN_ON(!mles[i]))
- 			goto error;
- 
--		if (cfg80211_mlme_check_mlo_compat(mles[req->link_id], mles[i],
-+		if (cfg80211_mlme_check_mlo_compat(req->links[req->link_id].bss,
-+						   req->links[i].bss,
-+						   mles[req->link_id], mles[i],
- 						   extack)) {
- 			req->links[i].error = -EINVAL;
- 			goto error;
-diff --git a/net/wireless/scan.c b/net/wireless/scan.c
-index 1c6fd45aa809..6ad935475484 100644
---- a/net/wireless/scan.c
-+++ b/net/wireless/scan.c
-@@ -1899,6 +1899,13 @@ cfg80211_update_known_bss(struct cfg80211_registered_device *rdev,
- 	 */
- 	if (signal_valid)
- 		known->pub.signal = new->pub.signal;
-+
-+	/* update medium synchronization delay when its value is not
-+	 * the default.
-+	 */
-+	if (new->pub.med_sync_delay != IEEE80211_MED_SYNC_DELAY_DEFAULT)
-+		known->pub.med_sync_delay = new->pub.med_sync_delay;
-+
- 	known->pub.capability = new->pub.capability;
- 	known->ts = new->ts;
- 	known->ts_boottime = new->ts_boottime;
-@@ -2224,6 +2231,7 @@ cfg80211_inform_single_bss_data(struct wiphy *wiphy,
- 	int bss_type;
- 	bool signal_valid;
- 	unsigned long ts;
-+	const struct element *ml;
- 
- 	if (WARN_ON(!wiphy))
- 		return NULL;
-@@ -2267,6 +2275,7 @@ cfg80211_inform_single_bss_data(struct wiphy *wiphy,
- 	tmp.pub.use_for = data->use_for;
- 	tmp.pub.cannot_use_reasons = data->cannot_use_reasons;
- 	tmp.bss_source = data->bss_source;
-+	tmp.pub.med_sync_delay = IEEE80211_MED_SYNC_DELAY_DEFAULT;
- 
- 	switch (data->bss_source) {
- 	case BSS_SOURCE_MBSSID:
-@@ -2321,6 +2330,12 @@ cfg80211_inform_single_bss_data(struct wiphy *wiphy,
- 		break;
- 	case CFG80211_BSS_FTYPE_PRESP:
- 		rcu_assign_pointer(tmp.pub.proberesp_ies, ies);
-+		ml = cfg80211_find_ext_elem(WLAN_EID_EXT_EHT_MULTI_LINK,
-+					    ies->data, ies->len);
-+		if (ml)
-+			tmp.pub.med_sync_delay =
-+				ieee80211_mle_get_eml_med_sync_delay(ml->data + 1);
-+
- 		break;
- 	}
- 	rcu_assign_pointer(tmp.pub.ies, ies);
 
-base-commit: e7e2957f403ba4655199f2ba9920c1a015a7be44
 -- 
-2.34.1
+Aditya
 
 
