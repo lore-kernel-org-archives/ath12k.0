@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8896E68964
-	for <ath12k@archiver.kernel.org>; Thu, 31 Oct 2024 09:25:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF2EEE68974
+	for <ath12k@archiver.kernel.org>; Thu, 31 Oct 2024 10:49:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
 	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
 	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=v4XL6NR0MlbeM5C9eez14VUJKm+e/odrQvpRS4cSaz4=; b=m3QLks4NbKvqhtdNU0RsCvTk/T
-	P7u5Px36MxcgKrd3vXiI7GcSU9Kpptxsc0zTwrJTnnGpW6tUV9EALXGVm2Uw0vWbGdof4A2GCGRzg
-	0k51RRG6OypHKy6LW3ODF6rvHpWYlLHxJkwmJz8fdxCOOEj0T+rGvYuBdfgSDgY/LFZlB8WpDXQlM
-	cNqn7wr9ldKMAHasQBdszGN4LjwQnYWxZviNIjUfp0a4br1VoFFHcBI92VuPbmIVlxp4ohcnP///Q
-	kIkxUaBdTMUaEj90GIjJILPJar5CKRRmtI26ZbKKnUZM7W82eZ3dXtZdb0O/f9Yru25f+qVi8GlGn
-	NGi3Quiw==;
+	bh=Dl8hdDnBmAY1nRSMxM8dTCsNcNJfOb9j7hsGPdHbtO4=; b=NLrAqoX8W4yNrtOCt4O3qK7KuL
+	jdGidChIh3x8nZoK6MAeqbIJ4aABpiVtTPSSyqJRp3MObD4jCfJg7eVPmLzkRHQRR2whDa0Fh0QhW
+	Ew00rJveDIrdg8XLhhx5cwctHe8fEvE6q5AUMU/xSpHyTywsuJ9aaYVcyiNa8k94gWdj6yMhyaIT2
+	hgMf/vuT8JBgHauT6hxuUMCvek8dfCLCDND5bGgxfr2QyIZswMYUI0vyJd06HS5U2PF+5DHgpkYKt
+	GZoiLCvGDaQb+AdJZAQauUpHbFL6hwf90ngagSViUV3gDY/gJ7dp3S6xdCsmK/0xN6RvEa8yD3lTo
+	kILBMrBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6RQs-000000034T7-1hN1
+	id 1t6Sk0-00000003IyP-1WmT
 	for ath12k@archiver.kernel.org;
-	Thu, 31 Oct 2024 09:25:34 +0000
+	Thu, 31 Oct 2024 10:49:24 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6RQq-000000034RS-0aff
+	id 1t6SiO-00000003Ipu-1aeU
 	for ath12k@lists.infradead.org;
-	Thu, 31 Oct 2024 09:25:33 +0000
+	Thu, 31 Oct 2024 10:47:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
 	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=v4XL6NR0MlbeM5C9eez14VUJKm+e/odrQvpRS4cSaz4=;
-	t=1730366731; x=1731576331; b=RhZhe9QY93kUvtLIeFFBzX895OtWvtDLFbS8FhwHbtZCNVo
-	ZrXZ43qat+W4xEXMpumwD5j9JIa/zTwBJrzHH2JLVrcef9aGQSrPgKLRucaP7GLWEy6y/vGa3ABxD
-	PlZxz9Seu1QO5vPon6u+CZevRr46N1TmS50edpAYQ/DB6pysB5DohqZgsuLWN6y3vmmYu0SKrlCiP
-	SBZBEzCqTtTOL0/VVvZNjqh+6fqbvv5k/ToIkPY+exGEKVUK/9PBB1OcErXwog0n0EMMXROfwe87g
-	FzJh7iAMICMNvYuf7rxZtCmIeDUXZ3SgxsBjJxAL4zVWkCtQmpISk0W08onHNxvg==;
+	Resent-Cc:Resent-Message-ID; bh=Dl8hdDnBmAY1nRSMxM8dTCsNcNJfOb9j7hsGPdHbtO4=;
+	t=1730371662; x=1731581262; b=J8ixEjRz7+8cS3dpZT8HdDSdR55q69bfNVNwdoDiMj0yl1Q
+	jrMRYwLemIXMjqlDegYidSI0/j6abZmRc3QmqyWruFJoG5G3dwmbSiFPLfSjiRT3S1quKzHQGSe4B
+	MaDWwAWLfJck8PGp7QTAmD1kYVHkCfZT0r+GbR6nMdP2NqteldXj2xn5LOp6qKeUaYCabTu+rlciV
+	EFguMIvUd4PcSXOsgqoNvY97T/KytaY0QCg9ot26AqfGs4/YtswOZNbqDTrjC4Qd6qCL/FQx5urt/
+	M0sdk6E7twwgInI9GMMJZE8Q1Cbi110gLKQYuyGtP+bqIPKXlxdeQa5sQho7b93g==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
 	(Exim 4.98)
-	(envelope-from <benjamin@sipsolutions.net>)
-	id 1t6RQl-0000000ANPk-1eLJ;
-	Thu, 31 Oct 2024 10:25:27 +0100
-Message-ID: <b07102047bf2f076c090948b1a06ae4f22a881ff.camel@sipsolutions.net>
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1t6SiH-0000000APAw-1SY6;
+	Thu, 31 Oct 2024 11:47:37 +0100
+Message-ID: <f6ec91977050f6a1f08d995b4e36ef4067ad3de2.camel@sipsolutions.net>
 Subject: Re: [PATCH] wifi: cfg80211: Correctly handle Medium Synchronization
  Delay
-From: Benjamin Berg <benjamin@sipsolutions.net>
-To: Lingbo Kong <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Benjamin Berg <benjamin@sipsolutions.net>, Lingbo Kong
+	 <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Date: Thu, 31 Oct 2024 10:25:23 +0100
-In-Reply-To: <3a74f2f1-fd9f-46a5-87c1-fdc0235a50e5@quicinc.com>
+Date: Thu, 31 Oct 2024 11:47:35 +0100
+In-Reply-To: <b07102047bf2f076c090948b1a06ae4f22a881ff.camel@sipsolutions.net>
 References: <20241030025515.16004-1-quic_lingbok@quicinc.com>
 	 <e56621b7a8b229f726d644ffde7b98ba0c11b06b.camel@sipsolutions.net>
 	 <3a74f2f1-fd9f-46a5-87c1-fdc0235a50e5@quicinc.com>
+	 <b07102047bf2f076c090948b1a06ae4f22a881ff.camel@sipsolutions.net>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.52.4 (3.52.4-1.fc40) 
+User-Agent: Evolution 3.52.4 (3.52.4-2.fc40) 
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241031_022532_359339_17463743 
-X-CRM114-Status: GOOD (  50.68  )
+X-CRM114-CacheID: sfid-20241031_034744_437651_C5CBC53E 
+X-CRM114-Status: GOOD (  12.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,275 +78,35 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Thu, 2024-10-31 at 10:25 +0100, Benjamin Berg wrote:
+>=20
+> Right, which does seem to imply that a non-NSTR AP can very well set a
+> Medium Delay Synchronization.
 
-On Thu, 2024-10-31 at 13:23 +0800, Lingbo Kong wrote:
-> On 2024/10/30 18:23, Benjamin Berg wrote:
-> > Hi,
-> >=20
-> > On Wed, 2024-10-30 at 10:55 +0800, Lingbo Kong wrote:
-> > > Currently, when the driver attempts to connect to an AP MLD with mult=
-iple
-> > > APs, the cfg80211_mlme_check_mlo_compat() function requires the Mediu=
-m
-> > > Synchronization Delay values from different APs of the same AP MLD to=
- be
-> > > equal, which may result in connection failures.
-> > >=20
-> > > This is because when the driver receives a multi-link probe response =
-from
-> > > an AP MLD with multiple APs, cfg80211 updates the Elements for each A=
-P
-> > > based on the multi-link probe response. If the Medium Synchronization=
- Delay
-> > > is set in the multi-link probe response, the Elements for each AP bel=
-onging
-> > > to the same AP MLD will have the Medium Synchronization Delay set
-> > > simultaneously. If non-multi-link probe responses are received from
-> > > different APs of the same MLD AP, cfg80211 will still update the Elem=
-ents
-> > > based on the non-multi-link probe response. Since the non-multi-link =
-probe
-> > > response does not set the Medium Synchronization Delay
-> > > (IEEE 802.11be-2024-35.3.4.4), if the Elements from a non-multi-link =
-probe
-> > > response overwrite those from a multi-link probe response that has se=
-t the
-> > > Medium Synchronization Delay, the Medium Synchronization Delay values=
- for
-> > > APs belonging to the same AP MLD will not be equal. This discrepancy =
-causes
-> > > the cfg80211_mlme_check_mlo_compat() function to fail, leading to
-> > > connection failures. Commit ccb964b4ab16
-> > > ("wifi: cfg80211: validate MLO connections better") did not take this=
- into
-> > > account.
-> >=20
-> > The specification confuses me a bit and I am probably missing
-> > something.
-> >=20
-> > > To address this issue, add a u16 type member to the struct cfg80211_b=
-ss to
-> > > store the Medium Synchronization Delay. When the driver receives a pr=
-obe
-> > > response with the Medium Synchronization Delay set, update this membe=
-r=E2=80=99s
-> > > value; otherwise, do not update it. Additionally, modify the paramete=
-r list
-> > > of cfg80211_mlme_check_mlo_compat() so that this member variable can =
-be
-> > > directly accessed within the cfg80211_mlme_check_mlo_compat() functio=
-n viaq
-> > > a pointer to the struct cfg80211_bss. This will allow checking whethe=
-r the
-> > > Medium Synchronization Delay values from different APs of the same AP=
- MLD
-> > > are equal.
-> >=20
-> > This feels like a recipe for failures. Whether or not an ML-Probe
-> > Response is seen should not generally affect the validity of a BSS.
-> > Which means that the validity check itself may be incorrect.
-> >=20
-> > Maybe we should only compare the values if the subfield has been
-> > included?
-> >=20
-> >=20
-> > That said, do you understand when exactly the subfield should be
-> > included? It seems that it may be carried in the "(Re)Association
-> > Response", in which case it would be consistent anyway.
-> >=20
-> > The ML probe response part seems a bit specific. Could it be that this
-> > is intended to be used by NSTR APs only, in which case there would not
-> > be a beacon on the secondary AP. If that is the case, then there
-> > wouldn't be much of an inconsistency (though we would still need to be
-> > a bit careful).
-> >=20
-> > Benjamin
-> >=20
->=20
-> hi=EF=BC=8Cbenjamin,
->=20
-> regarding your comment, I believe removing this validity check might be=
-=20
-> the easiest solution. As for the scenarios where this subfield would be=
-=20
-> included, I referred to the IEEE 802.11be specification. According to
-> section 35.3.16.8, it states:
->=20
-> A STA shall not start a MediumSyncDelay timer unless the STA is one of=
-=20
-> the following:
-> =E2=80=94 a non-AP STA affiliated with a non-AP MLD operating on an NSTR =
-link
-> pair or
-> =E2=80=94 a non-AP STA affiliated with a non-AP MLD operating on an EMLSR=
- link or
-> =E2=80=94 a non-AP STA affiliated with a non-AP MLD operating on an EMLMR=
- link or
-> =E2=80=94 an AP affiliated with an NSTR mobile AP MLD operating on the=
-=20
-> nonprimary link of an NSTR link pair.
+Yes, we also pass it to the firmware in iwlwifi, so definitely.
 
-Right, which does seem to imply that a non-NSTR AP can very well set a
-Medium Delay Synchronization.
-
-> Regarding the statement =E2=80=9CCould it be that this is intended to be =
-used by=20
-> NSTR APs only,=E2=80=9D I did not find any explicit indication in the spe=
-c that=20
-> the multi-link probe response carrying the medium sync delay subfield is=
-=20
-> solely applicable to NSTR APs.
->=20
-> Additionally, do you have any suggestions on how to address this issue?=
+> > Regarding the statement =E2=80=9CCould it be that this is intended to b=
+e used by=20
+> > NSTR APs only,=E2=80=9D I did not find any explicit indication in the s=
+pec that=20
+> > the multi-link probe response carrying the medium sync delay subfield i=
+s=20
+> > solely applicable to NSTR APs.
+> >=20
+> > Additionally, do you have any suggestions on how to address this issue?=
 =F0=9F=99=82
-
-Not really. I don't grasp the intention of the specification here. But
-if an AP may include the field in an ML Probe Response, then we
-obviously cannot rely on the value to be consistent.
-
-Seems to me that the option to remove the check is still the best way
-forward right now.
-
-Benjamin
-
-> > >=20
-> > > Fixes: ccb964b4ab16 ("wifi: cfg80211: validate MLO connections better=
-")
-> > > Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> > > ---
-> > > =C2=A0=C2=A0include/net/cfg80211.h |=C2=A0 4 ++++
-> > > =C2=A0=C2=A0net/wireless/mlme.c=C2=A0=C2=A0=C2=A0 | 11 +++++++----
-> > > =C2=A0=C2=A0net/wireless/scan.c=C2=A0=C2=A0=C2=A0 | 15 ++++++++++++++=
-+
-> > > =C2=A0=C2=A03 files changed, 26 insertions(+), 4 deletions(-)
-> > >=20
-> > > diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-> > > index 27acf1292a5c..ebeb305c1d0c 100644
-> > > --- a/include/net/cfg80211.h
-> > > +++ b/include/net/cfg80211.h
-> > > @@ -2956,6 +2956,8 @@ struct cfg80211_bss_ies {
-> > > =C2=A0=C2=A0 * @cannot_use_reasons: the reasons (bitmap) for not bein=
-g able to connect,
-> > > =C2=A0=C2=A0 *	if @restrict_use is set and @use_for is zero (empty); =
-may be 0 for
-> > > =C2=A0=C2=A0 *	unspecified reasons; see &enum nl80211_bss_cannot_use_=
-reasons
-> > > + * @med_sync_delay: Medium Synchronization delay as described in
-> > > + *	IEEE 802.11be-2024 Figure 9-1074q.
-> > > =C2=A0=C2=A0 * @priv: private area for driver use, has at least wiphy=
-->bss_priv_size bytes
-> > > =C2=A0=C2=A0 */
-> > > =C2=A0=C2=A0struct cfg80211_bss {
-> > > @@ -2986,6 +2988,8 @@ struct cfg80211_bss {
-> > > =C2=A0=C2=A0	u8 use_for;
-> > > =C2=A0=C2=A0	u8 cannot_use_reasons;
-> > > =C2=A0=20
-> > > +	u16 med_sync_delay;
-> > > +
-> > > =C2=A0=C2=A0	u8 priv[] __aligned(sizeof(void *));
-> > > =C2=A0=C2=A0};
-> > > =C2=A0=20
-> > > diff --git a/net/wireless/mlme.c b/net/wireless/mlme.c
-> > > index 4dac81854721..ae00c36779d2 100644
-> > > --- a/net/wireless/mlme.c
-> > > +++ b/net/wireless/mlme.c
-> > > @@ -326,7 +326,9 @@ void cfg80211_oper_and_vht_capa(struct ieee80211_=
-vht_cap *vht_capa,
-> > > =C2=A0=C2=A0}
-> > > =C2=A0=20
-> > > =C2=A0=C2=A0static int
-> > > -cfg80211_mlme_check_mlo_compat(const struct ieee80211_multi_link_ele=
-m *mle_a,
-> > > +cfg80211_mlme_check_mlo_compat(const struct cfg80211_bss *bss_a,
-> > > +			=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 const struct cfg80211_bss *b=
-ss_b,
-> > > +			=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 const struct ieee80211_multi=
-_link_elem *mle_a,
-> > > =C2=A0=C2=A0			=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 const struct ieee=
-80211_multi_link_elem *mle_b,
-> > > =C2=A0=C2=A0			=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 struct netlink_ex=
-t_ack *extack)
-> > > =C2=A0=C2=A0{
-> > > @@ -340,8 +342,7 @@ cfg80211_mlme_check_mlo_compat(const struct ieee8=
-0211_multi_link_elem *mle_a,
-> > > =C2=A0=C2=A0		return -EINVAL;
-> > > =C2=A0=C2=A0	}
-> > > =C2=A0=20
-> > > -	if (ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_a) !=3D
-> > > -	=C2=A0=C2=A0=C2=A0 ieee80211_mle_get_eml_med_sync_delay((const u8 *=
-)mle_b)) {
-> > > +	if (bss_a->med_sync_delay !=3D bss_b->med_sync_delay) {
-> > > =C2=A0=C2=A0		NL_SET_ERR_MSG(extack, "link EML medium sync delay mism=
-atch");
-> > > =C2=A0=C2=A0		return -EINVAL;
-> > > =C2=A0=C2=A0	}
-> > > @@ -426,7 +427,9 @@ static int cfg80211_mlme_check_mlo(struct net_dev=
-ice *dev,
-> > > =C2=A0=C2=A0		if (WARN_ON(!mles[i]))
-> > > =C2=A0=C2=A0			goto error;
-> > > =C2=A0=20
-> > > -		if (cfg80211_mlme_check_mlo_compat(mles[req->link_id], mles[i],
-> > > +		if (cfg80211_mlme_check_mlo_compat(req->links[req->link_id].bss,
-> > > +						=C2=A0=C2=A0 req->links[i].bss,
-> > > +						=C2=A0=C2=A0 mles[req->link_id], mles[i],
-> > > =C2=A0=C2=A0						=C2=A0=C2=A0 extack)) {
-> > > =C2=A0=C2=A0			req->links[i].error =3D -EINVAL;
-> > > =C2=A0=C2=A0			goto error;
-> > > diff --git a/net/wireless/scan.c b/net/wireless/scan.c
-> > > index 1c6fd45aa809..6ad935475484 100644
-> > > --- a/net/wireless/scan.c
-> > > +++ b/net/wireless/scan.c
-> > > @@ -1899,6 +1899,13 @@ cfg80211_update_known_bss(struct cfg80211_regi=
-stered_device *rdev,
-> > > =C2=A0=C2=A0	 */
-> > > =C2=A0=C2=A0	if (signal_valid)
-> > > =C2=A0=C2=A0		known->pub.signal =3D new->pub.signal;
-> > > +
-> > > +	/* update medium synchronization delay when its value is not
-> > > +	 * the default.
-> > > +	 */
-> > > +	if (new->pub.med_sync_delay !=3D IEEE80211_MED_SYNC_DELAY_DEFAULT)
-> > > +		known->pub.med_sync_delay =3D new->pub.med_sync_delay;
-> > > +
-> > > =C2=A0=C2=A0	known->pub.capability =3D new->pub.capability;
-> > > =C2=A0=C2=A0	known->ts =3D new->ts;
-> > > =C2=A0=C2=A0	known->ts_boottime =3D new->ts_boottime;
-> > > @@ -2224,6 +2231,7 @@ cfg80211_inform_single_bss_data(struct wiphy *w=
-iphy,
-> > > =C2=A0=C2=A0	int bss_type;
-> > > =C2=A0=C2=A0	bool signal_valid;
-> > > =C2=A0=C2=A0	unsigned long ts;
-> > > +	const struct element *ml;
-> > > =C2=A0=20
-> > > =C2=A0=C2=A0	if (WARN_ON(!wiphy))
-> > > =C2=A0=C2=A0		return NULL;
-> > > @@ -2267,6 +2275,7 @@ cfg80211_inform_single_bss_data(struct wiphy *w=
-iphy,
-> > > =C2=A0=C2=A0	tmp.pub.use_for =3D data->use_for;
-> > > =C2=A0=C2=A0	tmp.pub.cannot_use_reasons =3D data->cannot_use_reasons;
-> > > =C2=A0=C2=A0	tmp.bss_source =3D data->bss_source;
-> > > +	tmp.pub.med_sync_delay =3D IEEE80211_MED_SYNC_DELAY_DEFAULT;
-> > > =C2=A0=20
-> > > =C2=A0=C2=A0	switch (data->bss_source) {
-> > > =C2=A0=C2=A0	case BSS_SOURCE_MBSSID:
-> > > @@ -2321,6 +2330,12 @@ cfg80211_inform_single_bss_data(struct wiphy *=
-wiphy,
-> > > =C2=A0=C2=A0		break;
-> > > =C2=A0=C2=A0	case CFG80211_BSS_FTYPE_PRESP:
-> > > =C2=A0=C2=A0		rcu_assign_pointer(tmp.pub.proberesp_ies, ies);
-> > > +		ml =3D cfg80211_find_ext_elem(WLAN_EID_EXT_EHT_MULTI_LINK,
-> > > +					=C2=A0=C2=A0=C2=A0 ies->data, ies->len);
-> > > +		if (ml)
-> > > +			tmp.pub.med_sync_delay =3D
-> > > +				ieee80211_mle_get_eml_med_sync_delay(ml->data + 1);
-> > > +
-> > > =C2=A0=C2=A0		break;
-> > > =C2=A0=C2=A0	}
-> > > =C2=A0=C2=A0	rcu_assign_pointer(tmp.pub.ies, ies);
-> > >=20
-> > > base-commit: e7e2957f403ba4655199f2ba9920c1a015a7be44
-> >=20
 >=20
+> Not really. I don't grasp the intention of the specification here. But
+> if an AP may include the field in an ML Probe Response, then we
+> obviously cannot rely on the value to be consistent.
+>=20
+> Seems to me that the option to remove the check is still the best way
+> forward right now.
 
+Agree, let's just remove it - Lingbo do you want to send a patch?
+
+We should probably compare "extended MLD capabilities and ops" though,
+haha.
+
+johannes
 
