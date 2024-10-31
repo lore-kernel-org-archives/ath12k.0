@@ -4,82 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE9A4D767C0
-	for <ath12k@archiver.kernel.org>; Thu, 31 Oct 2024 13:42:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B53FD767D8
+	for <ath12k@archiver.kernel.org>; Thu, 31 Oct 2024 14:31:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=3G85wS5pLeerxIJwITwx1z3vDnJqfi7ipaoWwSJ8MYw=; b=TRkLnF9rrnDbAgiQpwVQAszYxU
-	T/4xlcAazo4a7wSWDcV+8C/jPo0hgxOz/gwfeB3rT0rq2Bnl3iopwY+p8MoRwRbTVW+ncM/1efecz
-	h06HqbrYg5MeuCvK0gQomtBjjY1PLnlT0izvfqNtHAaaEGAUAhxvU+VPLEQZOAmzFaGcEJ9vxJiUR
-	fIxO4rw4hlz7KGqBW+ABxQP++TGUcZPhhamn73lvc/D25fy79G8qgb5XCSwDyhuPEmPZ1IMo3cPZM
-	8i/eI1c0Wy00qLJ9rN47py+f7k/OzyYIwhRUEJu4PinR+a3CAnK3dcPyXCgHIawL9tfA7/IcGj33c
-	o7ksRzgw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gW7Tp9K0El3bmrSwFvaYSYaJMokkiIdhJFTc8A/K8DA=; b=EobTmdDNObwVyBancjNR+/l/I/
+	QeSQGzwpYmzTFaLn/flMRpH6CKZ+gVaUYrbxqfy4FdMoIZSUjT37HxI1QBguCp9WoWlTKL4y166Su
+	vOgmfcal3enKnzROrKvBuo8jOzbXrmCirXWb4jhUFiDG+6urKRBvR+aix+1QK06xgDM/Xi57fw1Lm
+	l1/WaIjuBNGT2hCeEQBi3DqGh10roEZdA3vqdBuohaIYm3KpkudT479DMb+AliOs8NEVEeJbaArNa
+	hEoV8//y1Vi2/TBNh4giXc9HYgvHvcoGgOCZITZkOcxuzvvyCt/l/Qwi+qvqXgK1uFdHr0LuWS2u/
+	qV655DdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6VRm-00000003hy7-2IuT
+	id 1t6WDJ-00000003ohb-0rOa
 	for ath12k@archiver.kernel.org;
-	Thu, 31 Oct 2024 13:42:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 31 Oct 2024 14:31:53 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6VRk-00000003hxL-0nvG
+	id 1t6W4J-00000003nMo-2vwa
 	for ath12k@lists.infradead.org;
-	Thu, 31 Oct 2024 13:42:46 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49VBuNRr005427;
-	Thu, 31 Oct 2024 13:42:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=3G85wS5pLeerxIJwITwx1z
-	3vDnJqfi7ipaoWwSJ8MYw=; b=UG8xWO6qXl/zzMtgsVkix/EuF0J+IXRWRfvFAh
-	KvPGT8QEhuRDrB3oXcLYud22UGaqYOyt3wTr4Ai+QOEn+lLHwOWS7sxb3NNr+kJU
-	MtjSr7OvA8U0AHFZZjEuJQl88TfI3MlfNrQGh5qhJ2yzwDsR3kc4PLmqkXT2y034
-	fOWbdQXTaSg2OK5Floji28RjmkBq31oBGc28SUapfsbyVOt6JJTIHMqu4jp1y6M7
-	bItmQw0Ja0GZv4Gw60ZBx5SMtoZn/ngXzlaDsAC+oRPZSiZeKrzbUHVgrsXr8a8N
-	/IZN80OhLre3iD0mspWVBuOXDkYE17IazixDBGczhBfoElAw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42m1xc9sut-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 31 Oct 2024 13:42:42 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49VDggQx022037
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 31 Oct 2024 13:42:42 GMT
-Received: from lingbok.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 31 Oct 2024 06:42:40 -0700
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH] wifi: cfg80211: Remove the Medium Synchronization Delay validity check
-Date: Thu, 31 Oct 2024 21:42:23 +0800
-Message-ID: <20241031134223.970-1-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.45.2.windows.1
+	Thu, 31 Oct 2024 14:22:37 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 4DFC7A440EE;
+	Thu, 31 Oct 2024 14:20:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA4F3C4FE0E;
+	Thu, 31 Oct 2024 14:04:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730383498;
+	bh=HVdeTGq8tw85YSsGdDSi8A8rnS3fMC4tuFjU7oRUbCE=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=KR2h0gI7A/NUGYNKfPWgTn9tf/w10eoK/Joft+nluD7JFlW1HMjj3sRTe0LHHZJ3f
+	 Z1bAZW628FLFBnmBF5WI131W9+MKm+dd0atNbFZ1UWgmugJBEax7W+eOR34q2GGEQN
+	 c4x5uLp49Z9qhWFVQFHFAs1cMrFbdUWVDat1F7BG8QI8Yhk5Whs8tF2uN9dm26OxBQ
+	 cldGX7CbtH/s227j2bhjuAUbg/v2llPtimvIqUBpFiPSeIGj0iC1Vi9DGMNwSX39oO
+	 6cgTW4bOBWGbw2ne7LZHiQLPrWgW3bso+6+RKacs52gqPANAOEmL63jJsdO2kyxt4f
+	 H9yG+LOifqhPQ==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: <ath12k-devel-internal@qti.qualcomm.com>,  Jeff Johnson
+ <jjohnson@kernel.org>,  Nathan Chancellor <nathan@kernel.org>,  Nick
+ Desaulniers <ndesaulniers@google.com>,  Bill Wendling <morbo@google.com>,
+  Justin Stitt <justinstitt@google.com>,  Arnd Bergmann <arnd@kernel.org>,
+  <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>,
+  <linux-kernel@vger.kernel.org>,  <llvm@lists.linux.dev>
+Subject: Re: [PATCH] wifi: ath12k: mark QMI driver event helpers as noinline
+References: <20241028-ath12k_qmi_driver_event_work-v1-1-0d532eb593fa@quicinc.com>
+Date: Thu, 31 Oct 2024 16:04:53 +0200
+In-Reply-To: <20241028-ath12k_qmi_driver_event_work-v1-1-0d532eb593fa@quicinc.com>
+	(Jeff Johnson's message of "Mon, 28 Oct 2024 07:08:40 -0700")
+Message-ID: <87bjz0fjwa.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 5cXh7mjkYCdinw4CIyQX0O18C03me7L6
-X-Proofpoint-ORIG-GUID: 5cXh7mjkYCdinw4CIyQX0O18C03me7L6
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 spamscore=0
- malwarescore=0 suspectscore=0 phishscore=0 mlxlogscore=999 clxscore=1015
- priorityscore=1501 adultscore=0 mlxscore=0 lowpriorityscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2410310104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241031_064244_289213_FA2E3721 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20241031_072235_835327_F3B9366F 
+X-CRM114-Status: GOOD (  10.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,57 +77,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, when the driver attempts to connect to an AP MLD with multiple
-APs, the cfg80211_mlme_check_mlo_compat() function requires the Medium
-Synchronization Delay values from different APs of the same AP MLD to be
-equal, which may result in connection failures.
+Jeff Johnson <quic_jjohnson@quicinc.com> writes:
 
-This is because when the driver receives a multi-link probe response from
-an AP MLD with multiple APs, cfg80211 updates the Elements for each AP
-based on the multi-link probe response. If the Medium Synchronization Delay
-is set in the multi-link probe response, the Elements for each AP belonging
-to the same AP MLD will have the Medium Synchronization Delay set
-simultaneously. If non-multi-link probe responses are received from
-different APs of the same MLD AP, cfg80211 will still update the Elements
-based on the non-multi-link probe response. Since the non-multi-link probe
-response does not set the Medium Synchronization Delay
-(IEEE 802.11be-2024-35.3.4.4), if the Elements from a non-multi-link probe
-response overwrite those from a multi-link probe response that has set the
-Medium Synchronization Delay, the Medium Synchronization Delay values for
-APs belonging to the same AP MLD will not be equal. This discrepancy causes
-the cfg80211_mlme_check_mlo_compat() function to fail, leading to
-connection failures. Commit ccb964b4ab16
-("wifi: cfg80211: validate MLO connections better") did not take this into
-account.
+> As described in [1], compiling the ath12k driver using clang with
+> KASAN enabled warns about some functions with excessive stack usage,
+> with the worst case being:
+>
+> drivers/net/wireless/ath/ath12k/qmi.c:3546:13: warning: stack frame size (2456) exceeds limit (1024) in 'ath12k_qmi_driver_event_work' [-Wframe-larger-than]
+>
+> Nathan [2] highlighted work done by Arnd [3] to address similar
+> issues in other portions of the kernel.
+>
+> ath12k_qmi_driver_event_work() itself is a pretty lightweight
+> function, but it dispatches to several other functions which do the
+> real work:
+> ath12k_qmi_driver_event_work()
+> 	ath12k_qmi_event_server_arrive()
+> 		ath12k_qmi_host_cap_send()
+> 	ath12k_qmi_event_mem_request()
+> 		ath12k_qmi_respond_fw_mem_request()
+> 	ath12k_qmi_event_load_bdf()
+> 		ath12k_qmi_request_target_cap()
+> 		ath12k_qmi_load_bdf_qmi()
+> 		ath12k_qmi_wlanfw_m3_info_send()
+>
+> Mark all of those underlying functions as 'noinline_for_stack' to
+> prevent them from being inlined in ath12k_qmi_driver_event_work(),
+> thereby eliminating the excessive stack usage.
+>
+> Link: https://msgid.link/bc214795-1c51-4cb7-922f-67d6ef98bff2@quicinc.com # [1]
+> Link: https://msgid.link/20241025223321.GA3647469@thelio-3990X # [2]
+> Link: https://lore.kernel.org/all/?q=f:arnd@kernel.org+Wframe-larger-than # [3]
+> Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 
-To address this issue, remove this validity check.
+Acked-by: Kalle Valo <kvalo@kernel.org>
 
-Fixes: ccb964b4ab16 ("wifi: cfg80211: validate MLO connections better")
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
----
- net/wireless/mlme.c | 6 ------
- 1 file changed, 6 deletions(-)
-
-diff --git a/net/wireless/mlme.c b/net/wireless/mlme.c
-index 4dac81854721..a5eb92d93074 100644
---- a/net/wireless/mlme.c
-+++ b/net/wireless/mlme.c
-@@ -340,12 +340,6 @@ cfg80211_mlme_check_mlo_compat(const struct ieee80211_multi_link_elem *mle_a,
- 		return -EINVAL;
- 	}
- 
--	if (ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_a) !=
--	    ieee80211_mle_get_eml_med_sync_delay((const u8 *)mle_b)) {
--		NL_SET_ERR_MSG(extack, "link EML medium sync delay mismatch");
--		return -EINVAL;
--	}
--
- 	if (ieee80211_mle_get_eml_cap((const u8 *)mle_a) !=
- 	    ieee80211_mle_get_eml_cap((const u8 *)mle_b)) {
- 		NL_SET_ERR_MSG(extack, "link EML capabilities mismatch");
-
-base-commit: e7e2957f403ba4655199f2ba9920c1a015a7be44
 -- 
-2.34.1
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
