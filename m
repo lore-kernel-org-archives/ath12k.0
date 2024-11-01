@@ -4,88 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4E2AE6F06C
-	for <ath12k@archiver.kernel.org>; Fri,  1 Nov 2024 16:28:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFD29E6F06E
+	for <ath12k@archiver.kernel.org>; Fri,  1 Nov 2024 16:31:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jWv6qP2JREYNSgS+N16M/QPc11bwoT3l9aIIuuTOHhQ=; b=yKCvdqglbO0Iv86p7s68gLQqEY
-	xpK7pMb3elUuqQ2Ah8MQUixBytObVclYPAIey7QvAI+UO4WqLNmQf8o49EtqPzGiVgqNkn5UQLswt
-	YlMOr37LHE/B7QWyCgqgY2fPZGIWETwy1HU5zqiJjjYolKsDkdVxSCrA2ip2YrbH7GKgPxSdN66rt
-	YiB3NP5jt/U7fmV1L0wM2oU0lbetQZn/eTAb6TUeT8YSTBg8csIY4hL1I/WgQts/0WFULO8ZZ/OZz
-	JeeUuPJMN46iQTCniFa6msZe7odfKAxsv8+r5Hl4UiH8xBqDZrmksykD/wpSt5SozRJ6tKCZ6oN66
-	ukxwtEMw==;
+	bh=oy3eVH2wkLogyDU2j2WBjWX9oFv25Q9562c78quBz+o=; b=edk/Y9K992XvrlWkOlJcG+tF7d
+	CDcfD62634fJdTm77EdFxVz+JsA47KY/FKdyayJlsE2IEJ4uLTiFCG8P3sIuSCuUZXfQQBhDqRXLg
+	k9E5mH2gOdUSmW7h7ZRw8U9m5JwvId4Tpy+wHOqlhrpUxFQRLue8yBq8yBbUSWljOPKHUJVL6raGD
+	yJypk5lT+fFGYWOeFzqDRolGzREg09CafVC5TP+5uL4KAK8zbyEwZ7QxKpkqfTBYS3vk2O0dliupp
+	574JrvV7gu2ClNYHVlD23R62V/EDxX8su/crAJOwwDffBpgoHoRhBjKgu0rI5z8hjcyZY9H/GNQRH
+	GdQnurCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6uVG-00000007g1s-1g2X
+	id 1t6uYP-00000007gXu-0cdY
 	for ath12k@archiver.kernel.org;
-	Fri, 01 Nov 2024 16:28:02 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 01 Nov 2024 16:31:17 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6uUI-00000007fmJ-4AjQ
+	id 1t6tOk-00000007TYt-0Zsa
 	for ath12k@lists.infradead.org;
-	Fri, 01 Nov 2024 16:27:04 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4A1C3fAj005798;
-	Fri, 1 Nov 2024 16:26:59 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	jWv6qP2JREYNSgS+N16M/QPc11bwoT3l9aIIuuTOHhQ=; b=lHWriVefdeQteqqH
-	SRrbtEg50HdunCni5AG4sWwvNM3wNmtyzyApEzyfR08uPpT+nVCoE3Lg0rpNpWT2
-	6riM6npKN7ABQTMP4rScnUJZWU1JwNu4vPiTFhpkb08kWgC4QVoiAfLi8hoSY94A
-	mYQCqApdjTJPL6jMPc/DlbNdXlsHOEd1UiY0Z5OuelkJFJvcq8l7ogPeufcdvrbX
-	3et679Yvk6bTQpbNusZTqVWtPKfc+jCsO4g3RiyN3lVxjFtUmGv/pjJ8XXha3Gzi
-	K0C+x1KMYzkiNBz2DLVWwjI3aG1zaIaRC1/iYT/GqCx7UNfA2eRYPNSP1F2Lm9Aq
-	tFrDLg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42m1xcdwa8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 01 Nov 2024 16:26:59 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4A1GQwME016653
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 1 Nov 2024 16:26:58 GMT
-Received: from [10.48.242.225] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 1 Nov 2024
- 09:26:58 -0700
-Message-ID: <e83fad57-5506-444e-bd35-6bef136ec90b@quicinc.com>
-Date: Fri, 1 Nov 2024 09:26:57 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/8] wifi: ath12k: MLO vdev bringup changes
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
+	Fri, 01 Nov 2024 15:17:15 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id B1B1FA443D2
+	for <ath12k@lists.infradead.org>; Fri,  1 Nov 2024 15:15:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59110C4CECD;
+	Fri,  1 Nov 2024 15:17:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730474232;
+	bh=U/I2toJsAW+b+idh0EjDN+aZmZ1KHED8feZQja3b3r8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=DEMG3nRwu4LwnJdxxiPjYmII/FBc0j/cf9TAGB+mNXqlgp1XBsDfoyxJOU38rUYFx
+	 qoKMJiFAFjkqjwKVMv2b9LlprJgz0cEMlzKQxpxfl7f4PDrofS1g5N5oau820AOjXc
+	 orV8UROsm9Z3R3Bnpar/FncuPs9a47OGe20Piw5rQUJg8/MWjuo8ARJEQBxzQ/zIi5
+	 ZptTJ/kC80bGPvHMU+a74s4y+9ItGiQGjx1rvINDK4UtiarsfhrAv0HXekyOqAMp9h
+	 Y8qX01GNK3cOv/NrhVV2pjfQDRkM0i2CwpRc3U3lv0qTPEcRSwLAywDSyBUvBQehNK
+	 2O+VuRvCnvXAw==
+From: Kalle Valo <kvalo@kernel.org>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH v2 5/8] wifi: ath12k: Add helpers for multi link peer creation and deletion
+Date: Fri,  1 Nov 2024 17:17:02 +0200
+Message-Id: <20241101151705.165987-6-kvalo@kernel.org>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20241101151705.165987-1-kvalo@kernel.org>
 References: <20241101151705.165987-1-kvalo@kernel.org>
- <20241101151705.165987-3-kvalo@kernel.org>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <20241101151705.165987-3-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 3EvrODno2AAj2IGvIgDwFCr75z4J9ISn
-X-Proofpoint-ORIG-GUID: 3EvrODno2AAj2IGvIgDwFCr75z4J9ISn
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 spamscore=0
- malwarescore=0 suspectscore=0 phishscore=0 mlxlogscore=935 clxscore=1015
- priorityscore=1501 adultscore=0 mlxscore=0 lowpriorityscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2411010119
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241101_092703_081400_FEFF2155 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241101_081714_435915_7CB54960 
+X-CRM114-Status: GOOD (  18.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,24 +71,224 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 11/1/2024 8:16 AM, Kalle Valo wrote:
-> From: Sriram R <quic_srirrama@quicinc.com>
-> 
-> Add changes to add the link vdevs dynamically whenever a channel is assigned
-> from mac80211 for a link vdev. During vdev create, update ML address of the
-> vdev to firmware using the new WMI parameter (WMI_TAG_MLO_VDEV_CREATE_PARAMS).
-> 
-> During vdev start, notify the firmware that this link vdev is newly added and
-> also indicate all its known partners so that the firmware can take necessary
-> actions to internally update the partners on the new link being added.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Co-developed-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
+From: Sriram R <quic_srirrama@quicinc.com>
+
+Add helper functions for multi link peer addition and deletion. And add address
+validation to ensure we are not creating link peers (belonging to different
+clients) with same MLD address. To aid in this validation for faster lookup,
+add a new list of ML peers to struct ath12k_hw::ml_peers and use the same for
+parsing for the above address validation use cases.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/core.h | 13 ++++
+ drivers/net/wireless/ath/ath12k/mac.c  |  2 +
+ drivers/net/wireless/ath/ath12k/peer.c | 98 ++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/peer.h |  8 +++
+ 4 files changed, 121 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 9c4e5fae8930..0a0c1a1594f2 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -63,6 +63,13 @@
+ #define ATH12K_RECONFIGURE_TIMEOUT_HZ		(10 * HZ)
+ #define ATH12K_RECOVER_START_TIMEOUT_HZ		(20 * HZ)
+ 
++#define ATH12K_MAX_SOCS 3
++#define ATH12K_INVALID_GROUP_ID  0xFF
++#define ATH12K_INVALID_DEVICE_ID 0xFF
++
++#define ATH12K_MAX_MLO_PEERS            256
++#define ATH12K_MLO_PEER_ID_INVALID      0xFFFF
++
+ enum ath12k_bdf_search {
+ 	ATH12K_BDF_SEARCH_DEFAULT,
+ 	ATH12K_BDF_SEARCH_BUS_AND_BOARD,
+@@ -488,6 +495,7 @@ struct ath12k_sta {
+ 	struct ath12k_link_sta __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
+ 	/* indicates bitmap of link sta created in FW */
+ 	u16 links_map;
++	u16 ml_peer_id;
+ };
+ 
+ #define ATH12K_MIN_5G_FREQ 4150
+@@ -696,6 +704,11 @@ struct ath12k_hw {
+ 
+ 	u8 num_radio;
+ 
++	DECLARE_BITMAP(free_ml_peer_id_map, ATH12K_MAX_MLO_PEERS);
++
++	/* protected by wiphy_lock() */
++	struct list_head ml_peers;
++
+ 	/* Keep last */
+ 	struct ath12k radio[] __aligned(sizeof(void *));
+ };
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 9552a9495276..2f1edce0287a 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -5105,6 +5105,7 @@ static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
+ 		ahsta->links_map = BIT(arsta->link_id);
+ 		arsta->ahsta = ahsta;
+ 		arsta->arvif = arvif;
++		ether_addr_copy(arsta->addr, sta->addr);
+ 		wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
+ 
+ 		synchronize_rcu();
+@@ -10123,6 +10124,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_base *ab,
+ 	ah->num_radio = num_pdev_map;
+ 
+ 	mutex_init(&ah->hw_mutex);
++	INIT_LIST_HEAD(&ah->ml_peers);
+ 
+ 	for (i = 0; i < num_pdev_map; i++) {
+ 		ab = pdev_map[i].ab;
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index 7a62665b8af9..2ad19baf0664 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -8,6 +8,22 @@
+ #include "peer.h"
+ #include "debug.h"
+ 
++static struct ath12k_ml_peer *ath12k_peer_ml_find(struct ath12k_hw *ah, const u8 *addr)
++{
++	struct ath12k_ml_peer *ml_peer;
++
++	lockdep_assert_wiphy(ah->hw->wiphy);
++
++	list_for_each_entry(ml_peer, &ah->ml_peers, list) {
++		if (!ether_addr_equal(ml_peer->addr, addr))
++			continue;
++
++		return ml_peer;
++	}
++
++	return NULL;
++}
++
+ struct ath12k_peer *ath12k_peer_find(struct ath12k_base *ab, int vdev_id,
+ 				     const u8 *addr)
+ {
+@@ -341,3 +357,85 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 
+ 	return 0;
+ }
++
++static u16 ath12k_peer_ml_alloc(struct ath12k_hw *ah)
++{
++	u16 ml_peer_id;
++
++	lockdep_assert_wiphy(ah->hw->wiphy);
++
++	for (ml_peer_id = 0; ml_peer_id < ATH12K_MAX_MLO_PEERS; ml_peer_id++) {
++		if (test_bit(ml_peer_id, ah->free_ml_peer_id_map))
++			continue;
++
++		set_bit(ml_peer_id, ah->free_ml_peer_id_map);
++		break;
++	}
++
++	if (ml_peer_id == ATH12K_MAX_MLO_PEERS)
++		ml_peer_id = ATH12K_MLO_PEER_ID_INVALID;
++
++	return ml_peer_id;
++}
++
++int ath12k_peer_ml_create(struct ath12k_hw *ah, struct ieee80211_sta *sta)
++{
++	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
++	struct ath12k_ml_peer *ml_peer;
++
++	lockdep_assert_wiphy(ah->hw->wiphy);
++
++	if (!sta->mlo)
++		return -EINVAL;
++
++	ml_peer = ath12k_peer_ml_find(ah, sta->addr);
++	if (ml_peer) {
++		ath12k_hw_warn(ah, "ML peer %d exists already, unable to add new entry for %pM",
++			       ml_peer->id, sta->addr);
++		return -EEXIST;
++	}
++
++	ml_peer = kzalloc(sizeof(*ml_peer), GFP_ATOMIC);
++	if (!ml_peer)
++		return -ENOMEM;
++
++	ahsta->ml_peer_id = ath12k_peer_ml_alloc(ah);
++
++	if (ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID) {
++		ath12k_hw_warn(ah, "unable to allocate ML peer id for sta %pM",
++			       sta->addr);
++		kfree(ml_peer);
++		return -ENOMEM;
++	}
++
++	ether_addr_copy(ml_peer->addr, sta->addr);
++	ml_peer->id = ahsta->ml_peer_id;
++	list_add(&ml_peer->list, &ah->ml_peers);
++
++	return 0;
++}
++
++int ath12k_peer_ml_delete(struct ath12k_hw *ah, struct ieee80211_sta *sta)
++{
++	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
++	struct ath12k_ml_peer *ml_peer;
++
++	lockdep_assert_wiphy(ah->hw->wiphy);
++
++	if (!sta->mlo)
++		return -EINVAL;
++
++	clear_bit(ahsta->ml_peer_id, ah->free_ml_peer_id_map);
++	ahsta->ml_peer_id = ATH12K_MLO_PEER_ID_INVALID;
++
++	ml_peer = ath12k_peer_ml_find(ah, sta->addr);
++	if (!ml_peer) {
++		ath12k_hw_warn(ah, "ML peer for %pM not found", sta->addr);
++		return -EINVAL;
++	}
++
++	list_del(&ml_peer->list);
++	kfree(ml_peer);
++
++	return 0;
++}
+diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
+index b955f0cdf598..085246ca938d 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.h
++++ b/drivers/net/wireless/ath/ath12k/peer.h
+@@ -49,6 +49,12 @@ struct ath12k_peer {
+ 	bool dp_setup_done;
+ };
+ 
++struct ath12k_ml_peer {
++	struct list_head list;
++	u8 addr[ETH_ALEN];
++	u16 id;
++};
++
+ void ath12k_peer_unmap_event(struct ath12k_base *ab, u16 peer_id);
+ void ath12k_peer_map_event(struct ath12k_base *ab, u8 vdev_id, u16 peer_id,
+ 			   u8 *mac_addr, u16 ast_hash, u16 hw_peer_id);
+@@ -66,5 +72,7 @@ int ath12k_wait_for_peer_delete_done(struct ath12k *ar, u32 vdev_id,
+ 				     const u8 *addr);
+ bool ath12k_peer_exist_by_vdev_id(struct ath12k_base *ab, int vdev_id);
+ struct ath12k_peer *ath12k_peer_find_by_ast(struct ath12k_base *ab, int ast_hash);
++int ath12k_peer_ml_create(struct ath12k_hw *ah, struct ieee80211_sta *sta);
++int ath12k_peer_ml_delete(struct ath12k_hw *ah, struct ieee80211_sta *sta);
+ 
+ #endif /* _PEER_H_ */
+-- 
+2.39.5
 
 
