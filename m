@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFD29E6F06E
-	for <ath12k@archiver.kernel.org>; Fri,  1 Nov 2024 16:31:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33945E6F06C
+	for <ath12k@archiver.kernel.org>; Fri,  1 Nov 2024 16:31:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oy3eVH2wkLogyDU2j2WBjWX9oFv25Q9562c78quBz+o=; b=edk/Y9K992XvrlWkOlJcG+tF7d
-	CDcfD62634fJdTm77EdFxVz+JsA47KY/FKdyayJlsE2IEJ4uLTiFCG8P3sIuSCuUZXfQQBhDqRXLg
-	k9E5mH2gOdUSmW7h7ZRw8U9m5JwvId4Tpy+wHOqlhrpUxFQRLue8yBq8yBbUSWljOPKHUJVL6raGD
-	yJypk5lT+fFGYWOeFzqDRolGzREg09CafVC5TP+5uL4KAK8zbyEwZ7QxKpkqfTBYS3vk2O0dliupp
-	574JrvV7gu2ClNYHVlD23R62V/EDxX8su/crAJOwwDffBpgoHoRhBjKgu0rI5z8hjcyZY9H/GNQRH
-	GdQnurCQ==;
+	bh=vGw4j8yqfrq6MTvTXS8pZXyc1oBpVTKKgjmNvK0kafk=; b=ebOpQpeNTq6CxTurc5ANCNTgQD
+	nVnbd10iKkOF0PqB0sT7ZP1a/xKpBqcHyDpaoIdhaFylzLS0Owpv+EycExntsI1bScFe06mNou9yt
+	+WPH8I9Tvh6zceb8JBBveEr/jLt7AvT16XOSKO+E/4hHZbYEZwPLt24faBydTTSKSQHOT8vGvOPts
+	9ogIy4n2HvBQ3gEEZRP29Ky7I/mnOMnRwblV9sqKhWqVorRjSxWTgvMoZrBLhGSyAfkwdkHypy9Vl
+	MZU5pYjf2CB5I3PnWuaeEbviCe/IHrrhjo6bMOpnxGFMvsYFqOFcsgiwROMLYebOxiSU1idCp+tVR
+	KBovOH4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6uYP-00000007gXu-0cdY
+	id 1t6uYP-00000007gY8-3oWD
 	for ath12k@archiver.kernel.org;
 	Fri, 01 Nov 2024 16:31:17 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6tOk-00000007TYt-0Zsa
+	id 1t6tOk-00000007TZA-3DQZ
 	for ath12k@lists.infradead.org;
-	Fri, 01 Nov 2024 15:17:15 +0000
+	Fri, 01 Nov 2024 15:17:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B1B1FA443D2
-	for <ath12k@lists.infradead.org>; Fri,  1 Nov 2024 15:15:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59110C4CECD;
-	Fri,  1 Nov 2024 15:17:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5BDE85C0224
+	for <ath12k@lists.infradead.org>; Fri,  1 Nov 2024 15:16:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 653EFC4CED3;
+	Fri,  1 Nov 2024 15:17:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1730474232;
-	bh=U/I2toJsAW+b+idh0EjDN+aZmZ1KHED8feZQja3b3r8=;
+	s=k20201202; t=1730474234;
+	bh=h/Xj/nI0xoarcqXFFlfgJg5CxwBK7LrhIy0nFNgw9Ao=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=DEMG3nRwu4LwnJdxxiPjYmII/FBc0j/cf9TAGB+mNXqlgp1XBsDfoyxJOU38rUYFx
-	 qoKMJiFAFjkqjwKVMv2b9LlprJgz0cEMlzKQxpxfl7f4PDrofS1g5N5oau820AOjXc
-	 orV8UROsm9Z3R3Bnpar/FncuPs9a47OGe20Piw5rQUJg8/MWjuo8ARJEQBxzQ/zIi5
-	 ZptTJ/kC80bGPvHMU+a74s4y+9ItGiQGjx1rvINDK4UtiarsfhrAv0HXekyOqAMp9h
-	 Y8qX01GNK3cOv/NrhVV2pjfQDRkM0i2CwpRc3U3lv0qTPEcRSwLAywDSyBUvBQehNK
-	 2O+VuRvCnvXAw==
+	b=KkMveaeJ0o0GehfRMJE1Box2aBGx9ES5LHa4xSmudLraktL1l2OcMNfRwknRZQiIc
+	 VlIa7HOebTxqEmwde4hxl2lfuZ+MXS+UzMX5wc/MGYt3DX8jSITdD5ghw6ggq51amo
+	 T02OP69dVp0Z31h2m+SHuIxQ3pIc7zPaQORdqNfn0T5ffkJ69kGXJFIiY1oEB2loxa
+	 laLHtzfIwVr6UxgjfDtcd63gwEg+dyBkZ+H9p77S/ZJaxA/uIjAGHgJ0HnxGjmWXIs
+	 lRADTnG7oyy2GTV2ld+yGCDXgtgO3M7sCIpgTR6QzJ2Y295Sd6Nhh3nVd3V7M4Uul3
+	 mjXZPjV9rYdHQ==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH v2 5/8] wifi: ath12k: Add helpers for multi link peer creation and deletion
-Date: Fri,  1 Nov 2024 17:17:02 +0200
-Message-Id: <20241101151705.165987-6-kvalo@kernel.org>
+Subject: [PATCH v2 6/8] wifi: ath12k: add multi-link flag in peer create command
+Date: Fri,  1 Nov 2024 17:17:03 +0200
+Message-Id: <20241101151705.165987-7-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241101151705.165987-1-kvalo@kernel.org>
 References: <20241101151705.165987-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241101_081714_435915_7CB54960 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20241101_081714_930735_D6D5F441 
+X-CRM114-Status: GOOD (  12.14  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,11 +73,9 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sriram R <quic_srirrama@quicinc.com>
 
-Add helper functions for multi link peer addition and deletion. And add address
-validation to ensure we are not creating link peers (belonging to different
-clients) with same MLD address. To aid in this validation for faster lookup,
-add a new list of ML peers to struct ath12k_hw::ml_peers and use the same for
-parsing for the above address validation use cases.
+Driver should indicate to firmware whether a peer is multi-link or not in peer
+create command using multi-link flag. Add changes to support
+WMI_TAG_MLO_PEER_CREATE_PARAMS in WMI_PEER_CREATE_CMDID.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -86,208 +84,99 @@ Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
 Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h | 13 ++++
- drivers/net/wireless/ath/ath12k/mac.c  |  2 +
- drivers/net/wireless/ath/ath12k/peer.c | 98 ++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/peer.h |  8 +++
- 4 files changed, 121 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c |  5 +++--
+ drivers/net/wireless/ath/ath12k/wmi.c | 27 +++++++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/wmi.h |  6 ++++++
+ 3 files changed, 32 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 9c4e5fae8930..0a0c1a1594f2 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -63,6 +63,13 @@
- #define ATH12K_RECONFIGURE_TIMEOUT_HZ		(10 * HZ)
- #define ATH12K_RECOVER_START_TIMEOUT_HZ		(20 * HZ)
- 
-+#define ATH12K_MAX_SOCS 3
-+#define ATH12K_INVALID_GROUP_ID  0xFF
-+#define ATH12K_INVALID_DEVICE_ID 0xFF
-+
-+#define ATH12K_MAX_MLO_PEERS            256
-+#define ATH12K_MLO_PEER_ID_INVALID      0xFFFF
-+
- enum ath12k_bdf_search {
- 	ATH12K_BDF_SEARCH_DEFAULT,
- 	ATH12K_BDF_SEARCH_BUS_AND_BOARD,
-@@ -488,6 +495,7 @@ struct ath12k_sta {
- 	struct ath12k_link_sta __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
- 	/* indicates bitmap of link sta created in FW */
- 	u16 links_map;
-+	u16 ml_peer_id;
- };
- 
- #define ATH12K_MIN_5G_FREQ 4150
-@@ -696,6 +704,11 @@ struct ath12k_hw {
- 
- 	u8 num_radio;
- 
-+	DECLARE_BITMAP(free_ml_peer_id_map, ATH12K_MAX_MLO_PEERS);
-+
-+	/* protected by wiphy_lock() */
-+	struct list_head ml_peers;
-+
- 	/* Keep last */
- 	struct ath12k radio[] __aligned(sizeof(void *));
- };
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 9552a9495276..2f1edce0287a 100644
+index 2f1edce0287a..b12682547410 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5105,6 +5105,7 @@ static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
- 		ahsta->links_map = BIT(arsta->link_id);
- 		arsta->ahsta = ahsta;
- 		arsta->arvif = arvif;
-+		ether_addr_copy(arsta->addr, sta->addr);
- 		wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
+@@ -4983,8 +4983,9 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 	}
  
- 		synchronize_rcu();
-@@ -10123,6 +10124,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_base *ab,
- 	ah->num_radio = num_pdev_map;
+ 	peer_param.vdev_id = arvif->vdev_id;
+-	peer_param.peer_addr = sta->addr;
++	peer_param.peer_addr = arsta->addr;
+ 	peer_param.peer_type = WMI_PEER_TYPE_DEFAULT;
++	peer_param.ml_enabled = sta->mlo;
  
- 	mutex_init(&ah->hw_mutex);
-+	INIT_LIST_HEAD(&ah->ml_peers);
+ 	ret = ath12k_peer_create(ar, arvif, sta, &peer_param);
+ 	if (ret) {
+@@ -7018,7 +7019,7 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
+ 	struct ath12k_vif *ahvif = arvif->ahvif;
+ 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
+ 	struct ath12k_wmi_vdev_create_arg vdev_arg = {0};
+-	struct ath12k_wmi_peer_create_arg peer_param;
++	struct ath12k_wmi_peer_create_arg peer_param = {0};
+ 	struct ieee80211_bss_conf *link_conf;
+ 	u32 param_id, param_value;
+ 	u16 nss;
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index e089b58bbea1..0583d832fac7 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1230,9 +1230,14 @@ int ath12k_wmi_send_peer_create_cmd(struct ath12k *ar,
+ 	struct ath12k_wmi_pdev *wmi = ar->wmi;
+ 	struct wmi_peer_create_cmd *cmd;
+ 	struct sk_buff *skb;
+-	int ret;
++	int ret, len;
++	struct wmi_peer_create_mlo_params *ml_param;
++	void *ptr;
++	struct wmi_tlv *tlv;
  
- 	for (i = 0; i < num_pdev_map; i++) {
- 		ab = pdev_map[i].ab;
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index 7a62665b8af9..2ad19baf0664 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -8,6 +8,22 @@
- #include "peer.h"
- #include "debug.h"
+-	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
++	len = sizeof(*cmd) + TLV_HDR_SIZE + sizeof(*ml_param);
++
++	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
+ 	if (!skb)
+ 		return -ENOMEM;
  
-+static struct ath12k_ml_peer *ath12k_peer_ml_find(struct ath12k_hw *ah, const u8 *addr)
-+{
-+	struct ath12k_ml_peer *ml_peer;
-+
-+	lockdep_assert_wiphy(ah->hw->wiphy);
-+
-+	list_for_each_entry(ml_peer, &ah->ml_peers, list) {
-+		if (!ether_addr_equal(ml_peer->addr, addr))
-+			continue;
-+
-+		return ml_peer;
-+	}
-+
-+	return NULL;
-+}
-+
- struct ath12k_peer *ath12k_peer_find(struct ath12k_base *ab, int vdev_id,
- 				     const u8 *addr)
- {
-@@ -341,3 +357,85 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+@@ -1244,9 +1249,23 @@ int ath12k_wmi_send_peer_create_cmd(struct ath12k *ar,
+ 	cmd->peer_type = cpu_to_le32(arg->peer_type);
+ 	cmd->vdev_id = cpu_to_le32(arg->vdev_id);
  
- 	return 0;
- }
++	ptr = skb->data + sizeof(*cmd);
++	tlv = ptr;
++	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_STRUCT,
++					 sizeof(*ml_param));
++	ptr += TLV_HDR_SIZE;
++	ml_param = ptr;
++	ml_param->tlv_header =
++			ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_PEER_CREATE_PARAMS,
++					       sizeof(*ml_param));
++	if (arg->ml_enabled)
++		ml_param->flags = cpu_to_le32(ATH12K_WMI_FLAG_MLO_ENABLED);
 +
-+static u16 ath12k_peer_ml_alloc(struct ath12k_hw *ah)
-+{
-+	u16 ml_peer_id;
++	ptr += sizeof(*ml_param);
 +
-+	lockdep_assert_wiphy(ah->hw->wiphy);
-+
-+	for (ml_peer_id = 0; ml_peer_id < ATH12K_MAX_MLO_PEERS; ml_peer_id++) {
-+		if (test_bit(ml_peer_id, ah->free_ml_peer_id_map))
-+			continue;
-+
-+		set_bit(ml_peer_id, ah->free_ml_peer_id_map);
-+		break;
-+	}
-+
-+	if (ml_peer_id == ATH12K_MAX_MLO_PEERS)
-+		ml_peer_id = ATH12K_MLO_PEER_ID_INVALID;
-+
-+	return ml_peer_id;
-+}
-+
-+int ath12k_peer_ml_create(struct ath12k_hw *ah, struct ieee80211_sta *sta)
-+{
-+	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
-+	struct ath12k_ml_peer *ml_peer;
-+
-+	lockdep_assert_wiphy(ah->hw->wiphy);
-+
-+	if (!sta->mlo)
-+		return -EINVAL;
-+
-+	ml_peer = ath12k_peer_ml_find(ah, sta->addr);
-+	if (ml_peer) {
-+		ath12k_hw_warn(ah, "ML peer %d exists already, unable to add new entry for %pM",
-+			       ml_peer->id, sta->addr);
-+		return -EEXIST;
-+	}
-+
-+	ml_peer = kzalloc(sizeof(*ml_peer), GFP_ATOMIC);
-+	if (!ml_peer)
-+		return -ENOMEM;
-+
-+	ahsta->ml_peer_id = ath12k_peer_ml_alloc(ah);
-+
-+	if (ahsta->ml_peer_id == ATH12K_MLO_PEER_ID_INVALID) {
-+		ath12k_hw_warn(ah, "unable to allocate ML peer id for sta %pM",
-+			       sta->addr);
-+		kfree(ml_peer);
-+		return -ENOMEM;
-+	}
-+
-+	ether_addr_copy(ml_peer->addr, sta->addr);
-+	ml_peer->id = ahsta->ml_peer_id;
-+	list_add(&ml_peer->list, &ah->ml_peers);
-+
-+	return 0;
-+}
-+
-+int ath12k_peer_ml_delete(struct ath12k_hw *ah, struct ieee80211_sta *sta)
-+{
-+	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
-+	struct ath12k_ml_peer *ml_peer;
-+
-+	lockdep_assert_wiphy(ah->hw->wiphy);
-+
-+	if (!sta->mlo)
-+		return -EINVAL;
-+
-+	clear_bit(ahsta->ml_peer_id, ah->free_ml_peer_id_map);
-+	ahsta->ml_peer_id = ATH12K_MLO_PEER_ID_INVALID;
-+
-+	ml_peer = ath12k_peer_ml_find(ah, sta->addr);
-+	if (!ml_peer) {
-+		ath12k_hw_warn(ah, "ML peer for %pM not found", sta->addr);
-+		return -EINVAL;
-+	}
-+
-+	list_del(&ml_peer->list);
-+	kfree(ml_peer);
-+
-+	return 0;
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index b955f0cdf598..085246ca938d 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -49,6 +49,12 @@ struct ath12k_peer {
- 	bool dp_setup_done;
- };
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
+-		   "WMI peer create vdev_id %d peer_addr %pM\n",
+-		   arg->vdev_id, arg->peer_addr);
++		   "WMI peer create vdev_id %d peer_addr %pM ml_flags 0x%x\n",
++		   arg->vdev_id, arg->peer_addr, ml_param->flags);
  
-+struct ath12k_ml_peer {
-+	struct list_head list;
-+	u8 addr[ETH_ALEN];
-+	u16 id;
+ 	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_PEER_CREATE_CMDID);
+ 	if (ret) {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 0ddd7ce97385..2378d94b2409 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -3015,6 +3015,12 @@ struct ath12k_wmi_peer_create_arg {
+ 	const u8 *peer_addr;
+ 	u32 peer_type;
+ 	u32 vdev_id;
++	bool ml_enabled;
 +};
 +
- void ath12k_peer_unmap_event(struct ath12k_base *ab, u16 peer_id);
- void ath12k_peer_map_event(struct ath12k_base *ab, u8 vdev_id, u16 peer_id,
- 			   u8 *mac_addr, u16 ast_hash, u16 hw_peer_id);
-@@ -66,5 +72,7 @@ int ath12k_wait_for_peer_delete_done(struct ath12k *ar, u32 vdev_id,
- 				     const u8 *addr);
- bool ath12k_peer_exist_by_vdev_id(struct ath12k_base *ab, int vdev_id);
- struct ath12k_peer *ath12k_peer_find_by_ast(struct ath12k_base *ab, int ast_hash);
-+int ath12k_peer_ml_create(struct ath12k_hw *ah, struct ieee80211_sta *sta);
-+int ath12k_peer_ml_delete(struct ath12k_hw *ah, struct ieee80211_sta *sta);
++struct wmi_peer_create_mlo_params {
++	__le32 tlv_header;
++	__le32 flags;
+ };
  
- #endif /* _PEER_H_ */
+ struct ath12k_wmi_pdev_set_regdomain_arg {
 -- 
 2.39.5
 
