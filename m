@@ -4,74 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D2BDE6F06A
-	for <ath12k@archiver.kernel.org>; Fri,  1 Nov 2024 15:17:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 908BAE6F06B
+	for <ath12k@archiver.kernel.org>; Fri,  1 Nov 2024 15:17:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Y8n2T4DVYNzmd1QXnUwf1o1B+11zjT2gdE7BJ8tp1vE=; b=FBQq/AVwfjmDw/1JOfbH4hgN0s
-	2BKxg6SYVnE9mSvSzvt840QGnPp0ApFqYzBzbK6dPE30EZkiPcVT2fdWCAb1PFCpkaN6dXQKF8enQ
-	9uMHUY0lf71NOSu6tP3l1Lt7xVBFsWBHyal7Um859cTTh/BZeTdgKQfJr3ERMrLcnPDcXpeK7hTBn
-	eeTpwRmg9WEXHhQ4VUiV5xTpbuzHPcwDqMCEyrxV+Pm1am2+F+QtajPHu3YJ0vsFPDon87HMqFqBA
-	fes3dzc9B/3B0CiyaP4i7RQTEWmhqYfCB89w94mvEArnVSEvv9Q7SexHeebhnGbfrCKxbwSalESl0
-	JfY6s36Q==;
+	bh=R4TibVvr53exYDJhclerV/cPhym1LE3cmQSVy9gRv1s=; b=GKiR5a0GcESVVR/TFJ2PL8IR5G
+	39nN248PNhlZRBHsIzIzlSYRcoESjvzx6nJmAZlyg2dgjN0JmaErduZcNoer7zx4sIT8BFD33I01K
+	HSCYDyEbvF6ferAKmervx3+rruovCLJ3k4ilv24dWICj8gUYS3Xu4wJAft8niys9Aw2SDjm3uTy4e
+	lEAktmalWMo69u5gAWhX2S8tc+PETs0FOoHbBh+8AmDMpwTXjH6c5TbZPkitT3Xg6PyfL/BLoZcQU
+	seaqdhE2dgUvwKaKYb3wYCF7zvRopPo008oVnwCgkyY52i9XEwt+MD8P9WyVipfnm0gBU5YsnlBCS
+	DvTpsRuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6tOo-00000007TbY-1Rhe
+	id 1t6tOp-00000007TcF-1Gp9
 	for ath12k@archiver.kernel.org;
-	Fri, 01 Nov 2024 15:17:18 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6tOn-00000007TaW-1mcd
-	for ath12k@bombadil.infradead.org;
-	Fri, 01 Nov 2024 15:17:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=Y8n2T4DVYNzmd1QXnUwf1o1B+11zjT2gdE7BJ8tp1vE=; b=f+0DiAJikSmy5nUNF1w6RtDtjQ
-	lSHPBdxd5jVymi9waW3ANRmSp/y+HFb4GVq5Prj1OFaBTC671f+dyPYtYpLC1djofLwcGVkvDijcr
-	IO27BzADhEJp1F46siTSYf+zZRsFufJh39cwe1ZYgJCBS2quL5oA/2o87sjQfa77dMbsboG76Tpgf
-	ob96qz/zhZqO22eQsBe0mcdwYGVOYli+urUlXcIp9XPt68LuZup+RNpBLPPyDF9xBYk6QDiQ10RSR
-	wFtNUC3dixq3BT8P+vXG9y1h9K6sXwSpbelSNiyh6xcOgmntV3qFkmrP4n1TvPB2BFBfRWI3nrn0N
-	uy9Ta2Qg==;
+	Fri, 01 Nov 2024 15:17:19 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6tOk-0000000AkwJ-2B6v
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1t6tOm-00000007TZn-0LoE
 	for ath12k@lists.infradead.org;
-	Fri, 01 Nov 2024 15:17:16 +0000
+	Fri, 01 Nov 2024 15:17:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id A7BCCA443C4
-	for <ath12k@lists.infradead.org>; Fri,  1 Nov 2024 15:15:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CDB0C4CED2;
-	Fri,  1 Nov 2024 15:17:11 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id C9EBAA443D3
+	for <ath12k@lists.infradead.org>; Fri,  1 Nov 2024 15:15:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7136EC4CED1;
+	Fri,  1 Nov 2024 15:17:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1730474231;
-	bh=xVqvdvjXVgNemJbHrDvtyzm+RRAz1gCC2ul25/KLpPI=;
+	s=k20201202; t=1730474235;
+	bh=GcHF9smJ63ZYYJcEtK76RykifUHXRqnHH0oKt4J7VQA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=P7gFKhgff9b4ItzHa/qm8qESyanuFlDj6o35kXHmFuvmsGc17HSShBSZje0U/PI1/
-	 F+4se/cUiUazznBdaz4PUpsOwNudRICoBIyEuunm7T/udpvN0wPc8U+LhOeMFC98Xc
-	 Atco4vR/bgHFZrAM+J/TvEmu3ntv923uBmHTsFk+rHEflra6vvqu4bS4uog8PfqrxJ
-	 FV/jXrwYRwIvmYDrMWuOZVrokXILACYFKBPV/93pG75qn8Pw511HIPZZnv99XgcpDL
-	 92BgkgzjPX2QlDHPDacb8I495XdYRHJQ8JFL7PwaFFfJ7u0WbEns3ezleHZLrkGHcp
-	 e2xqgGmtSZFxw==
+	b=fqbQVclJiqokSduUgTA0ZkRr6S7E0OP/Pu5GjFWXYkt9vlfgnMdG6aI89BWgWSCzP
+	 btHyL9xik2yMl3fABwljiRPsGk72aUbl6xr8+LFAuYwedfha/FgqBvwfMLMgU+VoVZ
+	 usd4iCmXlOdc91f4P+gzfHN7UXzYby5c/kbjZP3uKaFQTlOcOs9PbesR0xJGHpoCZt
+	 rqRqtZEfpWmxt9H0aiwbWGRrqRmRmtnGd5WbNQkichMB00Yz9bHPg6x9RmyE8qaCZC
+	 vlm+go/+J57NlS+6NhnKpdj7pXYPdIRALjca9wYHTqBBVa+8IAULdKXEq8qb2d59YN
+	 EF05xgloLW+Kg==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH v2 4/8] wifi: ath12k: introduce ath12k_hw_warn()
-Date: Fri,  1 Nov 2024 17:17:01 +0200
-Message-Id: <20241101151705.165987-5-kvalo@kernel.org>
+Subject: [PATCH v2 7/8] wifi: ath12k: add helper to find multi-link station
+Date: Fri,  1 Nov 2024 17:17:04 +0200
+Message-Id: <20241101151705.165987-8-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241101151705.165987-1-kvalo@kernel.org>
 References: <20241101151705.165987-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241101_151714_822807_3BB78B22 
-X-CRM114-Status: GOOD (  15.57  )
+X-CRM114-CacheID: sfid-20241101_081716_257336_21E8492B 
+X-CRM114-Status: GOOD (  11.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,97 +71,80 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Kalle Valo <quic_kvalo@quicinc.com>
+From: Sriram R <quic_srirrama@quicinc.com>
 
-In the following patch we need to use ath12k_warn() but don't easily have
-access to struct ath12k_base (ab) but do have access to struct ath12k_hw (ah).
-So add a new warning helper ath12_hw_warn() which takes the latter but the log
-output is still identical but uses the struct device pointer stored to struct
-ath12k_hw.
+Multi-link stations are identified in driver using the multi-link
+peer id and they have ATH12K_PEER_ML_ID_VALID bit set in the id. Add a helper
+to find multi-link station using the multi-link peer id.
 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
+Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h  | 2 ++
- drivers/net/wireless/ath/ath12k/debug.c | 6 +++---
- drivers/net/wireless/ath/ath12k/debug.h | 5 ++++-
- drivers/net/wireless/ath/ath12k/mac.c   | 2 ++
- 4 files changed, 11 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/peer.c | 17 +++++++++++++++++
+ drivers/net/wireless/ath/ath12k/peer.h |  4 ++++
+ 2 files changed, 21 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 6faa46b9adc9..9c4e5fae8930 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -684,6 +684,8 @@ struct ath12k {
- 
- struct ath12k_hw {
- 	struct ieee80211_hw *hw;
-+	struct device *dev;
-+
- 	/* Protect the write operation of the hardware state ath12k_hw::state
- 	 * between hardware start<=>reconfigure<=>stop transitions.
- 	 */
-diff --git a/drivers/net/wireless/ath/ath12k/debug.c b/drivers/net/wireless/ath/ath12k/debug.c
-index fe5a732ba9ec..ff6eaeafa092 100644
---- a/drivers/net/wireless/ath/ath12k/debug.c
-+++ b/drivers/net/wireless/ath/ath12k/debug.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/vmalloc.h>
-@@ -36,7 +36,7 @@ void ath12k_err(struct ath12k_base *ab, const char *fmt, ...)
- 	va_end(args);
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index 2ad19baf0664..0e86847edd6e 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -79,6 +79,20 @@ struct ath12k_peer *ath12k_peer_find_by_addr(struct ath12k_base *ab,
+ 	return NULL;
  }
  
--void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...)
-+void __ath12k_warn(struct device *dev, const char *fmt, ...)
++static struct ath12k_peer *ath12k_peer_find_by_ml_id(struct ath12k_base *ab,
++						     int ml_peer_id)
++{
++	struct ath12k_peer *peer;
++
++	lockdep_assert_held(&ab->base_lock);
++
++	list_for_each_entry(peer, &ab->peers, list)
++		if (ml_peer_id == peer->ml_id)
++			return peer;
++
++	return NULL;
++}
++
+ struct ath12k_peer *ath12k_peer_find_by_id(struct ath12k_base *ab,
+ 					   int peer_id)
  {
- 	struct va_format vaf = {
- 		.fmt = fmt,
-@@ -45,7 +45,7 @@ void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...)
+@@ -86,6 +100,9 @@ struct ath12k_peer *ath12k_peer_find_by_id(struct ath12k_base *ab,
  
- 	va_start(args, fmt);
- 	vaf.va = &args;
--	dev_warn_ratelimited(ab->dev, "%pV", &vaf);
-+	dev_warn_ratelimited(dev, "%pV", &vaf);
- 	/* TODO: Trace the log */
- 	va_end(args);
- }
-diff --git a/drivers/net/wireless/ath/ath12k/debug.h b/drivers/net/wireless/ath/ath12k/debug.h
-index f7005917362c..90e801136bc6 100644
---- a/drivers/net/wireless/ath/ath12k/debug.h
-+++ b/drivers/net/wireless/ath/ath12k/debug.h
-@@ -31,7 +31,10 @@ enum ath12k_debug_mask {
+ 	lockdep_assert_held(&ab->base_lock);
  
- __printf(2, 3) void ath12k_info(struct ath12k_base *ab, const char *fmt, ...);
- __printf(2, 3) void ath12k_err(struct ath12k_base *ab, const char *fmt, ...);
--__printf(2, 3) void ath12k_warn(struct ath12k_base *ab, const char *fmt, ...);
-+__printf(2, 3) void __ath12k_warn(struct device *dev, const char *fmt, ...);
++	if (peer_id & ATH12K_PEER_ML_ID_VALID)
++		return ath12k_peer_find_by_ml_id(ab, peer_id);
 +
-+#define ath12k_warn(ab, fmt, ...) __ath12k_warn((ab)->dev, fmt, ##__VA_ARGS__)
-+#define ath12k_hw_warn(ah, fmt, ...) __ath12k_warn((ah)->dev, fmt, ##__VA_ARGS__)
+ 	list_for_each_entry(peer, &ab->peers, list)
+ 		if (peer_id == peer->peer_id)
+ 			return peer;
+diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
+index 085246ca938d..c28aca5d88a0 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.h
++++ b/drivers/net/wireless/ath/ath12k/peer.h
+@@ -19,6 +19,8 @@ struct ppdu_user_delayba {
+ 	u32 resp_rate_flags;
+ };
  
- extern unsigned int ath12k_debug_mask;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 354fc21f2af2..9552a9495276 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10192,6 +10192,8 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
- 			goto err;
- 		}
- 
-+		ah->dev = ab->dev;
++#define ATH12K_PEER_ML_ID_VALID         BIT(13)
 +
- 		ab->ah[i] = ah;
- 	}
+ struct ath12k_peer {
+ 	struct list_head list;
+ 	struct ieee80211_sta *sta;
+@@ -47,6 +49,8 @@ struct ath12k_peer {
  
+ 	/* protected by ab->data_lock */
+ 	bool dp_setup_done;
++
++	u16 ml_id;
+ };
+ 
+ struct ath12k_ml_peer {
 -- 
 2.39.5
 
