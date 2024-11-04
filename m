@@ -4,99 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0970ED1BDE3
-	for <ath12k@archiver.kernel.org>; Mon,  4 Nov 2024 18:57:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CA75D1BDEB
+	for <ath12k@archiver.kernel.org>; Mon,  4 Nov 2024 20:18:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EnzS8YCHDwGTykF7cqgVjEldgKDqxW3aidPt90wH09U=; b=yOkp+IrdvNGfy6IXzJ/bg3Se7L
-	Wxmmuj8r9FKouXAXiz681qa1Q1I0Ns5Sp06oigBWSheyeOtxCvUxsgGtAPU50iar3i8Vv+Nuc5Qvb
-	PcM0rd0h8ZSeLQH8UpA+xLc6h9r9ZpHOFsUlba9Nt/hbLUkt2+bpN6x6j3Up4Tyd5IRfvAfauODgE
-	whZIBpXsDwSUH5kT+3kAQuoPh27DeXcWmsWbwzM4bQnFwux8PiKUYJyQgaEctkptYc5rOXZ7sWUgx
-	EJvHzcG5Q+h/gEmZ+ow0TnPzNOu4v5utRpwMwa+z8KsD+YpSWo8XacO3ZKRz6r0V15P4ra5UjLFX2
-	5pZBCkvg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=XCnm/onUR7PA5VTV69FvCRwhKNLS/nytt0JnyMVuDg0=; b=aFqPvRsEx1KRE2xRqdjJPhCkMi
+	ihq8Qse2LMq7HX6090Fvgrhb/v2gQ5wMWdw83h32koOz5nVQSjpbEE9I44wORiEukzUWP/EV9jLIb
+	NH2JtLkgwIuzNhZsm2YD868zz19kfOuby+UJKru7XPaf9aTyX0EY83kcmM+ZJjACG87Iuw6wlkLSG
+	pMfEe3cmZ+5clq3ZsgyuVDT7pQ04T/hK/oJI9WNOaJgao1gf1TRp6WUxK4+8x15dQn6ROqr8dccpq
+	JNIjd9MXxjHWD48r19bAwe60d2ufw2C0nt+HHpuPnwaMWRhwV0/HqF6/wQy3qfl19hJz+rKRBt6Pj
+	7V3i/tTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t82G9-0000000EpgG-2wwg
+	id 1t83Wh-0000000F0E2-3CR4
 	for ath12k@archiver.kernel.org;
-	Mon, 04 Nov 2024 18:57:05 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 04 Nov 2024 20:18:15 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t82ER-0000000EpTM-3oCO
+	id 1t83We-0000000F0DN-0Sf0
 	for ath12k@lists.infradead.org;
-	Mon, 04 Nov 2024 18:55:21 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4A4Bj2UP027157;
-	Mon, 4 Nov 2024 18:55:15 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	EnzS8YCHDwGTykF7cqgVjEldgKDqxW3aidPt90wH09U=; b=D+91PJ0AwEv1Tw2P
-	EzvBll3qLGS+D6UmAcOQ4MjGRs/NRYKLxKqpywKd9+sU4hbSMp/qRpIltYy4FK4A
-	V2VehFRREqPKG7Hk7JzqGGLjzxC150xvCNGhY1d+PmHzz5bAN04syd/SZ2fxGWPd
-	kTPdPSu7fJRSTZN1+9M4/EF4MApN7uYe9LAj1Yvbmc4WVKXjFqszXN88giZ8Doi/
-	AcD1kDdsqfwxVsZ4I2zWlbNdIwP3pamSCPnJM+rV4RS8Ca/enNxiEqiBR2exATuD
-	i+RskwNWGEnu//DN/O3mwCg/2CpBtxGr0e6c+sE2Uh5AlFyWIyMrChXpqMB0JmGv
-	zJ0E4g==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42ncyxw630-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 04 Nov 2024 18:55:15 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4A4ItEYB030484
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 4 Nov 2024 18:55:14 GMT
-Received: from [10.216.7.198] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 4 Nov 2024
- 10:55:09 -0800
-Message-ID: <b8054e94-1ea4-4d39-8050-2f3ddd0a8b3f@quicinc.com>
-Date: Tue, 5 Nov 2024 00:25:06 +0530
+	Mon, 04 Nov 2024 20:18:13 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 44358A403AA;
+	Mon,  4 Nov 2024 20:16:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 527A4C4CECE;
+	Mon,  4 Nov 2024 20:18:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730751491;
+	bh=pflxZGIfk80/m0RGcrJkM9Byb5SifgUbCWlGSC0xRiM=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=OK4BDwoCcNFfPsQlHeyrck13aWOd0AB4dkZrPIx3Dd9T6udaQChmF97UcsPEKYIov
+	 4UPJ0MFbuKR7ajfn84gqL/xQCFw8WrBZ8smLsnYjBVxhiVMwLbNKFXxUtrPRMGqbNC
+	 Mug1ZfcAmVu+w6wnWFVu5fXj08L5drgq/XJ2BR820hEbq5ACThyDbuSU/U9qoS9Oqd
+	 1siQvXlzyPUMkpjaNNiD5DqO93+0ankSii92sjJYKVMw99Eg3PLqLd0oSBseXJbXmW
+	 VzdJbL9EI0rEC2X3EE/mDgsnXrRHrAPpFDqh+67gskt1Mk2XYsa6SAb0wpPBfSgVRC
+	 nHE13BfrQ3cyA==
+From: Kalle Valo <kvalo@kernel.org>
+To: Dan Carpenter <dan.carpenter@linaro.org>
+Cc: oe-kbuild@lists.linux.dev,  Rameshkumar Sundaram
+ <quic_ramess@quicinc.com>,  lkp@intel.com,  oe-kbuild-all@lists.linux.dev,
+  Jeff Johnson <jjohnson@kernel.org>,  ath12k@lists.infradead.org
+Subject: Re: [ath:ath12k-mlo-qcn9274 /81]
+ drivers/net/wireless/ath/ath12k/mac.c:4304 ath12k_mac_op_set_key() error:
+ uninitialized symbol 'ret'.
+References: <7e7afd00-ad84-4744-8d94-416bab7e7dd9@stanley.mountain>
+Date: Mon, 04 Nov 2024 22:18:07 +0200
+In-Reply-To: <7e7afd00-ad84-4744-8d94-416bab7e7dd9@stanley.mountain> (Dan
+	Carpenter's message of "Wed, 9 Oct 2024 14:09:53 +0300")
+Message-ID: <87a5ee7ny8.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v2 1/5] dt-bindings: net: wireless: ath12k: describe
- WSI properties for QCN9274
-To: Jeff Johnson <quic_jjohnson@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
-        "Rob
- Herring" <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        "Conor
- Dooley" <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        "Bjorn
- Andersson" <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
-References: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
- <20241029173050.2188150-2-quic_rajkbhag@quicinc.com>
- <4d273cac-8955-4850-bd8a-0bad318c1e4f@quicinc.com>
-Content-Language: en-US
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <4d273cac-8955-4850-bd8a-0bad318c1e4f@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: kkVYawqLpV08D4dHjeKgglZUYSoOEZOB
-X-Proofpoint-GUID: kkVYawqLpV08D4dHjeKgglZUYSoOEZOB
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
- malwarescore=0 bulkscore=0 impostorscore=0 priorityscore=1501
- lowpriorityscore=0 mlxscore=0 phishscore=0 adultscore=0 mlxlogscore=999
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411040155
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241104_105520_104504_422F38F0 
-X-CRM114-Status: GOOD (  19.93  )
+X-CRM114-CacheID: sfid-20241104_121812_302755_EE592ABF 
+X-CRM114-Status: GOOD (  16.84  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,104 +76,140 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/31/2024 12:34 AM, Jeff Johnson wrote:
-> On 10/29/2024 10:30 AM, Raj Kumar Bhagat wrote:
->> QCN9274 device has WSI support. WSI stands for WLAN Serial Interface.
->> It is used for the exchange of specific control information across
->> radios based on the doorbell mechanism. This WSI connection is
->> essential to exchange control information among these devices
->>
->> Hence, describe WSI interface supported in QCN9274 with the following
->> properties:
->>
->>  - qcom,wsi-group-id: It represents the identifier assigned to the WSI
->>    connection. All the ath12k devices connected to same WSI connection
->>    have the same wsi-group-id.
->>
->>  - qcom,wsi-master: Indicates if this device is the WSI master.
->>
->>  - ports: This is a graph ports schema that has two ports: TX (port@0)
->>    and RX (port@1). This represents the actual WSI connection among
->>    multiple devices.
->>
->> Also, describe the ath12k device property
->> "qcom,ath12k-calibration-variant". This is a common property among
->> ath12k devices.
->>
->> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
->> ---
->>  .../bindings/net/wireless/qcom,ath12k.yaml    | 241 +++++++++++++++++-
->>  1 file changed, 232 insertions(+), 9 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
->> index 1b5884015b15..42bcd73dd159 100644
->> --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
->> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
->> @@ -1,5 +1,6 @@
->>  # SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>  # Copyright (c) 2024 Linaro Limited
->> +# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
->>  %YAML 1.2
->>  ---
->>  $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml#
->> @@ -18,10 +19,17 @@ properties:
->>    compatible:
->>      enum:
->>        - pci17cb,1107  # WCN7850
->> +      - pci17cb,1109  # QCN9274
->>  
->>    reg:
->>      maxItems: 1
->>  
->> +  qcom,ath12k-calibration-variant:
->> +    $ref: /schemas/types.yaml#/definitions/string
->> +    description: |
->> +      string to uniquely identify variant of the calibration data for designs
->> +      with colliding bus and device ids
->> +
->>    vddaon-supply:
->>      description: VDD_AON supply regulator handle
->>  
->> @@ -49,21 +57,100 @@ properties:
->>    vddpcie1p8-supply:
->>      description: VDD_PCIE_1P8 supply regulator handle
->>  
->> +  wsi:
->> +    type: object
->> +    description: |
->> +      The ath12k devices (QCN9274) feature WSI support. WSI stands for
->> +      WLAN Serial Interface. It is used for the exchange of specific
->> +      control information across radios based on the doorbell mechanism.
->> +      This WSI connection is essential to exchange control information
->> +      among these devices.
->> +
->> +      Diagram to represent one WSI connection (one WSI group) among
->> +      three devices.
->> +
->> +               +-------+        +-------+        +-------+
->> +               | pcie2 |        | pcie3 |        | pcie1 |
-> is there a reason to not have these in some order?
-> 
+Dan Carpenter <dan.carpenter@linaro.org> writes:
 
-This could be made in same order. In next version will update.
-But in actual hardware the pcie and wsi connection may not be same order.
+> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo-qcn9274
+> head:   7435d14d41d5d479a5e6a8a2cd4efdac9d928823
+> commit: 573de29145bf929c428f9e2dc55ad3f5f3da8453 [/81] wifi: ath12k: modify ath12k_mac_op_set_key for MLO
+> config: csky-randconfig-r072-20241008
+> (https://download.01.org/0day-ci/archive/20241009/202410090311.SK1SO5GL-lkp@intel.com/config)
+> compiler: csky-linux-gcc (GCC) 14.1.0
+>
+> If you fix the issue in a separate patch/commit (i.e. not just a new version of
+> the same patch/commit), kindly add following tags
+> | Reported-by: kernel test robot <lkp@intel.com>
+> | Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+> | Closes: https://lore.kernel.org/r/202410090311.SK1SO5GL-lkp@intel.com/
+>
+> New smatch warnings:
+> drivers/net/wireless/ath/ath12k/mac.c:4304 ath12k_mac_op_set_key() error: uninitialized symbol 'ret'.
+>
+> vim +/ret +4304 drivers/net/wireless/ath/ath12k/mac.c
+>
+> b5068bc9180d06 Sriram R 2024-04-09 4222 static int
+> ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+> b5068bc9180d06 Sriram R 2024-04-09 4223 struct ieee80211_vif *vif,
+> struct ieee80211_sta *sta,
+> b5068bc9180d06 Sriram R             2024-04-09  4224  				 struct ieee80211_key_conf *key)
+> b5068bc9180d06 Sriram R             2024-04-09  4225  {
+> 18333c4baa4d72 Sriram R             2024-01-27  4226  	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+> 18333c4baa4d72 Sriram R             2024-01-27  4227  	struct ath12k_link_vif *arvif;
+> 611aacdb3540ff Sriram R             2024-04-14  4228  	struct ath12k_link_sta *arsta = NULL;
+> b5068bc9180d06 Sriram R             2024-04-09  4229  	struct ath12k_vif_cache *cache;
+> 611aacdb3540ff Sriram R             2024-04-14  4230  	struct ath12k_sta *ahsta;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4231  	unsigned long links;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4232  	u8 link_id;
+> b5068bc9180d06 Sriram R             2024-04-09  4233  	int ret;
+> b5068bc9180d06 Sriram R             2024-04-09  4234  
+> d4243fd891671d Kalle Valo           2024-09-25  4235  	lockdep_assert_wiphy(hw->wiphy);
+> d4243fd891671d Kalle Valo           2024-09-25  4236  
+> b5068bc9180d06 Sriram R             2024-04-09  4237  	/* BIP needs to be done in software */
+> b5068bc9180d06 Sriram R             2024-04-09  4238  	if (key->cipher == WLAN_CIPHER_SUITE_AES_CMAC ||
+> b5068bc9180d06 Sriram R             2024-04-09  4239  	    key->cipher == WLAN_CIPHER_SUITE_BIP_GMAC_128 ||
+> b5068bc9180d06 Sriram R             2024-04-09  4240  	    key->cipher == WLAN_CIPHER_SUITE_BIP_GMAC_256 ||
+> 18333c4baa4d72 Sriram R             2024-01-27  4241  	    key->cipher == WLAN_CIPHER_SUITE_BIP_CMAC_256) {
+> b5068bc9180d06 Sriram R             2024-04-09  4242  		return 1;
+> 18333c4baa4d72 Sriram R             2024-01-27  4243  	}
+> b5068bc9180d06 Sriram R             2024-04-09  4244  
+> b5068bc9180d06 Sriram R             2024-04-09  4245  	if (key->keyidx > WMI_MAX_KEY_INDEX)
+> b5068bc9180d06 Sriram R             2024-04-09  4246  		return -ENOSPC;
+> b5068bc9180d06 Sriram R             2024-04-09  4247  
+> b5068bc9180d06 Sriram R             2024-04-09  4248  	if (sta) {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4249  		ahsta = ath12k_sta_to_ahsta(sta);
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4250 /* For an ML STA
+> Pairwise key is same for all associated link Stations,
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4251 * hence do set key
+> for all link STAs which are active.
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4252  		 */
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4253  		if (sta->mlo) {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4254  			links = ahsta->links_map;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4255
+> for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4256 arvif =
+> wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4257 arsta =
+> wiphy_dereference(hw->wiphy, ahsta->link[link_id]);
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4258  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4259  				if (WARN_ON(!arvif || !arsta))
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4260 /* arvif and arsta
+> are expected to be valid when
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4261  					 * STA is present.
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4262  					 */
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4263  					continue;
+>
+> Is it possible that there are no set bits or that we always hit this continue?
 
->> +               |       |        |       |        |       |
->> +        +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
->> +        |      | grp 0 |        | grp 0 |        | grp 2 |     |
-> s/grp 2/grp 0/???                                          ^ typo?
-> 
+Actually I'm not fully sure if links_map can be zero but I would not
+assume so.
 
-Thanks for pointing out, this is a typo. will update in next version.
->> +        |      +-------+        +-------+        +-------+     |
->> +        +------------------------------------------------------+
->> +
->> +      Diagram to represent two WSI connections (two separate WSI groups)
->> +      among four devices.
->> +
->> +           +-------+    +-------+          +-------+    +-------+
->> +           | pcie2 |    | pcie3 |          | pcie1 |    | pcie0 |
-> again seems strange to not have any logical (to me) order
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4264  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4265 ret =
+> ath12k_mac_set_key(arvif->ar, cmd, arvif,
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4266 arsta, key);
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4267  				if (ret)
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4268  					break;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4269  			}
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4270  		} else {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4271  			arsta = &ahsta->deflink;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4272  			arvif = arsta->arvif;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4273  			if (WARN_ON(!arvif)) {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4274  				ret = -EINVAL;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4275  				goto out;
+> b5068bc9180d06 Sriram R             2024-04-09  4276  			}
+> b5068bc9180d06 Sriram R             2024-04-09  4277  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4278 ret =
+> ath12k_mac_set_key(arvif->ar, cmd, arvif, arsta, key);
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4279  		}
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4280  	} else {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4281 if (key->link_id
+>>= 0 && key->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4282  			link_id = key->link_id;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4283 arvif =
+> wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4284  		} else {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4285  			link_id = 0;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4286  			arvif = &ahvif->deflink;
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4287  		}
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4288  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4289  		if (!arvif || !arvif->is_created) {
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4290 cache =
+> ath12k_ahvif_get_link_cache(ahvif, link_id);
+> b5068bc9180d06 Sriram R             2024-04-09  4291  			if (!cache)
+> b5068bc9180d06 Sriram R             2024-04-09  4292  				return -ENOSPC;
+> 18333c4baa4d72 Sriram R             2024-01-27  4293  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4294 ret =
+> ath12k_mac_update_key_cache(cache, cmd, sta, key);
+> 18333c4baa4d72 Sriram R             2024-01-27  4295  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4296  			return ret;
+> b5068bc9180d06 Sriram R             2024-04-09  4297  		}
+> b5068bc9180d06 Sriram R             2024-04-09  4298  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09 4299 ret =
+> ath12k_mac_set_key(arvif->ar, cmd, arvif, NULL, key);
+> 611aacdb3540ff Sriram R             2024-04-14  4300  	}
+> 611aacdb3540ff Sriram R             2024-04-14  4301  
+> 573de29145bf92 Rameshkumar Sundaram 2024-08-09  4302  out:
+> 18333c4baa4d72 Sriram R             2024-01-27  4303  
+> d889913205cf7e Kalle Valo           2022-11-28 @4304  	return ret;
+>
+> If so then ret is uninitialized
 
-Will keep this example diagram in pcie order in next version.
+Thanks for the report, I fixed it like this in ath12k-mlo branch (not
+yet submitted for review):
+
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=ath12k-mlo&id=1ed8ae547f604b6c6176aeadd98bd192c9031066
+
+-- 
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
