@@ -4,72 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CFE0D1CA11
-	for <ath12k@archiver.kernel.org>; Tue,  5 Nov 2024 07:12:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6984DD1CA3D
+	for <ath12k@archiver.kernel.org>; Tue,  5 Nov 2024 07:25:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ZC6q89VWKdeffqoGpIC+8OAgH6gXbwiIycceThNWHJg=; b=CWiwL5cCujd3h8mgEZsbbOuujw
-	5v3muKw4pL/mnWRVJf6umpIolE8UW1cDx9Uzz8EaT0KoKScL7WWRlfGqdDr6atQ+sUCCX/jL3UBzl
-	2Y3a3unF4n6Xa/ngCH6C+Oz/jMiaBKNAAGCKEWopfHHSnxBdZV3uWmKCoiaI9HcRvN9yTWJqV3IBh
-	a4vejibDuGtBAc7ea0gOf6dTSvKTlexQrCYFmdVhpxYwiM3UKyOClZReIslAbAScFk9HZe++KfQkE
-	9pBwqCcDbe/hTHvdDk1HfPjmCqWi3au5gpzfSGvXz+koQw0RHS7Tw+ARbUH3mePkengfF330n/sQ/
-	9fOdZprw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+QgUqN/U6TgYA8W7McNXj/+Iw73zyeuDnVuZeXkR2x8=; b=ko5dQRB53yOKiRTMD+l00ROCu0
+	5DZqU7aB/NAceqROZt7RAwwz2HVgRGo7Oeh7yBchhU347iLsXleuQWG5vCVYAlx55Zucn9QgH5cKf
+	Hn/NI+eqyF/jlHdleLh9BfG1YBlHYUsyQNjyjRflJCISfR+BTa2OjsrrFEWe99EP+4o51OvIzrP3O
+	Kd49I2jyVzYGx0wpP2b1QzyA+Yj4Jr6khhIhucWFyLr8rZv+/mb2mg+1Dek257aVXHAGnZg09GB9b
+	wGLtUVhdtZHwIloKzGHkDpFbRohPyHaCRMXceYGj6iD03qyxhDjoMTvXmxAsZ4Ot4G1+hwX53VnAr
+	SOe3AW1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8Djd-0000000GA2I-0Qh9
+	id 1t8DwC-0000000GBmN-0LGF
 	for ath12k@archiver.kernel.org;
-	Tue, 05 Nov 2024 07:12:17 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	Tue, 05 Nov 2024 07:25:16 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8Dja-0000000GA1u-0dD7
+	id 1t8Dvy-0000000GBiU-1tYv
 	for ath12k@lists.infradead.org;
-	Tue, 05 Nov 2024 07:12:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1730790734; x=1762326734;
-  h=date:from:to:cc:subject:message-id;
-  bh=xsKBi0p4YB88jpn8cno43TUJe8gk/tJImf/QjLIXnt4=;
-  b=nGJDSJBMOoZwKThWPjCxPnxq9zfJvLgrpKAjHme6+euU5VGvkmwtQ7h1
-   l3dkUzSRnsIO7wFCjGJmpD/IGvmjPuq93aZbS4SmKLG58GYUVmWR+4Q6e
-   55K5Dsk0rZgiC3NOmebsbbcYowYkcLa490+6TXP4Nunx6WBUGqrzW50/n
-   4C+Op4dbh9DYnTI7Vxsw/T6yDwUkrA3aPURlaAZssYNI9Ds72FvyYflKm
-   nnH/0ceuPVGmoxCWvvZPiVYOeMvxxKOhtR20GfBO9UTcLaL5Msupg1eCy
-   p7/MUmwm2OyTHpMZN94lc5cScqe1Q3U8QMWsC5L0ourPp+eggH5RNcbk3
-   w==;
-X-CSE-ConnectionGUID: qF2jQOJtTe60wPeDc1Uc6Q==
-X-CSE-MsgGUID: Amc6WALTR06EtcJMZjmXaA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="47982537"
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="47982537"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Nov 2024 23:12:12 -0800
-X-CSE-ConnectionGUID: C4bDbCveQKupXDwgZmIM8Q==
-X-CSE-MsgGUID: 6UsP4dKmR2+XeskoC5EA7A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,259,1725346800"; 
-   d="scan'208";a="83556233"
-Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 04 Nov 2024 23:12:10 -0800
-Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1t8DjU-000lkH-0o;
-	Tue, 05 Nov 2024 07:12:08 +0000
-Date: Tue, 05 Nov 2024 15:11:09 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- d63fbff74ab1af1573c1dca20cfe1e876f8ffa62
-Message-ID: <202411051502.iMKC0rKU-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 05 Nov 2024 07:25:14 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 650FEA426B3;
+	Tue,  5 Nov 2024 07:23:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2289DC4CECF;
+	Tue,  5 Nov 2024 07:24:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730791501;
+	bh=eGZxOOO0qWTRtmyQ0DkH96remcaIk4dbRJWRtFjc1lI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=K14EgAS6cDnTl21odnotu2jbCE8UH0RU0svMLudd6nSUM/Uypckng9DUUeJcf7uy1
+	 7WMup32SpBZ4FFT7474tkrYsoj3bB5Vz2uPit3OJh41bDq/mGK2jKrlaOtDHNrFIFO
+	 ZcHjKjZx7spAna2uRBPMaY363DM+N7qhKL6f+xSfRCdAWraEO7t5u5hP9/YLjlQjyy
+	 MAG09FxHOJ/gMyXpjJsxNkga1U183WuOTWmgyOpqKo1VAoTBBKJt3DjGUIdHnbtoMR
+	 yvWL+jm9w0TVbccw/l8g9940aSJ7tphWXZfftLUKLT1lCcqsYhwM63GIFT4JXuMG9y
+	 sJUaop/OYgL8w==
+Message-ID: <74c84937-fa12-4ab2-922b-7889eb5dda47@kernel.org>
+Date: Tue, 5 Nov 2024 08:24:55 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH v2 1/5] dt-bindings: net: wireless: ath12k: describe
+ WSI properties for QCN9274
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+References: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
+ <20241029173050.2188150-2-quic_rajkbhag@quicinc.com>
+ <764f8f22-146d-4edc-9d46-7fe3c7d9a2f2@kernel.org>
+ <cb69c30f-8230-4a8f-a538-3ec964b79084@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
+ QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
+ gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
+ /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
+ iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
+ VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
+ 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
+ xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
+ eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
+ AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
+ MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
+ Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
+ ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
+ vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
+ oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
+ lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
+ t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
+ uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
+ 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
+ 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
+In-Reply-To: <cb69c30f-8230-4a8f-a538-3ec964b79084@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241104_231214_301522_27C013C2 
-X-CRM114-Status: UNSURE (   3.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241104_232502_765326_5EDC023D 
+X-CRM114-Status: GOOD (  12.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,132 +125,71 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: d63fbff74ab1af1573c1dca20cfe1e876f8ffa62  Add localversion-wireless-testing-ath
+On 04/11/2024 19:44, Raj Kumar Bhagat wrote:
+>>>  $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml#
+>>> @@ -18,10 +19,17 @@ properties:
+>>>    compatible:
+>>>      enum:
+>>>        - pci17cb,1107  # WCN7850
+>>> +      - pci17cb,1109  # QCN9274
+>>
+>> I asked for separate binding because it is quite a different device.
+>> Unless it is not... but then commit msg is quite not precise here.
+>>
+> 
+> sure, will create a separate binding, may be "qcom,ath12k_wsi.yaml".
 
-elapsed time: 848m
+Underscores are not allowed in compatibles and the file name follows
+compatible name, so use hyphen.
+>>> +    type: object
+>>> +    description: |
+>>> +      The ath12k devices (QCN9274) feature WSI support. WSI stands for
+>>> +      WLAN Serial Interface. It is used for the exchange of specific
+>>> +      control information across radios based on the doorbell mechanism.
+>>> +      This WSI connection is essential to exchange control information
+>>> +      among these devices.
+>>> +
+>>> +      Diagram to represent one WSI connection (one WSI group) among
+>>> +      three devices.
+>>> +
+>>> +               +-------+        +-------+        +-------+
+>>> +               | pcie2 |        | pcie3 |        | pcie1 |
+>>> +               |       |        |       |        |       |
+>>> +        +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
+>>> +        |      | grp 0 |        | grp 0 |        | grp 2 |     |
+>>> +        |      +-------+        +-------+        +-------+     |
+>>> +        +------------------------------------------------------+
+>>> +
+>>> +      Diagram to represent two WSI connections (two separate WSI groups)
+>>> +      among four devices.
+>>> +
+>>> +           +-------+    +-------+          +-------+    +-------+
+>>> +           | pcie2 |    | pcie3 |          | pcie1 |    | pcie0 |
+>>> +           |       |    |       |          |       |    |       |
+>>> +       +-->|  wsi  |--->|  wsi  |--+   +-->|  wsi  |--->|  wsi  |--+
+>>> +       |   | grp 0 |    | grp 0 |  |   |   | grp 1 |    | grp 1 |  |
+>>> +       |   +-------+    +-------+  |   |   +-------+    +-------+  |
+>>> +       +---------------------------+   +---------------------------+
+>>> +
+>>> +    properties:
+>>> +      qcom,wsi-group-id:
+>>> +        $ref: /schemas/types.yaml#/definitions/uint32
+>>> +        description:
+>>> +          It represents the identifier assigned to the WSI connection. All
+>>> +          the ath12k devices connected to same WSI connection have the
+>>> +          same wsi-group-id.
+>>
+>> That's not needed according to description. Entire group is defined by
+>> graph.
+>>
+> 
+> So this mean "qcom,wsi-group-id" to be dropped and we can assign the
+> group ID (in ath12k driver implementation) by using the graph?
 
-configs tested: 112
-configs skipped: 1
+Yes
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+> 
+Best regards,
+Krzysztof
 
-tested configs:
-alpha                             allnoconfig    gcc-13.3.0
-alpha                            allyesconfig    gcc-13.3.0
-arc                              allmodconfig    gcc-13.2.0
-arc                               allnoconfig    gcc-13.2.0
-arc                              allyesconfig    gcc-13.2.0
-arc                   randconfig-001-20241105    gcc-13.2.0
-arc                   randconfig-002-20241105    gcc-13.2.0
-arm                              allmodconfig    gcc-14.1.0
-arm                               allnoconfig    clang-20
-arm                              allyesconfig    gcc-14.1.0
-arm                   randconfig-001-20241105    gcc-14.1.0
-arm                   randconfig-002-20241105    clang-20
-arm                   randconfig-003-20241105    gcc-14.1.0
-arm                   randconfig-004-20241105    clang-16
-arm64                            allmodconfig    clang-20
-arm64                             allnoconfig    gcc-14.1.0
-arm64                 randconfig-001-20241105    gcc-14.1.0
-arm64                 randconfig-002-20241105    gcc-14.1.0
-arm64                 randconfig-003-20241105    gcc-14.1.0
-arm64                 randconfig-004-20241105    gcc-14.1.0
-csky                              allnoconfig    gcc-14.1.0
-csky                  randconfig-001-20241105    gcc-14.1.0
-csky                  randconfig-002-20241105    gcc-14.1.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    clang-20
-hexagon                          allyesconfig    clang-20
-hexagon               randconfig-001-20241105    clang-20
-hexagon               randconfig-002-20241105    clang-20
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20241105    clang-19
-i386        buildonly-randconfig-002-20241105    gcc-12
-i386        buildonly-randconfig-003-20241105    clang-19
-i386        buildonly-randconfig-004-20241105    gcc-12
-i386        buildonly-randconfig-005-20241105    clang-19
-i386        buildonly-randconfig-006-20241105    gcc-12
-i386                                defconfig    clang-19
-i386                  randconfig-001-20241105    gcc-12
-i386                  randconfig-002-20241105    clang-19
-i386                  randconfig-003-20241105    gcc-12
-i386                  randconfig-004-20241105    clang-19
-i386                  randconfig-005-20241105    clang-19
-i386                  randconfig-006-20241105    gcc-12
-i386                  randconfig-011-20241105    clang-19
-i386                  randconfig-012-20241105    clang-19
-i386                  randconfig-013-20241105    gcc-12
-i386                  randconfig-014-20241105    gcc-12
-i386                  randconfig-015-20241105    gcc-12
-i386                  randconfig-016-20241105    gcc-12
-loongarch                        allmodconfig    gcc-14.1.0
-loongarch                         allnoconfig    gcc-14.1.0
-loongarch             randconfig-001-20241105    gcc-14.1.0
-loongarch             randconfig-002-20241105    gcc-14.1.0
-m68k                             allmodconfig    gcc-14.1.0
-m68k                              allnoconfig    gcc-14.1.0
-m68k                             allyesconfig    gcc-14.1.0
-microblaze                       allmodconfig    gcc-14.1.0
-microblaze                        allnoconfig    gcc-14.1.0
-microblaze                       allyesconfig    gcc-14.1.0
-mips                              allnoconfig    gcc-14.1.0
-nios2                             allnoconfig    gcc-14.1.0
-nios2                 randconfig-001-20241105    gcc-14.1.0
-nios2                 randconfig-002-20241105    gcc-14.1.0
-openrisc                          allnoconfig    gcc-14.1.0
-openrisc                         allyesconfig    gcc-14.1.0
-parisc                           allmodconfig    gcc-14.1.0
-parisc                            allnoconfig    gcc-14.1.0
-parisc                           allyesconfig    gcc-14.1.0
-parisc                randconfig-001-20241105    gcc-14.1.0
-parisc                randconfig-002-20241105    gcc-14.1.0
-powerpc                          allmodconfig    gcc-14.1.0
-powerpc                           allnoconfig    gcc-14.1.0
-powerpc                          allyesconfig    clang-20
-powerpc               randconfig-001-20241105    gcc-14.1.0
-powerpc               randconfig-002-20241105    gcc-14.1.0
-powerpc               randconfig-003-20241105    gcc-14.1.0
-powerpc64             randconfig-001-20241105    gcc-14.1.0
-powerpc64             randconfig-002-20241105    clang-14
-powerpc64             randconfig-003-20241105    gcc-14.1.0
-riscv                            allmodconfig    clang-20
-riscv                             allnoconfig    gcc-14.1.0
-riscv                            allyesconfig    clang-20
-riscv                 randconfig-001-20241105    gcc-14.1.0
-riscv                 randconfig-002-20241105    clang-20
-s390                             allmodconfig    clang-20
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.1.0
-s390                  randconfig-001-20241105    clang-20
-s390                  randconfig-002-20241105    clang-20
-sh                               allmodconfig    gcc-14.1.0
-sh                                allnoconfig    gcc-14.1.0
-sh                               allyesconfig    gcc-14.1.0
-sh                    randconfig-001-20241105    gcc-14.1.0
-sh                    randconfig-002-20241105    gcc-14.1.0
-sparc                            allmodconfig    gcc-14.1.0
-sparc64               randconfig-001-20241105    gcc-14.1.0
-sparc64               randconfig-002-20241105    gcc-14.1.0
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-17
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20241105    gcc-12
-um                    randconfig-002-20241105    gcc-12
-x86_64                            allnoconfig    clang-19
-x86_64                           allyesconfig    clang-19
-x86_64                              defconfig    gcc-11
-x86_64                                  kexec    clang-19
-x86_64                               rhel-8.3    gcc-12
-x86_64                    rhel-8.3-kselftests    gcc-12
-xtensa                            allnoconfig    gcc-14.1.0
-xtensa                randconfig-001-20241105    gcc-14.1.0
-xtensa                randconfig-002-20241105    gcc-14.1.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
