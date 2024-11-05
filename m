@@ -4,113 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6984DD1CA3D
-	for <ath12k@archiver.kernel.org>; Tue,  5 Nov 2024 07:25:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 608FBD12677
+	for <ath12k@archiver.kernel.org>; Tue,  5 Nov 2024 10:11:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+QgUqN/U6TgYA8W7McNXj/+Iw73zyeuDnVuZeXkR2x8=; b=ko5dQRB53yOKiRTMD+l00ROCu0
-	5DZqU7aB/NAceqROZt7RAwwz2HVgRGo7Oeh7yBchhU347iLsXleuQWG5vCVYAlx55Zucn9QgH5cKf
-	Hn/NI+eqyF/jlHdleLh9BfG1YBlHYUsyQNjyjRflJCISfR+BTa2OjsrrFEWe99EP+4o51OvIzrP3O
-	Kd49I2jyVzYGx0wpP2b1QzyA+Yj4Jr6khhIhucWFyLr8rZv+/mb2mg+1Dek257aVXHAGnZg09GB9b
-	wGLtUVhdtZHwIloKzGHkDpFbRohPyHaCRMXceYGj6iD03qyxhDjoMTvXmxAsZ4Ot4G1+hwX53VnAr
-	SOe3AW1A==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Qso3BNgt6veXyizsNwyMPr4H1EWMOffJ4h1epwKOSNQ=; b=D1FDCg+NuWVgjBfzcPJdGR9e1j
+	L75JeHdUw1mKZPNlPf+6dg1qTo+k5AqaJiNlfkkgavyNwKQTMaR4mra2nFRJIBR3p7H0Vt6qukhcA
+	ItSGjGKLSyeSl5KCuGNKdYDi6l0QIBhbxiG2a5GQTX7wKganzXpuMATXX8PbZIO8hkHDgxuU+MxwK
+	C3TwHokyu8pwBsdUXOK3RyMtiEP5ACAiARGfdO8iMAUjh5bs0y/ef2wizB1Scn5gfNAZmZEbBZIrk
+	1yRmiCz6FEhDr1f9JSDPxCnh6KGVx4jBk1l47Wr0PUTMdN7t+QrqJlHnWPaU803w0aqomKr7eb/9u
+	go6bgRHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8DwC-0000000GBmN-0LGF
+	id 1t8GXE-0000000GdZS-0Uva
 	for ath12k@archiver.kernel.org;
-	Tue, 05 Nov 2024 07:25:16 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Tue, 05 Nov 2024 10:11:40 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8Dvy-0000000GBiU-1tYv
+	id 1t8GXB-0000000GdZ5-1ytl
 	for ath12k@lists.infradead.org;
-	Tue, 05 Nov 2024 07:25:14 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 650FEA426B3;
-	Tue,  5 Nov 2024 07:23:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2289DC4CECF;
-	Tue,  5 Nov 2024 07:24:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1730791501;
-	bh=eGZxOOO0qWTRtmyQ0DkH96remcaIk4dbRJWRtFjc1lI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=K14EgAS6cDnTl21odnotu2jbCE8UH0RU0svMLudd6nSUM/Uypckng9DUUeJcf7uy1
-	 7WMup32SpBZ4FFT7474tkrYsoj3bB5Vz2uPit3OJh41bDq/mGK2jKrlaOtDHNrFIFO
-	 ZcHjKjZx7spAna2uRBPMaY363DM+N7qhKL6f+xSfRCdAWraEO7t5u5hP9/YLjlQjyy
-	 MAG09FxHOJ/gMyXpjJsxNkga1U183WuOTWmgyOpqKo1VAoTBBKJt3DjGUIdHnbtoMR
-	 yvWL+jm9w0TVbccw/l8g9940aSJ7tphWXZfftLUKLT1lCcqsYhwM63GIFT4JXuMG9y
-	 sJUaop/OYgL8w==
-Message-ID: <74c84937-fa12-4ab2-922b-7889eb5dda47@kernel.org>
-Date: Tue, 5 Nov 2024 08:24:55 +0100
+	Tue, 05 Nov 2024 10:11:39 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-a998a5ca499so694927166b.0
+        for <ath12k@lists.infradead.org>; Tue, 05 Nov 2024 02:11:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1730801495; x=1731406295; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Qso3BNgt6veXyizsNwyMPr4H1EWMOffJ4h1epwKOSNQ=;
+        b=DTJzfVuGFMbplzvV508qvn1btBZibTX+TFm93RQwMMbXVeyPh+4EVsCXHciHhNJZFL
+         cPro+/EMalyylI2T9uP5Qzc9MgsVQgCFhDpPGVcrbG2zScEG4QEoaMlWb8rCOozMboKx
+         Yud4Sa8gefeICxDGh4EkzqZB4GmBTS176dyCdOouZjB75ByrnDooitxfMh0z9ZpQbJjF
+         AWj291X5hj5mWLY61xy9CI4Tuh18zwOhO8RL2fQ1UekDbL24+FOUzzMz2Cke6V7puq1f
+         NUpGm1CWeu2mzyVqeLLa5LChteVJrm2j0ak6hH9kmYDRQN6QbXhgj2AH7JNTXIMPXk2M
+         bDrw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1730801495; x=1731406295;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Qso3BNgt6veXyizsNwyMPr4H1EWMOffJ4h1epwKOSNQ=;
+        b=ZBnrbK6B871BWgRD6lgu0waGEZBjIzJtGy+j4Rfah+y8y7EOywImaQQJTCch0iHBEa
+         zRBueCSmRCLaqidUIhCYIjODDysAhO/2tJUh2yAfv9EjxdR89IUq8qRu8fI/4rhIlrGe
+         Fwk00WS5ebYTRviPurScZ5oWoWKxqcPptnIV663sRAjGbgzJOrw8C0RusAuUIZcTnBqZ
+         TCJ8UKGoDABZgpVNd4N2h58fJNMEaOCTw6lvV2HT0lnIb0Fys+JRDnj9EBEl0tAJhk5K
+         S1VQNu1pHvhumf7OA13ZnIGpfbRuls1fg38/E1Tb69G6m4ClpV8OKU996UM7AfwMFwE+
+         3QfQ==
+X-Forwarded-Encrypted: i=1; AJvYcCV1GrRc90zlMaZqfWj0mnwu3eTygmQQzHhr8tHBxFAeNZBvweWP4SavWmfT9C+Ij02UsDwr24c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwhvO2X9jalnY2rfw5Fl4b6W1OJnKQ2f5VKS86flokA6hbpM9RA
+	Y+1mSXn+S5xejy5aibKFAcD2j8U1Y3Z0s77FA1Cynk2eMctPGvFaJQhPXX3r
+X-Google-Smtp-Source: AGHT+IFnWeG5l3Win9wjTzFybRiE4MG/9kCs5ddsSiKv9wYvZpxcQ5x6vD6FqymkY5FYZL7mKz7YcA==
+X-Received: by 2002:a17:906:f5a5:b0:a99:8edf:a367 with SMTP id a640c23a62f3a-a9e657fd779mr1437610966b.57.1730801494703;
+        Tue, 05 Nov 2024 02:11:34 -0800 (PST)
+Received: from C-KP-LP15v.consult.red ([2a01:96e0:10:2:aaca:6c8f:1aec:b83f])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a9eb16d6714sm113494266b.64.2024.11.05.02.11.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 05 Nov 2024 02:11:34 -0800 (PST)
+From: Karol Przybylski <karprzy7@gmail.com>
+To: kvalo@kernel.org,
+	jjohnson@kernel.org
+Cc: Karol Przybylski <karprzy7@gmail.com>,
+	linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	skhan@linuxfoundation.org
+Subject: [PATCH v3] wifi: ath12k: Fix for out-of bound access error
+Date: Tue,  5 Nov 2024 11:11:31 +0100
+Message-Id: <20241105101132.374372-1-karprzy7@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v2 1/5] dt-bindings: net: wireless: ath12k: describe
- WSI properties for QCN9274
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <20241029173050.2188150-1-quic_rajkbhag@quicinc.com>
- <20241029173050.2188150-2-quic_rajkbhag@quicinc.com>
- <764f8f22-146d-4edc-9d46-7fe3c7d9a2f2@kernel.org>
- <cb69c30f-8230-4a8f-a538-3ec964b79084@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <cb69c30f-8230-4a8f-a538-3ec964b79084@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241104_232502_765326_5EDC023D 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20241105_021137_533459_F925C444 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,71 +95,47 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 04/11/2024 19:44, Raj Kumar Bhagat wrote:
->>>  $id: http://devicetree.org/schemas/net/wireless/qcom,ath12k.yaml#
->>> @@ -18,10 +19,17 @@ properties:
->>>    compatible:
->>>      enum:
->>>        - pci17cb,1107  # WCN7850
->>> +      - pci17cb,1109  # QCN9274
->>
->> I asked for separate binding because it is quite a different device.
->> Unless it is not... but then commit msg is quite not precise here.
->>
-> 
-> sure, will create a separate binding, may be "qcom,ath12k_wsi.yaml".
+Selfgen stats are placed in a buffer using print_array_to_buf_index() function.
+Array length parameter passed to the function is too big, resulting in possible
+out-of bound memory error.
+Decreasing buffer size by one fixes faulty upper bound of passed array.
 
-Underscores are not allowed in compatibles and the file name follows
-compatible name, so use hyphen.
->>> +    type: object
->>> +    description: |
->>> +      The ath12k devices (QCN9274) feature WSI support. WSI stands for
->>> +      WLAN Serial Interface. It is used for the exchange of specific
->>> +      control information across radios based on the doorbell mechanism.
->>> +      This WSI connection is essential to exchange control information
->>> +      among these devices.
->>> +
->>> +      Diagram to represent one WSI connection (one WSI group) among
->>> +      three devices.
->>> +
->>> +               +-------+        +-------+        +-------+
->>> +               | pcie2 |        | pcie3 |        | pcie1 |
->>> +               |       |        |       |        |       |
->>> +        +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
->>> +        |      | grp 0 |        | grp 0 |        | grp 2 |     |
->>> +        |      +-------+        +-------+        +-------+     |
->>> +        +------------------------------------------------------+
->>> +
->>> +      Diagram to represent two WSI connections (two separate WSI groups)
->>> +      among four devices.
->>> +
->>> +           +-------+    +-------+          +-------+    +-------+
->>> +           | pcie2 |    | pcie3 |          | pcie1 |    | pcie0 |
->>> +           |       |    |       |          |       |    |       |
->>> +       +-->|  wsi  |--->|  wsi  |--+   +-->|  wsi  |--->|  wsi  |--+
->>> +       |   | grp 0 |    | grp 0 |  |   |   | grp 1 |    | grp 1 |  |
->>> +       |   +-------+    +-------+  |   |   +-------+    +-------+  |
->>> +       +---------------------------+   +---------------------------+
->>> +
->>> +    properties:
->>> +      qcom,wsi-group-id:
->>> +        $ref: /schemas/types.yaml#/definitions/uint32
->>> +        description:
->>> +          It represents the identifier assigned to the WSI connection. All
->>> +          the ath12k devices connected to same WSI connection have the
->>> +          same wsi-group-id.
->>
->> That's not needed according to description. Entire group is defined by
->> graph.
->>
-> 
-> So this mean "qcom,wsi-group-id" to be dropped and we can assign the
-> group ID (in ath12k driver implementation) by using the graph?
+Discovered in coverity scan, CID 1600742 and CID 1600758
 
-Yes
+Signed-off-by: Karol Przybylski <karprzy7@gmail.com>
+---
+Changes in v3:
+- Code style: added spaces before and after '-'
+- Improved commit msg
+- Fixed same error in different function
+- Link to previous discussion: https://lore.kernel.org/all/08767ff7-f764-473d-a44b-c3c3b1695008@quicinc.com/
+---
+ drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-> 
-Best regards,
-Krzysztof
+diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+index 799b865b89e5..2d47aca681f4 100644
+--- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
++++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+@@ -1562,7 +1562,7 @@ ath12k_htt_print_tx_selfgen_ac_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->ac_mu_mimo_ndp));
+ 	len += print_array_to_buf_index(buf, len, "ac_mu_mimo_brpollX_tried = ", 1,
+ 					htt_stats_buf->ac_mu_mimo_brpoll,
+-					ATH12K_HTT_TX_NUM_AC_MUMIMO_USER_STATS, "\n\n");
++					ATH12K_HTT_TX_NUM_AC_MUMIMO_USER_STATS - 1, "\n\n");
+ 
+ 	stats_req->buf_len = len;
+ }
+@@ -1590,7 +1590,7 @@ ath12k_htt_print_tx_selfgen_ax_stats_tlv(const void *tag_buf, u16 tag_len,
+ 			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp));
+ 	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
+ 					htt_stats_buf->ax_mu_mimo_brpoll,
+-					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
++					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS - 1, "\n");
+ 	len += scnprintf(buf + len, buf_len - len, "ax_basic_trigger = %u\n",
+ 			 le32_to_cpu(htt_stats_buf->ax_basic_trigger));
+ 	len += scnprintf(buf + len, buf_len - len, "ax_ulmumimo_total_trigger = %u\n",
+-- 
+2.34.1
 
 
