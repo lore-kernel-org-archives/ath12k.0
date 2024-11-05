@@ -4,83 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 608FBD12677
-	for <ath12k@archiver.kernel.org>; Tue,  5 Nov 2024 10:11:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72E21D31778
+	for <ath12k@archiver.kernel.org>; Tue,  5 Nov 2024 18:05:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Qso3BNgt6veXyizsNwyMPr4H1EWMOffJ4h1epwKOSNQ=; b=D1FDCg+NuWVgjBfzcPJdGR9e1j
-	L75JeHdUw1mKZPNlPf+6dg1qTo+k5AqaJiNlfkkgavyNwKQTMaR4mra2nFRJIBR3p7H0Vt6qukhcA
-	ItSGjGKLSyeSl5KCuGNKdYDi6l0QIBhbxiG2a5GQTX7wKganzXpuMATXX8PbZIO8hkHDgxuU+MxwK
-	C3TwHokyu8pwBsdUXOK3RyMtiEP5ACAiARGfdO8iMAUjh5bs0y/ef2wizB1Scn5gfNAZmZEbBZIrk
-	1yRmiCz6FEhDr1f9JSDPxCnh6KGVx4jBk1l47Wr0PUTMdN7t+QrqJlHnWPaU803w0aqomKr7eb/9u
-	go6bgRHg==;
+	bh=t1ruyxheKoHZkkLnp4sRQ+EdfzZQLNtKwSZr8rmZ0MQ=; b=t+IrW5MMa5gvDJThvbGHm0SpB7
+	bZrA2H1LUXl1DwUyXCK+CrDohqqIY7O0Sg9jUors0j0pe5ev0jQPUe/+9H9ke/8SdPMTPfpn+YEFH
+	cHB0OUAanXfa2/X7ksgstCYRg8dECx8SnSFVIJGAhXwUQEZlnI4QYljopv6/P7OIk8q4/F9cPo8RR
+	O4XXpmWEHWUOjXkXIcdbTRvTakgHCgZIXlpQW9vhAD57IpfRZLyhfaQlCInI2Co2CHsze44kCWwZi
+	T+C1FQZcLHpHe2ufS9kGPYwqUJZHzAq2XTVquF9QV/rV6lTB1xZZqJ/bQ3/tkzD3etwbmqwZNWbIn
+	L8OFaN0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8GXE-0000000GdZS-0Uva
+	id 1t8Nw8-00000000JeC-08FT
 	for ath12k@archiver.kernel.org;
-	Tue, 05 Nov 2024 10:11:40 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	Tue, 05 Nov 2024 18:05:52 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8GXB-0000000GdZ5-1ytl
+	id 1t8Nvk-00000000Ja9-1m6w
 	for ath12k@lists.infradead.org;
-	Tue, 05 Nov 2024 10:11:39 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-a998a5ca499so694927166b.0
-        for <ath12k@lists.infradead.org>; Tue, 05 Nov 2024 02:11:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1730801495; x=1731406295; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Qso3BNgt6veXyizsNwyMPr4H1EWMOffJ4h1epwKOSNQ=;
-        b=DTJzfVuGFMbplzvV508qvn1btBZibTX+TFm93RQwMMbXVeyPh+4EVsCXHciHhNJZFL
-         cPro+/EMalyylI2T9uP5Qzc9MgsVQgCFhDpPGVcrbG2zScEG4QEoaMlWb8rCOozMboKx
-         Yud4Sa8gefeICxDGh4EkzqZB4GmBTS176dyCdOouZjB75ByrnDooitxfMh0z9ZpQbJjF
-         AWj291X5hj5mWLY61xy9CI4Tuh18zwOhO8RL2fQ1UekDbL24+FOUzzMz2Cke6V7puq1f
-         NUpGm1CWeu2mzyVqeLLa5LChteVJrm2j0ak6hH9kmYDRQN6QbXhgj2AH7JNTXIMPXk2M
-         bDrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1730801495; x=1731406295;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Qso3BNgt6veXyizsNwyMPr4H1EWMOffJ4h1epwKOSNQ=;
-        b=ZBnrbK6B871BWgRD6lgu0waGEZBjIzJtGy+j4Rfah+y8y7EOywImaQQJTCch0iHBEa
-         zRBueCSmRCLaqidUIhCYIjODDysAhO/2tJUh2yAfv9EjxdR89IUq8qRu8fI/4rhIlrGe
-         Fwk00WS5ebYTRviPurScZ5oWoWKxqcPptnIV663sRAjGbgzJOrw8C0RusAuUIZcTnBqZ
-         TCJ8UKGoDABZgpVNd4N2h58fJNMEaOCTw6lvV2HT0lnIb0Fys+JRDnj9EBEl0tAJhk5K
-         S1VQNu1pHvhumf7OA13ZnIGpfbRuls1fg38/E1Tb69G6m4ClpV8OKU996UM7AfwMFwE+
-         3QfQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV1GrRc90zlMaZqfWj0mnwu3eTygmQQzHhr8tHBxFAeNZBvweWP4SavWmfT9C+Ij02UsDwr24c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwhvO2X9jalnY2rfw5Fl4b6W1OJnKQ2f5VKS86flokA6hbpM9RA
-	Y+1mSXn+S5xejy5aibKFAcD2j8U1Y3Z0s77FA1Cynk2eMctPGvFaJQhPXX3r
-X-Google-Smtp-Source: AGHT+IFnWeG5l3Win9wjTzFybRiE4MG/9kCs5ddsSiKv9wYvZpxcQ5x6vD6FqymkY5FYZL7mKz7YcA==
-X-Received: by 2002:a17:906:f5a5:b0:a99:8edf:a367 with SMTP id a640c23a62f3a-a9e657fd779mr1437610966b.57.1730801494703;
-        Tue, 05 Nov 2024 02:11:34 -0800 (PST)
-Received: from C-KP-LP15v.consult.red ([2a01:96e0:10:2:aaca:6c8f:1aec:b83f])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a9eb16d6714sm113494266b.64.2024.11.05.02.11.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 05 Nov 2024 02:11:34 -0800 (PST)
-From: Karol Przybylski <karprzy7@gmail.com>
-To: kvalo@kernel.org,
-	jjohnson@kernel.org
-Cc: Karol Przybylski <karprzy7@gmail.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	skhan@linuxfoundation.org
-Subject: [PATCH v3] wifi: ath12k: Fix for out-of bound access error
-Date: Tue,  5 Nov 2024 11:11:31 +0100
-Message-Id: <20241105101132.374372-1-karprzy7@gmail.com>
+	Tue, 05 Nov 2024 18:05:30 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4A5FUmjs013143;
+	Tue, 5 Nov 2024 18:05:23 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=t1ruyxheKoHZkkLnp4sRQ+
+	EdfzZQLNtKwSZr8rmZ0MQ=; b=j1rG60NLtbN6K9LUdnz+ll0/AVNZ7/gw0F2/9h
+	2rT4KmiHNiqBeGp+XnNz9fwCen6FaswSqtoO5Aq7ACLQfca2wPamu6EaUrewHGhz
+	fF8uZBhEU5ibnx66bZyzj8szcXIxDobkb9NntLFlw6smDokWo4WE3TYD45v36RmM
+	+UmPiz9DriaXxa0v8701sgvZl3acEq6f2oMUQ28l5iRGGan9n96frmHrBxsn3GGt
+	i/505lXogrbUSyi7+lO6scTtCzKaGHKj6RWgb+o+IkruSQJrMhzQWJxi73vdt7Oz
+	HoYncxOl7E7IPjd8s/R4DKaMiqmn0eOkT3KcwVQYvP3yQlLw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42qp2rrfb2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 05 Nov 2024 18:05:23 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4A5I5MPa022854
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 5 Nov 2024 18:05:22 GMT
+Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 5 Nov 2024 10:05:18 -0800
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        "Rob
+ Herring" <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        "Conor
+ Dooley" <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        "Bjorn
+ Andersson" <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: [RFC PATCH v3 0/5] wifi: ath12k: Add wifi device node with WSI for QCN9274 in RDP433
+Date: Tue, 5 Nov 2024 23:34:39 +0530
+Message-ID: <20241105180444.770951-1-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: Mp3u6V5Sgr_BqwKozbCfpFqrwS2VM3co
+X-Proofpoint-ORIG-GUID: Mp3u6V5Sgr_BqwKozbCfpFqrwS2VM3co
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1015
+ bulkscore=0 priorityscore=1501 impostorscore=0 lowpriorityscore=0
+ mlxlogscore=999 suspectscore=0 spamscore=0 mlxscore=0 phishscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411050139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241105_021137_533459_F925C444 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241105_100528_705209_E9AF1370 
+X-CRM114-Status: GOOD (  20.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,46 +105,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Selfgen stats are placed in a buffer using print_array_to_buf_index() function.
-Array length parameter passed to the function is too big, resulting in possible
-out-of bound memory error.
-Decreasing buffer size by one fixes faulty upper bound of passed array.
+The RDP433 is a Qualcomm Reference Design Platform based on the
+IPQ9574. It features three QCN9274 WiFi devices connected to PCIe1,
+PCIe2, and PCIe3. These devices are also interconnected via a WLAN
+Serial Interface (WSI) connection. This WSI connection is essential
+for exchanging control information among these devices.
 
-Discovered in coverity scan, CID 1600742 and CID 1600758
+This patch series describes the WSI interface found in QCN9274 in
+device tree and uses this device tree node in the Ath12k driver to get the
+details of WSI connection for Multi Link Operation (MLO) among multiple
+QCN9274 devices.
 
-Signed-off-by: Karol Przybylski <karprzy7@gmail.com>
----
-Changes in v3:
-- Code style: added spaces before and after '-'
-- Improved commit msg
-- Fixed same error in different function
-- Link to previous discussion: https://lore.kernel.org/all/08767ff7-f764-473d-a44b-c3c3b1695008@quicinc.com/
----
- drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+NOTES:
+1. As ath12k MLO patches are not ready yet, this patchset does not apply
+   to the ath.git ath-next branch and that's why the patchset is marked
+   as RFC. These are the work-in-progress patches we have at the moment.
+   The full set of MLO patches is available at:
+   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=ath12k-mlo-qcn9274
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index 799b865b89e5..2d47aca681f4 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -1562,7 +1562,7 @@ ath12k_htt_print_tx_selfgen_ac_stats_tlv(const void *tag_buf, u16 tag_len,
- 			 le32_to_cpu(htt_stats_buf->ac_mu_mimo_ndp));
- 	len += print_array_to_buf_index(buf, len, "ac_mu_mimo_brpollX_tried = ", 1,
- 					htt_stats_buf->ac_mu_mimo_brpoll,
--					ATH12K_HTT_TX_NUM_AC_MUMIMO_USER_STATS, "\n\n");
-+					ATH12K_HTT_TX_NUM_AC_MUMIMO_USER_STATS - 1, "\n\n");
- 
- 	stats_req->buf_len = len;
- }
-@@ -1590,7 +1590,7 @@ ath12k_htt_print_tx_selfgen_ax_stats_tlv(const void *tag_buf, u16 tag_len,
- 			 le32_to_cpu(htt_stats_buf->ax_mu_mimo_ndp));
- 	len += print_array_to_buf_index(buf, len, "ax_mu_mimo_brpollX_tried = ", 1,
- 					htt_stats_buf->ax_mu_mimo_brpoll,
--					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS, "\n");
-+					ATH12K_HTT_TX_NUM_AX_MUMIMO_USER_STATS - 1, "\n");
- 	len += scnprintf(buf + len, buf_len - len, "ax_basic_trigger = %u\n",
- 			 le32_to_cpu(htt_stats_buf->ax_basic_trigger));
- 	len += scnprintf(buf + len, buf_len - len, "ax_ulmumimo_total_trigger = %u\n",
+2. The dependency marked below applies only to the DTS patch. The
+   dt-bindings patches do not have this dependency.
+
+Depends-On: [PATCH V7 0/4] Add PCIe support for IPQ9574
+Link: https://lore.kernel.org/linux-pci/20240801054803.3015572-1-quic_srichara@quicinc.com/
+
+v3:
+- Created a separate binding "qcom,ath12k-wsi.yaml" to describe ath12k PCI
+  devices with WSI interface.
+- The "wsi" node is dropped.
+- The property "qcom,wsi-master" renamed to "qcom,wsi-controller".
+- Updated description for "qcom,wsi-controller".
+- The "qcom,wsi-group-id" property is dropped.
+- The ath12k driver changes added to dynamically assign wsi group IDs.
+- DTS changes done to make device node name generic (wifi).
+- The patch series title is updated.
+
+v2: https://patchwork.kernel.org/project/linux-wireless/cover/20241029173050.2188150-1-quic_rajkbhag@quicinc.com/
+- "Graph with endpoint” is used to define the actual WSI connection in
+  the DT binding.
+- The qcom,wsi-index and qcom,wsi-num-devices properties are dropped
+  from the binding. These are now determined in the driver using the
+  graph with endpoint.
+- The qcom,wsi-master property is added to the binding to define the
+  WSI master.
+- The qcom,ath12k-calibration-variant property is added to the binding
+  for ath12k devices.
+- DTS changes are made based on the “graph with endpoint” binding.
+- The ath12k driver is updated to read graph nodes, determine the number
+  of devices in WSI, and assign the wsi-index for each device.
+- The ath12k driver now assigns hardware link IDs based on the order of
+  WSI connections.
+
+v1: https://patchwork.kernel.org/project/linux-wireless/cover/20241023060352.605019-1-quic_rajkbhag@quicinc.com/
+
+Aditya Kumar Singh (1):
+  wifi: ath12k: Assign unique hardware link IDs during QMI host
+    capability
+
+Harshitha Prem (1):
+  wifi: ath12k: Parse multiple device information from device tree
+
+Karthikeyan Periyasamy (1):
+  wifi: ath12k: Send partner device details in QMI MLO capability
+
+Raj Kumar Bhagat (2):
+  dt-bindings: net: wireless: Describe ath12k PCI module with WSI
+  arm64: dts: qcom: ipq9574: Add WiFi nodes for RDP433
+
+ .../net/wireless/qcom,ath12k-wsi.yaml         | 205 ++++++++++++++++++
+ arch/arm64/boot/dts/qcom/ipq9574-rdp433.dts   | 105 ++++++++-
+ drivers/net/wireless/ath/ath12k/core.c        | 178 +++++++++++++--
+ drivers/net/wireless/ath/ath12k/core.h        |  10 +
+ drivers/net/wireless/ath/ath12k/qmi.c         | 120 ++++++++--
+ 5 files changed, 588 insertions(+), 30 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
+
+
+base-commit: 7603a9349b2fc64152a734f253cf8d8e5befb6db
+prerequisite-patch-id: d1334693a2e8da65ae7b458ee4adb459850ad2e7
+prerequisite-patch-id: 87f73b342f67c2636390a7da1294cee90f1fff48
+prerequisite-patch-id: 46d8302766527d16cdd90c59ded6cbae0ec4ad70
+prerequisite-patch-id: b17db6783b1c35f3e8812f621730fe0a1a57a14e
 -- 
 2.34.1
 
