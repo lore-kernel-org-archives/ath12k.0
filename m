@@ -4,87 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DCA4D5AE6C
-	for <ath12k@archiver.kernel.org>; Thu,  7 Nov 2024 07:15:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FBFDD3E787
+	for <ath12k@archiver.kernel.org>; Thu,  7 Nov 2024 10:24:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5GyVFeKjPDh+r9v38j1LkPtGP9YGIVQdB+W3N7dW7gU=; b=qSGpgQthN01vJADa9Flu0H3DCq
-	68aAs6eWWSBf2HwszPX+b9qitJwMWBBN35eQGq99EEBGZC7QZD3e5luNtAmiJPO8Z4yWd0WDpjm7r
-	nHA8ikoJ0nCUTZDv/BgtI1eKuMAtslOV4vG3AEk+oKOCq+UuJqxpChW+KLNzj2RdOabzX1TVGEviQ
-	Ef7Iy5hMCPu50Z7SeZFhroUB8LEMDulMNv1sWfJIxMGSh42mlzBA+k/WSISyj1gYmq3rz8z9UPucL
-	4oGsILLmVpvKSk8c3u5DRhNx0Er+Mhr5dbryYlf/U8EB8CWfK1fkzo+Md8EeJCRkPRBlnL29qxRKm
-	WdYQB9Iw==;
+	bh=w7th03FzppUsoAdRhqKhjkLxLeDB5ujCuc4SWUtFv2o=; b=QpM1LRaJGDL78q5m3Hj/MVSXJh
+	DmxEiLUE9JX6JYuJMqDNk3CnjuJf/8Bd0hTYKigkJGslqblub+qXIqQoL4zjsjpzL/ygCENYTLRNk
+	CHmss57mGx/BmIPOLRREJfoMwqsnJ41xmjWe/ZLtipOvguwtnep1WcHIMvyo7VqI6tOC6O0C4zLWy
+	3ldxI+Q4DrwTmMCmBlT0NCdjcSpsWJV48R8nNcWbaFtkLZQUk5UMF6is/GcW5MPU8Z/QY7H0gYU8p
+	wHSpXf1voQrFPjNVXwhwopflesVq0VseZeXGpI9dNZN1V4CCHDzVYUfJin9ewmSTWA+L07kCKLEdx
+	ZgD3fttg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8wjS-00000005wZd-1GUb
+	id 1t8zh0-00000006SWg-1Zyj
 	for ath12k@archiver.kernel.org;
-	Thu, 07 Nov 2024 07:15:06 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 07 Nov 2024 10:24:46 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8wjP-00000005wYU-0aqz
+	id 1t8zfj-00000006SFi-05Ys
 	for ath12k@lists.infradead.org;
-	Thu, 07 Nov 2024 07:15:04 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4A6GR5xw024800;
-	Thu, 7 Nov 2024 07:14:59 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	5GyVFeKjPDh+r9v38j1LkPtGP9YGIVQdB+W3N7dW7gU=; b=CiI28Nu60RgjTjm4
-	r2s8b9mXiT+S6i72iMlwCo/z/vdWhiCAJ0JGHQELtKvGZeCx8FzPG2LvLArUfHcs
-	uyRl4cpLtRwtP1WOPUBuXb7/SYoEzGCp9asDjlF+ab+R6tk4ULqQB7QrjjjNR/d/
-	5c9e7S9DVdNd/FqqzcMJmeP1aH2nNJr+SbFcA9ABD6MfbkQkiqs1/4EzWnWUTmu9
-	wQHXGNls36qIXDApCaT0KIAkSqebhbGYSWejERXd+vcsVwJrvfKrH3y2RBYpuOk4
-	ndima01wBa4Ba8/nkPSMv4qn5rB9JXK7qeVDkb8jW6sMTY5H7/UHRB3EmQe6n8cC
-	hH7MnA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42r2uguhhb-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 07 Nov 2024 07:14:58 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4A77Ev23013015
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 7 Nov 2024 07:14:57 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 6 Nov 2024
- 23:14:56 -0800
-Message-ID: <e028f65c-9faa-46e0-ae34-35815a121ba9@quicinc.com>
-Date: Thu, 7 Nov 2024 15:14:55 +0800
+	Thu, 07 Nov 2024 10:23:28 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id CCF485C039E;
+	Thu,  7 Nov 2024 10:22:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9DD1C4CECC;
+	Thu,  7 Nov 2024 10:23:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730975006;
+	bh=fpcyPr9neSbAufEADWPl5Q8hlLcCU5Uej0qPHMCTvQk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=pCDHs7V12PjekCaCn3bG2ipXCEiwzj35pu+LsIQQmjLczaePYJxmPWj5MAbC2RYeE
+	 OHdvAZBxhX5twUI+yC1qAH7kDgIX2pLr+by/z236tPvjEVl58FufHb5OxfmXSL017W
+	 MqHTEJcQDknYjfMs4Sb4V4Gjhdlian9hJHmzmgb4pRYzoZ1lj+SdCJ7KAiTr0183og
+	 3wDOCkohPmq0lfyhCdcz2/hPpFLq0ASmiIXz0vhaUEDhKHUOIU5WIgJL7i1DGwsmB/
+	 xWD3RU5XvfqndnAjgluxCt29sT3IFcrBNYBZIRhkkmrmBr39/2/lvaBP/ZLif796hr
+	 YUTr20gW6E/tw==
+Message-ID: <49a6ec0d-8a0b-49aa-a9eb-1174cff930f6@kernel.org>
+Date: Thu, 7 Nov 2024 11:23:20 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/8] wifi: ath12k: support change_sta_links() mac80211 op
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241106142617.660901-1-kvalo@kernel.org>
- <20241106142617.660901-3-kvalo@kernel.org>
+Subject: Re: [RFC PATCH v3 0/5] wifi: ath12k: Add wifi device node with WSI
+ for QCN9274 in RDP433
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+References: <20241105180444.770951-1-quic_rajkbhag@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <20241106142617.660901-3-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20241105180444.770951-1-quic_rajkbhag@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 08IIgzso3jVlBt8-RTdl8tny2qgCyD5n
-X-Proofpoint-GUID: 08IIgzso3jVlBt8-RTdl8tny2qgCyD5n
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- adultscore=0 mlxscore=0 suspectscore=0 priorityscore=1501 phishscore=0
- clxscore=1015 impostorscore=0 malwarescore=0 bulkscore=0 mlxlogscore=999
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411070053
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241106_231503_337264_530C8371 
-X-CRM114-Status: GOOD (  16.29  )
+X-CRM114-CacheID: sfid-20241107_022327_179604_15654CBE 
+X-CRM114-Status: GOOD (  16.46  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,62 +122,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 05/11/2024 19:04, Raj Kumar Bhagat wrote:
+> The RDP433 is a Qualcomm Reference Design Platform based on the
+> IPQ9574. It features three QCN9274 WiFi devices connected to PCIe1,
+> PCIe2, and PCIe3. These devices are also interconnected via a WLAN
+> Serial Interface (WSI) connection. This WSI connection is essential
+> for exchanging control information among these devices.
+> 
+> This patch series describes the WSI interface found in QCN9274 in
+> device tree and uses this device tree node in the Ath12k driver to get the
+> details of WSI connection for Multi Link Operation (MLO) among multiple
+> QCN9274 devices.
+> 
+> NOTES:
+> 1. As ath12k MLO patches are not ready yet, this patchset does not apply
+>    to the ath.git ath-next branch and that's why the patchset is marked
+>    as RFC. These are the work-in-progress patches we have at the moment.
+>    The full set of MLO patches is available at:
+>    https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=ath12k-mlo-qcn9274
+> 
+> 2. The dependency marked below applies only to the DTS patch. The
+>    dt-bindings patches do not have this dependency.
+> 
+> Depends-On: [PATCH V7 0/4] Add PCIe support for IPQ9574
+> Link: https://lore.kernel.org/linux-pci/20240801054803.3015572-1-quic_srichara@quicinc.com/
+> 
+> v3:
+> - Created a separate binding "qcom,ath12k-wsi.yaml" to describe ath12k PCI
+>   devices with WSI interface.
 
+Thanks for the changes. When you finish with testing/RFC, please send
+proper version for review (just remember to keep numbering, next one is
+v4 regardless whether this is RFC or not).
 
-On 11/6/2024 10:26 PM, Kalle Valo wrote:
-> From: Sriram R <quic_srirrama@quicinc.com>
-> 
-> Add ath12k_mac_op_change_sta_links() for adding and removing
-> link station.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/mac.c | 97 ++++++++++++++++++++++++++-
->  1 file changed, 96 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 0ff886e4b3ed..c0cc4e51a4d1 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -5572,6 +5572,101 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
->  	rcu_read_unlock();
->  }
->  
-> +static struct ath12k_link_sta *
-> +ath12k_mac_alloc_assign_link_sta(struct ath12k_hw *ah,
-> +				 struct ath12k_sta *ahsta,
-> +				 struct ath12k_vif *ahvif, u8 link_id)
-> +{
-> +	struct ath12k_link_sta *arsta;
-> +	int ret;
-> +
-> +	lockdep_assert_wiphy(ah->hw->wiphy);
-> +
-> +	if (link_id >= IEEE80211_MLD_MAX_NUM_LINKS)
-> +		return NULL;
-> +
-> +	arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
-> +	if (arsta)
-> +		return NULL;
-> +
-> +	arsta = kzalloc(sizeof(*arsta), GFP_KERNEL);
-kmalloc() is preferred as ath12k_mac_assign_link_sta() will do 'zero'?
+Best regards,
+Krzysztof
 
-> +	if (!arsta)
-> +		return NULL;
-> +
-> +	ret = ath12k_mac_assign_link_sta(ah, ahsta, arsta, ahvif, link_id);
-> +	if (ret) {
-> +		kfree(arsta);
-> +		return NULL;
-> +	}
-> +
-> +	return arsta;
-> +}
-> +
 
