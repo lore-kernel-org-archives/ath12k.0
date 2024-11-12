@@ -4,62 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8F4FD42BA2
-	for <ath12k@archiver.kernel.org>; Tue, 12 Nov 2024 15:52:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F18A8D42BA2
+	for <ath12k@archiver.kernel.org>; Tue, 12 Nov 2024 16:07:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=C5w7YSW4BS/IKGlSa18JeFdiVGYz+IowOG+WB242Hvw=; b=WNr+iMaHpDHGhwmO9z/DSObNQA
-	PEcWCjiup684bHTrYAHcPoy3KfZGb9+OAC8qlzxTYi1d/LxtKpFHaqT0BGyAH3wgrzTjNJvh6ph3T
-	q+UP0N0VAxKTAggEnDx7Dh8b82VAZBm03kn9mdGu4ovF5r4HB31nud7zweXN3OJOrnvr085KGeg08
-	GllwRxd03uBW1I2ssTWshRZGdzMPPfvj0HyrutEz6N+oGWWwNC/gLW2dRZ4H4GdR6j8fm2f8eW/Qj
-	7w+TyToDlOf/KVaR0A3zXdU7Q4yHKj2UwiTgksbGx7WKXOYzQiydfP/AT9xnip/xVeiJnyePTCLns
-	us5OhuJw==;
+	bh=LY63BpwihPypyqIBBZzjJqNj5sXn4cmuFK8qqrR0IYM=; b=qiyeEd1Hj00ICAFaNFlZPKTig5
+	vXVrrzNOd3Dq7VQk2n8/eML4eTOWUVqn8pR74GELPctdbhMan+OKU92GSZAR8Z+xhfpkISiJUzR0z
+	CmP037MJd8QHHvMcwm6Tk/OKKwfu5Tir2xtp5IhOWQ3UMCP3SCPkiKZrnoDiNWz3hUkmiV/w3DoOF
+	pi4pHdsM8MrxiI3hquZBNy5viNdYdt1wzIsDwCuyenfAN+2JNM4YxR/QLMsbuZXGrPTWb7tHkr72D
+	+EHdLLMsW2MYjZ3ACXarlSGPlYKuLbLJOG3VpjzGH8yKhnA2+ATXWHAU89nhHN1TPte9COeL2d9pd
+	w1qFqGCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tAtCC-0000000419G-1twC
+	id 1tAtQ7-000000044mN-2u9z
 	for ath12k@archiver.kernel.org;
-	Tue, 12 Nov 2024 15:52:48 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 12 Nov 2024 16:07:11 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tAtC8-0000000417t-2mB5
+	id 1tAtMR-000000043va-2aTw
+	for ath12k@bombadil.infradead.org;
+	Tue, 12 Nov 2024 16:03:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=LY63BpwihPypyqIBBZzjJqNj5sXn4cmuFK8qqrR0IYM=; b=MiyUNJ1LGWB28itApwJhwtCBtr
+	f+gUlPL/YEWUZqMQ1bpmeKd8q16U2PwawqeFDdnpdMQ2r7/3jA50R3StJwT3SHOFVczPEjqL6SFWd
+	uEHBEgbSuOB47dY1Aog1cvu89rbZaLcx7zjSSSG4KURbjZGbA93ASES+vPnNkmU/jMqfuTZ3aLfjk
+	892QS4/mj7AMnrwOJ0sp/TdvwxIK+PongEpDlC/PAGtBbmppqvRPrLMgajVIRnkZiKNj2xg86IEg2
+	AWonNNNzBxg6Nq1LMApwjyyA+nL/dsdDUr8XgibOV0ma6A2y8wLOEKu2K2T2LcsbaRiA3s1gNJJIU
+	1cwtNfMA==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tAtMO-0000000D6Vh-1eBU
 	for ath12k@lists.infradead.org;
-	Tue, 12 Nov 2024 15:52:46 +0000
+	Tue, 12 Nov 2024 16:03:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id CD7095C57E7;
-	Tue, 12 Nov 2024 15:51:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7F8CC4CED8;
-	Tue, 12 Nov 2024 15:52:42 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 75A475C580C;
+	Tue, 12 Nov 2024 16:02:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C16A6C4CECD;
+	Tue, 12 Nov 2024 16:03:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1731426763;
-	bh=SJsZQYVXU3ARBv4CchRXa9P05OcKPCJKPiyWbmToLcw=;
+	s=k20201202; t=1731427396;
+	bh=8G4W4n8t/inFGN91oJVtFV80XrFO1IiQUQJw1iuNLMY=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=XvVRnM+tjABRUYPrahMQPK521snvmNYuQb+c6N6bogT0g/RLDNVC0oba+3cr5FFuV
-	 IHd9547YOmSzegfyRCJnhe+ldcthPsCWyzaJDN1DHbisVaNdv6dmfaSLiyEgJGRt0+
-	 WH8lS/EeI/aAUx/DZV5Z+jy92tTrQaY3RztuZIlpSGb6rYkAoZHTdRmveWFetcX2Lf
-	 E0+gXf02vkOXu4b0/gzQcJLDHmJmwV41v7JuJgq5icIF/hIigAWCLVkJgPYuAygCO/
-	 QC4aiwAT6kn7fPnVsYIDXE6Z2QXk3ENNjxb34PoiFgFNqImecJ+dDnfpZgRnNPDe/P
-	 HwYTeeu0rrNww==
+	b=ePK04v5nYEEI+lmSdA6zIJe3gquqkdyAFnF7LiP9ZS3oRVBhMEkRQgqd3Q3EQypql
+	 9hJw/cg2tOZzX+4dEL7RCeSMq7I1EoKzZ07ZD0xPGXJDZ7x4IMseeJwOmhMjhGWL2d
+	 cC2HYrNlK3N4l1EqSjOYbqeox+17r09cM0dwAcAx7wMOKBZIMj12dqN1nBfqprM6bv
+	 ZKRxgEwYSwUw2C9IKjOyrECSnKR/sQC5br73qnFAnAkDvnhWl3UV3A5Y/E7rob4Flo
+	 nsEJGIWbLVCR/YYAzUXD5HksqcqdRfyDUxQiHMFqMkKAQ2P6b3yq+D4NcxMDzsZ/0q
+	 WhwbCHTCHUb/w==
 From: Kalle Valo <kvalo@kernel.org>
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Dinesh
- Karthikeyan <quic_dinek@quicinc.com>
-Subject: Re: [PATCH v4 2/4] wifi: ath12k: Support phy counter and TPC stats
-References: <20241106044548.3530128-1-quic_rdevanat@quicinc.com>
-	<20241106044548.3530128-3-quic_rdevanat@quicinc.com>
-Date: Tue, 12 Nov 2024 17:52:41 +0200
-In-Reply-To: <20241106044548.3530128-3-quic_rdevanat@quicinc.com> (Roopni
-	Devanathan's message of "Wed, 6 Nov 2024 10:15:46 +0530")
-Message-ID: <87bjyk4fg6.fsf@kernel.org>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 1/8] wifi: ath12k: Add MLO station state change handling
+References: <20241106142617.660901-1-kvalo@kernel.org>
+	<20241106142617.660901-2-kvalo@kernel.org>
+	<f75d7222-514b-4c6f-985d-e6ffd67e317a@quicinc.com>
+Date: Tue, 12 Nov 2024 18:03:13 +0200
+In-Reply-To: <f75d7222-514b-4c6f-985d-e6ffd67e317a@quicinc.com> (Baochen
+	Qiang's message of "Thu, 7 Nov 2024 10:26:56 +0800")
+Message-ID: <877c984eym.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_075244_807863_011B151C 
-X-CRM114-Status: GOOD (  14.77  )
+X-CRM114-CacheID: sfid-20241112_160320_647555_22F7E968 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,90 +89,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
+Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
-> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+> On 11/6/2024 10:26 PM, Kalle Valo wrote:
+>> +static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+>> +				      struct ath12k_sta *ahsta,
+>> +				      struct ath12k_link_sta *arsta,
+>> +				      struct ath12k_vif *ahvif,
+>> +				      u8 link_id)
+>> +{
+>> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(ahsta);
+>> +	struct ieee80211_link_sta *link_sta;
+>> +	struct ath12k_link_vif *arvif;
+>> +
+>> +	lockdep_assert_wiphy(ah->hw->wiphy);
+>> +
+>> +	if (!arsta || link_id >= IEEE80211_MLD_MAX_NUM_LINKS)
+>> +		return -EINVAL;
+>> +
+>> +	arvif = wiphy_dereference(ah->hw->wiphy, ahvif->link[link_id]);
+>> +	if (!arvif)
+>> +		return -EINVAL;
+>> +
+>> +	memset(arsta, 0, sizeof(*arsta));
+>> +
+>> +	link_sta = wiphy_dereference(ah->hw->wiphy, sta->link[link_id]);
+>> +	if (!link_sta)
+>> +		return -EINVAL;
+>> +
+>> +	ether_addr_copy(arsta->addr, link_sta->addr);
+>> +
+>> +	/* logical index of the link sta in order of creation */
+>> +	arsta->link_idx = ahsta->num_peer++;
+>> +
+>> +	arsta->link_id = link_id;
+>> +	ahsta->links_map |= BIT(arsta->link_id);
 >
-> Add support to request counters and Transmission Power Control
-> (TPC) stats through HTT stats type 37. These stats give
-> information about counters like received packet count, CRC pass
-> count, error count, transmit abort count, etc., about counter reset
-> like reset cause, channel frequency, number and mode, channel flags,
-> etc., about TPC like transmit power scale, maximum transmit power,
-> gain cap, EIRP, etc.
->
-> Note: MCC firmware version -
-> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4 does not
-> support HTT stats type 37, i.e., the firmware does not respond to the
-> command requesting stats.
->
-> Sample output:
-> -------------
-> echo 37 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-> HTT_PHY_STATS_TLV:
-> bdf_nf_chain[0] = -92
-> bdf_nf_chain[1] = -94
-> bdf_nf_chain[2] = -94
-> bdf_nf_chain[3] = -93
-> .....
->
-> HTT_PHY_COUNTERS_TLV:
-> rx_ofdma_timing_err_cnt = 18068
-> rx_cck_fail_cnt = 0
-> mactx_abort_cnt = 2612
-> macrx_abort_cnt = 0
-> .....
->
-> HTT_PHY_RESET_STATS_TLV:
-> pdev_id = 0
-> chan_mhz = 0
-> chan_band_center_freq1 = 0
-> chan_band_center_freq2 = 0
-> .....
->
-> HTT_PHY_RESET_COUNTERS_TLV:
-> pdev_id = 0
-> cf_active_low_fail_cnt = 0
-> cf_active_low_pass_cnt = 0
-> phy_off_through_vreg_cnt = 0
-> .....
->
-> HTT_PHY_TPC_STATS_TLV:
-> pdev_id = 0
-> tx_power_scale = 0
-> tx_power_scale_db = 0
-> min_negative_tx_power = 0
-> .....
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
->
-> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
-> ---
->  .../wireless/ath/ath12k/debugfs_htt_stats.c   | 249 ++++++++++++++++++
->  .../wireless/ath/ath12k/debugfs_htt_stats.h   |  98 +++++++
->  2 files changed, 347 insertions(+)
->
-> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> index 8a4fe3cbb8dd..912fef503982 100644
-> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-> @@ -2625,6 +2625,240 @@ ath12k_htt_print_dlpager_stats_tlv(const void *tag_buf, u16 tag_len,
->  	stats_req->buf_len = len;
->  }
->  
-> +static void
-> +ath12k_htt_print_phy_stats_tlv(const void *tag_buf, u16 tag_len,
-> +			       struct debug_htt_stats_req *stats_req)
-> +{
-> +	const struct ath12k_htt_phy_stats_tlv *htt_stats_buf = tag_buf;
-> +	u8 *buf = stats_req->buf;
-> +	u32 len = stats_req->buf_len;
-> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-> +	u8 i;
+> would be better to put this after rcu_assign_pointer()?
 
-Reverse xmas. I'll stop commenting about that now.
+My thinking is that it's racy anyway so it doesn't really matter.
+links_map is not really protected properly right now but luckily there's
+only one function which accesses outside of the wiphy lock. My plan is
+to fix that in a later patch.
+
+>> +	arsta->arvif = arvif;
+>> +	arsta->ahsta = ahsta;
+>> +	arsta->state = IEEE80211_STA_NONE;
+>> +	wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
+>> +
+>> +	rcu_assign_pointer(ahsta->link[link_id], arsta);
+>> +
+>> +	synchronize_rcu();
+>
+> what are we waiting for here?
+
+That's a good question. I didn't analyse that thoroughly but I'm just
+making sure here that all readers have access to the new arsta before we
+return to mac80211. The delay shouldn't be that long anyway, I hope.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
