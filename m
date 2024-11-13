@@ -4,63 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B23C5D42BB7
-	for <ath12k@archiver.kernel.org>; Tue, 12 Nov 2024 17:37:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F419D597C2
+	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 01:01:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7Cr9+SCLWc91myjwgn7mTZl3FDsyePFWbEd0Uvz2xqE=; b=fWlB6y9ed0IERfiLiAe9zytoOd
-	jmU86wFy1NxzUetAJmFwoR5FOwatc9fZDugsBxL/y6uPuf7fxmeU7xaUI06vRlUYFOzBQs6l9ORjW
-	0mUtm6ry56R/ZF45HWhkl+c3uvjkTr0TdbmH4Ut7KjHuvmAJEtT6E0ok9Fm9sxvuVJyTpFUPioCuP
-	QJSGbUg+5SM3G4PUANRzLaM7Vz5KpznGtFC3Tdie7FtsteOeWqi5aVSDmzg1YXPyzlT4nq6tNkgIr
-	plw5OL+Ln2eXogHsvc1mkDKld8t9q3CLI2916ZHO0nxVYESg0GbViJLTxY8Vws/T2z+Dmrx7UEs9o
-	bcbzj04A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-ID:Subject:References:In-Reply-To:CC:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Bbd3U3/kb+UHiB2b7mf/WFn3/vSnGPGUueA8NvYkIUw=; b=s7ocz3JT6wKXh3i+CMHqCHeZOl
+	/11Nn4fEldqItjwZJXcuzL77f8Cru/5Zr/KXbdAVPHPnZWTJWPpWQ84lIEuEITPg7wnw9BOl4Gb+m
+	iAvuQJdbZWi5bYCOrD8eJQUkR1oxkLGe0JArOSPpY1z3UCxrVRrlCIR47sBuWasFvpA2Bm9R1nOcG
+	IFfrXF5f1qcHF/Jp2J4jGYxPseApR3vqC2dzzrlvsadrc36S+YUcHaZDseiamGl3nGGV5+kkHCc2D
+	D1tnRxGh9ntX6aBdMx0mc2Kbm3mULTm6TvzOKKOSEGmZDUw9+qTYpIPH0hgs1zCIpyV/h/D3DMl3p
+	qTvWu9+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tAupr-00000004Oh0-1vOd
+	id 1tB1lU-00000005TKz-3WEB
 	for ath12k@archiver.kernel.org;
-	Tue, 12 Nov 2024 17:37:51 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Wed, 13 Nov 2024 01:01:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tAuQV-00000004J18-3irP
+	id 1tB1lR-00000005TKF-2Msr
 	for ath12k@lists.infradead.org;
-	Tue, 12 Nov 2024 17:11:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B692BA41F26;
-	Tue, 12 Nov 2024 17:09:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C925EC4CED0;
-	Tue, 12 Nov 2024 17:11:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1731431498;
-	bh=ga3dKBc62Z4mi0etr/9wyQGY2vEKZ6lsaiEZ72u5JI8=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=II3dfFNf55ntWQTMR78MPvosfiLX76ErO3YcT8n/b9MwWm5/ROWyPt7eujU9/AdhO
-	 wAQZVaWZ+sqYwOVsP7FjAUH1dttPnVlTfb4eie7DAxE3Aj/J25NT5332cHtaxlj5v1
-	 5Bmi5/hvMJ6LcEd/Rufs3vP6Idx8q6PZm0q/w/9qJSu48XWim7TpLSVC7RUFeUrBfy
-	 HKnUJMfmgYwJBwjJk9KTkR/HQFtwH+rd46Ii5dTP1DnskMBJzBm+pM5+oV0zf+ZItL
-	 kshymC0+lvkpMs4rZSFFLf9CROamY2MANkdPp6FhtgoS2Jp9H/+Lmlaq7+SIJFcO3Z
-	 BiZ5Isczg6jrQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 2/8] wifi: ath12k: support change_sta_links() mac80211 op
-References: <20241106142617.660901-1-kvalo@kernel.org>
-	<20241106142617.660901-3-kvalo@kernel.org>
-	<e028f65c-9faa-46e0-ae34-35815a121ba9@quicinc.com>
-	<8734jw4ciw.fsf@kernel.org>
-Date: Tue, 12 Nov 2024 19:11:36 +0200
-In-Reply-To: <8734jw4ciw.fsf@kernel.org> (Kalle Valo's message of "Tue, 12 Nov
-	2024 18:55:51 +0200")
-Message-ID: <87ttcc2x87.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Wed, 13 Nov 2024 01:01:47 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMRUNr019976;
+	Wed, 13 Nov 2024 01:01:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Bbd3U3/kb+UHiB2b7mf/WFn3/vSnGPGUueA8NvYkIUw=; b=Wpj9VHHRhk9gyeSL
+	I6vFWRMQCL8AphYNgG/egAuTTpDj5rGhXaKWUyJXZu3AfRySwZ0BvjgyzpP/OQDw
+	6qxRPkCN2ASmu6GeZBWMdVVlLqXQk43qzMLRwQ5ZOFqxOY7kIFEmprSdxjV0/3pa
+	7VFnoyPrepA3YJj6y5VEshMKg/E8XPAv32yEUclWUesc4hkTi897EWnOe2AJd4X9
+	K+r/Xxre0d8LGh3bT8WMlhm+86Aa3F7gHtkwjzn4GTVrDlgYi4GGQ8x/UgknJtK5
+	oNGBdGNMsZkxKxUOkz0nDwjezZyMIuGYg/aKcAxzgN3M/0zwcE/hOZbUVDf+oF09
+	8tBUaw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42uc60dr5g-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Nov 2024 01:01:40 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD11dOT023708
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Nov 2024 01:01:39 GMT
+Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 12 Nov
+ 2024 17:01:39 -0800
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+To: <kvalo@kernel.org>, <jjohnson@kernel.org>,
+        Karol Przybylski
+	<karprzy7@gmail.com>
+CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <skhan@linuxfoundation.org>
+In-Reply-To: <20241105101132.374372-1-karprzy7@gmail.com>
+References: <20241105101132.374372-1-karprzy7@gmail.com>
+Subject: Re: [PATCH v3] wifi: ath12k: Fix for out-of bound access error
+Message-ID: <173145969935.2685813.8639859936545662512.b4-ty@quicinc.com>
+Date: Tue, 12 Nov 2024 17:01:39 -0800
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: NNq5O9uB3nIrmpp69lxQwJqNMcdp1wxM
+X-Proofpoint-ORIG-GUID: NNq5O9uB3nIrmpp69lxQwJqNMcdp1wxM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
+ phishscore=0 suspectscore=0 impostorscore=0 mlxlogscore=647 adultscore=0
+ lowpriorityscore=0 priorityscore=1501 clxscore=1015 mlxscore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2411130007
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_091140_014315_581617E6 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20241112_170145_753874_21F6E5B4 
+X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,61 +101,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Kalle Valo <kvalo@kernel.org> writes:
 
-> Baochen Qiang <quic_bqiang@quicinc.com> writes:
->
->> On 11/6/2024 10:26 PM, Kalle Valo wrote:
->>> From: Sriram R <quic_srirrama@quicinc.com>
->>> 
->>> Add ath12k_mac_op_change_sta_links() for adding and removing
->>> link station.
->>> 
->>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>> 
->>> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
->>> Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
->>> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
->>> ---
->>>  drivers/net/wireless/ath/ath12k/mac.c | 97 ++++++++++++++++++++++++++-
->>>  1 file changed, 96 insertions(+), 1 deletion(-)
->>> 
->>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->>> index 0ff886e4b3ed..c0cc4e51a4d1 100644
->>> --- a/drivers/net/wireless/ath/ath12k/mac.c
->>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->>> @@ -5572,6 +5572,101 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
->>>  	rcu_read_unlock();
->>>  }
->>>  
->>> +static struct ath12k_link_sta *
->>> +ath12k_mac_alloc_assign_link_sta(struct ath12k_hw *ah,
->>> +				 struct ath12k_sta *ahsta,
->>> +				 struct ath12k_vif *ahvif, u8 link_id)
->>> +{
->>> +	struct ath12k_link_sta *arsta;
->>> +	int ret;
->>> +
->>> +	lockdep_assert_wiphy(ah->hw->wiphy);
->>> +
->>> +	if (link_id >= IEEE80211_MLD_MAX_NUM_LINKS)
->>> +		return NULL;
->>> +
->>> +	arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
->>> +	if (arsta)
->>> +		return NULL;
->>> +
->>> +	arsta = kzalloc(sizeof(*arsta), GFP_KERNEL);
->>
->> kmalloc() is preferred as ath12k_mac_assign_link_sta() will do 'zero'?
->
-> That's true. Jeff, are you able to change this in the pending branch?
+On Tue, 05 Nov 2024 11:11:31 +0100, Karol Przybylski wrote:
+> Selfgen stats are placed in a buffer using print_array_to_buf_index() function.
+> Array length parameter passed to the function is too big, resulting in possible
+> out-of bound memory error.
+> Decreasing buffer size by one fixes faulty upper bound of passed array.
+> 
+> Discovered in coverity scan, CID 1600742 and CID 1600758
+> 
+> [...]
 
-Actually ignore that, I'll submit v2.
+Applied, thanks!
 
+[1/1] wifi: ath12k: Fix for out-of bound access error
+      commit: eb8c0534713865d190856f10bfc97cf0b88475b1
+
+Best regards,
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+Jeff Johnson <quic_jjohnson@quicinc.com>
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
