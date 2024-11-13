@@ -4,72 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ECA6D637A0
-	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 17:10:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87623D637A1
+	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 17:17:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=+39C0K8UjByVlmu5oBh60CtPNiX0fIvkF37afMsVgfQ=; b=SCpaB0xAPKihNSZJ3qAD/uywLb
-	VMsg9i3MCk1QaTICeb7qBtB9Ev78MnA7sQZmJonDAN1wbIK+MPSR8125OArH1HLji4wDYIsY/FaB4
-	kAz+ZOJqjc/1D4PwAYQFsjpC/7kcaStmutKlJWbubMIOzGRrYeGtReocb1DQ5H377cJnKS0cnpGON
-	S6kUmak4IOgEdVZ356JDRzVjzLHB9M6ffL2ZAbQpGpJ130IkNX3hhhIw5ViNnQErm8YlT2Iko+MCy
-	c2VpACmqGj0st49bwRXpASlLO5pQ6LVt5syqUINImAGSpaxStouDbly4akDEv+Qvnp0Dc3bdb5Qx0
-	ZbKdWl9w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=8g77kHJp6HNf9b386cn6ZLjFnZjpzGTHSTOQcBWu1m4=; b=qI5odQ52D6x7irllMqiiPVDFBT
+	eEP3d9XR0QafIC2stRdMV8mV3Q06nmtSqZ87VUpPYN5BYw+HPLA75x4hVlJtlbWDisHFwFIyHjGRc
+	IJF/Mlar/7QbLHG/RQLcXjn4l3/pzInUf7r07g8b3PxDQkPkZQwUW3x/uWs2vAHPoBA+hA/rQ4+fQ
+	lUfO+NNQv6vuPnNP28v1kkttlvLQHhQAD//bje03iOYTol2Mgbve0lBYPhFVSo5CVcsbWerMFHa0O
+	bchHCIG5pLP15oKYs6ipfESosbPLpiS9TSj6KiaRUbFxXSCv5f+iE/XHqpCparVzD0Kj1G45xFRlk
+	0zJbtS6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBGsa-00000007X79-07Q4
+	id 1tBGzY-00000007YK5-17vs
 	for ath12k@archiver.kernel.org;
-	Wed, 13 Nov 2024 17:10:08 +0000
-Received: from mgamail.intel.com ([198.175.65.19])
+	Wed, 13 Nov 2024 17:17:20 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBGsW-00000007X6n-0p5h
+	id 1tBGyf-00000007YEA-2hbR
 	for ath12k@lists.infradead.org;
-	Wed, 13 Nov 2024 17:10:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1731517805; x=1763053805;
-  h=date:from:to:cc:subject:message-id;
-  bh=s2m4tL5K7vpEWneL5ouJr09M4dKVpLMusADBv9iTMzQ=;
-  b=SWanpwghf8j6BxfHkNZFXRGXvh5wW/472I35jKNY9hQ1H5z/y3lCuy5+
-   HpbSvEGwDRdtSH3TPePlLOgsScL1EKgr75WEsVzs46W2iUOX/sEbhsYrl
-   jXQEP13FFtLGq0GlpV5GXZdLiDOUxqDSyNWmF9cOLdrMHaI0M4ARj9hrC
-   /yDXUtqxKdYeZwS8ARqqGWVFjN8qgDP8MDN4cdrNv1Hfx/FrB004tV7Et
-   /WmgngeEZPF7T36E6kHdaPLwpm30VmdIVsrvpvsW93YefzfQhZcMeQrIP
-   0+Tj8oTlpmW1wlxoeQ5/llFptcYURZYvGeS5qDSX5S/V+anFQUpzjHzol
-   w==;
-X-CSE-ConnectionGUID: E++zy4TIT2mzDvYaXV5D4g==
-X-CSE-MsgGUID: Go4+l1paR7GyEry5vZd6qw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="31275851"
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="31275851"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2024 09:10:03 -0800
-X-CSE-ConnectionGUID: Mq64v2OaRoWX8ioSGaLqEQ==
-X-CSE-MsgGUID: LOp1gFxkSGOzeMzYde9u2A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,151,1728975600"; 
-   d="scan'208";a="118745430"
-Received: from lkp-server01.sh.intel.com (HELO 80bd855f15b3) ([10.239.97.150])
-  by orviesa002.jf.intel.com with ESMTP; 13 Nov 2024 09:10:02 -0800
-Received: from kbuild by 80bd855f15b3 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tBGsR-0000Zt-0u;
-	Wed, 13 Nov 2024 17:09:59 +0000
-Date: Thu, 14 Nov 2024 01:09:19 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-next] BUILD SUCCESS
- 78e154d42f2c72905fe66a400847e1b2b101b7b2
-Message-ID: <202411140113.F2T9ROup-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Wed, 13 Nov 2024 17:16:27 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ADH1OrX021966;
+	Wed, 13 Nov 2024 17:16:21 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	8g77kHJp6HNf9b386cn6ZLjFnZjpzGTHSTOQcBWu1m4=; b=RuREIlFY1iZhosun
+	IAbc2Lmj1IMoi+DB+68FDTUf9S13WvMZ4rcsV1tLtq9O6yDFgteSRsuZu0gceIlt
+	pICKky1wO/b0EhujrANwrzciXfX3rqoL9AahuF63xkE/pRmFAW/j6qQODyJnkpPr
+	IF1oHFqb0y2+2u9lJCFbmRBykD28qglRFWDuB9uLDvypZWFzriRZ4RG3rAnwWg2A
+	bqtzXUGyYyTd4NQNHwrFYRid/smAVNoba1VZlIdCYT+u4BoQlhg2gF3aKkZgUSZF
+	DIlPbwPCwzjLmt4s9QLxKutaW7WzCbUNfdYZ9ikS9ldaiMraPKA4t148crgQ74pR
+	fZmsiA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42vsg5189m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Nov 2024 17:16:20 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4ADHGAOv007511
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 Nov 2024 17:16:10 GMT
+Received: from [10.48.243.207] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 13 Nov
+ 2024 09:16:09 -0800
+Message-ID: <76d0d0d3-d21b-4ce8-b6be-9bfc1cefa748@quicinc.com>
+Date: Wed, 13 Nov 2024 09:16:08 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [ath:master 2/4] drivers/net/ethernet/intel/ice/ice_ptp.c:165:15:
+ error: implicit declaration of function 'ice_read_sma_ctrl'; did you mean
+ 'ice_read_sr_word'?
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+To: Kalle Valo <kvalo@kernel.org>, kernel test robot <lkp@intel.com>
+CC: Jakub Kicinski <kuba@kernel.org>, <oe-kbuild-all@lists.linux.dev>,
+        Jeff
+ Johnson <jjohnson@kernel.org>, <ath12k@lists.infradead.org>
+References: <202411131838.DE0FWg8Q-lkp@intel.com> <87ldxn2yes.fsf@kernel.org>
+ <e571606e-b472-4a0b-a293-6716957649f7@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <e571606e-b472-4a0b-a293-6716957649f7@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: O7FKMSoWARlOEPCxK3flpHgdfS4kCSDM
+X-Proofpoint-ORIG-GUID: O7FKMSoWARlOEPCxK3flpHgdfS4kCSDM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ priorityscore=1501 phishscore=0 malwarescore=0 lowpriorityscore=0
+ mlxscore=0 mlxlogscore=999 impostorscore=0 bulkscore=0 adultscore=0
+ suspectscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411130144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241113_091004_324492_3C6F7062 
-X-CRM114-Status: UNSURE (   3.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241113_091625_748200_EF63C522 
+X-CRM114-Status: GOOD (  11.94  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,147 +103,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
-branch HEAD: 78e154d42f2c72905fe66a400847e1b2b101b7b2  wifi: ath11k: Fix unexpected return buffer manager error for WCN6750/WCN6855
+On 11/13/2024 8:06 AM, Jeff Johnson wrote:
+> On 11/13/2024 2:58 AM, Kalle Valo wrote:
+>> kernel test robot <lkp@intel.com> writes:
+>>
+>>> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
+>>> head:   fc6f018eda7f9054e427f731db1e8b200f22873c
+>>> commit: 33e2bcda33620fc43cc948627be525ddb342c446 [2/4] Merge branch 'ath-current'
+>>> config: arc-allyesconfig
+>>> (https://download.01.org/0day-ci/archive/20241113/202411131838.DE0FWg8Q-lkp@intel.com/config)
+>>> compiler: arceb-elf-gcc (GCC) 13.2.0
+>>> reproduce (this is a W=1 build):
+>>> (https://download.01.org/0day-ci/archive/20241113/202411131838.DE0FWg8Q-lkp@intel.com/reproduce)
+>>>
+>>> If you fix the issue in a separate patch/commit (i.e. not just a new version of
+>>> the same patch/commit), kindly add following tags
+>>> | Reported-by: kernel test robot <lkp@intel.com>
+>>> | Closes: https://lore.kernel.org/oe-kbuild-all/202411131838.DE0FWg8Q-lkp@intel.com/
+>>>
+>>> All error/warnings (new ones prefixed by >>):
+>>>
+>>>    drivers/net/ethernet/intel/ice/ice_ptp.c: In function 'ice_ptp_set_sma_cfg':
+>>>>> drivers/net/ethernet/intel/ice/ice_ptp.c:165:15: error: implicit
+>>>>> declaration of function 'ice_read_sma_ctrl'; did you mean
+>>>>> 'ice_read_sr_word'? [-Werror=implicit-function-declaration]
+>>>      165 |         err = ice_read_sma_ctrl(&pf->hw, &data);
+>>>          |               ^~~~~~~~~~~~~~~~~
+>>>          |               ice_read_sr_word
+>>>>> drivers/net/ethernet/intel/ice/ice_ptp.c:187:16: error: implicit
+>>>>> declaration of function 'ice_write_sma_ctrl'; did you mean
+>>>>> 'ice_write_intrl'? [-Werror=implicit-function-declaration]
+>>>      187 |         return ice_write_sma_ctrl(&pf->hw, data);
+>>>          |                ^~~~~~~~~~~~~~~~~~
+>>>          |                ice_write_intrl
+>>
+>> Our ath.git master branch is an integration branch of other branches and
+>> it's not sent forward to other trees. Looks like we did a merge error in
+> 
+> By "we" Kalle means me. :)
+> I did a bad conflict resolution and have locally validated the correct
+> resolution and will be updating ath/{main,master} shortly
+> 
+>> the master branch but no action needed as it's only within ath.git.
+>> We'll try to fix it the next time we update the master branch.
 
-elapsed time: 931m
+this issue should now be resolved
 
-configs tested: 127
-configs skipped: 7
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    clang-20
-alpha                            allyesconfig    gcc-14.2.0
-alpha                               defconfig    gcc-14.2.0
-arc                              allmodconfig    clang-20
-arc                              allmodconfig    gcc-13.2.0
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    clang-20
-arc                              allyesconfig    gcc-13.2.0
-arc                          axs103_defconfig    clang-20
-arc                                 defconfig    gcc-14.2.0
-arm                              allmodconfig    clang-20
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    gcc-14.2.0
-arm                              allyesconfig    clang-20
-arm                              allyesconfig    gcc-14.2.0
-arm                         at91_dt_defconfig    clang-20
-arm                                 defconfig    gcc-14.2.0
-arm                        spear3xx_defconfig    clang-20
-arm64                            allmodconfig    clang-20
-arm64                             allnoconfig    gcc-14.2.0
-arm64                               defconfig    gcc-14.2.0
-csky                             alldefconfig    clang-20
-csky                              allnoconfig    gcc-14.2.0
-csky                                defconfig    clang-20
-csky                                defconfig    gcc-14.2.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    gcc-14.2.0
-hexagon                          allyesconfig    clang-20
-hexagon                             defconfig    gcc-14.2.0
-i386                             allmodconfig    clang-19
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    clang-19
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    clang-19
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20241113    clang-19
-i386        buildonly-randconfig-002-20241113    clang-19
-i386        buildonly-randconfig-003-20241113    clang-19
-i386        buildonly-randconfig-004-20241113    clang-19
-i386        buildonly-randconfig-005-20241113    clang-19
-i386        buildonly-randconfig-006-20241113    clang-19
-i386                                defconfig    clang-19
-i386                  randconfig-001-20241113    clang-19
-i386                  randconfig-002-20241113    clang-19
-i386                  randconfig-003-20241113    clang-19
-i386                  randconfig-004-20241113    clang-19
-i386                  randconfig-005-20241113    clang-19
-i386                  randconfig-006-20241113    clang-19
-i386                  randconfig-011-20241113    clang-19
-i386                  randconfig-012-20241113    clang-19
-i386                  randconfig-013-20241113    clang-19
-i386                  randconfig-014-20241113    clang-19
-i386                  randconfig-015-20241113    clang-19
-i386                  randconfig-016-20241113    clang-19
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch                           defconfig    gcc-14.2.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-m68k                          atari_defconfig    clang-20
-m68k                                defconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-microblaze                          defconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-mips                           jazz_defconfig    clang-20
-mips                         rt305x_defconfig    clang-20
-mips                   sb1250_swarm_defconfig    clang-20
-nios2                             allnoconfig    gcc-14.2.0
-nios2                               defconfig    gcc-14.2.0
-openrisc                          allnoconfig    clang-20
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-openrisc                            defconfig    gcc-12
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    clang-20
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                              defconfig    gcc-12
-parisc64                            defconfig    gcc-14.2.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    clang-20
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-20
-powerpc                          allyesconfig    gcc-14.2.0
-powerpc                     asp8347_defconfig    clang-20
-powerpc                     redwood_defconfig    clang-20
-riscv                            allmodconfig    clang-20
-riscv                            allmodconfig    gcc-14.2.0
-riscv                             allnoconfig    clang-20
-riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-20
-riscv                            allyesconfig    gcc-14.2.0
-riscv                               defconfig    gcc-12
-riscv             nommu_k210_sdcard_defconfig    clang-20
-s390                             allmodconfig    clang-20
-s390                             allmodconfig    gcc-14.2.0
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.2.0
-s390                                defconfig    gcc-12
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                                  defconfig    gcc-12
-sh                        dreamcast_defconfig    clang-20
-sparc                            allmodconfig    gcc-14.2.0
-sparc64                             defconfig    gcc-12
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-17
-um                                allnoconfig    clang-20
-um                               allyesconfig    clang-20
-um                               allyesconfig    gcc-12
-um                                  defconfig    gcc-12
-um                             i386_defconfig    gcc-12
-um                           x86_64_defconfig    clang-20
-um                           x86_64_defconfig    gcc-12
-x86_64                            allnoconfig    clang-19
-x86_64                           allyesconfig    clang-19
-x86_64                              defconfig    clang-19
-x86_64                              defconfig    gcc-11
-x86_64                                  kexec    clang-19
-x86_64                                  kexec    gcc-12
-x86_64                               rhel-8.3    gcc-12
-xtensa                            allnoconfig    gcc-14.2.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
