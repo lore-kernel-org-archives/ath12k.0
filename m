@@ -4,89 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F419D597C2
-	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 01:01:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CE6BD597C5
+	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 02:33:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-ID:Subject:References:In-Reply-To:CC:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Bbd3U3/kb+UHiB2b7mf/WFn3/vSnGPGUueA8NvYkIUw=; b=s7ocz3JT6wKXh3i+CMHqCHeZOl
-	/11Nn4fEldqItjwZJXcuzL77f8Cru/5Zr/KXbdAVPHPnZWTJWPpWQ84lIEuEITPg7wnw9BOl4Gb+m
-	iAvuQJdbZWi5bYCOrD8eJQUkR1oxkLGe0JArOSPpY1z3UCxrVRrlCIR47sBuWasFvpA2Bm9R1nOcG
-	IFfrXF5f1qcHF/Jp2J4jGYxPseApR3vqC2dzzrlvsadrc36S+YUcHaZDseiamGl3nGGV5+kkHCc2D
-	D1tnRxGh9ntX6aBdMx0mc2Kbm3mULTm6TvzOKKOSEGmZDUw9+qTYpIPH0hgs1zCIpyV/h/D3DMl3p
-	qTvWu9+Q==;
+	bh=4dZ68sUjASBve/nu1HZkyHCc9jcE9aOR+f/w4xyAF3Y=; b=nIXS18TOyMmlWCuyYWkX/RhR5v
+	EtCBqHy6PDosSML/1YiKi1AucWbYrr5lbvyyDuMMPhj3ZY6yZ+efUMa14/0UQ16euexZ3b7mpNrdQ
+	o0S5R1vTnYLs0L45QPxZ7YQcfgyPOkIkTzOlOArUl756ddu1ZsfsPPvm/+o8eq5tKTXmpgnU8U9XR
+	B5nBzfJ/EGJnoGcVWIvwqwFLjtV66jUllL1pqJ4lsqdV4lvR+/4f7pCNBCBCLDNbdXfvMWlxTeYF/
+	thooBY5FDWyoJxP2UkLKKSZbuKH3XO1ifGkfIkWn8nEqnza8Ooa/FTJjOHZAoE+XQ2bWAX+izWOLt
+	AD7RBIYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB1lU-00000005TKz-3WEB
+	id 1tB3CW-00000005bny-2yui
 	for ath12k@archiver.kernel.org;
-	Wed, 13 Nov 2024 01:01:48 +0000
+	Wed, 13 Nov 2024 02:33:48 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB1lR-00000005TKF-2Msr
+	id 1tB3CU-00000005bna-0MAV
 	for ath12k@lists.infradead.org;
-	Wed, 13 Nov 2024 01:01:47 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMRUNr019976;
-	Wed, 13 Nov 2024 01:01:40 GMT
+	Wed, 13 Nov 2024 02:33:47 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMRqCo015276;
+	Wed, 13 Nov 2024 02:33:42 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Bbd3U3/kb+UHiB2b7mf/WFn3/vSnGPGUueA8NvYkIUw=; b=Wpj9VHHRhk9gyeSL
-	I6vFWRMQCL8AphYNgG/egAuTTpDj5rGhXaKWUyJXZu3AfRySwZ0BvjgyzpP/OQDw
-	6qxRPkCN2ASmu6GeZBWMdVVlLqXQk43qzMLRwQ5ZOFqxOY7kIFEmprSdxjV0/3pa
-	7VFnoyPrepA3YJj6y5VEshMKg/E8XPAv32yEUclWUesc4hkTi897EWnOe2AJd4X9
-	K+r/Xxre0d8LGh3bT8WMlhm+86Aa3F7gHtkwjzn4GTVrDlgYi4GGQ8x/UgknJtK5
-	oNGBdGNMsZkxKxUOkz0nDwjezZyMIuGYg/aKcAxzgN3M/0zwcE/hOZbUVDf+oF09
-	8tBUaw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42uc60dr5g-1
+	4dZ68sUjASBve/nu1HZkyHCc9jcE9aOR+f/w4xyAF3Y=; b=XBJbvMw4Zb+w8ToI
+	S3QQ+n9KP9bCbiSBQe3LQjvet12KcWnJlaBOp0iY388fKcFqL8LVg9dSFJO4+fRo
+	5zCQppHLMhNcJ3bcfFxd8+encJYcxDWJUCqlIGoTmh0sNtqkm81Zkkabo8Wz3Amn
+	2eLhaFfkCyPy2pfcJmMZPd1rGVF4gnQgGfwNNjxxEvwahbPEqOW163bKjnTn0txq
+	VUxf2AWdF6rb++xcopU9ldQl3Ik8cEJ5Rfg6K+J66FQctyZsd4mADuT3S/MyIEeG
+	x1Z9Vf0q0cFAVLUuiMK/pOuTE2uUJXhmyqnl9ig12GyMGZwWJXomUKr/ebTBM3Be
+	7U2WfA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42v1vftyvd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 01:01:40 +0000 (GMT)
+	Wed, 13 Nov 2024 02:33:42 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD11dOT023708
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD2XfvB013027
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 01:01:39 GMT
-Received: from [169.254.0.1] (10.49.16.6) by nalasex01a.na.qualcomm.com
+	Wed, 13 Nov 2024 02:33:41 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 12 Nov
- 2024 17:01:39 -0800
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-To: <kvalo@kernel.org>, <jjohnson@kernel.org>,
-        Karol Przybylski
-	<karprzy7@gmail.com>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <skhan@linuxfoundation.org>
-In-Reply-To: <20241105101132.374372-1-karprzy7@gmail.com>
-References: <20241105101132.374372-1-karprzy7@gmail.com>
-Subject: Re: [PATCH v3] wifi: ath12k: Fix for out-of bound access error
-Message-ID: <173145969935.2685813.8639859936545662512.b4-ty@quicinc.com>
-Date: Tue, 12 Nov 2024 17:01:39 -0800
+ 2024 18:33:40 -0800
+Message-ID: <ffa411d1-89d3-4278-9f62-828c27c0afe0@quicinc.com>
+Date: Wed, 13 Nov 2024 10:33:38 +0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/8] wifi: ath12k: Add MLO station state change handling
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20241106142617.660901-1-kvalo@kernel.org>
+ <20241106142617.660901-2-kvalo@kernel.org>
+ <f75d7222-514b-4c6f-985d-e6ffd67e317a@quicinc.com>
+ <877c984eym.fsf@kernel.org>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <877c984eym.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: NNq5O9uB3nIrmpp69lxQwJqNMcdp1wxM
-X-Proofpoint-ORIG-GUID: NNq5O9uB3nIrmpp69lxQwJqNMcdp1wxM
+X-Proofpoint-GUID: sEhvNHcIUkmfGBAN67PA7MK2rGGekLve
+X-Proofpoint-ORIG-GUID: sEhvNHcIUkmfGBAN67PA7MK2rGGekLve
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- phishscore=0 suspectscore=0 impostorscore=0 mlxlogscore=647 adultscore=0
- lowpriorityscore=0 priorityscore=1501 clxscore=1015 mlxscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2411130007
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
+ suspectscore=0 spamscore=0 clxscore=1015 phishscore=0 bulkscore=0
+ mlxlogscore=867 malwarescore=0 priorityscore=1501 lowpriorityscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411130020
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_170145_753874_21F6E5B4 
-X-CRM114-Status: UNSURE (   6.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241112_183346_276633_B9424B30 
+X-CRM114-Status: GOOD (  16.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,23 +102,70 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 05 Nov 2024 11:11:31 +0100, Karol Przybylski wrote:
-> Selfgen stats are placed in a buffer using print_array_to_buf_index() function.
-> Array length parameter passed to the function is too big, resulting in possible
-> out-of bound memory error.
-> Decreasing buffer size by one fixes faulty upper bound of passed array.
+
+On 11/13/2024 12:03 AM, Kalle Valo wrote:
+> Baochen Qiang <quic_bqiang@quicinc.com> writes:
 > 
-> Discovered in coverity scan, CID 1600742 and CID 1600758
+>> On 11/6/2024 10:26 PM, Kalle Valo wrote:
+>>> +static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+>>> +				      struct ath12k_sta *ahsta,
+>>> +				      struct ath12k_link_sta *arsta,
+>>> +				      struct ath12k_vif *ahvif,
+>>> +				      u8 link_id)
+>>> +{
+>>> +	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(ahsta);
+>>> +	struct ieee80211_link_sta *link_sta;
+>>> +	struct ath12k_link_vif *arvif;
+>>> +
+>>> +	lockdep_assert_wiphy(ah->hw->wiphy);
+>>> +
+>>> +	if (!arsta || link_id >= IEEE80211_MLD_MAX_NUM_LINKS)
+>>> +		return -EINVAL;
+>>> +
+>>> +	arvif = wiphy_dereference(ah->hw->wiphy, ahvif->link[link_id]);
+>>> +	if (!arvif)
+>>> +		return -EINVAL;
+>>> +
+>>> +	memset(arsta, 0, sizeof(*arsta));
+>>> +
+>>> +	link_sta = wiphy_dereference(ah->hw->wiphy, sta->link[link_id]);
+>>> +	if (!link_sta)
+>>> +		return -EINVAL;
+>>> +
+>>> +	ether_addr_copy(arsta->addr, link_sta->addr);
+>>> +
+>>> +	/* logical index of the link sta in order of creation */
+>>> +	arsta->link_idx = ahsta->num_peer++;
+>>> +
+>>> +	arsta->link_id = link_id;
+>>> +	ahsta->links_map |= BIT(arsta->link_id);
+>>
+>> would be better to put this after rcu_assign_pointer()?
 > 
-> [...]
+> My thinking is that it's racy anyway so it doesn't really matter.
+> links_map is not really protected properly right now but luckily there's
+> only one function which accesses outside of the wiphy lock. My plan is
+> to fix that in a later patch.
+> 
+>>> +	arsta->arvif = arvif;
+>>> +	arsta->ahsta = ahsta;
+>>> +	arsta->state = IEEE80211_STA_NONE;
+>>> +	wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
+>>> +
+>>> +	rcu_assign_pointer(ahsta->link[link_id], arsta);
+>>> +
+>>> +	synchronize_rcu();
+>>
+>> what are we waiting for here?
+> 
+> That's a good question. I didn't analyse that thoroughly but I'm just
+> making sure here that all readers have access to the new arsta before we
+> return to mac80211. 
+why would readers have to access arsta BEFORE returning to mac80211? any potential race conditions?
 
-Applied, thanks!
+and even if it is necessary, how could synchronize_rcu() guarantee that? synchronize_rcu() is used to make sure all readers have exited from RCU read critical section, I don;t see how it could make sure a newly assigned entry get accessed.
 
-[1/1] wifi: ath12k: Fix for out-of bound access error
-      commit: eb8c0534713865d190856f10bfc97cf0b88475b1
-
-Best regards,
--- 
-Jeff Johnson <quic_jjohnson@quicinc.com>
+> The delay shouldn't be that long anyway, I hope.
+> 
 
 
