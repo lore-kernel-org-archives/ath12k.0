@@ -4,89 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BD8CD597C7
-	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 02:55:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAE86D41C0C
+	for <ath12k@archiver.kernel.org>; Wed, 13 Nov 2024 07:27:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=a8YAhT/d7aoNiwh7l8uTfhTu93H32l1fd0Xwb9JY0UI=; b=RgmUS8aR0GIEc2ASyCM51ZcI2y
-	wekzMQlPwIezOid3dadsHG7yiayTnGSLAHZJWaagukN87GsUL6AEg+8QL9/SC3GGuQQi4fLByb+uS
-	OrJHj2unWPBMAhx5szuTZWSOfDLNulthoAtg0oKz86ssyGrONJOINNlt5+PAGDkfrpVGbp6/dEV++
-	5RP3s6gwep1JQr69p74C1PIVsjjncj+i6VYmExPfWK577gPshJHnZw10wrO8ppzlZdrtulG8H+ChP
-	5UxEiaM1hujX9MVXuKiY8fDGZHqRWkb0nUyUGM2Ws4U2tg4mrzRNqD0ITuLFZaLz8fgEzCsC8xt55
-	3wVuUZsg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=KZAyG11EdJUGSuhGLQvC3o1xwxtgEsFxh4H3x1gsxlM=; b=Kh465IU3LYK3OKBFcLMLmmMlMO
+	OieASHK1MsH3rdPGTcGwyqT1Resib4CcFHwhl3ydel8mQHnR2aEOt48rBK6WFMISkUSIg7fhV+hV2
+	YuVU0rsLwYDP4abm/pzeeLV0qz02CX4RYesCWBIOC0LHeEFzWH5eBldpkwwg9pg11yWM1VzlRgAzl
+	Dqn5tZchpRh07aGYlKrr371bAz+1vVSJvclGpJS7e0sjlQ6+JElv6DK+gxruPzWlWcekmDb7sUBuk
+	CsqaHpK7YOQGLAHaGNZRXgJmbUs6yaLgXeS/UW/mLA8GJ7jbJeVS3YYznCUNrsosvZfwLfxeL132/
+	7fmj9QdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB3XZ-00000005d9Z-3StZ
+	id 1tB7mj-00000005zcx-2Zfr
 	for ath12k@archiver.kernel.org;
-	Wed, 13 Nov 2024 02:55:33 +0000
+	Wed, 13 Nov 2024 07:27:29 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB3XW-00000005d9C-3eZa
+	id 1tB7mh-00000005zcQ-0m7K
 	for ath12k@lists.infradead.org;
-	Wed, 13 Nov 2024 02:55:32 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACNU1QL028778;
-	Wed, 13 Nov 2024 02:55:27 GMT
+	Wed, 13 Nov 2024 07:27:28 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AD70hPr019458;
+	Wed, 13 Nov 2024 07:27:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	a8YAhT/d7aoNiwh7l8uTfhTu93H32l1fd0Xwb9JY0UI=; b=UOlQcBfPYxPPiNNb
-	G/vnAp/b5xSiC9+lToXa4ari1ykZ79GzpmuDHas4rlAG1JzlyrxrjA1ilcVZoILi
-	PObzpoSK6XVtO+EombL6Se5gU9ihaNCFTU05ekw6gNNRojwB5tPR4FX5zqP2SERO
-	luGsCMY6yFi0kmZHdkHmJ+MRfEuQcufHSfqmmzFOTwSSr//idi9QR0MjEgJe3+9Y
-	jql1wN1JKZXG8FMprZJzHdf+snqTwJG11TPLBAxDOBY/l/+xS77eLmMZTZ/83NSf
-	2TDk5XFbfZ9YUYk0qr36I9+UmJz5pmkztzZMp37Zk5mwI6w5C5KDbC3vuCgoQaT0
-	7+fxzw==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42vgqqrckn-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=KZAyG11EdJUGSuhGLQvC3o
+	1xwxtgEsFxh4H3x1gsxlM=; b=EYfQhEdUl1NQEUHG6elzbcMVpldsEX1nFOFe8Q
+	T8o7zE/XgUw33JKliILrKQiU8gPXZoSU2IQYKmIIAtFsuIK+NXzwFNJizu+yJoaV
+	/fwWJlW7rzJE7ukhBLEaruiO8O6sxTbLzZyVkTNnUXsddqwqRzymKCx8jZsfB9D9
+	jBlBrCqD8ok+DzcHr3voWtNqWEb2rEoFzdQYllNHNzcdfdQVGEqXjcksCAjoz/wM
+	Ax7+GiZBHHPjTi7B583PuiBAXsj2R4E4DIAptEv+Fpl//Be+PD5LEHbc1VfYuDow
+	vzT5r9aoBnpUGqrqz3z7YS+2Xk+YweFp5NVAvh4G45PSaBEQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42vqbm027k-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 02:55:26 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD2tPEZ007816
+	Wed, 13 Nov 2024 07:27:25 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD7ROXc018012
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 02:55:25 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 12 Nov
- 2024 18:55:24 -0800
-Message-ID: <97f3f465-6ebd-4ca1-b672-4c8c7f42220d@quicinc.com>
-Date: Wed, 13 Nov 2024 10:55:22 +0800
+	Wed, 13 Nov 2024 07:27:24 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 12 Nov 2024 23:27:22 -0800
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH v5 0/4] wifi: ath12k: Support Pager, Counter, SoC, Transmit Rate Stats
+Date: Wed, 13 Nov 2024 12:57:03 +0530
+Message-ID: <20241113072707.3377341-1-quic_rdevanat@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/8] wifi: ath12k: Add MLO station state change handling
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20241106142617.660901-1-kvalo@kernel.org>
- <20241106142617.660901-2-kvalo@kernel.org>
- <2e706d58-5d83-4867-9963-c62441cdd4da@quicinc.com>
- <87y11o2x9h.fsf@kernel.org>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <87y11o2x9h.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: KSyLEBddQT0RtKOBO4QaPUyyeRuinKW6
-X-Proofpoint-GUID: KSyLEBddQT0RtKOBO4QaPUyyeRuinKW6
+X-Proofpoint-ORIG-GUID: 4knHXkPX3By8L99I0G1D_L6r-mLPNelZ
+X-Proofpoint-GUID: 4knHXkPX3By8L99I0G1D_L6r-mLPNelZ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 clxscore=1015
- impostorscore=0 lowpriorityscore=0 suspectscore=0 spamscore=0
- priorityscore=1501 phishscore=0 malwarescore=0 mlxlogscore=832
- adultscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411130024
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ phishscore=0 impostorscore=0 priorityscore=1501 mlxlogscore=995
+ spamscore=0 bulkscore=0 suspectscore=0 malwarescore=0 adultscore=0
+ clxscore=1015 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411130064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_185531_071827_2733461B 
-X-CRM114-Status: GOOD (  20.60  )
+X-CRM114-CacheID: sfid-20241112_232727_359697_B39858CB 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,90 +97,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Add support to request HTT stats type 36, 37, 38 and 40 from firmware.
+These stat types give downlink pager stats, counter and TPC stats, SoC
+common stats and Transmit PER rate stats, respectively.
+
+v5:
+ - Addressed Kalle's comments pertaining to variable declaration order.
+v4:
+ - Addressed Jeff's comments pertaining to data type conversions.
+v3:
+ - Added macros to fix compilation issues.
+v2:
+ - Removed dependencies. No change in code.
+
+Dinesh Karthikeyan (4):
+  wifi: ath12k: Support Downlink Pager Stats
+  wifi: ath12k: Support phy counter and TPC stats
+  wifi: ath12k: Support SoC Common Stats
+  wifi: ath12k: Support Transmit PER Rate Stats
+
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 629 +++++++++++++++++-
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 204 +++++-
+ 2 files changed, 830 insertions(+), 3 deletions(-)
 
 
-On 11/13/2024 1:10 AM, Kalle Valo wrote:
-> Baochen Qiang <quic_bqiang@quicinc.com> writes:
-> 
->> On 11/6/2024 10:26 PM, Kalle Valo wrote:
->>> +static void ath12k_mac_unassign_link_sta(struct ath12k_hw *ah,
->>> +					 struct ath12k_sta *ahsta,
->>> +					 u8 link_id)
->>> +{
->>> +	lockdep_assert_wiphy(ah->hw->wiphy);
->>> +
->>> +	ahsta->links_map &= ~BIT(link_id);
->>> +	rcu_assign_pointer(ahsta->link[link_id], NULL);
->>> +
->>> +	synchronize_rcu();
->>
->> this looks strange: generally we call synchronize_rcu() to wait for
->> any RCU readers to finish, such that we can then safely free
->> something. but here we do nothing ...
-> 
-> Same comment as in the other email, this is to make sure that we don't
-> continue the mac80211 call flow before all readers have the new value.
-> Is that a problem? And we can always optimise later.
-here this is a different situation from that in the other email you referred to: we are clearing an RCU pointer here, so a synchronize_rcu() is necessary for the purpose of safely freeing arsta. But ideally the code flow should look like:
-
-	rcu_assign_pointer(ahsta->link[link_id], NULL)	
-	synchronize_rcu()
-	if (arsta != &ahsta->deflink)
-		kfree(arsta);
-
-However the patch is doing nothing after synchronize_rcu().
-
-I know the actual free happens immediately after ath12k_mac_unassign_link_sta() returns, so there should be no problem. But it really looks odd to get them split.
-
-> 
->>> +static void ath12k_mac_free_unassign_link_sta(struct ath12k_hw *ah,
->>> +					      struct ath12k_sta *ahsta,
->>> +					      u8 link_id)
->>> +{
->>> +	struct ath12k_link_sta *arsta;
->>> +
->>> +	lockdep_assert_wiphy(ah->hw->wiphy);
->>> +
->>> +	if (WARN_ON(link_id >= IEEE80211_MLD_MAX_NUM_LINKS))
->>> +		return;
->>> +
->>> +	arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
->>> +
->>> +	if (WARN_ON(!arsta))
->>> +		return;
->>> +
->>> +	ath12k_mac_unassign_link_sta(ah, ahsta, link_id);
->>> +
->>> +	arsta->link_id = ATH12K_INVALID_LINK_ID;
->>> +	arsta->ahsta = NULL;
->>> +	arsta->arvif = NULL;
->>
->> if arsta is not deflink and would be freed, can we avoid these
->> cleanup?
-> 
-> I think that's something we can cleanup later if needed. Sure, it's
-> extra assignments but it's not really doing any harm.
-exactly, but ideally we should avoid unnecessary effort if possible.
-
-> 
->>> +	if (arsta != &ahsta->deflink)
->>> +		kfree(arsta);
->>
->> I know the actual free happens here, but why split them?
-> 
-> You mean why have a separate function ath12k_mac_unassign_link_sta() and
-> instead just have all code the in ath12k_mac_free_unassign_link_sta()?
-yes. such that we can have synchronize_rcu() and kfree() located together.
-
-> 
->> these two hunks give me the impression that we may (in the future?)
->> have cases to call ath12k_mac_unassign_link_sta() alone somewhere else
->> rather than directly calling ath12k_mac_free_unassign_link_sta(). am I
->> feeling right? what are those cases?
-> 
-> At least I'm not aware of anything else calling
-> ath12k_mac_unassign_link_sta(). So I'll just remove that function and
-> move the code to ath12k_mac_free_unassign_link_sta().
-> 
+base-commit: fc6f018eda7f9054e427f731db1e8b200f22873c
+-- 
+2.25.1
 
 
