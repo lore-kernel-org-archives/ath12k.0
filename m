@@ -4,66 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9657D78779
-	for <ath12k@archiver.kernel.org>; Thu, 21 Nov 2024 14:51:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25986D7877B
+	for <ath12k@archiver.kernel.org>; Thu, 21 Nov 2024 15:58:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6xPmND0lF4pfvvWChQagcPeHJ7yws0udHjev7G3eH1w=; b=XvSOfciTFxhzlWEWsXGzYDs479
-	yyhNqORny+ytxbx535pPK62eovJBVccmRcIZhMnwI6tJKiR9g1+nkWQpmMwrfQVBri/x0kSr7NyNR
-	iQJewdipxJ54BJ4c9eLSn0okik/tXv0IgbJ7RFAiF3Tf9/Cm2YD7OsqkF6h5n73Kh0ZoEt2OqVJ7z
-	8QwStuLGEa2KjgQYD1shyy29qeLLhITUEaw9HvDRDOQFh2cCI543/4N0OksXkl5f6ODAmFzdUz9rd
-	DHElF+3IrwxNCMf9JIup+anW3PLN/z2jaDEGrrDaxnrDlunT4ROW0qu05uVTeJSiibx7naFOBQqbL
-	tNTHcNzg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=TlJSq0GhrZodzi2I11xWxy+QueD0cudS2uZyzvk5/r0=; b=GawLzhhFfxKwLPrSlarlchR7OQ
+	rAbFLfXb6EP6KZIUjNb1+G15ygFnHQ4FxT5037TtrFNkMvTk5LUBpY5zyOOwX8hQi7rtwCP/ZEaK3
+	apa4NnCm3y9CfhOa7Job7Vj1ewPEjlY96w9YVeSjMqGxs51nA60t6ZdZRBXHrTNFvvoRsprHiLiUo
+	6lL/AtjCxPBO7YONjxvczOYqAqe+ZlD9e7JMCsmToroYVUql95qvHKyQ/Lf56FMhq30GubuuY4mBN
+	gId3XN+aSvTqpHLgrj7ngJ136N/e7trkRjYRIYKrzRMwuz06AUVRw68bnKWAxgijRl1+F2Jkn8qFL
+	TYz0YcHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE8Wt-00000000GLV-2PTw
+	id 1tE9ZL-00000000OJZ-3qbE
 	for ath12k@archiver.kernel.org;
-	Thu, 21 Nov 2024 14:51:35 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Thu, 21 Nov 2024 15:58:11 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE8Wr-00000000GK6-13Te
+	id 1tE9ZJ-00000000OIg-1pRR
 	for ath12k@lists.infradead.org;
-	Thu, 21 Nov 2024 14:51:34 +0000
+	Thu, 21 Nov 2024 15:58:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 24828A40805;
-	Thu, 21 Nov 2024 14:49:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 62DDCC4CECC;
-	Thu, 21 Nov 2024 14:51:31 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 44F2AA40ADC
+	for <ath12k@lists.infradead.org>; Thu, 21 Nov 2024 15:56:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADBADC4CECC;
+	Thu, 21 Nov 2024 15:58:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732200692;
-	bh=LngvGLFZC5Qou5Dlop/OMXQo8eWU8KDZaEVR0Requvs=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=g4JNW5KYADtwNCUdxfO2dazs6BM0Eo6zK23MtkcpjV9Pl1nTUYiV2viZaolwCuS1h
-	 xux8VSpZ0rvk0Pw2+Y26B9Co/1g/7hGViCDY4TJJIZw+W7MzJwlzdHWEY6QGeccmQa
-	 1bPJZyysepzJIwqq0yH1JVCEa/+VUyLY77zM9ZyVilVneOVvSsBUhPh0tBpEpFudOA
-	 KLHAXz3WeayeRjq+BVRMx4fDY0SD2vFWemOUsvYv/Ll9e15vmb7mUGP1ZFrVI+9Rbh
-	 yAOB3FhI1eYDeCpr4J8eTuwT0QHR4NT23rlgT7y2GIvk4gog+mb/ooWNuGtEW/N9gG
-	 gBxH4I4jBdnxg==
+	s=k20201202; t=1732204688;
+	bh=bM8yvdO52euAiZL2EbvfH106P1GU63TZbKzTB2Ya7L0=;
+	h=From:To:Cc:Subject:Date:From;
+	b=oliylSwC4OrSdPol+DVzjjMWlHgCKykAWQ7aoqiE/ZAQKuiWkkOT8OGmvxYkmyWMs
+	 3odMNp/6K6B83f8Wr19oGNm1indg/FiI27Vgl4tvxNqoNqn0OWXQ9dUTdKP3TaUZZt
+	 nUfzore9oTD+L+IrnACvxzzgrJhk7vPDoEPhp4Qd6HVJPYv9dsBmWi/8SmzVEOtNgc
+	 aSh7M+rYgjaReVIYUHsOOtquldXsLoEgQg3NBVHDqyxnwJR6m7z7liBt8afx49QLVd
+	 hKpXkQeruiKlPjTNztsRDNt+NOk9S4syvSDncIfAjuice3bueZ3zC73DG9/3JkgtgW
+	 chuc1AyRdMTjQ==
 From: Kalle Valo <kvalo@kernel.org>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 1/8] wifi: ath12k: Add MLO station state change handling
-References: <20241106142617.660901-1-kvalo@kernel.org>
-	<20241106142617.660901-2-kvalo@kernel.org>
-	<2e706d58-5d83-4867-9963-c62441cdd4da@quicinc.com>
-	<87y11o2x9h.fsf@kernel.org>
-	<97f3f465-6ebd-4ca1-b672-4c8c7f42220d@quicinc.com>
-	<87bjy9zonx.fsf@kernel.org>
-	<d7a0d62c-4723-4e9f-a362-2ea51aaba3ed@quicinc.com>
-Date: Thu, 21 Nov 2024 16:51:29 +0200
-In-Reply-To: <d7a0d62c-4723-4e9f-a362-2ea51aaba3ed@quicinc.com> (Baochen
-	Qiang's message of "Thu, 21 Nov 2024 11:35:30 +0800")
-Message-ID: <87jzcwwsge.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH 0/8] [0/8] wifi: ath12k: MLO support part 3
+Date: Thu, 21 Nov 2024 17:57:58 +0200
+Message-Id: <20241121155806.1862733-1-kvalo@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241121_065133_353974_0AEF915B 
-X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-CacheID: sfid-20241121_075809_540123_533F171C 
+X-CRM114-Status: UNSURE (   7.30  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,36 +70,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Baochen Qiang <quic_bqiang@quicinc.com> writes:
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
->> Ok, I think I now get what you mean. Does this look better:
->> 
->> static void ath12k_mac_free_unassign_link_sta(struct ath12k_hw *ah,
->> 					      struct ath12k_sta *ahsta,
->> 					      u8 link_id)
->> {
->> 	struct ath12k_link_sta *arsta;
->> 
->> 	lockdep_assert_wiphy(ah->hw->wiphy);
->> 
->> 	if (WARN_ON(link_id >= IEEE80211_MLD_MAX_NUM_LINKS))
->> 		return;
->> 
->> 	arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
->> 	if (WARN_ON(!arsta))
->> 		return;
->> 
->> 	ahsta->links_map &= ~BIT(link_id);
->> 	rcu_assign_pointer(ahsta->link[link_id], NULL);
->
-> below synchronize_rcu() should be moved to here, such that any change
-> to arsta can happen only AFTER all existing RCU readers finish
-> accessing it.
+We continue refactoring ath12k in preparation for supporting Multi-Link
+Operation. For example, in this patchset we modify station state handling and
+start to use more link level configuration.
 
-Good point, I'll move it.
+Please review.
 
+v2:
+
+* patch 1: maintain sta state in ahsta (offline change from Aditya)
+
+   sta state is not per link level hence there is no point in keeping it in
+   arsta level. Hence move it to ahsta instead. Even mac80211 keeps sta state
+   on per MLD sta level instead of link sta.
+
+* patch 1: minor code refactoring and removing redundant codes (offline change from Aditya)
+
+   For ML station remove, redundant code was written in different function.
+   However, existing flow code can be leveraged to perform same operations.
+
+* patch 1: ath12k_mac_assign_link_sta(): remove unnecessary synchronize_rcu()
+
+* patch 1: ath12k_mac_free_unassign_link_sta(): remove unnecessary forward declaration
+
+* patch 1: fold ath12k_mac_unassign_link_sta() into ath12k_mac_free_unassign_link_sta()
+
+* patch 2: ath12k_mac_alloc_assign_link_sta(): use kmalloc()
+
+v1: https://patchwork.kernel.org/project/linux-wireless/cover/20241106142617.660901-1-kvalo@kernel.org/
+
+Rameshkumar Sundaram (2):
+  wifi: ath12k: add reo queue lookup table for ML peers
+  wifi: ath12k: modify chanctx iterators for MLO
+
+Sriram R (6):
+  wifi: ath12k: Add MLO station state change handling
+  wifi: ath12k: support change_sta_links() mac80211 op
+  wifi: ath12k: add primary link for data path operations
+  wifi: ath12k: use arsta instead of sta
+  wifi: ath12k: Use mac80211 vif's link_conf instead of bss_conf
+  wifi: ath12k: Use mac80211 sta's link_sta instead of deflink
+
+ drivers/net/wireless/ath/ath12k/core.h  |   4 +
+ drivers/net/wireless/ath/ath12k/dp.c    |  44 +-
+ drivers/net/wireless/ath/ath12k/dp.h    |   1 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c |  58 +-
+ drivers/net/wireless/ath/ath12k/mac.c   | 985 ++++++++++++++++++------
+ drivers/net/wireless/ath/ath12k/mac.h   |   1 +
+ drivers/net/wireless/ath/ath12k/peer.c  | 108 ++-
+ drivers/net/wireless/ath/ath12k/peer.h  |  11 +-
+ drivers/net/wireless/ath/ath12k/wmi.c   |  16 +-
+ 9 files changed, 965 insertions(+), 263 deletions(-)
+
+
+base-commit: 7c16c77c1c085ed2e14f95b3399fe216e1e42a35
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+2.39.5
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
