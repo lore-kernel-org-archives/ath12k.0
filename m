@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 882ADD78785
-	for <ath12k@archiver.kernel.org>; Thu, 21 Nov 2024 15:58:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CB7ED78783
+	for <ath12k@archiver.kernel.org>; Thu, 21 Nov 2024 15:58:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wfSxCV46G37RR1NLVB37qPP4wEhrvZlKUAPSXwSt6Fc=; b=ZLHZB7bZXZ72aC+17d45SF5jrB
-	FgYQBKIi0RD4+18wWijwZIvd93jxaVaRwMphI1syUTz758dYtE9ydl0iedoWc76DvAy5ujgRh5qB0
-	OZrkANl1YHZ3apzeFDkem9eN3h3F6Sw7mHUjCO6yNV2Kk94CmBffVLldFl7P2pZK/D494Y25MNjPS
-	YhDPj04VkZb8Ymz+VHthnDoaM/rBQHzK+UhfD2alW6QIlh16p3poqshrtG8vEL25favVaRknQ/y++
-	C4Kag50uJk1kAfvsbfYg6hLVRyY/tTkgsPeLyLt91h54JpAHN7EH4oGCsbnUMtMZMhSbeT2v2NQBx
-	OogXuMSQ==;
+	bh=9YPr8zzValvrcqA/b5W2EckHt9y3tt/QaMBkPn3FH8I=; b=d7YVcTyn+LKD5sg0Hix0UMfS5j
+	BbJueOlHuz0+7fsMH77mvQBckh7piVepLtx9ZuPQ+ngFwAbqMzPRMepy4P6FHNAPGZPBVYwfUppt/
+	+Jf3bejxpXGY+8julLQOUfQaCivDFiAheRHega/UGIkOVzZuWL/T+yfZZk1qp7V81WF+B1wyokhRH
+	0JH7E0l0ssZ/QxQXMQEuMelvBQ41LeQ9wT+z7DPx49mPrbS3reLOKHY0P1Zvn3Djty0H7TZlz9Rnv
+	Y3ZkQ3QcfiGwQEXH+5VASecJMyF/qGKgktHyxLGNZvxh+8PIWPnm5PyKOfvHyAQ/R+BOoUIAoOHl+
+	g9lRfXsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE9ZR-00000000ONe-1EW9
+	id 1tE9ZS-00000000OOM-0GsF
 	for ath12k@archiver.kernel.org;
-	Thu, 21 Nov 2024 15:58:17 +0000
+	Thu, 21 Nov 2024 15:58:18 +0000
 Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE9ZM-00000000OJk-2UU8
+	id 1tE9ZO-00000000OKw-33OF
 	for ath12k@lists.infradead.org;
-	Thu, 21 Nov 2024 15:58:13 +0000
+	Thu, 21 Nov 2024 15:58:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 911E6A40AF5
-	for <ath12k@lists.infradead.org>; Thu, 21 Nov 2024 15:56:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09A0EC4CECD;
-	Thu, 21 Nov 2024 15:58:10 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id AE663A40ADC
+	for <ath12k@lists.infradead.org>; Thu, 21 Nov 2024 15:56:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24956C4CECC;
+	Thu, 21 Nov 2024 15:58:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732204691;
-	bh=lz8DWRHr4euA7PgzUILmcwJvqCJm9ItkxlefHbmzVjc=;
+	s=k20201202; t=1732204693;
+	bh=YBHUZ421odpWi0aVXgDV5WLSpvfLYQdPAjzx0CzCx/w=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ITWNqTa4XoJJ5VvCUkGcKsECIYMwHoc5iSjA3TBLrVZiQwlpGwnaFDGkBuq2ff5Gs
-	 72jDyptXpvBf3xnbk4R+Ix/38NH/ZPimwPu5KZ3azvkh6CNFJ0P3CebohGLDBor0RQ
-	 iqsSeHst4Uz2fB36aifQJwj3uTniBlsCCmXwWOoOqcpOA1clKdlX3Ni/fitLI6CPRO
-	 p8kPTmrnsQHUt2Kvz949WsBVoKtOHG5FA989Biz/DVoWVG9+Mg/fGJtsiDxZ5wo2y2
-	 s1f7LXpLoiTH6XIe28lsEtfstvOigTdrbYsjqTPEXBw9cxkkAvE+IdxY6o+FvmFGxa
-	 MAGBBaOYOdsPA==
+	b=MNDkdjm9X/vj60aZnfelNu5BbrO3U+P5ITrmU4RzxXJ2bY/tF8tzGjibQJexX8oIh
+	 CPcsZfOp36yoDpWEm/dv3JmCIBMUn9dwT0t4g8IQd4/emJdgEG3B/coIdbRtI3ZR3d
+	 y7q0B+WrkApNO0XC4K20qYEwwniMJ/vGDu8NPKaWrJz7RKEseuHV06/vWBkKNkN89A
+	 FfEOyRbwzY7MiRCgFSRr/F/HSiToE0IgSzt8S1p8qgzHnWLPFIO7WupejJWdfO0amm
+	 /4CpYijARGgl0imtsxBSho1OZn2+BBhpbS9s0AcmK4KM+iPq9f6AfCbe7ykHkh2UmO
+	 60Trv+BteCTSw==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 3/8] wifi: ath12k: add primary link for data path operations
-Date: Thu, 21 Nov 2024 17:58:01 +0200
-Message-Id: <20241121155806.1862733-4-kvalo@kernel.org>
+Subject: [PATCH 5/8] wifi: ath12k: add reo queue lookup table for ML peers
+Date: Thu, 21 Nov 2024 17:58:03 +0200
+Message-Id: <20241121155806.1862733-6-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241121155806.1862733-1-kvalo@kernel.org>
 References: <20241121155806.1862733-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241121_075812_831505_C6D92F99 
-X-CRM114-Status: GOOD (  14.79  )
+X-CRM114-CacheID: sfid-20241121_075814_940351_EC2F32FF 
+X-CRM114-Status: GOOD (  18.56  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,131 +71,226 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sriram R <quic_srirrama@quicinc.com>
+From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 
-In case of Multi-link operation, data path peer setup and tid setup should be
-done only for primary link of multi-link station. Add changes to introduce
-primary link is peer. Currently, association link will be considered as primary
-link.
+Currently reoqueue tid setup uses lookup table (LUT) during peer association,
+but for ML peer there will be multiple link peers (belonging to different
+underlying firmware) affiliated to each other. Hence the reo queue should be
+setup only on one of the links which is the primary link.
+
+Add changes to create separate ML reo queue lookup table for ML peers and use
+the same while setting up rx tid for ML peer's primary link. For ML peers use
+ml_peer_id instead of peer_id to setup/lookup the reo queue entry in the LUT.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
+Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.c    |  5 +++++
- drivers/net/wireless/ath/ath12k/dp_rx.c | 10 ++++++++++
- drivers/net/wireless/ath/ath12k/peer.c  | 23 +++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/peer.h  |  8 ++++++++
- 4 files changed, 46 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp.c    | 39 +++++++++++++++-----
+ drivers/net/wireless/ath/ath12k/dp.h    |  1 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 48 ++++++++++++++++++-------
+ drivers/net/wireless/ath/ath12k/peer.c  |  2 ++
+ drivers/net/wireless/ath/ath12k/peer.h  |  2 +-
+ 5 files changed, 70 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index c99e9ceb1a6e..23326e2dfe8d 100644
+index 23326e2dfe8d..328be2c635d6 100644
 --- a/drivers/net/wireless/ath/ath12k/dp.c
 +++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -41,6 +41,11 @@ void ath12k_dp_peer_cleanup(struct ath12k *ar, int vdev_id, const u8 *addr)
+@@ -1265,15 +1265,23 @@ static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
+ 	if (!ab->hw_params->reoq_lut_support)
  		return;
+ 
+-	if (!dp->reoq_lut.vaddr)
+-		return;
++	if (dp->reoq_lut.vaddr) {
++		ath12k_hif_write32(ab,
++				   HAL_SEQ_WCSS_UMAC_REO_REG +
++				   HAL_REO1_QDESC_LUT_BASE0(ab), 0);
++		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
++				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
++		dp->reoq_lut.vaddr = NULL;
++	}
+ 
+-	dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
+-			  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
+-	dp->reoq_lut.vaddr = NULL;
+-
+-	ath12k_hif_write32(ab,
+-			   HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab), 0);
++	if (dp->ml_reoq_lut.vaddr) {
++		ath12k_hif_write32(ab,
++				   HAL_SEQ_WCSS_UMAC_REO_REG +
++				   HAL_REO1_QDESC_LUT_BASE1(ab), 0);
++		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
++				  dp->ml_reoq_lut.vaddr, dp->ml_reoq_lut.paddr);
++		dp->ml_reoq_lut.vaddr = NULL;
++	}
+ }
+ 
+ void ath12k_dp_free(struct ath12k_base *ab)
+@@ -1599,8 +1607,23 @@ static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
+ 		return -ENOMEM;
  	}
  
-+	if (!peer->primary_link) {
-+		spin_unlock_bh(&ab->base_lock);
-+		return;
++	dp->ml_reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
++						   DP_REOQ_LUT_SIZE,
++						   &dp->ml_reoq_lut.paddr,
++						   GFP_KERNEL | __GFP_ZERO);
++	if (!dp->ml_reoq_lut.vaddr) {
++		ath12k_warn(ab, "failed to allocate memory for ML reoq table");
++		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
++				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
++		dp->reoq_lut.vaddr = NULL;
++		return -ENOMEM;
 +	}
 +
- 	ath12k_dp_rx_peer_tid_cleanup(ar, peer);
- 	crypto_free_shash(peer->tfm_mmic);
- 	peer->dp_setup_done = false;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 9ae579e50557..048edb79e993 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -940,6 +940,11 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
- 		return -ENOENT;
- 	}
+ 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab),
+ 			   dp->reoq_lut.paddr);
++	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE1(ab),
++			   dp->ml_reoq_lut.paddr >> 8);
++
+ 	return 0;
+ }
  
-+	if (!peer->primary_link) {
-+		spin_unlock_bh(&ab->base_lock);
-+		return 0;
-+	}
-+
- 	if (ab->hw_params->reoq_lut_support && !dp->reoq_lut.vaddr) {
- 		spin_unlock_bh(&ab->base_lock);
- 		ath12k_warn(ab, "reo qref table is not setup\n");
-@@ -2781,6 +2786,11 @@ int ath12k_dp_rx_peer_frag_setup(struct ath12k *ar, const u8 *peer_mac, int vdev
- 		return -ENOENT;
- 	}
- 
-+	if (!peer->primary_link) {
-+		spin_unlock_bh(&ab->base_lock);
-+		return 0;
-+	}
-+
- 	for (i = 0; i <= IEEE80211_NUM_TIDS; i++) {
- 		rx_tid = &peer->rx_tid[i];
- 		rx_tid->ab = ab;
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index ffbc1265ccc1..25905498e8fb 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -313,7 +313,11 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 		       struct ath12k_wmi_peer_create_arg *arg)
- {
- 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
-+	struct ath12k_link_sta *arsta;
-+	u8 link_id = arvif->link_id;
- 	struct ath12k_peer *peer;
-+	struct ath12k_sta *ahsta;
-+	u16 ml_peer_id;
- 	int ret;
- 
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-@@ -379,6 +383,25 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 		arvif->ast_idx = peer->hw_peer_id;
- 	}
- 
-+	if (sta) {
-+		ahsta = ath12k_sta_to_ahsta(sta);
-+		arsta = wiphy_dereference(ath12k_ar_to_hw(ar)->wiphy,
-+					  ahsta->link[link_id]);
-+
-+		/* Fill ML info into created peer */
-+		if (sta->mlo) {
-+			ml_peer_id = ahsta->ml_peer_id;
-+			peer->ml_id = ml_peer_id | ATH12K_PEER_ML_ID_VALID;
-+			ether_addr_copy(peer->ml_addr, sta->addr);
-+
-+			/* the assoc link is considered primary for now */
-+			peer->primary_link = arsta->is_assoc_link;
-+		} else {
-+			peer->ml_id = ATH12K_MLO_PEER_ID_INVALID;
-+			peer->primary_link = true;
-+		}
-+	}
-+
- 	peer->sec_type = HAL_ENCRYPT_TYPE_OPEN;
- 	peer->sec_type_grp = HAL_ENCRYPT_TYPE_OPEN;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index e398d5a3fdc8..a39e943bd66b 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -51,6 +51,14 @@ struct ath12k_peer {
- 	bool dp_setup_done;
- 
- 	u16 ml_id;
-+
-+	/* any other ML info common for all partners can be added
-+	 * here and would be same for all partner peers.
-+	 */
-+	u8 ml_addr[ETH_ALEN];
-+
-+	/* To ensure only certain work related to dp is done once */
-+	bool primary_link;
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index 2e05fc19410e..a120b7a8477d 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -368,6 +368,7 @@ struct ath12k_dp {
+ 	struct dp_rxdma_mon_ring rxdma_mon_buf_ring;
+ 	struct dp_rxdma_mon_ring tx_mon_buf_ring;
+ 	struct ath12k_reo_q_addr_lut reoq_lut;
++	struct ath12k_reo_q_addr_lut ml_reoq_lut;
  };
  
- struct ath12k_ml_peer {
+ /* HTT definitions */
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 048edb79e993..1b1297c105ae 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -740,15 +740,22 @@ static void ath12k_peer_rx_tid_qref_setup(struct ath12k_base *ab, u16 peer_id, u
+ {
+ 	struct ath12k_reo_queue_ref *qref;
+ 	struct ath12k_dp *dp = &ab->dp;
++	bool ml_peer = false;
+ 
+ 	if (!ab->hw_params->reoq_lut_support)
+ 		return;
+ 
+-	/* TODO: based on ML peer or not, select the LUT. below assumes non
+-	 * ML peer
+-	 */
+-	qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
+-			(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
++	if (peer_id & ATH12K_PEER_ML_ID_VALID) {
++		peer_id &= ~ATH12K_PEER_ML_ID_VALID;
++		ml_peer = true;
++	}
++
++	if (ml_peer)
++		qref = (struct ath12k_reo_queue_ref *)dp->ml_reoq_lut.vaddr +
++				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
++	else
++		qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
++				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
+ 
+ 	qref->info0 = u32_encode_bits(lower_32_bits(paddr),
+ 				      BUFFER_ADDR_INFO0_ADDR);
+@@ -761,15 +768,22 @@ static void ath12k_peer_rx_tid_qref_reset(struct ath12k_base *ab, u16 peer_id, u
+ {
+ 	struct ath12k_reo_queue_ref *qref;
+ 	struct ath12k_dp *dp = &ab->dp;
++	bool ml_peer = false;
+ 
+ 	if (!ab->hw_params->reoq_lut_support)
+ 		return;
+ 
+-	/* TODO: based on ML peer or not, select the LUT. below assumes non
+-	 * ML peer
+-	 */
+-	qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
+-			(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
++	if (peer_id & ATH12K_PEER_ML_ID_VALID) {
++		peer_id &= ~ATH12K_PEER_ML_ID_VALID;
++		ml_peer = true;
++	}
++
++	if (ml_peer)
++		qref = (struct ath12k_reo_queue_ref *)dp->ml_reoq_lut.vaddr +
++				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
++	else
++		qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
++				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
+ 
+ 	qref->info0 = u32_encode_bits(0, BUFFER_ADDR_INFO0_ADDR);
+ 	qref->info1 = u32_encode_bits(0, BUFFER_ADDR_INFO1_ADDR) |
+@@ -802,7 +816,10 @@ void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
+ 		rx_tid->vaddr = NULL;
+ 	}
+ 
+-	ath12k_peer_rx_tid_qref_reset(ar->ab, peer->peer_id, tid);
++	if (peer->mlo)
++		ath12k_peer_rx_tid_qref_reset(ar->ab, peer->ml_id, tid);
++	else
++		ath12k_peer_rx_tid_qref_reset(ar->ab, peer->peer_id, tid);
+ 
+ 	rx_tid->active = false;
+ }
+@@ -945,7 +962,8 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 		return 0;
+ 	}
+ 
+-	if (ab->hw_params->reoq_lut_support && !dp->reoq_lut.vaddr) {
++	if (ab->hw_params->reoq_lut_support &&
++	    (!dp->reoq_lut.vaddr || !dp->ml_reoq_lut.vaddr)) {
+ 		spin_unlock_bh(&ab->base_lock);
+ 		ath12k_warn(ab, "reo qref table is not setup\n");
+ 		return -EINVAL;
+@@ -1026,7 +1044,11 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 		/* Update the REO queue LUT at the corresponding peer id
+ 		 * and tid with qaddr.
+ 		 */
+-		ath12k_peer_rx_tid_qref_setup(ab, peer->peer_id, tid, paddr);
++		if (peer->mlo)
++			ath12k_peer_rx_tid_qref_setup(ab, peer->ml_id, tid, paddr);
++		else
++			ath12k_peer_rx_tid_qref_setup(ab, peer->peer_id, tid, paddr);
++
+ 		spin_unlock_bh(&ab->base_lock);
+ 	} else {
+ 		spin_unlock_bh(&ab->base_lock);
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index 25905498e8fb..5763c5a40cfc 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -396,9 +396,11 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 
+ 			/* the assoc link is considered primary for now */
+ 			peer->primary_link = arsta->is_assoc_link;
++			peer->mlo = true;
+ 		} else {
+ 			peer->ml_id = ATH12K_MLO_PEER_ID_INVALID;
+ 			peer->primary_link = true;
++			peer->mlo = false;
+ 		}
+ 	}
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
+index a39e943bd66b..7e6231cb2b52 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.h
++++ b/drivers/net/wireless/ath/ath12k/peer.h
+@@ -46,7 +46,7 @@ struct ath12k_peer {
+ 	struct ppdu_user_delayba ppdu_stats_delayba;
+ 	bool delayba_flag;
+ 	bool is_authorized;
+-
++	bool mlo;
+ 	/* protected by ab->data_lock */
+ 	bool dp_setup_done;
+ 
 -- 
 2.39.5
 
