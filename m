@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CB7ED78783
-	for <ath12k@archiver.kernel.org>; Thu, 21 Nov 2024 15:58:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB4D2D78784
+	for <ath12k@archiver.kernel.org>; Thu, 21 Nov 2024 15:58:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9YPr8zzValvrcqA/b5W2EckHt9y3tt/QaMBkPn3FH8I=; b=d7YVcTyn+LKD5sg0Hix0UMfS5j
-	BbJueOlHuz0+7fsMH77mvQBckh7piVepLtx9ZuPQ+ngFwAbqMzPRMepy4P6FHNAPGZPBVYwfUppt/
-	+Jf3bejxpXGY+8julLQOUfQaCivDFiAheRHega/UGIkOVzZuWL/T+yfZZk1qp7V81WF+B1wyokhRH
-	0JH7E0l0ssZ/QxQXMQEuMelvBQ41LeQ9wT+z7DPx49mPrbS3reLOKHY0P1Zvn3Djty0H7TZlz9Rnv
-	Y3ZkQ3QcfiGwQEXH+5VASecJMyF/qGKgktHyxLGNZvxh+8PIWPnm5PyKOfvHyAQ/R+BOoUIAoOHl+
-	g9lRfXsQ==;
+	bh=i6uta0DdiioCYCtvmoAastzGXyJ/kOwUdYi3DUajbQs=; b=u09qn2drjQVryITiYVNgaRZvhZ
+	pAGposZR00bcwFfOHegNBA5iwHsU5PlCa/bGLexwc8cYonOh6esxR5b9NZRYnwVmgepVgVGvuheXY
+	NgobULdP2QkgG2xppK133gAJJUigEAmNMamvzqxD182LX6f6ZukPgKG+GzaqMUF8hX0d3jbNRML5t
+	J44RxlvzHhGy0LjZ44471FyWWtK14eCUo63A2LGFmA1qE/UiG+q0jNKRvk4tHss1np5eb/SOqXUQF
+	L6pDfW2d4kRuqy5tp24kT5icqirg34jIPHYq8IVamAAuI4v5HHhMiF5NteBqSW7BiXP3XlqB1/ahv
+	w2MsDbDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE9ZS-00000000OOM-0GsF
+	id 1tE9ZR-00000000ONt-2zjW
 	for ath12k@archiver.kernel.org;
-	Thu, 21 Nov 2024 15:58:18 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Thu, 21 Nov 2024 15:58:17 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE9ZO-00000000OKw-33OF
+	id 1tE9ZN-00000000OKA-2y27
 	for ath12k@lists.infradead.org;
-	Thu, 21 Nov 2024 15:58:16 +0000
+	Thu, 21 Nov 2024 15:58:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id AE663A40ADC
-	for <ath12k@lists.infradead.org>; Thu, 21 Nov 2024 15:56:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24956C4CECC;
-	Thu, 21 Nov 2024 15:58:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1AC2A5C56FE
+	for <ath12k@lists.infradead.org>; Thu, 21 Nov 2024 15:57:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16AC6C4CECC;
+	Thu, 21 Nov 2024 15:58:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732204693;
-	bh=YBHUZ421odpWi0aVXgDV5WLSpvfLYQdPAjzx0CzCx/w=;
+	s=k20201202; t=1732204692;
+	bh=D6oZU8hgTtefUGsdm3ivGksx5H5Y27q74iRg7WvXrNM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=MNDkdjm9X/vj60aZnfelNu5BbrO3U+P5ITrmU4RzxXJ2bY/tF8tzGjibQJexX8oIh
-	 CPcsZfOp36yoDpWEm/dv3JmCIBMUn9dwT0t4g8IQd4/emJdgEG3B/coIdbRtI3ZR3d
-	 y7q0B+WrkApNO0XC4K20qYEwwniMJ/vGDu8NPKaWrJz7RKEseuHV06/vWBkKNkN89A
-	 FfEOyRbwzY7MiRCgFSRr/F/HSiToE0IgSzt8S1p8qgzHnWLPFIO7WupejJWdfO0amm
-	 /4CpYijARGgl0imtsxBSho1OZn2+BBhpbS9s0AcmK4KM+iPq9f6AfCbe7ykHkh2UmO
-	 60Trv+BteCTSw==
+	b=mOzcYOk7al32ZFFAQyoywCJcdSFVziCH/c6FgCXxUpNgW6LAtHK70rSa4XYOVeIu8
+	 Dm/uopWpnnEBzLyejyyNZ+JWZEcKAmQVekSbWZ4KtUoRvSLbrfC9TPgkMM0qTDg8EC
+	 uU8xf9k02e58zSqNQjikyM+wJph81ub8rgwQvVpra0h+EtEk/4Bp+S4F+zGvPXJIi1
+	 wjPjy7vdQsRx34A/A1ahjeVOSIWYOEgb28buvh6/DgAtzzHCRgMe3uABibyGvsVZXK
+	 qnLwAgQJoOy699tRRxqRoQO4lbclKs8Dl3JiMSrPJBsXaGiZAnLgYxq06a4riEHQmn
+	 h5Tz2ZQpzRinA==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 5/8] wifi: ath12k: add reo queue lookup table for ML peers
-Date: Thu, 21 Nov 2024 17:58:03 +0200
-Message-Id: <20241121155806.1862733-6-kvalo@kernel.org>
+Subject: [PATCH 4/8] wifi: ath12k: use arsta instead of sta
+Date: Thu, 21 Nov 2024 17:58:02 +0200
+Message-Id: <20241121155806.1862733-5-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241121155806.1862733-1-kvalo@kernel.org>
 References: <20241121155806.1862733-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241121_075814_940351_EC2F32FF 
-X-CRM114-Status: GOOD (  18.56  )
+X-CRM114-CacheID: sfid-20241121_075813_872078_F7ADA3A9 
+X-CRM114-Status: GOOD (  16.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,226 +71,532 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+From: Sriram R <quic_srirrama@quicinc.com>
 
-Currently reoqueue tid setup uses lookup table (LUT) during peer association,
-but for ML peer there will be multiple link peers (belonging to different
-underlying firmware) affiliated to each other. Hence the reo queue should be
-setup only on one of the links which is the primary link.
-
-Add changes to create separate ML reo queue lookup table for ML peers and use
-the same while setting up rx tid for ML peer's primary link. For ML peers use
-ml_peer_id instead of peer_id to setup/lookup the reo queue entry in the LUT.
+Currently, struct ieee80211_sta (sta) is used for many WMI and mac80211 ops but
+for multi link station, driver should use struct ath12k_link_sta (arsta)
+instead of sta. Add changes to use arsta object for WMI commands and other
+mac80211 ops.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.c    | 39 +++++++++++++++-----
- drivers/net/wireless/ath/ath12k/dp.h    |  1 +
- drivers/net/wireless/ath/ath12k/dp_rx.c | 48 ++++++++++++++++++-------
- drivers/net/wireless/ath/ath12k/peer.c  |  2 ++
- drivers/net/wireless/ath/ath12k/peer.h  |  2 +-
- 5 files changed, 70 insertions(+), 22 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 144 ++++++++++++++------------
+ 1 file changed, 77 insertions(+), 67 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 23326e2dfe8d..328be2c635d6 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1265,15 +1265,23 @@ static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
- 	if (!ab->hw_params->reoq_lut_support)
- 		return;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index d92a5e0afe2e..01932aeab4f3 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -1771,7 +1771,7 @@ static void ath12k_peer_assoc_h_basic(struct ath12k *ar,
+ 	else
+ 		aid = sta->aid;
  
--	if (!dp->reoq_lut.vaddr)
--		return;
-+	if (dp->reoq_lut.vaddr) {
-+		ath12k_hif_write32(ab,
-+				   HAL_SEQ_WCSS_UMAC_REO_REG +
-+				   HAL_REO1_QDESC_LUT_BASE0(ab), 0);
-+		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
-+				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
-+		dp->reoq_lut.vaddr = NULL;
-+	}
+-	ether_addr_copy(arg->peer_mac, sta->addr);
++	ether_addr_copy(arg->peer_mac, arsta->addr);
+ 	arg->vdev_id = arvif->vdev_id;
+ 	arg->peer_associd = aid;
+ 	arg->auth_flag = true;
+@@ -2163,7 +2163,7 @@ static void ath12k_peer_assoc_h_vht(struct ath12k *ar,
+ 	arg->tx_max_mcs_nss = 0xFF;
  
--	dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--			  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
--	dp->reoq_lut.vaddr = NULL;
--
--	ath12k_hif_write32(ab,
--			   HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab), 0);
-+	if (dp->ml_reoq_lut.vaddr) {
-+		ath12k_hif_write32(ab,
-+				   HAL_SEQ_WCSS_UMAC_REO_REG +
-+				   HAL_REO1_QDESC_LUT_BASE1(ab), 0);
-+		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
-+				  dp->ml_reoq_lut.vaddr, dp->ml_reoq_lut.paddr);
-+		dp->ml_reoq_lut.vaddr = NULL;
-+	}
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac vht peer %pM max_mpdu %d flags 0x%x\n",
+-		   sta->addr, arg->peer_max_mpdu, arg->peer_flags);
++		   arsta->addr, arg->peer_max_mpdu, arg->peer_flags);
+ 
+ 	/* TODO: rxnss_override */
  }
- 
- void ath12k_dp_free(struct ath12k_base *ab)
-@@ -1599,8 +1607,23 @@ static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
- 		return -ENOMEM;
+@@ -2459,7 +2459,7 @@ static void ath12k_peer_assoc_h_qos(struct ath12k *ar,
  	}
  
-+	dp->ml_reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
-+						   DP_REOQ_LUT_SIZE,
-+						   &dp->ml_reoq_lut.paddr,
-+						   GFP_KERNEL | __GFP_ZERO);
-+	if (!dp->ml_reoq_lut.vaddr) {
-+		ath12k_warn(ab, "failed to allocate memory for ML reoq table");
-+		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
-+				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
-+		dp->reoq_lut.vaddr = NULL;
-+		return -ENOMEM;
-+	}
-+
- 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab),
- 			   dp->reoq_lut.paddr);
-+	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE1(ab),
-+			   dp->ml_reoq_lut.paddr >> 8);
-+
- 	return 0;
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac peer %pM qos %d\n",
+-		   sta->addr, arg->qos_flag);
++		   arsta->addr, arg->qos_flag);
  }
  
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 2e05fc19410e..a120b7a8477d 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -368,6 +368,7 @@ struct ath12k_dp {
- 	struct dp_rxdma_mon_ring rxdma_mon_buf_ring;
- 	struct dp_rxdma_mon_ring tx_mon_buf_ring;
- 	struct ath12k_reo_q_addr_lut reoq_lut;
-+	struct ath12k_reo_q_addr_lut ml_reoq_lut;
- };
+ static int ath12k_peer_assoc_qos_ap(struct ath12k *ar,
+@@ -2499,26 +2499,26 @@ static int ath12k_peer_assoc_qos_ap(struct ath12k *ar,
  
- /* HTT definitions */
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 048edb79e993..1b1297c105ae 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -740,15 +740,22 @@ static void ath12k_peer_rx_tid_qref_setup(struct ath12k_base *ab, u16 peer_id, u
+ 	arg.param = WMI_AP_PS_PEER_PARAM_UAPSD;
+ 	arg.value = uapsd;
+-	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, sta->addr, &arg);
++	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, arsta->addr, &arg);
+ 	if (ret)
+ 		goto err;
+ 
+ 	arg.param = WMI_AP_PS_PEER_PARAM_MAX_SP;
+ 	arg.value = max_sp;
+-	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, sta->addr, &arg);
++	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, arsta->addr, &arg);
+ 	if (ret)
+ 		goto err;
+ 
+ 	/* TODO: revisit during testing */
+ 	arg.param = WMI_AP_PS_PEER_PARAM_SIFS_RESP_FRMTYPE;
+ 	arg.value = DISABLE_SIFS_RESPONSE_TRIGGER;
+-	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, sta->addr, &arg);
++	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, arsta->addr, &arg);
+ 	if (ret)
+ 		goto err;
+ 
+ 	arg.param = WMI_AP_PS_PEER_PARAM_SIFS_RESP_UAPSD;
+ 	arg.value = DISABLE_SIFS_RESPONSE_TRIGGER;
+-	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, sta->addr, &arg);
++	ret = ath12k_wmi_send_set_ap_ps_param_cmd(ar, arsta->addr, &arg);
+ 	if (ret)
+ 		goto err;
+ 
+@@ -2705,7 +2705,7 @@ static void ath12k_peer_assoc_h_phymode(struct ath12k *ar,
+ 	}
+ 
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac peer %pM phymode %s\n",
+-		   sta->addr, ath12k_mac_phymode_str(phymode));
++		   arsta->addr, ath12k_mac_phymode_str(phymode));
+ 
+ 	arg->peer_phymode = phymode;
+ 	WARN_ON(phymode == MODE_UNKNOWN);
+@@ -4295,7 +4295,7 @@ static int ath12k_mac_set_key(struct ath12k *ar, enum set_key_cmd cmd,
+ 		return 1;
+ 
+ 	if (sta)
+-		peer_addr = sta->addr;
++		peer_addr = arsta->addr;
+ 	else if (ahvif->vdev_type == WMI_VDEV_TYPE_STA)
+ 		peer_addr = vif->bss_conf.bssid;
+ 	else
+@@ -4526,7 +4526,6 @@ ath12k_mac_set_peer_vht_fixed_rate(struct ath12k_link_vif *arvif,
+ 				   const struct cfg80211_bitrate_mask *mask,
+ 				   enum nl80211_band band)
  {
- 	struct ath12k_reo_queue_ref *qref;
- 	struct ath12k_dp *dp = &ab->dp;
-+	bool ml_peer = false;
+-	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+ 	struct ath12k *ar = arvif->ar;
+ 	u8 vht_rate, nss;
+ 	u32 rate_code;
+@@ -4545,24 +4544,24 @@ ath12k_mac_set_peer_vht_fixed_rate(struct ath12k_link_vif *arvif,
  
- 	if (!ab->hw_params->reoq_lut_support)
- 		return;
- 
--	/* TODO: based on ML peer or not, select the LUT. below assumes non
--	 * ML peer
--	 */
--	qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
--			(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
-+	if (peer_id & ATH12K_PEER_ML_ID_VALID) {
-+		peer_id &= ~ATH12K_PEER_ML_ID_VALID;
-+		ml_peer = true;
-+	}
-+
-+	if (ml_peer)
-+		qref = (struct ath12k_reo_queue_ref *)dp->ml_reoq_lut.vaddr +
-+				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
-+	else
-+		qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
-+				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
- 
- 	qref->info0 = u32_encode_bits(lower_32_bits(paddr),
- 				      BUFFER_ADDR_INFO0_ADDR);
-@@ -761,15 +768,22 @@ static void ath12k_peer_rx_tid_qref_reset(struct ath12k_base *ab, u16 peer_id, u
- {
- 	struct ath12k_reo_queue_ref *qref;
- 	struct ath12k_dp *dp = &ab->dp;
-+	bool ml_peer = false;
- 
- 	if (!ab->hw_params->reoq_lut_support)
- 		return;
- 
--	/* TODO: based on ML peer or not, select the LUT. below assumes non
--	 * ML peer
--	 */
--	qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
--			(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
-+	if (peer_id & ATH12K_PEER_ML_ID_VALID) {
-+		peer_id &= ~ATH12K_PEER_ML_ID_VALID;
-+		ml_peer = true;
-+	}
-+
-+	if (ml_peer)
-+		qref = (struct ath12k_reo_queue_ref *)dp->ml_reoq_lut.vaddr +
-+				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
-+	else
-+		qref = (struct ath12k_reo_queue_ref *)dp->reoq_lut.vaddr +
-+				(peer_id * (IEEE80211_NUM_TIDS + 1) + tid);
- 
- 	qref->info0 = u32_encode_bits(0, BUFFER_ADDR_INFO0_ADDR);
- 	qref->info1 = u32_encode_bits(0, BUFFER_ADDR_INFO1_ADDR) |
-@@ -802,7 +816,10 @@ void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
- 		rx_tid->vaddr = NULL;
- 	}
- 
--	ath12k_peer_rx_tid_qref_reset(ar->ab, peer->peer_id, tid);
-+	if (peer->mlo)
-+		ath12k_peer_rx_tid_qref_reset(ar->ab, peer->ml_id, tid);
-+	else
-+		ath12k_peer_rx_tid_qref_reset(ar->ab, peer->peer_id, tid);
- 
- 	rx_tid->active = false;
- }
-@@ -945,7 +962,8 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
- 		return 0;
- 	}
- 
--	if (ab->hw_params->reoq_lut_support && !dp->reoq_lut.vaddr) {
-+	if (ab->hw_params->reoq_lut_support &&
-+	    (!dp->reoq_lut.vaddr || !dp->ml_reoq_lut.vaddr)) {
- 		spin_unlock_bh(&ab->base_lock);
- 		ath12k_warn(ab, "reo qref table is not setup\n");
+ 	if (!nss) {
+ 		ath12k_warn(ar->ab, "No single VHT Fixed rate found to set for %pM",
+-			    sta->addr);
++			    arsta->addr);
  		return -EINVAL;
-@@ -1026,7 +1044,11 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
- 		/* Update the REO queue LUT at the corresponding peer id
- 		 * and tid with qaddr.
- 		 */
--		ath12k_peer_rx_tid_qref_setup(ab, peer->peer_id, tid, paddr);
-+		if (peer->mlo)
-+			ath12k_peer_rx_tid_qref_setup(ab, peer->ml_id, tid, paddr);
-+		else
-+			ath12k_peer_rx_tid_qref_setup(ab, peer->peer_id, tid, paddr);
-+
- 		spin_unlock_bh(&ab->base_lock);
- 	} else {
- 		spin_unlock_bh(&ab->base_lock);
-diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
-index 25905498e8fb..5763c5a40cfc 100644
---- a/drivers/net/wireless/ath/ath12k/peer.c
-+++ b/drivers/net/wireless/ath/ath12k/peer.c
-@@ -396,9 +396,11 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 	}
  
- 			/* the assoc link is considered primary for now */
- 			peer->primary_link = arsta->is_assoc_link;
-+			peer->mlo = true;
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
+ 		   "Setting Fixed VHT Rate for peer %pM. Device will not switch to any other selected rates",
+-		   sta->addr);
++		   arsta->addr);
+ 
+ 	rate_code = ATH12K_HW_RATE_CODE(vht_rate, nss - 1,
+ 					WMI_RATE_PREAMBLE_VHT);
+-	ret = ath12k_wmi_set_peer_param(ar, sta->addr,
++	ret = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 					arvif->vdev_id,
+ 					WMI_PEER_PARAM_FIXED_RATE,
+ 					rate_code);
+ 	if (ret)
+ 		ath12k_warn(ar->ab,
+ 			    "failed to update STA %pM Fixed Rate %d: %d\n",
+-			     sta->addr, rate_code, ret);
++			     arsta->addr, rate_code, ret);
+ 
+ 	return ret;
+ }
+@@ -4580,12 +4579,16 @@ static int ath12k_mac_station_assoc(struct ath12k *ar,
+ 	enum nl80211_band band;
+ 	struct cfg80211_bitrate_mask *mask;
+ 	u8 num_vht_rates;
++	u8 link_id = arvif->link_id;
+ 
+ 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+ 
+ 	if (WARN_ON(ath12k_mac_vif_link_chan(vif, arvif->link_id, &def)))
+ 		return -EPERM;
+ 
++	if (WARN_ON(!rcu_access_pointer(sta->link[link_id])))
++		return -EINVAL;
++
+ 	band = def.chan->band;
+ 	mask = &arvif->bitrate_mask;
+ 
+@@ -4599,13 +4602,13 @@ static int ath12k_mac_station_assoc(struct ath12k *ar,
+ 	ret = ath12k_wmi_send_peer_assoc_cmd(ar, &peer_arg);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to run peer assoc for STA %pM vdev %i: %d\n",
+-			    sta->addr, arvif->vdev_id, ret);
++			    arsta->addr, arvif->vdev_id, ret);
+ 		return ret;
+ 	}
+ 
+ 	if (!wait_for_completion_timeout(&ar->peer_assoc_done, 1 * HZ)) {
+ 		ath12k_warn(ar->ab, "failed to get peer assoc conf event for %pM vdev %i\n",
+-			    sta->addr, arvif->vdev_id);
++			    arsta->addr, arvif->vdev_id);
+ 		return -ETIMEDOUT;
+ 	}
+ 
+@@ -4629,7 +4632,7 @@ static int ath12k_mac_station_assoc(struct ath12k *ar,
+ 	if (reassoc)
+ 		return 0;
+ 
+-	ret = ath12k_setup_peer_smps(ar, arvif, sta->addr,
++	ret = ath12k_setup_peer_smps(ar, arvif, arsta->addr,
+ 				     &sta->deflink.ht_cap,
+ 				     &sta->deflink.he_6ghz_capa);
+ 	if (ret) {
+@@ -4649,7 +4652,7 @@ static int ath12k_mac_station_assoc(struct ath12k *ar,
+ 		ret = ath12k_peer_assoc_qos_ap(ar, arvif, arsta);
+ 		if (ret) {
+ 			ath12k_warn(ar->ab, "failed to set qos params for STA %pM for vdev %i: %d\n",
+-				    sta->addr, arvif->vdev_id, ret);
++				    arsta->addr, arvif->vdev_id, ret);
+ 			return ret;
+ 		}
+ 	}
+@@ -4732,65 +4735,65 @@ static void ath12k_sta_rc_update_wk(struct wiphy *wiphy, struct wiphy_work *wk)
+ 			 * WMI_PEER_CHWIDTH
+ 			 */
+ 			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac bandwidth upgrade for sta %pM new %d old %d\n",
+-				   sta->addr, bw, bw_prev);
+-			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++				   arsta->addr, bw, bw_prev);
++			err = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 							arvif->vdev_id, WMI_PEER_PHYMODE,
+ 							peer_phymode);
+ 			if (err) {
+ 				ath12k_warn(ar->ab, "failed to update STA %pM to peer phymode %d: %d\n",
+-					    sta->addr, peer_phymode, err);
++					    arsta->addr, peer_phymode, err);
+ 				return;
+ 			}
+-			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++			err = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 							arvif->vdev_id, WMI_PEER_CHWIDTH,
+ 							bw);
+ 			if (err)
+ 				ath12k_warn(ar->ab, "failed to update STA %pM to peer bandwidth %d: %d\n",
+-					    sta->addr, bw, err);
++					    arsta->addr, bw, err);
  		} else {
- 			peer->ml_id = ATH12K_MLO_PEER_ID_INVALID;
- 			peer->primary_link = true;
-+			peer->mlo = false;
+ 			/* When we downgrade bandwidth this will conflict with phymode
+ 			 * and cause to trigger firmware crash. In this case we send
+ 			 * WMI_PEER_CHWIDTH followed by WMI_PEER_PHYMODE
+ 			 */
+ 			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac bandwidth downgrade for sta %pM new %d old %d\n",
+-				   sta->addr, bw, bw_prev);
+-			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++				   arsta->addr, bw, bw_prev);
++			err = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 							arvif->vdev_id, WMI_PEER_CHWIDTH,
+ 							bw);
+ 			if (err) {
+ 				ath12k_warn(ar->ab, "failed to update STA %pM peer to bandwidth %d: %d\n",
+-					    sta->addr, bw, err);
++					    arsta->addr, bw, err);
+ 				return;
+ 			}
+-			err = ath12k_wmi_set_peer_param(ar, sta->addr,
++			err = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 							arvif->vdev_id, WMI_PEER_PHYMODE,
+ 							peer_phymode);
+ 			if (err)
+ 				ath12k_warn(ar->ab, "failed to update STA %pM to peer phymode %d: %d\n",
+-					    sta->addr, peer_phymode, err);
++					    arsta->addr, peer_phymode, err);
  		}
  	}
  
-diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
-index a39e943bd66b..7e6231cb2b52 100644
---- a/drivers/net/wireless/ath/ath12k/peer.h
-+++ b/drivers/net/wireless/ath/ath12k/peer.h
-@@ -46,7 +46,7 @@ struct ath12k_peer {
- 	struct ppdu_user_delayba ppdu_stats_delayba;
- 	bool delayba_flag;
- 	bool is_authorized;
--
-+	bool mlo;
- 	/* protected by ab->data_lock */
- 	bool dp_setup_done;
+ 	if (changed & IEEE80211_RC_NSS_CHANGED) {
+ 		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac update sta %pM nss %d\n",
+-			   sta->addr, nss);
++			   arsta->addr, nss);
  
+-		err = ath12k_wmi_set_peer_param(ar, sta->addr, arvif->vdev_id,
++		err = ath12k_wmi_set_peer_param(ar, arsta->addr, arvif->vdev_id,
+ 						WMI_PEER_NSS, nss);
+ 		if (err)
+ 			ath12k_warn(ar->ab, "failed to update STA %pM nss %d: %d\n",
+-				    sta->addr, nss, err);
++				    arsta->addr, nss, err);
+ 	}
+ 
+ 	if (changed & IEEE80211_RC_SMPS_CHANGED) {
+ 		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac update sta %pM smps %d\n",
+-			   sta->addr, smps);
++			   arsta->addr, smps);
+ 
+-		err = ath12k_wmi_set_peer_param(ar, sta->addr, arvif->vdev_id,
++		err = ath12k_wmi_set_peer_param(ar, arsta->addr, arvif->vdev_id,
+ 						WMI_PEER_MIMO_PS_STATE, smps);
+ 		if (err)
+ 			ath12k_warn(ar->ab, "failed to update STA %pM smps %d: %d\n",
+-				    sta->addr, smps, err);
++				    arsta->addr, smps, err);
+ 	}
+ 
+ 	if (changed & IEEE80211_RC_SUPP_RATES_CHANGED) {
+@@ -4823,11 +4826,11 @@ static void ath12k_sta_rc_update_wk(struct wiphy *wiphy, struct wiphy_work *wk)
+ 			err = ath12k_wmi_send_peer_assoc_cmd(ar, &peer_arg);
+ 			if (err)
+ 				ath12k_warn(ar->ab, "failed to run peer assoc for STA %pM vdev %i: %d\n",
+-					    sta->addr, arvif->vdev_id, err);
++					    arsta->addr, arvif->vdev_id, err);
+ 
+ 			if (!wait_for_completion_timeout(&ar->peer_assoc_done, 1 * HZ))
+ 				ath12k_warn(ar->ab, "failed to get peer assoc conf event for %pM vdev %i\n",
+-					    sta->addr, arvif->vdev_id);
++					    arsta->addr, arvif->vdev_id);
+ 		}
+ 	}
+ }
+@@ -4908,7 +4911,7 @@ static void ath12k_mac_station_post_remove(struct ath12k *ar,
+ 
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 
+-	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
++	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, arsta->addr);
+ 	if (peer && peer->sta == sta) {
+ 		ath12k_warn(ar->ab, "Found peer entry %pM n vdev %i after it was supposedly removed\n",
+ 			    vif->addr, arvif->vdev_id);
+@@ -4963,27 +4966,26 @@ static int ath12k_mac_station_authorize(struct ath12k *ar,
+ {
+ 	struct ath12k_peer *peer;
+ 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+-	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+ 	int ret;
+ 
+ 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+ 
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 
+-	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
++	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, arsta->addr);
+ 	if (peer)
+ 		peer->is_authorized = true;
+ 
+ 	spin_unlock_bh(&ar->ab->base_lock);
+ 
+ 	if (vif->type == NL80211_IFTYPE_STATION && arvif->is_up) {
+-		ret = ath12k_wmi_set_peer_param(ar, sta->addr,
++		ret = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 						arvif->vdev_id,
+ 						WMI_PEER_AUTHORIZE,
+ 						1);
+ 		if (ret) {
+ 			ath12k_warn(ar->ab, "Unable to authorize peer %pM vdev %d: %d\n",
+-				    sta->addr, arvif->vdev_id, ret);
++				    arsta->addr, arvif->vdev_id, ret);
+ 			return ret;
+ 		}
+ 	}
+@@ -5014,15 +5016,15 @@ static int ath12k_mac_station_remove(struct ath12k *ar,
+ 	if (sta->mlo)
+ 		return ret;
+ 
+-	ath12k_dp_peer_cleanup(ar, arvif->vdev_id, sta->addr);
++	ath12k_dp_peer_cleanup(ar, arvif->vdev_id, arsta->addr);
+ 
+-	ret = ath12k_peer_delete(ar, arvif->vdev_id, sta->addr);
++	ret = ath12k_peer_delete(ar, arvif->vdev_id, arsta->addr);
+ 	if (ret)
+ 		ath12k_warn(ar->ab, "Failed to delete peer: %pM for VDEV: %d\n",
+-			    sta->addr, arvif->vdev_id);
++			    arsta->addr, arvif->vdev_id);
+ 	else
+ 		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "Removed peer: %pM for VDEV: %d\n",
+-			   sta->addr, arvif->vdev_id);
++			   arsta->addr, arvif->vdev_id);
+ 
+ 	ath12k_mac_station_post_remove(ar, arvif, arsta);
+ 
+@@ -5040,7 +5042,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
+ 	struct ieee80211_sta *sta = ath12k_ahsta_to_sta(arsta->ahsta);
+-	struct ath12k_wmi_peer_create_arg peer_param;
++	struct ath12k_wmi_peer_create_arg peer_param = {0};
+ 	int ret;
+ 
+ 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+@@ -5065,28 +5067,28 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 	ret = ath12k_peer_create(ar, arvif, sta, &peer_param);
+ 	if (ret) {
+ 		ath12k_warn(ab, "Failed to add peer: %pM for VDEV: %d\n",
+-			    sta->addr, arvif->vdev_id);
++			    arsta->addr, arvif->vdev_id);
+ 		goto free_peer;
+ 	}
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_MAC, "Added peer: %pM for VDEV: %d\n",
+-		   sta->addr, arvif->vdev_id);
++		   arsta->addr, arvif->vdev_id);
+ 
+ 	if (ieee80211_vif_is_mesh(vif)) {
+-		ret = ath12k_wmi_set_peer_param(ar, sta->addr,
++		ret = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 						arvif->vdev_id,
+ 						WMI_PEER_USE_4ADDR, 1);
+ 		if (ret) {
+ 			ath12k_warn(ab, "failed to STA %pM 4addr capability: %d\n",
+-				    sta->addr, ret);
++				    arsta->addr, ret);
+ 			goto free_peer;
+ 		}
+ 	}
+ 
+-	ret = ath12k_dp_peer_setup(ar, arvif->vdev_id, sta->addr);
++	ret = ath12k_dp_peer_setup(ar, arvif->vdev_id, arsta->addr);
+ 	if (ret) {
+ 		ath12k_warn(ab, "failed to setup dp for peer %pM on vdev %i (%d)\n",
+-			    sta->addr, arvif->vdev_id, ret);
++			    arsta->addr, arvif->vdev_id, ret);
+ 		goto free_peer;
+ 	}
+ 
+@@ -5103,7 +5105,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 	return 0;
+ 
+ free_peer:
+-	ath12k_peer_delete(ar, arvif->vdev_id, sta->addr);
++	ath12k_peer_delete(ar, arvif->vdev_id, arsta->addr);
+ dec_num_station:
+ 	ath12k_mac_dec_num_stations(arvif, arsta);
+ exit:
+@@ -5175,6 +5177,8 @@ static int ath12k_mac_assign_link_sta(struct ath12k_hw *ah,
+ 	ahsta->links_map |= BIT(arsta->link_id);
+ 	arsta->arvif = arvif;
+ 	arsta->ahsta = ahsta;
++	ahsta->ahvif = ahvif;
++
+ 	wiphy_work_init(&arsta->update_wk, ath12k_sta_rc_update_wk);
+ 
+ 	rcu_assign_pointer(ahsta->link[link_id], arsta);
+@@ -5250,7 +5254,7 @@ static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
+ 		ret = ath12k_mac_station_add(ar, arvif, arsta);
+ 		if (ret)
+ 			ath12k_warn(ar->ab, "Failed to add station: %pM for VDEV: %d\n",
+-				    sta->addr, arvif->vdev_id);
++				    arsta->addr, arvif->vdev_id);
+ 
+ 	/* IEEE80211_STA_AUTH -> IEEE80211_STA_ASSOC: Send station assoc command for
+ 	 * peer associated to AP/Mesh/ADHOC vif type.
+@@ -5263,7 +5267,7 @@ static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
+ 		ret = ath12k_mac_station_assoc(ar, arvif, arsta, false);
+ 		if (ret)
+ 			ath12k_warn(ar->ab, "Failed to associate station: %pM\n",
+-				    sta->addr);
++				    arsta->addr);
+ 
+ 		spin_lock_bh(&ar->data_lock);
+ 
+@@ -5280,7 +5284,7 @@ static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
+ 		ret = ath12k_mac_station_authorize(ar, arvif, arsta);
+ 		if (ret)
+ 			ath12k_warn(ar->ab, "Failed to authorize station: %pM\n",
+-				    sta->addr);
++				    arsta->addr);
+ 
+ 	/* IEEE80211_STA_AUTHORIZED -> IEEE80211_STA_ASSOC: station may be in removal,
+ 	 * deauthorize it.
+@@ -5300,7 +5304,7 @@ static int ath12k_mac_handle_link_sta_state(struct ieee80211_hw *hw,
+ 		ret = ath12k_mac_station_disassoc(ar, arvif, arsta);
+ 		if (ret)
+ 			ath12k_warn(ar->ab, "Failed to disassociate station: %pM\n",
+-				    sta->addr);
++				    arsta->addr);
+ 	}
+ 
+ exit:
+@@ -5413,16 +5417,22 @@ static int ath12k_mac_op_sta_set_txpwr(struct ieee80211_hw *hw,
+ 				       struct ieee80211_vif *vif,
+ 				       struct ieee80211_sta *sta)
+ {
+-	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
++	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(sta);
+ 	struct ath12k *ar;
+ 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+ 	struct ath12k_link_vif *arvif;
++	struct ath12k_link_sta *arsta;
++	u8 link_id;
+ 	int ret;
+ 	s16 txpwr;
+ 
+ 	lockdep_assert_wiphy(hw->wiphy);
+ 
+-	arvif = &ahvif->deflink;
++	/* TODO: use link id from mac80211 once that's implemented */
++	link_id = 0;
++
++	arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
++	arsta = wiphy_dereference(hw->wiphy, ahsta->link[link_id]);
+ 
+ 	if (sta->deflink.txpwr.type == NL80211_TX_POWER_AUTOMATIC) {
+ 		txpwr = 0;
+@@ -5439,9 +5449,9 @@ static int ath12k_mac_op_sta_set_txpwr(struct ieee80211_hw *hw,
+ 		goto out;
+ 	}
+ 
+-	ar = ath12k_ah_to_ar(ah, 0);
++	ar = arvif->ar;
+ 
+-	ret = ath12k_wmi_set_peer_param(ar, sta->addr, arvif->vdev_id,
++	ret = ath12k_wmi_set_peer_param(ar, arsta->addr, arvif->vdev_id,
+ 					WMI_PEER_USE_FIXED_PWR, txpwr);
+ 	if (ret) {
+ 		ath12k_warn(ar->ab, "failed to set tx power for station ret: %d\n",
+@@ -5494,12 +5504,12 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 	}
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 
+-	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, sta->addr);
++	peer = ath12k_peer_find(ar->ab, arvif->vdev_id, arsta->addr);
+ 	if (!peer) {
+ 		spin_unlock_bh(&ar->ab->base_lock);
+ 		rcu_read_unlock();
+ 		ath12k_warn(ar->ab, "mac sta rc update failed to find peer %pM on vdev %i\n",
+-			    sta->addr, arvif->vdev_id);
++			    arsta->addr, arvif->vdev_id);
+ 		return;
+ 	}
+ 
+@@ -5507,7 +5517,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
+ 		   "mac sta rc update for %pM changed %08x bw %d nss %d smps %d\n",
+-		   sta->addr, changed, sta->deflink.bandwidth, sta->deflink.rx_nss,
++		   arsta->addr, changed, sta->deflink.bandwidth, sta->deflink.rx_nss,
+ 		   sta->deflink.smps_mode);
+ 
+ 	spin_lock_bh(&ar->data_lock);
+@@ -5537,7 +5547,7 @@ static void ath12k_mac_op_sta_rc_update(struct ieee80211_hw *hw,
+ 			break;
+ 		default:
+ 			ath12k_warn(ar->ab, "Invalid smps %d in sta rc update for %pM\n",
+-				    sta->deflink.smps_mode, sta->addr);
++				    sta->deflink.smps_mode, arsta->addr);
+ 			smps = WMI_PEER_SMPS_PS_NONE;
+ 			break;
+ 		}
+@@ -9121,14 +9131,14 @@ static void ath12k_mac_disable_peer_fixed_rate(void *data,
+ 	if (arsta->arvif != arvif)
+ 		return;
+ 
+-	ret = ath12k_wmi_set_peer_param(ar, sta->addr,
++	ret = ath12k_wmi_set_peer_param(ar, arsta->addr,
+ 					arvif->vdev_id,
+ 					WMI_PEER_PARAM_FIXED_RATE,
+ 					WMI_FIXED_RATE_NONE);
+ 	if (ret)
+ 		ath12k_warn(ar->ab,
+ 			    "failed to disable peer fixed rate for STA %pM ret %d\n",
+-			    sta->addr, ret);
++			    arsta->addr, ret);
+ }
+ 
+ static int
 -- 
 2.39.5
 
