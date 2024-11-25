@@ -4,69 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF781E668AB
-	for <ath12k@archiver.kernel.org>; Sun, 24 Nov 2024 13:34:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BCB8D3B7CF
+	for <ath12k@archiver.kernel.org>; Mon, 25 Nov 2024 03:51:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aFL1YfycyA6OxZSy8Ix9alCHsqMKv3cVMtOwIDVH2ag=; b=VC8hkaOEiaAgumdu4EBPXqmMmY
-	dgrRx0JMSL7msl+ZZnXUcP4UILObbkJWGr0wk9Y4EtTUGdclIvgOjjXyOFzCBFV9GbAR0kTpmISFu
-	v0Uwgrr1PGZUOo2mSXe8g6tyZVsyEq6iFqCLa21m9+TkW04hZasGEWp3zNd7+eg5/4nTM20hKP28L
-	hlkbDERHhFh7Q6ibTZdikgDm++hNczMPUy+4aV8tvDdUHiKFsD3MR6cDdIDSCZDdFortCXcyuRrOH
-	FGA855HETs9NiMc+zBfahxlzrc9JcWefCgYBsPH816fEuhcR0rOodW63ur4CQmeozjUqLx1XZjPBe
-	iCYWiyZw==;
+	bh=4ZBFpfMAxEc3iDN83dDGcQrDlarlTxPLO/VIWYe/840=; b=WXC5lzzoiJUCRIS7a2WbLG64fs
+	2MqxiPtIcsorIYbqRoVN9FodDcaP9/TICruyZecyU5S0cD+hsfLQZRLxTwKfYs48s01FKlMHYEnIQ
+	23C8MjmM+vRSsd6lrWdz10F33lR/YTAX2NBn7SgSeR823+5HvKqqIfSno03bfP6yF5MS5atQX7BGw
+	Ypry4AioHfzAVsN5pzFUKLCpc1GLBOSybWU/+LAaT00qzV8Op5pplYqAT/MFJQqhTr/EfCL4repzq
+	Id7vcyUTj6v01v+NAB8DbrxRbCSRcdvdTmyqvhMGPEahdZM0XiX6rfwCAdhzoPC1I6j8s0qz/PMEO
+	lCQaEPUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFClO-00000005w8L-25Uc
+	id 1tFQ8h-00000006z8G-0izo
 	for ath12k@archiver.kernel.org;
-	Sun, 24 Nov 2024 13:34:58 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Mon, 25 Nov 2024 03:51:55 +0000
+Received: from ionic.de ([2001:41d0:700:3394:1::2] helo=mail.ionic.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFClM-00000005w7l-1Bxa
-	for ath12k@lists.infradead.org;
-	Sun, 24 Nov 2024 13:34:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 36B495C5463;
-	Sun, 24 Nov 2024 13:34:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F5ABC4CECC;
-	Sun, 24 Nov 2024 13:34:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732455295;
-	bh=QBRjlbLYxzW+iuKOVqCzQDyD/2TP9yVJ6B1fthNSD+k=;
+	id 1tFQ8e-00000006z6L-1HxQ;
+	Mon, 25 Nov 2024 03:51:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
+	t=1732506708; bh=3yCjE5tdSxEAWWiNtIYYOrdwsDaWqbpFW99BaTLk7HE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=WMdwzdJKw3EVBzRsLnXbpXlJaeQhvITw9Sj2/2ggYhu1YECFETslp2XaW0qOpcWly
-	 Qja504NLBo149WW9hzFLJCl+Hb/FrYmPe55OD5zeoFWiHA+86z1fvCBKOBg040qXx7
-	 tw9+esVtR1nyX7J43ivis6zLlFyPYIKyv2sayaDn7CaWMkHNJn6QCjLTnUSrBB3LVD
-	 jp5wz3skwwybvZGy6secLESi6kaMYRRoHXXWpLDRmGwI+En+UFKk7s047NwyndCf3Q
-	 +wR3i5KmOtX01lL7C+/sSs6ycWxQ2QGOTgYxKwB7ZkWTZy0+5t8g5+UlGSVBCGoQhA
-	 XiUJNoZ1yrq4Q==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Kalle Valo <quic_kvalo@quicinc.com>,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
-	Sasha Levin <sashal@kernel.org>,
-	kvalo@kernel.org,
-	jjohnson@kernel.org,
+	b=f4lEPPq6yN01kQf4+fKAw0YTENFTPo/MlDnzIcFrF0d4czSDRBLx96AgcpwMaMMGc
+	 gMSQcKXSNZ3Eed7ETl5vXX+GcQZMcRS/wO2L/JONzHyrqwQVUBB9HpzAfmwY6VT6Qh
+	 zhACAhvk/LrEBF6BN/quVmICVol2t4OytK1VT/hk=
+Received: from grml.local.home.ionic.de (unknown [IPv6:2a00:11:fb41:7a00:21b:21ff:fe5e:dddc])
+	by mail.ionic.de (Postfix) with ESMTPSA id DD3981487FB2;
+	Mon, 25 Nov 2024 04:51:47 +0100 (CET)
+From: Mihai Moldovan <ionic@ionic.de>
+To: ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	Kalle Valo <kvalo@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Simon Horman <horms@kernel.org>,
 	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.12 032/107] wifi: ath12k: fix atomic calls in ath12k_mac_op_set_bitrate_mask()
-Date: Sun, 24 Nov 2024 08:28:52 -0500
-Message-ID: <20241124133301.3341829-32-sashal@kernel.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20241124133301.3341829-1-sashal@kernel.org>
-References: <20241124133301.3341829-1-sashal@kernel.org>
+	linux-arm-msm@vger.kernel.org,
+	netdev@vger.kernel.org
+Subject: [RFC] [PATCH v2 02/13] net: qrtr: mhi: register mhi_controller as endpoint-specific data
+Date: Mon, 25 Nov 2024 04:50:17 +0100
+Message-ID: <90e0394bfd97d28853d17e9c62b6e372b236b760.1732506261.git.ionic@ionic.de>
+X-Mailer: git-send-email 2.45.2
+In-Reply-To: <cover.1732506261.git.ionic@ionic.de>
+References: <cover.1732506261.git.ionic@ionic.de>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.12.1
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241124_053456_426446_A0D5188B 
-X-CRM114-Status: GOOD (  11.69  )
+X-CRM114-CacheID: sfid-20241124_195152_804907_F29A891A 
+X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,170 +78,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Kalle Valo <quic_kvalo@quicinc.com>
+For the MHI backend, we will use the mhi_controller pointer as the
+endpoint-specific data.
 
-[ Upstream commit 8fac3266c68a8e647240b8ac8d0b82f1821edf85 ]
+This means that we can only have one endpoint ID per MHI controller, but
+since the MHI controller is the bus master in charge of the physical
+link, this is probably okay.
 
-When I try to manually set bitrates:
-
-iw wlan0 set bitrates legacy-2.4 1
-
-I get sleeping from invalid context error, see below. Fix that by switching to
-use recently introduced ieee80211_iterate_stations_mtx().
-
-Do note that WCN6855 firmware is still crashing, I'm not sure if that firmware
-even supports bitrate WMI commands and should we consider disabling
-ath12k_mac_op_set_bitrate_mask() for WCN6855? But that's for another patch.
-
-BUG: sleeping function called from invalid context at drivers/net/wireless/ath/ath12k/wmi.c:420
-in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 2236, name: iw
-preempt_count: 0, expected: 0
-RCU nest depth: 1, expected: 0
-3 locks held by iw/2236:
- #0: ffffffffabc6f1d8 (cb_lock){++++}-{3:3}, at: genl_rcv+0x14/0x40
- #1: ffff888138410810 (&rdev->wiphy.mtx){+.+.}-{3:3}, at: nl80211_pre_doit+0x54d/0x800 [cfg80211]
- #2: ffffffffab2cfaa0 (rcu_read_lock){....}-{1:2}, at: ieee80211_iterate_stations_atomic+0x2f/0x200 [mac80211]
-CPU: 3 UID: 0 PID: 2236 Comm: iw Not tainted 6.11.0-rc7-wt-ath+ #1772
-Hardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021
-Call Trace:
- <TASK>
- dump_stack_lvl+0xa4/0xe0
- dump_stack+0x10/0x20
- __might_resched+0x363/0x5a0
- ? __alloc_skb+0x165/0x340
- __might_sleep+0xad/0x160
- ath12k_wmi_cmd_send+0xb1/0x3d0 [ath12k]
- ? ath12k_wmi_init_wcn7850+0xa40/0xa40 [ath12k]
- ? __netdev_alloc_skb+0x45/0x7b0
- ? __asan_memset+0x39/0x40
- ? ath12k_wmi_alloc_skb+0xf0/0x150 [ath12k]
- ? reacquire_held_locks+0x4d0/0x4d0
- ath12k_wmi_set_peer_param+0x340/0x5b0 [ath12k]
- ath12k_mac_disable_peer_fixed_rate+0xa3/0x110 [ath12k]
- ? ath12k_mac_vdev_stop+0x4f0/0x4f0 [ath12k]
- ieee80211_iterate_stations_atomic+0xd4/0x200 [mac80211]
- ath12k_mac_op_set_bitrate_mask+0x5d2/0x1080 [ath12k]
- ? ath12k_mac_vif_chan+0x320/0x320 [ath12k]
- drv_set_bitrate_mask+0x267/0x470 [mac80211]
- ieee80211_set_bitrate_mask+0x4cc/0x8a0 [mac80211]
- ? __this_cpu_preempt_check+0x13/0x20
- nl80211_set_tx_bitrate_mask+0x2bc/0x530 [cfg80211]
- ? nl80211_parse_tx_bitrate_mask+0x2320/0x2320 [cfg80211]
- ? trace_contention_end+0xef/0x140
- ? rtnl_unlock+0x9/0x10
- ? nl80211_pre_doit+0x557/0x800 [cfg80211]
- genl_family_rcv_msg_doit+0x1f0/0x2e0
- ? genl_family_rcv_msg_attrs_parse.isra.0+0x250/0x250
- ? ns_capable+0x57/0xd0
- genl_family_rcv_msg+0x34c/0x600
- ? genl_family_rcv_msg_dumpit+0x310/0x310
- ? __lock_acquire+0xc62/0x1de0
- ? he_set_mcs_mask.isra.0+0x8d0/0x8d0 [cfg80211]
- ? nl80211_parse_tx_bitrate_mask+0x2320/0x2320 [cfg80211]
- ? cfg80211_external_auth_request+0x690/0x690 [cfg80211]
- genl_rcv_msg+0xa0/0x130
- netlink_rcv_skb+0x14c/0x400
- ? genl_family_rcv_msg+0x600/0x600
- ? netlink_ack+0xd70/0xd70
- ? rwsem_optimistic_spin+0x4f0/0x4f0
- ? genl_rcv+0x14/0x40
- ? down_read_killable+0x580/0x580
- ? netlink_deliver_tap+0x13e/0x350
- ? __this_cpu_preempt_check+0x13/0x20
- genl_rcv+0x23/0x40
- netlink_unicast+0x45e/0x790
- ? netlink_attachskb+0x7f0/0x7f0
- netlink_sendmsg+0x7eb/0xdb0
- ? netlink_unicast+0x790/0x790
- ? __this_cpu_preempt_check+0x13/0x20
- ? selinux_socket_sendmsg+0x31/0x40
- ? netlink_unicast+0x790/0x790
- __sock_sendmsg+0xc9/0x160
- ____sys_sendmsg+0x620/0x990
- ? kernel_sendmsg+0x30/0x30
- ? __copy_msghdr+0x410/0x410
- ? __kasan_check_read+0x11/0x20
- ? mark_lock+0xe6/0x1470
- ___sys_sendmsg+0xe9/0x170
- ? copy_msghdr_from_user+0x120/0x120
- ? __lock_acquire+0xc62/0x1de0
- ? do_fault_around+0x2c6/0x4e0
- ? do_user_addr_fault+0x8c1/0xde0
- ? reacquire_held_locks+0x220/0x4d0
- ? do_user_addr_fault+0x8c1/0xde0
- ? __kasan_check_read+0x11/0x20
- ? __fdget+0x4e/0x1d0
- ? sockfd_lookup_light+0x1a/0x170
- __sys_sendmsg+0xd2/0x180
- ? __sys_sendmsg_sock+0x20/0x20
- ? reacquire_held_locks+0x4d0/0x4d0
- ? debug_smp_processor_id+0x17/0x20
- __x64_sys_sendmsg+0x72/0xb0
- ? lockdep_hardirqs_on+0x7d/0x100
- x64_sys_call+0x894/0x9f0
- do_syscall_64+0x64/0x130
- entry_SYSCALL_64_after_hwframe+0x4b/0x53
-RIP: 0033:0x7f230fe04807
-Code: 64 89 02 48 c7 c0 ff ff ff ff eb bb 0f 1f 80 00 00 00 00 f3 0f 1e fa 64 8b 04 25 18 00 00 00 85 c0 75 10 b8 2e 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 51 c3 48 83 ec 28 89 54 24 1c 48 89 74 24 10
-RSP: 002b:00007ffe996a7ea8 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
-RAX: ffffffffffffffda RBX: 0000556f9f9c3390 RCX: 00007f230fe04807
-RDX: 0000000000000000 RSI: 00007ffe996a7ee0 RDI: 0000000000000003
-RBP: 0000556f9f9c88c0 R08: 0000000000000002 R09: 0000000000000000
-R10: 0000556f965ca190 R11: 0000000000000246 R12: 0000556f9f9c8780
-R13: 00007ffe996a7ee0 R14: 0000556f9f9c87d0 R15: 0000556f9f9c88c0
- </TASK>
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-Link: https://patch.msgid.link/20241007165932.78081-2-kvalo@kernel.org
-Signed-off-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: Mihai Moldovan <ionic@ionic.de>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ net/qrtr/mhi.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 137394c364603..47f9a936b6979 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -8183,9 +8183,9 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 				    arvif->vdev_id, ret);
- 			goto out;
- 		}
--		ieee80211_iterate_stations_atomic(hw,
--						  ath12k_mac_disable_peer_fixed_rate,
--						  arvif);
-+		ieee80211_iterate_stations_mtx(hw,
-+					       ath12k_mac_disable_peer_fixed_rate,
-+					       arvif);
- 	} else if (ath12k_mac_bitrate_mask_get_single_nss(ar, band, mask,
- 							  &single_nss)) {
- 		rate = WMI_FIXED_RATE_NONE;
-@@ -8230,16 +8230,16 @@ ath12k_mac_op_set_bitrate_mask(struct ieee80211_hw *hw,
- 			goto out;
- 		}
+diff --git a/net/qrtr/mhi.c b/net/qrtr/mhi.c
+index 9a23c888e234..fc6869c3a7ec 100644
+--- a/net/qrtr/mhi.c
++++ b/net/qrtr/mhi.c
+@@ -95,6 +95,7 @@ static int qcom_mhi_qrtr_probe(struct mhi_device *mhi_dev,
+ 	qdev->mhi_dev = mhi_dev;
+ 	qdev->dev = &mhi_dev->dev;
+ 	qdev->ep.xmit = qcom_mhi_qrtr_send;
++	qdev->ep.endpoint_data = mhi_dev->mhi_cntrl;
  
--		ieee80211_iterate_stations_atomic(hw,
--						  ath12k_mac_disable_peer_fixed_rate,
--						  arvif);
-+		ieee80211_iterate_stations_mtx(hw,
-+					       ath12k_mac_disable_peer_fixed_rate,
-+					       arvif);
- 
- 		mutex_lock(&ar->conf_mutex);
- 
- 		arvif->bitrate_mask = *mask;
--		ieee80211_iterate_stations_atomic(hw,
--						  ath12k_mac_set_bitrate_mask_iter,
--						  arvif);
-+		ieee80211_iterate_stations_mtx(hw,
-+					       ath12k_mac_set_bitrate_mask_iter,
-+					       arvif);
- 
- 		mutex_unlock(&ar->conf_mutex);
- 	}
+ 	dev_set_drvdata(&mhi_dev->dev, qdev);
+ 	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
 -- 
-2.43.0
+2.45.2
 
 
