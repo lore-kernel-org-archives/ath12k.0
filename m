@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 000DAD3B7CD
-	for <ath12k@archiver.kernel.org>; Mon, 25 Nov 2024 03:51:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C95B1D3B7CF
+	for <ath12k@archiver.kernel.org>; Mon, 25 Nov 2024 03:52:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=N3NEXNbfVKJFi6dxYVC+J13HvVDzdkGdYWsgbEbK6jA=; b=lra4X6Fe/OYmMzQZFAQBmBtHZJ
-	qpKGy1ZiD3G+nm5VNSuVBFOj9h0iBdlm0tpMHIozkc1riA6LvEzf0zpHuQARK8PBRZRwbKF2Hb2wc
-	7k7IfNJzAq6gMLNagRj0zSvcvul6iebNKXr7kPj4VP6S/TqZibDfSVgGQISu0PjHVAoWKMxvj5i8k
-	EY8CUqynAyIj+gR43sjQP1RkBWc/IjeEdK+LgJZc8MYpyHz0DcKwX+Kn4A5ZOOG4GaG/Bt29rFvOV
-	BlQF/rg4xOwcPj99LU9zgq1ethXEbdty1/w5Ry6JC7hLP1fWLbAw8zh1KWJVB8J6+DN31658NmiCh
-	/3xXdU6Q==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=MTLu5fthzOYc7d+z9RPlvaupvN5XsBltZ+qYT+JFRuQ=; b=arSLWdM2BfQXxQK1AAn44XuCVI
+	TkyGQPSargVAXMgNoERb1UHUbFdNW8nS/Vie9v4nCwgUHGVrbpI58+qhMX9X2XVDiqoVvyuW7ZvBI
+	8B7Du+cTAH3lF5p9fMlZYwkmBCGKQ9NhNoWFOshueCLHXi/KwDswInwhWgn6DSQxmUcYWV0CA0FvD
+	Eoz4lp6KYKVcUJKa/MuV42QCxVrJqQNTUM3dHOnMz4quLR2iQrfC8jSCVO8zehKKrjBbBRNF9AaNb
+	PgKi1zvg5v1C503wU4pR6DzF17WsdhR1xRiI1aSrYo0FrQV2WuLfMLleCY2JzPF2KifBOnHBBDfzK
+	M1hq3bTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFQ8l-00000006zDv-30UP
+	id 1tFQ8m-00000006zFE-2S5i
 	for ath12k@archiver.kernel.org;
-	Mon, 25 Nov 2024 03:51:59 +0000
+	Mon, 25 Nov 2024 03:52:00 +0000
 Received: from ionic.de ([2001:41d0:700:3394:1::2] helo=mail.ionic.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFQ8e-00000006z6M-1gEk;
-	Mon, 25 Nov 2024 03:51:54 +0000
+	id 1tFQ8e-00000006z6J-25eD;
+	Mon, 25 Nov 2024 03:51:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
-	t=1732506708; bh=CcApLCzMROUQU/RunBcPJFusQCj4QXpyFrT2DKnQP7w=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Z6iKAJH5JsYjx4sr75/4g+0kGMhiOlbPLMXkjy/593ut3Vv9MlfrTHweTGOyyKuVx
-	 a7l3hJfWA+3Vu3SQvc1L2CDnRxjAcWmHMe06c6vMEicH+eItRog4Dq2fJCuW9V7s5+
-	 qxFIbLzWWVxmZLKUUJPYoQXvbwcOJYueiNdmGegA=
+	t=1732506707; bh=7PPsbid4M9D/6WazRtWqSk5j/jZ4koF4s1URfKT0/gM=;
+	h=From:To:Cc:Subject:Date:From;
+	b=ITMq8tnuzDTC6iAarN6dtOpubSFfr6mNxyolDZgzN7bxZUN7iDDIeAtHnpB8sHf1Y
+	 u33wg1+e6Xt6NbDNH/VPq7cDjN2pSsOTc069O+Nu4HRDZkWarT9XX2ipV2Aq3QQVwt
+	 jA9ioSh6DsG7mIRwAGs1xzZ2unk4/9Eyp3kluSVQ=
 Received: from grml.local.home.ionic.de (unknown [IPv6:2a00:11:fb41:7a00:21b:21ff:fe5e:dddc])
-	by mail.ionic.de (Postfix) with ESMTPSA id 28705148839C;
-	Mon, 25 Nov 2024 04:51:48 +0100 (CET)
+	by mail.ionic.de (Postfix) with ESMTPSA id 5E7A41487357;
+	Mon, 25 Nov 2024 04:51:47 +0100 (CET)
 From: Mihai Moldovan <ionic@ionic.de>
 To: ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
@@ -52,18 +52,15 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-wireless@vger.kernel.org,
 	linux-arm-msm@vger.kernel.org,
 	netdev@vger.kernel.org
-Subject: [RFC] [PATCH v2 03/13] net: qrtr: smd: register rpmsg_device as endpoint-specific data
-Date: Mon, 25 Nov 2024 04:50:18 +0100
-Message-ID: <aa1aa32b42c0d052c907b53e8dae4877e63b2b2f.1732506261.git.ionic@ionic.de>
+Subject: [RFC] [PATCH v2 00/13] ath1{1,2}k: support multiple PCI devices in one system
+Date: Mon, 25 Nov 2024 04:50:15 +0100
+Message-ID: <cover.1732506261.git.ionic@ionic.de>
 X-Mailer: git-send-email 2.45.2
-In-Reply-To: <cover.1732506261.git.ionic@ionic.de>
-References: <cover.1732506261.git.ionic@ionic.de>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241124_195152_810761_001EF508 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241124_195152_809975_B03441F1 
+X-CRM114-Status: GOOD (  32.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,26 +75,164 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-For the SMD backend, we will use the rpmsg_device pointer as the
-endpoint-specific data.
+ath11k and ath12k suffer from a long-standing issue that is partly
+caused by the QRTR implementation, which only supports one device per
+node/port combination and partly caused by the fact that the
+QMI instance ID of the devices are statically set to 1.
 
-Signed-off-by: Mihai Moldovan <ionic@ionic.de>
----
- net/qrtr/smd.c | 1 +
- 1 file changed, 1 insertion(+)
+P Praneesh <quic_ppranees@quicinc.com> submitted a patch[0] that fixes
+this issue generating a unique QMI instance ID based on the PCI bus data
+for the device and passing that information to the QMI subsystem and the
+device's firmware via a special PCI register.
 
-diff --git a/net/qrtr/smd.c b/net/qrtr/smd.c
-index c91bf030fbc7..cb3eeb6835ca 100644
---- a/net/qrtr/smd.c
-+++ b/net/qrtr/smd.c
-@@ -68,6 +68,7 @@ static int qcom_smd_qrtr_probe(struct rpmsg_device *rpdev)
- 	qdev->channel = rpdev->ept;
- 	qdev->dev = &rpdev->dev;
- 	qdev->ep.xmit = qcom_smd_qrtr_send;
-+	qdev->ep.endpoint_data = rpdev;
- 
- 	rc = qrtr_endpoint_register(&qdev->ep, QRTR_EP_NID_AUTO);
- 	if (rc)
+However, it quickly turned out that this approach works for the hardware
+he tested, but fails for other ath11k-based devices, including the
+popular QCA6930, since its firmware just ignores the special register
+being used.
+
+Since we need QMI (and, for matter, QRTR) to work for the initial
+firmware upload, this approach will not work generically.
+
+Fortunately, Denis Kenzior <denkenz@gmail.com> cooked up a patch set for
+QRTR[1] that introduces the concept of endpoint IDs, which are
+dynamically allocated and can be used to distinguish different devices
+even though they use the same node/port combination. Using this patch
+set, endpoint IDs can be reported as part of auxiliary data in the QRTR
+socket and bound to for client sockets, which will automatically filter
+messages from other endpoints and also make sure that client messages
+are routed to the correct endpoint.
+
+This looked promising, and with that functionality, the only challenge
+is to find out the correct endpoint IDs and bind to them in drivers to
+finally support multiple devices in a generic way.
+
+This patch set implements exactly that, and it WORKSFORME, but
+unfortunately it turns out that "the only challenge" is very difficult
+to overcome due to the socket-based architecture.
+
+ath1{1,2}k and QRTR are at opposite sides of the socket, with QRTR
+assigning endpoint IDs and ath1{1,2}k needing a way to fetch and operate
+on them.
+
+The endpoint reporting feature in QRTR is not helpful in this case,
+because drivers do not generally know which endpoint belongs to the
+device they currently handle (i.e., there is no central registry) and
+even if we were to snoop on the socket and take the first endpoint ID we
+are unaware of, this might not be the correct one, because it might be
+in use by a different driver for instance, or correspond to a different
+device.
+
+The first iteration of this patch set[2] extended struct mhi_device with
+a qrtr_endpoint_id field that was initialized to zero and populated by
+the QRTR MHI driver as soon as it was loaded. Drivers could then query
+this field through an mhi_device->mhi_cntrl->mhi_device chain (if they
+also use the MHI bus, of course). This, however, was an incredibly ugly
+hack because QRTR data should not be part of MHI device structures in
+the first place, timing is critical (drivers querying the endpoint ID
+must do so after the QRTR MHI module initialized, which is typically
+only the case after QRTR socket was created) and it was not possible to
+query or pre-assign an endpoint ID before creating a socket and directly
+bind to it (which might lead to races such as seeing messages over the
+socket that are not meant for the endpoint ID drivers are actually
+interested in).
+
+Since that was not elegant at all, and due to the other mentioned
+issues, this iteration uses a different approach: endpoint IDs can now
+be associated with (private) backend endpoint-specific data, which
+allows us to identify which endpoint ID is being used with what backend,
+and additionally new API is introduced so that other parts in the kernel
+can either get an endpoint ID for given endpoint-specific data or even
+attach endpoint-specific data to a new endpoint ID generated by the QRTR
+driver. The QRTR system will try to use endpoint-specific data if
+possible, but falls back to generating endpoint IDs without
+endpoint-specific data (as in, NULL pointer) if that did not work.
+
+Crucially, the endpoint-specific data pointer is used as an opaque void
+pointer and at most compared with data stored in the endpoints XArray.
+
+In the QRTR MHI backend, we use the MHI controller's structure pointer
+as endpoint-specific data, and since the MHI controller is also the bus
+master and responsible for the physical link, clients (drivers) can
+pre-register an endpoint ID for their MHI controllers and directly tell
+QMI to bind to the endpoint ID at socket creation time. 
+
+The QRTR SMD backend uses its rpmsg_device pointer and the TUN backend
+uses the inode pointer as their respective endpoint-specific data
+pointers.
+
+This approach is cleaner and works better, because it is not prone to
+races (although it requires coordination between QRTR backends and
+clients/drivers because both must use the same endpoint-specific data
+for the scheme to work).
+
+There are, however, also issues with this approach:
+  - Any kernel part can generate an unlimited number of endpoint IDs
+    with arbitrary pointers. The amount of endpoint IDs that can be
+    tracked is limited, though, so there is potential for exhaustion of ID
+    space.
+  - Since previously endpoint IDs were only generated by the QRTR
+    subsystem, there was no need to use any kind of life cycle management
+    for the endpoint IDs: they were created at node creation time and
+    also deleted at node deletion time. Since other subsystems can now
+    create endpoint IDs, it would probably be good to have a way to
+    reclaim created but unused endpoint IDs. No such implementation is
+    provided here.
+  - Multiple PCI/MHI devices will work, but no AHB + PCI/MHI interaction
+    has been tested. Since PCI/MHI devices bind to their endpoint ID,
+    these will likely work, but the AHB devices might still see messages
+    for all endpoints and fail to work correctly. AHB devices seem to be
+    using QMI and thus also QRTR, but without a specific QRTR backend
+    driver (going through REMOTEPROC instead?), so this approach might
+    not be viable for AHB devices.
+
+I am much more comfortable with this patch set, even if it has some
+rough edges and might not fix the situation for AHB devices.
+
+[0] https://patch.msgid.link/20230111170033.32454-1-kvalo@kernel.org
+[1] https://patch.msgid.link/20241018181842.1368394-1-denkenz@gmail.com
+[2] https://msgid.link/cover.1730790058.git.ionic@ionic.de
+
+v2: code and metadata cleanup (checkpatch.pl), no functional changes
+
+Mihai Moldovan (13):
+  net: qrtr: support registering endpoint-specific data
+  net: qrtr: mhi: register mhi_controller as endpoint-specific data
+  net: qrtr: smd: register rpmsg_device as endpoint-specific data
+  net: qrtr: tun: register inode as endpoint-specific data
+  soc: qcom: qmi_helpers: add QRTR endpoint ID to qmi_handle
+  soc: qcom: qmi_helpers: optionally bind to QRTR endpoint ID in
+    qmi_sock_create
+  wifi: ath11k: add QRTR endpoint ID hif feature
+  wifi: ath11k: stub QRTR endpoint ID fetching for AHB
+  wifi: ath11k: implement QRTR endpoint ID fetching for PCI
+  wifi: ath11k: bind to QRTR endpoint ID in ath11k_qmi_init_service
+  wifi: ath12k: add QRTR endpoint ID hif feature
+  wifi: ath12k: implement QRTR endpoint ID fetching for PCI
+  wifi: ath12k: bind to QRTR endpoint ID in ath12k_qmi_init_service
+
+ MAINTAINERS                           |   1 +
+ drivers/net/wireless/ath/ath11k/ahb.c |   7 ++
+ drivers/net/wireless/ath/ath11k/hif.h |   9 ++
+ drivers/net/wireless/ath/ath11k/mhi.c |  22 +++++
+ drivers/net/wireless/ath/ath11k/mhi.h |   1 +
+ drivers/net/wireless/ath/ath11k/pci.c |   1 +
+ drivers/net/wireless/ath/ath11k/qmi.c |   8 ++
+ drivers/net/wireless/ath/ath12k/hif.h |  10 +++
+ drivers/net/wireless/ath/ath12k/mhi.c |  22 +++++
+ drivers/net/wireless/ath/ath12k/mhi.h |   2 +
+ drivers/net/wireless/ath/ath12k/pci.c |   1 +
+ drivers/net/wireless/ath/ath12k/qmi.c |   9 ++
+ drivers/soc/qcom/qmi_interface.c      |  28 ++++++
+ include/linux/soc/qcom/qmi.h          |   3 +
+ include/net/qrtr.h                    |  11 +++
+ net/qrtr/af_qrtr.c                    | 124 +++++++++++++++++++++++++-
+ net/qrtr/mhi.c                        |   1 +
+ net/qrtr/qrtr.h                       |   5 ++
+ net/qrtr/smd.c                        |   1 +
+ net/qrtr/tun.c                        |   1 +
+ 20 files changed, 264 insertions(+), 3 deletions(-)
+ create mode 100644 include/net/qrtr.h
+
 -- 
 2.45.2
 
