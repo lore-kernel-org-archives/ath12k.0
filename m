@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8EEFD3B7CD
-	for <ath12k@archiver.kernel.org>; Mon, 25 Nov 2024 03:52:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A94FD3B7D0
+	for <ath12k@archiver.kernel.org>; Mon, 25 Nov 2024 03:52:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bfbWTMUiNPVaEmD+QZ244i3yD3o10c84ngFAadvlhcQ=; b=OMO8lzSvTLE+I/FeAtSB2QyjGX
-	3+ZP/Mu3djBsTuhwpfwBO9GsB0qwWRT7mfJrCHydAg/VN7DH2UDSV0uYlMZUFHFnywBBNjsfnsl6c
-	frGCmUuxfjKsPcVdXpxVxyP9gqbDQHNd2eznENqdlBU5unVPDQ9WcyK+xSZsW/YZyzyxJ9mNTdYaY
-	uHbf9qr+gbyS2wfvcZmRNFWQIc10eWm/FxkOIeeLAnBDQibXSlT1REEeM6/EaBx6rVbSWilaP31Av
-	Wyl/quJDDduIdM1DwgF5v0KuinohI3FfQIUjkgcg0yw1Wv7P2Urzgsj3Kk7ZKz9ZkhyZh0WtX5DBh
-	B5och1dA==;
+	bh=M8jowrm2f6+rXzGx+aJ/CLtSzURp+TZshn6vz3PBbn0=; b=W/q4+vARnboxgDuqToTo9bEolV
+	bh7Oa6H/Sjj5frtTIErTpb7p9F0nePOXFbekE8gQ0Est4YzRX1Jm0+slduJW4UHcRbbxjFlxYcSEe
+	zzRlVBtn1H50/NQzpDduWJPHk+TBEq/OraiS8NcyCFBhKHmtS+NZIMDgMY8bqp1NypCdNpgrpVNn/
+	w0rLNwJFxYBi3X87eDoATYI78xQn3P8tlTbKEwb5386bPump6zSbP9d8WPkSUVz3ZP9QDKx2go62D
+	fTODz1lcXMB/W0V9BZQZX8G38S9NIY/bKcG/LdweFNDi2VzbcSvXjN2Qdi1RUrCDH+/0hbV2smNLe
+	7sOJ5N1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFQ8o-00000006zHI-1iT0
+	id 1tFQ8q-00000006zJt-0aT6
 	for ath12k@archiver.kernel.org;
-	Mon, 25 Nov 2024 03:52:02 +0000
+	Mon, 25 Nov 2024 03:52:04 +0000
 Received: from ionic.de ([145.239.234.145] helo=mail.ionic.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFQ8h-00000006z7s-17jd;
+	id 1tFQ8h-00000006z83-3CGP;
 	Mon, 25 Nov 2024 03:51:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
-	t=1732506709; bh=UyuABPlzyiqkE23T62xlQISSVDBGgpm7/N5AP3n04ZM=;
+	t=1732506709; bh=HdvvnX3oBwORMiG9uXHBr/WQrekrk+ivf29v/3cUx50=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=fOuCpeqVtL5FKsBHcNc5N1UebrdiEJ/+F/uQBttmoTfpS2aWt829DskHdXSpCT3F2
-	 HE/XTHZiYaBx4sqRacNewnMz13cYiptrM27eeUfN6BXk3nFa6yqAAboLRwxjI319n5
-	 YuGzb30QQIxQdjZ9+GI+urwnqtgv1ogHNrtmOG5c=
+	b=aIAVrJjGD8zUzNnhL67os6yVqTq+SDbezurYDgZOJ4/jl0mszLwnop60k83ZVOyM1
+	 QFCKKkEaXMGVmYz/GIJBsY6ehvFjDjBJdVokc7BqQPrGWEvVzi8KPy7McOPpv1d3vI
+	 RnsLC/UK959s2w9nNIi6GltV8Lpoj6tPFuLAhqEA=
 Received: from grml.local.home.ionic.de (unknown [IPv6:2a00:11:fb41:7a00:21b:21ff:fe5e:dddc])
-	by mail.ionic.de (Postfix) with ESMTPSA id F028314886FF;
-	Mon, 25 Nov 2024 04:51:48 +0100 (CET)
+	by mail.ionic.de (Postfix) with ESMTPSA id 7798F148870D;
+	Mon, 25 Nov 2024 04:51:49 +0100 (CET)
 From: Mihai Moldovan <ionic@ionic.de>
 To: ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
@@ -52,17 +52,18 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-wireless@vger.kernel.org,
 	linux-arm-msm@vger.kernel.org,
 	netdev@vger.kernel.org
-Subject: [RFC] [PATCH v2 06/13] soc: qcom: qmi_helpers: optionally bind to QRTR endpoint ID in qmi_sock_create
-Date: Mon, 25 Nov 2024 04:50:21 +0100
-Message-ID: <cdf0dfb31a80ba20e24686b19f8ffd9aa0996063.1732506261.git.ionic@ionic.de>
+Subject: [RFC] [PATCH v2 08/13] wifi: ath11k: stub QRTR endpoint ID fetching for AHB
+Date: Mon, 25 Nov 2024 04:50:23 +0100
+Message-ID: <1213282db93cb9aa126440bf46212f47dd015e69.1732506261.git.ionic@ionic.de>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <cover.1732506261.git.ionic@ionic.de>
 References: <cover.1732506261.git.ionic@ionic.de>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241124_195155_462418_C4A1F4A2 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20241124_195155_957535_598C032D 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,64 +78,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-For clients that already know the QRTR endpoint ID before actually
-creating the QMI socket and set it in struct qmi_handle, optionally try
-to bind to this QRTR endpoint ID when creating the socket.
-
-This can fail, and qmi_sock_create will issue diagnostic messages, but
-otherwise ignore the error.
+QRTR endpoint ID fetching will currently not be available for AHB.
 
 Signed-off-by: Mihai Moldovan <ionic@ionic.de>
 ---
- drivers/soc/qcom/qmi_interface.c | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ drivers/net/wireless/ath/ath11k/ahb.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/drivers/soc/qcom/qmi_interface.c b/drivers/soc/qcom/qmi_interface.c
-index bb98b06e87f8..dd3978682c09 100644
---- a/drivers/soc/qcom/qmi_interface.c
-+++ b/drivers/soc/qcom/qmi_interface.c
-@@ -586,6 +586,7 @@ static struct socket *qmi_sock_create(struct qmi_handle *qmi,
- 				      struct sockaddr_qrtr *sq)
- {
- 	struct socket *sock;
-+	const struct proto_ops *ops = NULL;
- 	int ret;
+diff --git a/drivers/net/wireless/ath/ath11k/ahb.c b/drivers/net/wireless/ath/ath11k/ahb.c
+index f2fc04596d48..acb12d6d647f 100644
+--- a/drivers/net/wireless/ath/ath11k/ahb.c
++++ b/drivers/net/wireless/ath/ath11k/ahb.c
+@@ -773,6 +773,7 @@ static const struct ath11k_hif_ops ath11k_ahb_hif_ops_ipq8074 = {
+ 	.map_service_to_pipe = ath11k_ahb_map_service_to_pipe,
+ 	.power_down = ath11k_ahb_power_down,
+ 	.power_up = ath11k_ahb_power_up,
++	.set_qrtr_endpoint_id = ath11k_ahb_set_qrtr_endpoint_id,
+ };
  
- 	ret = sock_create_kern(&init_net, AF_QIPCRTR, SOCK_DGRAM,
-@@ -593,6 +594,33 @@ static struct socket *qmi_sock_create(struct qmi_handle *qmi,
- 	if (ret < 0)
- 		return ERR_PTR(ret);
+ static const struct ath11k_hif_ops ath11k_ahb_hif_ops_wcn6750 = {
+@@ -792,6 +793,7 @@ static const struct ath11k_hif_ops ath11k_ahb_hif_ops_wcn6750 = {
+ 	.resume = ath11k_ahb_hif_resume,
+ 	.ce_irq_enable = ath11k_pci_enable_ce_irqs_except_wake_irq,
+ 	.ce_irq_disable = ath11k_pci_disable_ce_irqs_except_wake_irq,
++	.set_qrtr_endpoint_id = ath11k_ahb_set_qrtr_endpoint_id,
+ };
  
-+	ops = READ_ONCE(sock->ops);
+ static int ath11k_core_get_rproc(struct ath11k_base *ab)
+@@ -1312,6 +1314,11 @@ static void ath11k_ahb_shutdown(struct platform_device *pdev)
+ 	ath11k_ahb_free_resources(ab);
+ }
+ 
++static ath11k_ahb_set_qrtr_endpoint_id(struct ath11k_base *ab)
++{
++	return -EOPNOTSUPP;
++}
 +
-+	if (!ops) {
-+		pr_warn("sock->ops not available for QMI socket\n");
-+		pr_warn("will not be able to bind to endpoint ID.\n");
-+		/* N.B.: this error value will not be passed out. */
-+		ret = -ENXIO;
-+	}
-+
-+	if (!ret && !ops->setsockopt) {
-+		pr_warn("ops->setsockopt not available for QMI socket\n");
-+		pr_warn("will not be able to bind to endpoint ID.\n");
-+		/* N.B.: this error value will not be passed out. */
-+		ret = -ENXIO;
-+	}
-+
-+	/* Only bind to a specific endpoint if a valid one was provided. */
-+	if (!ret && qmi->endpoint_id) {
-+		ret = ops->setsockopt(sock, SOL_QRTR, QRTR_BIND_ENDPOINT,
-+				      KERNEL_SOCKPTR(&qmi->endpoint_id),
-+				      sizeof(qmi->endpoint_id));
-+
-+		if (ret < 0)
-+			pr_warn("binding to QRTR endpoint ID failed: %d\n",
-+				ret);
-+	}
-+
- 	ret = kernel_getsockname(sock, (struct sockaddr *)sq);
- 	if (ret < 0) {
- 		sock_release(sock);
+ static struct platform_driver ath11k_ahb_driver = {
+ 	.driver = {
+ 		.name = "ath11k",
 -- 
 2.45.2
 
