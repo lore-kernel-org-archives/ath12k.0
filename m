@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F7E4D65534
-	for <ath12k@archiver.kernel.org>; Tue, 26 Nov 2024 17:11:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FF57D65533
+	for <ath12k@archiver.kernel.org>; Tue, 26 Nov 2024 17:11:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zdPL8Zgv1mqXnpFb4FzHwU6ZOfhMTnX3qNhItOVnF+g=; b=plOZQ4pX2gbCKURAh0lvb2ZDaR
-	TDL0kyECJwj4LO5+LJYxgg3kvSVfWdwMyWvb65Po1CfN2FkEMs9rssBL+4rABJonRkNT2/GsKLY/A
-	LXawkhRMlCZgaIbttiPZz4mBjCntuEoYgnpjQBGaUHlUSfcq8ZCiT8LA6yKFfUU5JNYFXphjgiY/+
-	B2XkoDR4lnf8a1VPmpto/lt7nyP/z5L+X6LPxCRrP6eUYGOb5aF9MMDFcRjqUNUp0ez4ViNJvmeYT
-	Ul8tQo5VGa4PZsaQzQ3YqpZEXkd8nsglv1r4qeTtVRe/yQxvGIRq+0fePhtitjQ8qCH7n59jmrX5m
-	z/vmtCAw==;
+	bh=dZm+lon7noWtTjrFo6jEVB4kSUEVzF650Gd+KRxO98Y=; b=bWc2eXCH9n1+rCaUl+jMRnYghq
+	aWXjdNyIreyZzEqYy5QSEgOshqes+mBpFZxf6PUQuwcxY74fyZ62gzU9xvnMFqixu7hqtxonUjd3F
+	8s9Ar8jIrqbsX3w8a1tdvoGfyVhyyqbvKIhPZCqJldIUzz1LgckYHY0r3KBk3rcHwklYVVRxAUjoH
+	R8KojZvIz59Zd6pEvjhCjOqOH9w3A1XbiyLjEqEVkGLtrsheIU2TblQHAH9Ah+GjwUFAXizarXD6s
+	eLZaLpPR5qspxfy8gtMrRsA33a8+h+2ymkIxGZUr1jU/52vROMhfsDteCT3XZMIwbecufclgFES+h
+	9waxPg9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFz6R-0000000BGIp-0BKS
+	id 1tFz6T-0000000BGMJ-3XnS
 	for ath12k@archiver.kernel.org;
-	Tue, 26 Nov 2024 17:11:55 +0000
+	Tue, 26 Nov 2024 17:11:57 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFz6L-0000000BGE1-1cGg
+	id 1tFz6O-0000000BGE1-0XKE
 	for ath12k@lists.infradead.org;
-	Tue, 26 Nov 2024 17:11:50 +0000
+	Tue, 26 Nov 2024 17:11:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 850B05C581C
-	for <ath12k@lists.infradead.org>; Tue, 26 Nov 2024 17:11:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 10BDBC4CECF;
-	Tue, 26 Nov 2024 17:11:47 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9221B5C581C
+	for <ath12k@lists.infradead.org>; Tue, 26 Nov 2024 17:11:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20D9CC4CED0;
+	Tue, 26 Nov 2024 17:11:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732641108;
-	bh=dKyR14jlI4jTxrksJj2zGzFi2HqMkz290uKkjN12qho=;
+	s=k20201202; t=1732641111;
+	bh=hQjedzDvhSnv4P35mhnpee32q6txbwbayatXB510sAA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=gaLabdOCwT2lF0IMU291GEPd76x2SPIRABIHgPCeP5zqeHoO+biE7Cncpi7LlVZk1
-	 UZFIfA5YeVPwZfJp6fenPS9b3OCKgqkddUMYowWL7ZGdyGpKdGPx7PVhO+YGQbtA80
-	 jpHsN9ifh9PCQvCNKBJ4YZL1jyg5FwTxWET9XwMeOrO+MHLVZ3jnNTbQGXTXqyD2/0
-	 pZkMl5dzKaIR24nb3mv+Nxwlr5rclbHc5ZgcOe6xOFWr6pkj42m27ta1S/CUQBXiwE
-	 XevrdqTm+gRP5bUR9bxKieYfSKW5aAR8V5wcq3lAEZ+JSK4Pvd6WmFtuBlJbMecyw8
-	 0TErdMpGfd5CA==
+	b=pmfvHdp+9TNBrlrTmJ+KrT1juzzy4mtam7dTsFZGlZscj58dPpFpFW6hxqyYnF3bU
+	 59Fbd+FXcInGKHZVbVHVbXfcz+GvJOHlsfn1OHpaYIHmW0Z52EcW/201gs6emP/2Ty
+	 bv6+JCQq5NN3GCEhFlCKuqZTPV/MgNnTogBX+a7QxV9zoRtoEoBzBBWCS235WHQJMj
+	 0PcYu/vjVQuK+Kq1tDpRsSgdWAZSuM6wgqyAzP/uNl4XjVzBrjAL6ChqXSoIIjosP/
+	 Wq1W0IdEb3adN/wfbBx0s8iVUgd4tZPR0DmBP6JZbZ7n61rze/ezXZHr4aPNAGa+48
+	 dDLr3FXVHf++A==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 06/10] wifi: ath12k: do not return invalid link id for scan link
-Date: Tue, 26 Nov 2024 19:11:35 +0200
-Message-Id: <20241126171139.2350704-7-kvalo@kernel.org>
+Subject: [PATCH 09/10] wifi: ath12k: ath12k_mac_op_set_key(): fix uninitialized symbol 'ret'
+Date: Tue, 26 Nov 2024 19:11:38 +0200
+Message-Id: <20241126171139.2350704-10-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241126171139.2350704-1-kvalo@kernel.org>
 References: <20241126171139.2350704-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_091149_511579_FADBA147 
-X-CRM114-Status: GOOD (  26.67  )
+X-CRM114-CacheID: sfid-20241126_091152_256642_F5492B59 
+X-CRM114-Status: GOOD (  12.75  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,226 +71,114 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sriram R <quic_srirrama@quicinc.com>
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-When a scan request is received, driver selects a link id for which the arvif
-can be mapped. Same link is also used for getting the link conf address.
-Currently, we return 0 as link id for a non ML vif, which is correct since that
-is the default link id. Also when any of the link vif is active and the scan
-request is for a channel in the active link we return its link id. But, when we
-don't hit both of the above cases (i.e not a ML vif or no active link vif for
-the channel is present) we currently return 0 as the link id.
+Dan reported that in some cases the ret variable could be uninitialized. Fix
+that by removing the out label entirely and returning zero explicitly on
+succesful cases.
 
-Bu the problemis that this might not work out always, eg., when only one link
-(eg. linkid = 1) is added to vif, then we won't find any link conf for link id
-0 in the vif resulting in scan failure. During AP bringup, such scan failure
-causes bringup issues.  Hence avoid sending link id 0 as default. Rather use a
-default link for scan and default link address for the same. This scan vdev
-will either be deleted if another scan is requested on same vif or when AP is
-broughtup on same link or during interface cleanup.
+Also remove the unnecessary else branches to follow more the style used in
+ath12k and now it's easier to see the error handling.
+
+No functional changes.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Reported-by: kernel test robot <lkp@intel.com>
+Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+Closes: https://lore.kernel.org/all/7e7afd00-ad84-4744-8d94-416bab7e7dd9@stanley.mountain/
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h |  3 +-
- drivers/net/wireless/ath/ath12k/mac.c  | 65 +++++++++++++++++++-------
- drivers/net/wireless/ath/ath12k/mac.h  |  6 +++
- 3 files changed, 56 insertions(+), 18 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 59 +++++++++++++++------------
+ 1 file changed, 33 insertions(+), 26 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index e246e3d3c162..f4a710d49584 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -322,10 +322,11 @@ struct ath12k_vif {
- 	bool ps;
- 
- 	struct ath12k_link_vif deflink;
--	struct ath12k_link_vif __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
-+	struct ath12k_link_vif __rcu *link[ATH12K_NUM_MAX_LINKS];
- 	struct ath12k_vif_cache *cache[IEEE80211_MLD_MAX_NUM_LINKS];
- 	/* indicates bitmap of link vif created in FW */
- 	u16 links_map;
-+	u8 last_scan_link;
- 
- 	/* Must be last - ends in a flexible-array member.
- 	 *
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 8287c2e6b765..85cfbe1e4b9f 100644
+index f85661534d9e..f6c3128a675a 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3792,6 +3792,9 @@ static void ath12k_ahvif_put_link_key_cache(struct ath12k_vif_cache *cache)
+@@ -4657,6 +4657,7 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
  
- static void ath12k_ahvif_put_link_cache(struct ath12k_vif *ahvif, u8 link_id)
- {
-+	if (link_id >= IEEE80211_MLD_MAX_NUM_LINKS)
-+		return;
+ 	if (sta) {
+ 		ahsta = ath12k_sta_to_ahsta(sta);
 +
- 	ath12k_ahvif_put_link_key_cache(ahvif->cache[link_id]);
- 	kfree(ahvif->cache[link_id]);
- 	ahvif->cache[link_id] = NULL;
-@@ -3852,9 +3855,9 @@ static struct ath12k_link_vif *ath12k_mac_assign_link_vif(struct ath12k_hw *ah,
- 		arvif = &ahvif->deflink;
- 	} else {
- 		/* If this is the first link arvif being created for an ML VIF
--		 * use the preallocated deflink memory
-+		 * use the preallocated deflink memory except for scan arvifs
+ 		/* For an ML STA Pairwise key is same for all associated link Stations,
+ 		 * hence do set key for all link STAs which are active.
  		 */
--		if (!ahvif->links_map) {
-+		if (!ahvif->links_map && link_id != ATH12K_DEFAULT_SCAN_LINK) {
- 			arvif = &ahvif->deflink;
- 		} else {
- 			arvif = (struct ath12k_link_vif *)
-@@ -4154,10 +4157,10 @@ ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
- 			return link_id;
- 	}
+@@ -4679,41 +4680,47 @@ static int ath12k_mac_op_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+ 				if (ret)
+ 					break;
+ 			}
+-		} else {
+-			arsta = &ahsta->deflink;
+-			arvif = arsta->arvif;
+-			if (WARN_ON(!arvif)) {
+-				ret = -EINVAL;
+-				goto out;
+-			}
  
--	/* input ar is not assigned to any of the links, use link id
--	 * 0 for scan vdev creation.
-+	/* input ar is not assigned to any of the links of ML VIF, use scan
-+	 * link (15) for scan vdev creation.
- 	 */
--	return 0;
-+	return ATH12K_DEFAULT_SCAN_LINK;
- }
+-			ret = ath12k_mac_set_key(arvif->ar, cmd, arvif, arsta, key);
+-		}
+-	} else {
+-		if (key->link_id >= 0 && key->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
+-			link_id = key->link_id;
+-			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+-		} else {
+-			link_id = 0;
+-			arvif = &ahvif->deflink;
++			return 0;
+ 		}
  
- static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
-@@ -4188,7 +4191,7 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
- 
- 	/* check if any of the links of ML VIF is already started on
- 	 * radio(ar) correpsondig to given scan frequency and use it,
--	 * if not use deflink(link 0) for scan purpose.
-+	 * if not use scan link (link 15) for scan purpose.
- 	 */
- 	link_id = ath12k_mac_find_link_id_by_ar(ahvif, ar);
- 	arvif = ath12k_mac_assign_link_vif(ah, vif, link_id);
-@@ -4298,6 +4301,13 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
- 		spin_unlock_bh(&ar->data_lock);
- 	}
- 
-+	/* As per cfg80211/mac80211 scan design, it allows only one
-+	 * scan at a time. Hence last_scan link id is used for
-+	 * tracking the link id on which the scan is been done on
-+	 * this vif.
-+	 */
-+	ahvif->last_scan_link = arvif->link_id;
-+
- 	/* Add a margin to account for event/command processing */
- 	ieee80211_queue_delayed_work(ath12k_ar_to_hw(ar), &ar->scan.timeout,
- 				     msecs_to_jiffies(arg->max_scan_time +
-@@ -4317,14 +4327,14 @@ static void ath12k_mac_op_cancel_hw_scan(struct ieee80211_hw *hw,
- 					 struct ieee80211_vif *vif)
- {
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-+	u16 link_id = ahvif->last_scan_link;
- 	struct ath12k_link_vif *arvif;
- 	struct ath12k *ar;
- 
- 	lockdep_assert_wiphy(hw->wiphy);
- 
--	arvif = &ahvif->deflink;
+-		if (!arvif || !arvif->is_created) {
+-			cache = ath12k_ahvif_get_link_cache(ahvif, link_id);
+-			if (!cache)
+-				return -ENOSPC;
 -
--	if (!arvif->is_created)
-+	arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
-+	if (!arvif || arvif->is_created)
- 		return;
+-			ret = ath12k_mac_update_key_cache(cache, cmd, sta, key);
++		arsta = &ahsta->deflink;
++		arvif = arsta->arvif;
++		if (WARN_ON(!arvif))
++			return -EINVAL;
  
- 	ar = arvif->ar;
-@@ -7688,10 +7698,19 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	u16 nss;
- 	int i;
- 	int ret, vdev_id;
-+	u8 link_id;
++		ret = ath12k_mac_set_key(arvif->ar, cmd, arvif, arsta, key);
++		if (ret)
+ 			return ret;
+-		}
  
- 	lockdep_assert_wiphy(hw->wiphy);
+-		ret = ath12k_mac_set_key(arvif->ar, cmd, arvif, NULL, key);
++		return 0;
+ 	}
  
--	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[arvif->link_id]);
-+	/* If no link is active and scan vdev is requested
-+	 * use a default link conf for scan address purpose.
-+	 */
-+	if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
-+		link_id = ffs(vif->valid_links) - 1;
-+	else
-+		link_id = arvif->link_id;
+-out:
++	if (key->link_id >= 0 && key->link_id < IEEE80211_MLD_MAX_NUM_LINKS) {
++		link_id = key->link_id;
++		arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
++	} else {
++		link_id = 0;
++		arvif = &ahvif->deflink;
++	}
+ 
+-	return ret;
++	if (!arvif || !arvif->is_created) {
++		cache = ath12k_ahvif_get_link_cache(ahvif, link_id);
++		if (!cache)
++			return -ENOSPC;
 +
-+	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[link_id]);
- 	if (!link_conf) {
- 		ath12k_warn(ar->ab, "unable to access bss link conf in vdev create for vif %pM link %u\n",
- 			    vif->addr, arvif->link_id);
-@@ -7971,7 +7990,9 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
- 						    struct ath12k_link_vif *arvif,
- 						    struct ieee80211_chanctx_conf *ctx)
- {
--	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
-+	struct ath12k_vif *ahvif = arvif->ahvif;
-+	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
-+	struct ath12k_link_vif *scan_arvif;
- 	struct ath12k_hw *ah = hw->priv;
- 	struct ath12k *ar;
- 	struct ath12k_base *ab;
-@@ -7990,6 +8011,19 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
- 	if (!ar)
- 		return NULL;
- 
-+	/* cleanup the scan vdev if we are done scan on that ar
-+	 * and now we want to create for actual usage.
-+	 */
-+	if (vif->valid_links) {
-+		scan_arvif = wiphy_dereference(hw->wiphy,
-+					       ahvif->link[ATH12K_DEFAULT_SCAN_LINK]);
-+		if (scan_arvif && scan_arvif->ar == ar) {
-+			ar->scan.vdev_id = -1;
-+			ath12k_mac_remove_link_interface(hw, scan_arvif);
-+			ath12k_mac_unassign_link_vif(scan_arvif);
-+		}
++		ret = ath12k_mac_update_key_cache(cache, cmd, sta, key);
++		if (ret)
++			return ret;
++
++		return 0;
 +	}
 +
- 	if (arvif->ar) {
- 		/* This is not expected really */
- 		if (WARN_ON(!arvif->is_created)) {
-@@ -8194,7 +8228,7 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
- 
- 	lockdep_assert_wiphy(hw->wiphy);
- 
--	for (link_id = 0; link_id < IEEE80211_MLD_MAX_NUM_LINKS; link_id++) {
-+	for (link_id = 0; link_id < ATH12K_NUM_MAX_LINKS; link_id++) {
- 		/* if we cached some config but never received assign chanctx,
- 		 * free the allocated cache.
- 		 */
-@@ -9042,11 +9076,8 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
- 		return -ENOMEM;
- 	}
- 
--	if (!arvif->is_started) {
--		ar = ath12k_mac_assign_vif_to_vdev(hw, arvif, ctx);
--		if (!ar)
--			return -EINVAL;
--	} else {
-+	ar = ath12k_mac_assign_vif_to_vdev(hw, arvif, ctx);
-+	if (!ar) {
- 		ath12k_warn(arvif->ar->ab, "failed to assign chanctx for vif %pM link id %u link vif is already started",
- 			    vif->addr, link_id);
- 		return -EINVAL;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index c13630ee479a..abdc9a6c0740 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -44,6 +44,12 @@ struct ath12k_generic_iter {
- #define ATH12K_DEFAULT_LINK_ID	0
- #define ATH12K_INVALID_LINK_ID	255
- 
-+/* Default link after the IEEE802.11 defined Max link id limit
-+ * for driver usage purpose.
-+ */
-+#define ATH12K_DEFAULT_SCAN_LINK	IEEE80211_MLD_MAX_NUM_LINKS
-+#define ATH12K_NUM_MAX_LINKS		(IEEE80211_MLD_MAX_NUM_LINKS + 1)
++	ret = ath12k_mac_set_key(arvif->ar, cmd, arvif, NULL, key);
++	if (ret)
++		return ret;
 +
- enum ath12k_supported_bw {
- 	ATH12K_BW_20    = 0,
- 	ATH12K_BW_40    = 1,
++	return 0;
+ }
+ 
+ static int
 -- 
 2.39.5
 
