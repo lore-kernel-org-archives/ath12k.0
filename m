@@ -4,72 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95F5DD609A3
-	for <ath12k@archiver.kernel.org>; Wed, 27 Nov 2024 06:30:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D01D0D609A8
+	for <ath12k@archiver.kernel.org>; Wed, 27 Nov 2024 07:25:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=XOtIdRBmAa67I4Y1CptYf9uP8IldK4WMIK7mMBFXeFg=; b=j75etCzDTWZnagoyzgl8tOo4Lr
-	UFSNCo3HwEgzruI+i6xe3Yn/NhDMThq4VDazZDafYFmSOkaN/Bc6gxMg44pL/YnQt4MeQgae4Jffe
-	J+gWtCoHCqG43IAzvWQ4ssYMblAGd4hDWh6B+RXXluxsYM6mq5rWsaQ1YF/IBGjPYm7MBWs0Y9CI7
-	hupxJ3pRQ6wQuT44ECg4ZVtB+sqo6Xd+ooZyoYOzxKUk2mG2NLUpT24wBuDxF9be6QJbyPVs6lqA1
-	gnuepm9i9YLSADKLfqo+9hPKvf3092mkAZlQV2VNUEaHDjnIj8qPqunpgokveEcxxikEWuzR7kreC
-	zfGVshuA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=S2AWkEyxvmsl1kvKldkRb2KMSlvYt9LKy1TqsWTIG5A=; b=Vff6ug7l75/uBCDD4Pq7fKLB95
+	NE9IWYtPtfz5+4fXKtczD4EQRR7PVSQSyzsQyt0lvNF4WH13idBYNXvNp9SHxGJ6hQl3iwYLsCjIj
+	RwFZqnhwdF+0cf6WsQopldMgkz4uVYbjNLXqP8JDU2JI0TlAHqGf0U2Mn94L50Y1peTjCQXqNWw2C
+	bI2Ycg2uloAQkpnGOtcA30QFsSKB0IQEskd7DodW1Oz4vLOa2N8Hyicby2yGp1qSblodwgP5RwSbN
+	fmM/Ylc9fEbnYrLMew6iYmYFCojiIGerJxC7ox7bcsvjtJc/h2CU2Jtt3yClN01hHhaINMa2utAku
+	qi7V743Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGBZ8-0000000CKaY-0uR1
+	id 1tGCQV-0000000CQlk-2Kym
 	for ath12k@archiver.kernel.org;
-	Wed, 27 Nov 2024 06:30:22 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	Wed, 27 Nov 2024 07:25:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGBZ5-0000000CKaE-45lK
+	id 1tGCPw-0000000CQgd-3JkK
 	for ath12k@lists.infradead.org;
-	Wed, 27 Nov 2024 06:30:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1732689021; x=1764225021;
-  h=date:from:to:cc:subject:message-id;
-  bh=GX1L77ht2taT+MERuIQPdv3pP5+9Tsa8Y+w3B1CRwBE=;
-  b=kiIJQ2uepoE7Gd8ynkve5n+9HqKu/p1r8vxM6SdkJQ3uimcxM91FnqZZ
-   bRUl20j29KL2mg0FyiMuRBB0RseBfrOAKSijVvijI7p7kkv/HvWm1ujAR
-   PcD9ajZ6/0EXYj1puZ7gC6DgN4n84erumymDCCYfP61LEI+tbIuk79gO1
-   DES7aLNFH7N2b88wbsV+BfrYcf18k9lAM8NjU263Xynj7mKExrNkjxXpP
-   361E6ggUJC+4DsSUbhWqQVLz7FM33G8KKz5YXhzuHFDWgaEZEOx+JSF+9
-   YrUY4ROKoD2xYdWF5ZuAEiczgJWJM1EbL/+8JBUx+PN43pZIza1aev0fX
-   g==;
-X-CSE-ConnectionGUID: E84U+BJ2QU+7oqR46vi4Qg==
-X-CSE-MsgGUID: MA8plaf/TiSujANEwmkYjQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11268"; a="50281808"
-X-IronPort-AV: E=Sophos;i="6.12,188,1728975600"; 
-   d="scan'208";a="50281808"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Nov 2024 22:30:20 -0800
-X-CSE-ConnectionGUID: PqdsoNFvRp6PBngBAZfFvg==
-X-CSE-MsgGUID: aAQkW2z+Snq2H2n+AbN7yg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,188,1728975600"; 
-   d="scan'208";a="122680244"
-Received: from lkp-server01.sh.intel.com (HELO 8122d2fc1967) ([10.239.97.150])
-  by orviesa002.jf.intel.com with ESMTP; 26 Nov 2024 22:30:17 -0800
-Received: from kbuild by 8122d2fc1967 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tGBZ1-0007mR-0c;
-	Wed, 27 Nov 2024 06:30:15 +0000
-Date: Wed, 27 Nov 2024 14:27:53 +0800
-From: kernel test robot <lkp@intel.com>
-To: Kalle Valo <quic_kvalo@quicinc.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:ath12k-mlo] BUILD SUCCESS
- 21a8130f4da0b797a01052c4a422ac297ddad87c
-Message-ID: <202411271441.NC9z08ne-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Wed, 27 Nov 2024 07:24:58 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AQKLZME007169;
+	Wed, 27 Nov 2024 07:24:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	S2AWkEyxvmsl1kvKldkRb2KMSlvYt9LKy1TqsWTIG5A=; b=h8Fc8TA0mzTfkfDB
+	tW0wPDETYDLRFUJLZX4LDurH6YMdAYN04rPUXRaAAKDgM6CxeIKKHzvGWSFfg5e3
+	lzONddtNv8kAf7rbzWDdOn8FmNCISbALj25PS+8rlKPLgHDoAiS/pHF0w4iVye/+
+	YIW8ZKjFY3asWlmXs1T56f6tbNVsmAaiV5Q38mucSJDQUlcDRBVQe9Pz8hbEzar4
+	LjgxXG6XQOczQFL6DwX3GlsV0HRHQHCy+niOfNVHxqgJB6/3d19bQus9oScj8LZH
+	nkxMVfwn7xkqqe3WZeU3V5jx6oCSALP8GAgr1DZd0huf0nf1SE0s6DOiS/4lKScB
+	esmOkg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 434sw9dukf-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 27 Nov 2024 07:24:53 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AR7Oq46012527
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 27 Nov 2024 07:24:52 GMT
+Received: from [10.216.30.52] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 26 Nov
+ 2024 23:24:48 -0800
+Message-ID: <2d10224e-102c-4508-99f4-5743588d0686@quicinc.com>
+Date: Wed, 27 Nov 2024 12:54:31 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 01/22] dt-bindings: net: wireless: describe the ath12k
+ AHB module
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Kalle Valo
+	<kvalo@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski
+	<krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Jeff Johnson
+	<jjohnson@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio
+	<konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
+References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
+ <20241015182637.955753-2-quic_rajkbhag@quicinc.com>
+ <h4xel7xh3vyljxi7jn2afqasfmbsiqjtgpvqthrviovode6cxt@ey5nnzi4dwtv>
+ <708e9d22-0513-4646-aeac-2187c052e208@quicinc.com>
+ <b5f352e8-19a5-4c06-b9ba-44af791f6a81@kernel.org>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <b5f352e8-19a5-4c06-b9ba-44af791f6a81@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: a33gLwOSBQYVf_Bonnz9Mjr4doGl8QAp
+X-Proofpoint-ORIG-GUID: a33gLwOSBQYVf_Bonnz9Mjr4doGl8QAp
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=901 adultscore=0 spamscore=0 impostorscore=0
+ priorityscore=1501 phishscore=0 clxscore=1015 mlxscore=0
+ lowpriorityscore=0 bulkscore=0 malwarescore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2411270060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_223020_066787_1DB9B969 
-X-CRM114-Status: UNSURE (   3.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241126_232456_838237_6D19E8AE 
+X-CRM114-Status: GOOD (  12.55  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,174 +115,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-mlo
-branch HEAD: 21a8130f4da0b797a01052c4a422ac297ddad87c  wifi: ath12k: ath12k_mac_op_sta_rc_update(): use mac80211 provided link id
+On 10/16/2024 2:30 PM, Krzysztof Kozlowski wrote:
+>>>> +    description:
+>>>> +      phandle to a node describing reserved memory (System RAM memory)
+>>>> +      used by ath12k firmware (see bindings/reserved-memory/reserved-memory.txt)
+>>>> +
+>>>> +  qcom,rproc:
+>>>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>>>> +    description:
+>>>> +      DT entry of a WCSS node. WCSS node is the child node of q6 remoteproc driver.
+>>>> +      (see bindings/remoteproc/qcom,multipd-pil.yaml)
+>>> DT nodes are not children of drivers. But other DT nodes. Explain why
+>>> this phandle is needed, what is it for.
+>>>
+>>> To me it looks like you incorrectly organized your nodes.
+>>>
+>> This phandle is required by wifi driver (ath12k) to retrieve the correct remote processor
+>> (rproc_get_by_phandle()). Ath12k driver needs this rproc to interact with the remote
+>> processor (example: booting-up remote processor).
+> That's driver aspect. Why does the hardware needs it?
+> 
+> WiFi is the remote processor, so I would expect this being a child. Or
+> just drop entirely.
+> 
+> You keep using here arguments how you designed your drivers, which is
+> not valid. Sorry, fix your drivers... or use arguments in terms of hardware.
+> 
+> 
+>> In next version, will correct the description based on existing bindings (qcom,ath11k.yaml).
+> Sorry, let's don't copy existing solutions just because they exist.
 
-elapsed time: 752m
-
-configs tested: 154
-configs skipped: 6
-
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    clang-20
-arc                              allmodconfig    clang-20
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    clang-20
-arc                          axs103_defconfig    gcc-14.2.0
-arc                        nsim_700_defconfig    clang-20
-arc                   randconfig-001-20241127    gcc-14.2.0
-arc                   randconfig-002-20241127    gcc-14.2.0
-arm                              allmodconfig    clang-20
-arm                               allnoconfig    gcc-14.2.0
-arm                              allyesconfig    clang-20
-arm                       aspeed_g5_defconfig    gcc-14.2.0
-arm                       imx_v6_v7_defconfig    clang-20
-arm                      integrator_defconfig    clang-20
-arm                      jornada720_defconfig    clang-20
-arm                        multi_v5_defconfig    clang-20
-arm                         mv78xx0_defconfig    clang-20
-arm                         mv78xx0_defconfig    gcc-14.2.0
-arm                       omap2plus_defconfig    gcc-14.2.0
-arm                          pxa3xx_defconfig    clang-20
-arm                          pxa3xx_defconfig    gcc-14.2.0
-arm                   randconfig-001-20241127    gcc-14.2.0
-arm                   randconfig-002-20241127    gcc-14.2.0
-arm                   randconfig-003-20241127    gcc-14.2.0
-arm                   randconfig-004-20241127    gcc-14.2.0
-arm                        realview_defconfig    gcc-14.2.0
-arm                        shmobile_defconfig    gcc-14.2.0
-arm                         socfpga_defconfig    gcc-14.2.0
-arm                        spear3xx_defconfig    gcc-14.2.0
-arm64                            allmodconfig    clang-20
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20241127    gcc-14.2.0
-arm64                 randconfig-002-20241127    gcc-14.2.0
-arm64                 randconfig-003-20241127    gcc-14.2.0
-arm64                 randconfig-004-20241127    gcc-14.2.0
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20241127    gcc-14.2.0
-csky                  randconfig-002-20241127    gcc-14.2.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    gcc-14.2.0
-hexagon                          allyesconfig    clang-20
-hexagon               randconfig-001-20241127    gcc-14.2.0
-hexagon               randconfig-002-20241127    gcc-14.2.0
-i386        buildonly-randconfig-001-20241127    clang-19
-i386        buildonly-randconfig-002-20241127    clang-19
-i386        buildonly-randconfig-003-20241127    clang-19
-i386        buildonly-randconfig-004-20241127    clang-19
-i386        buildonly-randconfig-005-20241127    clang-19
-i386        buildonly-randconfig-006-20241127    clang-19
-i386                  randconfig-001-20241127    clang-19
-i386                  randconfig-002-20241127    clang-19
-i386                  randconfig-003-20241127    clang-19
-i386                  randconfig-004-20241127    clang-19
-i386                  randconfig-005-20241127    clang-19
-i386                  randconfig-006-20241127    clang-19
-i386                  randconfig-011-20241127    clang-19
-i386                  randconfig-012-20241127    clang-19
-i386                  randconfig-013-20241127    clang-19
-i386                  randconfig-014-20241127    clang-19
-i386                  randconfig-015-20241127    clang-19
-i386                  randconfig-016-20241127    clang-19
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch             randconfig-001-20241127    gcc-14.2.0
-loongarch             randconfig-002-20241127    gcc-14.2.0
-m68k                             alldefconfig    gcc-14.2.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-m68k                         amcore_defconfig    clang-20
-m68k                          atari_defconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-mips                          ath25_defconfig    gcc-14.2.0
-mips                          ath79_defconfig    clang-20
-mips                          eyeq6_defconfig    clang-20
-mips                        maltaup_defconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20241127    gcc-14.2.0
-nios2                 randconfig-002-20241127    gcc-14.2.0
-openrisc                         alldefconfig    gcc-14.2.0
-openrisc                          allnoconfig    clang-20
-openrisc                         allyesconfig    gcc-14.2.0
-parisc                           alldefconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    clang-20
-parisc                           allyesconfig    gcc-14.2.0
-parisc                randconfig-001-20241127    gcc-14.2.0
-parisc                randconfig-002-20241127    gcc-14.2.0
-powerpc                     akebono_defconfig    clang-20
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    clang-20
-powerpc                          allyesconfig    gcc-14.2.0
-powerpc                     ep8248e_defconfig    gcc-14.2.0
-powerpc                      katmai_defconfig    gcc-14.2.0
-powerpc                     mpc5200_defconfig    gcc-14.2.0
-powerpc                     ppa8548_defconfig    gcc-14.2.0
-powerpc                       ppc64_defconfig    gcc-14.2.0
-powerpc                         ps3_defconfig    gcc-14.2.0
-powerpc               randconfig-001-20241127    gcc-14.2.0
-powerpc               randconfig-002-20241127    gcc-14.2.0
-powerpc               randconfig-003-20241127    gcc-14.2.0
-powerpc                    sam440ep_defconfig    gcc-14.2.0
-powerpc                     tqm8548_defconfig    gcc-14.2.0
-powerpc                         wii_defconfig    gcc-14.2.0
-powerpc64             randconfig-001-20241127    gcc-14.2.0
-powerpc64             randconfig-002-20241127    gcc-14.2.0
-powerpc64             randconfig-003-20241127    gcc-14.2.0
-riscv                            alldefconfig    clang-20
-riscv                            allmodconfig    gcc-14.2.0
-riscv                             allnoconfig    clang-20
-riscv                            allyesconfig    gcc-14.2.0
-riscv             nommu_k210_sdcard_defconfig    gcc-14.2.0
-riscv                 randconfig-001-20241127    gcc-14.2.0
-riscv                 randconfig-002-20241127    gcc-14.2.0
-s390                             allmodconfig    gcc-14.2.0
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.2.0
-s390                  randconfig-001-20241127    gcc-14.2.0
-s390                  randconfig-002-20241127    gcc-14.2.0
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                             espt_defconfig    gcc-14.2.0
-sh                          landisk_defconfig    gcc-14.2.0
-sh                    randconfig-001-20241127    gcc-14.2.0
-sh                    randconfig-002-20241127    gcc-14.2.0
-sh                   secureedge5410_defconfig    gcc-14.2.0
-sh                        sh7757lcr_defconfig    gcc-14.2.0
-sh                             shx3_defconfig    gcc-14.2.0
-sh                              ul2_defconfig    gcc-14.2.0
-sh                          urquell_defconfig    clang-20
-sparc                            allmodconfig    gcc-14.2.0
-sparc                       sparc32_defconfig    gcc-14.2.0
-sparc64               randconfig-001-20241127    gcc-14.2.0
-sparc64               randconfig-002-20241127    gcc-14.2.0
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-20
-um                               allyesconfig    clang-20
-um                    randconfig-001-20241127    gcc-14.2.0
-um                    randconfig-002-20241127    gcc-14.2.0
-x86_64                                  kexec    clang-19
-x86_64                               rhel-9.4    clang-19
-x86_64                          rhel-9.4-func    clang-19
-xtensa                           alldefconfig    gcc-14.2.0
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                       common_defconfig    clang-20
-xtensa                       common_defconfig    gcc-14.2.0
-xtensa                randconfig-001-20241127    gcc-14.2.0
-xtensa                randconfig-002-20241127    gcc-14.2.0
-xtensa                    smp_lx200_defconfig    gcc-14.2.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+In the IPQ5332 platform, the WiFi component, known as the Wireless Control Subsystem (WCSS),
+functions as the wireless controller. Additionally, there is a separate hardware module, the
+Qualcomm Hexagon DSP(q6 remote processor), which is utilized for offloading WiFi processing
+tasks. These two hardware modules operate in conjunction, necessitating a phandle in the WiFi
+node that references the remote processor. Despite their interdependence, these modules are
+distinct from a hardware perspective.
 
