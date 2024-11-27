@@ -4,89 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61918D66BAC
-	for <ath12k@archiver.kernel.org>; Wed, 27 Nov 2024 03:06:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 714A4D609A1
+	for <ath12k@archiver.kernel.org>; Wed, 27 Nov 2024 06:00:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PW3uOpBxlHu8u4PXS+/pb0FxPfm2tLGDbnnWag593E4=; b=lMQYHIsuMVC++HRDoN4vOUkCZi
-	J13TEJ00vAJfbHjHaLgb/elJUwkCfZivBkZwPwCuBDwu3oHSsdF99brnTI+TyY+KFD5Gd3wFhSV82
-	Pm79qyB20w43qrqaYHAlDoFE5TskYxCKIrqtNB1JF2iooCPGCKogKRli4X9UhG2gg0xhls3GnD91r
-	uGEY2YsqlgjC+btTosTZ/HRT37ySMUhOYcQcVz3GfUM5+L2KmLH9WX5ohtEo6IFQ8upWypOhpay+y
-	fz+BP4GeMmnmTqfFBEHT8iUFXoeH0jyhlfyk2M0Eez048XoCik9nyHygELfAWAxezxPU4Jbi+QBvL
-	ZncQtaQw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=LET9N3dkGdQJB95rPW3hJ4q4VpNDlyZL/Z6mMfrzg1M=; b=FjU+AWzytM8y7GpgCcj0Yzfs/L
+	N0myks6DUjrWdcXO+eIFTpD6CYARqVvdDGUILqDINmReGZ0zIZ14LTzH14v+D8JsEJNrrRuDSCGhg
+	swwhoh2Q8T2LQi7oKWEYzKH5ngm+5Kch+T6SbUcVYA2w62GcBcGx1cc8Fo/EeGAqZfUQjKuXue/pi
+	W7TJpR2L6jX4tVtX8QjQR4PpMRAfjaZ5cJT03CUbXej2g1cjXagcXTLWYwb1F84XsV5d/v6u9MUyv
+	QZe1pu3Vu2ZGOrFUgchuCdtWKR4dSDOwLvEGzk1b2YSo0zUofGNj3M4VcSmFaoalMWvUo2APHFDii
+	PL7OmOtA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tG8Nt-0000000C8HG-06nu
+	id 1tGB6e-0000000CIRV-0F3F
 	for ath12k@archiver.kernel.org;
-	Wed, 27 Nov 2024 03:06:33 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 27 Nov 2024 06:00:56 +0000
+Received: from mgamail.intel.com ([198.175.65.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tG8Nq-0000000C8Gt-1uzC
+	id 1tGB6b-0000000CIRA-16ao
 	for ath12k@lists.infradead.org;
-	Wed, 27 Nov 2024 03:06:31 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AQKLXZj007146;
-	Wed, 27 Nov 2024 03:06:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	PW3uOpBxlHu8u4PXS+/pb0FxPfm2tLGDbnnWag593E4=; b=Hb54uFlqP9YRnycQ
-	Lnf/2+HjovwVqPi2TZ0EnCtF1NFWugw4AATf1CDhHvALBiJHQzt8tK/7JgG9O1IA
-	PZAeOIwW6IlYwaMqpi9BXpa3mPtvymWHANKFs/A/EX+tAjyzRVgkPwc/oM3JU5Mr
-	vMLCs6AfZQJXbbpqnYyxjzPcp1E9iI3DOhhA5CERzJSU32IKGD4KCW1ithlLK03g
-	bPfpfwzoGogONK8eUeo7EWE5YIWF/pjox6qr9D6gI9ZrDe3xIgkV6Mvdr4XipMMj
-	bP6TSUUzogqxPS2FVpY2wqWl/sTnPvcPHWgim3eTJI+yh6Ho4AxW5FylPtq5IVic
-	dIX4/A==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 434sw9d7bt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Nov 2024 03:06:27 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AR36QDG028057
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Nov 2024 03:06:26 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 26 Nov
- 2024 19:06:25 -0800
-Message-ID: <abf0db61-326d-4b06-8ced-66d5f96d8dc0@quicinc.com>
-Date: Wed, 27 Nov 2024 11:06:23 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 06/10] wifi: ath12k: do not return invalid link id for
- scan link
-To: Kalle Valo <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241126171139.2350704-1-kvalo@kernel.org>
- <20241126171139.2350704-7-kvalo@kernel.org>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <20241126171139.2350704-7-kvalo@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: PPIwrl_v5nYKaT4z458MXHddkAnEn8Sv
-X-Proofpoint-ORIG-GUID: PPIwrl_v5nYKaT4z458MXHddkAnEn8Sv
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- mlxlogscore=999 adultscore=0 spamscore=0 impostorscore=0
- priorityscore=1501 phishscore=0 clxscore=1015 mlxscore=0
- lowpriorityscore=0 bulkscore=0 malwarescore=0 classifier=spam adjust=0
- reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2411270024
+	Wed, 27 Nov 2024 06:00:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1732687254; x=1764223254;
+  h=date:from:to:cc:subject:message-id;
+  bh=hstvSOuyg6lKgrZrgEhP8+oGqHbp/Iy8tHKRLEKRA2g=;
+  b=m8dsLUhRzUdIQtjA2nvu2X7X304aSsrVw+t+5cd/hQP5Cli9uYyLJnwu
+   csLCm4OUTwByZf53PaGDWfcoUz7AF/krym8fxA/XNK/j7YI7imDOpEcmw
+   06cYZDqVQtyfkD5Z64DgPl47m0w0v5AwfIXh++3bPqNi/QP9+YDlNld0/
+   OOmElxwky8xHMI8DQBHDrgteOHw86NpzyuKLaSt/B5Y6VQBsn7qfsOle1
+   F9NEnVVQ5kTveoYYw2x/Tz09+yp2fuFrfDGIVXnD558NCxHst/HuX9GNz
+   ZFq90JRnFmrIzpOy5IO45DjtlF1JUkl1xpKGvl/k+DOpsYCM+3i3zf/dL
+   A==;
+X-CSE-ConnectionGUID: /iVM0EXKTwqgjmS2yDFSTA==
+X-CSE-MsgGUID: GtzREieZQVC3Rd4Uvwwmvg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11268"; a="32930075"
+X-IronPort-AV: E=Sophos;i="6.12,188,1728975600"; 
+   d="scan'208";a="32930075"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Nov 2024 22:00:53 -0800
+X-CSE-ConnectionGUID: pNDhNG0MRAuSprEy0Eog6g==
+X-CSE-MsgGUID: ABNU+CNNRPWfXZsbGUfmcw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,188,1728975600"; 
+   d="scan'208";a="96910245"
+Received: from lkp-server01.sh.intel.com (HELO 8122d2fc1967) ([10.239.97.150])
+  by orviesa004.jf.intel.com with ESMTP; 26 Nov 2024 22:00:51 -0800
+Received: from kbuild by 8122d2fc1967 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tGB6W-0007l1-2i;
+	Wed, 27 Nov 2024 06:00:48 +0000
+Date: Wed, 27 Nov 2024 13:58:58 +0800
+From: kernel test robot <lkp@intel.com>
+To: Kalle Valo <quic_kvalo@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ b6aca836c8219e07c5208568749f669fb3f9dc1b
+Message-ID: <202411271348.DjYWJCZi-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_190630_510121_09D24F26 
-X-CRM114-Status: GOOD (  39.14  )
+X-CRM114-CacheID: sfid-20241126_220053_391727_B7BC79D6 
+X-CRM114-Status: UNSURE (   4.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,232 +84,176 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: b6aca836c8219e07c5208568749f669fb3f9dc1b  Merge branch 'pending' into main-pending
 
+elapsed time: 723m
 
-On 11/27/2024 1:11 AM, Kalle Valo wrote:
-> From: Sriram R <quic_srirrama@quicinc.com>
-> 
-> When a scan request is received, driver selects a link id for which the arvif
-> can be mapped. Same link is also used for getting the link conf address.
-> Currently, we return 0 as link id for a non ML vif, which is correct since that
-> is the default link id. Also when any of the link vif is active and the scan
-> request is for a channel in the active link we return its link id. But, when we
-> don't hit both of the above cases (i.e not a ML vif or no active link vif for
-> the channel is present) we currently return 0 as the link id.
-> 
-> Bu the problemis that this might not work out always, eg., when only one link
-> (eg. linkid = 1) is added to vif, then we won't find any link conf for link id
-> 0 in the vif resulting in scan failure. During AP bringup, such scan failure
-> causes bringup issues.  Hence avoid sending link id 0 as default. Rather use a
-> default link for scan and default link address for the same. This scan vdev
-> will either be deleted if another scan is requested on same vif or when AP is
-> broughtup on same link or during interface cleanup.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-> Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/core.h |  3 +-
->  drivers/net/wireless/ath/ath12k/mac.c  | 65 +++++++++++++++++++-------
->  drivers/net/wireless/ath/ath12k/mac.h  |  6 +++
->  3 files changed, 56 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index e246e3d3c162..f4a710d49584 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -322,10 +322,11 @@ struct ath12k_vif {
->  	bool ps;
->  
->  	struct ath12k_link_vif deflink;
-> -	struct ath12k_link_vif __rcu *link[IEEE80211_MLD_MAX_NUM_LINKS];
-> +	struct ath12k_link_vif __rcu *link[ATH12K_NUM_MAX_LINKS];
->  	struct ath12k_vif_cache *cache[IEEE80211_MLD_MAX_NUM_LINKS];
->  	/* indicates bitmap of link vif created in FW */
->  	u16 links_map;
-> +	u8 last_scan_link;
->  
->  	/* Must be last - ends in a flexible-array member.
->  	 *
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 8287c2e6b765..85cfbe1e4b9f 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -3792,6 +3792,9 @@ static void ath12k_ahvif_put_link_key_cache(struct ath12k_vif_cache *cache)
->  
->  static void ath12k_ahvif_put_link_cache(struct ath12k_vif *ahvif, u8 link_id)
->  {
-> +	if (link_id >= IEEE80211_MLD_MAX_NUM_LINKS)
-> +		return;
-> +
->  	ath12k_ahvif_put_link_key_cache(ahvif->cache[link_id]);
->  	kfree(ahvif->cache[link_id]);
->  	ahvif->cache[link_id] = NULL;
-> @@ -3852,9 +3855,9 @@ static struct ath12k_link_vif *ath12k_mac_assign_link_vif(struct ath12k_hw *ah,
->  		arvif = &ahvif->deflink;
->  	} else {
->  		/* If this is the first link arvif being created for an ML VIF
-> -		 * use the preallocated deflink memory
-> +		 * use the preallocated deflink memory except for scan arvifs
->  		 */
-> -		if (!ahvif->links_map) {
-> +		if (!ahvif->links_map && link_id != ATH12K_DEFAULT_SCAN_LINK) {
->  			arvif = &ahvif->deflink;
->  		} else {
->  			arvif = (struct ath12k_link_vif *)
-> @@ -4154,10 +4157,10 @@ ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
->  			return link_id;
->  	}
->  
-> -	/* input ar is not assigned to any of the links, use link id
-> -	 * 0 for scan vdev creation.
-> +	/* input ar is not assigned to any of the links of ML VIF, use scan
-> +	 * link (15) for scan vdev creation.
->  	 */
-> -	return 0;
-> +	return ATH12K_DEFAULT_SCAN_LINK;
->  }
->  
->  static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
-> @@ -4188,7 +4191,7 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
->  
->  	/* check if any of the links of ML VIF is already started on
->  	 * radio(ar) correpsondig to given scan frequency and use it,
-> -	 * if not use deflink(link 0) for scan purpose.
-> +	 * if not use scan link (link 15) for scan purpose.
->  	 */
->  	link_id = ath12k_mac_find_link_id_by_ar(ahvif, ar);
->  	arvif = ath12k_mac_assign_link_vif(ah, vif, link_id);
-> @@ -4298,6 +4301,13 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
->  		spin_unlock_bh(&ar->data_lock);
->  	}
->  
-> +	/* As per cfg80211/mac80211 scan design, it allows only one
-> +	 * scan at a time. Hence last_scan link id is used for
-> +	 * tracking the link id on which the scan is been done on
-> +	 * this vif.
-> +	 */
-> +	ahvif->last_scan_link = arvif->link_id;
-> +
->  	/* Add a margin to account for event/command processing */
->  	ieee80211_queue_delayed_work(ath12k_ar_to_hw(ar), &ar->scan.timeout,
->  				     msecs_to_jiffies(arg->max_scan_time +
-> @@ -4317,14 +4327,14 @@ static void ath12k_mac_op_cancel_hw_scan(struct ieee80211_hw *hw,
->  					 struct ieee80211_vif *vif)
->  {
->  	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-> +	u16 link_id = ahvif->last_scan_link;
->  	struct ath12k_link_vif *arvif;
->  	struct ath12k *ar;
->  
->  	lockdep_assert_wiphy(hw->wiphy);
->  
-> -	arvif = &ahvif->deflink;
-> -
-> -	if (!arvif->is_created)
-> +	arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
-> +	if (!arvif || arvif->is_created)
-s/arvif->is_created/!arvif->is_created/ ?
+configs tested: 156
+configs skipped: 6
 
->  		return;
->  
->  	ar = arvif->ar;
-> @@ -7688,10 +7698,19 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
->  	u16 nss;
->  	int i;
->  	int ret, vdev_id;
-> +	u8 link_id;
->  
->  	lockdep_assert_wiphy(hw->wiphy);
->  
-> -	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[arvif->link_id]);
-> +	/* If no link is active and scan vdev is requested
-> +	 * use a default link conf for scan address purpose.
-> +	 */
-> +	if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
-> +		link_id = ffs(vif->valid_links) - 1;
-> +	else
-> +		link_id = arvif->link_id;
-> +
-> +	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[link_id]);
->  	if (!link_conf) {
->  		ath12k_warn(ar->ab, "unable to access bss link conf in vdev create for vif %pM link %u\n",
->  			    vif->addr, arvif->link_id);
-> @@ -7971,7 +7990,9 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
->  						    struct ath12k_link_vif *arvif,
->  						    struct ieee80211_chanctx_conf *ctx)
->  {
-> -	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(arvif->ahvif);
-> +	struct ath12k_vif *ahvif = arvif->ahvif;
-> +	struct ieee80211_vif *vif = ath12k_ahvif_to_vif(ahvif);
-> +	struct ath12k_link_vif *scan_arvif;
->  	struct ath12k_hw *ah = hw->priv;
->  	struct ath12k *ar;
->  	struct ath12k_base *ab;
-> @@ -7990,6 +8011,19 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
->  	if (!ar)
->  		return NULL;
->  
-> +	/* cleanup the scan vdev if we are done scan on that ar
-> +	 * and now we want to create for actual usage.
-> +	 */
-> +	if (vif->valid_links) {
-better to use ieee80211_vif_is_mld()?
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-> +		scan_arvif = wiphy_dereference(hw->wiphy,
-> +					       ahvif->link[ATH12K_DEFAULT_SCAN_LINK]);
-> +		if (scan_arvif && scan_arvif->ar == ar) {
-> +			ar->scan.vdev_id = -1;
-> +			ath12k_mac_remove_link_interface(hw, scan_arvif);
-> +			ath12k_mac_unassign_link_vif(scan_arvif);
-> +		}
-> +	}
-> +
->  	if (arvif->ar) {
->  		/* This is not expected really */
->  		if (WARN_ON(!arvif->is_created)) {
-> @@ -8194,7 +8228,7 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
->  
->  	lockdep_assert_wiphy(hw->wiphy);
->  
-> -	for (link_id = 0; link_id < IEEE80211_MLD_MAX_NUM_LINKS; link_id++) {
-> +	for (link_id = 0; link_id < ATH12K_NUM_MAX_LINKS; link_id++) {
->  		/* if we cached some config but never received assign chanctx,
->  		 * free the allocated cache.
->  		 */
-> @@ -9042,11 +9076,8 @@ ath12k_mac_op_assign_vif_chanctx(struct ieee80211_hw *hw,
->  		return -ENOMEM;
->  	}
->  
-> -	if (!arvif->is_started) {
-> -		ar = ath12k_mac_assign_vif_to_vdev(hw, arvif, ctx);
-> -		if (!ar)
-> -			return -EINVAL;
-> -	} else {
-> +	ar = ath12k_mac_assign_vif_to_vdev(hw, arvif, ctx);
-> +	if (!ar) {
->  		ath12k_warn(arvif->ar->ab, "failed to assign chanctx for vif %pM link id %u link vif is already started",
->  			    vif->addr, link_id);
->  		return -EINVAL;
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-> index c13630ee479a..abdc9a6c0740 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.h
-> +++ b/drivers/net/wireless/ath/ath12k/mac.h
-> @@ -44,6 +44,12 @@ struct ath12k_generic_iter {
->  #define ATH12K_DEFAULT_LINK_ID	0
->  #define ATH12K_INVALID_LINK_ID	255
->  
-> +/* Default link after the IEEE802.11 defined Max link id limit
-> + * for driver usage purpose.
-> + */
-> +#define ATH12K_DEFAULT_SCAN_LINK	IEEE80211_MLD_MAX_NUM_LINKS
-> +#define ATH12K_NUM_MAX_LINKS		(IEEE80211_MLD_MAX_NUM_LINKS + 1)
-> +
->  enum ath12k_supported_bw {
->  	ATH12K_BW_20    = 0,
->  	ATH12K_BW_40    = 1,
+tested configs:
+alpha                             allnoconfig    gcc-14.2.0
+alpha                            allyesconfig    clang-20
+arc                              allmodconfig    clang-20
+arc                               allnoconfig    gcc-14.2.0
+arc                              allyesconfig    clang-20
+arc                          axs103_defconfig    gcc-14.2.0
+arc                        nsim_700_defconfig    clang-20
+arc                   randconfig-001-20241127    gcc-14.2.0
+arc                   randconfig-002-20241127    gcc-14.2.0
+arm                              allmodconfig    clang-20
+arm                               allnoconfig    gcc-14.2.0
+arm                              allyesconfig    clang-20
+arm                       aspeed_g4_defconfig    clang-20
+arm                       aspeed_g5_defconfig    gcc-14.2.0
+arm                       imx_v6_v7_defconfig    clang-20
+arm                      integrator_defconfig    clang-20
+arm                      jornada720_defconfig    clang-20
+arm                        multi_v5_defconfig    clang-20
+arm                         mv78xx0_defconfig    clang-20
+arm                         mv78xx0_defconfig    gcc-14.2.0
+arm                       omap2plus_defconfig    gcc-14.2.0
+arm                          pxa3xx_defconfig    clang-20
+arm                          pxa3xx_defconfig    gcc-14.2.0
+arm                   randconfig-001-20241127    gcc-14.2.0
+arm                   randconfig-002-20241127    gcc-14.2.0
+arm                   randconfig-003-20241127    gcc-14.2.0
+arm                   randconfig-004-20241127    gcc-14.2.0
+arm                        realview_defconfig    gcc-14.2.0
+arm                        shmobile_defconfig    gcc-14.2.0
+arm                         socfpga_defconfig    gcc-14.2.0
+arm                        spear3xx_defconfig    gcc-14.2.0
+arm64                            allmodconfig    clang-20
+arm64                             allnoconfig    gcc-14.2.0
+arm64                 randconfig-001-20241127    gcc-14.2.0
+arm64                 randconfig-002-20241127    gcc-14.2.0
+arm64                 randconfig-003-20241127    gcc-14.2.0
+arm64                 randconfig-004-20241127    gcc-14.2.0
+csky                              allnoconfig    gcc-14.2.0
+csky                  randconfig-001-20241127    gcc-14.2.0
+csky                  randconfig-002-20241127    gcc-14.2.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    gcc-14.2.0
+hexagon                          allyesconfig    clang-20
+hexagon               randconfig-001-20241127    gcc-14.2.0
+hexagon               randconfig-002-20241127    gcc-14.2.0
+i386        buildonly-randconfig-001-20241127    clang-19
+i386        buildonly-randconfig-002-20241127    clang-19
+i386        buildonly-randconfig-003-20241127    clang-19
+i386        buildonly-randconfig-004-20241127    clang-19
+i386        buildonly-randconfig-005-20241127    clang-19
+i386        buildonly-randconfig-006-20241127    clang-19
+i386                  randconfig-001-20241127    clang-19
+i386                  randconfig-002-20241127    clang-19
+i386                  randconfig-003-20241127    clang-19
+i386                  randconfig-004-20241127    clang-19
+i386                  randconfig-005-20241127    clang-19
+i386                  randconfig-006-20241127    clang-19
+i386                  randconfig-011-20241127    clang-19
+i386                  randconfig-012-20241127    clang-19
+i386                  randconfig-013-20241127    clang-19
+i386                  randconfig-014-20241127    clang-19
+i386                  randconfig-015-20241127    clang-19
+i386                  randconfig-016-20241127    clang-19
+loongarch                        allmodconfig    gcc-14.2.0
+loongarch                         allnoconfig    gcc-14.2.0
+loongarch             randconfig-001-20241127    gcc-14.2.0
+loongarch             randconfig-002-20241127    gcc-14.2.0
+m68k                             alldefconfig    gcc-14.2.0
+m68k                             allmodconfig    gcc-14.2.0
+m68k                              allnoconfig    gcc-14.2.0
+m68k                             allyesconfig    gcc-14.2.0
+m68k                         amcore_defconfig    clang-20
+m68k                          atari_defconfig    gcc-14.2.0
+microblaze                       allmodconfig    gcc-14.2.0
+microblaze                        allnoconfig    gcc-14.2.0
+microblaze                       allyesconfig    gcc-14.2.0
+mips                              allnoconfig    gcc-14.2.0
+mips                          ath25_defconfig    gcc-14.2.0
+mips                          ath79_defconfig    clang-20
+mips                          eyeq6_defconfig    clang-20
+mips                        maltaup_defconfig    gcc-14.2.0
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20241127    gcc-14.2.0
+nios2                 randconfig-002-20241127    gcc-14.2.0
+openrisc                         alldefconfig    gcc-14.2.0
+openrisc                          allnoconfig    clang-20
+openrisc                         allyesconfig    gcc-14.2.0
+parisc                           alldefconfig    gcc-14.2.0
+parisc                           allmodconfig    gcc-14.2.0
+parisc                            allnoconfig    clang-20
+parisc                           allyesconfig    gcc-14.2.0
+parisc                randconfig-001-20241127    gcc-14.2.0
+parisc                randconfig-002-20241127    gcc-14.2.0
+powerpc                     akebono_defconfig    clang-20
+powerpc                          allmodconfig    gcc-14.2.0
+powerpc                           allnoconfig    clang-20
+powerpc                          allyesconfig    gcc-14.2.0
+powerpc                     ep8248e_defconfig    gcc-14.2.0
+powerpc                      katmai_defconfig    gcc-14.2.0
+powerpc                     mpc5200_defconfig    gcc-14.2.0
+powerpc                  mpc866_ads_defconfig    clang-20
+powerpc                     ppa8548_defconfig    gcc-14.2.0
+powerpc                       ppc64_defconfig    gcc-14.2.0
+powerpc                         ps3_defconfig    gcc-14.2.0
+powerpc               randconfig-001-20241127    gcc-14.2.0
+powerpc               randconfig-002-20241127    gcc-14.2.0
+powerpc               randconfig-003-20241127    gcc-14.2.0
+powerpc                    sam440ep_defconfig    gcc-14.2.0
+powerpc                     tqm8548_defconfig    gcc-14.2.0
+powerpc                         wii_defconfig    gcc-14.2.0
+powerpc64             randconfig-001-20241127    gcc-14.2.0
+powerpc64             randconfig-002-20241127    gcc-14.2.0
+powerpc64             randconfig-003-20241127    gcc-14.2.0
+riscv                            alldefconfig    clang-20
+riscv                            allmodconfig    gcc-14.2.0
+riscv                             allnoconfig    clang-20
+riscv                            allyesconfig    gcc-14.2.0
+riscv             nommu_k210_sdcard_defconfig    gcc-14.2.0
+riscv                 randconfig-001-20241127    gcc-14.2.0
+riscv                 randconfig-002-20241127    gcc-14.2.0
+s390                             allmodconfig    gcc-14.2.0
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.2.0
+s390                  randconfig-001-20241127    gcc-14.2.0
+s390                  randconfig-002-20241127    gcc-14.2.0
+sh                               allmodconfig    gcc-14.2.0
+sh                                allnoconfig    gcc-14.2.0
+sh                               allyesconfig    gcc-14.2.0
+sh                             espt_defconfig    gcc-14.2.0
+sh                          landisk_defconfig    gcc-14.2.0
+sh                    randconfig-001-20241127    gcc-14.2.0
+sh                    randconfig-002-20241127    gcc-14.2.0
+sh                   secureedge5410_defconfig    gcc-14.2.0
+sh                        sh7757lcr_defconfig    gcc-14.2.0
+sh                             shx3_defconfig    gcc-14.2.0
+sh                              ul2_defconfig    gcc-14.2.0
+sh                          urquell_defconfig    clang-20
+sparc                            allmodconfig    gcc-14.2.0
+sparc                       sparc32_defconfig    gcc-14.2.0
+sparc64               randconfig-001-20241127    gcc-14.2.0
+sparc64               randconfig-002-20241127    gcc-14.2.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-20
+um                               allyesconfig    clang-20
+um                    randconfig-001-20241127    gcc-14.2.0
+um                    randconfig-002-20241127    gcc-14.2.0
+x86_64                                  kexec    clang-19
+x86_64                               rhel-9.4    clang-19
+x86_64                          rhel-9.4-func    clang-19
+xtensa                           alldefconfig    gcc-14.2.0
+xtensa                            allnoconfig    gcc-14.2.0
+xtensa                       common_defconfig    clang-20
+xtensa                       common_defconfig    gcc-14.2.0
+xtensa                randconfig-001-20241127    gcc-14.2.0
+xtensa                randconfig-002-20241127    gcc-14.2.0
+xtensa                    smp_lx200_defconfig    gcc-14.2.0
 
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
