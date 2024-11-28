@@ -4,88 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 388F0D690FD
-	for <ath12k@archiver.kernel.org>; Thu, 28 Nov 2024 11:10:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 088A5D69103
+	for <ath12k@archiver.kernel.org>; Thu, 28 Nov 2024 12:09:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=50NfGbjgIKks949vpzLv6bIciZVsrQes0ZCXkGyPaHk=; b=iqu/qY1dGoGQmeebtNzGTLLfN+
-	5I7mhWxJ9fua9PytonM77eYXhF5VabMX3aQoU5fJlO8TA67ue8QYkJC/fEiSat8w0KcRSZUqYvh3j
-	jK8SVMD/Jqf9gBKqENf+lqQLEDQKubdciaLtFxEznEiOYq8neq7r3yYLPLvvo1UPonfewizqPvJ9L
-	Vo+3joO/OQXVfsMJadKqqpy6IOEZdqzAxIaVppqmgO8+e3UiA+pqAj8hgMqPs47o28g4f+6idtijW
-	LMRAffM02kweZMOYLWpjqgTZuekOKHyi4eKJcgFVTqW2h8syq85lL7ay1WNv7s6KfAFvDwnUBd1jT
-	OBZTjtRw==;
+	bh=5ewiP1mT4pP6xw/KE+41hy91ranXtzsNIUTwlX/bI9I=; b=lyz4b41eMKUrHNKC6JP9NS+MwA
+	SAnxW8SMJcFRMy6JUngRD4cXtIgCd/Yw/ghBBqnxPlAL/K3DStqNQ1O6hDxiB2sV5w/HDz8scBC9d
+	j3W7EbaZrMfv5hPDCAX7smuSyogVKZqetkRKINad8RXt2rJPXqRBrh7TnF3LLk2uusaVh2ZWd0uHE
+	9oTJVnK3lriNugp5w4MUQGqGhZHlyACjsLG4fKy4L/xi90X0K2EaBzDWmzfxZD1vE87j2l6liY+Ug
+	M5pkuc1G8/x7b1V+P1AIPgROtfxvnVYwsaIvKzZ/fVpko+VK+kkBqMxP7A3bESvNUATsTbvMywIbS
+	jwvi964g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGcQ2-0000000FKjL-411b
+	id 1tGdKO-0000000FRD8-34eW
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Nov 2024 11:10:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 28 Nov 2024 12:09:00 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGcPW-0000000FKgl-0eNz
+	id 1tGdKL-0000000FRCc-3yg0
 	for ath12k@lists.infradead.org;
-	Thu, 28 Nov 2024 11:10:15 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AS8Xubm022951;
-	Thu, 28 Nov 2024 11:10:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	50NfGbjgIKks949vpzLv6bIciZVsrQes0ZCXkGyPaHk=; b=ZPvEpHjLUC8GoAZw
-	l4dvJtk5tmidKrWaSttyMNdi+FnKmR/xocNuwqyOWPM36dsJK4iP4W3Ot7VUhwX3
-	/97RHkLRn+rvGlkWnCSEPNi3FXoAKkVD3BeoZLFhAsCiAVD/kpxQldgv2WJZeHyF
-	vob3T7Jy/T39gYOTZ+VJAPfxp/3z5G1+MHSmNCrcwBV0f0Pl6G0gtW2m63CnTBMe
-	33cpcln+FEIIZf4qulg3Lwv7rJEVBvBG6w1xLotsmnNxWokBeUEjf6XSrtTOhLil
-	t2r7nhnqBWXf8525rjqfj5NyE8/S1KJmzvplvIXzSkyi6VAOG1RnL3h98iE7GacY
-	+dcD+g==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4366xw2em8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Nov 2024 11:10:13 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4ASBADdY013073
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 28 Nov 2024 11:10:13 GMT
-Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 28 Nov 2024 03:10:10 -0800
-From: Roopni Devanathan <quic_rdevanat@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Pradeep Kumar Chitrapu
-	<quic_pradeepc@quicinc.com>,
-        Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: [PATCH 2/2] wifi: ath12k: Support Transmit Buffer OFDMA Stats
-Date: Thu, 28 Nov 2024 16:39:49 +0530
-Message-ID: <20241128110949.3672364-3-quic_rdevanat@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241128110949.3672364-1-quic_rdevanat@quicinc.com>
-References: <20241128110949.3672364-1-quic_rdevanat@quicinc.com>
+	Thu, 28 Nov 2024 12:08:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 5F3BDA415D9;
+	Thu, 28 Nov 2024 12:07:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F235C4CECE;
+	Thu, 28 Nov 2024 12:08:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1732795735;
+	bh=M7XUhFj2CBG6AIiPB6HZ7jrcFq/PWCF9szTudLUMOfU=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=QGha05shSD5jCag2NbDx724fWeOoFzQuuRyWiJgJx4wl27x401l9esfEsfAhdrEac
+	 s7ndBJhbaqGcmBv8zwsKsVprKvqSMoOsfyYnmgrqWivg15efRHSZpxWqmum+1L1oAf
+	 mjpzgy5pKqHLK9wcCP8v253shAagrttzWqldKGZ9cyhqgv5AK9mL3n7ZGUkWIyI3Zg
+	 /QEMIL39nUCyLosRYKFQJ4UNWzvfbxj3U/Ls2HGZE2qYIMRHOidE5lPHMcbodzmXsc
+	 fEdh+h00YxbPIFWLnlWy88spFs9A4IGz00SDTdSy8V4Nqn6d8hHcL7zxeTxhYgRiDv
+	 auaCPNqBkubMA==
+From: Kalle Valo <kvalo@kernel.org>
+To: Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 01/10] wifi: ath12k: convert struct
+ ath12k::wmi_mgmt_tx_work to struct wiphy_work
+References: <20241126171139.2350704-1-kvalo@kernel.org>
+	<20241126171139.2350704-2-kvalo@kernel.org>
+	<83b2325e-4d98-49a1-ae32-a69d7962e4a3@quicinc.com>
+Date: Thu, 28 Nov 2024 14:08:53 +0200
+In-Reply-To: <83b2325e-4d98-49a1-ae32-a69d7962e4a3@quicinc.com> (Baochen
+	Qiang's message of "Wed, 27 Nov 2024 10:34:00 +0800")
+Message-ID: <87y113v9uy.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: N-XwWbHslDtKGTne7gUsiEGJacEQFMCx
-X-Proofpoint-ORIG-GUID: N-XwWbHslDtKGTne7gUsiEGJacEQFMCx
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
- bulkscore=0 adultscore=0 suspectscore=0 mlxlogscore=999 mlxscore=0
- spamscore=0 malwarescore=0 lowpriorityscore=0 priorityscore=1501
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2411280088
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241128_031014_204478_836A1939 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20241128_040858_122616_D17EF570 
+X-CRM114-Status: GOOD (  16.21  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,427 +75,72 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Baochen Qiang <quic_bqiang@quicinc.com> writes:
 
-Add support to request OFDMA stats of transmit buffers from firmware through
-HTT stats type 32. These stats give information about NDPA, NDP, BRP and
-steering mechanisms.
+> On 11/27/2024 1:11 AM, Kalle Valo wrote:
+>> From: Kalle Valo <quic_kvalo@quicinc.com>
+>> 
+>> --- a/drivers/net/wireless/ath/ath12k/mac.c
+>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+>> @@ -6726,6 +6726,8 @@ static void ath12k_mgmt_over_wmi_tx_drop(struct ath12k *ar, struct sk_buff *skb)
+>>  {
+>>  	int num_mgmt;
+>>  
+>> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>
+> why would we need wiphy lock protect here? I don;t see anything in this function need it.
+>
+>> +
+>>  	ieee80211_free_txskb(ath12k_ar_to_hw(ar), skb);
+>>  
+>>  	num_mgmt = atomic_dec_if_positive(&ar->num_pending_mgmt_tx);
+>> @@ -6787,6 +6789,8 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
+>>  	int buf_id;
+>>  	int ret;
+>>  
+>> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>
+> and here the same question as above. I know this function is only called from
+> ath12k_mgmt_over_wmi_tx_work() which is under wiphy lock protection. But the function
+> itself doesn't need to assert it if the function does not need its protection.
+>
+>> +
+>>  	ATH12K_SKB_CB(skb)->ar = ar;
+>>  	spin_lock_bh(&ar->txmgmt_idr_lock);
+>>  	buf_id = idr_alloc(&ar->txmgmt_idr, skb, 0,
+>> @@ -6841,7 +6845,7 @@ static void ath12k_mgmt_over_wmi_tx_purge(struct ath12k *ar)
+>>  		ath12k_mgmt_over_wmi_tx_drop(ar, skb);
+>>  }
+>>  
+>> -static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
+>> +static void ath12k_mgmt_over_wmi_tx_work(struct wiphy *wiphy, struct wiphy_work *work)
+>>  {
+>>  	struct ath12k *ar = container_of(work, struct ath12k, wmi_mgmt_tx_work);
+>>  	struct ath12k_skb_cb *skb_cb;
+>> @@ -6850,6 +6854,8 @@ static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
+>>  	struct sk_buff *skb;
+>>  	int ret;
+>>  
+>> +	lockdep_assert_wiphy(wiphy);
+>
+> we are definitely under wiphy lock protection since this is a wiphy_work item, hence no
+> need to assert it explicitly. see also
+>
+> ieee80211_sta_monitor_work()
+> ieee80211_beacon_connection_loss_work()
+> ieee80211_csa_connection_drop_work()
+> ieee80211_teardown_ttlm_work()
 
-Note: WCN7850 firmware version -
-WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4 does not
-support HTT stats type 32.
+I have deliberately added all these lockdep_assert_wiphy() calls to
+document which functions are called with wiphy_lock() held, otherwise
+doing any locking analysis is much harder. My plan is that once MLO
+support has landed to ath-next my plan is to document ath12k locking
+design properly in the code. I think at that point we can also discuss
+how we should use lockdep_assert_wiphy() in ath12k and should we drop
+the extra calls.
 
-Sample output:
--------------
-echo 32 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-HTT_TXBF_OFDMA_AX_NDPA_STATS_TLV:
-ax_ofdma_ndpa_queued = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-ax_ofdma_ndpa_tried = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-.....
-
-HTT_TXBF_OFDMA_AX_NDP_STATS_TLV:
-ax_ofdma_ndp_queued = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-ax_ofdma_ndp_tried = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-.....
-
-HTT_TXBF_OFDMA_AX_BRP_STATS_TLV:
-ax_ofdma_brpoll_queued = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-ax_ofdma_brpoll_tied = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-.....
-
-HTT_TXBF_OFDMA_AX_STEER_STATS_TLV:
-ax_ofdma_num_ppdu_steer = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-ax_ofdma_num_usrs_prefetch = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-.....
-
-HTT_TXBF_OFDMA_AX_STEER_MPDU_STATS_TLV:
-rbo_steer_mpdus_tried = 0
-rbo_steer_mpdus_failed = 0
-sifs_steer_mpdus_tried = 0
-sifs_steer_mpdus_failed = 0
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
----
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 250 ++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   |  67 +++++
- 2 files changed, 317 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index d72eb22a719b..c43bf032270f 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -2668,6 +2668,240 @@ ath12k_htt_print_pdev_tx_rate_txbf_stats_tlv(const void *tag_buf, u16 tag_len,
- 	stats_req->buf_len = len;
- }
- 
-+static void
-+ath12k_htt_print_txbf_ofdma_ax_ndpa_stats_tlv(const void *tag_buf, u16 tag_len,
-+					      struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_txbf_ofdma_ax_ndpa_stats_tlv *stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+	u32 num_elements;
-+	u8 i;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	num_elements = le32_to_cpu(stats_buf->num_elems_ax_ndpa_arr);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_TXBF_OFDMA_AX_NDPA_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "ax_ofdma_ndpa_queued =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndpa[i].ax_ofdma_ndpa_queued));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_ndpa_tried =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndpa[i].ax_ofdma_ndpa_tried));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_ndpa_flushed =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndpa[i].ax_ofdma_ndpa_flush));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_ndpa_err =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndpa[i].ax_ofdma_ndpa_err));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\n\n");
-+
-+	stats_req->buf_len = len;
-+}
-+
-+static void
-+ath12k_htt_print_txbf_ofdma_ax_ndp_stats_tlv(const void *tag_buf, u16 tag_len,
-+					     struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_txbf_ofdma_ax_ndp_stats_tlv *stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+	u32 num_elements;
-+	u8 i;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	num_elements = le32_to_cpu(stats_buf->num_elems_ax_ndp_arr);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_TXBF_OFDMA_AX_NDP_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "ax_ofdma_ndp_queued =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndp[i].ax_ofdma_ndp_queued));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_ndp_tried =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndp[i].ax_ofdma_ndp_tried));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_ndp_flushed =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndp[i].ax_ofdma_ndp_flush));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_ndp_err =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_ndp[i].ax_ofdma_ndp_err));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\n\n");
-+
-+	stats_req->buf_len = len;
-+}
-+
-+static void
-+ath12k_htt_print_txbf_ofdma_ax_brp_stats_tlv(const void *tag_buf, u16 tag_len,
-+					     struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_txbf_ofdma_ax_brp_stats_tlv *stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+	u32 num_elements;
-+	u8 i;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	num_elements = le32_to_cpu(stats_buf->num_elems_ax_brp_arr);
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_TXBF_OFDMA_AX_BRP_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "ax_ofdma_brpoll_queued =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_brp[i].ax_ofdma_brp_queued));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_brpoll_tied =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_brp[i].ax_ofdma_brp_tried));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_brpoll_flushed =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_brp[i].ax_ofdma_brp_flushed));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_brp_err =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_brp[i].ax_ofdma_brp_err));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_brp_err_num_cbf_rcvd =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_brp[i].ax_ofdma_num_cbf_rcvd));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\n\n");
-+
-+	stats_req->buf_len = len;
-+}
-+
-+static void
-+ath12k_htt_print_txbf_ofdma_ax_steer_stats_tlv(const void *tag_buf, u16 tag_len,
-+					       struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_txbf_ofdma_ax_steer_stats_tlv *stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+	u32 num_elements;
-+	u8 i;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	num_elements = le32_to_cpu(stats_buf->num_elems_ax_steer_arr);
-+
-+	len += scnprintf(buf + len, buf_len - len,
-+			 "HTT_TXBF_OFDMA_AX_STEER_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "ax_ofdma_num_ppdu_steer =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_steer[i].num_ppdu_steer));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_num_usrs_prefetch =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_steer[i].num_usr_prefetch));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_num_usrs_sound =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_steer[i].num_usr_sound));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\nax_ofdma_num_usrs_force_sound =");
-+	for (i = 0; i < num_elements; i++)
-+		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-+				 le32_to_cpu(stats_buf->ax_steer[i].num_usr_force_sound));
-+	len--;
-+	*(buf + len) = '\0';
-+
-+	len += scnprintf(buf + len, buf_len - len, "\n\n");
-+
-+	stats_req->buf_len = len;
-+}
-+
-+static void
-+ath12k_htt_print_txbf_ofdma_ax_steer_mpdu_stats_tlv(const void *tag_buf, u16 tag_len,
-+						    struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_txbf_ofdma_ax_steer_mpdu_stats_tlv *stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+
-+	if (tag_len < sizeof(*stats_buf))
-+		return;
-+
-+	len += scnprintf(buf + len, buf_len - len,
-+			 "HTT_TXBF_OFDMA_AX_STEER_MPDU_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "rbo_steer_mpdus_tried = %u\n",
-+			 le32_to_cpu(stats_buf->ax_ofdma_rbo_steer_mpdus_tried));
-+	len += scnprintf(buf + len, buf_len - len, "rbo_steer_mpdus_failed = %u\n",
-+			 le32_to_cpu(stats_buf->ax_ofdma_rbo_steer_mpdus_failed));
-+	len += scnprintf(buf + len, buf_len - len, "sifs_steer_mpdus_tried = %u\n",
-+			 le32_to_cpu(stats_buf->ax_ofdma_sifs_steer_mpdus_tried));
-+	len += scnprintf(buf + len, buf_len - len, "sifs_steer_mpdus_failed = %u\n\n",
-+			 le32_to_cpu(stats_buf->ax_ofdma_sifs_steer_mpdus_failed));
-+
-+	stats_req->buf_len = len;
-+}
-+
- static void ath12k_htt_print_dlpager_entry(const struct ath12k_htt_pgs_info *pg_info,
- 					   int idx, char *str_buf)
- {
-@@ -3603,6 +3837,22 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_PDEV_TX_RATE_TXBF_STATS_TAG:
- 		ath12k_htt_print_pdev_tx_rate_txbf_stats_tlv(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_TXBF_OFDMA_AX_NDPA_STATS_TAG:
-+		ath12k_htt_print_txbf_ofdma_ax_ndpa_stats_tlv(tag_buf, len, stats_req);
-+		break;
-+	case HTT_STATS_TXBF_OFDMA_AX_NDP_STATS_TAG:
-+		ath12k_htt_print_txbf_ofdma_ax_ndp_stats_tlv(tag_buf, len, stats_req);
-+		break;
-+	case HTT_STATS_TXBF_OFDMA_AX_BRP_STATS_TAG:
-+		ath12k_htt_print_txbf_ofdma_ax_brp_stats_tlv(tag_buf, len, stats_req);
-+		break;
-+	case HTT_STATS_TXBF_OFDMA_AX_STEER_STATS_TAG:
-+		ath12k_htt_print_txbf_ofdma_ax_steer_stats_tlv(tag_buf, len, stats_req);
-+		break;
-+	case HTT_STATS_TXBF_OFDMA_AX_STEER_MPDU_STATS_TAG:
-+		ath12k_htt_print_txbf_ofdma_ax_steer_mpdu_stats_tlv(tag_buf, len,
-+								    stats_req);
-+		break;
- 	case HTT_STATS_DLPAGER_STATS_TAG:
- 		ath12k_htt_print_dlpager_stats_tlv(tag_buf, len, stats_req);
- 		break;
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index 859f5c846016..a718f8dfe321 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -136,6 +136,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_CCA_STATS		= 19,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_OBSS_PD_STATS	= 23,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_RATE_TXBF	= 31,
-+	ATH12K_DBG_HTT_EXT_STATS_TXBF_OFDMA		= 32,
- 	ATH12K_DBG_HTT_EXT_STATS_DLPAGER_STATS		= 36,
- 	ATH12K_DBG_HTT_EXT_PHY_COUNTERS_AND_PHY_STATS	= 37,
- 	ATH12K_DBG_HTT_EXT_VDEVS_TXRX_STATS		= 38,
-@@ -214,9 +215,14 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_TX_SELFGEN_BE_ERR_STATS_TAG		= 137,
- 	HTT_STATS_TX_SELFGEN_BE_STATS_TAG		= 138,
- 	HTT_STATS_TX_SELFGEN_BE_SCHED_STATUS_STATS_TAG	= 139,
-+	HTT_STATS_TXBF_OFDMA_AX_NDPA_STATS_TAG		= 147,
-+	HTT_STATS_TXBF_OFDMA_AX_NDP_STATS_TAG		= 148,
-+	HTT_STATS_TXBF_OFDMA_AX_BRP_STATS_TAG		= 149,
-+	HTT_STATS_TXBF_OFDMA_AX_STEER_STATS_TAG		= 150,
- 	HTT_STATS_DMAC_RESET_STATS_TAG			= 155,
- 	HTT_STATS_PHY_TPC_STATS_TAG			= 157,
- 	HTT_STATS_PDEV_SCHED_ALGO_OFDMA_STATS_TAG	= 165,
-+	HTT_STATS_TXBF_OFDMA_AX_STEER_MPDU_STATS_TAG	= 172,
- 	HTT_STATS_PDEV_MBSSID_CTRL_FRAME_STATS_TAG	= 176,
- 
- 	HTT_STATS_MAX_TAG,
-@@ -1100,6 +1106,67 @@ struct ath12k_htt_pdev_txrate_txbf_stats_tlv {
- 	__le32 txbf_flag_not_set_final_status;
- } __packed;
- 
-+struct ath12k_htt_txbf_ofdma_ax_ndpa_stats_elem_t {
-+	__le32 ax_ofdma_ndpa_queued;
-+	__le32 ax_ofdma_ndpa_tried;
-+	__le32 ax_ofdma_ndpa_flush;
-+	__le32 ax_ofdma_ndpa_err;
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_ndpa_stats_tlv {
-+	__le32 num_elems_ax_ndpa_arr;
-+	__le32 arr_elem_size_ax_ndpa;
-+	DECLARE_FLEX_ARRAY(struct ath12k_htt_txbf_ofdma_ax_ndpa_stats_elem_t, ax_ndpa);
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_ndp_stats_elem_t {
-+	__le32 ax_ofdma_ndp_queued;
-+	__le32 ax_ofdma_ndp_tried;
-+	__le32 ax_ofdma_ndp_flush;
-+	__le32 ax_ofdma_ndp_err;
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_ndp_stats_tlv {
-+	__le32 num_elems_ax_ndp_arr;
-+	__le32 arr_elem_size_ax_ndp;
-+	DECLARE_FLEX_ARRAY(struct ath12k_htt_txbf_ofdma_ax_ndp_stats_elem_t, ax_ndp);
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_brp_stats_elem_t {
-+	__le32 ax_ofdma_brp_queued;
-+	__le32 ax_ofdma_brp_tried;
-+	__le32 ax_ofdma_brp_flushed;
-+	__le32 ax_ofdma_brp_err;
-+	__le32 ax_ofdma_num_cbf_rcvd;
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_brp_stats_tlv {
-+	__le32 num_elems_ax_brp_arr;
-+	__le32 arr_elem_size_ax_brp;
-+	DECLARE_FLEX_ARRAY(struct ath12k_htt_txbf_ofdma_ax_brp_stats_elem_t, ax_brp);
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_steer_stats_elem_t {
-+	__le32 num_ppdu_steer;
-+	__le32 num_ppdu_ol;
-+	__le32 num_usr_prefetch;
-+	__le32 num_usr_sound;
-+	__le32 num_usr_force_sound;
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_steer_stats_tlv {
-+	__le32 num_elems_ax_steer_arr;
-+	__le32 arr_elem_size_ax_steer;
-+	DECLARE_FLEX_ARRAY(struct ath12k_htt_txbf_ofdma_ax_steer_stats_elem_t, ax_steer);
-+} __packed;
-+
-+struct ath12k_htt_txbf_ofdma_ax_steer_mpdu_stats_tlv {
-+	__le32 ax_ofdma_rbo_steer_mpdus_tried;
-+	__le32 ax_ofdma_rbo_steer_mpdus_failed;
-+	__le32 ax_ofdma_sifs_steer_mpdus_tried;
-+	__le32 ax_ofdma_sifs_steer_mpdus_failed;
-+} __packed;
-+
- enum ath12k_htt_stats_page_lock_state {
- 	ATH12K_HTT_STATS_PAGE_LOCKED	= 0,
- 	ATH12K_HTT_STATS_PAGE_UNLOCKED	= 1,
 -- 
-2.25.1
+https://patchwork.kernel.org/project/linux-wireless/list/
 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
