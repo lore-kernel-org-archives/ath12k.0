@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55F87D70DE8
-	for <ath12k@archiver.kernel.org>; Thu, 28 Nov 2024 16:51:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBFE1D70DE7
+	for <ath12k@archiver.kernel.org>; Thu, 28 Nov 2024 16:50:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IhOxxF9yLsxAlTkOOvSKlRFUsKh7/6EGBU7fY4Z3m3c=; b=zgREvL/3+Zs6uj9E630yXgaev6
-	b1QLSWl/l452IzfqUBez+FCJUxzabttJFgGRj0JY+swBSW80gIDnatAZ1ezKPgQQqcUulHTexJJmR
-	99e+DsLUHPzn1ZkRe9jKVlvDF530dnAPlGfL/xhTYbVJGJTltX84ze3rASY07qonz4UlHRbEIzu13
-	RO5DcQrhlhBegVMXsoHvG1a7Eumb77TqkjWEuDmpRU1SJFEVaAM5LLmgmchuyggK7WNyHjrKsuKbs
-	5gZH3MhOrhPNfOqLcTvlOgeMM8NK42t2S9B+J0TfJxFm95kgCRpcGAf5TJgGWuftN9pQMYBCqnBQO
-	Wv7AXrpg==;
+	bh=wClXHtLdxrtHP4hoBWt+n8nsAfrJjSLjXJ9UJFb3UY0=; b=MOLcBkVtpWH1/2+1EHX2BZ1f+Q
+	lPOBLBd5K4txItxvPGVUjXeAMpmz7/5MQzxgJ/tfxpeEyTJDrDq3kjPqI6Jpj0N/iZigo3ilo6ONQ
+	FzFx3MdGmss1OcWrpjlJI3oPj86mSNmjueVld0cRhhprCaHQFJUKK8VsvqBx1n71qVpCX7hVlY5RA
+	dqUyAQKa0+WZ0zSty1En4EvJ+r3cXy0UGjqBPPeOeZf0p/rI6NSZVZ9pCTTBnVfglO0BDBGurI3b8
+	jQgKrXmYOtrvb/dSG0v9pmNlT3N4rG2G+Bp0TdHXOPkphs9E+HIrpDPZOv39n6slM5wIYy2AqZ8c8
+	Jxdr0VBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGhjI-0000000G265-0GCr
+	id 1tGhjH-0000000G25l-2zSf
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Nov 2024 16:51:00 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 28 Nov 2024 16:50:59 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGhir-0000000G21B-0KRW
+	id 1tGhiq-0000000G20o-0NFI
 	for ath12k@lists.infradead.org;
-	Thu, 28 Nov 2024 16:50:34 +0000
+	Thu, 28 Nov 2024 16:50:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 561265C0F03
-	for <ath12k@lists.infradead.org>; Thu, 28 Nov 2024 16:49:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BAD8FC4CECE;
-	Thu, 28 Nov 2024 16:50:31 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4E2AF5C4C52
+	for <ath12k@lists.infradead.org>; Thu, 28 Nov 2024 16:49:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3E7AC4CED3;
+	Thu, 28 Nov 2024 16:50:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732812632;
-	bh=GMGrNm1ldjem0hdAyKTco128pQZGP1uaF4Ua/I8xfsY=;
+	s=k20201202; t=1732812631;
+	bh=vEh0qvVVLDemau2Z4sQp0eiz2HLCMuAfK1/h3EmQnpI=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=C/yDM+H4WPfa+jvVZxwFAmrAUNTi47wZ3KRAh766uB4ATrTyMJLNAJKIad1o+SIg1
-	 0yfVbgsVR9QgbxdWkI06lqFsICQ3FclY4hmkPFdPho6CMesygnhOX/Q4prXAULeN6K
-	 bVm11afsqZZulSgm8KjhNErEHrLkmbMP2P0fVVtPWIo3vZwo5uDzx7qOk2rUgVmSsD
-	 GMcB+J+Bb5LPlTvtITbpJsoPSq8KMMFqf7L/+xz+ZMq3ijK+siB0w4M8EY4oXeqHST
-	 Q3g9XDlzoZSrmyYO8cCJUc5ocPowPkAmDhoPFq27FuWaS0GK+5V3e+qPMxUSxTtpKf
-	 24f7vqewWKQ1g==
+	b=It8hPg64Nd4dgXRTSzQa5Y3OMfX4wUYIrN66x6RsYRWsr5JYpZVLunYbkel5oDoOH
+	 YRU/g6eGqE5Sa/hfSjP2x9N1EyOdxALrxCMMTHciixiY67vUVy8/hoPxeh79wqHshT
+	 WwuQdhEvqgCXc6mKXSX1B/sunXe8TTh5RBIk5xWB7v9oi1XKSSXd0D5lSADBfCrSHl
+	 XSFyAyZe9qkrbXG8WZAxcECAFYmNxxDXb3J3+eirdRumJh+GyT3SX3iWAlkKKI0HL3
+	 C3amGheIChjlyirJGkEpAxALXdfW1hKgQJyQ53OsNFeCCOEIlmoMLOgIYbgFhIPX78
+	 u7tyLIo9nssmQ==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 3/4] wifi: ath12k: add ath12k_get_num_hw()
-Date: Thu, 28 Nov 2024 18:50:25 +0200
-Message-Id: <20241128165026.2618331-4-kvalo@kernel.org>
+Subject: [PATCH 2/4] wifi: ath12k: add ath12k_ab_to_ah() and ath12k_ab_set_ah()
+Date: Thu, 28 Nov 2024 18:50:24 +0200
+Message-Id: <20241128165026.2618331-3-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241128165026.2618331-1-kvalo@kernel.org>
 References: <20241128165026.2618331-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241128_085033_203253_9CC412D0 
-X-CRM114-Status: GOOD (  12.68  )
+X-CRM114-CacheID: sfid-20241128_085032_214929_4BFE7391 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,13 +73,14 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Currently, one or more struct ath12k_hw is part of device (struct ath12k_base)
-but in future, ath12k_hw would be part of device group (struct
-ath12k_hw_group).  Hence, num_hw under device would be moved to device group.
+Currently, one or more ath12k_hw is part of a device (struct ath12k_base) but
+in future, it would be part of device group abstraction (struct
+ath12k_hw_group), i.e., when multiple radios (ar) across different devices can
+be combined together in a device group (struct ath12k_hw_group).
 
-To facilitate above transition, add helper ath12k_get_num_hw() to get the
-number of radios per device. In future, this helper will return the number of
-radios in a device group.
+In order to facilitate the above transition, introduce helpers
+ath12k_ab_to_ah() and ath12k_ab_set_ah() to get and set values of ath12k_hw
+respectively.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -88,105 +89,151 @@ Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 8 ++++----
- drivers/net/wireless/ath/ath12k/core.h | 5 +++++
- drivers/net/wireless/ath/ath12k/mac.c  | 8 ++++----
- 3 files changed, 13 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  8 ++++----
+ drivers/net/wireless/ath/ath12k/core.h | 11 +++++++++++
+ drivers/net/wireless/ath/ath12k/mac.c  | 23 +++++++++++++----------
+ 3 files changed, 28 insertions(+), 14 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 14d0aa26d850..386d42db29ac 100644
+index 5313b0267307..14d0aa26d850 100644
 --- a/drivers/net/wireless/ath/ath12k/core.c
 +++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -985,7 +985,7 @@ static void ath12k_rfkill_work(struct work_struct *work)
- 	rfkill_radio_on = ab->rfkill_radio_on;
+@@ -986,7 +986,7 @@ static void ath12k_rfkill_work(struct work_struct *work)
  	spin_unlock_bh(&ab->base_lock);
  
--	for (i = 0; i < ab->num_hw; i++) {
-+	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 		ah = ath12k_ab_to_ah(ab, i);
+ 	for (i = 0; i < ab->num_hw; i++) {
+-		ah = ab->ah[i];
++		ah = ath12k_ab_to_ah(ab, i);
  		if (!ah)
  			continue;
-@@ -1037,7 +1037,7 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 	if (ab->is_reset)
+ 
+@@ -1038,7 +1038,7 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
  		set_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags);
  
--	for (i = 0; i < ab->num_hw; i++) {
-+	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 		ah = ath12k_ab_to_ah(ab, i);
+ 	for (i = 0; i < ab->num_hw; i++) {
+-		ah = ab->ah[i];
++		ah = ath12k_ab_to_ah(ab, i);
  		if (!ah || ah->state == ATH12K_HW_STATE_OFF)
  			continue;
-@@ -1076,7 +1076,7 @@ static void ath12k_core_post_reconfigure_recovery(struct ath12k_base *ab)
- 	struct ath12k *ar;
+ 
+@@ -1077,7 +1077,7 @@ static void ath12k_core_post_reconfigure_recovery(struct ath12k_base *ab)
  	int i, j;
  
--	for (i = 0; i < ab->num_hw; i++) {
-+	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 		ah = ath12k_ab_to_ah(ab, i);
+ 	for (i = 0; i < ab->num_hw; i++) {
+-		ah = ab->ah[i];
++		ah = ath12k_ab_to_ah(ab, i);
  		if (!ah || ah->state == ATH12K_HW_STATE_OFF)
  			continue;
-@@ -1130,7 +1130,7 @@ static void ath12k_core_restart(struct work_struct *work)
- 	}
+ 
+@@ -1131,7 +1131,7 @@ static void ath12k_core_restart(struct work_struct *work)
  
  	if (ab->is_reset) {
--		for (i = 0; i < ab->num_hw; i++) {
-+		for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 			ah = ath12k_ab_to_ah(ab, i);
+ 		for (i = 0; i < ab->num_hw; i++) {
+-			ah = ab->ah[i];
++			ah = ath12k_ab_to_ah(ab, i);
  			ieee80211_restart_hw(ah->hw);
  		}
+ 	}
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index ba52be1cfd0f..4bfc7a7cc894 100644
+index f4a710d49584..ba52be1cfd0f 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1171,4 +1171,9 @@ static inline void ath12k_ab_set_ah(struct ath12k_base *ab, int idx,
- {
- 	ab->ah[idx] = ah;
- }
+@@ -1160,4 +1160,15 @@ static inline struct ieee80211_hw *ath12k_ar_to_hw(struct ath12k *ar)
+ #define for_each_ar(ah, ar, index) \
+ 	for ((index) = 0; ((index) < (ah)->num_radio && \
+ 	     ((ar) = &(ah)->radio[(index)])); (index)++)
 +
-+static inline int ath12k_get_num_hw(struct ath12k_base *ab)
++static inline struct ath12k_hw *ath12k_ab_to_ah(struct ath12k_base *ab, int idx)
 +{
-+	return ab->num_hw;
++	return ab->ah[idx];
++}
++
++static inline void ath12k_ab_set_ah(struct ath12k_base *ab, int idx,
++				    struct ath12k_hw *ah)
++{
++	ab->ah[idx] = ah;
 +}
  #endif /* _CORE_H_ */
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 8cafb67523c9..129607ac6c1a 100644
+index 8d4207707867..8cafb67523c9 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10831,7 +10831,7 @@ int ath12k_mac_register(struct ath12k_base *ab)
- 	ab->cc_freq_hz = 320000;
+@@ -10832,7 +10832,7 @@ int ath12k_mac_register(struct ath12k_base *ab)
  	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS)) - 1;
  
--	for (i = 0; i < ab->num_hw; i++) {
-+	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 		ah = ath12k_ab_to_ah(ab, i);
+ 	for (i = 0; i < ab->num_hw; i++) {
+-		ah = ab->ah[i];
++		ah = ath12k_ab_to_ah(ab, i);
  
  		ret = ath12k_mac_hw_register(ah);
-@@ -10858,7 +10858,7 @@ void ath12k_mac_unregister(struct ath12k_base *ab)
- 	struct ath12k_hw *ah;
+ 		if (ret)
+@@ -10843,7 +10843,7 @@ int ath12k_mac_register(struct ath12k_base *ab)
+ 
+ err:
+ 	for (i = i - 1; i >= 0; i--) {
+-		ah = ab->ah[i];
++		ah = ath12k_ab_to_ah(ab, i);
+ 		if (!ah)
+ 			continue;
+ 
+@@ -10859,7 +10859,7 @@ void ath12k_mac_unregister(struct ath12k_base *ab)
  	int i;
  
--	for (i = ab->num_hw - 1; i >= 0; i--) {
-+	for (i = ath12k_get_num_hw(ab) - 1; i >= 0; i--) {
- 		ah = ath12k_ab_to_ah(ab, i);
+ 	for (i = ab->num_hw - 1; i >= 0; i--) {
+-		ah = ab->ah[i];
++		ah = ath12k_ab_to_ah(ab, i);
  		if (!ah)
  			continue;
-@@ -10928,7 +10928,7 @@ void ath12k_mac_destroy(struct ath12k_base *ab)
- 		pdev->ar = NULL;
+ 
+@@ -10917,6 +10917,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_base *ab,
+ void ath12k_mac_destroy(struct ath12k_base *ab)
+ {
+ 	struct ath12k_pdev *pdev;
++	struct ath12k_hw *ah;
+ 	int i;
+ 
+ 	for (i = 0; i < ab->num_radios; i++) {
+@@ -10928,11 +10929,12 @@ void ath12k_mac_destroy(struct ath12k_base *ab)
  	}
  
--	for (i = 0; i < ab->num_hw; i++) {
-+	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 		ah = ath12k_ab_to_ah(ab, i);
- 		if (!ah)
+ 	for (i = 0; i < ab->num_hw; i++) {
+-		if (!ab->ah[i])
++		ah = ath12k_ab_to_ah(ab, i);
++		if (!ah)
  			continue;
-@@ -10951,7 +10951,7 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
- 	ab->num_hw = ab->num_radios;
- 	radio_per_hw = 1;
  
--	for (i = 0; i < ab->num_hw; i++) {
-+	for (i = 0; i < ath12k_get_num_hw(ab); i++) {
- 		for (j = 0; j < radio_per_hw; j++) {
- 			pdev_map[j].ab = ab;
- 			pdev_map[j].pdev_idx = (i * radio_per_hw) + j;
+-		ath12k_mac_hw_destroy(ab->ah[i]);
+-		ab->ah[i] = NULL;
++		ath12k_mac_hw_destroy(ah);
++		ath12k_ab_set_ah(ab, i, NULL);
+ 	}
+ }
+ 
+@@ -10965,7 +10967,7 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
+ 
+ 		ah->dev = ab->dev;
+ 
+-		ab->ah[i] = ah;
++		ath12k_ab_set_ah(ab, i, ah);
+ 	}
+ 
+ 	ath12k_dp_pdev_pre_alloc(ab);
+@@ -10974,11 +10976,12 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
+ 
+ err:
+ 	for (i = i - 1; i >= 0; i--) {
+-		if (!ab->ah[i])
++		ah = ath12k_ab_to_ah(ab, i);
++		if (!ah)
+ 			continue;
+ 
+-		ath12k_mac_hw_destroy(ab->ah[i]);
+-		ab->ah[i] = NULL;
++		ath12k_mac_hw_destroy(ah);
++		ath12k_ab_set_ah(ab, i, NULL);
+ 	}
+ 
+ 	return ret;
 -- 
 2.39.5
 
