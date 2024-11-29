@@ -4,59 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBFE1D70DE7
-	for <ath12k@archiver.kernel.org>; Thu, 28 Nov 2024 16:50:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A285FD70E02
+	for <ath12k@archiver.kernel.org>; Fri, 29 Nov 2024 01:40:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wClXHtLdxrtHP4hoBWt+n8nsAfrJjSLjXJ9UJFb3UY0=; b=MOLcBkVtpWH1/2+1EHX2BZ1f+Q
-	lPOBLBd5K4txItxvPGVUjXeAMpmz7/5MQzxgJ/tfxpeEyTJDrDq3kjPqI6Jpj0N/iZigo3ilo6ONQ
-	FzFx3MdGmss1OcWrpjlJI3oPj86mSNmjueVld0cRhhprCaHQFJUKK8VsvqBx1n71qVpCX7hVlY5RA
-	dqUyAQKa0+WZ0zSty1En4EvJ+r3cXy0UGjqBPPeOeZf0p/rI6NSZVZ9pCTTBnVfglO0BDBGurI3b8
-	jQgKrXmYOtrvb/dSG0v9pmNlT3N4rG2G+Bp0TdHXOPkphs9E+HIrpDPZOv39n6slM5wIYy2AqZ8c8
-	Jxdr0VBw==;
+	bh=BI0nDHVN2YG8aqCX9puolvFRLtBz+BMZe+/WOT6AGQs=; b=JDdZY04TIah514V/9XgwDncHqi
+	/V9OYDqfZlP4lqGwX4EFMOFFFt5WpmbmaQfd2QdyYS1B44hGNl6I1LZP68JOLMv9bIjh1ql5weQD4
+	/KukBcS30IqxZ/nXTsuDLbVDqC0Bbq5WxD200ef1rCON3usSiQx/apYNODH8mKHcEPxlrTWt3Gis4
+	ADKcWXBXSuUqtMMuGGzCRJPsRiJA2ag1GtJSHTM9/26eFTHQ5VxEw0TjOxso+qF+Zzm4ILwOrHL7F
+	q/J2N/9GLhlEQMtLdT2+lASshdLptKHd4KBIetUP6KX9jUSIoxx9qO5v8BmSiLyp22O+q9gnKv8lP
+	K5j9tMIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGhjH-0000000G25l-2zSf
+	id 1tGpzW-0000000GgoF-182h
 	for ath12k@archiver.kernel.org;
-	Thu, 28 Nov 2024 16:50:59 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Fri, 29 Nov 2024 01:40:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGhiq-0000000G20o-0NFI
+	id 1tGpzT-0000000Ggnq-3jm3
 	for ath12k@lists.infradead.org;
-	Thu, 28 Nov 2024 16:50:33 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4E2AF5C4C52
-	for <ath12k@lists.infradead.org>; Thu, 28 Nov 2024 16:49:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3E7AC4CED3;
-	Thu, 28 Nov 2024 16:50:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732812631;
-	bh=vEh0qvVVLDemau2Z4sQp0eiz2HLCMuAfK1/h3EmQnpI=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=It8hPg64Nd4dgXRTSzQa5Y3OMfX4wUYIrN66x6RsYRWsr5JYpZVLunYbkel5oDoOH
-	 YRU/g6eGqE5Sa/hfSjP2x9N1EyOdxALrxCMMTHciixiY67vUVy8/hoPxeh79wqHshT
-	 WwuQdhEvqgCXc6mKXSX1B/sunXe8TTh5RBIk5xWB7v9oi1XKSSXd0D5lSADBfCrSHl
-	 XSFyAyZe9qkrbXG8WZAxcECAFYmNxxDXb3J3+eirdRumJh+GyT3SX3iWAlkKKI0HL3
-	 C3amGheIChjlyirJGkEpAxALXdfW1hKgQJyQ53OsNFeCCOEIlmoMLOgIYbgFhIPX78
-	 u7tyLIo9nssmQ==
-From: Kalle Valo <kvalo@kernel.org>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 2/4] wifi: ath12k: add ath12k_ab_to_ah() and ath12k_ab_set_ah()
-Date: Thu, 28 Nov 2024 18:50:24 +0200
-Message-Id: <20241128165026.2618331-3-kvalo@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20241128165026.2618331-1-kvalo@kernel.org>
-References: <20241128165026.2618331-1-kvalo@kernel.org>
+	Fri, 29 Nov 2024 01:40:17 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ASNRnV8026932;
+	Fri, 29 Nov 2024 01:40:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	BI0nDHVN2YG8aqCX9puolvFRLtBz+BMZe+/WOT6AGQs=; b=SbdQup5OUczSpKQi
+	y1gxtna7lIM+lD/nSF0DPYLlqmpsJVwadnjaAy8cjkX01ZgBdI7tmet9kq6mVkYo
+	7rEt2V45II6P+FZMGqU2XAmMpNiBkosb/g/XFZXL216SlA3AhecKWUFjvZbef4+2
+	LmOTn61w37Zahk4nuVBXjEiD8eHhwOEOUIK4PVP7sVQoDuAx23UehBPB7lKk9pPy
+	ejpK2ayAh9ehOJGg/7jv4PLrpP21q4ylRMFkv5wSQI4j0DXDCt+PUsz8+O1d73Za
+	o+VcRRFmyBUJI8DtGc1TafTs+RupF63nGjQE4HZsf57lhCzafzMaAjo8PeGMsmiW
+	8RjV6Q==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43671ec195-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Nov 2024 01:40:11 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AT1eBTi012714
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Nov 2024 01:40:11 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 28 Nov
+ 2024 17:40:09 -0800
+Message-ID: <c7fe0222-9dea-4a57-8bd3-f51b11eb5f21@quicinc.com>
+Date: Fri, 29 Nov 2024 09:40:08 +0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 01/10] wifi: ath12k: convert struct
+ ath12k::wmi_mgmt_tx_work to struct wiphy_work
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20241126171139.2350704-1-kvalo@kernel.org>
+ <20241126171139.2350704-2-kvalo@kernel.org>
+ <83b2325e-4d98-49a1-ae32-a69d7962e4a3@quicinc.com>
+ <87y113v9uy.fsf@kernel.org>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <87y113v9uy.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: g_zypTBwZJ8WR6eo2J3bp7eaRULO1-U2
+X-Proofpoint-GUID: g_zypTBwZJ8WR6eo2J3bp7eaRULO1-U2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ impostorscore=0 mlxscore=0 phishscore=0 priorityscore=1501 clxscore=1015
+ bulkscore=0 lowpriorityscore=0 spamscore=0 adultscore=0 mlxlogscore=897
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2411290011
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241128_085032_214929_4BFE7391 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20241128_174015_943587_096F36FD 
+X-CRM114-Status: GOOD (  17.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,170 +102,74 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Currently, one or more ath12k_hw is part of a device (struct ath12k_base) but
-in future, it would be part of device group abstraction (struct
-ath12k_hw_group), i.e., when multiple radios (ar) across different devices can
-be combined together in a device group (struct ath12k_hw_group).
 
-In order to facilitate the above transition, introduce helpers
-ath12k_ab_to_ah() and ath12k_ab_set_ah() to get and set values of ath12k_hw
-respectively.
+On 11/28/2024 8:08 PM, Kalle Valo wrote:
+> Baochen Qiang <quic_bqiang@quicinc.com> writes:
+> 
+>> On 11/27/2024 1:11 AM, Kalle Valo wrote:
+>>> From: Kalle Valo <quic_kvalo@quicinc.com>
+>>>
+>>> --- a/drivers/net/wireless/ath/ath12k/mac.c
+>>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+>>> @@ -6726,6 +6726,8 @@ static void ath12k_mgmt_over_wmi_tx_drop(struct ath12k *ar, struct sk_buff *skb)
+>>>  {
+>>>  	int num_mgmt;
+>>>  
+>>> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>>
+>> why would we need wiphy lock protect here? I don;t see anything in this function need it.
+>>
+>>> +
+>>>  	ieee80211_free_txskb(ath12k_ar_to_hw(ar), skb);
+>>>  
+>>>  	num_mgmt = atomic_dec_if_positive(&ar->num_pending_mgmt_tx);
+>>> @@ -6787,6 +6789,8 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
+>>>  	int buf_id;
+>>>  	int ret;
+>>>  
+>>> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>>
+>> and here the same question as above. I know this function is only called from
+>> ath12k_mgmt_over_wmi_tx_work() which is under wiphy lock protection. But the function
+>> itself doesn't need to assert it if the function does not need its protection.
+>>
+>>> +
+>>>  	ATH12K_SKB_CB(skb)->ar = ar;
+>>>  	spin_lock_bh(&ar->txmgmt_idr_lock);
+>>>  	buf_id = idr_alloc(&ar->txmgmt_idr, skb, 0,
+>>> @@ -6841,7 +6845,7 @@ static void ath12k_mgmt_over_wmi_tx_purge(struct ath12k *ar)
+>>>  		ath12k_mgmt_over_wmi_tx_drop(ar, skb);
+>>>  }
+>>>  
+>>> -static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
+>>> +static void ath12k_mgmt_over_wmi_tx_work(struct wiphy *wiphy, struct wiphy_work *work)
+>>>  {
+>>>  	struct ath12k *ar = container_of(work, struct ath12k, wmi_mgmt_tx_work);
+>>>  	struct ath12k_skb_cb *skb_cb;
+>>> @@ -6850,6 +6854,8 @@ static void ath12k_mgmt_over_wmi_tx_work(struct work_struct *work)
+>>>  	struct sk_buff *skb;
+>>>  	int ret;
+>>>  
+>>> +	lockdep_assert_wiphy(wiphy);
+>>
+>> we are definitely under wiphy lock protection since this is a wiphy_work item, hence no
+>> need to assert it explicitly. see also
+>>
+>> ieee80211_sta_monitor_work()
+>> ieee80211_beacon_connection_loss_work()
+>> ieee80211_csa_connection_drop_work()
+>> ieee80211_teardown_ttlm_work()
+> 
+> I have deliberately added all these lockdep_assert_wiphy() calls to
+> document which functions are called with wiphy_lock() held, otherwise
+> doing any locking analysis is much harder. My plan is that once MLO
+> support has landed to ath-next my plan is to document ath12k locking
+> design properly in the code. I think at that point we can also discuss
+> how we should use lockdep_assert_wiphy() in ath12k and should we drop
+> the extra calls.
+Ah, good to know. thanks for sharing the plan.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.c |  8 ++++----
- drivers/net/wireless/ath/ath12k/core.h | 11 +++++++++++
- drivers/net/wireless/ath/ath12k/mac.c  | 23 +++++++++++++----------
- 3 files changed, 28 insertions(+), 14 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 5313b0267307..14d0aa26d850 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -986,7 +986,7 @@ static void ath12k_rfkill_work(struct work_struct *work)
- 	spin_unlock_bh(&ab->base_lock);
- 
- 	for (i = 0; i < ab->num_hw; i++) {
--		ah = ab->ah[i];
-+		ah = ath12k_ab_to_ah(ab, i);
- 		if (!ah)
- 			continue;
- 
-@@ -1038,7 +1038,7 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 		set_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags);
- 
- 	for (i = 0; i < ab->num_hw; i++) {
--		ah = ab->ah[i];
-+		ah = ath12k_ab_to_ah(ab, i);
- 		if (!ah || ah->state == ATH12K_HW_STATE_OFF)
- 			continue;
- 
-@@ -1077,7 +1077,7 @@ static void ath12k_core_post_reconfigure_recovery(struct ath12k_base *ab)
- 	int i, j;
- 
- 	for (i = 0; i < ab->num_hw; i++) {
--		ah = ab->ah[i];
-+		ah = ath12k_ab_to_ah(ab, i);
- 		if (!ah || ah->state == ATH12K_HW_STATE_OFF)
- 			continue;
- 
-@@ -1131,7 +1131,7 @@ static void ath12k_core_restart(struct work_struct *work)
- 
- 	if (ab->is_reset) {
- 		for (i = 0; i < ab->num_hw; i++) {
--			ah = ab->ah[i];
-+			ah = ath12k_ab_to_ah(ab, i);
- 			ieee80211_restart_hw(ah->hw);
- 		}
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index f4a710d49584..ba52be1cfd0f 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1160,4 +1160,15 @@ static inline struct ieee80211_hw *ath12k_ar_to_hw(struct ath12k *ar)
- #define for_each_ar(ah, ar, index) \
- 	for ((index) = 0; ((index) < (ah)->num_radio && \
- 	     ((ar) = &(ah)->radio[(index)])); (index)++)
-+
-+static inline struct ath12k_hw *ath12k_ab_to_ah(struct ath12k_base *ab, int idx)
-+{
-+	return ab->ah[idx];
-+}
-+
-+static inline void ath12k_ab_set_ah(struct ath12k_base *ab, int idx,
-+				    struct ath12k_hw *ah)
-+{
-+	ab->ah[idx] = ah;
-+}
- #endif /* _CORE_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 8d4207707867..8cafb67523c9 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10832,7 +10832,7 @@ int ath12k_mac_register(struct ath12k_base *ab)
- 	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS)) - 1;
- 
- 	for (i = 0; i < ab->num_hw; i++) {
--		ah = ab->ah[i];
-+		ah = ath12k_ab_to_ah(ab, i);
- 
- 		ret = ath12k_mac_hw_register(ah);
- 		if (ret)
-@@ -10843,7 +10843,7 @@ int ath12k_mac_register(struct ath12k_base *ab)
- 
- err:
- 	for (i = i - 1; i >= 0; i--) {
--		ah = ab->ah[i];
-+		ah = ath12k_ab_to_ah(ab, i);
- 		if (!ah)
- 			continue;
- 
-@@ -10859,7 +10859,7 @@ void ath12k_mac_unregister(struct ath12k_base *ab)
- 	int i;
- 
- 	for (i = ab->num_hw - 1; i >= 0; i--) {
--		ah = ab->ah[i];
-+		ah = ath12k_ab_to_ah(ab, i);
- 		if (!ah)
- 			continue;
- 
-@@ -10917,6 +10917,7 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_base *ab,
- void ath12k_mac_destroy(struct ath12k_base *ab)
- {
- 	struct ath12k_pdev *pdev;
-+	struct ath12k_hw *ah;
- 	int i;
- 
- 	for (i = 0; i < ab->num_radios; i++) {
-@@ -10928,11 +10929,12 @@ void ath12k_mac_destroy(struct ath12k_base *ab)
- 	}
- 
- 	for (i = 0; i < ab->num_hw; i++) {
--		if (!ab->ah[i])
-+		ah = ath12k_ab_to_ah(ab, i);
-+		if (!ah)
- 			continue;
- 
--		ath12k_mac_hw_destroy(ab->ah[i]);
--		ab->ah[i] = NULL;
-+		ath12k_mac_hw_destroy(ah);
-+		ath12k_ab_set_ah(ab, i, NULL);
- 	}
- }
- 
-@@ -10965,7 +10967,7 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
- 
- 		ah->dev = ab->dev;
- 
--		ab->ah[i] = ah;
-+		ath12k_ab_set_ah(ab, i, ah);
- 	}
- 
- 	ath12k_dp_pdev_pre_alloc(ab);
-@@ -10974,11 +10976,12 @@ int ath12k_mac_allocate(struct ath12k_base *ab)
- 
- err:
- 	for (i = i - 1; i >= 0; i--) {
--		if (!ab->ah[i])
-+		ah = ath12k_ab_to_ah(ab, i);
-+		if (!ah)
- 			continue;
- 
--		ath12k_mac_hw_destroy(ab->ah[i]);
--		ab->ah[i] = NULL;
-+		ath12k_mac_hw_destroy(ah);
-+		ath12k_ab_set_ah(ab, i, NULL);
- 	}
- 
- 	return ret;
--- 
-2.39.5
+> 
 
 
