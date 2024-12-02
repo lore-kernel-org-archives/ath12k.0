@@ -4,87 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75082D49793
-	for <ath12k@archiver.kernel.org>; Mon,  2 Dec 2024 01:54:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3C5AD10DC0
+	for <ath12k@archiver.kernel.org>; Mon,  2 Dec 2024 08:47:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DtAeZk2MikDau0Y0Dt6u/Ua0pnePXAY8MpzaryhQ138=; b=u7mvaKEG/rtrfgpDr9RldlGIHC
-	iY+beLGntECr0OPTVWgi8Da9b5jWc+994ikrv48uQ/vjR7vANT9B9nopsFvzAOuqIIgzkZp3zOI0O
-	YccxRaXNEEjOi9kI5xEuws/9cx7q/AxdM00WbFHD5fMvLnGtCGdmyVtLDULqvyiTsTRwBjENY2zhf
-	u9xrzAwYzjZm5cKqI5dJub2vl1yWiI9z2wUhT5VrcVXhVUkgoOSznnV/5gipoddarZcxphzz819MM
-	9DXjo4+WVw//V31pd5USeKtB98yRIkAxCruIbERK7TRPzlo8ayAoUpO4AN0w3FaEpICgIzwT2wvE+
-	SOdG69YA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
+	From:References:To:Subject:MIME-Version:Date:Message-ID:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2RypotoTqnnOo6RVIEuW0U9F79btIF0fS3MtOa1rjU8=; b=Xt0HXGAMaMZSLn+zIrf4UClHC9
+	XnBjpBI6KfSGfJhbLDuycJ968tcrlzNYBDFcpdqtV5C73WNZLqrtfnLwh64I9i1p7Cax+xi4xkrFn
+	U3xUkpaExl7PoWaOEE5UggvjwGlWRNT80uB7m2H2qO1tv9uQuSemWnsQJaTz0e5fkiQe6aJmst6W2
+	6tYDUF0ZV0ggddXlJSem30+JJOSiFSHP21jf4j4JCVm3Q223yWZoPk5kgVzbY96iQkiAfMeOT2E7E
+	lm+pX0frA2FKsBxW75cFIUPXJAchbPzXX3vxjJbUx7CMMnlaaUswWl1dLAS5K376XYhGibIrH7XuA
+	AQZIvfUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHvdb-00000004kt7-0NtG
+	id 1tI25y-00000005Srr-2MSa
 	for ath12k@archiver.kernel.org;
-	Mon, 02 Dec 2024 01:54:11 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 02 Dec 2024 08:47:54 +0000
+Received: from ionic.de ([2001:41d0:700:3394:1::2] helo=mail.ionic.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHvdY-00000004ksV-3Rl9
+	id 1tI25v-00000005SqZ-2Ima
 	for ath12k@lists.infradead.org;
-	Mon, 02 Dec 2024 01:54:10 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B1MlIbJ023063;
-	Mon, 2 Dec 2024 01:54:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	DtAeZk2MikDau0Y0Dt6u/Ua0pnePXAY8MpzaryhQ138=; b=kzxW12PIcNSyHOci
-	d3Lu813iidRoQPiogaZMDk591mdC+yFj+t8ciQbiH+TsygfhrOcQkb5FIzESTEXs
-	3GSarK9uM0kJz0Cs+E8NLvqpRrCY/0E4lA7VoqegBrWOf6vxiTq91IsaepN7IxsA
-	BWuNXbilBaPm2yzJKuteSriRZm6HsXccr/uOqgUWOqI6WpDgYL0HvBHPFttwVrTP
-	Si5QjbRiz9hoByff0BjcToQEJcudWI5tfccfgcjosSIh2PhorT76A9IyV6oQulW/
-	42qFG2rGf6NMQHtJ7RWngPERT8jz+q3u/87/z3J7XDHwo+b9ctvfRUlMqWMJYMKh
-	aVlcoQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437t1gb3xm-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 02 Dec 2024 01:54:02 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B21s1bb007096
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 2 Dec 2024 01:54:01 GMT
-Received: from [10.253.11.108] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 1 Dec 2024
- 17:54:00 -0800
-Message-ID: <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
-Date: Mon, 2 Dec 2024 09:53:57 +0800
+	Mon, 02 Dec 2024 08:47:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
+	t=1733129267; bh=2RypotoTqnnOo6RVIEuW0U9F79btIF0fS3MtOa1rjU8=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=VjBOis8ybVr8Drs18fRZBIWLPh7HaH7Us2FOLiTrPFEQn0AxpDAw3Kx51dqmQjN9I
+	 u59hIEXBo7J6fXSQTxu6GeDtHru6c8wPs5ejkiypI2h68lEAFhym+1fockzij7bLr8
+	 XjwS25R/A3iCTR5Y9c8zyC4L9LwjurILvMDnWrvU=
+Received: from [172.22.111.213] (185.102.219.38.adsl.inet-telecom.org [185.102.219.38])
+	by mail.ionic.de (Postfix) with ESMTPSA id 162CF1480FD3;
+	Mon, 02 Dec 2024 09:47:47 +0100 (CET)
+Message-ID: <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
+Date: Mon, 2 Dec 2024 09:47:45 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v6 0/4] wifi: ath12k: store and send country code to
  firmware after recovery
-To: Mihai Moldovan <ionic@ionic.de>, <ath12k@lists.infradead.org>
+To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
 References: <20241017030927.1695-1-quic_kangyang@quicinc.com>
  <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
+ <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
 Content-Language: en-US
-From: Kang Yang <quic_kangyang@quicinc.com>
-In-Reply-To: <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1aF7MAM0bbHnxWAgGBTiChwkOECWTkZ7
-X-Proofpoint-ORIG-GUID: 1aF7MAM0bbHnxWAgGBTiChwkOECWTkZ7
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
- adultscore=0 lowpriorityscore=0 bulkscore=0 mlxscore=0 malwarescore=0
- spamscore=0 priorityscore=1501 clxscore=1011 suspectscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412020015
+From: Mihai Moldovan <ionic@ionic.de>
+Autocrypt: addr=ionic@ionic.de; keydata=
+ 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
+ S0VlnF9z
+In-Reply-To: <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="------------AeLvz117D0yy0x6pUHikL1us"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241201_175408_986022_0EC504CF 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20241202_004752_062144_BA212085 
+X-CRM114-Status: GOOD (  21.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,88 +114,95 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--------------AeLvz117D0yy0x6pUHikL1us
+Content-Type: multipart/mixed; boundary="------------AbLivT9tXrMNdJ1HUR9Bh9Cf";
+ protected-headers="v1"
+From: Mihai Moldovan <ionic@ionic.de>
+To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
+Message-ID: <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
+Subject: Re: [PATCH v6 0/4] wifi: ath12k: store and send country code to
+ firmware after recovery
+References: <20241017030927.1695-1-quic_kangyang@quicinc.com>
+ <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
+ <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
+In-Reply-To: <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
 
+--------------AbLivT9tXrMNdJ1HUR9Bh9Cf
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: base64
 
-On 11/29/2024 8:18 PM, Mihai Moldovan wrote:
+KiBPbiAxMi8yLzI0IDAyOjUzLCBLYW5nIFlhbmcgd3JvdGU6DQo+IE9uIDExLzI5LzIwMjQg
+ODoxOCBQTSwgTWloYWkgTW9sZG92YW4gd3JvdGU6DQo+PiBIYXZlIHlvdSB0ZXN0ZWQgdGhp
+cyBpbiBBUCBtb2RlIG9yIHdhcyB0ZXN0aW5nIGxpbWl0ZWQgdG8gU1RBIG1vZGU/DQo+IA0K
+PiBOb3QgeWV0Lg0KDQpPa2F5LCBzbyBhIHVzZWZ1bCBoZWFkcy11cCwgSSBndWVzcyENCg0K
+DQo+PiBFdmVuIHdpdGggdGhpcyBwYXRjaCBzZXQsIGhvc3RhcGQgZmFpbHMgdG8gc3RhcnQg
+b24gYSBjaGFubmVsIHRoYXQgaXMNCj4+IGRpc2FibGVkIGluIHRoZSBkZWZhdWx0IHJlZ2Rv
+bWFpbiwgZXZlbiBpZiAxMWQgaXMgZW5hYmxlZCBhbmQgYSBDQw0KPj4gc3BlY2lmaWVkLCBl
+dmVuIGFmdGVyIGEgQ0MgdXBkYXRlIGlzIHJlcXVlc3RlZCBhbmQgQ0hBTkVMX0xJU1RfVVBE
+QVRFIGlzDQo+PiBiZWluZyByZWNlaXZlZC4NCj4+DQo+IA0KPiBXaGF0IGlzIHRoZSBwcm9i
+YWJpbGl0eSBvZiBmYWlsdXJlPw0KDQpJbiBteSB0ZXN0cywgMTAwICUgcmVwcm9kdWNpYmxl
+LCBidXQgSSBhZG1pdCBJIGhhdmVuJ3Qgc3RyZXNzLXRlc3RlZCBpdC4NCg0KSXQgYWx3YXlz
+IGZhaWxzIHRoZSBmaXJzdCB0aW1lIGhvc3RhcGQgaXMgc3RhcnRlZCBpZiB0aGUgZGVmYXVs
+dCBydWxlcyBkZWZpbmUgDQpOT19JUiBvbiB0aGUgY2hhbm5lbCB5b3Ugd2FudCB0byB1c2Ug
+KGV2ZW4gaWYgQ0MgcnVsZXMgZGlzYWdyZWUpIGFuZCBjYW4gYWxzbyANCmVhc2lseSBiZSBy
+ZXByb2R1Y2VkIGJ5LCBlLmcuLCB1c2luZyBjaGFubmVsIDEwMCB3aXRoIGhvc3RhcGQgYW5k
+IHNldHRpbmcgQ0MgZm9yIA0KaW5zdGFuY2UgdG8gREUgb3IgVVMgaW4gdGhlIGhvc3RhcGQg
+Y29uZmlnIGZpbGU6DQoNCiMgQ2hpbmVzZSByZWd1bGF0b3J5IGRvZXMgbm90IGFsbG93IG9w
+ZXJhdGlvbiBvbiBjaGFubmVscyA5NiB0byAxMjguDQppdyByZWcgc2V0IENOOyBob3N0YXBk
+IC4uLiA9PiBmYWlscw0KaXcgcmVnIHNldCBERTsgaG9zdGFwZCAuLi4gPT4gd29ya3MNCg0K
+THVja2lseSBpdCdzIHJlYWxseSBlYXN5IHRvIHJlcHJvZHVjZS4NCg0KDQpob3N0YXBkIGlz
+IHNwZWNpYWwgaW4gdGhlIHNlbnNlIHRoYXQgaXQncyB1c2luZyBuZXRsaW5rIGRpcmVjdGx5
+IGFuZCB0aGlzIGlzIA0KcHJvYmFibHkgdmVyeSBmYXN0Lg0KDQpJIHdhcyBuZXZlciBhYmxl
+IHRvIHJlcHJvZHVjZSB0aGUgaXNzdWUgd2l0aCBpdyByZWcgc2V0IENOOyBpdyByZWcgc2V0
+IERFOyBpdyANCmxpc3QsIGJ1dCBJIGRvbid0IGZpbmQgdGhhdCBzdXJwcmlzaW5nIGR1ZSB0
+byBhbGwgdGhlIG92ZXJoZWFkIGFuZCBoaWdobHkgDQpkaWZmZXJlbnQgY29kZSBwYXRoLg0K
+DQoNCj4+IFlvdSByZWNlbnRseSByZS1zdWJtaXR0ZWQgYSBwYXRjaCBzZXQgZm9yIGF0aDEx
+ayBieSBXZW4gR29uZ1swXSB0aGF0IGlzDQo+PiBzdXBwb3NlZCB0byBmaXggYSByYWNlIGNv
+bmRpdGlvbiBkdXJpbmcgcmVnIHVwZGF0ZXMgYW5kIHRoaXMgc21lbGxzIGxpa2UNCj4+IHRo
+ZSBzYW1lIGlzc3VlLiBJJ2xsIHRyeSB0byBwb3J0IGl0IHRvIGF0aDEyayBvbiB0b3Agb2Yg
+dGhpcyBwYXRjaCBzZXQNCj4+IHRvIHNlZSBpZiBpdCBmaXhlcyB0aGlzIGlzc3VlLg0KPj4N
+Cj4+DQo+IA0KPiBUaGFua3MgZm9yIHRyeWluZywgY3VycmVudGx5LCBpJ20gb2NjdXBpZWQg
+Ynkgb3RoZXIgdGFza3MuLi4NCg0KQWxsIGdvb2QuDQoNCklmIGFuZCB3aGVuIHlvdSB0cnks
+IGFub3RoZXIgaGVhZHMtdXA6IGF0aDEyayBpcyBjdXJyZW50bHkgcnVubmluZyBpbnRvIGFu
+IHJ0bG4gDQpkZWFkbG9jayBxdWl0ZSBvZnRlbiAoYnV0IG5vdCBhbHdheXMpIHdoZW4gaG9z
+dGFwZCBpcyBzdG9wcGVkIChvciBmYWlscykgYmVjYXVzZSANCnRoYXQncyBhbHNvIGJyaW5n
+aW5nIHRoZSBpbnRlcmZhY2UgZG93bi4NCg0KRm9ydHVuYXRlbHksIEJhb2NoZW4gUWlhbmcg
+cG9ydGVkIHRoZSBmaXggZm9yIHRoaXMgaXNzdWUgZnJvbSBhdGgxMWsgdG8gDQphdGgxMmtb
+MF0sIGJ1dCBpdCB3YXNuJ3QgYXBwbGllZCB0byBhdGgtbmV4dCBvciBtYWluIHlldCwgc28g
+eW91IHdpbGwgbGlrZWx5IHNlZSANCmEgdmVyeSBpcnJpdGF0aW5nIGRlYWRsb2NrIHJlcXVp
+cmluZyBhIGhhcmQgbWFjaGluZSByZXNldCBpZiB5b3UgZG9uJ3QgYWxzbyB1c2UgDQpoaXMg
+cGF0Y2ggd2hlbiB0ZXN0aW5nLg0KDQpIaXMgcGF0Y2gsIGFwYXJ0IGZyb20gZml4aW5nIHRo
+ZSBkZWFkbG9jaywgYWxzbyBwb3J0cyBzb21lIHBhcnRzIG9mIHRoZSBhdGgxMWsgDQpwYXRj
+aCBzZXQgSSBtZW50aW9uZWQgaW4gbXkgcHJldmlvdXMgbWFpbCwgYnV0IHVuZm9ydHVuYXRl
+bHkgZG9lc24ndCBmaXggdGhlIA0KY2hhbiBsaXN0IHVwZGF0ZSByYWNlIEknbSBzZWVpbmcu
+DQoNCkknbGwgZGlnIGZ1cnRoZXIgaW50byBpdCBhbmQgaG9wZSB0byBjb21lIHVwIHdpdGgg
+c29tZXRoaW5nIHVzYWJsZSBpbiB0aGUgbmV4dCANCmZldyBkYXlzLg0KDQoNCg0KTWloYWkN
+Cg0KDQpbMF0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYXRoMTJrLzIwMjQwODMwMDIzOTAx
+LjIwNDc0Ni0xLXF1aWNfYnFpYW5nQHF1aWNpbmMuY29tLw0K
 
-> 
-> Have you tested this in AP mode or was testing limited to STA mode?
-> 
+--------------AbLivT9tXrMNdJ1HUR9Bh9Cf--
 
-Not yet.
+--------------AeLvz117D0yy0x6pUHikL1us
+Content-Type: application/pgp-signature; name="OpenPGP_signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="OpenPGP_signature.asc"
 
-> Even with this patch set, hostapd fails to start on a channel that is 
-> disabled in the default regdomain, even if 11d is enabled and a CC 
-> specified, even after a CC update is requested and CHANEL_LIST_UPDATE is 
-> being received.
-> 
+-----BEGIN PGP SIGNATURE-----
 
-What is the probability of failure?
+wsF5BAABCAAjFiEEbhHQj3UzgcdE8cg8H9Yu2W4lOocFAmdNdDEFAwAAAAAACgkQH9Yu2W4lOoeM
+HhAA2jjxopXrubBp38bwg1xgmIt5R4KcEftWTuYGi/h0i7o5I9tyNsT0YjFnO1hgdgQhMnRvNKgv
+ZgKvfxFV9PQ+R1pZiTb2pRtGbnPoJjJxLXncJbXeI+J1cyzSMaQ9KbtHMh0gaxDXXj7mstXcqhxL
+clVR8yhotWkfoTDnaqqaV+tbAsFxIw9AGVcDPyZUxEehKQQloz40HfgEYRMBImtgYpyNHV5EKSir
+hhF435WnYcGYCkiY3qSyJ2dtYPLF+kc9qJNzkOG0VQK0hMXZo18OhE1yuVbnK2k11KaGy5p8fUwI
+YH0AokUu9iBmvIOG6CUugd1oatrc3YGIdLSjp9H1LH8r3Vgck0ESLEvcbwAeHpjTN5ed4/c0Xepb
+DTvSCGElhtmv74cF/NhmpAHGDDaplUfpav92fQjEoqtqop/lJJsEhSdPDKC8YYh6YlaqFg04dtri
+RoTmY7WhpOuvGBqneEhdwz9XfhqUlIDjcqKwIo4c3KzN5S6iw6f5MS/P6m6jr0EBDhhWCcGB+mp/
+ij/18B0pwCJru1u7DYsp2D5sgfJJJzgX+wQLrroEem8Gk++sGFF4uHrapwXQU7FJntLtrB8Ywfhl
+8zfjgfoPNnsSaKHAVJwWChwTFWbxSdrEMPBBt8VQYd6iDQwEubxjvVv/OxPklYMIwJxM/Mde3XNH
+mW4=
+=PN2W
+-----END PGP SIGNATURE-----
 
-
-> ---
-> 1732881245.637059: wifibe: interface state UNINITIALIZED->COUNTRY_UPDATE
-> 
-> 1732881245.637268: Previous country code na, new country code DEI
-> 1732881245.637283: Continue interface setup after channel list update
-> 1732881245.637291: ctrl_iface not configured!
-> 1732881245.637318: RTM_NEWLINK: ifi_index=6 ifname=wifibe operstate=0 
-> linkmode=0 ifi_family=0 ifi_flags=0x1043 ([UP][RUNNING])
-> 1732881245.637371: RTM_NEWLINK: ifi_index=6 ifname=wifibe operstate=2 
-> linkmode=0 ifi_family=0 ifi_flags=0x1003 ([UP])
-> 1732881245.637404: RTM_NEWLINK: ifi_index=6 ifname=wifibe operstate=2 
-> linkmode=0 master=5 ifi_family=0 ifi_flags=0x1003 ([UP])
-> 1732881245.637434: RTM_NEWLINK: ifi_index=6 ifname=wifibe operstate=2 
-> linkmode=0 master=5 ifi_family=0 ifi_flags=0x1003 ([UP])
-> 1732881245.637464: RTM_NEWLINK: ifi_index=6 ifname=wifibe master=5 
-> operstate=2 ifi_family=7 ifi_flags=0x1003 ([UP])
-> 1732881245.637505: nl80211: Add ifindex 5 for bridge brvswitch
-> 1732881245.637514: nl80211: Add own interface ifindex 5 (ifidx_reason 6)
-> 1732881245.637521: nl80211: ifindex 5 already in the list
-> 1732881245.637540: nl80211: Event message available
-> 1732881245.637563: nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) 
-> received for wifibe
-> 1732881245.637574: nl80211: Regulatory domain change
-> 1732881245.637580:  * initiator=1
-> 1732881245.637590:  * type=0
-> 1732881245.637595:  * alpha2=DE
-> 1732881245.637609: wifibe: Event CHANNEL_LIST_CHANGED (27) received
-> 
-> 1732881245.637619: Channel list updated - continue setup
-> 
-> 1732881245.638475: nl80211: Regulatory information - country=na
-> 1732881245.638499: nl80211: 2402-2472 @ 40 MHz 20 mBm
-> 1732881245.638512: nl80211: 2457-2482 @ 20 MHz 20 mBm (no IR)
-> [...]
-> ---
-> 
-> Interestingly, iw reg get shows the new CC/regdomain after hostapd 
-> terminates, so I suspect a race condition:
-> 
-> ---
-> phy#0 (self-managed)
-> country DE: DFS-ETSI
-> ---
-> 
-> Starting hostapd again after it failed the first time around works, 
-> since the CC + regdomain are correctly updated by that time.
-> 
-> 
-> You recently re-submitted a patch set for ath11k by Wen Gong[0] that is 
-> supposed to fix a race condition during reg updates and this smells like 
-> the same issue. I'll try to port it to ath12k on top of this patch set 
-> to see if it fixes this issue.
-> 
-> 
-
-Thanks for trying, currently, i'm occupied by other tasks...
-
-> 
-> Mihai
-> 
-> 
-> 
-> [0] https://lore.kernel.org/ath11k/20241129070714.226-1- 
-> quic_kangyang@quicinc.com
-
+--------------AeLvz117D0yy0x6pUHikL1us--
 
