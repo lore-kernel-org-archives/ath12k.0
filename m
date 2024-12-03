@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91055E6C61A
-	for <ath12k@archiver.kernel.org>; Tue,  3 Dec 2024 09:08:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 776A2D73612
+	for <ath12k@archiver.kernel.org>; Tue,  3 Dec 2024 09:14:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=G1muunHMO0qhemB3t3/pd4lMQXg4gXbg6foMud8uBek=; b=fTzl/fnGvgVrKOW2wGSIIhmOhv
-	YbARwD3GlZdkDcHXSBJFgwK6q1rifJqXc8SbQma13vOME5lg0l+eA4Qfb2yMTrc35XRg+BOYKanUV
-	E45qwM5ZM6uWmNjVB5psFdpav33eSQomZEA9YMZNO/7+G6m6C0WnqJQ8AHoLWHroQD4UFuE7TLuUh
-	PlEn9ZH+yO86GWSsP0HxsyI9s0tWnMnJdvJmVRMLlgCwYgfH/rs5d494EIKh76bry9wsRA9jsZSk2
-	wPz235VczKmxTyImnFqeIbwJY/PAHxTf1zkOnDgVvig7FVC/q1bp6NCrDv+GjZg36vTGNJsFX8ZLQ
-	cpCKmLnQ==;
+	bh=YOU1gNRtbLcjg5yJztx/++hV82MOGeBAmpzpBhJX20k=; b=kz+NjKQqF14JbuPSTFanVOgLyG
+	PVwwuXJ/vZULknhGpflM0Nr2MSnZ7Q75HhE0RPwYJoJdJk4YiaiJY58Uu2CUXYr3IgHMlfftlYZGo
+	oYSpIQTBmMGo1NZuoSRaIuyXU1znBqAVt6gysFyajqTnSapy4NMChIs+bNVc6AMXacnKws3sH3Vhi
+	5RNjfkjMxpgH/CTh2O+EVKJUNtkUYsRZ83Y53a1nPP4STjwtlnMPuPifhRMxvtA/LBJQb14IAhotd
+	G/ZYsx9aPjtd8owVLG2qUm5xUzf9HFnhRg8Piz0pKJKopFgN1l012gcbTA8q+Td7usZ9JwEcZAZUB
+	WUmj4rig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIOtd-00000008oIr-1Uh3
+	id 1tIOzT-00000008pj4-0ujl
 	for ath12k@archiver.kernel.org;
-	Tue, 03 Dec 2024 09:08:41 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 03 Dec 2024 09:14:43 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIOse-00000008o99-1E63
+	id 1tIOwO-00000008ozX-1eQC
 	for ath12k@lists.infradead.org;
-	Tue, 03 Dec 2024 09:07:41 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B38fkLe021814;
-	Tue, 3 Dec 2024 09:07:38 GMT
+	Tue, 03 Dec 2024 09:11:34 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B37Pr4p017944;
+	Tue, 3 Dec 2024 09:11:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	G1muunHMO0qhemB3t3/pd4lMQXg4gXbg6foMud8uBek=; b=aDIyNH7wsDc4imd0
-	CGqT+ATgS/Om2x/pDEPUQ2AhBEIwgcx9MQsW1CsBUOYghxUTj3Z02NCb+jBMjJ7+
-	mjS1RmpYXXUC2a1NGuuJKWBis5mS0Qq2peeVTIGNP608RjMfYgBp3j75Q7raes9o
-	E3sLsyisgBBW+rOIUN7MZ58gc4G1Z4KfB8nAZh6GoNZ+WaXpmxMnVmCDfgZCE6gx
-	0Yc9TPzzGSuaC539Q0xNhnUj6y40xu9AGBAnWAn5r2N6u45HVSrB34YuuKUW6F5g
-	sMcCs7O1aIHssZnSB7HLq3tYyk6F3OtepMRwkafvTBo+RcVbyOmeo5DSl/YKlAC/
-	2j0hOw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437uvjyckv-1
+	YOU1gNRtbLcjg5yJztx/++hV82MOGeBAmpzpBhJX20k=; b=koAbj0f4n6KxgUSo
+	V0DnJ0XbIP3QRyjE3oHzHMmv66XyiniZW7r4UwV/pBgLk/w0SqGHxCmgBVPa3Vi9
+	4Lrv9FuBuJ6Mh4JV9kgq+6E9YZvjnn3sYB7fxryK9j1LN8BKy/rZajEWOROX6bXQ
+	7nasYKfBBr9NV0t0gpuulVNVHcc+QFmFjBoJmr/Wfb4dQFdZRUsSdIj2HLcxSDFh
+	YnMMfjVEYxz4gvFE3ILiMJ08tFnFdOKvs6Vs2YGQOAQPeJOIgacuq3CvRILp6ji7
+	2/z9aOhcuGL1DvhqDXlqcg2IKmGSmW8VqAUOfBca6TpAEo1rOUXxvoY13oe/7PYU
+	W3ijFg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437tstfjhs-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Dec 2024 09:07:38 +0000 (GMT)
+	Tue, 03 Dec 2024 09:11:28 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B397bM5024022
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B39BCCF019589
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Dec 2024 09:07:37 GMT
+	Tue, 3 Dec 2024 09:11:12 GMT
 Received: from [10.151.41.184] (10.80.80.8) by nalasex01b.na.qualcomm.com
  (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 3 Dec 2024
- 01:07:32 -0800
-Message-ID: <2abf7644-7c52-4069-9a50-559e7414e18f@quicinc.com>
-Date: Tue, 3 Dec 2024 14:37:29 +0530
+ 01:11:07 -0800
+Message-ID: <231fae33-4d3b-47f9-a824-ea752f8a23ae@quicinc.com>
+Date: Tue, 3 Dec 2024 14:41:04 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 05/22] wifi: ath12k: add ath12k_hw_regs for IPQ5332
+Subject: Re: [PATCH v2 09/22] wifi: ath12k: avoid m3 firmware download in AHB
+ device IPQ5332
 To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
         <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
@@ -71,34 +72,34 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
  Andersson" <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        P Praneesh <quic_ppranees@quicinc.com>,
-        Balamurugan S <quic_bselvara@quicinc.com>
+        Balamurugan S <quic_bselvara@quicinc.com>,
+        "P Praneesh" <quic_ppranees@quicinc.com>
 References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
- <20241015182637.955753-6-quic_rajkbhag@quicinc.com>
- <940da07b-1286-4b88-8384-16ca2f996d90@oss.qualcomm.com>
+ <20241015182637.955753-10-quic_rajkbhag@quicinc.com>
+ <4961d425-b660-4dac-8744-36d69993d1e1@oss.qualcomm.com>
 Content-Language: en-US
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <940da07b-1286-4b88-8384-16ca2f996d90@oss.qualcomm.com>
+In-Reply-To: <4961d425-b660-4dac-8744-36d69993d1e1@oss.qualcomm.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: uUGqDSzVQVFXBkHouEIG0RRlNkZTq_KY
-X-Proofpoint-ORIG-GUID: uUGqDSzVQVFXBkHouEIG0RRlNkZTq_KY
+X-Proofpoint-ORIG-GUID: AJpQOBUnE02lFidt4Tm3e0hN9ya97Oe9
+X-Proofpoint-GUID: AJpQOBUnE02lFidt4Tm3e0hN9ya97Oe9
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
- suspectscore=0 mlxlogscore=999 impostorscore=0 adultscore=0 phishscore=0
- bulkscore=0 priorityscore=1501 clxscore=1015 spamscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412030078
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ malwarescore=0 spamscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0
+ priorityscore=1501 suspectscore=0 phishscore=0 adultscore=0 clxscore=1015
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412030079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241203_010740_344179_C2B51443 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20241203_011132_548378_BE4CF5FF 
+X-CRM114-Status: GOOD (  13.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,45 +114,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 10/19/2024 1:28 AM, Konrad Dybcio wrote:
+On 10/19/2024 1:30 AM, Konrad Dybcio wrote:
 > On 15.10.2024 8:26 PM, Raj Kumar Bhagat wrote:
->> From: P Praneesh <quic_ppranees@quicinc.com>
+>> From: Balamurugan S <quic_bselvara@quicinc.com>
 >>
->> Add register addresses (ath12k_hw_regs) for new ath12k AHB based
->> WiFi device IPQ5332.
+>> Current ath12k devices, QCN9274 and WCN7850, supports m3.bin firmware
+>> download through ath12k driver. The new ath12k AHB based device
+>> IPQ5332 supports m3 firmware download through remoteproc driver.
+>>
+>> Hence, add new parameter (m3_fw_support) in ath12k_hw_params to avoid
+>> m3 firmware download in IPQ5332.
 >>
 >> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
 >> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 >>
->> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
->> Co-developed-by: Balamurugan S <quic_bselvara@quicinc.com>
 >> Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
+>> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 >> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 >> ---
-> 
-> [...]
-> 
->> +	/* CE base address */
->> +	.hal_umac_ce0_src_reg_base = 0x00740000,
->> +	.hal_umac_ce0_dest_reg_base = 0x00741000,
->> +	.hal_umac_ce1_src_reg_base = 0x00742000,
->> +	.hal_umac_ce1_dest_reg_base = 0x00743000,
->> +};
->> +
->>  static const struct ath12k_hw_regs wcn7850_regs = {
->>  	/* SW2TCL(x) R0 ring configuration address */
->>  	.hal_tcl1_ring_id = 0x00000908,
->> @@ -1126,7 +1210,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
->>  		.internal_sleep_clock = false,
+>>  drivers/net/wireless/ath/ath12k/hw.c  |  8 ++++++++
+>>  drivers/net/wireless/ath/ath12k/hw.h  |  2 ++
+>>  drivers/net/wireless/ath/ath12k/qmi.c | 28 ++++++++++++++++-----------
+>>  3 files changed, 27 insertions(+), 11 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+>> index e5e2164c27d2..a4e0c21ac4b7 100644
+>> --- a/drivers/net/wireless/ath/ath12k/hw.c
+>> +++ b/drivers/net/wireless/ath/ath12k/hw.c
+>> @@ -1299,6 +1299,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+>>  		.iova_mask = 0,
 >>  
->>  		.hw_ops = &qcn9274_ops,
->> -		.regs = NULL,
->> +		.regs = &ipq5332_regs,
+>>  		.supports_aspm = false,
+>> +
+>> +		.m3_fw_support = true,
 > 
-> This makes me believe the patches should be reordered (or perhaps
-> this should be squashed with "add ath12k_hw_params for IPQ5332"?)
+> 'support for m3 firmware' is not a fitting term.. maybe "needs_m3_fw"?
 > 
 
-Sure, in next version we will squash patch[2/22] to patch[8/22] into single patch that will add the complete hardware parameters.
+The name "m3_fw_support" is inherited from ath11k, for ath12k we could
+change it to "needs_m3_fw".
 
 
