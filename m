@@ -4,74 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEBE5E7716D
-	for <ath12k@archiver.kernel.org>; Wed,  4 Dec 2024 16:32:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE391E77170
+	for <ath12k@archiver.kernel.org>; Wed,  4 Dec 2024 17:44:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1YiiXFeIdmx9hw3Q1w7ns/FP5fQjFfkjjTQBM2L2UKw=; b=cJX89ltfwuu3uf31tDj3Fe4iod
-	5qBuRf14fnF84Yxp1ewVEVwoaNGz8KoK2U0hlz0ZjhGX5ic1hgVuEZZMYBj1nEeL6V1O++fBjBGNY
-	47pP4+1Dm0R47FR7lKqbUo6dQaBZbMypulcVfzPFZ1s69jTbC9K9UlFlDxOwnpiId7Gf3mMr5vHD7
-	2nTKBn+L/CcqNdpTbPSFSI83QFhQmaNKUWOQ4+i0VVQBHUiCyhS0Imsz1erEKB7VhCZW4Y7jawVvK
-	ooGWEIq95WOko3x/sKrZeFGbF0t/F8JR5y7sz9geVgvJAz+DLPh+P0P1PDFcDXToHrnjo8dY/YcSb
-	S/dFCJTA==;
+	bh=s9eyYsXsjhxtFeSDi9eb1z5ZJNwhWhbs0TIt6dkTLwU=; b=nJ/teaCUi0/mm40M7NmwUwBzTy
+	ssH2tMjFxBJD82I8dpK3YwgWzczzNP9o5UrfHLv8TWkJfmJjMsVxG3X8+OEwQ8mhk4dyNqsih72ys
+	Agnu7/aZ8jDBnHAAgoNDHgkYRRS8NTsQ+utszI+/OljeH6gMM5ALUO6a+EHT8fwcjzLLRVFbwPAkp
+	HIUT70bhXnKTiv0MT1VHSpMq4uhVe95rphVw2Hy6CwQKshLORLD+3c5mhV8EtXnJFq22Ah/kRYqDP
+	kxNRrBXZKATBEb0uuZ8EYSIMM6Vc93crcI1d/hkGg+IqWJe0HtRBTF+/9NkF6xAm5FjOskGjmJjwI
+	RDbV0PXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIsIj-0000000DCXq-2IWV
+	id 1tItPu-0000000DPeJ-22Wj
 	for ath12k@archiver.kernel.org;
-	Wed, 04 Dec 2024 16:32:33 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Wed, 04 Dec 2024 17:44:02 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIsIh-0000000DCWe-2hMp
-	for ath12k@bombadil.infradead.org;
-	Wed, 04 Dec 2024 16:32:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=1YiiXFeIdmx9hw3Q1w7ns/FP5fQjFfkjjTQBM2L2UKw=; b=KrN53IB1ZqPrqWChuCxcoSi6Ae
-	ky9dWl+US5npdcXDJ+w60gAfmmzFxfNooqu/TioJi7Z0x8k++L1Z+8ME+M2o6myl3x39y6Cj8dOh2
-	uAFwLRR3mHg83bNmMDkgmXiR2s8V1ZfJdYOmBzkW4WVR/WThdbMVeQzLJLu7dTUnVT77TIEhT0VDn
-	l+UB6IoA1sw4rpGv6mm0eR1u4ECiHPLck3Fv0HfCD+Nqa0SV1XjwI9uZgxkle5qzfbaqzsW2YkjhR
-	T2JB+6ZD1kaHw4PY6/b06K9yq6dAUcXVmbmXn55LKBft6W00YjLBp0QDA3/tVnW4NXetKuJ3TyD/N
-	0QFX/LJA==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIsIe-00000002etz-2mMP
+	id 1tIsIY-0000000DCRu-2TUy
 	for ath12k@lists.infradead.org;
-	Wed, 04 Dec 2024 16:32:30 +0000
+	Wed, 04 Dec 2024 16:32:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3B0045C6F6F
-	for <ath12k@lists.infradead.org>; Wed,  4 Dec 2024 16:31:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42C76C4CED2;
-	Wed,  4 Dec 2024 16:32:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3D7555C6F6F
+	for <ath12k@lists.infradead.org>; Wed,  4 Dec 2024 16:31:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1EEF6C4CEDD;
+	Wed,  4 Dec 2024 16:32:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733329946;
-	bh=suF5wjzH9zVda5puY3Df1rUEkESjUa138xAJbbDq2XA=;
+	s=k20201202; t=1733329941;
+	bh=1KYYy0zChNWRS9t83bRH1vuBONCPFVUq/ubaS1cNmg8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Fd2n3ADcilUxOZotIFVRi7WwKb4sI1aelt+fLU1dFqB5f6vH13NoZzFl4d7pBk/WK
-	 G7dbvUyK+441RVWnB/5kclWyIK98dU2R0nLTiegpB24tBQLOyU1kHaehYw4I7L+UUm
-	 9yGyu0f00KCA16eG4lyX0xeFjFpwtoL/W5MD7i+qSbCp2es1lAV5SdFH8dHrEHMcDc
-	 0ra+Z+4l1qOwjinn+xhC798t5bMRo5PligpPlStzpiJ5EBeqGTK4dIaP9OijBiKHSG
-	 fCYJzJP+m8C2vX8Qu24R3VjaITKqShBSCC41TBMjXKsPR8G2bxOnyj82E4bvwKxug8
-	 uhg82kiECtMRQ==
+	b=NX/2GEibDlwpXchzlM/bFTyGQSvHxtkrO2Pu1L2QnFMdPb1v3FaBYdR05vLVK6UOj
+	 1nwNCtQ2cTvGU4nw0JTJ851fuOpPNEdSgXY4CYuPHrBmyaW80RUBcEhtpN5xR2wgwc
+	 vO9b+BZQAVfphTHAjvikN4hDKumcty6dlnwdAqrVlaCIKoPikK9gYwZKrB8KWxwSHv
+	 9yPzglSSRJj1ZLZKSTWQcAKjF8tz89cb6LX5jJy97s2UeL6kWmgDzWWK/uWoIqf979
+	 6VyTrsWHJCF130bSrYbB/A0Z9ATYsLcBC9ACxakHuVrPHY//8IdmZV8eNQAGAC0EQ4
+	 9Wcpj1MP17+lw==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 7/7] wifi: ath12k: introduce mlo_capable flag for device group
-Date: Wed,  4 Dec 2024 18:32:16 +0200
-Message-Id: <20241204163216.433795-8-kvalo@kernel.org>
+Subject: [PATCH 2/7] wifi: ath12k: rename mlo_capable_flags to single_chip_mlo_supp
+Date: Wed,  4 Dec 2024 18:32:11 +0200
+Message-Id: <20241204163216.433795-3-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241204163216.433795-1-kvalo@kernel.org>
 References: <20241204163216.433795-1-kvalo@kernel.org>
 MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_163229_139501_75D18596 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20241204_083222_717190_C0D2FD9D 
+X-CRM114-Status: GOOD (  20.41  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,141 +72,125 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
 
-Currently, during mac80211 allocate and register single device is
-considered for the registration. But, in future, during multi device
-group abstraction is introduced, all the devices has to be combined
-together as a single abstraction and then hardware should be allocated.
+At present, the mlo_capable_flags in ath12k_base is used to indicate whether
+the chip supports inter (QCN9274) or intra (WCN7850) chip MLO. However, it’s
+possible that the chip supports neither, especially with older firmware
+versions. Additionally, if intra chip MLO is not supported, inter chip MLO will
+also be non-functional. Therefore, having two separate flags for this is
+unnecessary.
 
-All the devices in the group should be combined together only if it
-supports inter device mlo capability. The decision of whether to combine
-the devices or not can be based on the mlo capability flag in
-ath12k_hw_group.
+Therefore, rename this flag to single_chip_mlo_supp. At the same time convert
+it into a bool data type. Also, get rid of the enums defined earlier.
 
-By default, mlo_capable flag in the group would be set as false. During
-QMI PHY capability exchange, only when we have more than one chip in the
-group or if one chip, then that chip supports inter MLO, then mlo_capable
-flag in the group will be enabled.
+For the QCN9274 family of chipsets, this will be set only when firmware
+advertises the support during the QMI exchange.
 
-Add changes to introduce mlo_capable flag for device group and refactor
-ath12k_mac_hw_allocate() api based on device group (ag) rather than
-device (ab).
+For the WCN7850 family of chipsets, since the event is not supported,
+assumption is made that single chip MLO is supported.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 17 +++++++++++++++++
- drivers/net/wireless/ath/ath12k/core.h |  3 +++
- drivers/net/wireless/ath/ath12k/mac.c  |  8 +++++---
- drivers/net/wireless/ath/ath12k/qmi.c  |  6 ++++--
- 4 files changed, 29 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  2 +-
+ drivers/net/wireless/ath/ath12k/core.h | 23 ++---------------------
+ drivers/net/wireless/ath/ath12k/qmi.c  | 13 +++++--------
+ 3 files changed, 8 insertions(+), 30 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 18b29515c6ae..49d1ac15cb7a 100644
+index 4da147f7bfac..568c9b6e2c1c 100644
 --- a/drivers/net/wireless/ath/ath12k/core.c
 +++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1439,6 +1439,7 @@ static struct ath12k_hw_group *ath12k_core_hw_group_assign(struct ath12k_base *a
- 	ab->device_id = ag->num_probed++;
- 	ag->ab[ab->device_id] = ab;
- 	ab->ag = ag;
-+	ag->mlo_capable = false;
+@@ -1325,7 +1325,7 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
+ 	ab->dev = dev;
+ 	ab->hif.bus = bus;
+ 	ab->qmi.num_radios = U8_MAX;
+-	ab->mlo_capable_flags = ATH12K_INTRA_DEVICE_MLO_SUPPORT;
++	ab->single_chip_mlo_supp = false;
  
- 	return ag;
- }
-@@ -1548,6 +1549,22 @@ static int ath12k_core_hw_group_create(struct ath12k_hw_group *ag)
- 	return 0;
- }
- 
-+void ath12k_core_hw_group_set_mlo_capable(struct ath12k_hw_group *ag)
-+{
-+	lockdep_assert_held(&ag->mutex);
-+
-+	/* If more than one devices are grouped, then inter MLO
-+	 * functionality can work still independent of whether internally
-+	 * each device supports single_chip_mlo or not.
-+	 * Only when there is one device, then it depends whether the
-+	 * device can support intra chip MLO or not
-+	 */
-+	if (ag->num_devices > 1)
-+		ag->mlo_capable = true;
-+	else
-+		ag->mlo_capable = ag->ab[0]->single_chip_mlo_supp;
-+}
-+
- int ath12k_core_init(struct ath12k_base *ab)
- {
- 	struct ath12k_hw_group *ag;
+ 	/* Device index used to identify the devices in a group.
+ 	 *
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 64252d6491cd..458e3d0071a8 100644
+index 9ddced140056..d93ba844f61d 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -844,6 +844,7 @@ struct ath12k_hw_group {
- 	 */
- 	struct ath12k_hw *ah[ATH12K_GROUP_MAX_RADIO];
- 	u8 num_hw;
-+	bool mlo_capable;
+@@ -816,21 +816,6 @@ struct ath12k_soc_dp_stats {
+ 	struct ath12k_soc_dp_tx_err_stats tx_err;
  };
  
+-/**
+- * enum ath12k_link_capable_flags - link capable flags
+- *
+- * Single/Multi link capability information
+- *
+- * @ATH12K_INTRA_DEVICE_MLO_SUPPORT: SLO/MLO form between the radio, where all
+- *	the links (radios) present within a device.
+- * @ATH12K_INTER_DEVICE_MLO_SUPPORT: SLO/MLO form between the radio, where all
+- *	the links (radios) present across the devices.
+- */
+-enum ath12k_link_capable_flags {
+-	ATH12K_INTRA_DEVICE_MLO_SUPPORT	= BIT(0),
+-	ATH12K_INTER_DEVICE_MLO_SUPPORT	= BIT(1),
+-};
+-
  /* Master structure to hold the hw data which may be used in core module */
-@@ -1066,6 +1067,8 @@ u32 ath12k_core_get_max_station_per_radio(struct ath12k_base *ab);
- u32 ath12k_core_get_max_peers_per_radio(struct ath12k_base *ab);
- u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab);
+ struct ath12k_base {
+ 	enum ath12k_hw_rev hw_rev;
+@@ -996,12 +981,8 @@ struct ath12k_base {
  
-+void ath12k_core_hw_group_set_mlo_capable(struct ath12k_hw_group *ag);
-+
- static inline const char *ath12k_scan_state_str(enum ath12k_scan_state state)
- {
- 	switch (state) {
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 1cf724a530b5..c4eab4c1c10e 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10968,10 +10968,12 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
- 	/* All pdev get combined and register as single wiphy based on
- 	 * hardware group which participate in multi-link operation else
- 	 * each pdev get register separately.
+ 	const struct hal_rx_ops *hal_rx_ops;
+ 
+-	/* mlo_capable_flags denotes the single/multi link operation
+-	 * capabilities of the Device.
 -	 *
--	 * Currently, registering as single pdevs.
- 	 */
--	radio_per_hw = 1;
-+	if (ag->mlo_capable)
-+		radio_per_hw = total_radio;
-+	else
-+		radio_per_hw = 1;
-+
- 	num_hw = total_radio / radio_per_hw;
+-	 * See enum ath12k_link_capable_flags
+-	 */
+-	u8 mlo_capable_flags;
++	/* Denotes the whether MLO is possible within the chip */
++	bool single_chip_mlo_supp;
  
- 	if (WARN_ON(num_hw >= ATH12K_GROUP_MAX_RADIO))
+ 	struct completion restart_completed;
+ 
 diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 2591d132a3fc..ba3cd2342465 100644
+index 20382b751829..efcf2dfac4ac 100644
 --- a/drivers/net/wireless/ath/ath12k/qmi.c
 +++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2023,9 +2023,9 @@ static void ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+@@ -2023,14 +2023,14 @@ static void ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
  	u8 hw_link_id = 0;
  	int i;
  
--	if (!ab->single_chip_mlo_supp) {
-+	if (!ab->ag->mlo_capable) {
+-	if (!(ab->mlo_capable_flags & ATH12K_INTRA_DEVICE_MLO_SUPPORT)) {
++	if (!ab->single_chip_mlo_supp) {
  		ath12k_dbg(ab, ATH12K_DBG_QMI,
--			   "intra device MLO is disabled hence skip QMI MLO cap");
-+			   "MLO is disabled hence skip QMI MLO cap");
+ 			   "intra device MLO is disabled hence skip QMI MLO cap");
  		return;
  	}
  
-@@ -3170,6 +3170,8 @@ int ath12k_qmi_event_server_arrive(struct ath12k_qmi *qmi)
- 	mutex_lock(&ag->mutex);
+ 	if (!ab->qmi.num_radios || ab->qmi.num_radios == U8_MAX) {
+-		ab->mlo_capable_flags = 0;
++		ab->single_chip_mlo_supp = false;
  
- 	if (ath12k_qmi_hw_group_host_cap_ready(ag)) {
-+		ath12k_core_hw_group_set_mlo_capable(ag);
-+
- 		block_ab = ath12k_qmi_hw_group_find_blocked(ag);
- 		if (block_ab)
- 			ath12k_qmi_trigger_host_cap(block_ab);
+ 		ath12k_dbg(ab, ATH12K_DBG_QMI,
+ 			   "skip QMI MLO cap due to invalid num_radio %d\n",
+@@ -2176,12 +2176,9 @@ static void ath12k_qmi_phy_cap_send(struct ath12k_base *ab)
+ 		goto out;
+ 	}
+ 
+-	if (resp.single_chip_mlo_support_valid) {
+-		if (resp.single_chip_mlo_support)
+-			ab->mlo_capable_flags |= ATH12K_INTRA_DEVICE_MLO_SUPPORT;
+-		else
+-			ab->mlo_capable_flags &= ~ATH12K_INTRA_DEVICE_MLO_SUPPORT;
+-	}
++	if (resp.single_chip_mlo_support_valid &&
++	    resp.single_chip_mlo_support)
++		ab->single_chip_mlo_supp = true;
+ 
+ 	if (!resp.num_phy_valid) {
+ 		ret = -ENODATA;
 -- 
 2.39.5
 
