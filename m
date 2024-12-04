@@ -4,100 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 798A6E6C61A
-	for <ath12k@archiver.kernel.org>; Tue,  3 Dec 2024 09:19:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C0FE7716D
+	for <ath12k@archiver.kernel.org>; Wed,  4 Dec 2024 07:13:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4FmtQeza1CzHNqrTW/NmGRcEE/2b9bklTjsRtN7+/ds=; b=uEpKBSK7kHW/pyLzZLItn/qUxw
-	k2B9Bm22b4BFq8CDI5D1WAemsNl8N/PG/UU3GX+PRXm2EupxRoOyczM3ScQVf9zoWP7Hcwvg4XVRu
-	6a23mxodU7UVO7RULv7TnCjkcxxqvXIFXTVgfUqXvte4sgDl6XLpASyDLjTtwC0X6Y1LNCbYZAIug
-	4pBlSJC/ResTfTmf+haVepFm3kv0ZW8Lvb4iZ8eI/4xE9f+OU3huYBKZhOHptxQfUnQZLPwZpeQg1
-	1bnuXwFdo2E92+KICvENKpaiKsaOkADlKb/rWzvpIJ4xnuC4gaIcBNraOpzTlmDGXQAIyYLgZytNb
-	VcA6qRQg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=7sGOD67PyyE1wk6exvRwuWJEfYcSPOVVzhpon+BR3l0=; b=F0b1CiJcFqRLXiONI2sYcsrED/
+	1PT16o0SFquqorB5+Op2+IOU4U3FBPQyuhh9dfBX+YCGYfnZeK1EnnAF4Slf1xFfzSPPus5W6Sl1Z
+	6cLFhb2jgONMsIJTSmxIppXqDA23H9P832jP+xOxPAYs+Gqj13uo0ETmC7rvGSj4INgietu75pS9u
+	2SFW0RxlWnwN6rypGitmw1R8dk23XvUNPwLKlDttm1Bd5R1ZPBWl47UQTHhAJT7YsuoSle1/eNmts
+	A07ir+CCrHT4PbrN+Y3UP5uWC67Cr0fvYv9yWfI6H0yJ3/YF5DDPJlPgCvSS65VtTy3JwRCJduecS
+	T0uwcrpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIP3r-00000008qed-0laS
+	id 1tIjZO-0000000BgJz-1EeW
 	for ath12k@archiver.kernel.org;
-	Tue, 03 Dec 2024 09:19:15 +0000
+	Wed, 04 Dec 2024 07:13:10 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIP3o-00000008qeA-2jfG
+	id 1tIjZL-0000000BgHi-1ROG
 	for ath12k@lists.infradead.org;
-	Tue, 03 Dec 2024 09:19:13 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B38O3YD028930;
-	Tue, 3 Dec 2024 09:19:07 GMT
+	Wed, 04 Dec 2024 07:13:08 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B45xtLW010494;
+	Wed, 4 Dec 2024 07:13:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4FmtQeza1CzHNqrTW/NmGRcEE/2b9bklTjsRtN7+/ds=; b=j/ZyoZ3wwk69T1oX
-	I+VmYIq1lpIxXpbAuFsg+MPHzSgrKr/lfrpS+ubkueH66xhY8WFt+b/Vv7UuXsbj
-	g0G4q8MI1Sef1BhtPuNKZ3BkmYgYbQvBNdsjxoEat/ftcNpELSEuYgaao3PYGsvq
-	pjzTCmOa6HmXWHeyjhP6r7kmrowC2VX7lDfOd1uUQbpKVIdHdG3EaaSnMU3Yw7d8
-	EdNvAFXp1v6ra5JqfwJ6U2nbP0zhL4Gy4tZtoTbP21wUM2nDBkiRd8ZDTlAxgEEd
-	KJd7TWCi1tJUOT6bWD34URQ7UGcRWjN7N/33BmKymETbbd9hF0hV53SwKJ7VAqqD
-	smkpvg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437tstfk69-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=7sGOD67PyyE1wk6exvRwuW
+	JEfYcSPOVVzhpon+BR3l0=; b=ErBrG0NzmYfM5tJ4EPs8RhUotuQcksB5AAjoiX
+	P/jbYRcoFTVTUFwd9iyVNQaKBT5PkokUvwh/kxBgzYdsibKeGQNvSGeOIXUnJuI6
+	wGRjDRK84LA3fM/YlsxZGnw2YkTIQVxZC2Z6DTHMg/wLjv0s/EYUxU4K5hc37pZA
+	zjjP3zie/p5AI6tppg2pG2D64hnWseAtWsrP01omsl1LTfiHbjLkIVykSQvNnKuE
+	mV32+MHLmqaRcsjaGMg+asgeXdv4ALLaIweHrGBJZa/LKAiDALQ5DBNPQs/QyZUr
+	3xkoUNiHShhaPJVqL3tIiI2u+DuA/wyWIlTEMCeSn0mR7uFQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 439v7yuhfy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 03 Dec 2024 09:19:06 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B39J5Ze021551
+	Wed, 04 Dec 2024 07:13:04 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B47D3PF026362
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 3 Dec 2024 09:19:05 GMT
-Received: from [10.151.41.184] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 3 Dec 2024
- 01:19:01 -0800
-Message-ID: <0796510c-20bd-4a81-bd60-40aacbcf61c0@quicinc.com>
-Date: Tue, 3 Dec 2024 14:48:58 +0530
+	Wed, 4 Dec 2024 07:13:03 GMT
+Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 3 Dec 2024 23:13:01 -0800
+From: P Praneesh <quic_ppranees@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
+Subject: [PATCH] wifi: ath12k: Add support for parsing 64-bit TLVs
+Date: Wed, 4 Dec 2024 12:42:38 +0530
+Message-ID: <20241204071238.948885-1-quic_ppranees@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 15/22] wifi: ath12k: add BDF address in hardware
- parameter
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
-        "Rob
- Herring" <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        "Conor
- Dooley" <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        "Bjorn
- Andersson" <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
-References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
- <20241015182637.955753-16-quic_rajkbhag@quicinc.com>
- <142f92d7-72e1-433b-948d-2c7e7d37ecfc@oss.qualcomm.com>
-Content-Language: en-US
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <142f92d7-72e1-433b-948d-2c7e7d37ecfc@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 2sj9l3bAucBR50kKxPni91PBON0uv-o0
-X-Proofpoint-GUID: 2sj9l3bAucBR50kKxPni91PBON0uv-o0
+X-Proofpoint-ORIG-GUID: y0LzFXmufgx-_EPKqb6DsHqs3z_cPsfw
+X-Proofpoint-GUID: y0LzFXmufgx-_EPKqb6DsHqs3z_cPsfw
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- malwarescore=0 spamscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0
- priorityscore=1501 suspectscore=0 phishscore=0 adultscore=0 clxscore=1015
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412030079
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
+ impostorscore=0 adultscore=0 priorityscore=1501 clxscore=1015
+ lowpriorityscore=0 suspectscore=0 mlxlogscore=999 malwarescore=0
+ bulkscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412040056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241203_011912_809245_3AE809D5 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20241203_231307_498064_7293DF64 
+X-CRM114-Status: GOOD (  13.68  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,21 +94,73 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 11/4/2024 7:46 PM, Konrad Dybcio wrote:
-> On 15.10.2024 8:26 PM, Raj Kumar Bhagat wrote:
->> The Ath2k AHB device (IPQ5332) firmware requests BDF_MEM_REGION_TYPE
->> memory during QMI memory requests. This memory is part of the
->> HOST_DDR_REGION_TYPE. Therefore, add the BDF memory address to the
->> hardware parameter and provide this memory address to the firmware
->> during QMI memory requests.
-> 
-> Sounds like something to put in the device tree, no?
-> 
+There is mismatch between the format of monitor destination TLVs received
+and the expected format by the current implementation. The received TLVs
+are in 64-bit format, while the implementation is designed to handle
+32-bit TLVs. This leads to incorrect parsing. Fix it by adding support
+for parsing 64-bit TLVs.
 
-This BDF memory address is the RAM offset. We did add this in device tree in
-version 1. This is removed from device tree in v2 based on the review comment that
-DT should not store RAM offset.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-refer below link:
-Link: https://lore.kernel.org/all/f8cd9c3d-47e1-4709-9334-78e4790acef0@kernel.org/
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_mon.c   | 14 +++++++-------
+ drivers/net/wireless/ath/ath12k/hal_desc.h |  2 ++
+ 2 files changed, 9 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 494984133a91..dff14f77f504 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -1199,19 +1199,19 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k_base *ab, struct ath12k_mon_data *pmon
+ 			    struct sk_buff *skb)
+ {
+ 	struct hal_rx_mon_ppdu_info *ppdu_info = &pmon->mon_ppdu_info;
+-	struct hal_tlv_hdr *tlv;
++	struct hal_tlv_64_hdr *tlv;
+ 	enum hal_rx_mon_status hal_status;
+-	u32 tlv_userid = 0;
++	u32 tlv_userid;
+ 	u16 tlv_tag, tlv_len;
+ 	u8 *ptr = skb->data;
+ 
+ 	memset(ppdu_info, 0, sizeof(struct hal_rx_mon_ppdu_info));
+ 
+ 	do {
+-		tlv = (struct hal_tlv_hdr *)ptr;
+-		tlv_tag = le32_get_bits(tlv->tl, HAL_TLV_HDR_TAG);
+-		tlv_len = le32_get_bits(tlv->tl, HAL_TLV_HDR_LEN);
+-		tlv_userid = le32_get_bits(tlv->tl, HAL_TLV_USR_ID);
++		tlv = (struct hal_tlv_64_hdr *)ptr;
++		tlv_tag = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_TAG);
++		tlv_len = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_LEN);
++		tlv_userid = le64_get_bits(tlv->tl, HAL_TLV_64_USR_ID);
+ 		ptr += sizeof(*tlv);
+ 
+ 		/* The actual length of PPDU_END is the combined length of many PHY
+@@ -1226,7 +1226,7 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k_base *ab, struct ath12k_mon_data *pmon
+ 		hal_status = ath12k_dp_mon_rx_parse_status_tlv(ab, pmon,
+ 							       tlv_tag, ptr, tlv_userid);
+ 		ptr += tlv_len;
+-		ptr = PTR_ALIGN(ptr, HAL_TLV_ALIGN);
++		ptr = PTR_ALIGN(ptr, HAL_TLV_64_ALIGN);
+ 
+ 		if ((ptr - skb->data) >= DP_RX_BUFFER_SIZE)
+ 			break;
+diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
+index a460d432288f..b90a6da72e29 100644
+--- a/drivers/net/wireless/ath/ath12k/hal_desc.h
++++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
+@@ -579,6 +579,8 @@ struct hal_tlv_hdr {
+ 
+ #define HAL_TLV_64_HDR_TAG		GENMASK(9, 1)
+ #define HAL_TLV_64_HDR_LEN		GENMASK(21, 10)
++#define HAL_TLV_64_USR_ID		GENMASK(31, 26)
++#define HAL_TLV_64_ALIGN		8
+ 
+ struct hal_tlv_64_hdr {
+ 	__le64 tl;
+-- 
+2.34.1
+
 
