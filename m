@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDE0CE7716D
-	for <ath12k@archiver.kernel.org>; Thu,  5 Dec 2024 01:09:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF8C4E77173
+	for <ath12k@archiver.kernel.org>; Thu,  5 Dec 2024 01:09:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ZY2SL0nlM7GQhiF6oAu27DtxhPCwu2BzNtkmI3Jgjzs=; b=ElitdlwTkDFk4rQTVmtsHSxdgM
-	bJWYAndNy7qF9ZMwSgK5jmSGWsfF8+SwMLRcSFF1WpwqPwpm1KxU/PM3H2YrwEUb7qLIQNXaFt/iA
-	v4wDafB7OwnrWgF6ocWUtvfuMzSDvktbGl6TE190V7TcHVAJPkg4hZzj4m6gyX/d9TvYgiC7rx9hT
-	fPD+BjU14JmXntmWGEXhXn9T4Gd719dZDdR7ktgczlwghdhj0e7GaZeN+5w6M/WShAJuONQBSeRi5
-	ids9mVputqCw1YpsfGb3j+3GaYp8OEOb01O1QnfTAa+UOl6pv/TN1l9u+OvsNZsLlCeflDskkgKZJ
-	gpXvcuTg==;
+	bh=T2gaLgWNFft4iK51m0VNrU4LZQ1b2jyDreSTwO7NR+8=; b=ea6QyabOutzSVroyqZ+cPCYkKk
+	c6hCMdgRa6Xn/EQnW0CjGqxQNvHzBymPkRiCrYFpi5xdVEA6AYUB9tEWgJF0JTM0uhYM0e0PXNdYq
+	wFaMKk87RLSsORUJ3iEMEeOuJbwL1PSOWeu8tb9fBq5Us7BN3f/fjiCSxfxG8wO9b4F5DRoi0DEal
+	TM89ty+A/Qgof4WqgChOgrBVQQjI5thSBksw7TyU8Lg1aOPzWIfZSZZY69CShskaukBcJ+zTLZKnq
+	+9lbQL8V95e4Uz5JDcTmRMYiyW9qB9nRR+NuVTocskbx7TVtEYUuwBOrOAUS0ASRp5oYnZJ4iPmsm
+	cUMv/4Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJ0MX-0000000ER7P-2grS
+	id 1tJ0MY-0000000ER7i-1OB4
 	for ath12k@archiver.kernel.org;
-	Thu, 05 Dec 2024 01:09:01 +0000
+	Thu, 05 Dec 2024 01:09:02 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJ0Lm-0000000EQzh-2208
+	id 1tJ0Lq-0000000ER0d-1X84
 	for ath12k@lists.infradead.org;
-	Thu, 05 Dec 2024 01:08:15 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B4EDIpm010103;
-	Thu, 5 Dec 2024 01:08:13 GMT
+	Thu, 05 Dec 2024 01:08:19 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B4I0Jao024747;
+	Thu, 5 Dec 2024 01:08:17 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ZY2SL0nlM7GQhiF6oAu27DtxhPCwu2BzNtkmI3Jgjzs=; b=aeXLmnaLxQ1RVItY
-	upHe01rvjbwF+ii2dGr8MHzdxe7W6c4sYIfPw6xGl/eMF1kJu72bTPhXHsL/xYvE
-	yhxZ07SP3JUrXv6nqISetBpl/a8NlGj+j27NH74mQhdBZn9pb8Lw86bXyNEf53o+
-	6JHhyLCrZZZFfi34OydjrX/NRD+0Tq4ykxpfEEpoQWOYDj6i2k+qY5iReie8yD1Z
-	qKFx2av8KuaEjQbXK9dUzvSrAkfF69yO3wKP5dyOtuuMB5ot+Cglr6iSb/DijtDA
-	5LrBFnrpDBJlwk6FB+Hd+hqfEdbhskZvCjUpFjqdGHW9hO5ioUI3wH8x61ZxktYC
-	ySebKQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43a4by4mwj-1
+	T2gaLgWNFft4iK51m0VNrU4LZQ1b2jyDreSTwO7NR+8=; b=SA12zbYBRaxVyGqY
+	slNh0+PhUYhQB3/eOO4yjwu1O7lAP//oVZ3mGZp7Pi/1l1fcwwbFlOWBIHmOQTkW
+	gUGXVBRXJqvdKxioLd6GgoQ9ZVqoayZsKRFAJSuzeoG8GQUV8F1muYVsUtpYXmrC
+	8G4jLj37pCQEhQWRuCOc6dyXqbsI1fR3MTxKS0VzfOGwuMOVoIvbJHa41iKbyiic
+	ioaP4bU0rr+Be24noydIRhQhxkUig2/Y7jbMHXLyRR5qmbSzgkaJonDKRak9db1G
+	N2VFeP9QQILeDkQ//M+2kiamwRpW+XZGHyKJy6D9rabN3mS4pxEMOJRrVCFbOQb8
+	96pJeg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 439vnyww6n-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 05 Dec 2024 01:08:13 +0000 (GMT)
+	Thu, 05 Dec 2024 01:08:17 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B518C9B001111
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B518GIP023945
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 5 Dec 2024 01:08:12 GMT
+	Thu, 5 Dec 2024 01:08:16 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 4 Dec 2024 17:08:10 -0800
+ 15.2.1544.9; Wed, 4 Dec 2024 17:08:14 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>,
         Jeff Johnson <quic_jjohnson@quicinc.com>
-Subject: [PATCH v2 1/8] wifi: ath12k: Add documentation HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG
-Date: Thu, 5 Dec 2024 06:37:47 +0530
-Message-ID: <20241205010754.2846603-2-quic_periyasa@quicinc.com>
+Subject: [PATCH v2 3/8] wifi: ath12k: cleanup Rx peer statistics structure
+Date: Thu, 5 Dec 2024 06:37:49 +0530
+Message-ID: <20241205010754.2846603-4-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241205010754.2846603-1-quic_periyasa@quicinc.com>
 References: <20241205010754.2846603-1-quic_periyasa@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: _XpzpFcdx5T8oj9hSYHjsGhOWgLcawEt
-X-Proofpoint-ORIG-GUID: _XpzpFcdx5T8oj9hSYHjsGhOWgLcawEt
+X-Proofpoint-ORIG-GUID: 463_uWKHD1iVELMFj31cymzYIBEwtyh6
+X-Proofpoint-GUID: 463_uWKHD1iVELMFj31cymzYIBEwtyh6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 clxscore=1015
- impostorscore=0 suspectscore=0 adultscore=0 phishscore=0 spamscore=0
- priorityscore=1501 malwarescore=0 lowpriorityscore=0 mlxlogscore=999
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
+ mlxlogscore=858 bulkscore=0 impostorscore=0 mlxscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412050006
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_170814_640041_49AC0918 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20241204_170818_516023_0AB81509 
+X-CRM114-Status: GOOD (  10.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,8 +100,10 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add missing field documentation for HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG
-command with indentation alignment.
+Currently, unused fields are present in the Rx peer statistics
+structure. These fields are already present in the same structure
+under the ath12k_rx_peer_rate_stats container structure. Therefore,
+remove the unused fields from the Rx peer statistics structure.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -109,41 +111,24 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.h | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index a120b7a8477d..4ec50962a2da 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -695,9 +695,9 @@ enum htt_stats_internal_ppdu_frametype {
-  *
-  *    The message would appear as follows:
-  *
-- *    |31       26|25|24|23            16|15             8|7             0|
-- *    |-----------------+----------------+----------------+---------------|
-- *    |   rsvd1   |PS|SS|     ring_id    |     pdev_id    |    msg_type   |
-+ *    |31   29|28|27|26|25|24|23       16|15             8|7             0|
-+ *    |-------+--+--+--+--+--+-----------+----------------+---------------|
-+ *    | rsvd1 |ED|DT|OV|PS|SS|  ring_id  |     pdev_id    |    msg_type   |
-  *    |-------------------------------------------------------------------|
-  *    |              rsvd2               |           ring_buffer_size     |
-  *    |-------------------------------------------------------------------|
-@@ -724,7 +724,13 @@ enum htt_stats_internal_ppdu_frametype {
-  *                    More details can be got from enum htt_srng_ring_id
-  *          b'24    - status_swap: 1 is to swap status TLV
-  *          b'25    - pkt_swap:  1 is to swap packet TLV
-- *          b'26:31 - rsvd1:  reserved for future use
-+ *          b'26    - rx_offset_valid (OV): flag to indicate rx offsets
-+ *		      configuration fields are valid
-+ *          b'27    - drop_thresh_valid (DT): flag to indicate if the
-+ *		      rx_drop_threshold field is valid
-+ *          b'28    - rx_mon_global_en: Enable/Disable global register
-+ *		      configuration in Rx monitor module.
-+ *          b'29:31 - rsvd1:  reserved for future use
-  * dword1 - b'0:16  - ring_buffer_size: size of buffers referenced by rx ring,
-  *                    in byte units.
-  *                    Valid only for HW_TO_SW_RING and SW_TO_HW_RING
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 9ddced140056..faab3329e15f 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -375,10 +375,6 @@ struct ath12k_rx_peer_stats {
+ 	u64 non_ampdu_msdu_count;
+ 	u64 stbc_count;
+ 	u64 beamformed_count;
+-	u64 mcs_count[HAL_RX_MAX_MCS + 1];
+-	u64 nss_count[HAL_RX_MAX_NSS];
+-	u64 bw_count[HAL_RX_BW_MAX];
+-	u64 gi_count[HAL_RX_GI_MAX];
+ 	u64 coding_count[HAL_RX_SU_MU_CODING_MAX];
+ 	u64 tid_count[IEEE80211_NUM_TIDS + 1];
+ 	u64 pream_cnt[HAL_RX_PREAMBLE_MAX];
 -- 
 2.34.1
 
