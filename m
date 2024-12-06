@@ -4,64 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B528FE77173
-	for <ath12k@archiver.kernel.org>; Fri,  6 Dec 2024 07:47:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E995E77173
+	for <ath12k@archiver.kernel.org>; Fri,  6 Dec 2024 09:56:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wfGCMWZ6xexpjcMNpgFhCbMlBLvMZEm37v71W1xQsQs=; b=tHWLY6HvksLLjFRhKaPsvDLh38
-	qz0JE8DuQ2oqamZ1FSWW2GA4rRONQ+GIPwBX4mwyLPaOFDMFVWSpHPgmzFnSxa5fcxlv3XYQLjItU
-	aDEOqExSjOfA7cBzUK4WwZs2gpswIEoFZ8TAAcWFE9sNSydfPHTEgrbycHP/LPNE3BFUlrmyPt96M
-	vf/dbuxG0ydJDgyQNTgw5cQe1Yy3Ls3C4hYc4V4oGl3UtL/ULE5S7aQDMjGEURddQ3D8RIBU2OdyN
-	cQEMHjQ7KS1D1S2bcZUT/uHy/cm3T0innOtGppHDfn4cgzld/HGiwgSULyU+qeYm1ufZCDvBHhyCc
-	fILTD17w==;
+	bh=DCP4XbF/VfzcgswOm9ghFyQw8na+yOHlMOu5DziN6FQ=; b=DAn0xzrFvugPPCjUm9yFb28XcD
+	UII16MYDCPv2woKJkV2w9B1M4/85rgYstZ/CfctgUoak98LgDgeub4BzCsMp3kbgVn1Y9O3FGK/Tf
+	jXv9t4GwjzUdp5vM7BeWVORW1lD86KUA0HWS57VQjYG8pRHRE1eDGLIUYhcnHbtXDU/Q7EQXP9WKo
+	4F8r5l/YQBCMmhxLGG6Ij30GgAnPRvIMmfYO4y+v9tlU3b0MWd8c/FFuIr6wB83AhuUZfVt0KQC4T
+	zPis3y6j6UJ7F5Xyn9VQ0kDQFtXVvwUiKnJj8vOomCVSDn0YCvhjXEuzXvVEoemET0kNYP41fa2jw
+	PshZVRaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJT3w-00000000pxv-1iKS
+	id 1tJV4l-00000001ANg-3GMm
 	for ath12k@archiver.kernel.org;
-	Fri, 06 Dec 2024 07:47:44 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Fri, 06 Dec 2024 09:56:43 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJT3t-00000000pwJ-1A3s
+	id 1tJV4S-00000001AJb-3phH
 	for ath12k@lists.infradead.org;
-	Fri, 06 Dec 2024 07:47:42 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 99B76A44059;
-	Fri,  6 Dec 2024 07:45:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 770F7C4CEDD;
-	Fri,  6 Dec 2024 07:47:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733471260;
-	bh=wfGCMWZ6xexpjcMNpgFhCbMlBLvMZEm37v71W1xQsQs=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=PmyxtJ05QgQtBVF38iApkrYqWtNl1OoPlixogjNxOFhYHlPwInftDxzIL7CUbpOAK
-	 62CBRhuxexSDcFlBXTruH1HQKDp6XNcfq99tNlzdUUGa5BWFlDoPqPw5gEgRvw6IBw
-	 Mr5UIkh7zH85aBkJ/R10FvZubNj5g6xd1GIy3vcT0UZ9Z34UITslHUReyCwtgKIZku
-	 N1OXz5pb1gg7uHeYvpyI52E4DgFvMDkAInvZ8Sr4MtVYbBmD1oMWwOfH3m01xtlWV3
-	 V22fYkGvojSuoxXmc7gX46iUfqrpT9Heml6FviVUG463ZTCzSg3akX5wKTNGSuaSxe
-	 2M26iyrAhT/Dw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org
-Subject: Re: [PATCH 2/7] wifi: ath12k: rename mlo_capable_flags to
- single_chip_mlo_supp
-References: <20241204163216.433795-1-kvalo@kernel.org>
-	<20241204163216.433795-3-kvalo@kernel.org>
-	<88e0116c-778f-4861-8751-b30a09d3d2b4@oss.qualcomm.com>
-Date: Fri, 06 Dec 2024 09:47:37 +0200
-In-Reply-To: <88e0116c-778f-4861-8751-b30a09d3d2b4@oss.qualcomm.com> (Jeff
-	Johnson's message of "Thu, 5 Dec 2024 14:32:38 -0800")
-Message-ID: <87zfl9jlra.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Fri, 06 Dec 2024 09:56:26 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B67Tl3t014923;
+	Fri, 6 Dec 2024 09:56:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	DCP4XbF/VfzcgswOm9ghFyQw8na+yOHlMOu5DziN6FQ=; b=Rne41zuB8lWYf289
+	frfBdvjL0GZyffVYs3RqwsOa5GZaKh0ubLtHFc4WbPjsWRyyIqLP3KG+W2O3cpCF
+	dADevyiAq9qewAPXDfj9haHx3MpMfzkLEXA4wkl/ylLObQqPorg9ME+6AVSawXtq
+	a7ykdMVcZDabBmHIdcQn6YG8eetXLkw7kdSub9UI3EbLULb+zN7O1LTbIWXc+SPM
+	IRsiiNwHl2drinQUV+XqHOGodiZpm83t08PWko4UFouFs+6/ZPNxGzItei949ghp
+	KVhNwZNGLtTQDNI49dL7QuuTrnZu3Fte+OReD7hWMrRikD7u3xfASdfsS1B5nqen
+	PXKRAA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43bbnmk5rg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 06 Dec 2024 09:56:19 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B69uIh0012818
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 6 Dec 2024 09:56:18 GMT
+Received: from [10.151.41.184] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 6 Dec 2024
+ 01:56:13 -0800
+Message-ID: <9093b41c-986d-4304-8414-61e4ee2d9950@quicinc.com>
+Date: Fri, 6 Dec 2024 15:26:10 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 17/22] wifi: ath12k: add AHB driver support for IPQ5332
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        "Rob
+ Herring" <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        "Conor
+ Dooley" <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        "Bjorn
+ Andersson" <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        Balamurugan S <quic_bselvara@quicinc.com>,
+        "P Praneesh" <quic_ppranees@quicinc.com>
+References: <20241015182637.955753-1-quic_rajkbhag@quicinc.com>
+ <20241015182637.955753-18-quic_rajkbhag@quicinc.com>
+ <243cd21d-6a35-4ff0-9b38-ec519a804670@oss.qualcomm.com>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <243cd21d-6a35-4ff0-9b38-ec519a804670@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: JMmHqK8LpnyWdFRx5cxjeCdFOEaJqjBS
+X-Proofpoint-GUID: JMmHqK8LpnyWdFRx5cxjeCdFOEaJqjBS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ mlxlogscore=999 priorityscore=1501 spamscore=0 impostorscore=0 bulkscore=0
+ suspectscore=0 adultscore=0 clxscore=1015 phishscore=0 mlxscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412060071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241205_234741_374453_7AEDB548 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20241206_015625_074839_3825030A 
+X-CRM114-Status: GOOD (  36.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,48 +113,410 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com> writes:
+On 10/19/2024 1:59 AM, Konrad Dybcio wrote:
+> On 15.10.2024 8:26 PM, Raj Kumar Bhagat wrote:
+>> From: Balamurugan S <quic_bselvara@quicinc.com>
+>>
+>> Add Initial Ath12k AHB driver support for IPQ5332. IPQ5332 is AHB
+>> based IEEE802.11be 2 GHz 2x2 WiFi device.
+>>
+>> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
+>> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Co-developed-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+> 
+> [...]
+> 
+>> +enum ext_irq_num {
+>> +	host2wbm_desc_feed = 16,
+>> +	host2reo_re_injection,
+> 
+> Why?
+> 
 
-> On 12/4/2024 8:32 AM, Kalle Valo wrote:
->
->> From: Aditya Kumar Singh <quic_adisi@quicinc.com>
->>=20
->> At present, the mlo_capable_flags in ath12k_base is used to indicate whe=
-ther
->> the chip supports inter (QCN9274) or intra (WCN7850) chip MLO. However, =
-it=E2=80=99s
->> possible that the chip supports neither, especially with older firmware
->> versions. Additionally, if intra chip MLO is not supported, inter chip M=
-LO will
->> also be non-functional. Therefore, having two separate flags for this is
->> unnecessary.
->>=20
->> Therefore, rename this flag to single_chip_mlo_supp. At the same time co=
-nvert
->> it into a bool data type. Also, get rid of the enums defined earlier.
->>=20
->> For the QCN9274 family of chipsets, this will be set only when firmware
->> advertises the support during the QMI exchange.
->>=20
->> For the WCN7850 family of chipsets, since the event is not supported,
->> assumption is made that single chip MLO is supported.
->>=20
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_=
-SILICONZ-3
->>=20
->> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
->
-> Kalle, this patch is missing your SOB.
-> Please reply with the tag and I'll fix in 'pending'
+This enum is used as a IRQ number for Ath12k AHB. Based on this enum
+we can get the IRQ name from irq_name[]. This helps to request the original
+IRQ number from the DT.
+It is starting from 16 becasue, in irq_name[], the name for ext IRQ starts
+from 16 index.
 
-Oh darn, sorry about that. Here it is:
+> 
+>> +static u32 ath12k_ahb_cmem_read32(struct ath12k_base *ab, u32 offset)
+>> +{
+>> +	offset = offset - HAL_IPQ5332_CMEM_BASE;
+>> +	return ioread32(ab->mem_cmem + offset);
+> 
+> return ioread32(ab->mem_cmem + offset - HAL_IPQ5332_CMEM_BASE)?
+> 
+> Or maybe the mem_cmem base should be moved?
+> 
 
-Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+sure, will update in next version.
 
---=20
-https://patchwork.kernel.org/project/linux-wireless/list/
+>> +static int ath12k_ahb_start(struct ath12k_base *ab)
+>> +{
+>> +	ath12k_ahb_ce_irqs_enable(ab);
+>> +	ath12k_ce_rx_post_buf(ab);
+>> +
+>> +	return 0;
+>> +}
+> 
+> Neither this nor ath12k_pci returns anything useful - perhaps make this void?
+> 
+>> +static void ath12k_ahb_free_ext_irq(struct ath12k_base *ab)
+> 
+> Any reason we're not using devm APIs?
+> 
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
-hes
+Thanks, we will move devm APIs in next version.
+
+>> +static int ath12k_ahb_config_ext_irq(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ext_irq_grp *irq_grp;
+>> +	const struct hal_ops *hal_ops;
+>> +	int i, j, irq, irq_idx, ret;
+>> +	u32 num_irq;
+>> +
+>> +	hal_ops = ab->hw_params->hal_ops;
+>> +	for (i = 0; i < ATH12K_EXT_IRQ_GRP_NUM_MAX; i++) {
+>> +		irq_grp = &ab->ext_irq_grp[i];
+>> +		num_irq = 0;
+>> +
+>> +		irq_grp->ab = ab;
+>> +		irq_grp->grp_id = i;
+>> +
+>> +		irq_grp->napi_ndev = alloc_netdev_dummy(0);
+>> +		if (!irq_grp->napi_ndev)
+>> +			return -ENOMEM;
+>> +
+>> +		netif_napi_add(irq_grp->napi_ndev, &irq_grp->napi,
+>> +			       ath12k_ahb_ext_grp_napi_poll);
+>> +
+>> +		for (j = 0; j < ATH12K_EXT_IRQ_NUM_MAX; j++) {
+>> +			if (ab->hw_params->ring_mask->tx[i] &&
+>> +			    j <= ATH12K_MAX_TCL_RING_NUM &&
+>> +			    (ab->hw_params->ring_mask->tx[i] &
+>> +			     BIT(hal_ops->tcl_to_wbm_rbm_map[j].wbm_ring_num))) {
+>> +				irq_grp->irqs[num_irq++] =
+>> +					wbm2host_tx_completions_ring1 - j;
+>> +			}
+> 
+> This is unreadable
+> 
+
+In next version we will use a ring_mask pointer and also add comments
+to make it more readable.
+
+>> +
+>> +			if (ab->hw_params->ring_mask->rx[i] & BIT(j)) {
+> 
+> Consider taking a pointer to ring_mask so that the lines are shorter
+> 
+
+Thansk for the suggestion, will update in next version.
+
+>> +				irq_grp->irqs[num_irq++] =
+>> +					reo2host_destination_ring1 - j;
+>> +			}
+>> +
+>> +			if (ab->hw_params->ring_mask->rx_err[i] & BIT(j))
+>> +				irq_grp->irqs[num_irq++] = reo2host_exception;
+>> +
+>> +			if (ab->hw_params->ring_mask->rx_wbm_rel[i] & BIT(j))
+>> +				irq_grp->irqs[num_irq++] = wbm2host_rx_release;
+>> +
+>> +			if (ab->hw_params->ring_mask->reo_status[i] & BIT(j))
+>> +				irq_grp->irqs[num_irq++] = reo2host_status;
+>> +
+>> +			if (ab->hw_params->ring_mask->rx_mon_dest[i] & BIT(j))
+>> +				irq_grp->irqs[num_irq++] =
+>> +					rxdma2host_monitor_destination_mac1;
+>> +		}
+>> +
+>> +		irq_grp->num_irq = num_irq;
+>> +
+>> +		for (j = 0; j < irq_grp->num_irq; j++) {
+>> +			irq_idx = irq_grp->irqs[j];
+>> +
+>> +			irq = platform_get_irq_byname(ab->pdev,
+>> +						      irq_name[irq_idx]);
+>> +			ab->irq_num[irq_idx] = irq;
+>> +			irq_set_status_flags(irq, IRQ_NOAUTOEN | IRQ_DISABLE_UNLAZY);
+>> +			ret = request_irq(irq, ath12k_ahb_ext_interrupt_handler,
+>> +					  IRQF_TRIGGER_RISING,
+>> +					  irq_name[irq_idx], irq_grp);
+>> +			if (ret) {
+>> +				ath12k_err(ab, "failed request_irq for %d\n",
+>> +					   irq);
+>> +			}
+>> +		}
+> 
+> Instead of doing all this magic, can we request the IRQs manually, as we
+> have interrupt-names in dt?
+> 
+
+I'm not sure if I fully understood this comment.
+If we manually request IRQs using their names from the DT, we won't be able to
+group the IRQs. Grouping the IRQs is one of our main objectives here. Additionally,
+we are not using all the IRQ names defined in the DT, so the logic in this function
+is crucial for grouping and requesting the IRQs according to the ring-mask.
+
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int ath12k_ahb_config_irq(struct ath12k_base *ab)
+>> +{
+>> +	int irq, irq_idx, i;
+>> +	int ret;
+>> +
+>> +	/* Configure CE irqs */
+>> +	for (i = 0; i < ab->hw_params->ce_count; i++) {
+>> +		struct ath12k_ce_pipe *ce_pipe = &ab->ce.ce_pipe[i];
+>> +
+>> +		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
+>> +			continue;
+>> +
+>> +		irq_idx = ATH12K_IRQ_CE0_OFFSET + i;
+>> +
+>> +		INIT_WORK(&ce_pipe->intr_wq, ath12k_ahb_ce_workqueue);
+>> +		irq = platform_get_irq_byname(ab->pdev, irq_name[irq_idx]);
+>> +		ret = request_irq(irq, ath12k_ahb_ce_interrupt_handler,
+>> +				  IRQF_TRIGGER_RISING, irq_name[irq_idx],
+>> +				  ce_pipe);
+>> +		if (ret)
+>> +			return ret;
+>> +
+>> +		ab->irq_num[irq_idx] = irq;
+>> +	}
+>> +
+>> +	/* Configure external interrupts */
+>> +	ret = ath12k_ahb_config_ext_irq(ab);
+>> +
+>> +	return ret;
+>> +}
+>> +
+>> +static int ath12k_ahb_map_service_to_pipe(struct ath12k_base *ab, u16 service_id,
+>> +					  u8 *ul_pipe, u8 *dl_pipe)
+>> +{
+>> +	const struct service_to_pipe *entry;
+>> +	bool ul_set = false, dl_set = false;
+>> +	int i;
+>> +
+>> +	for (i = 0; i < ab->hw_params->svc_to_ce_map_len; i++) {
+>> +		entry = &ab->hw_params->svc_to_ce_map[i];
+>> +
+>> +		if (__le32_to_cpu(entry->service_id) != service_id)
+>> +			continue;
+>> +
+>> +		switch (__le32_to_cpu(entry->pipedir)) {
+>> +		case PIPEDIR_NONE:
+>> +			break;
+>> +		case PIPEDIR_IN:
+>> +			WARN_ON(dl_set);
+>> +			*dl_pipe = __le32_to_cpu(entry->pipenum);
+>> +			dl_set = true;
+>> +			break;
+>> +		case PIPEDIR_OUT:
+>> +			WARN_ON(ul_set);
+>> +			*ul_pipe = __le32_to_cpu(entry->pipenum);
+>> +			ul_set = true;
+>> +			break;
+>> +		case PIPEDIR_INOUT:
+>> +			WARN_ON(dl_set);
+>> +			WARN_ON(ul_set);
+>> +			*dl_pipe = __le32_to_cpu(entry->pipenum);
+>> +			*ul_pipe = __le32_to_cpu(entry->pipenum);
+>> +			dl_set = true;
+>> +			ul_set = true;
+>> +			break;
+>> +		}
+> 
+> if pipedir == PIPEDIR_IN || pipedir == PIPEDIR_INOUT
+> if pipedir == PIPEDIR_OUT || pipedir == PIPE_INOUT
+> 
+> ?
+> 
+
+Thanks for this logic simplification. Will use this in next version.
+
+>> +	}
+>> +
+>> +	if (WARN_ON(!ul_set || !dl_set))
+>> +		return -ENOENT;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
+>> +	.start = ath12k_ahb_start,
+>> +	.stop = ath12k_ahb_stop,
+>> +	.read32 = ath12k_ahb_read32,
+>> +	.write32 = ath12k_ahb_write32,
+>> +	.cmem_read32 = ath12k_ahb_cmem_read32,
+>> +	.cmem_write32 = ath12k_ahb_cmem_write32,
+>> +	.irq_enable = ath12k_ahb_ext_irq_enable,
+>> +	.irq_disable = ath12k_ahb_ext_irq_disable,
+>> +	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
+>> +};
+>> +
+>> +static int ath12k_ahb_clock_init(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +	int ret;
+>> +
+>> +	ab_ahb->xo_clk = devm_clk_get(ab->dev, "gcc_xo_clk");
+>> +	if (IS_ERR_OR_NULL(ab_ahb->xo_clk)) {
+>> +		ath12k_err(ab, "failed to get gcc_xo_clk: %d\n",
+>> +			   PTR_ERR_OR_ZERO(ab_ahb->xo_clk));
+>> +		ret = ab_ahb->xo_clk ? PTR_ERR(ab_ahb->xo_clk) : -ENODEV;
+>> +		ab_ahb->xo_clk = NULL;
+>> +		return ret;
+>> +	}
+> 
+> Won't clk core print errors in both of these cases?
+> 
+
+Did not see any print error form clk core during validation. Hence added
+the error print for ath12k.
+
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void ath12k_ahb_clock_deinit(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +
+>> +	devm_clk_put(ab->dev, ab_ahb->xo_clk);
+>> +	ab_ahb->xo_clk = NULL;
+>> +}
+>> +
+>> +static int ath12k_ahb_clock_enable(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +	int ret;
+>> +
+>> +	if (IS_ERR_OR_NULL(ab_ahb->xo_clk)) {
+>> +		ath12k_err(ab, "clock is not initialized\n");
+>> +		return -EIO;
+>> +	}
+>> +
+>> +	ret = clk_prepare_enable(ab_ahb->xo_clk);
+>> +	if (ret) {
+>> +		ath12k_err(ab, "failed to enable gcc_xo_clk: %d\n", ret);
+>> +		return ret;
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void ath12k_ahb_clock_disable(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +
+>> +	clk_disable_unprepare(ab_ahb->xo_clk);
+>> +}
+>> +
+>> +static int ath12k_ahb_resource_init(struct ath12k_base *ab)
+>> +{
+>> +	struct platform_device *pdev = ab->pdev;
+>> +	struct resource *mem_res;
+>> +	void __iomem *mem;
+>> +	int ret;
+>> +
+>> +	mem = devm_platform_get_and_ioremap_resource(pdev, 0, &mem_res);
+>> +	if (IS_ERR(mem)) {
+>> +		dev_err(&pdev->dev, "ioremap error\n");
+>> +		ret = PTR_ERR(mem);
+>> +		goto out;
+> 
+> If you assign ab->mem directly, you can get rid of the line below
+> and return the error here
+> 
+
+Thanks, will update in next version.
+
+>> +	}
+>> +
+>> +	ab->mem = mem;
+>> +	ab->mem_len = resource_size(mem_res);
+>> +
+>> +	if (ab->hw_params->ce_remap) {
+>> +		const struct ce_remap *ce_remap = ab->hw_params->ce_remap;
+>> +		/* ce register space is moved out of wcss and the space is not
+>> +		 * contiguous, hence remapping the CE registers to a new space
+>> +		 * for accessing them.
+>> +		 */
+> 
+> Please capitalize words consistently
+> 
+
+sure, will update in next version.
+
+>> +		ab->mem_ce = ioremap(ce_remap->base, ce_remap->size);
+>> +		if (IS_ERR(ab->mem_ce)) {
+>> +			dev_err(&pdev->dev, "ce ioremap error\n");
+>> +			ret = -ENOMEM;
+>> +			goto err_mem_unmap;
+>> +		}
+>> +		ab->ce_remap = true;
+>> +		ab->ce_remap_base_addr = HAL_IPQ5332_CE_WFSS_REG_BASE;
+>> +	}
+>> +
+>> +	if (ab->hw_params->cmem_remap) {
+>> +		const struct cmem_remap *cmem_remap = ab->hw_params->cmem_remap;
+>> +		/* For device like IPQ5332 CMEM region is outside WCSS block.
+> 
+> IPQ5332 is not a 'device'
+> 
+>> +		 * Allocate separate I/O remap to access CMEM address.
+>> +		 */
+>> +		ab->mem_cmem = ioremap(cmem_remap->base, cmem_remap->size);
+>> +		if (IS_ERR(ab->mem_cmem)) {
+>> +			dev_err(&pdev->dev, "cmem ioremap error\n");
+>> +			ret = -ENOMEM;
+>> +			goto err_mem_ce_unmap;
+>> +		}
+>> +	}
+> 
+> [...]
+> 
+>> +	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+>> +	if (ret) {
+>> +		dev_err(&pdev->dev, "Failed to set 32-bit consistent dma\n");
+> 
+> s/consistent/coherent
+> 
+> You're setting the mask, not the DMA itself
+> 
+
+Thanks will update in next version.
+
+> [...]
+> 
+>> +	/* Set fixed_mem_region to true for platforms that support fixed memory
+>> +	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
+>> +	 * need not to allocate memory.
+>> +	 */
+>> +	if (!of_property_read_u32(ab->dev->of_node, "memory-region", &addr)) {
+>> +		set_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags);
+>> +		mem_node = of_find_node_by_name(NULL, "mlo_global_mem_0");
+> 
+> This is not mentioned or documented anywhere.
+> 
+
+In next version, will document the below info:
+
+"If the platform supports fixed memory, then it should define/reserve
+MLO global memory in DT to support Multi Link Operation.
+If MLO global memory is not reserved in fixed memory mode, then
+MLO cannot be supported."
+
 
