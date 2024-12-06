@@ -4,85 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7425E77173
-	for <ath12k@archiver.kernel.org>; Fri,  6 Dec 2024 07:35:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B528FE77173
+	for <ath12k@archiver.kernel.org>; Fri,  6 Dec 2024 07:47:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=VUVAK9sW01x7/UJNB//zngqTlDnV1jFf5ZhFyhScFnc=; b=4jUdujSl7v7s22X4cGZRj+Dn1z
-	S/ADZHU9CgGEBfRUgXBDpo+jb5GzzBC4TAoMS6Olc9+u9qUqtBPjX9Ty8+Nu0Kv5kXAuXjDTD+DF1
-	8cv07/GdXIHSzx1QBL/V2wUcfSdOOtXHiZKGo3M5sP84vRqVf5n19rcV8ZV3YikyYvZjQALsyc4s0
-	GK8Nzs5NotSpbhIF2jf+yH5zOkLXwtKU9KY4DtgMKgVEBWRbxnBiZQIwK7/cifgU56wgZgLhACInZ
-	yOKbry2a0kx0IgvviHHRlDsG7xjGVWzlO0ODyHznbc4o1U8isG2BxiZs2B91NuAe4b+8uXOWYtnqK
-	BSndKI+g==;
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=wfGCMWZ6xexpjcMNpgFhCbMlBLvMZEm37v71W1xQsQs=; b=tHWLY6HvksLLjFRhKaPsvDLh38
+	qz0JE8DuQ2oqamZ1FSWW2GA4rRONQ+GIPwBX4mwyLPaOFDMFVWSpHPgmzFnSxa5fcxlv3XYQLjItU
+	aDEOqExSjOfA7cBzUK4WwZs2gpswIEoFZ8TAAcWFE9sNSydfPHTEgrbycHP/LPNE3BFUlrmyPt96M
+	vf/dbuxG0ydJDgyQNTgw5cQe1Yy3Ls3C4hYc4V4oGl3UtL/ULE5S7aQDMjGEURddQ3D8RIBU2OdyN
+	cQEMHjQ7KS1D1S2bcZUT/uHy/cm3T0innOtGppHDfn4cgzld/HGiwgSULyU+qeYm1ufZCDvBHhyCc
+	fILTD17w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJSsT-00000000ocd-2drm
+	id 1tJT3w-00000000pxv-1iKS
 	for ath12k@archiver.kernel.org;
-	Fri, 06 Dec 2024 07:35:53 +0000
-Received: from mail-pg1-x534.google.com ([2607:f8b0:4864:20::534])
+	Fri, 06 Dec 2024 07:47:44 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJSsQ-00000000oc3-0pPR
+	id 1tJT3t-00000000pwJ-1A3s
 	for ath12k@lists.infradead.org;
-	Fri, 06 Dec 2024 07:35:51 +0000
-Received: by mail-pg1-x534.google.com with SMTP id 41be03b00d2f7-7f46d5d1ad5so1507817a12.3
-        for <ath12k@lists.infradead.org>; Thu, 05 Dec 2024 23:35:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1733470549; x=1734075349; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=VUVAK9sW01x7/UJNB//zngqTlDnV1jFf5ZhFyhScFnc=;
-        b=TqfTAnq+vlXPNp/BKy4mFAFRGMNqvRPdfUq6ccD/H8YPyoy22veRQjlpVokldFSwXo
-         BhRDwUoTKGzQjK6iRr5HSbT0CmdWFiqLNldIwrkZHgObRq0pzwPIX1pDvF+GmGED5ifP
-         MQ0IzShUhRybi1IVAgBe4U6MwnFaoGvdCuDtYAZcfBGyYurBfv68V/G598sZ0lO+wG5Q
-         ivKJkCUxbnsCKhuwGD/MvaKHVjyJnAnuV+DLfX8XiFrq4nWf1jLNaWotaz3brEBe4Rr5
-         j2BHWQFXq0T5Vjddz4i3WzzL/S06z3LtcaBh9zEqGxWNnempe7z84xlo5daR1ujp1tCx
-         iEnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733470549; x=1734075349;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=VUVAK9sW01x7/UJNB//zngqTlDnV1jFf5ZhFyhScFnc=;
-        b=WjTa2upPJhAy1yOtDbOkQub6MoNjhWO3Z9tkCB8jYE74n4UR9ny0uCWVvgfgrNtqNr
-         OyWOzZCGVgxTC9lvE+SZu5NQgP0v3XMgQlL/SplGLwDq8dj89NmBa78jzJwblHSoQE/p
-         NvYBBT/QamPj70Ih24OZTLOTuEQC7lX4uVXtcpxUXFUwGIXveKq5CgyCRGYB3GSMC3Rg
-         whuxsaINK7Ya8bce4AEUVoyXd8w15A3OA3oEolYOgYjMbCUxZHIcujbqBTQAmDowhFK4
-         jfVrYbfFFnUbWQUhrFJPHiuOruhLydTMHTpYwaxvoVAiR8sHkidOawO1/HPmmDnCK0y9
-         yXwg==
-X-Forwarded-Encrypted: i=1; AJvYcCVBDC++ku+gfX35soWUxIEj216DjXtAUAMGcFDek7zWU+tNpWaUlZ7ljX3FS8EIqVbHHnYREnI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxMDGqtuEkhJQtmuOluvOjUrsrTg5psS6y76zF3OT58F6uZlnMi
-	3589yIIjczs24apdCopIS7J1xfyHUbxTtnOQcwFw8gQimQ1nNfSe
-X-Gm-Gg: ASbGnctNF8HIdaylrx75j03iUig3pXc5k3t023rDtbTLFeCfo4M8GxgjtzpdHj0UmCJ
-	5+2zOjNdSIyzjyKHSbmsCRQf1QfsfaCMYAl6RlZ2HvEhH3VQMKCOCdpzvhPk1fGUySSzpdYDkG4
-	snn7j7+f6BS1jFy96qtKIoezUe5vfDyvuiJRvMn/qWpFoRaoeKK0tJuwA/sf19lEAe0NQDtDSAv
-	JDMfjgi5M9wus7g6XvTw+3JZU+uQy7AWyML68ySM81cUiNoMg2hP7I=
-X-Google-Smtp-Source: AGHT+IHHKMowzfRZqo/yrxckrktsXFddOpWRgdDwk2tLcCRDBXvPAQ1jymmDN6Mz8n0W8ujCfq1Rgg==
-X-Received: by 2002:a05:6a20:7f99:b0:1e0:bedf:5902 with SMTP id adf61e73a8af0-1e1870ad3acmr3032805637.6.1733470548723;
-        Thu, 05 Dec 2024 23:35:48 -0800 (PST)
-Received: from HOME-PC ([223.185.130.193])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-725a2ca671asm2363763b3a.153.2024.12.05.23.35.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 05 Dec 2024 23:35:48 -0800 (PST)
-From: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
-To: kvalo@kernel.org,
-	ath12k@lists.infradead.org
-Cc: jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
-Subject: [PATCH wireless-next] wifi: ath12k: Fix out-of-bounds read
-Date: Fri,  6 Dec 2024 13:05:42 +0530
-Message-Id: <20241206073542.315095-1-dheeraj.linuxdev@gmail.com>
-X-Mailer: git-send-email 2.34.1
+	Fri, 06 Dec 2024 07:47:42 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 99B76A44059;
+	Fri,  6 Dec 2024 07:45:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 770F7C4CEDD;
+	Fri,  6 Dec 2024 07:47:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1733471260;
+	bh=wfGCMWZ6xexpjcMNpgFhCbMlBLvMZEm37v71W1xQsQs=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=PmyxtJ05QgQtBVF38iApkrYqWtNl1OoPlixogjNxOFhYHlPwInftDxzIL7CUbpOAK
+	 62CBRhuxexSDcFlBXTruH1HQKDp6XNcfq99tNlzdUUGa5BWFlDoPqPw5gEgRvw6IBw
+	 Mr5UIkh7zH85aBkJ/R10FvZubNj5g6xd1GIy3vcT0UZ9Z34UITslHUReyCwtgKIZku
+	 N1OXz5pb1gg7uHeYvpyI52E4DgFvMDkAInvZ8Sr4MtVYbBmD1oMWwOfH3m01xtlWV3
+	 V22fYkGvojSuoxXmc7gX46iUfqrpT9Heml6FviVUG463ZTCzSg3akX5wKTNGSuaSxe
+	 2M26iyrAhT/Dw==
+From: Kalle Valo <kvalo@kernel.org>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org
+Subject: Re: [PATCH 2/7] wifi: ath12k: rename mlo_capable_flags to
+ single_chip_mlo_supp
+References: <20241204163216.433795-1-kvalo@kernel.org>
+	<20241204163216.433795-3-kvalo@kernel.org>
+	<88e0116c-778f-4861-8751-b30a09d3d2b4@oss.qualcomm.com>
+Date: Fri, 06 Dec 2024 09:47:37 +0200
+In-Reply-To: <88e0116c-778f-4861-8751-b30a09d3d2b4@oss.qualcomm.com> (Jeff
+	Johnson's message of "Thu, 5 Dec 2024 14:32:38 -0800")
+Message-ID: <87zfl9jlra.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241205_233550_251519_3274DF4E 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20241205_234741_374453_7AEDB548 
+X-CRM114-Status: GOOD (  11.33  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,50 +76,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This patch addresses the Out-of-bounds read issue detected by
-Coverity (CID 1602214). The function ath12k_mac_vdev_create() accesses
-the vif->link_conf array using link_id, which is derived from
-arvif->link_id. In cases where arvif->link_id equals 15, the index
-exceeds the bounds of the array, which contains only 15 elements.This
-results in an out-of-bounds read.
+Jeff Johnson <jeff.johnson@oss.qualcomm.com> writes:
 
-This issue occurs in the following branch of the code:
+> On 12/4/2024 8:32 AM, Kalle Valo wrote:
+>
+>> From: Aditya Kumar Singh <quic_adisi@quicinc.com>
+>>=20
+>> At present, the mlo_capable_flags in ath12k_base is used to indicate whe=
+ther
+>> the chip supports inter (QCN9274) or intra (WCN7850) chip MLO. However, =
+it=E2=80=99s
+>> possible that the chip supports neither, especially with older firmware
+>> versions. Additionally, if intra chip MLO is not supported, inter chip M=
+LO will
+>> also be non-functional. Therefore, having two separate flags for this is
+>> unnecessary.
+>>=20
+>> Therefore, rename this flag to single_chip_mlo_supp. At the same time co=
+nvert
+>> it into a bool data type. Also, get rid of the enums defined earlier.
+>>=20
+>> For the QCN9274 family of chipsets, this will be set only when firmware
+>> advertises the support during the QMI exchange.
+>>=20
+>> For the WCN7850 family of chipsets, since the event is not supported,
+>> assumption is made that single chip MLO is supported.
+>>=20
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_=
+SILICONZ-3
+>>=20
+>> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+>
+> Kalle, this patch is missing your SOB.
+> Please reply with the tag and I'll fix in 'pending'
 
-    if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
-        link_id = ffs(vif->valid_links) - 1;
-    else
-        link_id = arvif->link_id;
+Oh darn, sorry about that. Here it is:
 
-When arvif->link_id equals 15 and the else branch is taken, link_id is
-set to 15.
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 
-This patch adds a bounds check to ensure that link_id does not exceed
-the valid range of the vif->link_conf array. If the check fails, a
-warning is logged, and the function returns an error code (-EINVAL).
+--=20
+https://patchwork.kernel.org/project/linux-wireless/list/
 
-Signed-off-by: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 129607ac6c1a..c19b10e66f4a 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7725,6 +7725,12 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	else
- 		link_id = arvif->link_id;
- 
-+	if (link_id >= ARRAY_SIZE(vif->link_conf)) {
-+		ath12k_warn(ar->ab, "link_id %u exceeds max valid links for vif %pM\n",
-+			    link_id, vif->addr);
-+		return -EINVAL;
-+	}
-+
- 	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[link_id]);
- 	if (!link_conf) {
- 		ath12k_warn(ar->ab, "unable to access bss link conf in vdev create for vif %pM link %u\n",
--- 
-2.34.1
-
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatc=
+hes
 
