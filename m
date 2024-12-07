@@ -4,88 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4738E77173
-	for <ath12k@archiver.kernel.org>; Fri,  6 Dec 2024 20:49:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5127E7716E
+	for <ath12k@archiver.kernel.org>; Sat,  7 Dec 2024 06:10:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0P9ucAuLFxtv4Nv+7uevs2CJjzDeKgIkyHJHTH274yo=; b=sTfDyfbWidBQSid46XWiqCz/u0
-	JPp1hda5CEM44QFxiLZHF2JzS8xP1ozSJ4658I4tgPsAZw3rqBki8SXGcYys2WDXwCsEs1+ptM351
-	zE4LV2S4Wo4+CdiwahdqXffcjxQ/djUoAXySqSm0wZhAX/y42vzIEkg6E0mO3nBQgrRPYGawsC0Eo
-	oq3U7yDfzQMbWo7v/rr7pYMh277HyakFJ0ylc40N6FrYq7dfhbNMOP0bF47RFuDYl/4dVDsdb2T5S
-	ywFZ1EOXHxZCDXxQXxu6HueXnSJfA0QbSqAqIAeYRQW0ph+lmrcNOg+/2ZwxNIt8qmrYeYvcqmwDP
-	RcaigADw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WS302FzxsUMqz5/SIjq4Dq3KB8bC9DgL1kzTjInTQxU=; b=O+V9sp/XNd/i6iBTVvSNxZkpwW
+	DfM822NH4xg8EA3mwNrK4OrO4M9kiMhGGoBa7KELCu3pTT6S6Rd0cjk1fyD1w9aIKfgMWjbAx6Jhx
+	jO/T10XYIRMVk4L7A7KSlL8fBZl5KrKg1cot4hG9M3c55huEeB/Joqa8kLgpE8MIARX/Dtqx0YIxx
+	qhXUqP28mHw5KveINIdLmWKH7koIK0rLHzJiQl2OTEvVOWq5leQZeTM/WdR1oGaivhYW8JG/OmOMT
+	z1Wj8MZF9PzPTAFvQWgSxGpZViNQgX3wahuB9eXItVUYg+cMudN79adev/xpA5fFPyIpd47PSA6n7
+	vx6zcFvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJfGO-00000002iG3-2dGt
+	id 1tJo1U-00000003TnV-2Fgh
 	for ath12k@archiver.kernel.org;
-	Fri, 06 Dec 2024 20:49:24 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Sat, 07 Dec 2024 06:10:36 +0000
+Received: from mail-pf1-x42b.google.com ([2607:f8b0:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJfFw-00000002iAO-2qrL
+	id 1tJo1Q-00000003Tn3-3MXA
 	for ath12k@lists.infradead.org;
-	Fri, 06 Dec 2024 20:48:58 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B6CF4it003155;
-	Fri, 6 Dec 2024 20:48:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0P9ucAuLFxtv4Nv+7uevs2CJjzDeKgIkyHJHTH274yo=; b=S0jLFYXGMAZo/p10
-	2gTwh4/dHKXQi3S/GRpmKPLyDUOh8cr6/lgvEhEIJQJiPRnN3eTnp4RfM4Jgv+YN
-	QfsF36d+aYl4EzvlYB4wXe+jZUkLliQS1MICy+bhuo/odzwF3KuBRe2RYxHW1P/H
-	opDjfoBQ7QwMHTKy+7w1vZMjzsS8N92h+UG40pNjAczIAh5G53e4Q1vlUKkO1ih0
-	uEPBqM0rzgs2FncQuWYt7UpGX/FJTGx/QThVclM2U1hBJClXAycvc/NDqeb+eQCd
-	1CX0W8RkPb1WfLGSzjFtCcfydTQnMwVCDyq0J82cF6vIzpclpJM08DPkeNvr5eRC
-	fp7pGw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43brgp2qyj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 06 Dec 2024 20:48:54 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B6KmrMs004444
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 6 Dec 2024 20:48:53 GMT
-Received: from [10.111.177.171] (10.49.16.6) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 6 Dec 2024
- 12:48:53 -0800
-Message-ID: <c7c66d91-c862-41e8-b8e4-fa661cc8e2f7@quicinc.com>
-Date: Fri, 6 Dec 2024 12:48:52 -0800
+	Sat, 07 Dec 2024 06:10:34 +0000
+Received: by mail-pf1-x42b.google.com with SMTP id d2e1a72fcca58-7251331e756so3020867b3a.3
+        for <ath12k@lists.infradead.org>; Fri, 06 Dec 2024 22:10:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1733551832; x=1734156632; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=WS302FzxsUMqz5/SIjq4Dq3KB8bC9DgL1kzTjInTQxU=;
+        b=CIG7I/kmQ2SKTnDyN9kRaAvUlr0GIxUs1zOApXqq0jFu5+M1ouRwz6p2DttqOAkKdD
+         dghfTEVnwaZnkaoRuKUWZ0y/6/+ohw50M/XmwHjDP1DmUVvIrCbJPy/kr690lIcATbgt
+         nbRyzLoD/c0KYrA41JlqbAd5Hn/ebdHRltKeE9ex9LM3LNihL5v4NX9k5qtrX3O8Kazj
+         1W3bfZ94IUY6lQ7K2M/GjOSAcnl/UZu+lae+LS7Ynq+1AYTGEVg3qPY23mAnbc1iLuee
+         6bH+inuECgu+MEiladmSgLaE8Q8lmsjDeycx4UDwvttXE/bRCF9GpNWJR1Jdf6G4fJwq
+         U7UA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1733551832; x=1734156632;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=WS302FzxsUMqz5/SIjq4Dq3KB8bC9DgL1kzTjInTQxU=;
+        b=uhCh4TYfqyC+JF2GRdCaDoq5cHrXlyTDvVGriCHB6/8wA6K+88VtKrsSDKvm0azwlS
+         39Taq6z8sQ/+vHzMZZHfDVYBLYd6pST1VmFBfu+7LvhGADWTSFfwi1CU82MdxmFhd4QI
+         YSAfXlZ3pj/uzsfrz98zMPau5RjCHOCe+Hu3www5RMCWubLBdBXXXnDA1ZeLZ6+yCF3T
+         5s7dP29DMk5iLhvcTYxV2kSHmrNJive4Pzl5TUrLVMVRCpbZiOy80mIlPFWZrEFRhuZV
+         hEhmNNF4b+Be55afXBhhhlSkGQ4ROyRpZYp2+qYmebm5vfDEtxQEWxA7s8Ixj5Pum9zl
+         4Xgw==
+X-Forwarded-Encrypted: i=1; AJvYcCXYCj0fn/84Ku1yonM6cmSCiEQDk7DJQ3CJLgB88VRV4UhpBhLhPOnU0c8pl2LYio/PnpYRJkw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw+lju10lQyU1wN7X6NqbphGfjbBNoDYaYlsBTkf4fhsdJLqErI
+	ti/a9ZRu6NrGhMycfvykSudxO0YV7T5WR9dYp7bMmGaHbn6/VxSvq8/x4RLe
+X-Gm-Gg: ASbGncvDL8HO8Ngo248vlr1SbOzYmnXDwHUBjbIS2fadjVB3ElEzJDCYMPZR2iA6LXG
+	ZlBjZB+5wUgJF4WzzA7SrH9pERbGPL+KtMvDly0/XeNTxOfFzDKJ2soVhxFgr6v/kfE8dQoaSwX
+	JQ90Qusl46/eBjJ85965uPmctBNc5xNnCYopi+3jkNkgWRtfwvmNTdJjHGoGzcIfM1LEIKMZWMW
+	RBIu0iq94TuXeYlCq2yqSpnXPIomcfjrZxuTh/5lTKsV78VCRTjulZEtII=
+X-Google-Smtp-Source: AGHT+IHKDVI0M1a9Yctm/CBV7psH86jb7o8aNJEMRvdEppICbZuFYbzAkh2rPSAoS8q4SjeJHMHktw==
+X-Received: by 2002:a05:6a00:1747:b0:724:eac3:576a with SMTP id d2e1a72fcca58-725b81a3dfcmr9611046b3a.25.1733551831714;
+        Fri, 06 Dec 2024 22:10:31 -0800 (PST)
+Received: from HOME-PC ([223.185.130.193])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-725b7f51b65sm2448612b3a.108.2024.12.06.22.10.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 06 Dec 2024 22:10:31 -0800 (PST)
+Date: Sat, 7 Dec 2024 11:40:27 +0530
+From: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: kvalo@kernel.org, ath12k@lists.infradead.org, jjohnson@kernel.org,
+	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH wireless-next] wifi: ath12k: Fix out-of-bounds read
+Message-ID: <Z1Pm0xsOVbV3rpjc@HOME-PC>
+References: <20241206073542.315095-1-dheeraj.linuxdev@gmail.com>
+ <8c019176-6bb5-467c-bcea-10517675de7d@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix leaking michael_mic for non-primary
- links
-To: Baochen Qiang <quic_bqiang@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20241206054552.177424-1-quic_bqiang@quicinc.com>
-From: Jeff Johnson <quic_jjohnson@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <20241206054552.177424-1-quic_bqiang@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: kQ_zv5HUKXhZ2KK91wxVe3lGHSdoNeGS
-X-Proofpoint-ORIG-GUID: kQ_zv5HUKXhZ2KK91wxVe3lGHSdoNeGS
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 clxscore=1015
- adultscore=0 lowpriorityscore=0 mlxscore=0 spamscore=0 suspectscore=0
- priorityscore=1501 phishscore=0 impostorscore=0 mlxlogscore=999
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412060156
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <8c019176-6bb5-467c-bcea-10517675de7d@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_124856_800862_AFB01AD7 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241206_221032_845901_1A92A1EA 
+X-CRM114-Status: GOOD (  31.50  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,22 +99,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12/5/2024 9:45 PM, Baochen Qiang wrote:
-> In ath12k_dp_rx_peer_frag_setup(), commit ea4192553850 ("wifi: ath12k: add primary
-> link for data path operations") checks whether a link is the primary link, and
-> returns directly if it isn't. In ML scenario where we have non-primary links created,
-> this results in leaking the michael_mic info since it is allocated by default but
-> could never be freed for a non-primary link.
-> 
-> Note that we can not move the might-sleep allocation after primary link check since
-> there we are in atomic context (due to spin lock). So keep the default allocation,
-> and then free it before return to fix this issue.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Fixes: ea4192553850 ("wifi: ath12k: add primary link for data path operations")
-> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+On Fri, Dec 06, 2024 at 12:06:51PM -0800, Jeff Johnson wrote:
 
-Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Hi Jeff,
+Thank you for taking the time to provide valuable feedback. I will make the
+necessary changes and send the patch.
 
+> On 12/5/2024 11:35 PM, Dheeraj Reddy Jonnalagadda wrote:
+> 
+> The subject should be as specific as possible while still fitting on one line.
+> Ideally the subject should be unique. So at a minimum I'd add "in
+> ath12k_mac_vdev_create()"
+> 
+> > This patch addresses the Out-of-bounds read issue detected by
+> > Coverity (CID 1602214). The function ath12k_mac_vdev_create() accesses
+> > the vif->link_conf array using link_id, which is derived from
+> > arvif->link_id. In cases where arvif->link_id equals 15, the index
+> 
+> How can arvif->link_id equal 15? Does Coverity actually identify a code path
+> where this can occur?
+In the code below, when the first condition in the if statement is true and 
+the second condition is false, it implies that arvif->link_id equals 15 and 
+the else branch is taken, therefore, assigning link_id to 15. The same
+code path is shown by coverity. I will attach the link to the coverity report
+to the updated patch.
+
+	if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
+                link_id = ffs(vif->valid_links) - 1;
+        else
+                link_id = arvif->link_id;
+
+> 
+> > exceeds the bounds of the array, which contains only 15 elements.This
+> 
+> nit: space after .
+> 
+> > results in an out-of-bounds read.
+> > 
+> > This issue occurs in the following branch of the code:
+> > 
+> >     if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
+> >         link_id = ffs(vif->valid_links) - 1;
+> >     else
+> >         link_id = arvif->link_id;
+> > 
+> > When arvif->link_id equals 15 and the else branch is taken, link_id is
+> > set to 15.
+> > 
+> > This patch adds a bounds check to ensure that link_id does not exceed
+> 
+> See
+> <https://www.kernel.org/doc/html/latest/process/submitting-patches.html#describe-your-changes>
+> and specifically:
+> <quote>
+> Describe your changes in imperative mood, e.g. “make xyzzy do frotz” instead
+> of “[This patch] makes xyzzy do frotz” or “[I] changed xyzzy to do frotz”, as
+> if you are giving orders to the codebase to change its behaviour.
+> </quote>
+> 
+> So this should start: "Add a bounds check...
+> 
+> > the valid range of the vif->link_conf array. If the check fails, a
+> > warning is logged, and the function returns an error code (-EINVAL).
+> 
+> again use imperative mood (log a warning, return an error)
+> 
+> > 
+> 
+> Prior to the SOB you should at least have two other tags:
+> Fixes: <refer to the patch that introduced the bug>
+> Closes: <the public url of the coverity report>
+> 
+> > Signed-off-by: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
+> > ---
+> >  drivers/net/wireless/ath/ath12k/mac.c | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> > 
+> > diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> > index 129607ac6c1a..c19b10e66f4a 100644
+> > --- a/drivers/net/wireless/ath/ath12k/mac.c
+> > +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> > @@ -7725,6 +7725,12 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
+> >  	else
+> >  		link_id = arvif->link_id;
+> >  
+> > +	if (link_id >= ARRAY_SIZE(vif->link_conf)) {
+> > +		ath12k_warn(ar->ab, "link_id %u exceeds max valid links for vif %pM\n",
+> > +			    link_id, vif->addr);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> >  	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[link_id]);
+> >  	if (!link_conf) {
+> >  		ath12k_warn(ar->ab, "unable to access bss link conf in vdev create for vif %pM link %u\n",
+> 
 
