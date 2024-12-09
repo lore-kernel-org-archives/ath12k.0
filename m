@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD39BE77180
-	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 16:57:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DB84E7717D
+	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 16:57:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O2beU6xLYbw6uBhM4FZjn9zdy6MEj8EtL0qikwxkY10=; b=r62kRJyIapXCapBPtZt4G2Ssge
-	bcdaymnvsuBX7CfbnFSxN4lf3QPgAXQprHF1llSWu9yErXWVB29iIVK+Vkaeosb+C+2mIv9pIgGao
-	r2EXtPvac4wNXiye+BPdvpOlXwoOgTHsWdBzAF8pZ0OuLC8gvZ+rgQbLrBPeLnNWtyWZ0sYBggy1V
-	vTQMfqKRnVHSMgPFMFKtgZ6tSyaGja26Mq2wPbfVzhb4DP24rjOplKqc4yTkrh2TkI0kqEBDUCPAt
-	JWFbiFXaEsjuI5qFt8cwYGgAFje7v7dkclXhGczvy6wRroNlSvbCXa4gUQaPLQlOGlFZGV+dUSOdz
-	bBzF9JHA==;
+	bh=f1cZ7eYo5WC2YxfaF+Fo/Bz46oVb5+0lnrx3x0vIYMY=; b=E2UAJAlPG9SZXfksnR8tKTQQPi
+	hQ0nZ44o6VQMrfcoLz+4m61Euh9aXWV2dntFUl4F1dP//dMGQxegZg5XvlgaQCVnnIC7yedXh5OG5
+	Sj1t82/2QR5g0AGWhYuuLxRGvo+S5MLLRaIT4mC9rbaEiy6OTNwIGI8IwtjtwxmG7gZHkkTmJTOyT
+	AF130wrlklPJRT0xrxgvv7VvnZlr27bbOdp8/uHxNRG/LGpgMfSk6RFGa9BdXzQmzdMk3fXHr2fN0
+	nklrMJiS01/FJxnGC+Pw0d+LyYRnlcyuc83RS727ksSmX8gwbnV3xulLrw3SK0VgiUYvFttKs9Afe
+	5EhGT3NQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKh4T-00000008cby-29B5
+	id 1tKh4U-00000008ccq-3jrC
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Dec 2024 16:57:21 +0000
+	Mon, 09 Dec 2024 16:57:22 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKh4Q-00000008ca3-0duu
+	id 1tKh4S-00000008cb5-1QI1
 	for ath12k@lists.infradead.org;
-	Mon, 09 Dec 2024 16:57:19 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B9A79Zt032621;
-	Mon, 9 Dec 2024 16:57:09 GMT
+	Mon, 09 Dec 2024 16:57:21 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B9AABuB032254;
+	Mon, 9 Dec 2024 16:57:17 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	O2beU6xLYbw6uBhM4FZjn9zdy6MEj8EtL0qikwxkY10=; b=UeSiMsiayETDJu08
-	Q2ymBrrSjN1WlwSWVAflNckzJXVCVqFK6zy+vgaIU0eAyroFNd3EL+9IJpcmh8z3
-	HzEAOv6XolWj5nEDCf327B7+4ymnlawO9rlusZ8MSAmnsA5i4xXA5mWyetQyqJnh
-	VTO6+j93f6cxYuSSI6TTfntYhsyK4tb/P/cW++9YaQ8T/Xay4l8pu6u4tjAwCFXM
-	Gp20AMAnGL1d2OWhDJKt0W0WHE2IvHnCRo6Afo8DCXdY+iKr1GBXY7mQ6MYleOEE
-	VNMFKzW0GmgoeWwkCWNupX0Zk9ZXHJFT/oedq2uGN5jXZpLDIv3k8/zyRrJftUv+
-	fdgVLA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43cfn8wff3-1
+	f1cZ7eYo5WC2YxfaF+Fo/Bz46oVb5+0lnrx3x0vIYMY=; b=JGuXX99FTEPQuPsy
+	9Qm+O50AoMMZxm1tTzh4ELoBxqT9jeok+FK3Tyjjrnzs/M0XJUD4LpI5KD/vUKY2
+	I4fmDXuSNOyxpjaj0vCYXJ0DmRaNqIVxfXJF0oj70V9e7+CLJGQACV5S3DosPxw4
+	HNxCXH5u4TeT4DbAFaKJB5U6RceRx8Uef6F1tCtmj/odQkVLMg9YrGVkUVKe4oM3
+	tpppVqf8TL0OtAhXvQDZyORgWVFpC3+HIxo7uhXNGM3eTh5rKEMESG0vXkXWAun4
+	lj8wcp0o/EYeNOQwq9ZVwIEyYOVR/ToKsN4hqY4UKICMlv3v9XjAngZO9xoPLgsk
+	E8JUuA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43cek1wh75-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 09 Dec 2024 16:57:09 +0000 (GMT)
+	Mon, 09 Dec 2024 16:57:17 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B9Gv8GH018731
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B9GvGlk018396
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 9 Dec 2024 16:57:08 GMT
+	Mon, 9 Dec 2024 16:57:16 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 9 Dec 2024 08:57:05 -0800
+ 15.2.1544.9; Mon, 9 Dec 2024 08:57:12 -0800
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
@@ -62,10 +62,13 @@ CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
         "Conor
  Dooley" <conor+dt@kernel.org>,
         Jeff Johnson <jjohnson@kernel.org>, <linux-kernel@vger.kernel.org>,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [PATCH v3 01/13] dt-bindings: net: wireless: describe the ath12k AHB module
-Date: Mon, 9 Dec 2024 22:26:32 +0530
-Message-ID: <20241209165644.1680167-2-quic_rajkbhag@quicinc.com>
+        P Praneesh <quic_ppranees@quicinc.com>,
+        Balamurugan S <quic_bselvara@quicinc.com>,
+        Raj Kumar Bhagat
+	<quic_rajkbhag@quicinc.com>
+Subject: [PATCH v3 03/13] wifi: ath12k: refactor ath12k_hw_regs structure
+Date: Mon, 9 Dec 2024 22:26:34 +0530
+Message-ID: <20241209165644.1680167-4-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241209165644.1680167-1-quic_rajkbhag@quicinc.com>
 References: <20241209165644.1680167-1-quic_rajkbhag@quicinc.com>
@@ -77,19 +80,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: QyMH67g2POh6vuh_ldvJygtgxnC15tqq
-X-Proofpoint-ORIG-GUID: QyMH67g2POh6vuh_ldvJygtgxnC15tqq
+X-Proofpoint-GUID: Y6gaa2Nv6OyJoxEDiD8Jr-Ym0TOh41MK
+X-Proofpoint-ORIG-GUID: Y6gaa2Nv6OyJoxEDiD8Jr-Ym0TOh41MK
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 clxscore=1015
- spamscore=0 impostorscore=0 suspectscore=0 mlxlogscore=999
- priorityscore=1501 lowpriorityscore=0 mlxscore=0 bulkscore=0 adultscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 impostorscore=0
+ mlxscore=0 adultscore=0 clxscore=1015 malwarescore=0 phishscore=0
+ spamscore=0 mlxlogscore=999 lowpriorityscore=0 priorityscore=1501
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412090132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_085718_202152_9E777490 
-X-CRM114-Status: GOOD (  14.70  )
+X-CRM114-CacheID: sfid-20241209_085720_392053_E88BBA46 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,322 +107,360 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add device-tree bindings for the ATH12K AHB module found in the IPQ5332
-device.
+From: P Praneesh <quic_ppranees@quicinc.com>
 
+IPQ5332 device have different register address values for the below
+registers:
+
+HAL_TCL1_RING_BASE_LSB
+HAL_TCL1_RING_BASE_MSB
+HAL_TCL2_RING_BASE_LSB
+
+HAL_SEQ_WCSS_UMAC_CE0_SRC_REG
+HAL_SEQ_WCSS_UMAC_CE0_DST_REG
+HAL_SEQ_WCSS_UMAC_CE1_SRC_REG
+HAL_SEQ_WCSS_UMAC_CE1_DST_REG
+
+Hence, refactor ath12k_hw_regs structure to accommodate these changes
+in IPQ5332.
+
+Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Co-developed-by: Balamurugan S <quic_bselvara@quicinc.com>
+Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- .../net/wireless/qcom,ath12k-ahb.yaml         | 301 ++++++++++++++++++
- 1 file changed, 301 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+ drivers/net/wireless/ath/ath12k/hal.c | 82 +++++++++++++--------------
+ drivers/net/wireless/ath/ath12k/hal.h | 61 +++++++++++---------
+ drivers/net/wireless/ath/ath12k/hw.c  | 27 +++++++++
+ drivers/net/wireless/ath/ath12k/hw.h  |  8 +++
+ 4 files changed, 110 insertions(+), 68 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
-new file mode 100644
-index 000000000000..314a73cebb11
---- /dev/null
-+++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
-@@ -0,0 +1,301 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/net/wireless/qcom,ath12k-ahb.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
+index fd98fac16dd5..9e949b0691e5 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.c
++++ b/drivers/net/wireless/ath/ath12k/hal.c
+@@ -552,9 +552,9 @@ static int ath12k_hal_srng_create_config_qcn9274(struct ath12k_base *ab)
+ 	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO_STATUS_HP;
+ 
+ 	s = &hal->srng_config[HAL_TCL_DATA];
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_BASE_LSB;
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_BASE_LSB(ab);
+ 	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_HP;
+-	s->reg_size[0] = HAL_TCL2_RING_BASE_LSB - HAL_TCL1_RING_BASE_LSB;
++	s->reg_size[0] = HAL_TCL2_RING_BASE_LSB(ab) - HAL_TCL1_RING_BASE_LSB(ab);
+ 	s->reg_size[1] = HAL_TCL2_RING_HP - HAL_TCL1_RING_HP;
+ 
+ 	s = &hal->srng_config[HAL_TCL_CMD];
+@@ -566,29 +566,29 @@ static int ath12k_hal_srng_create_config_qcn9274(struct ath12k_base *ab)
+ 	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL_STATUS_RING_HP;
+ 
+ 	s = &hal->srng_config[HAL_CE_SRC];
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_BASE_LSB;
+-	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_HP;
+-	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
+-	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab) + HAL_CE_DST_RING_BASE_LSB;
++	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab) + HAL_CE_DST_RING_HP;
++	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab);
++	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab);
+ 
+ 	s = &hal->srng_config[HAL_CE_DST];
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_BASE_LSB;
+-	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_HP;
+-	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
+-	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) + HAL_CE_DST_RING_BASE_LSB;
++	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) + HAL_CE_DST_RING_HP;
++	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
++	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
+ 
+ 	s = &hal->srng_config[HAL_CE_DST_STATUS];
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG +
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) +
+ 		HAL_CE_DST_STATUS_RING_BASE_LSB;
+-	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_STATUS_RING_HP;
+-	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
+-	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
++	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) + HAL_CE_DST_STATUS_RING_HP;
++	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
++	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
+ 
+ 	s = &hal->srng_config[HAL_WBM_IDLE_LINK];
+ 	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_IDLE_LINK_RING_BASE_LSB(ab);
+@@ -1371,9 +1371,9 @@ static int ath12k_hal_srng_create_config_wcn7850(struct ath12k_base *ab)
+ 
+ 	s = &hal->srng_config[HAL_TCL_DATA];
+ 	s->max_rings = 5;
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_BASE_LSB;
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_BASE_LSB(ab);
+ 	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_TCL_REG + HAL_TCL1_RING_HP;
+-	s->reg_size[0] = HAL_TCL2_RING_BASE_LSB - HAL_TCL1_RING_BASE_LSB;
++	s->reg_size[0] = HAL_TCL2_RING_BASE_LSB(ab) - HAL_TCL1_RING_BASE_LSB(ab);
+ 	s->reg_size[1] = HAL_TCL2_RING_HP - HAL_TCL1_RING_HP;
+ 
+ 	s = &hal->srng_config[HAL_TCL_CMD];
+@@ -1386,31 +1386,31 @@ static int ath12k_hal_srng_create_config_wcn7850(struct ath12k_base *ab)
+ 
+ 	s = &hal->srng_config[HAL_CE_SRC];
+ 	s->max_rings = 12;
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_BASE_LSB;
+-	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG + HAL_CE_DST_RING_HP;
+-	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
+-	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG;
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab) + HAL_CE_DST_RING_BASE_LSB;
++	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab) + HAL_CE_DST_RING_HP;
++	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab);
++	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_SRC_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab);
+ 
+ 	s = &hal->srng_config[HAL_CE_DST];
+ 	s->max_rings = 12;
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_BASE_LSB;
+-	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_RING_HP;
+-	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
+-	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) + HAL_CE_DST_RING_BASE_LSB;
++	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) + HAL_CE_DST_RING_HP;
++	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
++	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
+ 
+ 	s = &hal->srng_config[HAL_CE_DST_STATUS];
+ 	s->max_rings = 12;
+-	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG +
++	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) +
+ 		HAL_CE_DST_STATUS_RING_BASE_LSB;
+-	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG + HAL_CE_DST_STATUS_RING_HP;
+-	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
+-	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG -
+-		HAL_SEQ_WCSS_UMAC_CE0_DST_REG;
++	s->reg_start[1] = HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) + HAL_CE_DST_STATUS_RING_HP;
++	s->reg_size[0] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
++	s->reg_size[1] = HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) -
++		HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab);
+ 
+ 	s = &hal->srng_config[HAL_WBM_IDLE_LINK];
+ 	s->reg_start[0] = HAL_SEQ_WCSS_UMAC_WBM_REG + HAL_WBM_IDLE_LINK_RING_BASE_LSB(ab);
+@@ -1756,7 +1756,7 @@ static void ath12k_hal_srng_src_hw_init(struct ath12k_base *ab,
+ 			      HAL_TCL1_RING_BASE_MSB_RING_BASE_ADDR_MSB) |
+ 	      u32_encode_bits((srng->entry_size * srng->num_entries),
+ 			      HAL_TCL1_RING_BASE_MSB_RING_SIZE);
+-	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_BASE_MSB_OFFSET, val);
++	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_BASE_MSB_OFFSET(ab), val);
+ 
+ 	val = u32_encode_bits(srng->entry_size, HAL_REO1_RING_ID_ENTRY_SIZE);
+ 	ath12k_hif_write32(ab, reg_base + HAL_TCL1_RING_ID_OFFSET(ab), val);
+diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
+index 8a78bb9a10bc..69579f118b81 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.h
++++ b/drivers/net/wireless/ath/ath12k/hal.h
+@@ -44,10 +44,14 @@ struct ath12k_base;
+ #define HAL_SEQ_WCSS_UMAC_OFFSET		0x00a00000
+ #define HAL_SEQ_WCSS_UMAC_REO_REG		0x00a38000
+ #define HAL_SEQ_WCSS_UMAC_TCL_REG		0x00a44000
+-#define HAL_SEQ_WCSS_UMAC_CE0_SRC_REG		0x01b80000
+-#define HAL_SEQ_WCSS_UMAC_CE0_DST_REG		0x01b81000
+-#define HAL_SEQ_WCSS_UMAC_CE1_SRC_REG		0x01b82000
+-#define HAL_SEQ_WCSS_UMAC_CE1_DST_REG		0x01b83000
++#define HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(ab) \
++	((ab)->hw_params->regs->hal_umac_ce0_src_reg_base)
++#define HAL_SEQ_WCSS_UMAC_CE0_DST_REG(ab) \
++	((ab)->hw_params->regs->hal_umac_ce0_dest_reg_base)
++#define HAL_SEQ_WCSS_UMAC_CE1_SRC_REG(ab) \
++	((ab)->hw_params->regs->hal_umac_ce1_src_reg_base)
++#define HAL_SEQ_WCSS_UMAC_CE1_DST_REG(ab) \
++	((ab)->hw_params->regs->hal_umac_ce1_dest_reg_base)
+ #define HAL_SEQ_WCSS_UMAC_WBM_REG		0x00a34000
+ 
+ #define HAL_CE_WFSS_CE_REG_BASE			0x01b80000
+@@ -57,8 +61,10 @@ struct ath12k_base;
+ /* SW2TCL(x) R0 ring configuration address */
+ #define HAL_TCL1_RING_CMN_CTRL_REG		0x00000020
+ #define HAL_TCL1_RING_DSCP_TID_MAP		0x00000240
+-#define HAL_TCL1_RING_BASE_LSB			0x00000900
+-#define HAL_TCL1_RING_BASE_MSB			0x00000904
++#define HAL_TCL1_RING_BASE_LSB(ab) \
++	((ab)->hw_params->regs->hal_tcl1_ring_base_lsb)
++#define HAL_TCL1_RING_BASE_MSB(ab) \
++	((ab)->hw_params->regs->hal_tcl1_ring_base_msb)
+ #define HAL_TCL1_RING_ID(ab)			((ab)->hw_params->regs->hal_tcl1_ring_id)
+ #define HAL_TCL1_RING_MISC(ab) \
+ 	((ab)->hw_params->regs->hal_tcl1_ring_misc)
+@@ -76,30 +82,31 @@ struct ath12k_base;
+ 	((ab)->hw_params->regs->hal_tcl1_ring_msi1_base_msb)
+ #define HAL_TCL1_RING_MSI1_DATA(ab) \
+ 	((ab)->hw_params->regs->hal_tcl1_ring_msi1_data)
+-#define HAL_TCL2_RING_BASE_LSB			0x00000978
++#define HAL_TCL2_RING_BASE_LSB(ab) \
++	((ab)->hw_params->regs->hal_tcl2_ring_base_lsb)
+ #define HAL_TCL_RING_BASE_LSB(ab) \
+ 	((ab)->hw_params->regs->hal_tcl_ring_base_lsb)
+ 
+-#define HAL_TCL1_RING_MSI1_BASE_LSB_OFFSET(ab)				\
+-	(HAL_TCL1_RING_MSI1_BASE_LSB(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_MSI1_BASE_MSB_OFFSET(ab)				\
+-	(HAL_TCL1_RING_MSI1_BASE_MSB(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_MSI1_DATA_OFFSET(ab)				\
+-	(HAL_TCL1_RING_MSI1_DATA(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_BASE_MSB_OFFSET				\
+-	(HAL_TCL1_RING_BASE_MSB - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_ID_OFFSET(ab)				\
+-	(HAL_TCL1_RING_ID(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_CONSR_INT_SETUP_IX0_OFFSET(ab)			\
+-	(HAL_TCL1_RING_CONSUMER_INT_SETUP_IX0(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_CONSR_INT_SETUP_IX1_OFFSET(ab) \
+-		(HAL_TCL1_RING_CONSUMER_INT_SETUP_IX1(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_TP_ADDR_LSB_OFFSET(ab) \
+-		(HAL_TCL1_RING_TP_ADDR_LSB(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_TP_ADDR_MSB_OFFSET(ab) \
+-		(HAL_TCL1_RING_TP_ADDR_MSB(ab) - HAL_TCL1_RING_BASE_LSB)
+-#define HAL_TCL1_RING_MISC_OFFSET(ab) \
+-		(HAL_TCL1_RING_MISC(ab) - HAL_TCL1_RING_BASE_LSB)
++#define HAL_TCL1_RING_MSI1_BASE_LSB_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_MSI1_BASE_LSB(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_MSI1_BASE_MSB_OFFSET(ab)	({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_MSI1_BASE_MSB(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_MSI1_DATA_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_MSI1_DATA(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_BASE_MSB_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_BASE_MSB(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_ID_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_ID(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_CONSR_INT_SETUP_IX0_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_CONSUMER_INT_SETUP_IX0(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_CONSR_INT_SETUP_IX1_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_CONSUMER_INT_SETUP_IX1(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_TP_ADDR_LSB_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_TP_ADDR_LSB(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_TP_ADDR_MSB_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_TP_ADDR_MSB(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
++#define HAL_TCL1_RING_MISC_OFFSET(ab) ({ typeof(ab) _ab = (ab); \
++	(HAL_TCL1_RING_MISC(_ab) - HAL_TCL1_RING_BASE_LSB(_ab)); })
+ 
+ /* SW2TCL(x) R2 ring pointers (head/tail) address */
+ #define HAL_TCL1_RING_HP			0x00002000
+diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+index b7b583fadb5a..d01df118991d 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.c
++++ b/drivers/net/wireless/ath/ath12k/hw.c
+@@ -615,6 +615,9 @@ static const struct ath12k_hw_regs qcn9274_v1_regs = {
+ 	.hal_tcl1_ring_msi1_base_msb = 0x0000094c,
+ 	.hal_tcl1_ring_msi1_data = 0x00000950,
+ 	.hal_tcl_ring_base_lsb = 0x00000b58,
++	.hal_tcl1_ring_base_lsb = 0x00000900,
++	.hal_tcl1_ring_base_msb = 0x00000904,
++	.hal_tcl2_ring_base_lsb = 0x00000978,
+ 
+ 	/* TCL STATUS ring address */
+ 	.hal_tcl_status_ring_base_lsb = 0x00000d38,
+@@ -677,6 +680,12 @@ static const struct ath12k_hw_regs qcn9274_v1_regs = {
+ 
+ 	/* REO status ring address */
+ 	.hal_reo_status_ring_base = 0x00000a84,
 +
-+title: Qualcomm Technologies ath12k wireless devices (AHB)
++	/* CE base address */
++	.hal_umac_ce0_src_reg_base = 0x01b80000,
++	.hal_umac_ce0_dest_reg_base = 0x01b81000,
++	.hal_umac_ce1_src_reg_base = 0x01b82000,
++	.hal_umac_ce1_dest_reg_base = 0x01b83000,
+ };
+ 
+ static const struct ath12k_hw_regs qcn9274_v2_regs = {
+@@ -691,6 +700,9 @@ static const struct ath12k_hw_regs qcn9274_v2_regs = {
+ 	.hal_tcl1_ring_msi1_base_msb = 0x0000094c,
+ 	.hal_tcl1_ring_msi1_data = 0x00000950,
+ 	.hal_tcl_ring_base_lsb = 0x00000b58,
++	.hal_tcl1_ring_base_lsb = 0x00000900,
++	.hal_tcl1_ring_base_msb = 0x00000904,
++	.hal_tcl2_ring_base_lsb = 0x00000978,
+ 
+ 	/* TCL STATUS ring address */
+ 	.hal_tcl_status_ring_base_lsb = 0x00000d38,
+@@ -757,6 +769,12 @@ static const struct ath12k_hw_regs qcn9274_v2_regs = {
+ 
+ 	/* REO status ring address */
+ 	.hal_reo_status_ring_base = 0x00000aa0,
 +
-+maintainers:
-+  - Kalle Valo <kvalo@kernel.org>
-+  - Jeff Johnson <jjohnson@kernel.org>
++	/* CE base address */
++	.hal_umac_ce0_src_reg_base = 0x01b80000,
++	.hal_umac_ce0_dest_reg_base = 0x01b81000,
++	.hal_umac_ce1_src_reg_base = 0x01b82000,
++	.hal_umac_ce1_dest_reg_base = 0x01b83000,
+ };
+ 
+ static const struct ath12k_hw_regs wcn7850_regs = {
+@@ -771,6 +789,9 @@ static const struct ath12k_hw_regs wcn7850_regs = {
+ 	.hal_tcl1_ring_msi1_base_msb = 0x0000094c,
+ 	.hal_tcl1_ring_msi1_data = 0x00000950,
+ 	.hal_tcl_ring_base_lsb = 0x00000b58,
++	.hal_tcl1_ring_base_lsb = 0x00000900,
++	.hal_tcl1_ring_base_msb = 0x00000904,
++	.hal_tcl2_ring_base_lsb = 0x00000978,
+ 
+ 	/* TCL STATUS ring address */
+ 	.hal_tcl_status_ring_base_lsb = 0x00000d38,
+@@ -833,6 +854,12 @@ static const struct ath12k_hw_regs wcn7850_regs = {
+ 
+ 	/* REO status ring address */
+ 	.hal_reo_status_ring_base = 0x00000a84,
 +
-+description:
-+  Qualcomm Technologies IEEE 802.11be AHB devices.
++	/* CE base address */
++	.hal_umac_ce0_src_reg_base = 0x01b80000,
++	.hal_umac_ce0_dest_reg_base = 0x01b81000,
++	.hal_umac_ce1_src_reg_base = 0x01b82000,
++	.hal_umac_ce1_dest_reg_base = 0x01b83000,
+ };
+ 
+ static const struct ath12k_hw_hal_params ath12k_hw_hal_params_qcn9274 = {
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index 8d52182e28ae..36bec99e9e4d 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -293,6 +293,9 @@ struct ath12k_hw_regs {
+ 	u32 hal_tcl1_ring_msi1_base_msb;
+ 	u32 hal_tcl1_ring_msi1_data;
+ 	u32 hal_tcl_ring_base_lsb;
++	u32 hal_tcl1_ring_base_lsb;
++	u32 hal_tcl1_ring_base_msb;
++	u32 hal_tcl2_ring_base_lsb;
+ 
+ 	u32 hal_tcl_status_ring_base_lsb;
+ 
+@@ -316,6 +319,11 @@ struct ath12k_hw_regs {
+ 	u32 pcie_qserdes_sysclk_en_sel;
+ 	u32 pcie_pcs_osc_dtct_config_base;
+ 
++	u32 hal_umac_ce0_src_reg_base;
++	u32 hal_umac_ce0_dest_reg_base;
++	u32 hal_umac_ce1_src_reg_base;
++	u32 hal_umac_ce1_dest_reg_base;
 +
-+properties:
-+  compatible:
-+    enum:
-+      - qcom,ipq5332-wifi
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: XO clock used for copy engine
-+
-+  clock-names:
-+    items:
-+      - const: xo
-+
-+  interrupts:
-+    items:
-+      - description: Ready interrupt
-+      - description: Spawn acknowledge interrupt
-+      - description: Stop acknowledge interrupt
-+      - description: misc-pulse1 interrupt events
-+      - description: misc-latch interrupt events
-+      - description: sw exception interrupt events
-+      - description: interrupt event for ring CE0
-+      - description: interrupt event for ring CE1
-+      - description: interrupt event for ring CE2
-+      - description: interrupt event for ring CE3
-+      - description: interrupt event for ring CE4
-+      - description: interrupt event for ring CE5
-+      - description: interrupt event for ring CE6
-+      - description: interrupt event for ring CE7
-+      - description: interrupt event for ring CE8
-+      - description: interrupt event for ring CE9
-+      - description: interrupt event for ring CE10
-+      - description: interrupt event for ring CE11
-+      - description: interrupt event for ring host2wbm-desc-feed
-+      - description: interrupt event for ring host2reo-re-injection
-+      - description: interrupt event for ring host2reo-command
-+      - description: interrupt event for ring host2rxdma-monitor-ring1
-+      - description: interrupt event for ring reo2ost-exception
-+      - description: interrupt event for ring wbm2host-rx-release
-+      - description: interrupt event for ring reo2host-status
-+      - description: interrupt event for ring reo2host-destination-ring4
-+      - description: interrupt event for ring reo2host-destination-ring3
-+      - description: interrupt event for ring reo2host-destination-ring2
-+      - description: interrupt event for ring reo2host-destination-ring1
-+      - description: interrupt event for ring rxdma2host-monitor-destination-mac3
-+      - description: interrupt event for ring rxdma2host-monitor-destination-mac2
-+      - description: interrupt event for ring rxdma2host-monitor-destination-mac1
-+      - description: interrupt event for ring host2rxdma-host-buf-ring-mac3
-+      - description: interrupt event for ring host2rxdma-host-buf-ring-mac2
-+      - description: interrupt event for ring host2rxdma-host-buf-ring-mac1
-+      - description: interrupt event for ring host2tcl-input-ring4
-+      - description: interrupt event for ring host2tcl-input-ring3
-+      - description: interrupt event for ring host2tcl-input-ring2
-+      - description: interrupt event for ring host2tcl-input-ring1
-+      - description: interrupt event for ring wbm2host-tx-completions-ring4
-+      - description: interrupt event for ring wbm2host-tx-completions-ring3
-+      - description: interrupt event for ring wbm2host-tx-completions-ring2
-+      - description: interrupt event for ring wbm2host-tx-completions-ring1
-+      - description: interrupt event for ring host2tx-monitor-ring1
-+      - description: interrupt event for ring txmon2host-monitor-destination-mac3
-+      - description: interrupt event for ring txmon2host-monitor-destination-mac2
-+      - description: interrupt event for ring txmon2host-monitor-destination-mac1
-+      - description: interrupt event for umac_reset
-+
-+  interrupt-names:
-+    items:
-+      - const: ready
-+      - const: spawn
-+      - const: stop-ack
-+      - const: misc-pulse1
-+      - const: misc-latch
-+      - const: sw-exception
-+      - const: ce0
-+      - const: ce1
-+      - const: ce2
-+      - const: ce3
-+      - const: ce4
-+      - const: ce5
-+      - const: ce6
-+      - const: ce7
-+      - const: ce8
-+      - const: ce9
-+      - const: ce10
-+      - const: ce11
-+      - const: host2wbm-desc-feed
-+      - const: host2reo-re-injection
-+      - const: host2reo-command
-+      - const: host2rxdma-monitor-ring1
-+      - const: reo2ost-exception
-+      - const: wbm2host-rx-release
-+      - const: reo2host-status
-+      - const: reo2host-destination-ring4
-+      - const: reo2host-destination-ring3
-+      - const: reo2host-destination-ring2
-+      - const: reo2host-destination-ring1
-+      - const: rxdma2host-monitor-destination-mac3
-+      - const: rxdma2host-monitor-destination-mac2
-+      - const: rxdma2host-monitor-destination-mac1
-+      - const: host2rxdma-host-buf-ring-mac3
-+      - const: host2rxdma-host-buf-ring-mac2
-+      - const: host2rxdma-host-buf-ring-mac1
-+      - const: host2tcl-input-ring4
-+      - const: host2tcl-input-ring3
-+      - const: host2tcl-input-ring2
-+      - const: host2tcl-input-ring1
-+      - const: wbm2host-tx-completions-ring4
-+      - const: wbm2host-tx-completions-ring3
-+      - const: wbm2host-tx-completions-ring2
-+      - const: wbm2host-tx-completions-ring1
-+      - const: host2tx-monitor-ring1
-+      - const: txmon2host-monitor-destination-mac3
-+      - const: txmon2host-monitor-destination-mac2
-+      - const: txmon2host-monitor-destination-mac1
-+      - const: umac_reset
-+
-+  memory-region:
-+    minItems: 1
-+    maxItems: 2
-+    description:
-+      phandle to a node describing reserved memory (System RAM memory)
-+      used by ath12k firmware (see bindings/reserved-memory/reserved-memory.txt)
-+
-+  qcom,ath12k-calibration-variant:
-+    $ref: /schemas/types.yaml#/definitions/string
-+    description:
-+      String to uniquely identify variant of the calibration data for designs
-+      with colliding bus and device ids
-+
-+  qcom,rproc:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the Qualcomm Hexagon DSP(q6 remote processor), which is utilized
-+      for offloading WiFi processing tasks, this q6 remote processor operates in
-+      conjunction with WiFi.
-+
-+  qcom,smem-states:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    description: States used by the AP to signal the remote processor
-+    items:
-+      - description: Shutdown WCSS pd
-+      - description: Stop WCSS pd
-+      - description: Spawn WCSS pd
-+
-+  qcom,smem-state-names:
-+    description:
-+      Names of the states used by the AP to signal the remote processor
-+    items:
-+      - const: shutdown
-+      - const: stop
-+      - const: spawn
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - interrupts
-+  - interrupt-names
-+  - memory-region
-+  - qcom,rproc
-+  - qcom,smem-states
-+  - qcom,smem-state-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
-+
-+    wifi0: wifi@c0000000 {
-+        compatible = "qcom,ipq5332-wifi";
-+        reg = <0xc000000 0x1000000>;
-+        clocks = <&gcc GCC_XO_CLK>;
-+        clock-names = "xo";
-+        interrupts-extended = <&wcss_smp2p_in 9 IRQ_TYPE_NONE>,
-+                              <&wcss_smp2p_in 12 IRQ_TYPE_NONE>,
-+                              <&wcss_smp2p_in 11 IRQ_TYPE_NONE>,
-+                              <&intc GIC_SPI 559 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 560 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 561 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 422 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 423 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 424 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 425 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 426 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 427 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 428 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 429 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 430 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 431 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 432 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 433 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 491 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 495 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 493 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 544 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 457 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 466 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 497 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 454 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 453 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 452 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 451 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 488 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 488 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 484 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 554 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 554 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 549 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 507 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 500 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 499 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 498 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 450 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 449 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 448 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 447 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 543 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 486 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 486 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 482 IRQ_TYPE_EDGE_RISING>,
-+                              <&intc GIC_SPI 419 IRQ_TYPE_EDGE_RISING>;
-+        interrupt-names = "ready",
-+                          "spawn",
-+                          "stop-ack",
-+                          "misc-pulse1",
-+                          "misc-latch",
-+                          "sw-exception",
-+                          "ce0",
-+                          "ce1",
-+                          "ce2",
-+                          "ce3",
-+                          "ce4",
-+                          "ce5",
-+                          "ce6",
-+                          "ce7",
-+                          "ce8",
-+                          "ce9",
-+                          "ce10",
-+                          "ce11",
-+                          "host2wbm-desc-feed",
-+                          "host2reo-re-injection",
-+                          "host2reo-command",
-+                          "host2rxdma-monitor-ring1",
-+                          "reo2ost-exception",
-+                          "wbm2host-rx-release",
-+                          "reo2host-status",
-+                          "reo2host-destination-ring4",
-+                          "reo2host-destination-ring3",
-+                          "reo2host-destination-ring2",
-+                          "reo2host-destination-ring1",
-+                          "rxdma2host-monitor-destination-mac3",
-+                          "rxdma2host-monitor-destination-mac2",
-+                          "rxdma2host-monitor-destination-mac1",
-+                          "host2rxdma-host-buf-ring-mac3",
-+                          "host2rxdma-host-buf-ring-mac2",
-+                          "host2rxdma-host-buf-ring-mac1",
-+                          "host2tcl-input-ring4",
-+                          "host2tcl-input-ring3",
-+                          "host2tcl-input-ring2",
-+                          "host2tcl-input-ring1",
-+                          "wbm2host-tx-completions-ring4",
-+                          "wbm2host-tx-completions-ring3",
-+                          "wbm2host-tx-completions-ring2",
-+                          "wbm2host-tx-completions-ring1",
-+                          "host2tx-monitor-ring1",
-+                          "txmon2host-monitor-destination-mac3",
-+                          "txmon2host-monitor-destination-mac2",
-+                          "txmon2host-monitor-destination-mac1",
-+                          "umac_reset";
-+
-+        memory-region = <&q6_region>;
-+        qcom,ath12k-calibration-variant = "RDP441_1";
-+        qcom,rproc = <&q6v5_wcss>;
-+        qcom,smem-states = <&wcss_smp2p_out 8>,
-+                           <&wcss_smp2p_out 9>,
-+                           <&wcss_smp2p_out 10>;
-+        qcom,smem-state-names = "shutdown",
-+                                "stop",
-+                                "spawn";
-+    };
+ 	u32 hal_ppe_rel_ring_base;
+ 
+ 	u32 hal_reo2_ring_base;
 -- 
 2.34.1
 
