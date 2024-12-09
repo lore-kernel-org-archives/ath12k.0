@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64118E77184
-	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 18:54:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1795DE77181
+	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 18:54:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LooqmTZUU6QgzTVT2ib1tG9zOddlrrW6wefj6xd5R7I=; b=I5JnySL3KgY1R/FE9XgIXRSkl+
-	y10iDMB69D8NLB9uvHGwt9rvE0dOAIWEZPqd4Hc1WG7sYsmXnKguA4l5bXa78tOk+gardHhXOhwEs
-	ACgIX5P/d/wguwBMZrRvWHWhwyfvlCTyBZxDwCykidMAzu5gH+XYpvOCtca/W2bvY+ADEK2Irx2lO
-	qiNM50KWGDgT/RGXsEn3OINKi0MAge7urSetAIfvVqdjKz3/2H2Mfzax46u2P8fL+gUwzekMFvybU
-	5gxB+AxMG7AmYx7zznHh1RkiJY6ojk5nNFUgZfsGFaO88ZeKS1vhqWHrZV8jmaW/q5tOnT4O+cBSe
-	xnJ/TQuA==;
+	bh=+5+BctgxKueFv7gVVXNbRquKt48xw6+/m8NG9JZ9brw=; b=z5CngpQAG2LJ1Pq0M1VAnrlwXj
+	87YwQI12OSoGtwu+gcShhxHbRpqROvoW2qpEeKtpbcS/aCYzRPtGfS7bphFWN/AG4D7QuONvUNC5j
+	5RHfOjOV/rDZ8i8t9zNGYgVKuYCLkU0ChwfJ7Rd3TjyKDXvGX/5eYX41j7tC91OcrK6Q0KROL3104
+	loUaFUpmxSvcr/vB4AodpDuHNF/2N4flIWL21UJB4dghk9sOAxzQ9HzW1PinAMw8AMeUQvoay/zaw
+	wY3D5qQBC4XkpHioUTDiFVQgcfR819t/T6bfQe1PDSvek4kcK+CmgqOmgSQlHG9T1GpcTlLL6nnaZ
+	m41A1Caw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKitt-00000008wDc-0b5f
+	id 1tKitv-00000008wGv-3av7
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Dec 2024 18:54:33 +0000
+	Mon, 09 Dec 2024 18:54:35 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKitq-00000008wAL-2trj
+	id 1tKits-00000008wAL-1jgX
 	for ath12k@lists.infradead.org;
-	Mon, 09 Dec 2024 18:54:31 +0000
+	Mon, 09 Dec 2024 18:54:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 999A95C5DB3
-	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 18:53:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4AC03C4CEE0;
-	Mon,  9 Dec 2024 18:54:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id AF72A5C5DB3
+	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 18:53:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 647B0C4CEE0;
+	Mon,  9 Dec 2024 18:54:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733770469;
-	bh=gyJqLQAwil8oHFOPnP5sE3itwXs7LeLSqcr3lVubE9w=;
+	s=k20201202; t=1733770472;
+	bh=4E1QB2EFTtWLeGwo1mXErVSr4iZbacaVng2KYZeRma4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=d0vcp4jjsSqG8h3YOb+G8uXqFidIraLrwBlYNOfNBOMRIXjOjoMYUZqsAf+OdLTip
-	 iwnhZoz+7Ku41FIkrILUDVnfOMYtYso5qCUjf/vqFReOwWY9K2iy7HnCTtlv6UPJph
-	 KsdaMucxXcn6bNRPKUcZq65db2AgMV+O1e6mT2+p7xcINiO5nlxeag7f/7kVoZKLMG
-	 WMQoaLXzIo4MmbCbSEDtdSNNffftazuk7XU0JCLLHnJqrGW7OBsEYSJEf0ljyrcyI5
-	 fHZPAM/YcsjOXA6KgX2gHkSk2W9LkWKEOicsRQAC9fE2B4yb8tdyadF4W+wlgQAJZX
-	 ltLoKXauhwUVw==
+	b=HNJsd//dXY0ytx1sdAfyrfhz/CvC0k2fYzc7INkX+vN3InB0E2E2aEGcJMViglZuu
+	 O2f7+mKy9QPjXARha5nPZoesgWoVr2Sx0B3CuGLzTD8FA8/zDAYmU/azMebpOj1/Wf
+	 Ku7etrxvXViqgiV391oeJtFXNG4zpcDn97g3riN+RL97783YoFPjwusJKYU33p0bYe
+	 kRl5U6+OA3o7oMhWN1NT7auTQVkjknRmNavazHUCgPV8uN4KIAJGZijtZH1kk4gCw1
+	 Nb5KzidPMvA6FY6/g0hlNhS2/HVUSBdeZGBPhAw/+Ex9SKjr1+wcbPC6Cm80WXiDPh
+	 AI+krDYEd2K1g==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 6/9] wifi: ath12k: advertise multi device interface combination
-Date: Mon,  9 Dec 2024 20:54:18 +0200
-Message-Id: <20241209185421.376381-7-kvalo@kernel.org>
+Subject: [PATCH 8/9] wifi: ath12k: fix ar->supports_6ghz usage during hw register
+Date: Mon,  9 Dec 2024 20:54:20 +0200
+Message-Id: <20241209185421.376381-9-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241209185421.376381-1-kvalo@kernel.org>
 References: <20241209185421.376381-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_105430_856657_0BD53929 
-X-CRM114-Status: GOOD (  19.28  )
+X-CRM114-CacheID: sfid-20241209_105432_501745_F0DFE98B 
+X-CRM114-Status: GOOD (  11.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,299 +71,59 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
 
-The prerequisite for MLO support in cfg80211/mac80211 requires that all the
-links participating in MLO belong to the same wiphy/struct ieee80211_hw. The
-driver needs to group multiple discrete hardware components, each acting as a
-link in MLO, under one wiphy. Consequently, the driver advertises
-multi-hardware device interface combination capabilities specific to the radio,
-including supported frequencies. The global interface combination represent the
-combined interface capabilities.
+In the ath12k_mac_hw_register() function's context, ar is an iterator
+variable, and there is no assurance that the last ar will be the one with
+6 GHz enabled. Therefore, checking directly ar->supports_6ghz outside the
+loop is not appropriate.
+
+Additionally, 6 GHz lacks HT capabilities. To obtain the super set of
+HT capabilities across all grouped radios, 6 GHz should be excluded.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 222 +++++++++++++++++++++-----
- 1 file changed, 185 insertions(+), 37 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 1bf89be1cccc..de2f55f4ea03 100644
+index de2f55f4ea03..6f4a34c91038 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10336,14 +10336,20 @@ static bool ath12k_mac_is_iface_mode_enable(struct ath12k_hw *ah,
- {
- 	struct ath12k *ar;
- 	int i;
--	u16 interface_modes, mode;
--	bool is_enable = true;
-+	u16 interface_modes, mode = 0;
-+	bool is_enable = false;
-+
-+	if (type == NL80211_IFTYPE_MESH_POINT) {
-+		if (IS_ENABLED(CONFIG_MAC80211_MESH))
-+			mode = BIT(type);
-+	} else {
-+		mode = BIT(type);
-+	}
+@@ -10723,7 +10723,10 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 		if (ret)
+ 			goto err_cleanup_unregister;
  
--	mode = BIT(type);
- 	for_each_ar(ah, ar, i) {
- 		interface_modes = ar->ab->hw_params->interface_modes;
--		if (!(interface_modes & mode)) {
--			is_enable = false;
-+		if (interface_modes & mode) {
-+			is_enable = true;
- 			break;
- 		}
- 	}
-@@ -10351,31 +10357,20 @@ static bool ath12k_mac_is_iface_mode_enable(struct ath12k_hw *ah,
- 	return is_enable;
- }
+-		ht_cap &= ht_cap_info;
++		/* 6 GHz does not support HT Cap, hence do not consider it */
++		if (!ar->supports_6ghz)
++			ht_cap &= ht_cap_info;
++
+ 		wiphy->max_ap_assoc_sta += ar->max_num_stations;
  
--static void ath12k_mac_cleanup_iface_combinations(struct ath12k_hw *ah)
-+static int
-+ath12k_mac_setup_radio_iface_comb(struct ath12k *ar,
-+				  struct ieee80211_iface_combination *comb)
- {
--	struct wiphy *wiphy = ah->hw->wiphy;
--
--	kfree(wiphy->iface_combinations[0].limits);
--	kfree(wiphy->iface_combinations);
--}
--
--static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
--{
--	struct wiphy *wiphy = ah->hw->wiphy;
--	struct ieee80211_iface_combination *combinations;
-+	u16 interface_modes = ar->ab->hw_params->interface_modes;
- 	struct ieee80211_iface_limit *limits;
- 	int n_limits, max_interfaces;
- 	bool ap, mesh, p2p;
+ 		/* Advertise the max antenna support of all radios, driver can handle
+@@ -10787,7 +10790,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	ieee80211_hw_set(hw, SUPPORTS_TX_FRAG);
+ 	ieee80211_hw_set(hw, REPORTS_LOW_ACK);
  
--	ap = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_AP);
--	p2p = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_P2P_DEVICE);
-+	ap = interface_modes & BIT(NL80211_IFTYPE_AP);
-+	p2p = interface_modes & BIT(NL80211_IFTYPE_P2P_DEVICE);
+-	if ((ht_cap & WMI_HT_CAP_ENABLED) || ar->supports_6ghz) {
++	if ((ht_cap & WMI_HT_CAP_ENABLED) || is_6ghz) {
+ 		ieee80211_hw_set(hw, AMPDU_AGGREGATION);
+ 		ieee80211_hw_set(hw, TX_AMPDU_SETUP_IN_HW);
+ 		ieee80211_hw_set(hw, SUPPORTS_REORDERING_BUFFER);
+@@ -10803,7 +10806,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	 * handle it when the ht capability different for each band.
+ 	 */
+ 	if (ht_cap & WMI_HT_CAP_DYNAMIC_SMPS ||
+-	    (ar->supports_6ghz && ab->hw_params->supports_dynamic_smps_6ghz))
++	    (is_6ghz && ab->hw_params->supports_dynamic_smps_6ghz))
+ 		wiphy->features |= NL80211_FEATURE_DYNAMIC_SMPS;
  
- 	mesh = IS_ENABLED(CONFIG_MAC80211_MESH) &&
--		ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_MESH_POINT);
--
--	combinations = kzalloc(sizeof(*combinations), GFP_KERNEL);
--	if (!combinations)
--		return -ENOMEM;
-+	       (interface_modes & BIT(NL80211_IFTYPE_MESH_POINT));
- 
- 	if ((ap || mesh) && !p2p) {
- 		n_limits = 2;
-@@ -10392,10 +10387,8 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
- 	}
- 
- 	limits = kcalloc(n_limits, sizeof(*limits), GFP_KERNEL);
--	if (!limits) {
--		kfree(combinations);
-+	if (!limits)
- 		return -ENOMEM;
--	}
- 
- 	limits[0].max = 1;
- 	limits[0].types |= BIT(NL80211_IFTYPE_STATION);
-@@ -10411,26 +10404,181 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
- 
- 	if (p2p) {
- 		limits[1].types |= BIT(NL80211_IFTYPE_P2P_CLIENT) |
--				   BIT(NL80211_IFTYPE_P2P_GO);
-+					BIT(NL80211_IFTYPE_P2P_GO);
- 		limits[2].max = 1;
- 		limits[2].types |= BIT(NL80211_IFTYPE_P2P_DEVICE);
- 	}
- 
--	combinations[0].limits = limits;
--	combinations[0].n_limits = n_limits;
--	combinations[0].max_interfaces = max_interfaces;
--	combinations[0].num_different_channels = 1;
--	combinations[0].beacon_int_infra_match = true;
--	combinations[0].beacon_int_min_gcd = 100;
--	combinations[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
--						BIT(NL80211_CHAN_WIDTH_20) |
--						BIT(NL80211_CHAN_WIDTH_40) |
--						BIT(NL80211_CHAN_WIDTH_80);
-+	comb[0].limits = limits;
-+	comb[0].n_limits = n_limits;
-+	comb[0].max_interfaces = max_interfaces;
-+	comb[0].num_different_channels = 1;
-+	comb[0].beacon_int_infra_match = true;
-+	comb[0].beacon_int_min_gcd = 100;
-+	comb[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
-+					BIT(NL80211_CHAN_WIDTH_20) |
-+					BIT(NL80211_CHAN_WIDTH_40) |
-+					BIT(NL80211_CHAN_WIDTH_80);
- 
-+	return 0;
-+}
-+
-+static int
-+ath12k_mac_setup_global_iface_comb(struct ath12k_hw *ah,
-+				   struct wiphy_radio *radio,
-+				   u8 n_radio,
-+				   struct ieee80211_iface_combination *comb)
-+{
-+	const struct ieee80211_iface_combination *iter_comb;
-+	struct ieee80211_iface_limit *limits;
-+	int i, j, n_limits;
-+	bool ap, mesh, p2p;
-+
-+	if (!n_radio)
-+		return 0;
-+
-+	ap = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_AP);
-+	p2p = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_P2P_DEVICE);
-+	mesh = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_MESH_POINT);
-+
-+	if ((ap || mesh) && !p2p)
-+		n_limits = 2;
-+	else if (p2p)
-+		n_limits = 3;
-+	else
-+		n_limits = 1;
-+
-+	limits = kcalloc(n_limits, sizeof(*limits), GFP_KERNEL);
-+	if (!limits)
-+		return -ENOMEM;
-+
-+	for (i = 0; i < n_radio; i++) {
-+		iter_comb = radio[i].iface_combinations;
-+		for (j = 0; j < iter_comb->n_limits && j < n_limits; j++) {
-+			limits[j].types |= iter_comb->limits[j].types;
-+			limits[j].max += iter_comb->limits[j].max;
-+		}
-+
-+		comb->max_interfaces += iter_comb->max_interfaces;
-+		comb->num_different_channels += iter_comb->num_different_channels;
-+		comb->radar_detect_widths |= iter_comb->radar_detect_widths;
-+	}
-+
-+	comb->limits = limits;
-+	comb->n_limits = n_limits;
-+	comb->beacon_int_infra_match = true;
-+	comb->beacon_int_min_gcd = 100;
-+
-+	return 0;
-+}
-+
-+static
-+void ath12k_mac_cleanup_iface_comb(const struct ieee80211_iface_combination *iface_comb)
-+{
-+	kfree(iface_comb[0].limits);
-+	kfree(iface_comb);
-+}
-+
-+static void ath12k_mac_cleanup_iface_combinations(struct ath12k_hw *ah)
-+{
-+	struct wiphy *wiphy = ah->hw->wiphy;
-+	const struct wiphy_radio *radio;
-+	int i;
-+
-+	if (wiphy->n_radio > 0) {
-+		radio = wiphy->radio;
-+		for (i = 0; i < wiphy->n_radio; i++)
-+			ath12k_mac_cleanup_iface_comb(radio[i].iface_combinations);
-+
-+		kfree(wiphy->radio);
-+	}
-+
-+	ath12k_mac_cleanup_iface_comb(wiphy->iface_combinations);
-+}
-+
-+static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
-+{
-+	struct ieee80211_iface_combination *combinations, *comb;
-+	struct wiphy *wiphy = ah->hw->wiphy;
-+	struct wiphy_radio *radio;
-+	struct ath12k *ar;
-+	int i, ret;
-+
-+	combinations = kzalloc(sizeof(*combinations), GFP_KERNEL);
-+	if (!combinations)
-+		return -ENOMEM;
-+
-+	if (ah->num_radio == 1) {
-+		ret = ath12k_mac_setup_radio_iface_comb(&ah->radio[0],
-+							combinations);
-+		if (ret) {
-+			ath12k_hw_warn(ah, "failed to setup radio interface combinations for one radio: %d",
-+				       ret);
-+			goto err_free_combinations;
-+		}
-+
-+		goto out;
-+	}
-+
-+	/* there are multiple radios */
-+
-+	radio = kcalloc(ah->num_radio, sizeof(*radio), GFP_KERNEL);
-+	if (!radio) {
-+		ret = -ENOMEM;
-+		goto err_free_combinations;
-+	}
-+
-+	for_each_ar(ah, ar, i) {
-+		comb = kzalloc(sizeof(*comb), GFP_KERNEL);
-+		if (!comb) {
-+			ret = -ENOMEM;
-+			goto err_free_radios;
-+		}
-+
-+		ret = ath12k_mac_setup_radio_iface_comb(ar, comb);
-+		if (ret) {
-+			ath12k_hw_warn(ah, "failed to setup radio interface combinations for radio %d: %d",
-+				       i, ret);
-+			kfree(comb);
-+			goto err_free_radios;
-+		}
-+
-+		radio[i].freq_range = &ar->freq_range;
-+		radio[i].n_freq_range = 1;
-+
-+		radio[i].iface_combinations = comb;
-+		radio[i].n_iface_combinations = 1;
-+	}
-+
-+	ret = ath12k_mac_setup_global_iface_comb(ah, radio, ah->num_radio, combinations);
-+	if (ret) {
-+		ath12k_hw_warn(ah, "failed to setup global interface combinations: %d",
-+			       ret);
-+		goto err_free_all_radios;
-+	}
-+
-+	wiphy->radio = radio;
-+	wiphy->n_radio = ah->num_radio;
-+
-+out:
- 	wiphy->iface_combinations = combinations;
- 	wiphy->n_iface_combinations = 1;
- 
- 	return 0;
-+
-+err_free_all_radios:
-+	i = ah->num_radio;
-+
-+err_free_radios:
-+	while (i--)
-+		ath12k_mac_cleanup_iface_comb(radio[i].iface_combinations);
-+
-+	kfree(radio);
-+
-+err_free_combinations:
-+	kfree(combinations);
-+
-+	return ret;
- }
- 
- static const u8 ath12k_if_types_ext_capa[] = {
+ 	wiphy->max_scan_ssids = WLAN_SCAN_PARAMS_MAX_SSID;
 -- 
 2.39.5
 
