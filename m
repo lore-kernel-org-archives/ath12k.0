@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F111EE77180
-	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 15:30:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDB5FE7717D
+	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 15:30:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7a4QcNuHMP9eYpvltjkuDLbvkiqkf/Eotnf21Kbdmvg=; b=OuBVy3pRsyKexM6yzqkifj69Sq
-	SFTuwadBGjtF2WSAq/jOmLcafJcu2BTm6cvTnZ6LMFVYGvsVCxCO2OSBBluogttQMDg1BVJa2O2Jg
-	YZEL2n2biIKNVVhc4UxlgWaoa8gXUpmc6p9+XmaCC3GomCMkB1AvzqY6jQNf29UX3G1j4Y9ZTLD8F
-	qy5JF9LMc7vgCoxQoO9lfVDqWpSbl/7BM+rU6ViPWrICWIxcsTfzHhjmoDdun09HyxFy0EbIKbdVG
-	eju8FOjkesTU3kIbfqr1dXtmIG+nrXbg3bX9QpZ1/ScDhzqa2pGPdsw/2AagG5zngeI2yUoonwcti
-	zz2yt9Vw==;
+	bh=JYdyRPCsyRsF60IkhvQfZ3+q4JsVYTIPwCtwvyP/sUg=; b=o6SoFgju+Uk0vnBjoSV9X66LDn
+	yN/P4K7uXHupnQ7YMkP3chU/0Sxg50CWua/QAsjUi6Jf5/Z+5iFSzAwr0B5ZvKU8Spc6I4bEXk7m8
+	VM++wPnOUJeijGTictJlEOjEaqsdZ3dGx4hJWUfSVKhrPFYPyG1wqSo7y8nlJJW6R+vFwi01UF3n3
+	xxhfGhUWo5K+7HkXIIVoOrXDSAXv1z7Iakd3HHYGfbzfjz06W8RvWFGjybpCQI7yMXNZ2/vxGDu08
+	KIu7/Dm1bcoj/ycCF85qBT0T597/6ZTQPF7g+kGn1KGeU/mInBs0DYhNCCSDNAAVwD82+xTszgyyn
+	J+MqeluA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKfic-00000008OPP-2uJl
+	id 1tKfif-00000008OSj-2Dvu
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Dec 2024 15:30:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Mon, 09 Dec 2024 15:30:45 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKfia-00000008OOB-3FVf
+	id 1tKfic-00000008OOn-0Ta1
 	for ath12k@lists.infradead.org;
-	Mon, 09 Dec 2024 15:30:42 +0000
+	Mon, 09 Dec 2024 15:30:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B36E45C5C80
-	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 15:29:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A1C4C4CEDE;
-	Mon,  9 Dec 2024 15:30:39 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id F07035C5C6E
+	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 15:29:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76890C4CED1;
+	Mon,  9 Dec 2024 15:30:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733758240;
-	bh=4Q8+H2y5FnU0Zo2LpMai5VHA+mQYFkZLKUDC/zyQpog=;
+	s=k20201202; t=1733758241;
+	bh=ovfxJKKuAKObm63Zu7VlrOl+EmqKnRC/02p0uoNmAPw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=KvpPDm1YgW0+a0V2RpNlJ9oM6d9ELnOU1/TnNM3o3N05X898KzGMklyBUQRz+mxor
-	 5IRc4fMzIO5JwcR4Im5P/3uKhiKrdy6zbqUV2qFqae7+V9O/nCoxDkdnXgAMRXKwyQ
-	 rz9k/cc1LKrI2/BU673XoVWc7X6SZcWgjivbuOJ926ZIYAz9CTiOSDnBxHVvBtAAbJ
-	 01BWaJybt6Gd1Kcf2FgR3bDadZ/sZY3964SL4SEplWC0wddQZTLjmDC8+/HrEZ5Yrp
-	 RM4tNlNVLXnavOr2Vgy/7yCwtFfUV3L+IpOv+fo7+lwSUGpjHTznihY+bJRW09wuV4
-	 mFuupiEGdiBtA==
+	b=KDJVIT2hM6iHd3U5strAI5Jp6MrDoAUV77xeAPOC1VwVQ3Xf9mlmB+JrrLmzYa4aN
+	 VQIZwQIG7G9wrIqq2U1y6t9JgqRCj7A8gUXluY2uOn3lE9rVfqwaF4b1Tw9WL6KrrE
+	 j9wavSFJzP6kiW3ousPdDcOJtiumt4dSis0gacY6dRdPzx7UwR8+m8U8C3463AX4lq
+	 aCfMZbJ3vtTmiVHc32YJmJIi1IrDLI79peYcyJF13C2epBk599NQ06z2cJGfklFA4C
+	 6jS2FfNlVEwGJlO8HkNaWMIqeNwLkO3vJRiKLlCL2fOVpA/LAzhSSZRRzxgrRSvzXL
+	 qop5S+2cHs8dA==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v2 2/8] wifi: ath12k: parse multiple device information from Device Tree
-Date: Mon,  9 Dec 2024 17:30:28 +0200
-Message-Id: <20241209153034.50558-3-kvalo@kernel.org>
+Subject: [PATCH v2 3/8] wifi: ath12k: send partner device details in QMI MLO capability
+Date: Mon,  9 Dec 2024 17:30:29 +0200
+Message-Id: <20241209153034.50558-4-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241209153034.50558-1-kvalo@kernel.org>
 References: <20241209153034.50558-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_073040_896183_1B3A223C 
-X-CRM114-Status: GOOD (  26.52  )
+X-CRM114-CacheID: sfid-20241209_073042_429713_443D4D53 
+X-CRM114-Status: GOOD (  16.93  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,310 +72,163 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Currently, a single device is part of the device group abstraction. However,
-for multi-link operations, multiple devices need to be combined. This
-multi-device grouping is done via WSI (WLAN Serial Interface), which is
-described in the Device Tree. Information about different WSI groups and the
-number of devices involved in each group can be parsed from the Device Tree.
-
-Add changes to parse the Device Tree and determine WSI information, such as the
-different WSI groups and the number of devices per WSI group. Assign WSI index
-zero to the WSI controller device (to synchronize the clock among the devices
-within the WSI group), and increment the WSI index of each device in the order
-of the WSI connection.
+Currently, QMI MLO host capability is sent with the details of local links and
+hw_link id only for particular device. But in the case of multi device group
+abstraction, it has to include the details of hw_link_id, num_local_links of
+every partner device that is involved in the group during QMI MLO capability
+exchange. Add changes to send partner device details to the firmware in QMI MLO
+capability exchange.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Co-developed-by: Harshitha Prem <quic_hprem@quicinc.com>
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 183 +++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/core.h |   8 ++
- 2 files changed, 178 insertions(+), 13 deletions(-)
+ drivers/net/wireless/ath/ath12k/qmi.c | 88 ++++++++++++++++++++++-----
+ 1 file changed, 72 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 49d1ac15cb7a..1a43e00cffb2 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -9,6 +9,7 @@
- #include <linux/remoteproc.h>
- #include <linux/firmware.h>
- #include <linux/of.h>
-+#include <linux/of_graph.h>
- #include "core.h"
- #include "dp_tx.h"
- #include "dp_rx.h"
-@@ -1383,20 +1384,24 @@ bool ath12k_core_hw_group_create_ready(struct ath12k_hw_group *ag)
- 	return (ag->num_probed == ag->num_devices);
- }
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index ba3cd2342465..2f10c83ef54a 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -2016,17 +2016,19 @@ static const struct qmi_elem_info qmi_wlanfw_wlan_ini_resp_msg_v01_ei[] = {
+ 	},
+ };
  
--static struct ath12k_hw_group *ath12k_core_hw_group_alloc(u8 id, u8 max_devices)
-+static struct ath12k_hw_group *ath12k_core_hw_group_alloc(struct ath12k_base *ab)
+-static void ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+-				      struct qmi_wlanfw_host_cap_req_msg_v01 *req)
++static int ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
++				     struct qmi_wlanfw_host_cap_req_msg_v01 *req)
  {
- 	struct ath12k_hw_group *ag;
-+	int count = 0;
+ 	struct wlfw_host_mlo_chip_info_s_v01 *info;
++	struct ath12k_hw_group *ag = ab->ag;
++	struct ath12k_base *partner_ab;
+ 	u8 hw_link_id = 0;
+-	int i;
++	int i, j, ret;
  
- 	lockdep_assert_held(&ath12k_hw_group_mutex);
- 
-+	list_for_each_entry(ag, &ath12k_hw_group_list, list)
-+		count++;
-+
- 	ag = kzalloc(sizeof(*ag), GFP_KERNEL);
- 	if (!ag)
- 		return NULL;
- 
--	ag->id = id;
--	ag->num_devices = max_devices;
-+	ag->id = count;
- 	list_add(&ag->list, &ath12k_hw_group_list);
- 	mutex_init(&ag->mutex);
-+	ag->mlo_capable = false;
- 
- 	return ag;
- }
-@@ -1411,35 +1416,180 @@ static void ath12k_core_hw_group_free(struct ath12k_hw_group *ag)
- 	mutex_unlock(&ath12k_hw_group_mutex);
- }
- 
-+static struct ath12k_hw_group *ath12k_core_hw_group_find_by_dt(struct ath12k_base *ab)
-+{
-+	struct ath12k_hw_group *ag;
-+	int i;
-+
-+	if (!ab->dev->of_node)
-+		return NULL;
-+
-+	list_for_each_entry(ag, &ath12k_hw_group_list, list)
-+		for (i = 0; i < ag->num_devices; i++)
-+			if (ag->wsi_node[i] == ab->dev->of_node)
-+				return ag;
-+
-+	return NULL;
-+}
-+
-+static int ath12k_core_get_wsi_info(struct ath12k_hw_group *ag,
-+				    struct ath12k_base *ab)
-+{
-+	struct device_node *wsi_dev = ab->dev->of_node, *next_wsi_dev;
-+	struct device_node *tx_endpoint, *next_rx_endpoint;
-+	int device_count = 0;
-+
-+	next_wsi_dev = wsi_dev;
-+
-+	if (!next_wsi_dev)
-+		return -ENODEV;
-+
-+	do {
-+		ag->wsi_node[device_count] = next_wsi_dev;
-+
-+		tx_endpoint = of_graph_get_endpoint_by_regs(next_wsi_dev, 0, -1);
-+		if (!tx_endpoint) {
-+			of_node_put(next_wsi_dev);
-+			return -ENODEV;
-+		}
-+
-+		next_rx_endpoint = of_graph_get_remote_endpoint(tx_endpoint);
-+		if (!next_rx_endpoint) {
-+			of_node_put(next_wsi_dev);
-+			of_node_put(tx_endpoint);
-+			return -ENODEV;
-+		}
-+
-+		of_node_put(tx_endpoint);
-+		of_node_put(next_wsi_dev);
-+
-+		next_wsi_dev = of_graph_get_port_parent(next_rx_endpoint);
-+		if (!next_wsi_dev) {
-+			of_node_put(next_rx_endpoint);
-+			return -ENODEV;
-+		}
-+
-+		of_node_put(next_rx_endpoint);
-+
-+		device_count++;
-+		if (device_count > ATH12K_MAX_SOCS) {
-+			ath12k_warn(ab, "device count in DT %d is more than limit %d\n",
-+				    device_count, ATH12K_MAX_SOCS);
-+			of_node_put(next_wsi_dev);
-+			return -EINVAL;
-+		}
-+	} while (wsi_dev != next_wsi_dev);
-+
-+	of_node_put(next_wsi_dev);
-+	ag->num_devices = device_count;
-+
-+	return 0;
-+}
-+
-+static int ath12k_core_get_wsi_index(struct ath12k_hw_group *ag,
-+				     struct ath12k_base *ab)
-+{
-+	int i, wsi_controller_index = -1, node_index = -1;
-+	bool control;
-+
-+	for (i = 0; i < ag->num_devices; i++) {
-+		control = of_property_read_bool(ag->wsi_node[i], "qcom,wsi-controller");
-+		if (control)
-+			wsi_controller_index = i;
-+
-+		if (ag->wsi_node[i] == ab->dev->of_node)
-+			node_index = i;
-+	}
-+
-+	if (wsi_controller_index == -1) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "wsi controller is not defined in dt");
-+		return -EINVAL;
-+	}
-+
-+	if (node_index == -1) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "unable to get WSI node index");
-+		return -EINVAL;
-+	}
-+
-+	ab->wsi_info.index = (ag->num_devices + node_index - wsi_controller_index) %
-+		ag->num_devices;
-+
-+	return 0;
-+}
-+
- static struct ath12k_hw_group *ath12k_core_hw_group_assign(struct ath12k_base *ab)
- {
--	u32 group_id = ATH12K_INVALID_GROUP_ID;
-+	struct ath12k_wsi_info *wsi = &ab->wsi_info;
- 	struct ath12k_hw_group *ag;
- 
- 	lockdep_assert_held(&ath12k_hw_group_mutex);
- 
- 	/* The grouping of multiple devices will be done based on device tree file.
--	 * TODO: device tree file parsing to know about the devices involved in group.
-+	 * The platforms that do not have any valid group information would have
-+	 * each device to be part of its own invalid group.
- 	 *
--	 * The platforms that do not have any valid group information would have each
--	 * device to be part of its own invalid group.
--	 *
--	 * Currently, we are not parsing any device tree information and hence, grouping
--	 * of multiple devices is not involved. Thus, single device is added to device
--	 * group.
-+	 * We use group id ATH12K_INVALID_GROUP_ID for single device group
-+	 * which didn't have dt entry or wrong dt entry, there could be many
-+	 * groups with same group id, i.e ATH12K_INVALID_GROUP_ID. So
-+	 * default group id of ATH12K_INVALID_GROUP_ID combined with
-+	 * num devices in ath12k_hw_group determines if the group is
-+	 * multi device or single device group
- 	 */
--	ag = ath12k_core_hw_group_alloc(group_id, 1);
-+
-+	ag = ath12k_core_hw_group_find_by_dt(ab);
-+	if (!ag) {
-+		ag = ath12k_core_hw_group_alloc(ab);
-+		if (!ag) {
-+			ath12k_warn(ab, "unable to create new hw group\n");
-+			return NULL;
-+		}
-+
-+		if (ath12k_core_get_wsi_info(ag, ab) ||
-+		    ath12k_core_get_wsi_index(ag, ab)) {
-+			ath12k_dbg(ab, ATH12K_DBG_BOOT,
-+				   "unable to get wsi info from dt, grouping single device");
-+			ag->id = ATH12K_INVALID_GROUP_ID;
-+			ag->num_devices = 1;
-+			memset(ag->wsi_node, 0, sizeof(ag->wsi_node));
-+			wsi->index = 0;
-+		}
-+
-+		goto exit;
-+	} else if (test_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags)) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "group id %d in unregister state\n",
-+			   ag->id);
-+		goto invalid_group;
-+	} else {
-+		if (ath12k_core_get_wsi_index(ag, ab))
-+			goto invalid_group;
-+		goto exit;
-+	}
-+
-+invalid_group:
-+	ag = ath12k_core_hw_group_alloc(ab);
- 	if (!ag) {
- 		ath12k_warn(ab, "unable to create new hw group\n");
- 		return NULL;
+-	if (!ab->ag->mlo_capable) {
++	if (!ag->mlo_capable) {
+ 		ath12k_dbg(ab, ATH12K_DBG_QMI,
+ 			   "MLO is disabled hence skip QMI MLO cap");
+-		return;
++		return 0;
  	}
  
-+	ag->id = ATH12K_INVALID_GROUP_ID;
-+	ag->num_devices = 1;
-+	wsi->index = 0;
-+
- 	ath12k_dbg(ab, ATH12K_DBG_BOOT, "single device added to hardware group\n");
- 
-+exit:
-+	if (ag->num_probed >= ag->num_devices) {
-+		ath12k_warn(ab, "unable to add new device to group, max limit reached\n");
-+		goto invalid_group;
+ 	if (!ab->qmi.num_radios || ab->qmi.num_radios == U8_MAX) {
+@@ -2035,7 +2037,12 @@ static void ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+ 		ath12k_dbg(ab, ATH12K_DBG_QMI,
+ 			   "skip QMI MLO cap due to invalid num_radio %d\n",
+ 			   ab->qmi.num_radios);
+-		return;
++		return 0;
 +	}
 +
- 	ab->device_id = ag->num_probed++;
- 	ag->ab[ab->device_id] = ab;
- 	ab->ag = ag;
--	ag->mlo_capable = false;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_BOOT, "wsi group-id %d num-devices %d index %d",
-+		   ag->id, ag->num_devices, wsi->index);
++	if (ab->device_id == ATH12K_INVALID_DEVICE_ID) {
++		ath12k_err(ab, "failed to send MLO cap due to invalid device id\n");
++		return -EINVAL;
+ 	}
  
- 	return ag;
+ 	req->mlo_capable_valid = 1;
+@@ -2043,27 +2050,74 @@ static void ath12k_host_cap_parse_mlo(struct ath12k_base *ab,
+ 	req->mlo_chip_id_valid = 1;
+ 	req->mlo_chip_id = ab->device_id;
+ 	req->mlo_group_id_valid = 1;
+-	req->mlo_group_id = 0;
++	req->mlo_group_id = ag->id;
+ 	req->max_mlo_peer_valid = 1;
+ 	/* Max peer number generally won't change for the same device
+ 	 * but needs to be synced with host driver.
+ 	 */
+ 	req->max_mlo_peer = ab->hw_params->max_mlo_peer;
+ 	req->mlo_num_chips_valid = 1;
+-	req->mlo_num_chips = 1;
++	req->mlo_num_chips = ag->num_devices;
+ 
+-	info = &req->mlo_chip_info[0];
+-	info->chip_id = ab->device_id;
+-	info->num_local_links = ab->qmi.num_radios;
++	mutex_lock(&ag->mutex);
+ 
+-	for (i = 0; i < info->num_local_links; i++) {
+-		info->hw_link_id[i] = hw_link_id;
+-		info->valid_mlo_link_id[i] = 1;
++	for (i = 0; i < ag->num_devices; i++) {
++		info = &req->mlo_chip_info[i];
++		partner_ab = ag->ab[i];
+ 
+-		hw_link_id++;
++		if (partner_ab->device_id == ATH12K_INVALID_DEVICE_ID) {
++			ath12k_err(ab, "failed to send MLO cap due to invalid partner device id\n");
++			ret = -EINVAL;
++			goto device_cleanup;
++		}
++
++		info->chip_id = partner_ab->device_id;
++		info->num_local_links = partner_ab->qmi.num_radios;
++
++		ath12k_dbg(ab, ATH12K_DBG_QMI, "mlo device id %d num_link %d\n",
++			   info->chip_id, info->num_local_links);
++
++		for (j = 0; j < info->num_local_links; j++) {
++			info->hw_link_id[j] = hw_link_id;
++			info->valid_mlo_link_id[j] = 1;
++
++			hw_link_id++;
++		}
+ 	}
+ 
++	if (hw_link_id <= 0)
++		ag->mlo_capable = false;
++
+ 	req->mlo_chip_info_valid = 1;
++
++	mutex_unlock(&ag->mutex);
++
++	return 0;
++
++device_cleanup:
++	for (i = i - 1; i >= 0; i--) {
++		info = &req->mlo_chip_info[i];
++
++		memset(info, 0, sizeof(*info));
++	}
++
++	req->mlo_num_chips = 0;
++	req->mlo_num_chips_valid = 0;
++
++	req->max_mlo_peer = 0;
++	req->max_mlo_peer_valid = 0;
++	req->mlo_group_id = 0;
++	req->mlo_group_id_valid = 0;
++	req->mlo_chip_id = 0;
++	req->mlo_chip_id_valid = 0;
++	req->mlo_capable = 0;
++	req->mlo_capable_valid = 0;
++
++	ag->mlo_capable = false;
++
++	mutex_unlock(&ag->mutex);
++
++	return ret;
  }
-@@ -1507,6 +1657,13 @@ static void ath12k_core_hw_group_cleanup(struct ath12k_hw_group *ag)
  
- 	mutex_lock(&ag->mutex);
+ /* clang stack usage explodes if this is inlined */
+@@ -2113,7 +2167,9 @@ int ath12k_qmi_host_cap_send(struct ath12k_base *ab)
+ 		req.nm_modem |= PLATFORM_CAP_PCIE_GLOBAL_RESET;
+ 	}
  
-+	if (test_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags)) {
-+		mutex_unlock(&ag->mutex);
-+		return;
-+	}
-+
-+	set_bit(ATH12K_GROUP_FLAG_UNREGISTER, &ag->flags);
-+
- 	ath12k_core_hw_group_stop(ag);
+-	ath12k_host_cap_parse_mlo(ab, &req);
++	ret = ath12k_host_cap_parse_mlo(ab, &req);
++	if (ret < 0)
++		goto out;
  
- 	for (i = 0; i < ag->num_devices; i++) {
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 458e3d0071a8..d0e466819036 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -219,6 +219,7 @@ enum ath12k_scan_state {
- 
- enum ath12k_hw_group_flags {
- 	ATH12K_GROUP_FLAG_REGISTERED,
-+	ATH12K_GROUP_FLAG_UNREGISTER,
- };
- 
- enum ath12k_dev_flags {
-@@ -845,6 +846,12 @@ struct ath12k_hw_group {
- 	struct ath12k_hw *ah[ATH12K_GROUP_MAX_RADIO];
- 	u8 num_hw;
- 	bool mlo_capable;
-+	struct device_node *wsi_node[ATH12K_MAX_SOCS];
-+};
-+
-+/* Holds WSI info specific to each device, excluding WSI group info */
-+struct ath12k_wsi_info {
-+	u32 index;
- };
- 
- /* Master structure to hold the hw data which may be used in core module */
-@@ -1028,6 +1035,7 @@ struct ath12k_base {
- 	struct notifier_block panic_nb;
- 
- 	struct ath12k_hw_group *ag;
-+	struct ath12k_wsi_info wsi_info;
- 
- 	/* must be last */
- 	u8 drv_priv[] __aligned(sizeof(void *));
+ 	ret = qmi_txn_init(&ab->qmi.handle, &txn,
+ 			   qmi_wlanfw_host_cap_resp_msg_v01_ei, &resp);
 -- 
 2.39.5
 
