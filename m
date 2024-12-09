@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A49EAE77181
-	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 18:54:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26867E7717D
+	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 18:54:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gJpoNPaQ3tEXW9yDrgomGvi9wVS9R0Sa+cUiuUeYX0k=; b=UXdjkZm5RnAeveJtckyodfmFHW
-	fyzqXqzNhoFd5GAUtJc8rXBwSK7FHVn436BGb51cLn7HZwCehDP2lP20+Y97k1Lrcut6AiM9gGANT
-	FLBiPYI/FB/4wZ6GqIwOtygFTYrGIRl5Px2fLDFCoTIo1s1JZ5pW/P74p8qmTrCCxhkSA7LD1L/aS
-	4KK3hhJDwdqdDMlz/37or4814f2wqaeJz0RXc0S3LyjzopMqtzJYwuS1WQUlS5G1uxovBPmr0SmAP
-	zvUxo9MGENtmsA8EjhWmjZkwob1iwF84sgIJ+8dbNXSUjkSaupi4djOqnDd31qOkTYhpoydYGUGga
-	EqBIYZWg==;
+	bh=oX4FSDA3E9kExYbpKzq8GK26fvdPYBxSbNE7s9q8gFI=; b=m/ofmJRG0yTZn4v66TFp0WofY6
+	XGF8/yZD60tzTJqpT/WuqxbKOy5N4HU+wVQT0SU8oO0cW/P8B+52ZdjiKUfkVXYW34Qq09JzK4HsX
+	GUlP9Sl2PBdx4/9U9cqt6uyjDRdX+l+cRCQFdRTUlRO1+vUN0y64x2q/g8EptDv78siwdn86ZBVRn
+	mhBheX6zIIexio+7srkjw3YmDurtGk8XbcKpczZRgK0E/j/oFOWe7hF+8DP60TQqCPLO2+DAmgNbz
+	2h+GZJlLQZvJUcpZP1k9AqIrL2HicVOL5iiPJjQY4vowYsPS5PrDSNqOpj0MVr4c2lE9byjTEbE9I
+	8ngzk1fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKitp-00000008w9B-1aY3
+	id 1tKitq-00000008wAT-3ZNG
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Dec 2024 18:54:29 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Mon, 09 Dec 2024 18:54:30 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKitn-00000008w6p-1H64
+	id 1tKito-00000008w7J-04MU
 	for ath12k@lists.infradead.org;
-	Mon, 09 Dec 2024 18:54:28 +0000
+	Mon, 09 Dec 2024 18:54:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 15E235C602B
+	by dfw.source.kernel.org (Postfix) with ESMTP id AD9B75C5FF6
 	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 18:53:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E0E30C4CEE0;
-	Mon,  9 Dec 2024 18:54:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27216C4CEE2;
+	Mon,  9 Dec 2024 18:54:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733770464;
-	bh=+ct0kbflG9txcTgNzKO0PVelD5KbgzHgswkc+rSVBcU=;
+	s=k20201202; t=1733770466;
+	bh=Z/R7g7fEQlRtz94pv6c2LJlmem3SXt6N/CdFdM0AE0w=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=hlYaaZXC+InQWdCQhRwUueHCbKE8XaS0zPj3sKVUiOV6RuDOJDV7iKQQBFiC/fBZW
-	 a/GkdF3DNZMOGRB0PDBXOnpAqeo7UeRNCMK5c7Be/Uqjy4zq3vw7bRoUp5MkJ9KDwT
-	 eLjVB43xjeuO8QTmpqR9XZ9kjRXZJshlKy1TuVtWxVV2OAUVwdSIYkVa/ngXTg5bOo
-	 OTnwDBNb1oKaH6shNaszmXFE2izN2v4BTvUeadeu3glD9Fm+l90sXEHjS1tUWYb/TB
-	 DiShmyHnaeERz8bF7Fj8sTJOEpX6gyTy76vMQp6o7nJOKG5+w0U02EfNvh4UDjZXGl
-	 cg8KAWK0Ubg9A==
+	b=E/qGUdZlMc7iEuwB4NtW/KrLc+79XO6nhPqm3EElwRPY/bve7KKljiNcLzQPD4L9T
+	 cN9dswY5vR0qN2qlNpc4D1TthuCtazUDSCdyLmDpAzqKeO2TBU0fZiq1Wy8C6YZJ+c
+	 En8TtEKQtqtYFGv4RnpPNSnZWBiV9P2ATIA24tRsS2J8hzEElYGTXwOPDECCV6QeDJ
+	 1VBp/T773JkN/7DVALF3hWwQ91HDKU5xOMQlRvpdo4RhW+Qu7jL1gr26IXZKlOJzSU
+	 3eUYkMoZX0dfD9mjYc9DbjcsWPLkO7uUF4gOZxrNp4LC2fEsNEX2fSoZKXolsXfk4n
+	 jSvo2SqJ8SkzQ==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 1/9] wifi: ath12k: move to HW link id based reveive handling
-Date: Mon,  9 Dec 2024 20:54:13 +0200
-Message-Id: <20241209185421.376381-2-kvalo@kernel.org>
+Subject: [PATCH 3/9] wifi: ath12k: add helper function to init partner cmem configuration
+Date: Mon,  9 Dec 2024 20:54:15 +0200
+Message-Id: <20241209185421.376381-4-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241209185421.376381-1-kvalo@kernel.org>
 References: <20241209185421.376381-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_105427_433327_E67720F6 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20241209_105428_143070_591D94BC 
+X-CRM114-Status: GOOD (  13.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,12 +73,10 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Currently, all the rx processing treats the hardware link id as the MAC id.
-The HW link id is a unique identifier for all hardware links participating in
-the multi link group. Therefore, the current MAC id derivation is insufficient
-to process the partner rx buffer in the Multi-Link Operation. So derive the
-MAC id from the HW link id and implementing this change in rx processing will
-enable the scaling of partner buffer processing in Multi-Link Operation.
+In the Inter Multi-Link Operation, the primary device is expected to receive
+the partner device buffer. Therefore, each device initializes the partner
+device buffer in their cmem configuration. So add a helper function to
+initialize the partner device buffer in their cmem configuration.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -86,216 +84,70 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h  |  8 +++-
- drivers/net/wireless/ath/ath12k/dp_rx.c | 49 +++++++++++++++----------
- drivers/net/wireless/ath/ath12k/mac.c   |  3 ++
- 3 files changed, 39 insertions(+), 21 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  5 ++++-
+ drivers/net/wireless/ath/ath12k/dp.c   | 13 +++++++++++++
+ drivers/net/wireless/ath/ath12k/dp.h   |  1 +
+ 3 files changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index dc01f7b3fd73..9386e9592dff 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -136,7 +136,7 @@ struct ath12k_skb_rxcb {
- 	struct hal_rx_desc *rx_desc;
- 	u8 err_rel_src;
- 	u8 err_code;
--	u8 mac_id;
-+	u8 hw_link_id;
- 	u8 unmapped;
- 	u8 is_frag;
- 	u8 tid;
-@@ -831,6 +831,11 @@ struct ath12k_mlo_memory {
- 	bool init_done;
- };
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index af642b466ea0..ff79cb910523 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -930,7 +930,7 @@ int ath12k_mac_mlo_ready(struct ath12k_hw_group *ag)
  
-+struct ath12k_hw_link {
-+	u8 device_id;
-+	u8 pdev_idx;
-+};
-+
- /* Holds info on the group of devices that are registered as a single
-  * wiphy, protected with struct ath12k_hw_group::mutex.
-  */
-@@ -857,6 +862,7 @@ struct ath12k_hw_group {
- 	bool mlo_capable;
- 	struct device_node *wsi_node[ATH12K_MAX_SOCS];
- 	struct ath12k_mlo_memory mlo_mem;
-+	struct ath12k_hw_link hw_links[ATH12K_GROUP_MAX_RADIO];
- };
- 
- /* Holds WSI info specific to each device, excluding WSI group info */
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 2c919503ddef..d658d4eb1fd7 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2595,11 +2595,13 @@ static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
- 						  struct sk_buff_head *msdu_list,
- 						  int ring_id)
+ static int ath12k_core_mlo_setup(struct ath12k_hw_group *ag)
  {
-+	struct ath12k_hw_group *ag = ab->ag;
- 	struct ieee80211_rx_status rx_status = {0};
- 	struct ath12k_skb_rxcb *rxcb;
- 	struct sk_buff *msdu;
- 	struct ath12k *ar;
--	u8 mac_id, pdev_id;
-+	struct ath12k_hw_link *hw_links = ag->hw_links;
-+	u8 hw_link_id, pdev_id;
- 	int ret;
+-	int ret;
++	int ret, i;
  
- 	if (skb_queue_empty(msdu_list))
-@@ -2609,8 +2611,10 @@ static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
+ 	if (!ag->mlo_capable || ag->num_devices == 1)
+ 		return 0;
+@@ -939,6 +939,9 @@ static int ath12k_core_mlo_setup(struct ath12k_hw_group *ag)
+ 	if (ret)
+ 		return ret;
  
- 	while ((msdu = __skb_dequeue(msdu_list))) {
- 		rxcb = ATH12K_SKB_RXCB(msdu);
--		mac_id = rxcb->mac_id;
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, mac_id);
-+		hw_link_id = rxcb->hw_link_id;
++	for (i = 0; i < ag->num_devices; i++)
++		ath12k_dp_partner_cc_init(ag->ab[i]);
 +
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params,
-+						      hw_links[hw_link_id].pdev_idx);
- 		ar = ab->pdevs[pdev_id].ar;
- 		if (!rcu_dereference(ab->pdevs_active[pdev_id])) {
- 			dev_kfree_skb_any(msdu);
-@@ -2674,7 +2678,7 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 	struct hal_srng *srng;
- 	struct sk_buff *msdu;
- 	bool done = false;
--	int mac_id;
-+	u8 hw_link_id;
- 	u64 desc_va;
+ 	ret = ath12k_mac_mlo_ready(ag);
+ 	if (ret)
+ 		goto err_mlo_teardown;
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index 9a7df54bf570..9e5a4e75f2f6 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -1522,6 +1522,19 @@ static int ath12k_dp_cmem_init(struct ath12k_base *ab,
+ 	return 0;
+ }
  
- 	__skb_queue_head_init(&msdu_list);
-@@ -2695,8 +2699,8 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 		cookie = le32_get_bits(desc->buf_addr_info.info1,
- 				       BUFFER_ADDR_INFO1_SW_COOKIE);
- 
--		mac_id = le32_get_bits(desc->info0,
--				       HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
-+		hw_link_id = le32_get_bits(desc->info0,
-+					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
- 
- 		desc_va = ((u64)le32_to_cpu(desc->buf_va_hi) << 32 |
- 			   le32_to_cpu(desc->buf_va_lo));
-@@ -2745,7 +2749,7 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 					RX_MSDU_DESC_INFO0_LAST_MSDU_IN_MPDU);
- 		rxcb->is_continuation = !!(le32_to_cpu(msdu_info->info0) &
- 					   RX_MSDU_DESC_INFO0_MSDU_CONTINUATION);
--		rxcb->mac_id = mac_id;
-+		rxcb->hw_link_id = hw_link_id;
- 		rxcb->peer_id = ath12k_dp_rx_get_peer_id(ab, dp->peer_metadata_ver,
- 							 mpdu_info->peer_meta_data);
- 		rxcb->tid = le32_get_bits(mpdu_info->info0,
-@@ -3472,6 +3476,7 @@ ath12k_dp_process_rx_err_buf(struct ath12k *ar, struct hal_reo_dest_ring *desc,
- int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 			     int budget)
++void ath12k_dp_partner_cc_init(struct ath12k_base *ab)
++{
++	struct ath12k_hw_group *ag = ab->ag;
++	int i;
++
++	for (i = 0; i < ag->num_devices; i++) {
++		if (ag->ab[i] == ab)
++			continue;
++
++		ath12k_dp_cmem_init(ab, &ag->ab[i]->dp, ATH12K_DP_RX_DESC);
++	}
++}
++
+ static int ath12k_dp_cc_init(struct ath12k_base *ab)
  {
-+	struct ath12k_hw_group *ag = ab->ag;
- 	u32 msdu_cookies[HAL_NUM_RX_MSDUS_PER_LINK_DESC];
- 	struct dp_link_desc_bank *link_desc_banks;
- 	enum hal_rx_buf_return_buf_manager rbm;
-@@ -3480,11 +3485,12 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 	struct hal_reo_dest_ring *reo_desc;
- 	struct dp_rxdma_ring *rx_ring;
- 	struct dp_srng *reo_except;
-+	struct ath12k_hw_link *hw_links = ag->hw_links;
- 	LIST_HEAD(rx_desc_used_list);
- 	u32 desc_bank, num_msdus;
- 	struct hal_srng *srng;
- 	struct ath12k_dp *dp;
--	int mac_id;
-+	u8 hw_link_id;
- 	struct ath12k *ar;
- 	dma_addr_t paddr;
- 	bool is_frag;
-@@ -3517,10 +3523,11 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 			continue;
- 		}
- 
--		mac_id = le32_get_bits(reo_desc->info0,
--				       HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
-+		hw_link_id = le32_get_bits(reo_desc->info0,
-+					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
- 
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, mac_id);
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params,
-+						      hw_links[hw_link_id].pdev_idx);
- 		ar = ab->pdevs[pdev_id].ar;
- 
- 		link_desc_va = link_desc_banks[desc_bank].vaddr +
-@@ -3801,9 +3808,10 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 	struct sk_buff_head msdu_list, scatter_msdu_list;
- 	struct ath12k_skb_rxcb *rxcb;
- 	void *rx_desc;
--	u8 mac_id;
-+	u8 hw_link_id;
- 	int num_buffs_reaped = 0;
- 	struct ath12k_rx_desc_info *desc_info;
-+	struct ath12k_hw_link *hw_links = ab->ag->hw_links;
- 	int ret, pdev_id;
- 	struct hal_rx_desc *msdu_data;
- 
-@@ -3878,9 +3886,9 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 			continue;
- 		}
- 
--		mac_id = ath12k_dp_rx_get_msdu_src_link(ab,
--							msdu_data);
--		if (mac_id >= MAX_RADIOS) {
-+		hw_link_id = ath12k_dp_rx_get_msdu_src_link(ab,
-+							    msdu_data);
-+		if (hw_link_id >= MAX_RADIOS) {
- 			dev_kfree_skb_any(msdu);
- 
- 			/* In any case continuation bit is set
-@@ -3895,7 +3903,7 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 
- 			skb_queue_walk(&scatter_msdu_list, msdu) {
- 				rxcb = ATH12K_SKB_RXCB(msdu);
--				rxcb->mac_id = mac_id;
-+				rxcb->hw_link_id = hw_link_id;
- 			}
- 
- 			skb_queue_splice_tail_init(&scatter_msdu_list,
-@@ -3903,7 +3911,7 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 		}
- 
- 		rxcb = ATH12K_SKB_RXCB(msdu);
--		rxcb->mac_id = mac_id;
-+		rxcb->hw_link_id = hw_link_id;
- 		__skb_queue_tail(&msdu_list, msdu);
- 	}
- 
-@@ -3925,12 +3933,13 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 	rcu_read_lock();
- 	while ((msdu = __skb_dequeue(&msdu_list))) {
- 		rxcb = ATH12K_SKB_RXCB(msdu);
--		mac_id = rxcb->mac_id;
-+		hw_link_id = rxcb->hw_link_id;
- 
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, mac_id);
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params,
-+						      hw_links[hw_link_id].pdev_idx);
- 		ar = ab->pdevs[pdev_id].ar;
- 
--		if (!ar || !rcu_dereference(ar->ab->pdevs_active[mac_id])) {
-+		if (!ar || !rcu_dereference(ar->ab->pdevs_active[hw_link_id])) {
- 			dev_kfree_skb_any(msdu);
- 			continue;
- 		}
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 23c5c8fd952d..7e8eb0feb871 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11050,6 +11050,9 @@ static struct ath12k_hw *ath12k_mac_hw_allocate(struct ath12k_hw_group *ag,
- 		ar->pdev_idx = pdev_idx;
- 		pdev->ar = ar;
- 
-+		ag->hw_links[ar->hw_link_id].device_id = ab->device_id;
-+		ag->hw_links[ar->hw_link_id].pdev_idx = pdev_idx;
-+
- 		ath12k_mac_setup(ar);
- 		ath12k_dp_pdev_pre_alloc(ar);
- 	}
+ 	struct ath12k_dp *dp = &ab->dp;
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index d3f3d39a1cd0..7700828375e3 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -1806,6 +1806,7 @@ void ath12k_dp_vdev_tx_attach(struct ath12k *ar, struct ath12k_link_vif *arvif);
+ void ath12k_dp_free(struct ath12k_base *ab);
+ int ath12k_dp_alloc(struct ath12k_base *ab);
+ void ath12k_dp_cc_config(struct ath12k_base *ab);
++void ath12k_dp_partner_cc_init(struct ath12k_base *ab);
+ int ath12k_dp_pdev_alloc(struct ath12k_base *ab);
+ void ath12k_dp_pdev_pre_alloc(struct ath12k *ar);
+ void ath12k_dp_pdev_free(struct ath12k_base *ab);
 -- 
 2.39.5
 
