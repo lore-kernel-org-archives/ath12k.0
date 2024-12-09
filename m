@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E610E77182
-	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 18:54:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64118E77184
+	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 18:54:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=emaFrMetI0YDtNiPqZsv5I+HCL2IiMZZd7D5Ei/wi/U=; b=pxjrLzFAVezia2ESNY/ye0cuel
-	TQDCin0UA/w+hgbgcB4d/4gcq6ZspUKNO7nTh6R2b/+FF1XtuMGLSi/KZIs+/nHpeoXJ4LjRtD8k4
-	U2ZbnYSmVPDa9yygUv9xjsxD65Ki3KoVHxfKJ6QqaRHejbSu6BtjnNt99HsfdoXLq9PNCjgdjMKf5
-	LlfiOLApMstriCloGM7ql9q4NpztLluR+j6/f+L6imYkZShUhh3aqBKu5F5lKaEDNTExJqphOrsN8
-	eSasO3GtyvLpW1eDR8ZRuZV/EuBy2QDN5LovR9xPv+56He4akndN8Z/cPRyFMMUk8l07MM8xM5ODz
-	M/3Dpkuw==;
+	bh=LooqmTZUU6QgzTVT2ib1tG9zOddlrrW6wefj6xd5R7I=; b=I5JnySL3KgY1R/FE9XgIXRSkl+
+	y10iDMB69D8NLB9uvHGwt9rvE0dOAIWEZPqd4Hc1WG7sYsmXnKguA4l5bXa78tOk+gardHhXOhwEs
+	ACgIX5P/d/wguwBMZrRvWHWhwyfvlCTyBZxDwCykidMAzu5gH+XYpvOCtca/W2bvY+ADEK2Irx2lO
+	qiNM50KWGDgT/RGXsEn3OINKi0MAge7urSetAIfvVqdjKz3/2H2Mfzax46u2P8fL+gUwzekMFvybU
+	5gxB+AxMG7AmYx7zznHh1RkiJY6ojk5nNFUgZfsGFaO88ZeKS1vhqWHrZV8jmaW/q5tOnT4O+cBSe
+	xnJ/TQuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKitr-00000008wBJ-1LUy
+	id 1tKitt-00000008wDc-0b5f
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Dec 2024 18:54:31 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Mon, 09 Dec 2024 18:54:33 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKito-00000008w7P-0NPq
+	id 1tKitq-00000008wAL-2trj
 	for ath12k@lists.infradead.org;
-	Mon, 09 Dec 2024 18:54:29 +0000
+	Mon, 09 Dec 2024 18:54:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id E6D635C6035
-	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 18:53:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B0FCC2BCB5;
-	Mon,  9 Dec 2024 18:54:24 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 999A95C5DB3
+	for <ath12k@lists.infradead.org>; Mon,  9 Dec 2024 18:53:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4AC03C4CEE0;
+	Mon,  9 Dec 2024 18:54:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733770465;
-	bh=u2J8AkrXzo18lafKVPi8O4cj/NL+/JTiqfpsU4yrLtM=;
+	s=k20201202; t=1733770469;
+	bh=gyJqLQAwil8oHFOPnP5sE3itwXs7LeLSqcr3lVubE9w=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=M62vUbQg96L3rLdWFHg7HMhZF7NyxX5lEKwwTndDrg5SCq7q9e6Ldo+9cK53fDksS
-	 +g/ua11q3s4h5bTAoyx1Zrl+xnf2p7V6fLWnaaG0gGtS1pgoxQYFNg21s5sJMQIHTf
-	 MiqJDzO27icmEOX4rAcu4jTXFKQdj4aejbDbCvj+ZUfnkYP4yZTy2BIfb5SH+gqe3B
-	 oz0DehlHhzXWPBU/ZJOstcff+6iGOXfQI2xlkhFX4T9Qg9ZtUxOg6AnLIlNzN7YTfF
-	 A864FRrTNjpf3Vl+SR0zjNrBE70lkC/MPDdEjsNcfa1NmI4pMgM1wenjEjBTtx0B16
-	 xWPMAvqYEYWpQ==
+	b=d0vcp4jjsSqG8h3YOb+G8uXqFidIraLrwBlYNOfNBOMRIXjOjoMYUZqsAf+OdLTip
+	 iwnhZoz+7Ku41FIkrILUDVnfOMYtYso5qCUjf/vqFReOwWY9K2iy7HnCTtlv6UPJph
+	 KsdaMucxXcn6bNRPKUcZq65db2AgMV+O1e6mT2+p7xcINiO5nlxeag7f/7kVoZKLMG
+	 WMQoaLXzIo4MmbCbSEDtdSNNffftazuk7XU0JCLLHnJqrGW7OBsEYSJEf0ljyrcyI5
+	 fHZPAM/YcsjOXA6KgX2gHkSk2W9LkWKEOicsRQAC9fE2B4yb8tdyadF4W+wlgQAJZX
+	 ltLoKXauhwUVw==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH 2/9] wifi: ath12k: add partner device buffer support in receive data path
-Date: Mon,  9 Dec 2024 20:54:14 +0200
-Message-Id: <20241209185421.376381-3-kvalo@kernel.org>
+Subject: [PATCH 6/9] wifi: ath12k: advertise multi device interface combination
+Date: Mon,  9 Dec 2024 20:54:18 +0200
+Message-Id: <20241209185421.376381-7-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241209185421.376381-1-kvalo@kernel.org>
 References: <20241209185421.376381-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_105428_220238_C6B80C2C 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20241209_105430_856657_0BD53929 
+X-CRM114-Status: GOOD (  19.28  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,10 +73,13 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Currently, partner device buffer is not handled in the receive data path. In
-Multi-Link Operation, the partner device buffer is reported to the primary
-upper MAC rings. Therefore, add partner device buffer processing in the REO and
-Exception ring handler.
+The prerequisite for MLO support in cfg80211/mac80211 requires that all the
+links participating in MLO belong to the same wiphy/struct ieee80211_hw. The
+driver needs to group multiple discrete hardware components, each acting as a
+link in MLO, under one wiphy. Consequently, the driver advertises
+multi-hardware device interface combination capabilities specific to the radio,
+including supported frequencies. The global interface combination represent the
+combined interface capabilities.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -84,432 +87,283 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h  |   6 +
- drivers/net/wireless/ath/ath12k/dp.c    |   1 +
- drivers/net/wireless/ath/ath12k/dp.h    |   3 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c | 179 +++++++++++++++++-------
- 4 files changed, 140 insertions(+), 49 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 222 +++++++++++++++++++++-----
+ 1 file changed, 185 insertions(+), 37 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 9386e9592dff..d7caa58bb262 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1229,4 +1229,10 @@ static inline void ath12k_core_stopped(struct ath12k_base *ab)
- 	ab->ag->num_started--;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 1bf89be1cccc..de2f55f4ea03 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10336,14 +10336,20 @@ static bool ath12k_mac_is_iface_mode_enable(struct ath12k_hw *ah,
+ {
+ 	struct ath12k *ar;
+ 	int i;
+-	u16 interface_modes, mode;
+-	bool is_enable = true;
++	u16 interface_modes, mode = 0;
++	bool is_enable = false;
++
++	if (type == NL80211_IFTYPE_MESH_POINT) {
++		if (IS_ENABLED(CONFIG_MAC80211_MESH))
++			mode = BIT(type);
++	} else {
++		mode = BIT(type);
++	}
+ 
+-	mode = BIT(type);
+ 	for_each_ar(ah, ar, i) {
+ 		interface_modes = ar->ab->hw_params->interface_modes;
+-		if (!(interface_modes & mode)) {
+-			is_enable = false;
++		if (interface_modes & mode) {
++			is_enable = true;
+ 			break;
+ 		}
+ 	}
+@@ -10351,31 +10357,20 @@ static bool ath12k_mac_is_iface_mode_enable(struct ath12k_hw *ah,
+ 	return is_enable;
  }
  
-+static inline struct ath12k_base *ath12k_ag_to_ab(struct ath12k_hw_group *ag,
-+						  u8 device_id)
-+{
-+	return ag->ab[device_id];
+-static void ath12k_mac_cleanup_iface_combinations(struct ath12k_hw *ah)
++static int
++ath12k_mac_setup_radio_iface_comb(struct ath12k *ar,
++				  struct ieee80211_iface_combination *comb)
+ {
+-	struct wiphy *wiphy = ah->hw->wiphy;
+-
+-	kfree(wiphy->iface_combinations[0].limits);
+-	kfree(wiphy->iface_combinations);
+-}
+-
+-static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+-{
+-	struct wiphy *wiphy = ah->hw->wiphy;
+-	struct ieee80211_iface_combination *combinations;
++	u16 interface_modes = ar->ab->hw_params->interface_modes;
+ 	struct ieee80211_iface_limit *limits;
+ 	int n_limits, max_interfaces;
+ 	bool ap, mesh, p2p;
+ 
+-	ap = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_AP);
+-	p2p = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_P2P_DEVICE);
++	ap = interface_modes & BIT(NL80211_IFTYPE_AP);
++	p2p = interface_modes & BIT(NL80211_IFTYPE_P2P_DEVICE);
+ 
+ 	mesh = IS_ENABLED(CONFIG_MAC80211_MESH) &&
+-		ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_MESH_POINT);
+-
+-	combinations = kzalloc(sizeof(*combinations), GFP_KERNEL);
+-	if (!combinations)
+-		return -ENOMEM;
++	       (interface_modes & BIT(NL80211_IFTYPE_MESH_POINT));
+ 
+ 	if ((ap || mesh) && !p2p) {
+ 		n_limits = 2;
+@@ -10392,10 +10387,8 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 	}
+ 
+ 	limits = kcalloc(n_limits, sizeof(*limits), GFP_KERNEL);
+-	if (!limits) {
+-		kfree(combinations);
++	if (!limits)
+ 		return -ENOMEM;
+-	}
+ 
+ 	limits[0].max = 1;
+ 	limits[0].types |= BIT(NL80211_IFTYPE_STATION);
+@@ -10411,26 +10404,181 @@ static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
+ 
+ 	if (p2p) {
+ 		limits[1].types |= BIT(NL80211_IFTYPE_P2P_CLIENT) |
+-				   BIT(NL80211_IFTYPE_P2P_GO);
++					BIT(NL80211_IFTYPE_P2P_GO);
+ 		limits[2].max = 1;
+ 		limits[2].types |= BIT(NL80211_IFTYPE_P2P_DEVICE);
+ 	}
+ 
+-	combinations[0].limits = limits;
+-	combinations[0].n_limits = n_limits;
+-	combinations[0].max_interfaces = max_interfaces;
+-	combinations[0].num_different_channels = 1;
+-	combinations[0].beacon_int_infra_match = true;
+-	combinations[0].beacon_int_min_gcd = 100;
+-	combinations[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
+-						BIT(NL80211_CHAN_WIDTH_20) |
+-						BIT(NL80211_CHAN_WIDTH_40) |
+-						BIT(NL80211_CHAN_WIDTH_80);
++	comb[0].limits = limits;
++	comb[0].n_limits = n_limits;
++	comb[0].max_interfaces = max_interfaces;
++	comb[0].num_different_channels = 1;
++	comb[0].beacon_int_infra_match = true;
++	comb[0].beacon_int_min_gcd = 100;
++	comb[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
++					BIT(NL80211_CHAN_WIDTH_20) |
++					BIT(NL80211_CHAN_WIDTH_40) |
++					BIT(NL80211_CHAN_WIDTH_80);
+ 
++	return 0;
 +}
 +
- #endif /* _CORE_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index 68abe9d4ab45..9a7df54bf570 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1445,6 +1445,7 @@ static int ath12k_dp_cc_desc_init(struct ath12k_base *ab)
- 		for (j = 0; j < ATH12K_MAX_SPT_ENTRIES; j++) {
- 			rx_descs[j].cookie = ath12k_dp_cc_cookie_gen(cookie_ppt_idx, j);
- 			rx_descs[j].magic = ATH12K_DP_RX_DESC_MAGIC;
-+			rx_descs[j].device_id = ab->device_id;
- 			list_add_tail(&rx_descs[j].list, &dp->rx_desc_free_list);
- 
- 			/* Update descriptor VA in SPT */
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 021cd9e8ee1d..d3f3d39a1cd0 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -287,7 +287,8 @@ struct ath12k_rx_desc_info {
- 	u32 cookie;
- 	u32 magic;
- 	u8 in_use	: 1,
--	   reserved	: 7;
-+	   device_id	: 3,
-+	   reserved	: 4;
- };
- 
- struct ath12k_tx_desc_info {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index d658d4eb1fd7..adbd7bbcef6f 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2601,6 +2601,7 @@ static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
- 	struct sk_buff *msdu;
- 	struct ath12k *ar;
- 	struct ath12k_hw_link *hw_links = ag->hw_links;
-+	struct ath12k_base *partner_ab;
- 	u8 hw_link_id, pdev_id;
- 	int ret;
- 
-@@ -2612,11 +2613,12 @@ static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
- 	while ((msdu = __skb_dequeue(msdu_list))) {
- 		rxcb = ATH12K_SKB_RXCB(msdu);
- 		hw_link_id = rxcb->hw_link_id;
--
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params,
-+		partner_ab = ath12k_ag_to_ab(ag,
-+					     hw_links[hw_link_id].device_id);
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(partner_ab->hw_params,
- 						      hw_links[hw_link_id].pdev_idx);
--		ar = ab->pdevs[pdev_id].ar;
--		if (!rcu_dereference(ab->pdevs_active[pdev_id])) {
-+		ar = partner_ab->pdevs[pdev_id].ar;
-+		if (!rcu_dereference(partner_ab->pdevs_active[pdev_id])) {
- 			dev_kfree_skb_any(msdu);
- 			continue;
- 		}
-@@ -2666,23 +2668,29 @@ static u16 ath12k_dp_rx_get_peer_id(struct ath12k_base *ab,
- int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 			 struct napi_struct *napi, int budget)
- {
--	LIST_HEAD(rx_desc_used_list);
-+	struct ath12k_hw_group *ag = ab->ag;
-+	struct list_head rx_desc_used_list[ATH12K_MAX_SOCS];
-+	struct ath12k_hw_link *hw_links = ag->hw_links;
-+	int num_buffs_reaped[ATH12K_MAX_SOCS] = {};
- 	struct ath12k_rx_desc_info *desc_info;
- 	struct ath12k_dp *dp = &ab->dp;
- 	struct dp_rxdma_ring *rx_ring = &dp->rx_refill_buf_ring;
- 	struct hal_reo_dest_ring *desc;
--	int num_buffs_reaped = 0;
-+	struct ath12k_base *partner_ab;
- 	struct sk_buff_head msdu_list;
- 	struct ath12k_skb_rxcb *rxcb;
- 	int total_msdu_reaped = 0;
-+	u8 hw_link_id, device_id;
- 	struct hal_srng *srng;
- 	struct sk_buff *msdu;
- 	bool done = false;
--	u8 hw_link_id;
- 	u64 desc_va;
- 
- 	__skb_queue_head_init(&msdu_list);
- 
-+	for (device_id = 0; device_id < ATH12K_MAX_SOCS; device_id++)
-+		INIT_LIST_HEAD(&rx_desc_used_list[device_id]);
++static int
++ath12k_mac_setup_global_iface_comb(struct ath12k_hw *ah,
++				   struct wiphy_radio *radio,
++				   u8 n_radio,
++				   struct ieee80211_iface_combination *comb)
++{
++	const struct ieee80211_iface_combination *iter_comb;
++	struct ieee80211_iface_limit *limits;
++	int i, j, n_limits;
++	bool ap, mesh, p2p;
 +
- 	srng = &ab->hal.srng_list[dp->reo_dst_ring[ring_id].ring_id];
- 
- 	spin_lock_bh(&srng->lock);
-@@ -2706,11 +2714,22 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 			   le32_to_cpu(desc->buf_va_lo));
- 		desc_info = (struct ath12k_rx_desc_info *)((unsigned long)desc_va);
- 
-+		device_id = hw_links[hw_link_id].device_id;
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
-+		if (unlikely(!partner_ab)) {
-+			if (desc_info->skb) {
-+				dev_kfree_skb_any(desc_info->skb);
-+				desc_info->skb = NULL;
-+			}
++	if (!n_radio)
++		return 0;
 +
-+			continue;
++	ap = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_AP);
++	p2p = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_P2P_DEVICE);
++	mesh = ath12k_mac_is_iface_mode_enable(ah, NL80211_IFTYPE_MESH_POINT);
++
++	if ((ap || mesh) && !p2p)
++		n_limits = 2;
++	else if (p2p)
++		n_limits = 3;
++	else
++		n_limits = 1;
++
++	limits = kcalloc(n_limits, sizeof(*limits), GFP_KERNEL);
++	if (!limits)
++		return -ENOMEM;
++
++	for (i = 0; i < n_radio; i++) {
++		iter_comb = radio[i].iface_combinations;
++		for (j = 0; j < iter_comb->n_limits && j < n_limits; j++) {
++			limits[j].types |= iter_comb->limits[j].types;
++			limits[j].max += iter_comb->limits[j].max;
 +		}
 +
- 		/* retry manual desc retrieval */
- 		if (!desc_info) {
--			desc_info = ath12k_dp_get_rx_desc(ab, cookie);
-+			desc_info = ath12k_dp_get_rx_desc(partner_ab, cookie);
- 			if (!desc_info) {
--				ath12k_warn(ab, "Invalid cookie in manual descriptor retrieval: 0x%x\n",
-+				ath12k_warn(partner_ab, "Invalid cookie in manual descriptor retrieval: 0x%x\n",
- 					    cookie);
- 				continue;
- 			}
-@@ -2722,14 +2741,14 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 		msdu = desc_info->skb;
- 		desc_info->skb = NULL;
- 
--		list_add_tail(&desc_info->list, &rx_desc_used_list);
-+		list_add_tail(&desc_info->list, &rx_desc_used_list[device_id]);
- 
- 		rxcb = ATH12K_SKB_RXCB(msdu);
--		dma_unmap_single(ab->dev, rxcb->paddr,
-+		dma_unmap_single(partner_ab->dev, rxcb->paddr,
- 				 msdu->len + skb_tailroom(msdu),
- 				 DMA_FROM_DEVICE);
- 
--		num_buffs_reaped++;
-+		num_buffs_reaped[device_id]++;
- 
- 		push_reason = le32_get_bits(desc->info0,
- 					    HAL_REO_DEST_RING_INFO0_PUSH_REASON);
-@@ -2786,8 +2805,17 @@ int ath12k_dp_rx_process(struct ath12k_base *ab, int ring_id,
- 	if (!total_msdu_reaped)
- 		goto exit;
- 
--	ath12k_dp_rx_bufs_replenish(ab, rx_ring, &rx_desc_used_list,
--				    num_buffs_reaped);
-+	for (device_id = 0; device_id < ATH12K_MAX_SOCS; device_id++) {
-+		if (!num_buffs_reaped[device_id])
-+			continue;
-+
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
-+		rx_ring = &partner_ab->dp.rx_refill_buf_ring;
-+
-+		ath12k_dp_rx_bufs_replenish(partner_ab, rx_ring,
-+					    &rx_desc_used_list[device_id],
-+					    num_buffs_reaped[device_id]);
++		comb->max_interfaces += iter_comb->max_interfaces;
++		comb->num_different_channels += iter_comb->num_different_channels;
++		comb->radar_detect_widths |= iter_comb->radar_detect_widths;
 +	}
- 
- 	ath12k_dp_rx_process_received_packets(ab, napi, &msdu_list,
- 					      ring_id);
-@@ -3477,7 +3505,9 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 			     int budget)
- {
- 	struct ath12k_hw_group *ag = ab->ag;
-+	struct list_head rx_desc_used_list[ATH12K_MAX_SOCS];
- 	u32 msdu_cookies[HAL_NUM_RX_MSDUS_PER_LINK_DESC];
-+	int num_buffs_reaped[ATH12K_MAX_SOCS] = {};
- 	struct dp_link_desc_bank *link_desc_banks;
- 	enum hal_rx_buf_return_buf_manager rbm;
- 	struct hal_rx_msdu_link *link_desc_va;
-@@ -3486,11 +3516,10 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 	struct dp_rxdma_ring *rx_ring;
- 	struct dp_srng *reo_except;
- 	struct ath12k_hw_link *hw_links = ag->hw_links;
--	LIST_HEAD(rx_desc_used_list);
-+	struct ath12k_base *partner_ab;
-+	u8 hw_link_id, device_id;
- 	u32 desc_bank, num_msdus;
- 	struct hal_srng *srng;
--	struct ath12k_dp *dp;
--	u8 hw_link_id;
- 	struct ath12k *ar;
- 	dma_addr_t paddr;
- 	bool is_frag;
-@@ -3500,9 +3529,10 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 	tot_n_bufs_reaped = 0;
- 	quota = budget;
- 
--	dp = &ab->dp;
--	reo_except = &dp->reo_except_ring;
--	link_desc_banks = dp->link_desc_banks;
-+	for (device_id = 0; device_id < ATH12K_MAX_SOCS; device_id++)
-+		INIT_LIST_HEAD(&rx_desc_used_list[device_id]);
 +
-+	reo_except = &ab->dp.reo_except_ring;
- 
- 	srng = &ab->hal.srng_list[reo_except->ring_id];
- 
-@@ -3525,21 +3555,24 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 
- 		hw_link_id = le32_get_bits(reo_desc->info0,
- 					   HAL_REO_DEST_RING_INFO0_SRC_LINK_ID);
-+		device_id = hw_links[hw_link_id].device_id;
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
- 
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params,
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(partner_ab->hw_params,
- 						      hw_links[hw_link_id].pdev_idx);
--		ar = ab->pdevs[pdev_id].ar;
-+		ar = partner_ab->pdevs[pdev_id].ar;
- 
-+		link_desc_banks = partner_ab->dp.link_desc_banks;
- 		link_desc_va = link_desc_banks[desc_bank].vaddr +
- 			       (paddr - link_desc_banks[desc_bank].paddr);
- 		ath12k_hal_rx_msdu_link_info_get(link_desc_va, &num_msdus, msdu_cookies,
- 						 &rbm);
--		if (rbm != dp->idle_link_rbm &&
-+		if (rbm != partner_ab->dp.idle_link_rbm &&
- 		    rbm != HAL_RX_BUF_RBM_SW3_BM &&
--		    rbm != ab->hw_params->hal_params->rx_buf_rbm) {
-+		    rbm != partner_ab->hw_params->hal_params->rx_buf_rbm) {
- 			ab->soc_stats.invalid_rbm++;
- 			ath12k_warn(ab, "invalid return buffer manager %d\n", rbm);
--			ath12k_dp_rx_link_desc_return(ab, reo_desc,
-+			ath12k_dp_rx_link_desc_return(partner_ab, reo_desc,
- 						      HAL_WBM_REL_BM_ACT_REL_MSDU);
- 			continue;
- 		}
-@@ -3549,20 +3582,26 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 
- 		/* Process only rx fragments with one msdu per link desc below, and drop
- 		 * msdu's indicated due to error reasons.
-+		 * Dynamic fragmentation not supported in Multi-link client, so drop the
-+		 * partner device buffers.
- 		 */
--		if (!is_frag || num_msdus > 1) {
-+		if (!is_frag || num_msdus > 1 ||
-+		    partner_ab->device_id != ab->device_id) {
- 			drop = true;
++	comb->limits = limits;
++	comb->n_limits = n_limits;
++	comb->beacon_int_infra_match = true;
++	comb->beacon_int_min_gcd = 100;
 +
- 			/* Return the link desc back to wbm idle list */
--			ath12k_dp_rx_link_desc_return(ab, reo_desc,
-+			ath12k_dp_rx_link_desc_return(partner_ab, reo_desc,
- 						      HAL_WBM_REL_BM_ACT_PUT_IN_IDLE);
- 		}
- 
- 		for (i = 0; i < num_msdus; i++) {
- 			if (!ath12k_dp_process_rx_err_buf(ar, reo_desc,
--							  &rx_desc_used_list,
-+							  &rx_desc_used_list[device_id],
- 							  drop,
--							  msdu_cookies[i]))
-+							  msdu_cookies[i])) {
-+				num_buffs_reaped[device_id]++;
- 				tot_n_bufs_reaped++;
-+			}
- 		}
- 
- 		if (tot_n_bufs_reaped >= quota) {
-@@ -3578,10 +3617,17 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 
- 	spin_unlock_bh(&srng->lock);
- 
--	rx_ring = &dp->rx_refill_buf_ring;
-+	for (device_id = 0; device_id < ATH12K_MAX_SOCS; device_id++) {
-+		if (!num_buffs_reaped[device_id])
-+			continue;
- 
--	ath12k_dp_rx_bufs_replenish(ab, rx_ring, &rx_desc_used_list,
--				    tot_n_bufs_reaped);
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
-+		rx_ring = &partner_ab->dp.rx_refill_buf_ring;
++	return 0;
++}
 +
-+		ath12k_dp_rx_bufs_replenish(partner_ab, rx_ring,
-+					    &rx_desc_used_list[device_id],
-+					    num_buffs_reaped[device_id]);
++static
++void ath12k_mac_cleanup_iface_comb(const struct ieee80211_iface_combination *iface_comb)
++{
++	kfree(iface_comb[0].limits);
++	kfree(iface_comb);
++}
++
++static void ath12k_mac_cleanup_iface_combinations(struct ath12k_hw *ah)
++{
++	struct wiphy *wiphy = ah->hw->wiphy;
++	const struct wiphy_radio *radio;
++	int i;
++
++	if (wiphy->n_radio > 0) {
++		radio = wiphy->radio;
++		for (i = 0; i < wiphy->n_radio; i++)
++			ath12k_mac_cleanup_iface_comb(radio[i].iface_combinations);
++
++		kfree(wiphy->radio);
 +	}
- 
- 	return tot_n_bufs_reaped;
- }
-@@ -3798,7 +3844,8 @@ static void ath12k_dp_rx_wbm_err(struct ath12k *ar,
- int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 				 struct napi_struct *napi, int budget)
- {
--	LIST_HEAD(rx_desc_used_list);
-+	struct list_head rx_desc_used_list[ATH12K_MAX_SOCS];
-+	struct ath12k_hw_group *ag = ab->ag;
- 	struct ath12k *ar;
- 	struct ath12k_dp *dp = &ab->dp;
- 	struct dp_rxdma_ring *rx_ring;
-@@ -3808,18 +3855,22 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 	struct sk_buff_head msdu_list, scatter_msdu_list;
- 	struct ath12k_skb_rxcb *rxcb;
- 	void *rx_desc;
--	u8 hw_link_id;
--	int num_buffs_reaped = 0;
-+	int num_buffs_reaped[ATH12K_MAX_SOCS] = {};
-+	int total_num_buffs_reaped = 0;
- 	struct ath12k_rx_desc_info *desc_info;
--	struct ath12k_hw_link *hw_links = ab->ag->hw_links;
-+	struct ath12k_hw_link *hw_links = ag->hw_links;
-+	struct ath12k_base *partner_ab;
-+	u8 hw_link_id, device_id;
- 	int ret, pdev_id;
- 	struct hal_rx_desc *msdu_data;
- 
- 	__skb_queue_head_init(&msdu_list);
- 	__skb_queue_head_init(&scatter_msdu_list);
- 
-+	for (device_id = 0; device_id < ATH12K_MAX_SOCS; device_id++)
-+		INIT_LIST_HEAD(&rx_desc_used_list[device_id]);
 +
- 	srng = &ab->hal.srng_list[dp->rx_rel_ring.ring_id];
--	rx_ring = &dp->rx_refill_buf_ring;
- 	spin_lock_bh(&srng->lock);
- 
- 	ath12k_hal_srng_access_begin(ab, srng);
-@@ -3855,14 +3906,27 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 		msdu = desc_info->skb;
- 		desc_info->skb = NULL;
- 
--		list_add_tail(&desc_info->list, &rx_desc_used_list);
-+		device_id = desc_info->device_id;
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
-+		if (unlikely(!partner_ab)) {
-+			dev_kfree_skb_any(msdu);
++	ath12k_mac_cleanup_iface_comb(wiphy->iface_combinations);
++}
 +
-+			/* In any case continuation bit is set
-+			 * in the previous record, cleanup scatter_msdu_list
-+			 */
-+			ath12k_dp_clean_up_skb_list(&scatter_msdu_list);
-+			continue;
++static int ath12k_mac_setup_iface_combinations(struct ath12k_hw *ah)
++{
++	struct ieee80211_iface_combination *combinations, *comb;
++	struct wiphy *wiphy = ah->hw->wiphy;
++	struct wiphy_radio *radio;
++	struct ath12k *ar;
++	int i, ret;
++
++	combinations = kzalloc(sizeof(*combinations), GFP_KERNEL);
++	if (!combinations)
++		return -ENOMEM;
++
++	if (ah->num_radio == 1) {
++		ret = ath12k_mac_setup_radio_iface_comb(&ah->radio[0],
++							combinations);
++		if (ret) {
++			ath12k_hw_warn(ah, "failed to setup radio interface combinations for one radio: %d",
++				       ret);
++			goto err_free_combinations;
 +		}
 +
-+		list_add_tail(&desc_info->list, &rx_desc_used_list[device_id]);
- 
- 		rxcb = ATH12K_SKB_RXCB(msdu);
--		dma_unmap_single(ab->dev, rxcb->paddr,
-+		dma_unmap_single(partner_ab->dev, rxcb->paddr,
- 				 msdu->len + skb_tailroom(msdu),
- 				 DMA_FROM_DEVICE);
- 
--		num_buffs_reaped++;
-+		num_buffs_reaped[device_id]++;
-+		total_num_buffs_reaped++;
- 
- 		if (!err_info.continuation)
- 			budget--;
-@@ -3886,9 +3950,9 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 			continue;
- 		}
- 
--		hw_link_id = ath12k_dp_rx_get_msdu_src_link(ab,
-+		hw_link_id = ath12k_dp_rx_get_msdu_src_link(partner_ab,
- 							    msdu_data);
--		if (hw_link_id >= MAX_RADIOS) {
-+		if (hw_link_id >= ATH12K_GROUP_MAX_RADIO) {
- 			dev_kfree_skb_any(msdu);
- 
- 			/* In any case continuation bit is set
-@@ -3924,20 +3988,39 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 
- 	spin_unlock_bh(&srng->lock);
- 
--	if (!num_buffs_reaped)
-+	if (!total_num_buffs_reaped)
- 		goto done;
- 
--	ath12k_dp_rx_bufs_replenish(ab, rx_ring, &rx_desc_used_list,
--				    num_buffs_reaped);
-+	for (device_id = 0; device_id < ATH12K_MAX_SOCS; device_id++) {
-+		if (!num_buffs_reaped[device_id])
-+			continue;
-+
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
-+		rx_ring = &partner_ab->dp.rx_refill_buf_ring;
-+
-+		ath12k_dp_rx_bufs_replenish(ab, rx_ring,
-+					    &rx_desc_used_list[device_id],
-+					    num_buffs_reaped[device_id]);
++		goto out;
 +	}
- 
- 	rcu_read_lock();
- 	while ((msdu = __skb_dequeue(&msdu_list))) {
- 		rxcb = ATH12K_SKB_RXCB(msdu);
- 		hw_link_id = rxcb->hw_link_id;
- 
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params,
-+		device_id = hw_links[hw_link_id].device_id;
-+		partner_ab = ath12k_ag_to_ab(ag, device_id);
-+		if (unlikely(!partner_ab)) {
-+			ath12k_dbg(ab, ATH12K_DBG_DATA,
-+				   "Unable to process WBM error msdu due to invalid hw link id %d device id %d\n",
-+				   hw_link_id, device_id);
-+			dev_kfree_skb_any(msdu);
-+			continue;
++
++	/* there are multiple radios */
++
++	radio = kcalloc(ah->num_radio, sizeof(*radio), GFP_KERNEL);
++	if (!radio) {
++		ret = -ENOMEM;
++		goto err_free_combinations;
++	}
++
++	for_each_ar(ah, ar, i) {
++		comb = kzalloc(sizeof(*comb), GFP_KERNEL);
++		if (!comb) {
++			ret = -ENOMEM;
++			goto err_free_radios;
 +		}
 +
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(partner_ab->hw_params,
- 						      hw_links[hw_link_id].pdev_idx);
--		ar = ab->pdevs[pdev_id].ar;
-+		ar = partner_ab->pdevs[pdev_id].ar;
++		ret = ath12k_mac_setup_radio_iface_comb(ar, comb);
++		if (ret) {
++			ath12k_hw_warn(ah, "failed to setup radio interface combinations for radio %d: %d",
++				       i, ret);
++			kfree(comb);
++			goto err_free_radios;
++		}
++
++		radio[i].freq_range = &ar->freq_range;
++		radio[i].n_freq_range = 1;
++
++		radio[i].iface_combinations = comb;
++		radio[i].n_iface_combinations = 1;
++	}
++
++	ret = ath12k_mac_setup_global_iface_comb(ah, radio, ah->num_radio, combinations);
++	if (ret) {
++		ath12k_hw_warn(ah, "failed to setup global interface combinations: %d",
++			       ret);
++		goto err_free_all_radios;
++	}
++
++	wiphy->radio = radio;
++	wiphy->n_radio = ah->num_radio;
++
++out:
+ 	wiphy->iface_combinations = combinations;
+ 	wiphy->n_iface_combinations = 1;
  
- 		if (!ar || !rcu_dereference(ar->ab->pdevs_active[hw_link_id])) {
- 			dev_kfree_skb_any(msdu);
-@@ -3952,7 +4035,7 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 	}
- 	rcu_read_unlock();
- done:
--	return num_buffs_reaped;
-+	return total_num_buffs_reaped;
+ 	return 0;
++
++err_free_all_radios:
++	i = ah->num_radio;
++
++err_free_radios:
++	while (i--)
++		ath12k_mac_cleanup_iface_comb(radio[i].iface_combinations);
++
++	kfree(radio);
++
++err_free_combinations:
++	kfree(combinations);
++
++	return ret;
  }
  
- void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab)
+ static const u8 ath12k_if_types_ext_capa[] = {
 -- 
 2.39.5
 
