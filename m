@@ -4,64 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4FA7E7717D
-	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 13:03:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B48F5E7717D
+	for <ath12k@archiver.kernel.org>; Mon,  9 Dec 2024 13:04:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SNwBuht7FhTBA/F8tncqQ0NXqKJ5PnM66BVFntIZ6lo=; b=N+OlxpBpGpZyc+pxN+6YsPvnH2
-	ExiIaYmXlnO36BWA5RPHeQlK/RgPgqNLYI8ONM/qzORzHMUZIYf/m77F/b5jmQK+ofULWcmXzpZJy
-	RhiRZuDx+7hqmWdA6dArcE/wRdbJVWHD38/nUKuYHM+YwTD5U8h+9reSciXoUJtDEPtL85s7AxFpm
-	s6knDrjuFpER5RyzlNw8YqmGpJi/PyrztjGBT980oWW65Oj5SGE8hjNL2l+5RAwRaglhleSvHlL10
-	ab9PXa1XyMr5rINmckzjCXmpzlrT2OUc8aj/6eIGjPMM9ur9RY//wwh+tmtGk/PGaPjmNAST7gf9o
-	lQgKXNQA==;
+	bh=A2vNloXBDZaOIPNf+sHVtg6wPKoGLyZBHGP0RStlEPg=; b=2WYykfQB+ekvfLon5a/MvvevXC
+	A2JC25LQHAgOKdVremNVYyAwIBIcP3UwSWE40KtwQM0+mJiL5HWvDC4SQ4Zz6ia2qQ+XssbOumsI8
+	iXADabnmw3tPvhH0jXWduYpqXD7LbBxUfekJzZZGuI+Tu9skhDjj/oLDaY15OmN7m5QPPE15vp3tp
+	2tAGj2uv6y2ZZrGDtnYqn8XLzDkLqiRocvMhST35RnP7HotyvjaKvzAOi9vczPdIAO8NfCvVAm2CF
+	MkxYtUJPRDScySYnVIswNs8Ci9U93gEyfp+SVQ39ngYll6JRgO4oXb+a5mOdi8swzXktXa59Se/tJ
+	lg4i3MAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKdQD-00000007qwh-2321
+	id 1tKdRE-00000007rFt-26F0
 	for ath12k@archiver.kernel.org;
-	Mon, 09 Dec 2024 13:03:33 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Mon, 09 Dec 2024 13:04:36 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKd2W-00000007k92-2mcX
+	id 1tKd3g-00000007keV-1UTC
 	for ath12k@lists.infradead.org;
-	Mon, 09 Dec 2024 12:39:06 +0000
+	Mon, 09 Dec 2024 12:40:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 90CEF5C547C;
-	Mon,  9 Dec 2024 12:38:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF7AAC4CEE0;
-	Mon,  9 Dec 2024 12:39:02 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 0BA17A41501;
+	Mon,  9 Dec 2024 12:38:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B271C4CED1;
+	Mon,  9 Dec 2024 12:40:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733747943;
-	bh=ngU9mgDLiPW+Jj5JFXStLmp9bwIcUT+Lp2fVYZwvnaE=;
+	s=k20201202; t=1733748015;
+	bh=0mvBxn0PSgu6FsrYzgn8Ezm4CL9y/d3xpE2xs78uGIc=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=QyqIyZCmuZb9Qxx5I66VshErpU7xl/PRW4CyjuqoL+eiEgwTzfR/4eqUtMy8PLoL4
-	 53MKH5EtC8ymyhhCisLgTWXOVR2id9VJqx9SJKn6i94cdDXbQazx6NC4GYKpkLw5nM
-	 /qETwoTZFO84D4QoUEozz/jBUmJXfAv9NsQxjRInCkwySFBSubt7pS8dAV1MrU7m/D
-	 SYSLHhTlNRMYn0XZIsMOGQlfqH6YUv42gBhZk4/GVNYa0Z9LTp61ioMTbLvPQO0frS
-	 rTXxa0TtcAcVxAF6q7IjYrBuKV2vN6FRlI/b8Ogewo21spA6+gx7UKz2yhva2boTCe
-	 7SxQuS3O74zXg==
+	b=DvKX0PSSLEL7SzgRIFSjtJnTkDB+faBBGcovuhW2QCWLjthDYv0xCKQ9i/JhKK7NL
+	 RuUXsQvFItOVdv5YTFk5qjZiWrmUfZjbJr7LbZhUTuDuqpaQZlj0laXNSkwM49KiGJ
+	 +xTgITS+ALwCcaIL+hSC7/eYLCx+q2hZlO7YIKRBlnRevXIeVtTwBeoak0a+VieG4Y
+	 YLYQT4+USZ9++lEbMsAowxhEOo60/uJ2qHZgZqRmqYAF4cnQ1yZH9ZvnKRvAiEgX/R
+	 RGlJvl/PS+kQW+3KFLCn6LTqHIY8pSTEPmH9J9s9pwXcdVpj9qE5yj8+NV0CwKSnNK
+	 6Q2hNQcy62axQ==
 From: Kalle Valo <kvalo@kernel.org>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>,
-  ath12k@lists.infradead.org,  linux-wireless@vger.kernel.org,
-  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH wireless-next] wifi: ath12k: Fix out-of-bounds read
-References: <20241206073542.315095-1-dheeraj.linuxdev@gmail.com>
-	<8c019176-6bb5-467c-bcea-10517675de7d@oss.qualcomm.com>
-Date: Mon, 09 Dec 2024 14:39:00 +0200
-In-Reply-To: <8c019176-6bb5-467c-bcea-10517675de7d@oss.qualcomm.com> (Jeff
-	Johnson's message of "Fri, 6 Dec 2024 12:06:51 -0800")
-Message-ID: <87v7vtrpy3.fsf@kernel.org>
+To: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
+Cc: ath12k@lists.infradead.org,  jjohnson@kernel.org,
+  linux-wireless@vger.kernel.org,  linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 wireless-next] wifi: ath12k: Fix out-of-bounds read
+ in ath12k_mac_vdev_create
+References: <20241207071306.325641-1-dheeraj.linuxdev@gmail.com>
+Date: Mon, 09 Dec 2024 14:40:12 +0200
+In-Reply-To: <20241207071306.325641-1-dheeraj.linuxdev@gmail.com> (Dheeraj
+	Reddy Jonnalagadda's message of "Sat, 7 Dec 2024 12:43:06 +0530")
+Message-ID: <87r06hrpw3.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_043904_753649_3762D891 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241209_044016_458535_DDA5C9F5 
+X-CRM114-Status: GOOD (  18.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,17 +74,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com> writes:
+Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com> writes:
 
-> On 12/5/2024 11:35 PM, Dheeraj Reddy Jonnalagadda wrote:
+> Add a bounds check to ath12k_mac_vdev_create() to prevent an out-of-bounds
+> read in the vif->link_conf array. The function uses link_id, derived from
+> arvif->link_id, to index the array. When link_id equals 15, the index
+> exceeds the bounds of the array, which contains only 15 elements.
 >
-> The subject should be as specific as possible while still fitting on one line.
-> Ideally the subject should be unique. So at a minimum I'd add "in
-> ath12k_mac_vdev_create()"
+> This issue occurs in the following code branch:
+>
+>     if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
+>         link_id = ffs(vif->valid_links) - 1;
+>     else
+>         link_id = arvif->link_id;
+>
+> When the first condition in the if statement is true and the second
+> condition is false, it implies that arvif->link_id equals 15 and
+> the else branch is taken, where link_id is set to 15, causing an
+> out-of-bounds access when vif->link_conf array is read using link_id
+> as index.
+>
+> Add a check to ensure that link_id does not exceed the valid range of the
+> vif->link_conf array. Log a warning and return -EINVAL if the check fails
+> to prevent undefined behavior.
+>
+> Changelog:
+>
+> v2:
+> 	- Updated the commit message as per the reviewer's suggestions
+> 	- Clarified the description of the bug in the commit message
+> 	- Added Fixes and Closes tags with relevant information
+>
+> Fixes: 90570ba4610 ("wifi: ath12k: do not return invalid link id for scan link")
+> Closes: https://scan7.scan.coverity.com/#/project-view/52337/11354?selectedIssue=1602214
+>
+> Signed-off-by: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
+> ---
 
-Nitpicking but sometimes I add the function name in front ('wifi:
-ath12k: ath12k_mac_foo(): fix bar'), that way no need to add the 'in'
-word. But this is just cosmetics, either way is fine.
+In wireless we prefer to have changelog after the '---' line so it's not
+included in git. Not sure if Jeff can fix this during commit or not.
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
