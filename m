@@ -4,90 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BD7CE7717F
-	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 06:47:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ADA5E7717F
+	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 07:18:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9F3pZqw2ZQnJtyHMhelYfJPEZgidNRK1W5f7+6gzfcQ=; b=hqYtgWdxSNOm5jyRLkKK1D9AU/
-	nORgjj+qRzVTCSYRUloxzjBXCQUoNlO5I4TvjgSjuayMjuGjB0VHW5mIYUdWBwYc2+i2Qd8f0pSbO
-	jhUIFDlygF3nsyCcch50iMOq6oFenwxlZ4vymwwOU5TI/Bw4Hb6jAXRgcwY3X9STpkVnOm9Ci04dr
-	1zfwdnQv4Mq8Li69e/Z1wN2acXpKAtDpdZ/QQF33bckOjt5AT+0ylH5sepfuwZ+JZBFI2kSH/J0yq
-	J2zYAsckfbZi2VNS1LIaWx90TC2GFrPtpXcbpm/GOZY5NDYJrz7paC1IdQvbvtz3kE4F9xjrqhnkx
-	q7H+n6Ng==;
+	bh=kpdBOLBn1qHn+stW41aS+i+jt19Ep8DoAEPs//v6D08=; b=toYpBsv1K5cY0ESyEkAskK9ND+
+	nQqJQIQ7iK4J4R5ks3Hg4x/4OjbkZLW9HO1jTgdGh0Qy0XjTzNyJNzxYY6axZjJLVHmTspmTgkifW
+	SYrTPzpJlArXgCSCZPesCZDEsPAMnasE7+xwzmUVm2At9T5qhA0g7PO+vMDgQ/UcDD8y0mbprwEfS
+	lEPWCWttAO6i0qf4nZYy41sTOn3Y449Itx6fyq0K+5BJWODyes+JIgte5K0jxGiaUOAoZjQo6PnBF
+	1+Fvmwo3zKY7IGVeqDiV+f3ZID3AAQ3IuFkREPdJ4cQzvZIxNMuU6YbkoAFJJXzA/5M8Jln+WsGtw
+	1IZi3fyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKu1o-0000000ATL6-16Nh
+	id 1tKuWI-0000000AX3L-1hyO
 	for ath12k@archiver.kernel.org;
-	Tue, 10 Dec 2024 06:47:28 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 10 Dec 2024 07:18:58 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKu1k-0000000ATKd-3vTs
+	id 1tKuWG-0000000AX2f-0Z9y
 	for ath12k@lists.infradead.org;
-	Tue, 10 Dec 2024 06:47:26 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BA6K8cI028717;
-	Tue, 10 Dec 2024 06:47:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9F3pZqw2ZQnJtyHMhelYfJPEZgidNRK1W5f7+6gzfcQ=; b=GRQ6iJSvafh8Wmj8
-	gOJ8lGrftZ18LowL9zpkgr/kFIHzfym7FjOPDBI8AYtDsKVsg5g+g9ZxKzsw+Jqn
-	USw5lA/xfwZiLBMfYLW7iOR8dOdLmE8+2RUUfZ7l5MVear28nnNUNEbpcAGCLaZ3
-	dn5nT/bdTbU7k7R0PNuJQf37oof6C6XX3TshIhkO6zIZH3yI1Zo4o7HT1uYESw39
-	7MnMZ+1vhpjmlJqRyBj/Wp1yGEG+IytUcXWpFbIrKtZKkEzx+YwJ5oMFyqo+yD5i
-	lfpkDJU1/zlEKL+yk/bdhnwqdb9m7iz9esHC4XgyrGZRc0XL4ztKQ2CsOmYwNwB8
-	dLnemQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43eg9eg25g-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 10 Dec 2024 06:47:19 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BA6lJlg032576
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 10 Dec 2024 06:47:19 GMT
-Received: from [10.216.0.222] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 9 Dec 2024
- 22:47:16 -0800
-Message-ID: <3ed0ccbf-1ce8-7429-151c-d21eb5311f6a@quicinc.com>
-Date: Tue, 10 Dec 2024 12:17:13 +0530
+	Tue, 10 Dec 2024 07:18:57 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1C4C65C48B9;
+	Tue, 10 Dec 2024 07:18:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E1D8C4CED6;
+	Tue, 10 Dec 2024 07:18:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1733815135;
+	bh=kpdBOLBn1qHn+stW41aS+i+jt19Ep8DoAEPs//v6D08=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=CaR+Yo+Vcj7WV1EsBZ4N9nSp1jc+CQ+wur9Xx+YBqC8r92HWSjSy6yLLucpNyDvVQ
+	 W/cZtzfFX+G65MijvNEPKZc1NHJfLX3Ch51+QeOIpgC2tZc7jxWUSM75LdTfMFxtEZ
+	 AhJxUJpudXVgHmlGeSJWLk8Seh0y/MdEHzw8N7/yCYLlld+yCpZ+imkns3J2kcb2Sh
+	 b1xWZ6rPc0bLRimgcTr50S48h1wNd2FXSc7NV7fSq7EkoHnc9haKRKmlhHl1V0s6ws
+	 0RF9s2qIwI5V9SPyvAiEQlX+93H9PMeSAVnfDWMlDk3iZvLxqcxNZNOZkK02FVs39+
+	 ThdN3dSooM6mQ==
+Message-ID: <a522df49-5628-4ec1-8ea7-d27cb7fa3bff@kernel.org>
+Date: Tue, 10 Dec 2024 08:18:49 +0100
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH v2 wireless-next] wifi: ath12k: Fix out-of-bounds read in
- ath12k_mac_vdev_create
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 01/13] dt-bindings: net: wireless: describe the ath12k
+ AHB module
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ linux-kernel@vger.kernel.org
+References: <20241209165644.1680167-1-quic_rajkbhag@quicinc.com>
+ <20241209165644.1680167-2-quic_rajkbhag@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-To: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>,
-        <kvalo@kernel.org>, <ath12k@lists.infradead.org>
-CC: <jjohnson@kernel.org>, <linux-wireless@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20241207071306.325641-1-dheeraj.linuxdev@gmail.com>
-From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-In-Reply-To: <20241207071306.325641-1-dheeraj.linuxdev@gmail.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20241209165644.1680167-2-quic_rajkbhag@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: j9NyINFhCAzci3chAL6vrGITh3fJetCJ
-X-Proofpoint-ORIG-GUID: j9NyINFhCAzci3chAL6vrGITh3fJetCJ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011
- priorityscore=1501 phishscore=0 spamscore=0 mlxscore=0 suspectscore=0
- bulkscore=0 lowpriorityscore=0 impostorscore=0 adultscore=0
- mlxlogscore=437 malwarescore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2411120000 definitions=main-2412100050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_224724_988268_8B4A3CFF 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20241209_231856_305288_B67EF545 
+X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,31 +122,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 09/12/2024 17:56, Raj Kumar Bhagat wrote:
+> Add device-tree bindings for the ATH12K AHB module found in the IPQ5332
+> device.
 
 
-On 12/7/2024 12:43 PM, Dheeraj Reddy Jonnalagadda wrote:
-> Add a bounds check to ath12k_mac_vdev_create() to prevent an out-of-bounds
-> read in the vif->link_conf array. The function uses link_id, derived from
-> arvif->link_id, to index the array. When link_id equals 15, the index
-> exceeds the bounds of the array, which contains only 15 elements.
-> 
-> This issue occurs in the following code branch:
-> 
->      if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
->          link_id = ffs(vif->valid_links) - 1;
->      else
->          link_id = arvif->link_id;
-> 
-> When the first condition in the if statement is true and the second
-> condition is false, it implies that arvif->link_id equals 15 and
-> the else branch is taken, where link_id is set to 15, causing an
-> out-of-bounds access when vif->link_conf array is read using link_id
-> as index.
+Please start using b4... Not tested, so no review.
 
-Practically this can not happen as ath12k_mac_assign_link_vif() which
-retrieves the arvif by link_id before calling ath12k_mac_vdev_create()
-sanitizes the link_id when there are no valid_links running for that
-vif (!vif->valid_links).
 
-Vasanth
+<form letter>
+Please use scripts/get_maintainers.pl to get a list of necessary people
+and lists to CC. It might happen, that command when run on an older
+kernel, gives you outdated entries. Therefore please be sure you base
+your patches on recent Linux kernel.
+
+Tools like b4 or scripts/get_maintainer.pl provide you proper list of
+people, so fix your workflow. Tools might also fail if you work on some
+ancient tree (don't, instead use mainline) or work on fork of kernel
+(don't, instead use mainline). Just use b4 and everything should be
+fine, although remember about `b4 prep --auto-to-cc` if you added new
+patches to the patchset.
+
+You missed at least devicetree list (maybe more), so this won't be
+tested by automated tooling. Performing review on untested code might be
+a waste of time.
+
+Please kindly resend and include all necessary To/Cc entries.
+</form letter>
+
+Best regards,
+Krzysztof
 
