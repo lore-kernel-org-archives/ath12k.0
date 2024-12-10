@@ -4,86 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EE9AE7717F
-	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 04:19:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5627E7717F
+	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 04:50:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=da6AsHE3Yk7Iu5Y2wCs+pnA5htOu4IQpp1PaojY+e3U=; b=T8J3ewTMPFvHDh77e+bcSFSOqt
-	NGP6Bij8WF1XNuHjtQ8Y9iL71P4z9igHVSNj9McFSMotEWYmTOeU6pfXsJeBOjjquSAEjOkuZL64z
-	U0GdEA4078srT1Z57BB+1VV/xriyD+M9try5G9H/og90DKZkIC7FS1UcE6WhekOIdqMJ/q+huCa3u
-	VmnrTXODAhoivYxVeAX4WnjaqhECK6KqWaoW1zsA15dDlkD1TDOjMqZypoTMdanRIbBTcIHPcZqx4
-	PMFmhurwOUgZm9NkxtxDq5SEoYc2jmKEdJU4y2zPEBw/4tpUNaUUHFJwVt+V2YqEYChV2sviDSW0W
-	RMzRRWVg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=LuuYdInP7eOBnrgKXv1aGjEPQhcydVxdMGklxB39e1A=; b=CZ/6i9T5l5lT7CHnFJf3zMb2wC
+	htM04PM4Xp3wYUISb+MarzHSwZqzDQR1PYDzpT1V912iqckaLKwtUJXLEpEiwKdWfsItmstM83NTe
+	4KAnsjVSto3TnbEU7Dhf2HxmbY+C5QCjw1kCro4Z4k9wDEyJvExjO/4R6G2h+jmoB+OBR98Odj84p
+	NsKXEvgpjTSumz4xNpHzfOXBbTJ3G79xlXZrBMERXJN2wwG1gQJte0VY3DAaYau73wf4HbVezuzzo
+	UFo5CWMX++LdlK+TfgGYQ1eVqmiUbI24WlhwAn7MiNIpzSijVqUcmJm04f3nZpkptU4IxQHTOiAE1
+	70huDeQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKriL-0000000ABMx-1h1V
+	id 1tKsCP-0000000ADoL-1wRQ
 	for ath12k@archiver.kernel.org;
-	Tue, 10 Dec 2024 04:19:13 +0000
-Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
+	Tue, 10 Dec 2024 04:50:17 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKriI-0000000ABMT-0Wh3
+	id 1tKsCM-0000000ADnr-441c
 	for ath12k@lists.infradead.org;
-	Tue, 10 Dec 2024 04:19:11 +0000
-Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-216401de828so17414315ad.3
-        for <ath12k@lists.infradead.org>; Mon, 09 Dec 2024 20:19:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1733804349; x=1734409149; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=da6AsHE3Yk7Iu5Y2wCs+pnA5htOu4IQpp1PaojY+e3U=;
-        b=KJxnRl2PlTZJLYd0wg/7vZhKqlkw98IyXp3dAgPoXUOT+IHnKWkaOXqgRhjwS8QU8W
-         HgopQ+P65dJ+PQLCDnqv0OQJyS8TgVDXQbZzajXomfWHJxq2iA+1639/tzsbEgJO2UJx
-         AL2JfiOPB0v3gBgJJrUqZ1m834fO0kh/A7XKGzEBs4y973a5QC8Ocp37X06Qc9bynoAv
-         NmRBu0TctFPVT6fxYYp3VPPxNd5ySXzOTW+sSjNAi22wEMxPljFj/HPkTF1YftLoD4Ss
-         VQqL+eapytk5feLRzjiXOESzthVeZKlr6WJbUs6FtzH3liguBMj4M+WfDBJQmMfNzzwn
-         KkYw==
+	Tue, 10 Dec 2024 04:50:16 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BA3WO5a020687
+	for <ath12k@lists.infradead.org>; Tue, 10 Dec 2024 04:50:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	LuuYdInP7eOBnrgKXv1aGjEPQhcydVxdMGklxB39e1A=; b=oAMMHS813WBACQMy
+	t8JxGAc02X/1I3bzorg1ZOCwyZ85Om2gKLX0v+GSHj0827OaEdMJqSXW+DYFQ3pX
+	frwPS/PrkmodWU8vN0fajgPyMv94rT6VSL3nyclWubk2xdljhqHGDXcjaN47dP2+
+	BA+O3lZRScqyRD7khMDQU3dc57gY9DeTR+YLwRVBfhNcbAjJA01QT/KObMkmYjnc
+	Db6n0NU9IS4TjgCJCnmJlV+Mv0wy4Y6JvWQiQRe4mnlZ0K+SxSbT/WiO0MJ4lM83
+	T6Kwy3xFXWjtYd6K+eiGtv0d+YZWfMJvs3W3cDQHKq1MXodKW+Fk15CV8V5gjx7q
+	p9MxIA==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43e3419uc9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 10 Dec 2024 04:50:13 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-7fd3c241975so2058685a12.0
+        for <ath12k@lists.infradead.org>; Mon, 09 Dec 2024 20:50:13 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733804349; x=1734409149;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=da6AsHE3Yk7Iu5Y2wCs+pnA5htOu4IQpp1PaojY+e3U=;
-        b=HOod4/K0F/ddj7vsc6wkWTs+ftQv11pEJuE/KUKn1j+KagEOTafC+3WOiMc1waok3q
-         RK2UGRUOVne3uT35Q2+ky0RlE+8jERUDklOveNNYUwJ8Mp+BKxbhJWlh3At77/JX0Yv3
-         Mt060/O14LkwmGmNUeFupGSEsn1yiyc8l3Cr0r7oSgHNB4rnDxdP+AQbA+JHPktgk88v
-         kXrEQzEOGQBgDNwKv66OgKbZBKQQVY7EcCAmBP4YLtuAe7UBUOWhThCswtknjNQ7fm4N
-         jyr1b407UkGyuCbfDT0a82zambYCCP9u0lvGpHKOnjO7s+NDwreyWMwo/CBrc3xHA6Zq
-         +3Gw==
-X-Forwarded-Encrypted: i=1; AJvYcCXXpAei4ZJBnBebMiXwsAX43mgroqwwwVnENGmnfILYKUTyzU4ujDVIwB4hGhajJ+WhFjcbImE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxDJX29ePC9/uQiHA0uiCVa0gvVNCx4vMi53DasXZp+KFCj4rAS
-	6ZVW7I8l/Ohk/dVLYtHtLrDvbl14YV1DhFbKVkAemOvuwlXJYVZT
-X-Gm-Gg: ASbGncvaa+ypHK+f+d+Im/m2rHq5QDHGOxswIOgHdCa76m1+i8KWGwLCkpm8JgEOmfa
-	SG0vwk5/37HHGkIwFmalFbB/9h+mXCcW2RUru6grMAcv7taIm8wMkYP2KjGe0Q/VuWSys4nZmlx
-	3WgYBPrZi266KqJrqslIZKgTO2Prsd9xemZbywyPZTlB7+85eg7XT4Ag+JA32cEU/9Ec9ZPDA52
-	QhPdqB4zcFinS3V2iYKWi79w/vxZ4l1R2NJs/5l8lbWg3J3re0X43A5ZUU=
-X-Google-Smtp-Source: AGHT+IFfgCMQaMB8Kpin1tc6oNoG54Lk9s6R9r0BKlNu56dLiRQin18Y4EQqibfwk5KkVLKohEpC6g==
-X-Received: by 2002:a17:902:d2d0:b0:205:4721:19c with SMTP id d9443c01a7336-2166a03eecdmr46675515ad.37.1733804348735;
-        Mon, 09 Dec 2024 20:19:08 -0800 (PST)
-Received: from HOME-PC ([223.185.132.235])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-215f8efa2b9sm80119605ad.168.2024.12.09.20.19.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Dec 2024 20:19:08 -0800 (PST)
-Date: Tue, 10 Dec 2024 09:49:05 +0530
-From: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: kvalo@kernel.org, ath12k@lists.infradead.org, jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+        d=1e100.net; s=20230601; t=1733806213; x=1734411013;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LuuYdInP7eOBnrgKXv1aGjEPQhcydVxdMGklxB39e1A=;
+        b=fyEKGrKvxj4KpQE9+Ae5lkqvW9hJHDv05ejse6jJ5VvB1+dz9W9WuUop2Ui0b3VnSf
+         N0x1Kq0Zmj2z4n9MhBfZ4ZlDQd4x6C7K/wLDfEw5eIm1nGsyaxPFyBjhi7a6BEsztiHJ
+         LvixFuUL9IIFsJjjYZ6gM8yqsq8fbH8pUfJ/1rk2tV+A490L6pSV+zVpjO0hhwxLB2vi
+         w3jcmsdeXmHIUenZut+6aOxziMbtdRtcr0GHA0wmGQWkC7s4KZE75KkiXZm5k87pzu/b
+         bXvUHdSETZnlWGOk/sM1HaSuPiu0E/A63kIO6OsRVYRhiu211oDzn87qemG4k8hBKzPa
+         ZlkA==
+X-Forwarded-Encrypted: i=1; AJvYcCVoS8X+ai3jbctWPeMnSyE7O1tVQe7S1tZdJtN1BG18R3VL0VwkJRb0mFFglC971bplE0RubOU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YydBBIFNCX6U2sUrA+PXzQ8ERauUkYm+Ai3MAuRdo713XSe7qAv
+	PcusHRxZl9YL6GkLib/OCNI2EOMwvrNn28iCKbSu1hUgFGWPqlFEioqXIxQRXwosAinKS9kMuiy
+	FltzbGLC82UNUe/8gigCsex132R0qqMPqH1tPrflBNrWCAkcuJqcPJqiJWI5O
+X-Gm-Gg: ASbGncsK7YndJ4z4iJ4cjQ5IWLoC36i6+lgFQkhWdfDk36UkWQY1DZhtyNMrnBChdu5
+	PkjumgbaqzvslKNDr9exMP7P2XYXjrZE5u6RLe1hmuerg4ao+yuyqiJyybVfE6r9D61KSyP5rM+
+	oA+RSqqoGWu6SxjfHe3+UYmIgeVtEMroTK434L9LbXjUzqSiMeolcNMUewm9aDRtle3G0oRsLOx
+	bTPuBbB1cW60ibOoK1MQ8e/k+mHvLvvMPe7MqYNj91yYFpYB5P+2nRE61WKnW1a4ers+uLQlbRH
+	7MYbDOSoWoQl3KresepwahQ8J4vbC/i216+WTSHNySiDB38=
+X-Received: by 2002:a17:903:187:b0:215:a808:61cf with SMTP id d9443c01a7336-21670a47b3dmr31989655ad.25.1733806212981;
+        Mon, 09 Dec 2024 20:50:12 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFGhqg062ZytpVvK9uJNkfbL9AyKTZQ/TVFVk+nH7o+NW5xk7sDSvSmjMhjypV34iXLF6KiKQ==
+X-Received: by 2002:a17:903:187:b0:215:a808:61cf with SMTP id d9443c01a7336-21670a47b3dmr31989415ad.25.1733806212634;
+        Mon, 09 Dec 2024 20:50:12 -0800 (PST)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2164eadc389sm26268125ad.31.2024.12.09.20.50.11
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Dec 2024 20:50:12 -0800 (PST)
+Message-ID: <b5399f79-18bc-4fc2-a1b1-d010505cc0b8@oss.qualcomm.com>
+Date: Mon, 9 Dec 2024 20:50:09 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 wireless-next] wifi: ath12k: Fix out-of-bounds read in
  ath12k_mac_vdev_create
-Message-ID: <Z1fBOUqYGB5hNP1e@HOME-PC>
+To: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
+Cc: kvalo@kernel.org, ath12k@lists.infradead.org, jjohnson@kernel.org,
+        linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20241207071306.325641-1-dheeraj.linuxdev@gmail.com>
  <cd5ef876-d849-4d7b-b8b7-94377e8720f0@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <cd5ef876-d849-4d7b-b8b7-94377e8720f0@oss.qualcomm.com>
+ <Z1fBOUqYGB5hNP1e@HOME-PC>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <Z1fBOUqYGB5hNP1e@HOME-PC>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: BOv1MPl7OXPieYEbzC34FX3s7rObrQr9
+X-Proofpoint-ORIG-GUID: BOv1MPl7OXPieYEbzC34FX3s7rObrQr9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
+ priorityscore=1501 suspectscore=0 mlxlogscore=756 clxscore=1015 mlxscore=0
+ spamscore=0 phishscore=0 malwarescore=0 adultscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412100033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_201910_166453_074EAEBC 
-X-CRM114-Status: GOOD (  43.08  )
+X-CRM114-CacheID: sfid-20241209_205015_022940_8F4B02AC 
+X-CRM114-Status: GOOD (  10.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,102 +121,16 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 09, 2024 at 10:39:36AM -0800, Jeff Johnson wrote:
-> On 12/6/2024 11:13 PM, Dheeraj Reddy Jonnalagadda wrote:
-> > Add a bounds check to ath12k_mac_vdev_create() to prevent an out-of-bounds
-> > read in the vif->link_conf array. The function uses link_id, derived from
-> > arvif->link_id, to index the array. When link_id equals 15, the index
-> > exceeds the bounds of the array, which contains only 15 elements.
-> > 
-> > This issue occurs in the following code branch:
-> > 
-> >     if (arvif->link_id == ATH12K_DEFAULT_SCAN_LINK && vif->valid_links)
-> >         link_id = ffs(vif->valid_links) - 1;
-> >     else
-> >         link_id = arvif->link_id;
-> > 
-> > When the first condition in the if statement is true and the second
-> > condition is false, it implies that arvif->link_id equals 15 and
-> > the else branch is taken, where link_id is set to 15, causing an
-> > out-of-bounds access when vif->link_conf array is read using link_id
-> > as index.
-> > 
-> > Add a check to ensure that link_id does not exceed the valid range of the
-> > vif->link_conf array. Log a warning and return -EINVAL if the check fails
-> > to prevent undefined behavior.
-> > 
-> > Changelog:
-> > 
-> > v2:
-> > 	- Updated the commit message as per the reviewer's suggestions
-> > 	- Clarified the description of the bug in the commit message
-> > 	- Added Fixes and Closes tags with relevant information
-> 
-> As Kalle already mentioned, the changelog should come "after the cut"
-> Please refer to:
-> https://www.kernel.org/doc/html/latest/process/submitting-patches.html#the-canonical-patch-format
-> 
-> Namely:
-> One good use for the additional comments after the --- marker is for a
-> diffstat...
-> Other comments relevant only to the moment or the maintainer, not suitable for
-> the permanent changelog, should also go here. A good example of such comments
-> might be patch changelogs which describe what has changed between the v1 and
-> v2 version of the patch.
-> 
-> > 
-> > Fixes: 90570ba4610 ("wifi: ath12k: do not return invalid link id for scan link")
-> > Closes: https://scan7.scan.coverity.com/#/project-view/52337/11354?selectedIssue=1602214
-> 
-> there should not be a blank line here
-> 
-> Also I just joined the Coverity "linux" project. I have access to the
-> dashboard, but don't see that particular CID. Since you've been a member for a
-> few months, is there something special I need to do to see that CID?
-> Or is this CID in a project other than "linux"? I ask because I'm looking at
-> A CID in the latest snapshot of "linux" and the URL is:
-> https://scan5.scan.coverity.com/#/project-view/63541/10063?selectedIssue=1636666
-> 
-> So I'm guessing your CID is from a different project?
-> 
-> > 
-> > Signed-off-by: Dheeraj Reddy Jonnalagadda <dheeraj.linuxdev@gmail.com>
-> > ---
-> 
-> to reiterate, the changelog goes here, with the latest version described first.
-> 
-> >  drivers/net/wireless/ath/ath12k/mac.c | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> > 
-> > diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> > index 129607ac6c1a..c19b10e66f4a 100644
-> > --- a/drivers/net/wireless/ath/ath12k/mac.c
-> > +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> > @@ -7725,6 +7725,12 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
-> >  	else
-> >  		link_id = arvif->link_id;
-> >  
-> > +	if (link_id >= ARRAY_SIZE(vif->link_conf)) {
-> > +		ath12k_warn(ar->ab, "link_id %u exceeds max valid links for vif %pM\n",
-> > +			    link_id, vif->addr);
-> > +		return -EINVAL;
-> > +	}
-> > +
-> >  	link_conf = wiphy_dereference(hw->wiphy, vif->link_conf[link_id]);
-> >  	if (!link_conf) {
-> >  		ath12k_warn(ar->ab, "unable to access bss link conf in vdev create for vif %pM link %u\n",
-> 
-> Note that I don't need you to send a new patch if Kalle ACKs the current one;
-> I can fixup the patch in the "pending" branch. But I would like to make
-> sure I can see the CID in Coverity, so please let me know if I'm subscribed to
-> the correct project.
-> 
-> /jeff
+On 12/9/2024 8:19 PM, Dheeraj Reddy Jonnalagadda wrote:
+> Thank you for the feedback once again. The Coverity issue is from the
+> "linux-next weekly scan" project and you would have to be subscribed to it. 
+> The link to that project is here:
+> https://scan.coverity.com/projects/linux-next-weekly-scan?tab=overview
 
-Thank you for the feedback once again. The Coverity issue is from the
-"linux-next weekly scan" project and you would have to be subscribed to it. 
-The link to that project is here:
-https://scan.coverity.com/projects/linux-next-weekly-scan?tab=overview
+Thanks, I found that project earlier today and joined.
 
--Dheeraj
+So now I can track both linux and linux-next-weekly-scan.
+
+/jeff
+
 
