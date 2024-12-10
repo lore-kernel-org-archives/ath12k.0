@@ -4,60 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B31C1E7717F
-	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 14:55:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4E0AE7717F
+	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 15:09:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=OVeDpFHKaFlPDGxPLRlIP4tfmUhxa0lLWG/6rA+mE3A=; b=IkICrZnLESbMMq188Ol7IHv+3A
-	dnPdKopyZH3Kb3O2OEa9NxVWNjjFuSM7+N+7HXWrNJI2uWcxWcF761QKy3uMjJQLJ4AZHiv/eNWqp
-	EKLiRU4cCXqd/3dMi37+rMUCObdLXKX1XiR+Fpa2WwilRfeJmrko1OzyqyfcG19QVMjdXiV6soKVK
-	EGN56bxchkY4miDU5S4xBn3ZZuDLIFWhn23CCBijBxjkCFE6hKwPS2E7DhVIILfISyu8AfI5L7lgd
-	zFqjNqvT9cuajN9M8QeaBVNbDRtCYu60sKKrHfom61toWy06PRzLgT4ohtPELhuuvr5kM4xlPH3KP
-	8D8OuV/A==;
+	bh=KiviiwWxdygkWiNJhIhfq4sO190ojnaHCnKNvpTDmGg=; b=pimnPAWsB/DS4aMG09mO34vQi0
+	lyorynQJsFkBIjOCR0ed3V716lxbQLTxVvcEYesUuWssA5sImLZeW5I68d22cjF5X2692e1v9Yha6
+	H1kEr0AatvroMrLBCr2AVEAENk+J8Bi8k71WI7pttjDC1C7OwhZ9juNMOof4se3AgZT5jxELfLjbb
+	P/OePa+XqZcn3qxnaR/k/tbsuBuFSc6sxfM1Y9fnnZHhZH/OjZkIU49yXf+Zj5AYiaslH6JXz6GNt
+	7UIwp9Xb/a3pWXfj66plviHoB677KAL8K/c7rwjGErHBFNGHm/87P4RFeO4JlKoZNKiDVaUAlkwx1
+	ycAusAsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tL1dv-0000000Bruy-23Y5
+	id 1tL1rA-0000000Btph-27sG
 	for ath12k@archiver.kernel.org;
-	Tue, 10 Dec 2024 14:55:19 +0000
+	Tue, 10 Dec 2024 15:09:00 +0000
 Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tL1bO-0000000BrLO-0KS3
+	id 1tL1r8-0000000Btp6-2MDB
 	for ath12k@lists.infradead.org;
-	Tue, 10 Dec 2024 14:52:43 +0000
+	Tue, 10 Dec 2024 15:08:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 8C4F2A41906;
-	Tue, 10 Dec 2024 14:50:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 380ECC4CED6;
-	Tue, 10 Dec 2024 14:52:38 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 50495A41923;
+	Tue, 10 Dec 2024 15:07:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06E1EC4CEDE;
+	Tue, 10 Dec 2024 15:08:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733842360;
-	bh=T8bfjPlMu3bOeVNznQxKg8Q5VGqihqrLN21VgNgbq9I=;
+	s=k20201202; t=1733843337;
+	bh=L0jZFG/ObQiqmlFhKVnP7nKp03eQCYKfA9KpogBiLlM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=j6l/8maGvxdZZRrkaMVV/zyhkr9OMKDuAGjoE2eqMLfJHJ6OdP//G2ZyAjej81Aid
-	 6YrTWgBvsXeW8B1ZCTenoL4FS4BxCaZAfXKDBQeSHTB693H3RcH+SmL+2H2fDLAKp/
-	 QhKl2vgB9Bwu+j3bCFEZPhXfrlY9wNsLyEhrYmirYXDR1mkgl01PM8f8dQO61uV3u/
-	 NXSxZGXzsw+TCNuBUDvaKBjpAFGpVgzw4yEdLjB+WRDWKpO8zWZ69IT5wHU1lr6z6x
-	 Dg3uFv6f3kdnrUsw1kcowOHA90plNnYkMKmEsENPCcQJGQIOXy0Nqt2Gd6t5m4o6Ug
-	 XXUKnL89+mwmA==
-Message-ID: <bd3f7586-4119-47f5-bbf6-a43bd02088b8@kernel.org>
-Date: Tue, 10 Dec 2024 15:52:36 +0100
+	b=swDw5WSntjquD8bsCLjAq7HZigABy+Evloi75i4a/Yx7jiGWmQ0ENoL8smp61Z4Vv
+	 Jm0xh9Yw0WT87VCqltZcIu6wuHsVhZsnJ6X1CqaqQgJWbCJ3vNBWbUCB8e0ynw5Nes
+	 u6YlbB5d8JaOW3YDjVcBktzer9Ienexmvft8UhxnS2EolO1/IzOAbatb8PUe8Ji2kp
+	 O1WzYaxbpLyb0Ts0rN+MkHhei0DHD/eJX4WS2zvRnN34NCMfyJJvaY1vfaaohRdd77
+	 iOOqUtdb9qy+4uEuPaLJRTAXcTVRve5G8Q2bqDNSJyX/wRJO7LEODRMcoKszJhsLlz
+	 JBvk/DVdAfO0Q==
+Message-ID: <fd338dd5-db11-4439-835d-b6641f3feb78@kernel.org>
+Date: Tue, 10 Dec 2024 16:08:51 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 11/13] wifi: ath12k: Power up userPD
+Subject: Re: [PATCH v4 00/13] wifi: ath12k: add Ath12k AHB driver support for
+ IPQ5332
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
 References: <20241210074159.2637933-1-quic_rajkbhag@quicinc.com>
- <20241210074159.2637933-12-quic_rajkbhag@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -101,12 +100,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241210074159.2637933-12-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20241210074159.2637933-1-quic_rajkbhag@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241210_065242_253786_090B829E 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20241210_070858_732259_CEE04347 
+X-CRM114-Status: GOOD (  11.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,55 +121,33 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 10/12/2024 08:41, Raj Kumar Bhagat wrote:
-> +
-> +	time_left = wait_for_completion_timeout(&ab_ahb->userpd_ready,
-> +						ATH12K_USERPD_READY_TIMEOUT);
-> +	if (!time_left) {
-> +		ath12k_err(ab, "UserPD ready wait timed out\n");
-> +		ret = -ETIMEDOUT;
-> +		goto err_fw2;
-> +	}
-> +
-> +	qcom_smem_state_update_bits(ab_ahb->spawn_state, BIT(ab_ahb->spawn_bit), 0);
-> +
-> +	ath12k_info(ab, "UserPD%d is now UP\n", ab_ahb->userpd_id);
+> Currently, Ath12k driver only supports WiFi devices that are based on
+> PCI bus. New Ath12k device IPQ5332 is based on AHB bus. Hence, add
+> Ath12k AHB support for IPQ5332.
+> 
+> IPQ5332 is IEEE802.11be 2 GHz 2x2 Wifi device. To bring-up IPQ5332
+> device:
+> - Add hardware parameters for IPQ5332.
+> - CE register address space in IPQ5332 is separate from WCSS register
+>   space. Hence, add logic to remap CE register address.
+> - Add support for fixed QMI firmware memory for IPQ5332.
+> - Support userPD handling for WCSS secure PIL driver to enable ath12k
+>   AHB support.
+> 
+> v4:
+> - Missed to include some review list in v3. Hence sending v4 with
+>   all review list as per - scripts/get_maintainers.pl
+> 
+The amount of undocumented ABI you add here, points to the problem that
+either your drivers don't work or your drivers would never work with
+upstream. Why? Because either you would have wrong DTS or drivers not
+matching DTS, thus not working.
 
-Don't bug users with success messages. Your driver is supposed to be
-silent on success.
+Please point us to your upstream DTS implementing (and working 100%)
+this ABI, so we can review that you do not sneak more broken or
+undocumented things. I will NAK also future submissions without above,
+because I believe you usptream something which will not work.
 
-> +
-> +err_fw2:
-> +	release_firmware(fw2);
-> +err_fw:
-> +	release_firmware(fw);
-> +	return ret;
-> +}
-> +
->  static void ath12k_ahb_init_qmi_ce_config(struct ath12k_base *ab)
->  {
->  	struct ath12k_qmi_ce_cfg *cfg = &ab->qmi.ce_cfg;
-> @@ -557,6 +694,7 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
->  	.irq_enable = ath12k_ahb_ext_irq_enable,
->  	.irq_disable = ath12k_ahb_ext_irq_disable,
->  	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
-> +	.power_up = ath12k_ahb_power_up,
->  };
->  
->  static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
-> diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-> index 0999e2bbe970..0dbbbfd45eab 100644
-> --- a/drivers/net/wireless/ath/ath12k/ahb.h
-> +++ b/drivers/net/wireless/ath/ath12k/ahb.h
-> @@ -19,7 +19,15 @@
->  #define ATH12K_PCI_IRQ_CE0_OFFSET		3
->  #define ATH12K_ROOTPD_READY_TIMEOUT		(5 * HZ)
->  #define ATH12K_RPROC_AFTER_POWERUP		QCOM_SSR_AFTER_POWERUP
-> -
-
-Why? You just added this line in previous commits.
-
-> +#define ATH12K_AHB_FW_PREFIX			"q6_fw"
-> +#define ATH12K_AHB_FW_SUFFIX			".mdt"
 Best regards,
 Krzysztof
 
