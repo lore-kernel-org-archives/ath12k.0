@@ -4,59 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E68DEE77180
-	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 14:49:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8ABFEE7717F
+	for <ath12k@archiver.kernel.org>; Tue, 10 Dec 2024 14:53:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mpXOCU2uQCTqmI0c6SfglBt0LO2/J6QarvLoeSw1oAE=; b=dsq+lHImp+PgnRJA7v01dKtbMZ
-	rxHJR4+MnFUyQ2dO+XuIbf5r75XHtfBIcwEgA8RojZ/7zCwd5c8GEW93lMa+DdGLCWLIgkbIOSdX1
-	rDPvZqQfCSux4GXAeHpBfk7CDtfoLqKE8M7uf77L4c5tCAYHUMSQGS+fwOsvMu+O2PT2YMbQ0M92J
-	YiC7ii/NsMH5KWDQmWRMjm3vEyD2W8WcJGNyalyf8RRSUF4v9ZU+LMvBvKSgLCVx+37ifr3ngUTkf
-	TOt5ARfXKcgC7HWYEQa10gJzE+IaNPTcikHQ64hGB2c5weYUR/pxT/DQdI9bKh6TO11e4JQLdUNLO
-	kNnEmRVA==;
+	bh=DSp7c4GzTS+2BK+FQQ5qxKvcq2rTnrthIbr1ev/DHLU=; b=wUXk/4rayY9Ym0XOuSSSkeHVFz
+	rOl0FxBqtzdMYIDd4eC/wbkyeu2xBlx/p3YQWUfuCjveEzb82u8v0lxwy5+uoHHJLNFg35ZcQKfek
+	FTprMxk4Jjklheiv6o64SFkB9IL2iJLwbdeMXG7DlqO9QuswswxYktVwTmYr87X8MJI0FhOm8vNnS
+	myHzVfVHvkBVbL3hfxVtMnSkFjZ3/wmCg2gnS+9FvDmX22vTKgDBtKOE3LzFxrITcIYOIWHIFP+1Y
+	5MuNZWH44NWUWps8OFAqE8DaMvf4FsHUiCyjraZTipsE1hR6dEFjyVv1A7M9hduOeT80/6dOVe8D/
+	0xbfEOVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tL1YZ-0000000BqVd-2wdr
+	id 1tL1bo-0000000BrTL-1Id4
 	for ath12k@archiver.kernel.org;
-	Tue, 10 Dec 2024 14:49:47 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 10 Dec 2024 14:53:08 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tL1Wl-0000000BqCg-1NpM
+	id 1tL1ZS-0000000Bqp0-1Vnm
 	for ath12k@lists.infradead.org;
-	Tue, 10 Dec 2024 14:47:56 +0000
+	Tue, 10 Dec 2024 14:50:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 353F65C5B5E;
-	Tue, 10 Dec 2024 14:47:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7DE5C4CED6;
-	Tue, 10 Dec 2024 14:47:51 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 1B7D4A411BE;
+	Tue, 10 Dec 2024 14:48:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C3761C4CED6;
+	Tue, 10 Dec 2024 14:50:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733842074;
-	bh=4lW9XNfX+kbAu7CsKaD1PDODoyAj2Ev0VkALIieRNuo=;
+	s=k20201202; t=1733842241;
+	bh=gO+0AbhhxWFZWbvp7Cp2SukSKMg777+J9T31ftrsTlA=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lc1zlZSLQ2TgvZbhxgYixVtpBW+y5s3izYCsIWhjtMaTsZMhtfEPL02LPnUnn/0W6
-	 k4+GfsuO82jOIAi0SdII9H20ykIe2KAty7Nj320as4nW7o43REwbbaEtjSxoK5Vect
-	 QIER7PzGvP+pf3//p8oTZhpkt4Q+BC139eGzXFvKRSZp4pJInuo1MrQgphoX/d+ySj
-	 aeaxS9hr5VsrFOpMO6s73vIR1jKTb8WEOxQHdVbWlKoJZpSc87oCl2CEFsWCf8Qf7E
-	 pb58dqYeRc5N6yQROcB3qY745PVF+97ZyMclfd7pZEulMC03g4LgmXCVhFzVf+Nn+u
-	 Kmy+F37gsATPg==
-Message-ID: <42feceb8-512a-4be3-aefa-116bbde000c1@kernel.org>
-Date: Tue, 10 Dec 2024 15:47:49 +0100
+	b=PkRIw+nvNkGI9A3/FLV0d79ApBNE9P8ldixROdCYSyMnjp4QvMxMwK44c4nBm4md0
+	 A3ybxL25VHMEt4IoVsek8/B7XpUrCTwQsbZfYhE6Eel1eywzUBwjkL5jIZlGtrtQ3c
+	 pOkLvqD1kTgZMb/CAIzCx3gUFAGk5CB9kG0z4Hn/DH8NcY/5JGD6FtAqyTKS5fAOB0
+	 GIQyAbyFZBcP5rRB6nK9AM9FVpUFe+Pb/twiNQTdejNXU8cx+RRPDIUFktzcrl9Gbw
+	 gq2wxnwC9lcKoEmzi8Odws10PLlX/Ru89SnUhCYswatKkJ9gUo+vGG25r1KFmyv+Wi
+	 jXvexEfZij89A==
+Message-ID: <a76fca66-70ce-4a6a-ae39-dc218d57fc83@kernel.org>
+Date: Tue, 10 Dec 2024 15:50:37 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 08/13] wifi: ath12k: add AHB driver support for IPQ5332
+Subject: Re: [PATCH v4 09/13] wifi: ath12k: Power up root PD
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- Balamurugan S <quic_bselvara@quicinc.com>,
- P Praneesh <quic_ppranees@quicinc.com>
+ Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 References: <20241210074159.2637933-1-quic_rajkbhag@quicinc.com>
- <20241210074159.2637933-9-quic_rajkbhag@quicinc.com>
+ <20241210074159.2637933-10-quic_rajkbhag@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,12 +101,13 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241210074159.2637933-9-quic_rajkbhag@quicinc.com>
+In-Reply-To: <20241210074159.2637933-10-quic_rajkbhag@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241210_064755_455292_CD164B76 
-X-CRM114-Status: GOOD (  25.32  )
+X-CRM114-CacheID: sfid-20241210_065042_530292_8276A5E8 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,151 +123,53 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 10/12/2024 08:41, Raj Kumar Bhagat wrote:
-> From: Balamurugan S <quic_bselvara@quicinc.com>
-> 
-> Add Initial Ath12k AHB driver support for IPQ5332. IPQ5332 is AHB
-> based IEEE802.11be 2 GHz 2x2 WiFi device.
-> 
-> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-> Co-developed-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/ahb.c  | 878 +++++++++++++++++++++++++
->  drivers/net/wireless/ath/ath12k/ahb.h  |  37 ++
->  drivers/net/wireless/ath/ath12k/core.h |   4 +
->  drivers/net/wireless/ath/ath12k/hal.h  |   1 +
->  drivers/net/wireless/ath/ath12k/hw.h   |   1 +
->  5 files changed, 921 insertions(+)
->  create mode 100644 drivers/net/wireless/ath/ath12k/ahb.c
->  create mode 100644 drivers/net/wireless/ath/ath12k/ahb.h
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-> new file mode 100644
-> index 000000000000..fcd949faea9f
-> --- /dev/null
-> +++ b/drivers/net/wireless/ath/ath12k/ahb.c
-> @@ -0,0 +1,878 @@
-> +// SPDX-License-Identifier: BSD-3-Clause-Clear
-> +/*
-> + * Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
-> + * Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-> + */
 > +
-> +#include <linux/dma-mapping.h>
-> +#include <linux/iommu.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-
-You don't use this header.
-
-> +#include <linux/of_device.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/remoteproc.h>
-
-More headers here look unused.
-
-> +#include <linux/soc/qcom/smem.h>
-> +#include <linux/soc/qcom/smem_state.h>
-> +#include "ahb.h"
-> +#include "debug.h"
-> +#include "hif.h"
-> +
-> +static const struct of_device_id ath12k_ahb_of_match[] = {
-> +	{ .compatible = "qcom,ipq5332-wifi",
-> +	  .data = (void *)ATH12K_HW_IPQ5332_HW10,
-> +	},
-> +	{ }
-> +};
-> +
-> +MODULE_DEVICE_TABLE(of, ath12k_ahb_of_match);
-
-This goes to driver struct declaration. It is really unusual to see it
-in some other places.
-
-
-> +
-> +#define ATH12K_IRQ_CE0_OFFSET 4
-> +
-
-
-...
-
-> +
-> +static int ath12k_ahb_probe(struct platform_device *pdev)
+> +static void ath12k_ahb_unregister_rproc_notifier(struct ath12k_base *ab)
 > +{
-> +	struct ath12k_base *ab;
-> +	const struct ath12k_hif_ops *hif_ops;
-> +	struct device_node *mem_node;
-> +	enum ath12k_hw_rev hw_rev;
-> +	u32 addr;
-> +	int ret;
+> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
 > +
-> +	hw_rev = ath12k_ahb_get_hw_rev(pdev);
-> +	switch (hw_rev) {
-> +	case ATH12K_HW_IPQ5332_HW10:
-> +		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
-> +		break;
-> +	default:
-> +		dev_err(&pdev->dev, "Unsupported device type %d\n", hw_rev);
-
-You already print once in ath12k_ahb_get_hw_rev() and none of these can
-happen. No need to print impossible conditions at all. No need to print
-impossible things twice.
-
-> +		return -EOPNOTSUPP;
+> +	if (!ab_ahb->root_pd_notifier) {
+> +		ath12k_err(ab, "Rproc notifier not registered\n");
+> +		return;
 > +	}
 > +
+> +	qcom_unregister_ssr_notifier(ab_ahb->root_pd_notifier,
+> +				     &ab_ahb->root_pd_nb);
+> +}
+> +
+> +static int ath12k_ahb_get_rproc(struct ath12k_base *ab)
+> +{
+> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+> +	struct device *dev = ab->dev;
+> +	struct rproc *prproc;
+> +	phandle rproc_phandle;
+> +
+> +	if (of_property_read_u32(dev->of_node, "qcom,rproc", &rproc_phandle)) {
 
-> +	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
-> +	if (ret) {
-> +		dev_err(&pdev->dev, "Failed to set 32-bit coherent dma\n");
-> +		return ret;
+You are not supposed to read phandles as numbers but use proper phandle
+parsing API. See of.h, e.g. of_parse_phandle.
+
+> +		ath12k_err(ab, "failed to get q6_rproc handle\n");
+> +		return -ENOENT;
 > +	}
 > +
-> +	ab = ath12k_core_alloc(&pdev->dev, sizeof(struct ath12k_ahb),
-> +			       ATH12K_BUS_AHB);
-> +	if (!ab) {
-> +		dev_err(&pdev->dev, "failed to allocate ath12k base\n");
-> +		return -ENOMEM;
+> +	prproc = rproc_get_by_phandle(rproc_phandle);
+> +	if (!prproc) {
+> +		ath12k_err(ab, "failed to get rproc\n");
+
+This is supposed to be dev_err_probe. Lack of handling deferred probes
+and resulting dmesg flood is all over your code. You need to start
+supporting defer.
+
+> +		return -EINVAL;
 > +	}
+> +	ab_ahb->tgt_rproc = prproc;
 > +
-> +	ab->hif.ops = hif_ops;
-> +	ab->pdev = pdev;
-> +	ab->hw_rev = hw_rev;
-> +	platform_set_drvdata(pdev, ab);
-> +
-> +	/* Set fixed_mem_region to true for platforms that support fixed memory
-> +	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
-> +	 * need not to allocate memory.
-> +	 */
-> +	if (!of_property_read_u32(ab->dev->of_node, "memory-region", &addr)) {
-> +		set_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags);
-> +
-> +		/* If the platform supports fixed memory, then it should define/
-> +		 * reserve MLO global memory in DT to support Multi Link Operation
-> +		 * (IEEE 802.11be).
-> +		 * If MLO global memory is not reserved in fixed memory mode, then
-> +		 * MLO cannot be supported.
-> +		 */
-> +		mem_node = of_find_node_by_name(NULL, "mlo_global_mem_0");
+> +	return 0;
+> +}
 
-NAK. Incorrect name, not conforming to coding style. Undocumented ABI.
 
-Drop all calls to of_find_node_by_name() or any other stuff like this.
 
-> +		if (!mem_node)
-> +			ab->single_chip_mlo_supp = false;
-> +	}
-> +
-> +	ret = ath12k_core_pre_init(ab);
-> +	if (ret)
-> +		goto err_core_free;
 
 Best regards,
 Krzysztof
