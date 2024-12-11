@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80DBEE7717D
-	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 15:34:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6B6BE77182
+	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 15:34:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=0Mtim6Vumk26ogfTknsk9OYqSnDTX2UJr/fFXu3oBZk=; b=wllC5h4T3e84Xp6irHgJxF2DtP
-	N6y72dhC7YM8g5w9O9jrh1+ETaShPO+lf4Q1Cj/ULYBDIbKSrP4RyGAFCF0P5oH/PUoekh0kTJAis
-	YWcvTRhH1OFeU8yUETXmiZHH1Ve/q05pTROwgvtwPTi+HizqNUS2J8Q/zkk1f5NZs8pygZJVXXdzr
-	bCslOVmnzRZCj05rBtPwaCPbGelD6idPxSCcA1VeuMbU1+KX9yq8gRR1ZjpmgeK+A+Ubtn6AFTw66
-	jOHOv9JWtL6Rl544kOuN3K0WcFccEOa3AiRvIv7rHe/BHSaZXJTS7nhok6+rUaf1nLSQ65GLh7DYf
-	piuaG1ww==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DIV9Xay+sygf+LG4yrGFzcjCUymbAEddv/wLbSPItxE=; b=YdSpo7PVpYkqZVX7+jIAE56bmH
+	Iduyh8Gvjt/bdmDuIGNhKrESTj9rc94IzwIsfXn35gh2yINP1bgCHecnQcN1ZH5Fp0W+1WXnzG/Jq
+	ckV4y+HxK83ZNh5t+41q7r1d2T1Sobv0bIAZPr+XwU5DHf4WvnH2+DB48nqorH+3hmaYxIXCwCco0
+	xTA7T9DMx8JdUlTH/rTwwYajjQm9+gy2Vy44pWrwA85Grk7nxsEObkLVHp97IfLRbUxwv50RJLe3d
+	G45NIaE6SicHNtLZLX/Yg/4mXTcyW2SG0xDEEKpkPWcp6T5JxDprNXDWxdVHnO28hv9175+AnWj1B
+	+gDGpXhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLOjX-0000000FGrv-0ro0
+	id 1tLOjY-0000000FGsW-2Kbe
 	for ath12k@archiver.kernel.org;
-	Wed, 11 Dec 2024 15:34:39 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Wed, 11 Dec 2024 15:34:40 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLOjU-0000000FGqt-319T
+	id 1tLOjW-0000000FGrB-1BSc
 	for ath12k@lists.infradead.org;
-	Wed, 11 Dec 2024 15:34:37 +0000
+	Wed, 11 Dec 2024 15:34:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 951735C59FD
-	for <ath12k@lists.infradead.org>; Wed, 11 Dec 2024 15:33:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1F9BC4CED2;
-	Wed, 11 Dec 2024 15:34:34 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 1E377A402A1
+	for <ath12k@lists.infradead.org>; Wed, 11 Dec 2024 15:32:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39C17C4CED4;
+	Wed, 11 Dec 2024 15:34:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733931275;
-	bh=L7wzVvymBJg0eN3gAGAMtzo6S3quGzzL4FwBiMvbaVA=;
-	h=From:To:Cc:Subject:Date:From;
-	b=aH5Af9qxMczA7RImVZQQ3v97VuwhambD2XO/wI9quAbUk0khDM6TDhk0twy6S0B5b
-	 N+usp0qBFTbnub3TCdMVCqczN/t9xkNWL64yXiau+0UdNAp2VhcbAkLE9vPkg9ceXb
-	 cdTX4G5LUJSTbP3gGnYD8xdBBAoOf8CUd5ZeAXbkg21tq7JwR6XSWrx/r9tT92TxHP
-	 YN80hBjOCDGOyzD7DCOGzacpXDyaQN65w67K1Z9x6oFJ4QlsSloTGLXe5xcLYFnbWI
-	 unP65MqKjZ3PbKg3t02AgV613HjWgCj1+TsaJDShrfGBcTh76o/TmtMObR3I7Vgf0S
-	 L0DghhQSLq35Q==
+	s=k20201202; t=1733931277;
+	bh=gD+erWKg1WYx/d4VCqYCo1hgx/4qc9+Utl+HoeSnyT8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=hyeNf2pPhxf8OrXPynw3ZOnsQRAiKq2XlKgysFLHjNEeondWlJi1qYzAJqvr3nyTw
+	 mz3Yah9fUlONwnwrXY7bURsih52xrL+tlzo6lDb80FE5fdDQ4fyFzI7gVc86Ixlf2p
+	 WNWGCFUq3OqYxiOvszzEAhhX8fBooyknPPE/Nq52hrip5c9etxr8so0xgEqh4c1NZa
+	 doh9hnTTIfg2em46LXr64ffSLauOZX2rWcsHViU2xFvnVAQhBpOUKg2PEPm6VJMjjl
+	 pMGMALN8PqTgZI/WFZE3lpvbAtjMP2mpzKf1JJgFI20yVOtYvPop9bOclD38FA47Wi
+	 ca2yi+7iUZbow==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 0/8] wifi: ath12k: MLO support part 7
-Date: Wed, 11 Dec 2024 17:34:24 +0200
-Message-Id: <20241211153432.775335-1-kvalo@kernel.org>
+Subject: [PATCH v3 1/8] dt-bindings: net: wireless: Describe ath12k PCI module with WSI
+Date: Wed, 11 Dec 2024 17:34:25 +0200
+Message-Id: <20241211153432.775335-2-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20241211153432.775335-1-kvalo@kernel.org>
+References: <20241211153432.775335-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_073436_798952_28E07049 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241211_073438_447285_9E3476DC 
+X-CRM114-Status: GOOD (  15.21  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,64 +72,234 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Kalle Valo <quic_kvalo@quicinc.com>
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 
-Implementing Multi-Link Operation (MLO) continues. Bindings document is added
-to get WSI information from DT (patch 1) with the code parsing the information
-(patch 2). Rest of the patches are about configuring MLO in firmware.
+The QCN9274 WiFi device supports WSI (WLAN Serial Interface). WSI is used
+to exchange specific control information across radios using a doorbell
+mechanism. This WSI connection is essential for exchanging control
+information among these devices. The WSI interface in the QCN9274 includes
+TX and RX ports, which are used to connect multiple WSI-supported devices
+together, forming a WSI group.
 
-Device Tree bindings were reviewed as RFC earlier:
+Describe QCN9274 PCI wifi device with WSI interface.
 
-[RFC PATCH v3 1/5] dt-bindings: net: wireless: Describe ath12k PCI module with WSI
-
-https://lore.kernel.org/ath12k/20241105180444.770951-1-quic_rajkbhag@quicinc.com/
-
-The only changes from the RFC are Jeff's email address, using flag instead of
-bool and moving the WSI description to the beginning of the doc.
-
-This patchset applies to ath.git main branch. Please review.
-
-Kalle
-
-v3:
-
-* patch 1: move description of WSI to the beginning of the doc
-
-v2: https://patchwork.kernel.org/project/linux-wireless/cover/20241209153034.50558-1-kvalo@kernel.org/
-
-* patch 1: change qcom,wsi-controller from a boolean to a flag
-
-v1: https://patchwork.kernel.org/project/linux-wireless/cover/20241205203044.589499-1-kvalo@kernel.org/
-
-Bhagavathi Perumal S (1):
-  wifi: ath12k: Add MLO WMI setup and teardown functions
-
-Karthikeyan Periyasamy (5):
-  wifi: ath12k: send partner device details in QMI MLO capability
-  wifi: ath12k: refactor ath12k_qmi_alloc_target_mem_chunk()
-  wifi: ath12k: add support to allocate MLO global memory region
-  wifi: ath12k: enable MLO setup and teardown from core
-  wifi: ath12k: avoid redundant code in DP Rx error process
-
-Raj Kumar Bhagat (2):
-  dt-bindings: net: wireless: Describe ath12k PCI module with WSI
-  wifi: ath12k: parse multiple device information from Device Tree
-
- .../net/wireless/qcom,ath12k-wsi.yaml         | 204 +++++++++++++
- drivers/net/wireless/ath/ath12k/core.c        | 256 +++++++++++++++-
- drivers/net/wireless/ath/ath12k/core.h        |  18 ++
- drivers/net/wireless/ath/ath12k/dp_rx.c       |  13 +-
- drivers/net/wireless/ath/ath12k/mac.c         | 142 +++++++++
- drivers/net/wireless/ath/ath12k/mac.h         |   3 +
- drivers/net/wireless/ath/ath12k/qmi.c         | 283 ++++++++++++++----
- drivers/net/wireless/ath/ath12k/qmi.h         |   1 +
- drivers/net/wireless/ath/ath12k/wmi.c         | 180 +++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h         |  49 +++
- 10 files changed, 1072 insertions(+), 77 deletions(-)
+Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
+---
+ .../net/wireless/qcom,ath12k-wsi.yaml         | 204 ++++++++++++++++++
+ 1 file changed, 204 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
 
-
-base-commit: 400568fb3b022247c1603fdbdd6444b3ef14ffce
+diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
+new file mode 100644
+index 000000000000..cbfb559f6b69
+--- /dev/null
++++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
+@@ -0,0 +1,204 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/wireless/qcom,ath12k-wsi.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm Technologies ath12k wireless devices (PCIe) with WSI interface
++
++maintainers:
++  - Jeff Johnson <jjohnson@kernel.org>
++  - Kalle Valo <kvalo@kernel.org>
++
++description: |
++  Qualcomm Technologies IEEE 802.11be PCIe devices with WSI interface.
++
++  The ath12k devices (QCN9274) feature WSI support. WSI stands for
++  WLAN Serial Interface. It is used for the exchange of specific
++  control information across radios based on the doorbell mechanism.
++  This WSI connection is essential to exchange control information
++  among these devices.
++
++  The WSI interface includes TX and RX ports, which are used to connect
++  multiple WSI-supported devices together, forming a WSI group.
++
++  Diagram to represent one WSI connection (one WSI group) among
++  three devices.
++
++           +-------+        +-------+        +-------+
++           | pcie1 |        | pcie2 |        | pcie3 |
++           |       |        |       |        |       |
++    +----->|  wsi  |------->|  wsi  |------->|  wsi  |-----+
++    |      | grp 0 |        | grp 0 |        | grp 0 |     |
++    |      +-------+        +-------+        +-------+     |
++    +------------------------------------------------------+
++
++  Diagram to represent two WSI connections (two separate WSI groups)
++  among four devices.
++
++       +-------+    +-------+          +-------+    +-------+
++       | pcie0 |    | pcie1 |          | pcie2 |    | pcie3 |
++       |       |    |       |          |       |    |       |
++   +-->|  wsi  |--->|  wsi  |--+   +-->|  wsi  |--->|  wsi  |--+
++   |   | grp 0 |    | grp 0 |  |   |   | grp 1 |    | grp 1 |  |
++   |   +-------+    +-------+  |   |   +-------+    +-------+  |
++   +---------------------------+   +---------------------------+
++
++properties:
++  compatible:
++    enum:
++      - pci17cb,1109  # QCN9274
++
++  reg:
++    maxItems: 1
++
++  qcom,ath12k-calibration-variant:
++    $ref: /schemas/types.yaml#/definitions/string
++    description:
++      String to uniquely identify variant of the calibration data for designs
++      with colliding bus and device ids
++
++  qcom,wsi-controller:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      The WSI controller device in the WSI group aids (is capable) to
++      synchronize the Timing Synchronization Function (TSF) clock across
++      all devices in the WSI group.
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/properties/port
++        description:
++          This is the TX port of WSI interface. It is attached to the RX
++          port of the next device in the WSI connection.
++
++      port@1:
++        $ref: /schemas/graph.yaml#/properties/port
++        description:
++          This is the RX port of WSI interface. It is attached to the TX
++          port of the previous device in the WSI connection.
++
++required:
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    pcie {
++        #address-cells = <3>;
++        #size-cells = <2>;
++
++        pcie@0 {
++            device_type = "pci";
++            reg = <0x0 0x0 0x0 0x0 0x0>;
++            #address-cells = <3>;
++            #size-cells = <2>;
++            ranges;
++
++            wifi@0 {
++                compatible = "pci17cb,1109";
++                reg = <0x0 0x0 0x0 0x0 0x0>;
++
++                qcom,ath12k-calibration-variant = "RDP433_1";
++
++                ports {
++                    #address-cells = <1>;
++                    #size-cells = <0>;
++
++                    port@0 {
++                        reg = <0>;
++
++                        wifi1_wsi_tx: endpoint {
++                            remote-endpoint = <&wifi2_wsi_rx>;
++                        };
++                    };
++
++                    port@1 {
++                        reg = <1>;
++
++                        wifi1_wsi_rx: endpoint {
++                            remote-endpoint = <&wifi3_wsi_tx>;
++                        };
++                    };
++                };
++            };
++        };
++
++        pcie@1 {
++            device_type = "pci";
++            reg = <0x0 0x0 0x1 0x0 0x0>;
++            #address-cells = <3>;
++            #size-cells = <2>;
++            ranges;
++
++            wifi@0 {
++                compatible = "pci17cb,1109";
++                reg = <0x0 0x0 0x0 0x0 0x0>;
++
++                qcom,ath12k-calibration-variant = "RDP433_2";
++                qcom,wsi-controller;
++
++                ports {
++                    #address-cells = <1>;
++                    #size-cells = <0>;
++
++                    port@0 {
++                        reg = <0>;
++
++                        wifi2_wsi_tx: endpoint {
++                            remote-endpoint = <&wifi3_wsi_rx>;
++                        };
++                    };
++
++                    port@1 {
++                        reg = <1>;
++
++                        wifi2_wsi_rx: endpoint {
++                            remote-endpoint = <&wifi1_wsi_tx>;
++                        };
++                    };
++                };
++            };
++        };
++
++        pcie@2 {
++            device_type = "pci";
++            reg = <0x0 0x0 0x2 0x0 0x0>;
++            #address-cells = <3>;
++            #size-cells = <2>;
++            ranges;
++
++            wifi@0 {
++                compatible = "pci17cb,1109";
++                reg = <0x0 0x0 0x0 0x0 0x0>;
++
++                qcom,ath12k-calibration-variant = "RDP433_3";
++
++                ports {
++                    #address-cells = <1>;
++                    #size-cells = <0>;
++
++                    port@0 {
++                        reg = <0>;
++
++                        wifi3_wsi_tx: endpoint {
++                            remote-endpoint = <&wifi1_wsi_rx>;
++                        };
++                    };
++
++                    port@1 {
++                        reg = <1>;
++
++                        wifi3_wsi_rx: endpoint {
++                            remote-endpoint = <&wifi2_wsi_tx>;
++                        };
++                    };
++                };
++            };
++        };
++    };
 -- 
 2.39.5
 
