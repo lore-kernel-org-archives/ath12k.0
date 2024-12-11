@@ -4,52 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF18DE7717D
-	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 16:14:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1373DE7717D
+	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 16:22:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
 	From:References:To:Subject:MIME-Version:Date:Message-ID:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YKfZ0u/IEKLisj1oouQOSY+3ZWOCKv1UR7KjCE6C8WU=; b=lo/shXrrVTMsnGNpxwiJ1pku+F
-	kxNPbN9jZvZK48OYC+e4SLFQVGQtxtwRlUvc14MsDNwJLYnyKeFFFMCwqfEZ/mc9sI7AtlPoLM0ta
-	QyVTPXqed9PsHDum8zvmzouHoPopWeKZfeTVDag447/1UsAwo+vc2i1Z6mHriNICveOL4bZvFW37v
-	5b4HiF/0oy3aimt8w8X9cZQ2L0w8LSMWy7U331ac5wu8fVde7DXEH50DSGdIpcFWawS2FMCg+FyKS
-	XfzwrwD9FhZXt2d6V5K2d5Qf8SdNzeKhpzVIIFTRzeAMMJCauLAqKlbkubnlqdQVAJDyYnkO0Wd21
-	b4ZQBTkw==;
+	bh=MGPkUzd3ZK4kazGrZ76+uW+2rQeyMuVuaynoQxlIsm4=; b=mCtC0RBlztb8kVCqnr6WGcsnJL
+	jquH98GS3107PutyZ3MP13caBxsjSxohndTB58gBqfil0RANwFk+S9QIbgv7OYOmdIAKO/cCsF1NY
+	CYsyrdyFP78GSIW86f/oh11B4a1dlbamTTrphXuZnyNLVlhl0gr27RQ/JuUuMXEebgHDEBg8/4fFP
+	ul8BdC275qy4cU83RILl2QDa5895fzTeebxmPHj4E1mvJ8YUfUVXLXg4aazrNdQ2A3CcQRn3WphgG
+	FqOMljKE9QO5Elgo0tiyq3OnUSxakDXFCTrwIHDaKk6thFBV5qxg0buMg7Nx2LIxqdQ6whkrMarOf
+	fZ+HeEiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLPLi-0000000FPbu-2JMh
+	id 1tLPTU-0000000FQgg-2qWU
 	for ath12k@archiver.kernel.org;
-	Wed, 11 Dec 2024 16:14:06 +0000
+	Wed, 11 Dec 2024 16:22:08 +0000
 Received: from ionic.de ([145.239.234.145] helo=mail.ionic.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLPLg-0000000FPbG-0cEq
+	id 1tLPTR-0000000FQfk-2Cu8
 	for ath12k@lists.infradead.org;
-	Wed, 11 Dec 2024 16:14:05 +0000
+	Wed, 11 Dec 2024 16:22:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
-	t=1733933641; bh=YKfZ0u/IEKLisj1oouQOSY+3ZWOCKv1UR7KjCE6C8WU=;
+	t=1733934124; bh=MGPkUzd3ZK4kazGrZ76+uW+2rQeyMuVuaynoQxlIsm4=;
 	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=Jy2scvGqL8pHU+IdFArY7/eu+U59Td7tWz46bnRu3X85sVxJmGC1IRQms0YA3QZJN
-	 n13W769MGB2/T5ix25zUKpWyCD4VfeYFgCQEsYeEvRU0kVhjOEavmOQwTxWZfEw9VW
-	 iOXEGjA+Sieck3uFmrB+F5dDe1GlvsoJgrpsg3JI=
+	b=Rhw+qIFw0h3+OmqQzbCnduMvgqiBSWuISRF4LxhS2GK5dypjPOmbz3dF1Nt96iNao
+	 i3n4XuhMT3bfvJGLZCqZnd65RfuycUYswDVtdTTlFxBNUpXrp4hddjaan2zbpwqo1p
+	 VrCRHqm/qcIcyV2M4RIoK2i5Wdi13ti867sHP+lQ=
 Received: from [172.22.111.213] (185.102.219.38.adsl.inet-telecom.org [185.102.219.38])
-	by mail.ionic.de (Postfix) with ESMTPSA id A7E4814886C9;
-	Wed, 11 Dec 2024 17:14:01 +0100 (CET)
-Message-ID: <375e2541-d86a-423a-a9fc-d12c71430606@ionic.de>
-Date: Wed, 11 Dec 2024 17:14:00 +0100
+	by mail.ionic.de (Postfix) with ESMTPSA id 05A7D14886C9;
+	Wed, 11 Dec 2024 17:22:04 +0100 (CET)
+Message-ID: <2dddf75c-6a27-4d3f-9cac-82b53b4c968b@ionic.de>
+Date: Wed, 11 Dec 2024 17:22:03 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC] [PATCH] wifi: ath12k: wait for chan update in reg_notifier
+Subject: Re: [PATCH v6 0/4] wifi: ath12k: store and send country code to
+ firmware after recovery
 To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
-References: <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
- <20241017030927.1695-1-quic_kangyang@quicinc.com>
+References: <20241017030927.1695-1-quic_kangyang@quicinc.com>
  <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
  <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
- <8b2a2c54f34c60f2170bd0cfc01c602dbb8e5d96.1733780780.git.ionic@ionic.de>
- <71b9b05a-55b0-4727-a1a1-eb57afe55637@ionic.de>
- <3e22a453-5667-4c02-8b74-65db2f8b776a@quicinc.com>
+ <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
+ <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
 Content-Language: en-US
 From: Mihai Moldovan <ionic@ionic.de>
 Autocrypt: addr=ionic@ionic.de; keydata=
@@ -96,13 +95,13 @@ Autocrypt: addr=ionic@ionic.de; keydata=
  4zysWLWKUKPFdlI744AxkyDlFlbFbmICgQJ0AuBmgJRLtjLAfIlOKgfZguWA+uCo4F/mPZ7x
  5CGLSvKqaA3YaiH85ziT5CjbFlMjbZrTHvI4/gprmgHEdec5BgQAaZ+z8sIbplcJwNp+GDq2
  S0VlnF9z
-In-Reply-To: <3e22a453-5667-4c02-8b74-65db2f8b776a@quicinc.com>
+In-Reply-To: <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
 Content-Type: multipart/signed; micalg=pgp-sha256;
  protocol="application/pgp-signature";
- boundary="------------EVMU1mUOu806GitCZz21gZua"
+ boundary="------------hOAWrgZ4O3iI5R5iE0AJ0e24"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_081404_345482_7CAF57D0 
-X-CRM114-Status: UNSURE (   5.49  )
+X-CRM114-CacheID: sfid-20241211_082205_755265_FFB78C24 
+X-CRM114-Status: UNSURE (   9.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,55 +118,123 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---------------EVMU1mUOu806GitCZz21gZua
-Content-Type: multipart/mixed; boundary="------------T2p2WaoK4nH6d5S9O2V0lyqg";
+--------------hOAWrgZ4O3iI5R5iE0AJ0e24
+Content-Type: multipart/mixed; boundary="------------B0vRb10DnB87zxHYnWrOLm1X";
  protected-headers="v1"
 From: Mihai Moldovan <ionic@ionic.de>
 To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
-Message-ID: <375e2541-d86a-423a-a9fc-d12c71430606@ionic.de>
-Subject: Re: [RFC] [PATCH] wifi: ath12k: wait for chan update in reg_notifier
-References: <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
- <20241017030927.1695-1-quic_kangyang@quicinc.com>
+Message-ID: <2dddf75c-6a27-4d3f-9cac-82b53b4c968b@ionic.de>
+Subject: Re: [PATCH v6 0/4] wifi: ath12k: store and send country code to
+ firmware after recovery
+References: <20241017030927.1695-1-quic_kangyang@quicinc.com>
  <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
  <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
- <8b2a2c54f34c60f2170bd0cfc01c602dbb8e5d96.1733780780.git.ionic@ionic.de>
- <71b9b05a-55b0-4727-a1a1-eb57afe55637@ionic.de>
- <3e22a453-5667-4c02-8b74-65db2f8b776a@quicinc.com>
-In-Reply-To: <3e22a453-5667-4c02-8b74-65db2f8b776a@quicinc.com>
+ <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
+ <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
+In-Reply-To: <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
 
---------------T2p2WaoK4nH6d5S9O2V0lyqg
+--------------B0vRb10DnB87zxHYnWrOLm1X
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: base64
 
-KiBPbiAxMi8xMS8yNCAwMzoxOCwgS2FuZyBZYW5nIHdyb3RlOg0KPiBJIHdpbGwgcmV2aWV3
-IGFuZCB0ZXN0IHlvdXIgIlJGQyB2MiINCg0KRG9uJ3QgdGVzdCBpdCB5ZXQuDQoNCkkgZm91
-bmQgb3V0IHRoYXQgaXQncyBicm9rZW4gd2hlbiBzd2l0Y2hpbmcgYmV0d2VlbiByZWdkb21z
-IChydW5uaW5nIGludG8gdGhlIA0KdGltZW91dCkgdmlhOg0KDQppdyByZWcgc2V0IENODQpp
-dyByZWcgc2V0IERFDQouLi4NCg0KV2lsbCBoYXZlIHRvIGZpeCB0aGF0IGZpcnN0LiBXYWl0
-IGZvciB2My4NCg0KDQoNCk1paGFpDQo=
+KiBPbiAxMi8xMS8yNCAwNTozMiwgS2FuZyBZYW5nIHdyb3RlOg0KPiByb290QE5VQzg6L2hv
+bWUveWsvRGVza3RvcC9zaWdtYS1zY3JpcHQjIHdsczE6IGludGVyZmFjZSBzdGF0ZQ0KPiBV
+TklOSVRJQUxJWkVELT5DT1VOVFJZX1VQREFURQ0KPiBGcmVxdWVuY3kgNTUwMCAocHJpbWFy
+eSkgbm90IGFsbG93ZWQgZm9yIEFQIG1vZGUsIGZsYWdzOiAweDEwMDk1OSBSQURBUg0KPiBQ
+cmltYXJ5IGZyZXF1ZW5jeSBub3QgYWxsb3dlZA0KPiB3bHMxOiBJRUVFIDgwMi4xMSBDb25m
+aWd1cmVkIGNoYW5uZWwgKDEwMCkgb3IgZnJlcXVlbmN5ICg1NTAwKQ0KPiAoc2Vjb25kYXJ5
+X2NoYW5uZWw9MCkgbm90IGZvdW5kIGZyb20gdGhlIGNoYW5uZWwgbGlzdCBvZiB0aGUgY3Vy
+cmVudA0KPiBtb2RlICgyKSBJRUVFIDgwMi4xMWENCj4gDQo+IERvbid0IGtub3cgaG93IHlv
+dSB0ZXN0IHdpdGggY2hhbm5lbCAxMDAsIGl0J3MgYSBERlMgY2hhbm5lbC4NCj4gQ2FuIHlv
+dSBzaG93IG1lIHlvdXIgd2hvbGUgaG9zdGFwZC5jb25mPw0KDQpTdXJlLiBERlMgbXVzdCBi
+ZSBlbmFibGVkIG9mIGNvdXJzZSAtIGJvdGggaW4gdGhlIGtlcm5lbCBhbmQgaW4gaG9zdGFw
+ZC4NCg0KQ29tcGxldGUgaG9zdGFwZC5jb25mIEknbSB0ZXN0aW5nIHdpdGggKDgwIE1IeiBv
+cGVyYXRpb24gb24gY2hhbm5lbHMgMTAwKyk6DQoNCmludGVyZmFjZT13aWZpYmUNCiNicmlk
+Z2U9YnJ2c3dpdGNoICMgRW5hYmxpbmcgdGhhdCB3aWxsIGxpa2VseSBmYWlsIGZvciB5b3Ug
+b3V0IG9mIHRoZSBib3guDQpkcml2ZXI9bmw4MDIxMQ0KbG9nZ2VyX3N5c2xvZz0tMQ0KbG9n
+Z2VyX3N5c2xvZ19sZXZlbD0wDQpsb2dnZXJfc3Rkb3V0PS0xDQpsb2dnZXJfc3Rkb3V0X2xl
+dmVsPTINCmN0cmxfaW50ZXJmYWNlPS9ydW4vaG9zdGFwZA0KY3RybF9pbnRlcmZhY2VfZ3Jv
+dXA9MA0Kc3NpZD1XUlRLQTA0DQp1dGY4X3NzaWQ9MQ0KY291bnRyeV9jb2RlPURFDQpjb3Vu
+dHJ5Mz0weDQ5DQppZWVlODAyMTFkPTENCmllZWU4MDIxMWg9MQ0KaHdfbW9kZT1hDQpjaGFu
+bmVsPTEwMA0KYWNzX251bV9zY2Fucz0xMDANCmFjc19leGNsdWRlX2Rmcz0wDQplbmFibGVf
+YmFja2dyb3VuZF9yYWRhcj0xDQptaW5fdHhfcG93ZXI9MA0KYmVhY29uX2ludD0xMDANCmR0
+aW1fcGVyaW9kPTINCm1heF9udW1fc3RhPTI1NQ0KcnRzX3RocmVzaG9sZD02NTUzNQ0KZnJh
+Z21fdGhyZXNob2xkPS0xDQpwcmVhbWJsZT0xDQptYWNhZGRyX2FjbD0xDQphY2NlcHRfbWFj
+X2ZpbGU9L2V0Yy9ob3N0YXBkL2hvc3RhcGQuYWNjZXB0DQpkZW55X21hY19maWxlPS9ldGMv
+aG9zdGFwZC9ob3N0YXBkLmRlbnkNCmF1dGhfYWxncz0xDQppZ25vcmVfYnJvYWRjYXN0X3Nz
+aWQ9MA0Kd21tX2VuYWJsZWQ9MQ0Kd21tX2FjX2JrX2N3bWluPTQNCndtbV9hY19ia19jd21h
+eD0xMA0Kd21tX2FjX2JrX2FpZnM9Nw0Kd21tX2FjX2JrX3R4b3BfbGltaXQ9MA0Kd21tX2Fj
+X2JrX2FjbT0wDQp3bW1fYWNfYmVfYWlmcz0zDQp3bW1fYWNfYmVfY3dtaW49NA0Kd21tX2Fj
+X2JlX2N3bWF4PTEwDQp3bW1fYWNfYmVfdHhvcF9saW1pdD0wDQp3bW1fYWNfYmVfYWNtPTAN
+CndtbV9hY192aV9haWZzPTINCndtbV9hY192aV9jd21pbj0zDQp3bW1fYWNfdmlfY3dtYXg9
+NA0Kd21tX2FjX3ZpX3R4b3BfbGltaXQ9OTQNCndtbV9hY192aV9hY209MA0Kd21tX2FjX3Zv
+X2FpZnM9Mg0Kd21tX2FjX3ZvX2N3bWluPTINCndtbV9hY192b19jd21heD0zDQp3bW1fYWNf
+dm9fdHhvcF9saW1pdD00Nw0Kd21tX2FjX3ZvX2FjbT0wDQphcF9tYXhfaW5hY3Rpdml0eT03
+MjAwDQpic3NfbWF4X2lkbGU9MQ0KZGlzYXNzb2NfbG93X2Fjaz0wDQpzdGFydF9kaXNhYmxl
+ZD0wDQppZWVlODAyMTFuPTENCmRpc2FibGVfMTFuPTANCmh0X2NhcGFiPVtIVDIwXVtIVDQw
+K11bSFQ0MC1dW1NIT1JULUdJLTIwXVtTSE9SVC1HSS00MF1bVFgtU1RCQ11bUlgtU1RCQzFd
+W0xEQ1BdW0RTU1NfQ0NLLTQwXVtNQVgtQU1TRFUtNzkzNV0NCnJlcXVpcmVfaHQ9MA0Kb2Jz
+c19pbnRlcnZhbD0zMA0KaHRfdmh0X3R3dF9yZXNwb25kZXI9MQ0KaWVlZTgwMjExYWM9MQ0K
+ZGlzYWJsZV8xMWFjPTANCnZodF9jYXBhYj1bTUFYLU1QRFUtMTE0NTRdW1JYTERQQ11bU0hP
+UlQtR0ktODBdW1RYLVNUQkMtMkJZMV1bUlgtU1RCQy0xXVtTVS1CRUFNRk9STUVSXVtTVS1C
+RUFNRk9STUVFXVtNQVgtQS1NUERVLUxFTi1FWFAzXVtSWC1BTlRFTk5BLVBBVFRFUk5dW1RY
+LUFOVEVOTkEtUEFUVEVSTl0NCnJlcXVpcmVfdmh0PTANCnZodF9vcGVyX2Nod2lkdGg9MQ0K
+dmh0X29wZXJfY2VudHJfZnJlcV9zZWcwX2lkeD0xMDYNCnZodF9vcGVyX2NlbnRyX2ZyZXFf
+c2VnMV9pZHg9MA0KaWVlZTgwMjExYXg9MQ0KcmVxdWlyZV9oZT0wDQpkaXNhYmxlXzExYXg9
+MA0KaGVfc3VfYmVhbWZvcm1lcj0xDQpoZV9zdV9iZWFtZm9ybWVlPTENCmhlX211X2JlYW1m
+b3JtZXI9MQ0KaGVfYnNzX2NvbG9yPTM5DQpoZV90d3RfcmVxdWlyZWQ9MA0KaGVfdHd0X3Jl
+c3BvbmRlcj0xDQpoZV9lcl9zdV9kaXNhYmxlPTANCmhlX29wZXJfY2h3aWR0aD0xDQpoZV9v
+cGVyX2NlbnRyX2ZyZXFfc2VnMF9pZHg9MTA2DQpoZV9vcGVyX2NlbnRyX2ZyZXFfc2VnMV9p
+ZHg9MA0KaGVfNmdoel9tYXhfbXBkdT0yDQpoZV82Z2h6X21heF9hbXBkdV9sZW5fZXhwPTcN
+CmhlXzZnaHpfcnhfYW50X3BhdD0xDQpoZV82Z2h6X3R4X2FudF9wYXQ9MQ0KaGVfNmdoel9y
+ZWdfcHdyX3R5cGU9NA0KcmVnX2RlZl9jbGlfZWlycF9wc2Q9MA0KcmVnX3N1Yl9jbGlfZWly
+cF9wc2Q9MQ0KdW5zb2xfYmNhc3RfcHJvYmVfcmVzcF9pbnRlcnZhbD0wDQpjaGFubmVsX3Vz
+YWdlPTENCnBlZXJfdG9fcGVlcl90d3Q9MQ0KaWVlZTgwMjExYmU9MQ0KZGlzYWJsZV8xMWJl
+PTANCmVodF9zdV9iZWFtZm9ybWVyPTENCmVodF9zdV9iZWFtZm9ybWVlPTENCmVodF9tdV9i
+ZWFtZm9ybWVyPTANCmVodF9vcGVyX2Nod2lkdGg9MQ0KZWh0X29wZXJfY2VudHJfZnJlcV9z
+ZWcwX2lkeD0xMDYNCmVodF9kZWZhdWx0X3BlX2R1cmF0aW9uPTANCmVodF9idzMyMF9vZmZz
+ZXQ9MA0KcHVuY3RfYml0bWFwPTANCnB1bmN0X2Fjc190aHJlc2hvbGQ9MA0KbWxkX2FwPTAN
+CmVhcG9sX2tleV9pbmRleF93b3JrYXJvdW5kPTANCm93bl9pcF9hZGRyPTEyNy4wLjAuMQ0K
+d3BhPTINCmV4dGVuZGVkX2tleV9pZD0wDQp3cGFfcGFzc3BocmFzZT1CUkVBS01Fbm90dGhl
+YWN0dWFscGFzc3BocmFzZW9mYw0Kd3BhX2tleV9tZ210PVdQQS1QU0sgV1BBLVBTSy1TSEEy
+NTYgU0FFDQp3cGFfcGFpcndpc2U9Q0NNUCBDQ01QLTI1NiBHQ01QIEdDTVAtMjU2DQpyc25f
+cGFpcndpc2U9Q0NNUCBDQ01QLTI1NiBHQ01QIEdDTVAtMjU2DQppZWVlODAyMTF3PTENCmdy
+b3VwX21nbXRfY2lwaGVyPUFFUy0xMjgtQ01BQw0KYmVhY29uX3Byb3Q9MQ0Kb2N2PTENCnNh
+ZV9yZXF1aXJlX21mcD0xDQpmaWxzX2Rpc2NvdmVyeV9taW5faW50ZXJ2YWw9MjANCmZpbHNf
+ZGlzY292ZXJ5X21heF9pbnRlcnZhbD04MDAwDQpzc2lkX3Byb3RlY3Rpb249MQ0KYXBfdGFi
+bGVfbWF4X3NpemU9MjU1DQphcF90YWJsZV9leHBpcmF0aW9uX3RpbWU9MzYwMA0Kd3BzX2Ny
+ZWRfYWRkX3NhZT0xDQptdWx0aV9hcF9wcm9maWxlPTINCm11bHRpX2FwX2NsaWVudF9kaXNh
+bGxvdz0wDQpmcmllbmRseV9uYW1lPVdQUyA4MDIuMTFiZSBBY2Nlc3MgUG9pbnQNCm1hbnVm
+YWN0dXJlcl91cmw9aHR0cDovL3d3dy5pb25pYy5kZS8NCm1vZGVsX2Rlc2NyaXB0aW9uPVdp
+cmVsZXNzIDgwMi4xMWJlIEFjY2VzcyBQb2ludA0Kd3BzX3JmX2JhbmRzPWENCnRkbHNfcHJv
+aGliaXQ9MQ0KdGRsc19wcm9oaWJpdF9jaGFuX3N3aXRjaD0xDQptYm89MA0KbWJvX2NlbGxf
+ZGF0YV9jb25uX3ByZWY9MQ0KcnNzaV9pZ25vcmVfcHJvYmVfcmVxdWVzdD0wDQoNCg0KPiBt
+eSBzdGVwczoNCj4gcm1tb2QgYXRoMTJrDQo+IGluc21vZCBhdGgxMmsNCj4gaXcgcmVnIHNl
+dCBDTg0KPiBob3N0YXBkLi4uDQoNClllcCwgdGhhdCBzaG91bGQgZG8gdGhlIHRyaWNrLg0K
+DQoNCg0KTWloYWkNCg==
 
---------------T2p2WaoK4nH6d5S9O2V0lyqg--
+--------------B0vRb10DnB87zxHYnWrOLm1X--
 
---------------EVMU1mUOu806GitCZz21gZua
+--------------hOAWrgZ4O3iI5R5iE0AJ0e24
 Content-Type: application/pgp-signature; name="OpenPGP_signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="OpenPGP_signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-wsF5BAABCAAjFiEEbhHQj3UzgcdE8cg8H9Yu2W4lOocFAmdZukkFAwAAAAAACgkQH9Yu2W4lOods
-3xAA3GkNMyOjIuG/Dfun94/74s6wvuDlKCv0sqTjxahC7TTV+aJNAmjVtYQ5AflKvlaodOeE3IMd
-gzHgXHad7lqFbXOoT7ALK32pVmhu6TIR7oShIoALcfEm8RbGZjQA2+F73E7O+TScRRRSP/h2+Hyf
-EF32HPKakEQ5/mZVAj/BKXvjTFuyi0V0fktrv3/864d6cnHHWYvwvfGNX/LOBh29yzFFN9UAC5mu
-0hGNw3PrUjncyfZkA+rsu7qWzNDoGhMTVBdPeJcXTYjVra2kbZ4z64X647/TnGsuCjSqpi05uuOc
-NYyqTz2zDV2bhJzVdSsnl6XAdhRFlR2Rm5n1EU7Do4cTR5liMERbb63WHss9YUnoRwZQMEXO+u/j
-gOz0gNVQwZ0qSsdg1TrjpNmbO4yimBP9S5HnbP132IWu28o/PxRG8U/No5HzY6E4kSJBODHYJ7Tr
-FK0bCmT69qImDE6eUT+Nqbm1YxEgEQ/RiteAqyakZX4X3qMuzL228wlSrAJ16tkKEjPniNd9Q7TH
-xe/rn+oPLgPIV6LigKhUy3cXscv27ajjaB3srswtSJR7axZ+SwE3lWJj/z6IdaZH8v6PbocA2CEE
-FIcRwEe6SJWeKPgqEwJ/YkwDBmP0w+8HVmjpLbaLvy9pE4KryqxVHwfce8T9j+R2SkbHlbWQ98/H
-19w=
-=oTc/
+wsF5BAABCAAjFiEEbhHQj3UzgcdE8cg8H9Yu2W4lOocFAmdZvCsFAwAAAAAACgkQH9Yu2W4lOoff
+DQ/+Nf5Dft9WZ9MEavXp5bK8/6kEJkUWLfkQj+DbUFQE3oT4jBJe618RjJT+EMc+tdx6QHIVMlal
+OhBPtDjG+xUcizUypbXoVe+e+FNawXYROtlwTkKbK/dray9mnSmShMETbpsDLZ/X9msMf/PVGZVv
+na4vA24epDhq5FYxBpBnnu1/cdAixU6Ik4z+3VM88NUCGqDpIhXPEd6erite/79bllUaQfG7tSnk
+Pj4hLK5Eg7Y1P2cdogd9eKqiV6GMt48i4S7zT9N97B3gavDvZl93la1QLGRa3l2BzEpdz/EkjCUo
+KAgWULo0R2IWaXro3JLzR/+OY1erjguQyItnr2abos3PEZHpIGZ7pGak6ICIDYbwxsjA0zaMCatR
+VGI541jfwD+Nc6qfJISppTCNYb+J8z/fwSSau+Wtxwn8jxkhBJhj93TBaP3XB/REfKgDgIciU1LG
+imSDmd/UnT+DFkL7crTMQlztZNYC/0gGmdbbaCyiPjnalN7xOb+WK1RanB7sGjcNWXWK0UrMUxxl
+DGzZ1N3XCAjydkHvMCVhh0IrHe0bZzaDrfN2ZANn0luW/Nq0yJWbAic8HQTsRgDgoG2Vme1/tnwe
+0Ua7mhC9a5eyW8EX7kflseZ1CcfhAxojtVQGBZpN2g/svF9/CK8zvLiqS6/y4ardmAUHpTLrkYxb
+iIQ=
+=NJSF
 -----END PGP SIGNATURE-----
 
---------------EVMU1mUOu806GitCZz21gZua--
+--------------hOAWrgZ4O3iI5R5iE0AJ0e24--
 
