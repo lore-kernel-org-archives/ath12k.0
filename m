@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6057E77183
-	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 15:34:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43979E77182
+	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 15:34:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3VSiFztw39qS9Lcdm82vYjp1u7aaVWnt8c7FE7BjibE=; b=OPMX1uBlNst37fRY5LdlK9LD5I
-	p3f5k4eR4XpnFzmRGNbDwhvSihfRs/CY1lqtPb4I1Op3Q1wq9X8TnYccLLSvT0TMd02JsT4cZ95Yt
-	vy+2MQuixw39rQvd+lS8ebBSG4s099vd9CGyiK8Pd+IvXwHg0+JzdljzaEzarP96MsdPwVmjGS/F4
-	a3bSRf+QNt0LBXmEz7VZhZCXpaKp4SucEgwPTru8yzJZS0Pk7O9lSBIiTzFu4l1OXkaAaP1wtRd0x
-	gfPgo7Wt74kpzJrsvUhxP7i8FLtQzLmiS+XVuayXvvjs7WdtAvFENOcjwbQeLyiqQZHLuT4BuoTyT
-	LFEPa2aA==;
+	bh=mO5gDrRATjzVworVVcjccHY9s8SJgPjrZhJPC5WE6Bs=; b=DNgD9+L1JQBITXCeKTkh3hQCzt
+	spqrxxuVL+uLnbqQmTlEAEuEHWa9UsIfDhIw+Hxw8fGRbGBesoQCWQQzL7FeEnYzzpD9v8ivAHdKM
+	lVr+E2ucmVFOxqJatXiWizgZs33Vyuc1Cx7fdTARex6tSv6mMsGTVIlGKJWc/PhiyMzMiZHBZSsfS
+	biveHUxOuXng1i2bL32b6rAmQK82KHwt5S11y7yxJeBaOPCXF0bDdMEnGukcX2tX6Y7rA7KWSiiil
+	cauYpQS9RuN3mLI9gV2gm0lFbQ+8gOi+vFcA65rEL1gJGrhVyhtjRzblU7mbN+oIcc90BsjD69Nh+
+	llbtGjUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLOje-0000000FGzh-2jGO
+	id 1tLOjh-0000000FH1c-09OD
 	for ath12k@archiver.kernel.org;
-	Wed, 11 Dec 2024 15:34:46 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Wed, 11 Dec 2024 15:34:49 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLOjc-0000000FGtl-0r8i
+	id 1tLOje-0000000FGyM-1Dor
 	for ath12k@lists.infradead.org;
-	Wed, 11 Dec 2024 15:34:45 +0000
+	Wed, 11 Dec 2024 15:34:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 92A9C5C59FD
-	for <ath12k@lists.infradead.org>; Wed, 11 Dec 2024 15:34:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9BA8C4CED2;
-	Wed, 11 Dec 2024 15:34:42 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 14BE5A40826
+	for <ath12k@lists.infradead.org>; Wed, 11 Dec 2024 15:32:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39011C4CED4;
+	Wed, 11 Dec 2024 15:34:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733931283;
-	bh=waznicM3+KHfgV1HmksA5+1fyaqEwxvI99nayrQMkMY=;
+	s=k20201202; t=1733931285;
+	bh=d0QZughSZQWEuh5lk2IPYSI2BmSOFSPhXvF7DYFzblM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=K7jPxGj3DZ4ouwTorvfuIDVK49U2c7q2aYGX6EJ1zeIT32zdoe4v6sNNreeBAe74x
-	 YkwNXVuN5CuraQCovktRwuAnrxoUlqFG543nIgHschLfUWlBwN/P0StQkxeFeY+EyP
-	 kPLI+FUNcyjFg+7XG7WbdlB+vyVpKEKFgVaOGxbKJQ6iF/KvAa5G6kbc5sCJjXlLU6
-	 tTER/LDFsetaovTbNhxaxFk5JJGMz9tV09hHya9U2lQ/H+MR96JpX+zjB8r2dGeMpn
-	 qBzGNUkD+cVnActZPPayXlYe8pOOID73TER88Gap4lkn5jbcqoYxSFQQ1crVhcgytp
-	 W44zYz1pRixxA==
+	b=p1tmzEoJOID7lrvwx32B5BVB1WqDvtHKX2QqnlsxURouLCu/ZXRPBAKfSMflv+QFM
+	 5qP5oVEw8+14t75C0geAPYJRfy1Lu+AwQRGxkd4/eGN1vDry0Kw1nKecq7owxk1gUG
+	 BWAJrO+/JCcB4M7GuunPsHyxhUpJE+oLbKgckTE+G7LlWCVzVKrbxYRJvmVyOdeTIR
+	 XTw2/OCixN1Q0f3oZP+9NPzX7by87SJkAt6IF66fR8f9Hbmn0Jjf1M7KydMzPCLBvk
+	 sRvN1uAxeQTi7/faHbp6khm4N6lfHBW836ALA/bn58ixLNWsARrsUBMVVfRLolYr1s
+	 UQgxgz+3jsFAg==
 From: Kalle Valo <kvalo@kernel.org>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 6/8] wifi: ath12k: Add MLO WMI setup and teardown functions
-Date: Wed, 11 Dec 2024 17:34:30 +0200
-Message-Id: <20241211153432.775335-7-kvalo@kernel.org>
+Subject: [PATCH v3 7/8] wifi: ath12k: enable MLO setup and teardown from core
+Date: Wed, 11 Dec 2024 17:34:31 +0200
+Message-Id: <20241211153432.775335-8-kvalo@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20241211153432.775335-1-kvalo@kernel.org>
 References: <20241211153432.775335-1-kvalo@kernel.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_073444_351815_0C63B8C6 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20241211_073446_463733_C86A9263 
+X-CRM114-Status: GOOD (  18.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,319 +72,346 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Bhagavathi Perumal S <quic_bperumal@quicinc.com>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-In case of multi device group abstraction, host has to exchange the MLO
-commands such as setup, teardown and ready to firmware.
+In case of multi device group abstraction, host has to exchange the multi-link
+operation commands such as setup and ready to firmware before registering the
+device group to mac80211.
 
-Once multi device group is ready, host has to exchange MLO setup command with
-partner devices link information and followed by MLO ready command to firmware.
-During deinit, MLO teardown command should be sent to firmware. Firmware would
-send MLO setup complete and MLO teardown complete to host for MLO setup command
-and MLO teardown command respectively.
-
-Added WMI helper functions for the MLO setup, ready and teardown command
-and the handling for corresponding event from firmware. Add appropriate WMI
-tag, command id and event id to parse the event and send request.
+The multi-link operation commands - setup, ready and teardown are necessary for
+many commands such as WMI_PEER_ASSOC_CMD, WMI_BCN_TMPL_CMD in case of
+multi-link interfaces.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Co-developed-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Signed-off-by: Bhagavathi Perumal S <quic_bperumal@quicinc.com>
 Signed-off-by: Harshitha Prem <quic_hprem@quicinc.com>
 Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 177 ++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/wmi.h |  48 +++++++
- 2 files changed, 225 insertions(+)
+ drivers/net/wireless/ath/ath12k/core.c |  73 ++++++++++++-
+ drivers/net/wireless/ath/ath12k/core.h |   3 +
+ drivers/net/wireless/ath/ath12k/mac.c  | 142 +++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/mac.h  |   3 +
+ drivers/net/wireless/ath/ath12k/wmi.c  |   3 +
+ drivers/net/wireless/ath/ath12k/wmi.h  |   1 +
+ 6 files changed, 224 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 402ae477da61..8f4b0941360d 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -7327,6 +7327,76 @@ static void ath12k_wmi_gtk_offload_status_event(struct ath12k_base *ab,
- 	kfree(tb);
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 1a43e00cffb2..af642b466ea0 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -887,6 +887,70 @@ static void ath12k_core_hw_group_stop(struct ath12k_hw_group *ag)
+ 	ath12k_mac_destroy(ag);
  }
  
-+static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
-+						struct sk_buff *skb)
++static int __ath12k_mac_mlo_ready(struct ath12k *ar)
 +{
-+	const struct wmi_mlo_setup_complete_event *ev;
-+	struct ath12k *ar = NULL;
-+	struct ath12k_pdev *pdev;
-+	const void **tb;
-+	int ret, i;
++	int ret;
 +
-+	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	if (IS_ERR(tb)) {
-+		ret = PTR_ERR(tb);
-+		ath12k_warn(ab, "failed to parse mlo setup complete event tlv: %d\n",
-+			    ret);
-+		return;
++	ret = ath12k_wmi_mlo_ready(ar);
++	if (ret) {
++		ath12k_err(ar->ab, "MLO ready failed for pdev %d: %d\n",
++			   ar->pdev_idx, ret);
++		return ret;
 +	}
 +
-+	ev = tb[WMI_TAG_MLO_SETUP_COMPLETE_EVENT];
-+	if (!ev) {
-+		ath12k_warn(ab, "failed to fetch mlo setup complete event\n");
-+		kfree(tb);
-+		return;
-+	}
++	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mlo ready done for pdev %d\n",
++		   ar->pdev_idx);
 +
-+	if (le32_to_cpu(ev->pdev_id) > ab->num_radios)
-+		goto skip_lookup;
++	return 0;
++}
 +
-+	for (i = 0; i < ab->num_radios; i++) {
-+		pdev = &ab->pdevs[i];
-+		if (pdev && pdev->pdev_id == le32_to_cpu(ev->pdev_id)) {
-+			ar = pdev->ar;
-+			break;
++int ath12k_mac_mlo_ready(struct ath12k_hw_group *ag)
++{
++	struct ath12k_hw *ah;
++	struct ath12k *ar;
++	int ret;
++	int i, j;
++
++	for (i = 0; i < ag->num_hw; i++) {
++		ah = ag->ah[i];
++		if (!ah)
++			continue;
++
++		for_each_ar(ah, ar, j) {
++			ar = &ah->radio[j];
++			ret = __ath12k_mac_mlo_ready(ar);
++			if (ret)
++				goto out;
 +		}
 +	}
 +
-+skip_lookup:
-+	if (!ar) {
-+		ath12k_warn(ab, "invalid pdev_id %d status %u in setup complete event\n",
-+			    ev->pdev_id, ev->status);
-+		goto out;
-+	}
-+
 +out:
-+	kfree(tb);
++	return ret;
 +}
 +
-+static void ath12k_wmi_event_teardown_complete(struct ath12k_base *ab,
-+					       struct sk_buff *skb)
++static int ath12k_core_mlo_setup(struct ath12k_hw_group *ag)
 +{
-+	const struct wmi_mlo_teardown_complete_event *ev;
-+	const void **tb;
 +	int ret;
 +
-+	tb = ath12k_wmi_tlv_parse_alloc(ab, skb, GFP_ATOMIC);
-+	if (IS_ERR(tb)) {
-+		ret = PTR_ERR(tb);
-+		ath12k_warn(ab, "failed to parse teardown complete event tlv: %d\n", ret);
-+		return;
-+	}
++	if (!ag->mlo_capable || ag->num_devices == 1)
++		return 0;
 +
-+	ev = tb[WMI_TAG_MLO_TEARDOWN_COMPLETE];
-+	if (!ev) {
-+		ath12k_warn(ab, "failed to fetch teardown complete event\n");
-+		kfree(tb);
-+		return;
-+	}
++	ret = ath12k_mac_mlo_setup(ag);
++	if (ret)
++		return ret;
 +
-+	kfree(tb);
++	ret = ath12k_mac_mlo_ready(ag);
++	if (ret)
++		goto err_mlo_teardown;
++
++	return 0;
++
++err_mlo_teardown:
++	ath12k_mac_mlo_teardown(ag);
++
++	return ret;
 +}
 +
- static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
+ static int ath12k_core_hw_group_start(struct ath12k_hw_group *ag)
  {
- 	struct wmi_cmd_hdr *cmd_hdr;
-@@ -7453,6 +7523,12 @@ static void ath12k_wmi_op_rx(struct ath12k_base *ab, struct sk_buff *skb)
- 	case WMI_GTK_OFFLOAD_STATUS_EVENTID:
- 		ath12k_wmi_gtk_offload_status_event(ab, skb);
- 		break;
-+	case WMI_MLO_SETUP_COMPLETE_EVENTID:
-+		ath12k_wmi_event_mlo_setup_complete(ab, skb);
-+		break;
-+	case WMI_MLO_TEARDOWN_COMPLETE_EVENTID:
-+		ath12k_wmi_event_teardown_complete(ab, skb);
-+		break;
- 	/* TODO: Add remaining events */
- 	default:
- 		ath12k_dbg(ab, ATH12K_DBG_WMI, "Unknown eventid: 0x%x\n", id);
-@@ -8269,3 +8345,104 @@ int ath12k_wmi_sta_keepalive(struct ath12k *ar,
+ 	struct ath12k_base *ab;
+@@ -901,10 +965,14 @@ static int ath12k_core_hw_group_start(struct ath12k_hw_group *ag)
+ 	if (WARN_ON(ret))
+ 		return ret;
  
- 	return ath12k_wmi_cmd_send(wmi, skb, WMI_STA_KEEPALIVE_CMDID);
+-	ret = ath12k_mac_register(ag);
++	ret = ath12k_core_mlo_setup(ag);
+ 	if (WARN_ON(ret))
+ 		goto err_mac_destroy;
+ 
++	ret = ath12k_mac_register(ag);
++	if (WARN_ON(ret))
++		goto err_mlo_teardown;
++
+ 	set_bit(ATH12K_GROUP_FLAG_REGISTERED, &ag->flags);
+ 
+ core_pdev_create:
+@@ -939,6 +1007,9 @@ static int ath12k_core_hw_group_start(struct ath12k_hw_group *ag)
+ 	ath12k_core_hw_group_stop(ag);
+ 	return ret;
+ 
++err_mlo_teardown:
++	ath12k_mac_mlo_teardown(ag);
++
+ err_mac_destroy:
+ 	ath12k_mac_destroy(ag);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index bf310df3d8f7..dc01f7b3fd73 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -715,6 +715,9 @@ struct ath12k {
+ 	u32 freq_high;
+ 
+ 	bool nlo_enabled;
++
++	struct completion mlo_setup_done;
++	u32 mlo_setup_status;
+ };
+ 
+ struct ath12k_hw {
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index c4eab4c1c10e..23c5c8fd952d 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10810,6 +10810,7 @@ static void ath12k_mac_setup(struct ath12k *ar)
+ 	init_completion(&ar->scan.started);
+ 	init_completion(&ar->scan.completed);
+ 	init_completion(&ar->scan.on_channel);
++	init_completion(&ar->mlo_setup_done);
+ 
+ 	INIT_DELAYED_WORK(&ar->scan.timeout, ath12k_scan_timeout_work);
+ 	INIT_WORK(&ar->regd_update_work, ath12k_regd_update_work);
+@@ -10818,6 +10819,147 @@ static void ath12k_mac_setup(struct ath12k *ar)
+ 	skb_queue_head_init(&ar->wmi_mgmt_tx_queue);
  }
-+
-+int ath12k_wmi_mlo_setup(struct ath12k *ar, struct wmi_mlo_setup_arg *mlo_params)
+ 
++static int __ath12k_mac_mlo_setup(struct ath12k *ar)
 +{
-+	struct wmi_mlo_setup_cmd *cmd;
-+	struct ath12k_wmi_pdev *wmi = ar->wmi;
-+	u32 *partner_links, num_links;
-+	int i, ret, buf_len, arg_len;
-+	struct sk_buff *skb;
-+	struct wmi_tlv *tlv;
-+	void *ptr;
++	u8 num_link = 0, partner_link_id[ATH12K_GROUP_MAX_RADIO] = {};
++	struct ath12k_base *partner_ab, *ab = ar->ab;
++	struct ath12k_hw_group *ag = ab->ag;
++	struct wmi_mlo_setup_arg mlo = {};
++	struct ath12k_pdev *pdev;
++	unsigned long time_left;
++	int i, j, ret;
 +
-+	num_links = mlo_params->num_partner_links;
-+	arg_len = num_links * sizeof(u32);
-+	buf_len = sizeof(*cmd) + TLV_HDR_SIZE + arg_len;
++	lockdep_assert_held(&ag->mutex);
 +
-+	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, buf_len);
-+	if (!skb)
-+		return -ENOMEM;
++	reinit_completion(&ar->mlo_setup_done);
 +
-+	cmd = (struct wmi_mlo_setup_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_SETUP_CMD,
-+						 sizeof(*cmd));
-+	cmd->mld_group_id = mlo_params->group_id;
-+	cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
-+	ptr = skb->data + sizeof(*cmd);
++	for (i = 0; i < ag->num_devices; i++) {
++		partner_ab = ag->ab[i];
 +
-+	tlv = ptr;
-+	tlv->header = ath12k_wmi_tlv_hdr(WMI_TAG_ARRAY_UINT32, arg_len);
-+	ptr += TLV_HDR_SIZE;
++		for (j = 0; j < partner_ab->num_radios; j++) {
++			pdev = &partner_ab->pdevs[j];
 +
-+	partner_links = ptr;
-+	for (i = 0; i < num_links; i++)
-+		partner_links[i] = mlo_params->partner_link_id[i];
++			/* Avoid the self link */
++			if (ar == pdev->ar)
++				continue;
 +
-+	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_MLO_SETUP_CMDID);
++			partner_link_id[num_link] = pdev->hw_link_id;
++			num_link++;
++
++			ath12k_dbg(ab, ATH12K_DBG_MAC, "device %d pdev %d hw_link_id %d num_link %d\n",
++				   i, j, pdev->hw_link_id, num_link);
++		}
++	}
++
++	mlo.group_id = cpu_to_le32(ag->id);
++	mlo.partner_link_id = partner_link_id;
++	mlo.num_partner_links = num_link;
++	ar->mlo_setup_status = 0;
++
++	ath12k_dbg(ab, ATH12K_DBG_MAC, "group id %d num_link %d\n", ag->id, num_link);
++
++	ret = ath12k_wmi_mlo_setup(ar, &mlo);
 +	if (ret) {
-+		ath12k_warn(ar->ab, "failed to submit WMI_MLO_SETUP_CMDID command: %d\n",
-+			    ret);
-+		dev_kfree_skb(skb);
++		ath12k_err(ab, "failed to send  setup MLO WMI command for pdev %d: %d\n",
++			   ar->pdev_idx, ret);
 +		return ret;
 +	}
++
++	time_left = wait_for_completion_timeout(&ar->mlo_setup_done,
++						WMI_MLO_CMD_TIMEOUT_HZ);
++
++	if (!time_left || ar->mlo_setup_status)
++		return ar->mlo_setup_status ? : -ETIMEDOUT;
++
++	ath12k_dbg(ab, ATH12K_DBG_MAC, "mlo setup done for pdev %d\n", ar->pdev_idx);
 +
 +	return 0;
 +}
 +
-+int ath12k_wmi_mlo_ready(struct ath12k *ar)
++static int __ath12k_mac_mlo_teardown(struct ath12k *ar)
 +{
-+	struct wmi_mlo_ready_cmd *cmd;
-+	struct ath12k_wmi_pdev *wmi = ar->wmi;
-+	struct sk_buff *skb;
-+	int ret, len;
++	struct ath12k_base *ab = ar->ab;
++	int ret;
 +
-+	len = sizeof(*cmd);
-+	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
-+	if (!skb)
-+		return -ENOMEM;
++	if (test_bit(ATH12K_FLAG_RECOVERY, &ab->dev_flags))
++		return 0;
 +
-+	cmd = (struct wmi_mlo_ready_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_READY_CMD,
-+						 sizeof(*cmd));
-+	cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
-+
-+	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_MLO_READY_CMDID);
++	ret = ath12k_wmi_mlo_teardown(ar);
 +	if (ret) {
-+		ath12k_warn(ar->ab, "failed to submit WMI_MLO_READY_CMDID command: %d\n",
-+			    ret);
-+		dev_kfree_skb(skb);
++		ath12k_warn(ab, "failed to send MLO teardown WMI command for pdev %d: %d\n",
++			    ar->pdev_idx, ret);
 +		return ret;
 +	}
++
++	ath12k_dbg(ab, ATH12K_DBG_MAC, "mlo teardown for pdev %d\n", ar->pdev_idx);
 +
 +	return 0;
 +}
 +
-+int ath12k_wmi_mlo_teardown(struct ath12k *ar)
++int ath12k_mac_mlo_setup(struct ath12k_hw_group *ag)
 +{
-+	struct wmi_mlo_teardown_cmd *cmd;
-+	struct ath12k_wmi_pdev *wmi = ar->wmi;
-+	struct sk_buff *skb;
-+	int ret, len;
++	struct ath12k_hw *ah;
++	struct ath12k *ar;
++	int ret;
++	int i, j;
 +
-+	len = sizeof(*cmd);
-+	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, len);
-+	if (!skb)
-+		return -ENOMEM;
++	for (i = 0; i < ag->num_hw; i++) {
++		ah = ag->ah[i];
++		if (!ah)
++			continue;
 +
-+	cmd = (struct wmi_mlo_teardown_cmd *)skb->data;
-+	cmd->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_MLO_TEARDOWN_CMD,
-+						 sizeof(*cmd));
-+	cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
-+	cmd->reason_code = WMI_MLO_TEARDOWN_SSR_REASON;
-+
-+	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_MLO_TEARDOWN_CMDID);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "failed to submit WMI MLO teardown command: %d\n",
-+			    ret);
-+		dev_kfree_skb(skb);
-+		return ret;
++		for_each_ar(ah, ar, j) {
++			ar = &ah->radio[j];
++			ret = __ath12k_mac_mlo_setup(ar);
++			if (ret) {
++				ath12k_err(ar->ab, "failed to setup MLO: %d\n", ret);
++				goto err_setup;
++			}
++		}
 +	}
 +
 +	return 0;
++
++err_setup:
++	for (i = i - 1; i >= 0; i--) {
++		ah = ag->ah[i];
++		if (!ah)
++			continue;
++
++		for (j = j - 1; j >= 0; j--) {
++			ar = &ah->radio[j];
++			if (!ar)
++				continue;
++
++			__ath12k_mac_mlo_teardown(ar);
++		}
++	}
++
++	return ret;
 +}
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 05aa9754118a..640720b68782 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -285,6 +285,7 @@ enum wmi_cmd_group {
- 	WMI_GRP_TWT            = 0x3e,
- 	WMI_GRP_MOTION_DET     = 0x3f,
- 	WMI_GRP_SPATIAL_REUSE  = 0x40,
-+	WMI_GRP_MLO            = 0x48,
- };
- 
- #define WMI_CMD_GRP(grp_id) (((grp_id) << 12) | 0x1)
-@@ -665,6 +666,10 @@ enum wmi_tlv_cmd_id {
- 	WMI_PDEV_OBSS_PD_SPATIAL_REUSE_CMDID =
- 				WMI_TLV_CMD(WMI_GRP_SPATIAL_REUSE),
- 	WMI_PDEV_OBSS_PD_SPATIAL_REUSE_SET_DEF_OBSS_THRESH_CMDID,
-+	WMI_MLO_LINK_SET_ACTIVE_CMDID = WMI_TLV_CMD(WMI_GRP_MLO),
-+	WMI_MLO_SETUP_CMDID,
-+	WMI_MLO_READY_CMDID,
-+	WMI_MLO_TEARDOWN_CMDID,
- };
- 
- enum wmi_tlv_event_id {
-@@ -874,6 +879,9 @@ enum wmi_tlv_event_id {
- 	WMI_TWT_DEL_DIALOG_EVENTID,
- 	WMI_TWT_PAUSE_DIALOG_EVENTID,
- 	WMI_TWT_RESUME_DIALOG_EVENTID,
-+	WMI_MLO_LINK_SET_ACTIVE_RESP_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_MLO),
-+	WMI_MLO_SETUP_COMPLETE_EVENTID,
-+	WMI_MLO_TEARDOWN_COMPLETE_EVENTID,
- };
- 
- enum wmi_tlv_pdev_param {
-@@ -5026,6 +5034,43 @@ struct wmi_twt_disable_event {
- 	__le32 status;
- } __packed;
- 
-+struct wmi_mlo_setup_cmd {
-+	__le32 tlv_header;
-+	__le32 mld_group_id;
-+	__le32 pdev_id;
-+} __packed;
 +
-+struct wmi_mlo_setup_arg {
-+	__le32 group_id;
-+	u8 num_partner_links;
-+	u8 *partner_link_id;
-+};
++void ath12k_mac_mlo_teardown(struct ath12k_hw_group *ag)
++{
++	struct ath12k_hw *ah;
++	struct ath12k *ar;
++	int ret, i, j;
 +
-+struct wmi_mlo_ready_cmd {
-+	__le32 tlv_header;
-+	__le32 pdev_id;
-+} __packed;
++	for (i = 0; i < ag->num_hw; i++) {
++		ah = ag->ah[i];
++		if (!ah)
++			continue;
 +
-+enum wmi_mlo_tear_down_reason_code_type {
-+	WMI_MLO_TEARDOWN_SSR_REASON,
-+};
++		for_each_ar(ah, ar, j) {
++			ar = &ah->radio[j];
++			ret = __ath12k_mac_mlo_teardown(ar);
++			if (ret) {
++				ath12k_err(ar->ab, "failed to teardown MLO: %d\n", ret);
++				break;
++			}
++		}
++	}
++}
 +
-+struct wmi_mlo_teardown_cmd {
-+	__le32 tlv_header;
-+	__le32 pdev_id;
-+	__le32 reason_code;
-+} __packed;
-+
-+struct wmi_mlo_setup_complete_event {
-+	__le32 pdev_id;
-+	__le32 status;
-+} __packed;
-+
-+struct wmi_mlo_teardown_complete_event {
-+	__le32 pdev_id;
-+	__le32 status;
-+} __packed;
-+
- /* WOW structures */
- enum wmi_wow_wakeup_event {
- 	WOW_BMISS_EVENT = 0,
-@@ -5751,5 +5796,8 @@ int ath12k_wmi_gtk_rekey_getinfo(struct ath12k *ar,
- 				 struct ath12k_link_vif *arvif);
- int ath12k_wmi_sta_keepalive(struct ath12k *ar,
- 			     const struct wmi_sta_keepalive_arg *arg);
-+int ath12k_wmi_mlo_setup(struct ath12k *ar, struct wmi_mlo_setup_arg *mlo_params);
-+int ath12k_wmi_mlo_ready(struct ath12k *ar);
-+int ath12k_wmi_mlo_teardown(struct ath12k *ar);
+ int ath12k_mac_register(struct ath12k_hw_group *ag)
+ {
+ 	struct ath12k_base *ab = ag->ab[0];
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index ccfc215d83ff..81cfb950e6cd 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -96,6 +96,9 @@ int ath12k_mac_vif_set_keepalive(struct ath12k_link_vif *arvif,
+ 				 enum wmi_sta_keepalive_method method,
+ 				 u32 interval);
+ u8 ath12k_mac_get_target_pdev_id(struct ath12k *ar);
++int ath12k_mac_mlo_setup(struct ath12k_hw_group *ag);
++int ath12k_mac_mlo_ready(struct ath12k_hw_group *ag);
++void ath12k_mac_mlo_teardown(struct ath12k_hw_group *ag);
+ int ath12k_mac_vdev_stop(struct ath12k_link_vif *arvif);
  
  #endif
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 8f4b0941360d..10a6ba926343 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -7369,6 +7369,9 @@ static void ath12k_wmi_event_mlo_setup_complete(struct ath12k_base *ab,
+ 		goto out;
+ 	}
+ 
++	ar->mlo_setup_status = le32_to_cpu(ev->status);
++	complete(&ar->mlo_setup_done);
++
+ out:
+ 	kfree(tb);
+ }
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 640720b68782..270ed458302e 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -4938,6 +4938,7 @@ struct wmi_probe_tmpl_cmd {
+ 
+ #define MAX_RADIOS 2
+ 
++#define WMI_MLO_CMD_TIMEOUT_HZ (5 * HZ)
+ #define WMI_SERVICE_READY_TIMEOUT_HZ (5 * HZ)
+ #define WMI_SEND_TIMEOUT_HZ (3 * HZ)
+ 
 -- 
 2.39.5
 
