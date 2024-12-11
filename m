@@ -4,104 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1373DE7717D
-	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 16:22:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 575CDE7717D
+	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 17:20:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
-	From:References:To:Subject:MIME-Version:Date:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MGPkUzd3ZK4kazGrZ76+uW+2rQeyMuVuaynoQxlIsm4=; b=mCtC0RBlztb8kVCqnr6WGcsnJL
-	jquH98GS3107PutyZ3MP13caBxsjSxohndTB58gBqfil0RANwFk+S9QIbgv7OYOmdIAKO/cCsF1NY
-	CYsyrdyFP78GSIW86f/oh11B4a1dlbamTTrphXuZnyNLVlhl0gr27RQ/JuUuMXEebgHDEBg8/4fFP
-	ul8BdC275qy4cU83RILl2QDa5895fzTeebxmPHj4E1mvJ8YUfUVXLXg4aazrNdQ2A3CcQRn3WphgG
-	FqOMljKE9QO5Elgo0tiyq3OnUSxakDXFCTrwIHDaKk6thFBV5qxg0buMg7Nx2LIxqdQ6whkrMarOf
-	fZ+HeEiA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5tSQihQWVS6W55bpb7kvbLjd05B4Kx963wP+SFkQaLg=; b=21Dnh90WlvxPFqP4rqZloMrvGJ
+	A/7fuPitp1q3TSKvdWALnlwehHKfTphGHGbNDrvFKR/gy536kSovyhYIEI5Dk3kaqfsqc+TFWQ5AB
+	3zqS+79zvMfa+/w78e63b73Wap5djZoU8HtiI/fNBWS6deSVrgfR0hRwWbQYujwAVgR2en2yEPw9X
+	PNPtfxQThXQftKDoRn2CuEWVbwfNjLSmQ5Qh4Q3F29A2XYkZAoOjLzJqA5UC1zDhypaVf5uHgsPDU
+	QrIH9tBgy4tLQOHl8RNFU05AYkrWcKynjjYOVA0r7vB/RfiKwVue6CNsG96CW9GZ/4XyEJ3BOUbaA
+	0V1Vsbrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLPTU-0000000FQgg-2qWU
+	id 1tLQOJ-0000000FZwz-05pV
 	for ath12k@archiver.kernel.org;
-	Wed, 11 Dec 2024 16:22:08 +0000
-Received: from ionic.de ([145.239.234.145] helo=mail.ionic.de)
+	Wed, 11 Dec 2024 17:20:51 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLPTR-0000000FQfk-2Cu8
+	id 1tLQOG-0000000FZv0-1cGt
 	for ath12k@lists.infradead.org;
-	Wed, 11 Dec 2024 16:22:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ionic.de; s=default;
-	t=1733934124; bh=MGPkUzd3ZK4kazGrZ76+uW+2rQeyMuVuaynoQxlIsm4=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=Rhw+qIFw0h3+OmqQzbCnduMvgqiBSWuISRF4LxhS2GK5dypjPOmbz3dF1Nt96iNao
-	 i3n4XuhMT3bfvJGLZCqZnd65RfuycUYswDVtdTTlFxBNUpXrp4hddjaan2zbpwqo1p
-	 VrCRHqm/qcIcyV2M4RIoK2i5Wdi13ti867sHP+lQ=
-Received: from [172.22.111.213] (185.102.219.38.adsl.inet-telecom.org [185.102.219.38])
-	by mail.ionic.de (Postfix) with ESMTPSA id 05A7D14886C9;
-	Wed, 11 Dec 2024 17:22:04 +0100 (CET)
-Message-ID: <2dddf75c-6a27-4d3f-9cac-82b53b4c968b@ionic.de>
-Date: Wed, 11 Dec 2024 17:22:03 +0100
+	Wed, 11 Dec 2024 17:20:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id E2D345C66EA;
+	Wed, 11 Dec 2024 17:20:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0AE0CC4CED2;
+	Wed, 11 Dec 2024 17:20:46 +0000 (UTC)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20241206054552.177424-1-quic_bqiang@quicinc.com>
+References: <20241206054552.177424-1-quic_bqiang@quicinc.com>
+Subject: Re: [PATCH] wifi: ath12k: fix leaking michael_mic for non-primary
+ links
+Message-Id: <173393764697.2156603.1195377255874275806.b4-ty@oss.qualcomm.com>
+Date: Wed, 11 Dec 2024 09:20:46 -0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 0/4] wifi: ath12k: store and send country code to
- firmware after recovery
-To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
-References: <20241017030927.1695-1-quic_kangyang@quicinc.com>
- <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
- <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
- <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
- <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
-Content-Language: en-US
-From: Mihai Moldovan <ionic@ionic.de>
-Autocrypt: addr=ionic@ionic.de; keydata=
- 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
- S0VlnF9z
-In-Reply-To: <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="------------hOAWrgZ4O3iI5R5iE0AJ0e24"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_082205_755265_FFB78C24 
-X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-CacheID: sfid-20241211_092048_464480_FAFC90C8 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -117,124 +64,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---------------hOAWrgZ4O3iI5R5iE0AJ0e24
-Content-Type: multipart/mixed; boundary="------------B0vRb10DnB87zxHYnWrOLm1X";
- protected-headers="v1"
-From: Mihai Moldovan <ionic@ionic.de>
-To: Kang Yang <quic_kangyang@quicinc.com>, ath12k@lists.infradead.org
-Message-ID: <2dddf75c-6a27-4d3f-9cac-82b53b4c968b@ionic.de>
-Subject: Re: [PATCH v6 0/4] wifi: ath12k: store and send country code to
- firmware after recovery
-References: <20241017030927.1695-1-quic_kangyang@quicinc.com>
- <303a0926-e622-4fa2-ada7-05c7d758b778@ionic.de>
- <5176a1d1-c08c-4506-9dea-9aed4e54e3b7@quicinc.com>
- <3833e16a-4209-4ce9-8c40-a5d41827a1f3@ionic.de>
- <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
-In-Reply-To: <43036212-8411-45e5-b9fe-017ee9f0b990@quicinc.com>
 
---------------B0vRb10DnB87zxHYnWrOLm1X
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: base64
+On Fri, 06 Dec 2024 13:45:52 +0800, Baochen Qiang wrote:
+> In ath12k_dp_rx_peer_frag_setup(), commit ea4192553850 ("wifi: ath12k: add primary
+> link for data path operations") checks whether a link is the primary link, and
+> returns directly if it isn't. In ML scenario where we have non-primary links created,
+> this results in leaking the michael_mic info since it is allocated by default but
+> could never be freed for a non-primary link.
+> 
+> Note that we can not move the might-sleep allocation after primary link check since
+> there we are in atomic context (due to spin lock). So keep the default allocation,
+> and then free it before return to fix this issue.
+> 
+> [...]
 
-KiBPbiAxMi8xMS8yNCAwNTozMiwgS2FuZyBZYW5nIHdyb3RlOg0KPiByb290QE5VQzg6L2hv
-bWUveWsvRGVza3RvcC9zaWdtYS1zY3JpcHQjIHdsczE6IGludGVyZmFjZSBzdGF0ZQ0KPiBV
-TklOSVRJQUxJWkVELT5DT1VOVFJZX1VQREFURQ0KPiBGcmVxdWVuY3kgNTUwMCAocHJpbWFy
-eSkgbm90IGFsbG93ZWQgZm9yIEFQIG1vZGUsIGZsYWdzOiAweDEwMDk1OSBSQURBUg0KPiBQ
-cmltYXJ5IGZyZXF1ZW5jeSBub3QgYWxsb3dlZA0KPiB3bHMxOiBJRUVFIDgwMi4xMSBDb25m
-aWd1cmVkIGNoYW5uZWwgKDEwMCkgb3IgZnJlcXVlbmN5ICg1NTAwKQ0KPiAoc2Vjb25kYXJ5
-X2NoYW5uZWw9MCkgbm90IGZvdW5kIGZyb20gdGhlIGNoYW5uZWwgbGlzdCBvZiB0aGUgY3Vy
-cmVudA0KPiBtb2RlICgyKSBJRUVFIDgwMi4xMWENCj4gDQo+IERvbid0IGtub3cgaG93IHlv
-dSB0ZXN0IHdpdGggY2hhbm5lbCAxMDAsIGl0J3MgYSBERlMgY2hhbm5lbC4NCj4gQ2FuIHlv
-dSBzaG93IG1lIHlvdXIgd2hvbGUgaG9zdGFwZC5jb25mPw0KDQpTdXJlLiBERlMgbXVzdCBi
-ZSBlbmFibGVkIG9mIGNvdXJzZSAtIGJvdGggaW4gdGhlIGtlcm5lbCBhbmQgaW4gaG9zdGFw
-ZC4NCg0KQ29tcGxldGUgaG9zdGFwZC5jb25mIEknbSB0ZXN0aW5nIHdpdGggKDgwIE1IeiBv
-cGVyYXRpb24gb24gY2hhbm5lbHMgMTAwKyk6DQoNCmludGVyZmFjZT13aWZpYmUNCiNicmlk
-Z2U9YnJ2c3dpdGNoICMgRW5hYmxpbmcgdGhhdCB3aWxsIGxpa2VseSBmYWlsIGZvciB5b3Ug
-b3V0IG9mIHRoZSBib3guDQpkcml2ZXI9bmw4MDIxMQ0KbG9nZ2VyX3N5c2xvZz0tMQ0KbG9n
-Z2VyX3N5c2xvZ19sZXZlbD0wDQpsb2dnZXJfc3Rkb3V0PS0xDQpsb2dnZXJfc3Rkb3V0X2xl
-dmVsPTINCmN0cmxfaW50ZXJmYWNlPS9ydW4vaG9zdGFwZA0KY3RybF9pbnRlcmZhY2VfZ3Jv
-dXA9MA0Kc3NpZD1XUlRLQTA0DQp1dGY4X3NzaWQ9MQ0KY291bnRyeV9jb2RlPURFDQpjb3Vu
-dHJ5Mz0weDQ5DQppZWVlODAyMTFkPTENCmllZWU4MDIxMWg9MQ0KaHdfbW9kZT1hDQpjaGFu
-bmVsPTEwMA0KYWNzX251bV9zY2Fucz0xMDANCmFjc19leGNsdWRlX2Rmcz0wDQplbmFibGVf
-YmFja2dyb3VuZF9yYWRhcj0xDQptaW5fdHhfcG93ZXI9MA0KYmVhY29uX2ludD0xMDANCmR0
-aW1fcGVyaW9kPTINCm1heF9udW1fc3RhPTI1NQ0KcnRzX3RocmVzaG9sZD02NTUzNQ0KZnJh
-Z21fdGhyZXNob2xkPS0xDQpwcmVhbWJsZT0xDQptYWNhZGRyX2FjbD0xDQphY2NlcHRfbWFj
-X2ZpbGU9L2V0Yy9ob3N0YXBkL2hvc3RhcGQuYWNjZXB0DQpkZW55X21hY19maWxlPS9ldGMv
-aG9zdGFwZC9ob3N0YXBkLmRlbnkNCmF1dGhfYWxncz0xDQppZ25vcmVfYnJvYWRjYXN0X3Nz
-aWQ9MA0Kd21tX2VuYWJsZWQ9MQ0Kd21tX2FjX2JrX2N3bWluPTQNCndtbV9hY19ia19jd21h
-eD0xMA0Kd21tX2FjX2JrX2FpZnM9Nw0Kd21tX2FjX2JrX3R4b3BfbGltaXQ9MA0Kd21tX2Fj
-X2JrX2FjbT0wDQp3bW1fYWNfYmVfYWlmcz0zDQp3bW1fYWNfYmVfY3dtaW49NA0Kd21tX2Fj
-X2JlX2N3bWF4PTEwDQp3bW1fYWNfYmVfdHhvcF9saW1pdD0wDQp3bW1fYWNfYmVfYWNtPTAN
-CndtbV9hY192aV9haWZzPTINCndtbV9hY192aV9jd21pbj0zDQp3bW1fYWNfdmlfY3dtYXg9
-NA0Kd21tX2FjX3ZpX3R4b3BfbGltaXQ9OTQNCndtbV9hY192aV9hY209MA0Kd21tX2FjX3Zv
-X2FpZnM9Mg0Kd21tX2FjX3ZvX2N3bWluPTINCndtbV9hY192b19jd21heD0zDQp3bW1fYWNf
-dm9fdHhvcF9saW1pdD00Nw0Kd21tX2FjX3ZvX2FjbT0wDQphcF9tYXhfaW5hY3Rpdml0eT03
-MjAwDQpic3NfbWF4X2lkbGU9MQ0KZGlzYXNzb2NfbG93X2Fjaz0wDQpzdGFydF9kaXNhYmxl
-ZD0wDQppZWVlODAyMTFuPTENCmRpc2FibGVfMTFuPTANCmh0X2NhcGFiPVtIVDIwXVtIVDQw
-K11bSFQ0MC1dW1NIT1JULUdJLTIwXVtTSE9SVC1HSS00MF1bVFgtU1RCQ11bUlgtU1RCQzFd
-W0xEQ1BdW0RTU1NfQ0NLLTQwXVtNQVgtQU1TRFUtNzkzNV0NCnJlcXVpcmVfaHQ9MA0Kb2Jz
-c19pbnRlcnZhbD0zMA0KaHRfdmh0X3R3dF9yZXNwb25kZXI9MQ0KaWVlZTgwMjExYWM9MQ0K
-ZGlzYWJsZV8xMWFjPTANCnZodF9jYXBhYj1bTUFYLU1QRFUtMTE0NTRdW1JYTERQQ11bU0hP
-UlQtR0ktODBdW1RYLVNUQkMtMkJZMV1bUlgtU1RCQy0xXVtTVS1CRUFNRk9STUVSXVtTVS1C
-RUFNRk9STUVFXVtNQVgtQS1NUERVLUxFTi1FWFAzXVtSWC1BTlRFTk5BLVBBVFRFUk5dW1RY
-LUFOVEVOTkEtUEFUVEVSTl0NCnJlcXVpcmVfdmh0PTANCnZodF9vcGVyX2Nod2lkdGg9MQ0K
-dmh0X29wZXJfY2VudHJfZnJlcV9zZWcwX2lkeD0xMDYNCnZodF9vcGVyX2NlbnRyX2ZyZXFf
-c2VnMV9pZHg9MA0KaWVlZTgwMjExYXg9MQ0KcmVxdWlyZV9oZT0wDQpkaXNhYmxlXzExYXg9
-MA0KaGVfc3VfYmVhbWZvcm1lcj0xDQpoZV9zdV9iZWFtZm9ybWVlPTENCmhlX211X2JlYW1m
-b3JtZXI9MQ0KaGVfYnNzX2NvbG9yPTM5DQpoZV90d3RfcmVxdWlyZWQ9MA0KaGVfdHd0X3Jl
-c3BvbmRlcj0xDQpoZV9lcl9zdV9kaXNhYmxlPTANCmhlX29wZXJfY2h3aWR0aD0xDQpoZV9v
-cGVyX2NlbnRyX2ZyZXFfc2VnMF9pZHg9MTA2DQpoZV9vcGVyX2NlbnRyX2ZyZXFfc2VnMV9p
-ZHg9MA0KaGVfNmdoel9tYXhfbXBkdT0yDQpoZV82Z2h6X21heF9hbXBkdV9sZW5fZXhwPTcN
-CmhlXzZnaHpfcnhfYW50X3BhdD0xDQpoZV82Z2h6X3R4X2FudF9wYXQ9MQ0KaGVfNmdoel9y
-ZWdfcHdyX3R5cGU9NA0KcmVnX2RlZl9jbGlfZWlycF9wc2Q9MA0KcmVnX3N1Yl9jbGlfZWly
-cF9wc2Q9MQ0KdW5zb2xfYmNhc3RfcHJvYmVfcmVzcF9pbnRlcnZhbD0wDQpjaGFubmVsX3Vz
-YWdlPTENCnBlZXJfdG9fcGVlcl90d3Q9MQ0KaWVlZTgwMjExYmU9MQ0KZGlzYWJsZV8xMWJl
-PTANCmVodF9zdV9iZWFtZm9ybWVyPTENCmVodF9zdV9iZWFtZm9ybWVlPTENCmVodF9tdV9i
-ZWFtZm9ybWVyPTANCmVodF9vcGVyX2Nod2lkdGg9MQ0KZWh0X29wZXJfY2VudHJfZnJlcV9z
-ZWcwX2lkeD0xMDYNCmVodF9kZWZhdWx0X3BlX2R1cmF0aW9uPTANCmVodF9idzMyMF9vZmZz
-ZXQ9MA0KcHVuY3RfYml0bWFwPTANCnB1bmN0X2Fjc190aHJlc2hvbGQ9MA0KbWxkX2FwPTAN
-CmVhcG9sX2tleV9pbmRleF93b3JrYXJvdW5kPTANCm93bl9pcF9hZGRyPTEyNy4wLjAuMQ0K
-d3BhPTINCmV4dGVuZGVkX2tleV9pZD0wDQp3cGFfcGFzc3BocmFzZT1CUkVBS01Fbm90dGhl
-YWN0dWFscGFzc3BocmFzZW9mYw0Kd3BhX2tleV9tZ210PVdQQS1QU0sgV1BBLVBTSy1TSEEy
-NTYgU0FFDQp3cGFfcGFpcndpc2U9Q0NNUCBDQ01QLTI1NiBHQ01QIEdDTVAtMjU2DQpyc25f
-cGFpcndpc2U9Q0NNUCBDQ01QLTI1NiBHQ01QIEdDTVAtMjU2DQppZWVlODAyMTF3PTENCmdy
-b3VwX21nbXRfY2lwaGVyPUFFUy0xMjgtQ01BQw0KYmVhY29uX3Byb3Q9MQ0Kb2N2PTENCnNh
-ZV9yZXF1aXJlX21mcD0xDQpmaWxzX2Rpc2NvdmVyeV9taW5faW50ZXJ2YWw9MjANCmZpbHNf
-ZGlzY292ZXJ5X21heF9pbnRlcnZhbD04MDAwDQpzc2lkX3Byb3RlY3Rpb249MQ0KYXBfdGFi
-bGVfbWF4X3NpemU9MjU1DQphcF90YWJsZV9leHBpcmF0aW9uX3RpbWU9MzYwMA0Kd3BzX2Ny
-ZWRfYWRkX3NhZT0xDQptdWx0aV9hcF9wcm9maWxlPTINCm11bHRpX2FwX2NsaWVudF9kaXNh
-bGxvdz0wDQpmcmllbmRseV9uYW1lPVdQUyA4MDIuMTFiZSBBY2Nlc3MgUG9pbnQNCm1hbnVm
-YWN0dXJlcl91cmw9aHR0cDovL3d3dy5pb25pYy5kZS8NCm1vZGVsX2Rlc2NyaXB0aW9uPVdp
-cmVsZXNzIDgwMi4xMWJlIEFjY2VzcyBQb2ludA0Kd3BzX3JmX2JhbmRzPWENCnRkbHNfcHJv
-aGliaXQ9MQ0KdGRsc19wcm9oaWJpdF9jaGFuX3N3aXRjaD0xDQptYm89MA0KbWJvX2NlbGxf
-ZGF0YV9jb25uX3ByZWY9MQ0KcnNzaV9pZ25vcmVfcHJvYmVfcmVxdWVzdD0wDQoNCg0KPiBt
-eSBzdGVwczoNCj4gcm1tb2QgYXRoMTJrDQo+IGluc21vZCBhdGgxMmsNCj4gaXcgcmVnIHNl
-dCBDTg0KPiBob3N0YXBkLi4uDQoNClllcCwgdGhhdCBzaG91bGQgZG8gdGhlIHRyaWNrLg0K
-DQoNCg0KTWloYWkNCg==
+Applied, thanks!
 
---------------B0vRb10DnB87zxHYnWrOLm1X--
+[1/1] wifi: ath12k: fix leaking michael_mic for non-primary links
+      commit: 02f41c8aa643b0d329ee9fa3f3341919bf86b759
 
---------------hOAWrgZ4O3iI5R5iE0AJ0e24
-Content-Type: application/pgp-signature; name="OpenPGP_signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="OpenPGP_signature.asc"
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
------BEGIN PGP SIGNATURE-----
-
-wsF5BAABCAAjFiEEbhHQj3UzgcdE8cg8H9Yu2W4lOocFAmdZvCsFAwAAAAAACgkQH9Yu2W4lOoff
-DQ/+Nf5Dft9WZ9MEavXp5bK8/6kEJkUWLfkQj+DbUFQE3oT4jBJe618RjJT+EMc+tdx6QHIVMlal
-OhBPtDjG+xUcizUypbXoVe+e+FNawXYROtlwTkKbK/dray9mnSmShMETbpsDLZ/X9msMf/PVGZVv
-na4vA24epDhq5FYxBpBnnu1/cdAixU6Ik4z+3VM88NUCGqDpIhXPEd6erite/79bllUaQfG7tSnk
-Pj4hLK5Eg7Y1P2cdogd9eKqiV6GMt48i4S7zT9N97B3gavDvZl93la1QLGRa3l2BzEpdz/EkjCUo
-KAgWULo0R2IWaXro3JLzR/+OY1erjguQyItnr2abos3PEZHpIGZ7pGak6ICIDYbwxsjA0zaMCatR
-VGI541jfwD+Nc6qfJISppTCNYb+J8z/fwSSau+Wtxwn8jxkhBJhj93TBaP3XB/REfKgDgIciU1LG
-imSDmd/UnT+DFkL7crTMQlztZNYC/0gGmdbbaCyiPjnalN7xOb+WK1RanB7sGjcNWXWK0UrMUxxl
-DGzZ1N3XCAjydkHvMCVhh0IrHe0bZzaDrfN2ZANn0luW/Nq0yJWbAic8HQTsRgDgoG2Vme1/tnwe
-0Ua7mhC9a5eyW8EX7kflseZ1CcfhAxojtVQGBZpN2g/svF9/CK8zvLiqS6/y4ardmAUHpTLrkYxb
-iIQ=
-=NJSF
------END PGP SIGNATURE-----
-
---------------hOAWrgZ4O3iI5R5iE0AJ0e24--
 
