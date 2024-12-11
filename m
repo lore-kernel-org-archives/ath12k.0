@@ -4,66 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77E8EE7717D
-	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 09:49:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80DBEE7717D
+	for <ath12k@archiver.kernel.org>; Wed, 11 Dec 2024 15:34:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=evMrGhun3skLK+NwQ9/caA/c/xE6JRSloAj4djVupAo=; b=eyQ7D1N1tUUx43A7z3zDl7cLJU
-	nLt4hEaMh26pua632TKIrDSW/+73uMIgrN9C7eoBYkNQ9fb8zBi2OM3l2j8+QZh5tirpRCfmc/kQm
-	t3FeLHJ/5KYs1wjTtzlBo7eD235prMXEvhO3W1sdIJZsJktFklsw2aeS83pWaetU4Tt2Yr0L7E+bH
-	zULAv2k3XeYgIN6e7hJNGkCDWOMC9dm4VJ36h+PtRkZUFzpDtgsQ4fvWf7mI9oPWAE4dprksIXPLx
-	XYFqSOcaM8C4KJZupzLel+N8/443hsfuYtXxpQ3c6yj/PCF86P3DDDSkPmUMrs3iu0GeWS0YAU9y4
-	b7JQ09JQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=0Mtim6Vumk26ogfTknsk9OYqSnDTX2UJr/fFXu3oBZk=; b=wllC5h4T3e84Xp6irHgJxF2DtP
+	N6y72dhC7YM8g5w9O9jrh1+ETaShPO+lf4Q1Cj/ULYBDIbKSrP4RyGAFCF0P5oH/PUoekh0kTJAis
+	YWcvTRhH1OFeU8yUETXmiZHH1Ve/q05pTROwgvtwPTi+HizqNUS2J8Q/zkk1f5NZs8pygZJVXXdzr
+	bCslOVmnzRZCj05rBtPwaCPbGelD6idPxSCcA1VeuMbU1+KX9yq8gRR1ZjpmgeK+A+Ubtn6AFTw66
+	jOHOv9JWtL6Rl544kOuN3K0WcFccEOa3AiRvIv7rHe/BHSaZXJTS7nhok6+rUaf1nLSQ65GLh7DYf
+	piuaG1ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLJLp-0000000EU1D-0xdx
+	id 1tLOjX-0000000FGrv-0ro0
 	for ath12k@archiver.kernel.org;
-	Wed, 11 Dec 2024 09:49:49 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Wed, 11 Dec 2024 15:34:39 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLJKs-0000000ETpO-3WQH
+	id 1tLOjU-0000000FGqt-319T
 	for ath12k@lists.infradead.org;
-	Wed, 11 Dec 2024 09:48:52 +0000
+	Wed, 11 Dec 2024 15:34:37 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id A2E4CA42026;
-	Wed, 11 Dec 2024 09:46:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB47CC4CED2;
-	Wed, 11 Dec 2024 09:48:49 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 951735C59FD
+	for <ath12k@lists.infradead.org>; Wed, 11 Dec 2024 15:33:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1F9BC4CED2;
+	Wed, 11 Dec 2024 15:34:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733910529;
-	bh=V1//Crgpq21awYzH4xbCFgkeMElVTB4auODT606jKo0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=JgJWTdR2nYLXFkwtMvd6dSfw4U4/WXsOAt1rLHLfBytowRfAJ+KQvynRU6278eHE3
-	 Pxk7oqsmtjK57UQ/6o7Kac4zSnwY6577LgFuVcej+8Mh5HfYpXTLg4YDE0u8ditsCi
-	 zgoKGDoogId5awpjkexlgfDIcmr0pRCDzGy/x9K+UzNaNtOavKsIIoWTs+hEJlLIAh
-	 FZpnHm5zcdqmW1+7uw3JDgkTIF1qjrmu2WefELnPzv6x0RaBYBjrwLps8T/01XKhDo
-	 NROEQ+EHI/WIa7fOZwjC9xNhchvo++vlyg8wF4UBiuwPJBcO6CtYMm2yVsPw9v9D2n
-	 EZ3s7uW+CnqJQ==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1tLJKv-000000005kl-0ISY;
-	Wed, 11 Dec 2024 10:48:53 +0100
-Date: Wed, 11 Dec 2024 10:48:53 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Gregoire <gregoire.s93@live.fr>,
-	Baochen Qiang <quic_bqiang@quicinc.com>, ath12k@lists.infradead.org
-Subject: Re: WCN7850 disconnects and reconnects in a loop
-Message-ID: <Z1lgBV6b1A6fLoK5@hovoldconsulting.com>
-References: <AS8P190MB12051DDBD84CD88E71C40AD7873F2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
- <Z1hOweEsmXrIZByQ@hovoldconsulting.com>
- <87wmg6r7sm.fsf@kernel.org>
+	s=k20201202; t=1733931275;
+	bh=L7wzVvymBJg0eN3gAGAMtzo6S3quGzzL4FwBiMvbaVA=;
+	h=From:To:Cc:Subject:Date:From;
+	b=aH5Af9qxMczA7RImVZQQ3v97VuwhambD2XO/wI9quAbUk0khDM6TDhk0twy6S0B5b
+	 N+usp0qBFTbnub3TCdMVCqczN/t9xkNWL64yXiau+0UdNAp2VhcbAkLE9vPkg9ceXb
+	 cdTX4G5LUJSTbP3gGnYD8xdBBAoOf8CUd5ZeAXbkg21tq7JwR6XSWrx/r9tT92TxHP
+	 YN80hBjOCDGOyzD7DCOGzacpXDyaQN65w67K1Z9x6oFJ4QlsSloTGLXe5xcLYFnbWI
+	 unP65MqKjZ3PbKg3t02AgV613HjWgCj1+TsaJDShrfGBcTh76o/TmtMObR3I7Vgf0S
+	 L0DghhQSLq35Q==
+From: Kalle Valo <kvalo@kernel.org>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+	devicetree@vger.kernel.org
+Subject: [PATCH v3 0/8] wifi: ath12k: MLO support part 7
+Date: Wed, 11 Dec 2024 17:34:24 +0200
+Message-Id: <20241211153432.775335-1-kvalo@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <87wmg6r7sm.fsf@kernel.org>
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_014850_946365_F682C895 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20241211_073436_798952_28E07049 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,44 +71,65 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 11, 2024 at 09:35:37AM +0200, Kalle Valo wrote:
-> Johan Hovold <johan@kernel.org> writes:
+From: Kalle Valo <quic_kvalo@quicinc.com>
 
-> > I'm seeing iwd repeatedly failing to connect with reason
-> > PREV_AUTH_NOT_VALID with WCN7850 on the Lenovo ThinkPad T14s (and the
-> > Snapdragon X1E CRD reference design).
-> >
-> > I first noticed this with 6.10 when starting to work on the Qualcomm X
-> > Elite platform, but never got around to investigating it. I've confirmed
-> > that the issue is still there with 6.13-rc1 and that adding
-> > ControlPortOverNL80211=false allows iwd to connect.
-> >
-> > Looking at Gregoire's logs now, it looks like the deauthentication
-> > reason is different:
-> >
-> > 	(Reason: 7=CLASS3_FRAME_FROM_NONASSOC_STA)
-> >
-> > instead of
-> >
-> > 	(Reason: 2=PREV_AUTH_NOT_VALID)
-> >
-> > but the same control port workaround allows iwd to connect.
-> 
-> Is there a bugzilla report about this? Unfortunately I have not been
-> able to follow bugzilla lately due to MLO work but it would be still
-> good to file this (if that's not done already).
+Implementing Multi-Link Operation (MLO) continues. Bindings document is added
+to get WSI information from DT (patch 1) with the code parsing the information
+(patch 2). Rest of the patches are about configuring MLO in firmware.
 
-Yes, sorry, I should have included the link (it was posted later in the
-original thread):
+Device Tree bindings were reviewed as RFC earlier:
 
-	https://bugzilla.kernel.org/show_bug.cgi?id=218733
+[RFC PATCH v3 1/5] dt-bindings: net: wireless: Describe ath12k PCI module with WSI
 
-I only noticed that Gregoire's symptoms were slightly different when
-replying to this thread. Let me know if you prefer that I file a
-separate bugzilla report for the PREV_AUTH_NOT_VALID case.
+https://lore.kernel.org/ath12k/20241105180444.770951-1-quic_rajkbhag@quicinc.com/
 
-The exact same setup (kernel, distro and router) works fine with ath11k
-and WCN6855 (e.g. as found in the Lenovo ThinkPad X13s).
+The only changes from the RFC are Jeff's email address, using flag instead of
+bool and moving the WSI description to the beginning of the doc.
 
-Johan
+This patchset applies to ath.git main branch. Please review.
+
+Kalle
+
+v3:
+
+* patch 1: move description of WSI to the beginning of the doc
+
+v2: https://patchwork.kernel.org/project/linux-wireless/cover/20241209153034.50558-1-kvalo@kernel.org/
+
+* patch 1: change qcom,wsi-controller from a boolean to a flag
+
+v1: https://patchwork.kernel.org/project/linux-wireless/cover/20241205203044.589499-1-kvalo@kernel.org/
+
+Bhagavathi Perumal S (1):
+  wifi: ath12k: Add MLO WMI setup and teardown functions
+
+Karthikeyan Periyasamy (5):
+  wifi: ath12k: send partner device details in QMI MLO capability
+  wifi: ath12k: refactor ath12k_qmi_alloc_target_mem_chunk()
+  wifi: ath12k: add support to allocate MLO global memory region
+  wifi: ath12k: enable MLO setup and teardown from core
+  wifi: ath12k: avoid redundant code in DP Rx error process
+
+Raj Kumar Bhagat (2):
+  dt-bindings: net: wireless: Describe ath12k PCI module with WSI
+  wifi: ath12k: parse multiple device information from Device Tree
+
+ .../net/wireless/qcom,ath12k-wsi.yaml         | 204 +++++++++++++
+ drivers/net/wireless/ath/ath12k/core.c        | 256 +++++++++++++++-
+ drivers/net/wireless/ath/ath12k/core.h        |  18 ++
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |  13 +-
+ drivers/net/wireless/ath/ath12k/mac.c         | 142 +++++++++
+ drivers/net/wireless/ath/ath12k/mac.h         |   3 +
+ drivers/net/wireless/ath/ath12k/qmi.c         | 283 ++++++++++++++----
+ drivers/net/wireless/ath/ath12k/qmi.h         |   1 +
+ drivers/net/wireless/ath/ath12k/wmi.c         | 180 +++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h         |  49 +++
+ 10 files changed, 1072 insertions(+), 77 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
+
+
+base-commit: 400568fb3b022247c1603fdbdd6444b3ef14ffce
+-- 
+2.39.5
+
 
