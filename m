@@ -4,63 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AC5CE77180
-	for <ath12k@archiver.kernel.org>; Thu, 12 Dec 2024 08:08:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33FF5E7717F
+	for <ath12k@archiver.kernel.org>; Thu, 12 Dec 2024 09:38:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=byjaAO52Z9xWgzLl47XHG2qbLePaKX8FSYnmaeELIG0=; b=BZEoT4cU5NflAwTwftyd7jgcik
-	c4gvz9UBnZO2iOXrtx3GmC9vPJngC5XeN5FVPCgU111zl9KGQLlE0aKt04TgCOH7KrRWTWUOei+Ih
-	B8cxfGZ/Gj51UbSJLgtDofCDyqUmcRT8e68OixTItQkC1BtyQHF7G54xY1j5RcrPZVw+FDzcdIN/t
-	wfb6cwxfxOt/RKx3KZDUqLaiFRkoQPFlSJY/cDF2L/t8PRBgn1t2+oeUF66BxF4geDspjrK2HZvGb
-	SeRCxgk3ANX16rhJNR8D7qqV7Crkkl6EfwZgs0TaMw2VwBdxyT1cJEE6SXz3NiWG9LjkCn+Zw9F9s
-	y+qTCbYw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ort0GV31p2YM3MvyRNsoGkSoXOVVWpb4ngbvI+xOaDA=; b=dftRmEAxPb9bxL5tlH2ZSJVCVC
+	TIIK3fSQAXeDjhTccTshBpqYekgzo6C5kr/6akN0qXZ2aeq4tq9Bb+yk2oi/tGZmwcsbv0LRmG8ze
+	lI+Tbo9z9LtEjMwV+LUJnj/7y/6AJC0Yh6/IQ0upnXt2/7aA3Fr55BqH3Vxl0LIMrtcRCoPGGi+EN
+	KvzOIY+qFGo58aAzM+2xsSwTmhf2gDumejdJqK1uQoFv7+9i4G+EEg/qh4SUEDMS7JIQwSxFWRG+x
+	S6mphFWc5A+dmXYBF78RsHIEMyqRODQXndWPDnv57bU60zwNNPDWVXbHh4D/ovH6s5GDepVsmJK8Q
+	4xYr3POw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLeEs-0000000HFHM-0p0G
+	id 1tLfep-0000000HWhY-44Pv
 	for ath12k@archiver.kernel.org;
-	Thu, 12 Dec 2024 08:08:02 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 12 Dec 2024 09:38:55 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLeBJ-0000000HENB-32uP
+	id 1tLfOC-0000000HTAA-0Uii
 	for ath12k@lists.infradead.org;
-	Thu, 12 Dec 2024 08:04:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id CA8595C6782;
-	Thu, 12 Dec 2024 08:03:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2D98C4CECE;
-	Thu, 12 Dec 2024 08:04:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733990660;
-	bh=Jg+q5W0ecAfiWOW8Ozdw+LXP9f7Ce+N06C+ChU/uTTs=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=uqQuNyvzdeAoAJ0sOHauXqHvEKFcXVkY1Lh7AzKzpKK8ypHhsywdtoAGbeX+VxD9j
-	 TVxUW19qVKCQ2yaSHhp6A8wWPWps4oFTlvk7ZU0BcDUgDRmC3OWsSJR1bw+DMY8e2i
-	 UjEJATPWVc0xG+W9JgSySQvUpSsjVX5GMg2tcd26pK4lsKoB5XxujI6MNrb242qJ+a
-	 u8Wqp3Lvcy6v/MkrNYCAk2oGgXC/keAr5FkRK1AG/59VG+O3phtzmbf0NI17Duyizw
-	 PviIIotzuBlDm9SoXzHn0SitDRGNVMmk1cR/irRTZvZ6ia6rrW2RahIek2C+nhd6QW
-	 GAFT9kS40aOzA==
-From: Kalle Valo <kvalo@kernel.org>
-To: Johan Hovold <johan@kernel.org>
-Cc: Gregoire <gregoire.s93@live.fr>,  Baochen Qiang
- <quic_bqiang@quicinc.com>,  ath12k@lists.infradead.org
-Subject: Re: WCN7850 disconnects and reconnects in a loop
-References: <AS8P190MB12051DDBD84CD88E71C40AD7873F2@AS8P190MB1205.EURP190.PROD.OUTLOOK.COM>
-	<Z1hOweEsmXrIZByQ@hovoldconsulting.com> <87wmg6r7sm.fsf@kernel.org>
-	<Z1lgBV6b1A6fLoK5@hovoldconsulting.com>
-Date: Thu, 12 Dec 2024 10:04:18 +0200
-In-Reply-To: <Z1lgBV6b1A6fLoK5@hovoldconsulting.com> (Johan Hovold's message
-	of "Wed, 11 Dec 2024 10:48:53 +0100")
-Message-ID: <87r06dpbst.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Thu, 12 Dec 2024 09:21:45 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BC7YbXO032522;
+	Thu, 12 Dec 2024 09:21:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ort0GV31p2YM3MvyRNsoGkSoXOVVWpb4ngbvI+xOaDA=; b=X0EipQOn/rTDLZdK
+	TOz/fcWTZlbkYaZLywngtoWu5nAZlzdMnfpYnflha6NqomhVaq7otN1o0J0v/aC4
+	mNxrv3Efz1HXY4NxrbJW/2UaQL64cnEEMfzLHoU3qRthwFPpFj+pWh51tmWUD7Oi
+	IwowjwHb9IHKusNsdtO4n9hCVGt9W1DWDVJCFan5jvNlhjInwxjJAw+3xt9YqUQM
+	5/+Buem0Z8HEzJFZfsKsHedGj4YUq9ibu29nFHV+qPhATD2fKvJEN3ADEKgxPD4t
+	kQFwqW5XA5cx7uAs8aVddQ+tYPWiH+NgYPB1Y3dYR+UJB61jodF2NHWW9xBhqdf4
+	eVz0zg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43f6tfbn8u-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 12 Dec 2024 09:21:39 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BC9LXna002207
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 12 Dec 2024 09:21:33 GMT
+Received: from [10.50.0.236] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 12 Dec
+ 2024 01:21:31 -0800
+Message-ID: <c9605cae-809b-6f52-927e-9bc59a6d9c02@quicinc.com>
+Date: Thu, 12 Dec 2024 14:51:28 +0530
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 1/4] wifi: ath12k: Refactor ath12k_hw set helper function
+ argument
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20241212004906.3087425-1-quic_periyasa@quicinc.com>
+ <20241212004906.3087425-2-quic_periyasa@quicinc.com>
+ <878qslqr70.fsf@kernel.org>
+Content-Language: en-US
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <878qslqr70.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 2I9on2QdY9TfPxn6MG3FGOCgB_rN4xVk
+X-Proofpoint-ORIG-GUID: 2I9on2QdY9TfPxn6MG3FGOCgB_rN4xVk
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
+ mlxlogscore=752 malwarescore=0 spamscore=0 lowpriorityscore=0
+ impostorscore=0 adultscore=0 bulkscore=0 phishscore=0 priorityscore=1501
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412120065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241212_000421_809281_722BB304 
-X-CRM114-Status: GOOD (  20.41  )
+X-CRM114-CacheID: sfid-20241212_012144_173446_0310636C 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,54 +103,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Johan Hovold <johan@kernel.org> writes:
 
-> On Wed, Dec 11, 2024 at 09:35:37AM +0200, Kalle Valo wrote:
->> Johan Hovold <johan@kernel.org> writes:
->
->> > I'm seeing iwd repeatedly failing to connect with reason
->> > PREV_AUTH_NOT_VALID with WCN7850 on the Lenovo ThinkPad T14s (and the
->> > Snapdragon X1E CRD reference design).
->> >
->> > I first noticed this with 6.10 when starting to work on the Qualcomm X
->> > Elite platform, but never got around to investigating it. I've confirmed
->> > that the issue is still there with 6.13-rc1 and that adding
->> > ControlPortOverNL80211=false allows iwd to connect.
->> >
->> > Looking at Gregoire's logs now, it looks like the deauthentication
->> > reason is different:
->> >
->> > 	(Reason: 7=CLASS3_FRAME_FROM_NONASSOC_STA)
->> >
->> > instead of
->> >
->> > 	(Reason: 2=PREV_AUTH_NOT_VALID)
->> >
->> > but the same control port workaround allows iwd to connect.
->> 
->> Is there a bugzilla report about this? Unfortunately I have not been
->> able to follow bugzilla lately due to MLO work but it would be still
->> good to file this (if that's not done already).
->
-> Yes, sorry, I should have included the link (it was posted later in the
-> original thread):
->
-> 	https://bugzilla.kernel.org/show_bug.cgi?id=218733
 
-No, I should have checked the bugzilla myself but have been too busy.
-Thanks for the link.
+On 12/12/2024 1:16 PM, Kalle Valo wrote:
+> Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
+> 
+>> Currently, ath12k_hw is placed inside the ath12k_hw_group. However, the
+>> ath12k_hw set helper function takes the device handle and the index as
+>> parameters. Here, the index parameter is specific to the group handle.
+>> Therefore, change this helper function argument from the device handle to
+>> the group handle.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> 
+> What's the user visible impact here?
+> 
 
-> I only noticed that Gregoire's symptoms were slightly different when
-> replying to this thread. Let me know if you prefer that I file a
-> separate bugzilla report for the PREV_AUTH_NOT_VALID case.
->
-> The exact same setup (kernel, distro and router) works fine with ath11k
-> and WCN6855 (e.g. as found in the Lenovo ThinkPad X13s).
+No user visible, it just help to avoid the dependency of device handle 
+(ab) for using the helper function ath12k_*_set_ah().
 
-Good to know. We need to get this fixed ASAP, I marked it as P1 in bugzilla.
 
 -- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
