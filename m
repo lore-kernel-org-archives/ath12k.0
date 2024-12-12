@@ -4,90 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5AF8E7717F
-	for <ath12k@archiver.kernel.org>; Thu, 12 Dec 2024 10:37:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E778CE77182
+	for <ath12k@archiver.kernel.org>; Thu, 12 Dec 2024 11:27:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HigRuxDBdLbc9O45GBx63qcbP0OKoXUWYz/y47PHbvI=; b=Q3whhX7YWgf0lInYDenzBnOwsW
-	zO60ZipSRiAno3KiFN7iFJEqjA29Vp9UQlPxPUm0goLzU1peWuzEgJ0X1Aq1z03YB2SWiiXZllurn
-	3947E0a1m3aL+IvBH3eQL/ZJaAqMGxYB3JOaejXZvyKgJkL0nUMaMzHPl0I9vqGqrGViacs+58WzC
-	WGk3+gQCd9+S5cwq4Xvjbi5jXxTKR+jyRG8cmgUAvpf960hp5wzd3X8tF4WIxo4Wc8cQapLlg9p0K
-	owTwojv4U+mmNGtvLv7VST2uGfmSGtPdohi3gDzWevMQAuyB+Zaz5icv04ptL524z1KQ5vTvv/v3b
-	mmNqat1A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=C5JpY8ekvCLmVVJDg7YRy0jtZA0z4hBVWotaQmcL3Xw=; b=fhTxNIWbnIhoS07idY8VRM6qAY
+	iX7T7zeIGtaQ+kehwxukzSrJNuH01qytMaGzQEhLfXwov+0Jlbk5i/WUktOlqF/+RILjhuGcsOvKX
+	UFHA+KT7Pp9EI0U5XMUcAr0VpdF/2AR8fVi2U/cIUZq5Iu7CVOPXz16SXWQ2s2nT0viyGv8QmhU/9
+	XyBN5QY83AH8YKRNlS8FtzZwk1v7qkCUyOo/jpfwjEp5wHE6ojEYZLcS0NtbQMM7YDrKCJ7K0rR8T
+	+TfmV+kL2aWo45TSFLdjqX+49cCe3OLcquryQpUw4GHQTVWCchZt4gHpOeOnufX6vJCrlg9tmUWG6
+	I4TlsYMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLgZH-000000004kV-2aaQ
+	id 1tLhLh-00000000B3B-2H4V
 	for ath12k@archiver.kernel.org;
-	Thu, 12 Dec 2024 10:37:15 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 12 Dec 2024 11:27:17 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLgZE-000000004jZ-2xx0
+	id 1tLhLI-00000000Ax3-3nYn
 	for ath12k@lists.infradead.org;
-	Thu, 12 Dec 2024 10:37:13 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BC8Zcw1019803;
-	Thu, 12 Dec 2024 10:37:09 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	HigRuxDBdLbc9O45GBx63qcbP0OKoXUWYz/y47PHbvI=; b=BXQF+TeX851eUAs+
-	YdGSEJZA7CDDKfNqd5v7d5YDfZfwNxfHu8mDxGA2HgyC/S4P+n+9ja6hcA8y7R+q
-	0tRIeOfNHVx0txDAElXPGgE+IQohjKP6iTbOpWVBODOsSi0PRlVUCtgC+fmbOo0w
-	VSrj5XjJlM4SS7Lkk2sMXG6w1WV13xqOI+17m0plt2SoWW+9jlD1eLAr8R9U4+R+
-	nNdHFNzwS57p3eWxpcKdYbDMmBparTKpJCSPsmoKBDNOFU/jtxAHpIapbExoQJnP
-	o65DMHa4Hebj8NTI0Ex2ytyfcF54klzewFQGLGsTgEEVw433abJqALQ/pvxJs/ps
-	A9mv+g==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43ffdyt5f0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Dec 2024 10:37:09 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BCAb8Tg017272
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Dec 2024 10:37:08 GMT
-Received: from [10.50.0.236] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 12 Dec
- 2024 02:37:06 -0800
-Message-ID: <eed819dc-f1da-1ee2-9e8e-c32d0a4c4c7d@quicinc.com>
-Date: Thu, 12 Dec 2024 16:07:03 +0530
+	Thu, 12 Dec 2024 11:26:54 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 053735C621C;
+	Thu, 12 Dec 2024 11:26:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2314DC4CED1;
+	Thu, 12 Dec 2024 11:26:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1734002812;
+	bh=pccqLc7i82mC3GgYKCrj2ARpPSBFqcYNm0iJ15hvcbI=;
+	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+	b=q3E0Ju/FLqCDCHdnrqHsakSbX2yXQkkroxiPNSrAX09m54+Y4bVYJUGoeA9VQ3pru
+	 FMSBXhBydUMzZAXhRmSCCH1HX2t95NsmPTCdJ2uwz+pHsDABdypJcqNmdqqFj/lGjA
+	 7m0wMbKAcDloLvlfaIezjIx3G1gFZ6WyGhQkIH48l1VwbgaJ0vBd90l3JLriLNXBmd
+	 PaNSXMvR4v3MGrGVLlGlzQtim+kwiDkAyApJXYclg2ZFFQQ+wsCfcVbmqrOXV5QUnO
+	 5c88ZtrAExlX78JsSQZzlKd/xNZMdr4+k8VZqS6US55+a1bT0EeGueznqjWl31S1uH
+	 ol87nF3PwRC3w==
+From: Kalle Valo <kvalo@kernel.org>
+To: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>,  Rameshkumar Sundaram
+ <quic_ramess@quicinc.com>,  Sriram R <quic_srirrama@quicinc.com>,  Kalle
+ Valo <quic_kvalo@quicinc.com>,  Jeff Johnson <quic_jjohnson@quicinc.com>,
+  <linux-wireless@vger.kernel.org>,  <ath12k@lists.infradead.org>,
+  <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] wifi: ath12k: fix read pointer after free in
+ ath12k_mac_assign_vif_to_vdev()
+References: <20241210-read_after_free-v1-1-969f69c7d66c@quicinc.com>
+Date: Thu, 12 Dec 2024 13:26:48 +0200
+In-Reply-To: <20241210-read_after_free-v1-1-969f69c7d66c@quicinc.com> (Aditya
+	Kumar Singh's message of "Tue, 10 Dec 2024 10:56:33 +0530")
+Message-ID: <87bjxhp2fb.fsf@kernel.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH 4/4] wifi: ath12k: Fix uninitialized variable access in
- ath12k_mac_allocate() function
-Content-Language: en-US
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
-References: <20241212004906.3087425-1-quic_periyasa@quicinc.com>
- <20241212004906.3087425-5-quic_periyasa@quicinc.com>
- <87v7vppc6c.fsf@kernel.org>
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <87v7vppc6c.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: KWyRC7qdvGlwy66CB9Iv4GBX4EX0NdyT
-X-Proofpoint-GUID: KWyRC7qdvGlwy66CB9Iv4GBX4EX0NdyT
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
- phishscore=0 mlxlogscore=999 lowpriorityscore=0 mlxscore=0 adultscore=0
- spamscore=0 bulkscore=0 impostorscore=0 priorityscore=1501 clxscore=1015
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2412120075
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241212_023712_747261_639C1566 
-X-CRM114-Status: GOOD (  18.04  )
+X-CRM114-CacheID: sfid-20241212_032652_985485_371F0DD5 
+X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,101 +78,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Aditya Kumar Singh <quic_adisi@quicinc.com> writes:
 
+> In ath12k_mac_assign_vif_to_vdev(), if arvif is created on a different
+> radio, it gets deleted from that radio through a call to
+> ath12k_mac_unassign_link_vif(). This action frees the arvif pointer.
+> Subsequently, there is a check involving arvif, which will result in a
+> read-after-free scenario.
+>
+> Fix this by moving this check after arvif is again assigned via call to
+> ath12k_mac_assign_link_vif().
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+>
+> Closes: https://scan5.scan.coverity.com/#/project-view/63541/10063?selectedIssue=1636423
+> Fixes: b5068bc9180d ("wifi: ath12k: Cache vdev configs before vdev create")
+> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 
-On 12/12/2024 1:26 PM, Kalle Valo wrote:
-> Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
-> 
->> Currently, the uninitialized variable 'ab' is accessed in the
->> ath12k_mac_allocate() function. Initialize 'ab' with the first radio device
->> present in the hardware abstraction handle (ah). Additionally, move the
->> default setting procedure from the pdev mapping iteration to the total
->> radio calculating iteration for better code readability. Perform the
->> maximum radio validation check for total_radio to ensure that both num_hw
->> and radio_per_hw are validated indirectly, as these variables are derived
->> from total_radio. This also fixes the below Smatch static checker warning.
->>
->> Smatch warning:
->> ath12k_mac_allocate() error: uninitialized symbol 'ab'
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->>
->> Fixes: a343d97f27f5 ("wifi: ath12k: move struct ath12k_hw from per device to group")
->> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/mac.c | 27 +++++++++++++++++++++------
->>   1 file changed, 21 insertions(+), 6 deletions(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->> index 5cdc1c38b049..98b2f853d243 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->> @@ -10962,8 +10962,20 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
->>   	u8 radio_per_hw;
->>   
->>   	total_radio = 0;
->> -	for (i = 0; i < ag->num_devices; i++)
->> -		total_radio += ag->ab[i]->num_radios;
->> +	for (i = 0; i < ag->num_devices; i++) {
->> +		ab = ag->ab[i];
->> +		if (!ab)
->> +			continue;
->> +
->> +		ath12k_mac_set_device_defaults(ab);
->> +		total_radio += ab->num_radios;
->> +	}
->> +
->> +	if (!total_radio)
->> +		return -EINVAL;
-> 
-> 'total_radio == 0' is more readable as it's a counter. Also please add ath12k_warn()
-> 
-
-This condition came due to no device handle (ab) present in the 
-ath12k_hw_group (ag). ath12k_warn() cannot be used since no device (ab) 
-present here. Additionally, ath12k_hw_warn() also cannot be used here 
-since ath12k_hw (ah) also not created.
-
-In future, we can introduce device (ab) and hardware (ah) agnostic 
-warning helper function ath12k*dbg() for this usecase.
-
->> +
->> +	if (WARN_ON(total_radio > ATH12K_GROUP_MAX_RADIO))
->> +		return -ENOSPC;
-> 
-> BTW ath12k_warn() is preferred over WARN_ON(), but this is just for the
-> future as this WARN_ON() was already there before.
-> 
-
-Sure
-
->>   
->>   	/* All pdev get combined and register as single wiphy based on
->>   	 * hardware group which participate in multi-link operation else
->> @@ -10976,14 +10988,16 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
->>   
->>   	num_hw = total_radio / radio_per_hw;
->>   
->> -	if (WARN_ON(num_hw >= ATH12K_GROUP_MAX_RADIO))
->> -		return -ENOSPC;
->> -
->>   	ag->num_hw = 0;
->>   	device_id = 0;
->>   	mac_id = 0;
->>   	for (i = 0; i < num_hw; i++) {
->>   		for (j = 0; j < radio_per_hw; j++) {
->> +			if (device_id >= ag->num_devices || !ag->ab[device_id]) {
->> +				ret = -ENOSPC;
->> +				goto err;
->> +			}
-> 
-> ath12k_warn()
-> 
-
-same here.
+Acked-by: Kalle Valo <kvalo@kernel.org>
 
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+https://patchwork.kernel.org/project/linux-wireless/list/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
