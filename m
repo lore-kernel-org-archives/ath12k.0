@@ -4,89 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90AF6E7717D
-	for <ath12k@archiver.kernel.org>; Fri, 13 Dec 2024 08:42:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C690BE7717F
+	for <ath12k@archiver.kernel.org>; Fri, 13 Dec 2024 19:47:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:
-	Subject:Cc:To:From:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y9iFadcKV7NOuGMDoiou+96S+djlE3jUoskL0WXWoC0=; b=SdwXd6rEtZVrEKRrT0h4CC1GJP
-	50gQUR+Mh8pNBjeNhkjB7Athw9NwDBUMzEL40S9vs2W3IYdQfE0TOPWLGqU7GqSL9RstX/ymivP+p
-	QU5hf2IuntO9CiAl2uQRChB8JkQN6TSCwWxepvdy9FfGp/J298+Al1sHRZLMplMoL38w8LVfBIW6+
-	6le1gZtBKaYvFGl5YKfPD9ZrbMT3psfVC6jBl2jOTq4fdHzTDUSRA5iSpwxKvAVsD7sVnFgcrto2l
-	mBdJH3HWQUZMJzpnTJ/DOxpNE4mFcZPeUtEcLh4Uw8is3y8GoNfAy83eS46gMemuR5cBMHTqb40Pf
-	0r2CXYIQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=JPxYelwfrz2y3NGxDlaB/cbVpQp3h67m+vgykc6QmUs=; b=VD4DsUvv2rGG6WHz1xYef+cM15
+	gFf4VRZw3awJrjzzz/FtsL8dJnGUk/VQ9CvwZRbCCZdzqKPxv+IAFLD3rl53oBjfxggWWcZgqj0Rt
+	odc9oJdmofsqXKUy/pckkHC82MVAx5z4hOiphqDgCwfGeKOlkeW/At9m2LffpB1O/PvCFi4clKx2a
+	rPmz8fuLGvpwACksgWbzhg1q6G/EPe2SXuOetv+ROin3j/N8EDsNsRxEtgxO40uLcNo6yHeZSgm3f
+	3GTwwUVo92LH/U3EwBrg2bv99+48MLrr8claW7Ybl9wtv4/A5w+eyf/C8rq8sLVF9E/zyr9qca4EH
+	jfLYe0Og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM1GB-000000037qQ-1R3H
+	id 1tMBd2-00000004ru8-2Qrc
 	for ath12k@archiver.kernel.org;
-	Fri, 13 Dec 2024 08:42:55 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	Fri, 13 Dec 2024 19:47:12 +0000
+Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM1G9-000000037py-3GxA
+	id 1tMBcz-00000004rt9-2uer
 	for ath12k@lists.infradead.org;
-	Fri, 13 Dec 2024 08:42:54 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3862d6d5765so946721f8f.3
-        for <ath12k@lists.infradead.org>; Fri, 13 Dec 2024 00:42:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1734079371; x=1734684171; darn=lists.infradead.org;
-        h=in-reply-to:references:subject:cc:to:from:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=y9iFadcKV7NOuGMDoiou+96S+djlE3jUoskL0WXWoC0=;
-        b=WoOOtjH29o/2+uW6MIxSzPguBMI+zfAHpm87V277XIeMK8x44iC3htNZXIQp1R2q56
-         82UglCHwfwRcfjzWt9RNi9KBL7Of0M28N9ZU0HnXe9OBXWN0psdhHdmTZpBqgvqYj9hW
-         +z7Z+xSeWzgzfcmFavHWaGc3kSOIePecsm4xpsYwmowp/mSNkqo5fYeJkZ6ty+MfZuIA
-         O/0QRGbTuU+F/sMFGYcUpskxUzzwEmwogyp90pvDt0lvAA6mD25lWNdCT7j5cOpwTjgx
-         hFPO2nuq+kK4bbE+TgU+wO6bYsioXDxdZZwXc14fgbFzPqWdODW30imZSvEXTZW9s6UW
-         spAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1734079371; x=1734684171;
-        h=in-reply-to:references:subject:cc:to:from:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=y9iFadcKV7NOuGMDoiou+96S+djlE3jUoskL0WXWoC0=;
-        b=C01A6rcDLuuiMm5geJzdFEGEQhN0BntORMCHQ5l8b7LAvTF8gIriLqxT47lyPLuK8g
-         MJ8Jit+M6yPLstr/UrzPsJ0mfyxQG5Z0bHBMVEgbg3VGwFa7Oi3CFVBoaeWlZ5hOJLcz
-         KJw0xuakcXJ3442xN3yjX+DwxU4RR4MjevDidu4pyZ94xtlsfDaHrbjb0kuCol6a/KDl
-         FnJwrssNylazmVMv8zzF4ue+hodlCGXP9Yup4YbqRsUduk9XiYg7x9LqdveOwqTJBaf6
-         fujoine+2cVhcWF2TXYix1qXOLPAVHTj2L6urW9W9w5I7QdQc+Kob+1L9oSOMDSweKJD
-         TI1w==
-X-Gm-Message-State: AOJu0YwcPNm2R9Q65sQ79i8gD50KqzmSvV6gZWaxwbOSmVsS5dBDIWnM
-	8vHsXvdu+It/lU2SjSY5wGkOv5xzZY8Nf42C5YX1CJk6xEexOvkE316itg==
-X-Gm-Gg: ASbGncs12oH1O71lY2sBHmoYgZ1W70DWv3uQHchEBjNfcWMwbtyhOI3ECswvqQt8ZkJ
-	i6T+2WXwhYQwwWqw5moChQ67fjOZPPOIFbNKNavqVzZ/pF46TUdMvtFJgezNLCsxSp6Vv0CRdUS
-	T4P/VTpmG2Ptql+g9t6cP1AV+XxKs0/CtWlS+UrAQrmIvoSFXNgKIndvBPmq6H9eahXc0EiDt+I
-	1bp++hf/3dUQ6PzLZu0yRWctR9tuS07OFwJ8XqS7q02pELWJyrvvzOeIau4qcxiWq7HXhzxfHA=
-X-Google-Smtp-Source: AGHT+IHWsvo9dkmgwdOTmI63/EvBCpV3mLlUvHDKrTxRlil6MeXplgqo4OSHVVx8B/x/waUcP2yoPA==
-X-Received: by 2002:a5d:5f8f:0:b0:385:e5d6:130c with SMTP id ffacd0b85a97d-3888e0bf8bcmr1027733f8f.51.1734079371282;
-        Fri, 13 Dec 2024 00:42:51 -0800 (PST)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-387824c8a6esm6363509f8f.59.2024.12.13.00.42.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Dec 2024 00:42:50 -0800 (PST)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Fri, 13 Dec 2024 09:42:50 +0100
-Message-Id: <D6AFU1A3PRGK.1I5GCZJV2BQ14@gmail.com>
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Santhosh Ramesh" <quic_santrame@quicinc.com>
-Cc: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- <quic_murugana@quicinc.com>
-Subject: Re: [PATCH] wifi: ath12k: fix tx power, max reg power update to
- firmware
-X-Mailer: aerc 0.18.2-0-ge037c095a049
-References: <D41LUTO0MIC3.12475D2J3VNX3@gmail.com>
- <93d580b4-cf7a-471f-8f3a-673d456f726f@quicinc.com>
- <51afbe69-e770-0344-6ca0-0fe5cd721d2d@quicinc.com>
-In-Reply-To: <51afbe69-e770-0344-6ca0-0fe5cd721d2d@quicinc.com>
+	Fri, 13 Dec 2024 19:47:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1734119230; x=1765655230;
+  h=date:from:to:cc:subject:message-id;
+  bh=FUDFlQ19xc1FC6tbEHQJJf4ngC1HMPoMVG9oevspsds=;
+  b=k66aantei7NFkr15VHuxbMkEFz599ND/C7DojaXmCGkzvp9lfJJChr8A
+   H5wy7QahTB+rFeBLDZXvZVKRKwQaD1jIbKY9ThB5lunIKAZ228t1cydtX
+   fVHZHBcBDqWFFYFRjRVyxtko7G6Aw4lD9a94vPtrhIiSElfgJVAmKmL+K
+   DDxcd9eAEkyRosBy5k4mXO6hfLcL9T9c3/ifmtzzq7yFfGKCZAjhiSZ93
+   X81Y5OH8LjeaDUX27ll85kfgnrA7wi49EqzVAYijkDiNjzlFHNYpz6dzm
+   Ilxya1OWb+AcNbBDmWXsXTn+440jsASrGR2V+QLlqe9Y1np6EeMJNn5yk
+   Q==;
+X-CSE-ConnectionGUID: pnwZ4Sp4RDuA876bVQsJ8A==
+X-CSE-MsgGUID: CvCPXt+gRGaipQj1qHXb9g==
+X-IronPort-AV: E=McAfee;i="6700,10204,11285"; a="34720879"
+X-IronPort-AV: E=Sophos;i="6.12,232,1728975600"; 
+   d="scan'208";a="34720879"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Dec 2024 11:47:07 -0800
+X-CSE-ConnectionGUID: ABqYsDuwR1+Xq+3aJdXQeA==
+X-CSE-MsgGUID: qTLUtaE8Tz67hnZVvNbO9A==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="97061692"
+Received: from lkp-server01.sh.intel.com (HELO 82a3f569d0cb) ([10.239.97.150])
+  by orviesa007.jf.intel.com with ESMTP; 13 Dec 2024 11:47:06 -0800
+Received: from kbuild by 82a3f569d0cb with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tMBct-000CNB-2f;
+	Fri, 13 Dec 2024 19:47:03 +0000
+Date: Sat, 14 Dec 2024 03:46:41 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ e4bc66fdc3de638684712c85bde1a5d642765458
+Message-ID: <202412140333.ASxb9Xlg-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241213_004253_821210_F231215D 
-X-CRM114-Status: GOOD (  16.49  )
+X-CRM114-CacheID: sfid-20241213_114709_789635_51CDB194 
+X-CRM114-Status: UNSURE (   3.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,56 +84,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri Sep 20, 2024 at 6:43 AM CEST, Santhosh Ramesh wrote:
-> "Nicolas Escande" <nico.escande@gmail.com> writes:
-[...]
-> >=20
-> > diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wirele=
-ss/ath/ath12k/wmi.c
-> > index a97e1399eeed..87e3ae49afa5 100644
-> > --- a/drivers/net/wireless/ath/ath12k/wmi.c
-> > +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-> > @@ -2563,6 +2563,8 @@ int ath12k_wmi_send_scan_chan_list_cmd(struct ath=
-12k *ar,
-> >  						  WMI_CHAN_REG_INFO1_REG_CLS);
-> >  			*reg2 |=3D le32_encode_bits(channel_arg->antennamax,
-> >  						  WMI_CHAN_REG_INFO2_ANT_MAX);
-> > +			*reg2 |=3D le32_encode_bits(channel_arg->maxregpower,
-> > +						  WMI_CHAN_REG_INFO2_MAX_TX_PWR);
-> > =20
-> >  			ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
-> >  				   "WMI chan scan list chan[%d] =3D %u, chan_info->info %8x\n",
-> >=20
-> > It seems that ath11k has a similar piece of code in the equivalent func=
-tion
-> > ath11k_wmi_send_scan_chan_list_cmd . Isn't this needed ?
->
-> This change is in a separate patch, which will be sent for public review =
-soon.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: e4bc66fdc3de638684712c85bde1a5d642765458  Merge branch 'pending' into main-pending
 
-Hey Santhosh,
+elapsed time: 1448m
 
-Unless I'm mistaken (which is very much possible) I didn't see any patch po=
-sted
-to fix that. Weren't you guys supposed to have done it by now ?
+configs tested: 61
+configs skipped: 1
 
-> >=20
-> > Also I see that in ath12k/reg.c in ath12k_reg_update_chan_list we also =
-send to
-> > the firmware:
-> > 			ch->maxpower =3D channel->max_power * 2;
-> > 			ch->maxregpower =3D channel->max_reg_power * 2;
-> > 			ch->antennamax =3D channel->max_antenna_gain * 2;
-> >=20
-> > As it is in a different wmi message, I guess the units are different. 0=
-.5 dBm
-> > increment in struct ath12k_wmi_channel_arg right ? Or should we remove =
-the '*2'
-> >=20
->
-> Yes, the firmware expects these values in 0.5 dBm increments, so we multi=
-ply=20
-> them by 2 in the ath12k_reg_update_chan_list function.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Thanks
+tested configs:
+alpha                           allyesconfig    gcc-14.2.0
+arc                  randconfig-001-20241213    gcc-13.2.0
+arc                  randconfig-002-20241213    gcc-13.2.0
+arm                  randconfig-001-20241213    clang-16
+arm                  randconfig-002-20241213    clang-18
+arm                  randconfig-003-20241213    gcc-14.2.0
+arm                  randconfig-004-20241213    clang-18
+arm64                randconfig-001-20241213    gcc-14.2.0
+arm64                randconfig-002-20241213    gcc-14.2.0
+arm64                randconfig-003-20241213    clang-18
+arm64                randconfig-004-20241213    gcc-14.2.0
+csky                 randconfig-001-20241213    gcc-14.2.0
+csky                 randconfig-002-20241213    gcc-14.2.0
+hexagon                         allmodconfig    clang-20
+hexagon                         allyesconfig    clang-18
+hexagon              randconfig-001-20241213    clang-20
+hexagon              randconfig-002-20241213    clang-20
+i386       buildonly-randconfig-001-20241213    clang-19
+i386       buildonly-randconfig-002-20241213    gcc-12
+i386       buildonly-randconfig-003-20241213    gcc-12
+i386       buildonly-randconfig-004-20241213    clang-19
+i386       buildonly-randconfig-005-20241213    gcc-12
+i386       buildonly-randconfig-006-20241213    gcc-12
+loongarch            randconfig-001-20241213    gcc-14.2.0
+loongarch            randconfig-002-20241213    gcc-14.2.0
+nios2                randconfig-001-20241213    gcc-14.2.0
+nios2                randconfig-002-20241213    gcc-14.2.0
+parisc               randconfig-001-20241213    gcc-14.2.0
+parisc               randconfig-002-20241213    gcc-14.2.0
+powerpc              randconfig-001-20241213    gcc-14.2.0
+powerpc              randconfig-002-20241213    clang-20
+powerpc              randconfig-003-20241213    gcc-14.2.0
+powerpc64            randconfig-001-20241213    gcc-14.2.0
+powerpc64            randconfig-002-20241213    gcc-14.2.0
+powerpc64            randconfig-003-20241213    gcc-14.2.0
+riscv                randconfig-001-20241213    gcc-14.2.0
+riscv                randconfig-002-20241213    gcc-14.2.0
+s390                            allmodconfig    clang-19
+s390                            allyesconfig    gcc-14.2.0
+s390                 randconfig-001-20241213    gcc-14.2.0
+s390                 randconfig-002-20241213    clang-19
+sh                              allmodconfig    gcc-14.2.0
+sh                              allyesconfig    gcc-14.2.0
+sh                   randconfig-001-20241213    gcc-14.2.0
+sh                   randconfig-002-20241213    gcc-14.2.0
+sparc                           allmodconfig    gcc-14.2.0
+sparc                randconfig-001-20241213    gcc-14.2.0
+sparc                randconfig-002-20241213    gcc-14.2.0
+sparc64              randconfig-001-20241213    gcc-14.2.0
+sparc64              randconfig-002-20241213    gcc-14.2.0
+um                              allmodconfig    clang-20
+um                   randconfig-001-20241213    gcc-12
+um                   randconfig-002-20241213    clang-16
+x86_64     buildonly-randconfig-001-20241213    gcc-12
+x86_64     buildonly-randconfig-002-20241213    gcc-12
+x86_64     buildonly-randconfig-003-20241213    gcc-12
+x86_64     buildonly-randconfig-004-20241213    gcc-12
+x86_64     buildonly-randconfig-005-20241213    gcc-12
+x86_64     buildonly-randconfig-006-20241213    clang-19
+xtensa               randconfig-001-20241213    gcc-14.2.0
+xtensa               randconfig-002-20241213    gcc-14.2.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
