@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AF89E7717F
-	for <ath12k@archiver.kernel.org>; Mon, 16 Dec 2024 19:55:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79491E77180
+	for <ath12k@archiver.kernel.org>; Mon, 16 Dec 2024 19:56:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oPKYbKhrRn57E0Khe5c1oBXu/7EPWCwEmdm0TJzGS/U=; b=cDLsxZ3+mhmOqnIKs/eWA+AYBi
-	oNjrPvWHN4P/PEKqHBrjwPdcC61WLiLkMHKNduvTp5E6xuj8083euQ2bK1IsTUg9i20wr1mtJfWUQ
-	1fr/kHhZ8IYB9ex14g9hav2hYu/2EUUkQQBLgpIHTYjDyX61TqH29gBxZ78Gov/l4dL2z2snIJy2z
-	/npWXZ6JYBOs4tAfA+tKn57wR32qaqpC82UMhIkR769CaUgEi+ucXcL+KWN2B81qVrPtumB0BzkB1
-	Vyq5WzbIAaBNm+YVb9PjB1YgriBVNCT2FJOLj9dafbdnxb9rwTaZzlVemsNZEyaGU/0BfQ+KxVG7/
-	oOy1AlKg==;
+	bh=KXW/KrOnrQEg3uxnrQTksUnT8jElnfsXwjmHXlglEG4=; b=wv9Cghe+zh0nySllINFJ4k3IWv
+	anS5fg5bdI80CTHFZNe5a6zUsz5C5h/CMz5j1Rx6edk/Zz2xlRwCivwTeXYQ2lMXXb1A5gmiiMraQ
+	vGFZfjuWQr1HMiMtzKN2pxmBXO9OeB97K9wLbgBvhWDJZww3253P9bRphyuaxwkaUNRh6ZauqOcGZ
+	+HHtpYrBvyMolR6JWsNEu9D8NSa6gvpNWNj8Xf2ym7Q1r8JH4epzobq/2YlqbmH5tnz2Q3x/DREKj
+	t665rN/oeCoj+6kzxNJz7BSSOldbaDktHCZqrF6ZP8nqPfrpLlJ10VK4j35ifIFFXqvjlq8jIgJS+
+	iyeJo6OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNHBb-0000000BB6c-3QGD
+	id 1tNHD6-0000000BBLQ-17r9
 	for ath12k@archiver.kernel.org;
-	Mon, 16 Dec 2024 19:55:23 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Mon, 16 Dec 2024 19:56:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNHAr-0000000BB15-1dEP
+	id 1tNHD4-0000000BBL2-06EC
 	for ath12k@lists.infradead.org;
-	Mon, 16 Dec 2024 19:54:38 +0000
+	Mon, 16 Dec 2024 19:56:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C39A1A41A39
-	for <ath12k@lists.infradead.org>; Mon, 16 Dec 2024 19:52:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 509C8C4CED0;
-	Mon, 16 Dec 2024 19:54:35 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3A6495C1125;
+	Mon, 16 Dec 2024 19:56:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F14CCC4CED0;
+	Mon, 16 Dec 2024 19:56:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1734378876;
-	bh=0VFiKC4boAv/+7uBTzQJqCRPDrjkoWJN1WOJILavTrA=;
+	s=k20201202; t=1734379013;
+	bh=mfQ+UvS9zCNDDMgy2pSAaJ5A6FtaL/xqQkyF0asjCys=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SnuoTe0Bx/1XdHewh5DSy+c7JLqOzvJYtcQwJVIdvG0VDWQz0HXA1G8NH+2GXNtrK
-	 SpgWkYblqLtUxSw5MmO3xBsSYGqNrBQgNMGEBWkdAI53VGyioAEVwLwvCMoCZIh8Dl
-	 qItmc59oNA63J9nynR5SO6qinuF8kbbvmKWA2Avyjz2PABnXz02HTgwdrzCXADzat5
-	 dPTjeXvvj/gGy7UWe4LdE2WvtXygSrqCagVpUmBOfALRSnmgUwi+dHmq9I2ppU8DP9
-	 JZJKpNQhyd6wLFA3KE0SDZVyFFLwEGDf52A1TCk2ds4k4Y0rIMq4jRwb3r2w9JJIXB
-	 xEr8JcrzHhzKQ==
-Date: Mon, 16 Dec 2024 19:54:32 +0000
+	b=lFO8e9lS7ftXOKI+ufABMtvFzYaO48rUzAhicggP7Toly8vWQD+u0j0TTVIBW338P
+	 EBgSeyHWzW5KfeBpf1SQXrwqNKtbbQxkCd3tdM2x69ue5JP50DiDlox99vEIteHyjJ
+	 rSrjnt+1OfCaJYARZi1mnmG8Kosr65ovqzGkk5pZQCHfPJbV66kv2BmZxLQqIkqUoZ
+	 lLMuJ+4JV6nia/MP4/gaAwdiQqLU0xLmfeoddi8kS5QjsRcZpIT+AJ741qpfKV3Gg6
+	 6Ygror5DsnhIkuwgZVrgtPwO5wX+35nIe1pJfRGOIFHExja3I/dcY/cSPmOO0yFfkH
+	 dyLP1DOolb7xw==
+Date: Mon, 16 Dec 2024 19:56:49 +0000
 From: Conor Dooley <conor@kernel.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 1/8] dt-bindings: net: wireless: Describe ath12k PCI
- module with WSI
-Message-ID: <20241216-croak-outwit-207ea8d3025d@spud>
-References: <20241209153034.50558-1-kvalo@kernel.org>
- <20241209153034.50558-2-kvalo@kernel.org>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: ath12k@lists.infradead.org, Kalle Valo <kvalo@kernel.org>,
+	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v3 0/8] wifi: ath12k: MLO support part 7
+Message-ID: <20241216-moonlight-perpetual-d49029337c17@spud>
+References: <20241211153432.775335-1-kvalo@kernel.org>
+ <173436785894.3413746.14923997859754791913.b4-ty@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="aXgPcGwIaTEPwO1U"
+	protocol="application/pgp-signature"; boundary="4t8WLMfWCtEr09Pn"
 Content-Disposition: inline
-In-Reply-To: <20241209153034.50558-2-kvalo@kernel.org>
+In-Reply-To: <173436785894.3413746.14923997859754791913.b4-ty@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241216_115437_490929_F34AD808 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20241216_115654_110223_6B0F0818 
+X-CRM114-Status: GOOD (  11.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,57 +75,46 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
---aXgPcGwIaTEPwO1U
+--4t8WLMfWCtEr09Pn
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Dec 09, 2024 at 05:30:27PM +0200, Kalle Valo wrote:
-> From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+On Mon, Dec 16, 2024 at 08:50:58AM -0800, Jeff Johnson wrote:
 >=20
-> The QCN9274 WiFi device supports WSI (WLAN Serial Interface). WSI is used
-> to exchange specific control information across radios using a doorbell
-> mechanism. This WSI connection is essential for exchanging control
-> information among these devices. The WSI interface in the QCN9274 includes
-> TX and RX ports, which are used to connect multiple WSI-supported devices
-> together, forming a WSI group.
+> On Wed, 11 Dec 2024 17:34:24 +0200, Kalle Valo wrote:
+> > Implementing Multi-Link Operation (MLO) continues. Bindings document is=
+ added
+> > to get WSI information from DT (patch 1) with the code parsing the info=
+rmation
+> > (patch 2). Rest of the patches are about configuring MLO in firmware.
+> >=20
+> > Device Tree bindings were reviewed as RFC earlier:
+> >=20
+> > [RFC PATCH v3 1/5] dt-bindings: net: wireless: Describe ath12k PCI modu=
+le with WSI
+> >=20
+> > [...]
 >=20
-> Describe QCN9274 PCI wifi device with WSI interface.
+> Applied, thanks!
 >=20
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> Signed-off-by: Kalle Valo <quic_kvalo@quicinc.com>
-> ---
->  .../net/wireless/qcom,ath12k-wsi.yaml         | 205 ++++++++++++++++++
->  1 file changed, 205 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,a=
-th12k-wsi.yaml
->=20
-> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-w=
-si.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.ya=
-ml
-> new file mode 100644
-> index 000000000000..7fec15e10a94
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml
+> [1/8] dt-bindings: net: wireless: Describe ath12k PCI module with WSI
+>       commit: 30e36fa89d8266d9221ee992d4f43553a59a3431
 
-Usually I'd comment on the mismatch between this and the compatible, but
-naming the file after the pcie id would do noone any favours. This seems
-fine to me,
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+Delayed through being unexpectedly afk last week, I left an r-b on v2 a
+few mins ago. I don't give a shit about getting credit for tags, but
+figured it was worth mentioning it on the applied version of the series.
 
-Cheers,
-Conor.
-
---aXgPcGwIaTEPwO1U
+--4t8WLMfWCtEr09Pn
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ2CFeAAKCRB4tDGHoIJi
-0jdbAQCrxn0AOA9faLcR0u5ERNVSe3bZPX9blHiLEHsON0gQgAD/U+OuTurH5kBz
-mkIDbiIEEpc/WqcExwcWJPxcwfJuPAo=
-=hKTb
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ2CGAQAKCRB4tDGHoIJi
+0vsYAQDkoxDUoc1/fj7CS11vgTGaiWCoFhMoPF5TgURTVSzXsgEA0A9T++taG4dc
+SpaXgaEwIquY2rZrISfeuuUmHJ4RoQw=
+=wprf
 -----END PGP SIGNATURE-----
 
---aXgPcGwIaTEPwO1U--
+--4t8WLMfWCtEr09Pn--
 
