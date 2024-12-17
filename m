@@ -4,62 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C317E77184
-	for <ath12k@archiver.kernel.org>; Tue, 17 Dec 2024 15:36:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0574EE7717F
+	for <ath12k@archiver.kernel.org>; Tue, 17 Dec 2024 18:41:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gP0W0h39KvXNMUjAFdqKdrzoD7qiwgo+axFUvLdLKUg=; b=xG6aaeRe3jdL1ya5tNlnNYmOdu
-	2penkO4++rIKx5Q7mAFvMcI2rl4Q+DLROtAgSwIzVqEG3LCie+wBet6/Ou2+vrcTZwdKjnj3sNpiD
-	ZNzSK/NkiwcArLBnt6jJcM+Qpws/vkN7tMw5yeQmaLw15QGDiJg8pcBFimtQak7cAhomKKNzenaGL
-	1wKnwBj+5mMlsjti1jgmIlN18Zz9nd7pxl9BIJnyFKjs71wweUhEhuPaBVdn8w/NZCq+A6Qv7q3xR
-	F3cm/UoXtDjHIXebHrbluMeL+Go94dr9HZXsGvUjOq83sSM5QNXgUv4zK51MIUY41XpVJufPbwRpG
-	xo5qMZFQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Nnqyq0el7TeGRCKbNNN7QBNAG50oKdnLaZlflgk+pyU=; b=BkqWditUY9dzMH7Br85jTf5lgY
+	BUXCJl0YFzqkX4kwZX2ad/vczBtTAbZLpaYvAqx+tfVlQwG0AonryKmrpvCpTPb6hbdlj1EN5ANbQ
+	asDrX+DqwwiQy18eDUcStl4uZxBH0arySxdvG+x2+MleC6eD1EFJoJ8fAIS2pCuKUzI43bhYvhiu+
+	40E2ePGX2f9K9oxypH5uL58B/JY5/OJBsa0s1o+p3oujscyVG1Qt8fphMFat5iWCd8YW1GUcEhAkJ
+	2sbeps/S6QdF4K+plxaCYNKEM1MUZisZxQGhuhy3pP5GDn62/cTy7BS+138c0y5dxrbliirC8CI/J
+	rZkCn22Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNZcA-0000000Dykp-2rza
+	id 1tNcVO-0000000EZW5-3HIw
 	for ath12k@archiver.kernel.org;
-	Tue, 17 Dec 2024 15:36:02 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 17 Dec 2024 18:41:14 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNZTA-0000000DxBT-3npt
+	id 1tNcVM-0000000EZVJ-08aq
 	for ath12k@lists.infradead.org;
-	Tue, 17 Dec 2024 15:26:46 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1C2385C5EAA;
-	Tue, 17 Dec 2024 15:26:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D8447C4CED3;
-	Tue, 17 Dec 2024 15:26:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1734449203;
-	bh=XI6WlXJy7+nA87hZkua9BKN48HVzS6jDxkY/GJOikNk=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=C85RbokoKSqVSac6qK5mSE52TLo4LGcN30H3L49gWdyr3E8WEARKD2nsIEUQIPxeS
-	 YekjBrafEgs/S4uG/emVfpRx7YryX51t03i8uHuGVj4B0ayQE38vyKBXDg1Ru1Sa3x
-	 DrluZ56weqbXIpSDhNQnGZ7jPoM+POo+ZCMN/ZmUm9fpBsxYv9TkNWNfH0S7q0KDhR
-	 fXZa9/sCZFPQxqz/lfzD5oVPjQ/j6sQkkgLI5dtiP4NIFvSfrJTIpPV6jT9SoweEGC
-	 KXfQXMfnvoAaDuMqrzqOkwN7XB6MCPQuIlBojJMvNzYAQRfEnoZHIzz6SenhNbI0sl
-	 fg/kKoR2oUshw==
-From: Kalle Valo <kvalo@kernel.org>
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Rajat
- Soni <quic_rajson@quicinc.com>
-Subject: Re: [PATCH v4 2/2] wifi: ath12k: Support pdev Puncture Stats
-References: <20241217055408.1293764-1-quic_rdevanat@quicinc.com>
-	<20241217055408.1293764-3-quic_rdevanat@quicinc.com>
-Date: Tue, 17 Dec 2024 17:26:41 +0200
-In-Reply-To: <20241217055408.1293764-3-quic_rdevanat@quicinc.com> (Roopni
-	Devanathan's message of "Tue, 17 Dec 2024 11:24:08 +0530")
-Message-ID: <87ttb2l49a.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
-MIME-Version: 1.0
-Content-Type: text/plain
+	Tue, 17 Dec 2024 18:41:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1734460872; x=1765996872;
+  h=date:from:to:cc:subject:message-id;
+  bh=Bc680dLXqp9pc/ET1mqRaLs/K7f363eRX0BMCIjlME0=;
+  b=Jzn8iB+Z/3EYf7np1qSoSyirSvq5dH4W2AVri/PSn6gey+cVsTg7fyjU
+   9uxX1vL14t6rfLXJkfIq6duUEdqbfbQauURZkWCsHYxZAq+XTQfkFcu6R
+   ruUJMGUm/77HyUfBSAS3Wxgt4TZ/4Xrx3ge1UR6pmJbRDYh8Yo6WWvTTh
+   Flsd6t6TgPYALECjxfrBUvDrsw+TKZfz/vx06Kg2vC1jESKXL6A6E3m7z
+   i4Angj6WxX938NmdfayBqeapW2iNb8ytkg/jTQUaxg63wTf3GoLxqYFyZ
+   6l1HfMjexcBqnnqP3QVPkilTpFK8aeRyNlkawN2PFQ51Yi5zU3FpDEZlv
+   w==;
+X-CSE-ConnectionGUID: 5eg2Uv/sQJya08OjfGv1ug==
+X-CSE-MsgGUID: t9vZ1bpfRDWUnQeeYFg9qQ==
+X-IronPort-AV: E=McAfee;i="6700,10204,11289"; a="34193974"
+X-IronPort-AV: E=Sophos;i="6.12,242,1728975600"; 
+   d="scan'208";a="34193974"
+Received: from fmviesa007.fm.intel.com ([10.60.135.147])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Dec 2024 10:41:10 -0800
+X-CSE-ConnectionGUID: 6EKbMDspQhGqQGZQn7f0Og==
+X-CSE-MsgGUID: 7hotYWCCRYqETgNvMttpnw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,242,1728975600"; 
+   d="scan'208";a="97485471"
+Received: from lkp-server01.sh.intel.com (HELO 82a3f569d0cb) ([10.239.97.150])
+  by fmviesa007.fm.intel.com with ESMTP; 17 Dec 2024 10:41:09 -0800
+Received: from kbuild by 82a3f569d0cb with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tNcVG-000Fji-2r;
+	Tue, 17 Dec 2024 18:41:06 +0000
+Date: Wed, 18 Dec 2024 02:40:11 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ d953ce0fcc7ce69edb5a3a39ea3a98ba2347976d
+Message-ID: <202412180205.42Gck51M-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241217_072645_029607_2F46397B 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20241217_104112_286695_2EECD34A 
+X-CRM114-Status: UNSURE (   3.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,121 +84,138 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: d953ce0fcc7ce69edb5a3a39ea3a98ba2347976d  wifi: ath9k: simplify internal time management
 
-> From: Rajat Soni <quic_rajson@quicinc.com>
->
-> Add support to request pdev puncture stats from firmware through
-> HTT stats type 46. These stats give the count of number of
-> subbands used in different wifi standards.
->
-> Sample output:
-> -------------
-> echo 46 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> tx_ofdm_su_last_used_pattern_mask = 0x00000001
-> tx_ofdm_su_num_subbands_used_cnt_01 = 217
-> tx_ofdm_su_num_subbands_used_cnt_02 = 0
-> tx_ofdm_su_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> tx_ax_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
-> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
-> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
-> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> tx_be_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
-> tx_be_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
-> tx_be_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
-> tx_be_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> rx_ax_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
-> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
-> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
-> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> rx_be_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
-> rx_be_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
-> rx_be_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
-> rx_be_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
->
-> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+elapsed time: 1441m
 
-[...]
+configs tested: 118
+configs skipped: 4
 
-> +static const char*
-> +ath12k_htt_get_punct_ppdu_type_str(enum ath12k_htt_stats_ppdu_type ppdu_type,
-> +				   struct debug_htt_stats_req *stats_req)
-> +{
-> +	const char *ppdu_type_str = "unknown";
-> +	u32 len = stats_req->buf_len;
-> +
-> +	switch (ppdu_type) {
-> +	case ATH12K_HTT_STATS_PPDU_TYPE_MODE_SU:
-> +		ppdu_type_str = "su";
-> +		break;
-> +	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_MIMO:
-> +		ppdu_type_str = "dl_mu_mimo";
-> +		break;
-> +	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_MIMO:
-> +		ppdu_type_str = "ul_mu_mimo";
-> +		break;
-> +	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_OFDMA:
-> +		ppdu_type_str = "dl_mu_ofdma";
-> +		break;
-> +	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_OFDMA:
-> +		ppdu_type_str = "ul_mu_ofdma";
-> +		break;
-> +	default:
-> +		break;
-> +	}
-> +
-> +	stats_req->buf_len = len;
-> +	return ppdu_type_str;
-> +}
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Also here I don't get why the len variable is needed. I would just
-simplify this and the previous function to:
+tested configs:
+alpha                             allnoconfig    gcc-14.2.0
+alpha                            allyesconfig    gcc-14.2.0
+alpha                               defconfig    gcc-14.2.0
+arc                              allmodconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-13.2.0
+arc                              allyesconfig    gcc-13.2.0
+arc                                 defconfig    gcc-13.2.0
+arc                   randconfig-001-20241217    gcc-13.2.0
+arc                   randconfig-002-20241217    gcc-13.2.0
+arm                              allmodconfig    gcc-14.2.0
+arm                               allnoconfig    clang-17
+arm                              allyesconfig    gcc-14.2.0
+arm                     am200epdkit_defconfig    gcc-14.2.0
+arm                   randconfig-001-20241217    clang-16
+arm                   randconfig-002-20241217    gcc-14.2.0
+arm                   randconfig-003-20241217    gcc-14.2.0
+arm                   randconfig-004-20241217    gcc-14.2.0
+arm64                            allmodconfig    clang-18
+arm64                             allnoconfig    gcc-14.2.0
+arm64                 randconfig-001-20241217    clang-20
+arm64                 randconfig-002-20241217    clang-16
+arm64                 randconfig-003-20241217    clang-18
+arm64                 randconfig-004-20241217    gcc-14.2.0
+csky                              allnoconfig    gcc-14.2.0
+csky                  randconfig-001-20241217    gcc-14.2.0
+csky                  randconfig-002-20241217    gcc-14.2.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon               randconfig-001-20241217    clang-20
+hexagon               randconfig-002-20241217    clang-19
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20241217    clang-19
+i386        buildonly-randconfig-002-20241217    gcc-12
+i386        buildonly-randconfig-003-20241217    gcc-12
+i386        buildonly-randconfig-004-20241217    clang-19
+i386        buildonly-randconfig-005-20241217    clang-19
+i386        buildonly-randconfig-006-20241217    gcc-11
+i386                                defconfig    clang-19
+loongarch                        alldefconfig    gcc-14.2.0
+loongarch                        allmodconfig    gcc-14.2.0
+loongarch                         allnoconfig    gcc-14.2.0
+loongarch             randconfig-001-20241217    gcc-14.2.0
+loongarch             randconfig-002-20241217    gcc-14.2.0
+m68k                             allmodconfig    gcc-14.2.0
+m68k                              allnoconfig    gcc-14.2.0
+m68k                             allyesconfig    gcc-14.2.0
+m68k                        m5272c3_defconfig    gcc-14.2.0
+microblaze                       allmodconfig    gcc-14.2.0
+microblaze                        allnoconfig    gcc-14.2.0
+microblaze                       allyesconfig    gcc-14.2.0
+mips                              allnoconfig    gcc-14.2.0
+nios2                         10m50_defconfig    gcc-14.2.0
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20241217    gcc-14.2.0
+nios2                 randconfig-002-20241217    gcc-14.2.0
+openrisc                          allnoconfig    gcc-14.2.0
+openrisc                         allyesconfig    gcc-14.2.0
+openrisc                            defconfig    gcc-14.2.0
+parisc                           allmodconfig    gcc-14.2.0
+parisc                            allnoconfig    gcc-14.2.0
+parisc                           allyesconfig    gcc-14.2.0
+parisc                              defconfig    gcc-14.2.0
+parisc                randconfig-001-20241217    gcc-14.2.0
+parisc                randconfig-002-20241217    gcc-14.2.0
+powerpc                          allmodconfig    gcc-14.2.0
+powerpc                           allnoconfig    gcc-14.2.0
+powerpc                          allyesconfig    clang-16
+powerpc                       eiger_defconfig    clang-17
+powerpc                 mpc836x_rdk_defconfig    clang-18
+powerpc               randconfig-001-20241217    clang-20
+powerpc               randconfig-002-20241217    gcc-14.2.0
+powerpc               randconfig-003-20241217    clang-16
+powerpc                      tqm8xx_defconfig    clang-20
+powerpc64             randconfig-001-20241217    gcc-14.2.0
+powerpc64             randconfig-002-20241217    gcc-14.2.0
+powerpc64             randconfig-003-20241217    gcc-14.2.0
+riscv                            allmodconfig    clang-20
+riscv                             allnoconfig    gcc-14.2.0
+riscv                            allyesconfig    clang-20
+riscv                 randconfig-001-20241217    gcc-14.2.0
+riscv                 randconfig-002-20241217    gcc-14.2.0
+s390                             allmodconfig    clang-19
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.2.0
+s390                  randconfig-001-20241217    gcc-14.2.0
+s390                  randconfig-002-20241217    gcc-14.2.0
+sh                               allmodconfig    gcc-14.2.0
+sh                                allnoconfig    gcc-14.2.0
+sh                               allyesconfig    gcc-14.2.0
+sh                        dreamcast_defconfig    gcc-14.2.0
+sh                    randconfig-001-20241217    gcc-14.2.0
+sh                    randconfig-002-20241217    gcc-14.2.0
+sparc                            allmodconfig    gcc-14.2.0
+sparc                             allnoconfig    gcc-14.2.0
+sparc                 randconfig-001-20241217    gcc-14.2.0
+sparc                 randconfig-002-20241217    gcc-14.2.0
+sparc64               randconfig-001-20241217    gcc-14.2.0
+sparc64               randconfig-002-20241217    gcc-14.2.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-18
+um                               allyesconfig    gcc-12
+um                    randconfig-001-20241217    clang-20
+um                    randconfig-002-20241217    gcc-12
+x86_64                            allnoconfig    clang-19
+x86_64                           allyesconfig    clang-19
+x86_64      buildonly-randconfig-001-20241217    clang-19
+x86_64      buildonly-randconfig-002-20241217    gcc-12
+x86_64      buildonly-randconfig-003-20241217    gcc-12
+x86_64      buildonly-randconfig-004-20241217    clang-19
+x86_64      buildonly-randconfig-005-20241217    gcc-12
+x86_64      buildonly-randconfig-006-20241217    clang-19
+x86_64                              defconfig    gcc-11
+xtensa                            allnoconfig    gcc-14.2.0
+xtensa                generic_kc705_defconfig    gcc-14.2.0
+xtensa                randconfig-001-20241217    gcc-14.2.0
+xtensa                randconfig-002-20241217    gcc-14.2.0
 
-static const char*
-ath12k_htt_get_punct_ppdu_type_str(enum ath12k_htt_stats_ppdu_type ppdu_type,
-				   struct debug_htt_stats_req *stats_req)
-{
-	switch (ppdu_type) {
-	case ATH12K_HTT_STATS_PPDU_TYPE_MODE_SU:
-		return "su";
-	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_MIMO:
-		return "dl_mu_mimo";
-	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_MIMO:
-		return "ul_mu_mimo";
-	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_OFDMA:
-		return "dl_mu_ofdma";
-	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_OFDMA:
-		return "ul_mu_ofdma";
-	default:
-		return "unknown";
-	}
-
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
