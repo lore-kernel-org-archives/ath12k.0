@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EF8FE7717F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C317E77184
 	for <ath12k@archiver.kernel.org>; Tue, 17 Dec 2024 15:36:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,56 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cFhMu1fwbpGC/2f9UEuLOTe/A06fLH+an0c7D2VqBpw=; b=sE0YcO/AyxGp6OfgN3AaXABicR
-	06kP1el/yC7N4hMHenW721PcB8KJYQIv8l9p/0V53pwt12fDpkoqgKFuLUVI02VS2ZdDs2e1vkDAU
-	gxXg92mIbgXSfdNnfuz9LKJ0oaUdKA21j5xbFQEa8bCzbPQBqTIxS+29mErkDbOAM021vyGwEn2XZ
-	tY6F30M3PTtwMsc9cb/EJOVTynuIKMEtsy/cn5u6z+GrdjtLpaEs3s29c2jgZQC/TFP0bQo5SZDkN
-	NoihqfCe/3AGlKTgB/XIeDChZlIIBMMNDIBTaF7KtN00aF3NvXr3LrLShjsdaRv5QJD0GIIeeY/wI
-	+gA6cqlQ==;
+	bh=gP0W0h39KvXNMUjAFdqKdrzoD7qiwgo+axFUvLdLKUg=; b=xG6aaeRe3jdL1ya5tNlnNYmOdu
+	2penkO4++rIKx5Q7mAFvMcI2rl4Q+DLROtAgSwIzVqEG3LCie+wBet6/Ou2+vrcTZwdKjnj3sNpiD
+	ZNzSK/NkiwcArLBnt6jJcM+Qpws/vkN7tMw5yeQmaLw15QGDiJg8pcBFimtQak7cAhomKKNzenaGL
+	1wKnwBj+5mMlsjti1jgmIlN18Zz9nd7pxl9BIJnyFKjs71wweUhEhuPaBVdn8w/NZCq+A6Qv7q3xR
+	F3cm/UoXtDjHIXebHrbluMeL+Go94dr9HZXsGvUjOq83sSM5QNXgUv4zK51MIUY41XpVJufPbwRpG
+	xo5qMZFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNZcB-0000000Dyl1-0FwJ
+	id 1tNZcA-0000000Dykp-2rza
 	for ath12k@archiver.kernel.org;
-	Tue, 17 Dec 2024 15:36:03 +0000
+	Tue, 17 Dec 2024 15:36:02 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNZU1-0000000DxLP-1UeW
+	id 1tNZTA-0000000DxBT-3npt
 	for ath12k@lists.infradead.org;
-	Tue, 17 Dec 2024 15:27:38 +0000
+	Tue, 17 Dec 2024 15:26:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B614E5C3FBA;
-	Tue, 17 Dec 2024 15:26:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37CB3C4CED3;
-	Tue, 17 Dec 2024 15:27:35 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1C2385C5EAA;
+	Tue, 17 Dec 2024 15:26:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D8447C4CED3;
+	Tue, 17 Dec 2024 15:26:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1734449256;
-	bh=X6fhOCIws3YMr58Boun0EIq/EQYH3sARWR30RF1nuik=;
+	s=k20201202; t=1734449203;
+	bh=XI6WlXJy7+nA87hZkua9BKN48HVzS6jDxkY/GJOikNk=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=LXmfk+g0k8nqUIPgdc6P4Piy783E65cTIdYdt2UwRTum3bsO0mKgRrvqehX9pu0/e
-	 4ySj1CjCMsDlwL8tstxkCoAX8EDu5MF7auqwEt8KqLhTxJpXFOnvebSPyKenK5ie/z
-	 CGRsyu8lyWNfwQnt3uo6wTKWtbUNv1+d+sfcS4qL/GEa4kWB7zhJ9QKUUe5w3Xyxin
-	 fpJ51Ntw/GACYvigo8wM+2QXUoZRYggiMkf9Il5VG+YoaRRWfx6uAMCY/4d+/MgNb3
-	 WTk2x2EoWqV2vvy4vbnGmx9dljn1sY9hvlabxuGl4la1is9fY+eGmcs4noJDi4sx1+
-	 LeV01bgvpaetw==
+	b=C85RbokoKSqVSac6qK5mSE52TLo4LGcN30H3L49gWdyr3E8WEARKD2nsIEUQIPxeS
+	 YekjBrafEgs/S4uG/emVfpRx7YryX51t03i8uHuGVj4B0ayQE38vyKBXDg1Ru1Sa3x
+	 DrluZ56weqbXIpSDhNQnGZ7jPoM+POo+ZCMN/ZmUm9fpBsxYv9TkNWNfH0S7q0KDhR
+	 fXZa9/sCZFPQxqz/lfzD5oVPjQ/j6sQkkgLI5dtiP4NIFvSfrJTIpPV6jT9SoweEGC
+	 KXfQXMfnvoAaDuMqrzqOkwN7XB6MCPQuIlBojJMvNzYAQRfEnoZHIzz6SenhNbI0sl
+	 fg/kKoR2oUshw==
 From: Kalle Valo <kvalo@kernel.org>
-To: Colin Ian King <colin.i.king@gmail.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>,  linux-wireless@vger.kernel.org,
-  ath12k@lists.infradead.org,  kernel-janitors@vger.kernel.org,
-  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH][next] wifi: ath12k: Fix spelling mistake "requestted"
- -> "requested"
-References: <20241217105505.306047-1-colin.i.king@gmail.com>
-Date: Tue, 17 Dec 2024 17:27:33 +0200
-In-Reply-To: <20241217105505.306047-1-colin.i.king@gmail.com> (Colin Ian
-	King's message of "Tue, 17 Dec 2024 10:55:05 +0000")
-Message-ID: <87pllql47u.fsf@kernel.org>
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Rajat
+ Soni <quic_rajson@quicinc.com>
+Subject: Re: [PATCH v4 2/2] wifi: ath12k: Support pdev Puncture Stats
+References: <20241217055408.1293764-1-quic_rdevanat@quicinc.com>
+	<20241217055408.1293764-3-quic_rdevanat@quicinc.com>
+Date: Tue, 17 Dec 2024 17:26:41 +0200
+In-Reply-To: <20241217055408.1293764-3-quic_rdevanat@quicinc.com> (Roopni
+	Devanathan's message of "Tue, 17 Dec 2024 11:24:08 +0530")
+Message-ID: <87ttb2l49a.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241217_072737_431771_A8F446AD 
-X-CRM114-Status: UNSURE (   4.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241217_072645_029607_2F46397B 
+X-CRM114-Status: GOOD (  10.98  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,15 +74,118 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Colin Ian King <colin.i.king@gmail.com> writes:
+Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
 
-> There is a spelling mistake in an ath12k_err error message. Fix it.
+> From: Rajat Soni <quic_rajson@quicinc.com>
 >
-> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
+> Add support to request pdev puncture stats from firmware through
+> HTT stats type 46. These stats give the count of number of
+> subbands used in different wifi standards.
+>
+> Sample output:
+> -------------
+> echo 46 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> HTT_PDEV_PUNCTURE_STATS_TLV:
+> mac_id = 0
+> tx_ofdm_su_last_used_pattern_mask = 0x00000001
+> tx_ofdm_su_num_subbands_used_cnt_01 = 217
+> tx_ofdm_su_num_subbands_used_cnt_02 = 0
+> tx_ofdm_su_num_subbands_used_cnt_03 = 0
+> .....
+>
+> HTT_PDEV_PUNCTURE_STATS_TLV:
+> mac_id = 0
+> tx_ax_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
+> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
+> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
+> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
+> .....
+>
+> HTT_PDEV_PUNCTURE_STATS_TLV:
+> mac_id = 0
+> tx_be_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
+> tx_be_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
+> tx_be_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
+> tx_be_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
+> .....
+>
+> HTT_PDEV_PUNCTURE_STATS_TLV:
+> mac_id = 0
+> rx_ax_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
+> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
+> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
+> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
+> .....
+>
+> HTT_PDEV_PUNCTURE_STATS_TLV:
+> mac_id = 0
+> rx_be_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
+> rx_be_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
+> rx_be_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
+> rx_be_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
+> .....
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>
+> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 
-My bad, thanks for fixing it.
+[...]
 
-Acked-by: Kalle Valo <kvalo@kernel.org>
+> +static const char*
+> +ath12k_htt_get_punct_ppdu_type_str(enum ath12k_htt_stats_ppdu_type ppdu_type,
+> +				   struct debug_htt_stats_req *stats_req)
+> +{
+> +	const char *ppdu_type_str = "unknown";
+> +	u32 len = stats_req->buf_len;
+> +
+> +	switch (ppdu_type) {
+> +	case ATH12K_HTT_STATS_PPDU_TYPE_MODE_SU:
+> +		ppdu_type_str = "su";
+> +		break;
+> +	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_MIMO:
+> +		ppdu_type_str = "dl_mu_mimo";
+> +		break;
+> +	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_MIMO:
+> +		ppdu_type_str = "ul_mu_mimo";
+> +		break;
+> +	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_OFDMA:
+> +		ppdu_type_str = "dl_mu_ofdma";
+> +		break;
+> +	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_OFDMA:
+> +		ppdu_type_str = "ul_mu_ofdma";
+> +		break;
+> +	default:
+> +		break;
+> +	}
+> +
+> +	stats_req->buf_len = len;
+> +	return ppdu_type_str;
+> +}
+
+Also here I don't get why the len variable is needed. I would just
+simplify this and the previous function to:
+
+static const char*
+ath12k_htt_get_punct_ppdu_type_str(enum ath12k_htt_stats_ppdu_type ppdu_type,
+				   struct debug_htt_stats_req *stats_req)
+{
+	switch (ppdu_type) {
+	case ATH12K_HTT_STATS_PPDU_TYPE_MODE_SU:
+		return "su";
+	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_MIMO:
+		return "dl_mu_mimo";
+	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_MIMO:
+		return "ul_mu_mimo";
+	case ATH12K_HTT_STATS_PPDU_TYPE_DL_MU_OFDMA:
+		return "dl_mu_ofdma";
+	case ATH12K_HTT_STATS_PPDU_TYPE_UL_MU_OFDMA:
+		return "ul_mu_ofdma";
+	default:
+		return "unknown";
+	}
 
 -- 
 https://patchwork.kernel.org/project/linux-wireless/list/
