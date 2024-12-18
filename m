@@ -4,84 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F972E77183
-	for <ath12k@archiver.kernel.org>; Wed, 18 Dec 2024 04:02:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8978FE77187
+	for <ath12k@archiver.kernel.org>; Wed, 18 Dec 2024 17:07:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=B4xaBfTwlbhTZBdioQ314VXzYNLWYXE51uDaXOjxQ74=; b=jqcAH70aH9Zu1x3t5amBgpXtRm
-	YHlgHX3k3n+3tqxE6PfJ3xtxwAojlST4Z1pErs65LG7H4X65CKRYafil1HKydSnSv4ZhHoTSVPKqo
-	jryujEU6slxBrL+rg38x7acd+TLqCsq7MvUW5CeNoXJz+wuCECkoIbs+JHQkN09SNPPNRMs6FY0H5
-	RoRQ9TFwaHOTsSAdnUDhsz8zjE8ifD701Z8bk5X162E1LB95Dp9AxsS8RH2CfZgBBgZcHYJkiJTlw
-	u4oA4g+Dlx460/z2bCcaboQM0mNyu6ddiCmp+AlBXFjZD/Uebvlzrx078wuqWPzX6x9g/Q71ugrtJ
-	GftzmjtQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=SuuW3tVcMOJmBdlb+um6PeoMAYru60GAvWKIRwLajbc=; b=Lv9fzYN6fSHgMeZ2B/V6Wj2Zmy
+	ZObOXFCaRQ08vBNFgu36Ep/9wzFpfDksuMp1TAjGGtozV8kCo80mXMJ17AWAtQ09MI8uQVNmn9lv3
+	2ep80NrQipcDcE6yjE9ulaPeB1e02LLtoOdM4tGZa+y7iqpRZL2gH/UakbxHzaGb3euvSMf08uYeS
+	tmH+xrFoWrRHyFiak2kSMmWBES25JPBQAYVY4i0JYpDrfdu7znMAQgiUh8sZo0oZNi3nyE41S/0r6
+	XMnxZBxeGovVpb5mjKhC1xtnFdcEzxXCerMDkJ413eIizbhwbks+18M+ccWwmd9S7lKJkmLDRZwnv
+	jQRH1Mrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNlGN-0000000FWYL-1kuv
+	id 1tNxWZ-0000000HH1u-1Bll
 	for ath12k@archiver.kernel.org;
-	Wed, 18 Dec 2024 04:02:19 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 18 Dec 2024 17:07:51 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNlGK-0000000FWXt-2ObI
+	id 1tNxVu-0000000HGtf-0kIh
 	for ath12k@lists.infradead.org;
-	Wed, 18 Dec 2024 04:02:17 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BHLL8P7017955;
-	Wed, 18 Dec 2024 04:02:15 GMT
+	Wed, 18 Dec 2024 17:07:11 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BIGR0mN001514;
+	Wed, 18 Dec 2024 17:07:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=B4xaBfTwlbhTZBdioQ314V
-	XzYNLWYXE51uDaXOjxQ74=; b=U8YTM0CMvpW0fJyMQruT1b44B9WkLJxLnaKxxI
-	cl1USDvSidtY6lMM2B6PCK/i84ucgbsDxdTDbV0Y9MajQG42BXADOVk//+pdZwOY
-	u2st2+0F67avuVnSf258w6SI/me5meJA0KVofL4g1OQALQ/7OSaV28KtoA+FxyB/
-	yEX7Gbv2x/mdCUuJCy07vnZhE7RuScs+NK3V5tIVdYtekTG1krZiZXnY4EuqXHAJ
-	taBFGGOaTzQjJCk9CSOf9VNy8E1eq4vMkP0Xsy+Nn9h42gaT5f+L9XGTES8+BWqV
-	G8T8QQU/aWDDsa1tsglzykFjtJAfVkd0S/Hj12ko4HGhwsVg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43kefxh3fj-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	SuuW3tVcMOJmBdlb+um6PeoMAYru60GAvWKIRwLajbc=; b=jC6yJCHvlrrLKbIY
+	zqP8CG9D94abIWcmN4U6L7G8Xcqemod1AOgVB6ZFhNEP3TG21ZOJ4VQxQpZwxTZh
+	ZyFi2ctr2xA6QGCJfPGohLFr7pIbc7TWKZdC+DHoqPMjVB4tYWw7axx9z+FXJJme
+	4JKGulsJWI+Ecth9qZBjIpnivYFZu+FG6P4Y6tDtGPDDOnytoyNF+edr95j0iQ+B
+	TOsUzKm/Ebc4izxin9XTHiaA3YhbQo+1pnP68jfDhzObanyu3eK3PSUSw+3Kw+D6
+	UPpcTNF7554HjuZ1ZlfE0+Qrz+kwBHlbz0rHBuGJ7PGvEiyQeXegNjnDH+wk/jNI
+	xhe4gQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43kr1xstyb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 18 Dec 2024 04:02:14 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BI42EDD015594
+	Wed, 18 Dec 2024 17:07:05 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BIH73ep010589
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 18 Dec 2024 04:02:14 GMT
-Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 17 Dec 2024 20:02:12 -0800
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Raj Kumar Bhagat
-	<quic_rajkbhag@quicinc.com>
-Subject: [PATCH] wifi: ath12k: Include MLO memory in firmware coredump collection
-Date: Wed, 18 Dec 2024 09:31:49 +0530
-Message-ID: <20241218040149.4041728-1-quic_rajkbhag@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Wed, 18 Dec 2024 17:07:03 GMT
+Received: from [10.50.9.84] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 18 Dec
+ 2024 09:07:02 -0800
+Message-ID: <f141f19a-0106-4eaa-ab08-ed92bd965c42@quicinc.com>
+Date: Wed, 18 Dec 2024 22:36:59 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: Add support for parsing 64-bit TLVs
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20241204071238.948885-1-quic_ppranees@quicinc.com>
+ <87o71bmwoe.fsf@kernel.org>
+ <fda72aba-f878-426f-b410-a4cecf77d1c3@quicinc.com>
+ <87ldweksqt.fsf@kernel.org>
+Content-Language: en-US
+From: Praneesh P <quic_ppranees@quicinc.com>
+In-Reply-To: <87ldweksqt.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1fCbYxJVq6idNqtp6VEdIDvFOWv08WAZ
-X-Proofpoint-ORIG-GUID: 1fCbYxJVq6idNqtp6VEdIDvFOWv08WAZ
+X-Proofpoint-GUID: KkQpuwXxWrJ1nNBwzoxmxC3PXKvQdLcK
+X-Proofpoint-ORIG-GUID: KkQpuwXxWrJ1nNBwzoxmxC3PXKvQdLcK
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- impostorscore=0 clxscore=1015 adultscore=0 mlxlogscore=991 spamscore=0
- priorityscore=1501 bulkscore=0 malwarescore=0 phishscore=0 suspectscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412180029
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 malwarescore=0 adultscore=0 bulkscore=0 mlxlogscore=702
+ lowpriorityscore=0 clxscore=1015 spamscore=0 mlxscore=0 priorityscore=1501
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412180134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241217_200216_615414_B37E7E4D 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20241218_090710_332468_334C9E3A 
+X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,50 +102,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The current firmware coredump collection in ath12k does not include
-the MLO_GLOBAL_MEM_REGION_TYPE memory. This memory region is essential
-for debugging issues related to Multi-Link Operation (MLO).
 
-Hence, add support to include MLO_GLOBAL_MEM_REGION_TYPE memory in
-firmware coredump collection.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/coredump.c | 3 +++
- drivers/net/wireless/ath/ath12k/coredump.h | 1 +
- 2 files changed, 4 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/coredump.c b/drivers/net/wireless/ath/ath12k/coredump.c
-index 72d675d15e64..ce1beeb54836 100644
---- a/drivers/net/wireless/ath/ath12k/coredump.c
-+++ b/drivers/net/wireless/ath/ath12k/coredump.c
-@@ -27,6 +27,9 @@ ath12k_fw_crash_dump_type ath12k_coredump_get_dump_type(enum ath12k_qmi_target_m
- 	case CALDB_MEM_REGION_TYPE:
- 		dump_type = FW_CRASH_DUMP_NONE;
- 		break;
-+	case MLO_GLOBAL_MEM_REGION_TYPE:
-+		dump_type = FW_CRASH_DUMP_MLO_GLOBAL_DATA;
-+		break;
- 	default:
- 		dump_type = FW_CRASH_DUMP_TYPE_MAX;
- 		break;
-diff --git a/drivers/net/wireless/ath/ath12k/coredump.h b/drivers/net/wireless/ath/ath12k/coredump.h
-index 5d6003b1c12d..13f46a605113 100644
---- a/drivers/net/wireless/ath/ath12k/coredump.h
-+++ b/drivers/net/wireless/ath/ath12k/coredump.h
-@@ -15,6 +15,7 @@ enum ath12k_fw_crash_dump_type {
- 	FW_CRASH_DUMP_PAGEABLE_DATA,
- 	FW_CRASH_DUMP_M3_DUMP,
- 	FW_CRASH_DUMP_NONE,
-+	FW_CRASH_DUMP_MLO_GLOBAL_DATA,
- 
- 	/* keep last */
- 	FW_CRASH_DUMP_TYPE_MAX,
-
-base-commit: 9a448415ed0c46edeb9170091a03b620986ca0b2
--- 
-2.34.1
+On 12/18/2024 1:05 AM, Kalle Valo wrote:
+> I am not exactly looking for a Tested-on tag. What I'm asking is that
+> people take into account WCN7850 when designing and writing patches
+> ath12k. For example, is the firmware interface same and similar
+> functional differences between supported hardware families.
+I'll make sure to keep this in mind for future patches.
 
 
