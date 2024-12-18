@@ -4,88 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73C81E77187
-	for <ath12k@archiver.kernel.org>; Wed, 18 Dec 2024 03:41:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01B45E77183
+	for <ath12k@archiver.kernel.org>; Wed, 18 Dec 2024 03:57:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Bih8oj4iR25DCzte9gmvw2zA9hXiB4JLQNfTMJZFo6E=; b=LeJQ3ABH/fLDWFE8tVgdNSjQpA
-	cLSH0AFh5yeSXZFcOZDkXVPuBqHpKTFnLcDd3xMNHOEIAcUdAy6HlMkwwxxq5o+ffKDuLhnwUvDut
-	37NGuoUgDQBqDt/8iCVkk4tVb+Kn2XKjKDKHBAl9prYKxgtg/E0ttqCOhvGu33v6HI9Zd6pnD+866
-	GiuipM8b3f0PddYUHnqmVZOXMlT4p8R69SpvUokw75b0WuMnC+uETWTyC5kWN+a4p2Ulfquv8B7S1
-	kengbRlqE1mMvY55hqc0kibnXcUNXSyDvFCsmdVFkJZ9JfAuBtn0qQZNRiLf+JUI41WoBbsOywVPb
-	RFFkURDg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=amDLeLQXviEK4puuNnUcWE1UC/rAJmwwEy5/+Aq3G+s=; b=i09q7sKpYogucSCa6VRgOPTdfh
+	4ffmnCNwRhhl/bxJkE5vNrYWqur8pGKdu1QKe//Ls+OwazGqunCnBN5AaFX3qr3k9VhMvCUUmELKN
+	a6BonxKznQA2Whqtni7NnyyTEru1Lc6NtEY1mr9HquWc6QopfB4BqUafwgaxAkiE1V2C4SKjvDwvB
+	Z/2vlL00z4c0weWWVUKsyqdd+UBlcn4vfIgvKo8KhufDo2+OQxsGE/o9JaQsMctPYpS2WU+oJXwe/
+	R3eDzmeXSJio+/n25EuVNQ61TEO/OY7CaQlIRo1knWlKjiztBXBV6VF4bl5dJ3Qtn2AngjhDoOhAM
+	DEVzi6KQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNkwd-0000000FUz0-0x6o
+	id 1tNlBm-0000000FW62-2lZH
 	for ath12k@archiver.kernel.org;
-	Wed, 18 Dec 2024 03:41:55 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 18 Dec 2024 03:57:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNkwb-0000000FUy0-0led
+	id 1tNlBj-0000000FW5N-0EZf
 	for ath12k@lists.infradead.org;
-	Wed, 18 Dec 2024 03:41:54 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BHIJq12013339;
-	Wed, 18 Dec 2024 03:41:51 GMT
+	Wed, 18 Dec 2024 03:57:32 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BI0npw9011571;
+	Wed, 18 Dec 2024 03:57:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Bih8oj4iR25DCzte9gmvw2zA9hXiB4JLQNfTMJZFo6E=; b=derevPub93ES7WQ0
-	gRnAzWipkwUY8lqLC40mvU2ax6sZE8Wc+6tZUEomsqQAh4+TpVW8tcZzeE0gYkHF
-	Ih6DjtdMmRKnL+rq1QaA5tecGqrXeRyaCIWQvhNepSXe15jlPfYZAbPn5ouXwBz9
-	D0g4rhwU350qzcaQM7+pyeFl9syANM3TdGAbkmlDTYlSx6bmxenJ3XQvUnBLZARG
-	qFtJTK79FY73BiDv9gE2Apt29KliI81MMHdCEXerrJI4OCh4Gq56oGjDRypFecbj
-	dLueYLUfnL4U4RdKyRSVzHuM/loC3AMRd8AzoDtHNlFPpmvOAioNZu9vYdFHCS9k
-	XUfOJA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43kefxh24c-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=amDLeLQXviEK4puuNnUcWE
+	1UC/rAJmwwEy5/+Aq3G+s=; b=MOi+fj2qxCK3lgzQfwnz880tUZIPoH1ZNkiY95
+	opL+RZwfbtj9po27AedB9OMnFZm4qb5oXZ9JZkJP7xClFwA7NlaZLI6HbXiDt+Zs
+	KYxMm6Cz/DzEO7s3O7CrSaxienas6qYEDJKTDlcwmN4YrCAsA74Yr2iM2TYemkVB
+	077J0eqI+D979UDvxhNqw75ADD3rek1q4H9TNOSXAU2HwA5zQvgLghMrYzJQjJWt
+	Cw8AtdOtTU6NLAUUIsu3p53JKQKolFuXjzIUEKvS2B6Q1/evY+mXCm82vOyilhpu
+	JZh9aT0gf1SgTkAhn3uEXY1Lex/+Mf4O2Htt/h6dMvp2PFyg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43km6r8buk-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 18 Dec 2024 03:41:50 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BI3forW021668
+	Wed, 18 Dec 2024 03:57:29 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BI3vS7f027192
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 18 Dec 2024 03:41:50 GMT
-Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+	Wed, 18 Dec 2024 03:57:28 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 17 Dec 2024 19:41:47 -0800
-From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Date: Wed, 18 Dec 2024 09:11:33 +0530
-Subject: [PATCH 2/3] wifi: ath12k: fix CAC running state during virtual
- interface start
+ 15.2.1544.9; Tue, 17 Dec 2024 19:57:27 -0800
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH v5 0/2] wifi: ath12k: Support AST and Puncture Stats
+Date: Wed, 18 Dec 2024 09:27:09 +0530
+Message-ID: <20241218035711.2573584-1-quic_rdevanat@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-ID: <20241218-ath12k_mlo_dfs-v1-2-058e783bcfc7@quicinc.com>
-References: <20241218-ath12k_mlo_dfs-v1-0-058e783bcfc7@quicinc.com>
-In-Reply-To: <20241218-ath12k_mlo_dfs-v1-0-058e783bcfc7@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>,
-        Aditya Kumar Singh <quic_adisi@quicinc.com>
-X-Mailer: b4 0.14.2
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: rRPd5rjwVFnOS_FIeX3SjJGqJz7hK-fH
-X-Proofpoint-ORIG-GUID: rRPd5rjwVFnOS_FIeX3SjJGqJz7hK-fH
+X-Proofpoint-ORIG-GUID: K3QjocC_-sbFH3aTBpQa1Bn1Pd1cyeWb
+X-Proofpoint-GUID: K3QjocC_-sbFH3aTBpQa1Bn1Pd1cyeWb
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- impostorscore=0 clxscore=1015 adultscore=0 mlxlogscore=999 spamscore=0
- priorityscore=1501 bulkscore=0 malwarescore=0 phishscore=0 suspectscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412180026
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 bulkscore=0
+ malwarescore=0 mlxscore=0 adultscore=0 mlxlogscore=665 suspectscore=0
+ impostorscore=0 phishscore=0 priorityscore=1501 spamscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412180028
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241217_194153_239034_21D37062 
-X-CRM114-Status: GOOD (  18.80  )
+X-CRM114-CacheID: sfid-20241217_195731_212750_C5A8D14B 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,88 +97,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the DFS CAC time and the usable state of the primary channel in
-the channel definition are used to set the CAC_RUNNING flag for the ath12k
-radio structure. However, this approach is flawed because there are channel
-definitions where the primary channel is not a DFS channel, but the
-secondary channel is. For example, in 5 GHz band, channel 36 with 160 MHz
-bandwidth. In such cases, the flag is not set correctly and hence places
-where this flag is tested will not operate as expected. For example, Rx
-packets will not be dropped.
+Add support to request HTT stats type 41 and 46 from firmware. These
+stats give Address Search Table(AST) entries stats and pdev puncture
+stats, respectively.
 
-To fix this issue, use the cfg80211_chandef_dfs_usable() function from
-cfg80211, which returns true if at least one channel is in a usable state.
-This will ensure the CAC_RUNNING flag is set properly.
+Depends-on:
+[PATCH 0/2] wifi: ath12k: Support Rate and OFDMA Stats
+Link: https://lore.kernel.org/all/20241128110949.3672364-1-quic_rdevanat@quicinc.com/
 
-Additionally, update the CAC running debug log message to include the CAC
-time in milliseconds and also print the center frequency segment 1.
+Rajat Soni (1):
+  wifi: ath12k: Support pdev Puncture Stats
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Roopni Devanathan (1):
+  wifi: ath12k: Support AST Entry Stats
 
-Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 23 +++++++++++++----------
- 1 file changed, 13 insertions(+), 10 deletions(-)
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 157 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   |  56 +++++++
+ drivers/net/wireless/ath/ath12k/dp.h          |  12 ++
+ 3 files changed, 225 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index c61b1519cc91c6a476e1510b4cf13f80c89a793a..77518546259248c356556b07ae0ae1df428d01dd 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5,6 +5,7 @@
-  */
- 
- #include <net/mac80211.h>
-+#include <net/cfg80211.h>
- #include <linux/etherdevice.h>
- 
- #include "mac.h"
-@@ -8670,11 +8671,13 @@ ath12k_mac_vdev_start_restart(struct ath12k_link_vif *arvif,
- 	struct ath12k_base *ab = ar->ab;
- 	struct wmi_vdev_start_req_arg arg = {};
- 	const struct cfg80211_chan_def *chandef = &ctx->def;
-+	struct ieee80211_hw *hw = ath12k_ar_to_hw(ar);
- 	struct ath12k_vif *ahvif = arvif->ahvif;
- 	struct ieee80211_bss_conf *link_conf;
-+	unsigned int dfs_cac_time;
- 	int ret;
- 
--	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-+	lockdep_assert_wiphy(hw->wiphy);
- 
- 	link_conf = ath12k_mac_get_link_bss_conf(arvif);
- 	if (!link_conf) {
-@@ -8772,20 +8775,20 @@ ath12k_mac_vdev_start_restart(struct ath12k_link_vif *arvif,
- 	ath12k_dbg(ab, ATH12K_DBG_MAC,  "vdev %pM started, vdev_id %d\n",
- 		   ahvif->vif->addr, arvif->vdev_id);
- 
--	/* Enable CAC Flag in the driver by checking the channel DFS cac time,
--	 * i.e dfs_cac_ms value which will be valid only for radar channels
--	 * and state as NL80211_DFS_USABLE which indicates CAC needs to be
--	 * done before channel usage. This flags is used to drop rx packets.
-+	/* Enable CAC Running Flag in the driver by checking all sub-channel's DFS
-+	 * state as NL80211_DFS_USABLE which indicates CAC needs to be
-+	 * done before channel usage. This flag is used to drop rx packets.
- 	 * during CAC.
- 	 */
- 	/* TODO: Set the flag for other interface types as required */
--	if (arvif->ahvif->vdev_type == WMI_VDEV_TYPE_AP &&
--	    chandef->chan->dfs_cac_ms &&
--	    chandef->chan->dfs_state == NL80211_DFS_USABLE) {
-+	if (arvif->ahvif->vdev_type == WMI_VDEV_TYPE_AP && ctx->radar_enabled &&
-+	    cfg80211_chandef_dfs_usable(hw->wiphy, chandef)) {
- 		set_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags);
-+		dfs_cac_time = cfg80211_chandef_dfs_cac_time(hw->wiphy, chandef);
-+
- 		ath12k_dbg(ab, ATH12K_DBG_MAC,
--			   "CAC Started in chan_freq %d for vdev %d\n",
--			   arg.freq, arg.vdev_id);
-+			   "CAC started dfs_cac_time %u center_freq %d center_freq1 %d for vdev %d\n",
-+			   dfs_cac_time, arg.freq, arg.band_center_freq1, arg.vdev_id);
- 	}
- 
- 	ret = ath12k_mac_set_txbf_conf(arvif);
 
+base-commit: 9a448415ed0c46edeb9170091a03b620986ca0b2
+prerequisite-patch-id: c30df5e4af6f5773ed942d8f78de88c05ce2b18b
+prerequisite-patch-id: f2181eee4bce2e3487db9bd81ed962f477759e7e
 -- 
-2.34.1
+2.25.1
 
 
