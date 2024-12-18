@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 373EFE77188
-	for <ath12k@archiver.kernel.org>; Wed, 18 Dec 2024 03:41:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EABFE7718B
+	for <ath12k@archiver.kernel.org>; Wed, 18 Dec 2024 03:41:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=t2a8oRMcfhoHgmYqLWousneWiOscrYBtaYv08MrX9mk=; b=04XypkWXdiU0qAjJgiAIOXbipW
-	YYTSk8qtwtRa1iyjB502n+vTb2B9dRxW+d8+QcN6VwpO+fW4nBJQhN+5vy2LgYke7pJWl63sSHKQO
-	9b0bk47gwAYmx18Ymy99pxQZkH9Di/NyL7lZh9LKW3mjXTPK0aUQkJ1Dz6YeQcyCkkj+CaSB2i8Nw
-	nzieGsZmEUiIheRO0ZisiKZw2339rXuAxWhXqkj8GsgMYHZP2pgQjV6D66HbckQMsGL64JmGw/Q/2
-	e5KN6CoN/JCOl+aSuw3K/2rn0iFRIDF5SBg8TEXdtrIeKGwNv44R7rOFtSNxHHzorkoj6aM0G2U81
-	f2veSZ1g==;
+	bh=0uNLeXfEXwkgpomkNVtWKWJxDsQbDffCqgrwI3O9nzQ=; b=S/I/dgVv5RxCPrOHEJVvHmw+uT
+	IYH389HwctleNVTkxNY3TOCJ6TA5T8XtYYW8aPd12CqX7CBND1uAHMjOrCnyG9vBM/CtgQnmRqpwj
+	pNOeIuWoQ2cadXRCKWlBN2SIZR+9vYCMTk+HPb6S2veYmAwXR+Cy4Fzk11GtFGqJ+LGCNffcScCwS
+	99GvGGb5B+F0dH9vszYGC+nQ8ONaQvDBvoI77cbAFKW6RwA6hs062YVBz6fHNOjoefYjSNOQnUfeX
+	+TTxgTMBLTzGyWPqTJ6C2Jw0rqi4iP5Psj+pba3mJfkLOgjsd2LtwDMtrWfyWGouOriYM2/Kz4WbR
+	4H3DcPZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNkwc-0000000FUye-3ha7
+	id 1tNkwf-0000000FUzx-0JGO
 	for ath12k@archiver.kernel.org;
-	Wed, 18 Dec 2024 03:41:54 +0000
+	Wed, 18 Dec 2024 03:41:57 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNkwZ-0000000FUxP-3pUR
+	id 1tNkwd-0000000FUym-0Tcj
 	for ath12k@lists.infradead.org;
-	Wed, 18 Dec 2024 03:41:53 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BHIJgQi013146;
-	Wed, 18 Dec 2024 03:41:48 GMT
+	Wed, 18 Dec 2024 03:41:56 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BHMnr2e007301;
+	Wed, 18 Dec 2024 03:41:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	t2a8oRMcfhoHgmYqLWousneWiOscrYBtaYv08MrX9mk=; b=KVMsXxJ5Uv1DUGKM
-	wWSEM6za7AuLvU1rZ9O4EnNOYY8bld+t42T7973C9yYOlfk7haroQwCKULMhGS60
-	KGUVfnBMeQKOcA7wB6z1cmJSp/SkYlCdrtUu3wfE4HgEga/1QIZ/Sj6IpmHw1MCD
-	8EyAppIhj1UHVfS2Ky6f7w0GxiVR1F03h6DrIq79P7Dp7OPJt+3XPINzUi6WOAmf
-	1So1Dvh8tmDNkHrdsdf3RsvhGYOczGrSUQq/dHEANLVnlua9VMcCeu3Z1+1ULFxV
-	QkB9ysOvYn0FRiC7JxAr8FKVbe65eaqRqM2BkDfb8/ZlvtMrzK1tpeESVo9zbMUA
-	OjOd9Q==
+	0uNLeXfEXwkgpomkNVtWKWJxDsQbDffCqgrwI3O9nzQ=; b=RopgrvsMb6PplYEq
+	WZfYlUQtXRK8C9GF9pv67p9k2x/EeqAcvdKti8fwYJ8LsQQFb9NlC8WXX39KM0iD
+	CJXRwLv3X8xPE059HWEwjmHjk7URTbrJf8xEfeWCfS+ziTGj9It0JOc89oki67K7
+	s4Ngb+aCTrVGqT63rrzdsvOGwy04kL2dd9A+q5vjF0nV5WQ637sGPMHKH+52ahLP
+	PazT5dt9Q+Swp3NmM38xqQFnjQhTNnJ4mO/t4ODUSHPjIdIOEDo6OCqJ51GDqeEK
+	2GjCa0IXBCbZDM9JCa55Zc09fvK15dWfv0/+ND6RODCAu6B+RLIOpjdzFdrgdwJ3
+	9lecTw==
 Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43kefxh248-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43kjeegh29-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 18 Dec 2024 03:41:48 +0000 (GMT)
+	Wed, 18 Dec 2024 03:41:53 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BI3flN1021648
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BI3fqE8021678
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 18 Dec 2024 03:41:47 GMT
+	Wed, 18 Dec 2024 03:41:52 GMT
 Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 17 Dec 2024 19:41:45 -0800
+ 15.2.1544.9; Tue, 17 Dec 2024 19:41:50 -0800
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Date: Wed, 18 Dec 2024 09:11:32 +0530
-Subject: [PATCH 1/3] wifi: ath12k: rename CAC_RUNNING flag
+Date: Wed, 18 Dec 2024 09:11:34 +0530
+Subject: [PATCH 3/3] wifi: ath12k: handle radar detection with MLO
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20241218-ath12k_mlo_dfs-v1-1-058e783bcfc7@quicinc.com>
+Message-ID: <20241218-ath12k_mlo_dfs-v1-3-058e783bcfc7@quicinc.com>
 References: <20241218-ath12k_mlo_dfs-v1-0-058e783bcfc7@quicinc.com>
 In-Reply-To: <20241218-ath12k_mlo_dfs-v1-0-058e783bcfc7@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
@@ -72,19 +72,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: tU8eNnKILtiAGuYHhP37uT_SvZ2z0xPl
-X-Proofpoint-ORIG-GUID: tU8eNnKILtiAGuYHhP37uT_SvZ2z0xPl
+X-Proofpoint-GUID: v4hmDlUiJByqYg0MTveyt0Sbk9nk6tna
+X-Proofpoint-ORIG-GUID: v4hmDlUiJByqYg0MTveyt0Sbk9nk6tna
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- impostorscore=0 clxscore=1015 adultscore=0 mlxlogscore=999 spamscore=0
- priorityscore=1501 bulkscore=0 malwarescore=0 phishscore=0 suspectscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
+ bulkscore=0 mlxlogscore=999 spamscore=0 suspectscore=0 adultscore=0
+ malwarescore=0 phishscore=0 impostorscore=0 priorityscore=1501
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412180026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241217_194151_963196_E9B45757 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20241217_194155_164118_3AEC0A16 
+X-CRM114-Status: GOOD (  14.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,111 +99,107 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Rename the flag ATH12K_CAC_RUNNING to ATH12K_FLAG_CAC_RUNNING to correct
-the naming inconsistency in the enum ath12k_dev_flags.
+ieee80211_radar_detected() expects the driver to pass a channel context
+configuration during MLO. This is used to identify exactly which link
+detected the radar.
 
-No functionality changes.
+Add support to pass this to mac80211. Since the link arvif is not known in
+the WMI event, introduce a helper iterator API,
+ath12k_mac_get_any_chanctx_conf_iter(), to get the channel context
+configuration.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h  | 2 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c | 6 +++---
- drivers/net/wireless/ath/ath12k/mac.c   | 8 ++++----
- drivers/net/wireless/ath/ath12k/wmi.c   | 2 +-
- 4 files changed, 9 insertions(+), 9 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 11 +++++++++++
+ drivers/net/wireless/ath/ath12k/mac.h |  8 ++++++++
+ drivers/net/wireless/ath/ath12k/wmi.c | 12 +++++++++++-
+ 3 files changed, 30 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index ec61ad3d82c3bb9237cf327976e9f68e8c8f9cc7..f988c8b2490e699c29f3495dfc9fe4381574cc01 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -223,7 +223,7 @@ enum ath12k_hw_group_flags {
- };
- 
- enum ath12k_dev_flags {
--	ATH12K_CAC_RUNNING,
-+	ATH12K_FLAG_CAC_RUNNING,
- 	ATH12K_FLAG_CRASH_FLUSH,
- 	ATH12K_FLAG_RAW_MODE,
- 	ATH12K_FLAG_HW_CRYPTO_DISABLED,
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 5c5a3aae393be52a241c048c5a60c57d1f8cea92..dad35bfd83f6271253361c618534933e83e7f7fb 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -2632,7 +2632,7 @@ static void ath12k_dp_rx_process_received_packets(struct ath12k_base *ab,
- 			continue;
- 		}
- 
--		if (test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) {
-+		if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) {
- 			dev_kfree_skb_any(msdu);
- 			continue;
- 		}
-@@ -3484,7 +3484,7 @@ ath12k_dp_process_rx_err_buf(struct ath12k *ar, struct hal_reo_dest_ring *desc,
- 		goto exit;
- 	}
- 
--	if (test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) {
-+	if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) {
- 		dev_kfree_skb_any(msdu);
- 		goto exit;
- 	}
-@@ -4037,7 +4037,7 @@ int ath12k_dp_rx_process_wbm_err(struct ath12k_base *ab,
- 			continue;
- 		}
- 
--		if (test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) {
-+		if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) {
- 			dev_kfree_skb_any(msdu);
- 			continue;
- 		}
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 186765fa95f5302b8188419cbf6073624413a774..c61b1519cc91c6a476e1510b4cf13f80c89a793a 100644
+index 77518546259248c356556b07ae0ae1df428d01dd..4a4da9e9897a5b51b797ff12cd0022667fe96b67 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1323,8 +1323,8 @@ int ath12k_mac_vdev_stop(struct ath12k_link_vif *arvif)
- 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "vdev %pM stopped, vdev_id %d\n",
- 		   ahvif->vif->addr, arvif->vdev_id);
+@@ -751,6 +751,17 @@ static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
+ 	return NULL;
+ }
  
--	if (test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) {
--		clear_bit(ATH12K_CAC_RUNNING, &ar->dev_flags);
-+	if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) {
-+		clear_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags);
- 		ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "CAC Stopped for vdev %d\n",
- 			   arvif->vdev_id);
- 	}
-@@ -7463,7 +7463,7 @@ static void ath12k_mac_stop(struct ath12k *ar)
- 		ath12k_err(ar->ab, "failed to clear rx_filter for monitor status ring: (%d)\n",
- 			   ret);
++void ath12k_mac_get_any_chanctx_conf_iter(struct ieee80211_hw *hw,
++					  struct ieee80211_chanctx_conf *conf,
++					  void *data)
++{
++	struct ath12k_mac_get_any_chanctx_conf_arg *arg = data;
++	struct ath12k *ctx_ar = ath12k_get_ar_by_ctx(hw, conf);
++
++	if (ctx_ar == arg->ar)
++		arg->chanctx_conf = conf;
++}
++
+ static struct ath12k_link_vif *ath12k_mac_get_vif_up(struct ath12k *ar)
+ {
+ 	struct ath12k_link_vif *arvif;
+diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
+index 81cfb950e6cddfcf31747e46c7a9a805b94f55dd..3594729b63974e942b91eed0ebdfcabcb6a3c3a1 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.h
++++ b/drivers/net/wireless/ath/ath12k/mac.h
+@@ -59,6 +59,11 @@ enum ath12k_supported_bw {
+ 	ATH12K_BW_320   = 4,
+ };
  
--	clear_bit(ATH12K_CAC_RUNNING, &ar->dev_flags);
-+	clear_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags);
++struct ath12k_mac_get_any_chanctx_conf_arg {
++	struct ath12k *ar;
++	struct ieee80211_chanctx_conf *chanctx_conf;
++};
++
+ extern const struct htt_rx_ring_tlv_filter ath12k_mac_mon_status_filter_default;
  
- 	cancel_delayed_work_sync(&ar->scan.timeout);
- 	wiphy_work_cancel(ath12k_ar_to_hw(ar)->wiphy, &ar->scan.vdev_clean_wk);
-@@ -8782,7 +8782,7 @@ ath12k_mac_vdev_start_restart(struct ath12k_link_vif *arvif,
- 	if (arvif->ahvif->vdev_type == WMI_VDEV_TYPE_AP &&
- 	    chandef->chan->dfs_cac_ms &&
- 	    chandef->chan->dfs_state == NL80211_DFS_USABLE) {
--		set_bit(ATH12K_CAC_RUNNING, &ar->dev_flags);
-+		set_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags);
- 		ath12k_dbg(ab, ATH12K_DBG_MAC,
- 			   "CAC Started in chan_freq %d for vdev %d\n",
- 			   arg.freq, arg.vdev_id);
+ void ath12k_mac_destroy(struct ath12k_hw_group *ag);
+@@ -100,5 +105,8 @@ int ath12k_mac_mlo_setup(struct ath12k_hw_group *ag);
+ int ath12k_mac_mlo_ready(struct ath12k_hw_group *ag);
+ void ath12k_mac_mlo_teardown(struct ath12k_hw_group *ag);
+ int ath12k_mac_vdev_stop(struct ath12k_link_vif *arvif);
++void ath12k_mac_get_any_chanctx_conf_iter(struct ieee80211_hw *hw,
++					  struct ieee80211_chanctx_conf *conf,
++					  void *data);
+ 
+ #endif
 diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 562b0615ed065d094f5d7709cafeb22c41f02d17..d0ae7f142c11ab4720bf95c0c95990ff40bd2815 100644
+index d0ae7f142c11ab4720bf95c0c95990ff40bd2815..9a96c4d70e6007d3701af63278b23dd1a79cc4b1 100644
 --- a/drivers/net/wireless/ath/ath12k/wmi.c
 +++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -6212,7 +6212,7 @@ static void ath12k_mgmt_rx_event(struct ath12k_base *ab, struct sk_buff *skb)
+@@ -6935,6 +6935,7 @@ static void
+ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff *skb)
+ {
+ 	const void **tb;
++	struct ath12k_mac_get_any_chanctx_conf_arg arg;
+ 	const struct ath12k_wmi_pdev_radar_event *ev;
+ 	struct ath12k *ar;
+ 	int ret;
+@@ -6970,13 +6971,22 @@ ath12k_wmi_pdev_dfs_radar_detected_event(struct ath12k_base *ab, struct sk_buff
  		goto exit;
  	}
  
--	if ((test_bit(ATH12K_CAC_RUNNING, &ar->dev_flags)) ||
-+	if ((test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags)) ||
- 	    (rx_ev.status & (WMI_RX_STATUS_ERR_DECRYPT |
- 			     WMI_RX_STATUS_ERR_KEY_CACHE_MISS |
- 			     WMI_RX_STATUS_ERR_CRC))) {
++	arg.ar = ar;
++	arg.chanctx_conf = NULL;
++	ieee80211_iter_chan_contexts_atomic(ath12k_ar_to_hw(ar),
++					    ath12k_mac_get_any_chanctx_conf_iter, &arg);
++	if (!arg.chanctx_conf) {
++		ath12k_warn(ab, "failed to find valid chanctx_conf in radar detected event\n");
++		goto exit;
++	}
++
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_REG, "DFS Radar Detected in pdev %d\n",
+ 		   ev->pdev_id);
+ 
+ 	if (ar->dfs_block_radar_events)
+ 		ath12k_info(ab, "DFS Radar detected, but ignored as requested\n");
+ 	else
+-		ieee80211_radar_detected(ath12k_ar_to_hw(ar), NULL);
++		ieee80211_radar_detected(ath12k_ar_to_hw(ar), arg.chanctx_conf);
+ 
+ exit:
+ 	rcu_read_unlock();
 
 -- 
 2.34.1
