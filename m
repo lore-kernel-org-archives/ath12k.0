@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FEA1E77184
-	for <ath12k@archiver.kernel.org>; Thu, 19 Dec 2024 11:38:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 442C5E77184
+	for <ath12k@archiver.kernel.org>; Thu, 19 Dec 2024 11:41:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=36XHzJgs3hRpyUhWRqmmM4frcYeG8spnhjedoLF3FEo=; b=cqKfXIeUBWeW/W/gnbMzeRmFH+
-	SZZLgjsA/swiOpRQAHB632m6MHbZ6arFkqnxOunENioinHzG8dxMuz6o90P8n3Kwho7yk8Ro6fKiN
-	T59GBfORyvnR5YQcLHR4eQJhMrRUSJszPPNy2gyewQc9bsPaPvpXQNvT7/8wXyX7inFVfCtrmWVni
-	PRNfIEM/Ac2EkT0GKlhnKW9UoulfH2JXYZ0GzrVBo2iGR/O3iiLoO2RnD0yV9m6GZ87Ld5JzFrQfV
-	xlrk99C0i9oOJ8Vz+Bzi/IDnm66woYmj10nBOHKBMibUd5kwzzHHQErxLcFUa04NCmcuczbtNLOzG
-	rqu2PZYw==;
+	bh=GOHBFzcYOFkHgsiA9lpKHdtAQI9Nq8ucD+JGNU1kfLM=; b=wcZ3t7gQJ9f+bfrrrhNJkWrXHr
+	4XMoivKlqcpGh34kTz89nd7M2EuO4iG//ffKh/d7tpxyi6nr5oGrVIftIXRbbCsPjfOXNPqFglN+F
+	Tu4iaA8rjRrz0P1sgHUBGdy1go2X4NhJEZS/NNmtS8SXMDIAgNCAOjOxpBegS4sgXnQfU4NZ6zfH4
+	Al8VmMwbDayAbYkFNOY+mfQT8+xQL1suGFoXe/FWMwsryzhgA/gOjuTxLkolkMMNORachgQ3ykLCy
+	N+9frRtFoPKvq0QuFTn0CbBTLm9WHStmJxbKYOEIR5D9WnepRp8avS1g3n5XcLJSzLxb9O6R/THrM
+	4/6pqHfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOEr5-00000001geu-1R6A
+	id 1tOEu5-00000001gzx-06Cz
 	for ath12k@archiver.kernel.org;
-	Thu, 19 Dec 2024 11:38:11 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Thu, 19 Dec 2024 11:41:17 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOEr3-00000001geV-11CF
+	id 1tOEu2-00000001gzW-11Rx
 	for ath12k@lists.infradead.org;
-	Thu, 19 Dec 2024 11:38:10 +0000
+	Thu, 19 Dec 2024 11:41:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A87265C6387;
-	Thu, 19 Dec 2024 11:37:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1036C4CECE;
-	Thu, 19 Dec 2024 11:38:07 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id BB51CA42167;
+	Thu, 19 Dec 2024 11:39:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05CEAC4CED0;
+	Thu, 19 Dec 2024 11:41:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1734608288;
-	bh=bHtqNa7Yayi1Rw61Coo9r6kUdcmqvQVYD+XOu8+PiPk=;
+	s=k20201202; t=1734608473;
+	bh=D9IK9iJGvuIGe8Pgo91CSh72XhyjWrz511rNj93r3O8=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=sP7UiQw+2ijkXugo23F6orIwxk423kMDY3pa6QCVRueu2HNLa8WDG+z9BWs8orvNh
-	 WbnS2MWCtCygjSnHaydErqkaN4ONTaa6mR5fuwR+IPZNaS9rrVp64AjB3dMAuYBEbB
-	 dp+Z83jQJUZKagFAwmVRAKdVuYByI6DaalFfO87Vk3kW4rIevGm3zp6IdpEfmRI4Co
-	 S4KEER9CL89MTRjg1NP5idSag0WrSuE7rru9qrY8WiZ3K/sp5GctTCIy/X4fC7wdC5
-	 3K2oOlxTgiWYMrF+y2aLxXjU6CWAyH9Pzwcf6+bfXygp/THHUi3wAve3MWpM/8VoRc
-	 c2y3McESAsjeA==
+	b=o4loX0/otCQKPU9R4sB8fQZ3SZIDcKk+Xv5alICsFr8JO3ushrZnvGoKo8NRkMe8Y
+	 KQQj8/xxZSFvVZJZyjrkFllmLIxCn4JQasKYvnBhHh2aqMnA7Aeym28JsYnOLc1Zd3
+	 hnxLuHAMN3e9eqz4JCtIfG3wSpuO7++OQNi+TFrKUnnHQOj8IOmOdUI7+iA6MYT6vF
+	 tMbCF8g6zKE2tj1Jtt7X88u7RzywZIjxpGbVRIqkS7Af9N7jetkfoSFSVZ+nmD0Vsc
+	 phGb5gEPyeAUCpJQbN24di0kDETiEyhZawvQ4/hEFXdnXAe1DFZ+OxI+Wj+LsyuigC
+	 82kP9km2hEpyA==
 From: Kalle Valo <kvalo@kernel.org>
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH] wifi: ath12k: Include MLO memory in firmware coredump
- collection
-References: <20241218040149.4041728-1-quic_rajkbhag@quicinc.com>
-Date: Thu, 19 Dec 2024 13:38:05 +0200
-In-Reply-To: <20241218040149.4041728-1-quic_rajkbhag@quicinc.com> (Raj Kumar
-	Bhagat's message of "Wed, 18 Dec 2024 09:31:49 +0530")
-Message-ID: <87jzbvj42q.fsf@kernel.org>
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Dinesh
+ Karthikeyan <quic_dinek@quicinc.com>
+Subject: Re: [PATCH 1/6] wifi: ath12k: Support Sounding Stats
+References: <20241217095216.1543923-1-quic_rdevanat@quicinc.com>
+	<20241217095216.1543923-2-quic_rdevanat@quicinc.com>
+Date: Thu, 19 Dec 2024 13:41:10 +0200
+In-Reply-To: <20241217095216.1543923-2-quic_rdevanat@quicinc.com> (Roopni
+	Devanathan's message of "Tue, 17 Dec 2024 15:22:11 +0530")
+Message-ID: <87frmjj3xl.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_033809_323343_60C799E7 
-X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-CacheID: sfid-20241219_034114_349622_6161660F 
+X-CRM114-Status: UNSURE (   6.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,18 +75,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Raj Kumar Bhagat <quic_rajkbhag@quicinc.com> writes:
+Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
 
-> The current firmware coredump collection in ath12k does not include
-> the MLO_GLOBAL_MEM_REGION_TYPE memory. This memory region is essential
-> for debugging issues related to Multi-Link Operation (MLO).
+> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
 >
-> Hence, add support to include MLO_GLOBAL_MEM_REGION_TYPE memory in
-> firmware coredump collection.
+> Add support to request sounding stats from firmware through HTT stats
+> type 22. These stats give sounding information of different Wi-Fi
+> standards, channel vector upload status and correlation details.
 >
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Sample output:
+> -------------
+> echo 22 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> HTT_TX_AC_SOUNDING_STATS_TLV:
+> ac_cbf_20 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> ac_cbf_40 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> .....
+> Sounding User_0 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> Sounding User_1 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> .....
 >
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> HTT_TX_AX_SOUNDING_STATS_TLV:
+> ax_cbf_20 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> ax_cbf_40 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> .....
+> Sounding User_0 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> Sounding User_1 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> .....
+>
+> HTT_TX_BE_SOUNDING_STATS_TLV:
+> be_cbf_20 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> be_cbf_40 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> .....
+> Sounding User_0 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0, 320MHz: 0
+> Sounding User_1 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0, 320MHz: 0
+> .....
+>
+> CV UPLOAD HANDLER STATS:
+> cv_nc_mismatch_err = 0
+> cv_fcs_err = 0
+> cv_frag_idx_mismatch = 0
+> cv_invalid_peer_id = 0
+> .....
+>
+> CV QUERY STATS:
+> cv_total_query = 0
+> cv_total_pattern_query = 0
+> cv_total_bw_query = 0
+> cv_invalid_bw_coding = 0
+> .....
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>
+> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
 
 Acked-by: Kalle Valo <kvalo@kernel.org>
 
