@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77A97E7718B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDB04E7718A
 	for <ath12k@archiver.kernel.org>; Thu, 19 Dec 2024 18:07:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,96 +12,97 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XXWpfwq6s9n4hTpXy3T+kYTh7FpeKtWlQozmhDIIrtU=; b=S3F/E8wlliF58ah/XpJzg9rxPy
-	WMAXpOlzaPT0dP0gLd33wtXPDV50H3gSFIFDjIsRclVJtsLoHBq3RCekrlYr6tEuo00EJIINxGGC9
-	u+hkM0JDPg0F0WuDhdHPeHCuVfnZrH5IJq6HkQ8B9K1Q3CY8hfeeLpYcXKfk/4Q0nqqiV97HRY7IC
-	2yqb4cf5romTEnElEcer991adk+C9NSuw/Pwm75dzKHOhJm64A/XAr/dxeMZnuitO/4m3oZbKiTjv
-	Y9PZDH+vFThTy5QtzUuXV0EASn2JqKzD5Uu1ZI5G3PeUflZcmZxKjaRil7ApeSuBwi7uN/gdtlI+h
-	v51fZPfQ==;
+	bh=dOnwA6W2GL2HPdIgKiB+P5Wh8IyDu3xLN7C+vWRW0Dw=; b=IB9YLXSvXQp2HCp3JB0+eb+qiq
+	haYK7B2XUaag9SC5oiVirLRYlH3ZiMTwMyr42kaSYOtowCWkFFBzQjetseQOfJjQinCz38AUwadwO
+	3+S2oxr1aMS3SXscSm879qIxP87Sr+YEF0L5dA9lYoxr02bACVMCekkmuHNYlvEoWPLzSDYnAqbwr
+	uzaAc30s318YA20VbdNjdr0etcV/XOx9Idl9q2T1flUJ2vsTazpGVeZc+Ow5MEWqOvbPV6U148bsD
+	7Ezx6K4ew34VgUwQA5d2ZgLjw2rAaAn5/SdO0fVwfygJOz8IL+t6emxVpfXkahFPXfVh4DaOh9t5N
+	c0isk8Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOKvj-00000002gsW-13N4
+	id 1tOKvj-00000002gse-2WiJ
 	for ath12k@archiver.kernel.org;
 	Thu, 19 Dec 2024 18:07:23 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOKjg-00000002e6y-0TJu
+	id 1tOKjg-00000002e71-2FRa
 	for ath12k@lists.infradead.org;
 	Thu, 19 Dec 2024 17:54:57 +0000
 Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJF4a8h028892
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJF4ZIl028829
 	for <ath12k@lists.infradead.org>; Thu, 19 Dec 2024 17:54:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	XXWpfwq6s9n4hTpXy3T+kYTh7FpeKtWlQozmhDIIrtU=; b=BjjViz/AO4bhp0Wa
-	Lwvydi9LeSUAuyb9RTQuGM/8BR7w5f46QCNMtaKko3bS/DeSulrY/lnd8T894Dv1
-	qp01TTv9G4DM1aN4NbrrW8FBDZFVM/k9SuXGBi3FeTcMpfR2ZtZppqRyIKLbVRQI
-	QTApn5/iJ1YtXIcB/HR4SfHJo1wsuaSRZ9UneqPq4UDy+c4qke0P7+POhvSutZyb
-	e3RIfMHeAoZVEoJh/RoUs3bvPbrJtpvgxt4K787dJhi3U1wdvssj+/UNt/XbBhOb
-	JbKig7UCxoj4Pdj/Hp6rmVy5Wql0GGRxwcOdUhLUYwcMRSxqzBGmQkiNUq8eo3Q9
-	Gdcs3g==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mntf0fgh-1
+	dOnwA6W2GL2HPdIgKiB+P5Wh8IyDu3xLN7C+vWRW0Dw=; b=gW34Mx9SmAnI3UaW
+	PkFJYeZ9Dub3Ma4qx1npm6QneUP5jKopjWVr0w4qx+iDUxi68H6aDr6c6kNpuCgN
+	h/Kkg6ehFqMGyTEUMxNVV3Fb2dn4fv2ctgP2yGv/Bb/sXHLlitdj3OQSqcwuUjj8
+	pDiVGFCsYWrLUzWBPiA/HyLZuEte7j1vqkT4Pd+oPjWFSLQajpWRom3F6B9j41rd
+	08eErwCCKfzDhqoXNwA7TDQDkU/407p+Gjh5q0/c+vEQbTquQvfIZ6NZZsl/LVdB
+	4gbqAxvZQCPpiv+S0U9s+FFnMs4sKOPlWoF9Kyqja78C6WRWF58rocLUh/abEVEY
+	ofx7ig==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mntf0fgj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 19 Dec 2024 17:54:54 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-7fd4ea959b4so1056566a12.3
-        for <ath12k@lists.infradead.org>; Thu, 19 Dec 2024 09:54:54 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Thu, 19 Dec 2024 17:54:55 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ee8ced572eso1022395a91.0
+        for <ath12k@lists.infradead.org>; Thu, 19 Dec 2024 09:54:55 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1734630894; x=1735235694;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=XXWpfwq6s9n4hTpXy3T+kYTh7FpeKtWlQozmhDIIrtU=;
-        b=qf+KCAy6qlUWGQtQfSUEXJD6+sx07j+AyAy/KwkXeKd/YvV/XgeWooLOcqA6xp4Qkq
-         KrdV2v4TBCWsWovF254M/I4KDlMUfNGSj9wHyrt0xIBAZCo356QTUEkeW+CwlyYn7W+i
-         lveO2m7jYaMZN0ieljUuPO0Kz3XD5c78PyEH9+0vzXiBNo8oqaotu94IUbVWe+7rDZby
-         yGnNhdjHcbg+0cKiSwTyIK64Hx16rrPMf3+S4/6q7GMAiJ7S92T24esZXfJM+C7Fr+65
-         fKqnugRHPKjc2uXY3dyU9O3Aw0tj1Z3n9PBPYAAw+invSe+ge7X2mkzq0VtbCGG30WKy
-         fCnA==
-X-Gm-Message-State: AOJu0YzK616gFdtm6Clx86mFS5aMYoccnJq0sJooZ3pWw6VuRXnZkQYg
-	DTfafDIzl3MR1DrUH37KABI4GFjDFrzeY6jd/hhu67fext/2peLvxPGkCn7awBVdvzbAYNh0N9n
-	hCyEsTQ8Q1rj8FaMwYJjiY4FTm5gWz6pCDTpBqazIOduFr0OKjet80iNJpi5DXukzwChK
-X-Gm-Gg: ASbGncsFLkL3lJsKRpShHBd5qDH+UDN//mko4OSKBS1LMgxeEoAB6IZYsRfQhmvHEmw
-	zpFkdAYuq2KdtQq7kf6EWY586v/dwZyOJXKIre5VB6oANHZs6Y/Sz8Kvr/JPjP6ADMHTZkKuZ5Z
-	PqI6dMi6A5oV5gM/zJNDp3ETkKfVlKVJ/waFeuT1IZ4DM+s9gxwYMeRo1CmZkGFgqZHXA579tuD
-	bVrujOBTbOQl11T3LhmjOoW0DCWprXcV3VMFgxJWpd/j8CdpJ5cCrAlm1jtLeSH2vMu7/4laMdd
-	Yg/bNXaiaTMEnPRvgQ==
-X-Received: by 2002:a17:90b:1a88:b0:2ee:d024:e4fc with SMTP id 98e67ed59e1d1-2f2e936a09emr11516345a91.33.1734630893774;
-        Thu, 19 Dec 2024 09:54:53 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHHVEWGrl+yFM6z11suYbeXyHBZiPYWwvLuMCDB/ECAksoqc0Hxz/YQPnTbdLKWqWqTNUNjPQ==
-X-Received: by 2002:a17:90b:1a88:b0:2ee:d024:e4fc with SMTP id 98e67ed59e1d1-2f2e936a09emr11516312a91.33.1734630893402;
-        Thu, 19 Dec 2024 09:54:53 -0800 (PST)
+        bh=dOnwA6W2GL2HPdIgKiB+P5Wh8IyDu3xLN7C+vWRW0Dw=;
+        b=rDWY55q2M4SEPx5MPq1VybY7IDJ+ISdDXxCZQsZ5MrNjS7IFj1OqR6OgTcrYlyhMdI
+         pfMLlgjYn3PiX9GOZ9Y7vvCS5GmQWpSRlg9cEBvpuQzI92uHCkPiy4OyWdOKFNiw4c0R
+         Dhr6zenHQ6DWJpglWkesi+bXNfzUIswtRg3Ro5IPwwVmF+LFAyKzczksN/6KiAJWfJLD
+         moSyOWOq7CyN7Lxq9OPWmE+TPfmNoVTngKNJC+QLxcbJOX0ZJDyx16OnyY/gy4uJ0HTt
+         /ELsWmfmHaRfTGAXzsLdiTEkN+j117bJwNlwxBE+TJ0XG/5sn2kU9kZqFGTHQnrnX/7+
+         sS6A==
+X-Gm-Message-State: AOJu0Yz4Rqls9x1xa10y40YT1NYfPLi7GwYIePYWfuhMQK/PivO3cPvM
+	7hjonnRvYiXuzchSv3W2AA/qXNtS7CwatPHJ+YuIBbjbtrpH7QiXl9oQwqiZ9XvRR1pSSKcEPqR
+	lkY3l6kA47AkNJ2qcKgAduXwjhjkvYtfR1zGKxLlM/XxUGS6sUBnb+7lY3zvqaq/fyBeH
+X-Gm-Gg: ASbGncvNPYS7JDwPm9i5p34TQuvJu7JshCjUZnmn2vMec4edtLkb3Qp4Ui4vPK9PpWd
+	0GMQy5G2fFDN8yxmQ01mIFzJchkrrs5ChisEZ4uKlw4v4inYEAj2tE6BHMxlQhtBVqc0lLIEhBT
+	8O9DyOnCLmAP+Ul/o80j1UV3VUqSEFV7Cx2nZjzDs0EffJudCqmw37FQaXfZIQWZr+AwOScKa1i
+	YNfJqwOU18e4X0LFTjvq5slY9q7QFAyB42RTnULx5Jptbs36fpcytZDDzX9hh7PbQNkNW69pJHX
+	xvW3gkNv6IdHKkCmSw==
+X-Received: by 2002:a17:90b:50c3:b0:2ee:f19b:86e5 with SMTP id 98e67ed59e1d1-2f443ce9ae5mr6635891a91.14.1734630894624;
+        Thu, 19 Dec 2024 09:54:54 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFkGZyv5SblMwujUmRbi/VoqJhm/83fCe3NOtmsuZSUKguNM0EEIu5MlyTwFcAn8aF8/xWILw==
+X-Received: by 2002:a17:90b:50c3:b0:2ee:f19b:86e5 with SMTP id 98e67ed59e1d1-2f443ce9ae5mr6635869a91.14.1734630894259;
+        Thu, 19 Dec 2024 09:54:54 -0800 (PST)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f2ee26fdfdsm3630628a91.52.2024.12.19.09.54.52
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f2ee26fdfdsm3630628a91.52.2024.12.19.09.54.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Thu, 19 Dec 2024 09:54:53 -0800 (PST)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Kalle Valo <kvalo@kernel.org>
+To: ath12k@lists.infradead.org,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20241217202618.1329312-1-kvalo@kernel.org>
-References: <20241217202618.1329312-1-kvalo@kernel.org>
-Subject: Re: [PATCH 0/4] wifi: ath12k: few fixes for clang warnings
-Message-Id: <173463089278.2609009.16421252529059119912.b4-ty@oss.qualcomm.com>
-Date: Thu, 19 Dec 2024 09:54:52 -0800
+In-Reply-To: <20241217084511.2981515-1-quic_periyasa@quicinc.com>
+References: <20241217084511.2981515-1-quic_periyasa@quicinc.com>
+Subject: Re: [PATCH v3 0/8] wifi: ath12k: Refactor the monitor status Rx
+ path
+Message-Id: <173463089358.2609009.17500722670336215744.b4-ty@oss.qualcomm.com>
+Date: Thu, 19 Dec 2024 09:54:53 -0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.0
-X-Proofpoint-GUID: vtihnBycjzYd5sIpkwze1AK6ZckS5f69
-X-Proofpoint-ORIG-GUID: vtihnBycjzYd5sIpkwze1AK6ZckS5f69
+X-Proofpoint-GUID: KHTqCJgFa0A5j4tQtKT9-n4rx4FIqxWJ
+X-Proofpoint-ORIG-GUID: KHTqCJgFa0A5j4tQtKT9-n4rx4FIqxWJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
  impostorscore=0 adultscore=0 priorityscore=1501 bulkscore=0
- lowpriorityscore=0 clxscore=1015 mlxscore=0 malwarescore=0 mlxlogscore=933
+ lowpriorityscore=0 clxscore=1015 mlxscore=0 malwarescore=0 mlxlogscore=781
  phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412190142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_095456_161334_D625D5A6 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241219_095456_588119_3365950B 
+X-CRM114-Status: GOOD (  12.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,30 +118,35 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 17 Dec 2024 22:26:14 +0200, Kalle Valo wrote:
-> From: Kalle Valo <quic_kvalo@quicinc.com>
-> 
-> While build testing Jeff found some clang warnings, here are his fixes. Please
-> review.
-> 
-> Jeff Johnson (4):
->   wifi: ath12k: Decrease ath12k_mac_op_remain_on_channel() stack usage
->   wifi: ath12k: Decrease ath12k_bss_assoc() stack usage
->   wifi: ath12k: Decrease ath12k_sta_rc_update_wk() stack usage
->   wifi: ath12k: Decrease ath12k_mac_station_assoc() stack usage
+On Tue, 17 Dec 2024 14:15:03 +0530, Karthikeyan Periyasamy wrote:
+> Currently, the monitor status Rx path was inherited from ath11k but has
+> not been updated for the ath12k 802.11be hardware. Also there is no issue
+> at present since the monitor status Rx path is not enabled. However, in
+> the future, the monitor status Rx path will be enabled. Therefore, it is
+> necessary to update the TLV structures, bitmask definitions, remove the
+> unused bitmask, change the Tx monitor SRNG ring ID and refactor the
+> monitor status parse handler.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] wifi: ath12k: Decrease ath12k_mac_op_remain_on_channel() stack usage
-      commit: aa21668ab3c7c479998be11393e1a1c3c2624fce
-[2/4] wifi: ath12k: Decrease ath12k_bss_assoc() stack usage
-      commit: 445718c9958c8c160654068014c0e72505f59d63
-[3/4] wifi: ath12k: Decrease ath12k_sta_rc_update_wk() stack usage
-      commit: 6ff412420e5ea1635385038a0bb4c77420862bc9
-[4/4] wifi: ath12k: Decrease ath12k_mac_station_assoc() stack usage
-      commit: bf2da5c4f5b576d45f5f0cc0f508b8255f7ab015
+[1/8] wifi: ath12k: Add documentation HTT_H2T_MSG_TYPE_RX_RING_SELECTION_CFG
+      commit: d506e55fe39bcd6a78bd1f23210cbcd8cee4f844
+[2/8] wifi: ath12k: Refactor monitor status TLV structure
+      commit: 61a0d9a879c3682391f88855220dd766bb9d6542
+[3/8] wifi: ath12k: cleanup Rx peer statistics structure
+      commit: 6a6d941a39947c359ed245fca490dcdb09551235
+[4/8] wifi: ath12k: Fix the misspelled of hal TLV tag HAL_PHYRX_GENERICHT_SIG
+      commit: b79462532cd56119fb409f81f50dc74b12724b5e
+[5/8] wifi: ath12k: fix incorrect TID updation in DP monitor status path
+      commit: ebee84cc961cd3947015efbf4a5dbea63b11c5d3
+[6/8] wifi: ath12k: Remove unused HAL Rx mask in DP monitor path
+      commit: 0345f28a122656a4703442a2a97d2dca370c27a0
+[7/8] wifi: ath12k: Change the Tx monitor SRNG ring ID
+      commit: 61f247a06c3cdeb9093b3d90afd7d51168d089f4
+[8/8] wifi: ath12k: Avoid explicit type cast in monitor status parse handler
+      commit: 8534c42397ed8f05257dbddcd305a351ad40add1
 
 Best regards,
 -- 
