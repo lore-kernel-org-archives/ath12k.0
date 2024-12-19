@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CA71E77184
-	for <ath12k@archiver.kernel.org>; Thu, 19 Dec 2024 13:25:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CE43E77184
+	for <ath12k@archiver.kernel.org>; Thu, 19 Dec 2024 13:27:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yfg5liVMd89yIH+qbrbXQtDUlFz2kaulQbeH493vkQY=; b=zEAv+JxgFzlFxXuLSFO1SeoBXN
-	CuKtyIvHGZkqpAMNoHSY6uzQQnrXyAl//DcnCIetwRPLgZPlMcAkLK2HZ0LuAaRBL1tYa8sT5boPq
-	HhdhmdkT/ds+OUX38/6264xJPE4HXr5J4eGh5+8zMQ2w2NfNCwMsTOQS70RHQ7m6skBczxoRM3+Bi
-	TUKzHR3QUP3cHZoRwkavaSrobunK90qhZKjJ53/IJ9IQ949Jka4cU6MHdmi7qtmHuIi32+1dHiWrW
-	55q1q2YqGvSiO2rF9zFkX3NW2yVu5GC3e9y3WpXZfWnDwc9x0hDEYVCpclkYwWyolWbMrGwIWZt/c
-	90DCFfKg==;
+	bh=UZH6vQ4P7mgq0Cbm9nv8bBgckVIpriyyj/G10+1q6lQ=; b=oERMLbddZZqJEAFM2HnIAHwnah
+	ezcElhs/uDAuJFu4/GBmbLXPT9d6b0TvutH3GplK02NVHZ0KbRNJJLaGCKHNvvclaw6UGwelZJ7vD
+	fmUvLL0pdXoEfcGHMkXoMqanibAv8uHqeNrDTcP+ssaTfagLRrmqd4O3N6YRzdYKbTpftaafnEytP
+	z+il+lsKolKobcQNZvnSATeOg9EQVKxGxL9CIl0DyXv2JUaASFr0XtiSf6jYP2JU8K+4iNM7FZJ5M
+	woKiUCVkt6d2s07PDCC+iieNp9pxu0HA/SQFMvZlv/dZDwNlR5YXSrMoq1xjovWCJ2iGpTvZqU6JY
+	4yFvGlDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOGX3-00000001vsR-3h0N
+	id 1tOGYa-00000001w9G-3Ozr
 	for ath12k@archiver.kernel.org;
-	Thu, 19 Dec 2024 13:25:37 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Thu, 19 Dec 2024 13:27:12 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOGX0-00000001vs2-3x9Z
+	id 1tOGYY-00000001w8P-03R9
 	for ath12k@lists.infradead.org;
-	Thu, 19 Dec 2024 13:25:36 +0000
+	Thu, 19 Dec 2024 13:27:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 8FC33A41EBF;
-	Thu, 19 Dec 2024 13:23:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE037C4CED0;
-	Thu, 19 Dec 2024 13:25:32 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 66C1B5C030F;
+	Thu, 19 Dec 2024 13:26:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF174C4CECE;
+	Thu, 19 Dec 2024 13:27:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1734614733;
-	bh=InZEF5fvhkas5+2L+LvUzEfyVNN2wyINtQNf6/v4tyY=;
+	s=k20201202; t=1734614829;
+	bh=4U1rX2P9SnZIdU620uSlt8MpD5nd6cSqYravvEQbTDw=;
 	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=WbHgG9n0De1iKwY1yII5OFBIpgsY5NtE9yYb4qC9fd0hfXNe9rM4H4gsqGsGaZTGj
-	 cBcFivzbJtV6X3Ftyml9HHkz+lEcf5AyinbOA2653DEV+Ps9KBk46pAqmPFfsCUpGW
-	 dd/FxiQCZbJGinR1ZBL6aJVHIcCj0ZSAyUpjNfiO/S0LSP9VVzWCYgWOkg4gfEXVpR
-	 8lA4ZMVVuvXQivfy56UbhNkJO67eWpPUCKHYAw6C5rzCObzkhzwMG3bpat2kYII5qN
-	 Q/2GaTPOAsref5FeSIP/iflwENbHQ3RcIZme1ALgAGLPLI4oVS5UkzPDiJgSsQT4ZE
-	 8pRdsIWdfXNtA==
+	b=GN30SgdkvmOgMEnxZcNJQoSEVhiU9CBERI/byc/+Zn9wLMRVWaP4oDuoTmCVpIood
+	 FGskKBEJFBR7s+CN4aEkLnpHs5di7qC6uJP7yZhnonC6zg/iGxstZLhvLMq5RE7D68
+	 LLws/hx1YIsV288MndmjnirV/6RkN5aG8Y7yGkdFqPfEkEToyqKUwSOieMp9lohQvs
+	 XAD9Q4D63ThkDdVlJUCW9IxbbQNWU6ETV3bdH1YepZu69nU3rbXsmHAZBPuZtFpXtr
+	 BOcmdfvK8tbXBozYVeqYDmPqJKq3X+uuP4piL1d5xLdrHUnPvulgyRIGqnBY4cO6Ef
+	 Uabyhp1n/GYwg==
 From: Kalle Valo <kvalo@kernel.org>
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,  Rajat
- Soni <quic_rajson@quicinc.com>
-Subject: Re: [PATCH v5 2/2] wifi: ath12k: Support pdev Puncture Stats
-References: <20241218035711.2573584-1-quic_rdevanat@quicinc.com>
-	<20241218035711.2573584-3-quic_rdevanat@quicinc.com>
-Date: Thu, 19 Dec 2024 15:25:31 +0200
-In-Reply-To: <20241218035711.2573584-3-quic_rdevanat@quicinc.com> (Roopni
-	Devanathan's message of "Wed, 18 Dec 2024 09:27:11 +0530")
-Message-ID: <87ikrfhkj8.fsf@kernel.org>
+To: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>,  <linux-wireless@vger.kernel.org>,
+  <ath12k@lists.infradead.org>,  <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH 1/3] wifi: ath12k: rename CAC_RUNNING flag
+References: <20241218-ath12k_mlo_dfs-v1-0-058e783bcfc7@quicinc.com>
+	<20241218-ath12k_mlo_dfs-v1-1-058e783bcfc7@quicinc.com>
+Date: Thu, 19 Dec 2024 15:27:06 +0200
+In-Reply-To: <20241218-ath12k_mlo_dfs-v1-1-058e783bcfc7@quicinc.com> (Aditya
+	Kumar Singh's message of "Wed, 18 Dec 2024 09:11:32 +0530")
+Message-ID: <87ed23hkgl.fsf@kernel.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 MIME-Version: 1.0
 Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_052535_047991_B2F19C71 
-X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-CacheID: sfid-20241219_052710_094506_FA8C9512 
+X-CRM114-Status: UNSURE (   6.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,63 +75,16 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
+Aditya Kumar Singh <quic_adisi@quicinc.com> writes:
 
-> From: Rajat Soni <quic_rajson@quicinc.com>
+> Rename the flag ATH12K_CAC_RUNNING to ATH12K_FLAG_CAC_RUNNING to correct
+> the naming inconsistency in the enum ath12k_dev_flags.
 >
-> Add support to request pdev puncture stats from firmware through
-> HTT stats type 46. These stats give the count of number of
-> subbands used in different wifi standards.
+> No functionality changes.
 >
-> Sample output:
-> -------------
-> echo 46 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> tx_ofdm_su_last_used_pattern_mask = 0x00000001
-> tx_ofdm_su_num_subbands_used_cnt_01 = 217
-> tx_ofdm_su_num_subbands_used_cnt_02 = 0
-> tx_ofdm_su_num_subbands_used_cnt_03 = 0
-> .....
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 >
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> tx_ax_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
-> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
-> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
-> tx_ax_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> tx_be_dl_mu_ofdma_last_used_pattern_mask = 0x00000000
-> tx_be_dl_mu_ofdma_num_subbands_used_cnt_01 = 0
-> tx_be_dl_mu_ofdma_num_subbands_used_cnt_02 = 0
-> tx_be_dl_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> rx_ax_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
-> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
-> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
-> rx_ax_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> HTT_PDEV_PUNCTURE_STATS_TLV:
-> mac_id = 0
-> rx_be_ul_mu_ofdma_last_used_pattern_mask = 0x00000000
-> rx_be_ul_mu_ofdma_num_subbands_used_cnt_01 = 0
-> rx_be_ul_mu_ofdma_num_subbands_used_cnt_02 = 0
-> rx_be_ul_mu_ofdma_num_subbands_used_cnt_03 = 0
-> .....
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
->
-> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 
 Acked-by: Kalle Valo <kvalo@kernel.org>
 
