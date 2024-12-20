@@ -4,85 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6684BE77184
-	for <ath12k@archiver.kernel.org>; Thu, 19 Dec 2024 19:09:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27A8DE77184
+	for <ath12k@archiver.kernel.org>; Fri, 20 Dec 2024 00:26:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Y9feI2JUBwkJCvzz6V1r9yFr0fx6Vk4uQjBQj063kCI=; b=A56gIKeZKXgZdnpOwJkIo8WLEY
-	Qd+Q5EMPRGnHzUQ/OZd9q8FX/z6LV2ZnEudh6YhyKZ54DD2qHODKWhxffggztjHjP8btugqQNmSW+
-	78tlQQqpzsJZ64fNYGXyQdiOVydAZ2ivcmieXUNJT6p+QpLFiIpHDFEGhcRKNs6ZgJc4yfQ5HunA+
-	wEuWCYg8sXo/s1chzL4RxADOfAddUChFAOYzohX0ygW5ZXq/ocPg2DJiWrAJSJGOB4ztthfFiFVCS
-	Q5ONNRhvA6q7U20LFHPQIl0nkHn4C3KyQrKQtRILh+mFCVjbdHb5HxRhEYl9fKpze3/LZn/Lgttnu
-	a/usc8xA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=rrUDHRiJqEvt0TTWtLWXntm3iPCzAJ27Jpur0qArd6w=; b=z7W19DQ1fiHjxN2oKuKQq9TK+F
+	QfC2PQxnO4RR7wPKms+/VkJTSGBactUnCBUlj3NxIRm2bASlb/XiWKpFmqIvCq/ihU6AwIZV45qbH
+	ZJs/qacdBE2FBjLvehW4fTHPYlJcsvfOR+xWRw0xX2bk5J6OfzKT+OoIhsoeqtXmvzFOhaRigDptB
+	JcxulCasZT6jwxBwWvurQAxoEpWUEtnhhJGcA16XO77Sk9SFu2fSieWNwyjRyj4gI2ThADZBmObgP
+	lDgvNdNIYKYEae8pevOCLhOIeFPHmW7/ThRskAFZOheTk9SEVb9cKQ5reBevfL44tEKpIs5LyvR+Y
+	MTT8Oa3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOLtQ-00000002nq6-0khp
+	id 1tOQqw-00000003T8z-3vl7
 	for ath12k@archiver.kernel.org;
-	Thu, 19 Dec 2024 19:09:04 +0000
+	Fri, 20 Dec 2024 00:26:50 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOLtM-00000002noI-3vJ4
+	id 1tOQqu-00000003T8O-1hEX
 	for ath12k@lists.infradead.org;
-	Thu, 19 Dec 2024 19:09:02 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJHKmIp015057;
-	Thu, 19 Dec 2024 19:09:00 GMT
+	Fri, 20 Dec 2024 00:26:49 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJF4WM9028800;
+	Fri, 20 Dec 2024 00:26:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=Y9feI2JUBwkJCvzz6V1r9y
-	Fr0fx6Vk4uQjBQj063kCI=; b=EcFQrg+MOtW8nFF99Dxc2FmkTzD1/YIsOE7tV7
-	i4CT50tpyEUkuKSzesGXj5C2RHKR+sW+MR/UkkahgOX3hat9PqbRG/V/kyXDQKCY
-	7GnKf5NYptlEUhYlRa+8znlNnTXySqeT1q+f7t+sAeqIQQ7D9MT1D8Zi1e1ULXDz
-	vzYRsg+Gvn8UnkQO4dWejROdzng6hBpLbPkS3ms+BGXsYGUownB4RzqV7K6z9wsK
-	JPp5p9rOa8lM2MwQLySLtg20CFknUVV6yf2HdrZgAGGWqzOARaL+BzNC9qCkK9LC
-	tDFNmjuArdyL+ivmYn40XSdbsA7cvZXn0UhDbkmeVN0ybyAw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mqt80821-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	rrUDHRiJqEvt0TTWtLWXntm3iPCzAJ27Jpur0qArd6w=; b=pT1BZCwfTwPMwXyR
+	LGCNm6Xwb4cFnq2TXhngdv1uBOj1IYc7F+h1Zt4J2/ePQqKQK0TDxf2/pXPm9K4M
+	kFZYZy9WGKfi/f5veB7R0Pfa0SyPXoDbs/jkIdidKtWKtIQJDlzp0agQA0UNJPBh
+	xUHhYk/FQXAcD+kvDqm59HW31tnTKoocfvTfz5GDDyJn9tWpG7D5BcL3BHk5jUag
+	iItnPMEqQ1dx+2KiGZlLpY/eoLJuyPyovS1oIrY7QMCjju9WcDaPRsTLgs162XGf
+	ohuyL/ThKFI/Q3fnmkxgTupXcTIxMbxlAiVIQjBYVlGBcM7lJZ42kEYLlMRIblOt
+	JvhoeA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mntf17na-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Dec 2024 19:08:59 +0000 (GMT)
+	Fri, 20 Dec 2024 00:26:44 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BJJ8xnk009132
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BK0Qitc016465
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Dec 2024 19:08:59 GMT
-Received: from msinada-linux.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 19 Dec 2024 11:08:58 -0800
-From: Muna Sinada <quic_msinada@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Ramya Gnanasekar
-	<quic_rgnanase@quicinc.com>,
-        Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH] wifi: ath12k: set flag for mgmt no-ack frames in Tx completion
-Date: Thu, 19 Dec 2024 11:08:45 -0800
-Message-ID: <20241219190845.605116-1-quic_msinada@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Fri, 20 Dec 2024 00:26:44 GMT
+Received: from [10.50.43.89] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 19 Dec
+ 2024 16:26:42 -0800
+Message-ID: <fe0b1e1f-97eb-acf4-816a-bf3093c8bdaa@quicinc.com>
+Date: Fri, 20 Dec 2024 05:56:39 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 3/3] wifi: ath12k: Refactor Rx status TLV parsing
+ procedure argument
+Content-Language: en-US
+To: Kalle Valo <kvalo@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>
+References: <20241219001006.1036495-1-quic_periyasa@quicinc.com>
+ <20241219001006.1036495-4-quic_periyasa@quicinc.com>
+ <87seqjj48p.fsf@kernel.org>
+ <44bfd319-caf2-7459-f62e-0f61de452a84@quicinc.com>
+ <87wmfvfqq9.fsf@kernel.org>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <87wmfvfqq9.fsf@kernel.org>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: NiuqUt-k5_1UNvCvZLHUTOOBWvFou5hO
-X-Proofpoint-GUID: NiuqUt-k5_1UNvCvZLHUTOOBWvFou5hO
+X-Proofpoint-GUID: i8cJ_uRg4SDQBwXTRLBokH5-5Bp8v8ae
+X-Proofpoint-ORIG-GUID: i8cJ_uRg4SDQBwXTRLBokH5-5Bp8v8ae
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 bulkscore=0
- suspectscore=0 priorityscore=1501 spamscore=0 mlxlogscore=999
- malwarescore=0 impostorscore=0 phishscore=0 clxscore=1011
- lowpriorityscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2411120000 definitions=main-2412190152
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
+ impostorscore=0 adultscore=0 priorityscore=1501 bulkscore=0
+ lowpriorityscore=0 clxscore=1015 mlxscore=0 malwarescore=0 mlxlogscore=330
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412200002
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_110900_985905_00EFAE56 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20241219_162648_470226_5485B447 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,43 +104,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
 
-IEEE80211_TX_STAT_NOACK_TRANSMITTED flag signifies that frame was
-successfully transmitted without any errors when no-ack is requested.
 
-In WMI Tx management completion path, driver is not setting
-IEEE80211_TX_STAT_NOACK_TRANSMITTED flag for the frames with
-IEEE80211_TX_CTL_NO_ACK. Without this flag, the management frame
-statistics will not track such frames.
+On 12/20/2024 12:24 AM, Kalle Valo wrote:
+> Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
+> 
+>> On 12/19/2024 5:04 PM, Kalle Valo wrote:
+>>> Karthikeyan Periyasamy <quic_periyasa@quicinc.com> writes:
+>>>
+>>>> Currently, ath12k_dp_mon_rx_parse_status_tlv() takes the TLV tag, TLV data
+>>>> and TLV userid as separate arguments from the caller. These argument can
+>>>> be fetched from the TLV header itself. Therefore, pass the TLV header and
+>>>> retrieve the necessary fields from the header instead of passing them from
+>>>> the caller.
+>>> The commit message doesn't reply to "why?". Is there a clear benefit
+>>> in
+>>> the future or are you just doing random code cleanup?
+>>>
+>>
+>> It benefit in the future for supporting EHT monitor functionality.
+> 
+> How does it help exactly? Having even just one sentence explaining the
+> motivation in the commit message would help a lot. Otherwise these just
+> look random changes.
+> 
 
-Add IEEE80211_TX_STAT_NOACK_TRANSMITTED flag as part of the flags in
-skb transmit information when WMI is processing Tx completion for
-management frames.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Currently, ath12k_dp_mon_rx_parse_status_tlv() takes the TLV tag, TLV 
+data and TLV user ID as separate arguments from the caller. In the 
+future, the TLV length will be needed for the EHT monitor TLV tags. 
+These arguments can be fetched from the TLV header itself. Therefore, 
+instead of increasing the arguments, pass the TLV header and retrieve 
+the necessary fields from the TLV header instead of passing them from 
+the caller.
 
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Signed-off-by: Muna Sinada <quic_msinada@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/wmi.c | 3 +++
- 1 file changed, 3 insertions(+)
+Above commit is ok ?
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 562b0615ed06..a098d4303a63 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -5362,6 +5362,9 @@ static int wmi_process_mgmt_tx_comp(struct ath12k *ar, u32 desc_id,
- 	if ((!(info->flags & IEEE80211_TX_CTL_NO_ACK)) && !status)
- 		info->flags |= IEEE80211_TX_STAT_ACK;
- 
-+	if ((info->flags & IEEE80211_TX_CTL_NO_ACK) && !status)
-+		info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
-+
- 	ieee80211_tx_status_irqsafe(ath12k_ar_to_hw(ar), msdu);
- 
- 	num_mgmt = atomic_dec_if_positive(&ar->num_pending_mgmt_tx);
+
 -- 
-2.34.1
-
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
