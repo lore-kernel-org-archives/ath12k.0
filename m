@@ -4,113 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D18CE77188
-	for <ath12k@archiver.kernel.org>; Fri, 20 Dec 2024 20:03:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2AE8E77188
+	for <ath12k@archiver.kernel.org>; Fri, 20 Dec 2024 20:37:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jjz4Sq36hjRrUju32Ul73yf+4eJ4TQw8j+POxAHkw6U=; b=1kiI4ypb8M+xxW8CTH8iUkrcPs
-	XaG3V1waVfK8j0KEkZvTj2eYpYWFEu9mFM4l6Sisf4zzBKwO2KpJonceeyFS2qHe7s3sX/qwtG/Xz
-	k/we/YdcV0m3Lyc+LILixZKc/ivZEW8Fly5kNz/2cPKF6AgkMRka55G//lHQK0eQ2vga45jbrc4jj
-	SsAPlnfBuvHr0hLKZ7MO/odqILTJRT8b1DnNm36J7t4VkfBRiEVDzA7bPvRI/CezctzYrpDg8fPaT
-	bj2LNRW9ko9anCtR1AHhRLLhS9ygLrhWHYKPXUgA7Z+mzJHZy1bIkrtIodRu6SNQoByS3VP06Fxh8
-	O4JMNMHg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=7s+053YfSpN2MrSbaClDbr9WqDosFZVuD0INo49KR0Q=; b=NbFCSCsjfRpCbpRRY4c+B4S5N4
+	F1aL1vm9ah7Rc+M54cvt1il4YWKMAt2AIKw+3eKJbcaONBlYnGZ8aCblOTk0UZrHFBpZCoR3NaBNn
+	DM4o6H+fL/7MYATh3uEiaNyPP7WuWGQ++ijar8mkmaUNAe/Q27k/qvRaGksNP4GWIrNR0cwZXXY6K
+	eIqTSvddRMew4TodS8e7fB31ZHi9Mue+WZsOobunlErKY9+PXYgu6Cfq2QYvRjCLoOXORkfjzlDbr
+	aG+fiEoqmsJjgtIicymEmGHnG20raZfR1X502a4O59U4puNRQ287IPriYbseybIdd+Zo41A6GBwJn
+	hmn1ZxdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOjDe-0000000606D-3FMb
+	id 1tOjk8-000000062Yt-21Ym
 	for ath12k@archiver.kernel.org;
-	Fri, 20 Dec 2024 20:03:30 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 20 Dec 2024 20:37:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOjDc-0000000605k-2ck1
+	id 1tOjk5-000000062YV-13zA
 	for ath12k@lists.infradead.org;
-	Fri, 20 Dec 2024 20:03:30 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BKBcBkE024185
-	for <ath12k@lists.infradead.org>; Fri, 20 Dec 2024 20:03:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	jjz4Sq36hjRrUju32Ul73yf+4eJ4TQw8j+POxAHkw6U=; b=oGWLRAl5+IHXStqi
-	BuIYkO6QcmyJtbmJirgCxxb4AGmWJTSYFDq4KQx/ItAD00CgQbz0qv5OQbBdbwJ/
-	YACVnW+5UhSxvf11eDzIq8Mo5sa0hvThJ1LQ5ZfenD8ynbmMSUWcUgM/kE7247nj
-	/fn/em1aSY4IQTVzFxpNUraO/a21l10ZW9VVEz9vuupoKaszp43miFHvUtrDLA2c
-	zYC6YIXLanddOZZ15+VzhAKwEJzUAMcG0JW7iSExoK/MEFb4e3djHpK4/ul7PZvZ
-	je+OMzU3WdU4r6sIOVELA9HKSZ4r19PE+46qWH9Zi997E4mqH4IYWf6TKSRRBKG6
-	cRa1og==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43n7vg1aaf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 20 Dec 2024 20:03:26 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4679fb949e8so5447371cf.1
-        for <ath12k@lists.infradead.org>; Fri, 20 Dec 2024 12:03:26 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1734725005; x=1735329805;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=jjz4Sq36hjRrUju32Ul73yf+4eJ4TQw8j+POxAHkw6U=;
-        b=mUeifZ9Z1kFm0a2D5Y5ess7ZJ/mBbSxEfB8oE7efTCkSVbR2CUW03ThdHKhoQuhTzn
-         C4oYnYxa4V1pHqMdknrwD+IGZifKR6bCux9APrFjUhHTWoMZDEv6BffC/Zds3QhmPIff
-         lwHp098mChYBMURdMic3nYtFKVLBWzAgvzHuw2JAtOtjjJpijReE8JGC3BVQzNDlGQ6N
-         Edxda4/EIyYdj8RZQ0lUy+LwPjhNkw6MrjJCV6qQTY0nLUqPESS252e65FyTABUVc9Jm
-         jcafCZNcfY6HINR4Nv8UDy3leN/Az/3ObboAfse+Otl7VZQlpo0DxZnk5UBb2qQLIhR1
-         5++g==
-X-Forwarded-Encrypted: i=1; AJvYcCVAVkKHkDhL2CqqOD+VJLjP/FDzHYTeOGDkDSuSUcu4mwcV7L53rlxMOWs5FcIk99NKJrJ03CM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxj4hvDLMQxIFfRyQqFuqDXOc4CpXc7+EQl0fql88rU/mLm47Dn
-	DlTQzLeoDRppS++2P8fyCkpjLgCEj4aQG4apASPX13BqRbpE2XV2IjJip6NHSq1EkOz45/i063S
-	fqHvZ59qnvM7QgMkLdqTrCwvSEr+Bu33g4cT//Y/KbTz5Sh8XjABVozj7GrEw
-X-Gm-Gg: ASbGnctdBKohymuhKL+4a10Kez1HJ5OvE/9KutbAlxlhoBEn9ilXcAHsv4LPLh8sMFo
-	rPsXeGP4CC7/xdEKIfd6Aa9D+3DesvrBekU9jD5fobT6OVaSyDwU6hLhoCBB1LmNg+7ZV9NkR2o
-	cghzagIlLBfkwCHZN3jdXvys9h/qqYaxXiWH4UUCFkgPRldOooJzA1xWpqLs+jAJ9iwK+t9nzg4
-	QbnGcBl/CJ6N3Zrx0LZ6rlBwgdmw4a1ECH7Ee7NnA/D+zLYj+9y1BPVBi8WR9utCL9BqnBeNRXz
-	ipogZ8/TrLqi0pyFUifjM08inKXaZYxk3n4=
-X-Received: by 2002:a05:620a:2496:b0:7b6:e61b:3e60 with SMTP id af79cd13be357-7b9ba742c0cmr237022585a.7.1734725005381;
-        Fri, 20 Dec 2024 12:03:25 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGGOU1M+QO2EF012zHKw00KoR9fn6Wc1NfhNg0vW4QRfK/giOH6H62ekNUf3K/h976xQT1AJw==
-X-Received: by 2002:a05:620a:2496:b0:7b6:e61b:3e60 with SMTP id af79cd13be357-7b9ba742c0cmr237019085a.7.1734725004858;
-        Fri, 20 Dec 2024 12:03:24 -0800 (PST)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-aac0e830b2dsm206705966b.8.2024.12.20.12.03.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 20 Dec 2024 12:03:24 -0800 (PST)
-Message-ID: <9cbdca90-e76c-4ebb-a236-a0edbd94a629@oss.qualcomm.com>
-Date: Fri, 20 Dec 2024 21:03:21 +0100
+	Fri, 20 Dec 2024 20:37:02 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BKADiV6008374;
+	Fri, 20 Dec 2024 20:36:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=7s+053YfSpN2MrSbaClDbr
+	9WqDosFZVuD0INo49KR0Q=; b=ARSdxC6Yf3JtWl/TAnJJOTLktlNgz1pgGRN44/
+	ZubB9FkR5BilK0yAyAJQByJA5sdyqmcXEVFfm2h6rbITUHV7zJ0YNj6WUa7a+Ei8
+	DHYooNKNFQTQO6W7VP+gzj8dGNndhCkruG4LeLtLeH7lTVTHmEToEVX6PHZNTSDb
+	f59j08phD1uW+lEEO8GSJdGy+bufAQ+lncoWQfcFQ0ILkYnNzlCZS6iDjZ+jkd16
+	AVwwibDrmsfj+2fm1F3gL49zUODFp45MjaeG1esqCk3QBA6/8KzlYnidfijzNeDb
+	ZYR1X35PqboRzBwEHHbGczMm/sl9q9j61Ttvdgc1Jykhkolg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43n6n4hh3d-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Dec 2024 20:36:59 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BKKaw2O006173
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Dec 2024 20:36:58 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 20 Dec 2024 12:36:56 -0800
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH 0/2] wifi: ath12k: Support Transmit Power Control Stats
+Date: Sat, 21 Dec 2024 02:06:36 +0530
+Message-ID: <20241220203638.2082002-1-quic_rdevanat@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v3 1/5] dt-bindings: net: wireless: Describe ath12k
- PCI module with WSI
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <20241105180444.770951-1-quic_rajkbhag@quicinc.com>
- <20241105180444.770951-2-quic_rajkbhag@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20241105180444.770951-2-quic_rajkbhag@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: KPneJ_rd4APqgKu50p5OFXAMO1SaeGBe
-X-Proofpoint-ORIG-GUID: KPneJ_rd4APqgKu50p5OFXAMO1SaeGBe
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: ZC8BQTDNmIu-M2u9SOOeveMLtZ4F-VGE
+X-Proofpoint-ORIG-GUID: ZC8BQTDNmIu-M2u9SOOeveMLtZ4F-VGE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- lowpriorityscore=0 mlxlogscore=999 mlxscore=0 phishscore=0 malwarescore=0
- suspectscore=0 bulkscore=0 adultscore=0 spamscore=0 priorityscore=1501
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412200161
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ suspectscore=0 bulkscore=0 priorityscore=1501 malwarescore=0 adultscore=0
+ clxscore=1015 mlxlogscore=999 lowpriorityscore=0 mlxscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2412200165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_120328_791349_C444ADA8 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20241220_123701_318515_4256AF3B 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,33 +97,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 5.11.2024 7:04 PM, Raj Kumar Bhagat wrote:
-> The QCN9274 WiFi device supports WSI (WLAN Serial Interface). WSI is used
-> to exchange specific control information across radios using a doorbell
-> mechanism. This WSI connection is essential for exchanging control
-> information among these devices. The WSI interface in the QCN9274 includes
-> TX and RX ports, which are used to connect multiple WSI-supported devices
-> together, forming a WSI group.
-> 
-> Describe QCN9274 PCI wifi device with WSI interface.
-> 
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> ---
+Add support to print Transmit Power Control Stats. Add support for basic
+infrastructure necessary for enabling TPC stats via debugfs. This patch
+series brings support to request stats type from firmware and dump the
+corresponding stats.
 
-I think this description is missing the key points:
+Schema for an ath12k device:
+ath12k
+-- pci-0000:06:00.0
+    -- mac0
+        -- tpc_stats
+        -- tpc_stats_type
 
-* what is that control information (power, data, radio stuff?)
-* what happens when the OS is unaware of all of this (i.e. what happens when
-  we don't send any configuration)
-* is this configurable, or does this describe a physical wiring topology
-  (what/who decides which of the group configurations detailed below take
-   effect)
+Sample TPC logs:
+*************** TPC config **************
+* powers are in 0.25 dBm steps
+reg domain-22           chan freq-5955
+power limit-126         max reg-domain Power-252
+No.of tx chain-4        No.of rates-1164
+**************** SU WITH TXBF ****************
+                                TPC values for Active chains
+Rate idx Preamble Rate code     1-Chain 2-Chain 3-Chain 4-Chain
+4        OFDM    0x000          39      15      1       -9
+5        OFDM    0x001          39      15      1       -9
+.....
+12       HT20    0x200          40      16      2       -8
+13       HT20    0x201          40      16      2       -8
+.....
+44       HT40    0x200          88      88      88      88
+45       HT40    0x201          88      88      88      88
+.....
+76       VHT20   0x300          40      16      2       -8
+77       VHT20   0x301          40      16      2       -8
+.....
+172      VHT40   0x300          88      88      88      88
+173      VHT40   0x301          88      88      88      88
+.....
 
-And the ultimate question:
-* can the devices not just talk among themselves and negotiate that?
+Note:
+MCC firmware version -
+WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 does not print stats
+because MCC firmware will not respond to the event passed from host,
+resulting in timeout.
 
-Though AFAICU PCIe P2P communication is a shaky topic, so perhaps the answer
-to the last question is 'no'
+Sowmiya Sree Elavalagan (2):
+  wifi: ath12k: Add Support to Parse TPC Event from Firmware
+  wifi: ath12k: Add Support to Calculate and Display TPC Values
 
-Konrad
+ drivers/net/wireless/ath/ath12k/core.h    |   5 +
+ drivers/net/wireless/ath/ath12k/debugfs.c | 716 ++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/debugfs.h |  85 +++
+ drivers/net/wireless/ath/ath12k/wmi.c     | 451 ++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h     | 139 +++++
+ 5 files changed, 1396 insertions(+)
+
+
+base-commit: 09fa3b6974a1245ddd0751747609431494ba5b4f
+-- 
+2.25.1
+
 
