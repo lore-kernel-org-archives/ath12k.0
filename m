@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82322E7718B
-	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 04:31:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2415E77184
+	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 04:31:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SqAw2TxIxPHAeJOMdvLSqecWSyqJN6CmDyY+byX0Mws=; b=Dhp5Epe4w14rdhthKHwHqQju2b
-	ML/u2YgsU08BOuSDQB6210TtqtZEnbW10GEDTuP/tWvqWkTdbmzyP0bgF9Ht3FX9sCwKiYzX3rKsk
-	zeyL1NidUnDocu1xTrNMfSw0kNg6d7xD9KtlsWa0dCzfjedaeptQOqnjqlYUooiHjYWu4SJJTVjg+
-	4B1CyRxTEaFLbj5CpD78AliBzW9fEFv4Lmm56m2FoWLwRPquEzduFGU4Leqll3z9PUldDemy8EKKX
-	EFZS2bDHOij68Siu7rDdQmfoQkTE2JOS+uRvv1ZFBhTqOpfgkXBS4dSirp6+DWZwhJHq+L7+CJ67P
-	lsvUEAAw==;
+	bh=cAIrZT8g9syoizujVZE6+SeJPZZ9GwhI3SiYpOPIZV0=; b=BZy2SN7DHthDFQBFvJXQKgd5T+
+	oMC0zNjq64qNbsQ9i0UItDWIaQmdQ4p5nl8YfsZZH1z2d8cQrT2/ucK5dxTlaN02onRZrbypP5s+7
+	0004Lc+18L96dYBM0u77yb+wNM647oKEyk+gN3D1GzbDvjVP2W5/M5poWQ8+mOfBU1a7V2cpXYF3+
+	e+b1socI3gfM4AUNTaGqeOEZy3dgS4h0MSAQr1YICqwCe/IhfX5t7w2EBFZgeB7528rsyIEXqaiQ8
+	inT4iVUO4w4kSsLhouBeK0W5TBTJ31wbJZyxb7vqOtHPjTMqCL68+Ic7ucD3q5SoxvLq1rOORKZVX
+	pdacgTsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOr8y-00000006XQc-0l7D
+	id 1tOr91-00000006XS7-2Vkx
 	for ath12k@archiver.kernel.org;
-	Sat, 21 Dec 2024 04:31:12 +0000
+	Sat, 21 Dec 2024 04:31:15 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOr8w-00000006XPT-0GC5
+	id 1tOr8z-00000006XRC-0vdV
 	for ath12k@lists.infradead.org;
-	Sat, 21 Dec 2024 04:31:11 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BL28llS031416;
-	Sat, 21 Dec 2024 04:31:09 GMT
+	Sat, 21 Dec 2024 04:31:14 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BL3a8UQ003837;
+	Sat, 21 Dec 2024 04:31:13 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	SqAw2TxIxPHAeJOMdvLSqecWSyqJN6CmDyY+byX0Mws=; b=Db+maoscwlu5Qh/t
-	tk+OAsxtN3/HeO29jUSK+RwUwcgeetL4KIICc5OiOQ+gJ/fAlJGQY+jAO/d3OOja
-	+pvW54si1It+zPdOalRzZ70Mpxw6HY52047qOSoOsEq/9xXmZ9MBRbYRF+PwB8o3
-	RF38B4InM3dZ/ExW7dP0NHo4hknG5UHOBAD5IDxiRumJTxCsnhCDpTDl3QT9SYDM
-	qKnjYgKR7/WRHAaDP0R0QEWKwlClBRRMIh6oFNoumPUst4eEfldA9tgvtvCPPn0+
-	XlNNvnnaGz3YTgXT+rRVT7zuQCTQORsX8ETViUUMJMAp0JgGa1BvkmTWKPSsWhtp
-	wdSXpQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43nmmqg9ku-1
+	cAIrZT8g9syoizujVZE6+SeJPZZ9GwhI3SiYpOPIZV0=; b=TyAjqZnzgc1gtgoF
+	9bY8B61PTSGgIvw9HWF5AZHVxyR9hhsN8WDNuOxVfxCUWN5dnxndx0/2xmNm6Wdl
+	tNkIZC/iBWjVFPekFsC4c+hZJm7s0CS4biyC3Ygkl/0GkbB7W2sgMWdKhW4Ht+yY
+	DhcV2XaBF3Gjqc39bd7HNzvgrNu/v7lEe7dFG9JHaSP5NhjUFPlcbMLtAB1iH/pQ
+	oqvH/Fu1kCZ/b16rFfR6lLdCvaVyby2DdjkOEBodwJb8FnonYCCIdDYVp85cup2V
+	8lqJDi9Q27Q1/jEdYg6XVfe+iPfK0A6MrnpCaN+YJ190Ry7xwG2jQ6PN+GVwuBni
+	FvXR0w==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43nnw1g3fr-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 21 Dec 2024 04:31:09 +0000 (GMT)
+	Sat, 21 Dec 2024 04:31:12 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL4V9dw016287
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL4VClU008337
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 21 Dec 2024 04:31:09 GMT
+	Sat, 21 Dec 2024 04:31:12 GMT
 Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 20 Dec 2024 20:31:07 -0800
+ 15.2.1544.9; Fri, 20 Dec 2024 20:31:10 -0800
 From: P Praneesh <quic_ppranees@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH 03/14] wifi: ath12k: Avoid multiple times configuring monitor filter
-Date: Sat, 21 Dec 2024 10:00:03 +0530
-Message-ID: <20241221043014.1252841-4-quic_ppranees@quicinc.com>
+Subject: [PATCH 04/14] wifi: ath12k: Avoid code duplication in monitor ring processing
+Date: Sat, 21 Dec 2024 10:00:04 +0530
+Message-ID: <20241221043014.1252841-5-quic_ppranees@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
 References: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1MhncpIhVHoWlUlUt-Mo6MG75ReoEPYQ
-X-Proofpoint-ORIG-GUID: 1MhncpIhVHoWlUlUt-Mo6MG75ReoEPYQ
+X-Proofpoint-GUID: GvOwi7SlTZwNRmKsH4h1dN_frS6cCfKl
+X-Proofpoint-ORIG-GUID: GvOwi7SlTZwNRmKsH4h1dN_frS6cCfKl
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- malwarescore=0 adultscore=0 phishscore=0 clxscore=1015 bulkscore=0
- impostorscore=0 spamscore=0 mlxlogscore=955 priorityscore=1501 mlxscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412210035
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=835
+ mlxscore=0 malwarescore=0 impostorscore=0 bulkscore=0 lowpriorityscore=0
+ phishscore=0 priorityscore=1501 suspectscore=0 spamscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2412210035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_203110_118141_77CEEFA5 
-X-CRM114-Status: GOOD (  15.08  )
+X-CRM114-CacheID: sfid-20241220_203113_276092_EFFDB71E 
+X-CRM114-Status: GOOD (  16.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,100 +97,203 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_mac_op_configure_filter() gets called multiple times during
-interface bringup. Applying filter configuration from this function leads
-to writing same filter configurations multiple times.
-
-Fix it by moving the filter configuration to ath12k_mac_op_start().
+The current implementation processes the monitor destination ring using
+two separate functions, ath12k_dp_mon_srng_process() for standalone
+monitor mode and ath12k_dp_mon_rx_process_stats() for statistics.
+However, both functions contain same code which performs monitor ring
+reaping and skb data processing. To eliminate redundancy, remove the
+duplicate code and use a single function to handle both the cases.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 55 ++++++++++++++-------------
- 1 file changed, 29 insertions(+), 26 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 126 ++---------------------
+ drivers/net/wireless/ath/ath12k/dp_mon.h |   6 +-
+ 2 files changed, 9 insertions(+), 123 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 6f10813d9378..2cb6e9b529d7 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7237,8 +7237,34 @@ void ath12k_mac_drain_tx(struct ath12k *ar)
- 
- static int ath12k_mac_config_mon_status_default(struct ath12k *ar, bool enable)
- {
--	return -EOPNOTSUPP;
--	/* TODO: Need to support new monitor mode */
-+	struct htt_rx_ring_tlv_filter tlv_filter = {};
-+	struct ath12k_base *ab = ar->ab;
-+	u32 ring_id, i;
-+	int ret = 0;
-+
-+	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-+
-+	if (!ab->hw_params->rxdma1_enable)
-+		return ret;
-+
-+	if (enable)
-+		tlv_filter = ath12k_mac_mon_status_filter_default;
-+
-+	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
-+		ring_id = ar->dp.rxdma_mon_dst_ring[i].ring_id;
-+		ret = ath12k_dp_tx_htt_rx_filter_setup(ab, ring_id,
-+						       ar->dp.mac_id + i,
-+						       HAL_RXDMA_MONITOR_DST,
-+						       DP_RXDMA_REFILL_RING_SIZE,
-+						       &tlv_filter);
-+		if (ret) {
-+			ath12k_err(ab,
-+				   "failed to setup filter for monitor buf %d\n",
-+				   ret);
-+		}
-+	}
-+
-+	return ret;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 53f8e8f8959a..08f92e74fede 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -2000,116 +2000,6 @@ ath12k_dp_mon_tx_parse_mon_status(struct ath12k *ar,
+ 	return tlv_status;
  }
  
- static int ath12k_mac_start(struct ath12k *ar)
-@@ -8363,29 +8389,6 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
- 	FIF_PROBE_REQ |				\
- 	FIF_FCSFAIL)
- 
--static void ath12k_mac_configure_filter(struct ath12k *ar,
--					unsigned int total_flags)
+-int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget,
+-			       enum dp_monitor_mode monitor_mode,
+-			       struct napi_struct *napi)
 -{
--	bool reset_flag;
--	int ret;
+-	struct hal_mon_dest_desc *mon_dst_desc;
+-	struct ath12k_pdev_dp *pdev_dp = &ar->dp;
+-	struct ath12k_mon_data *pmon = (struct ath12k_mon_data *)&pdev_dp->mon_data;
+-	struct ath12k_base *ab = ar->ab;
+-	struct ath12k_dp *dp = &ab->dp;
+-	struct sk_buff *skb;
+-	struct ath12k_skb_rxcb *rxcb;
+-	struct dp_srng *mon_dst_ring;
+-	struct hal_srng *srng;
+-	struct dp_rxdma_mon_ring *buf_ring;
+-	u64 cookie;
+-	u32 ppdu_id;
+-	int num_buffs_reaped = 0, srng_id, buf_id;
+-	u8 dest_idx = 0, i;
+-	bool end_of_ppdu;
+-	struct hal_rx_mon_ppdu_info *ppdu_info;
+-	struct ath12k_peer *peer = NULL;
+-	u8 pdev_idx = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, ar->pdev_idx);
 -
--	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+-	ppdu_info = &pmon->mon_ppdu_info;
+-	memset(ppdu_info, 0, sizeof(*ppdu_info));
+-	ppdu_info->peer_id = HAL_INVALID_PEERID;
 -
--	ar->filter_flags = total_flags;
+-	srng_id = ath12k_hw_mac_id_to_srng_id(ab->hw_params, pdev_idx);
 -
--	/* For monitor mode */
--	reset_flag = !(ar->filter_flags & FIF_BCN_PRBRESP_PROMISC);
+-	if (monitor_mode == ATH12K_DP_RX_MONITOR_MODE) {
+-		mon_dst_ring = &pdev_dp->rxdma_mon_dst_ring[srng_id];
+-		buf_ring = &dp->rxdma_mon_buf_ring;
+-	} else {
+-		return 0;
+-	}
 -
--	ret = ath12k_dp_tx_htt_monitor_mode_ring_config(ar, reset_flag);
--	if (ret)
--		ath12k_warn(ar->ab,
--			    "fail to set monitor filter: %d\n", ret);
+-	srng = &ab->hal.srng_list[mon_dst_ring->ring_id];
 -
--	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
--		   "total_flags:0x%x, reset_flag:%d\n",
--		   total_flags, reset_flag);
+-	spin_lock_bh(&srng->lock);
+-	ath12k_hal_srng_access_begin(ab, srng);
+-
+-	while (likely(*budget)) {
+-		*budget -= 1;
+-		mon_dst_desc = ath12k_hal_srng_dst_peek(ab, srng);
+-		if (unlikely(!mon_dst_desc))
+-			break;
+-
+-		cookie = le32_to_cpu(mon_dst_desc->cookie);
+-		buf_id = u32_get_bits(cookie, DP_RXDMA_BUF_COOKIE_BUF_ID);
+-
+-		spin_lock_bh(&buf_ring->idr_lock);
+-		skb = idr_remove(&buf_ring->bufs_idr, buf_id);
+-		spin_unlock_bh(&buf_ring->idr_lock);
+-
+-		if (unlikely(!skb)) {
+-			ath12k_warn(ab, "monitor destination with invalid buf_id %d\n",
+-				    buf_id);
+-			goto move_next;
+-		}
+-
+-		rxcb = ATH12K_SKB_RXCB(skb);
+-		dma_unmap_single(ab->dev, rxcb->paddr,
+-				 skb->len + skb_tailroom(skb),
+-				 DMA_FROM_DEVICE);
+-
+-		pmon->dest_skb_q[dest_idx] = skb;
+-		dest_idx++;
+-		ppdu_id = le32_to_cpu(mon_dst_desc->ppdu_id);
+-		end_of_ppdu = le32_get_bits(mon_dst_desc->info0,
+-					    HAL_MON_DEST_INFO0_END_OF_PPDU);
+-		if (!end_of_ppdu)
+-			continue;
+-
+-		for (i = 0; i < dest_idx; i++) {
+-			skb = pmon->dest_skb_q[i];
+-
+-			if (monitor_mode == ATH12K_DP_RX_MONITOR_MODE)
+-				ath12k_dp_mon_rx_parse_mon_status(ar, pmon,
+-								  skb, napi);
+-			else
+-				ath12k_dp_mon_tx_parse_mon_status(ar, pmon,
+-								  skb, napi, ppdu_id);
+-
+-			peer = ath12k_peer_find_by_id(ab, ppdu_info->peer_id);
+-
+-			if (!peer || !peer->sta) {
+-				ath12k_dbg(ab, ATH12K_DBG_DATA,
+-					   "failed to find the peer with peer_id %d\n",
+-					   ppdu_info->peer_id);
+-				dev_kfree_skb_any(skb);
+-				continue;
+-			}
+-
+-			dev_kfree_skb_any(skb);
+-			pmon->dest_skb_q[i] = NULL;
+-		}
+-
+-		dest_idx = 0;
+-move_next:
+-		ath12k_dp_mon_buf_replenish(ab, buf_ring, 1);
+-		ath12k_hal_srng_src_get_next_entry(ab, srng);
+-		num_buffs_reaped++;
+-	}
+-
+-	ath12k_hal_srng_access_end(ab, srng);
+-	spin_unlock_bh(&srng->lock);
+-
+-	return num_buffs_reaped;
 -}
 -
- static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
- 					   unsigned int changed_flags,
- 					   unsigned int *total_flags,
-@@ -8399,7 +8402,7 @@ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
- 	ar = ath12k_ah_to_ar(ah, 0);
- 
- 	*total_flags &= SUPPORTED_FILTERS;
--	ath12k_mac_configure_filter(ar, *total_flags);
-+	ar->filter_flags = *total_flags;
+ static void
+ ath12k_dp_mon_rx_update_peer_rate_table_stats(struct ath12k_rx_peer_stats *rx_stats,
+ 					      struct hal_rx_mon_ppdu_info *ppdu_info,
+@@ -2415,8 +2305,8 @@ ath12k_dp_mon_rx_update_peer_mu_stats(struct ath12k *ar,
+ 		ath12k_dp_mon_rx_update_user_stats(ar, ppdu_info, i);
  }
  
- static int ath12k_mac_op_get_antenna(struct ieee80211_hw *hw, u32 *tx_ant, u32 *rx_ant)
+-int ath12k_dp_mon_rx_process_stats(struct ath12k *ar, int mac_id,
+-				   struct napi_struct *napi, int *budget)
++int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget,
++			       struct napi_struct *napi)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct ath12k_pdev_dp *pdev_dp = &ar->dp;
+@@ -2437,8 +2327,9 @@ int ath12k_dp_mon_rx_process_stats(struct ath12k *ar, int mac_id,
+ 	u8 dest_idx = 0, i;
+ 	bool end_of_ppdu;
+ 	u32 hal_status;
++	u8 pdev_idx = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, ar->pdev_idx);
+ 
+-	srng_id = ath12k_hw_mac_id_to_srng_id(ab->hw_params, mac_id);
++	srng_id = ath12k_hw_mac_id_to_srng_id(ab->hw_params, pdev_idx);
+ 	mon_dst_ring = &pdev_dp->rxdma_mon_dst_ring[srng_id];
+ 	buf_ring = &dp->rxdma_mon_buf_ring;
+ 
+@@ -2535,11 +2426,10 @@ int ath12k_dp_mon_process_ring(struct ath12k_base *ab, int mac_id,
+ 	struct ath12k *ar = ath12k_ab_to_ar(ab, mac_id);
+ 	int num_buffs_reaped = 0;
+ 
+-	if (!ar->monitor_started)
+-		ath12k_dp_mon_rx_process_stats(ar, mac_id, napi, &budget);
+-	else
+-		num_buffs_reaped = ath12k_dp_mon_srng_process(ar, &budget,
+-							      monitor_mode, napi);
++	if (ab->hw_params->rxdma1_enable) {
++		if (monitor_mode == ATH12K_DP_RX_MONITOR_MODE)
++			num_buffs_reaped = ath12k_dp_mon_srng_process(ar, &budget, napi);
++	}
+ 
+ 	return num_buffs_reaped;
+ }
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.h b/drivers/net/wireless/ath/ath12k/dp_mon.h
+index 64c959c36459..e4368eb42aca 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.h
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.h
+@@ -82,9 +82,6 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
+ int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
+ 				struct dp_rxdma_mon_ring *buf_ring,
+ 				int req_entries);
+-int ath12k_dp_mon_srng_process(struct ath12k *ar,
+-			       int *budget, enum dp_monitor_mode monitor_mode,
+-			       struct napi_struct *napi);
+ int ath12k_dp_mon_process_ring(struct ath12k_base *ab, int mac_id,
+ 			       struct napi_struct *napi, int budget,
+ 			       enum dp_monitor_mode monitor_mode);
+@@ -100,6 +97,5 @@ ath12k_dp_mon_tx_parse_mon_status(struct ath12k *ar,
+ 				  struct napi_struct *napi,
+ 				  u32 ppdu_id);
+ void ath12k_dp_mon_rx_process_ulofdma(struct hal_rx_mon_ppdu_info *ppdu_info);
+-int ath12k_dp_mon_rx_process_stats(struct ath12k *ar, int mac_id,
+-				   struct napi_struct *napi, int *budget);
++int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget, struct napi_struct *napi);
+ #endif
 -- 
 2.34.1
 
