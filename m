@@ -4,119 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 051D7E77188
-	for <ath12k@archiver.kernel.org>; Fri, 20 Dec 2024 22:06:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB7BEE77184
+	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 04:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9LkFprxiUsD1tk8g3pSzxnZakkpVhYTWUC5dUvvw9cU=; b=q6bqzyW/4o3CH5NPQSbCjqMrvo
-	AHnL4XRPI39wpI1KhT4kzCwZo6sd4iI0LFh3WmXySxufuSlaRdzqA0JeN8HRvJUAH3fJrk6ES/LBO
-	eOsoM+98XlGbInkzlBSTIf9OOK+4D3ECN9EVvCnv7WtHmBorliVzOB+xAFyAjVIZfjWX1dcVaLbWi
-	YjSsMM2vunCFZnP4y+zQQYksR9WxYntSEKqPRcwhuCHqkN7xpLFFL8mLHnSHDhaYP5zrk2ju0WYDd
-	e2Dg/QaYsFSvB4BO+K1tEeqz2nFHgbDTHaPj4dXxSJC55eoNFqUFg/nG0TCQD4nqgN+fCvAUA/ye/
-	E129LsCQ==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=/SAQ866Iuwg43VSP1tuKkek5l1mj0sd2fx/CEkXcpnU=; b=Ni5MQvzdfsSJAKFlFRHVN14Snm
+	hC0X+tvz31uBARBTRGNkWcn1YE/K0Kgzc6N7vittxo4bqoXDGMtt+o96SEAHfaYmDQ5hhZqf5hEeU
+	l6EfzTC0NxM/A/h41ZI9iOFcg1vcPhgEXEtO2Iv+7r+Ia5A/Q7/2FS54XnQ76eMSLOw1y5ZG+TWHJ
+	u7kq+nUKHczj4iDKriFuebN38JjK1I7V5R10sU2OT8w8r/Sx9Yw3YmyPMi9K9mOaVhz9gcg1BJn7A
+	jrYymNd7Xs11jnQZjxSwH8ovPF1pQYpGhaqk0ZFfHF6dW9ZPge/2NRh/ZSBB3WioMR2q5ELVaNFG5
+	UKdm6y4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOl8G-00000006AOP-3GWJ
+	id 1tOr8i-00000006XMl-1ze4
 	for ath12k@archiver.kernel.org;
-	Fri, 20 Dec 2024 22:06:04 +0000
+	Sat, 21 Dec 2024 04:30:56 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOl8E-00000006AO3-2yzj
+	id 1tOr8f-00000006XMP-2dMS
 	for ath12k@lists.infradead.org;
-	Fri, 20 Dec 2024 22:06:04 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BKEfnYW003929
-	for <ath12k@lists.infradead.org>; Fri, 20 Dec 2024 22:06:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9LkFprxiUsD1tk8g3pSzxnZakkpVhYTWUC5dUvvw9cU=; b=OX6qF5HNDalc8WsU
-	j1l+fCGALZntBY47aJJj/THHl+B7bxzD94dCk8um1GMoOrr92fRm9RLRh/nsGZNN
-	x6zNnGIhaQjZC1Rfvg6TFDqHZgejTEHTtdhD2eHIf4X4c8qTpYwRAD8hvq2Cr9d0
-	W2huSD4ejU53l7/ToTzgNE/1VfoAuR30ZbK2T6G5XCwuhZwjqqqEwtVa74xOuAfk
-	DAXqXsVf4fXjRm8iL44FPC0eOiFPiADkmyLTOEJoIP6DeZEAhus6lCameWkKP22x
-	i3BQOYf9JISQPokSXU0dqGglf/wJHUSXHGbhdv3eb4xcZr1mh2QCePY5Xcqwu3QL
-	yr1Ldw==
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43najt11b3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 20 Dec 2024 22:06:01 +0000 (GMT)
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-7b704c982eeso9512785a.1
-        for <ath12k@lists.infradead.org>; Fri, 20 Dec 2024 14:06:01 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1734732360; x=1735337160;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=9LkFprxiUsD1tk8g3pSzxnZakkpVhYTWUC5dUvvw9cU=;
-        b=UFsECE4kgSpfc539sl2Oy16Wt62uPnV60ywB7ZQGVE2UcZQmzCZR/o2IUlDZ6i/rZu
-         SVhGEkooULtTiBpzJzgbqHsAmeJrIFiACNMZUNYZittcQzikUK5UOrJusL3T8tzkiecv
-         GYNUkfQ1m2NFhmGZJ88YFK+EYt7iWgz+cXOuM+igj1aEDS1zXO+/ckEe6Uz/knWU6nTI
-         f1LI7x1KL5Fo+hT1rsh4t4iUkQSgcTJOcMMp4hNXEJde2f2+8WCP2gaMJNDZTMVxN+yo
-         m3DDAWY6dLm8FNwp7pidizUJaG3x1lNeKmB/V/Cr9EAk1lqesUJ1tqkcADmIIPLx1SFM
-         xaew==
-X-Forwarded-Encrypted: i=1; AJvYcCWIS3KPAcT7RYnwVu5GMtVPhA+MJcK7sq/oLrKl/LAK6FCZa2cD1rQUbLXl1AmTI6Pn0FUgPsQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxxPXboprAF3DgavffcZBg/v5MyAgl4R8arPWONwM5yK2851+px
-	rmAyF7t+JeU5loTO64kRO3bNtCIemqiGvk/d3+NaVXDZEemfC7iGMlKE8/RWHAhR3jOYuyWLof6
-	rWZurHOYX1AbA0iFY02Af//kub5lajvcVzygG/OathH2fwk+edhdLMY4jclU6
-X-Gm-Gg: ASbGnctabljiNUYcd1kAUlZyYewKpUvK75LudUaBGf/l+l/114NNaNRxAmiIgi4Rl0O
-	9KfI4uQU3yD2/7HJ2drkDixKhhdLlyOQGlbUb2dHgwOmvok3yuEoQ3CxJnKjeFTuO+JWPemeGim
-	w5Nsb3avLlJsdHXYEEky35y1ujKwDF+FxmV+fGMyJdGkqSIK/1xWCS7+DUpgc+mijhAurXJy4p6
-	D0QzZdriRzOkvK0ZC5FDb/OzCbDRZe401gKBY2yGk7kMTSbXQonkyH7/l3PJzV3CZckQ6MdW9bf
-	WyY6KJd6JuBIyY51MEV+MqWF+iVqAd3T6PQ=
-X-Received: by 2002:a05:620a:17a0:b0:7b6:e126:3dee with SMTP id af79cd13be357-7b9ba71292cmr244462085a.3.1734732360461;
-        Fri, 20 Dec 2024 14:06:00 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IEHDi1i1hytvqYgiaDYCCC63bgwu6iKUJ6GlNcbQHn3uxugwlsISW/jSe1exPxzhd8K+GSWew==
-X-Received: by 2002:a05:620a:17a0:b0:7b6:e126:3dee with SMTP id af79cd13be357-7b9ba71292cmr244459385a.3.1734732360111;
-        Fri, 20 Dec 2024 14:06:00 -0800 (PST)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5d80675a3ebsm2100297a12.7.2024.12.20.14.05.57
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 20 Dec 2024 14:05:58 -0800 (PST)
-Message-ID: <2d1570a2-511a-4200-b4cc-60f56cfe4423@oss.qualcomm.com>
-Date: Fri, 20 Dec 2024 23:05:56 +0100
+	Sat, 21 Dec 2024 04:30:55 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BL2A6pW000422;
+	Sat, 21 Dec 2024 04:30:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=/SAQ866Iuwg43VSP1tuKke
+	k5l1mj0sd2fx/CEkXcpnU=; b=BisA7/zHZQ5h3SDNlRdxV9+DbR9IjDXUjRZium
+	wP1q70qJqAXRzSWSMuqzDCvFM23RZ8YUnFzcE7dGf7Z4aICGSsTLoc8o/nv8Zfh0
+	eMqagIFIRZEEOuOgB0FZGVkDHnjI8/TjUJgWqAmNebUiV3gYL1zPWyp6yCl4M716
+	xjvJlPx3F6z3Z5cCbb581xT0q05hm8AaLc37gNkksyO7tjk2spbF6TetY1B9d4Dt
+	EO6HH37F9IGiypHV36viqQEa5P2kWHskhoStlALgAkllICFfUKkH7nJUm6egaf2i
+	rZxcENRMAUuOJZszBKBK7b8asT6gks9uB84+2tqhRUaX+z+Q==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43nmmqg9k0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 21 Dec 2024 04:30:51 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL4UonZ007957
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 21 Dec 2024 04:30:50 GMT
+Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 20 Dec 2024 20:30:49 -0800
+From: P Praneesh <quic_ppranees@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
+Subject: [PATCH 00/14] wifi: ath12k: Enable monitor ring for updating station dump in QCN9274
+Date: Sat, 21 Dec 2024 10:00:00 +0530
+Message-ID: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v3 1/5] dt-bindings: net: wireless: Describe ath12k
- PCI module with WSI
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <20241105180444.770951-1-quic_rajkbhag@quicinc.com>
- <20241105180444.770951-2-quic_rajkbhag@quicinc.com>
- <9cbdca90-e76c-4ebb-a236-a0edbd94a629@oss.qualcomm.com>
- <62c599b5-20b2-4e1e-810d-e4502abbc682@oss.qualcomm.com>
- <768ef22a-855b-472d-9432-49db7daaf2df@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <768ef22a-855b-472d-9432-49db7daaf2df@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: YN2WMx9EGrehmjSosuseTztRKg50FBoQ
-X-Proofpoint-ORIG-GUID: YN2WMx9EGrehmjSosuseTztRKg50FBoQ
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: nNYZ1lmTL--dhcTml1O3DpEWrufB9C7E
+X-Proofpoint-ORIG-GUID: nNYZ1lmTL--dhcTml1O3DpEWrufB9C7E
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
- lowpriorityscore=0 adultscore=0 priorityscore=1501 malwarescore=0
- clxscore=1015 suspectscore=0 phishscore=0 spamscore=0 bulkscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412200178
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ malwarescore=0 adultscore=0 phishscore=0 clxscore=1015 bulkscore=0
+ impostorscore=0 spamscore=0 mlxlogscore=554 priorityscore=1501 mlxscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412210035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_140602_759658_014E8675 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20241220_203053_696958_6367E294 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,51 +95,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 20.12.2024 11:05 PM, Konrad Dybcio wrote:
-> On 20.12.2024 10:47 PM, Jeff Johnson wrote:
->> On 12/20/2024 12:03 PM, Konrad Dybcio wrote:
->>> On 5.11.2024 7:04 PM, Raj Kumar Bhagat wrote:
->>>> The QCN9274 WiFi device supports WSI (WLAN Serial Interface). WSI is used
->>>> to exchange specific control information across radios using a doorbell
->>>> mechanism. This WSI connection is essential for exchanging control
->>>> information among these devices. The WSI interface in the QCN9274 includes
->>>> TX and RX ports, which are used to connect multiple WSI-supported devices
->>>> together, forming a WSI group.
->>>>
->>>> Describe QCN9274 PCI wifi device with WSI interface.
->>>>
->>>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
->>>> ---
->>>
->>> I think this description is missing the key points:
->>>
->>> * what is that control information (power, data, radio stuff?)
->>> * what happens when the OS is unaware of all of this (i.e. what happens when
->>>   we don't send any configuration)
->>> * is this configurable, or does this describe a physical wiring topology
->>>   (what/who decides which of the group configurations detailed below take
->>>    effect)
->>>
->>> And the ultimate question:
->>> * can the devices not just talk among themselves and negotiate that?
->>>
->>> Though AFAICU PCIe P2P communication is a shaky topic, so perhaps the answer
->>> to the last question is 'no'
->>>
->>> Konrad
->>
->> We already pushed the non-RFC version to our -next tree so we cannot update
->> the commit description without a forced push.
->>
->> https://lore.kernel.org/all/20241211153432.775335-2-kvalo@kernel.org/
->>
->> However, Raj Kumar can submit an update to the description in the file, which
->> is probably the better place to have this information anyway.
-> 
-> Sounds good
+This series enables the monitor related rings for the QCN9274 and
+configures filters to collect statistics such as RSSI, which are
+required for updating the station dump. Also, this series does
+not impact WCN7850.
 
-(although bindings usually land with Krzysztof's or Rob's review tags,
-but that's between you and them to talk about now)
+Depends-On:
+	[PATCH 0/3] wifi: ath12k: Refactor monitor Rx handler
+	https://lore.kernel.org/all/20241219001006.1036495-1-quic_periyasa@quicinc.com/
 
-Konrad
+P Praneesh (14):
+  wifi: ath12k: Add HTT source ring ID for monitor rings
+  wifi: ath12k: Enable filter config for monitor destination ring
+  wifi: ath12k: Avoid multiple times configuring monitor filter
+  wifi: ath12k: Avoid code duplication in monitor ring processing
+  wifi: ath12k: Restructure the code for monitor ring processing
+  wifi: ath12k: Fix invalid entry fetch in ath12k_dp_mon_srng_process
+  wifi: ath12k: Fix end offset bit definition in monitor ring descriptor
+  wifi: ath12k: Add drop descriptor handling for monitor ring
+  wifi: ath12k: Handle end reason for the monitor destination ring
+  wifi: ath12k: Optimize NAPI budget by adjusting PPDU processing
+  wifi: ath12k: Handle PPDU spread across multiple buffers
+  wifi: ath12k: Avoid memory leak while enabling statistics
+  wifi: ath12k: Handle monitor drop TLVs scenario
+  wifi: ath12k: Enable monitor ring mask for QCN9274
+
+ drivers/net/wireless/ath/ath12k/core.h     |   1 +
+ drivers/net/wireless/ath/ath12k/dp.h       |  55 +++-
+ drivers/net/wireless/ath/ath12k/dp_mon.c   | 348 ++++++++-------------
+ drivers/net/wireless/ath/ath12k/dp_mon.h   |   6 +-
+ drivers/net/wireless/ath/ath12k/dp_tx.c    |  79 ++++-
+ drivers/net/wireless/ath/ath12k/hal_desc.h |   5 +-
+ drivers/net/wireless/ath/ath12k/hal_rx.h   |   4 +
+ drivers/net/wireless/ath/ath12k/hw.c       |   8 +-
+ drivers/net/wireless/ath/ath12k/mac.c      |  55 ++--
+ 9 files changed, 282 insertions(+), 279 deletions(-)
+
+
+base-commit: 09fa3b6974a1245ddd0751747609431494ba5b4f
+prerequisite-patch-id: 5f5721a4c9f1c26659fd8f09a8eda648d8ecccf5
+prerequisite-patch-id: 59cc2121e734e4e1e7e461a3ae24f3f1f9d0fa02
+prerequisite-patch-id: fdc512e43ea7cb6c097ba4c0d9c661a74c0c2a6f
+-- 
+2.34.1
+
 
