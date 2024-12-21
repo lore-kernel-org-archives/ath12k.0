@@ -4,85 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5162E77184
-	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 04:31:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D0A1E77184
+	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 05:23:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XAE4dmNchV1/DEtOlRz3RM21Q2vxLRDr3UsJ+UYysbs=; b=CH9IZnms9ZsBvv3xt8OGHdwt2J
-	J3fQjqNv/6f4Xjsx50Se81EVJ/ZFcyGC/usyRjfU5i8oMBRwpUdEuhHuZfGnZjSE7g5LL3klUivAO
-	BTETXoO1mf04VEeDpaFXOUp1dUU/yRXEAKdCjspySvVxJjSEmYjKh9iG6QwJRXIcy44OJzKs/0JmH
-	FZ3oYjLo8tVl2Rav8Y7wfWSatO5EvwzQws8z815g01N6l7sfVZJC4gBX55Nr10uV6RvdQC0TBIDkK
-	7XJC1sHTOz8e4WXlL+bupV1+kpbxflBCslfmIm7tfuwwZHReFOM5JzYvJEkCpGDZytNlP9JXYtWyD
-	NZBLmFDQ==;
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=L6pH21MKJWN21GjACkYiGF6ahaX4BNJOJgcgF/mvNd0=; b=F8gswGVwkXQ6te7JN5xEDV3M0a
+	KMuoj09VgVlgZZmQYEhVK29EHzwMdqHqFtpOaknvC//nk6xpT7GCa6NsLfhYEuCmGLNNo9c+QJBaS
+	dpCvSw3W4T7JYKzfmVlAv7xNpmzdfhDSBZ2Sl+ohpZwj+RFSlqGBjDcYVwluKHZNwiaCd/ueGcSGv
+	y9+pCWJQkGNnXUHwmDYZ0GqtlpAYfBbHgRsNu1VV6M1kl2BH71FDzKq3ngXWGVDBq/jN+v+7aNGg3
+	7a2mSy2UIx7pdPv6Z76AyWPVTWcbe0JOuDSSzWLvVtSBex1Aov5x8g7U13tZ5+ftAaED8S8I9dcuP
+	NIs9S8Qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOr9S-00000006XkV-2b9g
+	id 1tOrx6-00000006aHf-2shH
 	for ath12k@archiver.kernel.org;
-	Sat, 21 Dec 2024 04:31:42 +0000
+	Sat, 21 Dec 2024 05:23:00 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOr9Q-00000006Xin-1UAE
+	id 1tOrx4-00000006aGg-0AZL
 	for ath12k@lists.infradead.org;
-	Sat, 21 Dec 2024 04:31:41 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BL0gU6x008038;
-	Sat, 21 Dec 2024 04:31:40 GMT
+	Sat, 21 Dec 2024 05:22:59 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BL4djui021277;
+	Sat, 21 Dec 2024 05:22:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	XAE4dmNchV1/DEtOlRz3RM21Q2vxLRDr3UsJ+UYysbs=; b=fX71rw5pDNwmr7jQ
-	xYqhYtt1Ej6wTj2tZg93Uyx1LMCeOASWEJHI2AY9qeKlCPXoqESO/Bz5SStbMXEe
-	fDdWAlhqRRBcOG2f50qxez4GVa2lFSK45YMJG3iba28+DMazaMZvXGacyqoKGPmS
-	tEy2ymzB+/bWvwTEyNh9xt3jL4PYKnu3mj7kb8t7gOKjACbRNrlI9H34vpf496hM
-	BMQVUA2x7vsKc0ewX/1H9PYtfnXu1TRVyCGgkCxogRgQRtbvLxrjhanfmwhMMIRA
-	hMUt+62hDtRyVU4Z+D9kEWcjij7j9PNc6ABLiCI1H8813jDtRffzoHQpOngGtoG4
-	vfApeA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43nkcc8cj1-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=L6pH21MKJWN21GjACkYiGF
+	6ahaX4BNJOJgcgF/mvNd0=; b=ATFpxEwKzUbm7ndJA9PuTnO+0DyV2KeLFKmyfY
+	d/BECQg37seXotMWQix/izDsMBxaTCRhyfBBXoywIqvGYqOQ3K9HnrYorK12h6+b
+	3/MQ09m3Qen8B4/VQADGU86BKcMe/LpkuGw/Z1wFT1t7PveZUEAjnh1etRrPnec2
+	CXxtq2DWF0SOTMg4eRsy+8nZnxb5V8YdiTvm8tfD62v+5BcS5l74A/CFtBvdGUhL
+	TCVbmxNtDsDIBT1lVfaTByCg/F1WVhVRdDyrf/4nOufGobTHdURCFFTY6zWb0uhU
+	aKd/1WIl6ITTiquxML20XVgkSIacVkGA9bbKemTwztEnrUMQ==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43npuj050m-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 21 Dec 2024 04:31:39 +0000 (GMT)
+	Sat, 21 Dec 2024 05:22:55 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL4VdRO016925
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL5Msw1011087
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 21 Dec 2024 04:31:39 GMT
-Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
+	Sat, 21 Dec 2024 05:22:54 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 20 Dec 2024 20:31:37 -0800
-From: P Praneesh <quic_ppranees@quicinc.com>
+ 15.2.1544.9; Fri, 20 Dec 2024 21:22:52 -0800
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH 14/14] wifi: ath12k: Enable monitor ring mask for QCN9274
-Date: Sat, 21 Dec 2024 10:00:14 +0530
-Message-ID: <20241221043014.1252841-15-quic_ppranees@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH 00/10] wifi: ath12k: Add peer extended Rx statistics debugfs support
+Date: Sat, 21 Dec 2024 10:49:09 +0530
+Message-ID: <20241221051919.686500-1-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
-References: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: UGdnYZOjzWn4mHJ-cVPr0lSeiuimGqUp
-X-Proofpoint-GUID: UGdnYZOjzWn4mHJ-cVPr0lSeiuimGqUp
+X-Proofpoint-GUID: b2joN6KYyM6TP3tNh-LttRAH_b1pqUKx
+X-Proofpoint-ORIG-GUID: b2joN6KYyM6TP3tNh-LttRAH_b1pqUKx
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxscore=0
- lowpriorityscore=0 adultscore=0 mlxlogscore=961 priorityscore=1501
- impostorscore=0 malwarescore=0 bulkscore=0 phishscore=0 spamscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412210035
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
+ bulkscore=0 mlxlogscore=576 phishscore=0 spamscore=0 impostorscore=0
+ suspectscore=0 malwarescore=0 clxscore=1015 priorityscore=1501
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412210043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_203140_422656_8992EF45 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20241220_212258_097349_2A28BBDC 
+X-CRM114-Status: GOOD (  10.02  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,34 +96,70 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-QCN9274's monitor related rings are initialized properly. Hence enabling
-the corresponding ring mask in the hardware params.
+Currently, peer extended Rx statistics are not supported. Peer extended Rx
+statistics are collected form the TLV data reported in the monitor status
+Rx path. Therefore, add support for TLV tag parser handling and debugfs
+to configure and dump the collected information. Additionally, this series
+does not impact the WCN7850.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+Depends-On:
+	[PATCH 0/3] wifi: ath12k: Refactor monitor Rx handler
+	https://lore.kernel.org/all/20241219001006.1036495-1-quic_periyasa@quicinc.com/
 
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/hw.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+	[PATCH 00/14] wifi: ath12k: Enable monitor ring for updating station dump in QCN9274
+	https://lore.kernel.org/all/20241221043014.1252841-1-quic_ppranees@quicinc.com/
 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 14bbd446ad37..a106ebed7870 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -543,7 +543,11 @@ static const struct ath12k_hw_ring_mask ath12k_hw_ring_mask_qcn9274 = {
- 		ATH12K_TX_RING_MASK_3,
- 	},
- 	.rx_mon_dest = {
--		0, 0, 0,
-+		0, 0, 0, 0,
-+		0, 0, 0, 0,
-+		ATH12K_RX_MON_RING_MASK_0,
-+		ATH12K_RX_MON_RING_MASK_1,
-+		ATH12K_RX_MON_RING_MASK_2,
- 	},
- 	.rx = {
- 		0, 0, 0, 0,
+Balamurugan Mahalingam (2):
+  wifi: ath12k: Add EHT MCS support in Extended Rx statistics
+  wifi: ath12k: Refactor the format of peer rate table information
+
+Karthikeyan Periyasamy (7):
+  wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV parsing support
+  wifi: ath12k: Add HAL_PHYRX_GENERIC_EHT_SIG TLV parsing support
+  wifi: ath12k: Add HAL_RX_PPDU_START_USER_INFO TLV parsing support
+  wifi: ath12k: Add HAL_PHYRX_OTHER_RECEIVE_INFO TLV parsing support
+  wifi: ath12k: Update the peer id in PPDU end user stats TLV
+  wifi: ath12k: Add EHT rate statistics support
+  wifi: ath12k: Add peer extended Rx statistics debugfs support
+
+P Praneesh (1):
+  wifi: ath12k: fix the ampdu id fetch in the HAL_RX_MPDU_START TLV
+
+ drivers/net/wireless/ath/ath12k/Makefile      |    2 +-
+ drivers/net/wireless/ath/ath12k/core.h        |   10 +-
+ drivers/net/wireless/ath/ath12k/debugfs.c     |   93 ++
+ drivers/net/wireless/ath/ath12k/debugfs.h     |    9 +
+ drivers/net/wireless/ath/ath12k/debugfs_sta.c |  336 ++++++
+ drivers/net/wireless/ath/ath12k/debugfs_sta.h |   24 +
+ drivers/net/wireless/ath/ath12k/dp_mon.c      | 1054 ++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/dp_rx.c       |   15 +
+ drivers/net/wireless/ath/ath12k/hal_rx.h      |  430 ++++++-
+ drivers/net/wireless/ath/ath12k/mac.c         |   11 +-
+ drivers/net/wireless/ath/ath12k/mac.h         |    4 +-
+ drivers/net/wireless/ath/ath12k/rx_desc.h     |   10 +-
+ 12 files changed, 1942 insertions(+), 56 deletions(-)
+ create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_sta.c
+ create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_sta.h
+
+
+base-commit: 09fa3b6974a1245ddd0751747609431494ba5b4f
+prerequisite-patch-id: 5f5721a4c9f1c26659fd8f09a8eda648d8ecccf5
+prerequisite-patch-id: 59cc2121e734e4e1e7e461a3ae24f3f1f9d0fa02
+prerequisite-patch-id: fdc512e43ea7cb6c097ba4c0d9c661a74c0c2a6f
+prerequisite-patch-id: afb04ab90da26435239077de723d1276946a194a
+prerequisite-patch-id: 1b12bea72973c14f461b8202eed9432f27932876
+prerequisite-patch-id: 58c45a75989f3639042aaf657131089ad8f03a2b
+prerequisite-patch-id: 054756eb1705babff324a743e62685bb78035198
+prerequisite-patch-id: 889c4a0174fac23261705a42b46e923d7e7a0a18
+prerequisite-patch-id: ea0321fbd8a59c09191873f59b6aea8225f4b8e5
+prerequisite-patch-id: 3c8ccb635d319f8755649e445b68feb615fd82c4
+prerequisite-patch-id: d516b2a3196218f42fdf4567516a1fd2c8b4c40f
+prerequisite-patch-id: a2c59b4e468384e27d934a986e5fe9a951685fd9
+prerequisite-patch-id: 359fecf93ef53f39243cc1b3466ab06fbd33cc71
+prerequisite-patch-id: bf0b6542c65299c0bfa7fef2da6f09dd8453c39f
+prerequisite-patch-id: 1dc79cafb399be590d1e418afcc5a719ae35834f
+prerequisite-patch-id: fb1e39f2dce024ff692b0e6b112dc90c6a43ad00
+prerequisite-patch-id: 9ea3943ae0b6e6a5a09cb648eaa35f8087967ac3
 -- 
 2.34.1
 
