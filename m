@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A485E7718B
-	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 04:31:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90669E7718B
+	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 04:31:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=F39O8F92ntSie69On9uSD64p7sJx8tGcVZSzfZXV104=; b=2OOITlugsA4moQfEpZ/RfHEw1M
-	8cOTZimxZjreiAZAkRiSpG+HhKd7nQ9DiCJuXJIFr2nrorwuwzdxM2B2HzCdg5rnAljg4vYXzxWhK
-	8hPN7f0N/wN+y8jCXr17tKdj93BdEjAH63brJRC9K0HZPjmtifGdFV0l+693S9qrzGakfmWrItTaX
-	TL1oYvyeMXtq+AYBIkwyJXRjYpCT4KLVYeH/0JRV/YDn//p9QLauOFv4Jv+4lxDo31Wu1IpZvfzku
-	YOHw0wuF15D0ejHWifVIWM6c+DOj+nM/O5LIaJH+4QN1hhXhqYDEUCSYTJC/4HpvP8CzIXh71S1fe
-	DUWNRylQ==;
+	bh=wFPH19U57bMJl0mHHRuV0xiYp+JLOwJFCA4VbCUHSyw=; b=s/3foyIv8XFlrSjy+VLVDZwDY1
+	AVX3qIvHRCIVd5Y0CfsOMVN1NthgdAuHDwd6NOiKdoUm+m++XrDHoHV3bd7FmkTMCm/NX2ivmXQo7
+	HOtr0PyDQbzHxENzyn2RF3Qs70gxDr6tT0eyl2DYdLbXne/QE27k43GAdScPHJn+7Tm4KnS/iF3d7
+	N/fxkCBB63VMBdl/DIsSz0VyO+lu80jh7wc5NUUyCsNVLb7l/DqKXj6w4Jzslr7GibfQCDHGRdgi2
+	k+xb4ML8fZzWE1xcyjyZeTuh5ZUZwAGCgXqNP+sI8YXA5J+Z8s0YLWNqMfdj7V82X5ZP2L0GwKpm/
+	kftKFhkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOr8r-00000006XO6-3dHw
+	id 1tOr8v-00000006XP5-13G1
 	for ath12k@archiver.kernel.org;
-	Sat, 21 Dec 2024 04:31:05 +0000
+	Sat, 21 Dec 2024 04:31:09 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOr8p-00000006XNa-2WnC
+	id 1tOr8s-00000006XOP-2vII
 	for ath12k@lists.infradead.org;
-	Sat, 21 Dec 2024 04:31:04 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BL3YYqr001046;
-	Sat, 21 Dec 2024 04:31:03 GMT
+	Sat, 21 Dec 2024 04:31:07 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BKLgmRR012342;
+	Sat, 21 Dec 2024 04:31:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	F39O8F92ntSie69On9uSD64p7sJx8tGcVZSzfZXV104=; b=RPlz4IugMboCDknd
-	X2W4zXXixAbJZp/DDyPBnA/nzlND4KrOpqLDRQyVS0rGkr5FnKELNc/7DvML5Tmj
-	B0L7B/GU9wkw5rrFPi45Wui2fgsyULNFV/WLDmn2J3nGDm6IgVMHUe4LoNZrc33U
-	aL0Jx23+dCRWLOX919dasKW1tpeaYIkMYpaP92zdRL9WyUDugAF74S3kVdaKITlS
-	BIxjjk1rNS+BZ4KBPj6CyHzrEg9zTCnc8Y64uKLY9G6rCE4s2X6qmp2AtNEnFoav
-	9YSV5te51ouOChflmaZaI3DBX7cq1AvNIeNdN+H5tSrVgiTWKVMOYMXolwms0/Ns
-	Ey8R5g==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43nnw1g3f4-1
+	wFPH19U57bMJl0mHHRuV0xiYp+JLOwJFCA4VbCUHSyw=; b=gQTMNV+1TUbcveKF
+	98T0CrjVv/GHlm4S3VPpgWR9liuGcMun2VSBr7sKzEah9GOy7kQQPY5zcm+Zl/Qa
+	w/KaVD+plk7xvKb3akHIof3Qhj2dT1vBVVJ9WGOBUwxYKnRfvViv1leXjsxbuKO2
+	8RC2NE8PcPoUaWXIi8ywcUb7fbLgJfxqj3v3wEWaQfVBq3XkgjE7hkod3R0AWzvi
+	i7Nx+PSua3l2Mi8sjZwnu/oggfSdIH+I18sji9V3sk7sAG3zXTPkEZwg+UaF3lJz
+	3HH1Fu601AT1VFC4peuAigKpMa0sUUdIEE2pTo6+dLv9aPDWzAJxBOyPtkrXcQt+
+	G7SDEg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43ngr08nj3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 21 Dec 2024 04:31:02 +0000 (GMT)
+	Sat, 21 Dec 2024 04:31:06 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL4V2FA008106
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BL4V5Pd012847
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 21 Dec 2024 04:31:02 GMT
+	Sat, 21 Dec 2024 04:31:05 GMT
 Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 20 Dec 2024 20:31:00 -0800
+ 15.2.1544.9; Fri, 20 Dec 2024 20:31:03 -0800
 From: P Praneesh <quic_ppranees@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH 01/14] wifi: ath12k: Add HTT source ring ID for monitor rings
-Date: Sat, 21 Dec 2024 10:00:01 +0530
-Message-ID: <20241221043014.1252841-2-quic_ppranees@quicinc.com>
+Subject: [PATCH 02/14] wifi: ath12k: Enable filter config for monitor destination ring
+Date: Sat, 21 Dec 2024 10:00:02 +0530
+Message-ID: <20241221043014.1252841-3-quic_ppranees@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
 References: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: nUfYYEMBoYtUfFOzR5To_qshz1DFEtkm
-X-Proofpoint-ORIG-GUID: nUfYYEMBoYtUfFOzR5To_qshz1DFEtkm
+X-Proofpoint-ORIG-GUID: rt9_SMgNL7Jx9EqFE8UGf1xtXzLb6K3g
+X-Proofpoint-GUID: rt9_SMgNL7Jx9EqFE8UGf1xtXzLb6K3g
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=999
- mlxscore=0 malwarescore=0 impostorscore=0 bulkscore=0 lowpriorityscore=0
- phishscore=0 priorityscore=1501 suspectscore=0 spamscore=0 adultscore=0
+ spamscore=0 priorityscore=1501 bulkscore=0 phishscore=0 impostorscore=0
+ lowpriorityscore=0 malwarescore=0 adultscore=0 suspectscore=0 mlxscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
  definitions=main-2412210035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_203103_657047_066E7B21 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20241220_203106_752695_F03442EC 
+X-CRM114-Status: GOOD (  16.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,83 +97,220 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add source buffer ring and destination buffer ring ID for monitor rings.
-These IDs are used for ring configuration during initial ring setup.
-
-Since monitor rings are enabled based on the rxdma1_enable flag, enable it
-in the hardware param for the QCN9274 version 2 hardware and increase the
-destination ring size to handle MSDU data buffers.
+Add provision to configure monitor filter for the destination
+ring. These filters are used for requesting statistics or monitor mode
+through the monitor destination ring.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.h    | 5 ++++-
- drivers/net/wireless/ath/ath12k/dp_tx.c | 4 ++--
- drivers/net/wireless/ath/ath12k/hw.c    | 2 +-
- 3 files changed, 7 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp.h    | 49 +++++++++++++++-
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 75 ++++++++++++++++++++-----
+ 2 files changed, 109 insertions(+), 15 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index b178921aaf1d..475c053faaa1 100644
+index 475c053faaa1..787e8e20658f 100644
 --- a/drivers/net/wireless/ath/ath12k/dp.h
 +++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -176,7 +176,7 @@ struct ath12k_pdev_dp {
- #define DP_RXDMA_ERR_DST_RING_SIZE	1024
- #define DP_RXDMA_MON_STATUS_RING_SIZE	1024
- #define DP_RXDMA_MONITOR_BUF_RING_SIZE	4096
--#define DP_RXDMA_MONITOR_DST_RING_SIZE	2048
-+#define DP_RXDMA_MONITOR_DST_RING_SIZE	8092
- #define DP_RXDMA_MONITOR_DESC_RING_SIZE	4096
- #define DP_TX_MONITOR_BUF_RING_SIZE	4096
- #define DP_TX_MONITOR_DEST_RING_SIZE	2048
-@@ -434,8 +434,11 @@ enum htt_srng_ring_id {
- 	HTT_HOST1_TO_FW_RXBUF_RING,
- 	HTT_HOST2_TO_FW_RXBUF_RING,
- 	HTT_RXDMA_NON_MONITOR_DEST_RING,
-+	HTT_RXDMA_HOST_BUF_RING2,
- 	HTT_TX_MON_HOST2MON_BUF_RING,
- 	HTT_TX_MON_MON2HOST_DEST_RING,
-+	HTT_RX_MON_HOST2MON_BUF_RING,
-+	HTT_RX_MON_MON2HOST_DEST_RING,
+@@ -770,8 +770,22 @@ enum htt_stats_internal_ppdu_frametype {
+ #define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_RING_ID	GENMASK(23, 16)
+ #define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_SS		BIT(24)
+ #define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_PS		BIT(25)
+-#define HTT_RX_RING_SELECTION_CFG_CMD_INFO1_BUF_SIZE	GENMASK(15, 0)
+-#define HTT_RX_RING_SELECTION_CFG_CMD_OFFSET_VALID      BIT(26)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_OFFSET_VALID	BIT(26)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_DROP_THRES_VAL	BIT(27)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO0_EN_RXMON		BIT(28)
++
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO1_BUF_SIZE		GENMASK(15, 0)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_MGMT	GENMASK(18, 16)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_CTRL	GENMASK(21, 19)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_DATA	GENMASK(24, 22)
++
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO2_DROP_THRESHOLD	GENMASK(9, 0)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO2_EN_LOG_MGMT_TYPE	BIT(17)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO2_EN_CTRL_TYPE	BIT(18)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO2_EN_LOG_DATA_TYPE	BIT(19)
++
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO3_EN_TLV_PKT_OFFSET	BIT(0)
++#define HTT_RX_RING_SELECTION_CFG_CMD_INFO3_PKT_TLV_OFFSET	GENMASK(14, 1)
+ 
+ #define HTT_RX_RING_SELECTION_CFG_RX_PACKET_OFFSET      GENMASK(15, 0)
+ #define HTT_RX_RING_SELECTION_CFG_RX_HEADER_OFFSET      GENMASK(31, 16)
+@@ -800,6 +814,7 @@ enum htt_rx_filter_tlv_flags {
+ 	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS	= BIT(10),
+ 	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS_EXT	= BIT(11),
+ 	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_STATUS_DONE	= BIT(12),
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_START_USER_INFO	= BIT(13),
  };
  
- /* host -> target  HTT_SRING_SETUP message
+ enum htt_rx_mgmt_pkt_filter_tlv_flags0 {
+@@ -1088,6 +1103,21 @@ enum htt_rx_data_pkt_filter_tlv_flasg3 {
+ 		HTT_RX_FILTER_TLV_FLAGS_PER_MSDU_HEADER | \
+ 		HTT_RX_FILTER_TLV_FLAGS_ATTENTION)
+ 
++#define HTT_RX_MON_FILTER_TLV_FLAGS_MON_DEST_RING \
++	(HTT_RX_FILTER_TLV_FLAGS_MPDU_START | \
++	HTT_RX_FILTER_TLV_FLAGS_MSDU_START | \
++	HTT_RX_FILTER_TLV_FLAGS_RX_PACKET | \
++	HTT_RX_FILTER_TLV_FLAGS_MSDU_END | \
++	HTT_RX_FILTER_TLV_FLAGS_MPDU_END | \
++	HTT_RX_FILTER_TLV_FLAGS_PACKET_HEADER | \
++	HTT_RX_FILTER_TLV_FLAGS_PER_MSDU_HEADER | \
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_START | \
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END | \
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS | \
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS_EXT | \
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_END_STATUS_DONE | \
++	HTT_RX_FILTER_TLV_FLAGS_PPDU_START_USER_INFO)
++
+ /* msdu start. mpdu end, attention, rx hdr tlv's are not subscribed */
+ #define HTT_RX_TLV_FLAGS_RXDMA_RING \
+ 		(HTT_RX_FILTER_TLV_FLAGS_MPDU_START | \
+@@ -1116,6 +1146,10 @@ struct htt_rx_ring_selection_cfg_cmd {
+ 	__le32 info3;
+ } __packed;
+ 
++#define HTT_RX_RING_TLV_DROP_THRESHOLD_VALUE	32
++#define HTT_RX_RING_DEFAULT_DMA_LENGTH		0x7
++#define HTT_RX_RING_PKT_TLV_OFFSET		0x1
++
+ struct htt_rx_ring_tlv_filter {
+ 	u32 rx_filter; /* see htt_rx_filter_tlv_flags */
+ 	u32 pkt_filter_flags0; /* MGMT */
+@@ -1133,6 +1167,17 @@ struct htt_rx_ring_tlv_filter {
+ 	u16 rx_mpdu_start_wmask;
+ 	u16 rx_mpdu_end_wmask;
+ 	u32 rx_msdu_end_wmask;
++	u32 conf_len_ctrl;
++	u32 conf_len_mgmt;
++	u32 conf_len_data;
++	u16 rx_drop_threshold;
++	bool enable_log_mgmt_type;
++	bool enable_log_ctrl_type;
++	bool enable_log_data_type;
++	bool enable_rx_tlv_offset;
++	u16 rx_tlv_offset;
++	bool drop_threshold_valid;
++	bool rxmon_disable;
+ };
+ 
+ #define HTT_STATS_FRAME_CTRL_TYPE_MGMT  0x0
 diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index a8d341a6df01..13bc2d92e09c 100644
+index 13bc2d92e09c..b8f0df6f7a05 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -814,7 +814,7 @@ ath12k_dp_tx_get_ring_id_type(struct ath12k_base *ab,
- 		*htt_ring_type = HTT_HW_TO_SW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_BUF:
--		*htt_ring_id = HTT_RXDMA_MONITOR_BUF_RING;
-+		*htt_ring_id = HTT_RX_MON_HOST2MON_BUF_RING;
- 		*htt_ring_type = HTT_SW_TO_HW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_STATUS:
-@@ -822,7 +822,7 @@ ath12k_dp_tx_get_ring_id_type(struct ath12k_base *ab,
- 		*htt_ring_type = HTT_SW_TO_HW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_DST:
--		*htt_ring_id = HTT_RXDMA_MONITOR_DEST_RING;
-+		*htt_ring_id = HTT_RX_MON_MON2HOST_DEST_RING;
- 		*htt_ring_type = HTT_HW_TO_SW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_DESC:
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index b7b583fadb5a..14bbd446ad37 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1035,7 +1035,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+@@ -1077,15 +1077,46 @@ int ath12k_dp_tx_htt_rx_filter_setup(struct ath12k_base *ab, u32 ring_id,
+ 	cmd->info0 |= le32_encode_bits(!!(params.flags & HAL_SRNG_FLAGS_DATA_TLV_SWAP),
+ 				       HTT_RX_RING_SELECTION_CFG_CMD_INFO0_PS);
+ 	cmd->info0 |= le32_encode_bits(tlv_filter->offset_valid,
+-				       HTT_RX_RING_SELECTION_CFG_CMD_OFFSET_VALID);
++				       HTT_RX_RING_SELECTION_CFG_CMD_INFO0_OFFSET_VALID);
++	cmd->info0 |=
++		le32_encode_bits(tlv_filter->drop_threshold_valid,
++				 HTT_RX_RING_SELECTION_CFG_CMD_INFO0_DROP_THRES_VAL);
++	cmd->info0 |= le32_encode_bits(!tlv_filter->rxmon_disable,
++				       HTT_RX_RING_SELECTION_CFG_CMD_INFO0_EN_RXMON);
++
+ 	cmd->info1 = le32_encode_bits(rx_buf_size,
+ 				      HTT_RX_RING_SELECTION_CFG_CMD_INFO1_BUF_SIZE);
++	cmd->info1 |= le32_encode_bits(tlv_filter->conf_len_mgmt,
++				       HTT_RX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_MGMT);
++	cmd->info1 |= le32_encode_bits(tlv_filter->conf_len_ctrl,
++				       HTT_RX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_CTRL);
++	cmd->info1 |= le32_encode_bits(tlv_filter->conf_len_data,
++				       HTT_RX_RING_SELECTION_CFG_CMD_INFO1_CONF_LEN_DATA);
+ 	cmd->pkt_type_en_flags0 = cpu_to_le32(tlv_filter->pkt_filter_flags0);
+ 	cmd->pkt_type_en_flags1 = cpu_to_le32(tlv_filter->pkt_filter_flags1);
+ 	cmd->pkt_type_en_flags2 = cpu_to_le32(tlv_filter->pkt_filter_flags2);
+ 	cmd->pkt_type_en_flags3 = cpu_to_le32(tlv_filter->pkt_filter_flags3);
+ 	cmd->rx_filter_tlv = cpu_to_le32(tlv_filter->rx_filter);
  
- 		.hal_params = &ath12k_hw_hal_params_qcn9274,
++	cmd->info2 = le32_encode_bits(tlv_filter->rx_drop_threshold,
++				      HTT_RX_RING_SELECTION_CFG_CMD_INFO2_DROP_THRESHOLD);
++	cmd->info2 |=
++		le32_encode_bits(tlv_filter->enable_log_mgmt_type,
++				 HTT_RX_RING_SELECTION_CFG_CMD_INFO2_EN_LOG_MGMT_TYPE);
++	cmd->info2 |=
++		le32_encode_bits(tlv_filter->enable_log_ctrl_type,
++				 HTT_RX_RING_SELECTION_CFG_CMD_INFO2_EN_CTRL_TYPE);
++	cmd->info2 |=
++		le32_encode_bits(tlv_filter->enable_log_data_type,
++				 HTT_RX_RING_SELECTION_CFG_CMD_INFO2_EN_LOG_DATA_TYPE);
++
++	cmd->info3 =
++		le32_encode_bits(tlv_filter->enable_rx_tlv_offset,
++				 HTT_RX_RING_SELECTION_CFG_CMD_INFO3_EN_TLV_PKT_OFFSET);
++	cmd->info3 |=
++		le32_encode_bits(tlv_filter->rx_tlv_offset,
++				 HTT_RX_RING_SELECTION_CFG_CMD_INFO3_PKT_TLV_OFFSET);
++
+ 	if (tlv_filter->offset_valid) {
+ 		cmd->rx_packet_offset =
+ 			le32_encode_bits(tlv_filter->rx_packet_offset,
+@@ -1210,15 +1241,28 @@ int ath12k_dp_tx_htt_monitor_mode_ring_config(struct ath12k *ar, bool reset)
+ int ath12k_dp_tx_htt_rx_monitor_mode_ring_config(struct ath12k *ar, bool reset)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+-	struct ath12k_dp *dp = &ab->dp;
+ 	struct htt_rx_ring_tlv_filter tlv_filter = {0};
+-	int ret, ring_id;
++	int ret, ring_id, i;
  
--		.rxdma1_enable = false,
-+		.rxdma1_enable = true,
- 		.num_rxdma_per_pdev = 1,
- 		.num_rxdma_dst_ring = 0,
- 		.rx_mac_buf_ring = false,
+-	ring_id = dp->rxdma_mon_buf_ring.refill_buf_ring.ring_id;
+ 	tlv_filter.offset_valid = false;
+ 
+ 	if (!reset) {
+-		tlv_filter.rx_filter = HTT_RX_MON_FILTER_TLV_FLAGS_MON_BUF_RING;
++		tlv_filter.rx_filter = HTT_RX_MON_FILTER_TLV_FLAGS_MON_DEST_RING;
++
++		tlv_filter.drop_threshold_valid = true;
++		tlv_filter.rx_drop_threshold = HTT_RX_RING_TLV_DROP_THRESHOLD_VALUE;
++
++		tlv_filter.enable_log_mgmt_type = true;
++		tlv_filter.enable_log_ctrl_type = true;
++		tlv_filter.enable_log_data_type = true;
++
++		tlv_filter.conf_len_ctrl = HTT_RX_RING_DEFAULT_DMA_LENGTH;
++		tlv_filter.conf_len_mgmt = HTT_RX_RING_DEFAULT_DMA_LENGTH;
++		tlv_filter.conf_len_data = HTT_RX_RING_DEFAULT_DMA_LENGTH;
++
++		tlv_filter.enable_rx_tlv_offset = true;
++		tlv_filter.rx_tlv_offset = HTT_RX_RING_PKT_TLV_OFFSET;
++
+ 		tlv_filter.pkt_filter_flags0 =
+ 					HTT_RX_MON_FP_MGMT_FILTER_FLAGS0 |
+ 					HTT_RX_MON_MO_MGMT_FILTER_FLAGS0;
+@@ -1236,14 +1280,19 @@ int ath12k_dp_tx_htt_rx_monitor_mode_ring_config(struct ath12k *ar, bool reset)
+ 	}
+ 
+ 	if (ab->hw_params->rxdma1_enable) {
+-		ret = ath12k_dp_tx_htt_rx_filter_setup(ar->ab, ring_id, 0,
+-						       HAL_RXDMA_MONITOR_BUF,
+-						       DP_RXDMA_REFILL_RING_SIZE,
+-						       &tlv_filter);
+-		if (ret) {
+-			ath12k_err(ab,
+-				   "failed to setup filter for monitor buf %d\n", ret);
+-			return ret;
++		for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++			ring_id = ar->dp.rxdma_mon_dst_ring[i].ring_id;
++			ret = ath12k_dp_tx_htt_rx_filter_setup(ar->ab, ring_id,
++							       ar->dp.mac_id + i,
++							       HAL_RXDMA_MONITOR_DST,
++							       DP_RXDMA_REFILL_RING_SIZE,
++							       &tlv_filter);
++			if (ret) {
++				ath12k_err(ab,
++					   "failed to setup filter for monitor buf %d\n",
++					   ret);
++				return ret;
++			}
+ 		}
+ 	}
+ 
 -- 
 2.34.1
 
