@@ -4,81 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41D94E7718E
-	for <ath12k@archiver.kernel.org>; Sat, 21 Dec 2024 22:58:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65022E7718D
+	for <ath12k@archiver.kernel.org>; Sun, 22 Dec 2024 05:15:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4ZZsEtsR+YBKkr8WzrgNfaB9kENsWSc6+W3p9fHWoik=; b=dkvmbKzXb9NIQpIjMG5RRW+erU
-	R973NoHySChdpfgc1xy15tuiVGdDhEkDeV3PYURPLwiBk7X2QgihJsBlIi13l0lBRT+hA1H3GWlBD
-	1tNKy24C0oQfxi5Hbo3qMHiqFQXQGAHrUbJeKqxf2I+CH/8+DaoRXCzHke+ibpzi9Mp8PspBGFcPB
-	rTsaplH3uV0eoP0EYwMpV4iqtMpEnDGl8yoi3fmDeOp6DBfAnuym/F1oksVXYfi9/tUpUeAPEXsjg
-	YSE37/iY3GFDfxMNkJAlrR/2QyYDZ9QpHtuQz4hHLBszY1jV/So+QUbcBrZefx31VcviDF8y5Os0y
-	caaxA7Kg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=FJD8CPuQLSldriTVGo7C7OBA7v1i+n1ZbzEx8vSxzqY=; b=B0yAP9u0n8hI/XvXNUxtFVUdpl
+	MWCq9ZElu4Oyj0m72KOS8crXGN2yMoOhcQTdWlzpVibsW9RHJm8onwfDzzK3dwiAEl0JoKi7+WtAb
+	+KnRfYmUnKF9wq0kYRX2tpVf1AgMAT+N4hrFOc9dlP+vLijcWLUuTi1j7FON1ZE6kYBnWwqZprfYg
+	h2YBAYHIlfZSVzUyNrlVUvavDaYSj16AGi/Tgszp2cylwCaiskH+ONbOYXIIXY3OCx3piwU6Z3/2Q
+	yZqqT2SlDv0KxPtdBQEzdy7Ye9pAuTjx+sg22FQNAL597P5RhOq6Swk40hSsQIOgthBJC8SocZzXL
+	rwjeJHvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tP8Q8-00000007Wi7-3hPv
+	id 1tPEJY-00000007q9M-0W28
 	for ath12k@archiver.kernel.org;
-	Sat, 21 Dec 2024 22:58:04 +0000
-Received: from [198.175.65.19] (helo=mgamail.intel.com)
+	Sun, 22 Dec 2024 05:15:40 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tP8Q5-00000007Whf-3OhG
+	id 1tPEJU-00000007q8z-3aMP
 	for ath12k@lists.infradead.org;
-	Sat, 21 Dec 2024 22:58:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1734821882; x=1766357882;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=nsobIdYYKnBKr5gNA7nnnirRHkdS/46BhbK2G8cNw3w=;
-  b=RhDwjrT5xNY4Cr0Y2JOMgn1Ud/wTbtLABg9tr/nnvzyC62EuN595wTE4
-   fn0GgjlFliq7f3Gjp3FyOQpCLAc/k1OZV6i84QEQRwmVUnKFgyGFu8RVv
-   HX4WaK7Odbr0llxIpJMCSr/gz+wLX0P+usnAN0KLgE4mJf9g5m4Ehhy+u
-   ZVE/T15kLSh8rnvNJiKTaiy5bepfKTGEc17YcmjkCzuJKWx3k3rV05xWn
-   87S4Yrd5BuQnupkyiSHVjyI5lhQNyZjqrSOuqbHaCf+ubymONy/Mxt6/k
-   ucrC1JGr0WAWfIG92HGXx3M/I2mnI7AhYwB9IbuuldkrLEju3nRTdDgwq
-   g==;
-X-CSE-ConnectionGUID: xfwvSKbsSsO9bhfxjILerQ==
-X-CSE-MsgGUID: OJ4AiQX+TPKpUbGiQ6w28Q==
-X-IronPort-AV: E=McAfee;i="6700,10204,11293"; a="35217361"
-X-IronPort-AV: E=Sophos;i="6.12,254,1728975600"; 
-   d="scan'208";a="35217361"
-Received: from orviesa006.jf.intel.com ([10.64.159.146])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Dec 2024 14:57:56 -0800
-X-CSE-ConnectionGUID: 7Q2MCnAjTuKTAQM+6Hx+3Q==
-X-CSE-MsgGUID: FjVqoHYZRTOwi3r4W+PB+w==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,254,1728975600"; 
-   d="scan'208";a="98910103"
-Received: from lkp-server01.sh.intel.com (HELO a46f226878e0) ([10.239.97.150])
-  by orviesa006.jf.intel.com with ESMTP; 21 Dec 2024 14:57:54 -0800
-Received: from kbuild by a46f226878e0 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tP8Pv-0002YJ-2T;
-	Sat, 21 Dec 2024 22:57:51 +0000
-Date: Sun, 22 Dec 2024 06:56:59 +0800
-From: kernel test robot <lkp@intel.com>
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
-	ath12k@lists.infradead.org
-Cc: oe-kbuild-all@lists.linux.dev, linux-wireless@vger.kernel.org,
-	Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
-	Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
-	Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: Re: [PATCH 1/2] wifi: ath12k: Add Support to Parse TPC Event from
- Firmware
-Message-ID: <202412220617.gNBV4iPi-lkp@intel.com>
-References: <20241220203638.2082002-2-quic_rdevanat@quicinc.com>
+	Sun, 22 Dec 2024 05:15:38 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BM0t78l020953
+	for <ath12k@lists.infradead.org>; Sun, 22 Dec 2024 05:15:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	FJD8CPuQLSldriTVGo7C7OBA7v1i+n1ZbzEx8vSxzqY=; b=IiWsH9s/VPzWfeOj
+	V1IkxkE+BfoJOR/vV96Sf3wieOKNrf1k8ad3MqTgUQ5ZmfHdT6JC8UgTBuVwNPHc
+	Re1aAdLXnnF0O0R7xiQErwUp/bIfZxgZA9AXVVoagDgVheHfnAukVzfoOVWE7MQY
+	42pWhL3wlvL6x5o1xKkpxRFgbrldFxRbAwaGv8jcJ7ebOxDzymnmDCSA2g9emkFL
+	L0ZeIw2kCbTLtEJVTT1H3WDrYQIwzH7QcuOUNTa7UUMzP1rRMy+MUI5tY2FgJQFT
+	pHhR7rbEho60RZJDBV8G2WOgXCkuW+5d6EDYoLQE+7keI0JPrVJL/6Q5osSFUbtq
+	hsO2aw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43p6v90k3x-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Sun, 22 Dec 2024 05:15:34 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BM5FYZl008170
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Sun, 22 Dec 2024 05:15:34 GMT
+Received: from [10.50.24.202] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 21 Dec
+ 2024 21:15:32 -0800
+Message-ID: <12dd8c67-9817-f189-738b-87d3533998c9@quicinc.com>
+Date: Sun, 22 Dec 2024 10:45:23 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20241220203638.2082002-2-quic_rdevanat@quicinc.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 03/14] wifi: ath12k: Avoid multiple times configuring
+ monitor filter
+To: <ath12k@lists.infradead.org>
+References: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
+ <20241221043014.1252841-4-quic_ppranees@quicinc.com>
+Content-Language: en-US
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <20241221043014.1252841-4-quic_ppranees@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: v4I5TREOSDsq_8j3tvdSX34j3BilEEct
+X-Proofpoint-ORIG-GUID: v4I5TREOSDsq_8j3tvdSX34j3BilEEct
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=999
+ impostorscore=0 phishscore=0 priorityscore=1501 spamscore=0 bulkscore=0
+ adultscore=0 mlxscore=0 suspectscore=0 lowpriorityscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2412220044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241221_145802_173218_B686902C 
-X-CRM114-Status: UNSURE (   8.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241221_211536_951508_4B6BF4C3 
+X-CRM114-Status: GOOD (  15.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,79 +100,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Roopni,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on 09fa3b6974a1245ddd0751747609431494ba5b4f]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Roopni-Devanathan/wifi-ath12k-Add-Support-to-Parse-TPC-Event-from-Firmware/20241221-043752
-base:   09fa3b6974a1245ddd0751747609431494ba5b4f
-patch link:    https://lore.kernel.org/r/20241220203638.2082002-2-quic_rdevanat%40quicinc.com
-patch subject: [PATCH 1/2] wifi: ath12k: Add Support to Parse TPC Event from Firmware
-config: arm64-defconfig (https://download.01.org/0day-ci/archive/20241222/202412220617.gNBV4iPi-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241222/202412220617.gNBV4iPi-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202412220617.gNBV4iPi-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   drivers/net/wireless/ath/ath12k/wmi.c: In function 'ath12k_wmi_free_tpc_stats_mem':
->> drivers/net/wireless/ath/ath12k/wmi.c:7668:50: error: 'struct ath12k' has no member named 'debug'
-    7668 |         struct wmi_tpc_stats_info *tpc_stats = ar->debug.tpc_stats;
-         |                                                  ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7678:19: error: 'struct ath12k' has no member named 'debug'
-    7678 |                 ar->debug.tpc_stats = NULL;
-         |                   ^~
-   drivers/net/wireless/ath/ath12k/wmi.c: In function 'ath12k_process_tpc_stats':
-   drivers/net/wireless/ath/ath12k/wmi.c:7722:16: error: 'struct ath12k' has no member named 'debug'
-    7722 |         if (!ar->debug.tpc_request) {
-         |                ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7726:23: error: 'struct ath12k' has no member named 'debug'
-    7726 |                 if (ar->debug.tpc_stats) {
-         |                       ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7735:23: error: 'struct ath12k' has no member named 'debug'
-    7735 |                 if (ar->debug.tpc_stats) {
-         |                       ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7740:19: error: 'struct ath12k' has no member named 'debug'
-    7740 |                 ar->debug.tpc_stats =
-         |                   ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7743:24: error: 'struct ath12k' has no member named 'debug'
-    7743 |                 if (!ar->debug.tpc_stats) {
-         |                        ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7750:23: error: 'struct ath12k' has no member named 'debug'
-    7750 |         tpc_stats = ar->debug.tpc_stats;
-         |                       ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7776:29: error: 'struct ath12k' has no member named 'debug'
-    7776 |                 complete(&ar->debug.tpc_complete);
-         |                             ^~
 
 
-vim +7668 drivers/net/wireless/ath/ath12k/wmi.c
+On 12/21/2024 10:00 AM, P Praneesh wrote:
+> ath12k_mac_op_configure_filter() gets called multiple times during
+> interface bringup. Applying filter configuration from this function leads
+> to writing same filter configurations multiple times.
+> 
+> Fix it by moving the filter configuration to ath12k_mac_op_start().
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+> ---
+>   drivers/net/wireless/ath/ath12k/mac.c | 55 ++++++++++++++-------------
+>   1 file changed, 29 insertions(+), 26 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+> index 6f10813d9378..2cb6e9b529d7 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -7237,8 +7237,34 @@ void ath12k_mac_drain_tx(struct ath12k *ar)
+>   
+>   static int ath12k_mac_config_mon_status_default(struct ath12k *ar, bool enable)
+>   {
+> -	return -EOPNOTSUPP;
+> -	/* TODO: Need to support new monitor mode */
+> +	struct htt_rx_ring_tlv_filter tlv_filter = {};
+> +	struct ath12k_base *ab = ar->ab;
+> +	u32 ring_id, i;
+> +	int ret = 0;
+> +
+> +	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+> +
+> +	if (!ab->hw_params->rxdma1_enable)
+> +		return ret;
+> +
+> +	if (enable)
+> +		tlv_filter = ath12k_mac_mon_status_filter_default;
 
-  7665	
-  7666	void ath12k_wmi_free_tpc_stats_mem(struct ath12k *ar)
-  7667	{
-> 7668		struct wmi_tpc_stats_info *tpc_stats = ar->debug.tpc_stats;
-  7669	
-  7670		lockdep_assert_held(&ar->data_lock);
-  7671		ath12k_dbg(ar->ab, ATH12K_DBG_WMI, "tpc stats mem free\n");
-  7672		if (tpc_stats) {
-  7673			kfree(tpc_stats->max_reg_allowed_power.reg_pwr_array);
-  7674			kfree(tpc_stats->rates_array1.rate_array);
-  7675			kfree(tpc_stats->rates_array2.rate_array);
-  7676			kfree(tpc_stats->ctl_array.ctl_pwr_table);
-  7677			kfree(tpc_stats);
-  7678			ar->debug.tpc_stats = NULL;
-  7679		}
-  7680	}
-  7681	
+No need to disable the filter in the else case like below ?
+
+tlv_filter.rxmon_disable = true;
+
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
