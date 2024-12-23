@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CC0BE7718F
-	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 06:02:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F13C0E7718D
+	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 06:02:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bwBAlWdLm/ZrxIwm4bMfyTlx/G2eqBfVTVg0OLjo/kA=; b=TZoX5XVK2smmIeSHlwdCMErcEE
-	2ZTSc3qWoQSwHix6WgrkCN5jLmBBxyLzng0YjIIXFO/KCwl5lonePLGVOuhERhIL2hhA5bQPhMy0R
-	F8BC38Lh4E5LiqpcQvK58+E4Yzg9wsyBsQsKeELe6jEAwEAejuyeZUgk+9tAi5yfcPo2QKy0AT4lc
-	q5PhmvezVrapglyGLhIgSZ3NyX511dWu4gE7v7xFDaBRaGvcWqkHLvY+Y4LdbCJLXxJ3NhJuHPiW8
-	Aj99csXYsLg+hEko4kttMPgrcDofOTzmpD7N9nljOtP4Aft+TgpFXznwXRW7SwwwLJsLSYtLEL/UF
-	FKg/QHAQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=J5mP4p+HWYZf73Sj9F0DdpPky+siigckD53zfda/AbI=; b=RDuc37SxRk8erU3/y27A4f2WJW
+	PJmI267gEf3FBqZWJmTHxKur3g+VI0cmZVdBx1qzb92p6BOc9tFMT74lcfmv8gY8HGGGxnKgkaSLC
+	fySnqjv2ZYIbigQEYC8ytZHIGKh+7lRTkwQOCjdxbKM6j0SNJ8ScYhpu45sqxg++M1ytkrpGpXG/5
+	1HMw7IsqdCpGHxOFFTkyc7mN6kGi4BIOT+OrgPyuyG8gQYOSrT+KPns6Sd5kCU27KPGMeBUX6zj9n
+	qYPLjpUQnLeBrDKjuh3UdMKerYmJ//W6zj2hUHH8UgffrvdPUC7+Ynh9whacqUu+R/OLmzl5Lij7X
+	DaLt+deQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPbWD-00000009NXM-0kro
+	id 1tPbWC-00000009NWo-2t6J
 	for ath12k@archiver.kernel.org;
-	Mon, 23 Dec 2024 06:02:17 +0000
+	Mon, 23 Dec 2024 06:02:16 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPbW7-00000009NQf-3eKp
+	id 1tPbW5-00000009NOO-3dyI
 	for ath12k@lists.infradead.org;
-	Mon, 23 Dec 2024 06:02:13 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN2ruWq024937;
-	Mon, 23 Dec 2024 06:02:11 GMT
+	Mon, 23 Dec 2024 06:02:11 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BML7iqN026695;
+	Mon, 23 Dec 2024 06:02:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	bwBAlWdLm/ZrxIwm4bMfyTlx/G2eqBfVTVg0OLjo/kA=; b=mZ9zpiuFqHd9igfK
-	Icx+2R/4BKyaFLdqtZmnFhRp2E7NozIgF5FgRndcmYbXm9/+JP5ctVcSr1sIXWgb
-	7VOPs9pFj6LeqgNr2QAjCvp0UgPP0+Z9qf+KxtJJe/BdVzVWojtyZ9Qwj4WBPm/k
-	JBaVsaEGAffJtg6NAENR4sEc1X4woTt54u8KVpbcBfis8ICWOWScL6PtCsmO6HoV
-	OYXmiBDi3f9IPDI+5pqYt72HISpDVZXfEc8970VAai83KMFscDT+paqAPeYe/odF
-	7w9eyKc5Tj5pAOwVhOqBzjiNlTTOzsgrviBalGXZ3d+MZg4DyCTebI6R1PdvQ2Wz
-	iJM/oA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43pyft0k17-1
+	J5mP4p+HWYZf73Sj9F0DdpPky+siigckD53zfda/AbI=; b=S+kh6jYyMJ5mgOvv
+	hpXG900xeU4qloU3UFA74htg50e4oGEk8YAiVuve56ONaxepxVrkF2jSHcg/s1TE
+	V7ZLhhT77CFqYdjba6pmQFhYSbx0YyWntUx2LrTl9mufY+9pDS1C+RROHJkv6sHh
+	4/gAj3vEXBl7+GZNdt3s7UdRhroCtTFw+JtS93JJfK+EK+GKYoLWDY9UKKntysNQ
+	27+HS0nkwEkMJ786Y/3XaPKmZjhttVLYrt9ByYuqb1Iw2193O3Ug1VTntJsvo93c
+	mO9R/fFzy7h1wBHoqALbJQWAJi/93TFuPau5wjaOPm4gk2T4twgu9S92IK58Pl/3
+	dsNkkA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43ptdnh9eu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 06:02:11 +0000 (GMT)
+	Mon, 23 Dec 2024 06:02:09 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN62AVi018615
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN628Dh017722
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 06:02:10 GMT
+	Mon, 23 Dec 2024 06:02:08 GMT
 Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 22 Dec 2024 22:02:08 -0800
+ 15.2.1544.9; Sun, 22 Dec 2024 22:02:07 -0800
 From: P Praneesh <quic_ppranees@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH v2 12/14] wifi: ath12k: Avoid memory leak while enabling statistics
-Date: Mon, 23 Dec 2024 11:31:30 +0530
-Message-ID: <20241223060132.3506372-13-quic_ppranees@quicinc.com>
+Subject: [PATCH v2 11/14] wifi: ath12k: Handle PPDU spread across multiple buffers
+Date: Mon, 23 Dec 2024 11:31:29 +0530
+Message-ID: <20241223060132.3506372-12-quic_ppranees@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241223060132.3506372-1-quic_ppranees@quicinc.com>
 References: <20241223060132.3506372-1-quic_ppranees@quicinc.com>
 MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Eq9KynPHsv4cg7MnjKRbo7IhqlAf44Of
-X-Proofpoint-GUID: Eq9KynPHsv4cg7MnjKRbo7IhqlAf44Of
+X-Proofpoint-GUID: ViPZSX9kcL-HNW_Huar2ZDixgwtb1PeF
+X-Proofpoint-ORIG-GUID: ViPZSX9kcL-HNW_Huar2ZDixgwtb1PeF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- suspectscore=0 lowpriorityscore=0 clxscore=1015 phishscore=0 adultscore=0
- priorityscore=1501 malwarescore=0 spamscore=0 mlxscore=0 bulkscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412230051
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 spamscore=0
+ mlxlogscore=798 malwarescore=0 phishscore=0 adultscore=0 clxscore=1015
+ bulkscore=0 suspectscore=0 mlxscore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412230052
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241222_220211_949961_F319CA6A 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20241222_220210_000592_9D806E5E 
+X-CRM114-Status: GOOD (  13.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,154 +97,60 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Driver uses monitor destination rings for extended statistics mode and
-standalone monitor mode. In extended statistics mode, TLVs are parsed from
-the buffer received from the monitor destination ring and assigned to the
-ppdu_info structure to update per-packet statistics. In standalone monitor
-mode, along with per-packet statistics, the packet data (payload) is
-captured, and the driver updates per MSDU to mac80211.
-
-When the AP interface is enabled, only extended statistics mode is
-activated. As part of enabling monitor rings for collecting statistics,
-the driver subscribes to HAL_RX_MPDU_START TLV in the filter
-configuration. This TLV is received from the monitor destination ring, and
-kzalloc for the mon_mpdu object occurs, which is not freed, leading to a
-memory leak. The kzalloc for the mon_mpdu object is only required while
-enabling the standalone monitor interface. This causes a memory leak while
-enabling extended statistics mode in the driver.
-
-Fix this memory leak by removing the kzalloc for the mon_mpdu object in
-the HAL_RX_MPDU_START TLV handling. Additionally, remove the standalone
-monitor mode handlings in the HAL_MON_BUF_ADDR and HAL_RX_MSDU_END TLVs.
-These TLV tags will be handled properly when enabling standalone monitor
-mode in the future.
+Each PPDU contains numerous TLV tags. HAL_RX_PPDU_START marks the start
+of the PPDU, and HAL_RX_PPDU_END_STATUS_DONE marks the end. From the
+monitor destination rings, the driver retrieves skb containing these
+TLV tags and their corresponding data. Sometimes, one PPDU’s information
+spreads across multiple skbs. The current parsing logic uses memset on
+struct hal_rx_mon_ppdu_info after parsing each skb, leading to information
+loss if a PPDU spans multiple skbs. Fix this by setting the
+ppdu_continuation flag when the driver fails to get
+HAL_RX_PPDU_END_STATUS_DONE, and do memset on struct
+hal_rx_mon_ppdu_info only when the ppdu_continuation flag is not set.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_mon.c | 65 ++++--------------------
- drivers/net/wireless/ath/ath12k/hal_rx.h |  3 ++
- 2 files changed, 12 insertions(+), 56 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 8 ++++++++
+ drivers/net/wireless/ath/ath12k/hal_rx.h | 1 +
+ 2 files changed, 9 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 4b35dfcbdfe1..23b1a41c6fd2 100644
+index a11b39ae3774..4b35dfcbdfe1 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -567,7 +567,6 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 				  struct ath12k_mon_data *pmon,
- 				  const struct hal_tlv_64_hdr *tlv)
- {
--	struct ath12k_base *ab = ar->ab;
- 	struct hal_rx_mon_ppdu_info *ppdu_info = &pmon->mon_ppdu_info;
- 	const void *tlv_data = tlv->value;
- 	u32 info[7], userid;
-@@ -748,7 +747,6 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 	}
- 	case HAL_RX_MPDU_START: {
- 		const struct hal_rx_mpdu_start *mpdu_start = tlv_data;
--		struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
- 		u16 peer_id;
+@@ -2419,9 +2419,17 @@ int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget,
+ 	if (!num_buffs_reaped)
+ 		return 0;
  
- 		info[1] = __le32_to_cpu(mpdu_start->info1);
-@@ -765,65 +763,17 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 				u32_get_bits(info[0], HAL_RX_MPDU_START_INFO1_PEERID);
++	/* In some cases, one PPDU worth of data can be spread across multiple NAPI
++	 * schedules, To avoid losing existing parsed ppdu_info information, skip
++	 * the memset of the ppdu_info structure and continue processing it.
++	 */
++	if (!ppdu_info->ppdu_continuation)
++		ath12k_dp_mon_rx_memset_ppdu_info(ppdu_info);
++
+ 	while ((skb = __skb_dequeue(&skb_list))) {
+ 		hal_status = ath12k_dp_mon_parse_rx_dest(ar, pmon, skb);
+ 		if (hal_status != HAL_RX_MON_STATUS_PPDU_DONE) {
++			ppdu_info->ppdu_continuation = true;
+ 			dev_kfree_skb_any(skb);
+ 			continue;
  		}
- 
--		mon_mpdu = kzalloc(sizeof(*mon_mpdu), GFP_ATOMIC);
--		if (!mon_mpdu)
--			return HAL_RX_MON_STATUS_PPDU_NOT_DONE;
--
- 		break;
- 	}
- 	case HAL_RX_MSDU_START:
- 		/* TODO: add msdu start parsing logic */
- 		break;
--	case HAL_MON_BUF_ADDR: {
--		struct dp_rxdma_mon_ring *buf_ring = &ab->dp.rxdma_mon_buf_ring;
--		const struct dp_mon_packet_info *packet_info = tlv_data;
--		int buf_id = u32_get_bits(packet_info->cookie,
--					  DP_RXDMA_BUF_COOKIE_BUF_ID);
--		struct sk_buff *msdu;
--		struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
--		struct ath12k_skb_rxcb *rxcb;
--
--		spin_lock_bh(&buf_ring->idr_lock);
--		msdu = idr_remove(&buf_ring->bufs_idr, buf_id);
--		spin_unlock_bh(&buf_ring->idr_lock);
--
--		if (unlikely(!msdu)) {
--			ath12k_warn(ab, "monitor destination with invalid buf_id %d\n",
--				    buf_id);
--			return HAL_RX_MON_STATUS_PPDU_NOT_DONE;
--		}
--
--		rxcb = ATH12K_SKB_RXCB(msdu);
--		dma_unmap_single(ab->dev, rxcb->paddr,
--				 msdu->len + skb_tailroom(msdu),
--				 DMA_FROM_DEVICE);
--
--		if (mon_mpdu->tail)
--			mon_mpdu->tail->next = msdu;
--		else
--			mon_mpdu->tail = msdu;
--
--		ath12k_dp_mon_buf_replenish(ab, buf_ring, 1);
--
--		break;
--	}
--	case HAL_RX_MSDU_END: {
--		const struct rx_msdu_end_qcn9274 *msdu_end = tlv_data;
--		bool is_first_msdu_in_mpdu;
--		u16 msdu_end_info;
--
--		msdu_end_info = __le16_to_cpu(msdu_end->info5);
--		is_first_msdu_in_mpdu = u32_get_bits(msdu_end_info,
--						     RX_MSDU_END_INFO5_FIRST_MSDU);
--		if (is_first_msdu_in_mpdu) {
--			pmon->mon_mpdu->head = pmon->mon_mpdu->tail;
--			pmon->mon_mpdu->tail = NULL;
--		}
--		break;
--	}
-+	case HAL_MON_BUF_ADDR:
-+		return HAL_RX_MON_STATUS_BUF_ADDR;
-+	case HAL_RX_MSDU_END:
-+		return HAL_RX_MON_STATUS_MSDU_END;
- 	case HAL_RX_MPDU_END:
--		list_add_tail(&pmon->mon_mpdu->list, &pmon->dp_rx_mon_mpdu_list);
--		break;
-+		return HAL_RX_MON_STATUS_MPDU_END;
- 	case HAL_DUMMY:
- 		return HAL_RX_MON_STATUS_BUF_DONE;
- 	case HAL_RX_PPDU_END_STATUS_DONE:
-@@ -1215,7 +1165,10 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k *ar, struct ath12k_mon_data *pmon,
- 		if ((ptr - skb->data) >= DP_RX_BUFFER_SIZE)
- 			break;
- 
--	} while (hal_status == HAL_RX_MON_STATUS_PPDU_NOT_DONE);
-+	} while ((hal_status == HAL_RX_MON_STATUS_PPDU_NOT_DONE) ||
-+		 (hal_status == HAL_RX_MON_STATUS_BUF_ADDR) ||
-+		 (hal_status == HAL_RX_MON_STATUS_MPDU_END) ||
-+		 (hal_status == HAL_RX_MON_STATUS_MSDU_END));
- 
- 	return hal_status;
- }
 diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index 294583edd7a2..e4f9e21158dc 100644
+index b08aa2e79f41..294583edd7a2 100644
 --- a/drivers/net/wireless/ath/ath12k/hal_rx.h
 +++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -108,6 +108,9 @@ enum hal_rx_mon_status {
- 	HAL_RX_MON_STATUS_PPDU_NOT_DONE,
- 	HAL_RX_MON_STATUS_PPDU_DONE,
- 	HAL_RX_MON_STATUS_BUF_DONE,
-+	HAL_RX_MON_STATUS_BUF_ADDR,
-+	HAL_RX_MON_STATUS_MPDU_END,
-+	HAL_RX_MON_STATUS_MSDU_END,
+@@ -231,6 +231,7 @@ struct hal_rx_mon_ppdu_info {
+ 	bool first_msdu_in_mpdu;
+ 	bool is_ampdu;
+ 	u8 medium_prot_type;
++	bool ppdu_continuation;
  };
  
- #define HAL_RX_MAX_MPDU		256
+ #define HAL_RX_PPDU_START_INFO0_PPDU_ID			GENMASK(15, 0)
 -- 
 2.34.1
 
