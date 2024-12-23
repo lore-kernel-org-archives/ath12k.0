@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 446A4E7718E
-	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 06:02:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A6DCE77190
+	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 06:02:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=F39O8F92ntSie69On9uSD64p7sJx8tGcVZSzfZXV104=; b=cHBGkhbkmBG4B5wwUKhCoEruB5
-	+fjcXFmbYVh77tzkdSaEu2q9T7czvrjVrVd9oAiXBpFp17Jt63wGvYozey13tm+3K4CI//vtaNrkc
-	x2V9dObqbWmrbhggxKyVUEQISrVZHr+7lCHkerXjCm5IDZxFbQw67C6DIhS+4bTDaX0o1antCkXn3
-	aRg0vzOfTsybEw5EvD2f4CgHS6t9du+2d7LnqCa9NEblyTswLTvQs4En3z5mYS88x+Is5ur5eeJHy
-	zd5Fw6PTQa3SL9NmAbcqcyAGhw2gPlXtq7WqnPKKMLkaP8KJz2sNArwhhbDKWhCxjJZ36g/H7+Tah
-	KFYR94DQ==;
+	bh=BO3T0BLegpRuLbS0SyEfl5KrbyKkCpJ8omkLZns9JWw=; b=0O4FcjBKz9c4q+kaabsML9avBS
+	beiAXnWdiGE1SSOmqikqO3uVfbNpsOfSUaIKViwG2nC4Z79CY6jAqAeniNfn/C9tIdC0ndyPa4CRi
+	FJDSxujOiyLqk+4QyvMeAmKYYdTs2urbmg6r1U4KSoagQqVvy84nK2aiXq5bacFRjHVd/xXFC9+Wn
+	GjaNvFa0N80KQ0eDO7kd6hgyZHAkDlMfoHJZiWw3A2X4kqFFQ2yNsYhuO23fhpRtwh69Iy5azKN0x
+	lR5pnKMhm3JPYplKSEf9t7VR8TN9pWcUPoDnhLY50IAZq5eas/Pka7rcVnNWoOZoaOG+oACFPaTQh
+	Q+k6ixkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPbW4-00000009NMJ-067Z
+	id 1tPbW4-00000009NN8-3mhQ
 	for ath12k@archiver.kernel.org;
 	Mon, 23 Dec 2024 06:02:08 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPbVn-00000009NIM-28lk
+	id 1tPbVr-00000009NJR-18iz
 	for ath12k@lists.infradead.org;
-	Mon, 23 Dec 2024 06:01:52 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN2w5FF003446;
-	Mon, 23 Dec 2024 06:01:51 GMT
+	Mon, 23 Dec 2024 06:01:56 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN5rSbQ018255;
+	Mon, 23 Dec 2024 06:01:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	F39O8F92ntSie69On9uSD64p7sJx8tGcVZSzfZXV104=; b=l2qnqkj8M9fUNa19
-	cBrTMVcMXiTmkKX2kxf0Y6Adr+R3NqdE1sopujTNHP9HoonuZ8jk4KdnjbCSzBtF
-	d82jHPrIiIi8EkIAlT/ujNFzo1uJts3IkOGiAGmPOCTa3Fggw2EoVMUhN3vdPlRf
-	l4N9stdJUbfOl3oYMYrt8vnd+5uce8qKPEqY/77UohDSjvmLxQHPUH/k8RrcUY5n
-	Iu68QZPuspsT3EHfkSL/LQlTVoatWk6XSY5OnnTsGYZ5YYI2AXdLuHGhDiRiiZiA
-	cIRo6GJ5guWoF8HmVtqlgwwqzqaUAHHnEMSkmVftnEtUdncWuF/uAyRV6II8qUe0
-	44mBwQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43pyhnrk0n-1
+	BO3T0BLegpRuLbS0SyEfl5KrbyKkCpJ8omkLZns9JWw=; b=n6JfL4p9+Ks1YcRM
+	UrfNwTay9AVAfN6BDMdVrCguHPc2TsFuaaKrZkyziNT0Z5AHaxn8H5+dP6hqUofB
+	23T7osnpBej50RF4fPjffWTC11CPIncq45D/cP4lpPgLHOIiq7s6p3aWUZAnbvjv
+	HceCN6OeV705LzVIpYM+uu8fwTi/VIBfc0O3tdua3Ixo7Tl+oUATxCpTr2UHOLV6
+	SquqVSWF280Fyv18N+F0+tSGuRzVSZGi+SBmxo0TKZtRhNRnrN4x09Ps0kkzXZmG
+	eULGhfkn5iVm+q25B9OKVx+tqHbhCVe4iAXVPKcmxnJUuGK/GcKeWBsta64QZ3bC
+	nKGt5Q==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43q2458113-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 06:01:51 +0000 (GMT)
+	Mon, 23 Dec 2024 06:01:54 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN61opZ030089
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN61su8023855
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 06:01:50 GMT
+	Mon, 23 Dec 2024 06:01:54 GMT
 Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 22 Dec 2024 22:01:48 -0800
+ 15.2.1544.9; Sun, 22 Dec 2024 22:01:52 -0800
 From: P Praneesh <quic_ppranees@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH v2 01/14] wifi: ath12k: Add HTT source ring ID for monitor rings
-Date: Mon, 23 Dec 2024 11:31:19 +0530
-Message-ID: <20241223060132.3506372-2-quic_ppranees@quicinc.com>
+Subject: [PATCH v2 03/14] wifi: ath12k: Avoid multiple times configuring monitor filter
+Date: Mon, 23 Dec 2024 11:31:21 +0530
+Message-ID: <20241223060132.3506372-4-quic_ppranees@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241223060132.3506372-1-quic_ppranees@quicinc.com>
 References: <20241223060132.3506372-1-quic_ppranees@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: HgzwDqmQ7o5x_X166uHiTidU48_2cFDv
-X-Proofpoint-ORIG-GUID: HgzwDqmQ7o5x_X166uHiTidU48_2cFDv
+X-Proofpoint-ORIG-GUID: OcSEIeldhVUu1K7RWXvpYqNru6QEiBIA
+X-Proofpoint-GUID: OcSEIeldhVUu1K7RWXvpYqNru6QEiBIA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- lowpriorityscore=0 impostorscore=0 bulkscore=0 adultscore=0 malwarescore=0
- phishscore=0 priorityscore=1501 clxscore=1015 spamscore=0 mlxscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
+ mlxlogscore=968 priorityscore=1501 malwarescore=0 mlxscore=0 spamscore=0
+ suspectscore=0 impostorscore=0 clxscore=1015 lowpriorityscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412230052
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241222_220151_550475_2A770F83 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20241222_220155_341039_15F7925A 
+X-CRM114-Status: GOOD (  17.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,83 +97,106 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add source buffer ring and destination buffer ring ID for monitor rings.
-These IDs are used for ring configuration during initial ring setup.
+ath12k_mac_op_configure_filter() gets called multiple times during
+interface bringup. Applying filter configuration from this function leads
+to writing same filter configurations multiple times.
 
-Since monitor rings are enabled based on the rxdma1_enable flag, enable it
-in the hardware param for the QCN9274 version 2 hardware and increase the
-destination ring size to handle MSDU data buffers.
+Resolve this issue by relocating the filter configuration to
+ath12k_mac_config_mon_status_default(), which is invoked by both
+ath12k_mac_op_start() and ath12k_mac_op_stop(). Additionally, set the
+rxmon_disable flag to true when called from ath12k_mac_op_stop() to
+disable the monitor destination ring.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.h    | 5 ++++-
- drivers/net/wireless/ath/ath12k/dp_tx.c | 4 ++--
- drivers/net/wireless/ath/ath12k/hw.c    | 2 +-
- 3 files changed, 7 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 57 +++++++++++++++------------
+ 1 file changed, 31 insertions(+), 26 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index b178921aaf1d..475c053faaa1 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -176,7 +176,7 @@ struct ath12k_pdev_dp {
- #define DP_RXDMA_ERR_DST_RING_SIZE	1024
- #define DP_RXDMA_MON_STATUS_RING_SIZE	1024
- #define DP_RXDMA_MONITOR_BUF_RING_SIZE	4096
--#define DP_RXDMA_MONITOR_DST_RING_SIZE	2048
-+#define DP_RXDMA_MONITOR_DST_RING_SIZE	8092
- #define DP_RXDMA_MONITOR_DESC_RING_SIZE	4096
- #define DP_TX_MONITOR_BUF_RING_SIZE	4096
- #define DP_TX_MONITOR_DEST_RING_SIZE	2048
-@@ -434,8 +434,11 @@ enum htt_srng_ring_id {
- 	HTT_HOST1_TO_FW_RXBUF_RING,
- 	HTT_HOST2_TO_FW_RXBUF_RING,
- 	HTT_RXDMA_NON_MONITOR_DEST_RING,
-+	HTT_RXDMA_HOST_BUF_RING2,
- 	HTT_TX_MON_HOST2MON_BUF_RING,
- 	HTT_TX_MON_MON2HOST_DEST_RING,
-+	HTT_RX_MON_HOST2MON_BUF_RING,
-+	HTT_RX_MON_MON2HOST_DEST_RING,
- };
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 6f10813d9378..5b9d583d37dd 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -7237,8 +7237,36 @@ void ath12k_mac_drain_tx(struct ath12k *ar)
  
- /* host -> target  HTT_SRING_SETUP message
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index a8d341a6df01..13bc2d92e09c 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -814,7 +814,7 @@ ath12k_dp_tx_get_ring_id_type(struct ath12k_base *ab,
- 		*htt_ring_type = HTT_HW_TO_SW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_BUF:
--		*htt_ring_id = HTT_RXDMA_MONITOR_BUF_RING;
-+		*htt_ring_id = HTT_RX_MON_HOST2MON_BUF_RING;
- 		*htt_ring_type = HTT_SW_TO_HW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_STATUS:
-@@ -822,7 +822,7 @@ ath12k_dp_tx_get_ring_id_type(struct ath12k_base *ab,
- 		*htt_ring_type = HTT_SW_TO_HW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_DST:
--		*htt_ring_id = HTT_RXDMA_MONITOR_DEST_RING;
-+		*htt_ring_id = HTT_RX_MON_MON2HOST_DEST_RING;
- 		*htt_ring_type = HTT_HW_TO_SW_RING;
- 		break;
- 	case HAL_RXDMA_MONITOR_DESC:
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index b7b583fadb5a..14bbd446ad37 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1035,7 +1035,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ static int ath12k_mac_config_mon_status_default(struct ath12k *ar, bool enable)
+ {
+-	return -EOPNOTSUPP;
+-	/* TODO: Need to support new monitor mode */
++	struct htt_rx_ring_tlv_filter tlv_filter = {};
++	struct ath12k_base *ab = ar->ab;
++	u32 ring_id, i;
++	int ret = 0;
++
++	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
++
++	if (!ab->hw_params->rxdma1_enable)
++		return ret;
++
++	if (enable)
++		tlv_filter = ath12k_mac_mon_status_filter_default;
++	else
++		tlv_filter.rxmon_disable = true;
++
++	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++		ring_id = ar->dp.rxdma_mon_dst_ring[i].ring_id;
++		ret = ath12k_dp_tx_htt_rx_filter_setup(ab, ring_id,
++						       ar->dp.mac_id + i,
++						       HAL_RXDMA_MONITOR_DST,
++						       DP_RXDMA_REFILL_RING_SIZE,
++						       &tlv_filter);
++		if (ret) {
++			ath12k_err(ab,
++				   "failed to setup filter for monitor buf %d\n",
++				   ret);
++		}
++	}
++
++	return ret;
+ }
  
- 		.hal_params = &ath12k_hw_hal_params_qcn9274,
+ static int ath12k_mac_start(struct ath12k *ar)
+@@ -8363,29 +8391,6 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
+ 	FIF_PROBE_REQ |				\
+ 	FIF_FCSFAIL)
  
--		.rxdma1_enable = false,
-+		.rxdma1_enable = true,
- 		.num_rxdma_per_pdev = 1,
- 		.num_rxdma_dst_ring = 0,
- 		.rx_mac_buf_ring = false,
+-static void ath12k_mac_configure_filter(struct ath12k *ar,
+-					unsigned int total_flags)
+-{
+-	bool reset_flag;
+-	int ret;
+-
+-	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+-
+-	ar->filter_flags = total_flags;
+-
+-	/* For monitor mode */
+-	reset_flag = !(ar->filter_flags & FIF_BCN_PRBRESP_PROMISC);
+-
+-	ret = ath12k_dp_tx_htt_monitor_mode_ring_config(ar, reset_flag);
+-	if (ret)
+-		ath12k_warn(ar->ab,
+-			    "fail to set monitor filter: %d\n", ret);
+-
+-	ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
+-		   "total_flags:0x%x, reset_flag:%d\n",
+-		   total_flags, reset_flag);
+-}
+-
+ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
+ 					   unsigned int changed_flags,
+ 					   unsigned int *total_flags,
+@@ -8399,7 +8404,7 @@ static void ath12k_mac_op_configure_filter(struct ieee80211_hw *hw,
+ 	ar = ath12k_ah_to_ar(ah, 0);
+ 
+ 	*total_flags &= SUPPORTED_FILTERS;
+-	ath12k_mac_configure_filter(ar, *total_flags);
++	ar->filter_flags = *total_flags;
+ }
+ 
+ static int ath12k_mac_op_get_antenna(struct ieee80211_hw *hw, u32 *tx_ant, u32 *rx_ant)
 -- 
 2.34.1
 
