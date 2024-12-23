@@ -4,93 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74809E7718B
-	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 04:24:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B61AFE7718B
+	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 05:52:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:CC:References:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=07KN7FjkG/mIIcZlvzIW/LaKGeNa/Ht1lAI/yHaqYko=; b=rcCk4lkAyK/3dR1m8UxztiULXf
-	z1i40gDAMZllD9e+Q0qgNO5pHqF6QSFhfc333VSSvaVcqqzOEKGBv1oNPL+L7hAe1EBEdnrmExAQv
-	Ypi+SQRtZC/eUNq9pKSlSoWtqDH1qTKy9UcpDxod7N6Ym6Co+1lNfU4sQTwXFwruCctghgNLlahT1
-	OhYTSurxympjbZqodE7iV5KLB3BJqAmk6p64qBRybJzPgmzgR9ZEqg8fdH/YwTnJmZFnhiTY3EwaG
-	RRladRO9Oe2VCKNekgzrpMgPQ6poLuQRG49fxKnrTYS8WfvryHEFRmP77FH3T/uoZXkgH5CakUraB
-	jJ7l+bFQ==;
+	bh=IXCVZRigwx4iw2UGQod5yPNq2rDksO7iKjqAHBQ1Taw=; b=j1bkoWfhr2Xvj5qQUMXR9LodNq
+	SMoDwDUgWbRKNQIHVSm23efN8HLe+eZPA6LkQ9N6ld7qsfA9UpXtam0qkJ0MpfpI/aIoCgTdvwSe8
+	FSUyCeqXeI/lA0X/lbugjWMaCofiqHN5TiGcNlJebq6CO45r50+BriLnbd9o597BwxTID5cPfxMgr
+	5kO377aJTpG5X5juI2A5tA15ksim8d8du6eH8/V9qBejKN4HnZJNieCf+XmIhVRacSe+M2mWNj/hI
+	ITaspQ/nXUSNB9JQXBfjHHMlTbJgQAP/mpdFtriC1hDiCRWTwB4blGW3/Rb44b9QJlNHyfbd9s3l5
+	NECd89GA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPZzi-00000009Ihi-0GDC
+	id 1tPbMT-00000009Msq-1eqn
 	for ath12k@archiver.kernel.org;
-	Mon, 23 Dec 2024 04:24:38 +0000
+	Mon, 23 Dec 2024 05:52:13 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPZze-00000009Igi-3KZS
+	id 1tPbMR-00000009MsP-0d1M
 	for ath12k@lists.infradead.org;
-	Mon, 23 Dec 2024 04:24:37 +0000
+	Mon, 23 Dec 2024 05:52:12 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN3CT71007799;
-	Mon, 23 Dec 2024 04:24:30 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN3Cdhb007890;
+	Mon, 23 Dec 2024 05:52:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	07KN7FjkG/mIIcZlvzIW/LaKGeNa/Ht1lAI/yHaqYko=; b=QFdkfx8G/9BDbO4e
-	mG5cIyfXbplpz177i/pqRTATrunZidav/0XdkxfeDSGae6r9r2rmJ6kehOjyTi7q
-	rRjqqwJRY6ebBVXEnrwAJPctZSOub/Cp5wtJnYvH6tlV2/UhALWxndlwOZovXdMF
-	Iua6Oab+GAyF/1Ailitq3rGa7WGKgEnEwQCvfh9GbsJAl6Yhg+1nOCSdBE7ZnzYA
-	zI2yDJ4Azg5sUB1BJbwXdFkezT6CeCida6rem/V7uIgBl3lJ/WPa4lfjAgAfq1Mz
-	tiL86W3uXJCXpxmzDzrf/Y071NQeQaZpYnWl6xpu4a0d9wj4IV6JbBkkiY5AcLUO
-	9DMlbw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43pyrpr797-1
+	IXCVZRigwx4iw2UGQod5yPNq2rDksO7iKjqAHBQ1Taw=; b=g4QMOzcQmg2E/jtH
+	GDh5JNbHJmp8EXwKnijq4dZlNqCkpwmz7MvHEdhxROaCS/4+hGxWlamONCYPkYzs
+	/yPJ5+d1iEqruXkwxrlVkZ8+FO5Xr3IpJVwbkoyUpsgrviZgTmv8ibpyHYBQcFo9
+	vgAloZWtPJYj90Dt3Cf7kyz5/KbEanSAimcyJQJS9Ics2sw9pMfrobXVpdnihhNR
+	7em7g0TqOIsazHn3kMO/tKtTUD/FWZPnLpM6Ens4QgauaSRbqvTfK9larPNInzsF
+	VBNNYqYcTcQoYaR9QARQZsTSyySx68m7SHnn/XV2ffqXiTl3r9G1DSQiUBUYMkyq
+	8Ev/7w==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43pyrprg9m-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 04:24:30 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN4OTAR014780
+	Mon, 23 Dec 2024 05:52:09 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN5q9HH007639
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 04:24:29 GMT
-Received: from [10.151.41.196] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+	Mon, 23 Dec 2024 05:52:09 GMT
+Received: from [10.50.9.211] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 22 Dec
- 2024 20:24:25 -0800
-Message-ID: <de313b43-4e90-4b3a-a233-917a963810c8@quicinc.com>
-Date: Mon, 23 Dec 2024 09:53:59 +0530
+ 2024 21:52:07 -0800
+Message-ID: <9b4b8604-02fe-446b-9db6-703381be9042@quicinc.com>
+Date: Mon, 23 Dec 2024 11:22:04 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v3 1/5] dt-bindings: net: wireless: Describe ath12k
- PCI module with WSI
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Jeff Johnson
-	<jeff.johnson@oss.qualcomm.com>,
+Subject: Re: [PATCH 03/14] wifi: ath12k: Avoid multiple times configuring
+ monitor filter
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
         <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
-        "Rob
- Herring" <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        "Conor
- Dooley" <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        "Bjorn
- Andersson" <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
-References: <20241105180444.770951-1-quic_rajkbhag@quicinc.com>
- <20241105180444.770951-2-quic_rajkbhag@quicinc.com>
- <9cbdca90-e76c-4ebb-a236-a0edbd94a629@oss.qualcomm.com>
- <62c599b5-20b2-4e1e-810d-e4502abbc682@oss.qualcomm.com>
- <768ef22a-855b-472d-9432-49db7daaf2df@oss.qualcomm.com>
+References: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
+ <20241221043014.1252841-4-quic_ppranees@quicinc.com>
+ <12dd8c67-9817-f189-738b-87d3533998c9@quicinc.com>
 Content-Language: en-US
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-In-Reply-To: <768ef22a-855b-472d-9432-49db7daaf2df@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+CC: <linux-wireless@vger.kernel.org>
+From: Praneesh P <quic_ppranees@quicinc.com>
+In-Reply-To: <12dd8c67-9817-f189-738b-87d3533998c9@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: le6esRrgP00FhDPFggP_x5IMCb6Eqw9a
-X-Proofpoint-GUID: le6esRrgP00FhDPFggP_x5IMCb6Eqw9a
+X-Proofpoint-ORIG-GUID: 8ywiEfTifOWcwLqVn6dIx2OrJ95zByRw
+X-Proofpoint-GUID: 8ywiEfTifOWcwLqVn6dIx2OrJ95zByRw
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
@@ -98,10 +84,10 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspect
  lowpriorityscore=0 phishscore=0 impostorscore=0 bulkscore=0
  mlxlogscore=999 priorityscore=1501 malwarescore=0 spamscore=0 mlxscore=0
  adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412230036
+ engine=8.19.0-2411120000 definitions=main-2412230050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241222_202434_858586_348D7B71 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20241222_215211_206863_F09AD96C 
+X-CRM114-Status: GOOD (  14.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,49 +102,54 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12/21/2024 3:35 AM, Konrad Dybcio wrote:
-> On 20.12.2024 10:47 PM, Jeff Johnson wrote:
->> On 12/20/2024 12:03 PM, Konrad Dybcio wrote:
->>> On 5.11.2024 7:04 PM, Raj Kumar Bhagat wrote:
->>>> The QCN9274 WiFi device supports WSI (WLAN Serial Interface). WSI is used
->>>> to exchange specific control information across radios using a doorbell
->>>> mechanism. This WSI connection is essential for exchanging control
->>>> information among these devices. The WSI interface in the QCN9274 includes
->>>> TX and RX ports, which are used to connect multiple WSI-supported devices
->>>> together, forming a WSI group.
->>>>
->>>> Describe QCN9274 PCI wifi device with WSI interface.
->>>>
->>>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
->>>> ---
->>>
->>> I think this description is missing the key points:
->>>
->>> * what is that control information (power, data, radio stuff?)
->>> * what happens when the OS is unaware of all of this (i.e. what happens when
->>>   we don't send any configuration)
->>> * is this configurable, or does this describe a physical wiring topology
->>>   (what/who decides which of the group configurations detailed below take
->>>    effect)
->>>
->>> And the ultimate question:
->>> * can the devices not just talk among themselves and negotiate that?
->>>
->>> Though AFAICU PCIe P2P communication is a shaky topic, so perhaps the answer
->>> to the last question is 'no'
->>>
->>> Konrad
->>
->> We already pushed the non-RFC version to our -next tree so we cannot update
->> the commit description without a forced push.
->>
->> https://lore.kernel.org/all/20241211153432.775335-2-kvalo@kernel.org/
->>
->> However, Raj Kumar can submit an update to the description in the file, which
->> is probably the better place to have this information anyway.
+On 12/22/2024 10:45 AM, Karthikeyan Periyasamy wrote:
 > 
-> Sounds good
 > 
-
-Sure, will submit an update to the description.
+> On 12/21/2024 10:00 AM, P Praneesh wrote:
+>> ath12k_mac_op_configure_filter() gets called multiple times during
+>> interface bringup. Applying filter configuration from this function leads
+>> to writing same filter configurations multiple times.
+>>
+>> Fix it by moving the filter configuration to ath12k_mac_op_start().
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481- 
+>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/mac.c | 55 ++++++++++++++-------------
+>>   1 file changed, 29 insertions(+), 26 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/ 
+>> wireless/ath/ath12k/mac.c
+>> index 6f10813d9378..2cb6e9b529d7 100644
+>> --- a/drivers/net/wireless/ath/ath12k/mac.c
+>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+>> @@ -7237,8 +7237,34 @@ void ath12k_mac_drain_tx(struct ath12k *ar)
+>>   static int ath12k_mac_config_mon_status_default(struct ath12k *ar, 
+>> bool enable)
+>>   {
+>> -    return -EOPNOTSUPP;
+>> -    /* TODO: Need to support new monitor mode */
+>> +    struct htt_rx_ring_tlv_filter tlv_filter = {};
+>> +    struct ath12k_base *ab = ar->ab;
+>> +    u32 ring_id, i;
+>> +    int ret = 0;
+>> +
+>> +    lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+>> +
+>> +    if (!ab->hw_params->rxdma1_enable)
+>> +        return ret;
+>> +
+>> +    if (enable)
+>> +        tlv_filter = ath12k_mac_mon_status_filter_default;
+> 
+> No need to disable the filter in the else case like below ?
+> 
+> tlv_filter.rxmon_disable = true;
+> 
+> 
+Yes, setting this flag to true fully disables the monitor ring. I'll 
+include this change in the next version.
 
