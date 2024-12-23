@@ -4,90 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B61AFE7718B
-	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 05:52:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D482BE7718B
+	for <ath12k@archiver.kernel.org>; Mon, 23 Dec 2024 06:02:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:CC:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IXCVZRigwx4iw2UGQod5yPNq2rDksO7iKjqAHBQ1Taw=; b=j1bkoWfhr2Xvj5qQUMXR9LodNq
-	SMoDwDUgWbRKNQIHVSm23efN8HLe+eZPA6LkQ9N6ld7qsfA9UpXtam0qkJ0MpfpI/aIoCgTdvwSe8
-	FSUyCeqXeI/lA0X/lbugjWMaCofiqHN5TiGcNlJebq6CO45r50+BriLnbd9o597BwxTID5cPfxMgr
-	5kO377aJTpG5X5juI2A5tA15ksim8d8du6eH8/V9qBejKN4HnZJNieCf+XmIhVRacSe+M2mWNj/hI
-	ITaspQ/nXUSNB9JQXBfjHHMlTbJgQAP/mpdFtriC1hDiCRWTwB4blGW3/Rb44b9QJlNHyfbd9s3l5
-	NECd89GA==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=jXxJKeikwHLj1FY4QuWLSavKVaOc1OT4uYYLVlaOffw=; b=lDrllsIjOI8L/AmlCnB8sPFBjL
+	pkF14qXtZh0gi7PK0y2CtGNR4bmjsCU14aN8R9u6pHsHZkD8GDSXpZlQq61m6sysF+T3xdrkRmidF
+	NCUD2gjTRSCKPCHZWxG3PrRuid7BzytqOwEEqzryu+NlmIXy07yp3TPANFZxClZohPFOznLXN/i2l
+	LJjCfNSdkR4jjgY06p/ZMEDCSQuEOvUqoCOflK1q2ZkvydigaQzkDFrRPoucMrZc+DPNGbYCIicK5
+	p8JnVaCdvtg6mKXwaihpZEjqOhiMSzg79mh2FGt1twDoTaVmZ/Na7oL2TZfAip+mfGdfGbIZNo8Y+
+	2nRe7YAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPbMT-00000009Msq-1eqn
+	id 1tPbW3-00000009NMB-2czr
 	for ath12k@archiver.kernel.org;
-	Mon, 23 Dec 2024 05:52:13 +0000
+	Mon, 23 Dec 2024 06:02:07 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPbMR-00000009MsP-0d1M
+	id 1tPbVm-00000009NHo-02wE
 	for ath12k@lists.infradead.org;
-	Mon, 23 Dec 2024 05:52:12 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN3Cdhb007890;
-	Mon, 23 Dec 2024 05:52:09 GMT
+	Mon, 23 Dec 2024 06:01:51 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN2riUK024819;
+	Mon, 23 Dec 2024 06:01:49 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IXCVZRigwx4iw2UGQod5yPNq2rDksO7iKjqAHBQ1Taw=; b=g4QMOzcQmg2E/jtH
-	GDh5JNbHJmp8EXwKnijq4dZlNqCkpwmz7MvHEdhxROaCS/4+hGxWlamONCYPkYzs
-	/yPJ5+d1iEqruXkwxrlVkZ8+FO5Xr3IpJVwbkoyUpsgrviZgTmv8ibpyHYBQcFo9
-	vgAloZWtPJYj90Dt3Cf7kyz5/KbEanSAimcyJQJS9Ics2sw9pMfrobXVpdnihhNR
-	7em7g0TqOIsazHn3kMO/tKtTUD/FWZPnLpM6Ens4QgauaSRbqvTfK9larPNInzsF
-	VBNNYqYcTcQoYaR9QARQZsTSyySx68m7SHnn/XV2ffqXiTl3r9G1DSQiUBUYMkyq
-	8Ev/7w==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43pyrprg9m-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=jXxJKeikwHLj1FY4QuWLSa
+	vKVaOc1OT4uYYLVlaOffw=; b=er0kDIdFwBnfswml2sSOOTA4HNcZL0keyVqKpD
+	KAgYVuiSPr+JuPCcuePafm8oPR/36Y2nVYAse+GSzR879RfUhzMocoeTbs7jOL3u
+	tTZNFGEFwLBCWjN0ij1Dl7z+3gbCi9uCzKjkXMpT8UGDKMPxq8HdqpYMINAsxmqg
+	1D9cCgo+FxHZamzfCz9KVKj/hL3U5rC5Zyvoxk/yLXO+p7JgvEP3o01uXoIoiZ0X
+	CywM7YzDeu3oi7PfuKgy+i76DYbPQ534JZlPpbQmBTXnAxm2WN8sABOdcMkCYM7s
+	36GN0VU2Ub4wltVunLRmztDO4ePHWPEB35tgzplKIfWhXpHQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43pyft0jy5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 05:52:09 +0000 (GMT)
+	Mon, 23 Dec 2024 06:01:49 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN5q9HH007639
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN61mws030066
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 05:52:09 GMT
-Received: from [10.50.9.211] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 22 Dec
- 2024 21:52:07 -0800
-Message-ID: <9b4b8604-02fe-446b-9db6-703381be9042@quicinc.com>
-Date: Mon, 23 Dec 2024 11:22:04 +0530
+	Mon, 23 Dec 2024 06:01:48 GMT
+Received: from hu-ppranees-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sun, 22 Dec 2024 22:01:47 -0800
+From: P Praneesh <quic_ppranees@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
+Subject: [PATCH v2 00/14] wifi: ath12k: Enable monitor ring for updating station dump in QCN9274
+Date: Mon, 23 Dec 2024 11:31:18 +0530
+Message-ID: <20241223060132.3506372-1-quic_ppranees@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 03/14] wifi: ath12k: Avoid multiple times configuring
- monitor filter
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        <ath12k@lists.infradead.org>
-References: <20241221043014.1252841-1-quic_ppranees@quicinc.com>
- <20241221043014.1252841-4-quic_ppranees@quicinc.com>
- <12dd8c67-9817-f189-738b-87d3533998c9@quicinc.com>
-Content-Language: en-US
-CC: <linux-wireless@vger.kernel.org>
-From: Praneesh P <quic_ppranees@quicinc.com>
-In-Reply-To: <12dd8c67-9817-f189-738b-87d3533998c9@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 8ywiEfTifOWcwLqVn6dIx2OrJ95zByRw
-X-Proofpoint-GUID: 8ywiEfTifOWcwLqVn6dIx2OrJ95zByRw
+X-Proofpoint-ORIG-GUID: nNRrdA-7n2cIOBE1Ou31MTkHR_HsW-8E
+X-Proofpoint-GUID: nNRrdA-7n2cIOBE1Ou31MTkHR_HsW-8E
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 clxscore=1015
- lowpriorityscore=0 phishscore=0 impostorscore=0 bulkscore=0
- mlxlogscore=999 priorityscore=1501 malwarescore=0 spamscore=0 mlxscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412230050
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=639
+ suspectscore=0 lowpriorityscore=0 clxscore=1015 phishscore=0 adultscore=0
+ priorityscore=1501 malwarescore=0 spamscore=0 mlxscore=0 bulkscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412230051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241222_215211_206863_F09AD96C 
-X-CRM114-Status: GOOD (  14.01  )
+X-CRM114-CacheID: sfid-20241222_220150_140467_680DB09B 
+X-CRM114-Status: GOOD (  10.52  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,54 +94,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 12/22/2024 10:45 AM, Karthikeyan Periyasamy wrote:
-> 
-> 
-> On 12/21/2024 10:00 AM, P Praneesh wrote:
->> ath12k_mac_op_configure_filter() gets called multiple times during
->> interface bringup. Applying filter configuration from this function leads
->> to writing same filter configurations multiple times.
->>
->> Fix it by moving the filter configuration to ath12k_mac_op_start().
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481- 
->> QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/mac.c | 55 ++++++++++++++-------------
->>   1 file changed, 29 insertions(+), 26 deletions(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/ 
->> wireless/ath/ath12k/mac.c
->> index 6f10813d9378..2cb6e9b529d7 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->> @@ -7237,8 +7237,34 @@ void ath12k_mac_drain_tx(struct ath12k *ar)
->>   static int ath12k_mac_config_mon_status_default(struct ath12k *ar, 
->> bool enable)
->>   {
->> -    return -EOPNOTSUPP;
->> -    /* TODO: Need to support new monitor mode */
->> +    struct htt_rx_ring_tlv_filter tlv_filter = {};
->> +    struct ath12k_base *ab = ar->ab;
->> +    u32 ring_id, i;
->> +    int ret = 0;
->> +
->> +    lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
->> +
->> +    if (!ab->hw_params->rxdma1_enable)
->> +        return ret;
->> +
->> +    if (enable)
->> +        tlv_filter = ath12k_mac_mon_status_filter_default;
-> 
-> No need to disable the filter in the else case like below ?
-> 
-> tlv_filter.rxmon_disable = true;
-> 
-> 
-Yes, setting this flag to true fully disables the monitor ring. I'll 
-include this change in the next version.
+This series enables the monitor related rings for the QCN9274 and
+configures filters to collect statistics such as RSSI, which are
+required for updating the station dump. Also, this series does
+not impact WCN7850.
+
+Depends-On:
+	[PATCH 0/3] wifi: ath12k: Refactor monitor Rx handler
+	https://lore.kernel.org/all/20241219001006.1036495-1-quic_periyasa@quicinc.com/
+
+v2:
+	- set rxmon_disable flag to true to disable monitor destination
+	  ring in patch 3/14.
+
+P Praneesh (14):
+  wifi: ath12k: Add HTT source ring ID for monitor rings
+  wifi: ath12k: Enable filter config for monitor destination ring
+  wifi: ath12k: Avoid multiple times configuring monitor filter
+  wifi: ath12k: Avoid code duplication in monitor ring processing
+  wifi: ath12k: Restructure the code for monitor ring processing
+  wifi: ath12k: Fix invalid entry fetch in ath12k_dp_mon_srng_process
+  wifi: ath12k: Fix end offset bit definition in monitor ring descriptor
+  wifi: ath12k: Add drop descriptor handling for monitor ring
+  wifi: ath12k: Handle end reason for the monitor destination ring
+  wifi: ath12k: Optimize NAPI budget by adjusting PPDU processing
+  wifi: ath12k: Handle PPDU spread across multiple buffers
+  wifi: ath12k: Avoid memory leak while enabling statistics
+  wifi: ath12k: Handle monitor drop TLVs scenario
+  wifi: ath12k: Enable monitor ring mask for QCN9274
+
+ drivers/net/wireless/ath/ath12k/core.h     |   1 +
+ drivers/net/wireless/ath/ath12k/dp.h       |  55 +++-
+ drivers/net/wireless/ath/ath12k/dp_mon.c   | 348 ++++++++-------------
+ drivers/net/wireless/ath/ath12k/dp_mon.h   |   6 +-
+ drivers/net/wireless/ath/ath12k/dp_tx.c    |  79 ++++-
+ drivers/net/wireless/ath/ath12k/hal_desc.h |   5 +-
+ drivers/net/wireless/ath/ath12k/hal_rx.h   |   4 +
+ drivers/net/wireless/ath/ath12k/hw.c       |   8 +-
+ drivers/net/wireless/ath/ath12k/mac.c      |  57 ++--
+ 9 files changed, 284 insertions(+), 279 deletions(-)
+
+
+base-commit: 09fa3b6974a1245ddd0751747609431494ba5b4f
+prerequisite-patch-id: 5f5721a4c9f1c26659fd8f09a8eda648d8ecccf5
+prerequisite-patch-id: 59cc2121e734e4e1e7e461a3ae24f3f1f9d0fa02
+prerequisite-patch-id: fdc512e43ea7cb6c097ba4c0d9c661a74c0c2a6f
+-- 
+2.34.1
+
 
