@@ -4,90 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AA05E77188
-	for <ath12k@archiver.kernel.org>; Tue, 24 Dec 2024 10:20:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76771E77188
+	for <ath12k@archiver.kernel.org>; Tue, 24 Dec 2024 10:20:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7Stx8O2lgbohE1wXcrHRFXRZBfFx2YRl1Mu1H9t4soM=; b=FLhQk8Y5yY2rBnbkvwVvVJXUXS
-	nVfqMhkaeSfh3606keqDOWhI0D0syymQ+rdk92ycFnXZHypwm9WSw2cVsBDn8zXigf3TWH5QV9a/u
-	HZazOXDQN9bF0r8AVh6t2fkwJPjZtviGhplgJLtQbL4R/2uCTK27PsCYsAD/mJ7OfIAfVp6BI0WAr
-	vb+VaODLeJXrJChp2eZOQgengDb3SSHT/RdX/IQ248ZhCprxpI0vr7LoiR54a6fpa4gtqe56uwN0f
-	bkMmsY1HpZJFAbD7hoZDfXuHyuk1puUBgfXALX02kYzQVYdsHiTAlcwnMcmiJF0yrMbZ7ahqnR4D8
-	ErewTB0g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=/cHdqEJKeY2HpW3xK+rto7NbzwszTcC5doO9ISYbtG4=; b=QkmPcP6zG7iaqcZ6ZO/6xSj3A3
+	w3a1JtfSpwPYMIiW+SeLDXsqLR7QVeRvu/uYWwOfOGLOaNnNw/3sg1zBE7+Jilh+EWu79ScEVFWkH
+	OGflFQO4nK5K2Cz4hcegOvv3MZ+sTwS8wG00dRbNTCz4jbtdNx0JTIcXmuYnFaMx8tFrruSvTQIlZ
+	5JwBGZIgHLgF+ki7OdEdI24KwABZEdA3UDPcRYOH3PkrhggV0X/+VHuIyTVlEvaVrnblbJHs/twtf
+	RbuxzGKG7XTDZcnQOdxEV3prHyVlwfkE9YH5CarR5W9MRECLzF9v+3pVFOrn5m/tDBju91NlH+J23
+	jI749rTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQ21L-0000000Bjar-3O7r
+	id 1tQ21i-0000000Bjfh-10eO
 	for ath12k@archiver.kernel.org;
-	Tue, 24 Dec 2024 10:20:11 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 24 Dec 2024 10:20:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQ21J-0000000BjaE-1e8O
+	id 1tQ21f-0000000Bjex-13cB
 	for ath12k@lists.infradead.org;
-	Tue, 24 Dec 2024 10:20:10 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BO6HjUZ003231;
-	Tue, 24 Dec 2024 10:20:07 GMT
+	Tue, 24 Dec 2024 10:20:32 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BO5WYC3008076;
+	Tue, 24 Dec 2024 10:20:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	7Stx8O2lgbohE1wXcrHRFXRZBfFx2YRl1Mu1H9t4soM=; b=huiOGkTXhUOLKtCC
-	2BjHC3OXYr0JnWslQG1CRcDUoJJ4y2RFYrKZ8Xuq6hJ0xmH7q/ScDSGQijObNlh7
-	r1Xc+fSCRhJQATFYPtKIGCt8R1kXfdJvO4YPWZ5oVPn+Rq5QwjuqRTcLL4q0cISQ
-	UtXCWcb9oPLdXRGzWb55s1qBzjJPG84GWfq7Zhu6tkOf35Istjnj1GajP00Lnr17
-	YylBetPVB+3mnmhzkdwQPz5sj72qKAxXIiViWa+5/A55pF+8qCGIxjL0DK/j82zw
-	mXD2ImPqJT+6fi5YHIA/xMM4RMpg7UJ5wl8maEhkOzF5k8a7qIN3FuPmbhQ7Ex7B
-	tzYJUA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43qqjh174s-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=/cHdqEJKeY2HpW3xK+rto7
+	NbzwszTcC5doO9ISYbtG4=; b=pyLbzCrWeHcgQb/C0zQTKRBTLs8JkNmxlLEMkz
+	Ei5sZZ9GHp0cq/veDzlPZWUSRN6yDySGybPt7V3eFAv4QuiTMZcoa4z+Kb2lFFSr
+	OoT8w7tPwogP9vFEiWne+BDs/U1ykhwEp+B9EDDrotSPrkAaaLTM4ZOCoRJTNuaJ
+	UDvp4r51Ko00uMfQagcTXfOf/hhyIREhV1nNLnEyJPGJF4M+qfebC4MU6PA6Vu05
+	PY8ApSi/omhnFij4pqhkxBSrMETxxYa3vQR84Au2N3/oVwJPrOBSyEQuhOdjbw2O
+	6/up1pYNoiprVTBmCAkWMVmXfUz/Mh75CUBL2FGB7lwmEMeA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43qpwb9mr6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 24 Dec 2024 10:20:07 +0000 (GMT)
+	Tue, 24 Dec 2024 10:20:30 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BOAK6Fv018784
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BOAKTOE022387
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 24 Dec 2024 10:20:06 GMT
-Received: from [10.152.206.29] (10.80.80.8) by nalasex01c.na.qualcomm.com
- (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 24 Dec
- 2024 02:20:04 -0800
-Message-ID: <088e894b-5e73-4a0e-ad68-f32b8f21aab7@quicinc.com>
-Date: Tue, 24 Dec 2024 15:50:01 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 6/6] wifi: ath12k: Support Received FSE Stats
-To: Kalle Valo <kvalo@kernel.org>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        Dinesh
- Karthikeyan <quic_dinek@quicinc.com>
-References: <20241217095216.1543923-1-quic_rdevanat@quicinc.com>
- <20241217095216.1543923-7-quic_rdevanat@quicinc.com>
- <87r063hkpt.fsf@kernel.org>
-Content-Language: en-US
+	Tue, 24 Dec 2024 10:20:29 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 24 Dec 2024 02:20:27 -0800
 From: Roopni Devanathan <quic_rdevanat@quicinc.com>
-In-Reply-To: <87r063hkpt.fsf@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH v2 0/6] wifi: ath12k: Support Sounding, Latency, Trigger, FSE stats
+Date: Tue, 24 Dec 2024 15:50:07 +0530
+Message-ID: <20241224102013.1530055-1-quic_rdevanat@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: KShU2J7Px6tVXWImYopgDh2FSHlDYMvZ
-X-Proofpoint-ORIG-GUID: KShU2J7Px6tVXWImYopgDh2FSHlDYMvZ
+X-Proofpoint-GUID: zy3TKqu7CjE_--GGUUV-bcrxgVxwySOS
+X-Proofpoint-ORIG-GUID: zy3TKqu7CjE_--GGUUV-bcrxgVxwySOS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
- lowpriorityscore=0 clxscore=1015 priorityscore=1501 mlxlogscore=820
- impostorscore=0 phishscore=0 mlxscore=0 adultscore=0 spamscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
+ lowpriorityscore=0 priorityscore=1501 mlxlogscore=809 adultscore=0
+ suspectscore=0 mlxscore=0 spamscore=0 bulkscore=0 impostorscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412240087
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241224_022009_449784_42A62360 
-X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-CacheID: sfid-20241224_022031_422232_93818754 
+X-CRM114-Status: UNSURE (   6.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -103,23 +97,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Add support to request HTT stats type 22, 25, 26, 27 and 28 from
+firmware. These stats give sounding stats, latency stats, trigger stats
+for uplink OFDMA and MUMIMO and FSE stats, respectively.
+
+Depends-on:
+[PATCH 0/2] wifi: ath12k: Support Rate and OFDMA Stats
+Link: https://lore.kernel.org/all/20241128110949.3672364-1-quic_rdevanat@quicinc.com/
+
+[PATCH v4 0/2] wifi: ath12k: Support AST and Puncture Stats
+Link: https://lore.kernel.org/all/20241217055408.1293764-1-quic_rdevanat@quicinc.com/
+
+v2:
+ - Added line breaks where necessary, as pointed out by Kalle.
+ - Modified the use of pointer arithmetic print_array_to_buf_s8().
+ - Modified commit logs, as suggested by Kalle. 
+
+Dinesh Karthikeyan (5):
+  wifi: ath12k: Support Sounding Stats
+  wifi: ath12k: Support Latency Stats
+  wifi: ath12k: Support Uplink OFDMA Trigger Stats
+  wifi: ath12k: Support Uplink MUMIMO Trigger Stats
+  wifi: ath12k: Support Received FSE Stats
+
+Roopni Devanathan (1):
+  wifi: ath12k: Add API to print s8 arrays in HTT stats
+
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 736 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 267 ++++++-
+ 2 files changed, 970 insertions(+), 33 deletions(-)
 
 
-On 12/19/2024 6:51 PM, Kalle Valo wrote:
-> Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
-> 
->> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
->>
->> Add support to request received FSE stats from firmware through
->> HTT stats type 28. These stats give software and hardware FSE
->> stats such as cache entry count, full cache count, current and
->> peak occupancy count, pending search counts, etc.
-> 
-> What does FSE mean? It would be nice to spell that out.
+base-commit: 09fa3b6974a1245ddd0751747609431494ba5b4f
+prerequisite-patch-id: c30df5e4af6f5773ed942d8f78de88c05ce2b18b
+prerequisite-patch-id: f2181eee4bce2e3487db9bd81ed962f477759e7e
+-- 
+2.25.1
 
-I'll modify the commit message in next version.
-
-> 
-> Acked-by: Kalle Valo <kvalo@kernel.org>
-> 
 
