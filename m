@@ -4,66 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DFD9E7718E
-	for <ath12k@archiver.kernel.org>; Tue, 24 Dec 2024 14:20:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06465E77188
+	for <ath12k@archiver.kernel.org>; Tue, 24 Dec 2024 14:36:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Y0VkCqJ101JZZLJ0WEanHWOAZOCqIBi5TYxy1tkpZ1s=; b=reazTeoXXrqIqsxMHlHFYWXrxT
-	TSK4ufRfgPZd34cf+ePoTjt8xtI6pdTu+7Y/b3kGVEXvrwzILg2lav4jVcl8XUniVhOduUKFMlU4t
-	S3UBi0ezjcfg0zvil84z1glnQvNKjYpiOzFF2fkMlUHTTj3idpdMVDHByDk23cHSLxvCnHgbaOBBS
-	OQj5L8q/OtBkNoqv0O1vbq8JAjMIXD6wMI/MM3jy46s25cdqmItxxL8uTnBDnJ7/NCyHCqaeeJYMG
-	Ch1YOvOAmpvqzbpGSXu5anJ8d6uFuJ5t4O9W08f5v09jo/Nu6DJYE6c9flNdZIi4C35NAozYmBX4W
-	EjtfEwYw==;
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=pZt4+FN6WJwRQLIdr0HirIDOXlHPflQ3XebmXHdBgUM=; b=3kcTazV9btZK/7WfeBnjCxncz5
+	x1t8Iw6w4WVVFKOB4mEk2fBt8wtNAYPc14nXmlA5y0DFgmHG7nkf0yUZ763cF9KzfQ9VSYVDoDvcj
+	Cm7RIJf9ky+zt5XNBx/6J3qg8SCcIw+oKjidSy4O9BZX3BIpJsVSfJLf+RYSc6I9ukguQiJDVc9UP
+	qOk1goEPJzIf88MjsRVAhCJ5AqFTqru3U5v5VLzbsPJor6ZiBhjb0FlXJEMI1I7qNwUft0lVlUxMl
+	7OZxI9gPUr8RvznEvCJoIYzGYwbA8bdzJLZKzXlFi+x47jLEma3c/eW+S9eQavaIKe9LpQCo/K1XW
+	KodjqozQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQ5lU-0000000C8CC-0Jr5
+	id 1tQ61Q-0000000C9X3-3Bro
 	for ath12k@archiver.kernel.org;
-	Tue, 24 Dec 2024 14:20:04 +0000
+	Tue, 24 Dec 2024 14:36:32 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQ5lQ-0000000C89s-2f0W
+	id 1tQ61O-0000000C9WP-1gBt
 	for ath12k@lists.infradead.org;
-	Tue, 24 Dec 2024 14:20:02 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BO9Ft8u027519;
-	Tue, 24 Dec 2024 14:19:59 GMT
+	Tue, 24 Dec 2024 14:36:31 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BOAIJ0C028368;
+	Tue, 24 Dec 2024 14:36:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Y0VkCqJ101JZZLJ0WEanHWOAZOCqIBi5TYxy1tkpZ1s=; b=Cb23h5l3DhBYJUKJ
-	NlMlF1DdYlBjTdhhBHN2Den2de31WxXR2xRSccRqgxtykUfP3mQVfuFzvxyW/ZRy
-	4CNgJ0U4RKM00t6TmfrnOZfR/R+LniHvO2EYPtZEQhCrPZwixQOeSPcw4RqDDoUX
-	cUvwMpgPQ4hPjZwyFFz4nPXgHEb9DgKyz4GeVyTyf0j8KH0PID2qcPoUYJP0Ovil
-	Du1ReF1nFvKHrGXMHcpiFaJezqbm7y2g1AuWS7Ah+SiPGDUlzK0MSA9zbEfGoo27
-	GimR399PA7wjKEs3LqcWNSYWp2OTEmOGDWk43iYPYwoPek6eykoMG0SVZkFz9flW
-	Gej0Tw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43qt5w9hp8-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=pZt4+FN6WJwRQLIdr0HirI
+	DOXlHPflQ3XebmXHdBgUM=; b=Zjt9AckVArz84CEvakV8QNLq5gKtLwQRBdAU8v
+	GwoZOOgpFaqdKmHmPijJbcsFCir1OWqVM+DCjwl7s0x7oso9oC57WtWDTqB1QTWy
+	KCCRKbpOt1yo4LAuSIkJi0BMJ9DjEibk/Swi7FyGB0VCLZdr/bGs+rdILLzZsGJZ
+	pU/xyGAtJhXTFiYzAHeLIuCX7QnZzal+jL9f9e6kDHKe4jlBVSp6Fibp0PiAzCjo
+	dLLQFltXOWeBGs6XWuAJA4M3luK4jhe+fBj1hQshiPvsizk8X0Zo+WR7++yUn1cI
+	O+sNTRxVOVGTAhY4z+rfvasUJJpqGIZ5VwZQmZmr427/59sA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43qjqvkjp0-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 24 Dec 2024 14:19:59 +0000 (GMT)
+	Tue, 24 Dec 2024 14:36:29 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BOEJwde006012
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BOEaSKY015182
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 24 Dec 2024 14:19:58 GMT
+	Tue, 24 Dec 2024 14:36:28 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 24 Dec 2024 06:19:56 -0800
+ 15.2.1544.9; Tue, 24 Dec 2024 06:36:26 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>
-Subject: [PATCH v2 3/3] wifi: ath12k: Refactor Rx status TLV parsing procedure argument
-Date: Tue, 24 Dec 2024 19:49:20 +0530
-Message-ID: <20241224141920.129339-4-quic_periyasa@quicinc.com>
+Subject: [PATCH v3 0/3] wifi: ath12k: Refactor monitor Rx handler
+Date: Tue, 24 Dec 2024 20:06:10 +0530
+Message-ID: <20241224143613.164921-1-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241224141920.129339-1-quic_periyasa@quicinc.com>
-References: <20241224141920.129339-1-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -72,19 +69,20 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1xPzaUIfVtwU3Yc6xSdG0l_dM2aj8i7o
-X-Proofpoint-ORIG-GUID: 1xPzaUIfVtwU3Yc6xSdG0l_dM2aj8i7o
+X-Proofpoint-ORIG-GUID: cWyxDFCURiO_QaKdAPer3Mh1JmWKWmoq
+X-Proofpoint-GUID: cWyxDFCURiO_QaKdAPer3Mh1JmWKWmoq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 clxscore=1015 phishscore=0 impostorscore=0 spamscore=0
- mlxscore=0 lowpriorityscore=0 adultscore=0 suspectscore=0 mlxlogscore=999
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412240124
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ priorityscore=1501 phishscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0
+ mlxlogscore=548 clxscore=1015 adultscore=0 impostorscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2412240126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241224_062000_834170_9B771426 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20241224_063630_561231_BD1A8DFC 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,77 +97,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k_dp_mon_rx_parse_status_tlv() takes the TLV tag, TLV data
-and TLV userid as separate arguments from the caller. In the future, the
-TLV length will be needed for parsing the EHT TLV tag. Therefore, instead
-of increasing the number of arguments, pass the TLV header and retrieve the
-necessary fields from the TLV header itself.
+Currently, monitor support is not added. However, in the future, the
+monitor will be enabled. Therefore, refactor the monitor handler, which
+help to add monitor support in the future.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+v3:
+ - Remove the Acked-by tag
+v2:
+ wifi: ath12k: Refactor Rx status TLV parsing procedure argument
+  - Updated more details in the commit message
 
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp_mon.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+Karthikeyan Periyasamy (3):
+  wifi: ath12k: Refactor the monitor Rx parser handler argument
+  wifi: ath12k: Refactor the monitor Tx/RX handler procedure arguments
+  wifi: ath12k: Refactor Rx status TLV parsing procedure argument
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index ae2f6847bc88..53f8e8f8959a 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -565,12 +565,16 @@ static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *
- static enum hal_rx_mon_status
- ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 				  struct ath12k_mon_data *pmon,
--				  u32 tlv_tag, const void *tlv_data,
--				  u32 userid)
-+				  const struct hal_tlv_64_hdr *tlv)
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct hal_rx_mon_ppdu_info *ppdu_info = &pmon->mon_ppdu_info;
--	u32 info[7];
-+	const void *tlv_data = tlv->value;
-+	u32 info[7], userid;
-+	u16 tlv_tag;
-+
-+	tlv_tag = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_TAG);
-+	userid = le64_get_bits(tlv->tl, HAL_TLV_64_USR_ID);
- 
- 	switch (tlv_tag) {
- 	case HAL_RX_PPDU_START: {
-@@ -1187,7 +1191,6 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k *ar, struct ath12k_mon_data *pmon,
- 	struct hal_rx_mon_ppdu_info *ppdu_info = &pmon->mon_ppdu_info;
- 	struct hal_tlv_64_hdr *tlv;
- 	enum hal_rx_mon_status hal_status;
--	u32 tlv_userid;
- 	u16 tlv_tag, tlv_len;
- 	u8 *ptr = skb->data;
- 
-@@ -1196,9 +1199,6 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k *ar, struct ath12k_mon_data *pmon,
- 	do {
- 		tlv = (struct hal_tlv_64_hdr *)ptr;
- 		tlv_tag = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_TAG);
--		tlv_len = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_LEN);
--		tlv_userid = le64_get_bits(tlv->tl, HAL_TLV_64_USR_ID);
--		ptr += sizeof(*tlv);
- 
- 		/* The actual length of PPDU_END is the combined length of many PHY
- 		 * TLVs that follow. Skip the TLV header and
-@@ -1208,10 +1208,11 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k *ar, struct ath12k_mon_data *pmon,
- 
- 		if (tlv_tag == HAL_RX_PPDU_END)
- 			tlv_len = sizeof(struct hal_rx_rxpcu_classification_overview);
-+		else
-+			tlv_len = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_LEN);
- 
--		hal_status = ath12k_dp_mon_rx_parse_status_tlv(ar, pmon,
--							       tlv_tag, ptr, tlv_userid);
--		ptr += tlv_len;
-+		hal_status = ath12k_dp_mon_rx_parse_status_tlv(ar, pmon, tlv);
-+		ptr += sizeof(*tlv) + tlv_len;
- 		ptr = PTR_ALIGN(ptr, HAL_TLV_64_ALIGN);
- 
- 		if ((ptr - skb->data) >= DP_RX_BUFFER_SIZE)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 60 ++++++++++++------------
+ drivers/net/wireless/ath/ath12k/dp_mon.h |  7 ++-
+ 2 files changed, 33 insertions(+), 34 deletions(-)
+
+
+base-commit: 09fa3b6974a1245ddd0751747609431494ba5b4f
 -- 
 2.34.1
 
