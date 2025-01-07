@@ -4,62 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B655FE77197
-	for <ath12k@archiver.kernel.org>; Tue,  7 Jan 2025 19:45:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8EDCE77197
+	for <ath12k@archiver.kernel.org>; Tue,  7 Jan 2025 23:38:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Oww9DlvcE47Yrel+r5DJySB3f1b7ochf1xCrp4iOxrs=; b=s4GbBp6vKEQNzj+7vOGKtmyZhU
-	I7EmduklVYbhwW06bGwbKL8ckwVWloOOi76OUSGid3f3RR5XSMLX5k3F0UtThxTvOIRZvbsVclvy6
-	XmyHaPYvdhNOkJNp77R9Nz1vuPJVIX544vxR1pusFLpKVmJjK1495gRCLKLw0Ne/zecvNIavwtZnX
-	O2n5iYOEXPZJil6q+AocWcC/ziCFKPm3rUyvUJx+GzCQ/aaK+6i4A1GQ0+5+pAbn0gMcXjjV74ajh
-	sgleA0I65wG6WE7byS+e6UpMZeGQl7GbbGDkSb1PjGdaO3HdZR5kw3GKRujQNqoIrrI/ZAs+fAOYO
-	r2rR9tkA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=/OXOW4heDzfbMQ07OQGYi/eomE9Ei0nXstNi2ePc7UQ=; b=ZQEyQXOri0kQyV9pMNRH9JKTgt
+	+JUlKLPur3fTe17euDydYJzgxC9CPQs2X8g3/TGEK2zIMFgGSPgoBiJp+1fawUsSZKl3Aj0hwp5oC
+	dVykU8e5TMiOnnYsZzzJyuys+v6FH6l77EnO0BlY7vY1P+CPqzTrZP3Rr3pZ0yTjaFijM+KamjU5J
+	jGJ5P/j68806bBab6Jz+NvJ3G6k/V6R7lDR8ekqljlVC0uHeSZlDDdlXo1fyIo2JkQx8SA2jGMOnJ
+	O7uV4bAN8rtRIbcjpl5yvsfLIGGxmXqjxOEgo1hnciZWLOUVLyhrAsarenXqYg0PJXUy5bt00xXKh
+	YqPfRbaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVFVy-00000006A9D-2AUx
+	id 1tVJ9i-00000006ZSm-28pC
 	for ath12k@archiver.kernel.org;
-	Tue, 07 Jan 2025 19:45:22 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Tue, 07 Jan 2025 23:38:38 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVFVw-00000006A8d-0ovj
+	id 1tVJ9g-00000006ZSC-1HJs
 	for ath12k@lists.infradead.org;
-	Tue, 07 Jan 2025 19:45:21 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B83B7A41C73;
-	Tue,  7 Jan 2025 19:43:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 107A8C4CED6;
-	Tue,  7 Jan 2025 19:45:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736279119;
-	bh=RD22hk1daK1JvYQmqzUMipy+wpFHrhVOOLxHdLDCat4=;
-	h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
-	b=Hez8ws1iQOkuGzCzv/pd107HlI827Ne2jj6TF68CAjNNFnZMlRFtWvFURgD4ke1np
-	 NJTGhA5K9QE5nb3ewhRVCu+qlI7++8gpRb9tTVR1XyCpJkksodlFWG0otAqTHrvahv
-	 gsCP+f292A+WbOfUKTNLU4Wg0MffISZklfS3F/A5KBkENnSnpYuHleT1mF0WDqq/Ru
-	 5UGe+3YgduAq7yYVjF+V6TaYqjC0fhe5Tmq4tECfwzK3CZ6rno33xeFFp/XMqb5KDh
-	 8smLDce6V6hHKoHC6zcWu8EvhTJYR1Ohmtb6L32ZnHI/BnTPjvIVRsOg9JdJtkiJ/r
-	 mP2tMEsHMQ7Ig==
-From: Kalle Valo <kvalo@kernel.org>
-To: Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: <ath12k@lists.infradead.org>,  <linux-wireless@vger.kernel.org>,
-  Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Subject: Re: [PATCH 2/2] wifi: ath12k: Support Transmit Buffer OFDMA Stats
-References: <20241128110949.3672364-1-quic_rdevanat@quicinc.com>
-	<20241128110949.3672364-3-quic_rdevanat@quicinc.com>
-Date: Tue, 07 Jan 2025 21:45:16 +0200
-In-Reply-To: <20241128110949.3672364-3-quic_rdevanat@quicinc.com> (Roopni
-	Devanathan's message of "Thu, 28 Nov 2024 16:39:49 +0530")
-Message-ID: <87jzb6flwz.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	Tue, 07 Jan 2025 23:38:37 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 507K2jdH007104
+	for <ath12k@lists.infradead.org>; Tue, 7 Jan 2025 23:38:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/OXOW4heDzfbMQ07OQGYi/eomE9Ei0nXstNi2ePc7UQ=; b=lt7H71nr5ZlkxQgt
+	42qwhGtv8DmB1Xjacgcnx+R4Y/ICH0dWBpNhdWLo/9PfVwPeLpaq2XM/ObDp6i6u
+	y3nb75lnu1gxF4lbSsYprXqWw55iGOaLQtUprM84qZ1FZVokDwk3928XruaXGhA9
+	8jqnaDmsDXE4LRp6GaxSw3hRi/TyfKgEEyxaGZP4/Jku4cmFXCtDqCWzHPC8L3mx
+	Wph3v/OF+DOTcknmIuNi9ZMo+kd0+Ricr1Bp+DZil16D2SpuFB7a9CCypzyJjyv7
+	dgp7ODf957WqHmlcv35roI9EcSjBEkDMOr1kjrHO9kMfljgNLNxtwNmoatmfwts2
+	yRjW2g==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44108fj6au-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 07 Jan 2025 23:38:34 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2163dc0f689so99294705ad.1
+        for <ath12k@lists.infradead.org>; Tue, 07 Jan 2025 15:38:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736293114; x=1736897914;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=/OXOW4heDzfbMQ07OQGYi/eomE9Ei0nXstNi2ePc7UQ=;
+        b=MXi2RBgolsOdd5B/tPu7KOVK9x2CVJcCi97TT4gHRVILxLcp147A7PTNiyIsdUfd7S
+         z95wJYVRvB1cynW1dB/msDZ+yAJrkxyeVbyQGZpBcubu+sq1GNmtbk02mG/OPaHVXFuG
+         QppLkbaOhSLN0JXsVg5lHbpv1BSkVdnslqNGgTE0aFNJ0X7fIlm0h02b4jrOyweD02mE
+         yFZPMRJhirxVbQmMs5bB+IhoN9siUp1PdTKj68iybZZ4tqtTANdV7xLsb7LSLmZh8QXl
+         ELd9BHWjEyxwkaQp2cL1mUKN3h/axLmvMsbW1D7t+udf6m2sppUg2WpKLnGN1AwTzl00
+         8rZQ==
+X-Gm-Message-State: AOJu0Yy5Aa01si6IQLY4dcUk+r4mAEXrF6WfTfGefFFsyqFgNa1aY1vE
+	y4iwTsW6FcxiLtLueT1rgSGBDffasZeu31EPxPs/XSqflU0pFCVofM0ExbsNlf8hSkerVQb+Cnt
+	9mNlgabeS112N76/GWcRFEasIY8iB3q/dWJPLXRTkNdjfeQAnN2KACfeMRWoE
+X-Gm-Gg: ASbGnctNc97nOcN2E9OFqMyd5t9e2Gj1Khviuzs72Im2lXC6lfzA7dNpokWZnbAy+Il
+	YIBEE+lHd1oPKfGsNLHOO/dsQrd/fZYcyYveirUmU/LuSycHrnVteFgABAu7h+1PKjbnZVZaLO1
+	MTiKVWYdnyQ0fxfGF5+Mj+wm/sPrrFG6FKn+a/KvT39VWLCoIJ6cGY9p6M+/2QAaFtlxlAACsJk
+	zBgVmJq6W7Dx3G4smhEGUZjqKQ+ZHKgrxuysgpIosMuJQZdaD6n3AIsOCtCe+7+K9zMOmhwb+WA
+	gCNPsENb/zTEtUa1yGXFfUMaS84bCSw7VQuKuvy2efcpbtCNtg==
+X-Received: by 2002:a05:6a20:244d:b0:1e0:b5ae:8fc1 with SMTP id adf61e73a8af0-1e88cfa6852mr2133058637.13.1736293114006;
+        Tue, 07 Jan 2025 15:38:34 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFYieOQL5DVKrFFboGaDv3rB+c6tkPaA2Lq7M09HgpEjKdIDfk9vyvwRMmgQFREUOCgiV2ECA==
+X-Received: by 2002:a05:6a20:244d:b0:1e0:b5ae:8fc1 with SMTP id adf61e73a8af0-1e88cfa6852mr2133031637.13.1736293113626;
+        Tue, 07 Jan 2025 15:38:33 -0800 (PST)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72aad816305sm33823525b3a.31.2025.01.07.15.38.32
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 07 Jan 2025 15:38:33 -0800 (PST)
+Message-ID: <c776b5ee-0e25-4d21-be21-dd318ae33d1e@oss.qualcomm.com>
+Date: Tue, 7 Jan 2025 15:38:32 -0800
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] wifi: ath12k: Support Transmit Buffer OFDMA Stats
+To: Kalle Valo <kvalo@kernel.org>,
+        Roopni Devanathan <quic_rdevanat@quicinc.com>
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+        Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+References: <20241128110949.3672364-1-quic_rdevanat@quicinc.com>
+ <20241128110949.3672364-3-quic_rdevanat@quicinc.com>
+ <87jzb6flwz.fsf@kernel.org>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <87jzb6flwz.fsf@kernel.org>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: E96C7FfjrcMRPjuWeU420Z7Qw0RjiDjk
+X-Proofpoint-GUID: E96C7FfjrcMRPjuWeU420Z7Qw0RjiDjk
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ mlxlogscore=999 impostorscore=0 malwarescore=0 spamscore=0 adultscore=0
+ priorityscore=1501 clxscore=1015 mlxscore=0 suspectscore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501070193
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_114520_368132_B965E91A 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20250107_153836_368683_A2B0196F 
+X-CRM114-Status: GOOD (  16.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,104 +120,53 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
+On 1/7/2025 11:45 AM, Kalle Valo wrote:
+> Roopni Devanathan <quic_rdevanat@quicinc.com> writes:
+>> From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+>> +	len--;
+>> +	*(buf + len) = '\0';
+> 
+> Please avoid pointer arithmetic, this is simpler:
+> 
+> buf[len] = '\0';
+> 
+> Or should it be just 0 instead of '\0'? Don't know which one is
+> preferred.
+> 
 
-> From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
->
-> Add support to request OFDMA stats of transmit buffers from firmware through
-> HTT stats type 32. These stats give information about NDPA, NDP, BRP and
-> steering mechanisms.
->
-> Note: WCN7850 firmware version -
-> WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4 does not
-> support HTT stats type 32.
->
-> Sample output:
-> -------------
-> echo 32 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-> HTT_TXBF_OFDMA_AX_NDPA_STATS_TLV:
-> ax_ofdma_ndpa_queued = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> ax_ofdma_ndpa_tried = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> .....
->
-> HTT_TXBF_OFDMA_AX_NDP_STATS_TLV:
-> ax_ofdma_ndp_queued = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> ax_ofdma_ndp_tried = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> .....
->
-> HTT_TXBF_OFDMA_AX_BRP_STATS_TLV:
-> ax_ofdma_brpoll_queued = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> ax_ofdma_brpoll_tied = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> .....
->
-> HTT_TXBF_OFDMA_AX_STEER_STATS_TLV:
-> ax_ofdma_num_ppdu_steer = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> ax_ofdma_num_usrs_prefetch = 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0, 13:0, 14:0, 15:0, 16:0,
-> 17:0, 18:0, 19:0, 20:0, 21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0,
-> 28:0, 29:0, 30:0, 31:0, 32:0, 33:0, 34:0, 35:0, 36:0, 37:0
-> .....
->
-> HTT_TXBF_OFDMA_AX_STEER_MPDU_STATS_TLV:
-> rbo_steer_mpdus_tried = 0
-> rbo_steer_mpdus_failed = 0
-> sifs_steer_mpdus_tried = 0
-> sifs_steer_mpdus_failed = 0
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
->
-> Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+well my take on this is we have a lot of similar pointer arithmetic already in
+this and other debugfs files, including all of the scnprintf(buf + len, ...)
+calls which could be scnprintf(&buf[len], ...). And we have existing instances
+of trailing comma suppression in:
+print_array_to_buf_index()
+ath12k_htt_print_txbf_ofdma_ax_ndpa_stats_tlv()
+ath12k_htt_print_txbf_ofdma_ax_ndp_stats_tlv()
+and others, all of which assign '\0'
 
-[...]
+so this code looks ok to me.
 
-> +static void
-> +ath12k_htt_print_txbf_ofdma_ax_ndpa_stats_tlv(const void *tag_buf, u16 tag_len,
-> +					      struct debug_htt_stats_req *stats_req)
-> +{
-> +	const struct ath12k_htt_txbf_ofdma_ax_ndpa_stats_tlv *stats_buf = tag_buf;
-> +	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-> +	u32 len = stats_req->buf_len;
-> +	u8 *buf = stats_req->buf;
-> +	u32 num_elements;
-> +	u8 i;
-> +
-> +	if (tag_len < sizeof(*stats_buf))
-> +		return;
-> +
-> +	num_elements = le32_to_cpu(stats_buf->num_elems_ax_ndpa_arr);
-> +
-> +	len += scnprintf(buf + len, buf_len - len, "HTT_TXBF_OFDMA_AX_NDPA_STATS_TLV:\n");
-> +	len += scnprintf(buf + len, buf_len - len, "ax_ofdma_ndpa_queued =");
-> +	for (i = 0; i < num_elements; i++)
-> +		len += scnprintf(buf + len, buf_len - len, " %u:%u,", i + 1,
-> +				 le32_to_cpu(stats_buf->ax_ndpa[i].ax_ofdma_ndpa_queued));
-> +	len--;
-> +	*(buf + len) = '\0';
+that said, while i've been reviewing the debugfs implementations I thought the
+code would look much cleaner if we had a wrapper function (or macro).
 
-Please avoid pointer arithmetic, this is simpler:
+Note that the input to the current debugfs functions includes a struct
+debug_htt_stats_req *stats_req that maintains the buffer pointer and filled
+length. what if we had a wrapper that took just that, the format string, and
+the optional arguments, and all of the pointer arithmetic is encapsulated in
+that function, rather than being open coded?
 
-buf[len] = '\0';
+so instead of:
+	len += scnprintf(buf + len, buf_len - len, "some string"");
+have simply:
+	ath12k_scnprintf(stats_req, "some string");
 
-Or should it be just 0 instead of '\0'? Don't know which one is
-preferred.
+that function would extract the buffer pointer and current filled length from
+stats_req, calculate where to write the next string, call scnprintf() or
+vscnprintf() to write the string, and then update the current filled length in
+the stats_req. That would eliminate all of this housekeeping from the callers:
+buf + len
+buf_len - len
+len += scnprintf(..)
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/list/
+/jeff
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
