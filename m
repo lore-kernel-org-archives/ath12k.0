@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A89C3E7719A
-	for <ath12k@archiver.kernel.org>; Thu,  9 Jan 2025 18:36:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BC02E77199
+	for <ath12k@archiver.kernel.org>; Thu,  9 Jan 2025 18:36:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=OgoDrtc5xPKmJuhAFx+eLRurUBvA0O2Nm9s+2snvxhE=; b=RQpZ91hFu2VvvwoQfQvQDVDIyo
-	jqGaHsPjWFQCwRQrRAYBOS4jX7Pp/dBzO0D6UzVV9YiA1TPLdV/7Fzhge2lVOCBN8mB0EzY8PKzdb
-	BwOZwm+T4MrH9P9LACfPxTOIt+DpR3KA0BxSZP8jkhMF9uvVNJ/4nlKKVKaQRv6B5q29qCR0LLijb
-	o1S7Gvr3X/tkFIECchERrwUpqcgxpgBZqUPt4BStsD+zxXj9EoEu+fxM56XOZFzFskatt5QRilj2W
-	q2UYkgyBVQft94d359tY5vmjICiD130gfdum3SnLZCZ2hugymS2ngwHmq6tPCy8WLXV2WarOJqsbL
-	IWf/Btew==;
+	bh=/zdUt1YYkYhRwvBYEMWKLXRDxBOBzya3759Vb0mJtRI=; b=ASalRFygGP4XmUsjdlZh+BnY3J
+	/QnxETC1rJBvjQcX0MNAe9b64RX7825tPw+2qhOzVvdsJu4Jb1blViC6RK/t0Aw6DVHrcginzUnB4
+	iMl48aa3/lFBuVmFwlcWp8piDXjJwiUHCWhtFhKLzBr5tgx7ScLMuEeqygIyRoSAjlLrgiArTcjOL
+	wr37xNi+QEEwhVI/nAcJEdjNaXtWAT2NTFQdvOOr8IOjDLaZlvY+OJp1U5LAzczjxbtJ0408tAlnp
+	9hZ8Lp65vt8/48uy7SF5DCD0fsaacR/uXZWbhmaUGnbyNJgdGc5kAhlPu6xSihuSyQ/EOhwb+DlGN
+	QGRLg2VA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVxOU-0000000CzES-1rTf
+	id 1tVxOU-0000000CzEi-3M0p
 	for ath12k@archiver.kernel.org;
 	Thu, 09 Jan 2025 18:36:34 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVxOP-0000000CzCC-0Tyb
+	id 1tVxOR-0000000CzCz-1JnH
 	for ath12k@lists.infradead.org;
-	Thu, 09 Jan 2025 18:36:31 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 509D87h9010367;
-	Thu, 9 Jan 2025 18:36:28 GMT
+	Thu, 09 Jan 2025 18:36:32 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 509E7g4Z006739;
+	Thu, 9 Jan 2025 18:36:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	OgoDrtc5xPKmJuhAFx+eLRurUBvA0O2Nm9s+2snvxhE=; b=ovJPRm4qS1TFS+t9
-	wnscAVXCamk35tao78auX2S/tAnL+SpEAlMitsGvlMZjJV377yvnUQ92KOiC/OHo
-	wPvBwDF59pVYKj3/lfMemOwWhIUO3pelUylB0heEJn5IK3E6WpoqGgAMkaz5G33w
-	jElPSK6zjhRwi+fR48q+UX5LudRYdQ4pfsaI18qSL8eJDjrhqagj/tdBGAJEfgTk
-	jTDThgtMqjQfz86EkNIm0J5OJDX/nvVyCaTVynVmV/BybYg0kML0h0J0Rbza6KpO
-	GHDch559A+Jg1/EGwC2fSKPd9FUvfrmTzy+ybFbujJKogcme+IHllfC0krCjBJ47
-	mLxYkw==
+	/zdUt1YYkYhRwvBYEMWKLXRDxBOBzya3759Vb0mJtRI=; b=MrneKvbule3UzWDl
+	qtqUD7YynsPRiXcfLKKpGr8xsjW76bNwtlSUboWFm0suO541kKIRyrNa5fAzztF9
+	ke5zQLzanQ26pJbjJtdOYoVvjAheH0l1L0pCb3U6CvRJ89ajC8xTIB0ubpL8uvHW
+	MpMFyhOU8y9swkBCyoiV2L811Hgw51yaA5HQu057Xc+aIpWJqt80XuqMEjBpKtXC
+	6QlJq0RRp/YvXMlY9PgYUpEsCATRZYj63YFJYyCpwkwsHsKwpl882j/ODAMgkAfq
+	ILNuzW5dFIV1q+32W7Bz+oqW8/KmJCGG0B3dLSfq5mJYzsLgFRHET4xx+bxXAFnH
+	r7NMUA==
 Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 442f2krsfd-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 442fxs0nvu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 09 Jan 2025 18:36:28 +0000 (GMT)
+	Thu, 09 Jan 2025 18:36:30 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 509IaB3s002983
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 509IaF0O003049
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 9 Jan 2025 18:36:11 GMT
+	Thu, 9 Jan 2025 18:36:16 GMT
 Received: from hu-aarasahu-blr.qualcomm.com (10.80.80.8) by
  nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 9 Jan 2025 10:36:10 -0800
+ 15.2.1544.9; Thu, 9 Jan 2025 10:36:14 -0800
 From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Aaradhana Sahu
-	<quic_aarasahu@quicinc.com>
-Subject: [PATCH v6 2/5] wifi: ath12k: export ath12k_wmi_tlv_hdr for testmode
-Date: Fri, 10 Jan 2025 00:05:48 +0530
-Message-ID: <20250109183551.1028791-3-quic_aarasahu@quicinc.com>
+	<quic_aarasahu@quicinc.com>,
+        Rajat Soni <quic_rajson@quicinc.com>
+Subject: [PATCH v6 4/5] wifi: ath12k: Fill pdev id for fw test cmd
+Date: Fri, 10 Jan 2025 00:05:50 +0530
+Message-ID: <20250109183551.1028791-5-quic_aarasahu@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250109183551.1028791-1-quic_aarasahu@quicinc.com>
 References: <20250109183551.1028791-1-quic_aarasahu@quicinc.com>
@@ -72,19 +73,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: GAdylM3eiF5VNet4m9TnySPs64SfwNTB
-X-Proofpoint-ORIG-GUID: GAdylM3eiF5VNet4m9TnySPs64SfwNTB
+X-Proofpoint-GUID: x0oB8IZqlHjTyme7Ee8Ab-mdNxx3fqtJ
+X-Proofpoint-ORIG-GUID: x0oB8IZqlHjTyme7Ee8Ab-mdNxx3fqtJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- adultscore=0 mlxlogscore=879 clxscore=1015 lowpriorityscore=0
- impostorscore=0 spamscore=0 phishscore=0 bulkscore=0 malwarescore=0
- suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ mlxlogscore=999 malwarescore=0 clxscore=1015 lowpriorityscore=0
+ priorityscore=1501 phishscore=0 mlxscore=0 impostorscore=0 spamscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2501090148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250109_103629_158045_F8E5FDE2 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20250109_103631_357005_FAC7F660 
+X-CRM114-Status: GOOD (  12.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,60 +100,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Export ath12k_wmi_tlv_hdr() to further use in the testmode command
-processing.
+Currently pdev id is not set properly. That can cause a crash
+if pdev id is not equal to the pdev id when firmware test
+command is run during AP bring up or ping.
+
+Set pdev id in function ath12k_tm_cmd_wmi to resolve this
+issue.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
+Co-developed-by: Rajat Soni <quic_rajson@quicinc.com>
+Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
 Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 4 ++--
- drivers/net/wireless/ath/ath12k/wmi.h | 3 ++-
- 2 files changed, 4 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ath/ath12k/testmode.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 4dd6cdf84571..246b8aab49a9 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #include <linux/skbuff.h>
- #include <linux/ctype.h>
-@@ -173,7 +173,7 @@ static const struct ath12k_wmi_tlv_policy ath12k_wmi_tlv_policies[] = {
- 		.min_len = sizeof(struct wmi_p2p_noa_event) },
- };
- 
--static __le32 ath12k_wmi_tlv_hdr(u32 cmd, u32 len)
-+__le32 ath12k_wmi_tlv_hdr(u32 cmd, u32 len)
+diff --git a/drivers/net/wireless/ath/ath12k/testmode.c b/drivers/net/wireless/ath/ath12k/testmode.c
+index 71fc4fb4274f..70e817d3d28e 100644
+--- a/drivers/net/wireless/ath/ath12k/testmode.c
++++ b/drivers/net/wireless/ath/ath12k/testmode.c
+@@ -300,9 +300,10 @@ static int ath12k_tm_cmd_wmi(struct ath12k *ar, struct nlattr *tb[])
  {
- 	return le32_encode_bits(cmd, WMI_TLV_TAG) |
- 		le32_encode_bits(len, WMI_TLV_LEN);
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index b6a197389277..00d024d4eb2c 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
+ 	struct ath12k_wmi_pdev *wmi = ar->wmi;
+ 	struct sk_buff *skb;
+-	u32 cmd_id, buf_len;
+-	int ret = 0;
++	struct wmi_pdev_set_param_cmd *cmd;
++	int ret = 0, tag;
+ 	void *buf;
++	u32 cmd_id, buf_len;
  
- #ifndef ATH12K_WMI_H
-@@ -5754,6 +5754,7 @@ int ath12k_wmi_set_bios_cmd(struct ath12k_base *ab, u32 param_id,
- 			    const u8 *buf, size_t buf_len);
- int ath12k_wmi_set_bios_sar_cmd(struct ath12k_base *ab, const u8 *psar_table);
- int ath12k_wmi_set_bios_geo_cmd(struct ath12k_base *ab, const u8 *pgeo_table);
-+__le32 ath12k_wmi_tlv_hdr(u32 cmd, u32 len);
+ 	if (!tb[ATH_TM_ATTR_DATA])
+ 		return -EINVAL;
+@@ -320,6 +321,12 @@ static int ath12k_tm_cmd_wmi(struct ath12k *ar, struct nlattr *tb[])
  
- static inline u32
- ath12k_wmi_caps_ext_get_pdev_id(const struct ath12k_wmi_caps_ext_params *param)
+ 	cmd_id = nla_get_u32(tb[ATH_TM_ATTR_WMI_CMDID]);
+ 
++	cmd = buf;
++	tag = le32_get_bits(cmd->tlv_header, WMI_TLV_TAG);
++
++	if (tag == WMI_TAG_PDEV_SET_PARAM_CMD)
++		cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
++
+ 	ath12k_dbg(ar->ab, ATH12K_DBG_TESTMODE,
+ 		   "testmode cmd wmi cmd_id %d  buf length %d\n",
+ 		   cmd_id, buf_len);
 -- 
 2.34.1
 
