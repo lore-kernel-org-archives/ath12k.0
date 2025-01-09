@@ -4,48 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78110E77197
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB9DDE7719A
 	for <ath12k@archiver.kernel.org>; Thu,  9 Jan 2025 18:49:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=B/LCTg3XJh0Wcb9c4/1xP86SlFilcykgLLR/kf90Psw=; b=3yVbfHeq8BO7EYBa3ZB/x9seik
-	q2K0W+USbhmqeyL70DglrXRl+UaVbshrbkfEvsDeLcs3rajyQ1o2dK50qpVMlwxOnE5+24D3gOTrs
-	thGVrayjEgJx4fnk20jbad07ZhtUzcCRPKVMQf5I9wXVzRCE1CQ/uzHUPwssKWNK+gP2xVLTtE/yw
-	OARgDKl6eDzPOqRM083zh4ty8peuXNX2o/H3yauoA/krwx6FvoJ1IUdt6QgaP3/qFsSJq/PnPXXwK
-	iDyJIbeUhSMJw0JWRuy7h9ywikCGS/44rcrZ8sztrtAxTZtZO9rKC8tShn4Zd/R93ygdy9bcW+uXb
-	x+Fp2Q+g==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=aJyOR62nOrjGFEPbSSHXykBNS9eBKY1kw0pAUKmOFCs=; b=Dsnkxx8gWGcUDEIBoegtumDf/Z
+	t07wNMRDNxuYOuX1Z0EA8SGJdG2Z1u+dGAV9yJVN/OnW0lF082Tp3+V+lrG33af1uR60Q1XUaj4t4
+	xHih50PfVB4D4f+lTtHQUTA4DWP8spEo2ochIsNX2xry+WVBIM0s2vML7YSPAlmmOPaOLAc2Nk4ZS
+	xaF+U2oHoUqnOVA2cwueaaFqGcsHup0esNxn82o3+BVuzFVTlUTvbxGtF3CzaB4BizPT9IfbiCo62
+	rD1IeBOMELzYdRWlmYYVLCZc0o/Mc4hAsE1TCI2XFV33IvUBcONPU9rJorsMoBiDLE38BA+cOwnYl
+	4StjAy7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVxbK-0000000D1rn-12mz
+	id 1tVxbK-0000000D1rv-2WcF
 	for ath12k@archiver.kernel.org;
 	Thu, 09 Jan 2025 18:49:50 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVxbH-0000000D1qb-1dw2
+	id 1tVxbH-0000000D1qa-1bp5
 	for ath12k@lists.infradead.org;
-	Thu, 09 Jan 2025 18:49:48 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 509D7h4r009940;
+	Thu, 09 Jan 2025 18:49:49 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 509E83fv007902;
 	Thu, 9 Jan 2025 18:49:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=B/LCTg3XJh0Wcb9c4/1xP8
-	6SlFilcykgLLR/kf90Psw=; b=jo1uDb2BxpmD/SfNUMUL6uRJPfx2OpMEScrzn4
-	8w1tnti37VVf7iRkJ7yk2On24DO0Zph+094yF1qwJegiNxLn2D9jEj3T8EKRSVFr
-	R98Vg7IruoNDI/+/Goj5TAoUOYjztaBzMuhecdp/MT//SPvKIO87rsy2KRaHtZ6k
-	PoQnn5ghP+vD2kMUeGVPhuQKbbP41g9qqrshpF4AxazaqOHFFxygUwffqg4zW00j
-	UwDQWAabHaSTHM0Hayi4wtVrpwIKGiM5fQw/0dRlacz/pvqg6jpR2ZPGVdfnt9CI
-	BDUL1+8mDvc3oRx6ITE9xCuRj7wm10MLqXYwCyXGc+ux4lkg==
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	aJyOR62nOrjGFEPbSSHXykBNS9eBKY1kw0pAUKmOFCs=; b=pPFRxX77cd+L3VnN
+	H35PNZe0JEJS/kyg94EN9pZ0ZszCz0Ao3VZaFJHHRjSDQFHcPD4yUGPMQa+NoY5i
+	p12jMoOdkJ43L8Xpw+/dnH3VH6NemOPoBTSIqwOGjC2Utbl+OQJmqWJ4Gx025fsn
+	XiAdgk77NoHBN6+opjxKFqNfRz/fByA/B5+Fnpes/D61lcQJDLo/C2r27TEwFLUF
+	M8MPSwqJZRLGwI2CYgdpy23/EdOo5wLiQ/AEJ0lbp2qAmh4ZgJ0yl2p/o4PvJqvT
+	0e0jQFBgbyXSu04lWSpBlS8LthtDChDDkrFWeD/U7b8VKIYtPpUue2R7b+HN+aNY
+	ai1e5Q==
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 442f2krtkv-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 442fxs0q1n-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 09 Jan 2025 18:49:45 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 509Ini5C025318
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 509Ini5D025318
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 9 Jan 2025 18:49:45 GMT
 Received: from hu-bmahalin-lv.qualcomm.com (10.49.16.6) by
@@ -55,10 +56,12 @@ Received: from hu-bmahalin-lv.qualcomm.com (10.49.16.6) by
 From: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_bmahalin@quicinc.com>
-Subject: [PATCH 0/2] wifi: ath12k: Add support for MLO Multicast Handling
-Date: Thu, 9 Jan 2025 10:49:30 -0800
-Message-ID: <20250109184932.1593157-1-quic_bmahalin@quicinc.com>
+Subject: [PATCH 1/2] wifi: ath12k: Update HTT_TCL_METADATA version and bit mask definitions
+Date: Thu, 9 Jan 2025 10:49:31 -0800
+Message-ID: <20250109184932.1593157-2-quic_bmahalin@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250109184932.1593157-1-quic_bmahalin@quicinc.com>
+References: <20250109184932.1593157-1-quic_bmahalin@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -67,20 +70,19 @@ X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 2EzUZTYD1qhgcpm_OZj6S1rfQp4oKk0I
-X-Proofpoint-ORIG-GUID: 2EzUZTYD1qhgcpm_OZj6S1rfQp4oKk0I
+X-Proofpoint-GUID: 6mIidknqHcTwLM4j7vGFNRkznenkjiD0
+X-Proofpoint-ORIG-GUID: 6mIidknqHcTwLM4j7vGFNRkznenkjiD0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- adultscore=0 mlxlogscore=774 clxscore=1011 lowpriorityscore=0
- impostorscore=0 spamscore=0 phishscore=0 bulkscore=0 malwarescore=0
- suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ mlxlogscore=999 malwarescore=0 clxscore=1011 lowpriorityscore=0
+ priorityscore=1501 phishscore=0 mlxscore=0 impostorscore=0 spamscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2501090149
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250109_104947_440567_1AB25005 
-X-CRM114-Status: UNSURE (   8.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250109_104947_440550_01975D6C 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,29 +97,108 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Patch 1 updates the HTT TCL metadata version to use the new bit definitions
-	of the field to pass additional information from Host to Firmware.
+Update the HTT_TCL_METADATA version to the latest version (2)
+as the bit definitions have changed a little to support more
+features. This new version allows the host to submit a packet with
+more information to the firmware. Firmware uses this additional
+information to do special processing for certain frames.
 
-Patch 2 moves the MLO Multicast frame duplication logic to the driver to
-	have more flexibility to update the HTT TCL metadata with the global
-	sequence and with a special vdev id to indicate Multicast handling
+All the firmware binaries available in upstream/public are compatible with
+this HTT version update.
 
-Note: ath12k-check verified and it lists one exception for length.
-      Exception has been fixed separately.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Balamurugan Mahalingam (2):
-  wifi: ath12k: Update HTT_TCL_METADATA version and bit mask definitions
-  wifi: ath12k: Add support for MLO Multicast handling in driver
+Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp.h    | 21 ++++++++++++++-------
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 12 ++++++++++--
+ 2 files changed, 24 insertions(+), 9 deletions(-)
 
- drivers/net/wireless/ath/ath12k/core.h  |  3 +-
- drivers/net/wireless/ath/ath12k/dp.h    | 27 +++++--
- drivers/net/wireless/ath/ath12k/dp_tx.c | 27 +++++--
- drivers/net/wireless/ath/ath12k/dp_tx.h |  4 +-
- drivers/net/wireless/ath/ath12k/mac.c   | 94 +++++++++++++++++++++++--
- 5 files changed, 135 insertions(+), 20 deletions(-)
-
-
-base-commit: dbe50a7420e22954c747e79e72df2750d795ea77
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index b178921aaf1d..98012e8cb30d 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #ifndef ATH12K_DP_H
+@@ -373,17 +373,18 @@ struct ath12k_dp {
+ };
+ 
+ /* HTT definitions */
++#define HTT_TAG_TCL_METADATA_VERSION		5
+ 
+-#define HTT_TCL_META_DATA_TYPE			BIT(0)
+-#define HTT_TCL_META_DATA_VALID_HTT		BIT(1)
++#define HTT_TCL_META_DATA_TYPE			GENMASK(1, 0)
++#define HTT_TCL_META_DATA_VALID_HTT		BIT(2)
+ 
+ /* vdev meta data */
+-#define HTT_TCL_META_DATA_VDEV_ID		GENMASK(9, 2)
+-#define HTT_TCL_META_DATA_PDEV_ID		GENMASK(11, 10)
+-#define HTT_TCL_META_DATA_HOST_INSPECTED	BIT(12)
++#define HTT_TCL_META_DATA_VDEV_ID		 GENMASK(10, 3)
++#define HTT_TCL_META_DATA_PDEV_ID		 GENMASK(12, 11)
++#define HTT_TCL_META_DATA_HOST_INSPECTED_MISSION BIT(13)
+ 
+ /* peer meta data */
+-#define HTT_TCL_META_DATA_PEER_ID		GENMASK(15, 2)
++#define HTT_TCL_META_DATA_PEER_ID		GENMASK(15, 3)
+ 
+ /* HTT tx completion is overlaid in wbm_release_ring */
+ #define HTT_TX_WBM_COMP_INFO0_STATUS		GENMASK(16, 13)
+@@ -414,9 +415,15 @@ enum htt_h2t_msg_type {
+ };
+ 
+ #define HTT_VER_REQ_INFO_MSG_ID		GENMASK(7, 0)
++#define HTT_OPTION_TCL_METADATA_VER_V2	2
++#define HTT_OPTION_TAG			GENMASK(7, 0)
++#define HTT_OPTION_LEN			GENMASK(15, 8)
++#define HTT_OPTION_VALUE		GENMASK(31, 16)
++#define HTT_TCL_METADATA_VER_SZ		4
+ 
+ struct htt_ver_req_cmd {
+ 	__le32 ver_reg_info;
++	__le32 tcl_metadata_version;
+ } __packed;
+ 
+ enum htt_srng_ring_type {
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index a8d341a6df01..76626d925adf 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #include "core.h"
+@@ -971,7 +971,15 @@ int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab)
+ 	skb_put(skb, len);
+ 	cmd = (struct htt_ver_req_cmd *)skb->data;
+ 	cmd->ver_reg_info = le32_encode_bits(HTT_H2T_MSG_TYPE_VERSION_REQ,
+-					     HTT_VER_REQ_INFO_MSG_ID);
++					     HTT_OPTION_TAG);
++
++	cmd->tcl_metadata_version = le32_encode_bits(HTT_TAG_TCL_METADATA_VERSION,
++						     HTT_OPTION_TAG);
++	cmd->tcl_metadata_version |= le32_encode_bits(HTT_TCL_METADATA_VER_SZ,
++						      HTT_OPTION_LEN);
++	cmd->tcl_metadata_version |=
++			le32_encode_bits(HTT_OPTION_TCL_METADATA_VER_V2,
++					 HTT_OPTION_VALUE);
+ 
+ 	ret = ath12k_htc_send(&ab->htc, dp->eid, skb);
+ 	if (ret) {
 -- 
 2.34.1
 
