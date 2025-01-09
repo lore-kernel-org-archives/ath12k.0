@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C50C8E77197
-	for <ath12k@archiver.kernel.org>; Thu,  9 Jan 2025 04:25:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 718C0E77197
+	for <ath12k@archiver.kernel.org>; Thu,  9 Jan 2025 04:25:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
+	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a2ctkO2yF5cEZldWqDnjtx2KBzjZhiPvxUx3EFteP6Q=; b=pJz60BHH5d48e+
-	6mNygO2r5cZM/asRCqWVyH4mI74oE37uP4JJERwDAcWd7vsPnCbLFSqqJ6YFmQWPOQjDh8IF7jKzn
-	GbcNGYJt9YARqTjTv9Sfmol8ThjKDj5X+et98ZZAIfortcQsxy1lnmBNRtKDvFrzOdmHQQo4H/TIE
-	r/G5Hf1xCLvTBA76sPqDjkO1QrEa4IDspeKqPenqRT1dW6DuNx0aiY5LRC2tVZlWq0d14DlM85Grf
-	ZYsran0IZT9UP6KhXsWFjlpvhq6Y8TKAY2jgxqW7VZNHk6REDPCdhz0v/Ci3/sKD+ycYmIZlM7DfO
-	1TCDf9gaBQzl17nx4eDA==;
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=wE5Yf90CPVn5nK08vp4XdKHzLUVd3um9BOGs3Ucg5Vs=; b=4ZgC2i01cxnN/WegVoliuUZ8bt
+	kNon7Kei0+1GNTPYeeoWgMU+1b8N62KWSyYC8UzkYSyJs4qMPCIQUI8CyB0VspnFmg76oZceGZotN
+	BqYNTOxm0k5mhp6VA4Z/EkrVMNRuYbH2EhoixHuwIDlM8aEgv0PoqDKpKW+tZLGY+GYUQVT8EYw+o
+	oY+nz1GRRdvlQ+P0zcVS+D57+pK2M+qKzJLgqJoV14cMhP1g7TRCKI19VcFtpxKcy6fhNppXiWHnB
+	b2/0yDYSm1cHSSNfvJMJi885XdDxbDisTObalMTboYv0+HcbmNlExqXdj7sHbybG4UYUhrFDKyx39
+	Tzgl+ngQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVk7A-0000000Ahdl-1a7Y
+	id 1tVk7D-0000000Ahf7-0paa
 	for ath12k@archiver.kernel.org;
-	Thu, 09 Jan 2025 04:25:48 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 09 Jan 2025 04:25:51 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVk77-0000000AhdJ-0zz3
+	id 1tVk7A-0000000Ahdk-1h4t
 	for ath12k@lists.infradead.org;
-	Thu, 09 Jan 2025 04:25:46 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 508IglWB007975;
-	Thu, 9 Jan 2025 04:25:41 GMT
+	Thu, 09 Jan 2025 04:25:49 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 508Jt2lV018339;
+	Thu, 9 Jan 2025 04:25:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=a2ctkO2yF5cEZldWqDnjtx
-	2KBzjZhiPvxUx3EFteP6Q=; b=cyq+xO/HG44vrkoewkD50tlHeoClQ4Zp1YVfHS
-	Nr4DM9xuZzSLtieduGEqaJVkbw+KFkhSb4m0GMTS9ESUTy3bu7dQsIXY1srCFBRZ
-	ZyxafiWHQJ1CP+R24/NndrNOXn8zjI3tq9s4Gg641vm9wf6Sl2dQivxE+FqIklBy
-	FLH4oixCg88G1ViI1sHSBPKKRMPpl1rZZ0Mwi6PchHOIHrGk7BVRYQIxpzbuCe7K
-	urDqGp01xHsprwGME8lUtf6hIxI7vQNkcbNycmlX2cJT66lZJQcJKXVziuXPAXOX
-	jY51ez1JXj2hffXpib9On5tgzFUKLueVIXsP6Mi1tcAXUupg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 441xvns48d-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	wE5Yf90CPVn5nK08vp4XdKHzLUVd3um9BOGs3Ucg5Vs=; b=YPypgctkxiCsPNk1
+	wDpsN+oICtJlSwg6rpdNTgz7AZS9yueeclCh/JcrvnKJU7FscKB4quftnrahYaxr
+	n4WOz85l+CoWVsSBXfgbTNjlsLjZG95cwtFXpzrJhkV4AHa5jikoe2BCR8vaChXo
+	9F5jp3befc7/20WSIX25qfioARVSfYhrJIkYpJhKMwuZX/wiW6kKYlA+r4wMkYbn
+	QhdOYOHhPX7ThFNF+c3Wwn35KshCe0KDeQCDobxaNzgCCl9gBJhk1uaz/NWJx+hx
+	95lH9B9DlnRKrzmb1LxHKqz4ScunPVPn/PcvV81D7Nm/GP9OdsBadB5dwYzqG9TR
+	SAiyjA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 441yxfgybh-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 09 Jan 2025 04:25:41 +0000 (GMT)
+	Thu, 09 Jan 2025 04:25:44 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5094Pe68028280
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5094PhFO010279
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 9 Jan 2025 04:25:40 GMT
+	Thu, 9 Jan 2025 04:25:43 GMT
 Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 8 Jan 2025 20:25:37 -0800
+ 15.2.1544.9; Wed, 8 Jan 2025 20:25:40 -0800
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Subject: [PATCH 00/10] wifi: ath12k: fixes for rmmod and recovery issues
- with hardware grouping
-Date: Thu, 9 Jan 2025 09:55:28 +0530
-Message-ID: <20250109-fix_reboot_issues_with_hw_grouping-v1-0-fb39ec03451e@quicinc.com>
+Date: Thu, 9 Jan 2025 09:55:29 +0530
+Subject: [PATCH 01/10] wifi: ath12k: prevent race condition in
+ ath12k_core_hw_group_destroy()
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIALhPf2cC/x3NSw7CMAxF0a1UHhOpCZ9WbAVVUT8m8SSu7JSCq
- uydwPAM3rsHKAqhwr05QPBFSpwq7KmBOY4poKGlGlzrLtbZ3jzp7QUn5uxJdUP1O+Xo4+6D8LZ
- SCqad3XK+deO17yaoR6tgXf0jj6E6kmaWz69ZSvkCl5c0B4MAAAA=
-X-Change-ID: 20241218-fix_reboot_issues_with_hw_grouping-0c2d367a587b
+Message-ID: <20250109-fix_reboot_issues_with_hw_grouping-v1-1-fb39ec03451e@quicinc.com>
+References: <20250109-fix_reboot_issues_with_hw_grouping-v1-0-fb39ec03451e@quicinc.com>
+In-Reply-To: <20250109-fix_reboot_issues_with_hw_grouping-v1-0-fb39ec03451e@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
         Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
         Harshitha Prem
@@ -80,20 +79,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: K_eMDHVaQvl5lUKwpZSu547qDkdtz6EC
-X-Proofpoint-ORIG-GUID: K_eMDHVaQvl5lUKwpZSu547qDkdtz6EC
+X-Proofpoint-ORIG-GUID: F_0y_Vc6ds11U5_UtS3R0IdkZ_reLg57
+X-Proofpoint-GUID: F_0y_Vc6ds11U5_UtS3R0IdkZ_reLg57
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- lowpriorityscore=0 bulkscore=0 clxscore=1015 suspectscore=0
- mlxlogscore=749 priorityscore=1501 spamscore=0 malwarescore=0 adultscore=0
- mlxscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
+ lowpriorityscore=0 suspectscore=0 phishscore=0 spamscore=0 mlxscore=0
+ impostorscore=0 priorityscore=1501 adultscore=0 mlxlogscore=779
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2501090033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250108_202545_288312_63550412 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250108_202548_617552_6BA64E71 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,70 +106,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-With hardware grouping, there is a kernel crash with signature -
+Currently, ath12k_core_hw_group_destroy() accesses its members without any
+locking mechanism. This could lead to potential issues if these members are
+modified by another thread concurrently.
 
-$ rmmod ath12k.ko
-Unable to handle kernel paging request at virtual address 000000000000d1a8
-[...]
-Call trace:
- ath12k_reg_free+0x14/0x74 [ath12k] (P)
- ath12k_core_hw_group_destroy+0x7c/0xb4 [ath12k] (L)
- ath12k_core_hw_group_destroy+0x7c/0xb4 [ath12k]
- ath12k_core_deinit+0xd8/0x124 [ath12k]
- ath12k_pci_remove+0x6c/0x130 [ath12k]
- pci_device_remove+0x44/0xe8
- device_remove+0x4c/0x80
- device_release_driver_internal+0x1d0/0x22c
- driver_detach+0x50/0x98
- bus_remove_driver+0x70/0xf4
- driver_unregister+0x30/0x60
- pci_unregister_driver+0x24/0x9c
- ath12k_pci_exit+0x18/0x24 [ath12k]
- __arm64_sys_delete_module+0x1a0/0x2a8
- invoke_syscall+0x48/0x110
- el0_svc_common.constprop.0+0x40/0xe0
- do_el0_svc+0x1c/0x28
- el0_svc+0x30/0xd0
- el0t_64_sync_handler+0x10c/0x138
- el0t_64_sync+0x198/0x19c
-Code: a9bd7bfd 910003fd a9025bf5 91402015 (f968d6a1)
----[ end trace 0000000000000000 ]---
-Segmentation fault
+Hence to mitigate this, use the available mutex lock.
 
-This series aims to fix this stability issue. With this now, 100+ iteration
-of rmmod and insmod works perfectly.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-Also, firmware recovery with grouping is not working fine. Randomly, some
-NULL pointer crash or another firmware assert is seen. This series aims to
-fix that as well.
-
-With this in place now, 100+ iteration of firmware recovery with one 3 link
-AP MLD up works fine.
-
+Fixes: 6f245ea0ec6c ("wifi: ath12k: introduce device group abstraction")
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
-Aditya Kumar Singh (10):
-      wifi: ath12k: prevent race condition in ath12k_core_hw_group_destroy()
-      wifi: ath12k: add reference counting for core attachment to hardware group
-      wifi: ath12k: fix failed to set mhi state error during reboot with hardware grouping
-      wifi: ath12k: fix firmware assert during reboot with hardware grouping
-      wifi: ath12k: fix SLUB BUG - Object already free in ath12k_reg_free()
-      wifi: ath12k: fix ath12k_core_pre_reconfigure_recovery() with grouping
-      wifi: ath12k: fix ATH12K_FLAG_REGISTERED flag handling
-      wifi: ath12k: handle ath12k_core_restart() with hardware grouping
-      wifi: ath12k: handle ath12k_core_reset() with hardware grouping
-      wifi: ath12k: reset MLO global memory during recovery
+ drivers/net/wireless/ath/ath12k/core.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
- drivers/net/wireless/ath/ath12k/core.c | 115 ++++++++++++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/core.h |  18 +-----
- drivers/net/wireless/ath/ath12k/mac.c  |   6 +-
- drivers/net/wireless/ath/ath12k/pci.c  |  28 +++++++-
- drivers/net/wireless/ath/ath12k/qmi.c  |  24 ++++++-
- drivers/net/wireless/ath/ath12k/qmi.h  |   4 +-
- drivers/net/wireless/ath/ath12k/reg.c  |   8 ++-
- drivers/net/wireless/ath/ath12k/wmi.c  |   4 +-
- 8 files changed, 173 insertions(+), 34 deletions(-)
----
-base-commit: dbe50a7420e22954c747e79e72df2750d795ea77
-change-id: 20241218-fix_reboot_issues_with_hw_grouping-0c2d367a587b
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 0c6b35aac96eb8d6660cbf30f807a04619feebda..514494dd56ad206a72c52492774d3387dae82f70 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #include <linux/module.h>
+@@ -1712,6 +1712,7 @@ static void ath12k_core_hw_group_destroy(struct ath12k_hw_group *ag)
+ 	if (WARN_ON(!ag))
+ 		return;
+ 
++	mutex_lock(&ag->mutex);
+ 	for (i = 0; i < ag->num_devices; i++) {
+ 		ab = ag->ab[i];
+ 		if (!ab)
+@@ -1719,6 +1720,7 @@ static void ath12k_core_hw_group_destroy(struct ath12k_hw_group *ag)
+ 
+ 		ath12k_core_soc_destroy(ab);
+ 	}
++	mutex_unlock(&ag->mutex);
+ }
+ 
+ static void ath12k_core_hw_group_cleanup(struct ath12k_hw_group *ag)
+
+-- 
+2.34.1
 
 
