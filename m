@@ -4,72 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B393E7719A
-	for <ath12k@archiver.kernel.org>; Sat, 11 Jan 2025 23:22:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CFAEE77188
+	for <ath12k@archiver.kernel.org>; Sun, 12 Jan 2025 05:50:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=eZY6F7wk3iPye1ukCzwxH4BMIo5MHd+ZDo54i8Ui0/4=; b=k7Vga/aPjiWHBgzZ7RGWxdXTH/
-	pwDyxtYv/6pZ3bYlLdrqYsgNTo54ECyLPyL/RRQRHB+bCJkglRM/cZ9xnZQKuDq92HD1HNt4G1Zxr
-	MAGWkwcZELJqn4sdWfhbEpPCJoLjOAWYaeXJUfmqVZ15ncLf1UxP6O8lY8ongdu4TtmT7314INi0e
-	QgQ0NtyAuckWOoxLcYFTaL1yyQUg49iUdjQpQWsazBghrYfOpN0lmz4oASP9PAm2kJ1r8zVZD65Ru
-	5ouSEgiadkueoZwpRMr7LNduhTPuWMSu04x8V5BZpsjgniWtwEZ78jn32pDH6UpII7m0RS+LoVb5F
-	9auKLQ7A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=VtVKi/vRwZXgAU9wodaPKD0j9pv33+qWADe8hElvCqo=; b=wqrRrRPNfxhtZbJUNg5SFPUAn1
+	MV/Yj33OYbl7iHnoEizvFtbkRnTMrmA82RxDi71VrtRu1WrvCN4aye2aiWxbrmSfICLJEDAv5KlE2
+	7Vmg6I4dvKOLkV9uaaw0oEJy8PH6S5oG89hHlupQAxcxWamNey3ls0j9H9BxDi9YJNbWNRZLALc23
+	N8BMnVA+90XvvpTPbHFKyyAQCZOm8XLEagvpgUCVj9VlI4QU+UodBMTJoq/0sM0bD1uXWuVhAt18Q
+	AAwHtPiXCbEw6ej3HDMl/CfnLQ2uXzx48nWnC6wXgKuypXYcDXvUBOzIC8eJFe8DNFs7p/ZvMq4i6
+	dRMF74yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWkoB-00000001eRv-0h6v
+	id 1tWqrP-000000028eZ-0Ikf
 	for ath12k@archiver.kernel.org;
-	Sat, 11 Jan 2025 23:22:23 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	Sun, 12 Jan 2025 05:50:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWknp-00000001eQ4-0bRZ
+	id 1tWqrM-000000028dz-1gY6
 	for ath12k@lists.infradead.org;
-	Sat, 11 Jan 2025 23:22:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1736637721; x=1768173721;
-  h=date:from:to:cc:subject:message-id;
-  bh=7ARaW5opWdYExEI9+1SSm23wohlAlKm30WBgk0Dh2jE=;
-  b=Fftab/AIR0UJaXY1hFdYFvEiqrXUaFfsHmv9FKOVwkE78VpD2BVxPbWO
-   Cq42qylU0Uv7oJiaFU9tKMSmO2RUzYvSEi2xaoPLDeoF1GTUfYW0HqG4q
-   TJA8x7GVFD38rdOIMV35NzQhzJ7Qx/DDrcPKESrgAP5x9pN6VJTkUyE02
-   gMu0IB9vajuja3818R175dEg0Ucqx1785rdnghi2nFMqPmobJ5W6veL+0
-   LsuXsn006CgJC9Bt1WWlQP44BszEB54B1aIO3By9fb5rKi0/asGbBWWbD
-   4OTMEw4aSa+lNLVoGw76Y0JuYUIBMaHvHErQw2mUXul4AKG57K4tE2FUI
-   g==;
-X-CSE-ConnectionGUID: LvqCukjWQt6IhEmXhVS17w==
-X-CSE-MsgGUID: JmiNDU6vTOC7F94AlOIsFg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11312"; a="54447352"
-X-IronPort-AV: E=Sophos;i="6.12,308,1728975600"; 
-   d="scan'208";a="54447352"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jan 2025 15:22:01 -0800
-X-CSE-ConnectionGUID: /04PMZpHTjyL0Furl/6+gA==
-X-CSE-MsgGUID: op6gxiywT6C2sz9G/SRDbw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
-   d="scan'208";a="108693631"
-Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by fmviesa005.fm.intel.com with ESMTP; 11 Jan 2025 15:21:59 -0800
-Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tWknl-000LJv-1R;
-	Sat, 11 Jan 2025 23:21:57 +0000
-Date: Sun, 12 Jan 2025 07:21:52 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master] BUILD SUCCESS
- 0c5fcd9069dd5f984e39820629acbfbe0f1b4256
-Message-ID: <202501120746.90u0UV9F-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Sun, 12 Jan 2025 05:50:05 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50C4idGG016323;
+	Sun, 12 Jan 2025 05:49:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=VtVKi/vRwZXgAU9wodaPKD
+	0j9pv33+qWADe8hElvCqo=; b=jjiMkytwcMfni2XgFL4lZIQgO323CiYNTudtYb
+	8b7AC7Bhe7HCmeM0QdYd1o025xZb/LemGpvtaJCzN/d3iK7WquTnekE7QvC6yKkO
+	Yk5hGxyyvpMzPUZUZvMcKcTdts0MP+MuXKfj3OgRkGlYSbYDnhEAGGxfY+A1m4HA
+	oUEtted4b0WKizFPPetwoYtqi3+bVLH2129w8uu2BvDf5jjP12yxJyNOWcwV85xV
+	PjJ9p/Q3hTiomkJCY/viXm2rpoQu2XlgS+UZMCyzoK/85KJnKcT4Egboic/3jwBp
+	3BJozCndHSDcIvuSYc68YWadp73WBIo8OIK46OGEC4Wn5tQw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 443hj2skq3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sun, 12 Jan 2025 05:49:58 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50C5nvJf030090
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sun, 12 Jan 2025 05:49:57 GMT
+Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sat, 11 Jan 2025 21:49:54 -0800
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Date: Sun, 12 Jan 2025 11:19:42 +0530
+Subject: [PATCH] wifi: ath12k: fix key cache handling
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-ID: <20250112-fix_key_cache_handling-v1-1-aa952cd3c368@quicinc.com>
+X-B4-Tracking: v=1; b=H4sIAPZXg2cC/x2MQQqAIBAAvxJ7TnANO/SVCEnbaiksFKKQ/t7Sc
+ WBmCmRKTBm6qkCiizMfUQDrCsI6xoUUT8JgtLEa0aiZb7fR48IYVnKiTDvHRaE3DWrdepwtSHw
+ mEvMf98P7ftPKSDBoAAAA
+X-Change-ID: 20250112-fix_key_cache_handling-1b231006b1f5
+To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+        Rameshkumar Sundaram <quic_ramess@quicinc.com>
+CC: Kalle Valo <quic_kvalo@quicinc.com>,
+        Jeff Johnson
+	<quic_jjohnson@quicinc.com>,
+        <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>,
+        "Aditya Kumar
+ Singh" <quic_adisi@quicinc.com>
+X-Mailer: b4 0.14.2
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: cmsYtSWm6nWpwuWAklN8rRTKqhNDBXoS
+X-Proofpoint-ORIG-GUID: cmsYtSWm6nWpwuWAklN8rRTKqhNDBXoS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 lowpriorityscore=0 suspectscore=0 clxscore=1015
+ mlxscore=0 phishscore=0 mlxlogscore=999 adultscore=0 malwarescore=0
+ bulkscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2501120049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250111_152201_193646_D6B0D4AF 
-X-CRM114-Status: UNSURE (   4.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250111_215004_588699_4DB1FFCA 
+X-CRM114-Status: GOOD (  18.16  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,93 +105,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
-branch HEAD: 0c5fcd9069dd5f984e39820629acbfbe0f1b4256  Add localversion-wireless-testing-ath
+Currently, an interface is created in the driver during channel assignment.
+If mac80211 attempts to set a key for an interface before this assignment,
+the driver caches the key. Once the interface is created, the driver
+installs the cached key to the hardware. This sequence is exemplified in
+mesh mode operation where the group key is set before channel assignment.
 
-elapsed time: 1450m
+However, in ath12k_mac_update_key_cache(), after caching the key, due to
+incorrect logic, it is deleted from the cache during the subsequent loop
+iteration. As a result, after the interface is created, the driver does not
+find any cached key, and the key is not installed to the hardware which is
+wrong. This leads to issue in mesh, where broadcast traffic is not
+encrypted over the air.
 
-configs tested: 73
-configs skipped: 1
+Fix this issue by adjusting the logic of ath12k_mac_update_key_cache()
+properly.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-tested configs:
-alpha                            allnoconfig    gcc-14.2.0
-arc                              allnoconfig    gcc-13.2.0
-arc                  randconfig-001-20250111    gcc-13.2.0
-arc                  randconfig-002-20250111    gcc-13.2.0
-arm                              allnoconfig    clang-17
-arm                  randconfig-001-20250111    clang-16
-arm                  randconfig-002-20250111    gcc-14.2.0
-arm                  randconfig-003-20250111    clang-20
-arm                  randconfig-004-20250111    clang-20
-arm64                            allnoconfig    gcc-14.2.0
-arm64                randconfig-001-20250111    gcc-14.2.0
-arm64                randconfig-002-20250111    clang-20
-arm64                randconfig-003-20250111    clang-18
-arm64                randconfig-004-20250111    clang-16
-csky                             allnoconfig    gcc-14.2.0
-csky                 randconfig-001-20250111    gcc-14.2.0
-csky                 randconfig-002-20250111    gcc-14.2.0
-hexagon                          allnoconfig    clang-20
-hexagon              randconfig-001-20250111    clang-20
-hexagon              randconfig-002-20250111    clang-15
-i386       buildonly-randconfig-001-20250111    gcc-12
-i386       buildonly-randconfig-002-20250111    gcc-11
-i386       buildonly-randconfig-003-20250111    gcc-12
-i386       buildonly-randconfig-004-20250111    gcc-12
-i386       buildonly-randconfig-005-20250111    gcc-12
-i386       buildonly-randconfig-006-20250111    clang-19
-loongarch                        allnoconfig    gcc-14.2.0
-loongarch            randconfig-001-20250111    gcc-14.2.0
-loongarch            randconfig-002-20250111    gcc-14.2.0
-nios2                randconfig-001-20250111    gcc-14.2.0
-nios2                randconfig-002-20250111    gcc-14.2.0
-openrisc                         allnoconfig    gcc-14.2.0
-openrisc                        allyesconfig    gcc-14.2.0
-parisc                          allmodconfig    gcc-14.2.0
-parisc                           allnoconfig    gcc-14.2.0
-parisc                          allyesconfig    gcc-14.2.0
-parisc               randconfig-001-20250111    gcc-14.2.0
-parisc               randconfig-002-20250111    gcc-14.2.0
-powerpc                          allnoconfig    gcc-14.2.0
-powerpc              randconfig-001-20250111    gcc-14.2.0
-powerpc              randconfig-002-20250111    gcc-14.2.0
-powerpc              randconfig-003-20250111    gcc-14.2.0
-powerpc64            randconfig-001-20250111    gcc-14.2.0
-powerpc64            randconfig-002-20250111    gcc-14.2.0
-powerpc64            randconfig-003-20250111    gcc-14.2.0
-riscv                            allnoconfig    gcc-14.2.0
-riscv                randconfig-001-20250112    clang-20
-riscv                randconfig-002-20250112    gcc-14.2.0
-s390                            allmodconfig    clang-19
-s390                             allnoconfig    clang-20
-s390                            allyesconfig    gcc-14.2.0
-s390                 randconfig-001-20250112    clang-16
-s390                 randconfig-002-20250112    clang-18
-sh                              allmodconfig    gcc-14.2.0
-sh                              allyesconfig    gcc-14.2.0
-sh                   randconfig-001-20250112    gcc-14.2.0
-sh                   randconfig-002-20250112    gcc-14.2.0
-sparc                           allmodconfig    gcc-14.2.0
-sparc                randconfig-001-20250112    gcc-14.2.0
-sparc                randconfig-002-20250112    gcc-14.2.0
-sparc64              randconfig-001-20250112    gcc-14.2.0
-sparc64              randconfig-002-20250112    gcc-14.2.0
-um                               allnoconfig    clang-18
-um                   randconfig-001-20250112    clang-20
-um                   randconfig-002-20250112    clang-20
-x86_64     buildonly-randconfig-001-20250111    clang-19
-x86_64     buildonly-randconfig-002-20250111    gcc-12
-x86_64     buildonly-randconfig-003-20250111    gcc-12
-x86_64     buildonly-randconfig-004-20250111    clang-19
-x86_64     buildonly-randconfig-005-20250111    gcc-12
-x86_64     buildonly-randconfig-006-20250111    gcc-12
-xtensa               randconfig-001-20250112    gcc-14.2.0
-xtensa               randconfig-002-20250112    gcc-14.2.0
+Fixes: 25e18b9d6b4b ("wifi: ath12k: modify ath12k_mac_op_set_key() for MLO")
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 30 ++++++++++++++++++------------
+ 1 file changed, 18 insertions(+), 12 deletions(-)
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 48d110e2a7ded61c4094b0ce7e5bbb50b94d5cd4..01c688c29b6d02785a2b37e36ed423a2eb37e33b 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -4657,7 +4657,23 @@ static int ath12k_mac_update_key_cache(struct ath12k_vif_cache *cache,
+ 				       struct ieee80211_sta *sta,
+ 				       struct ieee80211_key_conf *key)
+ {
+-	struct ath12k_key_conf *key_conf = NULL, *tmp;
++	struct ath12k_key_conf *key_conf, *tmp;
++
++	list_for_each_entry_safe(key_conf, tmp, &cache->key_conf.list, list) {
++		if (key_conf->key != key)
++			continue;
++
++		/* If SET key entry is already present in cache, nothing to do,
++		 * just return
++		 */
++		if (cmd == SET_KEY)
++			return 0;
++
++		/* DEL key for an old SET key which driver hasn't flushed yet.
++		 */
++		list_del(&key_conf->list);
++		kfree(key_conf);
++	}
+ 
+ 	if (cmd == SET_KEY) {
+ 		key_conf = kzalloc(sizeof(*key_conf), GFP_KERNEL);
+@@ -4671,17 +4687,7 @@ static int ath12k_mac_update_key_cache(struct ath12k_vif_cache *cache,
+ 		list_add_tail(&key_conf->list,
+ 			      &cache->key_conf.list);
+ 	}
+-	if (list_empty(&cache->key_conf.list))
+-		return 0;
+-	list_for_each_entry_safe(key_conf, tmp, &cache->key_conf.list, list) {
+-		if (key_conf->key == key) {
+-			/* DEL key for an old SET key which driver hasn't flushed yet.
+-			 */
+-			list_del(&key_conf->list);
+-			kfree(key_conf);
+-			break;
+-		}
+-	}
++
+ 	return 0;
+ }
+ 
+
+---
+base-commit: 0c5fcd9069dd5f984e39820629acbfbe0f1b4256
+change-id: 20250112-fix_key_cache_handling-1b231006b1f5
+
 
