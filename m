@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FBA3C02183
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 941A6C02180
 	for <ath12k@archiver.kernel.org>; Mon, 13 Jan 2025 19:29:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,100 +12,100 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/5mhQy/iLi/hHQbqK1N//sXRK2hJJG0CiemfOAYFPXk=; b=mzMKGghOgko3/4A5dr6meGjGL0
-	QzfCFziMCbcX1N4HgvQQbt8Do9SdD3t3w0oTTeKfY4Q06GJLCpNTwca0OGxwXUZKi1mx/ns/689D6
-	wu/4yYvhpD1hLrXDK/4/vN+SoQbV9y2a1V9ci1Qfg7WVPeowEKQE4RUXNR5OA9BgcCZdq+bLKafVL
-	sF8QV2xhCVsTnHiiwjo4rD3DQvhRc7YOb3ntOntXgSO2STjImhVPODZdwa/6f979xEPKBvv0+0/Wa
-	/pJt5+pMMm3LR4BKQOjQ8VlifBbTYmAEWr3USdnCjWHQAlV9gPHHEotXQZApl2uCv8JAPXgL8f9ZN
-	gyHYDZLw==;
+	bh=X4JA/i7/OC4FxbT9AIYXFyIoNZebbdXPnSVbrB10s24=; b=yrbslk8b4ETbnW5ScYPXwZpGer
+	qf7r+0fIZCFmonJrViBV5ERvadh2ulSo8lQ/Eh9Kru2Xil8aV8oJLk1AYb7FUvPmpUBvaM+5S6YFn
+	LA3Y7sCjULqDH+jWrdulS+DVPG3R0S3fvS7q6shC/X54ehNYfIZcCmR45SlPZRmmEKYht2q4I5r3N
+	rNvI1koRpVwd7SmuB4ZsY9UBL4wSuiUnqcaNaDLkKtYMN8mJTDUHkAnjSe7DMmgjF/77PnfY8LzTm
+	urNYxD3WXcWGoZ4aW08panR4eoGzAUaTuGp2AIi0eOG3zDjUJ/63dev9bE2ok088MgqzX8n/cf+Sn
+	D+7Nf/Og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXQ8K-00000006Nxs-06R8
+	id 1tXQ8K-00000006NyB-1VeN
 	for ath12k@archiver.kernel.org;
 	Mon, 13 Jan 2025 19:29:56 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXQ7J-00000006NgD-1rWt
+	id 1tXQ7k-00000006Noo-3YhY
 	for ath12k@lists.infradead.org;
-	Mon, 13 Jan 2025 19:28:54 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50DE5iQv030297
-	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 19:28:52 GMT
+	Mon, 13 Jan 2025 19:29:22 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50DC0fV0000345
+	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 19:29:20 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/5mhQy/iLi/hHQbqK1N//sXRK2hJJG0CiemfOAYFPXk=; b=AmoGWBEMTFYlYWwN
-	vLzi4YKb+BKcOjAC07fN9B7ZQa6CTBZ0dM0Vc/GYA7wSnMXIyD9YFVHL/GQoddQY
-	B5ioEhUdPQUff+puj6At++3IVRxt73xMSyN+DXiFAeBCVBirxKJ/gGqqFRmjShFp
-	R3+Z8yNQ9LJSw8138W0cCwbXxNUYxVdlQUExLhBN6vZkVIYurXmlYr5i2iTQ+HZZ
-	X4BRjyA7tnjEwfaTAZ9CdfcOKEiFMQh5YZKdy/bqzvhEp/BjeWD4VF7lKf8T+TEU
-	nhK/aer0itq6jlCSwrHyQ8CL1gD4DrKJAfhkIcoraPTC7Q83kUgofax2oXYo60Hm
-	t5eg4Q==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44549w8spu-1
+	X4JA/i7/OC4FxbT9AIYXFyIoNZebbdXPnSVbrB10s24=; b=knolYIyAmcgG/XkN
+	Lo8dbWI5XdN7Tzx8QUy6Xe21PnRoZmgOB1vybELiG5sSgDHcBmzcoYyPHhVYPLlx
+	3hJJRKowRLgl8Y/3gaZmL3Kd8NrfmA2R3QyZA5k+r/uau5a3TH3PXm/PiLLLlpsy
+	NAQ/SdeAsyaeJdv1A6Fhox4ra7YiJS89D2M7siCx+Qu22W8+TUjt6FzcpL/agZ3i
+	hMQXXDzYG+T0CgfqwlDi5E9U04fPoh8J9r1yY63Vhs/5Cjv+4lHYyUtQlAomOxre
+	Q7iKUXTST9pQd1ye2723VHOybnPlhfasht0Rr6PCKrwZX1cDC3vH+cnmWrWQdCg7
+	1VVQRA==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4452f9155a-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 19:28:52 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-21655569152so89047265ad.2
-        for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 11:28:52 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 19:29:19 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ee5616e986so12145274a91.2
+        for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 11:29:19 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736796531; x=1737401331;
+        d=1e100.net; s=20230601; t=1736796558; x=1737401358;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=/5mhQy/iLi/hHQbqK1N//sXRK2hJJG0CiemfOAYFPXk=;
-        b=CvHnIWd94fal9XIWNq70cICTYazDwqm/9tk0SyxZYK601GfOUqyY+6sp7+DvPWUli/
-         7PvbJmP8/4tZXdNFSpKxNNA1tv75bLXPwVlYkrnBRhfVtUbMMcF6HU1dPWGTk+A/HZgS
-         VR0V8kj3UABhg2zBmfhdlPSBXpuHhoa0QTsTvlYKJv/fqwcLp1mO0bRw7K0xMK0rNGKu
-         t1lKGWiNVyrIR0Zhd259XMUpR7nwSJvqym7uban+CyBKDSJ5IZ7NvMPTMohBav8tod36
-         Vmv65IQiFiNkmH9lgVDRwTRSf03QJ4+5apDsN79GQQ7+ylsEBS92RiU+TO2XlSKzBmP5
-         eZ1w==
-X-Forwarded-Encrypted: i=1; AJvYcCV/RuKLV1hCEx7f6OnyhDElP+ucRQ0f9cIrcS3EzzD5qeP8jVvngVTOlSYtlexMAiE3st/6J5o=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxrohcwDt2xvXWNLxAzQMt+jpjNI40yVB4OMKjKg3ta3uhfRiu1
-	0tSmsahtyufDFh0jYqVRRR6AGWsGjso7S8i0D8hXCYtndTR8pHSrOgyRA0w3ddPBzBZJNdWjqLL
-	qrcvrsX72AEfDCWXTqOw0XopvGnYt0MZF9kbzKOCSmKOynvZ2S62n6wjgE9SyHTkPxKzA
-X-Gm-Gg: ASbGncsgbjG0vsy7jW2JhwTzI9xzhT1JHEpNXpuPAM+1oEiD6PW+ImhRmMKgTarPbpg
-	AG1EBcnaxzSaT26/q0nbpLasW947aIZcik+H35Y1XiQ1hNv86YZYLo5fw1G7GhHCh6CZ+jVmChu
-	y6JorGgKh8TRLouB6sJf29EVAspbxPSniEAg066dvBKWkxAqvVkDy57aZNyIoWN5v2FNNzKwK43
-	bcO+dnSK9zGJ3SjAZgqrUi12KwNG9+h/hy1W5DthsahtKgqS8hrZ8yE9T3Rk89p2hxvY5yIqZsS
-	XN3RwvW+nLpSaImpLKjcrZ0zLk84yK2JnaECPJDwhi3QF+RaJg==
-X-Received: by 2002:a17:902:da8d:b0:216:2abc:195c with SMTP id d9443c01a7336-21a83f429ecmr304262135ad.7.1736796530776;
-        Mon, 13 Jan 2025 11:28:50 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFy8aD+OBjXqv32LcJQYeGJg+trdsFUduQg1qH1ESZhroKs+54HzfL+haMDzQ8DNywU/hIVRA==
-X-Received: by 2002:a17:902:da8d:b0:216:2abc:195c with SMTP id d9443c01a7336-21a83f429ecmr304261755ad.7.1736796530351;
-        Mon, 13 Jan 2025 11:28:50 -0800 (PST)
+        bh=X4JA/i7/OC4FxbT9AIYXFyIoNZebbdXPnSVbrB10s24=;
+        b=QG/s13Jj6CYk8kjcerfZY8crTr6G1xDeut2KJ5sfl0pqw+RHPCNqRwdO5ZWc/88qIp
+         IU1/zDEFnat4qQkoQ0MsAz0d0WtBPCKdJXO5fM4L2KzieREB81ig8+RSY5Q9bbtsbLw0
+         XwB3nkhZJIL8j2ynnaGwjWuOiYXwfb9V4kt8Jkm9MlNOVxfwY4mgc+QSVl1U2BhUtzms
+         O/uhQJ3utBvjdMcJluQr6xEj04reF54+Y5nBpGkaGiY6R0gHAFpOFtfoGGatLKf+S17u
+         uJX0uwxF7hYT7xNOISwiWjs+cRJFNqTt/owrPLIhanh9spNo0Madn+ne+lmqLExI4qwu
+         /9aA==
+X-Forwarded-Encrypted: i=1; AJvYcCU5CkW0SChFhJD6vNWC/Luhbth5YAg2pagdYgaqSnhzpe2z+U7OGO16iWcxQbk6rt/QFoFd1vQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzZyk8OJ8vPTbm3Mk3AD/YZB4gKusjwnHzXWtQKRHEewxCU1siN
+	548GD1ysLKPFa1njSgRU1W5PhomrJHfD5w13ui0jvRSJnvxiMHTAXgQIG1OGNNw9gsT3w/kbhos
+	mPNcM4L9SscLFulyNZIs/omVKn3NMm5vg8YJx2e12uVtN8zM/66obEed4DwJg
+X-Gm-Gg: ASbGncu58TNP0GcHhpVRHPftdwIwhKOipqmJ2WYyicLWdJQSd8B/5I5kuhHVnnalU09
+	jEWhmqt5DVeM7jRurVazj/j0G95YSNbBiaGmicruqOzr0ig0lm9+hTrtO44FjiVjl/rFoZsw/EX
+	ZSglDscu0Ls8lNt5AnGr6YtuvfPdmrLmZs0F5Y7tsULI4JX5TQ1KMvtILmhZMCB678Hp+BOpmxO
+	DEkdXtAhH69oaYAnmtCoh9+QUTrRM36uBBBamnYzY22soJ8abj6ZaZlT5LA6lMu3/GSyLW9MyOf
+	UM8JagApBkefaWKxvcCnqOKrYsIuR3aAG0NizKXH6KvheZGuvQ==
+X-Received: by 2002:a05:6a00:340c:b0:725:e015:908d with SMTP id d2e1a72fcca58-72d21f459b9mr28226072b3a.1.1736796558507;
+        Mon, 13 Jan 2025 11:29:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHlppUWigIhRpncUzBzvJ8sBlojPnSz1ng0GTzw+hkyEacaIw8rHWiKXyR2SM9P0KWeHLPaJA==
+X-Received: by 2002:a05:6a00:340c:b0:725:e015:908d with SMTP id d2e1a72fcca58-72d21f459b9mr28226042b3a.1.1736796558127;
+        Mon, 13 Jan 2025 11:29:18 -0800 (PST)
 Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21a9f253e02sm57279285ad.225.2025.01.13.11.28.49
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72d4067f84csm6391821b3a.142.2025.01.13.11.29.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 13 Jan 2025 11:28:50 -0800 (PST)
-Message-ID: <b3f38056-b2af-4f11-af5b-e21d3426024b@oss.qualcomm.com>
-Date: Mon, 13 Jan 2025 11:28:49 -0800
+        Mon, 13 Jan 2025 11:29:17 -0800 (PST)
+Message-ID: <b5cbc224-8a6b-4c14-a268-09f71b8aa04a@oss.qualcomm.com>
+Date: Mon, 13 Jan 2025 11:29:17 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] wifi: ath12k: Update HTT_TCL_METADATA version and bit
- mask definitions
+Subject: Re: [PATCH 2/2] wifi: ath12k: Add support for MLO Multicast handling
+ in driver
 To: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>,
         ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
 References: <20250109184932.1593157-1-quic_bmahalin@quicinc.com>
- <20250109184932.1593157-2-quic_bmahalin@quicinc.com>
+ <20250109184932.1593157-3-quic_bmahalin@quicinc.com>
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250109184932.1593157-2-quic_bmahalin@quicinc.com>
+In-Reply-To: <20250109184932.1593157-3-quic_bmahalin@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: lDyJP9Y4YUa1OxBv805yRkySwytD50Kd
-X-Proofpoint-GUID: lDyJP9Y4YUa1OxBv805yRkySwytD50Kd
+X-Proofpoint-ORIG-GUID: -EOYr_4OPeXrPE6BDi3m9cJcAW4QGI4W
+X-Proofpoint-GUID: -EOYr_4OPeXrPE6BDi3m9cJcAW4QGI4W
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
- mlxlogscore=999 mlxscore=0 lowpriorityscore=0 clxscore=1015 malwarescore=0
- priorityscore=1501 spamscore=0 impostorscore=0 bulkscore=0 phishscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
+ impostorscore=0 suspectscore=0 spamscore=0 lowpriorityscore=0 phishscore=0
+ clxscore=1015 mlxlogscore=746 malwarescore=0 mlxscore=0 priorityscore=1501
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501130155
+ definitions=main-2501130156
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_112853_607515_9A74CD0B 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20250113_112921_013329_E0EA472B 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,14 +121,26 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 1/9/2025 10:49 AM, Balamurugan Mahalingam wrote:
-> Update the HTT_TCL_METADATA version to the latest version (2)
-> as the bit definitions have changed a little to support more
-> features. This new version allows the host to submit a packet with
-> more information to the firmware. Firmware uses this additional
-> information to do special processing for certain frames.
+> For MLO netdevice, the broadcast frame should be transmitted with the
+> same sequence number on all the links.
 > 
-> All the firmware binaries available in upstream/public are compatible with
-> this HTT version update.
+> Per IEEE 802.11be-2024 section 10.3.2.14.2 "Transmitter requirements",
+> An AP MLD shall use SNS11 in Table 10-5 (Transmitter sequence number
+> spaces) maintained by the MLD to determine the sequence number of a
+> group addressed data frame that is transmitted by an AP affiliated
+> with the AP MLD so that the same group addressed Data frame
+> transmitted over multiple links by the AP MLD uses the same
+> sequence number for transmission on each link.
+> 
+> Currently the MLO multicast handling is done in the mac80211 layer.
+> Enable support for handling MLO Multicast in the driver to update the
+> hardware descriptors in a custom way to handle the multicast frames.
+> Firmware expects the MLO multicast frames to the submitted to the
+> hardware with special vdev_id (actual vdev_id + 128) to recognize it as
+> a host inspected frame to avoid using the reinjected path and it also
+> uses the multicast global sequence number (GSN) provided by the host
+> in the HTT metadata to process and transmit it with the same sequence
+> number.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
