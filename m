@@ -4,108 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28D74C02180
-	for <ath12k@archiver.kernel.org>; Mon, 13 Jan 2025 16:27:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 302E5C02180
+	for <ath12k@archiver.kernel.org>; Mon, 13 Jan 2025 18:34:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ieWuwDOy7+JflIqyjS44bPCt4QQyEsDp5BcB7aphpzA=; b=QZXYmb99uj7jajAjdxgQQKV/hL
-	RRxXfPjTXUq6xRTutpf6JeNW3Q/Azy5I1zF7E0tGg4ydIi+tFFh2d+KNEzfIPlow49LDXOB9W1hA3
-	8JAdR8jPrx81vs4rWAcY0mPl63FJ1e9oXzQwANNXx9Eks8d5m/DtAEAAOUqYYgzZFpzgfIn5Wn1nr
-	agyIVtcOAEaa+8W6YbuJl/AgjGesRjRUdIOVd3n6QjZHRAsQo547rvaMUkrqrfST76b/CW5iUxryv
-	7mDDE6SmfO/al6m9U7ocn8HILZgxD57sMOwAuwHr3hS/ZguGTNQZl+bHB77AwDZomLskg+ZIoinZJ
-	6BZl1+lA==;
+	bh=GB9Yag0S92fnwFyhY9apzQbP5Nbl8pTmCWw4QvepSAc=; b=ldJdfbwOCjjS0rSAIe1gj2Xvtz
+	onQ3142XLdSMog+EiDEjBSN4KeZBvRxLSGuSj77JMK2BPnjw0iDR0bjZbOP5TCiyQ4DQD4lmtu2KW
+	6md2oCVi8805HxhKIMbCS09ZmhMJshSd4kKJTnsxvq3jqLlxKJjud/W7y/uEC+3SXEzpfpgFUTFjI
+	7AbAAAthdtm17Aio2g8okn1rFTyEJm29oMWaCptV5rE9wh9jEsJu7IE65G58eAXxj2MLcHN8zeSfL
+	lR9r1V2B5yGEYrLvE6Ir14mBNARISONQpy4G9szQ4GpSXszML4MXnF9ZbktZZ3POjEiyjcmabRq7j
+	g7CuaYhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXNI4-00000005qia-3pzn
+	id 1tXPGp-00000006DZH-3rF0
 	for ath12k@archiver.kernel.org;
-	Mon, 13 Jan 2025 16:27:48 +0000
+	Mon, 13 Jan 2025 18:34:39 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXN37-00000005ncE-2w4c
+	id 1tXPGn-00000006DXu-0Ovn
 	for ath12k@lists.infradead.org;
-	Mon, 13 Jan 2025 16:12:24 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50DE6OSZ031386
-	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 16:12:19 GMT
+	Mon, 13 Jan 2025 18:34:38 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50DBlTex006348
+	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 18:34:36 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ieWuwDOy7+JflIqyjS44bPCt4QQyEsDp5BcB7aphpzA=; b=Zscyj+DI66Ycgen1
-	QK+SOzEWqxm3iAPgPsGVx9RKgjYjcRTim8EJBQAlFrjLh3LHVis35eda31yUEQgh
-	CWlz/phIH//pFv9QF6+FYHtXw1vjyWm0hjkL13Ny42CEMW7/woSF8QfkCfFVWP/a
-	hXnvLM9FFIAWpk+B/nSZnLSwKoQ9dqwRrwV0OHh1aiV6lQD5CSbHgnKETAJA4PJW
-	rtYmjZZdv++yjAuxe1oLXvtWBJdIv4MfSVrsvB3+AIK2qOYteVoOwDnvvJUKpVxb
-	8oQgTZc3LH6jAXAZKJFnZJNlc068lHF4RQWdYKtDX6eYi7S9X54PUoaOiev7rwhI
-	gfwOfA==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44549w89xp-1
+	GB9Yag0S92fnwFyhY9apzQbP5Nbl8pTmCWw4QvepSAc=; b=k2d0/PN9SUm+ECam
+	Oz8wGxFnQkSCJXGREVcvlKg8OzcpaMsdrYuzyJvqB3/lcQdO54XL/dbmeijiTQyn
+	8O0WZrkuJEyhoewnIY1QkowU9zTLOXFLvyXefFgGICM24ySf47N2L3lDkn5Jf2AS
+	PCk/17LREeNeztJMDhOAQ/VvoN1bDDa+YMr6+RRthwVIpG8BCIl3YhXmrPG7vCk7
+	WXqfjlV34chOJvsvaP/EJsRipaCbNtOZs7UhMEG1Fvx9BgBafnGxXsCB0vSwBHyt
+	c11+6mv+s+X/tbQzSAJdsvPDBQLrW3ZnMgsAtxZczh1kbrk8KEqnue9lRaaO3BDc
+	IRh5pg==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4452939669-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 16:12:19 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-21681a2c0d5so79380345ad.2
-        for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 08:12:18 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 18:34:35 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-218ad674181so99407905ad.1
+        for <ath12k@lists.infradead.org>; Mon, 13 Jan 2025 10:34:35 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736784738; x=1737389538;
+        d=1e100.net; s=20230601; t=1736793274; x=1737398074;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ieWuwDOy7+JflIqyjS44bPCt4QQyEsDp5BcB7aphpzA=;
-        b=Hc/sQlvozEzHPhp99NNRtpAnH95ZDl2D0Y7Xb5OHyOFQUeVvRjQEBmZ6eUJaKTkP76
-         PB87ifjLdu2RM974B3ERWQUR6tYQDYAvYvudk11OCGOK4bgFCqa7cbUhDf9cWoxlZa69
-         T3FWHbbDmsTv14N1a7FRZ3SIWJrpZ6o6S4dvqVhcOVeJUFRfCpIuMhQSJiayOKrXg+wq
-         rtG+u6f5lA0HkwnGv85eOvdQaWQXC+aGGI0wNwSpQ/2l9RYEbAoJVXC1omKas8+j/nmd
-         hviWRfwhq4CTZXqik3lE1b4zIJP5hkt3gW5P2CiUKLzvQYoWCLOgYho3CU6eVzOa8bez
-         Z6BQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXjvWv2FAJgYskIQ2LmxqP5xZsilRT04tw/+1mE0pvH7i5mFAJ/LI0Cj/hd5IvHPB3gkUwUVkE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyJw2tEPxAPCofnjFLhYjx/QAKW5rfyMI6oGyeRKdIY5WqzQMbR
-	IO17p803ZflvojCxm2YtVWmxWq7tmgVWw9Xuy5oFPywHJprjwRZ9+TnE9Op8Nq5ov1bu15eIZKM
-	eAz4OwHuYa4Vl5VnDzNhgwpXFjqSSUQzxecHDIhndESOW0rRYQVqFhez9yMiD
-X-Gm-Gg: ASbGncsAQSiIPHKBRykbX9ksOe7KiNFa0VFRnqX3891FxiocBKIWuEfQh7dtOOiwg8V
-	KA1JaSJ9ah1irio+XVDxdp3/3A2hDRHO065hjxHf6AIepzAoyoszeQYr6aedaVkkyFy2jShttoC
-	LfGxoebS7dGt5ulBl9IMJfP3xdPfXEna0+qF4quZYdqKNt9Aej728734S0Q3kfJEAaaEs1qAbJn
-	SF3pHF9qddQYaw3gdDgl2s6Jk47kRjYUEZK4PBnAfBDLBM1hazgQQQjHqA/Ec1cAx5Hdkuhoklg
-	NWyuPvkb8n5qrqvOUUyhvM/RalDETnaBKYP5fq+HMx1u96QOcg==
-X-Received: by 2002:a05:6a00:cd6:b0:729:9f1:69bc with SMTP id d2e1a72fcca58-72d21f45b2fmr30050484b3a.12.1736784736981;
-        Mon, 13 Jan 2025 08:12:16 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IH5MLo0uEswESY1JctsFSF9kdeKM7IksXCnCDnQO0Mc+cernUwKAZYoUDUMyldbdARRQ3L53w==
-X-Received: by 2002:a05:6a00:cd6:b0:729:9f1:69bc with SMTP id d2e1a72fcca58-72d21f45b2fmr30050328b3a.12.1736784734943;
-        Mon, 13 Jan 2025 08:12:14 -0800 (PST)
+        bh=GB9Yag0S92fnwFyhY9apzQbP5Nbl8pTmCWw4QvepSAc=;
+        b=ljR1OcMAxoX9ZO9wrN1b38PlVOtlF1BOJpJWq+u+iKqFx9ofNTkEOTdd2VfKABKegC
+         mBsGoInE9Izrb3egvNPQmJQ3LdjtAMWabv7ywUTFFaOqjgS95UOPfpvPruyAf1iJE1d0
+         iVrL8WlBTuE1kUcUddx/++a3k6g8e/tFQSMGhMBYoILgfaMCW7xuhGrkfQLknwxah+wd
+         bA5bhbqzpjjqjxo5Q6x9rsrjXpo2/Op1VpgSIjIoFW5MNCw52hmcGu1kPw3SgUwDEGVx
+         EXwUJzOgWo9Gvts5GEitYRg5E5tC/10MEc5K4e2EBeilysdwR8PKydQTEMqko5iNjb+I
+         CkjA==
+X-Forwarded-Encrypted: i=1; AJvYcCXrgMb24q3sr/kpPALHMcfKzcljFwhfGQ18vAPC1lXUOcSLlOo2GpbQz0+lcr5hC8aBWk/lFEU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyVOs6gIQ93/XYsg9WYLoYMJ3WWzqcLV4UMkWu32sfxVAmjOZBM
+	QfrchO0v3rtevaN04CgVQ0LkMA/a5YdzqqWwXmhddrhRGyhPQolu9tNZc+vlteVZlZsRg1vnrxO
+	PnPRRIjGQIy0iozJAPj7x5wNBDEcgMA3Ld1389MN3JlnWGkKOBAyE9tvri0/K
+X-Gm-Gg: ASbGncsxl3JziFivUbxnT1LiMtNweOzLantCZUoDaNQhEgCauiyLmbFp19Mvl/YNtLz
+	ZlMZsz4BmBLH2GQvA9j3Kz2HYlBsqUr4LGapii0jRYuZuGWS0b1esoM3QtJWRg+zj+hZzaIZula
+	1q0wqCBigpBBvzdBrXUXtCRdV/J25elr44vllpsQbYME4TaJCBE6E4qTwf4xaSe9REWC5vxxnCT
+	5l1tWwZ2XGzVSXSBD88+OUbqv/gzVfFsi6RwJIgr/Dv/28ml+/YeBaeUvMuSacUtNEQwVEwHF+E
+	pMHm0xmpF4UqS0fScNoNFliLO6kViXPftjsBHr91i3WI9Xa8Mg==
+X-Received: by 2002:a05:6a20:c896:b0:1e1:ad7:3282 with SMTP id adf61e73a8af0-1e8b13d1ed6mr23260278637.7.1736793274567;
+        Mon, 13 Jan 2025 10:34:34 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHVmLbJjKIXrU5OizlvLle+AriLedokFWRNIHyrvXHi3TC80JLv+9f9ICoPLpMe2ANKiddz4g==
+X-Received: by 2002:a05:6a20:c896:b0:1e1:ad7:3282 with SMTP id adf61e73a8af0-1e8b13d1ed6mr23260251637.7.1736793274232;
+        Mon, 13 Jan 2025 10:34:34 -0800 (PST)
 Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72d40568dccsm6064170b3a.47.2025.01.13.08.12.14
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72d40681b3dsm6185368b3a.153.2025.01.13.10.34.33
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 13 Jan 2025 08:12:14 -0800 (PST)
-Message-ID: <db1b3d4b-db7f-4c3e-9f58-b3cb3a335677@oss.qualcomm.com>
-Date: Mon, 13 Jan 2025 08:12:13 -0800
+        Mon, 13 Jan 2025 10:34:33 -0800 (PST)
+Message-ID: <afd212a9-093f-4b03-ad84-0436bd99358f@oss.qualcomm.com>
+Date: Mon, 13 Jan 2025 10:34:32 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 3/4] wifi: ath12k: Remove ath12k_get_num_hw() helper
- function
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+Subject: Re: [PATCH v3 4/6] wifi: ath12k: Add API to print s8 arrays in HTT
+ stats
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
+        Aditya Kumar Singh <quic_adisi@quicinc.com>,
         ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Dan Carpenter <dan.carpenter@linaro.org>
-References: <20250112071630.4059410-1-quic_periyasa@quicinc.com>
- <20250112071630.4059410-4-quic_periyasa@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+References: <20250113071144.3397293-1-quic_rdevanat@quicinc.com>
+ <20250113071144.3397293-5-quic_rdevanat@quicinc.com>
+ <1e1b5159-3f4f-4876-9e31-11a1f5b3584c@quicinc.com>
+ <7d31615e-d5b3-40db-8de1-554918c18212@quicinc.com>
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250112071630.4059410-4-quic_periyasa@quicinc.com>
+In-Reply-To: <7d31615e-d5b3-40db-8de1-554918c18212@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: NidEBOcrMPhGq3iiZfopsKdM7zR-TPjB
-X-Proofpoint-GUID: NidEBOcrMPhGq3iiZfopsKdM7zR-TPjB
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: quca0WOX00WmF4QVmxv86G_PraxNNfRE
+X-Proofpoint-ORIG-GUID: quca0WOX00WmF4QVmxv86G_PraxNNfRE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
- mlxlogscore=999 mlxscore=0 lowpriorityscore=0 clxscore=1015 malwarescore=0
- priorityscore=1501 spamscore=0 impostorscore=0 bulkscore=0 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501130134
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ lowpriorityscore=0 bulkscore=0 spamscore=0 mlxscore=0 impostorscore=0
+ malwarescore=0 priorityscore=1501 mlxlogscore=999 adultscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501130149
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_081221_874607_84116690 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20250113_103437_266986_BA45895D 
+X-CRM114-Status: GOOD (  17.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,28 +123,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/11/2025 11:16 PM, Karthikeyan Periyasamy wrote:
-> Currently, the ath12k_get_num_hw() helper function takes the device handle
-> as an argument. Here, the number of hardware is retrieved from the group
-> handle. Demanding the device handle from the caller is unnecessary since
-> in some cases the group handle is already available. Additionally, there
-> is no longer a need for multiple indirections to get the number of
-> hardware. Therefore, remove this helper function and directly use
-> ag->num_hw. This change also fixes the below Smatch static checker
-> warning.
+On 1/13/2025 12:37 AM, Roopni Devanathan wrote:
 > 
-> Smatch warning:
-> ath12k_mac_destroy() error: we previously assumed 'ab' could be null
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> On 1/13/2025 1:50 PM, Aditya Kumar Singh wrote:
+>> On 1/13/25 12:41, Roopni Devanathan wrote:
+>>> Currently, print_array_to_buf() is used to print arrays to HTT
+>>> stats buffer. This function supports printing only arrays with
+>>> 32-bit unsigned integers. Add print_array_to_buf_s8(), which
+>>> implements print_array_to_buf()'s functionality to all the
+>>> arrays with 8-bit signed integers.
+>>>
+>>> Sample output:
+>>> rx_ul_mumimo_target_rssi: user_0  =  0:-128, 1:-128, 2:-128, 3:-128
+>>> rx_ul_mumimo_target_rssi: user_1  =  0:-128, 1:-128, 2:-128, 3:-128
+>>> rx_ul_mumimo_target_rssi: user_2  =  0:-128, 1:-128, 2:-128, 3:-128
+>>>
+>>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+>>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+>>>
+>>> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+>>> ---
+>>>   .../wireless/ath/ath12k/debugfs_htt_stats.c   | 28 +++++++++++++++++++
+>>>   1 file changed, 28 insertions(+)
+>>>
+>>> diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>>> index 77c51269669f..92935134735a 100644
+>>> --- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>>> +++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
+>>> @@ -48,6 +48,34 @@ print_array_to_buf(u8 *buf, u32 offset, const char *header,
+>>>                       footer);
+>>>   }
+>>>   +static u32
+>>> +print_array_to_buf_s8(u8 *buf, u32 offset, const char *header, u32 stats_index,
+>>> +              const s8 *array, u32 array_len, const char *footer)
+>>
+>>
+>> Who is the user of this new function? I don't see it called from
+>> anywhere. At least have 1 caller to it in this patch?
+>>
+>> Or else this patch fails to compile with W=1
+>>
+>> drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c:52:1: error: 'print_array_to_buf_s8' defined but not used [-Werror=unused-function]
+>> 52 | print_array_to_buf_s8(u8 *buf, u32 offset, const char *header, u32 stats_index,
+>> | ^~~~~~~~~~~~~~~~~~~~~
+>> cc1: all warnings being treated as errors
+>>
 > 
-> Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-> Closes: https://lore.kernel.org/ath12k/3e705de0-67d1-4437-97ff-4828d83ae2af@stanley.mountain/
-> Closes: https://scan7.scan.coverity.com/#/project-view/52682/11354?selectedIssue=1602340
-> Fixes: a343d97f27f5 ("wifi: ath12k: move struct ath12k_hw from per device to group")
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> This new function is called in patch "[PATCH v3 5/6] wifi: ath12k: Support Uplink MUMIMO Trigger Stats".
+> If we are facing this warning, we'd have to merge this patch with patch 5/6.
+> Jeff, Aditya, can you please confirm if doing that is okay?
+> 
 
-Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-
+yes, please squash those patches
 
 
