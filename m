@@ -4,85 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F7FDE7719E
-	for <ath12k@archiver.kernel.org>; Mon, 13 Jan 2025 07:48:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D9E2E7719E
+	for <ath12k@archiver.kernel.org>; Mon, 13 Jan 2025 08:16:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=COJcRGNsPOa6pNTOIetxZqgfLyUoBJIICtuCd0MES6w=; b=WQ+XNBho71ZSjGrxjqx5ov05VO
-	pDbslKvk5MQSGiksaqLxXCbqsmy7LpIaOdbhFF7BLTUDlYvCf21E8tLuPjMvOLMbCA1m53gRWwSh5
-	ADmMrtgJyIyjTrHwron+C6zJ1L4D2aWOXFoWiehJwgbx2uSXh11kGQwN0xVxW4QPecd+t0wcKKZNp
-	F1bs0kI8pcQ3/U0JrTnXpMV67055Lugf9ciDN2WvYOSlI0yQ/UuVvAyhd0gKS3M5PnSQBWl1GlylG
-	61xSV4l7p/1hCmRjfAeuTrtM95p7tzp5T7pl/BQ5DihJQ3Gwsd9kE4v2zMon9rMVaKuj2rTGDI4pJ
-	hrJHhoBA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=TCTqp6m6EAkwZNgFziYUSpvKhex9BIWNLVER16ZCCFM=; b=Kg7KBECM8LuwHxWHXTVb9LuRx6
+	+gTTShUNcReeiDaOQIjP2X22WFTfBVyBBXc6IFZWEzpCDZPvQ7eZ1Sb7Rll1yYqm6FZmdGdHMvEqj
+	oJwzYjgJtxjRlE+I/pR6zLectuSns22Ztjcy7N3ZUVIiiyRG+KZ2/nvQvJeGeMpuUWtt+gI42+S61
+	TGXlJp8RLyx+qE8DR6Mvsi0y6UM932TMeoED2NpfiBQPyEQ7Qnkqi58ggVxaRPsqM8AgO6po1/nIT
+	1w59mGEqKI+upgdK68Fw24GLfhfENJyM/Vz93/3NByfQa2okkbzV35P47jMsDMUJf1F0XtUsVmkD6
+	HYZ+yF1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXFBZ-00000004HaA-0euZ
+	id 1tXFcP-00000004M50-0Ke2
 	for ath12k@archiver.kernel.org;
-	Mon, 13 Jan 2025 07:48:33 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 13 Jan 2025 08:16:17 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXFBW-00000004HXh-1ljV
+	id 1tXFcM-00000004M4T-2wud
 	for ath12k@lists.infradead.org;
-	Mon, 13 Jan 2025 07:48:31 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50D7OLqs023769;
-	Mon, 13 Jan 2025 07:48:29 GMT
+	Mon, 13 Jan 2025 08:16:16 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50D2Hd3g021702;
+	Mon, 13 Jan 2025 08:16:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	COJcRGNsPOa6pNTOIetxZqgfLyUoBJIICtuCd0MES6w=; b=gX3F0Pll8ogFPQd1
-	58z7ir+voTAXMxhZJloFaF9Z1drHTw9lg26pRdn3BxgFT2Og6sRrt9YX7nuet+eh
-	mM6eNGen/gCBQ12yHJnrln0Z8icmPXdr7LY/KBdO+cOkk3R3ld6ZcE2iuwSZAHZW
-	Dc2KnYgv7FXI6lzDye9seSb54V9YETeeIdmukYgk0Gi+DgahrBJa9q14AuWEbbQY
-	eotosUO5pIaaGqjt+eVrAoJqUxXeyjq9RTEbwms2uyJOORsi/tVL8fCvRem3MVkG
-	0Pb2FknN6wpBkmge+Ds+/5eRHBh7U46PLPpdqSa4VPU3wKAMQ2ys7G7dAWXKA9Nz
-	wCQy6w==
+	TCTqp6m6EAkwZNgFziYUSpvKhex9BIWNLVER16ZCCFM=; b=dKtBFjvRPObR19LG
+	4y+V0inXlR4+BVCluNWwLSNxyfLbIceluKO4DCsElubo2a6XD+nlh8QgeN8gDjhi
+	yJBhpxnWx7PE7k460VZGyoUZyBopn9ITr2XFyhwko1GYdYmIh4GeB22N0+H/ax7x
+	tYzbnD/wSg8woHhP5uY8rk6nESrqtxQ3cMQL/MadlBbww+NiMs9F+wSrvUoEJ9F1
+	1eQCj9KsF5a3Od3AzrC2L+0XA88iB/GMCAo6YyA+qZtl6q7AYVedLDm0IPbUAj4L
+	eoypbvq6VJWRvpDIgMT8t2Ea+Ec2ZaERLEDwpJ922bWm8eIfg0c4Cv+mPQkYDYPb
+	hWXeEQ==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 444xcxr1rx-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 444swy8q3b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 07:48:29 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50D7mSP0021716
+	Mon, 13 Jan 2025 08:16:05 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50D8G4GU004609
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 07:48:28 GMT
-Received: from lingbok-Birman-PHX.qca.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 12 Jan 2025 23:48:26 -0800
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_lingbok@quicinc.com>
-Subject: [PATCH v4 4/4] wifi: ath12k: Add support for reading variant from ACPI to download board data file
-Date: Mon, 13 Jan 2025 15:48:10 +0800
-Message-ID: <20250113074810.29729-5-quic_lingbok@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250113074810.29729-1-quic_lingbok@quicinc.com>
-References: <20250113074810.29729-1-quic_lingbok@quicinc.com>
+	Mon, 13 Jan 2025 08:16:04 GMT
+Received: from [10.152.202.18] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 13 Jan
+ 2025 00:16:02 -0800
+Message-ID: <bd0de726-4eeb-43b9-a8d3-53162b5833f1@quicinc.com>
+Date: Mon, 13 Jan 2025 13:45:59 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/6] wifi: ath12k: Support Sounding Stats
+To: Roopni Devanathan <quic_rdevanat@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Dinesh Karthikeyan
+	<quic_dinek@quicinc.com>
+References: <20250113071144.3397293-1-quic_rdevanat@quicinc.com>
+ <20250113071144.3397293-2-quic_rdevanat@quicinc.com>
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <20250113071144.3397293-2-quic_rdevanat@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 36rL35cohcz6bn9kGEN5STzzZgGFsDNn
-X-Proofpoint-GUID: 36rL35cohcz6bn9kGEN5STzzZgGFsDNn
+X-Proofpoint-GUID: tswo2owf3ikHnOvHWlON03HjlaxMI_FW
+X-Proofpoint-ORIG-GUID: tswo2owf3ikHnOvHWlON03HjlaxMI_FW
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- phishscore=0 impostorscore=0 malwarescore=0 clxscore=1015 mlxlogscore=999
- priorityscore=1501 spamscore=0 lowpriorityscore=0 bulkscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501130066
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
+ clxscore=1015 mlxscore=0 bulkscore=0 mlxlogscore=999 impostorscore=0
+ phishscore=0 priorityscore=1501 lowpriorityscore=0 adultscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501130069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250112_234830_584780_EDFEBE9C 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20250113_001614_750538_7F9B8026 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,193 +103,71 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k does not support reading variant from ACPI board data
-filename extension for downloading board data file.
+On 1/13/25 12:41, Roopni Devanathan wrote:
+> From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+> 
+> Add support to request sounding stats from firmware through HTT stats
+> type 22. These stats give sounding information of different Wi-Fi
+> standards, channel vector upload status and correlation details.
+> 
+> Sample output:
+> -------------
+> echo 22 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
+> HTT_TX_AC_SOUNDING_STATS_TLV:
+> ac_cbf_20 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> ac_cbf_40 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> .....
+> Sounding User_0 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> Sounding User_1 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> .....
+> 
+> HTT_TX_AX_SOUNDING_STATS_TLV:
+> ax_cbf_20 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> ax_cbf_40 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> .....
+> Sounding User_0 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> Sounding User_1 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0
+> .....
+> 
+> HTT_TX_BE_SOUNDING_STATS_TLV:
+> be_cbf_20 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> be_cbf_40 = IBF: 0, SU_SIFS: 0, SU_RBO: 0, MU_SIFS: 0, MU_RBO: 0
+> .....
+> Sounding User_0 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0, 320MHz: 0
+> Sounding User_1 = 20MHz: 0, 40MHz: 0, 80MHz: 0, 160MHz: 0, 320MHz: 0
+> .....
+> 
+> CV UPLOAD HANDLER STATS:
+> cv_nc_mismatch_err = 0
+> cv_fcs_err = 0
+> cv_frag_idx_mismatch = 0
+> cv_invalid_peer_id = 0
+> .....
+> 
+> CV QUERY STATS:
+> cv_total_query = 0
+> cv_total_pattern_query = 0
+> cv_total_bw_query = 0
+> cv_invalid_bw_coding = 0
+> .....
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+> 
+> Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+> Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+> ---
+>   .../wireless/ath/ath12k/debugfs_htt_stats.c   | 265 ++++++++++++++++++
+>   .../wireless/ath/ath12k/debugfs_htt_stats.h   |  78 ++++++
 
-To address this issue, obtain the string of the ACPI data filename
-extension and use it as part of the string to search for the board data
-file from board-2.bin.
+* drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c: 2025 copyright 
+missing
+* drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h: 2025 copyright 
+missing
 
-This patch will not affect QCN9274, because only WCN7850 supports ACPI.
+No need to respin just because of this.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
-v4:
-1.rebase to 0c5fcd9069dd
-
-v3:
-no change
-
-v2:
-1.support functions for cases where CONFIG_ACPI is disabled
-
- drivers/net/wireless/ath/ath12k/acpi.c | 45 ++++++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/acpi.h | 12 +++++++
- drivers/net/wireless/ath/ath12k/core.h |  2 ++
- drivers/net/wireless/ath/ath12k/qmi.c  |  4 +++
- 4 files changed, 63 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.c b/drivers/net/wireless/ath/ath12k/acpi.c
-index fe6f051debda..cf28b5dd049a 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.c
-+++ b/drivers/net/wireless/ath/ath12k/acpi.c
-@@ -37,6 +37,24 @@ static int ath12k_acpi_dsm_get_data(struct ath12k_base *ab, int func)
- 			ab->acpi.bit_flag = obj->integer.value;
- 			break;
- 		}
-+	} else if (obj->type == ACPI_TYPE_STRING) {
-+		switch (func) {
-+		case ATH12K_ACPI_DSM_FUNC_BDF_EXT:
-+			if (obj->string.length <= ATH12K_ACPI_BDF_ANCHOR_STRING_LEN ||
-+			    obj->string.length > ATH12K_ACPI_BDF_MAX_LEN ||
-+			    memcmp(obj->string.pointer, ATH12K_ACPI_BDF_ANCHOR_STRING,
-+				   ATH12K_ACPI_BDF_ANCHOR_STRING_LEN)) {
-+				ath12k_warn(ab, "invalid ACPI DSM BDF size: %d\n",
-+					    obj->string.length);
-+				ret = -EINVAL;
-+				goto out;
-+			}
-+
-+			memcpy(ab->acpi.bdf_string, obj->string.pointer,
-+			       obj->buffer.length);
-+
-+			break;
-+		}
- 	} else if (obj->type == ACPI_TYPE_BUFFER) {
- 		switch (func) {
- 		case ATH12K_ACPI_DSM_FUNC_SUPPORT_FUNCS:
-@@ -341,6 +359,8 @@ int ath12k_acpi_start(struct ath12k_base *ab)
- 	ab->acpi.acpi_bios_sar_enable = false;
- 	ab->acpi.acpi_cca_enable = false;
- 	ab->acpi.acpi_band_edge_enable = false;
-+	ab->acpi.acpi_enable_bdf = false;
-+	ab->acpi.bdf_string[0] = '\0';
- 
- 	if (!ab->hw_params->acpi_guid)
- 		/* not supported with this hardware */
-@@ -368,6 +388,16 @@ int ath12k_acpi_start(struct ath12k_base *ab)
- 			ab->acpi.acpi_disable_rfkill = true;
- 	}
- 
-+	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi, ATH12K_ACPI_FUNC_BIT_BDF_EXT)) {
-+		ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_BDF_EXT);
-+		if (ret || ab->acpi.bdf_string[0] == '\0') {
-+			ath12k_warn(ab, "failed to get ACPI BDF EXT: %d\n", ret);
-+			return ret;
-+		}
-+
-+		ab->acpi.acpi_enable_bdf = true;
-+	}
-+
- 	if (ATH12K_ACPI_FUNC_BIT_VALID(ab->acpi, ATH12K_ACPI_FUNC_BIT_TAS_CFG)) {
- 		ret = ath12k_acpi_dsm_get_data(ab, ATH12K_ACPI_DSM_FUNC_TAS_CFG);
- 		if (ret) {
-@@ -452,6 +482,21 @@ int ath12k_acpi_start(struct ath12k_base *ab)
- 	return 0;
- }
- 
-+int ath12k_acpi_check_bdf_variant_name(struct ath12k_base *ab)
-+{
-+	size_t max_len = sizeof(ab->qmi.target.bdf_ext);
-+
-+	if (!ab->acpi.acpi_enable_bdf)
-+		return -ENODATA;
-+
-+	if (strscpy(ab->qmi.target.bdf_ext, ab->acpi.bdf_string + 4, max_len) < 0)
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT,
-+			   "acpi bdf variant longer than the buffer (variant: %s)\n",
-+			   ab->acpi.bdf_string);
-+
-+	return 0;
-+}
-+
- void ath12k_acpi_stop(struct ath12k_base *ab)
- {
- 	if (!ab->acpi.started)
-diff --git a/drivers/net/wireless/ath/ath12k/acpi.h b/drivers/net/wireless/ath/ath12k/acpi.h
-index 7c18a3f60e3f..24f5a367a299 100644
---- a/drivers/net/wireless/ath/ath12k/acpi.h
-+++ b/drivers/net/wireless/ath/ath12k/acpi.h
-@@ -10,6 +10,7 @@
- 
- #define ATH12K_ACPI_DSM_FUNC_SUPPORT_FUNCS	0
- #define ATH12K_ACPI_DSM_FUNC_DISABLE_FLAG	2
-+#define ATH12K_ACPI_DSM_FUNC_BDF_EXT		3
- #define ATH12K_ACPI_DSM_FUNC_BIOS_SAR		4
- #define ATH12K_ACPI_DSM_FUNC_GEO_OFFSET		5
- #define ATH12K_ACPI_DSM_FUNC_INDEX_CCA		6
-@@ -18,6 +19,7 @@
- #define ATH12K_ACPI_DSM_FUNC_INDEX_BAND_EDGE		10
- 
- #define ATH12K_ACPI_FUNC_BIT_DISABLE_FLAG		BIT(1)
-+#define ATH12K_ACPI_FUNC_BIT_BDF_EXT			BIT(2)
- #define ATH12K_ACPI_FUNC_BIT_BIOS_SAR			BIT(3)
- #define ATH12K_ACPI_FUNC_BIT_GEO_OFFSET			BIT(4)
- #define ATH12K_ACPI_FUNC_BIT_CCA			BIT(5)
-@@ -57,6 +59,10 @@
- #define ATH12K_ACPI_DSM_DISABLE_11BE_BIT	BIT(0)
- #define ATH12K_ACPI_DSM_DISABLE_RFKILL_BIT	BIT(2)
- 
-+#define ATH12K_ACPI_BDF_ANCHOR_STRING_LEN	3
-+#define ATH12K_ACPI_BDF_ANCHOR_STRING		"BDF"
-+#define ATH12K_ACPI_BDF_MAX_LEN			100
-+
- #define ATH12K_ACPI_DSM_GEO_OFFSET_DATA_SIZE (ATH12K_ACPI_GEO_OFFSET_DATA_OFFSET + \
- 					      ATH12K_ACPI_BIOS_SAR_GEO_OFFSET_LEN)
- #define ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE (ATH12K_ACPI_POWER_LIMIT_DATA_OFFSET + \
-@@ -71,6 +77,7 @@ void ath12k_acpi_stop(struct ath12k_base *ab);
- bool ath12k_acpi_get_disable_rfkill(struct ath12k_base *ab);
- bool ath12k_acpi_get_disable_11be(struct ath12k_base *ab);
- void ath12k_acpi_set_dsm_func(struct ath12k_base *ab);
-+int ath12k_acpi_check_bdf_variant_name(struct ath12k_base *ab);
- 
- #else
- 
-@@ -97,6 +104,11 @@ static inline void ath12k_acpi_set_dsm_func(struct ath12k_base *ab)
- {
- }
- 
-+static inline int ath12k_acpi_check_bdf_variant_name(struct ath12k_base *ab)
-+{
-+	return 0;
-+}
-+
- #endif /* CONFIG_ACPI */
- 
- #endif /* ATH12K_ACPI_H */
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index c11c8c03b357..eacf377e2efa 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1042,7 +1042,9 @@ struct ath12k_base {
- 		bool acpi_disable_rfkill;
- 		bool acpi_cca_enable;
- 		bool acpi_band_edge_enable;
-+		bool acpi_enable_bdf;
- 		u32 bit_flag;
-+		char bdf_string[ATH12K_ACPI_BDF_MAX_LEN];
- 		u8 tas_cfg[ATH12K_ACPI_DSM_TAS_CFG_SIZE];
- 		u8 tas_sar_power_table[ATH12K_ACPI_DSM_TAS_DATA_SIZE];
- 		u8 bios_sar_data[ATH12K_ACPI_DSM_BIOS_SAR_DATA_SIZE];
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 86d055c45ace..f97f38899d55 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -2745,6 +2745,10 @@ int ath12k_qmi_request_target_cap(struct ath12k_base *ab)
- 		/* ACPI is optional so continue in case of an error */
- 		ath12k_dbg(ab, ATH12K_DBG_BOOT, "acpi failed: %d\n", r);
- 
-+	r = ath12k_acpi_check_bdf_variant_name(ab);
-+	if (r)
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "ACPI bdf variant name not set.\n");
-+
- out:
- 	return ret;
- }
 -- 
-2.34.1
-
+Aditya
 
