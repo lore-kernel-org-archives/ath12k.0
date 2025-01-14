@@ -4,67 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21A3CC02189
-	for <ath12k@archiver.kernel.org>; Tue, 14 Jan 2025 12:39:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D280E77188
+	for <ath12k@archiver.kernel.org>; Tue, 14 Jan 2025 13:57:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jyU6CVlnJdip/+hLWM3/xG5Sa7VTzRnaAuws3t4PQ8E=; b=Qf8xtCHC3QSE81o/vy8s6vRO2q
-	XqTB2XAEf9W5Y8g/yvPLtp9nBTCjdZbArC8qmcy1am78RcxmE7+/WcGbT7eMJelvxcZKRjv2VH7Yz
-	3qr8r5E+Gto2pqqEoGl+VPw6mrcQhMA6lUz5mveuvtVOxOfbuJP3e0WAdyR2HmdnNr/7u16v38ekl
-	ypxiGKczAG59ywd9LjoH4KGuBchnMqKzN4w9dVSbUEuoISE4piyq+PMItNICsh9axgwF2cnvR+DNE
-	bG+Of5Q7QbL+ncnKUT8ivPxX+bFjnr97dxHGDdeEAWplWi+TVaKuZchM7eQUWdepAl9G8tjOpkRzW
-	/A3NjorA==;
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=/Da0P3T8OcYngtrwuPK2DUHqia+CmiTgyeS/jU3pteY=; b=Iu5kzBPuyl7iM9rGL7YfWWX/eS
+	JUpOrHA214BCR8D4kbH3SXyefSI5gQGFHwAnhpVojvOZ6gx/+AiW0uFuDg3ZFCChFNYW84nbDY9TE
+	rHfW6SAcKx1uz3trHki3d+thrRDxh9z723LXMmJbdC2WmvfC87x+aExg5OhZJYSof1VpX6bVJ0j3j
+	ZRyFVIXSpxARQSkRtsg/5WMzRjVgMydO7eUXNomMhZ1FsfLWOJJ3Z+Hghh9kfRnSK2U6D/7qH7rNA
+	m71DRif7eNg6pjGhUI4RAXuvWQsy3TbmKI7o4Sf1B7v+kATJTlt1tuVBjjEmO1E7isYbvUwBIBxv+
+	M5qm/tOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXgCv-00000008QPu-3aV0
+	id 1tXhQH-00000008ZpV-3MJ5
 	for ath12k@archiver.kernel.org;
-	Tue, 14 Jan 2025 12:39:45 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 14 Jan 2025 13:57:37 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXgCV-00000008QML-30rj
+	id 1tXhQE-00000008Zp4-38oJ
 	for ath12k@lists.infradead.org;
-	Tue, 14 Jan 2025 12:39:20 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50EBFDnO002021;
-	Tue, 14 Jan 2025 12:39:19 GMT
+	Tue, 14 Jan 2025 13:57:36 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50E6ckOM003620;
+	Tue, 14 Jan 2025 13:57:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	jyU6CVlnJdip/+hLWM3/xG5Sa7VTzRnaAuws3t4PQ8E=; b=Q05uRmc+sXHINMVk
-	kPxIAWotGylFomTwSxjfqyFULDf5pMp+t+EaEeDORcPa01PvU9nRNF0jBWGWO+EM
-	gryDU8EFcGiiWHexbPyt5RUicu5+pmTXs9cQof5FyowQ459sfakGxwL3sS0XExk+
-	oBO6q2xkQR6CeOq+1YwL3G6GU5GTT+/cDy5aGBEw6nvkoD0L9MkOplCa3915i9CE
-	GwMiCqZUPL+asqK5iNg4IbcrLg6RweY21gDSVlGoBHQEChkHi5mOflz/BOjYPkqE
-	aDI+Jfy05TVlYgyzcSw30cCrPi90WXRgddwdXmp3cNvm+QFlQHaEg0ALqyF515HG
-	ESBpHg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 445pvnr5bp-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=/Da0P3T8OcYngtrwuPK2DU
+	Hqia+CmiTgyeS/jU3pteY=; b=XykbVmAwh24xggGhX8LR1vfKJQRvvBLEZCbi//
+	E4kbyqrnLXWN48IMrMIW8vDYz+Mc6z3oVL8ZQhi7wGnvqHrgZbiFNYFTcV5cvx+V
+	kbuSJte9lBoTIojW1fgZ0lcXVUo5KKjBOr0tKFi3WLKOb9XvmNBoDBElxWoQWE7s
+	I78wuKT+tSusHmCThGs5tnOdc5xpv9zjICfkAzvLBbJfnVRjKZ5wdCJaqYpdkSce
+	Jmc4TjdiW5+2Nv5a+tWyTpD7oFAjKM9ki7mN4uDUJ/KhyWcdjlVhlPiek3JOOhBG
+	2dbHiBULKT2aZ8XVnV6Utas47SfxShm8++whN3QjM7kB+ELg==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 445jubgw78-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 14 Jan 2025 12:39:19 +0000 (GMT)
+	Tue, 14 Jan 2025 13:57:33 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50ECdIaq006802
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50EDvWW3028471
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 14 Jan 2025 12:39:18 GMT
+	Tue, 14 Jan 2025 13:57:32 GMT
 Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 14 Jan 2025 04:39:16 -0800
+ 15.2.1544.9; Tue, 14 Jan 2025 05:57:30 -0800
 From: Roopni Devanathan <quic_rdevanat@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
-        Dinesh Karthikeyan
-	<quic_dinek@quicinc.com>,
-        Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: [PATCH v4 5/5] wifi: ath12k: Support Received FSE Stats
-Date: Tue, 14 Jan 2025 18:08:35 +0530
-Message-ID: <20250114123835.882926-6-quic_rdevanat@quicinc.com>
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH v3 0/2] wifi: ath12k: Support Transmit Power Control Stats
+Date: Tue, 14 Jan 2025 19:27:06 +0530
+Message-ID: <20250114135708.966170-1-quic_rdevanat@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250114123835.882926-1-quic_rdevanat@quicinc.com>
-References: <20250114123835.882926-1-quic_rdevanat@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -73,19 +69,20 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: L5_ta9SMrK0A70D9T4UQhmMZr_7aDHzH
-X-Proofpoint-ORIG-GUID: L5_ta9SMrK0A70D9T4UQhmMZr_7aDHzH
+X-Proofpoint-ORIG-GUID: y9CSwbzMo3NrJgoN9Y5hM5xPumqEVZHc
+X-Proofpoint-GUID: y9CSwbzMo3NrJgoN9Y5hM5xPumqEVZHc
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 adultscore=0
- clxscore=1015 priorityscore=1501 lowpriorityscore=0 phishscore=0
- bulkscore=0 mlxscore=0 malwarescore=0 suspectscore=0 spamscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
+ adultscore=0 bulkscore=0 priorityscore=1501 impostorscore=0 clxscore=1015
+ spamscore=0 lowpriorityscore=0 malwarescore=0 suspectscore=0
  mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501140105
+ engine=8.19.0-2411120000 definitions=main-2501140112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_043919_754645_50B92FCE 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20250114_055734_918910_11954883 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,204 +97,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+Add support to print Transmit Power Control Stats. Add support for basic
+infrastructure necessary for enabling TPC stats via debugfs. This patch
+series brings support to request stats type from firmware and dump the
+corresponding stats.
 
-Add support to request received Finite State Entropy stats from
-firmware through HTT stats type 28. These stats give software and
-hardware FSE stats such as cache entry count, full cache count,
-current and peak occupancy count, pending search counts, etc.
+Schema for an ath12k device:
+ath12k
+-- pci-0000:06:00.0
+    -- mac0
+        -- tpc_stats
+        -- tpc_stats_type
 
-Sample output:
--------------
-echo 28 > /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats_type
-cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/htt_stats
-HTT_STATS_RX_FSE_STATS_TLV:
-=== Software RX FSE STATS ===
-Enable count  = 0
-Disable count = 0
-Cache invalidate entry count = 0
-Full cache invalidate count = 0
+Sample TPC logs:
+*************** TPC config **************
+* powers are in 0.25 dBm steps
+reg domain-22           chan freq-5955
+power limit-126         max reg-domain Power-252
+No.of tx chain-4        No.of rates-1164
+**************** SU WITH TXBF ****************
+                                TPC values for Active chains
+Rate idx Preamble Rate code     1-Chain 2-Chain 3-Chain 4-Chain
+4        OFDM    0x000          39      15      1       -9
+5        OFDM    0x001          39      15      1       -9
+.....
+12       HT20    0x200          40      16      2       -8
+13       HT20    0x201          40      16      2       -8
+.....
+44       HT40    0x200          88      88      88      88
+45       HT40    0x201          88      88      88      88
+.....
+76       VHT20   0x300          40      16      2       -8
+77       VHT20   0x301          40      16      2       -8
+.....
+172      VHT40   0x300          88      88      88      88
+173      VHT40   0x301          88      88      88      88
+.....
 
-=== Hardware RX FSE STATS ===
-Cache hits count = 0
-Cache no. of searches = 0
-Cache occupancy peak count:
-[0] = 0 [1-16] = 0 [17-32] = 0 [33-48] = 0 [49-64] = 0 [65-80] = 0 [81-96] = 0 [97-112] = 0 [113-127] = 0 [128] = 0
-Cache occupancy current count:
-[0] = 0 [1-16] = 0 [17-32] = 0 [33-48] = 0 [49-64] = 0 [65-80] = 0 [81-96] = 0 [97-112] = 0 [113-127] = 0 [128] = 0
-Cache search square count:
-[0] = 0 [1-50] = 0 [51-100] = 0 [101-200] = 0 [201-255] = 0 [256] = 0
-Cache search peak pending count:
-[0] = 0 [1-2] = 0 [3-4] = 0 [Greater/Equal to 5] = 0
-Cache search tot pending count:
-[0] = 0 [1-2] = 0 [3-4] = 0 [Greater/Equal to 5] = 0
+Note:
+MCC firmware version -
+WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3 does not print stats
+because MCC firmware will not respond to the event passed from host,
+resulting in timeout.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
+v3:
+ - Fixed datatype conversion warnings in v2.
+v2:
+ - Fixed compilation issues in v1.
 
-Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
----
- .../wireless/ath/ath12k/debugfs_htt_stats.c   | 91 +++++++++++++++++++
- .../wireless/ath/ath12k/debugfs_htt_stats.h   | 22 +++++
- 2 files changed, 113 insertions(+)
+Sowmiya Sree Elavalagan (2):
+  wifi: ath12k: Add Support to Parse TPC Event from Firmware
+  wifi: ath12k: Add Support to Calculate and Display TPC Values
 
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-index e74245c7ed0e..82fe47ec5a31 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.c
-@@ -3526,6 +3526,94 @@ ath12k_htt_print_ul_mumimo_trig_stats(const void *tag_buf, u16 tag_len,
- 	stats_req->buf_len = len;
- }
- 
-+static void
-+ath12k_htt_print_rx_fse_stats_tlv(const void *tag_buf, u16 tag_len,
-+				  struct debug_htt_stats_req *stats_req)
-+{
-+	const struct ath12k_htt_rx_fse_stats_tlv *htt_stats_buf = tag_buf;
-+	u32 buf_len = ATH12K_HTT_STATS_BUF_SIZE;
-+	u32 len = stats_req->buf_len;
-+	u8 *buf = stats_req->buf;
-+
-+	if (tag_len < sizeof(*htt_stats_buf))
-+		return;
-+
-+	len += scnprintf(buf + len, buf_len - len, "HTT_STATS_RX_FSE_STATS_TLV:\n");
-+	len += scnprintf(buf + len, buf_len - len, "=== Software RX FSE STATS ===\n");
-+	len += scnprintf(buf + len, buf_len - len, "Enable count  = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_enable_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "Disable count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_disable_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "Cache invalidate entry count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_invalidate_entry_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "Full cache invalidate count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_full_cache_invalidate_cnt));
-+
-+	len += scnprintf(buf + len, buf_len - len, "\n=== Hardware RX FSE STATS ===\n");
-+	len += scnprintf(buf + len, buf_len - len, "Cache hits count = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_num_cache_hits_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "Cache no. of searches = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_num_searches_cnt));
-+	len += scnprintf(buf + len, buf_len - len, "Cache occupancy peak count:\n");
-+	len += scnprintf(buf + len, buf_len - len, "[0] = %u [1-16] = %u [17-32] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[0]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[1]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[2]));
-+	len += scnprintf(buf + len, buf_len - len, "[33-48] = %u [49-64] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[3]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[4]));
-+	len += scnprintf(buf + len, buf_len - len, "[65-80] = %u [81-96] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[5]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[6]));
-+	len += scnprintf(buf + len, buf_len - len, "[97-112] = %u [113-127] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[7]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[8]));
-+	len += scnprintf(buf + len, buf_len - len, "[128] = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_peak_cnt[9]));
-+	len += scnprintf(buf + len, buf_len - len, "Cache occupancy current count:\n");
-+	len += scnprintf(buf + len, buf_len - len, "[0] = %u [1-16] = %u [17-32] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[0]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[1]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[2]));
-+	len += scnprintf(buf + len, buf_len - len, "[33-48] = %u [49-64] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[3]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[4]));
-+	len += scnprintf(buf + len, buf_len - len, "[65-80] = %u [81-96] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[5]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[6]));
-+	len += scnprintf(buf + len, buf_len - len, "[97-112] = %u [113-127] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[7]),
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[8]));
-+	len += scnprintf(buf + len, buf_len - len, "[128] = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_cache_occupancy_curr_cnt[9]));
-+	len += scnprintf(buf + len, buf_len - len, "Cache search square count:\n");
-+	len += scnprintf(buf + len, buf_len - len, "[0] = %u [1-50] = %u [51-100] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_square_cnt[0]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_square_cnt[1]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_square_cnt[2]));
-+	len += scnprintf(buf + len, buf_len - len, "[101-200] = %u [201-255] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_square_cnt[3]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_square_cnt[4]));
-+	len += scnprintf(buf + len, buf_len - len, "[256] = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_square_cnt[5]));
-+	len += scnprintf(buf + len, buf_len - len, "Cache search peak pending count:\n");
-+	len += scnprintf(buf + len, buf_len - len, "[0] = %u [1-2] = %u [3-4] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_peak_cnt[0]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_peak_cnt[1]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_peak_cnt[2]));
-+	len += scnprintf(buf + len, buf_len - len, "[Greater/Equal to 5] = %u\n",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_peak_cnt[3]));
-+	len += scnprintf(buf + len, buf_len - len, "Cache search tot pending count:\n");
-+	len += scnprintf(buf + len, buf_len - len, "[0] = %u [1-2] = %u [3-4] = %u ",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_pending_cnt[0]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_pending_cnt[1]),
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_pending_cnt[2]));
-+	len += scnprintf(buf + len, buf_len - len, "[Greater/Equal to 5] = %u\n\n",
-+			 le32_to_cpu(htt_stats_buf->fse_search_stat_pending_cnt[3]));
-+
-+	stats_req->buf_len = len;
-+}
-+
- static void ath12k_htt_print_dlpager_entry(const struct ath12k_htt_pgs_info *pg_info,
- 					   int idx, char *str_buf)
- {
-@@ -4649,6 +4737,9 @@ static int ath12k_dbg_htt_ext_stats_parse(struct ath12k_base *ab,
- 	case HTT_STATS_RX_PDEV_UL_MUMIMO_TRIG_STATS_TAG:
- 		ath12k_htt_print_ul_mumimo_trig_stats(tag_buf, len, stats_req);
- 		break;
-+	case HTT_STATS_RX_FSE_STATS_TAG:
-+		ath12k_htt_print_rx_fse_stats_tlv(tag_buf, len, stats_req);
-+		break;
- 	case HTT_STATS_DLPAGER_STATS_TAG:
- 		ath12k_htt_print_dlpager_stats_tlv(tag_buf, len, stats_req);
- 		break;
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-index 588211605e80..bafe7c3935cd 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_htt_stats.h
-@@ -139,6 +139,7 @@ enum ath12k_dbg_htt_ext_stats_type {
- 	ATH12K_DBG_HTT_EXT_STATS_LATENCY_PROF_STATS		= 25,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_UL_TRIG_STATS		= 26,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_UL_MUMIMO_TRIG_STATS	= 27,
-+	ATH12K_DBG_HTT_EXT_STATS_FSE_RX				= 28,
- 	ATH12K_DBG_HTT_EXT_STATS_PDEV_TX_RATE_TXBF		= 31,
- 	ATH12K_DBG_HTT_EXT_STATS_TXBF_OFDMA			= 32,
- 	ATH12K_DBG_HTT_EXT_STATS_DLPAGER_STATS			= 36,
-@@ -210,6 +211,7 @@ enum ath12k_dbg_htt_tlv_tag {
- 	HTT_STATS_RX_PDEV_UL_TRIG_STATS_TAG		= 94,
- 	HTT_STATS_RX_PDEV_UL_OFDMA_USER_STATS_TAG	= 95,
- 	HTT_STATS_RX_PDEV_UL_MUMIMO_TRIG_STATS_TAG	= 97,
-+	HTT_STATS_RX_FSE_STATS_TAG			= 98,
- 	HTT_STATS_SCHED_TXQ_SUPERCYCLE_TRIGGER_TAG	= 100,
- 	HTT_STATS_PDEV_CTRL_PATH_TX_STATS_TAG		= 102,
- 	HTT_STATS_PDEV_TX_RATE_TXBF_STATS_TAG		= 108,
-@@ -1359,6 +1361,26 @@ struct ath12k_htt_rx_ul_mumimo_trig_stats_tlv {
- 	__le32 mumimo_bsc_trig_rx_qos_null_only;
- } __packed;
- 
-+#define ATH12K_HTT_RX_NUM_MAX_PEAK_OCCUPANCY_INDEX	10
-+#define ATH12K_HTT_RX_NUM_MAX_CURR_OCCUPANCY_INDEX	10
-+#define ATH12K_HTT_RX_NUM_SQUARE_INDEX			6
-+#define ATH12K_HTT_RX_NUM_MAX_PEAK_SEARCH_INDEX		4
-+#define ATH12K_HTT_RX_NUM_MAX_PENDING_SEARCH_INDEX	4
-+
-+struct ath12k_htt_rx_fse_stats_tlv {
-+	__le32 fse_enable_cnt;
-+	__le32 fse_disable_cnt;
-+	__le32 fse_cache_invalidate_entry_cnt;
-+	__le32 fse_full_cache_invalidate_cnt;
-+	__le32 fse_num_cache_hits_cnt;
-+	__le32 fse_num_searches_cnt;
-+	__le32 fse_cache_occupancy_peak_cnt[ATH12K_HTT_RX_NUM_MAX_PEAK_OCCUPANCY_INDEX];
-+	__le32 fse_cache_occupancy_curr_cnt[ATH12K_HTT_RX_NUM_MAX_CURR_OCCUPANCY_INDEX];
-+	__le32 fse_search_stat_square_cnt[ATH12K_HTT_RX_NUM_SQUARE_INDEX];
-+	__le32 fse_search_stat_peak_cnt[ATH12K_HTT_RX_NUM_MAX_PEAK_SEARCH_INDEX];
-+	__le32 fse_search_stat_pending_cnt[ATH12K_HTT_RX_NUM_MAX_PENDING_SEARCH_INDEX];
-+} __packed;
-+
- enum ath12k_htt_stats_page_lock_state {
- 	ATH12K_HTT_STATS_PAGE_LOCKED	= 0,
- 	ATH12K_HTT_STATS_PAGE_UNLOCKED	= 1,
+ drivers/net/wireless/ath/ath12k/core.h    |   5 +
+ drivers/net/wireless/ath/ath12k/debugfs.c | 716 ++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/debugfs.h |  85 +++
+ drivers/net/wireless/ath/ath12k/wmi.c     | 458 ++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h     | 139 +++++
+ 5 files changed, 1403 insertions(+)
+
+
+base-commit: 0c5fcd9069dd5f984e39820629acbfbe0f1b4256
 -- 
 2.25.1
 
