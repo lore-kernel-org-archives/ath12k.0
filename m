@@ -4,88 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E017C02183
-	for <ath12k@archiver.kernel.org>; Tue, 14 Jan 2025 00:38:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F115E77188
+	for <ath12k@archiver.kernel.org>; Tue, 14 Jan 2025 12:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=D57/fQjgsMtGgcF5NvEJNFMMo24y2jN4iPWNgrT5L0s=; b=GgmaTOuqab/+IC3Q7/VW2TuJOe
-	PEbkM5ZKqfhg/hbGPTaAsLFC4zrg7jP+k+1pEahvYSyePiSQwo7nrNZKVfWNdw5s+yPeM81Z8wvay
-	yKJX0P3wfl1SZMQUzYEXs6TSeeXEN+qbBl9O4TblWFGsYeV/avQL1rFdOn2mGE/ChL/50tjf8LO97
-	AWwW0dAb9jXDcB3+qCOySRt8lFHN9ll8LzEjEVMpKkbXsWOXx/G0pJzxDP7Wn0PL1jP63MY7U5jPw
-	/DAe29rHk/INcCYLncVxgEQtrs7YFSkWvXszOD3MAyqGgYZ0XUxuOwa5IN0FF5TvA7PM3YBqvDVbL
-	+Y0PPC8Q==;
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=dFXykKR2iCChhSox2k80yNg20P864q10As0u6DjZjdM=; b=gfZj7YYklWEkJEWRb4G9vr6ri4
+	A+VtgExcr3OFPFzCfj1ymmGVg7CaVjCaql6+e9Cr4fhF4SpaMa2zyJVVUH0RfqW2DsBM/sUbgRsDw
+	76dVEWq0fwTl8V3FGTOYxDVhocEH09FGnssTq8qjmHfFaIYohhBHC8s/0Wg7TVYuBfmXJr4izFxw8
+	L1woQj+HOrLZP0oKBDmmn2gIC3Rysk2HtrrKW97qvaU2SIyXMDDRCSFZg/k73qqsRPr0F2zbCdn4z
+	+aiD6oyLuOZtm/h5W+Fiq0mn/FHwEpmk6qQpev7RV1e2dIsYLEY8G/4hPFrRtHMr+MI7FnQj/YOqH
+	DEx8F+Tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXUx0-000000074Be-0Xg9
+	id 1tXgCt-00000008QOZ-3vRZ
 	for ath12k@archiver.kernel.org;
-	Tue, 14 Jan 2025 00:38:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 14 Jan 2025 12:39:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXUwu-0000000746Z-24PJ
+	id 1tXgCI-00000008QIO-14KC
 	for ath12k@lists.infradead.org;
-	Tue, 14 Jan 2025 00:38:30 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50DC0c60000329;
-	Tue, 14 Jan 2025 00:38:27 GMT
+	Tue, 14 Jan 2025 12:39:07 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50E99Grh017465;
+	Tue, 14 Jan 2025 12:39:04 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	D57/fQjgsMtGgcF5NvEJNFMMo24y2jN4iPWNgrT5L0s=; b=DNvhtprFohHC/CuV
-	wHudJL9DQEEcr/qcbJRzSZc7ECKJZCgkVv1vVo0WtFncLoPNWkrTiCD9nLg/qfU3
-	xGrX/1QqB9pJwbSqoNY2H4w+DyuaBIFJ74MnaD4YF5NlcZaill1n0SOUiDVR9Zqq
-	2M5NJf9qf5Ph9uN4XiXCsXGygZ+r2ht07I9F76Xl/1h0DKsFwiCaTbeGA3x3ec4i
-	nzrI6Yes2Z8NiluMsSMbBmVqUvrg66zK3nPwP2nlN5OC8IX3zkEAVPc3IALS6XpE
-	WaqSQyEUNGbFvJiec9vs+RfiRGxOgCcoco4M8V9uO0pddHok/G/0bc6MG4Ipmjpi
-	hdpL4Q==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4452f91q44-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=dFXykKR2iCChhSox2k80yN
+	g20P864q10As0u6DjZjdM=; b=Nu97r6RucOt9Q7lJJO+Spw38tIVi2mBmC6MPyN
+	GmlBRkUTmiDlWrXcTQhBv/reX/8B744GnJu/AExCD+f2syeubSaCHpWNvuOyAsnU
+	WwgaHz672wScufZ4EHKbs0dqbkv5cP2wcAsGlySz8aXap4bRNqM6o+fpl6G1CLfD
+	Tx8/tPgXB1aVE3MnJVwNZ3GvCLW0JfuAltysnE4AGKdtFQVoe2+oBrIPgKGqukkq
+	Rmydm2hnnN5vnyD+LhqTROkr1W95V8S/caIJUQL3w71HnqSKfb5JT5Fw01BbgILn
+	87jt7WGLqV1JGPLuvNJR+MuzWhcLRNW/tJsBaVZkCx/7f2Cw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 445n1j0dtf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 14 Jan 2025 00:38:27 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50E0cQMZ005948
+	Tue, 14 Jan 2025 12:39:03 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50ECd3dE029440
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 14 Jan 2025 00:38:26 GMT
-Received: from ath12k-linux1.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+	Tue, 14 Jan 2025 12:39:03 GMT
+Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 13 Jan 2025 16:38:26 -0800
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+ 15.2.1544.9; Tue, 14 Jan 2025 04:39:01 -0800
+From: Roopni Devanathan <quic_rdevanat@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
-        Pradeep Kumar Chitrapu
-	<quic_pradeepc@quicinc.com>,
-        Jeff Johnson <quic_jjohnson@quicinc.com>
-Subject: [PATCH v9 9/9] wifi: ath12k: add extended NSS bandwidth support for 160 MHz
-Date: Mon, 13 Jan 2025 16:38:13 -0800
-Message-ID: <20250114003813.2783550-10-quic_pradeepc@quicinc.com>
+        Roopni Devanathan
+	<quic_rdevanat@quicinc.com>
+Subject: [PATCH v4 0/5] wifi: ath12k: Support Sounding, Latency, Trigger, FSE stats
+Date: Tue, 14 Jan 2025 18:08:30 +0530
+Message-ID: <20250114123835.882926-1-quic_rdevanat@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250114003813.2783550-1-quic_pradeepc@quicinc.com>
-References: <20250114003813.2783550-1-quic_pradeepc@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: M3TtVc5f1R0bixE_gFEqvMWRf0CAUxyz
-X-Proofpoint-GUID: M3TtVc5f1R0bixE_gFEqvMWRf0CAUxyz
+X-Proofpoint-ORIG-GUID: AzFF4Pk2tRtQtbRleVMhF4cOYfxyeg_H
+X-Proofpoint-GUID: AzFF4Pk2tRtQtbRleVMhF4cOYfxyeg_H
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
- impostorscore=0 suspectscore=0 spamscore=0 lowpriorityscore=0 phishscore=0
- clxscore=1015 mlxlogscore=999 malwarescore=0 mlxscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501140002
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ clxscore=1015 impostorscore=0 mlxscore=0 mlxlogscore=857 spamscore=0
+ lowpriorityscore=0 phishscore=0 priorityscore=1501 suspectscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501140105
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_163828_651162_638E6A8F 
-X-CRM114-Status: GOOD (  16.19  )
+X-CRM114-CacheID: sfid-20250114_043906_306588_C269CBB6 
+X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,99 +97,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently rx and tx MCS map for 160 MHz under HE capabilities
-are not updating properly, when 160 MHz is configured with NSS
-lesser than max NSS support. Fix this by utilizing
-nss_ratio_enabled and nss_ratio_info fields sent by firmware
-in service ready event.
+Add support to request HTT stats type 22, 25, 26, 27 and 28 from
+firmware. These stats give sounding stats, latency stats, trigger stats
+for uplink OFDMA and MUMIMO and FSE stats, respectively.
 
-However, if firmware advertises EXT NSS BW support in VHT caps
-as 1(1x2) and when nss_ratio_info indicates 1:1, reset the EXT
-NSS BW Support in VHT caps to 0 which indicates 1x1. This is
-to avoid incorrectly choosing 1:2 NSS ratio when using the
-default VHT caps advertised by firmware.
+v4:
+ - Squashed patches to avoid build warning.
+v3:
+ - Rebased on ToT.
+ - Removed patch dependencies.
+v2:
+ - Added line breaks where necessary, as pointed out by Kalle.
+ - Modified the use of pointer arithmetic print_array_to_buf_s8().
+ - Modified commit logs, as suggested by Kalle. 
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+Dinesh Karthikeyan (4):
+  wifi: ath12k: Support Sounding Stats
+  wifi: ath12k: Support Latency Stats
+  wifi: ath12k: Support Uplink OFDMA Trigger Stats
+  wifi: ath12k: Support Received FSE Stats
 
-Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 33 ++++++++++++++++++++++-----
- 1 file changed, 27 insertions(+), 6 deletions(-)
+Roopni Devanathan (1):
+  wifi: ath12k: Support Uplink MUMIMO Trigger Stats
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d52db04f4a6a..b6335fee31bc 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -2651,8 +2651,10 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
- 	max_nss = min(max_nss, ar->num_tx_chains);
- 
- 	if (arg->peer_phymode == MODE_11AX_HE160) {
--		tx_nss = ath12k_get_nss_160mhz(ar, max_nss);
-+		tx_nss = ath12k_get_nss_160mhz(ar, ar->num_tx_chains);
- 		rx_nss = min(arg->peer_nss, tx_nss);
-+
-+		arg->peer_nss = min(link_sta->rx_nss, ar->num_rx_chains);
- 		arg->peer_bw_rxnss_override = ATH12K_BW_NSS_MAP_ENABLE;
- 
- 		if (!rx_nss) {
-@@ -6823,6 +6825,12 @@ ath12k_create_vht_cap(struct ath12k *ar, u32 rate_cap_tx_chainmask,
- 	vht_cap.vht_mcs.rx_mcs_map = cpu_to_le16(rxmcs_map);
- 	vht_cap.vht_mcs.tx_mcs_map = cpu_to_le16(txmcs_map);
- 
-+	/* Check if the HW supports 1:1 NSS ratio and reset
-+	 * EXT NSS BW Support field to 0 to indicate 1:1 ratio
-+	 */
-+	if (ar->pdev->cap.nss_ratio_info == WMI_NSS_RATIO_1_NSS)
-+		vht_cap.cap &= ~IEEE80211_VHT_CAP_EXT_NSS_BW_MASK;
-+
- 	return vht_cap;
- }
- 
-@@ -7005,11 +7013,12 @@ static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
- 				    struct ieee80211_sta_he_cap *he_cap)
- {
- 	struct ieee80211_he_mcs_nss_supp *mcs_nss = &he_cap->he_mcs_nss_supp;
--	u16 txmcs_map, rxmcs_map;
-+	u8 maxtxnss_160 = ath12k_get_nss_160mhz(ar, ar->num_tx_chains);
-+	u8 maxrxnss_160 = ath12k_get_nss_160mhz(ar, ar->num_rx_chains);
-+	u16 txmcs_map_160 = 0, rxmcs_map_160 = 0;
-+	u16 txmcs_map = 0, rxmcs_map = 0;
- 	u32 i;
- 
--	rxmcs_map = 0;
--	txmcs_map = 0;
- 	for (i = 0; i < 8; i++) {
- 		if (i < ar->num_tx_chains &&
- 		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
-@@ -7022,12 +7031,24 @@ static void ath12k_mac_set_hemcsmap(struct ath12k *ar,
- 			rxmcs_map |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
- 		else
- 			rxmcs_map |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
-+
-+		if (i < maxtxnss_160 &&
-+		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
-+			txmcs_map_160 |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
-+		else
-+			txmcs_map_160 |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
-+
-+		if (i < maxrxnss_160 &&
-+		    (ar->cfg_tx_chainmask >> cap->tx_chain_mask_shift) & BIT(i))
-+			rxmcs_map_160 |= IEEE80211_HE_MCS_SUPPORT_0_11 << (i * 2);
-+		else
-+			rxmcs_map_160 |= IEEE80211_HE_MCS_NOT_SUPPORTED << (i * 2);
- 	}
- 
- 	mcs_nss->rx_mcs_80 = cpu_to_le16(rxmcs_map & 0xffff);
- 	mcs_nss->tx_mcs_80 = cpu_to_le16(txmcs_map & 0xffff);
--	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map & 0xffff);
--	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map & 0xffff);
-+	mcs_nss->rx_mcs_160 = cpu_to_le16(rxmcs_map_160 & 0xffff);
-+	mcs_nss->tx_mcs_160 = cpu_to_le16(txmcs_map_160 & 0xffff);
- }
- 
- static void ath12k_mac_copy_he_cap(struct ath12k *ar,
+ .../wireless/ath/ath12k/debugfs_htt_stats.c   | 736 ++++++++++++++++++
+ .../wireless/ath/ath12k/debugfs_htt_stats.h   | 269 ++++++-
+ 2 files changed, 970 insertions(+), 35 deletions(-)
+
+
+base-commit: 0c5fcd9069dd5f984e39820629acbfbe0f1b4256
 -- 
-2.34.1
+2.25.1
 
 
