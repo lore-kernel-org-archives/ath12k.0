@@ -4,110 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D3BCC02180
-	for <ath12k@archiver.kernel.org>; Wed, 15 Jan 2025 19:56:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9B7CC02180
+	for <ath12k@archiver.kernel.org>; Wed, 15 Jan 2025 23:17:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MBxgq+fF3Bf8Sfv2pMTGZqiJego5AOQip+s0k40bE6w=; b=xXjj8d2/cNKcysdXDMAEBlkJgT
-	w2/ehhNipX9lTAXY8mNUPnJSalnk8BXBTW0Ap2Ai5AA2kbSjzfcqnNBwzqExChPeaARTc4ZAlZylN
-	RBtrBpT6uiOMca5wSrvbpNr+ewoQVYWG89QwtT9hks0/M+s/JiGOo2p+8dBju7tHNrkVYVwVTUCCQ
-	EfQP9iDqDQQem2DuoDKTJlnYhNoI2Ftj3zvZPxolOPDZREYZ9LBY7yZzjoyrcmne70Jolf7P7HL9N
-	rICC9jb4NBXKaQiasopOZqMJybXTNKhNsTyO2ehkOFFNOCWDJ4+P5J6twtkP+Q9PBncO/U5ybvx9O
-	c5x9NH5Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=uIrd1fElu6xAPtb9/EFjY3DnsYgKHDvrqg/kUV7zqAg=; b=QLTWMYi4LnvW72yki+p+n/ylup
+	2B9C+A6GJ18eTYF9Ra6HvASlcJs9JIjAMZ1qIrEIp1GaW0sGVW0i8U75VW1m7gmpeTiZTpgDTOQLp
+	cbm6NwL9oCNDlyNs9hYpnm136WiVNACrGsVsK7hgQO4kMT/k9x9iPs50OPWNu4L7gj2YFU6ZuPqqE
+	AixpYeZ9m+G7lHvzJVk0qBgPGTVT6UwsHPbnjk8HLB5FxxyANKzhhPOPln7YoOQtu+DFccT7uUPZA
+	rssw2aJXUf3u5qnpZhvSLEXowBGVANezRpe7t8RR3V8iA5boOVxXsRr3LI6idefAF9ap0x3d5SrKP
+	Gh1Yaetg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tY9VI-0000000CwkI-3Og2
+	id 1tYCdr-0000000DKei-29jy
 	for ath12k@archiver.kernel.org;
-	Wed, 15 Jan 2025 19:56:40 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 15 Jan 2025 23:17:43 +0000
+Received: from mgamail.intel.com ([198.175.65.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tY9VF-0000000Cwjb-2MED
-	for ath12k@lists.infradead.org;
-	Wed, 15 Jan 2025 19:56:39 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50FGnDE2010185
-	for <ath12k@lists.infradead.org>; Wed, 15 Jan 2025 19:56:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MBxgq+fF3Bf8Sfv2pMTGZqiJego5AOQip+s0k40bE6w=; b=VgqTkLrYnUqxkq7a
-	QS/+iCw568w9SP1VwKtEjLyy7f7MFvwzscEtbkaNZ/hC5DQcaWdsNx2igLAJrHZ9
-	eHYbQML+dfu+eKbTGTT/RGNzSn64Bos6jeDuLLveu+COEmGyJPzFP45pJrAB2gk3
-	Vb3AJKXyW/R6ciPLEtBLTtS5qWHZHj4IpBsKXfN12xK2IMXzAEOOa/JLUtQSlmJ5
-	WosjWgrqAHGtW3cE7DbWpFgOU683fAJkIIUejwzAwJlynHb+sJRIRXr+TsiE7nuX
-	1xf+5TA3qar15qBuua8k+9dbNq+y0fc5nzxUXv4jYxi0JnQ0vQcOVOt5DTEdhXeL
-	9r0KMQ==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 446gjdgfca-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 15 Jan 2025 19:56:36 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-216430a88b0so1403455ad.0
-        for <ath12k@lists.infradead.org>; Wed, 15 Jan 2025 11:56:36 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736970995; x=1737575795;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=MBxgq+fF3Bf8Sfv2pMTGZqiJego5AOQip+s0k40bE6w=;
-        b=fyLpKZkaZnwQMelLlc/Xtk1gQriTPnQjjp3nKiR6m/vOn9DUUUhzyGoasqAM4l9a+e
-         iNdmvdKRlpSM9sBpgkDS/y5+SIgqipVCQz5Gmz2/v68ILHJMlUPnU0XvHBmPpqtWeSrn
-         oeqdye3U0tJObvlusJTdtetrpl58T/1yQc1ulY5kGQvG3/zazZvD1YUSZ8hAMZTnVN2x
-         pmc6M0gzWN/knjgxFW4UKLkXfFUgKdVtMdsYyjF+dzCfMXTwTwtq4XUhr/nRJ/qCoYny
-         RS1xaLh1HjAJgv2fPC3pZJJs5MCME3GCRQi7pxIAL0c+H5fdt0o9pAN+gCTBFbEcHWvN
-         hlTQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUKhubojlVoMh3WiVXOFTp9b9uh1GM+qmXaPeTQlUzmXf1XjmBs92J/ZAxkoctLycDc/rkjtAM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxilKzHBRHISNdSJAO1ebgtHSZVBdyiVKlPuT63g2qAPbYA8uUH
-	D52fi2oLMvy3YY3zi1UjmBt+EtptVKcqvWXReR3tptZ3FGnPTui8QizCtzqlGRKW9nhLk7/oGgp
-	sdvtn1sRSfYu9EYTE+0tQdovGowSX2O+Mz6hid0Au5AVixng1H7CsFi/ZOrLC
-X-Gm-Gg: ASbGncsKxo79jnuPUsZTKSgWrpoeICj7QGl/AZeUDVkBjl6ByaR4un92WnLKBtSiMXw
-	Id28p6OL8qXelmRTHDenKQlBD/C4moepwQF6zrHjppz+m+G5w1qNE5bbXP4f1Ed1kj0tTWhKy+9
-	X1DrotJJEtwG2a42qDjfM0vGaiUww7nXpZlDg+gHzXQJBiF0VrreqipaCA6IKxna8Dqrww5iscV
-	IUW8JQ8fO3tn/aKwvMkVVdAqbgwgF3DOhyGDpegSyPA0hv1BnN7xK/eOSpIN4G6JOefcqzIgCIh
-	1YOtm91L1WzB3S9h3ZqyDhweVO+84ALPVsJF
-X-Received: by 2002:a17:902:c94f:b0:21a:874e:8adf with SMTP id d9443c01a7336-21a874e8c72mr434837325ad.45.1736970994922;
-        Wed, 15 Jan 2025 11:56:34 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHeTR2FRj8Xbv1MavBnjJoyI+eD1M3/x5bpuMpqPWpDV3KQidnFCBBEf0x8ksBK0i5ww8nFUA==
-X-Received: by 2002:a17:902:c94f:b0:21a:874e:8adf with SMTP id d9443c01a7336-21a874e8c72mr434836925ad.45.1736970994463;
-        Wed, 15 Jan 2025 11:56:34 -0800 (PST)
-Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-a317a07ccd6sm10128090a12.8.2025.01.15.11.56.33
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 15 Jan 2025 11:56:34 -0800 (PST)
-Message-ID: <247ad29a-8c54-4046-8e75-8435c2addf75@oss.qualcomm.com>
-Date: Wed, 15 Jan 2025 11:56:33 -0800
+	id 1tYCdo-0000000DKdm-1zL7;
+	Wed, 15 Jan 2025 23:17:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1736983061; x=1768519061;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=KpiWwHPBU8cn7bfIaWcZtYTJFTB9Ri7oDlqiBOCgGzY=;
+  b=mRq/VM+Ap05sBtP9Ua3oni82lCjmRn6xsm6Mrl2A3oL7LUnEFQp7tioJ
+   XP2LUV/pR7CabmEWQZCtaExuX5pBF2mERg3H1RPiJkonDucYtHKXuNlpc
+   aAMDwb1m5iNe8rTcBugXkKrMA8TrWwLb81jE0WdEJPn1sc8VEgDKtFATl
+   ilATVkE2c7Vf0ekLc+vkSbE9QU4KB68f07O83hn78Rc9/VT9roKAesXY8
+   Q1XSrARYlG/orX2H9znKaQL7pBanrG/FNyB3nYmrEGpjjTL858Oypolkk
+   dp0A6KDbjqCONH65HrjWyVX08oMPRTxz89xhqKHp1IlwaRxFJuZHeMe9V
+   A==;
+X-CSE-ConnectionGUID: OhyPwNdaQmuAb8aRF8o+kA==
+X-CSE-MsgGUID: DN2fokGWTb27soz5LZft3w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11316"; a="48734520"
+X-IronPort-AV: E=Sophos;i="6.13,207,1732608000"; 
+   d="scan'208";a="48734520"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jan 2025 15:17:37 -0800
+X-CSE-ConnectionGUID: kgZIbBxjQdGjPvS6DawAcQ==
+X-CSE-MsgGUID: TS12OjrKSU+x5+ILfGs6PA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.13,207,1732608000"; 
+   d="scan'208";a="110266871"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by orviesa004.jf.intel.com with ESMTP; 15 Jan 2025 15:17:36 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tYCdg-000QzP-2Y;
+	Wed, 15 Jan 2025 23:17:32 +0000
+Date: Thu, 16 Jan 2025 07:16:46 +0800
+From: kernel test robot <lkp@intel.com>
+To: Aloka Dixit <quic_alokad@quicinc.com>, ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	Aloka Dixit <quic_alokad@quicinc.com>
+Subject: Re: [PATCH 1/5] wifi: ath11k: refactor transmitted arvif retrieval
+Message-ID: <202501160626.Jbb3GHnk-lkp@intel.com>
+References: <20250114223612.2979310-2-quic_alokad@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/7] wifi: ath12k: Add monitor interface support on
- QCN9274
-To: Nicolas Escande <nico.escande@gmail.com>,
-        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250107021017.3857555-1-quic_periyasa@quicinc.com>
- <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: BO8ScVxXkf12S9TDJ_wh4t9B3PcP7OxF
-X-Proofpoint-ORIG-GUID: BO8ScVxXkf12S9TDJ_wh4t9B3PcP7OxF
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-15_09,2025-01-15_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- phishscore=0 malwarescore=0 suspectscore=0 lowpriorityscore=0
- mlxlogscore=999 impostorscore=0 clxscore=1015 spamscore=0 bulkscore=0
- mlxscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501150145
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20250114223612.2979310-2-quic_alokad@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250115_115637_739619_ACA09723 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250115_151740_588638_11E4DE0D 
+X-CRM114-Status: GOOD (  10.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,16 +88,74 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/15/2025 9:55 AM, Nicolas Escande wrote:
-> This is on split-phy QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Hi Aloka,
 
-I don't know if it will help, but I just pushed out
+kernel test robot noticed the following build warnings:
 
-new firmware WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1:
-https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/commit/a289ab4de56345be86d2c89c81aa12577c2c5a30
+[auto build test WARNING on 0c5fcd9069dd5f984e39820629acbfbe0f1b4256]
 
-new board file:
-https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/commit/bd2ca865d78f3d7d899e06cef57e5bbb9da60bf7
+url:    https://github.com/intel-lab-lkp/linux/commits/Aloka-Dixit/wifi-ath11k-refactor-transmitted-arvif-retrieval/20250115-063922
+base:   0c5fcd9069dd5f984e39820629acbfbe0f1b4256
+patch link:    https://lore.kernel.org/r/20250114223612.2979310-2-quic_alokad%40quicinc.com
+patch subject: [PATCH 1/5] wifi: ath11k: refactor transmitted arvif retrieval
+config: hexagon-allyesconfig (https://download.01.org/0day-ci/archive/20250116/202501160626.Jbb3GHnk-lkp@intel.com/config)
+compiler: clang version 18.1.8 (https://github.com/llvm/llvm-project 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250116/202501160626.Jbb3GHnk-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202501160626.Jbb3GHnk-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+>> drivers/net/wireless/ath/ath11k/mac.c:6349:46: warning: variable 'tx_vif' is uninitialized when used here [-Wuninitialized]
+    6349 |                 if (ar->hw->wiphy != ieee80211_vif_to_wdev(tx_vif)->wiphy)
+         |                                                            ^~~~~~
+   drivers/net/wireless/ath/ath11k/mac.c:6339:30: note: initialize the variable 'tx_vif' to silence this warning
+    6339 |         struct ieee80211_vif *tx_vif;
+         |                                     ^
+         |                                      = NULL
+   1 warning generated.
 
 
+vim +/tx_vif +6349 drivers/net/wireless/ath/ath11k/mac.c
+
+d5c65159f28953 Kalle Valo  2019-11-23  6333  
+5a81610acf66c4 Aloka Dixit 2023-05-05  6334  static int ath11k_mac_setup_vdev_params_mbssid(struct ath11k_vif *arvif,
+5a81610acf66c4 Aloka Dixit 2023-05-05  6335  					       u32 *flags, u32 *tx_vdev_id)
+5a81610acf66c4 Aloka Dixit 2023-05-05  6336  {
+5a81610acf66c4 Aloka Dixit 2023-05-05  6337  	struct ath11k *ar = arvif->ar;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6338  	struct ath11k_vif *tx_arvif;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6339  	struct ieee80211_vif *tx_vif;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6340  
+5a81610acf66c4 Aloka Dixit 2023-05-05  6341  	*tx_vdev_id = 0;
+72f88bc503a76c Aloka Dixit 2025-01-14  6342  	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+72f88bc503a76c Aloka Dixit 2025-01-14  6343  	if (!tx_arvif) {
+5a81610acf66c4 Aloka Dixit 2023-05-05  6344  		*flags = WMI_HOST_VDEV_FLAGS_NON_MBSSID_AP;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6345  		return 0;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6346  	}
+5a81610acf66c4 Aloka Dixit 2023-05-05  6347  
+5a81610acf66c4 Aloka Dixit 2023-05-05  6348  	if (arvif->vif->bss_conf.nontransmitted) {
+5a81610acf66c4 Aloka Dixit 2023-05-05 @6349  		if (ar->hw->wiphy != ieee80211_vif_to_wdev(tx_vif)->wiphy)
+5a81610acf66c4 Aloka Dixit 2023-05-05  6350  			return -EINVAL;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6351  
+5a81610acf66c4 Aloka Dixit 2023-05-05  6352  		*flags = WMI_HOST_VDEV_FLAGS_NON_TRANSMIT_AP;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6353  		*tx_vdev_id = ath11k_vif_to_arvif(tx_vif)->vdev_id;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6354  	} else if (tx_arvif == arvif) {
+5a81610acf66c4 Aloka Dixit 2023-05-05  6355  		*flags = WMI_HOST_VDEV_FLAGS_TRANSMIT_AP;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6356  	} else {
+5a81610acf66c4 Aloka Dixit 2023-05-05  6357  		return -EINVAL;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6358  	}
+5a81610acf66c4 Aloka Dixit 2023-05-05  6359  
+5a81610acf66c4 Aloka Dixit 2023-05-05  6360  	if (arvif->vif->bss_conf.ema_ap)
+5a81610acf66c4 Aloka Dixit 2023-05-05  6361  		*flags |= WMI_HOST_VDEV_FLAGS_EMA_MODE;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6362  
+5a81610acf66c4 Aloka Dixit 2023-05-05  6363  	return 0;
+5a81610acf66c4 Aloka Dixit 2023-05-05  6364  }
+5a81610acf66c4 Aloka Dixit 2023-05-05  6365  
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
