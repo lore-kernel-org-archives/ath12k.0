@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23F9DC02183
-	for <ath12k@archiver.kernel.org>; Wed, 15 Jan 2025 17:55:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A8ACC02180
+	for <ath12k@archiver.kernel.org>; Wed, 15 Jan 2025 19:36:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:CC:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wlDDNcKDaZcW8uRMpLsonrE48doB0/bvIA2RZCJ2Hho=; b=dyMtw2ijY1E8z4WIYEm99hF8Vx
-	r6Uygf08LEKqeFCmgfj/nWoPsZ3FFkjvXE/0NNA0r3HZw7zUIOSYZwbgF2pj+WaOmLZGVjMIJJX/i
-	IMPWXS8/3tohog2cjOtKzUtkEcF+mx1NMdF+QCqYuBKKMMPwR+TV8gb/HSEoHJqqKhZvCc/FffLC8
-	LYRziOIHkNkRBK+t6yxKgWBsLipKOmInifiCQffodCDqVhq9AarSCZ/kwyKC9qiHuHjBkxRXGuH6x
-	GI6NMlcuZbuk/crITdxEdGc7+SPPMECZ7lBCzBvERyHF2hXNvVDzq9/zmA4RtMN4S5lSXH57ISGjn
-	UiCj07kA==;
+	bh=t56w0zxptNyUSFP9eC1B7m625vNjqZz4J1Nv5uogHDg=; b=VEE98gT6+39EIH8YyQI4kOVolb
+	1aNVnf+tQiNfBkpm+eCuVr5NUIMEO3NUXofxWxFUIABjnrFjxu/IoSndNFv82rg3LAqWv86gtWpTK
+	HxelbHSAEGcLLa4bV8IH4XJa380o+egxA5LdEleQt74o0pYvCRFKLOd5DhOQmDv4HYMvAfBlqpww2
+	odDwuWjPCsHhOMN9DYvAg/AZrc0nJLQq9bZZTa7ZH3qox6ZA//yPSvwoynhsvpZdvE5HvlSDBYmka
+	YqmlstO/4oV8So3Vkiqj3OW+OP7RlyK0O69bfpM+dYCOiUTREYfwFJdPFkPHUIb9e/P1/Q9b/1Smn
+	Itd5YR3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tY7bz-0000000Cgk1-3Myp
+	id 1tY9Bf-0000000Cuno-0FY5
 	for ath12k@archiver.kernel.org;
-	Wed, 15 Jan 2025 17:55:27 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	Wed, 15 Jan 2025 19:36:23 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tY7bx-0000000CghA-0z09
-	for ath12k@lists.infradead.org;
-	Wed, 15 Jan 2025 17:55:26 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-43635796b48so682585e9.0
-        for <ath12k@lists.infradead.org>; Wed, 15 Jan 2025 09:55:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1736963723; x=1737568523; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=wlDDNcKDaZcW8uRMpLsonrE48doB0/bvIA2RZCJ2Hho=;
-        b=EeSngnei6tG+AhNAKsjirYKA9bx6LhMHsv3F8vv0vQp6u9bq8WyJgz7SoWrmVI7+r6
-         xJh3mdTdfgPQazN9xXOHl/GJiwh9TwrRspZjtWC7GiSp3T2Ebs/vhZUsgc5iL9TBbsAf
-         Uu4KKmkaBYVAVpL5NM6yz3yQoLGrt9c4hu9Bx4gxLzFc6tnC+fxqOkY8uu6Nt36a6x1z
-         4JqoG84j3v2KDpD+MrVMbwRY+GYSp+8iwksprR3c1xtdZ0KkxOg9RJdlEVJheL4fpPaB
-         13vpHP3sHICBtRsEdWaFUkXZBbnm7VCgqYTsgn4n3poc/vuT6aJKREoZvFOYqHUXvzhn
-         i/rQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736963723; x=1737568523;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=wlDDNcKDaZcW8uRMpLsonrE48doB0/bvIA2RZCJ2Hho=;
-        b=lwMv/EQWsW68LqAx6I/EWkH7NfQshQly+eretvjRfENwmmI9t6utTlGym5QPwx7jXg
-         MGDOlZ7WmBbZoXuQuSJ1RkqvbD727Y7+knaVUsxnCI+Eh7Jqs1vWF1ZNDtgREUfVzGAl
-         P9KiZMfogvzHDwZBxw8H7TiA1IdMVv5ZRhB/zwoWvv7uGuDro/alSLeOkgWKoo0zYNkT
-         3PvkhPY3qNtt0Mosoti0tU6c7EvqtnydWhFb8yqogL+TFe8+IPCJXjRNRVGRUOEGwlpn
-         c9nAyy+5fqfBkoj7RsjBvdj8uMCkdJptOcCCcHgmJzdYr2v6rKqftMS8SHIkZedUTILv
-         b9Lg==
-X-Forwarded-Encrypted: i=1; AJvYcCUCmVaw0kH1F9uTIKV2mQBUyTy5d5t25z+HCDE36LPPt+Ukzpc2DWkOMRSqbCnbu4XNoyvmsJ4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YztSRN3KHMQvR863W69oBU+cUoH+otIVPJt0Ts73PAH62hf628t
-	5ek2naqGdRRm051Nm3jXNiuHwoTzcQRkpVgGFIiVcvLORPsyy//k
-X-Gm-Gg: ASbGnctz82WGrHRBo0QvLqUDZzzgsadCHkeE8tY2N5+Ird+9+1u6TxCQQ415oXLrN28
-	LC/0Lvb/TXW1aK/2PhFn0xrTeM/pM2hxwO3+jb5jrUC+x4bKNNADLeVuZI4Xb95cBSpNEHfP1OQ
-	E7DMNJhDvZQOHIFOI3qaS/W+sZjqrlwNH9OP9WaH3Pe8bKkPorwVuJ4H6CPqIsNmgCsRYZp5P23
-	j83tTptZ/x2yeA0meLKm5naZdQpiOqpjWl23zVzI5estbQpa4MNN8MgGXikIs2I4jNfCdmOyYs=
-X-Google-Smtp-Source: AGHT+IFI1l0q2TyjPbJiKFhDTGKHt3GarGprcZBwc1uYTtn4KG2IKwwePxh9rc58ZBicbtX9Hz3KHw==
-X-Received: by 2002:a7b:ce86:0:b0:436:185f:dfae with SMTP id 5b1f17b1804b1-437c6af2037mr32040895e9.6.1736963722866;
-        Wed, 15 Jan 2025 09:55:22 -0800 (PST)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-437c74abb27sm30829685e9.9.2025.01.15.09.55.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 15 Jan 2025 09:55:22 -0800 (PST)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Wed, 15 Jan 2025 18:55:21 +0100
-Message-Id: <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 0/7] wifi: ath12k: Add monitor interface support on
- QCN9274
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Karthikeyan Periyasamy" <quic_periyasa@quicinc.com>,
- <ath12k@lists.infradead.org>
-X-Mailer: aerc 0.18.2-0-ge037c095a049
-References: <20250107021017.3857555-1-quic_periyasa@quicinc.com>
-In-Reply-To: <20250107021017.3857555-1-quic_periyasa@quicinc.com>
+	id 1tY9Bc-0000000Cun4-0lvT;
+	Wed, 15 Jan 2025 19:36:21 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50FIobCC007832;
+	Wed, 15 Jan 2025 19:36:10 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	t56w0zxptNyUSFP9eC1B7m625vNjqZz4J1Nv5uogHDg=; b=BrDKQCZ7lkFoq7g7
+	3EBQSOGI9eOt+K4nXEf6uFZRbSPXtqixbWisdjO8+HMjaVAJ7yBLOivQSiioXG93
+	ABvDyVyYd1Zl7Ld1hTgEE7s4sH8QhClet/0l4JMzSAO0LHHXUtKZwCDLNCxDq1HK
+	AqQF3Kmwa1ksi9QO8smBm1i+9dqrRTQjKnVc4b2a7EyT0p9l/aBrCB0thKaXEbBC
+	7IUnl85TGSM8BLUulm+j5SOQBBisgiYmQCJlw/IXURwLKuZJu4SqWSsOSpIwxy84
+	iH5onw8SpqMpW4vBGuM5WX3QG8DhkEGTDuu5NpoRovpn86WD3R5gYUtJo4tvWo4E
+	5mhAdQ==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 446jndr3du-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 15 Jan 2025 19:36:09 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50FJa9dC011389
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 15 Jan 2025 19:36:09 GMT
+Received: from [10.110.39.228] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 15 Jan
+ 2025 11:36:09 -0800
+Message-ID: <1df1e6b4-cb25-4abb-a6eb-1abaeeb5f588@quicinc.com>
+Date: Wed, 15 Jan 2025 11:36:04 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/5] wifi: ath11k: refactor transmitted arvif retrieval
+To: Aloka Dixit <quic_alokad@quicinc.com>
+References: <20250114223612.2979310-1-quic_alokad@quicinc.com>
+ <20250114223612.2979310-2-quic_alokad@quicinc.com>
+Content-Language: en-US
+CC: <ath11k@lists.infradead.org>, <ath12k@lists.infradead.org>,
+        <linux-wireless@vger.kernel.org>
+From: Sidhanta Sahu <quic_sidhanta@quicinc.com>
+In-Reply-To: <20250114223612.2979310-2-quic_alokad@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: UejdSBEqeiKkfX_yuSSPKygzyFDM0cZn
+X-Proofpoint-ORIG-GUID: UejdSBEqeiKkfX_yuSSPKygzyFDM0cZn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-15_09,2025-01-15_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ priorityscore=1501 mlxscore=0 suspectscore=0 bulkscore=0 impostorscore=0
+ phishscore=0 adultscore=0 spamscore=0 malwarescore=0 clxscore=1011
+ mlxlogscore=529 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501150142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250115_095525_275189_48D879C6 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20250115_113620_230955_5E1FBF78 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,70 +99,99 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue Jan 7, 2025 at 3:10 AM CET, Karthikeyan Periyasamy wrote:
-> Currently, monitor interface not supported. Therefore, add the missed TLV
-> tags parsing in the monitor parser, configure the monitor vdev state
-> identifier with HTT filter setup.
->
-> Depends-On:
-> 	[PATCH v3 0/3] wifi: ath12k: Refactor monitor Rx handler
-> 	https://lore.kernel.org/all/20241224143613.164921-1-quic_periyasa@quicin=
-c.com/
->
-> 	[PATCH v2 00/14] wifi: ath12k: Enable monitor ring for updating station =
-dump in QCN9274
-> 	https://lore.kernel.org/all/20241223060132.3506372-1-quic_ppranees@quici=
-nc.com/
->
-> 	[PATCH v2 00/10] wifi: ath12k: Add peer extended Rx statistics debugfs s=
-upport
-> 	https://lore.kernel.org/all/20241224161442.263729-1-quic_periyasa@quicin=
-c.com/
->
-> Hari Chandrakanthan (1):
->   wifi: ath12k: fix link valid field initialization in the monitor Rx
->
-> Karthikeyan Periyasamy (1):
->   wifi: ath12k: Replace band define G with GHZ where appropriate
->
-> P Praneesh (5):
->   wifi: ath12k: Add extra TLV tag parsing support in monitor Rx path
->   wifi: ath12k: Avoid fetch Error bitmap and decap format from Rx TLV
->   wifi: ath12k: change the status update in the monitor Rx
->   wifi: ath12k: Avoid packet offset and FCS length from Rx TLV
->   wifi: ath12k: add monitor interface support on QCN9274
->
-[...]
 
-Hello,
+>   
+> +static struct ath11k_vif *ath11k_mac_get_tx_arvif(struct ath11k_vif *arvif)
+> +{
+> +	if (arvif->vif->mbssid_tx_vif)
+> +		return ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
+> +
+> +	return NULL;
+> +}
+> +
+>   static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
+>   {
+>   	struct ath11k_vif *tx_arvif;
+> @@ -1538,7 +1546,7 @@ static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
+>   	u32 params = 0;
+>   	u8 i = 0;
+>   
+> -	tx_arvif = ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
+> +	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
 
-There might be something wrong with this series.
+ath11k_mac_get_tx_arvif can return NULL, below, we are accessing 
+tx_arvif without a NULL check. Shouldn't we add a null check wherever 
+applicable to prevent potential issues?
 
-I applied it on top of ath-pending-202501150104 + the "ath12k: Add peer ext=
-ended
-Rx statistics debugfs support" and now 'iw dev wlan0 station dump' shows me
-that the RSSI value seems to not be updated anymore after I stop a monitor
-interface on the same phy.
-
-Steps to reproduce:
-iw phy phy0 interface add mon0 type monitor
-ip link set mon0 up
-# then just for 1 sec but it might not be usefull at all
-tcpdump -nepi mon0
-ip link set mon0 down
-watch -n1 iw dev wlan0 station dump
-# 'signal' seems to not be updating anymore, maybe some other fields too ?
-
-Don't know if this is from this series or something else broken before, but=
- as
-we could not add a monitor interface before, I could not see it.
-
-There still is a possibility that I messed something up while applying it s=
-o I
-would greatly appreciate if you could check it.
-
-This is on split-phy QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILIC=
-ONZ-1
-
-Thanks
+>   
+>   	beacons = ieee80211_beacon_get_template_ema_list(tx_arvif->ar->hw,
+>   							 tx_arvif->vif, 0);
+> @@ -1597,7 +1605,7 @@ static int ath11k_mac_setup_bcn_tmpl_mbssid(struct ath11k_vif *arvif)
+>   	int ret;
+>   
+>   	if (vif->mbssid_tx_vif) {
+> -		tx_arvif = ath11k_vif_to_arvif(vif->mbssid_tx_vif);
+> +		tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+>   		if (tx_arvif != arvif) {
+>   			ar = tx_arvif->ar;
+>   			ab = ar->ab;
+> @@ -1674,7 +1682,7 @@ static void ath11k_control_beaconing(struct ath11k_vif *arvif,
+>   				     struct ieee80211_bss_conf *info)
+>   {
+>   	struct ath11k *ar = arvif->ar;
+> -	struct ath11k_vif *tx_arvif = NULL;
+> +	struct ath11k_vif *tx_arvif;
+>   	int ret = 0;
+>   
+>   	lockdep_assert_held(&arvif->ar->conf_mutex);
+> @@ -1701,9 +1709,7 @@ static void ath11k_control_beaconing(struct ath11k_vif *arvif,
+>   
+>   	ether_addr_copy(arvif->bssid, info->bssid);
+>   
+> -	if (arvif->vif->mbssid_tx_vif)
+> -		tx_arvif = ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
+> -
+> +	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+>   	ret = ath11k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+>   				 arvif->bssid,
+>   				 tx_arvif ? tx_arvif->bssid : NULL,
+> @@ -6333,14 +6339,12 @@ static int ath11k_mac_setup_vdev_params_mbssid(struct ath11k_vif *arvif,
+>   	struct ieee80211_vif *tx_vif;
+>   
+>   	*tx_vdev_id = 0;
+> -	tx_vif = arvif->vif->mbssid_tx_vif;
+> -	if (!tx_vif) {
+> +	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+> +	if (!tx_arvif) {
+>   		*flags = WMI_HOST_VDEV_FLAGS_NON_MBSSID_AP;
+>   		return 0;
+>   	}
+>   
+> -	tx_arvif = ath11k_vif_to_arvif(tx_vif);
+> -
+>   	if (arvif->vif->bss_conf.nontransmitted) {
+>   		if (ar->hw->wiphy != ieee80211_vif_to_wdev(tx_vif)->wiphy)
+>   			return -EINVAL;
+> @@ -7306,8 +7310,7 @@ ath11k_mac_update_vif_chan(struct ath11k *ar,
+>   			   int n_vifs)
+>   {
+>   	struct ath11k_base *ab = ar->ab;
+> -	struct ath11k_vif *arvif, *tx_arvif = NULL;
+> -	struct ieee80211_vif *mbssid_tx_vif;
+> +	struct ath11k_vif *arvif, *tx_arvif;
+>   	int ret;
+>   	int i;
+>   	bool monitor_vif = false;
+> @@ -7361,10 +7364,7 @@ ath11k_mac_update_vif_chan(struct ath11k *ar,
+>   			ath11k_warn(ab, "failed to update bcn tmpl during csa: %d\n",
+>   				    ret);
+>   
+> -		mbssid_tx_vif = arvif->vif->mbssid_tx_vif;
+> -		if (mbssid_tx_vif)
+> -			tx_arvif = ath11k_vif_to_arvif(mbssid_tx_vif);
+> -
+> +		tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+>   		ret = ath11k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+>   					 arvif->bssid,
+>   					 tx_arvif ? tx_arvif->bssid : NULL,
 
