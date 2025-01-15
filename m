@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6CFDC02183
-	for <ath12k@archiver.kernel.org>; Wed, 15 Jan 2025 04:52:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 791C6C02180
+	for <ath12k@archiver.kernel.org>; Wed, 15 Jan 2025 05:26:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8qYUPlkg1yhMFgrFw+6gYp94n/I7Glr5J2ikRbSFZDk=; b=WaLuA31hky94xL4zsVSjl4KyQP
-	yK9XfpYNw6kSWWAug8ZObT08P+UJCrwdlyMF5Y6ghtklg7kNj2/riYUuy+V5CMYz9uqNo9o/7Oujy
-	BnlaU0M6KQAnAB26YFEgbeRXY+uDe/pJud0uzpAf50oUCKy9EHutJ1KnnJRJWYxBGBjvIOjT2GuOb
-	EDS8P5+VaNOahZirrHnqseB5Kk/aaFDlPnbWhlke0rBlUQAxopqpgOiJ0yn1pThdNAJHQPmvXw5n/
-	uh5u+MEVd/xzehy4pnfHeITgLNpJI9C+9eBBF+A8XjLN0CmNIK3TwEHfyM8570OgLS0uaU/qEXDIq
-	ydSEmK2w==;
+	bh=gYzg4gZ95K4UdPOeti/o1jGOxz8MHNFZitraDieLTNQ=; b=Vp7Ho2jg/t8GNrYAHjgjyh0B37
+	p80q8Eh13qPMkRh0SNaT53430fySPZgukza34FANvj4LB4IcZxbNYQsy+owlgfySIDSD27kYb0SBc
+	skgML+5MtxHwHu99A2HjOdGZIN/LaNE+TgJdbDsQx3pM6Uscpjx2Vc4fgmPU6IcnyLNEFgRfV+1sw
+	FPCMZLNYWBkCkb3BAdxOrqhPuZ6uuMt1+1hlqog2GTo7vr3pshWTN3XoL2RF9VsxjZCpeP7EijHll
+	kkboHGBaFdJZW6QJ7e5I0tVU55huzdY/f92JqL7GbZmO6CEcfc0PqKf950kzYAEWzDyumnTnvmWM/
+	CZO7mTjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXvOd-0000000Adcp-1mDb
+	id 1tXvvI-0000000AgCV-14Rc
 	for ath12k@archiver.kernel.org;
-	Wed, 15 Jan 2025 04:52:51 +0000
+	Wed, 15 Jan 2025 05:26:36 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXvOa-0000000AdcB-3Jai
+	id 1tXvvF-0000000AgBx-1wIi
 	for ath12k@lists.infradead.org;
-	Wed, 15 Jan 2025 04:52:50 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50ELMjF7004053;
-	Wed, 15 Jan 2025 04:52:43 GMT
+	Wed, 15 Jan 2025 05:26:34 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50F0aim7001344;
+	Wed, 15 Jan 2025 05:26:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	8qYUPlkg1yhMFgrFw+6gYp94n/I7Glr5J2ikRbSFZDk=; b=Qm3Y1KqPQ+x28Sp7
-	8S5H8+lPkb8fCnTkIPjZrE2XOcx0pYFUs7PXVWSa3qRxvjrRkqq61pw0JvvynOxf
-	MFLHo2ZLoWeWBzZ6te5zHCD+mq+cNpXwydYiIcC+aiMSLuzK9BcLck5L0jAiB992
-	MjDoq2rjYb94pwlTg5K5cdpfqvJeE4/aCfSE5968N2iLkTs2NhVnt27cjL4A512I
-	AoejD0oXMkchOth0oNq3H/XdE6RqLLorWNIiM3m+FbBCQCU2usOZrrVJ0lWVRmY9
-	sFCwtRDMcV8lSDTrGYg4TeuuK81jqXeO96WHvB8XPg5zSDy3Y4BwMM98slBdce9B
-	/DsMbw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 445ysr8tj9-1
+	gYzg4gZ95K4UdPOeti/o1jGOxz8MHNFZitraDieLTNQ=; b=Yya/FK80JeTm8Xvd
+	WA/KZdt2iJ00145Dy46AUnMWbiR9dOOasFL7t3HsRg0TSNyZOJerGGp6plD5Oi7u
+	64eFrn7c/iyoT2fEgG5eti+jF0jffAd52XfBLWc+QuFu+iRqsuidRiCWiTgX+6Rh
+	zI1x22wOpUpHxXX2ydOFBbr6l9IhZnuvT4gRDEHXN5W/5h9ULoFs1mZoi0Ns5N9s
+	5lSIRTdNdF6p/avmuLcMelHyg+UStV0aPY3A0aHDnnTxdGE9zIZOLOlaPPj2JJRG
+	7smGcV257paUW0gGsdI+wEcoz2i+9wYVCyAfLgIi7GAMfkCHQh/2Afsz8nXniQPK
+	ccf+bw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4462mkgj45-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Jan 2025 04:52:43 +0000 (GMT)
+	Wed, 15 Jan 2025 05:26:31 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50F4qgj7005181
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50F5QVHC013238
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Jan 2025 04:52:42 GMT
+	Wed, 15 Jan 2025 05:26:31 GMT
 Received: from [10.152.202.18] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 14 Jan
- 2025 20:52:40 -0800
-Message-ID: <bf3b176e-b09e-43c8-8404-4f4477dd4370@quicinc.com>
-Date: Wed, 15 Jan 2025 10:22:36 +0530
+ 2025 21:26:29 -0800
+Message-ID: <d2b317e0-dccc-4683-8964-3878ef61d4fb@quicinc.com>
+Date: Wed, 15 Jan 2025 10:56:25 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] wifi: ath12k: handle
- ath12k_mac_ieee80211_sta_bw_to_wmi() for link sta
-To: Kalle Valo <kvalo@kernel.org>
-CC: Jeff Johnson <jjohnson@kernel.org>, <linux-wireless@vger.kernel.org>,
-        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20250110-fix_link_sta_bandwidth_update-v1-0-61b6f3ef2ea3@quicinc.com>
- <20250110-fix_link_sta_bandwidth_update-v1-2-61b6f3ef2ea3@quicinc.com>
- <87v7uhnst7.fsf@kernel.org>
+Subject: Re: [PATCH v9 4/5] wifi: ath12k: Fill pdev id for fw test cmd
+To: Aaradhana Sahu <quic_aarasahu@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Rajat Soni <quic_rajson@quicinc.com>
+References: <20250115042532.1509956-1-quic_aarasahu@quicinc.com>
+ <20250115042532.1509956-5-quic_aarasahu@quicinc.com>
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
 Content-Language: en-US
-In-Reply-To: <87v7uhnst7.fsf@kernel.org>
+In-Reply-To: <20250115042532.1509956-5-quic_aarasahu@quicinc.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
@@ -75,19 +72,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: SfeW9J_l-0Ogh57AyjQYis5WWEWrUHIT
-X-Proofpoint-ORIG-GUID: SfeW9J_l-0Ogh57AyjQYis5WWEWrUHIT
+X-Proofpoint-ORIG-GUID: 5WFkbIMyYhgkosu7Nv3PbCZMgPVfGoV7
+X-Proofpoint-GUID: 5WFkbIMyYhgkosu7Nv3PbCZMgPVfGoV7
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-15_01,2025-01-13_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
- phishscore=0 spamscore=0 priorityscore=1501 mlxlogscore=999 clxscore=1015
- adultscore=0 suspectscore=0 impostorscore=0 malwarescore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501150032
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 spamscore=0
+ impostorscore=0 malwarescore=0 phishscore=0 priorityscore=1501
+ lowpriorityscore=0 mlxlogscore=891 clxscore=1015 mlxscore=0 adultscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501150037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_205248_956106_3BA8E0F8 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20250114_212633_646743_286F6FF8 
+X-CRM114-Status: GOOD (  10.98  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,32 +99,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/15/25 00:09, Kalle Valo wrote:
-> Aditya Kumar Singh <quic_adisi@quicinc.com> writes:
+On 1/15/25 09:55, Aaradhana Sahu wrote:
+> Currently pdev id is not set properly. That can cause a crash
+> if pdev id is not equal to the pdev id when firmware test
+> command is run during AP bring up or ping.
 > 
->> Currently ath12k_mac_ieee80211_sta_bw_to_wmi() handles the bandwidth from
->> sta's deflink member. This works only for non-ML station. Now that MLO
->> support is there, extend this function to use link sta instead of deflink.
->>
->> Additionally, in ath12k_mac_handle_link_sta_state(), the link sta structure
->> is not accessible, making it difficult to fetch the bandwidth there.
->> However, ath12k_mac_station_assoc() does reference the link sta structure.
->> Therefore, move the initial assignment of the arsta bandwidth member to
->> ath12k_mac_station_assoc().
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->>
->> Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
+> Set pdev id in function ath12k_tm_cmd_wmi to resolve this
+> issue.
 > 
-> So how does this help in practice? Ie. what are the user visible
-> symptoms this patch is fixing?
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> 
+> Co-developed-by: Rajat Soni <quic_rajson@quicinc.com>
+> Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+> Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
+> ---
+>   drivers/net/wireless/ath/ath12k/testmode.c | 11 +++++++++--
+>   1 file changed, 9 insertions(+), 2 deletions(-)
 > 
 
-For MLO station, any bandwidth change post initial association, the data 
-will not go in the latest bandwidth of that link. Since to firmware, 
-only deflink's bandwidth will always be configured.
+Previous patch "[PATCH v9 3/5] wifi: ath12k: add factory test mode 
+support" only added testmode.c file isn't it? So can't we squash this 
+patch in that?
 
-For non-ML stations, no affect.
+Let's not introduce a bug in patch X and then in same series fix it at 
+patch Y.
 
 -- 
 Aditya
