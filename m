@@ -4,96 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C8A9C02180
-	for <ath12k@archiver.kernel.org>; Thu, 16 Jan 2025 10:43:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE6C3C02180
+	for <ath12k@archiver.kernel.org>; Thu, 16 Jan 2025 13:51:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
+	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ECbOBzjUQRkQI9B/o0Q8yKm3RwdtExjB74ks2Y5YniI=; b=n3penDY2bF06crhSO88SehoTbf
-	YhqtxgGhWnkAGxugG1nNSL3g5MtFE/sQkkBBmjaqMjVf5r1rWKbc+qvVyUMwisBAxIOl9DLWhW4Hb
-	U2zj1bJWymLSSvu3M2kQ22f/9aJsHABdI8DiDbEXZi7RrxWq2qad5V4Az+aS/wxxUJPNP6UVm/H8g
-	/b1p4WP7T5AQ680NE3NO4b+aAlwyHE8nPGlznxpwtmDR5SDN9AEnD1xWEK8XMHd3l314oOAF8OAZC
-	92xzUQSA6Y6Ytxk9pDqIghcqCgyAsfCbPDvbKdU4tVOFqnW/lI2oKPjGdoDXgN+HCrRBqimy6SYMU
-	wE52mcFQ==;
+	bh=KvGwGbLOboTQnmoegkqNqUjKynNMZPV9YcHg47pSi1s=; b=tQ6n4N5EQ51pSQYSRQZ495hwzm
+	w4usF7zC17vJfsnKMz0AYBEOos0vPZNNUUKghawHHKmPX2pgshhW/TP7J9qJr0awa1dd7XS/tf6KZ
+	hZKo/erbK7ojcJ3cg73SLWZisLOe5J8R+WXI3AIXCV08yQbFXLfPYxTQIBhmdzCLB18pUrlpLTKHH
+	5tzuXchas+P0MIsGsWdkWtQ0x9qEDZjpAhFy2oyjteyIIOuoO+qnKj9gl5cKN0duCqLl1OOJ8NltP
+	KOO72n1YoqvMfA7MD6KBBZwdJiVKMnElcNGdie4EAljcIR1oTYPlmL4qLbgKJwo0TJ9h+CsCd1anY
+	IpVVGXNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYNLs-0000000EZuO-0bH4
+	id 1tYQHX-0000000F35t-2Unz
 	for ath12k@archiver.kernel.org;
-	Thu, 16 Jan 2025 10:43:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 16 Jan 2025 13:51:35 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYNLG-0000000EZiS-2evu
+	id 1tYQHV-0000000F33O-0qyF
 	for ath12k@lists.infradead.org;
-	Thu, 16 Jan 2025 10:43:15 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50G87Uvc001394;
-	Thu, 16 Jan 2025 10:43:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ECbOBzjUQRkQI9B/o0Q8yKm3RwdtExjB74ks2Y5YniI=; b=Kor24XFTqtpbQ6wv
-	5U06y1MV/cgK1ovBIo3BxYNoq3qlLHMaCUBhwRjoelPmwGRhTI+z4gR2Gz/UufW5
-	bfd5OFTDMaCniRMHLYcvK0BLtTM7/GCpihC5cQbT8An5BpOY4CCy5T+auPYy26wX
-	vXnlayQmi8rY6Z3TW5FZnpBcDxcqftPJLs5fP2Dwq4Sw94zgKtyU56QdtjjzrW+t
-	rjKHDGzUf1LDXUO8JD9wVw7BLKjChv9Vmm4tqHPfoV803hbkVO8Whr9enM3eUthT
-	/CWiDaOHt9RrON4UCsVChqSqr4lJ6T8fLKGFtXyfAZYhApIvRPZREKaOMjkLHdRH
-	IOy+oA==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 446xay8dp6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 Jan 2025 10:43:11 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50GAhBSL002074
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 Jan 2025 10:43:11 GMT
-Received: from [10.216.35.176] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 16 Jan
- 2025 02:43:07 -0800
-Message-ID: <4ef04d75-5ac8-4db4-8cde-25f9e097b020@quicinc.com>
-Date: Thu, 16 Jan 2025 16:13:03 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 04/10] wifi: ath12k: fix firmware assert during reboot
- with hardware grouping
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        Kalle Valo
-	<kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        "Karthikeyan
- Periyasamy" <quic_periyasa@quicinc.com>,
-        Harshitha Prem
-	<quic_hprem@quicinc.com>
-CC: Kalle Valo <quic_kvalo@quicinc.com>, <linux-wireless@vger.kernel.org>,
-        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20250109-fix_reboot_issues_with_hw_grouping-v1-0-fb39ec03451e@quicinc.com>
- <20250109-fix_reboot_issues_with_hw_grouping-v1-4-fb39ec03451e@quicinc.com>
- <5925d874-1b8c-413a-a6ad-16d7ab299f4e@oss.qualcomm.com>
-From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Content-Language: en-US
-In-Reply-To: <5925d874-1b8c-413a-a6ad-16d7ab299f4e@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: fh1dj5W5nidUwb0t-GANLJXj_6MTECh-
-X-Proofpoint-ORIG-GUID: fh1dj5W5nidUwb0t-GANLJXj_6MTECh-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-16_04,2025-01-16_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 bulkscore=0
- adultscore=0 mlxlogscore=999 phishscore=0 malwarescore=0 spamscore=0
- mlxscore=0 suspectscore=0 priorityscore=1501 impostorscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501160079
+	Thu, 16 Jan 2025 13:51:34 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-3862d6d5765so576034f8f.3
+        for <ath12k@lists.infradead.org>; Thu, 16 Jan 2025 05:51:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1737035489; x=1737640289; darn=lists.infradead.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=KvGwGbLOboTQnmoegkqNqUjKynNMZPV9YcHg47pSi1s=;
+        b=YS3yBx+f3tj/VurEymSxL2HL2l/RxqZ1T4pBr3SbIu8QtatRil+CotfDeJXQtj43bK
+         sr7Wz1Z9ZFvITZibO1tPJw5QPdReYNiGA8x+fCbdxpm82JhnBe+52OrXcYJ9BN/8myCI
+         sM/fFMCiUgJj290AmSNYYI/0nWhodRFeZZK2FHpViJ2A96K7qHEV3v2zzw1F9T9cuuPB
+         h/yylnnhgrouFX/VHhCUwRWWiBLZoE8lXeuC27p/picXiAm4lm5w7SOPEJXwd7AEdxXo
+         Hgd1LhQfaZMjl44lCDmEAxh4j62yez0c0tgaOQouxbuFWtAVT+OJr9/TuMujNUNdNa8A
+         vWVA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737035489; x=1737640289;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=KvGwGbLOboTQnmoegkqNqUjKynNMZPV9YcHg47pSi1s=;
+        b=V9bBJHHGRKnUsVNDeOpBma2hEFS78/8S4Do4uTIav+xTE3Kp0d5kaVI7ORbeZsRd7F
+         QvWullDpAvduYrsQJXL32lskli+rxCTbbAwZymyetIeP8ZyHe2XpYh28a+a6Hk5bpbRW
+         HdSOODQwICf9PDiKtm4D0AOb+nD6KZRUFuljGrojYUjXyum3xXNN8TYAxgphBy7b4DCd
+         vFo1Edkey5sfbd9FGjrqQauPM7Ouo3nlO0HUXSEb9tnQTrhB+DwWYsXSv0jWbQH28Nkj
+         15WGmk4/tzEpZuW1Cl+urjJsHDEM6+yhFcyAfY8Lf83GqUrlj5pdyyieDzYI4mMMoRML
+         Io3g==
+X-Forwarded-Encrypted: i=1; AJvYcCXZ8mKjnad/4mYeZSxVo4t7nAcGLGsYjIO25CDYbAW5cjvD35CRQ+mgG5XRlCDGC/gA7jTczPc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy4z8L5JZs6gLu8HQJJIWNEprpAEGcm2icMyFwxK7Cko5ImtDZp
+	h9z7nI14mCNQghYpSwNfuYiasJ2e01HUS5Ex6Mp+j/u55GHaNo4d
+X-Gm-Gg: ASbGncunshcQxGeXWS55Aq319mX6KVZ7+SFK7qumEzytGkQahJtRzV4fqXCB35JlXHS
+	mebWlL6gxWpsxL2hQMb7emW0vluR+Kqim7Nr6BkOJDqF8kHkn7Ss0wZaTS5lVmUvXYDWkoeAMzy
+	leoHXFmgMXm1m7GVZ61cD/S0AZSp0VOubOH5zEjJpl2tE3x2sNksq4Psxur0DQrb5dSAzGFBLGc
+	ztbY0/q9hYowMOjwWsAP4ERpbbZzPVrJDRPa2LJJDmBmQL/t5QbbINWK2wg3hQdIHX+YlzXW6c=
+X-Google-Smtp-Source: AGHT+IE/MbXNRZnW0uYuX0hY5+W4YuEcxxEbHhzAQ+N2/2rO7RBd72sJSqF2b+UdU2jLH45twuYLIg==
+X-Received: by 2002:a05:6000:144b:b0:385:f13c:570f with SMTP id ffacd0b85a97d-38a872ecc38mr32056664f8f.33.1737035489262;
+        Thu, 16 Jan 2025 05:51:29 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a8e38325esm20417723f8f.27.2025.01.16.05.51.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 16 Jan 2025 05:51:28 -0800 (PST)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Thu, 16 Jan 2025 14:51:28 +0100
+Message-Id: <D73JOV2O2F8N.1C65FLDKDSL2X@gmail.com>
+Cc: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 0/7] wifi: ath12k: Add monitor interface support on
+ QCN9274
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Jeff Johnson" <jeff.johnson@oss.qualcomm.com>, "Karthikeyan Periyasamy"
+ <quic_periyasa@quicinc.com>, <ath12k@lists.infradead.org>
+X-Mailer: aerc 0.18.2-0-ge037c095a049
+References: <20250107021017.3857555-1-quic_periyasa@quicinc.com>
+ <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
+ <247ad29a-8c54-4046-8e75-8435c2addf75@oss.qualcomm.com>
+In-Reply-To: <247ad29a-8c54-4046-8e75-8435c2addf75@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250116_024314_682627_4CEA676F 
-X-CRM114-Status: GOOD (  13.53  )
+X-CRM114-CacheID: sfid-20250116_055133_241947_75318F55 
+X-CRM114-Status: GOOD (  10.40  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,42 +101,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/14/25 00:42, Jeff Johnson wrote:
-> On 1/8/2025 8:25 PM, Aditya Kumar Singh wrote:
->> At present, during PCI shutdown, the power down is only executed for a
->> single device. However, when operating in a group, all devices need to be
->> powered down simultaneously. Failure to do so will result in a firmware
->> assertion.
->>
->> Hence, introduce a new ath12k_pci_hw_group_power_down() and call it during
->> power down. This will ensure that all partner devices are properly powered
->> down.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->>
->> Signed-off-by: Aditya Kumar Singh<quic_adisi@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/pci.c | 23 ++++++++++++++++++++++-
->>   1 file changed, 22 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
->> index 837be309cd45a2d037ee8c3bba8f7be0f457d6b2..7f6521a56ffc0f1e9687c94d6829a9c1f1887661 100644
->> --- a/drivers/net/wireless/ath/ath12k/pci.c
->> +++ b/drivers/net/wireless/ath/ath12k/pci.c
->> @@ -1751,13 +1751,34 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
->>   	ath12k_core_free(ab);
->>   }
->>   
->> +static void ath12k_pci_hw_group_power_down(struct ath12k_hw_group *ag)
+On Wed Jan 15, 2025 at 8:56 PM CET, Jeff Johnson wrote:
+> On 1/15/2025 9:55 AM, Nicolas Escande wrote:
+> > This is on split-phy QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_S=
+ILICONZ-1
+>
+> I don't know if it will help, but I just pushed out
+>
+> new firmware WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1:
+> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/commit/a289=
+ab4de56345be86d2c89c81aa12577c2c5a30
+>
+> new board file:
+> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/commit/bd2c=
+a865d78f3d7d899e06cef57e5bbb9da60bf7
 
-> don't you end up calling this for every device in the group?
-> what prevents ath12k_pci_power_down(ab, false) from being called multiple
-> times for the same ab?
-
-That's true. ath12k_pci_power_down() has logic already that if device is 
-powered down, it will ignore the further call. This is handled via 
-previous patch.
-
--- 
-Aditya
+Thanks for the tip, I just tried it but alas it doesn't change a thing.
+RSSI (and maybe rx/tx bitrates not so sure) is still broken for all connect=
+ed
+STA after a monitor device goes up & down.=20
 
