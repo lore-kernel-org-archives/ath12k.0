@@ -4,104 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1467C02183
-	for <ath12k@archiver.kernel.org>; Thu, 16 Jan 2025 22:27:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B808AC02185
+	for <ath12k@archiver.kernel.org>; Fri, 17 Jan 2025 04:37:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xGo09KYMPPRjhK/enIKlUz92CamNwS6kKxyZAl5uzYM=; b=0cCJgJCPqfIpUCgE7KRpo9/Gvi
-	I7m/AuZId+5I5YNGBVtm1Giwh2TMZBhwlS3Tf2zvTcYI5/O0uVDUAyLP1YmCrsoxFKUDD4GpTtJSI
-	7YB0QkYKtCCCqkJHlittsA7CkE4NypRDdcNU7ciyDot5ChqYEMpu6Utn31ySQdkkxxWCFhlN5O5yC
-	+cMQOyzp4BwrWDdgzaCm/R/8do7J9nbQJVV8kdK9LJthrNXBEOWol3ZDzX+SDis0gHt2mUd7NdQkF
-	k1fAv7I9t3zHoAbo1T9KXhxtIG0elB2H2mS02Wk8hl5r12FqDftQTzcNMNE0pNsc05XPJxgupwFUy
-	vlgn6KsA==;
+	bh=8E89dybjaPA3cOgxUl+Lo8Spm50soae98tpHODi5GOk=; b=JjzyLUwzutQV/XLYovu7Fw4CHf
+	gZWavmItj2+QR3sWYJDEQpFJQwDKOfAlJF8FMkWDF3FTrV/OMnIiT2fK97NF4ptXHmIciJxvnjjnQ
+	5NwcApBjwWTUBpy7NmIktNUzjXG1VeQC9j+eL5EiSsuCgUxt59i/V9VIc5w4evfa6NnUdKcYID0Jk
+	2BHEM3XsfOWHpvpkzyJ6edOMhc0RYqfR0rS+VapS49gl9txCLNz1YAf6wiP4pPm2TK3IZzCk6nw9m
+	RfutysrZpwH5sM1oS9WKiXt1++FM7myefStQQPBXC6cTzNJ8ImoySdy0zgokwyGlw0+AOpRJ/50tw
+	rEK2h7NQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYYLA-0000000GClp-1gHg
+	id 1tYe6q-0000000Gzrq-27eW
 	for ath12k@archiver.kernel.org;
-	Thu, 16 Jan 2025 22:27:52 +0000
+	Fri, 17 Jan 2025 04:37:28 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYYL6-0000000GClH-3ivX
+	id 1tYe6n-0000000GzqK-3Gk5
 	for ath12k@lists.infradead.org;
-	Thu, 16 Jan 2025 22:27:50 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50GKLjBF002856
-	for <ath12k@lists.infradead.org>; Thu, 16 Jan 2025 22:27:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Fri, 17 Jan 2025 04:37:27 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50GKx9WL029080;
+	Fri, 17 Jan 2025 04:37:23 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	xGo09KYMPPRjhK/enIKlUz92CamNwS6kKxyZAl5uzYM=; b=j+UQR/Kie+JoF5c8
-	+Kxw1ymnbr0QaD3woeaYUqV7/PQQ5E+0BbB+dwv2DZ7D9mcYaRcP+ZUxHoBCuFuO
-	Q+KZZiC4DUfrG1clDhZAODXzXtg0Hd7HIe1Loan8KiLMcSGywA5+OCqjBg5Vekn2
-	2hk0NjymYBBTr73jwmUCpB7bT8r8XLftWQILWYbTjxlbSExPs5e3g26AsBZDu4jb
-	+mcqbvSuskzyT+3qoIo2j6XsRbahp1OZl9yueT4YCWJKd2VisZ9asXuXCP/W2LIN
-	zAFXFYMGmOKkEzAum974oAeJ6BunYJSFgTAnScg7xCbhPx6sOKICY+vm7EYRdxJA
-	cuMCjw==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44793306x7-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 16 Jan 2025 22:27:47 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-21681a2c0d5so27229345ad.2
-        for <ath12k@lists.infradead.org>; Thu, 16 Jan 2025 14:27:47 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737066466; x=1737671266;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=xGo09KYMPPRjhK/enIKlUz92CamNwS6kKxyZAl5uzYM=;
-        b=Uz/u/ta6bfTsT/phBQg7lk5SUMtZsrePzA9kHn/qq2c5LfOtcWtMbqTF0vwJn4uKR2
-         +abJTkjPzVUxiP8I5lLj1R1EAcafEYH1IPu6KqmPh1H2XQtCFYHLzK6vflxMHZdKQkS3
-         piXl3uzeY6yzvC7kMQ7VBZj5aTx1yr+9yK+RB0Sj9cc41xOHwbvUkrtYZNymWU6DS6Eu
-         GMHoVrnnZ3hufzhJ/Z2cgUyw+MLQ3VdH2d5Kr82GKWxsI4W0OdHgBGEWPhDp3ukrU8wf
-         OUPWb3cpoL+IYgEGK4bpyolD0zJ7hc7Hgnvng96Tj9XP9yGZ9cC1zrBqMAI/3KazbkWb
-         oaCg==
-X-Gm-Message-State: AOJu0YxXg50p9rKPAQ9grLAxWM+zDOrGA6bVoqvpAqj2Fae3sTWBdKz+
-	/qRy3etsLipwuTesFzz9FLetdtHYt1F8iwSCubl2JHVICwi8kPz7zsYolPGTDDNb3D+6zpAYnx4
-	2t6Bj4EyfPGFZy/iFnwF60siRY273n8L6yjI/nmnEoCEFCx65wo8HvbNwyncq
-X-Gm-Gg: ASbGncuk5UtNu0lX8JtL5j091TcVKnkNvR4qKOZguqxckbPSqwBADhyJQMXj7PnLp5t
-	pJbLPV2nYOJH4yimzkCC45wiV3YzSK2lOh8LCF3lDn7Ja5ftMoAazxQZbzyET5jtA5njPNHcCXO
-	cTVBCk/juieW2L9dj0/vzFfYLlFY+5ostqQrIy32Zd/Pc+iirLn9kTnddqmvD9u14WM9RNtRwNV
-	Mvi3OSN8pFHsLPss6XWmG9+zLjSrPvDFxU4dpfhw3bE/UQqCwtvbzCADixOqCryn0yx09KYLlSC
-	ZpTA3bDPvsUaGlC4ft8+hEdSZtf7CXlTFZ+10TUxDbnJaKpdcw==
-X-Received: by 2002:a17:902:fc8d:b0:21c:fb6:7c3c with SMTP id d9443c01a7336-21c3540760emr6242405ad.17.1737066466307;
-        Thu, 16 Jan 2025 14:27:46 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFjVO/7b6/6ONrEtNjdMhKAKPGO1CAW6tywGRPInrnTp4C0qD2j8SMA6nlZIdeYiNEt27am2w==
-X-Received: by 2002:a17:902:fc8d:b0:21c:fb6:7c3c with SMTP id d9443c01a7336-21c3540760emr6242215ad.17.1737066465935;
-        Thu, 16 Jan 2025 14:27:45 -0800 (PST)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-a9bce3a7bbesm542587a12.42.2025.01.16.14.27.45
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 16 Jan 2025 14:27:45 -0800 (PST)
-Message-ID: <31a449c1-260b-4b70-9498-c5015e74c972@oss.qualcomm.com>
-Date: Thu, 16 Jan 2025 14:27:44 -0800
+	8E89dybjaPA3cOgxUl+Lo8Spm50soae98tpHODi5GOk=; b=B9RbpC960L1+ePhl
+	5JwMruI8iyRNtRNLsP6XHQBCaffOENMrMRYdRmrOBQjhhR6dYY/v2aBaS8+52IBL
+	8hY5Ad1y12AvwUciN0u+uXL4pKDY8RiOiF0GP49QRO/3qWWBdosCRqiTjYAuyAk7
+	zgF4hlAk6bjqAop4wjRmhp6o6pLVnjb5c44vQA01YzAfKm/EwNj0TGxvRWJ0kndD
+	m82m3fejc/6Q+TDW8EO5/J8FEdMjk5Ra0zSGorUFTd50QLwy04b7ZA8aR8005UT1
+	JBo4A5P9joKExM7U7sF47o9rGRpOKJTD16tkSNoX/92IHFKadKypTy9PUFMdUDpc
+	upOQWw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4479mf8sfa-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 17 Jan 2025 04:37:23 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50H4bM05018643
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 17 Jan 2025 04:37:22 GMT
+Received: from [10.216.26.179] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 16 Jan
+ 2025 20:37:18 -0800
+Message-ID: <d9181c82-ffb1-e8de-c5c6-f58b73f9291f@quicinc.com>
+Date: Fri, 17 Jan 2025 10:07:03 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: fix memory leak in ath12k_pci_remove()
-To: Miaoqing Pan <quic_miaoqing@quicinc.com>, kvalo@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-References: <20240314012746.2729101-1-quic_miaoqing@quicinc.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH 0/7] wifi: ath12k: Add monitor interface support on
+ QCN9274
 Content-Language: en-US
-In-Reply-To: <20240314012746.2729101-1-quic_miaoqing@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: Zg0saOUolV5XJ37KRPJlBhY_QwPGnx0L
-X-Proofpoint-GUID: Zg0saOUolV5XJ37KRPJlBhY_QwPGnx0L
+To: Nicolas Escande <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20250107021017.3857555-1-quic_periyasa@quicinc.com>
+ <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: gu27F9BVXJUP77n_dTSJzx82_00iJmOd
+X-Proofpoint-ORIG-GUID: gu27F9BVXJUP77n_dTSJzx82_00iJmOd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-16_09,2025-01-16_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
- phishscore=0 clxscore=1015 bulkscore=0 suspectscore=0 malwarescore=0
- mlxlogscore=999 spamscore=0 impostorscore=0 priorityscore=1501
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501160166
+ definitions=2025-01-17_01,2025-01-16_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
+ clxscore=1015 suspectscore=0 lowpriorityscore=0 priorityscore=1501
+ mlxlogscore=999 mlxscore=0 malwarescore=0 phishscore=0 spamscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501170033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250116_142749_072909_C9D9EBA7 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20250116_203725_942552_3EA6B913 
+X-CRM114-Status: GOOD (  16.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,46 +101,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/13/2024 6:27 PM, Miaoqing Pan wrote:
-> Kmemleak reported this error:
-> 
->   unreferenced object 0xffff1c165cec3060 (size 32):
->     comm "insmod", pid 560, jiffies 4296964570 (age 235.596s)
->     backtrace:
->       [<000000005434db68>] __kmem_cache_alloc_node+0x1f4/0x2c0
->       [<000000001203b155>] kmalloc_trace+0x40/0x88
->       [<0000000028adc9c8>] _request_firmware+0xb8/0x608
->       [<00000000cad1aef7>] firmware_request_nowarn+0x50/0x80
->       [<000000005011a682>] local_pci_probe+0x48/0xd0
->       [<00000000077cd295>] pci_device_probe+0xb4/0x200
->       [<0000000087184c94>] really_probe+0x150/0x2c0
-> 
-> The firmware memory was allocated in ath12k_pci_probe(), but not
-> freed in ath12k_pci_remove() in case ATH12K_FLAG_QMI_FAIL bit is
-> set. So call ath12k_fw_unmap() to free the memory.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.2.0-02280-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-> 
-> Signed-off-by: Miaoqing Pan <quic_miaoqing@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/pci.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index 14954bc05144..f4b48f96a223 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -1505,6 +1505,7 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
->  	if (test_bit(ATH12K_FLAG_QMI_FAIL, &ab->dev_flags)) {
->  		ath12k_pci_power_down(ab);
->  		ath12k_qmi_deinit_service(ab);
-> +		ath12k_fw_unmap(ab);
->  		goto qmi_fail;
->  	}
->  
 
-This patch was previously deferred, and now no longer applies to ath/main.
-If the fix is still valid, please post a new version of the patch.
 
-/jeff
+On 1/15/2025 11:25 PM, Nicolas Escande wrote:
+> On Tue Jan 7, 2025 at 3:10 AM CET, Karthikeyan Periyasamy wrote:
+>> Currently, monitor interface not supported. Therefore, add the missed TLV
+>> tags parsing in the monitor parser, configure the monitor vdev state
+>> identifier with HTT filter setup.
+>>
+>> Depends-On:
+>> 	[PATCH v3 0/3] wifi: ath12k: Refactor monitor Rx handler
+>> 	https://lore.kernel.org/all/20241224143613.164921-1-quic_periyasa@quicinc.com/
+>>
+>> 	[PATCH v2 00/14] wifi: ath12k: Enable monitor ring for updating station dump in QCN9274
+>> 	https://lore.kernel.org/all/20241223060132.3506372-1-quic_ppranees@quicinc.com/
+>>
+>> 	[PATCH v2 00/10] wifi: ath12k: Add peer extended Rx statistics debugfs support
+>> 	https://lore.kernel.org/all/20241224161442.263729-1-quic_periyasa@quicinc.com/
+>>
+>> Hari Chandrakanthan (1):
+>>    wifi: ath12k: fix link valid field initialization in the monitor Rx
+>>
+>> Karthikeyan Periyasamy (1):
+>>    wifi: ath12k: Replace band define G with GHZ where appropriate
+>>
+>> P Praneesh (5):
+>>    wifi: ath12k: Add extra TLV tag parsing support in monitor Rx path
+>>    wifi: ath12k: Avoid fetch Error bitmap and decap format from Rx TLV
+>>    wifi: ath12k: change the status update in the monitor Rx
+>>    wifi: ath12k: Avoid packet offset and FCS length from Rx TLV
+>>    wifi: ath12k: add monitor interface support on QCN9274
+>>
+> [...]
+> 
+> Hello,
+> 
+> There might be something wrong with this series.
+> 
+> I applied it on top of ath-pending-202501150104 + the "ath12k: Add peer extended
+> Rx statistics debugfs support" and now 'iw dev wlan0 station dump' shows me
+> that the RSSI value seems to not be updated anymore after I stop a monitor
+> interface on the same phy.
+> 
+> Steps to reproduce:
+> iw phy phy0 interface add mon0 type monitor
+> ip link set mon0 up
+> # then just for 1 sec but it might not be usefull at all
+> tcpdump -nepi mon0
+> ip link set mon0 down
+> watch -n1 iw dev wlan0 station dump
+> # 'signal' seems to not be updating anymore, maybe some other fields too ?
+> 
+
+Not able to find the wlan0 interface details from the above steps ?
+
+
+-- 
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
