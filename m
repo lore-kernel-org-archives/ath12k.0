@@ -4,74 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52012C02183
-	for <ath12k@archiver.kernel.org>; Fri, 17 Jan 2025 19:35:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1988C02183
+	for <ath12k@archiver.kernel.org>; Fri, 17 Jan 2025 23:41:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=nqLyocNQWSekMDBFwqG+Wyvol9ScQupxsUOjyFpXlYU=; b=zP6ZNli5lGOq4AzyCqq+QC4jC+
-	62YTnRCoqZDQ7NCg1+ySVsZun3+VyXQ3o1ciij7swUopfcM140v5o8T4XwT0wIQR5TfYwY+PHITl3
-	CLsP9GWVzSZnkWVLSpfB3/VdkJiLshCeLZb8zIeajpGlBNNBxsK9FgCS+1wDmBpkxQYlrJlU/PXk6
-	X6PBJFl/Ta2UciQuwFLePVzt7k0NUAT9l5dR71XMna0EBSghbU1XxTSna9/cuZOJY4BBl2gx4bGz5
-	O/IXdsl4j78XY34+Rdlxpn2R6jx/LJTmWmoVoRHtHmgQgPW3PTHNIMspejW4FO6JtqKdl2obNwLeG
-	jlBfcM6g==;
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DlE1YBTTne8e1I++1l/sONj2hwpUTlJheHHRR2Yh9Ls=; b=f8yKTtyuFNYvPzjqkeQPyxIHq3
+	5+Sx95S0SW7fmxVP1GKu5Y6LW9ABgXQ0Tki/sYycbS4KE5HUuhYP8Rliv337h1VqnARJh/AV1wKAR
+	HFlxyMfOGBbJUYgp9Fh1X9XwxuLxLmxgGG36Qb9QpcNfljmlNQ4yiao3pnXhUGk0KFPeM+ZcHr7VC
+	BRxmi/R1rPaVPbQB8cipETVPZlb4UKOhasZQq0CNaunaYO+6wT8rvAxAv5aamfwRUS4nvxbltesyt
+	taEGQPFNeqvVDTWaYNdGyoSn5woKO4TVe6VjATcH4xGP8rR1XwsADKVN5eFyOi3dscmZROPzkoEPr
+	Yv4blo2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYs8B-00000001Fy3-0QHl
+	id 1tYvyP-00000001Yj4-2rbA
 	for ath12k@archiver.kernel.org;
-	Fri, 17 Jan 2025 19:35:47 +0000
-Received: from e3i103.smtp2go.com ([158.120.84.103])
+	Fri, 17 Jan 2025 23:41:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYs70-00000001FhP-2ITK
+	id 1tYvyN-00000001Yhy-0r6k
 	for ath12k@lists.infradead.org;
-	Fri, 17 Jan 2025 19:34:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=smtpservice.net;
- i=@smtpservice.net; q=dns/txt; s=a1-4; t=1737142461; h=feedback-id :
- x-smtpcorp-track : date : message-id : to : subject : from : reply-to
- : sender : list-unsubscribe : list-unsubscribe-post;
- bh=nqLyocNQWSekMDBFwqG+Wyvol9ScQupxsUOjyFpXlYU=;
- b=zFv3n7C58aKQUUnVzDcBXR3Qbd/luc+qggE6mgGDLdYHxA+RkpTJ78jI/l/RyDtJZ/dwy
- mfVV3iECq9ZlXYkGapgCC1+iR6WWh40XTYzhzI55ZMuQqDOmBQjfhHsp4wEhuxakplhvCrn
- 6phZIUyN1PwYbICqlwSXm3jBLRSCIBplDRmSlRkZMDnZjQVNijSCq8O+FTqx7ScWjlUz388
- l+2juToFWrzmfVXOXmQ0ZkYdI99vNTJnD366GwiON7NdfQ39WSlWRYm+zUui/wp48EFiUmd
- U7JBTd03lX1vG4IGeMs39aoOe+44cX/W03wXVWS8T3kjAn0ZWPQHCRhVWIZw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=triplefau.lt;
- i=@triplefau.lt; q=dns/txt; s=s510616; t=1737142461; h=from : subject
- : to : message-id : date;
- bh=nqLyocNQWSekMDBFwqG+Wyvol9ScQupxsUOjyFpXlYU=;
- b=Xe79q+1IqHOlL28GxRu30djG14Q9dUQ3OlaBHmbZkxstRoJ1U+5Lqq9KlGlCjYWz8Vnqq
- nR0nbkKIpTPF1fbYb47aiKo1Q1VHKffWnRqQZef38EF2RHZRRtdz3wmeWW4PRRCNZLoehw2
- Kn6x8MvgZlV1TclHawGTCP5rRa7WfCOv+efWC/JTrzgTh/1FpkxLI+y+js4rqtWGeMjhEaO
- EDp4HPKVYzf3kIVkKJoseaCu+8kIGY6CEnxWNFegXoAzTthcw0pBBqAI6XbSpjGeCHq0/sc
- CqDxk/OuLqTl6boQnysX7zz8Jpf0cnCm+h+DM7mzSWfWBalICVNqHeobifAw==
-Received: from [10.12.239.196] (helo=localhost)
-	by smtpcorp.com with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97.1-S2G)
-	(envelope-from <repk@triplefau.lt>)
-	id 1tYs6k-FnQW0hPqndm-m5Sk;
-	Fri, 17 Jan 2025 19:34:18 +0000
-From: Remi Pommarel <repk@triplefau.lt>
+	Fri, 17 Jan 2025 23:41:56 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50HLsGlC026836
+	for <ath12k@lists.infradead.org>; Fri, 17 Jan 2025 23:41:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	DlE1YBTTne8e1I++1l/sONj2hwpUTlJheHHRR2Yh9Ls=; b=YsHhqzi0vk5nrr3o
+	03j+UAhyUiHGhlAWSnI7MTiDMMcUqIUuSuhFgiW0bKwFlXMj4789AJ7sifWeUhWw
+	QMvzpJhZt/PvjKcmPKYV+6VljQLx0wNwlNV2Uq/HEy7EKOM6Ri0keaERdwcCAScR
+	lt5wS6d2dWRjJrM/yD4V5n6sDH/UnzW429aWdUgcmbhb+i0moo7BkFynm5lKJVOk
+	khpUXsdKyx3a+864EvpvSpAHQPxpSxQodkPv3JFvy1tSSgzpXtD5BEtuVz8KX0i8
+	bsjuLd2duaVES+z4VePCOJASydL9MbnVuJdgmpVDtTeBxi0INo2uFC12LUkA9J7n
+	cgj89g==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 447yh6051r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 17 Jan 2025 23:41:53 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-216728b170cso50678405ad.2
+        for <ath12k@lists.infradead.org>; Fri, 17 Jan 2025 15:41:53 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737157312; x=1737762112;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=DlE1YBTTne8e1I++1l/sONj2hwpUTlJheHHRR2Yh9Ls=;
+        b=c6HPCu7SPG22Ti+8Wy2LkjblXPC8qS5LBdIjDYW3eT3XGN2q93jUly6SMzOE+Rq//+
+         rHmtE0liqTjnihKjn85l6JM2qXm1w1S9EgAkIKO/0g9v+EcanXMS6Ox1V8e56vubU2wT
+         3lIA0BET37hOiymw0b2oUbXqIxyNNCi7Pb+7KGCgJlYqI4oevMPNLTC00qGxIKFq3I2K
+         m+zUqMnVgYId5puNPdSRtm5zjf4l0kO9ufq2WIGI1iMypbqKaI2iRpHzknCMHG/Ogd09
+         O/I3PO/2N3M/L3jk0evgPgoPce4LHaW19/ygDqfl5vKXgreYrIrRkWgbFkwEa1/eBkrB
+         7rvw==
+X-Gm-Message-State: AOJu0Ywb+Zswz0xRmbR9N5JO3c+h4hyTvNE6n0ObX39Q/rPdb9ZcOD3N
+	iH0qZBvQzqMnIXSBMDWVEJMYUJTiAkXSKigiO9QdHZYNVY1uDLMLUfuNhnf2ff9p9sr6ryYN0LJ
+	/d701xJJlDcw4Dfbma0qEapaQBE5kRki1Jgik3K/zIP8Euo/1hQt24OidOA8t71daFx8v
+X-Gm-Gg: ASbGncu/Fqux8OzziamR9Bnq49KaEY3eq6ePu8ICXl30StlENitTICSXZMR3O/c+Tb7
+	I4U0Y4WNLnsEP0TgcL6vyTBXmckJxJYEqo//+vUZYP2ywfZIbwhW78TBAGFHZKuc6qhCpZzxv7c
+	LWDuaW+Xkl5Zv19ropoYWEtc8JoSF7C+y97qJZY2c8dDC04TX56TDFF5sNVqxKR7W1zi4e/kQG4
+	aZC8z8c1keyEZAuAm3RBsVHNuT/dLP1LcYj3PItOFjSWfWImc+Bfhkk9ffSXFcQ962G6vA94c2j
+	+rvY4/Fpvcsl/KQ167KCsEuHE6mf5f0=
+X-Received: by 2002:a17:902:f54e:b0:216:69ca:7714 with SMTP id d9443c01a7336-21c352c7a86mr73954815ad.11.1737157312045;
+        Fri, 17 Jan 2025 15:41:52 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEknRc1UWjcu8zhTvjm2/SuMayJ+0UjFl+FDIgz/MK4fFIHZRCNwmFGB+iNtO5sqA8CHmjBnA==
+X-Received: by 2002:a17:902:f54e:b0:216:69ca:7714 with SMTP id d9443c01a7336-21c352c7a86mr73954595ad.11.1737157311677;
+        Fri, 17 Jan 2025 15:41:51 -0800 (PST)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21c2d3d86e1sm21565915ad.172.2025.01.17.15.41.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 17 Jan 2025 15:41:51 -0800 (PST)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 To: ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Remi Pommarel <repk@triplefau.lt>
-Subject: [PATCH] wifi: ath12k: remove return for empty tx bitrate in mac_op_sta_statistics
-Date: Fri, 17 Jan 2025 20:30:53 +0100
-Message-Id: <a4bdebd14f5dbec653b75277097917910344f244.1737142154.git.repk@triplefau.lt>
-X-Mailer: git-send-email 2.40.0
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20241224143613.164921-1-quic_periyasa@quicinc.com>
+References: <20241224143613.164921-1-quic_periyasa@quicinc.com>
+Subject: Re: [PATCH v3 0/3] wifi: ath12k: Refactor monitor Rx handler
+Message-Id: <173715731108.3752359.4147559527899683477.b4-ty@oss.qualcomm.com>
+Date: Fri, 17 Jan 2025 15:41:51 -0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Report-Abuse: Please forward a copy of this message, including all headers, to <abuse-report@smtp2go.com>
-Feedback-ID: 510616m:510616apGKSTK:510616sFbIzu7jfk
-X-smtpcorp-track: YP12T0xgWUKL.VhdMIKU_bhuY.sTPIsQ8-ewH
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
+X-Proofpoint-GUID: 6tXTyLHHn-9KROzRc-FXAww75uuSLZ45
+X-Proofpoint-ORIG-GUID: 6tXTyLHHn-9KROzRc-FXAww75uuSLZ45
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-17_08,2025-01-16_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ mlxlogscore=708 mlxscore=0 spamscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 suspectscore=0 malwarescore=0 phishscore=0
+ clxscore=1015 lowpriorityscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2501170184
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250117_113435_028585_410CABE1 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20250117_154155_260864_02419D47 
+X-CRM114-Status: GOOD (  10.90  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,71 +116,31 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently in ath12k_mac_op_sta_statistics() there is the following
-logic:
 
-    if (!arsta->txrate.legacy && !arsta->txrate.nss)
-        return;
+On Tue, 24 Dec 2024 20:06:10 +0530, Karthikeyan Periyasamy wrote:
+> Currently, monitor support is not added. However, in the future, the
+> monitor will be enabled. Therefore, refactor the monitor handler, which
+> help to add monitor support in the future.
+> 
+> v3:
+>  - Remove the Acked-by tag
+> v2:
+>  wifi: ath12k: Refactor Rx status TLV parsing procedure argument
+>   - Updated more details in the commit message
+> 
+> [...]
 
-Because ath12k_sta_statistics is used to report many info to iw wlan0 link,
-if it return for empty legacy and nss of arsta->txrate, then the other
-stats after it will not be set.
+Applied, thanks!
 
-To address this issue remove the return and instead invert the logic to set
-the txrate logic if (arsta->txrate.legacy || arsta->txrate.nss).
+[1/3] wifi: ath12k: Refactor the monitor Rx parser handler argument
+      commit: b238941e8e97c17380f6a6a2dc51520b1829c167
+[2/3] wifi: ath12k: Refactor the monitor Tx/RX handler procedure arguments
+      commit: 844c256892e162e85db52ce2e1f3d14053ecd488
+[3/3] wifi: ath12k: Refactor Rx status TLV parsing procedure argument
+      commit: 1254580d4f831808462e719e00d43a46e4254631
 
-The same was done also in both ath10k with commit 1cd6ba8ae33e ("ath10k:
-remove return for NL80211_STA_INFO_TX_BITRATE") and ath11k as well with
-commit 1d795645e1ee ("ath11k: remove return for empty tx bitrate in
-mac_op_sta_statistics").
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
----
- drivers/net/wireless/ath/ath12k/mac.c | 29 +++++++++++++--------------
- 1 file changed, 14 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d493ec812055..cbc79ec7ac47 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -8912,21 +8912,20 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	sinfo->tx_duration = arsta->tx_duration;
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_DURATION);
- 
--	if (!arsta->txrate.legacy && !arsta->txrate.nss)
--		return;
--
--	if (arsta->txrate.legacy) {
--		sinfo->txrate.legacy = arsta->txrate.legacy;
--	} else {
--		sinfo->txrate.mcs = arsta->txrate.mcs;
--		sinfo->txrate.nss = arsta->txrate.nss;
--		sinfo->txrate.bw = arsta->txrate.bw;
--		sinfo->txrate.he_gi = arsta->txrate.he_gi;
--		sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
--		sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
--	}
--	sinfo->txrate.flags = arsta->txrate.flags;
--	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
-+	if (arsta->txrate.legacy || arsta->txrate.nss) {
-+		if (arsta->txrate.legacy) {
-+			sinfo->txrate.legacy = arsta->txrate.legacy;
-+		} else {
-+			sinfo->txrate.mcs = arsta->txrate.mcs;
-+			sinfo->txrate.nss = arsta->txrate.nss;
-+			sinfo->txrate.bw = arsta->txrate.bw;
-+			sinfo->txrate.he_gi = arsta->txrate.he_gi;
-+			sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
-+			sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
-+		}
-+		sinfo->txrate.flags = arsta->txrate.flags;
-+		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
-+	}
- 
- 	/* TODO: Use real NF instead of default one. */
- 	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
+Best regards,
 -- 
-2.40.0
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
 
