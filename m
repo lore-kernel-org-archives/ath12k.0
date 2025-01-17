@@ -4,89 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DB67C02183
-	for <ath12k@archiver.kernel.org>; Fri, 17 Jan 2025 09:46:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 861C7C02183
+	for <ath12k@archiver.kernel.org>; Fri, 17 Jan 2025 11:34:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
 	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
 	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O4hBp0TCeNb4jgoyOrHuru28rEsiSTagGEUyqsSUl0U=; b=u2wQ4ikYqGvxd8o5EaE1exDcSP
-	JR8G6BEWp3q8zW7K44Nh1/w+nXa6i7uJeETWvi8FZh/9pgSWvrayehUNZTJ+6E8UIlm0IjYkwWdWX
-	UGToko26DA9Pk3Zrx1Wl0BKhI1sz+8ca2oq2EbQ5qnUwOl6x9MZm404jAUF5SuQIwVoeMYZCPAP9I
-	aG9uA5YPelydQ9ibpOep2sDMf7rmz/o1yrBGiiK+D9QoxYtRA07bPRADPw5OxbzM75/YrMgbzcHJC
-	zBPaaKyfGL2qlq2PGWQ0okN56z5MY0GIyP2k5ye7+mzDEYIpRd2obzI5h3xXCLIc0HlfctTiyhvBc
-	FczPXgUA==;
+	bh=6ODjOBO9MtIgABgcwAyfoWf9VIwAipEtpPJ9eBhJRg8=; b=cWK7Hznlz1mKPooOG042cIflda
+	p34cq6bTNSp1UCiMlXyFk6U2udaZej2gMq5/r17F6OYU7AOvwL0a0xrNbM0pvnNmnzd7psr6GMlQ7
+	V5s6Lng5N5bGmh0+PQWKFaQFupZXMNFpRlv+VGGOzK0k6D8sr6dagEr70daLgNVKaK5rv30g2op/y
+	n1Ir2oAKqAcPk2C6Eq4Zl1jQL98O3KThWGkln5OZyeiQlLpd3au25m9mIHUYZDfdPaa3n3nbdP8fL
+	f4YjqOudLd4suR5/W2oNTi30c9o1//GxRaspohEsmaDbbGUPJUsAV7yut6nfa/UVQY3MIWMWiZug+
+	7PyQHoTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYivy-0000000HTbX-0qqT
+	id 1tYkbx-000000009eJ-1H4V
 	for ath12k@archiver.kernel.org;
-	Fri, 17 Jan 2025 09:46:34 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	Fri, 17 Jan 2025 11:34:01 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYivv-0000000HTaI-2JuT
+	id 1tYkbu-000000009dy-2gDy
 	for ath12k@lists.infradead.org;
-	Fri, 17 Jan 2025 09:46:32 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-43675b1155bso20018085e9.2
-        for <ath12k@lists.infradead.org>; Fri, 17 Jan 2025 01:46:31 -0800 (PST)
+	Fri, 17 Jan 2025 11:33:59 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4361f65ca01so19009925e9.1
+        for <ath12k@lists.infradead.org>; Fri, 17 Jan 2025 03:33:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737107190; x=1737711990; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1737113637; x=1737718437; darn=lists.infradead.org;
         h=in-reply-to:references:to:from:subject:cc:message-id:date
          :content-transfer-encoding:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=O4hBp0TCeNb4jgoyOrHuru28rEsiSTagGEUyqsSUl0U=;
-        b=LQfkosOrLqOZzkMyeEw45nhUeNBGkCLwZWuYAzaIUmvcIw3BtKf9z+qblylCyNnz88
-         ZC4O/a2eWma5t1RyXG88Hv+xSgw4G0hzuq7E7lAVcLvVNDivhABhn34W2fF2dSddoAhN
-         x9bVevmB+lmu8zw8wFGrkKqTSQbgmloaiaQTjaCKvWi6XvMaphTSI/mcgo4Zsg6oDWKA
-         ReciMQVPz7cbgBT9WKizcRLWetQj4uGc9HSy9DXVlmIrNvooMbo8icKOIz7E3vTQXXY9
-         OAxlvjDVl8+GemxZxJBGBFDaQW98SDxvuIwO0e7AzkN9csGnVY8FnG9LKSjX0J9jYtoR
-         nQGA==
+        bh=6ODjOBO9MtIgABgcwAyfoWf9VIwAipEtpPJ9eBhJRg8=;
+        b=T1YLFpKqD0e2ItczCMBy8r2N6PoeqAh6Q5antTzOK3O5Q36CiZ6tAX/KbQFCg6PaIp
+         3VY86luVdW+Zs+ond6LQOPhJpaDWTz9ADlMdAgI7xqRjUIdigF9raLmKf3dlMr7ZMmcR
+         z3HqJHFOlkljwUxeVjI0H0Apf4zJMzQD4umfuG8kyKq/gI3H9Ios5GMwWA/nqbcPYJvb
+         ij3mcF5yoJgoJ2WB97JLvhTY9T0tniFKfS5Hl53t0bFNDIkJtHHyNbCOz8uExNh+Ft28
+         1PI1YxPG4zHRq3rgJAy2u7hYYrzd7ctW76yjaE8shlqnsRcVC+iai0uYIcC+vOjpozW9
+         n4bw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737107190; x=1737711990;
+        d=1e100.net; s=20230601; t=1737113637; x=1737718437;
         h=in-reply-to:references:to:from:subject:cc:message-id:date
          :content-transfer-encoding:mime-version:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=O4hBp0TCeNb4jgoyOrHuru28rEsiSTagGEUyqsSUl0U=;
-        b=DzjWj2Wr4EtvQ8fRIUVEexzIrvNnd/K645CVEIwdWaPYGf2Hd9Sc5W6xbOA2t3sGhX
-         JBdKhzrLsguaic3VcfRlM+Ts0HhrFgLcx8FGGx34hOc2MnnMRuZH3kg7TIQdY8GZZS/Q
-         zP7XKAakmzWdozWyWjTDuWnY0nWNEEo6nr97amyQGObprit2D6Jp+pz//P6+0IqbMWqH
-         b2cHPRObvcgg9TFfyorTG8YJbn90Vyl9abUXmsxfal8jUqjKYLXIvlXvN/pKO3pquais
-         OiRR1DhSBS2rsMtP1m9bgPVC1AB+IwAdki9gls3nmvclba3svcm0v2cJOzZiNa5xSbKX
-         9xtw==
-X-Forwarded-Encrypted: i=1; AJvYcCXjLkuCkgJANX4Q6iibSHNeJf54b1xy7l13vNwI8ZuF6ck2kqmngyDrbSus3to5TK8NT0l4y7M=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy6FKhUhZit2IxwNrmJTAAbpQxrADncvL56TllmV7buHLpTw0kR
-	CEStjJUFKL08+1tohOglDTzLNl/FqrP7i1FeP72a0eB0ITk06imeh6ab3A==
-X-Gm-Gg: ASbGncvYHOa6n3pdswbaeSaTLs8bdESxq2dfc3V/9CZ4+4cI/8ncK5Hhq2s5TfM8xOD
-	WBmKY4g7nkwe+Pd0hlPyZGhYS/hKtno6y3nd5TdmDXRkOOY1Ij9kFhY+ghJBTOi3XtEec9Okgdr
-	+U9x6sumFEXp+8yA2qHTb920xRRruPw3NWno8tv1RR2xBuIQ2VJZo5g0/JZ/oxonzRr6Jr/H9ho
-	UcVvGq0VpQT3DusHqEPOz7QaSl1oQzNWidPJ1F96FrtzXr/QeZbaex299BSaWQEgZ7q6dWGNhE=
-X-Google-Smtp-Source: AGHT+IG44lq6Xs8TjLlxvjNLydQ9QPXwgmxcuG5OXImXTvfM0ujy+ohsngUpa7xqaoEz8L9b2iBHYQ==
-X-Received: by 2002:a05:600c:1f11:b0:434:fff1:1ade with SMTP id 5b1f17b1804b1-438913df205mr16717345e9.13.1737107189411;
-        Fri, 17 Jan 2025 01:46:29 -0800 (PST)
+        bh=6ODjOBO9MtIgABgcwAyfoWf9VIwAipEtpPJ9eBhJRg8=;
+        b=jlQcTCh80xGRu5hwGD8/34d1cOCh6pVVkmCPlU97suMj0XkUKopDpud0u83PNJpijs
+         iBRxbpMkbt660WfYTjIWPU+DIlpt9EhUOqYM2XGsNM/JSroq0lI6p3VrovdpwXtXVb7y
+         YRIvV5yRXPFDiaJPf6pYi3250QAeWMs9aEQg6ZfajnezAxOC2cr7dUbHYvCK99dHRxJl
+         Rff3YhBLJvPe6EoPYpWMxumWiotSCwOdMGA2xYjw9FBcBuHH8q13o+D5AHWuuu5MXDyB
+         IqMmVx9McYYNJVZQssbyE74gSAb2TMKBAdNqOtouF7Xy40YF4CnzXs1VngDMWd1Z819x
+         9lDg==
+X-Forwarded-Encrypted: i=1; AJvYcCWUHBJXH29ErJNTbmGmnUwOZG03ZzWl77jfvqiY/kl+rHQFFe/qZ93E2DIWkFtobuQMa4IGIro=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz0peelgJvMqykFiR+sH1fpvg2HGVz2cSVumFSfH8ro47xB4TWj
+	9JGC4iMEom62kxt/0Hea9v5KyuwxTbBILNbuiCn3xCqHpvDBrC5h
+X-Gm-Gg: ASbGncsnaR1L/VBqLBuI0kpviE5FVxNMk3n9Et/BtJG7kCwFKtJST9s1U8fpulXhKMF
+	rGBpUSEJC3TBlSWgNU0ESntRxPhuChCJ9Se5IE+ReZs3so7f2+A0Y5EXfsDrtVxjmgOczqCGgI8
+	3AG/XMnUgecSNllbYU4thS7jaOh6716bKHGXs8T2Ti2DPA1FOuas+nYbC/+5oUyRfgWI7Mfqvyt
+	3j17rJVeT2tbxjehDR/pmuNGkQ4C/+9W9OnmVQ3QC06oN7Qkyt9xnvvMkguS+pUobPyZ1TIVDk=
+X-Google-Smtp-Source: AGHT+IGvLIKvsqNW/P9Ywv7yw9j5IjfOYKM/JKR7riVV1MLqP/1HvyFrpjCQqxtjOMT0cR+RZvT7fw==
+X-Received: by 2002:a05:600c:1e18:b0:436:8a6f:b6db with SMTP id 5b1f17b1804b1-4389141c12emr20626775e9.22.1737113636530;
+        Fri, 17 Jan 2025 03:33:56 -0800 (PST)
 Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38bf3278088sm2046160f8f.73.2025.01.17.01.46.28
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-437c73e7140sm92797595e9.0.2025.01.17.03.33.55
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 17 Jan 2025 01:46:28 -0800 (PST)
+        Fri, 17 Jan 2025 03:33:56 -0800 (PST)
 Mime-Version: 1.0
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8
-Date: Fri, 17 Jan 2025 10:46:28 +0100
-Message-Id: <D7493TJ2Q2YJ.2EVCWPQR58U4A@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH 0/7] wifi: ath12k: Add monitor interface support on
+Date: Fri, 17 Jan 2025 12:33:55 +0100
+Message-Id: <D74BE3ES4HZC.GJJ2MY3UH462@gmail.com>
+Cc: <linux-wireless@vger.kernel.org>, "P Praneesh"
+ <quic_ppranees@quicinc.com>
+Subject: Re: [PATCH 7/7] wifi: ath12k: add monitor interface support on
  QCN9274
 From: "Nicolas Escande" <nico.escande@gmail.com>
 To: "Karthikeyan Periyasamy" <quic_periyasa@quicinc.com>,
  <ath12k@lists.infradead.org>
 X-Mailer: aerc 0.18.2-0-ge037c095a049
 References: <20250107021017.3857555-1-quic_periyasa@quicinc.com>
- <D72U91ZG2PNM.2IXUT304LMEC0@gmail.com>
- <d9181c82-ffb1-e8de-c5c6-f58b73f9291f@quicinc.com>
-In-Reply-To: <d9181c82-ffb1-e8de-c5c6-f58b73f9291f@quicinc.com>
+ <20250107021017.3857555-8-quic_periyasa@quicinc.com>
+In-Reply-To: <20250107021017.3857555-8-quic_periyasa@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250117_014631_589588_B322EEDA 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20250117_033358_680538_D08D98A0 
+X-CRM114-Status: GOOD (  17.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,42 +101,108 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri Jan 17, 2025 at 5:37 AM CET, Karthikeyan Periyasamy wrote:
-> On 1/15/2025 11:25 PM, Nicolas Escande wrote:
-> > On Tue Jan 7, 2025 at 3:10 AM CET, Karthikeyan Periyasamy wrote:
-[...]=20
-> > I applied it on top of ath-pending-202501150104 + the "ath12k: Add peer=
- extended
-> > Rx statistics debugfs support" and now 'iw dev wlan0 station dump' show=
-s me
-> > that the RSSI value seems to not be updated anymore after I stop a moni=
-tor
-> > interface on the same phy.
-> >=20
-> > Steps to reproduce:
-> > iw phy phy0 interface add mon0 type monitor
-> > ip link set mon0 up
-> > # then just for 1 sec but it might not be usefull at all
-> > tcpdump -nepi mon0
-> > ip link set mon0 down
-> > watch -n1 iw dev wlan0 station dump
-> > # 'signal' seems to not be updating anymore, maybe some other fields to=
-o ?
-> >=20
+On Tue Jan 7, 2025 at 3:10 AM CET, Karthikeyan Periyasamy wrote:
+> From: P Praneesh <quic_ppranees@quicinc.com>
 >
-> Not able to find the wlan0 interface details from the above steps ?
+> Currently, the monitor interface is not supported. To support the monitor
+> interface, configure the monitor vdev state identifier, configure the HTT
+> filter setup, subscribe the mac80211 WANT_MONITOR_VIF feature and prevent
+> monitor interface to transmit packet. Therefore, add these procedures to
+> add monitor interface support and enable the monitor interface support on
+> the QCN9274 platform through the hardware parameter.
+>
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_S=
+ILICONZ-3
+>
+> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> ---
+[...]
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wirele=
+ss/ath/ath12k/dp_tx.c
+> index b8f0df6f7a05..81d1ff918f48 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+> @@ -1,7 +1,7 @@
+>  // SPDX-License-Identifier: BSD-3-Clause-Clear
+>  /*
+>   * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+> - * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights r=
+eserved.
+> + * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights r=
+eserved.
+>   */
+> =20
+>  #include "core.h"
+> @@ -1277,6 +1277,8 @@ int ath12k_dp_tx_htt_rx_monitor_mode_ring_config(st=
+ruct ath12k *ar, bool reset)
+>  					HTT_RX_MON_MO_CTRL_FILTER_FLASG3 |
+>  					HTT_RX_MON_FP_DATA_FILTER_FLASG3 |
+>  					HTT_RX_MON_MO_DATA_FILTER_FLASG3;
+> +	} else {
+> +		tlv_filter.rxmon_disable =3D true;
+Shouldn't this be
+	tlv_filter =3D ath12k_mac_mon_status_filter_default;
+To match de default value ?
+>  	}
+> =20
+>  	if (ab->hw_params->rxdma1_enable) {
+> diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/=
+ath/ath12k/hw.c
+> index a106ebed7870..021a4b565e8b 100644
+> --- a/drivers/net/wireless/ath/ath12k/hw.c
+> +++ b/drivers/net/wireless/ath/ath12k/hw.c
+> @@ -1,7 +1,7 @@
+>  // SPDX-License-Identifier: BSD-3-Clause-Clear
+>  /*
+>   * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+> - * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights r=
+eserved.
+> + * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights r=
+eserved.
+>   */
+> =20
+>  #include <linux/types.h>
+> @@ -1049,7 +1049,7 @@ static const struct ath12k_hw_params ath12k_hw_para=
+ms[] =3D {
+>  					BIT(NL80211_IFTYPE_AP) |
+>  					BIT(NL80211_IFTYPE_MESH_POINT) |
+>  					BIT(NL80211_IFTYPE_AP_VLAN),
+> -		.supports_monitor =3D false,
+> +		.supports_monitor =3D true,
+> =20
+>  		.idle_ps =3D false,
+>  		.download_calib =3D true,
+> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless=
+/ath/ath12k/mac.c
+> index abf7c7ed8967..27d44b508884 100644
+> --- a/drivers/net/wireless/ath/ath12k/mac.c
+> +++ b/drivers/net/wireless/ath/ath12k/mac.c
+> @@ -1264,6 +1264,12 @@ static int ath12k_mac_monitor_start(struct ath12k =
+*ar)
+>  		return ret;
+>  	}
+> =20
+> +	ret =3D ath12k_dp_tx_htt_monitor_mode_ring_config(ar, false);
+This is already done a few lines after. Shouldn't the one after be removed
+> +	if (ret) {
+> +		ath12k_warn(ar->ab, "fail to set monitor filter: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+>  	ar->monitor_started =3D true;
+>  	ar->num_started_vdevs++;
+>  	ret =3D ath12k_dp_tx_htt_monitor_mode_ring_config(ar, false);
+[...]
 
-Arf maybe I wasn't clear, my bad.
+And this is probably out of the scope of this patch but the code in
+ath12k_dp_tx_htt_rx_monitor_mode_ring_config could be simplified by returni=
+ng
+early if (!ab->hw_params->rxdma1_enable) like in
+ath12k_mac_config_mon_status_default.
 
-I have a running AP on wlan0. I constantly monitor connected stations infos
-using 'iw dev wlan0 station dump' on the side in another terminal, and then=
- I
-add a monitor interface with the above steps, and thats when I see that the
-stations connected to my AP have frozen values in station dump.
-
-I suspect that ath12k_dp_tx_htt_rx_monitor_mode_ring_config() should reset =
-the
-rx filters to ath12k_mac_mon_status_filter_default when disabling monitor. =
-But
-I'm not so sure, you guys know better.
+And that brings the question for me as shouldn't theese two functions shoul=
+d be
+refactored to share more code
 
