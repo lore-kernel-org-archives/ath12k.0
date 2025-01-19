@@ -4,102 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDE02C02183
-	for <ath12k@archiver.kernel.org>; Sun, 19 Jan 2025 05:23:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03A87C02188
+	for <ath12k@archiver.kernel.org>; Sun, 19 Jan 2025 05:23:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=gDWiRUfx1ZKo8bEQYsYj0h07t8RZmfw5u+KjMRLsDSg=; b=heCkJmRRNjPTUPf4IUdFUC8PdP
-	KAzuszrK3D1la5SRYT4fZer9tjif0fdUtwe+TGYg13BRFL850E5Z8b1Qa+6hPghLyNhmWieOs4Zu6
-	/oji4hJ3tJTpT3pOnGvxkAM4gz3AqFCt7PmqVYA+fLuQMKknn3/TFKKsDE6vcvOak2/hmB/JnZd/Y
-	5U1a2Gaw5/LNxZubp8phhIabcncFhmBffVUwKZS5Bd1QUOr7oQIsZLhzJIsByy4J7m9AYVCEnAM4V
-	XrCE4YmM7hP80thsLNOB+jm1RdjGL+bhMddMHrkv+DXCGJL4gIpLzV502uq65JcIH5QXj88N59aIQ
-	XcGCmXNg==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ZtwpAc6bTYOZp2y9MNdtJ/nCT7pbm01eyDD9XK50KFQ=; b=NN3ZBbm6GQ3ejhAQsllq1UeQ+5
+	y48+KGoq6gV9n5uKSe7KBpSMLpdqBEmusx9SPxPk4JygBDqzns77tXa/W3HaSmbXMtrGechXr7FyA
+	Z8Od4xv1ndAwEcoCloSNndG5D3T6XjuqLMp0ERFQbNMY/mSkLeP1EzMnyqYidh+F0T8S/wafxBfgJ
+	7DjNvY+qUlLDiaCzCUBOLc9eDtCvp1B9sYrlOtpTGy/knpuf0UHoTcw+QIaKdAtKAgOq/YgFTEGiQ
+	gPx52kAseazdGC6soUu//mWuacsHPpHHXheUV0+Sp7yIRzpG+/UvPQUDSE72krzgl8S06c3VcOiGA
+	uG63ZR8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZNm4-00000003QMP-38hu
+	id 1tZNmY-00000003QP1-2vli
 	for ath12k@archiver.kernel.org;
-	Sun, 19 Jan 2025 05:23:04 +0000
+	Sun, 19 Jan 2025 05:23:34 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZNlw-00000003QIi-2tZQ
+	id 1tZNly-00000003QJf-0z6w
 	for ath12k@lists.infradead.org;
-	Sun, 19 Jan 2025 05:23:02 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50J3ON60020272
-	for <ath12k@lists.infradead.org>; Sun, 19 Jan 2025 05:22:55 GMT
+	Sun, 19 Jan 2025 05:23:03 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50J3v0IG001809
+	for <ath12k@lists.infradead.org>; Sun, 19 Jan 2025 05:22:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=gDWiRUfx1ZKo8bEQYsYj0h07t8RZmfw5u+K
-	jMRLsDSg=; b=m4/vwzaVKEuOooWxqHIHSvE/g/LVd/1VDXMvkoIC7Uw1AmRvwwb
-	3U/pz8lOMphZSmOSFNxHKQELE38D8eczGjBlotLjCw9AH2CkFJ3ODBthIRarsdzn
-	m7tK58ppXeQFKNocx6cnEaq7GHHzLpLsY4vBl+NzfjQdI7EmcKaLccq/ddmyv8dp
-	MuFmr/nrzcwBrjTkUhJt58tFTpVhCMVtftpKZSoBAxBUI9uaZsbX0dTRtOOF1uPA
-	nprqlHERowo1MHIk0bLR2Zu+Bo2PiXCaaTWuZ4y9FgqoYKZ/zCSRTrQ9RgsPmBD9
-	HAFe9QxMonFTB8iL81RCy1PWvayq4Pos51w==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44820chs01-1
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=ZtwpAc6bTYO
+	Zp2y9MNdtJ/nCT7pbm01eyDD9XK50KFQ=; b=oImtoWZbx2aaHYXVfYmKDe+mh1F
+	fs0UTXyhmpUxdCk+T1F6mBLKFmF6iOMyTKUmOuayAhV3X38eTTiGvLqNkwo9LDPG
+	Qh8hkTaZHGwPn4438MKCmAr/yJcaf/4PdHN7ae611rG23usgRD30i9wu5YP3vdwA
+	B50gNauxKByw9nW9hVJw6+lgw2b+FDjY8fkWWPAlre8iEm0Ge3B5gl6cVr6DEIcQ
+	h5N5AI4NIqBzWQnCmiEATwE3+99j3ymlW/VpnoUhan3DpT3git2chquEWcHMBApt
+	2sEZEjpI7CxYbmFM2DgSZZ/wrcaopCQLCC9gTaw3vy9clbTVYMhfBTfG4MQ==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4485fhsg1r-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sun, 19 Jan 2025 05:22:55 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ef9e38b0cfso6503406a91.0
-        for <ath12k@lists.infradead.org>; Sat, 18 Jan 2025 21:22:55 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Sun, 19 Jan 2025 05:22:57 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ee46799961so9807290a91.2
+        for <ath12k@lists.infradead.org>; Sat, 18 Jan 2025 21:22:57 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737264174; x=1737868974;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=gDWiRUfx1ZKo8bEQYsYj0h07t8RZmfw5u+KjMRLsDSg=;
-        b=YrolHo4ukY1NJnY2iS68ccH4cgdZIitCHEHXFZXTrUM1moo/ws/1A/oirOj+vfyaUk
-         lg/Zo2zt9rhRB8/pt2fAswCHflV/1fD21+UQRb3chqrnOeDX3nB4uboMdFtb3A013tHJ
-         om1mBjgDjZeNq8EkKJy6z6iqtq46V9aMsDSnMNy9cD0qF48PZvMQ1cPvt9uj2RBjlApv
-         1QVWFabtHBLviAWg8k4VwsJe6bWAzO/xjA9DiU+ZGZ6GVuoVXCAcJYaLtJ78Nlv6UAJI
-         PZSlJetsZXDcnijuXBVc8gyWEND0q+wahzA5NGyuM4BCESFhzwMiTbqlZRZfzovLkxvc
-         vJlg==
-X-Forwarded-Encrypted: i=1; AJvYcCVpyfH5gWw9AIHvF7QlewbjBxbJhGtVdX2mNJozMwuzjOKgRvvHQ9Mce2fH6B9DdQv+PsBy6mk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwC85I0sUZSvvu0E1za48fSsSWK4GlcfShNVIc1ymHC8JTT+HTL
-	H0EwBG70Z2L0pKS/ZDcMe6nhwj29edzodEPe63R9mq0F7CLCsVttbZYBnQFd/yOf35JLmQ/H3/I
-	1swgxP0jPOC6bab2kEdi7Hc95f0AR3n+uvY+Wfia+qgcq0SSI/D4CyTCloXS9
-X-Gm-Gg: ASbGncveZ3nmzoUnl5AokUstaC5L3xcPslmMLdxrACKGyIoT0datHPGnjHaSyIuCOX+
-	A58lOZaq3adPo4um/3PZ0s3VVjtasr3KmDZSjYe+rxMjQNKspURKsNtCJJdRLwH6R7VlMwG10La
-	VbH6r91fb19ZN7kaYn5Hmsux45zEgJSz3jc5HH12AsEif+JK/aIzoCXo3DmLsqrZcpWj6cp6oYZ
-	CwXGDji+BiGxk+i6JMAXuT8FNetNFdvVIR2xqYau77kO4cPlEpNkHXWu63SdaDsNsck28kwkgUS
-	HuKumQo2IsG7bATAHtEyJ9htmeN/GukZLU+C5vYPCScIgFhltA==
-X-Received: by 2002:a17:90b:530f:b0:2ea:5054:6c44 with SMTP id 98e67ed59e1d1-2f782d86491mr11714016a91.31.1737264174225;
-        Sat, 18 Jan 2025 21:22:54 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGm13KSOHvfQLgtw6hyQxS9E/MOoHXkOylL19cWnXyfaDpZ+N8bKi720gk6gFcr/UUVFUF40g==
-X-Received: by 2002:a17:90b:530f:b0:2ea:5054:6c44 with SMTP id 98e67ed59e1d1-2f782d86491mr11714004a91.31.1737264173826;
-        Sat, 18 Jan 2025 21:22:53 -0800 (PST)
+        d=1e100.net; s=20230601; t=1737264177; x=1737868977;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=ZtwpAc6bTYOZp2y9MNdtJ/nCT7pbm01eyDD9XK50KFQ=;
+        b=KGHKB6etxx21cUK+Q2xU3zR+xQJ8l5EzuulTgp5ln5dllWDhJvrdCrrUnsv7BkMq+k
+         Od738l9+HfN7qAc68NSKn+e45BaPA9mzFoIOtwpuVZkrrtgLSHSaVmoAkfuAnWop8UaA
+         aO+qLQdBP6cj1fdMTbf5zFFIF5vuVOCXeKCCOR1oRvHyS/8XPPdJpmzpEVA/3teB2Bxm
+         5wZrA6DbURRlO8cismbUCnRYQv/xrwQxf6IdbKruk2+0mtp9TWN4VJuGu3aV+xaR/PU9
+         RJDFYx4/aoZ/LRjBcAA5aGG9O8NzF3ukAFbrJnR8ZByI5nBkve6pW0kgXy7eO9xwo/rO
+         zevg==
+X-Forwarded-Encrypted: i=1; AJvYcCVc4S8i+V4UEs9ZzOiE8Z69I7x/I0pwHj/yd6/3F8iXPU9MMZFbPbgxlyqyUBaxVZ+6vgpS12o=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxBfm0mUV3yVjGuRm0s7uB/KVEjT0+p17YlyTCbaTYfzeh0EsMM
+	SNAO8wuW2fvaqC2IbG7AlRcV2lfkvDMB3rdClAYrdgE5Sav/+mZb7NCeMPT8ByJSuW9eYd+bwKK
+	V28AP2syHeFWM/6HF1FE/eWqWjnidcacx+8pBZnnoMgYIolsJqKUQMbP7AF60
+X-Gm-Gg: ASbGncvqk6REedJO+ggZ+Mh2ob4WAP1SZ8CIetuJFrHq5HBXcWK26XjB0ZDbYR//6Jr
+	ODWhD94UQEpURc2a0vp8ylV5XdeEjGYKiyPF7OxivdGN6Fs8x0Vtcj5kUFXbCp1okotJ1Z2L2Ul
+	uIQuj6l54baXs4LdambiwaaAqpEh3J0zqMJ6Lkou6RDCwwEGNaCorSJVmQh2IVcYvVXMQgHPaIk
+	UwYF+STt7x8wMehxh+f1t6JuM70nLvS7MgpLsVNOsvJdF2QdRifst/sUIB5fsnlppy12eNwyqk2
+	BhJEjut6lum5yRdFd225GcjrY/nQS6DG4yutycEw7G04nZK/Dw==
+X-Received: by 2002:a17:90b:258b:b0:2ee:48bf:7dc9 with SMTP id 98e67ed59e1d1-2f782cb092dmr13280282a91.15.1737264176974;
+        Sat, 18 Jan 2025 21:22:56 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG6SYzua+L9zOXH7ZMjBP2BXe/Zm+CgoCUSMQWNJge1vtZEYocFxke10dX6xubn0KCvA3fnFw==
+X-Received: by 2002:a17:90b:258b:b0:2ee:48bf:7dc9 with SMTP id 98e67ed59e1d1-2f782cb092dmr13280265a91.15.1737264176605;
+        Sat, 18 Jan 2025 21:22:56 -0800 (PST)
 Received: from alokad-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f77611a295sm5062553a91.7.2025.01.18.21.22.52
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f77611a295sm5062553a91.7.2025.01.18.21.22.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 18 Jan 2025 21:22:53 -0800 (PST)
+        Sat, 18 Jan 2025 21:22:55 -0800 (PST)
 From: aloka.dixit@oss.qualcomm.com
 To: ath11k@lists.infradead.org, ath12k@lists.infradead.org,
         linux-wireless@vger.kernel.org
 Cc: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
-Subject: [PATCH v2 0/5] wifi:ath11k/ath12k: refactor tx_arvif retrieval
-Date: Sat, 18 Jan 2025 21:22:45 -0800
-Message-Id: <20250119052250.3488343-1-aloka.dixit@oss.qualcomm.com>
+Subject: [PATCH v2 2/5] wifi: ath11k: pass tx arvif for MBSSID and EMA beacon generation
+Date: Sat, 18 Jan 2025 21:22:47 -0800
+Message-Id: <20250119052250.3488343-3-aloka.dixit@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250119052250.3488343-1-aloka.dixit@oss.qualcomm.com>
+References: <20250119052250.3488343-1-aloka.dixit@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: SBH2JjP-ttrlwxOrWOf19nvKzxhjLvBH
-X-Proofpoint-GUID: SBH2JjP-ttrlwxOrWOf19nvKzxhjLvBH
+X-Proofpoint-GUID: 9OnaJn2rQc250WoXMQX3iHokuq24F_e5
+X-Proofpoint-ORIG-GUID: 9OnaJn2rQc250WoXMQX3iHokuq24F_e5
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-18_10,2025-01-16_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 mlxscore=0
- impostorscore=0 phishscore=0 mlxlogscore=926 suspectscore=0 bulkscore=0
- malwarescore=0 adultscore=0 priorityscore=1501 lowpriorityscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
+ lowpriorityscore=0 clxscore=1015 priorityscore=1501 impostorscore=0
+ malwarescore=0 mlxlogscore=999 adultscore=0 spamscore=0 suspectscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2501190042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250118_212257_126669_E97189B3 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250118_212258_278291_52F6ABAE 
+X-CRM114-Status: GOOD (  16.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,34 +117,107 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
 
-MLO MBSSID series for cfg80211/mac80211, which is in review here 
-https://patchwork.kernel.org/project/linux-wireless/list/?series=902914&state=%2A&archive=both,
-changes the way transmitted profile data is stored for each link.
-As drivers currently retrieve 'arvif' for transmitted profile at
-multiple places, MLO MBSSID changes will becomes unnecessarily
-bloated with RCU operations for every retrieval. Refactor 'tx_arvif'
-to avoid this.
+Function ath11k_mac_setup_bcn_tmpl() retrieves tx_arvif only for
+a sanity check and then calls ath11k_mac_setup_bcn_tmpl_mbssid()
+or ath11k_mac_setup_bcn_tmpl_ema() both of which again retrieve
+the same pointer. Instead store the pointer and pass it to the
+latter two functions.
 
-Additionally, fix an issue in ath11k_mac_update_vif_chan() where
-tx_arvif is not reset to NULL inside 'for' loop during each
-iteration.
+Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath11k/mac.c | 40 +++++++++++++--------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
 
-v2: fixed kernel test robot error in patch 1/5 for tx_vif.
-https://lore.kernel.org/oe-kbuild-all/202501160626.Jbb3GHnk-lkp@intel.com
-
-Aloka Dixit (5):
-  wifi: ath11k: refactor transmitted arvif retrieval
-  wifi: ath11k: pass tx arvif for MBSSID and EMA beacon generation
-  wifi: ath12k: refactor transmitted arvif retrieval
-  wifi: ath12k: pass tx arvif for MBSSID and EMA beacon generation
-  wifi: ath12k: pass BSSID index as input for EMA
-
- drivers/net/wireless/ath/ath11k/mac.c | 75 ++++++++++++-------------
- drivers/net/wireless/ath/ath12k/mac.c | 81 +++++++++++++--------------
- 2 files changed, 76 insertions(+), 80 deletions(-)
-
-
-base-commit: e12eaef2f7ad3451fea43de58fd9da64ec888c01
+diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
+index b1a79d8f980e..67f733aac759 100644
+--- a/drivers/net/wireless/ath/ath11k/mac.c
++++ b/drivers/net/wireless/ath/ath11k/mac.c
+@@ -1537,17 +1537,15 @@ static struct ath11k_vif *ath11k_mac_get_tx_arvif(struct ath11k_vif *arvif)
+ 	return NULL;
+ }
+ 
+-static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
++static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif,
++					 struct ath11k_vif *tx_arvif)
+ {
+-	struct ath11k_vif *tx_arvif;
+ 	struct ieee80211_ema_beacons *beacons;
+ 	int ret = 0;
+ 	bool nontx_vif_params_set = false;
+ 	u32 params = 0;
+ 	u8 i = 0;
+ 
+-	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+-
+ 	beacons = ieee80211_beacon_get_template_ema_list(tx_arvif->ar->hw,
+ 							 tx_arvif->vif, 0);
+ 	if (!beacons || !beacons->cnt) {
+@@ -1593,25 +1591,22 @@ static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
+ 	return ret;
+ }
+ 
+-static int ath11k_mac_setup_bcn_tmpl_mbssid(struct ath11k_vif *arvif)
++static int ath11k_mac_setup_bcn_tmpl_mbssid(struct ath11k_vif *arvif,
++					    struct ath11k_vif *tx_arvif)
+ {
+ 	struct ath11k *ar = arvif->ar;
+ 	struct ath11k_base *ab = ar->ab;
+-	struct ath11k_vif *tx_arvif = arvif;
+ 	struct ieee80211_hw *hw = ar->hw;
+ 	struct ieee80211_vif *vif = arvif->vif;
+ 	struct ieee80211_mutable_offsets offs = {};
+ 	struct sk_buff *bcn;
+ 	int ret;
+ 
+-	if (vif->mbssid_tx_vif) {
+-		tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+-		if (tx_arvif != arvif) {
+-			ar = tx_arvif->ar;
+-			ab = ar->ab;
+-			hw = ar->hw;
+-			vif = tx_arvif->vif;
+-		}
++	if (tx_arvif != arvif) {
++		ar = tx_arvif->ar;
++		ab = ar->ab;
++		hw = ar->hw;
++		vif = tx_arvif->vif;
+ 	}
+ 
+ 	bcn = ieee80211_beacon_get_template(hw, vif, &offs, 0);
+@@ -1640,6 +1635,7 @@ static int ath11k_mac_setup_bcn_tmpl_mbssid(struct ath11k_vif *arvif)
+ static int ath11k_mac_setup_bcn_tmpl(struct ath11k_vif *arvif)
+ {
+ 	struct ieee80211_vif *vif = arvif->vif;
++	struct ath11k_vif *tx_arvif;
+ 
+ 	if (arvif->vdev_type != WMI_VDEV_TYPE_AP)
+ 		return 0;
+@@ -1647,14 +1643,18 @@ static int ath11k_mac_setup_bcn_tmpl(struct ath11k_vif *arvif)
+ 	/* Target does not expect beacon templates for the already up
+ 	 * non-transmitting interfaces, and results in a crash if sent.
+ 	 */
+-	if (vif->mbssid_tx_vif &&
+-	    arvif != ath11k_vif_to_arvif(vif->mbssid_tx_vif) && arvif->is_up)
+-		return 0;
++	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
++	if (tx_arvif) {
++		if (arvif != tx_arvif && arvif->is_up)
++			return 0;
+ 
+-	if (vif->bss_conf.ema_ap && vif->mbssid_tx_vif)
+-		return ath11k_mac_setup_bcn_tmpl_ema(arvif);
++		if (vif->bss_conf.ema_ap)
++			return ath11k_mac_setup_bcn_tmpl_ema(arvif, tx_arvif);
++	} else {
++		tx_arvif = arvif;
++	}
+ 
+-	return ath11k_mac_setup_bcn_tmpl_mbssid(arvif);
++	return ath11k_mac_setup_bcn_tmpl_mbssid(arvif, tx_arvif);
+ }
+ 
+ void ath11k_mac_bcn_tx_event(struct ath11k_vif *arvif)
 -- 
 2.34.1
 
