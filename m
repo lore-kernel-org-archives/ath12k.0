@@ -4,94 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F309C0218B
-	for <ath12k@archiver.kernel.org>; Mon, 20 Jan 2025 09:59:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 091BFC02182
+	for <ath12k@archiver.kernel.org>; Mon, 20 Jan 2025 13:44:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BYlT3vKGqb8qLHbho6ZMRN+RhqY4hiPa/xwp/PEXTjg=; b=GwlMdzy7WtKkPVum+lUsMuvkru
-	W98sxdWVBrUgDbu28uBp6mpZFetonHvlLChmOQ6Z0yLb4pU3EDc+EVsrHcMdoYAsAkEjGtwRlcULS
-	EbhbWfNC8TtuuyPHy9xR7iaq5a1fbP/t4CGTMOjcjeoOSj3cOENa46EhKklfYbXkLI2Sii+0ES6rk
-	rmwuDHpKYmULjQRo+ZVQzFfaz4HUxCkvnwSeSLMLV+bmuQotR+ysF+k0e4mPY96dt6NVCxVjlEyGd
-	AIJQgk1Qy/kVcm3EhYrWN8DsDaJEmRLnAZ3+O/gLqQ+F85720BOoCC8EuqheF+ftkrOZbMbAK6SYO
-	8FZGWJBw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=r2BqR6vP6mdn8hj7llwCRpMNXE0XgW91Z7dhsnJpJUo=; b=DB1UcXu3Y2C0pV2BAq0u38BeAO
+	BrW37EbtBo2xElgt8ZNHDDCgfP9N06pw6ICA+tJyvwGGiAayd9s+t4FqE1gFSVuUPUcZhTYyjU18R
+	3eMiBIVzNHXIa/wcRFHA13AQ91JxXwjiGEO0iZ4m4B/As7z6nkPpaLRca6l2x7GQwBgJrPqaU0+7H
+	mpjH5gtkLNKYzi+zM/IoV72ELZFgUFfCtsSOhw8gHjnEQSuAOgo5c73/BXP82sl5q9yS/ANeVPBI1
+	qkHJczstaDiU2RtuWPfxMKQCPoUpE4+4gm0GHdKTSWv4975naVLoqP5MAOe/Fv0QsuzGTmo7rJ7vW
+	611cnkCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZoYt-00000005GRi-0WNu
+	id 1tZs4r-00000005gr1-2DsJ
 	for ath12k@archiver.kernel.org;
-	Mon, 20 Jan 2025 09:59:15 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 20 Jan 2025 13:44:29 +0000
+Received: from mgamail.intel.com ([198.175.65.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZoPB-00000005EhU-3qfZ
+	id 1tZs4o-00000005gpm-16SA
 	for ath12k@lists.infradead.org;
-	Mon, 20 Jan 2025 09:49:15 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50K9RkS7014534;
-	Mon, 20 Jan 2025 09:49:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	BYlT3vKGqb8qLHbho6ZMRN+RhqY4hiPa/xwp/PEXTjg=; b=NAQDED9VFXIcRZzy
-	kk3509P63FqOrs8FIKC845NP0AA2w6ho/0BzcnFDGugC9QuXKf6oY/NwcfYPrL5B
-	oKy+LXpTrJjjV4g18llQ5BSp/fkhAC6zXvZNUR4vRxu+QMeiZZu4NeEcGzyTiX3n
-	prHKWrvsRFdJ8k8zRieqmafd04VCW+p4/P47jkwK5DJ4quexuegMiQMMaxbHJuuK
-	DVcmmNgYQTxb8RL3acNEkQsdAJmAKEehU9jjIDskcdKmwrjx07jF4nrWnc3wxBaK
-	D2Y++V3YLFkoZnYkh5cFD5N0CmdpdqqmsJ/79cw1OFibGb49jf7wPmygz5PwwIRh
-	UnKZUA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 449kvh81nd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Jan 2025 09:49:11 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50K9nBaf005932
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Jan 2025 09:49:11 GMT
-Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 20 Jan 2025 01:49:07 -0800
-From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Date: Mon, 20 Jan 2025 15:18:30 +0530
-Subject: [PATCH v2 10/10] wifi: ath12k: reset MLO global memory during
- recovery
+	Mon, 20 Jan 2025 13:44:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1737380666; x=1768916666;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=DsaHPxT3RlV75KUJfkBw0FJXcFsw//d6mKtWO8gQ6t8=;
+  b=R5hBcZ3x4wHKRlchrnHUB33UUb2J+Wkxcu+cFl52avdVL+BNwjEtyoJH
+   h38fjIyn9ADjXuzNvErn9STJY8vfDzuvQlWutuV9U2FBfQzFcyuaoNKlI
+   w2kKEGTwFwOD7t5jG0mDf0dzBtczTUpjJ0wmcuo1LHCjUeyqxu2kbVStH
+   jVFG2tsOIkgzns1wcD5J9Z+9863797zyEPbTeZxTENk69HUOheLv5m8jA
+   HKqa3HnQ91QV1KlPomxHWD25UuydKrvm892SJInVNty8Tcevh3ENh2pW5
+   Sp7y6wyMPOsad3B37JG86yZVY7L+bXxhEpCgTpIzH8fFhZ88lJCej/s0T
+   g==;
+X-CSE-ConnectionGUID: 5kzijWynQJ2WfA8NQWDfAQ==
+X-CSE-MsgGUID: ahsiBPWRTvCR3Cy5iR1+rA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11321"; a="48267310"
+X-IronPort-AV: E=Sophos;i="6.13,219,1732608000"; 
+   d="scan'208";a="48267310"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Jan 2025 05:44:23 -0800
+X-CSE-ConnectionGUID: kyDDcgWbTXakzqHbRFLmqg==
+X-CSE-MsgGUID: 0HG9aAZaSpqIMvXMs9imeA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="106354552"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by orviesa010.jf.intel.com with ESMTP; 20 Jan 2025 05:44:21 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tZs4g-000Wap-0b;
+	Mon, 20 Jan 2025 13:44:18 +0000
+Date: Mon, 20 Jan 2025 21:43:27 +0800
+From: kernel test robot <lkp@intel.com>
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+	ath12k@lists.infradead.org
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	linux-wireless@vger.kernel.org,
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+	P Praneesh <quic_ppranees@quicinc.com>,
+	Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
+Subject: Re: [PATCH v3 10/10] wifi: ath12k: Add peer extended Rx statistics
+ debugfs support
+Message-ID: <202501202128.ZGQrxylz-lkp@intel.com>
+References: <20250119135751.2221902-11-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-ID: <20250120-fix_reboot_issues_with_hw_grouping-v2-10-b7d073bb2a22@quicinc.com>
-References: <20250120-fix_reboot_issues_with_hw_grouping-v2-0-b7d073bb2a22@quicinc.com>
-In-Reply-To: <20250120-fix_reboot_issues_with_hw_grouping-v2-0-b7d073bb2a22@quicinc.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        Harshitha Prem
-	<quic_hprem@quicinc.com>
-CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        Kalle Valo
-	<quic_kvalo@quicinc.com>, <linux-wireless@vger.kernel.org>,
-        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        "Aditya Kumar
- Singh" <quic_adisi@quicinc.com>
-X-Mailer: b4 0.14.2
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: LgVgcE4xYKD_boynrhwIDiXZgFEheuoj
-X-Proofpoint-ORIG-GUID: LgVgcE4xYKD_boynrhwIDiXZgFEheuoj
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-20_02,2025-01-20_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- lowpriorityscore=0 malwarescore=0 priorityscore=1501 spamscore=0
- bulkscore=0 phishscore=0 mlxlogscore=999 impostorscore=0 adultscore=0
- suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501200081
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20250119135751.2221902-11-quic_periyasa@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250120_014913_964830_A669604C 
-X-CRM114-Status: GOOD (  20.53  )
+X-CRM114-CacheID: sfid-20250120_054426_369501_A499BD5C 
+X-CRM114-Status: GOOD (  13.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,112 +93,309 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-When operating with multiple devices grouped together, the firmware stores
-data related to the state machine of each partner device in the MLO global
-memory region. If the firmware crashes, it updates the state to 'crashed'.
-During recovery, this memory is shared with the firmware again, and upon
-detecting the 'crashed' state, it reasserts. This leads to a loop of
-firmware asserts and it never recovers.
+Hi Karthikeyan,
 
-Hence to fix this issue,  once all devices in the group have been asserted
-and powered down, reset the MLO global memory region.
+kernel test robot noticed the following build errors:
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+[auto build test ERROR on e7ef944b3e2c31b608800925e784f67596375770]
 
-Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.c |  3 +++
- drivers/net/wireless/ath/ath12k/qmi.c  | 24 +++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/qmi.h  |  4 +++-
- 3 files changed, 29 insertions(+), 2 deletions(-)
+url:    https://github.com/intel-lab-lkp/linux/commits/Karthikeyan-Periyasamy/wifi-ath12k-Add-HAL_PHYRX_GENERIC_U_SIG-TLV-parsing-support/20250119-220042
+base:   e7ef944b3e2c31b608800925e784f67596375770
+patch link:    https://lore.kernel.org/r/20250119135751.2221902-11-quic_periyasa%40quicinc.com
+patch subject: [PATCH v3 10/10] wifi: ath12k: Add peer extended Rx statistics debugfs support
+config: x86_64-allyesconfig (https://download.01.org/0day-ci/archive/20250120/202501202128.ZGQrxylz-lkp@intel.com/config)
+compiler: clang version 19.1.3 (https://github.com/llvm/llvm-project ab51eccf88f5321e7c60591c5546b254b6afab99)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250120/202501202128.ZGQrxylz-lkp@intel.com/reproduce)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index a7c22402dbe3e09f00dafef7d701c18ca8dceacc..d74c2f18bd8d3481605b262bbca4a6ca40d2635e 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1496,6 +1496,9 @@ static void ath12k_core_reset(struct work_struct *work)
- 		return;
- 	}
- 
-+	/* Prepare MLO global memory region for power up */
-+	ath12k_qmi_reset_mlo_mem(ag);
-+
- 	for (i = 0; i < ag->num_devices; i++) {
- 		ab = ag->ab[i];
- 		if (!ab)
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
-index 5c3563383fabba779b0afd885802637fd5c53656..bc14fa106b27015b35641caac51fcb4b808e094d 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.c
-+++ b/drivers/net/wireless/ath/ath12k/qmi.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/elf.h>
-@@ -2440,6 +2440,28 @@ int ath12k_qmi_respond_fw_mem_request(struct ath12k_base *ab)
- 	return ret;
- }
- 
-+void ath12k_qmi_reset_mlo_mem(struct ath12k_hw_group *ag)
-+{
-+	struct target_mem_chunk *mlo_chunk;
-+	int i;
-+
-+	lockdep_assert_held(&ag->mutex);
-+
-+	if (!ag->mlo_mem.init_done || ag->num_started)
-+		return;
-+
-+	for (i = 0; i < ARRAY_SIZE(ag->mlo_mem.chunk); i++) {
-+		mlo_chunk = &ag->mlo_mem.chunk[i];
-+
-+		if (mlo_chunk->v.addr)
-+			/* TODO: Mode 0 recovery is the default mode hence resetting the
-+			 * whole memory region for now. Once Mode 1 support is added, this
-+			 * needs to be handled properly
-+			 */
-+			memset(mlo_chunk->v.addr, 0, mlo_chunk->size);
-+	}
-+}
-+
- static void ath12k_qmi_free_mlo_mem_chunk(struct ath12k_base *ab,
- 					  struct target_mem_chunk *chunk,
- 					  int idx)
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.h b/drivers/net/wireless/ath/ath12k/qmi.h
-index 45d7c3fcafdd7a0afa3d193cf612d255ca5a5e2e..1406ec372592b076dd0a5caef32044db238e352e 100644
---- a/drivers/net/wireless/ath/ath12k/qmi.h
-+++ b/drivers/net/wireless/ath/ath12k/qmi.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_QMI_H
-@@ -41,6 +41,7 @@
- #define ATH12K_BOARD_ID_DEFAULT	0xFF
- 
- struct ath12k_base;
-+struct ath12k_hw_group;
- 
- enum ath12k_qmi_file_type {
- 	ATH12K_QMI_FILE_TYPE_BDF_GOLDEN	= 0,
-@@ -621,5 +622,6 @@ void ath12k_qmi_deinit_service(struct ath12k_base *ab);
- int ath12k_qmi_init_service(struct ath12k_base *ab);
- void ath12k_qmi_free_resource(struct ath12k_base *ab);
- void ath12k_qmi_trigger_host_cap(struct ath12k_base *ab);
-+void ath12k_qmi_reset_mlo_mem(struct ath12k_hw_group *ag);
- 
- #endif
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202501202128.ZGQrxylz-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   In file included from drivers/net/wireless/ath/ath12k/debugfs_sta.c:8:
+   In file included from drivers/net/wireless/ath/ath12k/debugfs_sta.h:9:
+   In file included from include/net/mac80211.h:18:
+   In file included from include/linux/if_ether.h:19:
+   In file included from include/linux/skbuff.h:17:
+   In file included from include/linux/bvec.h:10:
+   In file included from include/linux/highmem.h:8:
+   In file included from include/linux/cacheflush.h:5:
+   In file included from arch/x86/include/asm/cacheflush.h:5:
+   In file included from include/linux/mm.h:2224:
+   include/linux/vmstat.h:504:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     504 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     505 |                            item];
+         |                            ~~~~
+   include/linux/vmstat.h:511:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     511 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     512 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/vmstat.h:524:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     524 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     525 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/debugfs_sta.c:80:32: warning: arithmetic between different enumeration types ('enum hal_rx_bw' and 'enum hal_rx_gi') [-Wenum-enum-conversion]
+      80 |         for (i = 0; i < HAL_RX_BW_MAX * HAL_RX_GI_MAX * HAL_RX_MAX_NSS; i++) {
+         |                         ~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~
+>> drivers/net/wireless/ath/ath12k/debugfs_sta.c:162:3: error: cannot jump from this goto statement to its label
+     162 |                 goto out;
+         |                 ^
+   drivers/net/wireless/ath/ath12k/debugfs_sta.c:167:6: note: jump bypasses initialization of variable with __attribute__((cleanup))
+     167 |         u8 *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
+         |             ^
+   drivers/net/wireless/ath/ath12k/debugfs_sta.c:156:3: error: cannot jump from this goto statement to its label
+     156 |                 goto out;
+         |                 ^
+   drivers/net/wireless/ath/ath12k/debugfs_sta.c:167:6: note: jump bypasses initialization of variable with __attribute__((cleanup))
+     167 |         u8 *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
+         |             ^
+   4 warnings and 2 errors generated.
+
+
+vim +162 drivers/net/wireless/ath/ath12k/debugfs_sta.c
+
+    14	
+    15	static
+    16	u32 ath12k_dbg_sta_dump_rate_stats(u8 *buf, u32 offset, const int size,
+    17					   bool he_rates_avail,
+    18					   const struct ath12k_rx_peer_rate_stats *stats)
+    19	{
+    20		static const char *legacy_rate_str[HAL_RX_MAX_NUM_LEGACY_RATES] = {
+    21						"1 Mbps", "2 Mbps", "5.5 Mbps", "6 Mbps",
+    22						"9 Mbps", "11 Mbps", "12 Mbps", "18 Mbps",
+    23						"24 Mbps", "36 Mbps", "48 Mbps", "54 Mbps"};
+    24		int mcs = 0, bw = 0, nss = 0, gi = 0, bw_num = 0;
+    25		u32 i, len = offset;
+    26		bool found;
+    27	
+    28		len += scnprintf(buf + len, size - len, "\nEHT stats:\n");
+    29		for (i = 0; i <= HAL_RX_MAX_MCS_BE; i++)
+    30			len += scnprintf(buf + len, size - len,
+    31					   "MCS %d: %llu%s", i, stats->be_mcs_count[i],
+    32					   (i + 1) % 8 ? "\t" : "\n");
+    33	
+    34		len += scnprintf(buf + len, size - len, "\nHE stats:\n");
+    35		for (i = 0; i <= HAL_RX_MAX_MCS_HE; i++)
+    36			len += scnprintf(buf + len, size - len,
+    37					   "MCS %d: %llu%s", i, stats->he_mcs_count[i],
+    38					   (i + 1) % 6 ? "\t" : "\n");
+    39	
+    40		len += scnprintf(buf + len, size - len, "\nVHT stats:\n");
+    41		for (i = 0; i <= HAL_RX_MAX_MCS_VHT; i++)
+    42			len += scnprintf(buf + len, size - len,
+    43					   "MCS %d: %llu%s", i, stats->vht_mcs_count[i],
+    44					   (i + 1) % 5 ? "\t" : "\n");
+    45	
+    46		len += scnprintf(buf + len, size - len, "\nHT stats:\n");
+    47		for (i = 0; i <= HAL_RX_MAX_MCS_HT; i++)
+    48			len += scnprintf(buf + len, size - len,
+    49					   "MCS %d: %llu%s", i, stats->ht_mcs_count[i],
+    50					   (i + 1) % 8 ? "\t" : "\n");
+    51	
+    52		len += scnprintf(buf + len, size - len, "\nLegacy stats:\n");
+    53		for (i = 0; i < HAL_RX_MAX_NUM_LEGACY_RATES; i++)
+    54			len += scnprintf(buf + len, size - len,
+    55					   "%s: %llu%s", legacy_rate_str[i],
+    56					   stats->legacy_count[i],
+    57					   (i + 1) % 4 ? "\t" : "\n");
+    58	
+    59		len += scnprintf(buf + len, size - len, "\nNSS stats:\n");
+    60		for (i = 0; i < HAL_RX_MAX_NSS; i++)
+    61			len += scnprintf(buf + len, size - len,
+    62					   "%dx%d: %llu ", i + 1, i + 1,
+    63					   stats->nss_count[i]);
+    64	
+    65		len += scnprintf(buf + len, size - len,
+    66				  "\n\nGI: 0.8 us %llu 0.4 us %llu 1.6 us %llu 3.2 us %llu\n",
+    67				  stats->gi_count[0],
+    68				  stats->gi_count[1],
+    69				  stats->gi_count[2],
+    70				  stats->gi_count[3]);
+    71	
+    72		len += scnprintf(buf + len, size - len,
+    73				   "BW: 20 MHz %llu 40 MHz %llu 80 MHz %llu 160 MHz %llu 320 MHz %llu\n",
+    74				   stats->bw_count[0],
+    75				   stats->bw_count[1],
+    76				   stats->bw_count[2],
+    77				   stats->bw_count[3],
+    78				   stats->bw_count[4]);
+    79	
+  > 80		for (i = 0; i < HAL_RX_BW_MAX * HAL_RX_GI_MAX * HAL_RX_MAX_NSS; i++) {
+    81			found = false;
+    82	
+    83			for (mcs = 0; mcs <= HAL_RX_MAX_MCS_HT; mcs++) {
+    84				if (stats->rx_rate[bw][gi][nss][mcs]) {
+    85					found = true;
+    86					break;
+    87				}
+    88			}
+    89	
+    90			if (!found)
+    91				goto skip_report;
+    92	
+    93			switch (bw) {
+    94			case HAL_RX_BW_20MHZ:
+    95				bw_num = 20;
+    96				break;
+    97			case HAL_RX_BW_40MHZ:
+    98				bw_num = 40;
+    99				break;
+   100			case HAL_RX_BW_80MHZ:
+   101				bw_num = 80;
+   102				break;
+   103			case HAL_RX_BW_160MHZ:
+   104				bw_num = 160;
+   105				break;
+   106			case HAL_RX_BW_320MHZ:
+   107				bw_num = 320;
+   108				break;
+   109			}
+   110	
+   111			len += scnprintf(buf + len, size - len, "\n%d Mhz gi %d us %dx%d : ",
+   112					 bw_num, gi, nss + 1, nss + 1);
+   113	
+   114			for (mcs = 0; mcs <= HAL_RX_MAX_MCS_HT; mcs++) {
+   115				if (stats->rx_rate[bw][gi][nss][mcs])
+   116					len += scnprintf(buf + len, size - len,
+   117							 " %d:%llu", mcs,
+   118							 stats->rx_rate[bw][gi][nss][mcs]);
+   119			}
+   120	
+   121	skip_report:
+   122			if (nss++ >= HAL_RX_MAX_NSS - 1) {
+   123				nss = 0;
+   124				if (gi++ >= HAL_RX_GI_MAX - 1) {
+   125					gi = 0;
+   126					if (bw < HAL_RX_BW_MAX - 1)
+   127						bw++;
+   128				}
+   129			}
+   130		}
+   131	
+   132		len += scnprintf(buf + len, size - len, "\n");
+   133	
+   134		return len - offset;
+   135	}
+   136	
+   137	static ssize_t ath12k_dbg_sta_dump_rx_stats(struct file *file,
+   138						    char __user *user_buf,
+   139						    size_t count, loff_t *ppos)
+   140	{
+   141		struct ieee80211_link_sta *link_sta = file->private_data;
+   142		struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(link_sta->sta);
+   143		const int size = ATH12K_STA_RX_STATS_BUF_SIZE;
+   144		struct ath12k_hw *ah = ahsta->ahvif->ah;
+   145		struct ath12k_rx_peer_stats *rx_stats;
+   146		struct ath12k_link_sta *arsta;
+   147		u8 link_id = link_sta->link_id;
+   148		int len = 0, i, ret = 0;
+   149		bool he_rates_avail;
+   150		struct ath12k *ar;
+   151	
+   152		wiphy_lock(ah->hw->wiphy);
+   153	
+   154		if (!(BIT(link_id) & ahsta->links_map)) {
+   155			ret = -ENOENT;
+   156			goto out;
+   157		}
+   158	
+   159		arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
+   160		if (!arsta || !arsta->arvif->ar) {
+   161			ret = -ENOENT;
+ > 162			goto out;
+   163		}
+   164	
+   165		ar = arsta->arvif->ar;
+   166	
+   167		u8 *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
+   168		if (!buf) {
+   169			ret = -ENOENT;
+   170			goto out;
+   171		}
+   172	
+   173		spin_lock_bh(&ar->ab->base_lock);
+   174	
+   175		rx_stats = arsta->rx_stats;
+   176		if (!rx_stats) {
+   177			ret = -ENOENT;
+   178			goto unlock;
+   179		}
+   180	
+   181		len += scnprintf(buf + len, size - len, "RX peer stats:\n\n");
+   182		len += scnprintf(buf + len, size - len, "Num of MSDUs: %llu\n",
+   183				 rx_stats->num_msdu);
+   184		len += scnprintf(buf + len, size - len, "Num of MSDUs with TCP L4: %llu\n",
+   185				 rx_stats->tcp_msdu_count);
+   186		len += scnprintf(buf + len, size - len, "Num of MSDUs with UDP L4: %llu\n",
+   187				 rx_stats->udp_msdu_count);
+   188		len += scnprintf(buf + len, size - len, "Num of other MSDUs: %llu\n",
+   189				 rx_stats->other_msdu_count);
+   190		len += scnprintf(buf + len, size - len, "Num of MSDUs part of AMPDU: %llu\n",
+   191				 rx_stats->ampdu_msdu_count);
+   192		len += scnprintf(buf + len, size - len, "Num of MSDUs not part of AMPDU: %llu\n",
+   193				 rx_stats->non_ampdu_msdu_count);
+   194		len += scnprintf(buf + len, size - len, "Num of MSDUs using STBC: %llu\n",
+   195				 rx_stats->stbc_count);
+   196		len += scnprintf(buf + len, size - len, "Num of MSDUs beamformed: %llu\n",
+   197				 rx_stats->beamformed_count);
+   198		len += scnprintf(buf + len, size - len, "Num of MPDUs with FCS ok: %llu\n",
+   199				 rx_stats->num_mpdu_fcs_ok);
+   200		len += scnprintf(buf + len, size - len, "Num of MPDUs with FCS error: %llu\n",
+   201				 rx_stats->num_mpdu_fcs_err);
+   202	
+   203		he_rates_avail = (rx_stats->pream_cnt[HAL_RX_PREAMBLE_11AX] > 1) ? true : false;
+   204	
+   205		len += scnprintf(buf + len, size - len,
+   206				 "preamble: 11A %llu 11B %llu 11N %llu 11AC %llu 11AX %llu 11BE %llu\n",
+   207				 rx_stats->pream_cnt[0], rx_stats->pream_cnt[1],
+   208				 rx_stats->pream_cnt[2], rx_stats->pream_cnt[3],
+   209				 rx_stats->pream_cnt[4], rx_stats->pream_cnt[6]);
+   210		len += scnprintf(buf + len, size - len,
+   211				 "reception type: SU %llu MU_MIMO %llu MU_OFDMA %llu MU_OFDMA_MIMO %llu\n",
+   212				 rx_stats->reception_type[0], rx_stats->reception_type[1],
+   213				 rx_stats->reception_type[2], rx_stats->reception_type[3]);
+   214	
+   215		len += scnprintf(buf + len, size - len, "TID(0-15) Legacy TID(16):");
+   216		for (i = 0; i <= IEEE80211_NUM_TIDS; i++)
+   217			len += scnprintf(buf + len, size - len, "%llu ", rx_stats->tid_count[i]);
+   218	
+   219		len += scnprintf(buf + len, size - len, "\nRX Duration:%llu\n",
+   220				 rx_stats->rx_duration);
+   221	
+   222		len += scnprintf(buf + len, size - len,
+   223				 "\nDCM: %llu\nRU26:  %llu\nRU52:  %llu\nRU106: %llu\nRU242: %llu\nRU484: %llu\nRU996: %llu\n",
+   224				 rx_stats->dcm_count, rx_stats->ru_alloc_cnt[0],
+   225				 rx_stats->ru_alloc_cnt[1], rx_stats->ru_alloc_cnt[2],
+   226				 rx_stats->ru_alloc_cnt[3], rx_stats->ru_alloc_cnt[4],
+   227				 rx_stats->ru_alloc_cnt[5]);
+   228	
+   229		len += scnprintf(buf + len, size - len, "\nRX success packet stats:\n");
+   230		len += ath12k_dbg_sta_dump_rate_stats(buf, len, size, he_rates_avail,
+   231						      &rx_stats->pkt_stats);
+   232	
+   233		len += scnprintf(buf + len, size - len, "\n");
+   234	
+   235		len += scnprintf(buf + len, size - len, "\nRX success byte stats:\n");
+   236		len += ath12k_dbg_sta_dump_rate_stats(buf, len, size, he_rates_avail,
+   237						      &rx_stats->byte_stats);
+   238	
+   239	unlock:
+   240		spin_unlock_bh(&ar->ab->base_lock);
+   241	
+   242		if (len)
+   243			ret = simple_read_from_buffer(user_buf, count, ppos, buf, len);
+   244	out:
+   245		wiphy_unlock(ah->hw->wiphy);
+   246		return ret;
+   247	}
+   248	
 
 -- 
-2.34.1
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
