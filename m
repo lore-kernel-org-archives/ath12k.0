@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F28FAC0218D
-	for <ath12k@archiver.kernel.org>; Mon, 20 Jan 2025 09:59:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AE79C02188
+	for <ath12k@archiver.kernel.org>; Mon, 20 Jan 2025 09:59:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=U9QdDK1AK18MRHUkD8EvpMdCBeC6RRqMfFIoRyGVuLM=; b=rTxF0bKJv8j/PejkTME8CLWnPq
-	oxh0/G7kOxA41NkZxJH7wAlMpFxDq4y5YXT2XMGWphsEjxpRLZoEzaEgA6teM9+qybg+UkZmnwbY2
-	K1qbrYN51+ml5hBd1vzx/uAz3wbmOlqy4gwswR0HyWKRhBdwSY6lJpavsrqzDp3DwAnZj32ptWNzn
-	wkrB1PFw9eIxaUWYxbUEq/oWmodIKfKSZXkoiehLfdLKrrm8vBooWAuZl1iQ/jyevo5CaRiq6qKUA
-	ON8o/HpyG9H3tmAnhd/ZCpAAoZvj1dBwJ380QOoTZ2B8MvT6Fn/qS23zCcACrB0K1hnEk1M4U2t+s
-	/3uDYgrA==;
+	bh=XTR2fVXhW9PYJNzKpulitLbceGSHbNTT+f0aFa0qX+4=; b=jZvopaGxIj4KwjVrV7vf0nAHxP
+	SwKnY/zSjpAXATdFBnHYjovROKm1JIeaVO7joBtAwXq7Cw0IXikucme6+T6DPnrY5fw40+rzYMYO+
+	/laKcsIIxtL1/7IEe+gTOOfsUq3rDDC6+d75aeyMEAl3xh/nu32upHzFvAaFWxXuPf9F3kZyKCs/p
+	IC3Q2BX5pOth+qWnrLr/+gzCsyKc5Xzn73QAPVF77XBa111b16FZxkAWtqbm4RWMaqd2C0Ia7uQ1/
+	/dTJmG6w5Gjuxfnwm3k8nOwz0dw30kGz6A4dUpSOG4W3XW7/hTju8D32rBjSbVOEZZnwa10UrraCM
+	HmSQ1+OQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZoYr-00000005GPy-32pc
+	id 1tZoYs-00000005GQR-0yx0
 	for ath12k@archiver.kernel.org;
-	Mon, 20 Jan 2025 09:59:13 +0000
+	Mon, 20 Jan 2025 09:59:14 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZoOy-00000005Eck-3p44
+	id 1tZoP2-00000005EeR-1kxm
 	for ath12k@lists.infradead.org;
-	Mon, 20 Jan 2025 09:49:02 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50K6di7A005217;
-	Mon, 20 Jan 2025 09:48:59 GMT
+	Mon, 20 Jan 2025 09:49:05 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50K9S689014772;
+	Mon, 20 Jan 2025 09:49:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	U9QdDK1AK18MRHUkD8EvpMdCBeC6RRqMfFIoRyGVuLM=; b=TZqCQkSXkCechvNx
-	oZAe+8/Ni9FP/RICedB+9QYJCvcPDNDcj+oKQtom5hbKhSf5v6Yyk2YgzQDdub8m
-	+EpJuGi/3Ibw8HNPqNKdZ38tyRMNbJsSkNBmuuV44oGVhODpIBFhXeLVuq0SJZgl
-	qktfyaTOCX41arkCd4HOcDpub3Sx/G1ZMuZGacmVgMp0Jo+Nic1Frq/pjG5OxJVs
-	z1prk317X7UrMlCe/gsPLRK4eAhgqrZRncAxNpAHGBSiRJ8fu6bPEvXcfkDwxj8K
-	WT0e77snhSci/VNLsHi8IVDAUosiaxaiPOeIbVehmQFHKCki3Y9GHsuDbUOz2GMF
-	9PVpbQ==
+	XTR2fVXhW9PYJNzKpulitLbceGSHbNTT+f0aFa0qX+4=; b=pJVjrfVJ3efTT5Lo
+	JSvryBLhB15+/0Al2DOhXfa8zzIsHi4J0qO5W3fZBj5G142aYDSlMHTbAaUleyR2
+	xi+r3D7lj60oP0KVQxekikzAILCqQuT8+2G+0rr2Se7K7FEHUcX6F+MjQYm35I5a
+	El6SqHENA7IK/rSvZOrYkejQV00ZXi5fB3ugTEQt1sJI6TNG3rRpfwRumfpNUHYW
+	1gaHZQDuYEOtVgLeNPbap6s2PqIiwZbcF9FjCn9dEWL3ewOLZkvPjAlQwA3rkPZp
+	oUeyEMtWXDdPA4JoSIzlGok+Pcr7hIKM3sReMGd/JQMUcSRrOJEEwU8Zr8IgKXwm
+	HPOriw==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 449hdu8etq-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 449kvh81mv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Jan 2025 09:48:58 +0000 (GMT)
+	Mon, 20 Jan 2025 09:49:02 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50K9mwO1007791
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50K9n1vZ007871
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Jan 2025 09:48:58 GMT
+	Mon, 20 Jan 2025 09:49:01 GMT
 Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 20 Jan 2025 01:48:55 -0800
+ 15.2.1544.9; Mon, 20 Jan 2025 01:48:58 -0800
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Date: Mon, 20 Jan 2025 15:18:27 +0530
-Subject: [PATCH v2 07/10] wifi: ath12k: fix ATH12K_FLAG_REGISTERED flag
- handling
+Date: Mon, 20 Jan 2025 15:18:28 +0530
+Subject: [PATCH v2 08/10] wifi: ath12k: handle ath12k_core_restart() with
+ hardware grouping
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250120-fix_reboot_issues_with_hw_grouping-v2-7-b7d073bb2a22@quicinc.com>
+Message-ID: <20250120-fix_reboot_issues_with_hw_grouping-v2-8-b7d073bb2a22@quicinc.com>
 References: <20250120-fix_reboot_issues_with_hw_grouping-v2-0-b7d073bb2a22@quicinc.com>
 In-Reply-To: <20250120-fix_reboot_issues_with_hw_grouping-v2-0-b7d073bb2a22@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
@@ -79,19 +79,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Y5jAOW13n43ZiLtJ9iom5Fx8ZM7A9Pzn
-X-Proofpoint-ORIG-GUID: Y5jAOW13n43ZiLtJ9iom5Fx8ZM7A9Pzn
+X-Proofpoint-GUID: AJzOWqrrs4GvM0m9XdCcJjTWnm4yWO43
+X-Proofpoint-ORIG-GUID: AJzOWqrrs4GvM0m9XdCcJjTWnm4yWO43
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-20_02,2025-01-20_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
- adultscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0 priorityscore=1501
- phishscore=0 clxscore=1015 impostorscore=0 malwarescore=0 mlxlogscore=957
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501200081
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ lowpriorityscore=0 malwarescore=0 priorityscore=1501 spamscore=0
+ bulkscore=0 phishscore=0 mlxlogscore=999 impostorscore=0 adultscore=0
+ suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501200081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250120_014900_970137_29F1F142 
-X-CRM114-Status: GOOD (  14.50  )
+X-CRM114-CacheID: sfid-20250120_014904_512242_4EC8C1FE 
+X-CRM114-Status: GOOD (  15.16  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,85 +106,50 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Commit a5686ae820fa ("wifi: ath12k: move ATH12K_FLAG_REGISTERED handling to
-ath12k_mac_register()") relocated the setting of the ATH12K_FLAG_REGISTERED
-flag to the ath12k_mac_register() function. However, this function only
-accesses the first device (ab) via ag->ab[0], resulting in the flag being
-set only for the first device in the group. Similarly,
-ath12k_mac_unregister() only unsets the flag for the first device. The flag
-should actually be set for all devices in the group to avoid issues during
-recovery.
+Currently, when ath12k_core_restart() is called and the ab->is_reset flag
+is set, it invokes ieee80211_restart_hw() for all hardware in the same
+group. However, other hardware might still be in the recovery process,
+making this call inappropriate with grouping into picture.
 
-Hence, move setting and clearing of this flag in the function
-ath12k_core_hw_group_start() and ath12k_core_hw_group_stop() respectively.
+To address this, add a condition to check if the group is ready. If the
+group is not ready, do not call ieee80211_restart_hw().
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-Fixes: a5686ae820fa ("wifi: ath12k: move ATH12K_FLAG_REGISTERED handling to ath12k_mac_register()")
 Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 5 +++++
- drivers/net/wireless/ath/ath12k/mac.c  | 6 ------
- 2 files changed, 5 insertions(+), 6 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 548af77ba892928c3e73fd7c917ad344b35e6883..f645f1fb24dcb3f0aabc537cd9ac08e6d4bef95b 100644
+index f645f1fb24dcb3f0aabc537cd9ac08e6d4bef95b..aedb42a0ea85da705d213ae33871af1b5afbe21a 100644
 --- a/drivers/net/wireless/ath/ath12k/core.c
 +++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -920,6 +920,9 @@ static void ath12k_core_hw_group_stop(struct ath12k_hw_group *ag)
- 		ab = ag->ab[i];
- 		if (!ab)
- 			continue;
+@@ -1398,12 +1398,22 @@ static void ath12k_core_restart(struct work_struct *work)
+ 			ath12k_dbg(ab, ATH12K_DBG_BOOT, "reset success\n");
+ 		}
+ 
++		mutex_lock(&ag->mutex);
 +
-+		clear_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags);
++		if (!ath12k_core_hw_group_start_ready(ag)) {
++			mutex_unlock(&ag->mutex);
++			goto exit_restart;
++		}
 +
- 		ath12k_core_device_cleanup(ab);
+ 		for (i = 0; i < ag->num_hw; i++) {
+-			ah = ath12k_ag_to_ah(ab->ag, i);
++			ah = ath12k_ag_to_ah(ag, i);
+ 			ieee80211_restart_hw(ah->hw);
+ 		}
++
++		mutex_unlock(&ag->mutex);
  	}
  
-@@ -1025,6 +1028,8 @@ static int ath12k_core_hw_group_start(struct ath12k_hw_group *ag)
++exit_restart:
+ 	complete(&ab->restart_completed);
+ }
  
- 		mutex_lock(&ab->core_lock);
- 
-+		set_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags);
-+
- 		ret = ath12k_core_pdev_create(ab);
- 		if (ret) {
- 			ath12k_err(ab, "failed to create pdev core %d\n", ret);
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 2d062b5904a8ef3f945c5111d979d5616901280c..2f13d3b80dfeb8ea81474bac229c52189de67225 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11244,7 +11244,6 @@ void ath12k_mac_mlo_teardown(struct ath12k_hw_group *ag)
- 
- int ath12k_mac_register(struct ath12k_hw_group *ag)
- {
--	struct ath12k_base *ab = ag->ab[0];
- 	struct ath12k_hw *ah;
- 	int i;
- 	int ret;
-@@ -11257,8 +11256,6 @@ int ath12k_mac_register(struct ath12k_hw_group *ag)
- 			goto err;
- 	}
- 
--	set_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags);
--
- 	return 0;
- 
- err:
-@@ -11275,12 +11272,9 @@ int ath12k_mac_register(struct ath12k_hw_group *ag)
- 
- void ath12k_mac_unregister(struct ath12k_hw_group *ag)
- {
--	struct ath12k_base *ab = ag->ab[0];
- 	struct ath12k_hw *ah;
- 	int i;
- 
--	clear_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags);
--
- 	for (i = ag->num_hw - 1; i >= 0; i--) {
- 		ah = ath12k_ag_to_ah(ag, i);
- 		if (!ah)
 
 -- 
 2.34.1
