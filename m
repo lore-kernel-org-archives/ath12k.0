@@ -4,88 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA6E9C02182
-	for <ath12k@archiver.kernel.org>; Tue, 21 Jan 2025 11:00:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F2A2C02182
+	for <ath12k@archiver.kernel.org>; Tue, 21 Jan 2025 14:21:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0110w/5hEyoEkseqshvplOtl+V80g2OAplLpO2U9Uv4=; b=Xf/+KtTb0P91YiwqMWyb6/q5Z+
-	mbVFDRsIwia+ksSS2MsbYnR6URBlCI1Nw4B7rKqmPL4ewk4q3KbxBDNH1E04bXtY/K8EHbgxVypi8
-	H+JGsNbmvWP8Hu/KBac/NKuxKj+Pc0TrwI5LCqJTKxBDXo+gbWqff5UjaECQk3aYN8c65xQvau8QG
-	P4P0Ekttkv3TuXfOpm/OAH1h7L2Dqx7CHQh2V9OktfV6W1lyrfzKim+UzOdngKrcxHULBG7dU9DrX
-	syKfx1wQJI2mXeMmVPoANm1sXr8d6xcRJ4fy3Y/qglmHTGwPJotOJIicdrugbrAOLLuUQcWYAkaNO
-	eq0t7RpQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:Date:Cc:To:From:Subject:Message-ID:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=EfEz8vizuQoVkRitl/ucOWM7li3IRfnr9/8/F2wewm0=; b=uNqE/2i3pIZQMiFugvvA5zs/mf
+	lERubMnysOK8yK3NHhApmm8S/dI+v4AAY7BM2Vu4Qx4qB5V6YwF0QuMJLzIHBBIKM8gYoZECy3+Tl
+	8I0y5ueKOOcMqo36shA3YV5skh6w8nBsxfMF/pkkWc5nspAmcMSXFRgRnfsTlNjSrP0Z9jA7/ka1I
+	Kmn0mbSwDWEd0naZI+AynmEK9gU8xoAs49nJ+FPdvzZNf8/K60TfU4Ab/kss89BGx1FOyjIaekFme
+	V328zFexCYDJGkIMmKuvplFZU3oV0WVvpp6symHTsZ5yd77QWqmy4Bo1kG/kOsNIJEX7TsH0xFJJx
+	D1wHUiNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taBze-00000007gsL-2yUZ
+	id 1taF84-000000083Py-3OsL
 	for ath12k@archiver.kernel.org;
-	Tue, 21 Jan 2025 11:00:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 21 Jan 2025 14:21:20 +0000
+Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taBnJ-00000007dwf-3dn2
+	id 1taF6X-00000008350-0AB2
 	for ath12k@lists.infradead.org;
-	Tue, 21 Jan 2025 10:47:43 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50L9QgQC031220;
-	Tue, 21 Jan 2025 10:47:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0110w/5hEyoEkseqshvplOtl+V80g2OAplLpO2U9Uv4=; b=S5VvWEMbM1aftGKd
-	oAuWS9uaXQPTk8D5/OjybEBLOak6mUKfRLbnHM0Kc8A5KOgtfvSCF6lNWCsoQSKs
-	JWvMBA9TXBz+ObvTf6TBLiQRHuqXrwMbyc/sBoPM6b2QerdPafFW13+gBTt0vbaU
-	7cYrGQXOr8208Yr+jl26wxRO3jDSV4iSelB4Yw1vwEOLFtHb3vU7UOfHRiRNpj0D
-	eWsV1reLGNj3wry1D70zN/lRlB78ymd9bku/i6yqm13k3s9SVgaVGyonYjPbc8u8
-	VyNJdTftTPAnLVujGRPDCnWPhtGr7YYq3DWfRUtQFjMzMifbU2HvpI9G0xxdZ0oK
-	4IWWBQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44a8y2ga9y-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 10:47:41 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50LAle5X026027
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 10:47:40 GMT
-Received: from [10.253.36.159] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 21 Jan
- 2025 02:47:39 -0800
-Message-ID: <f790e71e-9b03-474a-be21-5d9bfa71e593@quicinc.com>
-Date: Tue, 21 Jan 2025 18:47:37 +0800
+	Tue, 21 Jan 2025 14:19:46 +0000
+Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-385f07cd1a4so4355218f8f.1
+        for <ath12k@lists.infradead.org>; Tue, 21 Jan 2025 06:19:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1737469182; x=1738073982; darn=lists.infradead.org;
+        h=mime-version:user-agent:content-transfer-encoding:date:cc:to:from
+         :subject:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=EfEz8vizuQoVkRitl/ucOWM7li3IRfnr9/8/F2wewm0=;
+        b=mOuwk/Ygzg8ol32ioVwPvOyJoKzoDjFHyViHZxW3bPgp7/SozlHhl/c223ceSD+FYw
+         IaDoTADaiChVbPAlcYaJAlN4w6meDKXS0RePYS0b6oaODX2KCwE3k7kbQJwmeNvpx75P
+         n/o8+xDiOKIdTwPHyciLdRuw0EBW+qRPEI9yXaEEKLw1i7BDEE4vgy/sSE1wgBjE8aZ4
+         1lP6Cw1g8S4mNusAn9WrgNGUByzJ8VVsV5E47Es0jwfVMjrqzM2W1L2+Km2aVNmgCRJG
+         XtS/Mnt9sPnqGqyjrGSqtHF4Q4Y4+qLJ1UVRmWoJqE+xwuk8cQow0YatFTJf4IMyWpet
+         cPqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737469182; x=1738073982;
+        h=mime-version:user-agent:content-transfer-encoding:date:cc:to:from
+         :subject:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=EfEz8vizuQoVkRitl/ucOWM7li3IRfnr9/8/F2wewm0=;
+        b=qCJYeTmoYmxs38vx5UNBqI0DP+wWf9nFH13DN3LCE1No59tH+65W+Nh/0D6VhbLQP2
+         +hCrjz0ye9FWB5RTYqP9wk+OvcrXaamdpAQZtaxlCiyhHWFqXjnaWxd+sl+QS98EBWy3
+         H9XsbX4RNJ/7hKRvrDZiuUws+KNV5MKgrIoP6bYKWZ+2NsSr584J88hdr84mxsIVDBGt
+         9sscmEvpAf+HPiTBzHfA90bBllD4qjU/7uOMOu3/r2SW+6S/SA3g6e0IIxIgbBRXoBTt
+         YRl93HsyxHvtncjGvBHUhAR4uvMLzfFiMi4aDSDnXYJvg1E81zQI/tjLt//Z0KR+D4U8
+         67cg==
+X-Gm-Message-State: AOJu0YwpDASLvDeSpzEv4CxBm5ICm5yb43M+CN+3UNsQ2WEt1Js59+NM
+	xIfYThcvBRDQYqwGsdt6sDzcvR2MbKG9nPT5Wi8qaHGQm3Q21EeoVVvviA==
+X-Gm-Gg: ASbGncuCmFCjDCYm6yyVIqUVC6RAGHfZB37eUoap1/jemKwmS8f3DSOm80OJ6+YEKFu
+	JRdoFdffE/AsWlrlgZXR9E4z7szVPWyxd0FB65wh9kgvo+KlkFSkUkRyxojLlFsv5B9aiy8mgdJ
+	MZ/3at9iNql/skOhKa9rb2YOqhb9KUou24VhUP5GUnoETyUaXpwTsOdznBow5mmMcM/q7a6l4Pn
+	wI3baonFewcthtWiDLxbfFmtY7Qo1t1hepdG00tKSnlW+wsCcOgOE36GXqSCDPj7Vx0FdUk04Kv
+	LnYqmCsXrywRnrM5BSxV8Z4r6UuJfXU5PrEOAvo4rJyI6YQ=
+X-Google-Smtp-Source: AGHT+IF+sVxJl2tEzD0qTLjPst4I3hRhalC5Jf+faBPbBDmthHLkspsLPwaRVa2Pm1bLh/0c5A4NbQ==
+X-Received: by 2002:a5d:648a:0:b0:385:f349:fffb with SMTP id ffacd0b85a97d-38bf57bfba2mr17387872f8f.45.1737469181996;
+        Tue, 21 Jan 2025 06:19:41 -0800 (PST)
+Received: from dominikat-nb.corp.toradex.com (31-10-206-125.static.upc.ch. [31.10.206.125])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38bf327556dsm13479115f8f.71.2025.01.21.06.19.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 21 Jan 2025 06:19:41 -0800 (PST)
+Message-ID: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
+Subject: wifi: ath12k: start-up crash with WCN7850 hw2.0 on TI AM69-SK board
+From: Parth Panchoil <parth105105@gmail.com>
+To: ath12k@lists.infradead.org
+Cc: Francesco Dolcini <francesco@dolcini.it>
+Date: Tue, 21 Jan 2025 15:19:40 +0100
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.44.4-0ubuntu2 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 4/4] wifi: ath12k: store and send country code to
- firmware after recovery
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250121091844.1987-1-quic_kangyang@quicinc.com>
- <20250121091844.1987-5-quic_kangyang@quicinc.com>
-Content-Language: en-US
-From: Kang Yang <quic_kangyang@quicinc.com>
-In-Reply-To: <20250121091844.1987-5-quic_kangyang@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ecHgHlF96YOyg6oZXjU3qVSIg0cx7CTY
-X-Proofpoint-ORIG-GUID: ecHgHlF96YOyg6oZXjU3qVSIg0cx7CTY
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-21_05,2025-01-21_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 bulkscore=0
- mlxlogscore=823 impostorscore=0 spamscore=0 phishscore=0
- priorityscore=1501 adultscore=0 mlxscore=0 suspectscore=0
- lowpriorityscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2411120000 definitions=main-2501210089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_024741_912481_82B3772A 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20250121_061945_084153_556084E6 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,25 +95,85 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Hi All,
 
+I am performing tests on the SX-PCEBE Wi-Fi module, which utilizes the
+ATH12k driver, on the Texas Instruments AM69-SK board.
+The board is running the TI Linux Kernel from the ti-linux-6.6.y
+branch. During testing, I observed a kernel crash from the ATH12k
+driver as soon as the probe is called. The crash log is as follows:
 
-On 1/21/2025 5:18 PM, Kang Yang wrote:
-> From: Wen Gong <quic_wgong@quicinc.com>
-> 
-> Currently ath12k does not send the country code to firmware after device
-> recovery. As a result the country code will be the default one which
-> is reported from firmware. Country code is important, so ath12k also
-> need to restore it to the value which was used before recovery.
-> 
-> This is only needed for platforms which support the current_cc_support
-> hardware parameter.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-> Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
-> ---
+[    9.492631] Kernel panic - not syncing: Asynchronous SError
+Interrupt
+[    9.492634] CPU: 7 PID: 222 Comm: (udev-worker) Not tainted 6.6.58-
+01497-ga7758da17c28-dirty #1
+[    9.492638] Hardware name: Texas Instruments AM69 SK (DT)
+[    9.492640] Call trace:
+[    9.492642]  dump_backtrace+0x94/0xec
+[    9.492658]  show_stack+0x18/0x24
+[    9.492662]  dump_stack_lvl+0x48/0x60
+[    9.492669]  dump_stack+0x18/0x24
+[    9.492672]  panic+0x320/0x378
+[    9.492677]  nmi_panic+0x8c/0x90
+[    9.492681]  arm64_serror_panic+0x6c/0x78
+[    9.492686]  do_serror+0x3c/0x78
+[    9.492692]  el1h_64_error_handler+0x34/0x4c
+[    9.492697]  el1h_64_error+0x64/0x68
+[    9.492700]  ath12k_pci_read32+0x1bc/0x1e8 [ath12k]
+[    9.492725]  ath12k_pci_power_up+0xdc/0x340 [ath12k]
+[    9.492747]  ath12k_core_init+0x2c/0xa8 [ath12k]
+[    9.492769]  ath12k_pci_probe+0x698/0x908 [ath12k]
+[    9.492791]  pci_device_probe+0xa8/0x16c
+[    9.492800]  really_probe+0x110/0x27c
+[    9.492805]  __driver_probe_device+0x78/0x12c
+[    9.492808]  driver_probe_device+0x3c/0x118
+[    9.492810]  __driver_attach+0x74/0x124
+[    9.492813]  bus_for_each_dev+0x78/0xd8
+[    9.492819]  driver_attach+0x24/0x30
+[    9.492824]  bus_add_driver+0xe4/0x208
+[    9.492828]  driver_register+0x60/0x128
+[    9.492831]  __pci_register_driver+0x44/0x50
+[    9.492835]  ath12k_pci_init+0x2c/0x6c [ath12k]
+[    9.492858]  do_one_initcall+0x70/0x1b4
+[    9.492861]  do_init_module+0x58/0x1e4
+[    9.492867]  load_module+0x19bc/0x1a8c
+[    9.492869]  init_module_from_file+0x88/0xc4
+[    9.492873]  __arm64_sys_finit_module+0x1c0/0x2ac
+[    9.492877]  invoke_syscall+0x44/0x108
+[    9.492882]  el0_svc_common.constprop.0+0xc0/0xe0
+[    9.492885]  do_el0_svc+0x1c/0x28
+[    9.492889]  el0_svc+0x2c/0x84
+[    9.492892]  el0t_64_sync_handler+0xc0/0xc4
+[    9.492895]  el0t_64_sync+0x190/0x194
+[    9.492899] SMP: stopping secondary CPUs
+[    9.492908] Kernel Offset: disabled
+[    9.492909] CPU features: 0x0,80000200,28020000,1000420b
+[    9.492913] Memory Limit: none
 
-Please ignore this version, review v9.
+Upon searching online, I found the OpenWRT patch that appears to
+address a similar issue: OpenWRT Patch: Prevent LTSSM Startup Crash.
+https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dblob;f=3Dpackage/kerne=
+l/mac80211/patches/ath12k/100-ath12k-prevent-ltssm-startup-crash.patch;h=3D=
+cd85a0f6aa2652d62bfbea04e9bcca3bcf831b7f;hb=3D935b2b7dcef61b2893ed5dff307dd=
+8f8a1156899
+With the above patch applied, I do not see the crash anymore.
 
+Could anyone confirm if this issue has been reported before/known bug
+or provide any insights?=20
+Any additional information or suggestions would be greatly appreciated.
+
+Details about the test setup,
+TI-AM69-SK board:
+https://www.ti.com/tool/SK-AM69?keyMatch=3Dam69%20sk&tisearch=3Duniversal_s=
+earch
+Silex WiFi card SX-PCEBE:
+https://www.silextechnology.com/connectivity-solutions/embedded-wireless/sx=
+-pcebe
+TI Linux Repo:
+https://git.ti.com/cgit/ti-linux-kernel/ti-linux-kernel/?h=3Dti-linux-6.6.y
+
+Thank you.
+
+Regards,
+Parth P
 
