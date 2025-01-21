@@ -4,85 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E080C02182
-	for <ath12k@archiver.kernel.org>; Tue, 21 Jan 2025 09:19:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C91E7C02182
+	for <ath12k@archiver.kernel.org>; Tue, 21 Jan 2025 09:41:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3JZ+LBlGZwUHnDEUlLvsVjY3V1K4AnXx4YBTCHrE3FA=; b=KBNUNFRiOxCsSc5ximyFUReI3W
-	jy740xkRaOifNRGBcSM5x3X7CiGZHq9MsW+DFfvIMn+zxHUDRPYmnMslVS7Tjo2ClTWbVveamo5V7
-	SfSGnSjPjmNKRGeCzBERLzmzHWy/+Ppw0j/xhq+78eSL99D93Iupy/DWYAQaB636lceoNvFHVZ7O9
-	E728ceHU+AQ4jNQl7pGjj3OXnF5d/lQHAPI6tyxMJPsqiTzMlKKiqRwCIS5JIgEFAEzAGDnLO3hJM
-	AyPjHv949nXYZ9byTwdOWq83JsIrhRLkg/T+h2w5QhMG/o2GX2oDD5iCbdmyYnHaV1GM3YSHrtMSb
-	pvyibArg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=8aWBFwCxuTMNSEwJNIJNMuustMzcc59od6w7veOripo=; b=lqi3/OIWBSrH3UuVPtJwcwp+Qf
+	HioVzOg87Iu55XuQp89QHZGOJjHk4eIa0AtUFCInmIEaKGTpjuyU0BM2fwfeeLDeprQ/lBsql+L65
+	7mw+Y26J4bhtwnI6M4AhmNco2ql2/FLAMagnxUKVA065VOJhUj0AsVVDdzTlEgDuOwfQ4zun2IYlN
+	THTK6O7TWOXjGJS9CRi33Zqr8tA7mctyvtQTBeOAt51AHoXEWFBCHTgxVsuIWBlPbgqgRHxqVNJd8
+	SMoe/6L51BtTUHkoBAhwQpY15x5Ze1t0LGcs+a53fMwkbm52Xq8uHQdkL6wXJu/wHuvQX9h35aNaL
+	Oatty3YA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taAPo-00000007ODt-0XBR
+	id 1taAlI-00000007RVi-2LUS
 	for ath12k@archiver.kernel.org;
-	Tue, 21 Jan 2025 09:19:20 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 21 Jan 2025 09:41:32 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taAPl-00000007OBp-1Y2f
+	id 1taAiT-00000007R6x-1Z9n
 	for ath12k@lists.infradead.org;
-	Tue, 21 Jan 2025 09:19:18 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50L8YwSD027456;
-	Tue, 21 Jan 2025 09:19:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	3JZ+LBlGZwUHnDEUlLvsVjY3V1K4AnXx4YBTCHrE3FA=; b=gJdBjPcfGtbvwjI9
-	W0zmCr4J4zKFIUj8EwLKZc5c82MF3qJMo0F4+bqRef1OoZ3lyjm8olXwvpimVpdC
-	6yVxD+wqe4GneHLv4CW1S2RqLioN+7jA2btRXrskjXFIAG5/qaqpDhDCVUNLpLmK
-	RFrBWp6LYVAiJS5ptrJWso0FPj4J6FHrWSHVPBvMhab+oqXmjumNjMLe2nJBXHIx
-	6dl8eEwiuz458ZE2eiftF6MvOj+6IQDIVzMvF8f6REybSv7qH0JlotyZMDgz0ftc
-	cGKoFTGX4+PJzpLz4wC7d95EIRqBKf3rEtxk3gbZ1K1lfxyP9im0sw2xTa0xCM/Z
-	el6t4w==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44a6vxrccd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 09:19:16 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50L9JF6q026464
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 09:19:15 GMT
-Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 21 Jan 2025 01:19:14 -0800
-From: Kang Yang <quic_kangyang@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
-Subject: [PATCH v8 4/4] wifi: ath12k: store and send country code to firmware after recovery
-Date: Tue, 21 Jan 2025 17:18:44 +0800
-Message-ID: <20250121091844.1987-5-quic_kangyang@quicinc.com>
-X-Mailer: git-send-email 2.34.1.windows.1
-In-Reply-To: <20250121091844.1987-1-quic_kangyang@quicinc.com>
-References: <20250121091844.1987-1-quic_kangyang@quicinc.com>
+	Tue, 21 Jan 2025 09:38:38 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-385e3621518so2457353f8f.1
+        for <ath12k@lists.infradead.org>; Tue, 21 Jan 2025 01:38:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1737452315; x=1738057115; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=8aWBFwCxuTMNSEwJNIJNMuustMzcc59od6w7veOripo=;
+        b=dTpaCGI0tdjsoQhVMBKHe1cacTI+oApYaA6q3+2PUiq10ijmyXFdHPA22UWwAS5j3Z
+         EbJbCjowk37spaM8RJq24bC+LCZHu7ZVKrzquRKgXYnlX+Z3SW8UJmXotL/jQ5/QD+QA
+         iPwkt01CJ3D55jXDgPldBS88OhNUAAVV8wpdWNLgwKfzpLgthzPq0PGiw2I0BF5l3PNe
+         gJq1dcVcos164St4UoXjhTmCeJ9WMGnBBhjL6qOBNbgAMxKfg7yM/C/T4VmzM7A7q4nu
+         uCmJQMtmlbW8mfyejHpUnk6yI7/NB0rZ/+y4qgy+piAKnuZNZX/vetI+bsR+rMn1nJpM
+         OPBQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737452315; x=1738057115;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=8aWBFwCxuTMNSEwJNIJNMuustMzcc59od6w7veOripo=;
+        b=xEuyvlhppmNstaiOtwKkkyYS06TkF/ssG5VAWrPfmEI1Y33O+8wzFjK3yPLU5Y+2/v
+         4PE4Hlz9seFLJxoytzfv1qSGaXsXpU/MQlgVWWKAi0WSWT3Y/Y07PkHgU9J5t+7dKP8S
+         d2D3gfPBS4MdzNjg3RoaLIYLMO3vl1wbvb7D0uEEMhwKX3DhmzkNtMv/D3W1t6TbrsPT
+         f6cB32JiXnnyEG9RypX4sRIH3oZ3iHZGiD0O137u/GkzynmodVeGbqrVmqHgnYQvsjxl
+         pRrflgZuCqlVE50G2BBrzbHgb2cS2qWKtBDyyLdR6BbKhKGJNOyiwNOuWebxLol+qis5
+         HI+g==
+X-Gm-Message-State: AOJu0Yypy4H8HNn9qrzQo/ID0smLjoNjER+94i/sVLmPhDsVS14e5FW8
+	9EVMdGrWsTNqe6lJ2MgZub+wq5pcsCiHl5QaZmt606GR81YBQEapJc8pPA==
+X-Gm-Gg: ASbGncshEWsy3CAhJ3uf+k66wjKcVxmaat0UIV446eL78JAQUIQF4HJzwtrkk2as+46
+	mYKRhJa5+6uLWwAGa9/LG6DrXva9h6zXSRBI7ZZNPE6MUCNEDFlxg431PgBmSX7UjjWLZcwNCC6
+	o/hdjIjpVmeJy7odJhOOsr2PTgofNJM+hWuUGahcS6fSPlNco4nYd0wS7a4lGyA8Q6xG/xO17jp
+	nSPD10HrUanx/ckRkPpAGU1em7NTVjQjGRoEyoCU2oEztV1JWaWX/WIMsG2IxbciNzOE8Sh8NtE
+	UoIoUgsfH0h/AHN9D794C9N0EbM=
+X-Google-Smtp-Source: AGHT+IGe6ZZbfjEVfRn72Mek0BAT7AU+yqft+pgybUOtamCDVmNeN3NqhM9C/Xq7qne6eBPntBylHA==
+X-Received: by 2002:a05:6000:2a9:b0:38a:86fe:52b5 with SMTP id ffacd0b85a97d-38bf566274amr16918094f8f.14.1737452315428;
+        Tue, 21 Jan 2025 01:38:35 -0800 (PST)
+Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38bf32221a8sm12993488f8f.37.2025.01.21.01.38.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 21 Jan 2025 01:38:35 -0800 (PST)
+From: Nicolas Escande <nico.escande@gmail.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH v2] wifi: ath12k: add support of station average signal strength
+Date: Tue, 21 Jan 2025 10:38:34 +0100
+Message-ID: <20250121093834.25132-1-nico.escande@gmail.com>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 636O_8StGy2Op-sv8mhObhDNpY73X_Zj
-X-Proofpoint-ORIG-GUID: 636O_8StGy2Op-sv8mhObhDNpY73X_Zj
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-21_04,2025-01-21_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
- lowpriorityscore=0 mlxlogscore=999 phishscore=0 malwarescore=0 bulkscore=0
- priorityscore=1501 impostorscore=0 mlxscore=0 spamscore=0 suspectscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501210075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_011917_414086_F401786E 
-X-CRM114-Status: GOOD (  16.40  )
+X-CRM114-CacheID: sfid-20250121_013837_411460_0158FA0C 
+X-CRM114-Status: GOOD (  12.83  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,83 +93,98 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Wen Gong <quic_wgong@quicinc.com>
+This adds support for reporting to the kernel the average rssi. This is
+done the same way as it was done in ath11k. A simple ewma (with the same
+parameters) is updated with each rssi update.
 
-Currently ath12k does not send the country code to firmware after device
-recovery. As a result the country code will be the default one which
-is reported from firmware. Country code is important, so ath12k also
-need to restore it to the value which was used before recovery.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-This is only needed for platforms which support the current_cc_support
-hardware parameter.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 1 +
- drivers/net/wireless/ath/ath12k/core.h | 1 +
- drivers/net/wireless/ath/ath12k/mac.c  | 8 ++++++++
- drivers/net/wireless/ath/ath12k/reg.c  | 1 +
- 4 files changed, 11 insertions(+)
+v2:
+  - removed spurious exta new line at the beggining of core.h
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index c77e88613945..00e1904af7ab 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1292,6 +1292,7 @@ static void ath12k_update_11d(struct work_struct *work)
- 		pdev = &ab->pdevs[i];
- 		ar = pdev->ar;
- 
-+		memcpy(&ar->alpha2, &arg.alpha2, 2);
- 		ret = ath12k_wmi_send_set_current_country_cmd(ar, &arg);
- 		if (ret)
- 			ath12k_warn(ar->ab,
+v1: https://lore.kernel.org/ath12k/20250117172819.3357534-1-nico.escande@gmail.com/
+  - initial version
+---
+ drivers/net/wireless/ath/ath12k/core.h   | 4 ++++
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
+ drivers/net/wireless/ath/ath12k/mac.c    | 5 +++++
+ 3 files changed, 11 insertions(+)
+
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 0992de487d4e..31a9bf0ae9dc 100644
+index ee595794a7aee..83af4381b79ff 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -724,6 +724,7 @@ struct ath12k {
- 	u32 vdev_id_11d_scan;
- 	struct completion completed_11d_scan;
- 	enum ath12k_11d_state state_11d;
-+	u8 alpha2[REG_ALPHA2_LEN];
- 	bool regdom_set_by_user;
+@@ -15,6 +15,7 @@
+ #include <linux/ctype.h>
+ #include <linux/firmware.h>
+ #include <linux/panic_notifier.h>
++#include <linux/average.h>
+ #include "qmi.h"
+ #include "htc.h"
+ #include "wmi.h"
+@@ -477,6 +478,8 @@ struct ath12k_wbm_tx_stats {
+ 	u64 wbm_tx_comp_stats[HAL_WBM_REL_HTT_TX_COMP_STATUS_MAX];
+ };
  
- 	struct completion mlo_setup_done;
++DECLARE_EWMA(avg_rssi, 10, 8)
++
+ struct ath12k_link_sta {
+ 	struct ath12k_link_vif *arvif;
+ 	struct ath12k_sta *ahsta;
+@@ -496,6 +499,7 @@ struct ath12k_link_sta {
+ 	u64 rx_duration;
+ 	u64 tx_duration;
+ 	u8 rssi_comb;
++	struct ewma_avg_rssi avg_rssi;
+ 	u8 link_id;
+ 	struct ath12k_rx_peer_stats *rx_stats;
+ 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 5a21961cfd465..e53d5674b4368 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -2157,6 +2157,7 @@ static void ath12k_dp_mon_rx_update_peer_su_stats(struct ath12k *ar,
+ 		return;
+ 
+ 	arsta->rssi_comb = ppdu_info->rssi_comb;
++	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
+ 
+ 	num_msdu = ppdu_info->tcp_msdu_count + ppdu_info->tcp_ack_msdu_count +
+ 		   ppdu_info->udp_msdu_count + ppdu_info->other_msdu_count;
+@@ -2329,6 +2330,7 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k *ar,
+ 		return;
+ 
+ 	arsta->rssi_comb = ppdu_info->rssi_comb;
++	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
+ 
+ 	num_msdu = user_stats->tcp_msdu_count + user_stats->tcp_ack_msdu_count +
+ 		   user_stats->udp_msdu_count + user_stats->other_msdu_count;
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 062c461985d6..9a3aae68427e 100644
+index 2d062b5904a8e..5be8cf0e41279 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10037,6 +10037,14 @@ ath12k_mac_op_reconfig_complete(struct ieee80211_hw *hw,
- 		ath12k_warn(ar->ab, "pdev %d successfully recovered\n",
- 			    ar->pdev->pdev_id);
+@@ -5403,6 +5403,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
+ 		}
+ 	}
  
-+		if (ar->ab->hw_params->current_cc_support &&
-+		    ar->alpha2[0] != 0 && ar->alpha2[1] != 0) {
-+			struct wmi_set_current_country_arg arg = {};
-+
-+			memcpy(&arg.alpha2, ar->alpha2, 2);
-+			ath12k_wmi_send_set_current_country_cmd(ar, &arg);
-+		}
-+
- 		if (ab->is_reset) {
- 			recovery_count = atomic_inc_return(&ab->recovery_count);
++	ewma_avg_rssi_init(&arsta->avg_rssi);
+ 	return 0;
  
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index c7b0d66f4874..c3ebb0247e6f 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -85,6 +85,7 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 	for_each_ar(ah, ar, i) {
- 		if (ar->ab->hw_params->current_cc_support) {
- 			memcpy(&current_arg.alpha2, request->alpha2, 2);
-+			memcpy(&ar->alpha2, &current_arg.alpha2, 2);
- 			ret = ath12k_wmi_send_set_current_country_cmd(ar, &current_arg);
- 			if (ret)
- 				ath12k_warn(ar->ab,
+ free_peer:
+@@ -10054,6 +10055,10 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+ 	/* TODO: Use real NF instead of default one. */
+ 	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
+ 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
++
++	sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi) +
++		ATH12K_DEFAULT_NOISE_FLOOR;
++	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
+ }
+ 
+ static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
 -- 
-2.34.1
+2.48.1
 
 
