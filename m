@@ -4,88 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD670C02182
-	for <ath12k@archiver.kernel.org>; Tue, 21 Jan 2025 10:28:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC4C5C02182
+	for <ath12k@archiver.kernel.org>; Tue, 21 Jan 2025 10:57:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9/Tu5iheKIXCDUxloPMF6QaQq3tbg6UkOGG56tzgrEQ=; b=cAvb7BNhDFWGGwprQAwBdubkwa
-	dr8aEgSDIrBTx1yH6FDlg7cwQ9i9Vgd1xjiWa8M5zYNY53VtY3+6+xIZOpBTyivL6v2QlcV2hU4+a
-	dbXMey26DnmKo4Ee5ATC0kopYVkZPeXO6jqZt/sZzYGXoh/K6rf7aRHj6v61UeVTlvsuuUaYy3TDE
-	5P5uf78uV4IK0krqjlAz8z51tIT1E3Dd6sjJlTcR0E1vPPpt1XEigsZzHTJomux3MHIbwydkKJ1yO
-	Hsn39010twX0FEXJAGmjxQnkItYwndT5KvJltxc8GV+xsZitY2sAPCSs6y4xzhK13/w0iQame6oVm
-	kekmBsaA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3DgU8rF22M1g4LnoBk3ORbGdCxYcVwn/z2DjkQM3bQE=; b=QJEeiP6HbU5cZTL3wYoiWwRCSr
+	gO76SyISduzbA1BJGiv202wWIDhQoyllw/xtNJcNz2xV66uO3UzFo/ZytnRxi+u9Zut8COcDmcqK5
+	tYvQN6WlyyByIVf/1Aph47rfFo88UjVyPlcg+9oxQhIqnDiPuNOZq/HFXdWAHV6TZVDqG6cvuy9Fi
+	Qv9ZRD+S41ziyYXNxcmbQ+4rdA69mmlPUXCezurtYpuM0IcTMhxe4Sdx/+vnSE5jNu4jw8QRAZQXG
+	pAqcYIKPOMdq5nDBvg/2yYSFq+6gHwMrskwEMRdx69e4OfNmTh/Ks2ETdUO9wU42g5cKNar25+v8E
+	/qFMo0ZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taBUO-00000007Zd7-1ysW
+	id 1taBx8-00000007gEM-2LbP
 	for ath12k@archiver.kernel.org;
-	Tue, 21 Jan 2025 10:28:08 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 21 Jan 2025 10:57:50 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taBU8-00000007ZZ1-022V
+	id 1taBml-00000007dnu-3Oa0
 	for ath12k@lists.infradead.org;
-	Tue, 21 Jan 2025 10:27:53 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50L8Yl2n027213;
-	Tue, 21 Jan 2025 10:27:49 GMT
+	Tue, 21 Jan 2025 10:47:09 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50L9HfNC006613;
+	Tue, 21 Jan 2025 10:47:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9/Tu5iheKIXCDUxloPMF6QaQq3tbg6UkOGG56tzgrEQ=; b=o0KXp6rAE0T/9dMX
-	UyMEWQebcjqL1/iGGZ8DE8Uk15CTMAK4Pyd+LPce6h9OttZXKOMU185m4SfCJ7Hf
-	GS/YJ1pb/TvImtBNAj21zz34y3KjgKVvg0aSEuCtR71EF3VYy9RIm5pohjT8aPQu
-	VTxV/8vKATxUe5oSOWVekyY8BjYGeYQ1ReklPTIm+jWUxmZcpl8znYcIVAi46b+w
-	Hhd8rkXf/5+Np5RUP41vFRm5N7Fv3j4vpt/5RP9eEoX4WqFrl0waHCyp4N1lu0nR
-	1+x/4Sg58/UgU81GhCWQmA+nNkbaYxKbrAZVFo0uQbVO8SuQszhEoY47+5p6H6Sp
-	652vpw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44a6vxrp3n-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=3DgU8rF22M1g4LnoBk3ORb
+	GdCxYcVwn/z2DjkQM3bQE=; b=L2+P/HSh1XlpfUih6n0GIMgvDXAr90fyvoxqjb
+	NKIReSFHY7PMl3yScjOnVLXrhUqVjqy+hCiV37uK3LCY2QmAL6Dg1l+bBUgBC7vc
+	v2bFpRAgDQuGwyHrGse68PLOhshN2xSwyE+qVRNU6xnW4tUVO2+HPjL1ZKzDd3TU
+	pBaa95sLUCqI7MHx2d9HAhNlDFl0IZSZ+5d2IEY++ledvNfaj2DxMm0Vsgnaolw0
+	QcCzNZkrABFCCnFNtsDKipdYxu8lwqNO+MCqlPjiPE1W+Iq7aFaKn0bT9RjQwj9/
+	VK5UMBc5MFnnBpb1AIoTk71ixruwohkKRHIhBBzWKmchhxbQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44a8tugb5b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 10:27:49 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50LARmdw026745
+	Tue, 21 Jan 2025 10:47:06 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50LAl5Ij014183
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 10:27:48 GMT
-Received: from [10.216.5.186] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 21 Jan
- 2025 02:27:46 -0800
-Message-ID: <aa86ba11-9a03-3473-cd7a-60034ec325f2@quicinc.com>
-Date: Tue, 21 Jan 2025 15:57:43 +0530
+	Tue, 21 Jan 2025 10:47:05 GMT
+Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 21 Jan 2025 02:47:03 -0800
+From: Kang Yang <quic_kangyang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
+Subject: [PATCH v9 0/4] wifi: ath12k: add 11d scan offload support and handle country code for WCN7850
+Date: Tue, 21 Jan 2025 18:45:39 +0800
+Message-ID: <20250121104543.2053-1-quic_kangyang@quicinc.com>
+X-Mailer: git-send-email 2.34.1.windows.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH v2] wifi: ath12k: add support of station average signal
- strength
-Content-Language: en-US
-To: Nicolas Escande <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250121093834.25132-1-nico.escande@gmail.com>
-From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-In-Reply-To: <20250121093834.25132-1-nico.escande@gmail.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: UKHWRmdqvTLM6-P_1Lmo5TSoTC2GU8s0
-X-Proofpoint-ORIG-GUID: UKHWRmdqvTLM6-P_1Lmo5TSoTC2GU8s0
+X-Proofpoint-GUID: yT-YI8di6l67YVCio2vIIW0fjRe1dtv6
+X-Proofpoint-ORIG-GUID: yT-YI8di6l67YVCio2vIIW0fjRe1dtv6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-21_05,2025-01-21_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
- lowpriorityscore=0 mlxlogscore=999 phishscore=0 malwarescore=0 bulkscore=0
- priorityscore=1501 impostorscore=0 mlxscore=0 spamscore=0 suspectscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501210086
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
+ clxscore=1015 lowpriorityscore=0 phishscore=0 priorityscore=1501
+ impostorscore=0 mlxscore=0 spamscore=0 malwarescore=0 suspectscore=0
+ mlxlogscore=926 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501210089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_022752_068931_4CCD0AEB 
-X-CRM114-Status: GOOD (  18.39  )
+X-CRM114-CacheID: sfid-20250121_024707_971729_F6F88211 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,101 +95,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+This patch-set mainly does four things:
+1. Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID to firmware.
+2. Implement 11d scan offload, and report country code to firmware by
+WMI command WMI_SET_CURRENT_COUNTRY_CMDID.
+3. Use WMI_SET_CURRENT_COUNTRY_CMDID to set country code for WCN7850.
+4. Store country code, and update it to firmware after device recovery.
+
+With this patch-set, WCN7850 can do 11d offload scan and update country
+code to firmware successfully.
+
+Note: This patch-set is an old patch-set in public review written by
+Wen Gong. Just resend it for him.
+Link: https://patchwork.kernel.org/project/linux-wireless/cover/20230914090746.23560-1-quic_wgong@quicinc.com/
+
+v9: update copy right in patch #1, #2, #3.
+v8: rebase on tag: ath/main(ath-202501172342).
+v7:
+    1. rebase on tag: ath/main(ath-202412191756).
+    2. rewrite commit message for patch#2.
+v6: rebase on tag: ath/main(ath-202410161539).
+v5: rebase on tag: ath/main(ath-202410111606).
+v4: rebase on tag: ath-202410072115.
+v3:
+    1. use wiphy::mtx lock instead of adding a new lock(patch#2).
+    2. rename struct according to wmi naming convention(patch#1, #2).
+    3. update copyright in reg.h
+    4. modifiy patch#3, #4 due to struct name change.
+v2: change per Jeff.
+    1. change alpha2 length from 3 to 2.
+    2. change wmi_11d_new_cc_ev to wmi_11d_new_cc_event.
+
+Wen Gong (4):
+  wifi: ath12k: add configure country code for WCN7850
+  wifi: ath12k: add 11d scan offload support
+  wifi: ath12k: use correct WMI command to set country code for WCN7850
+  wifi: ath12k: store and send country code to firmware after recovery
+
+ drivers/net/wireless/ath/ath12k/core.c |  34 ++++-
+ drivers/net/wireless/ath/ath12k/core.h |  17 +++
+ drivers/net/wireless/ath/ath12k/hw.c   |   8 +-
+ drivers/net/wireless/ath/ath12k/hw.h   |   3 +-
+ drivers/net/wireless/ath/ath12k/mac.c  | 167 ++++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/mac.h  |   9 +-
+ drivers/net/wireless/ath/ath12k/reg.c  |  72 ++++++++---
+ drivers/net/wireless/ath/ath12k/reg.h  |   4 +-
+ drivers/net/wireless/ath/ath12k/wmi.c  | 160 ++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/wmi.h  |  40 +++++-
+ 10 files changed, 486 insertions(+), 28 deletions(-)
 
 
-On 1/21/2025 3:08 PM, Nicolas Escande wrote:
-> This adds support for reporting to the kernel the average rssi. This is
-> done the same way as it was done in ath11k. A simple ewma (with the same
-> parameters) is updated with each rssi update.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
-> ---
-> v2:
->    - removed spurious exta new line at the beggining of core.h
-> 
-> v1: https://lore.kernel.org/ath12k/20250117172819.3357534-1-nico.escande@gmail.com/
->    - initial version
-> ---
->   drivers/net/wireless/ath/ath12k/core.h   | 4 ++++
->   drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
->   drivers/net/wireless/ath/ath12k/mac.c    | 5 +++++
->   3 files changed, 11 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index ee595794a7aee..83af4381b79ff 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -15,6 +15,7 @@
->   #include <linux/ctype.h>
->   #include <linux/firmware.h>
->   #include <linux/panic_notifier.h>
-> +#include <linux/average.h>
->   #include "qmi.h"
->   #include "htc.h"
->   #include "wmi.h"
-> @@ -477,6 +478,8 @@ struct ath12k_wbm_tx_stats {
->   	u64 wbm_tx_comp_stats[HAL_WBM_REL_HTT_TX_COMP_STATUS_MAX];
->   };
->   
-> +DECLARE_EWMA(avg_rssi, 10, 8)
-> +
->   struct ath12k_link_sta {
->   	struct ath12k_link_vif *arvif;
->   	struct ath12k_sta *ahsta;
-> @@ -496,6 +499,7 @@ struct ath12k_link_sta {
->   	u64 rx_duration;
->   	u64 tx_duration;
->   	u8 rssi_comb;
-> +	struct ewma_avg_rssi avg_rssi;
->   	u8 link_id;
->   	struct ath12k_rx_peer_stats *rx_stats;
->   	struct ath12k_wbm_tx_stats *wbm_tx_stats;
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-> index 5a21961cfd465..e53d5674b4368 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-> @@ -2157,6 +2157,7 @@ static void ath12k_dp_mon_rx_update_peer_su_stats(struct ath12k *ar,
->   		return;
->   
->   	arsta->rssi_comb = ppdu_info->rssi_comb;
-> +	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
->   
->   	num_msdu = ppdu_info->tcp_msdu_count + ppdu_info->tcp_ack_msdu_count +
->   		   ppdu_info->udp_msdu_count + ppdu_info->other_msdu_count;
-> @@ -2329,6 +2330,7 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k *ar,
->   		return;
->   
->   	arsta->rssi_comb = ppdu_info->rssi_comb;
-> +	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
->   
->   	num_msdu = user_stats->tcp_msdu_count + user_stats->tcp_ack_msdu_count +
->   		   user_stats->udp_msdu_count + user_stats->other_msdu_count;
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 2d062b5904a8e..5be8cf0e41279 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -5403,6 +5403,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
->   		}
->   	}
->   
-> +	ewma_avg_rssi_init(&arsta->avg_rssi);
->   	return 0;
->   
->   free_peer:
-> @@ -10054,6 +10055,10 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
->   	/* TODO: Use real NF instead of default one. */
->   	sinfo->signal = arsta->rssi_comb + ATH12K_DEFAULT_NOISE_FLOOR;
->   	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
-> +
-> +	sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi) +
-> +		ATH12K_DEFAULT_NOISE_FLOOR;
-> +	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
->   }
->   
->   static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
+base-commit: e7ef944b3e2c31b608800925e784f67596375770
+-- 
+2.34.1
 
-
-Reviewed-by: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
 
