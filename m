@@ -4,79 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C0C0C02182
-	for <ath12k@archiver.kernel.org>; Wed, 22 Jan 2025 01:40:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ED75C02182
+	for <ath12k@archiver.kernel.org>; Wed, 22 Jan 2025 07:20:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EoVw3qXeyMxSN4s8IUuHHuTq6sJPSHrTeNIp1E50hYc=; b=zJjxkPh6g5iAoFylHj73GkyleQ
-	z9MlIyCFfwAhZS7knOefvxfeK9SkAtLjUrmU2lVaLTWVpIuT6bii6JltkiEf/gKEoo29ajPZJcJTi
-	qLu5tvO71recXMem8+8F1AN2Tw/0Db/TyTE6jF5Ro+rIFSgXE4V4OISp3QP6QGDtI/y6EuaIlJCdz
-	Z3HaS2FaWyaAaL5+/moFgTprQ1ml1eaWtbrYELdofGn+FzzRbI6K1j7AWhz+T7S3NL9dm47SwjBJN
-	syaDvJrLCArbKvg06s/wXGZQzO9uBaI7eR9zknrhXoJEoehjfdd3Xutt+RDczASdclLhG6v98xyzD
-	FbY2BZUQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4X7BNq01MvwoHkjIx/83HPQVqt+ifEDPn7LCKHiW0EU=; b=gg305akZL3Lsxg1VCSr5vjo8+m
+	NQCHepE/rYLIY+UWVgImPDdc36FVEs4ZH7mPsGhcOn4SgDmfwekwN9IZe2Js9gXcKZ1uRydNZk6N2
+	/TOsO9eBjo8jt76nAxiFu++KiHiIxw4wlJI49EBZvlUMCbkK1YEg02MHxAKyuwiTofZ62xhnhq1VQ
+	Ok0JGZ1eqNTd3MXQcrAI490/FQumENbIGpOabEh83KUtQPzW1hEfs+Mt4tFLAey1DHzvwAR0YLmmt
+	iTGFO4xt+jP/9Fzm/mNqP7Y5w0jhiWBEf+HYPJWjeGj9qfZjuy0kjHRYxVm/old//2ZfNLLqKMwQH
+	+9oAt2ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taPj2-00000009BNs-46GG
+	id 1taV2g-00000009ao4-0ET4
 	for ath12k@archiver.kernel.org;
-	Wed, 22 Jan 2025 01:40:12 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	Wed, 22 Jan 2025 07:20:50 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taPiz-00000009BN9-3xjn
+	id 1taV2d-00000009amd-1kil
 	for ath12k@lists.infradead.org;
-	Wed, 22 Jan 2025 01:40:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1737510010; x=1769046010;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=X8svDz7HtPQcW44cGU47R6oNOze1fOKboudbN+MY4wY=;
-  b=BzUAg47AUoSSacEv4GFs/89Xl7h1Hy9RVHINAjnpAPZK4nUxYBuAX7/0
-   vdnIj0VgALWMvtYHORRdTjgqznyfUA4WHntVWw4CXbgO+SAZZ2HGSRT/7
-   3Xgg9ZtBIhlxS4ioi1iwA6xSRvXURc+vWVXMqkyExEsANqmQoz3EhteyB
-   NXwSd/7wYqsb/l1SF2RtThh3/DvIMzx5Pln0xMz1vLtTVGGhfy3RostFk
-   rw3MBQupIm6wxFv50y/1FoPSiA+8W12kvTBXK8MY7NVyuqtsFcS2KCaUx
-   GXL5JB3vayqNBN8MaLUEsdFDri6PKG0f6yA5XZzRkzI08e5qPeW74tmJZ
-   Q==;
-X-CSE-ConnectionGUID: V+W7DOYWRDixD809ydcDoA==
-X-CSE-MsgGUID: J5aGDjQ8Tkiss58/B6ZcVw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11314"; a="49366759"
-X-IronPort-AV: E=Sophos;i="6.12,310,1728975600"; 
-   d="scan'208";a="49366759"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jan 2025 17:40:04 -0800
-X-CSE-ConnectionGUID: wuHn2nd+Rk+Hj1FK4AmuRw==
-X-CSE-MsgGUID: PWNJUa90RTefNNVdM3knSw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.13,223,1732608000"; 
-   d="scan'208";a="106900654"
-Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 21 Jan 2025 17:40:02 -0800
-Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1taPip-000ZGJ-2h;
-	Wed, 22 Jan 2025 01:39:59 +0000
-Date: Wed, 22 Jan 2025 09:39:39 +0800
-From: kernel test robot <lkp@intel.com>
-To: Ramya Gnanasekar <ramya.gnanasekar@oss.qualcomm.com>,
-	ath12k@lists.infradead.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	linux-wireless@vger.kernel.org,
-	Rajat Soni <rajat.soni@oss.qualcomm.com>,
-	Ramya Gnanasekar <ramya.gnanasekar@oss.qualcomm.com>
-Subject: Re: [PATCH v3] wifi: ath12k: Add WMI control path stats infra
-Message-ID: <202501220916.o70hNSkA-lkp@intel.com>
-References: <20250120184447.658660-1-ramya.gnanasekar@oss.qualcomm.com>
+	Wed, 22 Jan 2025 07:20:48 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50M6I7JL023350
+	for <ath12k@lists.infradead.org>; Wed, 22 Jan 2025 07:20:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	4X7BNq01MvwoHkjIx/83HPQVqt+ifEDPn7LCKHiW0EU=; b=noeBDmey3ltJxaBk
+	tenfwv7s9HRlkhRwE+D3hVV1/i1leykvCrs9IVNFBywM00Xj2XJhV2tFgMY4z5aA
+	h1yrVYhiBlfNzb3bw7TzHttcVOoI1OiZHfLYlU4AlLyY+v/Bf6aZSC5DIc1RbyzS
+	CyMwA2GWf+4qnZSe1zFRJUQE5lGGqoSHWp8R33RA+SR0UpsAwMRZ+2SM+mDmneiS
+	fUV6EukEWxR7SAK+8KPkqnvu52OvPOVb8klXkyaicWAJHW239ChazDdjoPj/5Ie7
+	WD7f3StY3Va5KtI/MdoFZODOts2KdoXLUwPXDr3ECy8cxsPsbaxJPRsbsSfm3qvR
+	zaAxMw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44au9eg4s5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 22 Jan 2025 07:20:45 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50M7Ki4L019107
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 22 Jan 2025 07:20:44 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 21 Jan
+ 2025 23:20:44 -0800
+Message-ID: <a15a1557-e5fb-404c-9031-21efbaa7e679@quicinc.com>
+Date: Wed, 22 Jan 2025 15:20:42 +0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20250120184447.658660-1-ramya.gnanasekar@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: wifi: ath12k: start-up crash with WCN7850 hw2.0 on TI AM69-SK
+ board
+To: <ath12k@lists.infradead.org>
+References: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: QdhySPziSAEYkqBH3ddYvc46dZMQuve9
+X-Proofpoint-ORIG-GUID: QdhySPziSAEYkqBH3ddYvc46dZMQuve9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-22_03,2025-01-22_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ suspectscore=0 mlxlogscore=999 clxscore=1015 mlxscore=0 phishscore=0
+ impostorscore=0 adultscore=0 lowpriorityscore=0 spamscore=0 malwarescore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501220051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_174010_036966_0D12DBEB 
-X-CRM114-Status: GOOD (  16.03  )
+X-CRM114-CacheID: sfid-20250121_232047_598659_6D00C759 
+X-CRM114-Status: GOOD (  20.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,283 +98,102 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi Ramya,
-
-kernel test robot noticed the following build warnings:
-
-[auto build test WARNING on d7bef42fc98f2d8f67546d1ea1a3f2c2932fd72b]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Ramya-Gnanasekar/wifi-ath12k-Add-WMI-control-path-stats-infra/20250121-024618
-base:   d7bef42fc98f2d8f67546d1ea1a3f2c2932fd72b
-patch link:    https://lore.kernel.org/r/20250120184447.658660-1-ramya.gnanasekar%40oss.qualcomm.com
-patch subject: [PATCH v3] wifi: ath12k: Add WMI control path stats infra
-config: um-allmodconfig (https://download.01.org/0day-ci/archive/20250122/202501220916.o70hNSkA-lkp@intel.com/config)
-compiler: clang version 20.0.0git (https://github.com/llvm/llvm-project c23f2417dc5f6dc371afb07af5627ec2a9d373a0)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250122/202501220916.o70hNSkA-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202501220916.o70hNSkA-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   In file included from drivers/net/wireless/ath/ath12k/wmi.c:6:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:12:
-   In file included from include/linux/hardirq.h:11:
-   In file included from arch/um/include/asm/hardirq.h:5:
-   In file included from include/asm-generic/hardirq.h:17:
-   In file included from include/linux/irq.h:20:
-   In file included from include/linux/io.h:14:
-   In file included from arch/um/include/asm/io.h:24:
-   include/asm-generic/io.h:549:31: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     549 |         val = __raw_readb(PCI_IOBASE + addr);
-         |                           ~~~~~~~~~~ ^
-   include/asm-generic/io.h:567:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     567 |         val = __le16_to_cpu((__le16 __force)__raw_readw(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/little_endian.h:37:51: note: expanded from macro '__le16_to_cpu'
-      37 | #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
-         |                                                   ^
-   In file included from drivers/net/wireless/ath/ath12k/wmi.c:6:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:12:
-   In file included from include/linux/hardirq.h:11:
-   In file included from arch/um/include/asm/hardirq.h:5:
-   In file included from include/asm-generic/hardirq.h:17:
-   In file included from include/linux/irq.h:20:
-   In file included from include/linux/io.h:14:
-   In file included from arch/um/include/asm/io.h:24:
-   include/asm-generic/io.h:585:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     585 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/little_endian.h:35:51: note: expanded from macro '__le32_to_cpu'
-      35 | #define __le32_to_cpu(x) ((__force __u32)(__le32)(x))
-         |                                                   ^
-   In file included from drivers/net/wireless/ath/ath12k/wmi.c:6:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:12:
-   In file included from include/linux/hardirq.h:11:
-   In file included from arch/um/include/asm/hardirq.h:5:
-   In file included from include/asm-generic/hardirq.h:17:
-   In file included from include/linux/irq.h:20:
-   In file included from include/linux/io.h:14:
-   In file included from arch/um/include/asm/io.h:24:
-   include/asm-generic/io.h:601:33: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     601 |         __raw_writeb(value, PCI_IOBASE + addr);
-         |                             ~~~~~~~~~~ ^
-   include/asm-generic/io.h:616:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     616 |         __raw_writew((u16 __force)cpu_to_le16(value), PCI_IOBASE + addr);
-         |                                                       ~~~~~~~~~~ ^
-   include/asm-generic/io.h:631:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     631 |         __raw_writel((u32 __force)cpu_to_le32(value), PCI_IOBASE + addr);
-         |                                                       ~~~~~~~~~~ ^
-   include/asm-generic/io.h:724:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     724 |         readsb(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:737:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     737 |         readsw(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:750:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     750 |         readsl(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:764:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     764 |         writesb(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:778:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     778 |         writesw(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:792:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     792 |         writesl(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
->> drivers/net/wireless/ath/ath12k/wmi.c:7504:7: warning: variable 'ret' is used uninitialized whenever switch case is taken [-Wsometimes-uninitialized]
-    7504 |         case WMI_TAG_CTRL_PATH_STATS_EV_FIXED_PARAM:
-         |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/net/wireless/ath/ath12k/wmi.c:7518:9: note: uninitialized use occurs here
-    7518 |         return ret;
-         |                ^~~
-   drivers/net/wireless/ath/ath12k/wmi.c:7501:9: note: initialize the variable 'ret' to silence this warning
-    7501 |         int ret;
-         |                ^
-         |                 = 0
->> drivers/net/wireless/ath/ath12k/wmi.c:7597:7: warning: variable 'ar' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    7597 |                 if (!param.ar)
-         |                     ^~~~~~~~~
-   drivers/net/wireless/ath/ath12k/wmi.c:7638:16: note: uninitialized use occurs here
-    7638 |         spin_lock_bh(&ar->debug.wmi_ctrl_path_stats_lock);
-         |                       ^~
-   drivers/net/wireless/ath/ath12k/wmi.c:7597:3: note: remove the 'if' if its condition is always true
-    7597 |                 if (!param.ar)
-         |                 ^~~~~~~~~~~~~~
-    7598 |                         return;
-   drivers/net/wireless/ath/ath12k/wmi.c:7562:19: note: initialize the variable 'ar' to silence this warning
-    7562 |         struct ath12k *ar;
-         |                          ^
-         |                           = NULL
-   14 warnings generated.
 
 
-vim +/ret +7504 drivers/net/wireless/ath/ath12k/wmi.c
+On 1/21/2025 10:19 PM, Parth Panchoil wrote:
+> Hi All,
+> 
+> I am performing tests on the SX-PCEBE Wi-Fi module, which utilizes the
+> ATH12k driver, on the Texas Instruments AM69-SK board.
+> The board is running the TI Linux Kernel from the ti-linux-6.6.y
 
-  7496	
-  7497	static int ath12k_wmi_ctrl_stats_subtlv_parser(struct ath12k_base *ab,
-  7498						       u16 tag, u16 len,
-  7499						       const void *ptr, void *data)
-  7500	{
-  7501		int ret;
-  7502	
-  7503		switch (tag) {
-> 7504		case WMI_TAG_CTRL_PATH_STATS_EV_FIXED_PARAM:
-  7505			break;
-  7506		case WMI_TAG_CTRL_PATH_PDEV_STATS:
-  7507			ret = wmi_pull_ctrl_path_pdev_tx_stats_tlv(ab, len, ptr, data);
-  7508			break;
-  7509			/* Add case for newly wmi ctrl path added stats here */
-  7510		default:
-  7511			ath12k_warn(ab,
-  7512				    "Received invalid tag for wmi ctrl path stats in subtlvs, tag : 0x%x\n",
-  7513				    tag);
-  7514			ret = -EINVAL;
-  7515			break;
-  7516		}
-  7517	
-  7518		return ret;
-  7519	}
-  7520	
-  7521	static int ath12k_wmi_ctrl_stats_event_parser(struct ath12k_base *ab,
-  7522						      u16 tag, u16 len,
-  7523						      const void *ptr, void *data)
-  7524	{
-  7525		int ret;
-  7526	
-  7527		ath12k_dbg(ab, ATH12K_DBG_WMI, "wmi ctrl path stats tag 0x%x of len %d rcvd\n",
-  7528			   tag, len);
-  7529	
-  7530		switch (tag) {
-  7531		case WMI_TAG_CTRL_PATH_STATS_EV_FIXED_PARAM:
-  7532			/* Fixed param is already processed*/
-  7533			ret = 0;
-  7534			break;
-  7535		case WMI_TAG_ARRAY_STRUCT:
-  7536			/* len 0 is expected for array of struct when there
-  7537			 * is no content of that type to pack inside that tlv
-  7538			 */
-  7539			if (len == 0)
-  7540				return 0;
-  7541	
-  7542			ret = ath12k_wmi_tlv_iter(ab, ptr, len,
-  7543						  ath12k_wmi_ctrl_stats_subtlv_parser,
-  7544						  data);
-  7545			break;
-  7546		default:
-  7547			ath12k_warn(ab, "Received invalid tag for wmi ctrl path stats\n");
-  7548			ret = -EINVAL;
-  7549			break;
-  7550		}
-  7551	
-  7552		return ret;
-  7553	}
-  7554	
-  7555	static void ath12k_wmi_ctrl_path_stats_event(struct ath12k_base *ab, struct sk_buff *skb)
-  7556	{
-  7557		struct wmi_ctrl_path_stats_event *fixed_param;
-  7558		struct ath12k_wmi_ctrl_path_stats_list param = {0};
-  7559		struct ath12k_wmi_ctrl_path_stats_list *stats;
-  7560		const struct wmi_tlv *tlv;
-  7561		struct list_head *src, *dst;
-  7562		struct ath12k *ar;
-  7563		void *ptr = skb->data;
-  7564		u16 tlv_tag, tag_id;
-  7565		u32 more;
-  7566		int ret;
-  7567	
-  7568		if (!skb->data) {
-  7569			ath12k_warn(ab, "No data present in wmi ctrl stats event\n");
-  7570			return;
-  7571		}
-  7572	
-  7573		if (skb->len < (sizeof(*fixed_param) + TLV_HDR_SIZE)) {
-  7574			ath12k_warn(ab, "wmi ctrl stats event size invalid\n");
-  7575			return;
-  7576		}
-  7577	
-  7578		param.ar = NULL;
-  7579	
-  7580		tlv = ptr;
-  7581		tlv_tag = le32_get_bits(tlv->header, WMI_TLV_TAG);
-  7582		ptr += sizeof(*tlv);
-  7583	
-  7584		if (tlv_tag != WMI_TAG_CTRL_PATH_STATS_EV_FIXED_PARAM) {
-  7585			ath12k_warn(ab, "wmi ctrl stats without fixed param tlv at start\n");
-  7586			return;
-  7587		}
-  7588	
-  7589		INIT_LIST_HEAD(&param.pdev_stats);
-  7590	
-  7591		fixed_param = ptr;
-  7592		ret = ath12k_wmi_tlv_iter(ab, skb->data, skb->len,
-  7593					  ath12k_wmi_ctrl_stats_event_parser,
-  7594					  &param);
-  7595		if (ret) {
-  7596			ath12k_warn(ab, "failed to parse wmi_ctrl_path_stats tlv: %d\n", ret);
-> 7597			if (!param.ar)
-  7598				return;
-  7599			goto free;
-  7600		}
-  7601	
-  7602		ar = param.ar;
-  7603		if (!ar)
-  7604			return;
-  7605	
-  7606		tag_id = ar->debug.wmi_ctrl_path_stats_tagid;
-  7607		stats = &ar->debug.wmi_ctrl_path_stats;
-  7608		more = __le32_to_cpu(fixed_param->more);
-  7609	
-  7610		switch (tag_id) {
-  7611		case WMI_TAG_CTRL_PATH_PDEV_STATS:
-  7612			src = &param.pdev_stats;
-  7613			dst = &stats->pdev_stats;
-  7614			break;
-  7615		default:
-  7616			goto free;
-  7617		}
-  7618	
-  7619		spin_lock_bh(&ar->debug.wmi_ctrl_path_stats_lock);
-  7620		if (!more) {
-  7621			if (!ar->debug.wmi_ctrl_path_stats_more_enabled)
-  7622				ath12k_wmi_ctrl_path_stats_list_free(stats);
-  7623			else
-  7624				ar->debug.wmi_ctrl_path_stats_more_enabled = false;
-  7625	
-  7626			list_splice_tail_init(src, dst);
-  7627			complete(&ar->debug.wmi_ctrl_path_stats_rcvd);
-  7628		} else {
-  7629			if (!ar->debug.wmi_ctrl_path_stats_more_enabled) {
-  7630				ath12k_wmi_ctrl_path_stats_list_free(stats);
-  7631				ar->debug.wmi_ctrl_path_stats_more_enabled = true;
-  7632			}
-  7633			list_splice_tail_init(src, dst);
-  7634		}
-  7635		spin_unlock_bh(&ar->debug.wmi_ctrl_path_stats_lock);
-  7636		return;
-  7637	free:
-  7638		spin_lock_bh(&ar->debug.wmi_ctrl_path_stats_lock);
-  7639		ath12k_wmi_ctrl_path_stats_list_free(&param);
-  7640		spin_unlock_bh(&ar->debug.wmi_ctrl_path_stats_lock);
-  7641	}
-  7642	#else
-  7643	static void ath12k_wmi_ctrl_path_stats_event(struct ath12k_base *ab,
-  7644						     struct sk_buff *skb)
-  7645	{
-  7646	}
-  7647	#endif /* CONFIG_ATH12K_DEBUGFS */
-  7648	
+6.6 is too old, and besides we don;t support customer kernel.
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Could you try latest ath tree [1] or the mainline tree [2]?
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/
+[2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/
+
+If the issue is still seen, please enable verbose ath12k log using below command and help
+collect dmesg logs:
+
+	sudo modprobe ath12k debug_mask=0xffffffff
+
+One more thing, the open-WRT patch is overkill, can you narrow down to find which line of
+code in ath12k_pci_enable_ltssm() is causing this issue?
+
+
+> branch. During testing, I observed a kernel crash from the ATH12k
+> driver as soon as the probe is called. The crash log is as follows:
+> 
+> [    9.492631] Kernel panic - not syncing: Asynchronous SError
+> Interrupt
+> [    9.492634] CPU: 7 PID: 222 Comm: (udev-worker) Not tainted 6.6.58-
+> 01497-ga7758da17c28-dirty #1
+> [    9.492638] Hardware name: Texas Instruments AM69 SK (DT)
+> [    9.492640] Call trace:
+> [    9.492642]  dump_backtrace+0x94/0xec
+> [    9.492658]  show_stack+0x18/0x24
+> [    9.492662]  dump_stack_lvl+0x48/0x60
+> [    9.492669]  dump_stack+0x18/0x24
+> [    9.492672]  panic+0x320/0x378
+> [    9.492677]  nmi_panic+0x8c/0x90
+> [    9.492681]  arm64_serror_panic+0x6c/0x78
+> [    9.492686]  do_serror+0x3c/0x78
+> [    9.492692]  el1h_64_error_handler+0x34/0x4c
+> [    9.492697]  el1h_64_error+0x64/0x68
+> [    9.492700]  ath12k_pci_read32+0x1bc/0x1e8 [ath12k]
+> [    9.492725]  ath12k_pci_power_up+0xdc/0x340 [ath12k]
+> [    9.492747]  ath12k_core_init+0x2c/0xa8 [ath12k]
+> [    9.492769]  ath12k_pci_probe+0x698/0x908 [ath12k]
+> [    9.492791]  pci_device_probe+0xa8/0x16c
+> [    9.492800]  really_probe+0x110/0x27c
+> [    9.492805]  __driver_probe_device+0x78/0x12c
+> [    9.492808]  driver_probe_device+0x3c/0x118
+> [    9.492810]  __driver_attach+0x74/0x124
+> [    9.492813]  bus_for_each_dev+0x78/0xd8
+> [    9.492819]  driver_attach+0x24/0x30
+> [    9.492824]  bus_add_driver+0xe4/0x208
+> [    9.492828]  driver_register+0x60/0x128
+> [    9.492831]  __pci_register_driver+0x44/0x50
+> [    9.492835]  ath12k_pci_init+0x2c/0x6c [ath12k]
+> [    9.492858]  do_one_initcall+0x70/0x1b4
+> [    9.492861]  do_init_module+0x58/0x1e4
+> [    9.492867]  load_module+0x19bc/0x1a8c
+> [    9.492869]  init_module_from_file+0x88/0xc4
+> [    9.492873]  __arm64_sys_finit_module+0x1c0/0x2ac
+> [    9.492877]  invoke_syscall+0x44/0x108
+> [    9.492882]  el0_svc_common.constprop.0+0xc0/0xe0
+> [    9.492885]  do_el0_svc+0x1c/0x28
+> [    9.492889]  el0_svc+0x2c/0x84
+> [    9.492892]  el0t_64_sync_handler+0xc0/0xc4
+> [    9.492895]  el0t_64_sync+0x190/0x194
+> [    9.492899] SMP: stopping secondary CPUs
+> [    9.492908] Kernel Offset: disabled
+> [    9.492909] CPU features: 0x0,80000200,28020000,1000420b
+> [    9.492913] Memory Limit: none
+> 
+> Upon searching online, I found the OpenWRT patch that appears to
+> address a similar issue: OpenWRT Patch: Prevent LTSSM Startup Crash.
+> https://git.openwrt.org/?p=openwrt/openwrt.git;a=blob;f=package/kernel/mac80211/patches/ath12k/100-ath12k-prevent-ltssm-startup-crash.patch;h=cd85a0f6aa2652d62bfbea04e9bcca3bcf831b7f;hb=935b2b7dcef61b2893ed5dff307dd8f8a1156899
+> With the above patch applied, I do not see the crash anymore.
+> 
+> Could anyone confirm if this issue has been reported before/known bug
+> or provide any insights? 
+> Any additional information or suggestions would be greatly appreciated.
+> 
+> Details about the test setup,
+> TI-AM69-SK board:
+> https://www.ti.com/tool/SK-AM69?keyMatch=am69%20sk&tisearch=universal_search
+> Silex WiFi card SX-PCEBE:
+> https://www.silextechnology.com/connectivity-solutions/embedded-wireless/sx-pcebe
+> TI Linux Repo:
+> https://git.ti.com/cgit/ti-linux-kernel/ti-linux-kernel/?h=ti-linux-6.6.y
+> 
+> Thank you.
+> 
+> Regards,
+> Parth P
+> 
+
 
