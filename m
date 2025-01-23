@@ -4,91 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF08DC02182
-	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 16:23:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F2BFC0218B
+	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 17:16:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=wx5TJavWPaNz9mnX/E2Tah0I89uGKiGEDdnmz0vsjqI=; b=e0wasscAgzxlnz1/KJUfoH7q/N
-	ka/4sMXRCqy8hVmP3zpxIqgg+kwdHIrF2KrvdnB9cpAjcvn51Llm/vmxKv3bWDcbpkS16wrtW6Lte
-	QRDI5cE7WSa2zsI7z8Sp0kb3fBTaJ3dKZJ/az97VIsmK/rEddfNP3duPpw9a3hsqzr3EvRYTkyj+Q
-	HngXXz0qyTQAbqQdtBfbT7JjCFWsGMwCu68gTnfL4NNbgR89nrkvhoHk5AuHcXCnT7Jtrf3Z5bVKy
-	mjSnROXJq6Cyx2wpMsatQFeutEyWvPkFXetAg4x2IiVQ7BlQ6tOY4nn3PUFsFVYu4AT8wLU6z77Ff
-	0NjY7ayA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=d3az1RKU17qwjiOPGrZkVior54Yx4OI9sSB4ahewp44=; b=jQXLf5sDDKXpA7pjKJF7osnIYI
+	uhJtM2ge7bbJ2/ANnH/InlfcZkPMSSmRmIryGTHJjRJjAHYOz6fLLG6k7bYhFbeCB37zlHziSnDxL
+	bm1aKcHbwvDLE16fXEPChr4Mv/ri5vBceyxrWoKda+RXQ2WFAebdUTXl4057mKn8KmAD5JSg6GQEO
+	HBnnsfqOgKaMw2xCXaXRDK799dqhTNHxVOYm+CEuA7PY5iuNcnkFx9ibapTZYyTVTglQo9pWZctcb
+	1qZdtsFrmVw63+qS4/P9AFu1hhfyEDqTykCwSqrVZh4wO5bCr6wKNR51iniR/NB89i9PtDEQBgk6Z
+	gV/4Zd5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tazzB-0000000Cohz-2V7i
+	id 1tb0og-0000000CuVW-1BhK
 	for ath12k@archiver.kernel.org;
-	Thu, 23 Jan 2025 16:23:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 23 Jan 2025 17:16:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tazxp-0000000CoVp-32NU
+	id 1tb0l0-0000000Ctkm-0VwY
 	for ath12k@lists.infradead.org;
-	Thu, 23 Jan 2025 16:21:55 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NFreRu032719
-	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 16:21:52 GMT
+	Thu, 23 Jan 2025 17:12:43 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NA7qZo011234
+	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 17:12:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=wx5TJavWPaNz9mnX/E2Tah
-	0I89uGKiGEDdnmz0vsjqI=; b=hiwQ3kaGoOqHd6RA1uDEoWUO/7Em3iEIoeLgso
-	RF06Y6RWVyOgB5MmbZ37+8BGPhOdoX6K2j5dhiT6VI0b9xf7u+TwmvOW1u5pOI+Y
-	qyQ3ZlvdMmwhBMw+l6WuTumN0w5RIrmOZDBFG6E9yJXfh4HEhzTAoE7dvU9F/+tz
-	M3/JPsR5OBxO6TxVJxAGpFsdrOs1op/6PyhxauOa5FfOG/UNszsoAivgX+3p4T/O
-	d+dsLvq3SaPb+TqItKsY0Q4qgUQYaFMYSd/exv7u+b/rcZEFvU9vKW+16J5iBbrB
-	4YxvE2yUmVgjn2DVl0Vxbk6hyEhqAtXNPOFurDcl/7yqZJ/g==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44brsyg2fg-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	d3az1RKU17qwjiOPGrZkVior54Yx4OI9sSB4ahewp44=; b=aPbocEG43Lzi6hRy
+	Q1EjDsZ88n7tVcr24oKDA9eMzFoXg7r0VR7p+mZeXyZN11RGK7ujRv9v3txHA/v2
+	yESOe/bnDYHPxn6OtoJExcWktW+ZAS8cgul1ubpfLVi9gRI4CkuOl62dtLH0MSA+
+	eWfj/sE7yoDObSHVVrZ7zInev/5bCPhDXEbaWALczfsEc5sEsgz072VLWoCuuOEL
+	v30QNAeAfvYz6472+9CFGCxOoFeA2U2wgxW1liwVY3i7a9xppLlEWQbTVjwr8IV5
+	hg8jJyWjR0hMKq0CxyYAWCzMtAODDJCRWfCLNRVeouYhslbBoZK0BAo8pA6fZHbX
+	pm/fXw==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44bkr8h0r9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 16:21:52 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ee5616e986so3284152a91.2
-        for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 08:21:52 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 17:12:41 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-216717543b7so29040875ad.0
+        for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 09:12:41 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737649311; x=1738254111;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=wx5TJavWPaNz9mnX/E2Tah0I89uGKiGEDdnmz0vsjqI=;
-        b=iJK5RrWmCP9WFxltUzWlvBMaAcpm6K6WscCShI+wDUCy7e1SEzhFsLYrkYUwk4SN2+
-         oJecpsZlY8skWaYp3Q/NImpwzWGAL0askI31heNokwhE0MtdEO+YFqPSZ6WcX3DtrhVB
-         XD6lCk6OH93YCKFYapeW5egyjmFUbyqgAOc1CgRTPfaTp4gRwfbUveWiGEherhDOqd4I
-         gXK0947bRsFg29FoJH9xmAtmFJGj8EMs0v4m3wBwY8AdQBD1aPbhM+FFZ9n1ut+fqmey
-         oB/nmExcqyB42wooibJjIlL+3aMSn/BVgP2Exc2nxnT/zmqsKxmWL6Y4QG8W+YQvPO+7
-         BvWw==
-X-Forwarded-Encrypted: i=1; AJvYcCUeGjWhgDv6Dc3wHPW3bpoQJvy7oqY/h8wCSOzxpo0TfQE30BT5eW3xINIWrSg5ZQ0zuE6uTL4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz7P3F6I73O5pFjGZPPgL8LVjEkC7V7jMXgv2CaU8TjvgY6Any6
-	2E6z1xQnPDGk3djdIgiL3YTEVXYfwyliA8BI3Khvrmrm6BD572/nxrYUeEcGs/jiP+FjiKtb+Uj
-	yFju+VMmYElgCPJs/cjAg4OzpNrADUnKYLZMA1YFwdR8dcSyBAfUNOKsiI2Ok
-X-Gm-Gg: ASbGncvNfuwDUmS2x2Z08NTcjTSA+iV6QodGevQALZlmx5dQvgRMqDN1UkYgirAkCZL
-	w3us+60EW7ydHjB6ZfSHy8uXoer7u65D3fqGxvHysc7s8w1SMZa28uHBRLLAg8Ssf30cXpJ/p70
-	M+/iZ4XXv3eatUUoP7hKgcOIvsRCFLRrCu5086I0QixgLnbT7mRhWhqKVJ45TDA2T2s+ukpSOmC
-	owN1vnXKV5kpvXgZ439YqwZM4ubBuhK7FW0SRJpi1Yvi80woMzzEea+DhhearxaF1YPrI1kJN+r
-	1Q9iNzTvY0tWzpi5bMo3APGK98TfO1OYG0GKAoFqIcXt0Hy3Mo3frdFCSde3wXgV3v5BuIdhvDF
-	8BW6QtQBbdPLTCrD6ri8=
-X-Received: by 2002:a17:90b:2709:b0:2f4:434d:c7ed with SMTP id 98e67ed59e1d1-2f782cbdfe2mr42308897a91.16.1737649310752;
-        Thu, 23 Jan 2025 08:21:50 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IH8Pwb4wE8+gwUhLvHjzhTe1kkVPWCXTcP85tfaQItdsYDRJbcwDWGfSqivQhSCp1/ilKpw1g==
-X-Received: by 2002:a17:90b:2709:b0:2f4:434d:c7ed with SMTP id 98e67ed59e1d1-2f782cbdfe2mr42308851a91.16.1737649310342;
-        Thu, 23 Jan 2025 08:21:50 -0800 (PST)
-Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f7e6a7e04dsm4534085a91.12.2025.01.23.08.21.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 Jan 2025 08:21:49 -0800 (PST)
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Thu, 23 Jan 2025 21:51:38 +0530
-Subject: [PATCH for-current] wifi: ath12k: fix handling of 6 GHz rules
+        d=1e100.net; s=20230601; t=1737652360; x=1738257160;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=d3az1RKU17qwjiOPGrZkVior54Yx4OI9sSB4ahewp44=;
+        b=dax3SK7Qnc5H2KowaNs8PYtasFvXPmknHDTOgR28b8iYTqLoZG7sDQTcgNIJCMlGD7
+         vPPt3iCdnqkNYWIJRVgEi1FQtREiPjsEJ+9hFWui9kaNX5OiqUvtgKfeIvo7/9zNXl7Y
+         r5Ls03h2wDjkQcYN0HFjt3xRJHU944scG6IqIVHuLb/gR3csHRmm9lhouNpjzogBC683
+         HvQbYAcV8LTTQnTlgmXpdEDlne0CQt+Is+HCWFe0eSrKL83/paClbuWu2IdjQPhygXf7
+         ObsWkDD+9sdOwkC/Qo27vHnNaQwlCVUFnc4EYD2Tt1kVOAjPW0/sGWUmKsgBWFdB2GtA
+         jHFA==
+X-Forwarded-Encrypted: i=1; AJvYcCVYxlLI15FsWOpxJcaLv0GtpWKzDDcluQlSqTNVrk89jxRKamIQ//jEXcre9J806f+EeUnvDCM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy9aMvl8bVluoCHA6g88T4LR8virH5iAN+5QBYm4ln1ov8XHnB3
+	4vTAftGx0Qb+31ZCMLw8aUHmVo4r0zq0sgn24A4LCbxrEWV3LeUge0ZaJ4phMcpMA8qtv9b3Pr8
+	6aIZzmz4XShJKLFweDzk1WKfbU6IQhZ9RJFqmylwrJB55g8Zrz/xzkMf8Oq82
+X-Gm-Gg: ASbGncvyJZf+5TRju+/FAduluLNsPQywCtEPtl8smLXl9gPg6z/ZTfLQEWpYaAKnAYB
+	jeKN1YW1dQ7NrM37v0+w8coQkW4hFUJCU3NbHhENi03z22DictNtZRcx+DXtSkqdgcBdiLQnPQS
+	yh+DyNmvmd3+0GrXva2KvmQAXCcwqkgt8PUEThX+j7oxCRwlE1zDx7zLFeQFsx/G8g5nfJtnkc+
+	eLvNoYGfLz7HzOzLNiHnjyJ8aHokLUkN/AoLXCGMwVIu0+74Rv/X2GQSXsOP8LKVENqpIrqJ9fq
+	9z3MC29evwuumD7qdA8Zi5AUQe7dwdVUeIm5HlLI98qE9+itMMLG2cHpLia02LI=
+X-Received: by 2002:a17:903:2290:b0:216:5e6e:68cb with SMTP id d9443c01a7336-21c3540d18cmr423745125ad.16.1737652360411;
+        Thu, 23 Jan 2025 09:12:40 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG2Q1Ks0mnL3M2R9V9Lg+xPeJhjuHsVJ1yl2ugFUokMhKI673ryaHT2sM/t/6MrSM2ggR2uuQ==
+X-Received: by 2002:a17:903:2290:b0:216:5e6e:68cb with SMTP id d9443c01a7336-21c3540d18cmr423744625ad.16.1737652360030;
+        Thu, 23 Jan 2025 09:12:40 -0800 (PST)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21da414e2f6sm1294225ad.197.2025.01.23.09.12.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 23 Jan 2025 09:12:39 -0800 (PST)
+Message-ID: <d39befa5-58cd-4052-a71f-c632462ccce0@oss.qualcomm.com>
+Date: Thu, 23 Jan 2025 09:12:37 -0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20250123-fix_6ghz_rules_handling-v1-1-d734bfa58ff4@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIAJFskmcC/x2MWwqEMAwAryL5ttBWXJa9yiLFR1IDUiVVEcW7G
- /wcmJkLMgpjhl9xgeDOmeek4MoC+rFNEQ0PyuCtr63zlSE+wieOZ5BtwhzUGSZO0RB9a3JIXWU
- 70HoRVPU9/4FmMf0mgmmF5r4fU3jnz3YAAAA=
-X-Change-ID: 20250123-fix_6ghz_rules_handling-ff85f1efb30b
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH for-current] wifi: ath12k: fix handling of 6 GHz rules
+To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
+        Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
         Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
         Baochen Qiang <quic_bqiang@quicinc.com>,
         Wen Gong <quic_wgong@quicinc.com>,
@@ -99,22 +94,26 @@ Cc: Balamurugan Selvarajan <quic_bselvara@quicinc.com>,
         P Praneesh <quic_ppranees@quicinc.com>,
         Bhagavathi Perumal S <quic_bperumal@quicinc.com>,
         linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org, stable@vger.kernel.org,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Proofpoint-GUID: 8wcPEEdRracmc7l3sH5YclXhyioGBrGb
-X-Proofpoint-ORIG-GUID: 8wcPEEdRracmc7l3sH5YclXhyioGBrGb
+        linux-kernel@vger.kernel.org, stable@vger.kernel.org
+References: <20250123-fix_6ghz_rules_handling-v1-1-d734bfa58ff4@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20250123-fix_6ghz_rules_handling-v1-1-d734bfa58ff4@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: 8f2hYhjFUZXRvYbBaeyjmI5oAF1bBuJg
+X-Proofpoint-GUID: 8f2hYhjFUZXRvYbBaeyjmI5oAF1bBuJg
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-23_07,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
- lowpriorityscore=0 mlxlogscore=999 spamscore=0 mlxscore=0 clxscore=1015
- impostorscore=0 malwarescore=0 adultscore=0 priorityscore=1501
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501230121
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 phishscore=0
+ priorityscore=1501 suspectscore=0 bulkscore=0 clxscore=1015
+ lowpriorityscore=0 mlxlogscore=999 impostorscore=0 malwarescore=0
+ mlxscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501230126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_082153_892940_18AACEF5 
-X-CRM114-Status: GOOD (  21.74  )
+X-CRM114-CacheID: sfid-20250123_091242_187181_0941B739 
+X-CRM114-Status: GOOD (  11.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,146 +128,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In the US country code, to avoid including 6 GHz rules in the 5 GHz rules
-list, the number of 5 GHz rules is set to a default constant value of 4
-(REG_US_5G_NUM_REG_RULES). However, if there are more than 4 valid 5 GHz
-rules, the current logic will bypass the legitimate 6 GHz rules.
+On 1/23/2025 8:21 AM, Aditya Kumar Singh wrote:
+> In the US country code, to avoid including 6 GHz rules in the 5 GHz rules
+> list, the number of 5 GHz rules is set to a default constant value of 4
+> (REG_US_5G_NUM_REG_RULES). However, if there are more than 4 valid 5 GHz
+> rules, the current logic will bypass the legitimate 6 GHz rules.
+> 
+> For example, if there are 5 valid 5 GHz rules and 1 valid 6 GHz rule, the
+> current logic will only consider 4 of the 5 GHz rules, treating the last
+> valid rule as a 6 GHz rule. Consequently, the actual 6 GHz rule is never
+> processed, leading to the eventual disabling of 6 GHz channels.
+> 
+> To fix this issue, instead of hardcoding the value to 4, use a helper
+> function to determine the number of 6 GHz rules present in the 5 GHz rules
+> list and ignore only those rules.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> 
+> Cc: stable@vger.kernel.org
 
-For example, if there are 5 valid 5 GHz rules and 1 valid 6 GHz rule, the
-current logic will only consider 4 of the 5 GHz rules, treating the last
-valid rule as a 6 GHz rule. Consequently, the actual 6 GHz rule is never
-processed, leading to the eventual disabling of 6 GHz channels.
+Note that an upcoming linux-firmware PR will bring in firmware that triggers
+this issue, so want to get all affected versions of the driver patched before
+issuing that PR.
 
-To fix this issue, instead of hardcoding the value to 4, use a helper
-function to determine the number of 6 GHz rules present in the 5 GHz rules
-list and ignore only those rules.
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-
-Cc: stable@vger.kernel.org
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/wmi.c | 61 ++++++++++++++++++++++++++---------
- drivers/net/wireless/ath/ath12k/wmi.h |  1 -
- 2 files changed, 45 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index a7625a3d1a3a9b1bbcf90cee30d3c707de03c439..296238c7ee0fd95045a3e0859d730e3bd73ec906 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -4852,6 +4852,22 @@ static struct ath12k_reg_rule
- 	return reg_rule_ptr;
- }
- 
-+static u8 ath12k_wmi_ignore_num_extra_rules(struct ath12k_wmi_reg_rule_ext_params *rule,
-+					    u32 num_reg_rules)
-+{
-+	u8 num_invalid_5ghz_rules = 0;
-+	u32 count, start_freq;
-+
-+	for (count = 0; count < num_reg_rules; count++) {
-+		start_freq = le32_get_bits(rule[count].freq_info, REG_RULE_START_FREQ);
-+
-+		if (start_freq >= ATH12K_MIN_6G_FREQ)
-+			num_invalid_5ghz_rules++;
-+	}
-+
-+	return num_invalid_5ghz_rules;
-+}
-+
- static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 						   struct sk_buff *skb,
- 						   struct ath12k_reg_info *reg_info)
-@@ -4862,6 +4878,7 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 	u32 num_2g_reg_rules, num_5g_reg_rules;
- 	u32 num_6g_reg_rules_ap[WMI_REG_CURRENT_MAX_AP_TYPE];
- 	u32 num_6g_reg_rules_cl[WMI_REG_CURRENT_MAX_AP_TYPE][WMI_REG_MAX_CLIENT_TYPE];
-+	u8 num_invalid_5ghz_ext_rules;
- 	u32 total_reg_rules = 0;
- 	int ret, i, j;
- 
-@@ -4955,20 +4972,6 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 
- 	memcpy(reg_info->alpha2, &ev->alpha2, REG_ALPHA2_LEN);
- 
--	/* FIXME: Currently FW includes 6G reg rule also in 5G rule
--	 * list for country US.
--	 * Having same 6G reg rule in 5G and 6G rules list causes
--	 * intersect check to be true, and same rules will be shown
--	 * multiple times in iw cmd. So added hack below to avoid
--	 * parsing 6G rule from 5G reg rule list, and this can be
--	 * removed later, after FW updates to remove 6G reg rule
--	 * from 5G rules list.
--	 */
--	if (memcmp(reg_info->alpha2, "US", 2) == 0) {
--		reg_info->num_5g_reg_rules = REG_US_5G_NUM_REG_RULES;
--		num_5g_reg_rules = reg_info->num_5g_reg_rules;
--	}
--
- 	reg_info->dfs_region = le32_to_cpu(ev->dfs_region);
- 	reg_info->phybitmap = le32_to_cpu(ev->phybitmap);
- 	reg_info->num_phy = le32_to_cpu(ev->num_phy);
-@@ -5071,8 +5074,29 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 		}
- 	}
- 
-+	ext_wmi_reg_rule += num_2g_reg_rules;
-+
-+	/* Firmware might include 6 GHz reg rule in 5 GHz rule list
-+	 * for few countries along with separate 6 GHz rule.
-+	 * Having same 6 GHz reg rule in 5 GHz and 6 GHz rules list
-+	 * causes intersect check to be true, and same rules will be
-+	 * shown multiple times in iw cmd.
-+	 * Hence, avoid parsing 6 GHz rule from 5 GHz reg rule list
-+	 */
-+	num_invalid_5ghz_ext_rules = ath12k_wmi_ignore_num_extra_rules(ext_wmi_reg_rule,
-+								       num_5g_reg_rules);
-+
-+	if (num_invalid_5ghz_ext_rules) {
-+		ath12k_dbg(ab, ATH12K_DBG_WMI,
-+			   "CC: %s 5 GHz reg rules number %d from fw, %d number of invalid 5 GHz rules",
-+			   reg_info->alpha2, reg_info->num_5g_reg_rules,
-+			   num_invalid_5ghz_ext_rules);
-+
-+		num_5g_reg_rules = num_5g_reg_rules - num_invalid_5ghz_ext_rules;
-+		reg_info->num_5g_reg_rules = num_5g_reg_rules;
-+	}
-+
- 	if (num_5g_reg_rules) {
--		ext_wmi_reg_rule += num_2g_reg_rules;
- 		reg_info->reg_rules_5g_ptr =
- 			create_ext_reg_rules_from_wmi(num_5g_reg_rules,
- 						      ext_wmi_reg_rule);
-@@ -5084,7 +5108,12 @@ static int ath12k_pull_reg_chan_list_ext_update_ev(struct ath12k_base *ab,
- 		}
- 	}
- 
--	ext_wmi_reg_rule += num_5g_reg_rules;
-+	/* We have adjusted the number of 5 GHz reg rules above. But still those
-+	 * many rules needs to be adjusted in ext_wmi_reg_rule.
-+	 *
-+	 * NOTE: num_invalid_5ghz_ext_rules will be 0 for rest other cases.
-+	 */
-+	ext_wmi_reg_rule += (num_5g_reg_rules + num_invalid_5ghz_ext_rules);
- 
- 	for (i = 0; i < WMI_REG_CURRENT_MAX_AP_TYPE; i++) {
- 		reg_info->reg_rules_6g_ap_ptr[i] =
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index 38aed18b99f4239e40d369181549b4bc78faa862..81248253a36872f6fd93db772b5394f3ef9d3bf9 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -4093,7 +4093,6 @@ struct ath12k_wmi_eht_rate_set_params {
- #define MAX_REG_RULES 10
- #define REG_ALPHA2_LEN 2
- #define MAX_6G_REG_RULES 5
--#define REG_US_5G_NUM_REG_RULES 4
- 
- enum wmi_start_event_param {
- 	WMI_VDEV_START_RESP_EVENT = 0,
-
----
-base-commit: c4e4e37afc8b8d178b0f00f607c30b3b81253597
-change-id: 20250123-fix_6ghz_rules_handling-ff85f1efb30b
-
+/jeff
 
