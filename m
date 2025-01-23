@@ -4,91 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92E51C02182
-	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 09:26:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82D8FC02182
+	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 11:06:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To
-	:From:Subject:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=exlhf81r2DLo45l4osjsU8vD5u21bId9SYYdlAPYvcM=; b=tkdXZIu9WaOb/3Bc8B2AV/EeyO
-	s5VKO7V9dPfJ/NRA3qw9Dga8V+LwOhphl/E34Q3Zzg+Ig8HjNO0qwgC0zwGUxthHr7LX+3qRKOL2S
-	jzrvqmi+HWFR/L87iVVjEcJELS2QW147B25lquwFtFfb8zTdevSbFzBDByW1yEVmvpFmfdXM4uK2N
-	yWr7UNcWsSAsAZmamj/ilR9+wfhMPNaWzyQ/jnmCoVn3IQ+VZxf0K/ELrhlZUEXQ4dp6ax+cD23lh
-	VW/21IeNyV8FPLnAAFrfUXsKMcmpi6dmdEg5ZmKKlBNleqUd9B+I5JPnDkkmNP5EldetEZ32i9JD5
-	jUIBvVlg==;
+	bh=0vD6ev/Q9izmh4qjUpLovgYp568RmpGoOLa3bA8TX4A=; b=PsdYhTEPttPbLSQP5BQXJtoBK4
+	Ea93af7J1XVQkvJ6A/fnqkFaM7oiq27yK0c+vAvhFjjhgL0A/iUiMaBXlbpMO04+3x8pCFpKGDlur
+	pEW9ZeokgbPto/AYpjhiywNDm1HtMGkxYW5cjEa7MntKPOaWImYtIuMYr/JIlnBz3P5IjCvaHu8hw
+	zunFCWsDMi3shbrSLq5h7rIzph5cslt7OvSomJJNISw9tVsiORP3txHjJtP6Sl/pIGRy5j3+rQW0V
+	aPQEqo8dpLltZmmtB4OI1Ymlr+nB7KHriZexVasBBlXitZrMIyXmjl+BUGkEgnqUCocQfzUNiDDD4
+	RwkbJCFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tatTZ-0000000C5h3-1TM7
+	id 1tav2l-0000000CHiW-0YTk
 	for ath12k@archiver.kernel.org;
-	Thu, 23 Jan 2025 09:26:13 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	Thu, 23 Jan 2025 11:06:39 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tatTW-0000000C5gl-3YCE
+	id 1tav2h-0000000CHha-09se
 	for ath12k@lists.infradead.org;
-	Thu, 23 Jan 2025 09:26:12 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-438a39e659cso4062855e9.2
-        for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 01:26:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737624369; x=1738229169; darn=lists.infradead.org;
-        h=in-reply-to:references:cc:to:from:subject:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=exlhf81r2DLo45l4osjsU8vD5u21bId9SYYdlAPYvcM=;
-        b=ju0CSRk+qQXm3DJ0Cqwfp6BJimpKNfSXknNxef/uvPyEdjXhb3dyjV8fKU2EdIrG5y
-         HacmlaTEcWhYRwP6UVjwYQPn8oO1F7xCIR6fkQxXryZRGzqv+FOBCwHGvwVG3U16pwD6
-         TlWrKBI5IXQE5heHDULaXBEKO0zTe8cx91OKi0sIkfuQATEf7vth9XPrcDix8FPBy3X5
-         HhQa7vUeR8NbJAnl8+nGsi+6micsOd637Fo5uQOTqr6mAzHsejySGv33asXLhf08dAjG
-         YznGo8CRlLk1xkrmkb6fy6++HiNmVWQ2eR+YPKilsR6QH3NSffmcMTeF6trbcgX//VVm
-         HnAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737624369; x=1738229169;
-        h=in-reply-to:references:cc:to:from:subject:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=exlhf81r2DLo45l4osjsU8vD5u21bId9SYYdlAPYvcM=;
-        b=pbQ56IqibmjlqF9VroTn9O4JpbldFMP/tWJqAtAlT6UpUdMBujTSFEfh2IrBwyhvta
-         qsju2iyqQkfqasN8XNnUqv/UI5qc8Wz407+LUe2zdty8RsQR//qr0ZNz16AfnsQuNyRZ
-         6pf8VZ4SIXlLCaview5yEQxvHs5V4Z2FEXJayqLdfZFI7Z+aNWQaxrpyPYwO0GeAgLcb
-         0hsQ7raUrG6O91+VHZuSR2L0h5VHvvdbrWnPFBTsNCDgmELMBe5etnuk+x4RKKAN1KW+
-         JO15xTOdjbmBWnoxwnh38DLs4JMhAk+r9VZiOunndspZl371j2MwcxhCFs4Kb7JyVO1k
-         U7Ig==
-X-Forwarded-Encrypted: i=1; AJvYcCU5+xa02v+jFTB63lj3XiIyrM74M0fcz/0M8mE9uoOrm6ftWLzkGYlgZVfByPqPflqoily8vI8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwfL0zccSz5+O0z/mhumTPI+Yu54ZcihnNv1IwdBxFqsPyo6uAE
-	E6GLb9/OiSxqVNmmRIBgpcCIjOIx887DTKC8BAKT9LQkJ1UnZL3P
-X-Gm-Gg: ASbGncuXXV6AIIbKczn6TVToD58HgDsTqc5E4g5zPZWXnQMJ0dzXCD7+Pn4e1zxnZDf
-	ziilbGL8jwY3HZmM1oM7TaoKlRCcW7ziMRBy3RBvX2uOxSNysa5yXtax+4Ed0g71LYxjR5qZi69
-	ott7ULA2HkHnZ3cTuQE6gD0U1wu0dvs5p7NN1PWm6ePcRqmNYWaO4P6CgknYwdckT+FyJ3e1HNO
-	0fEDCnGFaR/2UD4yJOVvuwAOa4LriwLgOCsQohfg2xR+H+JzZIQUJSAdaRzt5iPk5y2t0Z81Ysu
-	EiuCWTFXZNJ//E7pat3qqWU=
-X-Google-Smtp-Source: AGHT+IEmHLIHqv7jO8I11oxrWXr69vnHLGz3wRb2PIZ5hihqMrTHq6XurJa22x+ECqzMN/Vp9iF6aQ==
-X-Received: by 2002:a05:600c:1908:b0:434:9c1b:b36a with SMTP id 5b1f17b1804b1-438913dbf63mr223008635e9.13.1737624368698;
-        Thu, 23 Jan 2025 01:26:08 -0800 (PST)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38bf322aa40sm18521106f8f.45.2025.01.23.01.26.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 23 Jan 2025 01:26:08 -0800 (PST)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Thu, 23 Jan 2025 10:26:07 +0100
-Message-Id: <D79CFIHCW9EP.330I13I63VTFG@gmail.com>
-Subject: Re: [PATCH] wifi: ath12k: fix skb_ext_desc leak in ath12k_dp_tx
- error path
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Jeff Johnson" <jeff.johnson@oss.qualcomm.com>, "Aditya Kumar Singh"
- <aditya.kumar.singh@oss.qualcomm.com>, <ath12k@lists.infradead.org>
-Cc: <linux-wireless@vger.kernel.org>
-X-Mailer: aerc 0.19.0-0-gadd9e15e475d
-References: <20250122160112.3234558-1-nico.escande@gmail.com>
- <101c0824-1c0d-4e5f-bb4c-7d6ef65f1698@oss.qualcomm.com>
- <d0dfce80-3e57-4efe-8552-b18bae9e9437@oss.qualcomm.com>
- <c6b65bee-3680-4e54-9d7a-2b582461cc73@oss.qualcomm.com>
-In-Reply-To: <c6b65bee-3680-4e54-9d7a-2b582461cc73@oss.qualcomm.com>
+	Thu, 23 Jan 2025 11:06:37 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+	by ns.iliad.fr (Postfix) with ESMTP id EA60720172;
+	Thu, 23 Jan 2025 12:06:28 +0100 (CET)
+Received: from [192.168.108.70] (freebox.vlq16.iliad.fr [213.36.7.13])
+	by ns.iliad.fr (Postfix) with ESMTP id DB2FF2012E;
+	Thu, 23 Jan 2025 12:06:28 +0100 (CET)
+Message-ID: <f5c6d874e9d7682d52c5ed107a0ede952b5cf53f.camel@freebox.fr>
+Subject: Re: [PATCH v9 6/9] wifi: ath12k: add support for setting fixed HE
+ rate/GI/LTF
+From: Maxime Bizon <mbizon@freebox.fr>
+To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>, 
+	ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Muna Sinada <quic_msinada@quicinc.com>, 
+	Jeff Johnson <quic_jjohnson@quicinc.com>
+Date: Thu, 23 Jan 2025 12:06:28 +0100
+In-Reply-To: <20250114003813.2783550-7-quic_pradeepc@quicinc.com>
+References: <20250114003813.2783550-1-quic_pradeepc@quicinc.com>
+	 <20250114003813.2783550-7-quic_pradeepc@quicinc.com>
+Organization: Freebox
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: base64
+User-Agent: Evolution 3.44.4-0ubuntu2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_012610_886293_9A2459D5 
-X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-CacheID: sfid-20250123_030635_220951_1183D6FD 
+X-CRM114-Status: UNSURE (   7.41  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,41 +66,30 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
+Reply-To: mbizon@freebox.fr
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Wed Jan 22, 2025 at 9:19 PM CET, Jeff Johnson wrote:
-> On 1/22/2025 10:20 AM, Jeff Johnson wrote:
->> On 1/22/2025 8:46 AM, Aditya Kumar Singh wrote:
->>> On 1/22/25 21:31, Nicolas Escande wrote:
->>>> When vlan support was added, we missed that when
->>>> ath12k_dp_prepare_htt_metadata returns an error we also need to free t=
-he
->>>
->>> nit: Always refer function name with () for clarity.
->>>
->>>> skb holding the metadata before going on with the cleanup process.
->>>> Compile tested only.
->>>>
->>>> Fixes: 26dd8ccdba4d ("wifi: ath12k: dynamic VLAN support")
->>>> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
->>>> ---
->>>
->>> If there's going to be a new version please take care of above nit=20
->>> comment. Otherwise -
->>>
->>> Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
->>>
->>>
->>=20
->> I'll fixup () in both subject and description
->
-> fixup in pending:
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=3Dp=
-ending&id=3D29d6569f323a88ccb3239abea562f6e691cfd9e4
+Ck9uIE1vbiwgMjAyNS0wMS0xMyBhdCAxNjozOCAtMDgwMCwgUHJhZGVlcCBLdW1hciBDaGl0cmFw
+dSB3cm90ZToKCkhlbGxvLArCoAo+IEBAIC04Mzc2LDEwICs4NjM3LDEzIEBAIHN0YXRpYyBpbnQg
+YXRoMTJrX21hY19vcF9hZGRfaW50ZXJmYWNlKHN0cnVjdCBpZWVlODAyMTFfaHcgKmh3LAo+IMKg
+Cj4gwqDCoMKgwqDCoMKgwqDCoGZvciAoaSA9IDA7IGkgPCBBUlJBWV9TSVpFKGFydmlmLT5iaXRy
+YXRlX21hc2suY29udHJvbCk7IGkrKykgewo+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgYXJ2aWYtPmJpdHJhdGVfbWFzay5jb250cm9sW2ldLmxlZ2FjeSA9IDB4ZmZmZmZmZmY7Cj4g
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoGFydmlmLT5iaXRyYXRlX21hc2suY29udHJv
+bFtpXS5naSA9IE5MODAyMTFfVFhSQVRFX0ZPUkNFX1NHSTsKCmNhbiB5b3UgZXhwbGFpbiB3aHkg
+aXQncyBub3QgTkw4MDIxMV9UWFJBVEVfREVGQVVMVF9HSSA/Cgo+IMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgbWVtc2V0KGFydmlmLT5iaXRyYXRlX21hc2suY29udHJvbFtpXS5odF9t
+Y3MsIDB4ZmYsCj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+c2l6ZW9mKGFydmlmLT5iaXRyYXRlX21hc2suY29udHJvbFtpXS5odF9tY3MpKTsKPiDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoG1lbXNldChhcnZpZi0+Yml0cmF0ZV9tYXNrLmNvbnRy
+b2xbaV0udmh0X21jcywgMHhmZiwKPiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBzaXplb2YoYXJ2aWYtPmJpdHJhdGVfbWFzay5jb250cm9sW2ldLnZodF9tY3Mp
+KTsKPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgbWVtc2V0KGFydmlmLT5iaXRyYXRl
+X21hc2suY29udHJvbFtpXS5oZV9tY3MsIDB4ZmYsCj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBzaXplb2YoYXJ2aWYtPmJpdHJhdGVfbWFzay5jb250cm9sW2ld
+LmhlX21jcykpOwo+IMKgwqDCoMKgwqDCoMKgwqB9Cj4gwqAKCgpUaGUgc2FtZSBpbml0aWFsaXph
+dGlvbiBvZiBoZV9tY3MgaXMgbWlzc2luZyBpbiB0aGUgYXRoMTJrX21hY19hc3NpZ25fbGlua192
+aWYoKQoKLS0gCk1heGltZQoKCgo=
 
-Perfect,
-
-Thanks a lot !
 
