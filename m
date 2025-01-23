@@ -4,107 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42B34C02182
-	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 19:02:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EE35C02182
+	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 19:31:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=rp+WoVb4Ir2FS5YckET275G6b9qljQCT2IocqP9kwdc=; b=Ugk2YBLgjcyW4dmmC2XR/2QBRP
-	hX6F75/KZrX7ihyeb3bU44pGXWi8oUa7cv8FO+MPXpvETOQqBGUFsUNQBCAwLpCtFdjUzjkGMeV3H
-	ZalBHkBA1KY/JbgHBPXeUJXVjgR5nVr7DOk71xVRY2cEXxm6KbKkTRsrcdCDOM9eHgd6KkntDxRlH
-	d6/xyY5oxCOoa9mMy2yj/kSEYMaolwnnDvYJqmsh3gGWRPS4GItCq2RKXbT27rM7rw9Gm3RzK4noZ
-	d8d8SlAKKg7XOTcO1cLD/cfMyygwDkAoloXH4LBiq1/cCsvqCxHdSZrGrSVwCS4v7LuE7F+TBGTQx
-	XUOWFscA==;
+	bh=R+HU6Upczjepad3IS1y8A7tsL3itPbaZJ/4EX4oO7RY=; b=LUsLZXgvIu5jF6ntf0gwEgUK9j
+	5/7zHKS6pGpYYBkjBPkoDiYGP4ADHO6Cf/XVZteAzl8ToHFz4se/iqw3UEaYNr5cjdi7C/PGUVG4n
+	FAij9aordTeLZeQ+6eVny2i+xn5f22jFdYTAeG/4WSXBNFeKG79woU1ZanH7jENC7FsWIg9M0b6P4
+	93AFU485zjA4E4LJbfly+JcrVrZkpAH1zSbVpDuCpQc4TMiWcVIczJsB3FHAu3cPP18qiCXDBwyzB
+	e5wcF1sveSGk5qwQj+QrhdX2riKOuejG4NZxKYnYbWzBlS9k/ZXC6qfJ2mOzfXk5TxaE5FNSV4fYG
+	qiu4yADw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tb2TE-0000000D57Q-05Mh
+	id 1tb2vi-0000000D8Sy-1jE2
 	for ath12k@archiver.kernel.org;
-	Thu, 23 Jan 2025 19:02:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 23 Jan 2025 19:31:54 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tb2TA-0000000D56L-2kaT
+	id 1tb2vg-0000000D8SU-0Csr
 	for ath12k@lists.infradead.org;
-	Thu, 23 Jan 2025 19:02:26 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NFr8k3031758
-	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 19:02:23 GMT
+	Thu, 23 Jan 2025 19:31:53 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NA8U4i013056
+	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 19:31:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rp+WoVb4Ir2FS5YckET275G6b9qljQCT2IocqP9kwdc=; b=P+Zo3Y3Ismdxxl5a
-	wba/RuENpw0bCuKVYsQ3flfi0SClsBTBA1kW+hdQzQzHMz8jnMX7v5AtmcbXSE9L
-	YcXNaFxNGZo3uAapPpfo9NJ8501AdH7eKmRAurQ9yBV49goO0qVERFnEGslKlZnG
-	IDV7iARKx8RPQlC5/DaM/2XvhhMZOZXVhGdBUmz9i7HqwZa3yBWM0/8/OG9ED3y4
-	SRtUlRWPZwSiEabSpK6BWBZ9bCc5G4D+6RfnARAmYNe1JWh5Ag4xK/fg+wboFplH
-	Nkbj+DEx9ZcHhZpgUlpD09EKE/Z+G80QEzMGWaun9UIudIOC8jRd0kXwUCsVnc0u
-	0Wg25A==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44brsygf3e-1
+	R+HU6Upczjepad3IS1y8A7tsL3itPbaZJ/4EX4oO7RY=; b=M7rvJR3Bkpmdp5eD
+	xJTm13LeIQ4gCuAc5Hl1wVJEbIsjCpGQgr6qPqi0Wu7RE1/Coc3LrQUrWHLMpz7t
+	CmVeldEKjPdvczOTSu7cU5a1GaLgSo2Y9B1yaLfww08JqXVpSLWIYWejzo45HxNo
+	l0ouHqHgnkExeh5kRZkO73+t3icyHhMFf+ZNVCMMg/NvwpBDfhQSsAuwjQ3NO3TU
+	n2pmUlC73TcHYUza5w4RK9pNKmcD1rVkqXw6YgDeHHDQIy1dGzR9JxPwBz6NZUc4
+	5M3UjW/0ZMAExW8zgWNMaMSJmjZReppGv0+eQcsPd5QKAkQiIqrfns3v8jV87Nvl
+	xKZd/A==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44bkr8hb2b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 19:02:22 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-216266cc0acso41758905ad.0
-        for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 11:02:22 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 19:31:51 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2ee46799961so3806177a91.2
+        for <ath12k@lists.infradead.org>; Thu, 23 Jan 2025 11:31:51 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737658941; x=1738263741;
+        d=1e100.net; s=20230601; t=1737660710; x=1738265510;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=rp+WoVb4Ir2FS5YckET275G6b9qljQCT2IocqP9kwdc=;
-        b=JJKFEBXNq707YH4rcNEdzR17CfhvYuxjAKZhk56Z9HJNOXUP74UmzMdlMyf2wzwE5J
-         mMeUsRYvLy4Uwf7HEKJb24EcYu/PWIXwz/DsCAV4Qe4NJgqbJuxctUp90i9AjxqqTEF1
-         UVVD188aKiFH+AETsfLzJ+wJY1+WqIxjZOmkaggF1SARQXiwueOKn0fWpSIBPtsNH6DD
-         9Bg/eIde/Lw1ryG4RHTF6ZbgyZK0w+UkPvxv7JhF8z2u81ikEFyvAEPMbCqpO2lsnt09
-         OBXcwF84o2M5sH/rwXWvOn9UXnb+B0uXKXwJsLWJuZ2qnXezrKJZrYm0uvbVqVo/2QGl
-         SQWw==
-X-Forwarded-Encrypted: i=1; AJvYcCX/0h09VTqHw74SoBSK3wejkuuKFBkQR30+cIWgAizklqPktzgWPewOzPiXGQG3BRoUGFEUUsA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy7jcZHJiMxHZOt/mamRfG24BPNgnZ1F0Y03GlbiPl220FMH9BG
-	orvLN+8kaIQUuFY1K3JFIbIDZw3WDe1b4DNesTT9u7A/5NGsbIRs1VAtryq72smvhPIZQ9uT2Ok
-	FywLhXl7ym/7Fh7KV9FAwAN4Kix5otAr6IfllKkiY28An7cztBplbQp2wUuAB
-X-Gm-Gg: ASbGnctQmp1z0ZLvwLxZsQE0Pqf/OFhIGyLFkI3DYGhxwXYC+bNhT/BUavWXcHSS2gN
-	ai8GDtXl9uQWKKwSQQ5GqAP3T+SW8C5jVImr5PGTSFzAT4KU4tANvfLJSi0kT1mts9CSsH+AFSJ
-	+mbK9W7mUvrOqjftyDYIs/bqm7aWhqA4hnBerwTMfTfGnyDk88fBaFZbCoEQAKzQd9S6xMTsQJ8
-	YgmwljCtxrSlI5jzMf44CBuF01DDe6PP7O8HjqVXs+UuhNrro77pwnKSJ3dpnkKor3+LRQ4/zjP
-	6fiLg2+irl7Ml0njX7ZFg/TOQ4v/ucaMHJX9OC1AxqX+attQkubLR4NsDoYjB+o=
-X-Received: by 2002:a05:6a20:7492:b0:1e0:c166:18ba with SMTP id adf61e73a8af0-1eb69731123mr6251858637.12.1737658941508;
-        Thu, 23 Jan 2025 11:02:21 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IEFsxRN1zIKOddGbZZ3gkr0+K9prBCVrNuMXjlsd75VaNlfXAy9k4RP0v2eUsb7d6SR3hhwrg==
-X-Received: by 2002:a05:6a20:7492:b0:1e0:c166:18ba with SMTP id adf61e73a8af0-1eb69731123mr6251816637.12.1737658941020;
-        Thu, 23 Jan 2025 11:02:21 -0800 (PST)
+        bh=R+HU6Upczjepad3IS1y8A7tsL3itPbaZJ/4EX4oO7RY=;
+        b=Wrpl4V5A1CuvWsWDkfWv3aUamSDPsUZknlzzF9ud3H4lEzc2syNWymlLBHlcYZqMiy
+         63IhAjc+xHWoVgsi4cj/GLa7kTOVLTo4CCuNc/FF14FojilA4RMNHZ+GCgZr3mDDdUyx
+         89722s/AD3CRY+VBxVHl5r6OMyTc9TQLlIeXjiAPTs5VAlNRxCgGMF0FnL+5bFqBEGpw
+         iCpP2h2n7MvvIYGXbQwfUV09QjR/PuULfb5j9P1KiMxLp/GzJ1nTP7wvbTuUYQ4JlDWJ
+         BBmMxCZC3mkeP/gDCnr1L7Pi2aMi34Sy2L2ufMjLfTyiIUQWdwpHm6CH+u5n/jqpM1nr
+         XnrA==
+X-Forwarded-Encrypted: i=1; AJvYcCUy9QEFRA4qwuD9fJ2CfznFmUBkmeBZ6QYKKnbvBejDqdpeqqU2S/cpGM+oJ9pHgOvyZzwh+ZI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxUYU++vVHJPbgFgSnpKhjlMtxmjdUPvFRf5XqtNqQYCdkHRNux
+	OAQzjj/whocnG5JaZe0GCDPfO32ghHbF/fmgn2tSrAbbcAGgXzFF+WI0mTgL9B5IIkuERaOSj2P
+	0F7ncAjS2QYS0cTRM7OZeOcm0ZIne8ZOz4j2lVgGCkEafAFcvO/Jz2hAM8+wR
+X-Gm-Gg: ASbGncthbboieFw0akR1FwSG/fyYOkZ1m13nGrfXoMrjec56h92O3R2H98kN3rF7t8C
+	EPR+9NEB613CZ+PVM8nMyPCOwOjtqWISGiDOVIKch1et94qKbW5xFNCNmBsfYYsCMIc2ZHO0A27
+	nBiHw75pitI09ra1G/wAR92tPgita+QWrGAC+Bzo+LHAA/3gyIErL/rbxrNcXNQI5GQCxraAh5l
+	CkL2U6F51/6Je5Y4C7o8zvYRvTAYJMnRiGtBdAe+/pXzOl7jY8sZQSNlNxnHQxdwKA3DBP9VkPo
+	C8IWW8FUIysS3NSGK2is7aOAid5R/3zy9U3c4fQvdknR3GM01NTm1WOffufqJoY=
+X-Received: by 2002:a17:90b:5206:b0:2ee:9d49:3aef with SMTP id 98e67ed59e1d1-2f782d4f173mr34538188a91.23.1737660710192;
+        Thu, 23 Jan 2025 11:31:50 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHXe/tgphMQH/tq3UOXXJ75lpr4kCoASmqw3v2WyjNGtlZ41FhOSs87q32O7WXoH3nRkH1A5w==
+X-Received: by 2002:a17:90b:5206:b0:2ee:9d49:3aef with SMTP id 98e67ed59e1d1-2f782d4f173mr34538126a91.23.1737660709476;
+        Thu, 23 Jan 2025 11:31:49 -0800 (PST)
 Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72f8a6b31besm295407b3a.54.2025.01.23.11.02.20
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f7ffa6a735sm93465a91.27.2025.01.23.11.31.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 23 Jan 2025 11:02:20 -0800 (PST)
-Message-ID: <a889082f-67eb-45d1-bef9-dc6b9486ff29@oss.qualcomm.com>
-Date: Thu, 23 Jan 2025 11:02:19 -0800
+        Thu, 23 Jan 2025 11:31:49 -0800 (PST)
+Message-ID: <e00af7e5-e906-45f0-a79e-a34078e23efd@oss.qualcomm.com>
+Date: Thu, 23 Jan 2025 11:31:48 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Add support for link specific datapath
- stats
-To: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>,
-        ath12k@lists.infradead.org
+Subject: Re: [PATCH v10 1/3] wifi: ath12k: report station mode transmit rate
+To: Lingbo Kong <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-References: <20250110205912.2585850-1-quic_bmahalin@quicinc.com>
+References: <20250115063537.35797-1-quic_lingbok@quicinc.com>
+ <20250115063537.35797-2-quic_lingbok@quicinc.com>
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250110205912.2585850-1-quic_bmahalin@quicinc.com>
+In-Reply-To: <20250115063537.35797-2-quic_lingbok@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: UhG12_Tfgl2nmbal2e8FvlNhmiShXEJv
-X-Proofpoint-ORIG-GUID: UhG12_Tfgl2nmbal2e8FvlNhmiShXEJv
+X-Proofpoint-ORIG-GUID: oGTHKai6r-BF_PkqDI6JL88r0DjOkrBW
+X-Proofpoint-GUID: oGTHKai6r-BF_PkqDI6JL88r0DjOkrBW
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-23_08,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
- lowpriorityscore=0 mlxlogscore=999 spamscore=0 mlxscore=0 clxscore=1015
- impostorscore=0 malwarescore=0 adultscore=0 priorityscore=1501
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501230137
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 phishscore=0
+ priorityscore=1501 suspectscore=0 bulkscore=0 clxscore=1015
+ lowpriorityscore=0 mlxlogscore=999 impostorscore=0 malwarescore=0
+ mlxscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501230142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_110224_840305_873A3EEE 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20250123_113152_101371_53B32E42 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,60 +119,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/10/2025 12:59 PM, Balamurugan Mahalingam wrote:
-> Add support to record the number of frames enqueued, hardware
-> descriptor type, encapsulation/encryption types used, frames
-> dropped and completed. This is useful for understanding the
-> datapath performance and tune the peak throughput.
+On 1/14/2025 10:35 PM, Lingbo Kong wrote:
+> Currently, the transmit rate of "iw dev xxx station dump" command
+> always show an invalid value.
 > 
-> The link specific stats can be viewed through the below debugfs file
+> To address this issue, ath12k parse the info of transmit complete
+> report from firmware and indicate the transmit rate to mac80211.
 > 
-> cat /sys/kernel/debug/ieee80211/phy0/netdev:wlan1/link_stats
-> link[0] Tx Unicast Frames Enqueued  = 9
-> link[0] Tx Broadcast Frames Enqueued = 78689
-> link[0] Tx Frames Completed = 78698
-> link[0] Tx Frames Dropped = 0
-> link[0] Tx Frame descriptor Encap Type =  raw:0 native wifi:78698 ethernet:0
-> link[0] Tx Frame descriptor Encrypt Type =  0:78698 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0 10:0 11:0
-> link[0] Tx Frame descriptor Type = buffer:78698 extension:0
-> ------------------------------------------------------
-> link[1] Tx Unicast Frames Enqueued  = 0
-> link[1] Tx Broadcast Frames Enqueued = 78689
-> link[1] Tx Frames Completed = 78689
-> link[1] Tx Frames Dropped = 0
-> link[1] Tx Frame descriptor Encap Type =  raw:0 native wifi:78689 ethernet:0
-> link[1] Tx Frame descriptor Encrypt Type =  0:78689 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0 10:0 11:0
-> link[1] Tx Frame descriptor Type = buffer:78689 extension:0
-> ------------------------------------------------------
+> This patch affects the station mode of WCN7850 and QCN9274.
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> After that, "iw dev xxx station dump" show the correct transmit rate.
+> Such as:
+> 
+> Station 00:03:7f:12:03:03 (on wlo1)
+>         inactive time:  872 ms
+>         rx bytes:       219111
+>         rx packets:     1133
+>         tx bytes:       53767
+>         tx packets:     462
+>         tx retries:     51
+>         tx failed:      0
+>         beacon loss:    0
+>         beacon rx:      403
+>         rx drop misc:   74
+>         signal:         -95 dBm
+>         beacon signal avg:      -18 dBm
+>         tx bitrate:     1441.1 MBit/s 80MHz EHT-MCS 13 EHT-NSS 2 EHT-GI 0
+> 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00214-QCAHKSWPL_SILICONZ-1
 > 
-> Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
-> ---
-> 
-> Depends-on : 
-> [PATCH 0/2] wifi: ath12k: Add support for MLO Multicast Handling
-> Link: https://lore.kernel.org/all/20250109184932.1593157-1-quic_bmahalin@quicinc.com/ 
+> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
 
-The dependent patch still applies cleanly to ath/main and is now in pending.
-However this patch doesn't apply cleanly on top of that, so please rebase.
-
-* Applying 20250110_quic_bmahalin_wifi_ath12k_add_support_for_link_specific_datapath_stats.mbx 
-Applying: wifi: ath12k: Add support for link specific datapath stats
-Using index info to reconstruct a base tree...
-M       drivers/net/wireless/ath/ath12k/core.h
-M       drivers/net/wireless/ath/ath12k/dp.h
-M       drivers/net/wireless/ath/ath12k/dp_tx.c
-M       drivers/net/wireless/ath/ath12k/mac.c
-Falling back to patching base and 3-way merge...
-Auto-merging drivers/net/wireless/ath/ath12k/mac.c
-CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/mac.c
-Auto-merging drivers/net/wireless/ath/ath12k/dp_tx.c
-Auto-merging drivers/net/wireless/ath/ath12k/dp.h
-Auto-merging drivers/net/wireless/ath/ath12k/core.h
-Recorded preimage for 'drivers/net/wireless/ath/ath12k/mac.c'
-error: Failed to merge in the changes.
-Patch failed at 0001 wifi: ath12k: Add support for link specific datapath stats
+Closes: https://bugzilla.kernel.org/show_bug.cgi?id=219715
 
 
