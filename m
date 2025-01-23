@@ -4,53 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 415BCC02182
-	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 13:34:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDB3CC0218B
+	for <ath12k@archiver.kernel.org>; Thu, 23 Jan 2025 14:41:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RALYaAlmkLMQJ5p7Ay6GQ11StjHMypmTYMxNsJ9wiLQ=; b=CfqIBmSGGXDbcupGkQNG+2d8zt
-	MxMCbuNugwcv+6SxbtefRFZoRXzzLudmWipRqJReLUVIYA1RUgo848blpbq0LNLiVjyPGkxiZzflq
-	Tooo45uzzoRQMoLfUQbmSdUlIKPJepztX2YLNWfF+8OstzG0jfjn4tkSFTQoGMAqki0S+nl7htTUK
-	7soq7WOTUq+tQ1RyiIqTgpbTJoHyfSZwzsjMTpJYKbZ2iWyOB1IkiR3Hb72NGrHC+lGNiwMPcJNQu
-	P9lO4TRX9qIiKOA2KpY9iXf1sWwA52ifwbEUAIyjVmWSzKm3Cxe/kou5EuO/aEMbxV9hqLK2ftoDv
-	3YClty6w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=XHCL3AUKsNpUcbSXy73CmfIKMMQAcDXSFgHrYS/F79o=; b=ajcc2NiRbqAHDVeQoHIPnAY9kT
+	G72yijeoREwDGG8of/RIH58XwRIv+VkC4sd4EXY6QIUF9Cl1ZGA+Apss3QhEn7JbdWdDIGzSXN7OO
+	2O0mQo+xlWrCKtSykOzmIMMsHEu/oJA/lRTaExMVu1NLSvAuEYAbssrwOSUvplakVI5Tqq+IY+wtg
+	Z4hmcx0nC05Yqr8dYffQ4uUGLWSIyZVdrstP6VfhRaaHCtkUcgoM0eVW7FWA31h158GLYJwAWKliU
+	Ckyzmt0w7jzg3J2oZyIbi7ya3vGd2LwjzzEQ55ZkVbcv4q1XWy9aqTiflN+MWqL6cfhI7MkPK8Rj5
+	h3Y8gpPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taxLP-0000000CXPD-03t4
+	id 1tayOt-0000000CcXV-1oYX
 	for ath12k@archiver.kernel.org;
-	Thu, 23 Jan 2025 13:34:03 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	Thu, 23 Jan 2025 14:41:43 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taxLL-0000000CXNg-2jZq
+	id 1tayOp-0000000CcWa-3fkV
 	for ath12k@lists.infradead.org;
-	Thu, 23 Jan 2025 13:34:02 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id B5B07201D5;
-	Thu, 23 Jan 2025 14:33:56 +0100 (CET)
-Received: from [192.168.108.70] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id A7552200F2;
-	Thu, 23 Jan 2025 14:33:56 +0100 (CET)
-Message-ID: <653484cd0984e12dff094e5f9436ae4170509976.camel@freebox.fr>
-Subject: Re: [PATCH RFC 3/3] wifi: ath12k: add EHT support for TX rate
-From: Maxime Bizon <mbizon@freebox.fr>
-To: Sarika Sharma <quic_sarishar@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, johannes@sipsolutions.net
-Date: Thu, 23 Jan 2025 14:33:56 +0100
-In-Reply-To: <20250122133424.1226555-4-quic_sarishar@quicinc.com>
-References: <20250122133424.1226555-1-quic_sarishar@quicinc.com>
-	 <20250122133424.1226555-4-quic_sarishar@quicinc.com>
-Organization: Freebox
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.44.4-0ubuntu2 
-MIME-Version: 1.0
+	Thu, 23 Jan 2025 14:41:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1737643300; x=1769179300;
+  h=date:from:to:cc:subject:message-id;
+  bh=FAg4L7mDaZGotkxG83FoWKYPHFmAlwe7AqSNHGr/zxA=;
+  b=nvdrbCLUrpiyJKEux6RH9l2f4dPYNGk2OyqgGLFULYLpOKP/ho9zQSdv
+   6hmRH9fr43DX6LMDbnRTIHeL3iJ3RFNNuoMaUPsXc3sXWhGnjKhaXTWf9
+   F/fGx20JKUwvgkO3SG+kiKl3QyuKH0juVXSZc8qYakfxJShoxxL8xWbkJ
+   1K3JIvjXQcjqZcdNGNDafOJeJU+Qt860LmIkmJ39Sb8N3QNpSPn7MWX5V
+   k8xufV4q8JizuKgypfcN71Bf9+2UC+FMlEVgYt+HWKSlh/P7kajXfYC/J
+   0LtUMUSBh+RoN6lVaaQhlmlzrH5lAh1PxC5MzHwLQfj0lzWneLkXi3LOp
+   Q==;
+X-CSE-ConnectionGUID: BNv3kjYPSXatZGzZ4DDGhQ==
+X-CSE-MsgGUID: 57jApvlZQi+XQ7r2vsnG0g==
+X-IronPort-AV: E=McAfee;i="6700,10204,11324"; a="55558121"
+X-IronPort-AV: E=Sophos;i="6.13,228,1732608000"; 
+   d="scan'208";a="55558121"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jan 2025 06:41:39 -0800
+X-CSE-ConnectionGUID: ABNULAwxRy+z6sT948YVoQ==
+X-CSE-MsgGUID: z5jXL1fGT7mdit6UxxnX1A==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="144711461"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by orviesa001.jf.intel.com with ESMTP; 23 Jan 2025 06:41:38 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tayOl-000bHP-22;
+	Thu, 23 Jan 2025 14:41:35 +0000
+Date: Thu, 23 Jan 2025 22:40:43 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ 4a6249ac5efefbbcd27d4c07f3bdd98dc3dc9f12
+Message-ID: <202501232236.IgO4JX04-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_053359_830246_AE43BCB3 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20250123_064139_967120_0292EACC 
+X-CRM114-Status: UNSURE (   3.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,132 +81,133 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: mbizon@freebox.fr
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: 4a6249ac5efefbbcd27d4c07f3bdd98dc3dc9f12  Merge branch 'pending' into main-pending
 
-On Wed, 2025-01-22 at 19:04 +0530, Sarika Sharma wrote:
+elapsed time: 1031m
 
-Hello,
+configs tested: 110
+configs skipped: 3
 
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0case WMI_RATE_PREAMBLE_EHT:
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0arsta->txrate.mcs =3D mcs;
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0arsta->txrate.flags =3D RATE_INFO_FLAGS_EHT_MCS;
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0arsta->txrate.he_dcm =3D dcm;
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0arsta->txrate.eht_gi =3D ath12k_eht_gi_to_nl80211_eht_gi(=
-sgi);
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0tones =3D le16_to_cpu(user_rate->ru_end) -
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0le16_to_c=
-pu(user_rate->ru_start) + 1;
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0v =3D ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(ton=
-es);
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0arsta->txrate.eht_ru_alloc =3D v;
-> +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0break;
-> =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0}
->=20
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-The logic to set arsta->txrate.bw to RATE_INFO_BW_HE_RU or
-RATE_INFO_BW_EHT_RU like in dp_tx completion is missing here.
+tested configs:
+alpha                             allnoconfig    gcc-14.2.0
+alpha                            allyesconfig    gcc-14.2.0
+arc                              allmodconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-13.2.0
+arc                              allyesconfig    gcc-13.2.0
+arc                   randconfig-001-20250123    gcc-13.2.0
+arc                   randconfig-002-20250123    gcc-13.2.0
+arm                              allmodconfig    gcc-14.2.0
+arm                               allnoconfig    clang-17
+arm                              allyesconfig    gcc-14.2.0
+arm                   randconfig-001-20250123    clang-20
+arm                   randconfig-002-20250123    gcc-14.2.0
+arm                   randconfig-003-20250123    gcc-14.2.0
+arm                   randconfig-004-20250123    gcc-14.2.0
+arm64                            allmodconfig    clang-18
+arm64                             allnoconfig    gcc-14.2.0
+arm64                 randconfig-001-20250123    gcc-14.2.0
+arm64                 randconfig-002-20250123    clang-20
+arm64                 randconfig-003-20250123    clang-20
+arm64                 randconfig-004-20250123    clang-16
+csky                              allnoconfig    gcc-14.2.0
+csky                  randconfig-001-20250123    gcc-14.2.0
+csky                  randconfig-002-20250123    gcc-14.2.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon                          allyesconfig    clang-18
+hexagon               randconfig-001-20250123    clang-20
+hexagon               randconfig-002-20250123    clang-20
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20250123    gcc-12
+i386        buildonly-randconfig-002-20250123    clang-19
+i386        buildonly-randconfig-003-20250123    gcc-12
+i386        buildonly-randconfig-004-20250123    clang-19
+i386        buildonly-randconfig-005-20250123    gcc-12
+i386        buildonly-randconfig-006-20250123    clang-19
+i386                                defconfig    clang-19
+loongarch                        allmodconfig    gcc-14.2.0
+loongarch                         allnoconfig    gcc-14.2.0
+loongarch             randconfig-001-20250123    gcc-14.2.0
+loongarch             randconfig-002-20250123    gcc-14.2.0
+m68k                             allmodconfig    gcc-14.2.0
+m68k                              allnoconfig    gcc-14.2.0
+m68k                             allyesconfig    gcc-14.2.0
+m68k                        stmark2_defconfig    gcc-14.2.0
+microblaze                       allmodconfig    gcc-14.2.0
+microblaze                        allnoconfig    gcc-14.2.0
+microblaze                       allyesconfig    gcc-14.2.0
+mips                              allnoconfig    gcc-14.2.0
+mips                           ip28_defconfig    gcc-14.2.0
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20250123    gcc-14.2.0
+nios2                 randconfig-002-20250123    gcc-14.2.0
+openrisc                          allnoconfig    gcc-14.2.0
+openrisc                         allyesconfig    gcc-14.2.0
+openrisc                  or1klitex_defconfig    gcc-14.2.0
+parisc                           allmodconfig    gcc-14.2.0
+parisc                            allnoconfig    gcc-14.2.0
+parisc                           allyesconfig    gcc-14.2.0
+parisc                randconfig-001-20250123    gcc-14.2.0
+parisc                randconfig-002-20250123    gcc-14.2.0
+powerpc                          allmodconfig    gcc-14.2.0
+powerpc                           allnoconfig    gcc-14.2.0
+powerpc                          allyesconfig    clang-16
+powerpc                     mpc512x_defconfig    clang-20
+powerpc               randconfig-001-20250123    gcc-14.2.0
+powerpc               randconfig-002-20250123    clang-18
+powerpc               randconfig-003-20250123    gcc-14.2.0
+powerpc64             randconfig-001-20250123    gcc-14.2.0
+powerpc64             randconfig-002-20250123    clang-16
+powerpc64             randconfig-003-20250123    gcc-14.2.0
+riscv                            allmodconfig    clang-20
+riscv                             allnoconfig    gcc-14.2.0
+riscv                            allyesconfig    clang-20
+riscv                 randconfig-001-20250123    gcc-14.2.0
+riscv                 randconfig-002-20250123    clang-20
+s390                             allmodconfig    clang-19
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.2.0
+s390                  randconfig-001-20250123    gcc-14.2.0
+s390                  randconfig-002-20250123    clang-15
+sh                               allmodconfig    gcc-14.2.0
+sh                                allnoconfig    gcc-14.2.0
+sh                               allyesconfig    gcc-14.2.0
+sh                    randconfig-001-20250123    gcc-14.2.0
+sh                    randconfig-002-20250123    gcc-14.2.0
+sparc                            allmodconfig    gcc-14.2.0
+sparc                             allnoconfig    gcc-14.2.0
+sparc                 randconfig-001-20250123    gcc-14.2.0
+sparc                 randconfig-002-20250123    gcc-14.2.0
+sparc64               randconfig-001-20250123    gcc-14.2.0
+sparc64               randconfig-002-20250123    gcc-14.2.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-18
+um                               allyesconfig    gcc-12
+um                    randconfig-001-20250123    gcc-12
+um                    randconfig-002-20250123    gcc-11
+x86_64                            allnoconfig    clang-19
+x86_64                           allyesconfig    clang-19
+x86_64      buildonly-randconfig-001-20250123    clang-19
+x86_64      buildonly-randconfig-002-20250123    clang-19
+x86_64      buildonly-randconfig-003-20250123    gcc-12
+x86_64      buildonly-randconfig-004-20250123    gcc-12
+x86_64      buildonly-randconfig-005-20250123    clang-19
+x86_64      buildonly-randconfig-006-20250123    clang-19
+x86_64                              defconfig    gcc-11
+xtensa                            allnoconfig    gcc-14.2.0
+xtensa                randconfig-001-20250123    gcc-14.2.0
+xtensa                randconfig-002-20250123    gcc-14.2.0
 
-How about something like this ?
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/at=
-h/ath12k/dp.h
-index c3c607eae476..de2095ed8863 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -1506,6 +1506,8 @@ enum HTT_PPDU_STATS_PPDU_TYPE {
- #define HTT_PPDU_STATS_USER_RATE_FLAGS_DCM_M           BIT(28)
- #define HTT_PPDU_STATS_USER_RATE_FLAGS_LDPC_M          BIT(29)
-=20
-+#define HTT_USR_RATE_PPDU_TYPE(_val) \
-+               le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_INFO1_PPDU_TYP=
-E_M)
- #define HTT_USR_RATE_PREAMBLE(_val) \
-                le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_PREAMBLE=
-_M)
- #define HTT_USR_RATE_BW(_val) \
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless=
-/ath/ath12k/dp_rx.c
-index eaec3949470d..c8d377544422 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1370,12 +1370,12 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
-        struct htt_ppdu_user_stats *usr_stats =3D &ppdu_stats->user_stats[u=
-ser];
-        struct htt_ppdu_stats_common *common =3D &ppdu_stats->common;
-        int ret;
--       u8 flags, mcs, nss, bw, sgi, dcm, rate_idx =3D 0;
-+       u8 flags, mcs, nss, bw, sgi, dcm, ppdu_type, rate_idx =3D 0;
-        u32 v, succ_bytes =3D 0;
-        u16 tones, rate =3D 0, succ_pkts =3D 0;
-        u32 tx_duration =3D 0;
-        u8 tid =3D HTT_PPDU_STATS_NON_QOS_TID;
--       bool is_ampdu =3D false;
-+       bool is_ofdma, is_ampdu =3D false;
-=20
-        if (!(usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_RATE)))
-                return;
-@@ -1403,6 +1403,9 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
-        mcs =3D HTT_USR_RATE_MCS(user_rate->rate_flags);
-        sgi =3D HTT_USR_RATE_GI(user_rate->rate_flags);
-        dcm =3D HTT_USR_RATE_DCM(user_rate->rate_flags);
-+       ppdu_type =3D HTT_USR_RATE_PPDU_TYPE(user_rate->rate_flags);
-+       is_ofdma =3D (ppdu_type =3D=3D HTT_PPDU_STATS_PPDU_TYPE_MU_OFDMA) |
-+               (ppdu_type =3D=3D HTT_PPDU_STATS_PPDU_TYPE_MU_MIMO_OFDMA);
-=20
-        /* Note: If host configured fixed rates and in some other special
-         * cases, the broadcast/management frames are sent in different rat=
-es.
-@@ -1479,6 +1482,16 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
-                v =3D ath12k_he_ru_tones_to_nl80211_he_ru_alloc(tones);
-                arsta->txrate.he_ru_alloc =3D v;
-                break;
-+       case WMI_RATE_PREAMBLE_EHT:
-+               arsta->txrate.mcs =3D mcs;
-+               arsta->txrate.flags =3D RATE_INFO_FLAGS_EHT_MCS;
-+               arsta->txrate.he_dcm =3D dcm;
-+               arsta->txrate.eht_gi =3D ath12k_mac_eht_gi_to_nl80211_eht_g=
-i(sgi);
-+               tones =3D le16_to_cpu(user_rate->ru_end) -
-+                       le16_to_cpu(user_rate->ru_start) + 1;
-+               v =3D ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(tones=
-);
-+               arsta->txrate.eht_ru_alloc =3D v;
-+               break;
-        }
-=20
-        arsta->txrate.nss =3D nss;
-@@ -1486,6 +1499,13 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
-        arsta->tx_duration +=3D tx_duration;
-        memcpy(&arsta->last_txrate, &arsta->txrate, sizeof(struct rate_info=
-));
-=20
-+       if (is_ofdma) {
-+               if (flags =3D=3D WMI_RATE_PREAMBLE_HE)
-+                       arsta->txrate.bw =3D RATE_INFO_BW_HE_RU;
-+               else if (flags =3D=3D WMI_RATE_PREAMBLE_EHT)
-+                       arsta->txrate.bw =3D RATE_INFO_BW_EHT_RU;
-+       }
-+
-        /* PPDU stats reported for mgmt packet doesn't have valid tx bytes.
-         * So skip peer stats update for mgmt packets.
-         */
-
-
---=20
-Maxime
-
-
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
