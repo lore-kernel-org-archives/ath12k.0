@@ -4,82 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4304FC02181
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 11:33:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46CB6C02181
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 11:45:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=cZHTFOr6mzASyJiqjEsg5h+YdNb9ENSDizFr9pr9b9Y=; b=UpPT8KfUUQO4FE8rY5n5Hn3ed9
-	yP///gEcKk+5veFv+wqN4r9XX2xeD1mI8ZHfnXfo4AGBdQteAsZU2xo1RAjd+NL1JDPJPTDwXy2HE
-	ExpvzrH8d36zeCBRa98G9Kl7LrD56ORNMtSLXuTTgaWL5hc8ABvdlV7ngZQZNh64EuuHEPsamSzFn
-	R9hOVhR+cPOpzVm2Hb98ZzBaQileeAs6E8NBHWEfeCFYDp/NyTsEM2ut1g3bMEcdrabEaDO/zRou/
-	RR/cNrvnjVB85fmejGjYoCcbczvyY02uaMUANWrkixcJX/xEMFGS9hghmkthkzpXWoJCA8IN9/Ipg
-	Tr+iq+yg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
+	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MZzV7UQd3KYL5z123q5GLS6PMxoAVbzEGbiydCidK8E=; b=dREQIDZKGnRRUX/M0LQ1OaVYou
+	ema7+CDnbvEOZdRnN4P+dqd1pMa6aH8qcxxUauvrQDOXSpXxC4BO4mGd3uoUZwB8s84EZYEpr+cb+
+	tkTZPWmfEmqQMy2gpXgA7NdxaRB+zzrYfyxcUHIE2MIwirIkwPJmuw3g5X0jtdJpeIwYI8P9xslgU
+	Ov2Xp6t8CMyGd3uh0sZ7Vx44mWuGnYDov0Ig3DR+csC7ZF1pKLu34GA8aOmfFwXbxfWbwZCFeIQLb
+	h+iVbkI010c993hTO2Q5Xibv247r0g0gyPAalUiy8iNCf6P1jFK52/Ch2VTalWricy/MYti8ENKlC
+	/0Q2m01g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbHwk-0000000Ea3L-3qdn
+	id 1tbI83-0000000Eb7U-0F3G
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 11:33:58 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	Fri, 24 Jan 2025 11:45:39 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbHwi-0000000Ea2q-33lw
+	id 1tbI7z-0000000Eb6r-3Su6
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 11:33:57 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-385de59c1a0so1204268f8f.2
-        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 03:33:56 -0800 (PST)
+	Fri, 24 Jan 2025 11:45:36 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4368a293339so22064295e9.3
+        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 03:45:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737718435; x=1738323235; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=cZHTFOr6mzASyJiqjEsg5h+YdNb9ENSDizFr9pr9b9Y=;
-        b=ZPksXeJs4jEVgKZSt5eJ/veXi1CRrbOgfbaztiXd6rrE9txDyqNE8qd/xuF9h/cPtn
-         To0dXdwhfidhuZy3wp/G3hpEGZ6J8dsy8hnd8y/BmHRtZLJ5QHfwgnVOxbGGmtmczyWv
-         1TtIAfoN/qYV4xoG/6a7cT8XJI8c1+UzEVA5TrHIsnu17N0TlR48/rbVhW1FYBj8gc2D
-         uQlkaj/jMD7skt88H5hKkrvJFYnoeucfjH8kBxF6ZeY1ib01AGxfpQP2CVZF2xGpMOUm
-         r8FtMc5rcw/TIY6CecniF15755CB0qEPbGAe45J5cbYexx0a7TYoyMY6sgZrb86OsNYh
-         GkeQ==
+        d=gmail.com; s=20230601; t=1737719134; x=1738323934; darn=lists.infradead.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=MZzV7UQd3KYL5z123q5GLS6PMxoAVbzEGbiydCidK8E=;
+        b=Z+KSp2NK710EhThpR7OqR6rny9NCzXy6RvU/r1uuIsXaz6NyP2dOT06xtrooE+MDET
+         3xLVGhhVRiQEaowW5MVSUCL5l69Lr/yHujTi+UFe46UQODUpA6YegGXyUx5p2rIne/Ub
+         lMEO14QjgVCceGZABJMvkLxIfRkr+1FBSCta+07cFUZUcZUto7DYErZ8VHPVi8RmBddH
+         xJd3dDxixcf2AYTj8Mxza8BDpLpnAYpiaKLx2mqI8NASbKaxEANOsJEUifuA9vHWY8jK
+         OFyeKd9qswx2pEbzdTqUEqjEjbU1wcr2eJuHAWr1+BT3OktSDyph9L7ch5HGXbizsSSL
+         WXYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737718435; x=1738323235;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=cZHTFOr6mzASyJiqjEsg5h+YdNb9ENSDizFr9pr9b9Y=;
-        b=QUMV4eJL48ezenWD4bUbIkhVOOxLZwy1FLrpbm7ao2OumHHjLUArvDoxbtba+UbEdF
-         9+o3lAIga1HydNSCwPTkLMPx/m69BpsbB/vlcIdt63eC9Ha2zI+scqnOKjTE7R2Rbk5S
-         3jfy9WTo2in64pz4DB3BzTK/7Eo/hrV4Na1ugDMswMS47Hk/7ZQ9hxMVo3H2gVnmNICZ
-         TCvPBSXjqjHzrR4pZtTztltycs5wdBP+hEVqKJVC+1qJAIps8L8/GlzMFu6qR+zFYiBc
-         g4JtoGvtHXPUnYirzc5TR5/biX4xsVRoJsPYOzJV+WiJars94mqx7RGf9Pqh4Y/CgPVm
-         TLXA==
-X-Gm-Message-State: AOJu0YwJEnnq94atJs5/DIlRXpLWEKutxbUApnL15SQPv2V3fRzxwGc0
-	s2eSFNLKeg10gjIVEji7Cvhw7Jo0mOKuBZNm20GFmsSY22LwBOs/4m+Vdw==
-X-Gm-Gg: ASbGncvqjoe8bGvKw3eZUvj+Fc2DIvAjf8aagKGGCbcc9L4uJfDDiX0XhbRcxx9j2/I
-	cpZkVt9HxUauqvEq64lo+U5CpXU34H2HFYgbCbk757QYxXf3uK0yuLuu8pRggMuJTGrtVFKD6NV
-	s6IXAdWlu8wjEvGbbqjWr9cogHGAy/ayjXewsYUsdNCqh+3yDlQ2YrHOmJQrupBMIwK1xPTqscy
-	8R8L6Z1OnROgVkUcIYckomUQaeqlxlBhBejtFS1lqam3KM3AfB7sO3rwkeHwDFWVA2OESmD9ND+
-	uQDb4rsp+iEreiyIsqreYQid8PJGPx8Il9EfZA==
-X-Google-Smtp-Source: AGHT+IFIon0QxIEYkRWq8atTmgYtYSFe9y3nYelSDKpU30OJeKufnVQiJMnr7y5AXij/rREgQ3sWOQ==
-X-Received: by 2002:a5d:6d86:0:b0:38b:d7d2:12f6 with SMTP id ffacd0b85a97d-38bf5655264mr27438023f8f.2.1737718434891;
-        Fri, 24 Jan 2025 03:33:54 -0800 (PST)
-Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38c2a1bb101sm2478153f8f.66.2025.01.24.03.33.52
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Jan 2025 03:33:53 -0800 (PST)
-From: Nicolas Escande <nico.escande@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH] wifi: ath12k: fbx: fix ath12k_hal_tx_cmd_ext_desc_setup() info1 override
-Date: Fri, 24 Jan 2025 12:33:52 +0100
-Message-ID: <20250124113352.93638-1-nico.escande@gmail.com>
-X-Mailer: git-send-email 2.48.1
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+        d=1e100.net; s=20230601; t=1737719134; x=1738323934;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=MZzV7UQd3KYL5z123q5GLS6PMxoAVbzEGbiydCidK8E=;
+        b=HX6OdNxJxDjRKx/SH/MpKWDpGXH1jIM17AVmrVbfqsBmBNWk+k2jXbCMFBvvX5cDRe
+         N2L+QOjMMrRqanHhGohYf2Kxx7TFcQPSxqb1kkgcUsnpaz9ZG9JZGzyPc/x8aGGf5p53
+         8lOaCUbwa7fyQZhO09KwoVfriTlgSNGYM/MGgmsZcD27Y6yOmgk3T7MORzj2zEE0XPLA
+         weUZeOlcQuv2RAuRA8fWccZWDDHN/Uvn+uTePCy92upy4xpS+xwX0cO9M6gNTwlEEnVx
+         FAG/sR6ozLZF959Knf0vnX+Shlgo6fDgDipg1t98DoJ443B1JNudY2X5ZQe/4qBlxnN9
+         rwEw==
+X-Forwarded-Encrypted: i=1; AJvYcCUtmRY8DkuvNHDi2ThKuCY8OWW5QJwEVwpcESikTziCWsXkgmnPWFWj8i/QwwHbxNaBH9Vi+Io=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz1RjE2dUbAlyv1rUwNA0qfn12/ReRcp336lVKTRQUlX4Ut/MBG
+	uDaArS+6BclPUi4wqzEqcj0dLUo4ot/jUjdMAFMIjKBbcBYzCy/I+8EmsQ==
+X-Gm-Gg: ASbGncv/Jwe/aUO1d42k0yNCYYCTdBQaFXg6qmHZPbRdiM4EIObBrDJXy0QpFjhtWr+
+	LHXAjBVcf6bFYBDejsNm/wwjrJPCDZYGilxg/6RPWgSrAs2v8RLVXgP9cFtsw4fiYy3oPuIim5K
+	1eOhEChEbO6aRV/M+70fHNfHi9IK4XwD8vtNwqoox0Bk0imKoWJ2uEH7YazAacxpy0TuufwCKXX
+	YLtYCV3aGvJfu/DQxnQZPDpB0TpiG9RDAwNOHnsAg6aPNeULERFq6tMUWMK9rjqZnRLhGkpNBp+
+	I56mfTKOO9nYII4vTTfHXCs=
+X-Google-Smtp-Source: AGHT+IHd1Im2HgFGc4fQReF0n7kZNiHIb6VzYaAcl3sEiS8vJFHMmF6YXcPsTpzzWG4FJZdyJbTNuA==
+X-Received: by 2002:a05:6000:2a3:b0:38a:88f8:aac8 with SMTP id ffacd0b85a97d-38bf57c0a41mr27541537f8f.54.1737719134079;
+        Fri, 24 Jan 2025 03:45:34 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38c2a17d5easm2407910f8f.25.2025.01.24.03.45.32
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 24 Jan 2025 03:45:32 -0800 (PST)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Fri, 24 Jan 2025 12:45:32 +0100
+Message-Id: <D7AA0SSICNT4.3GU5SHWIXWH94@gmail.com>
+Cc: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH 2/2] wifi: ath12k: Add support for MLO Multicast
+ handling in driver
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Balamurugan Mahalingam" <quic_bmahalin@quicinc.com>,
+ <ath12k@lists.infradead.org>
+X-Mailer: aerc 0.19.0-0-gadd9e15e475d
+References: <20250109184932.1593157-1-quic_bmahalin@quicinc.com>
+ <20250109184932.1593157-3-quic_bmahalin@quicinc.com>
+In-Reply-To: <20250109184932.1593157-3-quic_bmahalin@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_033356_769087_BFF17CDF 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250124_034535_865882_46A8FE26 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,33 +101,56 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Since inception there is an obvious typo laying around in
-ath12k_hal_tx_cmd_ext_desc_setup(). Instead of intitializing + adding
-flags to tcl_ext_cmd->info1, we initialize + override. This is needed to
-make broadcast frames work with ethernet encapsulation.
+On Thu Jan 9, 2025 at 7:49 PM CET, Balamurugan Mahalingam wrote:
+[...]
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wirele=
+ss/ath/ath12k/dp_tx.c
+> index 76626d925adf..9d05fe7a870c 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+> @@ -217,7 +217,7 @@ static int ath12k_dp_tx_align_payload(struct ath12k_b=
+ase *ab,
+>  }
+> =20
+>  int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+> -		 struct sk_buff *skb)
+> +		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn)
+>  {
+>  	struct ath12k_base *ab =3D ar->ab;
+>  	struct ath12k_dp *dp =3D &ab->dp;
+> @@ -290,13 +290,24 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_l=
+ink_vif *arvif,
+>  		msdu_ext_desc =3D true;
+>  	}
+> =20
+> +	if (gsn_valid) {
+> +		ti.meta_data_flags =3D
+> +			u32_encode_bits(HTT_TCL_META_DATA_TYPE_GLOBAL_SEQ_NUM,
+> +					HTT_TCL_META_DATA_TYPE) |
+> +			u32_encode_bits(mcbc_gsn, HTT_TCL_META_DATA_GLOBAL_SEQ_NUM);
+> +	}
+> +
+Hello,
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+As ti is zeroed initilised isn't safer to do 'ti.meta_data_flags |=3D'
+instead of 'ti.meta_data_flags =3D'. This way if we add another flag in
+meta_data_flag in the same func for another reason, we will have less risk =
+of
+overriding the said flags ?
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
----
- drivers/net/wireless/ath/ath12k/dp_tx.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index e0b85f959cd4a..00437736e0322 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -117,7 +117,7 @@ static void ath12k_hal_tx_cmd_ext_desc_setup(struct ath12k_base *ab,
- 			       le32_encode_bits(ti->data_len,
- 						HAL_TX_MSDU_EXT_INFO1_BUF_LEN);
- 
--	tcl_ext_cmd->info1 = le32_encode_bits(1, HAL_TX_MSDU_EXT_INFO1_EXTN_OVERRIDE) |
-+	tcl_ext_cmd->info1 |= le32_encode_bits(1, HAL_TX_MSDU_EXT_INFO1_EXTN_OVERRIDE) |
- 				le32_encode_bits(ti->encap_type,
- 						 HAL_TX_MSDU_EXT_INFO1_ENCAP_TYPE) |
- 				le32_encode_bits(ti->encrypt_type,
--- 
-2.48.1
-
+>  	ti.encap_type =3D ath12k_dp_tx_get_encap_type(arvif, skb);
+>  	ti.addr_search_flags =3D arvif->hal_addr_search_flags;
+>  	ti.search_type =3D arvif->search_type;
+>  	ti.type =3D HAL_TCL_DESC_TYPE_BUFFER;
+>  	ti.pkt_offset =3D 0;
+>  	ti.lmac_id =3D ar->lmac_id;
+> -	ti.vdev_id =3D arvif->vdev_id;
+> +	if (gsn_valid)
+> +		ti.vdev_id =3D arvif->vdev_id +
+> +			     HTT_TX_MLO_MCAST_HOST_REINJECT_BASE_VDEV_ID;
+> +	else
+> +		ti.vdev_id =3D arvif->vdev_id;
+>  	ti.bss_ast_hash =3D arvif->ast_hash;
+>  	ti.bss_ast_idx =3D arvif->ast_idx;
+>  	ti.dscp_tid_tbl_idx =3D 0;
 
