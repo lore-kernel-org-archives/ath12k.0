@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 033E8C02181
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 06:16:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 223C5C0218C
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 06:17:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
+	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TjLpMS6x+RwtvlryzfD4wA6UUGx2cYpikbG/Si4Xym4=; b=SzxpNB9Aw9jUXj
-	dzx5MyiKZKrstB3Av8RI4Fs6Jq4mYGks5UGY+5Co382Z5fJchmZg/w83PRE22ygsnyIQ1J+L3HMQt
-	QicwWvjSXReHxItUJlN6zt4aohfr6dKTcbl4PQXyypP8U9ccuMto0OQrBmz57E7nTMqag2yT7l9c7
-	Wf+o0F99LRZNiimkuW53qHgUb+fcE5lRqO8lnPxT4Uf8jrpeKpSwI7IxLIrHZ2H90m8lqalQZE4Zc
-	yReeW/iCCdS/DkAv0pbL5coqb2llF7P+qn7U7R9+1ShVriwmubsGBptJvXDjVZ7swOUu0LE6la/z7
-	GxhpVq8Yqo4TfDOU1G5A==;
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=f+nbDCXNIETLhiWSpLZKQfbVPhDQD1DzRLQ9qrZ2IYE=; b=g4Aqwdc/6eNeMF2pqjJOuB9Cx8
+	uBdelc0MAjpnK6wD9YZIH8nYle2RIXJJ989oyNCAV9OXrLpDI30aRZoLvBHlQ9BS1c9ZadLj4puyT
+	QtuqItXk5hbUlC+I5y/NMk3kAQW/3EOdKyHkWWzqZtZ1b+XdKqDF0+nwpatZ1lTeiXWR78dzf7mtZ
+	BKAE0dUUXZ8g071lMDZ2VN1TFDCwwWeHfm7vxfLolIgzr5tsjjjLVY+CnCJfH6egWz2mHxUN9W0q1
+	Ze2G+zNdO2Fh6Pvxldd5b9a1os26JqYlDlBSEBXGO2BF/iNwOydMj7ensavr5Ig64TNF90y3vB+cw
+	LzyfclUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbCzx-0000000DzgC-29oD
+	id 1tbCzz-0000000Dzh1-3eJi
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 06:16:57 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 24 Jan 2025 06:16:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbCzv-0000000Dzfr-0Tju
+	id 1tbCzy-0000000DzgH-0Fbf
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 06:16:56 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O3GTpe006824;
-	Fri, 24 Jan 2025 06:16:52 GMT
+	Fri, 24 Jan 2025 06:16:59 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O4XKR0009269;
+	Fri, 24 Jan 2025 06:16:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=TjLpMS6x+RwtvlryzfD4wA
-	6UUGx2cYpikbG/Si4Xym4=; b=CHi2K63bJm1S449o3pCdJMwv7V/1EQ/V38ay33
-	EsqSemPCumeE1fxK+d/BC2A6iMtRyy05K5ew2z/B87CTrvud2eeQanbYqFjr2BZM
-	sROwRr/GIJKYpBflFI/XnvsFEHST3fr1ERFN5xekPbgLg6IZTdKJSG48vnr5HsDI
-	cspg6N/DShqXZdezTEG3joBjDbKkCA1HqwD2WN2eQS6R68NmGtp/cPP35s9NmQbc
-	8l2EjiGR3T3XLcggUa2/YHM8sTO6H3pmH2+0hjV4ZfJKt+MYn4nXAHxnirv2lD8f
-	skBhQ/UDa5oyZwLMN+Uc/edQhqbBCm9t+di7eaVS5mdUzPqg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c2t48ah8-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	f+nbDCXNIETLhiWSpLZKQfbVPhDQD1DzRLQ9qrZ2IYE=; b=eGOR4RbzyfSHkUj1
+	YTZ4xyVrG5UYvYQ0NNTVvY3DDZRtmTGmHCngPp8xJeuH7ywI6b2vv1h4kRyB9PaX
+	VQjYzzPo7hI3QOJACm08PU00M/Vj0/3RtgVAgeps+C9Zbc+RrX/4RcIwffsLtHmk
+	OI5m/rLI3Wb3J2iVkYpp7ZQ/ysiOIL8HbGW2eOcPxeoffgIeOmkg6w95V7cGxujz
+	Fojiix5/WKVobQrVXG2o1oYwuG89imC/2buIr/0pldpHC4HMGWBUmFeZ9irc3MaT
+	S/IJwilh7wvLfaZewwFgyuo/rhj+3AcedkglAN67L3TlTFKS5zNgl2s3zhEYCXN7
+	gefsgg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c3xa864s-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 06:16:52 +0000 (GMT)
+	Fri, 24 Jan 2025 06:16:54 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O6GpcW031630
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O6GrqP005398
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 06:16:51 GMT
+	Fri, 24 Jan 2025 06:16:53 GMT
 Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 23 Jan 2025 22:16:49 -0800
+ 15.2.1544.9; Thu, 23 Jan 2025 22:16:51 -0800
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Subject: [PATCH v2 0/4] wifi: ath12k: add MLO CSA support
-Date: Fri, 24 Jan 2025 11:46:34 +0530
-Message-ID: <20250124-ath12k_mlo_csa-v2-0-420c42fcfecf@quicinc.com>
+Date: Fri, 24 Jan 2025 11:46:35 +0530
+Subject: [PATCH v2 1/4] wifi: ath12k: update beacon template function to
+ use arvif structure
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAEIwk2cC/13MQQ6CMBCF4auQWVvDDJYSV9zDEFLaKhOFaotEQ
- 7i7lbhy+b/kfQtEF9hFOGYLBDdzZD+moF0GptfjxQm2qYFyOiChEnrqka7tcPOtiVoUsrMSSed
- SO0ine3Bnfm3gqUndc5x8eG/+jN/1R1HxT80ocqGqrrRKopRlVT+ebHg0e+MHaNZ1/QA0yCvFr
- gAAAA==
-X-Change-ID: 20241217-ath12k_mlo_csa-35bd512a05ae
+Message-ID: <20250124-ath12k_mlo_csa-v2-1-420c42fcfecf@quicinc.com>
+References: <20250124-ath12k_mlo_csa-v2-0-420c42fcfecf@quicinc.com>
+In-Reply-To: <20250124-ath12k_mlo_csa-v2-0-420c42fcfecf@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
 CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
         <linux-kernel@vger.kernel.org>,
@@ -74,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: yvb8rKINXhbvn_vZz2QtCn9Gn7baKTqf
-X-Proofpoint-GUID: yvb8rKINXhbvn_vZz2QtCn9Gn7baKTqf
+X-Proofpoint-GUID: k3jgpHJ9Xn4C1l5VgOa0IW84mqci1jFL
+X-Proofpoint-ORIG-GUID: k3jgpHJ9Xn4C1l5VgOa0IW84mqci1jFL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-24_02,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 bulkscore=0
- clxscore=1015 malwarescore=0 mlxscore=0 lowpriorityscore=0 mlxlogscore=768
- suspectscore=0 priorityscore=1501 phishscore=0 impostorscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501240043
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
+ lowpriorityscore=0 mlxscore=0 priorityscore=1501 suspectscore=0
+ impostorscore=0 bulkscore=0 malwarescore=0 clxscore=1015 phishscore=0
+ spamscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2501240043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_221655_160915_5560BC18 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20250123_221658_221936_13B0FB2E 
+X-CRM114-Status: GOOD (  13.56  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,35 +100,84 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Patch 1 and 2 are pre-req fixes (applies to non-MLO as well)
+The current code has ath12k_wmi_bcn_tmpl() accepting separate ar and
+vdev_id parameters. However, ath12k_link_vif structure can be used to
+derive both of these.
 
-Patch 3 basically uses arvif->link_id to enable MLO for CSA while adding
-support to update counters throughout the CSA time.
+Hence, simplify the function signature.
 
-Patch 4 fixes a potential problem seen when medium is busy. Again this
-applies to both MLO and non-MLO. But this is exposed only when Patch 3 is
-there.
+Later change needs arvif pointer access within the function hence it is
+better if arvif is directly passed now.
 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
-Changes in v2:
-- Rebased on ToT.
-- Link to v1: https://lore.kernel.org/r/20241223-ath12k_mlo_csa-v1-0-78b6d7515568@quicinc.com
+ drivers/net/wireless/ath/ath12k/mac.c | 5 ++---
+ drivers/net/wireless/ath/ath12k/wmi.c | 4 +++-
+ drivers/net/wireless/ath/ath12k/wmi.h | 2 +-
+ 3 files changed, 6 insertions(+), 5 deletions(-)
 
----
-Aditya Kumar Singh (4):
-      wifi: ath12k: update beacon template function to use arvif structure
-      wifi: ath12k: fix handling of CSA offsets in beacon template command
-      wifi: ath12k: update the latest CSA counter
-      wifi: ath12k: prevent CSA counter to reach 0 and hit WARN_ON_ONCE
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 329c050037219567239610d94fd60358be959b2c..417d53dd9c79d15b69642793c6846005a9da4cf3 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -1595,8 +1595,7 @@ static int ath12k_mac_setup_bcn_tmpl_ema(struct ath12k_link_vif *arvif)
+ 
+ 		ema_args.bcn_cnt = beacons->cnt;
+ 		ema_args.bcn_index = i;
+-		ret = ath12k_wmi_bcn_tmpl(tx_arvif->ar, tx_arvif->vdev_id,
+-					  &beacons->bcn[i].offs,
++		ret = ath12k_wmi_bcn_tmpl(tx_arvif, &beacons->bcn[i].offs,
+ 					  beacons->bcn[i].skb, &ema_args);
+ 		if (ret) {
+ 			ath12k_warn(tx_arvif->ar->ab,
+@@ -1690,7 +1689,7 @@ static int ath12k_mac_setup_bcn_tmpl(struct ath12k_link_vif *arvif)
+ 		}
+ 	}
+ 
+-	ret = ath12k_wmi_bcn_tmpl(ar, arvif->vdev_id, &offs, bcn, NULL);
++	ret = ath12k_wmi_bcn_tmpl(arvif, &offs, bcn, NULL);
+ 
+ 	if (ret)
+ 		ath12k_warn(ab, "failed to submit beacon template command: %d\n",
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index a7625a3d1a3a9b1bbcf90cee30d3c707de03c439..c129dce5832aa76e0c084548c5019dfd63386186 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -1889,14 +1889,16 @@ int ath12k_wmi_p2p_go_bcn_ie(struct ath12k *ar, u32 vdev_id,
+ 	return ret;
+ }
+ 
+-int ath12k_wmi_bcn_tmpl(struct ath12k *ar, u32 vdev_id,
++int ath12k_wmi_bcn_tmpl(struct ath12k_link_vif *arvif,
+ 			struct ieee80211_mutable_offsets *offs,
+ 			struct sk_buff *bcn,
+ 			struct ath12k_wmi_bcn_tmpl_ema_arg *ema_args)
+ {
++	struct ath12k *ar = arvif->ar;
+ 	struct ath12k_wmi_pdev *wmi = ar->wmi;
+ 	struct wmi_bcn_tmpl_cmd *cmd;
+ 	struct ath12k_wmi_bcn_prb_info_params *bcn_prb_info;
++	u32 vdev_id = arvif->vdev_id;
+ 	struct wmi_tlv *tlv;
+ 	struct sk_buff *skb;
+ 	u32 ema_params = 0;
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 38aed18b99f4239e40d369181549b4bc78faa862..64c8357740167f44f13585eb87b938ecedbf4546 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -5660,7 +5660,7 @@ int ath12k_wmi_mgmt_send(struct ath12k *ar, u32 vdev_id, u32 buf_id,
+ 			 struct sk_buff *frame);
+ int ath12k_wmi_p2p_go_bcn_ie(struct ath12k *ar, u32 vdev_id,
+ 			     const u8 *p2p_ie);
+-int ath12k_wmi_bcn_tmpl(struct ath12k *ar, u32 vdev_id,
++int ath12k_wmi_bcn_tmpl(struct ath12k_link_vif *arvif,
+ 			struct ieee80211_mutable_offsets *offs,
+ 			struct sk_buff *bcn,
+ 			struct ath12k_wmi_bcn_tmpl_ema_arg *ema_args);
 
- drivers/net/wireless/ath/ath12k/core.h |  2 ++
- drivers/net/wireless/ath/ath12k/mac.c  |  7 ++--
- drivers/net/wireless/ath/ath12k/mac.h  |  3 +-
- drivers/net/wireless/ath/ath12k/wmi.c  | 61 +++++++++++++++++++++++++++-------
- drivers/net/wireless/ath/ath12k/wmi.h  |  2 +-
- 5 files changed, 57 insertions(+), 18 deletions(-)
----
-base-commit: 376673aa393c1c232299be3e910d7f2e6d974b2f
-change-id: 20241217-ath12k_mlo_csa-35bd512a05ae
+-- 
+2.34.1
 
 
