@@ -4,90 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5DF6C02182
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 01:09:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3328CC02181
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 04:11:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=u+/Nzf+wQsYK4CUtFVQexhSIKfVhWoImWUHWAyJwQrE=; b=n0ZgkvIbS91eoFmP2WORHLSNdw
-	vVFcHaQt6ILy6ElKPr+SRGJ7iuNgKl8/1O2Ns2KNRapNZTesaXcX91/0baoRne2wC4LS3BxKbtTsa
-	z6OBJHNDRx16TcWSR9DgVTVZyC/1YlXGl7nWpf328QSem3BB3vCFXUKUgW1LsYmpYfEP5MmfBMKpG
-	E3aEyDx9Fl6Gs8050ddMTxxsqiSnH+8nIu1TmroeKOG9Ol0aXZQNm1IeW0GL3GFbg7+RDYTHqoR2o
-	kj7R+NuMC3AKjrn0cP0S/Si27nIQZ8qy8X/4UhcQhIEbyUYOW27hvtF3yq1D1UGdGQiGck2M2nkE2
-	tg1Cc5fw==;
+	bh=EuDpzg3ornkFM3/Es+Hiwaapi2f1gyJ+GQYQHdJRSMQ=; b=rn97fa+pGptEgN+omTL2U5xNOx
+	WuHAWzRnOsKlnTRvNgq310nSohldVjeKDybow6fhAqWcqT2tqe/GemTQnV1Bh4B6E8/oxOO2eocpJ
+	2fiGG4UaBtwr9DZWuXBqdmn7bMwfSbp+zSAifzasv69Ic1oWkaktXRTctkH1zf5YxIvZ+G7KQCcAg
+	fmbX0mychVOUdF4s0NOCt6DHYwSReewSZOJo042WseVMfrUwZ4IOUTKt3eGh5oU5UfhQtuEryuzB+
+	hsFJRcPA4lE7Wf8Vq+gwQR+CDPvlZ0SyQc5PVDQgG7BwpeJ/bjJSAGBlMqECXjMUyOP5VgguXzSZr
+	Zp4cYjHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tb8C2-0000000DdbL-21Gq
+	id 1tbB2F-0000000DrjY-3rzA
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 01:09:06 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 24 Jan 2025 04:11:11 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tb8C0-0000000Ddav-0QeL
+	id 1tbB2B-0000000DriN-3y49
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 01:09:05 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NLt8Vw023520;
-	Fri, 24 Jan 2025 01:09:02 GMT
+	Fri, 24 Jan 2025 04:11:10 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NMm10f004131;
+	Fri, 24 Jan 2025 04:11:01 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	u+/Nzf+wQsYK4CUtFVQexhSIKfVhWoImWUHWAyJwQrE=; b=UfUIQ3/o3It+BhsE
-	pKTNKfj3c71tqc+VBzgoDDFlMiK18fH5nHhcpb+KrrvJ20hcXsVq0aQXXFDKwPGE
-	GkrwjvVtTNkt0Edrp8WeZdqxti1M97cVJUkaN70RvD4ukOi2PDOqlrJYLPjFrpyZ
-	rCFeD01b9JJwcV/0Sk5aNqdRp42b+FhCkY0fUQNvtv8NnwtKDFF58qCUN1jH4rPQ
-	Q2M7Ux3W3XevLOD7Y5M2SpZaAYBps+dffXkGJ9hIOXetrgi2poqrd8ZeImnE33k4
-	MN27LiaN96T5THWfLrDtlgdLlRV+hBBZS8dPzc1AerXvepXT7U7JPCbF/WMDNCqn
-	eTkDpA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44bx3u89h3-1
+	EuDpzg3ornkFM3/Es+Hiwaapi2f1gyJ+GQYQHdJRSMQ=; b=oNUKDtdVylkAaw55
+	OLfeO5GxRL7SSbBxcgKwVABlhmeDyoFqZilxzCsQQBBf6QCrX6gg5sNJqWv4+QvU
+	4aPsydCqicNuV4iz/NbNO2drgdKYR+lkGl+/LPhGNr5s43ibaYmQUGbijFhNzlt2
+	rrQ6CpFmwgT6Symph/tq1AN/fOPKJWhjG9p3m2xOcF2QzsDW6usrIvIg/RjRu3pI
+	zm6+nS1203FlSrvodsFko56/K/McMrdNH8tumK+MPi3/tXxPEnDeSd+eagLfVnqd
+	zvrMXGCX6NeD6MDUpCS4mpr5ZVOa3H57kUjsKpoiv1HosKQEoU2b1h0lDKyzlCZD
+	VuhhGw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44bxvpgh66-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 01:09:02 +0000 (GMT)
+	Fri, 24 Jan 2025 04:11:01 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O191bG023699
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O4AxEf014045
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 01:09:01 GMT
-Received: from [10.227.108.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
+	Fri, 24 Jan 2025 04:10:59 GMT
+Received: from [10.216.47.245] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 23 Jan
- 2025 17:09:00 -0800
-Message-ID: <5861c953-436e-4f36-ae8b-5ef52fceb3b6@quicinc.com>
-Date: Thu, 23 Jan 2025 17:09:00 -0800
+ 2025 20:10:53 -0800
+Message-ID: <d4f6be06-871a-4ec3-a8f2-4024f7689f1a@quicinc.com>
+Date: Fri, 24 Jan 2025 09:40:48 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9 6/9] wifi: ath12k: add support for setting fixed HE
- rate/GI/LTF
-To: <mbizon@freebox.fr>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Muna Sinada <quic_msinada@quicinc.com>,
-        Jeff Johnson <quic_jjohnson@quicinc.com>
-References: <20250114003813.2783550-1-quic_pradeepc@quicinc.com>
- <20250114003813.2783550-7-quic_pradeepc@quicinc.com>
- <f5c6d874e9d7682d52c5ed107a0ede952b5cf53f.camel@freebox.fr>
+Subject: Re: [PATCH v2 00/10] wifi: ath12k: fixes for rmmod and recovery
+ issues with hardware grouping
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Kalle Valo
+	<kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+        "Karthikeyan
+ Periyasamy" <quic_periyasa@quicinc.com>,
+        Harshitha Prem
+	<quic_hprem@quicinc.com>
+CC: Kalle Valo <quic_kvalo@quicinc.com>, <linux-wireless@vger.kernel.org>,
+        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+References: <20250120-fix_reboot_issues_with_hw_grouping-v2-0-b7d073bb2a22@quicinc.com>
+ <c9c9dfb7-7198-4575-a576-d5e184ba2cba@oss.qualcomm.com>
+From: Aditya Kumar Singh <quic_adisi@quicinc.com>
 Content-Language: en-US
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-In-Reply-To: <f5c6d874e9d7682d52c5ed107a0ede952b5cf53f.camel@freebox.fr>
+In-Reply-To: <c9c9dfb7-7198-4575-a576-d5e184ba2cba@oss.qualcomm.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: IF9h6XQi_JKhNPLwxIosI5ztGv9CIsC7
-X-Proofpoint-ORIG-GUID: IF9h6XQi_JKhNPLwxIosI5ztGv9CIsC7
+X-Proofpoint-ORIG-GUID: W1-zczC4df9viX0Dy1OC4--L5kLvukbJ
+X-Proofpoint-GUID: W1-zczC4df9viX0Dy1OC4--L5kLvukbJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-23_10,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1011
- mlxlogscore=768 suspectscore=0 lowpriorityscore=0 impostorscore=0
- adultscore=0 bulkscore=0 mlxscore=0 malwarescore=0 priorityscore=1501
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501240006
+ definitions=2025-01-24_01,2025-01-23_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
+ impostorscore=0 mlxscore=0 lowpriorityscore=0 adultscore=0 spamscore=0
+ clxscore=1015 priorityscore=1501 bulkscore=0 suspectscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501240027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_170904_255159_2A3BB054 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20250123_201108_003468_444D8092 
+X-CRM114-Status: GOOD (  15.46  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,38 +107,101 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 1/23/25 23:17, Jeff Johnson wrote:
+> On 1/20/2025 1:48 AM, Aditya Kumar Singh wrote:
+>> With hardware grouping, there is a kernel crash with signature -
+>>
+>> $ rmmod ath12k.ko
+>> Unable to handle kernel paging request at virtual address 000000000000d1a8
+>> [...]
+>> Call trace:
+>>   ath12k_reg_free+0x14/0x74 [ath12k] (P)
+>>   ath12k_core_hw_group_destroy+0x7c/0xb4 [ath12k] (L)
+>>   ath12k_core_hw_group_destroy+0x7c/0xb4 [ath12k]
+>>   ath12k_core_deinit+0xd8/0x124 [ath12k]
+>>   ath12k_pci_remove+0x6c/0x130 [ath12k]
+>>   pci_device_remove+0x44/0xe8
+>>   device_remove+0x4c/0x80
+>>   device_release_driver_internal+0x1d0/0x22c
+>>   driver_detach+0x50/0x98
+>>   bus_remove_driver+0x70/0xf4
+>>   driver_unregister+0x30/0x60
+>>   pci_unregister_driver+0x24/0x9c
+>>   ath12k_pci_exit+0x18/0x24 [ath12k]
+>>   __arm64_sys_delete_module+0x1a0/0x2a8
+>>   invoke_syscall+0x48/0x110
+>>   el0_svc_common.constprop.0+0x40/0xe0
+>>   do_el0_svc+0x1c/0x28
+>>   el0_svc+0x30/0xd0
+>>   el0t_64_sync_handler+0x10c/0x138
+>>   el0t_64_sync+0x198/0x19c
+>> Code: a9bd7bfd 910003fd a9025bf5 91402015 (f968d6a1)
+>> ---[ end trace 0000000000000000 ]---
+>> Segmentation fault
+>>
+>> This series aims to fix this stability issue. With this now, 100+ iteration
+>> of rmmod and insmod works perfectly.
+>>
+>> Also, firmware recovery with grouping is not working fine. Randomly, some
+>> NULL pointer crash or another firmware assert is seen. This series aims to
+>> fix that as well.
+>>
+>> With this in place now, 100+ iteration of firmware recovery with one 3 link
+>> AP MLD up works fine.
+>>
+>> ---
+>> Changes in v2:
+>> - Rebased on ToT.
+>> - No changes in 1-4, 6-10.
+>> - Removed regd_freed flag in 5.
+>> - Link to v1: https://lore.kernel.org/r/20250109-fix_reboot_issues_with_hw_grouping-v1-0-fb39ec03451e@quicinc.com
+>>
+>> ---
+>> Aditya Kumar Singh (10):
+>>        wifi: ath12k: prevent race condition in ath12k_core_hw_group_destroy()
+>>        wifi: ath12k: add reference counting for core attachment to hardware group
+>>        wifi: ath12k: fix failed to set mhi state error during reboot with hardware grouping
+>>        wifi: ath12k: fix firmware assert during reboot with hardware grouping
+>>        wifi: ath12k: fix SLUB BUG - Object already free in ath12k_reg_free()
+>>        wifi: ath12k: fix ath12k_core_pre_reconfigure_recovery() with grouping
+>>        wifi: ath12k: fix ATH12K_FLAG_REGISTERED flag handling
+>>        wifi: ath12k: handle ath12k_core_restart() with hardware grouping
+>>        wifi: ath12k: handle ath12k_core_reset() with hardware grouping
+>>        wifi: ath12k: reset MLO global memory during recovery
+>>
+>>   drivers/net/wireless/ath/ath12k/core.c | 115 ++++++++++++++++++++++++++++++---
+>>   drivers/net/wireless/ath/ath12k/core.h |  15 +----
+>>   drivers/net/wireless/ath/ath12k/mac.c  |   6 --
+>>   drivers/net/wireless/ath/ath12k/pci.c  |  28 +++++++-
+>>   drivers/net/wireless/ath/ath12k/qmi.c  |  24 ++++++-
+>>   drivers/net/wireless/ath/ath12k/qmi.h  |   4 +-
+>>   drivers/net/wireless/ath/ath12k/reg.c  |   4 +-
+>>   7 files changed, 163 insertions(+), 33 deletions(-)
+>> ---
+>> base-commit: e7ef944b3e2c31b608800925e784f67596375770
+>> change-id: 20241218-fix_reboot_issues_with_hw_grouping-0c2d367a587b
+>>
+> 
+> Fails to apply to current ath/main
+> 
+> * Applying v2_20250120_quic_adisi_wifi_ath12k_fixes_for_rmmod_and_recovery_issues_with_hardware_grouping.mbx
+> Applying: wifi: ath12k: prevent race condition in ath12k_core_hw_group_destroy()
+> Applying: wifi: ath12k: add reference counting for core attachment to hardware group
+> Using index info to reconstruct a base tree...
+> M       drivers/net/wireless/ath/ath12k/core.c
+> M       drivers/net/wireless/ath/ath12k/core.h
+> Falling back to patching base and 3-way merge...
+> Auto-merging drivers/net/wireless/ath/ath12k/core.h
+> CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/core.h
+> Auto-merging drivers/net/wireless/ath/ath12k/core.c
+> Recorded preimage for 'drivers/net/wireless/ath/ath12k/core.h'
+> error: Failed to merge in the changes.
+> Patch failed at 0002 wifi: ath12k: add reference counting for core attachment to hardware group
+> 
 
+FTM changes are conflicting in .h file. I will rebase on ToT and send 
+new version.
 
-On 1/23/2025 3:06 AM, Maxime Bizon wrote:
-> 
-> On Mon, 2025-01-13 at 16:38 -0800, Pradeep Kumar Chitrapu wrote:
-> 
-> Hello,
->   
->> @@ -8376,10 +8637,13 @@ static int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
->>   
->>          for (i = 0; i < ARRAY_SIZE(arvif->bitrate_mask.control); i++) {
->>                  arvif->bitrate_mask.control[i].legacy = 0xffffffff;
->> +               arvif->bitrate_mask.control[i].gi = NL80211_TXRATE_FORCE_SGI;
-> 
-> can you explain why it's not NL80211_TXRATE_DEFAULT_GI ?
-> 
-Hi Maxime
-
-I believe, this is default GI based on device capability of HE for 
-ath11k or EHT for ath12k.
->>                  memset(arvif->bitrate_mask.control[i].ht_mcs, 0xff,
->>                         sizeof(arvif->bitrate_mask.control[i].ht_mcs));
->>                  memset(arvif->bitrate_mask.control[i].vht_mcs, 0xff,
->>                         sizeof(arvif->bitrate_mask.control[i].vht_mcs));
->> +               memset(arvif->bitrate_mask.control[i].he_mcs, 0xff,
->> +                      sizeof(arvif->bitrate_mask.control[i].he_mcs));
->>          }
->>   
-> 
-> 
-> The same initialization of he_mcs is missing in the ath12k_mac_assign_link_vif()
-> 
-
-Thanks for notifying..will fix it in next revision
+-- 
+Aditya
 
