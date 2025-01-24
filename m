@@ -4,88 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38837C0218C
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 10:08:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 127C3C02181
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 10:36:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=S9BBXevNosdbXLVUHtlw1/GoAjgEwK2p4smVZBzOJgc=; b=UwRcli04oqmtsj2wALMglpD5qG
-	RFAysJEubUGkiaM7Eo7aJF3weu9aD3LHLHqvzAOY1A8IBdOG24q9ADsGBq4dUTsigQjbvkqCEHT78
-	U7UwLhVTsIkl+LGDbaeN1Z2BNqVgwJ0dXvLcEiPJmydArHjjpt/V+07jPKaN4f5Z53X3/ysHtqyyd
-	tGyM9N6+yfGwHXgTbfc9t6K/cZ+WeCVpMvz2sPZOFAQ85FfWzEbu0d0OajuYm+JuBXnCXyA+byF0d
-	7izFkQGDk4Mdsse2UcBL16StAlfidAH0aWb5uF0blKpTAzYp/3oylMYe596mHnTRxl++MZN918xwZ
-	7Fkk8kig==;
+	bh=6uGGIdlXXldRtFwWbGzDvOc99qkYb2v0wFM5jLExT9I=; b=ytSS82rN62Ft1a7M0yYai/xJFh
+	I+DMV3mm08MzR4DHhKxGKfszsc1YRVx5KElHcHKdwyL/y6xAt/hYLsqaxLyujI5lCp/7aY6DZ08Xf
+	DNFZs4JW9d15Tq/3ZlUEaj4aF/rBiYHouH9q1wGjGjSDDoUbpeLt4tKtNsaURB/KhD0QcPRpHsM33
+	MuNfFgSyuOpwYFkJlYr//3/xJ16Lg8URCLBuoFjRGmRMVkrljCjiHxt4afi3D/3Xk+0G9xiGCXAal
+	v9M+v8ShRWldrkbKF/aZd+QmBeUoNKEm28rPb3WvdbLa3SYSjSA1ENLmLDWzxxzYr9H2fsvgzjoHq
+	XsFwRp+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbGbt-0000000EQpK-49Cr
+	id 1tbH37-0000000ETEg-3VCy
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 10:08:21 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 24 Jan 2025 10:36:29 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbGbr-0000000EQo3-47Th
+	id 1tbH34-0000000ETEH-3xKE
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 10:08:21 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50OA5V0W010856;
-	Fri, 24 Jan 2025 10:08:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Fri, 24 Jan 2025 10:36:28 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O5NdCk029194
+	for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 10:36:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	S9BBXevNosdbXLVUHtlw1/GoAjgEwK2p4smVZBzOJgc=; b=LZxw6flPnMtudkVD
-	ZeMHjMMs4gK1MS8njmZC42GHe1KDfXikfXwFN4gLE6PFF7A81pfUE0gVMulbJzNn
-	YbFX56/DdIAXDsFwJ+H71GyqLyzf0tK2xdgxDj5AKbEHdI9iwlP2ovcjoY7RorH0
-	AgtDLIalfqa2I04ekt69w3gmEJepokP4n1qiTiHOBPtT8AHSKIewbT5i1dCjaggv
-	c3zYLMeqNgcJNES0qqofoS3+Jiahiup6brijn4SiqoJbf4I13Qi/Cu1yFgAxVEcY
-	YILWIwEmClrg4XtRxCIHFVp5vmlDMLACicTnM1OfOAGTUQDS6vb4vzMDIAZzxvqn
-	CJkRRw==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c8ta8060-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 10:08:17 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50OA8HbN001206
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 10:08:17 GMT
-Received: from [10.152.201.120] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 24 Jan
- 2025 02:08:15 -0800
-Message-ID: <1bfaee3a-3e82-4c55-8141-047d10feafa8@quicinc.com>
-Date: Fri, 24 Jan 2025 15:38:12 +0530
+	6uGGIdlXXldRtFwWbGzDvOc99qkYb2v0wFM5jLExT9I=; b=aOfrJOqmIdO1XdRH
+	kDXtDzAgjiFiNCoC1NsisokOtcbacpOMPEhth8f1/5uM42cu15X055L0lukfoSSz
+	X5uLUhsLDwC1j8u0miAyWarmClcI+IOTk9JZgo5B31z638O32LpaEEWTVn9po142
+	FOEuQVZmHbqePwYjQN0s0L6rJERgTMY1uP7+LGAVdQYHjlRvykKiC42BzXRHC5xs
+	VwZCHQGksOWVfDcL+0GUR/MqI6gtRzpMgcLQcBjzjfcjMbI3SXVgQoCtb2RnXRww
+	fxsAKhdRGdTCO2Ip3evYQ6AB71xg+BJHmPn+6PR3+Vmwr7EJSO0zy7rEmGobkpmm
+	9VLRTQ==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c4p5gufr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 10:36:23 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ee8ced572eso4169126a91.0
+        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 02:36:23 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737714972; x=1738319772;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=6uGGIdlXXldRtFwWbGzDvOc99qkYb2v0wFM5jLExT9I=;
+        b=lXZk1+GWE7WbP0lKKYSM9g1RIcKDKo+zpaxuoiRBhAP0Bij2CT7p8pHEa1vUSYLWLD
+         PZRMBtpLeByjGQjFbgKhBXFD/AnsTuhpEKjuaz8+Tlq0Oe5MKcWHw2LXRmeHSh2+3ibR
+         zUadNwykfx5Me6L7vManl5iIXFKyGpde03z445dkPUtTjOLZJkC9Q8y2eORgVh2xvWnC
+         RlNdoIob+Gw2BOYe+xogHjxDsnEbuekUSpFHiqn/WwfTOLaXaKOr5DTZo60l0D2CCqet
+         shlIs99QxyqQpnSE9LeHDOCm2Ywl9qV+NoZhQzsVxIja1JqKnokTNkwJGq48ehE+w2kQ
+         m0Ag==
+X-Forwarded-Encrypted: i=1; AJvYcCXqpsfZJdvJQhHD2TX3o7g9ddCuyNq0EfwPXi/VarIYKPzpywQroV3nRUPZ8R1U2UUqgT8jrvI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YytwAIpOmOdNhpoyFfbD+75qo7OkBizsR3DODqVNGctUXaPm1kp
+	9BshJ4F0KD9zsyGSY7M9ZXbHq7lp5JepwgXMst8XESnZU4jFV1QDG4ceeykZyHl4OcVJaNdqcB/
+	I6jbnNmr+DRjejcabDhjl74OTydi/hC+JILP01pXQWx8dULT4I17GrkIofJRS
+X-Gm-Gg: ASbGnctD2J7kenn3Xpau6RrEQzEDecS/z7agH2CGgqY297MHk0EapWdJToIB1nnczUa
+	+A086HGgmZSJo35VMgwq2HX3EWenRJCS6L1wUmfXPARPSDULrsnPTlvXQyvbyBywBu+DPYoQ9U8
+	fUTougccdT/kNWCeu+0ySYwqlp1hCPFcCspnRxPAW6Vez0CSXzXG4xDp6GAUUah1fOLS2FRzHzo
+	3PEyU/taBAxWPIFtiS0+LaeuxapsPu7mdXfknyS86bf/DhLFjGrP+BAWBz2TpnG6QXGYai2qzRk
+	DjIZ/HmzJFWCEE/Zmi31oD2Mt2db
+X-Received: by 2002:a05:6a00:4085:b0:72d:8d98:c256 with SMTP id d2e1a72fcca58-72daf945d6dmr40816771b3a.6.1737714971718;
+        Fri, 24 Jan 2025 02:36:11 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFsJ2btK7ALifFinqP3IJ+s5UmpKuFPTgyA1L0BdCWIQ+RzjQUpPrO/7uP19boOYwhg7kbo3g==
+X-Received: by 2002:a05:6a00:4085:b0:72d:8d98:c256 with SMTP id d2e1a72fcca58-72daf945d6dmr40816755b3a.6.1737714971352;
+        Fri, 24 Jan 2025 02:36:11 -0800 (PST)
+Received: from [10.152.202.18] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72f8a77c816sm1550749b3a.149.2025.01.24.02.36.09
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 24 Jan 2025 02:36:11 -0800 (PST)
+Message-ID: <9dd584c1-3fb5-4528-9171-45f94690c187@oss.qualcomm.com>
+Date: Fri, 24 Jan 2025 16:06:07 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC 3/3] wifi: ath12k: add EHT support for TX rate
-To: <mbizon@freebox.fr>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <johannes@sipsolutions.net>
-References: <20250122133424.1226555-1-quic_sarishar@quicinc.com>
- <20250122133424.1226555-4-quic_sarishar@quicinc.com>
- <653484cd0984e12dff094e5f9436ae4170509976.camel@freebox.fr>
+Subject: Re: [PATCH] wifi: ath12k: Abort scan before removing link interface
+ to prevent duplicate deletion
+To: Lingbo Kong <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250124093352.481-1-quic_lingbok@quicinc.com>
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 Content-Language: en-US
-From: Sarika Sharma <quic_sarishar@quicinc.com>
-In-Reply-To: <653484cd0984e12dff094e5f9436ae4170509976.camel@freebox.fr>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: XlCFzpgOzMwwKa1CA1HqwV8NHrKs8Ccb
-X-Proofpoint-ORIG-GUID: XlCFzpgOzMwwKa1CA1HqwV8NHrKs8Ccb
+In-Reply-To: <20250124093352.481-1-quic_lingbok@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: KCYGnpUmhEeE4ZFFaO6HXsnYpAkQARFF
+X-Proofpoint-ORIG-GUID: KCYGnpUmhEeE4ZFFaO6HXsnYpAkQARFF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-24_04,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 clxscore=1011
- lowpriorityscore=0 phishscore=0 mlxscore=0 priorityscore=1501
- malwarescore=0 adultscore=0 mlxlogscore=999 bulkscore=0 spamscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501240073
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
+ spamscore=0 mlxlogscore=999 impostorscore=0 bulkscore=0 malwarescore=0
+ mlxscore=0 priorityscore=1501 adultscore=0 lowpriorityscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501240077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_020820_044010_1B2EA1B0 
-X-CRM114-Status: GOOD (  22.99  )
+X-CRM114-CacheID: sfid-20250124_023627_110546_0AA70E76 
+X-CRM114-Status: GOOD (  13.34  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,112 +118,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/23/2025 7:03 PM, Maxime Bizon wrote:
+On 1/24/25 15:03, Lingbo Kong wrote:
+> Currently, when ath12k performs the remove link interface operation, if
+> there is an ongoing scan operation on the arvif, ath12k may execute the
+> remove link interface operation multiple times on the same arvif. This
+> occurs because, during the remove link operation, if a scan operation is
+> present on the arvif, ath12k may receive a WMI_SCAN_EVENT_COMPLETED event
+> from the firmware. Upon receiving this event, ath12k will continue to
+> execute the ath12k_scan_vdev_clean_work() function, performing the remove
+> link interface operation on the same arvif again.
 > 
-> On Wed, 2025-01-22 at 19:04 +0530, Sarika Sharma wrote:
+> To address this issue, before executing the remove link interface
+> operation, ath12k needs to check if there is an ongoing scan operation on
+> the current arvif. If such an operation exists, it should be aborted.
 > 
-> Hello,
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
->> +       case WMI_RATE_PREAMBLE_EHT:
->> +               arsta->txrate.mcs = mcs;
->> +               arsta->txrate.flags = RATE_INFO_FLAGS_EHT_MCS;
->> +               arsta->txrate.he_dcm = dcm;
->> +               arsta->txrate.eht_gi = ath12k_eht_gi_to_nl80211_eht_gi(sgi);
->> +               tones = le16_to_cpu(user_rate->ru_end) -
->> +                       le16_to_cpu(user_rate->ru_start) + 1;
->> +               v = ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(tones);
->> +               arsta->txrate.eht_ru_alloc = v;
->> +               break;
->>          }
->>
-> 
-> The logic to set arsta->txrate.bw to RATE_INFO_BW_HE_RU or
-> RATE_INFO_BW_EHT_RU like in dp_tx completion is missing here.
-> 
+> Signed-off-by: Lingbo Kong<quic_lingbok@quicinc.com>
+> ---
 
-This patch is to support EHT rates and currently arsta->txrate.bw is 
-filled as
-arsta->txrate.bw = ath12k_mac_bw_to_mac80211_bw(bw).
+Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 
-Sure will check below suggestion and add another patch to include 
-arsta->txrate.bw for both HE and EHT correctly.
-
-> How about something like this ?
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-> index c3c607eae476..de2095ed8863 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp.h
-> +++ b/drivers/net/wireless/ath/ath12k/dp.h
-> @@ -1506,6 +1506,8 @@ enum HTT_PPDU_STATS_PPDU_TYPE {
->   #define HTT_PPDU_STATS_USER_RATE_FLAGS_DCM_M           BIT(28)
->   #define HTT_PPDU_STATS_USER_RATE_FLAGS_LDPC_M          BIT(29)
->   
-> +#define HTT_USR_RATE_PPDU_TYPE(_val) \
-> +               le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_INFO1_PPDU_TYPE_M)
->   #define HTT_USR_RATE_PREAMBLE(_val) \
->                  le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_PREAMBLE_M)
->   #define HTT_USR_RATE_BW(_val) \
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> index eaec3949470d..c8d377544422 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> @@ -1370,12 +1370,12 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
->          struct htt_ppdu_user_stats *usr_stats = &ppdu_stats->user_stats[user];
->          struct htt_ppdu_stats_common *common = &ppdu_stats->common;
->          int ret;
-> -       u8 flags, mcs, nss, bw, sgi, dcm, rate_idx = 0;
-> +       u8 flags, mcs, nss, bw, sgi, dcm, ppdu_type, rate_idx = 0;
->          u32 v, succ_bytes = 0;
->          u16 tones, rate = 0, succ_pkts = 0;
->          u32 tx_duration = 0;
->          u8 tid = HTT_PPDU_STATS_NON_QOS_TID;
-> -       bool is_ampdu = false;
-> +       bool is_ofdma, is_ampdu = false;
->   
->          if (!(usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_RATE)))
->                  return;
-> @@ -1403,6 +1403,9 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
->          mcs = HTT_USR_RATE_MCS(user_rate->rate_flags);
->          sgi = HTT_USR_RATE_GI(user_rate->rate_flags);
->          dcm = HTT_USR_RATE_DCM(user_rate->rate_flags);
-> +       ppdu_type = HTT_USR_RATE_PPDU_TYPE(user_rate->rate_flags);
-> +       is_ofdma = (ppdu_type == HTT_PPDU_STATS_PPDU_TYPE_MU_OFDMA) |
-> +               (ppdu_type == HTT_PPDU_STATS_PPDU_TYPE_MU_MIMO_OFDMA);
->   
->          /* Note: If host configured fixed rates and in some other special
->           * cases, the broadcast/management frames are sent in different rates.
-> @@ -1479,6 +1482,16 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
->                  v = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(tones);
->                  arsta->txrate.he_ru_alloc = v;
->                  break;
-> +       case WMI_RATE_PREAMBLE_EHT:
-> +               arsta->txrate.mcs = mcs;
-> +               arsta->txrate.flags = RATE_INFO_FLAGS_EHT_MCS;
-> +               arsta->txrate.he_dcm = dcm;
-> +               arsta->txrate.eht_gi = ath12k_mac_eht_gi_to_nl80211_eht_gi(sgi);
-> +               tones = le16_to_cpu(user_rate->ru_end) -
-> +                       le16_to_cpu(user_rate->ru_start) + 1;
-> +               v = ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(tones);
-> +               arsta->txrate.eht_ru_alloc = v;
-> +               break;
->          }
->   
->          arsta->txrate.nss = nss;
-> @@ -1486,6 +1499,13 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
->          arsta->tx_duration += tx_duration;
->          memcpy(&arsta->last_txrate, &arsta->txrate, sizeof(struct rate_info));
->   
-> +       if (is_ofdma) {
-> +               if (flags == WMI_RATE_PREAMBLE_HE)
-> +                       arsta->txrate.bw = RATE_INFO_BW_HE_RU;
-> +               else if (flags == WMI_RATE_PREAMBLE_EHT)
-> +                       arsta->txrate.bw = RATE_INFO_BW_EHT_RU;
-> +       }
-> +
->          /* PPDU stats reported for mgmt packet doesn't have valid tx bytes.
->           * So skip peer stats update for mgmt packets.
->           */
-> 
-> 
-
+-- 
+Aditya
 
