@@ -4,106 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 127C3C02181
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 10:36:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5326C02181
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 11:33:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6uGGIdlXXldRtFwWbGzDvOc99qkYb2v0wFM5jLExT9I=; b=ytSS82rN62Ft1a7M0yYai/xJFh
-	I+DMV3mm08MzR4DHhKxGKfszsc1YRVx5KElHcHKdwyL/y6xAt/hYLsqaxLyujI5lCp/7aY6DZ08Xf
-	DNFZs4JW9d15Tq/3ZlUEaj4aF/rBiYHouH9q1wGjGjSDDoUbpeLt4tKtNsaURB/KhD0QcPRpHsM33
-	MuNfFgSyuOpwYFkJlYr//3/xJ16Lg8URCLBuoFjRGmRMVkrljCjiHxt4afi3D/3Xk+0G9xiGCXAal
-	v9M+v8ShRWldrkbKF/aZd+QmBeUoNKEm28rPb3WvdbLa3SYSjSA1ENLmLDWzxxzYr9H2fsvgzjoHq
-	XsFwRp+A==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=J1hlt8R5MIkYuKBDFZyWOw7qVQ6zUZRXXaHPTjNJ3X4=; b=pYlhFV724ohVpLv9r/VQbh8gT4
+	OkCcn5786hV2h0wbCGjMTw5LDlK7pM6Vb6qSnbevHlwXjjkW8qB8YU+0MrkyW0ej57cIdv9LsI3rw
+	ISdmdNRI13lofWhg2+8l1BWChsRsMNpAaQl9UwmrH1/48yj38ftB6AWBXc6v9Ng+4R9sxpp40af1F
+	x4b30iScL9uj105sMmZGM1U8BJEzNqvE0IUWsT+kzDf//8McYxd8ykqh9FvHpMbJrBpI1rG9bkb0r
+	aNj34A3nMNjWh4EtrFezVP2spQ4bGZH0aEaHD3zdolZLSlyWo0MI0tcBWrnR+BznNAyWZGzFs8OUM
+	fn1y/jgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbH37-0000000ETEg-3VCy
+	id 1tbHwR-0000000Ea1f-1sb9
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 10:36:29 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 24 Jan 2025 11:33:39 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbH34-0000000ETEH-3xKE
+	id 1tbHwP-0000000Ea1G-1Pbf
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 10:36:28 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O5NdCk029194
-	for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 10:36:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6uGGIdlXXldRtFwWbGzDvOc99qkYb2v0wFM5jLExT9I=; b=aOfrJOqmIdO1XdRH
-	kDXtDzAgjiFiNCoC1NsisokOtcbacpOMPEhth8f1/5uM42cu15X055L0lukfoSSz
-	X5uLUhsLDwC1j8u0miAyWarmClcI+IOTk9JZgo5B31z638O32LpaEEWTVn9po142
-	FOEuQVZmHbqePwYjQN0s0L6rJERgTMY1uP7+LGAVdQYHjlRvykKiC42BzXRHC5xs
-	VwZCHQGksOWVfDcL+0GUR/MqI6gtRzpMgcLQcBjzjfcjMbI3SXVgQoCtb2RnXRww
-	fxsAKhdRGdTCO2Ip3evYQ6AB71xg+BJHmPn+6PR3+Vmwr7EJSO0zy7rEmGobkpmm
-	9VLRTQ==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c4p5gufr-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 10:36:23 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ee8ced572eso4169126a91.0
-        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 02:36:23 -0800 (PST)
+	Fri, 24 Jan 2025 11:33:38 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-43618283d48so14045125e9.1
+        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 03:33:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1737718415; x=1738323215; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=J1hlt8R5MIkYuKBDFZyWOw7qVQ6zUZRXXaHPTjNJ3X4=;
+        b=LN1jOUzZzW9gpeGoNh0V4XWBHLBuINMdq96VIauQIDEScIqYLnpGOf/fSOq24gv/C8
+         kTYiNTzST28g83XwqqTo/QlqURTsa149Y13qV7rBmE6jhu3ix3vp/qMa44Xxh62RZrIL
+         XOVGWjJPzMklV32NRbhbVKdRvXJuKSlqGiNNyEG0GZVTCMKXuQtSl1zkvYkGBmm/+Ksc
+         tTQJx91d7ZygHURp40EWG+KeiQeoL0+MCL5e1bZTbgCEKuYbdXx2Um0tbX+ph2yFzq0A
+         H8/pQ+1Ehs4UXjFRh6LuSjMIgXWuxKdLnIAXTeIbnHeQ+HrKV73ws2LdR6svN4OoUru4
+         1fDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737714972; x=1738319772;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=6uGGIdlXXldRtFwWbGzDvOc99qkYb2v0wFM5jLExT9I=;
-        b=lXZk1+GWE7WbP0lKKYSM9g1RIcKDKo+zpaxuoiRBhAP0Bij2CT7p8pHEa1vUSYLWLD
-         PZRMBtpLeByjGQjFbgKhBXFD/AnsTuhpEKjuaz8+Tlq0Oe5MKcWHw2LXRmeHSh2+3ibR
-         zUadNwykfx5Me6L7vManl5iIXFKyGpde03z445dkPUtTjOLZJkC9Q8y2eORgVh2xvWnC
-         RlNdoIob+Gw2BOYe+xogHjxDsnEbuekUSpFHiqn/WwfTOLaXaKOr5DTZo60l0D2CCqet
-         shlIs99QxyqQpnSE9LeHDOCm2Ywl9qV+NoZhQzsVxIja1JqKnokTNkwJGq48ehE+w2kQ
-         m0Ag==
-X-Forwarded-Encrypted: i=1; AJvYcCXqpsfZJdvJQhHD2TX3o7g9ddCuyNq0EfwPXi/VarIYKPzpywQroV3nRUPZ8R1U2UUqgT8jrvI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YytwAIpOmOdNhpoyFfbD+75qo7OkBizsR3DODqVNGctUXaPm1kp
-	9BshJ4F0KD9zsyGSY7M9ZXbHq7lp5JepwgXMst8XESnZU4jFV1QDG4ceeykZyHl4OcVJaNdqcB/
-	I6jbnNmr+DRjejcabDhjl74OTydi/hC+JILP01pXQWx8dULT4I17GrkIofJRS
-X-Gm-Gg: ASbGnctD2J7kenn3Xpau6RrEQzEDecS/z7agH2CGgqY297MHk0EapWdJToIB1nnczUa
-	+A086HGgmZSJo35VMgwq2HX3EWenRJCS6L1wUmfXPARPSDULrsnPTlvXQyvbyBywBu+DPYoQ9U8
-	fUTougccdT/kNWCeu+0ySYwqlp1hCPFcCspnRxPAW6Vez0CSXzXG4xDp6GAUUah1fOLS2FRzHzo
-	3PEyU/taBAxWPIFtiS0+LaeuxapsPu7mdXfknyS86bf/DhLFjGrP+BAWBz2TpnG6QXGYai2qzRk
-	DjIZ/HmzJFWCEE/Zmi31oD2Mt2db
-X-Received: by 2002:a05:6a00:4085:b0:72d:8d98:c256 with SMTP id d2e1a72fcca58-72daf945d6dmr40816771b3a.6.1737714971718;
-        Fri, 24 Jan 2025 02:36:11 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFsJ2btK7ALifFinqP3IJ+s5UmpKuFPTgyA1L0BdCWIQ+RzjQUpPrO/7uP19boOYwhg7kbo3g==
-X-Received: by 2002:a05:6a00:4085:b0:72d:8d98:c256 with SMTP id d2e1a72fcca58-72daf945d6dmr40816755b3a.6.1737714971352;
-        Fri, 24 Jan 2025 02:36:11 -0800 (PST)
-Received: from [10.152.202.18] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72f8a77c816sm1550749b3a.149.2025.01.24.02.36.09
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 24 Jan 2025 02:36:11 -0800 (PST)
-Message-ID: <9dd584c1-3fb5-4528-9171-45f94690c187@oss.qualcomm.com>
-Date: Fri, 24 Jan 2025 16:06:07 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Abort scan before removing link interface
- to prevent duplicate deletion
-To: Lingbo Kong <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org
+        d=1e100.net; s=20230601; t=1737718415; x=1738323215;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=J1hlt8R5MIkYuKBDFZyWOw7qVQ6zUZRXXaHPTjNJ3X4=;
+        b=sGhNl6NMJRek2vsrdWY6sGzAiBpt1HhuV9TmyPovMQP6HOMUxzfkoFipOzZovwMYFP
+         JYaub/ULnFy+BaC9P6gUJZRJZAGMeOx8XQudFxGwG7zTMkBsN3yhb94vHgfv0S0Q1kYT
+         Lo0PYomJT6odeFi5qF9OnL8pWJZhvyIOe/QSJwSdyE+vwodeM+KWOcYHrSblh2g67VRY
+         Ht3XuakjGzQODzC4xBr6UNTugn91KlNHq7ialR0TdVOsgOTKMvCIXKJSlJ3+m53SaXHd
+         Nw6uhBMCKKcNNt8aHgHHWILa0qazuFFHaHVouUd07zXDTjYeovXnotN8I2TwcdVHKhW5
+         eNBA==
+X-Gm-Message-State: AOJu0YzIw/LvItihPjXNchSfZzkzDP4u0VtxNBkSnSnSdXKM0BZ1YY6Z
+	oFxQa6xDGjnBxewEiHaXzGmw6YZX6tEv7sX9maNuNLaonJmAFi9iHE45nw==
+X-Gm-Gg: ASbGncua7eXY0XES75H536cEgd5mFo6/mwVRyOp1m+wktRmJskID0GXNKRJ/KUZm2/G
+	fXFFWiAj5+j3iCyLDwqL91TelQ8NLnG95pipDApq2ql5x9usKO1xXZ61qJNLPDubsdu2RbC+xFo
+	KyjamibMoqI5B0G2boci8leaqOfQWvCukd6CIVwyYweLieHiL/3STsGVNoUnWMkUjNasQhm2A9P
+	p2cSDv0/B2kT+cARoN7pvYpcMel6horS5vXk16gtk/A53GE6zm/a3AbSGzCl8i7aS1NhJ4J4stw
+	/3wNm/KQUtpatXck799cyUV77FfEib4R9zEa+Q==
+X-Google-Smtp-Source: AGHT+IEN5SA3mcTu8+dkgNi2gfN0uW281kkON4BfYZ/abceYNTwrjsaBX8FI3uSrWrYBhq1/idSU1Q==
+X-Received: by 2002:a05:600c:1e1b:b0:434:f917:2b11 with SMTP id 5b1f17b1804b1-43891429682mr249292255e9.21.1737718414853;
+        Fri, 24 Jan 2025 03:33:34 -0800 (PST)
+Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-438bd501f1esm23068835e9.12.2025.01.24.03.33.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Jan 2025 03:33:32 -0800 (PST)
+From: Nicolas Escande <nico.escande@gmail.com>
+To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-References: <20250124093352.481-1-quic_lingbok@quicinc.com>
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250124093352.481-1-quic_lingbok@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: KCYGnpUmhEeE4ZFFaO6HXsnYpAkQARFF
-X-Proofpoint-ORIG-GUID: KCYGnpUmhEeE4ZFFaO6HXsnYpAkQARFF
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-24_04,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
- spamscore=0 mlxlogscore=999 impostorscore=0 bulkscore=0 malwarescore=0
- mlxscore=0 priorityscore=1501 adultscore=0 lowpriorityscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501240077
+Subject: [PATCH] wifi: ath12k: fbx: Add missing htt_metadata flag in ath12k_dp_tx()
+Date: Fri, 24 Jan 2025 12:33:31 +0100
+Message-ID: <20250124113331.93476-1-nico.escande@gmail.com>
+X-Mailer: git-send-email 2.48.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_023627_110546_0AA70E76 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20250124_033337_394437_D9229657 
+X-CRM114-Status: UNSURE (   7.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,27 +94,32 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/24/25 15:03, Lingbo Kong wrote:
-> Currently, when ath12k performs the remove link interface operation, if
-> there is an ongoing scan operation on the arvif, ath12k may execute the
-> remove link interface operation multiple times on the same arvif. This
-> occurs because, during the remove link operation, if a scan operation is
-> present on the arvif, ath12k may receive a WMI_SCAN_EVENT_COMPLETED event
-> from the firmware. Upon receiving this event, ath12k will continue to
-> execute the ath12k_scan_vdev_clean_work() function, performing the remove
-> link interface operation on the same arvif again.
-> 
-> To address this issue, before executing the remove link interface
-> operation, ath12k needs to check if there is an ongoing scan operation on
-> the current arvif. If such an operation exists, it should be aborted.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Lingbo Kong<quic_lingbok@quicinc.com>
-> ---
+When AP-VLAN was added, we did not add HTT_TCL_META_DATA_VALID_HTT flag to
+the tx_info's meta_data_flags . Without this flag the firmware seems to
+reject all the broadcast (ap-vlan) frames. So lets add it same as ath11k
+did it in commit 5e8a373c8699 ("ath11k: Add support for dynamic vlan")
 
-Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
+Fixes: 26dd8ccdba4d ("wifi: ath12k: dynamic VLAN support")
+Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index 00437736e0322..0d7a079f4c6d1 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -368,6 +368,7 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 		add_htt_metadata = true;
+ 		msdu_ext_desc = true;
+ 		ti.flags0 |= u32_encode_bits(1, HAL_TCL_DATA_CMD_INFO2_TO_FW);
++		ti.meta_data_flags |= HTT_TCL_META_DATA_VALID_HTT;
+ 		ti.encap_type = HAL_TCL_ENCAP_TYPE_RAW;
+ 		ti.encrypt_type = HAL_ENCRYPT_TYPE_OPEN;
+ 	}
 -- 
-Aditya
+2.48.1
+
 
