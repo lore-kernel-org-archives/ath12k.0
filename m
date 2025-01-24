@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64C99C0218B
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 04:42:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD14AC0218C
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 04:42:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=B2M3nYMBsn8GMd/Oc3+XTojCq+G9Z/vw/A5szHksgek=; b=Dvei6LU33O2BPd3q5/yYXGEM3j
-	BmCT6t52NZ3dwaWGpEL3eYQScMIclf7MubXg80S9Ltz3hcS6a3SKIOU30mu9Mxt6BS4Z5SBMZ03bH
-	x0BlzIZRX/qLjiv4qwaPdKTpROT4bJikgLCAsDm76yvLu98mZt0ZNKkZWQRefXGq6MK3H0YT1YhE2
-	yFe9z91SjGsBwdLk3v64uzLXs2h482nfmJRAGtxOXcXgfEBl8R5T6fWW6i5/JzUSv8HZuzGIqfYop
-	rvmV2TxRJP9oxCKcBjeebmuGghYLZTJA1xwZQuF6SoIHzRtmW99txGHsEO3muXpNYW4QbEnW2TBuB
-	dumr9Lmw==;
+	bh=wiABIQ+lsPhVq9CqDYbZ6X/sTLVYXuc/0vP3U4+KezU=; b=DjQJGMw2BQjFFt7vCCul/a0LNv
+	u1ZZxMJuhMxQfCMTXDrV+AKNcfZoGLuHRb1p8OOoLzJXvqWFrzozJ0MbJlKp6gpk+MVvzVwYv9DVg
+	3/dB/tH9ALFtT0CL05kvTgeMkooV9pcbWb3ymmQg58iH5OU5PW2hcLIPLkWnihqGUIAKcTLI2Y9Mg
+	XsUlrsXIFJqA7ye4ZmZ7D/x6CsSnssu4DYb5Xpljkxkd5QwJHcAd582fMLbABm5pHKmqYElqZQW7T
+	88wa7DqNqBqwLc+Lbl2p9KFvoQJu5P2xX3T6ZhdybbFego8eStAz8MnNP+T9fn1aGgwj4YRn/URSJ
+	IDQ57RQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbBWA-0000000Dtjp-0hDX
+	id 1tbBWC-0000000Dtkv-29tU
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 04:42:06 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 24 Jan 2025 04:42:08 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbBW7-0000000DtiZ-1f0a
+	id 1tbBW9-0000000DtjS-1dS4
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 04:42:04 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50NG3mu5011267;
-	Fri, 24 Jan 2025 04:42:00 GMT
+	Fri, 24 Jan 2025 04:42:06 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O1LHrM022788;
+	Fri, 24 Jan 2025 04:42:03 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	B2M3nYMBsn8GMd/Oc3+XTojCq+G9Z/vw/A5szHksgek=; b=AtXR4WqCmYXaI61x
-	Ng3Mk8rSn3XHHYSTSNjWDSjoQqXgBliXkOWLcXFRBzuP1KwKPuhK8PkQDd38+5+O
-	bITj7VhSCjkJ7BTDpY4jIOhzq4PkHaQjaoac2skOTUfQNOnQJgnwaxJjTz4bgI4U
-	A7vqbmeIjj3I8qMLwczDGnuFBX8S1vA27GKveDCOn2cBi+dGeHRZ0NFl8Mt0S+cz
-	1RztzqUOxJcultOWvie+2iGf7Y2FgqgHDsflJjDrxF7YNZwHse+s5r9h0Y6KRqj5
-	8GgEm1JtVqU/CghqmOwNcGN9ereZ4Zn9myWSbFhYIsbtACOtccUlcQXAXc3LdlJ+
-	0/ATzg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44bry6sctq-1
+	wiABIQ+lsPhVq9CqDYbZ6X/sTLVYXuc/0vP3U4+KezU=; b=VQTpkAz+j1fD3nzY
+	sErtwARIq1mj4jYMEIaMY6oE6FxFFF/JAOsxZueU67yGJDVoiJaLmyGJmNBedNaW
+	wtrTfJ5kuJKFe/0xGTB4adto98L3wIWJBiRbVtTpQc66pmwvEAOqiey1AMxBujE7
+	qgWf8w+Cc6XgIhzqQ8dCf/oK1G3yRfRTP/TULZor78qAoBWbIx1dzfoo+oFtYYK6
+	8PKFN+sbZc/fHwize8pvZfeUPao+FXcBal7Vv13XPiksvyAfsJx8IJkRXfPNS/SW
+	6BJA/FuCIjs35LlXPe/XPms3Am6VfTzzzkU8gI7USv22OttrT2i3c402IkB1EyaX
+	snz5jQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c147rbtn-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 04:42:00 +0000 (GMT)
+	Fri, 24 Jan 2025 04:42:03 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O4fxqg031228
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O4g2qa025888
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 04:41:59 GMT
+	Fri, 24 Jan 2025 04:42:02 GMT
 Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 23 Jan 2025 20:41:56 -0800
+ 15.2.1544.9; Thu, 23 Jan 2025 20:41:59 -0800
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Date: Fri, 24 Jan 2025 10:11:27 +0530
-Subject: [PATCH v3 04/10] wifi: ath12k: fix firmware assert during reboot
- with hardware grouping
+Date: Fri, 24 Jan 2025 10:11:28 +0530
+Subject: [PATCH v3 05/10] wifi: ath12k: fix SLUB BUG - Object already free
+ in ath12k_reg_free()
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250124-fix_reboot_issues_with_hw_grouping-v3-4-329030b18d9e@quicinc.com>
+Message-ID: <20250124-fix_reboot_issues_with_hw_grouping-v3-5-329030b18d9e@quicinc.com>
 References: <20250124-fix_reboot_issues_with_hw_grouping-v3-0-329030b18d9e@quicinc.com>
 In-Reply-To: <20250124-fix_reboot_issues_with_hw_grouping-v3-0-329030b18d9e@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
@@ -79,19 +79,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: UzbE2XA3hQNKp2LBw69k30J2P37SN4Wh
-X-Proofpoint-GUID: UzbE2XA3hQNKp2LBw69k30J2P37SN4Wh
+X-Proofpoint-ORIG-GUID: UrEfk-pNhQW6tGFu2NewX15Z5dAdKUOd
+X-Proofpoint-GUID: UrEfk-pNhQW6tGFu2NewX15Z5dAdKUOd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-24_01,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 clxscore=1015
- priorityscore=1501 adultscore=0 spamscore=0 lowpriorityscore=0
- malwarescore=0 suspectscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501240032
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=597
+ bulkscore=93 clxscore=1015 lowpriorityscore=93 mlxscore=0 suspectscore=0
+ priorityscore=1501 spamscore=0 malwarescore=0 adultscore=0 impostorscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2501240032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_204203_558770_5EB82B9A 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20250123_204205_438298_163A6D4E 
+X-CRM114-Status: GOOD (  14.43  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,62 +106,101 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-At present, during PCI shutdown, the power down is only executed for a
-single device. However, when operating in a group, all devices need to be
-powered down simultaneously. Failure to do so will result in a firmware
-assertion.
+During rmmod of ath12k module with SLUB debug enabled, following print is
+seen -
 
-Hence, introduce a new ath12k_pci_hw_group_power_down() and call it during
-power down. This will ensure that all partner devices are properly powered
-down.
+=============================================================================
+BUG kmalloc-1k (Not tainted): Object already free
+-----------------------------------------------------------------------------
+
+Allocated in ath12k_reg_build_regd+0x94/0xa20 [ath12k] age=10470 cpu=0 pid=0
+ __kmalloc_noprof+0xf4/0x368
+ ath12k_reg_build_regd+0x94/0xa20 [ath12k]
+ ath12k_wmi_op_rx+0x199c/0x2c14 [ath12k]
+ ath12k_htc_rx_completion_handler+0x398/0x554 [ath12k]
+ ath12k_ce_per_engine_service+0x248/0x368 [ath12k]
+ ath12k_pci_ce_workqueue+0x28/0x50 [ath12k]
+ process_one_work+0x14c/0x28c
+ bh_worker+0x22c/0x27c
+ workqueue_softirq_action+0x80/0x90
+ tasklet_action+0x14/0x3c
+ handle_softirqs+0x108/0x240
+ __do_softirq+0x14/0x20
+Freed in ath12k_reg_free+0x40/0x74 [ath12k] age=136 cpu=2 pid=166
+ kfree+0x148/0x248
+ ath12k_reg_free+0x40/0x74 [ath12k]
+ ath12k_core_hw_group_destroy+0x68/0xac [ath12k]
+ ath12k_core_deinit+0xd8/0x124 [ath12k]
+ ath12k_pci_remove+0x6c/0x130 [ath12k]
+ pci_device_remove+0x44/0xe8
+ device_remove+0x4c/0x80
+ device_release_driver_internal+0x1d0/0x22c
+ driver_detach+0x50/0x98
+ bus_remove_driver+0x70/0xf4
+ driver_unregister+0x30/0x60
+ pci_unregister_driver+0x24/0x9c
+ ath12k_pci_exit+0x18/0x24 [ath12k]
+ __arm64_sys_delete_module+0x1a0/0x2a8
+ invoke_syscall+0x48/0x110
+ el0_svc_common.constprop.0+0x40/0xe0
+Slab 0xfffffdffc0033600 objects=10 used=6 fp=0xffff000000cdcc00 flags=0x3fffe0000000240(workingset|head|node=0|zone=0|lastcpupid=0x1ffff)
+Object 0xffff000000cdcc00 @offset=19456 fp=0xffff000000cde400
+[...]
+
+This issue arises because in ath12k_core_hw_group_destroy(), each device
+calls ath12k_core_soc_destroy() for itself and all its partners within the
+same group. Since ath12k_core_hw_group_destroy() is invoked for each
+device, this results in a double free condition, eventually causing the
+SLUB bug.
+
+To resolve this, set the freed pointers to NULL. And since there could be
+a race condition to read these pointers, guard ath12k_core_soc_destroy()
+with the mutex lock.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
+Fixes: 6f245ea0ec6c ("wifi: ath12k: introduce device group abstraction")
 Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 23 ++++++++++++++++++++++-
- 1 file changed, 22 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/core.c | 2 ++
+ drivers/net/wireless/ath/ath12k/reg.c  | 4 +++-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 9aa6ce6e9f92461833ec2e0eead20fff2ccbc663..d7e6c2c843223890eac9da8145d732ed2c74e907 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1752,13 +1752,34 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
- 	ath12k_core_free(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 37dbef78b1999fb998443a94f0ffb81b2a4d2281..31e7c71c86ab98f1e7df2869d0b7a1dbc2ec1de0 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -1776,7 +1776,9 @@ static void ath12k_core_hw_group_destroy(struct ath12k_hw_group *ag)
+ 		if (!ab)
+ 			continue;
+ 
++		mutex_lock(&ab->core_lock);
+ 		ath12k_core_soc_destroy(ab);
++		mutex_unlock(&ab->core_lock);
+ 	}
+ 	mutex_unlock(&ag->mutex);
  }
- 
-+static void ath12k_pci_hw_group_power_down(struct ath12k_hw_group *ag)
-+{
-+	struct ath12k_base *ab;
-+	int i;
-+
-+	if (!ag)
-+		return;
-+
-+	mutex_lock(&ag->mutex);
-+
-+	for (i = 0; i < ag->num_devices; i++) {
-+		ab = ag->ab[i];
-+		if (!ab)
-+			continue;
-+
-+		ath12k_pci_power_down(ab, false);
-+	}
-+
-+	mutex_unlock(&ag->mutex);
-+}
-+
- static void ath12k_pci_shutdown(struct pci_dev *pdev)
- {
- 	struct ath12k_base *ab = pci_get_drvdata(pdev);
- 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
- 
- 	ath12k_pci_set_irq_affinity_hint(ab_pci, NULL);
--	ath12k_pci_power_down(ab, false);
-+	ath12k_pci_hw_group_power_down(ab->ag);
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 439d61f284d89222e79c05d6cff8e85d0d315aad..e34ae29a8a50fcd9452f7d9456b7be7a8ded6f9f 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ #include <linux/rtnetlink.h>
+ #include "core.h"
+@@ -780,5 +780,7 @@ void ath12k_reg_free(struct ath12k_base *ab)
+ 	for (i = 0; i < ab->hw_params->max_radios; i++) {
+ 		kfree(ab->default_regd[i]);
+ 		kfree(ab->new_regd[i]);
++		ab->default_regd[i] = NULL;
++		ab->new_regd[i] = NULL;
+ 	}
  }
- 
- static __maybe_unused int ath12k_pci_pm_suspend(struct device *dev)
 
 -- 
 2.34.1
