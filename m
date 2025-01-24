@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 241B9C0218B
-	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 04:41:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09134C0218C
+	for <ath12k@archiver.kernel.org>; Fri, 24 Jan 2025 04:42:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Wj3x8Ni+2UDltk4UDr5S6YrgeNhQw3g0yFlN+FoE/0Y=; b=iZjxqgGPEoE8143vlAF75/+hI+
-	K9iTTMAd4JoYkAKIifrQBOzZzsPQ07NEj3oyn01YYxJzP0ZD8cvuDX6dtm22aYErKWoB+/qFCfrA7
-	T+7pqk0SlZjvdnBkUzJfrI6oSXN/IjPl/6ijL/xdhwujYT2jJPuQJuvdEOWcE1OGGXRLPPvsft1DL
-	Nzc29E4Voepbn6TMbhv1FrVQtSNOjjfLrNOWRyXoeHrbQefd/01xx4HJ8cyQG6NBmKc+AhwN0NXsR
-	bTw9SwoPAZMXRn7mlx4DctELLenmqVolti3XmfUYOGQnYgAMh06jz3TIgaaqMhFWSXildxkXCRN1p
-	xJlfAsVQ==;
+	bh=0l4rQkjIU7dksEbD1FLkwjlGRg2lyBPa4PAzbQiU9vU=; b=K9hAZ8rvADytuRI/nAI7HHCMvO
+	nfW7IrIF3N0g2oKFs1zrzAQYlzHrTBRBBNR4Xe6qBuc+38Zcg2b34bAe7l3pRwkmsl30+XkZoLE5C
+	YrG0I69Un40jnk28uD6Pi/+RTsjSvW1keOjcsAnPYSU+fa6gNsYZoc4bRaNmrkE5Szv75qG8VvxZU
+	xdmejY208wW0CUXNm6DqWuBLraUQNpXLPyBm/FOLa2tKwkKoyJGNGTNaTppjFbxaNWvHFZeM6JYYM
+	z07HGz5yPhCZF8RV50U6pGAk45uO32RBGZdZ7xLQvHX1JtmBKnul9uTC6SCywy1HEMvdzlDlD4V4W
+	yeRKCQWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbBW2-0000000DtgB-3nPO
+	id 1tbBW4-0000000DthT-3Gq1
 	for ath12k@archiver.kernel.org;
-	Fri, 24 Jan 2025 04:41:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 24 Jan 2025 04:42:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbBW0-0000000Dtev-2zXR
+	id 1tbBW3-0000000DtgI-0pxh
 	for ath12k@lists.infradead.org;
-	Fri, 24 Jan 2025 04:41:57 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O3rexi029827;
-	Fri, 24 Jan 2025 04:41:53 GMT
+	Fri, 24 Jan 2025 04:42:00 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50O1Kltx021737;
+	Fri, 24 Jan 2025 04:41:56 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Wj3x8Ni+2UDltk4UDr5S6YrgeNhQw3g0yFlN+FoE/0Y=; b=KP1VH7wQIb1M4Kda
-	7veBWo5+gpDIdIoLMU4B3Gg7+F56RUn+kHY4knBNPpuKmkk7cMZoQl1SroOx3pB8
-	6dgQiEolej5kfYCEtuEfdp2+VeMgFZtfgV3OUzA7hHzeuTOE6HKD2qAAc+4hC4B6
-	Mx/thnSod9K9hQc1KSiKt/rpXFc2Zj52/P9HwyPW6UZ7XS2bgyg1Ljczr22mJoXt
-	X2zbll0WL27dsA+2Gf2/sL49zhg7tk7GWZTHlOJPFGZkymCGGfSZ9Mtw1DKIIgMz
-	6SvMeubLun+BZFjfmJyrHlYA69bofN8jok2sLRYZWzCSjAJu9nEB0XOVYrQaDU41
-	9xJVlg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c3bxr2p3-1
+	0l4rQkjIU7dksEbD1FLkwjlGRg2lyBPa4PAzbQiU9vU=; b=TjwsdeA4HKFc7gBR
+	O8MF0Nbhw3MXWGo43jyM5nF3Byv0CZsheYwaQLC6u9yXXA4Q0PmwaBspgiLF3VI+
+	SsN8v5wvgrgAbDxzYSpoN56zu6QKcqLZaH2XUBVVX2Cojjt3TLDHtTLwKekZGrAQ
+	CtbLUWg/FhyifBnsY8kYb7N6ST1vaPVqCxw25P8dMkRNI4XBX1M0/EYosBmFAGl3
+	Lgi891TNrhZj04hNv5Js5LDxLGpn3migd/bURLHsk/ZfBg22AcoD550JS5O0k30K
+	NLEOopLefbIfw2l8PCo3Nfu3v/Gv0zdO5lFX0dgXT773CBBgGz+LXiEcYCaM7JCI
+	Dqceag==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44c1488byp-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 04:41:53 +0000 (GMT)
+	Fri, 24 Jan 2025 04:41:56 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O4fqaC023296
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50O4ftnI025771
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 24 Jan 2025 04:41:52 GMT
+	Fri, 24 Jan 2025 04:41:55 GMT
 Received: from hu-adisi-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 23 Jan 2025 20:41:49 -0800
+ 15.2.1544.9; Thu, 23 Jan 2025 20:41:52 -0800
 From: Aditya Kumar Singh <quic_adisi@quicinc.com>
-Date: Fri, 24 Jan 2025 10:11:25 +0530
-Subject: [PATCH v3 02/10] wifi: ath12k: add reference counting for core
- attachment to hardware group
+Date: Fri, 24 Jan 2025 10:11:26 +0530
+Subject: [PATCH v3 03/10] wifi: ath12k: fix failed to set mhi state error
+ during reboot with hardware grouping
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250124-fix_reboot_issues_with_hw_grouping-v3-2-329030b18d9e@quicinc.com>
+Message-ID: <20250124-fix_reboot_issues_with_hw_grouping-v3-3-329030b18d9e@quicinc.com>
 References: <20250124-fix_reboot_issues_with_hw_grouping-v3-0-329030b18d9e@quicinc.com>
 In-Reply-To: <20250124-fix_reboot_issues_with_hw_grouping-v3-0-329030b18d9e@quicinc.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
@@ -79,19 +79,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: A9wRu17zUrRtvm87nyIA3LilBJUgCBKI
-X-Proofpoint-GUID: A9wRu17zUrRtvm87nyIA3LilBJUgCBKI
+X-Proofpoint-GUID: lPMzbJpGjZnCKxw6knp9CU1ijPR7UYwX
+X-Proofpoint-ORIG-GUID: lPMzbJpGjZnCKxw6knp9CU1ijPR7UYwX
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-24_01,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 clxscore=1015
- phishscore=0 bulkscore=0 adultscore=0 priorityscore=1501
- lowpriorityscore=0 suspectscore=0 mlxscore=0 spamscore=0 impostorscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 malwarescore=0
+ suspectscore=0 clxscore=1015 mlxlogscore=956 phishscore=0
+ priorityscore=1501 spamscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2501240032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_204156_892242_F74463B2 
-X-CRM114-Status: GOOD (  16.02  )
+X-CRM114-CacheID: sfid-20250123_204159_251735_5858C1CF 
+X-CRM114-Status: GOOD (  11.87  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,129 +106,49 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, driver does not manage reference counting for attaching and
-detaching cores to/from hardware groups. This can lead to issues when
-multiple cores are involved. Or with same core, attach/detach is called
-multiple times back to back.
+With hardware grouping, during reboot, whenever a device is removed, it
+powers down itself and all its partner devices in the same group. Now this
+is done by all devices and hence there is multiple power down for devices
+and hence the following error messages can be seen:
 
-Fix this issue by using reference counting.
+ath12k_pci 0002:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
+ath12k_pci 0002:01:00.0: failed to set mhi state: POWER_OFF(3)
+ath12k_pci 0002:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
+ath12k_pci 0002:01:00.0: failed to set mhi state: DEINIT(1)
+ath12k_pci 0003:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
+ath12k_pci 0003:01:00.0: failed to set mhi state: POWER_OFF(3)
+ath12k_pci 0003:01:00.0: failed to set mhi state DEINIT(1) in current mhi state (0x0)
+ath12k_pci 0003:01:00.0: failed to set mhi state: DEINIT(1)
+ath12k_pci 0004:01:00.0: failed to set mhi state POWER_OFF(3) in current mhi state (0x0)
+ath12k_pci 0004:01:00.0: failed to set mhi state: POWER_OFF(3)
 
-With that, it is now ensured that the core is properly attached or detached
-from the hardware group and even back to back calls will not alter the
-count.
-
-Additionally, add some debug logs during the attachment and detachment
-events for better debugging and tracking.
+To prevent this, check if the ATH12K_PCI_FLAG_INIT_DONE flag is already
+set before powering down. If it is set, it indicates that another partner
+device has already performed the power down, and this device can skip this
+step.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
 Acked-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Aditya Kumar Singh <quic_adisi@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 47 +++++++++++++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/core.h | 15 +----------
- 2 files changed, 44 insertions(+), 18 deletions(-)
+ drivers/net/wireless/ath/ath12k/pci.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index c392f94584ff21051fb05d7843d0d500b1712d69..37dbef78b1999fb998443a94f0ffb81b2a4d2281 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -607,9 +607,49 @@ u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab)
- 	return TARGET_NUM_TIDS(SINGLE);
- }
- 
-+static inline
-+void ath12k_core_to_group_ref_get(struct ath12k_base *ab)
-+{
-+	struct ath12k_hw_group *ag = ab->ag;
-+
-+	lockdep_assert_held(&ag->mutex);
-+
-+	if (ab->hw_group_ref) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "core already attached to group %d\n",
-+			   ag->id);
-+		return;
-+	}
-+
-+	ab->hw_group_ref = true;
-+	ag->num_started++;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_BOOT, "core attached to group %d, num_started %d\n",
-+		   ag->id, ag->num_started);
-+}
-+
-+static inline
-+void ath12k_core_to_group_ref_put(struct ath12k_base *ab)
-+{
-+	struct ath12k_hw_group *ag = ab->ag;
-+
-+	lockdep_assert_held(&ag->mutex);
-+
-+	if (!ab->hw_group_ref) {
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "core already de-attached from group %d\n",
-+			   ag->id);
-+		return;
-+	}
-+
-+	ab->hw_group_ref = false;
-+	ag->num_started--;
-+
-+	ath12k_dbg(ab, ATH12K_DBG_BOOT, "core de-attached from group %d, num_started %d\n",
-+		   ag->id, ag->num_started);
-+}
-+
- static void ath12k_core_stop(struct ath12k_base *ab)
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 4a50d7118b3ea7e3705ae8b8bba637855b52110b..9aa6ce6e9f92461833ec2e0eead20fff2ccbc663 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -1484,6 +1484,9 @@ void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend)
  {
--	ath12k_core_stopped(ab);
-+	ath12k_core_to_group_ref_put(ab);
+ 	struct ath12k_pci *ab_pci = ath12k_pci_priv(ab);
  
- 	if (!test_bit(ATH12K_FLAG_CRASH_FLUSH, &ab->dev_flags))
- 		ath12k_qmi_firmware_stop(ab);
-@@ -849,9 +889,8 @@ static int ath12k_core_start(struct ath12k_base *ab)
- 		/* ACPI is optional so continue in case of an error */
- 		ath12k_dbg(ab, ATH12K_DBG_BOOT, "acpi failed: %d\n", ret);
++	if (!test_bit(ATH12K_PCI_FLAG_INIT_DONE, &ab_pci->flags))
++		return;
++
+ 	/* restore aspm in case firmware bootup fails */
+ 	ath12k_pci_aspm_restore(ab_pci);
  
--	if (!test_bit(ATH12K_FLAG_RECOVERY, &ab->dev_flags))
--		/* Indicate the core start in the appropriate group */
--		ath12k_core_started(ab);
-+	/* Indicate the core start in the appropriate group */
-+	ath12k_core_to_group_ref_get(ab);
- 
- 	return 0;
- 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 86a1eeec64a6e173048fd92a53df6b1d2df153f2..e7eeff356430e566d3a4b8dd3cb7c2d0bb712388 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -1063,6 +1063,7 @@ struct ath12k_base {
- 	struct ath12k_wsi_info wsi_info;
- 	enum ath12k_firmware_mode fw_mode;
- 	struct ath12k_ftm_event_obj ftm_event_obj;
-+	bool hw_group_ref;
- 
- 	/* must be last */
- 	u8 drv_priv[] __aligned(sizeof(void *));
-@@ -1221,20 +1222,6 @@ static inline struct ath12k_hw_group *ath12k_ab_to_ag(struct ath12k_base *ab)
- 	return ab->ag;
- }
- 
--static inline void ath12k_core_started(struct ath12k_base *ab)
--{
--	lockdep_assert_held(&ab->ag->mutex);
--
--	ab->ag->num_started++;
--}
--
--static inline void ath12k_core_stopped(struct ath12k_base *ab)
--{
--	lockdep_assert_held(&ab->ag->mutex);
--
--	ab->ag->num_started--;
--}
--
- static inline struct ath12k_base *ath12k_ag_to_ab(struct ath12k_hw_group *ag,
- 						  u8 device_id)
- {
 
 -- 
 2.34.1
