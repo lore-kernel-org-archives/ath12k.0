@@ -4,91 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F5F5C0218C
-	for <ath12k@archiver.kernel.org>; Sat, 25 Jan 2025 20:21:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2B65C0218C
+	for <ath12k@archiver.kernel.org>; Sat, 25 Jan 2025 20:23:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:
+	Subject:Cc:To:From:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
 	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=leqKbwMt0mzH1Or8tB3mPpZm5imjxV6Xh5iC17lZK8s=; b=rS27xchxNXj4rppeE2H5Dq4jQO
-	16yY3kaO5JGEwtcyUklKnZ5CGNYqzBM4r4ZXF/znFQANHzgBgOQ8xKXAUFIMNjSkDVtNYS34zclJR
-	gSe3EY+vzh6LVrAMgNjDBnP3Uos8i+knZtv++ja8uNYhee5gnbhHj53I7vDe1FjyCrMb+RgCpeZsp
-	mSZBoHyZ7RhdnfJANt//EQrhARiGvji1EU7wMk+lFPgAsttVtNuTejHYI3vHgc2M4mw90SaWLUWjF
-	7PfVuQh2g+7CM7Y6lVUrX0TYj95Y+LaoYzmhuK98/rP0EC0R4QWBu25gFm1rpfko+edpZ79lX8gMV
-	qRfGPtKw==;
+	bh=dejM2pVhbH3cRZV+qO2a49sZ/LlbFOIsCPpw3y0TkzE=; b=AsyPvZLStIF2LXgopvFqG0Oa/C
+	261Y8NQGHCWoeLOatOZwNxxe2H8Xqdmp/zuzmZyVmQc6yeVPW4/22rri9Mmb3u4TuSFw4C7eYenpR
+	BqP/b2w7O/jyYVHuFbWn2copEfYcB3LlBg6J0zb1sse81tAPOq4K7Gebg/v0fYBJmMKFM5tLvb5vk
+	XYAQcWgW7/fZUZatl14Md0XXB4s9r5wPG72G6oOzwXzwkXWZKzzRusmqfvUTM4S46GRrRUpiKH0nM
+	4qYYb5vbQ1yizaV/I2Ott4zpkZitlpD0uNMieAOvYw0I5gzW+iE+0PH7ITv74p7BCOoIzeJf8KQsf
+	ysYiPwTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbmeY-0000000Gl6v-08BM
+	id 1tbmgg-0000000GlHV-2Gmz
 	for ath12k@archiver.kernel.org;
-	Sat, 25 Jan 2025 20:21:14 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	Sat, 25 Jan 2025 20:23:26 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbmeV-0000000Gl6b-3nlP
+	id 1tbmgd-0000000GlHA-2KCo
 	for ath12k@lists.infradead.org;
-	Sat, 25 Jan 2025 20:21:13 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-38a8b17d7a7so1604878f8f.2
-        for <ath12k@lists.infradead.org>; Sat, 25 Jan 2025 12:21:11 -0800 (PST)
+	Sat, 25 Jan 2025 20:23:24 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-388cae9eb9fso1774945f8f.3
+        for <ath12k@lists.infradead.org>; Sat, 25 Jan 2025 12:23:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737836470; x=1738441270; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
+        d=gmail.com; s=20230601; t=1737836602; x=1738441402; darn=lists.infradead.org;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
          :content-transfer-encoding:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=leqKbwMt0mzH1Or8tB3mPpZm5imjxV6Xh5iC17lZK8s=;
-        b=eF94eGEebJ5+uVETebtiviQSGx+b+XSah4H0J5V81kiI+DXnKwEvAB7fhj6AWiHLb2
-         BNvw6J4HlOAxYACHuzqjB3khbS4LF0Phl6duYBfqmRQbPSaEu6/i95hL/a1QC0zI51sc
-         VqVc8GbNVTQltWs2IULRmznK8MsfRM/iKcqm3TyfvjitNQ3cD39EWpoVTdcQ+z5JREfm
-         AnRAcalefiRt0etKSHRKtQgIBJHMvpMMiJtumvW5afOrUroq5GlBvul3HGcpzJAX4OuD
-         abY6n2Nhp+aHSJulprrZv8TUPYOTverohL2QgiELqUddYVdaqKvrcThMgkkoVMDw4p3J
-         wQmg==
+        bh=dejM2pVhbH3cRZV+qO2a49sZ/LlbFOIsCPpw3y0TkzE=;
+        b=Ze9ERZZY1M+HMvOBKd+NTbz+PuxORIBTfQyEkqdqziCOEfH/9ZGSw0FLUBwz1s7sSM
+         I7zznBr8M0dALIbmkgmwV6twnDvAb8Twlmk76vbZS9CbayYxCLMVN8WJz7v++W9zwsBY
+         h4c7akRGde14Vge6JUnZMbKc6M7/OOo+8iT0J8DgzYX76nMVEQsR5l0kj8ZoQSPyHV2u
+         CZ+Uh3aCT15iW1QH2z0GlGZqo7b0a5xNHfsu/rVg0CEC9RU9itjln/IEvIr1JftwgE3q
+         Ozzrj+N5rizNY1fJCJ3h2dGVolLgJVQYmSg2tJCRiebNnIcLyo2+MyXwkibGRGrvwfOM
+         EEpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737836470; x=1738441270;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
+        d=1e100.net; s=20230601; t=1737836602; x=1738441402;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
          :content-transfer-encoding:mime-version:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=leqKbwMt0mzH1Or8tB3mPpZm5imjxV6Xh5iC17lZK8s=;
-        b=KxYBpPxXjednW5hGsx416AwTY1VL48vsyzhn1kwwdzB5iLHS5y/gbDmG3nf1bZEvMC
-         ZVIIvqUu/8SDTw3G1qVjhNZpyoOztC+bAb4F5AEEBfGS0YmEEwC2LpUrSKV3GNZTwsgR
-         aFJakVvRFYrPS0oiqpKhvinz4u/y5SzrvQ01gYlmjXmqvgz2SzmFEtN0wpvY30D3UIJt
-         9WrdZjkLSWBwQmwutQRRfPr1lJVwSpXc4r1SuaReTsO/ethtIP/upp6HpzaAtAB9WmTL
-         WT91F1/HdRFTPdrbxrFDD5D60B4onzG4cklWzPr9UxSTl8C756RTJcR0muUbSBmN24EG
-         /UHg==
-X-Forwarded-Encrypted: i=1; AJvYcCUMvKl2C5UE0ZGlrc1qLNYdMMZeX7dfm0iYI8NeTQvRi6zdBvJoCXA7xn4Sh+qmF+vGZQVy56o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzat9LxgjWvw8qe8hiWZm1laWAvYm/Y6GgugIvfIxnjvxGBOW1A
-	gRCXQ3voClcHwn61tQIzwQKW7/8043K0UZ27+hUd33gNTGmcPIsp
-X-Gm-Gg: ASbGncu+dMSd9RsAPwcWGTc6aygLaderjc/TxLaJEzW+VgDcNmJWX69YFf4unFt7L0q
-	PNadoZo609gwKHqY9ER02iD7c/1Z3V3t5gES4I7krPghYNBui1QAkCWWgKzQl6rJEKvg6EEW3qN
-	I6fsX3lBmYuKpyGj/ejkguc8Uf1k6/U0C8knl8QDCMv9czBAAVGArOmH72ZTtrDtz4OELsvrSZ6
-	aQG4wen77LIfzvlSFUZd+WfbRVRpmOsYTLXmWaRPC83pgULfVAuqMdK3Bhrias4K7OVsA85Ny+b
-	ml2PUiT2pDDNaJrDTQuGxSo=
-X-Google-Smtp-Source: AGHT+IE3cfWRrTDOE3p9zhRsIFujk5JuftUkB3l5GtxOWc4aOKBxs7VMtSwBIX/9UabuFTogOWYj9w==
-X-Received: by 2002:a5d:4f8f:0:b0:386:4a24:18f2 with SMTP id ffacd0b85a97d-38bf566f3d7mr27789430f8f.25.1737836469783;
-        Sat, 25 Jan 2025 12:21:09 -0800 (PST)
+        bh=dejM2pVhbH3cRZV+qO2a49sZ/LlbFOIsCPpw3y0TkzE=;
+        b=CYj6fhNprIIYf+HAxu0Kx73zftStyQw7oU/g394qXpWFaFnDlindqLXOOfGve1F1FM
+         JfURQlO7Fl6WLe9vyislEoRwDfxKzDSsNWmjFuBacArMLd0jBd7Ok8YEzTCEeokY4J9o
+         CydOshF53xseYzBrWnS6ITyEB7Ug8DvmhIThnZpD2fqf/v47e9hiEeuHFj56IUNVo+Pp
+         FBSbEfTbx2+T0Wy3JQDzB2/4wwRjYLKPuh6L5d6SaplBupiHzKBKi3RncZJOGRHCFkkc
+         STF8zN29DdbsRF7+8UilswFTjbS6EvEPjjDEX0ZOYapUkIlbk5q0k87XaCtjnM2uBp9r
+         UQCQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWlsleBVUe2nB4wh1myGLj8oL2g5Ir8dhqBY04QVhCSxEkVHfuKwQ9jHhCp/ZMfuGjMTeR9e0A=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxdsRh1eY90It6+ewDoHP8qvgPkoVQqmaQPNRD3at91B+osgl7z
+	douzMQFj5vRK5GgIDwyouNXU87qYnVoTDx60Le4F+5owqgkmZ87yCNXnAA==
+X-Gm-Gg: ASbGnctg7umJMRlGGrLC4T/gVcbX+w+4XZxNkzr13pZOm1W6H6yx7zATMX3+1mE/61e
+	I15N5MfNCNrjDeSH+asOy3eQ8/gVyX9pQanrQQERMBNg5I53N6Z+ZMwmpbKMl0fX3bSs15rDpPM
+	12Mwr2FwMz7OZYJtxqUFrTZ3RcQZsAeMAI/v3HpGeDwCNBPTXAYM3k/JXPHI3tShkRMIn5MhXOj
+	WNPHLFUlkGjSr7X6Zrq6qRC30cA3dIa1ti8HRSuwu6C1/ryGyekqWGCqUymcZc7NxfEylZUnhpN
+	XmrZnSpAuF/NtUO3TpXPjzI=
+X-Google-Smtp-Source: AGHT+IFh6bS896E6LufJZVkOiiVhAbtDqyNUA9TCia+B9toEquYH5HwBGuWERXDfR9ceCO/ZKtSpaQ==
+X-Received: by 2002:a05:6000:18a8:b0:385:f69a:7e5f with SMTP id ffacd0b85a97d-38bf57a9a86mr41646771f8f.38.1737836601605;
+        Sat, 25 Jan 2025 12:23:21 -0800 (PST)
 Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38c2a1c4199sm6245615f8f.89.2025.01.25.12.21.08
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38c2a18859asm6359027f8f.42.2025.01.25.12.23.19
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 25 Jan 2025 12:21:08 -0800 (PST)
+        Sat, 25 Jan 2025 12:23:20 -0800 (PST)
 Mime-Version: 1.0
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8
-Date: Sat, 25 Jan 2025 21:21:08 +0100
-Message-Id: <D7BFM42HW2NL.2IZS207VTCTJN@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH] wifi: ath12k: fbx: fix
- ath12k_hal_tx_cmd_ext_desc_setup() info1 override
+Date: Sat, 25 Jan 2025 21:23:19 +0100
+Message-Id: <D7BFNSFK7P2Y.1MHPLEN8MNDLC@gmail.com>
 From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Vasanthakumar Thiagarajan" <quic_vthiagar@quicinc.com>, "Karthikeyan
- Periyasamy" <quic_periyasa@quicinc.com>, <ath12k@lists.infradead.org>
+To: "Nicolas Escande" <nico.escande@gmail.com>, <ath12k@lists.infradead.org>
+Cc: <linux-wireless@vger.kernel.org>
+Subject: Re: [PATCH] wifi: ath12k: fbx: Add missing htt_metadata flag in
+ ath12k_dp_tx()
 X-Mailer: aerc 0.19.0-0-gadd9e15e475d
-References: <20250124113352.93638-1-nico.escande@gmail.com>
- <a979cbc5-5cfe-160d-d5b9-9e5ed7513ed1@quicinc.com>
- <D7B63ACJOYD0.1XBZ5VB991KOW@gmail.com>
- <18b47227-6b77-a029-2e80-04a0455ac091@quicinc.com>
-In-Reply-To: <18b47227-6b77-a029-2e80-04a0455ac091@quicinc.com>
+References: <20250124113331.93476-1-nico.escande@gmail.com>
+In-Reply-To: <20250124113331.93476-1-nico.escande@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250125_122111_941756_FECDB07A 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20250125_122323_588712_118B116C 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,45 +100,19 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Sat Jan 25, 2025 at 3:54 PM CET, Vasanthakumar Thiagarajan wrote:
+On Fri Jan 24, 2025 at 12:33 PM CET, Nicolas Escande wrote:
+> When AP-VLAN was added, we did not add HTT_TCL_META_DATA_VALID_HTT flag t=
+o
+> the tx_info's meta_data_flags . Without this flag the firmware seems to
+> reject all the broadcast (ap-vlan) frames. So lets add it same as ath11k
+> did it in commit 5e8a373c8699 ("ath11k: Add support for dynamic vlan")
 >
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 >
-> On 1/25/2025 6:23 PM, Nicolas Escande wrote:
->> On Fri Jan 24, 2025 at 4:31 PM CET, Karthikeyan Periyasamy wrote:
->>> On 1/24/2025 5:03 PM, Nicolas Escande wrote:
->>>> Since inception there is an obvious typo laying around in
->>>> ath12k_hal_tx_cmd_ext_desc_setup(). Instead of intitializing + adding
->>>> flags to tcl_ext_cmd->info1, we initialize + override. This is needed =
-to
->>>> make broadcast frames work with ethernet encapsulation.
->>>>
->>>
->>> SUPPORTS_TX_ENCAP_OFFLOAD not yet advertised by ath12k. How it work wit=
-h
->>> ethernet encapsulation ?
->>=20
->> Yes indeed, I made a small patch that adds the right hw features via a m=
-odule
->> param like one of your CLO patches did:
->>=20
->> +       if (ath12k_frame_mode =3D=3D ATH12K_HW_TXRX_ETHERNET) {
->> +               ieee80211_hw_set(hw, SUPPORTS_TX_ENCAP_OFFLOAD);
->> +               ieee80211_hw_set(hw, SUPPORTS_RX_DECAP_OFFLOAD);
->> +       }
->> +
->>=20
->> But maybe as this feature is not yet enabled upstream I need remove the =
-fixes
->> tag ? After all It seems that in native wifi this bug causes no harm...
->>=20
->
-> That's right, also you may want to remove fbx prefix in the patch title
-> as this change has nothing to do with any particular platform/hardware.
-Yep indeed that fbx thing is an oversight on my part. I'll send an updated =
-v2.
+> Fixes: 26dd8ccdba4d ("wifi: ath12k: dynamic VLAN support")
+> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
 
-So You guys prefer I remove the fixes tag then ?
-
->
-> Vasanth
+I left a 'fbx' in the title that needs to be removed here. I'll send a v2 i=
+f
+need be, but feel free to remove it yourselves if you take the patch as is.
 
