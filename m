@@ -4,106 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 571D8C02182
-	for <ath12k@archiver.kernel.org>; Sat, 25 Jan 2025 04:55:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A669CC02182
+	for <ath12k@archiver.kernel.org>; Sat, 25 Jan 2025 05:23:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=q/f+uBqE3qcvW351dPMd1CvKq4gspazuDatXFeQqMn8=; b=1fSmEt38I806ZMdtwVZo2RjnL0
-	vHE9V9FawIr/Dut/txRcpGiWzfZ2ycFnGDnwgM9/7Uv/tkiox5JW1sLzEYJKzXesJf6hNHsY4zG+f
-	nxCy+VR88RZYOxPvDl2g2UsjmTyg6cgiAyxw5C45j6NIAktTriZ4SUumeSb0TFt7cfvTJPEfQJ65V
-	u52qBaKGsuDaWnyhVrtmj09x5A2Sv1u6lggi+faboxCXyJrXTrtBGRQUyFqD3yN1FIQ3L27toRvn8
-	IY7grEOs/FaYor38MILtBnqXcM8NUdrpy1OjxQeGKD2UbSpOrmcv/lCkieFED6hCMO1Q0H/CE/EW7
-	LgUGf5AQ==;
+	bh=D1vE66wPRFswKFvuicyFGC0mSxtAlHJNXTigP24pTC8=; b=JYTS/swRwHoF99N8QfovyI8tMV
+	uFZRhzdZysliuG4gerITFvRkCfHukyy0htBTVuQ+P4NNxCfH+LopaH0mDMilBxoI8it2wowLECkOw
+	WCTfu6suvYKHALHO3zT2VDynzpONzgmktZvsqEILWzpJzoR2iFDbGzogH2elDHJoB9EoE0ikFJJbF
+	sHbMp7IWxh5my3W0cJg8WlW6q29BGHunifZNp2lxmIQr8HpQh99PDS/jFNKhbecNYmALkyOuB6Qvp
+	83UEqTQmNhvbIk+/HT+sDkKVqBACkTxDWpiayi4s6cwbXSZbz0wamfOlmd1O3EUiRiBifHjKITH4n
+	Kr3IPIuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbYCi-0000000G0vZ-2b6w
+	id 1tbYe0-0000000G1d6-3o5k
 	for ath12k@archiver.kernel.org;
-	Sat, 25 Jan 2025 04:55:32 +0000
+	Sat, 25 Jan 2025 05:23:44 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbYCf-0000000G0vE-2gQj
+	id 1tbYdx-0000000G1cm-3DWf
 	for ath12k@lists.infradead.org;
-	Sat, 25 Jan 2025 04:55:31 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50P4lCrE010477
-	for <ath12k@lists.infradead.org>; Sat, 25 Jan 2025 04:55:27 GMT
+	Sat, 25 Jan 2025 05:23:44 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50P4U2EL024736
+	for <ath12k@lists.infradead.org>; Sat, 25 Jan 2025 05:23:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	q/f+uBqE3qcvW351dPMd1CvKq4gspazuDatXFeQqMn8=; b=m0URK9qC+ZimcX3x
-	Cwh8GCKYMsCiXPYwRuipHoAUxCEvySPlvklpswAyYMiHBdJnPW5/igCJRVIRlqkM
-	Nt29jY+DKjsX7BsTkuLcWdM5x7rrY71T2J+Z/ELvpHxaLARnbPSfz5+9CW5dfc/6
-	wkelHv5MA2e810eq5t/uZVybY28cK7OaG0yC8eNOmcUcRB+gPPsHPg+mPjWTtukH
-	VRy7QbfJRyIeRihxKFMwSZpy2c/FXfAulwtA3ntbA9UpDwm7OXRj3W0Hy5J3Wan/
-	KrMsCG0RidsOnrEsU0wDKifqBuAm+idwwFTch/P7ecJnCJdU+ZHulESm0roPt0ak
-	Xoo/cA==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44cs27g0kd-1
+	D1vE66wPRFswKFvuicyFGC0mSxtAlHJNXTigP24pTC8=; b=EZ2d3eiWAo2O5FnQ
+	uSaU9l6M4n/hInEh5b6ivenwuBWuB2PBQyUdVex78wgtY6uc4bXCK3nhm4yKuVzb
+	AiTCnEClzOVtkXsQfUiQeEQqSvtXwUwCAsDRlrfY38f9YzC+RhJDAKYZ8lz9G0SW
+	R7CQpgVv0K7TgBugSVlX59w2cyim/PT+cgRI7ym7mzqySxsQGXUxovJwBjIymGbN
+	/7GVweqCcgrzyegQGl2ke7dbTYegJ72ci6aOrh0kQoSMhCtuvznehMO8zR4TBHml
+	sd2gIUHWo8+PYMiWiPd4JbrPJy4gtVB9PU93sN9v9dJEzQFY/KHMRkMW4wNQ/1sx
+	Y+DO+w==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44cryr81x3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sat, 25 Jan 2025 04:55:27 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2167141e00eso58534185ad.2
-        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 20:55:27 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Sat, 25 Jan 2025 05:23:40 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2162259a5dcso83727875ad.3
+        for <ath12k@lists.infradead.org>; Fri, 24 Jan 2025 21:23:40 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737780926; x=1738385726;
-        h=content-transfer-encoding:in-reply-to:content-language:from
+        d=1e100.net; s=20230601; t=1737782620; x=1738387420;
+        h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=q/f+uBqE3qcvW351dPMd1CvKq4gspazuDatXFeQqMn8=;
-        b=AzuhcriaJxBZUZDvmWKX/rCjGPT3XPTuhXR37782xPvfbBGYd7aSoXnYb+/Mww58iA
-         LvrLkaSibD7Jn26UVFOEeo9XmBHSrizOmL0CJTmb5pqwvqRU180YwH4mqz7qqjciIO+/
-         kZuRvDIws0FbaBbkqzs2kYyNBTR+uB+SjoP+3Qopo3LD+C/WDUzs36Ix5kB1lnnro78D
-         zPRlCsGbJ1k9ZEpbm+mPkbgJ9uxhR0nd4CSktoJHnMJmksL61WSagQ65Ti9Sj52pya75
-         wP4Le6eI8AgYX03XA55yhHGE/LKd/rG+1vode2aUghgGD9nQ76GnTqHuBkbru1GlLx84
-         /hrg==
-X-Forwarded-Encrypted: i=1; AJvYcCVT6B3YfPHW3/X1VCwqpApCjE41RSCehOE96ME9pzWuobf6/gq1PYzdf6WqkeRXQggBYeccQo8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyOtzh2O8T+jMBODGqOF7NgeegPHX+ORfU5DgPw5qRewY+1Vr21
-	kK5SydA+MvAFFzdZRLbVXKFRybkuR9Ss6vlpiMVGOUZw2ikRjznseP1aIGfucweTMC14eah87nW
-	PBm3Dcs4xmoSBR02eNE6aFh3E5EQHBRNpilr+UtPeOoo0XTJ14KQteg1PEoca
-X-Gm-Gg: ASbGncvG0EPfXQIkZCVv7WseuByd81zaWByZejkuFmEnvOEAgqKHJTRgSdvXT/fJGuU
-	4+Da0BWXYWNegIn/W++T1lQn1WqOVpa9r4SH/U/pEy72E6TGuiTPNvDWNvU4o7aggtdeNAHvJBl
-	N0pOShgCeunWOQT1y2HmATBfSSI6loWozCgE1PtJ0Ztf0AwYGHN05GAcoNeJkNDhmiYrNexZbPq
-	sXnx3Gk8BKts+FuJXmR+0PjDAP4Jz5bjjSMofrevdawVy4J+d8buhLOkPiEgwfzpb2WDoZ3Bvpv
-	DQyO2i4yq7a/jDjOPAPZVXgr5eVZ4GLAkfjD3SNgwQ==
-X-Received: by 2002:a17:902:cec6:b0:216:5568:38c9 with SMTP id d9443c01a7336-21c35574ee8mr472207365ad.31.1737780926510;
-        Fri, 24 Jan 2025 20:55:26 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGjdiFhmKFZp+U7E0Nyrmz/UCSRKHVShQT1wvEl4yXVJ9h9Bbe/4DnM4EJRsKFjn8Wbq8DKcQ==
-X-Received: by 2002:a17:902:cec6:b0:216:5568:38c9 with SMTP id d9443c01a7336-21c35574ee8mr472207205ad.31.1737780926076;
-        Fri, 24 Jan 2025 20:55:26 -0800 (PST)
+        bh=D1vE66wPRFswKFvuicyFGC0mSxtAlHJNXTigP24pTC8=;
+        b=jC5jmNCXI3mC/Z4Tt6Z4xFFZwm9Buujhd1qhEoWSqNnLyF5ch8jw1B5tUaeCWtpjFT
+         JbIlVRoUkC553tcAYjRxLBGY1mmdAvCQrd5HWo7J+H1fLRn4tzN4OEM+6tua8maIA5PT
+         E6ewc1PXW52uXgXdS0ld+D3GwBUU5rgEw7sk5yovhtuYhStbkB2OfkNXTv5tqDqksdut
+         vl79KN0scczTdgOcGEsFnC/1nNDmTRPnQCl1sMSZAv4cnTM9ixY/70A4q/dGyV6U8uVo
+         +jjJUcF1e4zrQFmlagwB7rMAiFJRiiB/7Hmj2IBTW1Lr92RtP+nHnnKwsblkpBr75xFY
+         pPjQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVezOM/85vn3mYi6HMvSiQuF9/RFRln1H2OKB1NZ6BCm9TGq3wwoooAm5qj+DjlxsZ81g7v6z8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxkFSiVeJHieqYgc7L+/qUuoxCpbtcFItOe8t9TD59hmBURYFo4
+	GOJIVA1cQ+WAJTPJZjBfmo6nBPifGNHroyc0pOPFaAcXnKPnKRqt8rSjL3MbZSjpJUtjsgb6yAw
+	K5KfZp22vRX1Mto34IaVeO2hlzR9D1v+LSy0seaWIKJv/wPkGNpi0zpsQzlj0QGJQxiSr
+X-Gm-Gg: ASbGncsvyC+SJ2yYpX3bu7L4jJACOD4zupFH6LlV7buv1KA0A/bXP2c8aiw9T2fF3Tr
+	t2cCCXEMc5yfnEcXneSO48yTKIkpnlY2cP6lkIF7ZRfQAJNmbckayKWaNTYXDuZvIrVMnyHvIo5
+	Z+CZ6Q/aqokC8wsa0J6dXdHYxliwofUC0UQ7KoOPHxyJnruYx+biGz6BJ7MxIxn5snBaZpfc3rA
+	CqLQuxd5S8JkpXnO4tjdKcLFstiGS0dh+IgT8Loam6Pui6B8FT3ahi9wlJnOx5Ls5dBSNuV9D7N
+	5nZVNPsTGjLdevAPZq5J7pU4TX7BqxtGHyOXaPthCg==
+X-Received: by 2002:a17:902:f544:b0:215:e98c:c5bc with SMTP id d9443c01a7336-21c3563a33cmr578829025ad.48.1737782619721;
+        Fri, 24 Jan 2025 21:23:39 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE9YAuBKKEADfPUnFCxF82oRXgcOvIEtHq5ZFZoFbRx2v4FPiVB9rtGj9QuhhepZQ+JaXDyFA==
+X-Received: by 2002:a17:902:f544:b0:215:e98c:c5bc with SMTP id d9443c01a7336-21c3563a33cmr578828765ad.48.1737782619361;
+        Fri, 24 Jan 2025 21:23:39 -0800 (PST)
 Received: from [192.168.29.221] ([49.37.208.137])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21da414db2asm24396635ad.169.2025.01.24.20.55.24
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21da3ea3ba3sm25041175ad.58.2025.01.24.21.23.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 24 Jan 2025 20:55:25 -0800 (PST)
-Message-ID: <dd37c366-21f5-470b-9d4c-24ae2808c4bd@oss.qualcomm.com>
-Date: Sat, 25 Jan 2025 10:25:22 +0530
+        Fri, 24 Jan 2025 21:23:39 -0800 (PST)
+Message-ID: <cb3fc64a-322a-492a-ade3-c3ba86074a64@oss.qualcomm.com>
+Date: Sat, 25 Jan 2025 10:53:36 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCHv2] wifi: ath12k: Avoid napi_sync before napi_enable
-To: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Avula Sri Charan <quic_asrichar@quicinc.com>
-References: <20250124090058.3194299-1-quic_tamizhr@quicinc.com>
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Subject: Re: [PATCH 1/3] wifi: ath12k: Request vdev stats from firmware
+To: Ramya Gnanasekar <ramya.gnanasekar@oss.qualcomm.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250124185330.1244585-1-ramya.gnanasekar@oss.qualcomm.com>
+ <20250124185330.1244585-2-ramya.gnanasekar@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250124090058.3194299-1-quic_tamizhr@quicinc.com>
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+In-Reply-To: <20250124185330.1244585-2-ramya.gnanasekar@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: xGEHFHvQLLbqkPf55R_-kxQCGhVOqlOg
-X-Proofpoint-ORIG-GUID: xGEHFHvQLLbqkPf55R_-kxQCGhVOqlOg
+X-Proofpoint-GUID: QZlK2WYSaTUdUY1l7MPAd9I2vhm28MkZ
+X-Proofpoint-ORIG-GUID: QZlK2WYSaTUdUY1l7MPAd9I2vhm28MkZ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-25_01,2025-01-23_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 impostorscore=0
- clxscore=1015 bulkscore=0 suspectscore=0 phishscore=0 priorityscore=1501
- lowpriorityscore=0 mlxlogscore=999 malwarescore=0 adultscore=0 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501250030
+ definitions=2025-01-25_02,2025-01-23_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
+ lowpriorityscore=0 mlxscore=0 adultscore=0 suspectscore=0
+ priorityscore=1501 impostorscore=0 malwarescore=0 spamscore=0
+ clxscore=1015 mlxlogscore=878 phishscore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2501250034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_205529_696932_B9D615AD 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20250124_212341_821253_F65B0BB6 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,28 +121,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/24/25 14:30, Tamizh Chelvam Raja wrote:
-> From: Avula Sri Charan <quic_asrichar@quicinc.com>
+On 1/25/25 00:23, Ramya Gnanasekar wrote:
+> Add support to request and print vdev stats from firmware through WMI.
 > 
-> In case of MHI error a reset work will be queued
-> which will try napi_disable after napi_synchronize.
-
-nit: always better to refer function name with () at end. I guess Jeff 
-can fix in pending?
-
+> Sample output:
+> -------------
+> cat /sys/kernel/debug/ath12k/pci-0000\:06\:00.0/mac0/fw_stats/vdev_stats
 > 
-> As the napi will be only enabled after qmi_firmware_ready
-> event trying napi_synchronize before napi_enable will
-> result in indefinite sleep in case of a firmware crash
-> in QMI init sequence.
+>               ath12k VDEV stats
+>               =================
 > 
-> To avoid this introduce napi_enabled flag to check
-> if napi is enabled or not before calling napi_synchronize.
+>                         VDEV ID 0
+>                VDEV MAC address 00:03:7f:6c:9c:1a
+>                      beacon snr 96
+>                        data snr 255
+>                   num rx frames 0
+>                    num rts fail 0
+>                 num rts success 0
+>                      num rx err 0
+>                  num rx discard 0
+>                num tx not acked 0
+>              num tx frames [00] 0
+>              num tx frames [01] 0
+>              num tx frames [02] 0
+>              num tx frames [03] 2
+>      num tx frames retries [00] 0
+>      num tx frames retries [01] 0
+>      num tx frames retries [02] 0
+>      num tx frames retries [03] 0
+>     num tx frames failures [00] 0
+>     num tx frames failures [01] 0
+>     num tx frames failures [02] 0
+>     num tx frames failures [03] 0
+>            tx rate history [00] 0x00000000
+>            tx rate history [01] 0x00000000
+>            tx rate history [02] 0x00000000
+>            tx rate history [03] 0x00000000
+>            tx rate history [04] 0x00000000
+>            tx rate history [05] 0x00000000
+>            tx rate history [06] 0x00000000
+>            tx rate history [07] 0x00000000
+>            tx rate history [08] 0x00000000
+>            tx rate history [09] 0x00000000
+>        beacon rssi history [00] 0
+>        beacon rssi history [01] 0
+>        beacon rssi history [02] 0
+>        beacon rssi history [03] 0
+>        beacon rssi history [04] 0
+>        beacon rssi history [05] 0
+>        beacon rssi history [06] 0
+>        beacon rssi history [07] 0
+>        beacon rssi history [08] 0
+>        beacon rssi history [09] 0
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
-> Signed-off-by: Avula Sri Charan <quic_asrichar@quicinc.com>
-> Signed-off-by: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
+> Signed-off-by: Ramya Gnanasekar<ramya.gnanasekar@oss.qualcomm.com>
 > ---
 
 Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
