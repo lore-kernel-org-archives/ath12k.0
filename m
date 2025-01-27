@@ -4,72 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC7B9C02188
-	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 15:03:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CA0EC0218C
+	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 17:22:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=3/xXzMzCDluRQtgpyEFw4FUZ2YjctkNnbhppkuCIWdY=; b=Ayn1u8MRRNbzLz4qRuJ1kT1Tiq
-	U4KjzK5hLKCkvsNKZB4p8p4/x7UTwKb//lVofkxRASyF06p9F7udqFmJtZaE8a+/6me9uG5cgB0dZ
-	mndUWufKDMGXexiRD8Cs0OK1t3PlVzEsBu0Nlqr8NTyDg97zT9hc7ct7Q9GMtHkip0NQAgQxgvIwE
-	EIDcZHT7EWQrCQ3Rns+8vXv+i9BpVpFEuCw2xgickrTSgDDgrgnst1+RuQccePgoumkpuO3SfBL/f
-	neryCJNqBHxtI88zXLgNrWM34pXxPYjG0PshkWHhklYjm52cGK9fdkTKZmkCpwM7ycXoUvfAQuVdi
-	NYeSnBvw==;
+	bh=w2H3WUaNQwsaAb3gCGRdZw4v18QA9Nzh15V6dq6hVJc=; b=w49tKP0UP97XZzP32E/5ClDK+w
+	mD9At+r81tSTiTiz/J+tXqJFpMVQsM6nTfvDAOJ3t0Ct1aoDTfSDTj18n1d3ZXTXpNmdQqyq5NPKD
+	IXzMYjHGY8l2fHPfN4XWq5yn7npHJwCMgS+snkbWbFhda+JVtBrv56qwFFMKAIGWYWA4kr0p03bDU
+	su2qxTnFI7ipiSpU5jZt4nyQvZ8Ve6a6dB6kgIAdzYDYFTTrA9PcWN2E+iapXkYQhgRhUQdAR3NP1
+	HKiWSvByhgRMx+vJl2K831zBH3L24QOU2L+M5l2rrJrV8YCQGLUxQ+qj4cF1CXvD+QVRSJbswPBf4
+	ceGEY5OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcQdw-00000002YF5-1TJW
+	id 1tcSoW-00000002s6a-2uNn
 	for ath12k@archiver.kernel.org;
-	Mon, 27 Jan 2025 15:03:16 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	Mon, 27 Jan 2025 17:22:20 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcQdu-00000002YEm-0f7R
+	id 1tcSoU-00000002s5G-25Ll
 	for ath12k@lists.infradead.org;
-	Mon, 27 Jan 2025 15:03:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1737990194; x=1769526194;
-  h=date:from:to:cc:subject:message-id;
-  bh=uSEN+y77uCuPZEAlXpNGIfbYoTIEPJ8vSgINrsMVgYM=;
-  b=lKKfh8cjmC23JWbUYxSgGZOpkVhnxxQ50qkk8n16QG7BLz1oeTOAfuqF
-   6+itYpg2nlkgHJLNYEiBFDEYRTpHK3Sa3+OPt7Dd+wUSI+svFh02ucPcl
-   R7egS9CM+EIa9THZ/wZGQnBTZ9L6HruYDYgTM11wKYKhnCTJO8XCh+rZo
-   Et5zeiQwyd8f+chwjfD2mlDUUMrvL5sh+ez0yD+E8pWYwYDLZI5kfOHUG
-   i0PnC7/Nm/oEVg3aGzke/KOWimc3apHf/+kNUW7QyOu2s6gc6UxDC0top
-   544jA6A8xFNwBAG1Ty6MXUBm5+MbnJ71II2+EC9qKzpDcS0gDub62CeNe
-   Q==;
-X-CSE-ConnectionGUID: 1SCRDBgDSri8YT9ZZ81eAg==
-X-CSE-MsgGUID: P5Bp1hvPR/S1a27QH3ei8w==
-X-IronPort-AV: E=McAfee;i="6700,10204,11328"; a="42208654"
-X-IronPort-AV: E=Sophos;i="6.13,238,1732608000"; 
-   d="scan'208";a="42208654"
-Received: from fmviesa001.fm.intel.com ([10.60.135.141])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Jan 2025 07:03:13 -0800
-X-CSE-ConnectionGUID: dwEjNNX+T92R8t7Txha7HA==
-X-CSE-MsgGUID: guavD8RuQCqSs654Dfw5QA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
-   d="scan'208";a="139313950"
-Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by fmviesa001.fm.intel.com with ESMTP; 27 Jan 2025 07:03:12 -0800
-Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tcQdp-000gs5-36;
-	Mon, 27 Jan 2025 15:03:09 +0000
-Date: Mon, 27 Jan 2025 23:02:35 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:pending] BUILD SUCCESS
- 30cfef18ac9412a239ead848ed36cec2bb754b25
-Message-ID: <202501272329.8hAZ0eLS-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Mon, 27 Jan 2025 17:22:19 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50RCkQnG016992
+	for <ath12k@lists.infradead.org>; Mon, 27 Jan 2025 17:22:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=w2H3WUaNQwsaAb3gCGRdZw4v18QA9Nzh15V
+	6dq6hVJc=; b=LdUgn21xtWQ/xwoVdvmjV+LeYGILxaIaoP+gBWN201M/ldmMhAq
+	ZBGq8pLf48GuuKiLBoQYCx/Fvxy2c85BzOksm8gAheCf6xIWqs4V2qNGdy2DCfjY
+	LtoXUrXkx3oPDGEfUO+YOyQN9X4dx1qnyjRehe2VyVEqr9awpF3EfWLcB8MWjpa5
+	QZoViASk8NH37Fl8dKC/ACdnTc/eE/F9UPfjSZzX+iDLHT9X8ggaUG8t9FxJQu45
+	+XmwryYfi+mYEtDCRFaYYx1G7ZtGXuqDcvJrCTRSaORPVzwdCNFmaXJNr3h0FBlG
+	eKjmLiiK+KURHVw5Vk7C+C69fGWF0z+jhXw==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44eaecgjp3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 27 Jan 2025 17:22:15 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2164fad3792so77550275ad.0
+        for <ath12k@lists.infradead.org>; Mon, 27 Jan 2025 09:22:15 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737998534; x=1738603334;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=w2H3WUaNQwsaAb3gCGRdZw4v18QA9Nzh15V6dq6hVJc=;
+        b=ofgT0CMuUanX4DyRydiqbiCedo/UUi/NOvOhYjw0S9RiM6LZq9TfOYHBUfntIQxAyD
+         7iOUuT0D9n+ZlcnEqERDdJ6ie2DXAOsGiyt2DcX2H2EYm4GUPADXHhjGzrLusiDEoPZn
+         jqtBG07Kos5eqJEfHtMjb/vtmqn/bJ49Cqch+dCkYPqp6FgJh8rFbCfwz5bWXi5m0J6F
+         mTObc+bDRTMYArFQferWJEFZ1MGhckXmkE2eZatFOW1w/jPC6dBXyyDQAUIgV7AsTlG9
+         W4sEGgPi7+PYQ77XNHg5XRkeF04LiWStDC6lIzWeVuaJz/nODnKxEMEIxvV13ZLPg7cF
+         ZPwQ==
+X-Gm-Message-State: AOJu0YwNIVsBSx6y1vkg8AEi4Ik5V3JQ4uKZ+l74nJZbWCCZN0ryOLEN
+	r3NVozV3tirCmOG667xH/wccyr83equkVhw/tFiy6GswohmT1k0jtlBDKCN/ncJJ8n2ZqZmB+oM
+	OVFTeVqIzxFQiIqaPvL8yPrA3BRCOYcRAPZxnz17LJAo7Yn/GY+QMwqsN2ZCmzsGXI2Wq
+X-Gm-Gg: ASbGncvxrwb7f3CZi+hr43u62eh6hdQ5YwuxYUOVkB2NkaW9yZumaJe8EB1rOjp3r4o
+	dAqWilRGPkkN80SLSCqZyzcD4kyd4X/YmeMjhnWFvix5Qbyq6LV6aqHuVRmrm/tAR+YbwVAasHz
+	5mhMbEO+a6GpH0InfJ5b3KPSQNLmQX9nX+TorYVqXbv0O2CKcQAnR3eO3b5e1SGw63p46vXdjFX
+	S6WqBID3os7hblG47Pks/+3JYexLojsF4kiEZ+q5V+udf4bjnjsIs6iu8NIsWmQh7IwrEsAo8RY
+	ORoMUlc3dHwgX4SwU00qIgzTS3FNBXNY+u1GhkL8aBMykKVWMnxa+6avkqFyb0NV9pzZvnfmtur
+	k90nv8tiv/XRe7dfWvgakMtvgDPIetK5f4g==
+X-Received: by 2002:a05:6a20:9152:b0:1e1:aef4:9cdd with SMTP id adf61e73a8af0-1eb2145cb7cmr63636513637.1.1737998533806;
+        Mon, 27 Jan 2025 09:22:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG418GSIzCDpHtOEMEZjmZHoa7ZnZu/zhFFWaiALhb8y/n8B5l7GrsF9CE0e/RWvHzzd2IBTA==
+X-Received: by 2002:a05:6a20:9152:b0:1e1:aef4:9cdd with SMTP id adf61e73a8af0-1eb2145cb7cmr63636479637.1.1737998533418;
+        Mon, 27 Jan 2025 09:22:13 -0800 (PST)
+Received: from hu-ramess-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72f8a6b2c07sm7464639b3a.40.2025.01.27.09.22.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 27 Jan 2025 09:22:13 -0800 (PST)
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Subject: [PATCH 0/2] wifi: ath12k: add support for get_txpower mac ops
+Date: Mon, 27 Jan 2025 22:52:00 +0530
+Message-Id: <20250127172202.1410429-1-rameshkumar.sundaram@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: uHdQQEOw2wEOkYhFySbwVRbuc3zlyfDz
+X-Proofpoint-ORIG-GUID: uHdQQEOw2wEOkYhFySbwVRbuc3zlyfDz
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-27_08,2025-01-27_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
+ spamscore=0 phishscore=0 clxscore=1011 suspectscore=0 mlxlogscore=999
+ malwarescore=0 impostorscore=0 adultscore=0 bulkscore=0 lowpriorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2501270137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_070314_241694_9E32724F 
-X-CRM114-Status: UNSURE (   4.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250127_092218_663279_F7594557 
+X-CRM114-Status: GOOD (  11.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,149 +113,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
-branch HEAD: 30cfef18ac9412a239ead848ed36cec2bb754b25  wifi: ath12k: reset MLO global memory during recovery
+Currently, driver does not support get_txpower mac ops because of which
+cfg80211 returns vif->bss_conf.txpower to user space. bss_conf.txpower
+gets its value from ieee80211_channel->max_reg_power. However, the final
+txpower is dependent on few other parameters apart from max regulatory
+supported power. It is the firmware which knows about all these parameters
+and considers the minimum for each packet transmission.
 
-elapsed time: 720m
+Firmware reports the final TX power in firmware pdev stats which falls
+under fw_stats. But currently, fw_stats is under debugfs.
 
-configs tested: 129
-configs skipped: 2
+Add support for get_txpower mac ops to get the TX power from firmware
+leveraging fw_stats and return it accordingly.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Also, move fw_stats out of debugfs so that get_txpower mac ops can
+function properly even when debugfs is disabled.
 
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    gcc-14.2.0
-arc                              allmodconfig    gcc-13.2.0
-arc                               allnoconfig    gcc-13.2.0
-arc                              allyesconfig    gcc-13.2.0
-arc                   randconfig-001-20250127    gcc-13.2.0
-arc                   randconfig-002-20250127    gcc-13.2.0
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    clang-17
-arm                              allyesconfig    gcc-14.2.0
-arm                   randconfig-001-20250127    gcc-14.2.0
-arm                   randconfig-002-20250127    gcc-14.2.0
-arm                   randconfig-003-20250127    clang-16
-arm                   randconfig-004-20250127    clang-18
-arm64                            allmodconfig    clang-18
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20250127    gcc-14.2.0
-arm64                 randconfig-002-20250127    gcc-14.2.0
-arm64                 randconfig-003-20250127    gcc-14.2.0
-arm64                 randconfig-004-20250127    gcc-14.2.0
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20250127    gcc-14.2.0
-csky                  randconfig-002-20250127    gcc-14.2.0
-hexagon                          allmodconfig    clang-20
-hexagon                           allnoconfig    clang-20
-hexagon                          allyesconfig    clang-18
-hexagon               randconfig-001-20250127    clang-17
-hexagon               randconfig-002-20250127    clang-20
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250127    gcc-12
-i386        buildonly-randconfig-002-20250127    clang-19
-i386        buildonly-randconfig-003-20250127    gcc-12
-i386        buildonly-randconfig-004-20250127    gcc-12
-i386        buildonly-randconfig-005-20250127    gcc-12
-i386        buildonly-randconfig-006-20250127    clang-19
-i386                                defconfig    clang-19
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch             randconfig-001-20250127    gcc-14.2.0
-loongarch             randconfig-002-20250127    gcc-14.2.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-m68k                          amiga_defconfig    gcc-14.2.0
-m68k                        m5407c3_defconfig    gcc-14.2.0
-m68k                        mvme147_defconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250127    gcc-14.2.0
-nios2                 randconfig-002-20250127    gcc-14.2.0
-openrisc                         alldefconfig    gcc-14.2.0
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-openrisc                            defconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                              defconfig    gcc-14.2.0
-parisc                randconfig-001-20250127    gcc-14.2.0
-parisc                randconfig-002-20250127    gcc-14.2.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-16
-powerpc                   currituck_defconfig    clang-17
-powerpc                       eiger_defconfig    clang-17
-powerpc                    gamecube_defconfig    clang-16
-powerpc                     mpc5200_defconfig    clang-20
-powerpc                      ppc6xx_defconfig    gcc-14.2.0
-powerpc               randconfig-001-20250127    clang-16
-powerpc               randconfig-002-20250127    gcc-14.2.0
-powerpc               randconfig-003-20250127    gcc-14.2.0
-powerpc                     taishan_defconfig    clang-17
-powerpc                     tqm8541_defconfig    clang-15
-powerpc64                        alldefconfig    clang-20
-powerpc64             randconfig-001-20250127    gcc-14.2.0
-powerpc64             randconfig-002-20250127    gcc-14.2.0
-powerpc64             randconfig-003-20250127    gcc-14.2.0
-riscv                            allmodconfig    clang-20
-riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-20
-riscv                               defconfig    clang-19
-riscv                 randconfig-001-20250127    clang-20
-riscv                 randconfig-002-20250127    clang-16
-s390                             allmodconfig    clang-19
-s390                              allnoconfig    clang-20
-s390                             allyesconfig    gcc-14.2.0
-s390                                defconfig    clang-15
-s390                  randconfig-001-20250127    clang-20
-s390                  randconfig-002-20250127    clang-20
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                         apsh4a3a_defconfig    gcc-14.2.0
-sh                                  defconfig    gcc-14.2.0
-sh                            hp6xx_defconfig    gcc-14.2.0
-sh                    randconfig-001-20250127    gcc-14.2.0
-sh                    randconfig-002-20250127    gcc-14.2.0
-sparc                            allmodconfig    gcc-14.2.0
-sparc                             allnoconfig    gcc-14.2.0
-sparc                 randconfig-001-20250127    gcc-14.2.0
-sparc                 randconfig-002-20250127    gcc-14.2.0
-sparc64                             defconfig    gcc-14.2.0
-sparc64               randconfig-001-20250127    gcc-14.2.0
-sparc64               randconfig-002-20250127    gcc-14.2.0
-um                               allmodconfig    clang-20
-um                                allnoconfig    clang-18
-um                               allyesconfig    gcc-12
-um                                  defconfig    clang-20
-um                             i386_defconfig    gcc-12
-um                    randconfig-001-20250127    clang-20
-um                    randconfig-002-20250127    gcc-12
-um                           x86_64_defconfig    clang-15
-x86_64                            allnoconfig    clang-19
-x86_64                           allyesconfig    clang-19
-x86_64      buildonly-randconfig-001-20250127    clang-19
-x86_64      buildonly-randconfig-002-20250127    clang-19
-x86_64      buildonly-randconfig-003-20250127    clang-19
-x86_64      buildonly-randconfig-004-20250127    clang-19
-x86_64      buildonly-randconfig-005-20250127    gcc-12
-x86_64      buildonly-randconfig-006-20250127    clang-19
-x86_64                              defconfig    gcc-11
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                randconfig-001-20250127    gcc-14.2.0
-xtensa                randconfig-002-20250127    gcc-14.2.0
+Aditya Kumar Singh (2):
+  wifi: ath12k: move firmware stats out of debugfs
+  wifi: ath12k: add get_txpower mac ops
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+ drivers/net/wireless/ath/ath12k/core.c    |  45 +++++++
+ drivers/net/wireless/ath/ath12k/core.h    |   4 +
+ drivers/net/wireless/ath/ath12k/debugfs.c |  44 +-----
+ drivers/net/wireless/ath/ath12k/mac.c     | 155 +++++++++++++++++-----
+ drivers/net/wireless/ath/ath12k/mac.h     |   3 +
+ drivers/net/wireless/ath/ath12k/wmi.c     |  94 ++++++++++---
+ 6 files changed, 247 insertions(+), 98 deletions(-)
+
+
+base-commit: b5aeca2e66899430827b8afcad061201f3b7861b
+-- 
+2.34.1
+
 
