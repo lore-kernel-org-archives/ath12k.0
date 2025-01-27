@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6D56C0218C
-	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 10:48:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EB7DC02188
+	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 10:48:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nJlXBEjjiRl6WbRafxT+YCQL/t+OcLUqihKaZQwuX4Y=; b=tvM0MnADJQsbKyMM9J0sZ4UIQO
-	jI4lvlRbsEsuElsxIXnKS8t3OGVaXL6HOgj+hqL/Vt12ykwIyImVXIwTUvwTEIACisgfEIMaqY10s
-	xpcmTfctvFg5YH/4U0RXkWq25qnMYifREEqHP20yJ7vOTO1ZvMM6Qcz0a6H1FLwM2b+5OWk9b5Nkz
-	86KKGlJ+3Bg14v4mxxlYrN+PDANL/tGcxz7zK4mXZUKRRbJiGcW8Hr7Kxa6rIRw6Jsd7O8LEipJP+
-	eUGufogQ53aizbz4UgCvIdPmK5zl/mnPmUwHfTY1FrclapIw8TKAfiGKpeS/vcySeaBzzBMheM7WJ
-	V4iBDz4g==;
+	bh=AGxAKAgEDcrh+KwL66bI4VNMtglapOhK4V7W4mEckIs=; b=4x56iexxtZlOC+6P8wOY9X5Mw5
+	5AqJF0rW5TkaNSCS9GZuEqxL1At5gHvMfgKvRZK54m+ukWKyQXveQoe13CnavK75gqxFp+4D6/b3n
+	IZ4soqyE6yTZ4kTMsd+hAeGVVlhruvITnRNgZBNqJS+OIUx19LNeW3dEJffZe2uAbMf1fqKCjs88T
+	FPeIKO7JIrZYxuV3i24le5VBy2Mz7GlqDfR2XzMQJoMm1gzisSkiesLQ4pFIafD2/mIXvelZQVblF
+	lfr8v6L64l2S0RVW2X22TPLyHOdzA5NSWGF8Rc70Bag3LzReYVVZ7ghwXJpYLY8U1BDx/6pq6Bg95
+	CINR8ZHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcMf4-000000029xq-1p3U
+	id 1tcMf6-000000029zC-3QYG
 	for ath12k@archiver.kernel.org;
-	Mon, 27 Jan 2025 10:48:10 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 27 Jan 2025 10:48:12 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcMf1-000000029uz-3Bga
+	id 1tcMf4-000000029xX-1Rs4
 	for ath12k@lists.infradead.org;
-	Mon, 27 Jan 2025 10:48:09 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50R63YDN021912;
-	Mon, 27 Jan 2025 10:48:07 GMT
+	Mon, 27 Jan 2025 10:48:11 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50R9ksNX026623;
+	Mon, 27 Jan 2025 10:48:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	nJlXBEjjiRl6WbRafxT+YCQL/t+OcLUqihKaZQwuX4Y=; b=j5MWIo/ZSBdD8n4V
-	tMGCo3a7ZVztYlsrhORhOKie3wxAsBWEwXUf3GHJkgXr5hfWya7ZTaZuskhqCSmV
-	qb4a8yuGBA+ItonAi306jQ/G+QPjClVq5yPSdHo9AELxxSf+ZDrjVwuwld+ux8jV
-	zQ0A1iJ2D7BiqMGq/zmUJ+8zp+c+UkQRPWoMCADaDxlJb+BYvvxmFCiZBY5/JPl1
-	4M2N1k5JBVdpaLyHZ6foPpbBRl59fHRuk7Lz8H3HlrLI+MS9b31xduvWlqraMLgi
-	zOErjwDOMWo/vK+OpDAv3fSzB5Ro2CoOiIkZNcpTXzAUMZHNgMYfGhm3X9FpMZ/B
-	Sqo6Rg==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44e4hvrgv0-1
+	AGxAKAgEDcrh+KwL66bI4VNMtglapOhK4V7W4mEckIs=; b=e2xZJWErxOHdNprT
+	CI9z+GoJ+6VmUaxrghA0ypJdPVE8Kj3Nw0EhgYyW5rlZMMm0ggx24ytwfulW3xh1
+	WKwhMSQYsHWwjoeCxg9+1MY+l439rXVGpAoKGDBvgqngH6NQa6ku2Oe1QGkfjE0z
+	UV+L1TsgBdlGznPMeWqf2fpLPweSQ1PLIzTIp7IMDthMUXsoslG7Jv1Pm6Yt5OdF
+	TAWIOhfBGgBK5sBhWU/Sr6UDD0flp4YarEuf+4xB4grwkLJNKV47uEdZ89W2N1fq
+	XceY1gaHFSHFlaHzZi7z97c/q/i8tF3B3y9Bae31MuEpOuCntVA3LLI8S+qncqCW
+	m24URg==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44e7tj839m-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Jan 2025 10:48:06 +0000 (GMT)
+	Mon, 27 Jan 2025 10:48:09 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50RAm5eI027738
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50RAm70X007065
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Jan 2025 10:48:05 GMT
+	Mon, 27 Jan 2025 10:48:09 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 27 Jan 2025 02:48:03 -0800
+ 15.2.1544.9; Mon, 27 Jan 2025 02:48:06 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>,
         P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH v5 4/9] wifi: ath12k: Add HAL_PHYRX_OTHER_RECEIVE_INFO TLV parsing support
-Date: Mon, 27 Jan 2025 16:17:33 +0530
-Message-ID: <20250127104738.4174862-5-quic_periyasa@quicinc.com>
+Subject: [PATCH v5 5/9] wifi: ath12k: Update the peer id in PPDU end user stats TLV
+Date: Mon, 27 Jan 2025 16:17:34 +0530
+Message-ID: <20250127104738.4174862-6-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250127104738.4174862-1-quic_periyasa@quicinc.com>
 References: <20250127104738.4174862-1-quic_periyasa@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 0cUWJOAf0f5sHWn_QKdnLinG_VgyUA4n
-X-Proofpoint-ORIG-GUID: 0cUWJOAf0f5sHWn_QKdnLinG_VgyUA4n
+X-Proofpoint-ORIG-GUID: A6-BuX_4JV9RP3eQ7UU827xDjP0omXqV
+X-Proofpoint-GUID: A6-BuX_4JV9RP3eQ7UU827xDjP0omXqV
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-27_04,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 adultscore=0
- clxscore=1015 spamscore=0 suspectscore=0 lowpriorityscore=0 phishscore=0
- bulkscore=0 mlxscore=0 impostorscore=0 priorityscore=1501 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501270087
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
+ suspectscore=0 mlxlogscore=999 clxscore=1015 spamscore=0 mlxscore=0
+ priorityscore=1501 adultscore=0 bulkscore=0 lowpriorityscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501270087
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_024807_929535_B891B75E 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20250127_024810_389097_383377F1 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,10 +100,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, monitor is not enabled. However, in the future, the monitor
-will be enabled. Therefore, add the necessary HAL_PHYRX_OTHER_RECEIVE_INFO
-TLV parsing support in the monitor Rx path, which helps to populate the
-extended Rx statistics.
+Currently, peer id get reported in the PPDU end user TLV tag. But the
+monitor status handler is inherited from ath11k, but it was not updated
+to incorporate the changes made to ath12k 802.11be hardware architecture.
+Therefore, update the peer id from the PPDU end user TLV data to get latest
+peer id update, it helps to populate accurate peer information on the
+statistics data.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -112,47 +114,23 @@ Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_mon.c | 7 +++++++
- drivers/net/wireless/ath/ath12k/hal_rx.h | 8 ++++++++
- 2 files changed, 15 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index f9de8c509061..8ded73d87c73 100644
+index 8ded73d87c73..8c283e7c7dde 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -1630,6 +1630,13 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 					     HAL_RX_PHYRX_RSSI_LEGACY_INFO_INFO0_RX_BW);
- 		break;
- 	}
-+	case HAL_PHYRX_OTHER_RECEIVE_INFO: {
-+		const struct hal_phyrx_common_user_info *cmn_usr_info = tlv_data;
+@@ -1535,6 +1535,9 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+ 		ppdu_info->num_mpdu_fcs_err =
+ 			u32_get_bits(info[0],
+ 				     HAL_RX_PPDU_END_USER_STATS_INFO0_MPDU_CNT_FCS_ERR);
++		ppdu_info->peer_id =
++			u32_get_bits(info[0], HAL_RX_PPDU_END_USER_STATS_INFO0_PEER_ID);
 +
-+		ppdu_info->gi = le32_get_bits(cmn_usr_info->info0,
-+					      HAL_RX_PHY_CMN_USER_INFO0_GI);
-+		break;
-+	}
- 	case HAL_RX_PPDU_START_USER_INFO:
- 		ath12k_dp_mon_hal_rx_parse_user_info(tlv_data, userid, ppdu_info);
- 		break;
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index 765b53741861..445d1c33b41f 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -683,6 +683,14 @@ struct hal_rx_resp_req_info {
- #define HAL_RX_MPDU_ERR_MPDU_LEN		BIT(6)
- #define HAL_RX_MPDU_ERR_UNENCRYPTED_FRAME	BIT(7)
- 
-+#define HAL_RX_PHY_CMN_USER_INFO0_GI		GENMASK(17, 16)
-+
-+struct hal_phyrx_common_user_info {
-+	__le32 rsvd[2];
-+	__le32 info0;
-+	__le32 rsvd1;
-+} __packed;
-+
- #define HAL_RX_EHT_SIG_NDP_CMN_INFO0_SPATIAL_REUSE	GENMASK(3, 0)
- #define HAL_RX_EHT_SIG_NDP_CMN_INFO0_GI_LTF		GENMASK(5, 4)
- #define HAL_RX_EHT_SIG_NDP_CMN_INFO0_NUM_LTF_SYM	GENMASK(8, 6)
+ 		switch (ppdu_info->preamble_type) {
+ 		case HAL_RX_PREAMBLE_11N:
+ 			ppdu_info->ht_flags = 1;
 -- 
 2.34.1
 
