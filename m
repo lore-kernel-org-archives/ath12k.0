@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92FC8C0218A
-	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 12:50:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 084B8C02191
+	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 12:50:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jAHxqLQ+gyMnnyiYJ0CVL9NcULEgZkJb2hLMxBOoNEY=; b=277BgkvbhkkXAvTveJ0QDCQY7D
-	yV3OlFtAIw/wiD9RBorexOTKhmt7ssXgYuE2FpYtefNkqE0/0LylH9hr61XwxpC9CxG7ysh/WDGEB
-	LQkd6Fx/znfwRo6rsY6+9pAZi7SYvT490PLyBjo+gX9G3QZZruwXEK5Q0fbgnP12mLSDVEit5YFnG
-	LNuXg/3wT4alFuEiUumkb3vZ2V5TD2tJwoyLNMmRC5n3fNwZp6oNWFKqzPpFs1LE+LSXa9LP254v/
-	30Qxo0/XrQ44ZmCEFQvKaotedW606pQ2rHRXL8Vf/9Srs/5ovWs1igWNnfhG9vmKy+HNz7742Ojg5
-	CG1q2ZIg==;
+	bh=B4BEvF8ZCQkfrQequzFJUUVbnFp+F2kDB2VIWajFWUY=; b=vY4eWmVUXq/yj2ThhMYsGHR1mk
+	2ecgG5qopD6T9w1nAlB1Gt8Pi4b3n2IsOYxsSFsV1BglQUpnLxbNjPoCgTkNijhywHvbQO8jQcK99
+	MJmNitdfPRzr43odbtlz4eOO3Nfe0swSqEKSiQHaoMov2KpjzrrgKmXRqP3ZzkKqC8mL7tmOwR73H
+	t2bs4w7YCMKFlS0/xR3YDveZLrFv2mEEJgYJsXffyZpgOnXuNyki2N0MCMhUDlNrEpX/jgVdzg/yG
+	+yLlG5Slqx0+6TTRQleLkK3+1tQCOaN+HjtXpCRQE7zDui/YyUqRi59oUEeX7wMC7RA2m3e2zqLZ1
+	AiafRCvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcOZg-00000002JIN-1R1o
+	id 1tcOZh-00000002JJS-3321
 	for ath12k@archiver.kernel.org;
-	Mon, 27 Jan 2025 12:50:44 +0000
+	Mon, 27 Jan 2025 12:50:45 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcNU6-00000002E9t-2MSv
+	id 1tcNUF-00000002EDf-3paG
 	for ath12k@lists.infradead.org;
-	Mon, 27 Jan 2025 11:40:55 +0000
+	Mon, 27 Jan 2025 11:41:05 +0000
 Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50R2o4Vu031830;
-	Mon, 27 Jan 2025 11:40:53 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50QM1kFe004786;
+	Mon, 27 Jan 2025 11:41:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	jAHxqLQ+gyMnnyiYJ0CVL9NcULEgZkJb2hLMxBOoNEY=; b=a1i5yo2+2fGKrnxf
-	TRyQsl3rS+PEjuDtV7WaoPkKOnyJ+AG5tK+BXYPWW63ieylUh7lDn+wmWLOApSP3
-	U1F0cstZwzOC8njm/BKCQ+qOjVLCOdYQT/3C99zgQPi1J8w2mN87hOTytpj3+bha
-	fhx8GnHJv3KfiB81iQtwPvO3e+kpPS7eQptZgW524acA2GE8eeQAzHIpLkBJzhov
-	OU86QoEoErF5lvyilITSy6sqeCshETkXQxaNiC4HrmYdjKyrOnYBmT+bx9DHGiao
-	YhoqQQzC3WsUTl9Q5H+lIsPRajLZkf4r8sqZnwafcowm0505Wd0AeP6fRKiXhFdT
-	i4noQA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44dwg0s9en-1
+	B4BEvF8ZCQkfrQequzFJUUVbnFp+F2kDB2VIWajFWUY=; b=cFfQbiPl7+9wEPMH
+	MdIZuQcsETZ5Q3R8zTnYesA7jBMGveb7jQ0yCxhAhiIXbKTHXmd9cQxSI+Rf6G++
+	FQl7CYpjROW9LMWprRNoxtp9J7/6+ISRHCq6c1plgnMMqJOinh1/OoPg/SG/qKIz
+	2jtoAgEpbmg5Mae6Ef/K4GzYMTBXOde1vR1PBtQFu7aqg0CMpTxPcUnb7JCEkj0b
+	0friEwxG5SOtEFFhE26op2RR3OeoI32JCN7txHkDLiV4MFq4s3EwW8WJdyiy0SPt
+	Mrc1Qi/Q819MSgkvUATUHqmCS9mUlA6zY8JvJlwfOwocaoFd3lKHU1JLbbyPFl4m
+	iZm8Kw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44dwg0s9f6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Jan 2025 11:40:52 +0000 (GMT)
+	Mon, 27 Jan 2025 11:41:02 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50RBepOk029413
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50RBf1Nm005520
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 27 Jan 2025 11:40:51 GMT
+	Mon, 27 Jan 2025 11:41:01 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 27 Jan 2025 03:40:49 -0800
+ 15.2.1544.9; Mon, 27 Jan 2025 03:40:59 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
         Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
         Nicolas Escande
 	<nico.escande@gmail.com>
-Subject: [PATCH v3 2/7] wifi: ath12k: Add extra TLV tag parsing support in monitor Rx path
-Date: Mon, 27 Jan 2025 17:10:25 +0530
-Message-ID: <20250127114030.43479-3-quic_periyasa@quicinc.com>
+Subject: [PATCH v3 6/7] wifi: ath12k: Avoid packet offset and FCS length from Rx TLV
+Date: Mon, 27 Jan 2025 17:10:29 +0530
+Message-ID: <20250127114030.43479-7-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250127114030.43479-1-quic_periyasa@quicinc.com>
 References: <20250127114030.43479-1-quic_periyasa@quicinc.com>
@@ -73,19 +73,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: DpUUg7x-Ym95fYjXNUC0aGWbcSk14yWu
-X-Proofpoint-ORIG-GUID: DpUUg7x-Ym95fYjXNUC0aGWbcSk14yWu
+X-Proofpoint-GUID: 2m79E-rLyorU9rfK_muSKF12FKfMtOyW
+X-Proofpoint-ORIG-GUID: 2m79E-rLyorU9rfK_muSKF12FKfMtOyW
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-27_05,2025-01-27_01,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
  phishscore=0 spamscore=0 malwarescore=0 lowpriorityscore=0 clxscore=1015
- mlxlogscore=999 impostorscore=0 adultscore=0 bulkscore=0 mlxscore=0
+ mlxlogscore=712 impostorscore=0 adultscore=0 bulkscore=0 mlxscore=0
  suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2501270093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_034054_730685_77DE6A87 
-X-CRM114-Status: GOOD (  24.10  )
+X-CRM114-CacheID: sfid-20250127_034104_092888_491898CD 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,18 +102,12 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: P Praneesh <quic_ppranees@quicinc.com>
 
-Currently, the monitor Rx parser handler is inherited from the ath11k.
-However, the ath12k 802.11be hardware does not report the Rx TLV header
-in the MSDU data. Instead, the hardware reports those TLVs under the
-following TLV tags:
-
-1. Buffer address
-2. MPDU start
-3. MPDU end
-4. MSDU end
-
-Therefore, add support for parsing the above TLVs in the Rx monitor path
-and use this information for MSDU buffer and status updates.
+Currently, the packet offset and FCS length are fetched from the MSDU Rx
+TLV data, a logic inherited from ath11k. However, for ath12k 802.11be
+hardware, the Rx TLV will not be present in the MSDU data. Instead, this
+information is constant. Therefore, remove the existing FCS trim and the
+packet offset fetch code. Handle the packet offset with the constant in
+the merge MSDU procedure.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -122,314 +116,97 @@ Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Tested-by: Nicolas Escande <nico.escande@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.h     |   4 +-
- drivers/net/wireless/ath/ath12k/dp_mon.c | 157 ++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/dp_mon.h |   4 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c  |   1 +
- drivers/net/wireless/ath/ath12k/hal_rx.h |  12 +-
- 5 files changed, 170 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 23 +++++------------------
+ drivers/net/wireless/ath/ath12k/dp_mon.h |  1 +
+ 2 files changed, 6 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index f68bb78d4a11..27efd37f0955 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_DP_H
-@@ -106,6 +106,8 @@ struct dp_mon_mpdu {
- 	struct list_head list;
- 	struct sk_buff *head;
- 	struct sk_buff *tail;
-+	u32 err_bitmap;
-+	u8 decap_format;
- };
- 
- #define DP_MON_MAX_STATUS_BUF 32
 diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 023715df1126..e9f53ac169b4 100644
+index 778866628a8d..b92de0f9aeda 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -1678,7 +1678,7 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 				u32_get_bits(info[0], HAL_RX_MPDU_START_INFO0_PPDU_ID);
- 		}
- 
--		break;
-+		return HAL_RX_MON_STATUS_MPDU_START;
- 	}
- 	case HAL_RX_MSDU_START:
- 		/* TODO: add msdu start parsing logic */
-@@ -2121,6 +2121,144 @@ static int ath12k_dp_mon_rx_deliver(struct ath12k *ar,
- 	return -EINVAL;
+@@ -1719,18 +1719,6 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+ 	return HAL_RX_MON_STATUS_PPDU_NOT_DONE;
  }
  
-+static int ath12k_dp_pkt_set_pktlen(struct sk_buff *skb, u32 len)
-+{
-+	if (skb->len > len) {
-+		skb_trim(skb, len);
-+	} else {
-+		if (skb_tailroom(skb) < len - skb->len) {
-+			if ((pskb_expand_head(skb, 0,
-+					      len - skb->len - skb_tailroom(skb),
-+					      GFP_ATOMIC))) {
-+				return -ENOMEM;
-+			}
-+		}
-+		skb_put(skb, (len - skb->len));
-+	}
-+
-+	return 0;
-+}
-+
-+static void ath12k_dp_mon_parse_rx_msdu_end_err(u32 info, u32 *errmap)
-+{
-+	if (info & RX_MSDU_END_INFO13_FCS_ERR)
-+		*errmap |= HAL_RX_MPDU_ERR_FCS;
-+
-+	if (info & RX_MSDU_END_INFO13_DECRYPT_ERR)
-+		*errmap |= HAL_RX_MPDU_ERR_DECRYPT;
-+
-+	if (info & RX_MSDU_END_INFO13_TKIP_MIC_ERR)
-+		*errmap |= HAL_RX_MPDU_ERR_TKIP_MIC;
-+
-+	if (info & RX_MSDU_END_INFO13_A_MSDU_ERROR)
-+		*errmap |= HAL_RX_MPDU_ERR_AMSDU_ERR;
-+
-+	if (info & RX_MSDU_END_INFO13_OVERFLOW_ERR)
-+		*errmap |= HAL_RX_MPDU_ERR_OVERFLOW;
-+
-+	if (info & RX_MSDU_END_INFO13_MSDU_LEN_ERR)
-+		*errmap |= HAL_RX_MPDU_ERR_MSDU_LEN;
-+
-+	if (info & RX_MSDU_END_INFO13_MPDU_LEN_ERR)
-+		*errmap |= HAL_RX_MPDU_ERR_MPDU_LEN;
-+}
-+
-+static int
-+ath12k_dp_mon_parse_status_msdu_end(struct ath12k_mon_data *pmon,
-+				    const struct hal_rx_msdu_end *msdu_end)
-+{
-+	struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
-+
-+	ath12k_dp_mon_parse_rx_msdu_end_err(__le32_to_cpu(msdu_end->info2),
-+					    &mon_mpdu->err_bitmap);
-+
-+	mon_mpdu->decap_format = le32_get_bits(msdu_end->info1,
-+					       RX_MSDU_END_INFO11_DECAP_FORMAT);
-+
-+	return 0;
-+}
-+
-+static int
-+ath12k_dp_mon_parse_status_buf(struct ath12k *ar,
-+			       struct ath12k_mon_data *pmon,
-+			       const struct dp_mon_packet_info *packet_info)
-+{
-+	struct ath12k_base *ab = ar->ab;
-+	struct dp_rxdma_mon_ring *buf_ring = &ab->dp.rxdma_mon_buf_ring;
-+	struct sk_buff *msdu;
-+	int buf_id;
-+	u32 offset;
-+
-+	buf_id = u32_get_bits(packet_info->cookie, DP_RXDMA_BUF_COOKIE_BUF_ID);
-+
-+	spin_lock_bh(&buf_ring->idr_lock);
-+	msdu = idr_remove(&buf_ring->bufs_idr, buf_id);
-+	spin_unlock_bh(&buf_ring->idr_lock);
-+
-+	if (unlikely(!msdu)) {
-+		ath12k_warn(ab, "mon dest desc with inval buf_id %d\n", buf_id);
-+		return 0;
-+	}
-+
-+	dma_unmap_single(ab->dev, ATH12K_SKB_RXCB(msdu)->paddr,
-+			 msdu->len + skb_tailroom(msdu),
-+			 DMA_FROM_DEVICE);
-+
-+	offset = packet_info->dma_length + ATH12K_MON_RX_DOT11_OFFSET;
-+	if (ath12k_dp_pkt_set_pktlen(msdu, offset)) {
-+		dev_kfree_skb_any(msdu);
-+		goto dest_replenish;
-+	}
-+
-+	if (!pmon->mon_mpdu->head)
-+		pmon->mon_mpdu->head = msdu;
-+	else
-+		pmon->mon_mpdu->tail->next = msdu;
-+
-+	pmon->mon_mpdu->tail = msdu;
-+
-+dest_replenish:
-+	ath12k_dp_mon_buf_replenish(ab, buf_ring, 1);
-+
-+	return 0;
-+}
-+
-+static int
-+ath12k_dp_mon_parse_rx_dest_tlv(struct ath12k *ar,
-+				struct ath12k_mon_data *pmon,
-+				enum hal_rx_mon_status hal_status,
-+				const void *tlv_data)
-+{
-+	switch (hal_status) {
-+	case HAL_RX_MON_STATUS_MPDU_START:
-+		if (WARN_ON_ONCE(pmon->mon_mpdu))
-+			break;
-+
-+		pmon->mon_mpdu = kzalloc(sizeof(*pmon->mon_mpdu), GFP_ATOMIC);
-+		if (!pmon->mon_mpdu)
-+			return -ENOMEM;
-+		break;
-+	case HAL_RX_MON_STATUS_BUF_ADDR:
-+		return ath12k_dp_mon_parse_status_buf(ar, pmon, tlv_data);
-+	case HAL_RX_MON_STATUS_MPDU_END:
-+		/* If no MSDU then free empty MPDU */
-+		if (pmon->mon_mpdu->tail) {
-+			pmon->mon_mpdu->tail->next = NULL;
-+			list_add_tail(&pmon->mon_mpdu->list, &pmon->dp_rx_mon_mpdu_list);
-+		} else {
-+			kfree(pmon->mon_mpdu);
-+		}
-+		pmon->mon_mpdu = NULL;
-+		break;
-+	case HAL_RX_MON_STATUS_MSDU_END:
-+		return ath12k_dp_mon_parse_status_msdu_end(pmon, tlv_data);
-+	default:
-+		break;
-+	}
-+
-+	return 0;
-+}
-+
- static enum hal_rx_mon_status
- ath12k_dp_mon_parse_rx_dest(struct ath12k *ar, struct ath12k_mon_data *pmon,
- 			    struct sk_buff *skb)
-@@ -2147,14 +2285,20 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k *ar, struct ath12k_mon_data *pmon,
- 			tlv_len = le64_get_bits(tlv->tl, HAL_TLV_64_HDR_LEN);
+-static void ath12k_dp_mon_rx_msdus_set_payload(struct ath12k *ar,
+-					       struct sk_buff *head_msdu,
+-					       struct sk_buff *tail_msdu)
+-{
+-	u32 rx_pkt_offset, l2_hdr_offset;
+-
+-	rx_pkt_offset = ar->ab->hal.hal_desc_sz;
+-	l2_hdr_offset =
+-		ath12k_dp_rx_h_l3pad(ar->ab, (struct hal_rx_desc *)tail_msdu->data);
+-	skb_pull(head_msdu, rx_pkt_offset + l2_hdr_offset);
+-}
+-
+ static void
+ ath12k_dp_mon_fill_rx_stats_info(struct ath12k *ar,
+ 				 struct hal_rx_mon_ppdu_info *ppdu_info,
+@@ -1846,7 +1834,7 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct sk_buff *msdu, *mpdu_buf, *prev_buf, *head_frag_list;
+-	struct sk_buff *head_msdu, *tail_msdu;
++	struct sk_buff *head_msdu;
+ 	struct hal_rx_desc *rx_desc;
+ 	u8 *hdr_desc, *dest, decap_format = mon_mpdu->decap_format;
+ 	struct ieee80211_hdr_3addr *wh;
+@@ -1856,7 +1844,6 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
  
- 		hal_status = ath12k_dp_mon_rx_parse_status_tlv(ar, pmon, tlv);
-+
-+		if (ar->monitor_started &&
-+		    ath12k_dp_mon_parse_rx_dest_tlv(ar, pmon, hal_status, tlv->value))
-+			return HAL_RX_MON_STATUS_PPDU_DONE;
-+
- 		ptr += sizeof(*tlv) + tlv_len;
- 		ptr = PTR_ALIGN(ptr, HAL_TLV_64_ALIGN);
+ 	mpdu_buf = NULL;
+ 	head_msdu = mon_mpdu->head;
+-	tail_msdu = mon_mpdu->tail;
  
--		if ((ptr - skb->data) >= DP_RX_BUFFER_SIZE)
-+		if ((ptr - skb->data) > skb->len)
- 			break;
+ 	if (!head_msdu)
+ 		goto err_merge_fail;
+@@ -1886,14 +1873,14 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
+ 	ath12k_dp_mon_fill_rx_rate(ar, ppdu_info, rxs);
  
- 	} while ((hal_status == HAL_RX_MON_STATUS_PPDU_NOT_DONE) ||
- 		 (hal_status == HAL_RX_MON_STATUS_BUF_ADDR) ||
-+		 (hal_status == HAL_RX_MON_STATUS_MPDU_START) ||
- 		 (hal_status == HAL_RX_MON_STATUS_MPDU_END) ||
- 		 (hal_status == HAL_RX_MON_STATUS_MSDU_END));
+ 	if (decap_format == DP_RX_DECAP_TYPE_RAW) {
+-		ath12k_dp_mon_rx_msdus_set_payload(ar, head_msdu, tail_msdu);
++		skb_pull(head_msdu, ATH12K_MON_RX_PKT_OFFSET);
  
-@@ -2175,9 +2319,11 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
- 	struct dp_mon_mpdu *tmp;
- 	struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
- 	struct sk_buff *head_msdu, *tail_msdu;
--	enum hal_rx_mon_status hal_status = HAL_RX_MON_STATUS_BUF_DONE;
-+	enum hal_rx_mon_status hal_status;
+ 		prev_buf = head_msdu;
+ 		msdu = head_msdu->next;
+ 		head_frag_list = NULL;
  
--	ath12k_dp_mon_parse_rx_dest(ar, pmon, skb);
-+	hal_status = ath12k_dp_mon_parse_rx_dest(ar, pmon, skb);
-+	if (hal_status != HAL_RX_MON_STATUS_PPDU_DONE)
-+		return hal_status;
+ 		while (msdu) {
+-			ath12k_dp_mon_rx_msdus_set_payload(ar, msdu, tail_msdu);
++			skb_pull(msdu, ATH12K_MON_RX_PKT_OFFSET);
  
- 	list_for_each_entry_safe(mon_mpdu, tmp, &pmon->dp_rx_mon_mpdu_list, list) {
- 		list_del(&mon_mpdu->list);
-@@ -2191,6 +2337,7 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
+ 			if (!head_frag_list)
+ 				head_frag_list = msdu;
+@@ -1905,7 +1892,7 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
  
- 		kfree(mon_mpdu);
- 	}
-+
- 	return hal_status;
- }
+ 		prev_buf->next = NULL;
  
-@@ -3377,7 +3524,7 @@ int ath12k_dp_mon_srng_process(struct ath12k *ar, int *budget,
- 		ath12k_dp_mon_rx_memset_ppdu_info(ppdu_info);
+-		skb_trim(prev_buf, prev_buf->len - HAL_RX_FCS_LEN);
++		skb_trim(prev_buf, prev_buf->len);
+ 		if (head_frag_list) {
+ 			skb_shinfo(head_msdu)->frag_list = head_frag_list;
+ 			head_msdu->data_len = frag_list_sum_len;
+@@ -1928,7 +1915,7 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
+ 		msdu = head_msdu;
  
- 	while ((skb = __skb_dequeue(&skb_list))) {
--		hal_status = ath12k_dp_mon_parse_rx_dest(ar, pmon, skb);
-+		hal_status = ath12k_dp_mon_rx_parse_mon_status(ar, pmon, skb, napi);
- 		if (hal_status != HAL_RX_MON_STATUS_PPDU_DONE) {
- 			ppdu_info->ppdu_continuation = true;
- 			dev_kfree_skb_any(skb);
+ 		while (msdu) {
+-			ath12k_dp_mon_rx_msdus_set_payload(ar, msdu, tail_msdu);
++			skb_pull(msdu, ATH12K_MON_RX_PKT_OFFSET);
+ 			if (qos_pkt) {
+ 				dest = skb_push(msdu, sizeof(__le16));
+ 				if (!dest)
 diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.h b/drivers/net/wireless/ath/ath12k/dp_mon.h
-index e4368eb42aca..b039f6b9277c 100644
+index b039f6b9277c..9f3adee51cb2 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_mon.h
 +++ b/drivers/net/wireless/ath/ath12k/dp_mon.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #ifndef ATH12K_DP_MON_H
-@@ -9,6 +9,8 @@
- 
+@@ -10,6 +10,7 @@
  #include "core.h"
  
-+#define ATH12K_MON_RX_DOT11_OFFSET	5
-+
+ #define ATH12K_MON_RX_DOT11_OFFSET	5
++#define ATH12K_MON_RX_PKT_OFFSET	8
+ 
  enum dp_monitor_mode {
  	ATH12K_DP_TX_MONITOR_MODE,
- 	ATH12K_DP_RX_MONITOR_MODE
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 95c9056642cf..44e47ec5b3ee 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -4442,6 +4442,7 @@ int ath12k_dp_rx_pdev_mon_attach(struct ath12k *ar)
- 
- 	pmon->mon_last_linkdesc_paddr = 0;
- 	pmon->mon_last_buf_cookie = DP_RX_DESC_COOKIE_MAX + 1;
-+	INIT_LIST_HEAD(&pmon->dp_rx_mon_mpdu_list);
- 	spin_lock_init(&pmon->mon_lock);
- 
- 	return 0;
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index 6bdcd0867d86..6f10e4222ba6 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -108,11 +108,12 @@ enum hal_rx_mon_status {
- 	HAL_RX_MON_STATUS_PPDU_DONE,
- 	HAL_RX_MON_STATUS_BUF_DONE,
- 	HAL_RX_MON_STATUS_BUF_ADDR,
-+	HAL_RX_MON_STATUS_MPDU_START,
- 	HAL_RX_MON_STATUS_MPDU_END,
- 	HAL_RX_MON_STATUS_MSDU_END,
- };
- 
--#define HAL_RX_MAX_MPDU		256
-+#define HAL_RX_MAX_MPDU				1024
- #define HAL_RX_NUM_WORDS_PER_PPDU_BITMAP	(HAL_RX_MAX_MPDU >> 5)
- 
- struct hal_rx_user_status {
-@@ -506,6 +507,15 @@ struct hal_rx_mpdu_start {
- 	__le32 rsvd2[16];
- } __packed;
- 
-+struct hal_rx_msdu_end {
-+	__le32 info0;
-+	__le32 rsvd0[18];
-+	__le32 info1;
-+	__le32 rsvd1[10];
-+	__le32 info2;
-+	__le32 rsvd2;
-+} __packed;
-+
- #define HAL_RX_PPDU_END_DURATION	GENMASK(23, 0)
- struct hal_rx_ppdu_end_duration {
- 	__le32 rsvd0[9];
 -- 
 2.34.1
 
