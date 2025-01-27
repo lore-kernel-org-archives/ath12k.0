@@ -4,90 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C96E5C02188
-	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 14:01:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC7B9C02188
+	for <ath12k@archiver.kernel.org>; Mon, 27 Jan 2025 15:03:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:To:From:
-	Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hhpud+FC+D8ELGj6S/odIa4UunxlGroYpfJFdZNAbFQ=; b=i96rXB1/PfAGBlsW8yjT2/lnt/
-	NkvUq9nJxR5jlMUkcU61v8xzGuHmuOuT0MhOChqdEEZp5DB/a/1FY7wTcj5gM3/E9y2f8s0CVTWL2
-	LE9FPGqY1BGX1OJwPSjgSiOgLCUFYdHcz1/Ki9mProQmNxB+yA5MlH59j4GuKghknD18IScWGzjku
-	91wp29ZEY34Oau8UHBtOX+95z8vBLQl8+z9+ItvOR4Cj+8cW5UKF8xsTl3FatKYun94uramRvMGgO
-	k6RbO02lnf0He0U3FxKActOkup9sTtMHn5tNIPcW9TgbkRMs0OemnPLjLCYL+sKTWTjYJOMzSVhG1
-	5QYC/iIw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3/xXzMzCDluRQtgpyEFw4FUZ2YjctkNnbhppkuCIWdY=; b=Ayn1u8MRRNbzLz4qRuJ1kT1Tiq
+	U4KjzK5hLKCkvsNKZB4p8p4/x7UTwKb//lVofkxRASyF06p9F7udqFmJtZaE8a+/6me9uG5cgB0dZ
+	mndUWufKDMGXexiRD8Cs0OK1t3PlVzEsBu0Nlqr8NTyDg97zT9hc7ct7Q9GMtHkip0NQAgQxgvIwE
+	EIDcZHT7EWQrCQ3Rns+8vXv+i9BpVpFEuCw2xgickrTSgDDgrgnst1+RuQccePgoumkpuO3SfBL/f
+	neryCJNqBHxtI88zXLgNrWM34pXxPYjG0PshkWHhklYjm52cGK9fdkTKZmkCpwM7ycXoUvfAQuVdi
+	NYeSnBvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcPgE-00000002RaU-2EV8
+	id 1tcQdw-00000002YF5-1TJW
 	for ath12k@archiver.kernel.org;
-	Mon, 27 Jan 2025 14:01:34 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	Mon, 27 Jan 2025 15:03:16 +0000
+Received: from mgamail.intel.com ([198.175.65.14])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcPgC-00000002RZq-1sPI
+	id 1tcQdu-00000002YEm-0f7R
 	for ath12k@lists.infradead.org;
-	Mon, 27 Jan 2025 14:01:33 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-5d0ac27b412so5881711a12.1
-        for <ath12k@lists.infradead.org>; Mon, 27 Jan 2025 06:01:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737986489; x=1738591289; darn=lists.infradead.org;
-        h=mime-version:user-agent:content-transfer-encoding:references
-         :in-reply-to:date:to:from:subject:message-id:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=hhpud+FC+D8ELGj6S/odIa4UunxlGroYpfJFdZNAbFQ=;
-        b=VeJv9wnahi/7urssHFMC/ML/x5J98z1Uu9UBzknhS8PZdePTh1DxcndwmZqRCZsmmc
-         wBUEeocS9K39TX2JCQ6v4Fk2krK6ae3IyJJJMV3J44iLNf90OUetT0kYAfU7q38Lre0R
-         CO0qYivCsMsyuNssY3c5yXxKgv+h5DNO1EZ7gqt1D5Xw0E7r1YwaveE1giz6WrWZPi+K
-         kAvNGtQsVkKAOFciP8M4rGHfnWTkc8fj4NiAvClwrHRHCmS0LH9N8uTRDudC06WL+yVx
-         rxsbWWZJGrDGBZP8y7ZneO6oUYjmV2gM1Dg83EbzfOmkcl9X080BjcYWCcwO3TcXJVPj
-         h4LQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737986489; x=1738591289;
-        h=mime-version:user-agent:content-transfer-encoding:references
-         :in-reply-to:date:to:from:subject:message-id:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=hhpud+FC+D8ELGj6S/odIa4UunxlGroYpfJFdZNAbFQ=;
-        b=J1qml91X7u7oJt1a1/I2oBnGtllQAkREwzmLLh+fjdXsHlcA94edss8I1VYVsS48YM
-         PFixRz2WKPnqA5fHuNXd/Ua+0GhCIBjunoQgEcbQS6rSCZTHvbs2Sug5qQbvoreiIXcx
-         eCe15o/fnGz7T3KqISsWm6LiCTkCE87r31s9fbFI9/hOVXE6syYFcMl7vSkZXNQT9Lt5
-         RdYj6cWVWdmazKCdD/WawJrCZ0uDf1Sn1qP4r8EaXkJ0z6+IGaax8RrOL0P9Lhiwh9Hk
-         D8h9aph67CLAZNEb8vnnp5DON9hZvUqA9nEr7LcSGmllxt7CVausWDtaYM57B3rLoMLs
-         arPA==
-X-Forwarded-Encrypted: i=1; AJvYcCWdWiL6i91iiaF8cRprfab/4sgaKH0TBAwAuY3zEAERbOehU8Ub2FKx7dfbCcvb/JaLKs+U5gQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxWf00cZGNPxlywa72BbD9scBRUIkrqrDDGlk9jRA2z4Yr+x9rE
-	IIEBAOv3Pqg97L72BpdT5FEo8fHoa+fSGPNUeJxYc4ODUwC+hdm+wNN+aA==
-X-Gm-Gg: ASbGncu+GbQUyAhvaPmRgDet1n9b3ZbHwmtUhyfmWA5omgGN+tdF0fn+d2hcr5RKbxv
-	YCUrkYVI5cJwazX2GSlAmBTMYoqQh4pC462lqx6freU3RtO0jwI2IkQwhJzNyzwFQ0XsreRTrWe
-	0yvju4gF99gdCyv2/h//wG1ayNw8HaNqAuqEpZ1O/0Zxj5oMs2h9rYobsxv/BO8gTpggN1tLHt1
-	fr//XxEWpblmCaRToGIbsCrzQWohi0RGjDK7B4s0LbVxceh/nXeRbsQH2gq0JVN0Ds1GWkTCE35
-	KLsLocRLVSl4IWSso/gQ/sGsEezRnZwKlw==
-X-Google-Smtp-Source: AGHT+IHQymqqvqWwj1uOFwUoCb0rds8+JEgbNwsddeisa9CKxEf3K3Zahn9eDLmTBwDY/HEyEbgvGQ==
-X-Received: by 2002:a17:907:1c8d:b0:aaf:1183:ec2c with SMTP id a640c23a62f3a-ab38b0b7f65mr3845861666b.5.1737986486989;
-        Mon, 27 Jan 2025 06:01:26 -0800 (PST)
-Received: from [10.0.1.16] (31-10-206-125.static.upc.ch. [31.10.206.125])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ab69b47f622sm273511066b.39.2025.01.27.06.01.25
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Jan 2025 06:01:26 -0800 (PST)
-Message-ID: <afe586a1acf458edcfe7cf76f4dcfa8b18ad716a.camel@gmail.com>
-Subject: Re: wifi: ath12k: start-up crash with WCN7850 hw2.0 on TI AM69-SK
- board
-From: Parth Panchoil <parth105105@gmail.com>
-To: "quic_bqiang@quicinc.com" <quic_bqiang@quicinc.com>, 
-	"ath12k@lists.infradead.org"
-	 <ath12k@lists.infradead.org>
-Date: Mon, 27 Jan 2025 15:01:25 +0100
-In-Reply-To: <c710004338102c19e5c05fb03d3256ccbdabd5f7.camel@toradex.com>
-References: <86899b2235a59c9134603beebe08f2bb0b244ea0.camel@gmail.com>
-	 <a15a1557-e5fb-404c-9031-21efbaa7e679@quicinc.com>
-	 <c710004338102c19e5c05fb03d3256ccbdabd5f7.camel@toradex.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.44.4-0ubuntu2 
-MIME-Version: 1.0
+	Mon, 27 Jan 2025 15:03:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1737990194; x=1769526194;
+  h=date:from:to:cc:subject:message-id;
+  bh=uSEN+y77uCuPZEAlXpNGIfbYoTIEPJ8vSgINrsMVgYM=;
+  b=lKKfh8cjmC23JWbUYxSgGZOpkVhnxxQ50qkk8n16QG7BLz1oeTOAfuqF
+   6+itYpg2nlkgHJLNYEiBFDEYRTpHK3Sa3+OPt7Dd+wUSI+svFh02ucPcl
+   R7egS9CM+EIa9THZ/wZGQnBTZ9L6HruYDYgTM11wKYKhnCTJO8XCh+rZo
+   Et5zeiQwyd8f+chwjfD2mlDUUMrvL5sh+ez0yD+E8pWYwYDLZI5kfOHUG
+   i0PnC7/Nm/oEVg3aGzke/KOWimc3apHf/+kNUW7QyOu2s6gc6UxDC0top
+   544jA6A8xFNwBAG1Ty6MXUBm5+MbnJ71II2+EC9qKzpDcS0gDub62CeNe
+   Q==;
+X-CSE-ConnectionGUID: 1SCRDBgDSri8YT9ZZ81eAg==
+X-CSE-MsgGUID: P5Bp1hvPR/S1a27QH3ei8w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11328"; a="42208654"
+X-IronPort-AV: E=Sophos;i="6.13,238,1732608000"; 
+   d="scan'208";a="42208654"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Jan 2025 07:03:13 -0800
+X-CSE-ConnectionGUID: dwEjNNX+T92R8t7Txha7HA==
+X-CSE-MsgGUID: guavD8RuQCqSs654Dfw5QA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="139313950"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by fmviesa001.fm.intel.com with ESMTP; 27 Jan 2025 07:03:12 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tcQdp-000gs5-36;
+	Mon, 27 Jan 2025 15:03:09 +0000
+Date: Mon, 27 Jan 2025 23:02:35 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 30cfef18ac9412a239ead848ed36cec2bb754b25
+Message-ID: <202501272329.8hAZ0eLS-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_060132_503024_1E3EE26E 
-X-CRM114-Status: GOOD (  35.66  )
+X-CRM114-CacheID: sfid-20250127_070314_241694_9E32724F 
+X-CRM114-Status: UNSURE (   4.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,207 +84,149 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 30cfef18ac9412a239ead848ed36cec2bb754b25  wifi: ath12k: reset MLO global memory during recovery
 
-I am currently debugging the ath12k_pci_enable_ltssm start up crash/bug
-with the mainline kernel on my system and would like to share my
-observations so far:
+elapsed time: 720m
 
-The ath12k mainline driver gets stuck at this specific line:=20
-https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d=
-366a/drivers/net/wireless/ath/ath12k/pci.c#L295
-in the ath12k_pci_enable_ltssm  which attempts to read
-GCC_GCC_PCIE_HOT_RST, particularly
-https://github.com/torvalds/linux/blob/9c5968db9e625019a0ee5226c7eebef5519d=
-366a/drivers/net/wireless/ath/ath12k/pci.c#L1209
+configs tested: 129
+configs skipped: 2
 
-Interestingly, within the same function, the line val =3D
-ath12k_pci_read32(ab, PCIE_PCIE_PARF_LTSSM) successfully reads the
-expected value 0x111 for PCIE_PCIE_PARF_LTSSM.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-I am continuing to debug from my end, although my understanding of the
-ath12k driver is limited. Any leads, suggestions, or hints to help
-resolve this issue would be greatly appreciated.
+tested configs:
+alpha                             allnoconfig    gcc-14.2.0
+alpha                            allyesconfig    gcc-14.2.0
+arc                              allmodconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-13.2.0
+arc                              allyesconfig    gcc-13.2.0
+arc                   randconfig-001-20250127    gcc-13.2.0
+arc                   randconfig-002-20250127    gcc-13.2.0
+arm                              allmodconfig    gcc-14.2.0
+arm                               allnoconfig    clang-17
+arm                              allyesconfig    gcc-14.2.0
+arm                   randconfig-001-20250127    gcc-14.2.0
+arm                   randconfig-002-20250127    gcc-14.2.0
+arm                   randconfig-003-20250127    clang-16
+arm                   randconfig-004-20250127    clang-18
+arm64                            allmodconfig    clang-18
+arm64                             allnoconfig    gcc-14.2.0
+arm64                 randconfig-001-20250127    gcc-14.2.0
+arm64                 randconfig-002-20250127    gcc-14.2.0
+arm64                 randconfig-003-20250127    gcc-14.2.0
+arm64                 randconfig-004-20250127    gcc-14.2.0
+csky                              allnoconfig    gcc-14.2.0
+csky                  randconfig-001-20250127    gcc-14.2.0
+csky                  randconfig-002-20250127    gcc-14.2.0
+hexagon                          allmodconfig    clang-20
+hexagon                           allnoconfig    clang-20
+hexagon                          allyesconfig    clang-18
+hexagon               randconfig-001-20250127    clang-17
+hexagon               randconfig-002-20250127    clang-20
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20250127    gcc-12
+i386        buildonly-randconfig-002-20250127    clang-19
+i386        buildonly-randconfig-003-20250127    gcc-12
+i386        buildonly-randconfig-004-20250127    gcc-12
+i386        buildonly-randconfig-005-20250127    gcc-12
+i386        buildonly-randconfig-006-20250127    clang-19
+i386                                defconfig    clang-19
+loongarch                        allmodconfig    gcc-14.2.0
+loongarch                         allnoconfig    gcc-14.2.0
+loongarch             randconfig-001-20250127    gcc-14.2.0
+loongarch             randconfig-002-20250127    gcc-14.2.0
+m68k                             allmodconfig    gcc-14.2.0
+m68k                              allnoconfig    gcc-14.2.0
+m68k                             allyesconfig    gcc-14.2.0
+m68k                          amiga_defconfig    gcc-14.2.0
+m68k                        m5407c3_defconfig    gcc-14.2.0
+m68k                        mvme147_defconfig    gcc-14.2.0
+microblaze                       allmodconfig    gcc-14.2.0
+microblaze                        allnoconfig    gcc-14.2.0
+microblaze                       allyesconfig    gcc-14.2.0
+mips                              allnoconfig    gcc-14.2.0
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20250127    gcc-14.2.0
+nios2                 randconfig-002-20250127    gcc-14.2.0
+openrisc                         alldefconfig    gcc-14.2.0
+openrisc                          allnoconfig    gcc-14.2.0
+openrisc                         allyesconfig    gcc-14.2.0
+openrisc                            defconfig    gcc-14.2.0
+parisc                           allmodconfig    gcc-14.2.0
+parisc                            allnoconfig    gcc-14.2.0
+parisc                           allyesconfig    gcc-14.2.0
+parisc                              defconfig    gcc-14.2.0
+parisc                randconfig-001-20250127    gcc-14.2.0
+parisc                randconfig-002-20250127    gcc-14.2.0
+powerpc                          allmodconfig    gcc-14.2.0
+powerpc                           allnoconfig    gcc-14.2.0
+powerpc                          allyesconfig    clang-16
+powerpc                   currituck_defconfig    clang-17
+powerpc                       eiger_defconfig    clang-17
+powerpc                    gamecube_defconfig    clang-16
+powerpc                     mpc5200_defconfig    clang-20
+powerpc                      ppc6xx_defconfig    gcc-14.2.0
+powerpc               randconfig-001-20250127    clang-16
+powerpc               randconfig-002-20250127    gcc-14.2.0
+powerpc               randconfig-003-20250127    gcc-14.2.0
+powerpc                     taishan_defconfig    clang-17
+powerpc                     tqm8541_defconfig    clang-15
+powerpc64                        alldefconfig    clang-20
+powerpc64             randconfig-001-20250127    gcc-14.2.0
+powerpc64             randconfig-002-20250127    gcc-14.2.0
+powerpc64             randconfig-003-20250127    gcc-14.2.0
+riscv                            allmodconfig    clang-20
+riscv                             allnoconfig    gcc-14.2.0
+riscv                            allyesconfig    clang-20
+riscv                               defconfig    clang-19
+riscv                 randconfig-001-20250127    clang-20
+riscv                 randconfig-002-20250127    clang-16
+s390                             allmodconfig    clang-19
+s390                              allnoconfig    clang-20
+s390                             allyesconfig    gcc-14.2.0
+s390                                defconfig    clang-15
+s390                  randconfig-001-20250127    clang-20
+s390                  randconfig-002-20250127    clang-20
+sh                               allmodconfig    gcc-14.2.0
+sh                                allnoconfig    gcc-14.2.0
+sh                               allyesconfig    gcc-14.2.0
+sh                         apsh4a3a_defconfig    gcc-14.2.0
+sh                                  defconfig    gcc-14.2.0
+sh                            hp6xx_defconfig    gcc-14.2.0
+sh                    randconfig-001-20250127    gcc-14.2.0
+sh                    randconfig-002-20250127    gcc-14.2.0
+sparc                            allmodconfig    gcc-14.2.0
+sparc                             allnoconfig    gcc-14.2.0
+sparc                 randconfig-001-20250127    gcc-14.2.0
+sparc                 randconfig-002-20250127    gcc-14.2.0
+sparc64                             defconfig    gcc-14.2.0
+sparc64               randconfig-001-20250127    gcc-14.2.0
+sparc64               randconfig-002-20250127    gcc-14.2.0
+um                               allmodconfig    clang-20
+um                                allnoconfig    clang-18
+um                               allyesconfig    gcc-12
+um                                  defconfig    clang-20
+um                             i386_defconfig    gcc-12
+um                    randconfig-001-20250127    clang-20
+um                    randconfig-002-20250127    gcc-12
+um                           x86_64_defconfig    clang-15
+x86_64                            allnoconfig    clang-19
+x86_64                           allyesconfig    clang-19
+x86_64      buildonly-randconfig-001-20250127    clang-19
+x86_64      buildonly-randconfig-002-20250127    clang-19
+x86_64      buildonly-randconfig-003-20250127    clang-19
+x86_64      buildonly-randconfig-004-20250127    clang-19
+x86_64      buildonly-randconfig-005-20250127    gcc-12
+x86_64      buildonly-randconfig-006-20250127    clang-19
+x86_64                              defconfig    gcc-11
+xtensa                            allnoconfig    gcc-14.2.0
+xtensa                randconfig-001-20250127    gcc-14.2.0
+xtensa                randconfig-002-20250127    gcc-14.2.0
 
-Thank you.
-
-Regards,
-Parth P
-
-
-On Fri, 2025-01-24 at 10:02 +0000, Parth Pancholi wrote:
-> I appreciate your response, Baochen.
->=20
-> I have been working on enabling mainline kernel support on my TI
-> AM69-
-> SK board to test the mainline ath12k driver on my system.
->=20
-> Using the mainline kernel repository for the ath drivers [1], I made
-> the following observation:=C2=A0
-> While the exact crash observed earlier is no longer present, the
-> system
-> hangs upon loading the ath12k mainline driver, displaying the
-> messages
-> below.
->=20
-> root@am69-sk:~# modprobe ath12k debug_mask=3D0xffffffff
-> [ 1121.996554] ath12k_pci 0000:01:00.0: BAR 0 [mem 0x4410200000-
-> 0x44103fffff 64bit]: assigned
-> [ 1122.004884] ath12k_pci 0000:01:00.0: enabling device (0000 ->
-> 0002)
-> [ 1122.011818] ath12k_pci 0000:01:00.0: MSI vectors: 16
-> [ 1122.016798] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
-> [ 1122.040183] NET: Registered PF_QIPCRTR protocol family
->=20
-> root@am69-sk:~# uname -a
-> Linux am69-sk 6.13.0-rc7-wt-ath-ge7ef944b3e2c-dirty #2 SMP PREEMPT
-> Wed
-> Jan 22 16:55:17 CET 2025 aarch64 GNU/Linux
->=20
-> root@am69-sk:~# lspci
-> 0000:00:00.0 PCI bridge: Texas Instruments Device b012
-> 0000:01:00.0 Network controller: Qualcomm Technologies, Inc WCN785x
-> Wi-
-> Fi 7(802.11be) 320MHz 2x2 [FastConnect 7800] (rev 01)
-> 0001:00:00.0 PCI bridge: Texas Instruments Device b012
-> 0002:00:00.0 PCI bridge: Texas Instruments Device b012
->=20
-> Do you have any insights into what might still be missing or
-> incorrect
-> in my setup?
->=20
-> Regards,
-> Parth P
->=20
-> On Wed, 2025-01-22 at 15:20 +0800, Baochen Qiang wrote:
-> >=20
-> >=20
-> > On 1/21/2025 10:19 PM, Parth Panchoil wrote:
-> > > Hi All,
-> > >=20
-> > > I am performing tests on the SX-PCEBE Wi-Fi module, which
-> > > utilizes
-> > > the
-> > > ATH12k driver, on the Texas Instruments AM69-SK board.
-> > > The board is running the TI Linux Kernel from the ti-linux-6.6.y
-> >=20
-> > 6.6 is too old, and besides we don;t support customer kernel.
-> >=20
-> > Could you try latest ath tree [1] or the mainline tree [2]?
-> >=20
-> > [1] https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/
-> > [2]
-> > https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/
-> >=20
-> > If the issue is still seen, please enable verbose ath12k log using
-> > below command and help
-> > collect dmesg logs:
-> >=20
-> > =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0sudo modprobe ath12k de=
-bug_mask=3D0xffffffff
-> >=20
-> > One more thing, the open-WRT patch is overkill, can you narrow down
-> > to find which line of
-> > code in ath12k_pci_enable_ltssm() is causing this issue?
-> >=20
-> >=20
-> > > branch. During testing, I observed a kernel crash from the ATH12k
-> > > driver as soon as the probe is called. The crash log is as
-> > > follows:
-> > >=20
-> > > [=C2=A0=C2=A0=C2=A0 9.492631] Kernel panic - not syncing: Asynchronou=
-s SError
-> > > Interrupt
-> > > [=C2=A0=C2=A0=C2=A0 9.492634] CPU: 7 PID: 222 Comm: (udev-worker) Not=
- tainted
-> > > 6.6.58-
-> > > 01497-ga7758da17c28-dirty #1
-> > > [=C2=A0=C2=A0=C2=A0 9.492638] Hardware name: Texas Instruments AM69 S=
-K (DT)
-> > > [=C2=A0=C2=A0=C2=A0 9.492640] Call trace:
-> > > [=C2=A0=C2=A0=C2=A0 9.492642]=C2=A0 dump_backtrace+0x94/0xec
-> > > [=C2=A0=C2=A0=C2=A0 9.492658]=C2=A0 show_stack+0x18/0x24
-> > > [=C2=A0=C2=A0=C2=A0 9.492662]=C2=A0 dump_stack_lvl+0x48/0x60
-> > > [=C2=A0=C2=A0=C2=A0 9.492669]=C2=A0 dump_stack+0x18/0x24
-> > > [=C2=A0=C2=A0=C2=A0 9.492672]=C2=A0 panic+0x320/0x378
-> > > [=C2=A0=C2=A0=C2=A0 9.492677]=C2=A0 nmi_panic+0x8c/0x90
-> > > [=C2=A0=C2=A0=C2=A0 9.492681]=C2=A0 arm64_serror_panic+0x6c/0x78
-> > > [=C2=A0=C2=A0=C2=A0 9.492686]=C2=A0 do_serror+0x3c/0x78
-> > > [=C2=A0=C2=A0=C2=A0 9.492692]=C2=A0 el1h_64_error_handler+0x34/0x4c
-> > > [=C2=A0=C2=A0=C2=A0 9.492697]=C2=A0 el1h_64_error+0x64/0x68
-> > > [=C2=A0=C2=A0=C2=A0 9.492700]=C2=A0 ath12k_pci_read32+0x1bc/0x1e8 [at=
-h12k]
-> > > [=C2=A0=C2=A0=C2=A0 9.492725]=C2=A0 ath12k_pci_power_up+0xdc/0x340 [a=
-th12k]
-> > > [=C2=A0=C2=A0=C2=A0 9.492747]=C2=A0 ath12k_core_init+0x2c/0xa8 [ath12=
-k]
-> > > [=C2=A0=C2=A0=C2=A0 9.492769]=C2=A0 ath12k_pci_probe+0x698/0x908 [ath=
-12k]
-> > > [=C2=A0=C2=A0=C2=A0 9.492791]=C2=A0 pci_device_probe+0xa8/0x16c
-> > > [=C2=A0=C2=A0=C2=A0 9.492800]=C2=A0 really_probe+0x110/0x27c
-> > > [=C2=A0=C2=A0=C2=A0 9.492805]=C2=A0 __driver_probe_device+0x78/0x12c
-> > > [=C2=A0=C2=A0=C2=A0 9.492808]=C2=A0 driver_probe_device+0x3c/0x118
-> > > [=C2=A0=C2=A0=C2=A0 9.492810]=C2=A0 __driver_attach+0x74/0x124
-> > > [=C2=A0=C2=A0=C2=A0 9.492813]=C2=A0 bus_for_each_dev+0x78/0xd8
-> > > [=C2=A0=C2=A0=C2=A0 9.492819]=C2=A0 driver_attach+0x24/0x30
-> > > [=C2=A0=C2=A0=C2=A0 9.492824]=C2=A0 bus_add_driver+0xe4/0x208
-> > > [=C2=A0=C2=A0=C2=A0 9.492828]=C2=A0 driver_register+0x60/0x128
-> > > [=C2=A0=C2=A0=C2=A0 9.492831]=C2=A0 __pci_register_driver+0x44/0x50
-> > > [=C2=A0=C2=A0=C2=A0 9.492835]=C2=A0 ath12k_pci_init+0x2c/0x6c [ath12k=
-]
-> > > [=C2=A0=C2=A0=C2=A0 9.492858]=C2=A0 do_one_initcall+0x70/0x1b4
-> > > [=C2=A0=C2=A0=C2=A0 9.492861]=C2=A0 do_init_module+0x58/0x1e4
-> > > [=C2=A0=C2=A0=C2=A0 9.492867]=C2=A0 load_module+0x19bc/0x1a8c
-> > > [=C2=A0=C2=A0=C2=A0 9.492869]=C2=A0 init_module_from_file+0x88/0xc4
-> > > [=C2=A0=C2=A0=C2=A0 9.492873]=C2=A0 __arm64_sys_finit_module+0x1c0/0x=
-2ac
-> > > [=C2=A0=C2=A0=C2=A0 9.492877]=C2=A0 invoke_syscall+0x44/0x108
-> > > [=C2=A0=C2=A0=C2=A0 9.492882]=C2=A0 el0_svc_common.constprop.0+0xc0/0=
-xe0
-> > > [=C2=A0=C2=A0=C2=A0 9.492885]=C2=A0 do_el0_svc+0x1c/0x28
-> > > [=C2=A0=C2=A0=C2=A0 9.492889]=C2=A0 el0_svc+0x2c/0x84
-> > > [=C2=A0=C2=A0=C2=A0 9.492892]=C2=A0 el0t_64_sync_handler+0xc0/0xc4
-> > > [=C2=A0=C2=A0=C2=A0 9.492895]=C2=A0 el0t_64_sync+0x190/0x194
-> > > [=C2=A0=C2=A0=C2=A0 9.492899] SMP: stopping secondary CPUs
-> > > [=C2=A0=C2=A0=C2=A0 9.492908] Kernel Offset: disabled
-> > > [=C2=A0=C2=A0=C2=A0 9.492909] CPU features: 0x0,80000200,28020000,100=
-0420b
-> > > [=C2=A0=C2=A0=C2=A0 9.492913] Memory Limit: none
-> > >=20
-> > > Upon searching online, I found the OpenWRT patch that appears to
-> > > address a similar issue: OpenWRT Patch: Prevent LTSSM Startup
-> > > Crash.
-> > > https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dblob;f=3Dpackage=
-/kernel/mac80211/patches/ath12k/100-ath12k-prevent-ltssm-startup-crash.patc=
-h;h=3Dcd85a0f6aa2652d62bfbea04e9bcca3bcf831b7f;hb=3D935b2b7dcef61b2893ed5df=
-f307dd8f8a1156899
-> > > With the above patch applied, I do not see the crash anymore.
-> > >=20
-> > > Could anyone confirm if this issue has been reported before/known
-> > > bug
-> > > or provide any insights?=20
-> > > Any additional information or suggestions would be greatly
-> > > appreciated.
-> > >=20
-> > > Details about the test setup,
-> > > TI-AM69-SK board:
-> > > https://www.ti.com/tool/SK-AM69?keyMatch=3Dam69%20sk&tisearch=3Dunive=
-rsal_search
-> > > Silex WiFi card SX-PCEBE:
-> > > https://www.silextechnology.com/connectivity-solutions/embedded-wirel=
-ess/sx-pcebe
-> > > TI Linux Repo:
-> > > https://git.ti.com/cgit/ti-linux-kernel/ti-linux-kernel/?h=3Dti-linux=
--6.6.y
-> > >=20
-> > > Thank you.
-> > >=20
-> > > Regards,
-> > > Parth P
-> > >=20
-> >=20
-> >=20
->=20
->=20
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
