@@ -4,61 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30B00C0218A
-	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 18:20:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30E45C0218A
+	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 18:44:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Cc:To:
-	References:In-Reply-To:From:Subject:Content-Transfer-Encoding:MIME-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y0FSPDmkhR5E9SecqlPKheoWuTMfPr9YV9XShY2LJ2c=; b=esrRc11KBmkczcZYtVpQWr1KXZ
-	2FXLz2DC9mFltQAfDYE37Nq8YGXHSBn6HqBPUi6QytZGCY25P47kwh7RC5dnjGLdlscaRILvZNd84
-	h7WEKz8uy2TPcAPj9Ae+/tKEpgxOjHqsxjQtje7liJN/LhyQWNO4L1AbETiFDK4xEABbDB4FsEaz7
-	NifFIkzQ8YWZGdXpqteuJCIAxf7pbAv59Ucx3UHHqTqzPIMh4C8d3vdACs+6IUywZSgZ2wbL9puAo
-	CUAtKJs0YMpFnuph1z12GwwhCz3hRrsN2jkqh5Ec0BnYRz+zz7dYV3LBn0kvV/y7avL22LslUf2HY
-	FBfiDCmg==;
+	bh=waasbAwmzj7ujLbfya5oMoQ+CaPf2PErneHn+u2V5JY=; b=OM+GSVO3HoKadjbJZkznNNPBcP
+	jiFzlylUkqSne+eyqE6el+LvGQlGHDaua8zDlI5vPSZ5VbSIm2gn3fCsds/zV/OT16WTPoSz/vgZu
+	P808l/tJcQmNpwejtbZPa8nEF9TNHElmbKQeVvtOZDirhrqrNHgmi8lCV9u8snUxE7S6GQC0UvTh6
+	fGNAPvmxPxfVucLAhk6dhruJBPwbB26QU3EVi22UdRUHoIxdCXIhBw7fb0Fghp/aer/qN+gO3gV1h
+	9nTZlTVELRmdc/yvkQf/6SwUtDBfSRze6XePwIReag31tSTqhgCSaiHzqa45zgSmKhcl0bToElnmo
+	jHVLuUNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcqBv-00000005Yg2-3zn1
+	id 1tcqZI-00000005cY9-3S2F
 	for ath12k@archiver.kernel.org;
-	Tue, 28 Jan 2025 18:20:03 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Tue, 28 Jan 2025 18:44:12 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcqBr-00000005Yex-2tpt;
-	Tue, 28 Jan 2025 18:20:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 18661A40D99;
-	Tue, 28 Jan 2025 18:18:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 52162C4CED3;
-	Tue, 28 Jan 2025 18:19:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738088398;
-	bh=IJ4s4wbxmvi7WlbVja1PWuObnoO89o4CJKiawUCQvz8=;
-	h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
-	b=HilBwh4WeFTUFHEmit/Mtn0GULsgGNjf02f2Otr0gm/p0PhwvGQtsKmz+KGpZB8TL
-	 lZkRs6lrmOFBmR7sbKXgRFhbwC7hCKkQecwzOTEw9fHau9MnZWA0HHTxUdiWMnQJG1
-	 v7azmU736wBqlw25+pBrTn+6+AqH+gKVXooxb1uWwtAHH2Cc1GZy/elILpxdVnQu/i
-	 Hh4dVhb5JrL/X1BXIauWV3uPNIBxir6B3fJYywT0dnSK3d/jhzP/cC3iVmNOT6XDVB
-	 9Z+F2Ove635aEWc+hLsJa6kdSbAISfTWEbDZAXH/fjVeSWsPy3Ms7Foc8o71VDIjr9
-	 f0EiYkPbKy1VA==
-Content-Type: text/plain; charset="utf-8"
+	id 1tcqZF-00000005cXo-2HMD
+	for ath12k@lists.infradead.org;
+	Tue, 28 Jan 2025 18:44:10 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50SH6ibc032661;
+	Tue, 28 Jan 2025 18:44:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	waasbAwmzj7ujLbfya5oMoQ+CaPf2PErneHn+u2V5JY=; b=bfZAiT7JBGavVxpj
+	oKDKC41aLm9hb9J6OKLKYDqBeRUH7tnqY32k8CzYDa0mmnY5AzzJ0dZHEXvUPiTB
+	dYggMLn4dsf6O5ylSF17rkGMkYrGbtfZLYyIqpxBTyiBRhtJ/umwZvueliRVZC8L
+	s4kLEF4BsVTGbckTtFNkIsXSn/c7pchqnS6VS10tTKTgo+Rs6vLom867OlPC6zKf
+	7eci2fzzYct6A2Ti1zMwhnk9eRVSIJq886yJE16yUmHYNA8b0Q8AJnaw1lnJHyi3
+	bxkrDmiHsCPmlKnScgsiec59MoOUJj6EuoSFPvbm6AQ4FWQaF/NAtGr/5NZKjoq9
+	miKwDQ==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ernksvq6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Jan 2025 18:44:05 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50SIi42c004156
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 28 Jan 2025 18:44:04 GMT
+Received: from [10.227.108.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 28 Jan
+ 2025 10:44:04 -0800
+Message-ID: <961df6e7-0b5c-4972-9324-5c4d430cb172@quicinc.com>
+Date: Tue, 28 Jan 2025 10:44:03 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v9 6/9] wifi: ath12k: add support for setting fixed HE
+ rate/GI/LTF
+To: <mbizon@freebox.fr>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Muna Sinada <quic_msinada@quicinc.com>,
+        Jeff Johnson <quic_jjohnson@quicinc.com>
+References: <20250114003813.2783550-1-quic_pradeepc@quicinc.com>
+ <20250114003813.2783550-7-quic_pradeepc@quicinc.com>
+ <f5c6d874e9d7682d52c5ed107a0ede952b5cf53f.camel@freebox.fr>
+ <5861c953-436e-4f36-ae8b-5ef52fceb3b6@quicinc.com>
+ <2aba18dc3448b5a60a1a06b33fa591e562927693.camel@freebox.fr>
+Content-Language: en-US
+From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+In-Reply-To: <2aba18dc3448b5a60a1a06b33fa591e562927693.camel@freebox.fr>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
-Subject: Re: pull-request: ath-current-20250124
-From: Kalle Valo <kvalo@kernel.org>
-In-Reply-To: <3311fea1-c7c0-4929-b92c-16ab933de33c@oss.qualcomm.com>
-References: <3311fea1-c7c0-4929-b92c-16ab933de33c@oss.qualcomm.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- ath11k@lists.infradead.org, ath12k@lists.infradead.org, jjohnson@kernel.org
-User-Agent: pwcli/0.1.1-git (https://github.com/kvalo/pwcli/) Python/3.11.2
-Message-ID: <173808839535.1321818.16289363523697290711.kvalo@kernel.org>
-Date: Tue, 28 Jan 2025 18:19:57 +0000 (UTC)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: gx0bl6nD4nIs3Aftg7pdH47GTKODw8PO
+X-Proofpoint-ORIG-GUID: gx0bl6nD4nIs3Aftg7pdH47GTKODw8PO
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-28_04,2025-01-27_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
+ malwarescore=0 clxscore=1015 adultscore=0 impostorscore=0
+ lowpriorityscore=0 priorityscore=1501 mlxlogscore=999 spamscore=0
+ phishscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501280136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250128_101959_799439_E8C59BC9 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250128_104409_728543_6D41B46B 
+X-CRM114-Status: GOOD (  14.36  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,41 +104,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com> wrote:
 
-> The following changes since commit 146b6057e1fd28fb1a38d300bf76a38dfba7f9fb:
-> 
->   wifi: cw1200: Fix potential NULL dereference (2024-12-18 19:58:27 +0200)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git tags/ath-current-20250124
-> 
-> for you to fetch changes up to 64a1ba4072b34af1b76bf15fca5c2075b8cc4d64:
-> 
->   wifi: ath12k: fix handling of 6 GHz rules (2025-01-24 10:32:44 -0800)
-> 
-> ----------------------------------------------------------------
-> ath.git patch for v6.14-rc
-> 
-> Fix an issue in the ath12k driver where 6 GHz operation no longer
-> works with new firmware.
-> 
-> ----------------------------------------------------------------
-> Aditya Kumar Singh (1):
->       wifi: ath12k: fix handling of 6 GHz rules
-> 
->  drivers/net/wireless/ath/ath12k/wmi.c | 61 ++++++++++++++++++++++++++---------
->  drivers/net/wireless/ath/ath12k/wmi.h |  1 -
->  2 files changed, 45 insertions(+), 17 deletions(-)
 
-Pulled, thanks.
+On 1/24/2025 12:26 AM, Maxime Bizon wrote:
+> 
+> On Thu, 2025-01-23 at 17:09 -0800, Pradeep Kumar Chitrapu wrote:
+> 
+> Hello,
+> 
+>> I believe, this is default GI based on device capability of HE for
+>> ath11k or EHT for ath12k.
+> 
+> Your patch alters the behaviour of this code in
+> ath12k_peer_assoc_h_ht():
+> 
+>          /* As firmware handles these two flags (IEEE80211_HT_CAP_SGI_20
+>           * and IEEE80211_HT_CAP_SGI_40) for enabling SGI, reset both
+>           * flags if guard interval is Default GI
+>           */
+> 	if (arvif->bitrate_mask.control[band].gi == NL80211_TXRATE_DEFAULT_GI)
+> 	        arg->peer_ht_caps &= ~(IEEE80211_HT_CAP_SGI_20 |
+> 				IEEE80211_HT_CAP_SGI_40);
+> 
+> 	if (arvif->bitrate_mask.control[band].gi != NL80211_TXRATE_FORCE_LGI) {
+> 		if (ht_cap->cap & (IEEE80211_HT_CAP_SGI_20 |
+> 	            IEEE80211_HT_CAP_SGI_40))
+>                          arg->peer_rate_caps |= WMI_HOST_RC_SGI_FLAG;
+> 	}
+> 
+> 
+> I don't understand why a patch adding a feature to force GI would alter
+> the current behaviour without any actual forcing ?
+> 
+Hi Maxime,
 
-3319569bf9d8 Merge tag 'ath-current-20250124' of git://git.kernel.org/pub/scm/linux/kernel/git/ath/ath
+Apologize for my earlier comment. Firmware relies on peer_rate_caps and 
+bandwidth settings when configuring GI. Currently default is configured 
+as FORCE_SGI. When there is fixed rate settings configured from user 
+space to override defaults to replace SHORT GI with DEFAULT_GI, the code 
+snippet you mentioned ensures honoring this by removing HT_CAP_SGI_20 
+and HT_CAP_SGI_40. The behavior has been same for ath11k driver as well.
 
--- 
-https://patchwork.kernel.org/project/linux-wireless/patch/3311fea1-c7c0-4929-b92c-16ab933de33c@oss.qualcomm.com/
+I will get back with more detailed information as soon as possible.
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Thanks for understanding,
 
+Best regards,
+Pradeep
 
