@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4D83C0218A
-	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 10:21:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63E2EC02191
+	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 10:24:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NyDThzojAxZKHrDgoYtsCtqsH5vQun6qlGVboSNQENA=; b=MBureAiheydWoXaemRojeKz00G
-	QHrMWshea1hMg79nSK4wsSsT0ykLkrJ60wtj9zLVk/Iao6zbiW978bY05wKS1IkcAU6RyiLbtLSvO
-	dcsuVyNexOKptk8GzM2CWxkzSLRKh9KReCi9ofzJckvs9suRWBzfqxrPC3pD/tyhCCXDQu/YNm9KJ
-	c30ZaFooY7d3uFN+rB6PVfI3tKiZR+LOm/nTOoVG1LMJx/UoPEeLO/mhgbLJ4zBwg2weeOhnEwl5W
-	YO8vNoyAzmYtK9QegEUiVwOPjvXBy8eKnsY7dX7x7WAqzBAR0zhg40DvaXYu5z0o8kT5PfHEz3iTg
-	MpcWdAyw==;
+	bh=w0p+gU0gddrkv5l5iik1c1tjUllJNk8iKKoU3raJ+ww=; b=oAS19oUW7R5CUifx10AmeVT0v4
+	qNCZ7oVGHIDPFcItU3WjmoET0OzUVkO5Ga2RWmgtG1AKWRliEZpihCBIH275zOvo/rDqCyjWfIn7c
+	Jh3RHnUmm1j6k63HmBFqQ1/dHEo9HcWrGHQCwb1OHgb45yP+5EjWHyGZXIzES+gzHntNb4VTKUgUw
+	ssEldgDkDWK6d9OFsKEeJE4lgQpmr0BAuyk17vtUEF72RmG3qP5rNXawCqjzr0Tynzsw2BXx0R1eI
+	8phRxZswvtDe+LAumHKVwzp3EbCU3LRUR4t7SUjGZTT9ftxTGn7bpSSzCRxiFE1u5O5jFiUHYup6V
+	iR0OPAAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tciiX-00000004dFw-1Cxa
+	id 1tcilR-00000004dWL-3bSr
 	for ath12k@archiver.kernel.org;
-	Tue, 28 Jan 2025 10:21:13 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 28 Jan 2025 10:24:13 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tciiU-00000004dFb-22hN
+	id 1tcilP-00000004dVz-07qv
 	for ath12k@lists.infradead.org;
-	Tue, 28 Jan 2025 10:21:11 +0000
+	Tue, 28 Jan 2025 10:24:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C26975C00E5;
-	Tue, 28 Jan 2025 10:20:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BE66AC4CED3;
-	Tue, 28 Jan 2025 10:21:06 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 2EFF85C5CCD;
+	Tue, 28 Jan 2025 10:23:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 195ECC4CED3;
+	Tue, 28 Jan 2025 10:24:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738059669;
-	bh=tG6mcmUL//T3dY7eugZ21T/eIkcmm+M0E+Ha8wNsnPE=;
+	s=k20201202; t=1738059850;
+	bh=1d6nto/GL+Snq0xFsvq5zA3lwZIeCEd2S8FFAdLgsJM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=D5WgrIBhTGAIRNDrwGbI1TxJBTk/XCTq2J3oahkhaxz8DaZssV61OBcehp8twoZWV
-	 BEL5u/V0msVl4C2O6Oe8nsqr8lmT/ez1iqWRUP/jq2yWyBqdewwYNfMOakSN1VBAh/
-	 fZ32DneXussN2hOLNb64+WIqeTcpr61VwIlM+otuoK1SMCSuZc2bK28U0GSqikIC7F
-	 BMivLnBxyc22y6DK45sIYMGxJv0kNbZcxSv/at5pdV0WSJmT40DK3DIHPmq6SojZO9
-	 N01LUKNSmmfh1HxJKA4oxgPtWr2VdeKfS6IB6S2FnBUxcNjmKn+AhfSd8D62wmI6XV
-	 peEyAGSNr2d8g==
-Message-ID: <112fe636-1328-49f0-8f0a-395764e118c7@kernel.org>
-Date: Tue, 28 Jan 2025 11:21:04 +0100
+	b=GZVImLGlq/aWEowx6Ge0+wq9XIbpWGQYXj1dY8Y8Vhm3dL9hpgM3SIP+iOsBZX0CB
+	 hi2vh7o4hjupad4LtKHeCCZg0C/xVzGxwdNHAGSAmJDZSH14dYEz6017WJd2Lyz9qI
+	 IwqNr4kreFpa4pfM7TmEGlGy0O6N/CZaYBvj5SpwWrdw00ja9DfUZ+N3t0i5CX8lcz
+	 lhs9Vh5Uxbg87J6XwRFMken+Bci/u9O55pONBSfswEAtclTw9naN7CYb6r9PP+7cDq
+	 o49oEh33H3S3YkLSdoHRcsrn8xEAcUaGwYQCrJUqhbSL7EcXPsnduDEjNdF1j+4V+I
+	 TEiM/TrAg5AYA==
+Message-ID: <7d23afc2-ccb0-4a57-afcc-c5ac01013ea2@kernel.org>
+Date: Tue, 28 Jan 2025 11:24:05 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: net: wireless: describe the ath12k AHB
- module
+Subject: Re: [PATCH 2/2] arm64: dts: qcom: add wifi node for IPQ5332 based
+ RDP441
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -57,9 +57,9 @@ Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
 References: <20250128091012.2574478-1-quic_rajkbhag@quicinc.com>
- <20250128091012.2574478-2-quic_rajkbhag@quicinc.com>
- <0ca970e7-cc9a-4853-86de-5f01dc6d82a2@kernel.org>
- <1bd2dca3-1fa0-424d-95e8-cdb887f1d9e2@quicinc.com>
+ <20250128091012.2574478-3-quic_rajkbhag@quicinc.com>
+ <b3ff05c1-6424-4ace-a873-ddf1a0d3d07d@kernel.org>
+ <a752a135-9cd0-402b-b0fb-967491cfdaee@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,12 +105,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <1bd2dca3-1fa0-424d-95e8-cdb887f1d9e2@quicinc.com>
+In-Reply-To: <a752a135-9cd0-402b-b0fb-967491cfdaee@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250128_022110_622708_723B927C 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20250128_022411_161328_DF5C6CB5 
+X-CRM114-Status: GOOD (  12.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,47 +125,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 28/01/2025 10:29, Raj Kumar Bhagat wrote:
-> On 1/28/2025 2:47 PM, Krzysztof Kozlowski wrote:
->> On 28/01/2025 10:10, Raj Kumar Bhagat wrote:
->>> Add device-tree bindings for the ATH12K module found in the IPQ5332
->>> device.
->>>
->>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
->>> ---
->>>  .../net/wireless/qcom,ath12k-ahb.yaml         | 317 ++++++++++++++++++
->>>  1 file changed, 317 insertions(+)
->>>  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+On 28/01/2025 10:41, Raj Kumar Bhagat wrote:
+>>> +
+>>> +	reserved-memory {
+>>> +		#address-cells = <2>;
+>>> +		#size-cells = <2>;
+>>> +		ranges;
+>>> +
+>>> +		q6_region: wcss@4a900000 {
+>>> +			reg = <0x0 0x4a900000 0x0 0x02b00000>;
+>>> +			no-map;
+>>> +		};
+>>> +
+>>> +		m3_dump: m3-dump@4d400000 {
 >>
->> It was v4, now v1? So entire previous discussion and feedback is
->> missing? Go to previous series and implement entire feedback. Then use
->> proper versioning, proper changelog and make it obvious/understandable
->> to us, instead of sending v1 after v4 in entirely separate thread.
->>
-> 
-> I was asked to send DTS as a separate series, this is a new series for
-> DTS hence stated with v1.
-
-
-But we do not talk about DTS here, but bindings.
-
-
-> To address the undocumented ABIs we have changes in dt-binding and hence
-
-That's v1 so how it could have changes in the first place? Unless this
-is v5?
-
-> corresponding changes in driver as well. Let me know If we could send the
-> complete series as v5.
-> 
->> I also do not understand why this is sent to arm soc. That's wireless patch.
+>> This fails with your wireless patchset.
 >>
 > 
-> All the email list are as per - './scripts/get_maintainer.pl'
+> Yes, this will fail with v4 wireless patch.
+> We have v5 (yet to be sent) to read the correct reserved memory. Since,
+> in v4 I was asked to address and send DTS patch separately, The corresponding
+> driver patches are yet to be sent.
 
 
-I am asking why this patch is part of the arm soc patchset. This is
-networking/wireless patch.
+So you send it to prove my point? OK, fine. So this patch confirms your
+driver changes should be rejected.
+
+> 
+>>> +			reg = <0x0 0x4D400000 0x0 0x100000>;
+>>> +			no-map;
+>>> +		};
+>>> +	};
+>>>  };
+>>>  
+>>>  &blsp1_i2c1 {
+>>> @@ -63,3 +104,16 @@ data-pins {
+>>>  		};
+>>>  	};
+>>>  };
+>>> +
+>>> +&wifi0 {
+>>> +	memory-region = <&q6_region>, <&m3_dump>;
+>>> +	memory-region-names = "q6-region", "m3-dump";
+>>
+>> Binding said you have four items. I don't understand why this varies and
+>> why this is 2 items instead.
+>>
+> 
+> In total we have 4 items, with minItems as 2.
+> The other 2 items (q6-caldb & mlo-global-mem) functionalities are not yet enabled
+> in ath12k driver. Hence these memory are not reserved yet.
+
+That's not a valid reason to skip valid items. DTS is not dependent on
+driver. Submit proper hardware description, not something carved to
+match your driver.
+
 
 Best regards,
 Krzysztof
