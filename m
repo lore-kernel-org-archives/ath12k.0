@@ -4,58 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35F7EC0218A
-	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 09:20:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60487C0218A
+	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 09:23:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=qHeRy3aXUVz3lNP+jrhSUEGQtSOzOk73nEF1lSoli+k=; b=HAL0F+jf/ECGFo3GJNHbZvTep/
-	pDuY9kYZhaOwfQxdDs1fIt3/o0KH9C8PZVojgrO03kvQsHWXKU+ZR+S8y6iQ5T3r8F9PrVjwLlWJi
-	D5eUlWMua52YoNDlAN6vEqbIsA8QnxpR6KGBOe3OKlu2GBTCV3uyj4ZUasWpp/Kip2J0b1m+Xfy78
-	JM7i9Y7Cd/BgS3VrZ4FIKXrfPyEspixHw7j0DYCXlbR/rGUPjb6Bmj8rKNzmiC1zcqeFSEAgJWnOg
-	s2praHH2d0Vi5knx8nDDM4A52STJ/C6H8hRVfhTCFNjhEZ1HJk8d22Bi6n3ZXzSNPcIFLi7cPvg8o
-	WdVS4XgQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Cvz2JtAdP97WEJs4zOZ6moszEg/Uk5/ifgxidZQN6y0=; b=GnXbFVvjX40IZIN3ePjXvJgIU9
+	Tg1d2x6vShVohNsGRY7RpLtkyp3J0LPMTju+FKXABDhMdlCULiCeH8JPP5mioQQ0LP5VIy5Y4fRvq
+	+rK1tuSnFq3lOlitLdNgj7bgvIBRqxMpkFz4L7amBXQnkGIyefMeluQo++SXtsDdZCDfTRGp1UygM
+	udH2XrYT2CqVQmrS127rihfWIq1F6NMbCOa13q7x64A/ZeqLaBtb1pvF6BWykxv47NKSoG+zQEMuu
+	H/RegYY8pqKDF2ZDqKMXtXYeSL3NhY/cJ80D5K47wi4VPaRcIsIj74gyX4Ix4vLHcGV/39feGYxsc
+	B0cERFTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tchlq-00000004W0c-44n1
+	id 1tchoX-00000004Wbq-0Wxz
 	for ath12k@archiver.kernel.org;
-	Tue, 28 Jan 2025 09:20:34 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Tue, 28 Jan 2025 09:23:21 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tchln-00000004VzS-3srX;
-	Tue, 28 Jan 2025 09:20:33 +0000
+	id 1tchnL-00000004WQy-3fLK
+	for ath12k@lists.infradead.org;
+	Tue, 28 Jan 2025 09:22:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id DDF7AA4010C;
-	Tue, 28 Jan 2025 09:18:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37FAEC4CED3;
-	Tue, 28 Jan 2025 09:20:28 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 414A95C5BF4;
+	Tue, 28 Jan 2025 09:21:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 327D7C4CEE1;
+	Tue, 28 Jan 2025 09:22:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738056029;
-	bh=qHeRy3aXUVz3lNP+jrhSUEGQtSOzOk73nEF1lSoli+k=;
-	h=From:To:Cc:Subject:Date:From;
-	b=K8ZNHXYUl3f3CX04A/gRsMdbcnsm5XHuUu09LIKbTrgDhN7EiQa1CkSLXGIys41po
-	 1mVBJp4TV3pOXMF8dYKG9iHdw6unF78RF1PJ9fXJo3WdlK1bVWKv694rYn+zVfdoG1
-	 bdVymOW/LyFH/StlcJN+88e6VC8f4M5L4H07ynFqsjZsBGbDDW9sVyR/LMYkSP+5j9
-	 3CKA2IhdazaLE3D+nEnI5WYtpPCH0H0u0xxtvbnSFTgyDokMXXhBz7MJzevjKscHfR
-	 dO9TYyK6JeN1OVdnXR1+Emthm9Yn5A5VgYZGp638eqn0J6L896E1V+70UU6lgxPvWT
-	 6BkmKGFmr+Uag==
-From: Kalle Valo <kvalo@kernel.org>
-To: linux-wireless@vger.kernel.org, netdev@vger.kernel.org
-Cc: ath12k@lists.infradead.org, ath11k@lists.infradead.org,
-    ath10k@lists.infradead.org,
-    Johannes Berg <johannes@sipsolutions.net>
-Subject: Stepping down as maintainer
-Date: Tue, 28 Jan 2025 11:20:26 +0200
-Message-ID: <87wmefguqt.fsf@kernel.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
+	s=k20201202; t=1738056127;
+	bh=ZGMtfJK8F/y9wYUABuXbsCjnUzFs+mshaotaFvxQtBA=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=PBahelHuMA+pwUqaBYu/kN9lXamu7webxLVzp9zsa8b1k1tPycvXMleSrKmOygvNU
+	 zCAWRMFZttb60xb/15alXrFy7e14yaOab+28DTwnzzNz7B85t87/mIGeESr1pkDFpE
+	 ul5IkSUve94owKZK0tnFWDlTMTnAAkChFl9GsTHWUR+RHFca5H16iCsdj9oq27Sup5
+	 p8LLcxluQPtmJkF0oR37giKW8Xzl/IHWZsWuaO3V/aK5ATD2XhqJp8FxVTeD7IlbzX
+	 EfrrhIAiTtuo1DDcJMfbr77gbhHTCEzbxb/1HWYf98CoB8bqJD/Tksz3YSoeHG1K6Q
+	 zMyORrcFYOa8Q==
+Message-ID: <b3ff05c1-6424-4ace-a873-ddf1a0d3d07d@kernel.org>
+Date: Tue, 28 Jan 2025 10:22:01 +0100
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] arm64: dts: qcom: add wifi node for IPQ5332 based
+ RDP441
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+References: <20250128091012.2574478-1-quic_rajkbhag@quicinc.com>
+ <20250128091012.2574478-3-quic_rajkbhag@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20250128091012.2574478-3-quic_rajkbhag@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250128_012032_033785_5263A582 
-X-CRM114-Status: UNSURE (   6.37  )
+X-CRM114-CacheID: sfid-20250128_012208_020222_6E4AA9C4 
+X-CRM114-Status: UNSURE (   8.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,17 +124,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi everyone,
+On 28/01/2025 10:10, Raj Kumar Bhagat wrote:
+> +	/*                 Default Profile
+> +	 * +============+==============+=====================+
+> +	 * |            |              |                     |
+> +	 * | Region     | Start Offset |       Size          |
+> +	 * |            |              |                     |
+> +	 * +------------+--------------+---------------------+
+> +	 * |            |              |                     |
+> +	 * |            |              |                     |
+> +	 * |            |              |                     |
+> +	 * | WLAN Q6    |  0x4A900000  |       43MB          |
+> +	 * |            |              |                     |
+> +	 * |            |              |                     |
+> +	 * +------------+--------------+---------------------+
+> +	 * | M3 Dump    |  0x4D400000  |       1MB           |
+> +	 * +============+==============+=====================+
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * |            Rest of memory for Linux             |
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * |                                                 |
+> +	 * +=================================================+
+> +	 */
+> +
+> +	reserved-memory {
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		q6_region: wcss@4a900000 {
+> +			reg = <0x0 0x4a900000 0x0 0x02b00000>;
+> +			no-map;
+> +		};
+> +
+> +		m3_dump: m3-dump@4d400000 {
 
-I'm stepping down from all my maintainer roles. My first commit
-feed9bab7b14 ("spi: omap2_mcspi PIO RX fix") to the kernel was back in
-2008 for v2.6.24 so I have been here for a long time. Thank you everyone
-who I have worked with, there are too many to list here.
+This fails with your wireless patchset.
 
-Jeff continues to maintain ath10k, ath11k and ath12k drivers so they are
-unaffected. But for the wireless driver maintainer (drivers/net/wireless/)
-there is no replacement at the moment. If anyone is interested, please
-do let Johannes and me know.
+> +			reg = <0x0 0x4D400000 0x0 0x100000>;
+> +			no-map;
+> +		};
+> +	};
+>  };
+>  
+>  &blsp1_i2c1 {
+> @@ -63,3 +104,16 @@ data-pins {
+>  		};
+>  	};
+>  };
+> +
+> +&wifi0 {
+> +	memory-region = <&q6_region>, <&m3_dump>;
+> +	memory-region-names = "q6-region", "m3-dump";
 
-Kalle
+Binding said you have four items. I don't understand why this varies and
+why this is 2 items instead.
+
+
+Best regards,
+Krzysztof
 
