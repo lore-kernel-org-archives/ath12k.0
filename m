@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AA09C0218D
-	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 09:17:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7E86C0218A
+	for <ath12k@archiver.kernel.org>; Tue, 28 Jan 2025 09:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=g3UKDxxPaG4Lm9Tvsjl+c9NBwu52SGj91NbXHPk5n/g=; b=zbCvIk0a7MrKVIZB+Uel5c5hPO
-	vap8o4XeHn9ZuoD8bt/hksTT6TxiAekybTD+CydtA58zYuNMHdyZ7An8Em7R3/g2dl5hRAkrRlYcC
-	t5vZvTBFJZVMHhvPUbD3NV1BrRhllbTLb6sLH1xszjhFQ+5k0sxxPtg8AWzrqMG69O+n6bmCiJ82X
-	jFneQX5cSEHyOjzO+/efFS7aRx0bN4Au1dI0H1xL7Q9YsnyiiFgWswjEoDV5JcM/CEcSMyjOioVN5
-	3CHppsonhU4dvQ6/Uo4nW9Z4IkUY5mbwFj4u5BBFGM/jntAwwf/AEE9UtiGvPxw2YGXsK778k1CeI
-	34En+GaA==;
+	bh=QaM0nl0Ji8uMf06jH+z3MU4QDbqrLERt/S4jjKq+OPc=; b=o82hrIqn5QFaMIWw3dnMyuBdhN
+	v7UifKCxJTmf0VYOSJ5iqg6xvs2fHuEXOp0K5PnTu/hBIud9Nrp1JqdU5MfNL84P1HG5wAKD56tcu
+	LNWFx86Aju1khQ+r8Z0OMSL57NsDEuWIcuhUbil6yWp3MtRiBWkZa33U+OvDHLZiPC+5HFp1yZ1vN
+	FIDrCW7OXKBUkzD2Tl9Hed5SKZPXvRoEPC881bR8phno/R6EUCoz5jTy5D4sZ0S2XV/7hfZ5SsRVa
+	cfHG60b5BAuTxUKbWmVuB4ltF5wLGSEIgi+oq8dt6qAM0GNn/V5XMN3uY4THa0QQYBH6PZFCMFZ1J
+	pN+o2SqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tchip-00000004VAo-3s4A
+	id 1tchlf-00000004VwW-2PTR
 	for ath12k@archiver.kernel.org;
-	Tue, 28 Jan 2025 09:17:27 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	Tue, 28 Jan 2025 09:20:23 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tchin-00000004V99-36tg
+	id 1tchlc-00000004Vvi-1mS3
 	for ath12k@lists.infradead.org;
-	Tue, 28 Jan 2025 09:17:26 +0000
+	Tue, 28 Jan 2025 09:20:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 1AC70A40111;
-	Tue, 28 Jan 2025 09:15:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADCE8C4CED3;
-	Tue, 28 Jan 2025 09:17:20 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 907475C5792;
+	Tue, 28 Jan 2025 09:19:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3342FC4CED3;
+	Tue, 28 Jan 2025 09:20:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738055844;
-	bh=yVSjSWszN/9BPiVWvmLAGyXUmEWeXoGABsqhdxrbxHY=;
+	s=k20201202; t=1738056019;
+	bh=rGOqPnMcPaALyi5d29RWxJtKcmZH4LunMi/Lgq+Ty6E=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=CQYbxL51i05yY9ApsiCSV7X1Y4qEfFMN2t5ECbwMeJe9cayxyKcyrcQffNxHfeXDh
-	 jw990/p9l1lVXHKAHPGvxByNvwZtn53MKxKrX0K24RQ1P+lqYUjmrXZFi0nOxz/VA+
-	 9pmR3MgzPF1kfAHqnN4GOX8UHaLYiXnNoCWrQ7Fhzf9W3l+RylCb8w3wVbM6OHD/Vx
-	 BcoZcifkhvCLChigXHF0YzypF34n2j2ACITYlg4X01bqpBCEmJ9TFQtC24KT4bp3us
-	 eAzs8vpJ69nUjvkvuk82eZNFT5VTsm8jHcVxvAE8JeTobJVZKXk6W8WD5BDT5BABC7
-	 LDCFagq67+LsA==
-Message-ID: <0ca970e7-cc9a-4853-86de-5f01dc6d82a2@kernel.org>
-Date: Tue, 28 Jan 2025 10:17:18 +0100
+	b=cSesVS6OsKu/zn6nh779zkr66YxjwF/EWVzjwITPJG5Oc/HLDK1zRztPZm//DaPeP
+	 k6f/b4uPXAZC+oWS2PqEfnPZ04ng3erqkVtL1E/Xg6oUCvso0gbmx6k90Nuu46yU66
+	 uEFVWCTWykEVp3aPKqwQSTFgrBiX9txPWar/GoJhAC8ykcbv1FIT7nVAaYHISFDikn
+	 PycRNjc/YHelLkcX+mZhg75AyGDRCO1CJF5oaulTu3yVLHvlHc5iiLfFG6diAA7lXY
+	 uJ5+nAPNhDmC8mjOEAxK+Vv+tWbachTifGNT5NTm8y0lGgSntUwmTk/pJHhdKjbCJG
+	 8R+plfeGr68ig==
+Message-ID: <1df7ff9d-d63a-44f5-a67d-8f20973c7b57@kernel.org>
+Date: Tue, 28 Jan 2025 10:20:13 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: net: wireless: describe the ath12k AHB
- module
+Subject: Re: [PATCH v4 00/13] wifi: ath12k: add Ath12k AHB driver support for
+ IPQ5332
 To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <20250128091012.2574478-1-quic_rajkbhag@quicinc.com>
- <20250128091012.2574478-2-quic_rajkbhag@quicinc.com>
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+References: <20241210074159.2637933-1-quic_rajkbhag@quicinc.com>
+ <fd338dd5-db11-4439-835d-b6641f3feb78@kernel.org>
+ <001ae2e4-bba8-4b76-a4b6-eda8533c5fc5@kernel.org>
+ <af926bd7-730c-4465-a206-4168bb93d01a@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,13 +103,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250128091012.2574478-2-quic_rajkbhag@quicinc.com>
+In-Reply-To: <af926bd7-730c-4465-a206-4168bb93d01a@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250128_011725_924192_31DC1F7C 
-X-CRM114-Status: UNSURE (   7.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250128_012020_560927_5FB0DE9B 
+X-CRM114-Status: GOOD (  14.21  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,22 +123,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 28/01/2025 10:10, Raj Kumar Bhagat wrote:
-> Add device-tree bindings for the ATH12K module found in the IPQ5332
-> device.
+On 28/01/2025 10:16, Raj Kumar Bhagat wrote:
+> On 12/10/2024 8:42 PM, Krzysztof Kozlowski wrote:
+>> On 10/12/2024 16:08, Krzysztof Kozlowski wrote:
+>>> On 10/12/2024 08:41, Raj Kumar Bhagat wrote:
+>>>> Currently, Ath12k driver only supports WiFi devices that are based on
+>>>> PCI bus. New Ath12k device IPQ5332 is based on AHB bus. Hence, add
+>>>> Ath12k AHB support for IPQ5332.
+>>>>
+>>>> IPQ5332 is IEEE802.11be 2 GHz 2x2 Wifi device. To bring-up IPQ5332
+>>>> device:
+>>>> - Add hardware parameters for IPQ5332.
+>>>> - CE register address space in IPQ5332 is separate from WCSS register
+>>>>   space. Hence, add logic to remap CE register address.
+>>>> - Add support for fixed QMI firmware memory for IPQ5332.
+>>>> - Support userPD handling for WCSS secure PIL driver to enable ath12k
+>>>>   AHB support.
+>>>>
+>>>> v4:
+>>>> - Missed to include some review list in v3. Hence sending v4 with
+>>>>   all review list as per - scripts/get_maintainers.pl
+>>>>
+>>> The amount of undocumented ABI you add here, points to the problem that
+>>> either your drivers don't work or your drivers would never work with
+>>> upstream. Why? Because either you would have wrong DTS or drivers not
+>>> matching DTS, thus not working.
+>>>
+>>> Please point us to your upstream DTS implementing (and working 100%)
+>>> this ABI, so we can review that you do not sneak more broken or
+>>> undocumented things. I will NAK also future submissions without above,
+>>> because I believe you usptream something which will not work.
+>>
+>>
+>> I dug a bit and I found your earlier v2:
+>> https://lore.kernel.org/all/20241015182637.955753-3-quic_rajkbhag@quicinc.com/
+>>
+>> which confirms:
+>> 1. DTS not following coding style, so not possible to accept
+>> 2. Driver relying on that exact DTS, so not really working.
+>>
+>> Please post in separate series updated DTS, after fixing all the issues
+>> pointed out by DTS coding style.
+>>
 > 
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> ---
->  .../net/wireless/qcom,ath12k-ahb.yaml         | 317 ++++++++++++++++++
->  1 file changed, 317 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+> To fix all the issues in DTS (including undocumented ABIs) we did changes in
+> dt-binding as well.
+> 
+> The dt-binding and working DTS are now posted as separate series -
+> https://lore.kernel.org/lkml/20250128091012.2574478-1-quic_rajkbhag@quicinc.com/
 
-It was v4, now v1? So entire previous discussion and feedback is
-missing? Go to previous series and implement entire feedback. Then use
-proper versioning, proper changelog and make it obvious/understandable
-to us, instead of sending v1 after v4 in entirely separate thread.
 
-I also do not understand why this is sent to arm soc. That's wireless patch.
+You replied 1.5 months after, so entire context is gone. Anyway, your
+DTS does not work.
 
 Best regards,
 Krzysztof
