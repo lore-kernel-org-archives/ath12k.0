@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9785C02190
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 10:58:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41EFFC0218D
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 10:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0s7dKCdOyMlIjfsE3qybHNzieJwTg4NcAWn2PHOVs00=; b=FD8WbRiymYyeNydnvGfWNnQTcg
-	sQ2WEz3n+iGhUo6BKmZFe60zPPSkgpdkXie/t6dX8jw5WC5ofAhTQbj99pU+eM+QdESl+w3F+vVm8
-	DzKcknD8nsdFzlsgS1Ui6OqmGNezq+CT/neBGd3JyTXz/PF2hy95XUm8PBqsL8Otkt4J1wYIG38sF
-	7f+oP6hHJ7WdnLcpaR7FExiv69Rv0csFYXtbm55P5G+nBPQC5n2gs9F4Aj1Zy+GkT7taR7oQ4HSSj
-	zbUUljPlkFxtK4JR2FeB+LZz1BgE/lLdPyXCZ37ymTkUBDzA7JzGUiGVcchItsezs3ENFgSEzD8TW
-	+C4J6+mQ==;
+	bh=QUXUfbuYGNfygl4L6i4xlnfQNTQj3ql467raIfXC1nU=; b=x7gXS9/Ctb+c1ASi3g7d7JDf38
+	mfXLXD6zwNi41havLMR0KvFej4S4WEwa3AZJEBn7xBijCam5wp29i6SwIHgfso78SnXKmMjW7EEHJ
+	UcUm2U2pw7pExSGrGhfX4MOjiluRoz8nSDAxs7lXkfnFp1mRfsjNlHtBEepTXfAWYL9y3pIlCPtDG
+	WrWpGPo8kEe8LsxHVbzfjl/pOZLQPYJApeqjBAtBwzjiBatwF4SZAEu4cOSt/L5i9NOJ+op15iNkD
+	quLa2L5rWlwMUd/Gbb01I7ZuvmEdxCtnU25KvmGD04batE8YaAFovp+qUHupzH9hElg9UNHlrLR9b
+	X6MxOljQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1td5mH-00000006mQ1-2dks
+	id 1td5mJ-00000006mSl-3k9O
 	for ath12k@archiver.kernel.org;
-	Wed, 29 Jan 2025 10:58:37 +0000
+	Wed, 29 Jan 2025 10:58:39 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1td5mB-00000006mNy-0o2I
+	id 1td5mH-00000006mQC-3WFK
 	for ath12k@lists.infradead.org;
-	Wed, 29 Jan 2025 10:58:32 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50T6OVWs004221;
-	Wed, 29 Jan 2025 10:58:30 GMT
+	Wed, 29 Jan 2025 10:58:39 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50T6Pb9E008941;
+	Wed, 29 Jan 2025 10:58:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0s7dKCdOyMlIjfsE3qybHNzieJwTg4NcAWn2PHOVs00=; b=JJNz6WTtsFVRYq3h
-	6/QbPPdOPXakOGe8Ttg8WnfitxAeXBMskFZJ31LgiF7sKRB5Qyl7lwmOooIakz6S
-	ADTyfRWhMt2O6tC+ftS0Ayd5yVE1HTj2xk3tH6K2OYRhYYRWDIzktRcIcFdGCPe2
-	XFnk5/mDrGiSJsIIVTlLH1ZrR8tfblHR933d+7pIzAt5dvLl2a5VPnryovH1sXf/
-	yU7y4ofOKjSXgCwGzh2+T38TZVl+xEroubIhiBRDJJl4sSwSgka66b2TT7u0DW01
-	AEbl30gZVEDJOlQhEkLNQVHu2RNft6O9oVWNw25/h4JX/b4HdGyr+dOqP7qHF3qf
-	3MSPTQ==
+	QUXUfbuYGNfygl4L6i4xlnfQNTQj3ql467raIfXC1nU=; b=Oa2ENbXwYaHj06Qu
+	Bk8GJMGS/YD8e8ADd9Sg5kdqmVFjipXGPdpKbrOylaMX2RDjYB2XSraHz1dlvjdc
+	IY9687bVczLo4bxI6Ztw162q/ouwDrVjdFEaWFkveGdVVqio1Nykjycog0X+AFIW
+	s1kdHA21zMLLiw32WCLYauxrwmXBXkj/FhgmWffjfSYi3CxRZq07GO/W1zgCJWwY
+	vj67t0DkCgrmM2MPwwu0+smgyndm3CgOPTicv7RAL3/7+8H4JZTlDtD7SCXIrjMx
+	JXdHqrwXx/cv8uwsSv7yMYAgol3RFpcZ2cw+RC59fR/O8yQR3dgm/wwiSndJg/b2
+	peEerQ==
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ff1q0e2n-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ff1q0dxv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 10:58:30 +0000 (GMT)
+	Wed, 29 Jan 2025 10:58:37 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50TAwTiZ001212
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50TAwaah001357
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 10:58:29 GMT
+	Wed, 29 Jan 2025 10:58:36 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 29 Jan 2025 02:58:27 -0800
+ 15.2.1544.9; Wed, 29 Jan 2025 02:58:33 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>
-Subject: [PATCH v6 1/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV parsing support
-Date: Wed, 29 Jan 2025 16:28:02 +0530
-Message-ID: <20250129105810.1094359-2-quic_periyasa@quicinc.com>
+        P Praneesh <quic_ppranees@quicinc.com>,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Subject: [PATCH v6 4/9] wifi: ath12k: Add HAL_PHYRX_OTHER_RECEIVE_INFO TLV parsing support
+Date: Wed, 29 Jan 2025 16:28:05 +0530
+Message-ID: <20250129105810.1094359-5-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250129105810.1094359-1-quic_periyasa@quicinc.com>
 References: <20250129105810.1094359-1-quic_periyasa@quicinc.com>
@@ -73,19 +74,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: mDJldSfCeeOgnAUPQEmnbERhwNT_qExH
-X-Proofpoint-ORIG-GUID: mDJldSfCeeOgnAUPQEmnbERhwNT_qExH
+X-Proofpoint-GUID: vBusnK4PSFHsaax9syvnv3pfrRoNkbd8
+X-Proofpoint-ORIG-GUID: vBusnK4PSFHsaax9syvnv3pfrRoNkbd8
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-28_04,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=999
- impostorscore=0 mlxscore=0 suspectscore=0 priorityscore=1501 spamscore=0
- lowpriorityscore=0 bulkscore=0 clxscore=1015 adultscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501290089
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 adultscore=0
+ lowpriorityscore=0 bulkscore=0 malwarescore=0 suspectscore=0
+ mlxlogscore=999 clxscore=1015 impostorscore=0 mlxscore=0
+ priorityscore=1501 spamscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2501290089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250129_025831_241389_AD7F7F75 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20250129_025837_881219_2288C735 
+X-CRM114-Status: GOOD (  11.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,9 +102,9 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 Currently, monitor is not enabled. However, in the future, the monitor
-will be enabled. Therefore, add the necessary HAL_PHYRX_GENERIC_U_SIG TLV
-parsing support in monitor Rx path, which help to populate the EHT
-radiotap data.
+will be enabled. Therefore, add the necessary HAL_PHYRX_OTHER_RECEIVE_INFO
+TLV parsing support in the monitor Rx path, which helps to populate the
+extended Rx statistics.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -111,326 +112,49 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_mon.c | 205 ++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/hal_rx.h |  60 +++++++
- 2 files changed, 264 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 7 +++++++
+ drivers/net/wireless/ath/ath12k/hal_rx.h | 8 ++++++++
+ 2 files changed, 15 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 4e9a60181c06..61fd481b7a3b 100644
+index 96e9d68618d3..f4552bc05eef 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -10,6 +10,9 @@
- #include "dp_tx.h"
- #include "peer.h"
- 
-+#define ATH12K_LE32_DEC_ENC(value, dec_bits, enc_bits)	\
-+		u32_encode_bits(le32_get_bits(value, dec_bits), enc_bits)
+@@ -1599,6 +1599,13 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+ 					     HAL_RX_PHYRX_RSSI_LEGACY_INFO_INFO0_RX_BW);
+ 		break;
+ 	}
++	case HAL_PHYRX_OTHER_RECEIVE_INFO: {
++		const struct hal_phyrx_common_user_info *cmn_usr_info = tlv_data;
 +
- static void
- ath12k_dp_mon_rx_handle_ofdma_info(const struct hal_rx_ppdu_end_user_stats *ppdu_end_user,
- 				   struct hal_rx_user_status *rx_user_status)
-@@ -562,6 +565,187 @@ static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *
- 	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
- }
- 
-+static void
-+ath12k_dp_mon_hal_rx_parse_u_sig_cmn(const struct hal_mon_usig_cmn *cmn,
-+				     struct hal_rx_mon_ppdu_info *ppdu_info)
-+{
-+	u32 common;
-+	u8 bw;
-+
-+	bw = le32_get_bits(cmn->info0, HAL_RX_USIG_CMN_INFO0_BW);
-+
-+	common = __le32_to_cpu(ppdu_info->usig.common);
-+	common |= IEEE80211_RADIOTAP_EHT_USIG_COMMON_PHY_VER_KNOWN |
-+		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_BW_KNOWN |
-+		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_UL_DL_KNOWN |
-+		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_BSS_COLOR_KNOWN |
-+		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_TXOP_KNOWN |
-+		  ATH12K_LE32_DEC_ENC(cmn->info0,
-+				      HAL_RX_USIG_CMN_INFO0_PHY_VERSION,
-+				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_PHY_VER) |
-+		  u32_encode_bits(bw, IEEE80211_RADIOTAP_EHT_USIG_COMMON_BW) |
-+		  ATH12K_LE32_DEC_ENC(cmn->info0,
-+				      HAL_RX_USIG_CMN_INFO0_UL_DL,
-+				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_UL_DL) |
-+		  ATH12K_LE32_DEC_ENC(cmn->info0,
-+				      HAL_RX_USIG_CMN_INFO0_BSS_COLOR,
-+				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BSS_COLOR) |
-+		  ATH12K_LE32_DEC_ENC(cmn->info0,
-+				      HAL_RX_USIG_CMN_INFO0_TXOP,
-+				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_TXOP);
-+	ppdu_info->usig.common = cpu_to_le32(common);
-+
-+	switch (bw) {
-+	default:
-+		fallthrough;
-+	case HAL_EHT_BW_20:
-+		ppdu_info->bw = HAL_RX_BW_20MHZ;
-+		break;
-+	case HAL_EHT_BW_40:
-+		ppdu_info->bw = HAL_RX_BW_40MHZ;
-+		break;
-+	case HAL_EHT_BW_80:
-+		ppdu_info->bw = HAL_RX_BW_80MHZ;
-+		break;
-+	case HAL_EHT_BW_160:
-+		ppdu_info->bw = HAL_RX_BW_160MHZ;
-+		break;
-+	case HAL_EHT_BW_320_1:
-+	case HAL_EHT_BW_320_2:
-+		ppdu_info->bw = HAL_RX_BW_320MHZ;
++		ppdu_info->gi = le32_get_bits(cmn_usr_info->info0,
++					      HAL_RX_PHY_CMN_USER_INFO0_GI);
 +		break;
 +	}
-+}
-+
-+static void
-+ath12k_dp_mon_hal_rx_parse_u_sig_tb(const struct hal_mon_usig_tb *usig_tb,
-+				    struct hal_rx_mon_ppdu_info *ppdu_info)
-+{
-+	enum ieee80211_radiotap_eht_usig_tb spatial_reuse1, spatial_reuse2;
-+	u32 common, value, mask;
-+
-+	spatial_reuse1 = IEEE80211_RADIOTAP_EHT_USIG2_TB_B3_B6_SPATIAL_REUSE_1;
-+	spatial_reuse2 = IEEE80211_RADIOTAP_EHT_USIG2_TB_B7_B10_SPATIAL_REUSE_2;
-+
-+	common = __le32_to_cpu(ppdu_info->usig.common);
-+	value = __le32_to_cpu(ppdu_info->usig.value);
-+	mask = __le32_to_cpu(ppdu_info->usig.mask);
-+
-+	common |= ATH12K_LE32_DEC_ENC(usig_tb->info0,
-+				      HAL_RX_USIG_TB_INFO0_RX_INTEG_CHECK_PASS,
-+				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BAD_USIG_CRC);
-+
-+	value |= IEEE80211_RADIOTAP_EHT_USIG1_TB_B20_B25_DISREGARD |
-+		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
-+				     HAL_RX_USIG_TB_INFO0_PPDU_TYPE_COMP_MODE,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_TB_B0_B1_PPDU_TYPE) |
-+		 IEEE80211_RADIOTAP_EHT_USIG2_TB_B2_VALIDATE |
-+		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
-+				     HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_1,
-+				     spatial_reuse1) |
-+		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
-+				     HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_2,
-+				     spatial_reuse2) |
-+		 IEEE80211_RADIOTAP_EHT_USIG2_TB_B11_B15_DISREGARD |
-+		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
-+				     HAL_RX_USIG_TB_INFO0_CRC,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_TB_B16_B19_CRC) |
-+		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
-+				     HAL_RX_USIG_TB_INFO0_TAIL,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_TB_B20_B25_TAIL);
-+
-+	mask |= IEEE80211_RADIOTAP_EHT_USIG1_TB_B20_B25_DISREGARD |
-+		IEEE80211_RADIOTAP_EHT_USIG2_TB_B0_B1_PPDU_TYPE |
-+		IEEE80211_RADIOTAP_EHT_USIG2_TB_B2_VALIDATE |
-+		spatial_reuse1 | spatial_reuse2 |
-+		IEEE80211_RADIOTAP_EHT_USIG2_TB_B11_B15_DISREGARD |
-+		IEEE80211_RADIOTAP_EHT_USIG2_TB_B16_B19_CRC |
-+		IEEE80211_RADIOTAP_EHT_USIG2_TB_B20_B25_TAIL;
-+
-+	ppdu_info->usig.common = cpu_to_le32(common);
-+	ppdu_info->usig.value = cpu_to_le32(value);
-+	ppdu_info->usig.mask = cpu_to_le32(mask);
-+}
-+
-+static void
-+ath12k_dp_mon_hal_rx_parse_u_sig_mu(const struct hal_mon_usig_mu *usig_mu,
-+				    struct hal_rx_mon_ppdu_info *ppdu_info)
-+{
-+	enum ieee80211_radiotap_eht_usig_mu sig_symb, punc;
-+	u32 common, value, mask;
-+
-+	sig_symb = IEEE80211_RADIOTAP_EHT_USIG2_MU_B11_B15_EHT_SIG_SYMBOLS;
-+	punc = IEEE80211_RADIOTAP_EHT_USIG2_MU_B3_B7_PUNCTURED_INFO;
-+
-+	common = __le32_to_cpu(ppdu_info->usig.common);
-+	value = __le32_to_cpu(ppdu_info->usig.value);
-+	mask = __le32_to_cpu(ppdu_info->usig.mask);
-+
-+	common |= ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				      HAL_RX_USIG_MU_INFO0_RX_INTEG_CHECK_PASS,
-+				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BAD_USIG_CRC);
-+
-+	value |= IEEE80211_RADIOTAP_EHT_USIG1_MU_B20_B24_DISREGARD |
-+		 IEEE80211_RADIOTAP_EHT_USIG1_MU_B25_VALIDATE |
-+		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				     HAL_RX_USIG_MU_INFO0_PPDU_TYPE_COMP_MODE,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B0_B1_PPDU_TYPE) |
-+		 IEEE80211_RADIOTAP_EHT_USIG2_MU_B2_VALIDATE |
-+		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				     HAL_RX_USIG_MU_INFO0_PUNC_CH_INFO,
-+				     punc) |
-+		 IEEE80211_RADIOTAP_EHT_USIG2_MU_B8_VALIDATE |
-+		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				     HAL_RX_USIG_MU_INFO0_EHT_SIG_MCS,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B9_B10_SIG_MCS) |
-+		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				     HAL_RX_USIG_MU_INFO0_NUM_EHT_SIG_SYM,
-+				     sig_symb) |
-+		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				     HAL_RX_USIG_MU_INFO0_CRC,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B16_B19_CRC) |
-+		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
-+				     HAL_RX_USIG_MU_INFO0_TAIL,
-+				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B20_B25_TAIL);
-+
-+	mask |= IEEE80211_RADIOTAP_EHT_USIG1_MU_B20_B24_DISREGARD |
-+		IEEE80211_RADIOTAP_EHT_USIG1_MU_B25_VALIDATE |
-+		IEEE80211_RADIOTAP_EHT_USIG2_MU_B0_B1_PPDU_TYPE |
-+		IEEE80211_RADIOTAP_EHT_USIG2_MU_B2_VALIDATE |
-+		punc |
-+		IEEE80211_RADIOTAP_EHT_USIG2_MU_B8_VALIDATE |
-+		IEEE80211_RADIOTAP_EHT_USIG2_MU_B9_B10_SIG_MCS |
-+		sig_symb |
-+		IEEE80211_RADIOTAP_EHT_USIG2_MU_B16_B19_CRC |
-+		IEEE80211_RADIOTAP_EHT_USIG2_MU_B20_B25_TAIL;
-+
-+	ppdu_info->usig.common = cpu_to_le32(common);
-+	ppdu_info->usig.value = cpu_to_le32(value);
-+	ppdu_info->usig.mask = cpu_to_le32(mask);
-+}
-+
-+static void
-+ath12k_dp_mon_hal_rx_parse_u_sig_hdr(const struct hal_mon_usig_hdr *usig,
-+				     struct hal_rx_mon_ppdu_info *ppdu_info)
-+{
-+	const struct hal_mon_usig_cmn *usig_cmn = &usig->cmn;
-+	u8 comp_mode;
-+	bool ap_ppdu;
-+
-+	ppdu_info->eht_usig = true;
-+
-+	ath12k_dp_mon_hal_rx_parse_u_sig_cmn(&usig->cmn, ppdu_info);
-+
-+	ap_ppdu = le32_get_bits(usig_cmn->info0, HAL_RX_USIG_CMN_INFO0_UL_DL);
-+	comp_mode = le32_get_bits(usig->non_cmn.mu.info0,
-+				  HAL_RX_USIG_MU_INFO0_PPDU_TYPE_COMP_MODE);
-+
-+	if (comp_mode == 0 && ap_ppdu)
-+		ath12k_dp_mon_hal_rx_parse_u_sig_tb(&usig->non_cmn.tb, ppdu_info);
-+	else
-+		ath12k_dp_mon_hal_rx_parse_u_sig_mu(&usig->non_cmn.mu, ppdu_info);
-+}
-+
- static enum hal_rx_mon_status
- ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 				  struct ath12k_mon_data *pmon,
-@@ -774,6 +958,9 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
- 		return HAL_RX_MON_STATUS_MSDU_END;
- 	case HAL_RX_MPDU_END:
- 		return HAL_RX_MON_STATUS_MPDU_END;
-+	case HAL_PHYRX_GENERIC_U_SIG:
-+		ath12k_dp_mon_hal_rx_parse_u_sig_hdr(tlv_data, ppdu_info);
-+		break;
- 	case HAL_DUMMY:
- 		return HAL_RX_MON_STATUS_BUF_DONE;
- 	case HAL_RX_PPDU_END_STATUS_DONE:
-@@ -971,7 +1158,23 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
- 		rxs->ampdu_reference = ampdu_id;
- 	}
- 
--	if (ppduinfo->he_mu_flags) {
-+	if (ppduinfo->eht_usig) {
-+		struct ieee80211_radiotap_tlv *tlv;
-+		struct ieee80211_radiotap_eht_usig *usig;
-+		u16 len = sizeof(*usig);
-+
-+		rxs->flag |= RX_FLAG_RADIOTAP_TLV_AT_END;
-+		rxs->encoding = RX_ENC_EHT;
-+
-+		skb_reset_mac_header(mon_skb);
-+
-+		tlv = skb_push(mon_skb, sizeof(*tlv) + len);
-+		tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT_USIG);
-+		tlv->len = cpu_to_le16(len);
-+
-+		usig = (struct ieee80211_radiotap_eht_usig *)tlv->data;
-+		*usig = ppduinfo->usig;
-+	} else if (ppduinfo->he_mu_flags) {
- 		rxs->flag |= RX_FLAG_RADIOTAP_HE_MU;
- 		rxs->encoding = RX_ENC_HE;
- 		ptr = skb_push(mon_skb, sizeof(struct ieee80211_radiotap_he_mu));
+ 	case HAL_RX_PPDU_START_USER_INFO:
+ 		ath12k_dp_mon_hal_rx_parse_user_info(tlv_data, userid, ppdu_info);
+ 		break;
 diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index 96954b2f7ca6..2da16f27e76c 100644
+index 765b53741861..445d1c33b41f 100644
 --- a/drivers/net/wireless/ath/ath12k/hal_rx.h
 +++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -235,6 +235,8 @@ struct hal_rx_mon_ppdu_info {
- 	bool is_ampdu;
- 	u8 medium_prot_type;
- 	bool ppdu_continuation;
-+	bool eht_usig;
-+	struct ieee80211_radiotap_eht_usig usig;
- };
+@@ -683,6 +683,14 @@ struct hal_rx_resp_req_info {
+ #define HAL_RX_MPDU_ERR_MPDU_LEN		BIT(6)
+ #define HAL_RX_MPDU_ERR_UNENCRYPTED_FRAME	BIT(7)
  
- #define HAL_RX_PPDU_START_INFO0_PPDU_ID			GENMASK(15, 0)
-@@ -678,6 +680,64 @@ enum nl80211_he_ru_alloc ath12k_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
- 	return ret;
- }
- 
-+enum hal_eht_bw {
-+	HAL_EHT_BW_20,
-+	HAL_EHT_BW_40,
-+	HAL_EHT_BW_80,
-+	HAL_EHT_BW_160,
-+	HAL_EHT_BW_320_1,
-+	HAL_EHT_BW_320_2,
-+};
++#define HAL_RX_PHY_CMN_USER_INFO0_GI		GENMASK(17, 16)
 +
-+#define HAL_RX_USIG_CMN_INFO0_PHY_VERSION	GENMASK(2, 0)
-+#define HAL_RX_USIG_CMN_INFO0_BW		GENMASK(5, 3)
-+#define HAL_RX_USIG_CMN_INFO0_UL_DL		BIT(6)
-+#define HAL_RX_USIG_CMN_INFO0_BSS_COLOR		GENMASK(12, 7)
-+#define HAL_RX_USIG_CMN_INFO0_TXOP		GENMASK(19, 13)
-+#define HAL_RX_USIG_CMN_INFO0_DISREGARD		GENMASK(25, 20)
-+#define HAL_RX_USIG_CMN_INFO0_VALIDATE		BIT(26)
-+
-+struct hal_mon_usig_cmn {
++struct hal_phyrx_common_user_info {
++	__le32 rsvd[2];
 +	__le32 info0;
++	__le32 rsvd1;
 +} __packed;
 +
-+#define HAL_RX_USIG_TB_INFO0_PPDU_TYPE_COMP_MODE	GENMASK(1, 0)
-+#define HAL_RX_USIG_TB_INFO0_VALIDATE			BIT(2)
-+#define HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_1		GENMASK(6, 3)
-+#define HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_2		GENMASK(10, 7)
-+#define HAL_RX_USIG_TB_INFO0_DISREGARD_1		GENMASK(15, 11)
-+#define HAL_RX_USIG_TB_INFO0_CRC			GENMASK(19, 16)
-+#define HAL_RX_USIG_TB_INFO0_TAIL			GENMASK(25, 20)
-+#define HAL_RX_USIG_TB_INFO0_RX_INTEG_CHECK_PASS	BIT(31)
-+
-+struct hal_mon_usig_tb {
-+	__le32 info0;
-+} __packed;
-+
-+#define HAL_RX_USIG_MU_INFO0_PPDU_TYPE_COMP_MODE	GENMASK(1, 0)
-+#define HAL_RX_USIG_MU_INFO0_VALIDATE_1			BIT(2)
-+#define HAL_RX_USIG_MU_INFO0_PUNC_CH_INFO		GENMASK(7, 3)
-+#define HAL_RX_USIG_MU_INFO0_VALIDATE_2			BIT(8)
-+#define HAL_RX_USIG_MU_INFO0_EHT_SIG_MCS		GENMASK(10, 9)
-+#define HAL_RX_USIG_MU_INFO0_NUM_EHT_SIG_SYM		GENMASK(15, 11)
-+#define HAL_RX_USIG_MU_INFO0_CRC			GENMASK(20, 16)
-+#define HAL_RX_USIG_MU_INFO0_TAIL			GENMASK(26, 21)
-+#define HAL_RX_USIG_MU_INFO0_RX_INTEG_CHECK_PASS	BIT(31)
-+
-+struct hal_mon_usig_mu {
-+	__le32 info0;
-+} __packed;
-+
-+union hal_mon_usig_non_cmn {
-+	struct hal_mon_usig_tb tb;
-+	struct hal_mon_usig_mu mu;
-+};
-+
-+struct hal_mon_usig_hdr {
-+	struct hal_mon_usig_cmn cmn;
-+	union hal_mon_usig_non_cmn non_cmn;
-+} __packed;
-+
- void ath12k_hal_reo_status_queue_stats(struct ath12k_base *ab,
- 				       struct hal_tlv_64_hdr *tlv,
- 				       struct hal_reo_status *status);
+ #define HAL_RX_EHT_SIG_NDP_CMN_INFO0_SPATIAL_REUSE	GENMASK(3, 0)
+ #define HAL_RX_EHT_SIG_NDP_CMN_INFO0_GI_LTF		GENMASK(5, 4)
+ #define HAL_RX_EHT_SIG_NDP_CMN_INFO0_NUM_LTF_SYM	GENMASK(8, 6)
 -- 
 2.34.1
 
