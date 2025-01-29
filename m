@@ -4,74 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5777C0218D
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 16:59:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BA95C02193
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 17:04:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=yI14DNCfIlRuCxZ886YFaQ2/UtcUwqmz1COfGxdJOeo=; b=KRJPMrnSKf7xNZNAXY1bpN9loD
-	PrWCdDrS0fG604pGRUPqb2Md5h5MVDsIvufgGhojSRXtkUg0Ww3dvxylSmotWct1rkVQoYi1Plmh5
-	PDkyh0Zz5uU5GblN/u2+khBu+Gcy+Vl+8JUtfdveb0PaBGzQZugV/nQKtpIsnXHfJkCMGJ2cJZ88Z
-	CzPNYLNA6KUPIUmR4mB2epk4pDCrxcLR1U4C+klLCuFGGgX8bB+H0n2DmD5nQ2Pfl5/CGRWfHLPQB
-	a+YuOHuHNmlUd7tu+2N6X/RCwyHwokrV9ioJ17TQC65gVfIeWv9X8NANVibZHJFU6wdvwoZrEz6Cg
-	efOT898g==;
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=cCYxhKn4B4q2UzXNaKibV8fc0rPbgSiq2cv6hbxdtdo=; b=qX2WeZrQRtV3N8eN/T67utdw1n
+	3NL/Rq1VmM53s92TBmVdA5aC3w7BhWjiWRsT1TEtVwQN4jeJeXQ1U3docs6rfdPd5pYDg5czleqPZ
+	OaTp2nKe3cgSCwWF9GEYEh1HaOzDHqfaGU085dTvzKMfsBbKGVSnbyeA5EkPCzrVwbePmCG7vM4L8
+	fe7Zcv7gATBASYMVUuugnl7uGbzMBMt/itGI2mzq/6hjCv85BVVTBbF39uKhd5uNJGYKrePmuLmYR
+	aSvVnmYw/2bp6wYAxp/Rw3lcjSLzzxyL9QDOa68E8x1nklIj83/QsEobom4tGM/GUk3bHt9c8q+r2
+	3d3u6mSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdBPT-00000007RdN-1Kup
+	id 1tdBTs-00000007S17-1KMQ
 	for ath12k@archiver.kernel.org;
-	Wed, 29 Jan 2025 16:59:27 +0000
-Received: from e3i103.smtp2go.com ([158.120.84.103])
+	Wed, 29 Jan 2025 17:04:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdBPQ-00000007RbZ-1jyc
+	id 1tdBTp-00000007S0N-2wq8
 	for ath12k@lists.infradead.org;
-	Wed, 29 Jan 2025 16:59:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=smtpservice.net;
- i=@smtpservice.net; q=dns/txt; s=a1-4; t=1738169953; h=feedback-id :
- x-smtpcorp-track : date : message-id : to : subject : from : reply-to
- : sender : list-unsubscribe : list-unsubscribe-post;
- bh=yI14DNCfIlRuCxZ886YFaQ2/UtcUwqmz1COfGxdJOeo=;
- b=kBuLg8CkxaHJjnIZU8u2ftsZ7ll6McbFne4bfmLGQaVpxzNOew2oCDJSrJZR8JUoLIL+e
- 6+IkrsQug5u/nxZ5Wh561piqoKxqkaWepQ7BFD5UOrYuRTWwxXLp9qQubdqG6F7fNxpp4B6
- gBJ9wQmBHhuEO5h6XCiCH+B83Mh614q/ap6/s7sX+XjkqXJbpV/K0mGhWDa8j8fSZhzHKHH
- xzUFA/s9l3hjn+5b1CcGI3VnuqPOjRnx19/Cr277yzmINbl/6TdR2xDg7qlj82QrvcAd/GH
- dYHFZvmRlNb8IHUYLDBbakOB+g4WXU3LgdTKkQEVe9ed8Fy6Qxmni6Qm6shA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=triplefau.lt;
- i=@triplefau.lt; q=dns/txt; s=s510616; t=1738169953; h=from : subject
- : to : message-id : date;
- bh=yI14DNCfIlRuCxZ886YFaQ2/UtcUwqmz1COfGxdJOeo=;
- b=gWZFAFxYD/fo6M8JWRz0TZL7Scg93zIj5uggzf/+Q2HXk9nBZEzXhdsP/C9QtfaL0d66F
- lnf0BgdMr7zmsitMTPuYABdM566yXwAGYVQX0XXdF2tgs3fe4n+2AomMZ3ldbKC+yqzWriH
- oFFU5hbDWBgmqk/RaNnpQTrOrxwrIIePiOX/JhDMy8U+Mn0SGvnuWf5tmam0YcjUFyH3vUi
- LNeDXYszTAjuNygaJAXP5SWHCi7iv90pnAC1ewrKGX3IKwn532l0NF+R+bHKjDuO0V4g/wj
- JJe3ruwWaGlIkwghPR12JM6WqbumXI0E+h55/ZtuEsI3QB7ajQmw9IzXBn4Q==
-Received: from [10.12.239.196] (helo=localhost)
-	by smtpcorp.com with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.97.1-S2G)
-	(envelope-from <repk@triplefau.lt>)
-	id 1tdBP9-FnQW0hPzWk4-mJHD;
-	Wed, 29 Jan 2025 16:59:07 +0000
-From: Remi Pommarel <repk@triplefau.lt>
-To: ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: Kalle Valo <kvalo@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Remi Pommarel <repk@triplefau.lt>
-Subject: [PATCH v2] wifi: ath12k: remove return for empty tx bitrate in mac_op_sta_statistics
-Date: Wed, 29 Jan 2025 17:55:17 +0100
-Message-Id: <38c2a7c4f7eaf57b9306bb95a9e6c42b7d987e05.1738169458.git.repk@triplefau.lt>
-X-Mailer: git-send-email 2.40.0
+	Wed, 29 Jan 2025 17:03:58 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50TAVWru020067
+	for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 17:03:57 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	cCYxhKn4B4q2UzXNaKibV8fc0rPbgSiq2cv6hbxdtdo=; b=QRtBsHptoKTvmVGi
+	uVsXVo6pAu3mxOeC8ThgGvf4mIUNB3DXAkS6l8P/ELivSHxldVEUVOPyEPLhwIz0
+	FXxIUYKEy9ZzXl47mZra+RtKspygzEGa7HwbQikLjNyrkQUH36Ei5+MZopuxouAg
+	7qqilGHWziLoUSgMryr6h7P35nYgjH+eRtpba88gI+0MI52CIyk31tO/5kzJqpj0
+	CVUuCZtoD1R2vR7RmiDfjFaqYpyb5ULcWoz7KartSFLTdasqEHg0kbpe4cixTfjK
+	Tflyma79gcR0UBQURhZgKSpc58/OZt/OohgO2NHvL2sKfTLuOTRPk6OZQNC0UlOh
+	/mVx6Q==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ff33s624-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 17:03:56 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2ef9e38b0cfso13638818a91.0
+        for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 09:03:56 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738170236; x=1738775036;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=cCYxhKn4B4q2UzXNaKibV8fc0rPbgSiq2cv6hbxdtdo=;
+        b=SSbcbwXSFAJupA8DXgEV9/oOF3ObBIV13ZLGHtkzAgl9LN6+JmGh13Dgt1B7AgMBaD
+         wSKOBOpufLTv6mmB7Jz6zVMZXqgF2rHwWXg+U0jVWyXzMDf+6nd21XPmcsR4hPTHFVBI
+         q4jqsPBTlfppoWdXXBkJBo/UDTYBui5olRCOCfR3T2IEkv5RBuEJow1+k4l5jdM4qL6T
+         IjAh/JK/nsJJ/VYUdWp/aetBXx4n/uoJLhxYbS81qASJIMuyp3jugB4KhSF+VxfPIQIO
+         xBzP24FKrizTSi1yhlTLSYxkaBwg8Q/DNKDhRdyfFHTAwO2vK9atl+e6d2EDISLpgDLT
+         lYww==
+X-Gm-Message-State: AOJu0YxwF2EYBLkWvMyKqBd74/L1mK7PWlplawizX0n5Mg3uu1faWKks
+	hoN6jdKyUjiMI1dh7x6rlzpa5qvwrfKf15slg+EK4GTHbaPvJVIlNvKrxWA5+bAW70fTD1XWM4d
+	+SOGOkSckRazD3Dhc8NY51ewDy06TP4NCjg6QkB4U+Yw2ZyKBfqGAAEauJaXf
+X-Gm-Gg: ASbGncswmwC9IitjmLXpSJWJdESnC6dp682aY9TOj2UNddnrYfnOeGFIsCvlHyDn0FL
+	DEMa4THxYuD5vhVwspu/w+UdNK5kDqw4mqw4GmuSkrAPMVCJJyoVcnsc7MgwFQMW2ooBAnF9I4N
+	yE1Cb+fU1YDGGbdjLG9rDZqQ41mm4LFKXbBQEVUFbNQkShi0g3FKQOA0HT27Pu3ekLpSNcJ7kOb
+	T7zRUAm8jVRrSBMWgpkMYZ7fbVOpOBHOZjq2gpoQxCEzvwCAdwJvsffeiF85ktqJFKrDnm97CYr
+	hhXJ+D94Ui6ieWzJhkjQAl6b0X0MM1UFQeyAMKJAfA==
+X-Received: by 2002:a17:90b:2585:b0:2ee:accf:9685 with SMTP id 98e67ed59e1d1-2f83abac617mr5297414a91.4.1738170235864;
+        Wed, 29 Jan 2025 09:03:55 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFrCpglI/oFl5t78dPoQSEwQUu3I5D99R137n8Ay4Pl8j1UVbu6nUQdGuNOrFSDImafbQPXMg==
+X-Received: by 2002:a17:90b:2585:b0:2ee:accf:9685 with SMTP id 98e67ed59e1d1-2f83abac617mr5297381a91.4.1738170235484;
+        Wed, 29 Jan 2025 09:03:55 -0800 (PST)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f83be3622bsm1988366a91.46.2025.01.29.09.03.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 29 Jan 2025 09:03:55 -0800 (PST)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, Aaradhana Sahu <quic_aarasahu@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20250116032835.118397-1-quic_aarasahu@quicinc.com>
+References: <20250116032835.118397-1-quic_aarasahu@quicinc.com>
+Subject: Re: [PATCH] wifi: ath12k: Fetch regdb.bin file from board-2.bin
+Message-Id: <173817023483.726123.2294052678769953649.b4-ty@oss.qualcomm.com>
+Date: Wed, 29 Jan 2025 09:03:54 -0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Report-Abuse: Please forward a copy of this message, including all headers, to <abuse-report@smtp2go.com>
-Feedback-ID: 510616m:510616apGKSTK:510616sIr91F9xb_
-X-smtpcorp-track: A6r6iXVkFCWS.u1retUt8DZAu.cnX2UAfla6s
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
+X-Proofpoint-ORIG-GUID: EIW-wQ_SbZxemNRx1YbNIjhqZ5fweeOb
+X-Proofpoint-GUID: EIW-wQ_SbZxemNRx1YbNIjhqZ5fweeOb
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-29_03,2025-01-29_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ phishscore=0 impostorscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
+ clxscore=1015 adultscore=0 priorityscore=1501 mlxlogscore=819
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501290136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250129_085924_869194_463AC82B 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20250129_090357_755276_AFF10445 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,78 +116,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently in ath12k_mac_op_sta_statistics() there is the following
-logic:
 
-    if (!arsta->txrate.legacy && !arsta->txrate.nss)
-        return;
+On Thu, 16 Jan 2025 08:58:35 +0530, Aaradhana Sahu wrote:
+> Currently, ath12k_core_fetch_regdb() finds regdb.bin file through
+> board id's but in board-2.bin file regdb.bin file is present with
+> default board id because of which regdb.bin is not fetched.
+> 
+> Add support to fetch regdb.bin file from board-2.bin through
+> default board id.
+> 
+> [...]
 
-Because ath12k_sta_statistics is used to report many info to iw wlan0 link,
-if it return for empty legacy and nss of arsta->txrate, then the other
-stats after it will not be set.
+Applied, thanks!
 
-To address this issue remove the return and instead invert the logic to set
-the txrate logic if (arsta->txrate.legacy || arsta->txrate.nss).
+[1/1] wifi: ath12k: Fetch regdb.bin file from board-2.bin
+      commit: 24f587572acf7509127dbdfcbf1b681ef84eeba0
 
-The same was done also in both ath10k with commit 1cd6ba8ae33e ("ath10k:
-remove return for NL80211_STA_INFO_TX_BITRATE") and ath11k as well with
-commit 1d795645e1ee ("ath11k: remove return for empty tx bitrate in
-mac_op_sta_statistics").
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
----
-Changes in v2:
-  - Rebase on ath-next
-
- drivers/net/wireless/ath/ath12k/mac.c | 33 +++++++++++++--------------
- 1 file changed, 16 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4fb7e235be66..e9663c6ac72c 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10170,23 +10170,22 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 	sinfo->tx_duration = arsta->tx_duration;
- 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_DURATION);
- 
--	if (!arsta->txrate.legacy && !arsta->txrate.nss)
--		return;
--
--	if (arsta->txrate.legacy) {
--		sinfo->txrate.legacy = arsta->txrate.legacy;
--	} else {
--		sinfo->txrate.mcs = arsta->txrate.mcs;
--		sinfo->txrate.nss = arsta->txrate.nss;
--		sinfo->txrate.bw = arsta->txrate.bw;
--		sinfo->txrate.he_gi = arsta->txrate.he_gi;
--		sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
--		sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
--		sinfo->txrate.eht_gi = arsta->txrate.eht_gi;
--		sinfo->txrate.eht_ru_alloc = arsta->txrate.eht_ru_alloc;
--	}
--	sinfo->txrate.flags = arsta->txrate.flags;
--	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
-+	if (arsta->txrate.legacy || arsta->txrate.nss) {
-+		if (arsta->txrate.legacy) {
-+			sinfo->txrate.legacy = arsta->txrate.legacy;
-+		} else {
-+			sinfo->txrate.mcs = arsta->txrate.mcs;
-+			sinfo->txrate.nss = arsta->txrate.nss;
-+			sinfo->txrate.bw = arsta->txrate.bw;
-+			sinfo->txrate.he_gi = arsta->txrate.he_gi;
-+			sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
-+			sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
-+			sinfo->txrate.eht_gi = arsta->txrate.eht_gi;
-+			sinfo->txrate.eht_ru_alloc = arsta->txrate.eht_ru_alloc;
-+		}
-+		sinfo->txrate.flags = arsta->txrate.flags;
-+		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
-+	}
- 
- 	/* TODO: Use real NF instead of default one. */
- 	signal = arsta->rssi_comb;
+Best regards,
 -- 
-2.40.0
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
 
