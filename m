@@ -4,94 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0E92C0218D
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 19:30:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B685C0218D
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 23:52:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=t5zAxQbACyM6wJZKsUBJnL/IIfNHWJKjt9GVA+vzAyg=; b=HNgkWVoE4anvM0a/HVBGvvQu1T
-	8zBm0mrPh77877kZePemzTKeumKRFEdxtyYmIA6Y4QElbM1IuUKf1TzK18XnbPKbREY76FpR2CRAr
-	n4iftgP6cPhVKHhCzeDuAf3d/hr8SmvuxlqQ0W7IhP8wh4Ezcz9R9rBDuv2xYwFkqKboccXjtg7V1
-	I6uVMHyYi8geM4/9tlFKElvV4pCBhHGqKWoZn/4iMIw/Zvgeqou//xO1DzWHemlLiQIiJL9348f8d
-	3TsJD29lFkr4Son8JAb2fq9hl176ZR+Dg5yIC6RSgwCbpEzztj8dBXJKPFAJlp5P9O5+dBkILbm9L
-	f5+KUOJQ==;
+	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=clcrYXE/xU0IeSxr30zaRsk0pTGNb4h/2PI2joNP4us=; b=G20YpVCEZYceskvEgAYb8SslIg
+	elyymv3BG3zv1U+tf3tUln3L/4+bM810Rsh2HySTWCLU+3j290tcLReDhEAWi8uFOzeFiidFPCRzB
+	PAOu/cUXrhp6v69msaHn/OYvEsIjQC6YTwEwUnJsHILq4t1hoC8AvVmFzaYSIzPAWUSm8HBpnjQeX
+	tLnJTotG66KC/46qzqgppLzT4tFpr+lcqh5kocjvd/XYUdoJPp6l9G6NOPzL8RYEoT4g9jNEFQPQn
+	UFoyh2iZs6axrxToL+KH8wytAuw6/fUlAeuTJhHbLfNq9VVGBCQj2BUk/BonNBz4m0l+a/CfB/eqZ
+	4tZaz10w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdDm3-00000007gSy-2m6g
+	id 1tdHrO-00000007yil-46wj
 	for ath12k@archiver.kernel.org;
-	Wed, 29 Jan 2025 19:30:55 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 29 Jan 2025 23:52:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdDm1-00000007gSK-0LKV
+	id 1tdHrL-00000007yhv-3qGI
 	for ath12k@lists.infradead.org;
-	Wed, 29 Jan 2025 19:30:54 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50TIXMlL021413;
-	Wed, 29 Jan 2025 19:30:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	Wed, 29 Jan 2025 23:52:41 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50TEqq6p004782
+	for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 23:52:38 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	t5zAxQbACyM6wJZKsUBJnL/IIfNHWJKjt9GVA+vzAyg=; b=QvrfNZf3nGy+eCnN
-	DS7CTA53hjEvBElynFWStcHokhLknjCKymaIwr/SkAxK+03qowW41dreFzsEBG0a
-	gy4GQ4Z70oIZKEMLY2i+wIQe0dBFlJfz7eDJORkP4XDJozoN6Bf85QN85XgQErIR
-	77S3GI+OGhr9egvX9OkfmkO3Vefe72zFWXY85SYFo20vzZmmzEo9FO/FjUDnjR7V
-	7S9d/ykC0g9+30bRpQS//291nlQ09A0o6GnO1KuTLuAxKh5fjJavCsSt3Bv3OcrB
-	o7UIMrtJSlL517Mj7D/1l2QjpG5vXTNYd6bt1EBr40e1THvPWY66uAwb+4FIaJvl
-	+1tRrQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44fsq285ds-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 19:30:50 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50TJUnLA018036
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 19:30:49 GMT
-Received: from [10.227.108.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 29 Jan
- 2025 11:30:48 -0800
-Message-ID: <dedfdb8e-c5b4-42fa-bd76-ca866ab1cf41@quicinc.com>
-Date: Wed, 29 Jan 2025 11:30:47 -0800
+	clcrYXE/xU0IeSxr30zaRsk0pTGNb4h/2PI2joNP4us=; b=SKkVnpa0SFS/X8uL
+	8AEQ506NSNtJJlcahD1DRCh0UAwcA9oL5B2a7BI3+kAfwy4lir5a6BiyBUjnmEhW
+	eclA35H+jjsIN8S5VFdKihIHIKEfsvfTOGxIwLzYo4++vCRkLR6h4TLc+NVpv/YJ
+	xKwK+xoNNmbC1zeY6/SDCCi6P58XbWggeT3rjum+q2KReHSn2XteVGEFI6zyJ9aF
+	a9QYoB5WfmBFHhNxHfPDEdA1KVMaZPownQA1oNoduMLzr1Y8xg3qt7XLNpwxjDfZ
+	0bRsR/CslTpbv0yUvJe8U6lhzFBpDZ+VNgOv5VkJ49RXBAst2Nwf/Bv0jfbv5vdU
+	iTuEsQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44fpfu96gr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 23:52:38 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2166f9f52fbso5124595ad.2
+        for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 15:52:38 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738194757; x=1738799557;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=clcrYXE/xU0IeSxr30zaRsk0pTGNb4h/2PI2joNP4us=;
+        b=guZAWzJ+7s8PMYNPJwSxRaSLBuiSpIHVpHkSb7IRhYIj1XgqsEkdGnqH+cv5L9oFW5
+         4wt5SR2aO82XMNV6Iiog1f6Wwu9rJZIL9ERz6146kgDFcBZcbaC8C26AQpis7BBIVoS7
+         zOYmyRABja+0jPGzV5Yet4ExdhZnCzraADX2Q7O/5oPpOKMAQ2I8Gq8pIot62qDJ7fqE
+         p9Y+AmAY/5a025ZUN7fnaV8qPb7ROL4IBc9Qu+/JOKoWamr3uUkpty7EWEo0tkjbJ/vF
+         Mez2j2ZdUU1XPR+k6a9fsMVtV6RTuhL+XyW4CFl9p5mngkJWR9r7QmbswbwhhoqHhInO
+         MeTA==
+X-Forwarded-Encrypted: i=1; AJvYcCXP38y9SWAxovNfK4gns41skOz8XBdrmKGehRxJAyLYud21M2Jb/fFTV0TG/m2vjNQpu+sh7C4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YydqA8gEAWs2uAyCa10xhZzgCd/6qMIokmI5jidZU1NDefOMNG6
+	cLPsTYJRDgbZ+n2EcUHeSDzbr7wUuL0tmc2/hW67yADYD7pzBRyKKjy2ewF6Ld9VLR53Ilv2pZZ
+	AvfQ5uYpaojiwt6MfHB+I95T5uezoRazJF37x+IwnGXVUw2RG9u/+p6tLdyte
+X-Gm-Gg: ASbGncu8Y4Wz8CUNuQTV7Om5Ex7Hlgh3oLLSTa5RIQQ+FT4mcaybKAv3FSjLvMEEipr
+	/9kz7Lm8ppF50PY8/qbxuF++kU9dXfojI8y5S0jSGk3eJQ4YERmCWhUsGiDSpejukcK5seDypoO
+	dO9jrV+qbYy6yUJwarBQUs0ptSBOGv6hvJv+ad7YyylNe8zjwQk4A2GCpPFJdyOKy2uX0PCdfj+
+	g8BCuohe2KhMLwOysQR6C5TrrBEPRRBRbfCXwRM6o3W0WEcDgM/3fTzGbOX/gcaEaM9UiaoPsK7
+	kq5tumzmG/ncGz898qfPociMKDslu7MkzYrnb37mLd4tn0wsDNDodhTNNY7wwqg6aeKOQyCClQ=
+	=
+X-Received: by 2002:a17:903:41c3:b0:215:b190:de6 with SMTP id d9443c01a7336-21dd7c49786mr60956235ad.3.1738194757426;
+        Wed, 29 Jan 2025 15:52:37 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH3H4vVJC6rZ3Hk1xg9tDfL6qJSIWM/KCIRVVCxKy7dxe20bT08UxAnmPL52QeNr66mrIGgFA==
+X-Received: by 2002:a17:903:41c3:b0:215:b190:de6 with SMTP id d9443c01a7336-21dd7c49786mr60955995ad.3.1738194757013;
+        Wed, 29 Jan 2025 15:52:37 -0800 (PST)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21de32eda31sm1617855ad.109.2025.01.29.15.52.36
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 29 Jan 2025 15:52:36 -0800 (PST)
+Message-ID: <85216244-8348-4fc0-957d-6ffbcbcdb28b@oss.qualcomm.com>
+Date: Wed, 29 Jan 2025 15:52:35 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9 6/9] wifi: ath12k: add support for setting fixed HE
- rate/GI/LTF
-To: <mbizon@freebox.fr>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Muna Sinada <quic_msinada@quicinc.com>,
-        Jeff Johnson <quic_jjohnson@quicinc.com>
-References: <20250114003813.2783550-1-quic_pradeepc@quicinc.com>
- <20250114003813.2783550-7-quic_pradeepc@quicinc.com>
- <f5c6d874e9d7682d52c5ed107a0ede952b5cf53f.camel@freebox.fr>
- <5861c953-436e-4f36-ae8b-5ef52fceb3b6@quicinc.com>
- <2aba18dc3448b5a60a1a06b33fa591e562927693.camel@freebox.fr>
- <961df6e7-0b5c-4972-9324-5c4d430cb172@quicinc.com>
- <54d456f00aa8a806768099df55dc9f2ef734209b.camel@freebox.fr>
+Subject: Re: [PATCH v2 1/5] wifi: ath11k: refactor transmitted arvif retrieval
+To: aloka.dixit@oss.qualcomm.com, ath11k@lists.infradead.org,
+        ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
+References: <20250119052250.3488343-1-aloka.dixit@oss.qualcomm.com>
+ <20250119052250.3488343-2-aloka.dixit@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-In-Reply-To: <54d456f00aa8a806768099df55dc9f2ef734209b.camel@freebox.fr>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+In-Reply-To: <20250119052250.3488343-2-aloka.dixit@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: fhCo870AM7CgWl2gZkp4MvPBHhtAzAOG
-X-Proofpoint-GUID: fhCo870AM7CgWl2gZkp4MvPBHhtAzAOG
+X-Proofpoint-GUID: FLdQLVbbyjjtYJ75ZM9GxlehrrzDE5LT
+X-Proofpoint-ORIG-GUID: FLdQLVbbyjjtYJ75ZM9GxlehrrzDE5LT
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-29_04,2025-01-29_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxlogscore=999
- spamscore=0 clxscore=1015 impostorscore=0 malwarescore=0
- priorityscore=1501 phishscore=0 suspectscore=0 mlxscore=0 adultscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501290151
+ definitions=2025-01-29_05,2025-01-29_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ mlxlogscore=771 impostorscore=0 suspectscore=0 clxscore=1015 mlxscore=0
+ malwarescore=0 priorityscore=1501 phishscore=0 bulkscore=0 adultscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501290181
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250129_113053_256321_B5B6EEC2 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20250129_155239_973594_F7E13448 
+X-CRM114-Status: GOOD (  10.44  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,47 +119,43 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 1/18/2025 9:22 PM, aloka.dixit@oss.qualcomm.com wrote:
 
+...
 
-On 1/28/2025 11:13 AM, Maxime Bizon wrote:
-> 
-> On Tue, 2025-01-28 at 10:44 -0800, Pradeep Kumar Chitrapu wrote:
-> 
-> 
-> Hello,
-> 
-> 
->> Currently default is configured as FORCE_SGI
-> 
-> "Currently" with or without your patch applied ?
-> 
->  From my perspective:
->   - without your patch: DEFAULT_SGI
->   - with your patch applied, no fixed rate: FORCE_SGI
->   - with your patch applied, fixed rates: user decides
-> 
-Hi Maxime
+> @@ -1538,7 +1546,7 @@ static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
+>  	u32 params = 0;
+>  	u8 i = 0;
+>  
+> -	tx_arvif = ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
+> +	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+>  
+>  	beacons = ieee80211_beacon_get_template_ema_list(tx_arvif->ar->hw,
+>  							 tx_arvif->vif, 0);
+> @@ -1597,7 +1605,7 @@ static int ath11k_mac_setup_bcn_tmpl_mbssid(struct ath11k_vif *arvif)
+>  	int ret;
+>  
+>  	if (vif->mbssid_tx_vif) {
 
-Yes, your understanding is correct..
+can/should we remove this test since ath11k_mac_get_tx_arvif() already does
+this test? note ath11k_control_beaconing() removes the test
 
-This is detailed explanation.
+> -		tx_arvif = ath11k_vif_to_arvif(vif->mbssid_tx_vif);
+> +		tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+>  		if (tx_arvif != arvif) {
+>  			ar = tx_arvif->ar;
+>  			ab = ar->ab;
+...
+> @@ -1701,9 +1709,7 @@ static void ath11k_control_beaconing(struct ath11k_vif *arvif,
+>  
+>  	ether_addr_copy(arvif->bssid, info->bssid);
+>  
+> -	if (arvif->vif->mbssid_tx_vif)
+> -		tx_arvif = ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
+> -
+> +	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+>  	ret = ath11k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+>  				 arvif->bssid,
+>  				 tx_arvif ? tx_arvif->bssid : NULL,
 
-In 11n, 11ac, the supported Guard intervals are
-0.4usGI (Short GI)  - enum value used for this in firmware  - 1
-0.8usGI (Long GI)   - enum value used for this in firmware  - 0
-
-If peer support SGI, param_value 1 is sent to firmware where firmware 
-switches between SGI/LGI based on packet error rate. This param value 1
-corresponds to NL80211_TXRATE_FORCE_SGI in nl80211.
-
-If user overrides this by setting default GI specifically, then we will 
-override this config to send enum 0 to use LGI always irrespective of 
-PER in firmware. Using SGI would slightly give a better throughput.
-
-FW uses 0.8us GI by default for 11ax and 11be.
-
-Hope this helps!
-
-Thanks
-Pradeep
 
