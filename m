@@ -4,91 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A271AC0218D
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 10:58:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A757CC02190
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 11:26:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=roWngbSOhtQOU/fVfUbbpykFRPB0whnuhuG0ui851sw=; b=E67LM3w9UYqmkBocThKc8t81ui
-	lVZ7f8ZDFpNvagrLFsIG2lFnmrlko4RsAfMDvnRbFw9FqFddcu6eAvB+gTEnNR+xqO8szISqBRGKH
-	D0njSlcsypF0Sg25RJfernU9m2Aruh3qMI8Xf7mh/ibZG0uwLlYOOaGAE41+X9nCgd4RfpsiucdhJ
-	oNAMfZx9l+GIKLeRmKTRn+sA+IrsKZ99k0KbK2zFHu6OIeeVub6OQ2viMviBNZQOmLUd3G5qx6jMc
-	UZPNOvhHZRediQvljEw2oo73xFi9GgH1pvs0QgHxFTtGiA/kRsjmSBwFyQ1LrVTWFk010dhKOci45
-	0llS/ONQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ze7mrcmcgGA2sAegdTKV4u6m+DscwuEWPaBYuZHuIFM=; b=snSoU4w+UQB+Gtah7R5jl5h0Bs
+	/96CmG7ngxa+cW3uzuFekWQ893lLiy10A73gbQe1cJ1j9BNGGEI2MstpzYZ2fFpDuDswzlzXRUSIV
+	R21hrRhFCe0fRAiOAb6WEiSPiR0PIQu/38Z3svGJoGcw85MNOoHjJt7Saeh/8+S9allAUtfe+4l/0
+	3RB3aDiX1LeXprC04WBX5oX1SAMclPWXIJ2QpolU1xOevVQxDDFaumD0eEdgNrErD/mTRD2oGpGcQ
+	q77xcr5J9fQF3Lpe7Y9s52k4gDSijcahznNKwjpG5vB/ptsie8SyW7MiMknPGovPGoEC1KU+4MNPQ
+	RxMWQsqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1td5mW-00000006mdz-1cOn
+	id 1td6Ct-00000006plW-1P31
 	for ath12k@archiver.kernel.org;
-	Wed, 29 Jan 2025 10:58:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 29 Jan 2025 11:26:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1td5mT-00000006mb1-41ql
+	id 1td65x-00000006p0b-1Ydp
 	for ath12k@lists.infradead.org;
-	Wed, 29 Jan 2025 10:58:51 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50T6RhVQ008649;
-	Wed, 29 Jan 2025 10:58:49 GMT
+	Wed, 29 Jan 2025 11:18:58 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50T8TQgQ028147;
+	Wed, 29 Jan 2025 11:18:56 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	roWngbSOhtQOU/fVfUbbpykFRPB0whnuhuG0ui851sw=; b=ewH8XvTiR5c48lTA
-	MMBoJaiOfEHQI0eYtXhBa86+skfWo7HvgBW/mUs/MjzCC0Vmy5LoH1NeVrTCsurX
-	42cUMUFwtLyUBjPxh249PRzmCAxaK9tIKrARXs3KklbZvkmABW9e5hM3B55rqrlH
-	s0jgsznU6XUmkW0cpa/xRHRR+Yq2DdYNvd+pLHeK6tEbNIDZlkLO39NqWKDXW/mP
-	x4BlSh310nAWxxs91Oh2YAbSDtDe5IwvDx+crAWArFxMAtoQifFDohkdhVT0Kdg5
-	tpJzw7JRUaof3+Ns8oYFQAUHkcGbx3J38SOc5zDKX4WIDTqff2THXIZztiFZAVdi
-	iVHLHA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ff33rdxq-1
+	ze7mrcmcgGA2sAegdTKV4u6m+DscwuEWPaBYuZHuIFM=; b=WaljcnQmFs8A/TO7
+	wPm74jw8r42VYVg0tiPGbP/OiqqzjQmH+xUHu/o+lKPjvO4VHSWrTPPu5RRVuyTe
+	OPowoj+Vj3qQohoZpBEezUVLnbwQzcru8GzmA0/9OtIwwInyCLsquy+NRyrpLZxz
+	HuXqTIQrsG7dY3bTvwezA1taSCBh6FA/XngtK5fIW5esOR4+UsT7Oa27vwrzGbAv
+	n35nrR7V4Ao5NiIKNPOb9E7dEgyvb3aLHPqeCmmkXlOeTrljAQaD4q3+L1M+O9UH
+	VTKvb0EG9WbN/t4+p9UW+FBwwzrO4kJVU8Oj4GpRmV/8tpxfNdpAf1dP4BwBChTB
+	krbb5Q==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44fguxg9hu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 10:58:49 +0000 (GMT)
+	Wed, 29 Jan 2025 11:18:55 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50TAwmbN001472
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50TBItl8013577
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 10:58:48 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 29 Jan 2025 02:58:45 -0800
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Karthikeyan Periyasamy
-	<quic_periyasa@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>,
-        Balamurugan Mahalingam <quic_bmahalin@quicinc.com>,
-        Vasanthakumar Thiagarajan
-	<vasanthakumar.thiagarajan@oss.qualcomm.com>
-Subject: [PATCH v6 9/9] wifi: ath12k: Add peer extended Rx statistics debugfs support
-Date: Wed, 29 Jan 2025 16:28:10 +0530
-Message-ID: <20250129105810.1094359-10-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250129105810.1094359-1-quic_periyasa@quicinc.com>
-References: <20250129105810.1094359-1-quic_periyasa@quicinc.com>
+	Wed, 29 Jan 2025 11:18:55 GMT
+Received: from [10.216.32.57] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 29 Jan
+ 2025 03:18:52 -0800
+Message-ID: <62daf3e1-171f-2079-296a-eee39c811d6e@quicinc.com>
+Date: Wed, 29 Jan 2025 16:48:49 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v6 1/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV
+ parsing support
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
+References: <20250129105810.1094359-1-quic_periyasa@quicinc.com>
+ <20250129105810.1094359-2-quic_periyasa@quicinc.com>
+From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
+In-Reply-To: <20250129105810.1094359-2-quic_periyasa@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: cUhR19_RfA--YNJRdtEfY59_CzVm2eCz
-X-Proofpoint-GUID: cUhR19_RfA--YNJRdtEfY59_CzVm2eCz
+X-Proofpoint-ORIG-GUID: OSgjAud-6jM1sNWj1rYqkTj8h0gV_XwP
+X-Proofpoint-GUID: OSgjAud-6jM1sNWj1rYqkTj8h0gV_XwP
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-28_04,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
- phishscore=0 impostorscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
- clxscore=1015 adultscore=0 priorityscore=1501 mlxlogscore=999
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ phishscore=0 adultscore=0 clxscore=1015 suspectscore=0 bulkscore=0
+ lowpriorityscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0 spamscore=0
  malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501290089
+ engine=8.19.0-2411120000 definitions=main-2501290092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250129_025850_015618_303B8831 
-X-CRM114-Status: GOOD (  27.55  )
+X-CRM114-CacheID: sfid-20250129_031857_563481_531318ED 
+X-CRM114-Status: GOOD (  19.57  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,780 +102,340 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, peer extended Rx statistics are not supported. Therefore, expose
-peer extended Rx statistics support through debugfs, allowing users to
-enable or disable the collection of statistics information. After that
-the statistics information can be dumped through debugfs. Below are the
-debugfs commands exposed.
 
-Enable/Disable:
- echo <1/0> > /sys/kernel/debug/ieee80211/phyX/ath12k/ext_rx_stats
 
-Dump:
- cat /sys/kernel/debug/ieee80211/phyX/netdev:wlanX/stations/<peer MAC addr>/rx_stats
+On 1/29/2025 4:28 PM, Karthikeyan Periyasamy wrote:
+> Currently, monitor is not enabled. However, in the future, the monitor
+> will be enabled. Therefore, add the necessary HAL_PHYRX_GENERIC_U_SIG TLV
+> parsing support in monitor Rx path, which help to populate the EHT
+> radiotap data.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+> ---
+>   drivers/net/wireless/ath/ath12k/dp_mon.c | 205 ++++++++++++++++++++++-
+>   drivers/net/wireless/ath/ath12k/hal_rx.h |  60 +++++++
+>   2 files changed, 264 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+> index 4e9a60181c06..61fd481b7a3b 100644
+> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
+> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+> @@ -10,6 +10,9 @@
+>   #include "dp_tx.h"
+>   #include "peer.h"
+>   
+> +#define ATH12K_LE32_DEC_ENC(value, dec_bits, enc_bits)	\
+> +		u32_encode_bits(le32_get_bits(value, dec_bits), enc_bits)
+> +
+>   static void
+>   ath12k_dp_mon_rx_handle_ofdma_info(const struct hal_rx_ppdu_end_user_stats *ppdu_end_user,
+>   				   struct hal_rx_user_status *rx_user_status)
+> @@ -562,6 +565,187 @@ static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *
+>   	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
+>   }
+>   
+> +static void
+> +ath12k_dp_mon_hal_rx_parse_u_sig_cmn(const struct hal_mon_usig_cmn *cmn,
+> +				     struct hal_rx_mon_ppdu_info *ppdu_info)
+> +{
+> +	u32 common;
+> +	u8 bw;
+> +
+> +	bw = le32_get_bits(cmn->info0, HAL_RX_USIG_CMN_INFO0_BW);
+> +
+> +	common = __le32_to_cpu(ppdu_info->usig.common);
+> +	common |= IEEE80211_RADIOTAP_EHT_USIG_COMMON_PHY_VER_KNOWN |
+> +		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_BW_KNOWN |
+> +		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_UL_DL_KNOWN |
+> +		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_BSS_COLOR_KNOWN |
+> +		  IEEE80211_RADIOTAP_EHT_USIG_COMMON_TXOP_KNOWN |
+> +		  ATH12K_LE32_DEC_ENC(cmn->info0,
+> +				      HAL_RX_USIG_CMN_INFO0_PHY_VERSION,
+> +				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_PHY_VER) |
+> +		  u32_encode_bits(bw, IEEE80211_RADIOTAP_EHT_USIG_COMMON_BW) |
+> +		  ATH12K_LE32_DEC_ENC(cmn->info0,
+> +				      HAL_RX_USIG_CMN_INFO0_UL_DL,
+> +				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_UL_DL) |
+> +		  ATH12K_LE32_DEC_ENC(cmn->info0,
+> +				      HAL_RX_USIG_CMN_INFO0_BSS_COLOR,
+> +				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BSS_COLOR) |
+> +		  ATH12K_LE32_DEC_ENC(cmn->info0,
+> +				      HAL_RX_USIG_CMN_INFO0_TXOP,
+> +				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_TXOP);
+> +	ppdu_info->usig.common = cpu_to_le32(common);
+> +
+> +	switch (bw) {
+> +	default:
+> +		fallthrough;
+> +	case HAL_EHT_BW_20:
+> +		ppdu_info->bw = HAL_RX_BW_20MHZ;
+> +		break;
+> +	case HAL_EHT_BW_40:
+> +		ppdu_info->bw = HAL_RX_BW_40MHZ;
+> +		break;
+> +	case HAL_EHT_BW_80:
+> +		ppdu_info->bw = HAL_RX_BW_80MHZ;
+> +		break;
+> +	case HAL_EHT_BW_160:
+> +		ppdu_info->bw = HAL_RX_BW_160MHZ;
+> +		break;
+> +	case HAL_EHT_BW_320_1:
+> +	case HAL_EHT_BW_320_2:
+> +		ppdu_info->bw = HAL_RX_BW_320MHZ;
+> +		break;
+> +	}
+> +}
+> +
+> +static void
+> +ath12k_dp_mon_hal_rx_parse_u_sig_tb(const struct hal_mon_usig_tb *usig_tb,
+> +				    struct hal_rx_mon_ppdu_info *ppdu_info)
+> +{
+> +	enum ieee80211_radiotap_eht_usig_tb spatial_reuse1, spatial_reuse2;
+> +	u32 common, value, mask;
+> +
+> +	spatial_reuse1 = IEEE80211_RADIOTAP_EHT_USIG2_TB_B3_B6_SPATIAL_REUSE_1;
+> +	spatial_reuse2 = IEEE80211_RADIOTAP_EHT_USIG2_TB_B7_B10_SPATIAL_REUSE_2;
+> +
+> +	common = __le32_to_cpu(ppdu_info->usig.common);
+> +	value = __le32_to_cpu(ppdu_info->usig.value);
+> +	mask = __le32_to_cpu(ppdu_info->usig.mask);
+> +
+> +	common |= ATH12K_LE32_DEC_ENC(usig_tb->info0,
+> +				      HAL_RX_USIG_TB_INFO0_RX_INTEG_CHECK_PASS,
+> +				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BAD_USIG_CRC);
+> +
+> +	value |= IEEE80211_RADIOTAP_EHT_USIG1_TB_B20_B25_DISREGARD |
+> +		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
+> +				     HAL_RX_USIG_TB_INFO0_PPDU_TYPE_COMP_MODE,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_TB_B0_B1_PPDU_TYPE) |
+> +		 IEEE80211_RADIOTAP_EHT_USIG2_TB_B2_VALIDATE |
+> +		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
+> +				     HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_1,
+> +				     spatial_reuse1) |
+> +		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
+> +				     HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_2,
+> +				     spatial_reuse2) |
+> +		 IEEE80211_RADIOTAP_EHT_USIG2_TB_B11_B15_DISREGARD |
+> +		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
+> +				     HAL_RX_USIG_TB_INFO0_CRC,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_TB_B16_B19_CRC) |
+> +		 ATH12K_LE32_DEC_ENC(usig_tb->info0,
+> +				     HAL_RX_USIG_TB_INFO0_TAIL,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_TB_B20_B25_TAIL);
+> +
+> +	mask |= IEEE80211_RADIOTAP_EHT_USIG1_TB_B20_B25_DISREGARD |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_TB_B0_B1_PPDU_TYPE |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_TB_B2_VALIDATE |
+> +		spatial_reuse1 | spatial_reuse2 |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_TB_B11_B15_DISREGARD |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_TB_B16_B19_CRC |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_TB_B20_B25_TAIL;
+> +
+> +	ppdu_info->usig.common = cpu_to_le32(common);
+> +	ppdu_info->usig.value = cpu_to_le32(value);
+> +	ppdu_info->usig.mask = cpu_to_le32(mask);
+> +}
+> +
+> +static void
+> +ath12k_dp_mon_hal_rx_parse_u_sig_mu(const struct hal_mon_usig_mu *usig_mu,
+> +				    struct hal_rx_mon_ppdu_info *ppdu_info)
+> +{
+> +	enum ieee80211_radiotap_eht_usig_mu sig_symb, punc;
+> +	u32 common, value, mask;
+> +
+> +	sig_symb = IEEE80211_RADIOTAP_EHT_USIG2_MU_B11_B15_EHT_SIG_SYMBOLS;
+> +	punc = IEEE80211_RADIOTAP_EHT_USIG2_MU_B3_B7_PUNCTURED_INFO;
+> +
+> +	common = __le32_to_cpu(ppdu_info->usig.common);
+> +	value = __le32_to_cpu(ppdu_info->usig.value);
+> +	mask = __le32_to_cpu(ppdu_info->usig.mask);
+> +
+> +	common |= ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				      HAL_RX_USIG_MU_INFO0_RX_INTEG_CHECK_PASS,
+> +				      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BAD_USIG_CRC);
+> +
+> +	value |= IEEE80211_RADIOTAP_EHT_USIG1_MU_B20_B24_DISREGARD |
+> +		 IEEE80211_RADIOTAP_EHT_USIG1_MU_B25_VALIDATE |
+> +		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				     HAL_RX_USIG_MU_INFO0_PPDU_TYPE_COMP_MODE,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B0_B1_PPDU_TYPE) |
+> +		 IEEE80211_RADIOTAP_EHT_USIG2_MU_B2_VALIDATE |
+> +		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				     HAL_RX_USIG_MU_INFO0_PUNC_CH_INFO,
+> +				     punc) |
+> +		 IEEE80211_RADIOTAP_EHT_USIG2_MU_B8_VALIDATE |
+> +		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				     HAL_RX_USIG_MU_INFO0_EHT_SIG_MCS,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B9_B10_SIG_MCS) |
+> +		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				     HAL_RX_USIG_MU_INFO0_NUM_EHT_SIG_SYM,
+> +				     sig_symb) |
+> +		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				     HAL_RX_USIG_MU_INFO0_CRC,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B16_B19_CRC) |
+> +		 ATH12K_LE32_DEC_ENC(usig_mu->info0,
+> +				     HAL_RX_USIG_MU_INFO0_TAIL,
+> +				     IEEE80211_RADIOTAP_EHT_USIG2_MU_B20_B25_TAIL);
+> +
+> +	mask |= IEEE80211_RADIOTAP_EHT_USIG1_MU_B20_B24_DISREGARD |
+> +		IEEE80211_RADIOTAP_EHT_USIG1_MU_B25_VALIDATE |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_MU_B0_B1_PPDU_TYPE |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_MU_B2_VALIDATE |
+> +		punc |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_MU_B8_VALIDATE |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_MU_B9_B10_SIG_MCS |
+> +		sig_symb |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_MU_B16_B19_CRC |
+> +		IEEE80211_RADIOTAP_EHT_USIG2_MU_B20_B25_TAIL;
+> +
+> +	ppdu_info->usig.common = cpu_to_le32(common);
+> +	ppdu_info->usig.value = cpu_to_le32(value);
+> +	ppdu_info->usig.mask = cpu_to_le32(mask);
+> +}
+> +
+> +static void
+> +ath12k_dp_mon_hal_rx_parse_u_sig_hdr(const struct hal_mon_usig_hdr *usig,
+> +				     struct hal_rx_mon_ppdu_info *ppdu_info)
+> +{
+> +	const struct hal_mon_usig_cmn *usig_cmn = &usig->cmn;
+> +	u8 comp_mode;
+> +	bool ap_ppdu;
+> +
+> +	ppdu_info->eht_usig = true;
+> +
+> +	ath12k_dp_mon_hal_rx_parse_u_sig_cmn(&usig->cmn, ppdu_info);
+> +
+> +	ap_ppdu = le32_get_bits(usig_cmn->info0, HAL_RX_USIG_CMN_INFO0_UL_DL);
+> +	comp_mode = le32_get_bits(usig->non_cmn.mu.info0,
+> +				  HAL_RX_USIG_MU_INFO0_PPDU_TYPE_COMP_MODE);
+> +
+> +	if (comp_mode == 0 && ap_ppdu)
+> +		ath12k_dp_mon_hal_rx_parse_u_sig_tb(&usig->non_cmn.tb, ppdu_info);
+> +	else
+> +		ath12k_dp_mon_hal_rx_parse_u_sig_mu(&usig->non_cmn.mu, ppdu_info);
+> +}
+> +
+>   static enum hal_rx_mon_status
+>   ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+>   				  struct ath12k_mon_data *pmon,
+> @@ -774,6 +958,9 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+>   		return HAL_RX_MON_STATUS_MSDU_END;
+>   	case HAL_RX_MPDU_END:
+>   		return HAL_RX_MON_STATUS_MPDU_END;
+> +	case HAL_PHYRX_GENERIC_U_SIG:
+> +		ath12k_dp_mon_hal_rx_parse_u_sig_hdr(tlv_data, ppdu_info);
+> +		break;
+>   	case HAL_DUMMY:
+>   		return HAL_RX_MON_STATUS_BUF_DONE;
+>   	case HAL_RX_PPDU_END_STATUS_DONE:
+> @@ -971,7 +1158,23 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
+>   		rxs->ampdu_reference = ampdu_id;
+>   	}
+>   
+> -	if (ppduinfo->he_mu_flags) {
+> +	if (ppduinfo->eht_usig) {
+> +		struct ieee80211_radiotap_tlv *tlv;
+> +		struct ieee80211_radiotap_eht_usig *usig;
+> +		u16 len = sizeof(*usig);
+> +
+> +		rxs->flag |= RX_FLAG_RADIOTAP_TLV_AT_END;
+> +		rxs->encoding = RX_ENC_EHT;
+> +
+> +		skb_reset_mac_header(mon_skb);
+> +
+> +		tlv = skb_push(mon_skb, sizeof(*tlv) + len);
+> +		tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT_USIG);
+> +		tlv->len = cpu_to_le16(len);
+> +
+> +		usig = (struct ieee80211_radiotap_eht_usig *)tlv->data;
+> +		*usig = ppduinfo->usig;
+> +	} else if (ppduinfo->he_mu_flags) {
+>   		rxs->flag |= RX_FLAG_RADIOTAP_HE_MU;
+>   		rxs->encoding = RX_ENC_HE;
+>   		ptr = skb_push(mon_skb, sizeof(struct ieee80211_radiotap_he_mu));
+> diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
+> index 96954b2f7ca6..2da16f27e76c 100644
+> --- a/drivers/net/wireless/ath/ath12k/hal_rx.h
+> +++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
+> @@ -235,6 +235,8 @@ struct hal_rx_mon_ppdu_info {
+>   	bool is_ampdu;
+>   	u8 medium_prot_type;
+>   	bool ppdu_continuation;
+> +	bool eht_usig;
+> +	struct ieee80211_radiotap_eht_usig usig;
+>   };
+>   
+>   #define HAL_RX_PPDU_START_INFO0_PPDU_ID			GENMASK(15, 0)
+> @@ -678,6 +680,64 @@ enum nl80211_he_ru_alloc ath12k_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
+>   	return ret;
+>   }
+>   
+> +enum hal_eht_bw {
+> +	HAL_EHT_BW_20,
+> +	HAL_EHT_BW_40,
+> +	HAL_EHT_BW_80,
+> +	HAL_EHT_BW_160,
+> +	HAL_EHT_BW_320_1,
+> +	HAL_EHT_BW_320_2,
+> +};
+> +
+> +#define HAL_RX_USIG_CMN_INFO0_PHY_VERSION	GENMASK(2, 0)
+> +#define HAL_RX_USIG_CMN_INFO0_BW		GENMASK(5, 3)
+> +#define HAL_RX_USIG_CMN_INFO0_UL_DL		BIT(6)
+> +#define HAL_RX_USIG_CMN_INFO0_BSS_COLOR		GENMASK(12, 7)
+> +#define HAL_RX_USIG_CMN_INFO0_TXOP		GENMASK(19, 13)
+> +#define HAL_RX_USIG_CMN_INFO0_DISREGARD		GENMASK(25, 20)
+> +#define HAL_RX_USIG_CMN_INFO0_VALIDATE		BIT(26)
+> +
+> +struct hal_mon_usig_cmn {
+> +	__le32 info0;
+> +} __packed;
+> +
+> +#define HAL_RX_USIG_TB_INFO0_PPDU_TYPE_COMP_MODE	GENMASK(1, 0)
+> +#define HAL_RX_USIG_TB_INFO0_VALIDATE			BIT(2)
+> +#define HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_1		GENMASK(6, 3)
+> +#define HAL_RX_USIG_TB_INFO0_SPATIAL_REUSE_2		GENMASK(10, 7)
+> +#define HAL_RX_USIG_TB_INFO0_DISREGARD_1		GENMASK(15, 11)
+> +#define HAL_RX_USIG_TB_INFO0_CRC			GENMASK(19, 16)
+> +#define HAL_RX_USIG_TB_INFO0_TAIL			GENMASK(25, 20)
+> +#define HAL_RX_USIG_TB_INFO0_RX_INTEG_CHECK_PASS	BIT(31)
+> +
+> +struct hal_mon_usig_tb {
+> +	__le32 info0;
+> +} __packed;
+> +
+> +#define HAL_RX_USIG_MU_INFO0_PPDU_TYPE_COMP_MODE	GENMASK(1, 0)
+> +#define HAL_RX_USIG_MU_INFO0_VALIDATE_1			BIT(2)
+> +#define HAL_RX_USIG_MU_INFO0_PUNC_CH_INFO		GENMASK(7, 3)
+> +#define HAL_RX_USIG_MU_INFO0_VALIDATE_2			BIT(8)
+> +#define HAL_RX_USIG_MU_INFO0_EHT_SIG_MCS		GENMASK(10, 9)
+> +#define HAL_RX_USIG_MU_INFO0_NUM_EHT_SIG_SYM		GENMASK(15, 11)
+> +#define HAL_RX_USIG_MU_INFO0_CRC			GENMASK(20, 16)
+> +#define HAL_RX_USIG_MU_INFO0_TAIL			GENMASK(26, 21)
+> +#define HAL_RX_USIG_MU_INFO0_RX_INTEG_CHECK_PASS	BIT(31)
+> +
+> +struct hal_mon_usig_mu {
+> +	__le32 info0;
+> +} __packed;
+> +
+> +union hal_mon_usig_non_cmn {
+> +	struct hal_mon_usig_tb tb;
+> +	struct hal_mon_usig_mu mu;
+> +};
+> +
+> +struct hal_mon_usig_hdr {
+> +	struct hal_mon_usig_cmn cmn;
+> +	union hal_mon_usig_non_cmn non_cmn;
+> +} __packed;
+> +
+>   void ath12k_hal_reo_status_queue_stats(struct ath12k_base *ab,
+>   				       struct hal_tlv_64_hdr *tlv,
+>   				       struct hal_reo_status *status);
 
-Sample output:
-==============
-RX peer stats:
-
-Num of MSDUs: 1087
-Num of MSDUs with TCP L4: 0
-Num of MSDUs with UDP L4: 13
-Num of other MSDUs: 1074
-Num of MSDUs part of AMPDU: 363
-Num of MSDUs not part of AMPDU: 724
-Num of MSDUs using STBC: 0
-Num of MSDUs beamformed: 0
-Num of MPDUs with FCS ok: 695
-Num of MPDUs with FCS error: 0
-preamble: 11A 395 11B 0 11N 0 11AC 0 11AX 692 11BE 0
-reception type: SU 1087 MU_MIMO 0 MU_OFDMA 0 MU_OFDMA_MIMO 0
-TID(0-15) Legacy TID(16):690 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 395
-RX Duration:39537
-
-DCM: 0
-RU26:  0
-RU52:  0
-RU106: 0
-RU242: 0
-RU484: 0
-RU996: 0
-
-RX success packet stats:
-
-EHT stats:
-MCS 0: 0        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0        MCS 5: 0        MCS 6: 0        MCS 7: 0
-MCS 8: 0        MCS 9: 0        MCS 10: 0       MCS 11: 0       MCS 12: 0       MCS 13: 0       MCS 14: 0       MCS 15: 0
-
-HE stats:
-MCS 0: 1        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0        MCS 5: 0
-MCS 6: 66       MCS 7: 46       MCS 8: 46       MCS 9: 34       MCS 10: 28      MCS 11: 471
-
-VHT stats:
-MCS 0: 0        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0
-MCS 5: 0        MCS 6: 0        MCS 7: 0        MCS 8: 0        MCS 9: 0
-
-HT stats:
-MCS 0: 0        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0        MCS 5: 0        MCS 6: 0        MCS 7: 0
-MCS 8: 0        MCS 9: 0        MCS 10: 0       MCS 11: 0       MCS 12: 0       MCS 13: 0       MCS 14: 0       MCS 15: 0
-MCS 16: 0       MCS 17: 0       MCS 18: 0       MCS 19: 0       MCS 20: 0       MCS 21: 0       MCS 22: 0       MCS 23: 0
-MCS 24: 0       MCS 25: 0       MCS 26: 0       MCS 27: 0       MCS 28: 0       MCS 29: 0       MCS 30: 0       MCS 31: 0
-
-Legacy stats:
-1 Mbps: 0       2 Mbps: 0       5.5 Mbps: 0     6 Mbps: 395
-9 Mbps: 0       11 Mbps: 0      12 Mbps: 0      18 Mbps: 0
-24 Mbps: 0      36 Mbps: 0      48 Mbps: 0      54 Mbps: 0
-
-NSS stats:
-1x1: 1086 2x2: 0 3x3: 0 4x4: 0 5x5: 0 6x6: 0 7x7: 0 8x8: 0
-
-GI: 0.8 us 0 0.4 us 396 1.6 us 691 3.2 us 0
-BW: 20 MHz 785 40 MHz 2 80 MHz 300 160 MHz 0 320 MHz 0
-
-20 Mhz gi 1 us 1x1 :  6:5 7:3 8:3 9:4 10:4 11:374 12:391
-40 Mhz gi 1 us 1x1 :  12:2
-80 Mhz gi 1 us 1x1 :  6:61 7:43 8:43 9:30 10:24 11:97 12:2
-
-RX success byte stats:
-
-EHT stats:
-MCS 0: 0        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0        MCS 5: 0        MCS 6: 0        MCS 7: 0
-MCS 8: 0        MCS 9: 0        MCS 10: 0       MCS 11: 0       MCS 12: 0       MCS 13: 0       MCS 14: 0       MCS 15: 0
-
-HE stats:
-MCS 0: 41       MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0        MCS 5: 0
-MCS 6: 1435     MCS 7: 943      MCS 8: 697      MCS 9: 533      MCS 10: 492     MCS 11: 8159
-
-VHT stats:
-MCS 0: 0        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0
-MCS 5: 0        MCS 6: 0        MCS 7: 0        MCS 8: 0        MCS 9: 0
-
-HT stats:
-MCS 0: 0        MCS 1: 0        MCS 2: 0        MCS 3: 0        MCS 4: 0        MCS 5: 0        MCS 6: 0        MCS 7: 0
-MCS 8: 0        MCS 9: 0        MCS 10: 0       MCS 11: 0       MCS 12: 0       MCS 13: 0       MCS 14: 0       MCS 15: 0
-MCS 16: 0       MCS 17: 0       MCS 18: 0       MCS 19: 0       MCS 20: 0       MCS 21: 0       MCS 22: 0       MCS 23: 0
-MCS 24: 0       MCS 25: 0       MCS 26: 0       MCS 27: 0       MCS 28: 0       MCS 29: 0       MCS 30: 0       MCS 31: 0
-
-Legacy stats:
-1 Mbps: 0       2 Mbps: 0       5.5 Mbps: 0     6 Mbps: 16195
-9 Mbps: 0       11 Mbps: 0      12 Mbps: 0      18 Mbps: 0
-24 Mbps: 0      36 Mbps: 0      48 Mbps: 0      54 Mbps: 0
-
-NSS stats:
-1x1: 28454 2x2: 0 3x3: 0 4x4: 0 5x5: 0 6x6: 0 7x7: 0 8x8: 0
-
-GI: 0.8 us 0 0.4 us 16236 1.6 us 12259 3.2 us 0
-BW: 20 MHz 24108 40 MHz 82 80 MHz 4305 160 MHz 0 320 MHz 0
-
-20 Mhz gi 1 us 1x1 :  6:205 7:123 8:123 9:164 10:164 11:7257 12:16031
-40 Mhz gi 1 us 1x1 :  12:82
-80 Mhz gi 1 us 1x1 :  6:1230 7:820 8:574 9:369 10:328 11:902 12:82
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-Co-developed-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
-Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/Makefile      |   2 +-
- drivers/net/wireless/ath/ath12k/core.h        |   2 +
- drivers/net/wireless/ath/ath12k/debugfs.c     |  97 +++++
- drivers/net/wireless/ath/ath12k/debugfs.h     |  20 ++
- drivers/net/wireless/ath/ath12k/debugfs_sta.c | 337 ++++++++++++++++++
- drivers/net/wireless/ath/ath12k/debugfs_sta.h |  24 ++
- drivers/net/wireless/ath/ath12k/hal_rx.h      |   3 -
- drivers/net/wireless/ath/ath12k/mac.c         |  18 +-
- drivers/net/wireless/ath/ath12k/mac.h         |   4 +-
- 9 files changed, 497 insertions(+), 10 deletions(-)
- create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_sta.c
- create mode 100644 drivers/net/wireless/ath/ath12k/debugfs_sta.h
-
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index 4a7f5e87384c..60644cb42c76 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -23,7 +23,7 @@ ath12k-y += core.o \
- 	    fw.o \
- 	    p2p.o
- 
--ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o
-+ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o debugfs_sta.o
- ath12k-$(CONFIG_ACPI) += acpi.o
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
- ath12k-$(CONFIG_PM) += wow.o
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 50e81d6aa280..2c0bee476604 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -567,9 +567,11 @@ struct ath12k_dbg_htt_stats {
- };
- 
- struct ath12k_debug {
-+	u32 rx_filter;
- 	struct dentry *debugfs_pdev;
- 	struct dentry *debugfs_pdev_symlink;
- 	struct ath12k_dbg_htt_stats htt_stats;
-+	bool extd_rx_stats;
- };
- 
- struct ath12k_per_peer_tx_stats {
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 6d6708486d14..44a3e7080bb6 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -5,6 +5,7 @@
-  */
- 
- #include "core.h"
-+#include "dp_tx.h"
- #include "debug.h"
- #include "debugfs.h"
- #include "debugfs_htt_stats.h"
-@@ -32,6 +33,98 @@ static const struct file_operations fops_simulate_radar = {
- 	.open = simple_open
- };
- 
-+static ssize_t ath12k_write_extd_rx_stats(struct file *file,
-+					  const char __user *ubuf,
-+					  size_t count, loff_t *ppos)
-+{
-+	struct ath12k *ar = file->private_data;
-+	struct htt_rx_ring_tlv_filter tlv_filter = {0};
-+	u32 ring_id, rx_filter = 0;
-+	bool enable;
-+	int ret, i;
-+
-+	if (kstrtobool_from_user(ubuf, count, &enable))
-+		return -EINVAL;
-+
-+	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
-+
-+	if (!ar->ab->hw_params->rxdma1_enable) {
-+		ret = count;
-+		goto exit;
-+	}
-+
-+	if (ar->ah->state != ATH12K_HW_STATE_ON) {
-+		ret = -ENETDOWN;
-+		goto exit;
-+	}
-+
-+	if (enable == ar->debug.extd_rx_stats) {
-+		ret = count;
-+		goto exit;
-+	}
-+
-+	if (enable) {
-+		rx_filter =  HTT_RX_FILTER_TLV_FLAGS_MPDU_START;
-+		rx_filter |= HTT_RX_FILTER_TLV_FLAGS_PPDU_START;
-+		rx_filter |= HTT_RX_FILTER_TLV_FLAGS_PPDU_END;
-+		rx_filter |= HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS;
-+		rx_filter |= HTT_RX_FILTER_TLV_FLAGS_PPDU_END_USER_STATS_EXT;
-+		rx_filter |= HTT_RX_FILTER_TLV_FLAGS_PPDU_END_STATUS_DONE;
-+		rx_filter |= HTT_RX_FILTER_TLV_FLAGS_PPDU_START_USER_INFO;
-+
-+		tlv_filter.rx_filter = rx_filter;
-+		tlv_filter.pkt_filter_flags0 = HTT_RX_FP_MGMT_FILTER_FLAGS0;
-+		tlv_filter.pkt_filter_flags1 = HTT_RX_FP_MGMT_FILTER_FLAGS1;
-+		tlv_filter.pkt_filter_flags2 = HTT_RX_FP_CTRL_FILTER_FLASG2;
-+		tlv_filter.pkt_filter_flags3 = HTT_RX_FP_CTRL_FILTER_FLASG3 |
-+			HTT_RX_FP_DATA_FILTER_FLASG3;
-+	} else {
-+		tlv_filter = ath12k_mac_mon_status_filter_default;
-+	}
-+
-+	ar->debug.rx_filter = tlv_filter.rx_filter;
-+
-+	for (i = 0; i < ar->ab->hw_params->num_rxdma_per_pdev; i++) {
-+		ring_id = ar->dp.rxdma_mon_dst_ring[i].ring_id;
-+		ret = ath12k_dp_tx_htt_rx_filter_setup(ar->ab, ring_id, ar->dp.mac_id + i,
-+						       HAL_RXDMA_MONITOR_DST,
-+						       DP_RXDMA_REFILL_RING_SIZE,
-+						       &tlv_filter);
-+		if (ret) {
-+			ath12k_warn(ar->ab, "failed to set rx filter for monitor status ring\n");
-+			goto exit;
-+		}
-+	}
-+
-+	ar->debug.extd_rx_stats = !!enable;
-+	ret = count;
-+exit:
-+	wiphy_unlock(ath12k_ar_to_hw(ar)->wiphy);
-+	return ret;
-+}
-+
-+static ssize_t ath12k_read_extd_rx_stats(struct file *file,
-+					 char __user *ubuf,
-+					 size_t count, loff_t *ppos)
-+{
-+	struct ath12k *ar = file->private_data;
-+	char buf[32];
-+	int len = 0;
-+
-+	wiphy_lock(ath12k_ar_to_hw(ar)->wiphy);
-+	len = scnprintf(buf, sizeof(buf) - len, "%d\n",
-+			ar->debug.extd_rx_stats);
-+	wiphy_unlock(ath12k_ar_to_hw(ar)->wiphy);
-+
-+	return simple_read_from_buffer(ubuf, count, ppos, buf, len);
-+}
-+
-+static const struct file_operations fops_extd_rx_stats = {
-+	.read = ath12k_read_extd_rx_stats,
-+	.write = ath12k_write_extd_rx_stats,
-+	.open = simple_open,
-+};
-+
- void ath12k_debugfs_soc_create(struct ath12k_base *ab)
- {
- 	bool dput_needed;
-@@ -470,6 +563,10 @@ void ath12k_debugfs_register(struct ath12k *ar)
- 
- 	ath12k_debugfs_htt_stats_register(ar);
- 	ath12k_debugfs_fw_stats_register(ar);
-+
-+	debugfs_create_file("ext_rx_stats", 0644,
-+			    ar->debug.debugfs_pdev, ar,
-+			    &fops_extd_rx_stats);
- }
- 
- void ath12k_debugfs_unregister(struct ath12k *ar)
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.h b/drivers/net/wireless/ath/ath12k/debugfs.h
-index 1c30745ee415..ac154f8b41a5 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.h
-@@ -15,6 +15,16 @@ void ath12k_debugfs_unregister(struct ath12k *ar);
- void ath12k_debugfs_fw_stats_process(struct ath12k *ar,
- 				     struct ath12k_fw_stats *stats);
- void ath12k_debugfs_fw_stats_reset(struct ath12k *ar);
-+
-+static inline bool ath12k_debugfs_is_extd_rx_stats_enabled(struct ath12k *ar)
-+{
-+	return ar->debug.extd_rx_stats;
-+}
-+
-+static inline int ath12k_debugfs_rx_filter(struct ath12k *ar)
-+{
-+	return ar->debug.rx_filter;
-+}
- #else
- static inline void ath12k_debugfs_soc_create(struct ath12k_base *ab)
- {
-@@ -40,6 +50,16 @@ static inline void ath12k_debugfs_fw_stats_process(struct ath12k *ar,
- static inline void ath12k_debugfs_fw_stats_reset(struct ath12k *ar)
- {
- }
-+
-+static inline bool ath12k_debugfs_is_extd_rx_stats_enabled(struct ath12k *ar)
-+{
-+	return false;
-+}
-+
-+static inline int ath12k_debugfs_rx_filter(struct ath12k *ar)
-+{
-+	return 0;
-+}
- #endif /* CONFIG_ATH12K_DEBUGFS */
- 
- #endif /* _ATH12K_DEBUGFS_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_sta.c b/drivers/net/wireless/ath/ath12k/debugfs_sta.c
-new file mode 100644
-index 000000000000..5bd2bf4c9dac
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_sta.c
-@@ -0,0 +1,337 @@
-+// SPDX-License-Identifier: BSD-3-Clause-Clear
-+/*
-+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#include <linux/vmalloc.h>
-+
-+#include "debugfs_sta.h"
-+#include "core.h"
-+#include "peer.h"
-+#include "debug.h"
-+#include "debugfs_htt_stats.h"
-+#include "debugfs.h"
-+
-+static
-+u32 ath12k_dbg_sta_dump_rate_stats(u8 *buf, u32 offset, const int size,
-+				   bool he_rates_avail,
-+				   const struct ath12k_rx_peer_rate_stats *stats)
-+{
-+	static const char *legacy_rate_str[HAL_RX_MAX_NUM_LEGACY_RATES] = {
-+					"1 Mbps", "2 Mbps", "5.5 Mbps", "6 Mbps",
-+					"9 Mbps", "11 Mbps", "12 Mbps", "18 Mbps",
-+					"24 Mbps", "36 Mbps", "48 Mbps", "54 Mbps"};
-+	u8 max_bw = HAL_RX_BW_MAX, max_gi = HAL_RX_GI_MAX, max_mcs = HAL_RX_MAX_NSS;
-+	int mcs = 0, bw = 0, nss = 0, gi = 0, bw_num = 0;
-+	u32 i, len = offset, max = max_bw * max_gi * max_mcs;
-+	bool found;
-+
-+	len += scnprintf(buf + len, size - len, "\nEHT stats:\n");
-+	for (i = 0; i <= HAL_RX_MAX_MCS_BE; i++)
-+		len += scnprintf(buf + len, size - len,
-+				   "MCS %d: %llu%s", i, stats->be_mcs_count[i],
-+				   (i + 1) % 8 ? "\t" : "\n");
-+
-+	len += scnprintf(buf + len, size - len, "\nHE stats:\n");
-+	for (i = 0; i <= HAL_RX_MAX_MCS_HE; i++)
-+		len += scnprintf(buf + len, size - len,
-+				   "MCS %d: %llu%s", i, stats->he_mcs_count[i],
-+				   (i + 1) % 6 ? "\t" : "\n");
-+
-+	len += scnprintf(buf + len, size - len, "\nVHT stats:\n");
-+	for (i = 0; i <= HAL_RX_MAX_MCS_VHT; i++)
-+		len += scnprintf(buf + len, size - len,
-+				   "MCS %d: %llu%s", i, stats->vht_mcs_count[i],
-+				   (i + 1) % 5 ? "\t" : "\n");
-+
-+	len += scnprintf(buf + len, size - len, "\nHT stats:\n");
-+	for (i = 0; i <= HAL_RX_MAX_MCS_HT; i++)
-+		len += scnprintf(buf + len, size - len,
-+				   "MCS %d: %llu%s", i, stats->ht_mcs_count[i],
-+				   (i + 1) % 8 ? "\t" : "\n");
-+
-+	len += scnprintf(buf + len, size - len, "\nLegacy stats:\n");
-+	for (i = 0; i < HAL_RX_MAX_NUM_LEGACY_RATES; i++)
-+		len += scnprintf(buf + len, size - len,
-+				   "%s: %llu%s", legacy_rate_str[i],
-+				   stats->legacy_count[i],
-+				   (i + 1) % 4 ? "\t" : "\n");
-+
-+	len += scnprintf(buf + len, size - len, "\nNSS stats:\n");
-+	for (i = 0; i < HAL_RX_MAX_NSS; i++)
-+		len += scnprintf(buf + len, size - len,
-+				   "%dx%d: %llu ", i + 1, i + 1,
-+				   stats->nss_count[i]);
-+
-+	len += scnprintf(buf + len, size - len,
-+			  "\n\nGI: 0.8 us %llu 0.4 us %llu 1.6 us %llu 3.2 us %llu\n",
-+			  stats->gi_count[0],
-+			  stats->gi_count[1],
-+			  stats->gi_count[2],
-+			  stats->gi_count[3]);
-+
-+	len += scnprintf(buf + len, size - len,
-+			   "BW: 20 MHz %llu 40 MHz %llu 80 MHz %llu 160 MHz %llu 320 MHz %llu\n",
-+			   stats->bw_count[0],
-+			   stats->bw_count[1],
-+			   stats->bw_count[2],
-+			   stats->bw_count[3],
-+			   stats->bw_count[4]);
-+
-+	for (i = 0; i < max; i++) {
-+		found = false;
-+
-+		for (mcs = 0; mcs <= HAL_RX_MAX_MCS_HT; mcs++) {
-+			if (stats->rx_rate[bw][gi][nss][mcs]) {
-+				found = true;
-+				break;
-+			}
-+		}
-+
-+		if (!found)
-+			goto skip_report;
-+
-+		switch (bw) {
-+		case HAL_RX_BW_20MHZ:
-+			bw_num = 20;
-+			break;
-+		case HAL_RX_BW_40MHZ:
-+			bw_num = 40;
-+			break;
-+		case HAL_RX_BW_80MHZ:
-+			bw_num = 80;
-+			break;
-+		case HAL_RX_BW_160MHZ:
-+			bw_num = 160;
-+			break;
-+		case HAL_RX_BW_320MHZ:
-+			bw_num = 320;
-+			break;
-+		}
-+
-+		len += scnprintf(buf + len, size - len, "\n%d Mhz gi %d us %dx%d : ",
-+				 bw_num, gi, nss + 1, nss + 1);
-+
-+		for (mcs = 0; mcs <= HAL_RX_MAX_MCS_HT; mcs++) {
-+			if (stats->rx_rate[bw][gi][nss][mcs])
-+				len += scnprintf(buf + len, size - len,
-+						 " %d:%llu", mcs,
-+						 stats->rx_rate[bw][gi][nss][mcs]);
-+		}
-+
-+skip_report:
-+		if (nss++ >= max_mcs - 1) {
-+			nss = 0;
-+			if (gi++ >= max_gi - 1) {
-+				gi = 0;
-+				if (bw < max_bw - 1)
-+					bw++;
-+			}
-+		}
-+	}
-+
-+	len += scnprintf(buf + len, size - len, "\n");
-+
-+	return len - offset;
-+}
-+
-+static ssize_t ath12k_dbg_sta_dump_rx_stats(struct file *file,
-+					    char __user *user_buf,
-+					    size_t count, loff_t *ppos)
-+{
-+	struct ieee80211_link_sta *link_sta = file->private_data;
-+	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(link_sta->sta);
-+	const int size = ATH12K_STA_RX_STATS_BUF_SIZE;
-+	struct ath12k_hw *ah = ahsta->ahvif->ah;
-+	struct ath12k_rx_peer_stats *rx_stats;
-+	struct ath12k_link_sta *arsta;
-+	u8 link_id = link_sta->link_id;
-+	int len = 0, i, ret = 0;
-+	bool he_rates_avail;
-+	struct ath12k *ar;
-+
-+	wiphy_lock(ah->hw->wiphy);
-+
-+	if (!(BIT(link_id) & ahsta->links_map)) {
-+		wiphy_unlock(ah->hw->wiphy);
-+		return -ENOENT;
-+	}
-+
-+	arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
-+	if (!arsta || !arsta->arvif->ar) {
-+		wiphy_unlock(ah->hw->wiphy);
-+		return -ENOENT;
-+	}
-+
-+	ar = arsta->arvif->ar;
-+
-+	u8 *buf __free(kfree) = kzalloc(size, GFP_KERNEL);
-+	if (!buf) {
-+		ret = -ENOENT;
-+		goto out;
-+	}
-+
-+	spin_lock_bh(&ar->ab->base_lock);
-+
-+	rx_stats = arsta->rx_stats;
-+	if (!rx_stats) {
-+		ret = -ENOENT;
-+		goto unlock;
-+	}
-+
-+	len += scnprintf(buf + len, size - len, "RX peer stats:\n\n");
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs: %llu\n",
-+			 rx_stats->num_msdu);
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs with TCP L4: %llu\n",
-+			 rx_stats->tcp_msdu_count);
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs with UDP L4: %llu\n",
-+			 rx_stats->udp_msdu_count);
-+	len += scnprintf(buf + len, size - len, "Num of other MSDUs: %llu\n",
-+			 rx_stats->other_msdu_count);
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs part of AMPDU: %llu\n",
-+			 rx_stats->ampdu_msdu_count);
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs not part of AMPDU: %llu\n",
-+			 rx_stats->non_ampdu_msdu_count);
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs using STBC: %llu\n",
-+			 rx_stats->stbc_count);
-+	len += scnprintf(buf + len, size - len, "Num of MSDUs beamformed: %llu\n",
-+			 rx_stats->beamformed_count);
-+	len += scnprintf(buf + len, size - len, "Num of MPDUs with FCS ok: %llu\n",
-+			 rx_stats->num_mpdu_fcs_ok);
-+	len += scnprintf(buf + len, size - len, "Num of MPDUs with FCS error: %llu\n",
-+			 rx_stats->num_mpdu_fcs_err);
-+
-+	he_rates_avail = (rx_stats->pream_cnt[HAL_RX_PREAMBLE_11AX] > 1) ? true : false;
-+
-+	len += scnprintf(buf + len, size - len,
-+			 "preamble: 11A %llu 11B %llu 11N %llu 11AC %llu 11AX %llu 11BE %llu\n",
-+			 rx_stats->pream_cnt[0], rx_stats->pream_cnt[1],
-+			 rx_stats->pream_cnt[2], rx_stats->pream_cnt[3],
-+			 rx_stats->pream_cnt[4], rx_stats->pream_cnt[6]);
-+	len += scnprintf(buf + len, size - len,
-+			 "reception type: SU %llu MU_MIMO %llu MU_OFDMA %llu MU_OFDMA_MIMO %llu\n",
-+			 rx_stats->reception_type[0], rx_stats->reception_type[1],
-+			 rx_stats->reception_type[2], rx_stats->reception_type[3]);
-+
-+	len += scnprintf(buf + len, size - len, "TID(0-15) Legacy TID(16):");
-+	for (i = 0; i <= IEEE80211_NUM_TIDS; i++)
-+		len += scnprintf(buf + len, size - len, "%llu ", rx_stats->tid_count[i]);
-+
-+	len += scnprintf(buf + len, size - len, "\nRX Duration:%llu\n",
-+			 rx_stats->rx_duration);
-+
-+	len += scnprintf(buf + len, size - len,
-+			 "\nDCM: %llu\nRU26:  %llu\nRU52:  %llu\nRU106: %llu\nRU242: %llu\nRU484: %llu\nRU996: %llu\nRU996x2: %llu\n",
-+			 rx_stats->dcm_count, rx_stats->ru_alloc_cnt[0],
-+			 rx_stats->ru_alloc_cnt[1], rx_stats->ru_alloc_cnt[2],
-+			 rx_stats->ru_alloc_cnt[3], rx_stats->ru_alloc_cnt[4],
-+			 rx_stats->ru_alloc_cnt[5], rx_stats->ru_alloc_cnt[6]);
-+
-+	len += scnprintf(buf + len, size - len, "\nRX success packet stats:\n");
-+	len += ath12k_dbg_sta_dump_rate_stats(buf, len, size, he_rates_avail,
-+					      &rx_stats->pkt_stats);
-+
-+	len += scnprintf(buf + len, size - len, "\n");
-+
-+	len += scnprintf(buf + len, size - len, "\nRX success byte stats:\n");
-+	len += ath12k_dbg_sta_dump_rate_stats(buf, len, size, he_rates_avail,
-+					      &rx_stats->byte_stats);
-+
-+unlock:
-+	spin_unlock_bh(&ar->ab->base_lock);
-+
-+	if (len)
-+		ret = simple_read_from_buffer(user_buf, count, ppos, buf, len);
-+out:
-+	wiphy_unlock(ah->hw->wiphy);
-+	return ret;
-+}
-+
-+static const struct file_operations fops_rx_stats = {
-+	.read = ath12k_dbg_sta_dump_rx_stats,
-+	.open = simple_open,
-+	.owner = THIS_MODULE,
-+	.llseek = default_llseek,
-+};
-+
-+static ssize_t ath12k_dbg_sta_reset_rx_stats(struct file *file,
-+					     const char __user *buf,
-+					     size_t count, loff_t *ppos)
-+{
-+	struct ieee80211_link_sta *link_sta = file->private_data;
-+	struct ath12k_sta *ahsta = ath12k_sta_to_ahsta(link_sta->sta);
-+	struct ath12k_hw *ah = ahsta->ahvif->ah;
-+	struct ath12k_rx_peer_stats *rx_stats;
-+	struct ath12k_link_sta *arsta;
-+	u8 link_id = link_sta->link_id;
-+	struct ath12k *ar;
-+	bool reset;
-+	int ret;
-+
-+	ret = kstrtobool_from_user(buf, count, &reset);
-+	if (ret)
-+		return ret;
-+
-+	if (!reset)
-+		return -EINVAL;
-+
-+	wiphy_lock(ah->hw->wiphy);
-+
-+	if (!(BIT(link_id) & ahsta->links_map)) {
-+		ret = -ENOENT;
-+		goto out;
-+	}
-+
-+	arsta = wiphy_dereference(ah->hw->wiphy, ahsta->link[link_id]);
-+	if (!arsta || !arsta->arvif->ar) {
-+		ret = -ENOENT;
-+		goto out;
-+	}
-+
-+	ar = arsta->arvif->ar;
-+
-+	spin_lock_bh(&ar->ab->base_lock);
-+
-+	rx_stats = arsta->rx_stats;
-+	if (!rx_stats) {
-+		spin_unlock_bh(&ar->ab->base_lock);
-+		ret = -ENOENT;
-+		goto out;
-+	}
-+
-+	memset(rx_stats, 0, sizeof(*rx_stats));
-+	spin_unlock_bh(&ar->ab->base_lock);
-+
-+	ret = count;
-+out:
-+	wiphy_unlock(ah->hw->wiphy);
-+	return ret;
-+}
-+
-+static const struct file_operations fops_reset_rx_stats = {
-+	.write = ath12k_dbg_sta_reset_rx_stats,
-+	.open = simple_open,
-+	.owner = THIS_MODULE,
-+	.llseek = default_llseek,
-+};
-+
-+void ath12k_debugfs_link_sta_op_add(struct ieee80211_hw *hw,
-+				    struct ieee80211_vif *vif,
-+				    struct ieee80211_link_sta *link_sta,
-+				    struct dentry *dir)
-+{
-+	struct ath12k *ar;
-+
-+	lockdep_assert_wiphy(hw->wiphy);
-+
-+	ar = ath12k_get_ar_by_vif(hw, vif, link_sta->link_id);
-+	if (!ar)
-+		return;
-+
-+	if (ath12k_debugfs_is_extd_rx_stats_enabled(ar)) {
-+		debugfs_create_file("rx_stats", 0400, dir, link_sta,
-+				    &fops_rx_stats);
-+		debugfs_create_file("reset_rx_stats", 0200, dir, link_sta,
-+				    &fops_reset_rx_stats);
-+	}
-+}
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs_sta.h b/drivers/net/wireless/ath/ath12k/debugfs_sta.h
-new file mode 100644
-index 000000000000..8de924f4d7d5
---- /dev/null
-+++ b/drivers/net/wireless/ath/ath12k/debugfs_sta.h
-@@ -0,0 +1,24 @@
-+/* SPDX-License-Identifier: BSD-3-Clause-Clear */
-+/*
-+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef _ATH12K_DEBUGFS_STA_H_
-+#define _ATH12K_DEBUGFS_STA_H_
-+
-+#include <net/mac80211.h>
-+
-+#include "core.h"
-+
-+#define ATH12K_STA_RX_STATS_BUF_SIZE		(1024 * 16)
-+
-+#ifdef CONFIG_ATH12K_DEBUGFS
-+
-+void ath12k_debugfs_link_sta_op_add(struct ieee80211_hw *hw,
-+				    struct ieee80211_vif *vif,
-+				    struct ieee80211_link_sta *link_sta,
-+				    struct dentry *dir);
-+
-+#endif /* CONFIG_ATH12K_DEBUGFS */
-+
-+#endif /* _ATH12K_DEBUGFS_STA_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index 163f9235fcf0..6bdcd0867d86 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -22,9 +22,6 @@ struct hal_rx_wbm_rel_info {
- #define HAL_INVALID_PEERID	0x3fff
- #define VHT_SIG_SU_NSS_MASK 0x7
- 
--#define HAL_RX_MAX_MCS 12
--#define HAL_RX_MAX_NSS 8
--
- #define HAL_RX_MPDU_INFO_PN_GET_BYTE1(__val) \
- 	le32_get_bits((__val), GENMASK(7, 0))
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4fb7e235be66..c15e0e329776 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -20,6 +20,7 @@
- #include "debugfs.h"
- #include "hif.h"
- #include "wow.h"
-+#include "debugfs_sta.h"
- 
- #define CHAN2G(_channel, _freq, _flags) { \
- 	.band                   = NL80211_BAND_2GHZ, \
-@@ -805,9 +806,9 @@ static struct ath12k *ath12k_get_ar_by_ctx(struct ieee80211_hw *hw,
- 	return ath12k_mac_get_ar_by_chan(hw, ctx->def.chan);
- }
- 
--static struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
--					   struct ieee80211_vif *vif,
--					   u8 link_id)
-+struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
-+				    struct ieee80211_vif *vif,
-+				    u8 link_id)
- {
- 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
- 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
-@@ -7346,10 +7347,14 @@ static int ath12k_mac_config_mon_status_default(struct ath12k *ar, bool enable)
- 	if (!ab->hw_params->rxdma1_enable)
- 		return ret;
- 
--	if (enable)
-+	if (enable) {
- 		tlv_filter = ath12k_mac_mon_status_filter_default;
--	else
-+
-+		if (ath12k_debugfs_rx_filter(ar))
-+			tlv_filter.rx_filter = ath12k_debugfs_rx_filter(ar);
-+	} else {
- 		tlv_filter.rxmon_disable = true;
-+	}
- 
- 	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
- 		ring_id = ar->dp.rxdma_mon_dst_ring[i].ring_id;
-@@ -10447,6 +10452,9 @@ static const struct ieee80211_ops ath12k_ops = {
- 	.set_wakeup			= ath12k_wow_op_set_wakeup,
- #endif
- 	CFG80211_TESTMODE_CMD(ath12k_tm_cmd)
-+#ifdef CONFIG_ATH12K_DEBUGFS
-+	.link_sta_add_debugfs           = ath12k_debugfs_link_sta_op_add,
-+#endif
- };
- 
- static void ath12k_mac_update_ch_list(struct ath12k *ar,
-diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-index 1acaf3f68292..8e49a8276a70 100644
---- a/drivers/net/wireless/ath/ath12k/mac.h
-+++ b/drivers/net/wireless/ath/ath12k/mac.h
-@@ -111,5 +111,7 @@ void ath12k_mac_get_any_chanctx_conf_iter(struct ieee80211_hw *hw,
- u16 ath12k_mac_he_convert_tones_to_ru_tones(u16 tones);
- enum nl80211_eht_ru_alloc ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(u16 ru_tones);
- enum nl80211_eht_gi ath12k_mac_eht_gi_to_nl80211_eht_gi(u8 sgi);
--
-+struct ath12k *ath12k_get_ar_by_vif(struct ieee80211_hw *hw,
-+				    struct ieee80211_vif *vif,
-+				    u8 link_id);
- #endif
--- 
-2.34.1
-
 
