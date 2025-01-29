@@ -4,91 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B8E3C0218D
-	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 09:13:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D6A4C0218D
+	for <ath12k@archiver.kernel.org>; Wed, 29 Jan 2025 09:23:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gPwj1JB3BIoLhCGHh8/sCfPKdHW7tg4TGTzPhb+4cZU=; b=bGAGyeSrpl5a6gHx9PjMC4efoy
-	xM7twylkdXFe+S27SudF24gyMzVe3+NGvOY7NkixOpwWocnKyFWoF6kjUfrqO7NmcpNsC0Bf8R7YH
-	MjVRziSLGvEiqcYAc8MdotDcBd53nBqXF65Loee8cKstOYLcJ5xS9ufw8PX3Yx2ZPRO6n2PBNqgD8
-	uflaHVRa06HEUb/35yDGYgTs8CS2L4LkMG9KONwBsa16ZFyuXg9AMaBME1IjCy+tDOfX4AoBSI9Gr
-	AD1TP9rXVruAFjwPoDkhxoZzUINLyDFYdyGSn0FcEoPMkEIx/CkN3gN0PVxI6K77t72q1hWfGA93E
-	oVsguzXg==;
+	bh=dkVtFYf2MVcLNdpgF/1FM6AyzPrPgahv/4qNthU6GjE=; b=WrwiMHNjSYbFVYiccjM7Fek/LM
+	Uk6k9ERhU8vlCO+fVrR3Ct24zTXxotX+cln87eaxueEgWYh/mw4rzrMmDrQJ9FdhF7zvZy7a9kM7N
+	jYFbPp9sAa0SH23/V82HCrSc3DklnSkplj2mNsJgo//ADKiIb/7FGVpf97g1LkMxFNSwS/fNIuPg+
+	oL31g/rwRbLjcRqWgZUIhxm9nPfUrmcrg5x3LYRU6/rs0m17GZXZ+PRIXPcgaB0FCp2h4smnC2i9t
+	wSHkis2g1+p0ZUUeQ5NyOww74tOlZzQKSePSJiaq+hQ6tDvGtYbv7uAHwejtzRnZN4HvveYr4wBzj
+	5OGCJHYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1td485-00000006cgC-3Eyu
+	id 1td4IS-00000006du8-49uR
 	for ath12k@archiver.kernel.org;
-	Wed, 29 Jan 2025 09:13:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 29 Jan 2025 09:23:44 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1td482-00000006cfN-2tof
-	for ath12k@lists.infradead.org;
-	Wed, 29 Jan 2025 09:12:59 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50T8T7L9013678;
-	Wed, 29 Jan 2025 09:12:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	gPwj1JB3BIoLhCGHh8/sCfPKdHW7tg4TGTzPhb+4cZU=; b=S4oD8t0kcaBR4nVl
-	JfSOfjGvihX5uty+8fD3Ll90U9WYnGcbgLbHCmS2OZv+AFGoUtzY7amN4f8npCWs
-	cR83XxEWZX3V8KsJkjhF4pNbfO5opYhLRsXdmc38Ty7hPpTLCIWHw0pvKbz5tacd
-	+R9nb7YoGeoBFS2Y1iTM8EXcm0OJpdb7QKQDC3sjmikCTtExxisR90y4IU5mNCBT
-	O03mghGejUWcitaIBxmdk663Z+WiSOwPqVVwR6Liy2hhchfIMkmaEJd7sVNgGUJD
-	LIg2wn07NCmDaa8Qcx72/TjsaO9CWC8YDgoFyYA0ZhIlBD5Y0+OT80V0F4YaViZI
-	bSS7aQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44fguvg2af-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 09:12:57 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50T9Curr019627
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 29 Jan 2025 09:12:56 GMT
-Received: from [10.151.40.197] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 29 Jan
- 2025 01:12:54 -0800
-Message-ID: <ff2f41d5-7e79-3255-941d-64009d7f904a@quicinc.com>
-Date: Wed, 29 Jan 2025 14:42:51 +0530
+	id 1td4IQ-00000006dtg-3LgP;
+	Wed, 29 Jan 2025 09:23:43 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-2f83a8afcbbso762916a91.1;
+        Wed, 29 Jan 2025 01:23:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1738142621; x=1738747421; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=dkVtFYf2MVcLNdpgF/1FM6AyzPrPgahv/4qNthU6GjE=;
+        b=AKZMAamtjrv/SfKOySuy3Aq+DCsnzn9/6GDH/ZmwtrDANck6lK+HBbMbYHjb0PHnvK
+         fgD+kNH+d+yeBMBbOjYpSd3LRoAv5pMhCTJh5SOIrPAovNRj1TA5jaXTc2uKj6xFDj9Q
+         cVFQuUNu5yVcULGEMEu4T8dIvITAq3BPufVggoK5luW5c/8lXMYEnbuKZWW9tv/BQBn2
+         GYZVuZ9O5yEv1qYK9DLRYgo6WTF+VTtPJgLa1Raje7tpR04DnDw3bPqOjvVcccut38D0
+         5JiE5fbVEaeCYHts7++oY9jJ86/lkXZaFSJvjZu4+An0d8Td827dbrOjugQSS0NAv5QP
+         QS2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738142621; x=1738747421;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=dkVtFYf2MVcLNdpgF/1FM6AyzPrPgahv/4qNthU6GjE=;
+        b=uDHhPqng/sdoyYrBU4eUWyqKRt3DmjHSpNFfxzAdXHeCRVo+dFcPGQSUJbf6/PllDp
+         UuxnqLYyuh8NYXVlbVtTQnN9S//iI8Se27SlwVPB8fgXZYsRCNTPdmAEbdyBW76u17J2
+         HZnjxLlDbH0iNepjr8x2b4GXK0Kl2N5W6kJljUNl9VNmzLfNHXL25vGT5B/AYHYfTN9C
+         ptHr5WvF4vRx7nRt043NkI+gAwpXYASHjI7tmcLwsYa4sIN/INDTy67NTBItUX674yI8
+         bu/FDqspPos2C2n7PdV5w7re/w9Cy7Csc6ov6gO5009iKviFT2zorhuRf4McpHddZP8R
+         JOjQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUPTQO8aQVvaFicJpn/nsH1bLFB9qjuQb7JVYyCx+ec2/JKrdHegHdVqgDZBWs857CSyufFknwc@lists.infradead.org, AJvYcCUPWAQva46aFWYjtGJ0qid9Yb1E9rJLc1KBhAXIbXIhps/ZGonOUs+CDjdj52/AUGnyAn44Wy8=@lists.infradead.org, AJvYcCXJRI23Z/zJPR75UTcK3Ehxds6YYHZy0Kdm+XO1Q8e0KKJ8i3FigWtzK3CgbWYeJrFtWAxFiLjI@lists.infradead.org
+X-Gm-Message-State: AOJu0YzWdWesTbTQAjh2P6VxYTVxHWHz42oU/ApDt45xcAmuiCQrZOw5
+	3/ktlVGUzBE4WCE0u89fcRQCJcHTUNTH6ZKcW9X6Zzr+9+m5VcZyBGWYxSaEXfUl5vWd8S+UsMU
+	6G22ycI/gIFGqRuR1GeTrb7ZqnEv2IXwH
+X-Gm-Gg: ASbGncv7ZpciLxfx4Q3V7Rx7xZhUK+elqdYkjoTLT4S51Osx0IM95IqVafgg/zDWJaU
+	WnOH5OcDZ0Dn9vs/9cC1ueqXJo5SnUxFwkjS4IIPvP00PX8P52tX5AK6wfhHOtR64fVyFDgoewA
+	==
+X-Google-Smtp-Source: AGHT+IG0NT5+Ebjs5FpztVqBT9QwuXSYNyzgvElMDH+2iRgo6k0KnderKKdowGTHlRb3LEKlUYgj7jqgzgwCWWUfrYM=
+X-Received: by 2002:a17:90b:4ecf:b0:2ee:5c9b:35c0 with SMTP id
+ 98e67ed59e1d1-2f83a05c569mr3598722a91.9.1738142621531; Wed, 29 Jan 2025
+ 01:23:41 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v5 1/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV
- parsing support
-Content-Language: en-US
-To: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>
-References: <20250127104738.4174862-1-quic_periyasa@quicinc.com>
- <20250127104738.4174862-2-quic_periyasa@quicinc.com>
- <35fcc2d4-519b-8f71-c722-7aceea590b0e@quicinc.com>
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <35fcc2d4-519b-8f71-c722-7aceea590b0e@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: DuQXVXDbfrnJS0QfYDAanZcSx2Cwu_CS
-X-Proofpoint-GUID: DuQXVXDbfrnJS0QfYDAanZcSx2Cwu_CS
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-28_04,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- phishscore=0 spamscore=0 mlxlogscore=999 bulkscore=0 suspectscore=0
- mlxscore=0 adultscore=0 priorityscore=1501 malwarescore=0 impostorscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501290074
+References: <87wmefguqt.fsf@kernel.org> <e64c416a975d8fcc4e245db78f31b0daef358e89.camel@tuxdriver.com>
+In-Reply-To: <e64c416a975d8fcc4e245db78f31b0daef358e89.camel@tuxdriver.com>
+From: Emmanuel Grumbach <egrumbach@gmail.com>
+Date: Wed, 29 Jan 2025 11:23:30 +0200
+X-Gm-Features: AWEUYZnYaDjc0TciMfJF2gwFNzQ1rD_qqkGo6wdKEgYfWf7G52X1E5mNencBTLo
+Message-ID: <CANUX_P3Z2qQC1+SwqqczrQx-9_EOBwDnh-KtvkGFf0heJ81AXw@mail.gmail.com>
+Subject: Re: Stepping down as maintainer
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: Kalle Valo <kvalo@kernel.org>, linux-wireless@vger.kernel.org, 
+	netdev@vger.kernel.org, ath12k@lists.infradead.org, 
+	ath11k@lists.infradead.org, ath10k@lists.infradead.org, 
+	Johannes Berg <johannes@sipsolutions.net>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250129_011258_869629_83CBF39F 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20250129_012342_835564_67D3796B 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,110 +96,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Hi Kalle,
 
+On Tue, Jan 28, 2025 at 5:18=E2=80=AFPM John W. Linville <linville@tuxdrive=
+r.com> wrote:
+>
+> On Tue, 2025-01-28 at 11:20 +0200, Kalle Valo wrote:
+> > Hi everyone,
+> >
+> > I'm stepping down from all my maintainer roles. My first commit
+>
+> Well, my friend, I suppose the time has come for you to move on to
+> something else? I truly hope that something exciting and rewarding
+> awaits you!
+>
+> You have done a great job in this maintainer role, and I am very
+> certain that you will be missed. Few people realize how thankless such
+> a role can be, but I do. I hope you will now have some some time to
+> enjoy your sauna as you consider what comes next for you.
+>
+> Thanks for the job you have done.
+>
 
-On 1/29/2025 10:51 AM, Vasanthakumar Thiagarajan wrote:
-> 
-> 
-> On 1/27/2025 4:17 PM, Karthikeyan Periyasamy wrote:
->> Currently, monitor is not enabled. However, in the future, the monitor
->> will be enabled. Therefore, add the necessary HAL_PHYRX_GENERIC_U_SIG TLV
->> parsing support in monitor Rx path, which help to populate the EHT
->> radiotap data.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI 
->> WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
->> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
->> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/dp_mon.c | 211 ++++++++++++++++++++++-
->>   drivers/net/wireless/ath/ath12k/hal_rx.h |  60 +++++++
->>   2 files changed, 270 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c 
->> b/drivers/net/wireless/ath/ath12k/dp_mon.c
->> index 4e9a60181c06..4c8fe1b65fda 100644
->> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
->> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
->> @@ -10,6 +10,9 @@
->>   #include "dp_tx.h"
->>   #include "peer.h"
->> +#define ATH12K_LE32_DEC_ENC(value, dec_bits, enc_bits)    \
->> +        u32_encode_bits(le32_get_bits(value, dec_bits), enc_bits)
->> +
->>   static void
->>   ath12k_dp_mon_rx_handle_ofdma_info(const struct 
->> hal_rx_ppdu_end_user_stats *ppdu_end_user,
->>                      struct hal_rx_user_status *rx_user_status)
->> @@ -562,6 +565,193 @@ static void ath12k_dp_mon_parse_he_sig_su(const 
->> struct hal_rx_he_sig_a_su_info *
->>       ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->>   }
->> +static enum hal_rx_mon_status
->> +ath12k_dp_mon_hal_rx_parse_u_sig_cmn(const struct hal_mon_usig_cmn *cmn,
->> +                     struct hal_rx_mon_ppdu_info *ppdu_info)
->> +{
->> +    u32 common;
->> +    u8 bw;
->> +
->> +    bw = le32_get_bits(cmn->info0, HAL_RX_USIG_CMN_INFO0_BW);
->> +
->> +    common = __le32_to_cpu(ppdu_info->usig.common);
->> +    common |= IEEE80211_RADIOTAP_EHT_USIG_COMMON_PHY_VER_KNOWN |
->> +          IEEE80211_RADIOTAP_EHT_USIG_COMMON_BW_KNOWN |
->> +          IEEE80211_RADIOTAP_EHT_USIG_COMMON_UL_DL_KNOWN |
->> +          IEEE80211_RADIOTAP_EHT_USIG_COMMON_BSS_COLOR_KNOWN |
->> +          IEEE80211_RADIOTAP_EHT_USIG_COMMON_TXOP_KNOWN |
->> +          ATH12K_LE32_DEC_ENC(cmn->info0,
->> +                      HAL_RX_USIG_CMN_INFO0_PHY_VERSION,
->> +                      IEEE80211_RADIOTAP_EHT_USIG_COMMON_PHY_VER) |
->> +          u32_encode_bits(bw, IEEE80211_RADIOTAP_EHT_USIG_COMMON_BW) |
->> +          ATH12K_LE32_DEC_ENC(cmn->info0,
->> +                      HAL_RX_USIG_CMN_INFO0_UL_DL,
->> +                      IEEE80211_RADIOTAP_EHT_USIG_COMMON_UL_DL) |
->> +          ATH12K_LE32_DEC_ENC(cmn->info0,
->> +                      HAL_RX_USIG_CMN_INFO0_BSS_COLOR,
->> +                      IEEE80211_RADIOTAP_EHT_USIG_COMMON_BSS_COLOR) |
->> +          ATH12K_LE32_DEC_ENC(cmn->info0,
->> +                      HAL_RX_USIG_CMN_INFO0_TXOP,
->> +                      IEEE80211_RADIOTAP_EHT_USIG_COMMON_TXOP);
->> +    ppdu_info->usig.common = cpu_to_le32(common);
->> +
->> +    switch (bw) {
->> +    default:
->> +        fallthrough;
->> +    case HAL_EHT_BW_20:
->> +        ppdu_info->bw = HAL_RX_BW_20MHZ;
->> +        break;
->> +    case HAL_EHT_BW_40:
->> +        ppdu_info->bw = HAL_RX_BW_40MHZ;
->> +        break;
->> +    case HAL_EHT_BW_80:
->> +        ppdu_info->bw = HAL_RX_BW_80MHZ;
->> +        break;
->> +    case HAL_EHT_BW_160:
->> +        ppdu_info->bw = HAL_RX_BW_160MHZ;
->> +        break;
->> +    case HAL_EHT_BW_320_1:
->> +    case HAL_EHT_BW_320_2:
->> +        ppdu_info->bw = HAL_RX_BW_320MHZ;
->> +        break;
->> +    }
->> +
->> +    return HAL_TLV_STATUS_PPDU_NOT_DONE;
-> 
-> Return code for this function and the below ones dont seem
-> to have a real use in the callers. May be these can be made
-> void instead?
-> 
+I think we met only once in Seville in ... 2016..
 
-sure, will fix in the next version of the patch.
+I also would like to take a few moments to thank you for the work you've
+done for us all. Just like for many areas in life, we take things for grant=
+ed
+and only when there is a change we sometimes become more attentive to
+what people have done for so many years without being recognized enough.
 
--- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+Good luck and I hope you'll enjoy the ride of your next adventure!
+
+John, I think the last mail I got from you was when you stepped down... I a=
+ssume
+that the equipment that was considered then state of the art is now under h=
+eavy
+development as part of your vintage hobby? ;)
 
