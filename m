@@ -4,91 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A9A9C0218A
-	for <ath12k@archiver.kernel.org>; Thu, 30 Jan 2025 06:25:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71CF3C0218A
+	for <ath12k@archiver.kernel.org>; Thu, 30 Jan 2025 06:52:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mFk3sF9BM5sks/Z1xHdQKlRSwY4Ezpz3B0HB98/HDGg=; b=R+nDR9MBHqVsQG48lAkt44BFV7
-	t7SZ+vnrZqzxiSpzH/asyQBpLbb7HWlKqa5WXPGm9kUw2jkUig1JPwyVmPQho6GABOL5XmrS2QgHF
-	Xbuwz/G0BK8ED6UljQkMaSktpqjK3G3UWjpeLw0ueay+nOO7Di0vVpK2PJWZXMu1n6V0CkcaMkWHB
-	xNnowMHTYy0svW0v4OJqT3L1FK0Zog1fMv/iGvLiHw/hPvnUfRe8+kq1jpN//DqM82Cr853eGfVNt
-	5KE+hgvK//x10mADSlaz7a9fdF24fCRZQpZB70/TSfrgikwyHz//dKrjgL/I0TU9LplRD/kT4gog3
-	STcG9EGQ==;
+	bh=H23WwSFj9O0uWJFt/v7xnWizAiddo1nd5E9CRkVLZVs=; b=sNomXJPjzOGPWCUVRHi1oS17O/
+	/D2o4QdCrYkSAYE9r8EBKavEE7R9MIxuOmSIlW3B99oEQbPFEZejSSp3cytPxvkFCiKgLNYYvlizy
+	QpHkI8Hd/xOk8uOdBcT3piLFGfWJbEqemfJ8tFmoH95wzmvTapbeI2pZgX2DTlvXVDWSI/mPIlXLK
+	+gup8TqRxX3iW/cZKEnFP9TUxIZ8trIWEE/CUko4R8IK9vupUSa5HksOi7+vz1bUEED3bVQxL5PtF
+	lYTCuJHG0MOMGon972pEtWcA1n9qbm1tHbSXACXwAYm7boarRqQkO+ft+BCjMSrsRH9QdtKJRga9/
+	LgQ6bCCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdNzu-00000008JNt-1ZNd
+	id 1tdOPE-00000008Kb2-09rP
 	for ath12k@archiver.kernel.org;
-	Thu, 30 Jan 2025 06:25:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 30 Jan 2025 06:52:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdNzs-00000008JNK-0JhH
+	id 1tdOPB-00000008Kae-0CVV
 	for ath12k@lists.infradead.org;
-	Thu, 30 Jan 2025 06:25:53 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50U1wkB9031539;
-	Thu, 30 Jan 2025 06:25:51 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Thu, 30 Jan 2025 06:52:02 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50U3LE5t014547
+	for <ath12k@lists.infradead.org>; Thu, 30 Jan 2025 06:52:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mFk3sF9BM5sks/Z1xHdQKlRSwY4Ezpz3B0HB98/HDGg=; b=P0uJR9T+PAwnjj+N
-	NIjGweZrr5KBRpuckY9ema8FVOdWGOtMcSaN1QOxlC2FvaT/Jr3ax+QL33dR5plI
-	DdrDe7bl9iOGhicSG1shHmeRHnJqhg8IMtsy62lmlgUizJwTHGBDURx8KSoT+ZQb
-	bKPoMPf4tNSE7iYuemALB9YvsosLvaW2I1h43pvDnaqta1jJB1YMBcVhbqOGN4Og
-	DVLE9e0n0ESUgXTCPNTES85vmG0pju3XOo0rOlzS6CkMKpU5vxhldgChG89krNBt
-	csmUf/s3ktrFtMaK/w/fH0Uv6u4X1kSGYUwc+IKqXII+LxiXC6seGiCnKx1j1cJH
-	riO7Vg==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44g0830cxc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Jan 2025 06:25:51 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50U6PoR6022216
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Jan 2025 06:25:50 GMT
-Received: from [10.216.38.203] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 29 Jan
- 2025 22:25:47 -0800
-Message-ID: <1dcc7a0a-1350-e761-2926-01c96c3a9e79@quicinc.com>
-Date: Thu, 30 Jan 2025 11:55:44 +0530
+	H23WwSFj9O0uWJFt/v7xnWizAiddo1nd5E9CRkVLZVs=; b=Fe5XuuBMaGq6dFA7
+	fJ2iB1Enc1qXrRiOkt7V9ab07gqMb1WGSgxoEXb7zfqDb0o1CjjKPYhGP1gzTlKY
+	5mMQRMLXj+R5LpAbm8PhpfBf1rvWtpranbVzdtp/U2LR2/7tg4Uoag+tPTEqp6by
+	iTKGt3eoWh5F3psPT/ciojmYgKxoNMDnPESWpHhN/lYrRXjyK+VoOt/O2nFlhkxC
+	m/+FPpI7mK+meHG5Y2ZfsFSIDKny92C1gpNJnaXGqZNsp7bc7BVbD7Kxrn7KcT12
+	MF424vsdZOo1gjzOJFLaQRMs6PEXzP+9lC9kp3D77eV27j/y6PWNH3yazNalzlaA
+	OI5V+g==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44fxvwrj28-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 30 Jan 2025 06:52:00 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-216266cc0acso28376685ad.0
+        for <ath12k@lists.infradead.org>; Wed, 29 Jan 2025 22:51:59 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738219919; x=1738824719;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=H23WwSFj9O0uWJFt/v7xnWizAiddo1nd5E9CRkVLZVs=;
+        b=FTeQknt32TWp/qwdtQlNs1PBEbweitJIt+NYF4oOcu7ScaaWwxw9oMLklTNKyjJ8AS
+         pQVN0Wsk/7qSlVecvraOqLkNVpshF6IgGzlLIjQqfF2Vu3OUUaLZUS9wNZfeXk0LvHU9
+         Uem/jPBUidJfEoe0VmiFy/5F3DVkeZvtLYKK7uSzDm1Z5Lm2WB7VgnmBEmpirxgNEq6i
+         prWBYEMKaXySBaiQmVFjeSjQ7q1oubF7d7CWPrZKgaQeKcn4SO+v3dxuMJcMp8DEWoGN
+         y1SCmIgU3lXIRko6Vmy+Xllz4Z1sJac57uApq8Mg2SEJG91bW4q5t05JM0tSOnA+wivv
+         SlUg==
+X-Forwarded-Encrypted: i=1; AJvYcCVqMVJzI7SvC8zLKvM2EOgN+XMAJpBSwe2CfIY69+CaoABuxSMApvtHmnCvLmw5+WzhRNEjZqY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzbMvXHy88ZCQnR7nvoxQqmF0QtVKV+3QBzPn7Wj2UzqT6cIKRT
+	sKk7XdiDcFwj4Noce732Cp/+zJmDrHHaa7tUj+Hji9dH47kpMdqtkGW6Z37BzSjiFDlfRwqol5Z
+	9MZPZ2Rof2sqEDRWSQCCRShxRKWgy0thmho7XYNmFxmcUIVOyYjRF+js2yqE7Fkb1AOUV
+X-Gm-Gg: ASbGncuXZJ+b63+qiC2fGErHW8C5zMEZJbA+Tnh+UGDfb9bOj6dqhR0KiQC40kSwnu2
+	yLna7Sl/41x2sLAWO1HUSi2PKrccwDTj8e/eNCvl5EXf5tliWPksAgIT8Z/6GlodS79257u97YE
+	CsWViCrv8283yuq23Je7q0ck6C9esHifehxyBZD9EIU+ubu2vfCcNXEo6faz3ZxjYXLADYef+K7
+	QVObqjfAwfMszP4zYHmGSSUNmnnbG1hT2TjNTe+S13UBciacdTDamKf+FKAkd0ut0eBjZ9uVmfg
+	Dl+owUO+ONfQe6AZ99Up09OqCdHgoW2L+zpxkTU=
+X-Received: by 2002:a05:6a20:c78d:b0:1e1:ad7:3282 with SMTP id adf61e73a8af0-1ed8730a904mr3511361637.7.1738219919015;
+        Wed, 29 Jan 2025 22:51:59 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEzG+DogYyZ4oCV8O4Q9rbTI5YcJ0UW8zYZUFnb0DL3QdqmDelnZIfjmzVNjsQlG0V809uVRw==
+X-Received: by 2002:a05:6a20:c78d:b0:1e1:ad7:3282 with SMTP id adf61e73a8af0-1ed8730a904mr3511341637.7.1738219918596;
+        Wed, 29 Jan 2025 22:51:58 -0800 (PST)
+Received: from [10.152.202.18] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-acec0a666ddsm508683a12.73.2025.01.29.22.51.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 29 Jan 2025 22:51:58 -0800 (PST)
+Message-ID: <9c12e9b9-35a4-47f1-bd17-6b4641de92a4@oss.qualcomm.com>
+Date: Thu, 30 Jan 2025 12:21:54 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH 2/2] wifi: ath12k: add get_txpower mac ops
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] wifi: ath12k: remove return for empty tx bitrate in
+ mac_op_sta_statistics
+To: Remi Pommarel <repk@triplefau.lt>, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
+References: <38c2a7c4f7eaf57b9306bb95a9e6c42b7d987e05.1738169458.git.repk@triplefau.lt>
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 Content-Language: en-US
-To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Aditya Kumar Singh
-	<aditya.kumar.singh@oss.qualcomm.com>
-References: <20250127172202.1410429-1-rameshkumar.sundaram@oss.qualcomm.com>
- <20250127172202.1410429-3-rameshkumar.sundaram@oss.qualcomm.com>
-From: Mahendran P <quic_mahep@quicinc.com>
-In-Reply-To: <20250127172202.1410429-3-rameshkumar.sundaram@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
+In-Reply-To: <38c2a7c4f7eaf57b9306bb95a9e6c42b7d987e05.1738169458.git.repk@triplefau.lt>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: fDwDJQaac664sAQaA_yhMSG8HjlPuXQc
-X-Proofpoint-ORIG-GUID: fDwDJQaac664sAQaA_yhMSG8HjlPuXQc
+X-Proofpoint-GUID: kUv6SIztxy8iAVJqrjzF9I5dKisXgKOk
+X-Proofpoint-ORIG-GUID: kUv6SIztxy8iAVJqrjzF9I5dKisXgKOk
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-30_03,2025-01-29_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
- lowpriorityscore=0 malwarescore=0 bulkscore=0 mlxscore=0 mlxlogscore=999
- clxscore=1015 adultscore=0 impostorscore=0 suspectscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501300047
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ mlxlogscore=963 malwarescore=0 lowpriorityscore=0 bulkscore=0
+ priorityscore=1501 clxscore=1015 adultscore=0 suspectscore=0 spamscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501300051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250129_222552_260945_4E6E0365 
-X-CRM114-Status: GOOD (  35.91  )
+X-CRM114-CacheID: sfid-20250129_225201_108975_825D8932 
+X-CRM114-Status: GOOD (  22.28  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,292 +119,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 1/27/2025 10:52 PM, Rameshkumar Sundaram wrote:
-> From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+On 1/29/25 22:25, Remi Pommarel wrote:
+> Currently in ath12k_mac_op_sta_statistics() there is the following
+> logic:
 > 
-> Driver does not support get_txpower mac ops because of which
-> cfg80211 returns vif->bss_conf.txpower to user space. bss_conf.txpower
-> gets its value from ieee80211_channel->max_reg_power. However, the final
-> txpower is dependent on few other parameters apart from max regulatory
-> supported power. It is the firmware which knows about all these
-> parameters and considers the minimum for each packet transmission.
+>      if (!arsta->txrate.legacy && !arsta->txrate.nss)
+>          return;
 > 
-> All ath12k firmware reports the final TX power in firmware pdev stats
-> which falls under fw_stats. add get_txpower mac ops to get the TX power
-> from firmware leveraging fw_stats and return it accordingly.
+> Because ath12k_sta_statistics is used to report many info to iw wlan0 link,
+> if it return for empty legacy and nss of arsta->txrate, then the other
+> stats after it will not be set.
 > 
-> While at it, there is a possibility that repeated stats request WMI
-> commands are queued to FW if mac80211/userspace does get tx power back
-> to back(in Multiple BSS cases). This could potentially consume the WMI
-> queue completely. Hence limit this by fetching the power only for every
-> 5 seconds and reusing the value until the refresh timeout or when there
-> is a change in channel.
+> To address this issue remove the return and instead invert the logic to set
+> the txrate logic if (arsta->txrate.legacy || arsta->txrate.nss).
 > 
-> Also remove init_completion(&ar->fw_stats_complete) in
-> ath12k_mac_hw_register() as ath12k_fw_stats_init() takes care of
-> it for each ar.
+> The same was done also in both ath10k with commit 1cd6ba8ae33e ("ath10k:
+> remove return for NL80211_STA_INFO_TX_BITRATE") and ath11k as well with
+> commit 1d795645e1ee ("ath11k: remove return for empty tx bitrate in
+> mac_op_sta_statistics").
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-> Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+
+MISSING_BLANK_LINE
+'Tested-on:' tag missing blank line after it.
+
+You missed v1 comment? :)
+
+> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
 > ---
->  drivers/net/wireless/ath/ath12k/core.h |   1 +
->  drivers/net/wireless/ath/ath12k/mac.c  | 155 +++++++++++++++++++------
->  drivers/net/wireless/ath/ath12k/mac.h  |   3 +
->  3 files changed, 123 insertions(+), 36 deletions(-)
+> Changes in v2:
+>    - Rebase on ath-next
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index e4f51ad6a59f..42da19870713 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -731,6 +731,7 @@ struct ath12k {
->  	u32 mlo_setup_status;
->  	u8 ftm_msgref;
->  	struct ath12k_fw_stats fw_stats;
-> +	unsigned long last_tx_power_update;
->  };
->  
->  struct ath12k_hw {
+>   drivers/net/wireless/ath/ath12k/mac.c | 33 +++++++++++++--------------
+>   1 file changed, 16 insertions(+), 17 deletions(-)
+> 
 > diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 4fb7e235be66..54fe3a2c9c0b 100644
+> index 4fb7e235be66..e9663c6ac72c 100644
 > --- a/drivers/net/wireless/ath/ath12k/mac.c
 > +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -4280,6 +4280,120 @@ static int ath12k_start_scan(struct ath12k *ar,
->  	return 0;
->  }
->  
-> +static int ath12k_mac_get_fw_stats(struct ath12k *ar, u32 pdev_id,
-> +				   u32 vdev_id, u32 stats_id)
-> +{
-> +	struct ath12k_base *ab = ar->ab;
-> +	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
-> +	unsigned long time_left;
-> +	int ret;
-> +
-> +	guard(mutex)(&ah->hw_mutex);
-> +
-> +	if (ah->state != ATH12K_HW_STATE_ON)
-> +		return -ENETDOWN;
-> +
-> +	spin_lock_bh(&ar->data_lock);
-> +	ar->fw_stats.fw_stats_done = false;
-> +	ath12k_fw_stats_free(&ar->fw_stats);
-> +	spin_unlock_bh(&ar->data_lock);
-
-rename ath12k_debugfs_fw_stats_reset and reuse instead of the above 4 lines
-
-> +	reinit_completion(&ar->fw_stats_complete);
-> +
-> +	ret = ath12k_wmi_send_stats_request_cmd(ar, stats_id, vdev_id, pdev_id);
-> +
-> +	if (ret) {
-> +		ath12k_warn(ab, "failed to request fw stats: stats id %u ret %d\n",
-> +			    stats_id, ret);
-> +		return ret;
-> +	}
-> +
-> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
-> +		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-> +		   pdev_id, vdev_id, stats_id);
-> +
-> +	time_left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
-> +
-> +	if (!time_left)
-> +		ath12k_warn(ab, "time out while waiting for get fw stats\n");
-> +
-
-suggestion is to create a separate function and move some of the common code in ath12k_mac_get_fw_stats and ath12k_debugfs_fw_stats_request
-
-> +	return ret;
-> +}
-> +
-> +static int ath12k_mac_op_get_txpower(struct ieee80211_hw *hw,
-> +				     struct ieee80211_vif *vif,
-> +				     unsigned int link_id,
-> +				     int *dbm)
-> +{
-> +	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-> +	struct ath12k_fw_stats_pdev *pdev;
-> +	struct ath12k_hw *ah = hw->priv;
-> +	struct ath12k_link_vif *arvif;
-> +	struct ath12k_base *ab;
-> +	struct ath12k *ar;
-> +	int ret;
-> +
-> +	/* Final Tx power is minimum of Target Power, CTL power, Regulatory
-> +	 * Power, PSD EIRP Power. We just know the Regulatory power from the
-> +	 * regulatory rules obtained. FW knows all these power and sets the min
-> +	 * of these. Hence, we request the FW pdev stats in which FW reports
-> +	 * the minimum of all vdev's channel Tx power.
-> +	 */
-> +	lockdep_assert_wiphy(hw->wiphy);
-> +
-> +	arvif = wiphy_dereference(ah->hw->wiphy, ahvif->link[link_id]);
-> +	if (!arvif || !arvif->ar)
-> +		return -EINVAL;
-> +
-> +	ar = arvif->ar;
-> +	ab = ar->ab;
-> +	if (ah->state != ATH12K_HW_STATE_ON)
-> +		goto err_fallback;
-> +
-> +	if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags))
-> +		return -EAGAIN;
-> +
-> +	/* Limit the requests to Firmware for fetching the tx power */
-> +	if (ar->chan_tx_pwr != ATH12K_PDEV_TX_POWER_INVALID &&
-> +	    time_before(jiffies,
-> +			msecs_to_jiffies(ATH12K_PDEV_TX_POWER_REFRESH_TIME_MSECS) +
-> +					 ar->last_tx_power_update))
-> +		goto send_tx_power;
-> +
-> +	ret = ath12k_mac_get_fw_stats(ar, ar->pdev->pdev_id, arvif->vdev_id,
-> +				      WMI_REQUEST_PDEV_STAT);
-> +	if (ret) {
-> +		ath12k_warn(ab, "failed to request fw pdev stats: %d\n", ret);
-> +		goto err_fallback;
-> +	}
-> +
-> +	spin_lock_bh(&ar->data_lock);
-> +	pdev = list_first_entry_or_null(&ar->fw_stats.pdevs,
-> +					struct ath12k_fw_stats_pdev, list);
-> +	if (!pdev) {
-> +		spin_unlock_bh(&ar->data_lock);
-> +		goto err_fallback;
-> +	}
-> +
-> +	ar->chan_tx_pwr = pdev->chan_tx_power;
-
-It is better to divide and store
-
-> +	spin_unlock_bh(&ar->data_lock);
-> +	ar->last_tx_power_update = jiffies;
-> +
-> +send_tx_power:
-> +	/* tx power reported by firmware is in units of 0.5 dBm */
-> +	*dbm = ar->chan_tx_pwr / 2;
-
-based on the above comment, we dont need to do divide everytime here during repeated calls
-
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "txpower from firmware %d, reported %d dBm\n",
-> +		   ar->chan_tx_pwr, *dbm);
-> +	return 0;
-> +
-> +err_fallback:
-> +	/* We didn't get txpower from FW. Hence, relying on vif->bss_conf.txpower */
-> +	*dbm = vif->bss_conf.txpower;
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "txpower from firmware NaN, reported %d dBm\n",
-> +		   *dbm);
-> +	return 0;
-> +}
-> +
->  static u8
->  ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
->  {
-> @@ -7433,6 +7547,7 @@ static int ath12k_mac_start(struct ath12k *ar)
->  	ar->num_created_vdevs = 0;
->  	ar->num_peers = 0;
->  	ar->allocated_vdev_map = 0;
-> +	ar->chan_tx_pwr = ATH12K_PDEV_TX_POWER_INVALID;
-
-ar->chan_tx_pwr type u32..and assigning signed value. fix it.
-
->  
->  	/* Configure monitor status ring with default rx_filter to get rx status
->  	 * such as rssi, rx_duration.
-> @@ -8638,6 +8753,7 @@ static int ath12k_mac_op_add_chanctx(struct ieee80211_hw *hw,
->  	 */
->  	ar->rx_channel = ctx->def.chan;
->  	spin_unlock_bh(&ar->data_lock);
-> +	ar->chan_tx_pwr = ATH12K_PDEV_TX_POWER_INVALID;
->  
->  	return 0;
->  }
-> @@ -8666,6 +8782,7 @@ static void ath12k_mac_op_remove_chanctx(struct ieee80211_hw *hw,
->  	 */
->  	ar->rx_channel = NULL;
->  	spin_unlock_bh(&ar->data_lock);
-> +	ar->chan_tx_pwr = ATH12K_PDEV_TX_POWER_INVALID;
->  }
->  
->  static enum wmi_phy_mode
-> @@ -10109,40 +10226,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
->  	return 0;
->  }
->  
-> -static int ath12k_mac_get_fw_stats(struct ath12k *ar, u32 pdev_id,
-> -				   u32 vdev_id, u32 stats_id)
-> -{
-> -	struct ath12k_base *ab = ar->ab;
-> -	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
-> -	unsigned long time_left;
-> -	int ret;
+> @@ -10170,23 +10170,22 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+>   	sinfo->tx_duration = arsta->tx_duration;
+>   	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_DURATION);
+>   
+> -	if (!arsta->txrate.legacy && !arsta->txrate.nss)
+> -		return;
 > -
-> -	guard(mutex)(&ah->hw_mutex);
-> -
-> -	if (ah->state != ATH12K_HW_STATE_ON)
-> -		return -ENETDOWN;
-> -
-> -	reinit_completion(&ar->fw_stats_complete);
-> -
-> -	ret = ath12k_wmi_send_stats_request_cmd(ar, stats_id, vdev_id, pdev_id);
-> -
-> -	if (ret) {
-> -		ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
-> -		return ret;
+> -	if (arsta->txrate.legacy) {
+> -		sinfo->txrate.legacy = arsta->txrate.legacy;
+> -	} else {
+> -		sinfo->txrate.mcs = arsta->txrate.mcs;
+> -		sinfo->txrate.nss = arsta->txrate.nss;
+> -		sinfo->txrate.bw = arsta->txrate.bw;
+> -		sinfo->txrate.he_gi = arsta->txrate.he_gi;
+> -		sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
+> -		sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
+> -		sinfo->txrate.eht_gi = arsta->txrate.eht_gi;
+> -		sinfo->txrate.eht_ru_alloc = arsta->txrate.eht_ru_alloc;
 > -	}
-> -
-> -	ath12k_dbg(ab, ATH12K_DBG_WMI,
-> -		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-> -		   pdev_id, vdev_id, stats_id);
-> -
-> -	time_left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
-> -
-> -	if (!time_left)
-> -		ath12k_warn(ab, "time out while waiting for get fw stats\n");
-> -
-> -	return ret;
-> -}
-> -
->  static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
->  					 struct ieee80211_vif *vif,
->  					 struct ieee80211_sta *sta,
-> @@ -10431,6 +10514,7 @@ static const struct ieee80211_ops ath12k_ops = {
->  	.assign_vif_chanctx		= ath12k_mac_op_assign_vif_chanctx,
->  	.unassign_vif_chanctx		= ath12k_mac_op_unassign_vif_chanctx,
->  	.switch_vif_chanctx		= ath12k_mac_op_switch_vif_chanctx,
-> +	.get_txpower			= ath12k_mac_op_get_txpower,
->  	.set_rts_threshold		= ath12k_mac_op_set_rts_threshold,
->  	.set_frag_threshold		= ath12k_mac_op_set_frag_threshold,
->  	.set_bitrate_mask		= ath12k_mac_op_set_bitrate_mask,
-> @@ -11178,11 +11262,10 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
->  			goto err_unregister_hw;
->  		}
->  
-> +		ath12k_fw_stats_init(ar);
->  		ath12k_debugfs_register(ar);
->  	}
->  
-> -	init_completion(&ar->fw_stats_complete);
-> -
->  	return 0;
->  
->  err_unregister_hw:
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-> index 1acaf3f68292..af0d3c6a2a6c 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.h
-> +++ b/drivers/net/wireless/ath/ath12k/mac.h
-> @@ -33,6 +33,9 @@ struct ath12k_generic_iter {
->  #define ATH12K_KEEPALIVE_MAX_IDLE		3895
->  #define ATH12K_KEEPALIVE_MAX_UNRESPONSIVE	3900
->  
-> +#define ATH12K_PDEV_TX_POWER_INVALID		(-1)
-> +#define ATH12K_PDEV_TX_POWER_REFRESH_TIME_MSECS	5000 /* msecs */
-> +
->  /* FIXME: should these be in ieee80211.h? */
->  #define IEEE80211_VHT_MCS_SUPPORT_0_11_MASK	GENMASK(23, 16)
->  #define IEEE80211_DISABLE_VHT_MCS_SUPPORT_0_11	BIT(24)
+> -	sinfo->txrate.flags = arsta->txrate.flags;
+> -	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
+> +	if (arsta->txrate.legacy || arsta->txrate.nss) {
+> +		if (arsta->txrate.legacy) {
+> +			sinfo->txrate.legacy = arsta->txrate.legacy;
+> +		} else {
+> +			sinfo->txrate.mcs = arsta->txrate.mcs;
+> +			sinfo->txrate.nss = arsta->txrate.nss;
+> +			sinfo->txrate.bw = arsta->txrate.bw;
+> +			sinfo->txrate.he_gi = arsta->txrate.he_gi;
+> +			sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
+> +			sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
+> +			sinfo->txrate.eht_gi = arsta->txrate.eht_gi;
+> +			sinfo->txrate.eht_ru_alloc = arsta->txrate.eht_ru_alloc;
+> +		}
+> +		sinfo->txrate.flags = arsta->txrate.flags;
+> +		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
+> +	}
+>   
+>   	/* TODO: Use real NF instead of default one. */
+>   	signal = arsta->rssi_comb;
 
+Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+
+-- 
+Aditya
 
