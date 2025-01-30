@@ -4,111 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB571C0218A
-	for <ath12k@archiver.kernel.org>; Thu, 30 Jan 2025 08:41:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0280FC0218A
+	for <ath12k@archiver.kernel.org>; Thu, 30 Jan 2025 08:53:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bn654NPB/bbarx2OQ5/nd2PLbJqaXkDs6MQagEjtm9Q=; b=y8FZlM2Mzw3bUdBu5HdmgaLLQq
-	GvxdUkhn4JvafcqmRGBC/GI6vggDTZFeYowOxqYMV8vmSfiiFfmsCvJ1UFxgSmNSnjrnJeDiRUaNo
-	sORXe9DXkbMjiap4jm0ngt7a6iOY5M3Ds0rsamenywGWTfvxh8vCKkQlsII0Dc+/TPiJR1aLgMzJ4
-	Up3HmsAl+gLqm0jd083Kyh4qwyJ/Hyps7SSAQRLwTat2eJxw3r+uG1fB+s3ia/Zsi6bHdH4dotQeY
-	qTeFw3Epfdkm80n/QsRG5KpVCNYP92fiJE1hw0Ki5fpcfpT7DawLAEQZUDvCSCrfSycopBQ/TclHJ
-	3CyxmZUQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ztTkXggYlobgx0epsppi5S+4LOlRnswYqg61lPztKMQ=; b=nSyOI/aqX7eJzCGfSQ7CTIzMV0
+	3laNNHfBlmHqFfeBgq5Gxgs53cuz6jO9PKSQzaR5eZ7+5iuBfF/Yk47TEZBPoaAMYYKGajpGxS6EK
+	HpOlJyw5u5b40fc6OCf/FfD8gbp651XUosKLMrQweNOWbiqjd8q6ZR1qIE7jXjVCa0VTuwSeD70AF
+	y3x+WzGAl019aLpNiB6FRrAv8S0chrlzS2wpGbf4StMxVaS10xKXiJKT146Px1WUyXXOV8QM3a2t/
+	Z5kJ6sqvZh8+LrMZ/ba9eKdrT6M0dZ4I0vGHJRg3w3+OcHlImS8Mdm3mJguBM06q+mJNcheHDThlz
+	lIyQbHfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdQ7a-00000008R11-29J3
+	id 1tdQIY-00000008SQr-39FH
 	for ath12k@archiver.kernel.org;
-	Thu, 30 Jan 2025 08:41:58 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Thu, 30 Jan 2025 08:53:18 +0000
+Received: from e3i103.smtp2go.com ([158.120.84.103])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdQ6V-00000008Qus-0LYD
+	id 1tdQIV-00000008SQ8-3Rmi
 	for ath12k@lists.infradead.org;
-	Thu, 30 Jan 2025 08:40:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 877DB5C1394;
-	Thu, 30 Jan 2025 08:40:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5AE8C4CED2;
-	Thu, 30 Jan 2025 08:40:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738226450;
-	bh=YvbJnh/HicZ8svAByNknxks8ZnMOCqU0Cb9AnJtFmUU=;
-	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
-	b=jx/AKb2jKdDU3K9xze5RT0UAbgJDDbNv8p3XMvh9QIsjmkI5NaEyDbfZWD2z0GRM8
-	 ETXfmzPU2JhSkdT9h2iTm2GFVzqHGeoXq1E96kx5e2IZ4rFVmvp/wR4EbA1Iw0psmu
-	 Il1Sen1fbIQkVGMgq3vhEY+3spvSQjEqE46qV6jUo91U/X8Bo1y9Mcyj3/ZD8PGaGP
-	 HKzxVpVkLoz/9BQbc4LA5GNCE9OcZrU2ma1IimecHw6//blPiM78VEUo1HIokcqd3L
-	 SPDD1Zl+9HmD4Sxzg1q5KA+jeu++w6m7TjCC+d3bfe3t69S4pF+MmlVez7e9SQW5uR
-	 dQV8SOxlTNwNA==
-Message-ID: <104e6b6f-3c1e-4a00-8822-aa6fb4562411@kernel.org>
-Date: Thu, 30 Jan 2025 09:40:44 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 01/13] dt-bindings: net: wireless: describe the ath12k
- AHB module
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+	Thu, 30 Jan 2025 08:53:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=smtpservice.net;
+ i=@smtpservice.net; q=dns/txt; s=a1-4; t=1738227186; h=feedback-id :
+ x-smtpcorp-track : date : message-id : to : subject : from : reply-to
+ : sender : list-unsubscribe : list-unsubscribe-post;
+ bh=ztTkXggYlobgx0epsppi5S+4LOlRnswYqg61lPztKMQ=;
+ b=Ibw6ofU+yPk98uF7e48LkMtr/QiJk/Lf4CzS1kycnKgU5UmQ3Po1TDWCe3Cm7ogBinGYv
+ 4N29gXVu3UHY140Psx56JvETPwSG+IqQKyKL9+efKUd9kE9Tetg96GU8GRkO1jfxos9t5or
+ 6n23szgF+vLZB/I57EJSk7ySxtrrQJVqdsbAej0pFjapP4R/XaF6XLGR2EB1zD7pfyrc0CF
+ pri9lJ25u3pvibar4P0uVSIHsAD7jEqPiU8N5qT2qa8qvvdMfRTveMfoeV1YJF+1nfvob30
+ 01TxsNyxKciaSOZzmBeckkgwhxioJpYSanR/Q51D0CECq9bvwt1CNvp66UhA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=triplefau.lt;
+ i=@triplefau.lt; q=dns/txt; s=s510616; t=1738227186; h=from : subject
+ : to : message-id : date;
+ bh=ztTkXggYlobgx0epsppi5S+4LOlRnswYqg61lPztKMQ=;
+ b=ZF7QNmPxPIJywEUaXPfQ4o54JnukmUhTGSeTtGwYfVHszsp+TtKSnG2h0JLYgmrLHHOUm
+ UogVFbPzq6pcovSwCGiq1rBhXk2j+owTJgE0pxItL5SqXi2GgZxzMZTkCgJVD7vIzIKvf2a
+ wSQOFtUgyNwWwliuqX1MnrQbFjIocNDAhg15DnVGmi+gPgptsHFG4vEwTDhE8uMKlin8/OW
+ fi2XN/8gSRTBxasJqs1qkkeou2Eydj7bOl3+rLlC+DP/3Bts5LIxdfb+mMlQpLNPLTzg2DV
+ w0LcvxglavyT14NjQ4bpNV/ZwfV+NMZnwpCrsozm43WuZLIBK06Hhu1QDsWw==
+Received: from [10.12.239.196] (helo=localhost)
+	by smtpcorp.com with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.97.1-S2G)
+	(envelope-from <repk@triplefau.lt>)
+	id 1tdQIF-4o5NDgrn3Ce-oqLA;
+	Thu, 30 Jan 2025 08:52:59 +0000
+Date: Thu, 30 Jan 2025 09:49:12 +0100
+From: Remi Pommarel <repk@triplefau.lt>
+To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- Kalle Valo <kvalo@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250130043508.1885026-1-quic_rajkbhag@quicinc.com>
- <20250130043508.1885026-2-quic_rajkbhag@quicinc.com>
- <20250130-cunning-quail-of-opportunity-76d0ad@krzk-bin>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250130-cunning-quail-of-opportunity-76d0ad@krzk-bin>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+	linux-kernel@vger.kernel.org, Kalle Valo <kvalo@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>
+Subject: Re: [PATCH v2] wifi: ath12k: remove return for empty tx bitrate in
+ mac_op_sta_statistics
+Message-ID: <Z5s9CO_mmazq2Kg1@pilgrim>
+References: <38c2a7c4f7eaf57b9306bb95a9e6c42b7d987e05.1738169458.git.repk@triplefau.lt>
+ <9c12e9b9-35a4-47f1-bd17-6b4641de92a4@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <9c12e9b9-35a4-47f1-bd17-6b4641de92a4@oss.qualcomm.com>
+X-Report-Abuse: Please forward a copy of this message, including all headers, to <abuse-report@smtp2go.com>
+Feedback-ID: 510616m:510616apGKSTK:510616sX7BLYLfdb
+X-smtpcorp-track: mjH8hCbpBIFb.WZ0v_PTevWqK.qlPRIQoiyih
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250130_004051_209197_66380A3F 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20250130_005316_261761_5F1C6822 
+X-CRM114-Status: GOOD (  16.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,31 +88,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 30/01/2025 09:28, Krzysztof Kozlowski wrote:
-> On Thu, Jan 30, 2025 at 10:04:56AM +0530, Raj Kumar Bhagat wrote:
->> Add device-tree bindings for the ATH12K module found in the IPQ5332
->> device.
->>
->> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
->> ---
->>  .../net/wireless/qcom,ath12k-ahb.yaml         | 319 ++++++++++++++++++
->>  1 file changed, 319 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
->> new file mode 100644
->> index 000000000000..bd953a028dc3
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+On Thu, Jan 30, 2025 at 12:21:54PM +0530, Aditya Kumar Singh wrote:
+> On 1/29/25 22:25, Remi Pommarel wrote:
+> > Currently in ath12k_mac_op_sta_statistics() there is the following
+> > logic:
+> > 
+> >      if (!arsta->txrate.legacy && !arsta->txrate.nss)
+> >          return;
+> > 
+> > Because ath12k_sta_statistics is used to report many info to iw wlan0 link,
+> > if it return for empty legacy and nss of arsta->txrate, then the other
+> > stats after it will not be set.
+> > 
+> > To address this issue remove the return and instead invert the logic to set
+> > the txrate logic if (arsta->txrate.legacy || arsta->txrate.nss).
+> > 
+> > The same was done also in both ath10k with commit 1cd6ba8ae33e ("ath10k:
+> > remove return for NL80211_STA_INFO_TX_BITRATE") and ath11k as well with
+> > commit 1d795645e1ee ("ath11k: remove return for empty tx bitrate in
+> > mac_op_sta_statistics").
+> > 
+> > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 > 
-> Filename should match compatible. This binding does not look like
-> supporting more devices, so there is no much benefit calling it by generic name.
+> MISSING_BLANK_LINE
+> 'Tested-on:' tag missing blank line after it.
+> 
+> You missed v1 comment? :)
 
+Yes sorry I think your mail never reached me, did you CC me ? Do you
+need a respin ?
 
-I saw now your other patchset, so you have here two devices, but I still
-do not understand why this cannot follow standard naming practice like
-most bindings supporting one or more devices. Like every review we give.
-
-Best regards,
-Krzysztof
+-- 
+Remi
 
