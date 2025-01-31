@@ -4,105 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 389D6C0218F
-	for <ath12k@archiver.kernel.org>; Fri, 31 Jan 2025 19:34:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83C6AC0218F
+	for <ath12k@archiver.kernel.org>; Fri, 31 Jan 2025 19:34:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=H8+dJdN9FZTAdyodaE8uUF6aIt7C/+lkLwdCf9e0Tx0=; b=jDJnZsDxTk3QUCNAUczG2ZVYGt
-	ERHPjEvf5hZoqDWOBxV3IfJCIP99Blal/x9xZPNE1enUx7jDq6su1qntabdN9bZ3lxmA0TQxyxZRI
-	VYrr3dkS/nDdYCKEgu4dC6rIl4GzPQtI0jja/C/9rxIqLVrNoCdIAONGwXj/kZTzH7YvHYkbq6XsB
-	yf2H6QUNllPoT1T4bgUulFmsOmGdWGnRricAx87p61yCP+35IDFlkgHaJWxpIzacACpiKOVQDFBNU
-	VikR8Y2i9NGnVy4JknfvVZ5lU8p/REJaGDd/LzVS190tTSrF+KmYqV8t2q6tySVt3OWvYvw27D5NU
-	Tnw/qSDA==;
+	bh=/iW/2qxNn2EpMG6+5p2BMofbrneeebFTJmziMbge0Qs=; b=5A5l5SPsgRBS1FV2A1GYWKGPNt
+	DhRlzTVzBmujwZuYb6Jb1QD+WXdSxrF6BKDw9AvfhJT+DeVurV5Qrer51txnkKSgfIvYcbuge/KqL
+	tDX1aWAsdriGaaLP4XRbrgsUnGumCtjqWroaWM3TzcgQtZLi+Op9WehJWKhyQR3ceTHvtaM1/Uw5c
+	11NowzRjnqJkP6Uje8DrwCR1GC51r3FhY3Ww5L0bVdIZ4g2D+VWn3hKGdbUencsd4eH4axvwJDdU/
+	K03pJW6RR1G2z2cJfe4Si4wQ3d8Kge4B7WQfXbJUZzoTP7GLfHYqxn6DYEtPvX95Lu63ZWcp39/Oz
+	fzYGknqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdwmT-0000000BIXm-3c92
+	id 1tdwmX-0000000BIYa-0tkH
 	for ath12k@archiver.kernel.org;
-	Fri, 31 Jan 2025 19:34:21 +0000
+	Fri, 31 Jan 2025 19:34:25 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdwmS-0000000BIXA-0rgS
+	id 1tdwmS-0000000BIXB-0rH6
 	for ath12k@lists.infradead.org;
-	Fri, 31 Jan 2025 19:34:21 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50VD3Swp009724
+	Fri, 31 Jan 2025 19:34:22 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50VDL5dS020683
 	for <ath12k@lists.infradead.org>; Fri, 31 Jan 2025 19:34:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	H8+dJdN9FZTAdyodaE8uUF6aIt7C/+lkLwdCf9e0Tx0=; b=lRJkoUGCo2xPR7f8
-	Vrj8wj85Q3jHZVaFOAZP3hlz/kfAaGeVvReI1esY22kvueEuvj5sycBdQCJEl/P9
-	ush4JQLt/kN842r0nBYZw+q7SzQr0iEh73iLG2QiGVNbZ+2JS59kgCmx/SRNfhNw
-	oLFCDMSnQJGK/07UcT4L4Nyo5TUJqSjKejkEoPSaJvctVvIJoxuePrb73tCteebV
-	/2ff4l7BhLa+OifDCBJh8IgxJ+o/MCXhNMh02HoNvqV+MsNr5amMsc54FXHEPc/M
-	GYJnyAe1Z3mmsH8rtZoPczUafkdaeYvnlg5P/wOXPYgeif7exlgmPzkMgrTIv6cT
-	D2Xt9A==
+	/iW/2qxNn2EpMG6+5p2BMofbrneeebFTJmziMbge0Qs=; b=DJx4MuvDfeSHhcVJ
+	XlMbmaHwr2Qw/EP6eCQcLe63uE6dWWNvhGuzJpGFmLGQF4FbxZ5sfyjcRZY9LqIG
+	PwvMPJ4l+5aBbDg2cp/MHzGnfFwGHHtXS50CGOsRMDQNNkTeoY9cf0e3zv8OFrN5
+	px7W8m+lTe8gGXgKodYpZdpkWJHtCt2hxPTaLhX2esWxtkVKVZRUhxcS/9kz4x92
+	3+JVPlQ4zTssU1iT8+Qow9MixMVleiVQmKrFwkUbFepigLR+O9GwRSkTHZmzq9BH
+	ME9mTn/tGnHPv9SePSHsBwZXUlfzDw7UGU4S6BHb0dLK0swbLHptgBXzs8ZBQjny
+	hcL2Ew==
 Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44gy2q8wug-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44gyapgvf3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 31 Jan 2025 19:34:18 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2161d5b3eb5so45349765ad.3
-        for <ath12k@lists.infradead.org>; Fri, 31 Jan 2025 11:34:18 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Fri, 31 Jan 2025 19:34:19 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2163dc0f689so66844835ad.1
+        for <ath12k@lists.infradead.org>; Fri, 31 Jan 2025 11:34:19 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1738352058; x=1738956858;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=H8+dJdN9FZTAdyodaE8uUF6aIt7C/+lkLwdCf9e0Tx0=;
-        b=SBNLlH2rCfG0C6pa0kh0ik29gi8508VOCxVpPP3kpKZlCLeqJ22D3V+08YafBN30Ws
-         JXSNh9qIuNFa9IbQkPsIRgtamUn4JI86bk3atTSrzTTRp4k1p57OpczPgtd0q0ydtGS5
-         mf1rSxnMZPWzszV5dJ+lpti5ftMZfI3As57F3mcRQxBfzw/jahYiS94JMlbxfcERzlsl
-         wDy8mKtrinE3XZDpeqos/Gdzlr4FCVl4Hx1lzf8HeNQe83T/xihDZK2/7+epgsAznUVa
-         IpZL2I0eExr+1tZpjSyersheyNcfi1rrazKwSNBXVkaxpcPl4P6XPyCUOj4FnytTJRUn
-         kmJQ==
-X-Gm-Message-State: AOJu0YziOHEt7N2H/aDnAE2HT6JUSt63v0vwbdtVuNxhX0Bq4MjUd/wA
-	A2O7/2CuC/9e/OSZuBgqZoAfYZs9W0nf7860okJNw5WFTvmiGnsIlbm34zvWAUHCB+bf4dgykDO
-	M01VreYtvrvvv6JVZRJ4xoWDUbqqCYjIaCpAvp7Y/V/HaDS3b7ey1ji0MQ7n6
-X-Gm-Gg: ASbGncsk0w9shiOHpNg/tDC5G8bok+bTQbu7Ofc3BWlRbZMHGqufdQ1nxOH6IhX9x3F
-	qAVSg5T0UmZRz8IrRobc4NrCSMluqMpzcbmi039OWN7cjIO7ew5uvhAv7LIz1EjwPgpvZWvAEZ9
-	C2BCcrpEYNcemE/B3JlqGEdKWeZCxahidb7g1X6amJFQE0PqYxuJQJ/LvJ587ThRmkboTsNWfUM
-	jFRX+QRR1fOl0aqWpHVAdgXrC/W9UBU9qFI69hvGuRJMWErZSL8nH0LkD2RKBzR0C8ETZDYcmEY
-	wQiUCftub9KRQKPUlZRJBCImlQM8K15Z02tks04IPQ==
-X-Received: by 2002:a17:902:ecc1:b0:216:55a1:369 with SMTP id d9443c01a7336-21dd7d7cc30mr164926005ad.18.1738352057791;
-        Fri, 31 Jan 2025 11:34:17 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHq6IeAvZhmXuG587O8ro8aWl4Ca9E8QnUMVaWmBsB9QkKGADMv3cHVb+Q7fex/oRRlCVg3hA==
-X-Received: by 2002:a17:902:ecc1:b0:216:55a1:369 with SMTP id d9443c01a7336-21dd7d7cc30mr164925725ad.18.1738352057425;
-        Fri, 31 Jan 2025 11:34:17 -0800 (PST)
+        bh=/iW/2qxNn2EpMG6+5p2BMofbrneeebFTJmziMbge0Qs=;
+        b=J5Ny8m7GKiXBKLJYN4zV1fFtyI9SG859D4W1TaLzp3EmYffqtDyR4m1wSlSVsyHW1I
+         vAxbQPMNytxaLYBILhvDRaNit4K7eHH+59csEAKiV5F6iMOOxI8DZuh009Mq67kt7dGb
+         KY5YlHmck7XmztoIG9H14m/El6CWfO3KGbKQiDwkAswXnkUPMllZhAX+A2FeFoUlRqS2
+         yQtDe6j1LwBYUEPC7Dm84I5yvJwvDtiXmVkVM/76+Iz3NoU1svBvnA8ENOM1Uv0g6fN3
+         gBbLslctNx9clflK+uxMrxXF16jNSqZv7bKrfOmlhKSGsEWvCsuBh1bsLV0ErjzC9YAZ
+         9O/g==
+X-Gm-Message-State: AOJu0YyGmc787foiw2kJVhiocnMwP7XiG36+64Q6uOKF2VmAjVn4qmtA
+	3pIMnExPxh0Ndow2sVITjwtXwWg2nHhCEIKXmkxT9zIfYcJSJcrQMBL+EEjaH6eENWMl7ML2cnA
+	mIr+N9a/mcQnykbeHp0obQewOfMDNlEgKUJDqmg9bohOc5ghI77wRCOsJkFmh6V9sTR5c
+X-Gm-Gg: ASbGnctWyhzZ598nkCkLY5eMP9cJWOS0fXSb0Y9WxS1mOQ85/S/BhGseMn/wzoffTNw
+	ndQE7xPTEjeeiwegoZ2e1u89KXKIjxpypfS0FdBwp1s338zw8EPolRBkdgrfBj443zyVDENg+Wu
+	3uM4jte0fCu1LffzfaVqsizTgqtLWq5BUKmKxrcE+ZzCsRb2VxeEWuM/djBa5RzQya9pN/GRbfc
+	z3DCKh2NCb+Sqy/vSgqwita34naC3vstZP/R9S89IbhD/gvnIv6CYilIU6ogm5IJL5rjtGtzbZQ
+	Lbl6t18g+g1S9uBYtl+TPt993o1jdab2O0BEt9bnpA==
+X-Received: by 2002:a17:902:d48a:b0:216:4064:53ad with SMTP id d9443c01a7336-21dd7de20f8mr215305245ad.48.1738352058601;
+        Fri, 31 Jan 2025 11:34:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGyfULQeSiiDYkhpqhyZgfXGSUVIibS7WsKtnPhn9q9CqH8uXiXQ0B8xheM4FWNRiqBoIAKdA==
+X-Received: by 2002:a17:902:d48a:b0:216:4064:53ad with SMTP id d9443c01a7336-21dd7de20f8mr215305015ad.48.1738352058247;
+        Fri, 31 Jan 2025 11:34:18 -0800 (PST)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21de3302a50sm33721995ad.188.2025.01.31.11.34.16
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21de3302a50sm33721995ad.188.2025.01.31.11.34.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Fri, 31 Jan 2025 11:34:17 -0800 (PST)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Nicolas Escande <nico.escande@gmail.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20250127071306.1454699-1-nico.escande@gmail.com>
-References: <20250127071306.1454699-1-nico.escande@gmail.com>
-Subject: Re: [PATCH v2] wifi: ath12k: fix
- ath12k_hal_tx_cmd_ext_desc_setup() info1 override
-Message-Id: <173835205680.1098484.16094267850867670920.b4-ty@oss.qualcomm.com>
-Date: Fri, 31 Jan 2025 11:34:16 -0800
+To: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+        linux-kernel@vger.kernel.org, Remi Pommarel <repk@triplefau.lt>
+Cc: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
+In-Reply-To: <38c2a7c4f7eaf57b9306bb95a9e6c42b7d987e05.1738169458.git.repk@triplefau.lt>
+References: <38c2a7c4f7eaf57b9306bb95a9e6c42b7d987e05.1738169458.git.repk@triplefau.lt>
+Subject: Re: [PATCH v2] wifi: ath12k: remove return for empty tx bitrate in
+ mac_op_sta_statistics
+Message-Id: <173835205758.1098484.10102684203904092972.b4-ty@oss.qualcomm.com>
+Date: Fri, 31 Jan 2025 11:34:17 -0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.0
-X-Proofpoint-GUID: gyDHP6Jho3ffph0jzL672uvFhZYRZO6b
-X-Proofpoint-ORIG-GUID: gyDHP6Jho3ffph0jzL672uvFhZYRZO6b
+X-Proofpoint-GUID: WmHslUWomPE74yHLHdZE87OHOcoRzj3n
+X-Proofpoint-ORIG-GUID: WmHslUWomPE74yHLHdZE87OHOcoRzj3n
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-31_07,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- priorityscore=1501 mlxscore=0 phishscore=0 bulkscore=0 adultscore=0
- impostorscore=0 lowpriorityscore=0 suspectscore=0 spamscore=0
- mlxlogscore=913 malwarescore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2501170000 definitions=main-2501310148
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=677 bulkscore=0
+ spamscore=0 mlxscore=0 suspectscore=0 adultscore=0 priorityscore=1501
+ phishscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2501310148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250131_113420_284207_F03A6039 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250131_113420_283430_A0FC1618 
+X-CRM114-Status: GOOD (  11.36  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,20 +118,23 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 27 Jan 2025 08:13:06 +0100, Nicolas Escande wrote:
-> Since inception there is an obvious typo laying around in
-> ath12k_hal_tx_cmd_ext_desc_setup(). Instead of intitializing + adding
-> flags to tcl_ext_cmd->info1, we initialize + override. This will be needed
-> in the future to make broadcast frames work with ethernet encapsulation.
+On Wed, 29 Jan 2025 17:55:17 +0100, Remi Pommarel wrote:
+> Currently in ath12k_mac_op_sta_statistics() there is the following
+> logic:
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+>     if (!arsta->txrate.legacy && !arsta->txrate.nss)
+>         return;
+> 
+> Because ath12k_sta_statistics is used to report many info to iw wlan0 link,
+> if it return for empty legacy and nss of arsta->txrate, then the other
+> stats after it will not be set.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] wifi: ath12k: fix ath12k_hal_tx_cmd_ext_desc_setup() info1 override
-      commit: df11edfba49e5fb69f4c9e7cb76082b89c417f78
+[1/1] wifi: ath12k: remove return for empty tx bitrate in mac_op_sta_statistics
+      commit: 8a5ad319f2e6f0462dbcb1bd3a6ba5097f629a5b
 
 Best regards,
 -- 
