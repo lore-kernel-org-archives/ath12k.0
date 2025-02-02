@@ -4,81 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21AC0C0218A
-	for <ath12k@archiver.kernel.org>; Sat,  1 Feb 2025 21:13:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E35D5C02190
+	for <ath12k@archiver.kernel.org>; Sun,  2 Feb 2025 06:49:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=IAXOnX62cZ6i8kI2tncb0QO6ket58w+Pb9EoHU06fZ0=; b=se6A2nPSpkzCKSygZXVdQSq+0V
-	ao/HIU06Aqp9eqwkWHGlr0wUDvhwQVP4Ubqtxn/ZhfjfJ+2MeiWWlu4NhOPqb5ItPmADBmuhGmY1I
-	FT17z9hjD7qzM0VLnWFBer8kaQEGMJuF/6l3v/ssTrIG3m1dWjr7LpNckVx8tJ2hJkpuJzkFa8IUH
-	WHfa9hbIQjYs1gmI7P12LpkNWHo3qGPIy4DJNKN4VTGBGjTkxU0zcZaERbXjvQm/E0p1bIhS+2/FI
-	FLIvuz+vgWwjsC1UKkYdgnrsbvn1QIKjeo8R5/6p5hTKYDvBmL9GyUA1oCUijS1lL0nRwitLELFKc
-	uqWezANQ==;
+	bh=pUglh2XFgRNvYd6g9h+wuD8LxBk62u2mzjqofVkzUYM=; b=KG7AC5dsgd5HN8LAJGonHB4B/5
+	JHUM1/vSlfa0P6vHsSngm/jNiB35PKc8qltIB8Z5hkbl1xJKlHZwZ7fHddvbCXRr0BADNyBTrqJRF
+	alsBU1lWQLFWtJ2Z0Cu4eqcMU82Frv+47HJKdN6rzyn//aPVVECPAssJPaLScCbW31qUpNqNm+rAA
+	qRbJqdlUsWrg3ZrI3Hm4Df6y6EisTSLonelqPQHWSmFeGZ7xjWvN9zUHDfc/Qoc3177pfl+5/TTbC
+	kr2UwAFCmpb5DyHj5rAlsBorEyi4R0uFBO1hFEtoftL0OKi46YkRF6/DCMvZ/s/S+6dHHhiuX800G
+	6XXa68Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1teKnc-0000000D7xn-2t2k
+	id 1teTn7-0000000DRt6-2Kw7
 	for ath12k@archiver.kernel.org;
-	Sat, 01 Feb 2025 21:13:08 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	Sun, 02 Feb 2025 06:49:13 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1teKnZ-0000000D7xQ-3DQt
+	id 1teTn5-0000000DRsn-2tMy
 	for ath12k@lists.infradead.org;
-	Sat, 01 Feb 2025 21:13:07 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-436202dd730so22649595e9.2
-        for <ath12k@lists.infradead.org>; Sat, 01 Feb 2025 13:13:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1738444383; x=1739049183; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=IAXOnX62cZ6i8kI2tncb0QO6ket58w+Pb9EoHU06fZ0=;
-        b=VYH9G+maaFsdNxlDwVzEtrMk6eu0TiZamkWSpww9wY/q59IiJCKX9LuvsYPeDoPggG
-         3jaSJhdsvtQ3RnAfHsVzXk53OF0JYGiKU3BI1rk5FrdV56UWTEs6hnwhgtT85vIuNpA0
-         FlxftvC31WRweze7MF3Z3Biz6GknNVjezW1dWFAE4UjORuCqE2+QpdnWx8f3xDNNgrSS
-         Ki7vZiCz/XklDKl8OUQhHhnuJV/jIHPmH45RDjreUy4eiEY34wLkaQG5VwLWCNiVFLnB
-         jfNPsWzwkHdSpWQJDHSD/H1DYbACYf9cn5L57XlSkzjd0kHzrtJs4DRovtAqLkazdFED
-         +6qg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738444383; x=1739049183;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=IAXOnX62cZ6i8kI2tncb0QO6ket58w+Pb9EoHU06fZ0=;
-        b=lsOgGSEhZDT96MM9vIxnbpspJ3jzDzVU4Mo6DpX6tGA3wfMJ3wdbUXb3zdi3paXExS
-         7Cf2vHtl0lQlnAV5NBXHW4n/1OWcsfG/iUhODSyZrdHZu6IgJFx+2ojoAOgniFa8Sncd
-         V5FvgyoNq1O+nJ2Ijx/Pj3r2htjKIQoJDawzd5dH9vUa20W4w+gw/AIWMjnVgzZ+dSWr
-         w+Oz7KF95HOCJtCZlV/SA7BWyCgTJnHXlqBClHb6HiC9U7e0miAqYZwPVigX/xQj0plD
-         F9dSglkbD/Ja3ONQw+sUNcUrBEDAeFsY6AIsdCutfGgH8boqXciygzaOU6/WOLLrrZNZ
-         YQcQ==
-X-Gm-Message-State: AOJu0YwZiNqAGyWwJ6/SqzFMI8D/6A+dKuhc3r9yB3tY0EGFWsoRyRYT
-	C3aXGCPQvtjGFDVBK0W6xRKVD6CdWKRyeLTkex/PY+ZCS7AN0Yk8cGBOpg==
-X-Gm-Gg: ASbGncvDvh4P4jkRNiZi3kARFmW1DPtIP1QMouRT8jJcl9AUUWCL1Bsfk/3yZBE1s5q
-	I154eWNZnrds2p16g+/FFnwW/h4ncQC1WDi1jq262RU1I14d9Q5ZmWHvC7CLa13N5owuRFlmAcn
-	1TQteBJ3uAWWbCOFlTyB8W9+MjNYm8Vba0SHbgPw21sTn8bS8KP4X++fGj5tcPqop0achhMCdmi
-	pbHo+AaXvRDLHIb6Txo2L/U6KtapxLA258Ha6xJVaNcSnENde32FOQoNF/u0e/z/K7oC6Q5ZxgZ
-	L8Ns0yCR1x1kzIdFGHEmkCXXwJbMW0s5KUQUYGj8khckKwoz
-X-Google-Smtp-Source: AGHT+IGJVRa/bkKZeoR0SoJZrw3nAzxaFe6fY+cQyOj44g9IOuf6m6TluWguF2EWZf8oAfQEl2oWbQ==
-X-Received: by 2002:a05:600c:5486:b0:433:c76d:d57e with SMTP id 5b1f17b1804b1-438dc3a40d3mr160996275e9.5.1738444382813;
-        Sat, 01 Feb 2025 13:13:02 -0800 (PST)
-Received: from syracuse.iliad.local (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-438e244ecd6sm100349485e9.28.2025.02.01.13.13.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 01 Feb 2025 13:13:02 -0800 (PST)
-From: Nicolas Escande <nico.escande@gmail.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH v3] wifi: ath12k: add support of station average signal strength
-Date: Sat,  1 Feb 2025 22:13:01 +0100
-Message-ID: <20250201211301.357985-1-nico.escande@gmail.com>
-X-Mailer: git-send-email 2.48.1
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+	Sun, 02 Feb 2025 06:49:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1738478952; x=1770014952;
+  h=date:from:to:cc:subject:message-id;
+  bh=bT/pEywJuikPh/4LKGFZ876zKpXia8diE4R8GUvTLDE=;
+  b=IRqEsWlVIZqLbz7sYWveRqvlN4imFrwbj5QzivbCda3Mk2RYXKcvRLWL
+   qvsTJDEJ7coyjmVMN3ImfsQV7O5JdAoWg+7jV1HGVMJeDhBNM+gU3qnZ/
+   eT3VAOV/aEVThmP6Omjr63WOa+JlAAm1ceKHT4FocV5UUkfj9iOTastVA
+   yQM1ZLGWukYKkW0PTKMpCLa1R1Gn9wFsbOguJAreZq2fqpZbO7xiT0NOl
+   I5ch2sV+itqXKIr3/T6PfUM3mRkMWCb2GjRFc8jdtI9Uq4n4AAWNDK7dr
+   2T4InvcD7xwv0zh7h061nEzaRE3W4EL+S1FfR6biyI/QSB64iGEKbgNp8
+   Q==;
+X-CSE-ConnectionGUID: yXJ142tzShOXUbunkxsjfA==
+X-CSE-MsgGUID: tGluZFs4QNOZDZx3FY/t1w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11333"; a="39152092"
+X-IronPort-AV: E=Sophos;i="6.13,253,1732608000"; 
+   d="scan'208";a="39152092"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Feb 2025 22:49:08 -0800
+X-CSE-ConnectionGUID: B7K7bqr8QqqNdDInQPtMeg==
+X-CSE-MsgGUID: IQmjQoOwSjyufb7+b3ZFzw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.13,253,1732608000"; 
+   d="scan'208";a="110558392"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by fmviesa009.fm.intel.com with ESMTP; 01 Feb 2025 22:49:07 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1teTmy-000pNj-2k;
+	Sun, 02 Feb 2025 06:49:04 +0000
+Date: Sun, 02 Feb 2025 14:48:36 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:master-pending] BUILD SUCCESS
+ d8a327038aa3caee3399411f1ab017ca37ce24f0
+Message-ID: <202502021423.2Ydcsh1K-lkp@intel.com>
+User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250201_131305_844588_8BA6756B 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20250201_224911_774489_5EF4DCC2 
+X-CRM114-Status: UNSURE (   3.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,105 +84,165 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This adds support for reporting to the kernel the average rssi. This is
-done the same way as it was done in ath11k. A simple ewma (with the same
-parameters) is updated with each rssi update.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
+branch HEAD: d8a327038aa3caee3399411f1ab017ca37ce24f0  Merge branch 'pending' into main-pending
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+elapsed time: 747m
 
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
----
-v3:
-  - rebased on ToT
-  - now also handles db2dbm
+configs tested: 145
+configs skipped: 2
 
-v2: https://lore.kernel.org/ath12k/20250121093834.25132-1-nico.escande@gmail.com/
-  - removed spurious exta new line at the beggining of core.h
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-v1: https://lore.kernel.org/ath12k/20250117172819.3357534-1-nico.escande@gmail.com/
-  - initial version
----
- drivers/net/wireless/ath/ath12k/core.h   | 4 ++++
- drivers/net/wireless/ath/ath12k/dp_mon.c | 2 ++
- drivers/net/wireless/ath/ath12k/mac.c    | 8 ++++++++
- 3 files changed, 14 insertions(+)
+tested configs:
+alpha                             allnoconfig    gcc-14.2.0
+alpha                            allyesconfig    gcc-14.2.0
+arc                              allmodconfig    gcc-13.2.0
+arc                               allnoconfig    gcc-13.2.0
+arc                              allyesconfig    gcc-13.2.0
+arc                   randconfig-001-20250202    gcc-13.2.0
+arc                   randconfig-002-20250202    gcc-13.2.0
+arm                              allmodconfig    gcc-14.2.0
+arm                               allnoconfig    clang-17
+arm                              allyesconfig    gcc-14.2.0
+arm                         assabet_defconfig    clang-21
+arm                          collie_defconfig    gcc-14.2.0
+arm                      integrator_defconfig    clang-15
+arm                         lpc18xx_defconfig    clang-19
+arm                   milbeaut_m10v_defconfig    clang-21
+arm                        mvebu_v5_defconfig    gcc-14.2.0
+arm                       netwinder_defconfig    gcc-14.2.0
+arm                   randconfig-001-20250202    gcc-14.2.0
+arm                   randconfig-002-20250202    clang-15
+arm                   randconfig-003-20250202    clang-21
+arm                   randconfig-004-20250202    clang-15
+arm                        vexpress_defconfig    gcc-14.2.0
+arm64                            allmodconfig    clang-18
+arm64                             allnoconfig    gcc-14.2.0
+arm64                 randconfig-001-20250202    gcc-14.2.0
+arm64                 randconfig-002-20250202    clang-17
+arm64                 randconfig-003-20250202    gcc-14.2.0
+arm64                 randconfig-004-20250202    gcc-14.2.0
+csky                              allnoconfig    gcc-14.2.0
+csky                  randconfig-001-20250202    gcc-14.2.0
+csky                  randconfig-002-20250202    gcc-14.2.0
+hexagon                          allmodconfig    clang-21
+hexagon                           allnoconfig    clang-21
+hexagon                          allyesconfig    clang-18
+hexagon               randconfig-001-20250202    clang-16
+hexagon               randconfig-002-20250202    clang-21
+i386                             allmodconfig    gcc-12
+i386                              allnoconfig    gcc-12
+i386                             allyesconfig    gcc-12
+i386        buildonly-randconfig-001-20250202    gcc-12
+i386        buildonly-randconfig-002-20250202    gcc-12
+i386        buildonly-randconfig-003-20250202    gcc-12
+i386        buildonly-randconfig-004-20250202    gcc-12
+i386        buildonly-randconfig-005-20250202    gcc-12
+i386        buildonly-randconfig-006-20250202    gcc-12
+i386                                defconfig    clang-19
+loongarch                        allmodconfig    gcc-14.2.0
+loongarch                         allnoconfig    gcc-14.2.0
+loongarch             randconfig-001-20250202    gcc-14.2.0
+loongarch             randconfig-002-20250202    gcc-14.2.0
+m68k                             allmodconfig    gcc-14.2.0
+m68k                              allnoconfig    gcc-14.2.0
+m68k                             allyesconfig    gcc-14.2.0
+m68k                          atari_defconfig    gcc-14.2.0
+microblaze                       allmodconfig    gcc-14.2.0
+microblaze                        allnoconfig    gcc-14.2.0
+microblaze                       allyesconfig    gcc-14.2.0
+mips                              allnoconfig    gcc-14.2.0
+mips                           ci20_defconfig    clang-19
+mips                           ip28_defconfig    gcc-14.2.0
+mips                        qi_lb60_defconfig    clang-18
+nios2                             allnoconfig    gcc-14.2.0
+nios2                 randconfig-001-20250202    gcc-14.2.0
+nios2                 randconfig-002-20250202    gcc-14.2.0
+openrisc                          allnoconfig    gcc-14.2.0
+openrisc                         allyesconfig    gcc-14.2.0
+openrisc                            defconfig    gcc-14.2.0
+parisc                           allmodconfig    gcc-14.2.0
+parisc                            allnoconfig    gcc-14.2.0
+parisc                           allyesconfig    gcc-14.2.0
+parisc                              defconfig    gcc-14.2.0
+parisc                randconfig-001-20250202    gcc-14.2.0
+parisc                randconfig-002-20250202    gcc-14.2.0
+powerpc                          allmodconfig    gcc-14.2.0
+powerpc                           allnoconfig    gcc-14.2.0
+powerpc                          allyesconfig    clang-16
+powerpc                       ebony_defconfig    clang-18
+powerpc                     kmeter1_defconfig    gcc-14.2.0
+powerpc                   lite5200b_defconfig    clang-21
+powerpc                 mpc8313_rdb_defconfig    gcc-14.2.0
+powerpc                  mpc866_ads_defconfig    clang-21
+powerpc                      ppc6xx_defconfig    gcc-14.2.0
+powerpc               randconfig-001-20250202    clang-17
+powerpc               randconfig-002-20250202    gcc-14.2.0
+powerpc               randconfig-003-20250202    gcc-14.2.0
+powerpc                        warp_defconfig    gcc-14.2.0
+powerpc                 xes_mpc85xx_defconfig    gcc-14.2.0
+powerpc64             randconfig-001-20250202    gcc-14.2.0
+powerpc64             randconfig-002-20250202    clang-21
+powerpc64             randconfig-003-20250202    gcc-14.2.0
+riscv                            allmodconfig    clang-21
+riscv                             allnoconfig    gcc-14.2.0
+riscv                            allyesconfig    clang-21
+riscv                               defconfig    clang-19
+riscv                 randconfig-001-20250202    clang-21
+riscv                 randconfig-002-20250202    gcc-14.2.0
+s390                             allmodconfig    clang-19
+s390                              allnoconfig    clang-21
+s390                             allyesconfig    gcc-14.2.0
+s390                                defconfig    clang-15
+s390                  randconfig-001-20250202    gcc-14.2.0
+s390                  randconfig-002-20250202    clang-18
+sh                               allmodconfig    gcc-14.2.0
+sh                                allnoconfig    gcc-14.2.0
+sh                               allyesconfig    gcc-14.2.0
+sh                         ap325rxa_defconfig    gcc-14.2.0
+sh                                  defconfig    gcc-14.2.0
+sh                         ecovec24_defconfig    gcc-14.2.0
+sh                               j2_defconfig    gcc-14.2.0
+sh                          kfr2r09_defconfig    gcc-14.2.0
+sh                    randconfig-001-20250202    gcc-14.2.0
+sh                    randconfig-002-20250202    gcc-14.2.0
+sh                          rsk7264_defconfig    gcc-14.2.0
+sh                      rts7751r2d1_defconfig    gcc-14.2.0
+sh                           se7722_defconfig    gcc-14.2.0
+sh                           se7724_defconfig    gcc-14.2.0
+sh                            shmin_defconfig    gcc-14.2.0
+sparc                            allmodconfig    gcc-14.2.0
+sparc                             allnoconfig    gcc-14.2.0
+sparc                 randconfig-001-20250202    gcc-14.2.0
+sparc                 randconfig-002-20250202    gcc-14.2.0
+sparc64                             defconfig    gcc-14.2.0
+sparc64               randconfig-001-20250202    gcc-14.2.0
+sparc64               randconfig-002-20250202    gcc-14.2.0
+um                               allmodconfig    clang-21
+um                                allnoconfig    clang-18
+um                               allyesconfig    gcc-12
+um                                  defconfig    clang-21
+um                             i386_defconfig    gcc-12
+um                    randconfig-001-20250202    gcc-12
+um                    randconfig-002-20250202    clang-21
+um                           x86_64_defconfig    clang-15
+x86_64                            allnoconfig    clang-19
+x86_64                           allyesconfig    clang-19
+x86_64      buildonly-randconfig-001-20250202    clang-19
+x86_64      buildonly-randconfig-002-20250202    clang-19
+x86_64      buildonly-randconfig-003-20250202    gcc-12
+x86_64      buildonly-randconfig-004-20250202    gcc-12
+x86_64      buildonly-randconfig-005-20250202    clang-19
+x86_64      buildonly-randconfig-006-20250202    clang-19
+x86_64                              defconfig    gcc-11
+xtensa                            allnoconfig    gcc-14.2.0
+xtensa                randconfig-001-20250202    gcc-14.2.0
+xtensa                randconfig-002-20250202    gcc-14.2.0
+xtensa                    smp_lx200_defconfig    gcc-14.2.0
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 28db100cfac0..2a53712bd606 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -15,6 +15,7 @@
- #include <linux/ctype.h>
- #include <linux/firmware.h>
- #include <linux/panic_notifier.h>
-+#include <linux/average.h>
- #include "qmi.h"
- #include "htc.h"
- #include "wmi.h"
-@@ -480,6 +481,8 @@ struct ath12k_wbm_tx_stats {
- 	u64 wbm_tx_comp_stats[HAL_WBM_REL_HTT_TX_COMP_STATUS_MAX];
- };
- 
-+DECLARE_EWMA(avg_rssi, 10, 8)
-+
- struct ath12k_link_sta {
- 	struct ath12k_link_vif *arvif;
- 	struct ath12k_sta *ahsta;
-@@ -499,6 +502,7 @@ struct ath12k_link_sta {
- 	u64 rx_duration;
- 	u64 tx_duration;
- 	u8 rssi_comb;
-+	struct ewma_avg_rssi avg_rssi;
- 	u8 link_id;
- 	struct ath12k_rx_peer_stats *rx_stats;
- 	struct ath12k_wbm_tx_stats *wbm_tx_stats;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index 4e9a60181c06..d529229f2d0f 100644
---- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -2002,6 +2002,7 @@ static void ath12k_dp_mon_rx_update_peer_su_stats(struct ath12k *ar,
- 		return;
- 
- 	arsta->rssi_comb = ppdu_info->rssi_comb;
-+	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
- 
- 	num_msdu = ppdu_info->tcp_msdu_count + ppdu_info->tcp_ack_msdu_count +
- 		   ppdu_info->udp_msdu_count + ppdu_info->other_msdu_count;
-@@ -2174,6 +2175,7 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k *ar,
- 		return;
- 
- 	arsta->rssi_comb = ppdu_info->rssi_comb;
-+	ewma_avg_rssi_add(&arsta->avg_rssi, ppdu_info->rssi_comb);
- 
- 	num_msdu = user_stats->tcp_msdu_count + user_stats->tcp_ack_msdu_count +
- 		   user_stats->udp_msdu_count + user_stats->other_msdu_count;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index e9663c6ac72c..807638d30e7b 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5484,6 +5484,7 @@ static int ath12k_mac_station_add(struct ath12k *ar,
- 		}
- 	}
- 
-+	ewma_avg_rssi_init(&arsta->avg_rssi);
- 	return 0;
- 
- free_peer:
-@@ -10200,6 +10201,13 @@ static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
- 		sinfo->signal = db2dbm ? signal : signal + ATH12K_DEFAULT_NOISE_FLOOR;
- 		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL);
- 	}
-+
-+	sinfo->signal_avg = ewma_avg_rssi_read(&arsta->avg_rssi);
-+
-+	if (!db2dbm)
-+		sinfo->signal_avg += ATH12K_DEFAULT_NOISE_FLOOR;
-+
-+	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
- }
- 
- static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
--- 
-2.48.1
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
