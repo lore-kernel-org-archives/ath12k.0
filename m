@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20FA0C02197
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE9DCC02196
 	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 07:57:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,53 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6LDPWWPf+kFJTWCGtlNwf+xiX2AeEhuomdTxONH2Ytc=; b=OQLMhtQ/rIVnribong5f3s8YUr
-	+acyC3ouG8Kdm/6uVdC3dSdH9By4lAZkSb8nFyKd4V/063y58Mo4p/xi+WNWcNTCrmHaHGto8EUzf
-	GLYtei4nzE+L9Z1f/pZKDK2gkHRuo3X6vPbfFe8xhwbGhhzd1PluwfVbDzMHC+FKsfB84YfBeStxu
-	XwMwZIIDL4ecEx7DTL4/X6N5gD36hI8x2qNdNbs2Knyf9PjwEEivGcRUxl9JX5zCFJSUFI8ovUkJf
-	fG8F14cgfBG92Od1QmUFWrLylfG1ehocjQH/Py7+I/rA1PMe7x0aG5PYSjaGOkn2wpy7QtBTWU11v
-	1+hJsJjw==;
+	bh=losvfwiy+oxSC//U9hZClq2UjaEKhbLny1GwfnJpMyM=; b=sMUaC0+BOMXAKAiSLq7qKLW5m6
+	4OjbnXmfPAOpusXDqMJKohZaJ0rPxqOkzCnakVJPpKxVm4FPs+WsB28OGyGZzQkF+gSJRM2MV6AFe
+	Dp2JuioTAvlUfr5qpKJxKmvT6nd/Fr9ZWnULxXRTVGeXrXe1tHFiFqwnEE6N7/yh98832ctNj3gXF
+	qJa6kGGIzFQGcyNiRVYkGQUhN1vs9pgSooM8UQ88+rvRuZn92vYs+yIC9Ej8vBmruCrwmDCJrPhRW
+	UyXtjZqnUVog8vsGnh96LLVCI55NMb9umLqfTqCIEgPcZ2Gtorh+k/SjQneoelM/UntSg8sjkkBNx
+	7iXlp5Kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1terKT-0000000EkkR-3kQj
+	id 1terKU-0000000Ekkz-1Q9S
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Feb 2025 07:57:13 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 03 Feb 2025 07:57:14 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1terJJ-0000000Ekbu-2SUq
+	id 1terJL-0000000EkcG-0lfm
 	for ath12k@lists.infradead.org;
-	Mon, 03 Feb 2025 07:56:04 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5133EVe8013031;
+	Mon, 03 Feb 2025 07:56:05 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5135bgFo014692;
 	Mon, 3 Feb 2025 07:56:01 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6LDPWWPf+kFJTWCGtlNwf+xiX2AeEhuomdTxONH2Ytc=; b=YGooa8w0VybBofDa
-	EPbin6JS/3JV76RX5IBgfMXnxaw5XAmmJky6SmC9tmBlZ1dd4m4Loo9R3p20MeUf
-	xqjIPqjfzbiR+71x3pYuO6QCYtlIdijOHRtJD2daqq37K+LEUOcdn5dU5v8ad11P
-	TWhO45Zy1P7T/q96xjYfgs/i+km9OJj5JhlIEV1Us/AOxrvsBL9tpo1BURJfTYGr
-	Cga2wfGD/jmlL10Pf7JIxJXHwbyk+ysG1VTUP+UNdhi4tKcZlFPqHP9xF5cOkmUn
-	MdzzMz9imfiJ6Zj7+g39x1h4ceq9XEMPgvj3Hp1EH4DUeudzd1MBLnM7q0ikSMXI
-	0JHA4A==
+	losvfwiy+oxSC//U9hZClq2UjaEKhbLny1GwfnJpMyM=; b=YNV3B6NhdolMNslG
+	5xtRVPWJGhGYDGX1hAL8f4C5soxsdG8dCJrnmMy1a3SExrDu5/8BJ70o+BOzSDnb
+	9CgILKGCOHnOVWEShUFtKsJJBDpUMs/ZNSU9buNU3KF5n4JlWXDv9fgKiJ4KH/vC
+	uWMSjMtnlT3449yrPHXw2GkSikSDMdYBUIaYmRvMUUbmoYs35yxz0A6U6kFhYPrx
+	WEFPv/uN7/dR4Cr6/mkUPfGZCUm9DtIbkSWjdNahPa9Unf0lTd6x6yhDToZOFLy8
+	9/4BVbeI93pO0aAhC2eUlh9WQqsZwn+03XFKMgR7NlN1sR6QWLQKF/phJgT1x1gE
+	txfBcQ==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44jnqk0g40-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44jqtng8tg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 03 Feb 2025 07:56:01 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5137u0D7009562
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5137u0rq009521
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 3 Feb 2025 07:56:00 GMT
 Received: from hu-bmahalin-lv.qualcomm.com (10.49.16.6) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 2 Feb 2025 23:56:00 -0800
+ 15.2.1544.9; Sun, 2 Feb 2025 23:55:59 -0800
 From: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, <quic_bmahalin@quicinc.com>
-Subject: [PATCH v3 2/2] wifi: ath12k: Add support for MLO Multicast handling in driver
-Date: Sun, 2 Feb 2025 23:55:38 -0800
-Message-ID: <20250203075538.3982875-3-quic_bmahalin@quicinc.com>
+Subject: [PATCH v3 1/2] wifi: ath12k: Update HTT_TCL_METADATA version and bit mask definitions
+Date: Sun, 2 Feb 2025 23:55:37 -0800
+Message-ID: <20250203075538.3982875-2-quic_bmahalin@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250203075538.3982875-1-quic_bmahalin@quicinc.com>
 References: <20250203075538.3982875-1-quic_bmahalin@quicinc.com>
@@ -70,19 +70,19 @@ X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: CN3KBy8Ki3vaBARAd1oP1FqWt0Z1wAeO
-X-Proofpoint-GUID: CN3KBy8Ki3vaBARAd1oP1FqWt0Z1wAeO
+X-Proofpoint-GUID: TgUbH3WV6Q23wSjrXvO0POvzVMZYTSv9
+X-Proofpoint-ORIG-GUID: TgUbH3WV6Q23wSjrXvO0POvzVMZYTSv9
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-03_03,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 suspectscore=0
- mlxscore=0 mlxlogscore=999 lowpriorityscore=0 phishscore=0
- priorityscore=1501 clxscore=1015 bulkscore=0 spamscore=0 impostorscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502030064
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 phishscore=0
+ priorityscore=1501 impostorscore=0 spamscore=0 suspectscore=0 adultscore=0
+ mlxscore=0 malwarescore=0 bulkscore=0 mlxlogscore=999 lowpriorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
+ definitions=main-2502030064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250202_235601_632420_085B015F 
-X-CRM114-Status: GOOD (  26.40  )
+X-CRM114-CacheID: sfid-20250202_235603_329844_9D8A8F39 
+X-CRM114-Status: GOOD (  14.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,300 +97,108 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-For MLO netdevice, the broadcast frame should be transmitted with the
-same sequence number on all the links.
+Update the HTT_TCL_METADATA version to the latest version (2)
+as the bit definitions have changed a little to support more
+features. This new version allows the host to submit a packet with
+more information to the firmware. Firmware uses this additional
+information to do special processing for certain frames.
 
-Per IEEE 802.11be-2024 section 10.3.2.14.2 "Transmitter requirements",
-An AP MLD shall use SNS11 in Table 10-5 (Transmitter sequence number
-spaces) maintained by the MLD to determine the sequence number of a
-group addressed data frame that is transmitted by an AP affiliated
-with the AP MLD so that the same group addressed Data frame
-transmitted over multiple links by the AP MLD uses the same
-sequence number for transmission on each link.
-
-Currently the MLO multicast handling is done in the mac80211 layer.
-Enable support for handling MLO Multicast in the driver to update the
-hardware descriptors in a custom way to handle the multicast frames.
-Firmware expects the MLO multicast frames to the submitted to the
-hardware with special vdev_id (actual vdev_id + 128) to recognize it as
-a host inspected frame to avoid using the reinjected path and it also
-uses the multicast global sequence number (GSN) provided by the host
-in the HTT metadata to process and transmit it with the same sequence
-number.
+All the firmware binaries available in upstream/public are compatible with
+this HTT version update.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
 Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h  |   1 +
- drivers/net/wireless/ath/ath12k/dp.h    |   6 ++
- drivers/net/wireless/ath/ath12k/dp_tx.c |  16 ++-
- drivers/net/wireless/ath/ath12k/dp_tx.h |   4 +-
- drivers/net/wireless/ath/ath12k/mac.c   | 124 +++++++++++++++++++++++-
- 5 files changed, 143 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp.h    | 21 ++++++++++++++-------
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 12 ++++++++++--
+ 2 files changed, 24 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 28db100cfac0..b8c336bc02d8 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -330,6 +330,7 @@ struct ath12k_vif {
- 	u32 key_cipher;
- 	u8 tx_encap_type;
- 	bool ps;
-+	atomic_t mcbc_gsn;
- 
- 	struct ath12k_link_vif deflink;
- 	struct ath12k_link_vif __rcu *link[ATH12K_NUM_MAX_LINKS];
 diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 7cdc62aa35be..75435a931548 100644
+index f68bb78d4a11..7cdc62aa35be 100644
 --- a/drivers/net/wireless/ath/ath12k/dp.h
 +++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -385,6 +385,12 @@ struct ath12k_dp {
- /* peer meta data */
- #define HTT_TCL_META_DATA_PEER_ID		GENMASK(15, 3)
- 
-+/* Global sequence number */
-+#define HTT_TCL_META_DATA_TYPE_GLOBAL_SEQ_NUM		3
-+#define HTT_TCL_META_DATA_GLOBAL_SEQ_HOST_INSPECTED	BIT(2)
-+#define HTT_TCL_META_DATA_GLOBAL_SEQ_NUM		GENMASK(14, 3)
-+#define HTT_TX_MLO_MCAST_HOST_REINJECT_BASE_VDEV_ID	128
-+
- /* HTT tx completion is overlaid in wbm_release_ring */
- #define HTT_TX_WBM_COMP_INFO0_STATUS		GENMASK(16, 13)
- #define HTT_TX_WBM_COMP_INFO1_REINJECT_REASON	GENMASK(3, 0)
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 5ed41783d039..0c55760e3566 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -219,7 +219,7 @@ static int ath12k_dp_tx_align_payload(struct ath12k_base *ab,
- }
- 
- int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
--		 struct sk_buff *skb)
-+		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn)
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_dp *dp = &ab->dp;
-@@ -292,13 +292,27 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 		msdu_ext_desc = true;
- 	}
- 
-+	if (gsn_valid) {
-+		/* Reset and Initialize meta_data_flags with Global Sequence
-+		 * Number (GSN) info.
-+		 */
-+		ti.meta_data_flags =
-+			u32_encode_bits(HTT_TCL_META_DATA_TYPE_GLOBAL_SEQ_NUM,
-+					HTT_TCL_META_DATA_TYPE) |
-+			u32_encode_bits(mcbc_gsn, HTT_TCL_META_DATA_GLOBAL_SEQ_NUM);
-+	}
-+
- 	ti.encap_type = ath12k_dp_tx_get_encap_type(arvif, skb);
- 	ti.addr_search_flags = arvif->hal_addr_search_flags;
- 	ti.search_type = arvif->search_type;
- 	ti.type = HAL_TCL_DESC_TYPE_BUFFER;
- 	ti.pkt_offset = 0;
- 	ti.lmac_id = ar->lmac_id;
-+
- 	ti.vdev_id = arvif->vdev_id;
-+	if (gsn_valid)
-+		ti.vdev_id += HTT_TX_MLO_MCAST_HOST_REINJECT_BASE_VDEV_ID;
-+
- 	ti.bss_ast_hash = arvif->ast_hash;
- 	ti.bss_ast_idx = arvif->ast_idx;
- 	ti.dscp_tid_tbl_idx = 0;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.h b/drivers/net/wireless/ath/ath12k/dp_tx.h
-index 46dce23501f3..a5904097dc34 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.h
 @@ -1,7 +1,7 @@
  /* SPDX-License-Identifier: BSD-3-Clause-Clear */
  /*
   * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
   */
  
- #ifndef ATH12K_DP_TX_H
-@@ -17,7 +17,7 @@ struct ath12k_dp_htt_wbm_tx_status {
+ #ifndef ATH12K_DP_H
+@@ -372,17 +372,18 @@ struct ath12k_dp {
+ };
  
- int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab);
- int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
--		 struct sk_buff *skb);
-+		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn);
- void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id);
+ /* HTT definitions */
++#define HTT_TAG_TCL_METADATA_VERSION		5
  
- int ath12k_dp_tx_htt_h2t_ppdu_stats_req(struct ath12k *ar, u32 mask);
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4fb7e235be66..ee809fa9775e 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7151,6 +7151,22 @@ static void ath12k_mac_add_p2p_noa_ie(struct ath12k *ar,
- 	spin_unlock_bh(&ar->data_lock);
- }
+-#define HTT_TCL_META_DATA_TYPE			BIT(0)
+-#define HTT_TCL_META_DATA_VALID_HTT		BIT(1)
++#define HTT_TCL_META_DATA_TYPE			GENMASK(1, 0)
++#define HTT_TCL_META_DATA_VALID_HTT		BIT(2)
  
-+/* Note: called under rcu_read_lock() */
-+static void ath12k_mlo_mcast_update_tx_link_address(struct ieee80211_vif *vif,
-+						    u8 link, struct sk_buff *skb,
-+						    u32 info_flags)
-+{
-+	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
-+	struct ieee80211_bss_conf *bss_conf;
-+
-+	if (info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP)
-+		return;
-+
-+	bss_conf = rcu_dereference(vif->link_conf[link]);
-+	if (bss_conf)
-+		ether_addr_copy(hdr->addr2, bss_conf->addr);
-+}
-+
- /* Note: called under rcu_read_lock() */
- static u8 ath12k_mac_get_tx_link(struct ieee80211_sta *sta, struct ieee80211_vif *vif,
- 				 u8 link, struct sk_buff *skb, u32 info_flags)
-@@ -7262,9 +7278,16 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
- 	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
- 	struct ieee80211_key_conf *key = info->control.hw_key;
- 	struct ieee80211_sta *sta = control->sta;
-+	struct ath12k_link_vif *tmp_arvif;
- 	u32 info_flags = info->flags;
--	struct ath12k *ar;
-+	struct sk_buff *msdu_copied;
-+	struct ath12k *ar, *tmp_ar;
-+	struct ath12k_peer *peer;
-+	unsigned long links_map;
-+	bool is_mcast = false;
-+	struct ethhdr *eth;
- 	bool is_prb_rsp;
-+	u16 mcbc_gsn;
- 	u8 link_id;
- 	int ret;
+ /* vdev meta data */
+-#define HTT_TCL_META_DATA_VDEV_ID		GENMASK(9, 2)
+-#define HTT_TCL_META_DATA_PDEV_ID		GENMASK(11, 10)
+-#define HTT_TCL_META_DATA_HOST_INSPECTED	BIT(12)
++#define HTT_TCL_META_DATA_VDEV_ID		 GENMASK(10, 3)
++#define HTT_TCL_META_DATA_PDEV_ID		 GENMASK(12, 11)
++#define HTT_TCL_META_DATA_HOST_INSPECTED_MISSION BIT(13)
  
-@@ -7301,6 +7324,9 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
- 	is_prb_rsp = ieee80211_is_probe_resp(hdr->frame_control);
+ /* peer meta data */
+-#define HTT_TCL_META_DATA_PEER_ID		GENMASK(15, 2)
++#define HTT_TCL_META_DATA_PEER_ID		GENMASK(15, 3)
  
- 	if (info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP) {
-+		eth = (struct ethhdr *)skb->data;
-+		is_mcast = is_multicast_ether_addr(eth->h_dest);
-+
- 		skb_cb->flags |= ATH12K_SKB_HW_80211_ENCAP;
- 	} else if (ieee80211_is_mgmt(hdr->frame_control)) {
- 		ret = ath12k_mac_mgmt_tx(ar, skb, is_prb_rsp);
-@@ -7312,14 +7338,100 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
- 		return;
- 	}
+ /* HTT tx completion is overlaid in wbm_release_ring */
+ #define HTT_TX_WBM_COMP_INFO0_STATUS		GENMASK(16, 13)
+@@ -413,9 +414,15 @@ enum htt_h2t_msg_type {
+ };
  
-+	if (!(info_flags & IEEE80211_TX_CTL_HW_80211_ENCAP))
-+		is_mcast = is_multicast_ether_addr(hdr->addr1);
-+
- 	/* This is case only for P2P_GO */
- 	if (vif->type == NL80211_IFTYPE_AP && vif->p2p)
- 		ath12k_mac_add_p2p_noa_ie(ar, vif, skb, is_prb_rsp);
+ #define HTT_VER_REQ_INFO_MSG_ID		GENMASK(7, 0)
++#define HTT_OPTION_TCL_METADATA_VER_V2	2
++#define HTT_OPTION_TAG			GENMASK(7, 0)
++#define HTT_OPTION_LEN			GENMASK(15, 8)
++#define HTT_OPTION_VALUE		GENMASK(31, 16)
++#define HTT_TCL_METADATA_VER_SZ		4
  
--	ret = ath12k_dp_tx(ar, arvif, skb);
--	if (ret) {
--		ath12k_warn(ar->ab, "failed to transmit frame %d\n", ret);
--		ieee80211_free_txskb(hw, skb);
-+	if (!vif->valid_links || !is_mcast ||
-+	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
-+		ret = ath12k_dp_tx(ar, arvif, skb, false, 0);
-+		if (unlikely(ret)) {
-+			ath12k_warn(ar->ab, "failed to transmit frame %d\n", ret);
-+			ieee80211_free_txskb(ar->ah->hw, skb);
-+			return;
-+		}
-+	} else {
-+		mcbc_gsn = atomic_inc_return(&ahvif->mcbc_gsn) & 0xfff;
-+
-+		links_map = ahvif->links_map;
-+		for_each_set_bit(link_id, &links_map,
-+				 IEEE80211_MLD_MAX_NUM_LINKS) {
-+			tmp_arvif = rcu_dereference(ahvif->link[link_id]);
-+			if (!tmp_arvif || !tmp_arvif->is_up)
-+				continue;
-+
-+			tmp_ar = tmp_arvif->ar;
-+			msdu_copied = skb_copy(skb, GFP_ATOMIC);
-+			if (!msdu_copied) {
-+				ath12k_err(ar->ab,
-+					   "skb copy failure link_id 0x%X vdevid 0x%X\n",
-+					   link_id, tmp_arvif->vdev_id);
-+				continue;
-+			}
-+
-+			ath12k_mlo_mcast_update_tx_link_address(vif, link_id,
-+								msdu_copied,
-+								info_flags);
-+
-+			skb_cb = ATH12K_SKB_CB(msdu_copied);
-+			info = IEEE80211_SKB_CB(msdu_copied);
-+			skb_cb->link_id = link_id;
-+
-+			/* For open mode, skip peer find logic */
-+			if (unlikely(ahvif->key_cipher == WMI_CIPHER_NONE))
-+				goto skip_peer_find;
-+
-+			spin_lock_bh(&tmp_ar->ab->base_lock);
-+			peer = ath12k_peer_find_by_addr(tmp_ar->ab, tmp_arvif->bssid);
-+			if (!peer) {
-+				spin_unlock_bh(&tmp_ar->ab->base_lock);
-+				ath12k_warn(tmp_ar->ab,
-+					    "failed to find peer for vdev_id 0x%X addr %pM link_map 0x%X\n",
-+					    tmp_arvif->vdev_id, tmp_arvif->bssid,
-+					    ahvif->links_map);
-+				dev_kfree_skb_any(msdu_copied);
-+				continue;
-+			}
-+
-+			key = peer->keys[peer->mcast_keyidx];
-+			if (key) {
-+				skb_cb->cipher = key->cipher;
-+				skb_cb->flags |= ATH12K_SKB_CIPHER_SET;
-+				info->control.hw_key = key;
-+
-+				hdr = (struct ieee80211_hdr *)msdu_copied->data;
-+				if (!ieee80211_has_protected(hdr->frame_control))
-+					hdr->frame_control |=
-+						cpu_to_le16(IEEE80211_FCTL_PROTECTED);
-+			}
-+			spin_unlock_bh(&tmp_ar->ab->base_lock);
-+
-+skip_peer_find:
-+			ret = ath12k_dp_tx(tmp_ar, tmp_arvif,
-+					   msdu_copied, true, mcbc_gsn);
-+
-+			if (unlikely(ret)) {
-+				if (ret == -ENOMEM) {
-+					/* Drops are expected during heavy multicast
-+					 * frame flood. Print with debug log
-+					 * level to avoid lot of console prints
-+					 */
-+					ath12k_dbg(ar->ab, ATH12K_DBG_MAC,
-+						   "failed to transmit frame %d\n",
-+						   ret);
-+				} else {
-+					ath12k_warn(ar->ab,
-+						    "failed to transmit frame %d\n",
-+						    ret);
-+				}
-+
-+				dev_kfree_skb_any(msdu_copied);
-+			}
-+		}
-+		ieee80211_free_txskb(ar->ah->hw, skb);
- 	}
- }
+ struct htt_ver_req_cmd {
+ 	__le32 ver_reg_info;
++	__le32 tcl_metadata_version;
+ } __packed;
  
-@@ -11098,6 +11210,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 		ath12k_iftypes_ext_capa[2].eml_capabilities = cap->eml_cap;
- 		ath12k_iftypes_ext_capa[2].mld_capa_and_ops = cap->mld_cap;
- 		wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
-+
-+		ieee80211_hw_set(hw, MLO_MCAST_MULTI_LINK_TX);
- 	}
+ enum htt_srng_ring_type {
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index aa8058dd2da6..5ed41783d039 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
  
- 	hw->queues = ATH12K_HW_MAX_QUEUES;
+ #include "core.h"
+@@ -1103,7 +1103,15 @@ int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab)
+ 	skb_put(skb, len);
+ 	cmd = (struct htt_ver_req_cmd *)skb->data;
+ 	cmd->ver_reg_info = le32_encode_bits(HTT_H2T_MSG_TYPE_VERSION_REQ,
+-					     HTT_VER_REQ_INFO_MSG_ID);
++					     HTT_OPTION_TAG);
++
++	cmd->tcl_metadata_version = le32_encode_bits(HTT_TAG_TCL_METADATA_VERSION,
++						     HTT_OPTION_TAG);
++	cmd->tcl_metadata_version |= le32_encode_bits(HTT_TCL_METADATA_VER_SZ,
++						      HTT_OPTION_LEN);
++	cmd->tcl_metadata_version |=
++			le32_encode_bits(HTT_OPTION_TCL_METADATA_VER_V2,
++					 HTT_OPTION_VALUE);
+ 
+ 	ret = ath12k_htc_send(&ab->htc, dp->eid, skb);
+ 	if (ret) {
 -- 
 2.34.1
 
