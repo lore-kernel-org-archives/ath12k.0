@@ -4,82 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EF7EC02192
-	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 21:40:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64021C02192
+	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 21:44:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=qzXDgQQmgnSDr3D5drQAd7fI2w9Y228kBLOLEizYZ6U=; b=PC+23Vd4FH/kaAsuuu/p8GIT/b
-	Z2H37leaNg+CCpOar34peAd1hlFXQNLgM6E630h/SuoFu4nwy0FKgwpk+IRtWKfOEWGURlLCkVMHp
-	F/i4L6ycXMlTOKgxr/jEOwzXSxZ6c7tO065XQR/H79shrtxZGe5PcB7L7SuSgGLiADfgfF/iymZtY
-	58fN+Uj6zc/VjANqK952yjHNnd0K8NoYGr1FXKnjo3HOKX79zjLuBXcpu+KC59Nk3XQVPt6cVv3hD
-	EljbEUNm24THMrdE7JDsT54QHYSI8XLE4X/kgXoKxwowo8694Fm+TK9bKUqyUVDEg2iMgTbYEBcWL
-	nz4tpmng==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QzgQ7WEzKjkqJTUuDP5NT6Dy6EKSLNgaW54nzToTabM=; b=LeggMFmXrjSiPOluj2tYFXdeve
+	yefSbf/z0aBHUynz4NHQHGwpNuaIo1FyYg4rbC+1gr6J8Kw9LH5AhWjd2CYTqttz6hVW0NxkZ6J6o
+	UdI8y/yVNnvuu1H9gyxFDFNtSYwoj2mhqVP7iVP7otb5jJYR49R1wXom6mb3xb2cmz11Mv0KpD0+T
+	3CJ+AoApNVdDUI+MhJFjh5VRvyPiA5XdCwlKN8gVspBLpV5d9svQ9vO3l+Zqce+14CXfa9yCRuI8S
+	wvKCkrJ277q3X4Jf/PEKFJEk/pBWuSwvG2fV/m4d3JPEf8hHqm6r75MwRTZ6nyX63gZIykqQQZHjq
+	mSfdTTxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf4B3-0000000Gh0Z-0bj6
+	id 1tf4FV-0000000GhlJ-0g4x
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Feb 2025 21:40:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 03 Feb 2025 21:44:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf43n-0000000Gfre-0QdE
+	id 1tf4FR-0000000GhiE-2MO6
 	for ath12k@lists.infradead.org;
-	Mon, 03 Feb 2025 21:32:52 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513GW7d6002576;
-	Mon, 3 Feb 2025 21:32:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=qzXDgQQmgnSDr3D5drQAd7
-	fI2w9Y228kBLOLEizYZ6U=; b=LK6lG4n/7jNvs4bAAhfNZ0EwOlF2XPKJtI4TFj
-	glqVSkNNDNcxfl57o4YEvSOLiHMDSubhXWR4tGoWQPdgD9/55qzCRLlpYwYdmjqJ
-	M2gvkHSTs3XjE0yLT4TPcnjuaJiIleDQE1bWOHEtsGLL+/a+rRrsImQ9KoYd4K0g
-	jEDd8Zybiw1/0pNa83ZZsuW5Mg5C8sTbuGeKoZHFlE82Ia2vk/8AHjuGy6B8JAXm
-	e0SWjlnlgMqSusJNTRmjbagX/0lo8H0IClPvB86QCR/0woUduIGxDslRDQZ+IZ2h
-	bc8G6I/3Bk/DeeH+bKroGUoTqKtwzj89uF6jRQw63kZRjloQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k1d9gmvb-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Feb 2025 21:32:49 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 513LWmoe022117
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 3 Feb 2025 21:32:48 GMT
-Received: from hu-bmahalin-lv.qualcomm.com (10.49.16.6) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 3 Feb 2025 13:32:48 -0800
-From: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_bmahalin@quicinc.com>
-Subject: [PATCH v4] wifi: ath12k: Add support for link specific datapath stats
-Date: Mon, 3 Feb 2025 13:32:37 -0800
-Message-ID: <20250203213237.2695131-1-quic_bmahalin@quicinc.com>
+	Mon, 03 Feb 2025 21:44:55 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513IcVBO015487
+	for <ath12k@lists.infradead.org>; Mon, 3 Feb 2025 21:44:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=QzgQ7WEzKjk
+	qJTUuDP5NT6Dy6EKSLNgaW54nzToTabM=; b=aIMWNip4kHAyANI0oKXlo3cMZMA
+	4/69cCR4V+4B5fzJEY1m01rGB33giUufw3NNLTiGqE0FqaJjsu0ZSzDENyvYXgv5
+	u2ML4TxAmpQQ+VWj66vGXtBIrOFM944XQCbvWqA2ZqAZiKflxw+uKZojErsmMojm
+	x6FiQy0ItyedNHefQkeyshcf4t5PW/H3/9cDeBgM3J9z6WHmgHXmrj0T3KWrvLT6
+	ArzAF0piulH5obOWvQlKiSvBJxCEFtCyPqlLvqifPigXVQqeLJgQugiS1sY/XUJj
+	XYncyUtiC2+D2T8N3CmBXhFAEW9Vwz0az5CiclvFRKXUBOK8HlrBeL/l6Wg==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k3890c2n-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 21:44:52 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ee5616e986so13626998a91.2
+        for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 13:44:52 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738619092; x=1739223892;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=QzgQ7WEzKjkqJTUuDP5NT6Dy6EKSLNgaW54nzToTabM=;
+        b=wIfXdf0ei69zm+/10DgvYM9QeVplnq1hV3yIGi9m0vbPcrH4nIPsW4+6+13PaBj3Fe
+         AfnTzBx0/HvhiBsuEGn7+zMsXujp0xmdrkPjHAiOHAcaHeWqbc1/xcETZJaCpAXk3ykK
+         0CmXlCVxA/tGmszmnhBdWeSwGtFlr1XUSDnHr6sRr459rH/AztqJIzpg6bE6aS3TGkn/
+         cm1u8us0sMZUtuLuD/LwR8zpk5XxRIMEToAUXEUhcr7f5+AvfBU10Gb+O7syM33u/7xF
+         3c+NLA2WhvZhrcXdzCiLgs5qv4nhTFqeJLwK1TBsE3o2YsDtsAtL43jqst6Io/ry8EIQ
+         6U+A==
+X-Forwarded-Encrypted: i=1; AJvYcCVJsiGOFpExwMivUNkaSKCGyYo3aDPu9JSjhCY3WVhy7d/XPL4CrNW7p0Ebq94c8Pr+DvkT9S4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxjgM2pePMyTzeJIrzoYNkr/bXxQ/QEMYJsPQ7Bdfabp6DZLgtg
+	qZSHf+iS/MTe14Fj7YDw2bc/9OHvm5M5U9ORCNNUMg2AalyGnXeDDiZOyrEgaK7vZASSaJriINb
+	5hjAgQwqsK7Bds5amLGM94HBi6ZrOARhVc+DdrJ26INwHBXmjCyToUP9TEWl5
+X-Gm-Gg: ASbGncsmcy+nuP0lO8X+kXauEQRVzPqkYQNUUE5Eom4eHCkoPRBjSHLAHy7n6yflkZR
+	DSxyFXAxEzUH3jY+uOyMxuDMfrVGkRDA7OZxT0/uba5txb/pykOzSi9h9f4nmHNlZ6Jlit+Lymt
+	8q25JU6IZ2nM3WVoicmprGsPk1h5C2WZuObgH3WjK4EIxAx8fziO52I85mHFHQDC+Q2xfduQ5qL
+	8Z1xOwsUPQqu/lKKhiXtSLHGIIfaAcuNEQyh1zmtxy3W6ETGl/e4bzvaC36+YqRzHnvn0X55sd1
+	RYO/fjFiBI7kZW0yszPnYK3lz6ZFpJByMIFrEXVk/KKGvssdWxlL6bnfPcfb
+X-Received: by 2002:a17:90b:520d:b0:2f6:f107:fae4 with SMTP id 98e67ed59e1d1-2f83abd7cdamr33973423a91.8.1738619091720;
+        Mon, 03 Feb 2025 13:44:51 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEfncbyH+z3ef2HHy3M5k7kIczzJ+qP6vF0ACkktpzZsvaYdcrXOgcKU4O7yZ/PVgow0po8QA==
+X-Received: by 2002:a17:90b:520d:b0:2f6:f107:fae4 with SMTP id 98e67ed59e1d1-2f83abd7cdamr33973402a91.8.1738619091341;
+        Mon, 03 Feb 2025 13:44:51 -0800 (PST)
+Received: from alokad-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21de331ce6asm82357895ad.209.2025.02.03.13.44.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 03 Feb 2025 13:44:51 -0800 (PST)
+From: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+To: ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org
+Cc: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+Subject: [PATCH v3 1/5] wifi: ath11k: refactor transmitted arvif retrieval
+Date: Mon,  3 Feb 2025 13:44:44 -0800
+Message-Id: <20250203214448.1978156-2-aloka.dixit@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250203214448.1978156-1-aloka.dixit@oss.qualcomm.com>
+References: <20250203214448.1978156-1-aloka.dixit@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01c.na.qualcomm.com (10.47.97.35) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 5LQIqQto8qf6TK6HEVLvCZsZcHLy8vFA
-X-Proofpoint-ORIG-GUID: 5LQIqQto8qf6TK6HEVLvCZsZcHLy8vFA
+X-Proofpoint-ORIG-GUID: XTy3Vnsd1a9F1yUWCaiz7-02yROEboII
+X-Proofpoint-GUID: XTy3Vnsd1a9F1yUWCaiz7-02yROEboII
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-03_09,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 mlxscore=0 mlxlogscore=999 adultscore=0 lowpriorityscore=0
- spamscore=0 suspectscore=0 clxscore=1015 bulkscore=0 malwarescore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502030155
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 spamscore=0
+ mlxlogscore=947 adultscore=0 priorityscore=1501 bulkscore=0 suspectscore=0
+ lowpriorityscore=0 phishscore=0 impostorscore=0 clxscore=1015 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
+ definitions=main-2502030157
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_133251_265339_4F44797D 
-X-CRM114-Status: GOOD (  23.09  )
+X-CRM114-CacheID: sfid-20250203_134453_598416_6A7039EC 
+X-CRM114-Status: GOOD (  20.56  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,469 +115,156 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Add support to record the number of frames enqueued, hardware
-descriptor type, encapsulation/encryption types used, frames
-dropped and completed. This is useful for understanding the
-datapath performance and tune the peak throughput.
+Create a new function ath11k_mac_get_tx_arvif() to retrieve 'arvif'
+for the transmitted interface of the MBSSID set. This will help
+modifying the same code path to reflect mac80211 data structure
+changes to support MLO. This also fixes an issue in
+ath11k_mac_update_vif_chan() where tx_arvif is not reset to NULL
+inside for loop during each iteration.
 
-The link specific stats can be viewed through the below debugfs file
-
-cat /sys/kernel/debug/ieee80211/phy0/netdev:wlan1/link_stats
-link[0] Tx Unicast Frames Enqueued  = 9
-link[0] Tx Broadcast Frames Enqueued = 78689
-link[0] Tx Frames Completed = 78698
-link[0] Tx Frames Dropped = 0
-link[0] Tx Frame descriptor Encap Type =  raw:0 native wifi:78698 ethernet:0
-link[0] Tx Frame descriptor Encrypt Type =  0:78698 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0 10:0 11:0
-link[0] Tx Frame descriptor Type = buffer:78698 extension:0
-------------------------------------------------------
-link[1] Tx Unicast Frames Enqueued  = 0
-link[1] Tx Broadcast Frames Enqueued = 78689
-link[1] Tx Frames Completed = 78689
-link[1] Tx Frames Dropped = 0
-link[1] Tx Frame descriptor Encap Type =  raw:0 native wifi:78689 ethernet:0
-link[1] Tx Frame descriptor Encrypt Type =  0:78689 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0 10:0 11:0
-link[1] Tx Frame descriptor Type = buffer:78689 extension:0
-------------------------------------------------------
-
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
+Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
 ---
+ drivers/net/wireless/ath/ath11k/mac.c | 55 +++++++++++++--------------
+ 1 file changed, 27 insertions(+), 28 deletions(-)
 
-Depends-on: [PATCH v4 0/2] wifi: ath12k: Add support for MLO Multicast Handling
-Link: https://patchwork.kernel.org/project/linux-wireless/list/?series=930206 
-
-v4: 
-    Rebased on top of dependent patch.
-
-v3: https://patchwork.kernel.org/project/linux-wireless/patch/20250203080032.3983556-1-quic_bmahalin@quicinc.com/
-    Rebased on top of dependent patch.
-
-v2: https://patchwork.kernel.org/project/linux-wireless/patch/20250203025714.3852826-1-quic_bmahalin@quicinc.com/
-    Rebased on top of master branch.
-
-v1: https://patchwork.kernel.org/project/linux-wireless/patch/20250110205912.2585850-1-quic_bmahalin@quicinc.com/
-
- drivers/net/wireless/ath/ath12k/core.h     |   2 +
- drivers/net/wireless/ath/ath12k/debugfs.c  | 118 +++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/debugfs.h  |   7 ++
- drivers/net/wireless/ath/ath12k/dp.h       |  11 ++
- drivers/net/wireless/ath/ath12k/dp_tx.c    |  51 ++++++++-
- drivers/net/wireless/ath/ath12k/dp_tx.h    |   3 +-
- drivers/net/wireless/ath/ath12k/hal_desc.h |   6 +-
- drivers/net/wireless/ath/ath12k/mac.c      |  10 +-
- 8 files changed, 202 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index b8c336bc02d8..118bf7ae914a 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -301,6 +301,8 @@ struct ath12k_link_vif {
- 	u8 link_id;
- 	struct ath12k_vif *ahvif;
- 	struct ath12k_rekey_data rekey_data;
-+	struct ath12k_link_stats link_stats;
-+	spinlock_t link_stats_lock; /* Protects updates to link_stats */
- };
- 
- struct ath12k_vif {
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index 6d6708486d14..d737a581bb85 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -32,6 +32,124 @@ static const struct file_operations fops_simulate_radar = {
- 	.open = simple_open
- };
- 
-+static int ath12k_open_link_stats(struct inode *inode, struct file *file)
-+{
-+	struct ath12k_vif *ahvif = inode->i_private;
-+	size_t len = 0, buf_len = (PAGE_SIZE * 2);
-+	struct ath12k_link_stats linkstat;
-+	struct ath12k_link_vif *arvif;
-+	unsigned long links_map;
-+	struct wiphy *wiphy;
-+	int link_id, i;
-+	char *buf;
-+
-+	if (!ahvif)
-+		return -EINVAL;
-+
-+	buf = kzalloc(buf_len, GFP_KERNEL);
-+	if (!buf)
-+		return -ENOMEM;
-+
-+	wiphy = ahvif->ah->hw->wiphy;
-+	wiphy_lock(wiphy);
-+
-+	links_map = ahvif->links_map;
-+	for_each_set_bit(link_id, &links_map,
-+			 IEEE80211_MLD_MAX_NUM_LINKS) {
-+		arvif = rcu_dereference_protected(ahvif->link[link_id],
-+						  lockdep_is_held(&wiphy->mtx));
-+
-+		spin_lock_bh(&arvif->link_stats_lock);
-+		linkstat = arvif->link_stats;
-+		spin_unlock_bh(&arvif->link_stats_lock);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "link[%d] Tx Unicast Frames Enqueued  = %d\n",
-+				 link_id, linkstat.tx_enqueued);
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "link[%d] Tx Broadcast Frames Enqueued = %d\n",
-+				 link_id, linkstat.tx_bcast_mcast);
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "link[%d] Tx Frames Completed = %d\n",
-+				 link_id, linkstat.tx_completed);
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "link[%d] Tx Frames Dropped = %d\n",
-+				 link_id, linkstat.tx_dropped);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "link[%d] Tx Frame descriptor Encap Type = ",
-+				 link_id);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+					 " raw:%d",
-+					 linkstat.tx_encap_type[0]);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+					 " native_wifi:%d",
-+					 linkstat.tx_encap_type[1]);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+					 " ethernet:%d",
-+					 linkstat.tx_encap_type[2]);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "\nlink[%d] Tx Frame descriptor Encrypt Type = ",
-+				 link_id);
-+
-+		for (i = 0; i < HAL_ENCRYPT_TYPE_MAX; i++) {
-+			len += scnprintf(buf + len, buf_len - len,
-+					 " %d:%d", i,
-+					 linkstat.tx_encrypt_type[i]);
-+		}
-+		len += scnprintf(buf + len, buf_len - len,
-+				 "\nlink[%d] Tx Frame descriptor Type = buffer:%d extension:%d\n",
-+				 link_id, linkstat.tx_desc_type[0],
-+				 linkstat.tx_desc_type[1]);
-+
-+		len += scnprintf(buf + len, buf_len - len,
-+				"------------------------------------------------------\n");
-+	}
-+
-+	wiphy_unlock(wiphy);
-+
-+	file->private_data = buf;
-+
-+	return 0;
-+}
-+
-+static int ath12k_release_link_stats(struct inode *inode, struct file *file)
-+{
-+	kfree(file->private_data);
-+	return 0;
-+}
-+
-+static ssize_t ath12k_read_link_stats(struct file *file,
-+				      char __user *user_buf,
-+				      size_t count, loff_t *ppos)
-+{
-+	const char *buf = file->private_data;
-+	size_t len = strlen(buf);
-+
-+	return simple_read_from_buffer(user_buf, count, ppos, buf, len);
-+}
-+
-+static const struct file_operations ath12k_fops_link_stats = {
-+	.open = ath12k_open_link_stats,
-+	.release = ath12k_release_link_stats,
-+	.read = ath12k_read_link_stats,
-+	.owner = THIS_MODULE,
-+	.llseek = default_llseek,
-+};
-+
-+void ath12k_debugfs_op_vif_add(struct ieee80211_hw *hw,
-+			       struct ieee80211_vif *vif)
-+{
-+	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-+
-+	debugfs_create_file("link_stats", 0400, vif->debugfs_dir, ahvif,
-+			    &ath12k_fops_link_stats);
-+}
-+
- void ath12k_debugfs_soc_create(struct ath12k_base *ab)
- {
- 	bool dput_needed;
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.h b/drivers/net/wireless/ath/ath12k/debugfs.h
-index 1c30745ee415..db87d9ad17c8 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.h
-@@ -15,6 +15,8 @@ void ath12k_debugfs_unregister(struct ath12k *ar);
- void ath12k_debugfs_fw_stats_process(struct ath12k *ar,
- 				     struct ath12k_fw_stats *stats);
- void ath12k_debugfs_fw_stats_reset(struct ath12k *ar);
-+void ath12k_debugfs_op_vif_add(struct ieee80211_hw *hw,
-+			       struct ieee80211_vif *vif);
- #else
- static inline void ath12k_debugfs_soc_create(struct ath12k_base *ab)
- {
-@@ -40,6 +42,11 @@ static inline void ath12k_debugfs_fw_stats_process(struct ath12k *ar,
- static inline void ath12k_debugfs_fw_stats_reset(struct ath12k *ar)
- {
- }
-+
-+static inline void ath12k_debugfs_op_vif_add(struct ieee80211_hw *hw,
-+					     struct ieee80211_vif *vif)
-+{
-+}
- #endif /* CONFIG_ATH12K_DEBUGFS */
- 
- #endif /* _ATH12K_DEBUGFS_H_ */
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 75435a931548..1bcac114f09a 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -7,6 +7,7 @@
- #ifndef ATH12K_DP_H
- #define ATH12K_DP_H
- 
-+#include "hal_desc.h"
- #include "hal_rx.h"
- #include "hw.h"
- 
-@@ -313,6 +314,16 @@ struct ath12k_reo_q_addr_lut {
- 	u32 *vaddr;
- };
- 
-+struct ath12k_link_stats {
-+	u32 tx_enqueued;
-+	u32 tx_completed;
-+	u32 tx_bcast_mcast;
-+	u32 tx_dropped;
-+	u32 tx_encap_type[HAL_TCL_ENCAP_TYPE_MAX];
-+	u32 tx_encrypt_type[HAL_ENCRYPT_TYPE_MAX];
-+	u32 tx_desc_type[HAL_TCL_DESC_TYPE_MAX];
-+};
-+
- struct ath12k_dp {
- 	struct ath12k_base *ab;
- 	u8 num_bank_profiles;
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 1896178d2d4f..94b9f41941a1 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -219,7 +219,8 @@ static int ath12k_dp_tx_align_payload(struct ath12k_base *ab,
- }
- 
- int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
--		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn)
-+		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
-+		 bool is_mcast)
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_dp *dp = &ab->dp;
-@@ -464,6 +465,17 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 		goto fail_unmap_dma;
- 	}
- 
-+	spin_lock_bh(&arvif->link_stats_lock);
-+	arvif->link_stats.tx_encap_type[ti.encap_type]++;
-+	arvif->link_stats.tx_encrypt_type[ti.encrypt_type]++;
-+	arvif->link_stats.tx_desc_type[ti.type]++;
-+
-+	if (is_mcast)
-+		arvif->link_stats.tx_bcast_mcast++;
-+	else
-+		arvif->link_stats.tx_enqueued++;
-+	spin_unlock_bh(&arvif->link_stats_lock);
-+
- 	ath12k_hal_tx_cmd_desc_setup(ab, hal_tcl_desc, &ti);
- 
- 	ath12k_hal_srng_access_end(ab, tcl_ring);
-@@ -487,6 +499,11 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
- 
- fail_remove_tx_buf:
- 	ath12k_dp_tx_release_txbuf(dp, tx_desc, pool_id);
-+
-+	spin_lock_bh(&arvif->link_stats_lock);
-+	arvif->link_stats.tx_dropped++;
-+	spin_unlock_bh(&arvif->link_stats_lock);
-+
- 	if (tcl_ring_retry)
- 		goto tcl_ring_sel;
- 
-@@ -522,7 +539,10 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
- 				 struct ath12k_dp_htt_wbm_tx_status *ts)
- {
- 	struct ieee80211_tx_info *info;
-+	struct ath12k_link_vif *arvif;
- 	struct ath12k_skb_cb *skb_cb;
-+	struct ieee80211_vif *vif;
-+	struct ath12k_vif *ahvif;
- 	struct ath12k *ar;
- 
- 	skb_cb = ATH12K_SKB_CB(msdu);
-@@ -538,6 +558,19 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
- 		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
- 				 sizeof(struct hal_tx_msdu_ext_desc), DMA_TO_DEVICE);
- 
-+	vif = skb_cb->vif;
-+	if (vif) {
-+		ahvif = ath12k_vif_to_ahvif(vif);
-+		rcu_read_lock();
-+		arvif = rcu_dereference(ahvif->link[skb_cb->link_id]);
-+		if (arvif) {
-+			spin_lock_bh(&arvif->link_stats_lock);
-+			arvif->link_stats.tx_completed++;
-+			spin_unlock_bh(&arvif->link_stats_lock);
-+		}
-+		rcu_read_unlock();
-+	}
-+
- 	memset(&info->status, 0, sizeof(info->status));
- 
- 	if (ts->acked) {
-@@ -592,7 +625,7 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab,
- 		 */
- 		break;
- 	default:
--		ath12k_warn(ab, "Unknown htt tx status %d\n", wbm_status);
-+		ath12k_warn(ab, "Unknown htt wbm tx status %d\n", wbm_status);
- 		break;
- 	}
- }
-@@ -722,7 +755,10 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_hw *ah = ar->ah;
- 	struct ieee80211_tx_info *info;
-+	struct ath12k_link_vif *arvif;
- 	struct ath12k_skb_cb *skb_cb;
-+	struct ieee80211_vif *vif;
-+	struct ath12k_vif *ahvif;
- 
- 	if (WARN_ON_ONCE(ts->buf_rel_source != HAL_WBM_REL_SRC_MODULE_TQM)) {
- 		/* Must not happen */
-@@ -748,6 +784,17 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
- 		goto exit;
- 	}
- 
-+	vif = skb_cb->vif;
-+	if (vif) {
-+		ahvif = ath12k_vif_to_ahvif(vif);
-+		arvif = rcu_dereference(ahvif->link[skb_cb->link_id]);
-+		if (arvif) {
-+			spin_lock_bh(&arvif->link_stats_lock);
-+			arvif->link_stats.tx_completed++;
-+			spin_unlock_bh(&arvif->link_stats_lock);
-+		}
-+	}
-+
- 	info = IEEE80211_SKB_CB(msdu);
- 	memset(&info->status, 0, sizeof(info->status));
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.h b/drivers/net/wireless/ath/ath12k/dp_tx.h
-index a5904097dc34..10acdcf1fa8f 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.h
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.h
-@@ -17,7 +17,8 @@ struct ath12k_dp_htt_wbm_tx_status {
- 
- int ath12k_dp_tx_htt_h2t_ver_req_msg(struct ath12k_base *ab);
- int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
--		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn);
-+		 struct sk_buff *skb, bool gsn_valid, int mcbc_gsn,
-+		 bool is_mcast);
- void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id);
- 
- int ath12k_dp_tx_htt_h2t_ppdu_stats_req(struct ath12k *ar, u32 mask);
-diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
-index 3e8983b85de8..aba1023ec619 100644
---- a/drivers/net/wireless/ath/ath12k/hal_desc.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
+diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
+index 1556392f7ad4..8b81f450a216 100644
+--- a/drivers/net/wireless/ath/ath11k/mac.c
++++ b/drivers/net/wireless/ath/ath11k/mac.c
 @@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
  /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  * Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
   */
- #include "core.h"
  
-@@ -1263,6 +1263,7 @@ struct hal_reo_flush_cache {
+ #include <net/mac80211.h>
+@@ -1529,6 +1529,14 @@ static int ath11k_mac_set_vif_params(struct ath11k_vif *arvif,
+ 	return ret;
+ }
  
- #define HAL_TCL_DATA_CMD_INFO5_RING_ID			GENMASK(27, 20)
- #define HAL_TCL_DATA_CMD_INFO5_LOOPING_COUNT		GENMASK(31, 28)
-+#define HAL_ENCRYPT_TYPE_MAX 12
- 
- enum hal_encrypt_type {
- 	HAL_ENCRYPT_TYPE_WEP_40,
-@@ -1284,11 +1285,13 @@ enum hal_tcl_encap_type {
- 	HAL_TCL_ENCAP_TYPE_NATIVE_WIFI,
- 	HAL_TCL_ENCAP_TYPE_ETHERNET,
- 	HAL_TCL_ENCAP_TYPE_802_3 = 3,
-+	HAL_TCL_ENCAP_TYPE_MAX
- };
- 
- enum hal_tcl_desc_type {
- 	HAL_TCL_DESC_TYPE_BUFFER,
- 	HAL_TCL_DESC_TYPE_EXT_DESC,
-+	HAL_TCL_DESC_TYPE_MAX,
- };
- 
- enum hal_wbm_htt_tx_comp_status {
-@@ -1298,6 +1301,7 @@ enum hal_wbm_htt_tx_comp_status {
- 	HAL_WBM_REL_HTT_TX_COMP_STATUS_REINJ,
- 	HAL_WBM_REL_HTT_TX_COMP_STATUS_INSPECT,
- 	HAL_WBM_REL_HTT_TX_COMP_STATUS_MEC_NOTIFY,
-+	HAL_WBM_REL_HTT_TX_COMP_STATUS_VDEVID_MISMATCH,
- 	HAL_WBM_REL_HTT_TX_COMP_STATUS_MAX,
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index b3907ac05f69..95c8c30df4c0 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3980,6 +3980,9 @@ static struct ath12k_link_vif *ath12k_mac_assign_link_vif(struct ath12k_hw *ah,
- 	arvif->link_id = link_id;
- 	ahvif->links_map |= BIT(link_id);
- 
-+	/* Protects the datapath stats update on a per link basis */
-+	spin_lock_init(&arvif->link_stats_lock);
++static struct ath11k_vif *ath11k_mac_get_tx_arvif(struct ath11k_vif *arvif)
++{
++	if (arvif->vif->mbssid_tx_vif)
++		return ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
 +
- 	INIT_LIST_HEAD(&arvif->list);
- 	INIT_DELAYED_WORK(&arvif->connection_loss_work,
- 			  ath12k_mac_vif_sta_connection_loss_work);
-@@ -7347,7 +7350,7 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
++	return NULL;
++}
++
+ static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
+ {
+ 	struct ath11k_vif *tx_arvif;
+@@ -1538,7 +1546,7 @@ static int ath11k_mac_setup_bcn_tmpl_ema(struct ath11k_vif *arvif)
+ 	u32 params = 0;
+ 	u8 i = 0;
  
- 	if (!vif->valid_links || !is_mcast ||
- 	    test_bit(ATH12K_FLAG_RAW_MODE, &ar->ab->dev_flags)) {
--		ret = ath12k_dp_tx(ar, arvif, skb, false, 0);
-+		ret = ath12k_dp_tx(ar, arvif, skb, false, 0, is_mcast);
- 		if (unlikely(ret)) {
- 			ath12k_warn(ar->ab, "failed to transmit frame %d\n", ret);
- 			ieee80211_free_txskb(ar->ah->hw, skb);
-@@ -7411,7 +7414,7 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
+-	tx_arvif = ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
++	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
  
- skip_peer_find:
- 			ret = ath12k_dp_tx(tmp_ar, tmp_arvif,
--					   msdu_copied, true, mcbc_gsn);
-+					   msdu_copied, true, mcbc_gsn, is_mcast);
- 			if (unlikely(ret)) {
- 				if (ret == -ENOMEM) {
- 					/* Drops are expected during heavy multicast
-@@ -10556,6 +10559,9 @@ static const struct ieee80211_ops ath12k_ops = {
- 	.suspend			= ath12k_wow_op_suspend,
- 	.resume				= ath12k_wow_op_resume,
- 	.set_wakeup			= ath12k_wow_op_set_wakeup,
-+#endif
-+#ifdef CONFIG_ATH12K_DEBUGFS
-+	.vif_add_debugfs                = ath12k_debugfs_op_vif_add,
- #endif
- 	CFG80211_TESTMODE_CMD(ath12k_tm_cmd)
- };
+ 	beacons = ieee80211_beacon_get_template_ema_list(tx_arvif->ar->hw,
+ 							 tx_arvif->vif, 0);
+@@ -1589,21 +1597,21 @@ static int ath11k_mac_setup_bcn_tmpl_mbssid(struct ath11k_vif *arvif)
+ {
+ 	struct ath11k *ar = arvif->ar;
+ 	struct ath11k_base *ab = ar->ab;
+-	struct ath11k_vif *tx_arvif = arvif;
++	struct ath11k_vif *tx_arvif;
+ 	struct ieee80211_hw *hw = ar->hw;
+ 	struct ieee80211_vif *vif = arvif->vif;
+ 	struct ieee80211_mutable_offsets offs = {};
+ 	struct sk_buff *bcn;
+ 	int ret;
+ 
+-	if (vif->mbssid_tx_vif) {
+-		tx_arvif = ath11k_vif_to_arvif(vif->mbssid_tx_vif);
+-		if (tx_arvif != arvif) {
+-			ar = tx_arvif->ar;
+-			ab = ar->ab;
+-			hw = ar->hw;
+-			vif = tx_arvif->vif;
+-		}
++	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
++	if (tx_arvif && tx_arvif != arvif) {
++		ar = tx_arvif->ar;
++		ab = ar->ab;
++		hw = ar->hw;
++		vif = tx_arvif->vif;
++	} else {
++		tx_arvif = arvif;
+ 	}
+ 
+ 	bcn = ieee80211_beacon_get_template(hw, vif, &offs, 0);
+@@ -1674,7 +1682,7 @@ static void ath11k_control_beaconing(struct ath11k_vif *arvif,
+ 				     struct ieee80211_bss_conf *info)
+ {
+ 	struct ath11k *ar = arvif->ar;
+-	struct ath11k_vif *tx_arvif = NULL;
++	struct ath11k_vif *tx_arvif;
+ 	int ret = 0;
+ 
+ 	lockdep_assert_held(&arvif->ar->conf_mutex);
+@@ -1701,9 +1709,7 @@ static void ath11k_control_beaconing(struct ath11k_vif *arvif,
+ 
+ 	ether_addr_copy(arvif->bssid, info->bssid);
+ 
+-	if (arvif->vif->mbssid_tx_vif)
+-		tx_arvif = ath11k_vif_to_arvif(arvif->vif->mbssid_tx_vif);
+-
++	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+ 	ret = ath11k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+ 				 arvif->bssid,
+ 				 tx_arvif ? tx_arvif->bssid : NULL,
+@@ -6330,23 +6336,20 @@ static int ath11k_mac_setup_vdev_params_mbssid(struct ath11k_vif *arvif,
+ {
+ 	struct ath11k *ar = arvif->ar;
+ 	struct ath11k_vif *tx_arvif;
+-	struct ieee80211_vif *tx_vif;
+ 
+ 	*tx_vdev_id = 0;
+-	tx_vif = arvif->vif->mbssid_tx_vif;
+-	if (!tx_vif) {
++	tx_arvif = ath11k_mac_get_tx_arvif(arvif);
++	if (!tx_arvif) {
+ 		*flags = WMI_HOST_VDEV_FLAGS_NON_MBSSID_AP;
+ 		return 0;
+ 	}
+ 
+-	tx_arvif = ath11k_vif_to_arvif(tx_vif);
+-
+ 	if (arvif->vif->bss_conf.nontransmitted) {
+-		if (ar->hw->wiphy != ieee80211_vif_to_wdev(tx_vif)->wiphy)
++		if (ar->hw->wiphy != tx_arvif->ar->hw->wiphy)
+ 			return -EINVAL;
+ 
+ 		*flags = WMI_HOST_VDEV_FLAGS_NON_TRANSMIT_AP;
+-		*tx_vdev_id = ath11k_vif_to_arvif(tx_vif)->vdev_id;
++		*tx_vdev_id = tx_arvif->vdev_id;
+ 	} else if (tx_arvif == arvif) {
+ 		*flags = WMI_HOST_VDEV_FLAGS_TRANSMIT_AP;
+ 	} else {
+@@ -7306,8 +7309,7 @@ ath11k_mac_update_vif_chan(struct ath11k *ar,
+ 			   int n_vifs)
+ {
+ 	struct ath11k_base *ab = ar->ab;
+-	struct ath11k_vif *arvif, *tx_arvif = NULL;
+-	struct ieee80211_vif *mbssid_tx_vif;
++	struct ath11k_vif *arvif, *tx_arvif;
+ 	int ret;
+ 	int i;
+ 	bool monitor_vif = false;
+@@ -7361,10 +7363,7 @@ ath11k_mac_update_vif_chan(struct ath11k *ar,
+ 			ath11k_warn(ab, "failed to update bcn tmpl during csa: %d\n",
+ 				    ret);
+ 
+-		mbssid_tx_vif = arvif->vif->mbssid_tx_vif;
+-		if (mbssid_tx_vif)
+-			tx_arvif = ath11k_vif_to_arvif(mbssid_tx_vif);
+-
++		tx_arvif = ath11k_mac_get_tx_arvif(arvif);
+ 		ret = ath11k_wmi_vdev_up(arvif->ar, arvif->vdev_id, arvif->aid,
+ 					 arvif->bssid,
+ 					 tx_arvif ? tx_arvif->bssid : NULL,
 -- 
 2.34.1
 
