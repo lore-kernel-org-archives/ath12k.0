@@ -4,91 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F166C02195
-	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 06:05:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA4ADC02198
+	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 07:57:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2D/iY/UdUfTEfQpbZEGqSPG51j5CkcMafFH6NA40tEc=; b=utSqcqhs1HYiXA+pl6d7T6kNUT
-	cNXLd4Q6rjM/i8Cp7vdaif6fJj0m1fhYTLxZ+XyH6982/WeSzMeU7AUNNzC0VRNn3rV5POnKh8kt9
-	6i7sSqg6Pf8jiMi6Y/5+24rDjaGROXOTvSDoNYhMr9yx5RsDzKcLR0hlkZ/fc968nZ6Ia8s3K00hl
-	B53kgoRm/VimZP8qJQ8IhvzJPsqjwTQDHEX2dvjGNuEVQBmQrvWcpkWJ6iwpDlj5TVkxWjwbTKhn3
-	czcYzjAMdaHkZCl3iJ2WJZjJelnxtoSuWDzzR1gE490x7tT1o2EJLfPzTyn9Zv2PVaH8RsuExY+fB
-	RwEEP/tw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=rIKVqs6srmjXj89c0Lhu5HKpeL5yplUu6T2wV1qKBHw=; b=MAU2Ay3StKDBbNN1hH3eIL3pkD
+	7tOl9WJQi1xS8fXS2hi3/UvEX7lOpfDS8QAqdDLEsIPBcQYEmiZO/MimB7rlmK2c/znF09pkbs4ru
+	sLqbZIZLeL9tPYuW+PlgThKgKDVrflhsM8F1KZUzFtbQfUzltUjapqx5TZG+dBAMbQ0VdDywsnITA
+	rJ9EK78pDoLpEo6H/zMXdEeLqoxfYck6uHVDDyRFvNsdRwMwDboaX6gB0JTKlBPWmLXT3grnfTlGB
+	RheyD0H7DOPv0OzGuhXxYwDxvYcVLWepn+5EdpSnSHIMDyOnNOVrzzslYXhExKDJP3O+5u0HhRvYq
+	M4lfE11A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tepal-0000000Ecb2-2wQw
+	id 1terKT-0000000EkkI-2BMQ
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Feb 2025 06:05:55 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 03 Feb 2025 07:57:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tepZY-0000000EcVV-16UK
+	id 1terJJ-0000000EkbZ-1EU5
 	for ath12k@lists.infradead.org;
-	Mon, 03 Feb 2025 06:04:41 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5135lEbx007514;
-	Mon, 3 Feb 2025 06:04:38 GMT
+	Mon, 03 Feb 2025 07:56:04 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513673iq009303;
+	Mon, 3 Feb 2025 07:56:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2D/iY/UdUfTEfQpbZEGqSPG51j5CkcMafFH6NA40tEc=; b=HCxnpd10YwxP+T22
-	v9QKKL5kVOpcXhisLmhz/yHf1/x6Vc+tvbeITB7EqpXzBM8p+hUEaYjXAQw8C+zZ
-	YuQd/pmoGwVn7iBOQ5KdohVcQLJiZBWC3AE+Ygh6FipRvPIX5Rzs5lP4QSSUU6UN
-	H1Bvacw3PBvvebzxQm1MP71MUhKuZcxTARQaPUHpVyGMO3RsVUZEFwDNYrakcQ4A
-	qq6TqkuFz/ewkSBI7pxypoQhialpztPibM763tGVcY1G1k9Y6KKezT/HbNTLM4uy
-	1/qPTanzNe3/HCwzcuS/M94mBpLhadnAVy5qKvkL2XPdhKZrhKTksMTFNrQaNezm
-	KT923w==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44jqxw0103-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=rIKVqs6srmjXj89c0Lhu5H
+	KpeL5yplUu6T2wV1qKBHw=; b=GiCsftvMEP0laGtEuIBKW0usJe9RXl7KWVxpbl
+	rPuNhODRT5ydxX5O9BdSGzWEcRHqYWdd/Yd9gfjZjFtER7vFpojHKDXaIauYFHwh
+	7VBd2jiXCINkXDjTiE/PWUN6WVhimGGDA0qCqf0jgqmoV2o2hB0TTYoLFJ1DnZ38
+	H05GhceZtA1OdfjKT0JqSGv5Z2dYNudNKbHCmo6bP9VKPMzDcH56jNvP7PYAiOws
+	31aiH7Zcb7LMkWB5tvnEAs/9OZkboXm1a8Dakon5xLuGBFBFFTv2a6CzMIBgDn1+
+	8aIUAKXBlmLJHO49+mbHt4nk0Q3i7YDXxmWK15TEfCdqjxjA==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44jr888776-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Feb 2025 06:04:38 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51364bxE002561
+	Mon, 03 Feb 2025 07:56:00 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5137u0tD009516
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 3 Feb 2025 06:04:37 GMT
-Received: from [10.216.20.127] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 2 Feb 2025
- 22:04:35 -0800
-Message-ID: <6ed7ff61-a62a-9cd8-1603-6100402b4ab5@quicinc.com>
-Date: Mon, 3 Feb 2025 11:34:32 +0530
+	Mon, 3 Feb 2025 07:56:00 GMT
+Received: from hu-bmahalin-lv.qualcomm.com (10.49.16.6) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sun, 2 Feb 2025 23:55:59 -0800
+From: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_bmahalin@quicinc.com>
+Subject: [PATCH v3 0/2]  wifi: ath12k: Add support for MLO Multicast Handling
+Date: Sun, 2 Feb 2025 23:55:36 -0800
+Message-ID: <20250203075538.3982875-1-quic_bmahalin@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v2 2/2] wifi: ath12k: add get_txpower mac ops
-Content-Language: en-US
-To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Aditya Kumar Singh
-	<aditya.kumar.singh@oss.qualcomm.com>
-References: <20250131193726.3568086-1-rameshkumar.sundaram@oss.qualcomm.com>
- <20250131193726.3568086-3-rameshkumar.sundaram@oss.qualcomm.com>
-From: Mahendran P <quic_mahep@quicinc.com>
-In-Reply-To: <20250131193726.3568086-3-rameshkumar.sundaram@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ziMaWbBEr_kDs0bfoWPX-4LBg7TXMBd7
-X-Proofpoint-GUID: ziMaWbBEr_kDs0bfoWPX-4LBg7TXMBd7
+X-Proofpoint-ORIG-GUID: H4GippJyAqvAt-xMMC-IxE-H94yFG-rd
+X-Proofpoint-GUID: H4GippJyAqvAt-xMMC-IxE-H94yFG-rd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-03_02,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- phishscore=0 bulkscore=0 priorityscore=1501 mlxscore=0 suspectscore=0
- adultscore=0 impostorscore=0 clxscore=1015 lowpriorityscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502030049
+ definitions=2025-02-03_03,2025-01-31_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ impostorscore=0 phishscore=0 mlxscore=0 priorityscore=1501 adultscore=0
+ bulkscore=0 mlxlogscore=749 lowpriorityscore=0 spamscore=0 clxscore=1015
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502030064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250202_220440_431211_FCC0D9B5 
-X-CRM114-Status: GOOD (  40.22  )
+X-CRM114-CacheID: sfid-20250202_235601_355415_E0A70445 
+X-CRM114-Status: GOOD (  10.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,333 +94,37 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/1/2025 1:07 AM, Rameshkumar Sundaram wrote:
-> From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-> 
-> Driver does not support get_txpower mac ops because of which
-> cfg80211 returns vif->bss_conf.txpower to user space. bss_conf.txpower
-> gets its value from ieee80211_channel->max_reg_power. However, the final
-> txpower is dependent on few other parameters apart from max regulatory
-> supported power. It is the firmware which knows about all these
-> parameters and considers the minimum for each packet transmission.
-> 
-> All ath12k firmware reports the final TX power in firmware pdev stats
-> which falls under fw_stats. add get_txpower mac ops to get the TX power
-> from firmware leveraging fw_stats and return it accordingly.
-> 
-> While at it, there is a possibility that repeated stats request WMI
-> commands are queued to FW if mac80211/userspace does get tx power back
-> to back(in Multiple BSS cases). This could potentially consume the WMI
-> queue completely. Hence limit this by fetching the power only for every
-> 5 seconds and reusing the value until the refresh timeout or when there
-> is a change in channel.
-> 
-> Also remove init_completion(&ar->fw_stats_complete) in
-> ath12k_mac_hw_register() as ath12k_fw_stats_init() takes care of
-> it for each ar.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-> Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-> ---
->  drivers/net/wireless/ath/ath12k/core.h |   1 +
->  drivers/net/wireless/ath/ath12k/mac.c  | 208 +++++++++++++++++--------
->  drivers/net/wireless/ath/ath12k/mac.h  |   3 +
->  3 files changed, 148 insertions(+), 64 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 373e7baf379b..d278e4a8bb08 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -731,6 +731,7 @@ struct ath12k {
->  	u32 mlo_setup_status;
->  	u8 ftm_msgref;
->  	struct ath12k_fw_stats fw_stats;
-> +	unsigned long last_tx_power_update;
->  };
->  
->  struct ath12k_hw {
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 8cd33ea75590..efab885bdbb1 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -4280,6 +4280,145 @@ static int ath12k_start_scan(struct ath12k *ar,
->  	return 0;
->  }
->  
-> +int ath12k_mac_get_fw_stats(struct ath12k *ar,
-> +			    struct ath12k_fw_stats_req_params *param)
-> +{
-> +	struct ath12k_base *ab = ar->ab;
-> +	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
-> +	unsigned long timeout, time_left;
-> +	int ret;
-> +
-> +	guard(mutex)(&ah->hw_mutex);
-> +
-> +	if (ah->state != ATH12K_HW_STATE_ON)
-> +		return -ENETDOWN;
-> +
-> +	/* FW stats can get split when exceeding the stats data buffer limit.
-> +	 * In that case, since there is no end marking for the back-to-back
-> +	 * received 'update stats' event, we keep a 3 seconds timeout in case,
-> +	 * fw_stats_done is not marked yet
-> +	 */
-> +	timeout = jiffies + msecs_to_jiffies(3 * 1000);
-> +	ath12k_fw_stats_reset(ar);
-> +
-> +	reinit_completion(&ar->fw_stats_complete);
-> +
-> +	ret = ath12k_wmi_send_stats_request_cmd(ar, param->stats_id,
-> +						param->vdev_id, param->pdev_id);
-> +
-> +	if (ret) {
-> +		ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	ath12k_dbg(ab, ATH12K_DBG_WMI,
-> +		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-> +		   param->pdev_id, param->vdev_id, param->stats_id);
-> +
-> +	time_left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
-> +
-> +	if (!time_left) {
-> +		ath12k_warn(ab, "time out while waiting for get fw stats\n");
-> +		return -ETIMEDOUT;
-> +	}
-> +
-> +	/* Firmware sends WMI_UPDATE_STATS_EVENTID back-to-back
-> +	 * when stats data buffer limit is reached. fw_stats_complete
-> +	 * is completed once host receives first event from firmware, but
-> +	 * still end might not be marked in the TLV.
-> +	 * Below loop is to confirm that firmware completed sending all the event
-> +	 * and fw_stats_done is marked true when end is marked in the TLV.
-> +	 */
-> +	for (;;) {
-> +		if (time_after(jiffies, timeout))
-> +			break;
-> +		spin_lock_bh(&ar->data_lock);
-> +		if (ar->fw_stats.fw_stats_done) {
-> +			spin_unlock_bh(&ar->data_lock);
-> +			break;
-> +		}
-> +		spin_unlock_bh(&ar->data_lock);
-> +	}
-> +	return 0;
-> +}
-> +
-> +static int ath12k_mac_op_get_txpower(struct ieee80211_hw *hw,
-> +				     struct ieee80211_vif *vif,
-> +				     unsigned int link_id,
-> +				     int *dbm)
-> +{
-> +	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-> +	struct ath12k_fw_stats_req_params params = {};
-> +	struct ath12k_fw_stats_pdev *pdev;
-> +	struct ath12k_hw *ah = hw->priv;
-> +	struct ath12k_link_vif *arvif;
-> +	struct ath12k_base *ab;
-> +	struct ath12k *ar;
-> +	int ret;
-> +
-> +	/* Final Tx power is minimum of Target Power, CTL power, Regulatory
-> +	 * Power, PSD EIRP Power. We just know the Regulatory power from the
-> +	 * regulatory rules obtained. FW knows all these power and sets the min
-> +	 * of these. Hence, we request the FW pdev stats in which FW reports
-> +	 * the minimum of all vdev's channel Tx power.
-> +	 */
-> +	lockdep_assert_wiphy(hw->wiphy);
-> +
-> +	arvif = wiphy_dereference(ah->hw->wiphy, ahvif->link[link_id]);
-> +	if (!arvif || !arvif->ar)
-> +		return -EINVAL;
-> +
-> +	ar = arvif->ar;
-> +	ab = ar->ab;
-> +	if (ah->state != ATH12K_HW_STATE_ON)
-> +		goto err_fallback;
-> +
-> +	if (test_bit(ATH12K_FLAG_CAC_RUNNING, &ar->dev_flags))
-> +		return -EAGAIN;
-> +
-> +	/* Limit the requests to Firmware for fetching the tx power */
-> +	if (ar->chan_tx_pwr != ATH12K_PDEV_TX_POWER_INVALID &&
-> +	    time_before(jiffies,
-> +			msecs_to_jiffies(ATH12K_PDEV_TX_POWER_REFRESH_TIME_MSECS) +
-> +					 ar->last_tx_power_update))
-> +		goto send_tx_power;
-> +
-> +	params.pdev_id = ar->pdev->pdev_id;
-> +	params.vdev_id = arvif->vdev_id;
-> +	params.stats_id = WMI_REQUEST_PDEV_STAT;
-> +	ret = ath12k_mac_get_fw_stats(ar, &params);
-> +	if (ret) {
-> +		ath12k_warn(ab, "failed to request fw pdev stats: %d\n", ret);
-> +		goto err_fallback;
-> +	}
-> +
-> +	spin_lock_bh(&ar->data_lock);
-> +	pdev = list_first_entry_or_null(&ar->fw_stats.pdevs,
-> +					struct ath12k_fw_stats_pdev, list);
-> +	if (!pdev) {
-> +		spin_unlock_bh(&ar->data_lock);
-> +		goto err_fallback;
-> +	}
-> +
-> +	/* tx power reported by firmware is in units of 0.5 dBm */
-> +	ar->chan_tx_pwr = pdev->chan_tx_power / 2;
-> +	spin_unlock_bh(&ar->data_lock);
-> +	ar->last_tx_power_update = jiffies;
-> +
-> +send_tx_power:
-> +	*dbm = ar->chan_tx_pwr;
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "txpower fetched from firmware %d dBm\n",
-> +		   *dbm);
-> +	return 0;
-> +
-> +err_fallback:
-> +	/* We didn't get txpower from FW. Hence, relying on vif->bss_conf.txpower */
-> +	*dbm = vif->bss_conf.txpower;
-> +	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "txpower from firmware NaN, reported %d dBm\n",
-> +		   *dbm);
-> +	return 0;
-> +}
-> +
->  static u8
->  ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
->  {
-> @@ -7433,6 +7572,7 @@ static int ath12k_mac_start(struct ath12k *ar)
->  	ar->num_created_vdevs = 0;
->  	ar->num_peers = 0;
->  	ar->allocated_vdev_map = 0;
-> +	ar->chan_tx_pwr = ATH12K_PDEV_TX_POWER_INVALID;
->  
->  	/* Configure monitor status ring with default rx_filter to get rx status
->  	 * such as rssi, rx_duration.
-> @@ -8638,6 +8778,7 @@ static int ath12k_mac_op_add_chanctx(struct ieee80211_hw *hw,
->  	 */
->  	ar->rx_channel = ctx->def.chan;
->  	spin_unlock_bh(&ar->data_lock);
-> +	ar->chan_tx_pwr = ATH12K_PDEV_TX_POWER_INVALID;
->  
->  	return 0;
->  }
-> @@ -8666,6 +8807,7 @@ static void ath12k_mac_op_remove_chanctx(struct ieee80211_hw *hw,
->  	 */
->  	ar->rx_channel = NULL;
->  	spin_unlock_bh(&ar->data_lock);
-> +	ar->chan_tx_pwr = ATH12K_PDEV_TX_POWER_INVALID;
->  }
->  
->  static enum wmi_phy_mode
-> @@ -10109,68 +10251,6 @@ static int ath12k_mac_op_get_survey(struct ieee80211_hw *hw, int idx,
->  	return 0;
->  }
->  
-> -int ath12k_mac_get_fw_stats(struct ath12k *ar,
-> -			    struct ath12k_fw_stats_req_params *param)
-> -{
-> -	struct ath12k_base *ab = ar->ab;
-> -	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
-> -	unsigned long timeout, time_left;
-> -	int ret;
-> -
-> -	guard(mutex)(&ah->hw_mutex);
-> -
-> -	if (ah->state != ATH12K_HW_STATE_ON)
-> -		return -ENETDOWN;
-> -
-> -	/* FW stats can get split when exceeding the stats data buffer limit.
-> -	 * In that case, since there is no end marking for the back-to-back
-> -	 * received 'update stats' event, we keep a 3 seconds timeout in case,
-> -	 * fw_stats_done is not marked yet
-> -	 */
-> -	timeout = jiffies + msecs_to_jiffies(3 * 1000);
-> -	ath12k_fw_stats_reset(ar);
-> -
-> -	reinit_completion(&ar->fw_stats_complete);
-> -
-> -	ret = ath12k_wmi_send_stats_request_cmd(ar, param->stats_id,
-> -						param->vdev_id, param->pdev_id);
-> -
-> -	if (ret) {
-> -		ath12k_warn(ab, "failed to request fw stats: %d\n", ret);
-> -		return ret;
-> -	}
-> -
-> -	ath12k_dbg(ab, ATH12K_DBG_WMI,
-> -		   "get fw stat pdev id %d vdev id %d stats id 0x%x\n",
-> -		   param->pdev_id, param->vdev_id, param->stats_id);
-> -
-> -	time_left = wait_for_completion_timeout(&ar->fw_stats_complete, 1 * HZ);
-> -
-> -	if (!time_left) {
-> -		ath12k_warn(ab, "time out while waiting for get fw stats\n");
-> -		return -ETIMEDOUT;
-> -	}
-> -
-> -	/* Firmware sends WMI_UPDATE_STATS_EVENTID back-to-back
-> -	 * when stats data buffer limit is reached. fw_stats_complete
-> -	 * is completed once host receives first event from firmware, but
-> -	 * still end might not be marked in the TLV.
-> -	 * Below loop is to confirm that firmware completed sending all the event
-> -	 * and fw_stats_done is marked true when end is marked in the TLV.
-> -	 */
-> -	for (;;) {
-> -		if (time_after(jiffies, timeout))
-> -			break;
-> -		spin_lock_bh(&ar->data_lock);
-> -		if (ar->fw_stats.fw_stats_done) {
-> -			spin_unlock_bh(&ar->data_lock);
-> -			break;
-> -		}
-> -		spin_unlock_bh(&ar->data_lock);
-> -	}
-> -	return 0;
-> -}
-> -
->  static void ath12k_mac_op_sta_statistics(struct ieee80211_hw *hw,
->  					 struct ieee80211_vif *vif,
->  					 struct ieee80211_sta *sta,
-> @@ -10463,6 +10543,7 @@ static const struct ieee80211_ops ath12k_ops = {
->  	.assign_vif_chanctx		= ath12k_mac_op_assign_vif_chanctx,
->  	.unassign_vif_chanctx		= ath12k_mac_op_unassign_vif_chanctx,
->  	.switch_vif_chanctx		= ath12k_mac_op_switch_vif_chanctx,
-> +	.get_txpower			= ath12k_mac_op_get_txpower,
->  	.set_rts_threshold		= ath12k_mac_op_set_rts_threshold,
->  	.set_frag_threshold		= ath12k_mac_op_set_frag_threshold,
->  	.set_bitrate_mask		= ath12k_mac_op_set_bitrate_mask,
-> @@ -11210,11 +11291,10 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
->  			goto err_unregister_hw;
->  		}
->  
-> +		ath12k_fw_stats_init(ar);
->  		ath12k_debugfs_register(ar);
->  	}
->  
-> -	init_completion(&ar->fw_stats_complete);
-> -
->  	return 0;
->  
->  err_unregister_hw:
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-> index a0de0ddf175e..8435bdea904f 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.h
-> +++ b/drivers/net/wireless/ath/ath12k/mac.h
-> @@ -33,6 +33,9 @@ struct ath12k_generic_iter {
->  #define ATH12K_KEEPALIVE_MAX_IDLE		3895
->  #define ATH12K_KEEPALIVE_MAX_UNRESPONSIVE	3900
->  
-> +#define ATH12K_PDEV_TX_POWER_INVALID		((u32)-1)
-> +#define ATH12K_PDEV_TX_POWER_REFRESH_TIME_MSECS	5000 /* msecs */
-> +
->  /* FIXME: should these be in ieee80211.h? */
->  #define IEEE80211_VHT_MCS_SUPPORT_0_11_MASK	GENMASK(23, 16)
->  #define IEEE80211_DISABLE_VHT_MCS_SUPPORT_0_11	BIT(24)
+Patch 1 updates the HTT TCL metadata version to use the new bit definitions
+	of the field to pass additional information from Host to Firmware.
 
-Series LGTM
+Patch 2 moves the MLO Multicast frame duplication logic to the driver to
+	have more flexibility to update the HTT TCL metadata with the global
+	sequence and with a special vdev id to indicate Multicast handling
+
+v3:
+	Updated the code to handle the ARP transmit failure from AP side during secure mode.
+
+v2: https://patchwork.kernel.org/project/linux-wireless/patch/20250203025016.3851279-3-quic_bmahalin@quicinc.com/
+	Optimized vdev id arithmetic for more readability based on feedback.
+	Updated code documentation on intentional reset of meta_data_flag value.
+	Rebased on top of master branch.
+
+v1: https://patchwork.kernel.org/project/linux-wireless/patch/20250109184932.1593157-3-quic_bmahalin@quicinc.com/
+
+Balamurugan Mahalingam (2):
+  wifi: ath12k: Update HTT_TCL_METADATA version and bit mask definitions
+  wifi: ath12k: Add support for MLO Multicast handling in driver
+
+ drivers/net/wireless/ath/ath12k/core.h  |   1 +
+ drivers/net/wireless/ath/ath12k/dp.h    |  27 ++++--
+ drivers/net/wireless/ath/ath12k/dp_tx.c |  28 +++++-
+ drivers/net/wireless/ath/ath12k/dp_tx.h |   4 +-
+ drivers/net/wireless/ath/ath12k/mac.c   | 124 +++++++++++++++++++++++-
+ 5 files changed, 167 insertions(+), 17 deletions(-)
+
+
+base-commit: a10b8b584b8bcb7559f068ce247fc27d0c4850ca
+-- 
+2.34.1
 
 
