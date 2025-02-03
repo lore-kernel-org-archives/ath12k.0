@@ -4,106 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD223C02192
-	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 22:49:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1120EC02193
+	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 22:49:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Hw7bNV05959ms6oss+YF+4qJZNr/KZytbXPLNUurobM=; b=VEd1Xu6zUxV5e9Bcd+t+yVbxbK
-	Ts+5RLT0hIAZsKlCeZnmXu4ixn/Gala7RPpOMOkW/P0ztDS91MIBPtgvzT6yj82dG2Q9/clcWDC0X
-	rmGIFrI5S+CG+0xsrqTyDn+ey3LRbHMgCOXmlOYXZPPbfz7NfmfOCvCPmTLckY9TfkNnUMdcwp5n7
-	Q/KG0XsRGcx+d/H3p29ekl/aL/jbhhBa8Cy2GAaf5Q8xYNAJJLqzzywgyJOFtz2kKV5ULtz+kbCUq
-	KANgGfbRWLa3T3XeMzzlhhfEauLxjqAcPLTQVv33QLwEYtGzx5ihicy868/zo3wpkgj3taykm6q22
-	24PUoXdQ==;
+	bh=Zs46lDnx0AskK+LgAT1HOzws7jDPBNJqaxXTfQlukd8=; b=fFRqwZiJDz1QvUnNbMf4hTHV4Q
+	Cf5uPrSkuqoefv5V77pr4+7luwhpO+qA4ov6EzU8XlUdTBsZEyaZlcI5PXyaBm5sXriNKNRyxjIvu
+	m92vJpd5RVRb4UC2C76bqpMNOwZ5nyqfkiCUkAfMlYYh/ShLt/ussNGYEhMbjSD9Hf3evAZctGSqe
+	j62jm1jsevN2M3tHq98VTjYFVaITFqpZM5frC6Hdm6GTBS07DPXgaljC5SxPA+VwFHL+WK1gHlWXB
+	lPE6SylRk/dfb0ymK8WEPExeyBJ0jJp2rQmMKB2KRvAXuc548H8Bo0bylvC7a+JewHag1XyzEnDNY
+	ostw21Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf5Fh-0000000GpDy-1xf9
+	id 1tf5Fh-0000000GpE6-3RQ1
 	for ath12k@archiver.kernel.org;
 	Mon, 03 Feb 2025 22:49:13 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf5Ff-0000000GpD7-0EjO
+	id 1tf5Ff-0000000GpDN-3pi4
 	for ath12k@lists.infradead.org;
-	Mon, 03 Feb 2025 22:49:12 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513KQf2R026948
-	for <ath12k@lists.infradead.org>; Mon, 3 Feb 2025 22:49:10 GMT
+	Mon, 03 Feb 2025 22:49:13 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513IbbpM013241
+	for <ath12k@lists.infradead.org>; Mon, 3 Feb 2025 22:49:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Hw7bNV05959ms6oss+YF+4qJZNr/KZytbXPLNUurobM=; b=TlsGb3O+0wCAGyyt
-	TbjEp2XQVfuCz34of4l0mDy2Znw4AqVHPY0UkUC7Tq+ees+9ILfuCz5yfeiw9QjK
-	pZZKErkqZF4RTHMVy/o8fRF0uur5V+hpGWXKHlBKbPX/pXI4wI+BpNmoTdeWwHvP
-	sDlcIyGhOWXb6qKDAUD52/RYt1lZuYOZWPtceAL0yAxno5kjW8guhYKl9uGlmJAc
-	ClTnYJGU94lE9MiUuxrKJfxqpOctKe0MxeRlJ5UqabeaUTE02x5LfAVulD6PSwvo
-	bmQh9VWq3rhh5lgCLDEyqIrlzI8F4gvlyiMhOOlqzRxPhSbsM9V/ZBAb9cjIcqDp
-	zaZJBQ==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k4ufr8gx-1
+	Zs46lDnx0AskK+LgAT1HOzws7jDPBNJqaxXTfQlukd8=; b=SNEyuXogHMjqff1m
+	kzB+5Po8siA1LnA1jY0IMQ8y9sozcbhMhbIaS9atqZwLUiWT/OIVCC7uHHDRT07Z
+	0eqZsjq5VD7abvJSH8cLSZvXhQ6rnV2RlXUXdOes9yOwE5pIleeKh6jggUHaJgfo
+	S5dgUP5F80x/0lUx2hUFxkGB1FDIzj4Kione5GoYI5lYMnYoFNJECaegzv29LPrb
+	KPqhkxXG+DHUe/3r1MQzsaA7CPRrM2glCA8EWJyYRYYeiko5D3DRkbFJeDJph259
+	WcOWrz3q7qw/bMgdxsGDfYkzZr/HnoB+m5LtJJX8XOPJ4BApL8oqasLELAF3D4+5
+	2/X+EA==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k3890fjm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 22:49:10 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2eebfd6d065so13928542a91.3
-        for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 14:49:10 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 22:49:11 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-21effc75088so4839425ad.2
+        for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 14:49:11 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738622950; x=1739227750;
+        d=1e100.net; s=20230601; t=1738622951; x=1739227751;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Hw7bNV05959ms6oss+YF+4qJZNr/KZytbXPLNUurobM=;
-        b=QYzm/BxCnRc6rW9p0BNoNVltZ87ggY7VN+Qttc+Jaa2xLBh9Wh4NT1AMrKSXw4h0uv
-         EjueGqukwOWgGv86Hta9JaDIYFbzqsPaiME5y1jb4/meXMGm1YzlEuq5vYaS8ucIa+w/
-         Jyj792Ppez18ItoP4tmsgTDGkOHJLDDDRaor55yfRLUBSyxoifhh/YiezVTMIjOjNUxU
-         JHqgAK7uJAL9d8qf2R9s5Eu90HpO0fzt8MR5SJbAkHtCyM9GGgKWG+cEP9yUuMvrYgEM
-         GwWfvG7PB68aVEoX1zUgXO+444Y86UrWUrt04Eu2l5sGv+Q0BoplpOspuABHSi8Htyik
-         EPqg==
-X-Forwarded-Encrypted: i=1; AJvYcCUXq2Jif6JhegItOQVeipR2Ye5XH8C0wgyY36kPgriQsE0WoErPpZuXicWMcOuEPLkgbRGG/18=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwYRT1uoqz0cKeoPbIbHGcBX4lv88bm7Y5rQEHi46n+jS+KHMAs
-	BR/luoo/H34ehBFLf9ARXWj9qnCIHtK+w70ObdtVleAsGQGeSQaMvKAKAKlLJnZqtAqkuSIoaOC
-	I1ykYKO2q7vVLooRZaGpmrXGY1B5c4t/xoh4ppaZaqRHwosx18xRFDJEiCVna
-X-Gm-Gg: ASbGncuQ/bq2jpjklPeFI0y1Kf+SwnyFKWYNSl+NPcPJ4LlIJT16tsGBZx3gQ+bgupe
-	aDt5t01hnoIth9CkwuNpSj7xIsx3P9HiuqgHkIVuo3GJSRHS/rLbHNMzksO4PPO8/VR1Th0DBbZ
-	4rRTNc79sBZCuxtS1PLbBd08czoohDqWWjm2uiZ1TZb9qmaKc+uHVjA3/fKzS1k7gAeIfw3x+TX
-	2jCf/QNDpNI9pgVcGpXKiNq1rOVizpMSg1mnxYocA5sAiunv89eWLhLUcttZykxdcmAp7w5fEDb
-	L2RLWPH+0xjdFh+x4Ysc/OSKw9T0rJnWayKCf14Gfw==
-X-Received: by 2002:a05:6300:8a03:b0:1ed:9abe:c663 with SMTP id adf61e73a8af0-1ed9abec6e5mr15242515637.10.1738622949676;
-        Mon, 03 Feb 2025 14:49:09 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHLgkO3wpYZ3B0nMiUJkb7E9OU7kLXT89O26RAqf3BGd34605SKsXiAulB5vO5cyrzb9LtnHg==
-X-Received: by 2002:a05:6300:8a03:b0:1ed:9abe:c663 with SMTP id adf61e73a8af0-1ed9abec6e5mr15242499637.10.1738622949298;
-        Mon, 03 Feb 2025 14:49:09 -0800 (PST)
+        bh=Zs46lDnx0AskK+LgAT1HOzws7jDPBNJqaxXTfQlukd8=;
+        b=rzTLmRu6/ldTelz44iQS4ltYSyidu1bxVGTPPcel7rsXVLAlP+jm6qQGe5EJD+iR3k
+         SKd0UTqy6Dbc7+EbZBJRRekrKbEp81nMgMOQdsvLouYR23VOl4STVIjRxaeJ7fHYKDnd
+         k7FAmYzLqBXCZQK5aSCQw6TznMMuJ3Ri+seM1xdMxTLjYbmVSRjsAAi5lq4lVNnLYTYK
+         YVewkfzuja6Z1se3jNvH/MfOEFyAUj7ZtX0nvICClucV6KpConDNG9PwdVxsWYZHO0WT
+         D4imqSGcGbYTJwuInZH5xpAJRXQxUdMkycloyWTin0tvA/xSOY660lqZ9bKZpuyztm02
+         D4gg==
+X-Gm-Message-State: AOJu0Yz3XOegsfJXF4qnebkVZ6rvP/hOtNgygh9aTb0kWC/FFveBJNtE
+	gOh4P5Ku16ish9A0fQHk/dZRLwA9vW849osqkGAl9ZTui18P7aDMMBByYwvoqmhOFpvcPEC0OJE
+	STQMB5rcfinAVk+PMV1G3TanH7U+WwwiN9k8H5SMKEydqbjCSSdmq/+Hucu6R
+X-Gm-Gg: ASbGnctTYjmVwiys+1/xtIEwuWTSlNPrn2Ub3fL03tePQoqwJxiZxejSU5vpHZ1Gtxe
+	2sf9e3PpiVquZLaMGVkwNYZjFHq9qPMnDYbIxjd/Z9RhQe5iay61gNXob+y7pOn0+mNzDxFWb6i
+	SYZrAnZxsiRNd6Lsm2HbxY+MeqRkwoawkZKMUxliHozqSwQ8ZoD6Yp7oAMv+nVRUzgJXEek8SIT
+	GPHaMG0lRY8KHjECdyW/PS2qRz7KaH0VKpxmzadJ4xQLp2vZPhLvl+i3f5jcO1KG7fqSVKBiNkt
+	5I3xO3F8iAU6bgTlPAXwr0FOFieMAQvhkP6auuBHew==
+X-Received: by 2002:a05:6a20:7f84:b0:1ed:5247:f385 with SMTP id adf61e73a8af0-1ed7a6e0689mr36660687637.38.1738622950640;
+        Mon, 03 Feb 2025 14:49:10 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHC97hIQCqs8sdJrtpJRKztQccJENt7nwzepk/QMjp93S28C7v+Oy0qD19VBoZDEZpUcJSr6Q==
+X-Received: by 2002:a05:6a20:7f84:b0:1ed:5247:f385 with SMTP id adf61e73a8af0-1ed7a6e0689mr36660645637.38.1738622950114;
+        Mon, 03 Feb 2025 14:49:10 -0800 (PST)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72fe69ba353sm8887444b3a.112.2025.02.03.14.49.08
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72fe69ba353sm8887444b3a.112.2025.02.03.14.49.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 03 Feb 2025 14:49:08 -0800 (PST)
+        Mon, 03 Feb 2025 14:49:09 -0800 (PST)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        Aditya Kumar Singh <quic_adisi@quicinc.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-In-Reply-To: <20250124-ath12k_mlo_csa-v2-0-420c42fcfecf@quicinc.com>
-References: <20250124-ath12k_mlo_csa-v2-0-420c42fcfecf@quicinc.com>
-Subject: Re: [PATCH v2 0/4] wifi: ath12k: add MLO CSA support
-Message-Id: <173862294852.3734728.6340802985504252357.b4-ty@oss.qualcomm.com>
-Date: Mon, 03 Feb 2025 14:49:08 -0800
+To: ath12k@lists.infradead.org, Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
+Cc: linux-wireless@vger.kernel.org,
+        Avula Sri Charan <quic_asrichar@quicinc.com>
+In-Reply-To: <20250124090058.3194299-1-quic_tamizhr@quicinc.com>
+References: <20250124090058.3194299-1-quic_tamizhr@quicinc.com>
+Subject: Re: [PATCHv2] wifi: ath12k: Avoid napi_sync before napi_enable
+Message-Id: <173862294944.3734728.9309905197333089194.b4-ty@oss.qualcomm.com>
+Date: Mon, 03 Feb 2025 14:49:09 -0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.0
-X-Proofpoint-GUID: xjwNPAcdTF7H_UDH9-hGJNtE-ff_p2yA
-X-Proofpoint-ORIG-GUID: xjwNPAcdTF7H_UDH9-hGJNtE-ff_p2yA
+X-Proofpoint-ORIG-GUID: oUvLKKk_8xNzByKKuWPtUx1TrKNzkh0l
+X-Proofpoint-GUID: oUvLKKk_8xNzByKKuWPtUx1TrKNzkh0l
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-03_09,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
- adultscore=0 bulkscore=0 mlxscore=0 priorityscore=1501 suspectscore=0
- spamscore=0 phishscore=0 lowpriorityscore=0 malwarescore=0 mlxlogscore=940
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 spamscore=0
+ mlxlogscore=953 adultscore=0 priorityscore=1501 bulkscore=0 suspectscore=0
+ lowpriorityscore=0 phishscore=0 impostorscore=0 clxscore=1015 mlxscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
  definitions=main-2502030166
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_144911_122638_090C5A2B 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20250203_144911_959839_FF4E5747 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,28 +118,21 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 24 Jan 2025 11:46:34 +0530, Aditya Kumar Singh wrote:
-> Patch 1 and 2 are pre-req fixes (applies to non-MLO as well)
+On Fri, 24 Jan 2025 14:30:58 +0530, Tamizh Chelvam Raja wrote:
+> In case of MHI error a reset work will be queued
+> which will try napi_disable after napi_synchronize.
 > 
-> Patch 3 basically uses arvif->link_id to enable MLO for CSA while adding
-> support to update counters throughout the CSA time.
-> 
-> Patch 4 fixes a potential problem seen when medium is busy. Again this
-> applies to both MLO and non-MLO. But this is exposed only when Patch 3 is
-> there.
+> As the napi will be only enabled after qmi_firmware_ready
+> event trying napi_synchronize before napi_enable will
+> result in indefinite sleep in case of a firmware crash
+> in QMI init sequence.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] wifi: ath12k: update beacon template function to use arvif structure
-      commit: 4094445969740028f9b637977781b73b64c5bc7c
-[2/4] wifi: ath12k: fix handling of CSA offsets in beacon template command
-      commit: f9c88d65e805ca06f26806ac99f569a3dfac2229
-[3/4] wifi: ath12k: update the latest CSA counter
-      commit: e26a6989b10a3dfc97b8c206023a6bf3a3ccb94e
-[4/4] wifi: ath12k: prevent CSA counter to reach 0 and hit WARN_ON_ONCE
-      commit: 36f002a3e36efd3370f5b6abfc157e7481ecb1e0
+[1/1] wifi: ath12k: Avoid napi_sync before napi_enable
+      commit: 268c73d470a5790a492a2fc2ded084b909d144f3
 
 Best regards,
 -- 
