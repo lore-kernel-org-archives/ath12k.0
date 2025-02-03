@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15C2DC02192
-	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 10:06:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E89DDC02193
+	for <ath12k@archiver.kernel.org>; Mon,  3 Feb 2025 10:09:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=89JPNopO+jIJ7xC47oCUAfkyB7e6BQD3XCFpADsE4/o=; b=bjiv9tuM08NoVeYlbdYhNQOwtG
-	6dfGT0qrkD25nhaFZYtojJqrmMcc42cfpCS+j5ybqamcinqz0p32JEcCct5YIn4VfhcVqIrhk7aEu
-	/hdZskW+PfaqfDcsXKIVEBLo0m0OIxi9SRGJPrSI0rJq6VrL4o9yDuEXNAK4l/58SPxgaUqRBVqhS
-	fwziYe9Kdoh7upzXg78oPb+kPi+7EkxKr9zHNH3OhO02ytpom9e2F3QVVH7dvuV3w0N7rMVqxFCmF
-	NsASAzXsNTa1z6t6w4kF2tKKv5suiKn6dUZzxoPoNa+137HfYyX7FJD80V9fSpXP8KdLAz4V37gPM
-	A6IVIfCA==;
+	bh=4CB74rzUIkNAoS0PoueQ4FZD6/l3sq3YT+SB+sUC4DQ=; b=wv9YrLLFgCVVj/Nsx7k2wNqmtT
+	9f1ZaurUXis5uYCdh8Z4VGa5tTbD/YBIh9jrf563bjIlU+trstNx4x/nrWbqHv2mKduwV35Z2HCTW
+	WzBsVB+noJbkIaPOggNR3fN93kS1gICYVMJ1sN0p6mhoC2WJwRKo6lArH+vKF3Rs5s9F2vKmUD1U8
+	7j7hcbtoB1RNuflXhuqc182r8RRXTZcfgXkeklTnZM7XaZy01dRc+6f77c1LT5cUa7frGFPEPQJOf
+	S5Bxx9ukSNOkMzf9a38FoSyG0v3ygnerXaYHaxrcFQRUkdsmRAwqKtxkcaLSwwQHkpFj5mIBMPzZB
+	qyD4z51w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tetLC-0000000F56r-3W2z
+	id 1tetOU-0000000F5NE-2wYN
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Feb 2025 10:06:06 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Mon, 03 Feb 2025 10:09:30 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tetL9-0000000F55n-3rDt
+	id 1tetOS-0000000F5Md-0Xpe
 	for ath12k@lists.infradead.org;
-	Mon, 03 Feb 2025 10:06:05 +0000
+	Mon, 03 Feb 2025 10:09:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AFB5B5C637F;
-	Mon,  3 Feb 2025 10:05:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E935C4CED2;
-	Mon,  3 Feb 2025 10:05:58 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id DCFF6A41218;
+	Mon,  3 Feb 2025 10:07:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AE7FC4CED2;
+	Mon,  3 Feb 2025 10:09:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738577162;
-	bh=0LAer1+VCPuEwTxq68r3aBJGH3VUj8GQfN5OepHe5cg=;
+	s=k20201202; t=1738577366;
+	bh=ASpuuev7ZZTKMlBx/lV8ZsXtftUSf3OuoGlgsNzc/k0=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=n1W9GlELmoY0Xxf1nkM+Y21j5G7kaIlhVj4r8CeRt5KvWtEttcNAp5bwimCMSkD/6
-	 gYjaHlz30C93NlrDMkSweqVRJXIXuqUb5JFksXIGTuHW5Zlc6bfx+TurYZYaQcrUFN
-	 j7X3T6+0oQnKtE9ofsll82/UklIK3akSNqO6XWqnEu8JNOj1RyVWZc23xhnXmfkbv6
-	 OtT+vD0iKGGxCFD1xHQu0YoP2rAyHDRojQOEddsKljOF4BzxMnZLYHgfZiI3vRHv9H
-	 2jiB1F8nDwiltCxOrHHx0g6R5Dbkx2z0NvmPHoZOv5qTW4SQJ/SVhEgXiRO4PR3gye
-	 FOqTw/emX7I0w==
-Message-ID: <7b57f8c8-7d0b-46f8-8364-a13860ab530e@kernel.org>
-Date: Mon, 3 Feb 2025 11:05:56 +0100
+	b=ebbh+qGlSF8cJpIpZqwdHAgg184O7C14xOyeLj3UmkMv5ZHiPu3ykVbPyWeoOPuFn
+	 3lXsditQ9yZ77XRKDcjFny1tmwZkY2z32P/tldhbxq1zZGjspSJbbP0mmxQvSB0udk
+	 Bh1HFH2enjq2yj+CAMayqpV6COXWvMZy8X2UkxsD1f2xV0AQquYh+iQlSnNS1+es9x
+	 ab9c0W0SKZ8YxBjdthNZ7RT9rwh33Ph6pEmCy7rkhRFGytmp3gcnK1PY8czR3u2jJW
+	 CWT+KaSpb60+B/MP7aAD8OKQsAF7ydtbgih4O345EfC2YDgfP0bwNeSeGZFBdtBGSF
+	 73UdLAsT9T9RA==
+Message-ID: <aaabcc7a-8234-4753-a8d1-ab36afdafa2e@kernel.org>
+Date: Mon, 3 Feb 2025 11:09:21 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v5 01/13] dt-bindings: net: wireless: describe the ath12k
@@ -58,10 +58,9 @@ Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
 References: <20250130043508.1885026-1-quic_rajkbhag@quicinc.com>
  <20250130043508.1885026-2-quic_rajkbhag@quicinc.com>
  <20250130-cunning-quail-of-opportunity-76d0ad@krzk-bin>
- <104e6b6f-3c1e-4a00-8822-aa6fb4562411@kernel.org>
- <a3c7b0e6-a440-4452-83a2-eb95de0de9bc@quicinc.com>
-Content-Language: en-US
+ <724a4822-469a-45bb-bfb1-c02b54e971a3@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -105,12 +104,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <a3c7b0e6-a440-4452-83a2-eb95de0de9bc@quicinc.com>
+In-Reply-To: <724a4822-469a-45bb-bfb1-c02b54e971a3@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_020604_156919_8F59F894 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20250203_020928_304992_7EDF04B4 
+X-CRM114-Status: GOOD (  13.29  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,39 +124,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 03/02/2025 09:43, Raj Kumar Bhagat wrote:
-> On 1/30/2025 2:10 PM, Krzysztof Kozlowski wrote:
->> On 30/01/2025 09:28, Krzysztof Kozlowski wrote:
->>> On Thu, Jan 30, 2025 at 10:04:56AM +0530, Raj Kumar Bhagat wrote:
->>>> Add device-tree bindings for the ATH12K module found in the IPQ5332
->>>> device.
->>>>
->>>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
->>>> ---
->>>>  .../net/wireless/qcom,ath12k-ahb.yaml         | 319 ++++++++++++++++++
->>>>  1 file changed, 319 insertions(+)
->>>>  create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
->>>> new file mode 100644
->>>> index 000000000000..bd953a028dc3
->>>> --- /dev/null
->>>> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
->>>
->>> Filename should match compatible. This binding does not look like
->>> supporting more devices, so there is no much benefit calling it by generic name.
->>
->>
->> I saw now your other patchset, so you have here two devices, but I still
->> do not understand why this cannot follow standard naming practice like
->> most bindings supporting one or more devices. Like every review we give.
+On 03/02/2025 10:05, Raj Kumar Bhagat wrote:
+> 
+>>> +    items:
+>>> +      - const: q6-region
+>>> +      - const: m3-dump
+>>> +      - const: q6-caldb
+>>> +      - const: mlo-global-mem
+>>> +
+>>> +  qcom,ath12k-calibration-variant:
+>>> +    $ref: /schemas/types.yaml#/definitions/string
+>> Why this is named after ath12k? Why this is just not
+>> "qcom,calibration-variant"? None of the other properties have ath12k in
+>> their names, so why this one in the WSI schema was named like that?
 >>
 > 
-> Sure, we can rename the filename to match the compatibles - "qcom,ipq5x-wifi.yaml".
+> This property is added after the below comment.
+> https://lore.kernel.org/all/qzjgpwemwaknwbs3dwils6kaa5c3inabfvkaryvc32kblzfhy3@6yduooj4dk63/
+> 
+> This `ath12k` in the name of this property is inherited from the 'qcom,ath10k.yaml' and
+> 'qcom,ath11k.yaml'. Same was followed for WSI schema as well.
 
-No:
+They do not have ath12k prefix in the name, so I don't understand.
 
->>> Filename should match compatible.
+People, start re-using properties, not creating one per each binding.
+
+> 
+>>> +    description:
+>>> +      String to uniquely identify variant of the calibration data for designs
+>>> +      with colliding bus and device ids
+>> I don't think this property is here possible. How could you have on the
+>> same SoC different devices?
+> 
+> The WiFi controller in the SoC includes an internal or external Front-End Module (FEM).
+> These FEMs can vary and require different calibration data. This property uniquely
+
+1. So exactly the same SoC package has different FEMs?
+
+2. How does it exactly work? Different bins? Different revisions?
+
+3. How is it supposed to work in practice - you have one board, but
+might have different SoCs inside? Which calibration data would you use
+in such case?
+
+> identify the variant of calibration data required by a FEM.
+> 
 
 
 Best regards,
