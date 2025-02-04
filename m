@@ -4,88 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEE86C02194
-	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 10:45:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C282C021A0
+	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 15:50:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
-	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lMArTWxNFUp4PQzCQD8slqPHvp/31eRbyPGy6SkB2WA=; b=pitmpJgogCUfAmG211NIQ+EHVf
-	82gRV4yxbfyTC0cO+dTHBiKzVxoEmIWAChrQEkgyBsYSNOyD7fpbO+xilskxjavGO1xTNcN9d13nA
-	g3AE8hT3OulOiewNOAPptz+vFllbwzMw9hhCmc+QAJIcT8CJnXQFot7Rizjo0r/qkYOfg6Ol7igXR
-	DTzFBDepqO3AAsu6mjPMJ5/T13YCKlpunNySlT5ojYiJjUMPoqSCMM/DIiWEQvTjCPn9Jp9cXSRiw
-	Ts4GhXh1PTcX4HVTJu4M6LjVSEZuM+FmEyAhxF1e0sU6J3KBbrrX1ezetX4aSG8JsNjKCsFgYKW+Y
-	hLaByx7g==;
+	bh=SmzpwdylyuXyz1bRPWE37WvAaaUec0zu4cZfeZzC9No=; b=pdi9mtpVN67cFxym1SRtnUIgSl
+	qaQ3MytokKeMPC2OBZifyEsqVvpJjs2NiOUPOT+f47QzPoT4xtLVFxBhqbaSEBPC9gPRPf/VlLiw7
+	rD6YiJwYYFZ1kbdBZZejX3Tp4dEbxXR1EbH5B0ptpSpyUB/BHs887IC3EDT4dd8ifZmbIB/c+2wS3
+	ewse3WmHsIDdtt/LX8d6Oiow5kACEECc9cZlH3vt0eJ8C1p5ER6aH+Q7DLpxW/KKr7LzSO7T/3iiG
+	5XgFGtwz/rKHIxBt+2W8XC1dKsnLhCo9Iv2aGGxNb0GTfsFvcnAKyQ9jIomV+2xB+nghWRQC71l4D
+	loEgBReg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfGQP-00000000BK9-2Cjb
+	id 1tfLCG-00000000sYi-3PLy
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Feb 2025 10:45:01 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	Tue, 04 Feb 2025 15:50:44 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfGPX-00000000BFF-2Uz0
+	id 1tfL7X-00000000rrm-0UhU
 	for ath12k@lists.infradead.org;
-	Tue, 04 Feb 2025 10:44:08 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-43635796b48so33298275e9.0
-        for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 02:44:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1738665846; x=1739270646; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=lMArTWxNFUp4PQzCQD8slqPHvp/31eRbyPGy6SkB2WA=;
-        b=bXA8kmbpQ6VnR4s844Uw1/jYnLmXfRTtxLBeTIrPJ/oGCfAQOZCqNZUVhBfEgda7hQ
-         SzQvR8n/W2C8rQjPFOGd0xkHgYy9mNbFDAdZOnqDKDz3JZcSjPNrPnetTAFwhrfPjoQA
-         xcMHxhPrRC5thVt7c2TfrhGZk03bH+7nnEiRvlwCOsWpKXvZzW0VsSlv4BFNBhGejCrU
-         rD0pIJzwemKZxSV7sqq3aX4dVoS5UlXyqFvv/R529rc0LNYHO+AopNpRw9EEyrj1flNU
-         V0VKuXbCCG+vgWucsnJjNv/8D9+uIRfO48+K6vj2Gl5gDzEVlLGAT/KyPwyAtZDD6ec8
-         bijA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738665846; x=1739270646;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=lMArTWxNFUp4PQzCQD8slqPHvp/31eRbyPGy6SkB2WA=;
-        b=W0PeqtsdXEQ7Q/SOyCRGzRQizbM0qqVwldqW1Patx8rjLD/UVe5Vo4spjN/eIhVzBL
-         aBhBsSMxnOWiOU3zDys/+be2ioo8YIHeSvDIs+YZfPZxzY33VxjK/9OG4O2RjDSAmfff
-         b9c7tiPNCE7MaJ4Kt4xQzMlNxntANShOZCtyHKccXBWd8b4o3iQYTjbk4nrgHVIJzAqn
-         LugWyQEEqlxNUpNPnUL3LluHhqJfm0cwNZb22Q1QE1lX1Mm8gZytrpSOuOr17E+nnMPP
-         XINMWK0/JxsVDmAfC+8McjQRFwMcYBV3shO0dwEv+QW9nmU3yrJ1Ai1IjAmu0NCK20Ok
-         TaeQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU7AYKMmIpAWU6ZN1EKNTb7aTI87bgNEOzrMPPfdsdPPnjjzGzW3D3UulS42rsWdLzXu82LR7g=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz8v7tIvrQzPXVZU5rohOpOqMQSUC8wYt3z3jTnRfKjD6hdMgPR
-	HNmJvywVOswkrik0VZM6Jjln50Pq/KplpxED+LGU/hIqcPRe4lIxjCZW6g==
-X-Gm-Gg: ASbGnctu6UhYvmDFcV1YwMUdZYBO0M8jFp4bTd6FZ2ykr7EmN23kreC909mBTpAPXAi
-	TYfmzkwFenoxJe9bi8SsxuxmlN14JkeQ63behhZ8nayT1YI5nHEQ4BqyDPoFh711wSq5pt/5yjF
-	eY/0A19/Y160rCXfDn8i0HtCgYQuJulJZe++mPIhJF/3E1BuobYYlg2+cNYOlPCxV93YUsKGuqu
-	kO6UpQ1+aqI5I/wwDtX5KtQC9EX9F0iIyBgVbIauDsxWOkXdyrg8IEQ0OyRpRJ/bUcmqchumH1J
-	fMnc60JmH96CWx69GIA3ZTKnBk/hJFDm7Q==
-X-Google-Smtp-Source: AGHT+IHsN8HTcCwIdZM+oqcLS8cPH93vMIT74gEgvRL+nbc/qsns8TrvV+nm1LCTJCegyuOBJuh5tA==
-X-Received: by 2002:a05:600c:1f8e:b0:435:edb0:5d27 with SMTP id 5b1f17b1804b1-43905f743f5mr19708595e9.9.1738665845748;
-        Tue, 04 Feb 2025 02:44:05 -0800 (PST)
-Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-438dcc2e3a6sm228450075e9.20.2025.02.04.02.44.04
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 04 Feb 2025 02:44:05 -0800 (PST)
-Mime-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
-Date: Tue, 04 Feb 2025 11:44:04 +0100
-Message-Id: <D7JLLQ79FP2Z.2Z7VYLSC52A2U@gmail.com>
-Cc: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 0/8] wifi: ath12k: handle change_vif_links() callback
-From: "Nicolas Escande" <nico.escande@gmail.com>
-To: "Aditya Kumar Singh" <aditya.kumar.singh@oss.qualcomm.com>, "Kalle Valo"
- <kvalo@kernel.org>, "Jeff Johnson" <jjohnson@kernel.org>
-X-Mailer: aerc 0.19.0-0-gadd9e15e475d
-References: <20250204-unlink_link_arvif_from_chanctx-v1-0-675bd4cea339@oss.qualcomm.com> <D7JKQ60C6EZA.24H639LLIG2U7@gmail.com> <076014d2-eaaa-44be-81fc-a8f1eb0c2ac9@oss.qualcomm.com>
-In-Reply-To: <076014d2-eaaa-44be-81fc-a8f1eb0c2ac9@oss.qualcomm.com>
+	Tue, 04 Feb 2025 15:45:52 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 514E1bbS032324;
+	Tue, 4 Feb 2025 15:45:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	SmzpwdylyuXyz1bRPWE37WvAaaUec0zu4cZfeZzC9No=; b=D4IRfwTlCpceS1ir
+	/ODZ50ZkWM3TlEvxhhfguPE6L8mpoBNvNuF7udR0gB7k2Wz4OWjyPuOxuh4+KAt/
+	2vGTclvQiuqE3FjbKGkLNoZMvQHhOlHIU1Cyh/ubQYpjDJs2pe9M3osT9pwRZbpD
+	RX+qvSiWPMSiL438iw8VNnEd0xW3iL718R0Eqmy5E234svJk2sXNDTnuM+jQgzY1
+	kGH0rRtIudMKTBK0WCgr5d6TkebUgj7Uzo93q1sAMsJG+H80sgY6yGkQ8foBVHm1
+	7WJIEzmNtn2y7AcuwX8wGAu7vm/3L+DuflAzQldp44Tw5v4v31jv2DCytXJzKons
+	gDWKzw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44km9wg8p4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 04 Feb 2025 15:45:47 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 514Fjlim026799
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 4 Feb 2025 15:45:47 GMT
+Received: from [10.216.42.141] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 4 Feb 2025
+ 07:45:43 -0800
+Message-ID: <fe48c265-11e7-42ed-98e5-e55f89ca4021@quicinc.com>
+Date: Tue, 4 Feb 2025 21:15:39 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 08/13] wifi: ath12k: add AHB driver support for IPQ5332
+To: Krzysztof Kozlowski <krzk@kernel.org>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        "Rob
+ Herring" <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        "Conor
+ Dooley" <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>,
+        Balamurugan S
+	<quic_bselvara@quicinc.com>,
+        P Praneesh <quic_ppranees@quicinc.com>
+References: <20250130043508.1885026-1-quic_rajkbhag@quicinc.com>
+ <20250130043508.1885026-9-quic_rajkbhag@quicinc.com>
+ <0f3efa0c-b5e0-44e4-850a-d63b0beeb0b8@kernel.org>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <0f3efa0c-b5e0-44e4-850a-d63b0beeb0b8@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Ns-NDlIQ4sr6ec7ZOrAiM70Z0xGM_EPY
+X-Proofpoint-GUID: Ns-NDlIQ4sr6ec7ZOrAiM70Z0xGM_EPY
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-04_07,2025-02-04_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ priorityscore=1501 lowpriorityscore=0 phishscore=0 impostorscore=0
+ malwarescore=0 adultscore=0 mlxscore=0 bulkscore=0 mlxlogscore=999
+ spamscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502040122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250204_024407_631408_6DE129B2 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20250204_074551_170419_1563D45C 
+X-CRM114-Status: GOOD (  31.27  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,51 +110,361 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue Feb 4, 2025 at 11:23 AM CET, Aditya Kumar Singh wrote:
-> On 2/4/25 15:32, Nicolas Escande wrote:
->> Hello,
->>=20
->> When applying this series I am no longer able to start an AP on a DFS ch=
-annel.
->> (I don't know specifically which patch though)
->>=20
->
-> Thanks for reporting this. I think non-DFS channel should be working=20
-> fine right?
-Right non DFS channels are ok, only DFS ones, and not from the get go but a=
-fter
-the initial CAC, when they switch to operational mode.
->
-> Anyways, I'm able to repro the issue locally. Let me investigate further=
-=20
-> and come back.
-I'll happily test what you can throw at me.
->
->> After the initial CAC period I get the following kernel message:
->> 	[   45.248441] ath12k_pci 0003:01:00.0: cannot install key for non-exis=
-tent peer 3a:07:16:d8:00:08
->> And then hostapd goes in failed state:
->> 	wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
->> 	ACS: Automatic channel selection started, this may take a bit
->> 	wlan0: interface state COUNTRY_UPDATE->ACS
->> 	wlan0: ACS-STARTED
->> 	wlan0: ACS-COMPLETED freq=3D5620 channel=3D124
->> 	wlan0: interface state ACS->DFS
->> 	wlan0: DFS-CAC-START freq=3D5620 chan=3D124 sec_chan=3D1, width=3D2, se=
-g0=3D114, seg1=3D0, cac_time=3D5s
->> 	wlan0: DFS-CAC-COMPLETED success=3D1 freq=3D5620 ht_enabled=3D0 chan_of=
-fset=3D0 chan_width=3D5 cf1=3D5570 cf2=3D0 radar_detected=3D0
->> 	wlan0: nl80211: kernel reports: key addition failed
->> 	Interface initialization failed
->> 	wlan0: interface state DFS->DISABLED
->> 	wlan0: AP-DISABLED
->>=20
->> Maybe I missed something ? Is there another series this one depends upon=
- that I
->> should have applied before ?
->
-> No known dependency as such.
-Good, as I have a few other series applied in my tree I was affraid it migh=
-t be
-something on my side.
+On 1/30/2025 1:27 PM, Krzysztof Kozlowski wrote:
+> On 30/01/2025 05:35, Raj Kumar Bhagat wrote:
+>> +static int ath12k_ahb_clock_init(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +	int ret;
+>> +
+>> +	ab_ahb->xo_clk = devm_clk_get(ab->dev, "xo");
+>> +	if (IS_ERR_OR_NULL(ab_ahb->xo_clk)) {
+> 
+> No, you are not supposed to use IS_ERR_OR_NULL(). That's indication of bug.
+> 
+>> +		ret = ab_ahb->xo_clk ? PTR_ERR(ab_ahb->xo_clk) : -ENODEV;
+> 
+> I don't understand this. It's the third time you are reimplementing
+> standard code in some odd way, different than all other drivers.
+> 
+> Read the description of this function. Can clk_get return NULL? Of
+> course not. This is so overcomplicated for no reason, I wonder if it is
+> actually buggy here.
+> 
+
+My bad, will update in next version.
+
+> 
+>> +		return dev_err_probe(&ab->pdev->dev, ret, "failed to get xo clock\n");
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void ath12k_ahb_clock_deinit(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +
+>> +	devm_clk_put(ab->dev, ab_ahb->xo_clk);
+>> +	ab_ahb->xo_clk = NULL;
+>> +}
+>> +
+>> +static int ath12k_ahb_clock_enable(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +	int ret;
+>> +
+>> +	if (IS_ERR_OR_NULL(ab_ahb->xo_clk)) {
+>> +		ath12k_err(ab, "clock is not initialized\n");
+> 
+> NAK.
+> 
+> Sorry, this code makes no sense. This is some random code. This code
+> cannot be executed before probe. If it can: your driver is buggy, so fix
+> your driver.
+> 
+> After the probe(), this is never NULL as an error. Either you have here
+> valid pointer or you failed the probe.
+> 
+> This driver fails on basics of driver probing.
+> 
+
+Will remove the above code in next version.
+
+>> +		return -EIO;
+>> +	}
+>> +
+>> +	ret = clk_prepare_enable(ab_ahb->xo_clk);
+>> +	if (ret) {
+>> +		ath12k_err(ab, "failed to enable gcc_xo_clk: %d\n", ret);
+>> +		return ret;
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void ath12k_ahb_clock_disable(struct ath12k_base *ab)
+>> +{
+>> +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
+>> +
+>> +	clk_disable_unprepare(ab_ahb->xo_clk);
+> 
+> Don't create such wrappers for single clock. Does not help.
+> 
+
+Sure, will remove the wrapper.
+
+>> +}
+>> +
+>> +static int ath12k_ahb_resource_init(struct ath12k_base *ab)
+>> +{
+>> +	struct platform_device *pdev = ab->pdev;
+>> +	struct resource *mem_res;
+>> +	int ret;
+>> +
+>> +	ab->mem = devm_platform_get_and_ioremap_resource(pdev, 0, &mem_res);
+>> +	if (IS_ERR(ab->mem)) {
+>> +		ret = dev_err_probe(&pdev->dev, PTR_ERR(ab->mem), "ioremap error\n");
+>> +		goto out;
+>> +	}
+>> +
+>> +	ab->mem_len = resource_size(mem_res);
+>> +
+>> +	if (ab->hw_params->ce_remap) {
+>> +		const struct ce_remap *ce_remap = ab->hw_params->ce_remap;
+>> +		/* CE register space is moved out of WCSS and the space is not
+>> +		 * contiguous, hence remapping the CE registers to a new space
+>> +		 * for accessing them.
+>> +		 */
+>> +		ab->mem_ce = ioremap(ce_remap->base, ce_remap->size);
+>> +		if (IS_ERR(ab->mem_ce)) {
+>> +			dev_err(&pdev->dev, "ce ioremap error\n");
+>> +			ret = -ENOMEM;
+>> +			goto err_mem_unmap;
+>> +		}
+>> +		ab->ce_remap = true;
+>> +		ab->ce_remap_base_addr = HAL_IPQ5332_CE_WFSS_REG_BASE;
+>> +	}
+>> +
+>> +	ret = ath12k_ahb_clock_init(ab);
+>> +	if (ret)
+>> +		goto err_mem_ce_unmap;
+>> +
+>> +	ret =  ath12k_ahb_clock_enable(ab);
+>> +	if (ret)
+>> +		goto err_clock_deinit;
+>> +
+>> +	return 0;
+>> +
+>> +err_clock_deinit:
+>> +	ath12k_ahb_clock_deinit(ab);
+>> +
+>> +err_mem_ce_unmap:
+>> +	if (ab->hw_params->ce_remap)
+>> +		iounmap(ab->mem_ce);
+>> +
+>> +err_mem_unmap:
+>> +	ab->mem_ce = NULL;
+>> +	devm_iounmap(ab->dev, ab->mem);
+>> +
+>> +out:
+>> +	ab->mem = NULL;
+>> +	return ret;
+>> +}
+>> +
+>> +static void ath12k_ahb_resource_deinit(struct ath12k_base *ab)
+>> +{
+>> +	if (ab->mem)
+>> +		devm_iounmap(ab->dev, ab->mem);
+>> +
+>> +	if (ab->mem_ce)
+>> +		iounmap(ab->mem_ce);
+>> +
+>> +	ab->mem = NULL;
+>> +	ab->mem_ce = NULL;
+>> +
+>> +	ath12k_ahb_clock_disable(ab);
+>> +	ath12k_ahb_clock_deinit(ab);
+>> +}
+>> +
+>> +static enum ath12k_hw_rev ath12k_ahb_get_hw_rev(struct platform_device *pdev)
+>> +{
+>> +	const struct of_device_id *of_id;
+>> +
+>> +	of_id = of_match_device(ath12k_ahb_of_match, &pdev->dev);
+>> +	if (!of_id) {
+>> +		dev_err(&pdev->dev, "Failed to find matching device tree id\n");
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	return (enum ath12k_hw_rev)of_id->data;
+> 
+> You just open-coded of_device_get_match_data().
+> 
+
+Thanks, will use of_device_get_match_data() in next version.
+
+>> +}
+>> +
+>> +static int ath12k_ahb_probe(struct platform_device *pdev)
+>> +{
+>> +	struct ath12k_base *ab;
+>> +	const struct ath12k_hif_ops *hif_ops;
+>> +	struct device_node *mem_node;
+>> +	enum ath12k_hw_rev hw_rev;
+>> +	u32 addr;
+>> +	int ret;
+>> +
+>> +	hw_rev = ath12k_ahb_get_hw_rev(pdev);
+>> +	switch (hw_rev) {
+>> +	case ATH12K_HW_IPQ5332_HW10:
+>> +		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
+>> +		break;
+>> +	default:
+>> +		return -EOPNOTSUPP;
+>> +	}
+>> +
+>> +	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+>> +	if (ret) {
+>> +		dev_err(&pdev->dev, "Failed to set 32-bit coherent dma\n");
+>> +		return ret;
+>> +	}
+>> +
+>> +	ab = ath12k_core_alloc(&pdev->dev, sizeof(struct ath12k_ahb),
+>> +			       ATH12K_BUS_AHB);
+>> +	if (!ab) {
+>> +		dev_err(&pdev->dev, "failed to allocate ath12k base\n");
+> 
+> No, driver never prints allocation errors. You are duplicating existing
+> core printk.
+> 
+
+Thanks, will remove this error print.
+
+> 
+>> +		return -ENOMEM;
+>> +	}
+>> +
+>> +	ab->hif.ops = hif_ops;
+>> +	ab->pdev = pdev;
+>> +	ab->hw_rev = hw_rev;
+>> +	platform_set_drvdata(pdev, ab);
+>> +
+>> +	/* Set fixed_mem_region to true for platforms that support fixed memory
+>> +	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
+>> +	 * need not to allocate memory.
+>> +	 */
+>> +	if (!of_property_read_u32(ab->dev->of_node, "memory-region", &addr)) {
+>> +		set_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags);
+>> +
+>> +		/* If the platform supports fixed memory, then it should define/
+>> +		 * reserve MLO global memory in DT to support Multi Link Operation
+>> +		 * (IEEE 802.11be).
+>> +		 * If MLO global memory is not reserved in fixed memory mode, then
+>> +		 * MLO cannot be supported.
+>> +		 */
+>> +		mem_node = ath12k_core_get_reserved_mem_by_name(ab, "mlo-global-mem");
+>> +		if (!mem_node)
+>> +			ab->single_chip_mlo_supp = false;
+>> +		else
+>> +			of_node_put(mem_node);
+>> +	}
+>> +
+>> +	ret = ath12k_core_pre_init(ab);
+>> +	if (ret)
+>> +		goto err_core_free;
+>> +
+>> +	ret = ath12k_ahb_resource_init(ab);
+>> +	if (ret)
+>> +		goto err_core_free;
+>> +
+>> +	ret = ath12k_hal_srng_init(ab);
+>> +	if (ret)
+>> +		goto err_resource_deinit;
+>> +
+>> +	ret = ath12k_ce_alloc_pipes(ab);
+>> +	if (ret) {
+>> +		ath12k_err(ab, "failed to allocate ce pipes: %d\n", ret);
+>> +		goto err_hal_srng_deinit;
+>> +	}
+>> +
+>> +	ath12k_ahb_init_qmi_ce_config(ab);
+>> +
+>> +	ret = ath12k_ahb_config_irq(ab);
+>> +	if (ret) {
+>> +		ath12k_err(ab, "failed to configure irq: %d\n", ret);
+>> +		goto err_ce_free;
+>> +	}
+>> +
+>> +	ret = ath12k_core_init(ab);
+>> +	if (ret) {
+>> +		ath12k_err(ab, "failed to init core: %d\n", ret);
+>> +		goto err_ce_free;
+>> +	}
+>> +
+>> +	return 0;
+>> +
+>> +err_ce_free:
+>> +	ath12k_ce_free_pipes(ab);
+>> +
+>> +err_hal_srng_deinit:
+>> +	ath12k_hal_srng_deinit(ab);
+>> +
+>> +err_resource_deinit:
+>> +	ath12k_ahb_resource_deinit(ab);
+>> +
+>> +err_core_free:
+>> +	ath12k_core_free(ab);
+>> +	platform_set_drvdata(pdev, NULL);
+>> +
+>> +	return ret;
+>> +}
+>> +
+>> +static void ath12k_ahb_remove_prepare(struct ath12k_base *ab)
+>> +{
+>> +	unsigned long left;
+>> +
+>> +	if (test_bit(ATH12K_FLAG_RECOVERY, &ab->dev_flags)) {
+>> +		left = wait_for_completion_timeout(&ab->driver_recovery,
+>> +						   ATH12K_AHB_RECOVERY_TIMEOUT);
+>> +		if (!left)
+>> +			ath12k_warn(ab, "failed to receive recovery response completion\n");
+>> +	}
+>> +
+>> +	set_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags);
+>> +	cancel_work_sync(&ab->restart_work);
+>> +	cancel_work_sync(&ab->qmi.event_work);
+>> +}
+>> +
+>> +static void ath12k_ahb_free_resources(struct ath12k_base *ab)
+>> +{
+>> +	struct platform_device *pdev = ab->pdev;
+>> +
+>> +	ath12k_hal_srng_deinit(ab);
+>> +	ath12k_ce_free_pipes(ab);
+>> +	ath12k_ahb_resource_deinit(ab);
+>> +	ath12k_core_free(ab);
+>> +	platform_set_drvdata(pdev, NULL);
+>> +}
+>> +
+>> +static void ath12k_ahb_remove(struct platform_device *pdev)
+>> +{
+>> +	struct ath12k_base *ab = platform_get_drvdata(pdev);
+>> +
+>> +	if (test_bit(ATH12K_FLAG_QMI_FAIL, &ab->dev_flags)) {
+>> +		ath12k_qmi_deinit_service(ab);
+>> +		goto qmi_fail;
+>> +	}
+>> +
+>> +	ath12k_ahb_remove_prepare(ab);
+>> +	ath12k_core_deinit(ab);
+>> +
+>> +qmi_fail:
+>> +	ath12k_ahb_free_resources(ab);
+>> +}
+>> +
+>> +static void ath12k_ahb_shutdown(struct platform_device *pdev)
+>> +{
+>> +	struct ath12k_base *ab = platform_get_drvdata(pdev);
+>> +
+>> +	/* platform shutdown() & remove() are mutually exclusive.
+>> +	 * remove() is invoked during rmmod & shutdown() during
+>> +	 * system reboot/shutdown.
+>> +	 */
+> 
+> You should rather explain why you cannot use one callback for both. Why
+> this has to be duplicated?
+> 
+>> +	ath12k_ahb_remove_prepare(ab);
+>> +
+>> +	if (!(test_bit(ATH12K_FLAG_REGISTERED, &ab->dev_flags)))
+>> +		goto free_resources;
+>> +
+>> +	ath12k_core_deinit(ab);
+> 
+> And why this is actually different order than remove().
+> 
+
+The .shutdown() is not required for IPQ5332 wifi. In the next version
+will remove the shutdown callback.
 
