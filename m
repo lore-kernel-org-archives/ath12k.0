@@ -4,108 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17B92C02194
-	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 10:23:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEE86C02194
+	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 10:45:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:
+	From:Subject:Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hayHRKWt3KgTH36kTGY0tB09nAi5jZ+X1aXPPC8Jm+4=; b=BXbL9Ax50/keGmTp+P1tJDG9oQ
-	RaJyTP+OCfoAtC/q/hzul+smY/4lTL0i+yH+RchthUjbRucgVKUzhGgsox/IOiwEKzsmL8T+LO+Ga
-	NMUHFfqxVwHyo4X4yXvILepBz4qYcjOvRHP2RrWVSX1AYVM6k5fhS9LgszWpR/SPtRB7YJiDlLHxb
-	+LhVK1K+VzZ2Vi1441N/PXqEXde5IrlLbYhBlo5bKF00JBDwRerm0DakEOyCf1uZ5Z+ynYIMnNWSq
-	htRiNtS+lwBLos4au4aji0bd3w/CdC1NJg3PPinABU88NLIpVXW1gjLH/nkxc+lMD9gMALKjSF7Ij
-	nYAmIqtA==;
+	bh=lMArTWxNFUp4PQzCQD8slqPHvp/31eRbyPGy6SkB2WA=; b=pitmpJgogCUfAmG211NIQ+EHVf
+	82gRV4yxbfyTC0cO+dTHBiKzVxoEmIWAChrQEkgyBsYSNOyD7fpbO+xilskxjavGO1xTNcN9d13nA
+	g3AE8hT3OulOiewNOAPptz+vFllbwzMw9hhCmc+QAJIcT8CJnXQFot7Rizjo0r/qkYOfg6Ol7igXR
+	DTzFBDepqO3AAsu6mjPMJ5/T13YCKlpunNySlT5ojYiJjUMPoqSCMM/DIiWEQvTjCPn9Jp9cXSRiw
+	Ts4GhXh1PTcX4HVTJu4M6LjVSEZuM+FmEyAhxF1e0sU6J3KBbrrX1ezetX4aSG8JsNjKCsFgYKW+Y
+	hLaByx7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfG5n-000000009NT-3EiP
+	id 1tfGQP-00000000BK9-2Cjb
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Feb 2025 10:23:43 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 04 Feb 2025 10:45:01 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfG5k-000000009N7-3hAb
+	id 1tfGPX-00000000BFF-2Uz0
 	for ath12k@lists.infradead.org;
-	Tue, 04 Feb 2025 10:23:42 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51456Vsf024376
-	for <ath12k@lists.infradead.org>; Tue, 4 Feb 2025 10:23:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hayHRKWt3KgTH36kTGY0tB09nAi5jZ+X1aXPPC8Jm+4=; b=jLi0ChJIfFSaqRTo
-	U8zKG6GW4fh86fBHmxsOOe0PfMqBFOJ0RsFmFEObsBg6z+3w1kJXsiOwyf3blsbZ
-	CaQbF9O7tv5Pab0r+ElwOqtCrA4nndHMW3bJ6YG97xRu+HlFFuwsrsU5y2eAvKm2
-	d6/FXo4Fh2C053yZs40q7hdLXYd/2JHLnezsTH22df6bXYRFGrzeeELERbCAk2hW
-	N4NAigo9wZTzsKOcgHOGLL9UccMdVVhmJGwWKc0Yi8uOOjo0uZ6uPJVHjSRsrkww
-	rKrTZq+XTF7jtboxx8gAbxTrgaA2N2u/BjkC0j9gRkvIeXzo94CZFwEkbsL5xCWU
-	IeGo9g==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44kcf48p06-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 10:23:39 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2f2a9f056a8so10609106a91.2
-        for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 02:23:39 -0800 (PST)
+	Tue, 04 Feb 2025 10:44:08 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-43635796b48so33298275e9.0
+        for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 02:44:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1738665846; x=1739270646; darn=lists.infradead.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lMArTWxNFUp4PQzCQD8slqPHvp/31eRbyPGy6SkB2WA=;
+        b=bXA8kmbpQ6VnR4s844Uw1/jYnLmXfRTtxLBeTIrPJ/oGCfAQOZCqNZUVhBfEgda7hQ
+         SzQvR8n/W2C8rQjPFOGd0xkHgYy9mNbFDAdZOnqDKDz3JZcSjPNrPnetTAFwhrfPjoQA
+         xcMHxhPrRC5thVt7c2TfrhGZk03bH+7nnEiRvlwCOsWpKXvZzW0VsSlv4BFNBhGejCrU
+         rD0pIJzwemKZxSV7sqq3aX4dVoS5UlXyqFvv/R529rc0LNYHO+AopNpRw9EEyrj1flNU
+         V0VKuXbCCG+vgWucsnJjNv/8D9+uIRfO48+K6vj2Gl5gDzEVlLGAT/KyPwyAtZDD6ec8
+         bijA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738664619; x=1739269419;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=hayHRKWt3KgTH36kTGY0tB09nAi5jZ+X1aXPPC8Jm+4=;
-        b=fZmrG1wnW7Rv3MCvjos4finQOW+hbdP8ri0x4JrlnTfqDVl9gPwmrFoK/5/K+gvZDr
-         Ta0+zluGYFuAbbMCpxLpQQ5DOqyLKnMQUsDr5eIMNfiEyx23EBdAJtLBlakGd8R7dEoe
-         E8tnCld/lGzZbqcRq0ZAFw5YeTMN8xoWgnaFYRItiCEOvw2DpunlkRzMqjku74bBedPX
-         5+4nSzP6VC7OgdpvsEEEoRhHRvLUoEzERXHpwXkvljVDy88faKkGJsQH0y9k/6IeQ81x
-         LUdHamUWfhlu/G2WjO0PmDaU/NLVr3MOP9Kf2I0RUMo/AosBt1YbPR0KiQW8+0kyjR5I
-         2ZaQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU7p/Jts/AAfpZTTTvCEpy2JMInltICvpWjgGIdR2nMqbSbWNDmpZgW8S+1TpTOyePhqfSU0Xw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxAeN3qGjqxfpJkhRW9YEtLFXxe9VWUno4l+bUoEywXPzNqWCTk
-	C3K3vMnhvzie/VC+sd0wIUyVBGQACiedafiHmxqPFNj8617w7igPlpcIvJlWb85dfGr5geisLAB
-	ye9zXnCbPygk8+034DcDVhbNtiPrgKs9GDSFGrKUpbviGBCSGSf7LFCHu1jsZ
-X-Gm-Gg: ASbGncuha9rgUvH3BbnrAHFJPcc2becqEqHpTUD9WnQpWHgC8T2fC68+rggZnO7X+9+
-	MURUAFHB4Xbd3WOyOy3iZR6tHvY1GoqonEMnkNS/v2K1utAUcz0iDnLsnDZwe/lhfET2TSMozMF
-	s0e/LLNX9llrdWFiL2g/rJhBxDAMpORzvCuakCzIU66C6XO5k4zMg3eQNAd9fmY+9MRDg8O6imW
-	mSkSd1simT/qZY3XUXdgdFybyFFsJjZhzcbv16w4A3anI8mqkoaUcCDNAL2XUsUEdbs8Xgwpv2x
-	Qv1SDlWMAfPIr4EsSKQUp5z2UFIbqZIrX5BV6nM=
-X-Received: by 2002:a05:6a20:841b:b0:1cf:27bf:8e03 with SMTP id adf61e73a8af0-1ed7a6b81f3mr40738753637.26.1738664619022;
-        Tue, 04 Feb 2025 02:23:39 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHIdD5AiG7u15rXf2GHuHDUY9fbuc3P//5L0huLyjmG8JXN8JnwvXSF0P2RL0jsOL/hgtFu6Q==
-X-Received: by 2002:a05:6a20:841b:b0:1cf:27bf:8e03 with SMTP id adf61e73a8af0-1ed7a6b81f3mr40738723637.26.1738664618630;
-        Tue, 04 Feb 2025 02:23:38 -0800 (PST)
-Received: from [10.152.202.18] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-acebe856840sm8243100a12.41.2025.02.04.02.23.36
+        d=1e100.net; s=20230601; t=1738665846; x=1739270646;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=lMArTWxNFUp4PQzCQD8slqPHvp/31eRbyPGy6SkB2WA=;
+        b=W0PeqtsdXEQ7Q/SOyCRGzRQizbM0qqVwldqW1Patx8rjLD/UVe5Vo4spjN/eIhVzBL
+         aBhBsSMxnOWiOU3zDys/+be2ioo8YIHeSvDIs+YZfPZxzY33VxjK/9OG4O2RjDSAmfff
+         b9c7tiPNCE7MaJ4Kt4xQzMlNxntANShOZCtyHKccXBWd8b4o3iQYTjbk4nrgHVIJzAqn
+         LugWyQEEqlxNUpNPnUL3LluHhqJfm0cwNZb22Q1QE1lX1Mm8gZytrpSOuOr17E+nnMPP
+         XINMWK0/JxsVDmAfC+8McjQRFwMcYBV3shO0dwEv+QW9nmU3yrJ1Ai1IjAmu0NCK20Ok
+         TaeQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU7AYKMmIpAWU6ZN1EKNTb7aTI87bgNEOzrMPPfdsdPPnjjzGzW3D3UulS42rsWdLzXu82LR7g=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz8v7tIvrQzPXVZU5rohOpOqMQSUC8wYt3z3jTnRfKjD6hdMgPR
+	HNmJvywVOswkrik0VZM6Jjln50Pq/KplpxED+LGU/hIqcPRe4lIxjCZW6g==
+X-Gm-Gg: ASbGnctu6UhYvmDFcV1YwMUdZYBO0M8jFp4bTd6FZ2ykr7EmN23kreC909mBTpAPXAi
+	TYfmzkwFenoxJe9bi8SsxuxmlN14JkeQ63behhZ8nayT1YI5nHEQ4BqyDPoFh711wSq5pt/5yjF
+	eY/0A19/Y160rCXfDn8i0HtCgYQuJulJZe++mPIhJF/3E1BuobYYlg2+cNYOlPCxV93YUsKGuqu
+	kO6UpQ1+aqI5I/wwDtX5KtQC9EX9F0iIyBgVbIauDsxWOkXdyrg8IEQ0OyRpRJ/bUcmqchumH1J
+	fMnc60JmH96CWx69GIA3ZTKnBk/hJFDm7Q==
+X-Google-Smtp-Source: AGHT+IHsN8HTcCwIdZM+oqcLS8cPH93vMIT74gEgvRL+nbc/qsns8TrvV+nm1LCTJCegyuOBJuh5tA==
+X-Received: by 2002:a05:600c:1f8e:b0:435:edb0:5d27 with SMTP id 5b1f17b1804b1-43905f743f5mr19708595e9.9.1738665845748;
+        Tue, 04 Feb 2025 02:44:05 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-438dcc2e3a6sm228450075e9.20.2025.02.04.02.44.04
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 04 Feb 2025 02:23:38 -0800 (PST)
-Message-ID: <076014d2-eaaa-44be-81fc-a8f1eb0c2ac9@oss.qualcomm.com>
-Date: Tue, 4 Feb 2025 15:53:34 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+        Tue, 04 Feb 2025 02:44:05 -0800 (PST)
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Tue, 04 Feb 2025 11:44:04 +0100
+Message-Id: <D7JLLQ79FP2Z.2Z7VYLSC52A2U@gmail.com>
+Cc: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
 Subject: Re: [PATCH 0/8] wifi: ath12k: handle change_vif_links() callback
-To: Nicolas Escande <nico.escande@gmail.com>, Kalle Valo <kvalo@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20250204-unlink_link_arvif_from_chanctx-v1-0-675bd4cea339@oss.qualcomm.com>
- <D7JKQ60C6EZA.24H639LLIG2U7@gmail.com>
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <D7JKQ60C6EZA.24H639LLIG2U7@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: q4qWXVFPwDfRlXKurVyS02YYTFao4frU
-X-Proofpoint-GUID: q4qWXVFPwDfRlXKurVyS02YYTFao4frU
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-04_05,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
- suspectscore=0 mlxlogscore=964 clxscore=1015 priorityscore=1501
- phishscore=0 adultscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502040083
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Aditya Kumar Singh" <aditya.kumar.singh@oss.qualcomm.com>, "Kalle Valo"
+ <kvalo@kernel.org>, "Jeff Johnson" <jjohnson@kernel.org>
+X-Mailer: aerc 0.19.0-0-gadd9e15e475d
+References: <20250204-unlink_link_arvif_from_chanctx-v1-0-675bd4cea339@oss.qualcomm.com> <D7JKQ60C6EZA.24H639LLIG2U7@gmail.com> <076014d2-eaaa-44be-81fc-a8f1eb0c2ac9@oss.qualcomm.com>
+In-Reply-To: <076014d2-eaaa-44be-81fc-a8f1eb0c2ac9@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250204_022340_945876_03D2F57E 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20250204_024407_631408_6DE129B2 
+X-CRM114-Status: GOOD (  11.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,40 +100,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/4/25 15:32, Nicolas Escande wrote:
-> Hello,
-> 
-> When applying this series I am no longer able to start an AP on a DFS channel.
-> (I don't know specifically which patch though)
-> 
-
-Thanks for reporting this. I think non-DFS channel should be working 
-fine right?
-
-Anyways, I'm able to repro the issue locally. Let me investigate further 
-and come back.
-
-> After the initial CAC period I get the following kernel message:
-> 	[   45.248441] ath12k_pci 0003:01:00.0: cannot install key for non-existent peer 3a:07:16:d8:00:08
-> And then hostapd goes in failed state:
-> 	wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
-> 	ACS: Automatic channel selection started, this may take a bit
-> 	wlan0: interface state COUNTRY_UPDATE->ACS
-> 	wlan0: ACS-STARTED
-> 	wlan0: ACS-COMPLETED freq=5620 channel=124
-> 	wlan0: interface state ACS->DFS
-> 	wlan0: DFS-CAC-START freq=5620 chan=124 sec_chan=1, width=2, seg0=114, seg1=0, cac_time=5s
-> 	wlan0: DFS-CAC-COMPLETED success=1 freq=5620 ht_enabled=0 chan_offset=0 chan_width=5 cf1=5570 cf2=0 radar_detected=0
-> 	wlan0: nl80211: kernel reports: key addition failed
-> 	Interface initialization failed
-> 	wlan0: interface state DFS->DISABLED
-> 	wlan0: AP-DISABLED
-> 
-> Maybe I missed something ? Is there another series this one depends upon that I
-> should have applied before ?
-
-No known dependency as such.
-
--- 
-Aditya
+On Tue Feb 4, 2025 at 11:23 AM CET, Aditya Kumar Singh wrote:
+> On 2/4/25 15:32, Nicolas Escande wrote:
+>> Hello,
+>>=20
+>> When applying this series I am no longer able to start an AP on a DFS ch=
+annel.
+>> (I don't know specifically which patch though)
+>>=20
+>
+> Thanks for reporting this. I think non-DFS channel should be working=20
+> fine right?
+Right non DFS channels are ok, only DFS ones, and not from the get go but a=
+fter
+the initial CAC, when they switch to operational mode.
+>
+> Anyways, I'm able to repro the issue locally. Let me investigate further=
+=20
+> and come back.
+I'll happily test what you can throw at me.
+>
+>> After the initial CAC period I get the following kernel message:
+>> 	[   45.248441] ath12k_pci 0003:01:00.0: cannot install key for non-exis=
+tent peer 3a:07:16:d8:00:08
+>> And then hostapd goes in failed state:
+>> 	wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+>> 	ACS: Automatic channel selection started, this may take a bit
+>> 	wlan0: interface state COUNTRY_UPDATE->ACS
+>> 	wlan0: ACS-STARTED
+>> 	wlan0: ACS-COMPLETED freq=3D5620 channel=3D124
+>> 	wlan0: interface state ACS->DFS
+>> 	wlan0: DFS-CAC-START freq=3D5620 chan=3D124 sec_chan=3D1, width=3D2, se=
+g0=3D114, seg1=3D0, cac_time=3D5s
+>> 	wlan0: DFS-CAC-COMPLETED success=3D1 freq=3D5620 ht_enabled=3D0 chan_of=
+fset=3D0 chan_width=3D5 cf1=3D5570 cf2=3D0 radar_detected=3D0
+>> 	wlan0: nl80211: kernel reports: key addition failed
+>> 	Interface initialization failed
+>> 	wlan0: interface state DFS->DISABLED
+>> 	wlan0: AP-DISABLED
+>>=20
+>> Maybe I missed something ? Is there another series this one depends upon=
+ that I
+>> should have applied before ?
+>
+> No known dependency as such.
+Good, as I have a few other series applied in my tree I was affraid it migh=
+t be
+something on my side.
 
