@@ -4,107 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87E2EC02197
-	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 04:41:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E6E7C02196
+	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 05:15:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hrogID1pMYZlystqZnXZfqQzhY2nVkZQoJG9ivvC1+k=; b=TbpKMWyXA4A1w0yHHDB2IduYzO
-	wr8+YWxHw+EqVTTk5w9AsfpTSTZU7BvUFAvrX4CEy1q2k8qgfTe+FcN6TlPJ6nUaY8DuuA4msb5JM
-	BmOGkKB4nspj39uNjfHGdK/X5UiDU4vBzBiK9I57NT5kKHi3rAWKgUmPlGhQmNTsCIELV/Z0bnMER
-	lwhdh/Ho/rM0y7hvjoau1CaDZ9RTVygv0wXOG5AZMmL6JLMreR5mNflm6gNKln2Pjj//flNAMR54z
-	Z6o9Q4DEDrj4pjHyBjQbRWrIHiaH3I+4pfbHcOEWjug8wmMl6AlLga/s1yyZb9bQByhM0FHSD1VlS
-	x9AvwKgQ==;
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=CUFSwjw9Umgi+b6yQFn5Ok0HZD9Zsi5KXC6ziORTLng=; b=Whaeaq64Z/vdHumXhdSzbEiJxF
+	DVcneuSexg8j2Yi3ysEoSeN9XAhRJBgw7fyjNrdoihNqWVLuF8XZeJflXV1R9pK3rqV2IBdC7Z+LX
+	X73x/0HtxyJ9AoEff6FSe1n4w9bmzbTcHUCwMnDi6/8gVjstGPqS2WNObw0qxzRAqjC+REjRugkDL
+	vaHgRcUqSaJwOrTiwxISxktTmi62V0KdyWHfyzGYU8h7WAlAaVg1wP7BMgkvSne0eIZi+l1omW/9C
+	qEhYT++WfsMHnXy8kfc4A39ea7I5Qbv0oVqfNyR+ZEFQwIc9AeFeqEsyKpTO1vJvrwWuamKi3e2eX
+	jgJousbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfAkS-0000000HFGo-1Aan
+	id 1tfBHy-0000000HGW2-16MP
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Feb 2025 04:41:20 +0000
+	Tue, 04 Feb 2025 05:15:58 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfAkQ-0000000HFG3-0qum
+	id 1tfBHw-0000000HGVh-0iqO
 	for ath12k@lists.infradead.org;
-	Tue, 04 Feb 2025 04:41:19 +0000
+	Tue, 04 Feb 2025 05:15:57 +0000
 Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513JgnNH021210
-	for <ath12k@lists.infradead.org>; Tue, 4 Feb 2025 04:41:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51457pJJ008139;
+	Tue, 4 Feb 2025 05:15:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hrogID1pMYZlystqZnXZfqQzhY2nVkZQoJG9ivvC1+k=; b=CztxU1dg06YtwAmg
-	qQxlYJoV3Hx/PoontgKTgfIKOWf/Lvg3PVMU7JmSbrbAN6DjrcHtEDiuaOpJ+jOj
-	voaK6dWpmk2KDKEZcku6Vcfcbh+AjG0RX85ojRA9tV0XlP8t8BH1zpniycu5rbVa
-	L7dYudmfLAO77BVsPxgKjmSKHq9OxW2T3On5sBiXYDCPyf3Hcyz24pNw9KC7q+lv
-	tYyZmBetTlpddppx5TPEKDO8++o4IhlmZSari8YWSJ+t4aR3azZjAYV/Rk86YXsI
-	kvaP0K9qC9kWUBUWlEqdLQ+9ycsBhr8vMAWGPpeAVUqaUN41eLHAr5o7+KeH7J/w
-	qWf+5Q==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k46d0x9x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 04:41:17 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2f9c5b046d0so414763a91.0
-        for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 20:41:17 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738644076; x=1739248876;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=hrogID1pMYZlystqZnXZfqQzhY2nVkZQoJG9ivvC1+k=;
-        b=s7+Dces8fzrShZJbT21D/y605/OmhnwNiU4XMfpmvrtzGGMJAzdElI4heCR5nskryO
-         OWMWXBe5FDeQ9dbmde7BLsp5KkRWSMooCJIywVOyRkt7XNmvgSlq9+wDU4qvwteYuGes
-         wDZQawptllqI63kzxlfASJQEnp8VvYInXoVTcz3PqXZVMn6vUN9lNVzbqmY1FsJ2P872
-         qAf0fPCDRzTNpBZE/j+ClZ7JFo3mIO2lkg4Dd0q98gSTEszpTwAR44Hz1bX2p0At7zpG
-         H5/IrECneB6owc/CUExq8K+EhZH+6Bxx5cdB2y6nWMBV1pDd5a3B7VwdwH/KlBhBlrdd
-         Rxhw==
-X-Forwarded-Encrypted: i=1; AJvYcCXocyfbwZyJsuNv2qR6+xayekPKdpvYs3B41mf4DLGHs1+ODXMcLlxon90zGPJC5nuOtCJMAqY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwgswRtI6TeES/535VNi/e93rTJnTBhXWwqEaZFVAIZvBH2Te87
-	dXyAAWafk/72HcRKqkbNznrDeclNtZf/k/M4RzTSiU3rVe+UMNuSA/FSS0714iPiAtSufGRLc4M
-	WuGPOG7uDLDzYsjfDMLMN24/8coeZDK8yKJSoTJFGTGYivHlGoVYMIXXeevG6
-X-Gm-Gg: ASbGnctUfvb+bfdxTPYs1mTBz7vMfwMlgjByJUrlztsbVa0c57Uozuxz6OBlYxUGE/1
-	on32IMn/Ekaq7zi+QXjubMYnQkqbywhee9Ss/RZ0oxczvShnf7AnGDOzlj6Dq3PlbMwSJEieCA/
-	CUabxEPd730xuwMtTyTxzIaOMeAn6/lFrWW1z60XfxISyugaUAbdtVGLNir8LPMSCz25egZ9Ykd
-	jq46jfWZxIx2IAho1U1ZyzJAdLFPNIXpJflDQYvEYCxCgYorrMfxxmH8bA5ZxG7mRWl0/hu/lLj
-	JK4abuzq9lt5Ec1QXva6pSqnTMzjJi8en+WbeZg=
-X-Received: by 2002:a17:90b:534b:b0:2ee:fdf3:38dd with SMTP id 98e67ed59e1d1-2f83ac6612amr30911550a91.23.1738644075865;
-        Mon, 03 Feb 2025 20:41:15 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IEa1rhkr0CIdh+9HkLCDKMZ42p2q47VXgfsEsnBjGWTHSWtVtyZwBVtud/aKzNYvKs4QXCZmw==
-X-Received: by 2002:a17:90b:534b:b0:2ee:fdf3:38dd with SMTP id 98e67ed59e1d1-2f83ac6612amr30911535a91.23.1738644075471;
-        Mon, 03 Feb 2025 20:41:15 -0800 (PST)
-Received: from [10.152.202.18] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21de33205c0sm85364415ad.235.2025.02.03.20.41.13
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 03 Feb 2025 20:41:15 -0800 (PST)
-Message-ID: <db16febb-a58e-4a60-ab1a-212c30fb5313@oss.qualcomm.com>
-Date: Tue, 4 Feb 2025 10:11:12 +0530
+	CUFSwjw9Umgi+b6yQFn5Ok0HZD9Zsi5KXC6ziORTLng=; b=dZYcrMEpyvRGL/nY
+	U3mWyzO1jT7wKJMM0tCS8Folpz0F/HDVMBkv8+4TnnSaMq45vWXEoZBPAH0MyZx3
+	Az2gyxAzJMT6SrcN+7PlhRos6diIWxEDo0GPuOYegYdCJl3aw4EPdCm20PWC20xr
+	FoLt6XGvwBRPZ4iwG2TNEBRouEPV5lMlVSlXgECAvnsmvvZVCAQpE9u56P5BoFMb
+	sndZfvlDRUOi2yh5ZUC83ESTG2cpCd9Bc3el5lslSjWCHN4EVYZFiyIZCBm44qq3
+	AruHcqOWwe1qjLTloXY618S8N1zSBZ2r0Z/6Msy5CtPkJu85ixI+dW5NtPpZT1EM
+	scSULQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44kcfp00fp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 04 Feb 2025 05:15:54 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5145Fshj010157
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 4 Feb 2025 05:15:54 GMT
+Received: from [10.151.40.197] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 3 Feb 2025
+ 21:15:52 -0800
+Message-ID: <d5fac483-9ec9-255e-cc73-92cd97524735@quicinc.com>
+Date: Tue, 4 Feb 2025 10:45:49 +0530
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/5] wifi: ath11k: pass tx arvif for MBSSID and EMA
- beacon generation
-To: Aloka Dixit <aloka.dixit@oss.qualcomm.com>, ath11k@lists.infradead.org,
-        ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-References: <20250203214448.1978156-1-aloka.dixit@oss.qualcomm.com>
- <20250203214448.1978156-3-aloka.dixit@oss.qualcomm.com>
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v8 0/9] wifi: ath12k: Add peer extended Rx statistics
+ debugfs support
 Content-Language: en-US
-In-Reply-To: <20250203214448.1978156-3-aloka.dixit@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: xUPC8o5k2RqILL8mOxDJzuRqwjEqi-gX
-X-Proofpoint-ORIG-GUID: xUPC8o5k2RqILL8mOxDJzuRqwjEqi-gX
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20250204035718.3227726-1-quic_periyasa@quicinc.com>
+ <901a8947-c11b-4d0a-9cdf-93c5374ddde1@oss.qualcomm.com>
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <901a8947-c11b-4d0a-9cdf-93c5374ddde1@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 2s2zeYmjaj6MvvOVHBlwBIaEKCThZMME
+X-Proofpoint-ORIG-GUID: 2s2zeYmjaj6MvvOVHBlwBIaEKCThZMME
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-04_02,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- clxscore=1015 phishscore=0 malwarescore=0 suspectscore=0 mlxlogscore=448
- mlxscore=0 spamscore=0 impostorscore=0 adultscore=0 priorityscore=1501
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502040035
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ clxscore=1015 mlxlogscore=719 malwarescore=0 impostorscore=0 spamscore=0
+ lowpriorityscore=0 suspectscore=0 adultscore=0 phishscore=0 bulkscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502040040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_204118_352399_0ADACCDF 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20250203_211556_338214_66E155F4 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,20 +101,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/4/25 03:14, Aloka Dixit wrote:
-> Function ath11k_mac_setup_bcn_tmpl() retrieves tx_arvif only for
-> a sanity check and then calls ath11k_mac_setup_bcn_tmpl_mbssid()
-> or ath11k_mac_setup_bcn_tmpl_ema() both of which again retrieve
-> the same pointer. Instead store the pointer and pass it to the
-> latter two functions.
+
+
+On 2/4/2025 9:54 AM, Jeff Johnson wrote:
+> On 2/3/2025 7:57 PM, Karthikeyan Periyasamy wrote:
+>> Currently, peer extended Rx statistics are not supported. Peer extended Rx
+>> statistics are collected form the TLV data reported in the monitor status
+>> Rx path. Therefore, add support for TLV tag parser handling and debugfs
+>> to configure and dump the collected information. Additionally, this series
+>> does not impact the WCN7850.
+>>
+>> v8:
+>>   - Resend due to missed patches
 > 
+> you had received some Reviewed-by: tags in a prior version.
+> if there were no significant changes to those patches you should have
+> propagated the tags.
+> if there were significant changes and the tags were dropped on purpose, that
+> should be mentioned in the version history
 
-Same, Is this tested? Perhaps you forgot to add "Tested-on:" tag?
-
-> Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
-> ---
-
+No significant changes from v6 only rebase changes in v7, so i have the 
+propagated tags in this version v8.
 
 -- 
-Aditya
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
