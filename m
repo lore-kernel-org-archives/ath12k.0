@@ -4,108 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51D94C0218F
-	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 03:51:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1EF0C0218F
+	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 03:52:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xljIf5LIELKjNsgQouAtJzQ958nVy1Um3h1N0CSDuKI=; b=pd8LV94zE+YcVA75h1nC7gXsGZ
-	6ENfLuzu1OTtK67qTXL5SEmOjjdkX2kSOJyTWBkOX3oTdR3R1xzZs/+ePGfBR/piQv/9Qt6Blma2F
-	cB7Pwj5z0zH2Z6N8Bq9EbT9/27mrjNsQNR9/uKs9YLm6YhD7/YVIb3fe2qD5CmEPlnESjECqCIs8R
-	QZli4yE/jIYwuVO21FWA1NNbiE8KTPE2kSmvUa1eJVEQsf3V4N+/FBnrTM49/VKwk0SGs4KdjcxF5
-	1RtP5mBrIMpBGcosiBgjfYURqYi9mnhkBeZOeYI+I0WYcvJ07h9XmoFprc7ZYVbLrmn3QGuR9rv76
-	YTe2hLqA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=6E7pqXqwNDAVVpsvXmSu/INWDbJ0OtYc2cjezJ/wSE0=; b=Ohg139/bPh4UFFTo7HvMXUc0CI
+	ThpvRhLikpv8eHft4RnU1/3Wl7+X5B+QPIwxoqaQP5DR6S7NEZW2kX9Op4kcnHwGBNQjFoRTWlLVI
+	Y51N071AXBXTsjNK3mk/0HaTG7fP6kRydF5ryaPGfifUtu5Ue9q+zc//DStZTm9PO9omPGA9xUm4e
+	1ue8bUO8ZUl4uMCOf/1wPLgvStOQN+NviIdk51QsWhVDHIX/mKgY45JEtOdgmZF+vtDt6ehs9/H6b
+	KWmqIGYDM8mfXmhhYPr9cIejDg3z1wiAyJOLNqFTQkwwCMaL3V31mp6IpgJm9XObCyhOEWwMLvD5i
+	s+UdLlqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf9yb-0000000HC7K-0NHg
+	id 1tf9zM-0000000HCAU-1wYf
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Feb 2025 03:51:53 +0000
+	Tue, 04 Feb 2025 03:52:40 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf9yY-0000000HC6z-3js9
+	id 1tf9zI-0000000HC9p-2O30
 	for ath12k@lists.infradead.org;
-	Tue, 04 Feb 2025 03:51:52 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513GElks010565
-	for <ath12k@lists.infradead.org>; Tue, 4 Feb 2025 03:51:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	xljIf5LIELKjNsgQouAtJzQ958nVy1Um3h1N0CSDuKI=; b=irpHrLOmcpx9YFiX
-	PquvN/0mnU3BCpB11oc4Qv9UfNvOYAyNoaXDzJZJDALhDZXKoIa3sZ9FhuOZBuDG
-	xkbr8jogPZU/KvbVJdnK5hOkQEVa2arpbjLJghDHxSYUUHuRIGdKJRsA6/VBB/5R
-	45DBzFyTILyAiWf61J2zxesNKIS41d0NvzSXPr2+/LWpSqHVtx5QgEW85IWTCWYP
-	bPDfiThDrsxTv0/JO3mCfBh/jXYbnIcvDWbekDlaFicUv6F4gUV6LumZSrt1sOVn
-	0zM06S+OOsVefZ9W8AGMrHySXAe4JKrkXo59gSDT3Yl74bh81DlEmoA+Glcr09kT
-	qqED4A==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k159havw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 03:51:49 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2163a2a1ec2so180869835ad.1
-        for <ath12k@lists.infradead.org>; Mon, 03 Feb 2025 19:51:49 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738641108; x=1739245908;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=xljIf5LIELKjNsgQouAtJzQ958nVy1Um3h1N0CSDuKI=;
-        b=Lg47giKE4KpcW7S/xxdgg/zeFHE8FZtfEFgHzet6x/6bliFzkwXs10whAKscSnosZm
-         ucKGqxaG8EzuWbrEQdq6XD0yB077hPF5rbcJVINPA+5meiZHyv22HmNEVT/4/dUN0DLG
-         M+hfHrdfeMnZQixDcPgW7ecQ4ycXIvTbnQcYggsPQejZBwGktN24yl9vN40ByD7K9Pc+
-         Nql7r8ONpsUhXiD6lrHPK/cMCpKvgqA9HGafqX7lNXsrMgU7GV7cGcTf7hlDU5O6GRWu
-         t3xGTSGArxp9NeTp3dYVjKh1RSjCgno2fnBtbjHVfICEwQ/OtY4smrQ0+dO/Ra520fWP
-         wIvQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUsQlok55sAH4EpusEBC1XqwBaUc1LSsJ7dXOTAjEfl2oElcVWYZElY0QG/1E2KME1eJ95iKYQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyiBnm+rizvi9xKbRnCm/fvRvcgoCxABZf7OTOvM666TeFfJFXy
-	ID2RxaztR8J8a7HRh/RwPBRj9p8NFnRshNMwE+C7XI+MxuE0i+L8lil4mh3PiB6t2lX5p0rYAQ/
-	NmCZySKM02i7MieZr1ap+QUns+ORFxxLoxUm6H3t23C4Zsv5Bl761NJDQdfhCHl0sT/Xq
-X-Gm-Gg: ASbGnctxcZVtZz1bO2Hr19RSpsiAetlevC/5QcoK1rdBjUhEU+Y430eCYNsxmTcfinc
-	0y1wAf+2q+rshOEU+8N3fb9GkZgvwmCeeit/fCmqhWUUdLkHL11Qgn2Xa0ComldwINtnnaXxLlp
-	Q+gl9B1kBtnLRQXv+x0PEZhOtcv5WStrlNIEIXqICWuzAyB5LVHA9VcIi9h7RKKzyxzNTotHD3b
-	oj88qshdQnyfm7DBQCerUC/8tSVwIK1lhgP6N5vTyV9rYnkGuqVOp0qdEsdCw7qgjmCSRtbVfoW
-	Sj6fsJa6SqrBbEmkZwsIwGh8W+pnapkeLr8q4NM=
-X-Received: by 2002:a05:6a20:9f45:b0:1e0:c50c:9842 with SMTP id adf61e73a8af0-1ed7a5d5389mr43603947637.31.1738641107985;
-        Mon, 03 Feb 2025 19:51:47 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHmdUVc0Wi9jxdVfRoEIvYyBtsi3glQt2raK360OuJpu7LbCgU1t2XAzalkIAtO1g7U9xNGjg==
-X-Received: by 2002:a05:6a20:9f45:b0:1e0:c50c:9842 with SMTP id adf61e73a8af0-1ed7a5d5389mr43603893637.31.1738641107331;
-        Mon, 03 Feb 2025 19:51:47 -0800 (PST)
-Received: from [10.152.202.18] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72fe631bed4sm9658304b3a.10.2025.02.03.19.51.45
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 03 Feb 2025 19:51:47 -0800 (PST)
-Message-ID: <f38c5c60-0e00-4b2d-bb47-1a86297fceb5@oss.qualcomm.com>
-Date: Tue, 4 Feb 2025 09:21:44 +0530
+	Tue, 04 Feb 2025 03:52:37 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513HfV5l017320;
+	Tue, 4 Feb 2025 03:52:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=6E7pqXqwNDAVVpsvXmSu/I
+	NWDbJ0OtYc2cjezJ/wSE0=; b=MIO/bKX9wFrUPnk+IB5oioLBcKXE9PAQZ9WJ80
+	tPYDKVMMBGdYE+Pyr60qDUknKmiXFRT2nhIUNA31vEIbGjigivE+TWoYrvHVB5qq
+	cxj3SWK2CwPaCni7Vt+Wext00QDPvk7+baFdURXcBLgbv7CRmV8/gosMAL9vjj38
+	ARWxhmyn04OQGgMXZfkpQQiYbiUrhcHepNa3e0rHE60dL7aPw+6zUtVPNq79a4aq
+	LuZcyrVYEIPJnjtazTZg8OAq9r/aJPe6kYVB2ZLasobdPKloEnVaTfvKIWF4MLS+
+	2fOZW+uhU6fB9sIOW/WNWOkQ3SJahlbQwTqYzeFy8nVRhaFA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44k2e1h4rt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 04 Feb 2025 03:52:35 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5143qY1V011892
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 4 Feb 2025 03:52:34 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Mon, 3 Feb 2025 19:52:32 -0800
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Balamurugan Mahalingam
+	<quic_bmahalin@quicinc.com>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>,
+        Vasanthakumar Thiagarajan
+	<vasanthakumar.thiagarajan@oss.qualcomm.com>
+Subject: [PATCH v7 8/9] wifi: ath12k: Refactor the format of peer rate table information
+Date: Tue, 4 Feb 2025 09:22:14 +0530
+Message-ID: <20250204035215.3227307-1-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 1/2] wifi: ath12k: Update HTT_TCL_METADATA version and
- bit mask definitions
-To: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250203212647.2694566-1-quic_bmahalin@quicinc.com>
- <20250203212647.2694566-2-quic_bmahalin@quicinc.com>
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250203212647.2694566-2-quic_bmahalin@quicinc.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: 9G5OPh7MsspgZjQSSaPbK-dSojsdmIqP
-X-Proofpoint-ORIG-GUID: 9G5OPh7MsspgZjQSSaPbK-dSojsdmIqP
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: K0-jyqryWpke_y1CkT1ZJC346YhbWmAs
+X-Proofpoint-ORIG-GUID: K0-jyqryWpke_y1CkT1ZJC346YhbWmAs
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-04_02,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- impostorscore=0 spamscore=0 mlxlogscore=999 phishscore=0 clxscore=1015
- mlxscore=0 bulkscore=0 lowpriorityscore=0 adultscore=0 suspectscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=999 bulkscore=0 spamscore=0 mlxscore=0 priorityscore=1501
+ clxscore=1015 adultscore=0 impostorscore=0 lowpriorityscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2501170000 definitions=main-2502040028
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_195151_066038_FE486C51 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20250203_195236_729055_8F518A8D 
+X-CRM114-Status: GOOD (  13.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,25 +100,109 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/4/25 02:56, Balamurugan Mahalingam wrote:
-> Update the HTT_TCL_METADATA version to the latest version (2)
-> as the bit definitions have changed a little to support more
-> features. This new version allows the host to submit a packet with
-> more information to the firmware. Firmware uses this additional
-> information to do special processing for certain frames.
-> 
-> All the firmware binaries available in upstream/public are compatible with
-> this HTT version update.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Balamurugan Mahalingam<quic_bmahalin@quicinc.com>
-> ---
+From: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
 
-Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Currently, peer rate table information involves complex computation for
+the rate index to update the rate table. To simplify this process, avoid
+the rate index calculation by defining the rate table with bandwidth, GI,
+NSS, MCS. Therefore, update the rate information based on the bandwidth,
+GI, NSS and MCS information from the TLV data of monitor status Rx path.
 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
+Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/core.h   |  6 +----
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 29 +++++++++++-------------
+ 2 files changed, 14 insertions(+), 21 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 45bb243f2258..9325b3ff6842 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -52,8 +52,6 @@
+ 
+ #define ATH12K_INVALID_HW_MAC_ID	0xFF
+ #define ATH12K_CONNECTION_LOSS_HZ	(3 * HZ)
+-#define	ATH12K_RX_RATE_TABLE_NUM	320
+-#define	ATH12K_RX_RATE_TABLE_11AX_NUM	576
+ 
+ #define ATH12K_MON_TIMER_INTERVAL  10
+ #define ATH12K_RESET_TIMEOUT_HZ			(20 * HZ)
+@@ -363,8 +361,6 @@ struct ath12k_vif_iter {
+ #define HAL_RX_MAX_MCS_BE	15
+ #define HAL_RX_MAX_NSS		8
+ #define HAL_RX_MAX_NUM_LEGACY_RATES 12
+-#define ATH12K_RX_RATE_TABLE_11AX_NUM	576
+-#define ATH12K_RX_RATE_TABLE_NUM 320
+ 
+ struct ath12k_rx_peer_rate_stats {
+ 	u64 ht_mcs_count[HAL_RX_MAX_MCS_HT + 1];
+@@ -375,7 +371,7 @@ struct ath12k_rx_peer_rate_stats {
+ 	u64 bw_count[HAL_RX_BW_MAX];
+ 	u64 gi_count[HAL_RX_GI_MAX];
+ 	u64 legacy_count[HAL_RX_MAX_NUM_LEGACY_RATES];
+-	u64 rx_rate[ATH12K_RX_RATE_TABLE_11AX_NUM];
++	u64 rx_rate[HAL_RX_BW_MAX][HAL_RX_GI_MAX][HAL_RX_MAX_NSS][HAL_RX_MAX_MCS_HT + 1];
+ };
+ 
+ struct ath12k_rx_peer_stats {
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index cdc5e2c19f39..0a85b198ec7a 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -2915,34 +2915,31 @@ ath12k_dp_mon_rx_update_peer_rate_table_stats(struct ath12k_rx_peer_stats *rx_st
+ 					      struct hal_rx_user_status *user_stats,
+ 					      u32 num_msdu)
+ {
+-	u32 rate_idx = 0;
++	struct ath12k_rx_peer_rate_stats *stats;
+ 	u32 mcs_idx = (user_stats) ? user_stats->mcs : ppdu_info->mcs;
+ 	u32 nss_idx = (user_stats) ? user_stats->nss - 1 : ppdu_info->nss - 1;
+ 	u32 bw_idx = ppdu_info->bw;
+ 	u32 gi_idx = ppdu_info->gi;
++	u32 len;
+ 
+-	if ((mcs_idx > HAL_RX_MAX_MCS_HE) || (nss_idx >= HAL_RX_MAX_NSS) ||
+-	    (bw_idx >= HAL_RX_BW_MAX) || (gi_idx >= HAL_RX_GI_MAX)) {
++	if (mcs_idx > HAL_RX_MAX_MCS_HT || nss_idx >= HAL_RX_MAX_NSS ||
++	    bw_idx >= HAL_RX_BW_MAX || gi_idx >= HAL_RX_GI_MAX) {
+ 		return;
+ 	}
+ 
+-	if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11N ||
+-	    ppdu_info->preamble_type == HAL_RX_PREAMBLE_11AC) {
+-		rate_idx = mcs_idx * 8 + 8 * 10 * nss_idx;
+-		rate_idx += bw_idx * 2 + gi_idx;
+-	} else if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11AX) {
++	if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11AX ||
++	    ppdu_info->preamble_type == HAL_RX_PREAMBLE_11BE)
+ 		gi_idx = ath12k_he_gi_to_nl80211_he_gi(ppdu_info->gi);
+-		rate_idx = mcs_idx * 12 + 12 * 12 * nss_idx;
+-		rate_idx += bw_idx * 3 + gi_idx;
+-	} else {
+-		return;
+-	}
+ 
+-	rx_stats->pkt_stats.rx_rate[rate_idx] += num_msdu;
++	rx_stats->pkt_stats.rx_rate[bw_idx][gi_idx][nss_idx][mcs_idx] += num_msdu;
++	stats = &rx_stats->byte_stats;
++
+ 	if (user_stats)
+-		rx_stats->byte_stats.rx_rate[rate_idx] += user_stats->mpdu_ok_byte_count;
++		len = user_stats->mpdu_ok_byte_count;
+ 	else
+-		rx_stats->byte_stats.rx_rate[rate_idx] += ppdu_info->mpdu_len;
++		len = ppdu_info->mpdu_len;
++
++	stats->rx_rate[bw_idx][gi_idx][nss_idx][mcs_idx] += len;
+ }
+ 
+ static void ath12k_dp_mon_rx_update_peer_su_stats(struct ath12k *ar,
 -- 
-Aditya
+2.34.1
+
 
