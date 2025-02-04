@@ -4,109 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C27AFC02193
-	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 17:05:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27F68C02193
+	for <ath12k@archiver.kernel.org>; Tue,  4 Feb 2025 17:05:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=51f2EOU8rD4IqmdPJzdUmHNaP2sswXDBQc7pnwOJIpA=; b=aHZLpcqi9834TlU4LUbs+m7ltt
-	KncoCp8RcvGpXG+Gc0M5A3gqIK+aMulBSR9HpVTjoSDGk+p0W7UgFCvQCrxuSg/TPpZ3nexLDsEz9
-	PVkV6Jmcm0OZCAb7USmtbtOrXnKhK8ZZcgVciD76rOp2S+aWHmd8SB7prQeTPBlcNmEq+2O3P8lo5
-	gYYfHSzKdpATS6nU2o4baH0+RovC76QZivULZphPAlg3FQwKqbcPmsPOTlsAdGCsjWv3EH311wexl
-	1VdZXqYUJ12rESszC8Ym7+O58CliTpuWauoCuuTd+vzhwe8soQmqlDvwgHBKY1ChKac+HP3rcsW6J
-	iNLXmVWA==;
+	bh=TXWRaM1cylEvYyBQLAOCl/odoq1V8DJ3wyrrRKU9QRw=; b=c2aMc7y5nrc0/qcg0hRaA865LF
+	xfxqvs7wR8MWdnvNfsQ1yPOFssHdIPRiG7k9kd39dseOVPZBt/bDBuOWyMYLLsYVMnnK69RNuztTW
+	ItmZ7V+8ANvFYNRergV285NHvuSunksh1JaWihC+XvMnOKP6L7BNyi0C2uwHpF/JmFoUJ7ABbcjUk
+	zLBj94fQap5aJb9i3cEPoCYy0oqiDG2Iu0r2S5PhdJ53Mktky3lGMp2TlbWalc413y4XQE4XDm/jV
+	hTnT4ieYhWsJS6NrIcZhs60lU8BW8Ub+5SJzfF5Z5ZKWw+J0He8EuhvwBEKT7rH43FIODaopfZPQF
+	J1mBAFKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfMMm-000000012Nb-1rA3
+	id 1tfMMo-000000012PK-3NyL
 	for ath12k@archiver.kernel.org;
-	Tue, 04 Feb 2025 17:05:40 +0000
+	Tue, 04 Feb 2025 17:05:42 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfMMk-000000012Li-1FLg
+	id 1tfMMl-000000012Mw-3NsC
 	for ath12k@lists.infradead.org;
-	Tue, 04 Feb 2025 17:05:39 +0000
+	Tue, 04 Feb 2025 17:05:40 +0000
 Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 514E1g1M032364
-	for <ath12k@lists.infradead.org>; Tue, 4 Feb 2025 17:05:38 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 514E1qxX032479
+	for <ath12k@lists.infradead.org>; Tue, 4 Feb 2025 17:05:39 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	51f2EOU8rD4IqmdPJzdUmHNaP2sswXDBQc7pnwOJIpA=; b=WOAtA+HVSHrlyoEh
-	MjhpxA95iJw8CriT7YkCj9ECfD3Fn+jujKPN+OarSp+sJl1g219IJM8Lrs+O0Taj
-	gsw6SZ+Hh1kcCGEUaEOPNtzVwVKopoKbHn2sbS2MuCpf7lP1Q+yPGzpShL3XcKEz
-	LtG9OYizTWj5M/T+wZsoQf9h+TK/cHStS7ZeE0wcWA1VjTC2xYTuhncF7Zs8JHJN
-	fm2dwNGA1sa4U0p9/Fei7Q9DzYj8fY1mFsE4ix0z+ISZAidbYWcloVdgOl1/Gga/
-	R23T4+rM0yZmu4yK5rnj4csixKVhz3KRS9uQ+b450PHMk6cRlz8FzkyNFJbpzDM7
-	E0329Q==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44km9wgf8s-1
+	TXWRaM1cylEvYyBQLAOCl/odoq1V8DJ3wyrrRKU9QRw=; b=dkYdlNYEiN5KUGH8
+	nn3b2mWakSBWRkQGi8OsChdx5fTRnnpQOP5sXKul9A/haO5l6+GZY2LVzvvCyXHl
+	Wq5TyitWmDIsEgmTRqZtmUCLcGXHnlRWwVa7SrwWcFHYSzT2jiuHLyjQYyLknSbi
+	/19EJcHDmkgYULs2WbAfznNo1Csxp18Tf4B5jI8pv2SXL8U3F+EGnKops7p2qrLK
+	NAfDsuQSgxXF82Y00U3pHNzQaT8oFl9NFL7j/tF2H/rwQ27Csyr/78kJ0/wk8AbM
+	r4CBqUdp+p7XRJw8iXVHd3i2JKwZgwnTzmIE0WBPvKmovhmuzXXbg3WM1T3GROc3
+	0wDGog==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44km9wgf8x-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 17:05:37 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ef7fbd99a6so10728425a91.1
-        for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 09:05:37 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 17:05:39 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-216266cc0acso119331295ad.0
+        for <ath12k@lists.infradead.org>; Tue, 04 Feb 2025 09:05:39 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738688736; x=1739293536;
+        d=1e100.net; s=20230601; t=1738688738; x=1739293538;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=51f2EOU8rD4IqmdPJzdUmHNaP2sswXDBQc7pnwOJIpA=;
-        b=JlKeXJq+kFX/9RYOSjBaS9FraK92jxARmAfNmVkAVKMgzN61+nvhg+L25xcQdNT04b
-         mnMNHgAk5w95JBwHyzA93EoXNM8+PYLr+tujEh4NKsgScAlIm6TyUopvNUGUOXLmizeK
-         E7L5BbMKaytj0ydSyI4kqe9a7xfkuo7HWSosNHi6wsJc9eUBDwTA9vuoFPUe/Z8zWiu/
-         XyQFjS+Aru2q7mRf2jhBvArSeg0oq/cQ4KASBuQujhmKiN/Z7CcEavNctdmYXzPyUCJG
-         ZwVaKObjr2HIc+xWO8pbwXarsHChevc9OSN5k+pVeMySYtTE5p08Tm6xkdOrqBNrPSMG
-         93Pw==
-X-Forwarded-Encrypted: i=1; AJvYcCX2mPfimccu81ey+qNaxdvfXAte5lIkeeq5r1X0/fPky5GGh1x2IH8wItCfoQ02ZC5NzgYbPww=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyMF27qqD9Md1DozdBP1jtLmARYHsuP+NMX7cmPKAai7TYo0uAf
-	jCz6h6PB5BcmGOm49R4KpPrfPqh/TM7g4zAu+/PhhL8zVH4Y+P/7HRMvemMjpa/Nair5E1nzdND
-	TGbOrPWnu9uV7FUD9UEpYOxaAPvJmFgwJTlqYhI96gEwG6eBdCfSOgIJGFXDnV+qu1oTJ
-X-Gm-Gg: ASbGncu8klg1cwEHPiKa7Sr+nbQRYVP9zmtML8UHGojTiOEezKpsFBfnpEXNSFuBWfE
-	biZkYvqF6FOEtYqOs/e9NBuWRlm4mLtyHX4DSB6OC584M3CBq4wbXcCjvtJYs1/C1LVvcEjY2tm
-	udH2e5t1zJg3orfb+SfGe4JQCd6bofyWBiRiFxh0TbTnPpTsh0egQPhtfE303K97WoJqcKmx3Ep
-	GWp4H+Fr+4bEGk1y+qTaLzovM7VkK7pl4sxGfFuMIsWri1Zol73TsW8ETFpmzSUE6MDW4NXiPC5
-	0lE73D13hJaLithbSeDJgDrsoeay/Q0x59YWsNrSHLef77RgDhu6ZoeLVbELwLMuJXd430QF2gI
-	A3CVaRbI01oa7ScG+1C9399ueOfWEMQ==
-X-Received: by 2002:a05:6a00:114d:b0:728:ecab:51e3 with SMTP id d2e1a72fcca58-72fd0c02f1emr36077591b3a.11.1738688736341;
-        Tue, 04 Feb 2025 09:05:36 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IEG9Uiqc+7PlX1ZsIPR20CQZaNTTSfUWKtsKFXqKtj6fdi754GWLoojlhA+zlni6fNFJsLjxg==
-X-Received: by 2002:a05:6a00:114d:b0:728:ecab:51e3 with SMTP id d2e1a72fcca58-72fd0c02f1emr36077504b3a.11.1738688735422;
-        Tue, 04 Feb 2025 09:05:35 -0800 (PST)
+        bh=TXWRaM1cylEvYyBQLAOCl/odoq1V8DJ3wyrrRKU9QRw=;
+        b=MrZOtal9Tcez4XQpcS9Yf64DRZtAVL4WHeU7kqAWPzt16U1SUmvfqaMo25n1W0Vuxq
+         XNUyBv9X7wDxnXuvHlLJoBtmY0aK2xWuZoO5sfQ8Yv51GjJflmqraPe6bJpuwawEmkR8
+         lZmbxNZOdxjkWEFIEZb46qCNZe8Y67YlgGs8QlXykKjWMTQsK7+9vyjinzlIWYcBzNqD
+         iR6KC8LdB79FQPZ1h9zYKfO3LoW/atKEks6XaGAbbJs85MkLvybzzcweABThNI6x2hWC
+         XUWbmO3AxrZ5d9a+PljRnGEi+t1/skyJ2RR/BTRovvxg/WcAGWWLuNHPlAmAKIzjUA/2
+         SaVw==
+X-Forwarded-Encrypted: i=1; AJvYcCUpOfNHztg4Yg5x3F5EZAzfmEHvlRVarT9E5TrM1XdtAEzs0TP7GZICuoY5j5E3018UWHUMooU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxMsUMRzQativT8WDVvUVJB7Q0Q4QxslDVz4MBlorTsJmaqWHOi
+	VVOh6MXm+X/8zMoxVFiqNkiD96icJK+e3QoG+lOkRPZJIsK+8pe1tb5xdi1t9z98bYj/hraBgSu
+	L8EfOGE3WBzfUeTA4tCG25BXBMsjf96tELeOPOBAdcZAwxGE++Qz3pIkNFfI5XzKN6N9S
+X-Gm-Gg: ASbGnct8Hu0uZBhmRCyi1ePHt5czH5jvga5SZ6qp0kLoTcvsDXKagzkEw/xgenlIfJj
+	FfR4bVcu6r1MgGJ6DnR/y8I96cDMO/VyM5zIqxpC1ewmaf4EaIB50GMTjjs0Yt75fyZYuGc4INs
+	pM6D84uSkhwGMdtabV70J0g7XhdtXcx58ez3W15mGMHywAAU2ixrbHZwQoZpWi0VlxVswSKpj1y
+	RbtBeHDVj+bM3kQgCkYgmQ3INv7xMIBqEZlARmLUCmVChRs8aP2cuXttiV6kM33GXul8w80Zao2
+	mfx98/Iq7N5Ow98PwRvgOTA4XE6k4Wg815eSwGGyyWM8D71O/AzNAiibBDBm7p5irjPrzBpjoBa
+	5eFYtSNwoeygZk9uO0lECX/xGA9N+Kg==
+X-Received: by 2002:a05:6a21:918b:b0:1e0:d5be:bf75 with SMTP id adf61e73a8af0-1edd772d3a5mr6632215637.17.1738688738109;
+        Tue, 04 Feb 2025 09:05:38 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEFOZCGllE9vRCHjbzgU7t9YEmIsU4+LL2GFRur7KyGfweOuCHEm8rmV9rRR5FRsq2tNOAJrA==
+X-Received: by 2002:a05:6a21:918b:b0:1e0:d5be:bf75 with SMTP id adf61e73a8af0-1edd772d3a5mr6632167637.17.1738688737725;
+        Tue, 04 Feb 2025 09:05:37 -0800 (PST)
 Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72fe69cddbbsm10772788b3a.125.2025.02.04.09.05.33
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72fe69cddbbsm10772788b3a.125.2025.02.04.09.05.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 04 Feb 2025 09:05:35 -0800 (PST)
+        Tue, 04 Feb 2025 09:05:37 -0800 (PST)
 From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Tue, 04 Feb 2025 22:35:13 +0530
-Subject: [PATCH v2 7/8] wifi: ath12k: allocate new links in
+Date: Tue, 04 Feb 2025 22:35:14 +0530
+Subject: [PATCH v2 8/8] wifi: ath12k: handle link removal in
  change_vif_links()
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20250204-unlink_link_arvif_from_chanctx-v2-7-764fb5973c1a@oss.qualcomm.com>
+Message-Id: <20250204-unlink_link_arvif_from_chanctx-v2-8-764fb5973c1a@oss.qualcomm.com>
 References: <20250204-unlink_link_arvif_from_chanctx-v2-0-764fb5973c1a@oss.qualcomm.com>
 In-Reply-To: <20250204-unlink_link_arvif_from_chanctx-v2-0-764fb5973c1a@oss.qualcomm.com>
 To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
         Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Proofpoint-ORIG-GUID: VO3HvqokaUQzZWWneOSu067pkHBWq3OK
-X-Proofpoint-GUID: VO3HvqokaUQzZWWneOSu067pkHBWq3OK
+X-Proofpoint-ORIG-GUID: GQ_44b8ROohFyOJsWaFjLJwJ5rVZAfpD
+X-Proofpoint-GUID: GQ_44b8ROohFyOJsWaFjLJwJ5rVZAfpD
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-04_08,2025-02-04_01,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
  priorityscore=1501 lowpriorityscore=0 phishscore=0 impostorscore=0
- malwarescore=0 adultscore=0 mlxscore=0 bulkscore=0 mlxlogscore=999
+ malwarescore=0 adultscore=0 mlxscore=0 bulkscore=0 mlxlogscore=874
  spamscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2501170000 definitions=main-2502040132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250204_090538_348390_1E748D0D 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20250204_090539_854457_C7A69976 
+X-CRM114-Status: GOOD (  13.72  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,78 +120,62 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, links in an interface are allocated during channel assignment
-via assign_vif_chanctx(). Conversely, links are deleted during channel
-unassignment via unassign_vif_chanctx(). However, deleting links during
-channel unassignment does not comply with mac80211 link handling.
-Therefore, this process should be managed within change_vif_links(). To
-maintain symmetry, link addition should also be handled in
-change_vif_links().
-
-Hence, add changes to allocate link arvif in change_vif_links(). Creating
-the link interface on firmware will still be done during channel
-assignment.
-
-And since link will be created but channel might not be assigned, there is
-a need now to test is_created flag in ath12k_mac_mlo_get_vdev_args() before
-accessing link_conf or else link bring up will fail.
-
-A subsequent change will handle link removal part.
+Currently, the link interface is deleted during channel unassignment, which
+does not align with mac80211 link handling. Therefore, add changes to only
+perform vdev stop during channel unassignment. The actual vdev deletion
+will occur in change_vif_links().
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ drivers/net/wireless/ath/ath12k/mac.c | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4f5bda45387ee16e1ab7a3c15a72252933f29129..9ac2f883cd5cc3ee5950fabdf6b89e5330171468 100644
+index 9ac2f883cd5cc3ee5950fabdf6b89e5330171468..682ea0fc9a857a97000f1e683eb145f36ef0dd17 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3600,6 +3600,31 @@ ath12k_mac_op_change_vif_links(struct ieee80211_hw *hw,
- 			       u16 old_links, u16 new_links,
+@@ -3601,6 +3601,7 @@ ath12k_mac_op_change_vif_links(struct ieee80211_hw *hw,
  			       struct ieee80211_bss_conf *ol[IEEE80211_MLD_MAX_NUM_LINKS])
  {
-+	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
-+	unsigned long to_add = ~old_links & new_links;
-+	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
-+	struct ath12k_link_vif *arvif;
-+	u8 link_id;
-+
-+	lockdep_assert_wiphy(hw->wiphy);
-+
-+	ath12k_generic_dbg(ATH12K_DBG_MAC,
-+			   "mac vif link changed for MLD %pM old_links 0x%x new_links 0x%x\n",
-+			   vif->addr, old_links, new_links);
-+
-+	for_each_set_bit(link_id, &to_add, IEEE80211_MLD_MAX_NUM_LINKS) {
+ 	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
++	unsigned long to_remove = old_links & ~new_links;
+ 	unsigned long to_add = ~old_links & new_links;
+ 	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+ 	struct ath12k_link_vif *arvif;
+@@ -3625,6 +3626,21 @@ ath12k_mac_op_change_vif_links(struct ieee80211_hw *hw,
+ 			return -EINVAL;
+ 	}
+ 
++	for_each_set_bit(link_id, &to_remove, IEEE80211_MLD_MAX_NUM_LINKS) {
 +		arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
-+		/* mac80211 wants to add link but driver already has the
-+		 * link. This should not happen ideally.
-+		 */
-+		if (WARN_ON(arvif))
-+			return -EINVAL;
-+
-+		arvif = ath12k_mac_assign_link_vif(ah, vif, link_id);
 +		if (WARN_ON(!arvif))
 +			return -EINVAL;
++
++		if (!arvif->is_created)
++			continue;
++
++		if (WARN_ON(!arvif->ar))
++			return -EINVAL;
++
++		ath12k_mac_remove_link_interface(hw, arvif);
++		ath12k_mac_unassign_link_vif(arvif);
 +	}
 +
  	return 0;
  }
  
-@@ -8765,6 +8790,9 @@ ath12k_mac_mlo_get_vdev_args(struct ath12k_link_vif *arvif,
- 		if (arvif == arvif_p)
- 			continue;
+@@ -9438,9 +9454,6 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
+ 	if (ahvif->vdev_type != WMI_VDEV_TYPE_MONITOR &&
+ 	    ar->num_started_vdevs == 1 && ar->monitor_vdev_created)
+ 		ath12k_mac_monitor_stop(ar);
+-
+-	ath12k_mac_remove_link_interface(hw, arvif);
+-	ath12k_mac_unassign_link_vif(arvif);
+ }
  
-+		if (!arvif_p->is_created)
-+			continue;
-+
- 		link_conf = wiphy_dereference(ahvif->ah->hw->wiphy,
- 					      ahvif->vif->link_conf[arvif_p->link_id]);
- 
+ static int
 
 -- 
 2.34.1
