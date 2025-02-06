@@ -4,71 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 229FAC02194
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E793C0219B
 	for <ath12k@archiver.kernel.org>; Thu,  6 Feb 2025 22:15:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=AVJ8WuxC4yXkdDdbjZk8+oDzRdxvNMJrvKPxyZ0bnBc=; b=YVYeLMvpohDJfAdyhyfCPjnpDZ
-	Yt74MDiVUW+tZkCIX9cMZYKKc9JeaIeQw3p8CkzXy0rwHKJorXS4RgokRCfGVM9clCZ+p0B3MxJwb
-	nUJh7/gQseG6seWOTDpsWLqrpG44TPZzIOx4gd5oxLLiRuBFBcEtb3s9ZTuHfSjosuSlbO84UcWkD
-	eYYkc4Ip5kOZNBEG/KNN8w3UWkPvjXvUN5LAuuBiR4njc/LeIAPX6WBtP8Oifhzi/TCvdqB2p3nsl
-	BI5LSFcAxG9sIusU7nH0SXVJEL9H55JkOizutyleADxVPE/TmhbVjdNsQKfLrEmGqgzeHBoJfRgJw
-	+StlS1DA==;
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QPSWX/xi0RPCGcHZ6ZN4i8VHsUL5re2rNucDfwV3lfE=; b=Dg2PA+SyxFOjUT1pGf931Rrov1
+	o7AcsTq7hLTy+eSJuYTHlOWh6440FD55WPTaXry0mE+RWnXvazfvuoXwLjlMm3Ft2tF6ZJgtk9jjm
+	zvbSNKkSnMRMLSX3lhtRlv0jguBuO4pxQ12RQf9T+BuWAL95d8XNtADwEsUMNnz+KYFSlVPLcq5Lu
+	21C5hozkufLUuVRIpNvOx49lnE9t6uZ+LSyeL4xoDNkeEqFp/M/DK2GbMGZccyVJ4ucx1ucp0eRHW
+	OWlRp+GZCMMNwWHewNuQskGrTqi3Y9uSaeFN+VJRhnQuhQGWzArlc8KauiLm3HqwI59gZqFBg5yMf
+	KbhU+laA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgA9i-00000007fQD-3MfG
+	id 1tgA9j-00000007fQO-0gq1
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Feb 2025 22:15:30 +0000
-Received: from 008.lax.mailroute.net ([199.89.1.11])
+	Thu, 06 Feb 2025 22:15:31 +0000
+Received: from 009.lax.mailroute.net ([199.89.1.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgA7l-00000007f7T-0pmZ
+	id 1tgA8B-00000007fC3-2axv
 	for ath12k@lists.infradead.org;
-	Thu, 06 Feb 2025 22:13:30 +0000
+	Thu, 06 Feb 2025 22:13:57 +0000
 Received: from localhost (localhost [127.0.0.1])
-	by 008.lax.mailroute.net (Postfix) with ESMTP id 4Yprw85mfVz6CmQyZ;
-	Thu,  6 Feb 2025 22:13:28 +0000 (UTC)
+	by 009.lax.mailroute.net (Postfix) with ESMTP id 4Yprwg2SJtzlgTxr;
+	Thu,  6 Feb 2025 22:13:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=acm.org; h=
-	content-transfer-encoding:mime-version:x-mailer:message-id:date
-	:date:subject:subject:from:from:received:received; s=mr01; t=
-	1738880005; x=1741472006; bh=AVJ8WuxC4yXkdDdbjZk8+oDzRdxvNMJrvKP
-	xyZ0bnBc=; b=CRgD98VGQDwWffd9T0v4Um+LYNODVCReMXS7YsVSophJMkqwQFi
-	/pfVIBwOfF8cb9cpIjdGpkpUYwZ8rvJBzn23yZa5lOZ/jkhqgLJyb1rGO31FBpN3
-	hzujUCs/goG861cNYblh+iD5ir4TIPe+bJ2OahOrVwZ4kPSmPqrXnlM05uIu1VZK
-	Qf8uplYU/JbABcyBnnSfjM/JXK1S3wR11wjxcU2Y+2j78/IvRh9yyfIFM2VVXJzu
-	xe20IDeZxath4pTA1YxfCycKLukV2Qr9z7pljiwL+vOlNGxk0alQ+ZjiZ3Sre9B0
-	BRrZPQPhuDR1rwCzMd3wFnGRipuIoNAcwRg==
+	content-transfer-encoding:content-type:content-type:in-reply-to
+	:from:from:content-language:references:subject:subject
+	:user-agent:mime-version:date:date:message-id:received:received;
+	 s=mr01; t=1738880030; x=1741472031; bh=QPSWX/xi0RPCGcHZ6ZN4i8VH
+	sUL5re2rNucDfwV3lfE=; b=dPngntNjukDId1ecMG9utEC9mZI2JWRlN9xKSC/h
+	vsQOLLd8vMDsSyXIDlvD078U197CxSo72e9Myc4YtFeZehx9Ag8un0Kb6cPb0TCm
+	nRKj+rPjOSFwakAohOaZ9yjTEGS3CL30u9iLnys2vdZsZKIwm1zS3dCuQHnkQGsL
+	UOntFK2Vb0MEDssjAE/la5YtxRYunr+rTorYRcupoCkZH07nbvAyrc43viu/yXBf
+	/w42+aNksLxdj1Z7zlGnsVj3i5cUaNlpddFtVepcZfSuJD1V75/sLPFvc1h0Edx/
+	r+5LkvMwmjSc7/Q9GVsQ8Tlkpv/rUcXzM8dQKBPtPN2BDQ==
 X-Virus-Scanned: by MailRoute
-Received: from 008.lax.mailroute.net ([127.0.0.1])
- by localhost (008.lax [127.0.0.1]) (mroute_mailscanner, port 10029) with LMTP
- id rkzGGjQIbGhL; Thu,  6 Feb 2025 22:13:25 +0000 (UTC)
-Received: from bvanassche.mtv.corp.google.com (unknown [104.135.204.82])
+Received: from 009.lax.mailroute.net ([127.0.0.1])
+ by localhost (009.lax [127.0.0.1]) (mroute_mailscanner, port 10029) with LMTP
+ id J_o6Dsq11wuH; Thu,  6 Feb 2025 22:13:50 +0000 (UTC)
+Received: from [100.66.154.22] (unknown [104.135.204.82])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: bvanassche@acm.org)
-	by 008.lax.mailroute.net (Postfix) with ESMTPSA id 4Yprw23XScz6CmQyT;
-	Thu,  6 Feb 2025 22:13:21 +0000 (UTC)
-From: Bart Van Assche <bvanassche@acm.org>
-To: Kalle Valo <kvalo@kernel.org>
-Cc: Jeff Johnson <jjohnson@kernel.org>,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	Bart Van Assche <bvanassche@acm.org>,
-	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Subject: [PATCH] wifi: ath12k: Fix locking in error paths
-Date: Thu,  6 Feb 2025 14:13:17 -0800
-Message-ID: <20250206221317.3845663-1-bvanassche@acm.org>
-X-Mailer: git-send-email 2.48.1.502.g6dc24dfdaf-goog
+	by 009.lax.mailroute.net (Postfix) with ESMTPSA id 4YprwW2SzGzlgTw4;
+	Thu,  6 Feb 2025 22:13:46 +0000 (UTC)
+Message-ID: <335edb88-c850-44bc-ae1b-79349175bc8c@acm.org>
+Date: Thu, 6 Feb 2025 14:13:45 -0800
 MIME-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RFC 25/33] wifi: ath12k: Fix locking in error paths
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+ Peter Zijlstra <peterz@infradead.org>
+Cc: Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Marco Elver <elver@google.com>, Nick Desaulniers <ndesaulniers@google.com>,
+ Nathan Chancellor <nathan@kernel.org>, Kees Cook <kees@kernel.org>,
+ Jann Horn <jannh@google.com>, linux-kernel@vger.kernel.org,
+ Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>
+References: <20250206175114.1974171-1-bvanassche@acm.org>
+ <20250206175114.1974171-26-bvanassche@acm.org>
+ <7633c19b-2aab-4f2a-8c11-27425f7299ae@oss.qualcomm.com>
+Content-Language: en-US
+From: Bart Van Assche <bvanassche@acm.org>
+In-Reply-To: <7633c19b-2aab-4f2a-8c11-27425f7299ae@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250206_141329_242912_6EA1BCB8 
-X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-CacheID: sfid-20250206_141355_670890_132F145C 
+X-CRM114-Status: UNSURE (   6.35  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,43 +94,11 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-If ag->mutex has been locked, unlock it before returning. If it has not
-been locked, do not unlock it before returning. These bugs have been
-detected by the Clang thread-safety analyzer.
+On 2/6/25 10:25 AM, Jeff Johnson wrote:
+> Can you submit this as a single patch and cc the ath12k and linux-wireless
+> lists (as I've done in this reply)
 
-Cc: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Fixes: ee146e11b4d9 ("wifi: ath12k: refactor core start based on hardware=
- group")
-Signed-off-by: Bart Van Assche <bvanassche@acm.org>
----
- drivers/net/wireless/ath/ath12k/core.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Done :-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireles=
-s/ath/ath12k/core.c
-index 0606116d6b9c..212cd935e60a 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1122,16 +1122,18 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_=
-base *ab)
- 		ath12k_core_stop(ab);
- 		mutex_unlock(&ab->core_lock);
- 	}
-+	mutex_unlock(&ag->mutex);
- 	goto exit;
-=20
- err_dp_free:
- 	ath12k_dp_free(ab);
- 	mutex_unlock(&ab->core_lock);
-+	mutex_unlock(&ag->mutex);
-+
- err_firmware_stop:
- 	ath12k_qmi_firmware_stop(ab);
-=20
- exit:
--	mutex_unlock(&ag->mutex);
- 	return ret;
- }
-=20
+
 
