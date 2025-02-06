@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B764C02192
-	for <ath12k@archiver.kernel.org>; Thu,  6 Feb 2025 01:39:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC176C02194
+	for <ath12k@archiver.kernel.org>; Thu,  6 Feb 2025 01:39:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vWNeNJexyTz7rwQQX0hZUlwLt9ar1dL8+11/hGCxfvs=; b=DOEt/6tN2YI5v3un4UEHba45nb
-	O/27jcuSK50pmGUa5c9sZpw7Lxm/E1CYj5WoxRR4+MGj5Bm0kuu6ruNgxlAPv26a7Ne1uKQVLWQnf
-	Zxnve218METaDnjZg6niM4QV7Ulrd+NkPVQDDXH2T/vssHC9zGnhveBIK1aEbml/9ZBsW+WIa7/73
-	O+gx+3d2tRoYl+aiiHtXjvIkjF+KRiYeKwAv4poK3ggsMPogSpp/2YAll0TFp5kIQSipyynOmXspx
-	M1PE24D+QlMAk/IW+aOYuxYH7ug4C95wEWzgIHjpa+J0t7NlZQEKQQdesCVT329s+rxEzFNw83ax0
-	hnss99ug==;
+	bh=H3J4MBroaHFEyx46YU4mxriHXIXUrItL3H1YY12lpAc=; b=N9GhihST7haxhZ1ksGDr1jS6xf
+	Et7yOPpm7mfKDvpCYPTMv3M3uDLd57Jc2JHDGmKlxmdgrrAQ6MpMKRHytSWm+8aI3QWDYN+w95OKi
+	/Ry7VQOH6aRsW/HIW7EDq9EzndC+taQN8uwRp90d04e06wqMDZ0zgujo1KJyl1dp8Ct+HMPE3JaIn
+	o1Sq1dlj3m2+GtwkhD/t6RBkRaIi/2ACSpXXauKAsy17kcrd2wGdOq9olCDTJ5GaXXqDLUKqVhx0P
+	I2P1de7uSfxchV+jwFlZI4MbFYnsBNdemAOweDZpzOh+qrBQHVc8eckkqc+ROIS+jl8re8aeqM6/c
+	CyjzJ/Jw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfqrs-000000050Ad-3l9C
+	id 1tfqrv-000000050CV-2ODU
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Feb 2025 01:39:48 +0000
+	Thu, 06 Feb 2025 01:39:51 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfqrq-0000000508r-2bSE
+	id 1tfqrs-000000050A4-2owx
 	for ath12k@lists.infradead.org;
-	Thu, 06 Feb 2025 01:39:47 +0000
+	Thu, 06 Feb 2025 01:39:49 +0000
 Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 515GqvxW030065;
-	Thu, 6 Feb 2025 01:39:45 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 515GqvxY030065;
+	Thu, 6 Feb 2025 01:39:48 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	vWNeNJexyTz7rwQQX0hZUlwLt9ar1dL8+11/hGCxfvs=; b=niG5KPqX0lUgi68o
-	tn3E+v/IzL18JemQn/gGu6lTzTH+u8vf+6DNwSsmUjFPLQE0MUryUvc3DqpT3mba
-	0dge6lih+nJubzdOWRZdogTpgQocGtqGDC0O8uosqPYKdT67HJ5bl23h5S3iFt68
-	ZEqr+ChxZHeQEqjcRfTKstgX6EUj8SybLwkoo5mFOaF/TbAy7yPCV0JrVT5iGun+
-	oY60NifKhLqdzc+kH/3gjYlsd5nkYdOTCT7cLjzpzpkrEGmTh9/kSPmIz/1cozOT
-	2jSYx5n7laQRTVy+WyYlr6LHd8TxMoVQj2ngVQPLoIjQ384YY4Hy1E5OqYumWubd
-	T+lHrQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44mbw491au-1
+	H3J4MBroaHFEyx46YU4mxriHXIXUrItL3H1YY12lpAc=; b=ZC6zMlti9VGjofOj
+	D9Ny036YkCehWhNi742XCHaNjYTvcJ55rD2i+ek7GekeL5rFAZuoeJlufy82ZTge
+	+hwGXsESp4EJkvrOjeLo/CyCkYzcO1J4giu5tLF3NU/7ts2EwidFhMCk4uGhUjf/
+	8rdD1w5rS8HtEXUPCM2M99nftEP5Z1XbWZJN+O/kUbUWZAt9QKnKWpPhNazOIJ+0
+	qaSWRxwCbhus7tFHHJHwYsE0NpPRuX/Tf5MigBeZHD3pbQt8M2wH3ElzE4vCCHgH
+	dqWxDpIOj08+38PqbS2ktSw8IUo9342rncAF3dQA1nLWOlUDB+1oMp0EamQCz25y
+	4scqQQ==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44mbw491ax-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 06 Feb 2025 01:39:45 +0000 (GMT)
+	Thu, 06 Feb 2025 01:39:47 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5161di17012426
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5161dkgM019249
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 6 Feb 2025 01:39:44 GMT
+	Thu, 6 Feb 2025 01:39:46 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 5 Feb 2025 17:39:42 -0800
+ 15.2.1544.9; Wed, 5 Feb 2025 17:39:44 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
@@ -62,9 +62,9 @@ CC: <linux-wireless@vger.kernel.org>,
 	<vasanthakumar.thiagarajan@oss.qualcomm.com>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>
-Subject: [PATCH v9 7/9] wifi: ath12k: Add EHT MCS support in Extended Rx statistics
-Date: Thu, 6 Feb 2025 07:08:52 +0530
-Message-ID: <20250206013854.174765-8-quic_periyasa@quicinc.com>
+Subject: [PATCH v9 8/9] wifi: ath12k: Refactor the format of peer rate table information
+Date: Thu, 6 Feb 2025 07:08:53 +0530
+Message-ID: <20250206013854.174765-9-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250206013854.174765-1-quic_periyasa@quicinc.com>
 References: <20250206013854.174765-1-quic_periyasa@quicinc.com>
@@ -76,19 +76,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: FW-bUk_hU4V2nMXKEr11aMrGAbVJSID-
-X-Proofpoint-ORIG-GUID: FW-bUk_hU4V2nMXKEr11aMrGAbVJSID-
+X-Proofpoint-GUID: 9aTvGB14dszUpvcp1ONL1_J8vblbGBl4
+X-Proofpoint-ORIG-GUID: 9aTvGB14dszUpvcp1ONL1_J8vblbGBl4
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-06_01,2025-02-05_03,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 suspectscore=0
- priorityscore=1501 spamscore=0 mlxlogscore=831 malwarescore=0 adultscore=0
+ priorityscore=1501 spamscore=0 mlxlogscore=999 malwarescore=0 adultscore=0
  lowpriorityscore=0 mlxscore=0 bulkscore=0 impostorscore=0 phishscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
  definitions=main-2502060010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_173946_780729_3AFFBEA8 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20250205_173948_828082_13EDA4C7 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,10 +105,11 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
 
-Currently, EHT MCS information is not populated. Therefore, add the EHT
-MCS counter array to the peer rate statistics and update the EHT MCS
-statistics from the status TLV data in the monitor Rx path. In the future,
-this information will be used in the peer extended Rx statistics dump.
+Currently, peer rate table information involves complex computation for
+the rate index to update the rate table. To simplify this process, avoid
+the rate index calculation by defining the rate table with bandwidth, GI,
+NSS, MCS. Therefore, update the rate information based on the bandwidth,
+GI, NSS and MCS information from the TLV data of monitor status Rx path.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
@@ -117,47 +118,93 @@ Signed-off-by: Balamurugan Mahalingam <quic_bmahalin@quicinc.com>
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/core.h   | 2 ++
- drivers/net/wireless/ath/ath12k/dp_mon.c | 6 ++++++
- 2 files changed, 8 insertions(+)
+ drivers/net/wireless/ath/ath12k/core.h   |  6 +----
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 29 +++++++++++-------------
+ 2 files changed, 14 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 57e71ccbbb67..45bb243f2258 100644
+index 45bb243f2258..9325b3ff6842 100644
 --- a/drivers/net/wireless/ath/ath12k/core.h
 +++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -360,6 +360,7 @@ struct ath12k_vif_iter {
- #define HAL_RX_MAX_MCS_HT	31
- #define HAL_RX_MAX_MCS_VHT	9
- #define HAL_RX_MAX_MCS_HE	11
-+#define HAL_RX_MAX_MCS_BE	15
+@@ -52,8 +52,6 @@
+ 
+ #define ATH12K_INVALID_HW_MAC_ID	0xFF
+ #define ATH12K_CONNECTION_LOSS_HZ	(3 * HZ)
+-#define	ATH12K_RX_RATE_TABLE_NUM	320
+-#define	ATH12K_RX_RATE_TABLE_11AX_NUM	576
+ 
+ #define ATH12K_MON_TIMER_INTERVAL  10
+ #define ATH12K_RESET_TIMEOUT_HZ			(20 * HZ)
+@@ -363,8 +361,6 @@ struct ath12k_vif_iter {
+ #define HAL_RX_MAX_MCS_BE	15
  #define HAL_RX_MAX_NSS		8
  #define HAL_RX_MAX_NUM_LEGACY_RATES 12
- #define ATH12K_RX_RATE_TABLE_11AX_NUM	576
-@@ -369,6 +370,7 @@ struct ath12k_rx_peer_rate_stats {
+-#define ATH12K_RX_RATE_TABLE_11AX_NUM	576
+-#define ATH12K_RX_RATE_TABLE_NUM 320
+ 
+ struct ath12k_rx_peer_rate_stats {
  	u64 ht_mcs_count[HAL_RX_MAX_MCS_HT + 1];
- 	u64 vht_mcs_count[HAL_RX_MAX_MCS_VHT + 1];
- 	u64 he_mcs_count[HAL_RX_MAX_MCS_HE + 1];
-+	u64 be_mcs_count[HAL_RX_MAX_MCS_BE + 1];
- 	u64 nss_count[HAL_RX_MAX_NSS];
+@@ -375,7 +371,7 @@ struct ath12k_rx_peer_rate_stats {
  	u64 bw_count[HAL_RX_BW_MAX];
  	u64 gi_count[HAL_RX_GI_MAX];
+ 	u64 legacy_count[HAL_RX_MAX_NUM_LEGACY_RATES];
+-	u64 rx_rate[ATH12K_RX_RATE_TABLE_11AX_NUM];
++	u64 rx_rate[HAL_RX_BW_MAX][HAL_RX_GI_MAX][HAL_RX_MAX_NSS][HAL_RX_MAX_MCS_HT + 1];
+ };
+ 
+ struct ath12k_rx_peer_stats {
 diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-index a9a012b81bfc..cdc5e2c19f39 100644
+index cdc5e2c19f39..0a85b198ec7a 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-@@ -3028,6 +3028,12 @@ static void ath12k_dp_mon_rx_update_peer_su_stats(struct ath12k *ar,
- 		rx_stats->byte_stats.he_mcs_count[ppdu_info->mcs] += ppdu_info->mpdu_len;
+@@ -2915,34 +2915,31 @@ ath12k_dp_mon_rx_update_peer_rate_table_stats(struct ath12k_rx_peer_stats *rx_st
+ 					      struct hal_rx_user_status *user_stats,
+ 					      u32 num_msdu)
+ {
+-	u32 rate_idx = 0;
++	struct ath12k_rx_peer_rate_stats *stats;
+ 	u32 mcs_idx = (user_stats) ? user_stats->mcs : ppdu_info->mcs;
+ 	u32 nss_idx = (user_stats) ? user_stats->nss - 1 : ppdu_info->nss - 1;
+ 	u32 bw_idx = ppdu_info->bw;
+ 	u32 gi_idx = ppdu_info->gi;
++	u32 len;
+ 
+-	if ((mcs_idx > HAL_RX_MAX_MCS_HE) || (nss_idx >= HAL_RX_MAX_NSS) ||
+-	    (bw_idx >= HAL_RX_BW_MAX) || (gi_idx >= HAL_RX_GI_MAX)) {
++	if (mcs_idx > HAL_RX_MAX_MCS_HT || nss_idx >= HAL_RX_MAX_NSS ||
++	    bw_idx >= HAL_RX_BW_MAX || gi_idx >= HAL_RX_GI_MAX) {
+ 		return;
  	}
  
-+	if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11BE &&
-+	    ppdu_info->mcs <= HAL_RX_MAX_MCS_BE) {
-+		rx_stats->pkt_stats.be_mcs_count[ppdu_info->mcs] += num_msdu;
-+		rx_stats->byte_stats.be_mcs_count[ppdu_info->mcs] += ppdu_info->mpdu_len;
-+	}
+-	if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11N ||
+-	    ppdu_info->preamble_type == HAL_RX_PREAMBLE_11AC) {
+-		rate_idx = mcs_idx * 8 + 8 * 10 * nss_idx;
+-		rate_idx += bw_idx * 2 + gi_idx;
+-	} else if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11AX) {
++	if (ppdu_info->preamble_type == HAL_RX_PREAMBLE_11AX ||
++	    ppdu_info->preamble_type == HAL_RX_PREAMBLE_11BE)
+ 		gi_idx = ath12k_he_gi_to_nl80211_he_gi(ppdu_info->gi);
+-		rate_idx = mcs_idx * 12 + 12 * 12 * nss_idx;
+-		rate_idx += bw_idx * 3 + gi_idx;
+-	} else {
+-		return;
+-	}
+ 
+-	rx_stats->pkt_stats.rx_rate[rate_idx] += num_msdu;
++	rx_stats->pkt_stats.rx_rate[bw_idx][gi_idx][nss_idx][mcs_idx] += num_msdu;
++	stats = &rx_stats->byte_stats;
 +
- 	if ((ppdu_info->preamble_type == HAL_RX_PREAMBLE_11A ||
- 	     ppdu_info->preamble_type == HAL_RX_PREAMBLE_11B) &&
- 	     ppdu_info->rate < HAL_RX_LEGACY_RATE_INVALID) {
+ 	if (user_stats)
+-		rx_stats->byte_stats.rx_rate[rate_idx] += user_stats->mpdu_ok_byte_count;
++		len = user_stats->mpdu_ok_byte_count;
+ 	else
+-		rx_stats->byte_stats.rx_rate[rate_idx] += ppdu_info->mpdu_len;
++		len = ppdu_info->mpdu_len;
++
++	stats->rx_rate[bw_idx][gi_idx][nss_idx][mcs_idx] += len;
+ }
+ 
+ static void ath12k_dp_mon_rx_update_peer_su_stats(struct ath12k *ar,
 -- 
 2.34.1
 
