@@ -4,108 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1374EC02194
-	for <ath12k@archiver.kernel.org>; Fri,  7 Feb 2025 15:11:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2D4DC0219C
+	for <ath12k@archiver.kernel.org>; Fri,  7 Feb 2025 17:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=s+V+JgQRCYKhXRFEasqcCrnMZZS1Hps/NSFCEiIsHng=; b=Rou8Lyhjre3qa4H0DYbQZrp1Nb
-	CJurM06ZmbCjWxnzKoP9ddLv2OUYgbZb81gNS+L3kEKJbxzKPfAbADCUQSwSXoGOuKDZPeJuNWB5O
-	IqMfacIsOQvyat7H5oQtFxpyoo6B9y4aY5/jNJjptFRelderLYQBF4FmCaGWHQ+GJp3ilRv1rf8xY
-	EvUkCFSnODzOryFnZD9hhZQQv2nnKcF1xTr2+ttJ3kwRQ0hShJ2LJON6ZhiAj/2FnCm0WbOwqbOj7
-	rmiEfQQ13ghxhgnQEv0aeP71M8hXefvsIoGD+3rOmJBixaAiQUP52j9naOU8u1/8R+BCmo9tN57nk
-	EbQmLpKA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=8RfoObTtv22jTxsPrb+FzOHyCOeZeKvNt6O/uYbWHa4=; b=gWn1d/Mz/Mtvz0qnMjTc1fICUv
+	shL8/a6WUmLM3uVNBuTtb3Ec7A0NulyC3dbnW5hYNOjMl5FXY+BmNCXM1Se8Dj2vVABC1pyQ/CxiY
+	HfIUkFaIBho1UbPA8NsTPKrwHfLKqGszGQAsMlHRyXflON57w5QRezS/sKgcsdzCfHhSQg7OuJCPs
+	npsVDSglFIpCTDOq3IQrqigS4gNVVWY3myBeCILiJMFwmfeFi4WlN/UlYrTh62ThJUdN022dst1Xh
+	m8jVC7gzphQMDKu8QSx9XMR5FPU2ZHRjV0eCSEarJ1kRos9YojyNCxlcEYSZsU1wxdPY2joyjC4nz
+	c6ZnJLAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgQ0X-0000000A12d-35om
+	id 1tgRr3-0000000AQwe-2ebC
 	for ath12k@archiver.kernel.org;
-	Fri, 07 Feb 2025 15:11:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 07 Feb 2025 17:09:25 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgQ0U-0000000A12H-3lEA
+	id 1tgRW2-0000000ALln-3pDK
 	for ath12k@lists.infradead.org;
-	Fri, 07 Feb 2025 15:11:04 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 517B2kp7003240
-	for <ath12k@lists.infradead.org>; Fri, 7 Feb 2025 15:11:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	s+V+JgQRCYKhXRFEasqcCrnMZZS1Hps/NSFCEiIsHng=; b=GcDIFUOQXQ/7X2jj
-	qHiXCoqWefhgoxxmp2nwgUy44rNzTodGlt4zJfKr6Wc+zlxhHfdhEJeGNHkA4/79
-	ozS+omBU3nNEU6etagUYuc2xOs5tfBkCNjUYmJKA83bez8HpuPKpjMrMcdYYAbVb
-	vH3n3AwzMZA4ythBKbBMov6f458KHpU+qVf03dAoqluv0kYtcR0Kwyux6pY+66PH
-	EoTpY6/DN4xDEcro1vDIrizlEm6cBnOfRXEtT3UauOzTjptSeRR2pRaQx67U4evF
-	AOOoc2MjNJFOWMIa/ZdlCAnGo1RXrMeZrXUFOmLb7PPWMcuDoUr6+AL9Dj1ZEQMn
-	TiH7EQ==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ngy10ke2-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 07 Feb 2025 15:11:00 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-2fa1c093f12so3878319a91.2
-        for <ath12k@lists.infradead.org>; Fri, 07 Feb 2025 07:11:00 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738941060; x=1739545860;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=s+V+JgQRCYKhXRFEasqcCrnMZZS1Hps/NSFCEiIsHng=;
-        b=nHYhokXgXpH8FnzgfCqesyjQyAr3s/xH3KwIsIZznxU12b0lO4F1UgRXVGlKfZUBfO
-         19x9ly+4Bp5H4t2hppOnpt/X/Kju+HRoKqqCvWhR/Z1HG0/FCPWZklJtnWN91dJucdd3
-         m06M8TWVgwafmooznVMnr9IiDPngUfzZJ4PtHcvxLFZAS7o3HT6Qa4Zf2DPNV871PiU5
-         dJPW6AVZVmzYITXg6Uj1en0RnItGm0q/0aVrrBVG2UaXdGeNil+qcsLZbw9NWf8R0kv0
-         Bosakh9AqJ4grUSxRjtwP/FZahZQe1ZlUcz9ZAaZrsZZKAkVqjQZyGjSYXqMAS6tO8tm
-         mT3A==
-X-Forwarded-Encrypted: i=1; AJvYcCU31wQ9O7lQas1xveQiDRZcRMLc9tOqBFjloiQRHvGWWGGnp28TuJOyozttontj1Hbzqvb8obw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyL1Xx7SY4ohQNBlBOKWeQ/KS8A6izOKN83e7osh8j5NndN0AYk
-	Aikp9oppNKa37kNxPvUm62WyAHwrwYE53lshLsE5FSWg2PKy0HR2IqaHrWpm1u4CKj7jEICY4D3
-	QbhTyQm/6yh3p6d/znCkXGQYlP3/9jmI59zYQS2W2+dJuUFoldVL27l7GrNvW
-X-Gm-Gg: ASbGnct8WFro3bUjCAkLP7Kw2WGXYfeioRc8tg/vVd0myJerDZdaXFDmk5cW12adU+L
-	pIDaV4DyqSu6u61lWINI4pAYc5AdamOF+b0HjD1w+ZMYtXTDVpVLkO4+sbZo5Ga+TAgLvyYJRpC
-	QNs8I6eS8vB4zS1i8S/x3PeUeCQiMwMd4AhDBc7IR0Fn0RaxamX/qIxEgHLG+mtt9DRunXO8iKq
-	v+VJXz+NyF2D84Yq2e5T/2USo26yYheMU6j52E8TjTgDN8k/l8qVEnOaqwT/G+yyAMh4Dj0SfVT
-	9FxNzVudFOhr08VT+qCcNIUnZqhW4G5ZT7z9V8zKWt3fnEPOKrYD9kW+Fh22gy9Q+emKL30G8A=
-	=
-X-Received: by 2002:a17:90b:194f:b0:2ee:59af:a432 with SMTP id 98e67ed59e1d1-2fa2450985amr4857273a91.31.1738941059999;
-        Fri, 07 Feb 2025 07:10:59 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IErvSX5l9qRiKdHJ4TV8ECcN8WrvQ0HpuAnUPpHdTx3VdptMOc+XJf3yadFLmyIP/yfAMO73A==
-X-Received: by 2002:a17:90b:194f:b0:2ee:59af:a432 with SMTP id 98e67ed59e1d1-2fa2450985amr4857234a91.31.1738941059579;
-        Fri, 07 Feb 2025 07:10:59 -0800 (PST)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2fa0cceff11sm3400012a91.10.2025.02.07.07.10.58
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 07 Feb 2025 07:10:59 -0800 (PST)
-Message-ID: <c9765212-bfb1-4b8d-80f2-7219bb4a7372@oss.qualcomm.com>
-Date: Fri, 7 Feb 2025 07:10:58 -0800
+	Fri, 07 Feb 2025 16:47:44 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 517FSt5o007278;
+	Fri, 7 Feb 2025 16:47:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:message-id:mime-version:subject:to; s=
+	qcppdkim1; bh=8RfoObTtv22jTxsPrb+FzOHyCOeZeKvNt6O/uYbWHa4=; b=UB
+	Pq2lX1nJc7JM4jbOTmpP5PCDd0z8pSf9xcY13/Twnb8gGiJah3Wlg64dbdSD7IMi
+	j1X9CJewCinisKCfFkMtuJGFxeMM2GuvHq8R8AwG9LVB0AWnyH8S4d8oV6wy7VXH
+	Ei1pBbnkZvClBw559OiLB/JGHWjOrjZ0+H5wWVqYbMkiApT4ExWdMwgBzM/IU1qD
+	BqubiJUe11Q9qf5PahqOP37x8NdbVXbh4fyVZ5xOddn96IiJwCMergbI26cNdNfW
+	Q8PUt3ZWKCGkkTWBirBbFXy/w8Qugh8xNZp+2n0Ht4cMM+XQh02hyojRW3pUv2NY
+	33LqVMumKYGgF9i8L7Yw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44nmuqr6n3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 07 Feb 2025 16:47:40 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 517Glds9001346
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 7 Feb 2025 16:47:39 GMT
+Received: from hu-nithp-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 7 Feb 2025 08:47:37 -0800
+From: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Nithyanantham Paramasivam
+	<quic_nithp@quicinc.com>
+Subject: [PATCH 0/3] wifi: ath12k: Enable REO queue lookup table on QCN9274
+Date: Fri, 7 Feb 2025 22:17:00 +0530
+Message-ID: <20250207164703.3818135-1-quic_nithp@quicinc.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Fix locking in error paths
-To: Bart Van Assche <bvanassche@acm.org>, Kalle Valo <kvalo@kernel.org>
-Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
-        linux-wireless@vger.kernel.org,
-        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-References: <20250206221317.3845663-1-bvanassche@acm.org>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250206221317.3845663-1-bvanassche@acm.org>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: q3AYyLidjGgqs92cBx6lN9C_N0XLeqSk
-X-Proofpoint-GUID: q3AYyLidjGgqs92cBx6lN9C_N0XLeqSk
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: FkZHr5SyIlnLmjF0KisvZQKnd7so-VEp
+X-Proofpoint-GUID: FkZHr5SyIlnLmjF0KisvZQKnd7so-VEp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-07_07,2025-02-07_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- priorityscore=1501 mlxscore=0 bulkscore=0 spamscore=0 mlxlogscore=999
- clxscore=1015 lowpriorityscore=0 adultscore=0 malwarescore=0 phishscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502070115
+ definitions=2025-02-07_08,2025-02-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ spamscore=0 impostorscore=0 adultscore=0 phishscore=0 suspectscore=0
+ clxscore=1011 mlxlogscore=760 priorityscore=1501 lowpriorityscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502070125
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250207_071102_958818_0EAFF533 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20250207_084743_067965_CB4A69ED 
+X-CRM114-Status: GOOD (  10.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,46 +95,72 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/6/2025 2:13 PM, Bart Van Assche wrote:
-> If ag->mutex has been locked, unlock it before returning. If it has not
-> been locked, do not unlock it before returning. These bugs have been
-> detected by the Clang thread-safety analyzer.
-> 
-> Cc: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-> Fixes: ee146e11b4d9 ("wifi: ath12k: refactor core start based on hardware group")
-> Signed-off-by: Bart Van Assche <bvanassche@acm.org>
-> ---
->  drivers/net/wireless/ath/ath12k/core.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-> index 0606116d6b9c..212cd935e60a 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.c
-> +++ b/drivers/net/wireless/ath/ath12k/core.c
-> @@ -1122,16 +1122,18 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
->  		ath12k_core_stop(ab);
->  		mutex_unlock(&ab->core_lock);
->  	}
-> +	mutex_unlock(&ag->mutex);
->  	goto exit;
->  
->  err_dp_free:
->  	ath12k_dp_free(ab);
->  	mutex_unlock(&ab->core_lock);
-> +	mutex_unlock(&ag->mutex);
-> +
->  err_firmware_stop:
->  	ath12k_qmi_firmware_stop(ab);
->  
->  exit:
-> -	mutex_unlock(&ag->mutex);
->  	return ret;
->  }
->  
+Instead of storing the REO queue address inside peer entries, REO
+hardware module prefers them to be stored in SRAM which could be
+directly accessed by REO using peer_ID/TID based Lookup table(LUT)
+mechanism. This feature is expected to improve stability by reduced
+interaction between host and firmware during both MLO and non-MLO
+operations.This feature is enabled only for the QCN9274, so it does
+not impact the WCN7850.
 
-I made the subject a bit more descriptive in the pending branch:
-https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=09a2421b6e5f617cfbeab906fa8037dda4aa95b8
+v9:
+- Rebased to latest TOT
+- refactored the common code to function
+- reolut size variable added
+- moved ab to front
 
-/jeff
+v8:
+- Addressed baochen comments
+- For this, added changes for paddr/vaddr alignment
+
+v7:
+- updated copyrights
+- removed memset
+
+v6:
+- commit subject change patch (1/3)
+- tested latest FW
+
+v5:
+- Rebased to latest TOT
+- updated the changes for ml peers
+
+v4:
+- Changed Read Address Name
+- reo lut support check added for qref service flag
+- Instead of [PATCH V4 0/3], had [PATCH V4 0/2]
+
+v3:
+- Added new patchset(patch-3) to enable the reo lut
+- Edited patch names
+
+v2:
+- Rebased on ToT
+- Addressed review comments
+
+Balamurugan S (1):
+  wifi: ath12k: Add support to clear qdesc array in REO cache
+
+Nithyanantham Paramasivam (1):
+  wifi: ath12k: Enable REO queue lookup table feature on QCN9274
+
+Sriram R (1):
+  wifi: ath12k: Fix the enabling of REO queue lookup table feature
+
+ drivers/net/wireless/ath/ath12k/dp.c     | 79 ++++++++++++++++--------
+ drivers/net/wireless/ath/ath12k/dp.h     |  7 ++-
+ drivers/net/wireless/ath/ath12k/dp_rx.c  | 11 +++-
+ drivers/net/wireless/ath/ath12k/hal.h    | 10 ++-
+ drivers/net/wireless/ath/ath12k/hal_rx.c | 19 +++++-
+ drivers/net/wireless/ath/ath12k/hw.c     |  6 +-
+ drivers/net/wireless/ath/ath12k/hw.h     |  5 +-
+ drivers/net/wireless/ath/ath12k/wmi.c    |  8 ++-
+ drivers/net/wireless/ath/ath12k/wmi.h    |  1 +
+ 9 files changed, 110 insertions(+), 36 deletions(-)
+
+
+base-commit: 48a62436540224f57013c27519dd2aa3ddd714c9
+-- 
+2.17.1
+
 
