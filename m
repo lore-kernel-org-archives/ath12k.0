@@ -4,91 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45214C0219D
-	for <ath12k@archiver.kernel.org>; Mon, 10 Feb 2025 13:55:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FC97C0219B
+	for <ath12k@archiver.kernel.org>; Mon, 10 Feb 2025 18:38:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uDtLDjgMJ61v2TX2UM0knNfzgLRlJx2XlE+RRyuyId0=; b=xPhC14bjNtgaMy+EfXDXTZp0Aw
-	k8hoEuzFprvEpJMImIrwiyH3VcOh1jsTAgmfUIqfAJv1LA5hxjfX/lcqkag1ThMF2aGUG016io5uy
-	m5c76iBtpzSsuus3tLQV7NR99e6D1m6zpwkFmaxJiWa6r697Gbg6/rbzMOV3I0hyfoNG6zMMfQcFL
-	LZxqBX2a/zFByLFust7+eCQjA1ill/p76Kp1v2ab+gZ7dFenU6ygq5k4x6jXFN5Jj2tOz3CJmDTQ/
-	2wYnC+JKqZ/1HNRJD5A6fbwME/kHYJRHQxLhJ5v5l72DHG5wwcxZr9Rz7uulZnw7AKCpTCBRkzyNQ
-	XOwau6qQ==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Gjew95/V5NgXtpzaCazVN4ozklSBnkqrhwTSJOZZ9N8=; b=FcXW0T5+9kq64gjNEb/xrdJBZY
+	X+ZQ0i0tuVYa1g7WAakhHSdf5b5XBMg2pv6wZL5jHODQuDKuK3qlPmc6Lx2euMmldgzCKMy5smXHQ
+	vRaUzUY3gOgCyr+1hKtDlDWebjLjOyK4+RGmsgajLmR5w3skVvUGcMwQTX6kW6Rcp9vnJASBcKhmA
+	nODhLkMZpf363azEdftmj04MhHEIOGnmF92o321jPt7grzhNz+cj9jaiTNWwEUxdDI5LaHbWQczSO
+	7WJ3CxQX6ONCKU6IxEu+JwjwIWpK08x/7y12rO+2a7o3CbATKEhaH6+uz9+6agf+N2LALxXvHSAtc
+	YbAyIMtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thUGQ-000000002nY-4A3C
+	id 1thYfq-00000000xIN-0Wel
 	for ath12k@archiver.kernel.org;
-	Mon, 10 Feb 2025 13:55:54 +0000
+	Mon, 10 Feb 2025 18:38:26 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thUGP-000000002mq-0Q2n
+	id 1thYVA-00000000v2n-0e41
 	for ath12k@lists.infradead.org;
-	Mon, 10 Feb 2025 13:55:54 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51A9bdjw006420;
-	Mon, 10 Feb 2025 13:55:51 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	uDtLDjgMJ61v2TX2UM0knNfzgLRlJx2XlE+RRyuyId0=; b=Xf9BpD8HyAMhyHLR
-	CtaoNbN7A+7/jtkv7FKexq8oqq1n8+pA3YXCA17Zir4aX1t6DfcbKhV1Hms+EC16
-	nmdjA8B+bfkQfuPCoGTaJJS9ATMTHZBXyoCk6kgP3kRayVqUggKZN0qg4/c6i4NW
-	Qh8aYb0U+DiGBk47/ks7JK+43KE3/eHAXGroHm8rH5H8A5HdPscU3sv/b/JM9QGA
-	1jCVXvBjadXjD/rIpMQpRww7B48w+Z2KEe6vy94IFNfDW2CceqHusPHyW5KT3Fbf
-	YKnNqrV730mnJVhm5u9lOfvARXICNVAyMC7BfQDxgUlcC8nhfDz2VrnbXosLyeQw
-	V7jEhw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0escj0c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Feb 2025 13:55:51 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51ADto69013653
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Feb 2025 13:55:50 GMT
-Received: from [10.216.14.138] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 10 Feb
- 2025 05:55:47 -0800
-Message-ID: <9092e428-01ac-a61b-eb07-6a075f98fab4@quicinc.com>
-Date: Mon, 10 Feb 2025 19:25:42 +0530
+	Mon, 10 Feb 2025 18:27:26 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51A9p80a018199
+	for <ath12k@lists.infradead.org>; Mon, 10 Feb 2025 18:27:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=Gjew95/V5NgXtpzaCazVN4ozklSBnkqrhwT
+	SJOZZ9N8=; b=l9SRFCHx4pR1Z5GE9YMfbgbC/CF3IeBeLGIUaZh2eU74+BhgC49
+	632AQsMVgAUT+v8rKJYQnv7tPnzOrvLI4BAors9EZLZTunu9ehQa6pHihAlr8kSc
+	Vh7x86zb953NhcceiAdundKauAxyyfLCml++cy4SyizmNZVjqUltLLfZBuL0BRoP
+	gJB0S9uvy96QX4pbWiH2gbEF+VoqTBf5vicmdWThmcau+exkdUzeZX2IRmbkNLO5
+	ENNlicQ+/qIBx8B4FP+PAvS2aoW0jIGzXm2LO4ZtS1mNaq38aX+Iq8VNXKCD/Khe
+	F4CTv1HyhwaVnlhYQcEOTBPUPl1gu0ENRgw==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0dxna7d-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 10 Feb 2025 18:27:22 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2fa562cc226so4031973a91.0
+        for <ath12k@lists.infradead.org>; Mon, 10 Feb 2025 10:27:22 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739212041; x=1739816841;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Gjew95/V5NgXtpzaCazVN4ozklSBnkqrhwTSJOZZ9N8=;
+        b=qOgjXrgJOpP4bZuJp+MZKETC2rsyVcDpKivgxjoNA3UjCLGEeBckMRqm07RGpBFYqg
+         Uoc9lx9mT85HKtJulhnSdUMm9S/NBpDtu9hgVvQvptH+DrjFMXAqX3L9ll0Ti6DrdwHz
+         gB814d768EiQIdYw3l6CcOEMnZVaedX+ZMiV+ltFvxWxYZ1REY/nFs0i3g9vqcKnVMWF
+         huD6HUOjhRTwZ5M0tWwj5rm2tKVI86av4yc/OKwGGZIYC1tqTMCCoPZbYmy6Z4njOlww
+         eRHmcnjdE3iXV1Xe95g6YD8eKcKHFL9nRYzqlXGyulEwkpiypBQPMudttBXVGR5IcrnA
+         bf+Q==
+X-Forwarded-Encrypted: i=1; AJvYcCUsvusxBrxMP7ZGUHa3ihlYxzXQOCC3eu9CE26EzryWyG5TvgB9yE9iOJOMKC9ONIWPjSeAnyY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyHaUIAb91Po7vx/HbBPV8/IcMfUbbPyMJ4ao5nqhgvlywtEflG
+	Y+2zyWXUDpVx+sfmI9lu3Ip4sWbdNumdrMH7bvChqLzf9+udm1MlAY/F3tuFUB5OpiF/weulPBX
+	TOBc1hPmFoIKKHH50ZCpVKrGrWB7MASbQxdo/ek6jdQTA5CKbSoxHuRPb1rPr
+X-Gm-Gg: ASbGncuaGiu9Z0tfhWEpCakOpY1IFWctO0s6soYOFn0aBTkXrjbMa/wBo9lBxiZJohz
+	1ykb+KEKc9FRklg5EqlTwQOOjposUfwP5+WxvgG+Ymp1osaqQZ4b9jL/lpMFHOQVbAH89qBSyMk
+	x/BVG5WHaS5/j6RhSPABBDA85yUZSGEMN3bExbVLnF5YMTBhi/OCAcJ+k+4OOMpDCVHk+3L0PrC
+	VrdeqERPRNvZlPFpejVY+1EVxcR1oV4/8WggelYd15Nl1qlPGLYNO69U/iy5Fz9pqM+63moTxH/
+	sarXHGkfMeJnhzYuOSNuHBf+UOIZAlH1Lljttev6qcT00odV7amgmYCp1I5u
+X-Received: by 2002:a05:6a00:2289:b0:725:460e:6bc0 with SMTP id d2e1a72fcca58-7305d2ac0admr25649700b3a.0.1739212041122;
+        Mon, 10 Feb 2025 10:27:21 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFPXrpGR0BvSH58Ju3d8FrcHnAh2KNvN/0WuaoCUw7XmsBPUZo/Z3DUS+E2PBVelTjibLdOTQ==
+X-Received: by 2002:a05:6a00:2289:b0:725:460e:6bc0 with SMTP id d2e1a72fcca58-7305d2ac0admr25649634b3a.0.1739212040605;
+        Mon, 10 Feb 2025 10:27:20 -0800 (PST)
+Received: from alokad-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73048ae8e83sm7948372b3a.84.2025.02.10.10.27.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 10 Feb 2025 10:27:20 -0800 (PST)
+From: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+To: ath11k@lists.infradead.org, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org
+Cc: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+Subject: [PATCH v4 0/5] wifi:ath11k/ath12k: refactor tx_arvif retrieval
+Date: Mon, 10 Feb 2025 10:27:13 -0800
+Message-Id: <20250210182718.408891-1-aloka.dixit@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v9 3/9] wifi: ath12k: Add HAL_RX_PPDU_START_USER_INFO TLV
- parsing support
-Content-Language: en-US
-To: Mahendran P <quic_mahep@quicinc.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-References: <20250206013854.174765-1-quic_periyasa@quicinc.com>
- <20250206013854.174765-4-quic_periyasa@quicinc.com>
- <d312265c-9b42-7c62-1467-205045a51a26@quicinc.com>
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <d312265c-9b42-7c62-1467-205045a51a26@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: CgJMC9_roaRasdRqAvKWPppo2bRgDhBJ
-X-Proofpoint-ORIG-GUID: CgJMC9_roaRasdRqAvKWPppo2bRgDhBJ
+X-Proofpoint-GUID: eJCZFLNI4abie3-0h6wHXWY4TtR6mbZs
+X-Proofpoint-ORIG-GUID: eJCZFLNI4abie3-0h6wHXWY4TtR6mbZs
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-10_08,2025-02-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 clxscore=1015
- suspectscore=0 lowpriorityscore=0 malwarescore=0 bulkscore=0
- priorityscore=1501 mlxscore=0 adultscore=0 spamscore=0 mlxlogscore=999
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502100117
+ definitions=2025-02-10_10,2025-02-10_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 bulkscore=0 clxscore=1015 adultscore=0
+ lowpriorityscore=0 impostorscore=0 malwarescore=0 mlxscore=0 phishscore=0
+ suspectscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2501170000 definitions=main-2502100149
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_055553_274443_0639BA6B 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20250210_102724_304597_FFEB2835 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,217 +114,38 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+MLO MBSSID series for cfg80211/mac80211, which is in review here 
+https://patchwork.kernel.org/project/linux-wireless/list/?series=902914&state=%2A&archive=both,
+changes the way transmitted profile data is stored for each link.
+As drivers currently retrieve 'arvif' for transmitted profile at
+multiple places, MLO MBSSID changes will becomes unnecessarily
+bloated with RCU operations for every retrieval. Refactor 'tx_arvif'
+to avoid this.
 
+Additionally, fix an issue in ath11k_mac_update_vif_chan() where
+tx_arvif is not reset to NULL inside 'for' loop during each
+iteration.
 
-On 2/10/2025 4:35 PM, Mahendran P wrote:
-> On 2/6/2025 7:08 AM, Karthikeyan Periyasamy wrote:
->> Currently, monitor is not enabled. However, in the future, the monitor
->> will be enabled. Therefore, add necessary HAL_RX_PPDU_START_USER_INFO TLV
->> parsing support in monitor Rx path, which help to populate the EHT radiotap
->> data.
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
->> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
->> Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
->> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
->> ---
->>   drivers/net/wireless/ath/ath12k/dp_mon.c  | 307 +++++++++++++++++++++-
->>   drivers/net/wireless/ath/ath12k/hal_rx.h  | 291 +++++++++++++++++---
->>   drivers/net/wireless/ath/ath12k/rx_desc.h |   9 -
->>   3 files changed, 551 insertions(+), 56 deletions(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
->> index dd17607d470d..96e9d68618d3 100644
->> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
->> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
->> @@ -81,7 +81,7 @@ ath12k_dp_mon_rx_populate_mu_user_info(const struct hal_rx_ppdu_end_user_stats *
->>   static void ath12k_dp_mon_parse_vht_sig_a(const struct hal_rx_vht_sig_a_info *vht_sig,
->>   					  struct hal_rx_mon_ppdu_info *ppdu_info)
->>   {
->> -	u32 nsts, group_id, info0, info1;
->> +	u32 nsts, info0, info1;
->>   	u8 gi_setting;
->>   
->>   	info0 = __le32_to_cpu(vht_sig->info0);
->> @@ -109,12 +109,8 @@ static void ath12k_dp_mon_parse_vht_sig_a(const struct hal_rx_vht_sig_a_info *vh
->>   	ppdu_info->bw = u32_get_bits(info0, HAL_RX_VHT_SIG_A_INFO_INFO0_BW);
->>   	ppdu_info->beamformed = u32_get_bits(info1,
->>   					     HAL_RX_VHT_SIG_A_INFO_INFO1_BEAMFORMED);
->> -	group_id = u32_get_bits(info0, HAL_RX_VHT_SIG_A_INFO_INFO0_GROUP_ID);
->> -	if (group_id == 0 || group_id == 63)
->> -		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->> -	else
->> -		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
->> -	ppdu_info->vht_flag_values5 = group_id;
->> +	ppdu_info->vht_flag_values5 = u32_get_bits(info0,
->> +						   HAL_RX_VHT_SIG_A_INFO_INFO0_GROUP_ID);
->>   	ppdu_info->vht_flag_values3[0] = (((ppdu_info->mcs) << 4) |
->>   					    ppdu_info->nss);
->>   	ppdu_info->vht_flag_values2 = ppdu_info->bw;
->> @@ -134,7 +130,6 @@ static void ath12k_dp_mon_parse_ht_sig(const struct hal_rx_ht_sig_info *ht_sig,
->>   	ppdu_info->ldpc = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_FEC_CODING);
->>   	ppdu_info->gi = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_GI);
->>   	ppdu_info->nss = (ppdu_info->mcs >> 3);
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->>   }
->>   
->>   static void ath12k_dp_mon_parse_l_sig_b(const struct hal_rx_lsig_b_info *lsigb,
->> @@ -166,7 +161,6 @@ static void ath12k_dp_mon_parse_l_sig_b(const struct hal_rx_lsig_b_info *lsigb,
->>   
->>   	ppdu_info->rate = rate;
->>   	ppdu_info->cck_flag = 1;
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->>   }
->>   
->>   static void ath12k_dp_mon_parse_l_sig_a(const struct hal_rx_lsig_a_info *lsiga,
->> @@ -206,7 +200,6 @@ static void ath12k_dp_mon_parse_l_sig_a(const struct hal_rx_lsig_a_info *lsiga,
->>   	}
->>   
->>   	ppdu_info->rate = rate;
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->>   }
->>   
->>   static void
->> @@ -243,7 +236,6 @@ ath12k_dp_mon_parse_he_sig_b2_ofdma(const struct hal_rx_he_sig_b2_ofdma_info *of
->>   	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_NSTS);
->>   	ppdu_info->beamformed = u32_get_bits(info0,
->>   					     HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_TXBF);
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_OFDMA;
->>   }
->>   
->>   static void
->> @@ -283,7 +275,6 @@ ath12k_dp_mon_parse_he_sig_b1_mu(const struct hal_rx_he_sig_b1_mu_info *he_sig_b
->>   				HAL_RX_HE_SIG_B1_MU_INFO_INFO0_RU_ALLOCATION);
->>   	ppdu_info->ru_alloc = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(ru_tones);
->>   	ppdu_info->he_RU[0] = ru_tones;
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
->>   }
->>   
->>   static void
->> @@ -417,7 +408,6 @@ ath12k_dp_mon_parse_he_sig_mu(const struct hal_rx_he_sig_a_mu_dl_info *he_sig_a_
->>   
->>   	ppdu_info->is_stbc = info1 &
->>   			     HAL_RX_HE_SIG_A_MU_DL_INFO1_STBC;
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
->>   }
->>   
->>   static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *he_sig_a,
->> @@ -565,7 +555,6 @@ static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *
->>   	dcm = u32_get_bits(info0, HAL_RX_HE_SIG_A_SU_INFO_INFO0_DCM);
->>   	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_A_SU_INFO_INFO0_NSTS);
->>   	ppdu_info->dcm = dcm;
->> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->>   }
->>   
->>   static void
->> @@ -1141,6 +1130,292 @@ ath12k_dp_mon_parse_eht_sig_hdr(struct hal_rx_mon_ppdu_info *ppdu_info,
->>   		ath12k_dp_mon_hal_rx_parse_eht_sig_ofdma(tlv_data, ppdu_info);
->>   }
->>   
->> +static inline enum ath12k_eht_ru_size
->> +hal_rx_mon_hal_ru_size_to_ath12k_ru_size(u32 hal_ru_size)
->> +{
->> +	switch (hal_ru_size) {
->> +	case HAL_EHT_RU_26:
->> +		return ATH12K_EHT_RU_26;
->> +	case HAL_EHT_RU_52:
->> +		return ATH12K_EHT_RU_52;
->> +	case HAL_EHT_RU_78:
->> +		return ATH12K_EHT_RU_52_26;
->> +	case HAL_EHT_RU_106:
->> +		return ATH12K_EHT_RU_106;
->> +	case HAL_EHT_RU_132:
->> +		return ATH12K_EHT_RU_106_26;
->> +	case HAL_EHT_RU_242:
->> +		return ATH12K_EHT_RU_242;
->> +	case HAL_EHT_RU_484:
->> +		return ATH12K_EHT_RU_484;
->> +	case HAL_EHT_RU_726:
->> +		return ATH12K_EHT_RU_484_242;
->> +	case HAL_EHT_RU_996:
->> +		return ATH12K_EHT_RU_996;
->> +	case HAL_EHT_RU_996x2:
->> +		return ATH12K_EHT_RU_996x2;
->> +	case HAL_EHT_RU_996x3:
->> +		return ATH12K_EHT_RU_996x3;
->> +	case HAL_EHT_RU_996x4:
->> +		return ATH12K_EHT_RU_996x4;
->> +	case HAL_EHT_RU_NONE:
->> +		return ATH12K_EHT_RU_INVALID;
->> +	case HAL_EHT_RU_996_484:
->> +		return ATH12K_EHT_RU_996_484;
->> +	case HAL_EHT_RU_996x2_484:
->> +		return ATH12K_EHT_RU_996x2_484;
->> +	case HAL_EHT_RU_996x3_484:
->> +		return ATH12K_EHT_RU_996x3_484;
->> +	case HAL_EHT_RU_996_484_242:
->> +		return ATH12K_EHT_RU_996_484_242;
->> +	default:
->> +		return ATH12K_EHT_RU_INVALID;
->> +	}
->> +}
-> 
-> consider using lookup table.
-> 
+v4: Added "compile tested only" in commit descriptions for ath11k.
 
-Lookup table need static array. Really need the static for this ?
+v3: addressed comment from v2 and removed NULL check for
+vif->mbssid_tx_vif from patch #1.
 
-Even if we need, shall we have this in a separate future patch ?
+v2: fixed kernel test robot error in patch 1/5 for tx_vif.
+https://lore.kernel.org/oe-kbuild-all/202501160626.Jbb3GHnk-lkp@intel.com
 
+Aloka Dixit (5):
+  wifi: ath11k: refactor transmitted arvif retrieval
+  wifi: ath11k: pass tx arvif for MBSSID and EMA beacon generation
+  wifi: ath12k: refactor transmitted arvif retrieval
+  wifi: ath12k: pass tx arvif for MBSSID and EMA beacon generation
+  wifi: ath12k: pass BSSID index as input for EMA
 
->> +
->> +static inline u32
->> +hal_rx_ul_ofdma_ru_size_to_width(enum ath12k_eht_ru_size ru_size)
->> +{
->> +	switch (ru_size) {
->> +	case ATH12K_EHT_RU_26:
->> +		return RU_26;
->> +	case ATH12K_EHT_RU_52:
->> +		return RU_52;
->> +	case ATH12K_EHT_RU_52_26:
->> +		return RU_52_26;
->> +	case ATH12K_EHT_RU_106:
->> +		return RU_106;
->> +	case ATH12K_EHT_RU_106_26:
->> +		return RU_106_26;
->> +	case ATH12K_EHT_RU_242:
->> +		return RU_242;
->> +	case ATH12K_EHT_RU_484:
->> +		return RU_484;
->> +	case ATH12K_EHT_RU_484_242:
->> +		return RU_484_242;
->> +	case ATH12K_EHT_RU_996:
->> +		return RU_996;
->> +	case ATH12K_EHT_RU_996_484:
->> +		return RU_996_484;
->> +	case ATH12K_EHT_RU_996_484_242:
->> +		return RU_996_484_242;
->> +	case ATH12K_EHT_RU_996x2:
->> +		return RU_2X996;
->> +	case ATH12K_EHT_RU_996x2_484:
->> +		return RU_2X996_484;
->> +	case ATH12K_EHT_RU_996x3:
->> +		return RU_3X996;
->> +	case ATH12K_EHT_RU_996x3_484:
->> +		return RU_3X996_484;
->> +	case ATH12K_EHT_RU_996x4:
->> +		return RU_4X996;
->> +	default:
->> +		return RU_INVALID;
->> +	}
->> +}
-> 
-> same as above
-> 
-
-same here
-
+ drivers/net/wireless/ath/ath11k/mac.c | 73 ++++++++++++------------
+ drivers/net/wireless/ath/ath12k/mac.c | 81 +++++++++++++--------------
+ 2 files changed, 75 insertions(+), 79 deletions(-)
 
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+2.34.1
+
 
