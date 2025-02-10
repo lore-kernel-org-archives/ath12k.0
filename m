@@ -4,92 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E688BC0219B
-	for <ath12k@archiver.kernel.org>; Mon, 10 Feb 2025 02:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C74FC02198
+	for <ath12k@archiver.kernel.org>; Mon, 10 Feb 2025 03:33:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=11cM/BZaI2vjs2Q66vXwHvHPRnDApqHqaW0iYSnpCds=; b=yriqilMoJRBnjuHPVPGr1TnosK
-	i7zEDuzM580+kJbTkX/2dhTUAs5h/UqG0+vH6g+yEC8Xni203l+UeisX4QYBhGs6Xhi+4/G8Ws/pu
-	2P2L5JkvPlqtwoNuQU81+17gfaPmQfQS6mUd58bcDGjdWWtdELYLGcGbvy9I+30y/rkiiCm2Q7D06
-	fOqOxpDuCfi5LwaWu0DIiPZQxLTIQp69IYWfO1b/qYzTiNaSz2izvWLj87SDVGWNzkIrmGGIZP2Pt
-	64BmfburvyQv0rJpwRKU5sqB0XgG7vngpmJQZPBjujDXaHE0NAS5/WhSzo37DOe7tm1aaraNy/Y/J
-	I2bp2fmw==;
+	bh=Tc+kij6+pE0t14MlY+EJRZoja7UejFCIx+FgUfhcgkU=; b=ND0PB0yZ487QzgoCRTFw5rXQBS
+	oj9g+5u676E18hXBtquejxb7jtvYe4JfMwZNDjTKw+214iXdzfNYLozvqvdBt/iURaIPe1QNMMMNU
+	ZY9X/FVj/sKczVUEMpN43yvpg56f0Vj1GShw/Oy4TO9PSEM4wmxCAjRgkOxqOWt3HkTBielO1TLzx
+	+uDm94nY8/3+cAQGK0LYty/M+SlCu/zpfpgWh43Pu53izYcNQ1VKJETFaIh2qs/iVZZsP5FgC4M5u
+	2y+wJdy8459EPfYScE2PK9eIzPi7KycHNvo7MGchWo5nQHEmiLU0PePRyDMHSHMTsIs9937pwO5h5
+	9Lr0QO1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thJuA-0000000G1Tq-2YWF
+	id 1thKYK-0000000G55d-09dd
 	for ath12k@archiver.kernel.org;
-	Mon, 10 Feb 2025 02:52:14 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 10 Feb 2025 03:33:44 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thJu7-0000000G1TT-21vf
+	id 1thKYH-0000000G55H-0nkx
 	for ath12k@lists.infradead.org;
-	Mon, 10 Feb 2025 02:52:13 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 519Kr0dN028226;
-	Mon, 10 Feb 2025 02:52:09 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Mon, 10 Feb 2025 03:33:42 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51A2Lsdj011113
+	for <ath12k@lists.infradead.org>; Mon, 10 Feb 2025 03:33:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	11cM/BZaI2vjs2Q66vXwHvHPRnDApqHqaW0iYSnpCds=; b=Xyoul4/r2Nh/4AJH
-	KdF99MhrPcCimtFdXc9uDCbwaBZmz4WGeHFA8bSyw/33vq3OpYp13QwwpZZC4wPK
-	Uf+T3IKXjieQOJc8wOR9k1b1XFQJuqalmnWvxXCVAvhDffej8LUkMVd+XfqJjhns
-	E3AQ6omzVPza+jlm2v+5zFzX5QMZq6w+iPMlG5r9397MDanKp1ko5x+8xAT7cUTY
-	2cKOl+U4ReZDp1m8+PcQZ6kax2jLdUYqdBcowex1ZH5a2mN9mkRtbKjnNHZs3s8Q
-	yRnHU9/0BncFOUG46NQGLKKQOVPsTuy9baMW1RReB65LMOGhSSoQSiT3eqWipHqq
-	1tvhxQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0e1jv4c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Feb 2025 02:52:08 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51A2q7il021854
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Feb 2025 02:52:07 GMT
-Received: from [10.253.15.168] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 9 Feb 2025
- 18:52:06 -0800
-Message-ID: <bc54e1fa-da58-48e6-a148-4a980833f448@quicinc.com>
-Date: Mon, 10 Feb 2025 10:52:03 +0800
+	Tc+kij6+pE0t14MlY+EJRZoja7UejFCIx+FgUfhcgkU=; b=GiV1ooQYZi7qVDXH
+	dxrqq/YhdQO0zUYJwfSucenCrfpBpLq/r5SUrFpQCtXEZquyrJNsb03bYi2Dsna7
+	CrBu7TEtCPidBBXMQ/QnwyqNRMvJSk8zcWsM+LUhFkZplsSzPDSkQyE1u1zrr6Jz
+	2gOQiKqa3wREQASg0sEOD6gTGATDdegCshvhIrjbIhZj5jRvsgKyA9NGaG/Eo7qB
+	elAhtra2uyvi25hRd22cRPgkkmafZVWkclp6kBzaAhCRXzr4Qh3WO1yay//7Xm5/
+	3vlVgq10lweBWCuuIM4G4lnEwZFEnk9tTSR9/19mAHtyy167frKTLHS0IcUXumtI
+	1Dw8HA==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44q8ky8472-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 10 Feb 2025 03:33:39 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2fa34df4995so7060027a91.0
+        for <ath12k@lists.infradead.org>; Sun, 09 Feb 2025 19:33:39 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739158419; x=1739763219;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Tc+kij6+pE0t14MlY+EJRZoja7UejFCIx+FgUfhcgkU=;
+        b=aRWM3JMlPtEQudV1DAYrHGkmuGf44Cw/9l11OeEVQARkxnlw3U6HgoFQlgEVQtIio8
+         LY2DIIrR4S/YiYXrpSTLMmApf5Z5Yex9tohmkAuD9+REdGl/xkDqhDsubmn0toegBJMA
+         Dx6ZfN0w2Lg1E3NVO4tOIr6baYxKI93ECJE0eEp1Izdb55ORkIE1CnRks006+ZsUUGb7
+         OA0+Mwn+vH7QOLKUFHts3ptTg6SmMikdS9qcBvPcl4owphfDSi8R8oOu80iv/YuUcU+r
+         SvrPxblThd/2oPPo6q56IwnRbBw8iVgnIP8tfHzHwoj1b0xixEnDoLLt/8jXtlyu7HDQ
+         qjmQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXAs67tpsTq+rbVWDKpS7UK5UBQWbIAyUR7b1ynUvYLyxcBrTPGwBE1EU7dH04lH0Mf+LZRlh0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxHmGKeg3/832pcCDyu0SykOuCEfyK9yFjzk7cDaTcK4GU3RsVi
+	/usUAk7eKbd/MikkOMa+94UdRjf7fveTOjmqvDxUj2NG08uWHOV6jQtlOJg7vLBnua2rqJvzbO+
+	Oh9RbgpaF1qsGiABVvVZgq5emN7Ztf9V1r/9+GxkCtGUji2emBU4roF5X2orB
+X-Gm-Gg: ASbGncs8aPWxo3np11TO+LAQOrRavuj5cvM3HQtwCQePnv8uFMzuyfrbddOfbv7Bnyc
+	4t/ZAjD6LfLVBPPfVn3ntxgT37cLwWXRhoOGfvws8F+oNTboUBSdCizThqgrO/F+c8kDpAulBjb
+	Nr+O9okMW0/1Ohq7+59O0LUqXyvqXrCCavMo3SDAjH8D5W9LPiqGCnzVQgFm/v5O3P9Kgh3fizL
+	2AMDhkLq7OZGAcSEq6En7Tum5Amd0WvkIVGXsF/kWd2RgTiuc/faLIDBY8irl1VKYTgEJ5COSVi
+	BNjBSSUsr3ypO523Xu+I5cmRsyJ1Zlmuy8ULmhU=
+X-Received: by 2002:a05:6a00:3016:b0:725:e499:5b86 with SMTP id d2e1a72fcca58-7305d546034mr20917160b3a.20.1739158418678;
+        Sun, 09 Feb 2025 19:33:38 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFNWKz69WA1iDoZIkm4CPxi7iVaekbu8x2lRv9HMX2DcslnSjt1KSl9w6DbAHKm61c/erwkVQ==
+X-Received: by 2002:a05:6a00:3016:b0:725:e499:5b86 with SMTP id d2e1a72fcca58-7305d546034mr20917126b3a.20.1739158418324;
+        Sun, 09 Feb 2025 19:33:38 -0800 (PST)
+Received: from [10.152.202.18] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73048ae7f84sm6511273b3a.80.2025.02.09.19.33.35
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 09 Feb 2025 19:33:38 -0800 (PST)
+Message-ID: <5eede3cc-1b60-41ff-9ced-8a75107748e3@oss.qualcomm.com>
+Date: Mon, 10 Feb 2025 09:03:34 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: Abort scan before removing link interface
- to prevent duplicate deletion
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, <ath12k@lists.infradead.org>,
-        Jeff Johnson <quic_jjohnson@quicinc.com>
-CC: <linux-wireless@vger.kernel.org>,
-        Aditya Kumar Singh
-	<aditya.kumar.singh@oss.qualcomm.com>
-References: <20250124093352.481-1-quic_lingbok@quicinc.com>
- <44dc86f0-7775-4d47-9058-17cb048cd976@quicinc.com>
- <7ee0f7fd-7a3d-4942-8323-08ff9c4c8915@oss.qualcomm.com>
+Subject: Re: [PATCH] wifi: ath12k: Fix locking in error paths
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Bart Van Assche <bvanassche@acm.org>, Kalle Valo <kvalo@kernel.org>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+References: <20250206221317.3845663-1-bvanassche@acm.org>
+ <c9765212-bfb1-4b8d-80f2-7219bb4a7372@oss.qualcomm.com>
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 Content-Language: en-US
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-In-Reply-To: <7ee0f7fd-7a3d-4942-8323-08ff9c4c8915@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: QbFqbBWLCvbxJvwPFsW9qyGiYd6Eo0U-
-X-Proofpoint-GUID: QbFqbBWLCvbxJvwPFsW9qyGiYd6Eo0U-
+In-Reply-To: <c9765212-bfb1-4b8d-80f2-7219bb4a7372@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: eMme3HjOyVohzFNZXSWtuHRzkCGnBD2g
+X-Proofpoint-ORIG-GUID: eMme3HjOyVohzFNZXSWtuHRzkCGnBD2g
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-10_01,2025-02-07_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 bulkscore=0
- suspectscore=0 lowpriorityscore=0 mlxlogscore=999 impostorscore=0
- priorityscore=1501 adultscore=0 malwarescore=0 clxscore=1015 spamscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502100022
+ definitions=2025-02-10_02,2025-02-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxscore=0
+ phishscore=0 priorityscore=1501 lowpriorityscore=0 bulkscore=0
+ mlxlogscore=999 spamscore=0 malwarescore=0 impostorscore=0 suspectscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502100027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250209_185211_649950_1B8260CC 
-X-CRM114-Status: GOOD (  18.81  )
+X-CRM114-CacheID: sfid-20250209_193341_239692_19C392AF 
+X-CRM114-Status: GOOD (  14.70  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,74 +121,51 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2025/2/8 2:53, Jeff Johnson wrote:
-> On 2/7/2025 1:04 AM, Lingbo Kong wrote:
+On 2/7/25 20:40, Jeff Johnson wrote:
+> On 2/6/2025 2:13 PM, Bart Van Assche wrote:
+>> If ag->mutex has been locked, unlock it before returning. If it has not
+>> been locked, do not unlock it before returning. These bugs have been
+>> detected by the Clang thread-safety analyzer.
 >>
+>> Cc: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+>> Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+>> Fixes: ee146e11b4d9 ("wifi: ath12k: refactor core start based on hardware group")
+>> Signed-off-by: Bart Van Assche <bvanassche@acm.org>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/core.c | 4 +++-
+>>   1 file changed, 3 insertions(+), 1 deletion(-)
 >>
->> On 2025/1/24 17:33, Lingbo Kong wrote:
->>> Currently, when ath12k performs the remove link interface operation, if
->>> there is an ongoing scan operation on the arvif, ath12k may execute the
->>> remove link interface operation multiple times on the same arvif. This
->>> occurs because, during the remove link operation, if a scan operation is
->>> present on the arvif, ath12k may receive a WMI_SCAN_EVENT_COMPLETED event
->>> from the firmware. Upon receiving this event, ath12k will continue to
->>> execute the ath12k_scan_vdev_clean_work() function, performing the remove
->>> link interface operation on the same arvif again.
->>>
->>> To address this issue, before executing the remove link interface
->>> operation, ath12k needs to check if there is an ongoing scan operation on
->>> the current arvif. If such an operation exists, it should be aborted.
->>>
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>>
->>> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
->>> ---
->>>    drivers/net/wireless/ath/ath12k/mac.c | 5 +++++
->>>    1 file changed, 5 insertions(+)
->>>
->>> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->>> index 329c05003721..cdce88787182 100644
->>> --- a/drivers/net/wireless/ath/ath12k/mac.c
->>> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->>> @@ -9333,6 +9333,11 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
->>>    	    ar->num_started_vdevs == 1 && ar->monitor_vdev_created)
->>>    		ath12k_mac_monitor_stop(ar);
->>>    
->>> +	if (ar->scan.arvif == arvif && ar->scan.state == ATH12K_SCAN_RUNNING) {
->>> +		ath12k_scan_abort(ar);
->>> +		ar->scan.arvif = NULL;
->>> +	}
->>> +
->>>    	ath12k_mac_remove_link_interface(hw, arvif);
->>>    	ath12k_mac_unassign_link_vif(arvif);
->>>    }
->>>
->>> base-commit: 376673aa393c1c232299be3e910d7f2e6d974b2f
->>
->> hi jeff,
->> do you have any updates on this patch?🙂
+>> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+>> index 0606116d6b9c..212cd935e60a 100644
+>> --- a/drivers/net/wireless/ath/ath12k/core.c
+>> +++ b/drivers/net/wireless/ath/ath12k/core.c
+>> @@ -1122,16 +1122,18 @@ int ath12k_core_qmi_firmware_ready(struct ath12k_base *ab)
+>>   		ath12k_core_stop(ab);
+>>   		mutex_unlock(&ab->core_lock);
+>>   	}
+>> +	mutex_unlock(&ag->mutex);
+>>   	goto exit;
+>>   
+>>   err_dp_free:
+>>   	ath12k_dp_free(ab);
+>>   	mutex_unlock(&ab->core_lock);
+>> +	mutex_unlock(&ag->mutex);
+>> +
+>>   err_firmware_stop:
+>>   	ath12k_qmi_firmware_stop(ab);
+>>   
+>>   exit:
+>> -	mutex_unlock(&ag->mutex);
+>>   	return ret;
+>>   }
+>>   
 > 
-> while this patch applies cleanly to ath/main, it does not apply cleanly to the
-> current ath/pending, conflicting with:
-> 
-> https://msgid.link/20250204-unlink_link_arvif_from_chanctx-v2-8-764fb5973c1a@oss.qualcomm.com
-> 
-> that patch relocates the adjacent lines:
->     	ath12k_mac_remove_link_interface(hw, arvif);
->     	ath12k_mac_unassign_link_vif(arvif);
-> 
-> so should this logic stay in ath12k_mac_op_unassign_vif_chanctx() or should it
-> also be relocated to ath12k_mac_op_change_vif_links()?
-> 
-> /jeff
+> I made the subject a bit more descriptive in the pending branch:
+> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=09a2421b6e5f617cfbeab906fa8037dda4aa95b8
 
-hi, jeff, this logic should stay in ath12k_mac_op_unassign_vif_chanctx().
+Better now, thanks.
 
-should i resend a new version of the patch based on 
-https://msgid.link/20250204-unlink_link_arvif_from_chanctx-v2-8-764fb5973c1a@oss.qualcomm.com 
-?
 
-/lingbok
+-- 
+Aditya
 
