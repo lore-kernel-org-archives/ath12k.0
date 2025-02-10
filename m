@@ -4,91 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97E2DC0219D
-	for <ath12k@archiver.kernel.org>; Mon, 10 Feb 2025 11:32:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C278C0219D
+	for <ath12k@archiver.kernel.org>; Mon, 10 Feb 2025 13:50:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IOhcI6Ef5VlBbmuFwBzdQhaj0CX2gGBw1wvwQok+pbU=; b=Bm9vytzCnipcUU6J+TFdVtpQwV
-	R9SQ+jW/suRnM7dURQ256Cydj4zpLx84qPBE9NW8dMsdg6d3W9MluFJ+QeDsvHyRqj17Dco3y2oRr
-	iJRWw0Rm1WKKts7AylUPowI/zTVRK8lXVu1uMhs4HWupvjlvhZ96YX9hx2hoQdpkM+kf3lJ+o1X/A
-	89TMk3FnBQfKgcOsBRRJ30ZvdgwwXh8albrhGLc30daoSU4pSEwZLzXS/Ynp1UhOStBix2JBmepVH
-	uggRYZ3HAQH9Q7gjb0W0LJVdrH8UHMwW5bJbEIEpW/bl1jEO5l1Guht4QFkEIPPd5yoCcqNTtcS3n
-	edsyz5nA==;
+	bh=izAZ47/J8OLX0F+QPE3KgdL1yhaG7hVSK5i+tO6h29M=; b=k5zxxR+KCEg3OjNRrz0FraPtBB
+	SJncED37+8BckJbpboy+PV6HZQik7uxkcAg1gK+uxcUdzAw5BKtuaQmDtusFDLJVHvZiepkwxwLlA
+	zblB1564Sk6pEPKQ8QmJ30TqMdtZAYK4d3im8ieyat/mQ9goIw1F7jKZYAT2d5h2uAJj5HWTVg6c5
+	rw8aDYglbdz/onXWfvcTmBmJUw5FO/iC52KfrTzUgDx7JhMKXwdmoJ8O/xEUORu4j5dSyRFSOMFKf
+	6oWAi+juMTDWD+7wb3ZDdqA+1dfPKu0dH+NwGMlaiu9sI89kr8rIiU8TXa0mjsk3eGJfSF21W8yVa
+	JDb0srnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thS24-0000000HEPN-1PA2
+	id 1thUBf-0000000022x-1SBB
 	for ath12k@archiver.kernel.org;
-	Mon, 10 Feb 2025 11:32:56 +0000
+	Mon, 10 Feb 2025 13:50:59 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thRgJ-0000000HA5L-3ri3
+	id 1thUBJ-0000000021X-3BpF
 	for ath12k@lists.infradead.org;
-	Mon, 10 Feb 2025 11:10:29 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51A8xeJJ013192;
-	Mon, 10 Feb 2025 11:10:27 GMT
+	Mon, 10 Feb 2025 13:50:39 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51A8h5VY015701;
+	Mon, 10 Feb 2025 13:50:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IOhcI6Ef5VlBbmuFwBzdQhaj0CX2gGBw1wvwQok+pbU=; b=Zr/bgXWITvkEXN77
-	Lzq2tCtA09RHmWjTATg3fNuKI8bEYVYYTe4pITL/um8vT+4OQZRLSKdOu6b7U4qt
-	9Yf8P+H3dCeAByq7jogTY0LtAg/pRNOJ3qmcbfC+AmlcEoYgrpyUAJEtdybFx6mY
-	7IzW+SW0uW02YL/BaIFDT/FevaisGgI/nmpd5EuuLRv8HWi9P9dVu67Q890ZefR1
-	tmbrEyYHrN5+TQj6o3DrFxG6ChVmDCMCkmYcf0Y8B26XZ2wcsdz0V/7YxfnefZsr
-	FfhYrEiQlpmtT2MnCgXCSjk+vVM/a6rGBIuxzIf4sgUj32q3/G7Y+PhBmwlVMCGA
-	7mAw8g==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0dqc5ar-1
+	izAZ47/J8OLX0F+QPE3KgdL1yhaG7hVSK5i+tO6h29M=; b=IezBZhJ9REwXNtZD
+	3fokGFoP1l/DSWLh3NwYamCfOC8xoDDEPm4znlbsPfNSrq207FKhDzuGOqcomYuZ
+	O0p9WykQu32IqTUoZSiMyYgSuexKJGcGyQ20FffEevpCaf2trZEbNhH2CfcRMll0
+	M5/tdATAwNNmn0VLInDpCKdJkgxADuh25hReoG7XNu41raoVTVAIKifLSAJm1OkD
+	8O3zAsS3t65C22C7uVh2/nExdBBZ/Xq+BRrdRWohZNJ9K1mATBQrfGS2FN3FwGWt
+	21hApWX4EeNxVPQ5ce0s+oBkUpzMs1z4dBVW9ywrKO0JW2R7BdWfqoaWzeCH//Gu
+	fdEsGg==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44qe6nrtcn-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Feb 2025 11:10:27 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51AB5N0d026293
+	Mon, 10 Feb 2025 13:50:35 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51ADoYQl005131
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Feb 2025 11:05:23 GMT
-Received: from [10.152.202.85] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+	Mon, 10 Feb 2025 13:50:34 GMT
+Received: from [10.216.14.138] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 10 Feb
- 2025 03:05:21 -0800
-Message-ID: <d312265c-9b42-7c62-1467-205045a51a26@quicinc.com>
-Date: Mon, 10 Feb 2025 16:35:17 +0530
+ 2025 05:50:31 -0800
+Message-ID: <a825284b-431f-696b-3f76-f13763e46438@quicinc.com>
+Date: Mon, 10 Feb 2025 19:20:26 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.15.1
-Subject: Re: [PATCH v9 3/9] wifi: ath12k: Add HAL_RX_PPDU_START_USER_INFO TLV
+Subject: Re: [PATCH v9 2/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_EHT_SIG TLV
  parsing support
-Content-Language: en-US
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        <ath12k@lists.infradead.org>
+To: Mahendran P <quic_mahep@quicinc.com>, <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
         Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 References: <20250206013854.174765-1-quic_periyasa@quicinc.com>
- <20250206013854.174765-4-quic_periyasa@quicinc.com>
-From: Mahendran P <quic_mahep@quicinc.com>
-In-Reply-To: <20250206013854.174765-4-quic_periyasa@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+ <20250206013854.174765-3-quic_periyasa@quicinc.com>
+ <7a27d2d0-6630-f074-b426-04b199f3821d@quicinc.com>
+Content-Language: en-US
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <7a27d2d0-6630-f074-b426-04b199f3821d@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 8wXGkFWeiOIVnm8hLTi57dqJJyVsbB3-
-X-Proofpoint-ORIG-GUID: 8wXGkFWeiOIVnm8hLTi57dqJJyVsbB3-
+X-Proofpoint-GUID: MY_zXsDh3V241IGcpFYYMWzeHIljt2EV
+X-Proofpoint-ORIG-GUID: MY_zXsDh3V241IGcpFYYMWzeHIljt2EV
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-10_05,2025-02-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
- phishscore=0 spamscore=0 malwarescore=0 impostorscore=0 lowpriorityscore=0
- clxscore=1015 priorityscore=1501 bulkscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
- definitions=main-2502100092
+ definitions=2025-02-10_08,2025-02-10_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ adultscore=0 bulkscore=0 spamscore=0 malwarescore=0 mlxscore=0
+ phishscore=0 mlxlogscore=999 impostorscore=0 suspectscore=0
+ lowpriorityscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2501170000 definitions=main-2502100115
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_031028_021567_3B068B4B 
-X-CRM114-Status: GOOD (  19.73  )
+X-CRM114-CacheID: sfid-20250210_055037_839700_B3BF3796 
+X-CRM114-Status: GOOD (  18.17  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,745 +103,167 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/6/2025 7:08 AM, Karthikeyan Periyasamy wrote:
-> Currently, monitor is not enabled. However, in the future, the monitor
-> will be enabled. Therefore, add necessary HAL_RX_PPDU_START_USER_INFO TLV
-> parsing support in monitor Rx path, which help to populate the EHT radiotap
-> data.
+
+
+On 2/10/2025 4:23 PM, Mahendran P wrote:
+> On 2/6/2025 7:08 AM, Karthikeyan Periyasamy wrote:
+>> Currently, monitor is not enabled. However, in the future, the monitor
+>> will be enabled. Therefore, add the necessary HAL_PHYRX_GENERIC_EHT_SIG
+>> TLV parsing support in monitor Rx path, which help to populate the EHT
+>> radiotap data.
+>>
+>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>
+>> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+>> Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+>> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+>> ---
+>>   drivers/net/wireless/ath/ath12k/dp_mon.c | 548 +++++++++++++++++++++--
+>>   drivers/net/wireless/ath/ath12k/hal_rx.h | 136 +++++-
+>>   2 files changed, 638 insertions(+), 46 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+>> index 61fd481b7a3b..dd17607d470d 100644
+>> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
+>> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+>> @@ -13,6 +13,9 @@
+>>   #define ATH12K_LE32_DEC_ENC(value, dec_bits, enc_bits)	\
+>>   		u32_encode_bits(le32_get_bits(value, dec_bits), enc_bits)
+>>   
+>> +#define ATH12K_LE64_DEC_ENC(value, dec_bits, enc_bits) \
+>> +		u32_encode_bits(le64_get_bits(value, dec_bits), enc_bits)
 > 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> u64_encode_bits?
 > 
-> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-> Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> ---
->  drivers/net/wireless/ath/ath12k/dp_mon.c  | 307 +++++++++++++++++++++-
->  drivers/net/wireless/ath/ath12k/hal_rx.h  | 291 +++++++++++++++++---
->  drivers/net/wireless/ath/ath12k/rx_desc.h |   9 -
->  3 files changed, 551 insertions(+), 56 deletions(-)
+
+No, Its not needed. Here we need to decode from the u64 and get assign 
+to u32 as defined by eht radiotap header.
+
+
+>> @@ -836,6 +1239,9 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+>>   		case HAL_RX_PREAMBLE_11AX:
+>>   			ppdu_info->he_flags = 1;
+>>   			break;
+>> +		case HAL_RX_PREAMBLE_11BE:
+>> +			ppdu_info->is_eht = true;
+>> +			break;
+>>   		default:
+>>   			break;
+>>   		}
+>> @@ -961,6 +1367,21 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
+>>   	case HAL_PHYRX_GENERIC_U_SIG:
+>>   		ath12k_dp_mon_hal_rx_parse_u_sig_hdr(tlv_data, ppdu_info);
+>>   		break;
+>> +	case HAL_PHYRX_GENERIC_EHT_SIG:
+>> +		/* Handle the case where aggregation is in progress
+>> +		 * or the current TLV is one of the TLVs which should be
+>> +		 * aggregated
+>> +		 */
+>> +		if (!ppdu_info->tlv_aggr.in_progress) {
+>> +			ppdu_info->tlv_aggr.in_progress = true;
+>> +			ppdu_info->tlv_aggr.tlv_tag = tlv_tag;
+>> +			ppdu_info->tlv_aggr.cur_len = 0;
+>> +		}
+>> +
+>> +		ppdu_info->is_eht = true;
+>> +
+>> +		ath12k_dp_mon_hal_aggr_tlv(ppdu_info, tlv_len, tlv_data);
+>> +		break;
+>>   	case HAL_DUMMY:
+>>   		return HAL_RX_MON_STATUS_BUF_DONE;
+>>   	case HAL_RX_PPDU_END_STATUS_DONE:
+>> @@ -1158,22 +1579,59 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
+>>   		rxs->ampdu_reference = ampdu_id;
+>>   	}
+>>   
+>> -	if (ppduinfo->eht_usig) {
+>> +	if (ppduinfo->is_eht || ppduinfo->eht_usig) {
+>>   		struct ieee80211_radiotap_tlv *tlv;
+>> +		struct ieee80211_radiotap_eht *eht;
+>>   		struct ieee80211_radiotap_eht_usig *usig;
+>> -		u16 len = sizeof(*usig);
+>> +		u16 len = 0, i, eht_len, usig_len;
+>> +		u8 user;
+>> +
+>> +		if (ppduinfo->is_eht) {
+>> +			eht_len = struct_size(eht,
+>> +					      user_info,
+>> +					      ppduinfo->eht_info.num_user_info);
+>> +			len += sizeof(*tlv) + eht_len;
+>> +		}
+>> +
+>> +		if (ppduinfo->eht_usig) {
+>> +			usig_len = sizeof(*usig);
+>> +			len += sizeof(*tlv) + usig_len;
+>> +		}
+>>   
+>>   		rxs->flag |= RX_FLAG_RADIOTAP_TLV_AT_END;
+>>   		rxs->encoding = RX_ENC_EHT;
+>>   
+>>   		skb_reset_mac_header(mon_skb);
+>>   
+>> -		tlv = skb_push(mon_skb, sizeof(*tlv) + len);
+>> -		tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT_USIG);
+>> -		tlv->len = cpu_to_le16(len);
+>> +		tlv = skb_push(mon_skb, len);
+>> +
+>> +		if (ppduinfo->is_eht) {
+>> +			tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT);
+>> +			tlv->len = cpu_to_le16(eht_len);
+>>   
+>> -		usig = (struct ieee80211_radiotap_eht_usig *)tlv->data;
+>> -		*usig = ppduinfo->usig;
+>> +			eht = (struct ieee80211_radiotap_eht *)tlv->data;
+>> +			eht->known = ppduinfo->eht_info.eht.known;
+>> +
+>> +			for (i = 0;
+>> +			     i < ARRAY_SIZE(eht->data) &&
+>> +			     i < ARRAY_SIZE(ppduinfo->eht_info.eht.data);
+>> +			     i++)
+>> +				eht->data[i] = ppduinfo->eht_info.eht.data[i];
+>> +
+>> +			for (user = 0; user < ppduinfo->eht_info.num_user_info; user++)
+>> +				put_unaligned_le32(ppduinfo->eht_info.user_info[user],
+>> +						   &eht->user_info[user]);
+>> +
+>> +			tlv = (struct ieee80211_radiotap_tlv *)&tlv->data[eht_len];
+>> +		}
+>> +
+>> +		if (ppduinfo->eht_usig) {
+>> +			tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT_USIG);
+>> +			tlv->len = cpu_to_le16(usig_len);
+>> +
+>> +			usig = (struct ieee80211_radiotap_eht_usig *)tlv->data;
+>> +			*usig = ppduinfo->u_sig_info.usig;
+>> +		}
+>>   	} else if (ppduinfo->he_mu_flags) {
+>>   		rxs->flag |= RX_FLAG_RADIOTAP_HE_MU;
+>>   		rxs->encoding = RX_ENC_HE;
+>> diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
+>> index 2da16f27e76c..959f2283294c 100644
+>> --- a/drivers/net/wireless/ath/ath12k/hal_rx.h
+>> +++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
+>> @@ -71,6 +71,8 @@ enum hal_rx_preamble {
+>>   	HAL_RX_PREAMBLE_11N,
+>>   	HAL_RX_PREAMBLE_11AC,
+>>   	HAL_RX_PREAMBLE_11AX,
+>> +	HAL_RX_PREAMBLE_11BA,
 > 
-> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
-> index dd17607d470d..96e9d68618d3 100644
-> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
-> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
-> @@ -81,7 +81,7 @@ ath12k_dp_mon_rx_populate_mu_user_info(const struct hal_rx_ppdu_end_user_stats *
->  static void ath12k_dp_mon_parse_vht_sig_a(const struct hal_rx_vht_sig_a_info *vht_sig,
->  					  struct hal_rx_mon_ppdu_info *ppdu_info)
->  {
-> -	u32 nsts, group_id, info0, info1;
-> +	u32 nsts, info0, info1;
->  	u8 gi_setting;
->  
->  	info0 = __le32_to_cpu(vht_sig->info0);
-> @@ -109,12 +109,8 @@ static void ath12k_dp_mon_parse_vht_sig_a(const struct hal_rx_vht_sig_a_info *vh
->  	ppdu_info->bw = u32_get_bits(info0, HAL_RX_VHT_SIG_A_INFO_INFO0_BW);
->  	ppdu_info->beamformed = u32_get_bits(info1,
->  					     HAL_RX_VHT_SIG_A_INFO_INFO1_BEAMFORMED);
-> -	group_id = u32_get_bits(info0, HAL_RX_VHT_SIG_A_INFO_INFO0_GROUP_ID);
-> -	if (group_id == 0 || group_id == 63)
-> -		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
-> -	else
-> -		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
-> -	ppdu_info->vht_flag_values5 = group_id;
-> +	ppdu_info->vht_flag_values5 = u32_get_bits(info0,
-> +						   HAL_RX_VHT_SIG_A_INFO_INFO0_GROUP_ID);
->  	ppdu_info->vht_flag_values3[0] = (((ppdu_info->mcs) << 4) |
->  					    ppdu_info->nss);
->  	ppdu_info->vht_flag_values2 = ppdu_info->bw;
-> @@ -134,7 +130,6 @@ static void ath12k_dp_mon_parse_ht_sig(const struct hal_rx_ht_sig_info *ht_sig,
->  	ppdu_info->ldpc = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_FEC_CODING);
->  	ppdu_info->gi = u32_get_bits(info1, HAL_RX_HT_SIG_INFO_INFO1_GI);
->  	ppdu_info->nss = (ppdu_info->mcs >> 3);
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->  }
->  
->  static void ath12k_dp_mon_parse_l_sig_b(const struct hal_rx_lsig_b_info *lsigb,
-> @@ -166,7 +161,6 @@ static void ath12k_dp_mon_parse_l_sig_b(const struct hal_rx_lsig_b_info *lsigb,
->  
->  	ppdu_info->rate = rate;
->  	ppdu_info->cck_flag = 1;
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->  }
->  
->  static void ath12k_dp_mon_parse_l_sig_a(const struct hal_rx_lsig_a_info *lsiga,
-> @@ -206,7 +200,6 @@ static void ath12k_dp_mon_parse_l_sig_a(const struct hal_rx_lsig_a_info *lsiga,
->  	}
->  
->  	ppdu_info->rate = rate;
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->  }
->  
->  static void
-> @@ -243,7 +236,6 @@ ath12k_dp_mon_parse_he_sig_b2_ofdma(const struct hal_rx_he_sig_b2_ofdma_info *of
->  	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_NSTS);
->  	ppdu_info->beamformed = u32_get_bits(info0,
->  					     HAL_RX_HE_SIG_B2_OFDMA_INFO_INFO0_STA_TXBF);
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_OFDMA;
->  }
->  
->  static void
-> @@ -283,7 +275,6 @@ ath12k_dp_mon_parse_he_sig_b1_mu(const struct hal_rx_he_sig_b1_mu_info *he_sig_b
->  				HAL_RX_HE_SIG_B1_MU_INFO_INFO0_RU_ALLOCATION);
->  	ppdu_info->ru_alloc = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(ru_tones);
->  	ppdu_info->he_RU[0] = ru_tones;
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
->  }
->  
->  static void
-> @@ -417,7 +408,6 @@ ath12k_dp_mon_parse_he_sig_mu(const struct hal_rx_he_sig_a_mu_dl_info *he_sig_a_
->  
->  	ppdu_info->is_stbc = info1 &
->  			     HAL_RX_HE_SIG_A_MU_DL_INFO1_STBC;
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
->  }
->  
->  static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *he_sig_a,
-> @@ -565,7 +555,6 @@ static void ath12k_dp_mon_parse_he_sig_su(const struct hal_rx_he_sig_a_su_info *
->  	dcm = u32_get_bits(info0, HAL_RX_HE_SIG_A_SU_INFO_INFO0_DCM);
->  	ppdu_info->nss = u32_get_bits(info0, HAL_RX_HE_SIG_A_SU_INFO_INFO0_NSTS);
->  	ppdu_info->dcm = dcm;
-> -	ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
->  }
->  
->  static void
-> @@ -1141,6 +1130,292 @@ ath12k_dp_mon_parse_eht_sig_hdr(struct hal_rx_mon_ppdu_info *ppdu_info,
->  		ath12k_dp_mon_hal_rx_parse_eht_sig_ofdma(tlv_data, ppdu_info);
->  }
->  
-> +static inline enum ath12k_eht_ru_size
-> +hal_rx_mon_hal_ru_size_to_ath12k_ru_size(u32 hal_ru_size)
-> +{
-> +	switch (hal_ru_size) {
-> +	case HAL_EHT_RU_26:
-> +		return ATH12K_EHT_RU_26;
-> +	case HAL_EHT_RU_52:
-> +		return ATH12K_EHT_RU_52;
-> +	case HAL_EHT_RU_78:
-> +		return ATH12K_EHT_RU_52_26;
-> +	case HAL_EHT_RU_106:
-> +		return ATH12K_EHT_RU_106;
-> +	case HAL_EHT_RU_132:
-> +		return ATH12K_EHT_RU_106_26;
-> +	case HAL_EHT_RU_242:
-> +		return ATH12K_EHT_RU_242;
-> +	case HAL_EHT_RU_484:
-> +		return ATH12K_EHT_RU_484;
-> +	case HAL_EHT_RU_726:
-> +		return ATH12K_EHT_RU_484_242;
-> +	case HAL_EHT_RU_996:
-> +		return ATH12K_EHT_RU_996;
-> +	case HAL_EHT_RU_996x2:
-> +		return ATH12K_EHT_RU_996x2;
-> +	case HAL_EHT_RU_996x3:
-> +		return ATH12K_EHT_RU_996x3;
-> +	case HAL_EHT_RU_996x4:
-> +		return ATH12K_EHT_RU_996x4;
-> +	case HAL_EHT_RU_NONE:
-> +		return ATH12K_EHT_RU_INVALID;
-> +	case HAL_EHT_RU_996_484:
-> +		return ATH12K_EHT_RU_996_484;
-> +	case HAL_EHT_RU_996x2_484:
-> +		return ATH12K_EHT_RU_996x2_484;
-> +	case HAL_EHT_RU_996x3_484:
-> +		return ATH12K_EHT_RU_996x3_484;
-> +	case HAL_EHT_RU_996_484_242:
-> +		return ATH12K_EHT_RU_996_484_242;
-> +	default:
-> +		return ATH12K_EHT_RU_INVALID;
-> +	}
-> +}
+> is it needed?
+> 
 
-consider using lookup table.
+It will be good to have the defined values in the enum instead of 
+initialise the HAL_RX_PREAMBLE_11BE = 6 directly.
 
-> +
-> +static inline u32
-> +hal_rx_ul_ofdma_ru_size_to_width(enum ath12k_eht_ru_size ru_size)
-> +{
-> +	switch (ru_size) {
-> +	case ATH12K_EHT_RU_26:
-> +		return RU_26;
-> +	case ATH12K_EHT_RU_52:
-> +		return RU_52;
-> +	case ATH12K_EHT_RU_52_26:
-> +		return RU_52_26;
-> +	case ATH12K_EHT_RU_106:
-> +		return RU_106;
-> +	case ATH12K_EHT_RU_106_26:
-> +		return RU_106_26;
-> +	case ATH12K_EHT_RU_242:
-> +		return RU_242;
-> +	case ATH12K_EHT_RU_484:
-> +		return RU_484;
-> +	case ATH12K_EHT_RU_484_242:
-> +		return RU_484_242;
-> +	case ATH12K_EHT_RU_996:
-> +		return RU_996;
-> +	case ATH12K_EHT_RU_996_484:
-> +		return RU_996_484;
-> +	case ATH12K_EHT_RU_996_484_242:
-> +		return RU_996_484_242;
-> +	case ATH12K_EHT_RU_996x2:
-> +		return RU_2X996;
-> +	case ATH12K_EHT_RU_996x2_484:
-> +		return RU_2X996_484;
-> +	case ATH12K_EHT_RU_996x3:
-> +		return RU_3X996;
-> +	case ATH12K_EHT_RU_996x3_484:
-> +		return RU_3X996_484;
-> +	case ATH12K_EHT_RU_996x4:
-> +		return RU_4X996;
-> +	default:
-> +		return RU_INVALID;
-> +	}
-> +}
+>> +	HAL_RX_PREAMBLE_11BE,
+>>   	HAL_RX_PREAMBLE_MAX,
+>>   };
+>>   
 
-same as above
-
-> +
-> +static void
-> +ath12k_dp_mon_hal_rx_parse_user_info(const struct hal_receive_user_info *rx_usr_info,
-> +				     u16 user_id,
-> +				     struct hal_rx_mon_ppdu_info *ppdu_info)
-> +{
-> +	struct hal_rx_user_status *mon_rx_user_status = NULL;
-> +	struct hal_rx_radiotap_eht *eht = &ppdu_info->eht_info.eht;
-> +	enum ath12k_eht_ru_size rtap_ru_size = ATH12K_EHT_RU_INVALID;
-> +	u32 ru_width, reception_type, ru_index = HAL_EHT_RU_INVALID;
-> +	u32 ru_type_80_0, ru_start_index_80_0;
-> +	u32 ru_type_80_1, ru_start_index_80_1;
-> +	u32 ru_type_80_2, ru_start_index_80_2;
-> +	u32 ru_type_80_3, ru_start_index_80_3;
-> +	u32 ru_size = 0, num_80mhz_with_ru = 0;
-> +	u64 ru_index_320mhz = 0;
-> +	u32 ru_index_per80mhz;
-> +
-> +	reception_type = le32_get_bits(rx_usr_info->info0,
-> +				       HAL_RX_USR_INFO0_RECEPTION_TYPE);
-> +
-> +	switch (reception_type) {
-> +	case HAL_RECEPTION_TYPE_SU:
-> +		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_SU;
-> +		break;
-> +	case HAL_RECEPTION_TYPE_DL_MU_MIMO:
-> +	case HAL_RECEPTION_TYPE_UL_MU_MIMO:
-> +		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_MIMO;
-> +		break;
-> +	case HAL_RECEPTION_TYPE_DL_MU_OFMA:
-> +	case HAL_RECEPTION_TYPE_UL_MU_OFDMA:
-> +		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_OFDMA;
-> +		break;
-> +	case HAL_RECEPTION_TYPE_DL_MU_OFDMA_MIMO:
-> +	case HAL_RECEPTION_TYPE_UL_MU_OFDMA_MIMO:
-> +		ppdu_info->reception_type = HAL_RX_RECEPTION_TYPE_MU_OFDMA_MIMO;
-> +	}
-> +
-> +	ppdu_info->is_stbc = le32_get_bits(rx_usr_info->info0, HAL_RX_USR_INFO0_STBC);
-> +	ppdu_info->ldpc = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_LDPC);
-> +	ppdu_info->dcm = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_STA_DCM);
-> +	ppdu_info->bw = le32_get_bits(rx_usr_info->info1, HAL_RX_USR_INFO1_RX_BW);
-> +	ppdu_info->mcs = le32_get_bits(rx_usr_info->info1, HAL_RX_USR_INFO1_MCS);
-> +	ppdu_info->nss = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_NSS) + 1;
-> +
-> +	if (user_id < HAL_MAX_UL_MU_USERS) {
-> +		mon_rx_user_status = &ppdu_info->userstats[user_id];
-> +		mon_rx_user_status->mcs = ppdu_info->mcs;
-> +		mon_rx_user_status->nss = ppdu_info->nss;
-> +	}
-> +
-> +	if (!(ppdu_info->reception_type == HAL_RX_RECEPTION_TYPE_MU_MIMO ||
-> +	      ppdu_info->reception_type == HAL_RX_RECEPTION_TYPE_MU_OFDMA ||
-> +	      ppdu_info->reception_type == HAL_RX_RECEPTION_TYPE_MU_OFDMA_MIMO))
-> +		return;
-> +
-> +	/* RU allocation present only for OFDMA reception */
-> +	ru_type_80_0 = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_RU_TYPE_80_0);
-> +	ru_start_index_80_0 = le32_get_bits(rx_usr_info->info3,
-> +					    HAL_RX_USR_INFO3_RU_START_IDX_80_0);
-> +	if (ru_type_80_0 != HAL_EHT_RU_NONE) {
-> +		ru_size += ru_type_80_0;
-> +		ru_index_per80mhz = ru_start_index_80_0;
-> +		ru_index = ru_index_per80mhz;
-> +		ru_index_320mhz |= HAL_RU_PER80(ru_type_80_0, 0, ru_index_per80mhz);
-> +		num_80mhz_with_ru++;
-> +	}
-> +
-> +	ru_type_80_1 = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_RU_TYPE_80_1);
-> +	ru_start_index_80_1 = le32_get_bits(rx_usr_info->info3,
-> +					    HAL_RX_USR_INFO3_RU_START_IDX_80_1);
-> +	if (ru_type_80_1 != HAL_EHT_RU_NONE) {
-> +		ru_size += ru_type_80_1;
-> +		ru_index_per80mhz = ru_start_index_80_1;
-> +		ru_index = ru_index_per80mhz;
-> +		ru_index_320mhz |= HAL_RU_PER80(ru_type_80_1, 1, ru_index_per80mhz);
-> +		num_80mhz_with_ru++;
-> +	}
-> +
-> +	ru_type_80_2 = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_RU_TYPE_80_2);
-> +	ru_start_index_80_2 = le32_get_bits(rx_usr_info->info3,
-> +					    HAL_RX_USR_INFO3_RU_START_IDX_80_2);
-> +	if (ru_type_80_2 != HAL_EHT_RU_NONE) {
-> +		ru_size += ru_type_80_2;
-> +		ru_index_per80mhz = ru_start_index_80_2;
-> +		ru_index = ru_index_per80mhz;
-> +		ru_index_320mhz |= HAL_RU_PER80(ru_type_80_2, 2, ru_index_per80mhz);
-> +		num_80mhz_with_ru++;
-> +	}
-> +
-> +	ru_type_80_3 = le32_get_bits(rx_usr_info->info2, HAL_RX_USR_INFO2_RU_TYPE_80_3);
-> +	ru_start_index_80_3 = le32_get_bits(rx_usr_info->info2,
-> +					    HAL_RX_USR_INFO3_RU_START_IDX_80_3);
-> +	if (ru_type_80_3 != HAL_EHT_RU_NONE) {
-> +		ru_size += ru_type_80_3;
-> +		ru_index_per80mhz = ru_start_index_80_3;
-> +		ru_index = ru_index_per80mhz;
-> +		ru_index_320mhz |= HAL_RU_PER80(ru_type_80_3, 3, ru_index_per80mhz);
-> +		num_80mhz_with_ru++;
-> +	}
-> +
-> +	if (num_80mhz_with_ru > 1) {
-> +		/* Calculate the MRU index */
-> +		switch (ru_index_320mhz) {
-> +		case HAL_EHT_RU_996_484_0:
-> +		case HAL_EHT_RU_996x2_484_0:
-> +		case HAL_EHT_RU_996x3_484_0:
-> +			ru_index = 0;
-> +			break;
-> +		case HAL_EHT_RU_996_484_1:
-> +		case HAL_EHT_RU_996x2_484_1:
-> +		case HAL_EHT_RU_996x3_484_1:
-> +			ru_index = 1;
-> +			break;
-> +		case HAL_EHT_RU_996_484_2:
-> +		case HAL_EHT_RU_996x2_484_2:
-> +		case HAL_EHT_RU_996x3_484_2:
-> +			ru_index = 2;
-> +			break;
-> +		case HAL_EHT_RU_996_484_3:
-> +		case HAL_EHT_RU_996x2_484_3:
-> +		case HAL_EHT_RU_996x3_484_3:
-> +			ru_index = 3;
-> +			break;
-> +		case HAL_EHT_RU_996_484_4:
-> +		case HAL_EHT_RU_996x2_484_4:
-> +		case HAL_EHT_RU_996x3_484_4:
-> +			ru_index = 4;
-> +			break;
-> +		case HAL_EHT_RU_996_484_5:
-> +		case HAL_EHT_RU_996x2_484_5:
-> +		case HAL_EHT_RU_996x3_484_5:
-> +			ru_index = 5;
-> +			break;
-> +		case HAL_EHT_RU_996_484_6:
-> +		case HAL_EHT_RU_996x2_484_6:
-> +		case HAL_EHT_RU_996x3_484_6:
-> +			ru_index = 6;
-> +			break;
-> +		case HAL_EHT_RU_996_484_7:
-> +		case HAL_EHT_RU_996x2_484_7:
-> +		case HAL_EHT_RU_996x3_484_7:
-> +			ru_index = 7;
-> +			break;
-> +		case HAL_EHT_RU_996x2_484_8:
-> +			ru_index = 8;
-> +			break;
-> +		case HAL_EHT_RU_996x2_484_9:
-> +			ru_index = 9;
-> +			break;
-> +		case HAL_EHT_RU_996x2_484_10:
-> +			ru_index = 10;
-> +			break;
-> +		case HAL_EHT_RU_996x2_484_11:
-> +			ru_index = 11;
-> +			break;
-> +		default:
-> +			ru_index = HAL_EHT_RU_INVALID;
-> +			break;
-> +		}
-> +
-> +		ru_size += 4;
-> +	}
-> +
-> +	rtap_ru_size = hal_rx_mon_hal_ru_size_to_ath12k_ru_size(ru_size);
-> +	if (rtap_ru_size != ATH12K_EHT_RU_INVALID) {
-> +		u32 known, data;
-> +
-> +		known = __le32_to_cpu(eht->known);
-> +		known |= IEEE80211_RADIOTAP_EHT_KNOWN_RU_MRU_SIZE_OM;
-> +		eht->known = cpu_to_le32(known);
-> +
-> +		data = __le32_to_cpu(eht->data[1]);
-> +		data |=	u32_encode_bits(rtap_ru_size,
-> +					IEEE80211_RADIOTAP_EHT_DATA1_RU_SIZE);
-> +		eht->data[1] = cpu_to_le32(data);
-> +	}
-> +
-> +	if (ru_index != HAL_EHT_RU_INVALID) {
-> +		u32 known, data;
-> +
-> +		known = __le32_to_cpu(eht->known);
-> +		known |= IEEE80211_RADIOTAP_EHT_KNOWN_RU_MRU_INDEX_OM;
-> +		eht->known = cpu_to_le32(known);
-> +
-> +		data = __le32_to_cpu(eht->data[1]);
-> +		data |=	u32_encode_bits(rtap_ru_size,
-> +					IEEE80211_RADIOTAP_EHT_DATA1_RU_INDEX);
-> +		eht->data[1] = cpu_to_le32(data);
-> +	}
-> +
-> +	if (mon_rx_user_status && ru_index != HAL_EHT_RU_INVALID &&
-> +	    rtap_ru_size != ATH12K_EHT_RU_INVALID) {
-> +		mon_rx_user_status->ul_ofdma_ru_start_index = ru_index;
-> +		mon_rx_user_status->ul_ofdma_ru_size = rtap_ru_size;
-> +
-> +		ru_width = hal_rx_ul_ofdma_ru_size_to_width(rtap_ru_size);
-> +
-> +		mon_rx_user_status->ul_ofdma_ru_width = ru_width;
-> +		mon_rx_user_status->ofdma_info_valid = 1;
-> +	}
-> +}
-> +
->  static enum hal_rx_mon_status
->  ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
->  				  struct ath12k_mon_data *pmon,
-> @@ -1324,6 +1599,10 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
->  					     HAL_RX_PHYRX_RSSI_LEGACY_INFO_INFO0_RX_BW);
->  		break;
->  	}
-> +	case HAL_RX_PPDU_START_USER_INFO:
-> +		ath12k_dp_mon_hal_rx_parse_user_info(tlv_data, userid, ppdu_info);
-> +		break;
-> +
->  	case HAL_RXPCU_PPDU_END_INFO: {
->  		const struct hal_rx_ppdu_end_duration *ppdu_rx_duration = tlv_data;
->  
-> diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-> index 959f2283294c..765b53741861 100644
-> --- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-> +++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-> @@ -781,39 +781,6 @@ struct hal_eht_sig_ofdma_cmn_eb {
->  	union hal_eht_sig_user_field user_field;
->  } __packed;
->  
-> -static inline
-> -enum nl80211_he_ru_alloc ath12k_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
-> -{
-> -	enum nl80211_he_ru_alloc ret;
-> -
-> -	switch (ru_tones) {
-> -	case RU_52:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
-> -		break;
-> -	case RU_106:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
-> -		break;
-> -	case RU_242:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
-> -		break;
-> -	case RU_484:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
-> -		break;
-> -	case RU_996:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
-> -		break;
-> -	case RU_2X996:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_2x996;
-> -		break;
-> -	case RU_26:
-> -		fallthrough;
-> -	default:
-> -		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-> -		break;
-> -	}
-> -	return ret;
-> -}
-> -
->  enum hal_eht_bw {
->  	HAL_EHT_BW_20,
->  	HAL_EHT_BW_40,
-> @@ -872,6 +839,264 @@ struct hal_mon_usig_hdr {
->  	union hal_mon_usig_non_cmn non_cmn;
->  } __packed;
->  
-> +#define HAL_RX_USR_INFO0_PHY_PPDU_ID		GENMASK(15, 0)
-> +#define HAL_RX_USR_INFO0_USR_RSSI		GENMASK(23, 16)
-> +#define HAL_RX_USR_INFO0_PKT_TYPE		GENMASK(27, 24)
-> +#define HAL_RX_USR_INFO0_STBC			BIT(28)
-> +#define HAL_RX_USR_INFO0_RECEPTION_TYPE		GENMASK(31, 29)
-> +
-> +#define HAL_RX_USR_INFO1_MCS			GENMASK(3, 0)
-> +#define HAL_RX_USR_INFO1_SGI			GENMASK(5, 4)
-> +#define HAL_RX_USR_INFO1_HE_RANGING_NDP		BIT(6)
-> +#define HAL_RX_USR_INFO1_MIMO_SS_BITMAP		GENMASK(15, 8)
-> +#define HAL_RX_USR_INFO1_RX_BW			GENMASK(18, 16)
-> +#define HAL_RX_USR_INFO1_DL_OFMDA_USR_IDX	GENMASK(31, 24)
-> +
-> +#define HAL_RX_USR_INFO2_DL_OFDMA_CONTENT_CHAN	BIT(0)
-> +#define HAL_RX_USR_INFO2_NSS			GENMASK(10, 8)
-> +#define HAL_RX_USR_INFO2_STREAM_OFFSET		GENMASK(13, 11)
-> +#define HAL_RX_USR_INFO2_STA_DCM		BIT(14)
-> +#define HAL_RX_USR_INFO2_LDPC			BIT(15)
-> +#define HAL_RX_USR_INFO2_RU_TYPE_80_0		GENMASK(19, 16)
-> +#define HAL_RX_USR_INFO2_RU_TYPE_80_1		GENMASK(23, 20)
-> +#define HAL_RX_USR_INFO2_RU_TYPE_80_2		GENMASK(27, 24)
-> +#define HAL_RX_USR_INFO2_RU_TYPE_80_3		GENMASK(31, 28)
-> +
-> +#define HAL_RX_USR_INFO3_RU_START_IDX_80_0	GENMASK(5, 0)
-> +#define HAL_RX_USR_INFO3_RU_START_IDX_80_1	GENMASK(13, 8)
-> +#define HAL_RX_USR_INFO3_RU_START_IDX_80_2	GENMASK(21, 16)
-> +#define HAL_RX_USR_INFO3_RU_START_IDX_80_3	GENMASK(29, 24)
-> +
-> +struct hal_receive_user_info {
-> +	__le32 info0;
-> +	__le32 info1;
-> +	__le32 info2;
-> +	__le32 info3;
-> +	__le32 user_fd_rssi_seg0;
-> +	__le32 user_fd_rssi_seg1;
-> +	__le32 user_fd_rssi_seg2;
-> +	__le32 user_fd_rssi_seg3;
-> +} __packed;
-> +
-> +enum hal_mon_reception_type {
-> +	HAL_RECEPTION_TYPE_SU,
-> +	HAL_RECEPTION_TYPE_DL_MU_MIMO,
-> +	HAL_RECEPTION_TYPE_DL_MU_OFMA,
-> +	HAL_RECEPTION_TYPE_DL_MU_OFDMA_MIMO,
-> +	HAL_RECEPTION_TYPE_UL_MU_MIMO,
-> +	HAL_RECEPTION_TYPE_UL_MU_OFDMA,
-> +	HAL_RECEPTION_TYPE_UL_MU_OFDMA_MIMO,
-> +};
-> +
-> +/* Different allowed RU in 11BE */
-> +#define HAL_EHT_RU_26		0ULL
-> +#define HAL_EHT_RU_52		1ULL
-> +#define HAL_EHT_RU_78		2ULL
-> +#define HAL_EHT_RU_106		3ULL
-> +#define HAL_EHT_RU_132		4ULL
-> +#define HAL_EHT_RU_242		5ULL
-> +#define HAL_EHT_RU_484		6ULL
-> +#define HAL_EHT_RU_726		7ULL
-> +#define HAL_EHT_RU_996		8ULL
-> +#define HAL_EHT_RU_996x2	9ULL
-> +#define HAL_EHT_RU_996x3	10ULL
-> +#define HAL_EHT_RU_996x4	11ULL
-> +#define HAL_EHT_RU_NONE		15ULL
-> +#define HAL_EHT_RU_INVALID	31ULL
-> +/* MRUs spanning above 80Mhz
-> + * HAL_EHT_RU_996_484 = HAL_EHT_RU_484 + HAL_EHT_RU_996 + 4 (reserved)
-> + */
-> +#define HAL_EHT_RU_996_484	18ULL
-> +#define HAL_EHT_RU_996x2_484	28ULL
-> +#define HAL_EHT_RU_996x3_484	40ULL
-> +#define HAL_EHT_RU_996_484_242	23ULL
-> +
-> +#define NUM_RU_BITS_PER80	16
-> +#define NUM_RU_BITS_PER20	4
-> +
-> +/* Different per_80Mhz band in 320Mhz bandwidth */
-> +#define HAL_80_0	0
-> +#define HAL_80_1	1
-> +#define HAL_80_2	2
-> +#define HAL_80_3	3
-> +
-> +#define HAL_RU_80MHZ(num_band)		((num_band) * NUM_RU_BITS_PER80)
-> +#define HAL_RU_20MHZ(idx_per_80)	((idx_per_80) * NUM_RU_BITS_PER20)
-> +
-> +#define HAL_RU_SHIFT(num_band, idx_per_80)	\
-> +		(HAL_RU_80MHZ(num_band) + HAL_RU_20MHZ(idx_per_80))
-> +
-> +#define HAL_RU(ru, num_band, idx_per_80)	\
-> +		((u64)(ru) << HAL_RU_SHIFT(num_band, idx_per_80))
-> +
-> +/* MRU-996+484 */
-> +#define HAL_EHT_RU_996_484_0	(HAL_RU(HAL_EHT_RU_484, HAL_80_0, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996, HAL_80_1, 0))
-> +#define HAL_EHT_RU_996_484_1	(HAL_RU(HAL_EHT_RU_484, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996, HAL_80_1, 0))
-> +#define HAL_EHT_RU_996_484_2	(HAL_RU(HAL_EHT_RU_996, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_1, 1))
-> +#define HAL_EHT_RU_996_484_3	(HAL_RU(HAL_EHT_RU_996, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_1, 0))
-> +#define HAL_EHT_RU_996_484_4	(HAL_RU(HAL_EHT_RU_484, HAL_80_2, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996_484_5	(HAL_RU(HAL_EHT_RU_484, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996_484_6	(HAL_RU(HAL_EHT_RU_996, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_3, 1))
-> +#define HAL_EHT_RU_996_484_7	(HAL_RU(HAL_EHT_RU_996, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_3, 0))
-> +
-> +/* MRU-996x2+484 */
-> +#define HAL_EHT_RU_996x2_484_0	(HAL_RU(HAL_EHT_RU_484, HAL_80_0, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0))
-> +#define HAL_EHT_RU_996x2_484_1	(HAL_RU(HAL_EHT_RU_484, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0))
-> +#define HAL_EHT_RU_996x2_484_2	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_1, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0))
-> +#define HAL_EHT_RU_996x2_484_3	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0))
-> +#define HAL_EHT_RU_996x2_484_4	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_2, 1))
-> +#define HAL_EHT_RU_996x2_484_5	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_2, 0))
-> +#define HAL_EHT_RU_996x2_484_6	(HAL_RU(HAL_EHT_RU_484, HAL_80_1, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x2_484_7	(HAL_RU(HAL_EHT_RU_484, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x2_484_8	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_2, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x2_484_9	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x2_484_10	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_3, 1))
-> +#define HAL_EHT_RU_996x2_484_11	(HAL_RU(HAL_EHT_RU_996x2, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x2, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_3, 0))
-> +
-> +/* MRU-996x3+484 */
-> +#define HAL_EHT_RU_996x3_484_0	(HAL_RU(HAL_EHT_RU_484, HAL_80_0, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x3_484_1	(HAL_RU(HAL_EHT_RU_484, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x3_484_2	(HAL_RU(HAL_EHT_RU_996x3, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_1, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x3_484_3	(HAL_RU(HAL_EHT_RU_996x3, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x3_484_4	(HAL_RU(HAL_EHT_RU_996x3, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_2, 1) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x3_484_5	(HAL_RU(HAL_EHT_RU_996x3, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_3, 0))
-> +#define HAL_EHT_RU_996x3_484_6	(HAL_RU(HAL_EHT_RU_996x3, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_3, 1))
-> +#define HAL_EHT_RU_996x3_484_7	(HAL_RU(HAL_EHT_RU_996x3, HAL_80_0, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_1, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_996x3, HAL_80_2, 0) |	\
-> +				 HAL_RU(HAL_EHT_RU_484, HAL_80_3, 0))
-> +
-> +#define HAL_RU_PER80(ru_per80, num_80mhz, ru_idx_per80mhz) \
-> +			(HAL_RU(ru_per80, num_80mhz, ru_idx_per80mhz))
-> +
-> +#define RU_INVALID		0
-> +#define RU_26			1
-> +#define RU_52			2
-> +#define RU_106			4
-> +#define RU_242			9
-> +#define RU_484			18
-> +#define RU_996			37
-> +#define RU_2X996		74
-> +#define RU_3X996		111
-> +#define RU_4X996		148
-> +#define RU_52_26		(RU_52 + RU_26)
-> +#define RU_106_26		(RU_106 + RU_26)
-> +#define RU_484_242		(RU_484 + RU_242)
-> +#define RU_996_484		(RU_996 + RU_484)
-> +#define RU_996_484_242		(RU_996 + RU_484_242)
-> +#define RU_2X996_484		(RU_2X996 + RU_484)
-> +#define RU_3X996_484		(RU_3X996 + RU_484)
-> +
-> +enum ath12k_eht_ru_size {
-> +	ATH12K_EHT_RU_26,
-> +	ATH12K_EHT_RU_52,
-> +	ATH12K_EHT_RU_106,
-> +	ATH12K_EHT_RU_242,
-> +	ATH12K_EHT_RU_484,
-> +	ATH12K_EHT_RU_996,
-> +	ATH12K_EHT_RU_996x2,
-> +	ATH12K_EHT_RU_996x4,
-> +	ATH12K_EHT_RU_52_26,
-> +	ATH12K_EHT_RU_106_26,
-> +	ATH12K_EHT_RU_484_242,
-> +	ATH12K_EHT_RU_996_484,
-> +	ATH12K_EHT_RU_996_484_242,
-> +	ATH12K_EHT_RU_996x2_484,
-> +	ATH12K_EHT_RU_996x3,
-> +	ATH12K_EHT_RU_996x3_484,
-> +
-> +	/* Keep last */
-> +	ATH12K_EHT_RU_INVALID,
-> +};
-> +
-> +#define HAL_RX_RU_ALLOC_TYPE_MAX	ATH12K_EHT_RU_INVALID
-> +
-> +static inline
-> +enum nl80211_he_ru_alloc ath12k_he_ru_tones_to_nl80211_he_ru_alloc(u16 ru_tones)
-> +{
-> +	enum nl80211_he_ru_alloc ret;
-> +
-> +	switch (ru_tones) {
-> +	case RU_52:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_52;
-> +		break;
-> +	case RU_106:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_106;
-> +		break;
-> +	case RU_242:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_242;
-> +		break;
-> +	case RU_484:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_484;
-> +		break;
-> +	case RU_996:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_996;
-> +		break;
-> +	case RU_2X996:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_2x996;
-> +		break;
-> +	case RU_26:
-> +		fallthrough;
-> +	default:
-> +		ret = NL80211_RATE_INFO_HE_RU_ALLOC_26;
-> +		break;
-> +	}
-> +	return ret;
-> +}
-> +
->  void ath12k_hal_reo_status_queue_stats(struct ath12k_base *ab,
->  				       struct hal_tlv_64_hdr *tlv,
->  				       struct hal_reo_status *status);
-> diff --git a/drivers/net/wireless/ath/ath12k/rx_desc.h b/drivers/net/wireless/ath/ath12k/rx_desc.h
-> index 7367935ee68b..6c600473b402 100644
-> --- a/drivers/net/wireless/ath/ath12k/rx_desc.h
-> +++ b/drivers/net/wireless/ath/ath12k/rx_desc.h
-> @@ -1541,13 +1541,4 @@ struct hal_rx_desc {
->  #define MAX_MU_GROUP_SHOW 16
->  #define MAX_MU_GROUP_LENGTH (6 * MAX_MU_GROUP_SHOW)
->  
-> -#define HAL_RX_RU_ALLOC_TYPE_MAX 6
-> -#define RU_26  1
-> -#define RU_52  2
-> -#define RU_106 4
-> -#define RU_242 9
-> -#define RU_484 18
-> -#define RU_996 37
-> -#define RU_2X996 74
-> -
->  #endif /* ATH12K_RX_DESC_H */
-
+-- 
+Karthikeyan Periyasamy
+--
+கார்த்திகேயன் பெரியசாமி
 
