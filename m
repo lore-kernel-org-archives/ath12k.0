@@ -4,109 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EAD6C021A2
-	for <ath12k@archiver.kernel.org>; Tue, 11 Feb 2025 15:45:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ECD8C021A5
+	for <ath12k@archiver.kernel.org>; Tue, 11 Feb 2025 15:45:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UlL5jzWhI6M1DWypiuTqms2s6pTVuYe03e0nspNkVqM=; b=nGuxXjithLiNKM8KClaK8Hqw8i
-	wUhza/CUd+f2SMXBw7uc+xnDN8+dSXhRgVoEAE0GKKwnUf16K1PdgIfljlKY5VjWqGaLdaLUGH7VD
-	hx+EjNUsYTCHkfdGN38tjseHD2ll7e+/DTS/aDt0L1+RELwaOaWCBLrg9R/isRiK7ElH2n6Rrg+zU
-	pDEKQr7WXuJfg8fLc1FJ84wnV4qAVNLSKMyj70fr2dMwTGcsqN2TMBxSGW8KCFMjesnUiewN26o0C
-	CVSTB0VHiAvnIkV8q/VT7BQtKgc4O1nt+wyFgjlNmlJ7Kl5ZN6wlEaMuY3A6cxJVWLXZggpJURkgN
-	yLQfgCFg==;
+	bh=ymCGsRh673k3+51lFOExPinq3U9WqfBeI2CDSIUeZQM=; b=uMP5nw1P2Xn8qovBQX+tKwWTbU
+	m0sFG81KE8T6Ho3WVUA/U7i5Sff+zLeZf8cp7MzZKodgOMzgZItDQm5c38AuMiSiHXpjyP/J2s/Xx
+	gE/vOm2hQ3BYnrQu8siNLwL2ppTezKrR+OtBniZrZn7kFW02nQK6I8jexh22vQe/9GhxDEZGYxorG
+	JlohHb1uqWnlLlBWj+zscDVEcmNiZTn3EjWqYfPv9ojsG0f40PRt0ZfONXwVMYkdkKHaJ1VooGn/+
+	eeeZtfTIKkMuHt7iNhlQshiMVSDXRlprLgIso8uaI+iTQcK3Awm+IklbGxZFMh/WJTHe+1YXLH5Hb
+	HIEbkekQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thsSR-00000004LPK-3iNQ
+	id 1thsST-00000004LQI-0TD1
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Feb 2025 15:45:55 +0000
+	Tue, 11 Feb 2025 15:45:57 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thsRA-00000004LFz-1gRI
+	id 1thsRE-00000004LHD-1Rc1
 	for ath12k@lists.infradead.org;
-	Tue, 11 Feb 2025 15:44:37 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51BBB33Y000723
-	for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 15:44:36 GMT
+	Tue, 11 Feb 2025 15:44:41 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51BA2Q8p013667
+	for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 15:44:40 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	UlL5jzWhI6M1DWypiuTqms2s6pTVuYe03e0nspNkVqM=; b=kCMgbtBhnARTGY7O
-	ZEnOMH7OasNrz2M+zmrj2Ef8UR2p9x6t2ESqUwvvtvdp/1a+iZO7m6qMJSESk9Ov
-	H7uNgnZasNE+7CqljdAjkk+PtXzYylndHDzWu9oycwS8NnfFMFVAdoHQNTYU6pyn
-	k5xmxbUJOFTfLlUCFyGoSDKACLl57cRl85JmNg3/pxxJCcuc2iKl0kRQ1nUk50ir
-	V42GS35z00Y5QQJv8ClpyP72fui1Fi2Gzy6TG/lbp4X89f1oNUvNql+wNduQRQjK
-	mhEvDXlyxdQLZAcghSwqUC2hNuG9goA2kKSDrcLwzFP0/9gIS23HrtL8KOtPGS6B
-	gOEfXw==
+	ymCGsRh673k3+51lFOExPinq3U9WqfBeI2CDSIUeZQM=; b=iE4bB9Nzmhx1S89E
+	9rnrK2o3152xJ4KvUE0GVZq05AHLyinFghSTBkoYKyXyjc0dM1EXgir6lETqqSEg
+	4Fc9tKdZ341vs+giDWNXENL6wKx2d2/4nAnfsnxLPXI3Pg9xQrIq7bAqA6UT7gTc
+	IvCDjtnG0qsSrevUNZnKKLfQh9UJYdoTp3CAqKR63Dm64G86h5jMwbx3PNnSSkY4
+	mTcsD+ZhiqGe8lwB43Xp1D5aiyHtUwmSYNX19MrulbXMII2+CjhRUBXqTe0GkK6i
+	pVFRSo3npkAG7vM/8/Wz8/tTccqivSlgHlsa23jt1viZir4KRHQLHM3agxPaIvxQ
+	8uGkMQ==
 Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44qgtk45cn-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0dyr8t9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 15:44:35 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-21f71b174a5so53271205ad.0
-        for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 07:44:35 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 15:44:39 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-21f5067e443so71050085ad.0
+        for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 07:44:39 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739288675; x=1739893475;
+        d=1e100.net; s=20230601; t=1739288679; x=1739893479;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=UlL5jzWhI6M1DWypiuTqms2s6pTVuYe03e0nspNkVqM=;
-        b=dQP3mAMd9k4Km1/Xgdow1ElfWQWVOWa9dTtLKfeCDLKyHT2FKs04UGpq8BOmZeSQAU
-         KJe85zwuYDs5jJVpeyrREgptWuoD/mKfNUH5zV7sffzvRxl/gWNUdympIwHVJ29k6C3k
-         Sfz0h88UzzRFh/mRAEqr/oscOSa2nWyg2p1tfIGe+0PE6Bod2E923D2Jg7JgEdbOzaIg
-         8/Xsx1IsOyttffhvmiM+3KXIiI6W9cbngf6wipZICoeggXzdwhnYCmfMhwtJKSKTe+zc
-         HkhNgFutl+BoAVepsFb/l7e7te49Yy/WyOZVMcbxIpVo2RPpV/4KvzZ6MzzvwQ8+1p70
-         xnRA==
-X-Forwarded-Encrypted: i=1; AJvYcCVSGuyOZ5CaD4uxsohx+IJKWo5++9zxKlFojbVslVGTcXD7s01zTZ0OuSFXUWlzL3/8y2SJ8EM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwZPGnebIENxr6yfeu5+FQ6sQLt1DgWqFS90F9Z7ppopvMp6WYh
-	ZRi6QLFnlcQ4rvUxcuqJctdab/J7CpL+RzQC8vzyRT65ek3fgPM2obngL/MboS/j2P8EtIz169K
-	qSphiruWTmJIBLWdzlFm0GXIhnMLNDdK8BiqYovkxV8sx6UtpSH0f+GxnZVBhpsTFEMN2
-X-Gm-Gg: ASbGncvO5hGQ3gnaLubcTPggHXoiDYk/BgnrizmagcGZ7hyeWF7JRSCt5dFfUP9cKK2
-	it9rh/AcUrlCt4FgXUaYUceZCRttdcJsFP/5OAz7pgygwNvJ/4JjjDjKMIdxeQO64eb84ES8YH+
-	HnqjHq3kBpnVJlG2UoXjnSd3pgp1oCL1WI/wVmL30O7BQcq6RKGlmtL5IR+V1v2MMHKefky0V/9
-	o4NsNeV3T0ptVF2AyIDCAmDBp1edOazvSuTGW/vTUbDzeKiFCM5ZasdMEGhfI5CsMoXy3FJuPYi
-	C3koxqSv2ioQVZ6ytn8p0XU/XWUqadXJWNpQL6PNoQ==
-X-Received: by 2002:a17:902:e54d:b0:21f:3823:482b with SMTP id d9443c01a7336-21fb6f54a29mr65682285ad.25.1739288674842;
-        Tue, 11 Feb 2025 07:44:34 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHTHP3BuxfPO3ra/69YVt4iP5Bp7MokO6wGbhU+W5xVl2c/0maHagbygDnfGfVhI2DQD1ByWQ==
-X-Received: by 2002:a17:902:e54d:b0:21f:3823:482b with SMTP id d9443c01a7336-21fb6f54a29mr65681755ad.25.1739288674397;
-        Tue, 11 Feb 2025 07:44:34 -0800 (PST)
+        bh=ymCGsRh673k3+51lFOExPinq3U9WqfBeI2CDSIUeZQM=;
+        b=mQbQAbfxI0Ezm3rbD4lUNV96pAMPKAaTteRgECvQp9ErmW6imGQUXWs6Abm21eaAA7
+         sTHzqFm9lQJnGHexkiePiXIPy8jwthAuCHNCdaBWLeM2ajaaz4MOjP/4S5na5mFoiEdj
+         2VyHxtbrhbSqsVDpRPhzew1Cz2WYwGGAxd7vZ/tBLl99UJTDvhQdqiAdE2lfNUjqQOq1
+         hua0v1n1LInJxQDKEA8SAtoNVI8m8WLn/LTm0lbA7OAzNTMWdJL8hl59XCX1r3GcH52S
+         MazjV3QTai4puC8jdj6js3mHV9iTHep/TUfEkrOaSCta72pNZuJPp3EQGoqbRQmsxgze
+         a9IQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXPuCy7WyEZvi1kG6JNsUIO33rTdnGEX7w5OD0qy/x1cg7Wrbvg7KBJtaH9KDsXYLMbgBaSwhc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YypT6W3Hh+kVtvudgqD73FrEn21Of6EhVRnZbPjKA6NKLxJgU1v
+	r4xhyubRC+LVxrJ0TR/ZtJorH+y+quZB5I9Xp2B0JAVM9Jzz8krynTEANQgyvDbsT3U0MdjKcZ6
+	tKLiZLuuY/K9Q3DO/daqCqwyIvM3e2a+j1h6nBpC4mKIOrfMa4fM0FRxOjhnB
+X-Gm-Gg: ASbGncvOZYw2/yXskUDfzNTkoHrpM9noLJ8AyATm2oYsADSh3IU/MHjeKXB+nbXSgdH
+	dj+6UIz9uXdxWWZ5BBpYO5Q/GsLMMno5ICaiiHQGol6XbP+uKM4iPhYHYbS6zVrkppgDTN5maZL
+	J8jFfYrQnOvO99bVuQD0yl7IjmVitlmTzoh0zGjborjci/28voS+MDSmesAzLVKJxNw1H962JB7
+	k86nIoBcv5Yy3anhbwgFrtZwbSGO/wh4FtTu1e/AQAOYIAyyLYq4uTIntgzoRHJucDNzW6QoOqL
+	Cw29aBRmVLF5vL2FjMhSwvHUndVgdaAY1/9GdgDLrA==
+X-Received: by 2002:a17:902:cccf:b0:216:31c2:3db8 with SMTP id d9443c01a7336-220781ebe71mr2486345ad.37.1739288679008;
+        Tue, 11 Feb 2025 07:44:39 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFgblWuZwpddqv/+atjEJ8t7ZVVqI4cMpZn1gJmiYamen4vJr/3pWQhZY+woUNf/9hSpTFJJA==
+X-Received: by 2002:a17:902:cccf:b0:216:31c2:3db8 with SMTP id d9443c01a7336-220781ebe71mr2485995ad.37.1739288678577;
+        Tue, 11 Feb 2025 07:44:38 -0800 (PST)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21f36510e34sm98399365ad.28.2025.02.11.07.44.33
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21f36510e34sm98399365ad.28.2025.02.11.07.44.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 11 Feb 2025 07:44:33 -0800 (PST)
+        Tue, 11 Feb 2025 07:44:37 -0800 (PST)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Kalle Valo <kvalo@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250204-unlink_link_arvif_from_chanctx-v2-0-764fb5973c1a@oss.qualcomm.com>
-References: <20250204-unlink_link_arvif_from_chanctx-v2-0-764fb5973c1a@oss.qualcomm.com>
-Subject: Re: [PATCH v2 0/8] wifi: ath12k: handle change_vif_links()
- callback
-Message-Id: <173928867318.1115150.2680608610563068978.b4-ty@oss.qualcomm.com>
-Date: Tue, 11 Feb 2025 07:44:33 -0800
+To: Kalle Valo <kvalo@kernel.org>, Bart Van Assche <bvanassche@acm.org>
+Cc: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org,
+        linux-wireless@vger.kernel.org,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+In-Reply-To: <20250206221317.3845663-1-bvanassche@acm.org>
+References: <20250206221317.3845663-1-bvanassche@acm.org>
+Subject: Re: [PATCH] wifi: ath12k: Fix locking in error paths
+Message-Id: <173928867747.1115150.6634049107701596787.b4-ty@oss.qualcomm.com>
+Date: Tue, 11 Feb 2025 07:44:37 -0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.0
-X-Proofpoint-GUID: xLR3PyxqamwF2HMR8br5s6SzuLbam5Lc
-X-Proofpoint-ORIG-GUID: xLR3PyxqamwF2HMR8br5s6SzuLbam5Lc
+X-Proofpoint-ORIG-GUID: gfWbIFiSe8PRCFHnE9QicNnztmODM8PS
+X-Proofpoint-GUID: gfWbIFiSe8PRCFHnE9QicNnztmODM8PS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-11_07,2025-02-11_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
- priorityscore=1501 suspectscore=0 phishscore=0 impostorscore=0
- adultscore=0 clxscore=1015 mlxscore=0 malwarescore=0 bulkscore=0
- lowpriorityscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2501170000 definitions=main-2502110104
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ clxscore=1015 lowpriorityscore=0 impostorscore=0 mlxlogscore=664
+ mlxscore=0 priorityscore=1501 spamscore=0 adultscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502110104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_074436_447991_1AE99A88 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250211_074440_391865_B8D0B87E 
+X-CRM114-Status: GOOD (  10.15  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,36 +119,17 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 04 Feb 2025 22:35:06 +0530, Aditya Kumar Singh wrote:
-> Currently, links in an interface are allocated during channel assignment
-> via assign_vif_chanctx(). Conversely, links are deleted during channel
-> unassignment via unassign_vif_chanctx(). However, deleting links during
-> channel unassignment does not comply with mac80211 link handling.
-> Therefore, this process should be managed within change_vif_links().
+On Thu, 06 Feb 2025 14:13:17 -0800, Bart Van Assche wrote:
+> If ag->mutex has been locked, unlock it before returning. If it has not
+> been locked, do not unlock it before returning. These bugs have been
+> detected by the Clang thread-safety analyzer.
 > 
-> This series aims to add support to handle links in change_vif_links()
-> callback.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/8] wifi: ath12k: eliminate redundant debug mask check in ath12k_dbg()
-      commit: cc5faf08aa3afc6f60d7df1a0edf041c4384fc95
-[2/8] wifi: ath12k: introduce ath12k_generic_dbg()
-      commit: 80f816d07ba0cf80a9b6aa90a30af2b2073c6cb7
-[3/8] wifi: ath12k: remove redundant vif settings during link interface creation
-      commit: ab6270c4dec3b1a506291c3b0050230b32464781
-[4/8] wifi: ath12k: remove redundant logic for initializing arvif
-      commit: 8acc7ec53ac43aea8f49573b5a173570f308b775
-[5/8] wifi: ath12k: use arvif instead of link_conf in ath12k_mac_set_key()
-      commit: 00e4dc11695d48322780812b503314682659e98b
-[6/8] wifi: ath12k: relocate a few functions in mac.c
-      commit: b81c39d67fbfcaccb33a1fc5494a87b29f2724ab
-[7/8] wifi: ath12k: allocate new links in change_vif_links()
-      commit: 315d80be304ac1d47da38c2b0c85286c9220c23a
-[8/8] wifi: ath12k: handle link removal in change_vif_links()
-      commit: 81e4be30544ee7e8da80e9aae7acd69d3be6d05a
+[1/1] wifi: ath12k: Fix locking in error paths
+      commit: b9c7299a3341a737622e4de45b9c27e60ad01e3b
 
 Best regards,
 -- 
