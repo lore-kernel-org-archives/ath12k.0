@@ -4,93 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 562E9C0219B
-	for <ath12k@archiver.kernel.org>; Tue, 11 Feb 2025 10:40:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7804C0219E
+	for <ath12k@archiver.kernel.org>; Tue, 11 Feb 2025 15:45:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TxAVz91mBsbW/bpfGDgg1seVn2JmTTRBiLgiA5plYcs=; b=MNiR8ejtknmVS7RjzYjRyFbTgX
-	833CPW6DlavjYyhrvic62fjP+8SJfPKC4tFyLJdJQ6h26GwDlw3a8qoQd1EuARN2Z+iUKRW911uJg
-	5U4Rgx7Jp/EqHE3YKoc9AYGl0ujZ/+X0DMEo7aCmZybz/bbpPZ6G43tvH+34dVW9/lorzW722erfu
-	tqNXzrkf/+TodnNOUhWSXYLKtcD6yizTzYdM8YbNvpZIo83zMko6aBtNit2XNAeSWJvTqtSYHUMd7
-	0siOsliu6qV/IZ37oigr7D9bPrZ8T1zNUCoAE3oZ2aWgIZkJxhSDUvlUgcxM7yn+sshefos8BU9A1
-	JtKUuABQ==;
+	bh=lD32Vez99AdokPW/YoVLXROqua1GtCDpnPCVoxnwEo8=; b=fExbXKkEdreVwK+QWq0BX/r6nM
+	gcOO4KuuxZG09xUSxynwmoN5Kj9z479b8RmlmaSQJiGlxWK2kVSe3dimhmhPUPHg4Dw0WAIwPAUDG
+	p8qxO/Sw3XpFgI1WqVA1rnwXWGjlJeCQMYtWAGdxiUhb5ZH66WJ8MllFLN9UvM1VD8VxYphRfvbhG
+	xaQIKq3MvZLIIs8Z65npeqoLJIaKQPHwGcRMUPvO051XUk1UEl7Hwf/D9O4L+JU7LcEvcCEAOlZ1y
+	dHhVGd7hi47agUh0z/8b72ijPafsS1IoHHB/qsEv7ETS7K2roYUGGtfiwQBekuAZc3SAf74Ue1G/E
+	UHxhOogg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thnhK-00000003O3x-2vky
+	id 1thsSR-00000004LP5-0dbm
 	for ath12k@archiver.kernel.org;
-	Tue, 11 Feb 2025 10:40:58 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 11 Feb 2025 15:45:55 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thmaW-00000003Afp-3o5s
+	id 1thsR9-00000004LFO-1AsM
 	for ath12k@lists.infradead.org;
-	Tue, 11 Feb 2025 09:29:54 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51B9TcZY029885;
-	Tue, 11 Feb 2025 09:29:52 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Tue, 11 Feb 2025 15:44:36 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51BDHuTg011450
+	for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 15:44:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TxAVz91mBsbW/bpfGDgg1seVn2JmTTRBiLgiA5plYcs=; b=HNvxBhA5jRjWZEnX
-	2OXRuxz0Nr6QbCk9yT1IHFHM4Q4lKE8RxHeLiELjHBawta8z5EE338XBfAFIbzG9
-	IQBHQ/HHR0FHf68Oh9yMxxF1rhqt2o6TEkc3YTgV+m3up0ZIJ6CH3kzjtkfVSg7J
-	3GP+lI8+u40pMsd3nyHbqsRhGjrosLFwcgyxyznyFmea68IcXoA2yJ0ORMUnHOrl
-	v7gHlPmSN9wMHXj8AjKuUlm+lmtpVEGb60CvvxwnuD04ywRHrJDFj3oUaT8bUzvw
-	j8FAc2gq1Dw310NRS2zMi8C+KH6FzJKzTVFHmGyjbAKVYH9ENQiapBZxHQxYp5vb
-	JTreHg==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0dxq8dy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Feb 2025 09:29:51 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51B9ToXM004964
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 11 Feb 2025 09:29:50 GMT
-Received: from [10.152.202.85] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 11 Feb
- 2025 01:29:48 -0800
-Message-ID: <d75e1388-8f73-d7eb-cade-35c1fc9e6208@quicinc.com>
-Date: Tue, 11 Feb 2025 14:59:45 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v9 2/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_EHT_SIG TLV
- parsing support
-To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+	lD32Vez99AdokPW/YoVLXROqua1GtCDpnPCVoxnwEo8=; b=NnJt7UhXQpcAthVN
+	FTjbyS7ajMw8Wq2CQ3RCpGKSdauNVmGPe4qHSY1zMFQpSmWgSrmg+uOpS1abLkmd
+	dHmcyPmE7Joqd8llO/0wkH4qq2fhSg4JUSe5LaaossSsuFPPuUfixYLmmevHtN0H
+	tp4vzYledVu7roOLjTr+7ki0DGgyrs6gmI7R8aiEzBxCHbc6A+7+iEDxopmn8Rlp
+	qOBRYL2kUQ3AnJS2OMwZQ5PhzvK1hcsprIQGyE0SMPgGH8qQ3lezOaCf8TMjMS72
+	kms1CTsBMaGJYxClZerYw9MloCHkTbC28o87FpVeud7CE8bisV4D1gaXH8mUvERk
+	OlKIeA==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44qxv3sw6t-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 15:44:34 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-21f3aad4e0bso83937435ad.3
+        for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 07:44:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739288673; x=1739893473;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=lD32Vez99AdokPW/YoVLXROqua1GtCDpnPCVoxnwEo8=;
+        b=t+m3YlISag9OkfEx912T2+F1AWHKe+3VlmfFj2jaZTqE7ohUEt2sOXNdd/b222HYFE
+         UIFBfOnQ6QpLEljp6TQzwrjVMifGd/N93GR3/XX9iE0Qqmjc2SYEHxAhxK53u1I61hyA
+         ScqdwjqxNrqke80toAlmzvrIrlJg5C2zl6j4TIxovLNSFnHFJ9BsTby0UeQigCLaRg+i
+         YjPcK9/mBXkwnKB09R8DDXDJ7OkfOiefzP+KwCSLB21KLTb9P2aJ7mk5J3ztwjxVx+9j
+         y/RAp4cD8RRy16qB1QIDGTBTXa2iuWvt20KcxFbym7Nvx5oA1My2GVTdbDHA7oN6LvVA
+         TWDA==
+X-Gm-Message-State: AOJu0YyjtuyBAMBP3YTeNhfXZtQUPGqSYfFkwytgalALDaJzUumBe57g
+	ajf5dhmqnG/9HQZR889jSZioxDpBAKKD+83KlILy7rFNDNWj4+JrqNO38WqcTxbeQMF19ymxeeE
+	qiA/TDR22QauLF+coz0IExKWjIGyiJhhT81SAvZ7y2qSRXTQozRIBpeMlhsusa/QgSSEv
+X-Gm-Gg: ASbGncsV4BJegLLKAr6MmK0Ti+ajGDqa26jYxZKjQA7KtV3iyEdansE22vzhVyOBXdH
+	AQMcSz+0h3CVUEdgpYkiwA2GLi0W8suverBiNr7SnIRLgLY9Xij0nN/YyIHghhHuZzM++sdLkUa
+	rV/1x4JuQ/9936fG0jIAQAUMr0PLNyDM1iHxQZQo9moMJ8rD+yeZTFAwVScUYYWATtYrSpouR18
+	hXm2LGm6Kuz/MyN2s+jZqisN5ogJpSNbJeKmixrLj8nlSf6KagRVtqlzzzrHfxiDqDya3x/BwKH
+	hMcxHiodwDZMJNhjHjS6ix14fzPN7x58Cit5GU62Fg==
+X-Received: by 2002:a17:902:ccce:b0:215:8847:435c with SMTP id d9443c01a7336-21fb641c3cfmr68159545ad.12.1739288673377;
+        Tue, 11 Feb 2025 07:44:33 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG0Rp33ZF73xQSbNXUiw0TVhhlTiStmftw3Y7UxoUwMIn50Icg+IhiWjlPkwoU1LVeJIBcd4g==
+X-Received: by 2002:a17:902:ccce:b0:215:8847:435c with SMTP id d9443c01a7336-21fb641c3cfmr68159185ad.12.1739288672974;
+        Tue, 11 Feb 2025 07:44:32 -0800 (PST)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21f36510e34sm98399365ad.28.2025.02.11.07.44.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 11 Feb 2025 07:44:32 -0800 (PST)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20250206013854.174765-1-quic_periyasa@quicinc.com>
 References: <20250206013854.174765-1-quic_periyasa@quicinc.com>
- <20250206013854.174765-3-quic_periyasa@quicinc.com>
- <7a27d2d0-6630-f074-b426-04b199f3821d@quicinc.com>
- <a825284b-431f-696b-3f76-f13763e46438@quicinc.com>
-Content-Language: en-US
-From: Mahendran P <quic_mahep@quicinc.com>
-In-Reply-To: <a825284b-431f-696b-3f76-f13763e46438@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: vAWRrwlbX5rvLKkyhw8Xc1wFRYIJJXAT
-X-Proofpoint-ORIG-GUID: vAWRrwlbX5rvLKkyhw8Xc1wFRYIJJXAT
+Subject: Re: [PATCH v9 0/9] wifi: ath12k: Add peer extended Rx statistics
+ debugfs support
+Message-Id: <173928867196.1115150.379592814481494848.b4-ty@oss.qualcomm.com>
+Date: Tue, 11 Feb 2025 07:44:31 -0800
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
+X-Proofpoint-GUID: WsPpk7ndMwgew26p19xelVae4Lmlhku_
+X-Proofpoint-ORIG-GUID: WsPpk7ndMwgew26p19xelVae4Lmlhku_
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-11_04,2025-02-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
- priorityscore=1501 bulkscore=0 clxscore=1015 adultscore=0
- lowpriorityscore=0 impostorscore=0 malwarescore=0 mlxscore=0 phishscore=0
- suspectscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2501170000 definitions=main-2502110058
+ definitions=2025-02-11_07,2025-02-11_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=929
+ suspectscore=0 phishscore=0 adultscore=0 spamscore=0 mlxscore=0
+ bulkscore=0 impostorscore=0 clxscore=1015 lowpriorityscore=0
+ malwarescore=0 priorityscore=1501 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2501170000 definitions=main-2502110104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_012953_062246_A478E6C3 
-X-CRM114-Status: GOOD (  18.08  )
+X-CRM114-CacheID: sfid-20250211_074435_348635_35FC68B0 
+X-CRM114-Status: GOOD (  15.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,164 +117,64 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 2/10/2025 7:20 PM, Karthikeyan Periyasamy wrote:
-> 
-> 
-> On 2/10/2025 4:23 PM, Mahendran P wrote:
->> On 2/6/2025 7:08 AM, Karthikeyan Periyasamy wrote:
->>> Currently, monitor is not enabled. However, in the future, the monitor
->>> will be enabled. Therefore, add the necessary HAL_PHYRX_GENERIC_EHT_SIG
->>> TLV parsing support in monitor Rx path, which help to populate the EHT
->>> radiotap data.
->>>
->>> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->>> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>>
->>> Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
->>> Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
->>> Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
->>> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
->>> ---
->>>   drivers/net/wireless/ath/ath12k/dp_mon.c | 548 +++++++++++++++++++++--
->>>   drivers/net/wireless/ath/ath12k/hal_rx.h | 136 +++++-
->>>   2 files changed, 638 insertions(+), 46 deletions(-)
->>>
->>> diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
->>> index 61fd481b7a3b..dd17607d470d 100644
->>> --- a/drivers/net/wireless/ath/ath12k/dp_mon.c
->>> +++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
->>> @@ -13,6 +13,9 @@
->>>   #define ATH12K_LE32_DEC_ENC(value, dec_bits, enc_bits)    \
->>>           u32_encode_bits(le32_get_bits(value, dec_bits), enc_bits)
->>>   +#define ATH12K_LE64_DEC_ENC(value, dec_bits, enc_bits) \
->>> +        u32_encode_bits(le64_get_bits(value, dec_bits), enc_bits)
->>
->> u64_encode_bits?
->>
-> 
-> No, Its not needed. Here we need to decode from the u64 and get assign to u32 as defined by eht radiotap header.
 
-Okay. Using le32_encode_bits in the ATH12K_LE64_DEC_ENC macro is likely sufficient with the current mask usage
-however it is good to add a comment so that this macro can be used acoordingly in future
+On Thu, 06 Feb 2025 07:08:45 +0530, Karthikeyan Periyasamy wrote:
+> Currently, peer extended Rx statistics are not supported. Peer extended Rx
+> statistics are collected form the TLV data reported in the monitor status
+> Rx path. Therefore, add support for TLV tag parser handling and debugfs
+> to configure and dump the collected information. Additionally, this series
+> does not impact the WCN7850.
+> 
+> v9:
+>  - updated the s-o-b as a last tag
+> v8:
+>  - Resend due to missed patches
+> v7:
+>  - Rebased on ToT
+> v6:
+>  wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV parsing support
+>  wifi: ath12k: Add HAL_PHYRX_GENERIC_EHT_SIG TLV parsing support
+>  wifi: ath12k: Add HAL_RX_PPDU_START_USER_INFO TLV parsing support
+>   - modified the return type as void
+> v5:
+>  Removed the patch "wifi: ath12k: Add EHT rate statistics support" since it
+>  is already merged
+> v4:
+>  wifi: ath12k: Add peer extended Rx statistics debugfs support
+>   - fixed the kernel test robot noticed build errors
+> v3:
+>  wifi: ath12k: Add peer extended Rx statistics debugfs support
+>   - avoid ext_rx_stats filter overwrite in default filter setting
+> v2:
+>  wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV parsing support
+>  wifi: ath12k: Add HAL_PHYRX_GENERIC_EHT_SIG TLV parsing support
+>   - fixed the length calculation in the EHT radiotap procedure
+> 
+> [...]
 
-> 
-> 
->>> @@ -836,6 +1239,9 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
->>>           case HAL_RX_PREAMBLE_11AX:
->>>               ppdu_info->he_flags = 1;
->>>               break;
->>> +        case HAL_RX_PREAMBLE_11BE:
->>> +            ppdu_info->is_eht = true;
->>> +            break;
->>>           default:
->>>               break;
->>>           }
->>> @@ -961,6 +1367,21 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k *ar,
->>>       case HAL_PHYRX_GENERIC_U_SIG:
->>>           ath12k_dp_mon_hal_rx_parse_u_sig_hdr(tlv_data, ppdu_info);
->>>           break;
->>> +    case HAL_PHYRX_GENERIC_EHT_SIG:
->>> +        /* Handle the case where aggregation is in progress
->>> +         * or the current TLV is one of the TLVs which should be
->>> +         * aggregated
->>> +         */
->>> +        if (!ppdu_info->tlv_aggr.in_progress) {
->>> +            ppdu_info->tlv_aggr.in_progress = true;
->>> +            ppdu_info->tlv_aggr.tlv_tag = tlv_tag;
->>> +            ppdu_info->tlv_aggr.cur_len = 0;
->>> +        }
->>> +
->>> +        ppdu_info->is_eht = true;
->>> +
->>> +        ath12k_dp_mon_hal_aggr_tlv(ppdu_info, tlv_len, tlv_data);
->>> +        break;
->>>       case HAL_DUMMY:
->>>           return HAL_RX_MON_STATUS_BUF_DONE;
->>>       case HAL_RX_PPDU_END_STATUS_DONE:
->>> @@ -1158,22 +1579,59 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
->>>           rxs->ampdu_reference = ampdu_id;
->>>       }
->>>   -    if (ppduinfo->eht_usig) {
->>> +    if (ppduinfo->is_eht || ppduinfo->eht_usig) {
->>>           struct ieee80211_radiotap_tlv *tlv;
->>> +        struct ieee80211_radiotap_eht *eht;
->>>           struct ieee80211_radiotap_eht_usig *usig;
->>> -        u16 len = sizeof(*usig);
->>> +        u16 len = 0, i, eht_len, usig_len;
->>> +        u8 user;
->>> +
->>> +        if (ppduinfo->is_eht) {
->>> +            eht_len = struct_size(eht,
->>> +                          user_info,
->>> +                          ppduinfo->eht_info.num_user_info);
->>> +            len += sizeof(*tlv) + eht_len;
->>> +        }
->>> +
->>> +        if (ppduinfo->eht_usig) {
->>> +            usig_len = sizeof(*usig);
->>> +            len += sizeof(*tlv) + usig_len;
->>> +        }
->>>             rxs->flag |= RX_FLAG_RADIOTAP_TLV_AT_END;
->>>           rxs->encoding = RX_ENC_EHT;
->>>             skb_reset_mac_header(mon_skb);
->>>   -        tlv = skb_push(mon_skb, sizeof(*tlv) + len);
->>> -        tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT_USIG);
->>> -        tlv->len = cpu_to_le16(len);
->>> +        tlv = skb_push(mon_skb, len);
->>> +
->>> +        if (ppduinfo->is_eht) {
->>> +            tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT);
->>> +            tlv->len = cpu_to_le16(eht_len);
->>>   -        usig = (struct ieee80211_radiotap_eht_usig *)tlv->data;
->>> -        *usig = ppduinfo->usig;
->>> +            eht = (struct ieee80211_radiotap_eht *)tlv->data;
->>> +            eht->known = ppduinfo->eht_info.eht.known;
->>> +
->>> +            for (i = 0;
->>> +                 i < ARRAY_SIZE(eht->data) &&
->>> +                 i < ARRAY_SIZE(ppduinfo->eht_info.eht.data);
->>> +                 i++)
->>> +                eht->data[i] = ppduinfo->eht_info.eht.data[i];
->>> +
->>> +            for (user = 0; user < ppduinfo->eht_info.num_user_info; user++)
->>> +                put_unaligned_le32(ppduinfo->eht_info.user_info[user],
->>> +                           &eht->user_info[user]);
->>> +
->>> +            tlv = (struct ieee80211_radiotap_tlv *)&tlv->data[eht_len];
->>> +        }
->>> +
->>> +        if (ppduinfo->eht_usig) {
->>> +            tlv->type = cpu_to_le16(IEEE80211_RADIOTAP_EHT_USIG);
->>> +            tlv->len = cpu_to_le16(usig_len);
->>> +
->>> +            usig = (struct ieee80211_radiotap_eht_usig *)tlv->data;
->>> +            *usig = ppduinfo->u_sig_info.usig;
->>> +        }
->>>       } else if (ppduinfo->he_mu_flags) {
->>>           rxs->flag |= RX_FLAG_RADIOTAP_HE_MU;
->>>           rxs->encoding = RX_ENC_HE;
->>> diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
->>> index 2da16f27e76c..959f2283294c 100644
->>> --- a/drivers/net/wireless/ath/ath12k/hal_rx.h
->>> +++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
->>> @@ -71,6 +71,8 @@ enum hal_rx_preamble {
->>>       HAL_RX_PREAMBLE_11N,
->>>       HAL_RX_PREAMBLE_11AC,
->>>       HAL_RX_PREAMBLE_11AX,
->>> +    HAL_RX_PREAMBLE_11BA,
->>
->> is it needed?
->>
-> 
-> It will be good to have the defined values in the enum instead of initialise the HAL_RX_PREAMBLE_11BE = 6 directly.
+Applied, thanks!
 
-got it.
+[1/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_U_SIG TLV parsing support
+      commit: a5f3c2b89136f13f18ea64fc1144691ca771b98b
+[2/9] wifi: ath12k: Add HAL_PHYRX_GENERIC_EHT_SIG TLV parsing support
+      commit: f756f878692f688640f6994a4dacd98665a2bc2f
+[3/9] wifi: ath12k: Add HAL_RX_PPDU_START_USER_INFO TLV parsing support
+      commit: e6fa62bada8796d13f04e2538297b81decc1e335
+[4/9] wifi: ath12k: Add HAL_PHYRX_OTHER_RECEIVE_INFO TLV parsing support
+      commit: d939919a36f4606fb8312c502a53c0ecfbd85b2d
+[5/9] wifi: ath12k: Update the peer id in PPDU end user stats TLV
+      commit: 0cded0e413468183a3b2dd445ab3bdc4d4375967
+[6/9] wifi: ath12k: fix the ampdu id fetch in the HAL_RX_MPDU_START TLV
+      commit: dff4f278ee1ef12d822b7ed2a1048d27037209bb
+[7/9] wifi: ath12k: Add EHT MCS support in Extended Rx statistics
+      commit: 03ac9e9144c59dcfaeb213f80e7e00974325045a
+[8/9] wifi: ath12k: Refactor the format of peer rate table information
+      commit: 98677080467c2a6529a3288f430acb8c44f583a0
+[9/9] wifi: ath12k: Add peer extended Rx statistics debugfs support
+      commit: a412547f2a8bfcf6337691b6d498536f29dbf4b5
 
-> 
->>> +    HAL_RX_PREAMBLE_11BE,
->>>       HAL_RX_PREAMBLE_MAX,
->>>   };
->>>   
-> 
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
 
