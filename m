@@ -4,82 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2460BC021A0
-	for <ath12k@archiver.kernel.org>; Wed, 12 Feb 2025 02:38:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E2F5C02198
+	for <ath12k@archiver.kernel.org>; Wed, 12 Feb 2025 04:07:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=dZAw5hbdY76KOMmAK5YeVelDyMrFKIyauU3evVYq/Dk=; b=Q/LYbDCzF0X3/XGLMwi14W751p
-	/Gy+aDedGaOspbm5HSvwVlvqabeYdVxVA2aud+fFGfNmmnIAZNhIiIpJ31OHYps1/f56yMNNSoFE4
-	sPjzu6IfTaQvAEjdPc5fJmE8wzZ7alvqo9AR/YtFJ5IZooKcmNiGIfeQlYGYTiNYj4MyNxAJNt23t
-	6cjhUpEhdcrvHPc4U+xxsziWCULjnNghIMhazymKyjyCyklOKNuXz3/f2WpeS4reO/+SbNuYsD9Vs
-	rS1WI97bEJgic/YG9BCu42WJmnHZ9IK5V55830L/lFm7pkn0j7pEQ/+SP7Eb8ILWZSXuEnMMhXMMj
-	UOtpxu9g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=NuHUbmMvZ1JOoqy63EABj8zAskjeEZWCiTW+fw42xDg=; b=JX/Uy3OPd/NLKJ0a4+PEwJTCSg
+	2IHkIxuu6QckZZMIeW+/w0fXDgYsJGmYsuWhHmcKokaL86/aAaogbVu6Wg27rckpNW5rVypq+Mm8t
+	xalyaZr3/BFwMQ0IBigBr1VeZzWtjR9YzfFWqD9Ifr30fvWWsZjCFROyK78s1xq4AUZmdZSyGWtrI
+	hjQVfEe46GOH3j6DV7OfEz88ximfF0F0au+vFy+00eCAwLlmSyRiDeEm3tFpq/zF8D+k18cgLuz6E
+	mwnGJBeWBFj6ALYeW0Cjk96VXK7MNZlB8xCAzYVH3Tnd1FXNz+dcyj7niw0Zpj0LVi2AThYLssiFG
+	0ccO/Ixg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti2eD-00000005yAU-3jvP
+	id 1ti41k-0000000683a-3s4M
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Feb 2025 02:38:45 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 12 Feb 2025 04:07:08 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti2eB-00000005yA8-26b5
+	id 1ti41h-0000000683B-4AIW
 	for ath12k@lists.infradead.org;
-	Wed, 12 Feb 2025 02:38:44 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51C0Udxo030555;
-	Wed, 12 Feb 2025 02:38:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=dZAw5hbdY76KOMmAK5YeVe
-	lDyMrFKIyauU3evVYq/Dk=; b=nYHcYVN4CoUKigr1TKL+rD5rz4YmAG4WwzX3nJ
-	rpcigqivsOLHd52LhSU8V2ztZeN4lCIapJHQGo1Y/tK0ry4yWB2HKXDHTuDd8B1N
-	Pd5LHKzJLba7SMePFG8D2oKIpsHCAFmwMKQ1idyArol37Y/UtGuyAK5+WtAixfoZ
-	QYQgc/5y0tVHrg3FKJTbWH1QkIHrFW2Iocx0YPRnMZZ6v8mrgcrVjtSEHBt9YWRL
-	Sq6txiFsxG4piqLuIOg+TigyiQhyTG/Qv46c0Nf7YKeZYWt6FfOLzNvpErP0F2bh
-	Ob7gi5KywavYVGCxNjBNXkrki9EdoYksmPAcmIfv1PACsObw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44qxg9kcyc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Feb 2025 02:38:40 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51C2cdtC003969
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Feb 2025 02:38:39 GMT
-Received: from bqiang-SFF.qca.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 11 Feb 2025 18:38:38 -0800
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, <quic_bqiang@quicinc.com>
-Subject: [PATCH v2] wifi: ath12k: avoid deadlock during regulatory update in ath12k_regd_update()
-Date: Wed, 12 Feb 2025 10:38:29 +0800
-Message-ID: <20250212023829.3300-1-quic_bqiang@quicinc.com>
-X-Mailer: git-send-email 2.25.1
+	Wed, 12 Feb 2025 04:07:07 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51BMeIZr031920
+	for <ath12k@lists.infradead.org>; Wed, 12 Feb 2025 04:07:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	NuHUbmMvZ1JOoqy63EABj8zAskjeEZWCiTW+fw42xDg=; b=Iax63rTWU3D1u7qS
+	KCw6kR5qAvoGcNTM9Hj/P+Sf+GH67nGno77Ucuso5ZqOiWBN2BT5WykQO4uTgdcs
+	DWaP5/E90VmaSAAA9fP4uNdJx2/MoEJ6ICf+Tluu8AUlEND+vjcN5rQyrrqEUVq1
+	Gyonv/SChB7GHxMdSQNpLUwjgq5MH3e6A+ho0cKxEtzRHEr3viSograz56cwr2xs
+	Sra/2j7Dp/to7WGGJc7ueFfkO82xKLnEGAGNwbT2yoKZlb85b5cMbywEMjeu11hH
+	TGB/Wd2bNq8cLkVlDscwt9MMplihjJ40Vpt2a0r4MZYwrRkb/dfgGuLKnSbsoO35
+	bHo4SA==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44qgtk5se7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 12 Feb 2025 04:07:04 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2fa1c093f12so16493187a91.2
+        for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 20:07:04 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739333224; x=1739938024;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=NuHUbmMvZ1JOoqy63EABj8zAskjeEZWCiTW+fw42xDg=;
+        b=l99VtcJwRS92lSuaqx1ZVjHOQWvA2Hy0DrmSzQ2wiv98JV4HK1I+8sLYATwXWqJgXV
+         b/GwfcoGStFsFFvqrcnsrhhA8IBGTAgxX1AUgYwkMaNFeAPWTsq94lTiF9kE78MTgRXo
+         rgwlz6I1Vgd8mk3hPSB04N0667rn6xj78RyAZj6HrZDZowjm9O6IHJrGh/NuD0EUaeoy
+         1nAPG4YI7eKHchzih6p47PqxcTCbyP5/Rv3uQUiT6ssl99Gf547H/b1CHKOHxUv4BQco
+         i9Tg31lBNMLCqVaBpo7tBw7tMqyTk9tJBb0hwUUVXnOJ0Ws7z5oowvFvXbG17Yey9ClR
+         DiVQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUqWr+PvRH10wrrj2x4J/NVN8+23T4OjXaGli3cw4gFLdk/4u7SOBxHiKaOk15+8TIxS9HNTm8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzx5cDLTXgdT7uTHc4ivw/nRu+GUcsFCxkkKXgvITs0W83e7tZc
+	Vi7gqL62aRdpHwZZHBMqlX3FOiXUEycqQWRrAHL2UiLCmSDnsDblQSJ/PXjtYN3BGGMNflEWduw
+	0PQSqyfLGWX6IaBmWfb6qtwG1gX5NOpXnJNx1PQsZJGQHZPkhfL3NoyS5//X7
+X-Gm-Gg: ASbGncvIXIF3uwBiIFlAe/rp6CDXQPpDgj2QBPrRvCodHhqvvlfr178NYbwbjGnQYqv
+	TpgCtodvZBcZMt6FjQ1asUCrGlgw2k6Qg88SzQZmcp8Z+t4k5pKq75wOLlUE+G1rFIKv6s0PEwL
+	9e/xDp6sWz3PAYs6FihpZOM0hAU8kXKk+Hi+MZnhIG6Pyt+aGuEv7wd3O9A2oW837j0a9s8ZhIm
+	ldjMdOr6lF2hH5DO16E3nHLnGjIYECcNFjo4GWGzHINcEzjW+/DNhGBAeMFw47iopsugWeOg0az
+	8WNZejTmXXBSDNOdYhrsy8cILHLjp+DDMt95kqLinohLKe0=
+X-Received: by 2002:a05:6a20:258e:b0:1e0:d6ef:521a with SMTP id adf61e73a8af0-1ee5c732f01mr3192662637.1.1739333223988;
+        Tue, 11 Feb 2025 20:07:03 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHQBsz0NP1gFlIyij83Vi2OQvRjDyJYV0mhsemGVq9Z5Jf7wCrtMmGzbP0x4XLuCjCYV9hh6A==
+X-Received: by 2002:a05:6a20:258e:b0:1e0:d6ef:521a with SMTP id adf61e73a8af0-1ee5c732f01mr3192628637.1.1739333223576;
+        Tue, 11 Feb 2025 20:07:03 -0800 (PST)
+Received: from [10.152.204.0] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-ad5434dc097sm6497494a12.7.2025.02.11.20.07.01
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 11 Feb 2025 20:07:03 -0800 (PST)
+Message-ID: <48cea2db-c6a7-63f1-5e3c-1db77a6fb84e@oss.qualcomm.com>
+Date: Wed, 12 Feb 2025 09:37:00 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: QbJsiYS3iK02njbb2o1DTuefgcR7Bpw5
-X-Proofpoint-GUID: QbJsiYS3iK02njbb2o1DTuefgcR7Bpw5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH] wifi: ath12k: fbx: Add missing htt_metadata flag in
+ ath12k_dp_tx()
+Content-Language: en-US
+To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250124113331.93476-1-nico.escande@gmail.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250124113331.93476-1-nico.escande@gmail.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: XHXE2M7gKBXzaJhxsNxgFEnrBGubM42D
+X-Proofpoint-ORIG-GUID: XHXE2M7gKBXzaJhxsNxgFEnrBGubM42D
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-11_10,2025-02-11_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
- mlxscore=0 priorityscore=1501 malwarescore=0 spamscore=0 impostorscore=0
- mlxlogscore=999 lowpriorityscore=0 phishscore=0 clxscore=1015
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502120019
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 suspectscore=0 phishscore=0 impostorscore=0
+ adultscore=0 clxscore=1015 mlxscore=0 malwarescore=0 bulkscore=0
+ lowpriorityscore=0 mlxlogscore=826 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2501170000 definitions=main-2502120030
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_183843_734837_25434617 
-X-CRM114-Status: GOOD (  21.70  )
+X-CRM114-CacheID: sfid-20250211_200706_233580_B3A5535A 
+X-CRM114-Status: GOOD (  10.39  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,171 +119,21 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Wen Gong <quic_wgong@quicinc.com>
 
-Running this test in a loop it is easy to reproduce an rtnl deadlock:
 
-iw reg set FI
-ifconfig wlan0 down
+On 1/24/2025 5:03 PM, Nicolas Escande wrote:
+> When AP-VLAN was added, we did not add HTT_TCL_META_DATA_VALID_HTT flag to
+> the tx_info's meta_data_flags . Without this flag the firmware seems to
+> reject all the broadcast (ap-vlan) frames. So lets add it same as ath11k
+> did it in commit 5e8a373c8699 ("ath11k: Add support for dynamic vlan")
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+> 
+> Fixes: 26dd8ccdba4d ("wifi: ath12k: dynamic VLAN support")
+> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
 
-What happens is that thread A (workqueue) tries to update the regulatory:
+Thanks for the this. Can you pls resend the patch without fbx in the
+patch title? The rest looks good.
 
-    try to acquire the rtnl_lock of ar->regd_update_work
-
-    rtnl_lock
-    ath12k_regd_update [ath12k]
-    ath12k_regd_update_work [ath12k]
-    process_one_work
-    worker_thread
-    kthread
-    ret_from_fork
-
-And thread B (ifconfig) tries to stop the interface:
-
-    try to cancel_work_sync(&ar->regd_update_work) in ath12k_mac_op_stop().
-    ifconfig  3109 [003]  2414.232506: probe:
-
-    ath12k_mac_op_stop [ath12k]
-    drv_stop [mac80211]
-    ieee80211_do_stop [mac80211]
-    ieee80211_stop [mac80211]
-
-The sequence of deadlock is:
-
-1. Thread B calls rtnl_lock().
-
-2. Thread A starts to run and calls rtnl_lock() from within
-   ath12k_regd_update_work(), then enters wait state because the lock is
-   owned by thread B.
-
-3. Thread B tries to call cancel_work_sync(&ar->regd_update_work), but
-   thread A is in ath12k_regd_update_work() waiting for rtnl_lock(). So
-   cancel_work_sync() forever waits for ath12k_regd_update_work() to
-   finish and we have a deadlock.
-
-Change to use regulatory_set_wiphy_regd(), which is the asynchronous
-version of regulatory_set_wiphy_regd_sync(). This way rtnl & wiphy locks
-are not required so can be removed, and in the end the deadlock issue can
-be avoided.
-
-But a side effect introduced by the asynchronous regd update is that,
-some essential information used in ath12k_reg_update_chan_list(), which
-would be called later in ath12k_regd_update(), might has not been updated
-by cfg80211, as a result wrong channel parameters sent to firmware.
-
-To handle this side effect, move ath12k_reg_update_chan_list() to
-ath12k_reg_notifier(), and advertise WIPHY_FLAG_NOTIFY_REGDOM_BY_DRIVER
-to cfg80211. This works because, in the process of the asynchronous regd
-update, after the new regd is processed, cfg80211 will notify ath12k by
-calling ath12k_reg_notifier(). Since all essential information is updated
-at that time, we are good to do channel list update.
-
-Please note ath12k_reg_notifier() could also be called due to other
-reasons, like core/beacon/user hints etc. For them we are not allowed to
-call ath12k_reg_update_chan_list() because regd has not been updated.
-This is done by verifying  the initiator.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-Co-developed-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
----
-v2:
- - rebased on ToT
- - reformat commit text to make checkpatch happy
- - update copyright
-
- drivers/net/wireless/ath/ath12k/reg.c | 37 +++++++++++++++------------
- 1 file changed, 21 insertions(+), 16 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index 439d61f284d8..987fcca71504 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #include <linux/rtnetlink.h>
- #include "core.h"
-@@ -55,6 +55,24 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 	ath12k_dbg(ar->ab, ATH12K_DBG_REG,
- 		   "Regulatory Notification received for %s\n", wiphy_name(wiphy));
- 
-+	if (request->initiator == NL80211_REGDOM_SET_BY_DRIVER) {
-+		ath12k_dbg(ar->ab, ATH12K_DBG_REG,
-+			   "driver initiated regd update\n");
-+		if (ah->state != ATH12K_HW_STATE_ON)
-+			return;
-+
-+		for_each_ar(ah, ar, i) {
-+			ret = ath12k_reg_update_chan_list(ar);
-+			if (ret) {
-+				ath12k_warn(ar->ab,
-+					    "failed to update chan list for pdev %u, ret %d\n",
-+					    i, ret);
-+				break;
-+			}
-+		}
-+		return;
-+	}
-+
- 	/* Currently supporting only General User Hints. Cell base user
- 	 * hints to be handled later.
- 	 * Hints from other sources like Core, Beacons are not expected for
-@@ -211,7 +229,6 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
- 	int ret, regd_len, pdev_id;
- 	struct ath12k_base *ab;
--	int i;
- 
- 	ab = ar->ab;
- 
-@@ -275,11 +292,7 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 		goto err;
- 	}
- 
--	rtnl_lock();
--	wiphy_lock(hw->wiphy);
--	ret = regulatory_set_wiphy_regd_sync(hw->wiphy, regd_copy);
--	wiphy_unlock(hw->wiphy);
--	rtnl_unlock();
-+	ret = regulatory_set_wiphy_regd(hw->wiphy, regd_copy);
- 
- 	kfree(regd_copy);
- 
-@@ -290,15 +303,6 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 		goto skip;
- 
- 	ah->regd_updated = true;
--	/* Apply the new regd to all the radios, this is expected to be received only once
--	 * since we check for ah->regd_updated and allow here only once.
--	 */
--	for_each_ar(ah, ar, i) {
--		ab = ar->ab;
--		ret = ath12k_reg_update_chan_list(ar);
--		if (ret)
--			goto err;
--	}
- skip:
- 	return 0;
- err:
-@@ -770,6 +774,7 @@ void ath12k_regd_update_work(struct work_struct *work)
- void ath12k_reg_init(struct ieee80211_hw *hw)
- {
- 	hw->wiphy->regulatory_flags = REGULATORY_WIPHY_SELF_MANAGED;
-+	hw->wiphy->flags |= WIPHY_FLAG_NOTIFY_REGDOM_BY_DRIVER;
- 	hw->wiphy->reg_notifier = ath12k_reg_notifier;
- }
- 
-
-base-commit: 704a2d7237043317ed1b0f8a08203e9ddde70097
--- 
-2.25.1
-
+Vasanth
 
