@@ -4,109 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5B18C02198
-	for <ath12k@archiver.kernel.org>; Wed, 12 Feb 2025 04:11:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82D76C02198
+	for <ath12k@archiver.kernel.org>; Wed, 12 Feb 2025 06:32:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UmkM2sgKl/os28MvWYbqe0+++DekWCHSvMHgkykMltk=; b=WpSIhpK7oFnkYHKg2ol4eKXp0t
-	p76vfYgvLzE3AnyqwErjJ5+TcMN16ApLZ9If5Wf8LrabheHnQ18kZjhUmUprKzZxkLia37aR3dZKK
-	7qffTUa91q8BxKY3aHcVi+pitbmyIw+rbIcpemI3Vk7t4mgrUAPia6waNedzdhZ5cpHwJlEo24SFX
-	RQVcJEJ3Xffco/H9AbojwdELJRvc/S6L+4Mfuxsfu692ip1JSNlvXd1ZyUL1q29BriwOJh1/WvEPD
-	OkzImVF0EkBtJKlOumbCWpPrKjjqMP+2J4PwQxn3tGkDV8LPR6WqrSf6BShbznX8TiGJTxZrTAu7K
-	hXFA1Y1Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=3xJxI5/qX/EeIkm5Dg36WeNpIjSRq6VV+ApOwi5jr2g=; b=YYK+vzPHcpuyCygIHHZXZWwuDI
+	NkB3adgYWBzPzBMNlD2RXob7P7KfotjjF90GilvjS1Cj4FiPRWMfERM5q1liUQuzhuwLH0+sFZysR
+	gSsk0Z08VU4pO3/AVqZbclFAvryTWXwaljKS4oAy5Oo03fYmlm+Qv1I6r9DzWX08AJ5jtzvNF5pfD
+	QtTe2pJORfbEyXtgS4yoSCBgbxVbmvu42do8tvIE972jqHgh0XQIqcXD1eg383zZXl9z2O8IkpAAz
+	lgSmvRvh+EEJWNokJmpq5yMwS1UisolektLGJkTpN0lgf2AAAXJYcK2mhYzctLNBysNkqHhTttL6a
+	QyMcdAnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti464-000000068cO-27Pr
+	id 1ti6IR-00000006MPc-12iY
 	for ath12k@archiver.kernel.org;
-	Wed, 12 Feb 2025 04:11:36 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 12 Feb 2025 06:32:31 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti43s-000000068Gf-2GS2
+	id 1ti6IP-00000006MNr-0Cgy
 	for ath12k@lists.infradead.org;
-	Wed, 12 Feb 2025 04:09:21 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51BNvxTi015690
-	for <ath12k@lists.infradead.org>; Wed, 12 Feb 2025 04:09:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Wed, 12 Feb 2025 06:32:30 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51C6HMvK006164;
+	Wed, 12 Feb 2025 06:32:27 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	UmkM2sgKl/os28MvWYbqe0+++DekWCHSvMHgkykMltk=; b=A6hEwCf5JEJvcfyr
-	/DkXYhvoeJO+wWjVumyF23ub4fBEL+GCyGHjlJQT8pwO6DoDFsPrM3j+5JhKLtj/
-	5DXP410RczMDyGnhfaY18tZpvdAivkAz4mJxzenLh1aex9L/qFdZ2g8/b2BY8F4q
-	vwFD6az/Q5dxdpKYamEaB84UevFuMmXoAOkWeLvWs08oEYKAcpMOlOfsSU3lleIC
-	ozBFDXDQQ/44YsW76HuRTgyMNJFj48+f03soYzNbO7EtpcVoJCxPGoP0JMuBsaG8
-	Zxl86L+v0Yy4F3c1/bYnP0a0ljUDdHG96gUzLx3cyYDHC6UXxDeHfrcsaJKhIx2J
-	V0mnpQ==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44rgpgggch-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 12 Feb 2025 04:09:19 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-2fa2edc3824so9389624a91.2
-        for <ath12k@lists.infradead.org>; Tue, 11 Feb 2025 20:09:19 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739333359; x=1739938159;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=UmkM2sgKl/os28MvWYbqe0+++DekWCHSvMHgkykMltk=;
-        b=ctRxNfP1QBd31OQdE34gCSzmEkesBX1CmGt9dXG5+AsBQNnvruT6o/4XbPlLG1bGe3
-         gRMThcIl80T1panMrIRBxR/3SaOs4VcbXOejrzDN+ubI4Elp79Hf2xfMcFH8fb4+kcHL
-         0q9Dn0t6uYg7WdxmPMKGpcxffolc9k8eXEenrKBvX/Fd7HlHpwCd/hKZI/luBTTqKPiF
-         gvv8qaHs4M/mO6HRPqsjUUPI9fK1IsDFYkqqQDCRe1HSPjht31ZB63K5rHKy+tLrA/hH
-         vnDKV/UzWk9DXEFmZI1xRGdbG0ePuF9ctsnL6/yjOVyPTmPs+qb21K34KBW5d2cSePhF
-         GQqw==
-X-Forwarded-Encrypted: i=1; AJvYcCXjFyTo7cFeOtEqQCW1GEAVtM9+Wu+TXSMGpvgf6qI9siJj9ReyLwc22BkmtDF24I8o3p6MnQI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzaOZ/CVoMivFX4L5+cWPUz5PNfXjUUv0c4aKc/RxIBP2O2Fgso
-	uTd4pggKJ0nJVaShKMbkTfWfMZ391t0vUKWUtuAOFceEtx7Imu+YmDcQ6exxhKpkObVFB4/ST4G
-	J0HlUuBbmCzt/WKVCoyB49fzeq5qPdEMpr9IpKwrQxxPoAbG5SEuScLCSY6Shllpupmza
-X-Gm-Gg: ASbGncvuWRa0fOivP9xDGzzBeAMiTCO0+WoVbnS9i7gsNyvv52ScCK2ajw0sXnBbIoh
-	VedRmbXc+XgBVBeyVxPSpUAGyDxejqlVM0OxYR923t5sHgslzVEY/8Xu/CdyawemuiMi6Wqoq4E
-	hXDtdOzKKJ451PyADzvUxy89xtjWdgFwbRv6P1/HXgtu0QRLzKNyX2IZyz9w031Uy79zRTxdh+b
-	jrBnTtL4H3HIP0cas5N8ZH1rsS5IuAhhE1e34jtA8Lhnni4JEhrGc/QylEnGfVJK38qe33tlWiz
-	yt2Q22wJRx0MONENA9tVBt9tvw26d2xvwaGIdvkCbAxU1Ig=
-X-Received: by 2002:a05:6a00:ab86:b0:730:74f8:25c7 with SMTP id d2e1a72fcca58-7322c37c0femr2427625b3a.9.1739333358618;
-        Tue, 11 Feb 2025 20:09:18 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFTqahfub5fqTygv21tDtGBIbsQicMGyjE5EH+CHy9veEfQeMdI2r/bIVUx5ZRMWVvonJo98A==
-X-Received: by 2002:a05:6a00:ab86:b0:730:74f8:25c7 with SMTP id d2e1a72fcca58-7322c37c0femr2427595b3a.9.1739333358204;
-        Tue, 11 Feb 2025 20:09:18 -0800 (PST)
-Received: from [10.152.204.0] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7321b34c003sm2263027b3a.52.2025.02.11.20.09.16
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 11 Feb 2025 20:09:17 -0800 (PST)
-Message-ID: <03697f42-7237-9ea0-311b-ed0cc5ac4e7e@oss.qualcomm.com>
-Date: Wed, 12 Feb 2025 09:39:15 +0530
+	3xJxI5/qX/EeIkm5Dg36WeNpIjSRq6VV+ApOwi5jr2g=; b=Cz6iJZEBsKTJ7KBX
+	rsU1LsxxvfASLS7ipaejVJZlmkNR8gDvIsaST8nFu2vTFhcYVota7BH7DIgp+TpU
+	GaplfW5nQJzNfbWVihbKMZDomyxSHcImJ8ojNYS8SfYI7bIb0iDH2fZ+G9onnWri
+	OKUrEAxFujm/WCufhkL6wV5NJE0AyiiVZ9zb8dqDKI5egHBji7kEOYUNyvVk/YyT
+	Z6N1QxEc8oOujJ7UFcW/RKYobnd2TEUMYx4zs/dLFSdfl1joRFhC+B657eVJTlme
+	Puyo8gCBb8wmodWnazB4AlKszbXwDk4POMotZfi8zW4cO74lNXcj2u+7fvkgjFfB
+	L80Tug==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44qe5mxh8k-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Feb 2025 06:32:26 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51C6WQlp031055
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Feb 2025 06:32:26 GMT
+Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 11 Feb 2025 22:32:24 -0800
+From: Kang Yang <quic_kangyang@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, <quic_kangyang@quicinc.com>
+Subject: [PATCH v10 1/4] wifi: ath12k: add configure country code for WCN7850
+Date: Wed, 12 Feb 2025 14:31:57 +0800
+Message-ID: <20250212063200.1631-2-quic_kangyang@quicinc.com>
+X-Mailer: git-send-email 2.34.1.windows.1
+In-Reply-To: <20250212063200.1631-1-quic_kangyang@quicinc.com>
+References: <20250212063200.1631-1-quic_kangyang@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH] wifi: ath12k: fbx: Add missing htt_metadata flag in
- ath12k_dp_tx()
-Content-Language: en-US
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250124113331.93476-1-nico.escande@gmail.com>
- <48cea2db-c6a7-63f1-5e3c-1db77a6fb84e@oss.qualcomm.com>
-In-Reply-To: <48cea2db-c6a7-63f1-5e3c-1db77a6fb84e@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: hRrPvQtBtwn1GVVItFotprT_8s6xTAvO
-X-Proofpoint-GUID: hRrPvQtBtwn1GVVItFotprT_8s6xTAvO
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 0VNghkUtzgrw2Qw5MYfMAZ8IdmKJMHAe
+X-Proofpoint-ORIG-GUID: 0VNghkUtzgrw2Qw5MYfMAZ8IdmKJMHAe
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-11_10,2025-02-11_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=890
- priorityscore=1501 mlxscore=0 bulkscore=0 lowpriorityscore=0 spamscore=0
- impostorscore=0 phishscore=0 malwarescore=0 suspectscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
- definitions=main-2502120030
+ definitions=2025-02-12_02,2025-02-11_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
+ priorityscore=1501 clxscore=1015 suspectscore=0 mlxscore=0
+ lowpriorityscore=0 phishscore=0 impostorscore=0 malwarescore=0 spamscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2501170000 definitions=main-2502120049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_200920_587194_70DACA1C 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250211_223229_231969_E54950CD 
+X-CRM114-Status: GOOD (  11.47  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,23 +97,104 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Wen Gong <quic_wgong@quicinc.com>
 
+Currently, WMI_SET_INIT_COUNTRY_CMDID is used to set country code for
+WCN7850 and QCN9274.
 
-On 2/12/2025 9:37 AM, Vasanthakumar Thiagarajan wrote:
-> 
-> 
-> On 1/24/2025 5:03 PM, Nicolas Escande wrote:
->> When AP-VLAN was added, we did not add HTT_TCL_META_DATA_VALID_HTT flag to
->> the tx_info's meta_data_flags . Without this flag the firmware seems to
->> reject all the broadcast (ap-vlan) frames. So lets add it same as ath11k
->> did it in commit 5e8a373c8699 ("ath11k: Add support for dynamic vlan")
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
->>
->> Fixes: 26dd8ccdba4d ("wifi: ath12k: dynamic VLAN support")
->> Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
-> 
-> Thanks for the this.
+But WMI_SET_INIT_COUNTRY_CMDID is not the correct command for WCN7850.
 
-My bad, I meant "Thanks for the fix"
+Add handler to send WMI_SET_CURRENT_COUNTRY_CMDID to firmware, which
+is used for WCN7850 to update country code.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
+Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/wmi.c | 36 +++++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/wmi.h | 13 ++++++++++
+ 2 files changed, 49 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index f934d49acee6..0794aaf9ca03 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -3313,6 +3313,42 @@ int ath12k_wmi_send_init_country_cmd(struct ath12k *ar,
+ 	return ret;
+ }
+ 
++int ath12k_wmi_send_set_current_country_cmd(struct ath12k *ar,
++					    struct wmi_set_current_country_arg *arg)
++{
++	struct ath12k_wmi_pdev *wmi = ar->wmi;
++	struct wmi_set_current_country_cmd *cmd;
++	struct sk_buff *skb;
++	int ret;
++
++	skb = ath12k_wmi_alloc_skb(wmi->wmi_ab, sizeof(*cmd));
++	if (!skb)
++		return -ENOMEM;
++
++	cmd = (struct wmi_set_current_country_cmd *)skb->data;
++	cmd->tlv_header =
++		ath12k_wmi_tlv_cmd_hdr(WMI_TAG_SET_CURRENT_COUNTRY_CMD,
++				       sizeof(*cmd));
++
++	cmd->pdev_id = cpu_to_le32(ar->pdev->pdev_id);
++	memcpy(&cmd->new_alpha2, &arg->alpha2, sizeof(arg->alpha2));
++	ret = ath12k_wmi_cmd_send(wmi, skb, WMI_SET_CURRENT_COUNTRY_CMDID);
++
++	ath12k_dbg(ar->ab, ATH12K_DBG_WMI,
++		   "set current country pdev id %d alpha2 %c%c\n",
++		   ar->pdev->pdev_id,
++		   arg->alpha2[0],
++		   arg->alpha2[1]);
++
++	if (ret) {
++		ath12k_warn(ar->ab,
++			    "failed to send WMI_SET_CURRENT_COUNTRY_CMDID: %d\n", ret);
++		dev_kfree_skb(skb);
++	}
++
++	return ret;
++}
++
+ int
+ ath12k_wmi_send_twt_enable_cmd(struct ath12k *ar, u32 pdev_id)
+ {
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
+index 1ba33e30ddd2..8a8504ccdc02 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.h
++++ b/drivers/net/wireless/ath/ath12k/wmi.h
+@@ -4110,6 +4110,16 @@ struct ath12k_wmi_eht_rate_set_params {
+ #define REG_ALPHA2_LEN 2
+ #define MAX_6G_REG_RULES 5
+ 
++struct wmi_set_current_country_arg {
++	u8 alpha2[REG_ALPHA2_LEN];
++};
++
++struct wmi_set_current_country_cmd {
++	__le32 tlv_header;
++	__le32 pdev_id;
++	__le32 new_alpha2;
++} __packed;
++
+ enum wmi_start_event_param {
+ 	WMI_VDEV_START_RESP_EVENT = 0,
+ 	WMI_VDEV_RESTART_RESP_EVENT,
+@@ -5990,6 +6000,9 @@ int ath12k_wmi_send_bcn_offload_control_cmd(struct ath12k *ar,
+ 					    u32 vdev_id, u32 bcn_ctrl_op);
+ int ath12k_wmi_send_init_country_cmd(struct ath12k *ar,
+ 				     struct ath12k_wmi_init_country_arg *arg);
++int
++ath12k_wmi_send_set_current_country_cmd(struct ath12k *ar,
++					struct wmi_set_current_country_arg *arg);
+ int ath12k_wmi_peer_rx_reorder_queue_setup(struct ath12k *ar,
+ 					   int vdev_id, const u8 *addr,
+ 					   dma_addr_t paddr, u8 tid,
+-- 
+2.34.1
+
 
