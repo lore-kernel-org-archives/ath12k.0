@@ -4,92 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8A84C021AA
-	for <ath12k@archiver.kernel.org>; Wed, 19 Feb 2025 17:27:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 547AEC021B0
+	for <ath12k@archiver.kernel.org>; Wed, 19 Feb 2025 17:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:CC:To:From:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NicJPxFZVFMslzB4MjZKlpt7ZkRqlSicXMOAsPiZtrw=; b=P6oKqxPcFJz6/rKB5tRsXB4rqb
-	Om7Z6FhQ9CQg4I4O6FH5NFatU0K+XEQgm/Iqo0WzUWrxvt6xT/R9/aig1lPOXLbTKafHBXsjnrdQp
-	Twp92nopWEofZflnDidHxZnH9AU0rc2S2TKAbv2QXwyFl0UgO/bc7osilGKLtW+NhTNin1tDR8rGO
-	XOxQBklWjClG7feCThowXDm7mAtgJGCRNJrfFWDHcEDXIawLRlInEkkkoHQXZ5nChEr/xskjzIMIn
-	w+Ih1QIgp53Ln3K6GEXfMExJF3QBM6cbp2UgGT/hOotk/riOA/2k1G5CgErix+oRh8rSUMc5vKi9j
-	1sVCubWQ==;
+	bh=RgbUJcAldgo+cnFThyZfjVSmMgZuU/bHqOywGomR4vQ=; b=CxoETQ/nx68YP81R3ntqgAU9E8
+	MXrfyfWzu5R6VtObrrQkh6cMuPn0p78qStPyTkw/yenhV4mtLpZEy0BWTQv8NTYGwHp5Zu3Fbuh6r
+	ypIlDbRocwBhaI+zNVCRUIXLeAuPjWqTloHlRt1IEgE5nYWj9eyf6G8sdiW9a/RTptaotfPmdpTns
+	vbgdSTDKojm7IBRjr9eu/XprVk2A1ixtKHBQjV0SuRu9Q2WCH+G6llBTiptEX8N57iJyJodoN9SX4
+	nJ7TGiDcYrjBPTwswJuugo3WkY/G2aPcWpKx4s+qLUhg8O5bNu81misd9ba/9oYAil+rsYJBobQ6f
+	4afof9Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tknqn-0000000E5oZ-24Ua
+	id 1tkoLI-0000000EEFw-0BoE
 	for ath12k@archiver.kernel.org;
-	Wed, 19 Feb 2025 17:27:09 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Wed, 19 Feb 2025 17:58:40 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tknqk-0000000E5nh-4B1A
+	id 1tkoLG-0000000EEF8-0YEt
 	for ath12k@lists.infradead.org;
-	Wed, 19 Feb 2025 17:27:08 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51JGjENa031904;
-	Wed, 19 Feb 2025 17:27:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Wed, 19 Feb 2025 17:58:39 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51JG6naV026862
+	for <ath12k@lists.infradead.org>; Wed, 19 Feb 2025 17:58:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	NicJPxFZVFMslzB4MjZKlpt7ZkRqlSicXMOAsPiZtrw=; b=CgZxCEa7e4Kf35G/
-	PqBfVCvESSZuIyCcuoY+lwASTDH/eYpidalEXydaWCPSzDZzA55AgUQ9LJsH/MPn
-	UFRCmT5daloHIc/yfsFvhBlx7slUgvuJK9xbK3gVCMuRSYBoaJm/x2YrnrUmGvRL
-	Q5MaZVkIf8sMyIijTlY6ARiLBZNNvd2ce6+aBcvHhsPZjTI9psy8Ab2hskPEifUa
-	4yC9Vv/zUB2UHU9e/Jr/OnGKwFWqiqJSsocVxnnojS8+/Cl1ePCvKINnUVRcE3Pl
-	ZQU1neCZxSnE3gLQb/pUM5oOOEcXs7XahSCVRidPNGS4FdzWKgXaghE3VKGQu1xU
-	zgOuIQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44vyy5bec9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 19 Feb 2025 17:27:04 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51JHR39H013534
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 19 Feb 2025 17:27:03 GMT
-Received: from [10.227.108.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 19 Feb
- 2025 09:27:03 -0800
-Message-ID: <5618e86b-88d7-48e7-aeb9-5c4feabf04a3@quicinc.com>
-Date: Wed, 19 Feb 2025 09:27:02 -0800
+	RgbUJcAldgo+cnFThyZfjVSmMgZuU/bHqOywGomR4vQ=; b=CHuv75gSQNw8cWto
+	7x2xy2sgroglwfCYnlf69dW9na1skACDzsmKXCeGKiC1S4IKeiKHWloasHaS1l8i
+	R1KUtmfUeeIj2SK5A66f9xDBdMtZ4ItzjF563FDf3y9PMHYgT87Gseiw4M11oCz4
+	6s/JNpE9c2PMMqCIoHWYJU+h3xf+amOgtl9voaH6kt6GcrPFKsHS7FQty75qaQig
+	5FvD5NKelUZ/xxPeJmviLOs4OXrc1YLzlp+2+SpjWn1F7ioDTbH7qQVE2qHQY51w
+	uttRRo7gwnDrmfagQfr+bfleXz0Y/MzsJrd9DFfXIWp3WmPtwV4Mrtcw+SfTSs3z
+	yqt/YQ==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44vyy0khx4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 19 Feb 2025 17:58:37 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-220c86b3ef3so23161605ad.1
+        for <ath12k@lists.infradead.org>; Wed, 19 Feb 2025 09:58:37 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739987916; x=1740592716;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=RgbUJcAldgo+cnFThyZfjVSmMgZuU/bHqOywGomR4vQ=;
+        b=KtOcTuB8GjxQBgsemb08Q4mGw1BKCrmEpr92n2q2yK6Pfd7t+XzxEbQnbQ1yhnoYuL
+         CgnZbnGLKAS8ViCsF+Smm9oc1x6gRB/dFdkZ5tcqFUHxXH0IZRZm0GuvtlL+NxxCyWjc
+         7yCKDC5SvO6doHkA9pPLYTXx/4gji0bRLJ+zP+IV8p4unqoHCWw+DXu6hcTJPhklrZTZ
+         qj1Vvd/CYso3A0ZSULQrkcVfQDq0xZCdTqroLcNT8b3+jhRAbrkRn8f62q7Y245WiytJ
+         ZLAe5n/SL09fUyROVncmBkrQylHZBbbrYQ+c2kMbjGkLPYGYL396GKq0r+jAzEVbGRql
+         gGBw==
+X-Forwarded-Encrypted: i=1; AJvYcCU/Al1X8Yjggd0bBFUNyZSIxdO9hjtOEijXWEUmy7Y3bXNPZKBuQXAN1VvDOX9/Hpj704nd7c4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx24w74opxjDOhzwwVXF93R3jWvFtN2gZPjy364IzHyzZFAl3Q5
+	LfJdGLZHSKOfcCaoI7/LSd7xzxl3B9zWOwpeCiVBxnXWok3vLf4cj8LSEgMd4fuMmuHygf9ax9m
+	W3SDxD/BEWzK5xT7d2mkzcIjVvUBapnfV5Lwh//kiE/1uN0+0wGOSSfIchcokN+/55Pje
+X-Gm-Gg: ASbGncvmExF4JNCA04CuCvYBSAAXdP/Td2dJsxTx+AZHmNRKZK48SmOFCX5SYbNW4K1
+	eNnstywOYALSskYd4Ofvrs4kM0vCv33oKLlNAR/oeVmJXUfA3KLnc0lxrA4ORo16uOHtcr4hWEq
+	BVaA4cSgBGAbWalrvVWBQaMwp0QcwcAFmxgXyKiEGgj9r68/9U6adeFgIGZUFzjPbPscu007Gvn
+	An+5upY4TKnF9VkIWSr2kYEGmABZ1kAkqo5NuHuGE1RLbdYTA79DIF2sKSajg4iwFYyxT1gZdSB
+	EiM4DXddrosEHt6bwOoe/d7cTcgrnCQqgqdzOzH/IaIFJ27W4UqWVHICNdSa
+X-Received: by 2002:a17:902:d4c6:b0:21f:97c3:f885 with SMTP id d9443c01a7336-2218c5576a8mr1962045ad.18.1739987916234;
+        Wed, 19 Feb 2025 09:58:36 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHGNxtoH0MLvwbXesnFzPINjy1550eaOM02x9owGxmOK4Am91iwrdTAI7fKou7Aq4t/6L1v9Q==
+X-Received: by 2002:a17:902:d4c6:b0:21f:97c3:f885 with SMTP id d9443c01a7336-2218c5576a8mr1961655ad.18.1739987915892;
+        Wed, 19 Feb 2025 09:58:35 -0800 (PST)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-220d7a540aasm105617405ad.245.2025.02.19.09.58.35
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 19 Feb 2025 09:58:35 -0800 (PST)
+Message-ID: <7e120d90-bbe6-47f5-bf72-c1ee681c97a0@oss.qualcomm.com>
+Date: Wed, 19 Feb 2025 09:58:34 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V5 4/6] wifi: ath12k: add 6 GHz params in peer assoc
- command
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-To: <mbizon@freebox.fr>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Avula Sri Charan
-	<quic_asrichar@quicinc.com>
-References: <20240508173655.22191-1-quic_pradeepc@quicinc.com>
- <20240508173655.22191-5-quic_pradeepc@quicinc.com>
- <600e45a74fc3ca1bedc12c273a84966fdfa3d908.camel@freebox.fr>
- <62873a7f-d62a-4594-a7f8-c29e1df0aa30@quicinc.com>
+Subject: Re: [PATCH] wifi: ath12k: fbx: Add missing htt_metadata flag in
+ ath12k_dp_tx()
+To: Nicolas Escande <nico.escande@gmail.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250124113331.93476-1-nico.escande@gmail.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <62873a7f-d62a-4594-a7f8-c29e1df0aa30@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: SuOucCGuPbmPkFkNXgoEO-3Pnu6JfTy2
-X-Proofpoint-GUID: SuOucCGuPbmPkFkNXgoEO-3Pnu6JfTy2
+In-Reply-To: <20250124113331.93476-1-nico.escande@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: yPLXQiPlqOL5roTVr2uHPcqoXLgMLiNj
+X-Proofpoint-ORIG-GUID: yPLXQiPlqOL5roTVr2uHPcqoXLgMLiNj
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-19_07,2025-02-19_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- mlxlogscore=999 spamscore=0 bulkscore=0 clxscore=1015 suspectscore=0
- adultscore=0 malwarescore=0 mlxscore=0 lowpriorityscore=0 impostorscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502100000 definitions=main-2502190135
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ impostorscore=0 lowpriorityscore=0 mlxlogscore=999 spamscore=0
+ clxscore=1015 priorityscore=1501 phishscore=0 mlxscore=0 bulkscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502190139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250219_092707_146303_24F9302B 
-X-CRM114-Status: GOOD (  17.03  )
+X-CRM114-CacheID: sfid-20250219_095838_190033_70140940 
+X-CRM114-Status: GOOD (  11.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,63 +118,19 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 1/24/2025 3:33 AM, Nicolas Escande wrote:
+> When AP-VLAN was added, we did not add HTT_TCL_META_DATA_VALID_HTT flag to
+> the tx_info's meta_data_flags . Without this flag the firmware seems to
+> reject all the broadcast (ap-vlan) frames. So lets add it same as ath11k
+> did it in commit 5e8a373c8699 ("ath11k: Add support for dynamic vlan")
 
+checkpatch complains:
+WARNING:UNKNOWN_COMMIT_ID: Unknown commit id '5e8a373c8699', maybe rebased or not pulled?
 
-On 2/12/2025 6:05 PM, Pradeep Kumar Chitrapu wrote:
-> 
-> 
-> On 1/23/2025 3:35 AM, Maxime Bizon wrote:
->>
->> On Wed, 2024-05-08 at 10:36 -0700, Pradeep Kumar Chitrapu wrote:
->>
->> Hello,
->>
->> This patch has been merged, but there may be a bug here:
->>
->>> +       if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_40)
->>> +               arg->bw_40 = true;
->>> +
->>> +       if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_80)
->>> +               arg->bw_80 = true;
->>> +
->>> +       if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_160)
->>> +               arg->bw_160 = true;
->>> +
->>> +       if (sta->deflink.bandwidth == IEEE80211_STA_RX_BW_320)
->>> +               arg->bw_320 = true;
->>> +
->>
->>
->> Downstream driver does this instead:
->>
->> if (sta->deflink.bandwidth >= IEEE80211_STA_RX_BW_40)
->>     arg->bw_40  = true
->> [...]
->>
->>
->> So for a 320Mhz STA, bw_40/80/160/320 are set, resulting in multiple
->> bits WMI_PEER_xxxMHZ set the associated WMI command.
->>
->> Which one is correct ?
->>
->> (This is for EHT, but the same applies for VHT/HE code)
->>
-> Hi Maxime,
-> 
-> I noticed that currently only one of the bandwidth flags is set in the 
-> driver. I am inquiring with the firmware team to determine if we need to 
-> set multiple flags from the driver. I will update you soon and, if 
-> required, will post the next revision.
-> 
-> Thanks
-> Pradeep
-> 
-Hi Maxime,
+And I don't see such a change in kernel.org
 
-Currently, the firmware sets all lower bandwidth flags based on the 
-highest bandwidth set. While there is no harm in setting all bandwidth 
-flags, this may not be mandatory. Please let me know your thoughts.
+Perhaps this is an out-of-tree change that should be referenced in a different
+way?
 
-Thanks,
-Pradeep
+/jeff
 
