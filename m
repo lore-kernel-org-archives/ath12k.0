@@ -4,79 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2829C021AA
-	for <ath12k@archiver.kernel.org>; Wed, 19 Feb 2025 02:34:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48517C021AA
+	for <ath12k@archiver.kernel.org>; Wed, 19 Feb 2025 04:35:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=6qFuIp0iOTJaqdmHLfLkg4AKYriX9l+e8ZK0HkBkSg8=; b=rR3Np8NdyEqiIlHj+ZXYWAS42T
-	f3mLHx/+9NE7DwFhNit9426x2OwZnSlJJ2Au93V/0u0JIdkID2mgxe/Cr9FZLfUlf64DQ0ja94dtd
-	YvoKXfUcNO7aUhFwJe7o1BFZs/Visomm/a1rDtfxCa4rAxhgIAZ7ErmjPwcTTq8NfGO4sOqGcVfaw
-	cNnXdBH0HNP51b2WtElCIYyWtKjy+VG7LaTcx6OCKUuw148/dTNOGI/cpEj8Tl55aqu78D0EmPwPr
-	nGP7yJZoDv76RQH52xk/G0yEufwj0POG4+QY3nMG79FSZz2Z9VTXZFyIWlFSxtjcxW2vmzNFjpbgP
-	cH9p5y7A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2+axHVtw8+p5ZiJOCuUgfISioBAVecAvHKnQHKMNiOs=; b=wqCaiLw7kQ9W8yc0rSQQXinWue
+	K+aw6USl5xFwsRM7FdyJFEFcaRPnL+JBAUPMUQLxYF6pBOtm1SSjWctSQKxVf3cKE3jbqHioB4/wR
+	7E5bQt16kdMdaOV28XHthAwZgmsXnMS+NxOaWVxCvSWQmeiuxGT/qZShpCkyd3pmjD8BIVAqtkn21
+	4DR4vLInUMZ+EHw+d16RV4yUeJMD045qwmQSvrrYyRnpedk0hHnWUHq0Gv7WomjexXYsFS2Zx/nkM
+	Dvjz2xtOQ8iK1w3Gu+VRHbDuztAaRA6hiWcq/+lsLUPoI51TcJSVtvTvqNfXXPPIwE7ZYOmy76Qme
+	IdbxnInw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkZvL-0000000AfSi-1YLS
+	id 1tkbo7-0000000AqOS-43ps
 	for ath12k@archiver.kernel.org;
-	Wed, 19 Feb 2025 02:34:55 +0000
-Received: from mgamail.intel.com ([198.175.65.9])
+	Wed, 19 Feb 2025 04:35:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkZvI-0000000AfRi-3f5t
+	id 1tkbo5-0000000AqNC-1ERz
 	for ath12k@lists.infradead.org;
-	Wed, 19 Feb 2025 02:34:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1739932493; x=1771468493;
-  h=date:from:to:cc:subject:message-id:mime-version;
-  bh=NAAHiS42bhd4NtLIVDGcTF2I5VSPzSVITVY8K37nrYU=;
-  b=EB54v7kVtSckCc2Il0GmBk1Qn5SUADgEkeg3pMCUbMhJFRa6K6TjMvYW
-   ELICOWYpFHJofkzC75K5b6Gwse/SEkJicl7Ho7kyoSCVBRmTtIKoMEczT
-   4k7TpUhVXU37xOHvyQXGAkbxh7i33JBWNUqrsOgxDoLYixTpXBfaOoUZi
-   EYIMWEK6FOmwcSAzcyo4S1H6+/ahKn0xbZAoLCQxj1+IPka0oH71cabsl
-   WdvEYZc6z7suJEAEW8bXaTWDPuNu1QMue38qDf32kNMrva6Hhj1e7Xd9k
-   0745FMyyca704qkiKwPRvBOJC5ptuDa8uWEkSjp099N3KQhKOmpfkxJTr
-   Q==;
-X-CSE-ConnectionGUID: 7ILPcDufRcGfC4w1iY+r0w==
-X-CSE-MsgGUID: 7HSGx2blSImghhKEjAE/UA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11348"; a="63128693"
-X-IronPort-AV: E=Sophos;i="6.13,296,1732608000"; 
-   d="scan'208";a="63128693"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Feb 2025 18:34:51 -0800
-X-CSE-ConnectionGUID: bBYqrZ1NTLO+pH3kJYy73w==
-X-CSE-MsgGUID: pcV7ZefcTISew4qh/vsibQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
-   d="scan'208";a="118711751"
-Received: from lkp-server02.sh.intel.com (HELO 76cde6cc1f07) ([10.239.97.151])
-  by fmviesa003.fm.intel.com with ESMTP; 18 Feb 2025 18:34:48 -0800
-Received: from kbuild by 76cde6cc1f07 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tkZvA-00019I-1a;
-	Wed, 19 Feb 2025 02:34:45 +0000
-Date: Wed, 19 Feb 2025 10:34:23 +0800
-From: kernel test robot <lkp@intel.com>
-To: Vignesh C <quic_vignc@quicinc.com>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
-	ath12k@lists.infradead.org,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-Subject: [ath:ath12k-split-phy 61/81]
- drivers/net/wireless/ath/ath12k/mac.c:4778:15: warning: variable 'ar' is
- uninitialized when used here
-Message-ID: <202502191045.TBgxxg1V-lkp@intel.com>
+	Wed, 19 Feb 2025 04:35:34 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51IIwKUA001823;
+	Wed, 19 Feb 2025 04:35:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	2+axHVtw8+p5ZiJOCuUgfISioBAVecAvHKnQHKMNiOs=; b=L3k+VLRwO/zSyRjp
+	6U6Hng2xoifRnmTO5oq+itLHgzW25fB0nYqou7QQbnSdZT1fIcFj1dl37YKwPWmZ
+	528qbn4ja13wpdbFygw+zcoHYDnQ4XhAt780aWLowLiNfSH+lJaGvIRsmdif4HMb
+	yetbMdBjTdG06ZMrgZcOtT0QYjxZzcO/FrcNM4RT4YBYjGJ0oTpEeObqXFeFHEi6
+	rGPNZB4fzxbqk1JzAjgb5uZjtyuglr7pfWHGy1hUMbvzjoSzNL2H0zhew09070BL
+	etJKJBPixzBdO8MT9yRB1+FCA2Lv2bwYuaxnulbNnkJLrRuCyiSLZwZ1V5sci3iH
+	RNMIfQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44vyy296sb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 19 Feb 2025 04:35:30 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51J4ZU7P023322
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 19 Feb 2025 04:35:30 GMT
+Received: from [10.216.26.155] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 18 Feb
+ 2025 20:35:28 -0800
+Message-ID: <c7a422b9-55b9-3f03-a89b-6b5e82d8e3c5@quicinc.com>
+Date: Wed, 19 Feb 2025 10:05:25 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v10 3/4] wifi: ath12k: use correct WMI command to set
+ country code for WCN7850
+Content-Language: en-US
+To: Kang Yang <quic_kangyang@quicinc.com>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>
+References: <20250212063200.1631-1-quic_kangyang@quicinc.com>
+ <20250212063200.1631-4-quic_kangyang@quicinc.com>
+From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
+In-Reply-To: <20250212063200.1631-4-quic_kangyang@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: okI0jSAQeMIB4k0eIG-kPL6FPfZ9fiZZ
+X-Proofpoint-GUID: okI0jSAQeMIB4k0eIG-kPL6FPfZ9fiZZ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-19_01,2025-02-18_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ lowpriorityscore=0 clxscore=1015 adultscore=0 phishscore=0 mlxlogscore=829
+ bulkscore=0 malwarescore=0 impostorscore=0 priorityscore=1501 mlxscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502190032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250218_183452_958765_D8F6C97F 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20250218_203533_351684_866575BF 
+X-CRM114-Status: GOOD (  11.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,158 +101,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-split-phy
-head:   c836072ed719073e205d0d8d16b766940e240e68
-commit: f430fff8339fb95a85489c1363c3ac7ab0d0f536 [61/81] wifi: ath12k: Split scan request for split band device
-config: um-allmodconfig (https://download.01.org/0day-ci/archive/20250219/202502191045.TBgxxg1V-lkp@intel.com/config)
-compiler: clang version 21.0.0git (https://github.com/llvm/llvm-project 910be4ff90d7d07bd4518ea03b85c0974672bf9c)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250219/202502191045.TBgxxg1V-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202502191045.TBgxxg1V-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   In file included from drivers/net/wireless/ath/ath12k/mac.c:7:
-   In file included from include/net/mac80211.h:18:
-   In file included from include/linux/if_ether.h:19:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:12:
-   In file included from include/linux/hardirq.h:11:
-   In file included from arch/um/include/asm/hardirq.h:5:
-   In file included from include/asm-generic/hardirq.h:17:
-   In file included from include/linux/irq.h:20:
-   In file included from include/linux/io.h:14:
-   In file included from arch/um/include/asm/io.h:24:
-   include/asm-generic/io.h:549:31: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     549 |         val = __raw_readb(PCI_IOBASE + addr);
-         |                           ~~~~~~~~~~ ^
-   include/asm-generic/io.h:567:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     567 |         val = __le16_to_cpu((__le16 __force)__raw_readw(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/little_endian.h:37:51: note: expanded from macro '__le16_to_cpu'
-      37 | #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
-         |                                                   ^
-   In file included from drivers/net/wireless/ath/ath12k/mac.c:7:
-   In file included from include/net/mac80211.h:18:
-   In file included from include/linux/if_ether.h:19:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:12:
-   In file included from include/linux/hardirq.h:11:
-   In file included from arch/um/include/asm/hardirq.h:5:
-   In file included from include/asm-generic/hardirq.h:17:
-   In file included from include/linux/irq.h:20:
-   In file included from include/linux/io.h:14:
-   In file included from arch/um/include/asm/io.h:24:
-   include/asm-generic/io.h:585:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     585 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/little_endian.h:35:51: note: expanded from macro '__le32_to_cpu'
-      35 | #define __le32_to_cpu(x) ((__force __u32)(__le32)(x))
-         |                                                   ^
-   In file included from drivers/net/wireless/ath/ath12k/mac.c:7:
-   In file included from include/net/mac80211.h:18:
-   In file included from include/linux/if_ether.h:19:
-   In file included from include/linux/skbuff.h:17:
-   In file included from include/linux/bvec.h:10:
-   In file included from include/linux/highmem.h:12:
-   In file included from include/linux/hardirq.h:11:
-   In file included from arch/um/include/asm/hardirq.h:5:
-   In file included from include/asm-generic/hardirq.h:17:
-   In file included from include/linux/irq.h:20:
-   In file included from include/linux/io.h:14:
-   In file included from arch/um/include/asm/io.h:24:
-   include/asm-generic/io.h:601:33: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     601 |         __raw_writeb(value, PCI_IOBASE + addr);
-         |                             ~~~~~~~~~~ ^
-   include/asm-generic/io.h:616:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     616 |         __raw_writew((u16 __force)cpu_to_le16(value), PCI_IOBASE + addr);
-         |                                                       ~~~~~~~~~~ ^
-   include/asm-generic/io.h:631:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     631 |         __raw_writel((u32 __force)cpu_to_le32(value), PCI_IOBASE + addr);
-         |                                                       ~~~~~~~~~~ ^
-   include/asm-generic/io.h:724:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     724 |         readsb(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:737:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     737 |         readsw(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:750:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     750 |         readsl(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:764:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     764 |         writesb(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:778:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     778 |         writesw(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:792:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     792 |         writesl(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
->> drivers/net/wireless/ath/ath12k/mac.c:4778:15: warning: variable 'ar' is uninitialized when used here [-Wuninitialized]
-    4778 |                 ath12k_warn(ar->ab, "unable to select device for scan\n");
-         |                             ^~
-   drivers/net/wireless/ath/ath12k/debug.h:36:50: note: expanded from macro 'ath12k_warn'
-      36 | #define ath12k_warn(ab, fmt, ...) __ath12k_warn((ab)->dev, fmt, ##__VA_ARGS__)
-         |                                                  ^~
-   drivers/net/wireless/ath/ath12k/mac.c:4768:19: note: initialize the variable 'ar' to silence this warning
-    4768 |         struct ath12k *ar, *prev_ar;
-         |                          ^
-         |                           = NULL
-   13 warnings generated.
 
 
-vim +/ar +4778 drivers/net/wireless/ath/ath12k/mac.c
+On 2/12/2025 12:01 PM, Kang Yang wrote:
+> From: Wen Gong <quic_wgong@quicinc.com>
+> 
+> When userspace try to set country code by NL80211_REGDOM_SET_BY_USER
+> hint(like iw reg set XX), it will pass new country code to ath12k.
+> Then ath12k will set this new country code to firmware by
+> WMI_SET_INIT_COUNTRY_CMDID. But for WCN7850, this WMI command won't
+> take effect.
+> 
+> For AP based chips(QCN92xx), WMI_SET_INIT_COUNTRY_CMDID is the correct
+> command. However, for STATION based chips(WCN7850), it need to use
+> WMI_SET_CURRENT_COUNTRY_CMDID.
+> 
+> Add flag current_cc_support in hardware parameters. It is used to
+> distinguish AP/STA platform. After that, the firmware will work
+> normal and the regulatory feature works well for WCN7850.
+> 
 
-  4763	
-  4764	static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
-  4765					 struct ieee80211_vif *vif,
-  4766					 struct ieee80211_scan_request *hw_req)
-  4767	{
-  4768		struct ath12k *ar, *prev_ar;
-  4769		int i, from_index, to_index;
-  4770	
-  4771		lockdep_assert_wiphy(hw->wiphy);
-  4772		/* Since the targeted scan device could depend on the frequency
-  4773		 * requested in the hw_req, select the corresponding radio
-  4774		 */
-  4775		prev_ar = ath12k_mac_select_scan_device(hw, vif,
-  4776							hw_req->req.channels[0]->center_freq);
-  4777		if (!prev_ar) {
-> 4778			ath12k_warn(ar->ab, "unable to select device for scan\n");
-  4779			return -EINVAL;
-  4780		}
-  4781	
-  4782		/* NOTE: There could be 5G low/high channels as mac80211 sees
-  4783		 * it as an single band. In that case split the hw request and
-  4784		 * perform multiple scans
-  4785		 */
-  4786		from_index = 0;
-  4787		for (i = 1; i < hw_req->req.n_channels; i++) {
-  4788			ar = ath12k_mac_select_scan_device(hw, vif,
-  4789							   hw_req->req.channels[i]->center_freq);
-  4790			if (!ar) {
-  4791				ath12k_warn(ar->ab, "unable to select device for scan\n");
-  4792				return -EINVAL;
-  4793			}
-  4794			if (prev_ar == ar)
-  4795				continue;
-  4796	
-  4797			to_index = i;
-  4798			ath12k_mac_initiate_hw_scan(hw, vif, hw_req, prev_ar,
-  4799						    from_index, to_index);
-  4800			from_index = to_index;
-  4801			prev_ar = ar;
-  4802		}
-  4803		return ath12k_mac_initiate_hw_scan(hw, vif, hw_req, prev_ar, from_index, i);
-  4804	}
-  4805	
+Should this patch be the next in the series right after the patch
+(patch 1/4) that adds WMI command implementation for
+WMI_SET_CURRENT_COUNTRY_CMDID?
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Vasanth
 
