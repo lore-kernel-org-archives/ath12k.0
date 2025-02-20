@@ -4,82 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9A4DC021B1
-	for <ath12k@archiver.kernel.org>; Thu, 20 Feb 2025 15:18:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DF72C021B3
+	for <ath12k@archiver.kernel.org>; Thu, 20 Feb 2025 15:49:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MDFhrNsdY1kx0kPJdMeAswDsNzYeQpnI4+da35acGnw=; b=k6a4EyDSKQPJNJr56cJD5oR5Q1
-	EB73m8bUTV7YS0uvoh7Us0KGB0uEDrCJFfNvtCAL1gUeFv97qsLjNEhiDbXdksu2LRqYvhztbgCjp
-	Dcs6U8+upuqxuRFzJyeLWseEzKBUlJxpLKURojPXm/qYISaHalluAp3eXPb+U55FONVnz3ceQSe6p
-	hHpOntDKmScZZ68qtpIq3ywa92NcSvaOXaY9F7dZjmcDGwA41QCoUYArrSQHPIPo1+wV9CfDp5wmN
-	pbeBlLlVUW6ES/Tq8o8vXn9Be+pRbGgGhdeKRRomfIHj5uowa02rJQPdQFAD2BQ6GRQvieye+yGJd
-	mO0r9CUg==;
+	bh=k6t17zJoyzi/MYtv7YnDTb5dXnKB3dpwV2Y+J7LFw/8=; b=YAmSJJJ7nMcczhHQLY2wuAE/+Z
+	e+KZxSmTa3Qk2UFu3YwRsmS7uz8cuwhYNpdHdSuEiJyfTVzputb0gk711de8ccW89pPeBnsfNpvdO
+	7ql2tv7OvogmKhqgTqIAALAR+FUDdJzHD83wlKnxTklZ37QOBj6mv5u+VA9K7UDY62bay6OIWH7uM
+	MDMEBe96qg5lsfmqAvGgm3rk3VoFixc9COCGkjIZGquV/burqF5Sr6cVjQYypibFe/uvvdXOc6b8L
+	/i9ZMwIAzYvX496puiK/qb9JFB9wcY60VVYpTFIajLAjPPuVrYReqJw7GPZJYbNQj1MBzGp+6rDHG
+	9GLqOdMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tl8Jr-00000001Wjd-1t8X
+	id 1tl8nM-00000001fFS-3t4T
 	for ath12k@archiver.kernel.org;
-	Thu, 20 Feb 2025 15:18:31 +0000
+	Thu, 20 Feb 2025 15:49:00 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tl8Jo-00000001WiN-2JtN
+	id 1tl8lR-00000001ebw-0BsX
 	for ath12k@lists.infradead.org;
-	Thu, 20 Feb 2025 15:18:30 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51KAWu1O026008
-	for <ath12k@lists.infradead.org>; Thu, 20 Feb 2025 15:18:28 GMT
+	Thu, 20 Feb 2025 15:47:02 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51K7dPRg020390
+	for <ath12k@lists.infradead.org>; Thu, 20 Feb 2025 15:47:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MDFhrNsdY1kx0kPJdMeAswDsNzYeQpnI4+da35acGnw=; b=c1a9rDLu/S6atHUN
-	2dcIDMFXWsWoxuboAfhNvheZhOeMKWaICbCtciAG0fV8nbkV2DEAgJqh9hvIgUsp
-	sDuYs5IPv3snQe5FN/B6aFJvxtoxAZI+drI6u6XZthDp83vPc9KK+XD+YNUIOsTr
-	2y7Atpr+nsKBNfH28Y2xnn1maNDt8LOwbuhyPfmJJUFlWNVtqDw+G5VqcZJG+eif
-	3LFBvIm5ybzRyvJXy+T/ZYITVcOSwrucdDgxQcNN5V9d18orEBJgjjfpjQK+g6hm
-	j9eu6Ygkijf7RRSX6FL70HvwffI1gXXFeaYmhlHxUliysLJU4gUxLXq1Vrdg0hpy
-	RyWXkg==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44x2r3rqpd-1
+	k6t17zJoyzi/MYtv7YnDTb5dXnKB3dpwV2Y+J7LFw/8=; b=Q2xTXwhfjSdYxCbI
+	a2rq2V2q2zVyg1eSuSD70WMwnkb0VR/3/UIbixENlunH6GD/VHlh3t1yLfbyeEOF
+	2QzuWmmxN97rtdE9Z9gqzZ7xFJKDyUxUqIOOOlXKFY0PacwJfJ4A/hDzdOTVeWLT
+	MMuDyQb2MMQtBSqNmjrJAM6QHcana+UZ3YYS2ITpYKTav1S1XzwzPPAJGnXHTwar
+	W5rIiFU1nG0fuege4HvXvT9Vj1vFe1/cQoj51kzRxH7iAYloR2zhyrBFChldUbxi
+	8lkkKLMC/iJgkcuajnFxu8O10/QunuyEFa+f1mm600pcxOtaHiqLO7b7DS/OSuMA
+	oAItCA==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44x06t1a7a-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 20 Feb 2025 15:18:27 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2217a4bfcc7so24175555ad.3
-        for <ath12k@lists.infradead.org>; Thu, 20 Feb 2025 07:18:27 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Thu, 20 Feb 2025 15:47:00 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-220e7d654acso27850505ad.0
+        for <ath12k@lists.infradead.org>; Thu, 20 Feb 2025 07:47:00 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740064707; x=1740669507;
+        d=1e100.net; s=20230601; t=1740066419; x=1740671219;
         h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=MDFhrNsdY1kx0kPJdMeAswDsNzYeQpnI4+da35acGnw=;
-        b=R9dgWEeQa0vm4Zb4X/ywq0DKT1We9veQsCJVqySvpjxQBeg3u95jHcQ2yzSD36TWaR
-         J2WnKQi5BaQRS7oZ7EcihlHcJZcvIq9xox/x1rCi9rmLpb9Wrl3i1yhHz7I3xawo807g
-         LShVG4u9RFZk/5CICxrvsyhA09S2tWpEN/nfbLBiT59v8DYWjn4ayySFN2L2q/0OchkP
-         dohauIwfLPf8nJoNLuraubtzh5n2GDLbiV4MGMzDYLSj6X6HeQOTMaLeRgev1/H/QBZy
-         gkOxeRD0DyJyNU68dXNmynFyVUTQIb/WFrfi+SouET1pTOz8PhLwU0lEM4KvheV85xUw
-         owSw==
-X-Forwarded-Encrypted: i=1; AJvYcCVwDLbC6xXOCt0EECwt2rZfGKWuJO/+/OzMqTxxKkRAaRNq2/31l8ITgjk8/XBcnqkeAzvLw98=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywx0+jwLOvzQhQXy07kVRdrUBd4313Hy7snFq2mx2ZFInumieMI
-	DSLqLXavAuSEFcnGcpYdHov3LY3IVqX6JE0vsGQFBJtMVRcspCMv6F4kcnYH6pGpdSeopJQfT6l
-	L+mCE5HSpnJ7+ZCIzpLHVhPRSZ9S7tgB1Dn3t8lDMDNpjZsSzCl+5a27+crEV
-X-Gm-Gg: ASbGncuHHyDoGcl8fCGBLGWeJ7zkrKRs9xNauPlzxTsqvfmaHlzgCyFHhXVU+EcwTkk
-	stiyJXxid8je4iFwOxxVEpdsuky2sU1Kvkbo9xdMBWJhqKsYgp384n+7s+wZrbuUoLPBIzHFLaZ
-	aJzt/l1nUOuJpAB3CzQobS9Qlm016Zsc6i2H6nLHuJvhQJF7iWWARMVvWxJ9mugRK1Yci9b9Wgp
-	FRHOZYO4Vj8Fn1uhCstATEX+Ds797mkCsradufpbe21TAPSs4Fc2t+vZrhyYePNja/+9aE1aEKC
-	HtbT6C89gu8gvxFI7wln1nhlWBA58fXXlAxkptNRcmaUP9jjDH2vPbrwIiqCfkyzKnQZolKxDw=
+        bh=k6t17zJoyzi/MYtv7YnDTb5dXnKB3dpwV2Y+J7LFw/8=;
+        b=h0iUzL3ggpxfqse89BZEa3teqIyBTvTyCGO0z4pPT1DSfiecGP5MjCuaHtIlTAdr2u
+         B67b2guEjVfTbe9YC+R42iH/ZKeGL5qPtDwwCStvO6ozBlczWIcpJVZ2C1f9HbTSkuTM
+         1G1WZjuLKocUxuZYGD0vSHQdF1l90LygTIIJsepPtHLHFMuYF7qBYLHSP+IVhSp3T7GS
+         Q8CyRoAUyeb5JFvishTijR0a/Zox2/6RWTsQwTvgC7K6l6DDf8prdG7uXa2dSdYQaSY9
+         avfLB00WWIT6lo7MI2Xds+2Ka2YsXJB74XM3vzGzYGy5lld5km3XVoCGft1S3TwKef+d
+         nMcQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUiNlCsBDMxyc6dlRhTeA+HzbDKRp4djMuHE6Jezd3BafOGjayn8PLe42qSULa4hoNxcN1GpW0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw//xP+28G40v9CgJTudMFJSgrUdgY39ARtKXh6cT1O3rpU9Tfo
+	6uamt5yvtHQLy8EJGIeZ1hHPMlcZN+oP5QGPGPCrhAJs8zW4QxwlZ3V5e9STbgW0A3Ay6EKoVnz
+	vmd0ksqBE+J/ymhjxYYVlFzSP2giKbuXjbHX7JyCubCJU/DfqR68OCfZ6GJpDX3WIuKYl
+X-Gm-Gg: ASbGncsHG+/Y9dx0V32Ecp7KlPnavGywKoZAEZOXNw+asw/jmW5W+9sgBb2SOTNh0sy
+	JeMiyKvNeUPbGclC/TwfcnNYskKZnV3ZZVhcBX6G4aW6FV7DYBHqMRKqyLRFAlfLLhQF0PpuKXx
+	xn7FjqLyMaN5hQeX4D5WjL1k/73Ig6yk94hclt4f3XCNkgwQI8o0czl9b4oypvk9wLB/rpQqRnE
+	t03xb3pwwgrSt0K7j22gtCCGZrz6oKoHNmIIbUJCd5zEusJnQuRWu6tcdAJz7/LzqNU/fQm8Po4
+	E5OtfB3U3yBJM546fR1gr96bK1br3mJHKNw6wcF/sTN/ytpK07FNk4SWRnh+4dPmzYod9JXQXA=
 	=
-X-Received: by 2002:a17:902:f54e:b0:220:c63b:d93c with SMTP id d9443c01a7336-221040d75a0mr399578225ad.44.1740064706857;
-        Thu, 20 Feb 2025 07:18:26 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFRuCuRj5I/H6dKxpVvuX1bbiDAhyHGQI8dPrQ1MVrrYoRNze6OQUGFftyobfkpahCEox2BVQ==
-X-Received: by 2002:a17:902:f54e:b0:220:c63b:d93c with SMTP id d9443c01a7336-221040d75a0mr399577855ad.44.1740064706451;
-        Thu, 20 Feb 2025 07:18:26 -0800 (PST)
+X-Received: by 2002:a17:903:2301:b0:221:89e6:ccb6 with SMTP id d9443c01a7336-2218c546f7amr72253785ad.25.1740066419228;
+        Thu, 20 Feb 2025 07:46:59 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHhZuienlMC+FiI9oeBoMDi4nayiLfAduqOYeqfUcAKqXiHdP5lNX3kFBEMvffwWkdr7b8wxg==
+X-Received: by 2002:a17:903:2301:b0:221:89e6:ccb6 with SMTP id d9443c01a7336-2218c546f7amr72253415ad.25.1740066418801;
+        Thu, 20 Feb 2025 07:46:58 -0800 (PST)
 Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73250dd701bsm12547000b3a.131.2025.02.20.07.18.24
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-220d53643e8sm122730155ad.71.2025.02.20.07.46.57
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 20 Feb 2025 07:18:25 -0800 (PST)
-Message-ID: <532a73b1-1a46-45b2-aa06-9696edad8c0e@oss.qualcomm.com>
-Date: Thu, 20 Feb 2025 07:18:24 -0800
+        Thu, 20 Feb 2025 07:46:58 -0800 (PST)
+Message-ID: <80a13b18-01f0-4f52-853f-bc8e3f84e91b@oss.qualcomm.com>
+Date: Thu, 20 Feb 2025 07:46:57 -0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] wifi: ath12k: fbx: Add missing htt_metadata flag in
@@ -94,19 +94,19 @@ Content-Language: en-US
 In-Reply-To: <D7WMZ4TCZKPB.2GBOWXBN8WKF9@gmail.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: gnhyq5ZlUtY8CP78DA0CF278MWq8GCYL
-X-Proofpoint-GUID: gnhyq5ZlUtY8CP78DA0CF278MWq8GCYL
+X-Proofpoint-ORIG-GUID: Kk4oxTRgw64b0fuoZ2Ms0K-40I2UMk8z
+X-Proofpoint-GUID: Kk4oxTRgw64b0fuoZ2Ms0K-40I2UMk8z
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-20_06,2025-02-20_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 clxscore=1015
- bulkscore=0 phishscore=0 mlxlogscore=999 suspectscore=0 priorityscore=1501
- mlxscore=0 spamscore=0 adultscore=0 malwarescore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
- definitions=main-2502200109
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
+ clxscore=1015 spamscore=0 malwarescore=0 priorityscore=1501 bulkscore=0
+ impostorscore=0 mlxlogscore=999 phishscore=0 suspectscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502200112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250220_071828_600009_323ACE1F 
-X-CRM114-Status: GOOD (  17.33  )
+X-CRM114-CacheID: sfid-20250220_074701_092479_DFAD8460 
+X-CRM114-Status: GOOD (  16.90  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,8 +142,10 @@ On 2/19/2025 10:33 AM, Nicolas Escande wrote:
 > 
 > How would you like to proceed ? I can respin it without this wrong reference if
 > need be. But if one of you guys has a better fix or something we can drop it too
+> 
+> Thanks
 
-Let me fix this up in the 'pending' branch
+Fixed the subject and description in pending, please check:
 
-/jeff
+https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=e5c718f0c65701ec941ab3121266f33f83ee9803
 
