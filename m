@@ -4,86 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3576CC021B3
-	for <ath12k@archiver.kernel.org>; Fri, 21 Feb 2025 16:42:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99EF5C021B3
+	for <ath12k@archiver.kernel.org>; Fri, 21 Feb 2025 17:25:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hQ8gmqOLMZQ0h/zKGpc5A4ad8Vqb4GU7agrK90MEYeo=; b=nI7G31MO3rpLO106vmjDQlVnbn
-	BCaFgnS+lE9tw/WQjpBp6Qr1uODmJf+eC11xbS0PCY39++Luuipf0byzik99fwPTuCOWQQKkj+RcN
-	qevGwOCWj5iw4xGo2/7zl9H2LuleSgiEJ6PQLYgU5vxYMTKt6K06v9t2H16uq3oeIevmU7qhOZDA2
-	/lrMhypWIar9lgg/PxLjaaPMUnjWC41N49A8+Xwf0qdWGLKhsu3ZV7JbmDK1L+qVBUam4zzqcrMm0
-	b3SsmQYA2KVq0B6UyvVDR61gNcwX+B4pI1vJ/zcsX7f5pRdXFhdcaL0iQ9JwnL8XdQMQy5ykUnHp5
-	1VXWOuaQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GNdBoEHvxBFzNO6vpQe4gdIHhXk5m04IrO8nlwRBJRk=; b=zct1fZggfA0t3ZC0oJBAezTYw6
+	TAOKK+K+7+Nyn2c5ZMBLcKhKfcXO7J32Xzd4/3BvnVlm7S9O+Ip4V3wgP1FIE0R8VrEbnPUQZ2SxZ
+	ZSo7dlEoaJdZXB40jhaJuIOc5yLv8t2IPM7oerF+EFdfVmPDqkTAh5jyxR2eNuHG/NqL3CU0ZDlqp
+	UK1HaWi1McUn8N4anVDiS/Ibc1IggU3HNtLRjdGOVyyZG17QMhpJzQDnfehQl60HfWRDDCskMbalp
+	mLdOcBJCdZ99sKenbXu6zfNlcPnN7F2P8AUdRyDkSdum0TxP4wx2mQuXMrKTyHCvvLO3GvJuslys+
+	l5F4eSYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlW72-00000006E21-3zmU
+	id 1tlWlu-00000006Mp5-1ZLU
 	for ath12k@archiver.kernel.org;
-	Fri, 21 Feb 2025 16:42:52 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 21 Feb 2025 17:25:06 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlW61-00000006Dn7-1HDi
+	id 1tlWjm-00000006MS4-2gGS
 	for ath12k@lists.infradead.org;
-	Fri, 21 Feb 2025 16:41:51 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51LDHFJ7012007;
-	Fri, 21 Feb 2025 16:41:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Fri, 21 Feb 2025 17:22:55 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51L99nEY011864
+	for <ath12k@lists.infradead.org>; Fri, 21 Feb 2025 17:22:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hQ8gmqOLMZQ0h/zKGpc5A4ad8Vqb4GU7agrK90MEYeo=; b=Px2+X4acDVxsrtcW
-	cGglqB2EkR0KyTTYRXhbG6UFI75Uy2LHgT5Zs+ARo5F05db4W4dcYq4q+AdX/NQO
-	zYKUtVXs+a15uXLEvu0PF31K0PIjoTsssuGKrE16F3bfktHYXeM9gA7QoV2lMZBZ
-	bCkvUfFxg6CFZ5NiTjU7cUVVx7RV9lX4rgoZNJFIlzjAMzCfVWvcyg+PrhEeYUhA
-	uNiuugdvqVXbjjCXo2fRvsHicRpsY+DoUDRj1suBM5NdPLb2vg5QVRa/XejLUtTQ
-	8W8RXGQvPpIAdD60V0IwFiidQHoTJU/R+0dpR/MKDDxuLN1ksT/JuO2UwPIlTLto
-	2Mg9xw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44vyy3tk8w-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Feb 2025 16:41:48 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51LGflLK000628
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Feb 2025 16:41:47 GMT
-Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 21 Feb 2025 08:41:45 -0800
-From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
-        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-Subject: [PATCH v6 8/8] wifi: ath12k: add monitor interface support on QCN9274
-Date: Fri, 21 Feb 2025 22:11:10 +0530
-Message-ID: <20250221164110.3277222-9-quic_periyasa@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250221164110.3277222-1-quic_periyasa@quicinc.com>
-References: <20250221164110.3277222-1-quic_periyasa@quicinc.com>
+	GNdBoEHvxBFzNO6vpQe4gdIHhXk5m04IrO8nlwRBJRk=; b=fFjjFPlpOQ85UMMM
+	j2dphzdgeULeHZXDlC3iedXqjex05uF5D9Hph0mevXdTLN4DJXXxep9AUp0NFSe1
+	A11sz1DLNGilJdhLWqj7nIDO3jaR8P3jY1Lwv13OlVjcTOINY/Y6x1jjyAMjj4Xj
+	OGfOng6lG26urhJqIqtrGYbeNtzRW+hAtC5ToqOP/L8XxS49PdDMNWDL09Yq4ssw
+	g7zeb11+nY4UF8oby4dnec7NS3jzHfXGJmPagW0ErJMy7+dkf2ZrRZy0JFHhA4Ry
+	rMZbzZs/BbGkxlN1yj5G/loRTxfbRJdZwr0YxxRh+YIr0LsLiE+hNfROZP2iybjm
+	o891UQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44x2xbcx1m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 21 Feb 2025 17:22:53 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2217b4a48a4so46704735ad.2
+        for <ath12k@lists.infradead.org>; Fri, 21 Feb 2025 09:22:53 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1740158573; x=1740763373;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=GNdBoEHvxBFzNO6vpQe4gdIHhXk5m04IrO8nlwRBJRk=;
+        b=Q5aBo+aJtgrLPoHK5aitZf4sV4PmhItsCldDBHF5RqcDA0ieeIDklO0Ebrpn2K8EiD
+         Cwd2dN51nmEsaQvPVGB+iN7TjSyklToLZGCflTqEOiLtIZbnlFpIEL5APBFtWs2Hw8lD
+         lsM5XTtmXb3jwrsZpmgq6vccAaTZbIzAQcAxwFPtVyXPnn6IN1+7EAl+BNZXc76wpcvW
+         KFGOLzsyvVnssilWf640YDgm0GRNEu/BXOrFvaJCMcq3b3h4sdI6Qaxt/rKPdS/sV0Vq
+         pr1AZLtxAqVRNeJlTukylR2/PKaE7tzLwwHbESI6PvO12ihrSoAXk73FWj1HUu8unq1U
+         /T9g==
+X-Forwarded-Encrypted: i=1; AJvYcCW7oE7zimUh3pi89AULf5JrfFcanW4gf6gBKZTQNypA9G6Td2bwYsBV3QpJnpVinEatgZ1oG5c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YySIz0jYrGV2sXWoiZ2YhqoUtYeGY4trVsaCpUFjA3lzPDqYhnp
+	qrhrNNagjTKYCIt5USC5mARBz9pXE1230jz1QmevjyQiPlr3LRU0bv9gFaOltz+EDlxX7PBeD4v
+	yO9oKSnBBqAtXCncByIvhwrUgXzAnY3tNanP2mBbHNk9MbVvRfUUMdK4832TS
+X-Gm-Gg: ASbGncvjCH2tznscx98tYQn2p/bjk34K8iCSl3bH/Ib9xMJAbGzpx3Kr2H66tkaN5tV
+	C6Qx4lCg0Cm9c5k4HArsb9cXtbQlH5hnPNDvuiuDkKVrrZxG0Sc6HGGDNiCBZ11MgnlqlgXRdOF
+	aLlqHMulI5hCGHupkFFxNZmlp+8jzeqaiJNruRJQvo++LxKP+m1f39Jn7/HoyVAfXsBiu4tzv0R
+	yU7W/0qamgeSBUfbea1sDJdipWYm2UZ6W8rYauDbMQA3sgjQCeS4LlHzkc2PN7CUj4naqvyMWA4
+	rRoU86AsTTCJXiqXn6ZysyqWcAJMymPbcm7Cx8KsTe3mapZFOOuijh/GMwKg
+X-Received: by 2002:a17:903:234b:b0:220:bf1d:41e9 with SMTP id d9443c01a7336-221a10eca80mr61061185ad.23.1740158572313;
+        Fri, 21 Feb 2025 09:22:52 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEwPI7LayseX+6iIIqLKHSdYu/noBsqY6us9RNj9QmJWtYnVluVQPiWnITlZi2Mfv0sLclRJQ==
+X-Received: by 2002:a17:903:234b:b0:220:bf1d:41e9 with SMTP id d9443c01a7336-221a10eca80mr61060795ad.23.1740158571929;
+        Fri, 21 Feb 2025 09:22:51 -0800 (PST)
+Received: from [192.168.225.142] ([157.46.94.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-220d53491f7sm138809515ad.38.2025.02.21.09.22.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 21 Feb 2025 09:22:51 -0800 (PST)
+Message-ID: <a2874f49-6725-be71-7428-a2e910c2001d@oss.qualcomm.com>
+Date: Fri, 21 Feb 2025 22:52:48 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Wo0c9376xi6XnBIQzt7L09zs1t3b1USU
-X-Proofpoint-GUID: Wo0c9376xi6XnBIQzt7L09zs1t3b1USU
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH v6 7/8] wifi: ath12k: fix NULL access in assign channel
+ context handler
+Content-Language: en-US
+To: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250221164110.3277222-1-quic_periyasa@quicinc.com>
+ <20250221164110.3277222-8-quic_periyasa@quicinc.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250221164110.3277222-8-quic_periyasa@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: mJ2k8VMHoOwlNrZIQczL-c0J4-zE9iqL
+X-Proofpoint-ORIG-GUID: mJ2k8VMHoOwlNrZIQczL-c0J4-zE9iqL
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-21_05,2025-02-20_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 mlxlogscore=999 bulkscore=0 mlxscore=0 spamscore=0
- lowpriorityscore=0 phishscore=0 priorityscore=1501 clxscore=1015
- malwarescore=0 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2502100000 definitions=main-2502210118
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ malwarescore=0 lowpriorityscore=0 phishscore=0 impostorscore=0 spamscore=0
+ mlxlogscore=881 clxscore=1015 priorityscore=1501 adultscore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2502210122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250221_084149_460595_94D926FF 
-X-CRM114-Status: GOOD (  21.32  )
+X-CRM114-CacheID: sfid-20250221_092254_702507_39E78629 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,216 +122,21 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: P Praneesh <quic_ppranees@quicinc.com>
 
-Currently, the monitor interface is not supported. To support the monitor
-interface, configure the monitor vdev state identifier, configure the HTT
-filter setup, subscribe the mac80211 NO_VIRTUAL_MONITOR feature and
-prevent monitor interface to transmit packet. Therefore, add these
-procedures to add monitor interface support and enable the monitor
-interface support on the QCN9274 platform through the hardware parameter.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+On 2/21/2025 10:11 PM, Karthikeyan Periyasamy wrote:
+> Currently, when ath12k_mac_assign_vif_to_vdev() fails, the radio handle
+> (ar) gets accessed fom the link VIF handle (arvif) for debug logging, This
+> is incorrect. In the fail scenario, radio handle is NULL. Fix the NULL
+> access, avoid radio handle access by moving to the hardware debug logging
+> helper function (ath12k_hw_warn).
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/core.c  |  5 +++
- drivers/net/wireless/ath/ath12k/dp_tx.c |  6 +++
- drivers/net/wireless/ath/ath12k/hw.c    |  4 +-
- drivers/net/wireless/ath/ath12k/mac.c   | 53 +++++++++++++++++--------
- 4 files changed, 50 insertions(+), 18 deletions(-)
+fixes tag?
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 0b2dec081c6e..ed7365ce7f95 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1306,6 +1306,11 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 				     ath12k_mac_tx_mgmt_pending_free, ar);
- 			idr_destroy(&ar->txmgmt_idr);
- 			wake_up(&ar->txmgmt_empty_waitq);
-+
-+			ar->monitor_vdev_id = -1;
-+			ar->monitor_conf_enabled = false;
-+			ar->monitor_vdev_created = false;
-+			ar->monitor_started = false;
- 		}
- 	}
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 46a55554c19c..a74afa8b2236 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -7,6 +7,7 @@
- #include "core.h"
- #include "dp_tx.h"
- #include "debug.h"
-+#include "debugfs.h"
- #include "hw.h"
- #include "peer.h"
- #include "mac.h"
-@@ -1431,6 +1432,11 @@ int ath12k_dp_tx_htt_rx_monitor_mode_ring_config(struct ath12k *ar, bool reset)
- 					HTT_RX_MON_MO_CTRL_FILTER_FLASG3 |
- 					HTT_RX_MON_FP_DATA_FILTER_FLASG3 |
- 					HTT_RX_MON_MO_DATA_FILTER_FLASG3;
-+	} else {
-+		tlv_filter = ath12k_mac_mon_status_filter_default;
-+
-+		if (ath12k_debugfs_is_extd_rx_stats_enabled(ar))
-+			tlv_filter.rx_filter = ath12k_debugfs_rx_filter(ar);
- 	}
- 
- 	if (ab->hw_params->rxdma1_enable) {
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index a106ebed7870..021a4b565e8b 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BSD-3-Clause-Clear
- /*
-  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
- #include <linux/types.h>
-@@ -1049,7 +1049,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 					BIT(NL80211_IFTYPE_AP) |
- 					BIT(NL80211_IFTYPE_MESH_POINT) |
- 					BIT(NL80211_IFTYPE_AP_VLAN),
--		.supports_monitor = false,
-+		.supports_monitor = true,
- 
- 		.idle_ps = false,
- 		.download_calib = true,
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index c0e50cc5c024..b90dad5cb2e0 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1323,19 +1323,9 @@ static int ath12k_mac_monitor_vdev_delete(struct ath12k *ar)
- 	return ret;
- }
- 
--static void
--ath12k_mac_get_any_chandef_iter(struct ieee80211_hw *hw,
--				struct ieee80211_chanctx_conf *conf,
--				void *data)
--{
--	struct cfg80211_chan_def **def = data;
--
--	*def = &conf->def;
--}
--
- static int ath12k_mac_monitor_start(struct ath12k *ar)
- {
--	struct cfg80211_chan_def *chandef = NULL;
-+	struct ath12k_mac_get_any_chanctx_conf_arg arg;
- 	int ret;
- 
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
-@@ -1343,22 +1333,31 @@ static int ath12k_mac_monitor_start(struct ath12k *ar)
- 	if (ar->monitor_started)
- 		return 0;
- 
-+	arg.ar = ar;
-+	arg.chanctx_conf = NULL;
- 	ieee80211_iter_chan_contexts_atomic(ath12k_ar_to_hw(ar),
--					    ath12k_mac_get_any_chandef_iter,
--					    &chandef);
--	if (!chandef)
-+					    ath12k_mac_get_any_chanctx_conf_iter,
-+					    &arg);
-+	if (!arg.chanctx_conf)
- 		return 0;
- 
--	ret = ath12k_mac_monitor_vdev_start(ar, ar->monitor_vdev_id, chandef);
-+	ret = ath12k_mac_monitor_vdev_start(ar, ar->monitor_vdev_id,
-+					    &arg.chanctx_conf->def);
- 	if (ret) {
- 		ath12k_warn(ar->ab, "failed to start monitor vdev: %d\n", ret);
- 		ath12k_mac_monitor_vdev_delete(ar);
- 		return ret;
- 	}
- 
-+	ret = ath12k_dp_tx_htt_monitor_mode_ring_config(ar, false);
-+	if (ret) {
-+		ath12k_warn(ar->ab, "fail to set monitor filter: %d\n", ret);
-+		return ret;
-+	}
-+
- 	ar->monitor_started = true;
- 	ar->num_started_vdevs++;
--	ret = ath12k_dp_tx_htt_monitor_mode_ring_config(ar, false);
-+
- 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac monitor started ret %d\n", ret);
- 
- 	return ret;
-@@ -7341,6 +7340,11 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
- 	u8 link_id;
- 	int ret;
- 
-+	if (ahvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
-+		ieee80211_free_txskb(hw, skb);
-+		return;
-+	}
-+
- 	link_id = u32_get_bits(info->control.flags, IEEE80211_TX_CTRL_MLO_LINK);
- 	memset(skb_cb, 0, sizeof(*skb_cb));
- 	skb_cb->vif = vif;
-@@ -8090,6 +8094,9 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 
- 	lockdep_assert_wiphy(hw->wiphy);
- 
-+	if (vif->type == NL80211_IFTYPE_MONITOR && ar->monitor_vdev_created)
-+		return -EINVAL;
-+
- 	/* If no link is active and scan vdev is requested
- 	 * use a default link conf for scan address purpose.
- 	 */
-@@ -8245,6 +8252,9 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 			goto err_peer_del;
- 		}
- 		break;
-+	case WMI_VDEV_TYPE_MONITOR:
-+		ar->monitor_vdev_created = true;
-+		break;
- 	default:
- 		break;
- 	}
-@@ -8290,6 +8300,11 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 	}
- 
- err_vdev_del:
-+	if (ahvif->vdev_type == WMI_VDEV_TYPE_MONITOR) {
-+		ar->monitor_vdev_id = -1;
-+		ar->monitor_vdev_created = false;
-+	}
-+
- 	ath12k_wmi_vdev_delete(ar, arvif->vdev_id);
- 	ar->num_created_vdevs--;
- 	arvif->is_created = false;
-@@ -11215,6 +11230,7 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 	ieee80211_hw_set(hw, QUEUE_CONTROL);
- 	ieee80211_hw_set(hw, SUPPORTS_TX_FRAG);
- 	ieee80211_hw_set(hw, REPORTS_LOW_ACK);
-+	ieee80211_hw_set(hw, NO_VIRTUAL_MONITOR);
- 
- 	if ((ht_cap & WMI_HT_CAP_ENABLED) || is_6ghz) {
- 		ieee80211_hw_set(hw, AMPDU_AGGREGATION);
-@@ -11414,6 +11430,11 @@ static void ath12k_mac_setup(struct ath12k *ar)
- 
- 	wiphy_work_init(&ar->wmi_mgmt_tx_work, ath12k_mgmt_over_wmi_tx_work);
- 	skb_queue_head_init(&ar->wmi_mgmt_tx_queue);
-+
-+	ar->monitor_vdev_id = -1;
-+	ar->monitor_conf_enabled = false;
-+	ar->monitor_vdev_created = false;
-+	ar->monitor_started = false;
- }
- 
- static int __ath12k_mac_mlo_setup(struct ath12k *ar)
--- 
-2.34.1
-
+Vasanth
 
