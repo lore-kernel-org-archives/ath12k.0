@@ -4,92 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 454E1C021B3
-	for <ath12k@archiver.kernel.org>; Sat, 22 Feb 2025 02:12:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99387C021B2
+	for <ath12k@archiver.kernel.org>; Sat, 22 Feb 2025 03:30:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=A7+0aHG3njtyOdvfTEJGKDp1ymScZwp1PcvoplR7Hls=; b=SjLhZ0wn8pFKrDcg2f8LKtXxaQ
-	LjIJihqZw4RUXDt3kDnTovxVaVEXJd+iAIT80331DU53g7u42AGSJoYhIXe8IzyG1DdvkQzMsFRDd
-	sgfQD9tRUC3CANyshi+q+U2O0/hWSZCCqT3ERO1eMqauLUdWRIVE+lIGPFtvrGTGp1uXUpJD8RXyo
-	+29f+KoAtBP5TEF40utlulN8WjKMJHmiI8au1cDLYGYhlGdMma9iH5+cE0C4zMu7jUhY4dp5i892S
-	9ggyIduD6t12N8RaRjQip7T1lH8+1sih4nPLLED9T/FnYawU58KNxWsjJ/m05cSGIC0YkK5VcCFud
-	bcgUfAmQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=PlFL2aom86lRsUXeBCB2EhyU3Ga/F277NFLwJq6Xk6Q=; b=1l8B+uGH5OyjRxP5HIunlMOire
+	p8HZARpEmJyPocNrGedSSLEyWArJulHHFdYAcONijdayTip8fQcK3itDTUHvwvFfBtswu/mu8suoL
+	mrx4rd85eaLb3TV4wGI4PMYGjmoRk5Q+q6hJDQYyKBv9/sBvJE1iQpUa2sbrRMtMbvQPuIdG5Izbh
+	7EUyH7XkDm9tOWtOr2WGsD7JGumSYZt9ekcPZobXs7qyhflnA6Sz0UxCDhxzwyYWHpRuF8FVkwJeE
+	NSwCtHZNMXNFD784zUrFO5r87dnuK/X//pJYS0NkT3n2/ixjr97ijzRUCXXCP4xJHC33nDq1s8rmm
+	9gcnH4Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlf0P-00000007LMy-3jkM
+	id 1tlgDf-00000007P25-1Evs
 	for ath12k@archiver.kernel.org;
-	Sat, 22 Feb 2025 02:12:37 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Sat, 22 Feb 2025 03:30:23 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlf0N-00000007LMc-0SYb
+	id 1tlgDd-00000007P1W-0rOM
 	for ath12k@lists.infradead.org;
-	Sat, 22 Feb 2025 02:12:36 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51LILW0j026039;
-	Sat, 22 Feb 2025 02:12:34 GMT
+	Sat, 22 Feb 2025 03:30:22 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51M3Pfpp025180;
+	Sat, 22 Feb 2025 03:30:20 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	A7+0aHG3njtyOdvfTEJGKDp1ymScZwp1PcvoplR7Hls=; b=BXiWqBjQank8F/Ji
-	89/r8lcd+kfRJo7NHpfr7erdD0gzJexz1b1APjvBU6//IT2cZJnQi4/qL9dYgS5n
-	WC4TqWCND3xEFzeOVc1iK1/X/xZxnD5telHFVeBDvAfpNjhzZn5BssJRGuLNdwIc
-	bLT0xgamDuWv98VIWd1sG+9+JZ4zHatmxIC6Pgr35+U5k7ft61D9mDWjoGzVTM8V
-	mAFqU1HPUsKsI4RJDN3tMBmokGhMXI8Me8HAWCnAToOvF851G/whpq5rZ3VHG3Tb
-	MyHzTLfvJP8LbGDyVndt273IJTIpsWDgjLJO52EaabAq0HTUVHg+uEowcAxwVFo/
-	yR38zw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44x2r3wvxa-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=PlFL2aom86lRsUXeBCB2Eh
+	yU3Ga/F277NFLwJq6Xk6Q=; b=BXBvfOmThUjB3ogKnt0gdDTcgXb6VKM9tDbQ9G
+	mmIhyGJU0cxN30Js28w/hRKq2nhOzWk7XezwOc1oe6eFLNo/Q8M1Xjj94FSn7Hkm
+	txd6ULxcTua8LiFSp5yTs+eGpM5S6IUkzeWm5Y0HV+rcRQkXfq8vXTPsl0jIto3+
+	1crLvzRnT69p9x0xsAhiP0KMqoWt/paet2sk/7sXZxQjzisZ2uMnnOtunFmbBpWW
+	Nx2PsxaIj9bOtW2qqIk1tojmXFQpYcJ66ItBXaTrE2VrnE4nIp8+LPRczu4fq7Zz
+	7+69oTHPdpawdBxNc2s5hPvwAGQ9mLhqIJtV01eGkxt8OEyQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y6ntr065-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 22 Feb 2025 02:12:33 +0000 (GMT)
+	Sat, 22 Feb 2025 03:30:20 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51M2CJsM032591
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51M3UJOC014756
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 22 Feb 2025 02:12:19 GMT
-Received: from [10.216.33.17] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 21 Feb
- 2025 18:12:17 -0800
-Message-ID: <0349e41e-9e88-b45d-e711-d3a096adcdd5@quicinc.com>
-Date: Sat, 22 Feb 2025 07:42:14 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v6 7/8] wifi: ath12k: fix NULL access in assign channel
- context handler
-To: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-        <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250221164110.3277222-1-quic_periyasa@quicinc.com>
- <20250221164110.3277222-8-quic_periyasa@quicinc.com>
- <a2874f49-6725-be71-7428-a2e910c2001d@oss.qualcomm.com>
-Content-Language: en-US
+	Sat, 22 Feb 2025 03:30:19 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 21 Feb 2025 19:30:17 -0800
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-In-Reply-To: <a2874f49-6725-be71-7428-a2e910c2001d@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH v7 0/9] wifi: ath12k: Add monitor interface support on QCN9274
+Date: Sat, 22 Feb 2025 08:59:53 +0530
+Message-ID: <20250222033002.3886215-1-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: m9MYcWeszOe7ZZzZYMoBtU3kDGG9o1Mm
-X-Proofpoint-GUID: m9MYcWeszOe7ZZzZYMoBtU3kDGG9o1Mm
+X-Proofpoint-ORIG-GUID: i0kerqL_XcWVBiiKEnKDmtSMxVpEnbwf
+X-Proofpoint-GUID: i0kerqL_XcWVBiiKEnKDmtSMxVpEnbwf
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-21_09,2025-02-20_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 clxscore=1015
- bulkscore=0 phishscore=0 mlxlogscore=831 suspectscore=0 priorityscore=1501
- mlxscore=0 spamscore=0 adultscore=0 malwarescore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
- definitions=main-2502220016
+ definitions=2025-02-22_01,2025-02-20_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=939 malwarescore=0 impostorscore=0 phishscore=0
+ lowpriorityscore=0 adultscore=0 spamscore=0 bulkscore=0 mlxscore=0
+ priorityscore=1501 clxscore=1015 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2502100000 definitions=main-2502220025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250221_181235_176713_652550A1 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250221_193021_370022_05DFDF3D 
+X-CRM114-Status: GOOD (  10.12  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,31 +96,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Currently, monitor interface not supported. Therefore, add the missed TLV
+tags parsing in the monitor parser, configure the monitor vdev state
+identifier with HTT filter setup.
+
+v7:
+ wifi: ath12k: Refactor the monitor channel context procedure
+  - Added new patch to avoid multiple change in a patch
+ wifi: ath12k: fix NULL access in assign channel context handler
+  - Added fixes tag
+v6:
+ wifi: ath12k: fix NULL access in assign channel context handler
+  - Added new patch
+ wifi: ath12k: add monitor interface support on QCN9274
+  - Moved to NO_VIRTUAL_MONITOR mac80211 feature for adapting single wiphy usecase
+  - Removed tags
+v5:
+ - updated the s-o-b as a last tag
+v4:
+ - Rebased on ToT
+ wifi: ath12k: Replace band define G with GHZ where appropriate
+  - Dropped the tags due to rebase changes
+v3:
+ - rebased to ToT
+v2:
+ wifi: ath12k: add monitor interface support on QCN9274
+  - remove redundant filter setting in ath12k_mac_monitor_start()
+  - set the default filter when the htt monitor configuration get disable
+
+Hari Chandrakanthan (1):
+  wifi: ath12k: fix link valid field initialization in the monitor Rx
+
+Karthikeyan Periyasamy (3):
+  wifi: ath12k: Replace band define G with GHZ where appropriate
+  wifi: ath12k: fix NULL access in assign channel context handler
+  wifi: ath12k: Refactor the monitor channel context procedure
+
+P Praneesh (5):
+  wifi: ath12k: Add extra TLV tag parsing support in monitor Rx path
+  wifi: ath12k: Avoid fetch Error bitmap and decap format from Rx TLV
+  wifi: ath12k: change the status update in the monitor Rx
+  wifi: ath12k: Avoid packet offset and FCS length from Rx TLV
+  wifi: ath12k: add monitor interface support on QCN9274
+
+ drivers/net/wireless/ath/ath12k/core.c    |   5 +
+ drivers/net/wireless/ath/ath12k/core.h    |  18 +-
+ drivers/net/wireless/ath/ath12k/debugfs.c |   4 +-
+ drivers/net/wireless/ath/ath12k/dp.h      |   2 +
+ drivers/net/wireless/ath/ath12k/dp_mon.c  | 362 ++++++++++++++++++----
+ drivers/net/wireless/ath/ath12k/dp_mon.h  |   5 +-
+ drivers/net/wireless/ath/ath12k/dp_rx.c   |   6 +-
+ drivers/net/wireless/ath/ath12k/dp_tx.c   |   6 +
+ drivers/net/wireless/ath/ath12k/hal_rx.h  |  15 +-
+ drivers/net/wireless/ath/ath12k/hw.c      |   4 +-
+ drivers/net/wireless/ath/ath12k/mac.c     | 109 ++++---
+ drivers/net/wireless/ath/ath12k/wmi.c     |  36 +--
+ drivers/net/wireless/ath/ath12k/wmi.h     |  16 +-
+ 13 files changed, 452 insertions(+), 136 deletions(-)
 
 
-On 2/21/2025 10:52 PM, Vasanthakumar Thiagarajan wrote:
-> 
-> 
-> On 2/21/2025 10:11 PM, Karthikeyan Periyasamy wrote:
->> Currently, when ath12k_mac_assign_vif_to_vdev() fails, the radio handle
->> (ar) gets accessed fom the link VIF handle (arvif) for debug logging, 
->> This
->> is incorrect. In the fail scenario, radio handle is NULL. Fix the NULL
->> access, avoid radio handle access by moving to the hardware debug logging
->> helper function (ath12k_hw_warn).
->>
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
->> Tested-on: WCN7850 hw2.0 PCI 
->> WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
-> 
-> fixes tag?
-
-Sure, will fix in the next version of the patch
-
+base-commit: 2dba67975394b47249189fcf975352105306962b
 -- 
-Karthikeyan Periyasamy
---
-கார்த்திகேயன் பெரியசாமி
+2.34.1
+
 
