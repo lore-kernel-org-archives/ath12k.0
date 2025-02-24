@@ -4,103 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57543C021BB
-	for <ath12k@archiver.kernel.org>; Mon, 24 Feb 2025 16:04:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DE37C021A4
+	for <ath12k@archiver.kernel.org>; Mon, 24 Feb 2025 21:53:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KihX8fWcq5dMXnYeD5x2k3Y6zz16EVIuv0fXLuyFB0A=; b=WqdcK2aRvSjwXlWpOSg9uLRQ1X
-	hGbGLTZIobpmtIeq5CsYkkf9m9FlYzrkhUWLvfQgot4QPxeZf5no/T9RdwY/+oXx9OnUbVTV+j2ml
-	0DBPiYXPU7VBdce0AklCHyfIY7vuspGNFQ+Gszcy/rIsLWe64xJuVDkp71rWrV6zWuDBMRNDGZ2iF
-	YUKFVitJD8p4i4eSmwrFlHg1TALN2h0fm3lOvf8dxbunbEgmelLFx4m4yCfhHzWX27BVnnR7QjzKc
-	Rg3YY+A0B4eVIlgKs7afjKqtgDiD9MV8KsHjdo5WuawApiXnox8EtL425yEgbjwQr8xKS32y9ER5y
-	5EQ2zRtw==;
+	bh=rQBYdPhhbnB3jImt8Dp2qnMIdXjmOPfbLJGI/8anEKc=; b=OSJAJD3SXwDxpl9LJqJ2RZpwnX
+	OyfMuuf9a+y+1wVa/s2BK4dDt+tLsSXGgEiIQRWs3TVJGzwCcNyh0LaPezVCzSHucKIIiFz3nI77T
+	AgDRIlhM/TwdnkQ1+s2jTkMMkcfFyjNH765Xms7B6k2cbhJqwndr2k6yTjw45vy8i0JcOozkzfDGK
+	aXBXehNBho4Bfqu9g3zEjpBeY5wJN2enpMU7XJKONA1SDq5z3mB7PVTuZsyaGzQ6UABsd+g+sJsqq
+	iu7P7lGuk2TsjD5UAmdJ+DXPtXsXhBF3GRqE69y4BnHn/L5K+0I+yh9tUd2MFx6v643ETkUDb/ct+
+	DDr7XIhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmawA-0000000EOlZ-0S5E
+	id 1tmgNq-0000000FHoB-1LBR
 	for ath12k@archiver.kernel.org;
-	Mon, 24 Feb 2025 16:04:06 +0000
+	Mon, 24 Feb 2025 21:53:02 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmaw7-0000000EOl4-1oMy
+	id 1tmgNn-0000000FHnk-455H
 	for ath12k@lists.infradead.org;
-	Mon, 24 Feb 2025 16:04:04 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51O9sZtn013579
-	for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 16:04:02 GMT
+	Mon, 24 Feb 2025 21:53:01 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKOHuM009094
+	for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 21:52:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	KihX8fWcq5dMXnYeD5x2k3Y6zz16EVIuv0fXLuyFB0A=; b=mYhjsrvx5HCPARus
-	nU4McE4ETAtX0SJ+p3+xZ+J1CUUb6YCNBR8/wtsKZIXPtbq/CVWLMXr9pPDvSm2L
-	FaHBO5pjjb9EBdOxYV/kpdm4lcm0618VDfFqVtegh3fVhtLgJ+oFpMDVD8k9of0r
-	Rk6yEa1BP7/rGWLFmHHUR8CgEdjxWMIoAQpOObaI4K3seFzjkMl1JmuYy0trDAmn
-	qtdcgjICJ4Khb34w6tvBabncPV7O+oioBwZZqmHhOeK4f8PwHGDnwQraap/9XuwW
-	e833FqwEsUJSXtoS+NndNRisONqBkFppDVxkcECQfWlNXdZqSG5YpKYKJJyTEvfS
-	+p2Qeg==
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y3xndyw7-1
+	rQBYdPhhbnB3jImt8Dp2qnMIdXjmOPfbLJGI/8anEKc=; b=liJAnpT2oDk2F/wy
+	XhdAAQElgmesicgqrTOYw1JoiaPNp28gTje4MbUMyHySzwEltJ0K/7e1LJELPr7o
+	quRnV1V7F9gtlq2kgRbQiZzqkn28MdzHRwhZUL22uwTFe628SnmdveW7iv8K1pqZ
+	0Pwe6iDV05M8uBMZfwYGvZ53QPpU48/vtPES4ujFn/S3KUXADBww5sdgdsOkUaO4
+	nj5buVPck2prLIKmKSdTCyq2RXoDZz5WaXy3ByiBSE8wjoIuc6cniVO0EhE8q/Mu
+	2q0E5aYM8wlSeSSCem1VrTFDUrC5op/qpPj3RFQYhaHHOMs07ASHhmFVF0IQl2nK
+	4L0IzQ==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y6y6pkt9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 16:04:02 +0000 (GMT)
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-6e65aca0e5cso101240566d6.0
-        for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 08:04:02 -0800 (PST)
+	for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 21:52:58 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-220d1c24b25so94627735ad.0
+        for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 13:52:58 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740413041; x=1741017841;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=KihX8fWcq5dMXnYeD5x2k3Y6zz16EVIuv0fXLuyFB0A=;
-        b=rXgCA3e8TQEUfPOgggejn+v54dX5W7OHCvaDUt+PhyYbJatMg3jupqI+A9E5R9gy1t
-         9sEXHm/1AizQBfxD6how7sb5e16wkWwRCKHszM4doGbqjGTmI2X1nywrd3VqFF4Y7awH
-         MOouwasudd4TdFZZ5veWs9jov+rG7L8MvP2RhtUxkX+6MzDa2eT8Zx7W97PV0lseis6r
-         0fQTFC0w4tvu/ifHFLiD27oz00My0RM3Lvq3AvmepsZa6BhpFMTU70lsWWklp4OYwT67
-         ehkSacf4v1G/sNwApKgNpLfMVATvoFIabOB9HGRZ0xiYfUsdeNQTNWTD9UM6ebn4cOiq
-         kbRg==
-X-Gm-Message-State: AOJu0YzvPvImSqc4s5T7Cb83kpDzjEAeYKoJs+gwNSEOK+7f4mpB4d67
-	mjRlGrtAvxPmDYztL3z8loaJhDH+VeppEyEzOgdi/+MlVgzj8x8dLOzpitmJY9Ew7vzKZQ/qIsK
-	o/XeCnjNSs7lEQqOedg51m1ocUN/H1weI5AAKWzVXkkTO1I5IfjyuGlgvjWQu
-X-Gm-Gg: ASbGncvsxi45Gl0qfNnNcrlIhoQrE0Iha8pp5M1CDTeNbvtzek5SyosaXrWfdPayLB8
-	xuw9UK6SO/wJsPg96Cmn7cz07UvbapsCIPjCq/lyQwuhayzNmWJFNmylQe+6oMhLovBqVzZ9N3w
-	CrMLoEq/BkSRyR3bijRZIBqqwbOvDxO0yVEElm822WUX60G+1Hc2bZnHzI5e+tmrrK+b/02JSKw
-	PxaiRa5mr+pR4WJsis5A3oXGl0j5vtLuKjjn69Ju+3YcF2ocNfiehhzl9KED7glRXVBawoAVzNo
-	BXxX4/whG6doQfyZXv+wJGqofyV52ZDywv8fFp/HbiMQL9Y1/Bav
-X-Received: by 2002:a05:6a00:228b:b0:726:a820:921d with SMTP id d2e1a72fcca58-73425cecdfdmr26648081b3a.10.1740413030483;
-        Mon, 24 Feb 2025 08:03:50 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IEAQcuYU29yB2OA7EOTXyr62KvF4Bwf4grfQff9Ffr4ql6Y66zQ/N2fX5qaEmA175P/28JFdA==
-X-Received: by 2002:a05:6a00:228b:b0:726:a820:921d with SMTP id d2e1a72fcca58-73425cecdfdmr26648038b3a.10.1740413030080;
-        Mon, 24 Feb 2025 08:03:50 -0800 (PST)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7328371e36esm14470744b3a.61.2025.02.24.08.03.49
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Feb 2025 08:03:49 -0800 (PST)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Roopni Devanathan <quic_rdevanat@quicinc.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20250221041250.769491-1-quic_rdevanat@quicinc.com>
-References: <20250221041250.769491-1-quic_rdevanat@quicinc.com>
-Subject: Re: [PATCH] wifi: ath12k: Add NULL check to validate tpc_stats
-Message-Id: <174041302955.2901106.8080221910773071155.b4-ty@oss.qualcomm.com>
-Date: Mon, 24 Feb 2025 08:03:49 -0800
+        d=1e100.net; s=20230601; t=1740433977; x=1741038777;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=rQBYdPhhbnB3jImt8Dp2qnMIdXjmOPfbLJGI/8anEKc=;
+        b=Zd7S8VIyGQqATwdRiGjPy/th27pExypWI6LQbg/kyRV1t6T39030mYJmBltDeAuP72
+         /FTmDJtB9Socy6mbhbekTL8p5TKRrKAfUNnF8wpFOdkPt+kiUXmMmvRjOAE+RE3w1Xiu
+         NTDrXjdnULGdCpH39zH2KVnBwO5n7UeZ3D/5Mg0fT/hqB08CcoKhJQNWqgnwRlFnjJ0P
+         Th2PtpzQwaUa9esj9CjF7a+d+n9CJ3AcLduW0MZFeY7LOWOVW1ppN0ZuF489bxzjn2Ha
+         sojKC8DhJGR/SoD1wA+qs6nNi3dPYIqtSx2GMjsqIrT8QcAgiOXaB/cAVwmK9i6J928V
+         65mg==
+X-Forwarded-Encrypted: i=1; AJvYcCX2UGauC01zwRzNTw9lJ88Q5AQ//7S1uabaixXDcuObi8IQDWp9YtoQrqVEzRzOUo/IE8EPJEM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwvLEdSiXlZfxBr+Mo+ERxc9Wl1rhfza/BcG6Cjh5LzQvf8imC5
+	pnFRWizoPOs7bSbZ5oaNcYBjRw4c1MjV13E2Y8X87GFE5sdWjlK99ucNpLyNtqwDj2lf82COC0P
+	TYtDUmC5ltdi3qKZ1SJa/nCx+7yzIHoXAVSon4e47zg/x8vKGwAY/9iyBcfrY
+X-Gm-Gg: ASbGncs76hv06E9mlfyo22jqPWbgv/4WQiUGGsOaAHV0XF7k9PwaiYx4MMeSTJe8wUI
+	WXl/0Fh09ey7lJY693un6ALKrISGPD/EYMRBJ7Mo51tIWAc/gBFfc+C5US7OVJojhlL/CL7OCIu
+	iIi6JEiIRdnt649x6wGBhA9RamOotZDyVzNFxFW9Ds8W2h03CfmdEKlsInU2gUzsYe6oSl2ZYvE
+	0/T0AiIiwy/9bouno7cu4aylPWa7uO0mJ/jWUi+Nwu8KIv5dfyKDMbXojEKGihRxA7rNrPD1uaP
+	8uudEpilVdVUyOkDpoCkYOZ6X6Ev2uUpvvt4fl6Ncm5YiEwEVqneZlgkTYUH3VWFeoVpkJqRDBe
+	IqXO5wecv
+X-Received: by 2002:a17:902:e801:b0:215:5a53:edee with SMTP id d9443c01a7336-22307b3305bmr11788685ad.9.1740433977398;
+        Mon, 24 Feb 2025 13:52:57 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHNxqZXc94agx6zBE8v5M5+d/Jrs5Jq+vJHfdn2uGcXTqq+Mp8dOg69eypZe/0wZ3TQW41qDQ==
+X-Received: by 2002:a17:902:e801:b0:215:5a53:edee with SMTP id d9443c01a7336-22307b3305bmr11788385ad.9.1740433977012;
+        Mon, 24 Feb 2025 13:52:57 -0800 (PST)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2230a0a798asm811735ad.189.2025.02.24.13.52.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 24 Feb 2025 13:52:56 -0800 (PST)
+Message-ID: <e4817a30-3a71-4a0c-be9b-7979c40c6ef6@oss.qualcomm.com>
+Date: Mon, 24 Feb 2025 13:52:55 -0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath12k: Abort scan before removing link interface
+ to prevent duplicate deletion
+To: Lingbo Kong <quic_lingbok@quicinc.com>, ath12k@lists.infradead.org,
+        Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: linux-wireless@vger.kernel.org,
+        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+References: <20250124093352.481-1-quic_lingbok@quicinc.com>
+ <44dc86f0-7775-4d47-9058-17cb048cd976@quicinc.com>
+ <7ee0f7fd-7a3d-4942-8323-08ff9c4c8915@oss.qualcomm.com>
+ <bc54e1fa-da58-48e6-a148-4a980833f448@quicinc.com>
+ <183bc4c7-5ae5-4654-bafe-509d7bfbd75e@oss.qualcomm.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <183bc4c7-5ae5-4654-bafe-509d7bfbd75e@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
-X-Proofpoint-ORIG-GUID: bPVVG0u-8TP3HvV6NQX-FfXLLhKlr91T
-X-Proofpoint-GUID: bPVVG0u-8TP3HvV6NQX-FfXLLhKlr91T
+X-Proofpoint-ORIG-GUID: xjFCSD5MagnI1oreP-KTd2fbvX-401QH
+X-Proofpoint-GUID: xjFCSD5MagnI1oreP-KTd2fbvX-401QH
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-24_08,2025-02-24_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=867 bulkscore=0
- suspectscore=0 mlxscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015
- priorityscore=1501 spamscore=0 malwarescore=0 phishscore=0 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
- definitions=main-2502240112
+ definitions=2025-02-24_10,2025-02-24_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
+ malwarescore=0 phishscore=0 adultscore=0 lowpriorityscore=0
+ mlxlogscore=922 impostorscore=0 priorityscore=1501 bulkscore=0 mlxscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502240139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250224_080403_598847_0FBCC559 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20250224_135300_141315_521CB3B5 
+X-CRM114-Status: GOOD (  10.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,30 +125,17 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 21 Feb 2025 09:42:50 +0530, Roopni Devanathan wrote:
-> While processing TPC stats received from firmware, there are chances that
-> the tpc_stats might not be filled and the data is not available. This can
-> happen under two scenarios. First, when firmware sends a non-zero event
-> count before event count 0. When this happens, tpc_stats will be checked
-> for data before memory allocation and the tpc_stats will be unavailable.
-> Second, when memory allocation failed when event count received is 0 and
-> the firmware still sends a non-zero event. When this happens, memory will
-> not be allocated for tpc_stats though event count is 0, so when non-zero
-> event count is received, tpc_stats will be empty. There are checks to
-> validate if tpc_stats variable is filled that are used in two subsequent
-> places, but these are placed after tpc_stats is dereference without
-> checking if it is NULL or has valid data.
+On 2/10/2025 5:10 PM, Jeff Johnson wrote:
+> On 2/9/2025 6:52 PM, Lingbo Kong wrote:
+>> should i resend a new version of the patch based on 
+>> https://msgid.link/20250204-unlink_link_arvif_from_chanctx-v2-8-764fb5973c1a@oss.qualcomm.com 
 > 
-> [...]
+> suggest you wait until the pending branch is promoted
 
-Applied, thanks!
+reminder that the pending branch at that time has merged, so you should now
+rebase to ath/main and send a v2.
 
-[1/1] wifi: ath12k: Add NULL check to validate tpc_stats
-      commit: e180a01bf2c4a67db13d70d2d91410a8c6f74be3
+remember to add the new ath-next tag to the [PATCH] metadata!
 
-Best regards,
--- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-
+/jeff
 
