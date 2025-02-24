@@ -4,64 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6470AC021B3
-	for <ath12k@archiver.kernel.org>; Mon, 24 Feb 2025 09:46:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E52A0C021A4
+	for <ath12k@archiver.kernel.org>; Mon, 24 Feb 2025 16:03:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=C8BwX2NT2SrvrWsSF8l8qypvWFWcTpR1Sxh2dY8xskc=; b=Uy1lL0HT3OlIZylM3B6hn1p4mq
-	5N7itfmzfc41HYbf7SduqoZttTorKyWuYNd/5gmsrI9M8DSraTwyopjEhN+oi4IbhDFEfAvvHxgWy
-	uGd7RpIGPrEYYoRFxJkSVjn/3N0CQvfuxsbf9QDejG8Z3t89UFiXVEGstufhMZfbhOXXH0nSikAxQ
-	sy9PMHcEb7PFhw/FK5hwop7MPWThj1yrPEPAegx+itpnwS/XJjPYyhSyPymPrOgtMbHuUb4KFv3AX
-	z50m03Op6ociFTX3l0OjTTPCRNRT0llmJqHtayR+4Q3qqsR5Ws4SS5PoSlp32PMLxG214j2v18DYu
-	RF4ulfEQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eynNTv2kSQLvrbRGLtm4NlRxri0pSZCgwjP4utbEpcQ=; b=yQTH9Vp9zfqlym3bc/RFygh62J
+	+gkHupodFS/NGXyY/TD+BOEcEia6aH6w56FMRWeKgm9bxH0gUj/QeM4XZxmh9wcJ8d8+UgkEk/enJ
+	kQ5K0Cx8WQXQYowyQiS3dXZhDbrWAF45LCnnsUVSR4fSrkRTz9PAAVAIt6Pr02pQs1Ol2gPUqbC53
+	0ZrGoDpfW8ieA8t9pq1IyHpveXZ+TRxfzNk0cvNBZDlR3XlgQ4y8vQpk7ygQQrDW4D7u0s7LV8c78
+	lIf3Eku7dR0i8vzAHRt/Kp288aBFJ13VKEazm9gsA5oqfuJEjBjvpvBx+e+fNXAUboE20hkLM1KDO
+	QYCyxYWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmV2o-0000000CyTt-0flJ
+	id 1tmavy-0000000EOjx-2pvJ
 	for ath12k@archiver.kernel.org;
-	Mon, 24 Feb 2025 09:46:34 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Mon, 24 Feb 2025 16:03:54 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmUso-0000000CwdO-3ClG
+	id 1tmavw-0000000EOio-0NC3
 	for ath12k@lists.infradead.org;
-	Mon, 24 Feb 2025 09:36:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=C8BwX2NT2SrvrWsSF8l8qypvWFWcTpR1Sxh2dY8xskc=;
-	t=1740389765; x=1741599365; b=HxhiGOiikhL/lro+OV9acfJQv7WF6rr2vunqbGgE5k6iM42
-	JEjto8jr3fiE5XfMN9BGYqDWP51ybXet6cacKkbk7jljJntSrBRwnc9ux2uGHS3oVPBGrEOUrEQka
-	mOkSgo8P7xtOVJouUMN94Y98c0IRVohQXIsinJjpQGzTTrPsO4xDFihbH1j0g+a0KbjrqWpuMNp85
-	nuupBYaVnwRgF4wqYhp2H+9KtlVQUIkBFUMwpIt4DChyzmEEbndI5aDWmoc3n67474CQBx4CfEj2c
-	EeUOT+xiiO3eEof9NQ4HV5FeqT286jrorOZE7sGebrhbpTnpVoQqHYGUzNpw1yRA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1tmUsM-00000008d0U-21g2;
-	Mon, 24 Feb 2025 10:35:46 +0100
-Message-ID: <3e486a87c6b385fc37d087e2bae7f32a5f15221a.camel@sipsolutions.net>
-Subject: Re: please use tree tags in patches
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
-	linux-wireless@vger.kernel.org
-Cc: "ath12k@lists.infradead.org" <ath12k@lists.infradead.org>, Aditya
- Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Mon, 24 Feb 2025 10:35:44 +0100
-In-Reply-To: <7c7498fd-ede6-407b-b583-e9b8caf56bda@oss.qualcomm.com>
-References: <ec3a3d891acfe5ed8763271a1df4151d75daf25f.camel@sipsolutions.net>
-	 <7c7498fd-ede6-407b-b583-e9b8caf56bda@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.54.3 (3.54.3-1.fc41) 
+	Mon, 24 Feb 2025 16:03:53 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51O9OCaC008915
+	for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 16:03:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	eynNTv2kSQLvrbRGLtm4NlRxri0pSZCgwjP4utbEpcQ=; b=J63qAXq0KWbKm+mn
+	wpkL0g89XPukY4Tiv/mitwM1Ks0FVBozSbS3SESNXhbNMt7R9VQUI3VIsuuKiDeH
+	3H3+1VhANJ/V34hHmbsctEAVwC6eCAGBcsbe4QbJkY9uxt1W3LJdgzK46bXfgMnd
+	ww/h6rwws2hxDzykx0TCy0T4+4Hs37wzmO+pLxkKXWXR6ZVs4O1Ljb2yep+ZBI66
+	KQ4L4GkBWxnKHFcxwxvIB6wNMDoJ+f3QI0+bJpbryjSWQQpOtTTI58ZAmKHEJGyX
+	n2/HqguXcXbHb/MCK4tMgCxaMvRnyiYlzeX3QqTvjIt9XGFwb3seha0VmsagUrxY
+	KcM8cg==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y49edx5e-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 16:03:50 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2fc1cb0c2cbso14814942a91.1
+        for <ath12k@lists.infradead.org>; Mon, 24 Feb 2025 08:03:50 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1740413030; x=1741017830;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=eynNTv2kSQLvrbRGLtm4NlRxri0pSZCgwjP4utbEpcQ=;
+        b=ZbLvIFLbwNT+EBuG55/lGHbRVm5auHj4p7itsV2IANX+m2XFYfZu3fHIoG4B84W8mz
+         nid3UJ2Oep3FBEt4FUmY81xdPhiW9dUUZ91nqE3Igw05ThwMCFoM3bC1+TQzLVonUOu0
+         91fzF4RasoRoew9WOtzygteA1FmSp3B6QrmcjN2GFElMwKlPTpCDqYULsMVd18Au7s9b
+         nZzsZluP7h6/jwOxE8bn10BZmlS55LDkXzzuDrWQl+lwq/fVE4ZordWm73weqIlA0/zH
+         YBcQFjarDR8WqqWrxM0E0J0756f4xyWygXApQSgi77pCPvjfvOzA44qeOXL5jhcsYRvZ
+         PNHw==
+X-Gm-Message-State: AOJu0YyenP0yCpFX/Is/BvpfNgUWfsXLMYm+QH+gpnX8M1eJyzqBBsMu
+	41ISUJhHsiRCcqCqpO7+edvN9L/JQf+v2CZy6dr0LmyyrJ3KnfEhYhbLYdrZXwY8LmsQucrK/G1
+	80x1GODOMH3NmGmEAeb8i8OXhpnkKu9s2ZrGa7EVrGC9FBupbgmWJoUq80Xvy4BnzZOFM
+X-Gm-Gg: ASbGncviGviFVGE32Tp7e3cUJCNogJhx8Yudn/ArSfvJiZroKnmHa1cC/cINxKow1Q/
+	PvCMkLVUsqcz1NukHtad39X5k7gxs6OQmBQuGZKZK4Yy+RuNQls6LcTG8o1mWi/bX2CDynzCyR4
+	edbw+gPSVvBJDtTEmt3DpVqE2eFNvl2j8G6KDsotym0CXrm6VpS+S5uLkcAhDfiVF7PslSr/x3J
+	XbWJasJ7pPhPbVp5enrVCbCqsX0Z4ojeYkayLSXyJjRIWsnYuVpQLyD1SaTpSd9w8hsWrcBVwLQ
+	Nh8m9DhXGIVnIXbVnVjhwRKR+UPaRHmzwmy0QlRi6SsG9cm0pb1j
+X-Received: by 2002:a05:6a21:3949:b0:1ee:c7c8:cad with SMTP id adf61e73a8af0-1eef3dc67c0mr25988131637.28.1740413029801;
+        Mon, 24 Feb 2025 08:03:49 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEnsEg74MD5qB7ynWgwL7w0k0hcOFX75F1wbbBIKHXR2yGnkdSpsNpO5bmnxb0aQ2hTXZtqAA==
+X-Received: by 2002:a05:6a21:3949:b0:1ee:c7c8:cad with SMTP id adf61e73a8af0-1eef3dc67c0mr25988088637.28.1740413029420;
+        Mon, 24 Feb 2025 08:03:49 -0800 (PST)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7328371e36esm14470744b3a.61.2025.02.24.08.03.48
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 24 Feb 2025 08:03:49 -0800 (PST)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, Baochen Qiang <quic_bqiang@quicinc.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20241209024146.3282-1-quic_bqiang@quicinc.com>
+References: <20241209024146.3282-1-quic_bqiang@quicinc.com>
+Subject: Re: [PATCH] wifi: ath12k: use link specific bss_conf as well in
+ ath12k_mac_vif_cache_flush()
+Message-Id: <174041302874.2901106.7386807697655031327.b4-ty@oss.qualcomm.com>
+Date: Mon, 24 Feb 2025 08:03:48 -0800
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
+X-Proofpoint-ORIG-GUID: LNvwR7NKweZwJUGu0M41yDn4C3MIrQeB
+X-Proofpoint-GUID: LNvwR7NKweZwJUGu0M41yDn4C3MIrQeB
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-24_08,2025-02-24_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ impostorscore=0 spamscore=0 mlxlogscore=729 lowpriorityscore=0 mlxscore=0
+ adultscore=0 malwarescore=0 clxscore=1015 phishscore=0 priorityscore=1501
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2502240112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250224_013614_813084_148204F3 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20250224_080352_161692_A4E9B8F4 
+X-CRM114-Status: GOOD (  10.67  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,30 +116,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2025-02-21 at 10:27 -0800, Jeff Johnson wrote:
-> First of all, thank you for adding any automation which improves the live=
-s of
-> the maintainers. Aditya has been working on that for the ath.git tree as =
-well.
 
-Cool. Do you have additional tests that should feed back to patchwork?
+On Mon, 09 Dec 2024 10:41:46 +0800, Baochen Qiang wrote:
+> Commit 3952657848c0 ("wifi: ath12k: Use mac80211 vif's link_conf instead of
+> bss_conf") aims at, where applicable, replacing all usage of vif's bss_conf
+> with link specific bss_conff, but missed one instance in
+> ath12k_mac_vif_cache_flush(). This results in wrong configurations passed
+> to ath12k_mac_bss_info_changed() when the link in question is not the default
+> link.
+> 
+> [...]
 
-> ath.git contains both ath-current and ath-next branches in the same tree:
-> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=3Dath-=
-current
-> https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=3Dath-=
-next
->=20
-> So we can use:
-> 	[PATCH ath] for current (this branch gets little use)
-> 	[PATCH ath-next] for next
-> if that helps your automation.
+Applied, thanks!
 
-Yes please. I've picked up those trees in my config/workspace now, so it
-ought to work and report back, but we'll see when patches are posted.
+[1/1] wifi: ath12k: use link specific bss_conf as well in ath12k_mac_vif_cache_flush()
+      commit: 11d963d44c77261d6a948f3745bbd678eef4b83b
 
-As I just said to Ping-Ke, we can hopefully also improve the auto-detect
-logic, but I didn't get there yet.
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
-johannes
 
