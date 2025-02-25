@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAB66C021B2
-	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 18:40:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83CFCC021B2
+	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 18:41:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=klCMIme++UJjOhSB/EywrczoGUvxRZL9ruhM7YJsPJ4=; b=MlZq65EuIkcUAVXEbsuWshzBw0
-	m0imshWEg+vHESBBzyQENIUQuyRy/dzuUulTW5HPd6IngPzhu1zS2rUzu2Ne3VMFnVM6y9y6LFVCv
-	FPENzRpnoTpOy0yybgRxMgWAhttjk4kcR6rim1DUoCAdLmZMmNpeG30F4TMr9XyQZ49fuRWTo0Pnw
-	SQ7j+/C79Dvp5A0bSEl0nxUY5aD1qr3ISMEAatHbu5c5DTEyey8AGTJugQJRIsEuzdrH8jE5omgzr
-	lErOUE7Bzi952NbPp32X7lhPxwF1JlLnRHgbrJ5Ng/gX9TrPYfATQmv1Lb+1VyfCZZMC7Mq7tLA0j
-	JZzzlEXQ==;
+	bh=gIqnGqbGGqIoCHde1H8t6Cm6DGYb+BPJeMq0gW/TNSA=; b=jcxClWVUlFfHg/RIv2sgXgJmzm
+	4SzwhNgUQYSYsMqQhAs9dz+1+Gc8JUlRn5YcUHGNtzzEF+M6W6FyrE+MGwZiVw6BAkjkxQgSVDPYx
+	c2eVq/pA5vC41gIJsvYa+kkIEUt5EN0qbQzIF9J+H6Sjq7YtdSg1ZoCWIV97NwQuRLaF5lrWWjFLS
+	UZjl/nyQUAw3pBQp5KSQhkX0uRNk7yjluMdkjaK2uspiUBqiv781J/xbSX2PIV9Gg3ljKm2HFc2Cw
+	BT67AScZQr6yqvttwKLqkgCK2OInYXpjQVCqaGm+lr/6nP8R2sFkn8JbTBlZM9hVAx9fFW1Q8uIMM
+	mV6YvjBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmzqu-00000000zV5-262A
+	id 1tmzrb-00000000zjY-1EAR
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Feb 2025 18:40:20 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	Tue, 25 Feb 2025 18:41:03 +0000
+Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmzDG-00000000nHo-1Koy
+	id 1tmzMj-00000000qHT-44tr
 	for ath12k@lists.infradead.org;
-	Tue, 25 Feb 2025 17:59:23 +0000
+	Tue, 25 Feb 2025 18:09:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C4E265C0F7B;
-	Tue, 25 Feb 2025 17:58:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 84D60C4CEDD;
-	Tue, 25 Feb 2025 17:59:17 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 70CA6612AF;
+	Tue, 25 Feb 2025 18:09:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1CB9C4CEE2;
+	Tue, 25 Feb 2025 18:09:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740506361;
-	bh=KV9aTcVPRj2TbE8QV+NhaTT5Bp0YGUgGMer8gWxFKU4=;
+	s=k20201202; t=1740506949;
+	bh=Dv9CuDzk0YW6VVlDS9wYPUduwzmfbTUqSubDrkIsSpE=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=aGqlF0l2OhomfOdRjDYgvqLm2MHiKrZ7lRoAJxed513yIhAzoJePEGUUhs/VgKayq
-	 3G5pdgF84rWsHZti6KhmI3h8B8+3cdW2t5wBZd3EwJFiGC/r2l0l+iqBm73UjW0HmM
-	 mJ9yPTdDLc6PnOJ5p3yUTu473cAOT9w9nRzWnl0mRVNmLEE6OVuhXL6B1LNJ3eiO75
-	 UgHZGQgoBZGldNzZCYeiCy900HDEu/rg2d23wSzIr1e/QyPmyIEsH6vv2QyyKSspqU
-	 JzFa86zVd9ST7qhbB1Cv8JVyLqmELJ7FRG+HWUMRm1BGoIpFcnVxXX4fjQydLQEFEu
-	 mjbkytNpMI29A==
-Message-ID: <a9e0a8ff-e84e-4210-babd-0d0a1825e9ec@kernel.org>
-Date: Tue, 25 Feb 2025 18:59:15 +0100
+	b=TjDjOReS5VSAIrf7ns1UhM+oFR7VPfDeL9sO2q75jx6LVRggHaD/MtMmpMD78zrUl
+	 6LtQKaMqX+Nj18vylZ+x8qDJ+Frz0B2YGJl7Ee+EnEvtmHlv3yJZOSgF4bGtbNF0ue
+	 iW9mJGrDTlCKSF3/yTzJ87RblzgkSTNywBsy6eTCR6vQ7F19/9PBUmBAU0i5/2Pyyw
+	 wYFAfOQt/0X/16LDjwZXR1Eo3CparlDImQK1izoQKWHzl8ylUTWOgdH+Q/5ZiTnJik
+	 kzOb7qTgUo9zcsDIDBOrFdzCVtenG9tCeaooSdFQfDsqncWSYQB3g2jQMjiL/y+4WW
+	 txsflAGIcrctg==
+Message-ID: <5f21bb7f-b0f8-4b39-8afd-5a1a672c54ec@kernel.org>
+Date: Tue, 25 Feb 2025 19:09:03 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] arm64: dts: qcom: x1e80100-slim7x: Drop incorrect
@@ -66,6 +66,7 @@ References: <20250225093051.58406-1-krzysztof.kozlowski@linaro.org>
  <21ad3381-4d65-4c68-892d-9f485bf13735@oss.qualcomm.com>
  <c55f615e-6831-4470-9ea2-73fe605b8a5f@linaro.org>
  <71019e23-f339-4485-8599-c4e40ad979a9@oss.qualcomm.com>
+ <a9e0a8ff-e84e-4210-babd-0d0a1825e9ec@kernel.org>
 Content-Language: en-US
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -111,12 +112,9 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <71019e23-f339-4485-8599-c4e40ad979a9@oss.qualcomm.com>
+In-Reply-To: <a9e0a8ff-e84e-4210-babd-0d0a1825e9ec@kernel.org>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250225_095922_479150_631072DA 
-X-CRM114-Status: GOOD (  14.53  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,42 +129,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 25/02/2025 18:36, Jeff Johnson wrote:
-> 
+On 25/02/2025 18:59, Krzysztof Kozlowski wrote:
+> On 25/02/2025 18:36, Jeff Johnson wrote:
 >>
->> Also post factum reasoning is not correct, because this would open the
->> gate to bypass any sort of review. Just squeeze your stuff into the DTS
->> and then you can bypass all DT maintainers :/
+>>>
+>>> Also post factum reasoning is not correct, because this would open the
+>>> gate to bypass any sort of review. Just squeeze your stuff into the DTS
+>>> and then you can bypass all DT maintainers :/
+>>>
+>>> All properties must be documented and bindings must be accepted *before*
+>>> DTS patch is applied.
 >>
->> All properties must be documented and bindings must be accepted *before*
->> DTS patch is applied.
+>> There is no intention to bypass DT maintainers. We are just trying to upstream
+>> a large amount of downstream code, and in the process some pieces are coming
 > 
-> There is no intention to bypass DT maintainers. We are just trying to upstream
-> a large amount of downstream code, and in the process some pieces are coming
+> I don't see how this is related here - patch was not sent by anyone from
+> Qualcomm.
+> 
+>> out of order. And there is also confusion if binding, driver, and DTS changes
+>> should be in one series or three separate series.
+> 
+> How is it related to incorrect property here? It feels like this topic
+> is being hijacked for some other point. I am not happy with this because
+> then Bjorn will see that discussion is going so he will ignore the patch.
+> 
+> BTW, I gave my statement multiple times, writing bindings also mention
+> this, so is anything going to change if I say it 100th time here? In one
+> month there will be the same question :/
 
-I don't see how this is related here - patch was not sent by anyone from
-Qualcomm.
 
-> out of order. And there is also confusion if binding, driver, and DTS changes
-> should be in one series or three separate series.
-
-How is it related to incorrect property here? It feels like this topic
-is being hijacked for some other point. I am not happy with this because
-then Bjorn will see that discussion is going so he will ignore the patch.
-
-BTW, I gave my statement multiple times, writing bindings also mention
-this, so is anything going to change if I say it 100th time here? In one
-month there will be the same question :/
-
-DTS must be applied via ARM SoC, thus you cannot combine DTS into
-patchsets being entirely applied by driver subsystem maintainers (Greg,
-netdev, sometimes maybe watchdog). For other maintainers, you can
-combine it, because they know to skip DTS.
-
-Bindings always go via subsystem, so they must be part of driver
-patchset, unless of course there is no driver (but then bindings are
-"the driver" patchset).
-
+Another BTW, not helpful to community, but if you asked above for
+Qualcomm, that Qualcomm does not know where to post DTS, then you are
+lucky, because your extensive internal guideline has it already very
+clearly documented (detailed in "Driver upstreaming process" and a bit
+in "feedback/review on lists"). The guide is quite comprehensive and
+covers all typical cases, like that one.
 
 Best regards,
 Krzysztof
