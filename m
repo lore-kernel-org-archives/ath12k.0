@@ -4,109 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11300C021B8
-	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 06:49:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 661C6C021B2
+	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 07:16:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4UWfRvr5rUx8BlgHcPdBC9yg9LunZEnqYzq8eLC80og=; b=gMHhoV7scpblcHmj/XhVw7rMLP
-	e5STmpIX3Yx/E7B1liUlIPj2R7WGrYfFjkQ3uO2ewtEbqHDSGT8Eu+rwUG6sovehiOWNmfPYjPgKY
-	0JYH5c0U4fO/0lGNTtl1iEwvBaG3nKkpB9zCDnSE/opepAusrcs4+uZbmDRttVaN0SjEoUsTXxiom
-	89OT0f9cdIqOF4WmephekPyLnfb1Jo0aHdv1BfHhBaPv9AEiVzREou2dbrJVoiJRzF8vWvMZVlMkH
-	aklamd9/6IUtJBYT1bywhjWnGYH6G/lv1+BSPcdY4P4hQTZvCJnrBwc25LTJtpmbF7B0Z7jqWuRVn
-	iQk6lfVg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=RiLylepOzLfAIOw4jKJU+nrVaR7OZmn5yTHoeXsQJCg=; b=Xn0qbALrNHEotRKJ0GsmtRzWNd
+	vtohRupJ4+P+XflgaB1tozmpaZZxWS3EZsto8HSVXpL59Q6tW1VVVsZI3HoaBtH4WmmQzFCuMAthy
+	OltKeo8zW5nYv9FzvPrSe3GwvhOR3A16lwfQ/KPXbwuQLgaCijcrr+2ixXVpiipXAdTn0Xmlw1zhs
+	CMEX63lCxUjtxU4sbNhpSFZoTSZ7M9iPrUUJ8iz2Zr1lqPQAZo1Q1FmJ8KOZOzAqmI9Sxo6p9i5H4
+	dj4pq8DnXxPHl6r4ZtmoRE90I9RgBfsVNKqFju9sAuzMHWo3XguDspMEP4+T7UEmiB9xMbJmvvLzp
+	a4cgQWWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmol8-0000000G8SS-308N
+	id 1tmpBK-0000000GB0k-0kla
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Feb 2025 06:49:38 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Tue, 25 Feb 2025 07:16:42 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmol7-0000000G8S7-1ImY
-	for ath12k@bombadil.infradead.org;
-	Tue, 25 Feb 2025 06:49:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=4UWfRvr5rUx8BlgHcPdBC9yg9LunZEnqYzq8eLC80og=; b=lXYMc1pPmVdPMiP7c7GuNJTQKt
-	5CN0n14GSbIvYmbznTmX09pydNEluP6Buy0Znd5cjWFbMtwMv47r7lGwTjl4VJD+Q13YVbk76xDnQ
-	g0HKQGWfrgxFO2K5rInqeLGOqfU9YHjN9LXU+zmOlB7phaV/hYctJLGjayGzcogfv7m6Ubzi75X3r
-	WG7h/hL9j4vjzR3riXH8E0vOx37TVTniGKsMnigrBTOTFRFla6nX92p+Yq9P+7HCz+4GFNAbFhr6g
-	dZI4F012M3N6shDAgXvLXB3I/oLCfBRyTlaOAyQ0F79DJZklipDfQXJfPSZ58OLoLCRe8/H4iO7+k
-	FGsDEe+w==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmol3-00000003JNx-2avC
+	id 1tmp9o-0000000GAje-1p1w
 	for ath12k@lists.infradead.org;
-	Tue, 25 Feb 2025 06:49:36 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKOdeb001961;
-	Tue, 25 Feb 2025 06:49:29 GMT
+	Tue, 25 Feb 2025 07:15:09 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKOmHh017362;
+	Tue, 25 Feb 2025 07:15:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4UWfRvr5rUx8BlgHcPdBC9yg9LunZEnqYzq8eLC80og=; b=mbn6FwYd8BcREnme
-	MSEGwuAZriE18YBLlXv2XC8Jz2dUQ6xdvAkGF1lD95EvBk098DUfr4XlEvCmc96b
-	hGYPkUhzxobt+f5mW1wR61icoXJ9ji1lSpeWqDZgQBozE6LIbZvdLvvUPoH0L5G8
-	sQG2fL8iCSUFhodeMVA2m+zgjRJUEQlit2l/IviJ4WMxac/CNHp8YVIvtN3wMpol
-	9V81Cm9cmVuh04+NYCASWwg3pYrKssOPRstiGSJ9Ygxxwgg0pKcAub9UiyCkOKdm
-	FcKliGGycseapEIhI+PGcUZHE1DGFv6sTL3ruDgOOw1EnQjybhC0nx/bLGCLQ1E5
-	PR2eLg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y7rjypa4-1
+	RiLylepOzLfAIOw4jKJU+nrVaR7OZmn5yTHoeXsQJCg=; b=kf59STFB4/Ufka3f
+	WqTH9aP7ptFmLWdTTU/q+r2lTll6ZE/aUQkFmNSiRF/4X8ZXoW4t+pqP/O0X6gil
+	8Zp4/U53QKXoaKhMx1hZUwtPuk0SUNuBlTTO6Xe4I3d3tbYO7kv6GhD5eVQfDZk/
+	Kp/ueW3p+mi4lHEICdW2VqlI5MghXgE6YIasc55cz0OZ2805Lm5KqAtNfQhQ84Th
+	KQgLi27CeyFy0JPSX/fHR/Lbgw76qHWmpUVpnJAlCvgk3+1ilG0Ud+SnInqxPtT2
+	9Z9T92nnMPR8WTAt6vbTMVWGGifcnNHwf55wKVLAZxtsQGNz0+KxhCGjbenSRXOl
+	JJAyjQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y5k681j4-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Feb 2025 06:49:29 +0000 (GMT)
+	Tue, 25 Feb 2025 07:15:04 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51P6nSSL016333
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51P7F3Rs008153
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Feb 2025 06:49:28 GMT
-Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 24 Feb 2025 22:49:24 -0800
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        <linux-wireless@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>,
-        Balamurugan S
-	<quic_bselvara@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>,
-        "Raj
- Kumar Bhagat" <quic_rajkbhag@quicinc.com>
-Subject: [PATCH v6 06/13] wifi: ath12k: Add hw_params to remap CE register space for IPQ5332
-Date: Tue, 25 Feb 2025 12:18:27 +0530
-Message-ID: <20250225064834.2002499-7-quic_rajkbhag@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250225064834.2002499-1-quic_rajkbhag@quicinc.com>
-References: <20250225064834.2002499-1-quic_rajkbhag@quicinc.com>
+	Tue, 25 Feb 2025 07:15:03 GMT
+Received: from [10.216.5.11] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 24 Feb
+ 2025 23:15:00 -0800
+Message-ID: <1989fdc2-453d-48f2-a89a-f0ab5bf582fb@quicinc.com>
+Date: Tue, 25 Feb 2025 12:44:02 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH 1/5] dt-bindings: net: wireless: describe the ath12k
+ wifi device IPQ5424
+To: Conor Dooley <conor@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Kalle Valo
+	<kvalo@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski
+	<krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Jeff Johnson
+	<jjohnson@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20250130051838.1924079-1-quic_rajkbhag@quicinc.com>
+ <20250130051838.1924079-2-quic_rajkbhag@quicinc.com>
+ <20250130-divisible-chrome-3f9c5d1aff11@spud>
+Content-Language: en-US
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <20250130-divisible-chrome-3f9c5d1aff11@spud>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Wf8DEHBmutqYx0CJRAtHpFJmZ5sYyzp1
-X-Proofpoint-ORIG-GUID: Wf8DEHBmutqYx0CJRAtHpFJmZ5sYyzp1
+X-Proofpoint-ORIG-GUID: DaHTu8TE7Mh2Uzc3QpY7kpxbRvFl1S62
+X-Proofpoint-GUID: DaHTu8TE7Mh2Uzc3QpY7kpxbRvFl1S62
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-25_02,2025-02-24_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 bulkscore=0
- phishscore=0 impostorscore=0 malwarescore=0 adultscore=0 spamscore=0
- priorityscore=1501 mlxlogscore=999 lowpriorityscore=0 suspectscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502100000 definitions=main-2502250043
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ bulkscore=0 spamscore=0 phishscore=0 clxscore=1011 impostorscore=0
+ mlxlogscore=999 suspectscore=0 priorityscore=1501 mlxscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502250047
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250225_064934_254862_5C29B55C 
-X-CRM114-Status: GOOD (  17.42  )
+X-CRM114-CacheID: sfid-20250224_231508_596640_D8EB0741 
+X-CRM114-Status: GOOD (  11.32  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,184 +109,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Balamurugan S <quic_bselvara@quicinc.com>
+On 1/31/2025 12:20 AM, Conor Dooley wrote:
+> On Thu, Jan 30, 2025 at 10:48:34AM +0530, Raj Kumar Bhagat wrote:
+>> Describe and add the device-tree bindings for the ATH12K AHB wifi device
+>> IPQ5424.
+>>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+>>  .../net/wireless/qcom,ath12k-ahb.yaml         | 119 ++++++++++++++++++
+>>  1 file changed, 119 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+>> index bd953a028dc3..1d24389a0ab3 100644
+>> --- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+>> +++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k-ahb.yaml
+>> @@ -18,6 +18,7 @@ properties:
+>>    compatible:
+>>      enum:
+>>        - qcom,ipq5332-wifi
+>> +      - qcom,ipq5424-wifi
+> Patch should end here, another example for something that doesn't have
+> different properties etc is pointless.
 
-For IPQ5332 CE register space is moved out of WCSS region and the
-space is not contiguous. Hence, add hardware params (ce_ie_addr &
-ce_remap) for IPQ5332. These parameters would be used by Ath12k
-AHB driver (in subsequent patches) to remap the CE registers to a
-new space for accessing them.
 
-Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/ce.h   | 11 ++++++++
- drivers/net/wireless/ath/ath12k/core.h |  4 +++
- drivers/net/wireless/ath/ath12k/hal.h  |  4 +++
- drivers/net/wireless/ath/ath12k/hw.c   | 35 +++++++++++++++++++++++---
- drivers/net/wireless/ath/ath12k/hw.h   |  3 +++
- 5 files changed, 53 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
-index 8007a94cec5d..57f75899ee03 100644
---- a/drivers/net/wireless/ath/ath12k/ce.h
-+++ b/drivers/net/wireless/ath/ath12k/ce.h
-@@ -76,6 +76,17 @@ struct ce_pipe_config {
- 	__le32 reserved;
- };
- 
-+struct ce_ie_addr {
-+	u32 ie1_reg_addr;
-+	u32 ie2_reg_addr;
-+	u32 ie3_reg_addr;
-+};
-+
-+struct ce_remap {
-+	u32 base;
-+	u32 size;
-+};
-+
- struct ce_attr {
- 	/* CE_ATTR_* values */
- 	unsigned int flags;
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 553965f12fcd..85f0cdce774e 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -924,6 +924,10 @@ struct ath12k_base {
- 	void __iomem *mem;
- 	unsigned long mem_len;
- 
-+	void __iomem *mem_ce;
-+	u32 ce_remap_base_addr;
-+	bool ce_remap;
-+
- 	struct {
- 		enum ath12k_bus bus;
- 		const struct ath12k_hif_ops *ops;
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 1ce97f9a92ac..47ff0b1bfdf4 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -11,6 +11,7 @@
- #include "rx_desc.h"
- 
- struct ath12k_base;
-+#define HAL_CE_REMAP_REG_BASE	(ab->ce_remap_base_addr)
- 
- #define HAL_LINK_DESC_SIZE			(32 << 2)
- #define HAL_LINK_DESC_ALIGN			128
-@@ -372,6 +373,9 @@ struct ath12k_base;
-  * ath12k_hal_rx_desc_get_err().
-  */
- 
-+#define HAL_IPQ5332_CE_WFSS_REG_BASE	0x740000
-+#define HAL_IPQ5332_CE_SIZE		0x100000
-+
- enum hal_srng_ring_id {
- 	HAL_SRNG_RING_ID_REO2SW0 = 0,
- 	HAL_SRNG_RING_ID_REO2SW1,
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 84f542c02c94..91aecca566a4 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1110,10 +1110,14 @@ static const struct ath12k_hw_regs ipq5332_regs = {
- 	.hal_ppe_rel_ring_base = 0x0000046c,
- 
- 	/* CE address */
--	.hal_umac_ce0_src_reg_base = 0x00740000,
--	.hal_umac_ce0_dest_reg_base = 0x00741000,
--	.hal_umac_ce1_src_reg_base = 0x00742000,
--	.hal_umac_ce1_dest_reg_base = 0x00743000,
-+	.hal_umac_ce0_src_reg_base = 0x00740000 -
-+		HAL_IPQ5332_CE_WFSS_REG_BASE,
-+	.hal_umac_ce0_dest_reg_base = 0x00741000 -
-+		HAL_IPQ5332_CE_WFSS_REG_BASE,
-+	.hal_umac_ce1_src_reg_base = 0x00742000 -
-+		HAL_IPQ5332_CE_WFSS_REG_BASE,
-+	.hal_umac_ce1_dest_reg_base = 0x00743000 -
-+		HAL_IPQ5332_CE_WFSS_REG_BASE,
- };
- 
- static const struct ath12k_hw_regs wcn7850_regs = {
-@@ -1227,6 +1231,17 @@ static const struct ath12k_hw_hal_params ath12k_hw_hal_params_ipq5332 = {
- 			    HAL_WBM_SW_COOKIE_CONV_CFG_WBM2SW4_EN,
- };
- 
-+static const struct ce_ie_addr ath12k_ce_ie_addr_ipq5332 = {
-+	.ie1_reg_addr = CE_HOST_IE_ADDRESS - HAL_IPQ5332_CE_WFSS_REG_BASE,
-+	.ie2_reg_addr = CE_HOST_IE_2_ADDRESS - HAL_IPQ5332_CE_WFSS_REG_BASE,
-+	.ie3_reg_addr = CE_HOST_IE_3_ADDRESS - HAL_IPQ5332_CE_WFSS_REG_BASE,
-+};
-+
-+static const struct ce_remap ath12k_ce_remap_ipq5332 = {
-+	.base = HAL_IPQ5332_CE_WFSS_REG_BASE,
-+	.size = HAL_IPQ5332_CE_SIZE,
-+};
-+
- static const struct ath12k_hw_params ath12k_hw_params[] = {
- 	{
- 		.name = "qcn9274 hw1.0",
-@@ -1304,6 +1319,9 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.iova_mask = 0,
- 
- 		.supports_aspm = false,
-+
-+		.ce_ie_addr = NULL,
-+		.ce_remap = NULL,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -1385,6 +1403,9 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.iova_mask = ATH12K_PCIE_MAX_PAYLOAD_SIZE - 1,
- 
- 		.supports_aspm = true,
-+
-+		.ce_ie_addr = NULL,
-+		.ce_remap = NULL,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -1462,6 +1483,9 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.iova_mask = 0,
- 
- 		.supports_aspm = false,
-+
-+		.ce_ie_addr = NULL,
-+		.ce_remap = NULL,
- 	},
- 	{
- 		.name = "ipq5332 hw1.0",
-@@ -1534,6 +1558,9 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.supports_dynamic_smps_6ghz = false,
- 		.iova_mask = 0,
- 		.supports_aspm = false,
-+
-+		.ce_ie_addr = &ath12k_ce_ie_addr_ipq5332,
-+		.ce_remap = &ath12k_ce_remap_ipq5332,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index fbe1aec475ce..6a75af093f31 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -226,6 +226,9 @@ struct ath12k_hw_params {
- 	bool supports_dynamic_smps_6ghz;
- 
- 	u32 iova_mask;
-+
-+	const struct ce_ie_addr *ce_ie_addr;
-+	const struct ce_remap *ce_remap;
- };
- 
- struct ath12k_hw_ops {
--- 
-2.34.1
-
+Thanks, will update in next version.
 
