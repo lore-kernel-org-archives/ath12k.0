@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA830C021B2
-	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 17:19:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5B15C18E7C
+	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 17:19:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
 	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Qy+0APQiRYBidt6TGL+wUHVYtFCZn9mwlvKkPx69zrk=; b=q57JZs+9OIQU6Q5NDdulCT5q8G
-	PUVYXwnlLfwi0rp0xteAb/h9i532PoN78gPprjyEnWf6bYT6c+3Q/Oedvp/u3gwB2+diRqFW20HqL
-	h3B/gr7uhqy+eD3Ui2M7mgwUHIYOVJYGiMswOx9xPgRIgHgWk0uRfdm3BqRFOPKZcwuAT1TU++NdL
-	sfiURmzFevxpXOjDTxXNn6ugQrz6ksOOR0AqClTF+KzTsUeQ21hhCEpkElUYCjO5eR53CWio5275E
-	8kFY+eiPTSN5R/u46eS1PLhzjrSQv3AUxc2tE3jj8bmy5Oer2AruFGjNd4FQMP5CcUlGUWNbMh6fc
-	wffQLbKg==;
+	bh=ajNLyEn1d1TTH7RCZcHpJ4NW4gY4KZnm0RrXGLjbeu0=; b=Lt2yDAnbOH+WLndqECrdIVQP7h
+	iFZQ2BgGFIarLa7Acq7+UMWvLL7WCWxn182RwWRMitlFy3lmmXFQWhWKeJUwg6KMVUEw2xse/UXYF
+	3dPJSakwhKDW9ObEqcgm2WjJQwjOo4hVnu4gnRGzYXrftgL3BeMjGHncYJ+BIocGmnDdDM+08dTWM
+	gtQenpeGfpkKPXJNnORNn0uWA+cD2PLNBiTGihS/iO9ohWgnpw3iwqFi1SndTMfqcfaUQpkGGfGGt
+	gwmlrDrEjY+WBd0Ir3JF3sUKFAioE5bR11NNcHnh2SOOsQ3m3kPUFwOcIn/rzYxMKPMMdlL3LvVFW
+	73wLMrQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmyaG-00000000akp-1lLx
+	id 1tmyaI-00000000ao5-20cD
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Feb 2025 17:19:04 +0000
+	Tue, 25 Feb 2025 17:19:06 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmyWi-00000000ZTn-07Xf;
-	Tue, 25 Feb 2025 17:15:24 +0000
+	id 1tmyWz-00000000ZVZ-1ie5;
+	Tue, 25 Feb 2025 17:15:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8AAAB6129B;
-	Tue, 25 Feb 2025 17:15:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 00476C4CEDD;
-	Tue, 25 Feb 2025 17:15:22 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E6A056129B;
+	Tue, 25 Feb 2025 17:15:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4B4F6C4CEDD;
+	Tue, 25 Feb 2025 17:15:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740503723;
-	bh=7KeqBFol8pGLRVvFbeuC+puSXOYFlCJdGV7zPxksw7s=;
+	s=k20201202; t=1740503740;
+	bh=ZF1rAhCMbOrvp76SA+oTUJgptcVWQVsV/ij4xenjie0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=D/GPGZXeAlGWSiKVMN9ABMI1yaVWrR4V2oHRRwyBLXzcOuX9hCCjYJwcq1Fb0XZ9Y
-	 MjqnURj4wK5tFnqZfYta9/djn513hXYNQm3d8f+2joPI/Z058C4v04Li2/eZOvbUSn
-	 7A9v12Jj0k3zH68ZKxsZtTErDRqvJZ9vj/A7agSVQgu29nyuFNWaTeEuab747g7rCw
-	 HKBbsgEZFQcEAXD7OWNS2yn2JyLpWwo6hp0EtVbQnad1lvWwVIHJ06jpU4KtDsIFZL
-	 Tl9V1QFJiCsPLa52hVSQ0C79t3Pw2Nvsbyt6pPR81f2Lpns12SogMGwZ59znC/2T1X
-	 3a3hjT1YO/H0w==
-Date: Tue, 25 Feb 2025 11:15:21 -0600
+	b=i28EhJ52IXq3mC5Lc3lOt22PkbrYUq4RV8yoxln8w81ZgPuc5yn9Zgwp1FTKe90XS
+	 z3crKCBTuHWP1++96ZxuvzXgk9a3+/U3/mqAlhPyenGj2Rzt6wJjqTHWsgRGyJTVN9
+	 G169Klzw/0lOhbX1lGAiyaFePgWfur1/vrJKhkRlBm6i+E+Lwh4oTtWDvG8t4jomR7
+	 /J2BMB8mZH7jVmxyN5HHYWFKUOpSJay7b/MwGzDNJYJ4quuMjNfRsGCcyJEiKuEQUU
+	 2wBv/glI9bXLWBmmtBII410ZzTgf3V2E0fF1AWbirgL7qjiVhpqyt8QBfVhDrx9MXd
+	 wNqNChMAHvvYw==
+Date: Tue, 25 Feb 2025 11:15:38 -0600
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Jeff Johnson <jjohnson@kernel.org>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-wireless@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	ath10k@lists.infradead.org, linux-kernel@vger.kernel.org,
-	ath11k@lists.infradead.org, ath12k@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH 2/5] dt-bindings: wireless: ath11k: Strip ath11k prefix
+	linux-wireless@vger.kernel.org, Jeff Johnson <jjohnson@kernel.org>,
+	ath11k@lists.infradead.org,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Conor Dooley <conor+dt@kernel.org>, ath12k@lists.infradead.org
+Subject: Re: [PATCH 3/5] dt-bindings: wireless: ath12k: Strip ath12k prefix
  from calibration property
-Message-ID: <174050372078.2716032.16014648484871048536.robh@kernel.org>
+Message-ID: <174050373800.2716505.16558517329137280278.robh@kernel.org>
 References: <20250225-b-wifi-qcom-calibration-variant-v1-0-3b2aa3f89c53@linaro.org>
- <20250225-b-wifi-qcom-calibration-variant-v1-2-3b2aa3f89c53@linaro.org>
+ <20250225-b-wifi-qcom-calibration-variant-v1-3-3b2aa3f89c53@linaro.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20250225-b-wifi-qcom-calibration-variant-v1-2-3b2aa3f89c53@linaro.org>
+In-Reply-To: <20250225-b-wifi-qcom-calibration-variant-v1-3-3b2aa3f89c53@linaro.org>
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,21 +75,20 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 25 Feb 2025 10:05:33 +0100, Krzysztof Kozlowski wrote:
+On Tue, 25 Feb 2025 10:05:34 +0100, Krzysztof Kozlowski wrote:
 > Devicetree properties describing exactly the same thing should be
 > reusable between device bindings.  All Qualcomm Atheros WiFi chips needs
 > certain calibration data, so properties should not be prefixed with
-> device family (ath11k).
+> device family (ath12k).
 > 
-> Deprecate qcom,ath11k-calibration-variant and alike, so we gradually
+> Deprecate qcom,ath12k-calibration-variant and alike, so we gradually
 > switch to a common property.  This will also allow moving these
 > properties to common schema, if desired.
 > 
 > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > ---
->  .../devicetree/bindings/net/wireless/qcom,ath11k-pci.yaml        | 9 ++++++++-
->  Documentation/devicetree/bindings/net/wireless/qcom,ath11k.yaml  | 7 +++++++
->  2 files changed, 15 insertions(+), 1 deletion(-)
+>  .../devicetree/bindings/net/wireless/qcom,ath12k-wsi.yaml   | 13 ++++++++++---
+>  1 file changed, 10 insertions(+), 3 deletions(-)
 > 
 
 Acked-by: Rob Herring (Arm) <robh@kernel.org>
