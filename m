@@ -4,89 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B82E2C021B8
-	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 07:24:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EDFFC021BF
+	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 07:52:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tebw6SLuVv3C61Eg9fgpUebniUyjM/XHOUWR++DqaVs=; b=XXqKic+2+l0uTvhh7t4sYzHppr
-	ywEc0VRlHbd5oxdq5Zh8IKSsCyFNE+S7vbwmIRVfshzhu9GkthHuK5VzF/k0Z3mL4l0P9JuWVwWxD
-	Eid+18Oxz9ap+llxI9vurb1fABY0tWzXBEtd16IrEOUW/tD+TFphJIxZqTMFUkQW63/xHrjGslHpg
-	UAstrwmUlBZPP6VybFtbHRnkErirfI0Y4C4FY5y4aMbjZi+IiS5K/KspdsWajjD0r7JiPim2pCVw8
-	BqzmiyKTQTB8/i+CSqjCdthM9b4bzwNLgO3pRFlPT359KHQkw+JYdLW+xE7bKXFzQuFG79r2+Dmhx
-	L7vjXaDg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=PrRWzYLmOKa47EDMkXBJ7b4YmQZcn1nRg06uVSpWQwc=; b=e4brb1i4jjfJFDZZ8w4Ny8T9ek
+	MZw3gGrmaq2zi3weEk7SmDDGb/76OWMwEbGSwnpMM6FYE3eQQJhRVdcNqfrqbjw/kCjSqd1JjvZP8
+	vn6Cj5lafw3sBFrNJtS/okEOQhqUbBYkfXrl5BY1Vm/8unvZ/W9RwEglQN5RJ9zwChjEDufnwAlAk
+	ub5JjqUGRxT0EWButeOV551MGEE5EVlorOJmc3guhCVnvPIArbOP5Y5L1p9u7PkaqC00xk4Ze/2+x
+	a9wXIg/2n3Aw0cS5jag2tN7XL2CzbkiSheRMaSl8fOc/3hUNFr625gvAP7uljdqa8/B8D1HVgxSHg
+	uZTpxuwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmpJ3-0000000GBlv-29UR
+	id 1tmpkN-0000000GGpR-04Oa
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Feb 2025 07:24:41 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Tue, 25 Feb 2025 07:52:55 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmpJ1-0000000GBlX-3fP9;
-	Tue, 25 Feb 2025 07:24:41 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKPD77018335;
-	Tue, 25 Feb 2025 07:24:36 GMT
+	id 1tmokk-0000000G8OC-2QMD
+	for ath12k@lists.infradead.org;
+	Tue, 25 Feb 2025 06:49:15 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKOMAu029196;
+	Tue, 25 Feb 2025 06:49:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tebw6SLuVv3C61Eg9fgpUebniUyjM/XHOUWR++DqaVs=; b=eNAu+RSudSuvybyG
-	UytM6DbkEr9BzogQKb/Lw0g/cMxcaZUD3O0B3xZ0uoRiWOhpqFuiHLu1ySbRLp0M
-	wgeNlgOwfNRp1xYSMGKplFfayxCUJ7jP8CmNGGyH1gB8ubnSlZw564hfPVi1I62o
-	hrtBC3/T18NCWz2litO9RWdL76K3cc8JZuuohUOwV4+/T+aNjpHvtBSksucpFe0g
-	wXjNsm10Nf89FpWC/crp5R1Km9kcaLIGgnv+EuJ2p0QfR3P6fciHlvTi2GIyCtcp
-	0I42IEtDb68ZSPESR8lNzfWKR1BOSyaUky1aVpdTdM+3iFbGNUXtr8sAHhn4M77t
-	vXzO6w==
+	PrRWzYLmOKa47EDMkXBJ7b4YmQZcn1nRg06uVSpWQwc=; b=bDYjm6Ujf9ytmiB7
+	zQ3xYx0+SW/sZRfw0DK7s5CR9TF+9Z/Jqj4zHJyh25Oi5lX/Yj8D5rI0ruk7/QsA
+	d8gqRQLjdl2sjcVY8YHYQQUZjeaFYNh1UmDnmx87NE6M3FuOVJJMqIEHTh61iy2L
+	bp5NNo6wVdVWWa74+oUdWKM80eWqaMN/OwUm1KimEGDKJDH7wZbh/+uYZpIogKmK
+	mV01BgUIlvD9AqkOsfWrupeUMQMthSHKlm1BbQis0fnPXX7Jmfe7DH/laJfXIpmx
+	/bPD6ZydZKxk47rhGyZmNJiTkMmn1h4uXYcK4vJqfINOEPUp9uG5UB5JA11zFMo9
+	zZfWdw==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y5k682df-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y49eg04w-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Feb 2025 07:24:36 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51P7OZPJ030329
+	Tue, 25 Feb 2025 06:49:12 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51P6nBZq030054
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Feb 2025 07:24:35 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 24 Feb
- 2025 23:24:33 -0800
-Message-ID: <660b8c20-6ab5-4ce5-b1bb-43e78da96d72@quicinc.com>
-Date: Tue, 25 Feb 2025 15:24:31 +0800
+	Tue, 25 Feb 2025 06:49:11 GMT
+Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Mon, 24 Feb 2025 22:49:08 -0800
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+        <linux-wireless@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>,
+        Balamurugan S
+	<quic_bselvara@quicinc.com>,
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: [PATCH v6 02/13] wifi: ath12k: fix incorrect CE addresses
+Date: Tue, 25 Feb 2025 12:18:23 +0530
+Message-ID: <20250225064834.2002499-3-quic_rajkbhag@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250225064834.2002499-1-quic_rajkbhag@quicinc.com>
+References: <20250225064834.2002499-1-quic_rajkbhag@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/3] wifi: ath12k: Clear affinity hint before calling
- ath12k_pci_free_irq() in error path
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-        <jjohnson@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <ath11k@lists.infradead.org>
-References: <20250225053447.16824-1-manivannan.sadhasivam@linaro.org>
- <20250225053447.16824-3-manivannan.sadhasivam@linaro.org>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <20250225053447.16824-3-manivannan.sadhasivam@linaro.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ZMA9E_kv7r_4Sr4cT_a0uZe1F9L8ceoH
-X-Proofpoint-GUID: ZMA9E_kv7r_4Sr4cT_a0uZe1F9L8ceoH
+X-Proofpoint-ORIG-GUID: lhAEJJd-5j9g3YiS47ik4fA_cBp-TWp7
+X-Proofpoint-GUID: lhAEJJd-5j9g3YiS47ik4fA_cBp-TWp7
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-25_02,2025-02-24_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- bulkscore=0 spamscore=0 phishscore=0 clxscore=1015 impostorscore=0
- mlxlogscore=999 suspectscore=0 priorityscore=1501 mlxscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502100000 definitions=main-2502250048
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ impostorscore=0 spamscore=0 mlxlogscore=897 lowpriorityscore=0 mlxscore=0
+ adultscore=0 malwarescore=0 clxscore=1015 phishscore=0 priorityscore=1501
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2502250043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250224_232440_031799_3C528AA5 
-X-CRM114-Status: GOOD (  20.38  )
+X-CRM114-CacheID: sfid-20250224_224914_621157_9515CF91 
+X-CRM114-Status: GOOD (  13.23  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,49 +104,50 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Balamurugan S <quic_bselvara@quicinc.com>
 
+In the current ath12k implementation, the CE addresses
+CE_HOST_IE_ADDRESS and CE_HOST_IE_2_ADDRESS are incorrect. These
+values were inherited from ath11k, but ath12k does not currently use
+them.
 
-On 2/25/2025 1:34 PM, Manivannan Sadhasivam wrote:
-> If a shared IRQ is used by the driver due to platform limitation, then the
-> IRQ affinity hint is set right after the allocation of IRQ vectors in
-> ath12k_pci_msi_alloc(). This does no harm unless one of the functions
-> requesting the IRQ fails and attempt to free the IRQ.
-> 
-> This may end up with a warning from the IRQ core that is expecting the
-> affinity hint to be cleared before freeing the IRQ:
-> 
-> kernel/irq/manage.c:
-> 
-> 	/* make sure affinity_hint is cleaned up */
-> 	if (WARN_ON_ONCE(desc->affinity_hint))
-> 		desc->affinity_hint = NULL;
-> 
-> So to fix this issue, clear the IRQ affinity hint before calling
-> ath12k_pci_free_irq() in the error path. The affinity will be cleared once
-> again further down the error path due to code organization, but that does
-> no harm.
-> 
-> Fixes: a3012f206d07 ("wifi: ath12k: set IRQ affinity to CPU0 in case of one MSI vector")
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  drivers/net/wireless/ath/ath12k/pci.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index 06cff3849ab8..2851f6944b86 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -1689,6 +1689,8 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
->  	return 0;
->  
->  err_free_irq:
-> +	/* __free_irq() expects the caller to have cleared the affinity hint */
-> +	ath12k_pci_set_irq_affinity_hint(ab_pci, NULL);
->  	ath12k_pci_free_irq(ab);
->  
->  err_ce_free:
+However, the Ath12k AHB support relies on these addresses. Therefore,
+correct the CE addresses for ath12k.
 
-LGTM
+Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 
+Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
+Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/ce.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/ce.h b/drivers/net/wireless/ath/ath12k/ce.h
+index 1a14b9fb86b8..f85188af5de2 100644
+--- a/drivers/net/wireless/ath/ath12k/ce.h
++++ b/drivers/net/wireless/ath/ath12k/ce.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
+ 
+ #ifndef ATH12K_CE_H
+@@ -39,8 +39,8 @@
+ #define PIPEDIR_INOUT_H2H	4 /* bidirectional, host to host */
+ 
+ /* CE address/mask */
+-#define CE_HOST_IE_ADDRESS	0x00A1803C
+-#define CE_HOST_IE_2_ADDRESS	0x00A18040
++#define CE_HOST_IE_ADDRESS	0x75804C
++#define CE_HOST_IE_2_ADDRESS	0x758050
+ #define CE_HOST_IE_3_ADDRESS	CE_HOST_IE_ADDRESS
+ 
+ #define CE_HOST_IE_3_SHIFT	0xC
+-- 
+2.34.1
 
 
