@@ -4,117 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83CFCC021B2
-	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 18:41:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A296C021B2
+	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 20:09:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gIqnGqbGGqIoCHde1H8t6Cm6DGYb+BPJeMq0gW/TNSA=; b=jcxClWVUlFfHg/RIv2sgXgJmzm
-	4SzwhNgUQYSYsMqQhAs9dz+1+Gc8JUlRn5YcUHGNtzzEF+M6W6FyrE+MGwZiVw6BAkjkxQgSVDPYx
-	c2eVq/pA5vC41gIJsvYa+kkIEUt5EN0qbQzIF9J+H6Sjq7YtdSg1ZoCWIV97NwQuRLaF5lrWWjFLS
-	UZjl/nyQUAw3pBQp5KSQhkX0uRNk7yjluMdkjaK2uspiUBqiv781J/xbSX2PIV9Gg3ljKm2HFc2Cw
-	BT67AScZQr6yqvttwKLqkgCK2OInYXpjQVCqaGm+lr/6nP8R2sFkn8JbTBlZM9hVAx9fFW1Q8uIMM
-	mV6YvjBA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=DTuKiU2B1QNm/e4zkm3xQ2Or+IKkFQd69RO74aH3BOk=; b=xC6eHum+Lrx5LdVFMXnNJwdCj/
+	aqZvUVzJaFaWGN7A8A9YG3cGDHxlGNQ/mv773jko8q4SczmoiM3due6zPcJ63bmg5ncJpgNxUxmmT
+	9wOwhKUS3uLAurqmpaF29XcxQ1zwX2VwmlbdHK02eF/UF6UYbmNJ0Ghj8Rr1hem/5c4peeOuO1hkU
+	+kuswb36m1YtNIp/y6+oCpnE+gZntXyzRngDNeaNtLvaVBFdrwWuuTWzPPakfuXCKISNOEeeI10Yf
+	5P6W6cfHS0KwkDNkXiuGN7LPJWoZwC1zjjt1LbYDYxhO35WStIQqe5MnPA3sYZEzbCVhcifrMCo7+
+	qANpU3mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmzrb-00000000zjY-1EAR
+	id 1tn1FT-00000001JDD-3xPH
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Feb 2025 18:41:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
+	Tue, 25 Feb 2025 20:09:47 +0000
+Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmzMj-00000000qHT-44tr
+	id 1tn0ne-00000001CWz-17Jt
 	for ath12k@lists.infradead.org;
-	Tue, 25 Feb 2025 18:09:10 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 70CA6612AF;
-	Tue, 25 Feb 2025 18:09:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1CB9C4CEE2;
-	Tue, 25 Feb 2025 18:09:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740506949;
-	bh=Dv9CuDzk0YW6VVlDS9wYPUduwzmfbTUqSubDrkIsSpE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=TjDjOReS5VSAIrf7ns1UhM+oFR7VPfDeL9sO2q75jx6LVRggHaD/MtMmpMD78zrUl
-	 6LtQKaMqX+Nj18vylZ+x8qDJ+Frz0B2YGJl7Ee+EnEvtmHlv3yJZOSgF4bGtbNF0ue
-	 iW9mJGrDTlCKSF3/yTzJ87RblzgkSTNywBsy6eTCR6vQ7F19/9PBUmBAU0i5/2Pyyw
-	 wYFAfOQt/0X/16LDjwZXR1Eo3CparlDImQK1izoQKWHzl8ylUTWOgdH+Q/5ZiTnJik
-	 kzOb7qTgUo9zcsDIDBOrFdzCVtenG9tCeaooSdFQfDsqncWSYQB3g2jQMjiL/y+4WW
-	 txsflAGIcrctg==
-Message-ID: <5f21bb7f-b0f8-4b39-8afd-5a1a672c54ec@kernel.org>
-Date: Tue, 25 Feb 2025 19:09:03 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] arm64: dts: qcom: x1e80100-slim7x: Drop incorrect
- qcom,ath12k-calibration-variant
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Jeff Johnson <jjohnson@kernel.org>, Bjorn Andersson
- <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- ath12k@lists.infradead.org
-References: <20250225093051.58406-1-krzysztof.kozlowski@linaro.org>
- <sfhcmlz3x254fdowufeeuh4uiwxfgkphm4ch4laceivbrs3zir@qvqk6jxi6zhf>
- <7b54e965-3395-4349-8ae7-51a28c759235@linaro.org>
- <kce6gzso22fp3ze2wp43fvy4tv6yqkaijm72kh5qk34jwijk2l@3ifaiz5tgjvl>
- <d93789c6-61d9-4761-98f5-aa3dbec14d82@linaro.org>
- <21ad3381-4d65-4c68-892d-9f485bf13735@oss.qualcomm.com>
- <c55f615e-6831-4470-9ea2-73fe605b8a5f@linaro.org>
- <71019e23-f339-4485-8599-c4e40ad979a9@oss.qualcomm.com>
- <a9e0a8ff-e84e-4210-babd-0d0a1825e9ec@kernel.org>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
- QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
- gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
- /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
- iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
- VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
- 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
- xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
- eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
- AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
- MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
- Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
- ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
- vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
- oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
- lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
- t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
- uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
- 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
- 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <a9e0a8ff-e84e-4210-babd-0d0a1825e9ec@kernel.org>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+	Tue, 25 Feb 2025 19:41:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1740512462; x=1772048462;
+  h=date:from:to:cc:subject:message-id;
+  bh=Cvai4oBzmjzA42fopfxIxgWq92bR0XtZ9T3qFp5N6Jw=;
+  b=HIw12Hc4eGHq0bZxhG+L3UwA/h12VFM7uiv+tyRBhzM+I+/xVPrwrPTk
+   kFMv/3zWcq6Cc/dXo7S8jk7Zw41XZZ4xwudxgBc/5OujzffG1WnXKqnFl
+   UNq31NMMy9p2n/5g+6lmJ8vEmMWGWMs2Hl0Yx4VvNohBCN39TuD4EIFBb
+   GLlrf3JHpy0cC5zebHByeryzJEhPwVJXAW5ydiRisQy3shNPgEBomIJ8e
+   F2xR5k7f94lwHxCdk8Q+CcPoSXr8qTC23am2UPB0q2SvaDmr0OCU6hL1H
+   Hb4np/ixmoXgCizJA3Vuif0uLSQOYB7DSmtQwBCoiHcClsfVSJq990CA7
+   A==;
+X-CSE-ConnectionGUID: FAgFbuiBRPCEpda0i6Iiow==
+X-CSE-MsgGUID: 0aGYyzNCQJWkqkCLbNFMtA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11356"; a="41254263"
+X-IronPort-AV: E=Sophos;i="6.13,314,1732608000"; 
+   d="scan'208";a="41254263"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Feb 2025 11:41:02 -0800
+X-CSE-ConnectionGUID: nx8JWbHOSCaEfFDlRlhl3Q==
+X-CSE-MsgGUID: 8yS4adu0SAOlUCULHHZJ6Q==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.13,314,1732608000"; 
+   d="scan'208";a="121423610"
+Received: from lkp-server02.sh.intel.com (HELO 76cde6cc1f07) ([10.239.97.151])
+  by orviesa003.jf.intel.com with ESMTP; 25 Feb 2025 11:41:00 -0800
+Received: from kbuild by 76cde6cc1f07 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tn0n5-000AgF-24;
+	Tue, 25 Feb 2025 19:40:42 +0000
+Date: Wed, 26 Feb 2025 03:40:18 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
+Subject: [ath:pending] BUILD SUCCESS
+ 73e97368a9c185114de63a5634f73ab6e5b053db
+Message-ID: <202502260312.ViIcViIW-lkp@intel.com>
+User-Agent: s-nail v14.9.24
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250225_114102_352095_BE978611 
+X-CRM114-Status: UNSURE (   4.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,42 +84,101 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 25/02/2025 18:59, Krzysztof Kozlowski wrote:
-> On 25/02/2025 18:36, Jeff Johnson wrote:
->>
->>>
->>> Also post factum reasoning is not correct, because this would open the
->>> gate to bypass any sort of review. Just squeeze your stuff into the DTS
->>> and then you can bypass all DT maintainers :/
->>>
->>> All properties must be documented and bindings must be accepted *before*
->>> DTS patch is applied.
->>
->> There is no intention to bypass DT maintainers. We are just trying to upstream
->> a large amount of downstream code, and in the process some pieces are coming
-> 
-> I don't see how this is related here - patch was not sent by anyone from
-> Qualcomm.
-> 
->> out of order. And there is also confusion if binding, driver, and DTS changes
->> should be in one series or three separate series.
-> 
-> How is it related to incorrect property here? It feels like this topic
-> is being hijacked for some other point. I am not happy with this because
-> then Bjorn will see that discussion is going so he will ignore the patch.
-> 
-> BTW, I gave my statement multiple times, writing bindings also mention
-> this, so is anything going to change if I say it 100th time here? In one
-> month there will be the same question :/
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+branch HEAD: 73e97368a9c185114de63a5634f73ab6e5b053db  wifi: ath12k: Improve BSS discovery with hidden SSID in 6 GHz band
 
+elapsed time: 1449m
 
-Another BTW, not helpful to community, but if you asked above for
-Qualcomm, that Qualcomm does not know where to post DTS, then you are
-lucky, because your extensive internal guideline has it already very
-clearly documented (detailed in "Driver upstreaming process" and a bit
-in "feedback/review on lists"). The guide is quite comprehensive and
-covers all typical cases, like that one.
+configs tested: 81
+configs skipped: 2
 
-Best regards,
-Krzysztof
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+tested configs:
+alpha                           allyesconfig    gcc-14.2.0
+arc                             allmodconfig    gcc-13.2.0
+arc                             allyesconfig    gcc-13.2.0
+arc                  randconfig-001-20250225    gcc-13.2.0
+arc                  randconfig-002-20250225    gcc-13.2.0
+arm                             allmodconfig    gcc-14.2.0
+arm                             allyesconfig    gcc-14.2.0
+arm                  randconfig-001-20250225    gcc-14.2.0
+arm                  randconfig-002-20250225    gcc-14.2.0
+arm                  randconfig-003-20250225    gcc-14.2.0
+arm                  randconfig-004-20250225    clang-15
+arm64                           allmodconfig    clang-18
+arm64                randconfig-001-20250225    clang-19
+arm64                randconfig-002-20250225    clang-17
+arm64                randconfig-003-20250225    clang-15
+arm64                randconfig-004-20250225    clang-21
+csky                 randconfig-001-20250225    gcc-14.2.0
+csky                 randconfig-002-20250225    gcc-14.2.0
+hexagon                         allmodconfig    clang-21
+hexagon                         allyesconfig    clang-18
+hexagon              randconfig-001-20250225    clang-21
+hexagon              randconfig-002-20250225    clang-21
+i386                             allnoconfig    gcc-12
+i386                            allyesconfig    gcc-12
+i386       buildonly-randconfig-001-20250225    clang-19
+i386       buildonly-randconfig-002-20250225    gcc-11
+i386       buildonly-randconfig-003-20250225    clang-19
+i386       buildonly-randconfig-004-20250225    clang-19
+i386       buildonly-randconfig-005-20250225    gcc-12
+i386       buildonly-randconfig-006-20250225    clang-19
+i386                               defconfig    clang-19
+loongarch            randconfig-001-20250225    gcc-14.2.0
+loongarch            randconfig-002-20250225    gcc-14.2.0
+m68k                            allyesconfig    gcc-14.2.0
+nios2                randconfig-001-20250225    gcc-14.2.0
+nios2                randconfig-002-20250225    gcc-14.2.0
+openrisc                        allyesconfig    gcc-14.2.0
+parisc                          allmodconfig    gcc-14.2.0
+parisc                          allyesconfig    gcc-14.2.0
+parisc               randconfig-001-20250225    gcc-14.2.0
+parisc               randconfig-002-20250225    gcc-14.2.0
+powerpc                         allmodconfig    gcc-14.2.0
+powerpc                         allyesconfig    clang-16
+powerpc              randconfig-001-20250225    gcc-14.2.0
+powerpc              randconfig-002-20250225    clang-19
+powerpc              randconfig-003-20250225    clang-21
+powerpc64            randconfig-001-20250225    gcc-14.2.0
+powerpc64            randconfig-002-20250225    gcc-14.2.0
+powerpc64            randconfig-003-20250225    gcc-14.2.0
+riscv                           allmodconfig    clang-21
+riscv                           allyesconfig    clang-21
+riscv                randconfig-001-20250225    clang-15
+riscv                randconfig-002-20250225    clang-21
+s390                            allmodconfig    clang-19
+s390                            allyesconfig    gcc-14.2.0
+s390                 randconfig-001-20250225    clang-15
+s390                 randconfig-002-20250225    gcc-14.2.0
+sh                              allmodconfig    gcc-14.2.0
+sh                              allyesconfig    gcc-14.2.0
+sh                   randconfig-001-20250225    gcc-14.2.0
+sh                   randconfig-002-20250225    gcc-14.2.0
+sparc                           allmodconfig    gcc-14.2.0
+sparc                randconfig-001-20250225    gcc-14.2.0
+sparc                randconfig-002-20250225    gcc-14.2.0
+sparc64              randconfig-001-20250225    gcc-14.2.0
+sparc64              randconfig-002-20250225    gcc-14.2.0
+um                              allmodconfig    clang-21
+um                              allyesconfig    gcc-12
+um                   randconfig-001-20250225    clang-21
+um                   randconfig-002-20250225    gcc-12
+x86_64                           allnoconfig    clang-19
+x86_64                          allyesconfig    clang-19
+x86_64     buildonly-randconfig-001-20250225    gcc-12
+x86_64     buildonly-randconfig-002-20250225    clang-19
+x86_64     buildonly-randconfig-003-20250225    clang-19
+x86_64     buildonly-randconfig-004-20250225    gcc-11
+x86_64     buildonly-randconfig-005-20250225    gcc-12
+x86_64     buildonly-randconfig-006-20250225    clang-19
+x86_64                             defconfig    gcc-11
+xtensa               randconfig-001-20250225    gcc-14.2.0
+xtensa               randconfig-002-20250225    gcc-14.2.0
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
