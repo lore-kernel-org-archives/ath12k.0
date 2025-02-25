@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 907ADC021BE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 265FCC021BF
 	for <ath12k@archiver.kernel.org>; Tue, 25 Feb 2025 07:52:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,47 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=B97ppNrPDPppdC54rMWu0qKrJkkHW7sNQ77xfcM5LQo=; b=HtWK4iIN3oVSm7IS9JdZ4avRl2
-	NLDCuBujLVxJ1are8i30JmDyYEKiYS9Rq9SPF2UljxbSXQzZb8sPO87CiJbNUZNffCurr8DPp8V97
-	dx1jgTBFgO9KzKuxciaqRrcXeB1WKSy3/TSHCM3t0q2z03hPzFQsB0QKNh4EDrkcinr2YjmpZHBOV
-	JV20H3U79E3xScZXm2Hnl9jC3jCnImaK8BaLYkGxU9D+L9Rt9bw2nNvDuhtInK8yb+d3b4xbotim0
-	iqB85XoVqIq2suV/MobHw5je/LrD4gIfhY+00bRlHaoKGP19+tPci2RRUdLr8Zv4lsdHNeZWIod8e
-	MfMAvUEA==;
+	bh=oVpGyJx6yQ+wunUfho/QDGaDte8WWbS2pozuIR8Are4=; b=uSBdcNCwJU2nr+V6UAhSZ/JHmj
+	NOlQhDJZgwv5YV5SycKnGoRdM2qTNgk1SakVU3pP+KQEMf+qyAp0mDFTjK/2G/6o0X24Q1jqza7Zz
+	3vgTG6S0ydqoVoAHefFoHJ6+mV8WnyUxD6PHgFH3MkLJnNHUZwatDi4FHbdf4oP6XbZ4n4o4hMkpr
+	Bl5h3hi1JZ7jA+uw6iIcymdTGYyWf4zGJCmVzYtUCG3+gC2K+k3o1DAPjjm8DMO0sDKWjWfaAMJEs
+	O/XIjVMMu3o7zhayQgUQkEY/U6zauVQ8guqiX8FQMS9bCZipjwoXrv9x7hxdYlUgCI+LXbJ9xUAYv
+	DbTI2dFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmpkQ-0000000GGtO-1Jdm
+	id 1tmpkP-0000000GGso-3h5O
 	for ath12k@archiver.kernel.org;
-	Tue, 25 Feb 2025 07:52:58 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 25 Feb 2025 07:52:57 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmolG-0000000G8WH-3ImS
+	id 1tmolC-0000000G8UF-1cTW
+	for ath12k@bombadil.infradead.org;
+	Tue, 25 Feb 2025 06:49:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=oVpGyJx6yQ+wunUfho/QDGaDte8WWbS2pozuIR8Are4=; b=kuGg49VBIa5yFFJz8SoE0R6B33
+	y5g/u+JP5Kiqko8gEdi2bAx+tsr6ERvNeLYyOGru78GMuG51TsgsEHU2pBdZKaalAwFX6EYbdL8wX
+	Dgn3+hVntgifvtnXaexhD8ddX0UohNQyxM9vkQUpZ3xaIAxRZu1h9OoqFhaIkK3bJNbqjwEf4xMDN
+	nIRvkL9hjw53axrViZEGiGAbN3mlfPJeXiARxBfjfWisyh6fevUvEQAM69/EAJgGw02mThgHqhWlB
+	PYbBPrGWUIEJ7BPN5H58YHwKV0ZPqvOVhULJacisE6si88bXl857SNgx+kD+RZuysmzX1XyYZeHdl
+	/2do1t7Q==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tmol7-00000003JPI-1XnD
 	for ath12k@lists.infradead.org;
-	Tue, 25 Feb 2025 06:49:47 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKOLBk003803;
-	Tue, 25 Feb 2025 06:49:44 GMT
+	Tue, 25 Feb 2025 06:49:40 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51OKOLsx017276;
+	Tue, 25 Feb 2025 06:49:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	B97ppNrPDPppdC54rMWu0qKrJkkHW7sNQ77xfcM5LQo=; b=g9WWSKBA4l3l8x8y
-	4yqIPSanjsqMuKf32vaTKrRX+V6jBhRprQkMTbzRf3/OHzUgaL8FS6N6MSs8PvuH
-	BKouTC/yOWBksMTon3Xx5UIT2499Y5H5FG5Ov01WR61kLpPe8EHcnSfcofgbJkpg
-	/fiWSUJ5ZOmWXJpvKXovMOVm3djJbU+XCpL+kqLB28Jnu+JJKNCS/FMu3wL1vgkn
-	9SDT2O6ZEqL2swOU2t5pUfqEx0hIG79WEbe73r7fhwi1rmTnbXfLrgW1ECwdgays
-	hoIVOrpV0wgwxwVAEgYOWp795m4VAm9st/c3wADwuYuiaXXN6p0dG40blPkwY9no
-	U1CKuA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 450m3dbvmx-1
+	oVpGyJx6yQ+wunUfho/QDGaDte8WWbS2pozuIR8Are4=; b=Ns8K+glSNSGScG1g
+	oTAt6NjSAiVhtUMAnDia5oAIfW0v6Qqep9AaVfc5kjlLqbhoSDvZ3fUSsHRVkzOE
+	UiGTS1TC7opeSPAL1t/vgCbhreHcpiiil6enFVQZw8b9i2L8LjihJIb8SM2wKrR0
+	5LRSbLM6PGB1GcCVM7TLMHCNSqlfimaIWj4PWuYSjZ72qRYlhIpWh6Tv3DNvrfiD
+	ckFldJ3XGD0B1/k6lflv8hkeTdeDO207Fi+2mT/Dye3TQQTA84YLrV3e6o2Lw09A
+	TQGcNWN5rJb5OTBpIdjX4ZnBex+B/4hOQ/ycUUCnvfW6mYwX0Y55PZKiwHRgf39o
+	9zRhwg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44y5k67xtq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Feb 2025 06:49:44 +0000 (GMT)
+	Tue, 25 Feb 2025 06:49:33 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51P6nhn0016830
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51P6nWMB030479
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 25 Feb 2025 06:49:44 GMT
+	Tue, 25 Feb 2025 06:49:32 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 24 Feb 2025 22:49:40 -0800
+ 15.2.1544.9; Mon, 24 Feb 2025 22:49:28 -0800
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -60,13 +75,11 @@ CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
         <linux-wireless@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>,
-        "Sowmiya Sree
- Elavalagan" <quic_ssreeela@quicinc.com>,
-        Raj Kumar Bhagat
-	<quic_rajkbhag@quicinc.com>
-Subject: [PATCH v6 10/13] wifi: ath12k: Register various userPD interrupts and save SMEM entries
-Date: Tue, 25 Feb 2025 12:18:31 +0530
-Message-ID: <20250225064834.2002499-11-quic_rajkbhag@quicinc.com>
+        "Raj Kumar
+ Bhagat" <quic_rajkbhag@quicinc.com>
+Subject: [PATCH v6 07/13] wifi: ath12k: add support for fixed QMI firmware memory
+Date: Tue, 25 Feb 2025 12:18:28 +0530
+Message-ID: <20250225064834.2002499-8-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250225064834.2002499-1-quic_rajkbhag@quicinc.com>
 References: <20250225064834.2002499-1-quic_rajkbhag@quicinc.com>
@@ -78,19 +91,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: PhytgImdsjjjVT3GriL2jQz64aINmD4k
-X-Proofpoint-ORIG-GUID: PhytgImdsjjjVT3GriL2jQz64aINmD4k
+X-Proofpoint-ORIG-GUID: 4lqi9TSpNcHFmExdnL_ZrHGy5UzOBgc6
+X-Proofpoint-GUID: 4lqi9TSpNcHFmExdnL_ZrHGy5UzOBgc6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-25_02,2025-02-24_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
- bulkscore=0 impostorscore=0 phishscore=0 mlxscore=0 mlxlogscore=999
- clxscore=1015 malwarescore=0 lowpriorityscore=0 adultscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ bulkscore=0 spamscore=0 phishscore=0 clxscore=1015 impostorscore=0
+ mlxlogscore=999 suspectscore=0 priorityscore=1501 mlxscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2502100000 definitions=main-2502250043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250224_224946_833561_995D434C 
-X-CRM114-Status: GOOD (  22.81  )
+X-CRM114-CacheID: sfid-20250225_064938_055154_67C0D504 
+X-CRM114-Status: GOOD (  24.62  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,203 +118,387 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+IPQ5332 firmware supports only fixed QMI firmware memory.
 
-Q6 and ath12k driver communicates using SMEM and IRQs. Spawn interrupt
-is triggered once the userPD thread is spawned. Ready interrupts denotes
-userPD is completely powered up and ready. Stop-ack is to acknowledge
-the ath12k driver that userPD is stopped. Ath12k driver needs to set spawn
-bit in SMEM to instruct Q6 to spawn a userPD. Similarly stop bit is
-set when userPD needs to be stopped.
+Hence, add support to read reserved fixed memory region from
+device-tree and provide the reserved memory segments for
+firmware to use during QMI firmware memory request.
+
+Note that the ability to set the fixed memory will be introduced in
+a subsequent patch. Currently, the flag remains unset by default,
+ensuring that existing chipsets are unaffected.
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/ahb.c | 79 ++++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/ahb.h | 16 ++++++
- drivers/net/wireless/ath/ath12k/hw.h  |  1 +
- 3 files changed, 94 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c |  25 ++++
+ drivers/net/wireless/ath/ath12k/core.h |   4 +
+ drivers/net/wireless/ath/ath12k/hw.c   |   4 +
+ drivers/net/wireless/ath/ath12k/hw.h   |   1 +
+ drivers/net/wireless/ath/ath12k/qmi.c  | 180 ++++++++++++++++++++++---
+ 5 files changed, 198 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index a6edf288c22c..4ac2c9179f2d 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -9,6 +9,7 @@
- #include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/remoteproc.h>
-+#include <linux/soc/qcom/smem_state.h>
- #include "ahb.h"
- #include "debug.h"
- #include "hif.h"
-@@ -23,6 +24,11 @@ static const struct of_device_id ath12k_ahb_of_match[] = {
- MODULE_DEVICE_TABLE(of, ath12k_ahb_of_match);
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 0b2dec081c6e..5bd852f9572b 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -612,6 +612,31 @@ u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab)
+ 	return TARGET_NUM_TIDS(SINGLE);
+ }
  
- #define ATH12K_IRQ_CE0_OFFSET 4
-+#define ATH12K_MAX_UPDS 1
-+#define ATH12K_UPD_IRQ_WRD_LEN  18
-+static const char ath12k_userpd_irq[][9] = {"spawn",
-+				     "ready",
-+				     "stop-ack"};
- 
- static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
- 	"misc-pulse1",
-@@ -547,6 +553,72 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
- 	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
- };
- 
-+static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
++struct reserved_mem *ath12k_core_get_reserved_mem(struct ath12k_base *ab,
++						  int index)
 +{
-+	struct ath12k_base *ab = data;
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	struct device *dev = ab->dev;
++	struct reserved_mem *rmem;
++	struct device_node *node;
 +
-+	if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_SPAWN_IRQ]) {
-+		complete(&ab_ahb->userpd_spawned);
-+	} else if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_READY_IRQ]) {
-+		complete(&ab_ahb->userpd_ready);
-+	} else if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_STOP_ACK_IRQ])	{
-+		complete(&ab_ahb->userpd_stopped);
-+	} else {
-+		ath12k_err(ab, "Invalid userpd interrupt\n");
-+		return IRQ_NONE;
++	node = of_parse_phandle(dev->of_node, "memory-region", index);
++	if (!node) {
++		ath12k_dbg(ab, ATH12K_DBG_BOOT,
++			   "failed to parse memory-region for index %d\n", index);
++		return NULL;
 +	}
 +
-+	return IRQ_HANDLED;
-+}
-+
-+static int ath12k_ahb_config_rproc_irq(struct ath12k_base *ab)
-+{
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+	int i, ret;
-+	char *upd_irq_name;
-+
-+	for (i = 0; i < ATH12K_USERPD_MAX_IRQ; i++) {
-+		ab_ahb->userpd_irq_num[i] = platform_get_irq_byname(ab->pdev,
-+								    ath12k_userpd_irq[i]);
-+		if (ab_ahb->userpd_irq_num[i] < 0)
-+			return ab_ahb->userpd_irq_num[i];
-+
-+		upd_irq_name = devm_kzalloc(&ab->pdev->dev, ATH12K_UPD_IRQ_WRD_LEN,
-+					    GFP_KERNEL);
-+		if (!upd_irq_name)
-+			return -ENOMEM;
-+
-+		scnprintf(upd_irq_name, ATH12K_UPD_IRQ_WRD_LEN, "UserPD%u-%s",
-+			  ab_ahb->userpd_id, ath12k_userpd_irq[i]);
-+		ret = devm_request_threaded_irq(&ab->pdev->dev, ab_ahb->userpd_irq_num[i],
-+						NULL, ath12k_userpd_irq_handler,
-+						IRQF_TRIGGER_RISING | IRQF_ONESHOT,
-+						upd_irq_name, ab);
-+		if (ret)
-+			return dev_err_probe(&ab->pdev->dev, ret,
-+					     "Request %s irq failed: %d\n",
-+					     ath12k_userpd_irq[i], ret);
++	rmem = of_reserved_mem_lookup(node);
++	of_node_put(node);
++	if (!rmem) {
++		ath12k_dbg(ab, ATH12K_DBG_BOOT,
++			   "unable to get memory-region for index %d\n", index);
++		return NULL;
 +	}
 +
-+	ab_ahb->spawn_state = devm_qcom_smem_state_get(&ab->pdev->dev, "spawn",
-+						       &ab_ahb->spawn_bit);
-+	if (IS_ERR(ab_ahb->spawn_state))
-+		return dev_err_probe(&ab->pdev->dev, PTR_ERR(ab_ahb->spawn_state),
-+				     "Failed to acquire spawn state\n");
-+
-+	ab_ahb->stop_state = devm_qcom_smem_state_get(&ab->pdev->dev, "stop",
-+						      &ab_ahb->stop_bit);
-+	if (IS_ERR(ab_ahb->stop_state))
-+		return dev_err_probe(&ab->pdev->dev, PTR_ERR(ab_ahb->stop_state),
-+				     "Failed to acquire stop state\n");
-+
-+	init_completion(&ab_ahb->userpd_spawned);
-+	init_completion(&ab_ahb->userpd_ready);
-+	init_completion(&ab_ahb->userpd_stopped);
-+	return 0;
++	return rmem;
 +}
 +
- static int ath12k_ahb_root_pd_state_notifier(struct notifier_block *nb,
- 					     const unsigned long event, void *data)
+ static void ath12k_core_stop(struct ath12k_base *ab)
  {
-@@ -659,7 +731,8 @@ static int ath12k_ahb_configure_rproc(struct ath12k_base *ab)
- 			goto err_unreg_notifier;
- 		}
- 	}
--	return 0;
-+
-+	return ath12k_ahb_config_rproc_irq(ab);
- 
- err_unreg_notifier:
- 	ath12k_ahb_unregister_rproc_notifier(ab);
-@@ -764,7 +837,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	const struct ath12k_hif_ops *hif_ops;
- 	struct ath12k_ahb *ab_ahb;
- 	enum ath12k_hw_rev hw_rev;
--	u32 addr;
-+	u32 addr, userpd_id;
- 	int ret;
- 
- 	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
-@@ -782,6 +855,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	switch (hw_rev) {
- 	case ATH12K_HW_IPQ5332_HW10:
- 		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
-+		userpd_id = ATH12K_IPQ5332_USERPD_ID;
- 		break;
- 	default:
- 		return -EOPNOTSUPP;
-@@ -793,6 +867,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, ab);
- 	ab_ahb = ath12k_ab_to_ahb(ab);
- 	ab_ahb->ab = ab;
-+	ab_ahb->userpd_id = userpd_id;
- 
- 	/* Set fixed_mem_region to true for platforms that support fixed memory
- 	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-index 1105473917ce..b17e7693b31a 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.h
-+++ b/drivers/net/wireless/ath/ath12k/ahb.h
-@@ -25,6 +25,13 @@ enum ath12k_ahb_smp2p_msg_id {
- 	ATH12K_AHB_POWER_SAVE_EXIT,
+ 	ath12k_core_stopped(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 85f0cdce774e..398f76a9d2e4 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -14,6 +14,7 @@
+ #include <linux/dmi.h>
+ #include <linux/ctype.h>
+ #include <linux/firmware.h>
++#include <linux/of_reserved_mem.h>
+ #include <linux/panic_notifier.h>
+ #include <linux/average.h>
+ #include "qmi.h"
+@@ -239,6 +240,7 @@ enum ath12k_dev_flags {
+ 	ATH12K_FLAG_EXT_IRQ_ENABLED,
+ 	ATH12K_FLAG_QMI_FW_READY_COMPLETE,
+ 	ATH12K_FLAG_FTM_SEGMENTED,
++	ATH12K_FLAG_FIXED_MEM_REGION,
  };
  
-+enum ath12k_ahb_userpd_irq {
-+	ATH12K_USERPD_SPAWN_IRQ,
-+	ATH12K_USERPD_READY_IRQ,
-+	ATH12K_USERPD_STOP_ACK_IRQ,
-+	ATH12K_USERPD_MAX_IRQ,
-+};
-+
- struct ath12k_base;
+ struct ath12k_tx_conf {
+@@ -1220,6 +1222,8 @@ u32 ath12k_core_get_max_peers_per_radio(struct ath12k_base *ab);
+ u32 ath12k_core_get_max_num_tids(struct ath12k_base *ab);
  
- struct ath12k_ahb {
-@@ -34,6 +41,15 @@ struct ath12k_ahb {
- 	struct completion rootpd_ready;
- 	struct notifier_block root_pd_nb;
- 	void *root_pd_notifier;
-+	struct qcom_smem_state *spawn_state;
-+	struct qcom_smem_state *stop_state;
-+	struct completion userpd_spawned;
-+	struct completion userpd_ready;
-+	struct completion userpd_stopped;
-+	u32 userpd_id;
-+	u32 spawn_bit;
-+	u32 stop_bit;
-+	int userpd_irq_num[ATH12K_USERPD_MAX_IRQ];
+ void ath12k_core_hw_group_set_mlo_capable(struct ath12k_hw_group *ag);
++struct reserved_mem *ath12k_core_get_reserved_mem(struct ath12k_base *ab,
++						  int index);
+ 
+ static inline const char *ath12k_scan_state_str(enum ath12k_scan_state state)
+ {
+diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+index 91aecca566a4..b4d5651973b7 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.c
++++ b/drivers/net/wireless/ath/ath12k/hw.c
+@@ -1322,6 +1322,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 
+ 		.ce_ie_addr = NULL,
+ 		.ce_remap = NULL,
++		.bdf_addr_offset = 0,
+ 	},
+ 	{
+ 		.name = "wcn7850 hw2.0",
+@@ -1406,6 +1407,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 
+ 		.ce_ie_addr = NULL,
+ 		.ce_remap = NULL,
++		.bdf_addr_offset = 0,
+ 	},
+ 	{
+ 		.name = "qcn9274 hw2.0",
+@@ -1486,6 +1488,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 
+ 		.ce_ie_addr = NULL,
+ 		.ce_remap = NULL,
++		.bdf_addr_offset = 0,
+ 	},
+ 	{
+ 		.name = "ipq5332 hw1.0",
+@@ -1561,6 +1564,7 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 
+ 		.ce_ie_addr = &ath12k_ce_ie_addr_ipq5332,
+ 		.ce_remap = &ath12k_ce_remap_ipq5332,
++		.bdf_addr_offset = 0xC00000,
+ 	},
  };
  
- static inline struct ath12k_ahb *ath12k_ab_to_ahb(struct ath12k_base *ab)
 diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index a4332588b117..d4a2e47169d9 100644
+index 6a75af093f31..5123d2f51865 100644
 --- a/drivers/net/wireless/ath/ath12k/hw.h
 +++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -97,6 +97,7 @@
- #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
+@@ -229,6 +229,7 @@ struct ath12k_hw_params {
  
- #define ATH12K_PCIE_MAX_PAYLOAD_SIZE	128
-+#define ATH12K_IPQ5332_USERPD_ID	1
+ 	const struct ce_ie_addr *ce_ie_addr;
+ 	const struct ce_remap *ce_remap;
++	u32 bdf_addr_offset;
+ };
  
- enum ath12k_hw_rate_cck {
- 	ATH12K_HW_RATE_CCK_LP_11M = 0,
+ struct ath12k_hw_ops {
+diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+index 6978200fb79a..dc9626087ceb 100644
+--- a/drivers/net/wireless/ath/ath12k/qmi.c
++++ b/drivers/net/wireless/ath/ath12k/qmi.c
+@@ -11,6 +11,8 @@
+ #include "debug.h"
+ #include <linux/of.h>
+ #include <linux/firmware.h>
++#include <linux/of_address.h>
++#include <linux/ioport.h>
+ 
+ #define SLEEP_CLOCK_SELECT_INTERNAL_BIT	0x02
+ #define HOST_CSTATE_BIT			0x04
+@@ -2378,7 +2380,8 @@ int ath12k_qmi_respond_fw_mem_request(struct ath12k_base *ab)
+ 	 * failure to firmware and firmware then request multiple blocks of
+ 	 * small chunk size memory.
+ 	 */
+-	if (ab->qmi.target_mem_delayed) {
++	if (!test_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags) &&
++	    ab->qmi.target_mem_delayed) {
+ 		delayed = true;
+ 		ath12k_dbg(ab, ATH12K_DBG_QMI, "qmi delays mem_request %d\n",
+ 			   ab->qmi.mem_seg_count);
+@@ -2442,6 +2445,7 @@ static void ath12k_qmi_free_mlo_mem_chunk(struct ath12k_base *ab,
+ {
+ 	struct ath12k_hw_group *ag = ab->ag;
+ 	struct target_mem_chunk *mlo_chunk;
++	bool fixed_mem;
+ 
+ 	lockdep_assert_held(&ag->mutex);
+ 
+@@ -2453,8 +2457,13 @@ static void ath12k_qmi_free_mlo_mem_chunk(struct ath12k_base *ab,
+ 		return;
+ 	}
+ 
++	fixed_mem = test_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags);
+ 	mlo_chunk = &ag->mlo_mem.chunk[idx];
+-	if (mlo_chunk->v.addr) {
++
++	if (fixed_mem && mlo_chunk->v.ioaddr) {
++		iounmap(mlo_chunk->v.ioaddr);
++		mlo_chunk->v.ioaddr = NULL;
++	} else if (mlo_chunk->v.addr) {
+ 		dma_free_coherent(ab->dev,
+ 				  mlo_chunk->size,
+ 				  mlo_chunk->v.addr,
+@@ -2464,7 +2473,10 @@ static void ath12k_qmi_free_mlo_mem_chunk(struct ath12k_base *ab,
+ 
+ 	mlo_chunk->paddr = 0;
+ 	mlo_chunk->size = 0;
+-	chunk->v.addr = NULL;
++	if (fixed_mem)
++		chunk->v.ioaddr = NULL;
++	else
++		chunk->v.addr = NULL;
+ 	chunk->paddr = 0;
+ 	chunk->size = 0;
+ }
+@@ -2475,19 +2487,24 @@ static void ath12k_qmi_free_target_mem_chunk(struct ath12k_base *ab)
+ 	int i, mlo_idx;
+ 
+ 	for (i = 0, mlo_idx = 0; i < ab->qmi.mem_seg_count; i++) {
+-		if (!ab->qmi.target_mem[i].v.addr)
+-			continue;
+-
+ 		if (ab->qmi.target_mem[i].type == MLO_GLOBAL_MEM_REGION_TYPE) {
+ 			ath12k_qmi_free_mlo_mem_chunk(ab,
+ 						      &ab->qmi.target_mem[i],
+ 						      mlo_idx++);
+ 		} else {
+-			dma_free_coherent(ab->dev,
+-					  ab->qmi.target_mem[i].prev_size,
+-					  ab->qmi.target_mem[i].v.addr,
+-					  ab->qmi.target_mem[i].paddr);
+-			ab->qmi.target_mem[i].v.addr = NULL;
++			if (test_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags) &&
++			    ab->qmi.target_mem[i].v.ioaddr) {
++				iounmap(ab->qmi.target_mem[i].v.ioaddr);
++				ab->qmi.target_mem[i].v.ioaddr = NULL;
++			} else {
++				if (!ab->qmi.target_mem[i].v.addr)
++					continue;
++				dma_free_coherent(ab->dev,
++						  ab->qmi.target_mem[i].prev_size,
++						  ab->qmi.target_mem[i].v.addr,
++						  ab->qmi.target_mem[i].paddr);
++				ab->qmi.target_mem[i].v.addr = NULL;
++			}
+ 		}
+ 	}
+ 
+@@ -2640,6 +2657,128 @@ static int ath12k_qmi_alloc_target_mem_chunk(struct ath12k_base *ab)
+ 	return ret;
+ }
+ 
++static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
++{
++	struct reserved_mem *rmem;
++	phys_addr_t bdf_size;
++	int i, idx, ret;
++
++	for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
++		switch (ab->qmi.target_mem[i].type) {
++		case HOST_DDR_REGION_TYPE:
++			rmem = ath12k_core_get_reserved_mem(ab, 0);
++			if (!rmem) {
++				ret = -ENODEV;
++				goto out;
++			}
++
++			if (rmem->size < ab->qmi.target_mem[i].size) {
++				ath12k_dbg(ab, ATH12K_DBG_QMI,
++					   "failed to assign mem type %d req size %d avail size %lld\n",
++					   ab->qmi.target_mem[i].type,
++					   ab->qmi.target_mem[i].size,
++					   rmem->size);
++				ret = -EINVAL;
++				goto out;
++			}
++
++			ab->qmi.target_mem[idx].paddr = rmem->base;
++			ab->qmi.target_mem[idx].v.ioaddr =
++				ioremap(ab->qmi.target_mem[idx].paddr,
++					ab->qmi.target_mem[i].size);
++			if (!ab->qmi.target_mem[idx].v.ioaddr) {
++				ret = -EIO;
++				goto out;
++			}
++			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
++			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
++			idx++;
++			break;
++		case BDF_MEM_REGION_TYPE:
++			rmem = ath12k_core_get_reserved_mem(ab, 0);
++			if (!rmem) {
++				ret = -ENODEV;
++				goto out;
++			}
++
++			bdf_size = rmem->size - ab->hw_params->bdf_addr_offset;
++			if (bdf_size < ab->qmi.target_mem[i].size) {
++				ath12k_dbg(ab, ATH12K_DBG_QMI,
++					   "failed to assign mem type %d req size %d avail size %lld\n",
++					   ab->qmi.target_mem[i].type,
++					   ab->qmi.target_mem[i].size,
++					   bdf_size);
++				ret = -EINVAL;
++				goto out;
++			}
++			ab->qmi.target_mem[idx].paddr =
++				rmem->base + ab->hw_params->bdf_addr_offset;
++			ab->qmi.target_mem[idx].v.ioaddr =
++				ioremap(ab->qmi.target_mem[idx].paddr,
++					ab->qmi.target_mem[i].size);
++			if (!ab->qmi.target_mem[idx].v.ioaddr) {
++				ret = -EIO;
++				goto out;
++			}
++			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
++			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
++			idx++;
++			break;
++		case CALDB_MEM_REGION_TYPE:
++			/* Cold boot calibration is not enabled in Ath12k. Hence,
++			 * assign paddr = 0.
++			 * Once cold boot calibration is enabled add support to
++			 * assign reserved memory from DT.
++			 */
++			ab->qmi.target_mem[idx].paddr = 0;
++			ab->qmi.target_mem[idx].v.ioaddr = NULL;
++			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
++			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
++			idx++;
++			break;
++		case M3_DUMP_REGION_TYPE:
++			rmem = ath12k_core_get_reserved_mem(ab, 1);
++			if (!rmem) {
++				ret = -EINVAL;
++				goto out;
++			}
++
++			if (rmem->size < ab->qmi.target_mem[i].size) {
++				ath12k_dbg(ab, ATH12K_DBG_QMI,
++					   "failed to assign mem type %d req size %d avail size %lld\n",
++					   ab->qmi.target_mem[i].type,
++					   ab->qmi.target_mem[i].size,
++					   rmem->size);
++				ret = -EINVAL;
++				goto out;
++			}
++
++			ab->qmi.target_mem[idx].paddr = rmem->base;
++			ab->qmi.target_mem[idx].v.ioaddr =
++				ioremap(ab->qmi.target_mem[idx].paddr,
++					ab->qmi.target_mem[i].size);
++			if (!ab->qmi.target_mem[idx].v.ioaddr) {
++				ret = -EIO;
++				goto out;
++			}
++			ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
++			ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
++			idx++;
++			break;
++		default:
++			ath12k_warn(ab, "qmi ignore invalid mem req type %d\n",
++				    ab->qmi.target_mem[i].type);
++			break;
++		}
++	}
++	ab->qmi.mem_seg_count = idx;
++
++	return 0;
++out:
++	ath12k_qmi_free_target_mem_chunk(ab);
++	return ret;
++}
++
+ /* clang stack usage explodes if this is inlined */
+ static noinline_for_stack
+ int ath12k_qmi_request_target_cap(struct ath12k_base *ab)
+@@ -3483,11 +3622,20 @@ static void ath12k_qmi_msg_mem_request_cb(struct qmi_handle *qmi_hdl,
+ 			   msg->mem_seg[i].type, msg->mem_seg[i].size);
+ 	}
+ 
+-	ret = ath12k_qmi_alloc_target_mem_chunk(ab);
+-	if (ret) {
+-		ath12k_warn(ab, "qmi failed to alloc target memory: %d\n",
+-			    ret);
+-		return;
++	if (test_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags)) {
++		ret = ath12k_qmi_assign_target_mem_chunk(ab);
++		if (ret) {
++			ath12k_warn(ab, "failed to assign qmi target memory: %d\n",
++				    ret);
++			return;
++		}
++	} else {
++		ret = ath12k_qmi_alloc_target_mem_chunk(ab);
++		if (ret) {
++			ath12k_warn(ab, "qmi failed to alloc target memory: %d\n",
++				    ret);
++			return;
++		}
+ 	}
+ 
+ 	ath12k_qmi_driver_event_post(qmi, ATH12K_QMI_EVENT_REQUEST_MEM, NULL);
 -- 
 2.34.1
 
