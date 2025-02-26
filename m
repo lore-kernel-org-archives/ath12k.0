@@ -4,87 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91F56C18E7C
-	for <ath12k@archiver.kernel.org>; Wed, 26 Feb 2025 13:25:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5180FC19F2E
+	for <ath12k@archiver.kernel.org>; Wed, 26 Feb 2025 17:23:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=f5Fb/Em3p3IofEQDBmXJo7eAwlYI1sy2MSlie0AadQ8=; b=DtFl0trPTt9QhFKbEHb5VNRyKd
-	0FWUCAMtsdqboTtqlEwJhXIhEMuZrdRNjWKcRAkBf2oUc2WpyyjZmSFL37drxReLLkbPaLD6zfVid
-	kNOQJI2jSV4UeSrihrKRmdJxceVXjS2jsuF2Zmj3rkaJbDDk8zP1e9Tc1tRidHxl0t+FNpS4exAWr
-	mK/PHqO0AqwnYpYqweXAgG7AiVPKgjXQNUdqIQka404eXdYLZuzbpUMwXqv85Fptx0C9Uk8tzJp37
-	Jw7+Gk1gNcW2bC9Le0kzVThZMzXA6JQ5KwEs5WJeQ00HEE4Rbzb0Img10w17zKcB8A1A2Ug4FTTI4
-	N9Hebi3g==;
+	bh=nEdct1oFohxhIryKjdAIwPhbqyjIFSucHG1dtgoTYW8=; b=vGL9Bmq3KyW2VncZZsGXJJe47j
+	8cJ8FEn+j5a8klngNuwyJdbs7T17dOhyU6OW+5vVV6DU9qHenRFNhuJ2qpJrqEBO8u1/EABmC8+Zn
+	hPP3jLsJcBkfxEemL8fN2GSwWfoRDut4U2pZSkBzF0RSypJnKynU3pHITNQ5iWL+DIWzIfsXmd7DZ
+	W5wWN//oKJsbEq7jJJGEtm0o1C5xm1SxYq1BiZ4L2qxJvwbhmpMmClR815d/OQcNE+EXM4LFZxYww
+	LRyc0ovGK2N0Q7e+JX+tMh55HDXlrHd9b9xi+X3HPYdbBRaEZNlaVq3djY1a3f5LDr5P8jrnQMmAS
+	LlJ7TTrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnHPc-00000003qHL-11E8
+	id 1tnL8L-00000004iXz-06Cz
 	for ath12k@archiver.kernel.org;
-	Wed, 26 Feb 2025 13:25:20 +0000
+	Wed, 26 Feb 2025 17:23:45 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnFg1-00000003UbB-2N7b
+	id 1tnL8I-00000004iXF-1yUO
 	for ath12k@lists.infradead.org;
-	Wed, 26 Feb 2025 11:34:10 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51QALchl012328;
-	Wed, 26 Feb 2025 11:34:08 GMT
+	Wed, 26 Feb 2025 17:23:43 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51Q9o1M0015555;
+	Wed, 26 Feb 2025 17:23:38 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	f5Fb/Em3p3IofEQDBmXJo7eAwlYI1sy2MSlie0AadQ8=; b=dDOzN+AZqLGUODjd
-	N5i7U/rlbn79fHd8k4oUE63J0iMmF4o6VIlr/tKqnp+XkBlWFTme1Oaz52WNGi/8
-	pPsdVryxp5eeiI4txDuHCK1vj8xfJO/py6i9YQApVtAckULV4oX0AdI36eFXoTt/
-	aZxa2nrBUJWzukRCTOhzjNC9GBtmuDeYke/Fadrjiz1xmwqdrqt+bt9ff5/wgjCN
-	rS2+8U/s55IJIsLDKSWg4QJPQEc6mlad5k0awpj9b7LIzkQgRZpLq2/Wp2Bjhxvp
-	6BbjOUhzpcHUNsZjmA69bygQbmAvlQLMg8sudxUKXANAAMvpDc4TF6ywnkLDF4kU
-	YVQLpQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prk1sxs-1
+	nEdct1oFohxhIryKjdAIwPhbqyjIFSucHG1dtgoTYW8=; b=ldwW9sbJdK8eVdTb
+	Y1qjMT6hmMa6r1EwpjOQBILpl9C5irTB9Ue30CgjgG2JbNu6SHXULSok6QLY7jcd
+	rPyeaJvWl03/hu8OLA2CpV+kW5F2E8B3bx8+UCtiDS4kBLGqSmt388QKqZas+7GN
+	a6kKLUxF3ApoGDLtKeDtfuQwhNNR6CSSQSPS1PRXZFophbIN07NUn9+6GTCWAtWF
+	1LBerOpzNi/bmab2A/oMAOM29YbYB++tfkK5TZn4oNk65t0ActhOYCuD8vH1pv//
+	88gHL6rQO45TQyWyUAd8tsphqu2FAhgesi9pwBFTAya4WNX7t5D6tCxbuNUGxXw2
+	3e0bTw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prnjser-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Feb 2025 11:34:08 +0000 (GMT)
+	Wed, 26 Feb 2025 17:23:37 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51QBY7Oh021191
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51QHNaDp019195
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Feb 2025 11:34:07 GMT
-Received: from [10.110.1.92] (10.80.80.8) by nalasex01b.na.qualcomm.com
+	Wed, 26 Feb 2025 17:23:36 GMT
+Received: from [10.216.2.27] (10.80.80.8) by nalasex01b.na.qualcomm.com
  (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 26 Feb
- 2025 03:34:06 -0800
-Message-ID: <4c1681f7-c4fe-4101-8023-a50b4b59a17d@quicinc.com>
-Date: Wed, 26 Feb 2025 19:34:03 +0800
+ 2025 09:23:32 -0800
+Message-ID: <cedf59c5-dd2a-4d1e-960e-d76e45d9c215@quicinc.com>
+Date: Wed, 26 Feb 2025 22:53:13 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath12k: report station mode per-chain signal
- strength
-To: <ath12k@lists.infradead.org>, Jeff Johnson <quic_jjohnson@quicinc.com>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250210054050.656075-1-quic_lingbok@quicinc.com>
+Subject: Re: [RFC PATCH 5/5] wifi: ath12k: Enable IPQ5424 WiFi device support
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
+        Kalle Valo
+	<kvalo@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski
+	<krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Jeff Johnson
+	<jjohnson@kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>,
+        Sowmiya Sree Elavalagan
+	<quic_ssreeela@quicinc.com>,
+        Saravanakumar Duraisamy
+	<quic_saradura@quicinc.com>
+References: <20250130051838.1924079-1-quic_rajkbhag@quicinc.com>
+ <20250130051838.1924079-6-quic_rajkbhag@quicinc.com>
+ <20250130-offbeat-sparkling-nyala-042b72@krzk-bin>
 Content-Language: en-US
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-In-Reply-To: <20250210054050.656075-1-quic_lingbok@quicinc.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 8bit
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+In-Reply-To: <20250130-offbeat-sparkling-nyala-042b72@krzk-bin>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: S_XD7sWGDP4I9-aw4Q-tMueqNFLofib4
-X-Proofpoint-ORIG-GUID: S_XD7sWGDP4I9-aw4Q-tMueqNFLofib4
+X-Proofpoint-GUID: lkeT0pJan9TQ6_etFbuLf8TCvP01r3Iy
+X-Proofpoint-ORIG-GUID: lkeT0pJan9TQ6_etFbuLf8TCvP01r3Iy
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-26_02,2025-02-26_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
- lowpriorityscore=0 priorityscore=1501 suspectscore=0 impostorscore=0
- phishscore=0 spamscore=0 mlxscore=0 mlxlogscore=999 malwarescore=0
- adultscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502100000 definitions=main-2502260092
+ definitions=2025-02-26_04,2025-02-26_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
+ mlxscore=0 mlxlogscore=999 bulkscore=0 adultscore=0 phishscore=0
+ priorityscore=1501 lowpriorityscore=0 malwarescore=0 clxscore=1015
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502260137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250226_033409_722631_FED24AE1 
-X-CRM114-Status: GOOD (  15.29  )
+X-CRM114-CacheID: sfid-20250226_092342_643940_3B0EF03B 
+X-CRM114-Status: GOOD (  24.61  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,64 +112,166 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+On 1/30/2025 2:09 PM, Krzysztof Kozlowski wrote:
+> On Thu, Jan 30, 2025 at 10:48:38AM +0530, Raj Kumar Bhagat wrote:
+>> From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+>>
+>> Currently, ath12k AHB (in IPQ5332) uses SCM calls to authenticate the
+>> firmware image to bring up userpd. From IPQ5424 onwards, Q6 firmware can
+>> directly communicate with the Trusted Management Engine - Lite (TME-L),
+>> eliminating the need for SCM calls for userpd bring-up.
+>>
+>> Hence, to enable IPQ5424 device support, use qcom_mdt_load_no_init() and
+>> skip the SCM call as Q6 will directly authenticate the userpd firmware.
+>>
+>> Tested-on: IPQ5424 hw1.0 AHB WLAN.WBE.1.5-01053-QCAHKSWPL_SILICONZ-1
+>> Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
+>>
+>> Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
+>> Co-developed-by: Saravanakumar Duraisamy <quic_saradura@quicinc.com>
+>> Signed-off-by: Saravanakumar Duraisamy <quic_saradura@quicinc.com>
+>> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+>> ---
+>>  drivers/net/wireless/ath/ath12k/ahb.c | 80 +++++++++++++++++----------
+>>  drivers/net/wireless/ath/ath12k/ahb.h |  9 +++
+>>  2 files changed, 61 insertions(+), 28 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+>> index d502b59a78d8..75767915dec3 100644
+>> --- a/drivers/net/wireless/ath/ath12k/ahb.c
+>> +++ b/drivers/net/wireless/ath/ath12k/ahb.c
+>> @@ -21,6 +21,9 @@ static const struct of_device_id ath12k_ahb_of_match[] = {
+>>  	{ .compatible = "qcom,ipq5332-wifi",
+>>  	  .data = (void *)ATH12K_HW_IPQ5332_HW10,
+>>  	},
+>> +	{ .compatible = "qcom,ipq5424-wifi",
+>> +	  .data = (void *)ATH12K_HW_IPQ5424_HW10,
+>> +	},
+>>  	{ }
+>>  };
+>>  
+>> @@ -398,8 +401,8 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
+>>  		ATH12K_AHB_UPD_SWID;
+>>  
+>>  	/* Load FW image to a reserved memory location */
+>> -	ret = qcom_mdt_load(dev, fw, fw_name, pasid, mem_region, mem_phys, mem_size,
+>> -			    &mem_phys);
+>> +	ret = ab_ahb->ahb_ops->mdt_load(dev, fw, fw_name, pasid, mem_region, mem_phys,
+>> +					mem_size, &mem_phys);
+>>  	if (ret) {
+>>  		ath12k_err(ab, "Failed to load MDT segments: %d\n", ret);
+>>  		goto err_fw;
+>> @@ -430,11 +433,13 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
+>>  		goto err_fw2;
+>>  	}
+>>  
+>> -	/* Authenticate FW image using peripheral ID */
+>> -	ret = qcom_scm_pas_auth_and_reset(pasid);
+>> -	if (ret) {
+>> -		ath12k_err(ab, "failed to boot the remote processor %d\n", ret);
+>> -		goto err_fw2;
+>> +	if (ab_ahb->scm_auth_enabled) {
+>> +		/* Authenticate FW image using peripheral ID */
+>> +		ret = qcom_scm_pas_auth_and_reset(pasid);
+>> +		if (ret) {
+>> +			ath12k_err(ab, "failed to boot the remote processor %d\n", ret);
+>> +			goto err_fw2;
+>> +		}
+>>  	}
+>>  
+>>  	/* Instruct Q6 to spawn userPD thread */
+>> @@ -491,13 +496,15 @@ static void ath12k_ahb_power_down(struct ath12k_base *ab, bool is_suspend)
+>>  
+>>  	qcom_smem_state_update_bits(ab_ahb->stop_state, BIT(ab_ahb->stop_bit), 0);
+>>  
+>> -	pasid = (u32_encode_bits(ab_ahb->userpd_id, ATH12K_USERPD_ID_MASK)) |
+>> -		ATH12K_AHB_UPD_SWID;
+>> -	/* Release the firmware */
+>> -	ret = qcom_scm_pas_shutdown(pasid);
+>> -	if (ret)
+>> -		ath12k_err(ab, "scm pas shutdown failed for userPD%d: %d\n",
+>> -			   ab_ahb->userpd_id, ret);
+>> +	if (ab_ahb->scm_auth_enabled) {
+>> +		pasid = (u32_encode_bits(ab_ahb->userpd_id, ATH12K_USERPD_ID_MASK)) |
+>> +			 ATH12K_AHB_UPD_SWID;
+>> +		/* Release the firmware */
+>> +		ret = qcom_scm_pas_shutdown(pasid);
+>> +		if (ret)
+>> +			ath12k_err(ab, "scm pas shutdown failed for userPD%d\n",
+>> +				   ab_ahb->userpd_id);
+>> +	}
+>>  }
+>>  
+>>  static void ath12k_ahb_init_qmi_ce_config(struct ath12k_base *ab)
+>> @@ -707,6 +714,14 @@ static int ath12k_ahb_map_service_to_pipe(struct ath12k_base *ab, u16 service_id
+>>  	return 0;
+>>  }
+>>  
+>> +static const struct ath12k_ahb_ops ahb_ops_ipq5332 = {
+>> +	.mdt_load = qcom_mdt_load,
+>> +};
+>> +
+>> +static const struct ath12k_ahb_ops ahb_ops_ipq5424 = {
+>> +	.mdt_load = qcom_mdt_load_no_init,
+>> +};
+>> +
+>>  static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
+>>  	.start = ath12k_ahb_start,
+>>  	.stop = ath12k_ahb_stop,
+>> @@ -1041,19 +1056,9 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+>>  	struct device_node *mem_node;
+>>  	struct ath12k_ahb *ab_ahb;
+>>  	enum ath12k_hw_rev hw_rev;
+>> -	u32 addr, userpd_id;
+>> +	u32 addr;
+>>  	int ret;
+>>  
+>> -	hw_rev = ath12k_ahb_get_hw_rev(pdev);
+>> -	switch (hw_rev) {
+>> -	case ATH12K_HW_IPQ5332_HW10:
+>> -		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
+>> -		userpd_id = ATH12K_IPQ5332_USERPD_ID;
+>> -		break;
+>> -	default:
+>> -		return -EOPNOTSUPP;
+>> -	}
+> 
+> You just added this code in previous patchset, why are you moving it?
+> 
 
+In the v6 of dependent series ([PATCH v6 00/13] wifi: ath12k: add Ath12k AHB driver
+support for IPQ5332), we have moved this part of the code in the required position.
+In the next version the above hunk will not be required.
 
-On 2025/2/10 13:40, Lingbo Kong wrote:
-> Currently, command “iw wlan0 station dump” does not show per-chain signal
-> strength.
+>> -
+>>  	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+>>  	if (ret) {
+>>  		dev_err(&pdev->dev, "Failed to set 32-bit coherent dma\n");
+>> @@ -1067,13 +1072,32 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+>>  		return -ENOMEM;
+>>  	}
+>>  
+>> +	ab_ahb = ath12k_ab_to_ahb(ab);
+>> +	ab_ahb->ab = ab;
+>> +
+>> +	hw_rev = ath12k_ahb_get_hw_rev(pdev);
+>> +	switch (hw_rev) {
+>> +	case ATH12K_HW_IPQ5332_HW10:
+>> +		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
+>> +		ab_ahb->userpd_id = ATH12K_IPQ5332_USERPD_ID;
+>> +		ab_ahb->scm_auth_enabled = true;
+>> +		ab_ahb->ahb_ops = &ahb_ops_ipq5332;
+>> +		break;
+>> +	case ATH12K_HW_IPQ5424_HW10:
+>> +		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
+>> +		ab_ahb->userpd_id = ATH12K_IPQ5332_USERPD_ID;
+>> +		ab_ahb->scm_auth_enabled = false;
+>> +		ab_ahb->ahb_ops = &ahb_ops_ipq5424;
 > 
-> This is because ath12k does not handle the num_per_chain_rssi and
-> rssi_avg_beacon reported by firmware to ath12k.
+> Why you cannot store just proper driver data structure in match data?
+> This entire switch is redundant.
 > 
-> To address this, update ath12k to send WMI_REQUEST_STATS_CMDID with the
-> flag WMI_REQUEST_RSSI_PER_CHAIN_STAT to the firmware. Then, add logic to
-> handle num_per_chain_rssi and rssi_avg_beacon in the
-> ath12k_wmi_tlv_fw_stats_parse(), and assign the resulting per-chain signal
-> strength to the chain_signal of struct station_info.
-> 
-> After that, "iw dev xxx station dump" shows the correct per-chain signal
-> strength.
-> Such as:
-> 
-> Station AA:BB:CC:DD:EE:FF (on wlan0)
->          inactive time:  212 ms
->          rx bytes:       10398
->          rx packets:     64
->          tx bytes:       4362
->          tx packets:     33
->          tx retries:     49
->          tx failed:      0
->          beacon loss:    0
->          beacon rx:      14
->          rx drop misc:   16
->          signal:         -45 [-51, -46] dBm
->          beacon signal avg:      -44 dBm
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
-> 
-> Closes: https://bugzilla.kernel.org/show_bug.cgi?id=219751
-> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> ---
-> v2:
-> 1.add break to avoid warning
-> 
->   drivers/net/wireless/ath/ath12k/core.h |  5 ++
->   drivers/net/wireless/ath/ath12k/mac.c  | 39 ++++++++++--
->   drivers/net/wireless/ath/ath12k/mac.h  |  2 +
->   drivers/net/wireless/ath/ath12k/wmi.c  | 82 ++++++++++++++++++++++++++
->   drivers/net/wireless/ath/ath12k/wmi.h  | 18 +++++-
->   5 files changed, 139 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 57e71ccbbb67..967e3cad3bca 100644
-> --- a/drivers/net/wireless/ath/ath12k/core.h
-> +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -508,6 +508,7 @@ struct ath12k_link_sta {
->   	u32 bw_prev;
 
+Thanks for this optimization suggestion. Will implement this in the next version.
 
-hi jeff,
-do you have any updates on this patch?🙂
-
-/lingbo
 
