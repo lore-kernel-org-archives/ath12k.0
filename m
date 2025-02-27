@@ -4,94 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B7F4C19F32
-	for <ath12k@archiver.kernel.org>; Thu, 27 Feb 2025 19:43:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A1DEC282C7
+	for <ath12k@archiver.kernel.org>; Thu, 27 Feb 2025 19:43:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=F1VrP7jmMMW60dreq3vYBwRfM7LdCPQK65BMku7L0gY=; b=cGV9LgwiVGImTTqs4dt/k4zojR
-	5u1SToS2VAZr6jEU9YUMl1WgwUTv4aNEncjbZ8I7PqDTdEJgJBsfPjHhqi6zht6HlDqzIyVXf1o9K
-	PJLCFb5yoo/Cq7Ya0gnnsAu73xKM5XczvVYK6ToGS4/asyZnGinzzGsgWQmVco/hJ8Tu+qxjpHKqZ
-	PjxxXsMmHbAsuQYEc4RoieSmZS8P8bvM4jqL34mdWNAqz+2jbl3O+FlOpFJ98COLPDnxkY9ZvdobH
-	a4TMBnAmCihyjM+yTD6QMMB5F4Q399o5XOHtyOnayQmpDHGuabMiakDy265sRQX7yEKx4Ol/1Wn2I
-	wyRMRstw==;
+	bh=EGoYfacmVhPGF8jCIZLnWjml46t+qzOjPNutdAWxW28=; b=M4/dy0WLj/xw6mLqZJ2t/OHJu9
+	OFFDs+JaamLtkXG772JLmJLAgHletmLxhN4AEdM89vpF8N2d6HJMvr8WlN/t+gSLMychHAWkeWpZL
+	Rw6e3NDbLk1dmZAkuZU7M6RbKLa30+rqpxwioMbp/uvU9XDu7cn/IQwSjuL4yvvSUUB4D1/bYPwuP
+	G0OfbdBJ43tKZ6RND0Tfr/WLxvmdCYFvXEyGgOxiNyXP1I0tDFlJWl2KBtJO4OcEuMh+jGB59Hb0E
+	QzNhf9AJt+JacLfwEJNgHrPraMZA/mRUCYByK34TZBZ/skQGP6bDbIBXDVGpC2xwbasKe6a8edNOl
+	2R+EvY8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnjnI-00000008f2r-1B8p
+	id 1tnjnI-00000008f3z-3SfU
 	for ath12k@archiver.kernel.org;
 	Thu, 27 Feb 2025 19:43:40 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+Received: from mgamail.intel.com ([192.198.163.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnjIY-00000008Ps3-1Rd0
+	id 1tnjQV-00000008RIo-1Vk1
 	for ath12k@lists.infradead.org;
-	Thu, 27 Feb 2025 19:11:55 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51RHuaDk025832;
-	Thu, 27 Feb 2025 19:11:51 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	F1VrP7jmMMW60dreq3vYBwRfM7LdCPQK65BMku7L0gY=; b=PmDyxx0cM4r0jjdP
-	AM7JmsDM0k9KaBflnu5jK9Bn+dKIIb1ThQkfe1ZDz1nAy8YrYxGH4KDju76dqAK5
-	iD/15ru2C0V8emPONaFZlNFRzS+X6GnYaLSLhC6BrgB2G/OqPrO5K5cHtKXa582Q
-	6jHLsqcv4XE8ML8cWHV61LFIIGUz0eoQyWRiS3yx/2uqcwEfQePOj26+T/uPd1p+
-	s4kz6qkbhZOSEynvnaWnySHiJLgzmfa+LxShViSTJ7CCMa0kwzQq8howAr2AXb6g
-	29Q1gnH0nq1aoeZzRKhB3dDdY6/7fKRY/m/bACVXYQPrVvpkLD0u7crWVBHH85wf
-	BIn0yA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prmprus-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Feb 2025 19:11:51 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51RJBo1m025555
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Feb 2025 19:11:50 GMT
-Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 27 Feb 2025 11:11:46 -0800
-From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
-        <linux-wireless@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>,
-        Balamurugan S
-	<quic_bselvara@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>,
-        "Raj
- Kumar Bhagat" <quic_rajkbhag@quicinc.com>
-Subject: [PATCH v7 13/13] wifi: ath12k: enable ath12k AHB support
-Date: Fri, 28 Feb 2025 00:40:34 +0530
-Message-ID: <20250227191034.1949954-14-quic_rajkbhag@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250227191034.1949954-1-quic_rajkbhag@quicinc.com>
-References: <20250227191034.1949954-1-quic_rajkbhag@quicinc.com>
+	Thu, 27 Feb 2025 19:20:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1740684007; x=1772220007;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=VofQ0MMFNn/3/peulSddBz10VHBiuJCK5GWnGS+Q5H0=;
+  b=Phi3tXQ2o/TEvpAHQG00d2StAuvFZRIhAK1wloUuhnFdpusKd2Ex5RRO
+   tHr3YqsXvEVYcC0E4v9ArVXsxIi/MUClgN9ByjyjDZUQ6i0z/JZ/vXOmR
+   TiBlR3GR3SG3+p7fWDKzvYBe96GHB0I0/now7nRtN4jbhGkL60eBy8dEk
+   WUcX4mKR28Zu5/cQgqErlRIY1n/RvR6cVa7vFSL5ui7HkHVpN/llqCm5W
+   +luvb8uYwMw3XJaDsx84LPczWi63mo0zqqrihnF88UtqyFwA413Nxmp3S
+   Y+VJqmj4cCUkyLC+rrnEUjftXe5DX9w6vvclD2he9LvHB6ZjDUgls3yzC
+   w==;
+X-CSE-ConnectionGUID: xCRn6uaFS9mXKUVUMb5vPQ==
+X-CSE-MsgGUID: o2Kfx1JWQcuRPa0N8gle6w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11358"; a="52228393"
+X-IronPort-AV: E=Sophos;i="6.13,320,1732608000"; 
+   d="scan'208";a="52228393"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Feb 2025 11:20:02 -0800
+X-CSE-ConnectionGUID: lbJBhQv4TaKW+I2N+pzi/w==
+X-CSE-MsgGUID: UG5ljOKTSPyONnpcqJOy5Q==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="118042917"
+Received: from lkp-server02.sh.intel.com (HELO 76cde6cc1f07) ([10.239.97.151])
+  by orviesa008.jf.intel.com with ESMTP; 27 Feb 2025 11:19:59 -0800
+Received: from kbuild by 76cde6cc1f07 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tnjQK-000Dvm-2O;
+	Thu, 27 Feb 2025 19:19:56 +0000
+Date: Fri, 28 Feb 2025 03:19:00 +0800
+From: kernel test robot <lkp@intel.com>
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
+	ath12k@lists.infradead.org
+Cc: oe-kbuild-all@lists.linux.dev,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: Re: [PATCH v6 07/13] wifi: ath12k: add support for fixed QMI
+ firmware memory
+Message-ID: <202502280215.J3T7EWeY-lkp@intel.com>
+References: <20250225064834.2002499-8-quic_rajkbhag@quicinc.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: sjho38X-IZDswiL-hFzjdvtDfWfrQxt6
-X-Proofpoint-ORIG-GUID: sjho38X-IZDswiL-hFzjdvtDfWfrQxt6
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-27_07,2025-02-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- impostorscore=0 phishscore=0 bulkscore=0 malwarescore=0 mlxscore=0
- priorityscore=1501 adultscore=0 spamscore=0 mlxlogscore=999
- lowpriorityscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2502100000 definitions=main-2502270142
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20250225064834.2002499-8-quic_rajkbhag@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250227_111154_509740_FE742C51 
-X-CRM114-Status: GOOD (  19.71  )
+X-CRM114-CacheID: sfid-20250227_112007_453033_7AA2B99D 
+X-CRM114-Status: GOOD (  13.26  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,188 +96,209 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Balamurugan S <quic_bselvara@quicinc.com>
+Hi Raj,
 
-Currently only PCI devices are supported in Ath12k driver. Refactor
-Ath12k module_init and module_exit to include Ath12k AHB support.
+kernel test robot noticed the following build warnings:
 
-Add Ath12k AHB support in Kconfig with dependency on Remoteproc
-driver. Ath12k AHB support relies on remoteproc driver for firmware
-download, power up/down etc.
+[auto build test WARNING on 13a84b4e7dd5d843dfaa54283adb4bbbe0adee15]
 
-Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
+url:    https://github.com/intel-lab-lkp/linux/commits/Raj-Kumar-Bhagat/dt-bindings-net-wireless-describe-the-ath12k-AHB-module-for-IPQ5332/20250225-145536
+base:   13a84b4e7dd5d843dfaa54283adb4bbbe0adee15
+patch link:    https://lore.kernel.org/r/20250225064834.2002499-8-quic_rajkbhag%40quicinc.com
+patch subject: [PATCH v6 07/13] wifi: ath12k: add support for fixed QMI firmware memory
+config: mips-allyesconfig (https://download.01.org/0day-ci/archive/20250228/202502280215.J3T7EWeY-lkp@intel.com/config)
+compiler: mips-linux-gcc (GCC) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250228/202502280215.J3T7EWeY-lkp@intel.com/reproduce)
 
-Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/Kconfig  |  6 ++++
- drivers/net/wireless/ath/ath12k/Makefile |  1 +
- drivers/net/wireless/ath/ath12k/ahb.h    | 11 ++++++++
- drivers/net/wireless/ath/ath12k/core.c   | 35 ++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/pci.c    | 10 ++-----
- drivers/net/wireless/ath/ath12k/pci.h    |  4 ++-
- 6 files changed, 55 insertions(+), 12 deletions(-)
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202502280215.J3T7EWeY-lkp@intel.com/
 
-diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
-index 52a1bb19e3da..b2bfcaca00b3 100644
---- a/drivers/net/wireless/ath/ath12k/Kconfig
-+++ b/drivers/net/wireless/ath/ath12k/Kconfig
-@@ -15,6 +15,12 @@ config ATH12K
- 
- 	  If you choose to build a module, it'll be called ath12k.
- 
-+config ATH12K_AHB
-+	bool "QTI ath12k AHB support"
-+	depends on ATH12K && REMOTEPROC && QCOM_Q6V5_WCSS_SEC
-+	help
-+	  Enable support for Ath12k AHB bus chipsets, example IPQ5332.
-+
- config ATH12K_DEBUG
- 	bool "ath12k debugging"
- 	depends on ATH12K
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index 60644cb42c76..d95ee525a6cd 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -23,6 +23,7 @@ ath12k-y += core.o \
- 	    fw.o \
- 	    p2p.o
- 
-+ath12k-$(CONFIG_ATH12K_AHB) += ahb.o
- ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o debugfs_sta.o
- ath12k-$(CONFIG_ACPI) += acpi.o
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-index f8a5c43075c1..d56244b20a6a 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.h
-+++ b/drivers/net/wireless/ath/ath12k/ahb.h
-@@ -66,4 +66,15 @@ static inline struct ath12k_ahb *ath12k_ab_to_ahb(struct ath12k_base *ab)
- 	return (struct ath12k_ahb *)ab->drv_priv;
- }
- 
-+#ifdef CONFIG_ATH12K_AHB
-+int ath12k_ahb_init(void);
-+void ath12k_ahb_exit(void);
-+#else
-+static inline int ath12k_ahb_init(void)
-+{
-+	return 0;
-+}
-+
-+static inline void ath12k_ahb_exit(void) {};
-+#endif
- #endif
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 5bd852f9572b..e63ab7f77260 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -10,15 +10,18 @@
- #include <linux/firmware.h>
- #include <linux/of.h>
- #include <linux/of_graph.h>
-+#include "ahb.h"
- #include "core.h"
- #include "dp_tx.h"
- #include "dp_rx.h"
- #include "debug.h"
--#include "hif.h"
--#include "fw.h"
- #include "debugfs.h"
-+#include "fw.h"
-+#include "hif.h"
-+#include "pci.h"
- #include "wow.h"
- 
-+static int ahb_err, pci_err;
- unsigned int ath12k_debug_mask;
- module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
- MODULE_PARM_DESC(debug_mask, "Debugging mask");
-@@ -2020,5 +2023,31 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 	return NULL;
- }
- 
--MODULE_DESCRIPTION("Core module for Qualcomm Atheros 802.11be wireless LAN cards.");
-+static int ath12k_init(void)
-+{
-+	ahb_err = ath12k_ahb_init();
-+	if (ahb_err)
-+		pr_warn("Failed to initialize ath12k AHB device: %d\n", ahb_err);
-+
-+	pci_err = ath12k_pci_init();
-+	if (pci_err)
-+		pr_warn("Failed to initialize ath12k PCI device: %d\n", pci_err);
-+
-+	/* If both failed, return one of the failures (arbitrary) */
-+	return ahb_err && pci_err ? ahb_err : 0;
-+}
-+
-+static void ath12k_exit(void)
-+{
-+	if (!pci_err)
-+		ath12k_pci_exit();
-+
-+	if (!ahb_err)
-+		ath12k_ahb_exit();
-+}
-+
-+module_init(ath12k_init)
-+module_exit(ath12k_exit)
-+
-+MODULE_DESCRIPTION("Driver support for Qualcomm Technologies 802.11be WLAN devices");
- MODULE_LICENSE("Dual BSD/GPL");
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index b474696ac6d8..e62b172c7f9f 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1831,7 +1831,7 @@ static struct pci_driver ath12k_pci_driver = {
- 	.driver.pm = &ath12k_pci_pm_ops,
- };
- 
--static int ath12k_pci_init(void)
-+int ath12k_pci_init(void)
- {
- 	int ret;
- 
-@@ -1844,14 +1844,8 @@ static int ath12k_pci_init(void)
- 
- 	return 0;
- }
--module_init(ath12k_pci_init);
- 
--static void ath12k_pci_exit(void)
-+void ath12k_pci_exit(void)
- {
- 	pci_unregister_driver(&ath12k_pci_driver);
- }
--
--module_exit(ath12k_pci_exit);
--
--MODULE_DESCRIPTION("Driver support for Qualcomm Technologies PCIe 802.11be WLAN devices");
--MODULE_LICENSE("Dual BSD/GPL");
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 31584a7ad80e..521fa72333bb 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #ifndef ATH12K_PCI_H
- #define ATH12K_PCI_H
-@@ -145,4 +145,6 @@ void ath12k_pci_stop(struct ath12k_base *ab);
- int ath12k_pci_start(struct ath12k_base *ab);
- int ath12k_pci_power_up(struct ath12k_base *ab);
- void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend);
-+int ath12k_pci_init(void);
-+void ath12k_pci_exit(void);
- #endif /* ATH12K_PCI_H */
+All warnings (new ones prefixed by >>):
+
+   In file included from drivers/net/wireless/ath/ath12k/qmi.c:11:
+   drivers/net/wireless/ath/ath12k/qmi.c: In function 'ath12k_qmi_assign_target_mem_chunk':
+>> drivers/net/wireless/ath/ath12k/qmi.c:2677:44: warning: format '%lld' expects argument of type 'long long int', but argument 6 has type 'phys_addr_t' {aka 'unsigned int'} [-Wformat=]
+    2677 |                                            "failed to assign mem type %d req size %d avail size %lld\n",
+         |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ......
+    2680 |                                            rmem->size);
+         |                                            ~~~~~~~~~~
+         |                                                |
+         |                                                phys_addr_t {aka unsigned int}
+   drivers/net/wireless/ath/ath12k/debug.h:69:40: note: in definition of macro 'ath12k_dbg'
+      69 |                 __ath12k_dbg(ab, mask, fmt, ##__VA_ARGS__);     \
+         |                                        ^~~
+   drivers/net/wireless/ath/ath12k/qmi.c:2677:100: note: format string is defined here
+    2677 |                                            "failed to assign mem type %d req size %d avail size %lld\n",
+         |                                                                                                 ~~~^
+         |                                                                                                    |
+         |                                                                                                    long long int
+         |                                                                                                 %d
+   drivers/net/wireless/ath/ath12k/qmi.c:2707:44: warning: format '%lld' expects argument of type 'long long int', but argument 6 has type 'phys_addr_t' {aka 'unsigned int'} [-Wformat=]
+    2707 |                                            "failed to assign mem type %d req size %d avail size %lld\n",
+         |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ......
+    2710 |                                            bdf_size);
+         |                                            ~~~~~~~~
+         |                                            |
+         |                                            phys_addr_t {aka unsigned int}
+   drivers/net/wireless/ath/ath12k/debug.h:69:40: note: in definition of macro 'ath12k_dbg'
+      69 |                 __ath12k_dbg(ab, mask, fmt, ##__VA_ARGS__);     \
+         |                                        ^~~
+   drivers/net/wireless/ath/ath12k/qmi.c:2707:100: note: format string is defined here
+    2707 |                                            "failed to assign mem type %d req size %d avail size %lld\n",
+         |                                                                                                 ~~~^
+         |                                                                                                    |
+         |                                                                                                    long long int
+         |                                                                                                 %d
+   drivers/net/wireless/ath/ath12k/qmi.c:2748:44: warning: format '%lld' expects argument of type 'long long int', but argument 6 has type 'phys_addr_t' {aka 'unsigned int'} [-Wformat=]
+    2748 |                                            "failed to assign mem type %d req size %d avail size %lld\n",
+         |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ......
+    2751 |                                            rmem->size);
+         |                                            ~~~~~~~~~~
+         |                                                |
+         |                                                phys_addr_t {aka unsigned int}
+   drivers/net/wireless/ath/ath12k/debug.h:69:40: note: in definition of macro 'ath12k_dbg'
+      69 |                 __ath12k_dbg(ab, mask, fmt, ##__VA_ARGS__);     \
+         |                                        ^~~
+   drivers/net/wireless/ath/ath12k/qmi.c:2748:100: note: format string is defined here
+    2748 |                                            "failed to assign mem type %d req size %d avail size %lld\n",
+         |                                                                                                 ~~~^
+         |                                                                                                    |
+         |                                                                                                    long long int
+         |                                                                                                 %d
+
+
+vim +2677 drivers/net/wireless/ath/ath12k/qmi.c
+
+  2659	
+  2660	static int ath12k_qmi_assign_target_mem_chunk(struct ath12k_base *ab)
+  2661	{
+  2662		struct reserved_mem *rmem;
+  2663		phys_addr_t bdf_size;
+  2664		int i, idx, ret;
+  2665	
+  2666		for (i = 0, idx = 0; i < ab->qmi.mem_seg_count; i++) {
+  2667			switch (ab->qmi.target_mem[i].type) {
+  2668			case HOST_DDR_REGION_TYPE:
+  2669				rmem = ath12k_core_get_reserved_mem(ab, 0);
+  2670				if (!rmem) {
+  2671					ret = -ENODEV;
+  2672					goto out;
+  2673				}
+  2674	
+  2675				if (rmem->size < ab->qmi.target_mem[i].size) {
+  2676					ath12k_dbg(ab, ATH12K_DBG_QMI,
+> 2677						   "failed to assign mem type %d req size %d avail size %lld\n",
+  2678						   ab->qmi.target_mem[i].type,
+  2679						   ab->qmi.target_mem[i].size,
+  2680						   rmem->size);
+  2681					ret = -EINVAL;
+  2682					goto out;
+  2683				}
+  2684	
+  2685				ab->qmi.target_mem[idx].paddr = rmem->base;
+  2686				ab->qmi.target_mem[idx].v.ioaddr =
+  2687					ioremap(ab->qmi.target_mem[idx].paddr,
+  2688						ab->qmi.target_mem[i].size);
+  2689				if (!ab->qmi.target_mem[idx].v.ioaddr) {
+  2690					ret = -EIO;
+  2691					goto out;
+  2692				}
+  2693				ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+  2694				ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+  2695				idx++;
+  2696				break;
+  2697			case BDF_MEM_REGION_TYPE:
+  2698				rmem = ath12k_core_get_reserved_mem(ab, 0);
+  2699				if (!rmem) {
+  2700					ret = -ENODEV;
+  2701					goto out;
+  2702				}
+  2703	
+  2704				bdf_size = rmem->size - ab->hw_params->bdf_addr_offset;
+  2705				if (bdf_size < ab->qmi.target_mem[i].size) {
+  2706					ath12k_dbg(ab, ATH12K_DBG_QMI,
+  2707						   "failed to assign mem type %d req size %d avail size %lld\n",
+  2708						   ab->qmi.target_mem[i].type,
+  2709						   ab->qmi.target_mem[i].size,
+  2710						   bdf_size);
+  2711					ret = -EINVAL;
+  2712					goto out;
+  2713				}
+  2714				ab->qmi.target_mem[idx].paddr =
+  2715					rmem->base + ab->hw_params->bdf_addr_offset;
+  2716				ab->qmi.target_mem[idx].v.ioaddr =
+  2717					ioremap(ab->qmi.target_mem[idx].paddr,
+  2718						ab->qmi.target_mem[i].size);
+  2719				if (!ab->qmi.target_mem[idx].v.ioaddr) {
+  2720					ret = -EIO;
+  2721					goto out;
+  2722				}
+  2723				ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+  2724				ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+  2725				idx++;
+  2726				break;
+  2727			case CALDB_MEM_REGION_TYPE:
+  2728				/* Cold boot calibration is not enabled in Ath12k. Hence,
+  2729				 * assign paddr = 0.
+  2730				 * Once cold boot calibration is enabled add support to
+  2731				 * assign reserved memory from DT.
+  2732				 */
+  2733				ab->qmi.target_mem[idx].paddr = 0;
+  2734				ab->qmi.target_mem[idx].v.ioaddr = NULL;
+  2735				ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+  2736				ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+  2737				idx++;
+  2738				break;
+  2739			case M3_DUMP_REGION_TYPE:
+  2740				rmem = ath12k_core_get_reserved_mem(ab, 1);
+  2741				if (!rmem) {
+  2742					ret = -EINVAL;
+  2743					goto out;
+  2744				}
+  2745	
+  2746				if (rmem->size < ab->qmi.target_mem[i].size) {
+  2747					ath12k_dbg(ab, ATH12K_DBG_QMI,
+  2748						   "failed to assign mem type %d req size %d avail size %lld\n",
+  2749						   ab->qmi.target_mem[i].type,
+  2750						   ab->qmi.target_mem[i].size,
+  2751						   rmem->size);
+  2752					ret = -EINVAL;
+  2753					goto out;
+  2754				}
+  2755	
+  2756				ab->qmi.target_mem[idx].paddr = rmem->base;
+  2757				ab->qmi.target_mem[idx].v.ioaddr =
+  2758					ioremap(ab->qmi.target_mem[idx].paddr,
+  2759						ab->qmi.target_mem[i].size);
+  2760				if (!ab->qmi.target_mem[idx].v.ioaddr) {
+  2761					ret = -EIO;
+  2762					goto out;
+  2763				}
+  2764				ab->qmi.target_mem[idx].size = ab->qmi.target_mem[i].size;
+  2765				ab->qmi.target_mem[idx].type = ab->qmi.target_mem[i].type;
+  2766				idx++;
+  2767				break;
+  2768			default:
+  2769				ath12k_warn(ab, "qmi ignore invalid mem req type %d\n",
+  2770					    ab->qmi.target_mem[i].type);
+  2771				break;
+  2772			}
+  2773		}
+  2774		ab->qmi.mem_seg_count = idx;
+  2775	
+  2776		return 0;
+  2777	out:
+  2778		ath12k_qmi_free_target_mem_chunk(ab);
+  2779		return ret;
+  2780	}
+  2781	
+
 -- 
-2.34.1
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
