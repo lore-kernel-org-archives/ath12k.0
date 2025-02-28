@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9975EC282C6
-	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 18:58:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DCD7C282DE
+	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 18:58:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=B97ppNrPDPppdC54rMWu0qKrJkkHW7sNQ77xfcM5LQo=; b=zg6+aYsGTsQ66xSzNGqTIeyvU7
-	WqHKf3XIbYEOroc8ez3Ci+GzwdHtgOy00jbONYURJTAmfdpb2+AUDfd4AR9vOVpjsT8KHHkiFPkt4
-	xjcwypS/pdWTjt/R+7dMWf2GVCfmoRG+2iqwt/vFh1goC2Ute+DEu+akEjLtdH+U28Cf5TyJ2Mli3
-	WByxc39o1F9glC903eBZ2DEQEs8i/Udl8XVZYw2IqXzrLH2NpULgvfXUfXGosvbWYtKQRgj6lkgTj
-	P+T1bIBVyizkvdY+eaS3KRnJ9cPpkRpncOeWxWTah4ZqgBrVRiawPC7F5ks8JCDzMxyf6fPjQ/cTM
-	yXs3iGDg==;
+	bh=M8KgdG51XjvvUBG5Q6EnKiwzUq2eg9eLK3JCQWf+60w=; b=3gby94InS5GtjF/ZxbNy59h0G+
+	GZq7ibRra0k4me7qUUrOnW805lrru9hCtQ8HzwepMdrlOURyljdIALypP1gmEC4GaE0s0jD20tMTj
+	1cKZTkKxvT061Vp32DtXt1zFgh9VRW2UbIgsR93yrRQ9HIBODd2aeTmyE/WVTFe7jDPjg/7nP4FYa
+	Lh6u1puyBky1QLIO8y4HJ7+Bix5v+0UcPXNyyansbolxw8xjCXRYfHvIYuPR+g11qnWCZ87KJZfnf
+	WP3vIPYGxsR5s3OA6rfoXmmfVd8MmWxTJW22Pm2pWdQW0iXvTNc8cKoxpmkJMZVWqPowQGx9pnQXf
+	elo0JKLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1to5Z4-0000000CGgv-1TcO
+	id 1to5Z5-0000000CGiO-1GqO
 	for ath12k@archiver.kernel.org;
-	Fri, 28 Feb 2025 18:58:26 +0000
+	Fri, 28 Feb 2025 18:58:27 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1to5LF-0000000CCvL-0Zjw
+	id 1to5LM-0000000CCyi-2nkX
 	for ath12k@lists.infradead.org;
-	Fri, 28 Feb 2025 18:44:10 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51SAXGrN018756;
-	Fri, 28 Feb 2025 18:44:06 GMT
+	Fri, 28 Feb 2025 18:44:17 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51SAXGvW010973;
+	Fri, 28 Feb 2025 18:44:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	B97ppNrPDPppdC54rMWu0qKrJkkHW7sNQ77xfcM5LQo=; b=noz7tsAW4x605aRg
-	kMrrRwjvbGE58iAtFp8oyuuGD2TRRgobtmovkua9Syi84hK76V3SCGBjopj0Kmkt
-	N7s+t/36ki1FlX9oFuLildVo1uc1iByc1qG7ddYhrav/LdvKON6SoJpEhKMatxLY
-	KOXacdU+8vuo8FZPxl6eorhh58OliwFXLbySiTi/RmCx8FUZUB1e6qEEzxhh7vJE
-	q2G1ZHGMRq7bd1BAevmmvoXkSfpXdQycUtaKVFSSWUAdPhn55ODTch9U9XA5m8XJ
-	ODqy+gCzgWrETJdnRHJ1TlSrFp13eYYp6enGGLvxdNvJY7Kz8MfFM70WGL9nSQM3
-	cbjUpg==
+	M8KgdG51XjvvUBG5Q6EnKiwzUq2eg9eLK3JCQWf+60w=; b=cFLjxgQ2kMepWFHg
+	2bb+SaCL2vljmTl5ugfmQTVhKnRvcwJEEyLs4YNVyiVik9zUKbAIkDC/8NFXX0yg
+	eBq6hpDA2WAXL18A6rkFLo5amW+/w+doh3hK1uh6m1jOfFxT/xs/hmTnx0+BuXDW
+	sBW1s164czxKLh4HdR3x4cCta8B9P5LoLCu6zd/rNvVy0EGEmQvjEnbb+BXL1izM
+	/3fpxZPjj4jj7gTKM/H9Sl6kHf32NGRyfIqkI5Q77T2gIv9rTqNQFFxn9+lE6vUs
+	zdPtnZmB5JEC+KTjgd1biw0lrDYR3U63gJt9pXFTlMshIrcagut3bWIHkoYIRPl/
+	wemO8g==
 Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prna97j-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prkac2y-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Feb 2025 18:44:05 +0000 (GMT)
+	Fri, 28 Feb 2025 18:44:13 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51SIi4Dm011486
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51SIiCOf011616
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 28 Feb 2025 18:44:04 GMT
+	Fri, 28 Feb 2025 18:44:12 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 28 Feb 2025 10:44:01 -0800
+ 15.2.1544.9; Fri, 28 Feb 2025 10:44:09 -0800
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -64,9 +64,9 @@ CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
  Elavalagan" <quic_ssreeela@quicinc.com>,
         Raj Kumar Bhagat
 	<quic_rajkbhag@quicinc.com>
-Subject: [PATCH v8 10/13] wifi: ath12k: Register various userPD interrupts and save SMEM entries
-Date: Sat, 1 Mar 2025 00:12:11 +0530
-Message-ID: <20250228184214.337119-11-quic_rajkbhag@quicinc.com>
+Subject: [PATCH v8 12/13] wifi: ath12k: Power down userPD
+Date: Sat, 1 Mar 2025 00:12:13 +0530
+Message-ID: <20250228184214.337119-13-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250228184214.337119-1-quic_rajkbhag@quicinc.com>
 References: <20250228184214.337119-1-quic_rajkbhag@quicinc.com>
@@ -78,19 +78,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: jRloaZaJQ95I_huaq1DNneczzG2gqAlJ
-X-Proofpoint-GUID: jRloaZaJQ95I_huaq1DNneczzG2gqAlJ
+X-Proofpoint-GUID: smIHzVCglXr03ZvWg8fwcdvc2dhNwZ3j
+X-Proofpoint-ORIG-GUID: smIHzVCglXr03ZvWg8fwcdvc2dhNwZ3j
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-28_05,2025-02-28_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- spamscore=0 clxscore=1015 mlxscore=0 adultscore=0 mlxlogscore=999
- suspectscore=0 phishscore=0 bulkscore=0 malwarescore=0 lowpriorityscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
+ lowpriorityscore=0 priorityscore=1501 suspectscore=0 impostorscore=0
+ phishscore=0 spamscore=0 mlxscore=0 mlxlogscore=999 malwarescore=0
+ adultscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2502100000 definitions=main-2502280137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250228_104409_289236_9AE54DFD 
-X-CRM114-Status: GOOD (  21.90  )
+X-CRM114-CacheID: sfid-20250228_104416_813036_411F6C2E 
+X-CRM114-Status: GOOD (  14.03  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,201 +107,73 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 
-Q6 and ath12k driver communicates using SMEM and IRQs. Spawn interrupt
-is triggered once the userPD thread is spawned. Ready interrupts denotes
-userPD is completely powered up and ready. Stop-ack is to acknowledge
-the ath12k driver that userPD is stopped. Ath12k driver needs to set spawn
-bit in SMEM to instruct Q6 to spawn a userPD. Similarly stop bit is
-set when userPD needs to be stopped.
+Set the stop bit in SMEM to power down the userPD. Wait for stop-ack IRQ
+to indicate power down completion. Release the userPD firmware using its
+peripheral ID.
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/ahb.c | 79 ++++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/ahb.h | 16 ++++++
- drivers/net/wireless/ath/ath12k/hw.h  |  1 +
- 3 files changed, 94 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/ahb.c | 30 +++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index a6edf288c22c..4ac2c9179f2d 100644
+index 842ba9451e80..60257c4d2210 100644
 --- a/drivers/net/wireless/ath/ath12k/ahb.c
 +++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -9,6 +9,7 @@
- #include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/remoteproc.h>
-+#include <linux/soc/qcom/smem_state.h>
- #include "ahb.h"
- #include "debug.h"
- #include "hif.h"
-@@ -23,6 +24,11 @@ static const struct of_device_id ath12k_ahb_of_match[] = {
- MODULE_DEVICE_TABLE(of, ath12k_ahb_of_match);
+@@ -463,6 +463,34 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
+ 	return ret;
+ }
  
- #define ATH12K_IRQ_CE0_OFFSET 4
-+#define ATH12K_MAX_UPDS 1
-+#define ATH12K_UPD_IRQ_WRD_LEN  18
-+static const char ath12k_userpd_irq[][9] = {"spawn",
-+				     "ready",
-+				     "stop-ack"};
- 
- static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
- 	"misc-pulse1",
-@@ -547,6 +553,72 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
- 	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
- };
- 
-+static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
-+{
-+	struct ath12k_base *ab = data;
-+	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+
-+	if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_SPAWN_IRQ]) {
-+		complete(&ab_ahb->userpd_spawned);
-+	} else if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_READY_IRQ]) {
-+		complete(&ab_ahb->userpd_ready);
-+	} else if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_STOP_ACK_IRQ])	{
-+		complete(&ab_ahb->userpd_stopped);
-+	} else {
-+		ath12k_err(ab, "Invalid userpd interrupt\n");
-+		return IRQ_NONE;
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static int ath12k_ahb_config_rproc_irq(struct ath12k_base *ab)
++static void ath12k_ahb_power_down(struct ath12k_base *ab, bool is_suspend)
 +{
 +	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
-+	int i, ret;
-+	char *upd_irq_name;
++	unsigned long time_left;
++	u32 pasid;
++	int ret;
 +
-+	for (i = 0; i < ATH12K_USERPD_MAX_IRQ; i++) {
-+		ab_ahb->userpd_irq_num[i] = platform_get_irq_byname(ab->pdev,
-+								    ath12k_userpd_irq[i]);
-+		if (ab_ahb->userpd_irq_num[i] < 0)
-+			return ab_ahb->userpd_irq_num[i];
++	qcom_smem_state_update_bits(ab_ahb->stop_state, BIT(ab_ahb->stop_bit),
++				    BIT(ab_ahb->stop_bit));
 +
-+		upd_irq_name = devm_kzalloc(&ab->pdev->dev, ATH12K_UPD_IRQ_WRD_LEN,
-+					    GFP_KERNEL);
-+		if (!upd_irq_name)
-+			return -ENOMEM;
-+
-+		scnprintf(upd_irq_name, ATH12K_UPD_IRQ_WRD_LEN, "UserPD%u-%s",
-+			  ab_ahb->userpd_id, ath12k_userpd_irq[i]);
-+		ret = devm_request_threaded_irq(&ab->pdev->dev, ab_ahb->userpd_irq_num[i],
-+						NULL, ath12k_userpd_irq_handler,
-+						IRQF_TRIGGER_RISING | IRQF_ONESHOT,
-+						upd_irq_name, ab);
-+		if (ret)
-+			return dev_err_probe(&ab->pdev->dev, ret,
-+					     "Request %s irq failed: %d\n",
-+					     ath12k_userpd_irq[i], ret);
++	time_left = wait_for_completion_timeout(&ab_ahb->userpd_stopped,
++						ATH12K_USERPD_STOP_TIMEOUT);
++	if (!time_left) {
++		ath12k_err(ab, "UserPD stop wait timed out\n");
++		return;
 +	}
 +
-+	ab_ahb->spawn_state = devm_qcom_smem_state_get(&ab->pdev->dev, "spawn",
-+						       &ab_ahb->spawn_bit);
-+	if (IS_ERR(ab_ahb->spawn_state))
-+		return dev_err_probe(&ab->pdev->dev, PTR_ERR(ab_ahb->spawn_state),
-+				     "Failed to acquire spawn state\n");
++	qcom_smem_state_update_bits(ab_ahb->stop_state, BIT(ab_ahb->stop_bit), 0);
 +
-+	ab_ahb->stop_state = devm_qcom_smem_state_get(&ab->pdev->dev, "stop",
-+						      &ab_ahb->stop_bit);
-+	if (IS_ERR(ab_ahb->stop_state))
-+		return dev_err_probe(&ab->pdev->dev, PTR_ERR(ab_ahb->stop_state),
-+				     "Failed to acquire stop state\n");
-+
-+	init_completion(&ab_ahb->userpd_spawned);
-+	init_completion(&ab_ahb->userpd_ready);
-+	init_completion(&ab_ahb->userpd_stopped);
-+	return 0;
++	pasid = (u32_encode_bits(ab_ahb->userpd_id, ATH12K_USERPD_ID_MASK)) |
++		ATH12K_AHB_UPD_SWID;
++	/* Release the firmware */
++	ret = qcom_scm_pas_shutdown(pasid);
++	if (ret)
++		ath12k_err(ab, "scm pas shutdown failed for userPD%d: %d\n",
++			   ab_ahb->userpd_id, ret);
 +}
 +
- static int ath12k_ahb_root_pd_state_notifier(struct notifier_block *nb,
- 					     const unsigned long event, void *data)
+ static void ath12k_ahb_init_qmi_ce_config(struct ath12k_base *ab)
  {
-@@ -659,7 +731,8 @@ static int ath12k_ahb_configure_rproc(struct ath12k_base *ab)
- 			goto err_unreg_notifier;
- 		}
+ 	struct ath12k_qmi_ce_cfg *cfg = &ab->qmi.ce_cfg;
+@@ -679,6 +707,7 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
+ 	.irq_disable = ath12k_ahb_ext_irq_disable,
+ 	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
+ 	.power_up = ath12k_ahb_power_up,
++	.power_down = ath12k_ahb_power_down,
+ };
+ 
+ static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
+@@ -1094,6 +1123,7 @@ static void ath12k_ahb_remove(struct platform_device *pdev)
+ 	struct ath12k_base *ab = platform_get_drvdata(pdev);
+ 
+ 	if (test_bit(ATH12K_FLAG_QMI_FAIL, &ab->dev_flags)) {
++		ath12k_ahb_power_down(ab, false);
+ 		ath12k_qmi_deinit_service(ab);
+ 		goto qmi_fail;
  	}
--	return 0;
-+
-+	return ath12k_ahb_config_rproc_irq(ab);
- 
- err_unreg_notifier:
- 	ath12k_ahb_unregister_rproc_notifier(ab);
-@@ -764,7 +837,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	const struct ath12k_hif_ops *hif_ops;
- 	struct ath12k_ahb *ab_ahb;
- 	enum ath12k_hw_rev hw_rev;
--	u32 addr;
-+	u32 addr, userpd_id;
- 	int ret;
- 
- 	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
-@@ -782,6 +855,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	switch (hw_rev) {
- 	case ATH12K_HW_IPQ5332_HW10:
- 		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
-+		userpd_id = ATH12K_IPQ5332_USERPD_ID;
- 		break;
- 	default:
- 		return -EOPNOTSUPP;
-@@ -793,6 +867,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, ab);
- 	ab_ahb = ath12k_ab_to_ahb(ab);
- 	ab_ahb->ab = ab;
-+	ab_ahb->userpd_id = userpd_id;
- 
- 	/* Set fixed_mem_region to true for platforms that support fixed memory
- 	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-index 1105473917ce..b17e7693b31a 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.h
-+++ b/drivers/net/wireless/ath/ath12k/ahb.h
-@@ -25,6 +25,13 @@ enum ath12k_ahb_smp2p_msg_id {
- 	ATH12K_AHB_POWER_SAVE_EXIT,
- };
- 
-+enum ath12k_ahb_userpd_irq {
-+	ATH12K_USERPD_SPAWN_IRQ,
-+	ATH12K_USERPD_READY_IRQ,
-+	ATH12K_USERPD_STOP_ACK_IRQ,
-+	ATH12K_USERPD_MAX_IRQ,
-+};
-+
- struct ath12k_base;
- 
- struct ath12k_ahb {
-@@ -34,6 +41,15 @@ struct ath12k_ahb {
- 	struct completion rootpd_ready;
- 	struct notifier_block root_pd_nb;
- 	void *root_pd_notifier;
-+	struct qcom_smem_state *spawn_state;
-+	struct qcom_smem_state *stop_state;
-+	struct completion userpd_spawned;
-+	struct completion userpd_ready;
-+	struct completion userpd_stopped;
-+	u32 userpd_id;
-+	u32 spawn_bit;
-+	u32 stop_bit;
-+	int userpd_irq_num[ATH12K_USERPD_MAX_IRQ];
- };
- 
- static inline struct ath12k_ahb *ath12k_ab_to_ahb(struct ath12k_base *ab)
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index a4332588b117..d4a2e47169d9 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -97,6 +97,7 @@
- #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
- 
- #define ATH12K_PCIE_MAX_PAYLOAD_SIZE	128
-+#define ATH12K_IPQ5332_USERPD_ID	1
- 
- enum ath12k_hw_rate_cck {
- 	ATH12K_HW_RATE_CCK_LP_11M = 0,
 -- 
 2.34.1
 
