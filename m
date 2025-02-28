@@ -4,65 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B04EDC19776
-	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 13:45:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58E47C19776
+	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 14:42:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lg5hPU/uY1qyK3mZY+dAoRZXvu9zhz0vOaPCxWh92mU=; b=BOjpSqCosXtoya9G9LU3i2zLs+
-	0ZM712F1FEnO2YysLkGKP5dIspEO6d7tqDprhU6XqhdXZvjbIMkP4vwr9c/uaCCP6hnt20+ywl1b3
-	QvSD+h9eAml4TWDx9s3aWX8JpEPMaGAw5FHz33p4dWTB+mW72vuLeGzzUhsDp7pH3Vaixoiix0kka
-	I6p5dEahorXzNvYfdgStWV5lu3tGWxS8xNSudHdkH4k7DgAxEquIsirpxojxgdKrtB++nJtOAzvk5
-	5mQghlbIUsSPyXYb1mRmqdxWS737I3Ogop+BxjbHcqd6c5tEEzLugXZpu/Z7aZbMXTlazqLSorptB
-	AD0AmN7Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xANmBR63rsukBgh4Ti9sEiPLDfn1CRbSV6qWPW9XsaA=; b=Eq3jQ3Xn6dLa+tzJx9b7o6KeKv
+	9b4Uek12KcGSahofiE35Su85L9co3AiLq8AU5QYeEy1rug0Sc4M6Gqh23bbelytwdQWWGfgM3rPZ0
+	DvZ6iqAPkLLKODkY6QyXkbYPqPAm5dNtASgEhJq0mH9PH4Nmf2abijnWW59ISxMSo1+QuKBtRKpYS
+	H15GOsYRn5Rh0OkR1J+wek9C8vWuQQLjzzHjcMDSMiPLaUcKQqv6S4/VaGFsNk3lvE/3+8nSqyEHi
+	PHMlBoaN6nidk2LvouPx3hVXnwI+5VeUb+a70VOYJka1gLIYbEt4XD6FnLC42iqFWXue+psHxcYWc
+	T0jopJog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1to0gU-0000000B7H4-1vHI
+	id 1to1ZW-0000000BJBe-0U0j
 	for ath12k@archiver.kernel.org;
-	Fri, 28 Feb 2025 13:45:46 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Fri, 28 Feb 2025 14:42:38 +0000
+Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1to0ff-0000000B76n-0gTC;
-	Fri, 28 Feb 2025 13:44:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=lg5hPU/uY1qyK3mZY+dAoRZXvu9zhz0vOaPCxWh92mU=;
-	t=1740750294; x=1741959894; b=VuvkT1BHus4dPbXmaFlunuqdoSutOZi59cGDW5BrhmduOPJ
-	zELUMo8hImBT7SUVYRG/5vdD5Al8PwQcIgsWlDNm8Y0Md2/J+KF0UoAqNbwp9E/t3twuI0083Yk1r
-	S2DP4UZxP1KbHprodHDKcH4Pv9lPwxNdyyxZFvjLG5jvXNxGeuNZm7wuzSes4xaF/yfOWi4SS/JHl
-	qsRBvUhMSqOeo5HweX5W5ZgWU4Q7ZjdS/IGxL6WY320lWMmlClCZPiTm3MLroZMJ7nOqAFWZpTFJv
-	V5r29unQlrJxeEbc2hA8X/WtGcT+jVsatyB6DC0lah1NdKTj4U0hp1XNiyGqVXDg==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1to0fb-0000000Dm6H-228K;
-	Fri, 28 Feb 2025 14:44:51 +0100
-Message-ID: <e38f01b2fe15902770cc11de24e82fcfed1aad5d.camel@sipsolutions.net>
-Subject: Re: [PATCH v3 2/3] wifi: mac80211: restructure tx profile retrieval
- for MLO MBSSID
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Aloka Dixit <aloka.dixit@oss.qualcomm.com>, ath11k@lists.infradead.org, 
-	ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-Cc: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>, Muna
- Sinada	 <muna.sinada@oss.qualcomm.com>
-Date: Fri, 28 Feb 2025 14:44:48 +0100
-In-Reply-To: <20250213225036.3118133-3-aloka.dixit@oss.qualcomm.com>
-References: <20250213225036.3118133-1-aloka.dixit@oss.qualcomm.com>
-	 <20250213225036.3118133-3-aloka.dixit@oss.qualcomm.com>
+	id 1to1Gy-0000000BFLV-2JNY;
+	Fri, 28 Feb 2025 14:23:28 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 5B2CC61F51;
+	Fri, 28 Feb 2025 14:23:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 99890C4CEE2;
+	Fri, 28 Feb 2025 14:23:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1740752607;
+	bh=Ixp7yCQwmxH5iAj5X6uih/HSFfgLk+61gfC1s2n2Sog=;
+	h=References:In-Reply-To:From:Date:Subject:To:List-Id:Cc:From;
+	b=hYYfQyes+87D1zRTYv39OBFRpEnSGd8l37xdtNglQGpGcmjCbLirYjyodDymq5eaX
+	 q0TBGVZQXBmE90qnX26v+rxcSUjgbQZzlOWFU9KvtMyWX5eyrA9VvsnE/0kJ5FJiZD
+	 LdvSw2d6Qpqj18QDfIqnw157OME0fa/gE3b7OAlL0gpfi5yHnSMKXHiDGfI5ORT2m8
+	 WuUtBA0rvx9kMTDUlV03HWoCQGoRHFFgVklx42upT3XcNW3kBUTg1dZjCLOtMIYTob
+	 YQhNyjWDwoX1Ee3xPA3oLwpfC0DeEWH78SpISqu+3d0UfYa4AoBs2Y4al4r2gVR9xT
+	 5eLJzeHBSPtIg==
+Received: by mail-yw1-f171.google.com with SMTP id 00721157ae682-6fcf90d09c6so18756667b3.0;
+        Fri, 28 Feb 2025 06:23:27 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCUTc793E3pAU35ZDcAk4sxY2a8RgdtjoEijdxEJbAPCav8NaRszAp1vFkHNyDrADx7kOy3krcDJ@lists.infradead.org, AJvYcCVYQPLL/AMhCXUBMVYtv7Any2pUUGBNnYzohUg3rlfMSRqthHrqZRgY9EQKgcA95FXyAuPrOUo=@lists.infradead.org, AJvYcCXJeAtXNx2g223oa7TJpbzh07nS+KpFiPTHNswCB4KgT9ApGaqfqfO1Xh6uF7qvO15XA5OFyqpi@lists.infradead.org
+X-Gm-Message-State: AOJu0YxLrvYUWos1JU6/++pukB0AXuR7QOFcTAzN4JLQHbSIsxTiEogj
+	DiBl8tmn3uV8CHUsXLe9uPYmRtYJSuOnWCA4xJSqs2tdZRtX44CkBvvnvmExOj4qZIvwmjDjWP3
+	MKDKVJPaCUy9ltoUhBNoGbVbny3s=
+X-Google-Smtp-Source: AGHT+IFBw+C8TJ7OTqiW9TAJfZMrrLscr0uAEq4wfLF+1ArhUSuCv2PPuHPrhhoFsg/POsSt1JR6zA+fHf12wo1fI14=
+X-Received: by 2002:a05:690c:4988:b0:6fb:5d74:959d with SMTP id
+ 00721157ae682-6fd39471851mr104119537b3.1.1740752606896; Fri, 28 Feb 2025
+ 06:23:26 -0800 (PST)
+MIME-Version: 1.0
+References: <74b29af1-4024-4636-af8f-a95fa0f3601e@oss.qualcomm.com>
+In-Reply-To: <74b29af1-4024-4636-af8f-a95fa0f3601e@oss.qualcomm.com>
+From: Josh Boyer <jwboyer@kernel.org>
+Date: Fri, 28 Feb 2025 09:23:14 -0500
+X-Gmail-Original-Message-ID: <CA+5PVA76tdjDE+4+JrpkrQ0+mw2aB-MPtXx6vjaQc77d8AQ6gw@mail.gmail.com>
+X-Gm-Features: AQ5f1Jq49M1aKHoQ4B7ctdYd0pAV_MseN3BJzOya8m5bDxVjlI7OkYAe0iQqH7o
+Message-ID: <CA+5PVA76tdjDE+4+JrpkrQ0+mw2aB-MPtXx6vjaQc77d8AQ6gw@mail.gmail.com>
+Subject: Re: [PULL linux-firmware] ath10k, ath11k and ath12k firmware 20250226
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: linux-firmware@kernel.org, linux-wireless@vger.kernel.org, 
+	ath10k@lists.infradead.org, ath11k@lists.infradead.org, 
+	ath12k@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.54.3 (3.54.3-1.fc41) 
-MIME-Version: 1.0
-X-malware-bazaar: not-scanned
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250228_054455_200071_87D92930 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,37 +81,58 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2025-02-13 at 14:50 -0800, Aloka Dixit wrote:
-> From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
->=20
-> For MBSSID, each vif (struct ieee80211_vif) stores another vif
-> pointer for the transmitting profile of MBSSID set. This won't
-> suffice for MLO as there may be multiple links, each of which can
-> be part of different MBSSID sets. Hence the information needs to
-> be stored per-link. Additionally, the transmitted profile itself
-> may be part of an MLD hence storing vif will not suffice either.
-> Fix MLO by storing an instance of struct ieee80211_bss_conf
-> for each link.
->=20
-> Modify following operations to reflect the above structure updates:
-> - channel switch completion
-> - BSS color change completion
-> - Removing nontransmitted links in ieee80211_stop_mbssid()
-> - drivers retrieving the transmitted link for beacon templates.
->=20
-> Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.co=
-m>
-> Co-developed-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
-> Signed-off-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
-> Co-developed-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
-> Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
-> ---
->  drivers/net/wireless/ath/ath11k/mac.c         | 20 +++--
->  drivers/net/wireless/ath/ath12k/mac.c         | 33 ++++++---
+On Wed, Feb 26, 2025 at 6:08=E2=80=AFPM Jeff Johnson
+<jeff.johnson@oss.qualcomm.com> wrote:
+>
+> Hi,
+> Here's a new pull request for ath10k, ath11k and ath12k.
+>
+> This request only touches ath11k, and adds new firmware and board file fo=
+r
+> QCA6698AQ hw2.1 and new microcode for QCA6698AQ.
+>
+> Please let me know if there are any problems.
+>
+> /jeff
+>
+>
+> The following changes since commit 1a1470d90de2a25e5befadb2f1fa30758af682=
+ca:
+>
+>   Merge branch 'robot/pr-0-1740366711' into 'main' (2025-02-24 05:26:03 +=
+0000)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git at=
+h-20250226
 
-This probably shouldn't come with so many driver changes in the first
-place, but in any case the changes don't apply on my tree.
+Merged and pushed out.
 
-johannes
+https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/461
 
+josh
+
+>
+> for you to fetch changes up to 811bb52b1d293c3a9641c8747c8963ade18b7e81:
+>
+>   ath11k: QCN9074 hw1.0: update to WLAN.HK.2.9.0.1-02175-QCAHKSWPL_SILICO=
+NZ-2 (2025-02-26 14:53:32 -0800)
+>
+> ----------------------------------------------------------------
+> Jeff Johnson (3):
+>       ath11k: QCA6698AQ hw2.1: update board-2.bin
+>       ath11k: QCA6698AQ hw2.1: update to WLAN.HSP.1.1-04604-QCAHSPSWPL_V1=
+_V2_SILICONZ_IOE-1
+>       ath11k: QCN9074 hw1.0: update to WLAN.HK.2.9.0.1-02175-QCAHKSWPL_SI=
+LICONZ-2
+>
+>  WHENCE                             |   5 +++--
+>  ath11k/QCA6698AQ/hw2.1/amss.bin    | Bin 5132288 -> 5140480 bytes
+>  ath11k/QCA6698AQ/hw2.1/board-2.bin | Bin 866120 -> 986384 bytes
+>  ath11k/QCA6698AQ/hw2.1/m3.bin      | Bin 266684 -> 266684 bytes
+>  ath11k/QCN9074/hw1.0/.notice       |   4 ++++
+>  ath11k/QCN9074/hw1.0/m3.bin        | Bin 340108 -> 340108 bytes
+>  6 files changed, 7 insertions(+), 2 deletions(-)
+>  create mode 100644 ath11k/QCN9074/hw1.0/.notice
 
