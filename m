@@ -4,69 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA48DC19F32
-	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 00:47:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03653C19776
+	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 06:56:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
-	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ku3DMkLSDJrrHzEgYbO69j04S6unATPZdunPnRs1vGQ=; b=F5dDfspfsbq060A4bqg0PhVBJ8
-	OrptxqlRxs5COaIiAnxUr1WhBlp1vsak/SKCQEzAWqi1dEHL/BQDeIrWY+bmqsWLBlgJdVmYegMCI
-	DgIOdVNr2KxkSoqMfLg0dKfeV1tIRXK9imhpuONSNYtY0o+viVzLq67/Yem8E1x1aPpgoQSfLEtY0
-	HyRYHdjGaXCbX9Cu30+zW46HHJcvOd1cD7Z9PPSUHk2v/K7Wxz8SyVx2W/kIma1M6Cjjg2r5isyIq
-	DDwCiZ6dLQLswf9PzPTiJ4Yhaz8MytJMWwbDa6bkIHsl29PsSsYh2uwvR1hygU8THBdVvDOujc7+u
-	ZPL46ioA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=CmP+I79JZfc54sUT9LpWaniemxv4RHk50pfSIPRsecg=; b=Wj0Yb4KjojVGvWmvhqHXbLo/Si
+	Y8ad0ncPIEHrl1ZAf1QdkWooIufP9QxhkzFyqiU2F7GZS4Ed9DnYuiahPVepy4n/b/5V457WlpgtL
+	pjyUrun3TrB16LOr7aU354QvciZ2gcoiR8UGmUAA3IDULpAaG+4F632aCSCd9YW9iUFGpEKXhyOVQ
+	3UTNMzmO5tnRU1ulatECdHZGaSDEvlTqFXF9/kAYuaKyGP51N+8SwtG14C/WBlvpndG75Mob8J0Q/
+	kzQB6Fn5Ms7fS+2KKARYILVUmzvo8O0J3ocE2Nx6p83Z0hGZYMtiIAt4ggJbx7HglzZWkaQjxQAEr
+	Ts3BUHyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnoX1-00000009JZH-2Bxg
+	id 1tnuIN-00000009uuW-3GmB
 	for ath12k@archiver.kernel.org;
-	Fri, 28 Feb 2025 00:47:11 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
+	Fri, 28 Feb 2025 06:56:27 +0000
+Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnoWz-00000009JYP-0K8f
+	id 1tnuC0-00000009uCd-3kMX
 	for ath12k@lists.infradead.org;
-	Fri, 28 Feb 2025 00:47:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=Ku3DMkLSDJrrHzEgYbO69j04S6unATPZdunPnRs1vGQ=;
-	t=1740703628; x=1741913228; b=XPel2GR5VIevRvNJ5U9TbIWmZZ2TIwGv8NkmAwT/8ZFpGXN
-	oKQdP4MpN6HLLuwoxn/RaIkLQxIxmRV8KFznFxkElhhjbxw9oueLQxL2yaykqNgjIte6XrV0kJ70v
-	DFGRnAJXBtMUlDfEuE2ETFJeqlPSZNJ6UvgbxkDcvwuMP37GQFAruOBoRGFQ5Yg9H+o2wBOYCM4PS
-	kl5UjkZWJitAKgvvsdQMoULof9xR0Cg9GAZpq4Y0E4GiLOahIqaaDvJM/KTAZF+KlalD4P1oyOi1V
-	DYUJwnnTIiV4PvmgUwEaKDRi7yAUFVayp/txcz3mmNmDKdajkENvVaaMAva7FjhA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.98)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1tnoWt-0000000D0LN-0og3;
-	Fri, 28 Feb 2025 01:47:03 +0100
-Message-ID: <98b73681e9ebe7e6252dc2a1d62cacf4b0524ff5.camel@sipsolutions.net>
-Subject: Re: [PATCH v3 0/5] wifi: mac80211/ath12k: add support to fill link
- statistics of multi-link station
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, Ping-Ke Shih
-	 <pkshih@realtek.com>, Sarika Sharma <quic_sarishar@quicinc.com>, 
- "ath12k@lists.infradead.org"
-	 <ath12k@lists.infradead.org>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Date: Fri, 28 Feb 2025 01:47:02 +0100
-In-Reply-To: <8bccb677-de56-475a-9b27-ccd55bcaebc5@oss.qualcomm.com>
-References: <20250227045824.91480-1-quic_sarishar@quicinc.com>
-	 <bac3fdc3bd39e45150e5b7d60be01b5d732a04bf.camel@sipsolutions.net>
-	 <df26e3aeb3724d969f444eab65d8c872@realtek.com>
-	 <900f042d03d34385fa3507610ae291a36ca4885b.camel@sipsolutions.net>
-	 <8bccb677-de56-475a-9b27-ccd55bcaebc5@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.54.3 (3.54.3-1.fc41) 
+	Fri, 28 Feb 2025 06:49:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 6EBCF61127;
+	Fri, 28 Feb 2025 06:49:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50CB4C4CED6;
+	Fri, 28 Feb 2025 06:49:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1740725391;
+	bh=rXw9+brQeTau2dxyqBTQ41APqTeb6N30ZtiNWP/sOuk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=GJcXqIbMe1WqxF/P4TuxzoQ2UcsxtjKLs7YymQYjgt/3sv2ciecaTJ34B8wyDrwiS
+	 Ssmf3qUP2eHhHC93fsa7XiQ2jhbNi/7pvynqjXzmC9irq5+pGe8LqDCMJrudeJue0f
+	 UcXIoKK1PjRaJI6ye6+nc9jTwD/QfzrlJuac4/XAbN4Hv19YWya+tU8MO0gLa+D+5z
+	 dwQrVtkAXrzqSFrAslEhBPR2t3rZKg6IdO77bWgwlIjdx2WrDjEI4jhAa7LoN+CBHh
+	 KSDa4EtbVINVJkyKYDrDsyPCRt5cLgCi9GccnFcN24nOg7ym7suWXPMpBCd4rzqbYY
+	 /QQ0/mTVNLihg==
+Message-ID: <2d7cedd6-48f6-4cc8-82c3-ce560d7af545@kernel.org>
+Date: Fri, 28 Feb 2025 07:49:45 +0100
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250227_164709_388403_1BD3A7AC 
-X-CRM114-Status: GOOD (  12.28  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 01/13] dt-bindings: net: wireless: describe the ath12k
+ AHB module for IPQ5332
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
+Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250227191034.1949954-1-quic_rajkbhag@quicinc.com>
+ <20250227191034.1949954-2-quic_rajkbhag@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20250227191034.1949954-2-quic_rajkbhag@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,27 +119,15 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2025-02-27 at 11:35 -0800, Jeff Johnson wrote:
-> On 2/27/2025 1:32 AM, Johannes Berg wrote:
-> > On Thu, 2025-02-27 at 09:30 +0000, Ping-Ke Shih wrote:
-> > >=20
-> > > I have encountered structural (not functional) dependency problem too=
-.=20
-> > > Could you share how I can tell NIPA the dependency between two patchs=
-et?
-> > >=20
-> >=20
-> > I don't think you can at all, at this point.
->=20
-> So it doesn't support the mechanism 'b4' can handle, namely having a
-> base-commit: tag along with one or more prerequisite-patch-id: tags?
+On 27/02/2025 20:10, Raj Kumar Bhagat wrote:
+> Add device-tree bindings for the ATH12K module found in the IPQ5332
+> device.
+> 
+> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+> ---
 
-I don't really know, but I don't think so. Note that (afaict) b4 also
-doesn't really use it to select the base to apply things to, it uses it
-to make a 3-way merge to the tree you want to apply the patches to. I
-doubt that would have helped here, given that it was trying to apply the
-patches to the wireless-next tree, where that commit likely wouldn't
-have been present anyway.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-johannes
+Best regards,
+Krzysztof
 
