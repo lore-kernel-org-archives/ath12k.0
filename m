@@ -4,107 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03653C19776
-	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 06:56:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99D2DC19776
+	for <ath12k@archiver.kernel.org>; Fri, 28 Feb 2025 12:32:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CmP+I79JZfc54sUT9LpWaniemxv4RHk50pfSIPRsecg=; b=Wj0Yb4KjojVGvWmvhqHXbLo/Si
-	Y8ad0ncPIEHrl1ZAf1QdkWooIufP9QxhkzFyqiU2F7GZS4Ed9DnYuiahPVepy4n/b/5V457WlpgtL
-	pjyUrun3TrB16LOr7aU354QvciZ2gcoiR8UGmUAA3IDULpAaG+4F632aCSCd9YW9iUFGpEKXhyOVQ
-	3UTNMzmO5tnRU1ulatECdHZGaSDEvlTqFXF9/kAYuaKyGP51N+8SwtG14C/WBlvpndG75Mob8J0Q/
-	kzQB6Fn5Ms7fS+2KKARYILVUmzvo8O0J3ocE2Nx6p83Z0hGZYMtiIAt4ggJbx7HglzZWkaQjxQAEr
-	Ts3BUHyA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=oUy9M5HV9p9S6goYWBEtQkOjb1wmn3X9SwMBmIALgzs=; b=pV6wzUWviTBJQVb1ezpjfCoeaO
+	4/MdM7xTqv1CZ/d+3C/xVa01r3tjZ2kROJtbvrTv2bmkJ5U6MYGJjH/0pwB4VzAriQm4EqFnhQraT
+	nCucYkrAdixVPBLCPILL5Al4alczb7ivHqnYRabQqkg/nw0prA9PSGmzrOEK4ferb6y0zndJb9xCz
+	/LbtOawjOsa8Tn+8DNp95l9says86XzFn3jRFvhLRR/RoKpCe/+B01kx1q7gl6zWc64Rz+NjMT97X
+	Q21vq9Rc5LXJzquvBk5hSnPV3IYTcQTV1IT1sJwoXsCCDS/E5rpidRAsQpe5FOtbBH0E3QLtPFuz0
+	Y6gUw4pQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnuIN-00000009uuW-3GmB
+	id 1tnzXx-0000000AvNy-1fOf
 	for ath12k@archiver.kernel.org;
-	Fri, 28 Feb 2025 06:56:27 +0000
-Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
+	Fri, 28 Feb 2025 12:32:53 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnuC0-00000009uCd-3kMX
+	id 1tnzXu-0000000AvNQ-2x3T
 	for ath12k@lists.infradead.org;
-	Fri, 28 Feb 2025 06:49:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6EBCF61127;
-	Fri, 28 Feb 2025 06:49:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50CB4C4CED6;
-	Fri, 28 Feb 2025 06:49:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740725391;
-	bh=rXw9+brQeTau2dxyqBTQ41APqTeb6N30ZtiNWP/sOuk=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=GJcXqIbMe1WqxF/P4TuxzoQ2UcsxtjKLs7YymQYjgt/3sv2ciecaTJ34B8wyDrwiS
-	 Ssmf3qUP2eHhHC93fsa7XiQ2jhbNi/7pvynqjXzmC9irq5+pGe8LqDCMJrudeJue0f
-	 UcXIoKK1PjRaJI6ye6+nc9jTwD/QfzrlJuac4/XAbN4Hv19YWya+tU8MO0gLa+D+5z
-	 dwQrVtkAXrzqSFrAslEhBPR2t3rZKg6IdO77bWgwlIjdx2WrDjEI4jhAa7LoN+CBHh
-	 KSDa4EtbVINVJkyKYDrDsyPCRt5cLgCi9GccnFcN24nOg7ym7suWXPMpBCd4rzqbYY
-	 /QQ0/mTVNLihg==
-Message-ID: <2d7cedd6-48f6-4cc8-82c3-ce560d7af545@kernel.org>
-Date: Fri, 28 Feb 2025 07:49:45 +0100
+	Fri, 28 Feb 2025 12:32:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=oUy9M5HV9p9S6goYWBEtQkOjb1wmn3X9SwMBmIALgzs=;
+	t=1740745968; x=1741955568; b=Th661tN32gUMysmn208a5aOjNH/V8b/BBu5qYh4dPjP15YB
+	TgJEQl+8lZq2aChsBcMZT06e100qvbH1SG8zyNZmXWGW0dH4KSg94i2Z5RcCV26V5UjWebx4ElTSO
+	PQNstoflLEeimBwCCja4EdGTz1AW2csIjkMFyazQgFwBu8tZJ+/Tx2k6ZBkMYYZf+rHFKt7r95BxI
+	YirKjcD+hEV95IfnMMThLW2BT+xZ5kpHrgaQ6+E3qXpE8tDS/SNM4pn8AMWXT5uLxvEgH5VkaBpBm
+	t3GCgPx25bjXzCR4yL1IkcHuH+OExNOXnP1N17Rzk3a75ZsncUCu18inQVVA11TA==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1tnzXp-0000000Dj2c-2rQD;
+	Fri, 28 Feb 2025 13:32:45 +0100
+Message-ID: <66e4ec1984c816bd8e0a95a8bced753d780e30fe.camel@sipsolutions.net>
+Subject: Re: [PATCH v2 1/3] wifi: cfg80211: Add support to get EMLSR
+ capabilities of non-AP MLD
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, Ramasamy
+ Kaliappan <quic_rkaliapp@quicinc.com>
+Date: Fri, 28 Feb 2025 13:32:44 +0100
+In-Reply-To: <20250117170416.2907530-2-quic_ramess@quicinc.com>
+References: <20250117170416.2907530-1-quic_ramess@quicinc.com>
+	 <20250117170416.2907530-2-quic_ramess@quicinc.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.54.3 (3.54.3-1.fc41) 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 01/13] dt-bindings: net: wireless: describe the ath12k
- AHB module for IPQ5332
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
-Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250227191034.1949954-1-quic_rajkbhag@quicinc.com>
- <20250227191034.1949954-2-quic_rajkbhag@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250227191034.1949954-2-quic_rajkbhag@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+X-malware-bazaar: not-scanned
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250228_043250_750612_CEE2FFF4 
+X-CRM114-Status: GOOD (  16.38  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,15 +76,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 27/02/2025 20:10, Raj Kumar Bhagat wrote:
-> Add device-tree bindings for the ATH12K module found in the IPQ5332
-> device.
-> 
-> Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
-> ---
+On Fri, 2025-01-17 at 22:34 +0530, Rameshkumar Sundaram wrote:
+>=20
+>  include/net/cfg80211.h |  5 +++++
+>  net/wireless/nl80211.c | 12 ++++++++++++
+>  2 files changed, 17 insertions(+)
+>=20
+> diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+> index 363d7dd2255a..7a80dbf37881 100644
+> --- a/include/net/cfg80211.h
+> +++ b/include/net/cfg80211.h
+> @@ -1756,6 +1756,9 @@ struct cfg80211_ttlm_params {
+>   * @supported_oper_classes_len: number of supported operating classes
+>   * @support_p2p_ps: information if station supports P2P PS mechanism
+>   * @airtime_weight: airtime scheduler weight for this station
+> + * @eml_cap_present: Specifies if EML capabilities field (@eml_cap) is
+> + *	present/updated
+> + * @eml_cap: EML capabilities of this station
+>   * @link_sta_params: link related params.
+>   */
+>  struct station_parameters {
+> @@ -1780,6 +1783,8 @@ struct station_parameters {
+>  	u8 supported_oper_classes_len;
+>  	int support_p2p_ps;
+>  	u16 airtime_weight;
+> +	bool eml_cap_present;
+> +	u16 eml_cap;
+>  	struct link_station_parameters link_sta_params;
+>  };
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+OK, I get that this is the minimal change that actually makes this work,
+but it seems a bit lazy to me. Allow me to explain: You don't actually
+_want_ - nor even implement in patch 3 - this changing at any point in
+runtime. OTOH, you _do_ need it to change after the station is
+allocated, because in auth frame exchange you don't have the information
+yet, and that's when the MLD is added.
 
-Best regards,
-Krzysztof
+So I really think this ought to be accompanied with a change to
+cfg80211_check_station_change() that disallows changing this while the
+station is already associated?
+
+johannes
 
