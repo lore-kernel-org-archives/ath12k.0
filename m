@@ -4,110 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E072C282CD
-	for <ath12k@archiver.kernel.org>; Mon,  3 Mar 2025 15:00:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07335C282C6
+	for <ath12k@archiver.kernel.org>; Mon,  3 Mar 2025 18:58:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=CS8fOkB/2o1tqv0C/vSIKz5akXsPp61Y6yRvRf4d3qg=; b=sOE//xq/N2fxf31Hh4BG6ENI8g
-	DMxYpAgeoQ/KjFga3g3fiPm2jZHmNYR7vrG9uMz5vx0uKtVDniTVlCILSDNinA3jrSssJo0SkZH6z
-	BIFXtAYIa+g4Irs4oBSEybvkPvKuya3esPEExxWdygY59L4N//kg+t5KWW4WJeZv0ZFs7MD3V29Qp
-	zSPC5TPMG3UR5pIFXHMAzCJw9p4cQ5QsNWwRDQhKD/H1gXXoAl6Sw2TTLsx19iwUH2ncaM74bjGb3
-	WvDzzx/WMEVp94u5GjLqddGUXdcq191dH1PQqgzlrPAQJPE/21TuAuWZn2IGY9dwsQVRLm2eEsli4
-	geMp4hMQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=YsKHwPyakFDRtES+T+7/Q0gwDO/LMXT6KYV55aqeyaw=; b=aflkAQMOwO5zabfNIHK72I72Wg
+	TBjMDOqtxAnYUmlOQmgYwyYqWwWct831yMZp7H+VPnyuaU+YvpFG8AdSqMFZyKph4kAAcvm4QMcSp
+	F94LrzWyWeWTQOICeq6ZZ7iMQM50sS5hHHRBWUrghC8AnjnKcztSfxzpJYk9eagxMDMbBfefNRdmW
+	Mrhzk8J1DQg54ZfCk4utkBsJ7c0rwJImY5zWxkgp72qDOkskCMxn2c9G5FCAEEvyiAihloLp63aGh
+	1btDXBPWVDRwwkUaWV9yhnlHFPTW/XWbJ6e34UhP/ApaJiB+qDiGw+w+eUXUtQ58QXPcmkcj/4+AC
+	kizQ9d5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tp7HP-00000001Cfr-0gx7
+	id 1tpAzl-000000020Lu-3Ggz
 	for ath12k@archiver.kernel.org;
-	Mon, 03 Mar 2025 15:00:27 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	Mon, 03 Mar 2025 18:58:29 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tp7HN-00000001Cec-2nn5
+	id 1tpAzO-000000020KZ-03No
 	for ath12k@lists.infradead.org;
-	Mon, 03 Mar 2025 15:00:26 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-390ec7c2cd8so2101788f8f.1
-        for <ath12k@lists.infradead.org>; Mon, 03 Mar 2025 07:00:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1741014023; x=1741618823; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=CS8fOkB/2o1tqv0C/vSIKz5akXsPp61Y6yRvRf4d3qg=;
-        b=jmDtbSrVK0N1e80fBnV+9kDl8YY4ZS2Uye7KSvNPy8ZXA5NtKoZ6R+jeZgXiid/68h
-         qE1Vk7c0WAVBLuBU/G94tY+/s49p7QNhZD4TehluNHp9VX+po2kh+gXfYqaO1rtaHRxY
-         t54Fs6VWdNc8GdpnR6C3PniJ8Oga6KL3jZ7u6xhL4FDEYzrXCFJodt+w+WhlxXX8KBdK
-         VhhMOdZz9zZ5X2VoWUwfcyqYzSorRkjki3c+9tSitcIKHZO2fnZrQq5rkKOhXtZx3EDo
-         sAeT07ZOE/nf0SHiFLwhoa/Dkws3DFUKQMWTD14B7FvWYMTbDddaoMqX/V3RGc23gsuD
-         aZNg==
+	Mon, 03 Mar 2025 18:58:07 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 523AmNZm001154
+	for <ath12k@lists.infradead.org>; Mon, 3 Mar 2025 18:58:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	YsKHwPyakFDRtES+T+7/Q0gwDO/LMXT6KYV55aqeyaw=; b=WreSL/YTco6Yth3N
+	1PaARfUGv3SRN0b5i+PFGVu1qFL2ld4AUMDbfscADxapdjw3M8Lw6qx7S+zLbxhf
+	64QbsI3vkyaRE3vRpX+ovRjLM5PhSwR2WSQbJb9TpMj2ELpGGUOiiYywllQDGrLb
+	bmBYQ/RtqLOVyWoEQzuOHGNJAMhUOd+TuWfTN5lJDOWA83FoifwWhOXlVvtempTQ
+	qOMmdzN8jzpOmHRgUp/ZjkF6Xp66xGNowMdqUYtwWoKItpFkPHjRs5Y3Ygxmc+/A
+	yfn5xJXDxfAh1lcuVaTYyIVJoZAjgMGeUpxzCdaQ4VsipzwWBAYUwJ98/1BLtIm5
+	36eG7Q==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 453tasdvyc-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 03 Mar 2025 18:58:04 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-223725aa321so7536415ad.2
+        for <ath12k@lists.infradead.org>; Mon, 03 Mar 2025 10:58:04 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741014023; x=1741618823;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=CS8fOkB/2o1tqv0C/vSIKz5akXsPp61Y6yRvRf4d3qg=;
-        b=MfUF5lp2hTjbrzT/rNpKwimTXLJXk1Ow88f/3AYV32gG/OirUsyQFwI/ZjMackDC4p
-         iofrGfnNQI2M7ffS1rypzfDTTryaMCD9V/2Z+zABA/OT5hCVI+NfOEv8ObKlkfZANzDS
-         o0PxKmf4AGth53RnOGtmeeCE8mSPhZJ2aAfKc71VCVGyCLrBu94NbCtPfxJHcpoB7n+q
-         uEnPaI8Lmg2KByQ7pTrjqZIWl7AB07WewU4tWOCNAfMmupjZOvPK15UI/UPOV9QSUkcT
-         6qzoNfdZFV+KlWsOFp5xmL4XUF+XxB/sYkR7A/gAITMSaVCa35LiLh8n14KLGtU/yCph
-         eUmA==
-X-Forwarded-Encrypted: i=1; AJvYcCUPG8dhX+TV7np2gXp7cDQdGCvsR5Q2qZ/5s8N0Xhluu53ZVoqu6Y7k+Oe0RrqnQBMr0R+kELc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxqZu9xJdSOFSipKndzCx8RPYQImBlh/A/qfVbebEO8YsLpQZl1
-	5enNDPtwGvtXam1IPkfwSGFQ3F43OWKBLr0RKVwqqpgSUDtYyUlDInqxgpLOvHQ=
-X-Gm-Gg: ASbGnctq7CWTcQN/NRaT6XDkb3Qo8Igje4FAp3OIh4ANBVrpJCeOvpDJrmbXdy+PgfS
-	0v4UinfMAdVlgNey00SNGeacX8bK6o4XGQpW9ZR5pHV9LRufmxNqfBjIF0MPI99pCDy8NMT/niV
-	rxu+NESelKOYZfTggsK84GXXMfRaLJ1cPs6wPu/eECKNu7DIAw4cGrXWal912YZ1prg98nHoEnT
-	JAmBkE6sBSLrzrL2O4/yC9IyVpk5NmKsv31b7gX427+ncpy7HLbOuditjTlYovi834hiu6lRrST
-	+zl6XWo9QqRZ7c4ZB/K2NSTjHV9l/Sr4zJxJDqUnKbaguxKz02tlsrlDZmZ91vqnpg==
-X-Google-Smtp-Source: AGHT+IGzxcAosUY7UZOkZGBKGsfyOleMjoBQWswmFK4WzjmdOJ8Zb7pyuQRUwLOTwEQbHnLoZZ+osw==
-X-Received: by 2002:a05:6000:1a8f:b0:390:ef12:2ee4 with SMTP id ffacd0b85a97d-390ef122f8emr11173836f8f.25.1741014023167;
-        Mon, 03 Mar 2025 07:00:23 -0800 (PST)
-Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-390e485e03asm14985727f8f.95.2025.03.03.07.00.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 03 Mar 2025 07:00:22 -0800 (PST)
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Mon, 03 Mar 2025 16:00:20 +0100
-Subject: [PATCH net] wifi: ath12k: properly set single_chip_mlo_supp to
- true in ath12k_core_alloc()
+        d=1e100.net; s=20230601; t=1741028283; x=1741633083;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=YsKHwPyakFDRtES+T+7/Q0gwDO/LMXT6KYV55aqeyaw=;
+        b=RvVqK+v5Ss19giy4Ia8dQfTVgp/ropvWDylth6m+XRAgzqhgvZ6UDI2YAmczhFASO8
+         09rACJsgE6x/6KNZJ7EApf1CvZyG+MY2042rCrJ1MDJhrlEEE6ojk1GJdGTVtNrzfJ6L
+         1i9TDNqKPFb3Stc66dgC3gbABUgXAe/DgzrqS5VMyMjT08exfLDCwYhkJ9DctTmFw/iw
+         MTTAj4MncMI0jPO+OL13XLvZycVkAtRr7ENxSmTfx74zjJA8eSksKteXJ8WCbVzGG4Ec
+         FAFgwFvgE+MmdzovEhMvZL5fXkGzPHsghevZXzcFJRN4S8uTiWCiXWddseWdcVk/LuIf
+         uDyA==
+X-Forwarded-Encrypted: i=1; AJvYcCVvgygX1ouGLE5H5vfhByB05CzCFzPELUTZ3aBHnVLEsw2Ab4fddxkqBjfTFFE98PGKZpf3a8E=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyiux2VT3hD0jCDmN/lO5GftWH6Q17ixRdkJX3pvQb1iVUM6Aak
+	2WQE7MFFwZGUmMRZeYL3CF4SNxDRtmjNbbb+7RhRNNr8wgtefCek3vmhpT/COPU2TrRAFhFmXG6
+	SmeDd6OR+ROx84NDg7raFDeD2+16SSnmozpYqyf/6OaHZieY71T4tCN6+2gKx
+X-Gm-Gg: ASbGncsXVoH1R5c9XRgtrNwvHkbulK7LWwCmURuYoL5hYS9VGHddHTl7HzkJ0urb7ku
+	IeBnevSHGMoV7U46ZlFEg08XQLslcl+oY3fVHLJkpHQdSzpd1F9mkMArsUsp8G+cUMhMtl6T7Rm
+	ZNDp0sTWbCTvUPeiEu9epVDRdwyg591O9p+qaSzMXDtkh7i4z4riwEuFG34ruIlUv/Mg1tfCMYP
+	4VX0PEroXDswFj4S60mMtJcxSl50wFDy0ty00nQ5hMIurx2QYr04lBkC2eOnKzlSJLSoQwLx/hK
+	9R6+9eqyYOnt9PSqrYxQF74EDKHTB7zseO8PpoRXQEY3rWlO0uypcjOLgIbYK2YnXHcqGGszEWx
+	i8M2xAL1M
+X-Received: by 2002:a05:6a21:110:b0:1f1:817:64cf with SMTP id adf61e73a8af0-1f2f4e4e495mr23799815637.37.1741028283228;
+        Mon, 03 Mar 2025 10:58:03 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGUykW5x9XbBIshU6ygZB6a+zQ9TtV2CwGQnAIwjD0aEsfN4kQZdY/EyizdJ71iGLwfZjj53Q==
+X-Received: by 2002:a05:6a21:110:b0:1f1:817:64cf with SMTP id adf61e73a8af0-1f2f4e4e495mr23799789637.37.1741028282855;
+        Mon, 03 Mar 2025 10:58:02 -0800 (PST)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-734af6abc02sm7152633b3a.110.2025.03.03.10.58.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 03 Mar 2025 10:58:02 -0800 (PST)
+Message-ID: <d926be86-94d2-4c72-b9ad-4686583f8663@oss.qualcomm.com>
+Date: Mon, 3 Mar 2025 10:58:01 -0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] wifi: ath12k: Pass correct values of center freq1 and
+ center freq2 for 160 MHz
+To: Suraj P Kizhakkethil <quic_surapk@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250204053451.2703834-1-quic_surapk@quicinc.com>
+ <20250204053451.2703834-2-quic_surapk@quicinc.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20250204053451.2703834-2-quic_surapk@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-Message-Id: <20250303-topic-ath12k-fix-crash-v1-1-f871d4e4d968@linaro.org>
-X-B4-Tracking: v=1; b=H4sIAAPExWcC/x2MWwqAIBAArxL73YKPDOwq0YfYlkugoRJBdPekz
- 2GYeaBQZiowdQ9kurhwig1k34EPLu6EvDYGJZQRWmis6WSPrgapDtz4Rp9dCThYssIYP0onocV
- npib/8QyRKizv+wEmJKefbQAAAA==
-X-Change-ID: 20250303-topic-ath12k-fix-crash-49e9055c61a1
-To: Johannes Berg <johannes@sipsolutions.net>, 
- Jeff Johnson <jjohnson@kernel.org>, 
- Aditya Kumar Singh <quic_adisi@quicinc.com>, Kalle Valo <kvalo@kernel.org>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
- linux-wireless@vger.kernel.org, ath12k@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
- Neil Armstrong <neil.armstrong@linaro.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3032;
- i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=YYeGUb3k93KBXD4drA2C9f+vdF4GK7YW6npk41CFHg4=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBnxcQGiac9YMG/uxNSPYupMemIH+BO2QczD7l4HE93
- pmHw18GJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZ8XEBgAKCRB33NvayMhJ0Z8gD/
- oCcwjPhgqu+IULIv7xd9PpGqkN/jqJgGafyQmUriQbfj7JnoGNj2DO86DHIKhjb/1vi0+6LC0imcBd
- /EtuQk9MZWgAfqYQYEOCbPVk9UtJnpG5C6osAjU6j73F90p5bF0MZkvU3asA8H6Gps5tNXqpwumVGG
- OV4cXFWX/20HZ4w/T+WZLWh5dJsJ7YFvrigU0x10VtEoz5eIGkS7rcznvKdOARlksoxr/WMQNI9CLc
- gDNltzB1STfhE5y0EnBbfhEs58cHcK1QOrx2IUits+JgXmmRiDmgtplYoMzxz78lDyrMZOpl2aFpfZ
- 0TxpPa270xeoyFBppIdyJcoxw9H/T3SuvoPrZbIO2o1XUBmVhUjzapQTiNzHfgkkuc3TKDr3f9vkNq
- wzQIEhMh9+Avtsx7dH/9Ml5zPFRHYJmFe8dZo4XlgNyWvZlO+QbqRyT3yIj+Z9tGONDZX6HpuWNivJ
- +ndvDl/MFsLEcxsyqs4m3eVpyIt3yoNn2mDUNm7qRn2JGuJmqlymvihHGZB4MJ330YYmY/3cgXy/Te
- Z6U4C27bdtZRgyAZvtoKZnvs0rb4fDXK39kq8b2M4YWry/N4+aHTo8UoO/o5+e6rDQVzJfqAeA4iW3
- bDivOa6LJ3bzuntyU+fEf+bDWUWLU+1v+K+lxjQ+mTzfq6uavdLN5BB9r6tQ==
-X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
- fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
+X-Proofpoint-GUID: V9vd41s6HmGvTo7G79-0wmpjwDapw7P4
+X-Proofpoint-ORIG-GUID: V9vd41s6HmGvTo7G79-0wmpjwDapw7P4
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-03_09,2025-03-03_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=999 spamscore=0 phishscore=0 mlxscore=0 priorityscore=1501
+ bulkscore=0 lowpriorityscore=0 malwarescore=0 impostorscore=0 adultscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2503030144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250303_070025_723163_C29A2061 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250303_105806_200152_031EDB1C 
+X-CRM114-Status: GOOD (  18.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,70 +120,57 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In commit 46d16f7e1d14 ("wifi: ath12k: rename mlo_capable_flags to single_chip_mlo_supp")
-the line:
-	ab->mlo_capable_flags = ATH12K_INTRA_DEVICE_MLO_SUPPORT;
-was incorrectly updated to:
-	ab->single_chip_mlo_supp = false;
-leading to always disabling INTRA_DEVICE_MLO even if the device supports it.
+On 2/3/2025 9:34 PM, Suraj P Kizhakkethil wrote:
+> Currently, for 160 MHz bandwidth, center frequency1 and
+> center frequency2 are not passed correctly to the firmware.
+> Set center frequency1 as the center frequency
+> of the primary 80 MHz channel segment and center frequency2 as
+> the center frequency of the 160 MHz channel and pass the values
+> to the firmware.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Suraj P Kizhakkethil <quic_surapk@quicinc.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/wmi.c | 14 ++++++++++++--
+>  1 file changed, 12 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+> index f934d49acee6..848a65268194 100644
+> --- a/drivers/net/wireless/ath/ath12k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath12k/wmi.c
+> @@ -1037,14 +1037,24 @@ int ath12k_wmi_vdev_down(struct ath12k *ar, u8 vdev_id)
+>  static void ath12k_wmi_put_wmi_channel(struct ath12k_wmi_channel_params *chan,
+>  				       struct wmi_vdev_start_req_arg *arg)
+>  {
+> +	u32 center_freq1 = arg->band_center_freq1;
+> +
+>  	memset(chan, 0, sizeof(*chan));
+>  
+>  	chan->mhz = cpu_to_le32(arg->freq);
+>  	chan->band_center_freq1 = cpu_to_le32(arg->band_center_freq1);
 
-The firmware "WLAN.HMT.1.1.c5-00156-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1"
-crashes on driver initialization with:
- ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0x3d soc_id 0x40170200
- ath12k_pci 0000:01:00.0: fw_version 0x110f009c fw_build_timestamp 2024-05-30 11:35 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00156-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
- ath12k_pci 0000:01:00.0: ignore reset dev flags 0x200
- ath12k_pci 0000:01:00.0: failed to receive wmi unified ready event: -110
- ath12k_pci 0000:01:00.0: failed to start core: -110
- failed to send QMI message
- ath12k_pci 0000:01:00.0: qmi failed to send mode request, mode: 4, err = -5
- ath12k_pci 0000:01:00.0: qmi failed to send wlan mode off
+s/arg->band_center_freq1/center_freq1/ here and below
 
-With ab->single_chip_mlo_supp set to True, firmware loads nominally.
+same for the 2/2 patch
 
-Fixes: 46d16f7e1d14 ("wifi: ath12k: rename mlo_capable_flags to single_chip_mlo_supp")
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
----
-Bisect log for reference:
-The bisect leaded to:
-git bisect start 'v6.14-rc4' 'v6.12'
-git bisect good 5757b31666277e2b177b406e48878dc48d587a46
-git bisect bad d78794d4f4dbeac0a39e15d2fbc8e917741b5b7c
-git bisect bad cf33d96f50903214226b379b3f10d1f262dae018
-git bisect good 12e070eb6964b341b41677fd260af5a305316a1f
-git bisect bad 6917d207b469ee81e6dc7f8ccca29c234a16916d
-git bisect good 4fefbc66dfb356145633e571475be2459d73ce16
-git bisect bad a6ac667467b642c94928c24ac2eb40d20110983c
-git bisect bad b05d30c2b6df7e2172b18bf1baee9b202f9c6b53
-git bisect good 56dcbf0b520796e26b2bbe5686bdd305ad924954
-git bisect bad d302ac65ac938516487f57ae20f11e9cf6327606
-git bisect good 8c2143702d0719a0357600bca0236900781ffc78
-git bisect good a5686ae820fa7ab03226a3b0ff529720b7bac599
-git bisect bad 6f245ea0ec6c29b90c8fa4fdf6e178c646125d7e
-git bisect bad 46d16f7e1d1413ad7ff99c1334d8874623717745
----
- drivers/net/wireless/ath/ath12k/core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 0606116d6b9c491b6ede401b2e1aedfb619339a8..33aba5fceec946fad5a47a11a4d86b7be96e682e 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1927,7 +1927,7 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 	ab->dev = dev;
- 	ab->hif.bus = bus;
- 	ab->qmi.num_radios = U8_MAX;
--	ab->single_chip_mlo_supp = false;
-+	ab->single_chip_mlo_supp = true;
- 
- 	/* Device index used to identify the devices in a group.
- 	 *
-
----
-base-commit: 7eb172143d5508b4da468ed59ee857c6e5e01da6
-change-id: 20250303-topic-ath12k-fix-crash-49e9055c61a1
-
-Best regards,
--- 
-Neil Armstrong <neil.armstrong@linaro.org>
+> -	if (arg->mode == MODE_11AC_VHT80_80)
+> +	if (arg->mode == MODE_11BE_EHT160) {
+> +		if (arg->freq > arg->band_center_freq1)
+> +			chan->band_center_freq1 = cpu_to_le32(center_freq1 + 40);
+> +		else
+> +			chan->band_center_freq1 = cpu_to_le32(center_freq1 - 40);
+> +
+> +		chan->band_center_freq2 = cpu_to_le32(arg->band_center_freq1);
+> +	} else if (arg->mode == MODE_11BE_EHT80_80) {
+>  		chan->band_center_freq2 = cpu_to_le32(arg->band_center_freq2);
+> -	else
+> +	} else {
+>  		chan->band_center_freq2 = 0;
+> +	}
+>  
+>  	chan->info |= le32_encode_bits(arg->mode, WMI_CHAN_INFO_MODE);
+>  	if (arg->passive)
 
 
