@@ -4,101 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B099C282D1
-	for <ath12k@archiver.kernel.org>; Thu,  6 Mar 2025 07:48:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73FECC28B23
+	for <ath12k@archiver.kernel.org>; Thu,  6 Mar 2025 11:33:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=twm03Oy4r5nPGPtZkmiVjVc9lS2x2ybjNxtocoftd9Y=; b=U5wcZy3AYeFW/iZLGlUGQ184QM
-	hpnTQYEkvdRlBqJ0nsbgz8CJfw8cz5YV5nWc7beGAGOXI4D8zl16BF4CTtRtcD3voaH5KKg0PncKm
-	m7Ckm9Bmrg61IJnGHRrPatJMk8as90PRfh8ui5oTGgnDriCM9zCFKOR6nbPQCIL09rOYdpC8Yep20
-	3LnwelQFV3Rcw9IklKg6DrJFG/xDt8LXaLcIgZcVDB8ecqV3edEbrI4oTTadOCHJD/wALiJpS3nyG
-	6ZS0WpI4oy/WCpuxd8TKgYTcI7zK3It34OUlhUH4Y4QpFJTkAZ2vnOHmyE62AD/jBmTC4w5LGPzro
-	dEga0WsQ==;
+	bh=mjXUleZqTEfN/C/LZajGZsmaBHaz6JmQbcU3tNgRJJA=; b=jK1/6IhJz/zgaZfCzsTklvNzuz
+	8o9HJTaDfY3gj5LozaFWBAePXORJFU8j3gxzYs1qGbK/6y2x1/5TZA8vTC/N0v8nCG0xc5bmQZVA6
+	/mEHNG10Ip7zyb8dnaUsSuW19qWhygRDi6iUWnLY1IO+v4GYbJ2hXQlUFyzeTXDAQiVVgrh0LM4yt
+	9uTO1gKhS1xiE4IH8K37NdsgI4VR9LmWyXQTQ1v9Rd+GugsaRi/6pyWD5HB0f2u/CjFUMqLruVXkU
+	ImeR5m26HMZg0dmlImhWDw7EMmZE7i7VcBhQw6a1ud13APXaoiTsCUzId5PIh4/UsgzTI9G0FGFMY
+	MIjq2sVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq5yN-0000000AFdW-30vr
+	id 1tq9UC-0000000AnKt-0u2F
 	for ath12k@archiver.kernel.org;
-	Thu, 06 Mar 2025 07:48:51 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	Thu, 06 Mar 2025 11:33:56 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq4no-0000000A8EK-3A3r
+	id 1tq8NR-0000000AdiB-3eQk
 	for ath12k@bombadil.infradead.org;
-	Thu, 06 Mar 2025 06:33:52 +0000
+	Thu, 06 Mar 2025 10:22:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Content-Type:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
 	Content-Description:In-Reply-To:References;
-	bh=twm03Oy4r5nPGPtZkmiVjVc9lS2x2ybjNxtocoftd9Y=; b=EQEqJUuplpVP80a7taxmtNzZrq
-	Bik4+XkJcWlyqQjCtrCvPTuWfeMuOBVIFeed3mwOL5NGMPtBo6T375byjP/Eu6J1MIK58xvFcPKrf
-	o1rqiL6kEvDxHVLn6Y3W5Wxrgv2zbom8Co9HDkCLabhcRy9j7KP8myxyo5lv0q5ns1c693bSp8Ix4
-	OUnAjGhRdfTmy2Q/fhcowtqNsNwQtOBi/bT9uyNoUegq+hRIZqOsGrV1RUZNKUtbEpWkXXfzLLigN
-	Lfm8VXeuhQCew9Xf0hGvKMjM5Z9rDd9GvR+z7NHjz2hi1svBxCTOx/hFNUoVEsSVvFdx2UMZmlPUb
-	aaBNS6tQ==;
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
-	by casper.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq4nl-00000006vMS-2JLa
+	bh=mjXUleZqTEfN/C/LZajGZsmaBHaz6JmQbcU3tNgRJJA=; b=UJfOe4cy4NXfB4CHTM8IDcQdXY
+	gmppNhy7jd4gwE6V0r4bdYtHOEDuQxllTOaYhEl/NKChHC/RYLtui68vszIZ1FzQRZWk9bR6DajIa
+	3kSd1FOYxKsTFt7TmRc7m+ZiStW661QRwiBwMCinefcnts3xA+Yrk3UfyQWL2t2ZyhtFk3vJ0bMtP
+	oaq8vY/3vkEOz/CZoLJEE9E8f9LK9btTvDfpT9q9uYWpjFWScU7gV/uOBbjBDvuxL7RkgcEVyU7BH
+	/9qt8ENsDL7kPl/SgyYQ7kK2tgDkI4A+jO9+PKiTh486C+WKsJ6S3SVITDYGy5uqDcpudLYxLUM19
+	MZpRFAuQ==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tq8NO-0000000114f-3vBj
 	for ath12k@lists.infradead.org;
-	Thu, 06 Mar 2025 06:33:51 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-43bdc607c3fso1241615e9.3
-        for <ath12k@lists.infradead.org>; Wed, 05 Mar 2025 22:33:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1741242824; x=1741847624; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=twm03Oy4r5nPGPtZkmiVjVc9lS2x2ybjNxtocoftd9Y=;
-        b=a6SWjaWThoaic9YKxnsGBOmUrPFtWlHALqeJ8dzOjBS2zhKxuN544DSm/c0WfmgYvN
-         Pp8TRkSnpIbCHfORfj+6yQD8pUoay8cmqj50wT0LAyzzi3C9YKvm8jHpsizz95NY1dK5
-         BX8MPhbCRJkdadR7zHIm5RwbawX84zjVZONHDltltyZ/9l34+rBXC4QSTjb0m178dbvY
-         tySlcDs02K4d7ykqBCA4w6HPK3U9gTte9fFgRMdbkIlEzpMZCzlMeE3q3y7JownxNnWc
-         H/GlFlZl19AgslYuViS8xpLUsjQSqhkJ507HxAIUfQ09OPKFUIXzTI+xVd1a3WpDe8Hw
-         O4Ig==
+	Thu, 06 Mar 2025 10:22:52 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5267mBw5005358
+	for <ath12k@lists.infradead.org>; Thu, 6 Mar 2025 10:22:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=mjXUleZqTEfN/C/LZajGZsmaBHaz6JmQbcU
+	3tNgRJJA=; b=JgoCirfNa3uM0clILZaZI1sU6yr8pf0wqVIC6+qZcm3uxd/LD40
+	T82JWT8DWaAjtbB4re2fWoq4iLtyxjmmlickcOjw3SbW7C1NV+MMLlyEM+9WPXfZ
+	Nz6M9ntUSXoNx6RxqgKjPE0ETxlxKerMYPArtnltElfaIXqrGNvqXCTj3x5WN1e3
+	+et6d4vPfjTwmc0vL/U21dX7nYSTJtDf8VVzMW6CDU4AyBaKtnhGVllfM5jJoUw2
+	nsiMuYhzmW+NtyOOSVBaaHo18TmlAAvSKL1FkbX0csQPEG/FabX8gTY0xtJaHOAX
+	iChRaTvmf+mLGiZejN/LEVNXoCsPXMVaylA==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4577mx8ej9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Thu, 06 Mar 2025 10:22:49 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2240c997059so12931645ad.0
+        for <ath12k@lists.infradead.org>; Thu, 06 Mar 2025 02:22:29 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741242824; x=1741847624;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=twm03Oy4r5nPGPtZkmiVjVc9lS2x2ybjNxtocoftd9Y=;
-        b=VBWYFPtJSs+TOoR/NwVUeLpEAGCA6WMf5F4pP7KaJttqRPNqt7SmPLmT80QJ6G8v+c
-         ZRF5RzGdmZ6xc4IEA92C156aHIFlnfPIp0mU9U9EZqL7ojk6RP0WRKckLa79REH5VSnj
-         9wL2RAeWvEGdRJzxxgsIkLNfANNQzOPCu69YwmSOD9FnepfBUCLCqncgLFFaRGW4VzZ9
-         R5CNJ70kK3yAZ1nMrYYRYy+Ex6Zg69SGaSJaFUKwH5+w+uQDomV8W3Ud/4ZnWJ2KczPS
-         aWBf0lHlqVSjJYnDRnhFh8bOmCdsHgwxmOFrNpfw7g4mDi2X06RypNFOQ9jlAm7W5pa+
-         kV3g==
-X-Forwarded-Encrypted: i=1; AJvYcCXBN0pHkEEv6PsJg9tfn8ToR+BirQSlKmXe5VONAqWyvtHr9PGiOsteaBG9WpLwtjEyQElPCdc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy70s54BLJTMwZylc4esH09I1Zv2YsQEXMFEjEN/2Auy+pdYpaG
-	UI4o4EhLT+daEirEGH5KD6HrH8UvVED8rxk7PwTWY9gyz8zB4MDJ6dtYvgM4jOQ=
-X-Gm-Gg: ASbGncuA0Wrf+nZDeYf60+imDLbPj91mmn6xwZMp3ww+qMsNZh40VUl7PK+vK/KQ4ic
-	txyigg21r0FIAxOVtScdhXFW/tqOdyjmRAy/U7I8ZxgTnB0jofPchFdrrc5qQRE9g6Ul2/hV71r
-	R8Ibei/aAJlEXObkPFna73MvaWxi8SE0o+4zCf/1iaY8Cp5kBWnSZv9LtmsOuohJgGjy3ESTKm1
-	udRTRfnQ0uw95Q3WmJY5TQhtLMUsVxM7RPqyAuRXGqV2Ty6k2IeX0jN6JaKQ90WgcKrQZDqYQBN
-	c46mWI6rqh5WMCnbuG1MfMEQo8AwV1vQB8uhLe7W+BFOy0C26w==
-X-Google-Smtp-Source: AGHT+IGeNal1Sgc/E3DzZp24+r0BXPhvab8A8uCChGmpF5qLmcYIveJqXWJIACmg+4dgEdduPWpeBg==
-X-Received: by 2002:a5d:6489:0:b0:391:13ef:1b27 with SMTP id ffacd0b85a97d-3911f7ce4b6mr5435387f8f.51.1741242824406;
-        Wed, 05 Mar 2025 22:33:44 -0800 (PST)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-3912c102db1sm940772f8f.95.2025.03.05.22.33.43
+        d=1e100.net; s=20230601; t=1741256548; x=1741861348;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=mjXUleZqTEfN/C/LZajGZsmaBHaz6JmQbcU3tNgRJJA=;
+        b=MI6x9E9TPYWKrDy7UoRwOuUfeepyvdT6zmTKQT00WcnW0AXEfjGUzCZ/QU3FGA4hk2
+         +BzwYrPWLjzxA9dZAIlRwxPBwuKIX45nQuZWG6Y6RdbKlYGJoqRmQB3S5oJW6XHxc9UE
+         5d8uIrBIPaPWaQe1ImviUTvLpUX5yFpYHU29MVK7ZnBF6R9LLplbKMdISm/xATpq93zZ
+         EgyWMmSa5RosU56JJswCWV6j6hOPTpF01+5zMwH7Sn6WdW3aM/kFZXNuPQZgbJkGidEE
+         Z3BbkUOGO8H04LU34VSyOEQ6ba/4BY4H3dmLStjoRM4laHJTCCCrCF3jWzijfyvJZ1nM
+         RnfQ==
+X-Gm-Message-State: AOJu0YxuRdy/s24NgQnQJDV8vNvGAWnasH9oKp8PTtuAZjC+sBIPTgAZ
+	E3IjwH9o5/RPoNvhkGzD2yuQwx5FH+36YING/6z1GycjhSDJ+H4VYPL5OKZArm14c81klhx65Xd
+	75Xew7pVOYlJ7olVIhjQRcakmmNApJ0FpNsgoBoc0ndvNMveNwftfFQLFfl/tsFms7mMi
+X-Gm-Gg: ASbGncsluHua/lB79o0YAQUzZOws9LfNGSN2yfkA+Psr5FygHNHI3Yo0Ok0kF9o3WzT
+	OkRmG5V6QQHz/mpsYY7+nldD5I+PlYDK/d/wHKVtcXriu2mAT59P++bSM/kpIL6KjM5Mm5V8Qio
+	7aQL139NFqpbuCwTyKzBxbdjm5+OTrKN76smzid7P8oWnQFKgX7XXRrjV7o/GeXkbi3vOgMVWet
+	LCKCtsGDp2l9eC9GLUiuct6h0EWp2fLlnMEplH+vi0A4CPgj8YvwOQluNcrXriFBP43EKh8kdgi
+	79k8QbL4J/QriBdXSVr571hzfB+UmFUCLx+QPZIja7D3+OAl0E5lXD2g178O4kDK4/KNUHSaRy8
+	ZBJTIXp/2OKRKPhiGm5fGoFp6VYjVoCg/uC30Nfwn8ekt
+X-Received: by 2002:a17:902:d511:b0:223:fd7f:2752 with SMTP id d9443c01a7336-223fd7f2b74mr77536125ad.29.1741256548683;
+        Thu, 06 Mar 2025 02:22:28 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE4kzypG6Kp3TpQntY2VNnfIigwepdapNs5G/uuxifg0RFmeMQa9GArBvqIenvxk+GgKCmouw==
+X-Received: by 2002:a17:902:d511:b0:223:fd7f:2752 with SMTP id d9443c01a7336-223fd7f2b74mr77535655ad.29.1741256548261;
+        Thu, 06 Mar 2025 02:22:28 -0800 (PST)
+Received: from hu-ramess-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-224109ddfa6sm8814785ad.33.2025.03.06.02.22.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 05 Mar 2025 22:33:43 -0800 (PST)
-Date: Thu, 6 Mar 2025 09:33:40 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev, Muna Sinada <muna.sinada@oss.qualcomm.com>
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
-	ath12k@lists.infradead.org,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Subject: [ath:ath12k-split-phy 81/139] net/mac80211/link.c:96
- ieee80211_link_init() warn: can 'master' even be NULL?
-Message-ID: <f3cb8f15-e2a9-49ac-b138-6d1c8b04ca7c@stanley.mountain>
+        Thu, 06 Mar 2025 02:22:27 -0800 (PST)
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Subject: [PATCH ath-next v3 0/2] wifi: ath12k: add support for get_txpower mac ops
+Date: Thu,  6 Mar 2025 15:52:13 +0530
+Message-Id: <20250306102215.1300522-1-rameshkumar.sundaram@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: LRB4Ssoc9H_nIQ1uaAWWi8M8ieOagGyD
+X-Authority-Analysis: v=2.4 cv=cOIaskeN c=1 sm=1 tr=0 ts=67c97779 cx=c_pps a=JL+w9abYAAE89/QcEU+0QA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=Vs1iUdzkB0EA:10 a=PGcRVBYcp0WH4tafFE8A:9 a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-ORIG-GUID: LRB4Ssoc9H_nIQ1uaAWWi8M8ieOagGyD
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-06_05,2025-03-06_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ priorityscore=1501 suspectscore=0 adultscore=0 phishscore=0 spamscore=0
+ lowpriorityscore=0 bulkscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999
+ malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2503060078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_063349_608409_37B46649 
-X-CRM114-Status: UNSURE (   4.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250306_102251_316653_9E99F5DE 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,98 +130,52 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-split-phy
-head:   64723c7be2b959dde8f4a8c85401a57d8740af10
-commit: 139c21bdb8c36a8ad201b71678b0d1168856d5d3 [81/139] wifi: mac80211: Create separate links for VLAN interfaces
-config: x86_64-randconfig-161-20250306 (https://download.01.org/0day-ci/archive/20250306/202503060854.5cPgdKzO-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
+Currently, driver does not support get_txpower mac ops because of which
+cfg80211 returns vif->bss_conf.txpower to user space. bss_conf.txpower
+gets its value from ieee80211_channel->max_reg_power. However, the final
+txpower is dependent on few other parameters apart from max regulatory
+supported power. It is the firmware which knows about all these parameters
+and considers the minimum for each packet transmission.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202503060854.5cPgdKzO-lkp@intel.com/
+Firmware reports the final TX power in firmware pdev stats which falls
+under fw_stats. But currently, fw_stats is under debugfs.
 
-smatch warnings:
-net/mac80211/link.c:96 ieee80211_link_init() warn: can 'master' even be NULL?
+Add support for get_txpower mac ops to get the TX power from firmware
+leveraging fw_stats and return it accordingly.
 
-vim +/master +96 net/mac80211/link.c
+Also, move fw_stats out of debugfs so that get_txpower mac ops can
+function properly even when debugfs is disabled.
 
-e73b5e51a05d41 Johannes Berg      2022-09-02   77  void ieee80211_link_init(struct ieee80211_sub_if_data *sdata,
-e73b5e51a05d41 Johannes Berg      2022-09-02   78  			 int link_id,
-e73b5e51a05d41 Johannes Berg      2022-09-02   79  			 struct ieee80211_link_data *link,
-e73b5e51a05d41 Johannes Berg      2022-09-02   80  			 struct ieee80211_bss_conf *link_conf)
-e73b5e51a05d41 Johannes Berg      2022-09-02   81  {
-e73b5e51a05d41 Johannes Berg      2022-09-02   82  	bool deflink = link_id < 0;
-e73b5e51a05d41 Johannes Berg      2022-09-02   83  
-e73b5e51a05d41 Johannes Berg      2022-09-02   84  	if (link_id < 0)
-e73b5e51a05d41 Johannes Berg      2022-09-02   85  		link_id = 0;
-e73b5e51a05d41 Johannes Berg      2022-09-02   86  
-e73b5e51a05d41 Johannes Berg      2022-09-02   87  	rcu_assign_pointer(sdata->vif.link_conf[link_id], link_conf);
-e73b5e51a05d41 Johannes Berg      2022-09-02   88  	rcu_assign_pointer(sdata->link[link_id], link);
-e73b5e51a05d41 Johannes Berg      2022-09-02   89  
-139c21bdb8c36a Muna Sinada        2024-10-17   90  	if (sdata->vif.type == NL80211_IFTYPE_AP_VLAN) {
-139c21bdb8c36a Muna Sinada        2024-10-17   91  		struct ieee80211_sub_if_data *master;
-139c21bdb8c36a Muna Sinada        2024-10-17   92  		struct ieee80211_bss_conf *master_conf;
-139c21bdb8c36a Muna Sinada        2024-10-17   93  
-139c21bdb8c36a Muna Sinada        2024-10-17   94  		master = container_of(sdata->bss,
-139c21bdb8c36a Muna Sinada        2024-10-17   95  				      struct ieee80211_sub_if_data, u.ap);
-139c21bdb8c36a Muna Sinada        2024-10-17  @96  		if (!master)
+v3:
+ - Rebased on ToT, added tree tag
+v2:
+ - In PACTH 1/2
+   * added sanity check for stats pointer in
+   ath12k_wmi_tlv_fw_stats_data_parse()
+   * Moved ath12k_debugfs_fw_stats_reset to core.c
+   * Removed ath12k_debugfs_fw_stats_request() and reused
+     ath12k_mac_get_fw_stats() of mac.h as both are serving
+     same purpose
+ - In PATCH 2/2
+   * Modified ATH12K_PDEV_TX_POWER_INVALID to hold u32 max
+   * Saved power in dbm units in ar->chan_tx_pwr
 
-master can't be NULL.  container_of() takes "sdata->bss" and subtracts an
-offset.
+Aditya Kumar Singh (2):
+  wifi: ath12k: move firmware stats out of debugfs
+  wifi: ath12k: add get_txpower mac ops
 
-139c21bdb8c36a Muna Sinada        2024-10-17   97  			goto skip_vlan_conf;
-139c21bdb8c36a Muna Sinada        2024-10-17   98  
-139c21bdb8c36a Muna Sinada        2024-10-17   99  		master_conf = sdata_dereference(master->vif.link_conf[link_id],
-139c21bdb8c36a Muna Sinada        2024-10-17  100  						master);
-139c21bdb8c36a Muna Sinada        2024-10-17  101  
-139c21bdb8c36a Muna Sinada        2024-10-17  102  		memcpy(link_conf, master_conf, sizeof(*link_conf));
-139c21bdb8c36a Muna Sinada        2024-10-17  103  	}
-139c21bdb8c36a Muna Sinada        2024-10-17  104  
-139c21bdb8c36a Muna Sinada        2024-10-17  105  skip_vlan_conf:
-e73b5e51a05d41 Johannes Berg      2022-09-02  106  	link->sdata = sdata;
-e73b5e51a05d41 Johannes Berg      2022-09-02  107  	link->link_id = link_id;
-e73b5e51a05d41 Johannes Berg      2022-09-02  108  	link->conf = link_conf;
-e73b5e51a05d41 Johannes Berg      2022-09-02  109  	link_conf->link_id = link_id;
-e1f113cc678703 Benjamin Berg      2023-03-01  110  	link_conf->vif = &sdata->vif;
-c4382d5ca1af75 Emmanuel Grumbach  2024-10-07  111  	link->ap_power_level = IEEE80211_UNSET_POWER_LEVEL;
-c4382d5ca1af75 Emmanuel Grumbach  2024-10-07  112  	link->user_power_level = sdata->local->user_power_level;
-c4382d5ca1af75 Emmanuel Grumbach  2024-10-07  113  	link_conf->txpower = INT_MIN;
-e73b5e51a05d41 Johannes Berg      2022-09-02  114  
-344d18cec23142 Johannes Berg      2024-05-06  115  	wiphy_work_init(&link->csa.finalize_work,
-e73b5e51a05d41 Johannes Berg      2022-09-02  116  			ieee80211_csa_finalize_work);
-b38579aeb5b04f Johannes Berg      2023-08-28  117  	wiphy_work_init(&link->color_change_finalize_work,
-e73b5e51a05d41 Johannes Berg      2022-09-02  118  			ieee80211_color_change_finalize_work);
-4cc6f3e5e5765a Remi Pommarel      2024-09-24  119  	wiphy_delayed_work_init(&link->color_collision_detect_work,
-9288188438d85e Lorenzo Bianconi   2023-01-25  120  				ieee80211_color_collision_detection_work);
-e73b5e51a05d41 Johannes Berg      2022-09-02  121  	INIT_LIST_HEAD(&link->assigned_chanctx_list);
-e73b5e51a05d41 Johannes Berg      2022-09-02  122  	INIT_LIST_HEAD(&link->reserved_chanctx_list);
-6241d79f004329 Aditya Kumar Singh 2024-09-06  123  	wiphy_delayed_work_init(&link->dfs_cac_timer_work,
-6241d79f004329 Aditya Kumar Singh 2024-09-06  124  				ieee80211_dfs_cac_timer_work);
-e73b5e51a05d41 Johannes Berg      2022-09-02  125  
-e73b5e51a05d41 Johannes Berg      2022-09-02  126  	if (!deflink) {
-e73b5e51a05d41 Johannes Berg      2022-09-02  127  		switch (sdata->vif.type) {
-e73b5e51a05d41 Johannes Berg      2022-09-02  128  		case NL80211_IFTYPE_AP:
-139c21bdb8c36a Muna Sinada        2024-10-17  129  		case NL80211_IFTYPE_AP_VLAN:
-e73b5e51a05d41 Johannes Berg      2022-09-02  130  			ether_addr_copy(link_conf->addr,
-e73b5e51a05d41 Johannes Berg      2022-09-02  131  					sdata->wdev.links[link_id].addr);
-e73b5e51a05d41 Johannes Berg      2022-09-02  132  			link_conf->bssid = link_conf->addr;
-e73b5e51a05d41 Johannes Berg      2022-09-02  133  			WARN_ON(!(sdata->wdev.valid_links & BIT(link_id)));
-e73b5e51a05d41 Johannes Berg      2022-09-02  134  			break;
-e73b5e51a05d41 Johannes Berg      2022-09-02  135  		case NL80211_IFTYPE_STATION:
-e73b5e51a05d41 Johannes Berg      2022-09-02  136  			/* station sets the bssid in ieee80211_mgd_setup_link */
-e73b5e51a05d41 Johannes Berg      2022-09-02  137  			break;
-e73b5e51a05d41 Johannes Berg      2022-09-02  138  		default:
-e73b5e51a05d41 Johannes Berg      2022-09-02  139  			WARN_ON(1);
-e73b5e51a05d41 Johannes Berg      2022-09-02  140  		}
-170cd6a66d9a16 Benjamin Berg      2023-03-01  141  
-170cd6a66d9a16 Benjamin Berg      2023-03-01  142  		ieee80211_link_debugfs_add(link);
-e73b5e51a05d41 Johannes Berg      2022-09-02  143  	}
-e73b5e51a05d41 Johannes Berg      2022-09-02  144  }
+ drivers/net/wireless/ath/ath12k/core.c    |  53 ++++++
+ drivers/net/wireless/ath/ath12k/core.h    |   5 +
+ drivers/net/wireless/ath/ath12k/debugfs.c | 112 +------------
+ drivers/net/wireless/ath/ath12k/debugfs.h |   5 -
+ drivers/net/wireless/ath/ath12k/mac.c     | 188 +++++++++++++++++-----
+ drivers/net/wireless/ath/ath12k/mac.h     |   4 +
+ drivers/net/wireless/ath/ath12k/wmi.c     |  99 +++++++++---
+ 7 files changed, 294 insertions(+), 172 deletions(-)
 
+
+base-commit: 3148fc3cf193dbbd2e14eee59468a510a38bf604
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.34.1
 
 
