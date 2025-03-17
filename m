@@ -4,122 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C71D9C35FF8
-	for <ath12k@archiver.kernel.org>; Mon, 17 Mar 2025 19:18:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1935EC282EC
+	for <ath12k@archiver.kernel.org>; Mon, 17 Mar 2025 20:47:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bzs4HkHDebsqHMWUpcz0rQUHNmYl05+pZZwdg/tX83U=; b=qjKMkpfwBAkQ+XHCEX9CKdZyFV
-	ghfZZ/AOdOf8JvkCJQUOhENJVJQ2J/jW4Ty2P9VOXtSsYJAtldar3+O0cRh6tJcXmG/2kU1p10P5p
-	i32MMmuSzETn6cayf7/pC9fm/OK6+kQttSoBaLg7ihkb6l8H6GOhEqDjHNTFnbP5Cll4tZQGD10l9
-	oJZ61vi3AuCf83MX6DIoKKp2JHscipjVc/mG8im6DJ382vKd7T0r5VDAsPf9wsLbEeD60ttUd+9mx
-	C8U2VSj36GIsIncRY1KiOAd0O9l8ob637lWfDHyXLLr1hSiK4IhVVFSFmKYkfp+mXcfCFiOOmkbUj
-	6ZGK6/sQ==;
+	Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=qHFMSF2J0hoO8CX7rduNt5R7fNPutEv2J045HaeLztQ=; b=VMFdFsM4HzaE86pjZZTLLDyVAu
+	3WYF4saJcEb0O3lyNNYjkOxIQBWYQATKt4o0h7vhAPq2JoPqAlXbYhtUvf9oyghnHUTT7LMywjtZi
+	mKMyQHcNQt8/BKvYd13nk8rC+jFOetTrQOreQjalHB861mtyvEA5H3HdzgE3VlsT9abYBoLANqCWt
+	vJQU2s1VPpHN8eJ6xM7UBaap29XcKdY0qZ9bBEKXNIbDo6ju8VaKhMpUYixyB1gCXFnkjCRJyA5WL
+	utQDlHtrjmln2jQgzIFRjHhzCn62ptg2ZLc5wnIACNgIXC/wK8jQ7OwqE+m5GEbJ/fV6w7QMKAfaR
+	ciRdED3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuFzH-00000003nk5-2QCB
+	id 1tuHMu-00000003wHw-39it
 	for ath12k@archiver.kernel.org;
-	Mon, 17 Mar 2025 19:18:59 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Mon, 17 Mar 2025 20:47:28 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuEdx-00000003bcL-2kgk
-	for ath12k@bombadil.infradead.org;
-	Mon, 17 Mar 2025 17:52:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=bzs4HkHDebsqHMWUpcz0rQUHNmYl05+pZZwdg/tX83U=; b=qt847wKzYJUPohddL/NNKKyvlU
-	eU44jYx7J2CoT6pUE6Xv20Sr644SeYzV4W9R1B9uy6JIdH0iXioj7Z9oWdf5W5C/DQfMu1d3qA+8Y
-	BwNIMbHg4cD+RxbXDSHOp+gLPd+uiYoDmAWSohTT8GJlijjJZLjb70s3RBMs75I4yzZ962iTBy4IC
-	lntrnXssp6isDVsKLx3HvNsg0tDFeaWPLS1gK+81/BJbXepFGURpnOKtVI7MD+63+/IZwDj9Ll+Qv
-	Weyzc7etu+q0q9dYDmF63IzXcJrnnoi0f9y6H4lQPysS+mTWtP0z65gjqFj8k+qsd+BSxD2/+xmkA
-	tp06QEtw==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuEdt-00000003XPx-4Ark
+	id 1tuHMs-00000003wHS-05q0
 	for ath12k@lists.infradead.org;
-	Mon, 17 Mar 2025 17:52:52 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52HA7Pqk022761
-	for <ath12k@lists.infradead.org>; Mon, 17 Mar 2025 17:52:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	bzs4HkHDebsqHMWUpcz0rQUHNmYl05+pZZwdg/tX83U=; b=buuBIghOja7w0aEd
-	QynJrgCOXt0eicpdjrRD4m3b5moAMBpJtQejDHxTfVwk/ZwSOovxsZAfd5BXGNn2
-	qdw2DNGRznFHCWnbWr897Qh0lZj5lQUtN4NEG/U/PwsX/eBVkEADye67ReVJjAFp
-	eBT5VWcQOOm0Rr2ovggTvlJGzYUfzC0U2FE5XZ+gB3+hJlhon5mCniWdWLAVwXsG
-	kdmxeSf+pP7cLb7jPHqTZoSJ9SyDjb7GVJ1S0hb+3gtLbFQibVgHxBpAF7VOc91y
-	Vg8Oa4s/j0nK9hP3vKA1v5FaKPcTwdWVrNLwxE4kzCq2VsDIpEaxxSivcjYmp/Nv
-	aYPGGg==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d2qm5fhx-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 17 Mar 2025 17:52:44 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2242f408320so67495485ad.2
-        for <ath12k@lists.infradead.org>; Mon, 17 Mar 2025 10:52:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742233943; x=1742838743;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=bzs4HkHDebsqHMWUpcz0rQUHNmYl05+pZZwdg/tX83U=;
-        b=ul63KdZuVk9FwDO/n99OOqR+Nbg+p1c0z6ULVPVLOsKP5+E+BPe96WCcbQ3pIMacxB
-         AkDugT04o+reJM7YLPqqIFp2+blg3CziqaQDkBJCXerUAEPFATfDNRR3nMFF98zNiP09
-         5Ux4MTu8mEudn09gVwsj2wDfnmWhkT2RFclbXQV3N5d0+95YYU4cDy6lug15mATPznlk
-         1VFQV1LqdtJPUsD5SrAcEe8DyrVAoQ4Kuox8oCL+hR6VBG779WPV2cPpK6UJYX7qeOFq
-         be+NFfGk/LGe71uiGkNMSVowJj9hd7IxJFmTv/rDlwwBc+Dc2L3nYPYP+O6pp1/HgItN
-         KttQ==
-X-Gm-Message-State: AOJu0YwW040qxUB1ILMRj6rO6l/yAekWSLRYGC8Lu0sReUVQT8Y5dQIv
-	ryjeul2lAcpgqZu3MB1sNd4Xn8LU17ICRgwq4SswcYALfOZr9OVkGkHXlNpVV0erAsJWHsAp2fR
-	ZYzEtC9i2kAOEuMdj0jB+sTAceXd07XCRg9gma5JhYg/pU6BGZOv2ff4o4BmzGLCLzlzu
-X-Gm-Gg: ASbGnctOuusl+eUGzpB4CdkvD86rIO042FaYao24s3YdRAz/W86IxO08Vfi6fujBqgl
-	dO/95d3Ew+50lW0HV7GG5G9SLeLJeh7D7nhLonyeT00knql25UPastPHWILSActqaZDhjGJ3EZM
-	v5lVzLZaQhOjVBBB8sM7cPiMwTK+juKH2Mh1gx65yvadVQWraLd1ZwK9b4H63Ic9Eoi3Qx8Bk/Z
-	4NViOpt1gxm4ty+avffl8ImsTayrhQ3Z0Pv5SGazgmXNjofe65jVlw28/smCqN007SGTAYiB9k7
-	BV9fifDxWBUB4dapcAhnUUaBOiS396NUerANghNaQONhLbt6leJA
-X-Received: by 2002:a17:902:cf0a:b0:220:e63c:5aff with SMTP id d9443c01a7336-225e0b119a2mr144224345ad.47.1742233943234;
-        Mon, 17 Mar 2025 10:52:23 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGLE9fpU3abqToMjpuz/msFYDLAmRBNr3lCiERmeH83aOffmIzWtQW9uD8stNDYwG44wRCqwA==
-X-Received: by 2002:a17:902:cf0a:b0:220:e63c:5aff with SMTP id d9443c01a7336-225e0b119a2mr144224065ad.47.1742233942796;
-        Mon, 17 Mar 2025 10:52:22 -0700 (PDT)
-Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-225c6bd5ce5sm78291485ad.252.2025.03.17.10.52.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 17 Mar 2025 10:52:22 -0700 (PDT)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: ath12k@lists.infradead.org, Suraj P Kizhakkethil <quic_surapk@quicinc.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20250304095315.3050325-1-quic_surapk@quicinc.com>
-References: <20250304095315.3050325-1-quic_surapk@quicinc.com>
-Subject: Re: [PATCH v2 0/2] wifi: ath12k: Pass correct channel frequency
- parameters
-Message-Id: <174223394217.578193.5332056743902918287.b4-ty@oss.qualcomm.com>
-Date: Mon, 17 Mar 2025 10:52:22 -0700
+	Mon, 17 Mar 2025 20:47:27 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52HKPF4D000404;
+	Mon, 17 Mar 2025 20:47:21 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=qHFMSF2J0hoO8CX7rduNt5
+	R7fNPutEv2J045HaeLztQ=; b=OX2n7+nS/5iU7IRk06n1MxuD2slDcdhlnlVWPw
+	pUMePqya4OfvsnKFdWIohyPZocvsWCuk2L/oWLJK6ItGyjeu/xfq1vpTD/SaPdUw
+	lu8S0EFsTc4O2omy22GMPpBCretOENKUGIxSvgyAEeJGBhEwZOeY/pR4JIdwYeFj
+	GV5VaV4wLaTdVTwHXGRTL0ZwZClRdSlRt5niqXCFYn73c7d+JqjUD2XwFjzFA/0e
+	KCdJ2Auv6KviAElzeKLX0TE2WvdvH/spC3akzvOquWQ4yQdIGG9/QNmSMCkWizMK
+	mzeJlMSsCHYpJoRGyyEkifsWajbdNXgkASr1l7rk8Al4x8VQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1x7ww31-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 17 Mar 2025 20:47:21 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52HKlKFi016252
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 17 Mar 2025 20:47:20 GMT
+Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Mon, 17 Mar 2025 13:47:17 -0700
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+        <linux-wireless@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>,
+        "Raj Kumar
+ Bhagat" <quic_rajkbhag@quicinc.com>
+Subject: [PATCH ath-next v11 00/13] wifi: ath12k: add Ath12k AHB driver support for IPQ5332
+Date: Tue, 18 Mar 2025 02:16:26 +0530
+Message-ID: <20250317204639.1864742-1-quic_rajkbhag@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.0
-X-Proofpoint-ORIG-GUID: zZTPe-W5-JKzj9dyQkiK7ijVrz6XkJGw
-X-Proofpoint-GUID: zZTPe-W5-JKzj9dyQkiK7ijVrz6XkJGw
-X-Authority-Analysis: v=2.4 cv=DLWP4zNb c=1 sm=1 tr=0 ts=67d8616c cx=c_pps a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=EUspDBNiAAAA:8 a=JAv06hZFyUe5PBVjgVcA:9 a=QEXdDO2ut3YA:10
- a=GvdueXVYPmCkWapjIL-Q:22
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: hAXf2oedASGYz8_Huttswqq5D6pnTpEd
+X-Proofpoint-ORIG-GUID: hAXf2oedASGYz8_Huttswqq5D6pnTpEd
+X-Authority-Analysis: v=2.4 cv=Jem8rVKV c=1 sm=1 tr=0 ts=67d88a59 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=esBEnaimTLd1uYCVZSUA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-17_07,2025-03-17_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- impostorscore=0 adultscore=0 malwarescore=0 suspectscore=0 spamscore=0
- lowpriorityscore=0 clxscore=1015 mlxlogscore=928 phishscore=0 bulkscore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503170129
+ definitions=2025-03-17_08,2025-03-17_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ mlxlogscore=999 spamscore=0 mlxscore=0 malwarescore=0 adultscore=0
+ phishscore=0 impostorscore=0 priorityscore=1501 lowpriorityscore=0
+ bulkscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503170150
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250317_175250_436520_E3D8D5FD 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20250317_134726_142429_98FD5289 
+X-CRM114-Status: GOOD (  22.48  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,28 +103,159 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Currently, Ath12k driver only supports WiFi devices that are based on
+PCI bus. New Ath12k device IPQ5332 is based on AHB bus. Hence, add
+Ath12k AHB support for IPQ5332.
 
-On Tue, 04 Mar 2025 15:23:13 +0530, Suraj P Kizhakkethil wrote:
-> For higher bandwidths, the channel frequency parameters passed to
-> the firmware are incorrect. Pass correct values of channel
-> frequency parameters.
-> 
-> v2:
->  - Replaced arg->band_center_freq1 to local variable center_freq1,
->    which is initialized to arg->band_center_freq1
->  - Rebased on ToT
-> 
-> [...]
+IPQ5332 is IEEE802.11be 2 GHz 2x2 Wifi device. To bring-up IPQ5332
+device:
+- Add hardware parameters for IPQ5332.
+- CE register address space in IPQ5332 is separate from WCSS register
+  space. Hence, add logic to remap CE register address.
+- Add support for fixed QMI firmware memory for IPQ5332.
+- Support userPD handling for WCSS secure PIL driver to enable ath12k
+  AHB support.
 
-Applied, thanks!
+NOTE:
+The working upstream DTS changes for this series have been posted as a
+separate series.
+[PATCH v2] arm64: dts: qcom: add wifi node for IPQ5332 based RDP441
 
-[1/2] wifi: ath12k: Pass correct values of center freq1 and center freq2 for 160 MHz
-      commit: b1b01e46a3db5ad44d1e4691ba37c1e0832cd5cf
-[2/2] wifi: ath12k: Pass correct values of center freq1 and center freq2 for 320 MHz
-      commit: 5e44b181bec8e2fe3826033360fc1a42bb432191
+v11:
+- Updated Kconfig for ATH12k AHB.
+- Replaced the API devm_ioremap_wc() with devm_memremap to fix ath12k-check
+  warning: "warning: cast removes address space '__iomem' of expression"
+- Rebased on latest ToT.
+- Removed tag "Reviewed-by: Vasanthakumar Thiagarajan", in the updated
+  patch [11/13] wifi: ath12k: Power up userPD
 
-Best regards,
+v10: https://lore.kernel.org/all/20250317154150.1361364-1-quic_rajkbhag@quicinc.com/
+- Removed config dependency of QCOM_Q6V5_WCSS_SEC for Ath12k AHB.
+- Removed tag "Reviewed-by: Vasanthakumar Thiagarajan", in the updated
+  patch [13/13] wifi: ath12k: enable ath12k AHB support
+
+v9: https://lore.kernel.org/all/20250305185501.2400888-1-quic_rajkbhag@quicinc.com/
+- Fixed memory leak in ath12k_ahb_probe().
+- Removed tag "Reviewed-by: Vasanthakumar Thiagarajan", in the updated
+  patch [08/13] wifi: ath12k: add AHB driver support for IPQ5332
+
+v8: https://lore.kernel.org/all/20250228184214.337119-1-quic_rajkbhag@quicinc.com/
+- Fixed format specifiers warning reported by kernel test robot in patch
+  [PATCH v6 07/13] wifi: ath12k: add support for fixed QMI firmware memory
+
+v7: https://lore.kernel.org/all/20250227191034.1949954-1-quic_rajkbhag@quicinc.com/
+- DT binding: DT property 'qcom,ath12k-calibration-variant' renamed to
+  'qcom,calibration-variant'.
+
+v6: https://lore.kernel.org/all/20250225064834.2002499-1-quic_rajkbhag@quicinc.com/
+- DT binding: binding doc renamed from qcom,ath12k-ahb.yaml to
+  qcom,ipq5332-wifi.yaml.
+- DT binding: rephrased memory-region description.
+- DT binding: dropped description for memory-region-names.
+- DT binding: updated maintainers in binding doc.
+- The API ath12k_core_get_reserved_mem_by_name() has been simplified and
+  renamed to ath12k_core_get_reserved_mem()
+- Removed unnecessary NULL check in devm_clk_get() error handling.
+- Dropped all ath12k_ahb_clock_* wrappers for single clock.
+- Removed shutdown callback for the ath12k AHB driver.
+- Reference count leak handled for rproc and rproc phandle.
+
+v5: https://lore.kernel.org/all/20250130043508.1885026-1-quic_rajkbhag@quicinc.com/
+- DT binding: Added `memory-region-names` property to address undocumented
+  ABIs.
+- DT binding: Added four complete items to `memory-region`, required by
+  ath12k firmware.
+- All calls to `of_find_node_by_name()` are removed. Introduced helper
+  function `ath12k_core_get_reserved_mem_by_name()` to get the reserved
+  memory by name.
+- Removed unused include headers.
+- Removed error prints for impossible scenarios.
+- Used proper phandle API `of_parse_phandle()` to read `qcom,rproc`.
+- Used `dev_err_probe()` API for logging errors wherever applicable.
+- Changed hardware parameter `needs_m3_fw` to `enum ath12k_m3_fw_loaders`.
+- Changed hardware parameter `bdf_addr` to `bdf_addr_offset` to store the
+  offset for BDF memory from the q6-memory as base.
+
+v4: https://lore.kernel.org/all/20241210074159.2637933-1-quic_rajkbhag@quicinc.com/
+- Missed to include some review list in v3. Hence sending v4 with
+  all review list as per - scripts/get_maintainers.pl
+
+v3: https://lore.kernel.org/all/20241209165644.1680167-1-quic_rajkbhag@quicinc.com/
+- DT binding: clock name changed from gcc_xo_clk to xo.
+- DT binding: Upper constraint added for memory-region property.
+- DT binding: The description for "qcom,rproc" phandle updated to represent
+  the hardware aspect.
+- DT binding: Added property qcom,ath12k-calibration-variant.
+- Squashed patch[2/22] to patch[8/22] of v2 into a single patch.
+- Patch reordering is done.
+- The hardware parameter "m3_fw_support" renamed to "needs_m3_fw".
+- CMEM remap and CMEM register handling are dropped. CMEM registers are
+  accessed within WCSS register space (ab->mem).
+- The devm APIs are used for interrupts handling.
+- Logic updated in ath12k_ahb_map_service_to_pipe().
+- Dependency path series from other subsystem are dropped.
+
+v2: https://lore.kernel.org/all/20241015182637.955753-1-quic_rajkbhag@quicinc.com/
+- "qcom,board_id" property is dropped. This is not the direct dependency
+  for Ath12k AHB support, hence it can be taken up separately.
+- "qcom,bdf-addr" property is dropped in device-tree and moved to ath12k
+  driver.
+- Currently we have only one compatible enum (qcom,ipq5332-wifi), hence
+  conditional if() check for defining the binding is removed.
+- "reserved-memory" node is dropped from example DTS.
+- "status" property is dropped in wifi node of example DTS.
+- Integrated the “Support userPD handling for WCSS secure PIL driver”
+  patch series with the Ath12k AHB bring-up patch.
+- Removed the RFC tag as all dependency patch series are now compilable.
+
+v1: https://lore.kernel.org/all/20240814094323.3927603-1-quic_rajkbhag@quicinc.com/
+
+Balamurugan S (6):
+  wifi: ath12k: fix incorrect CE addresses
+  wifi: ath12k: add ath12k_hw_params for IPQ5332
+  wifi: ath12k: avoid m3 firmware download in AHB device IPQ5332
+  wifi: ath12k: Add hw_params to remap CE register space for IPQ5332
+  wifi: ath12k: add AHB driver support for IPQ5332
+  wifi: ath12k: enable ath12k AHB support
+
+P Praneesh (1):
+  wifi: ath12k: refactor ath12k_hw_regs structure
+
+Raj Kumar Bhagat (2):
+  dt-bindings: net: wireless: describe the ath12k AHB module for IPQ5332
+  wifi: ath12k: add support for fixed QMI firmware memory
+
+Sowmiya Sree Elavalagan (4):
+  wifi: ath12k: Power up root PD
+  wifi: ath12k: Register various userPD interrupts and save SMEM entries
+  wifi: ath12k: Power up userPD
+  wifi: ath12k: Power down userPD
+
+ .../net/wireless/qcom,ipq5332-wifi.yaml       |  315 +++++
+ drivers/net/wireless/ath/ath12k/Kconfig       |    8 +
+ drivers/net/wireless/ath/ath12k/Makefile      |    1 +
+ drivers/net/wireless/ath/ath12k/ahb.c         | 1156 +++++++++++++++++
+ drivers/net/wireless/ath/ath12k/ahb.h         |   80 ++
+ drivers/net/wireless/ath/ath12k/ce.c          |   92 +-
+ drivers/net/wireless/ath/ath12k/ce.h          |   18 +-
+ drivers/net/wireless/ath/ath12k/core.c        |   60 +-
+ drivers/net/wireless/ath/ath12k/core.h        |   14 +-
+ drivers/net/wireless/ath/ath12k/hal.c         |   84 +-
+ drivers/net/wireless/ath/ath12k/hal.h         |   68 +-
+ drivers/net/wireless/ath/ath12k/hw.c          |  479 ++++++-
+ drivers/net/wireless/ath/ath12k/hw.h          |   22 +-
+ drivers/net/wireless/ath/ath12k/pci.c         |   10 +-
+ drivers/net/wireless/ath/ath12k/pci.h         |    4 +-
+ drivers/net/wireless/ath/ath12k/qmi.c         |  210 ++-
+ drivers/net/wireless/ath/ath12k/qmi.h         |    3 +-
+ 17 files changed, 2507 insertions(+), 117 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/wireless/qcom,ipq5332-wifi.yaml
+ create mode 100644 drivers/net/wireless/ath/ath12k/ahb.c
+ create mode 100644 drivers/net/wireless/ath/ath12k/ahb.h
+
+
+base-commit: 7fd16d1de09e014b2419ddd1b03ff41d6ac131c2
 -- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+2.34.1
 
 
