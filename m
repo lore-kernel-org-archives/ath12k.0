@@ -4,70 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 697DAC28B30
-	for <ath12k@archiver.kernel.org>; Mon, 17 Mar 2025 15:43:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7813C282EC
+	for <ath12k@archiver.kernel.org>; Mon, 17 Mar 2025 16:48:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IJ4YcgtSW7V1KjnzX+xp2hJqgLVP9ecSqTePoWh05So=; b=or8PNvoeG2H0dcx8j64acWe1V4
-	1QZ8BHf9IIp/V0GF5mX6rgg3kT+HJ4kb7NNPgmqPeVNR6W4JsM/jV3L0MPGLwLod5aoTs0pw9ag9O
-	cvdQbldRzKtXb4fpM5Q8l5pWXAH8qpvuaEhNMuYVShcb/ZtQO/GXpihNaO+nxWHKEoKezkLYfaL1K
-	J5UjCBfOvajMO3kApv285/FWyJkPExoINP+k6R6j1PX1yEbqFwFdyKDKM+cKRc/29dLYZl9HQkE/Z
-	K4HkwrSZ8wKRR7KDvS3KByUdylyY66EkB4VQQr9Awfh2+lE35tZ8yyMwDaxswHABMEz+/R2T9ZkNW
-	hOOUWk1w==;
+	bh=ztjSg7idj2pQKxvx6vrc+WeOuuy7j/s4ig6YtaF6Ly8=; b=2zbEq28XSY5RZu/1UTlVsF3Q66
+	XPvCX2yXHX8an7DpHl1d/w/yGg/E6MXU62xRpaNb/xT9E3nECZcIWD39DrGEgguqK90R9dajGCyZI
+	BVwF6++o2V5YZvAsVyo9jORAw705x4H7llZJxoye1HjlKr5Iou3FVzdLWjzHCK51vKn/mb8Fj6LZO
+	UJmdAV68sLCqo5mfjocaFJuxpnhOD7RBUMVX6Xxhm6zv6+QTd9Mw9J5FiX0KtmUuSJFoxr6NyC8Sc
+	1HM/OZrhNAjsmMWqpJ7ynXKt0tc+UXeEqYE2Ey4I8+YFOBotxY19ge3Xbr9OS1HlZvfVU1OiRGpB/
+	5kEisX4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuCd9-00000003C43-0pd0
+	id 1tuDe4-00000003Omt-2ohY
 	for ath12k@archiver.kernel.org;
-	Mon, 17 Mar 2025 15:43:55 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuCd7-00000003C3B-2goI
-	for ath12k@bombadil.infradead.org;
-	Mon, 17 Mar 2025 15:43:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=IJ4YcgtSW7V1KjnzX+xp2hJqgLVP9ecSqTePoWh05So=; b=q/VWvIvctyIIOJxT9tE+it7cSX
-	4eIq7kq+RmM4BbXZ7fyGwuzkUpu0d0dZlqTaI05ajhGKYRM2z1M0wuBYgao4lrH3pd/zlGvo64+mW
-	+9HKQUbYK1l8TzFgCrfKlskXeGxwyysc7+Oroa0w94VuQEZYQMA2JuI+C3+uV8mAEMrrphB7Et3hv
-	GzX9DzjxivCZiMFpMIX4e+L7B8OHIJLVWY6kXPc0CfW+0A6XqQIep3eo126TaeHDvBzVfgXIxWIoF
-	yEDye3oaI2Hflfz6pTYqDkjxXXFCVDPUDEdZKnziCsumDbXDsA1+xGcaNVacbyyfSOG3mFGo5eY/s
-	VeJJFI0Q==;
+	Mon, 17 Mar 2025 16:48:56 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuCd4-00000003U2A-15qY
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tuCcn-00000003Bsy-1uqM
 	for ath12k@lists.infradead.org;
-	Mon, 17 Mar 2025 15:43:52 +0000
+	Mon, 17 Mar 2025 15:43:34 +0000
 Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52H9uCcQ017034;
-	Mon, 17 Mar 2025 15:43:35 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52HAC9p8000755;
+	Mon, 17 Mar 2025 15:43:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IJ4YcgtSW7V1KjnzX+xp2hJqgLVP9ecSqTePoWh05So=; b=BMYg+jCLMvkYNuIV
-	1ailY4A2DxtVKHxDrnFyndg7nnl0/59W/n3y56wpoHDtSRdN9GfZb/XOoxi3Wbq2
-	Dg3kEgrzaJFQj8RuM2ESWnisTyafcaVTebmxyTmpmYqWKiNgF1gT3NgYSGJ0klpO
-	4DJSCwT9Z/a8VOeUS/SnG2jbt5S0WS9L1zgIiNc6jHdHIe4hc7uAZ8ca/SgKrVJ6
-	cgSe7D1oAKjD8UEsEqDBOI544r5UXmkcvgdgTWPEow0j4BfKwkrDB4BAbSMGFUnx
-	t/DemOyv4T1LL839mhqm8zKrelfffK6cR6kGCul6ZwIRDB/g+KMJOJuomUEv3gIB
-	MU1Mtg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1r157w1-1
+	ztjSg7idj2pQKxvx6vrc+WeOuuy7j/s4ig6YtaF6Ly8=; b=GXFVDYOYnNppU35F
+	q8FLHDj34TI5srGdMfv6Y0aPmBJGQk04iFWz5H1rMQSSxtGOKJll9dZV2TpgUPAe
+	+R6sc1DDM61iz0Zu0Bjwxw2rQ8OaH7uiu22PVWWJxA+JCoZ3UMUY0MZuAq45o0co
+	+/fRSufK61G2Z3FX2C6NX0vg7bwZc6S6XtYB8n48umT6MPMRNyzLCYJ5V3Y+lQU1
+	cHbiZfoEjow+kpLMlHCo40c9XpsZ90cdEBaD0NtS50ZH50vNSX+TsGORScoxlx65
+	1rsf35WJTp0cJxq7zi6PoLAFhAaWhsTCPGuCz2a1hwxK5/mEVLJO9mfhjZU6Vmcd
+	zw3a2Q==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1r157us-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 17 Mar 2025 15:43:35 +0000 (GMT)
+	Mon, 17 Mar 2025 15:43:23 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52HFhYH6012349
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52HFhMdh029940
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 17 Mar 2025 15:43:34 GMT
+	Mon, 17 Mar 2025 15:43:22 GMT
 Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 17 Mar 2025 08:43:30 -0700
+ 15.2.1544.9; Mon, 17 Mar 2025 08:43:18 -0700
 From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -75,14 +60,15 @@ CC: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
         <linux-wireless@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>,
-        Balamurugan S
-	<quic_bselvara@quicinc.com>,
-        P Praneesh <quic_ppranees@quicinc.com>,
-        "Raj
- Kumar Bhagat" <quic_rajkbhag@quicinc.com>
-Subject: [PATCH ath-next v10 13/13] wifi: ath12k: enable ath12k AHB support
-Date: Mon, 17 Mar 2025 21:11:50 +0530
-Message-ID: <20250317154150.1361364-14-quic_rajkbhag@quicinc.com>
+        "Sowmiya Sree
+ Elavalagan" <quic_ssreeela@quicinc.com>,
+        Raj Kumar Bhagat
+	<quic_rajkbhag@quicinc.com>,
+        Vasanthakumar Thiagarajan
+	<vasanthakumar.thiagarajan@oss.qualcomm.com>
+Subject: [PATCH ath-next v10 10/13] wifi: ath12k: Register various userPD interrupts and save SMEM entries
+Date: Mon, 17 Mar 2025 21:11:47 +0530
+Message-ID: <20250317154150.1361364-11-quic_rajkbhag@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250317154150.1361364-1-quic_rajkbhag@quicinc.com>
 References: <20250317154150.1361364-1-quic_rajkbhag@quicinc.com>
@@ -94,10 +80,10 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=LuaSymdc c=1 sm=1 tr=0 ts=67d84327 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=vXVk93xmC7zsTb_1jtAA:9 a=RVmHIydaz68A:10
+X-Authority-Analysis: v=2.4 cv=LuaSymdc c=1 sm=1 tr=0 ts=67d8431b cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=M8MUCSGaitjyiz5FeOUA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: xMDYLXXL4VMYzvNRYzIN0l2upy2875wt
-X-Proofpoint-ORIG-GUID: xMDYLXXL4VMYzvNRYzIN0l2upy2875wt
+X-Proofpoint-GUID: fzxYMz622gypbBb5TtJeUI4-o2VwT-jJ
+X-Proofpoint-ORIG-GUID: fzxYMz622gypbBb5TtJeUI4-o2VwT-jJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-17_06,2025-03-17_01,2024-11-22_01
@@ -108,8 +94,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 imposto
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2503170113
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250317_154350_703564_0391A304 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20250317_084333_625241_81325305 
+X-CRM114-Status: GOOD (  21.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,187 +110,204 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Balamurugan S <quic_bselvara@quicinc.com>
+From: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 
-Currently only PCI devices are supported in Ath12k driver. Refactor
-Ath12k module_init and module_exit to include Ath12k AHB support.
-
-Add Ath12k AHB support in Kconfig with dependency on Remoteproc
-driver. Ath12k AHB support relies on remoteproc driver for firmware
-download, power up/down etc.
+Q6 and ath12k driver communicates using SMEM and IRQs. Spawn interrupt
+is triggered once the userPD thread is spawned. Ready interrupts denotes
+userPD is completely powered up and ready. Stop-ack is to acknowledge
+the ath12k driver that userPD is stopped. Ath12k driver needs to set spawn
+bit in SMEM to instruct Q6 to spawn a userPD. Similarly stop bit is
+set when userPD needs to be stopped.
 
 Tested-on: IPQ5332 hw1.0 AHB WLAN.WBE.1.3.1-00130-QCAHKSWPL_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.1.1-00210-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Balamurugan S <quic_bselvara@quicinc.com>
-Co-developed-by: P Praneesh <quic_ppranees@quicinc.com>
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Signed-off-by: Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
 Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/Kconfig  |  6 ++++
- drivers/net/wireless/ath/ath12k/Makefile |  1 +
- drivers/net/wireless/ath/ath12k/ahb.h    | 11 ++++++++
- drivers/net/wireless/ath/ath12k/core.c   | 35 ++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/pci.c    | 10 ++-----
- drivers/net/wireless/ath/ath12k/pci.h    |  4 ++-
- 6 files changed, 55 insertions(+), 12 deletions(-)
+ drivers/net/wireless/ath/ath12k/ahb.c | 79 ++++++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/ahb.h | 16 ++++++
+ drivers/net/wireless/ath/ath12k/hw.h  |  1 +
+ 3 files changed, 94 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/Kconfig b/drivers/net/wireless/ath/ath12k/Kconfig
-index 52a1bb19e3da..7782dd131c62 100644
---- a/drivers/net/wireless/ath/ath12k/Kconfig
-+++ b/drivers/net/wireless/ath/ath12k/Kconfig
-@@ -15,6 +15,12 @@ config ATH12K
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
+index 8f7a00e9602f..291ae8177cdd 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.c
++++ b/drivers/net/wireless/ath/ath12k/ahb.c
+@@ -9,6 +9,7 @@
+ #include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/remoteproc.h>
++#include <linux/soc/qcom/smem_state.h>
+ #include "ahb.h"
+ #include "debug.h"
+ #include "hif.h"
+@@ -23,6 +24,11 @@ static const struct of_device_id ath12k_ahb_of_match[] = {
+ MODULE_DEVICE_TABLE(of, ath12k_ahb_of_match);
  
- 	  If you choose to build a module, it'll be called ath12k.
+ #define ATH12K_IRQ_CE0_OFFSET 4
++#define ATH12K_MAX_UPDS 1
++#define ATH12K_UPD_IRQ_WRD_LEN  18
++static const char ath12k_userpd_irq[][9] = {"spawn",
++				     "ready",
++				     "stop-ack"};
  
-+config ATH12K_AHB
-+	bool "QTI ath12k AHB support"
-+	depends on ATH12K && REMOTEPROC
-+	help
-+	  Enable support for Ath12k AHB bus chipsets, example IPQ5332.
-+
- config ATH12K_DEBUG
- 	bool "ath12k debugging"
- 	depends on ATH12K
-diff --git a/drivers/net/wireless/ath/ath12k/Makefile b/drivers/net/wireless/ath/ath12k/Makefile
-index 60644cb42c76..d95ee525a6cd 100644
---- a/drivers/net/wireless/ath/ath12k/Makefile
-+++ b/drivers/net/wireless/ath/ath12k/Makefile
-@@ -23,6 +23,7 @@ ath12k-y += core.o \
- 	    fw.o \
- 	    p2p.o
+ static const char *irq_name[ATH12K_IRQ_NUM_MAX] = {
+ 	"misc-pulse1",
+@@ -547,6 +553,72 @@ static const struct ath12k_hif_ops ath12k_ahb_hif_ops_ipq5332 = {
+ 	.map_service_to_pipe = ath12k_ahb_map_service_to_pipe,
+ };
  
-+ath12k-$(CONFIG_ATH12K_AHB) += ahb.o
- ath12k-$(CONFIG_ATH12K_DEBUGFS) += debugfs.o debugfs_htt_stats.o debugfs_sta.o
- ath12k-$(CONFIG_ACPI) += acpi.o
- ath12k-$(CONFIG_ATH12K_TRACING) += trace.o
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
-index f8a5c43075c1..d56244b20a6a 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.h
-+++ b/drivers/net/wireless/ath/ath12k/ahb.h
-@@ -66,4 +66,15 @@ static inline struct ath12k_ahb *ath12k_ab_to_ahb(struct ath12k_base *ab)
- 	return (struct ath12k_ahb *)ab->drv_priv;
- }
- 
-+#ifdef CONFIG_ATH12K_AHB
-+int ath12k_ahb_init(void);
-+void ath12k_ahb_exit(void);
-+#else
-+static inline int ath12k_ahb_init(void)
++static irqreturn_t ath12k_userpd_irq_handler(int irq, void *data)
 +{
++	struct ath12k_base *ab = data;
++	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++
++	if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_SPAWN_IRQ]) {
++		complete(&ab_ahb->userpd_spawned);
++	} else if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_READY_IRQ]) {
++		complete(&ab_ahb->userpd_ready);
++	} else if (irq == ab_ahb->userpd_irq_num[ATH12K_USERPD_STOP_ACK_IRQ])	{
++		complete(&ab_ahb->userpd_stopped);
++	} else {
++		ath12k_err(ab, "Invalid userpd interrupt\n");
++		return IRQ_NONE;
++	}
++
++	return IRQ_HANDLED;
++}
++
++static int ath12k_ahb_config_rproc_irq(struct ath12k_base *ab)
++{
++	struct ath12k_ahb *ab_ahb = ath12k_ab_to_ahb(ab);
++	int i, ret;
++	char *upd_irq_name;
++
++	for (i = 0; i < ATH12K_USERPD_MAX_IRQ; i++) {
++		ab_ahb->userpd_irq_num[i] = platform_get_irq_byname(ab->pdev,
++								    ath12k_userpd_irq[i]);
++		if (ab_ahb->userpd_irq_num[i] < 0)
++			return ab_ahb->userpd_irq_num[i];
++
++		upd_irq_name = devm_kzalloc(&ab->pdev->dev, ATH12K_UPD_IRQ_WRD_LEN,
++					    GFP_KERNEL);
++		if (!upd_irq_name)
++			return -ENOMEM;
++
++		scnprintf(upd_irq_name, ATH12K_UPD_IRQ_WRD_LEN, "UserPD%u-%s",
++			  ab_ahb->userpd_id, ath12k_userpd_irq[i]);
++		ret = devm_request_threaded_irq(&ab->pdev->dev, ab_ahb->userpd_irq_num[i],
++						NULL, ath12k_userpd_irq_handler,
++						IRQF_TRIGGER_RISING | IRQF_ONESHOT,
++						upd_irq_name, ab);
++		if (ret)
++			return dev_err_probe(&ab->pdev->dev, ret,
++					     "Request %s irq failed: %d\n",
++					     ath12k_userpd_irq[i], ret);
++	}
++
++	ab_ahb->spawn_state = devm_qcom_smem_state_get(&ab->pdev->dev, "spawn",
++						       &ab_ahb->spawn_bit);
++	if (IS_ERR(ab_ahb->spawn_state))
++		return dev_err_probe(&ab->pdev->dev, PTR_ERR(ab_ahb->spawn_state),
++				     "Failed to acquire spawn state\n");
++
++	ab_ahb->stop_state = devm_qcom_smem_state_get(&ab->pdev->dev, "stop",
++						      &ab_ahb->stop_bit);
++	if (IS_ERR(ab_ahb->stop_state))
++		return dev_err_probe(&ab->pdev->dev, PTR_ERR(ab_ahb->stop_state),
++				     "Failed to acquire stop state\n");
++
++	init_completion(&ab_ahb->userpd_spawned);
++	init_completion(&ab_ahb->userpd_ready);
++	init_completion(&ab_ahb->userpd_stopped);
 +	return 0;
 +}
 +
-+static inline void ath12k_ahb_exit(void) {};
-+#endif
- #endif
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 5bd852f9572b..4117ccd1af20 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -10,15 +10,18 @@
- #include <linux/firmware.h>
- #include <linux/of.h>
- #include <linux/of_graph.h>
-+#include "ahb.h"
- #include "core.h"
- #include "dp_tx.h"
- #include "dp_rx.h"
- #include "debug.h"
--#include "hif.h"
--#include "fw.h"
- #include "debugfs.h"
-+#include "fw.h"
-+#include "hif.h"
-+#include "pci.h"
- #include "wow.h"
- 
-+static int ahb_err, pci_err;
- unsigned int ath12k_debug_mask;
- module_param_named(debug_mask, ath12k_debug_mask, uint, 0644);
- MODULE_PARM_DESC(debug_mask, "Debugging mask");
-@@ -2020,5 +2023,31 @@ struct ath12k_base *ath12k_core_alloc(struct device *dev, size_t priv_size,
- 	return NULL;
- }
- 
--MODULE_DESCRIPTION("Core module for Qualcomm Atheros 802.11be wireless LAN cards.");
-+static int ath12k_init(void)
-+{
-+	ahb_err = ath12k_ahb_init();
-+	if (ahb_err)
-+		pr_warn("Failed to initialize ath12k AHB device: %d\n", ahb_err);
-+
-+	pci_err = ath12k_pci_init();
-+	if (pci_err)
-+		pr_warn("Failed to initialize ath12k PCI device: %d\n", pci_err);
-+
-+	/* If both failed, return one of the failures (arbitrary) */
-+	return ahb_err && pci_err ? ahb_err : 0;
-+}
-+
-+static void ath12k_exit(void)
-+{
-+	if (!pci_err)
-+		ath12k_pci_exit();
-+
-+	if (!ahb_err)
-+		ath12k_ahb_exit();
-+}
-+
-+module_init(ath12k_init);
-+module_exit(ath12k_exit);
-+
-+MODULE_DESCRIPTION("Driver support for Qualcomm Technologies 802.11be WLAN devices");
- MODULE_LICENSE("Dual BSD/GPL");
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index b474696ac6d8..e62b172c7f9f 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1831,7 +1831,7 @@ static struct pci_driver ath12k_pci_driver = {
- 	.driver.pm = &ath12k_pci_pm_ops,
- };
- 
--static int ath12k_pci_init(void)
-+int ath12k_pci_init(void)
+ static int ath12k_ahb_root_pd_state_notifier(struct notifier_block *nb,
+ 					     const unsigned long event, void *data)
  {
+@@ -659,7 +731,8 @@ static int ath12k_ahb_configure_rproc(struct ath12k_base *ab)
+ 			goto err_unreg_notifier;
+ 		}
+ 	}
+-	return 0;
++
++	return ath12k_ahb_config_rproc_irq(ab);
+ 
+ err_unreg_notifier:
+ 	ath12k_ahb_unregister_rproc_notifier(ab);
+@@ -764,7 +837,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+ 	const struct ath12k_hif_ops *hif_ops;
+ 	struct ath12k_ahb *ab_ahb;
+ 	enum ath12k_hw_rev hw_rev;
+-	u32 addr;
++	u32 addr, userpd_id;
  	int ret;
  
-@@ -1844,14 +1844,8 @@ static int ath12k_pci_init(void)
+ 	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+@@ -782,6 +855,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+ 	switch (hw_rev) {
+ 	case ATH12K_HW_IPQ5332_HW10:
+ 		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
++		userpd_id = ATH12K_IPQ5332_USERPD_ID;
+ 		break;
+ 	default:
+ 		ret = -EOPNOTSUPP;
+@@ -794,6 +868,7 @@ static int ath12k_ahb_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, ab);
+ 	ab_ahb = ath12k_ab_to_ahb(ab);
+ 	ab_ahb->ab = ab;
++	ab_ahb->userpd_id = userpd_id;
  
- 	return 0;
- }
--module_init(ath12k_pci_init);
+ 	/* Set fixed_mem_region to true for platforms that support fixed memory
+ 	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
+diff --git a/drivers/net/wireless/ath/ath12k/ahb.h b/drivers/net/wireless/ath/ath12k/ahb.h
+index 1105473917ce..b17e7693b31a 100644
+--- a/drivers/net/wireless/ath/ath12k/ahb.h
++++ b/drivers/net/wireless/ath/ath12k/ahb.h
+@@ -25,6 +25,13 @@ enum ath12k_ahb_smp2p_msg_id {
+ 	ATH12K_AHB_POWER_SAVE_EXIT,
+ };
  
--static void ath12k_pci_exit(void)
-+void ath12k_pci_exit(void)
- {
- 	pci_unregister_driver(&ath12k_pci_driver);
- }
--
--module_exit(ath12k_pci_exit);
--
--MODULE_DESCRIPTION("Driver support for Qualcomm Technologies PCIe 802.11be WLAN devices");
--MODULE_LICENSE("Dual BSD/GPL");
-diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-index 31584a7ad80e..521fa72333bb 100644
---- a/drivers/net/wireless/ath/ath12k/pci.h
-+++ b/drivers/net/wireless/ath/ath12k/pci.h
-@@ -1,7 +1,7 @@
- /* SPDX-License-Identifier: BSD-3-Clause-Clear */
- /*
-  * Copyright (c) 2019-2021 The Linux Foundation. All rights reserved.
-- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-+ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- #ifndef ATH12K_PCI_H
- #define ATH12K_PCI_H
-@@ -145,4 +145,6 @@ void ath12k_pci_stop(struct ath12k_base *ab);
- int ath12k_pci_start(struct ath12k_base *ab);
- int ath12k_pci_power_up(struct ath12k_base *ab);
- void ath12k_pci_power_down(struct ath12k_base *ab, bool is_suspend);
-+int ath12k_pci_init(void);
-+void ath12k_pci_exit(void);
- #endif /* ATH12K_PCI_H */
++enum ath12k_ahb_userpd_irq {
++	ATH12K_USERPD_SPAWN_IRQ,
++	ATH12K_USERPD_READY_IRQ,
++	ATH12K_USERPD_STOP_ACK_IRQ,
++	ATH12K_USERPD_MAX_IRQ,
++};
++
+ struct ath12k_base;
+ 
+ struct ath12k_ahb {
+@@ -34,6 +41,15 @@ struct ath12k_ahb {
+ 	struct completion rootpd_ready;
+ 	struct notifier_block root_pd_nb;
+ 	void *root_pd_notifier;
++	struct qcom_smem_state *spawn_state;
++	struct qcom_smem_state *stop_state;
++	struct completion userpd_spawned;
++	struct completion userpd_ready;
++	struct completion userpd_stopped;
++	u32 userpd_id;
++	u32 spawn_bit;
++	u32 stop_bit;
++	int userpd_irq_num[ATH12K_USERPD_MAX_IRQ];
+ };
+ 
+ static inline struct ath12k_ahb *ath12k_ab_to_ahb(struct ath12k_base *ab)
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index a4332588b117..d4a2e47169d9 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -97,6 +97,7 @@
+ #define ATH12K_REGDB_FILE_NAME		"regdb.bin"
+ 
+ #define ATH12K_PCIE_MAX_PAYLOAD_SIZE	128
++#define ATH12K_IPQ5332_USERPD_ID	1
+ 
+ enum ath12k_hw_rate_cck {
+ 	ATH12K_HW_RATE_CCK_LP_11M = 0,
 -- 
 2.34.1
 
