@@ -4,88 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09F37C282EC
-	for <ath12k@archiver.kernel.org>; Tue, 18 Mar 2025 08:58:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A84C6C282EC
+	for <ath12k@archiver.kernel.org>; Tue, 18 Mar 2025 09:03:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ncnVs9DZPlq24ZLj54j/UK/7WG4D0U/GaRrVXHzJTjs=; b=RWhy7LMT5jcfkXVQG0WZDGSdGb
-	Cfj7whzPtBfgoAaj7zxVoVLiXOx7X6ZN9ZdHzSW/2WmMUjOF5/LP1eaa1mb9z6881/znmyhw00yYA
-	KY+JfrkSmFXDSs91LPxvPcuR9SXpyKCT0pvbqdIP0m8eYLLrA+ERE8t+Hc6iZdj7Q5svWupzTYNWi
-	2TY5mLL7X4ReOoRSeftH0NhbIxYokeoNMYkTkpmqTwIm6xdcBH4G9yzx9DN25DCDrQjfOayJRYL0c
-	ekxcYVUpEcW7wuHUGC2rLXACtLm63X309E2ok8oajIOoZlDWL+bB1xSx7xYJr8DVlIyLmULWHeG1D
-	eq8QMVrA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=4xlQYCfU3Akcvgu7srhdLO0eoIfGj4IIjuB8v15duXk=; b=0evgV63h1eJ+pIXVkCyRah89YZ
+	w2dNF+J0hKx7gskP7SexTcMioDsf38BEYzLqyhti9cskSQwUMbfnC+mxh4hs3zMijqTt7RrlQfcK7
+	MRF4gz5J9x4+rZtX+7T2AmIvoZ/j83V8F5q86yr0x17bCoMwsqbSp++tGQtcj7yz0SiUgdgbXTuGe
+	MzD0dRbqQj9AFuRVcmCwpiVGzPRfJBXRrFgbpeItCDkFuhTMJbM4+xGkG171XDW9A+FFt53AHZ0Df
+	9hCyfuO1VS3uEBHJ03MuEi2FnAWwhitjlD7t/dtIUsIsVN/T7mq+z6Jtq7pwUM+7vGYGcxTUMclqR
+	Yfb1fWwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuSmH-00000005FPO-3IxG
+	id 1tuSrF-00000005GCv-1qY2
 	for ath12k@archiver.kernel.org;
-	Tue, 18 Mar 2025 08:58:25 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 18 Mar 2025 09:03:33 +0000
+Received: from mgamail.intel.com ([192.198.163.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuSee-00000005EDc-3dX6
+	id 1tuSjf-00000005EuS-0MvH
 	for ath12k@lists.infradead.org;
-	Tue, 18 Mar 2025 08:50:34 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52I2O7O6002749;
-	Tue, 18 Mar 2025 08:50:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=ncnVs9DZPlq24ZLj54j/UK
-	/7WG4D0U/GaRrVXHzJTjs=; b=H0MmYJgRdRLIQ6CrrjquwkTa6BNW6NXZIU4AYI
-	tDH5L7Y4pMqm6rlNC+DECUVUzWvTXNlM8FoAjLqx07/3YSN4jMxIz3caEJbL7a1i
-	pWknxkPogTQK3Xh1P4jBClQI8lGYs3i4ymabw7UqsJClOfKfMOkTavgvW0JUzoWd
-	OJwgRNEFIj3pRUFIPGhx2FaEkAoQw4gblR2jOXB85qHIpiKSnqI1louzu5iuqk/p
-	Ib5rhUILyYMdRnx2EJxQnUozCEvjSSDe99Kse8ySYyvxpTPG8FDqzPmLXHQFkKpk
-	DuVakKy6SvaNWGxiAAbhPgox7svz2sG6j6gbVG9VKfuSsybQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45f010gwgd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Mar 2025 08:50:30 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52I8oUkY014315
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Mar 2025 08:50:30 GMT
-Received: from hu-rdevanat-blr.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 18 Mar 2025 01:50:28 -0700
-From: Roopni Devanathan <quic_rdevanat@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Pradeep Kumar Chitrapu
-	<quic_pradeepc@quicinc.com>,
-        Roopni Devanathan <quic_rdevanat@quicinc.com>
-Subject: [PATCH ath-next] wifi: ath12k: Fix incorrect rates sent to firmware
-Date: Tue, 18 Mar 2025 14:20:13 +0530
-Message-ID: <20250318085013.1296262-1-quic_rdevanat@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	Tue, 18 Mar 2025 08:55:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1742288143; x=1773824143;
+  h=date:from:to:cc:subject:message-id:mime-version;
+  bh=d852++R4Z8qfuBp2rmYw9Ji8iv3IP8iNK+etD5OTlck=;
+  b=a+9wEPlTkspilHb8/dFEf9kuh5ncWYGREOiSqTPONSw0dUe+nQnm2xu3
+   n1FEuNvGT9JWJLLnsB4MhRkWRLTLzJt9yIFyhAPPw1hxvj78raOp3wdV3
+   vGExXz1YSeFf6ywYuwDVIFNk/FuNlrlHw77U5ZlOjyvZooPXrcDyqwPRe
+   3qgti4Lj2HaBkbgMxPM61yJw/ZG3C/YrO3fPdcvE36S1cLsquHqP0N+fS
+   Bnb0PRP7pqeNBlG0+g6a2n3TAm/s2Uk7H1GtNca00C/AxJ20sOElOkXpd
+   NSpvk2nfRv7bjGW5MFRIrgLMBvsc6ULaPFbNGd7EEVQHH9DAcw0I9d7WZ
+   A==;
+X-CSE-ConnectionGUID: eaJ7q4CLRqqWDHq41pbusQ==
+X-CSE-MsgGUID: VetNnc/DSGaAEo+BDO3E/w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11376"; a="47305267"
+X-IronPort-AV: E=Sophos;i="6.14,256,1736841600"; 
+   d="scan'208";a="47305267"
+Received: from fmviesa010.fm.intel.com ([10.60.135.150])
+  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Mar 2025 01:55:41 -0700
+X-CSE-ConnectionGUID: XJnHQItKTqWkkm8EA12/5w==
+X-CSE-MsgGUID: MhA08L9BRnqBWj2lUvnA2g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.14,256,1736841600"; 
+   d="scan'208";a="122697324"
+Received: from lkp-server02.sh.intel.com (HELO a4747d147074) ([10.239.97.151])
+  by fmviesa010.fm.intel.com with ESMTP; 18 Mar 2025 01:55:38 -0700
+Received: from kbuild by a4747d147074 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tuSjX-000Dbj-2R;
+	Tue, 18 Mar 2025 08:55:35 +0000
+Date: Tue, 18 Mar 2025 16:54:30 +0800
+From: kernel test robot <lkp@intel.com>
+To: Balamurugan S <quic_bselvara@quicinc.com>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+	ath12k@lists.infradead.org,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	P Praneesh <quic_ppranees@quicinc.com>,
+	Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: [ath:pending 19/19] drivers/net/wireless/ath/ath12k/ahb.c:1011:11:
+ warning: cast to smaller integer type 'enum ath12k_hw_rev' from 'const void
+ *'
+Message-ID: <202503181631.ckurxYu4-lkp@intel.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: u4etpdmlqYYk1RqfO0MNu0fYdfhWOOEi
-X-Proofpoint-GUID: u4etpdmlqYYk1RqfO0MNu0fYdfhWOOEi
-X-Authority-Analysis: v=2.4 cv=G50cE8k5 c=1 sm=1 tr=0 ts=67d933d6 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=z6_oMQ1SobYYos8x1-0A:9 a=v6Fpk0e4ntcIGe5OSANj:22
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-18_04,2025-03-17_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 suspectscore=0
- lowpriorityscore=0 mlxlogscore=999 phishscore=0 adultscore=0
- impostorscore=0 spamscore=0 clxscore=1015 malwarescore=0
- priorityscore=1501 bulkscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502280000 definitions=main-2503180063
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_015032_914302_314A1918 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20250318_015543_151996_49FDCC03 
+X-CRM114-Status: GOOD (  11.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,60 +91,198 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Hi Balamurugan,
 
-Before firmware assert, if there is a station interface in the device
-which is not associated with an AP, the basic rates are set to zero.
-Following this, during firmware recovery, when basic rates are zero,
-ath12k driver is sending invalid rate codes, which are negative values,
-to firmware. This results in firmware assert.
+First bad commit (maybe != root cause):
 
-Fix this by checking if rate codes are valid, before sending them
-to the firmware.
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git pending
+head:   5bc3e6ca41aa7982442c7c2002d339f1a3343eae
+commit: 5bc3e6ca41aa7982442c7c2002d339f1a3343eae [19/19] wifi: ath12k: enable ath12k AHB support
+config: um-allmodconfig (https://download.01.org/0day-ci/archive/20250318/202503181631.ckurxYu4-lkp@intel.com/config)
+compiler: clang version 19.1.7 (https://github.com/llvm/llvm-project cd708029e0b2869e80abe31ddb175f7c35361f90)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250318/202503181631.ckurxYu4-lkp@intel.com/reproduce)
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202503181631.ckurxYu4-lkp@intel.com/
 
-Signed-off-by: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+All warnings (new ones prefixed by >>):
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 9fda97667d4e..3b6ee1e65f1b 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3450,7 +3450,9 @@ static void ath12k_recalculate_mgmt_rate(struct ath12k *ar,
- 	}
- 
- 	sband = hw->wiphy->bands[def->chan->band];
--	basic_rate_idx = ffs(bss_conf->basic_rates) - 1;
-+	basic_rate_idx = ffs(bss_conf->basic_rates);
-+	if (basic_rate_idx)
-+		basic_rate_idx -= 1;
- 	bitrate = sband->bitrates[basic_rate_idx].bitrate;
- 
- 	hw_rate_code = ath12k_mac_get_rate_hw_value(bitrate);
-@@ -3983,10 +3985,13 @@ static void ath12k_mac_bss_info_changed(struct ath12k *ar,
- 		band = def.chan->band;
- 		mcast_rate = info->mcast_rate[band];
- 
--		if (mcast_rate > 0)
-+		if (mcast_rate > 0) {
- 			rateidx = mcast_rate - 1;
--		else
--			rateidx = ffs(info->basic_rates) - 1;
-+		} else {
-+			rateidx = ffs(info->basic_rates);
-+			if (rateidx)
-+				rateidx -= 1;
-+		}
- 
- 		if (ar->pdev->cap.supported_bands & WMI_HOST_WLAN_5G_CAP)
- 			rateidx += ATH12K_MAC_FIRST_OFDM_RATE_IDX;
+   In file included from drivers/net/wireless/ath/ath12k/ahb.c:7:
+   In file included from include/linux/dma-mapping.h:8:
+   In file included from include/linux/scatterlist.h:9:
+   In file included from arch/um/include/asm/io.h:24:
+   include/asm-generic/io.h:549:31: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     549 |         val = __raw_readb(PCI_IOBASE + addr);
+         |                           ~~~~~~~~~~ ^
+   include/asm-generic/io.h:567:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     567 |         val = __le16_to_cpu((__le16 __force)__raw_readw(PCI_IOBASE + addr));
+         |                                                         ~~~~~~~~~~ ^
+   include/uapi/linux/byteorder/little_endian.h:37:51: note: expanded from macro '__le16_to_cpu'
+      37 | #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
+         |                                                   ^
+   In file included from drivers/net/wireless/ath/ath12k/ahb.c:7:
+   In file included from include/linux/dma-mapping.h:8:
+   In file included from include/linux/scatterlist.h:9:
+   In file included from arch/um/include/asm/io.h:24:
+   include/asm-generic/io.h:585:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     585 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
+         |                                                         ~~~~~~~~~~ ^
+   include/uapi/linux/byteorder/little_endian.h:35:51: note: expanded from macro '__le32_to_cpu'
+      35 | #define __le32_to_cpu(x) ((__force __u32)(__le32)(x))
+         |                                                   ^
+   In file included from drivers/net/wireless/ath/ath12k/ahb.c:7:
+   In file included from include/linux/dma-mapping.h:8:
+   In file included from include/linux/scatterlist.h:9:
+   In file included from arch/um/include/asm/io.h:24:
+   include/asm-generic/io.h:601:33: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     601 |         __raw_writeb(value, PCI_IOBASE + addr);
+         |                             ~~~~~~~~~~ ^
+   include/asm-generic/io.h:616:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     616 |         __raw_writew((u16 __force)cpu_to_le16(value), PCI_IOBASE + addr);
+         |                                                       ~~~~~~~~~~ ^
+   include/asm-generic/io.h:631:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     631 |         __raw_writel((u32 __force)cpu_to_le32(value), PCI_IOBASE + addr);
+         |                                                       ~~~~~~~~~~ ^
+   include/asm-generic/io.h:724:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     724 |         readsb(PCI_IOBASE + addr, buffer, count);
+         |                ~~~~~~~~~~ ^
+   include/asm-generic/io.h:737:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     737 |         readsw(PCI_IOBASE + addr, buffer, count);
+         |                ~~~~~~~~~~ ^
+   include/asm-generic/io.h:750:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     750 |         readsl(PCI_IOBASE + addr, buffer, count);
+         |                ~~~~~~~~~~ ^
+   include/asm-generic/io.h:764:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     764 |         writesb(PCI_IOBASE + addr, buffer, count);
+         |                 ~~~~~~~~~~ ^
+   include/asm-generic/io.h:778:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     778 |         writesw(PCI_IOBASE + addr, buffer, count);
+         |                 ~~~~~~~~~~ ^
+   include/asm-generic/io.h:792:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+     792 |         writesl(PCI_IOBASE + addr, buffer, count);
+         |                 ~~~~~~~~~~ ^
+>> drivers/net/wireless/ath/ath12k/ahb.c:1011:11: warning: cast to smaller integer type 'enum ath12k_hw_rev' from 'const void *' [-Wvoid-pointer-to-enum-cast]
+    1011 |         hw_rev = (enum ath12k_hw_rev)of_device_get_match_data(&pdev->dev);
+         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   13 warnings generated.
 
-base-commit: b6f473c96421b8b451a8df8ccb620bcd71d4b3f4
+
+vim +1011 drivers/net/wireless/ath/ath12k/ahb.c
+
+940301a74ff47d Balamurugan S           2025-03-18   990  
+940301a74ff47d Balamurugan S           2025-03-18   991  static int ath12k_ahb_probe(struct platform_device *pdev)
+940301a74ff47d Balamurugan S           2025-03-18   992  {
+940301a74ff47d Balamurugan S           2025-03-18   993  	struct ath12k_base *ab;
+940301a74ff47d Balamurugan S           2025-03-18   994  	const struct ath12k_hif_ops *hif_ops;
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18   995  	struct ath12k_ahb *ab_ahb;
+940301a74ff47d Balamurugan S           2025-03-18   996  	enum ath12k_hw_rev hw_rev;
+dde5891d65c67e Sowmiya Sree Elavalagan 2025-03-18   997  	u32 addr, userpd_id;
+940301a74ff47d Balamurugan S           2025-03-18   998  	int ret;
+940301a74ff47d Balamurugan S           2025-03-18   999  
+940301a74ff47d Balamurugan S           2025-03-18  1000  	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+940301a74ff47d Balamurugan S           2025-03-18  1001  	if (ret) {
+940301a74ff47d Balamurugan S           2025-03-18  1002  		dev_err(&pdev->dev, "Failed to set 32-bit coherent dma\n");
+940301a74ff47d Balamurugan S           2025-03-18  1003  		return ret;
+940301a74ff47d Balamurugan S           2025-03-18  1004  	}
+940301a74ff47d Balamurugan S           2025-03-18  1005  
+940301a74ff47d Balamurugan S           2025-03-18  1006  	ab = ath12k_core_alloc(&pdev->dev, sizeof(struct ath12k_ahb),
+940301a74ff47d Balamurugan S           2025-03-18  1007  			       ATH12K_BUS_AHB);
+940301a74ff47d Balamurugan S           2025-03-18  1008  	if (!ab)
+940301a74ff47d Balamurugan S           2025-03-18  1009  		return -ENOMEM;
+940301a74ff47d Balamurugan S           2025-03-18  1010  
+940301a74ff47d Balamurugan S           2025-03-18 @1011  	hw_rev = (enum ath12k_hw_rev)of_device_get_match_data(&pdev->dev);
+940301a74ff47d Balamurugan S           2025-03-18  1012  	switch (hw_rev) {
+940301a74ff47d Balamurugan S           2025-03-18  1013  	case ATH12K_HW_IPQ5332_HW10:
+940301a74ff47d Balamurugan S           2025-03-18  1014  		hif_ops = &ath12k_ahb_hif_ops_ipq5332;
+dde5891d65c67e Sowmiya Sree Elavalagan 2025-03-18  1015  		userpd_id = ATH12K_IPQ5332_USERPD_ID;
+940301a74ff47d Balamurugan S           2025-03-18  1016  		break;
+940301a74ff47d Balamurugan S           2025-03-18  1017  	default:
+940301a74ff47d Balamurugan S           2025-03-18  1018  		ret = -EOPNOTSUPP;
+940301a74ff47d Balamurugan S           2025-03-18  1019  		goto err_core_free;
+940301a74ff47d Balamurugan S           2025-03-18  1020  	}
+940301a74ff47d Balamurugan S           2025-03-18  1021  
+940301a74ff47d Balamurugan S           2025-03-18  1022  	ab->hif.ops = hif_ops;
+940301a74ff47d Balamurugan S           2025-03-18  1023  	ab->pdev = pdev;
+940301a74ff47d Balamurugan S           2025-03-18  1024  	ab->hw_rev = hw_rev;
+940301a74ff47d Balamurugan S           2025-03-18  1025  	platform_set_drvdata(pdev, ab);
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1026  	ab_ahb = ath12k_ab_to_ahb(ab);
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1027  	ab_ahb->ab = ab;
+dde5891d65c67e Sowmiya Sree Elavalagan 2025-03-18  1028  	ab_ahb->userpd_id = userpd_id;
+940301a74ff47d Balamurugan S           2025-03-18  1029  
+940301a74ff47d Balamurugan S           2025-03-18  1030  	/* Set fixed_mem_region to true for platforms that support fixed memory
+940301a74ff47d Balamurugan S           2025-03-18  1031  	 * reservation from DT. If memory is reserved from DT for FW, ath12k driver
+940301a74ff47d Balamurugan S           2025-03-18  1032  	 * need not to allocate memory.
+940301a74ff47d Balamurugan S           2025-03-18  1033  	 */
+940301a74ff47d Balamurugan S           2025-03-18  1034  	if (!of_property_read_u32(ab->dev->of_node, "memory-region", &addr))
+940301a74ff47d Balamurugan S           2025-03-18  1035  		set_bit(ATH12K_FLAG_FIXED_MEM_REGION, &ab->dev_flags);
+940301a74ff47d Balamurugan S           2025-03-18  1036  
+940301a74ff47d Balamurugan S           2025-03-18  1037  	ret = ath12k_core_pre_init(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1038  	if (ret)
+940301a74ff47d Balamurugan S           2025-03-18  1039  		goto err_core_free;
+940301a74ff47d Balamurugan S           2025-03-18  1040  
+940301a74ff47d Balamurugan S           2025-03-18  1041  	ret = ath12k_ahb_resource_init(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1042  	if (ret)
+940301a74ff47d Balamurugan S           2025-03-18  1043  		goto err_core_free;
+940301a74ff47d Balamurugan S           2025-03-18  1044  
+940301a74ff47d Balamurugan S           2025-03-18  1045  	ret = ath12k_hal_srng_init(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1046  	if (ret)
+940301a74ff47d Balamurugan S           2025-03-18  1047  		goto err_resource_deinit;
+940301a74ff47d Balamurugan S           2025-03-18  1048  
+940301a74ff47d Balamurugan S           2025-03-18  1049  	ret = ath12k_ce_alloc_pipes(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1050  	if (ret) {
+940301a74ff47d Balamurugan S           2025-03-18  1051  		ath12k_err(ab, "failed to allocate ce pipes: %d\n", ret);
+940301a74ff47d Balamurugan S           2025-03-18  1052  		goto err_hal_srng_deinit;
+940301a74ff47d Balamurugan S           2025-03-18  1053  	}
+940301a74ff47d Balamurugan S           2025-03-18  1054  
+940301a74ff47d Balamurugan S           2025-03-18  1055  	ath12k_ahb_init_qmi_ce_config(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1056  
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1057  	ret = ath12k_ahb_configure_rproc(ab);
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1058  	if (ret)
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1059  		goto err_ce_free;
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1060  
+940301a74ff47d Balamurugan S           2025-03-18  1061  	ret = ath12k_ahb_config_irq(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1062  	if (ret) {
+940301a74ff47d Balamurugan S           2025-03-18  1063  		ath12k_err(ab, "failed to configure irq: %d\n", ret);
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1064  		goto err_rproc_deconfigure;
+940301a74ff47d Balamurugan S           2025-03-18  1065  	}
+940301a74ff47d Balamurugan S           2025-03-18  1066  
+940301a74ff47d Balamurugan S           2025-03-18  1067  	ret = ath12k_core_init(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1068  	if (ret) {
+940301a74ff47d Balamurugan S           2025-03-18  1069  		ath12k_err(ab, "failed to init core: %d\n", ret);
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1070  		goto err_rproc_deconfigure;
+940301a74ff47d Balamurugan S           2025-03-18  1071  	}
+940301a74ff47d Balamurugan S           2025-03-18  1072  
+940301a74ff47d Balamurugan S           2025-03-18  1073  	return 0;
+940301a74ff47d Balamurugan S           2025-03-18  1074  
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1075  err_rproc_deconfigure:
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1076  	ath12k_ahb_deconfigure_rproc(ab);
+f0b813f6eec3b8 Sowmiya Sree Elavalagan 2025-03-18  1077  
+940301a74ff47d Balamurugan S           2025-03-18  1078  err_ce_free:
+940301a74ff47d Balamurugan S           2025-03-18  1079  	ath12k_ce_free_pipes(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1080  
+940301a74ff47d Balamurugan S           2025-03-18  1081  err_hal_srng_deinit:
+940301a74ff47d Balamurugan S           2025-03-18  1082  	ath12k_hal_srng_deinit(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1083  
+940301a74ff47d Balamurugan S           2025-03-18  1084  err_resource_deinit:
+940301a74ff47d Balamurugan S           2025-03-18  1085  	ath12k_ahb_resource_deinit(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1086  
+940301a74ff47d Balamurugan S           2025-03-18  1087  err_core_free:
+940301a74ff47d Balamurugan S           2025-03-18  1088  	ath12k_core_free(ab);
+940301a74ff47d Balamurugan S           2025-03-18  1089  	platform_set_drvdata(pdev, NULL);
+940301a74ff47d Balamurugan S           2025-03-18  1090  
+940301a74ff47d Balamurugan S           2025-03-18  1091  	return ret;
+940301a74ff47d Balamurugan S           2025-03-18  1092  }
+940301a74ff47d Balamurugan S           2025-03-18  1093  
+
+:::::: The code at line 1011 was first introduced by commit
+:::::: 940301a74ff47d4a2bcdab6800991e875b728d5f wifi: ath12k: add AHB driver support for IPQ5332
+
+:::::: TO: Balamurugan S <quic_bselvara@quicinc.com>
+:::::: CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+
 -- 
-2.25.1
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
