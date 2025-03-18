@@ -4,51 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F28FC282EC
-	for <ath12k@archiver.kernel.org>; Tue, 18 Mar 2025 18:16:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4861C282EC
+	for <ath12k@archiver.kernel.org>; Tue, 18 Mar 2025 18:19:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:References:Cc:To:From:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UsIMLj5Zp/1LjmA4azRk7aHKxcoDg+hqyTp4BMKlMtE=; b=fxPT+H9GE8umiQ5ewvX1xMYlyX
-	GP9UdzOawo0i54BrhvskBvdVTq5fjMzIjcq35sJ4tkbpNvLsGsRQEBEGE9RqDPBy23OXh6U6Nv2u4
-	kp6sVCDI13o+xxTuoudZZeWnFNRnwnESch+N0Te+95TBnGd70y6SCbHPknF6eJDGVotb1qPx5G/hi
-	puWFLuRot+kCbmk6WrXg0t/pDKMRYyGa4LZTA9ji3SOnSHCX2Mmj2Tz8vznMN5VudzrR2Emd98mHs
-	yA42H4Xj5qFJd+zUVyfweDxFyTFPoUQh7VG2wXTHBf0RwOQZx6MlNMi+D6cW6bNW00y4QXR0wZn7B
-	EyWN3LOA==;
+	bh=MISTipIUij6V4w7BnLV7vMVtJ1TUzw99yYp30AF0XhI=; b=jgF3Heo7A7BkPv6udWvSEH+JEr
+	OcVFYiQalXq6+3XHvGtogYhGhwpW2BlTynblu7KdM7My2HhYZlaNi+YkzsVM6yqVh1mri2IQNcPT1
+	ltzsb4VakrAP1DgUg4ONXjmfKP5GDjivTiQunx8eQABDOl2aaPtXGelzNZOPae/wNGNwcXyCYup7d
+	VuvJ7Ei2DUvgWrrw46UnyZpGQGfdlIgOawbzZQ7IoWdEfPi0xuka393s1dJbMtHvEon+9MPyfiKgD
+	LelRQIeQimF+y+Lto+1d/sKQc4YCasXsQosAgrQrLHbQlj8FiW8FXaYXV42NHTiNrElwGhw9rvM+n
+	TpDEfBfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tubUP-00000006mtb-3rTS
+	id 1tubXK-00000006n4h-2TCO
 	for ath12k@archiver.kernel.org;
-	Tue, 18 Mar 2025 18:16:33 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	Tue, 18 Mar 2025 18:19:34 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tubUN-00000006msr-0vaz
+	id 1tubXI-00000006n4J-1fW3
 	for ath12k@lists.infradead.org;
-	Tue, 18 Mar 2025 18:16:32 +0000
+	Tue, 18 Mar 2025 18:19:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C7D245C4A42;
-	Tue, 18 Mar 2025 18:14:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A5C36C4CEDD;
-	Tue, 18 Mar 2025 18:16:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id BDF0A5C580E;
+	Tue, 18 Mar 2025 18:17:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4832BC4CEDD;
+	Tue, 18 Mar 2025 18:19:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742321790;
-	bh=ZoASjg/RAxn7fqnyO5anIcGwKjC2Bri3Cvs6f9Q9Nk0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=RIgsQz91Cp7xJ9cOtd930AENvPCVf6kquKCGo5iLwIJZgu689WcOYjIQPKTxWxD3U
-	 aGtUvRnEl/jeGPd4y9F1BFjlCuHlBouXu4q1Yi35A2PsLBYlXodkILnneqqcs3SgLz
-	 +/6ye2V9O9eZVhO9Xf0dnrDeS3kZkZ5Dt513qVUhGWOym+FcQpqYcZXi2uur2BD1W1
-	 kWTxTziCZni1Eo/2NqZJUr9c4QULK7PbnMmS1BV7vcm2ZrPrG57DLISh9OJoeAgOBy
-	 ntrfwIVX4/zPrzJKDQZ0rhfbEho+4d0ZDxAk124XirYkKUgPtyiqxVMYmGAotJlwuQ
-	 OVqh1Hk4K09EA==
-Message-ID: <332db13c-81db-42ad-afcf-3a4262344bf2@kernel.org>
-Date: Tue, 18 Mar 2025 19:16:23 +0100
+	s=k20201202; t=1742321971;
+	bh=r4aEPVou9roZEf6sxu9rRRSdPJnWFqSU9l/nA7M+N/M=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=NfzhrgfUgchbEc6qoL3LPxoOldPVuHZ503bUUDkmv49rckpcEyi/A8n/sFTDdRrsk
+	 8gGnHufk2LjvYNhwkbSbyPVTRqHlMWezGr1s3183MW3uUNormry/jR4jbY+Ni165gq
+	 gcvb84UWl84SLYIxlbDga59XQD+Ondq76jAmA1JYGzm1KVfOFBkZr9bxZtyFzuGpuZ
+	 GNgUmzszcbvlwK3J42cbCppFnr4nVWB7SRA2QiXtXXptbFy6BrqmARPRYTFVuR4xDR
+	 QUaybM/NwAev6gWsv3XavxPVJbN7ZOHUiVbIc4OtTz46Lry+AX88S/DPMHrvrYzei8
+	 X7DHyGKMetuCA==
+Message-ID: <31b4ca9c-892a-4ba5-b006-95deed6deceb@kernel.org>
+Date: Tue, 18 Mar 2025 19:19:18 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH ath-next v11 08/13] wifi: ath12k: add AHB driver support
  for IPQ5332
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
  Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>, ath12k@lists.infradead.org
 Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
@@ -63,7 +64,7 @@ References: <20250317204639.1864742-1-quic_rajkbhag@quicinc.com>
  <683b16dd-a3e9-4cc3-836a-95f3747d3c0a@oss.qualcomm.com>
  <0da16aae-2fa3-49a4-bdd3-f08a7655365f@kernel.org>
  <f35a6080-8dbd-45ca-8fb4-d6b01a5bb007@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <332db13c-81db-42ad-afcf-3a4262344bf2@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -108,12 +109,12 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <f35a6080-8dbd-45ca-8fb4-d6b01a5bb007@oss.qualcomm.com>
+In-Reply-To: <332db13c-81db-42ad-afcf-3a4262344bf2@kernel.org>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_111631_364476_C0486A19 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20250318_111932_555833_F9C72AFB 
+X-CRM114-Status: GOOD (  11.73  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,31 +129,35 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 18/03/2025 18:55, Jeff Johnson wrote:
-> On 3/18/2025 8:50 AM, Krzysztof Kozlowski wrote:
->> On 18/03/2025 16:44, Jeff Johnson wrote:
->>> On 3/17/2025 1:46 PM, Raj Kumar Bhagat wrote:
->>>> +	hw_rev = (enum ath12k_hw_rev)of_device_get_match_data(&pdev->dev);
+On 18/03/2025 19:16, Krzysztof Kozlowski wrote:
+> On 18/03/2025 18:55, Jeff Johnson wrote:
+>> On 3/18/2025 8:50 AM, Krzysztof Kozlowski wrote:
+>>> On 18/03/2025 16:44, Jeff Johnson wrote:
+>>>> On 3/17/2025 1:46 PM, Raj Kumar Bhagat wrote:
+>>>>> +	hw_rev = (enum ath12k_hw_rev)of_device_get_match_data(&pdev->dev);
+>>>>
+>>>> kernel test robot warns:
+>>>> cast to smaller integer type 'enum ath12k_hw_rev' from 'const void *'
+>>>>
+>>>> looks like others have fixed this by first casting to (uintptr_t)
+>>>> a few examples:
+>>>>
+>>> Cast via (kernel_ulong_t)
 >>>
->>> kernel test robot warns:
->>> cast to smaller integer type 'enum ath12k_hw_rev' from 'const void *'
->>>
->>> looks like others have fixed this by first casting to (uintptr_t)
->>> a few examples:
->>>
->> Cast via (kernel_ulong_t)
+>>> But another point is that this patch at stage v11 should not have
+>>> compiler warnings and it's not our tools who should point it out. Except
+>>> W=1, all standard static analyzers (sparse, smatch and coccinelle) are
+>>> expected to be run.
 >>
->> But another point is that this patch at stage v11 should not have
->> compiler warnings and it's not our tools who should point it out. Except
->> W=1, all standard static analyzers (sparse, smatch and coccinelle) are
->> expected to be run.
+>> I ran what I thought was a reasonable cross-section of builds and did not see
+>> this issue. Seems this issue is only flagged with config: um-allmodconfig ??
+>>
+>> Guess I need to add that configuration to my builds...
 > 
-> I ran what I thought was a reasonable cross-section of builds and did not see
-> this issue. Seems this issue is only flagged with config: um-allmodconfig ??
-> 
-> Guess I need to add that configuration to my builds...
+> This should be visible on every build on 32 bit archs.
 
-This should be visible on every build on 32 bit archs.
+Patchset does not apply neither on next nor on on mainline, so cannot
+verify... Probably another problem to solve here - some sort of dependency?
 
 Best regards,
 Krzysztof
