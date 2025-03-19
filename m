@@ -4,97 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D693C35FFA
-	for <ath12k@archiver.kernel.org>; Wed, 19 Mar 2025 12:55:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F74AC35FFA
+	for <ath12k@archiver.kernel.org>; Wed, 19 Mar 2025 13:34:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IeEVDtRTtfm/mIgiKRKIxsL5mdTxcvp8WT7XXvQZHCo=; b=V4C7XE3lyJM+6V/vGV9csyHPR2
-	gLS1hKW+4Ukhc9p4A0TCKEtlvrDkevtlMfwGXhr891EGqrD3VGezeJNYDpUmEdEfDnkdeev1FUHHw
-	ELO9SkI4IejoFD7YV1EkEL96zlH9omn9PEEoNsmKSpE3YuVlXM/jZOTyDi5gPpYz52hD36hdFko/S
-	llKFfIFYq2Uu2j+OQbhl9EDwQmOdF3Ux5+9kP6tdBXGBw59kegC2ZHmeqggJtsxJ5gkR7YsNWkV2G
-	kUCfEm3HFqU3cOi/KWDz50iumk8BKwR/bY79YtCpb0tpOF6MYVQ+GSvk6C7SkQBsz/MibRMKA+1iV
-	XyE+0Wmw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=L1cwU2n8bj0ukeSke0nD730u0joPNeYwiC6zq9RTN4I=; b=3VIeVTFX1AetBKy3ECnSIuUsGQ
+	bDZH9Py2MBxeJmZ3pQub8r0/dlW4oc6U/FjBF+K9kadxwgplRe4xISpr2u4osD8JPEgAGHZ+zpcdN
+	Kxd8QPEt6WexyNzG6H6rx/eIYX0XZKuU+9/q6w61i7d/URn/F1c9E61TZvBX+lib4hWm4HyozKbVx
+	aC8SrlST4GT1ALw9S7l/Turdila8TB0B6BYv9w341NpJJihO0lxTRZXivMYk/ZnCFyiJZW7utA+xS
+	c7aONLKgPbvqUtu4LVn7dERvedj0kj1cPrufyQml/4Hba6aDsIvBZFaoVg4WADhxzWKXhtQ64BXnD
+	uBdDsMEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tusww-000000091bR-06SK
+	id 1tutZ9-0000000966X-1ed0
 	for ath12k@archiver.kernel.org;
-	Wed, 19 Mar 2025 12:55:10 +0000
+	Wed, 19 Mar 2025 13:34:39 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuswt-000000091aY-2HF9
+	id 1tutXj-000000095v6-3Mvh
 	for ath12k@lists.infradead.org;
-	Wed, 19 Mar 2025 12:55:08 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52J4lp8M002066
-	for <ath12k@lists.infradead.org>; Wed, 19 Mar 2025 12:55:06 GMT
+	Wed, 19 Mar 2025 13:33:13 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52J4luhH017213
+	for <ath12k@lists.infradead.org>; Wed, 19 Mar 2025 13:33:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IeEVDtRTtfm/mIgiKRKIxsL5mdTxcvp8WT7XXvQZHCo=; b=gLtUt1Um0VqJKelt
-	rKcZrQxH/YA2N2VTrhRxeULs6eF7KgF39nBpBnY9iJF82u0XRJ0T1XskJ6l9/QYt
-	qNPRxszawW6nDtPwrifjTwxcpocKbp3KrmhBRn93YnHbIjtIU2JbJ7uJkD1u4uzU
-	Cxi9AFl/7gAmwpoul8V5Bc1BKVjA1xEDjNc+ukRGmkRoURNIJ7ROocCj3ijz9Pvg
-	WZNQkVyi01NDqGDCWtC7Z+6bVVbdyZG3uvz0QtkhlU8UXSWuTUuuHf9X5DgbL6NF
-	AyTkx/VJ8XNFo3jqHA7PSDryIEPSWpUcCxeoyj54ODFMzT45ADA/VVUD68qVYOli
-	EcpmIA==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45etmbx0dd-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=L1cwU2n8bj0ukeSke0nD730u
+	0joPNeYwiC6zq9RTN4I=; b=gpX10aXoXXMdN4Dy65Ua8Q/EcKiLPWP48XU62keu
+	y+b0D38HKwlw7ynKK+lVSNGCV6IZXoEalHSwd/lu9hL69xnoAaAv9iSBvbweYHXx
+	YhnLnwiGdek41PlnutY0k4Y2EMW79fzy5JioAIO6tNz3ughggdtX07CpCQYUxKJt
+	APeeJ+Dq3ny5tkJrGAPd4Gunx87J4ed3UwOy+AqrAVjG+FogQixCmtnSHApoGSi7
+	DpKlA3iYrnGjb82HLpYc5rkQ2ZUafXmo9WTmstGLtWQIekZ6InT3daYEX9HN0lX1
+	iFMacHYEjNxVRsUU5jX0MyGakiljq2zx8Yeew3tWRoRSbA==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1sy3twq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 19 Mar 2025 12:55:05 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2ff8c5d185aso13759561a91.1
-        for <ath12k@lists.infradead.org>; Wed, 19 Mar 2025 05:55:05 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 19 Mar 2025 13:33:10 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-7c549ea7166so1113579885a.2
+        for <ath12k@lists.infradead.org>; Wed, 19 Mar 2025 06:33:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742388904; x=1742993704;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IeEVDtRTtfm/mIgiKRKIxsL5mdTxcvp8WT7XXvQZHCo=;
-        b=MNbGsd7/sma4jRUnhs0z68aQwwa/XSzjRPHZvrSKrjXJLIDz+FDvDptMMSifmfNJIP
-         u4+mpqKxAf/lSHpLI9462l6i5e7QJxCZXxjZ0hz0Q7NCBmbMiayXdVq47GIh080f+vAT
-         vbbMM4oytd5Xg/FqzwkED1aGWOxC/M2qZtkDqRUFefjxReIzL7YnrKBhY3NcAY6/gYdV
-         UnEoDIrJVGCl3OYs2F4re99CRAQe7H+FLi13TfbkthIbCMiITB6C86nuKWsPaTrl88yE
-         loDhbrij0QaaVo0YA7qWULH9eu420YmZRPC1p3xNGjrAQFEXNvMW24p5VGvlF2ukKKdp
-         nK1w==
-X-Forwarded-Encrypted: i=1; AJvYcCVCb953W2NLQg46b/rXFmLZEVlPNg/001F9IhEmkP95JmMF9leS0+UmlGOArtsg0BfXVKm/y7o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw4yHQgrWp38WIpd9gV9Xta0nU5ZAjm1IFCNvBY0PecdKvnkwNK
-	fVF/QAC377GxkDmAF6RN+6h23YEc0/OBtOKuN+lBpgPFWjis5CbsJEmwdS4O219iXxtK3rQuhyA
-	wTIIStOgJ+tKHEgQ9x18bFjDHg0Q0MemImxUtMcvjAUoJ/9xxuwFUr2Nz5D+v
-X-Gm-Gg: ASbGnctKaDEsiKxV7PhKKAGOvgiX9FWUfIk77PieAiXIHTjAxwuJV19dSCRf9A50lpn
-	Ehzq6OMPWmPI12hVru3pfeGbS7yVpU/H5omz5aH1hZbPqpPvy+IOY0Bl9M6jXblA/jp67vNSZrZ
-	/NSGVjr7kitJdpAYbPCqxOPZkdlKreU8STOKCR/BIGhwlIOK4eTfkM12KwTFD2CdDKI2PweEVs+
-	x9VqYl6Xc/2aCnBpvYe9ZwYFAg/O6bV2ifo0IsLQeGalArsHjEwNqssWoGp1sHKmKRt6Ywz4dGB
-	lHlNxXWhKzC7VZzuYhgOIi8hbqDBqIUhIACnNNsFQ1xFH7NCpaTEIc2aLw==
-X-Received: by 2002:a17:90b:4e8f:b0:2ee:ee77:2263 with SMTP id 98e67ed59e1d1-301bde51fc9mr4540475a91.7.1742388904512;
-        Wed, 19 Mar 2025 05:55:04 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF/2CAuo/R2eq5BzbQLNQBq0yPs22kdCE3hs/7Vq2U563faJ6/8KWodBXAfiVexNfvldQlfDA==
-X-Received: by 2002:a17:90b:4e8f:b0:2ee:ee77:2263 with SMTP id 98e67ed59e1d1-301bde51fc9mr4540440a91.7.1742388904132;
-        Wed, 19 Mar 2025 05:55:04 -0700 (PDT)
-Received: from [10.152.204.0] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-301bf576be5sm1463455a91.6.2025.03.19.05.55.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Mar 2025 05:55:03 -0700 (PDT)
-Message-ID: <c6e3b0c1-18fe-a9fa-0e72-d955809144e3@oss.qualcomm.com>
-Date: Wed, 19 Mar 2025 18:24:57 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Subject: Re: [PATCH net] wifi: ath12k: properly set single_chip_mlo_supp to
- true in ath12k_core_alloc()
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, neil.armstrong@linaro.org,
+        d=1e100.net; s=20230601; t=1742391190; x=1742995990;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=L1cwU2n8bj0ukeSke0nD730u0joPNeYwiC6zq9RTN4I=;
+        b=hbYVrLOCN7A4VsTGM0Gmfaa6qah/hiuE6FJPZVAm0mlVuiHhZaKPB4Jn/+ifaUtelk
+         Uf9IolQ/gYs7GV+w9BBj7JY+UAOFx259qrjSpJm9KPa3QITorYCT2/gYwr2HmHtVtwrf
+         3xFCLJ3TcHz1/HfvmKQG8I13mUQsT6565ZTrCu59NsiOmNIfcwMhBtu5cxs3j7rOwUR7
+         rRircpfca00kaHyXTEhSoqa9pIrBPPPpcvbVJd2wlNJvrQaxSdmEhuBOLWpQ/mdf++rC
+         usb2FgEljYyYm4v7X6lsDWtkD+SABQozQQkiTnjyYWxa2jI5ZulWWfTY0yeZnlr4HBPm
+         ANjg==
+X-Forwarded-Encrypted: i=1; AJvYcCUhhwSywuXmtZ0OnMBGxiaxAzx4HrXjfSEEuvdfzU+0VMeajb8MFX04P+ZNFsdlO+Q5ye+XY9o=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwZVbdvIWqMO4Di56ouPKy5ChGBjmoZMI4u8vs7mhD2zw57lu17
+	MW4xcotQUzsVrbsFp1T+I+V7BUbE+BE+fIgpmizm3EYryy8aiwHOgJ0ziN3vznAWanc515wFVXY
+	syFZagB//aY9FlXe7sjDp39x3wzDU1Z7g0Fj0434pp+zFtWVrwG7vtOSe4xnk
+X-Gm-Gg: ASbGnctgtQVE+GNwy02Y9MYTFNJ6gCc/5635ue/XGj8l0uWHNpehWdy235eA7Yu6mPB
+	ySYhVUr5cdyFLjhwGTmKgFrbVYC/s5M8iFDoz6TditRrkNUqe+mnSUQ0YoJh2me1fh0gPOfHJQJ
+	BEsgIG9Wh3JLA8SZ8O5S5GDb01us6rf6I+Mm3yp3u0PjAnhpm2aFmehPC12UdFpxpaj2/lFFgyY
+	g+0yV0qSD2KdY6fQYLw1oKL67p89x3GyVDOJJUmFYwuPsqoW4arap+KWLV8pVr3k3ANoKo1mmMV
+	9WvM4PYpCDYYyp6Sn0uVuKpiU7iXzY6KwuiE+gN6hST+RcwoeS8Nm5OT3b+fWqAd/z2/pA3CS+O
+	+Emg=
+X-Received: by 2002:a05:620a:469e:b0:7c5:6ba5:dd40 with SMTP id af79cd13be357-7c5a83967e9mr360447685a.17.1742391189599;
+        Wed, 19 Mar 2025 06:33:09 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGMWEksZ3Z3ZSMIW+M3tVuDno6if0d5H3pY93bE3ZIDzh2MaZN8fU+f97WH5ZcHA6WCgI16Nw==
+X-Received: by 2002:a05:620a:469e:b0:7c5:6ba5:dd40 with SMTP id af79cd13be357-7c5a83967e9mr360441685a.17.1742391189080;
+        Wed, 19 Mar 2025 06:33:09 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-549ba888069sm1932991e87.193.2025.03.19.06.33.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 19 Mar 2025 06:33:08 -0700 (PDT)
+Date: Wed, 19 Mar 2025 15:33:06 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Cc: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
+        Krzysztof Kozlowski <krzk@kernel.org>, neil.armstrong@linaro.org,
         Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
         Johannes Berg <johannes@sipsolutions.net>,
-        Jeff Johnson
- <jjohnson@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
         Aditya Kumar Singh <quic_adisi@quicinc.com>,
         linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH net] wifi: ath12k: properly set single_chip_mlo_supp to
+ true in ath12k_core_alloc()
+Message-ID: <hmfvyajygmjoeaaashmddu4rg6ttzn7es4sjls5qvnemykkx2l@zuzixrzkmkgx>
 References: <20250303-topic-ath12k-fix-crash-v1-1-f871d4e4d968@linaro.org>
  <24b2f1f8-97bd-423a-acbd-9a5cd45e4a40@oss.qualcomm.com>
  <7901d7f0-d6d0-4bf3-89ad-d710e88477b7@linaro.org>
@@ -102,25 +98,26 @@ References: <20250303-topic-ath12k-fix-crash-v1-1-f871d4e4d968@linaro.org>
  <8b05760b-db99-4b43-8444-d655b18d3699@kernel.org>
  <db232678-fa85-d75f-de72-d2b5e1ec611f@quicinc.com>
  <2a5hvicenftfiktviiofvknanyz756cbryu35gkfczdvbcdd5j@fktlzfieotgl>
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <2a5hvicenftfiktviiofvknanyz756cbryu35gkfczdvbcdd5j@fktlzfieotgl>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: XmoQ72fheiuJBU_mGOrSibf68nW2iMDB
-X-Proofpoint-GUID: XmoQ72fheiuJBU_mGOrSibf68nW2iMDB
-X-Authority-Analysis: v=2.4 cv=aMLwqa9m c=1 sm=1 tr=0 ts=67dabea9 cx=c_pps a=0uOsjrqzRL749jD1oC5vDA==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=cXwcXxlD48ZRgq5pOxwA:9 a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22
+ <c6e3b0c1-18fe-a9fa-0e72-d955809144e3@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <c6e3b0c1-18fe-a9fa-0e72-d955809144e3@oss.qualcomm.com>
+X-Proofpoint-GUID: YCZOKe5JO_0xUAnYY0JpIxLtaM_ZXD2k
+X-Proofpoint-ORIG-GUID: YCZOKe5JO_0xUAnYY0JpIxLtaM_ZXD2k
+X-Authority-Analysis: v=2.4 cv=XKcwSRhE c=1 sm=1 tr=0 ts=67dac796 cx=c_pps a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=Vs1iUdzkB0EA:10 a=yba1ihJKBxQaQydNyIEA:9 a=CjuIK1q_8ugA:10 a=PEH46H7Ffwr30OY-TuGO:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-19_04,2025-03-19_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- priorityscore=1501 spamscore=0 clxscore=1015 phishscore=0 mlxscore=0
- suspectscore=0 malwarescore=0 mlxlogscore=999 bulkscore=0 adultscore=0
- lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ definitions=2025-03-19_05,2025-03-19_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ mlxlogscore=999 priorityscore=1501 clxscore=1015 phishscore=0
+ impostorscore=0 adultscore=0 mlxscore=0 malwarescore=0 suspectscore=0
+ spamscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503190088
+ definitions=main-2503190093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250319_055507_724481_796D3D53 
-X-CRM114-Status: GOOD (  21.78  )
+X-CRM114-CacheID: sfid-20250319_063311_967028_E9CC63F7 
+X-CRM114-Status: GOOD (  39.04  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,78 +132,103 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 3/19/2025 5:21 PM, Dmitry Baryshkov wrote:
-> On Wed, Mar 19, 2025 at 05:02:39PM +0530, Vasanthakumar Thiagarajan wrote:
->>
->>
->> On 3/19/2025 3:57 PM, Krzysztof Kozlowski wrote:
->>> On 19/03/2025 10:06, Vasanthakumar Thiagarajan wrote:
->>>>>>> ---
->>>>>>> base-commit: 7eb172143d5508b4da468ed59ee857c6e5e01da6
->>>>>>> change-id: 20250303-topic-ath12k-fix-crash-49e9055c61a1
->>>>>>>
->>>>>>> Best regards,
->>>>>>
->>>>>> NAK since this will break QCN
->>>>>> There is a series under internal review to address MLO issues for WCN chipsets
->>>>>
->>>>> ???
->>>>>
->>>>> The original commit is wrong, this fixes the conversion, nothing else.
->>>>
->>>> Nope. Driver changes to enable MLO with WCN chipset are not there yet.
->>>> Setting the mlo capability flag without having required driver changes
->>>> for WCN chipset will likely result in firmware crash. So the recommendation
->>>> is to enable MLO (in WCN) only when all the necessary driver changes
->>>> (in development, public posting in near future) are in place.
->>> Really, these are your answers? There is regression and first reply is
->>> upstream should wait for whatever you do internally. Second answer is
->>> the same - public posting in near future?
->>>
->>
->> May be I was not clear in my response. I was not telling MLO bug fixes were
->> in the development. Actually the MLO feature itself is not enabled
->> yet with WCN chip sets. Any code changes enabling it without full feature
->> support would result in firmware crashes with the existing firmware binaries
->> available in upstream.
+On Wed, Mar 19, 2025 at 06:24:57PM +0530, Vasanthakumar Thiagarajan wrote:
 > 
-> Is there an undocumented change of the behaviour in the commit
-> 46d16f7e1d14 ("wifi: ath12k: rename mlo_capable_flags to
-> single_chip_mlo_supp")?
+> 
+> On 3/19/2025 5:21 PM, Dmitry Baryshkov wrote:
+> > On Wed, Mar 19, 2025 at 05:02:39PM +0530, Vasanthakumar Thiagarajan wrote:
+> > > 
+> > > 
+> > > On 3/19/2025 3:57 PM, Krzysztof Kozlowski wrote:
+> > > > On 19/03/2025 10:06, Vasanthakumar Thiagarajan wrote:
+> > > > > > > > ---
+> > > > > > > > base-commit: 7eb172143d5508b4da468ed59ee857c6e5e01da6
+> > > > > > > > change-id: 20250303-topic-ath12k-fix-crash-49e9055c61a1
+> > > > > > > > 
+> > > > > > > > Best regards,
+> > > > > > > 
+> > > > > > > NAK since this will break QCN
+> > > > > > > There is a series under internal review to address MLO issues for WCN chipsets
+> > > > > > 
+> > > > > > ???
+> > > > > > 
+> > > > > > The original commit is wrong, this fixes the conversion, nothing else.
+> > > > > 
+> > > > > Nope. Driver changes to enable MLO with WCN chipset are not there yet.
+> > > > > Setting the mlo capability flag without having required driver changes
+> > > > > for WCN chipset will likely result in firmware crash. So the recommendation
+> > > > > is to enable MLO (in WCN) only when all the necessary driver changes
+> > > > > (in development, public posting in near future) are in place.
+> > > > Really, these are your answers? There is regression and first reply is
+> > > > upstream should wait for whatever you do internally. Second answer is
+> > > > the same - public posting in near future?
+> > > > 
+> > > 
+> > > May be I was not clear in my response. I was not telling MLO bug fixes were
+> > > in the development. Actually the MLO feature itself is not enabled
+> > > yet with WCN chip sets. Any code changes enabling it without full feature
+> > > support would result in firmware crashes with the existing firmware binaries
+> > > available in upstream.
+> > 
+> > Is there an undocumented change of the behaviour in the commit
+> > 46d16f7e1d14 ("wifi: ath12k: rename mlo_capable_flags to
+> > single_chip_mlo_supp")?
+> > 
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+> 
+> -       if (resp.single_chip_mlo_support_valid) {
+> -               if (resp.single_chip_mlo_support)
+> -                       ab->mlo_capable_flags |= ATH12K_INTRA_DEVICE_MLO_SUPPORT;
+> -               else
+> -                       ab->mlo_capable_flags &= ~ATH12K_INTRA_DEVICE_MLO_SUPPORT;
+> -       }
+> 
+> The above logic seems to keep the initialized intra MLO support even when
+> single_chip_mlo_support_valid is not set. The above code removal is correct as
+> MLO support can not be enabled in host when firmware does not advertise it.
+
+Ack
+
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
 > 
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+You skipped an important chunk:
 
--       if (resp.single_chip_mlo_support_valid) {
--               if (resp.single_chip_mlo_support)
--                       ab->mlo_capable_flags |= ATH12K_INTRA_DEVICE_MLO_SUPPORT;
--               else
--                       ab->mlo_capable_flags &= ~ATH12K_INTRA_DEVICE_MLO_SUPPORT;
--       }
+-	ab->mlo_capable_flags = ATH12K_INTRA_DEVICE_MLO_SUPPORT;
+> +       ab->single_chip_mlo_supp = false;
 
-The above logic seems to keep the initialized intra MLO support even when
-single_chip_mlo_support_valid is not set. The above code removal is correct as
-MLO support can not be enabled in host when firmware does not advertise it.
+Is this an _undocumented_ change? I think it is. If the developer has
+described that the commit disables MLO, there would be no such
+questions.
 
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+> diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+> 
+> +       if (resp.single_chip_mlo_support_valid &&
+> +           resp.single_chip_mlo_support)
+> +               ab->single_chip_mlo_supp = true;
+> 
+> The above code does it in right way. Overriding firmware MLO capability as done
+> in the submitted patch under review is obviously wrong. The firmware used to report
+> the issue seems to have an odd behavior: 1. it does not seem to advertise MLO
+> capability in single_chip_mlo_support bit and 2. expects configurations to enable
+> MLO from host. None of the WCN firmware available in upstream either advertises
+> MLO capability or expects configurations to enable MLO from host.
 
-+       ab->single_chip_mlo_supp = false;
+Additionally, from the commit message:
 
+    For the WCN7850 family of chipsets, since the event is not supported,
+    assumption is made that single chip MLO is supported.
 
-diff --git a/drivers/net/wireless/ath/ath12k/qmi.c b/drivers/net/wireless/ath/ath12k/qmi.c
+However the code doesn't contain that change. Instead single chip MLO is
+unconditionally disabled.
 
-+       if (resp.single_chip_mlo_support_valid &&
-+           resp.single_chip_mlo_support)
-+               ab->single_chip_mlo_supp = true;
+I guess, Neil's change should be reworked to be limited to WCN7850 only,
+however it must be done as it is what was expected from the commit
+message.
 
-The above code does it in right way. Overriding firmware MLO capability as done
-in the submitted patch under review is obviously wrong. The firmware used to report
-the issue seems to have an odd behavior: 1. it does not seem to advertise MLO
-capability in single_chip_mlo_support bit and 2. expects configurations to enable
-MLO from host. None of the WCN firmware available in upstream either advertises
-MLO capability or expects configurations to enable MLO from host.
-
-Vasanth
+-- 
+With best wishes
+Dmitry
 
