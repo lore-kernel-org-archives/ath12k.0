@@ -4,57 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E20BCC35FFA
-	for <ath12k@archiver.kernel.org>; Wed, 19 Mar 2025 10:32:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D18E7C35FFA
+	for <ath12k@archiver.kernel.org>; Wed, 19 Mar 2025 10:34:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0mZJdGeTRd4mW0PV1BBpogWFxqlebX6HMGo3liZRUBg=; b=JX7euADr94Xc3oxQN9fTiZc8zd
-	JxjXSsgkucdndwhVVAR0NXEpWHpwQEKuVDlvqDaRbrb0Eth/dADeAq0ev/eDvhonOaXc6l5fDFFRt
-	0OIGM6Ru5wK+pkwF13+ayNUu6QRaE36L6e4J/0EhvMYQzIaR4H07lKi9wTXOh/Wwqjy1YNqQUcHyj
-	+huMXwwTQ4Gg2ktde0ash5D+IyGEoaKrB5lTWAbkglLbgDt5mdL6DOcU9y7+ygoLKKFTdus3k5CWS
-	JxB1K1tvZ9BJdRp8IqDm1ByQYHCA61n47JdRmHLzuML5c0asOXM9Hi7bTXHUPNklh1mt89LpyJR37
-	AEZqNTvg==;
+	bh=TIn2jl0FJZI88AJlQaF+XuQYLWTGLGvRDD0zAeea4IA=; b=FRjbH0CDLbr7J1PeHePI1d+lRh
+	hK3+VcNKJ2oiRZAzTXXlfxeUsyu3eYt8320easrqASrIEqtM2Dp3oB736lmePbAjRNDEI33VP6kM6
+	Fsl+dS27BH+rFMhgZLHT+FAJnUZQVS+ZGuHleMVtj1RzrzHYl2fTgSpmGkqPCTwn6eBIXH2WrO6Zn
+	H1YTPkVNtipt9sn0LywLEF6ASYUpbDYbcqVbz4x8/cX79EEmouOJL27Ce6t3362oCnOEQSq5PW3MV
+	ijc4Qes1SQV0MNkSNuwfaFIXQILV5ftLvkxTYpBOIMhEQVa1AB2/QJtdIMe2EXbIH4YtVCIlgNOi9
+	W1CoJIjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuqig-00000008fWb-2mhg
+	id 1tuqkW-00000008fos-2Zjf
 	for ath12k@archiver.kernel.org;
-	Wed, 19 Mar 2025 10:32:18 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	Wed, 19 Mar 2025 10:34:12 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuqfu-00000008fGQ-0vqO
+	id 1tuqk9-00000008fmJ-0r38
 	for ath12k@lists.infradead.org;
-	Wed, 19 Mar 2025 10:29:26 +0000
+	Wed, 19 Mar 2025 10:33:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2269F615E5;
-	Wed, 19 Mar 2025 10:29:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28B9DC4CEEA;
-	Wed, 19 Mar 2025 10:29:20 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 4ED5F61590;
+	Wed, 19 Mar 2025 10:33:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 69B12C4CEE9;
+	Wed, 19 Mar 2025 10:33:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742380165;
-	bh=n1lnNQknCfI45l+FGYvQI7B5s+D82jvnQCStaSEkcuY=;
+	s=k20201202; t=1742380428;
+	bh=oGCHjOXuz6mmECZqH6If/Uzw22IgNHQuF4XpIzJ2grs=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=FGe3HwCUAYaLc26akZf+dOKAl7VESX6IfvlRdBbKQPJdQeQcAlspsrC/ht/qGl9xf
-	 WO/uBJc/mnQFn0FnaRFZOEZv/jz9xTkJQp2IxOYXylULoYP7uKH9l/ut9fRspK+6xl
-	 wm+jpLhw5Hai76C5TOBn3RsW80GhnJ9s0kSo8x3A2pmatgKVtZsSVyLtDcDC06s+au
-	 /bbzCIYY9JYA/DYEppfR7M6OgTefrz9h1cN0W1/Dg9wy0sV7JR7icZYE6+UXACo7K7
-	 6RUWnZqIrdmGCfSo4aT4fOvKjaaHAnqDj7NvNTQioPQGTD1pPG+K0PK1tUTN7Hk3cT
-	 2ztioGzPrjmTw==
-Message-ID: <91a5a1f7-6eef-4ea0-bcde-350640984a7b@kernel.org>
-Date: Wed, 19 Mar 2025 11:29:18 +0100
+	b=H7hU1dvRmiIraWucFdOHUNn6OveHyoe/H1SE3b0KTEYayqqzZRRORcjwt+2Mjg8vZ
+	 wFxlXnXIfld3aFenJQ8j3KjDONnEETf4wf8J2A7KHaIQ0zw4QdIBMl0hyOZX/Z09F9
+	 dwhc1MXAeYA8i8YLumUu7Mme/0Hijtadw2PAqtWooM05FELcK5dH5p4N+QRK/XS4bJ
+	 05lr+4bc+1jtXKBbr5KEU7/WeD/Cv7eTsGnuX57D0CtGOZO4wEf14kGYgyuy1s05eh
+	 cvE9IegnmOWiaSnpDJH1iR3wfgd7QxyojYH7UW66x2Bc1Y7kN6njbyQ9sifhwS1YHk
+	 YOlKEPNg2XNUg==
+Message-ID: <89a71ef3-518e-4a69-b959-5bd03f0624d5@kernel.org>
+Date: Wed, 19 Mar 2025 11:33:41 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH net] wifi: ath12k: properly set single_chip_mlo_supp to
  true in ath12k_core_alloc()
-To: Baochen Qiang <quic_bqiang@quicinc.com>, neil.armstrong@linaro.org,
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ neil.armstrong@linaro.org
+Cc: Baochen Qiang <quic_bqiang@quicinc.com>,
  Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>,
  Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
  Johannes Berg <johannes@sipsolutions.net>, Jeff Johnson
- <jjohnson@kernel.org>, Aditya Kumar Singh <quic_adisi@quicinc.com>
-Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+ <jjohnson@kernel.org>, Aditya Kumar Singh <quic_adisi@quicinc.com>,
+ linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
 References: <20250303-topic-ath12k-fix-crash-v1-1-f871d4e4d968@linaro.org>
  <24b2f1f8-97bd-423a-acbd-9a5cd45e4a40@oss.qualcomm.com>
@@ -62,8 +64,10 @@ References: <20250303-topic-ath12k-fix-crash-v1-1-f871d4e4d968@linaro.org>
  <7b4b598f-bc13-aa4b-8677-71477e1f5434@quicinc.com>
  <a5ebfdfb-107f-407f-b557-522b074c904f@linaro.org>
  <38cd738c-1a2a-4382-80f8-d57feb7c829d@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <6717d816-02b3-4d27-848b-620398808076@linaro.org>
+ <4pidr33bvbtykyufw35ubfr7mut2ypqmoiydgjlcsyxolqteze@j2xhigdoxqhp>
 Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -107,7 +111,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <38cd738c-1a2a-4382-80f8-d57feb7c829d@quicinc.com>
+In-Reply-To: <4pidr33bvbtykyufw35ubfr7mut2ypqmoiydgjlcsyxolqteze@j2xhigdoxqhp>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-BeenThere: ath12k@lists.infradead.org
@@ -124,45 +128,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 19/03/2025 10:46, Baochen Qiang wrote:
-> 
-> 
-> On 3/19/2025 5:12 PM, neil.armstrong@linaro.org wrote:
+On 19/03/2025 11:18, Dmitry Baryshkov wrote:
+> On Wed, Mar 19, 2025 at 11:00:34AM +0100, neil.armstrong@linaro.org wrote:
 >> Hi,
 >>
->> On 19/03/2025 10:06, Vasanthakumar Thiagarajan wrote:
+>> On 19/03/2025 10:46, Baochen Qiang wrote:
 >>>
 >>>
->>> On 3/19/2025 1:34 PM, Neil Armstrong wrote:
->>>> On 18/03/2025 17:35, Jeff Johnson wrote:
->>>>> On 3/3/2025 7:00 AM, Neil Armstrong wrote:
->>>>>> In commit 46d16f7e1d14 ("wifi: ath12k: rename mlo_capable_flags to
->>>>>> single_chip_mlo_supp")
->>>>>> the line:
->>>>>>     ab->mlo_capable_flags = ATH12K_INTRA_DEVICE_MLO_SUPPORT;
->>>>>> was incorrectly updated to:
->>>>>>     ab->single_chip_mlo_supp = false;
->>>>>> leading to always disabling INTRA_DEVICE_MLO even if the device supports it.
->>>>>>
->>>>>> The firmware "WLAN.HMT.1.1.c5-00156-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1"
->>>>>> crashes on driver initialization with:
->>>>>>   ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0x3d soc_id 0x40170200
->>>>>>   ath12k_pci 0000:01:00.0: fw_version 0x110f009c fw_build_timestamp 2024-05-30 11:35
->>>>>> fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00156-
->>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+>>> On 3/19/2025 5:12 PM, neil.armstrong@linaro.org wrote:
+>>>> Hi,
+>>>>
+>>>> On 19/03/2025 10:06, Vasanthakumar Thiagarajan wrote:
+>>>>>
+>>>>>
+>>>>> On 3/19/2025 1:34 PM, Neil Armstrong wrote:
+>>>>>> On 18/03/2025 17:35, Jeff Johnson wrote:
+>>>>>>> On 3/3/2025 7:00 AM, Neil Armstrong wrote:
+>>>>>>>> In commit 46d16f7e1d14 ("wifi: ath12k: rename mlo_capable_flags to
+>>>>>>>> single_chip_mlo_supp")
+>>>>>>>> the line:
+>>>>>>>>      ab->mlo_capable_flags = ATH12K_INTRA_DEVICE_MLO_SUPPORT;
+>>>>>>>> was incorrectly updated to:
+>>>>>>>>      ab->single_chip_mlo_supp = false;
+>>>>>>>> leading to always disabling INTRA_DEVICE_MLO even if the device supports it.
+>>>>>>>>
+>>>>>>>> The firmware "WLAN.HMT.1.1.c5-00156-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1"
+>>>>>>>> crashes on driver initialization with:
+>>>>>>>>    ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0x3d soc_id 0x40170200
+>>>>>>>>    ath12k_pci 0000:01:00.0: fw_version 0x110f009c fw_build_timestamp 2024-05-30 11:35
+>>>>>>>> fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.1.c5-00156-
+>>>>>>>> QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+>>>
+>>> this FW version is not upstream yet, why are you testing with it?
+>>
+>> I was not aware the driver supported only a small subset of firmwares.
 > 
-> this FW version is not upstream yet, why are you testing with it?
-> 
-> Generally we only support upstrmea driver + upstream FW.
-FW does not have to be upstream. We work, here in upstream, with all
-sort of vendors and all sorts of devices, for which vendors might not
-send yet their FW or we are unclear about licensing rules.
+> Yes, this has been communicated by Kalle (and now by Jeff) for ages:
+> using any firmware outside of linux-firmware is not supported, unless
+> you have been explicitly told to use a particular binary. Firmware
+> coming from the Android / Mobile might use different knobs and have
+> different expectations regarding driver behaviour.
+Sure, fine, but that's not what is happening here. Look at the replies
+from Qualcomm - not responding to actual issue here but instantly
+rejecting a patch for regression just on basis of:
 
-Regression is still regression and stop deflecting the discussion -
-third response now! - what you internally want to achieve.
+1. "series under internal review to address MLO issues"
+2. "when all the necessary driver changes
+(in development, public posting in near future)"
+3. "Generally we only support upstrmea driver + upstream FW."
 
-Upstream does not care about your internal processes.
+Instead of talking about actual problem, I see only avoidance of
+responsibility and just sticking to whatever they have planned internally.
 
+That's not how work with upstream is done and is really disappointing to
+see.
+
+Remember Tuxedo computers folks who said we want to control usptream
+process, thus we will release source code under incompatible license to
+prohibit community from working on their own.
+
+This is the same Qualcomm behavior.
 
 Best regards,
 Krzysztof
