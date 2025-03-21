@@ -4,120 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 705DFC36000
-	for <ath12k@archiver.kernel.org>; Fri, 21 Mar 2025 16:02:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3255C36000
+	for <ath12k@archiver.kernel.org>; Fri, 21 Mar 2025 16:24:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vCbcORBD7TYTk+XKpRjnplu+uBcKKY/kXvr0Jk5Isao=; b=35XzT6twktnVZwB0yVExOAX5YT
-	w+AK0ZrBX7dq+pJAnC+/IqJ0o+k7gvUFXtz9l157a4xdT5ELnholDCYbZFvJa0jjqoEgA8Z8K3hEx
-	Odz3tMGhZ8gqvZnS0Tsg2c6eyxy+2AVPB71KpD66WTX9Vgge2l91C5Zthwsqkd3VA8JpabZ5NMysu
-	FHimNRELoOor9HHyK6fxBXrAufEP6tyMvOr9Jd+Ez72dVSyQWwVfUdv1ZWVLZNynjXzrsrfcO/3zo
-	svUrshn0hFhyR7/531s1w3d7y6ipfm0Cgd4ATwKEu2ZWaXWvEfV4FfNUrbYUrvDiwdx477zWQ9h1x
-	Daczazqw==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=9crh39LlPqbgacEVHEo8dv7Vi5RIc2/zrCP7K0yNE4g=; b=CL2oBzcZhQbESfMVqSPdQmvhWQ
+	z9XuXcNWZW6Bujx+zhsHMHmXQhuLo0Mr26cprPibzIDKkJKVoo/awrt6XAHQEsbxMr+VQtMi2Knun
+	zY+2xrNNU4CQs+3RDanWmFhPL/zzd1rHihOO8KcScHSHmFiyvCbILwClJm4DbF9akQ7z+SEkSNbCG
+	920Y5p0IHNfC656Je8oZDxE4ZvydRvRx3BJMUNdWlrtxsuqFMJe4DKEDrGtO4xlpw2Og6TyfusJQS
+	mWEr8vYKRdpWyeWvge2B0KsGBxOs9YuBiaTtInQ0309UTQ7caicjx2RGn+d8IdSJLVmEBxojUvByL
+	Zo/ni/WA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvepP-0000000FP16-0vVB
+	id 1tvfAh-0000000FUhV-3BUq
 	for ath12k@archiver.kernel.org;
-	Fri, 21 Mar 2025 16:02:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 21 Mar 2025 16:24:35 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvepM-0000000FP0H-3GKZ
+	id 1tvfAf-0000000FUg9-0PmM
 	for ath12k@lists.infradead.org;
-	Fri, 21 Mar 2025 16:02:34 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LCSFeP025611
-	for <ath12k@lists.infradead.org>; Fri, 21 Mar 2025 16:02:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	vCbcORBD7TYTk+XKpRjnplu+uBcKKY/kXvr0Jk5Isao=; b=ErGCfkJ2qMEFeXqk
-	UC6l3H8dLAHsfzb1ZcqgKMAcqIXxd1mg90Dt6wUrb4v/+kjl7J9QM8OAiQNlgi16
-	heDzJw1s5Cx6pg2e95+DyHxENBc4AzO6LFS/05aOZ20OBC6FF99fGpFePUaymPLo
-	z4ldDaUgfYs4+SUwlgGHl3Wr0XoIXdatQHoMs2ml5Akou6I+aoecjcohNE2k0k+j
-	MZbzmwwA3DYhsTGYwM9Mcxz3dKdMvbrh0zu4Cl2rsf0xiiIF8dLdMkyJcaLUCQU1
-	YyR4ePNXfB5AQXDgQwBGXZSkfigHCz13fWQsOljLdxkl8aHElgjisq83HpLFOP6Z
-	1Uza0A==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45h854gjn2-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 21 Mar 2025 16:02:31 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2233b764fc8so34574175ad.3
-        for <ath12k@lists.infradead.org>; Fri, 21 Mar 2025 09:02:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742572950; x=1743177750;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=vCbcORBD7TYTk+XKpRjnplu+uBcKKY/kXvr0Jk5Isao=;
-        b=mZehYQzVIMSRE0PS9Nyia24u73orHgVaZb7YOVzOWNclBRuwMgac6i1A2wC2zW6MBT
-         ZchOnpKELL+/u1dRUI+hHdB9ewgFLOqIktrR04OMnj7uMLrcUbk33VdXLK+Tw6ZXi89U
-         i6EL816i03YCUwY8N+Ct3PiJ0+Nc7FOZLD4h8Kb0KwoJNxybRcDLlGd1R2FrVmVIxJAo
-         fZf4RXD7bT2ws+b8iu7YI3XK4h6nNrizesOokRdFi1FOhE1mOg6sf2KyUauazxJ17t9x
-         Zdi6jn2cGYoW6QD/DhQ+YsR1eOE6+/kGIJrMzZKJR+VhdnfBfo3VNKJB4k4BS6MPM7AH
-         9nDA==
-X-Forwarded-Encrypted: i=1; AJvYcCWN8khaSxK2JDWsitl4ARyuyHs+OR3x0bqlGJDch/hkQwbzcyFR0HiGkK8QX0e6TFrnVQu3Nm4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy6vtfe71a4M1xEhJqe0uAFqNgRstc6DLJlJhPhZD1clqdAcuH+
-	feyTJolEt3U31yrDyZtYmTlGUd8NjWDC4rBonTJ0Fu1J9IAUByYT+9kmJBrneIwhvyWmFZXPnwu
-	UzMeFLArURZfbYJ9tlua3SaudJaM5AdwNQhppPPsm+lg2glXRcWcxdrd1f8Cp
-X-Gm-Gg: ASbGncsWXNaLV/Qakkaa8kwIi0IfSD+TPKhoOeKbtYYpi+f30QFqZsi80ejzNtirLrs
-	TgepffGcU7I00HNZ6Lai0KxvuOXVkob308gr8Ane2H50ilUQQ7PeltinKSKRUI3Z4+kzEk/rLjo
-	0RjHNBrnOWFZ5tG4bor1rc/tp81t8WVcZxO8qWEgQQIQQENoTyuW/mXmRJR7KHbALca6KNp1Chb
-	4q77zabvTfkgw+kDsQJehDKasnEXPeqVds+Fn3yShimSX7vfH7qOtOqqASMdLqsPCmNV/gi6cy/
-	8pqxGWMQ4BhvW8/8HSHdURo7lEV0BUl6RIhLSVsPFYZK2Pk/kc1K3fRSFT4XEMxeXsKB1/kIVtn
-	geDJ7t8eu
-X-Received: by 2002:a05:6a20:7347:b0:1ee:e2ac:5159 with SMTP id adf61e73a8af0-1fe42f53152mr6623756637.19.1742572950028;
-        Fri, 21 Mar 2025 09:02:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFcQ2r97XLcVjprlkXYBQ4t6SFERPXbBeumuUB0GSNO6WM4PH5u+Dkl5/WJ+KpfvQZJ1YN3/g==
-X-Received: by 2002:a05:6a20:7347:b0:1ee:e2ac:5159 with SMTP id adf61e73a8af0-1fe42f53152mr6623691637.19.1742572949501;
-        Fri, 21 Mar 2025 09:02:29 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-af8a2a29177sm1911891a12.62.2025.03.21.09.02.28
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 21 Mar 2025 09:02:29 -0700 (PDT)
-Message-ID: <72e9ddb1-c0eb-4eea-aa11-3f24ed0caea2@oss.qualcomm.com>
-Date: Fri, 21 Mar 2025 09:02:26 -0700
+	Fri, 21 Mar 2025 16:24:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3FD1143B15;
+	Fri, 21 Mar 2025 16:24:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 80239C4CEE3;
+	Fri, 21 Mar 2025 16:24:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742574272;
+	bh=H2y2nRWmakGnpy3JeVRWta/rM5SXOOhVIXKcy4ezc8w=;
+	h=From:To:Cc:Subject:Date:From;
+	b=h/U7QE/SHSeUU5xH58Z1vAVXYlPB+DXTB6uQ5mEVRbnxNEEX/DWGufdSJo6gBfiLy
+	 oqUZy2IItTtA3rmhu38IvyGPnRL1+1sRA/GRrASpdLRGvTTAkV4qoIgFsTZ/9tnzGT
+	 meocn8pzJDQvtb1IS+GeGbI6J8Es8rdM+/dNI2s6D94cBan4PXpt4PGYI9wQDIVTSC
+	 B5+Nzh0Ylf1scEar0Q4ycywHGu6buC1E3LqYXlpctg/NnbudPuZGjS9W5nvGvEGH/4
+	 CyBBJc9s5wfwWDhIQBvHP+oKvEVRQdW9cUGKQK1OtaFWLgCiCMib7180yOVi9X8tji
+	 qGC9CTPigkHSg==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1tvfAh-00000000562-0835;
+	Fri, 21 Mar 2025 17:24:35 +0100
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Stephan Gerhold <stephan.gerhold@linaro.org>,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH] wifi: ath12k: extend dma mask to 36 bits
+Date: Fri, 21 Mar 2025 17:23:31 +0100
+Message-ID: <20250321162331.19507-1-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v12 07/13] wifi: ath12k: add support for fixed
- QMI firmware memory
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-        Johannes Berg <johannes@sipsolutions.net>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-References: <20250321-ath12k-ahb-v12-0-bb389ed76ae5@quicinc.com>
- <20250321-ath12k-ahb-v12-7-bb389ed76ae5@quicinc.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250321-ath12k-ahb-v12-7-bb389ed76ae5@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: GCPUkX-9IROn8PCSTPjGsEWsDZ8Muvr0
-X-Authority-Analysis: v=2.4 cv=ZtHtK87G c=1 sm=1 tr=0 ts=67dd8d97 cx=c_pps a=IZJwPbhc+fLeJZngyXXI0A==:117 a=e70TP3dOR9hTogukJ0528Q==:17 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=bC-a23v3AAAA:8 a=VwQbUJbxAAAA:8 a=7wgTMAlwxEMamJX448IA:9 a=QEXdDO2ut3YA:10
- a=-FEs8UIgK8oA:10 a=uG9DUKGECoFWVXl0Dc02:22 a=FO4_E8m0qiDe52t0p3_H:22
-X-Proofpoint-GUID: GCPUkX-9IROn8PCSTPjGsEWsDZ8Muvr0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-21_05,2025-03-21_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0 mlxscore=0
- mlxlogscore=999 spamscore=0 clxscore=1015 malwarescore=0 suspectscore=0
- phishscore=0 priorityscore=1501 impostorscore=0 adultscore=0 bulkscore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503210117
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_090232_822893_1A898CF0 
-X-CRM114-Status: UNSURE (   7.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250321_092433_173728_51C86201 
+X-CRM114-Status: GOOD (  13.90  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,15 +76,87 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 3/21/2025 3:52 AM, Raj Kumar Bhagat wrote:
-> IPQ5332 firmware supports only fixed QMI firmware memory.
-> 
-> Hence, add support to read reserved fixed memory region from
-> device-tree and provide the reserved memory segments for
-> firmware to use during QMI firmware memory request.
+Extend the DMA mask to 36 bits to avoid using bounce buffers on machines
+without an iommu (under OS control) similar to what was done for ath11k
+in commit dbd73acb22d8 ("wifi: ath11k: enable 36 bit mask for stream
+DMA").
 
-Be aware that new memory-region helpers are being introduced by Rob:
-https://msgid.link/20250317232426.952188-1-robh@kernel.org
+This specifically avoids using bounce buffers on Qualcomm Snapdragon X
+Elite machines like the Lenovo ThinkPad T14s when running at EL1.
 
-/jeff
+Note that the mask could possibly be extended further but unresolved DMA
+issues with 64 GiB X Elite machines currently prevents that from being
+tested.
+
+Also note that the driver is limited to 32 bits for coherent
+allocations and that there is no need to check for errors when setting
+masks larger than 32 bits.
+
+Tested-on: WCN7850 hw2.0 WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/net/wireless/ath/ath12k/mhi.c |  2 +-
+ drivers/net/wireless/ath/ath12k/pci.c | 12 ++++--------
+ drivers/net/wireless/ath/ath12k/pci.h |  1 +
+ 3 files changed, 6 insertions(+), 9 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
+index 2f6d14382ed7..9c929c4ad8a8 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.c
++++ b/drivers/net/wireless/ath/ath12k/mhi.c
+@@ -379,7 +379,7 @@ int ath12k_mhi_register(struct ath12k_pci *ab_pci)
+ 		mhi_ctrl->irq_flags = IRQF_SHARED | IRQF_NOBALANCING;
+ 
+ 	mhi_ctrl->iova_start = 0;
+-	mhi_ctrl->iova_stop = 0xffffffff;
++	mhi_ctrl->iova_stop = ab_pci->dma_mask;
+ 	mhi_ctrl->sbl_size = SZ_512K;
+ 	mhi_ctrl->seg_len = SZ_512K;
+ 	mhi_ctrl->fbc_download = true;
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 06cff3849ab8..e77c50fc48ca 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -17,7 +17,7 @@
+ #include "debug.h"
+ 
+ #define ATH12K_PCI_BAR_NUM		0
+-#define ATH12K_PCI_DMA_MASK		32
++#define ATH12K_PCI_DMA_MASK		36
+ 
+ #define ATH12K_PCI_IRQ_CE0_OFFSET		3
+ 
+@@ -874,13 +874,9 @@ static int ath12k_pci_claim(struct ath12k_pci *ab_pci, struct pci_dev *pdev)
+ 		goto disable_device;
+ 	}
+ 
+-	ret = dma_set_mask_and_coherent(&pdev->dev,
+-					DMA_BIT_MASK(ATH12K_PCI_DMA_MASK));
+-	if (ret) {
+-		ath12k_err(ab, "failed to set pci dma mask to %d: %d\n",
+-			   ATH12K_PCI_DMA_MASK, ret);
+-		goto release_region;
+-	}
++	ab_pci->dma_mask = DMA_BIT_MASK(ATH12K_PCI_DMA_MASK);
++	dma_set_mask(&pdev->dev, ab_pci->dma_mask);
++	dma_set_coherent_mask(&pdev->dev, DMA_BIT_MASK(32));
+ 
+ 	pci_set_master(pdev);
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
+index 31584a7ad80e..9e89b64b3545 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.h
++++ b/drivers/net/wireless/ath/ath12k/pci.h
+@@ -116,6 +116,7 @@ struct ath12k_pci {
+ 	unsigned long irq_flags;
+ 	const struct ath12k_pci_ops *pci_ops;
+ 	u32 qmi_instance;
++	u64 dma_mask;
+ };
+ 
+ static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
+-- 
+2.48.1
+
 
