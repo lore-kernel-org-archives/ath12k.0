@@ -4,93 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B04C7C35FFF
-	for <ath12k@archiver.kernel.org>; Fri, 21 Mar 2025 11:16:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 705DFC36000
+	for <ath12k@archiver.kernel.org>; Fri, 21 Mar 2025 16:02:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=K9wvdIfeF6JTEl3SxM4XKsLrGDlt1SUd5JPCbyGFtqg=; b=aeYchTW/aKkMeY+IJ7jhJAW3PP
-	NdfDNDmT5klcP/Ze8/P85USrYhihxVJzuySWBWnJHb+mqX8G/Gjki0QinOES3DWCprw6GM7VvOCMv
-	Nz20rZziXIYX3x2PDrqugSwHQaxzBLdobsT3e7M+7uJ9+MxdW2XgxadeSJhG+KtgR67lNediADeIj
-	FCOn+y3rDOsTq6Am5+M3kAoR1NYuMlI8Bcq7DRZ18J01R1ACBKhYGWSgbzfJ4SQlXexR0dJc04Hga
-	ljvOUo6nnB6QG4qAP93GYZjYnT4hY6KG1WwjM24HnZuNcoCWWRDGXMqOyVmpZNnjOeV2K8roPd0Gl
-	QjLDHCzw==;
+	bh=vCbcORBD7TYTk+XKpRjnplu+uBcKKY/kXvr0Jk5Isao=; b=35XzT6twktnVZwB0yVExOAX5YT
+	w+AK0ZrBX7dq+pJAnC+/IqJ0o+k7gvUFXtz9l157a4xdT5ELnholDCYbZFvJa0jjqoEgA8Z8K3hEx
+	Odz3tMGhZ8gqvZnS0Tsg2c6eyxy+2AVPB71KpD66WTX9Vgge2l91C5Zthwsqkd3VA8JpabZ5NMysu
+	FHimNRELoOor9HHyK6fxBXrAufEP6tyMvOr9Jd+Ez72dVSyQWwVfUdv1ZWVLZNynjXzrsrfcO/3zo
+	svUrshn0hFhyR7/531s1w3d7y6ipfm0Cgd4ATwKEu2ZWaXWvEfV4FfNUrbYUrvDiwdx477zWQ9h1x
+	Daczazqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvaMz-0000000Edmh-1ziY
+	id 1tvepP-0000000FP16-0vVB
 	for ath12k@archiver.kernel.org;
-	Fri, 21 Mar 2025 11:16:57 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Fri, 21 Mar 2025 16:02:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvaKc-0000000EdMc-48ug
+	id 1tvepM-0000000FP0H-3GKZ
 	for ath12k@lists.infradead.org;
-	Fri, 21 Mar 2025 11:14:32 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LATEw7022440;
-	Fri, 21 Mar 2025 11:14:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Fri, 21 Mar 2025 16:02:34 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LCSFeP025611
+	for <ath12k@lists.infradead.org>; Fri, 21 Mar 2025 16:02:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	K9wvdIfeF6JTEl3SxM4XKsLrGDlt1SUd5JPCbyGFtqg=; b=UTB6H2zOPl1Ttqbp
-	zdr/bvzAT5dsqbjr21hg17xBsNxupJ3WE7VKpe7kXxed6fJdum11ALx6e1orxX0r
-	ZD+02fHgzWWkj4sgwIrCUuoHUV1bgDh33iVXXi9qvnANeb8hUJ7m4sFi7dzkGDmf
-	oQsaD+Icj4+DDbrk0Al5wfS2tU3GH0p6JsqP0qHCLHXLZFzG3J93xZcEPYxYzwsX
-	xKRo+u4dDQncFnYjVzQopvt1QtOII4kiBuZS0CQrpGnnLCX1Z5LqShf/n9EBucur
-	PYHjB693SUKMucv4YhmtdDe04/xTrvr4mxNApsn6USGdwnHf8XMPyIMzEZmVHXBA
-	Z6tyMg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45fd1dshsw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Mar 2025 11:14:29 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52LBESwj006124
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 21 Mar 2025 11:14:28 GMT
-Received: from [10.133.33.89] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 21 Mar
- 2025 04:14:27 -0700
-Message-ID: <0741d771-50e4-49fd-b9fd-1cfa02d34b37@quicinc.com>
-Date: Fri, 21 Mar 2025 19:14:24 +0800
+	vCbcORBD7TYTk+XKpRjnplu+uBcKKY/kXvr0Jk5Isao=; b=ErGCfkJ2qMEFeXqk
+	UC6l3H8dLAHsfzb1ZcqgKMAcqIXxd1mg90Dt6wUrb4v/+kjl7J9QM8OAiQNlgi16
+	heDzJw1s5Cx6pg2e95+DyHxENBc4AzO6LFS/05aOZ20OBC6FF99fGpFePUaymPLo
+	z4ldDaUgfYs4+SUwlgGHl3Wr0XoIXdatQHoMs2ml5Akou6I+aoecjcohNE2k0k+j
+	MZbzmwwA3DYhsTGYwM9Mcxz3dKdMvbrh0zu4Cl2rsf0xiiIF8dLdMkyJcaLUCQU1
+	YyR4ePNXfB5AQXDgQwBGXZSkfigHCz13fWQsOljLdxkl8aHElgjisq83HpLFOP6Z
+	1Uza0A==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45h854gjn2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 21 Mar 2025 16:02:31 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2233b764fc8so34574175ad.3
+        for <ath12k@lists.infradead.org>; Fri, 21 Mar 2025 09:02:30 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742572950; x=1743177750;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=vCbcORBD7TYTk+XKpRjnplu+uBcKKY/kXvr0Jk5Isao=;
+        b=mZehYQzVIMSRE0PS9Nyia24u73orHgVaZb7YOVzOWNclBRuwMgac6i1A2wC2zW6MBT
+         ZchOnpKELL+/u1dRUI+hHdB9ewgFLOqIktrR04OMnj7uMLrcUbk33VdXLK+Tw6ZXi89U
+         i6EL816i03YCUwY8N+Ct3PiJ0+Nc7FOZLD4h8Kb0KwoJNxybRcDLlGd1R2FrVmVIxJAo
+         fZf4RXD7bT2ws+b8iu7YI3XK4h6nNrizesOokRdFi1FOhE1mOg6sf2KyUauazxJ17t9x
+         Zdi6jn2cGYoW6QD/DhQ+YsR1eOE6+/kGIJrMzZKJR+VhdnfBfo3VNKJB4k4BS6MPM7AH
+         9nDA==
+X-Forwarded-Encrypted: i=1; AJvYcCWN8khaSxK2JDWsitl4ARyuyHs+OR3x0bqlGJDch/hkQwbzcyFR0HiGkK8QX0e6TFrnVQu3Nm4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy6vtfe71a4M1xEhJqe0uAFqNgRstc6DLJlJhPhZD1clqdAcuH+
+	feyTJolEt3U31yrDyZtYmTlGUd8NjWDC4rBonTJ0Fu1J9IAUByYT+9kmJBrneIwhvyWmFZXPnwu
+	UzMeFLArURZfbYJ9tlua3SaudJaM5AdwNQhppPPsm+lg2glXRcWcxdrd1f8Cp
+X-Gm-Gg: ASbGncsWXNaLV/Qakkaa8kwIi0IfSD+TPKhoOeKbtYYpi+f30QFqZsi80ejzNtirLrs
+	TgepffGcU7I00HNZ6Lai0KxvuOXVkob308gr8Ane2H50ilUQQ7PeltinKSKRUI3Z4+kzEk/rLjo
+	0RjHNBrnOWFZ5tG4bor1rc/tp81t8WVcZxO8qWEgQQIQQENoTyuW/mXmRJR7KHbALca6KNp1Chb
+	4q77zabvTfkgw+kDsQJehDKasnEXPeqVds+Fn3yShimSX7vfH7qOtOqqASMdLqsPCmNV/gi6cy/
+	8pqxGWMQ4BhvW8/8HSHdURo7lEV0BUl6RIhLSVsPFYZK2Pk/kc1K3fRSFT4XEMxeXsKB1/kIVtn
+	geDJ7t8eu
+X-Received: by 2002:a05:6a20:7347:b0:1ee:e2ac:5159 with SMTP id adf61e73a8af0-1fe42f53152mr6623756637.19.1742572950028;
+        Fri, 21 Mar 2025 09:02:30 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFcQ2r97XLcVjprlkXYBQ4t6SFERPXbBeumuUB0GSNO6WM4PH5u+Dkl5/WJ+KpfvQZJ1YN3/g==
+X-Received: by 2002:a05:6a20:7347:b0:1ee:e2ac:5159 with SMTP id adf61e73a8af0-1fe42f53152mr6623691637.19.1742572949501;
+        Fri, 21 Mar 2025 09:02:29 -0700 (PDT)
+Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-af8a2a29177sm1911891a12.62.2025.03.21.09.02.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 21 Mar 2025 09:02:29 -0700 (PDT)
+Message-ID: <72e9ddb1-c0eb-4eea-aa11-3f24ed0caea2@oss.qualcomm.com>
+Date: Fri, 21 Mar 2025 09:02:26 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v3] wifi: ath12k: read country code from SMBIOS
- for WCN7850
-To: Zong-Zhe Yang <kevin_yang@realtek.com>,
-        "ath12k@lists.infradead.org"
-	<ath12k@lists.infradead.org>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-References: <20250321090307.1397-1-quic_kangyang@quicinc.com>
- <66db20d096a347d0b832baad3c5061a7@realtek.com>
+Subject: Re: [PATCH ath-next v12 07/13] wifi: ath12k: add support for fixed
+ QMI firmware memory
+To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
+        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+References: <20250321-ath12k-ahb-v12-0-bb389ed76ae5@quicinc.com>
+ <20250321-ath12k-ahb-v12-7-bb389ed76ae5@quicinc.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-From: Kang Yang <quic_kangyang@quicinc.com>
-In-Reply-To: <66db20d096a347d0b832baad3c5061a7@realtek.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+In-Reply-To: <20250321-ath12k-ahb-v12-7-bb389ed76ae5@quicinc.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: uUElXcVubIBlGUJqMhqmummCFBAQ3JnD
-X-Proofpoint-GUID: uUElXcVubIBlGUJqMhqmummCFBAQ3JnD
-X-Authority-Analysis: v=2.4 cv=T52MT+KQ c=1 sm=1 tr=0 ts=67dd4a15 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=DFMmyN678vVbZ6SdO-kA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: GCPUkX-9IROn8PCSTPjGsEWsDZ8Muvr0
+X-Authority-Analysis: v=2.4 cv=ZtHtK87G c=1 sm=1 tr=0 ts=67dd8d97 cx=c_pps a=IZJwPbhc+fLeJZngyXXI0A==:117 a=e70TP3dOR9hTogukJ0528Q==:17 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=bC-a23v3AAAA:8 a=VwQbUJbxAAAA:8 a=7wgTMAlwxEMamJX448IA:9 a=QEXdDO2ut3YA:10
+ a=-FEs8UIgK8oA:10 a=uG9DUKGECoFWVXl0Dc02:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-GUID: GCPUkX-9IROn8PCSTPjGsEWsDZ8Muvr0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-21_04,2025-03-20_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
- impostorscore=0 priorityscore=1501 bulkscore=0 mlxscore=0 clxscore=1011
- mlxlogscore=999 lowpriorityscore=0 phishscore=0 spamscore=0 malwarescore=0
+ definitions=2025-03-21_05,2025-03-21_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0 mlxscore=0
+ mlxlogscore=999 spamscore=0 clxscore=1015 malwarescore=0 suspectscore=0
+ phishscore=0 priorityscore=1501 impostorscore=0 adultscore=0 bulkscore=0
  classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503210083
+ definitions=main-2503210117
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_041431_158874_213B389D 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20250321_090232_822893_1A898CF0 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,104 +132,15 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-
-
-On 3/21/2025 7:06 PM, Zong-Zhe Yang wrote:
-> Kang Yang <quic_kangyang@quicinc.com> wrote:
->>
->> Read the country code from SMBIOS and send it to the firmware. The firmware will then
->> indicate the regulatory domain information for the country code, which ath12k will use.
->>
->> [...]
->>
->> static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
->>                  return;
->>          }
->>
->> +       spin_lock_bh(&ab->base_lock);
->> +
->> +       switch (smbios->country_code_flag) {
->> +       case ATH12K_SMBIOS_CC_ISO:
->> +               ab->new_alpha2[0] = u16_get_bits(smbios->cc_code, 0xff);
->> +               ab->new_alpha2[1] = u16_get_bits(smbios->cc_code, 0xff);
+On 3/21/2025 3:52 AM, Raj Kumar Bhagat wrote:
+> IPQ5332 firmware supports only fixed QMI firmware memory.
 > 
-> It seems that one of the masks is wrong.
-> 
+> Hence, add support to read reserved fixed memory region from
+> device-tree and provide the reserved memory segments for
+> firmware to use during QMI firmware memory request.
 
-Oh, yes.
+Be aware that new memory-region helpers are being introduced by Rob:
+https://msgid.link/20250317232426.952188-1-robh@kernel.org
 
->> +               ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot smbios cc_code %c%c\n",
->> +                          ab->new_alpha2[0], ab->new_alpha2[1]);
->> +               break;
->> +       case ATH12K_SMBIOS_CC_WW:
->> +               ab->new_alpha2[0] = '0';
->> +               ab->new_alpha2[1] = '0';
->> +               ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot smbios worldwide
->> regdomain\n");
->> +               break;
->> +       default:
->> +               ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot ignore smbios country code
->> setting %d\n",
->> +                          smbios->country_code_flag);
->> +               break;
->> +       }
->> +
->> +       spin_unlock_bh(&ab->base_lock);
->> +
->>          if (!smbios->bdf_enabled) {
->>                  ath12k_dbg(ab, ATH12K_DBG_BOOT, "bdf variant name not found.\n");
->>                  return;
->> @@ -690,7 +712,7 @@ static void ath12k_core_check_bdfext(const struct dmi_header *hdr,
->> void *data)  int ath12k_core_check_smbios(struct ath12k_base *ab)  {
->>          ab->qmi.target.bdf_ext[0] = '\0';
->> -       dmi_walk(ath12k_core_check_bdfext, ab);
->> +       dmi_walk(ath12k_core_check_cc_code_bdfext, ab);
->>
->>          if (ab->qmi.target.bdf_ext[0] == '\0')
->>                  return -ENODATA;
->> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
->> index 116cf530621f..e2d300bd5972 100644
->> --- a/drivers/net/wireless/ath/ath12k/core.h
->> +++ b/drivers/net/wireless/ath/ath12k/core.h
->> @@ -172,9 +172,34 @@ struct ath12k_ext_irq_grp {
->>          struct net_device *napi_ndev;
->>   };
->>
->> +enum ath12k_smbios_cc_type {
->> +       /* disable country code setting from SMBIOS */
->> +       ATH12K_SMBIOS_CC_DISABLE = 0,
->> +
->> +       /* set country code by ANSI country name, based on ISO3166-1 alpha2 */
->> +       ATH12K_SMBIOS_CC_ISO = 1,
->> +
->> +       /* worldwide regdomain */
->> +       ATH12K_SMBIOS_CC_WW = 2,
->> +};
->> +
->>   struct ath12k_smbios_bdf {
->>          struct dmi_header hdr;
->> -       u32 padding;
->> +       u8 features_disabled;
->> +
->> +       /* enum ath12k_smbios_cc_type */
->> +       u8 country_code_flag;
->> +
->> +       /* To set specific country, you need to set country code
->> +        * flag=ATH12K_SMBIOS_CC_ISO first, then if country is United
->> +        * States, then country code value = 0x5553 ("US",'U' = 0x55, 'S'=
->> +        * 0x53). To set country to INDONESIA, then country code value =
->> +        * 0x4944 ("IN", 'I'=0x49, 'D'=0x44). If country code flag =
->> +        * ATH12K_SMBIOS_CC_WW, then you can use worldwide regulatory
->> +        * setting.
->> +        */
->> +       u16 cc_code;
->> +
->>          u8 bdf_enabled;
->>          u8 bdf_ext[];
->>   } __packed;
->>
->> [...]
->>
-> 
-
+/jeff
 
