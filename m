@@ -4,89 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3020FC28B30
-	for <ath12k@archiver.kernel.org>; Mon, 24 Mar 2025 03:06:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59E63C36008
+	for <ath12k@archiver.kernel.org>; Mon, 24 Mar 2025 06:37:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yn3OIPbJ2BfGNi6VepCZhcG7LpO0DMthtLBQHQq6hd0=; b=prJo0xULFB9qxy+AJWVlk2+hfl
-	I4iwG0oXUekF5C1TJ1/q3n75QInIIjJ0Gxa8o3/zIWaBvcMbfFiU248A0IiCcZqS9lWEMutbFrGmn
-	OTyWVrM43JvxJXxDSbYHZKzMsX3/mBK7BUoeJjfuPpR8uqviZkXIU9mBO+1DmTIEHG7v/yGvBuIcN
-	CmP8xQWKuCP35SqHWP16pTbHj4g5GlbnKQEgJ5qVakM2azp4qQ7H+ZLwHgAsKR+nNgk9hXHFfG17v
-	EtfV/3PG6I9GVlg5wDO7JncfAVNQTcFjspx5iNwZwBItInMIaccZva4XICWau4K7dANRBW/TytqIo
-	PtnpKUDA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=JI0Vq8gEeUHyRtr0ZS6JwAs6VQ7NhaXP7SKopoMP1qA=; b=IKrxtBnCF8fK/2twL99om4E07J
+	xsNNslYpdMGqPzQ4oMfOwjMLFLtYdSkiUEycnmZlR1yx1NTl5bwN2O6yzAu/4uHleY5YPK9WxBDk+
+	W7iXp2mE7+KToCy5NPPsY/G3My6ju8NPBcmyK6SO7P6j53/MWUk9oDMKtlRVdwI/0WNPzRiCekyTG
+	qbgtdb9mCchneMiBj1w+lk8rQoob74E8tEah5J7Nth4GLKS3JABKOFbFxGCwFVUrPzKCfs77E+q3M
+	MFfHipLKPfhsYkau+KA1Pdvepg6ZYRBRfcgKqkWyhXkWzksOFl7krA6ANnxf/U/PKel0vzyASIe8Y
+	6octU96Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twY9D-000000026xd-3uA4
+	id 1twbQi-00000002LBL-0Sjj
 	for ath12k@archiver.kernel.org;
-	Mon, 24 Mar 2025 03:06:43 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 24 Mar 2025 06:37:00 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twY8y-000000026tO-0BOS
+	id 1twbFt-00000002JdM-0Gmj
 	for ath12k@lists.infradead.org;
-	Mon, 24 Mar 2025 03:06:29 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52NNBJWr026443;
-	Mon, 24 Mar 2025 03:06:22 GMT
+	Mon, 24 Mar 2025 06:25:50 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52O6FcEY022745;
+	Mon, 24 Mar 2025 06:25:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	yn3OIPbJ2BfGNi6VepCZhcG7LpO0DMthtLBQHQq6hd0=; b=bWcStMq6F/RANJya
-	9F0/3VJkCUfu9gMYxBj205yBe5yBW2i2tpIb8T1p4dEqP+shVehnXpLJWqSpoc+O
-	mEWOxl0lKrHsoQuIxS7vf8njfueMbES22dthUVnjtDlYmbjOPkSifUcEeHglIWcJ
-	KveDtWEz826Y/I7/vZhuiGE/k47DQguF1SSKJatUVYWNqx/MD4yAPGAaVxSMAsuf
-	24ODlqguJmVKwHFHBgNJ4oiX9c8+htB1UP/386tdneWqL9Pcfc4psXCzbKy/rX5C
-	a1s0luuRiP9qB4kNLJ5/bOUctwqCr10gA3g5yO2jUaHhjv4Dcvo5Xymq80WuzZA0
-	IUWHRw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45hnyjatw9-1
+	JI0Vq8gEeUHyRtr0ZS6JwAs6VQ7NhaXP7SKopoMP1qA=; b=Zpyzt0UsQuDZW4aY
+	dEDWUxCiYuzcRscQNbU4vL45ALsXoMW/Gbs2Znaix5Lo9eqZkknnnb3XhGxU4xxp
+	uKeUeflPOHwHrd+u1Z4tHhW/nVCBooJ7TGEkH4AEQWmYPnjrNB3eLpgHdjmhbhib
+	jgkV028Kw3NF2QhdBXF/6XskcnobXVwM1JT3zpfmAaobTUH6DFOk27+1UuFyRWxG
+	WEzkVfZ0eYGXrB9aE2V3Ehq4u7X2BZyyPgeOvrrpJ7U9oVK6n8nQbS7HnniMThQt
+	SqpqULMYMfGlIUUzdgJkR6UPizEdkUp4B0sKTmiblxzp5xrnqwLURW142xZOoH2d
+	ZUpHmw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45hn9wb9a2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 24 Mar 2025 03:06:22 +0000 (GMT)
+	Mon, 24 Mar 2025 06:25:46 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52O36LNQ010366
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52O6PjYT012989
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 24 Mar 2025 03:06:21 GMT
-Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 23 Mar
- 2025 20:06:19 -0700
-Message-ID: <bc3601ae-5639-4ee4-bbcb-4e39b542bfbe@quicinc.com>
-Date: Mon, 24 Mar 2025 11:06:16 +0800
+	Mon, 24 Mar 2025 06:25:45 GMT
+Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sun, 23 Mar 2025 23:25:43 -0700
+From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
+        Nicolas Escande <nico.escande@gmail.com>,
+        Vasanthakumar Thiagarajan
+	<vasanthakumar.thiagarajan@oss.qualcomm.com>,
+        Karthikeyan Periyasamy
+	<quic_periyasa@quicinc.com>
+Subject: [PATCH v11 05/10] wifi: ath12k: change the status update in the monitor Rx
+Date: Mon, 24 Mar 2025 11:55:13 +0530
+Message-ID: <20250324062518.2752822-6-quic_periyasa@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250324062518.2752822-1-quic_periyasa@quicinc.com>
+References: <20250324062518.2752822-1-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: ath12k: extend dma mask to 36 bits
-To: Johan Hovold <johan+linaro@kernel.org>, Jeff Johnson <jjohnson@kernel.org>
-CC: Stephan Gerhold <stephan.gerhold@linaro.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20250321162331.19507-1-johan+linaro@kernel.org>
-Content-Language: en-US
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-In-Reply-To: <20250321162331.19507-1-johan+linaro@kernel.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=Ybu95xRf c=1 sm=1 tr=0 ts=67e0cc2e cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=VwQbUJbxAAAA:8 a=iWmvWweA6ERdS6TH5IQA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: aDGgXnktQTRB6GnI0YhZJFpmDJGqdpJB
-X-Proofpoint-ORIG-GUID: aDGgXnktQTRB6GnI0YhZJFpmDJGqdpJB
+X-Proofpoint-GUID: 9H6WEsRRcq5Sf0IRJ1l68pZJff5ytofo
+X-Proofpoint-ORIG-GUID: 9H6WEsRRcq5Sf0IRJ1l68pZJff5ytofo
+X-Authority-Analysis: v=2.4 cv=CPoqXQrD c=1 sm=1 tr=0 ts=67e0faea cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=OXVonWYZqI_Wyll4:21 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8
+ a=cWZrgpKIRVDAhusWx5YA:9 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-24_01,2025-03-21_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 impostorscore=0
- suspectscore=0 mlxlogscore=999 priorityscore=1501 spamscore=0
- lowpriorityscore=0 mlxscore=0 malwarescore=0 bulkscore=0 clxscore=1011
- adultscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503240022
+ definitions=2025-03-24_03,2025-03-21_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 mlxlogscore=875
+ spamscore=0 priorityscore=1501 suspectscore=0 bulkscore=0 mlxscore=0
+ lowpriorityscore=0 malwarescore=0 adultscore=0 phishscore=0
+ impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503240045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250323_200628_113541_BD395691 
-X-CRM114-Status: GOOD (  23.80  )
+X-CRM114-CacheID: sfid-20250323_232549_260789_BE4BE8C3 
+X-CRM114-Status: GOOD (  18.83  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,100 +105,247 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: P Praneesh <quic_ppranees@quicinc.com>
 
+Currently, in the monitor Rx path, status is filled from the RX TLV header
+present in the MSDU data. This logic is inherited from ath11k. However, in
+the ath12k 802.11be hardware, the Rx TLV header is not present in the MSDU
+data. This information is reported under various TLV tags. Therefore, avoid
+the existing status filling by accumulating the needed information in the
+PPDU information structure and fill the status.
 
-On 3/22/2025 12:23 AM, Johan Hovold wrote:
-> Extend the DMA mask to 36 bits to avoid using bounce buffers on machines
-> without an iommu (under OS control) similar to what was done for ath11k
-> in commit dbd73acb22d8 ("wifi: ath11k: enable 36 bit mask for stream
-> DMA").
-> 
-> This specifically avoids using bounce buffers on Qualcomm Snapdragon X
-> Elite machines like the Lenovo ThinkPad T14s when running at EL1.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-why bounce buffer is used at EL1? is it because IOMMU is not working at EL1?
-or even because IOMMU is not present on Elite machines?
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Tested-by: Nicolas Escande <nico.escande@gmail.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/core.h   |  16 ++-
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 138 ++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/hal_rx.h |   5 +-
+ 3 files changed, 151 insertions(+), 8 deletions(-)
 
-> 
-> Note that the mask could possibly be extended further but unresolved DMA
-> issues with 64 GiB X Elite machines currently prevents that from being
-> tested.
-
-could you help elaborate how it could be extended?
-
-> 
-> Also note that the driver is limited to 32 bits for coherent
-> allocations and that there is no need to check for errors when setting
-> masks larger than 32 bits.
-
-why is it not necessary to check error?
-
-> 
-> Tested-on: WCN7850 hw2.0 WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->  drivers/net/wireless/ath/ath12k/mhi.c |  2 +-
->  drivers/net/wireless/ath/ath12k/pci.c | 12 ++++--------
->  drivers/net/wireless/ath/ath12k/pci.h |  1 +
->  3 files changed, 6 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
-> index 2f6d14382ed7..9c929c4ad8a8 100644
-> --- a/drivers/net/wireless/ath/ath12k/mhi.c
-> +++ b/drivers/net/wireless/ath/ath12k/mhi.c
-> @@ -379,7 +379,7 @@ int ath12k_mhi_register(struct ath12k_pci *ab_pci)
->  		mhi_ctrl->irq_flags = IRQF_SHARED | IRQF_NOBALANCING;
->  
->  	mhi_ctrl->iova_start = 0;
-> -	mhi_ctrl->iova_stop = 0xffffffff;
-> +	mhi_ctrl->iova_stop = ab_pci->dma_mask;
->  	mhi_ctrl->sbl_size = SZ_512K;
->  	mhi_ctrl->seg_len = SZ_512K;
->  	mhi_ctrl->fbc_download = true;
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-> index 06cff3849ab8..e77c50fc48ca 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.c
-> +++ b/drivers/net/wireless/ath/ath12k/pci.c
-> @@ -17,7 +17,7 @@
->  #include "debug.h"
->  
->  #define ATH12K_PCI_BAR_NUM		0
-> -#define ATH12K_PCI_DMA_MASK		32
-> +#define ATH12K_PCI_DMA_MASK		36
->  
->  #define ATH12K_PCI_IRQ_CE0_OFFSET		3
->  
-> @@ -874,13 +874,9 @@ static int ath12k_pci_claim(struct ath12k_pci *ab_pci, struct pci_dev *pdev)
->  		goto disable_device;
->  	}
->  
-> -	ret = dma_set_mask_and_coherent(&pdev->dev,
-> -					DMA_BIT_MASK(ATH12K_PCI_DMA_MASK));
-> -	if (ret) {
-> -		ath12k_err(ab, "failed to set pci dma mask to %d: %d\n",
-> -			   ATH12K_PCI_DMA_MASK, ret);
-> -		goto release_region;
-> -	}
-> +	ab_pci->dma_mask = DMA_BIT_MASK(ATH12K_PCI_DMA_MASK);
-> +	dma_set_mask(&pdev->dev, ab_pci->dma_mask);
-> +	dma_set_coherent_mask(&pdev->dev, DMA_BIT_MASK(32));
->  
->  	pci_set_master(pdev);
->  
-> diff --git a/drivers/net/wireless/ath/ath12k/pci.h b/drivers/net/wireless/ath/ath12k/pci.h
-> index 31584a7ad80e..9e89b64b3545 100644
-> --- a/drivers/net/wireless/ath/ath12k/pci.h
-> +++ b/drivers/net/wireless/ath/ath12k/pci.h
-> @@ -116,6 +116,7 @@ struct ath12k_pci {
->  	unsigned long irq_flags;
->  	const struct ath12k_pci_ops *pci_ops;
->  	u32 qmi_instance;
-> +	u64 dma_mask;
->  };
->  
->  static inline struct ath12k_pci *ath12k_pci_priv(struct ath12k_base *ab)
-
-
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 081a5292a6e8..3f92565ea4e2 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -533,9 +533,19 @@ struct ath12k_sta {
+ 	enum ieee80211_sta_state state;
+ };
+ 
+-#define ATH12K_MIN_5GHZ_FREQ 4150
+-#define ATH12K_MIN_6GHZ_FREQ 5925
+-#define ATH12K_MAX_6GHZ_FREQ 7115
++#define ATH12K_HALF_20MHZ_BW	10
++#define ATH12K_2GHZ_MIN_CENTER	2412
++#define ATH12K_2GHZ_MAX_CENTER	2484
++#define ATH12K_5GHZ_MIN_CENTER	4900
++#define ATH12K_5GHZ_MAX_CENTER	5920
++#define ATH12K_6GHZ_MIN_CENTER	5935
++#define ATH12K_6GHZ_MAX_CENTER	7115
++#define ATH12K_MIN_2GHZ_FREQ	(ATH12K_2GHZ_MIN_CENTER - ATH12K_HALF_20MHZ_BW - 1)
++#define ATH12K_MAX_2GHZ_FREQ	(ATH12K_2GHZ_MAX_CENTER + ATH12K_HALF_20MHZ_BW + 1)
++#define ATH12K_MIN_5GHZ_FREQ	(ATH12K_5GHZ_MIN_CENTER - ATH12K_HALF_20MHZ_BW)
++#define ATH12K_MAX_5GHZ_FREQ	(ATH12K_5GHZ_MAX_CENTER + ATH12K_HALF_20MHZ_BW)
++#define ATH12K_MIN_6GHZ_FREQ	(ATH12K_6GHZ_MIN_CENTER - ATH12K_HALF_20MHZ_BW)
++#define ATH12K_MAX_6GHZ_FREQ	(ATH12K_6GHZ_MAX_CENTER + ATH12K_HALF_20MHZ_BW)
+ #define ATH12K_NUM_CHANS 101
+ #define ATH12K_MAX_5GHZ_CHAN 173
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index c613f8408c84..bb227c7e2748 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -1700,18 +1700,128 @@ static void ath12k_dp_mon_rx_msdus_set_payload(struct ath12k *ar,
+ 	skb_pull(head_msdu, rx_pkt_offset + l2_hdr_offset);
+ }
+ 
++static void
++ath12k_dp_mon_fill_rx_stats_info(struct ath12k *ar,
++				 struct hal_rx_mon_ppdu_info *ppdu_info,
++				 struct ieee80211_rx_status *rx_status)
++{
++	u32 center_freq = ppdu_info->freq;
++
++	rx_status->freq = center_freq;
++	rx_status->bw = ath12k_mac_bw_to_mac80211_bw(ppdu_info->bw);
++	rx_status->nss = ppdu_info->nss;
++	rx_status->rate_idx = 0;
++	rx_status->encoding = RX_ENC_LEGACY;
++	rx_status->flag |= RX_FLAG_NO_SIGNAL_VAL;
++
++	if (center_freq >= ATH12K_MIN_6GHZ_FREQ &&
++	    center_freq <= ATH12K_MAX_6GHZ_FREQ) {
++		rx_status->band = NL80211_BAND_6GHZ;
++	} else if (center_freq >= ATH12K_MIN_2GHZ_FREQ &&
++		   center_freq <= ATH12K_MAX_2GHZ_FREQ) {
++		rx_status->band = NL80211_BAND_2GHZ;
++	} else if (center_freq >= ATH12K_MIN_5GHZ_FREQ &&
++		   center_freq <= ATH12K_MAX_5GHZ_FREQ) {
++		rx_status->band = NL80211_BAND_5GHZ;
++	} else {
++		rx_status->band = NUM_NL80211_BANDS;
++	}
++}
++
++static void
++ath12k_dp_mon_fill_rx_rate(struct ath12k *ar,
++			   struct hal_rx_mon_ppdu_info *ppdu_info,
++			   struct ieee80211_rx_status *rx_status)
++{
++	struct ieee80211_supported_band *sband;
++	enum rx_msdu_start_pkt_type pkt_type;
++	u8 rate_mcs, nss, sgi;
++	bool is_cck;
++
++	pkt_type = ppdu_info->preamble_type;
++	rate_mcs = ppdu_info->rate;
++	nss = ppdu_info->nss;
++	sgi = ppdu_info->gi;
++
++	switch (pkt_type) {
++	case RX_MSDU_START_PKT_TYPE_11A:
++	case RX_MSDU_START_PKT_TYPE_11B:
++		is_cck = (pkt_type == RX_MSDU_START_PKT_TYPE_11B);
++		if (rx_status->band < NUM_NL80211_BANDS) {
++			sband = &ar->mac.sbands[rx_status->band];
++			rx_status->rate_idx = ath12k_mac_hw_rate_to_idx(sband, rate_mcs,
++									is_cck);
++		}
++		break;
++	case RX_MSDU_START_PKT_TYPE_11N:
++		rx_status->encoding = RX_ENC_HT;
++		if (rate_mcs > ATH12K_HT_MCS_MAX) {
++			ath12k_warn(ar->ab,
++				    "Received with invalid mcs in HT mode %d\n",
++				     rate_mcs);
++			break;
++		}
++		rx_status->rate_idx = rate_mcs + (8 * (nss - 1));
++		if (sgi)
++			rx_status->enc_flags |= RX_ENC_FLAG_SHORT_GI;
++		break;
++	case RX_MSDU_START_PKT_TYPE_11AC:
++		rx_status->encoding = RX_ENC_VHT;
++		rx_status->rate_idx = rate_mcs;
++		if (rate_mcs > ATH12K_VHT_MCS_MAX) {
++			ath12k_warn(ar->ab,
++				    "Received with invalid mcs in VHT mode %d\n",
++				     rate_mcs);
++			break;
++		}
++		if (sgi)
++			rx_status->enc_flags |= RX_ENC_FLAG_SHORT_GI;
++		break;
++	case RX_MSDU_START_PKT_TYPE_11AX:
++		rx_status->rate_idx = rate_mcs;
++		if (rate_mcs > ATH12K_HE_MCS_MAX) {
++			ath12k_warn(ar->ab,
++				    "Received with invalid mcs in HE mode %d\n",
++				    rate_mcs);
++			break;
++		}
++		rx_status->encoding = RX_ENC_HE;
++		rx_status->he_gi = ath12k_he_gi_to_nl80211_he_gi(sgi);
++		break;
++	case RX_MSDU_START_PKT_TYPE_11BE:
++		rx_status->rate_idx = rate_mcs;
++		if (rate_mcs > ATH12K_EHT_MCS_MAX) {
++			ath12k_warn(ar->ab,
++				    "Received with invalid mcs in EHT mode %d\n",
++				    rate_mcs);
++			break;
++		}
++		rx_status->encoding = RX_ENC_EHT;
++		rx_status->he_gi = ath12k_he_gi_to_nl80211_he_gi(sgi);
++		break;
++	default:
++		ath12k_dbg(ar->ab, ATH12K_DBG_DATA,
++			   "monitor receives invalid preamble type %d",
++			    pkt_type);
++		break;
++	}
++}
++
+ static struct sk_buff *
+ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
+ 			    struct dp_mon_mpdu *mon_mpdu,
++			    struct hal_rx_mon_ppdu_info *ppdu_info,
+ 			    struct ieee80211_rx_status *rxs)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct sk_buff *msdu, *mpdu_buf, *prev_buf, *head_frag_list;
+ 	struct sk_buff *head_msdu, *tail_msdu;
+-	struct hal_rx_desc *rx_desc, *tail_rx_desc;
++	struct hal_rx_desc *rx_desc;
+ 	u8 *hdr_desc, *dest, decap_format = mon_mpdu->decap_format;
+ 	struct ieee80211_hdr_3addr *wh;
++	struct ieee80211_channel *channel;
+ 	u32 frag_list_sum_len = 0;
++	u8 channel_num = ppdu_info->chan_num;
+ 
+ 	mpdu_buf = NULL;
+ 	head_msdu = mon_mpdu->head;
+@@ -1720,9 +1830,29 @@ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
+ 	if (!head_msdu)
+ 		goto err_merge_fail;
+ 
+-	tail_rx_desc = (struct hal_rx_desc *)tail_msdu->data;
++	ath12k_dp_mon_fill_rx_stats_info(ar, ppdu_info, rxs);
++
++	if (unlikely(rxs->band == NUM_NL80211_BANDS ||
++		     !ath12k_ar_to_hw(ar)->wiphy->bands[rxs->band])) {
++		ath12k_dbg(ar->ab, ATH12K_DBG_DATA,
++			   "sband is NULL for status band %d channel_num %d center_freq %d pdev_id %d\n",
++			   rxs->band, channel_num, ppdu_info->freq, ar->pdev_idx);
++
++		spin_lock_bh(&ar->data_lock);
++		channel = ar->rx_channel;
++		if (channel) {
++			rxs->band = channel->band;
++			channel_num =
++				ieee80211_frequency_to_channel(channel->center_freq);
++		}
++		spin_unlock_bh(&ar->data_lock);
++	}
++
++	if (rxs->band < NUM_NL80211_BANDS)
++		rxs->freq = ieee80211_channel_to_frequency(channel_num,
++							   rxs->band);
+ 
+-	ath12k_dp_rx_h_ppdu(ar, tail_rx_desc, rxs);
++	ath12k_dp_mon_fill_rx_rate(ar, ppdu_info, rxs);
+ 
+ 	if (decap_format == DP_RX_DECAP_TYPE_RAW) {
+ 		ath12k_dp_mon_rx_msdus_set_payload(ar, head_msdu, tail_msdu);
+@@ -2040,7 +2170,7 @@ static int ath12k_dp_mon_rx_deliver(struct ath12k *ar,
+ 	struct ieee80211_rx_status *rxs = &dp->rx_status;
+ 	u8 decap = DP_RX_DECAP_TYPE_RAW;
+ 
+-	mon_skb = ath12k_dp_mon_rx_merg_msdus(ar, mon_mpdu, rxs);
++	mon_skb = ath12k_dp_mon_rx_merg_msdus(ar, mon_mpdu, ppduinfo, rxs);
+ 	if (!mon_skb)
+ 		goto mon_deliver_fail;
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
+index 6f10e4222ba6..c753eb2a03ad 100644
+--- a/drivers/net/wireless/ath/ath12k/hal_rx.h
++++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
+@@ -509,7 +509,10 @@ struct hal_rx_mpdu_start {
+ 
+ struct hal_rx_msdu_end {
+ 	__le32 info0;
+-	__le32 rsvd0[18];
++	__le32 rsvd0[9];
++	__le16 info00;
++	__le16 info01;
++	__le32 rsvd00[8];
+ 	__le32 info1;
+ 	__le32 rsvd1[10];
+ 	__le32 info2;
+-- 
+2.34.1
 
 
