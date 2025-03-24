@@ -4,69 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9FA8C36002
-	for <ath12k@archiver.kernel.org>; Mon, 24 Mar 2025 08:20:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5E1CC36002
+	for <ath12k@archiver.kernel.org>; Mon, 24 Mar 2025 08:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5PvDcdCbkdA1snRxUOF/VjTLlaTTZe/pCAm4cnRw7Io=; b=sluOAWt3DzRlYB3fEfZxHLb9Pq
-	tbAAXfnQrQYn6ivUADbgcyC/6gzSCpT9duEOP15KvZZIAo9kV1bixVraa/EGi0v0RAfxiFd+k92D1
-	ob7qXS/0cE+2E3bS1xP/Pi/GCbYbZqHs3cJqxOVCoh4fdM+IpeAJ1ln9lMQvi84hOV7mTArlXWJbN
-	CZuleBY8dr6AdmPlKgGouQ2R398i8V34bT19Tl2DqQ7ENPUD/d4qdpZnn/Z3Xw3Xk4zW0L8FZiFtl
-	8KxNNJgCdBkXS3IDZlydq8SJI76W/O3wqxwYerhJDnkZ4J+9n2gpxvcBBBkT/yNLLtC0vSpHe0Cei
-	aOBQ4cQA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=rONCS7bB7sM/9ZUOYO4ll/WXA4TLwIOoxudfJLJCwnE=; b=z2QzZxQJM6Ff1HO7wMIsuxVA5P
+	TtJMzt3E14SBziCwjwEubMmOMsbX7lA5OtuAp+yefuEP8m/EvFioJIFkTv89uW+ziz/yTG2IAaDqJ
+	VW9ew9tUnv4buvNO0CVUAkoqlKFb3NEPLj5x0TD5IVrWRLHP7HW+wL4wZAnj3nOgn+jJGgFTYDBWP
+	clWTlLAFWJMzEVUrAsmk0QpD68htxacgIa12Ty2MwG76Tr//bc4NWblFeD6FL8rQ6GudmdTIIKQUS
+	RFdifNQeX9qYYZWVSWMzJzqG3lss5DIFBnk+FR+QNL4gE0BJpxSIzzhUBV5y6xx/5TQ4o0d1j95Ba
+	jojiuWRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twd39-00000002Z9X-1cuJ
+	id 1twdC3-00000002aNq-25QW
 	for ath12k@archiver.kernel.org;
-	Mon, 24 Mar 2025 08:20:47 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	Mon, 24 Mar 2025 08:29:59 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twd36-00000002Z8P-2mi2
+	id 1twdC0-00000002aM8-3vp2
 	for ath12k@lists.infradead.org;
-	Mon, 24 Mar 2025 08:20:45 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1C80D437F8;
-	Mon, 24 Mar 2025 08:20:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 40E15C4CEDD;
-	Mon, 24 Mar 2025 08:20:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742804444;
-	bh=pm3PhOm0TA6k02DhynwGtFtiCtph6tpxrXu52vqfi+A=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TtkgwTkKTiHLTh6W7fKEvie4BMwHRQXCkZE3PdAAoF8K+ndo7kZIa2P/H5Oj4PU0p
-	 I2l8EH+wGqKtMjyxfWHlkmX/GLAjqcaUphpl2qnfSCBKbtR5QAcXDXS0/16cl4X3ny
-	 o22H7PXPfkDyXMgV/QDLqoXZLy6ckqmEMZcbZ3DtirAwyC4mNDZlTeaI3EMpXOsBOX
-	 0ogQorMDKq3Eu9o+3nh0vohZm7d1qOj/x4Ndg6hcmcTlhsD5aPG0SZFdgJtDpCBUOd
-	 D17mDo/elBEMRVVAsR03/EqaPjXfibe9w9wwTbHjwHIv62lZ8d4LTdr9l4oeNAznBg
-	 2IavUGQQ/zySg==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1twd35-000000004Mc-2Evl;
-	Mon, 24 Mar 2025 09:20:43 +0100
-Date: Mon, 24 Mar 2025 09:20:43 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Baochen Qiang <quic_bqiang@quicinc.com>
-Cc: Johan Hovold <johan+linaro@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Stephan Gerhold <stephan.gerhold@linaro.org>,
-	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+	Mon, 24 Mar 2025 08:29:58 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52O8NZXG015046;
+	Mon, 24 Mar 2025 08:29:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	rONCS7bB7sM/9ZUOYO4ll/WXA4TLwIOoxudfJLJCwnE=; b=MWGdIghhBaeDqX/k
+	ThOjCTG2O4CYs+8hbRa18spT1+xgRxYfnHhq8iQauRuYSPGR1AcvCikab8KdiCa8
+	uU8vd8lAFGNQ9MAzmBfNUrzBd7Yx8uyN5nH2KnYsIEeCnhCbmcO0M/S2BhA3/nY+
+	eT4chSzIygZWgJ5a7YjtcLJHsMCoNFnZM+DzW7xaAO2XjTkVLYYj93HSA73bufw9
+	DiDyb4g7pr9adMCUPk9c6kxTauIE8zIeX1Od2K9UapZ8+DC+F44RhkTf0WWXfVb5
+	hm4OqIAs4Fkaf5ncUZ39w0aZNgt9SJFLpZ3WumXfhNDgt1L4rwcpbTs0m4iL1E9G
+	pSqdEg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45hpgbbgae-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 24 Mar 2025 08:29:53 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52O8TrI4004033
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 24 Mar 2025 08:29:53 GMT
+Received: from [10.231.195.67] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 24 Mar
+ 2025 01:29:51 -0700
+Message-ID: <a661f86c-7ecc-46fc-a3af-90ad05a0c603@quicinc.com>
+Date: Mon, 24 Mar 2025 16:29:49 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] wifi: ath12k: extend dma mask to 36 bits
-Message-ID: <Z-EV21KDfMHds73Q@hovoldconsulting.com>
+To: Johan Hovold <johan@kernel.org>
+CC: Johan Hovold <johan+linaro@kernel.org>,
+        Jeff Johnson
+	<jjohnson@kernel.org>,
+        Stephan Gerhold <stephan.gerhold@linaro.org>,
+        <ath12k@lists.infradead.org>, <linux-kernel@vger.kernel.org>
 References: <20250321162331.19507-1-johan+linaro@kernel.org>
  <bc3601ae-5639-4ee4-bbcb-4e39b542bfbe@quicinc.com>
  <Z-EMgPg5Gp-JtTZp@hovoldconsulting.com>
  <a1aa02e8-7f58-46ae-b3df-ae43288cf683@quicinc.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <a1aa02e8-7f58-46ae-b3df-ae43288cf683@quicinc.com>
+ <Z-EV21KDfMHds73Q@hovoldconsulting.com>
+Content-Language: en-US
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+In-Reply-To: <Z-EV21KDfMHds73Q@hovoldconsulting.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=BoydwZX5 c=1 sm=1 tr=0 ts=67e11801 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=UeQ6FwR1gd7q9h-8i14A:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-GUID: r0qJsfyVh6xZTopEqkXPRjRqzQzd8leJ
+X-Proofpoint-ORIG-GUID: r0qJsfyVh6xZTopEqkXPRjRqzQzd8leJ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-24_04,2025-03-21_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
+ spamscore=0 adultscore=0 bulkscore=0 clxscore=1015 malwarescore=0
+ impostorscore=0 priorityscore=1501 mlxlogscore=760 lowpriorityscore=0
+ suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503240061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250324_012044_720628_626EF92E 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20250324_012956_986211_CE10E181 
+X-CRM114-Status: GOOD (  13.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,40 +108,47 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 24, 2025 at 04:05:33PM +0800, Baochen Qiang wrote:
-> On 3/24/2025 3:40 PM, Johan Hovold wrote:
-> > On Mon, Mar 24, 2025 at 11:06:16AM +0800, Baochen Qiang wrote:
-> >> On 3/22/2025 12:23 AM, Johan Hovold wrote:
-> >>> Extend the DMA mask to 36 bits to avoid using bounce buffers on machines
-> >>> without an iommu (under OS control) similar to what was done for ath11k
-> >>> in commit dbd73acb22d8 ("wifi: ath11k: enable 36 bit mask for stream
-> >>> DMA").
-> >>>
-> >>> This specifically avoids using bounce buffers on Qualcomm Snapdragon X
-> >>> Elite machines like the Lenovo ThinkPad T14s when running at EL1.
 
-> >>> Note that the mask could possibly be extended further but unresolved DMA
-> >>> issues with 64 GiB X Elite machines currently prevents that from being
-> >>> tested.
-> >>
-> >> could you help elaborate how it could be extended?
-> > 
-> > The mask should reflect the capability of the device. That may be
-> > 64 (or 40) bits, but I've only been able to test using 36 bits.
+
+On 3/24/2025 4:20 PM, Johan Hovold wrote:
+> On Mon, Mar 24, 2025 at 04:05:33PM +0800, Baochen Qiang wrote:
+>> On 3/24/2025 3:40 PM, Johan Hovold wrote:
+>>> On Mon, Mar 24, 2025 at 11:06:16AM +0800, Baochen Qiang wrote:
+>>>> On 3/22/2025 12:23 AM, Johan Hovold wrote:
+>>>>> Extend the DMA mask to 36 bits to avoid using bounce buffers on machines
+>>>>> without an iommu (under OS control) similar to what was done for ath11k
+>>>>> in commit dbd73acb22d8 ("wifi: ath11k: enable 36 bit mask for stream
+>>>>> DMA").
+>>>>>
+>>>>> This specifically avoids using bounce buffers on Qualcomm Snapdragon X
+>>>>> Elite machines like the Lenovo ThinkPad T14s when running at EL1.
 > 
-> are you talking about QCN9274? As far as I know, WCN7850 does not support 40 bits or more.
+>>>>> Note that the mask could possibly be extended further but unresolved DMA
+>>>>> issues with 64 GiB X Elite machines currently prevents that from being
+>>>>> tested.
+>>>>
+>>>> could you help elaborate how it could be extended?
+>>>
+>>> The mask should reflect the capability of the device. That may be
+>>> 64 (or 40) bits, but I've only been able to test using 36 bits.
+>>
+>> are you talking about QCN9274? As far as I know, WCN7850 does not support 40 bits or more.
+> 
+> Or really all devices handled by ath12k since they at least currently
+> use a common mask.
+> 
+> The T14s has a:
+> 
+> 	0004:01:00.0 Network controller: Qualcomm Technologies, Inc WCN785x Wi-Fi 7(802.11be) 320MHz 2x2 [FastConnect 7800] (rev 01)
+> 
+> 	ath12k_pci 0004:01:00.0: Hardware name: wcn7850 hw2.0
+> 	ath12k_pci 0004:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x40170200
+> 
+> Sounds like 36 bits is the correct choice for now then.
 
-Or really all devices handled by ath12k since they at least currently
-use a common mask.
+yes, let's keep it as 36 for now.
 
-The T14s has a:
+> 
+> Johan
 
-	0004:01:00.0 Network controller: Qualcomm Technologies, Inc WCN785x Wi-Fi 7(802.11be) 320MHz 2x2 [FastConnect 7800] (rev 01)
-
-	ath12k_pci 0004:01:00.0: Hardware name: wcn7850 hw2.0
-	ath12k_pci 0004:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x40170200
-
-Sounds like 36 bits is the correct choice for now then.
-
-Johan
 
