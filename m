@@ -4,63 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E47B7C36012
-	for <ath12k@archiver.kernel.org>; Mon, 24 Mar 2025 06:37:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66A7CC3600E
+	for <ath12k@archiver.kernel.org>; Mon, 24 Mar 2025 06:37:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=RTSReIR0TPx+oe+hpDgttWh4jDmFF+zEBsJyeFN6xhY=; b=Qkhj404QfxsRktC6u77l9r+lbV
-	14QhaYdOTnCOXMHz+ixx/1EOkEZhBQdniE1Kn8UfQGPECWpIur0Z6nEFXuActZYjV8RxZTskG0vWk
-	daSnU5Why5i/sXgzhocpOmvsl0v/I0WI2ZPTwH1veSlqxTTuPjG6SLbC+1w2lVKjCELTWxl/m+Bkq
-	+DPtvCqeLSo6oatGttnx/ythWJAYBc2irSorm8xqxhDIeoKNZFy2dKKIxbCAHXmkR5Q8V8TbQaDdn
-	gcj8JleT4tKSnWAQtfGNDF0Nvhi2ZjU6Xf7rT01zmBo7QYlFXbFzvLHTiK8zRyA24+o5RML/Zm4D6
-	5P2DUBXg==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=n7mIpbhpf8iAGiwgMP4kOBXDdAD2ArrEXHJNKGvNRx0=; b=cZ1yQMzSWbAGeJroXVwN1583Rn
+	nY1hADrOj8875fKMSfH9uE8UHhD5nSu6dpRZ4yEa0tQ3O9aY8GsIUrBAhaXxDJz3B1QoXxIT+uqQw
+	5WineYJ0KBWLF4v+xwVV9bXvx+J8Mkm1FaRgkAhXxRPGr8Ueovy80c/0YsJqNb6FjRSjpGRMvG9Nx
+	0zNRlArSe+MCUmB2pdrTbWZrj60PW719N1yVzpTYfmNmOzEj8XVEvPVCcDBVriAKqs/fr32xCtOv2
+	V0FmVvlgOwb4gBKTTDQHQi/n8wkam9dldbOU+/d9I2YXW/w9ftT4duT4j8uFKec8nM2sVdV8RCgZR
+	D/Xk6yGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twbQk-00000002LEB-2pj9
+	id 1twbQj-00000002LCL-07PO
 	for ath12k@archiver.kernel.org;
-	Mon, 24 Mar 2025 06:37:02 +0000
+	Mon, 24 Mar 2025 06:37:01 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twbFy-00000002JgD-3c6k
+	id 1twbFu-00000002Jcq-45Nh
 	for ath12k@lists.infradead.org;
-	Mon, 24 Mar 2025 06:25:56 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52O6FX3W014959;
-	Mon, 24 Mar 2025 06:25:54 GMT
+	Mon, 24 Mar 2025 06:25:52 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52O6FdYS003971;
+	Mon, 24 Mar 2025 06:25:42 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=RTSReIR0TPx+oe+hpDgttW
-	h4jDmFF+zEBsJyeFN6xhY=; b=pvIWHCcw4m4Kc8pTWADWSi/r245MTs3LAnQE5y
-	cbYFMSlbd7s9FPjrIBaErWseZBiTulfzXBCk/IUy6R8QIzdeOYcHiM9grDuRCZlH
-	twuWwna2mDh3WNmNcpPc4D2LcOXMwPt9JpU4D/ubWp1chLC1YjjvS+KdDWvEq0vf
-	4MljlU50euvXDvpnU24GqgpnY5dxjTtUVGHKctoJTp5VoT1OLXbcvA6Iu5iNfkE1
-	rmwVQq/jXJKMhz4i470CCKTcMpvPu45tp+d5pmT5/UiIbjuGJP3Ev/P7mTZgHswn
-	RdRYLHxVb1nM4zHhm/TKmRFs/y7n/TdTPUtHMxww4Rb8ZhfA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45hm79kcb7-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	n7mIpbhpf8iAGiwgMP4kOBXDdAD2ArrEXHJNKGvNRx0=; b=gkVzyV1TEt/vF4Ia
+	2Jt9e1sh9U3AVFfWbVCHSb+DDzlMMhyPGqITtuDHUmE2C6MvH22/eJVWhcaeB2TA
+	8ZL4LJ/jNpGG2osK2sPQe0x+bssbhpvMJnN1aDSWTPYeAs9RP/1cj8ZVcpIfiDiu
+	I1eIk8eXSH48aTi7sa9lzJF7kSt9Esa1PLN+WO+EvhXvXHOFlDX/OprikPVXUU69
+	mX4pJriIiHa3r7S+grrrI+vBgf/MJ/b4aZk/Ypg8rxZQFE6fkZQmKQVKTKxO5wQD
+	Fr/IxkX0VFIn9BGkVOXhqixaznFWyhSdSNI86Sfg+7kpVQSwIQ98heldTY/+k5g/
+	XVFAXA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45hjjnkftt-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 24 Mar 2025 06:25:53 +0000 (GMT)
+	Mon, 24 Mar 2025 06:25:42 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52O6PXid012779
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52O6Pf8U015009
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 24 Mar 2025 06:25:33 GMT
+	Mon, 24 Mar 2025 06:25:41 GMT
 Received: from hu-periyasa-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 23 Mar 2025 23:25:32 -0700
+ 15.2.1544.9; Sun, 23 Mar 2025 23:25:38 -0700
 From: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
+CC: <linux-wireless@vger.kernel.org>, P Praneesh <quic_ppranees@quicinc.com>,
+        Nicolas Escande <nico.escande@gmail.com>,
+        Vasanthakumar Thiagarajan
+	<vasanthakumar.thiagarajan@oss.qualcomm.com>,
         Karthikeyan Periyasamy
 	<quic_periyasa@quicinc.com>
-Subject: [PATCH v11 00/10] wifi: ath12k: Add monitor interface support on QCN9274
-Date: Mon, 24 Mar 2025 11:55:08 +0530
-Message-ID: <20250324062518.2752822-1-quic_periyasa@quicinc.com>
+Subject: [PATCH v11 03/10] wifi: ath12k: Avoid fetch Error bitmap and decap format from Rx TLV
+Date: Mon, 24 Mar 2025 11:55:11 +0530
+Message-ID: <20250324062518.2752822-4-quic_periyasa@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250324062518.2752822-1-quic_periyasa@quicinc.com>
+References: <20250324062518.2752822-1-quic_periyasa@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -69,21 +75,22 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: gjZPLfNHDWYl84JBMzOvBdWT7qKIwABq
-X-Proofpoint-ORIG-GUID: gjZPLfNHDWYl84JBMzOvBdWT7qKIwABq
-X-Authority-Analysis: v=2.4 cv=IKYCChvG c=1 sm=1 tr=0 ts=67e0faf1 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=drny9eR6pwTjfYRCe2kA:9
+X-Authority-Analysis: v=2.4 cv=fNc53Yae c=1 sm=1 tr=0 ts=67e0fae6 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=y0izyFSgjemr6NruFqEA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: BhaIHjYv-CA7AZuTh2yNHYYenEc-gamB
+X-Proofpoint-GUID: BhaIHjYv-CA7AZuTh2yNHYYenEc-gamB
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-24_03,2025-03-21_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 suspectscore=0
- phishscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0 spamscore=0
- priorityscore=1501 adultscore=0 malwarescore=0 mlxlogscore=964 mlxscore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
+ lowpriorityscore=0 mlxlogscore=982 priorityscore=1501 mlxscore=0
+ adultscore=0 spamscore=0 bulkscore=0 suspectscore=0 phishscore=0
+ malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2503240046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250323_232555_097450_6A391500 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20250323_232551_149991_A0AABFDB 
+X-CRM114-Status: GOOD (  15.98  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,83 +105,192 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, monitor interface not supported. Therefore, add the missed TLV
-tags parsing in the monitor parser, configure the monitor vdev state
-identifier with HTT filter setup.
+From: P Praneesh <quic_ppranees@quicinc.com>
 
-v11:
- wifi: ath12k: Move to NO_VIRTUAL monitor
-  - Added new patch to avoid multiple change in a patch
-v10:
- wifi: ath12k: add monitor interface support on QCN9274
-  - Cleanup the VIRTUAL_MONITOR handler procedures
-  - Removed "Reviewed-by" tag
-v9:
- wifi: ath12k: fix NULL access in assign channel context handler
-  - Updated the commit message
- wifi: ath12k: add monitor interface support on QCN9274
-  - Removed the mac80211 callback config handler procedure
-  - Removed "Reviewed-by" tag
-v8:
- wifi: ath12k: add monitor interface support on QCN9274
-  - Added comment section for restricting one monitor i/f in each radio
-v7:
- wifi: ath12k: Refactor the monitor channel context procedure
-  - Added new patch to avoid multiple change in a patch
- wifi: ath12k: fix NULL access in assign channel context handler
-  - Added fixes tag
-v6:
- wifi: ath12k: fix NULL access in assign channel context handler
-  - Added new patch
- wifi: ath12k: add monitor interface support on QCN9274
-  - Moved to NO_VIRTUAL_MONITOR mac80211 feature for adapting single wiphy usecase
-  - Removed tags
-v5:
- - updated the s-o-b as a last tag
-v4:
- - Rebased on ToT
- wifi: ath12k: Replace band define G with GHZ where appropriate
-  - Dropped the tags due to rebase changes
-v3:
- - rebased to ToT
-v2:
- wifi: ath12k: add monitor interface support on QCN9274
-  - remove redundant filter setting in ath12k_mac_monitor_start()
-  - set the default filter when the htt monitor configuration get disable
+Currently, error bitmap and decap format information are fetched from the
+MSDU Rx TLV data. This logic is inherited from ath11k. However, for ath12k
+802.11be hardware, the Rx TLV will not be present in the MSDU data.
+Instead, this information is reported separately under the MSDU END TLV
+tag. Therefore, remove the existing fetch code, handle the MSDU END TLV
+tag and fetch the above information to store it in the mon_mpdu data
+structure for use in the merge MSDU procedure.
 
-Hari Chandrakanthan (1):
-  wifi: ath12k: fix link valid field initialization in the monitor Rx
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Karthikeyan Periyasamy (4):
-  wifi: ath12k: Replace band define G with GHZ where appropriate
-  wifi: ath12k: fix NULL access in assign channel context handler
-  wifi: ath12k: Refactor the monitor channel context procedure
-  wifi: ath12k: Move to NO_VIRTUAL monitor
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Tested-by: Nicolas Escande <nico.escande@gmail.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Signed-off-by: Karthikeyan Periyasamy <quic_periyasa@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 58 ++++++++++--------------
+ 1 file changed, 23 insertions(+), 35 deletions(-)
 
-P Praneesh (5):
-  wifi: ath12k: Add extra TLV tag parsing support in monitor Rx path
-  wifi: ath12k: Avoid fetch Error bitmap and decap format from Rx TLV
-  wifi: ath12k: change the status update in the monitor Rx
-  wifi: ath12k: Avoid packet offset and FCS length from Rx TLV
-  wifi: ath12k: add monitor interface support on QCN9274
-
- drivers/net/wireless/ath/ath12k/core.c    |   4 +
- drivers/net/wireless/ath/ath12k/core.h    |  19 +-
- drivers/net/wireless/ath/ath12k/debugfs.c |   4 +-
- drivers/net/wireless/ath/ath12k/dp.h      |   2 +
- drivers/net/wireless/ath/ath12k/dp_mon.c  | 362 ++++++++++++++++++----
- drivers/net/wireless/ath/ath12k/dp_mon.h  |   5 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c   |   6 +-
- drivers/net/wireless/ath/ath12k/dp_tx.c   |   6 +
- drivers/net/wireless/ath/ath12k/hal_rx.h  |  15 +-
- drivers/net/wireless/ath/ath12k/hw.c      |   4 +-
- drivers/net/wireless/ath/ath12k/mac.c     | 237 +++++---------
- drivers/net/wireless/ath/ath12k/wmi.c     |  36 +--
- drivers/net/wireless/ath/ath12k/wmi.h     |  16 +-
- 13 files changed, 460 insertions(+), 256 deletions(-)
-
-
-base-commit: b6f473c96421b8b451a8df8ccb620bcd71d4b3f4
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index f4d481fe5b2f..c613f8408c84 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -1702,30 +1702,26 @@ static void ath12k_dp_mon_rx_msdus_set_payload(struct ath12k *ar,
+ 
+ static struct sk_buff *
+ ath12k_dp_mon_rx_merg_msdus(struct ath12k *ar,
+-			    struct sk_buff *head_msdu, struct sk_buff *tail_msdu,
+-			    struct ieee80211_rx_status *rxs, bool *fcs_err)
++			    struct dp_mon_mpdu *mon_mpdu,
++			    struct ieee80211_rx_status *rxs)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	struct sk_buff *msdu, *mpdu_buf, *prev_buf, *head_frag_list;
++	struct sk_buff *head_msdu, *tail_msdu;
+ 	struct hal_rx_desc *rx_desc, *tail_rx_desc;
+-	u8 *hdr_desc, *dest, decap_format;
++	u8 *hdr_desc, *dest, decap_format = mon_mpdu->decap_format;
+ 	struct ieee80211_hdr_3addr *wh;
+-	u32 err_bitmap, frag_list_sum_len = 0;
++	u32 frag_list_sum_len = 0;
+ 
+ 	mpdu_buf = NULL;
++	head_msdu = mon_mpdu->head;
++	tail_msdu = mon_mpdu->tail;
+ 
+ 	if (!head_msdu)
+ 		goto err_merge_fail;
+ 
+-	rx_desc = (struct hal_rx_desc *)head_msdu->data;
+ 	tail_rx_desc = (struct hal_rx_desc *)tail_msdu->data;
+ 
+-	err_bitmap = ath12k_dp_rx_h_mpdu_err(ab, tail_rx_desc);
+-	if (err_bitmap & HAL_RX_MPDU_ERR_FCS)
+-		*fcs_err = true;
+-
+-	decap_format = ath12k_dp_rx_h_decap_type(ab, tail_rx_desc);
+-
+ 	ath12k_dp_rx_h_ppdu(ar, tail_rx_desc, rxs);
+ 
+ 	if (decap_format == DP_RX_DECAP_TYPE_RAW) {
+@@ -1954,7 +1950,8 @@ static void ath12k_dp_mon_update_radiotap(struct ath12k *ar,
+ 
+ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct *napi,
+ 					  struct sk_buff *msdu,
+-					  struct ieee80211_rx_status *status)
++					  struct ieee80211_rx_status *status,
++					  u8 decap)
+ {
+ 	static const struct ieee80211_radiotap_he known = {
+ 		.data1 = cpu_to_le16(IEEE80211_RADIOTAP_HE_DATA1_DATA_MCS_KNOWN |
+@@ -1966,7 +1963,6 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
+ 	struct ieee80211_sta *pubsta = NULL;
+ 	struct ath12k_peer *peer;
+ 	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
+-	u8 decap = DP_RX_DECAP_TYPE_RAW;
+ 	bool is_mcbc = rxcb->is_mcbc;
+ 	bool is_eapol_tkip = rxcb->is_eapol;
+ 
+@@ -1979,8 +1975,6 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
+ 		status->flag |= RX_FLAG_RADIOTAP_HE;
+ 	}
+ 
+-	if (!(status->flag & RX_FLAG_ONLY_MONITOR))
+-		decap = ath12k_dp_rx_h_decap_type(ar->ab, rxcb->rx_desc);
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 	peer = ath12k_dp_rx_h_find_peer(ar->ab, msdu);
+ 	if (peer && peer->sta) {
+@@ -2037,25 +2031,23 @@ static void ath12k_dp_mon_rx_deliver_msdu(struct ath12k *ar, struct napi_struct
+ }
+ 
+ static int ath12k_dp_mon_rx_deliver(struct ath12k *ar,
+-				    struct sk_buff *head_msdu, struct sk_buff *tail_msdu,
++				    struct dp_mon_mpdu *mon_mpdu,
+ 				    struct hal_rx_mon_ppdu_info *ppduinfo,
+ 				    struct napi_struct *napi)
+ {
+ 	struct ath12k_pdev_dp *dp = &ar->dp;
+ 	struct sk_buff *mon_skb, *skb_next, *header;
+ 	struct ieee80211_rx_status *rxs = &dp->rx_status;
+-	bool fcs_err = false;
++	u8 decap = DP_RX_DECAP_TYPE_RAW;
+ 
+-	mon_skb = ath12k_dp_mon_rx_merg_msdus(ar,
+-					      head_msdu, tail_msdu,
+-					      rxs, &fcs_err);
++	mon_skb = ath12k_dp_mon_rx_merg_msdus(ar, mon_mpdu, rxs);
+ 	if (!mon_skb)
+ 		goto mon_deliver_fail;
+ 
+ 	header = mon_skb;
+ 	rxs->flag = 0;
+ 
+-	if (fcs_err)
++	if (mon_mpdu->err_bitmap & HAL_RX_MPDU_ERR_FCS)
+ 		rxs->flag = RX_FLAG_FAILED_FCS_CRC;
+ 
+ 	do {
+@@ -2072,8 +2064,12 @@ static int ath12k_dp_mon_rx_deliver(struct ath12k *ar,
+ 			rxs->flag |= RX_FLAG_ALLOW_SAME_PN;
+ 		}
+ 		rxs->flag |= RX_FLAG_ONLY_MONITOR;
++
++		if (!(rxs->flag & RX_FLAG_ONLY_MONITOR))
++			decap = mon_mpdu->decap_format;
++
+ 		ath12k_dp_mon_update_radiotap(ar, ppduinfo, mon_skb, rxs);
+-		ath12k_dp_mon_rx_deliver_msdu(ar, napi, mon_skb, rxs);
++		ath12k_dp_mon_rx_deliver_msdu(ar, napi, mon_skb, rxs, decap);
+ 		mon_skb = skb_next;
+ 	} while (mon_skb);
+ 	rxs->flag = 0;
+@@ -2081,7 +2077,7 @@ static int ath12k_dp_mon_rx_deliver(struct ath12k *ar,
+ 	return 0;
+ 
+ mon_deliver_fail:
+-	mon_skb = head_msdu;
++	mon_skb = mon_mpdu->head;
+ 	while (mon_skb) {
+ 		skb_next = mon_skb->next;
+ 		dev_kfree_skb_any(mon_skb);
+@@ -2287,7 +2283,6 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
+ 	struct hal_rx_mon_ppdu_info *ppdu_info = &pmon->mon_ppdu_info;
+ 	struct dp_mon_mpdu *tmp;
+ 	struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
+-	struct sk_buff *head_msdu, *tail_msdu;
+ 	enum hal_rx_mon_status hal_status;
+ 
+ 	hal_status = ath12k_dp_mon_parse_rx_dest(ar, pmon, skb);
+@@ -2296,13 +2291,9 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
+ 
+ 	list_for_each_entry_safe(mon_mpdu, tmp, &pmon->dp_rx_mon_mpdu_list, list) {
+ 		list_del(&mon_mpdu->list);
+-		head_msdu = mon_mpdu->head;
+-		tail_msdu = mon_mpdu->tail;
+ 
+-		if (head_msdu && tail_msdu) {
+-			ath12k_dp_mon_rx_deliver(ar, head_msdu,
+-						 tail_msdu, ppdu_info, napi);
+-		}
++		if (mon_mpdu->head && mon_mpdu->tail)
++			ath12k_dp_mon_rx_deliver(ar, mon_mpdu, ppdu_info, napi);
+ 
+ 		kfree(mon_mpdu);
+ 	}
+@@ -2987,16 +2978,13 @@ ath12k_dp_mon_tx_process_ppdu_info(struct ath12k *ar,
+ 				   struct dp_mon_tx_ppdu_info *tx_ppdu_info)
+ {
+ 	struct dp_mon_mpdu *tmp, *mon_mpdu;
+-	struct sk_buff *head_msdu, *tail_msdu;
+ 
+ 	list_for_each_entry_safe(mon_mpdu, tmp,
+ 				 &tx_ppdu_info->dp_tx_mon_mpdu_list, list) {
+ 		list_del(&mon_mpdu->list);
+-		head_msdu = mon_mpdu->head;
+-		tail_msdu = mon_mpdu->tail;
+ 
+-		if (head_msdu)
+-			ath12k_dp_mon_rx_deliver(ar, head_msdu, tail_msdu,
++		if (mon_mpdu->head)
++			ath12k_dp_mon_rx_deliver(ar, mon_mpdu,
+ 						 &tx_ppdu_info->rx_status, napi);
+ 
+ 		kfree(mon_mpdu);
 -- 
 2.34.1
 
