@@ -4,73 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D84ADC36008
-	for <ath12k@archiver.kernel.org>; Thu, 27 Mar 2025 02:14:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7018DC3600B
+	for <ath12k@archiver.kernel.org>; Thu, 27 Mar 2025 05:14:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Jzi5GuBlEKO1i+MqdpoLpp+ncZYWKJi/JkHVpz8aA0o=; b=hH7W04Ho66ejZsBZgXR3+Wiyfg
-	J8UWBnRDl6KYQZo1AieMBwDQsnHdblo0ukqmTnKGrA4k54wHiAHhMFZzPN5kAXiHXu2CnP1djH+k3
-	/1Zt/nkWZ/Hhcxj5doPAqcN+M5fxmFmLsXjSPk6ofW0N4nxmUJpQOR+lX01xC3trTgzNlMYmuii1y
-	EgtTpIPwumcHo/vvW25MsNw+gIjqfwSNQTU5JfKuVAEOmE4l3q5UmKVkPJolW++I7w67I/HYEE7Nc
-	G3jRjFNo6IRepCPae4tUjpa+na7zZDnK6kUChcFH5rZkiTKAjy/UdGEyj3aEm0gOn3HAZLX51HDmX
-	cX5cn/Vw==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5W9qT738Fw8H57Pc3GZROhCuGf2CoW0X8Pb5cKFgQa0=; b=ihdCvKppGTV4LjMfEuU9oFEa53
+	j1ddq+tBVCudW4iAFF4oTHFeS+jjiBPQYtxeMFl6cp4M+t0oTd8WzR71oT0XOwwVkZvwdP/ttt88E
+	nugJPkK9nMdIUeEg70KC9shI2dYCa8pVyFZ1US5xbvglWVqMquLuoZWU+pBfPqF+b9CujHpCRbaKo
+	tnwdoSBqytoLfPQ74V2lbpkfY6z8STx/4uNzJYV1PT9ShctbDXubuLEtuq8XrwPMMd4f8NwQ7w8mu
+	DbJPF3eMMEN8//qO3J9eLiGm2jAGQXtcAyWFgWsZvPDJ27BrMu5EZiB06QUMLusbRzl0jD4uRoTfL
+	Ryuwer/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txclO-00000009zVr-2KTs
+	id 1txfZT-0000000ACj3-0JyU
 	for ath12k@archiver.kernel.org;
-	Thu, 27 Mar 2025 02:14:34 +0000
+	Thu, 27 Mar 2025 05:14:27 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txclL-00000009zVU-3i75
+	id 1txfZP-0000000ACiZ-3RcP
 	for ath12k@lists.infradead.org;
-	Thu, 27 Mar 2025 02:14:33 +0000
+	Thu, 27 Mar 2025 05:14:25 +0000
 Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52QF07oB024523;
-	Thu, 27 Mar 2025 02:14:31 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52R4eAoT024572;
+	Thu, 27 Mar 2025 05:14:21 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=Jzi5GuBlEKO1i+MqdpoLpp
-	+ncZYWKJi/JkHVpz8aA0o=; b=jIfLxo7ETL7TAcauDhjUuIPDeW3Jp9CdopK7j3
-	0dPFLsW8RxRO/eoJ9YtqBtq8LOpR9BQd+NHWA7IGAZRBXvPZ1KcrMyfu83/fj31e
-	UZq5awTKNAiL7QqDbvJHzBB+KsJWCOHZLsXznA17E4skn80J4PwQ2EWrsn40z9IT
-	utuJ2+6xZvEnhK14VYpVIMEF9iUuizyiGwX+5AKdHYqu26xPlQFUxQqheLA1LyGO
-	kMWRLvcf+qhEBjrCwgtimH0svNlI+4gIxdEJqADv9uFv3RTrBxkA7su3mXby1TVY
-	H3MSu3QB9Q8HuwlMaVQZqmPNxq+q+EIlOwNyVO7m4LSEfJlA==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45kmd36xar-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	5W9qT738Fw8H57Pc3GZROhCuGf2CoW0X8Pb5cKFgQa0=; b=CchQFZTkoTIA8dWi
+	mcWup0IIwMC+oFXBnjxD/nFyJbRb9Xseg3GJWM9Foxs00KpnMXtlOx89sCvhltKf
+	jm/8tEmYcMH7EW64SFJICjbJRigCS3X5TfUev8LfZA4pLjfSjxMstBfQfaQQ5W17
+	uco1FdCHshda1yE+bbN1Y64PVVvppxbrZT+NPfovHN5CExC8gzS576oNC2t/lqJc
+	AqO+vgScc4WKedJYwjnECD95XduVnGucrEoRMcvQ6uloyDgoThGylBn2qgD7foUi
+	yx/+PIAC344Y+990aM2OPRblnLKT9plb8UEgSlhQWRN7iLEC/+hPIHz/BJ37eKlo
+	ZsiXVw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45kmd379s5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Mar 2025 02:14:30 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52R2EUg0020601
+	Thu, 27 Mar 2025 05:14:21 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52R5EKgw024338
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Mar 2025 02:14:30 GMT
-Received: from kangyang.ap.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+	Thu, 27 Mar 2025 05:14:20 GMT
+Received: from hu-ramess-blr.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 26 Mar 2025 19:14:28 -0700
-From: Kang Yang <quic_kangyang@quicinc.com>
-To: <ath12k@lists.infradead.org>, <quic_kangyang@quicinc.com>
-CC: <linux-wireless@vger.kernel.org>
-Subject: [PATCH ath-next v4] wifi: ath12k: read country code from SMBIOS for WCN7850
-Date: Thu, 27 Mar 2025 10:14:03 +0800
-Message-ID: <20250327021403.1577-1-quic_kangyang@quicinc.com>
-X-Mailer: git-send-email 2.34.1.windows.1
+ 15.2.1544.9; Wed, 26 Mar 2025 22:13:52 -0700
+From: Rameshkumar Sundaram <quic_ramess@quicinc.com>
+To: <johannes@sipsolutions.net>, <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>,
+        Ramasamy Kaliappan
+	<quic_rkaliapp@quicinc.com>,
+        Rameshkumar Sundaram <quic_ramess@quicinc.com>
+Subject: [PATCH wireless-next v5 1/4] wifi: cfg80211: Add support to get EMLSR capabilities of non-AP MLD
+Date: Thu, 27 Mar 2025 10:43:17 +0530
+Message-ID: <20250327051320.3253783-2-quic_ramess@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250327051320.3253783-1-quic_ramess@quicinc.com>
+References: <20250327051320.3253783-1-quic_ramess@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: DpaqVXvQFvBYupGnlenMMmsKLXCp4-tX
-X-Proofpoint-ORIG-GUID: DpaqVXvQFvBYupGnlenMMmsKLXCp4-tX
-X-Authority-Analysis: v=2.4 cv=P646hjAu c=1 sm=1 tr=0 ts=67e4b486 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=c2OH02f2B1J9eqCLxTwA:9
- a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: Vk0w9MSGjXN4wIkLOanU8jpj8z-ArSxG
+X-Proofpoint-ORIG-GUID: Vk0w9MSGjXN4wIkLOanU8jpj8z-ArSxG
+X-Authority-Analysis: v=2.4 cv=P646hjAu c=1 sm=1 tr=0 ts=67e4dead cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=P1jSMS6-STP8i83e0X8A:9 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-26_09,2025-03-26_02,2024-11-22_01
@@ -79,10 +84,10 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 imposto
  suspectscore=0 phishscore=0 mlxlogscore=999 priorityscore=1501 bulkscore=0
  mlxscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503270013
+ definitions=main-2503270031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250326_191431_928771_23A4A9EF 
-X-CRM114-Status: GOOD (  16.89  )
+X-CRM114-CacheID: sfid-20250326_221423_879226_A4E2B514 
+X-CRM114-Status: GOOD (  16.05  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,162 +102,106 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Read the country code from SMBIOS and send it to the firmware. The
-firmware will then indicate the regulatory domain information for
-the country code, which ath12k will use.
+From: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
 
-dmesg:
-[ 1242.637253] ath12k_pci 0000:02:00.0: worldwide regdomain setting from SMBIOS
-[ 1242.637259] ath12k_pci 0000:02:00.0: bdf variant name not found.
-[ 1242.637261] ath12k_pci 0000:02:00.0: SMBIOS bdf variant name not set.
-[ 1242.927543] ath12k_pci 0000:02:00.0: set current country pdev id 0 alpha2 00
+The Enhanced multi-link single-radio (EMLSR) operation allows a non-AP MLD
+with multiple receive chains to listen on one or more EMLSR links when the
+corresponding non-AP STA(s) affiliated with the non-AP MLD is (are) in
+the awake state. [IEEE 802.11be-2024, (35.3.17 Enhanced multi-link
+single-radio (EMLSR) operation)]
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-02582-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+An MLD which intends to enable EMLSR operations will set the EML
+Capabilities Present subfield to 1 and shall set the EMLSR Support
+subfield in the Common Info field of the Basic Multi-Link element to 1 in
+all Management frames that include the Basic Multi-Link element except
+Authentication frames. EML capabilities contains information such as
+EML Transition timeout, Padding delay and Transition delay. These fields
+needs to updated to drivers to trigger EMLSR operation and to transmit and
+receive initial control frame and data frames.
 
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-Signed-off-by: Kang Yang <quic_kangyang@quicinc.com>
+Add support to receive EML Capabilities subfield that non-AP MLD
+advertises during (re)association request and send it to underlying
+drivers during ADD/SET station.
+
+Signed-off-by: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
+Signed-off-by: Rameshkumar Sundaram <quic_ramess@quicinc.com>
 ---
+ include/net/cfg80211.h |  5 +++++
+ net/wireless/nl80211.c | 17 +++++++++++++++++
+ 2 files changed, 22 insertions(+)
 
-Depends-On:
-        [PATCH ath-next v14 0/4] wifi: ath12k: add 11d scan offload support and handle country code for WCN7850
-	https://lore.kernel.org/linux-wireless/20250327020527.1527-1-quic_kangyang@quicinc.com/
-
-Note: This patch is an old patch in public review written by
-Wen Gong. Just resend it for him.
-Link: https://lore.kernel.org/linux-wireless/20230913105156.17618-1-quic_wgong@quicinc.com/
-
-v4:
-    1. fix assignment error for case ATH12K_SMBIOS_CC_ISO.
-    2. rebase on tag: ath/main(ath-202503251458).
-v3:
-    1. rebase on tag: ath-202503172347.
-    2. add branch tag.
-    3. add descripition for Wen Gong.
-v2:
-    1. rebase on tag: ath/main(ath-202502181756).
-    2. rewrite commit message.
-
----
- drivers/net/wireless/ath/ath12k/core.c | 26 +++++++++++++++++++++++--
- drivers/net/wireless/ath/ath12k/core.h | 27 +++++++++++++++++++++++++-
- drivers/net/wireless/ath/ath12k/mac.c  | 11 +++++++++++
- 3 files changed, 61 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index 06e3ee16eb0e..b29b675c70b9 100644
---- a/drivers/net/wireless/ath/ath12k/core.c
-+++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -657,7 +657,7 @@ static void ath12k_core_stop(struct ath12k_base *ab)
- 	/* De-Init of components as needed */
- }
- 
--static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
-+static void ath12k_core_check_cc_code_bdfext(const struct dmi_header *hdr, void *data)
- {
- 	struct ath12k_base *ab = data;
- 	const char *magic = ATH12K_SMBIOS_BDF_EXT_MAGIC;
-@@ -679,6 +679,28 @@ static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
- 		return;
- 	}
- 
-+	spin_lock_bh(&ab->base_lock);
-+
-+	switch (smbios->country_code_flag) {
-+	case ATH12K_SMBIOS_CC_ISO:
-+		ab->new_alpha2[0] = u16_get_bits(smbios->cc_code >> 8, 0xff);
-+		ab->new_alpha2[1] = u16_get_bits(smbios->cc_code, 0xff);
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot smbios cc_code %c%c\n",
-+			   ab->new_alpha2[0], ab->new_alpha2[1]);
-+		break;
-+	case ATH12K_SMBIOS_CC_WW:
-+		ab->new_alpha2[0] = '0';
-+		ab->new_alpha2[1] = '0';
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot smbios worldwide regdomain\n");
-+		break;
-+	default:
-+		ath12k_dbg(ab, ATH12K_DBG_BOOT, "boot ignore smbios country code setting %d\n",
-+			   smbios->country_code_flag);
-+		break;
-+	}
-+
-+	spin_unlock_bh(&ab->base_lock);
-+
- 	if (!smbios->bdf_enabled) {
- 		ath12k_dbg(ab, ATH12K_DBG_BOOT, "bdf variant name not found.\n");
- 		return;
-@@ -718,7 +740,7 @@ static void ath12k_core_check_bdfext(const struct dmi_header *hdr, void *data)
- int ath12k_core_check_smbios(struct ath12k_base *ab)
- {
- 	ab->qmi.target.bdf_ext[0] = '\0';
--	dmi_walk(ath12k_core_check_bdfext, ab);
-+	dmi_walk(ath12k_core_check_cc_code_bdfext, ab);
- 
- 	if (ab->qmi.target.bdf_ext[0] == '\0')
- 		return -ENODATA;
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 5f98b98b38cf..8a6f79490b41 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -175,9 +175,34 @@ struct ath12k_ext_irq_grp {
- 	struct net_device *napi_ndev;
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index efbd79c67be2..b9032649b081 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -1770,6 +1770,9 @@ struct cfg80211_ttlm_params {
+  * @supported_oper_classes_len: number of supported operating classes
+  * @support_p2p_ps: information if station supports P2P PS mechanism
+  * @airtime_weight: airtime scheduler weight for this station
++ * @eml_cap_present: Specifies if EML capabilities field (@eml_cap) is
++ *	present/updated
++ * @eml_cap: EML capabilities of this station
+  * @link_sta_params: link related params.
+  */
+ struct station_parameters {
+@@ -1794,6 +1797,8 @@ struct station_parameters {
+ 	u8 supported_oper_classes_len;
+ 	int support_p2p_ps;
+ 	u16 airtime_weight;
++	bool eml_cap_present;
++	u16 eml_cap;
+ 	struct link_station_parameters link_sta_params;
  };
  
-+enum ath12k_smbios_cc_type {
-+	/* disable country code setting from SMBIOS */
-+	ATH12K_SMBIOS_CC_DISABLE = 0,
-+
-+	/* set country code by ANSI country name, based on ISO3166-1 alpha2 */
-+	ATH12K_SMBIOS_CC_ISO = 1,
-+
-+	/* worldwide regdomain */
-+	ATH12K_SMBIOS_CC_WW = 2,
-+};
-+
- struct ath12k_smbios_bdf {
- 	struct dmi_header hdr;
--	u32 padding;
-+	u8 features_disabled;
-+
-+	/* enum ath12k_smbios_cc_type */
-+	u8 country_code_flag;
-+
-+	/* To set specific country, you need to set country code
-+	 * flag=ATH12K_SMBIOS_CC_ISO first, then if country is United
-+	 * States, then country code value = 0x5553 ("US",'U' = 0x55, 'S'=
-+	 * 0x53). To set country to INDONESIA, then country code value =
-+	 * 0x4944 ("IN", 'I'=0x49, 'D'=0x44). If country code flag =
-+	 * ATH12K_SMBIOS_CC_WW, then you can use worldwide regulatory
-+	 * setting.
-+	 */
-+	u16 cc_code;
-+
- 	u8 bdf_enabled;
- 	u8 bdf_ext[];
- } __packed;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d522972b24bf..6395035b5378 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11628,6 +11628,17 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
- 			goto err_unregister_hw;
- 		}
+diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
+index f039a7d0d6f7..e1c1c06ebbb4 100644
+--- a/net/wireless/nl80211.c
++++ b/net/wireless/nl80211.c
+@@ -833,6 +833,7 @@ static const struct nla_policy nl80211_policy[NUM_NL80211_ATTR] = {
+ 	[NL80211_ATTR_MLD_ADDR] = NLA_POLICY_EXACT_LEN(ETH_ALEN),
+ 	[NL80211_ATTR_MLO_SUPPORT] = { .type = NLA_FLAG },
+ 	[NL80211_ATTR_MAX_NUM_AKM_SUITES] = { .type = NLA_REJECT },
++	[NL80211_ATTR_EML_CAPABILITY] = { .type = NLA_U16 },
+ 	[NL80211_ATTR_PUNCT_BITMAP] =
+ 		NLA_POLICY_FULL_RANGE(NLA_U32, &nl80211_punct_bitmap_range),
  
-+		if (ar->ab->hw_params->current_cc_support && ab->new_alpha2[0]) {
-+			struct wmi_set_current_country_arg current_cc = {};
-+
-+			memcpy(&current_cc.alpha2, ab->new_alpha2, 2);
-+			memcpy(&ar->alpha2, ab->new_alpha2, 2);
-+			ret = ath12k_wmi_send_set_current_country_cmd(ar, &current_cc);
-+			if (ret)
-+				ath12k_warn(ar->ab,
-+					    "failed set cc code for mac register: %d\n", ret);
-+		}
-+
- 		ath12k_fw_stats_init(ar);
- 		ath12k_debugfs_register(ar);
+@@ -7118,6 +7119,10 @@ int cfg80211_check_station_change(struct wiphy *wiphy,
+ 			return -EINVAL;
  	}
-
-base-commit: 1aa05c6f5681b371b981bf1902f1b96528feec7c
+ 
++	/* Reject EMLSR capabilities change after association */
++	if (statype == CFG80211_STA_AP_CLIENT && params->eml_cap_present)
++		return -EINVAL;
++
+ 	switch (statype) {
+ 	case CFG80211_STA_AP_MLME_CLIENT:
+ 		/* Use this only for authorizing/unauthorizing a station */
+@@ -7473,6 +7478,12 @@ static int nl80211_set_station(struct sk_buff *skb, struct genl_info *info)
+ 		params.link_sta_params.he_6ghz_capa =
+ 			nla_data(info->attrs[NL80211_ATTR_HE_6GHZ_CAPABILITY]);
+ 
++	if (info->attrs[NL80211_ATTR_EML_CAPABILITY]) {
++		params.eml_cap_present = true;
++		params.eml_cap =
++			nla_get_u16(info->attrs[NL80211_ATTR_EML_CAPABILITY]);
++	}
++
+ 	if (info->attrs[NL80211_ATTR_AIRTIME_WEIGHT])
+ 		params.airtime_weight =
+ 			nla_get_u16(info->attrs[NL80211_ATTR_AIRTIME_WEIGHT]);
+@@ -7631,6 +7642,12 @@ static int nl80211_new_station(struct sk_buff *skb, struct genl_info *info)
+ 		}
+ 	}
+ 
++	if (info->attrs[NL80211_ATTR_EML_CAPABILITY]) {
++		params.eml_cap_present = true;
++		params.eml_cap =
++			nla_get_u16(info->attrs[NL80211_ATTR_EML_CAPABILITY]);
++	}
++
+ 	if (info->attrs[NL80211_ATTR_HE_6GHZ_CAPABILITY])
+ 		params.link_sta_params.he_6ghz_capa =
+ 			nla_data(info->attrs[NL80211_ATTR_HE_6GHZ_CAPABILITY]);
 -- 
 2.34.1
 
