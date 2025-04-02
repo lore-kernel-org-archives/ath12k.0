@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A405C36010
-	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 02:46:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59139C36018
+	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 02:46:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tuQYrFnIlrtJqztUlS4Q2t3UF423R0fluCYgPEz7v7I=; b=DWasgg1iwHybkCyefc3ba6LyI3
-	N+c64jvRIj2wvK9Wc2TPQjBqSWiZuFcj0b89qTqg420anFe8YT+bKiIXc0CQ0NEM7ZTKWTsUL55fR
-	9XnP/0BNnipA+e5n00is5qtscE1tlLfbTGivcvnyIMZfp0GJ1kvhYTOfzoorRhJ8VcQUX60OM6oI7
-	SxE72BcSWKVRbe7DmBE541DMBvhodzh/As+GgexTeoPckmGY39QSYRW9QEACFtAu8Rxh3wLF1ByPb
-	sxgq6r7Xs9q/Iq3JZF+D5qtoZl+kN9ko6lAQJyIOlkuZ6w/EqSMsj5s4+uAU8MKyQtCYCBu7sN3Fb
-	qM1K+QzQ==;
+	bh=cxdBpDJK/z/HCMp5QWmopwlzD+JEfXC+GjuZas1EiDg=; b=dY3D7AeJ7C5SIHiXkMwvxedkT0
+	4pCmxwvE9Cs7o6dJGQlaqSDBhPUNRs8dmxCrMCbrV66cIc+URZJifwirmB0gaXPnj/JDA14Gn+pdj
+	+XxY91j18XkuJCXyMNYQ0kmpi87B3Il5a624La7+YLUJ5c4SKko6BhLZeqnkiMPq+5w/kyAUdCQFV
+	9B+nB+Kpc69KlQnBJwyNTn2pzXKrE5yOumMOQOmtlA5hcpxu7UQJr/sunHZ897e6T0oLPOixhw0Cc
+	V7al4hH/Yv8j3asYkKRc4LNou5Z09GOaAg02LwMd+j2RbMt/DQrvt9uy0tAzvWlo5uzb6MVsmSbdy
+	FB1TrNJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzo7a-00000004y4T-0R4H
+	id 1tzo7b-00000004y5F-0PrO
 	for ath12k@archiver.kernel.org;
-	Wed, 02 Apr 2025 02:46:30 +0000
+	Wed, 02 Apr 2025 02:46:31 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzo7U-00000004y1H-3Ttn
+	id 1tzo7X-00000004y3B-3UlH
 	for ath12k@lists.infradead.org;
-	Wed, 02 Apr 2025 02:46:26 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5320eHWN002319;
-	Wed, 2 Apr 2025 02:46:23 GMT
+	Wed, 02 Apr 2025 02:46:29 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 531L9Tgp030908;
+	Wed, 2 Apr 2025 02:46:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tuQYrFnIlrtJqztUlS4Q2t3UF423R0fluCYgPEz7v7I=; b=m+q6hhwxSQMCQTav
-	SBpN4kN0Qavbzzfzt8coY+xLGDRvUMv8AS/FTkWpVYmLElZi0IbOTuOqa79cIy6C
-	CkQzBGbrZkk+I63Tf84yMMCzdmmyQUFYyvgdhEc5u31EgD6qYQuyX+7fe+cRXYUc
-	T3GpITzcqcFWvyXV1HJFlSn8UQKAJu0q8YAWKdcfDmislJ55LlmHzPPP68Qy7hj5
-	QhFe6ni9+TpOMSI3dzIuFPxWx9TaJ5DcIURmP47Rl7R/N1/MUk9HVoXLscIprRfN
-	bCKqXDU92yqYEh7WFr8bDFQ4KcOlwNoRc4Ib8vKTc1qj86vZi2snmZVasmgW3AOI
-	cq6umA==
+	cxdBpDJK/z/HCMp5QWmopwlzD+JEfXC+GjuZas1EiDg=; b=nxprH/wYiMh0uFeL
+	W/rt1N6QVolr3645FvBxcaXzIZ+7e4aV+gaFAGREabEtC6Gqh3td8rfGiupp2gWf
+	m3fNGZ9OU3SA/WtR19Dgi6PeZ2fsgAdZrYoDTx31QJyPk90zjRXRNNu77PYXgyde
+	l8BVW2V3LNx643e8l2fwt7XadyaOc9Uk4p7tDit7f7ETPxE8rADcVHbku4Qa/Oro
+	wgLZ0VWsK9YprV5fUUmVRvGdQ8nL6dCVBmcGf10ucdrtASfNVKxGXhKF8BpTkHZ8
+	b+d5XY1In2WqHSOg0lGA1tGSeesvTD+J+ffO01Heqp1zWn7EIZnC2hfUnV+aPGpD
+	lnjWwg==
 Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45pa5bsu37-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45recpj7xx-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 02 Apr 2025 02:46:23 +0000 (GMT)
+	Wed, 02 Apr 2025 02:46:25 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5322kMHw014608
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5322kOfx014647
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 2 Apr 2025 02:46:22 GMT
+	Wed, 2 Apr 2025 02:46:24 GMT
 Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 1 Apr 2025
- 19:46:20 -0700
+ 19:46:22 -0700
 From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Wed, 2 Apr 2025 10:45:44 +0800
-Subject: [PATCH ath-next 5/9] wifi: ath12k: make assoc link associate first
+Date: Wed, 2 Apr 2025 10:45:45 +0800
+Subject: [PATCH ath-next 6/9] wifi: ath12k: group REO queue buffer
+ parameters together
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250402-ath12k-wcn7850-mlo-support-v1-5-bad47cf00704@quicinc.com>
+Message-ID: <20250402-ath12k-wcn7850-mlo-support-v1-6-bad47cf00704@quicinc.com>
 References: <20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com>
 In-Reply-To: <20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com>
 To: Johannes Berg <johannes@sipsolutions.net>,
@@ -74,22 +75,22 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: O7p9DuWCYvbjFxRE4yiCIw1IamdQfwv6
-X-Authority-Analysis: v=2.4 cv=YqcPR5YX c=1 sm=1 tr=0 ts=67eca4ff cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=2gi8f_Aax1DoEzWgb_cA:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-GUID: 2frQHDvQJ1hUvYCqP1U_iknRMopfVEkd
+X-Proofpoint-ORIG-GUID: 2frQHDvQJ1hUvYCqP1U_iknRMopfVEkd
+X-Authority-Analysis: v=2.4 cv=J4Sq7BnS c=1 sm=1 tr=0 ts=67eca501 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=0q-2_rlK9mxEvylRaQwA:9 a=QEXdDO2ut3YA:10
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: O7p9DuWCYvbjFxRE4yiCIw1IamdQfwv6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-02_01,2025-04-01_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 clxscore=1015
- priorityscore=1501 malwarescore=0 spamscore=0 phishscore=0 impostorscore=0
- suspectscore=0 mlxlogscore=999 bulkscore=0 adultscore=0 lowpriorityscore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ clxscore=1015 bulkscore=0 mlxlogscore=999 malwarescore=0 mlxscore=0
+ spamscore=0 phishscore=0 suspectscore=0 impostorscore=0 lowpriorityscore=0
+ adultscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504020017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250401_194624_900611_6B3396A8 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20250401_194627_992675_1BCC945C 
+X-CRM114-Status: GOOD (  15.30  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,72 +105,289 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-In MLO scenario WCN7850 firmware requests the assoc link to associate
-before any other links. However currently in
-ath12k_mac_op_vif_cfg_changed() we are doing association in an ascending
-order of link id. If the assoc link does not get assigned the smallest
-id, a non-assoc link gets associated first and firmware crashes.
+Currently vaddr, paddr and size fields are located together with other
+fields in ath12k_dp_rx_tid structure. Logically they represents the
+REO queue buffer so better to group them in an individual structure.
 
-Change to do association for the assoc link first.
+Introduce a new structure ath12k_reoq_buf to group them. This improves
+code readability, and benefits the upcoming patch where this structure
+is heavily accessed.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+While at it, change vaddr type to 'void *' since it is actually not
+pointing to any u32 buffer. Also rename paddr as paddr_aligned to better
+reflect its actual meaning.
+
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0-03427-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.15378.4
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 31 +++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 94 +++++++++++++++++----------------
+ drivers/net/wireless/ath/ath12k/dp_rx.h | 10 ++--
+ 2 files changed, 56 insertions(+), 48 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 2239d5a25ffef13e5e58653355148acb32b20af8..d1695432168bb3db054f0c65797a2d32413034ad 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3598,6 +3598,8 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
- 	unsigned long links = ahvif->links_map;
- 	struct ieee80211_bss_conf *info;
- 	struct ath12k_link_vif *arvif;
-+	struct ieee80211_sta *sta;
-+	struct ath12k_sta *ahsta;
- 	struct ath12k *ar;
- 	u8 link_id;
- 
-@@ -3610,6 +3612,35 @@ static void ath12k_mac_op_vif_cfg_changed(struct ieee80211_hw *hw,
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 66603e9c154b9036a8689053955cdbf53a1efe34..12313aa87e0747f3ea3dbaad50bb80b3a544d45f 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -556,9 +556,9 @@ void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab)
+ 	spin_lock_bh(&dp->reo_cmd_lock);
+ 	list_for_each_entry_safe(cmd, tmp, &dp->reo_cmd_list, list) {
+ 		list_del(&cmd->list);
+-		dma_unmap_single(ab->dev, cmd->data.paddr,
+-				 cmd->data.size, DMA_BIDIRECTIONAL);
+-		kfree(cmd->data.vaddr);
++		dma_unmap_single(ab->dev, cmd->data.qbuf.paddr_aligned,
++				 cmd->data.qbuf.size, DMA_BIDIRECTIONAL);
++		kfree(cmd->data.qbuf.vaddr);
+ 		kfree(cmd);
  	}
  
- 	if (changed & BSS_CHANGED_ASSOC) {
-+		if (vif->cfg.assoc) {
-+			/* only in station mode we can get here, so it's safe
-+			 * to use ap_addr
-+			 */
-+			rcu_read_lock();
-+			sta = ieee80211_find_sta(vif, vif->cfg.ap_addr);
-+			if (!sta) {
-+				rcu_read_unlock();
-+				WARN_ONCE(1, "failed to find sta with addr %pM\n",
-+					  vif->cfg.ap_addr);
-+				return;
-+			}
+@@ -566,9 +566,9 @@ void ath12k_dp_rx_reo_cmd_list_cleanup(struct ath12k_base *ab)
+ 				 &dp->reo_cmd_cache_flush_list, list) {
+ 		list_del(&cmd_cache->list);
+ 		dp->reo_cmd_cache_flush_count--;
+-		dma_unmap_single(ab->dev, cmd_cache->data.paddr,
+-				 cmd_cache->data.size, DMA_BIDIRECTIONAL);
+-		kfree(cmd_cache->data.vaddr);
++		dma_unmap_single(ab->dev, cmd_cache->data.qbuf.paddr_aligned,
++				 cmd_cache->data.qbuf.size, DMA_BIDIRECTIONAL);
++		kfree(cmd_cache->data.qbuf.vaddr);
+ 		kfree(cmd_cache);
+ 	}
+ 	spin_unlock_bh(&dp->reo_cmd_lock);
+@@ -583,10 +583,10 @@ static void ath12k_dp_reo_cmd_free(struct ath12k_dp *dp, void *ctx,
+ 		ath12k_warn(dp->ab, "failed to flush rx tid hw desc, tid %d status %d\n",
+ 			    rx_tid->tid, status);
+ 
+-	dma_unmap_single(dp->ab->dev, rx_tid->paddr, rx_tid->size,
++	dma_unmap_single(dp->ab->dev, rx_tid->qbuf.paddr_aligned, rx_tid->qbuf.size,
+ 			 DMA_BIDIRECTIONAL);
+-	kfree(rx_tid->vaddr);
+-	rx_tid->vaddr = NULL;
++	kfree(rx_tid->qbuf.vaddr);
++	rx_tid->qbuf.vaddr = NULL;
+ }
+ 
+ static int ath12k_dp_reo_cmd_send(struct ath12k_base *ab, struct ath12k_dp_rx_tid *rx_tid,
+@@ -641,13 +641,13 @@ static void ath12k_dp_reo_cache_flush(struct ath12k_base *ab,
+ 	unsigned long tot_desc_sz, desc_sz;
+ 	int ret;
+ 
+-	tot_desc_sz = rx_tid->size;
++	tot_desc_sz = rx_tid->qbuf.size;
+ 	desc_sz = ath12k_hal_reo_qdesc_size(0, HAL_DESC_REO_NON_QOS_TID);
+ 
+ 	while (tot_desc_sz > desc_sz) {
+ 		tot_desc_sz -= desc_sz;
+-		cmd.addr_lo = lower_32_bits(rx_tid->paddr + tot_desc_sz);
+-		cmd.addr_hi = upper_32_bits(rx_tid->paddr);
++		cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned + tot_desc_sz);
++		cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
+ 		ret = ath12k_dp_reo_cmd_send(ab, rx_tid,
+ 					     HAL_REO_CMD_FLUSH_CACHE, &cmd,
+ 					     NULL);
+@@ -658,8 +658,8 @@ static void ath12k_dp_reo_cache_flush(struct ath12k_base *ab,
+ 	}
+ 
+ 	memset(&cmd, 0, sizeof(cmd));
+-	cmd.addr_lo = lower_32_bits(rx_tid->paddr);
+-	cmd.addr_hi = upper_32_bits(rx_tid->paddr);
++	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
++	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
+ 	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS;
+ 	ret = ath12k_dp_reo_cmd_send(ab, rx_tid,
+ 				     HAL_REO_CMD_FLUSH_CACHE,
+@@ -667,10 +667,10 @@ static void ath12k_dp_reo_cache_flush(struct ath12k_base *ab,
+ 	if (ret) {
+ 		ath12k_err(ab, "failed to send HAL_REO_CMD_FLUSH_CACHE cmd, tid %d (%d)\n",
+ 			   rx_tid->tid, ret);
+-		dma_unmap_single(ab->dev, rx_tid->paddr, rx_tid->size,
++		dma_unmap_single(ab->dev, rx_tid->qbuf.paddr_aligned, rx_tid->qbuf.size,
+ 				 DMA_BIDIRECTIONAL);
+-		kfree(rx_tid->vaddr);
+-		rx_tid->vaddr = NULL;
++		kfree(rx_tid->qbuf.vaddr);
++		rx_tid->qbuf.vaddr = NULL;
+ 	}
+ }
+ 
+@@ -729,10 +729,10 @@ static void ath12k_dp_rx_tid_del_func(struct ath12k_dp *dp, void *ctx,
+ 
+ 	return;
+ free_desc:
+-	dma_unmap_single(ab->dev, rx_tid->paddr, rx_tid->size,
++	dma_unmap_single(ab->dev, rx_tid->qbuf.paddr_aligned, rx_tid->qbuf.size,
+ 			 DMA_BIDIRECTIONAL);
+-	kfree(rx_tid->vaddr);
+-	rx_tid->vaddr = NULL;
++	kfree(rx_tid->qbuf.vaddr);
++	rx_tid->qbuf.vaddr = NULL;
+ }
+ 
+ static void ath12k_peer_rx_tid_qref_setup(struct ath12k_base *ab, u16 peer_id, u16 tid,
+@@ -801,8 +801,8 @@ void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
+ 		return;
+ 
+ 	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS;
+-	cmd.addr_lo = lower_32_bits(rx_tid->paddr);
+-	cmd.addr_hi = upper_32_bits(rx_tid->paddr);
++	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
++	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
+ 	cmd.upd0 = HAL_REO_CMD_UPD0_VLD;
+ 	ret = ath12k_dp_reo_cmd_send(ar->ab, rx_tid,
+ 				     HAL_REO_CMD_UPDATE_RX_QUEUE, &cmd,
+@@ -810,10 +810,10 @@ void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
+ 	if (ret) {
+ 		ath12k_err(ar->ab, "failed to send HAL_REO_CMD_UPDATE_RX_QUEUE cmd, tid %d (%d)\n",
+ 			   tid, ret);
+-		dma_unmap_single(ar->ab->dev, rx_tid->paddr, rx_tid->size,
+-				 DMA_BIDIRECTIONAL);
+-		kfree(rx_tid->vaddr);
+-		rx_tid->vaddr = NULL;
++		dma_unmap_single(ar->ab->dev, rx_tid->qbuf.paddr_aligned,
++				 rx_tid->qbuf.size, DMA_BIDIRECTIONAL);
++		kfree(rx_tid->qbuf.vaddr);
++		rx_tid->qbuf.vaddr = NULL;
+ 	}
+ 
+ 	if (peer->mlo)
+@@ -909,8 +909,8 @@ static int ath12k_peer_rx_tid_reo_update(struct ath12k *ar,
+ 	struct ath12k_hal_reo_cmd cmd = {0};
+ 	int ret;
+ 
+-	cmd.addr_lo = lower_32_bits(rx_tid->paddr);
+-	cmd.addr_hi = upper_32_bits(rx_tid->paddr);
++	cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
++	cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
+ 	cmd.flag = HAL_REO_CMD_FLG_NEED_STATUS;
+ 	cmd.upd0 = HAL_REO_CMD_UPD0_BA_WINDOW_SIZE;
+ 	cmd.ba_window_size = ba_win_sz;
+@@ -945,7 +945,7 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 	struct ath12k_dp_rx_tid *rx_tid;
+ 	u32 hw_desc_sz;
+ 	void *vaddr;
+-	dma_addr_t paddr;
++	dma_addr_t paddr_aligned;
+ 	int ret;
+ 
+ 	spin_lock_bh(&ab->base_lock);
+@@ -979,7 +979,7 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 	rx_tid = &peer->rx_tid[tid];
+ 	/* Update the tid queue if it is already setup */
+ 	if (rx_tid->active) {
+-		paddr = rx_tid->paddr;
++		paddr_aligned = rx_tid->qbuf.paddr_aligned;
+ 		ret = ath12k_peer_rx_tid_reo_update(ar, peer, rx_tid,
+ 						    ba_win_sz, ssn, true);
+ 		spin_unlock_bh(&ab->base_lock);
+@@ -991,8 +991,8 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 		if (!ab->hw_params->reoq_lut_support) {
+ 			ret = ath12k_wmi_peer_rx_reorder_queue_setup(ar, vdev_id,
+ 								     peer_mac,
+-								     paddr, tid, 1,
+-								     ba_win_sz);
++								     paddr_aligned, tid,
++								     1, ba_win_sz);
+ 			if (ret) {
+ 				ath12k_warn(ab, "failed to setup peer rx reorder queuefor tid %d: %d\n",
+ 					    tid, ret);
+@@ -1026,18 +1026,18 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 	ath12k_hal_reo_qdesc_setup(addr_aligned, tid, ba_win_sz,
+ 				   ssn, pn_type);
+ 
+-	paddr = dma_map_single(ab->dev, addr_aligned, hw_desc_sz,
+-			       DMA_BIDIRECTIONAL);
++	paddr_aligned = dma_map_single(ab->dev, addr_aligned, hw_desc_sz,
++				       DMA_BIDIRECTIONAL);
+ 
+-	ret = dma_mapping_error(ab->dev, paddr);
++	ret = dma_mapping_error(ab->dev, paddr_aligned);
+ 	if (ret) {
+ 		spin_unlock_bh(&ab->base_lock);
+ 		goto err_mem_free;
+ 	}
+ 
+-	rx_tid->vaddr = vaddr;
+-	rx_tid->paddr = paddr;
+-	rx_tid->size = hw_desc_sz;
++	rx_tid->qbuf.vaddr = vaddr;
++	rx_tid->qbuf.paddr_aligned = paddr_aligned;
++	rx_tid->qbuf.size = hw_desc_sz;
+ 	rx_tid->active = true;
+ 
+ 	if (ab->hw_params->reoq_lut_support) {
+@@ -1045,15 +1045,18 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 		 * and tid with qaddr.
+ 		 */
+ 		if (peer->mlo)
+-			ath12k_peer_rx_tid_qref_setup(ab, peer->ml_id, tid, paddr);
++			ath12k_peer_rx_tid_qref_setup(ab, peer->ml_id, tid,
++						      paddr_aligned);
+ 		else
+-			ath12k_peer_rx_tid_qref_setup(ab, peer->peer_id, tid, paddr);
++			ath12k_peer_rx_tid_qref_setup(ab, peer->peer_id, tid,
++						      paddr_aligned);
+ 
+ 		spin_unlock_bh(&ab->base_lock);
+ 	} else {
+ 		spin_unlock_bh(&ab->base_lock);
+ 		ret = ath12k_wmi_peer_rx_reorder_queue_setup(ar, vdev_id, peer_mac,
+-							     paddr, tid, 1, ba_win_sz);
++							     paddr_aligned, tid, 1,
++							     ba_win_sz);
+ 	}
+ 
+ 	return ret;
+@@ -1196,8 +1199,8 @@ int ath12k_dp_rx_peer_pn_replay_config(struct ath12k_link_vif *arvif,
+ 		rx_tid = &peer->rx_tid[tid];
+ 		if (!rx_tid->active)
+ 			continue;
+-		cmd.addr_lo = lower_32_bits(rx_tid->paddr);
+-		cmd.addr_hi = upper_32_bits(rx_tid->paddr);
++		cmd.addr_lo = lower_32_bits(rx_tid->qbuf.paddr_aligned);
++		cmd.addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
+ 		ret = ath12k_dp_reo_cmd_send(ab, rx_tid,
+ 					     HAL_REO_CMD_UPDATE_RX_QUEUE,
+ 					     &cmd, NULL);
+@@ -3242,8 +3245,9 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struct ath12k *ar,
+ 	reo_ent_ring->rx_mpdu_info.peer_meta_data =
+ 		reo_dest_ring->rx_mpdu_info.peer_meta_data;
+ 
+-	reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
+-	queue_addr_hi = upper_32_bits(rx_tid->paddr);
++	reo_ent_ring->queue_addr_lo =
++				cpu_to_le32(lower_32_bits(rx_tid->qbuf.paddr_aligned));
++	queue_addr_hi = upper_32_bits(rx_tid->qbuf.paddr_aligned);
+ 	reo_ent_ring->info0 = le32_encode_bits(queue_addr_hi,
+ 					       HAL_REO_ENTR_RING_INFO0_QUEUE_ADDR_HI) |
+ 			      le32_encode_bits(dst_ind,
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.h b/drivers/net/wireless/ath/ath12k/dp_rx.h
+index 88e42365a9d8bc9074a7b319decc670203a6f5f7..1376360d71d0903113735ef1cf5836e45cdbd274 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.h
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.h
+@@ -12,13 +12,17 @@
+ 
+ #define DP_MAX_NWIFI_HDR_LEN	30
+ 
++struct ath12k_reoq_buf {
++	void *vaddr;
++	dma_addr_t paddr_aligned;
++	u32 size;
++};
 +
-+			ahsta = ath12k_sta_to_ahsta(sta);
-+			arvif = wiphy_dereference(hw->wiphy,
-+						  ahvif->link[ahsta->assoc_link_id]);
-+			rcu_read_unlock();
-+
-+			ar = arvif->ar;
-+			/* there is no reason for which an assoc link's
-+			 * bss info does not exist
-+			 */
-+			info = ath12k_mac_get_link_bss_conf(arvif);
-+			ath12k_bss_assoc(ar, arvif, info);
-+
-+			/* exclude assoc link as it is done above */
-+			links &= ~BIT(ahsta->assoc_link_id);
-+		}
-+
- 		for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
- 			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
- 			if (!arvif || !arvif->ar)
+ struct ath12k_dp_rx_tid {
+ 	u8 tid;
+-	u32 *vaddr;
+-	dma_addr_t paddr;
+-	u32 size;
+ 	u32 ba_win_sz;
+ 	bool active;
++	struct ath12k_reoq_buf qbuf;
+ 
+ 	/* Info related to rx fragments */
+ 	u32 cur_sn;
 
 -- 
 2.25.1
