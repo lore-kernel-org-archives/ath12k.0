@@ -4,93 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62D15C3601A
-	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 02:46:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB5B2C36010
+	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 02:48:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
-	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=auf2rTWz9nF4b1B9ipcZv2SB/TXc1xaaoz/erFdslY0=; b=eklr3Bc7XydtKuSXVuK06PJf93
-	fnqcioIdkjVxYT4EbjdcLa8gC0ATBRXjPATxKyJ7J/SuBj4C23CPK3kI/SJOoYRei988/wS2PsX5Z
-	1fZG8WSKAar/KrHRUUWdwUnV9ZqktCkD14D4UAhJif7/L72CgsZ5yfegodlADaIo1dGsDFue2M2Dn
-	SWawtzLfB6gcTU+kL3BvR1RfbF6bSFxXff4DGG4XDRF6wwcgGWcCJOJ1joCAgR+HWCEOiQLpJxj+z
-	wzS9pl4Ywz/x30Mc/oYrYZ9wWakzgOOz6eGAZoVhO/A5lLm6+pO4jOdZ9muVqG1vfIgM5ZmF4DxXR
-	DUPrNBIQ==;
+	bh=GrMhgc1KovsN5I4sfTdMTKczDTQ5qElsQ/Wq271LWbY=; b=OkZk/T9CJqWEPMFjDq7TZoGA/3
+	aBzgacGDDKIZMf4qt2Tg4Zz/lkDxSrobaPD5Bec1qOA9E7KyVK4c7lkMaBlj6hr1hfzCcUkE6MkKS
+	HLf/oFsIo800UwmkxOKF55gsRb2pLtcWByFpjpQDqSoE49CXS7/ESnh8hOV3JzwL37EFuTUyB8wWq
+	zdvun8nwQSrSW7OEut/glMfBGHzgvfY0DnIPRBlKhYWvJnen5vgyXkUoLAhkcMWc1Q1lb7h99id6C
+	AXrVSKwO5zdB+RWVqxdwWSjnCyi5fZngUSSRIzSY2m7349jk4tK3EgB0RcDFX+UZDezmusQkA/Oj3
+	5fmXVKDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzo7g-00000004y97-0HF9
+	id 1tzo9v-00000004ykq-2g0J
 	for ath12k@archiver.kernel.org;
-	Wed, 02 Apr 2025 02:46:36 +0000
+	Wed, 02 Apr 2025 02:48:55 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzo7d-00000004y6L-0Pv7
+	id 1tzo9s-00000004yjx-3zg8
 	for ath12k@lists.infradead.org;
-	Wed, 02 Apr 2025 02:46:34 +0000
+	Wed, 02 Apr 2025 02:48:54 +0000
 Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 531Fh7K2008564;
-	Wed, 2 Apr 2025 02:46:29 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 531FdXtY008471;
+	Wed, 2 Apr 2025 02:48:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	auf2rTWz9nF4b1B9ipcZv2SB/TXc1xaaoz/erFdslY0=; b=nfSjE7/IANrqxPEU
-	Gs6mUIvtZ2zIVS/jVG0LlKrZRl9YvSB3aa5Mvd8ifnoW+qYkz4RcfN+iLuT8nfOA
-	TIPU2pc3cT1mE5EbASfIEoZkLz50ngDt8wKHzbcQNVlBGkN0jZwWDYjwEYoJgzlR
-	q4cTsKHDDlt5GZj/ldo9HRihgIMgWjrk9FK7Bikuo7JjozR5CI/7jLg2+3YmWmKS
-	Td/NBp0XsJyjLoDueLawTTNe2snkAgBCvUUv7YnJjf7Z5FmFgcw35PUliq+Vrd+0
-	sCoShNFoUDem/fkrTib7IaUv7OIU3F5XH8GmommiiFGdZxoe6PA4vb0pA3L9kP7h
-	whR0/Q==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45r1xnmbdj-1
+	GrMhgc1KovsN5I4sfTdMTKczDTQ5qElsQ/Wq271LWbY=; b=REkYUgL1lEQ8VKS7
+	qYDaiERHBtFcq7zJAxYMqNbOjs07W27RW2ZSRyHZa+fnV9Aa3UANrwIq1YoD4Tt/
+	ZHxeQsc2zLPyegZaBeb+1KyL4OwMruuGanlTqivQ2RXEEaKFF02/vNCaNUeaRhW3
+	i9+4G6fAAMh8LopXWo3LTzqEGsITZMebsMphEcUX3xzLeRPEircKbyn0DLtZq6OW
+	SkJClUuRgIWbdgzqXImHQG5QmQO8VYYaNmCri1iIdYuZFCkDlqyUikeMg+HLR9B6
+	37IhNIzlDIVC0LO9X+xTHO2gZHZ0Sd/DGxZc2t8Iuj3cLYgpZBMVe1AcakNjCmWj
+	8I1sYQ==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45r1xnmbnb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 02 Apr 2025 02:46:29 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5322kSGN012731
+	Wed, 02 Apr 2025 02:48:50 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5322mnTW017425
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 2 Apr 2025 02:46:28 GMT
-Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+	Wed, 2 Apr 2025 02:48:49 GMT
+Received: from [10.133.33.114] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 1 Apr 2025
- 19:46:26 -0700
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Wed, 2 Apr 2025 10:45:47 +0800
-Subject: [PATCH ath-next 8/9] wifi: ath12k: don't skip non-primary links
- for WCN7850
+ 19:48:48 -0700
+Message-ID: <dc0abf98-862b-47f5-ae71-749c68cffc73@quicinc.com>
+Date: Wed, 2 Apr 2025 10:48:45 +0800
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-ID: <20250402-ath12k-wcn7850-mlo-support-v1-8-bad47cf00704@quicinc.com>
-References: <20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com>
-In-Reply-To: <20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com>
-To: Johannes Berg <johannes@sipsolutions.net>,
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: No 6GHz Wireless found
+To: Walt Holman <waltholman09@gmail.com>,
         Jeff Johnson
-	<jjohnson@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>,
-        Baochen Qiang <quic_bqiang@quicinc.com>
-X-Mailer: b4 0.14.2
+	<jeff.johnson@oss.qualcomm.com>
+CC: <linux-wireless@vger.kernel.org>,
+        "ath12k@lists.infradead.org"
+	<ath12k@lists.infradead.org>
+References: <CAMb39_ngQs8=FUML5QXMh2RmEZBZ2NwUHefhGoTkGtHat+KWJA@mail.gmail.com>
+ <f45323db-ce4d-4374-9c93-0be4d0645fcd@oss.qualcomm.com>
+ <CAMb39_ki7F1XgezyVfb9Tkm9D-FZE0XK3RcSYtFmFf0jP8-M_Q@mail.gmail.com>
+Content-Language: en-US
+From: Kang Yang <quic_kangyang@quicinc.com>
+In-Reply-To: <CAMb39_ki7F1XgezyVfb9Tkm9D-FZE0XK3RcSYtFmFf0jP8-M_Q@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: B4ehtDyozZv2I4dHiniU_7bgffjtoZ_Y
-X-Proofpoint-ORIG-GUID: B4ehtDyozZv2I4dHiniU_7bgffjtoZ_Y
-X-Authority-Analysis: v=2.4 cv=Qv1e3Uyd c=1 sm=1 tr=0 ts=67eca505 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=JV4BEDbtibSLdtTV1wAA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: u8c_0ZNd0jDT7EAGsGj3ZuvdekBP_RQB
+X-Proofpoint-ORIG-GUID: u8c_0ZNd0jDT7EAGsGj3ZuvdekBP_RQB
+X-Authority-Analysis: v=2.4 cv=Qv1e3Uyd c=1 sm=1 tr=0 ts=67eca592 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=bC-a23v3AAAA:8 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
+ a=VwQbUJbxAAAA:8 a=djrh-veR_mV6KkF8jiQA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=-FEs8UIgK8oA:10 a=FO4_E8m0qiDe52t0p3_H:22 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-02_01,2025-04-01_01,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
  mlxscore=0 impostorscore=0 adultscore=0 priorityscore=1501 bulkscore=0
- phishscore=0 malwarescore=0 mlxlogscore=975 lowpriorityscore=0
- clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
+ phishscore=0 malwarescore=0 mlxlogscore=999 lowpriorityscore=0
+ clxscore=1011 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504020017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250401_194633_381940_83BAEB69 
-X-CRM114-Status: GOOD (  14.99  )
+X-CRM114-CacheID: sfid-20250401_194853_120058_E7336BC4 
+X-CRM114-Status: GOOD (  19.59  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,93 +107,242 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-The primary link check bypasses REO queue setup for non-primary links
-in ath12k_dp_rx_peer_tid_setup(), this works for QCN9274 but breaks
-WCN7850 as WCN7850 needs it to be done for each link peer.
 
-Add a new hardware parameter to differentiate them.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
+On 4/2/2025 5:21 AM, Walt Holman wrote:
+> On Tue, Apr 1, 2025 at 1:53 PM Jeff Johnson
+> <jeff.johnson@oss.qualcomm.com> wrote:
+>>
+>> On 3/30/2025 7:28 AM, Walt Holman wrote:
+>>> Hello,
+>>>
+>>> I have a wcn7850 hw2.0 based m.2 wireless card in my laptop and am
+>>> unable to see or connect to 6Ghz networks. I have an ASUS BE30000 wifi
+>>> router setup with a separate 6ghz only network, which my phone and
+>>> other laptops can connect to. I'm unable to even see this network on
+>>> this particular laptop. Months ago (maybe September), I could see it
+>>> occasionally, but now it never shows up. I'm using firmware from
+>>> git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+>>> and track the kernels pretty closely. I'm currently running 6.14.0
+>>> built from source. Any suggestions? Some HW info is below:
+>>>
+>>> 63:00.0 Network controller: Qualcomm Technologies, Inc WCN785x Wi-Fi
+>>> 7(802.11be) 320MHz 2x2 [FastConnect 7800
+>>> ] (rev 01)
+>>>         Subsystem: Quectel Wireless Solutions Co., Ltd. Device 8000
+>>>         Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop-
+>>> ParErr- Stepping- SERR- FastB2B- DisINTx+
+>>>         Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort+
+>>> <TAbort- <MAbort- >SERR- <PERR- INTx-
+>>>         Latency: 0, Cache Line Size: 64 bytes
+>>>         Interrupt: pin ? routed to IRQ 111
+>>>         IOMMU group: 19
+>>>         Region 0: Memory at dd800000 (64-bit, non-prefetchable) [size=2M]
+>>>         Capabilities: [40] Power Management version 3
+>>>                 Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA
+>>> PME(D0+,D1-,D2-,D3hot+,D3cold+)
+>>>                 Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=0 PME-
+>>>         Capabilities: [50] MSI: Enable+ Count=16/32 Maskable+ 64bit-
+>>>                 Address: fee00000  Data: 0000
+>>>                 Masking: ffff8000  Pending: 00000000
+>>>         Capabilities: [70] Express (v2) Endpoint, IntMsgNum 0
+>>>                 DevCap: MaxPayload 128 bytes, PhantFunc 0, Latency L0s
+>>> unlimited, L1 unlimited
+>>>                         ExtTag- AttnBtn- AttnInd- PwrInd- RBE+ FLReset-
+>>> SlotPowerLimit 75W TEE-IO-
+>>>                 DevCtl: CorrErr+ NonFatalErr+ FatalErr+ UnsupReq+
+>>>                         RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+>>>                         MaxPayload 128 bytes, MaxReadReq 512 bytes
+>>>                 DevSta: CorrErr- NonFatalErr- FatalErr- UnsupReq-
+>>> AuxPwr+ TransPend-
+>>>                 LnkCap: Port #0, Speed 8GT/s, Width x2, ASPM L0s L1,
+>>> Exit Latency L0s <1us, L1 <64us
+>>>                         ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp+
+>>>                 LnkCtl: ASPM L1 Enabled; RCB 64 bytes, LnkDisable- CommClk+
+>>>                         ExtSynch+ ClockPM- AutWidDis- BWInt- AutBWInt-
+>>>                 LnkSta: Speed 8GT/s, Width x1 (downgraded)
+>>>                         TrErr- Train- SlotClk+ DLActive- BWMgmt- ABWMgmt-
+>>>                 DevCap2: Completion Timeout: Range ABCD, TimeoutDis+
+>>> NROPrPrP- LTR+
+>>>                          10BitTagComp- 10BitTagReq- OBFF Not Supported,
+>>> ExtFmt- EETLPPrefix-
+>>>                          EmergencyPowerReduction Not Supported,
+>>> EmergencyPowerReductionInit-
+>>>                          FRS- TPHComp+ ExtTPHComp-
+>>>                          AtomicOpsCap: 32bit- 64bit- 128bitCAS-
+>>>                 DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-
+>>>                          AtomicOpsCtl: ReqEn-
+>>>                          IDOReq- IDOCompl- LTR+ EmergencyPowerReductionReq-
+>>>                          10BitTagReq- OBFF Disabled, EETLPPrefixBlk-
+>>>                 LnkCap2: Supported Link Speeds: 2.5-8GT/s, Crosslink-
+>>> Retimer- 2Retimers- DRS-
+>>>                 LnkCtl2: Target Link Speed: 8GT/s, EnterCompliance- SpeedDis-
+>>>                          Transmit Margin: Normal Operating Range,
+>>> EnterModifiedCompliance- ComplianceSOS-
+>>>                          Compliance Preset/De-emphasis: -6dB
+>>> de-emphasis, 0dB preshoot
+>>>                 LnkSta2: Current De-emphasis Level: -3.5dB,
+>>> EqualizationComplete+ EqualizationPhase1+
+>>>                          EqualizationPhase2+ EqualizationPhase3+
+>>> LinkEqualizationRequest-
+>>>                          Retimer- 2Retimers- CrosslinkRes: unsupported
+>>>         Capabilities: [100 v2] Advanced Error Reporting
+>>>                 UESta:  DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt-
+>>> UnxCmplt- RxOF- MalfTLP-
+>>>                         ECRC- UnsupReq- ACSViol- UncorrIntErr-
+>>> BlockedTLP- AtomicOpBlocked- TLPBlockedErr-
+>>>                         PoisonTLPBlocked- DMWrReqBlocked- IDECheck-
+>>> MisIDETLP- PCRC_CHECK- TLPXlatBlocked-
+>>>                 UEMsk:  DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt-
+>>> UnxCmplt- RxOF- MalfTLP-
+>>>                         ECRC- UnsupReq- ACSViol- UncorrIntErr+
+>>> BlockedTLP- AtomicOpBlocked- TLPBlockedErr-
+>>>                         PoisonTLPBlocked- DMWrReqBlocked- IDECheck-
+>>> MisIDETLP- PCRC_CHECK- TLPXlatBlocked-
+>>>                 UESvrt: DLP+ SDES+ TLP- FCP+ CmpltTO- CmpltAbrt-
+>>> UnxCmplt- RxOF+ MalfTLP+
+>>>                         ECRC- UnsupReq- ACSViol- UncorrIntErr+
+>>> BlockedTLP- AtomicOpBlocked- TLPBlockedErr-
+>>>                         PoisonTLPBlocked- DMWrReqBlocked- IDECheck-
+>>> MisIDETLP- PCRC_CHECK- TLPXlatBlocked-
+>>>                 CESta:  RxErr- BadTLP- BadDLLP- Rollover- Timeout-
+>>> AdvNonFatalErr- CorrIntErr- HeaderOF-
+>>>                 CEMsk:  RxErr- BadTLP- BadDLLP- Rollover- Timeout-
+>>> AdvNonFatalErr+ CorrIntErr+ HeaderOF+
+>>>                 AERCap: First Error Pointer: 00, ECRCGenCap+ ECRCGenEn-
+>>> ECRCChkCap+ ECRCChkEn-
+>>>                         MultHdrRecCap- MultHdrRecEn- TLPPfxPres- HdrLogCap-
+>>>                 HeaderLog: 00000000 00000000 00000000 00000000
+>>>         Capabilities: [148 v1] Secondary PCI Express
+>>>                 LnkCtl3: LnkEquIntrruptEn- PerformEqu-
+>>>                 LaneErrStat: 0
+>>>         Capabilities: [158 v1] Transaction Processing Hints
+>>>                 No steering table available
+>>>         Capabilities: [1e4 v1] Latency Tolerance Reporting
+>>>                 Max snoop latency: 1048576ns
+>>>                 Max no snoop latency: 1048576ns
+>>>         Capabilities: [1ec v1] L1 PM Substates
+>>>                 L1SubCap: PCI-PM_L1.2+ PCI-PM_L1.1+ ASPM_L1.2+
+>>> ASPM_L1.1+ L1_PM_Substates+
+>>>                           PortCommonModeRestoreTime=70us PortTPowerOnTime=0us
+>>>                 L1SubCtl1: PCI-PM_L1.2+ PCI-PM_L1.1+ ASPM_L1.2+ ASPM_L1.1+
+>>>                            T_CommonMode=0us LTR1.2_Threshold=166912ns
+>>>                 L1SubCtl2: T_PwrOn=90us
+>>>         Kernel driver in use: ath12k_pci
+>>>         Kernel modules: ath12k
+>>>
+>>> root@walt-ROG-zephyrus:~# iw reg get
+>>> global
+>>> country US: DFS-FCC
+>>>          (902 - 904 @ 2), (N/A, 30), (N/A)
+>>>          (904 - 920 @ 16), (N/A, 30), (N/A)
+>>>          (920 - 928 @ 8), (N/A, 30), (N/A)
+>>>          (2400 - 2472 @ 40), (N/A, 30), (N/A)
+>>>          (5150 - 5250 @ 80), (N/A, 23), (N/A), AUTO-BW
+>>>          (5250 - 5350 @ 80), (N/A, 24), (0 ms), DFS, AUTO-BW
+>>>          (5470 - 5730 @ 160), (N/A, 24), (0 ms), DFS
+>>>          (5730 - 5850 @ 80), (N/A, 30), (N/A), AUTO-BW
+>>>          (5850 - 5895 @ 40), (N/A, 27), (N/A), NO-OUTDOOR, AUTO-BW, PASSIVE-SCAN
+>>>          (5925 - 7125 @ 320), (N/A, 12), (N/A), NO-OUTDOOR, PASSIVE-SCAN
+>>>          (57240 - 71000 @ 2160), (N/A, 40), (N/A)
+>>>
+>>> phy#0 (self-managed)
+>>> country na: DFS-UNSET
+>>>          (2402 - 2472 @ 40), (N/A, 20), (N/A)
+>>>          (2457 - 2482 @ 20), (N/A, 20), (N/A), PASSIVE-SCAN
+>>>          (5170 - 5330 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>>>          (5490 - 5730 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>>>          (5735 - 5895 @ 160), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+>>>          (5945 - 7125 @ 320), (N/A, 30), (N/A), AUTO-BW, PASSIVE-SCAN
+>>>
+>>
+>> I added the ath12k list to make sure this has the proper attention.
+>> Since you are building from source, can you please test with the following patch:
+>> https://msgid.link/20250401020840.357-1-quic_kangyang@quicinc.com
+>>
+>> This is in my pending queue.
+>>
+>> /jeff
+>>
+> 
+> Hi Jeff,
+> 
+> No dice on the 6Ghz networks. It fixed up the registration info, but I
+> still don't see any 6Ghz networks. Even from an 'iw wlp99s0 scan'
+> 
+> global
+> country US: DFS-FCC
+>         (902 - 904 @ 2), (N/A, 30), (N/A)
+>         (904 - 920 @ 16), (N/A, 30), (N/A)
+>         (920 - 928 @ 8), (N/A, 30), (N/A)
+>         (2400 - 2472 @ 40), (N/A, 30), (N/A)
+>         (5150 - 5250 @ 80), (N/A, 23), (N/A), AUTO-BW
+>         (5250 - 5350 @ 80), (N/A, 24), (0 ms), DFS, AUTO-BW
+>         (5470 - 5730 @ 160), (N/A, 24), (0 ms), DFS
+>         (5730 - 5850 @ 80), (N/A, 30), (N/A), AUTO-BW
+>         (5850 - 5895 @ 40), (N/A, 27), (N/A), NO-OUTDOOR, AUTO-BW, PASSIVE-SCAN
+>         (5925 - 7125 @ 320), (N/A, 12), (N/A), NO-OUTDOOR, PASSIVE-SCAN
+>         (57240 - 71000 @ 2160), (N/A, 40), (N/A)
+> 
+> phy#0 (self-managed)
+> country US: DFS-FCC
+>         (2402 - 2472 @ 40), (6, 30), (N/A)
+>         (5170 - 5250 @ 80), (6, 24), (N/A), AUTO-BW
+>         (5250 - 5330 @ 80), (6, 24), (0 ms), DFS, AUTO-BW
+>         (5490 - 5730 @ 160), (6, 24), (0 ms), DFS, AUTO-BW
+>         (5735 - 5855 @ 80), (6, 30), (N/A), AUTO-BW
+>         (5855 - 5925 @ 40), (6, 30), (N/A), NO-OUTDOOR, AUTO-BW
+>         (5925 - 7125 @ 320), (N/A, 30), (N/A), NO-OUTDOOR, AUTO-BW
+> 
+> 
 
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp_rx.c | 3 ++-
- drivers/net/wireless/ath/ath12k/hw.c    | 8 ++++++++
- drivers/net/wireless/ath/ath12k/hw.h    | 3 +++
- 3 files changed, 13 insertions(+), 1 deletion(-)
+Test on 6.14.0-rc5-wt-ath+, with the firmware you used.
+I can get 6 GHz AP and connect to it.
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 6bad4e4440f74d5f9a143ef6ef79a8df5c3cdfab..f949cc8cf7543ad195f6d2b5e342d1f1c17c1745 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1006,7 +1006,8 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
- 		return -ENOENT;
- 	}
- 
--	if (!peer->primary_link) {
-+	if (ab->hw_params->dp_primary_link_only &&
-+	    !peer->primary_link) {
- 		spin_unlock_bh(&ab->base_lock);
- 		return 0;
- 	}
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 0ba6aedc8405364f7311871b2f32c2fb35c469ad..73d471bc6efd682d0043c8dcabb6a92de7fa69e6 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -1323,6 +1323,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.ce_ie_addr = NULL,
- 		.ce_remap = NULL,
- 		.bdf_addr_offset = 0,
-+
-+		.dp_primary_link_only = true,
- 	},
- 	{
- 		.name = "wcn7850 hw2.0",
-@@ -1408,6 +1410,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.ce_ie_addr = NULL,
- 		.ce_remap = NULL,
- 		.bdf_addr_offset = 0,
-+
-+		.dp_primary_link_only = false,
- 	},
- 	{
- 		.name = "qcn9274 hw2.0",
-@@ -1489,6 +1493,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.ce_ie_addr = NULL,
- 		.ce_remap = NULL,
- 		.bdf_addr_offset = 0,
-+
-+		.dp_primary_link_only = true,
- 	},
- 	{
- 		.name = "ipq5332 hw1.0",
-@@ -1565,6 +1571,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
- 		.ce_ie_addr = &ath12k_ce_ie_addr_ipq5332,
- 		.ce_remap = &ath12k_ce_remap_ipq5332,
- 		.bdf_addr_offset = 0xC00000,
-+
-+		.dp_primary_link_only = true,
- 	},
- };
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index d4a2e47169d97436a2c7ca88e0204085258df61e..a00d032a4cde16475d2b2e1e1cc500d8dc313fb0 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -232,6 +232,9 @@ struct ath12k_hw_params {
- 	const struct ce_ie_addr *ce_ie_addr;
- 	const struct ce_remap *ce_remap;
- 	u32 bdf_addr_offset;
-+
-+	/* setup REO queue, frag etc only for primary link peer */
-+	bool dp_primary_link_only:1;
- };
- 
- struct ath12k_hw_ops {
+ath12k_pci 0000:03:00.0: fw_version 0x100301e1 fw_build_timestamp 
+2023-12-06 04:05 fw_build_id
+QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
--- 
-2.25.1
+yk@yk-Mayan:~$ sudo iw wls1 scan | tee iw_scan.log:
+BSS 62:03:7f:12:64:64(on wls1) -- associated
+         TSF: 606308271476 usec (7d, 00:25:08)
+         freq: 6275
+         beacon interval: 100 TUs
+         capability: ESS Privacy SpectrumMgmt ShortSlotTime (0x0511)
+         signal: -17.00 dBm
+         last seen: 52 ms ago
+         Information elements from Probe Response frame:
+         SSID: MLO-KANG-6G
+and other 6 GHz APs:
+	SSID: 6G-gxia
+	SSID: NETGEAR97-6G
+	……
+
+
+kernel log:
+[88158.033218] wls1: Inserted STA 62:03:7f:12:64:64
+[88158.033232] wls1: authenticate with 62:03:7f:12:64:64 (local 
+address=00:03:7f:37:12:54)
+[88158.033242] wls1: send auth to 62:03:7f:12:64:64 (try 1/3)
+[88158.041895] wls1: authenticated
+[88158.041914] wls1: moving STA 62:03:7f:12:64:64 to state 2
+[88158.044291] wls1: determined local STA to be EHT, BW limited to 320 MHz
+[88158.045719] wls1: associate with 62:03:7f:12:64:64 (try 1/3)
+[88158.067045] wls1: RX AssocResp from 62:03:7f:12:64:64 (capab=0x511 
+status=0 aid=4)
+[88158.089090] wls1: associated
+
+I can even connect to it by Ubuntu GUI.
+
+Can you update to 6.14.0-rc5-wt-ath+ and have a retry? Also please make 
+sure that your wpa_supplicant/iw support 6 GHz(or directly update to the 
+latest version).
+
+If you still cannot find 6 GHz AP, you can set debug_mask to 0xffffffff 
+to get ath12k logs. Then give it to us.
+
+
+> -Walt
+> 
 
 
