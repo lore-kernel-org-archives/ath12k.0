@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB869C36010
-	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 02:46:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62D15C3601A
+	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 02:46:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References
 	:Message-ID:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LQB/8Xwxn+GI2VQUG0gc9ANTGXkv5eT88f7DvRvlduw=; b=MpWb9aFkP2DWTyNd9MiEclIrVQ
-	zc5+uNxh9/fElDrduXgS7Fl5E3urJlu7ec8H4qNUxEHyXS18LyjE4llYGvZvU2kIkkUtsseGdbHEO
-	1vX65XULD5tcw1yneDUuc0Ol9Q4QPzzW1Lk9+6h44RxoBwaFPSxtQ6q1sxbC8OelFsoN77cNgdpQC
-	lH9SdRCq76xlVsSYoPaqUKI0S3/qPdtpaFj1Vm0lLOr9r8TznK+qObkLg5nqqnFb2v5oJmriCiStk
-	FQ0C0JN8O5BWfSWAgGwaxA8PnGCoD6SFrx3fyA8ib4ICvxkM9coKvsm13JA49JpkK2ASS4SgCt+RF
-	aP67Fh6A==;
+	bh=auf2rTWz9nF4b1B9ipcZv2SB/TXc1xaaoz/erFdslY0=; b=eklr3Bc7XydtKuSXVuK06PJf93
+	fnqcioIdkjVxYT4EbjdcLa8gC0ATBRXjPATxKyJ7J/SuBj4C23CPK3kI/SJOoYRei988/wS2PsX5Z
+	1fZG8WSKAar/KrHRUUWdwUnV9ZqktCkD14D4UAhJif7/L72CgsZ5yfegodlADaIo1dGsDFue2M2Dn
+	SWawtzLfB6gcTU+kL3BvR1RfbF6bSFxXff4DGG4XDRF6wwcgGWcCJOJ1joCAgR+HWCEOiQLpJxj+z
+	wzS9pl4Ywz/x30Mc/oYrYZ9wWakzgOOz6eGAZoVhO/A5lLm6+pO4jOdZ9muVqG1vfIgM5ZmF4DxXR
+	DUPrNBIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzo7f-00000004y8f-2mqU
+	id 1tzo7g-00000004y97-0HF9
 	for ath12k@archiver.kernel.org;
-	Wed, 02 Apr 2025 02:46:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 02 Apr 2025 02:46:36 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzo7c-00000004y6a-48hb
+	id 1tzo7d-00000004y6L-0Pv7
 	for ath12k@lists.infradead.org;
 	Wed, 02 Apr 2025 02:46:34 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 531NfYAg002553;
-	Wed, 2 Apr 2025 02:46:31 GMT
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 531Fh7K2008564;
+	Wed, 2 Apr 2025 02:46:29 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LQB/8Xwxn+GI2VQUG0gc9ANTGXkv5eT88f7DvRvlduw=; b=mp2xI/sFcSpLWYMW
-	XAvZ4e0rVJBM1gJEc9ewk3nmUQWkhcFqMdQAER+H8UvGjCj2Pzl0eoOvcS3Uofue
-	4aPCcvix7jpPH12f8BVDHFbxVg3ROBsVK8PGx9RKANNAHl+DicpIAw1YRKenfvfm
-	j8B46u57BUT/JPRXkLLA5lYkOIb8OVm1nRbvz4Nq0Y/D4OhG6m2HjO9z4poDMXDh
-	t8po0Vt/AdI3q0zWSD+cssNwSQuRxhdcRCJv2k6ZEJVCoB83vSYd7noAcY5Cio12
-	+tq/PXPPISyxIAccp+icGu3N22kHkVwUf/4gh65tSQqtuNLXAYiXBFIt1/Y2hh8m
-	CDA2WA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45pa5bsu3h-1
+	auf2rTWz9nF4b1B9ipcZv2SB/TXc1xaaoz/erFdslY0=; b=nfSjE7/IANrqxPEU
+	Gs6mUIvtZ2zIVS/jVG0LlKrZRl9YvSB3aa5Mvd8ifnoW+qYkz4RcfN+iLuT8nfOA
+	TIPU2pc3cT1mE5EbASfIEoZkLz50ngDt8wKHzbcQNVlBGkN0jZwWDYjwEYoJgzlR
+	q4cTsKHDDlt5GZj/ldo9HRihgIMgWjrk9FK7Bikuo7JjozR5CI/7jLg2+3YmWmKS
+	Td/NBp0XsJyjLoDueLawTTNe2snkAgBCvUUv7YnJjf7Z5FmFgcw35PUliq+Vrd+0
+	sCoShNFoUDem/fkrTib7IaUv7OIU3F5XH8GmommiiFGdZxoe6PA4vb0pA3L9kP7h
+	whR0/Q==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45r1xnmbdj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 02 Apr 2025 02:46:30 +0000 (GMT)
+	Wed, 02 Apr 2025 02:46:29 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5322kUZX006272
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5322kSGN012731
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 2 Apr 2025 02:46:30 GMT
+	Wed, 2 Apr 2025 02:46:28 GMT
 Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 1 Apr 2025
- 19:46:28 -0700
+ 19:46:26 -0700
 From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Wed, 2 Apr 2025 10:45:48 +0800
-Subject: [PATCH ath-next 9/9] wifi: ath12k: support 2 channels for single
- pdev device
+Date: Wed, 2 Apr 2025 10:45:47 +0800
+Subject: [PATCH ath-next 8/9] wifi: ath12k: don't skip non-primary links
+ for WCN7850
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250402-ath12k-wcn7850-mlo-support-v1-9-bad47cf00704@quicinc.com>
+Message-ID: <20250402-ath12k-wcn7850-mlo-support-v1-8-bad47cf00704@quicinc.com>
 References: <20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com>
 In-Reply-To: <20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com>
 To: Johannes Berg <johannes@sipsolutions.net>,
@@ -75,22 +75,22 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1AXIsSK52P7JRn1XWVo6tzMzjXNr8bHj
-X-Authority-Analysis: v=2.4 cv=YqcPR5YX c=1 sm=1 tr=0 ts=67eca507 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=TnHeXv7htJ03pNrsuFYA:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-GUID: B4ehtDyozZv2I4dHiniU_7bgffjtoZ_Y
+X-Proofpoint-ORIG-GUID: B4ehtDyozZv2I4dHiniU_7bgffjtoZ_Y
+X-Authority-Analysis: v=2.4 cv=Qv1e3Uyd c=1 sm=1 tr=0 ts=67eca505 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=JV4BEDbtibSLdtTV1wAA:9 a=QEXdDO2ut3YA:10
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: 1AXIsSK52P7JRn1XWVo6tzMzjXNr8bHj
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-02_01,2025-04-01_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 clxscore=1015
- priorityscore=1501 malwarescore=0 spamscore=0 phishscore=0 impostorscore=0
- suspectscore=0 mlxlogscore=865 bulkscore=0 adultscore=0 lowpriorityscore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
+ mlxscore=0 impostorscore=0 adultscore=0 priorityscore=1501 bulkscore=0
+ phishscore=0 malwarescore=0 mlxlogscore=975 lowpriorityscore=0
+ clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504020017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250401_194633_033017_D88D520C 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20250401_194633_381940_83BAEB69 
+X-CRM114-Status: GOOD (  14.99  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,18 +105,11 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-For single pdev device, radio number of a device is forced as 1 in
-ath12k_wmi_ext_soc_hal_reg_caps_parse(). This leads to ah->num_radio == 1
-and then in ath12k_mac_setup_iface_combinations() we report to
-mac/cfg80211 that only 1 channel is supported. In MLO case, it finally
-results in failing to bring up the second link as it is in another
-channel.
+The primary link check bypasses REO queue setup for non-primary links
+in ath12k_dp_rx_peer_tid_setup(), this works for QCN9274 but breaks
+WCN7850 as WCN7850 needs it to be done for each link peer.
 
-Change num_different_channels to 2 to allow a second link. Since DFS on
-multiple channels are not supported yet, remove radar_detect_widths.
-
-For now WCN7850 is the only single pdev device, so others should not be
-affected.
+Add a new hardware parameter to differentiate them.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
@@ -124,37 +117,79 @@ Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 15 ++++++++++-----
- 1 file changed, 10 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 3 ++-
+ drivers/net/wireless/ath/ath12k/hw.c    | 8 ++++++++
+ drivers/net/wireless/ath/ath12k/hw.h    | 3 +++
+ 3 files changed, 13 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index d1695432168bb3db054f0c65797a2d32413034ad..353f6341e1b96e533bdae5fa5697949b72f00921 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -10915,13 +10915,18 @@ ath12k_mac_setup_radio_iface_comb(struct ath12k *ar,
- 	comb[0].limits = limits;
- 	comb[0].n_limits = n_limits;
- 	comb[0].max_interfaces = max_interfaces;
--	comb[0].num_different_channels = 1;
- 	comb[0].beacon_int_infra_match = true;
- 	comb[0].beacon_int_min_gcd = 100;
--	comb[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
--					BIT(NL80211_CHAN_WIDTH_20) |
--					BIT(NL80211_CHAN_WIDTH_40) |
--					BIT(NL80211_CHAN_WIDTH_80);
-+
-+	if (ar->ab->hw_params->single_pdev_only) {
-+		comb[0].num_different_channels = 2;
-+	} else {
-+		comb[0].num_different_channels = 1;
-+		comb[0].radar_detect_widths = BIT(NL80211_CHAN_WIDTH_20_NOHT) |
-+						BIT(NL80211_CHAN_WIDTH_20) |
-+						BIT(NL80211_CHAN_WIDTH_40) |
-+						BIT(NL80211_CHAN_WIDTH_80);
-+	}
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 6bad4e4440f74d5f9a143ef6ef79a8df5c3cdfab..f949cc8cf7543ad195f6d2b5e342d1f1c17c1745 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1006,7 +1006,8 @@ int ath12k_dp_rx_peer_tid_setup(struct ath12k *ar, const u8 *peer_mac, int vdev_
+ 		return -ENOENT;
+ 	}
  
- 	return 0;
- }
+-	if (!peer->primary_link) {
++	if (ab->hw_params->dp_primary_link_only &&
++	    !peer->primary_link) {
+ 		spin_unlock_bh(&ab->base_lock);
+ 		return 0;
+ 	}
+diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
+index 0ba6aedc8405364f7311871b2f32c2fb35c469ad..73d471bc6efd682d0043c8dcabb6a92de7fa69e6 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.c
++++ b/drivers/net/wireless/ath/ath12k/hw.c
+@@ -1323,6 +1323,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 		.ce_ie_addr = NULL,
+ 		.ce_remap = NULL,
+ 		.bdf_addr_offset = 0,
++
++		.dp_primary_link_only = true,
+ 	},
+ 	{
+ 		.name = "wcn7850 hw2.0",
+@@ -1408,6 +1410,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 		.ce_ie_addr = NULL,
+ 		.ce_remap = NULL,
+ 		.bdf_addr_offset = 0,
++
++		.dp_primary_link_only = false,
+ 	},
+ 	{
+ 		.name = "qcn9274 hw2.0",
+@@ -1489,6 +1493,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 		.ce_ie_addr = NULL,
+ 		.ce_remap = NULL,
+ 		.bdf_addr_offset = 0,
++
++		.dp_primary_link_only = true,
+ 	},
+ 	{
+ 		.name = "ipq5332 hw1.0",
+@@ -1565,6 +1571,8 @@ static const struct ath12k_hw_params ath12k_hw_params[] = {
+ 		.ce_ie_addr = &ath12k_ce_ie_addr_ipq5332,
+ 		.ce_remap = &ath12k_ce_remap_ipq5332,
+ 		.bdf_addr_offset = 0xC00000,
++
++		.dp_primary_link_only = true,
+ 	},
+ };
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
+index d4a2e47169d97436a2c7ca88e0204085258df61e..a00d032a4cde16475d2b2e1e1cc500d8dc313fb0 100644
+--- a/drivers/net/wireless/ath/ath12k/hw.h
++++ b/drivers/net/wireless/ath/ath12k/hw.h
+@@ -232,6 +232,9 @@ struct ath12k_hw_params {
+ 	const struct ce_ie_addr *ce_ie_addr;
+ 	const struct ce_remap *ce_remap;
+ 	u32 bdf_addr_offset;
++
++	/* setup REO queue, frag etc only for primary link peer */
++	bool dp_primary_link_only:1;
+ };
+ 
+ struct ath12k_hw_ops {
 
 -- 
 2.25.1
