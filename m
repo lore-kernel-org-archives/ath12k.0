@@ -4,104 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60C52C3601B
-	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 18:15:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11ADBC28B20
+	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 18:15:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iDxpFyWVw/NSmbzY19vvGJFrlSTyAN/GVhMSHA7vtdI=; b=aXDrUH3qN+sQFpY5QnsN6fslsS
-	+K13mD2Zjn3Q8WZeNULNuGxaSZuLhNKjr/SCp5U50hYl/6XHJ55tHgaV9/c0ihpEDek6nZNOuRcAg
-	vNReOR3k/0dnRcOBoiKVvBtcQYJ1nkhHrpFUXg4/jj9JshR4BTl5AQ9HBLla25WWWsEpg7VQNHPZF
-	/UhPv30fpA+k6E5DUw5/6rTE/HaJONQIGRvqqOJxlLAO0fk7dBTtg9ec3h5V3cvTlUvFywJq8vuQM
-	WxbIVBCGd9HIb8Uo9DF9GyI/zLNoFVCarFXrTYeNuOeENEpYN9iarMtWFsnG2x6DGVd6cXBOvbRjp
-	B6+S0vFg==;
+	bh=m03BhA+Eey2Yr/TfX0IC374Y+t6keO9nkzVIy0TvCT4=; b=np4iUSUHcr3sB+5t4twt5/SHgb
+	Q9KjorKMyoF8ulGsRi4k5oVaw6ozF5q/eY8RBfzIJIgFOc5sPsMxrBEFpkwYHhEnm8yxyOKoK0fe0
+	ekOmaPF+d9u/jmc7Sb/5XoLUDGO2z/x2bl0LnNQkXEkvu+47ELAjH89QNuCtnPKRVmDXxsTC3GN+c
+	0VgK9haoDlqdqJdoq+aQy7lWAK8kU0LVu/xGAQHrrZJMlXdcI/2JlMZQMfZT7TqLtwk2jWkz0KLsu
+	0Ug5eOLQw1ety57G9MBxBliRyUDe32ntdNH2mZAuzdbES9GLSXX6MFz2a6yYOPa1zA8RS2JLBQgYk
+	0yNS9BPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u02cJ-00000006tJk-0XgW
+	id 1u02cK-00000006tLC-3NtV
 	for ath12k@archiver.kernel.org;
-	Wed, 02 Apr 2025 18:15:11 +0000
+	Wed, 02 Apr 2025 18:15:12 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u02cG-00000006tIi-3ybt
+	id 1u02cI-00000006tJW-42K7
 	for ath12k@lists.infradead.org;
-	Wed, 02 Apr 2025 18:15:10 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 532BjmZJ014652
-	for <ath12k@lists.infradead.org>; Wed, 2 Apr 2025 18:15:08 GMT
+	Wed, 02 Apr 2025 18:15:12 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 532E39R8009193
+	for <ath12k@lists.infradead.org>; Wed, 2 Apr 2025 18:15:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=iDxpFyWVw/N
-	SmbzY19vvGJFrlSTyAN/GVhMSHA7vtdI=; b=hd0acpFbvTNNWwsY2ThgglSRN1w
-	QD2llnuTDdteOkoUqv4Yw9wTM4h/u0Q8eqvfgchnBlgjiqS3u1eNZbvW76FjOcn9
-	sd+UkP7cnC7ffwpu8CautwMjTwV+Zbb+1FKQu9Lhkv5Bu1wQhQKpF3kkZ/jcXdK7
-	Bo+vRS689lsN25KCJ5KHclKEVYdmw9Du8qmnUJTbvvNwxik1oOac4vJ8cmJxI0cc
-	8EfJAMbNiQRFHYRsP53TTr1eXX4AOk/D+8i3hOjAKK1EEwu/5XL/LgAovp3A9olL
-	Ch87hX4eQBlwrbwKz4wYAzwkm97NqMRn9ZdWFOruo374T/2hvRphjqvF1uQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45p7tvmcrn-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=m03BhA+Eey2
+	Yr/TfX0IC374Y+t6keO9nkzVIy0TvCT4=; b=UCRmKddXynx9DvMBn0aTozq/4UR
+	LKjOO5bGKd2LhpJ0YmQqzj0D/3qcUmqJzMdIz0lEMejijSOGvh4FFaZxmcD+7qoG
+	bJwW1E4QbgJjAZexF5TX+WW/8Ty8DL+scyoKjWlTxiD+gwA9YBeqga1Vwgq+PN4s
+	pHect1ye0Wp8zqqELA0dWrRhnu0+QuNq3SGEIdUoqKgnTscyx2I5/qRUSTjppknE
+	817E6BNys6JKIevR02QYZCEKlZ5R92Iwo/7G/l+54O4jkbv1ADjq3BXwThIBfiQi
+	GFiH9t7yjEo0n0Bv/dmCPHK3kB+dwnq8/6YMAYbRHnkv8GRosFuTBxgFeSA==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45rxb02a2h-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 02 Apr 2025 18:15:08 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-225974c6272so729645ad.1
-        for <ath12k@lists.infradead.org>; Wed, 02 Apr 2025 11:15:08 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Wed, 02 Apr 2025 18:15:10 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2242ce15cc3so1131305ad.1
+        for <ath12k@lists.infradead.org>; Wed, 02 Apr 2025 11:15:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1743617707; x=1744222507;
+        d=1e100.net; s=20230601; t=1743617709; x=1744222509;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=iDxpFyWVw/NSmbzY19vvGJFrlSTyAN/GVhMSHA7vtdI=;
-        b=MMVd2XM2BjlWBAROzaDvxeVxkTTTxInfpw0zXCHPsyvG8Vz7gD2mYytDlXLzS0WTg/
-         BDHFw3bitE30d3GqqAMnmWflV/EHn/cZrcURafIVL8fhCvXBqwAfCeG//0R3yT//0vFK
-         mmOtNjX4pRU4XH6PyGJlFtFu449rohM5SCoLPK0QjX6eJu9B3Sp8jZ3lMmlw3PD8knUX
-         flKo9uR9HcRPYdjdCJIN5e79P3FN7rCkFr64AEvVNt8fhFXlAqZgeb/aTzTY6rY+PS2q
-         Y60GJwdAAQgt2M2CiBjuEcuavlx64Bm9qPFnJhZeYJTvKtZdKfAOY8a8X/mVCZevPFbV
-         0nSA==
-X-Gm-Message-State: AOJu0YwyHSCTQagxA86pmv7pDheapxDoI1VCqVdafvXauS+60a/3Hvhu
-	+IbvOapwbt5L/fgvSqxBAa34cea29Eu+KC2cMe9UikuY/C2X72acxEgCt4/asoHcTO+drzgjPwm
-	exttlfL2h2srAhiGpxvtCmCoBukEcib+5Gvvl+e+mRbtRBI9S3RqboG2CWWOVdx0GeL+9
-X-Gm-Gg: ASbGncuVnVOd9YjNhV0KsC9crVavdSNDaWIpFtInEL8r3Jb+WSwFV1OS6DHg9G5Oomq
-	Tg2DtoHYx0PDNEGsehgR+cap8+6RVjA+0pspEYhH0nkTPHpJTKcQu3UWvkHs/T7v6tqFH3uD8Mi
-	c9SFvYsTTdQg9SO2iv3iM5Xl+BSYX3wj34YnVNlH8RmPHr8Xz7iBW40AI8L11eme4JvuGVSDGiM
-	oClP06mCg34KWd0FGPOqx3x4VBvac9JuVp7QiKQbWCepPzngVD/LqEIC7KUHNi7rqUZ5XOiDwDu
-	QbMbmKvjVZKEwW/9VAXfBdW3qZQN8HwACaaoRCUeXi5jXNi5IXfv+I6NL4gDidyd/aP8uMC0DbR
-	zP/QajMYk075WQIy+XqoeTLqI2ZiDd5esZw==
-X-Received: by 2002:a17:903:2444:b0:21f:6f33:f96 with SMTP id d9443c01a7336-229765bd1b1mr6413695ad.6.1743617707227;
-        Wed, 02 Apr 2025 11:15:07 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGznKDbtnf0J5Z0Fs0/PJUPpOEL9O7Pr+bGPa/xvJXbXPkVZWz3ruNM9q0leoRIs1sXRUiJtA==
-X-Received: by 2002:a17:903:2444:b0:21f:6f33:f96 with SMTP id d9443c01a7336-229765bd1b1mr6413355ad.6.1743617706761;
-        Wed, 02 Apr 2025 11:15:06 -0700 (PDT)
+        bh=m03BhA+Eey2Yr/TfX0IC374Y+t6keO9nkzVIy0TvCT4=;
+        b=nPnSrVtPKnp1yllhO1/LrQ4oBd0/N/Qo9HNGrr/9vOHT9+aUJqhFNAPquovEoRsgHi
+         4+eeGLG0sGqMjewx7gynFezqyFB4VRI7kelZPBGfBfHCDJZd6tXDwu01XtKD4sKEYhxY
+         hvsd7NC6Z7iyW/4LPGCwNMQ10ojtwpf/0UMzbTa3HG/hifvaCFHqbAymb1rND7wpha2b
+         kI8kLs/XmAEwQVbdRhwNBQzSIMkor2Giw59OTKK49UhR/Gh47WPhEC63WUsvuvm3hnZq
+         DFrIDD8pxklu4OEYdmKn1Q5miIfmJ+CmDOIWblX2EcbmHmvXtNzJIoBVUe2c9rbMOfpQ
+         putA==
+X-Gm-Message-State: AOJu0YwVH1dYVsSbJN/8++PVxGDbtPdC0DQUcJPEaJrAM2zQ+IllW6I1
+	zjzsvgXgi2uB5KYDE0KS9AOltNyYEQwAjaApLoPARKCkjGiYwVogA6H1eIZoVz/1RXCIVFD1Y3h
+	g+JGcuZF89j3dSnyxpu/2bblxiYCEeimPRehm43tM0y6+NsfPiC4jpWjU7eSjTZ53aMH+
+X-Gm-Gg: ASbGncsKsmqgrviusezT1bp5wDkn+HIIONRPgoa3aaoSjDSvhQkx+3ZrivCqUwb+70z
+	yxZLSmSDM0M0oUw3ty4D7ESWryZXpqgSNkZikN3JsNTA/VSrs62w4BY4JvZ0FzNRxsk3e87XEnK
+	AqZ3HPE/rJQhiIEx9pxAIBef7GMRDFoGW09ZIvKPB9MAXhUkVhqZvq+fC+n9/9zerXseFQKJsqT
+	YvxLehKOuFbgVF55h2P+J7BYt3+TH7w2ECbYS4Ay/Nj/TxIntsmBuAyPLBRSSxwijft6f6adJpO
+	lg9F8MF3yOmjCrjVuKfVsNVQVxdC4YVQngh+hagJY8Jki8oS4ksObusAUTIGlm7CoDs3NmhniD4
+	GAOYID6TCwwdDZTpH5QZnTF27Bsf9hnWh0g==
+X-Received: by 2002:a17:903:2a8e:b0:223:4816:3e9e with SMTP id d9443c01a7336-2292f96119cmr238413895ad.13.1743617709229;
+        Wed, 02 Apr 2025 11:15:09 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHE+bCar7mS11SpplOV1+I1khRJyowGdhKycatdsXZAcukRn1PzceNnpaVBBIfUKPBvLyIuxQ==
+X-Received: by 2002:a17:903:2a8e:b0:223:4816:3e9e with SMTP id d9443c01a7336-2292f96119cmr238413475ad.13.1743617708422;
+        Wed, 02 Apr 2025 11:15:08 -0700 (PDT)
 Received: from hu-ppranees-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2291f1cf14csm111689675ad.137.2025.04.02.11.15.05
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2291f1cf14csm111689675ad.137.2025.04.02.11.15.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 02 Apr 2025 11:15:06 -0700 (PDT)
+        Wed, 02 Apr 2025 11:15:08 -0700 (PDT)
 From: P Praneesh <praneesh.p@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next 2/4] wifi: ath12k: Refactor tx descriptor handling in tx completion handler
-Date: Wed,  2 Apr 2025 23:44:52 +0530
-Message-Id: <20250402181454.2699777-3-praneesh.p@oss.qualcomm.com>
+Subject: [PATCH ath-next 3/4] wifi: ath12k: Fix memory leak during extended skb allocation
+Date: Wed,  2 Apr 2025 23:44:53 +0530
+Message-Id: <20250402181454.2699777-4-praneesh.p@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250402181454.2699777-1-praneesh.p@oss.qualcomm.com>
 References: <20250402181454.2699777-1-praneesh.p@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=OIon3TaB c=1 sm=1 tr=0 ts=67ed7eac cx=c_pps a=IZJwPbhc+fLeJZngyXXI0A==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=DEzRtGDzSFLe7Yuc7ZwA:9 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-ORIG-GUID: Puw9hbMX35vt0KE9APxSYA6djSebIf5B
-X-Proofpoint-GUID: Puw9hbMX35vt0KE9APxSYA6djSebIf5B
+X-Proofpoint-ORIG-GUID: HTA_oX1rO3yarZbhyn_e4yqyeWRZ2iZm
+X-Proofpoint-GUID: HTA_oX1rO3yarZbhyn_e4yqyeWRZ2iZm
+X-Authority-Analysis: v=2.4 cv=BavY0qt2 c=1 sm=1 tr=0 ts=67ed7eae cx=c_pps a=JL+w9abYAAE89/QcEU+0QA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=iFgiq4A1vBvqtHBMXJkA:9 a=324X-CrmTo6CU4MGRt3R:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-02_08,2025-04-02_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- mlxlogscore=986 lowpriorityscore=0 malwarescore=0 mlxscore=0 clxscore=1015
- adultscore=0 bulkscore=0 phishscore=0 suspectscore=0 impostorscore=0
- spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504020115
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 phishscore=0
+ impostorscore=0 priorityscore=1501 bulkscore=0 adultscore=0 spamscore=0
+ malwarescore=0 lowpriorityscore=0 mlxscore=0 suspectscore=0 clxscore=1015
+ classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504020116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_111508_992595_1FCDB089 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20250402_111511_004890_76385A5E 
+X-CRM114-Status: GOOD (  17.46  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,174 +116,135 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Current code uses mac_id and msdu parameters in ath12k_dp_tx_free_txbuf()
-and ath12k_dp_tx_process_htt_tx_complete(). Since these parameters are
-already encapsulated by struct ath12k_dp_tx_desc, passing them individually
-results in redundant arguments.
-
-Introduce struct ath12k_tx_desc_params to capture the skb, mac_id, and pass
-it to the corresponding functions. Refactor these functions to use struct
-ath12k_tx_desc_params instead, reducing the number of arguments and improving
-function argument handling efficiency. Additionally, use struct
-ath12k_tx_desc_params in ath12k_dp_tx_htt_tx_complete_buf() and
-ath12k_dp_tx_complete_msdu(), which will be utilized for fetching extended skb
-in a future patch.
+In ath12k_dp_tx(), memory allocated for extended skb is not freed
+properly, causing a memory leak even when the host receives tx
+completion for those skbs. Fix this issue by storing skb_ext_desc
+in the host tx descriptor and using this skb_ext_desc field during
+completion or during ath12k_dp_cc_cleanup().
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: P Praneesh <praneesh.p@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.h    |  5 +++
- drivers/net/wireless/ath/ath12k/dp_tx.c | 42 ++++++++++++-------------
- 2 files changed, 26 insertions(+), 21 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp.c    | 10 +++++++++-
+ drivers/net/wireless/ath/ath12k/dp.h    |  2 ++
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 15 ++++++++++++---
+ 3 files changed, 23 insertions(+), 4 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
+index b1f27c3ac723..34c72a1b5ae1 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.c
++++ b/drivers/net/wireless/ath/ath12k/dp.c
+@@ -1206,11 +1206,19 @@ static void ath12k_dp_cc_cleanup(struct ath12k_base *ab)
+ 			if (!skb)
+ 				continue;
+ 
++			skb_cb = ATH12K_SKB_CB(skb);
++			if (skb_cb->paddr_ext_desc) {
++				dma_unmap_single(ab->dev,
++						 skb_cb->paddr_ext_desc,
++						 tx_desc_info->skb_ext_desc->len,
++						 DMA_TO_DEVICE);
++				dev_kfree_skb_any(tx_desc_info->skb_ext_desc);
++			}
++
+ 			/* if we are unregistering, hw would've been destroyed and
+ 			 * ar is no longer valid.
+ 			 */
+ 			if (!(test_bit(ATH12K_FLAG_UNREGISTERING, &ab->dev_flags))) {
+-				skb_cb = ATH12K_SKB_CB(skb);
+ 				ar = skb_cb->ar;
+ 
+ 				if (atomic_dec_and_test(&ar->dp.num_tx_pending))
 diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 427a87b63dec..e26a9c3477d9 100644
+index e26a9c3477d9..c8e0c70a4d26 100644
 --- a/drivers/net/wireless/ath/ath12k/dp.h
 +++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -300,6 +300,11 @@ struct ath12k_tx_desc_info {
+@@ -295,6 +295,7 @@ struct ath12k_rx_desc_info {
+ struct ath12k_tx_desc_info {
+ 	struct list_head list;
+ 	struct sk_buff *skb;
++	struct sk_buff *skb_ext_desc;
+ 	u32 desc_id; /* Cookie */
+ 	u8 mac_id;
  	u8 pool_id;
+@@ -302,6 +303,7 @@ struct ath12k_tx_desc_info {
+ 
+ struct ath12k_tx_desc_params {
+ 	struct sk_buff *skb;
++	struct sk_buff *skb_ext_desc;
+ 	u8 mac_id;
  };
  
-+struct ath12k_tx_desc_params {
-+	struct sk_buff *skb;
-+	u8 mac_id;
-+};
-+
- struct ath12k_spt_info {
- 	dma_addr_t paddr;
- 	u64 *vaddr;
 diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 03c79becd59a..45f4c8bd78e6 100644
+index 45f4c8bd78e6..ab359483472f 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_tx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -496,12 +496,13 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
- }
- 
- static void ath12k_dp_tx_free_txbuf(struct ath12k_base *ab,
--				    struct sk_buff *msdu, u8 mac_id,
--				    struct dp_tx_ring *tx_ring)
-+				    struct dp_tx_ring *tx_ring,
-+				    struct ath12k_tx_desc_params *desc_params)
+@@ -84,6 +84,7 @@ static void ath12k_dp_tx_release_txbuf(struct ath12k_dp *dp,
+ 				       u8 pool_id)
  {
- 	struct ath12k *ar;
-+	struct sk_buff *msdu = desc_params->skb;
- 	struct ath12k_skb_cb *skb_cb;
--	u8 pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, mac_id);
-+	u8 pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, desc_params->mac_id);
+ 	spin_lock_bh(&dp->tx_desc_lock[pool_id]);
++	tx_desc->skb_ext_desc = NULL;
+ 	list_move_tail(&tx_desc->list, &dp->tx_desc_free_list[pool_id]);
+ 	spin_unlock_bh(&dp->tx_desc_lock[pool_id]);
+ }
+@@ -430,6 +431,7 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 		ti.type = HAL_TCL_DESC_TYPE_EXT_DESC;
  
- 	skb_cb = ATH12K_SKB_CB(msdu);
+ 		skb_cb->paddr_ext_desc = ti.paddr;
++		tx_desc->skb_ext_desc = skb_ext_desc;
+ 	}
+ 
+ 	hal_ring_id = tx_ring->tcl_data_ring.ring_id;
+@@ -508,9 +510,11 @@ static void ath12k_dp_tx_free_txbuf(struct ath12k_base *ab,
  	ar = ab->pdevs[pdev_id].ar;
-@@ -519,11 +520,12 @@ static void ath12k_dp_tx_free_txbuf(struct ath12k_base *ab,
  
- static void
- ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
--				 struct sk_buff *msdu,
-+				 struct ath12k_tx_desc_params *desc_params,
- 				 struct dp_tx_ring *tx_ring,
- 				 struct ath12k_dp_htt_wbm_tx_status *ts)
- {
- 	struct ieee80211_tx_info *info;
-+	struct sk_buff *msdu = desc_params->skb;
- 	struct ath12k_skb_cb *skb_cb;
- 	struct ath12k *ar;
+ 	dma_unmap_single(ab->dev, skb_cb->paddr, msdu->len, DMA_TO_DEVICE);
+-	if (skb_cb->paddr_ext_desc)
++	if (skb_cb->paddr_ext_desc) {
+ 		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
+ 				 sizeof(struct hal_tx_msdu_ext_desc), DMA_TO_DEVICE);
++		dev_kfree_skb_any(desc_params->skb_ext_desc);
++	}
  
-@@ -561,10 +563,9 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
- }
+ 	ieee80211_free_txskb(ar->ah->hw, msdu);
  
- static void
--ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab,
--				     void *desc, u8 mac_id,
--				     struct sk_buff *msdu,
--				     struct dp_tx_ring *tx_ring)
-+ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab, void *desc,
-+				     struct dp_tx_ring *tx_ring,
-+				     struct ath12k_tx_desc_params *desc_params)
- {
- 	struct htt_tx_wbm_completion *status_desc;
- 	struct ath12k_dp_htt_wbm_tx_status ts = {0};
-@@ -580,13 +581,13 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab,
- 		ts.acked = (wbm_status == HAL_WBM_REL_HTT_TX_COMP_STATUS_OK);
- 		ts.ack_rssi = le32_get_bits(status_desc->info2,
- 					    HTT_TX_WBM_COMP_INFO2_ACK_RSSI);
--		ath12k_dp_tx_htt_tx_complete_buf(ab, msdu, tx_ring, &ts);
-+		ath12k_dp_tx_htt_tx_complete_buf(ab, desc_params, tx_ring, &ts);
- 		break;
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_DROP:
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_TTL:
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_REINJ:
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_INSPECT:
--		ath12k_dp_tx_free_txbuf(ab, msdu, mac_id, tx_ring);
-+		ath12k_dp_tx_free_txbuf(ab, tx_ring, desc_params);
- 		break;
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_MEC_NOTIFY:
- 		/* This event is to be handled only when the driver decides to
-@@ -718,13 +719,14 @@ static void ath12k_dp_tx_update_txcompl(struct ath12k *ar, struct hal_tx_status
- }
+@@ -538,9 +542,11 @@ ath12k_dp_tx_htt_tx_complete_buf(struct ath12k_base *ab,
+ 		wake_up(&ar->dp.tx_empty_waitq);
  
- static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
--				       struct sk_buff *msdu,
-+				       struct ath12k_tx_desc_params *desc_params,
- 				       struct hal_tx_status *ts)
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ath12k_hw *ah = ar->ah;
- 	struct ieee80211_tx_info *info;
- 	struct ath12k_skb_cb *skb_cb;
-+	struct sk_buff *msdu = desc_params->skb;
+ 	dma_unmap_single(ab->dev, skb_cb->paddr, msdu->len, DMA_TO_DEVICE);
+-	if (skb_cb->paddr_ext_desc)
++	if (skb_cb->paddr_ext_desc) {
+ 		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
+ 				 sizeof(struct hal_tx_msdu_ext_desc), DMA_TO_DEVICE);
++		dev_kfree_skb_any(desc_params->skb_ext_desc);
++	}
  
- 	if (WARN_ON_ONCE(ts->buf_rel_source != HAL_WBM_REL_SRC_MODULE_TQM)) {
- 		/* Must not happen */
-@@ -843,11 +845,11 @@ void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id)
- 	int hal_ring_id = dp->tx_ring[ring_id].tcl_comp_ring.ring_id;
- 	struct hal_srng *status_ring = &ab->hal.srng_list[hal_ring_id];
- 	struct ath12k_tx_desc_info *tx_desc = NULL;
--	struct sk_buff *msdu;
- 	struct hal_tx_status ts = { 0 };
-+	struct ath12k_tx_desc_params desc_params;
- 	struct dp_tx_ring *tx_ring = &dp->tx_ring[ring_id];
- 	struct hal_wbm_release_ring *desc;
--	u8 mac_id, pdev_id;
-+	u8 pdev_id;
- 	u64 desc_va;
+ 	memset(&info->status, 0, sizeof(info->status));
  
- 	spin_lock_bh(&status_ring->lock);
-@@ -901,28 +903,26 @@ void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id)
- 			continue;
- 		}
+@@ -736,9 +742,11 @@ static void ath12k_dp_tx_complete_msdu(struct ath12k *ar,
+ 	skb_cb = ATH12K_SKB_CB(msdu);
  
--		msdu = tx_desc->skb;
--		mac_id = tx_desc->mac_id;
-+		desc_params.mac_id = tx_desc->mac_id;
-+		desc_params.skb = tx_desc->skb;
+ 	dma_unmap_single(ab->dev, skb_cb->paddr, msdu->len, DMA_TO_DEVICE);
+-	if (skb_cb->paddr_ext_desc)
++	if (skb_cb->paddr_ext_desc) {
+ 		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
+ 				 sizeof(struct hal_tx_msdu_ext_desc), DMA_TO_DEVICE);
++		dev_kfree_skb_any(desc_params->skb_ext_desc);
++	}
+ 
+ 	rcu_read_lock();
+ 
+@@ -905,6 +913,7 @@ void ath12k_dp_tx_completion_handler(struct ath12k_base *ab, int ring_id)
+ 
+ 		desc_params.mac_id = tx_desc->mac_id;
+ 		desc_params.skb = tx_desc->skb;
++		desc_params.skb_ext_desc = tx_desc->skb_ext_desc;
  
  		/* Release descriptor as soon as extracting necessary info
  		 * to reduce contention
- 		 */
- 		ath12k_dp_tx_release_txbuf(dp, tx_desc, tx_desc->pool_id);
- 		if (ts.buf_rel_source == HAL_WBM_REL_SRC_MODULE_FW) {
--			ath12k_dp_tx_process_htt_tx_complete(ab,
--							     (void *)tx_status,
--							     mac_id, msdu,
--							     tx_ring);
-+			ath12k_dp_tx_process_htt_tx_complete(ab, (void *)tx_status,
-+							     tx_ring, &desc_params);
- 			continue;
- 		}
- 
--		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, mac_id);
-+		pdev_id = ath12k_hw_mac_id_to_pdev_id(ab->hw_params, desc_params.mac_id);
- 		ar = ab->pdevs[pdev_id].ar;
- 
- 		if (atomic_dec_and_test(&ar->dp.num_tx_pending))
- 			wake_up(&ar->dp.tx_empty_waitq);
- 
--		ath12k_dp_tx_complete_msdu(ar, msdu, &ts);
-+		ath12k_dp_tx_complete_msdu(ar, &desc_params, &ts);
- 	}
- }
- 
 -- 
 2.34.1
 
