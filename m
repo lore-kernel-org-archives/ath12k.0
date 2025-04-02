@@ -4,86 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5A93C36017
-	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 15:30:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACE42C28B20
+	for <ath12k@archiver.kernel.org>; Wed,  2 Apr 2025 15:37:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+emXAJ49E6ufJVe/gaCXSnwQaHee/5JMOHactXrBVsA=; b=Vp+6FVAKTmnm4y5mldYznnlmrb
-	dpDUWAZu7XvTXGnnoQuA2eKWXB0IeKlGEmT19hG+iYye8SaqeEDAY6lwHKSMQLU/hG+kw9DLjcTCs
-	NGPqGlqjg4IeIQI06cJ1l/bEl4BjYfqURSXeRGUtO3GhgGmuUbd7Fjlyf0dIDeGdwvD3BF/3oFFMJ
-	MhHPflwPX5Wb+5I2DnCDMSY3ZpQ7UpAlom/CBZphHwx3lqmj7/4Gl1xnqVLsOhuFrrP/e5FuXMKh+
-	8bYwVFVZrujNEOeJO4185d+KtrjdLiSGGAMfr3Ihna6i70bB8ZBTo/l5R/Xo9wH3Y07wtPz+5c+ws
-	cUR9ccnw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=7cCFCUrQHC5JOqrvRDn37HMRKvypTTEHlrfD0rJZRAk=; b=F9qlCwgayOX/UoBiJEACQWgihX
+	nZPPt7aEZfQ3s9Y3VVyAxdlf5sDDSJRsxQgVZYDsBWtp7GwTycAU1mg4pUFFsCS3EhV/La/p9AGnt
+	G6+CB6CO8lNv724SW6NrOlXd4tCen42ZTxF/7cgs2mN5ii45orkd9jJV86wspBSbWUGs/WWfsP4s8
+	ljIXrsnTFiRqCQ2ZydL6A2IoHcsUu7/ncSRe/2Q41mz2xZPCbG0XJeWQogeeyW6+iQ7+4A75K28Bv
+	hrthkdTQ4jGg9gej7xJIOfNcwItr3OmgLw2ldtGaje4NGE+J9nl8rGU51HNmAiX6VDN/L5mceYTyn
+	GsuOTrXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u002i-00000006WMg-1dmZ
+	id 1u00A9-00000006XXh-1s1O
 	for ath12k@archiver.kernel.org;
-	Wed, 02 Apr 2025 15:30:16 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Wed, 02 Apr 2025 15:37:57 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzzyX-00000006VmM-1vix
+	id 1u008F-00000006XK8-0rj2
 	for ath12k@lists.infradead.org;
-	Wed, 02 Apr 2025 15:25:58 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 532E39CQ009193;
-	Wed, 2 Apr 2025 15:25:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=+emXAJ49E6ufJVe/gaCXSnwQ
-	aHee/5JMOHactXrBVsA=; b=iulTPzdxZ+C4aNnSE0Y9ZweiSTYD+fcd66n8lL11
-	4tpHnJhJcM/Lja4DiHlIPLe20WjMZkFlhuRFG1M2Ikv9RTwCqnvzZBwpO5xhwi4f
-	Lfs6qt1lkcdTiabdw9OvZ/wIBNwf72JLy7lI7UKP9PyKIZFKJktEOZn3xjCTwqfe
-	n2fBQ0BkBhRDQBnQVg9BgV3/IcBdvoqKo0HfmHrDPZXmIE8l7xfuYo4Yydb68pH5
-	aK8T2aazgdZho3HQ4JD+FEKmu3jcAPlHfgS56FSNjM1JIssSm0enhAuzcFm4HpwY
-	VGL179TgVKKUo0Fh6ImTDksOfzeFTYdu3dg9F8WpTskXKQ==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45rxb01tpn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 02 Apr 2025 15:25:56 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 532FPuaQ013083
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 2 Apr 2025 15:25:56 GMT
-Received: from hu-nithp-blr.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 2 Apr 2025 08:25:54 -0700
-From: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Sriram R <quic_srirrama@quicinc.com>,
-        Nithyanantham Paramasivam <quic_nithp@quicinc.com>
-Subject: [PATCH ath-next v4 1/3] wifi: ath12k: Fix the enabling of REO queue lookup table feature
-Date: Wed, 2 Apr 2025 20:55:27 +0530
-Message-ID: <20250402152529.1649402-2-quic_nithp@quicinc.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20250402152529.1649402-1-quic_nithp@quicinc.com>
-References: <20250402152529.1649402-1-quic_nithp@quicinc.com>
+	Wed, 02 Apr 2025 15:36:00 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 532FGjqW027752
+	for <ath12k@lists.infradead.org>; Wed, 2 Apr 2025 15:35:57 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	7cCFCUrQHC5JOqrvRDn37HMRKvypTTEHlrfD0rJZRAk=; b=m4QHJivwBPIOHNLy
+	9WzPHeVEyFjmJbwqYDVwhygb8SNLqu4snNMymDHDzlIx7fgRI/JWL7mOesrl7hpx
+	kOlhqXUPG8dDfikhb9J3NFi7LqbA4+srH1WEy0T29+mjAtEHZy8m+iL3XMvlmyMU
+	Vmr7otsj0ZnY/7Zyb1sSI4BIRG/HuPYTVY5IjEDZC4CudRzd+UI6dZXa+fA8g5h3
+	BzFHScH83z++166yAi36ONymirK14WARwxNjGacj2A2aWJk9vQDo0Kb7dJe6hFpT
+	g73mh/PxPs+ujb8yAvsqCc+BVIbbuWh9KxDcCEmAQ2/6wAA6xndADj0KNTbn3/Jf
+	Kfo1Eg==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ryhfsms7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Wed, 02 Apr 2025 15:35:57 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2242ade807fso35266595ad.2
+        for <ath12k@lists.infradead.org>; Wed, 02 Apr 2025 08:35:57 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1743608156; x=1744212956;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=7cCFCUrQHC5JOqrvRDn37HMRKvypTTEHlrfD0rJZRAk=;
+        b=kkxGhcGpr8nIvQVa5/Fogaf/bX4myViBrOsRevQY/3tY5eaoZXge766NGy08fvG3Qr
+         2VXfVtSQjw/NpebqmgXP4pgsjBxZpC4SFyXUENMJi1iuAorSTALcsdofv7Y2wlfPKyeX
+         jXADWhZaNlWRkrMB7hNLdOH0kYoi1zFKUTKDeOVSZ6HPBhQ1GpOI2+I6Nntvh/3h/I0e
+         E15q/nZg/dbcepmsE3SoL5G1ZYkhrqUFiWLE6BUSezn1NXHGkfEJ3ZeYHT3nd5dsY5rg
+         TkAixHc4Z/JGVL/ArziOD3bgM7JqLPpHD1DMePAU1/+mWHeHa5omTv41JpZpjaaWF4VT
+         eJ7g==
+X-Forwarded-Encrypted: i=1; AJvYcCVlEjyP7AhMSWgL/hBoj890JNnt8kgxQbUuKF7ilPblD7v0VeqOds6EJYy3cOg/g6Az3Ooajio=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyQmkcIT2gvNe1G4KkW+TQiNkRTKdSr4N/2/tgb7N68KwY3ajVa
+	591VNe4bTkDzxW5AeOIoEjb5jhIqi8SdwNgvB/m1erfG60jTkaxTopphQvqg/tAr77FgoGY3YFX
+	zNTkba8YNgj1Q5NwsOqf/jSlC/cW59Fhyezb+kWu2hSMaTwvafXbazKxxEmKg
+X-Gm-Gg: ASbGncvfa1Q8OjT9naqdaxRv945xF7p3oDEkayP4BgvlcrcPV9Vct/ccHhDikiH/HJ9
+	V7V5C3YYQzKVWwyzM3sAdkS1wSb4UulSsnnLrsbcyH0pUFNoY51aODPSE5odUll9OubWVs0n8C/
+	Di7+2SKf4AFMUyIDED6gmNxAakROFtbqRNbinMo19uMg/soxVdbNR20nKWzfD+n9bJlzz+PC5RJ
+	VAFae87QQMhwD9c5CkPvjd6RIf81hWWzEtj45mNzulcr7T1N+517rL1JNTfxdBWLVpIxy9/K6nu
+	j95/FiG6jrMMQrB4JYl2YJF2wyk2Y2MeZJ+vOw2eXJp6FP466bDcACRLOd1U08k=
+X-Received: by 2002:a17:902:d548:b0:223:6254:b4ba with SMTP id d9443c01a7336-2292f961fefmr220401345ad.13.1743608156229;
+        Wed, 02 Apr 2025 08:35:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEXlf0SUPXiq4h4Kpph5+X3KLRzaw+VTHrDKprYrjJRtQdekEXjhvosj0UnEAz+L/WLG5KlHg==
+X-Received: by 2002:a17:902:d548:b0:223:6254:b4ba with SMTP id d9443c01a7336-2292f961fefmr220401105ad.13.1743608155847;
+        Wed, 02 Apr 2025 08:35:55 -0700 (PDT)
+Received: from [192.168.225.142] ([157.49.201.59])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2291eedfde5sm109783975ad.78.2025.04.02.08.35.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 02 Apr 2025 08:35:55 -0700 (PDT)
+Message-ID: <13fc2b7b-9810-d4ee-8b8e-f0e44a7d6f6a@oss.qualcomm.com>
+Date: Wed, 2 Apr 2025 21:05:51 +0530
 MIME-Version: 1.0
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: zZJJx0BG6P1iNvUmtktckLpCCL-RAUsu
-X-Proofpoint-GUID: zZJJx0BG6P1iNvUmtktckLpCCL-RAUsu
-X-Authority-Analysis: v=2.4 cv=BavY0qt2 c=1 sm=1 tr=0 ts=67ed5704 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=dhpUuReOw4GaK_-c5ysA:9 a=TjNXssC_j7lpFel5tvFf:22
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH ath-next v4 1/3] wifi: ath12k: Fix the enabling of REO
+ queue lookup table feature
+Content-Language: en-US
+To: Nithyanantham Paramasivam <quic_nithp@quicinc.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Sriram R <quic_srirrama@quicinc.com>
+References: <20250402152529.1649402-1-quic_nithp@quicinc.com>
+ <20250402152529.1649402-2-quic_nithp@quicinc.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250402152529.1649402-2-quic_nithp@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: exDQ5qwe98ELdULlQeYN1PBnViNL2MSD
+X-Authority-Analysis: v=2.4 cv=RrfFLDmK c=1 sm=1 tr=0 ts=67ed595d cx=c_pps a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=HMRESTvIlCqp6qiEfvMpsg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=FjUdVDXw5NPAVZ0_mVgA:9 a=QEXdDO2ut3YA:10
+ a=GvdueXVYPmCkWapjIL-Q:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: exDQ5qwe98ELdULlQeYN1PBnViNL2MSD
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-02_06,2025-04-02_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 phishscore=0
- impostorscore=0 priorityscore=1501 bulkscore=0 adultscore=11 spamscore=0
- malwarescore=0 lowpriorityscore=0 mlxscore=0 suspectscore=0 clxscore=1015
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504020097
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 malwarescore=0
+ mlxscore=0 bulkscore=0 spamscore=0 priorityscore=1501 suspectscore=0
+ impostorscore=0 phishscore=0 mlxlogscore=848 clxscore=1015
+ lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504020099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_082557_511162_B9AD1E51 
-X-CRM114-Status: GOOD (  22.30  )
+X-CRM114-CacheID: sfid-20250402_083559_401915_7B9CE449 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,301 +125,24 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Sriram R <quic_srirrama@quicinc.com>
 
-Instead of storing the REO queue address inside peer entries, REO
-hardware module prefers them to be stored in SRAM which could be
-directly accessed by REO using peer_ID/TID based lookup table
-mechanism.
 
-Fix the enabling of the REO queue lookup table(LUT) feature by
-configuring the LUT address information in the REO hardware register
-and setting the host service flags.
+On 4/2/2025 8:55 PM, Nithyanantham Paramasivam wrote:
+> From: Sriram R <quic_srirrama@quicinc.com>
+> 
+> Instead of storing the REO queue address inside peer entries, REO
+> hardware module prefers them to be stored in SRAM which could be
+> directly accessed by REO using peer_ID/TID based lookup table
+> mechanism.
+> 
+> Fix the enabling of the REO queue lookup table(LUT) feature by
+> configuring the LUT address information in the REO hardware register
+> and setting the host service flags.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
+> Signed-off-by: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Sriram R <quic_srirrama@quicinc.com>
-Signed-off-by: Nithyanantham Paramasivam <quic_nithp@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/dp.c    | 77 +++++++++++++++++--------
- drivers/net/wireless/ath/ath12k/dp.h    |  5 +-
- drivers/net/wireless/ath/ath12k/dp_rx.c | 10 +++-
- drivers/net/wireless/ath/ath12k/hal.h   |  6 ++
- drivers/net/wireless/ath/ath12k/hw.c    |  2 +
- drivers/net/wireless/ath/ath12k/hw.h    |  3 +
- drivers/net/wireless/ath/ath12k/wmi.c   |  8 ++-
- drivers/net/wireless/ath/ath12k/wmi.h   |  1 +
- 8 files changed, 83 insertions(+), 29 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/dp.c b/drivers/net/wireless/ath/ath12k/dp.c
-index b1f27c3ac723..80b9f4594dee 100644
---- a/drivers/net/wireless/ath/ath12k/dp.c
-+++ b/drivers/net/wireless/ath/ath12k/dp.c
-@@ -1261,22 +1261,24 @@ static void ath12k_dp_reoq_lut_cleanup(struct ath12k_base *ab)
- 	if (!ab->hw_params->reoq_lut_support)
- 		return;
- 
--	if (dp->reoq_lut.vaddr) {
-+	if (dp->reoq_lut.vaddr_unaligned) {
- 		ath12k_hif_write32(ab,
- 				   HAL_SEQ_WCSS_UMAC_REO_REG +
- 				   HAL_REO1_QDESC_LUT_BASE0(ab), 0);
--		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
--		dp->reoq_lut.vaddr = NULL;
-+		dma_free_coherent(ab->dev, dp->reoq_lut.size,
-+				  dp->reoq_lut.vaddr_unaligned,
-+				  dp->reoq_lut.paddr_unaligned);
-+		dp->reoq_lut.vaddr_unaligned = NULL;
- 	}
- 
--	if (dp->ml_reoq_lut.vaddr) {
-+	if (dp->ml_reoq_lut.vaddr_unaligned) {
- 		ath12k_hif_write32(ab,
- 				   HAL_SEQ_WCSS_UMAC_REO_REG +
- 				   HAL_REO1_QDESC_LUT_BASE1(ab), 0);
--		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--				  dp->ml_reoq_lut.vaddr, dp->ml_reoq_lut.paddr);
--		dp->ml_reoq_lut.vaddr = NULL;
-+		dma_free_coherent(ab->dev, dp->ml_reoq_lut.size,
-+				  dp->ml_reoq_lut.vaddr_unaligned,
-+				  dp->ml_reoq_lut.paddr_unaligned);
-+		dp->ml_reoq_lut.vaddr_unaligned = NULL;
- 	}
- }
- 
-@@ -1608,39 +1610,66 @@ static int ath12k_dp_cc_init(struct ath12k_base *ab)
- 	return ret;
- }
- 
-+static int ath12k_dp_alloc_reoq_lut(struct ath12k_base *ab,
-+				    struct ath12k_reo_q_addr_lut *lut)
-+{
-+	lut->size =  DP_REOQ_LUT_SIZE + HAL_REO_QLUT_ADDR_ALIGN - 1;
-+	lut->vaddr_unaligned = dma_alloc_coherent(ab->dev, lut->size,
-+						  &lut->paddr_unaligned,
-+						  GFP_KERNEL | __GFP_ZERO);
-+	if (!lut->vaddr_unaligned)
-+		return -ENOMEM;
-+
-+	lut->vaddr = PTR_ALIGN(lut->vaddr_unaligned, HAL_REO_QLUT_ADDR_ALIGN);
-+	lut->paddr = lut->paddr_unaligned +
-+		     ((unsigned long)lut->vaddr - (unsigned long)lut->vaddr_unaligned);
-+	return 0;
-+}
-+
- static int ath12k_dp_reoq_lut_setup(struct ath12k_base *ab)
- {
- 	struct ath12k_dp *dp = &ab->dp;
-+	u32 val;
-+	int ret;
- 
- 	if (!ab->hw_params->reoq_lut_support)
- 		return 0;
- 
--	dp->reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
--						DP_REOQ_LUT_SIZE,
--						&dp->reoq_lut.paddr,
--						GFP_KERNEL | __GFP_ZERO);
--	if (!dp->reoq_lut.vaddr) {
-+	ret = ath12k_dp_alloc_reoq_lut(ab, &dp->reoq_lut);
-+	if (ret) {
- 		ath12k_warn(ab, "failed to allocate memory for reoq table");
--		return -ENOMEM;
-+		return ret;
- 	}
- 
--	dp->ml_reoq_lut.vaddr = dma_alloc_coherent(ab->dev,
--						   DP_REOQ_LUT_SIZE,
--						   &dp->ml_reoq_lut.paddr,
--						   GFP_KERNEL | __GFP_ZERO);
--	if (!dp->ml_reoq_lut.vaddr) {
-+	ret = ath12k_dp_alloc_reoq_lut(ab, &dp->ml_reoq_lut);
-+	if (ret) {
- 		ath12k_warn(ab, "failed to allocate memory for ML reoq table");
--		dma_free_coherent(ab->dev, DP_REOQ_LUT_SIZE,
--				  dp->reoq_lut.vaddr, dp->reoq_lut.paddr);
--		dp->reoq_lut.vaddr = NULL;
--		return -ENOMEM;
-+		dma_free_coherent(ab->dev, dp->reoq_lut.size,
-+				  dp->reoq_lut.vaddr_unaligned,
-+				  dp->reoq_lut.paddr_unaligned);
-+		dp->reoq_lut.vaddr_unaligned = NULL;
-+		return ret;
- 	}
- 
-+	/* Bits in the register have address [39:8] LUT base address to be
-+	 * allocated such that LSBs are assumed to be zero. Also, current
-+	 * design supports paddr upto 4 GB max hence it fits in 32 bit register only
-+	 */
-+
- 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE0(ab),
--			   dp->reoq_lut.paddr);
-+			   dp->reoq_lut.paddr >> 8);
-+
- 	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_LUT_BASE1(ab),
- 			   dp->ml_reoq_lut.paddr >> 8);
- 
-+	val = ath12k_hif_read32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_ADDR(ab));
-+
-+	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_ADDR(ab),
-+			   val | HAL_REO_QDESC_ADDR_READ_LUT_ENABLE);
-+
-+	ath12k_hif_write32(ab, HAL_SEQ_WCSS_UMAC_REO_REG + HAL_REO1_QDESC_MAX_PEERID(ab),
-+			   HAL_REO_QDESC_MAX_PEERID);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 427a87b63dec..e8dbba0c3bb7 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -311,8 +311,11 @@ struct ath12k_reo_queue_ref {
- } __packed;
- 
- struct ath12k_reo_q_addr_lut {
--	dma_addr_t paddr;
-+	u32 *vaddr_unaligned;
- 	u32 *vaddr;
-+	dma_addr_t paddr_unaligned;
-+	dma_addr_t paddr;
-+	u32 size;
- };
- 
- struct ath12k_dp {
-diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 66603e9c154b..81e036f1d70f 100644
---- a/drivers/net/wireless/ath/ath12k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -3242,8 +3242,14 @@ static int ath12k_dp_rx_h_defrag_reo_reinject(struct ath12k *ar,
- 	reo_ent_ring->rx_mpdu_info.peer_meta_data =
- 		reo_dest_ring->rx_mpdu_info.peer_meta_data;
- 
--	reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
--	queue_addr_hi = upper_32_bits(rx_tid->paddr);
-+	if (ab->hw_params->reoq_lut_support) {
-+		reo_ent_ring->queue_addr_lo = reo_dest_ring->rx_mpdu_info.peer_meta_data;
-+		queue_addr_hi = 0;
-+	} else {
-+		reo_ent_ring->queue_addr_lo = cpu_to_le32(lower_32_bits(rx_tid->paddr));
-+		queue_addr_hi = upper_32_bits(rx_tid->paddr);
-+	}
-+
- 	reo_ent_ring->info0 = le32_encode_bits(queue_addr_hi,
- 					       HAL_REO_ENTR_RING_INFO0_QUEUE_ADDR_HI) |
- 			      le32_encode_bits(dst_ind,
-diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
-index 9f12ed84a653..76bb095c62e6 100644
---- a/drivers/net/wireless/ath/ath12k/hal.h
-+++ b/drivers/net/wireless/ath/ath12k/hal.h
-@@ -22,6 +22,7 @@ struct ath12k_base;
- #define HAL_MAX_AVAIL_BLK_RES			3
- 
- #define HAL_RING_BASE_ALIGN	8
-+#define HAL_REO_QLUT_ADDR_ALIGN 256
- 
- #define HAL_WBM_IDLE_SCATTER_BUF_SIZE_MAX	32704
- /* TODO: Check with hw team on the supported scatter buf size */
-@@ -40,6 +41,7 @@ struct ath12k_base;
- #define HAL_OFFSET_FROM_HP_TO_TP		4
- 
- #define HAL_SHADOW_REG(x) (HAL_SHADOW_BASE_ADDR + (4 * (x)))
-+#define HAL_REO_QDESC_MAX_PEERID		8191
- 
- /* WCSS Relative address */
- #define HAL_SEQ_WCSS_CMEM_OFFSET		0x00100000
-@@ -141,6 +143,8 @@ struct ath12k_base;
- #define HAL_REO1_DEST_RING_CTRL_IX_1		0x00000008
- #define HAL_REO1_DEST_RING_CTRL_IX_2		0x0000000c
- #define HAL_REO1_DEST_RING_CTRL_IX_3		0x00000010
-+#define HAL_REO1_QDESC_ADDR(ab)		((ab)->hw_params->regs->hal_reo1_qdesc_addr)
-+#define HAL_REO1_QDESC_MAX_PEERID(ab)	((ab)->hw_params->regs->hal_reo1_qdesc_max_peerid)
- #define HAL_REO1_SW_COOKIE_CFG0(ab)	((ab)->hw_params->regs->hal_reo1_sw_cookie_cfg0)
- #define HAL_REO1_SW_COOKIE_CFG1(ab)	((ab)->hw_params->regs->hal_reo1_sw_cookie_cfg1)
- #define HAL_REO1_QDESC_LUT_BASE0(ab)	((ab)->hw_params->regs->hal_reo1_qdesc_lut_base0)
-@@ -328,6 +332,8 @@ struct ath12k_base;
- #define HAL_REO1_SW_COOKIE_CFG_ALIGN			BIT(18)
- #define HAL_REO1_SW_COOKIE_CFG_ENABLE			BIT(19)
- #define HAL_REO1_SW_COOKIE_CFG_GLOBAL_ENABLE		BIT(20)
-+#define HAL_REO_QDESC_ADDR_READ_LUT_ENABLE		BIT(7)
-+#define HAL_REO_QDESC_ADDR_READ_CLEAR_QDESC_ARRAY	BIT(6)
- 
- /* CE ring bit field mask and shift */
- #define HAL_CE_DST_R0_DEST_CTRL_MAX_LEN			GENMASK(15, 0)
-diff --git a/drivers/net/wireless/ath/ath12k/hw.c b/drivers/net/wireless/ath/ath12k/hw.c
-index 0ba6aedc8405..1d1a59819bbe 100644
---- a/drivers/net/wireless/ath/ath12k/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/hw.c
-@@ -997,6 +997,8 @@ static const struct ath12k_hw_regs qcn9274_v2_regs = {
- 	.hal_reo1_sw_cookie_cfg1 = 0x00000070,
- 	.hal_reo1_qdesc_lut_base0 = 0x00000074,
- 	.hal_reo1_qdesc_lut_base1 = 0x00000078,
-+	.hal_reo1_qdesc_addr = 0x0000007c,
-+	.hal_reo1_qdesc_max_peerid = 0x00000088,
- 	.hal_reo1_ring_base_lsb = 0x00000500,
- 	.hal_reo1_ring_base_msb = 0x00000504,
- 	.hal_reo1_ring_id = 0x00000508,
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index d4a2e47169d9..a9fc24074c9f 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -311,6 +311,9 @@ struct ath12k_hw_regs {
- 
- 	u32 hal_tcl_status_ring_base_lsb;
- 
-+	u32 hal_reo1_qdesc_addr;
-+	u32 hal_reo1_qdesc_max_peerid;
-+
- 	u32 hal_wbm_idle_ring_base_lsb;
- 	u32 hal_wbm_idle_ring_misc_addr;
- 	u32 hal_wbm_r0_idle_list_cntl_addr;
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index c8248675354c..00b3c0f8741c 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -3684,7 +3684,8 @@ ath12k_fill_band_to_mac_param(struct ath12k_base  *soc,
- }
- 
- static void
--ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cfg,
-+ath12k_wmi_copy_resource_config(struct ath12k_base *ab,
-+				struct ath12k_wmi_resource_config_params *wmi_cfg,
- 				struct ath12k_wmi_resource_config_arg *tg_cfg)
- {
- 	wmi_cfg->num_vdevs = cpu_to_le32(tg_cfg->num_vdevs);
-@@ -3751,6 +3752,9 @@ ath12k_wmi_copy_resource_config(struct ath12k_wmi_resource_config_params *wmi_cf
- 					   WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION);
- 	wmi_cfg->host_service_flags = cpu_to_le32(tg_cfg->is_reg_cc_ext_event_supported <<
- 				WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT);
-+	if (ab->hw_params->reoq_lut_support)
-+		wmi_cfg->host_service_flags |=
-+			cpu_to_le32(1 << WMI_RSRC_CFG_HOST_SVC_FLAG_REO_QREF_SUPPORT_BIT);
- 	wmi_cfg->ema_max_vap_cnt = cpu_to_le32(tg_cfg->ema_max_vap_cnt);
- 	wmi_cfg->ema_max_profile_period = cpu_to_le32(tg_cfg->ema_max_profile_period);
- 	wmi_cfg->flags2 |= cpu_to_le32(WMI_RSRC_CFG_FLAGS2_CALC_NEXT_DTIM_COUNT_SET);
-@@ -3791,7 +3795,7 @@ static int ath12k_init_cmd_send(struct ath12k_wmi_pdev *wmi,
- 	ptr = skb->data + sizeof(*cmd);
- 	cfg = ptr;
- 
--	ath12k_wmi_copy_resource_config(cfg, &arg->res_cfg);
-+	ath12k_wmi_copy_resource_config(ab, cfg, &arg->res_cfg);
- 
- 	cfg->tlv_header = ath12k_wmi_tlv_cmd_hdr(WMI_TAG_RESOURCE_CONFIG,
- 						 sizeof(*cfg));
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.h b/drivers/net/wireless/ath/ath12k/wmi.h
-index be4ac91dd34f..bd7312f3cf24 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.h
-+++ b/drivers/net/wireless/ath/ath12k/wmi.h
-@@ -2461,6 +2461,7 @@ struct wmi_init_cmd {
- } __packed;
- 
- #define WMI_RSRC_CFG_HOST_SVC_FLAG_REG_CC_EXT_SUPPORT_BIT 4
-+#define WMI_RSRC_CFG_HOST_SVC_FLAG_REO_QREF_SUPPORT_BIT   12
- #define WMI_RSRC_CFG_FLAGS2_RX_PEER_METADATA_VERSION		GENMASK(5, 4)
- #define WMI_RSRC_CFG_FLAG1_BSS_CHANNEL_INFO_64	BIT(5)
- #define WMI_RSRC_CFG_FLAGS2_CALC_NEXT_DTIM_COUNT_SET      BIT(9)
--- 
-2.17.1
-
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
