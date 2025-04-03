@@ -4,105 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57957C3601E
-	for <ath12k@archiver.kernel.org>; Thu,  3 Apr 2025 08:22:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 253CDC3600C
+	for <ath12k@archiver.kernel.org>; Thu,  3 Apr 2025 10:29:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6esBelNOAKgOOsjfxg+XGMAKvus81FJOG5HagSUCP7M=; b=JVupvGYJGqsLndh/za3Y3rXpEZ
-	2wPho10iok+Hpj6pVOKeSTGIvQ8yJisJfxJHlFb3h4IKb4aD4nrJ4H8crsKx2SePiprp7BnpnEIl/
-	rLmz/UkhQ5UOpd6CCw8s8YnGF2V7SZ8CaC/Fv7SvcyXJAt8oFxLwYa4PNYq9WLr47OR4TV7KazSqO
-	67ROFen2b9Wuur/013q4+0qIbUHYptJVyUj8NMF3TFVWFW3IJgkFGtnNsl22YRiz37QDHWDbeqEbc
-	b69t2TkMWavzni4nxh6jII31CR6fwW81iNF270KVCYZ751SQ6Sq0fpNRSg7eiz0MoWVcD87+9fzNh
-	33v9KVFA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=vD9hWD4n2aJM0+NpJoWfA+3ijVJmtaSWO2xbxMunyMo=; b=p0beX5GR+RdRqLCay+EKkU6Bkv
+	L6pAfpGl4Xwl5yG0zDkXtfrtev1/O9957BISy0oMlQsQLNjH/PHS5JN0TGBgfLliKc6USQpLNYTXi
+	sI6lxqAGUVStYW9WYOerH9HTkrK6Wp73VQibsb3rzBsTRC4xJ7jDvzpzzZGt3CxiZHQrhdj97FCuZ
+	muAtwAeKX3Z8ZlmSP/3VQH1gbPWZLoOd1QGDEVPvhsPsAdsKecE2EQC4sSUPfxvSrqd2Qgic00sUi
+	c1W5hD30f1Ux0r3FVnGAWMfHV6n4qCyAzz0uTd4g1/A78aksTlyB3MKmvKRbXgFnGl0CGZzTuqW5C
+	lq29KbWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0FqB-00000008FRm-0PE3
+	id 1u0Hp0-00000008ZZI-3nIJ
 	for ath12k@archiver.kernel.org;
-	Thu, 03 Apr 2025 08:22:23 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Thu, 03 Apr 2025 10:29:18 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0Fq8-00000008FQ1-1YJ3
+	id 1u0HRN-00000008TvK-0PrC
 	for ath12k@lists.infradead.org;
-	Thu, 03 Apr 2025 08:22:21 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53383lOp010301
-	for <ath12k@lists.infradead.org>; Thu, 3 Apr 2025 08:22:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=6esBelNOAKg
-	OOsjfxg+XGMAKvus81FJOG5HagSUCP7M=; b=Taqp3uVhFgybDvlT0xCokgx0cVR
-	QKqJnrMAdlSFAErJGC0n8tS8LOoBWbBs4Jss1t0Jdp4AsVqRN7LszRsxLdpFZczD
-	b7LLi7ZpoQFEnQ+LBaL5ECDUL9vNfy1uP6QPUie9IjPngagXozwvDv9N7WpfTRnJ
-	kKMjhoh8bfs9qw/e3i9QcxlNqg8GtkaEB++FaYkoSW9GXQO7qXSPkS323MpXB9sy
-	KX/Iu4o+V0HwiiwSSqqN9PiV0n0UYkC1cmda2P5M7lRB+Qpnj1OztarxwMKJpnzf
-	X5nlbPbisg7W12DBv7DW6/VrVHEp2XM0pgzvoliLWOJKl0TGQZLfFr8G3iA==
-Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45sbxy1dbp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 03 Apr 2025 08:22:19 +0000 (GMT)
-Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-73720b253fcso616990b3a.2
-        for <ath12k@lists.infradead.org>; Thu, 03 Apr 2025 01:22:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1743668539; x=1744273339;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=6esBelNOAKgOOsjfxg+XGMAKvus81FJOG5HagSUCP7M=;
-        b=SOga9y+cLM65FBSJlThdpW1wyAP/1p0BIMvQcEXUSp7dj1juOD9eelzY2BrUcC8+1P
-         sGJq9/m3Q1nJuu/lwT+9YgHI0XE0+JdYqnyZDI78vU+1vFiktnLUt6Dx1LFqNNiQBVeP
-         FWlzs9ul1p1H7D6I2HBqtel9JYS8sZpwbxbQxMbjxrBzv5AypoMMvD/dhqZCVtgIx0VD
-         Me8Qd4AFK4N3MSh1OWD6je4Akt8muPPorMoXrR9TJ/mRrh8kQVnDLbMMfW0d5yCBTSoL
-         o8prq4gDVNssZYck3RBlCiRuMeqCW5zbognKIF73BG9mrTxrKhiuhITvYbak1/Tk/fEu
-         uA0w==
-X-Gm-Message-State: AOJu0Yy0+XCVKm3C9wU25v6pHlDm1032/qC8pB6KmIuNr1x9U5OfkWRq
-	p9Dgch8FUdL1as8f7wkfJs4iSj0LAtWPf1C+FG6RUpXl5CnELdzjtAvFvJVmB/CSwTgalHECt1u
-	7vNULAZ2fVJ3DeKquXji58/XjPfTrU0DbTLExqoSGgowIaQj5UbjO74SGRFU2gGknZPFT
-X-Gm-Gg: ASbGncs+YH53nEsAtcCf3pQljOjuGY+LXfxV8sCO0+ODJPLeuuyVU/2hIT+LGJqAaz6
-	A8F15XSzuWLijsYMs88ZRJ7GfSvQYN8QsgpW+7EJjiD95KoKtWd2sYGsNW56T3L8w4egNz2++Ih
-	gsL/hItUs+9fEYjVE9/KRHh+z7o5PkHIiwnr0LiL7ilzXi6j/gP8w3afLe5qcvwdL4xuHIXZMp2
-	kfXiVdpdIC3WCZI7cphYZRXmx9alUZJLM8fbUdPzFlvivDYndH2+Nj6w9/2lpLJG2myYXMfG6mu
-	jeXb1OHEpjnLw3NnV27ss+vO7ExTkk6ykCQHEQVFqraw4F9BNGL+sYRKs3b3EHuIRKJjVSHJvJ0
-	cReUaJL+YPkJreWP+K20Pbz61n1KORlAYSCmWJqI=
-X-Received: by 2002:a05:6a00:1309:b0:736:450c:fa54 with SMTP id d2e1a72fcca58-7398036acbemr27470736b3a.6.1743668538619;
-        Thu, 03 Apr 2025 01:22:18 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGETLC/kmGTLpQGVF7+wK9Ovp6qgVpFH5bC1wFzQ+j22HSQk/gmxF+qKaR/EOTG5SXEk/YSPw==
-X-Received: by 2002:a05:6a00:1309:b0:736:450c:fa54 with SMTP id d2e1a72fcca58-7398036acbemr27470705b3a.6.1743668538089;
-        Thu, 03 Apr 2025 01:22:18 -0700 (PDT)
-Received: from hu-aarasahu-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-739d9ea080esm900381b3a.108.2025.04.03.01.22.16
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 03 Apr 2025 01:22:17 -0700 (PDT)
-From: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Subject: [PATCH ath-next 2/2] wifi: ath12k: Introduce check against zero for ahvif->key_cipher in ath12k_mac_op_tx()
-Date: Thu,  3 Apr 2025 13:52:07 +0530
-Message-Id: <20250403082207.3323938-3-aaradhana.sahu@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250403082207.3323938-1-aaradhana.sahu@oss.qualcomm.com>
-References: <20250403082207.3323938-1-aaradhana.sahu@oss.qualcomm.com>
+	Thu, 03 Apr 2025 10:04:54 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5339s17g013669;
+	Thu, 3 Apr 2025 10:04:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=vD9hWD4n2aJM0+NpJoWfA+
+	3ijVJmtaSWO2xbxMunyMo=; b=YmpXCYSvXkXdZnUjBWX3P409XXwpA0EGWj/ISy
+	Gh7KnBp+hAZ1iqx9/JhZpiTNXxKWIOMUbgGfJOTQN+9RO7rbl4XhSdxbSoZzvYes
+	6wJMI4VMbFECPNthBz3OHDD+VeZAiJSq9uhanHYXWEY0dsltUQIUEeY+W9arVl+D
+	zWRhyubm8rhQvHuy0zxwe69q/EZ6ooPe/mKWRiBxuPdTpA7zmnh5pA86yiRDVMGr
+	juqiqY/4BIja8Xu1AAsnbeZ/ITEc8BVb58ZC+gRii84/4CqAza83NM4wL9ZIEoyP
+	C/j8A6I6xrZhu1HnGN4PQHJWOzzTa860OyQM6xJ0ziQ3DamQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45spnp0a1r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 03 Apr 2025 10:04:49 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 533A4mdI020500
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 3 Apr 2025 10:04:48 GMT
+Received: from hu-rajkbhag-blr.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 3 Apr 2025 03:04:45 -0700
+From: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Date: Thu, 3 Apr 2025 15:34:29 +0530
+Subject: [PATCH ath-next] wifi: ath12k: fix cleanup path after mhi init
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: TONk4BSJT5yToU-OwzogeCEncfeM4YHj
-X-Proofpoint-ORIG-GUID: TONk4BSJT5yToU-OwzogeCEncfeM4YHj
-X-Authority-Analysis: v=2.4 cv=PNAP+eqC c=1 sm=1 tr=0 ts=67ee453b cx=c_pps a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=mQDnMu6jyAvxAejt3JgA:9 a=OpyuDcXvxspvyRM73sMx:22
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-ID: <20250403-ath12k-cleanup-v1-1-ad8f67b0e9cf@quicinc.com>
+X-B4-Tracking: v=1; b=H4sIAC1d7mcC/x2MSQqAMAwAvyI5G0jrcvAr4qGkUYNSpVURxL9bP
+ A7MzANJokqCrnggyqVJt5DBlAXw7MIkqD4zWLIN1VShO2ZjF+RVXDh3tNy0TGSc8Qw52qOMev/
+ DHrKLQe4Dhvf9AMGh3JdqAAAA
+X-Change-ID: 20250403-ath12k-cleanup-2c56c001a1dc
+To: Johannes Berg <johannes@sipsolutions.net>,
+        Jeff Johnson
+	<jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        Kang Yang
+	<quic_kangyang@quicinc.com>
+CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>,
+        Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+X-Mailer: b4 0.14.2
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: d0EL3m6pxSUE0g61rW8D6xCndBoNlMc-
+X-Authority-Analysis: v=2.4 cv=N/gpF39B c=1 sm=1 tr=0 ts=67ee5d41 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=hDZruuR0RIJL45ME4G0A:9 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: d0EL3m6pxSUE0g61rW8D6xCndBoNlMc-
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-03_03,2025-04-02_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
- malwarescore=0 adultscore=0 phishscore=0 clxscore=1015 mlxscore=0
- lowpriorityscore=0 impostorscore=0 mlxlogscore=999 priorityscore=1501
- bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504030033
+ definitions=2025-04-03_04,2025-04-02_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ clxscore=1015 adultscore=0 mlxscore=0 lowpriorityscore=0 bulkscore=0
+ impostorscore=0 spamscore=0 phishscore=0 suspectscore=0 mlxlogscore=999
+ malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504030035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250403_012220_435505_342BA09D 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20250403_030453_279033_4179F068 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,35 +109,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ahvif->key_cipher is compared with the enum value
-(WMI_CIPHER_NONE) inside ath12k_mac_op_tx(). However, ahvif->key_cipher is
-set using the macro value WLAN_CIPHER_SUITE_XXXX which seems inconsistent.
-
-To improve code consistency and readability, introduce check against zero
-for ahvif->key_cipher instead of comparing it with the enum
-(WMI_CIPHER_NONE).
+Currently, the 'err_pci_msi_free' label is misplaced, causing the cleanup
+sequence to be incorrect. Fix this by moving the 'err_pci_msi_free' label
+to the correct position after 'err_irq_affinity_cleanup'.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
+Fixes: a3012f206d07 ("wifi: ath12k: set IRQ affinity to CPU0 in case of one MSI vector")
+Signed-off-by: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/pci.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 0036178cf999..628504ac05f2 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7493,7 +7493,7 @@ static void ath12k_mac_op_tx(struct ieee80211_hw *hw,
- 			skb_cb->link_id = link_id;
+diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
+index 7f1bb150f326b317157f6721d990d61a27f38d6a..fcb9c40b227b7baaf49f6a590c495f47ca8d2f55 100644
+--- a/drivers/net/wireless/ath/ath12k/pci.c
++++ b/drivers/net/wireless/ath/ath12k/pci.c
+@@ -1706,12 +1706,12 @@ static int ath12k_pci_probe(struct pci_dev *pdev,
+ err_mhi_unregister:
+ 	ath12k_mhi_unregister(ab_pci);
  
- 			/* For open mode, skip peer find logic */
--			if (unlikely(ahvif->key_cipher == WMI_CIPHER_NONE))
-+			if (unlikely(!ahvif->key_cipher))
- 				goto skip_peer_find;
+-err_pci_msi_free:
+-	ath12k_pci_msi_free(ab_pci);
+-
+ err_irq_affinity_cleanup:
+ 	ath12k_pci_set_irq_affinity_hint(ab_pci, NULL);
  
- 			spin_lock_bh(&tmp_ar->ab->base_lock);
--- 
-2.34.1
++err_pci_msi_free:
++	ath12k_pci_msi_free(ab_pci);
++
+ err_pci_free_region:
+ 	ath12k_pci_free_region(ab_pci);
+ 
+
+---
+base-commit: c0d45354abf5763f3de37d0c59fd863d193c7275
+change-id: 20250403-ath12k-cleanup-2c56c001a1dc
 
 
