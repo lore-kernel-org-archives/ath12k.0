@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DAF6C369A1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4921C369A2
 	for <ath12k@archiver.kernel.org>; Thu,  3 Apr 2025 19:07:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,49 +12,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2w6lOBMH0OPhiP23pURe7GX6tXmkUc1DFNPNhEFw7QQ=; b=Zg0scZqAI3lEkk3r8exRMnw0bG
-	pxFaUwrV/lW5cAgVcJQCPuV3YSq8jUzduyUQ5PsOsBEUzeibQ+fWsaPlmrQF+8ofG7N6fiuMI0LJy
-	kCF4Sivv4wqAR5WgHiDekGQwRbNrihAmRYlUrKB3w9DIB/jNKXwrN2Ym6W6Q3mVMuA/Xu1bRP1+TT
-	h8pAl35Ikhp7XKLf1aVsmjloW+JAN/vRJmpDIzSE0euTiGJ2cMWoxcOQ+rCilR4MbIH/ZiqBgRdMX
-	CGz5ZbP8aT/SDm3DMrDhUzcIEKYixYFovNlPjmZUv+sbTfKozlai5szJXYf8VIHJwGFCrbU09zi82
-	n/17Didw==;
+	bh=AUwy7S2jyRIFPpuUN0EeTseBkR7/ITiq5nxBQrzkhIQ=; b=ZMQn9IMXX0GWkPgf07lefFhr2N
+	n+UaUc59gFbcSMj682UIb8ZEjX9RLAZTwX9RfeQH5IrBJ6GMjxCluPaRuUzC1Qkh2+gA/NZH3o172
+	gEOC3FtZgOzBEa4dMeOV2OVG44wtEFEYmUCQkexMKEbzrykoZgR5ThvMGGp1BFT3e9KLGoPqdvWU/
+	SGauh0LaGMaRPb4nEKs4UTRts7aL6WgyjoH3PVaUAzwMYn3wUvIFxZ2szlNHAatvDp2lF0BQmGTgK
+	91/zR+ywTuKmTPkAkfqvTz3ofPB76T6XQPYkuT3kZOYhICuZ2G+HT20bnlAt/PhGbHS2Jsow2wOzQ
+	b+mafI8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0PuW-00000009eU3-3rWu
+	id 1u0PuX-00000009eUd-1hfZ
 	for ath12k@archiver.kernel.org;
-	Thu, 03 Apr 2025 19:07:32 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	Thu, 03 Apr 2025 19:07:33 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0PrM-00000009dhk-1TSH
+	id 1u0PsA-00000009drq-08Wk
 	for ath12k@lists.infradead.org;
-	Thu, 03 Apr 2025 19:04:17 +0000
+	Thu, 03 Apr 2025 19:05:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id D26CCA45ADF;
-	Thu,  3 Apr 2025 18:58:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79303C4CEE3;
-	Thu,  3 Apr 2025 19:04:14 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 3891344BDD;
+	Thu,  3 Apr 2025 19:05:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3B83C4CEE8;
+	Thu,  3 Apr 2025 19:05:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1743707055;
-	bh=UYF8jU967ayurQp0ptIlcf8oWc7tyZ1m9jYVdGcC2i4=;
+	s=k20201202; t=1743707105;
+	bh=78EhiRBttPIQfQ/TADCjxuYzAICrY08NI8S4uirqKV4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=pYKSEM3Jg11aELufgkwCqe2F7aYRt/jjgM1N4HHz7nqFEfsPRRQx5ox61M937s6yQ
-	 apLZub3rHa+QEqK7SyPKtln3HdgN2GpFnIwrHepRbGEy6qaqdP87gjANA8kbL8UXJD
-	 aqB44B/msFg99atZkwegn4cUVtCCYXN62Va4xIAEY0BsrSdFHKZ/ONF34Q9qNL5wdd
-	 e6sYmhuMn3q2L7qb8Xba8ZXzXkWkZKR6InRx4HEfgB9uBSzV5OXSTDjGhfY5nQbcg2
-	 gVwRW/j9T0ueglEa9GRbXfv4vuIFdd8XM/Ad6Thea1XrDDsd6ILjt9EiiFNgdrb9tg
-	 U2R/VAX7UbkDA==
+	b=Re7zZ0G9a0KJsr41PtkUeSZtM+cTzg0PCmZsxA4/27fCVnybkwYP4yKwlzUogfWbL
+	 AbzOTUv+ElcB/ugaAw5DDNfNnR2Bs6179mEX6TB9cDR7gUH3lQFvW1BifiMb55ok+M
+	 zwrGa8McGnrjxZnn4oJMXWmYiUGJQ7PbfZAWwoeTS9Kp0cInyeubjd9l/GywxkXBkH
+	 2CncBhXJ7DbW8oWNoYLKHVHFUWR8XV2uF13shHmo0p/0BRVWdgj4hA9z244iwfatCZ
+	 LoellDlrXfS1kkEdlEQcG/bXWpuEtxnc3k+q5ocwrBd9U0i98R1uqHgTx3lyuxdLJR
+	 1qAx2wnSQ6Nzw==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Miaoqing Pan <quic_miaoqing@quicinc.com>,
-	Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
+Cc: Manish Dharanenthiran <quic_mdharane@quicinc.com>,
+	Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.13 03/49] wifi: ath12k: fix memory leak in ath12k_pci_remove()
-Date: Thu,  3 Apr 2025 15:03:22 -0400
-Message-Id: <20250403190408.2676344-3-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.13 25/49] wifi: ath12k: Fix invalid data access in ath12k_dp_rx_h_undecap_nwifi
+Date: Thu,  3 Apr 2025 15:03:44 -0400
+Message-Id: <20250403190408.2676344-25-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250403190408.2676344-1-sashal@kernel.org>
 References: <20250403190408.2676344-1-sashal@kernel.org>
@@ -64,9 +64,8 @@ X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.13.9
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250403_120416_457060_9161C19B 
-X-CRM114-Status: UNSURE (   7.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250403_120506_125006_F3985AC4 
+X-CRM114-Status: GOOD (  12.07  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,50 +80,134 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Miaoqing Pan <quic_miaoqing@quicinc.com>
+From: Manish Dharanenthiran <quic_mdharane@quicinc.com>
 
-[ Upstream commit 1b24394ed5c8a8d8f7b9e3aa9044c31495d46f2e ]
+[ Upstream commit 9a0dddfb30f120db3851627935851d262e4e7acb ]
 
-Kmemleak reported this error:
+In certain cases, hardware might provide packets with a
+length greater than the maximum native Wi-Fi header length.
+This can lead to accessing and modifying fields in the header
+within the ath12k_dp_rx_h_undecap_nwifi function for
+DP_RX_DECAP_TYPE_NATIVE_WIFI decap type and
+potentially resulting in invalid data access and memory corruption.
 
-  unreferenced object 0xffff1c165cec3060 (size 32):
-    comm "insmod", pid 560, jiffies 4296964570 (age 235.596s)
-    backtrace:
-      [<000000005434db68>] __kmem_cache_alloc_node+0x1f4/0x2c0
-      [<000000001203b155>] kmalloc_trace+0x40/0x88
-      [<0000000028adc9c8>] _request_firmware+0xb8/0x608
-      [<00000000cad1aef7>] firmware_request_nowarn+0x50/0x80
-      [<000000005011a682>] local_pci_probe+0x48/0xd0
-      [<00000000077cd295>] pci_device_probe+0xb4/0x200
-      [<0000000087184c94>] really_probe+0x150/0x2c0
+Add a sanity check before processing the SKB to prevent invalid
+data access in the undecap native Wi-Fi function for the
+DP_RX_DECAP_TYPE_NATIVE_WIFI decap type.
 
-The firmware memory was allocated in ath12k_pci_probe(), but not
-freed in ath12k_pci_remove() in case ATH12K_FLAG_QMI_FAIL bit is
-set. So call ath12k_fw_unmap() to free the memory.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.2.0-02280-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
-
-Signed-off-by: Miaoqing Pan <quic_miaoqing@quicinc.com>
-Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250123080226.1116479-1-quic_miaoqing@quicinc.com
+Signed-off-by: Manish Dharanenthiran <quic_mdharane@quicinc.com>
+Signed-off-by: Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>
+Link: https://patch.msgid.link/20250211090302.4105141-1-tamizh.raja@oss.qualcomm.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 42 +++++++++++++++++++++++--
+ 1 file changed, 40 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index cf907550e6a4a..67cbf78ad9134 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1727,6 +1727,7 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
- 	ath12k_core_deinit(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 9ae579e505572..130644389f52e 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -2474,6 +2474,29 @@ static void ath12k_dp_rx_deliver_msdu(struct ath12k *ar, struct napi_struct *nap
+ 	ieee80211_rx_napi(ath12k_ar_to_hw(ar), pubsta, msdu, napi);
+ }
  
- qmi_fail:
-+	ath12k_fw_unmap(ab);
- 	ath12k_mhi_unregister(ab_pci);
++static bool ath12k_dp_rx_check_nwifi_hdr_len_valid(struct ath12k_base *ab,
++						   struct hal_rx_desc *rx_desc,
++						   struct sk_buff *msdu)
++{
++	struct ieee80211_hdr *hdr;
++	u8 decap_type;
++	u32 hdr_len;
++
++	decap_type = ath12k_dp_rx_h_decap_type(ab, rx_desc);
++	if (decap_type != DP_RX_DECAP_TYPE_NATIVE_WIFI)
++		return true;
++
++	hdr = (struct ieee80211_hdr *)msdu->data;
++	hdr_len = ieee80211_hdrlen(hdr->frame_control);
++
++	if ((likely(hdr_len <= DP_MAX_NWIFI_HDR_LEN)))
++		return true;
++
++	ab->soc_stats.invalid_rbm++;
++	WARN_ON_ONCE(1);
++	return false;
++}
++
+ static int ath12k_dp_rx_process_msdu(struct ath12k *ar,
+ 				     struct sk_buff *msdu,
+ 				     struct sk_buff_head *msdu_list,
+@@ -2532,6 +2555,11 @@ static int ath12k_dp_rx_process_msdu(struct ath12k *ar,
+ 		}
+ 	}
  
- 	ath12k_pci_free_irq(ab);
++	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, rx_desc, msdu))) {
++		ret = -EINVAL;
++		goto free_out;
++	}
++
+ 	ath12k_dp_rx_h_ppdu(ar, rx_desc, rx_status);
+ 	ath12k_dp_rx_h_mpdu(ar, msdu, rx_desc, rx_status);
+ 
+@@ -2884,6 +2912,9 @@ static int ath12k_dp_rx_h_verify_tkip_mic(struct ath12k *ar, struct ath12k_peer
+ 		    RX_FLAG_IV_STRIPPED | RX_FLAG_DECRYPTED;
+ 	skb_pull(msdu, hal_rx_desc_sz);
+ 
++	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, rx_desc, msdu)))
++		return -EINVAL;
++
+ 	ath12k_dp_rx_h_ppdu(ar, rx_desc, rxs);
+ 	ath12k_dp_rx_h_undecap(ar, msdu, rx_desc,
+ 			       HAL_ENCRYPT_TYPE_TKIP_MIC, rxs, true);
+@@ -3604,6 +3635,9 @@ static int ath12k_dp_rx_h_null_q_desc(struct ath12k *ar, struct sk_buff *msdu,
+ 		skb_put(msdu, hal_rx_desc_sz + l3pad_bytes + msdu_len);
+ 		skb_pull(msdu, hal_rx_desc_sz + l3pad_bytes);
+ 	}
++	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, desc, msdu)))
++		return -EINVAL;
++
+ 	ath12k_dp_rx_h_ppdu(ar, desc, status);
+ 
+ 	ath12k_dp_rx_h_mpdu(ar, msdu, desc, status);
+@@ -3648,7 +3682,7 @@ static bool ath12k_dp_rx_h_reo_err(struct ath12k *ar, struct sk_buff *msdu,
+ 	return drop;
+ }
+ 
+-static void ath12k_dp_rx_h_tkip_mic_err(struct ath12k *ar, struct sk_buff *msdu,
++static bool ath12k_dp_rx_h_tkip_mic_err(struct ath12k *ar, struct sk_buff *msdu,
+ 					struct ieee80211_rx_status *status)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+@@ -3666,6 +3700,9 @@ static void ath12k_dp_rx_h_tkip_mic_err(struct ath12k *ar, struct sk_buff *msdu,
+ 	skb_put(msdu, hal_rx_desc_sz + l3pad_bytes + msdu_len);
+ 	skb_pull(msdu, hal_rx_desc_sz + l3pad_bytes);
+ 
++	if (unlikely(!ath12k_dp_rx_check_nwifi_hdr_len_valid(ab, desc, msdu)))
++		return true;
++
+ 	ath12k_dp_rx_h_ppdu(ar, desc, status);
+ 
+ 	status->flag |= (RX_FLAG_MMIC_STRIPPED | RX_FLAG_MMIC_ERROR |
+@@ -3673,6 +3710,7 @@ static void ath12k_dp_rx_h_tkip_mic_err(struct ath12k *ar, struct sk_buff *msdu,
+ 
+ 	ath12k_dp_rx_h_undecap(ar, msdu, desc,
+ 			       HAL_ENCRYPT_TYPE_TKIP_MIC, status, false);
++	return false;
+ }
+ 
+ static bool ath12k_dp_rx_h_rxdma_err(struct ath12k *ar,  struct sk_buff *msdu,
+@@ -3691,7 +3729,7 @@ static bool ath12k_dp_rx_h_rxdma_err(struct ath12k *ar,  struct sk_buff *msdu,
+ 	case HAL_REO_ENTR_RING_RXDMA_ECODE_TKIP_MIC_ERR:
+ 		err_bitmap = ath12k_dp_rx_h_mpdu_err(ab, rx_desc);
+ 		if (err_bitmap & HAL_RX_MPDU_ERR_TKIP_MIC) {
+-			ath12k_dp_rx_h_tkip_mic_err(ar, msdu, status);
++			drop = ath12k_dp_rx_h_tkip_mic_err(ar, msdu, status);
+ 			break;
+ 		}
+ 		fallthrough;
 -- 
 2.39.5
 
