@@ -4,57 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 700B9C36014
-	for <ath12k@archiver.kernel.org>; Thu,  3 Apr 2025 19:02:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E40DDC3601B
+	for <ath12k@archiver.kernel.org>; Thu,  3 Apr 2025 19:02:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=z5+qTA+LLz4Jx6UQ3b64exjwirEJK4llLLmjD0W1NJk=; b=eYSLisLSa6D/toQ6Wm4/GAgHIo
-	pMeATr9X/9E19s2EfXe7SmHwImH0jAlfpNpbi9sBREouLTJr+5U0NHmVCy4gA5NluGbAJFL4s8499
-	qXX4yLFEam8Zg0BCRuDIxPVbsSI60IXC5KMtg+wuRoRvmTnOgtLqf074cepn2KA8iDIJ2RCzifNfU
-	VCM5ai1MZmHwaN2Q8+GvXMq6dTWlRKp5KgOS0mO3wsum8CLcbXYLyVNRo6E2DIX67hqUAw+mzTpuX
-	bOJ+IdUgy83/TuGaE4boPYXG1jW0n2GJI/XozngsPATk5fFrPGy7OCrE704QRkomf01L8GIu9Xqfb
-	0jZMAplA==;
+	bh=GX0sp3fQcY3aSC5x+mQ8hibK3DH2+4LUQWLKLhLduc4=; b=0ynpyt+N8Rgw+YSn+3f9mTL622
+	6x2eNi2yiiZ21fX4YaUwArfArLoGuhuFFQkEyRWEce7uroNhRsAh1W/P3RpG+QIS5ol0/7NMINmXD
+	EjQgIRF93YpIU3S9ggGGPaNR3RlO/zC8Xfdy1u2JtAUrOoOFSzf1qY8My2uuMBov1D6CBg/xMlheJ
+	4CRCoqA7DL56WJ4NL7O3LCpht9uUeyKAwhnlJ/Sc6S4gXkdX2DOeSc0NuXjh2iJ9lTuDIs8eyAIs7
+	LtQgC1UULxtc7hXT8ciTviW8tWBECL4qTOpMg9w+wefWPM1W5IBMbm9rhkA4i7rD0GGmj8mUlhgHs
+	HHjUAU6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0PpZ-00000009d82-0ueE
+	id 1u0Ppa-00000009d8x-2hmx
 	for ath12k@archiver.kernel.org;
-	Thu, 03 Apr 2025 19:02:25 +0000
+	Thu, 03 Apr 2025 19:02:26 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0PpV-00000009d5p-1CZv
+	id 1u0PpX-00000009d7A-3ZOO
 	for ath12k@lists.infradead.org;
-	Thu, 03 Apr 2025 19:02:23 +0000
+	Thu, 03 Apr 2025 19:02:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5E0D55C6C62;
-	Thu,  3 Apr 2025 19:00:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50752C4CEEA;
-	Thu,  3 Apr 2025 19:02:19 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5C3485C6B9B;
+	Thu,  3 Apr 2025 19:00:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 19BCDC4CEE3;
+	Thu,  3 Apr 2025 19:02:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1743706940;
-	bh=NEE8XyyBTIzK9+F1SjLTLthFKKuHvJLm8dwTdO5OlAI=;
+	s=k20201202; t=1743706942;
+	bh=BgErDSgBeeb6wxjPhG6xcF8F+i4hGMhDgySo+fTZnVY=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=K6ucFMMAeJ1LR05ByL8m3vyhAGo5m6VYmuG3G5g+MHi2Pm6cPaD0mPWZqntU+kZSW
-	 Mcw5fKP43TS1EZkJIYOAAw0WPQgdA+z9DMtQ3dCaxUmRnc4F32PxmM/IhrnByG8opr
-	 x9ueVZPQWD4lEcDQox7MAUJH3lf+bpJ3WzmXvOq+35DLZikXaCgc0MaMLAHV9wxoTt
-	 7AIjteSrLu3JfXiXZ6QfAdfy3fcGxeDOlhFrLPODAuxcfM+owaTjC4aQTyId7Ol8x1
-	 0MnxyPXmhkrga2tiRHEGs8Pb8Em5oDoXkj44SLfl260IuwjWYz8VodbzaMci6pRipv
-	 /9H6/zztyJThA==
+	b=duAUghh6yNtT0bqLdEcE2QL5B/g9Mr8xUTogZd42zS87cf28A9zuFOG0jYvSV9MuG
+	 0mpWK6IbD25B4EzEtnQxMQYfbLH4V1JzUfJpW/yENuQxmucsF0tXO+C8CRMKAPAuQN
+	 II1croF4ushPQN9JSLxc6tPvrxPGlvmIQZNTFw+NSHmoP+Ro7BWpQeTyEQKs0Hahy0
+	 /55by98beYMGgPS1TevTOhkZAn43Sk3UPvmzoMUkxPoStVqhGue8coLYpyTVuYmhL0
+	 ix0aPhVsiiJ3rsaS7laDX5kzBk1G+7FBXWNchlsp12d19bM6uQUUdUg/DrPVFp1XjD
+	 XT+QGsEkrFGqw==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Miaoqing Pan <quic_miaoqing@quicinc.com>,
-	Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
+Cc: P Praneesh <quic_ppranees@quicinc.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.14 04/54] wifi: ath12k: fix memory leak in ath12k_pci_remove()
-Date: Thu,  3 Apr 2025 15:01:19 -0400
-Message-Id: <20250403190209.2675485-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 06/54] wifi: ath12k: Avoid memory leak while enabling statistics
+Date: Thu,  3 Apr 2025 15:01:21 -0400
+Message-Id: <20250403190209.2675485-6-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250403190209.2675485-1-sashal@kernel.org>
 References: <20250403190209.2675485-1-sashal@kernel.org>
@@ -64,9 +63,8 @@ X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.14
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250403_120221_362971_303DF285 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250403_120223_981613_9F89F149 
+X-CRM114-Status: GOOD (  14.01  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,53 +79,153 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Miaoqing Pan <quic_miaoqing@quicinc.com>
+From: P Praneesh <quic_ppranees@quicinc.com>
 
-[ Upstream commit 1b24394ed5c8a8d8f7b9e3aa9044c31495d46f2e ]
+[ Upstream commit ecfc131389923405be8e7a6f4408fd9321e4d19b ]
 
-Kmemleak reported this error:
+Driver uses monitor destination rings for extended statistics mode and
+standalone monitor mode. In extended statistics mode, TLVs are parsed from
+the buffer received from the monitor destination ring and assigned to the
+ppdu_info structure to update per-packet statistics. In standalone monitor
+mode, along with per-packet statistics, the packet data (payload) is
+captured, and the driver updates per MSDU to mac80211.
 
-  unreferenced object 0xffff1c165cec3060 (size 32):
-    comm "insmod", pid 560, jiffies 4296964570 (age 235.596s)
-    backtrace:
-      [<000000005434db68>] __kmem_cache_alloc_node+0x1f4/0x2c0
-      [<000000001203b155>] kmalloc_trace+0x40/0x88
-      [<0000000028adc9c8>] _request_firmware+0xb8/0x608
-      [<00000000cad1aef7>] firmware_request_nowarn+0x50/0x80
-      [<000000005011a682>] local_pci_probe+0x48/0xd0
-      [<00000000077cd295>] pci_device_probe+0xb4/0x200
-      [<0000000087184c94>] really_probe+0x150/0x2c0
+When the AP interface is enabled, only extended statistics mode is
+activated. As part of enabling monitor rings for collecting statistics,
+the driver subscribes to HAL_RX_MPDU_START TLV in the filter
+configuration. This TLV is received from the monitor destination ring, and
+kzalloc for the mon_mpdu object occurs, which is not freed, leading to a
+memory leak. The kzalloc for the mon_mpdu object is only required while
+enabling the standalone monitor interface. This causes a memory leak while
+enabling extended statistics mode in the driver.
 
-The firmware memory was allocated in ath12k_pci_probe(), but not
-freed in ath12k_pci_remove() in case ATH12K_FLAG_QMI_FAIL bit is
-set. So call ath12k_fw_unmap() to free the memory.
+Fix this memory leak by removing the kzalloc for the mon_mpdu object in
+the HAL_RX_MPDU_START TLV handling. Additionally, remove the standalone
+monitor mode handlings in the HAL_MON_BUF_ADDR and HAL_RX_MSDU_END TLVs.
+These TLV tags will be handled properly when enabling standalone monitor
+mode in the future.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.2.0-02280-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Miaoqing Pan <quic_miaoqing@quicinc.com>
-Reviewed-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250123080226.1116479-1-quic_miaoqing@quicinc.com
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Link: https://patch.msgid.link/20241223060132.3506372-13-quic_ppranees@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 64 ++++--------------------
+ drivers/net/wireless/ath/ath12k/hal_rx.h |  3 ++
+ 2 files changed, 12 insertions(+), 55 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 06cff3849ab8d..ee61afe564b92 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -1734,9 +1734,9 @@ static void ath12k_pci_remove(struct pci_dev *pdev)
- 	cancel_work_sync(&ab->reset_work);
- 	cancel_work_sync(&ab->dump_work);
- 	ath12k_core_deinit(ab);
--	ath12k_fw_unmap(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 252d8e8a2080e..0b089389087d3 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -743,7 +743,6 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k_base *ab,
+ 	}
+ 	case HAL_RX_MPDU_START: {
+ 		const struct hal_rx_mpdu_start *mpdu_start = tlv_data;
+-		struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
+ 		u16 peer_id;
  
- qmi_fail:
-+	ath12k_fw_unmap(ab);
- 	ath12k_mhi_unregister(ab_pci);
+ 		info[1] = __le32_to_cpu(mpdu_start->info1);
+@@ -760,65 +759,17 @@ ath12k_dp_mon_rx_parse_status_tlv(struct ath12k_base *ab,
+ 				u32_get_bits(info[0], HAL_RX_MPDU_START_INFO1_PEERID);
+ 		}
  
- 	ath12k_pci_free_irq(ab);
+-		mon_mpdu = kzalloc(sizeof(*mon_mpdu), GFP_ATOMIC);
+-		if (!mon_mpdu)
+-			return HAL_RX_MON_STATUS_PPDU_NOT_DONE;
+-
+ 		break;
+ 	}
+ 	case HAL_RX_MSDU_START:
+ 		/* TODO: add msdu start parsing logic */
+ 		break;
+-	case HAL_MON_BUF_ADDR: {
+-		struct dp_rxdma_mon_ring *buf_ring = &ab->dp.rxdma_mon_buf_ring;
+-		const struct dp_mon_packet_info *packet_info = tlv_data;
+-		int buf_id = u32_get_bits(packet_info->cookie,
+-					  DP_RXDMA_BUF_COOKIE_BUF_ID);
+-		struct sk_buff *msdu;
+-		struct dp_mon_mpdu *mon_mpdu = pmon->mon_mpdu;
+-		struct ath12k_skb_rxcb *rxcb;
+-
+-		spin_lock_bh(&buf_ring->idr_lock);
+-		msdu = idr_remove(&buf_ring->bufs_idr, buf_id);
+-		spin_unlock_bh(&buf_ring->idr_lock);
+-
+-		if (unlikely(!msdu)) {
+-			ath12k_warn(ab, "monitor destination with invalid buf_id %d\n",
+-				    buf_id);
+-			return HAL_RX_MON_STATUS_PPDU_NOT_DONE;
+-		}
+-
+-		rxcb = ATH12K_SKB_RXCB(msdu);
+-		dma_unmap_single(ab->dev, rxcb->paddr,
+-				 msdu->len + skb_tailroom(msdu),
+-				 DMA_FROM_DEVICE);
+-
+-		if (mon_mpdu->tail)
+-			mon_mpdu->tail->next = msdu;
+-		else
+-			mon_mpdu->tail = msdu;
+-
+-		ath12k_dp_mon_buf_replenish(ab, buf_ring, 1);
+-
+-		break;
+-	}
+-	case HAL_RX_MSDU_END: {
+-		const struct rx_msdu_end_qcn9274 *msdu_end = tlv_data;
+-		bool is_first_msdu_in_mpdu;
+-		u16 msdu_end_info;
+-
+-		msdu_end_info = __le16_to_cpu(msdu_end->info5);
+-		is_first_msdu_in_mpdu = u32_get_bits(msdu_end_info,
+-						     RX_MSDU_END_INFO5_FIRST_MSDU);
+-		if (is_first_msdu_in_mpdu) {
+-			pmon->mon_mpdu->head = pmon->mon_mpdu->tail;
+-			pmon->mon_mpdu->tail = NULL;
+-		}
+-		break;
+-	}
++	case HAL_MON_BUF_ADDR:
++		return HAL_RX_MON_STATUS_BUF_ADDR;
++	case HAL_RX_MSDU_END:
++		return HAL_RX_MON_STATUS_MSDU_END;
+ 	case HAL_RX_MPDU_END:
+-		list_add_tail(&pmon->mon_mpdu->list, &pmon->dp_rx_mon_mpdu_list);
+-		break;
++		return HAL_RX_MON_STATUS_MPDU_END;
+ 	case HAL_DUMMY:
+ 		return HAL_RX_MON_STATUS_BUF_DONE;
+ 	case HAL_RX_PPDU_END_STATUS_DONE:
+@@ -1216,7 +1167,10 @@ ath12k_dp_mon_parse_rx_dest(struct ath12k_base *ab, struct ath12k_mon_data *pmon
+ 		if ((ptr - skb->data) >= DP_RX_BUFFER_SIZE)
+ 			break;
+ 
+-	} while (hal_status == HAL_RX_MON_STATUS_PPDU_NOT_DONE);
++	} while ((hal_status == HAL_RX_MON_STATUS_PPDU_NOT_DONE) ||
++		 (hal_status == HAL_RX_MON_STATUS_BUF_ADDR) ||
++		 (hal_status == HAL_RX_MON_STATUS_MPDU_END) ||
++		 (hal_status == HAL_RX_MON_STATUS_MSDU_END));
+ 
+ 	return hal_status;
+ }
+diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
+index b08aa2e79f411..54f3eaeca8bb9 100644
+--- a/drivers/net/wireless/ath/ath12k/hal_rx.h
++++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
+@@ -108,6 +108,9 @@ enum hal_rx_mon_status {
+ 	HAL_RX_MON_STATUS_PPDU_NOT_DONE,
+ 	HAL_RX_MON_STATUS_PPDU_DONE,
+ 	HAL_RX_MON_STATUS_BUF_DONE,
++	HAL_RX_MON_STATUS_BUF_ADDR,
++	HAL_RX_MON_STATUS_MPDU_END,
++	HAL_RX_MON_STATUS_MSDU_END,
+ };
+ 
+ #define HAL_RX_MAX_MPDU		256
 -- 
 2.39.5
 
