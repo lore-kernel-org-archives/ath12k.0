@@ -4,105 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29920C3601E
-	for <ath12k@archiver.kernel.org>; Sun,  6 Apr 2025 09:22:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62D3BC36002
+	for <ath12k@archiver.kernel.org>; Mon,  7 Apr 2025 01:58:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z0tM2DPre0Ldp0/ZIlfrbOSXjpI6KyDpurJ2ZSWcWfE=; b=ObdAz3nY8Lq7/mXz64/0WyHNP5
-	pWZNtuxnt1CK7ryRm5W/achT1rViBDrf1h0bIhT1fp5x8BICt8qkh46BEiWec6LFykoXKoKvzUIvd
-	GkP5MXYdyBg8/eO61xuKpQytk307dQMgXg7+hGkdyRCvvL68Pdb92u/ZyP50ZtES1vcN2ElfhOT2L
-	qMn5JQkfgdKqZC8P8ywJHhvwjAZnn8NRSk1VRgx3w1uuVII5tgd8higmZcxuNcv1cV72MyTCMdq70
-	MsRU2J7MNRq09HMJXZ3a/y3N8itWsizBP8xtIZuOS2TeyleC3ZA+U1zuUE/ap+A+n5eFSUj3UXJlo
-	RTaVzeNA==;
+	bh=rp+vGUdcc9UaV7Dknggwd4mmV+RchYzySSvjgovJMLk=; b=Wui8enqTNN79rwWErP3yi5k6KS
+	FmpuAoybAMYWhRhatiHHH61KTGHFnSg7K1Dwb3o4vEqgPjPdUmis08ivmzWYUDsswlBcPC6mQrvYI
+	FU5smzKDxWljo1CenDnO9kn4LeeAyDtxgGSeH4JXpgHLR+mF2FAw0qbuEtdcPimHl2IPcmtA+Aq0/
+	7IA9MjrsbH3jvBBy+Q6VQ11DG7w9+Ct5pTbLZHwvlb05rrqRDua7HVBzZM5C1Yvg5BOqMNMWI8uJZ
+	DC9zeLb+T1/b7xluxNbvawBxhNqH76CJ0NYV5pXYRAIwDIGOmH975FuhtbDo9L++Ku12I+hU+xREY
+	AZfhv6Cg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1MCz-0000000F79v-3qPd
+	id 1u1bkX-0000000G9K8-3JDU
 	for ath12k@archiver.kernel.org;
-	Sun, 06 Apr 2025 09:22:29 +0000
+	Mon, 07 Apr 2025 01:58:09 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1MCw-0000000F78N-00Rk
+	id 1u1bkU-0000000G9JM-1apS
 	for ath12k@lists.infradead.org;
-	Sun, 06 Apr 2025 09:22:27 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5369LeE8019200
-	for <ath12k@lists.infradead.org>; Sun, 6 Apr 2025 09:22:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=Z0tM2DPre0L
-	dp0/ZIlfrbOSXjpI6KyDpurJ2ZSWcWfE=; b=fAiyKyc85lwJ50mLjiStx46rkvT
-	uWTpq+O4iF+xratR3s3/bv1bmHDBVt7hUXzL7f3440UY2qKcmtKtx5BQty0Q/AmZ
-	u4N14q8Tgmmax/NylXQXcQw6AT0ZPdC4Xd0nNyTlE/dKLmjbovBoMb9ay7kpa5Lv
-	FCGiLbctHIqD9pbWxKBH1j68uQ+xfoguc2BB6ZrPjPLod8C2I+0yNpQzAQwz9BR4
-	aglNjFNhwNLJ9eFQeTgUFbkM5JsGJAb7oPQW2b7UjNOPckWwbKvQHSz/QrN/MPj0
-	aHj6qnsN1vdg4qRE0YoBNqi0W8/vT8EWrLnnHcLWXQXHQXGbvZZJerFAG0A==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twft9nha-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sun, 06 Apr 2025 09:22:24 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-306b590faaeso551766a91.3
-        for <ath12k@lists.infradead.org>; Sun, 06 Apr 2025 02:22:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1743931344; x=1744536144;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Z0tM2DPre0Ldp0/ZIlfrbOSXjpI6KyDpurJ2ZSWcWfE=;
-        b=tXMSIGfomwLRQ8I8597sExscM/KPp4UysScgiCvGjzRaGhVnpvyYBC1omG7mllM8nP
-         RmeyfywS9B+ixDBP2iJ1RcKDAcWlZloYevEgsSby0nUoQ3Ktv+Y7pKakYNT0JQYeiXQ3
-         +6H6D16jwxvwjzuRNXKHcfZWF6QBbyOSW9rcojeH/gK7ztHeMceCGM9225AZXDvZ6cRO
-         wJbZBRPNFI9Z0ojgSQ+ROCrrajh2EnFSRm7pfHFFCBlUil/1oNGU/zdxA9tVCam/2gcv
-         G0HmQ7ZzBh9sUIJco80VzZ5YmOW1p4X7wEzvmtJvJ2+CMhardjQgLHZcVTUuw9CghSEb
-         yk1g==
-X-Gm-Message-State: AOJu0YwAob3cDHcYNMG9SW+uYRTIq6x0WZIahTFK0/nb14Gl7fo0ezwT
-	gbEfoKwkIKIrOfzocblQwRlVRfVvozcQGEvuXMAfaKN8/9SH11b39kE4VNgWNvKjlj6Q92SIW+u
-	bIoVff6iYRuNIJU/78r9wiFjPeB1mGMQY2UIrzxGaZ9J4Fyyj5XugGwzX57tCZAb0CiAX
-X-Gm-Gg: ASbGncv4vnY/T8wrl7oeQjGzrcWObnPvBvb7fuLCCmFNf7Yr/TsOAmgxJNjDwSrYYP1
-	4g7ke1vp3Z/Ko3774Z/ho8XOZyM8hQXeWkrUGkkHsSa8ZFU4quq5Q4pmVYIRY/JnBKFzau7ojEC
-	Hz8HWrmvarUMZjhLkJ9BSoX9CoVLxWFEB0C4AtzcCak/FMhfS2C15NGyOBZ9qgx50MbqSfXWE43
-	hab/fO4UTb99auwH7qxvLPT8+wDGgmNvLUBprMKQlKXmLO6pEByyDflTx8E1aAuOvcG1vspzV/0
-	nrEXi18FV5QQibr68irNuNkQUyhDyKqfXB378IYhNIXIaUGRxdeeTtLnqcAnDvjReY3L/KnWRH0
-	PEPBH9xpdYCr1lCbLkNltcnLHnLGw4TW1FhAujiB8JH5S
-X-Received: by 2002:a17:90b:2d88:b0:2fe:7f40:420a with SMTP id 98e67ed59e1d1-306a61769e1mr14157797a91.17.1743931343765;
-        Sun, 06 Apr 2025 02:22:23 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHlO0hQvfZ/61O4+pLoAYz1LDgM30pfG851yk88I3n5V6Qq+28gqJ4KJIKZIbiMfGkiOWn1gw==
-X-Received: by 2002:a17:90b:2d88:b0:2fe:7f40:420a with SMTP id 98e67ed59e1d1-306a61769e1mr14157772a91.17.1743931343422;
-        Sun, 06 Apr 2025 02:22:23 -0700 (PDT)
-Received: from hu-ramess-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3057cb5e75asm6857311a91.37.2025.04.06.02.22.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 06 Apr 2025 02:22:23 -0700 (PDT)
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org,
-        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Subject: [PATCH ath-next 2/2] wifi: ath12k: avoid multiple skb_cb fetch in ath12k_mac_mgmt_tx_wmi()
-Date: Sun,  6 Apr 2025 14:52:14 +0530
-Message-Id: <20250406092214.3602182-3-rameshkumar.sundaram@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250406092214.3602182-1-rameshkumar.sundaram@oss.qualcomm.com>
-References: <20250406092214.3602182-1-rameshkumar.sundaram@oss.qualcomm.com>
+	Mon, 07 Apr 2025 01:58:07 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 536NpmgB028977;
+	Mon, 7 Apr 2025 01:58:04 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	rp+vGUdcc9UaV7Dknggwd4mmV+RchYzySSvjgovJMLk=; b=SqMd9K2Df3OltLYj
+	sL7/jh5bFql5qh7LpVojzhtY6l4ZXjAkVpu4h5hS0v5fo/kwhoPYC0fJaMDLBMHk
+	q6+8MmSFLAlCzjJ1cf1+3EPYkFMMomGGmr/Ae81Sng7YYWktsiWP1jXvaXR/gWix
+	23brFriPM5Z6FecNy4v4JAPrBFUnrCg0q5jePPTUpgwDQJb60snkVFSPq7V2GSPs
+	9Kvh7IJxT6fl5H0w7szlvx8E52Zlvbs1FBsnE5ChnXu8cJQFx3bkula9gixfzjpK
+	Ye5E3SrWCnWFzE2UuOFzGN03BfKrTWQcIyVMcxd0wxFkehRZZ9ZJSp1fN8Actz4y
+	mzWrCw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbuamyb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 07 Apr 2025 01:58:03 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5371w3Qf006220
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 7 Apr 2025 01:58:03 GMT
+Received: from [10.133.33.125] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 6 Apr 2025
+ 18:58:01 -0700
+Message-ID: <18788f02-e374-4aa6-ac4a-fd53bc93754c@quicinc.com>
+Date: Mon, 7 Apr 2025 09:57:58 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ath12k: No 6GHz Wireless found
+To: Walt Holman <waltholman09@gmail.com>
+CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        <linux-wireless@vger.kernel.org>,
+        "ath12k@lists.infradead.org"
+	<ath12k@lists.infradead.org>
+References: <CAMb39_ngQs8=FUML5QXMh2RmEZBZ2NwUHefhGoTkGtHat+KWJA@mail.gmail.com>
+ <f45323db-ce4d-4374-9c93-0be4d0645fcd@oss.qualcomm.com>
+ <CAMb39_ki7F1XgezyVfb9Tkm9D-FZE0XK3RcSYtFmFf0jP8-M_Q@mail.gmail.com>
+ <dc0abf98-862b-47f5-ae71-749c68cffc73@quicinc.com>
+ <CAMb39_kUUv24q6QUq9B9+TEUMrUhu12-8WJadzB53nMPhcAZSQ@mail.gmail.com>
+ <ef81db9e-99cb-4802-b17f-94eb623a8b32@quicinc.com>
+ <CAMb39_m+4dNBDbkZmn-rDA7T+u84y-dx1jSfmPNWnse=R1=gCw@mail.gmail.com>
+Content-Language: en-US
+From: Kang Yang <quic_kangyang@quicinc.com>
+In-Reply-To: <CAMb39_m+4dNBDbkZmn-rDA7T+u84y-dx1jSfmPNWnse=R1=gCw@mail.gmail.com>
+Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=B5+50PtM c=1 sm=1 tr=0 ts=67f247d1 cx=c_pps a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=Lpz1UfvgpueRW3gVfIYA:9 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-GUID: 7WZbwkrPED7O-wCkelcTObnSVDVC3bwO
-X-Proofpoint-ORIG-GUID: 7WZbwkrPED7O-wCkelcTObnSVDVC3bwO
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 5cdAuy2NaE_J43h6-F665JbD2KS_LifF
+X-Proofpoint-ORIG-GUID: 5cdAuy2NaE_J43h6-F665JbD2KS_LifF
+X-Authority-Analysis: v=2.4 cv=dbeA3WXe c=1 sm=1 tr=0 ts=67f3312b cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=vI87WSy5pIeuF_aSIUcA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-06_02,2025-04-03_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=915
- suspectscore=0 malwarescore=0 bulkscore=0 phishscore=0 spamscore=0
- priorityscore=1501 adultscore=0 impostorscore=0 lowpriorityscore=0
- mlxscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504060066
+ definitions=2025-04-07_01,2025-04-03_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 mlxlogscore=999 phishscore=0 mlxscore=0 spamscore=0
+ malwarescore=0 clxscore=1015 adultscore=0 priorityscore=1501
+ lowpriorityscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502280000 definitions=main-2504070013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250406_022226_043750_A6B76115 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20250406_185806_443121_A2054C16 
+X-CRM114-Status: GOOD (  26.36  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,75 +110,163 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-ath12k_mac_mgmt_tx_wmi() fetches ath12k's skb_cb space multiple times from
-TX skb which is redundant operation. Save the skb_cb in a local pointer
-and use the same instead.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+On 4/4/2025 12:04 AM, Walt Holman wrote:
+> On Thu, Apr 3, 2025 at 3:20 AM Kang Yang <quic_kangyang@quicinc.com> wrote:
+>>
+>>
+>>
+>> On 4/3/2025 1:48 AM, Walt Holman wrote:
+>>> On Tue, Apr 1, 2025 at 9:48 PM Kang Yang <quic_kangyang@quicinc.com> wrote:
+>>
+>>>>
+>>>> Test on 6.14.0-rc5-wt-ath+, with the firmware you used.
+>>>> I can get 6 GHz AP and connect to it.
+>>>>
+>>>> ath12k_pci 0000:03:00.0: fw_version 0x100301e1 fw_build_timestamp
+>>>> 2023-12-06 04:05 fw_build_id
+>>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>>>>
+>>>> yk@yk-Mayan:~$ sudo iw wls1 scan | tee iw_scan.log:
+>>>> BSS 62:03:7f:12:64:64(on wls1) -- associated
+>>>>            TSF: 606308271476 usec (7d, 00:25:08)
+>>>>            freq: 6275
+>>>>            beacon interval: 100 TUs
+>>>>            capability: ESS Privacy SpectrumMgmt ShortSlotTime (0x0511)
+>>>>            signal: -17.00 dBm
+>>>>            last seen: 52 ms ago
+>>>>            Information elements from Probe Response frame:
+>>>>            SSID: MLO-KANG-6G
+>>>> and other 6 GHz APs:
+>>>>           SSID: 6G-gxia
+>>>>           SSID: NETGEAR97-6G
+>>>>           ……
+>>>>
+>>>>
+>>>> kernel log:
+>>>> [88158.033218] wls1: Inserted STA 62:03:7f:12:64:64
+>>>> [88158.033232] wls1: authenticate with 62:03:7f:12:64:64 (local
+>>>> address=00:03:7f:37:12:54)
+>>>> [88158.033242] wls1: send auth to 62:03:7f:12:64:64 (try 1/3)
+>>>> [88158.041895] wls1: authenticated
+>>>> [88158.041914] wls1: moving STA 62:03:7f:12:64:64 to state 2
+>>>> [88158.044291] wls1: determined local STA to be EHT, BW limited to 320 MHz
+>>>> [88158.045719] wls1: associate with 62:03:7f:12:64:64 (try 1/3)
+>>>> [88158.067045] wls1: RX AssocResp from 62:03:7f:12:64:64 (capab=0x511
+>>>> status=0 aid=4)
+>>>> [88158.089090] wls1: associated
+>>>>
+>>>> I can even connect to it by Ubuntu GUI.
+>>>>
+>>>> Can you update to 6.14.0-rc5-wt-ath+ and have a retry? Also please make
+>>>> sure that your wpa_supplicant/iw support 6 GHz(or directly update to the
+>>>> latest version).
+>>>>
+>>>> If you still cannot find 6 GHz AP, you can set debug_mask to 0xffffffff
+>>>> to get ath12k logs. Then give it to us.
+>>>>
+>>>>
+>>>>> -Walt
+>>>>>
+>>>>
+>>>
+>>> OK, I retested with the wt-ath 033125 tagged build. This included the
+>>> patch the Jeff suggested I try, but the rest of the tree was clean.
+>>> Still no 6ghz Wifi. I'm attaching a log file of the boot and first few
+>>> seconds with the debug mask turned on. I noticed that if I rmmod the
+>>> module and then modprobe it, it complains about not finding
+>>> firmware-2.bin, however, I thought that was only for the qcn based
+>>> chip? The HW info from dmesg looks like this:
+>>>
+>>
+>> I cannot find this tag...
+>>
+>>
+>>   From the log, the 6 GHz channel should work. When scan is triggered, FW
+>> shall send probe req on these channels. If AP send probe resp, station
+>> shall find the AP.
+>>
+>>
+>>
+>>
+>>> [    6.070282] ath12k_pci 0000:63:00.0: BAR 0 [mem
+>>> 0xdd800000-0xdd9fffff 64bit]: assigned
+>>> [    6.070310] ath12k_pci 0000:63:00.0: enabling device (0000 -> 0002)
+>>> [    6.071249] ath12k_pci 0000:63:00.0: MSI vectors: 16
+>>> [    6.071254] ath12k_pci 0000:63:00.0: Hardware name: wcn7850 hw2.0
+>>> [    6.596331] ath12k_pci 0000:63:00.0: qmi dma allocation failed
+>>> (7077888 B type 1), will try later with sma
+>>> ll size
+>>> [    6.604041] ath12k_pci 0000:63:00.0: chip_id 0x2 chip_family 0x4
+>>> board_id 0xff soc_id 0x40170200
+>>> [    6.604044] ath12k_pci 0000:63:00.0: fw_version 0x100301e1
+>>> fw_build_timestamp 2023-12-06 04:05 fw_build_id
+>>> QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-
+>>>
+>>> Also, I noticed when looking through the debug logs there are the
+>>> occasional WARNING statements from a BUG it appears. They trace back
+>>> to the mac.c file inside the ath12k code. There should be some in the
+>>> debug log that's attached. Let me know if I can do anything else.
+>>> Thanks,
+>>>
+>>
+>>
+>> I have never seen this warning on my upstream setup...Not sure if you
+>> have changed anything or using the correct code base.
+>>
+>> Jeff merged this patch-set into ath-202504021602. Can you try on this
+>> branch?
+>>
+>> git clone https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/
+>> git pull
+>> git reset --hard ath-202504021602
+>> compile and install...
+>>
+>> Also make sure that the firmware you used is from the same folder, don't
+>> mix with other folders:
+>> linux-firmware/ath12k/WCN7850/hw2.0
+>>
+>> 1. rmmod/insmod(debug_mask=0xffff)
+>> 2. iw reg get
+>> 3. iw reg set US
+>> 4. iw xxx scan
+>> wait and collect logs.
+>>
+>> don't do anything else.
+>>
+>>
+>> Also, can you show me your AP configuration.
+>> If you have another 6 GHz AP, you can have a try(better different brands).
+>>
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index a1e5d94b400d..0fa5c9df19b2 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7095,6 +7095,7 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
- {
- 	struct ath12k_base *ab = ar->ab;
- 	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
-+	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
- 	struct ieee80211_tx_info *info;
- 	enum hal_encrypt_type enctype;
- 	unsigned int mic_len;
-@@ -7104,7 +7105,7 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
- 
- 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
- 
--	ATH12K_SKB_CB(skb)->ar = ar;
-+	skb_cb->ar = ar;
- 	spin_lock_bh(&ar->txmgmt_idr_lock);
- 	buf_id = idr_alloc(&ar->txmgmt_idr, skb, 0,
- 			   ATH12K_TX_MGMT_NUM_PENDING_MAX, GFP_ATOMIC);
-@@ -7113,14 +7114,13 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
- 		return -ENOSPC;
- 
- 	info = IEEE80211_SKB_CB(skb);
--	if ((ATH12K_SKB_CB(skb)->flags & ATH12K_SKB_CIPHER_SET) &&
-+	if ((skb_cb->flags & ATH12K_SKB_CIPHER_SET) &&
- 	    !(info->flags & IEEE80211_TX_CTL_HW_80211_ENCAP)) {
- 		if ((ieee80211_is_action(hdr->frame_control) ||
- 		     ieee80211_is_deauth(hdr->frame_control) ||
- 		     ieee80211_is_disassoc(hdr->frame_control)) &&
- 		     ieee80211_has_protected(hdr->frame_control)) {
--			enctype =
--			    ath12k_dp_tx_get_encrypt_type(ATH12K_SKB_CB(skb)->cipher);
-+			enctype = ath12k_dp_tx_get_encrypt_type(skb_cb->cipher);
- 			mic_len = ath12k_dp_rx_crypto_mic_len(ar, enctype);
- 			skb_put(skb, mic_len);
- 		}
-@@ -7133,7 +7133,7 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
- 		goto err_free_idr;
- 	}
- 
--	ATH12K_SKB_CB(skb)->paddr = paddr;
-+	skb_cb->paddr = paddr;
- 
- 	ret = ath12k_wmi_mgmt_send(ar, arvif->vdev_id, buf_id, skb);
- 	if (ret) {
-@@ -7144,7 +7144,7 @@ static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arv
- 	return 0;
- 
- err_unmap_buf:
--	dma_unmap_single(ab->dev, ATH12K_SKB_CB(skb)->paddr,
-+	dma_unmap_single(ab->dev, skb_cb->paddr,
- 			 skb->len, DMA_TO_DEVICE);
- err_free_idr:
- 	spin_lock_bh(&ar->txmgmt_idr_lock);
--- 
-2.34.1
+Thanks for testing.
+
+Could you share your AP configuration?
+
+
+>>
+>> If you have sniffer, could please capture packets during testing?
+
+
+Can you capture packets during the testing? I need to check probe req 
+and probe resp.
+
+>>
+>> Thanks!
+>>
+>>> -Walt
+>>
+> OK, I cloned and built the kernel based on your instructions in your
+> last email. Originally, the result was identical to my last email,
+> including the WARNINGS. The .config I use is configured for a fully RT
+> PREEMPT kernel, which I wondered if that was why I was receiving the
+> WARNING. So I configured it as a Low Latency PREEMPT Desktop without
+> the RT_PREEMPT and that eliminated the WARNING. However, still no 6Ghz
+> networks. The firmware I'm using is straight from kernel.org GIT and I
+> do a 'make install; make dedup' to install it. I believe it should be
+> good. Attached is the latest log file.
+> 
+> -Walt
 
 
