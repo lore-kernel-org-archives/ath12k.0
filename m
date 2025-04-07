@@ -4,109 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6759C36010
-	for <ath12k@archiver.kernel.org>; Mon,  7 Apr 2025 18:51:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02D31C36010
+	for <ath12k@archiver.kernel.org>; Mon,  7 Apr 2025 19:16:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=x4+It+c8FiaIPB2pViRPzT1GXbmj+h6GvvLombB8HdQ=; b=G44e4ZT8SyCZaXg0fxIFPIAHIf
-	dgvoigVoqwVFF4/FMLAGr7S0Nc2hUQWEXBIpV07TYfUtB5MPGRUOVc8hK2mwnCsQIMc4BrtzN+Jtd
-	gjDc7q6LO0a3cGuhcW5/h1UDYsvP1bgHOyYoYmkrtXynAwuT4iyC/V58yPZzaOvtWbQhHFdYMpuyv
-	/9/QQSgWIC5Sv/89/aYSrsw4xRh7Jp5yrj8tt1c8St9+vp6k14fMIkJ/TSiDfxRKSw8peFIzUkZz7
-	344xIedurmrtlft9hgVLR26tLv4DGtMb+WhkeAjA0mtHUQ0+7ZUSP/HzDBF+oBf+VYj0usp+4pWYH
-	MHg4oUVg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=obdefS3r581wDFQ7rWGjcvcIm67aBo+xTKXGRKlq1Cg=; b=Kt07jupJBmpFqMp3nhclsBPLDO
+	ibLIkFUvBHnKu0GMHPmDZvetxMl91abJXjR5S8UtW5p2bCf4EJWl+3sExyxiEgO22U2/3nJrtZv3B
+	akLrsqAW5x0A4LTTq3V4HG+DQD/1c4iDnKP8u07gf2xFVba1ouQ7OSE2+tKVooEZvOcyuZRHW4WS2
+	OOmit17btGdbI5vUyv1GDSC6A6gcqttn+byW/d6FGyB1ktVv2e3jCNCcKxQ2h2syNr2WRlFkiZi4c
+	ocCForfqQB+ZEMQt1UYzPLfgwRG5VW64F6NlggNvyWp0EfGj+j7PKynnhBpLJgOgookjbdZXlNA/E
+	eI4Xc0wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1rZ8-00000001eHw-03Uw
+	id 1u1rx6-00000001mGx-35MP
 	for ath12k@archiver.kernel.org;
-	Mon, 07 Apr 2025 18:51:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Mon, 07 Apr 2025 19:16:12 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1q4s-00000001LLq-459v
+	id 1u1rNj-00000001aaa-1OH3
 	for ath12k@lists.infradead.org;
-	Mon, 07 Apr 2025 17:16:11 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5378dv4u010542
-	for <ath12k@lists.infradead.org>; Mon, 7 Apr 2025 17:16:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	x4+It+c8FiaIPB2pViRPzT1GXbmj+h6GvvLombB8HdQ=; b=XthXQaJnsMmgzIYY
-	TZ2HDBFzxq7a4L/EQh94sGaff1ZDI/cv4Lzazh8hOsorpk5h3LrUFzf7ItMbwx3S
-	8Jyj6xErEpHvJ2pIY/uzFzXj2XzhQNFtQ8OyIhBYIOtgDWJq1F0gOkH2vTizOx15
-	IL4whbP0yNS1lzqzw+c91zuVt+4xFG0o/Hzi+MbG1jUK00K+6UqtcqcWXK8otHVf
-	wfevdPpg7jllSBf1qNpI0uY16nN5A9X9nEnrc/evqzx34wEv6TRQ4DyRun7b2Iy7
-	RUvtnD4nrx9Zwnobvi0SoUDkO1MMmPcEJvwmeTMKcAHy5CTGTcAZ+7E4nTopHap4
-	6Eehkg==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twpm4wsn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 17:16:06 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-af91804dd0bso2797066a12.2
-        for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 10:16:06 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744046165; x=1744650965;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=x4+It+c8FiaIPB2pViRPzT1GXbmj+h6GvvLombB8HdQ=;
-        b=X3JnIejYbCweJMpRa/pY37LnQDtDQyMD63mZ3z+9XW9xTFIoYiBGWUtKaNTv+HnRpf
-         KL0d6NuC0Y7iG+Gt2fFO+/WP9u9rdZUTCMrHWbMIIM19nwGg8GT0cQbkN/mQpFManO5s
-         tn7dUSo7cORjDj2C3JULZGXhoHwfxdCFR384Ah7Gwc03SCBsK2UDavDXHnHFWfArQUIQ
-         8iJvH+iIND7+7ZL0mC8Tr2NcdGoVLs+Hk9bj+Kn5IJ0F1orzhCCzc4w2GJl/DoL0eYXA
-         kP/2t/fnh8E9A+pjYqBZgaZ7P1iPV/R5zX3OdADXPDIF+wQqA4QXrz4fvfaTBsPuszDG
-         So/Q==
-X-Forwarded-Encrypted: i=1; AJvYcCWnacvSCobksve5e5AZhOT6NNWidBFrNw6cVSSIqp0KVywdn7AHhsjwG1+fbhq3AVdluD3sApY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy5gl+9kXdgIB/Vg39lR/ePGs5XSixChtq8d8SP4tflduoPoPH4
-	xWwrZCP50Cn1vSW1FYh48DcxzbH5KNs8i+h8pN1IlXUmzod118IIN7Nz8FKv4ClRMFI1kwLPRVL
-	M2UNVE8kHioq3Ls6GESot/0XVGe7kYK/yqvBbYEpfPaD/4P66lvK0nisLChpC
-X-Gm-Gg: ASbGncuirSbtNOkFAUT9KN6cHcoOhdpBQO/5KkvMpj05Tk39wtySk4O5V0+hwQK0BJH
-	7VZVE4dpcUa+G/31BW7+FPpKq/d6O4ij92jj3dzpQcvv2VRwyZ5s/sclzfu6fFAptVV2JxcuJLO
-	PW4yeJnR7Sx8Rqx8O6PJjPmqd6MyeZsff3xHixqmrlE+x5+Z3RZborxXcCeaoJf5Oy/NcMCReVg
-	cURJtdnVJeGKplQiCLxou9HJ6YyjMUkPkNZmDVoMn5uWc4CO9tSGJO2P8/XqjbA+CW5pC+7s7s3
-	+UPh7XKYB6WxU5UwP6tsdMxdncaQSTp349kCRtYi4LJKJ56tXv+61Da52JJWvkcqBYxICiEZWhs
-	t2RfuRX7x
-X-Received: by 2002:a17:90b:2f46:b0:303:75a7:26a4 with SMTP id 98e67ed59e1d1-306af6e91b5mr15013993a91.7.1744046165473;
-        Mon, 07 Apr 2025 10:16:05 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFqRokzLd76m2Y82cCCvCYijyAExnWKd3PeIXztfoKGqbcLATqDh2s/RnOU1w4jQ0njHRmM+Q==
-X-Received: by 2002:a17:90b:2f46:b0:303:75a7:26a4 with SMTP id 98e67ed59e1d1-306af6e91b5mr15013940a91.7.1744046164796;
-        Mon, 07 Apr 2025 10:16:04 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3058466dc0bsm9058682a91.15.2025.04.07.10.16.04
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 07 Apr 2025 10:16:04 -0700 (PDT)
-Message-ID: <406a43b8-10ad-4bb2-b27b-e97bb1c992b0@oss.qualcomm.com>
-Date: Mon, 7 Apr 2025 10:16:03 -0700
+	Mon, 07 Apr 2025 18:39:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 6C840A484D2;
+	Mon,  7 Apr 2025 18:34:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C41D1C4CEDD;
+	Mon,  7 Apr 2025 18:39:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1744051177;
+	bh=FqBbfujZorWgG3rPeHe3EJNi1KkKcFDOQUHyCf5TY6k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=arFXIKZA9VCS2brkxZJUTn7YyPSvWytivwyTvyMlTXOiZdn1DfXL2T9jkGH6fztBi
+	 hnKcsF0bAr+tBA7v8TPaWzcS+u6xzN/sa8pFk8/UPVwgaaybDk0KQ0l0o0FAU7QsBq
+	 fghq56XwRgZ6rVbW22jGMQgoDSotfSSekHQV2WGuiaz7JQa/UAzdkcfsZPvslMIEB9
+	 bV0rRCi0WuO7t9sLFrSkm8RX9JBF7ohec66F7cgx3I6D3a9JWfgMGkQBnd8CgtQiSB
+	 /cFy7ueImq3lKm/NRlh2J5uu4Brzes+mNmB/eru8AVV/ndag+iMGui8oyuPiUC01IJ
+	 as1yGmblcd4ag==
+Date: Mon, 7 Apr 2025 11:39:34 -0700
+From: Kees Cook <kees@kernel.org>
+To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>,
+	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-hardening@vger.kernel.org
+Subject: Re: [PATCH][next] wifi: ath12k: core.h: Avoid
+ -Wflex-array-member-not-at-end warnings
+Message-ID: <202504071138.98D5B6E@keescook>
+References: <Z8-Snz86Xfwdlyd7@kspp>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 0/4] wifi: ath12k: Fix multicast memory leak in
- tx path
-To: P Praneesh <praneesh.p@oss.qualcomm.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250402181454.2699777-1-praneesh.p@oss.qualcomm.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20250402181454.2699777-1-praneesh.p@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-GUID: UWHfYgULk2WaKSxZQJ6A5c_smhWRSbHl
-X-Proofpoint-ORIG-GUID: UWHfYgULk2WaKSxZQJ6A5c_smhWRSbHl
-X-Authority-Analysis: v=2.4 cv=MpRS63ae c=1 sm=1 tr=0 ts=67f40856 cx=c_pps a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=e70TP3dOR9hTogukJ0528Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=qj2aD7nG-88JOw6nMIUA:9 a=QEXdDO2ut3YA:10 a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-07_05,2025-04-07_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- mlxlogscore=835 clxscore=1015 priorityscore=1501 impostorscore=0
- spamscore=0 bulkscore=0 suspectscore=0 malwarescore=0 adultscore=0
- phishscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504070120
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <Z8-Snz86Xfwdlyd7@kspp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_101607_033634_68C6696E 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20250407_113939_432596_3E06BFAE 
+X-CRM114-Status: GOOD (  18.50  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,38 +75,61 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/2/2025 11:14 AM, P Praneesh wrote:
-> Address the memory leak caused by extended skb allocation observed during
-> multicast transmission in this series.
+On Tue, Mar 11, 2025 at 12:02:15PM +1030, Gustavo A. R. Silva wrote:
+> -Wflex-array-member-not-at-end was introduced in GCC-14, and we are
+> getting ready to enable it, globally.
 > 
-> P Praneesh (4):
->   wifi: ath12k: Handle error cases during extended skb allocation
->   wifi: ath12k: Refactor tx descriptor handling in tx completion handler
->   wifi: ath12k: Fix memory leak during extended skb allocation
->   wifi: ath12k: Use skb->len for dma_unmap_single() length parameter
+> Move the conflicting declaration to the end of the structure. Notice
+> that `struct ieee80211_chanctx_conf` is a flexible structure --a
+> structure that contains a flexible-array member.
 > 
->  drivers/net/wireless/ath/ath12k/dp.c    | 10 ++-
->  drivers/net/wireless/ath/ath12k/dp.h    |  7 ++
->  drivers/net/wireless/ath/ath12k/dp_tx.c | 87 ++++++++++++++-----------
->  3 files changed, 64 insertions(+), 40 deletions(-)
+> Fix 30 of the following warnings:
 > 
+> drivers/net/wireless/ath/ath12k/core.h:298:39: warning: structure containing a flexible array member is not at the end of another structure [-Wflex-array-member-not-at-end]
 > 
-> base-commit: ba613742db305037ca2193b2b552b769c4f2a5f7
+> Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
 
-Please rebase to current ath/main
+Hi, just checking in on this patch. Is some adjustment needed for this
+to land?
 
-Applying: wifi: ath12k: Handle error cases during extended skb allocation
-Applying: wifi: ath12k: Refactor tx descriptor handling in tx completion handler
-Using index info to reconstruct a base tree...
-M       drivers/net/wireless/ath/ath12k/dp.h
-M       drivers/net/wireless/ath/ath12k/dp_tx.c
-Falling back to patching base and 3-way merge...
-Auto-merging drivers/net/wireless/ath/ath12k/dp_tx.c
-CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/dp_tx.c
-Auto-merging drivers/net/wireless/ath/ath12k/dp.h
-Recorded preimage for 'drivers/net/wireless/ath/ath12k/dp_tx.c'
-error: Failed to merge in the changes.
-Patch failed at 0002 wifi: ath12k: Refactor tx descriptor handling in tx completion handler
+Thanks!
 
-/jeff
+-Kees
+
+> ---
+>  drivers/net/wireless/ath/ath12k/core.h | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+> index 3fac4f00d383..d6b4c4d2c400 100644
+> --- a/drivers/net/wireless/ath/ath12k/core.h
+> +++ b/drivers/net/wireless/ath/ath12k/core.h
+> @@ -295,7 +295,6 @@ struct ath12k_link_vif {
+>  	int txpower;
+>  	bool rsnie_present;
+>  	bool wpaie_present;
+> -	struct ieee80211_chanctx_conf chanctx;
+>  	u8 vdev_stats_id;
+>  	u32 punct_bitmap;
+>  	u8 link_id;
+> @@ -303,6 +302,13 @@ struct ath12k_link_vif {
+>  	struct ath12k_rekey_data rekey_data;
+>  
+>  	u8 current_cntdown_counter;
+> +
+> +	/* Must be last - ends in a flexible-array member.
+> +	 *
+> +	 * FIXME: Driver should not copy struct ieee80211_chanctx_conf,
+> +	 * especially because it has a flexible array. Find a better way.
+> +	 */
+> +	struct ieee80211_chanctx_conf chanctx;
+>  };
+>  
+>  struct ath12k_vif {
+> -- 
+> 2.43.0
+> 
+
+-- 
+Kees Cook
 
