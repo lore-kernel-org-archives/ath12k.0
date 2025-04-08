@@ -4,96 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71674C369A5
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 18:42:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA2BAC369A7
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 19:57:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=; b=zSIWz9aXjXJ4GP0eJGeK9qBgD4
-	r3hE4WFR0f7wtlFwTiPBGuQTU47HO+5RioICLgk4GcZ7WvIi9LuRTQ25ZkxATGT6wrx5a3yD1XcOj
-	R1tm2svnKfPFmTySerMh+VcHH6BqkUMI8OWkM/o7pCL2nUhOwRKYoAwc5Z3kegh+5yyiWG1G8ndJC
-	REJT64q+VYJ9WjmeZ/slhTjqq0RAf3q54j8z2MpVyn65k2MWYgMkqkfT1uaR64u7qvf8I/5W9zuQ+
-	bo1AZaewUzWXvXwBlwYA8vmrBftggtub3zAIxKjMmV9jz7gtujJaKZsSC5U823oAguMsDiiDlJfiv
-	ZbYYUPkQ==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:
+	Cc:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=V0zGC39nAfRUYoPg3aOmlDwHuUcoNloqjSgKMRMWL4s=; b=k2NJjC/IGJK2FP4y9R2/cB2Mjj
+	GbE9yCLrdQ5HF/o+tnAnptlX8pA2NJDGka3Xdar5g6m/aIVRqrPCer35uoDrb9IYaChJXaDJpKvpD
+	SJR1R1JfskapLdBtgy4ySdh6jJtJES68amWCUyMcoeYM8F5JAhuzyusLYqc/fK2qQ1kxHPhWnEY4c
+	voArGanqQEFc9nVS2fSEAwwlYY2krXbcNhg+oU7naGRV73aHsRyeW9QBzt4E56Uhm2g26MQQegpXX
+	jV0QoMl8KO5tP6ltne190CmwAKeBbi/7++ZEE0V8Bb5JVKifG8AB7bHdoUEeBHGtym6TXN0QDH4cp
+	Bk3KDMVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2DuL-000000058lV-0sbn
+	id 1u2F4y-00000005Hcq-1zeM
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 18:42:49 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	Tue, 08 Apr 2025 19:57:52 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2CUO-00000004vqn-3TRN
-	for ath12k@bombadil.infradead.org;
-	Tue, 08 Apr 2025 17:11:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=; b=koGtprtrfyoLqJAWMCGNIRx7KK
-	aWc/EQNEZ/zSndtscrfISiUBtDIUd56b3conAB6xLi7NfNbfiXSETj1h4jYC7cf3h6rLDwaWz1JIU
-	hJovXk1FEUPhR2WQy+NbEpXLERnIK6dobJdZyMd68i23cNv9A5wLX8Ej4lrcF+IJyL5NfF9pwN86p
-	Zeerbqi1Y7X3GA1r2PPqmOMXaEA/insAU17p5kRWySFrfcHCj/P/y5eujq4SBOXTro90gpK/VGo9v
-	Mq8FMSOHgoaZqub4LG47J+1Zdd2D7vo28f+dSZfsW9A7EhFC358bv5ACY977UvRXg/1+qx9230GLH
-	vwujPE9w==;
-Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
-	by desiato.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u2CUH-00000008LMD-1CVe
+	id 1u2Dwa-000000059De-2Rio
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 17:11:54 +0000
-Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-2295d78b433so58325525ad.2
-        for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 10:11:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744132298; x=1744737098; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:to
-         :from:from:to:cc:subject:date:message-id:reply-to;
-        bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=;
-        b=K1pw2jIlmS1YoPQdAwgHb9aocJ0J6euaY71sUl/9eknzHC6OjxZ6h4p8hejuwFtPgB
-         OkRjjog1wpP9HM685tKIHr+3pUqmf4fPO4ij8RGqfHv+cLx7q+wCo/A188UaYhB2/D8j
-         QiQNeEMggRAUDLAlx/qACYHJUdbwCeqs9MfUgAvULpORzGz0+BeLw2/mXO3eGbFeMGiH
-         ZY65oRPhWglUUc3CiJ6T74fHR0Jxog0Wp82SM8cM8/lxql6zYEg56TYf7rgB58si5nrk
-         FlMkCmjl8rUMIwrppMw1kegRd9uG/ejCPh0vfXRTjJ/0k3d3jsabMJXYheNXg4U781Y7
-         NyNg==
+	Tue, 08 Apr 2025 18:45:10 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 538BgbDc032633
+	for <ath12k@lists.infradead.org>; Tue, 8 Apr 2025 18:45:07 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=V0zGC39nAfR
+	UYoPg3aOmlDwHuUcoNloqjSgKMRMWL4s=; b=GRIKm0U6JijuRPBUjhnrfOzQ0VK
+	aYSAHJOesdFcAP3DukJWAx3d4OLhliyckt9HxBLq6U9XOimNSekUWE8euon0BUZX
+	iBCQGygWQM2YSnbOipbM7ArrMX++aRB3jZOCRsYoZt97XXAciRivuKvJsH/H3YxB
+	JIS+nmT+tzITavQWA76Auwl2iTxSYaed+koqu2sZcfpA+ExFzEfUMqc/Hy/AOfz9
+	3F51zwFcRVUjqVqbKwIawBoTA+KSWUpopTW5Vzqnq8aKa8TM6woboQw7EcqAMR6W
+	7FqT2Vj77vImqphb+fRo2Co9AfYtrKQzG3gQNfNPOEKx1L212fdPq1sQW/w==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twfkgrrh-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 18:45:07 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2241ae15dcbso69004895ad.0
+        for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 11:45:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744132298; x=1744737098;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:to
-         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=;
-        b=fwu4KV38Vrl7qdT3n4U28I1C5/tkLeUGgjtzJdFR5jeHpenPcKio7iEZ3L+XlE5MOG
-         kWVmt5p0LjCPPBUxzwBu8ZDHNq7kclK8gSg8Qbx9L3vxsMgPA5iwL89ueVgCgScZCz2r
-         ioX4GiUCVNRkggeruUZFchLsvIGBgipkyW/e4u6ILD3dTFSkVqLPJAykcSGD3HVl4kmH
-         j32T0O9Mq99ggIkX2ykkFdUffB0zNDzd2JKsMZqVILmhCIrlye1BP8Es8imPcgHJuuRg
-         2FmlDhyzCGKoI1QHWUwqT85GsKpnaxhQnfQfK8Z8V1zlHfzRvNVehysIw5Q2GifpNbL5
-         jBfA==
-X-Gm-Message-State: AOJu0YwUCTznQv4fRtIzsd2b8jTNn0NKxwu+sTsi0M7R+x/UoxMHOI+1
-	Bq0x1Sqdh8aZy+4II+7ELOF8KIXYEwnk30jp/LRA6cB9iq9mwKVfETeLmHuqi7I=
-X-Gm-Gg: ASbGncsRTVNc9iV51EZB2DT3YLnaKNw7GPXppyNYQlKNGMfZ6L88q6s6s4UNxrB7nxD
-	82S4wISC2YSpuy7XQdbOzmrLjgUA2JwbLF2dyxPxzvy4iUe6wYsfsH9A+zxPgaDsUk4Rp87AS5K
-	dwhPoDNWsLnMJ1hc847SiDfZaOzHn75LWfXVUZ5DyBYoqi7z0WOD9/YawLH1RLHuTZ4Sj0sApzQ
-	piq72J9Zt6Mu7TZpNGtVLDtuazhUmxufEpehltgLNBClf0rzkF/e1HmqKl6Y7Wbf0Mi48UxMKr0
-	vvxYvaPfZ/JLlYF+r2G8P8T4uiDGAwYhAJ7hyiRkuOo=
-X-Google-Smtp-Source: AGHT+IGa/Bvol6h86EL/0eQDUFZDFJ8hCY0TRtXWuYkc3YSaxiH7Z8RpQeeV75AxpzroWYGzTA0IKQ==
-X-Received: by 2002:a17:902:c40c:b0:227:eb61:34b8 with SMTP id d9443c01a7336-22ac29add7bmr68235ad.25.1744132297761;
-        Tue, 08 Apr 2025 10:11:37 -0700 (PDT)
-Received: from nuvole.. ([144.202.86.13])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2297865bd80sm103386545ad.118.2025.04.08.10.11.35
-        for <ath12k@lists.infradead.org>
+        d=1e100.net; s=20230601; t=1744137906; x=1744742706;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=V0zGC39nAfRUYoPg3aOmlDwHuUcoNloqjSgKMRMWL4s=;
+        b=ShASLjtGEmZksl+8MBZJH1ZMvv597TecbdPz9nPKWYYw/LGesC6tczZp15KExcyT9M
+         kYYOeNpgNYc7wYxat+/5RPFa5fFCZ/OoK3UUd93VvEK3/SFVNyeIoOTWcsL772mMkhRj
+         9VWb16e7baTaHUAk3R9+nuOU3DsAVoxjdr92E7BD6tEnlqE9C7tduS4RNyLqLrtyfOPI
+         oELXgHYp7ItGtOfC2PH3CBQaSYq77mzS+c0irQLk4y/0+QFvyqktmIAbuS0/Vz5TVddm
+         u/LYc9SLtGVDXPM8pqEV4h91vth+iWmtfmBmln24wF+yxlzxz2NQIrC2iuwu0LM895Bs
+         tzbg==
+X-Forwarded-Encrypted: i=1; AJvYcCXf7Ki7n7C+8gg0L9VU/hG9XsVEJhY+c1RTB6hpCAyw8xQXu+AktOpEMwr/pP4AK9mFoyj/OX8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzK9dmYwF/XyfiDrZVrA7o0jcILnMJ5WVfNuTRO5dFO49AQAE0n
+	UrUYhWZeK+ruklpwldSMZXx4hr+5gczVRLXgJl7qu+eaWSWxFEmSfsJ+qp4mZL/ffIMio14KGNb
+	jaJ4e/6FjWT6KHXpze6R+2sRG77k3AbbCcJbMLPaD/kSF0c4TD3t01tnV+VLM
+X-Gm-Gg: ASbGncv4YUKPcXtLyinJH/dMya1PTTOzIlmYIpkdLAOr+vGS7dEgCnkRs5PTBBGPLum
+	zQy07Zw5dpOfz/YWbBlXJJamrxImEpGBT0nYMePv3BjVFAKo8WWYbrx/gPHeZ33A0H7VtLvCe/v
+	O7w2lqMVlhXVrkwtg0vFnOnFgZY6Nk/uULwLfJ29xuc1UD9+/XX4n1eZrrj3kRXiwM2W/Oj6Y0B
+	dtsFST1JsM3BkDuSbYM0Z8mV7Xj5dA7cb0ru2eRit5ouS+EUdOsYLu+0r3SwEujS9ZjT5YcwO2w
+	6uZGXsUEMNHqJSXmkDVdVLU01qVmpqWmTKNEFLh2/ziWqLXvmhmmKgIy5c6A9PX+d5Id/7I=
+X-Received: by 2002:a17:90b:270e:b0:305:2d9b:f8d1 with SMTP id 98e67ed59e1d1-306dbc23bcfmr414947a91.24.1744137905982;
+        Tue, 08 Apr 2025 11:45:05 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFaU3DhJgD9mFlpz+3pt/knEhqaVCDrmHUL3p4sYGxtpbfvJJ4wuIl+C1Isb4VWBwFOCCpiIA==
+X-Received: by 2002:a17:90b:270e:b0:305:2d9b:f8d1 with SMTP id 98e67ed59e1d1-306dbc23bcfmr414917a91.24.1744137905639;
+        Tue, 08 Apr 2025 11:45:05 -0700 (PDT)
+Received: from alokad-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3057cb9500dsm12882212a91.47.2025.04.08.11.45.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 08 Apr 2025 10:11:37 -0700 (PDT)
-From: Pengyu Luo <mitltlatltl@gmail.com>
-To: ath12k@lists.infradead.org
-Subject: ath12k: request a board file for sm8650
-Date: Wed,  9 Apr 2025 01:09:36 +0800
-Message-ID: <20250408170936.5902-1-mitltlatltl@gmail.com>
-X-Mailer: git-send-email 2.49.0
+        Tue, 08 Apr 2025 11:45:05 -0700 (PDT)
+From: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+To: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        ath11k@lists.infradead.org
+Subject: [PATCH ath-next v5 3/3] wifi: ath12k: pass link_conf for tx_arvif retrieval
+Date: Tue,  8 Apr 2025 11:45:01 -0700
+Message-Id: <20250408184501.3715887-4-aloka.dixit@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250408184501.3715887-1-aloka.dixit@oss.qualcomm.com>
+References: <20250408184501.3715887-1-aloka.dixit@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-Proofpoint-GUID: Q8ofU2MzZWcmU67qWoowmhSEIGkIlLro
+X-Proofpoint-ORIG-GUID: Q8ofU2MzZWcmU67qWoowmhSEIGkIlLro
+X-Authority-Analysis: v=2.4 cv=b7Oy4sGx c=1 sm=1 tr=0 ts=67f56eb3 cx=c_pps a=cmESyDAEBpBGqyK7t0alAg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=66aBALrjW5AsI7a0044A:9 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-04-08_08,2025-04-08_04,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 malwarescore=0
+ priorityscore=1501 suspectscore=0 mlxscore=0 impostorscore=0 phishscore=0
+ clxscore=1015 spamscore=0 mlxlogscore=844 bulkscore=0 lowpriorityscore=0
+ classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504080129
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250408_181149_382525_04D6AF71 
-X-CRM114-Status: UNSURE (   6.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250408_114508_737491_151DBF6E 
+X-CRM114-Status: GOOD (  14.90  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,46 +116,100 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Hi, in my sm8650 based device(Oneplus Pad 2), it is equipped with
-wcn7850, it doesn't work. No common board file for
+Three out of four callers to ath12k_mac_get_tx_arvif() have
+link_conf pointer already set for other operations. Pass it
+as a parameter. Modify ath12k_control_beaconing() to set
+link_conf first.
 
-bus=pci,vendor=17cb,device=1107,subsystem-vendor=17cb,subsystem-device=1107,qmi-chip-id=2,qmi-board-id=255
+Signed-off-by: Aloka Dixit <aloka.dixit@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 31 +++++++++++++++------------
+ 1 file changed, 17 insertions(+), 14 deletions(-)
 
-device specified board file from androd image can't be loaded. I
-have also tried many board files for other devices which are from
-board-2.bin, none of them worked. Can someone upload a board file
-for it? Thanks!
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index fe4a22362000..15ee1f4b5193 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -580,22 +580,16 @@ static int ath12k_mac_vif_link_chan(struct ieee80211_vif *vif, u8 link_id,
+ 	return 0;
+ }
+ 
+-static struct ath12k_link_vif *ath12k_mac_get_tx_arvif(struct ath12k_link_vif *arvif)
++static struct ath12k_link_vif *
++ath12k_mac_get_tx_arvif(struct ath12k_link_vif *arvif,
++			struct ieee80211_bss_conf *link_conf)
+ {
+-	struct ieee80211_bss_conf *link_conf, *tx_bss_conf;
++	struct ieee80211_bss_conf *tx_bss_conf;
+ 	struct ath12k *ar = arvif->ar;
+ 	struct ath12k_vif *tx_ahvif;
+ 
+ 	lockdep_assert_wiphy(ath12k_ar_to_hw(ar)->wiphy);
+ 
+-	link_conf = ath12k_mac_get_link_bss_conf(arvif);
+-	if (!link_conf) {
+-		ath12k_warn(ar->ab,
+-			    "unable to access bss link conf for link %u required to retrieve transmitting link conf\n",
+-			    arvif->link_id);
+-		return NULL;
+-	}
+-
+ 	tx_bss_conf = wiphy_dereference(ath12k_ar_to_hw(ar)->wiphy,
+ 					link_conf->tx_bss_conf);
+ 	if (tx_bss_conf) {
+@@ -1623,7 +1617,7 @@ static int ath12k_mac_setup_bcn_tmpl(struct ath12k_link_vif *arvif)
+ 		return -ENOLINK;
+ 	}
+ 
+-	tx_arvif = ath12k_mac_get_tx_arvif(arvif);
++	tx_arvif = ath12k_mac_get_tx_arvif(arvif, link_conf);
+ 	if (tx_arvif) {
+ 		if (tx_arvif != arvif && arvif->is_up)
+ 			return 0;
+@@ -1693,6 +1687,7 @@ static void ath12k_control_beaconing(struct ath12k_link_vif *arvif,
+ {
+ 	struct ath12k_wmi_vdev_up_params params = {};
+ 	struct ath12k_vif *ahvif = arvif->ahvif;
++	struct ieee80211_bss_conf *link_conf;
+ 	struct ath12k_link_vif *tx_arvif;
+ 	struct ath12k *ar = arvif->ar;
+ 	int ret;
+@@ -1725,7 +1720,15 @@ static void ath12k_control_beaconing(struct ath12k_link_vif *arvif,
+ 	params.aid = ahvif->aid;
+ 	params.bssid = arvif->bssid;
+ 
+-	tx_arvif = ath12k_mac_get_tx_arvif(arvif);
++	link_conf = ath12k_mac_get_link_bss_conf(arvif);
++	if (!link_conf) {
++		ath12k_warn(ar->ab,
++			    "unable to access bss link conf for link %u required to retrieve transmitting link conf\n",
++			    arvif->link_id);
++		return;
++	}
++
++	tx_arvif = ath12k_mac_get_tx_arvif(arvif, link_conf);
+ 	if (tx_arvif) {
+ 		params.tx_bssid = tx_arvif->bssid;
+ 		params.nontx_profile_idx = info->bssid_index;
+@@ -7938,7 +7941,7 @@ static int ath12k_mac_setup_vdev_params_mbssid(struct ath12k_link_vif *arvif,
+ 		return -ENOLINK;
+ 	}
+ 
+-	tx_arvif = ath12k_mac_get_tx_arvif(arvif);
++	tx_arvif = ath12k_mac_get_tx_arvif(arvif, link_conf);
+ 	if (!tx_arvif)
+ 		return 0;
+ 
+@@ -9526,7 +9529,7 @@ ath12k_mac_update_vif_chan(struct ath12k *ar,
+ 		params.aid = ahvif->aid;
+ 		params.bssid = arvif->bssid;
+ 
+-		tx_arvif = ath12k_mac_get_tx_arvif(arvif);
++		tx_arvif = ath12k_mac_get_tx_arvif(arvif, link_conf);
+ 		if (tx_arvif) {
+ 			params.tx_bssid = tx_arvif->bssid;
+ 			params.nontx_profile_idx = link_conf->bssid_index;
+-- 
+2.34.1
 
-default:
-	demsg | grep -i 'ath12k'
-	[    1.064804] ath12k_pci 0000:01:00.0: BAR 0 [mem 0x60400000-0x605fffff 64bit]: assigned
-	[    1.065551] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002)
-	[    1.069350] ath12k_pci 0000:01:00.0: MSI vectors: 16
-	[    1.071626] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
-	[    1.642144] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x40170200
-	[    1.676854] ath12k_pci 0000:01:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:05 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-	[    1.720470] ath12k_pci 0000:01:00.0: failed to fetch board data for bus=pci,vendor=17cb,device=1107,subsystem-vendor=17cb,subsystem-device=1107,qmi-chip-id=2,qmi-board-id=255 from ath12k/WCN7850/hw2.0/board-2.bin
-	[    1.726844] ath12k_pci 0000:01:00.0: failed to fetch board.bin from WCN7850/hw2.0
-	[    1.728877] ath12k_pci 0000:01:00.0: qmi failed to load bdf:
-	[    1.734862] ath12k_pci 0000:01:00.0: qmi failed to load board data file:-2
-
-board file from android rom:
-	demsg | grep -i 'ath12k'
-	[    4.054474] ath12k_pci 0000:01:00.0: BAR 0 [mem 0x60400000-0x605fffff 64bit]: assigned
-	[    4.057350] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002)
-	[    4.059490] ath12k_pci 0000:01:00.0: MSI vectors: 16
-	[    4.060620] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
-	[    4.635118] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x40170200
-	[    4.639740] ath12k_pci 0000:01:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:05 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-	[    4.836061] ath12k_pci 0000:01:00.0: ignore reset dev flags 0x0
-	[   14.818289] ath12k_pci 0000:01:00.0: qmi failed to load bdf file
-	[   14.818694] ath12k_pci 0000:01:00.0: qmi failed to load board data file:-110
-
-One more thing deserves a notice,
-fw_build_id from my Dsp firmware:
-	"wlan_hmt": "WLAN.HMT.2.0-02702-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1"
-	mainline:   "WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3"
-
-Best wishes,
-Pengyu
 
