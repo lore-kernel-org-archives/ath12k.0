@@ -4,91 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF238C36010
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 04:21:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A185C3600C
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 04:38:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tjH6i69nbjpMNZDiXdgJw7srN0uxGAjI4AZQw1iRHaI=; b=KLcEHEW2PwvmSqIwge3pAdGD1q
-	prE9rG/rSaF7rWsXHog3KpQQnXVjo8azi1Gnivl0rZyDBml0gWxfp6DNONP/GoIhs0kNGPnsVagnZ
-	5ePn102mBLGWW7o9V+GaiYXyxMWqauaqvrleO1rJ8D5jVWXUeQi9aG96IPYtou/eQeFP/guJA0SJW
-	mCL9P8WSPuP62/w9gIqOdgrOnaRd0OeAb6xenq4D5yIOQVQvB4Ai87BYrEOnp3Ew8kW6IatbpqVoQ
-	+5PKL/ZYzlyxcvXrKBSugDNwK6Zsj1VlSekAykSxJnIFIWhMzG7wgubnDpVL+5mGEoDgsCSCpYmSt
-	tv8EwuSA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=OEm0PzBcX4PYVvvflRjIkkieiwydYyYshkhGB793AdI=; b=lBZ2eGK3yLcO4wGSDM8yXZgDes
+	zPYa4u71y5lQeOkQuqJ/33yIUpDhlwe41dH04x88MfQZ7PHolqfo9Dfv+kDzEJpGHeWnaJxzpB1TA
+	eRHQOOfXCaOp7AlIAze+7fqhdh3jdZKf2LYN2TMNoW9BTTpVX3skzQG39DBun0PpUZ5iOAR7R4ltv
+	QSU5rdRKxziU3LC5CVY3XsB5GcYiOT8vfl0kO+AsfNz9i7Tr86rd1ccFk8mXI1TSAbMFbd1z37Lxl
+	A4RXJiolppip02+d8w0yqgUlhu2DGtFI6FktThcHgVGI+HFgzb+TFrA397UVTrYr1wTTx+0VRc/kq
+	O1T75XVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u20TD-00000002geH-25OB
+	id 1u20jK-00000002hpN-2jFv
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 04:21:55 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 08 Apr 2025 04:38:34 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u20TB-00000002gd1-0aty
+	id 1u20jI-00000002hox-0J9N
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 04:21:54 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GSqC008168;
-	Tue, 8 Apr 2025 04:21:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tjH6i69nbjpMNZDiXdgJw7srN0uxGAjI4AZQw1iRHaI=; b=DXuZaiCALkldBAKU
-	Kitwe8bi3RaknaeSMZU0Kdm6h7Wyp8bx2AuRAr6ccYKWWgoxktp525G33bloMCnG
-	RiAxdgptnos4r3hCx+4YbJ7m4xfV6TUCMGDpzOgkR4OcEWZ2f2YeP3sD3TYravsF
-	L3LAifGaxeY3A8Q4lHk82zZkDLkIBXECDafYjp1eU+yBZ7S+rY0rsnPrOZq/rSDF
-	rCZWvk/kzyBgrdwYMCa6Wb1+/BNwD6utYzP8l7KNXKrTj1zaw8KiXHySf6G8lOu+
-	rjty8dGd0XqO+39owpVvENIjM2A/DrZdyFWnEmoM125ScvW1mBdMzefvANFrzM39
-	VqvnpQ==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twtaxg1t-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Apr 2025 04:21:51 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5384LpsG015810
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Apr 2025 04:21:51 GMT
-Received: from hu-rajson-blr.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 7 Apr 2025 21:21:49 -0700
-From: Rajat Soni <quic_rajson@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Aditya Kumar Singh
-	<aditya.kumar.singh@oss.qualcomm.com>,
-        Rajat Soni <quic_rajson@quicinc.com>
-Subject: [PATCH ath-next 3/3] wifi: ath12k: Update frequency range if reg rules changes
-Date: Tue, 8 Apr 2025 09:51:28 +0530
-Message-ID: <20250408042128.720263-4-quic_rajson@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250408042128.720263-1-quic_rajson@quicinc.com>
-References: <20250408042128.720263-1-quic_rajson@quicinc.com>
+	Tue, 08 Apr 2025 04:38:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1744087112; x=1775623112;
+  h=date:from:to:cc:subject:message-id:mime-version;
+  bh=Zv55tHddw8z6nF2cxRg2YduP5dh4XvfzcppA91UjuN8=;
+  b=OLaP3u2VM4R9SjhuS96zfCexqp6MOsoinwCFQhMvX8dsxOk01SsL+UO0
+   8/Nvzl45We9X8IdZAj/ui959Gu1TvdseIkK8Zd0nzEKW9WL6RG+8WYceJ
+   g88kyZDmDCnZ77SjP6inQxMSrz/likVODJSfo3i5NFcgsAVfzKoHiNE0B
+   Cu32KeD62+aMVUReBRBx7VjM1opLtNKJbjE8wihMQvx5VaOfDQO6HBjH/
+   ZSy4a8jv6YvNXzWGfilcxCwRXBbC6XLcvjlMG1+u1c24eP8OcbNgCJOnj
+   2DAS9qcJseMXdkrp1MsohftqosCys1teQvmgO4O0Ya0KOxijgs1VIL+PR
+   w==;
+X-CSE-ConnectionGUID: EZihF/WZR6yNdkFlkfwKig==
+X-CSE-MsgGUID: G53BhLN/SsKyvJcRnwCUNw==
+X-IronPort-AV: E=McAfee;i="6700,10204,11397"; a="45386103"
+X-IronPort-AV: E=Sophos;i="6.15,197,1739865600"; 
+   d="scan'208";a="45386103"
+Received: from fmviesa002.fm.intel.com ([10.60.135.142])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Apr 2025 21:38:27 -0700
+X-CSE-ConnectionGUID: 9GusZXIOQqq1HNKXLyn80w==
+X-CSE-MsgGUID: 9aNyijv7THCimtDWRKc+Ow==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.15,197,1739865600"; 
+   d="scan'208";a="151338746"
+Received: from lkp-server01.sh.intel.com (HELO b207828170a5) ([10.239.97.150])
+  by fmviesa002.fm.intel.com with ESMTP; 07 Apr 2025 21:38:25 -0700
+Received: from kbuild by b207828170a5 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1u20j9-00047P-0C;
+	Tue, 08 Apr 2025 04:38:23 +0000
+Date: Tue, 8 Apr 2025 12:38:08 +0800
+From: kernel test robot <lkp@intel.com>
+To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+	ath12k@lists.infradead.org,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>
+Subject: [ath:ath12k-split-phy 64/169]
+ drivers/net/wireless/ath/ath12k/reg.c:243:11: warning: variable 'band' is
+ used uninitialized whenever 'if' condition is false
+Message-ID: <202504081251.hX88VR4a-lkp@intel.com>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: p9Ft41yVaWQyww_mPrUfT4jJsbOIfKlY
-X-Authority-Analysis: v=2.4 cv=LLlmQIW9 c=1 sm=1 tr=0 ts=67f4a45f cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=w9nBwx8m75PmKFNLLyMA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: p9Ft41yVaWQyww_mPrUfT4jJsbOIfKlY
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-08_01,2025-04-07_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
- clxscore=1015 mlxlogscore=999 malwarescore=0 phishscore=0
- lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 adultscore=0
- suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504080029
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_212153_192765_F4F2594D 
-X-CRM114-Status: GOOD (  17.75  )
+X-CRM114-CacheID: sfid-20250407_213832_138249_EC5FD8D6 
+X-CRM114-Status: GOOD (  11.45  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,115 +90,268 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-split-phy
+head:   31d82c3b3b8782ff326a188f2ae78d3d9f333448
+commit: 831c6c9cc5355e281e53da62045bf950f8d9e3ca [64/169] wifi: ath12k: combine channel list for splitphy
+config: x86_64-allyesconfig (https://download.01.org/0day-ci/archive/20250408/202504081251.hX88VR4a-lkp@intel.com/config)
+compiler: clang version 20.1.2 (https://github.com/llvm/llvm-project 58df0ef89dd64126512e4ee27b4ac3fd8ddf6247)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250408/202504081251.hX88VR4a-lkp@intel.com/reproduce)
 
-During the hardware register, driver updates the frequency range
-during boot-up. However, if new regulatory rules are applied after
-boot-up, the frequency range remains based on the older rules.
-Since different countries have varying regulatory rules, the
-frequency range can differ. Retaining the frequency range based on
-outdated rules can be misleading.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202504081251.hX88VR4a-lkp@intel.com/
 
-Update the frequency range according to the new regulatory rules in
-the function ath12k_regd_update().
+All warnings (new ones prefixed by >>):
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+   In file included from drivers/net/wireless/ath/ath12k/reg.c:6:
+   In file included from include/linux/rtnetlink.h:7:
+   In file included from include/linux/netdevice.h:38:
+   In file included from include/net/net_namespace.h:43:
+   In file included from include/linux/skbuff.h:17:
+   In file included from include/linux/bvec.h:10:
+   In file included from include/linux/highmem.h:8:
+   In file included from include/linux/cacheflush.h:5:
+   In file included from arch/x86/include/asm/cacheflush.h:5:
+   In file included from include/linux/mm.h:2224:
+   include/linux/vmstat.h:504:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     504 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     505 |                            item];
+         |                            ~~~~
+   include/linux/vmstat.h:511:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     511 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     512 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/vmstat.h:524:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     524 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     525 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:13: warning: variable 'freq_low' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:268:35: note: uninitialized use occurs here
+     268 |         ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+         |                                          ^~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:9: note: remove the 'if' if its condition is always true
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:13: warning: variable 'freq_low' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:268:35: note: uninitialized use occurs here
+     268 |         ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+         |                                          ^~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:13: note: remove the '&&' if its condition is always true
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:228:22: note: initialize the variable 'freq_low' to silence this warning
+     228 |         u32 phy_id, freq_low, freq_high, supported_bands, band;
+         |                             ^
+         |                              = 0
+   drivers/net/wireless/ath/ath12k/reg.c:263:13: warning: variable 'freq_high' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:268:45: note: uninitialized use occurs here
+     268 |         ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+         |                                                    ^~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:9: note: remove the 'if' if its condition is always true
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:13: warning: variable 'freq_high' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:268:45: note: uninitialized use occurs here
+     268 |         ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+         |                                                    ^~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:263:13: note: remove the '&&' if its condition is always true
+     263 |         } else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:228:33: note: initialize the variable 'freq_high' to silence this warning
+     228 |         u32 phy_id, freq_low, freq_high, supported_bands, band;
+         |                                        ^
+         |                                         = 0
+>> drivers/net/wireless/ath/ath12k/reg.c:243:11: warning: variable 'band' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+     243 |         else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz)
+         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:246:32: note: uninitialized use occurs here
+     246 |         update_band = &ar->mac.sbands[band];
+         |                                       ^~~~
+   drivers/net/wireless/ath/ath12k/reg.c:243:7: note: remove the 'if' if its condition is always true
+     243 |         else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz)
+         |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     244 |                 band = NL80211_BAND_6GHZ;
+>> drivers/net/wireless/ath/ath12k/reg.c:243:11: warning: variable 'band' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
+     243 |         else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz)
+         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:246:32: note: uninitialized use occurs here
+     246 |         update_band = &ar->mac.sbands[band];
+         |                                       ^~~~
+   drivers/net/wireless/ath/ath12k/reg.c:243:11: note: remove the '&&' if its condition is always true
+     243 |         else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz)
+         |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/net/wireless/ath/ath12k/reg.c:228:56: note: initialize the variable 'band' to silence this warning
+     228 |         u32 phy_id, freq_low, freq_high, supported_bands, band;
+         |                                                               ^
+         |                                                                = 0
+   9 warnings generated.
 
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Co-developed-by: Rajat Soni <quic_rajson@quicinc.com>
-Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/reg.c | 54 +++++++++++++++++++++++++++
- 1 file changed, 54 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index e1007b878f91..0fed4e0096cb 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -6,6 +6,7 @@
- #include <linux/rtnetlink.h>
- #include "core.h"
- #include "debug.h"
-+#include "mac.h"
- 
- /* World regdom to be used in case default regd from fw is unavailable */
- #define ATH12K_2GHZ_CH01_11      REG_RULE(2412 - 10, 2462 + 10, 40, 0, 20, 0)
-@@ -246,6 +247,8 @@ static void ath12k_copy_regd(struct ieee80211_regdomain *regd_orig,
- 
- int ath12k_regd_update(struct ath12k *ar, bool init)
- {
-+	u32 phy_id, freq_low = 0, freq_high = 0, supported_bands, band;
-+	struct ath12k_wmi_hal_reg_capabilities_ext_arg *reg_cap;
- 	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
- 	struct ieee80211_hw *hw = ah->hw;
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
-@@ -255,6 +258,47 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 
- 	ab = ar->ab;
- 
-+	supported_bands = ar->pdev->cap.supported_bands;
-+	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
-+		band = NL80211_BAND_2GHZ;
-+	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
-+		band = NL80211_BAND_5GHZ;
-+	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
-+		band = NL80211_BAND_6GHZ;
-+	} else {
-+		/* This condition is not expected.
-+		 */
-+		WARN_ON(1);
-+		ret = -EINVAL;
-+		goto err;
-+	}
-+
-+	reg_cap = &ab->hal_reg_cap[ar->pdev_idx];
-+
-+	if (ab->hw_params->single_pdev_only && !ar->supports_6ghz) {
-+		phy_id = ar->pdev->cap.band[band].phy_id;
-+		reg_cap = &ab->hal_reg_cap[phy_id];
-+	}
-+
-+	/* Possible that due to reg change, current limits for supported
-+	 * frequency changed. Update that
-+	 */
-+	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
-+		freq_low = max(reg_cap->low_2ghz_chan, ab->reg_freq_2ghz.start_freq);
-+		freq_high = min(reg_cap->high_2ghz_chan, ab->reg_freq_2ghz.end_freq);
-+	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
-+		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_5ghz.start_freq);
-+		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_5ghz.end_freq);
-+	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
-+		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_6ghz.start_freq);
-+		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_6ghz.end_freq);
-+	}
-+
-+	ath12k_mac_update_freq_range(ar, freq_low, freq_high);
-+
-+	ath12k_dbg(ab, ATH12K_DBG_REG, "pdev %u reg updated freq limits %u->%u MHz\n",
-+		   ar->pdev->pdev_id, freq_low, freq_high);
-+
- 	/* If one of the radios within ah has already updated the regd for
- 	 * the wiphy, then avoid setting regd again
- 	 */
-@@ -704,6 +748,16 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
- 		   "\r\nCountry %s, CFG Regdomain %s FW Regdomain %d, num_reg_rules %d\n",
- 		   alpha2, ath12k_reg_get_regdom_str(tmp_regd->dfs_region),
- 		   reg_info->dfs_region, num_rules);
-+
-+	/* Reset start and end frequency for each band
-+	 */
-+	ab->reg_freq_5ghz.start_freq = INT_MAX;
-+	ab->reg_freq_5ghz.end_freq = 0;
-+	ab->reg_freq_2ghz.start_freq = INT_MAX;
-+	ab->reg_freq_2ghz.end_freq = 0;
-+	ab->reg_freq_6ghz.start_freq = INT_MAX;
-+	ab->reg_freq_6ghz.end_freq = 0;
-+
- 	/* Update reg_rules[] below. Firmware is expected to
- 	 * send these rules in order(2G rules first and then 5G)
- 	 */
+vim +243 drivers/net/wireless/ath/ath12k/reg.c
+
+831c6c9cc5355e Rameshkumar Sundaram   2025-02-11  223  
+d889913205cf7e Kalle Valo             2022-11-28  224  int ath12k_regd_update(struct ath12k *ar, bool init)
+d889913205cf7e Kalle Valo             2022-11-28  225  {
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  226  	struct ath12k_wmi_hal_reg_capabilities_ext_arg *reg_cap;
+831c6c9cc5355e Rameshkumar Sundaram   2025-02-11  227  	struct ieee80211_supported_band *update_band;
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  228  	u32 phy_id, freq_low, freq_high, supported_bands, band;
+9b4e5caaf5905e Karthikeyan Periyasamy 2024-05-03  229  	struct ath12k_hw *ah = ath12k_ar_to_ah(ar);
+9b4e5caaf5905e Karthikeyan Periyasamy 2024-05-03  230  	struct ieee80211_hw *hw = ah->hw;
+d889913205cf7e Kalle Valo             2022-11-28  231  	struct ieee80211_regdomain *regd, *regd_copy = NULL;
+d889913205cf7e Kalle Valo             2022-11-28  232  	int ret, regd_len, pdev_id;
+d889913205cf7e Kalle Valo             2022-11-28  233  	struct ath12k_base *ab;
+0da00e45ee9ab1 Sriram R               2024-04-09  234  	int i;
+d889913205cf7e Kalle Valo             2022-11-28  235  
+d889913205cf7e Kalle Valo             2022-11-28  236  	ab = ar->ab;
+0da00e45ee9ab1 Sriram R               2024-04-09  237  
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  238  	supported_bands = ar->pdev->cap.supported_bands;
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  239  	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP)
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  240  		band = NL80211_BAND_2GHZ;
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  241  	else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz)
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  242  		band = NL80211_BAND_5GHZ;
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27 @243  	else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz)
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  244  		band = NL80211_BAND_6GHZ;
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  245  
+831c6c9cc5355e Rameshkumar Sundaram   2025-02-11  246  	update_band = &ar->mac.sbands[band];
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  247  	reg_cap = &ab->hal_reg_cap[ar->pdev_idx];
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  248  
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  249  	if (ab->hw_params->single_pdev_only && !ar->supports_6ghz) {
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  250  		phy_id = ar->pdev->cap.band[band].phy_id;
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  251  		reg_cap = &ab->hal_reg_cap[phy_id];
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  252  	}
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  253  
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  254  	/* Possible that due to reg change, current limits for supported
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  255  	 * frequency changed. Update that
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  256  	 */
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  257  	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  258  		freq_low = max(reg_cap->low_2ghz_chan, ab->reg_freq_2ghz.start_freq);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  259  		freq_high = min(reg_cap->high_2ghz_chan, ab->reg_freq_2ghz.end_freq);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  260  	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && !ar->supports_6ghz) {
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  261  		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_5ghz.start_freq);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  262  		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_5ghz.end_freq);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  263  	} else if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP && ar->supports_6ghz) {
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  264  		freq_low = max(reg_cap->low_5ghz_chan, ab->reg_freq_6ghz.start_freq);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  265  		freq_high = min(reg_cap->high_5ghz_chan, ab->reg_freq_6ghz.end_freq);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  266  	}
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  267  
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  268  	ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+831c6c9cc5355e Rameshkumar Sundaram   2025-02-11  269  	ar->num_channels = ath12k_reg_get_num_chans_in_band(ar, update_band);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  270  
+831c6c9cc5355e Rameshkumar Sundaram   2025-02-11  271  	ath12k_dbg(ab, ATH12K_DBG_REG, "pdev %u reg updated freq limits %u->%u MHz, no. of channels %u\n",
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  272  		   ar->pdev->pdev_id, freq_low,
+831c6c9cc5355e Rameshkumar Sundaram   2025-02-11  273  		   freq_high, ar->num_channels);
+6ca04f359a7046 Aditya Kumar Singh     2025-03-27  274  
+0da00e45ee9ab1 Sriram R               2024-04-09  275  	/* If one of the radios within ah has already updated the regd for
+0da00e45ee9ab1 Sriram R               2024-04-09  276  	 * the wiphy, then avoid setting regd again
+0da00e45ee9ab1 Sriram R               2024-04-09  277  	 */
+0da00e45ee9ab1 Sriram R               2024-04-09  278  	if (ah->regd_updated)
+0da00e45ee9ab1 Sriram R               2024-04-09  279  		return 0;
+0da00e45ee9ab1 Sriram R               2024-04-09  280  
+0da00e45ee9ab1 Sriram R               2024-04-09  281  	/* firmware provides reg rules which are similar for 2 GHz and 5 GHz
+0da00e45ee9ab1 Sriram R               2024-04-09  282  	 * pdev but 6 GHz pdev has superset of all rules including rules for
+0da00e45ee9ab1 Sriram R               2024-04-09  283  	 * all bands, we prefer 6 GHz pdev's rules to be used for setup of
+0da00e45ee9ab1 Sriram R               2024-04-09  284  	 * the wiphy regd.
+0da00e45ee9ab1 Sriram R               2024-04-09  285  	 * If 6 GHz pdev was part of the ath12k_hw, wait for the 6 GHz pdev,
+0da00e45ee9ab1 Sriram R               2024-04-09  286  	 * else pick the first pdev which calls this function and use its
+0da00e45ee9ab1 Sriram R               2024-04-09  287  	 * regd to update global hw regd.
+0da00e45ee9ab1 Sriram R               2024-04-09  288  	 * The regd_updated flag set at the end will not allow any further
+0da00e45ee9ab1 Sriram R               2024-04-09  289  	 * updates.
+0da00e45ee9ab1 Sriram R               2024-04-09  290  	 */
+0da00e45ee9ab1 Sriram R               2024-04-09  291  	if (ah->use_6ghz_regd && !ar->supports_6ghz)
+0da00e45ee9ab1 Sriram R               2024-04-09  292  		return 0;
+0da00e45ee9ab1 Sriram R               2024-04-09  293  
+d889913205cf7e Kalle Valo             2022-11-28  294  	pdev_id = ar->pdev_idx;
+d889913205cf7e Kalle Valo             2022-11-28  295  
+d889913205cf7e Kalle Valo             2022-11-28  296  	spin_lock_bh(&ab->base_lock);
+d889913205cf7e Kalle Valo             2022-11-28  297  
+d889913205cf7e Kalle Valo             2022-11-28  298  	if (init) {
+d889913205cf7e Kalle Valo             2022-11-28  299  		/* Apply the regd received during init through
+d889913205cf7e Kalle Valo             2022-11-28  300  		 * WMI_REG_CHAN_LIST_CC event. In case of failure to
+d889913205cf7e Kalle Valo             2022-11-28  301  		 * receive the regd, initialize with a default world
+d889913205cf7e Kalle Valo             2022-11-28  302  		 * regulatory.
+d889913205cf7e Kalle Valo             2022-11-28  303  		 */
+d889913205cf7e Kalle Valo             2022-11-28  304  		if (ab->default_regd[pdev_id]) {
+d889913205cf7e Kalle Valo             2022-11-28  305  			regd = ab->default_regd[pdev_id];
+d889913205cf7e Kalle Valo             2022-11-28  306  		} else {
+d889913205cf7e Kalle Valo             2022-11-28  307  			ath12k_warn(ab,
+d889913205cf7e Kalle Valo             2022-11-28  308  				    "failed to receive default regd during init\n");
+d889913205cf7e Kalle Valo             2022-11-28  309  			regd = (struct ieee80211_regdomain *)&ath12k_world_regd;
+d889913205cf7e Kalle Valo             2022-11-28  310  		}
+d889913205cf7e Kalle Valo             2022-11-28  311  	} else {
+d889913205cf7e Kalle Valo             2022-11-28  312  		regd = ab->new_regd[pdev_id];
+d889913205cf7e Kalle Valo             2022-11-28  313  	}
+d889913205cf7e Kalle Valo             2022-11-28  314  
+d889913205cf7e Kalle Valo             2022-11-28  315  	if (!regd) {
+d889913205cf7e Kalle Valo             2022-11-28  316  		ret = -EINVAL;
+d889913205cf7e Kalle Valo             2022-11-28  317  		spin_unlock_bh(&ab->base_lock);
+d889913205cf7e Kalle Valo             2022-11-28  318  		goto err;
+d889913205cf7e Kalle Valo             2022-11-28  319  	}
+d889913205cf7e Kalle Valo             2022-11-28  320  
+d889913205cf7e Kalle Valo             2022-11-28  321  	regd_len = sizeof(*regd) + (regd->n_reg_rules *
+d889913205cf7e Kalle Valo             2022-11-28  322  		sizeof(struct ieee80211_reg_rule));
+d889913205cf7e Kalle Valo             2022-11-28  323  
+d889913205cf7e Kalle Valo             2022-11-28  324  	regd_copy = kzalloc(regd_len, GFP_ATOMIC);
+d889913205cf7e Kalle Valo             2022-11-28  325  	if (regd_copy)
+d889913205cf7e Kalle Valo             2022-11-28  326  		ath12k_copy_regd(regd, regd_copy);
+d889913205cf7e Kalle Valo             2022-11-28  327  
+d889913205cf7e Kalle Valo             2022-11-28  328  	spin_unlock_bh(&ab->base_lock);
+d889913205cf7e Kalle Valo             2022-11-28  329  
+d889913205cf7e Kalle Valo             2022-11-28  330  	if (!regd_copy) {
+d889913205cf7e Kalle Valo             2022-11-28  331  		ret = -ENOMEM;
+d889913205cf7e Kalle Valo             2022-11-28  332  		goto err;
+d889913205cf7e Kalle Valo             2022-11-28  333  	}
+d889913205cf7e Kalle Valo             2022-11-28  334  
+d889913205cf7e Kalle Valo             2022-11-28  335  	rtnl_lock();
+940b57fd0e7710 Karthikeyan Periyasamy 2023-11-21  336  	wiphy_lock(hw->wiphy);
+940b57fd0e7710 Karthikeyan Periyasamy 2023-11-21  337  	ret = regulatory_set_wiphy_regd_sync(hw->wiphy, regd_copy);
+940b57fd0e7710 Karthikeyan Periyasamy 2023-11-21  338  	wiphy_unlock(hw->wiphy);
+d889913205cf7e Kalle Valo             2022-11-28  339  	rtnl_unlock();
+d889913205cf7e Kalle Valo             2022-11-28  340  
+d889913205cf7e Kalle Valo             2022-11-28  341  	kfree(regd_copy);
+d889913205cf7e Kalle Valo             2022-11-28  342  
+d889913205cf7e Kalle Valo             2022-11-28  343  	if (ret)
+d889913205cf7e Kalle Valo             2022-11-28  344  		goto err;
+d889913205cf7e Kalle Valo             2022-11-28  345  
+9b4e5caaf5905e Karthikeyan Periyasamy 2024-05-03  346  	if (ah->state != ATH12K_HW_STATE_ON)
+9b4e5caaf5905e Karthikeyan Periyasamy 2024-05-03  347  		goto skip;
+9b4e5caaf5905e Karthikeyan Periyasamy 2024-05-03  348  
+0da00e45ee9ab1 Sriram R               2024-04-09  349  	ah->regd_updated = true;
+0da00e45ee9ab1 Sriram R               2024-04-09  350  	/* Apply the new regd to all the radios, this is expected to be received only once
+0da00e45ee9ab1 Sriram R               2024-04-09  351  	 * since we check for ah->regd_updated and allow here only once.
+0da00e45ee9ab1 Sriram R               2024-04-09  352  	 */
+0da00e45ee9ab1 Sriram R               2024-04-09  353  	for_each_ar(ah, ar, i) {
+0da00e45ee9ab1 Sriram R               2024-04-09  354  		ab = ar->ab;
+d889913205cf7e Kalle Valo             2022-11-28  355  		ret = ath12k_reg_update_chan_list(ar);
+d889913205cf7e Kalle Valo             2022-11-28  356  		if (ret)
+d889913205cf7e Kalle Valo             2022-11-28  357  			goto err;
+d889913205cf7e Kalle Valo             2022-11-28  358  	}
+9b4e5caaf5905e Karthikeyan Periyasamy 2024-05-03  359  skip:
+d889913205cf7e Kalle Valo             2022-11-28  360  	return 0;
+d889913205cf7e Kalle Valo             2022-11-28  361  err:
+d889913205cf7e Kalle Valo             2022-11-28  362  	ath12k_warn(ab, "failed to perform regd update : %d\n", ret);
+d889913205cf7e Kalle Valo             2022-11-28  363  	return ret;
+d889913205cf7e Kalle Valo             2022-11-28  364  }
+d889913205cf7e Kalle Valo             2022-11-28  365  
+
+:::::: The code at line 243 was first introduced by commit
+:::::: 6ca04f359a7046dac7b96fc29808568513406aea wifi: ath12k: Update frequency range if reg rules changes
+
+:::::: TO: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+:::::: CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+
 -- 
-2.34.1
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
