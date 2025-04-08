@@ -4,61 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69FE9C3600C
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 04:21:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A24CC369A2
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 04:21:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=IRVuJZCq4B6HKCSspyhJNNgrIC7t2BSotBHjmxVv3iE=; b=qqqzxO9uEo4wxf5l6FFi1/UNPy
-	BNOFUiD9W0nP7ZSyhyIHSQtbXTY+lA1hzIFmx2RF6U3XYcReF/GA0tiX6ypZF3fccq95Elfh85tdO
-	aiJp/IdMk8UhWB73X/c1VHqUmDvsKnf88gIhGkLOW2lSoqJULqkft0xA9S713GqC7pMELnxF1gzjJ
-	aIzT4MCOJxOOnRxhfv4jqQkfhuv97fZn3BR5Gna72x/6uKWUHfQz8LC+iskbKNJxWdaERNp1Zq3V4
-	FdLH12dw/PlM1Rx3h7c2gqatnVCGbDD7kiYeBdvwzvjVMYQr37SWs5BXp72DRvag26LY0aL8ZF3/h
-	eqCjU/aw==;
+	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WbOZXkX8krhqvTh0vVmdGOuSk8+xXSo+njxrlfO20yY=; b=aoHMyX1PCNn5/d7PJxLhjHD7lE
+	Tn8WUo3hO1zd5YGXS4D5//Eif9HEVs+7Z8Akuh8uolZs7jKkZVkL7L/4L+iy8P9qeUcY0jpFXx/Ie
+	ZLSG0Z4dpXI/PA7enIvDmJsn0W0ExamQJ6NpMrDQDWf/5smdwl8GDSXUB4fw4Y//YsazQj7Kyo49S
+	hNjCWsaWOc9L1k5WAm8sL5aqgVsktRUt52vFGaHU+gOheIAinLlV3YJvVrj4YhWUV33jUpdsPZDUu
+	PjfdjWAYHeIBvdRG7uVl8yGV4b4J4WecZlo4pF/2qMXQmoNN1s2g6vAp7H5unm5d7RUYxCnTKr2uu
+	KkPn57Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u20T8-00000002gbl-0EgO
+	id 1u20TA-00000002gce-3Y63
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 04:21:50 +0000
+	Tue, 08 Apr 2025 04:21:52 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u20T6-00000002gay-0ZQi
+	id 1u20T8-00000002gbu-1oKQ
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 04:21:49 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382Gd3w015100;
-	Tue, 8 Apr 2025 04:21:46 GMT
+	Tue, 08 Apr 2025 04:21:51 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GMXf020165;
+	Tue, 8 Apr 2025 04:21:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=IRVuJZCq4B6HKCSspyhJNN
-	grIC7t2BSotBHjmxVv3iE=; b=HRr8jDl3CRw7FxQanFVYApxN+zV4rsIMKLhPdg
-	fMPBfm73rVcRG9HlyjDyoZzQcc6CAleaBbpMv4cGYGa7JDDGUgzh5CtYJqCDvOef
-	2YhGrO2P07XVMaQwJ61ochA/6VTnGRhMdswbJ5ULBh4neWtIe4/Kmp7vYvEdJebX
-	G59ie8ExUoLvxSNtC3ya1oZRebJIa8XldkGFNPjRabWlNErMoVnD4a9AQP2dRwkO
-	xZ1KsYMJMND/8Yfp0tN2Z4LYeMqYuhhxMGF2HXtAvzsjN42aQUUYLHQvA97f8VQ7
-	mNlhPv02xTgBO0Nmswlq8qAbUhFKrofE0Sm/zOOV6tjrosOw==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbueeyb-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	WbOZXkX8krhqvTh0vVmdGOuSk8+xXSo+njxrlfO20yY=; b=h7hi1uJtWMmIGcLb
+	lL8bOW4LYufLA2Rny2zLaCHgFvhTpWyrCzqY27YsKezSrGBBuwOBxWtS+blt8SQD
+	UjBkDflMLcsDeTLNFVkfzxpPyji8yhsV4xTfwmYcdTpXG4JGVVgKhd9Mpz6NBgs6
+	l8mOgCu4QOz9kuIpJjkMMXekf7XRdDz5i/qznj3iiSJcicvdxyaaU0vnGYUDUIO9
+	Q+17KZhgNZtzByqw2CHEGiJ6O+aDBAGWvEnyxUaaSVtdS9CkG1WO0evOIsatsh7Z
+	rU75QzgcL52E2kddyk0yBGE51SYfStdbELY9Fw1cIzo7LHUhoNQlIKA2bCYEcnzx
+	TmGCvw==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twd2pf67-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Apr 2025 04:21:46 +0000 (GMT)
+	Tue, 08 Apr 2025 04:21:49 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5384LjPN020841
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5384LnbS002411
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Apr 2025 04:21:45 GMT
+	Tue, 8 Apr 2025 04:21:49 GMT
 Received: from hu-rajson-blr.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 7 Apr 2025 21:21:44 -0700
+ 15.2.1544.9; Mon, 7 Apr 2025 21:21:47 -0700
 From: Rajat Soni <quic_rajson@quicinc.com>
 To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>, Rajat Soni <quic_rajson@quicinc.com>
-Subject: [PATCH ath-next 0/3] wifi: ath12k: Properly update frequency range
-Date: Tue, 8 Apr 2025 09:51:25 +0530
-Message-ID: <20250408042128.720263-1-quic_rajson@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>,
+        Aditya Kumar Singh
+	<aditya.kumar.singh@oss.qualcomm.com>,
+        Rajat Soni <quic_rajson@quicinc.com>
+Subject: [PATCH ath-next 2/3] wifi: ath12k: Fix frequency range in driver
+Date: Tue, 8 Apr 2025 09:51:27 +0530
+Message-ID: <20250408042128.720263-3-quic_rajson@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250408042128.720263-1-quic_rajson@quicinc.com>
+References: <20250408042128.720263-1-quic_rajson@quicinc.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
@@ -67,22 +73,22 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: lz2h3imQYVH11nt-C5xbVpmGMvoo3sCF
-X-Proofpoint-ORIG-GUID: lz2h3imQYVH11nt-C5xbVpmGMvoo3sCF
-X-Authority-Analysis: v=2.4 cv=dbeA3WXe c=1 sm=1 tr=0 ts=67f4a45a cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=zLfMTeblcGlTlpjJDDwA:9
+X-Proofpoint-ORIG-GUID: ll3FnGozyUsezp3tktnakArNieg_BH4K
+X-Proofpoint-GUID: ll3FnGozyUsezp3tktnakArNieg_BH4K
+X-Authority-Analysis: v=2.4 cv=NaLm13D4 c=1 sm=1 tr=0 ts=67f4a45d cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=tbqBjApZr0fsov_IfRYA:9
+ a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-08_01,2025-04-07_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 mlxlogscore=743 phishscore=0 mlxscore=0 spamscore=0
- malwarescore=0 clxscore=1011 adultscore=0 priorityscore=1501
- lowpriorityscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502280000 definitions=main-2504080029
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ priorityscore=1501 adultscore=0 malwarescore=0 suspectscore=0
+ lowpriorityscore=0 bulkscore=0 mlxlogscore=999 clxscore=1015 phishscore=0
+ spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504080029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_212148_189309_350998E5 
-X-CRM114-Status: UNSURE (   6.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250407_212150_484580_467C275A 
+X-CRM114-Status: GOOD (  17.83  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,24 +103,236 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-This patch series ensures that frequency range is correctly updated
-compliance with regulatory rules.
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 
-Aditya Kumar Singh (2):
-  wifi: ath12k: Fix frequency range in driver
-  wifi: ath12k: Update frequency range if reg rules changes
+During the initial WMI exchange, the firmware updates the
+hardware-supported start and end frequencies in the
+ath12k_wmi_hal_reg_capabilities_ext_arg structure. These frequencies,
+being hardware-supported, may not always align with the current
+regulatory operating frequencies. When operating as multiple grouped
+hardwares under a single wiphy, the driver advertises these values
+directly to the upper layer in the per-radio frequency range,
+which can be misleading.
 
-Rajat Soni (1):
-  wifi: ath12k: Add helper function ath12k_mac_update_freq_range()
+Sample output snippet from iw phyX info command -
 
- drivers/net/wireless/ath/ath12k/core.h |  9 ++++
- drivers/net/wireless/ath/ath12k/mac.c  | 49 +++++++++++++++----
- drivers/net/wireless/ath/ath12k/mac.h  |  2 +
- drivers/net/wireless/ath/ath12k/reg.c  | 67 ++++++++++++++++++++++++++
- 4 files changed, 118 insertions(+), 9 deletions(-)
+[..]
+Supported wiphy radios:
+          * Idx 0:
+                  Frequency Range: 2312 MHz - 2732 MHz
+		 [..]
 
+          * Idx 1:
+                  Frequency Range: 5150 MHz - 5330 MHz
+		 [..]
+[..]
 
-base-commit: ac17b1211841c98a9b4c2900ba2a7f457c80cf90
+The frequency range displayed above is incorrect because the driver
+directly advertises the hardware-supported values to the upper layer.
+
+The driver is aware of the current operating regulatory rules, and
+hence it can use this information to determine the final operating
+start and end frequencies.
+
+To resolve this issue, add support to store the start and end
+frequencies received during the regulatory update event.
+Then, intersect these with the hardware-supported start and
+end frequencies, and finally, advertise the intersected values to the
+upper layer.
+
+Sample output snippet from iw phyX info command after the fix -
+
+[..]
+Supported wiphy radios:
+          * Idx 0:
+                  Frequency Range: 2402 MHz - 2472 MHz
+		 [..]
+
+          * Idx 1:
+                  Frequency Range: 5170 MHz - 5330 MHz
+		 [..]
+[..]
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Co-developed-by: Rajat Soni <quic_rajson@quicinc.com>
+Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
+---
+ drivers/net/wireless/ath/ath12k/core.h |  9 ++++++
+ drivers/net/wireless/ath/ath12k/mac.c  | 39 ++++++++++++++++++--------
+ drivers/net/wireless/ath/ath12k/reg.c  | 13 +++++++++
+ 3 files changed, 49 insertions(+), 12 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index e8d2a0c859f6..8099a5f54e83 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -880,6 +880,11 @@ struct ath12k_soc_dp_stats {
+ 	struct ath12k_soc_dp_tx_err_stats tx_err;
+ };
+ 
++struct ath12k_reg_freq {
++	u32 start_freq;
++	u32 end_freq;
++};
++
+ struct ath12k_mlo_memory {
+ 	struct target_mem_chunk chunk[ATH12K_QMI_WLANFW_MAX_NUM_MEM_SEG_V01];
+ 	int mlo_mem_size;
+@@ -1122,6 +1127,10 @@ struct ath12k_base {
+ 	enum ath12k_firmware_mode fw_mode;
+ 	struct ath12k_ftm_event_obj ftm_event_obj;
+ 
++	struct ath12k_reg_freq reg_freq_2ghz;
++	struct ath12k_reg_freq reg_freq_5ghz;
++	struct ath12k_reg_freq reg_freq_6ghz;
++
+ 	/* must be last */
+ 	u8 drv_priv[] __aligned(sizeof(void *));
+ };
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 449aca719ad3..8c971a58fb6f 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10859,16 +10859,17 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ {
+ 	struct ieee80211_supported_band *band;
+ 	struct ath12k_wmi_hal_reg_capabilities_ext_arg *reg_cap;
++	struct ath12k_base *ab = ar->ab;
++	u32 phy_id, freq_low, freq_high;
+ 	struct ath12k_hw *ah = ar->ah;
+ 	void *channels;
+-	u32 phy_id;
+ 
+ 	BUILD_BUG_ON((ARRAY_SIZE(ath12k_2ghz_channels) +
+ 		      ARRAY_SIZE(ath12k_5ghz_channels) +
+ 		      ARRAY_SIZE(ath12k_6ghz_channels)) !=
+ 		     ATH12K_NUM_CHANS);
+ 
+-	reg_cap = &ar->ab->hal_reg_cap[ar->pdev_idx];
++	reg_cap = &ab->hal_reg_cap[ar->pdev_idx];
+ 
+ 	if (supported_bands & WMI_HOST_WLAN_2GHZ_CAP) {
+ 		channels = kmemdup(ath12k_2ghz_channels,
+@@ -10885,16 +10886,21 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 		band->bitrates = ath12k_g_rates;
+ 		bands[NL80211_BAND_2GHZ] = band;
+ 
+-		if (ar->ab->hw_params->single_pdev_only) {
++		if (ab->hw_params->single_pdev_only) {
+ 			phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_2GHZ_CAP);
+-			reg_cap = &ar->ab->hal_reg_cap[phy_id];
++			reg_cap = &ab->hal_reg_cap[phy_id];
+ 		}
++
++		freq_low = max(reg_cap->low_2ghz_chan,
++			       ab->reg_freq_2ghz.start_freq);
++		freq_high = min(reg_cap->high_2ghz_chan,
++				ab->reg_freq_2ghz.end_freq);
++
+ 		ath12k_mac_update_ch_list(ar, band,
+ 					  reg_cap->low_2ghz_chan,
+ 					  reg_cap->high_2ghz_chan);
+ 
+-		ath12k_mac_update_freq_range(ar, reg_cap->low_2ghz_chan,
+-					     reg_cap->high_2ghz_chan);
++		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+ 	}
+ 
+ 	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP) {
+@@ -10914,12 +10920,17 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 			band->n_bitrates = ath12k_a_rates_size;
+ 			band->bitrates = ath12k_a_rates;
+ 			bands[NL80211_BAND_6GHZ] = band;
++
++			freq_low = max(reg_cap->low_5ghz_chan,
++				       ab->reg_freq_6ghz.start_freq);
++			freq_high = min(reg_cap->high_5ghz_chan,
++					ab->reg_freq_6ghz.end_freq);
++
+ 			ath12k_mac_update_ch_list(ar, band,
+ 						  reg_cap->low_5ghz_chan,
+ 						  reg_cap->high_5ghz_chan);
+ 
+-			ath12k_mac_update_freq_range(ar, reg_cap->low_5ghz_chan,
+-						     reg_cap->high_5ghz_chan);
++			ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+ 			ah->use_6ghz_regd = true;
+ 		}
+ 
+@@ -10941,17 +10952,21 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 			band->bitrates = ath12k_a_rates;
+ 			bands[NL80211_BAND_5GHZ] = band;
+ 
+-			if (ar->ab->hw_params->single_pdev_only) {
++			if (ab->hw_params->single_pdev_only) {
+ 				phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_5GHZ_CAP);
+-				reg_cap = &ar->ab->hal_reg_cap[phy_id];
++				reg_cap = &ab->hal_reg_cap[phy_id];
+ 			}
+ 
++			freq_low = max(reg_cap->low_5ghz_chan,
++				       ab->reg_freq_5ghz.start_freq);
++			freq_high = min(reg_cap->high_5ghz_chan,
++					ab->reg_freq_5ghz.end_freq);
++
+ 			ath12k_mac_update_ch_list(ar, band,
+ 						  reg_cap->low_5ghz_chan,
+ 						  reg_cap->high_5ghz_chan);
+ 
+-			ath12k_mac_update_freq_range(ar, reg_cap->low_5ghz_chan,
+-						     reg_cap->high_5ghz_chan);
++			ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+ 		}
+ 	}
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 893650f76fb2..e1007b878f91 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -651,6 +651,16 @@ ath12k_reg_update_weather_radar_band(struct ath12k_base *ab,
+ 	*rule_idx = i;
+ }
+ 
++static void ath12k_reg_update_freq_range(struct ath12k_reg_freq *reg_freq,
++					 struct ath12k_reg_rule *reg_rule)
++{
++	if (reg_freq->start_freq > reg_rule->start_freq)
++		reg_freq->start_freq = reg_rule->start_freq;
++
++	if (reg_freq->end_freq < reg_rule->end_freq)
++		reg_freq->end_freq = reg_rule->end_freq;
++}
++
+ struct ieee80211_regdomain *
+ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 		      struct ath12k_reg_info *reg_info, bool intersect)
+@@ -704,6 +714,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 			max_bw = min_t(u16, reg_rule->max_bw,
+ 				       reg_info->max_bw_2g);
+ 			flags = 0;
++			ath12k_reg_update_freq_range(&ab->reg_freq_2ghz, reg_rule);
+ 		} else if (reg_info->num_5g_reg_rules &&
+ 			   (j < reg_info->num_5g_reg_rules)) {
+ 			reg_rule = reg_info->reg_rules_5g_ptr + j++;
+@@ -717,6 +728,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 			 * per other BW rule flags we pass from here
+ 			 */
+ 			flags = NL80211_RRF_AUTO_BW;
++			ath12k_reg_update_freq_range(&ab->reg_freq_5ghz, reg_rule);
+ 		} else if (reg_info->is_ext_reg_event &&
+ 			   reg_info->num_6g_reg_rules_ap[WMI_REG_INDOOR_AP] &&
+ 			(k < reg_info->num_6g_reg_rules_ap[WMI_REG_INDOOR_AP])) {
+@@ -724,6 +736,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 			max_bw = min_t(u16, reg_rule->max_bw,
+ 				       reg_info->max_bw_6g_ap[WMI_REG_INDOOR_AP]);
+ 			flags = NL80211_RRF_AUTO_BW;
++			ath12k_reg_update_freq_range(&ab->reg_freq_6ghz, reg_rule);
+ 		} else {
+ 			break;
+ 		}
 -- 
 2.34.1
 
