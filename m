@@ -4,103 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAF74C369A1
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 06:14:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EF3AC369A5
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 06:14:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=8/9KKlybY73Cq9H/djgojnh/GJRKoGH3oTbztLqHc2I=; b=bSaDNLBNpcxzKEWG2qJHJTDy1u
-	mKS8nidtmgoV5n/S5+W6rzE7PEvtOJAGYim6YmySK9BzYTn6jP1rBqBQUuhrhklPn3zE/BrcfUf1Q
-	/7wIKwUPcRYUosVri5N1070l3wPkci7NixqnlAdRnanRCHxItrlVEGI6V/of6xL7csuCretmd6HwV
-	3ZB43nz3qAzsHF/r7w+XE0Ro5kW/FIxsMuUCH7nVij++IbdkIT1jfFD2/J2/1epcy5mzO0nglNc/T
-	Nl5u84mKrIultahMtfyJZ67cvDWlaUqrxsscsd5LHNrkAgMwEY4jRBq7zFZX4tBLYJdbEqZ1tCvLl
-	Q802Xlrw==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=jf4X7nmgLLtsPPYdxMAbBPiLSQqDc/fGOuZSKINRik0=; b=dfIkxg8859ofccgNYqucbeS3t8
+	/Vi0M4+K3e1rn5XO+eYnWv5anzQKppcA+vPOzQXL7sKdAEMO8J++XAHEiSB0Muek4v6uN+HFJTE9N
+	ZCSE38VAPWz+6aRjW8FNAIYaVWLZ0635YAUeMFllHeWo4lJMkwPBZdLLHEB9D2fB00uYYP3NqC5eM
+	CD8XWFy9hudDBntoEO6w2xgN0Yh0BYJ+pjCSOUBQajKFmjed4kVRqheX3XD7L99dc6WhLAWVr57SS
+	X7q5GQpWufzs3ajo3Ov2LR56Hv8EvmoLUCa9NWNwyGLrCcFfbIHbMWG9pLTKtlTxXem6mnA342HGA
+	O2dhG/3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u22Di-00000002sdR-1oBG
+	id 1u22Di-00000002sdr-3Zt3
 	for ath12k@archiver.kernel.org;
 	Tue, 08 Apr 2025 06:14:02 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u22De-00000002sav-1eSq
+	id 1u22Df-00000002sbp-2b78
 	for ath12k@lists.infradead.org;
 	Tue, 08 Apr 2025 06:14:00 +0000
 Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GWTJ027738
-	for <ath12k@lists.infradead.org>; Tue, 8 Apr 2025 06:13:57 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GObA027695
+	for <ath12k@lists.infradead.org>; Tue, 8 Apr 2025 06:13:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=8/9KKlybY73Cq9H/djgojnh/GJRKoGH3oTb
-	ztLqHc2I=; b=lSiXy1CTkgibVeIGQmcc+nNKs3loq8FXrRl67hQMejkN5O2/B5q
-	j3KsqLo7oXkVHEMXnhl3sUrKakIkfZvX5Gs3FA5/9xMyjyGNSQnausn4tSZJuKZV
-	0xaDs1KRqJelJ8Pg8VDwgdLb3iX22cwRZqbrreYocLzMfmt17xFew8vj8acr5WSR
-	eiDN751mhc5lE5T16OEUHkAAPYfx344dqQW1joYxt+dnswomUKQnBqqin57sP63V
-	vMi6lYwBYVzBEtvMvxu7fkmtn39CTLNbaK0Iju0kUTaVfHvJLMASv6y+LEvrmVUN
-	2yVMER8RPulj5jT9B+7XqpcLxP3ASM0IG5A==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twcyxps0-1
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=jf4X7nmgLLt
+	sPPYdxMAbBPiLSQqDc/fGOuZSKINRik0=; b=fAVbN+bky0rov6hMrPPFx6voZOc
+	S2vb9bl+LZg4A6qb/4TZ1gUk42BaODUCS0sgkkKU0Mks4zEDluJs36bal42FFIdf
+	duTHZXyeF13zmlCE8Sgm1xnFcassjYRWy06XfWO9WggFYpKz0KzE1dw4/JOEC7pn
+	v2qheem4BKJu4YyQE/nl6n1Pv+4Zr/QVgoEon6Xmt5SvDrj9TnU4FUPmHaISIcXy
+	+UNST43YkjrZEKAaBfrza2YXjgy8OOVLRPjb17etckQpBMUTJE9beUU/A16Be05P
+	SuvOZMISdVn52lhAJjB+a7CAW3q1ToV3LWjDxCPutw5GRu2dshr3knpqQjQ==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twcyxps2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 06:13:56 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ff6943febeso3940098a91.0
-        for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 23:13:56 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 06:13:58 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ff798e8c3bso4779864a91.2
+        for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 23:13:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744092835; x=1744697635;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=8/9KKlybY73Cq9H/djgojnh/GJRKoGH3oTbztLqHc2I=;
-        b=k0AOc7bUpPweoigbroZo00YBmy5AohBwITOdHDahJEUdsiV7ZG3VXwhXhcqvfBv/tV
-         tfS5n8VReY3I62xZ+UJD7qU5ZghrljxRisE5jPPaw//uapfvSamSDiGNWfcvNsv/iRyh
-         J4/syrV621yo1Jx6jeVa6KvgUnTGNd11N1UG9nHJIdHcfpNzfxWydV8IYTnOF8ez2qd2
-         Mu7v1lmoni+61GyykMVOuegEEQxYAX0nszXWfR/x8Pv3M1YFsy0kS+c4yF5MfSWJIfIr
-         VdtQQ5q2pH4H6kCk7YiHD6Y5MRnC7ay4l3h4YhD2tEMtljb44fO5ZOSx547xn4xVqHBW
-         LJcA==
-X-Gm-Message-State: AOJu0Yw8XVZEx5RJKT7bjLDGO8C+XXCR+ymz13uX+Nt0GQmqg5ToDaUf
-	iI6WInL2p8IzYv3jKJkKkYmk05nyt43B2lVGByQAnSBmRMr1B0SlwgfjyH8pQ71G4bHKTna7/Vr
-	whqOUIhV53WrIhC8mKJjt0+twsr1pn/kZI3pQDu1RZD97TB+rCF7RBN6xIUWsLAdmbW5n
-X-Gm-Gg: ASbGncsBJmMZYoE36NWwiHW00tS4+0lLKsWVq9dbl8Xvr+Ss0tkfT1cbtQ3AtZOtl/0
-	oDzfSB8oqxYJKppkhOs8iQrKwWEPfg9b9Hhx8TX0I3SXl3fBIPPPeab5tllgUhwJaIkhps06kL1
-	DzU1PAyUF6fXCIZOy79IFXYDxpOsp0nDF4njJpRG/8WphaRqZ2ZCCcPkBaWxb1F5pzqObfxU+aK
-	O4AvY/oRRhC10Zu38OXTmGMXpnfTy6ZweIHgcC547S7WN23+l+58W317rs89AMJJg7E2qgMEYS2
-	Mk95mDQ9vcbP4IDx00bfzIVba/d7U5qTxtG7FZcFB+EcSeXDD0cN8vAVmd3sw14jwuIWuh9+/vv
-	zCWmaEmjmbwOeBzBPNe5OmUEBzyHLNx0New==
-X-Received: by 2002:a17:90b:51d1:b0:2fa:3174:e344 with SMTP id 98e67ed59e1d1-306d0d1d6afmr3204627a91.14.1744092835256;
-        Mon, 07 Apr 2025 23:13:55 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHADd2iN49Q/pgPB5M2VZ4/dQ/gJ4REj1JRFF/Ov4z2SUraiFMqs8oUOS2HsGAhV+d59+yhLw==
-X-Received: by 2002:a17:90b:51d1:b0:2fa:3174:e344 with SMTP id 98e67ed59e1d1-306d0d1d6afmr3204597a91.14.1744092834745;
-        Mon, 07 Apr 2025 23:13:54 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1744092837; x=1744697637;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=jf4X7nmgLLtsPPYdxMAbBPiLSQqDc/fGOuZSKINRik0=;
+        b=rL4VM0FofAS95lT9JSRjYKtEooRk9GjcwRYYEb8g5WPqnK49iFD0/9LRZEvZVDQZSU
+         RcvOQIzpT0C/mP1hNBlcSDlK3Txp4EXTk0aIh6rx/ytDo8OeYPpPbzZ/DqUS8YJp2JaS
+         C0B8BUnSp4j1KPLPrkUqfBmlN9BveNRd1t5kKZhlDZxQa4sZOH5DEHu9tlJ6gdDZnmJV
+         kCNp8vKAKVXw40rX6fwQAe/aPq2rih4ocr80ySRHGRPyZbho8VbL8b9F0lGiA5JnrMgV
+         kT8ljhhYIGEfOGAj6Yc0YVdCZcDFh+Iqnx5mq9RMA+4On5hLlHdFucAvWDES7OJChO6S
+         kbuQ==
+X-Gm-Message-State: AOJu0Yz4byRb5LJfb7Q++3RMa3nErsqmJyffMMznbN40zZLLV/bUoyin
+	StLLauraWSdda3FLgnzLOrBBgyg4b0lzmkQQ+6tuyEXxwF7NpchxZCxrvl1cVltzgVfny9CNTna
+	Gdb7LW6guJQxJYdkw3XLeCEayKkqPE5czRw+1Tr+fPdWpNOW8pslFauSd8PmSvUpvmWRR
+X-Gm-Gg: ASbGncuZsAfuzsmp0V7UZsNt8gUQzeDa6X/DftQtSBYtdkZD6C4y/SFRp/4ikHf7CpF
+	pTCWvEwvUt9yKmUknacKsktgTym0UnuNDzFWx/+lsTDtjeTbjl3V51M6XDacJipEaYukfm98yjX
+	/ovt2kiwrRibpZHliawzCvbqT59H8dDJjtuqPC0vZWZJ8K2OulNN+SreKLdIkMe0EZq1opDAxZh
+	ebLKRfdparR3kbMKDX3wyPcuVmSoLY+pKlVe7QsFIs1vvoD58UdXjj9g9B4Mn8tctut1aRWoKnZ
+	JEjP0V9Ye9aP71w3s7FebOdIsYVTqAhOyQw7+WA+1+1G9QB9ZV/0zdzzmqUezqwN14He4eWfGko
+	YwUe9uvhaP2sICMK9osjObXlZRu4bsNIIhg==
+X-Received: by 2002:a17:90a:d60c:b0:2fa:f8d:65de with SMTP id 98e67ed59e1d1-306a62137c1mr14778030a91.22.1744092836906;
+        Mon, 07 Apr 2025 23:13:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH4zeDZwRMBgzLBqfd01jymT1YpR7b25k588jo1J2XTWsT6kjoa3QT980ig55+H9URMzQROHQ==
+X-Received: by 2002:a17:90a:d60c:b0:2fa:f8d:65de with SMTP id 98e67ed59e1d1-306a62137c1mr14778011a91.22.1744092836327;
+        Mon, 07 Apr 2025 23:13:56 -0700 (PDT)
 Received: from hu-ppranees-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3057cb94f4esm10258444a91.46.2025.04.07.23.13.53
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3057cb94f4esm10258444a91.46.2025.04.07.23.13.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Apr 2025 23:13:54 -0700 (PDT)
+        Mon, 07 Apr 2025 23:13:55 -0700 (PDT)
 From: P Praneesh <praneesh.p@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next v2 0/4] wifi: ath12k: Fix multicast memory leak in tx path
-Date: Tue,  8 Apr 2025 11:43:39 +0530
-Message-Id: <20250408061343.2774345-1-praneesh.p@oss.qualcomm.com>
+Subject: [PATCH ath-next v2 1/4] wifi: ath12k: Handle error cases during extended skb allocation
+Date: Tue,  8 Apr 2025 11:43:40 +0530
+Message-Id: <20250408061343.2774345-2-praneesh.p@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250408061343.2774345-1-praneesh.p@oss.qualcomm.com>
+References: <20250408061343.2774345-1-praneesh.p@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-ORIG-GUID: YUNb5Evz3QOYDF3jH_zcjb8McQgaA-7D
-X-Authority-Analysis: v=2.4 cv=Q4vS452a c=1 sm=1 tr=0 ts=67f4bea5 cx=c_pps a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=O8uiHmLsffw2fOifbccA:9 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-GUID: YUNb5Evz3QOYDF3jH_zcjb8McQgaA-7D
+X-Proofpoint-ORIG-GUID: 5pnZEn_RnTBAU1OK-U49mboyYAG9DWuF
+X-Authority-Analysis: v=2.4 cv=Q4vS452a c=1 sm=1 tr=0 ts=67f4bea6 cx=c_pps a=RP+M6JBNLl+fLTcSJhASfg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=Qd23BeFobrpH1aaNZ9kA:9 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-GUID: 5pnZEn_RnTBAU1OK-U49mboyYAG9DWuF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-08_02,2025-04-07_01,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
  impostorscore=0 lowpriorityscore=0 spamscore=0 clxscore=1015 phishscore=0
  bulkscore=0 adultscore=0 malwarescore=0 mlxscore=0 suspectscore=0
- mlxlogscore=663 classifier=spam authscore=0 authtc=n/a authcc=
+ mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504080043
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_231358_547096_4C92711E 
-X-CRM114-Status: UNSURE (   8.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250407_231359_774696_7CD6E750 
+X-CRM114-Status: GOOD (  17.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,27 +116,86 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Address the memory leak caused by extended skb allocation observed during
-multicast transmission in this series.
+Currently, in the case of extended skb allocation, the buffer is freed
+before the DMA unmap operation. This premature deletion can result in
+skb->data corruption, as the memory region could be re-allocated for other
+purposes. Fix this issue by reordering the failure cases by calling
+dma_unmap_single() first, then followed by the corresponding kfree_skb().
+This helps avoid data corruption in case of failures in dp_tx().
 
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: P Praneesh <praneesh.p@oss.qualcomm.com>
 ---
-v2:
-	- Rebased on top of TOT.
----
+ drivers/net/wireless/ath/ath12k/dp_tx.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-P Praneesh (4):
-  wifi: ath12k: Handle error cases during extended skb allocation
-  wifi: ath12k: Refactor tx descriptor handling in tx completion handler
-  wifi: ath12k: Fix memory leak during extended skb allocation
-  wifi: ath12k: Use skb->len for dma_unmap_single() length parameter
-
- drivers/net/wireless/ath/ath12k/dp.c    | 10 ++-
- drivers/net/wireless/ath/ath12k/dp.h    |  7 ++
- drivers/net/wireless/ath/ath12k/dp_tx.c | 87 ++++++++++++++-----------
- 3 files changed, 64 insertions(+), 40 deletions(-)
-
-
-base-commit: ac17b1211841c98a9b4c2900ba2a7f457c80cf90
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index b93669348f35..6b394534e3a2 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -230,7 +230,7 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 	struct ath12k_skb_cb *skb_cb = ATH12K_SKB_CB(skb);
+ 	struct hal_tcl_data_cmd *hal_tcl_desc;
+ 	struct hal_tx_msdu_ext_desc *msg;
+-	struct sk_buff *skb_ext_desc;
++	struct sk_buff *skb_ext_desc = NULL;
+ 	struct hal_srng *tcl_ring;
+ 	struct ieee80211_hdr *hdr = (void *)skb->data;
+ 	struct ath12k_vif *ahvif = arvif->ahvif;
+@@ -416,18 +416,15 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 			if (ret < 0) {
+ 				ath12k_dbg(ab, ATH12K_DBG_DP_TX,
+ 					   "Failed to add HTT meta data, dropping packet\n");
+-				kfree_skb(skb_ext_desc);
+-				goto fail_unmap_dma;
++				goto fail_free_ext_skb;
+ 			}
+ 		}
+ 
+ 		ti.paddr = dma_map_single(ab->dev, skb_ext_desc->data,
+ 					  skb_ext_desc->len, DMA_TO_DEVICE);
+ 		ret = dma_mapping_error(ab->dev, ti.paddr);
+-		if (ret) {
+-			kfree_skb(skb_ext_desc);
+-			goto fail_unmap_dma;
+-		}
++		if (ret)
++			goto fail_free_ext_skb;
+ 
+ 		ti.data_len = skb_ext_desc->len;
+ 		ti.type = HAL_TCL_DESC_TYPE_EXT_DESC;
+@@ -463,7 +460,7 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 			ring_selector++;
+ 		}
+ 
+-		goto fail_unmap_dma;
++		goto fail_unmap_dma_ext;
+ 	}
+ 
+ 	ath12k_hal_tx_cmd_desc_setup(ab, hal_tcl_desc, &ti);
+@@ -479,13 +476,16 @@ int ath12k_dp_tx(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 
+ 	return 0;
+ 
+-fail_unmap_dma:
+-	dma_unmap_single(ab->dev, ti.paddr, ti.data_len, DMA_TO_DEVICE);
+-
++fail_unmap_dma_ext:
+ 	if (skb_cb->paddr_ext_desc)
+ 		dma_unmap_single(ab->dev, skb_cb->paddr_ext_desc,
+ 				 sizeof(struct hal_tx_msdu_ext_desc),
+ 				 DMA_TO_DEVICE);
++fail_free_ext_skb:
++	kfree_skb(skb_ext_desc);
++
++fail_unmap_dma:
++	dma_unmap_single(ab->dev, ti.paddr, ti.data_len, DMA_TO_DEVICE);
+ 
+ fail_remove_tx_buf:
+ 	ath12k_dp_tx_release_txbuf(dp, tx_desc, pool_id);
 -- 
 2.34.1
 
