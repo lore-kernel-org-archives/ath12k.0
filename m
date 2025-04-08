@@ -4,88 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CC7DC369A5
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 06:12:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41DB1C369A7
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 06:12:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
 	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XilFwlxG3QLgFkotXu2wdZpmkObNvAbLqmHueg9pqb4=; b=ef9CPokZhEeJMECtPYWxrmmmY8
-	wuBHt8P/NRl5rPh1fkqAMnFxydOTLayCOdciIZi+8lvnDum6FhtDhJJCMd3Wnl+0e4D8ruVQEopLf
-	2BpbCMGp6b+otX/wi/aCAqxQG4mEZnAJhexVeDitrOSQG0RDfNjny9UdHv3b8msrdypaJm+mYuOAa
-	0FDHIbcV6RVnyrcF52NPcnuo3aE+WlYXduOwlDED6IN8KDgCeOdjgQFAcANDXE5sIxZMV2rRB6ZOB
-	+JEbraUZpPyZvLTHQUdVp/BytGO2BVntsjWwyRRhYGoQKYlohFaePIdG1+xGbwnqlcEaiyJZp6yM6
-	kEj4+CMw==;
+	bh=LIxkWENj/q2hTkMwvmODIhHwoW25U8wZdObE/3hO0NI=; b=udmb0YNVbqIfZ9r9Y98JACbs6+
+	+4P0klmVjEs/BK7nUUsTcYaubQCyFsG3ANQo21wuCCoBx5pbCTXp491MjPnBkYhVVNxmgnmLTcPla
+	2nx3F+mb043FpZFNQ7Y08Gc5s9JAAOkG3WwmLBqyx4U7/Hy3G0pN+SF4aNDY5kNd1TQzcNSioyOZ4
+	40HcNXhag/GDl/7tF9ynAjP3UczNlcdvmZtrPwE+nCX0g1Ux/QpyF4gao783nPkTsKsyojJQPM8LM
+	+4llt2UojdmE8dVqORi2qeR30kPDl0lZwBPh/gwH7i0P8w2ODoBEv5SmXEcWtcrUjfKvQFbUfGc9k
+	V6lw9+RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u22By-00000002rsO-0UzH
+	id 1u22By-00000002rtI-4Aar
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 06:12:14 +0000
+	Tue, 08 Apr 2025 06:12:15 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u226w-00000002qoW-29T2
+	id 1u2272-00000002qpn-2EGg
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 06:07:03 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382JK0W014104
-	for <ath12k@lists.infradead.org>; Tue, 8 Apr 2025 06:07:02 GMT
+	Tue, 08 Apr 2025 06:07:09 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GMAN020154
+	for <ath12k@lists.infradead.org>; Tue, 8 Apr 2025 06:07:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	XilFwlxG3QLgFkotXu2wdZpmkObNvAbLqmHueg9pqb4=; b=dUo57VaSdG2Vu405
-	ibWQyYjVwgAmv0QCTKKLtwtisPg2OdvfgFzBvY9Ph8ao5lYhc/FZZ9mMloXDtAmr
-	cUMV/EqGWg+/qSEIutKiuWDoQuijoj2WUYiUFwk8p+VtFq8725SbgD9LHE5ZxwxR
-	sG4XWa/xGBwNJRF+twzv+BXksxTz5X64Ozh89JixDAU2R7NhH+XYXmEf0CAMxe/p
-	xO6NORG3LqIZzxSb0QVv40mDEWeUAq4mVhzZYYrSycMjHx+OR67XwRF4C1u2PQM+
-	pn07XrG2W+9pRvpgpTM7+jTl3ZLm3V/MzugwdidZMA/ayAGWeOaBLqKfj3LxR62s
-	Sk6cag==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twpm6nhg-1
+	LIxkWENj/q2hTkMwvmODIhHwoW25U8wZdObE/3hO0NI=; b=DsNBpDpHYogO5ivX
+	rtKEac5xXk9Q4qsqnusChpqD30EvEDslUg+/Xfb1Xo8TtB1MQZ8xXeOg0XhQVA8u
+	3rGPK+DB6tocg48AhuBwdc5O19gUWiNJU0D5c029Umlpp4+5GkJn7vfHWzSB1Ayj
+	feHeWaBw3fH3St2SEjlcOR4tIZZf0SJo2YFML33HkV75yaR1oFqguNnOF2dXz2so
+	JC116sOqU6fw+yVUmWHIuKk3VR+bOPl02RyvjIQllSVFpvE6YktMDF6ipfy1B6Uf
+	jJm+NyUH2+7w0TZANZ2vMI6s/UazFLapkjFnYv/gea5YH+E9fIwzzL7XCtw0q+s4
+	E7a0RA==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twd2ppaf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 06:07:02 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-7395095a505so4026831b3a.1
-        for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 23:07:01 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 06:07:08 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-739731a2c25so3627682b3a.1
+        for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 23:07:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744092421; x=1744697221;
+        d=1e100.net; s=20230601; t=1744092427; x=1744697227;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=XilFwlxG3QLgFkotXu2wdZpmkObNvAbLqmHueg9pqb4=;
-        b=FjEs+QQm0aXR/5Gvui03LaBo2lwk9udLXnFSmFBXfb7/pBvZfz443Lqr71IPsT/y8q
-         vgavBbpkRahfj5wlU8hiZ+NTQIug6fr658lOUXdw34wrLDqO3h+BphscDyP5NNjre9dz
-         qSkCxldKg8+sYikXkBZk2GsbaZh5RAcHpUPb4p/PgZQbFqKv0xfJRkDh/7Mk7QSWbPic
-         Hljb17Va/Xm3+DUvtaeB0YbfN9BEjqYoJkcdQ2+5XFQXfsuKzabC4fjxTyDDGEOteKV5
-         gJ+toEYeyBInUpAjX7rgHKlv2WNFQf9sd0kEYRoOqDy5KiuD/yNSrb2iMsqMEiWy4B1d
-         6UKA==
-X-Forwarded-Encrypted: i=1; AJvYcCWVUD1sM/m+9HpyOIRTBRXQNUENTrbxTeVRHYFt5tuo5LVlxwI2eWymwzRycE6jyWBSu4Oqp6Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzDa8IbtJx/huTEDsVWwYFRY3/ESse+ogRAT27F/ExsxHn1Pxug
-	oe/xprkZxjQqb5YnZ2Y1oQTdbFFIJ7xHWGtFow0lEcYAppyOa4QeNsYbeKJerAm/RmWx0FIHN61
-	Iid4g2mueb5yDumwhezFpAeTJVjMhFPeWpDqsjGfD7RfHBcbMSIQ5/ylkuN4JCxUvhO/l
-X-Gm-Gg: ASbGncusjQUNbQnqkTKJWlt7Vx4kA5em2YxCsHt9VbWjOWx7rTPE3K0SoWeS0JvKXNJ
-	t03dwvDMb4XUELqp4b4kevBbvZiaB25li8/1qcVOrJ+GnzC+odboTg/b/9TK1M8yqstDZ5NlHWH
-	2CmXAMxGND6cCFMVbSgCYC2Yoqo+btbYD9/JhhbxlMjI9ZpK/TRHpQ7/797viaIM5jfl0QncndC
-	XqT1Su+cvT+u6mpYbzCQik7QgUHW6+sjH/g61PvPEhdBfNrW6lZ3hwtbyNWSFiVAPIwCBx8jXJc
-	Na42aBQvepsGQBkMakqZM98UqtQje22sOvhOTMdf11I/KWcRx7pVKgiZJd+41jVa0twHmJdJpZ5
-	z8WW/zvLBTtR1mKkBYa5/nvuDeXRFrb8DoVJsfSyw
-X-Received: by 2002:a05:6a00:2186:b0:736:54c9:df2c with SMTP id d2e1a72fcca58-739e4be8c14mr19887005b3a.15.1744092420839;
-        Mon, 07 Apr 2025 23:07:00 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE6V1K+A72p6ax1SQOI5iH5ofN/dK0np0CGIaKKMDNjVDYs3xGeXEuliC86DR471I1M0d0xYQ==
-X-Received: by 2002:a05:6a00:2186:b0:736:54c9:df2c with SMTP id d2e1a72fcca58-739e4be8c14mr19886980b3a.15.1744092420424;
-        Mon, 07 Apr 2025 23:07:00 -0700 (PDT)
+        bh=LIxkWENj/q2hTkMwvmODIhHwoW25U8wZdObE/3hO0NI=;
+        b=FagY+yYtsplmUgVm/mQMw7FehZQRICglapEOLz/mHGAx5tH6C2k3ci74ENeqfO1sgt
+         o5C5ScTINkNsRBe9iAXAia2uz19zX0vIPNkZCz7rvFPX8asQ2Qox+VnaV8YGSnLOSBC4
+         QjVXn7lsog2clvtowmwG+mKSB7dtBBpbzQ59Q0Bdconq4L7DsYUvM8bc3eK1UrN/VqeD
+         7Qzh9lrilOG/da+wKq6mRsThZ2XC1Efiy1OgXuw7TVTqZ1ldAnRbzwlIGp7tu2hwdSv5
+         GpO53zKJsyBvkEZKvHHSUMnTUqsaXBCAdn6GT446k8tgaAKf5V/ysa+FjF8mQuYa8M2K
+         5Vuw==
+X-Forwarded-Encrypted: i=1; AJvYcCW2u7nmaP2qHbsa8aWON/3ylF11/VKA9mOoaqKeBP6Se+gDWCykuBx3CSmiwDA+D4KSPC7Td7M=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyXr/p/J8ooqaVK/pNhiPshyXKWzeZMDklup3xfhGKsSdDkAMnU
+	6OhuDPAoknL9xSUDfWnivwpvrKxqm7RUNvK6ne9JOeAdEejV4btbR+5sth1TsklYUN2PShkZCgK
+	PGLMtNR+b0uMJKlJVGDrpx/tm+WVo9fxsE5xaqx+eB9pwr76NInAs26VSZRqCfzWzMD2e
+X-Gm-Gg: ASbGncsy6qIVO6XFFCWrBRorE3mfpPzZjWrPwaIy52MhiNOKPV58/+35+Qru8w9R/5K
+	vsPr/O1ks33ugWfQPPzxtNe5ilOInvqcpTsjPZXo7QuBbiZ5Hu84StnMpitsFIrSp7GHJLVl9j0
+	rQSbcDNElEKUXPIAy5glSDcQTTzEnbhWfZ1ll/3aujunZzdmCtH7yStXCTUejodpa+/5bc050Km
+	D2xrLGu8ikseKLTlF+8ZeFhEy8/5ZND5qCzueM+kvitOwioMUTsFTb3KI5k7QSMO56NZUp1N/cl
+	H0mu8Uk1+bn7wO5gVYhCAsMI4UlQcrGD1CKpk78X+CWKCKpK+5mLZK4s5vqNEhY/UcMLXOIxwdR
+	RlsK+VTQImEsw5CAYUZ6UiEDUNOEbr4Ew+8iSyBeI
+X-Received: by 2002:a05:6a20:e615:b0:1f5:6e71:e45 with SMTP id adf61e73a8af0-2010472df50mr23137223637.27.1744092426944;
+        Mon, 07 Apr 2025 23:07:06 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFUfZpNpImfeyNF3xfOncodEa1J6cUs6peESY7TuolTeZvZk3fkw9PWN6do2t15rjWkh0MPUA==
+X-Received: by 2002:a05:6a20:e615:b0:1f5:6e71:e45 with SMTP id adf61e73a8af0-2010472df50mr23137196637.27.1744092426609;
+        Mon, 07 Apr 2025 23:07:06 -0700 (PDT)
 Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-af9bc35079fsm6863981a12.41.2025.04.07.23.06.57
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-af9bc35079fsm6863981a12.41.2025.04.07.23.07.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Apr 2025 23:07:00 -0700 (PDT)
+        Mon, 07 Apr 2025 23:07:06 -0700 (PDT)
 From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Tue, 08 Apr 2025 11:36:34 +0530
-Subject: [PATCH ath-next v4 6/9] wifi: ath12k: fix
- ath12k_core_pre_reconfigure_recovery() with grouping
+Date: Tue, 08 Apr 2025 11:36:36 +0530
+Subject: [PATCH ath-next v4 8/9] wifi: ath12k: handle ath12k_core_reset()
+ with hardware grouping
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20250408-fix_reboot_issues_with_hw_grouping-v4-6-95e7bf048595@oss.qualcomm.com>
+Message-Id: <20250408-fix_reboot_issues_with_hw_grouping-v4-8-95e7bf048595@oss.qualcomm.com>
 References: <20250408-fix_reboot_issues_with_hw_grouping-v4-0-95e7bf048595@oss.qualcomm.com>
 In-Reply-To: <20250408-fix_reboot_issues_with_hw_grouping-v4-0-95e7bf048595@oss.qualcomm.com>
 To: Johannes Berg <johannes@sipsolutions.net>,
@@ -97,22 +97,22 @@ Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
         linux-kernel@vger.kernel.org,
         Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Proofpoint-GUID: pAnjCPkFRMca2IlFGN7xhIMCJGkQQG-h
-X-Proofpoint-ORIG-GUID: pAnjCPkFRMca2IlFGN7xhIMCJGkQQG-h
-X-Authority-Analysis: v=2.4 cv=MpRS63ae c=1 sm=1 tr=0 ts=67f4bd06 cx=c_pps a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=d-GbLxaNKwXvygB75HgA:9 a=QEXdDO2ut3YA:10
- a=zc0IvFSfCIW2DFIPzwfm:22
+X-Proofpoint-ORIG-GUID: D6EiKQO-TVnH7CucYrhI67BWy_qg14cD
+X-Proofpoint-GUID: D6EiKQO-TVnH7CucYrhI67BWy_qg14cD
+X-Authority-Analysis: v=2.4 cv=NaLm13D4 c=1 sm=1 tr=0 ts=67f4bd0c cx=c_pps a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=WsyaGQEz6myPfAgSfy8A:9 a=QEXdDO2ut3YA:10
+ a=OpyuDcXvxspvyRM73sMx:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-08_02,2025-04-07_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- mlxlogscore=999 clxscore=1015 priorityscore=1501 impostorscore=0
- spamscore=0 bulkscore=0 suspectscore=0 malwarescore=0 adultscore=0
- phishscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ priorityscore=1501 adultscore=0 malwarescore=0 suspectscore=0
+ lowpriorityscore=0 bulkscore=0 mlxlogscore=999 clxscore=1015 phishscore=0
+ spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504080042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_230702_561586_0AD4B2E3 
-X-CRM114-Status: GOOD (  15.91  )
+X-CRM114-CacheID: sfid-20250407_230708_578454_4CFC667B 
+X-CRM114-Status: GOOD (  16.00  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,22 +127,14 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k_core_pre_reconfigure_recovery() reconfigures all radios
-within the same group. During grouping and driver going for a recovery,
-this function is called as many times as there are devices in the group.
-Consequently, it performs the same reconfiguration multiple times, which
-is unnecessary.
+Currently, in ath12k_core_reset(), the device is powered up immediately
+after a power down. However, with hardware grouping, when one device
+asserts, all partner devices also asserts. If there is a delay in
+processing these asserts, by the time this device powers up, other devices
+might still be asserting, leading to an overall recovery failure.
 
-To prevent this, add a check to continue if the action has already been
-taken.
-
-To simplify the management of various flags, the reason for hardware queues
-being stopped is used as a check instead of introducing a new flag.
-
-While at it, also add missing wiphy locks. Wiphy lock is required since
-ath12k_mac_drain_tx() which is called by
-ath12k_core_pre_reconfigure_recovery() needs this lock to be held by the
-caller.
+To prevent this issue, ensure all asserts for a group are processed before
+initiating the power-up sequence.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
@@ -150,41 +142,57 @@ Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ
 
 Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/core.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ drivers/net/wireless/ath/ath12k/core.c | 29 ++++++++++++++++++++++++++---
+ 1 file changed, 26 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
-index cb2a99d110d5c9ec2c092fe1a2b776b6265c4126..0fb3e57cd254ede767528e47e1d9d183257e5b71 100644
+index a1c9b8771e9c4c84548da2cb4054b0403aa8c759..55db189d82346438272c94f25b62dd0db8716efb 100644
 --- a/drivers/net/wireless/ath/ath12k/core.c
 +++ b/drivers/net/wireless/ath/ath12k/core.c
-@@ -1411,6 +1411,18 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 		    ah->state == ATH12K_HW_STATE_TM)
- 			continue;
+@@ -1582,7 +1582,8 @@ static void ath12k_core_restart(struct work_struct *work)
+ static void ath12k_core_reset(struct work_struct *work)
+ {
+ 	struct ath12k_base *ab = container_of(work, struct ath12k_base, reset_work);
+-	int reset_count, fail_cont_count;
++	struct ath12k_hw_group *ag = ab->ag;
++	int reset_count, fail_cont_count, i;
+ 	long time_left;
  
-+		wiphy_lock(ah->hw->wiphy);
+ 	if (!(test_bit(ATH12K_FLAG_QMI_FW_READY_COMPLETE, &ab->dev_flags))) {
+@@ -1641,9 +1642,31 @@ static void ath12k_core_reset(struct work_struct *work)
+ 	ath12k_hif_ce_irq_disable(ab);
+ 
+ 	ath12k_hif_power_down(ab, false);
+-	ath12k_hif_power_up(ab);
+ 
+-	ath12k_dbg(ab, ATH12K_DBG_BOOT, "reset started\n");
++	/* prepare for power up */
++	ab->qmi.num_radios = U8_MAX;
 +
-+		/* If queue 0 is stopped, it is safe to assume that all
-+		 * other queues are stopped by driver via
-+		 * ieee80211_stop_queues() below. This means, there is
-+		 * no need to stop it again and hence continue
-+		 */
-+		if (ieee80211_queue_stopped(ah->hw, 0)) {
-+			wiphy_unlock(ah->hw->wiphy);
++	mutex_lock(&ag->mutex);
++	ath12k_core_to_group_ref_put(ab);
++
++	if (ag->num_started > 0) {
++		ath12k_dbg(ab, ATH12K_DBG_BOOT,
++			   "waiting for %d partner device(s) to reset\n",
++			   ag->num_started);
++		mutex_unlock(&ag->mutex);
++		return;
++	}
++
++	for (i = 0; i < ag->num_devices; i++) {
++		ab = ag->ab[i];
++		if (!ab)
 +			continue;
-+		}
 +
- 		ieee80211_stop_queues(ah->hw);
- 
- 		for (j = 0; j < ah->num_radio; j++) {
-@@ -1439,6 +1451,8 @@ static void ath12k_core_pre_reconfigure_recovery(struct ath12k_base *ab)
- 			ar->monitor_vdev_created = false;
- 			ar->monitor_started = false;
- 		}
++		ath12k_hif_power_up(ab);
++		ath12k_dbg(ab, ATH12K_DBG_BOOT, "reset started\n");
++	}
 +
-+		wiphy_unlock(ah->hw->wiphy);
- 	}
++	mutex_unlock(&ag->mutex);
+ }
  
- 	wake_up(&ab->wmi_ab.tx_credits_wq);
+ int ath12k_core_pre_init(struct ath12k_base *ab)
 
 -- 
 2.34.1
