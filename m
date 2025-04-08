@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0645C3600C
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 10:47:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E432BC369A4
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 10:47:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fizUwIrV0cpC9lIVh+PAaW3sb5m6ocUw8SwBxQRgILw=; b=Lkmvj7odcvaeKh5NsC3pM1LVF1
-	LIuN8ag0hi/E8MhZMldP2QcmyaByZpO+Z6EooKxXd+kiwzG8jJwrEUNA/JlwEiPYVQILO4ZX2XUA9
-	/uK5LacqMd3HeliGbOwLVVh4qXdCJ3hRUXAM5OUQrp6FSdTitn4Fb/SOZMnd5vLW2+ITQvejHh6G5
-	kqf0ObiHo1ZK/uyhuqIq0lqYwgvY3OOx78Qvn96+tjrcFMjrywxNsl0ZM/duh3hUT8bIGqh0W3p0t
-	IxlYJ2gD0f+CfszyrFDT3UXI6J3wgQrzcKeU9W3/nu4ZlL+l5BO6Qe3c6utspKnGMfPNDr77yEzZu
-	Z7aaSniQ==;
+	bh=9q/mQRpAXTG6b+vSXiWGlXFvCcYRkc3YzeAyGrH6mlM=; b=VH9rDJ+kXY4CAOvDeTtZgNO281
+	irHzyNvYjUZ8WxJugTC9QUEbmEHu2PwXRvMClMBaX9UU8SpAGYNfS73OUplbfgDnuEI+8IWIW+OXM
+	pL6SuAWES52ZSD5Z+ShVTadBe4n5lY2geVojkAP4QAIYkV/+5oYtMV0imp0YcRnyjX8tPTxLnqcfY
+	HIXvnscOaQnun3h9ZgZjwqZ5/FGB5dxiwd+ERJu3avwCHaTYqYjNUvpuV51DGo+DFw9r46owpi9yo
+	Ixkkkqhpz1DXICf2/zuBq2aK1NEP42r2J5MqFYu1fGK5wh/2WTb3NsoBbjwUUlnZJ9xZW9NScUnId
+	90eVmsjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u26Ty-00000003jAB-2DAj
+	id 1u26Tz-00000003jAh-27xM
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 10:47:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Tue, 08 Apr 2025 10:47:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u25eg-00000003WtJ-1TSo
+	id 1u25fn-00000003XG8-2NKZ
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 09:54:11 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GSVo008168;
-	Tue, 8 Apr 2025 09:54:04 GMT
+	Tue, 08 Apr 2025 09:55:16 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GOpc010522;
+	Tue, 8 Apr 2025 09:55:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	fizUwIrV0cpC9lIVh+PAaW3sb5m6ocUw8SwBxQRgILw=; b=MGVBmeb+EXIfcpj1
-	xynl9HPyHwrSceRfoUWerSm++f6TRZsR4LAEbf6TSTShEpr6iIGpLUVyA9nQbKrp
-	o0lZV2ISCK6klHWEgDh9WN3tswcTI3ko2tdmiDpkgi8MlRBED13BGP1w6LkPgfBP
-	Sjm5eS0lbmgBE1oZQuSSnlC5dy8K3WQL1w9tluqmc4/wIoniFFRJckrNVd4svWAe
-	GytF4i+tKhmaxSxOqJmrjSd4nsZ8QyHIy62LTlOJ137EqdSzXIwrAStfYvOIsK6Z
-	O9umFDAMY1kNBpRxkkQJ1aqoPU/RUYOIndKNB43rva53pEpvWBxYYRWSf8L3yshy
-	OFXoXw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twtaybr2-1
+	9q/mQRpAXTG6b+vSXiWGlXFvCcYRkc3YzeAyGrH6mlM=; b=nnHgqKForz5O8nMd
+	rd45LlBRHqJFEriGiTfZmXZt/vFZvJwPvKBvQWIIpTsz9/Bfdp+Ezr8qTpQTUz3E
+	tHBAfbTHNTigFgVXuk18X3NfigNHwqJ1L92FjnxjSLJlc16CJ54yWzHsBi5o3PvJ
+	MKld2zKp1QM47H5IZ01CnkEvkxFYyTyVMzc3lo9GsAyyBHHKjhhhmeiZu8PkykgK
+	7uY5bSlNrTIde5miB+F5ElMXTRqOSIgrI1OD3RnWEgc035kXdSly8U3emBQTqnju
+	O6VjoVESMNfOf3waK8pqC75Ixlj6uVGtsznUIewhxEKmhbTmvfjPoHj6gJzdaJXi
+	watE/g==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twc1f7yj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Apr 2025 09:54:03 +0000 (GMT)
+	Tue, 08 Apr 2025 09:55:12 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5389s287004531
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5389tBiq020775
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Apr 2025 09:54:02 GMT
+	Tue, 8 Apr 2025 09:55:11 GMT
 Received: from [10.216.15.222] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 8 Apr 2025
- 02:53:58 -0700
-Message-ID: <7db95e73-18c9-cad2-5a5c-181db8e4aba7@quicinc.com>
-Date: Tue, 8 Apr 2025 15:23:55 +0530
+ 02:55:07 -0700
+Message-ID: <7261d150-4b03-c42a-7abd-44bb3b0cb61e@quicinc.com>
+Date: Tue, 8 Apr 2025 15:25:04 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next v4 5/9] wifi: ath12k: fix firmware assert during
- reboot with hardware grouping
+Subject: Re: [PATCH ath-next v4 6/9] wifi: ath12k: fix
+ ath12k_core_pre_reconfigure_recovery() with grouping
 Content-Language: en-US
 To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
         Johannes Berg
@@ -72,32 +72,31 @@ CC: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
         <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
         <linux-kernel@vger.kernel.org>
 References: <20250408-fix_reboot_issues_with_hw_grouping-v4-0-95e7bf048595@oss.qualcomm.com>
- <20250408-fix_reboot_issues_with_hw_grouping-v4-5-95e7bf048595@oss.qualcomm.com>
+ <20250408-fix_reboot_issues_with_hw_grouping-v4-6-95e7bf048595@oss.qualcomm.com>
 From: Vasanthakumar Thiagarajan <quic_vthiagar@quicinc.com>
-In-Reply-To: <20250408-fix_reboot_issues_with_hw_grouping-v4-5-95e7bf048595@oss.qualcomm.com>
+In-Reply-To: <20250408-fix_reboot_issues_with_hw_grouping-v4-6-95e7bf048595@oss.qualcomm.com>
 Content-Type: text/plain; charset="UTF-8"; format=flowed
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: -mCQanm--1LXYyvVIPnt4M51_hSuKzqV
-X-Authority-Analysis: v=2.4 cv=LLlmQIW9 c=1 sm=1 tr=0 ts=67f4f23b cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=_MiNaS0KeY7sYsYnmAYA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-ORIG-GUID: -mCQanm--1LXYyvVIPnt4M51_hSuKzqV
+X-Proofpoint-ORIG-GUID: 2aGXptnFEwcnLTALlaxzCUI3Cq7V4TXq
+X-Authority-Analysis: v=2.4 cv=KtdN2XWN c=1 sm=1 tr=0 ts=67f4f280 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=QF_tM0vuxDyYx1FaEDQA:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-GUID: 2aGXptnFEwcnLTALlaxzCUI3Cq7V4TXq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-08_03,2025-04-07_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
- clxscore=1015 mlxlogscore=829 malwarescore=0 phishscore=0
- lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 adultscore=0
- suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
+ priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0 spamscore=0
+ malwarescore=0 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=866 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504080070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250408_025406_402429_0DFA8502 
-X-CRM114-Status: UNSURE (   6.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250408_025515_741025_44FD21AE 
+X-CRM114-Status: GOOD (  10.20  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,14 +114,22 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 On 4/8/2025 11:36 AM, Aditya Kumar Singh wrote:
-> At present, during PCI shutdown, the power down is only executed for a
-> single device. However, when operating in a group, all devices need to be
-> powered down simultaneously. Failure to do so will result in a firmware
-> assertion.
+> Currently, ath12k_core_pre_reconfigure_recovery() reconfigures all radios
+> within the same group. During grouping and driver going for a recovery,
+> this function is called as many times as there are devices in the group.
+> Consequently, it performs the same reconfiguration multiple times, which
+> is unnecessary.
 > 
-> Hence, introduce a new ath12k_pci_hw_group_power_down() and call it during
-> power down. This will ensure that all partner devices are properly powered
-> down.
+> To prevent this, add a check to continue if the action has already been
+> taken.
+> 
+> To simplify the management of various flags, the reason for hardware queues
+> being stopped is used as a check instead of introducing a new flag.
+> 
+> While at it, also add missing wiphy locks. Wiphy lock is required since
+> ath12k_mac_drain_tx() which is called by
+> ath12k_core_pre_reconfigure_recovery() needs this lock to be held by the
+> caller.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
