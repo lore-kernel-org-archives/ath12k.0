@@ -4,98 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC006C369A1
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 05:41:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FC24C3600C
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 06:06:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sXMbEQlVvWXiILhhIH3FVTiE2JqySujeGJdB3cTH/8s=; b=i8rOd1V58kuLpsl+DGTvR8KlR1
-	hL1yl3hhFmaSpbggm5KpGrbS/qQYjc6g/gBx0kaghFilgxmgk4NPcyjLl+xDzOI70uSPT+CZUnyAU
-	qAbTVY8jVLxTGjIwXNjYP0B4zknxO5A9ZvGq/VIqtjiKWQW7+SQU9Om5PZXDPHGh7WkKKDZY1vxBr
-	PAfV6H+UuTfyz1NmIRV6OBp5dW3us5XYiM9NZOS5HETD/bnghu4OOgPTlIgOp3JXiLL08pgkeD252
-	/npf5JbqDgddOVfJ7Jbx5IC9NUwmnkArk/3NhNdhUzqkkQkaeijhZ8xTPAt2wyKZz3BpfATge5fNI
-	ZyQNBknA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rPJvbK708nKLqv7QHHGj//BT/jZMd+wf9IwoNFeDmZg=; b=Pei+0DkkLodDy9
+	pN+Skyd1335VfIadeLJAXKiNUhxMK0P0Eq86ZKBxW1KLM3DvZ/h+ayex9Y7+biBhtxVpQT2JfNPQW
+	tO/S6hB8DuZEvWkpPBuvC8iL6I5sqXWaQKD6Q1zPU0SDGgUFhiS3KTC5xoIj62tZCiGBmM75xADZx
+	PJ7S9b5AzptU5ZLQjd2yGkmQRFqNb9ntuT0WpIHtV3iSrNddfSJv7vWS8ms5x4cVS+ljar+slOoVC
+	jpQ/yZ2/49i4iwt8WxO0VNuEAcIYVOrWnQVrP93OKBr8qZLHVeKRgy5PfO2gqItFVZ0ArE+r4eyXR
+	GzVNH4Tlct5bMO+K2Opw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u21hx-00000002nQA-2rYy
+	id 1u226h-00000002qiz-1hNS
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 05:41:13 +0000
+	Tue, 08 Apr 2025 06:06:47 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u21h3-00000002nM3-24kA
+	id 1u226e-00000002qi6-3giD
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 05:40:21 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GMQo000856;
-	Tue, 8 Apr 2025 05:40:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Tue, 08 Apr 2025 06:06:46 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GN3S014995
+	for <ath12k@lists.infradead.org>; Tue, 8 Apr 2025 06:06:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=sXMbEQlVvWXiILhhIH3FVT
-	iE2JqySujeGJdB3cTH/8s=; b=OdIJApeI7BKklpwBmW3/qobliReAFGjvDfLEK9
-	fdI9g99bTKgFcOecQFWXZsZmfI2/Flhll+mhxHhW9oJYlUeexmrIwMun7ujTS12A
-	5tHrpW0e3vrNwm7VByu4k47myun/WDgARazpst9OM1O3lF0ibJ6z+MEMfXP1tr4u
-	TVQx3KbuL2q78eDnsKee29eIxp78cyDP7bQi+x1A9Eoj03OsBWgus9aGFBIFeM2j
-	+meijEzJzIyLQy9wbd8P8WHJtGKCSfRQR8wgOpFx7PjMPR+n18ScPT6pOjbygiZg
-	EUikPkg0BP8b1l0mVnJfpkIwuk9zMOhyj7LuTo+wAp5mq5Zw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbe6mxw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Apr 2025 05:40:13 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5385eCEi013115
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Apr 2025 05:40:12 GMT
-Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 7 Apr 2025
- 22:40:10 -0700
-From: Baochen Qiang <quic_bqiang@quicinc.com>
-Date: Tue, 8 Apr 2025 13:39:48 +0800
-Subject: [PATCH ath-next v3] wifi: ath12k: avoid deadlock during regulatory
- update in ath12k_regd_update()
+	:mime-version:subject:to; s=qcppdkim1; bh=rPJvbK708nKLqv7QHHGj//
+	BT/jZMd+wf9IwoNFeDmZg=; b=AdrrdRgdaTlk/sJkmnZqf4pX74Rp6uWoz2dahR
+	WUDh7bvIPxySJUMZtrcWa/OXD1vvAEemkxsosINC93hkTUPYuYTTHc9wF2v29FFr
+	VY7KTtOcDUB0qcj2+HBoB1T07EF82oS7rQ0fHfpgcycNdmJtlvQ9FKfDjDmKHMc5
+	N/kWNi8XC1gFG0jQ7+sh1oXMKvUswl8lQHBp/IluJrR1vGoCLMKVMw4ZFjC+RkWu
+	jr0etUqOkowc4SwNAp+E2IxkQ0CHrE7ktDL/EQ6dTrIPcCnFV8fDeqXBU5Mt7mOj
+	wpXzd9lyCSiu4vAE7iD0j0Cq+N2wgjyf+SIbYVqFqI7Goi6g==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbuepcv-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 06:06:43 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-739525d4d7bso4061828b3a.2
+        for <ath12k@lists.infradead.org>; Mon, 07 Apr 2025 23:06:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744092402; x=1744697202;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rPJvbK708nKLqv7QHHGj//BT/jZMd+wf9IwoNFeDmZg=;
+        b=PWcadTnZqw0bhNa68qkyqAM2nWh00X7zJwHAPB7GmBO9hwZ5+ck1cfp1bM2fJ909bT
+         R5Ji8CTRGSEzrY6kdrGCNL92o2cnhU7VKXc2rXJ6j4WLta4Er62fcNkt0EVjvCkn9ItG
+         C9OZ4CXEsn5qZfAG6HWl1emSW5LwmT833TdiYDmBiFkpHv2SglVleOVi4hoQIKEw/wtZ
+         saHaz0wdPVE+eMJskzvAKqCk10tdUE7529l3odvxDd5e21iSHJKLmGRw628vgMRHf1lG
+         bry5XtfzDbz71ndYm1DLnQJCEcW/z9jcoFWS+cHCo3Rwbb04iylrj4lt8yR2NEDpy7Ja
+         yq5w==
+X-Forwarded-Encrypted: i=1; AJvYcCVZkHAzcYDKnvnxaQ0XBhMeuNcaLyMYE5j//SlnImk39ivAMI44z68CF7I0ZoZa5euLKT/GDaw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxTmbsnCV0yne97N/zyb8z4M6rFOLj805XdvBnK6rY+tsBX0a3S
+	rXljl5lF7BfW5j5j+udAU6B9CeUEWIL2QeFAYGVINGfoiferOlxOq3NtXTPJcxD/kA1DZ/msg0p
+	rYobz33NxgRpC3E83JLlyCvku9sUTf4tCTCwj/MDo/h/MovRiFlBXxh1ffEJ1vk5ALEHc
+X-Gm-Gg: ASbGnctlF2qdz0e3hpPUS3A8dcbLMvLYf+SPG2fz9CD8nm2fx8ATgOfLOqBERCpTF+V
+	IWZT8SbcpdLYoMkQflMluwUb/mkuMZ3EOi1/KJfAlh4AoWYRqwxNNA2jifCjbzgPo4FziEkTCRz
+	4fTVrOBS/WJ8UAMiAk2cK1vuYffH5Z4T6zdDmeZu/WSwIoXvJ1NbriQWwdz1dJaTpJ63KitnPdF
+	pe8xEm+jWMbSqnzEjELvyaTYttx3oIg/xsrgjh4jeoa/zbV1k0UB2u76sTznmqhbln3igKzOki/
+	tvzKgZAyMBCjBS3a+6lmHJTxtpL324PMQzR03ZvIuD9J+uc5OLZXrZWsTUV/JUASdbBNh9t6SuT
+	F+rVvN5UQMv7GLyWIi2e5XQLZ584TZZFPbHZNhvcW
+X-Received: by 2002:a05:6a20:c78e:b0:1f5:535c:82dc with SMTP id adf61e73a8af0-201047315d9mr18142216637.42.1744092402509;
+        Mon, 07 Apr 2025 23:06:42 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGDQGkfHHXHzQnzn2S7sZR/SlqyFD4E76f4ItSX8gh3a16V1yPXO+CG98vBVOmnzhJbyAvBCQ==
+X-Received: by 2002:a05:6a20:c78e:b0:1f5:535c:82dc with SMTP id adf61e73a8af0-201047315d9mr18142189637.42.1744092402103;
+        Mon, 07 Apr 2025 23:06:42 -0700 (PDT)
+Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-af9bc35079fsm6863981a12.41.2025.04.07.23.06.39
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 07 Apr 2025 23:06:41 -0700 (PDT)
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+Subject: [PATCH ath-next v4 0/9] wifi: ath12k: fixes for rmmod and recovery
+ issues with hardware grouping
+Date: Tue, 08 Apr 2025 11:36:28 +0530
+Message-Id: <20250408-fix_reboot_issues_with_hw_grouping-v4-0-95e7bf048595@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-ID: <20250408-rtnl-deadlock-v3-1-fdc12bc511ea@quicinc.com>
-X-B4-Tracking: v=1; b=H4sIAKO29GcC/3WNQQ7CIBBFr9LM2jEUJBpX3sN0QWFqJ1aogKSm6
- d0l3bt8efnvr5AoMiW4NitEKpw4+Arq0IAdjX8QsqsMUkgtTuKCMfsJHRk3BftEbYezbqVRQ2+
- gbuZIAy977w4mj+hpydBVM3LKIX73o6J2/6dZFLaoBGkt+lYLJ2/vD1v29mjDC7pt235jAriqt
- gAAAA==
-X-Change-ID: 20250408-rtnl-deadlock-5cf7512a3fba
+X-B4-Tracking: v=1; b=H4sIAOS89GcC/43OwW7DIAyA4VepOI/JmGRJetp7TBMKxA0+DDoga
+ acq7z6UU7VdcrQsf78fIlNiyuJ8eohEK2eOoQ7Ny0k4P4aZJE91FgjYKFS9vPDdJLIxFsM5L5T
+ NjYs3/mbmFJcrh1mCw0m/dWPbd1ZU6JqoXu2RDzEWLwPdi/isG8+5xPSz11e172uoBQXDkdCqJ
+ MiL1QM50E2r6P17YcfBvbr4tQdWfEIRDqFYUdtN0GlrcUT8j+pntDmE6opqHECDVf00/Pl027Z
+ fRrvTnIoBAAA=
+X-Change-ID: 20241218-fix_reboot_issues_with_hw_grouping-0c2d367a587b
 To: Johannes Berg <johannes@sipsolutions.net>,
-        Jeff Johnson
-	<jjohnson@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, Wen Gong <quic_wgong@quicinc.com>,
-        "Baochen
- Qiang" <quic_bqiang@quicinc.com>,
-        Jeff Johnson
-	<jeff.johnson@oss.qualcomm.com>
+        Jeff Johnson <jjohnson@kernel.org>,
+        Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+        Kalle Valo <kvalo@kernel.org>, Harshitha Prem <quic_hprem@quicinc.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: dkDR2_x_jhdlvWavHrRv8Zkw6NOmDpjH
-X-Authority-Analysis: v=2.4 cv=T7OMT+KQ c=1 sm=1 tr=0 ts=67f4b6bd cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=10iZpnK5eFnVvZAGgq0A:9
- a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: dkDR2_x_jhdlvWavHrRv8Zkw6NOmDpjH
+X-Proofpoint-GUID: 0ZbVcMcVu_oLdlYQihyj2S-sKBIGahVI
+X-Proofpoint-ORIG-GUID: 0ZbVcMcVu_oLdlYQihyj2S-sKBIGahVI
+X-Authority-Analysis: v=2.4 cv=dbeA3WXe c=1 sm=1 tr=0 ts=67f4bcf3 cx=c_pps a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=3fJN4-It2fq8u9xqJHoA:9 a=QEXdDO2ut3YA:10
+ a=IoOABgeZipijB_acs4fv:22 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-08_01,2025-04-07_01,2024-11-22_01
+ definitions=2025-04-08_02,2025-04-07_01,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- mlxlogscore=999 lowpriorityscore=0 adultscore=0 phishscore=0 bulkscore=0
- mlxscore=0 malwarescore=0 suspectscore=0 priorityscore=1501 spamscore=0
- clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504080039
+ suspectscore=0 mlxlogscore=999 phishscore=0 mlxscore=0 spamscore=0
+ malwarescore=0 clxscore=1015 adultscore=0 priorityscore=1501
+ lowpriorityscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502280000 definitions=main-2504080042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_224017_549942_F44FD5BB 
-X-CRM114-Status: GOOD (  19.42  )
+X-CRM114-CacheID: sfid-20250407_230644_938410_FC8FEF95 
+X-CRM114-Status: GOOD (  11.77  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,172 +130,85 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Wen Gong <quic_wgong@quicinc.com>
+With hardware grouping, there is a kernel crash with signature -
 
-Running this test in a loop it is easy to reproduce an rtnl deadlock:
+$ rmmod ath12k.ko
+Unable to handle kernel paging request at virtual address 000000000000d1a8
+[...]
+Call trace:
+ ath12k_reg_free+0x14/0x74 [ath12k] (P)
+ ath12k_core_hw_group_destroy+0x7c/0xb4 [ath12k] (L)
+ ath12k_core_hw_group_destroy+0x7c/0xb4 [ath12k]
+ ath12k_core_deinit+0xd8/0x124 [ath12k]
+ ath12k_pci_remove+0x6c/0x130 [ath12k]
+ pci_device_remove+0x44/0xe8
+ device_remove+0x4c/0x80
+ device_release_driver_internal+0x1d0/0x22c
+ driver_detach+0x50/0x98
+ bus_remove_driver+0x70/0xf4
+ driver_unregister+0x30/0x60
+ pci_unregister_driver+0x24/0x9c
+ ath12k_pci_exit+0x18/0x24 [ath12k]
+ __arm64_sys_delete_module+0x1a0/0x2a8
+ invoke_syscall+0x48/0x110
+ el0_svc_common.constprop.0+0x40/0xe0
+ do_el0_svc+0x1c/0x28
+ el0_svc+0x30/0xd0
+ el0t_64_sync_handler+0x10c/0x138
+ el0t_64_sync+0x198/0x19c
+Code: a9bd7bfd 910003fd a9025bf5 91402015 (f968d6a1)
+---[ end trace 0000000000000000 ]---
+Segmentation fault
 
-iw reg set FI
-ifconfig wlan0 down
+This series aims to fix this stability issue. With this now, 100+ iteration
+of rmmod and insmod works perfectly.
 
-What happens is that thread A (workqueue) tries to update the regulatory:
+Also, firmware recovery with grouping is not working fine. Randomly, some
+NULL pointer crash or another firmware assert is seen. This series aims to
+fix that as well.
 
-    try to acquire the rtnl_lock of ar->regd_update_work
+With this in place now, 100+ iteration of firmware recovery with one 3 link
+AP MLD up works fine.
 
-    rtnl_lock
-    ath12k_regd_update [ath12k]
-    ath12k_regd_update_work [ath12k]
-    process_one_work
-    worker_thread
-    kthread
-    ret_from_fork
-
-And thread B (ifconfig) tries to stop the interface:
-
-    try to cancel_work_sync(&ar->regd_update_work) in ath12k_mac_op_stop().
-    ifconfig  3109 [003]  2414.232506: probe:
-
-    ath12k_mac_op_stop [ath12k]
-    drv_stop [mac80211]
-    ieee80211_do_stop [mac80211]
-    ieee80211_stop [mac80211]
-
-The sequence of deadlock is:
-
-1. Thread B calls rtnl_lock().
-
-2. Thread A starts to run and calls rtnl_lock() from within
-   ath12k_regd_update_work(), then enters wait state because the lock is
-   owned by thread B.
-
-3. Thread B tries to call cancel_work_sync(&ar->regd_update_work), but
-   thread A is in ath12k_regd_update_work() waiting for rtnl_lock(). So
-   cancel_work_sync() forever waits for ath12k_regd_update_work() to
-   finish and we have a deadlock.
-
-Change to use regulatory_set_wiphy_regd(), which is the asynchronous
-version of regulatory_set_wiphy_regd_sync(). This way rtnl & wiphy locks
-are not required so can be removed, and in the end the deadlock issue can
-be avoided.
-
-But a side effect introduced by the asynchronous regd update is that,
-some essential information used in ath12k_reg_update_chan_list(), which
-would be called later in ath12k_regd_update(), might has not been updated
-by cfg80211, as a result wrong channel parameters sent to firmware.
-
-To handle this side effect, move ath12k_reg_update_chan_list() to
-ath12k_reg_notifier(), and advertise WIPHY_FLAG_NOTIFY_REGDOM_BY_DRIVER
-to cfg80211. This works because, in the process of the asynchronous regd
-update, after the new regd is processed, cfg80211 will notify ath12k by
-calling ath12k_reg_notifier(). Since all essential information is updated
-at that time, we are good to do channel list update.
-
-Please note ath12k_reg_notifier() could also be called due to other
-reasons, like core/beacon/user hints etc. For them we are not allowed to
-call ath12k_reg_update_chan_list() because regd has not been updated.
-This is done by verifying  the initiator.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: Wen Gong <quic_wgong@quicinc.com>
-Co-developed-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
 ---
+Changes in v4:
+- Rebased on ToT.
+- Fixed potential deadlock warning.
+- Moved to oss email from quicinc.
+- Link to v3: https://lore.kernel.org/r/20250124-fix_reboot_issues_with_hw_grouping-v3-0-329030b18d9e@quicinc.com
+
 Changes in v3:
-- rebase on ToT
-- Link to v2: https://lore.kernel.org/linux-wireless/20250212023829.3300-1-quic_bqiang@quicinc.com/
+- Rebased on ToT due to FTM changes conflict.
+- Link to v2: https://lore.kernel.org/r/20250120-fix_reboot_issues_with_hw_grouping-v2-0-b7d073bb2a22@quicinc.com
 
 Changes in v2:
-- rebase on ToT
-- reformat commit text to make checkpatch happy
-- update copyright
-- Link to v1: https://lore.kernel.org/linux-wireless/20240830023901.204746-1-quic_bqiang@quicinc.com/
+- Rebased on ToT.
+- No changes in 1-4, 6-10.
+- Removed regd_freed flag in 5.
+- Link to v1: https://lore.kernel.org/r/20250109-fix_reboot_issues_with_hw_grouping-v1-0-fb39ec03451e@quicinc.com
+
 ---
- drivers/net/wireless/ath/ath12k/reg.c | 36 ++++++++++++++++++++---------------
- 1 file changed, 21 insertions(+), 15 deletions(-)
+Aditya Kumar Singh (9):
+      wifi: ath12k: fix SLUB BUG - Object already free in ath12k_reg_free()
+      wifi: ath12k: add reference counting for core attachment to hardware group
+      wifi: ath12k: fix failed to set mhi state error during reboot with hardware grouping
+      wifi: ath12k: fix ATH12K_FLAG_REGISTERED flag handling
+      wifi: ath12k: fix firmware assert during reboot with hardware grouping
+      wifi: ath12k: fix ath12k_core_pre_reconfigure_recovery() with grouping
+      wifi: ath12k: handle ath12k_core_restart() with hardware grouping
+      wifi: ath12k: handle ath12k_core_reset() with hardware grouping
+      wifi: ath12k: reset MLO global memory during recovery
 
-diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index 893650f76fb2d9f24177d524c5a979693b543657..a84c021e119ab8def002d997556b5d92c0fc806b 100644
---- a/drivers/net/wireless/ath/ath12k/reg.c
-+++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -56,6 +56,24 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
- 	ath12k_dbg(ar->ab, ATH12K_DBG_REG,
- 		   "Regulatory Notification received for %s\n", wiphy_name(wiphy));
- 
-+	if (request->initiator == NL80211_REGDOM_SET_BY_DRIVER) {
-+		ath12k_dbg(ar->ab, ATH12K_DBG_REG,
-+			   "driver initiated regd update\n");
-+		if (ah->state != ATH12K_HW_STATE_ON)
-+			return;
-+
-+		for_each_ar(ah, ar, i) {
-+			ret = ath12k_reg_update_chan_list(ar, true);
-+			if (ret) {
-+				ath12k_warn(ar->ab,
-+					    "failed to update chan list for pdev %u, ret %d\n",
-+					    i, ret);
-+				break;
-+			}
-+		}
-+		return;
-+	}
-+
- 	/* Currently supporting only General User Hints. Cell base user
- 	 * hints to be handled later.
- 	 * Hints from other sources like Core, Beacons are not expected for
-@@ -251,7 +269,6 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 	struct ieee80211_regdomain *regd, *regd_copy = NULL;
- 	int ret, regd_len, pdev_id;
- 	struct ath12k_base *ab;
--	int i;
- 
- 	ab = ar->ab;
- 
-@@ -315,11 +332,7 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 		goto err;
- 	}
- 
--	rtnl_lock();
--	wiphy_lock(hw->wiphy);
--	ret = regulatory_set_wiphy_regd_sync(hw->wiphy, regd_copy);
--	wiphy_unlock(hw->wiphy);
--	rtnl_unlock();
-+	ret = regulatory_set_wiphy_regd(hw->wiphy, regd_copy);
- 
- 	kfree(regd_copy);
- 
-@@ -330,15 +343,7 @@ int ath12k_regd_update(struct ath12k *ar, bool init)
- 		goto skip;
- 
- 	ah->regd_updated = true;
--	/* Apply the new regd to all the radios, this is expected to be received only once
--	 * since we check for ah->regd_updated and allow here only once.
--	 */
--	for_each_ar(ah, ar, i) {
--		ab = ar->ab;
--		ret = ath12k_reg_update_chan_list(ar, true);
--		if (ret)
--			goto err;
--	}
-+
- skip:
- 	return 0;
- err:
-@@ -810,6 +815,7 @@ void ath12k_regd_update_work(struct work_struct *work)
- void ath12k_reg_init(struct ieee80211_hw *hw)
- {
- 	hw->wiphy->regulatory_flags = REGULATORY_WIPHY_SELF_MANAGED;
-+	hw->wiphy->flags |= WIPHY_FLAG_NOTIFY_REGDOM_BY_DRIVER;
- 	hw->wiphy->reg_notifier = ath12k_reg_notifier;
- }
- 
-
+ drivers/net/wireless/ath/ath12k/core.c | 110 ++++++++++++++++++++++++++++++---
+ drivers/net/wireless/ath/ath12k/core.h |  15 +----
+ drivers/net/wireless/ath/ath12k/mac.c  |   6 --
+ drivers/net/wireless/ath/ath12k/pci.c  |  26 +++++++-
+ drivers/net/wireless/ath/ath12k/qmi.c  |  22 +++++++
+ drivers/net/wireless/ath/ath12k/qmi.h  |   2 +
+ drivers/net/wireless/ath/ath12k/reg.c  |   4 ++
+ 7 files changed, 156 insertions(+), 29 deletions(-)
 ---
 base-commit: ac17b1211841c98a9b4c2900ba2a7f457c80cf90
-change-id: 20250408-rtnl-deadlock-5cf7512a3fba
-
-Best regards,
--- 
-Baochen Qiang <quic_bqiang@quicinc.com>
+change-id: 20241218-fix_reboot_issues_with_hw_grouping-0c2d367a587b
 
 
