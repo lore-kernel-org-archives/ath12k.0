@@ -4,71 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A621CC369A2
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 16:30:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 183EEC36010
+	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 18:42:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=AQaBhuVr0px5iJfp0XaquODNSHTKJKqAst8V2+E4aGo=; b=ukawKbQ2JO+nQ7RmgnHbDsOc8W
-	s8m0YK3n2NaqBS1Nj3y3f9dhAPkBLfdeitmnvSN6+le6oGaL/g47YZDi+Erk3U4zMEKzkSdGBxlP9
-	kRju9YVFEPL65jBbTY0Tue4fO+rNSrpeuvBTij/Am5lI4rtYkK7aEZouD/bH18Im3NuSQqLktTDJp
-	sLGeh5qgB+f+4VQEjnNEl6rJULSG8kCywCSSA4SwiISRwSMkdLIFZ6e1x7uGulrUIIc+AW+Pp7CFg
-	JjPFe0OWQv0WIuVhItkyfUx4L/pc16/fAlkvF3IKsRilsopRKUwu4XiuuEw4b59jbFtea66kSMrPU
-	cGuzf26w==;
+	bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=; b=LkB2mMlanQq5EoDrsE7iVdSclC
+	ise6Yngz1/lfw+jR44ZahZ5PuTk5BtI5fPuq0L40PCK2cwl54JoHEZMD79A5IFqeoznzIW2MDh9eu
+	1G2w82NiZydFSk34v0iLFXa+tZExhwYFf/bCxMRE7gFFr+qTXZJkaJMBCIhIV9U4fxAEPIhWGO6yM
+	u40L/t+NN2pepkQh5Fg3b2CQxVNv4pSTixmqkbk9cIrxZkL1VNkmJpkuNzQYPN2Xbr5KvU+YLHZbl
+	4RqhnujyUFayTlB5K+sUTssVOupMOvC5M4RrJ7zmMYAVXr4PzwyU/n9F8VNq+ZnQCUha8oJHEk457
+	PxyMSLqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2BqI-00000004orv-1kb8
+	id 1u2DuK-000000058lO-3UdT
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 16:30:30 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	Tue, 08 Apr 2025 18:42:48 +0000
+Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2BqF-00000004orH-1o5z
+	id 1u2CTz-00000004vnW-02jV
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 16:30:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1744129828; x=1775665828;
-  h=date:from:to:cc:subject:message-id;
-  bh=EQF0RcyTRIJN+zuvlIb64TeycWDLYl8Xrz8lQq7K9Zw=;
-  b=ePvp4TdqZJTPc+tuz4ga3HqEouSgTvjb282leEdkgecHRpgPUgNBexad
-   k/WdmSlJHtncgtADF2LK7YnAKcBQuBbrq6JB3kQN7ytxl3juF2vT0eUD/
-   7W70cqMsof8c1mNmIyCMn6pxWvZoJTpxdE/3dZqPTEUD9Ya3VeCVFOlSN
-   CZC/RWZMwPGLlUzNcvikI43bor+YCQzftIK8flDitnnp8I6aPq83oKFRV
-   LiLjgt5kMtcpeb04XN/XjEG5kAemQbrw61ZBpG+13g4tJgcpTYBWlfZ/v
-   TufKD2Dh2GhEF3wqZXQc94qqaoPAF48/k13ncEcIFKeivJ5CYaCJZ1cys
-   g==;
-X-CSE-ConnectionGUID: wSBgDZYIRQK+pWEGQBEa3A==
-X-CSE-MsgGUID: +y9oYrmLTQSytetMmEdndw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11397"; a="55761061"
-X-IronPort-AV: E=Sophos;i="6.15,198,1739865600"; 
-   d="scan'208";a="55761061"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Apr 2025 09:30:25 -0700
-X-CSE-ConnectionGUID: wkKUymayTAS40yqOEwryDQ==
-X-CSE-MsgGUID: OGQ8kszHSyON6bAdLgdkag==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,198,1739865600"; 
-   d="scan'208";a="133529653"
-Received: from lkp-server01.sh.intel.com (HELO b207828170a5) ([10.239.97.150])
-  by orviesa005.jf.intel.com with ESMTP; 08 Apr 2025 09:30:22 -0700
-Received: from kbuild by b207828170a5 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1u2Bq7-0007hf-2u;
-	Tue, 08 Apr 2025 16:30:19 +0000
-Date: Wed, 09 Apr 2025 00:29:47 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:ath12k-split-phy] BUILD REGRESSION
- 31d82c3b3b8782ff326a188f2ae78d3d9f333448
-Message-ID: <202504090003.ewxZQSyb-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 08 Apr 2025 17:11:34 +0000
+Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-301918a4e3bso5418767a91.3
+        for <ath12k@lists.infradead.org>; Tue, 08 Apr 2025 10:11:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744132289; x=1744737089; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=;
+        b=IFXJ1UjNVnAck9FGGpDQWWcHSJuKWRYEqD4s95nqh3JI6eDyBB53iujqLrDbg4X4OR
+         tDsuX6vLYLGYZLRZjqpZmpyG2L1b8UxQ0FrnkLLyULHgC+rF3cJW4jLGtIL5G+4GcFCp
+         xFrstAmXC4R8NKL3cHaLJbhTG25cLmfum47G94WFvzmrW4AXxPquwDIzHUbzArrAPfda
+         0ZCHtbNuKvQGmG1MnohOP5FbIaAuUQcGLf/aDkNIuwu82e4NFB49oacr1tRDCaUQ/F0t
+         deQNFOPoeUNrc0kmvNzuFTU9WuKjNSrudXJC7wOKpsy86+Nbx7opIQLBdvTA6X9B3sDR
+         XyAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744132289; x=1744737089;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=m6NoS6tSTLHJBTzmLdQ/GO+z95NzVibJaNFXoO+LAVQ=;
+        b=VuhCTw7pkGh9QWGI3YHsmjeiWU7XkbzuE9SblXrgZ25pW9kETp7/2u4wgS6AhIp5wx
+         PRDmNKzib8NOT+ABJjt8O3gbYhi7+vAKpO+NhK4Gq/bUDy/V8joVQJ5SzLqvHZtoqtW/
+         KXbfA/bG5M0jLLRdMpRrZp47h+YJSDSezj1sUkXChBo9JP9qVTADayZkHF7uhRfxY4r2
+         4ZcGDp7h7enw1wVvCFLHb2I6OlNE7I7NZN8RwKnTNXnk8YXxYDURaHXEAZp0nrzaMyqc
+         w82IxUuRJTga2tMO7ywWXZRzUXNQ++rWv+jrcE/riPg9iTotAVMOJMEhXu7rNqovKgwk
+         5/Iw==
+X-Gm-Message-State: AOJu0YyvvXuGdQLICC+qMfmHcAn3P9ralmK/7TDXWG5KpN+olKUGOmSN
+	W78nSwm9UpmISbt2rgomGWALKXhLNxD2FLOeHlZ2Kcn2hvWPUWARzYK+DWcvkfE=
+X-Gm-Gg: ASbGncvgIkNnEuQ02T7t1q7kKL+9ftDl0inw7G7LeyacYsWTHI7jqljLfGVRWMVNvGR
+	DanCB0Syt7Etiz4KQ4JwjxCm5B4ixjxz1FQ/sqXa+0rQvsYd1NHTv3j5oyDq00ksicPfjq4fYMa
+	hS70NR6lp07FLhwnWJWc0Zb36CFNJhKI3G6IEffvDir0a/5F6udmfhOmosJXbievp3VEDqAXT15
+	ngZ/CdKewkS0SKwPR41L/0iNFwS6xFNM1WxFkdUXz0f1+tGBiI52kPCKkLVoOaHhu5m4JwjDqf+
+	rhxogWD/E814E3kGhEC8TyOsvxjcMRRVvcu3MKUOJzDSPLChCWRVFw==
+X-Google-Smtp-Source: AGHT+IHxBBcoEXKUmL4fNgAuMUp+MPHsOMdLajx2slpwzwxkFuktQ/nft8FbCZRBqD+QxXAdgB0Aiw==
+X-Received: by 2002:a17:90b:1f8c:b0:2ff:5016:7fd2 with SMTP id 98e67ed59e1d1-306dbc0d0admr9064a91.24.1744132289208;
+        Tue, 08 Apr 2025 10:11:29 -0700 (PDT)
+Received: from nuvole.. ([144.202.86.13])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3057ca5163fsm12794605a91.19.2025.04.08.10.11.27
+        for <ath12k@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 08 Apr 2025 10:11:28 -0700 (PDT)
+From: Pengyu Luo <mitltlatltl@gmail.com>
+To: ath12k@lists.infradead.org
+Subject: ath12k: request a board file for sm8650
+Date: Wed,  9 Apr 2025 01:09:27 +0800
+Message-ID: <20250408170927.5884-1-mitltlatltl@gmail.com>
+X-Mailer: git-send-email 2.49.0
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250408_093027_583947_291F4B59 
-X-CRM114-Status: UNSURE (   3.53  )
+X-CRM114-CacheID: sfid-20250408_101131_053090_9A4989A9 
+X-CRM114-Status: UNSURE (   6.21  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,414 +93,46 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git ath12k-split-phy
-branch HEAD: 31d82c3b3b8782ff326a188f2ae78d3d9f333448  wifi: ath12k: Avoid allocating rx_stats when ext_rx_stats is disabled
+Hi, in my sm8650 based device(Oneplus Pad 2), it is equipped with
+wcn7850, it doesn't work. No common board file for
 
-Error/Warning (recently discovered and may have been fixed):
+bus=pci,vendor=17cb,device=1107,subsystem-vendor=17cb,subsystem-device=1107,qmi-chip-id=2,qmi-board-id=255
 
-    https://lore.kernel.org/oe-kbuild-all/202503151013.F71WON7c-lkp@intel.com
-    https://lore.kernel.org/oe-kbuild-all/202503151644.yfAQJbDP-lkp@intel.com
-    https://lore.kernel.org/oe-kbuild-all/202504081054.5RQgJOIZ-lkp@intel.com
-    https://lore.kernel.org/oe-kbuild-all/202504081251.hX88VR4a-lkp@intel.com
+device specified board file from androd image can't be loaded. I
+have also tried many board files for other devices which are from
+board-2.bin, none of them worked. Can someone upload a board file
+for it? Thanks!
 
-    drivers/net/wireless/ath/ath12k/reg.c:243:11: warning: variable 'band' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:243:11: warning: variable 'band' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:245:13: warning: variable 'freq_high' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:245:13: warning: variable 'freq_high' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:245:13: warning: variable 'freq_low' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:245:13: warning: variable 'freq_low' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:249:11: warning: variable 'band' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:249:11: warning: variable 'band' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:269:13: warning: variable 'freq_high' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:269:13: warning: variable 'freq_high' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:269:13: warning: variable 'freq_low' is used uninitialized whenever '&&' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/ath12k/reg.c:269:13: warning: variable 'freq_low' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-    drivers/net/wireless/ath/wcn36xx/main.c:1377:35: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/ath/wcn36xx/main.c:1377:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/intel/iwlwifi/dvm/lib.c:589:40: error: too few arguments to function call, expected 2, have 1
-    drivers/net/wireless/intel/iwlwifi/mvm/mac80211.c:6250:10: error: no member named 'signal_avg' in 'struct station_info'
-    drivers/net/wireless/intel/iwlwifi/mvm/mac80211.c:6276:9: error: no member named 'rx_beacon' in 'struct station_info'
-    drivers/net/wireless/intel/iwlwifi/mvm/mac80211.c:6284:10: error: no member named 'rx_beacon_signal_avg' in 'struct station_info'
-    drivers/net/wireless/intel/iwlwifi/mvm/mac80211.c:6650:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/intel/iwlwifi/mvm/mac80211.c:6650:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/intel/iwlwifi/mvm/mld-mac80211.c:1419:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/intel/iwlwifi/mvm/mld-mac80211.c:1419:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/marvell/mwifiex/cfg80211.c:1479:10: error: no member named 'signal_avg' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt7915/main.c:1205:9: error: no member named 'ack_signal' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt7915/main.c:1208:9: error: no member named 'avg_ack_signal' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt7915/main.c:1797:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/mediatek/mt76/mt7915/main.c:1797:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/mediatek/mt76/mt7921/main.c:1547:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/mediatek/mt76/mt7921/main.c:1547:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/mediatek/mt76/mt7925/main.c:2180:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/mediatek/mt76/mt7925/main.c:2180:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/mediatek/mt76/mt792x_core.c:574:9: error: no member named 'ack_signal' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt792x_core.c:577:9: error: no member named 'avg_ack_signal' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt7996/main.c:1174:9: error: no member named 'ack_signal' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt7996/main.c:1177:9: error: no member named 'avg_ack_signal' in 'struct station_info'
-    drivers/net/wireless/mediatek/mt76/mt7996/main.c:1667:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/mediatek/mt76/mt7996/main.c:1667:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/realtek/rtl8xxxu/core.c:7632:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/realtek/rtl8xxxu/core.c:7632:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/realtek/rtw88/mac80211.c:970:35: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/realtek/rtw88/mac80211.c:970:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/realtek/rtw89/mac80211.c:1853:35: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/realtek/rtw89/mac80211.c:1853:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
-    drivers/net/wireless/ti/wlcore/main.c:6057:27: error: positional initialization of field in 'struct' declared with 'designated_init' attribute [-Werror=designated-init]
-    drivers/net/wireless/ti/wlcore/main.c:6057:3: error: field designator 'sta_statistics' does not refer to any field in type 'const struct ieee80211_ops'
+default:
+	demsg | grep -i 'ath12k'
+	[    1.064804] ath12k_pci 0000:01:00.0: BAR 0 [mem 0x60400000-0x605fffff 64bit]: assigned
+	[    1.065551] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002)
+	[    1.069350] ath12k_pci 0000:01:00.0: MSI vectors: 16
+	[    1.071626] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
+	[    1.642144] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x40170200
+	[    1.676854] ath12k_pci 0000:01:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:05 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+	[    1.720470] ath12k_pci 0000:01:00.0: failed to fetch board data for bus=pci,vendor=17cb,device=1107,subsystem-vendor=17cb,subsystem-device=1107,qmi-chip-id=2,qmi-board-id=255 from ath12k/WCN7850/hw2.0/board-2.bin
+	[    1.726844] ath12k_pci 0000:01:00.0: failed to fetch board.bin from WCN7850/hw2.0
+	[    1.728877] ath12k_pci 0000:01:00.0: qmi failed to load bdf:
+	[    1.734862] ath12k_pci 0000:01:00.0: qmi failed to load board data file:-2
 
-Error/Warning ids grouped by kconfigs:
+board file from android rom:
+	demsg | grep -i 'ath12k'
+	[    4.054474] ath12k_pci 0000:01:00.0: BAR 0 [mem 0x60400000-0x605fffff 64bit]: assigned
+	[    4.057350] ath12k_pci 0000:01:00.0: enabling device (0000 -> 0002)
+	[    4.059490] ath12k_pci 0000:01:00.0: MSI vectors: 16
+	[    4.060620] ath12k_pci 0000:01:00.0: Hardware name: wcn7850 hw2.0
+	[    4.635118] ath12k_pci 0000:01:00.0: chip_id 0x2 chip_family 0x4 board_id 0xff soc_id 0x40170200
+	[    4.639740] ath12k_pci 0000:01:00.0: fw_version 0x100301e1 fw_build_timestamp 2023-12-06 04:05 fw_build_id QC_IMAGE_VERSION_STRING=WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+	[    4.836061] ath12k_pci 0000:01:00.0: ignore reset dev flags 0x0
+	[   14.818289] ath12k_pci 0000:01:00.0: qmi failed to load bdf file
+	[   14.818694] ath12k_pci 0000:01:00.0: qmi failed to load board data file:-110
 
-recent_errors
-|-- arm64-allmodconfig
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-dvm-lib.c:error:too-few-arguments-to-function-call-expected-have
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon_signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- hexagon-allmodconfig
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- hexagon-allyesconfig
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- i386-allmodconfig
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|-- i386-allyesconfig
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|-- powerpc-allyesconfig
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-dvm-lib.c:error:too-few-arguments-to-function-call-expected-have
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon_signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- riscv-allmodconfig
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-dvm-lib.c:error:too-few-arguments-to-function-call-expected-have
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon_signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- riscv-allyesconfig
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-dvm-lib.c:error:too-few-arguments-to-function-call-expected-have
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon_signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- um-allmodconfig
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-dvm-lib.c:error:too-few-arguments-to-function-call-expected-have
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon_signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|-- um-allyesconfig
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:positional-initialization-of-field-in-struct-declared-with-designated_init-attribute
-|-- x86_64-allyesconfig
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-band-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_high-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-condition-is-false
-|   |-- drivers-net-wireless-ath-ath12k-reg.c:warning:variable-freq_low-is-used-uninitialized-whenever-if-condition-is-false
-|   |-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-dvm-lib.c:error:too-few-arguments-to-function-call-expected-have
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-rx_beacon_signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mac80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-intel-iwlwifi-mvm-mld-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-marvell-mwifiex-cfg80211.c:error:no-member-named-signal_avg-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7915-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7921-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7925-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt792x_core.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-mediatek-mt76-mt7996-main.c:error:no-member-named-avg_ack_signal-in-struct-station_info
-|   |-- drivers-net-wireless-realtek-rtl8xxxu-core.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw88-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   |-- drivers-net-wireless-realtek-rtw89-mac80211.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-|   `-- drivers-net-wireless-ti-wlcore-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
-`-- x86_64-buildonly-randconfig-001-20250408
-    `-- drivers-net-wireless-ath-wcn36xx-main.c:error:field-designator-sta_statistics-does-not-refer-to-any-field-in-type-const-struct-ieee80211_ops
+One more thing deserves a notice,
+fw_build_id from my Dsp firmware:
+	"wlan_hmt": "WLAN.HMT.2.0-02702-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1"
+	mainline:   "WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3"
 
-elapsed time: 1470m
-
-configs tested: 110
-configs skipped: 1
-
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    gcc-14.2.0
-arc                              allmodconfig    gcc-14.2.0
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    gcc-14.2.0
-arc                          axs103_defconfig    gcc-14.2.0
-arc                         haps_hs_defconfig    gcc-14.2.0
-arc                   randconfig-001-20250408    gcc-14.2.0
-arc                   randconfig-002-20250408    gcc-14.2.0
-arc                    vdk_hs38_smp_defconfig    gcc-14.2.0
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-14.2.0
-arm                          pxa3xx_defconfig    clang-21
-arm                   randconfig-001-20250408    clang-21
-arm                   randconfig-002-20250408    gcc-10.5.0
-arm                   randconfig-003-20250408    clang-17
-arm                   randconfig-004-20250408    gcc-6.5.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20250408    clang-21
-arm64                 randconfig-002-20250408    gcc-9.5.0
-arm64                 randconfig-003-20250408    gcc-9.5.0
-arm64                 randconfig-004-20250408    clang-20
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20250408    gcc-14.2.0
-csky                  randconfig-002-20250408    gcc-9.3.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250408    clang-21
-hexagon               randconfig-002-20250408    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250408    clang-20
-i386        buildonly-randconfig-002-20250408    clang-20
-i386        buildonly-randconfig-003-20250408    gcc-12
-i386        buildonly-randconfig-004-20250408    gcc-12
-i386        buildonly-randconfig-005-20250408    gcc-12
-i386        buildonly-randconfig-006-20250408    gcc-12
-i386                                defconfig    clang-20
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch             randconfig-001-20250408    gcc-14.2.0
-loongarch             randconfig-002-20250408    gcc-13.3.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250408    gcc-13.3.0
-nios2                 randconfig-002-20250408    gcc-7.5.0
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                randconfig-001-20250408    gcc-6.5.0
-parisc                randconfig-002-20250408    gcc-8.5.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-21
-powerpc               randconfig-001-20250408    gcc-5.5.0
-powerpc               randconfig-002-20250408    gcc-9.3.0
-powerpc               randconfig-003-20250408    gcc-5.5.0
-powerpc64             randconfig-001-20250408    clang-21
-powerpc64             randconfig-002-20250408    gcc-5.5.0
-powerpc64             randconfig-003-20250408    gcc-7.5.0
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-16
-riscv                 randconfig-001-20250408    gcc-9.3.0
-riscv                 randconfig-002-20250408    clang-21
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-15
-s390                             allyesconfig    gcc-14.2.0
-s390                  randconfig-001-20250408    gcc-8.5.0
-s390                  randconfig-002-20250408    clang-15
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                    randconfig-001-20250408    gcc-13.3.0
-sh                    randconfig-002-20250408    gcc-13.3.0
-sparc                            allmodconfig    gcc-14.2.0
-sparc                             allnoconfig    gcc-14.2.0
-sparc                 randconfig-001-20250408    gcc-10.3.0
-sparc                 randconfig-002-20250408    gcc-6.5.0
-sparc64               randconfig-001-20250408    gcc-6.5.0
-sparc64               randconfig-002-20250408    gcc-14.2.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                    randconfig-001-20250408    clang-21
-um                    randconfig-002-20250408    gcc-12
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250408    clang-20
-x86_64      buildonly-randconfig-002-20250408    clang-20
-x86_64      buildonly-randconfig-003-20250408    clang-20
-x86_64      buildonly-randconfig-004-20250408    gcc-12
-x86_64      buildonly-randconfig-005-20250408    clang-20
-x86_64      buildonly-randconfig-006-20250408    clang-20
-x86_64                              defconfig    gcc-11
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                randconfig-001-20250408    gcc-6.5.0
-xtensa                randconfig-002-20250408    gcc-6.5.0
-
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Best wishes,
+Pengyu
 
