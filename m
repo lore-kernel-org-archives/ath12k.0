@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40CD9C369A2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1344C369A4
 	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 13:33:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,55 +12,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ttofQOL+WMMFfjJMOx2TVh7aF1mo2VIiAL6x/kLeGKg=; b=zx9vntFtX6PFDvCT8d1JTvl5fF
-	6s1WvDK8A4QSxu343P/fJcKzr+elrgIsj2KH9X3EG/j4ndObTzP2hkEhkj1bN6zKpW0+//INo3r1Z
-	LhOcdFmHsrAiRBFAWAhSSvpDJ4cuZNwLo5X/vN4+RCdzwBFDmqIb/RZGUlfna4RvrPgy5U12BlqrA
-	yEVJK5pDLWYF2QWvPY4Pry70+kWQ/I9FmiJCDFTjlHVWWrHTwzPnaq2T8WxdkDA2TMXv6mdMKsulV
-	hYQC240HOki5aXgOKKuws881aa2klwVSjYdCC8ckvW6n+K+XB4OV77EGImPy+liVWu+xOw6c59FDO
-	G3QzuoTA==;
+	bh=J9ZoQApU079gfuCpL8POne989ySw2O06qxhLZ48Kb0M=; b=j4ENMiP680t5utSCMoMKiMZ1vN
+	OcrkNC0Hb9T5xCbXEQ/qlDfsLX1kFKiXqfFrMOVK7k7sNRj5Ptbe5Mq4A1wbXdE6a+W1Vtbz0VrTl
+	niJyh/2GKjOtj5CCWyRpqja4wexJUwIoHjWv/s7I4y8YdQAAcRldwDGShW9+yOWITLHBgd7gd02zC
+	wNMSlh9SODlnVTE4iKGLiQUCN2fp4lwJbqYFmdqYLP4XK3ddzgC1x+Nz1+sbi3Q8hjgns99QMFrej
+	0811gk6gwuQZW2qmqeBwAs1QvF2KnMzDB3Zn19DQOxCDUovs33Ml9ouEfkKMJkMDXz2RblQoOHfP1
+	Mmf1cqUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u2959-00000004Dp8-00YN
+	id 1u2959-00000004DpJ-1jHF
 	for ath12k@archiver.kernel.org;
 	Tue, 08 Apr 2025 13:33:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u28aT-000000043zc-29nu
+	id 1u28aW-0000000440Z-1GHI
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 13:01:58 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 538ApV35015100;
-	Tue, 8 Apr 2025 13:01:57 GMT
+	Tue, 08 Apr 2025 13:02:01 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 538BF0qQ019903;
+	Tue, 8 Apr 2025 13:01:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ttofQOL+WMMFfjJMOx2TVh7aF1mo2VIiAL6x/kLeGKg=; b=NlFCx+704zdl+tCd
-	KVwjuC194480VFjAvWRRE9Z8kJaBZ++RYTQqIl+8sFJzxVSAr1szAT5PeEzKC6Ou
-	vcldip/WzgbpY1lJUre8Rfll3Gqu73tGmnY7yu264BQca7+aTqfkQUcqNiN6jmG8
-	SDRED7YR6WkMzQgsD/Xnqm5sLjNa/qEmkW0PDyPXIy/xAJp3sFOql6rTUDArMDlW
-	PD2TE2SWhGZMUH68yhhJ8vFhGBeNBQ5ps8vXX+Ri7F1VdHe8VmwTpZPYzQcpcWGQ
-	CO6Vns8e87r4+XkE5yf7n+7QkGWFcVLXRlYoOi0VcoM7G7EA4AaHuCm0ynwD9CPP
-	QzDI6A==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbufu0w-1
+	J9ZoQApU079gfuCpL8POne989ySw2O06qxhLZ48Kb0M=; b=DUe84M0n+l2ViLbn
+	+c2ypCeyT1emXffkKzJHaCsEHmvt1qNo1nA7MyJ8gRj/73cgXoGUMh48r4tY3RDM
+	i6wrXfA8lWNEfWXgCSnMD+DHBQGYW5hYBzKHN8UFfoeSkyPZriDIDzVIscR/6Y/h
+	Mr7BegegpwJ0J/3NtJk3/UFoz7ZlYEXQ/QmZvlNQ6VKrjq1BTwfcGp4piSzwc3/J
+	XrLP2YRcOHor7NYRfJzcr1U2ATfD1vNBdCmsvZ1IGJHck4j/YG6RZClj6v0Fz+dy
+	b9biuclJgQs4OoMC2l3Rxu+Qgpw8G0cTY9nYRsy2dqvEzlyQGYI8t/WU29YdN86T
+	Iq7vFw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twg3fspc-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Apr 2025 13:01:56 +0000 (GMT)
+	Tue, 08 Apr 2025 13:01:59 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 538D1ujg011024
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 538D1wgE028628
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Apr 2025 13:01:56 GMT
+	Tue, 8 Apr 2025 13:01:58 GMT
 Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
  nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 8 Apr 2025 06:01:54 -0700
+ 15.2.1544.9; Tue, 8 Apr 2025 06:01:56 -0700
 From: Sarika Sharma <quic_sarishar@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Sarika Sharma
 	<quic_sarishar@quicinc.com>
-Subject: [PATCH ath-next 1/2] wifi: ath12k: using msdu end descriptor to check for rx multicast packets
-Date: Tue, 8 Apr 2025 18:31:31 +0530
-Message-ID: <20250408130132.2919329-2-quic_sarishar@quicinc.com>
+Subject: [PATCH ath-next 2/2] wifi: ath12k: correctly handle mcast packets for clients
+Date: Tue, 8 Apr 2025 18:31:32 +0530
+Message-ID: <20250408130132.2919329-3-quic_sarishar@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250408130132.2919329-1-quic_sarishar@quicinc.com>
 References: <20250408130132.2919329-1-quic_sarishar@quicinc.com>
@@ -72,21 +72,22 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: XuwSweyJsX4T2xzZmjc9vACk8m7Anr2b
-X-Proofpoint-ORIG-GUID: XuwSweyJsX4T2xzZmjc9vACk8m7Anr2b
-X-Authority-Analysis: v=2.4 cv=dbeA3WXe c=1 sm=1 tr=0 ts=67f51e45 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=nNR53KzduslkgKGKa6YA:9 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: SaAML1lDd_vabaBZBBhGchfqVwfdotyz
+X-Proofpoint-ORIG-GUID: SaAML1lDd_vabaBZBBhGchfqVwfdotyz
+X-Authority-Analysis: v=2.4 cv=I/9lRMgg c=1 sm=1 tr=0 ts=67f51e47 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=-3Xz3DnQPR30XhPCzLgA:9 a=RVmHIydaz68A:10
+ a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-08_05,2025-04-08_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 mlxlogscore=672 phishscore=0 mlxscore=0 spamscore=0
- malwarescore=0 clxscore=1015 adultscore=0 priorityscore=1501
- lowpriorityscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502280000 definitions=main-2504080092
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
+ phishscore=0 suspectscore=0 mlxlogscore=853 lowpriorityscore=0 spamscore=0
+ clxscore=1015 malwarescore=0 adultscore=0 priorityscore=1501
+ impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504080092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250408_060157_553940_2EBE874F 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20250408_060200_460701_B6084BD3 
+X-CRM114-Status: GOOD (  14.11  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,47 +102,82 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the RX multicast broadcast packet check is performed using
-bit 15 from the info6 field of the MPDU start descriptor. This check
-can also be done using bit 9 from the info5 field of the MSDU end
-descriptor. However, in some scenarios multicast bit is not set when
-fetched from MPDU start descriptor.
-Therefore, checking the RX multicast broadcast packet from the MSDU
-end descriptor is more reliable as it is per MSDU.
+Currently, RX is_mcbc bit is set for packest send from client as
+destination address (DA) is multicast/broadcast address, but packets
+are actually unicast as receiver address (RA) is not multicast address.
+Hence, packets are not handled properly due to this is_mcbc bit.
+
+Therefore, reset the is_mcbc bit if interface type is AP.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/hal.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 5 +++++
+ drivers/net/wireless/ath/ath12k/peer.c  | 5 ++++-
+ drivers/net/wireless/ath/ath12k/peer.h  | 3 ++-
+ 3 files changed, 11 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index d00869a33fea..d961392bb981 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -449,8 +449,8 @@ static u8 *ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index cffff66c5ec4..308d9656b57e 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -2269,6 +2269,11 @@ static void ath12k_dp_rx_h_mpdu(struct ath12k *ar,
+ 	spin_lock_bh(&ar->ab->base_lock);
+ 	peer = ath12k_dp_rx_h_find_peer(ar->ab, msdu);
+ 	if (peer) {
++		/* resetting mcbc bit because mcbc packets are unicast
++		 * packets only for AP as STA sends unicast packets.
++		 */
++		rxcb->is_mcbc = rxcb->is_mcbc && !peer->ucast_ra_only;
++
+ 		if (rxcb->is_mcbc)
+ 			enctype = peer->sec_type_grp;
+ 		else
+diff --git a/drivers/net/wireless/ath/ath12k/peer.c b/drivers/net/wireless/ath/ath12k/peer.c
+index 792cca8a3fb1..ec7236bbccc0 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.c
++++ b/drivers/net/wireless/ath/ath12k/peer.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause-Clear
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
  
- static bool ath12k_hw_qcn9274_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
- {
--	return __le32_to_cpu(desc->u.qcn9274.mpdu_start.info6) &
--	       RX_MPDU_START_INFO6_MCAST_BCAST;
-+	return __le16_to_cpu(desc->u.qcn9274.msdu_end.info5) &
-+	       RX_MSDU_END_INFO5_DA_IS_MCBC;
- }
+ #include "core.h"
+@@ -383,6 +383,9 @@ int ath12k_peer_create(struct ath12k *ar, struct ath12k_link_vif *arvif,
+ 		arvif->ast_idx = peer->hw_peer_id;
+ 	}
  
- static void ath12k_hw_qcn9274_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
-@@ -902,8 +902,8 @@ static u8 *ath12k_hw_qcn9274_compact_rx_desc_mpdu_start_addr2(struct hal_rx_desc
++	if (vif->type == NL80211_IFTYPE_AP)
++		peer->ucast_ra_only = true;
++
+ 	if (sta) {
+ 		ahsta = ath12k_sta_to_ahsta(sta);
+ 		arsta = wiphy_dereference(ath12k_ar_to_hw(ar)->wiphy,
+diff --git a/drivers/net/wireless/ath/ath12k/peer.h b/drivers/net/wireless/ath/ath12k/peer.h
+index 5870ee11a8c7..f3a5e054d2b5 100644
+--- a/drivers/net/wireless/ath/ath12k/peer.h
++++ b/drivers/net/wireless/ath/ath12k/peer.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause-Clear */
+ /*
+  * Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
+- * Copyright (c) 2021-2024 Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2021-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+  */
  
- static bool ath12k_hw_qcn9274_compact_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
- {
--	return __le32_to_cpu(desc->u.qcn9274_compact.mpdu_start.info6) &
--	       RX_MPDU_START_INFO6_MCAST_BCAST;
-+	return __le32_to_cpu(desc->u.qcn9274_compact.msdu_end.info5) &
-+	       RX_MSDU_END_INFO5_DA_IS_MCBC;
- }
+ #ifndef ATH12K_PEER_H
+@@ -62,6 +62,7 @@ struct ath12k_peer {
  
- static void ath12k_hw_qcn9274_compact_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
+ 	/* for reference to ath12k_link_sta */
+ 	u8 link_id;
++	bool ucast_ra_only;
+ };
+ 
+ struct ath12k_ml_peer {
 -- 
 2.34.1
 
