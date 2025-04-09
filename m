@@ -4,72 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7040C36010
-	for <ath12k@archiver.kernel.org>; Tue,  8 Apr 2025 22:46:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B363C36010
+	for <ath12k@archiver.kernel.org>; Wed,  9 Apr 2025 02:27:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2rIRJJ4S/TayJ4+nUYIORtcvDK6OxWOcGP6Kkkj7PNA=; b=Sp8e+QqXWPHviMz4Y2kuuRxVO8
-	ci5cOGI/ZTfWpKt64J1C5FqBmkSjdnfIOKb++LQmEjdsKHM99MkzR1N/eD3YIL59y+Hq8GWHwdHmW
-	UIV/jP5MInKGCwoyADvemp7CcoF1r+UwM3wDFJjXV+kHN4wym9XffWRik5J2S9hnmRO4x9KadxL0T
-	j+iJuPoL+0dpHAR33TP+/M0oPwNBn7FHft1eEz1dLqubD6qG2lo164Bljxlt4LFr3fkhl/6b3clOV
-	HWOOJXrcm2IfoezTHQZFYOwXBTjNa0i8Tmsv9CK5VCaKc6pv3Pdq7JdB6XTeRNp+iG3nItQJkeVxh
-	Drhut7FQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:CC:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7V4DAPO81kQa2KrxRoWP3Byu/nrWhYhVsqeLtvyh9SY=; b=txjQ7d0XOrjCbc
+	IIjpUGaTrHrdgR1SpuwfmB+r6/DATJ3HC5vAyoieO0jKjBpE1als5jpjCr9DYuD99Ydv6PmyC+J5v
+	UK/8KoGdhYmH0kU9dZN90Np6QUWD5bxasvl3aTHYD1kWaNOxtHMzN765HG1JcVUayETnb3OkKe3FG
+	F1Ia/igf9tIpSZJ2EbKfBqxlpKB/FgoIjAsuZ4f3kGu5nl0wTAFvtQDTaMZtWnhEQE74L64z1LjDw
+	oqtjU3f2+rxWvVzgNvuEkUxqsfl7BsYMYiXYFeEZJD6uDyhw1yJ31d/JEGWeN4C+27QIFaC40oKny
+	HvWpMRFpnUIr/Zc+tGmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2HiQ-00000005ciZ-27oo
+	id 1u2L9q-00000005vMF-14aQ
 	for ath12k@archiver.kernel.org;
-	Tue, 08 Apr 2025 22:46:46 +0000
-Received: from mail.ozlabs.org ([2404:9400:2221:ea00::3])
+	Wed, 09 Apr 2025 02:27:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2HiN-00000005ci7-2DNz
+	id 1u2L9m-00000005vL5-321X
 	for ath12k@lists.infradead.org;
-	Tue, 08 Apr 2025 22:46:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canb.auug.org.au;
-	s=202503; t=1744152399;
-	bh=2rIRJJ4S/TayJ4+nUYIORtcvDK6OxWOcGP6Kkkj7PNA=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=R8fvGUFsOVl6uXNandNtMPaQ04Ue899DwkjMyQPzH7lRfiUeWaU45WC227fUHEgP1
-	 bc1zRagv7StnKg9KmYzBicImWyhftDah5CJQ+HPDhyyTc0rTC/eMsLTGWvvJ6qR0Ge
-	 uDLR17cE3JYfN30SHDJl3mJZyqCxWQgpuMgltmK7T1QPjt+PSE0N529VytVnK/AdF8
-	 vsLf9xbUxoVUj8k10ZGGyFHtTjzAHFBoeFXCdkv8xRbLoXIgt6hsrZHNsE34X5Uu7j
-	 EhOGlg89DKTL1axQ7/StZ94ciSn+DQSQxC5YFglOutVs0EN7TJAv9sVY0dcRxaWzzl
-	 hKNGrTb8x/fKA==
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	by mail.ozlabs.org (Postfix) with ESMTPSA id 4ZXLmG6lj2z4wcn;
-	Wed,  9 Apr 2025 08:46:38 +1000 (AEST)
-Date: Wed, 9 Apr 2025 08:46:37 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: "Dr. David Alan Gilbert" <linux@treblig.org>, Thomas Gleixner
- <tglx@linutronix.de>, Ingo Molnar <mingo@kernel.org>, Jeff Johnson
- <jjohnson@kernel.org>, Balamurugan S <quic_bselvara@quicinc.com>, P
- Praneesh <quic_ppranees@quicinc.com>, Raj Kumar Bhagat
- <quic_rajkbhag@quicinc.com>, Linux Kernel Mailing List
- <linux-kernel@vger.kernel.org>, Linux Next Mailing List
- <linux-next@vger.kernel.org>, "ath12k@lists.infradead.org"
- <ath12k@lists.infradead.org>
-Subject: Re: linux-next: build failure after merge of the ath-next tree
-Message-ID: <20250409084637.3bd593c6@canb.auug.org.au>
-In-Reply-To: <4ae387b2-0dd7-413b-b66c-1f136455e23f@oss.qualcomm.com>
-References: <20250408105146.459dfcf5@canb.auug.org.au>
-	<Z_R2lEVjqn2Y3_sP@gallifrey>
-	<20250408113747.3a10275a@canb.auug.org.au>
-	<26cafcbb-6a94-40ab-aabf-3c9943cfb925@oss.qualcomm.com>
-	<ee51a503-6580-4f46-aa38-77f1b9ba6535@oss.qualcomm.com>
-	<4ae387b2-0dd7-413b-b66c-1f136455e23f@oss.qualcomm.com>
+	Wed, 09 Apr 2025 02:27:16 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 538JYwbf015755;
+	Wed, 9 Apr 2025 02:27:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=7V4DAPO81kQa2KrxRoWP3B
+	yu/nrWhYhVsqeLtvyh9SY=; b=JtWFgiU1yH1velhJQsOc2phK/hrMj2mWCopPMT
+	XtY5MXWJdO0QZ6NVyBAaWuHiPUcvQSs9DVqyvPXXZ9oTRSXQhj1XuKMRb7FEsIf9
+	kqe9F3vrxLOGyXJ+RVb5Sr9aOckYeksNoAETWOP+0u8/JBQhRVTd6O1U8Qw1vGIz
+	ELII7eYgKydCi6vZJJ2RR5stXLX4C9F/kfKcIvPK4Xt2tYLaPxWPhXEWz3IMbtrt
+	WUDHO/vJNkkbXLMncZnnGGXzDtT5eA5JdOWz3WRAh79wKspwed1ZLSlhdvqmdSFi
+	yefvwSsO5qWN7/0DYt7aAJoc2E16kqs8NZ2pDCadJ+twsKDw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twd2ssma-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 09 Apr 2025 02:27:11 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5392RB8u000881
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 9 Apr 2025 02:27:11 GMT
+Received: from [127.0.1.1] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 8 Apr 2025
+ 19:27:08 -0700
+From: Baochen Qiang <quic_bqiang@quicinc.com>
+Subject: [PATCH ath-next v2 0/9] wifi: ath12k: support MLO for WCN7850
+Date: Wed, 9 Apr 2025 10:26:33 +0800
+Message-ID: <20250409-ath12k-wcn7850-mlo-support-v2-0-3801132ca2c3@quicinc.com>
 MIME-Version: 1.0
-Content-Type: multipart/signed; boundary="Sig_/JWrGHgMrQN9liPrMPP032YR";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIANra9WcC/43NzWrDMBAE4FcJOnfLSrKzdk55j9KDfta1aCM5k
+ uOmBL97hS8hFEqOwzDf3EThHLiIw+4mMi+hhBRrUC874UYTPxiCr1koVC1qRWDmUapP+HaRuhb
+ h9JWgXKYp5RnswL7tlZe6t6ICU+YhXDf8TdQdRL7O4r02Yyhzyj/b60Jb/8zBQoCA+0GbHpnI2
+ +P5ElyI7tWl0wYv3fNYVzHTW91oYiv37V9M3rEG1b+YrJg1viE3IBI2j9i6rr+ObOTWagEAAA=
+ =
+X-Change-ID: 20250327-ath12k-wcn7850-mlo-support-bfed592d139b
+To: Johannes Berg <johannes@sipsolutions.net>,
+        Jeff Johnson
+	<jjohnson@kernel.org>
+CC: <linux-wireless@vger.kernel.org>, <ath12k@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>,
+        Baochen Qiang <quic_bqiang@quicinc.com>
+X-Mailer: b4 0.14.2
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: XuOXCbZeLa9vstrAXzMSmcihv9AaQI4d
+X-Proofpoint-GUID: XuOXCbZeLa9vstrAXzMSmcihv9AaQI4d
+X-Authority-Analysis: v=2.4 cv=NaLm13D4 c=1 sm=1 tr=0 ts=67f5daff cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=S8qQzX23J8qjeTGorjwA:9
+ a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-04-09_01,2025-04-08_04,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 impostorscore=0
+ priorityscore=1501 adultscore=0 malwarescore=0 suspectscore=0
+ lowpriorityscore=0 bulkscore=0 mlxlogscore=891 clxscore=1015 phishscore=0
+ spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504090002
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250408_154643_833189_6D1DD674 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20250408_192714_811988_D519572C 
+X-CRM114-Status: GOOD (  10.63  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,45 +107,60 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
---Sig_/JWrGHgMrQN9liPrMPP032YR
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+WCN7850 firmware uses API-1 so it can not advertise MLO support via
+firmware IE, but instead it uses single_chip_mlo_support flag in QMI
+message, the first three patches serve for this purpose.
 
-Hi Jeff,
+Currently ml_arg->assoc_link flag is not set in
+WMI_VDEV_START_REQUEST_CMDID, this result in WCN7850 firmware crash
+in MLO case, so patch [04/9] sets it for assoc link.
 
-On Tue, 8 Apr 2025 09:17:21 -0700 Jeff Johnson <jeff.johnson@oss.qualcomm.c=
-om> wrote:
->
-> On 4/8/2025 8:23 AM, Jeff Johnson wrote:
-> > NM. Since the timer_delete_sync() API is already in my tree I can make a
-> > one-off patch for this. =20
->=20
-> please review https://msgid.link/20250408-timer_delete_sync-v1-1-4dcb22f7=
-1083@oss.qualcomm.com
->=20
-> I'll wait a bit for any tags to accumulate before I merge into ath-next
+Patch [05/9] makes sure we do assoc for assoc link before any other
+links, as requested by WCN7850 firmware.
 
-I'll use your patch in the ath-next tree merge today (if necessary).
+Patch [08/9] change to send REO queue configuration to firmware
+for all links including non-primary link. For that purpose, preparation
+is done in patch [06,07/9].
 
---=20
-Cheers,
-Stephen Rothwell
+The last patch increases number of different channels to 2 for single
+pdev device, to avoid failing in bringup the second link.
 
---Sig_/JWrGHgMrQN9liPrMPP032YR
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
+Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+---
+Changes in v2:
+- rebase on ToT
+- Link to v1: https://lore.kernel.org/r/20250402-ath12k-wcn7850-mlo-support-v1-0-bad47cf00704@quicinc.com
 
------BEGIN PGP SIGNATURE-----
+---
+Baochen Qiang (9):
+      wifi: ath12k: introduce ath12k_fw_feature_supported()
+      wifi: ath12k: use fw_features only when it is valid
+      wifi: ath12k: support MLO as well if single_chip_mlo_support flag is set
+      wifi: ath12k: identify assoc link vif in station mode
+      wifi: ath12k: make assoc link associate first
+      wifi: ath12k: group REO queue buffer parameters together
+      wifi: ath12k: alloc REO queue per station
+      wifi: ath12k: don't skip non-primary links for WCN7850
+      wifi: ath12k: support 2 channels for single pdev device
 
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAmf1p00ACgkQAVBC80lX
-0Gx8eQgAjxao8xiJ/KRusfbqLlrG/SC2w8+UCR3vkg7lzBVX4g6YhXhfEJ/+T5dd
-grSvabJh7Rj4c6NIr0FGjdFJJGf7Ho2XHlfVHKRmqlb/L5MUNn1dygTy5SG3cVf/
-7Pt+Ca3Mb9Sp+nwHMXqGHs0zXIesOEMKGTi/xHth+CCmlChdPL2/VyXG3t0uJVs3
-C9daLXeFes/N8CMTBOjYnN71LetG+4jnLAwZIy23IHMzXymtB4QXiZzc3S9zfdxr
-DyYCbhEtCJ9BOCYn3Kcc/x9jTGQ8ECmTDQijaCKE+rAZRxI2+nFPPk8EUdqqwuA1
-XOgDITwe7jU+zkLEF+IYjzvrs0BLzg==
-=z9yf
------END PGP SIGNATURE-----
+ drivers/net/wireless/ath/ath12k/core.c  |  23 ++---
+ drivers/net/wireless/ath/ath12k/core.h  |  15 +++
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 178 ++++++++++++++++++--------------
+ drivers/net/wireless/ath/ath12k/dp_rx.h |   4 +-
+ drivers/net/wireless/ath/ath12k/fw.c    |   9 +-
+ drivers/net/wireless/ath/ath12k/fw.h    |   3 +-
+ drivers/net/wireless/ath/ath12k/hw.c    |   8 ++
+ drivers/net/wireless/ath/ath12k/hw.h    |   3 +
+ drivers/net/wireless/ath/ath12k/mac.c   |  62 ++++++++++-
+ drivers/net/wireless/ath/ath12k/pci.c   |   4 +-
+ drivers/net/wireless/ath/ath12k/qmi.c   |   6 +-
+ 11 files changed, 213 insertions(+), 102 deletions(-)
+---
+base-commit: ac17b1211841c98a9b4c2900ba2a7f457c80cf90
+change-id: 20250327-ath12k-wcn7850-mlo-support-bfed592d139b
 
---Sig_/JWrGHgMrQN9liPrMPP032YR--
+Best regards,
+-- 
+Baochen Qiang <quic_bqiang@quicinc.com>
+
 
