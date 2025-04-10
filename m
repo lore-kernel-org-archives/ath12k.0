@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353A7C3601E
-	for <ath12k@archiver.kernel.org>; Thu, 10 Apr 2025 17:13:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5234CC3601E
+	for <ath12k@archiver.kernel.org>; Thu, 10 Apr 2025 17:15:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
 	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=y/aZJWgf/bWZDt6hrRyHety2xOp+Mvp2gQD6ZIHDIeI=; b=iVBKbtBaFKJT2Tze/qvCt2V9Np
-	Ya/EX3510GkdpoRpQ8B5JVgwabtG5WaY+GSwbMJntcdq1PQqw19jBWx3wNzBzsmPl1rgFfSSKVrjG
-	mmwN2twb//8vHAdHfqrStgqofmywREWjyWNiLIcEUNvry3r+EOVl1WdMlug+1W1nBFMj3JXnLfFoH
-	d1SsZ2wStRS1hXHQkjsiAVSyGpmzb8BYXSWmyfP5Gnq0mzEwDcDVYxuFJ1wFxn8UePsJayyI7+EVT
-	/S0YimhMw0wgNIv9LogASqkbMXuaj45ymqtE6Os8VKQeV6ZK7nlwjTF88BefqAPxeMU29U9j92aGD
-	HgGBCWrQ==;
+	bh=1ZwfH6eHKVZn/x8x9vAZbpG5sAunbcf2BlxASoI/aqM=; b=dRsPD6cjj48M7KShn8AyrqbS1u
+	KQxgPDCKoQRT3QApH+w3xPrJW7jam4xnhalybtzK86cWT2qnAO7GAfX9nf2nTC93Ogk2JJgUVmiog
+	X5YscvewUharboKZLCIpcJQllIk9/Z31526xbmPImbq+IUXmD3LNj1S6DUyACCg/QI2+lXQJMBLbY
+	7QgnvDkRNobh9A6y62tjQq7Q4JhcZCo8N8IDikmUdwvOjzkclQaur8CH/7J7iPOX+7hfMjE//6ri3
+	mwnfW9BPsJrZ7zOUklq/p+OMyV84Stuv+/8exe/mGsst9Zq0dVBo70ZcHDNU4bhkLFCn1KiHQpUb0
+	aLMiYp3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2vSg-0000000BKyI-41s9
+	id 1u2vUS-0000000BLEA-0JfQ
 	for ath12k@archiver.kernel.org;
-	Thu, 10 Apr 2025 17:13:10 +0000
-Received: from mgamail.intel.com ([198.175.65.16])
+	Thu, 10 Apr 2025 17:15:00 +0000
+Received: from mgamail.intel.com ([198.175.65.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2ue4-0000000B9mw-2L3W
+	id 1u2ufv-0000000BA3y-3KSJ
 	for ath12k@lists.infradead.org;
-	Thu, 10 Apr 2025 16:20:54 +0000
+	Thu, 10 Apr 2025 16:22:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1744302052; x=1775838052;
+  t=1744302168; x=1775838168;
   h=date:from:to:cc:subject:message-id;
-  bh=1ANhx5qPg2jUyjx9FfuS/ZpJ1ZhE1VZBPjrkC6ExNXs=;
-  b=VoBIqTQc8c0AEcR1qYBJEiCSpH1V9+1M5WkgRBAWBA32BmihqVEJvm2l
-   KvIkACBkDrnlQSJQbBdz82BEaR6lE1Hr0htvglqxoxLmLIiv4LPkmINHQ
-   C6ky5nLMmaLwL6FZJxHw5ytWp2Y1qo16nRLFNgIMC+l/JnSWZEX7Po0lq
-   CH/D/dPJ94swKHlQI9ljvI8uVKJePiqqsTynP2m87d7P8WKpGhKy6bGeS
-   9jcud8AOtZr2l5SHEz7oxzl0A8HAc7LBjgav9ehU0u+EiPsvXwWVQTwf+
-   wihvYHua7xoVmnEMtn0DlPBgXLdP234iFCfPtFD6IGPL8d3vXgl4yHeOO
+  bh=cAAll1SwnA/aEriXu+g7RD4MWXkdAuCMnzBEBcFg/Zs=;
+  b=UWEq0aS1uy7524vw+cltvGkCxt5/Thy393LOzmDhgmhBG3IwDkiYjkAu
+   xdLl3DNJwNGbsGG1Sz8c798hnzqYljxs68pr/da0NS3+8811wLEBGucul
+   E/hTa7ngfshm1ibP43koDhZIMDxWixs76uZSiebznqQHSSwc2GwnZaCI+
+   uJFkaEF8VRbDyWvKM5J1gzG052zoGiaUms4WY9dwTt+CNuJxbzsTUmTu2
+   dzkJvODheQ4MEcgmpArxecqN8HxLpAiPLei+Iq0XtcxLu+ir3vkY6i4YC
+   ltYxvnUUzeTuztPFDpB7gp91s2knYyOroXFVaeYbvz/sdYD9QbVEg3gwP
    Q==;
-X-CSE-ConnectionGUID: tjE/B7WnRY+rBWIaNR80jA==
-X-CSE-MsgGUID: sldq4YmhRi2u1B0K2YGoeQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11400"; a="45927129"
+X-CSE-ConnectionGUID: J3W3OWEwTV++R//7LgxyYg==
+X-CSE-MsgGUID: yYf7XrNMRGuDymb65tAbNA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11400"; a="56814246"
 X-IronPort-AV: E=Sophos;i="6.15,202,1739865600"; 
-   d="scan'208";a="45927129"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Apr 2025 09:20:48 -0700
-X-CSE-ConnectionGUID: haR/PP60Qquph6MUDJYung==
-X-CSE-MsgGUID: 4TcReNlATwKWrYyXXRxpxw==
+   d="scan'208";a="56814246"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Apr 2025 09:22:47 -0700
+X-CSE-ConnectionGUID: 1LOs/tVvRnCWnGKwGCd7Nw==
+X-CSE-MsgGUID: fY+SEWLZQWeoSZqSbYzFRw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.15,202,1739865600"; 
-   d="scan'208";a="133061800"
+   d="scan'208";a="129495471"
 Received: from lkp-server01.sh.intel.com (HELO b207828170a5) ([10.239.97.150])
-  by fmviesa003.fm.intel.com with ESMTP; 10 Apr 2025 09:20:45 -0700
+  by orviesa007.jf.intel.com with ESMTP; 10 Apr 2025 09:22:46 -0700
 Received: from kbuild by b207828170a5 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1u2udv-000AIt-1J;
-	Thu, 10 Apr 2025 16:20:43 +0000
-Date: Fri, 11 Apr 2025 00:20:28 +0800
+	id 1u2ufr-000AJ9-24;
+	Thu, 10 Apr 2025 16:22:43 +0000
+Date: Fri, 11 Apr 2025 00:22:18 +0800
 From: kernel test robot <lkp@intel.com>
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:for-next] BUILD SUCCESS
- 25b2f46bd7de2f0007d742de9d2e72e65db0edf3
-Message-ID: <202504110019.DPwkYCE3-lkp@intel.com>
+Subject: [ath:master] BUILD SUCCESS
+ 1a7000fb8348e04ab486513d6ebd4b6074a94be2
+Message-ID: <202504110009.b1l5uYoM-lkp@intel.com>
 User-Agent: s-nail v14.9.24
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250410_092052_640943_226EEAE9 
+X-CRM114-CacheID: sfid-20250410_092247_876012_3A90B3E9 
 X-CRM114-Status: UNSURE (   3.18  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
@@ -84,12 +84,12 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git for-next
-branch HEAD: 25b2f46bd7de2f0007d742de9d2e72e65db0edf3  wifi: ath12k: ahb: Replace del_timer_sync() with timer_delete_sync()
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master
+branch HEAD: 1a7000fb8348e04ab486513d6ebd4b6074a94be2  Add localversion-wireless-testing-ath
 
-elapsed time: 1465m
+elapsed time: 1466m
 
-configs tested: 108
+configs tested: 115
 configs skipped: 3
 
 The following configs have been built successfully.
@@ -106,8 +106,6 @@ arc                   randconfig-002-20250410    gcc-12.4.0
 arm                              allmodconfig    gcc-14.2.0
 arm                               allnoconfig    clang-21
 arm                              allyesconfig    gcc-14.2.0
-arm                      jornada720_defconfig    clang-21
-arm                          pxa3xx_defconfig    clang-21
 arm                   randconfig-001-20250410    clang-21
 arm                   randconfig-002-20250410    clang-18
 arm                   randconfig-003-20250410    gcc-7.5.0
@@ -143,10 +141,13 @@ loongarch             randconfig-002-20250410    gcc-12.4.0
 m68k                             allmodconfig    gcc-14.2.0
 m68k                              allnoconfig    gcc-14.2.0
 m68k                             allyesconfig    gcc-14.2.0
+m68k                            q40_defconfig    gcc-14.2.0
+m68k                        stmark2_defconfig    gcc-14.2.0
 microblaze                       allmodconfig    gcc-14.2.0
 microblaze                        allnoconfig    gcc-14.2.0
 microblaze                       allyesconfig    gcc-14.2.0
 mips                              allnoconfig    gcc-14.2.0
+mips                           ci20_defconfig    clang-21
 nios2                             allnoconfig    gcc-14.2.0
 nios2                 randconfig-001-20250410    gcc-14.2.0
 nios2                 randconfig-002-20250410    gcc-10.5.0
@@ -160,6 +161,9 @@ parisc                randconfig-002-20250410    gcc-11.5.0
 powerpc                          allmodconfig    gcc-14.2.0
 powerpc                           allnoconfig    gcc-14.2.0
 powerpc                          allyesconfig    clang-21
+powerpc                    ge_imp3a_defconfig    gcc-14.2.0
+powerpc                   lite5200b_defconfig    clang-21
+powerpc                      mgcoge_defconfig    clang-21
 powerpc               randconfig-001-20250410    gcc-6.5.0
 powerpc               randconfig-002-20250410    gcc-6.5.0
 powerpc               randconfig-003-20250410    clang-21
@@ -168,7 +172,7 @@ powerpc64             randconfig-002-20250410    clang-21
 powerpc64             randconfig-003-20250410    clang-21
 riscv                            allmodconfig    clang-21
 riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-16
+riscv                    nommu_k210_defconfig    clang-21
 riscv                 randconfig-001-20250410    clang-21
 riscv                 randconfig-002-20250410    gcc-8.5.0
 s390                             allmodconfig    clang-18
@@ -179,8 +183,10 @@ s390                  randconfig-002-20250410    gcc-6.5.0
 sh                               allmodconfig    gcc-14.2.0
 sh                                allnoconfig    gcc-14.2.0
 sh                               allyesconfig    gcc-14.2.0
+sh                               j2_defconfig    gcc-14.2.0
 sh                    randconfig-001-20250410    gcc-12.4.0
 sh                    randconfig-002-20250410    gcc-10.5.0
+sh                          sdk7786_defconfig    gcc-14.2.0
 sparc                            allmodconfig    gcc-14.2.0
 sparc                             allnoconfig    gcc-14.2.0
 sparc                 randconfig-001-20250410    gcc-10.3.0
@@ -201,6 +207,7 @@ x86_64      buildonly-randconfig-004-20250410    clang-20
 x86_64      buildonly-randconfig-005-20250410    clang-20
 x86_64      buildonly-randconfig-006-20250410    clang-20
 x86_64                              defconfig    gcc-11
+xtensa                           alldefconfig    gcc-14.2.0
 xtensa                            allnoconfig    gcc-14.2.0
 xtensa                randconfig-001-20250410    gcc-14.2.0
 xtensa                randconfig-002-20250410    gcc-7.5.0
