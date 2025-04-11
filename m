@@ -4,109 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56FC1C369A2
-	for <ath12k@archiver.kernel.org>; Fri, 11 Apr 2025 03:05:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7A3CC3601E
+	for <ath12k@archiver.kernel.org>; Fri, 11 Apr 2025 03:16:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References
-	:Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JN+Uci4EgrW94KJgIsI5THib/jPzDg7I4/82AuQoOXs=; b=kLBu03DmCMxPnMvTYG+UyEu6zM
-	cSsOasRrpIaKTTPA9ubqHQJvvW3J9ukTX0dOfqWpZAvm16dSoPdhd2JJO6Tg34e1ktPuo+wCy1Kwh
-	5glFTp+IlrOYUwz/l4ykvVOQq3y168wSvYNWrcykEe+D+YbUKRoaAOySiu057Avqq8fEi2m2ZJHpo
-	xUgEbCJBSp64ae8iHrcT45XUy9vWeKqQtSy7wBiBPE0FpjqXymk9GbQkx1BpObZEy2lhAfgK1lI46
-	BkWH3Xr79TPEkvMlm/VWodViJwl1jhFXZU+Jt4zUq9st31ZLsFvB+ZjI2ZYDqYgKLapylo8B8Gnmz
-	tPN7U7jA==;
+	bh=RfPoX/kxo2nQm9hEorj+Uzv9NtujZvxu2BRrTUCBL80=; b=q2gSr7t0kGePPFLLl39+qnnYw/
+	jSzKe1gCvcx/E38hzy8IDw2pYFGNYBqmJ4oXmdaZTxkHrj+G2mwE94TFCO32TzXqqmTBQU7dGu8v8
+	4DfgFYYksRmVrIMAmHi8dz5o+/ZrlWM530jRL6McoO56meozQf6wfeklTP61ZfSxfyx5GcVD5iLun
+	EsDO+amSWXBoBpOvGWLjUIjJGAiauVRU8mmpr2bpkrVKLgTtXmI3jdv8RaN212QYL01mY7lbU5osp
+	w5tvInowtx+1u8Kc9SlP6vEAIAMpv1MV8E0KZ3XtP6IExN8GsIJyYR5bXX9ji8QMGylcdlgTDIUCA
+	UMJX6T9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u34hY-0000000CMVY-0OgB
+	id 1u34so-0000000CNTP-2KkJ
 	for ath12k@archiver.kernel.org;
-	Fri, 11 Apr 2025 03:05:08 +0000
+	Fri, 11 Apr 2025 03:16:46 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u34hW-0000000CMUb-1voo
+	id 1u34sl-0000000CNSu-3pQ4
 	for ath12k@lists.infradead.org;
-	Fri, 11 Apr 2025 03:05:07 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53AFrgt6028839
-	for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 03:05:06 GMT
+	Fri, 11 Apr 2025 03:16:45 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53AFwlOv018319
+	for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 03:16:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	JN+Uci4EgrW94KJgIsI5THib/jPzDg7I4/82AuQoOXs=; b=oAM3cTkRrt19YYyl
-	NP2G3HTSNGV/lL176CuStsm1ODbepOTwfwKZuzpRZ7JmzJG+88AyzZdmtuxlhvrk
-	gm2BLESyyoHXp3sq+fqj8MfEXerF7shFC/81hZyfOzL7ENLlZlP5ygPxanUcisa6
-	A6dV/+vEkyDeY0tMdVLFrlq9HFuyof8/vk30k4wIFIzvjkUYsPWSp9JCQw3v9PEB
-	dWsjAVyy125NKFS/dKqDCdARz7yPoCx+fbS+KkPBov3V2dV3/stoUKX9XWQKZt4B
-	z1+DSGtYfSCIG6h45jGrHVNF5Zn4q/Z3CBYjQU6Ns8537HQ5wB7YKINXjZ2P7wYH
-	ytc+xg==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbus07c-1
+	RfPoX/kxo2nQm9hEorj+Uzv9NtujZvxu2BRrTUCBL80=; b=gdcA4tjCdQYomEl5
+	7X6aZbCdPVOpZ6kL3WqKipRj7BRDT3i9AJ+a39RJV/krONThCS8uEEcRipD6ICu1
+	rzjWNKRXwwvBzEiyOv/yRjA9+hO/ON12Pv1yMOT+VoRbSwjWrl+pf33SCf2cabwE
+	GCUalEB4RE1RrHBp7P5QvEOP4wOwHuqVARrIcgoWeqfJIPmAwy9EW0unv8X1G6ES
+	kCi8OhYLXuKUEr8K8CpzLDflBPR/5ZFeBUfHym8Qi5ukgfvQZ5RgjIADxBfWb2A1
+	yMirRCWpMiBHqqCSKe6uo8TnQKzO3GUb7WDGXmy1uOmyAxg2VWRyapct2IZavniS
+	ljUT6g==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twtb94a9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 03:05:06 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ff5296726fso2151580a91.0
-        for <ath12k@lists.infradead.org>; Thu, 10 Apr 2025 20:05:05 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 03:16:43 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2254e500a73so11676565ad.0
+        for <ath12k@lists.infradead.org>; Thu, 10 Apr 2025 20:16:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744340705; x=1744945505;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=JN+Uci4EgrW94KJgIsI5THib/jPzDg7I4/82AuQoOXs=;
-        b=ci4YKwwDXR2C+447KACKM0vxHAG37gcnfdKGFuq1RjgOozuWi2bpzDwNHfql7vCNYa
-         HWPJC7HEYFkDyXMYU0/oV17JRyU/iaP/acKZLJ24UoON+2w+/Ht/j3rWU4W2QiXHPK/J
-         nCUuUcXk9YMaIxFnqFAZrDMz15PltHiUGNkB/KVQ9ZYVhsyD+56BqY1CQmblrJkytUXP
-         409GG/0v8mMwP0Inol+rC2qA74gBZTj5WzAvFpTHwTNUIXV218HN5jXaGJJWd6a6ZS2U
-         e0Ek/LDTwXfmNYfrHGz/kpMDlAxVFo6DOnyWNds8WlET6h0NrbLRmG1dxjSogh6/25ic
-         0ELw==
-X-Gm-Message-State: AOJu0YxQ/aMI6JFTL8ERubfuDxgGZK7j48O4KiC1lXYsHwwJkeP/twzL
-	qVqTLAPqALiyX0UUwttRrbODiPrEOlCJyzlIFtiLECBCyi56yVGh1lU3kA6ehZmjq0bJzxUJbOD
-	cWRMoiNuKvVn1XKXQ87GVaDcUduRB88GHXajgB5PHurTtCAFd+UpYRucxe+5taqSIw/nx
-X-Gm-Gg: ASbGnctl5qpxuQl/zIsUrbXMXShnLZ2JTH0wuXxnauXrLsF7Am5f2bGBoxiuSaszMaI
-	27CIvAMYhNyjq+m+uz+7BEzaQUZbHPxUbvHmNEAXTCLIRcziDhx0/gyqPg9N7m11mioB4xS676n
-	RZvTRgWUlKRrhNVmpS36mjc+LxUensvKyPPcxUMhdvfb0P4p56gngp+S4/4WE0626JhEKDUaMe2
-	jxbcL+wu+I/O42m3f/+nD+actw8DdwR3SZfUXP5t4E2nitndcoU/OdgN5lWlJYowV3WAjB7gWND
-	8pEwzDSmOVWljDIluNA5oux60eP1932tVyaVjkt/B3bdpsci7hDqZgpFF66r6hbSzQ254MkjAHo
-	bI/9HneE1TesEH2kDC0Zlc235HQ0Q82UV1doL
-X-Received: by 2002:a17:90a:d44d:b0:2fe:a614:5cf7 with SMTP id 98e67ed59e1d1-308236244f3mr1884745a91.3.1744340704843;
-        Thu, 10 Apr 2025 20:05:04 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFw3aUHRcQ8EhaIL95aG+J1wgT0E2sTrzFKeDpRppMCbJ0z8YGzrCZWpdAJnx18k6Dqno47tg==
-X-Received: by 2002:a17:90a:d44d:b0:2fe:a614:5cf7 with SMTP id 98e67ed59e1d1-308236244f3mr1884712a91.3.1744340704381;
-        Thu, 10 Apr 2025 20:05:04 -0700 (PDT)
-Received: from hu-adisi-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22ac7ccca88sm38425205ad.256.2025.04.10.20.05.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 10 Apr 2025 20:05:04 -0700 (PDT)
-From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-Date: Fri, 11 Apr 2025 08:34:51 +0530
-Subject: [PATCH ath-next 2/2] wifi: ath12k: Use scan link ID 15 for all
- scan operations
+        d=1e100.net; s=20230601; t=1744341402; x=1744946202;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=RfPoX/kxo2nQm9hEorj+Uzv9NtujZvxu2BRrTUCBL80=;
+        b=ZZBjv8WrIDJDJw9LTgl1TnUPbb5BhyQ55arpIqWKC35lgeiU7n6gKasqzLVhXi6ftV
+         jLemC0x7YeUCPNFH7XZ4SG0UQYIIC+ByGTz3gV4DMkpgEYeUU6gl12za8rMuRWDzAK3x
+         jOkbc1pIigUbGbt1L3KkqVG09sB9werMObgNpDO7HtTQUqLWM/D2Tp0RTrlfySMtdnKs
+         zVJFIEgE0kI91r7kLQJpO2Eq72fxhIQcb6JAat4ZuF9OGDDLIQMts7ozc5HlBazkDzuQ
+         eUwHuS1ZnHy1ND2P6LTpZs2Q0fG4rTl/UUrx59NKHOc7hSficSiH+BWAmRRUOyGCAXpG
+         nR2A==
+X-Gm-Message-State: AOJu0YyktP7GeKgYih3H6XMGozX+IBVDfQlvYYCwwsnJimLfsNz9pP3R
+	CDjiEtDycV2gw/2Z2puccj3JyV9zSAz81lsof3s0tH8BP2jH9iD61AI4Lk2HUJpr83YGi51JRXW
+	IFfSJsfDuzwhh3gx4zEEErrftuhjL0o+gndgroNdt4gkJh+mLH4hWfBMWCSTi
+X-Gm-Gg: ASbGncuz9JPk7A+dvEeHwz/2l4+uM6bc5kszHeSq2Om/mvPLcTcNyBxQrpRdrC5cH+G
+	xRWmv5TV2Gq/J9GsAUkNvd9iFq2wUn3Vig1Id+Kuci30Rcnbgnjis3UobU3LjUtZnO6uSeK24gK
+	vGJhQptVe6GDe+ibk8jktzM1bHcrrv2qFdHhMqyfNbYQx7IldKaPsI9+IBtmzck15JRg8Oed466
+	JkbpNSvkCfzF5hi8hQxvecvgomqrSuu52E3NYcg9McPhQ8mbw4qp8v1ND0aC2oa0pKx4tLyQRmG
+	yhaNaBSAealDzOjH5gL3hxHuTDvOQQE4x233wN0iOFlpWBT4Ow==
+X-Received: by 2002:a17:902:cccd:b0:224:910:23f6 with SMTP id d9443c01a7336-22bea4fcc8dmr19562105ad.45.1744341402278;
+        Thu, 10 Apr 2025 20:16:42 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGgsmv7ffD0Y3g1ZhudIgNEOfDzZl64JTVEmAr+V0XzueISHA+3ZzevJJ64w+uAsDERig8oAw==
+X-Received: by 2002:a17:902:cccd:b0:224:910:23f6 with SMTP id d9443c01a7336-22bea4fcc8dmr19561775ad.45.1744341401880;
+        Thu, 10 Apr 2025 20:16:41 -0700 (PDT)
+Received: from [192.168.29.88] ([49.43.250.37])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22ac7b62b70sm38537125ad.39.2025.04.10.20.16.39
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 10 Apr 2025 20:16:41 -0700 (PDT)
+Message-ID: <d4fc1ee2-bba0-4a85-bd66-b46be5f6e34b@oss.qualcomm.com>
+Date: Fri, 11 Apr 2025 08:46:37 +0530
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20250411-fix_scan_vdev_handling-v1-2-07d8b4a5d19d@oss.qualcomm.com>
-References: <20250411-fix_scan_vdev_handling-v1-0-07d8b4a5d19d@oss.qualcomm.com>
-In-Reply-To: <20250411-fix_scan_vdev_handling-v1-0-07d8b4a5d19d@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: handle scan vdev consistently
 To: Jeff Johnson <jjohnson@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
-        Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Proofpoint-GUID: gtqQVV6a_JsXYhSByKUfK_zz6q_NWf20
-X-Proofpoint-ORIG-GUID: gtqQVV6a_JsXYhSByKUfK_zz6q_NWf20
-X-Authority-Analysis: v=2.4 cv=dbeA3WXe c=1 sm=1 tr=0 ts=67f886e2 cx=c_pps a=RP+M6JBNLl+fLTcSJhASfg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=PUz9acJwvWvt2_6aZDkA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22
+Cc: ath12k@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250411-fix_scan_vdev_handling-v1-0-07d8b4a5d19d@oss.qualcomm.com>
+Content-Language: en-US
+From: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
+In-Reply-To: <20250411-fix_scan_vdev_handling-v1-0-07d8b4a5d19d@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: quBPpN2zKLBQAG-VWg7nxnb2J1sGB7fa
+X-Authority-Analysis: v=2.4 cv=LLlmQIW9 c=1 sm=1 tr=0 ts=67f8899b cx=c_pps a=cmESyDAEBpBGqyK7t0alAg==:117 a=cXzaif0YSwZ7kBs4STVCvg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=JfrnYn6hAAAA:8 a=7GAvi05Al6q7sVWQShMA:9 a=QEXdDO2ut3YA:10
+ a=1OuFwYUASf3TG4hYMiVC:22 a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-ORIG-GUID: quBPpN2zKLBQAG-VWg7nxnb2J1sGB7fa
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-11_01,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 mlxlogscore=999 phishscore=0 mlxscore=0 spamscore=0
- malwarescore=0 clxscore=1015 adultscore=0 priorityscore=1501
- lowpriorityscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502280000 definitions=main-2504110021
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
+ clxscore=1015 mlxlogscore=910 malwarescore=0 phishscore=0
+ lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 adultscore=0
+ suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504110023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250410_200506_508078_3347BB6F 
-X-CRM114-Status: GOOD (  16.20  )
+X-CRM114-CacheID: sfid-20250410_201643_962761_BEC48619 
+X-CRM114-Status: GOOD (  14.37  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,59 +119,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-According to the code documentation in ath12k_mac_op_hw_scan(), "if no
-links of an ML VIF are already active on the radio corresponding to the
-given scan frequency, the scan link (link ID 15) should be used". This rule
-should apply to non-ML interfaces as well to maintain uniformity across the
-driver. However, currently, link 0 is selected as the scan link during
-non-ML operations.
+On 4/11/2025 8:34 AM, Aditya Kumar Singh wrote:
+> This series of patches addresses the handling of scan links in the ath12k
+> driver to improve consistency and functionality. The changes ensure that
+> link ID 15 is correctly used for scan operations across both ML and non-ML
+> interfaces. Additionally, the patches prevent scan failures by fetching
+> link_conf only when the link ID is valid and setting appropriate default
+> values for scan vdevs.
+> 
+> Currently, no issues have been observed; these changes are intended as a
+> cleanup and to ensure proper handling. For split-mac these changes are
+> pre-req change.
+> 
+> ---
+> Aditya Kumar Singh (2):
+>        wifi: ath12k: handle scan link during vdev create
+>        wifi: ath12k: Use scan link ID 15 for all scan operations
+> 
+>   drivers/net/wireless/ath/ath12k/mac.c | 55 ++++++++++++++++-------------------
+>   1 file changed, 25 insertions(+), 30 deletions(-)
+> ---
+> base-commit: 1a7000fb8348e04ab486513d6ebd4b6074a94be2
+> change-id: 20250402-fix_scan_vdev_handling-ef5be452b949
+> 
 
-Update the code to use scan link ID 15 in all cases.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+For some reason, b4 (or get_maintainer.pl script) did not include the 
+linux-wireless list. I will send v2 manually CCing that list as well.
 
-Signed-off-by: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 22 +++++++---------------
- 1 file changed, 7 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4b3469380fb46a629fad7a9a40a44e761ef33fa5..7d96052bb0ccb1230ac446ffbfd20c5f6a463b5a 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -3463,23 +3463,15 @@ static struct ath12k_link_vif *ath12k_mac_assign_link_vif(struct ath12k_hw *ah,
- 	if (arvif)
- 		return arvif;
- 
--	if (!vif->valid_links) {
--		/* Use deflink for Non-ML VIFs and mark the link id as 0
--		 */
--		link_id = 0;
-+	/* If this is the first link arvif being created for an ML VIF
-+	 * use the preallocated deflink memory except for scan arvifs
-+	 */
-+	if (!ahvif->links_map && link_id != ATH12K_DEFAULT_SCAN_LINK) {
- 		arvif = &ahvif->deflink;
- 	} else {
--		/* If this is the first link arvif being created for an ML VIF
--		 * use the preallocated deflink memory except for scan arvifs
--		 */
--		if (!ahvif->links_map && link_id != ATH12K_DEFAULT_SCAN_LINK) {
--			arvif = &ahvif->deflink;
--		} else {
--			arvif = (struct ath12k_link_vif *)
--			kzalloc(sizeof(struct ath12k_link_vif), GFP_KERNEL);
--			if (!arvif)
--				return NULL;
--		}
-+		arvif = kzalloc(sizeof(*arvif), GFP_KERNEL);
-+		if (!arvif)
-+			return NULL;
- 	}
- 
- 	ath12k_mac_init_arvif(ahvif, arvif, link_id);
+./scripts/get_maintainer.pl -f drivers/net/wireless/ath/ath12k/
+Jeff Johnson <jjohnson@kernel.org> (maintainer:QUALCOMM ATH12K WIRELESS 
+DRIVER)
+ath12k@lists.infradead.org (open list:QUALCOMM ATH12K WIRELESS DRIVER)
+linux-kernel@vger.kernel.org (open list)
+QUALCOMM ATH12K WIRELESS DRIVER status: Supported
+
+
+Please drop this series.
 
 -- 
-2.34.1
-
+Aditya
 
