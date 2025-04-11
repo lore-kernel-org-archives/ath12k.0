@@ -4,89 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D7D4C369A8
-	for <ath12k@archiver.kernel.org>; Fri, 11 Apr 2025 06:45:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1386C369A9
+	for <ath12k@archiver.kernel.org>; Fri, 11 Apr 2025 06:45:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=u5wfl508ugxahYkEsFJEHed9By6TeGN2eqPAOV1H17c=; b=ZTlW5FAMWwTcjWATeEP7jHvVDw
-	+f4KN11LhZu4x8D5OrVDDvWpPXA6yRr0Dm9bz5p1lPdht4GUpQuesTjduiNZD1M5+n58z08NlgBhI
-	UUZ6kWwkjQMYz87CJIxQCU1O6Un7yEZ177vPsV3+kqh4HYGADj2EXTtblXjMWZDS70IicM+Q3p5Zh
-	V/QS8ALYGuRBujpXanerApyhfaT1JWfTZnuLZTdagjHL0reoFxG8z6f6AG8Y+OlmMRXjUj8IZl7Mk
-	A7Vc7qgAxvztQ+tXRXPkssuguxtaWxQruqWa72sJrr0bpXU9/RiCWDvPSjunMMtDJvfweTzaATDZw
-	pq63IN2A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=aZjDG+Namf5hIaFTcyTdEBtA14YlBLkmgXS8yfksRX8=; b=ThKqks9BOrFrqIq0a9VKGt2i8F
+	yhgWLBGRFRBq7JejYRlXNkqYClSdxtuTOnoptcN0Fvix5wsgELhJn7L6Yu0faaf23PK5XMRsw7ftR
+	kSen4dUZ/TQW4I3u+y/0ORdOcMP6JYFJE0w1TosiK6kMcaBCPsPLqcaIbkfhy4+kXIpPMTUUC1Qq0
+	QWxYMVSIW4bEW4+Nn3oy9MnhCnYcHLvhToXw2fI5a3S1VSuD8OmghRbqvMfy4PWb7tUhAZqeTlhGT
+	G9lNVNEarmpQsmUzakYyPg49p1UWYB7AnqcaoIYImxkmy4xKj72stJKf1SBlS6JjuqX4JMIrx0oxw
+	CY4foEhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u388K-0000000Clkt-1KaU
+	id 1u388M-0000000Clmw-1faK
 	for ath12k@archiver.kernel.org;
-	Fri, 11 Apr 2025 06:45:00 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	Fri, 11 Apr 2025 06:45:02 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u37g1-0000000ChFI-3wTa
+	id 1u37pe-0000000CiTt-44OF
 	for ath12k@lists.infradead.org;
-	Fri, 11 Apr 2025 06:15:47 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53B4s3ZN018348;
-	Fri, 11 Apr 2025 06:15:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Fri, 11 Apr 2025 06:25:44 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53B63bDD032542
+	for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 06:25:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	u5wfl508ugxahYkEsFJEHed9By6TeGN2eqPAOV1H17c=; b=Q3VEEg5mG1Txeyl8
-	xrhZXJkof5bzYO28Mp56yHZu1Og2ypktfD+oCitUIaPujOQFUWPYpjGpRAgcsDww
-	gZfW9y908egNsc8yhyH4/TH9w8BuSs1pIfYLw9Jvm1Ei5qHF2+l7gPbHKA0JsCNS
-	UC16VA2Xj6/Gy7D3k/xS+xXWq1ofAYxLMBwLOUbq4eaKDKpOk1DkwDn1VkFTA9Bi
-	aFh+LJDiL/ziy8dzm9r2RWqYTB2KSECksllyVBdLozwcVWrUE5uN8c7x8OtuDLhY
-	0/QkF3rFAHQhFPNG5DxBKBvnFfvAgw0i546l0ayNi0mtY8EF7ZfoE3bmoAFaCWoG
-	E23pRg==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twtb9gk2-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 11 Apr 2025 06:15:45 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53B6Fic8020747
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 11 Apr 2025 06:15:44 GMT
-Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
- nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 10 Apr 2025 23:15:43 -0700
-From: Sarika Sharma <quic_sarishar@quicinc.com>
-To: <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>,
-        Sarika Sharma
-	<quic_sarishar@quicinc.com>
-Subject: [PATCH ath-next v2 1/2] wifi: ath12k: using msdu end descriptor to check for rx multicast packets
-Date: Fri, 11 Apr 2025 11:45:22 +0530
-Message-ID: <20250411061523.859387-2-quic_sarishar@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250411061523.859387-1-quic_sarishar@quicinc.com>
-References: <20250411061523.859387-1-quic_sarishar@quicinc.com>
+	aZjDG+Namf5hIaFTcyTdEBtA14YlBLkmgXS8yfksRX8=; b=aKWYuWyX2yxT/OBN
+	P/Ibec3k9itz6I3HPdwEBMnDAgTvjsWX1uOLnhhUHvCsB+aCmYWXD5pXpZxPzjBl
+	SFFEXDc78BReK3y2dinhws2COm1b9RwNqwSEEZP0m/L81eGKLRaHUF2KUjrNwrjH
+	+WrG5MSJr4zrEOYCfOR2hTnQq2UtbHLDlI4mbgVGFDwThGzdDg3e6XSZi4Wvbc5n
+	tOHBYYdAJOKindMJF0/xBktG2u7PoIkfHF6glFISVYlURkhDnHJrC5I2GqwNk7ti
+	HU9JqQ2iKuvyJRcrnGsd1LKFz1WQmkanpQLLBptncyKL431TjndneUq3hVtx6FVn
+	+prdgQ==
+Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twfks738-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 06:25:41 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-736fff82264so1339265b3a.1
+        for <ath12k@lists.infradead.org>; Thu, 10 Apr 2025 23:25:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744352740; x=1744957540;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=aZjDG+Namf5hIaFTcyTdEBtA14YlBLkmgXS8yfksRX8=;
+        b=EWKVEb662Nc53KGin2yoKVFkJscX7UJdYGB1UtPQ3vudRS7/O41XwUyqPyz/HFI7Ha
+         M4itZhKPDoAv67a3l3YvM1WDBEmZF9BYSJdvuhSe9KMsAcCb8mUHRriaM1GCb83VUYnI
+         f1y9zCaMakoc8sJRI3JiLUOXcEiSHwP7jr0DNIjqCK6XqM0BWbexk/ZAX0LXEYK/OWRq
+         E0rY1eEl9n+PBRmF6hp4qFINH7Nc2UN06oFtQCK60RPGOu7aq3GE4Nb5q30uAvWXDIbn
+         DcmuIep6Y5n5DFEl08/CYlp1IabuX9+vYiC2Ql0zCErN0nualWHgVv1ad9DdsQZ2sigh
+         Fpwg==
+X-Forwarded-Encrypted: i=1; AJvYcCXYfe7EeAg/jBkBfcDruZWc8WeT+lP9K6wNe7nyflAqcn6cjZS4paT7qBtNpkL4AlViGyRhuN8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyVz8I2McU2LC+wWKKBf+sUSaJuMb3zuI65Spj18Wa94So1H1/M
+	Bru75TVthhECrHiSnWnBT+P+dr+0kI1Vq4PslcelX9A334mwx9oqRBTyke9Cpv4PjgsNiXrJLON
+	HFn9RpHcKe6kpZzwv0tAdOcmSSZ1DaNt311x6INo968rPaShQrY6cMHQj0gY3
+X-Gm-Gg: ASbGncvj48MH1XCcVxwnVjGrZSkLDzm64Xe3bNrMdZRMrbRdGav8uFfOYtwq7DVKCW6
+	K6L2pxtZZgEjfZH5ILNAnM4rfUOAogq2wDM9PnQo1kr3OrtIsL25z7YBVvDa+1JWtKn+xzy5h5d
+	54ODd3kyV5QziX1Epcv+pz3kgtwUpv9liandpPk3+P7yLw57S352SxQCegOpCA81Me2U43UKAPO
+	+R2/g2RyEMcMXFGbmh1JO0bFGh+qJce1cr8qqJCnqYbIa61KUi/xMg4mVrAvOCw/5sbWb2G5JVg
+	+9UYyBrxUcuA0CvNPA5/niB5nhIbjPIBjBF6MN93xrBYJxAXA4X9ew==
+X-Received: by 2002:a05:6a00:1394:b0:736:3ea8:4813 with SMTP id d2e1a72fcca58-73bd0bd4548mr2518651b3a.2.1744352740350;
+        Thu, 10 Apr 2025 23:25:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGMA6R59sQ1NqK7igd9/2jNcxA1+RfqvbTNMKUH7nNQfU2hU/UALeZME6rkL6dw0k1o8VMEBQ==
+X-Received: by 2002:a05:6a00:1394:b0:736:3ea8:4813 with SMTP id d2e1a72fcca58-73bd0bd4548mr2518625b3a.2.1744352739898;
+        Thu, 10 Apr 2025 23:25:39 -0700 (PDT)
+Received: from [10.152.204.0] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73bd230fff3sm664098b3a.125.2025.04.10.23.25.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 10 Apr 2025 23:25:39 -0700 (PDT)
+Message-ID: <24179c31-f351-2ed9-2699-d98615742d4b@oss.qualcomm.com>
+Date: Fri, 11 Apr 2025 11:55:36 +0530
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: z3_1Vys3aeCZvKJkbMvcoxOgOAN8sEAP
-X-Authority-Analysis: v=2.4 cv=LLlmQIW9 c=1 sm=1 tr=0 ts=67f8b391 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=nNR53KzduslkgKGKa6YA:9 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: z3_1Vys3aeCZvKJkbMvcoxOgOAN8sEAP
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [PATCH ath-next v2 2/2] wifi: ath12k: correctly handle mcast
+ packets for clients
+Content-Language: en-US
+To: Sarika Sharma <quic_sarishar@quicinc.com>, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250411061523.859387-1-quic_sarishar@quicinc.com>
+ <20250411061523.859387-3-quic_sarishar@quicinc.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250411061523.859387-3-quic_sarishar@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: DKnDwMchCyLlMZaOUZqzL2l0PRj3hY67
+X-Proofpoint-ORIG-GUID: DKnDwMchCyLlMZaOUZqzL2l0PRj3hY67
+X-Authority-Analysis: v=2.4 cv=b7Oy4sGx c=1 sm=1 tr=0 ts=67f8b5e5 cx=c_pps a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=aG53odMEPdmtmHfcJ14A:9 a=QEXdDO2ut3YA:10
+ a=zc0IvFSfCIW2DFIPzwfm:22 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-11_02,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
- clxscore=1015 mlxlogscore=672 malwarescore=0 phishscore=0
- lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 adultscore=0
- suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 malwarescore=0
+ priorityscore=1501 suspectscore=0 mlxscore=0 impostorscore=0 phishscore=0
+ clxscore=1015 spamscore=0 mlxlogscore=717 bulkscore=0 lowpriorityscore=0
+ classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504110044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250410_231545_981625_69DB9908 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20250410_232543_135481_01E4BEDA 
+X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,48 +124,19 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, the RX multicast broadcast packet check is performed using
-bit 15 from the info6 field of the MPDU start descriptor. This check
-can also be done using bit 9 from the info5 field of the MSDU end
-descriptor. However, in some scenarios multicast bit is not set when
-fetched from MPDU start descriptor.
-Therefore, checking the RX multicast broadcast packet from the MSDU
-end descriptor is more reliable as it is per MSDU.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
----
- drivers/net/wireless/ath/ath12k/hal.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+On 4/11/2025 11:45 AM, Sarika Sharma wrote:
+> Currently, RX is_mcbc bit is set for packest send from client as
+> destination address (DA) is multicast/broadcast address, but packets
+> are actually unicast as receiver address (RA) is not multicast address.
+> Hence, packets are not handled properly due to this is_mcbc bit.
+> 
+> Therefore, reset the is_mcbc bit if interface type is AP.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+> 
+> Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
 
-diff --git a/drivers/net/wireless/ath/ath12k/hal.c b/drivers/net/wireless/ath/ath12k/hal.c
-index d00869a33fea..12d0f991a47f 100644
---- a/drivers/net/wireless/ath/ath12k/hal.c
-+++ b/drivers/net/wireless/ath/ath12k/hal.c
-@@ -449,8 +449,8 @@ static u8 *ath12k_hw_qcn9274_rx_desc_mpdu_start_addr2(struct hal_rx_desc *desc)
- 
- static bool ath12k_hw_qcn9274_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
- {
--	return __le32_to_cpu(desc->u.qcn9274.mpdu_start.info6) &
--	       RX_MPDU_START_INFO6_MCAST_BCAST;
-+	return __le16_to_cpu(desc->u.qcn9274.msdu_end.info5) &
-+	       RX_MSDU_END_INFO5_DA_IS_MCBC;
- }
- 
- static void ath12k_hw_qcn9274_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
-@@ -902,8 +902,8 @@ static u8 *ath12k_hw_qcn9274_compact_rx_desc_mpdu_start_addr2(struct hal_rx_desc
- 
- static bool ath12k_hw_qcn9274_compact_rx_desc_is_da_mcbc(struct hal_rx_desc *desc)
- {
--	return __le32_to_cpu(desc->u.qcn9274_compact.mpdu_start.info6) &
--	       RX_MPDU_START_INFO6_MCAST_BCAST;
-+	return __le16_to_cpu(desc->u.qcn9274_compact.msdu_end.info5) &
-+	       RX_MSDU_END_INFO5_DA_IS_MCBC;
- }
- 
- static void ath12k_hw_qcn9274_compact_rx_desc_get_dot11_hdr(struct hal_rx_desc *desc,
--- 
-2.34.1
-
+Should there be a fixes tag?
 
