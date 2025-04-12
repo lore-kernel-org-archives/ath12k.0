@@ -4,62 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A65D7C369A9
-	for <ath12k@archiver.kernel.org>; Fri, 11 Apr 2025 10:19:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFD62C369A1
+	for <ath12k@archiver.kernel.org>; Sat, 12 Apr 2025 04:24:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8tzYYLA0PobK4E8GI3oZFvbbbicIQcGbi5+6FDmf7qE=; b=03KJENRKsuYege6Fj6sXDI7GyG
-	YPVIs1AXJLtH2yA4Qclw77jkqJK8eXzn+p3sHN+NeCmmQSanytW9D8SCWA2M98tl3/b1O25lLnTL5
-	ZZL/vbaDrLH0aF8ywYU9anL6bMZWn3gsTqBHgHjzDb17NiOawHDqFnPxIxktpidcUhLj/oQ7c0W7c
-	9tYnwPJvLE4aifLK8hcUgUx6D9nijYXzEBzFuCWgfTp7VCuBBnaXYg6oromX4D3FscqxnURjx3qcF
-	Xa48d52JElVN8+2/uOamJllaoPWWtnd2EcnFjbZIxj1iOGfu/lRS9+hu3xsesJZoI2A/Fw1tUBcTm
-	kWM7MVog==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=tqN6O5ULYQADoM50LR6WnyAaV2Q202v8B7Mm2bDgXcs=; b=ezemztTliugCivql39xMzp9Fh7
+	V/g0K32d9KKFWumCrZYtG/WJd5oLGWknIjLSYcilGqKtIyVtQZ7OwaBm91MAEb1CF3SGI5QYXk2iM
+	3mC7HqSHYv2nlvzDHgvloqH134yq0kgAiDICdg2hfgtwDIkc6wpPCJRDBYVRhXOkG9MMzWM2iXKAp
+	Rjm347mhU5S1UuNUF/teAFsSiZfnf52rgYFvsyzVqzsVl2zTD1q8nU+/2lJ2BQcIkFGwLNo5KpbXn
+	jImoW5MVkoQiz9XNEGIb3jArCooNe90/hY04DS2QHBpvU/Zj0em6ovc+F1mWjfBHoEHhQxC4nzfhE
+	VY1dgkyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3BUN-0000000DMb9-1pkJ
+	id 1u3SPd-0000000FPLj-2UNr
 	for ath12k@archiver.kernel.org;
-	Fri, 11 Apr 2025 10:19:59 +0000
-Received: from prime.voidband.net ([2a05:f480:1800:ee:5400:4ff:feab:5961])
+	Sat, 12 Apr 2025 04:24:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3BK7-0000000DK5D-0462
+	id 1u3SPa-0000000FPJx-3aDK
 	for ath12k@lists.infradead.org;
-	Fri, 11 Apr 2025 10:09:25 +0000
-Received: from spock.localnet (unknown [212.20.115.26])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by prime.voidband.net (Postfix) with ESMTPSA id 2B4A6616609B;
-	Fri, 11 Apr 2025 12:09:15 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=natalenko.name;
-	s=dkim-20170712; t=1744366155;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=8tzYYLA0PobK4E8GI3oZFvbbbicIQcGbi5+6FDmf7qE=;
-	b=Ww25decQ+fOCwNINYlzEfYcu+UvEMN829/myalTFASshoyvj1Jp8934EjvI04oUUbvIUtp
-	Sl7ahZqWNXNhtp4il3WDcgJlJtHKdUIQQx7rNShmfTLvcS1sQPkpQcfG+oP1Q8I0gH9FSn
-	joThO9ZR6zYvFBC7KjKxzyQahKLEgJw=
-From: Oleksandr Natalenko <oleksandr@natalenko.name>
-To: Lingbo Kong <quic_lingbok@quicinc.com>,
- Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: Abort scan before removing link
- interface to prevent duplicate deletion
-Date: Fri, 11 Apr 2025 12:09:01 +0200
-Message-ID: <12642200.O9o76ZdvQC@natalenko.name>
-In-Reply-To: <46030c46-a2ca-4d02-ab51-3581f7f3ddfe@lucifer.local>
-References: <20250226113118.7626-1-quic_lingbok@quicinc.com>
- <46030c46-a2ca-4d02-ab51-3581f7f3ddfe@lucifer.local>
+	Sat, 12 Apr 2025 04:24:12 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53C4CO5C030500
+	for <ath12k@lists.infradead.org>; Sat, 12 Apr 2025 04:24:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	tqN6O5ULYQADoM50LR6WnyAaV2Q202v8B7Mm2bDgXcs=; b=Yq3bj0Ck0ZQgdYC6
+	sAvqZsUJnUptVtDZDeKCkoTSG2QKK8vY8s0ruzsVpiN0aqXmaiztgHh+d/PKx3W8
+	LfhiV7wD/eXYvBAlwc8/s7cQcEC1XU6a78q+pPTTFyzPXVJhHkE01gjAxrMaYiMi
+	dvXQ/gdRbth514ij9FH+2CxOIpbhewbBl3OihZqoA1hmDo4uo+6CLRmTmq8SeJRT
+	l4eSG2s45vC5ZkvIcpJBMc5uLOPzVjirmgnWgzsufk2C3DpXhFybxiujlH7oQa++
+	ChFLh6zszpAFsQ/0fafBzIK7DjBhBXOm55Z5LsvzF/YZc2u+TEZtjf9Tly459PE+
+	LD7D/A==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ygxjr0f0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Sat, 12 Apr 2025 04:24:09 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3011bee1751so2275398a91.1
+        for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 21:24:09 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744431848; x=1745036648;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=tqN6O5ULYQADoM50LR6WnyAaV2Q202v8B7Mm2bDgXcs=;
+        b=q6BuzdDErKCjOdvmCnXI3plDO6rKhOcqHIrN8JGYZqg86ClVjExEUOzlY6dLA371hI
+         05Cc1kEF8G7GYAFodHD59dlJjR8lDstfdvfUZIn2cLOK2Pb3hNAMtMZC/rFheH5EhHhj
+         lIRNf7HYMGbFSdZeja7mzrjXV1oBGlZUvGXhp/jS4y+HnYsg8lOczEtjoAH68VV3r0Er
+         kf2u9INSDM0mSDWfZeCFyCKxRBsMM2zoD7pQUoqLND+/lSd+Bfj8NKARYcooOZJMgJQQ
+         YQ7ynG6g8wW+XGB9O5AftcER3VRD7oAJ/64fgiZCcHr3s0yQLZMApJYilJ/WgwCMzrt0
+         1WJg==
+X-Gm-Message-State: AOJu0YzVdBbzqd7af4yi4rZsu5GCf2kkqdCpn+cLP8bby0IiFK4RFoAf
+	kA3arPZ35d2PS62BL9xMTyPn7XD6fvHlleAelTMNLIEcYEPvqfnSTasaVP8htZ0ezed/yOmQmsZ
+	GDrnpksV4WDjP1f2GcDn0YhIG0EEv6amYaccELrv1eDI1GVir7Y0H3dhOj7yT3TXc4Wtn
+X-Gm-Gg: ASbGnculxB51TQflcdyecoP9sc2pGF13mlAH0mwZbPCCmSfyk4bQrhF174H8CFwb6EU
+	itPmkZB4Z2jyQMqiVHsnD+S7VQVQnTwNlk2fCD1ntimRu85sYMmrTLajyN68mS/t9Qe6eTXhpPk
+	Jr7NKJf2+cYwoAvqZKBXYEGxzwE8e7ylIDqCbxzT7NLiqqwtTGM7aKsEC58VZ33vxKwNgnMPpQ+
+	9RR8aoegrOVOGDk4VwicnPdFOhE1txyitvNSMG3wYjXLO2qRzhzXfbHI4pvA4LKeuNCVYs+KH4c
+	pyfVDmjwNTOr+TsGT+TahM4aJi9GMF59Fx4LvGEN6u/4ABVJ
+X-Received: by 2002:a17:90b:2750:b0:305:5f25:fd30 with SMTP id 98e67ed59e1d1-30823623d65mr7856966a91.4.1744431848001;
+        Fri, 11 Apr 2025 21:24:08 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGh70vguOhIvOgg+D86CUV27Dur3Uhw5gZEQCAuuq9VzOZes/H6uRcl59Q1uDxF8mphAShGSQ==
+X-Received: by 2002:a17:90b:2750:b0:305:5f25:fd30 with SMTP id 98e67ed59e1d1-30823623d65mr7856948a91.4.1744431847627;
+        Fri, 11 Apr 2025 21:24:07 -0700 (PDT)
+Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd11e643sm6829912a91.12.2025.04.11.21.24.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 11 Apr 2025 21:24:07 -0700 (PDT)
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+To: ath12k@lists.infradead.org, P Praneesh <praneesh.p@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20250402182917.2715596-1-praneesh.p@oss.qualcomm.com>
+References: <20250402182917.2715596-1-praneesh.p@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: add rx_info and replace the
+ usage of rx desc
+Message-Id: <174443184681.2972989.9130874472554364249.b4-ty@oss.qualcomm.com>
+Date: Fri, 11 Apr 2025 21:24:06 -0700
 MIME-Version: 1.0
-Content-Type: multipart/signed; boundary="nextPart5875152.DvuYhMxLoT";
- micalg="pgp-sha256"; protocol="application/pgp-signature"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.0
+X-Authority-Analysis: v=2.4 cv=WecMa1hX c=1 sm=1 tr=0 ts=67f9eae9 cx=c_pps a=0uOsjrqzRL749jD1oC5vDA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=1WJ0sSg6dNN4DLLMY2MA:9 a=QEXdDO2ut3YA:10
+ a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-GUID: cpT6VJyJSiJwZ1GzUkybjhiRUxD5pyvu
+X-Proofpoint-ORIG-GUID: cpT6VJyJSiJwZ1GzUkybjhiRUxD5pyvu
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-04-12_01,2025-04-10_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
+ adultscore=0 clxscore=1015 lowpriorityscore=0 phishscore=0 mlxscore=0
+ impostorscore=0 mlxlogscore=433 spamscore=0 malwarescore=0
+ priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504120029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_030923_513732_7F7863FB 
-X-CRM114-Status: GOOD (  38.14  )
+X-CRM114-CacheID: sfid-20250411_212410_918584_C803CCE7 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,157 +120,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
---nextPart5875152.DvuYhMxLoT
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
-From: Oleksandr Natalenko <oleksandr@natalenko.name>
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org
-Date: Fri, 11 Apr 2025 12:09:01 +0200
-Message-ID: <12642200.O9o76ZdvQC@natalenko.name>
-In-Reply-To: <46030c46-a2ca-4d02-ab51-3581f7f3ddfe@lucifer.local>
-MIME-Version: 1.0
 
-Hello.
+On Wed, 02 Apr 2025 23:59:15 +0530, P Praneesh wrote:
+> This series adds rx_info to capture required field from rx descriptor and
+> corruption in rx path.
+> 
+> P Praneesh (2):
+>   wifi: ath12k: add rx_info to capture required field from rx descriptor
+>   wifi: ath12k: replace the usage of rx desc with rx_info
+> 
+> [...]
 
-On p=C3=A1tek 11. dubna 2025 12:05:10, st=C5=99edoevropsk=C3=BD letn=C3=AD =
-=C4=8Das Lorenzo Stoakes wrote:
-> +cc Oleskandr who kindly pointed me at the v1 of this patch (see [0]).
->=20
-> [0]:https://lore.kernel.org/all/20250124093352.481-1-quic_lingbok@quicinc=
-=2Ecom/
->=20
-> On Wed, Feb 26, 2025 at 07:31:18PM +0800, Lingbo Kong wrote:
-> > Currently, when ath12k performs the remove link interface operation, if
-> > there is an ongoing scan operation on the arvif, ath12k may execute the
-> > remove link interface operation multiple times on the same arvif. This
-> > occurs because, during the remove link operation, if a scan operation is
-> > present on the arvif, ath12k may receive a WMI_SCAN_EVENT_COMPLETED eve=
-nt
-> > from the firmware. Upon receiving this event, ath12k will continue to
-> > execute the ath12k_scan_vdev_clean_work() function, performing the remo=
-ve
-> > link interface operation on the same arvif again.
-> >
-> > To address this issue, before executing the remove link interface
-> > operation, ath12k needs to check if there is an ongoing scan operation =
-on
-> > the current arvif. If such an operation exists, it should be aborted.
-> >
-> > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0=
-_SILICONZ-3
-> >
-> > Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
->=20
-> Hey, thanks for this!
->=20
-> Not sure on status of this, has the patch been taken for 6.15? As I don't
-> see it in Linus's tree (not looking _that_ hard though). I don't think it=
-'s
-> even in -next?
+Applied, thanks!
 
-And in addition to Lorenzo's question, my question here is if this v2 could=
- be already made obsolete by 81e4be30544ee7 in v6.15-rc1? Or is it still ne=
-eded even in v6.15-rc1?
+[1/2] wifi: ath12k: add rx_info to capture required field from rx descriptor
+      commit: e88e6e3c9ada84ceed3fa223ce11af94fcaf3ad3
+[2/2] wifi: ath12k: replace the usage of rx desc with rx_info
+      commit: bd00cc7e8a4c1048d14c9a9e9790c582119785fb
 
-Thanks.
-
-> I keep hitting issues with my X870E CARBON wifi onboard motherboard wifi -
-> most recently I saw a null pointer deref in ath12k_mac_remove_link_interf=
-ace().
->=20
-> This occurred when I tried changing the network interface, in fact I had
-> first clicked on 'available networks' in network manager so quite likely a
-> concurrent scan.
->=20
-> I rather stupidly didn't copy/paste the text of it, but you can see the
-> report in screenshot form at [1]. Apologies for shade being case on ath12k
-> driver but you know, frustrations :))
->=20
-> It's difficult for me to test your patch as I am having pretty awful
-> firmware issue with this motherboard - if I powercycle in any way that ge=
-ts
-> interrupted, or especially if a kernel issue arises, then the ath12k modu=
-le
-> will not load on next boot, or at all going forward.
->=20
-> Updating the kernel to, I think, a recent 6.13 (and now 6.14-1 where I
-> observed this issue), got the wifi working again, seemingly randomly.
->=20
-> Usually I have to try to reset the CMOS state, but doing so causes other
-> issues so I generally try to avoid (I have a network workaround involving
-> an ethernet wifi adapater, it's pretty... yeah).
->=20
-> So I assume some non-volatile state gets corrupted somehow, I'm not sure =
-if
-> you had any insights into how I might more sanely reset that?
->=20
-> Anyway regardless thanks for your efforts, if the wifi adapter appears
-> again then I will test this and can give T-b tags if so.
->=20
-> Cheers, Lorenzo
->=20
-> [1]:https://fosstodon.org/@ljs/114318530969496869
->=20
-> > ---
-> > 1.rebase to ath-next
-> >
-> >  drivers/net/wireless/ath/ath12k/mac.c | 5 +++++
-> >  1 file changed, 5 insertions(+)
-> >
-> > diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wirele=
-ss/ath/ath12k/mac.c
-> > index 3e3afdc56fc9..551133483f44 100644
-> > --- a/drivers/net/wireless/ath/ath12k/mac.c
-> > +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> > @@ -9578,6 +9578,11 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80=
-211_hw *hw,
-> >  	if (ahvif->vdev_type !=3D WMI_VDEV_TYPE_MONITOR &&
-> >  	    ar->num_started_vdevs =3D=3D 1 && ar->monitor_vdev_created)
-> >  		ath12k_mac_monitor_stop(ar);
-> > +
-> > +	if (ar->scan.arvif =3D=3D arvif && ar->scan.state =3D=3D ATH12K_SCAN_=
-RUNNING) {
-> > +		ath12k_scan_abort(ar);
-> > +		ar->scan.arvif =3D NULL;
-> > +	}
-> >  }
-> >
-> >  static int
-> >
-> > base-commit: e180a01bf2c4a67db13d70d2d91410a8c6f74be3
-> > --
-> > 2.34.1
-> >
-> >
->=20
-
-
-=2D-=20
-Oleksandr Natalenko, MSE
---nextPart5875152.DvuYhMxLoT
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEZUOOw5ESFLHZZtOKil/iNcg8M0sFAmf46j0ACgkQil/iNcg8
-M0u59w/+JLrQFAOGSFWbC/UhynjmZ86NrK07p98NnY9XEKpAYASb5r1FUfntYW2w
-SIFfVU0koipT/j+sx1YDSpSksqs5aZrpNIw4yqV1HNNMCCoJv0WridzgvAqAegjt
-yVhNuqZ6bqRaMJOhsorCwj2nYO2DF27ZV1vdggQDqYW+HoL9XbTNA47suAwDJaaH
-1Aa3vwvwu1EgqW/T5SLUUX5mWIEvtIIaWazQ/6OJzgGNtNIloAaxvZLfWOk2vQuL
-2U2LdHQPvA7fTjK/kAvHOlMnrQCHbYg+YmwH6z45Lem2tR+VZ62qxXNQI4tou5n4
-kNiGiAk+MZOUC1QH//RQ+WEI11qEoH71O60IlcpeOYe6MWZrA89iynyJr+nFPJGH
-F67S+ffX7ahsBbHcPJjj4Nlc4BgiYvNc51Mcjg9hJ/Kt4B4XqJMSUBpuo8FBeGVW
-BoOXrPZiwFQBlqUD3cizpPmXR5tRBlU6KlXOKoEwyZpkjYuhl3dGFFk7OnULIeA4
-Gr8phhYBQUEEmoAqd74JGpIqj6BE6fYFaE+7ELUqAhiYVf4O5yh7omGYcxNyYmcY
-AC8W9j8Ua8DSO9C+RNGnnLQXd+ZKGtK4CYzIh4hZMlsfHRe4juLsv3hmX9CX9WVL
-5yPyhq3eH3wtA3xom+C+1n+8qkBRHxE3EfS5C3fPHcGpitXTkXs=
-=w6FT
------END PGP SIGNATURE-----
-
---nextPart5875152.DvuYhMxLoT--
-
-
+Best regards,
+-- 
+Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 
 
