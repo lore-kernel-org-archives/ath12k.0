@@ -4,108 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E89F8C369B1
-	for <ath12k@archiver.kernel.org>; Sat, 12 Apr 2025 04:24:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3439C369B4
+	for <ath12k@archiver.kernel.org>; Sat, 12 Apr 2025 04:24:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YXlkgyW/d2uW7tyDlPRx3ZyerxZ0v0AnHxvv95MSB/Q=; b=0aegUqEPz635X1i/9/Pu8iznUs
-	GUzC9ANop6kahq2my4TAdx4NlvoRG4E2mKGoW0Zzh7Kt5Oa4Bin8sw4/Cphw0lDT0v88RmHA9Umw2
-	xUrSq2gpHShG7x4BN1Sdh+2GRX+dgmA8uqtCnrvzAqqv+Y5QrX3ApqXUxFs8CFVxvD+jlTUT/EAS3
-	XwPZqd24VnvN/rinl2F8c8jBjUhBBFRsB2xcFDVxWBTT5AhyCCrMIvaMKcb3/9t3Qqw6cSb9zFjv5
-	nj0yTOoR7PGHtgc3UQnPe+ZiENx3oIbT+DGZhX1pOZADumwGLohD0JNX/HXZ9l4fvMht0UFMruxrF
-	MXaupTog==;
+	bh=spgQavvN18V0dYsI38aehqIq/Bq+44upIzeuFErbrYs=; b=ofCcq07sytzSvNSZqf9V2OHb2f
+	HypEfUIlk9y4fvQng1IQqgvmkcY/kfGAwvWoartdajQvd4EOLLSNrw9sBJZt5kfp36hoxuXhWMNsP
+	mlGq9D5gu/ribHWIx3uk3+W9Mob+EFgBe6L+cChALDcPInv9ZVss+7dg+9m1isDrYWuUUCjdUnxXo
+	kgxOAxDq94SmsrryHNrBTZIRPebkLi/7zCH4SssSce/fQBPHyeeLWwFgYrR378+2HAnGag0Isa1Ay
+	z8bmNF9UHa7BQOepm/ycBQA4mOyXtMe3y+brFGW8swVbLw+lWOCI7BtLA+VBUwyDzMBcyJQyx6XlC
+	xvENKhCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3SPf-0000000FPMh-1nlr
+	id 1u3SPg-0000000FPNy-1ZdW
 	for ath12k@archiver.kernel.org;
-	Sat, 12 Apr 2025 04:24:15 +0000
+	Sat, 12 Apr 2025 04:24:16 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3SPc-0000000FPKs-1A6S
+	id 1u3SPd-0000000FPLO-017G
 	for ath12k@lists.infradead.org;
-	Sat, 12 Apr 2025 04:24:13 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53C3keA8019993
+	Sat, 12 Apr 2025 04:24:14 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53C4C2TG030256
 	for <ath12k@lists.infradead.org>; Sat, 12 Apr 2025 04:24:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	YXlkgyW/d2uW7tyDlPRx3ZyerxZ0v0AnHxvv95MSB/Q=; b=B3BMefDaBtOa3kPq
-	5wPtiApLL+SBIdfvKFAgzXXsRDygxJmxg9k7AT0sWHibfRZpVBgM/+dM/ayZWKOM
-	Y6G74/fx+rz8v7Z2RoqYlsH/UD3OC3NBgtJ/TG7lgFDDoIKHjWc+57tMvLlYK/K7
-	rhEzpuRYDO8pwFZCNnxfxK+KUdk0xlPWJIKFWOWXibakIb/eGhjYtu1nhs8O8ZoK
-	Dh+CUCQ+Rwj2LGUWkFdKdbLy0uvuv0lhAbKk6U7QeUK6tTJzVvpCU+11SwwdSI16
-	ICthw13sQ20P2q+LhinHab5ob2u2J7FYc/EaTd7JJv3Q4yOSzGGVS2/iEH/vg+eO
-	fwXrHQ==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ygd681u5-1
+	spgQavvN18V0dYsI38aehqIq/Bq+44upIzeuFErbrYs=; b=on7bo2z6YMbf3s6k
+	l5Uiy2UIoOA115bzRo6/qKQ+0eSWtmgWPJBjWTiIw1VyvvgJRhOSktTJGJZBq13d
+	p84xLN0JAdBIyRH/NfGoykWGWAr85pVtXpSVSrCmlylR0ggUXa9Jt2+XSJ1j1ntO
+	T9DbtKRKkuAevPXOn/RNPX8d5NToHADWALgEMxypwKc7UAjTLZy0Yess2rL0Eb2B
+	squMoMvJm314hPZPTSygj1avUXvtWVxajxyzUT8C7XvPplUK6nA+xehv05EOwQHQ
+	mdEqXbOYPkzD3GeUuMC5A6KRTFMqHxg0D/hrmFc5fgXEt0kvG9vRZO4B+hkEzVA/
+	TWMdCg==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ygxjr0f6-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Sat, 12 Apr 2025 04:24:11 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-30828f9af10so1904290a91.3
-        for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 21:24:11 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Sat, 12 Apr 2025 04:24:12 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ff6af1e264so3924932a91.3
+        for <ath12k@lists.infradead.org>; Fri, 11 Apr 2025 21:24:12 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744431851; x=1745036651;
+        d=1e100.net; s=20230601; t=1744431852; x=1745036652;
         h=content-transfer-encoding:mime-version:date:message-id:subject
          :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=YXlkgyW/d2uW7tyDlPRx3ZyerxZ0v0AnHxvv95MSB/Q=;
-        b=FJS2xNrQELvqVjKpz7XP2BnaIsiximbe/8lPQ04osTGWSFqwf4Y39kxd5HwFpu6ei8
-         Eges0UloCRBtFuH8YbGqydunp3cMQ7KYZgtoQvac6KPVDMngFS0XcYptZtkET3+hVxPO
-         y09mPmoWO92QmX/a99qBhSPkEzb9WWCQW1o2GDTeYoGTcxONmet5Z+kCu+xofhK5zNt3
-         5TggKiFx3/rMU6eUIAk5IEG6ypx1gJIVzfd8qg3t+9456hNfsDNxzIugPEIDK5ut/1/q
-         Imqg5MHW0CV0UsfGDC1Tyj+5uuaIO76uO5PZT/r9r7WtOT8YgkZDOYPcWb8oXCF0kaS/
-         9W5g==
-X-Gm-Message-State: AOJu0Yw9a2IWrK+tBVAFZlqiJ6z2iuEM9KFPdEY7OGUb8es09aMWLq2/
-	C864w9oERbXiivWpHlD7FhU3CxFi8mWidgfUeZb6GoW4MMDtEHOAlNjvP/HMKzkXqP8n3eL7oxF
-	3lzRtno45LFKjsC/av0GCYttUylstR0FNKxM3QYOMr6wmGei2uIytqdymTmn/0O5JIZou
-X-Gm-Gg: ASbGncvyI2gJSMDNgci9MtOkiWFEnvnG67Y5Kj6zF5BFE+uBXys9l8XxSR4LTXWTT29
-	Ms8ZbWqLlKSG0tfKKmw1ajG2ZX59oO+B8eyNWtQQUGVwqqNMMPsmYOuIuKR3N3nrmCJlrFpm8Y/
-	FvNaogpuSmQ9yh5lHAL0JGFedkQc/uS3C+DCyb68BCfQoHavU39YmrsyYowuSONSVIZlwUiNfjW
-	4jLz13j0H3WN9QoXcok3Ivy/wJXvWRHrmJc1ABWlJXq5h+5zcyulP6TTpOmiroI3QFjcEiGPby4
-	8pxx8jlklfjM16F4510QIGfDgvZOSOZN68eb11lGLFcU7DjO
-X-Received: by 2002:a17:90b:2dd2:b0:2ff:72f8:3708 with SMTP id 98e67ed59e1d1-3082365241fmr9190629a91.17.1744431850652;
-        Fri, 11 Apr 2025 21:24:10 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHCLK3oAOFk6ELgexdBpH+9HMWc7+kC5/VbiDQAM5BHeLyNGhNwJ8k3OSvOeEtleNqFL9FmoQ==
-X-Received: by 2002:a17:90b:2dd2:b0:2ff:72f8:3708 with SMTP id 98e67ed59e1d1-3082365241fmr9190596a91.17.1744431850190;
-        Fri, 11 Apr 2025 21:24:10 -0700 (PDT)
+        bh=spgQavvN18V0dYsI38aehqIq/Bq+44upIzeuFErbrYs=;
+        b=JILnJtYJbK4gRxlJbG3ELFCsZGvXsjfc2HV8FpB2GaJFSNLO/2BA5BSyGrWLnjuAK+
+         JMO7DcnPcAAsNbLK9N+Z6Kw3O+BD42CryXVoTS27P1QOKU2Ckb2FDSOFI7hNsIqWF189
+         Q0OOd9FUAUIF/F4mDBqJvKKGVXnJR4CYJhxi0r4LxqVJFGs2iCa/KiMDD1kF9+gariBm
+         PmdKdRItJYu6eCVzPwR51CTmcdL+dbvPlTG/bvtWq113FnUEkEziGKH62Mf/6oRZID2I
+         Xi26oiU6W27swafLHSB9iI7+2AtE+1Ezfcy8c0Y25bP2IlTqDYwSqL/uag8goOB82a88
+         ubAQ==
+X-Gm-Message-State: AOJu0YzWzltmjAzrr6YXYDGiCeCDVAFtssYXLg3phwj1gTrjW6ihLwQ0
+	YtlOwXK/5C5d/3n1bJVuuKiIKFnA3rP75kY2ZgDCSlcxRKY3FHKllpZTuePyhzDrjOMOVyS1hOR
+	fsiSIpwS2qH+Xe4iRYTwVYZ+tk9LYiGMnQl3pIeohNW3w0q8ADwnfkaY0Qrt6
+X-Gm-Gg: ASbGncvfWBVolMYQkEt/c8FKKLJJhGP1zxpOjDPIvT3+keLNc3hIaSH8g3wdiuzCcKf
+	iMFMpUQaVSgj6cZ1O9Pklb1K7MoaxbNnp1SX4aHtvVaPd/Km6LxYD9PgBGMfN+R2yDT4VmruRDT
+	lO+2zUAVTQ+KzeAeG3eneOE3H7KaXtRnZ+POXcFx37ioE8crynd+iFHCnjClx7VjKbAPz1VzRYz
+	dC+7Pq9JTIIiuWJfQ+Nmz2s8ILK04SL1VCCkGIHY3/xKbqGbEvIxB6U8dCl4t3iBoq2pW6WNSb6
+	NCHOApX66SSP4jLxl1WujnUvMNEMOTQr88UHR6n7mWYQIxn2
+X-Received: by 2002:a17:90b:5246:b0:2ef:2f49:7d7f with SMTP id 98e67ed59e1d1-3082364973fmr9752787a91.18.1744431851557;
+        Fri, 11 Apr 2025 21:24:11 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG+ExO9uJV9mn3ySOMN0Z/YJ1z38Veu0tv7RzvCmngbt+TKVU6ZXe1nGADd4G0S/sz8JqyvHQ==
+X-Received: by 2002:a17:90b:5246:b0:2ef:2f49:7d7f with SMTP id 98e67ed59e1d1-3082364973fmr9752750a91.18.1744431851042;
+        Fri, 11 Apr 2025 21:24:11 -0700 (PDT)
 Received: from [169.254.0.1] (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd11e643sm6829912a91.12.2025.04.11.21.24.09
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd11e643sm6829912a91.12.2025.04.11.21.24.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 11 Apr 2025 21:24:09 -0700 (PDT)
+        Fri, 11 Apr 2025 21:24:10 -0700 (PDT)
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 To: ath12k@lists.infradead.org,
         Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20250403082207.3323938-1-aaradhana.sahu@oss.qualcomm.com>
-References: <20250403082207.3323938-1-aaradhana.sahu@oss.qualcomm.com>
-Subject: Re: [PATCH ath-next 0/2] wifi: ath12k: Handle of key_cipher in MLD
- AP
-Message-Id: <174443184946.2972989.13905647697868648381.b4-ty@oss.qualcomm.com>
-Date: Fri, 11 Apr 2025 21:24:09 -0700
+Cc: linux-wireless@vger.kernel.org, Thomas Wu <quic_wthomas@quicinc.com>
+In-Reply-To: <20250409053830.4039467-1-aaradhana.sahu@oss.qualcomm.com>
+References: <20250409053830.4039467-1-aaradhana.sahu@oss.qualcomm.com>
+Subject: Re: [PATCH ath-next v2] wifi: ath12k: Disable broadcast TWT
+ feature in HE MAC capabilities
+Message-Id: <174443185037.2972989.6697785457699340604.b4-ty@oss.qualcomm.com>
+Date: Fri, 11 Apr 2025 21:24:10 -0700
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.0
-X-Proofpoint-ORIG-GUID: yz6gf-Tf3mdt74aOFQIdIpHFYXDCIUQq
-X-Proofpoint-GUID: yz6gf-Tf3mdt74aOFQIdIpHFYXDCIUQq
-X-Authority-Analysis: v=2.4 cv=ANaQCy7k c=1 sm=1 tr=0 ts=67f9eaeb cx=c_pps a=0uOsjrqzRL749jD1oC5vDA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=FZy-mCtp5WpF6d4t7MsA:9 a=QEXdDO2ut3YA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Authority-Analysis: v=2.4 cv=WecMa1hX c=1 sm=1 tr=0 ts=67f9eaec cx=c_pps a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=uXoGulTGKWFQ220xZdsA:9 a=QEXdDO2ut3YA:10
+ a=uKXjsCUrEbL0IQVhDsJ9:22
+X-Proofpoint-GUID: WwaLOFINiMipMfqJ9-TihE9-NagCzefJ
+X-Proofpoint-ORIG-GUID: WwaLOFINiMipMfqJ9-TihE9-NagCzefJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-12_01,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- mlxlogscore=647 suspectscore=0 clxscore=1015 lowpriorityscore=0
- phishscore=0 impostorscore=0 spamscore=0 priorityscore=1501 malwarescore=0
- bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
+ adultscore=0 clxscore=1015 lowpriorityscore=0 phishscore=0 mlxscore=0
+ impostorscore=0 mlxlogscore=734 spamscore=0 malwarescore=0
+ priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504120029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_212412_322793_71022BDF 
-X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-CacheID: sfid-20250411_212413_049746_626B7B6F 
+X-CRM114-Status: UNSURE (   7.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -122,24 +122,20 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 03 Apr 2025 13:52:05 +0530, Aaradhana Sahu wrote:
-> This patch series ensures the correct handling of key_cipher, which
-> represents the group cipher of the MLD AP.
+On Wed, 09 Apr 2025 11:08:30 +0530, Aaradhana Sahu wrote:
+> Currently, the AP does not support the broadcast target wake time (TWT)
+> feature. Therefore, disable the broadcast TWT feature in the HE MAC
+> capabilities element field.
 > 
-> Aaradhana Sahu (2):
->   wifi: ath12k: Resolve multicast packet drop by populating key_cipher
->     in ath12k_install_key()
->   wifi: ath12k: Introduce check against zero for ahvif->key_cipher in
->     ath12k_mac_op_tx()
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
+> 
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] wifi: ath12k: Resolve multicast packet drop by populating key_cipher in ath12k_install_key()
-      commit: d61c0b3c63462d17e63e5a2b4815e0f1ad17f57e
-[2/2] wifi: ath12k: Introduce check against zero for ahvif->key_cipher in ath12k_mac_op_tx()
-      commit: 4f4b067dd61695e860f97cae6ed6589a3a7dfba3
+[1/1] wifi: ath12k: Disable broadcast TWT feature in HE MAC capabilities
+      commit: cfe8af4b5626354f20794f1d54c9b9069638ccd3
 
 Best regards,
 -- 
