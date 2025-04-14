@@ -4,94 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7346C3601E
-	for <ath12k@archiver.kernel.org>; Mon, 14 Apr 2025 03:27:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F15D8C369B2
+	for <ath12k@archiver.kernel.org>; Mon, 14 Apr 2025 08:26:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4ONQCFMae/pApUf3GZW+r3qJt0YKMEaQZxHza69xaxQ=; b=RhT4ahChfDuKD1AXvGvUSdkZHq
-	Ypg6G3nNlWZXlTUyKcG+8XcZkfE3ETrGe/EHFH/zVYcGCBkH7D4YyyG35rcGZA7ADJQN8XGIOVeCD
-	5LGiUFZDDwCKNq5CBQRXyDIVISW+GPxjy40Tvptk5CyYSPgTIU1xm0hHLjjpe0PQ3FGRqMf4pDiT6
-	2mhfUgKzjdMxSpwTBp9zQA0Sa13JQsnUj+JIBd6uvaTypJ31/ZU2NWGVjTHVPESAlZ0raDiGuWRGC
-	1+3/qNurxyGLLIrkLYKBZzEnpT6Yg+qhLWeithQtNRaJqjQd1hxhzW8M9vGd1RAmu/uY3JmGyOXc6
-	/3UHTHxA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:Subject:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jrc9Yy1PzgCFjX+NHqHe/gPvbxLEMwfRYZpvhZ/FS0A=; b=HFPLvICOiVAAMK
+	aQeHnG8K1iHpTPdn77Ins57hRhUTQHwpQR0TZUwde95tN23YcxPuSr8F3yN6Ny8gx2F9ijRaZL+U6
+	EZ30vMBtLZ5Q7BkVFCHI1X9zly2dOYFWRpD7zK6o9yO/bFTron4mwKI4lL95jFX0FIkLYlQijhuo7
+	2rQvcqoDmSXp4ecWgyGUeMeKUHHLmK9DjlM8axm/adDSgVzS3Bv7mP4Wt29xw9kyOgsgb/Y1iKZPC
+	7L8lZw79mZ8kZShwx3n/0TlwaujyHu0cxlV5l1xzufrYctaEJvdzonc4/Qo7s4DzG1+SoxevOi/ly
+	DZYG90GrQh0s08GjdkCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4AUJ-00000000Y9M-2oiw
+	id 1u4F91-000000014W9-2XAP
 	for ath12k@archiver.kernel.org;
-	Mon, 14 Apr 2025 03:27:59 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Mon, 14 Apr 2025 08:26:19 +0000
+Received: from galois.linutronix.de ([193.142.43.55])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4AUG-00000000Y8s-0baL
-	for ath12k@lists.infradead.org;
-	Mon, 14 Apr 2025 03:27:57 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53DMj1ti001012;
-	Mon, 14 Apr 2025 03:27:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4ONQCFMae/pApUf3GZW+r3qJt0YKMEaQZxHza69xaxQ=; b=lt+hCrCatHJdl/Sf
-	tepCpkQwKAUnU0agjvnpk874Blng57dCidpEunsqLE+2u+Y/Y7fz+vt5a/GoYkT+
-	Ec7rPtngGCRVfgpyluU6OE8cQg24p+gI8Us10hqXwgrSvPpcSh8FKuo3UwtULKe1
-	PuQj3Q0yxQOooU6UsNH6H+ufem0zpiiylNx8h3ULkpO4pa2CcYPpM6yV1TD9E3ER
-	zkpf5g1gUVLi9XA+oQLLlFzgcAbbxeI23l6v1VU+AQO4vx7drnwjMSvyqTZuI/Rc
-	LDTN+BA+dHFzJx2NSP5F2PiWlokpxZKLGIew001ThcHHmXpxWbqSXiGv8cRoCsgF
-	1h6gQQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yfgjb6m6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Apr 2025 03:27:53 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53E3RqsT009181
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Apr 2025 03:27:52 GMT
-Received: from [10.253.34.219] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 13 Apr
- 2025 20:27:50 -0700
-Message-ID: <21ef1321-b079-4749-a675-dcc814f9373d@quicinc.com>
-Date: Mon, 14 Apr 2025 11:27:47 +0800
+	id 1u4F8y-000000014TP-2bI5;
+	Mon, 14 Apr 2025 08:26:17 +0000
+From: =?utf-8?q?Thomas_Wei=C3=9Fschuh?= <thomas.weissschuh@linutronix.de>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linutronix.de;
+	s=2020; t=1744619173;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=jrc9Yy1PzgCFjX+NHqHe/gPvbxLEMwfRYZpvhZ/FS0A=;
+	b=yk3WhpFdZmssQZ72lhB1qTZyyfyRxUMGb509WQ1XvYBshseihS05xwBznxHhRaTSuvl2/r
+	EV94ezp88ycSGWp7iOyTpqrj5t+3wGtxAiaM9vEX47RmKk5P48wS0XMSxxBOdg/4jJqAHD
+	iHBl8abWHKqitQ+lC99k0cGXVhaRkjhGljSMANJ78YhV8KbI3RqgpbXkvKd92G5a9GW2nS
+	tIBmRwss1Fuv6LjD9Y7xqZj8VGTlEtB6qHwYn6Tlye1uu66CfvxVl6aULoNDAziN+j01pg
+	XkPcQInqq/spXCdJv9D13D3LtBdTdeebkK0YlMI2cFrQF3INyTTmpgSTQMASeg==
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=linutronix.de;
+	s=2020e; t=1744619173;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=jrc9Yy1PzgCFjX+NHqHe/gPvbxLEMwfRYZpvhZ/FS0A=;
+	b=ZUTVDh8TwrC2G20/dfmdoIzBLROL3SA9B70xNJai5NOfSK/ZlnlfAJyXQYz/eR/yLSEC1D
+	jaRVzn4m4tTolrBQ==
+Subject: [PATCH net-next 0/7] net: Don't use %pK through printk
+Date: Mon, 14 Apr 2025 10:26:01 +0200
+Message-Id: <20250414-restricted-pointers-net-v1-0-12af0ce46cdd@linutronix.de>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2] wifi: ath12k: Abort scan before removing link
- interface to prevent duplicate deletion
-To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
-CC: <ath12k@lists.infradead.org>, <linux-wireless@vger.kernel.org>,
-        "Oleksandr
- Natalenko" <oleksandr@natalenko.name>,
-        Lingbo Kong <quic_lingbok@quicinc.com>
-References: <20250226113118.7626-1-quic_lingbok@quicinc.com>
- <46030c46-a2ca-4d02-ab51-3581f7f3ddfe@lucifer.local>
-Content-Language: en-US
-From: Lingbo Kong <quic_lingbok@quicinc.com>
-In-Reply-To: <46030c46-a2ca-4d02-ab51-3581f7f3ddfe@lucifer.local>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 8bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: X1WARF3bSuo10ZZRdNX6240nqpyDpOmd
-X-Proofpoint-ORIG-GUID: X1WARF3bSuo10ZZRdNX6240nqpyDpOmd
-X-Authority-Analysis: v=2.4 cv=Cve/cm4D c=1 sm=1 tr=0 ts=67fc80b9 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=qYKNfHejAAAA:8
- a=4WRb8wXiXRrubVGSIagA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=xXeQd-R7dKE4HXh-qqqZ:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-14_01,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 clxscore=1011
- malwarescore=0 lowpriorityscore=0 bulkscore=0 spamscore=0 phishscore=0
- suspectscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0
- priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504140024
+X-B4-Tracking: v=1; b=H4sIAJnG/GcC/x2MQQqDUAwFryJZN/C1CqVXKV3Iz2ubTZQkFEG8u
+ 79dDszMTgFXBN27nRxfDV2sQX/pqH5me4NVGtNQhqmMZWRHpGtNCK+LWsKDDcnzrYpIuWKSnlq
+ 9Ol66/c8P+gmGLel5HCeLK549cwAAAA==
+X-Change-ID: 20250404-restricted-pointers-net-a8cddd03e5d1
+To: Jeff Johnson <jjohnson@kernel.org>, 
+ Loic Poulain <loic.poulain@linaro.org>, 
+ Brian Norris <briannorris@chromium.org>, 
+ Francesco Dolcini <francesco@dolcini.it>, 
+ Tony Nguyen <anthony.l.nguyen@intel.com>, 
+ Przemek Kitszel <przemyslaw.kitszel@intel.com>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Saeed Mahameed <saeedm@nvidia.com>, Leon Romanovsky <leon@kernel.org>, 
+ Tariq Toukan <tariqt@nvidia.com>
+Cc: ath10k@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+ wcn36xx@lists.infradead.org, linux-wireless@vger.kernel.org, 
+ intel-wired-lan@lists.osuosl.org, netdev@vger.kernel.org, 
+ linux-rdma@vger.kernel.org, 
+ =?utf-8?q?Thomas_Wei=C3=9Fschuh?= <thomas.weissschuh@linutronix.de>
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1744619172; l=2519;
+ i=thomas.weissschuh@linutronix.de; s=20240209; h=from:subject:message-id;
+ bh=BORzOQMujEQoEZ1/2bV+p8+YHtYSGgUIbSUnDvITbw0=;
+ b=nygQqQzI+POOkmd4HUPMbkxcLkdDeVe3FLi1mMvmt2xMpHokr9kq0+dmMGqAVzLbgbGctLw7P
+ 7VQYQJVB0MyCdd69OEvNE7wWyCtsM12NiJoSol6jf5d2f/1FWxdOYwI
+X-Developer-Key: i=thomas.weissschuh@linutronix.de; a=ed25519;
+ pk=pfvxvpFUDJV2h2nY0FidLUml22uGLSjByFbM6aqQQws=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250413_202756_328768_3D750306 
-X-CRM114-Status: GOOD (  36.94  )
+X-CRM114-CacheID: sfid-20250414_012616_796900_D9268B7B 
+X-CRM114-Status: UNSURE (   7.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,112 +99,56 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+In the past %pK was preferable to %p as it would not leak raw pointer
+values into the kernel log.
+Since commit ad67b74d2469 ("printk: hash addresses printed with %p")
+the regular %p has been improved to avoid this issue.
+Furthermore, restricted pointers ("%pK") were never meant to be used
+through printk(). They can still unintentionally leak raw pointers or
+acquire sleeping looks in atomic contexts.
 
+Switch to the regular pointer formatting which is safer and
+easier to reason about.
+There are still a few users of %pK left, but these use it through seq_file,
+for which its usage is safe.
 
-On 2025/4/11 18:05, Lorenzo Stoakes wrote:
-> +cc Oleskandr who kindly pointed me at the v1 of this patch (see [0]).
-> 
-> [0]:https://lore.kernel.org/all/20250124093352.481-1-quic_lingbok@quicinc.com/
-> 
-> On Wed, Feb 26, 2025 at 07:31:18PM +0800, Lingbo Kong wrote:
->> Currently, when ath12k performs the remove link interface operation, if
->> there is an ongoing scan operation on the arvif, ath12k may execute the
->> remove link interface operation multiple times on the same arvif. This
->> occurs because, during the remove link operation, if a scan operation is
->> present on the arvif, ath12k may receive a WMI_SCAN_EVENT_COMPLETED event
->> from the firmware. Upon receiving this event, ath12k will continue to
->> execute the ath12k_scan_vdev_clean_work() function, performing the remove
->> link interface operation on the same arvif again.
->>
->> To address this issue, before executing the remove link interface
->> operation, ath12k needs to check if there is an ongoing scan operation on
->> the current arvif. If such an operation exists, it should be aborted.
->>
->> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
->>
->> Signed-off-by: Lingbo Kong <quic_lingbok@quicinc.com>
-> 
-> Hey, thanks for this!
-> 
-> Not sure on status of this, has the patch been taken for 6.15? As I don't
-> see it in Linus's tree (not looking _that_ hard though). I don't think it's
-> even in -next?
-> 
-> I keep hitting issues with my X870E CARBON wifi onboard motherboard wifi -
-> most recently I saw a null pointer deref in ath12k_mac_remove_link_interface().
-> 
-> This occurred when I tried changing the network interface, in fact I had
-> first clicked on 'available networks' in network manager so quite likely a
-> concurrent scan.
-> 
-> I rather stupidly didn't copy/paste the text of it, but you can see the
-> report in screenshot form at [1]. Apologies for shade being case on ath12k
-> driver but you know, frustrations :))
-> 
-> It's difficult for me to test your patch as I am having pretty awful
-> firmware issue with this motherboard - if I powercycle in any way that gets
-> interrupted, or especially if a kernel issue arises, then the ath12k module
-> will not load on next boot, or at all going forward.
-> 
-> Updating the kernel to, I think, a recent 6.13 (and now 6.14-1 where I
-> observed this issue), got the wifi working again, seemingly randomly.
-> 
-> Usually I have to try to reset the CMOS state, but doing so causes other
-> issues so I generally try to avoid (I have a network workaround involving
-> an ethernet wifi adapater, it's pretty... yeah).
-> 
-> So I assume some non-volatile state gets corrupted somehow, I'm not sure if
-> you had any insights into how I might more sanely reset that?
-> 
-> Anyway regardless thanks for your efforts, if the wifi adapter appears
-> again then I will test this and can give T-b tags if so.
-> 
-> Cheers, Lorenzo
-> 
-> [1]:https://fosstodon.org/@ljs/114318530969496869
-> 
+Signed-off-by: Thomas Weißschuh <thomas.weissschuh@linutronix.de>
+---
+Thomas Weißschuh (7):
+      wifi: ath10k: Don't use %pK through printk
+      wifi: ath11k: Don't use %pK through printk
+      wifi: ath12k: Don't use %pK through printk
+      wifi: wcn36xx: Don't use %pK through printk
+      wifi: mwifiex: Don't use %pK through printk
+      ice: Don't use %pK through printk or tracepoints
+      net/mlx5: Don't use %pK through tracepoints
 
-hi, lorenzo,
-sry for delay response.😊
-as for as i know, this patch hasn't been accepted so far.
-for your description, you find the ath12k_mac_remove_link_interface() 
-have a null pointer deref, i think maybe there is a concurrent scan 
-operation.
+ drivers/net/ethernet/intel/ice/ice_main.c          |  2 +-
+ drivers/net/ethernet/intel/ice/ice_trace.h         | 10 +++++-----
+ .../mlx5/core/sf/dev/diag/dev_tracepoint.h         |  2 +-
+ drivers/net/wireless/ath/ath10k/ahb.c              |  2 +-
+ drivers/net/wireless/ath/ath10k/bmi.c              |  6 +++---
+ drivers/net/wireless/ath/ath10k/ce.c               |  4 ++--
+ drivers/net/wireless/ath/ath10k/core.c             |  4 ++--
+ drivers/net/wireless/ath/ath10k/htc.c              |  6 +++---
+ drivers/net/wireless/ath/ath10k/htt_rx.c           |  2 +-
+ drivers/net/wireless/ath/ath10k/mac.c              | 22 +++++++++++-----------
+ drivers/net/wireless/ath/ath10k/pci.c              |  2 +-
+ drivers/net/wireless/ath/ath10k/testmode.c         |  4 ++--
+ drivers/net/wireless/ath/ath10k/txrx.c             |  2 +-
+ drivers/net/wireless/ath/ath10k/usb.c              |  4 ++--
+ drivers/net/wireless/ath/ath10k/wmi.c              |  4 ++--
+ drivers/net/wireless/ath/ath11k/testmode.c         |  2 +-
+ drivers/net/wireless/ath/ath12k/testmode.c         |  4 ++--
+ drivers/net/wireless/ath/wcn36xx/testmode.c        |  2 +-
+ drivers/net/wireless/marvell/mwifiex/pcie.c        |  2 +-
+ 19 files changed, 43 insertions(+), 43 deletions(-)
+---
+base-commit: 8ffd015db85fea3e15a77027fda6c02ced4d2444
+change-id: 20250404-restricted-pointers-net-a8cddd03e5d1
 
-i have a suggestion, you can apply this patch and observe if there is 
-still a crash.
+Best regards,
+-- 
+Thomas Weißschuh <thomas.weissschuh@linutronix.de>
 
-can you offer a detailed crash dump?
-
-/lingbo
-
-
->> ---
->> 1.rebase to ath-next
->>
->>   drivers/net/wireless/ath/ath12k/mac.c | 5 +++++
->>   1 file changed, 5 insertions(+)
->>
->> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
->> index 3e3afdc56fc9..551133483f44 100644
->> --- a/drivers/net/wireless/ath/ath12k/mac.c
->> +++ b/drivers/net/wireless/ath/ath12k/mac.c
->> @@ -9578,6 +9578,11 @@ ath12k_mac_op_unassign_vif_chanctx(struct ieee80211_hw *hw,
->>   	if (ahvif->vdev_type != WMI_VDEV_TYPE_MONITOR &&
->>   	    ar->num_started_vdevs == 1 && ar->monitor_vdev_created)
->>   		ath12k_mac_monitor_stop(ar);
->> +
->> +	if (ar->scan.arvif == arvif && ar->scan.state == ATH12K_SCAN_RUNNING) {
->> +		ath12k_scan_abort(ar);
->> +		ar->scan.arvif = NULL;
->> +	}
->>   }
->>
->>   static int
->>
->> base-commit: e180a01bf2c4a67db13d70d2d91410a8c6f74be3
->> --
->> 2.34.1
->>
->>
 
