@@ -4,108 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5448C369AB
-	for <ath12k@archiver.kernel.org>; Tue, 15 Apr 2025 18:00:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AA39C369AB
+	for <ath12k@archiver.kernel.org>; Tue, 15 Apr 2025 18:08:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+l2W10y/QDYItzPC6zPbHSlvs3nstb66aVexkh8d8Vs=; b=PGppAmzHWkLLqQKqVTZV5VR+d8
-	u4lvTLTVFxnJlXy7nn8KiDPII+7gfch7tUGWobPaQ60M6obk8WAEtT+ZUL1ikDcfftzJUS89F/T7r
-	xzXhNJI+gQJe1Kz0MW2QTj6VxzHJ1DqxwrhC/QY4i6Fwu9+63i+dd+ARsQCxSG5ppOkAW1I0KDPZW
-	3ep+3wIQbrkxliJpbwCb5jerjfDvabhHtmg9kzdXMxk/NkFP1yRxd0RSbLu7uIdBebNg7jN5vYSWl
-	iPPjuZa5v9YwmBiDSaoWZEp/OWl75g9hruRIsFiiba2V2q2dwEfJaS8E997hDko2gftWXBT/lAT7E
-	jk2uXDnQ==;
+	bh=WmopbRSr1BMuUIsQ83eBA4mll4c1c++hcr0bvXHjetQ=; b=4zfdLshmjIpM+KiaCR5MbZfAmR
+	mWp6Uw0v4D12ThyrY8gz3ALOBtG5KzpukfxR9Ub4eoEILdawBUwk5n7DYn+5FUKOVzW205f8/Tl3M
+	Og84y3yfLmT2sYXwOuN/XAQoh6ktKDJ1hW2AAEW6lVyC0G893PNSFLRzm0N+UNT8kWXDLzaWAU4kf
+	Snihad8ZDASbfGUgrH3uhsAn5zvAbDIlj5vIQ7ct0v0RNnGagosaUCRfApRrOso3AQE4xp1WUGk92
+	M2KlMu8lQvZ5A2SvyZbXgOqBtNyghaESPSCC9dcnN8zBMrJN+Gh+nDFEAbAd0uiKNd7tYY0/Ksur4
+	W18b3guA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4kaR-00000006epw-1kdA;
-	Tue, 15 Apr 2025 18:00:43 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u4khd-00000006frQ-3CQF;
+	Tue, 15 Apr 2025 18:08:09 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4kIW-00000006bp4-0vQx
+	id 1u4kMY-00000006cSa-1rHY
 	for ath12k@lists.infradead.org;
-	Tue, 15 Apr 2025 17:42:13 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53F8tDM5025102
-	for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 17:42:11 GMT
+	Tue, 15 Apr 2025 17:46:23 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53F8tBrL019542
+	for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 17:46:21 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+l2W10y/QDYItzPC6zPbHSlvs3nstb66aVexkh8d8Vs=; b=Pq4YL8EALfw2uEzt
-	wQAQe8an5esLGDdKqSLTxs2xVTmOL0VJ0cRtLDGAm5nNQk1g+zHjF96f4jOBZmJu
-	nTbTwRIfMst1yz8AC+6a3I7xmEt9ivvW6f+WHUUWfo17yYsbr6bJo9Qbsd1TadU3
-	qzpqB1GL/i7lTMn+xq5+SPIaj3RqZgOs0peXiHj43W0Yv8Via14igsEfLmXnsvis
-	vCyLXD+fsnSeD9X5vqc9br38I0/cBONKO9SjUoyQNn8HutozzuNrpIKUdssPWaUP
-	BD3cclKC2I9jVVloV+HsAzDdNdh/mgFQjkRSfOtbNM6tFl4pWbLGDmrviojF2OiS
-	pLITFQ==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yg8wgyrh-1
+	WmopbRSr1BMuUIsQ83eBA4mll4c1c++hcr0bvXHjetQ=; b=jdDb9Nkf6fFC3J74
+	NcIGVY7vNeCe+ybOpFp2aZMJQmQpPnjKpbFtmrbtK26kkDLzsvWuTSEuW74+hN5d
+	fDGniTgCENRzWYwXuyVOHvcm5PuNfkXEgrhhxlPEzWJEm2SDHLxQDM/7XN+6cQmb
+	+K8wZnCK7Md/H6bdkoI47/gQHnhzBEnRRKOXDFHZyLfS4+KFhQgSL46AxDdLJo8k
+	zE44PdJoHqp9NKMK2TILh1oPas91z1q+2YOsmYs0rbDSxUDYz8nkpZ6mW4WfHHoc
+	tXUEkV6zrWmGilP/kob/fs3Uiu4VrC0qh0r4l+MTFXkIJsVGTS4YYWoCuglzN0XT
+	JRo1/Q==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yhfd0x0j-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 17:42:11 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-306b51e30ffso4998548a91.1
-        for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 10:42:11 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 17:46:21 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-22aa75e6653so44839945ad.0
+        for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 10:46:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744738929; x=1745343729;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=1e100.net; s=20230601; t=1744739180; x=1745343980;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+l2W10y/QDYItzPC6zPbHSlvs3nstb66aVexkh8d8Vs=;
-        b=PFjgfls2E6tQql404CFdlYmauZpRLxlHxWi65PzM5XGZKVlIRDSPpUIs6AlAeY6WnU
-         z0j82Sv+DzL05Vg12Nk3tuaFE4edGGbv8YA78UTXAu2JjiGt951RLBv2rfPcd0Ny9Mnq
-         zz8zXrjyp7xS9fc8S8Vw9M2IHJX6+s3vvXzJOUgi4HTiDasSY3cxQW0sIPkZnCP2DtzK
-         6uA+G4Aa4KmXdEQqzafGRgfNosuARRkdP4zHjVL6ovDYWw4+TP/zLh/iE6KoyaB+jZWR
-         Ml5eLk/QZCA+DFJNMibTLZ4g/Ps2Bg2w9dmQDQ33zcVjP2eXSWt4yV4FV1VGDe5Cn9Me
-         zuZQ==
-X-Gm-Message-State: AOJu0YwsE6zCbkRd+r2UNDuqvz1tsb9+kfWTZL8TpmJ//ElpUz6Mkjcd
-	tx3silr4tI9BYv/quZWiwx+0Mt74SomTXV+VswUP7J+7HSEO1T1X/V80lOhrUv08HkgynvVnoGf
-	MkaKgS5iZxRfXBMcJ+YREtUGh8zCftUEIYp6Xl8WLqN14KQnAlBpxK3/ScqAECy+6e0tO
-X-Gm-Gg: ASbGncsG5obgo3lUVk0I1/NxO0rRH3SDRnD4GQ9mteFzd5Jsp5ElXm04cPk4gh2xL2i
-	QPweTxFSru69NCaVu8+Afihf2yovebdniM0lICcgT+y58p/zLjrFS+pqU6tJrP6uaNkmJ2ZSo74
-	4cwJ9t1v2f/Mg56QA2bItDqiCWJvJOkTP0bqWd050jvBdJ4pOM5c7G39rol2vin9HdrwEmr+gt7
-	XXCqnRif/63wfco7Ur+nwlTpw7GWJNUvVCX98+qI5CH3HJVNUDSTbvt0fEtY+ZKJzHXCvvd7Hzm
-	c3OJHp5J07AHnYCrG8vPSiDifUMTrj49LVQ6FODYRBc8H7F7+G8pA5rDkxMbXHC4kX8=
-X-Received: by 2002:a17:90b:5188:b0:2fe:80cb:ac05 with SMTP id 98e67ed59e1d1-3085ef076a0mr38632a91.9.1744738929389;
-        Tue, 15 Apr 2025 10:42:09 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHxjbyZltG3a17wFXsez/DYC3bIiRyst3wDQCr7ODZkdqhmIHOOPryE5s12rmU9eaY92ehfZQ==
-X-Received: by 2002:a17:90b:5188:b0:2fe:80cb:ac05 with SMTP id 98e67ed59e1d1-3085ef076a0mr38588a91.9.1744738929015;
-        Tue, 15 Apr 2025 10:42:09 -0700 (PDT)
+        bh=WmopbRSr1BMuUIsQ83eBA4mll4c1c++hcr0bvXHjetQ=;
+        b=lYBDATI8afkxeNwRff7NBqC5MPbVmI4SFMnHkF6nfgt+SIU/WTjOfk5b+SmrINd3D0
+         DFGXF4ueCsSWdL57MeAznUP+2DXBAOaA+sW7SyydH07js8E47ybJ1h79G4wqOkSu0DO+
+         xSYtv7g2MwALcsWtWsYsgxLzye5l+xP6dLcVUNp1A02u23pzZVZWl/TMXuzioCDF0P53
+         jrGEAWwkHzHRGA2L2JT83O0W4O80u4HI4sMK+M9tYNaAombSfbgoD6N8PrYTzdT0krc9
+         Ns9J53/v4FoWRdK/1XOEry3uFzud5/qAgK8mEas+BDmQqyJsa2xUi0SPE5Z08TrT9ylW
+         S7LA==
+X-Forwarded-Encrypted: i=1; AJvYcCWu2J1SawMbMfEcSoOSuLbwL491UNV2FtDmklumPn4FHrdnIPbYvatrTA2LXvBzSteSE6A4eLY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxQmAcOVWZwEK2nCsYhWb0yK7n9lTbWuFooPRTHAXntK8SId2af
+	FKT8tdtKVmbnUSNVK5mxeHB1GtxaxqwGnUQby8BgpMxie//Ypb4B5yhv+BCNQD2dFsp1JTgu9PD
+	D4/MUa7mWetaaOgPf4fKC3jYut8GYc+serC8IMpGTluGt/N/CUZXirBsveKZm
+X-Gm-Gg: ASbGncvd3dkfXn83PFTgYv0l+Dp21iMu+7PvLUXBbqJVEFRad6N7GPhplZb+GfcGwzH
+	oE1FKIA1TMBYoJGhd9k9/lqNPSo2XYjuv0S1lSm5oKNwWwkguKt7LasCXu/slfOOFqU8iwKM6pK
+	9cVVGiiPqHfFpcR6He3Pf/UPQHcmIDZ0W64pd57tE90tnRl+W77sJ7o5WnaONRz6+GsyxpBswRV
+	FYH58z4p4YnOudZKktxApTbDOcoc3pANwojA+TlRKeMvEO6FBkg0TCFzqbUY56NAAEteh1HUEST
+	J1LwUwPBdKtmDk4otUznZZ0qbxBWtQ0FjPRjPNzi6tOvPhn7j5AIUtjEzwc3aV6U7V4=
+X-Received: by 2002:a17:902:ce89:b0:223:44c5:4eb8 with SMTP id d9443c01a7336-22c31ace41amr122635ad.32.1744739180372;
+        Tue, 15 Apr 2025 10:46:20 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFpxgKBEeHRzhsR+/KI+ZeJc2xPeAIkHTjIeWtXWs3CpMsBYr+ieCwWVlDOHbfXlup3IoaA3A==
+X-Received: by 2002:a17:902:ce89:b0:223:44c5:4eb8 with SMTP id d9443c01a7336-22c31ace41amr122115ad.32.1744739179859;
+        Tue, 15 Apr 2025 10:46:19 -0700 (PDT)
 Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306df08f826sm13443504a91.29.2025.04.15.10.42.08
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22ac7cb6825sm120476665ad.193.2025.04.15.10.46.19
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 15 Apr 2025 10:42:08 -0700 (PDT)
-Message-ID: <d25ca9c0-64cf-4edd-97f7-d82a71e32eb0@oss.qualcomm.com>
-Date: Tue, 15 Apr 2025 10:42:07 -0700
+        Tue, 15 Apr 2025 10:46:19 -0700 (PDT)
+Message-ID: <c8236051-4341-4d49-a6d8-283320aff2f6@oss.qualcomm.com>
+Date: Tue, 15 Apr 2025 10:46:18 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v2 0/2] wifi: ath12k: handle scan vdev
- consistently
-To: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-wireless@vger.kernel.org
-References: <20250411-fix_scan_vdev_handling-v2-0-b6740896c144@oss.qualcomm.com>
-Content-Language: en-US
+Subject: Re: [PATCH V12 0/9] wifi: ath12k: add MU-MIMO and 160 MHz bandwidth
+ support
+To: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+        ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+References: <20250408010132.3699967-1-quic_pradeepc@quicinc.com>
 From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-In-Reply-To: <20250411-fix_scan_vdev_handling-v2-0-b6740896c144@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20250408010132.3699967-1-quic_pradeepc@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Authority-Analysis: v=2.4 cv=E9TNpbdl c=1 sm=1 tr=0 ts=67fe9a73 cx=c_pps a=vVfyC5vLCtgYJKYeQD43oA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=tjBKq9sULpQLctw1ybUA:9 a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-ORIG-GUID: E0Q3Rc8Lj7f2K94N7X32G0rdcsj7K--4
-X-Proofpoint-GUID: E0Q3Rc8Lj7f2K94N7X32G0rdcsj7K--4
+X-Authority-Analysis: v=2.4 cv=CfUI5Krl c=1 sm=1 tr=0 ts=67fe9b6d cx=c_pps a=cmESyDAEBpBGqyK7t0alAg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=fskyjysVZrdRFQ4nWXgA:9 a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-GUID: CmU3Av1m3DMz3mHAOC52IQ365dOuCLQ0
+X-Proofpoint-ORIG-GUID: CmU3Av1m3DMz3mHAOC52IQ365dOuCLQ0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-15_07,2025-04-15_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- mlxscore=0 bulkscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
- suspectscore=0 mlxlogscore=999 spamscore=0 priorityscore=1501
- impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ bulkscore=0 malwarescore=0 impostorscore=0 spamscore=0 phishscore=0
+ lowpriorityscore=0 suspectscore=0 mlxlogscore=999 mlxscore=0 clxscore=1015
+ adultscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504150124
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250415_104212_388225_723494A6 
-X-CRM114-Status: GOOD (  15.85  )
+X-CRM114-CacheID: sfid-20250415_104622_492051_02F1CD9D 
+X-CRM114-Status: GOOD (  19.69  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,46 +120,101 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/10/2025 8:16 PM, Aditya Kumar Singh wrote:
-> This series of patches addresses the handling of scan links in the ath12k
-> driver to improve consistency and functionality. The changes ensure that
-> link ID 15 is correctly used for scan operations across both ML and non-ML
-> interfaces. Additionally, the patches prevent scan failures by fetching
-> link_conf only when the link ID is valid and setting appropriate default
-> values for scan vdevs.
+On 4/7/2025 6:01 PM, Pradeep Kumar Chitrapu wrote:
+> Add support for
+> 1. enabling MU-MIMO in HE and EHT modes from hardware
+> 2. setting fixed HE rate/GI/LTF
+> 3. 160 MHz bandwidth in HE mode
+> 4. extended NSS bandwidth support
 > 
-> Currently, no issues have been observed; these changes are intended as a
-> cleanup and to ensure proper handling. For split-mac these changes are
-> pre-req change.
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0.1-00029-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 > 
-> ---
-> Changes in v2:
-> - CCed linux-wireless list as well.
-> - No other changes.
+> changes in v12:
+>  - rebase
 > 
-> ---
-> Aditya Kumar Singh (2):
->       wifi: ath12k: handle scan link during vdev create
->       wifi: ath12k: Use scan link ID 15 for all scan operations
+> changes in v11:
+>  patch 1/9:
+>   - fix return values in ath12k_mac_set_he_txbf_conf() and
+>     ath12k_mac_vif_recalc_sta_he_txbf()
+>  patch 6/9:
+>   - fix missing he_mcs initialization in ath12k_mac_init_arvif()
 > 
->  drivers/net/wireless/ath/ath12k/mac.c | 55 ++++++++++++++++-------------------
->  1 file changed, 25 insertions(+), 30 deletions(-)
-> ---
-> base-commit: 1a7000fb8348e04ab486513d6ebd4b6074a94be2
-> change-id: 20250402-fix_scan_vdev_handling-ef5be452b949
+> changes in v10:
+>  patch 6/9:
+>   - use ath12k_ahsta_to_sta()
+>   - fix rcu_dereference warning in ath12k_mac_set_bitrate_mask_iter()
+>   - change return type for ath12k_mac_validate_fixed_rate_settings()
+>   - improve readability by adhering to nl80211 definitions of GI
+>     NL80211_TXRATE_DEFAULT_GI. Introduce ath12k_mac_nlgi_to_wmigi()
+>     for conversion.
+>  patch 7/9:
+>   - do not change default MODE_11AC_VHT160 in
+>     ath12k_mac_get_phymode_vht() as it breaks clients which do not
+>     set VHT_CAP_SUPP_CHAN_WIDTH_160MHZ.
+>  patch 8/9:
+>   - Use IEEE80211_VHT_CAP_EXT_NSS_BW_MASK along with
+>     IEEE80211_VHT_CAP_SUPP_CHAN_WIDTH_160MHZ for determining VHT160
+>     phymode.
 > 
+> changes in v9: rebase on top of master branch with mlo changes
+>  patch 1/9 and 2/9:
+>   - fetch link_conf using ath12k_mac_get_link_bss_conf()
+>     instead of arvif->vif->bss_conf before mlo
+>  patch 6/9
+>   - fetch mcs/nss values from sta->link[] instead of sta->deflink
+>   - fix spelling of 'incompatibility'
+>  patch 8/9
+>   - replace sta->deflink.addr with arsta->addr in
+>     ath12k_peer_assoc_h_vht
+>  patch 9/9
+>   - replace sta->deflink.rx_nss with link_sta->rx_nss
+> 
+> changes in v8:
+>  - rebase and resolve KASAN warnings reported by Jeff in v7, in patch 6/9.
+> 
+> Pradeep Kumar Chitrapu (9):
+>   wifi: ath12k: push HE MU-MIMO params to hardware
+>   wifi: ath12k: push EHT MU-MIMO params to hardware
+>   wifi: ath12k: move HE MCS mapper to a separate function
+>   wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
+>   wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
+>   wifi: ath12k: add support for setting fixed HE rate/GI/LTF
+>   wifi: ath12k: clean up 80P80 support
+>   wifi: ath12k: add support for 160 MHz bandwidth
+>   wifi: ath12k: add extended NSS bandwidth support for 160 MHz
+> 
+>  drivers/net/wireless/ath/ath12k/core.h |    2 +
+>  drivers/net/wireless/ath/ath12k/mac.c  | 1141 ++++++++++++++++++++----
+>  drivers/net/wireless/ath/ath12k/mac.h  |   17 +
+>  drivers/net/wireless/ath/ath12k/wmi.c  |   13 +-
+>  drivers/net/wireless/ath/ath12k/wmi.h  |  107 ++-
+>  5 files changed, 1058 insertions(+), 222 deletions(-)
+> 
+> 
+> base-commit: ac17b1211841c98a9b4c2900ba2a7f457c80cf90
 
-This now needs to be rebased...
+Sorry, this needs to be rebased again:
 
-Applying: wifi: ath12k: handle scan link during vdev create
-Applying: wifi: ath12k: Use scan link ID 15 for all scan operations
+Applying: wifi: ath12k: push HE MU-MIMO params to hardware
+Applying: wifi: ath12k: push EHT MU-MIMO params to hardware
+Applying: wifi: ath12k: move HE MCS mapper to a separate function
+Applying: wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
+Applying: wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
+Applying: wifi: ath12k: add support for setting fixed HE rate/GI/LTF
+Applying: wifi: ath12k: clean up 80P80 support
+Applying: wifi: ath12k: add support for 160 MHz bandwidth
 Using index info to reconstruct a base tree...
+M       drivers/net/wireless/ath/ath12k/core.h
 M       drivers/net/wireless/ath/ath12k/mac.c
+M       drivers/net/wireless/ath/ath12k/wmi.c
 Falling back to patching base and 3-way merge...
+Auto-merging drivers/net/wireless/ath/ath12k/wmi.c
 Auto-merging drivers/net/wireless/ath/ath12k/mac.c
 CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/mac.c
+Auto-merging drivers/net/wireless/ath/ath12k/core.h
 Recorded preimage for 'drivers/net/wireless/ath/ath12k/mac.c'
 error: Failed to merge in the changes.
-Patch failed at 0002 wifi: ath12k: Use scan link ID 15 for all scan operations
+Patch failed at 0008 wifi: ath12k: add support for 160 MHz bandwidth
 
 
