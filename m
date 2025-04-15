@@ -4,90 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09635C369C1
-	for <ath12k@archiver.kernel.org>; Tue, 15 Apr 2025 18:08:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59DBBC369AB
+	for <ath12k@archiver.kernel.org>; Tue, 15 Apr 2025 18:45:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KNyvxgaFjdluaSNtWy3XPc5pO7h2GV8xLehLv0Dnad8=; b=blUAq97HDOm4x0LjEYVFtQjFE3
-	BwB+IuCma1kohWd4V3mg3fcDoTUQ5QEXF3wytKq5I6csaGDMkbAvPiitWy0eabMMZd+BQWwbVgeOb
-	3agt1+fS1OC/uVkExRJypYimZdFJo+UXri1g1cyaTjgx5/3xToFjxC46RD2n/xWcDqKXdnNudTr/K
-	e0ko/ZaLjxI9oh2wcO6g2dTW/751oeNVToe6mTiAeBZP1hJKc9/88Z9bsaZcrK+Ar7KfZPI0KS4UQ
-	OxAvTVEN7A/9COL7GsM7ZcXbOPPtiSddADC9E1UK7z8UFMw/h90yvoZE4aDGKHN0MrNyWrrAdMMzq
-	vg6NQaZg==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:
+	To:From:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=AnG8RaDQG0mNElO4Ji4G4ZEUY33FUuDgfLM344hdeNI=; b=P6UmlWgZg1/JWv4WtUciW41KzX
+	JhvUwrVhMyhdqD6ej7FBXJFzwfhVB5JFhj9TCT40nuRttNKivSI1l0vq0629Em9VZWXFr65eUp/mt
+	o8yOFzK6SV6O78h0XqjbFZshAWTpKEa1raTaVQqSibnSA3RrCiUO9hQfmgobEFTMd1z1cowp/rpmN
+	kDv13nXwXUMZhvRy17/ovmFxavCrPNA5fo5HDXbiW5mrjXLaVmJ5+XCHaURq/FobHG1K+67kbdnyM
+	R0M5dfAwJp7cf5kzrSWOh/wMbOSydWrZubvuc8GZieUvMGTtbtU9Lcd4n3ik1Z+EngNzja0PoPkpB
+	2nEa7SIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4khe-00000006fs3-3Io1;
-	Tue, 15 Apr 2025 18:08:10 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u4lI4-00000006l97-0QLH;
+	Tue, 15 Apr 2025 18:45:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4kYk-00000006eVL-2pGb
+	id 1u4lDb-00000006kQS-3OCg
 	for ath12k@lists.infradead.org;
-	Tue, 15 Apr 2025 17:59:00 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53F8tEeW019568;
-	Tue, 15 Apr 2025 17:58:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	KNyvxgaFjdluaSNtWy3XPc5pO7h2GV8xLehLv0Dnad8=; b=Fw3muwjDi1sGI8u0
-	wMC1Mw7i9IPV4YFIAX8qICmmyZDehXoPCkYzVe/NaFLGfQg2J9l5BTyLdrD4pqbY
-	m3zlXrqijFpprvgWMDo1DLCIr88M+2Yu6toHeWvgG9VtwEBkVtFbXfmX4KNNIlWe
-	c3DMzzLoSWJL/CkdByu+Wwa1fjYnbBFL62lpTbmgOyJJlsVJVkGkGJLTpNg4eBVl
-	Jzqu/R9PJCk0mu4vCtEmUcLb3qXY46x7roUHXj9bvNCY4kJl+oqHtr7ZWBKK0x0s
-	PcVUTHyj0eLkkRKiRbaMJ7NSaPEUFRpBhVAHVe0w97HHRHsCkenGZgzLqUFOB9BJ
-	0MQwkQ==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yhfd0xwn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 15 Apr 2025 17:58:57 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53FHwvV6001553
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 15 Apr 2025 17:58:57 GMT
-Received: from [10.227.108.41] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 15 Apr
- 2025 10:58:56 -0700
-Message-ID: <fbd9558b-b07c-421c-a745-d6afbcffdc50@quicinc.com>
-Date: Tue, 15 Apr 2025 10:58:55 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V12 0/9] wifi: ath12k: add MU-MIMO and 160 MHz bandwidth
- support
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
-References: <20250408010132.3699967-1-quic_pradeepc@quicinc.com>
- <c8236051-4341-4d49-a6d8-283320aff2f6@oss.qualcomm.com>
-Content-Language: en-US
-From: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
-In-Reply-To: <c8236051-4341-4d49-a6d8-283320aff2f6@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=CfUI5Krl c=1 sm=1 tr=0 ts=67fe9e61 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=k9HlIU_l3moIi_vngRMA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: _eN7SQA148OvsY_uLaTXD5STv5Nw_3F_
-X-Proofpoint-ORIG-GUID: _eN7SQA148OvsY_uLaTXD5STv5Nw_3F_
+	Tue, 15 Apr 2025 18:41:13 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53FIcCf7031767
+	for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 18:41:10 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:date:from:message-id:subject:to; s=qcppdkim1; bh=AnG8RaDQG0mN
+	ElO4Ji4G4ZEUY33FUuDgfLM344hdeNI=; b=SVhmLOP1vhhY6Lcg+Kv/pGGdiWDt
+	aiVgLdzjELNxfIBgxFv1+DJIm+OjJMU/8XqOtQN62Hsmci8fN0eBm9FxRgZBaxtK
+	PST7I/elv7mI2O8nM1VBlE6kppEUdhFZjIlgKR/OPLRUeYXepYNk/WTrUQjfAnc5
+	sb+6zFWp3sd8n2uXm14wI7ccbxNlCiW5zVTMPLseoPyfy3j88J8V6c5krZAnrCUx
+	1qJo2AfMfhEXNwN30JNJZSakr5m3hFRkO4QpwauZnEHoEMaa8FSzmUSYawQ71Bnk
+	/rrBrsfNEhfVWNAiDFCK7wv+cvZQPGc4BplXgDjUCAhndKqMNzc+2q7BeA==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yfs1941q-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 18:41:09 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-227e2faab6dso49466645ad.1
+        for <ath12k@lists.infradead.org>; Tue, 15 Apr 2025 11:41:09 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744742468; x=1745347268;
+        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=AnG8RaDQG0mNElO4Ji4G4ZEUY33FUuDgfLM344hdeNI=;
+        b=Nj7p4U0AgCpVlnF5awG7E42x/z/6l9TiKeZHleQJl+A9Ytuf89iGZzKtl6UzEwW+k5
+         MYw0dBLpKnX2sQVu4pMx1tnzzK293hP21NT5JZMIYH2ANTOZdXKRUQB8n9LkCGXfNiLj
+         R15U8N2gJ/d7RMWnvRHU8nLuhrhpdnQod22kLYnocljWjdw3qccgjwu+efHA4V4q+6/H
+         ACblNGBoYZem8Wc5AZWdN5DYmLmfR67fPVCEJZ/zqr03yXOzlWrPmWa2dQ9gwoEr9+hq
+         CwBhLxiRFeeDzejvRXB6TsK89UxjWaW62regkyCZdSqeR+8fwVJ3dL5zx7bD8ieOXL8B
+         ARZw==
+X-Gm-Message-State: AOJu0YyfrNe0zRuLVLkVIYuJVq0UhXACfYw8u/H+WpgiOPK5xvBMaQR0
+	QifepSbgDfXDd3+AeYqceQzUPnwI96Cm7VahL59NhJmngJOam1p2dUA6fV28pN1i1bsE/rWAjMn
+	zLOxM3g9eQ/2YfvZsAIgkO2+O68NQx3D2IoXttIILDrdlJTWJWPMF4a3w48r6HoOeKWgt
+X-Gm-Gg: ASbGnctJoqfGAHUAXYzZx0vj8DCaFhlPh6bevEsIIQp+88MU6IMtkdl1OtWP5yju93N
+	24khAn0GSk2YU8LK6CL3AU4ugxSV42ZTzziAlp7YpMKmMlOXjvpLX3NKB0O1goSRxIcwdrFiOqo
+	OqaEwAVeYelrRtOLlS/5zf1YJBptlE6h7QkhSeSOv3HnXXJLcY8+OtouQkQ/ic3+wnwawOa1i5p
+	fbsuiAR/oib6XLmuk7wSZOjZiK8/hjBRvngBPOw7NdeNuz1KjA5nOjpmU4rDeUGu6wQ3D/UDeux
+	8z+jYMtk82laWmc4+EMz8xWyp9QXRecS0rAd15J0K11Q/ytKDQgfbD4z9qRsdeL4TsS1Dq/UL+D
+	fvdnAwYNSXlwIpyi1GiRq60H0vkXVrzbeaXGrNPXrBXMZjg==
+X-Received: by 2002:a17:902:e54b:b0:21f:85d0:828 with SMTP id d9443c01a7336-22c31abc38bmr2673065ad.41.1744742468488;
+        Tue, 15 Apr 2025 11:41:08 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGuYSe0Qgken9sfyrJV7IJYJtXKq4CQqbIoZJb7RCpQsz8F5cE1Y/xhyJlz7m0Nt+lSApbi0w==
+X-Received: by 2002:a17:902:e54b:b0:21f:85d0:828 with SMTP id d9443c01a7336-22c31abc38bmr2672745ad.41.1744742468109;
+        Tue, 15 Apr 2025 11:41:08 -0700 (PDT)
+Received: from hu-nithp-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22ac7b6284dsm121760265ad.38.2025.04.15.11.41.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 15 Apr 2025 11:41:07 -0700 (PDT)
+From: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+To: ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org,
+        Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>,
+        Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: Fix the QoS control field offset to build QoS header
+Date: Wed, 16 Apr 2025 00:11:02 +0530
+Message-Id: <20250415184102.2707300-1-nithyanantham.paramasivam@oss.qualcomm.com>
+X-Mailer: git-send-email 2.17.1
+X-Authority-Analysis: v=2.4 cv=P9I6hjAu c=1 sm=1 tr=0 ts=67fea846 cx=c_pps a=cmESyDAEBpBGqyK7t0alAg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=jThI9XsKaXDONeLtTJQA:9 a=1OuFwYUASf3TG4hYMiVC:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: aoCfhxsotns9Dw4CazzOPf2FYWpGSfzq
+X-Proofpoint-ORIG-GUID: aoCfhxsotns9Dw4CazzOPf2FYWpGSfzq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-15_07,2025-04-15_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- bulkscore=0 malwarescore=0 impostorscore=0 spamscore=0 phishscore=0
- lowpriorityscore=0 suspectscore=0 mlxlogscore=910 mlxscore=0 clxscore=1015
- adultscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504150125
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ clxscore=1011 bulkscore=0 impostorscore=0 phishscore=0 suspectscore=0
+ mlxscore=0 spamscore=0 malwarescore=0 adultscore=0 priorityscore=1501
+ mlxlogscore=895 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504150130
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250415_105858_738204_8F7CDC89 
-X-CRM114-Status: UNSURE (   8.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250415_114111_976594_C9481DA2 
+X-CRM114-Status: GOOD (  12.76  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,33 +112,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+From: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
 
->> base-commit: ac17b1211841c98a9b4c2900ba2a7f457c80cf90
-> 
-> Sorry, this needs to be rebased again:
-> 
-> Applying: wifi: ath12k: push HE MU-MIMO params to hardware
-> Applying: wifi: ath12k: push EHT MU-MIMO params to hardware
-> Applying: wifi: ath12k: move HE MCS mapper to a separate function
-> Applying: wifi: ath12k: generate rx and tx mcs maps for supported HE mcs
-> Applying: wifi: ath12k: fix TX and RX MCS rate configurations in HE mode
-> Applying: wifi: ath12k: add support for setting fixed HE rate/GI/LTF
-> Applying: wifi: ath12k: clean up 80P80 support
-> Applying: wifi: ath12k: add support for 160 MHz bandwidth
-> Using index info to reconstruct a base tree...
-> M       drivers/net/wireless/ath/ath12k/core.h
-> M       drivers/net/wireless/ath/ath12k/mac.c
-> M       drivers/net/wireless/ath/ath12k/wmi.c
-> Falling back to patching base and 3-way merge...
-> Auto-merging drivers/net/wireless/ath/ath12k/wmi.c
-> Auto-merging drivers/net/wireless/ath/ath12k/mac.c
-> CONFLICT (content): Merge conflict in drivers/net/wireless/ath/ath12k/mac.c
-> Auto-merging drivers/net/wireless/ath/ath12k/core.h
-> Recorded preimage for 'drivers/net/wireless/ath/ath12k/mac.c'
-> error: Failed to merge in the changes.
-> Patch failed at 0008 wifi: ath12k: add support for 160 MHz bandwidth
-> 
-Sure Jeff..Let me rebase and post v13
-Thanks
-Pradeep
+Currently, in the mac80211 layer, received EAPOL packets are dropped
+when the HT control field is present in the QoS header. This issue
+arises due to an incorrect QoS control field offset used to build
+the QoS header in the MSDU data, leading to a corrupted header in the
+mac80211 layer. This issue also applies to other frames that contain
+the QoS control field, such as QoS data or Null frames. To resolve
+this, use ieee80211_get_qos_ctl() to obtain the correct QoS control
+offset from the MSDU data. Additionally, ensure the QoS control header
+is copied in little-endian format within the MSDU data.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Signed-off-by: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
+Signed-off-by: Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>
+---
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 96785d60d671..93f93639270e 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -2135,7 +2135,7 @@ static void ath12k_get_dot11_hdr_from_rx_desc(struct ath12k *ar,
+ 	struct ath12k_base *ab = ar->ab;
+ 	size_t hdr_len, crypto_len;
+ 	struct ieee80211_hdr hdr;
+-	u16 qos_ctl;
++	__le16 qos_ctl;
+ 	u8 *crypto_hdr, mesh_ctrl;
+ 
+ 	ath12k_dp_rx_desc_get_dot11_hdr(ab, rx_desc, &hdr);
+@@ -2156,13 +2156,13 @@ static void ath12k_get_dot11_hdr_from_rx_desc(struct ath12k *ar,
+ 
+ 	/* Add QOS header */
+ 	if (ieee80211_is_data_qos(hdr.frame_control)) {
+-		qos_ctl = rxcb->tid;
++		struct ieee80211_hdr *qos_ptr = (struct ieee80211_hdr *)msdu->data;
++
++		qos_ctl = cpu_to_le16(rxcb->tid & IEEE80211_QOS_CTL_TID_MASK);
+ 		if (mesh_ctrl)
+-			qos_ctl |= IEEE80211_QOS_CTL_MESH_CONTROL_PRESENT;
++			qos_ctl |= cpu_to_le16(IEEE80211_QOS_CTL_MESH_CONTROL_PRESENT);
+ 
+-		/* TODO: Add other QoS ctl fields when required */
+-		memcpy(msdu->data + (hdr_len - IEEE80211_QOS_CTL_LEN),
+-		       &qos_ctl, IEEE80211_QOS_CTL_LEN);
++		memcpy(ieee80211_get_qos_ctl(qos_ptr), &qos_ctl, IEEE80211_QOS_CTL_LEN);
+ 	}
+ }
+ 
+
+base-commit: d0bcc5eaaa611aacbffe6b2cc2fb64bfc3bdfcbc
+-- 
+2.17.1
+
 
