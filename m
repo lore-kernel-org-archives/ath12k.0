@@ -4,101 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB71AC369B2
-	for <ath12k@archiver.kernel.org>; Thu, 17 Apr 2025 06:56:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B219DC369B2
+	for <ath12k@archiver.kernel.org>; Thu, 17 Apr 2025 07:40:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:
-	To:From:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=y1GQHy6cqMBQhYP1koW6prJaZyjnNx0mkx1JtvKBy0I=; b=43GCHNM1FFvGd2S9tmyUK8Nqrb
-	gJg8KVK7dhbiNL1JILITenK7IfgPW5reiNVQ+YDhRMUq1syDGbuFxO/ofye8IJ7bJv3bPwgPPDBZE
-	YF/sz4DJU+8dl3CGnMWHLHhrdFbQCiueY2zVtFfumk+PqJxiYmqelX9Zr0YIXeaDIlgVqzxbJsU5C
-	XNsu13mRzQH/ha0fuGqZT25SuK6K3x+K31AYoWRiQM8AWK+NyDDyhcKAHeMUPoM0uHcmTl1ngPTLv
-	p0ezfb/37AfG5639aAAGIv/STgLMhKqC1CpZjD1BaAupssUSRELOYdlvbvQvyI0kKr6FtU0sYKP5r
-	yV9b6rtg==;
+	bh=65XFmNl0+5TE6vrkiKattQnKjAy2pyJzTPUJO9VT1g0=; b=jUfB+L7Kb1Iq+jHML3F1FNZq6L
+	KDeP6Ir+f4aeNCrxWTwQcpDhAcHnsgFmaqJh2Nm8MMeeZzg4QIe/GF+u++DnCgp7HOVNwcAvVDpab
+	B0AJN+Mfmu+6MnOVbX6O1JwbSyFtXDhVhHwckhUOjuTzgAQrIFqBi3qjHz6f7+yYxMYXlruDl9KoB
+	aCaemKTkNUoC4rnbAMz96w6jsM9c9gAjJJm5Ok30tJeww4cSZO7eJAqTptxy2nEXUDbdvZWtj8NaL
+	8Q0ydlGUPI4n05+Z+MPH8otk4zarqJ73u+DwT4aYnMjirYjz6BLDxls+RUtA4daOId6nP/a3vV9VF
+	mZRIKu4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5JAV-0000000ByeS-2MHp;
-	Thu, 17 Apr 2025 06:56:15 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u5Jr4-0000000C8mO-1xiW;
+	Thu, 17 Apr 2025 07:40:14 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5J7D-0000000BxmR-09We
+	id 1u5Jr2-0000000C8lt-2SWG
 	for ath12k@lists.infradead.org;
-	Thu, 17 Apr 2025 06:52:53 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53H5l33L022767
-	for <ath12k@lists.infradead.org>; Thu, 17 Apr 2025 06:52:49 GMT
+	Thu, 17 Apr 2025 07:40:14 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53H5l6YN009473
+	for <ath12k@lists.infradead.org>; Thu, 17 Apr 2025 07:40:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:date:from:message-id:subject:to; s=qcppdkim1; bh=y1GQHy6cqMBQ
-	hYP1koW6prJaZyjnNx0mkx1JtvKBy0I=; b=Kwn42MhWBxFMkX3PDzJ+qmap+tO0
-	Zm9IJZ43DdHvNF8UD0hJYFPDzfxMOqEi1v4820CpnVxBAzQvnJ1foABiw6EIi63q
-	YP1pqX3cBDOc6e6hN2KwGYXWDNmAheLVI5vLFyrKhDDqs5f7bTz7bQMEuzi1C9lE
-	mO/KFkN1Y0SKkziO+qMoDiOYK2LZ7r9xAoWoEdZJ2BU+xnSv4j0LqbQloAq93qRe
-	p7pg8PDQBPU/xgNpB+/Rzv+7gQgbi5cH55xjTdXuWdwu3ngo02CXCLsXB/ifDW6w
-	NKowe7OoqpRhb/wv+nUkxAAtIn5x07P48+CwdUa9/nQqCss4ax4CyY4XWA==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ygj9dx33-1
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=65XFmNl0+5TE6vrkiKattQnKjAy2pyJzTPU
+	JO9VT1g0=; b=Ptvq3IpKN+ybx5Y0Qx4w+3ITEbYM0mNzRkv+Cg5I7r2wBKe1JQe
+	GprrKN3HdrEBAjCLiNCrnlsnn7a8NkQ/C4dPOiZnDMyjxtxmy1tnb6M29HW7V4yI
+	VqTl9L6lNx3FIDyZx2+laKIzaguxpmK5JB/cavWGCWyES2GuVVfSHVQ9vJL+rhCb
+	fQwkKj0eyqAnG0lMCRRL/3ihjdjJyg97Yft2ni5gcf7VkHh7lRnP2m3huCTMB0RF
+	2jG7L4kL3jLIawoxHbTRQb8bmFs8XtulqqRQwlCSj6PqAMoeDgsU52WFo+raQZ7c
+	YQnOoqe0t7AWQE9EW5ZzK+uUxKMwYXCbiwQ==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4628rvbb8p-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Thu, 17 Apr 2025 06:52:49 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-af9564001cbso296081a12.3
-        for <ath12k@lists.infradead.org>; Wed, 16 Apr 2025 23:52:49 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Thu, 17 Apr 2025 07:40:10 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ff798e8c3bso457389a91.2
+        for <ath12k@lists.infradead.org>; Thu, 17 Apr 2025 00:40:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744872768; x=1745477568;
-        h=message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=y1GQHy6cqMBQhYP1koW6prJaZyjnNx0mkx1JtvKBy0I=;
-        b=I/eyfSN9aa0vCktSQe2O+LK+4ZQhOwZvDM9Bykr3TCpBEe2aw7H5tBxUFCFwv1liwT
-         IDhkd9/HkfjHP62QDCvilTWjCXqXZljAjCu0r8LnHzlA8PCNincfFjFTabYKwm8yxDZd
-         d0akfwTe3425zlMu8ShVFvRTfeiPyx5YCwaaY+ht8j8BIcQBkmh1jqfhCaUbKSJNjI+w
-         LkzgZ3fZxg5w7yKqPGzmE9s8gBUnqMeNggZ1l6vtyeLCM+O3GpI7ortoOpB3xR0qwhp1
-         oZgv7Y2MVhYQcp6AYWfja9fOJyu8NAxPj03tqrqIqiD6Qhjy7WvgTVjXl1/bLXOkSI4i
-         En1Q==
-X-Gm-Message-State: AOJu0YxW9Abmx2DRchif+KvKzyGLROe/lFGI6KjQxKL2NmTH0k/kuFxh
-	MmVPu+8vkT/r38dhSgnmBSLor45V0adfCMXKBT3MWOa+GeE2E3ROASr5f5s5XJhf1WFgJxXnXqj
-	QVX+HCsOcXHNfuxMt4X322eLL13aXYPIlNLDZmpDMfm6wZXhQm4fC9Rl82k80JYHncltB
-X-Gm-Gg: ASbGnctaJvhckXujh1H6jSeS6aAzfsEiw9drdfRMAe6uXUfDrJ1jmgvtyvLxmzpGU4C
-	Nogb2/Cm2ez2N1tYuzK3NYDrJdVNsMnFNsILMksXlPxmIOV6pjuchAYDFs/mIRfyOfaE44uGv9K
-	Bwo5FQEQ2OALgjanz87EEiNwGi965JKsAayV37ejYDLBk3qHuxFhw7P47jobiuIBiiNo+Fqg/bL
-	PhDqMPMAiAOV7A8A6xSKpm+xNrL9Ie4nImMhYTBIauatptSLAuUtKsSfWTjJekrp67u5gbqn+4V
-	zsXKm0y9oJo2zP0JtxNBKfT2/yadP5Nktw2hJXDDMxXE5hsG0mjgFmWsgsBl/z9jUTmxBwRiE83
-	CCjAAWbEBabsGz2K17hya0i05L8FgJqPCz7XErM5xBDWXaA==
-X-Received: by 2002:a17:902:c40f:b0:223:66a1:4503 with SMTP id d9443c01a7336-22c358ead7cmr60265695ad.30.1744872767615;
-        Wed, 16 Apr 2025 23:52:47 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFLt4QsJ2nKuq0fjcgEugFnOrWyESmkX/yGp1OXSXb7VG+MSohudXSATxpF0u28pesxfhNA8Q==
-X-Received: by 2002:a17:902:c40f:b0:223:66a1:4503 with SMTP id d9443c01a7336-22c358ead7cmr60264875ad.30.1744872766054;
-        Wed, 16 Apr 2025 23:52:46 -0700 (PDT)
-Received: from che-siroccolnx03.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22c33ef0fbasm25966145ad.19.2025.04.16.23.52.43
+        d=1e100.net; s=20230601; t=1744875609; x=1745480409;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=65XFmNl0+5TE6vrkiKattQnKjAy2pyJzTPUJO9VT1g0=;
+        b=qCtAka+2cRDrpjoxU9zdJpOyXg+a5CKhIgVHQdZ73xrthMNDLGDWLLsBnGjjswQPnc
+         sasc6SFqPPTm18t3rc0zt4PhIKzDVl0t2g4oH95CHNCYe504gVgKHGt8Tc+MI+5S7SVZ
+         qXyYVXaxXs5QYsx1X1mIj8AbN70B28NAEQ04CkWSi1AUfE4xPwEH1SeU4t6Tlqqqw8qw
+         PZ4mTSu1eT1xJcL71OPOBz+Q1rtlJR8gSaMJTi6sBIVGPQYL15QY5ZQFcnnRvvfzrSu7
+         pxBwh6B4bHtgIRpZEGSO2QOtxlHVhLNkZZrI7ewTCFQPwQ1QHxQXsCAzQqUHkGVXu9sL
+         MFuQ==
+X-Gm-Message-State: AOJu0Yxuw03p0W/9EJsKGGILnWDyuHdGVpQUin8Xt7/2d3P9gzpx++82
+	puzfNyODzL2SLHETs+331VbSSHl8NmRQ3btWFq80bhEaqYvRiYxS/3W2HUq2y2n32UZF3jH9SSs
+	IQacTDEXbPvXxOuKGJe1DdhcdMptH5Ytm9rJiNjl8R3tpJwI9gs1+dXfOBZPIdLs7eXig
+X-Gm-Gg: ASbGncujjxbLReLthap/TrhlWRyv3RmbYj3N/Nl7irTw3Ya1XH83iRrDkDPUGPhsIz8
+	o0m8HfQ3wfbI99Rnyk85chQuwwiIVxo9l34nVcxS8Jhm74R/JsgUBgCCIHUcEkJ8/vT2gNWcYR6
+	rF2JD3EG+lrJognUGuQqruhBDuJzuZJ8XAoFvmtcdsEl0Gcu1DpShrXIrXevE1/nvFNkGiFW9+K
+	Qq6q7UBvAIl2/j7JXqqwYjKbQrhskA/K4NqtM2wMsI1nHYbVFbXxRuf6roXY+QcC6OQxKFzcM2H
+	/f69qsGMYIiO8qm44fcoBbp45e1wmjZU3V2PIqc58xHxJ00+u4y/ofcicpaw8JSt1a6bLB77wOj
+	iPYP5jR787UoCjyEmN2A2/+VtFeu5IhTg/o5FWkaR
+X-Received: by 2002:a17:90b:4c8e:b0:2ff:618c:a1e0 with SMTP id 98e67ed59e1d1-3086417278amr7578672a91.29.1744875609026;
+        Thu, 17 Apr 2025 00:40:09 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGOdf1wbfYO/yn2EL9KtN/ubvo7/KWlE9OB3TZuTll7IOrq8oNRt1/0Ac+u73HWKCZw7DxHeQ==
+X-Received: by 2002:a17:90b:4c8e:b0:2ff:618c:a1e0 with SMTP id 98e67ed59e1d1-3086417278amr7578639a91.29.1744875608587;
+        Thu, 17 Apr 2025 00:40:08 -0700 (PDT)
+Received: from hu-ramess-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-308613b3719sm3290142a91.33.2025.04.17.00.40.06
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 16 Apr 2025 23:52:45 -0700 (PDT)
-From: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
+        Thu, 17 Apr 2025 00:40:08 -0700 (PDT)
+From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 To: ath12k@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org,
-        Dinesh Karthikeyan <quic_dinek@quicinc.com>,
-        Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
-        Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
-Subject: [PATCH ath-next v2] wifi: ath12k: Add support to simulate firmware crash
-Date: Thu, 17 Apr 2025 12:22:37 +0530
-Message-Id: <20250417065237.2507613-1-maharaja.kennadyrajan@oss.qualcomm.com>
-X-Mailer: git-send-email 2.17.1
-X-Proofpoint-ORIG-GUID: I948taoQANre_LbPBvAxGWxt34xAWiJs
-X-Authority-Analysis: v=2.4 cv=PruTbxM3 c=1 sm=1 tr=0 ts=6800a541 cx=c_pps a=rz3CxIlbcmazkYymdCej/Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=639jykY1kkF2cMweqlIA:9 a=bFCP_H2QrGi7Okbo017w:22
+        Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+Subject: [PATCH ath-next] wifi: ath12k: combine channel list for split-phy devices in single-wiphy
+Date: Thu, 17 Apr 2025 13:09:54 +0530
+Message-Id: <20250417073954.632994-1-rameshkumar.sundaram@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-ORIG-GUID: Nv9hTDDlGBSrITsiPer3N27M27xbV1uj
+X-Authority-Analysis: v=2.4 cv=RbSQC0tv c=1 sm=1 tr=0 ts=6800b05a cx=c_pps a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=GRGOd-fCwLhAcA7P59AA:9 a=uKXjsCUrEbL0IQVhDsJ9:22
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: I948taoQANre_LbPBvAxGWxt34xAWiJs
+X-Proofpoint-GUID: Nv9hTDDlGBSrITsiPer3N27M27xbV1uj
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-17_01,2025-04-15_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
- priorityscore=1501 malwarescore=0 adultscore=0 lowpriorityscore=0
- impostorscore=0 clxscore=1015 spamscore=0 mlxscore=0 mlxlogscore=999
- phishscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504170052
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=910
+ suspectscore=0 adultscore=0 impostorscore=0 clxscore=1015 bulkscore=0
+ phishscore=0 priorityscore=1501 spamscore=0 mlxscore=0 lowpriorityscore=0
+ malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504170058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_235251_219936_5DBD116E 
-X-CRM114-Status: GOOD (  18.58  )
+X-CRM114-CacheID: sfid-20250417_004012_635024_37B1D64E 
+X-CRM114-Status: GOOD (  21.92  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,154 +115,263 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Dinesh Karthikeyan <quic_dinek@quicinc.com>
+When two split-phy devices that support overlapping frequency ranges within
+the same band are grouped into an ath12k hardware (HW) setup, they share a
+common wiphy instance. Consequently, the channel list (wiphy->bands[])
+becomes unified across all associated radios (ar).
 
-Add debugfs support to simulate firmware crash to test firmware restart.
+For reference, the devices are:
+2.4 GHz + 5 GHz Low Band
+5 GHz High Band + 6 GHz
 
-Usage:
------
-echo assert > /sys/kernel/debug/ath12k/pci-0000\:58\:00.0/simulate_fw_crash
+The first radio probed within the 5 GHz range (say 5 GHz Low Band) updates
+its sband reference (&ar->mac.sbands[NL80211_BAND_5GHZ]) within
+wiphy->bands[]. However, when the second 5 GHz radio (5 GHz High Band) is
+probed, it replaces the existing wiphy->bands[] entry with its own sub-band
+reference. As a result, wiphy->bands[] always reflects the channel list
+from the most recently probed radio in that band, restricting supported
+channels to those within its specific range for upper-layer.
+
+Fix this by updating the wiphy->bands[] to just enable the channels of
+current radio when there exist a radio which already has set it.
+This will make sure wiphy->bands[] holds reference of first radio which
+got probed in 5 GHz band and subsequent radio just updates the channel list
+in the same address space.
+
+Since same sband memory space is shared between radios of a band, while
+determining the allowed frequency range of radio, its frequency limits
+(ar->freq_range.start_freq, end_freq) should be used.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
-Signed-off-by: Dinesh Karthikeyan <quic_dinek@quicinc.com>
-Signed-off-by: Ramya Gnanasekar <quic_rgnanase@quicinc.com>
-Signed-off-by: Maharaja Kennadyrajan <maharaja.kennadyrajan@oss.qualcomm.com>
+Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 ---
+Depends-on: https://lore.kernel.org/linux-wireless/20250408042128.720263-1-quic_rajson@quicinc.com/
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 93 +++++++++++++++++++++++++--
+ drivers/net/wireless/ath/ath12k/reg.c | 13 ++++
+ drivers/net/wireless/ath/ath12k/wmi.c |  9 ++-
+ 3 files changed, 109 insertions(+), 6 deletions(-)
 
-v2: Jeff gave ACK for v1 patch and later conflict was seen with latest TOT.
-    Hence, rebased this patch on latest TOT.
-
- drivers/net/wireless/ath/ath12k/debugfs.c | 76 +++++++++++++++++++++++
- drivers/net/wireless/ath/ath12k/debugfs.h |  5 ++
- drivers/net/wireless/ath/ath12k/mac.c     |  1 +
- 3 files changed, 82 insertions(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.c b/drivers/net/wireless/ath/ath12k/debugfs.c
-index bab7be9c5a38..1f0983c33885 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.c
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.c
-@@ -33,6 +33,82 @@ static const struct file_operations fops_simulate_radar = {
- 	.open = simple_open
- };
- 
-+static ssize_t ath12k_read_simulate_fw_crash(struct file *file,
-+					     char __user *user_buf,
-+					     size_t count, loff_t *ppos)
-+{
-+	const char buf[] =
-+		"To simulate firmware crash write one of the keywords to this file:\n"
-+		"`assert` - send WMI_FORCE_FW_HANG_CMDID to firmware to cause assert.\n";
-+
-+	return simple_read_from_buffer(user_buf, count, ppos, buf, strlen(buf));
-+}
-+
-+static ssize_t
-+ath12k_write_simulate_fw_crash(struct file *file,
-+			       const char __user *user_buf,
-+			       size_t count, loff_t *ppos)
-+{
-+	struct ath12k_base *ab = file->private_data;
-+	struct ath12k_pdev *pdev;
-+	struct ath12k *ar = NULL;
-+	char buf[32] = {0};
-+	int i, ret;
-+	ssize_t rc;
-+
-+	/* filter partial writes and invalid commands */
-+	if (*ppos != 0 || count >= sizeof(buf) || count == 0)
-+		return -EINVAL;
-+
-+	rc = simple_write_to_buffer(buf, sizeof(buf) - 1, ppos, user_buf, count);
-+	if (rc < 0)
-+		return rc;
-+
-+	/* drop the possible '\n' from the end */
-+	if (buf[*ppos - 1] == '\n')
-+		buf[*ppos - 1] = '\0';
-+
-+	for (i = 0; i < ab->num_radios; i++) {
-+		pdev = &ab->pdevs[i];
-+		ar = pdev->ar;
-+		if (ar)
-+			break;
-+	}
-+
-+	if (!ar)
-+		return -ENETDOWN;
-+
-+	if (!strcmp(buf, "assert")) {
-+		ath12k_info(ab, "simulating firmware assert crash\n");
-+		ret = ath12k_wmi_force_fw_hang_cmd(ar,
-+						   ATH12K_WMI_FW_HANG_ASSERT_TYPE,
-+						   ATH12K_WMI_FW_HANG_DELAY);
-+	} else {
-+		return -EINVAL;
-+	}
-+
-+	if (ret) {
-+		ath12k_warn(ab, "failed to simulate firmware crash: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return count;
-+}
-+
-+static const struct file_operations fops_simulate_fw_crash = {
-+	.read = ath12k_read_simulate_fw_crash,
-+	.write = ath12k_write_simulate_fw_crash,
-+	.open = simple_open,
-+	.owner = THIS_MODULE,
-+	.llseek = default_llseek,
-+};
-+
-+void ath12k_debugfs_pdev_create(struct ath12k_base *ab)
-+{
-+	debugfs_create_file("simulate_fw_crash", 0600, ab->debugfs_soc, ab,
-+			    &fops_simulate_fw_crash);
-+}
-+
- static ssize_t ath12k_write_tpc_stats_type(struct file *file,
- 					   const char __user *user_buf,
- 					   size_t count, loff_t *ppos)
-diff --git a/drivers/net/wireless/ath/ath12k/debugfs.h b/drivers/net/wireless/ath/ath12k/debugfs.h
-index 74a255a27886..ebef7dace344 100644
---- a/drivers/net/wireless/ath/ath12k/debugfs.h
-+++ b/drivers/net/wireless/ath/ath12k/debugfs.h
-@@ -16,6 +16,7 @@ void ath12k_debugfs_fw_stats_process(struct ath12k *ar,
- 				     struct ath12k_fw_stats *stats);
- void ath12k_debugfs_op_vif_add(struct ieee80211_hw *hw,
- 			       struct ieee80211_vif *vif);
-+void ath12k_debugfs_pdev_create(struct ath12k_base *ab);
- 
- static inline bool ath12k_debugfs_is_extd_rx_stats_enabled(struct ath12k *ar)
- {
-@@ -144,6 +145,10 @@ static inline void ath12k_debugfs_op_vif_add(struct ieee80211_hw *hw,
- 					     struct ieee80211_vif *vif)
- {
- }
-+
-+static inline void ath12k_debugfs_pdev_create(struct ath12k_base *ab)
-+{
-+}
- #endif /* CONFIG_ATH12K_DEBUGFS */
- 
- #endif /* _ATH12K_DEBUGFS_H_ */
 diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index dfc803879028..c5b0ddb5ed85 100644
+index 6e4619e5cdf1..4ded4d850025 100644
 --- a/drivers/net/wireless/ath/ath12k/mac.c
 +++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -11976,6 +11976,7 @@ int ath12k_mac_allocate(struct ath12k_hw_group *ag)
- 		if (!ab)
+@@ -4117,8 +4117,9 @@ ath12k_mac_select_scan_device(struct ieee80211_hw *hw,
+ 		band = NL80211_BAND_6GHZ;
+ 
+ 	for_each_ar(ah, ar, i) {
+-		/* TODO 5 GHz low high split changes */
+-		if (ar->mac.sbands[band].channels)
++		if (ar->mac.sbands[band].channels &&
++		    center_freq >= KHZ_TO_MHZ(ar->freq_range.start_freq) &&
++		    center_freq <= KHZ_TO_MHZ(ar->freq_range.end_freq))
+ 			return ar;
+ 	}
+ 
+@@ -10907,6 +10908,32 @@ static u32 ath12k_get_phy_id(struct ath12k *ar, u32 band)
+ 	return 0;
+ }
+ 
++static int ath12k_mac_update_band(struct ath12k *ar,
++				  struct ieee80211_supported_band *orig_band,
++				  struct ieee80211_supported_band *new_band)
++{
++	int i;
++
++	if (!orig_band || !new_band)
++		return -EINVAL;
++
++	if (orig_band->band != new_band->band)
++		return -EINVAL;
++
++	for (i = 0; i < new_band->n_channels; i++) {
++		if (new_band->channels[i].flags & IEEE80211_CHAN_DISABLED)
++			continue;
++		/* An enabled channel in new_band should not be already enabled
++		 * in the orig_band
++		 */
++		if (WARN_ON(!(orig_band->channels[i].flags &
++			      IEEE80211_CHAN_DISABLED)))
++			return -EINVAL;
++		orig_band->channels[i].flags &= ~IEEE80211_CHAN_DISABLED;
++	}
++	return 0;
++}
++
+ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 					   u32 supported_bands,
+ 					   struct ieee80211_supported_band *bands[])
+@@ -10917,6 +10944,7 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 	u32 phy_id, freq_low, freq_high;
+ 	struct ath12k_hw *ah = ar->ah;
+ 	void *channels;
++	int ret;
+ 
+ 	BUILD_BUG_ON((ARRAY_SIZE(ath12k_2ghz_channels) +
+ 		      ARRAY_SIZE(ath12k_5ghz_channels) +
+@@ -10938,7 +10966,6 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 		band->channels = channels;
+ 		band->n_bitrates = ath12k_g_rates_size;
+ 		band->bitrates = ath12k_g_rates;
+-		bands[NL80211_BAND_2GHZ] = band;
+ 
+ 		if (ab->hw_params->single_pdev_only) {
+ 			phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_2GHZ_CAP);
+@@ -10955,6 +10982,22 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 					  reg_cap->high_2ghz_chan);
+ 
+ 		ath12k_mac_update_freq_range(ar, freq_low, freq_high);
++
++		if (!bands[NL80211_BAND_2GHZ]) {
++			bands[NL80211_BAND_2GHZ] = band;
++		} else {
++			/* Split mac in same band under same wiphy */
++			ret = ath12k_mac_update_band(ar, bands[NL80211_BAND_2GHZ], band);
++			if (ret) {
++				kfree(channels);
++				band->channels = NULL;
++				return ret;
++			}
++			ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac pdev %u identified as 2 GHz split mac with start freq %d end freq %d",
++				   ar->pdev->pdev_id,
++				   KHZ_TO_MHZ(ar->freq_range.start_freq),
++				   KHZ_TO_MHZ(ar->freq_range.end_freq));
++		}
+ 	}
+ 
+ 	if (supported_bands & WMI_HOST_WLAN_5GHZ_CAP) {
+@@ -10973,7 +11016,6 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 			band->channels = channels;
+ 			band->n_bitrates = ath12k_a_rates_size;
+ 			band->bitrates = ath12k_a_rates;
+-			bands[NL80211_BAND_6GHZ] = band;
+ 
+ 			freq_low = max(reg_cap->low_5ghz_chan,
+ 				       ab->reg_freq_6ghz.start_freq);
+@@ -10986,6 +11028,26 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 
+ 			ath12k_mac_update_freq_range(ar, freq_low, freq_high);
+ 			ah->use_6ghz_regd = true;
++
++			if (!bands[NL80211_BAND_6GHZ]) {
++				bands[NL80211_BAND_6GHZ] = band;
++			} else {
++				/* Split mac in same band under same wiphy */
++				ret = ath12k_mac_update_band(ar,
++							     bands[NL80211_BAND_6GHZ],
++							     band);
++				if (ret) {
++					kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
++					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
++					kfree(channels);
++					band->channels = NULL;
++					return ret;
++				}
++				ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac pdev %u identified as 6 GHz split mac with start freq %d end freq %d",
++					   ar->pdev->pdev_id,
++					   KHZ_TO_MHZ(ar->freq_range.start_freq),
++					   KHZ_TO_MHZ(ar->freq_range.end_freq));
++			}
+ 		}
+ 
+ 		if (reg_cap->low_5ghz_chan < ATH12K_MIN_6GHZ_FREQ) {
+@@ -11004,7 +11066,6 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 			band->channels = channels;
+ 			band->n_bitrates = ath12k_a_rates_size;
+ 			band->bitrates = ath12k_a_rates;
+-			bands[NL80211_BAND_5GHZ] = band;
+ 
+ 			if (ab->hw_params->single_pdev_only) {
+ 				phy_id = ath12k_get_phy_id(ar, WMI_HOST_WLAN_5GHZ_CAP);
+@@ -11021,6 +11082,28 @@ static int ath12k_mac_setup_channels_rates(struct ath12k *ar,
+ 						  reg_cap->high_5ghz_chan);
+ 
+ 			ath12k_mac_update_freq_range(ar, freq_low, freq_high);
++
++			if (!bands[NL80211_BAND_5GHZ]) {
++				bands[NL80211_BAND_5GHZ] = band;
++			} else {
++				/* Split mac in same band under same wiphy */
++				ret = ath12k_mac_update_band(ar,
++							     bands[NL80211_BAND_5GHZ],
++							     band);
++				if (ret) {
++					kfree(ar->mac.sbands[NL80211_BAND_2GHZ].channels);
++					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
++					kfree(ar->mac.sbands[NL80211_BAND_6GHZ].channels);
++					ar->mac.sbands[NL80211_BAND_2GHZ].channels = NULL;
++					kfree(channels);
++					band->channels = NULL;
++					return ret;
++				}
++				ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac pdev %u identified as 5 GHz split mac with start freq %d end freq %d",
++					   ar->pdev->pdev_id,
++					   KHZ_TO_MHZ(ar->freq_range.start_freq),
++					   KHZ_TO_MHZ(ar->freq_range.end_freq));
++			}
+ 		}
+ 	}
+ 
+diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
+index 9d188e1037a6..63bb47f36554 100644
+--- a/drivers/net/wireless/ath/ath12k/reg.c
++++ b/drivers/net/wireless/ath/ath12k/reg.c
+@@ -158,6 +158,12 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 			if (bands[band]->channels[i].flags &
+ 			    IEEE80211_CHAN_DISABLED)
+ 				continue;
++			/* Skip Channels that are not in current radio's range */
++			if (bands[band]->channels[i].center_freq <
++			    KHZ_TO_MHZ(ar->freq_range.start_freq) ||
++			    bands[band]->channels[i].center_freq >
++			    KHZ_TO_MHZ(ar->freq_range.end_freq))
++				continue;
+ 
+ 			num_channels++;
+ 		}
+@@ -186,6 +192,13 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+ 			if (channel->flags & IEEE80211_CHAN_DISABLED)
+ 				continue;
+ 
++			/* Skip Channels that are not in current radio's range */
++			if (bands[band]->channels[i].center_freq <
++			    KHZ_TO_MHZ(ar->freq_range.start_freq) ||
++			    bands[band]->channels[i].center_freq >
++			    KHZ_TO_MHZ(ar->freq_range.end_freq))
++				continue;
++
+ 			/* TODO: Set to true/false based on some condition? */
+ 			ch->allow_ht = true;
+ 			ch->allow_vht = true;
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index ea303dca38b5..5d6417ffa33f 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -5887,9 +5887,16 @@ static int freq_to_idx(struct ath12k *ar, int freq)
+ 		if (!sband)
  			continue;
  
-+		ath12k_debugfs_pdev_create(ab);
- 		ath12k_mac_set_device_defaults(ab);
- 		total_radio += ab->num_radios;
+-		for (ch = 0; ch < sband->n_channels; ch++, idx++)
++		for (ch = 0; ch < sband->n_channels; ch++, idx++) {
++			if (sband->channels[ch].center_freq <
++			    MHZ_TO_KHZ(ar->freq_range.start_freq) ||
++			    sband->channels[ch].center_freq >
++			    MHZ_TO_KHZ(ar->freq_range.end_freq))
++				continue;
++
+ 			if (sband->channels[ch].center_freq == freq)
+ 				goto exit;
++		}
  	}
+ 
+ exit:
 
-base-commit: 176f3009ae598d0523b267db319fe16f69577231
+base-commit: d0bcc5eaaa611aacbffe6b2cc2fb64bfc3bdfcbc
+prerequisite-patch-id: f369472e458667be205aede5c0c935958ef1ba82
+prerequisite-patch-id: 917c05e38624bc1d080e1d16b662abfd907b1e3e
+prerequisite-patch-id: c7f80d90d8a8f97c39b26240ca593e968cdcad76
 -- 
-2.17.1
+2.34.1
 
 
