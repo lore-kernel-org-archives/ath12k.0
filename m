@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51553C369CA
-	for <ath12k@archiver.kernel.org>; Thu, 17 Apr 2025 04:57:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2212C369B2
+	for <ath12k@archiver.kernel.org>; Thu, 17 Apr 2025 04:57:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date
 	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zSF/5eNFBW0dDNATbHxFJn7LtNjYMnEkuioOjEZOIh0=; b=qOVB3Yi5lilEMeJZ70nXYN7zjm
-	eHpGwW7FSeH9tdw7vcZDaKlqZndC2dw7p6BIbVYFGU0Jb1qJscIyEMPS2LM3lQNtD2yl4ahH2PE+f
-	tSVe3LOubm53ryaa0B5hfIdQxK3DNVpmKsxyrJY2yc2+fgYfZ6aFZ6wpZLrA89/oGkdtpwlbNTCWf
-	9jTs4nHBpK1002yNoOpFh+lrr13dLk633wwi3TFdF+BUqEo8ENWBSpXf3B7GXJ7YBgkOxfjo1ehU4
-	wJYXXaT/XVgHNRzTwxnRpkKSIPyXN3Rbh2vB0PtnGFb+Y3QLWQ4Supz4ETsUaEH2XujXf0dBuBQvs
-	sWpBnl/g==;
+	bh=ddIoHvGwW+P3+MqNz7iPBEdrKb7ho3kLANsAYyfViNM=; b=Ri7uQFRW4vhAykdOD/z3VfcMCi
+	L2bKBXAwMsGgzs4HneJw4My06dUGl+hrnh49vDNF/9LLIGEaxwt1oagV3VmJe/uNwQYzTqu/uTjfg
+	pFDB7KCN9nH4s89YHGheo4T1xGfXB7pKpkvjwuKs9PJa3J/K9CCP3nt8m8cJaKF85Dm3qaWsNHhuy
+	uq51I1Vz09lECYP8LNMKwCEAUgpHhgHeOPDVnnMVuVUBEbKU9Yl9RrmYO5UBn17hnQ7LqMSy6hJvk
+	QDlFk8Dc3mIc9cOQspxMOugS6+6iFOVHWv7j4jG+P30NFZEUeryv8/mZtzhe8mKxEE0dYfDoan/qv
+	+Mnwo38w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5HJm-0000000Bimw-0JMC;
-	Thu, 17 Apr 2025 04:57:42 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u5HJn-0000000Binw-224C;
+	Thu, 17 Apr 2025 04:57:43 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5HJi-0000000BikY-3xqu
+	id 1u5HJl-0000000BimA-2WWx
 	for ath12k@lists.infradead.org;
-	Thu, 17 Apr 2025 04:57:40 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53GNB8d1029862;
-	Thu, 17 Apr 2025 04:57:38 GMT
+	Thu, 17 Apr 2025 04:57:42 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53GLk6oB020618;
+	Thu, 17 Apr 2025 04:57:40 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	zSF/5eNFBW0dDNATbHxFJn7LtNjYMnEkuioOjEZOIh0=; b=VeYeESZwewsXpJY+
-	NrXwDMd61jDyHdMAuSemNCIMftljEnLf4s9NLHYHX/9YE7STni56fvdl+Uc+WTOE
-	MF+O2fjEtqYwgxT/3p3qGtSmaajbggDUxXXiBYprnd+t5j/rA7kyPjghLKpZUIG6
-	3nAs0dmAYnFldesQXMroR2lFD0BD8XrBNR1Ek7TP1md6jYqEuDED0dWud01bbm5K
-	l5/7Vp3X7L/R4/G2YCMdC/EzJ/e3u+gN9SnsKa+8RavcZYsVh0GNgGP609JqSfPM
-	pIn1/AEM0j716G+4jOv8y37zMQzGcxfqC7uC7qoY1oIo1X1MJjPobhTm1Kp28Zbo
-	ufGZCg==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ygxk5jjx-1
+	ddIoHvGwW+P3+MqNz7iPBEdrKb7ho3kLANsAYyfViNM=; b=UipzyUwhITUXvaVr
+	mRdM/pRisv0og96Om14rrLM6t4+6I14/FrGelquVpfoy0mXHvuwLNFbvQ9GkwyhD
+	0Fy3T0XdTDjYQjpZZOfv/H6HszS8m8OkP9dwnuO+3gFZZ/YARzHpPNkUWmxDH58X
+	bvYs4qJMfJBcCHtriE/kfyIQNNDkb+6eKkWRtwGcJjY/WOi/S7CLf4TtRGtwbPvM
+	ag3EoGEt5j2z4zIt5fmBdpdKNoRjNPw719/xzOupsb4y+O++6wJYJ11WedAMK0FO
+	BmsQ6nz6WxOiSeGn46VFk9+fXSaZfsE+FfWOK/dL4LfzDS6HrfhHwHymq9UPOc+/
+	A0T1gg==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yg8wnpqy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Apr 2025 04:57:38 +0000 (GMT)
+	Thu, 17 Apr 2025 04:57:40 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53H4vbBs026812
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53H4vddt008965
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Apr 2025 04:57:38 GMT
+	Thu, 17 Apr 2025 04:57:39 GMT
 Received: from hu-sarishar-blr.qualcomm.com (10.80.80.8) by
  nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 16 Apr 2025 21:57:36 -0700
+ 15.2.1544.9; Wed, 16 Apr 2025 21:57:38 -0700
 From: Sarika Sharma <quic_sarishar@quicinc.com>
 To: <ath12k@lists.infradead.org>
 CC: <linux-wireless@vger.kernel.org>,
         Sarika Sharma
 	<quic_sarishar@quicinc.com>
-Subject: [PATCH ath-next v5 5/6] wifi: ath12k: correctly update bw for ofdma packets
-Date: Thu, 17 Apr 2025 10:27:08 +0530
-Message-ID: <20250417045709.770219-6-quic_sarishar@quicinc.com>
+Subject: [PATCH ath-next v5 6/6] wifi: ath12k: fetch tx_retry and tx_failed from htt_ppdu_stats_user_cmpltn_common_tlv
+Date: Thu, 17 Apr 2025 10:27:09 +0530
+Message-ID: <20250417045709.770219-7-quic_sarishar@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250417045709.770219-1-quic_sarishar@quicinc.com>
 References: <20250417045709.770219-1-quic_sarishar@quicinc.com>
@@ -71,21 +71,21 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=WecMa1hX c=1 sm=1 tr=0 ts=68008a42 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=WP206t09-qgxmGJDAAsA:9 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: YDR662S8VR2c-RFVrD6cWKqn688o-Pmu
-X-Proofpoint-ORIG-GUID: YDR662S8VR2c-RFVrD6cWKqn688o-Pmu
+X-Authority-Analysis: v=2.4 cv=E9TNpbdl c=1 sm=1 tr=0 ts=68008a44 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=0ySGWpZ9h4q4K3gXlG0A:9 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: E5KkOHI3jBnSzWvWQ4Ok3JMwnB1aYw6F
+X-Proofpoint-GUID: E5KkOHI3jBnSzWvWQ4Ok3JMwnB1aYw6F
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-17_01,2025-04-15_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
- adultscore=0 clxscore=1015 lowpriorityscore=0 phishscore=0 mlxscore=0
- impostorscore=0 mlxlogscore=999 spamscore=0 malwarescore=0
- priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ mlxscore=0 bulkscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
+ suspectscore=0 mlxlogscore=999 spamscore=0 priorityscore=1501
+ impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504170036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_215738_990722_281F0203 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20250416_215741_762523_D13A6795 
+X-CRM114-Status: GOOD (  15.51  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,96 +100,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, arsta->txrate.bw is filled from ath12k_mac_bw_to_mac80211_bw(bw)
-during ath12k_update_per_peer_tx_stats(). But in tx_completion path bw
-is filled differently if ppdu_type is ofdma for HE/EHT rates.
+Currently, tx_retries and tx_failed are updated only in mac80211 during
+tx_completion path for sta->deflink. This works fine for non-ML
+station but for multi-link (ML) station, these values should be updated
+for sta->link[link_id] as per tx link_id. However, in tx_completion path
+there is no way to determine the link_id for which packet is retried or
+failed.
 
-Hence, update arsta->txrate.bw correctly if packet is ofdma for HE
-and EHT rate.
+Therefore, update the tx_retries and tx_failed in arsta structure from
+htt_ppdu_stats_user_cmpltn_common_tlv during
+ath12k_update_per_peer_tx_stats() call to utilize the values from arsta.
+Also, during 'iw dev xxxx station dump' populate the tx_retries and
+tx_failed in station_info structure to ensure values are correctly
+reflected.
 
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Sarika Sharma <quic_sarishar@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/dp.h    |  2 ++
- drivers/net/wireless/ath/ath12k/dp_rx.c | 15 ++++++++++++---
- 2 files changed, 14 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h  |  2 ++
+ drivers/net/wireless/ath/ath12k/dp_rx.c | 12 +++++++++++-
+ drivers/net/wireless/ath/ath12k/mac.c   |  5 +++++
+ 3 files changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
-index 6ce5f853dcdb..ef6be7245639 100644
---- a/drivers/net/wireless/ath/ath12k/dp.h
-+++ b/drivers/net/wireless/ath/ath12k/dp.h
-@@ -1524,6 +1524,8 @@ enum HTT_PPDU_STATS_PPDU_TYPE {
- #define HTT_PPDU_STATS_USER_RATE_FLAGS_DCM_M		BIT(28)
- #define HTT_PPDU_STATS_USER_RATE_FLAGS_LDPC_M		BIT(29)
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 44e02ebb1071..092ee17ee07c 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -530,6 +530,8 @@ struct ath12k_link_sta {
  
-+#define HTT_USR_RATE_PPDU_TYPE(_val) \
-+		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_INFO1_PPDU_TYPE_M)
- #define HTT_USR_RATE_PREAMBLE(_val) \
- 		le32_get_bits(_val, HTT_PPDU_STATS_USER_RATE_FLAGS_PREAMBLE_M)
- #define HTT_USR_RATE_BW(_val) \
+ 	 /* for firmware use only */
+ 	u8 link_idx;
++	u32 tx_retry_failed;
++	u32 tx_retry_count;
+ };
+ 
+ struct ath12k_sta {
 diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index edd3452d659f..54057113b2a3 100644
+index 54057113b2a3..d4b29248423b 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -1362,12 +1362,12 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 	struct htt_ppdu_user_stats *usr_stats = &ppdu_stats->user_stats[user];
- 	struct htt_ppdu_stats_common *common = &ppdu_stats->common;
- 	int ret;
--	u8 flags, mcs, nss, bw, sgi, dcm, rate_idx = 0;
-+	u8 flags, mcs, nss, bw, sgi, dcm, ppdu_type, rate_idx = 0;
- 	u32 v, succ_bytes = 0;
- 	u16 tones, rate = 0, succ_pkts = 0;
+@@ -1368,13 +1368,21 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
  	u32 tx_duration = 0;
  	u8 tid = HTT_PPDU_STATS_NON_QOS_TID;
--	bool is_ampdu = false;
-+	bool is_ampdu = false, is_ofdma = false;
+ 	bool is_ampdu = false, is_ofdma = false;
++	u16 tx_retry_failed = 0, tx_retry_count = 0;
  
  	if (!(usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_RATE)))
  		return;
-@@ -1396,6 +1396,10 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 	sgi = HTT_USR_RATE_GI(user_rate->rate_flags);
- 	dcm = HTT_USR_RATE_DCM(user_rate->rate_flags);
  
-+	ppdu_type = HTT_USR_RATE_PPDU_TYPE(user_rate->info1);
-+	is_ofdma = (ppdu_type == HTT_PPDU_STATS_PPDU_TYPE_MU_OFDMA) ||
-+		   (ppdu_type == HTT_PPDU_STATS_PPDU_TYPE_MU_MIMO_OFDMA);
-+
- 	/* Note: If host configured fixed rates and in some other special
- 	 * cases, the broadcast/management frames are sent in different rates.
- 	 * Firmware rate's control to be skipped for this?
-@@ -1445,6 +1449,8 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
+-	if (usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON))
++	if (usr_stats->tlv_flags & BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_COMMON)) {
+ 		is_ampdu =
+ 			HTT_USR_CMPLTN_IS_AMPDU(usr_stats->cmpltn_cmn.flags);
++		tx_retry_failed =
++			__le16_to_cpu(usr_stats->cmpltn_cmn.mpdu_tried) -
++			__le16_to_cpu(usr_stats->cmpltn_cmn.mpdu_success);
++		tx_retry_count =
++			HTT_USR_CMPLTN_LONG_RETRY(usr_stats->cmpltn_cmn.flags) +
++			HTT_USR_CMPLTN_SHORT_RETRY(usr_stats->cmpltn_cmn.flags);
++	}
  
- 	memset(&arsta->txrate, 0, sizeof(arsta->txrate));
- 
-+	arsta->txrate.bw = ath12k_mac_bw_to_mac80211_bw(bw);
-+
- 	switch (flags) {
- 	case WMI_RATE_PREAMBLE_OFDM:
- 		arsta->txrate.legacy = rate;
-@@ -1473,6 +1479,8 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 			le16_to_cpu(user_rate->ru_start) + 1;
- 		v = ath12k_he_ru_tones_to_nl80211_he_ru_alloc(tones);
- 		arsta->txrate.he_ru_alloc = v;
-+		if (is_ofdma)
-+			arsta->txrate.bw = RATE_INFO_BW_HE_RU;
- 		break;
- 	case WMI_RATE_PREAMBLE_EHT:
- 		arsta->txrate.mcs = mcs;
-@@ -1483,11 +1491,12 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
- 			le16_to_cpu(user_rate->ru_start) + 1;
- 		v = ath12k_mac_eht_ru_tones_to_nl80211_eht_ru_alloc(tones);
- 		arsta->txrate.eht_ru_alloc = v;
-+		if (is_ofdma)
-+			arsta->txrate.bw = RATE_INFO_BW_EHT_RU;
+ 	if (usr_stats->tlv_flags &
+ 	    BIT(HTT_PPDU_STATS_TAG_USR_COMPLTN_ACK_BA_STATUS)) {
+@@ -1496,6 +1504,8 @@ ath12k_update_per_peer_tx_stats(struct ath12k *ar,
  		break;
  	}
  
++	arsta->tx_retry_failed += tx_retry_failed;
++	arsta->tx_retry_count += tx_retry_count;
  	arsta->txrate.nss = nss;
--	arsta->txrate.bw = ath12k_mac_bw_to_mac80211_bw(bw);
  	arsta->tx_duration += tx_duration;
  	memcpy(&arsta->last_txrate, &arsta->txrate, sizeof(struct rate_info));
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 30643f8db487..ede4b75440a2 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -10571,6 +10571,11 @@ static void ath12k_mac_op_link_sta_statistics(struct ieee80211_hw *hw,
+ 		sinfo->signal_avg += ATH12K_DEFAULT_NOISE_FLOOR;
  
+ 	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_SIGNAL_AVG);
++
++	sinfo->tx_retries = arsta->tx_retry_count;
++	sinfo->tx_failed = arsta->tx_retry_failed;
++	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_RETRIES);
++	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_FAILED);
+ }
+ 
+ static int ath12k_mac_op_cancel_remain_on_channel(struct ieee80211_hw *hw,
 -- 
 2.34.1
 
