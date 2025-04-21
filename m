@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36C19C369D7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F434C369D6
 	for <ath12k@archiver.kernel.org>; Mon, 21 Apr 2025 02:35:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,83 +12,83 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=8hZqULHZjm1SplECvDuI++vRjWXBgF16wtK/q2Pk1SE=; b=zeKQRk9AFQhfMCX6bIzAMZ/gko
-	+0DOFAQA9D51mXHbaxroAek1AAsYwuHuuSS+bNWWQ/IKzN8RHLPTjdeOUalniS4vZZERgbAcm9NLO
-	gZsozmohhFBt4KSQm1AHqpsFRlG8KUQvlLhBecQPIVSGYrBnKhwp+N0RAZ7Dz4wTYmKlJt2TLmev+
-	RA8ZLcEnXcO4YDBmftOk0mh8rmyJNqQo7S26aYAsmFVtfcCg/d49qPIbikAZ2qCMbd5LPqbSiMACY
-	r3Uqls+27JF7VsTunlNoyxXm9eQfrNaD8J8XXqAdCs2jNASr4miOFzwYR8ZTF3VEHQwJbe7tReXT3
-	jYjKVtbQ==;
+	bh=67YGzZ/G2Lvdo7PXB4Z5mgL6caEumAEWn9q+k5dAI5o=; b=lON5HGC1MOP+N4rgQVvJdPudJd
+	+qDo+5vIYya+Nh+MLj6pRAt+oJKRL/tjom5HH9pUkFScfCkZU9v64DawthgVH6VWOUxPkDhlwLJV3
+	T+Rkm/0/Rm5j87Qu500egl1hqqv3ot0lJoeWJmsApoBgnpnh+hAmYX+JitHNs7EtqGFpOqCDUJlYF
+	gOAD3/NhnJOBeKCa2ZcH8PULHvqrLNoTeDjsy3ESIEYliuDoAobi6mAJRyGtgrC1S1hcC8QT+Atc4
+	vwfgwWoV9biyeNwlAnkYteOwL1F1mqdjfje5tMJwvIaszoY7hAOcUCSURHMlSqJHw04oGiyeKLmtN
+	YOEjG7lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6h0U-00000003S9t-42Y5;
-	Mon, 21 Apr 2025 02:35:38 +0000
+	id 1u6h0V-00000003SAK-1j2D;
+	Mon, 21 Apr 2025 02:35:39 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6h0R-00000003S6u-3pef
+	id 1u6h0S-00000003S7i-1JGv
 	for ath12k@lists.infradead.org;
 	Mon, 21 Apr 2025 02:35:37 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53KNKsiT023678
-	for <ath12k@lists.infradead.org>; Mon, 21 Apr 2025 02:35:35 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53KNs57A015322
+	for <ath12k@lists.infradead.org>; Mon, 21 Apr 2025 02:35:36 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=8hZqULHZjm1
-	SplECvDuI++vRjWXBgF16wtK/q2Pk1SE=; b=goMqR1roX2JDaxZ3tGaSNEkTY6M
-	hgf0FoxHoxqIbRVSaFg0z1Hks2oe8MQE/949VbolabSnvaZAjaE3g7bL5/TWh+UP
-	BcohIUyCr+dDHksqwZh43tRWU+PW5WA4m0wjGj39/BsqvMIeAQGLuh2QXb9uLoAz
-	l35WfOAx7+VXp2mXaV9/56TUJ6OSLu09mO2zoiEQ/XgSKKLwdEj4/icC7wlnCTWr
-	pZS+JlQmGlA0eALVqF7Zu0ZlIywbeRggwJUz/BMHRWs4JH2YmwucQbgrPFCo0mGj
-	f6IHHfQTLuChXVvgwzC4XjCrl12X5jSyaFhMSpl191GsV26RTUVLwQYdzZQ==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4641hhjx6h-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=67YGzZ/G2Lv
+	do7PXB4Z5mgL6caEumAEWn9q+k5dAI5o=; b=YK0gakk10kLdJ8XWQ5jRLYY8PuG
+	wGcmUnsMLGyufAcs1/MD4thooU/KC30D4rGpeKct37NMdV7EQE4Es97hPAHqcK5j
+	TOX2FecFTRkxVUD/DTrlN4O5CAMesMKj+tSMDYE4dwTAmkYTnr7dTUHJXsNqxuPG
+	H+3pNimQDos++h0RCt75QJEB2/kZq+AIdIa9BaYdVoL4SZFnL5gL8BmLey0sYubU
+	MDXZW1xCzhL/d4e11xxpCQUNuHMysAVOxlPrQ3vS7eDi1eQsS9Udz0n562V3uJ5P
+	Eh5kykfJK8r2G9bJNYCVc7Y5pIZb/9me8j7ix6R9UmsBbx3eV6SUXqpCF2A==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4641hhjx6b-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
 	for <ath12k@lists.infradead.org>; Mon, 21 Apr 2025 02:35:35 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-22c35bafdbdso54193845ad.1
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-2ff53a4754aso5269934a91.2
         for <ath12k@lists.infradead.org>; Sun, 20 Apr 2025 19:35:35 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745202933; x=1745807733;
+        d=1e100.net; s=20230601; t=1745202926; x=1745807726;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=8hZqULHZjm1SplECvDuI++vRjWXBgF16wtK/q2Pk1SE=;
-        b=SqLCdOAoufZ/yAaBKb3q/KeE/t6ewrk8XDa7F3hImXcsbtcLE3y/gEj51jBoFJ/ceH
-         uW41u4xY/8GbF4Lr44hEsvqeAHnIkJ24MvLTxzEKzsfoyftQhWBbaygINn95KZSS6mWE
-         S+liUVCO0QbZWBUveoyPiQapfAzKZ++PyP2DNUwc3oJOs5LQzN8y1fcgqvsnQ+KN6Rp4
-         npMihepsw0wPhkKM5udUGoWBBYQvoWPaCArMOpmRyGRQ521+o4oLWzTjZgEZiZZzFuIB
-         xwUqpJqsZuoJXcLuntonqKTULjXzoDuycbx02a6xg3iEB8kxfiJl04oTaNL3bzrV9dv1
-         m5ww==
-X-Gm-Message-State: AOJu0Yxf/BsWhLykV+RfCdZTDeB7Vr6BuOA2+vPXbooW/iFVTQbFMTwt
-	haGsA5/PiauTcwlxUKlPYXW6fSOS01dzuhC6l3sa7U97VHzPUgtHZPRPNMsQ8KlDAnGeo0OvV9g
-	hTN0fkDQXcNE8KkbLpYZYeQjRLvqMJ2rFods53dpDQPX/C+LRpvHX5OzUT6SwXYh4PuCfL4E=
-X-Gm-Gg: ASbGncu6jL1sxiEe5arFhNQ20czXrC0tjsKE4I91Y9U2ge9exeUER/62cCg/z1gU5zK
-	Rq7gNgUZoWUHcquFv5Kib0u61Nk/BUysk8804S6Zx94IDzyNdmrj3lr9njRh67YTZvkSqIc2oU6
-	1dWptUXMgoEKR+x0t2miItOm5kNEQQBcw1l/KazM2I6oLfzZOTMl0KZujGALCszGwA9ygH5D8cT
-	nbu2cfM5bjOe3PGpHXBI0/SFCUgQI3ByImX6zAAg48VuRpoFr6I4UDw+iPUh/BgxnoL+toBWJE0
-	OVGvHksWzhJZGYcqILhc3td0CoC7xb0Ur/cekI+FG7ocyhgMJzvplKWbkIcezd61TsxTeMniIJq
-	qb6aIwFeb38Q=
-X-Received: by 2002:a17:902:f54c:b0:224:1074:63a2 with SMTP id d9443c01a7336-22c5361c436mr159845325ad.43.1745202933544;
-        Sun, 20 Apr 2025 19:35:33 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEsWmmltyrsFvtZ+zV7ulHOBb3JA17xX4Ll7gxpRrPdYgMCim5NBNOpMKFVjPILnn7BK5pVfw==
-X-Received: by 2002:a17:902:f54c:b0:224:1074:63a2 with SMTP id d9443c01a7336-22c5361c436mr159845115ad.43.1745202933184;
-        Sun, 20 Apr 2025 19:35:33 -0700 (PDT)
+        bh=67YGzZ/G2Lvdo7PXB4Z5mgL6caEumAEWn9q+k5dAI5o=;
+        b=Hp0d2UXY3uWuFBSRgqVTaCWh6RNakyGBJ/wXn9vDPJxSxrTtQ25FvzNMDMM0fZHXEQ
+         kAVs6RTKGa1hfKoFpPDcyhDsMBkXLmpl9E2XHhCqS6J9hVf2KuZU6doTG3gEw8s0w3VB
+         ItO5Ap9LgPuTlCTvYGG0r5kvvhwSUlD1d7GF5zAXQ6wQUBPWemUIaU4kGHJp5KEunEpp
+         t0MJ8F+867Jn+m+lWlspAsrXoEFJxLcT1zeyGl7+LXAQcqIxaU4pJ76+AqWjzA3xlM9g
+         8jLBVX01GJ4FTHoOk6ex66RS8UgEuVam6/QxAWpgPY95uH18KlvKp2TfWxhdHbgCllQ1
+         +LWQ==
+X-Gm-Message-State: AOJu0Yy1V9ABAKro3MuWN+1k3/ov4Gk84FKYX3NvXITtz2Ehica+bBdq
+	QSSC1X5uf5Jx5oY7W6eVDta+Uwkwn4z0DJLiQp3gUVxzrM9Nz6T8xu6Jh/R/lczVtxYZUSQ31ms
+	jRxoXYnI1WzaV3qu5QrCfnNvFIvZNH/w3rPN296gS14sFYuHS0SWLfD/mf1xbiuOR2YNTikU=
+X-Gm-Gg: ASbGncu2PVXhyodYkecQ2gj7FltHh6nM9A3Au7qiQ0goQnMy4xUUBVNukgXdZZTcyy1
+	FP68QGoogMlNgsrUoqRBYDJxon3ahzWOWh8pVcCQENEg2MYOjlAA9ect8kpwO4AE8rpMsjP+D63
+	zkkX8d8sUsNX+2RbjoD1OAGyrcBacZCPAD0FbecdgjPw2uYZZMu4EP5jBEjIrOJBxp9tKs9z6ES
+	bCvZHMXbYyPqUYK48cMu1fg7DCWNAhJBPIcJOVSsKLLCav+kiluoIaQUFqhgcnzK0wCrczj/tOu
+	WOoKKyZ4BaryY8ItESaiCBKG7hPeLu37ecq4cUp8va/cfC/O0dPd31K6YsNxfABnX+NYMGVG9Lr
+	DC4QyMYK6QHk=
+X-Received: by 2002:a17:90b:5444:b0:2ff:7b28:a51c with SMTP id 98e67ed59e1d1-3087bccc373mr12935694a91.34.1745202926072;
+        Sun, 20 Apr 2025 19:35:26 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFgFS0J4RkBWI+MsNlSHT4h+Zx/hjaZptW+L4c1bbP5zXBOe0m13Hz0zVqSSOhKTo+K43V7BQ==
+X-Received: by 2002:a17:90b:5444:b0:2ff:7b28:a51c with SMTP id 98e67ed59e1d1-3087bccc373mr12935665a91.34.1745202925571;
+        Sun, 20 Apr 2025 19:35:25 -0700 (PDT)
 Received: from kangyang.ap.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22c50eb4287sm54631685ad.130.2025.04.20.19.35.31
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22c50eb4287sm54631685ad.130.2025.04.20.19.35.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Apr 2025 19:35:32 -0700 (PDT)
+        Sun, 20 Apr 2025 19:35:25 -0700 (PDT)
 From: Kang Yang <kang.yang@oss.qualcomm.com>
 To: ath12k@lists.infradead.org, kang.yang@oss.qualcomm.com
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next 09/13] wifi: ath12k: use ath12k_buffer_addr in ath12k_dp_rx_link_desc_return()
-Date: Mon, 21 Apr 2025 10:34:40 +0800
-Message-Id: <20250421023444.1778-10-kang.yang@oss.qualcomm.com>
+Subject: [PATCH ath-next 04/13] wifi: ath12k: add ring config for monitor mode on WCN7850
+Date: Mon, 21 Apr 2025 10:34:35 +0800
+Message-Id: <20250421023444.1778-5-kang.yang@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1.windows.1
 In-Reply-To: <20250421023444.1778-1-kang.yang@oss.qualcomm.com>
 References: <20250421023444.1778-1-kang.yang@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=Fe43xI+6 c=1 sm=1 tr=0 ts=6805aef7 cx=c_pps a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=vwqPoxeLtJ6jty5K6VgA:9 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-GUID: roZsvynduoW8GjK866Sn0idmE-lSjyG_
-X-Proofpoint-ORIG-GUID: roZsvynduoW8GjK866Sn0idmE-lSjyG_
+X-Authority-Analysis: v=2.4 cv=Fe43xI+6 c=1 sm=1 tr=0 ts=6805aef7 cx=c_pps a=RP+M6JBNLl+fLTcSJhASfg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=aGczzSDeKDuVj5iByfEA:9 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-GUID: RR9Vfo1FuD7KM8waYFZ5UOzCa_I2IPBp
+X-Proofpoint-ORIG-GUID: RR9Vfo1FuD7KM8waYFZ5UOzCa_I2IPBp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-04-21_01,2025-04-17_01,2024-11-22_01
@@ -99,8 +99,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscor
  adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
  definitions=main-2504210018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250420_193536_019470_15CA1716 
-X-CRM114-Status: GOOD (  16.40  )
+X-CRM114-CacheID: sfid-20250420_193536_364049_DF64A55C 
+X-CRM114-Status: GOOD (  25.82  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,159 +115,358 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-Currently, ath12k_dp_rx_link_desc_return() takes struct
-hal_reo_dest_ring as its second input. This struct is converted to
-struct hal_wbm_release_ring and passed into
-ath12k_hal_rx_msdu_link_desc_set(), where it is converted again.
+For WCN7850, it doesn't have an RX MON component(RX MON dest ring and
+RX MON buffer ring). So it can only reuse the mon status ring, RX
+refill ring, and error dst ring for monitor mode.
 
-This double conversion is both strange and inefficient.
+Every time the hardware captures a packet, it will store status
+information into the status ring and store the MSDU payload buffer
+address into the error dst ring. When host reaps the MSDU payload and
+consumes a buffer, it will replenish the RX refill ring to indicate a
+new buffer.
 
-In ath12k_hal_rx_msdu_link_desc_set(), only buf_addr_info is actually
-used. To simplify the code and improve readability, directly passes
-buf_addr_info when calling ath12k_dp_rx_link_desc_return().
+The configuration of the error dst/RX ring already exists. But there is
+no configuration for mon status ring. So add ring configuration for it.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
 
 Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/dp_rx.c  | 26 ++++++++++++------------
- drivers/net/wireless/ath/ath12k/hal_rx.c | 16 +++++++--------
- drivers/net/wireless/ath/ath12k/hal_rx.h |  4 ++--
- 3 files changed, 23 insertions(+), 23 deletions(-)
+ drivers/net/wireless/ath/ath12k/dp.h     |  9 +++
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 88 ++++++++++++++++++++++++
+ drivers/net/wireless/ath/ath12k/dp_mon.h |  3 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c  | 66 +++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/dp_tx.c  | 38 ++++++++++
+ 5 files changed, 201 insertions(+), 3 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath12k/dp.h b/drivers/net/wireless/ath/ath12k/dp.h
+index 2ce6f0d7574f..0dd2a981516d 100644
+--- a/drivers/net/wireless/ath/ath12k/dp.h
++++ b/drivers/net/wireless/ath/ath12k/dp.h
+@@ -193,6 +193,14 @@ struct ath12k_pdev_dp {
+ #define DP_RX_BUFFER_SIZE_LITE	1024
+ #define DP_RX_BUFFER_ALIGN_SIZE	128
+ 
++#define RX_MON_STATUS_BASE_BUF_SIZE	2048
++#define RX_MON_STATUS_BUF_ALIGN		128
++#define RX_MON_STATUS_BUF_RESERVATION	128
++#define RX_MON_STATUS_BUF_SIZE		(RX_MON_STATUS_BASE_BUF_SIZE - \
++				 (RX_MON_STATUS_BUF_RESERVATION + \
++				  RX_MON_STATUS_BUF_ALIGN + \
++				  SKB_DATA_ALIGN(sizeof(struct skb_shared_info))))
++
+ #define DP_RXDMA_BUF_COOKIE_BUF_ID	GENMASK(17, 0)
+ #define DP_RXDMA_BUF_COOKIE_PDEV_ID	GENMASK(19, 18)
+ 
+@@ -392,6 +400,7 @@ struct ath12k_dp {
+ 	struct dp_srng rxdma_err_dst_ring[MAX_RXDMA_PER_PDEV];
+ 	struct dp_rxdma_mon_ring rxdma_mon_buf_ring;
+ 	struct dp_rxdma_mon_ring tx_mon_buf_ring;
++	struct dp_rxdma_mon_ring rx_mon_status_refill_ring[MAX_RXDMA_PER_PDEV];
+ 	struct ath12k_reo_q_addr_lut reoq_lut;
+ 	struct ath12k_reo_q_addr_lut ml_reoq_lut;
+ };
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index 351f52138d39..28fb9d4aa673 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -2493,6 +2493,94 @@ int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
+ 	return -ENOMEM;
+ }
+ 
++int ath12k_dp_mon_status_bufs_replenish(struct ath12k_base *ab,
++					struct dp_rxdma_mon_ring *rx_ring,
++					int req_entries)
++{
++	enum hal_rx_buf_return_buf_manager mgr =
++		ab->hw_params->hal_params->rx_buf_rbm;
++	int num_free, num_remain, buf_id;
++	struct ath12k_buffer_addr *desc;
++	struct hal_srng *srng;
++	struct sk_buff *skb;
++	dma_addr_t paddr;
++	u32 cookie;
++
++	req_entries = min(req_entries, rx_ring->bufs_max);
++
++	srng = &ab->hal.srng_list[rx_ring->refill_buf_ring.ring_id];
++
++	spin_lock_bh(&srng->lock);
++
++	ath12k_hal_srng_access_begin(ab, srng);
++
++	num_free = ath12k_hal_srng_src_num_free(ab, srng, true);
++	if (!req_entries && (num_free > (rx_ring->bufs_max * 3) / 4))
++		req_entries = num_free;
++
++	req_entries = min(num_free, req_entries);
++	num_remain = req_entries;
++
++	while (num_remain > 0) {
++		skb = dev_alloc_skb(RX_MON_STATUS_BUF_SIZE);
++		if (!skb)
++			break;
++
++		if (!IS_ALIGNED((unsigned long)skb->data,
++				RX_MON_STATUS_BUF_ALIGN)) {
++			skb_pull(skb,
++				 PTR_ALIGN(skb->data, RX_MON_STATUS_BUF_ALIGN) -
++				 skb->data);
++		}
++
++		paddr = dma_map_single(ab->dev, skb->data,
++				       skb->len + skb_tailroom(skb),
++				       DMA_FROM_DEVICE);
++		if (dma_mapping_error(ab->dev, paddr))
++			goto fail_free_skb;
++
++		spin_lock_bh(&rx_ring->idr_lock);
++		buf_id = idr_alloc(&rx_ring->bufs_idr, skb, 0,
++				   rx_ring->bufs_max * 3, GFP_ATOMIC);
++		spin_unlock_bh(&rx_ring->idr_lock);
++		if (buf_id < 0)
++			goto fail_dma_unmap;
++		cookie = u32_encode_bits(buf_id, DP_RXDMA_BUF_COOKIE_BUF_ID);
++
++		desc = ath12k_hal_srng_src_get_next_entry(ab, srng);
++		if (!desc)
++			goto fail_buf_unassign;
++
++		ATH12K_SKB_RXCB(skb)->paddr = paddr;
++
++		num_remain--;
++
++		ath12k_hal_rx_buf_addr_info_set(desc, paddr, cookie, mgr);
++	}
++
++	ath12k_hal_srng_access_end(ab, srng);
++
++	spin_unlock_bh(&srng->lock);
++
++	return req_entries - num_remain;
++
++fail_buf_unassign:
++	spin_lock_bh(&rx_ring->idr_lock);
++	idr_remove(&rx_ring->bufs_idr, buf_id);
++	spin_unlock_bh(&rx_ring->idr_lock);
++fail_dma_unmap:
++	dma_unmap_single(ab->dev, paddr, skb->len + skb_tailroom(skb),
++			 DMA_FROM_DEVICE);
++fail_free_skb:
++	dev_kfree_skb_any(skb);
++
++	ath12k_hal_srng_access_end(ab, srng);
++
++	spin_unlock_bh(&srng->lock);
++
++	return req_entries - num_remain;
++}
++
+ static struct dp_mon_tx_ppdu_info *
+ ath12k_dp_mon_tx_get_ppdu_info(struct ath12k_mon_data *pmon,
+ 			       unsigned int ppdu_id,
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.h b/drivers/net/wireless/ath/ath12k/dp_mon.h
+index 9f3adee51cb2..e25595cbdcf3 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.h
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.h
+@@ -85,6 +85,9 @@ ath12k_dp_mon_rx_parse_mon_status(struct ath12k *ar,
+ int ath12k_dp_mon_buf_replenish(struct ath12k_base *ab,
+ 				struct dp_rxdma_mon_ring *buf_ring,
+ 				int req_entries);
++int ath12k_dp_mon_status_bufs_replenish(struct ath12k_base *ab,
++					struct dp_rxdma_mon_ring *rx_ring,
++					int req_entries);
+ int ath12k_dp_mon_process_ring(struct ath12k_base *ab, int mac_id,
+ 			       struct napi_struct *napi, int budget,
+ 			       enum dp_monitor_mode monitor_mode);
 diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-index 6bbae10f7389..382d364fb3ff 100644
+index 1abfbd15f13c..6bbae10f7389 100644
 --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-@@ -843,15 +843,10 @@ void ath12k_dp_rx_peer_tid_delete(struct ath12k *ar,
- 	rx_tid->active = false;
- }
- 
--/* TODO: it's strange (and ugly) that struct hal_reo_dest_ring is converted
-- * to struct hal_wbm_release_ring, I couldn't figure out the logic behind
-- * that.
-- */
- static int ath12k_dp_rx_link_desc_return(struct ath12k_base *ab,
--					 struct hal_reo_dest_ring *ring,
-+					 struct ath12k_buffer_addr *buf_addr_info,
- 					 enum hal_wbm_rel_bm_act action)
+@@ -414,9 +414,17 @@ static int ath12k_dp_rxdma_mon_buf_ring_free(struct ath12k_base *ab,
+ static int ath12k_dp_rxdma_buf_free(struct ath12k_base *ab)
  {
--	struct hal_wbm_release_ring *link_desc = (struct hal_wbm_release_ring *)ring;
- 	struct hal_wbm_release_ring *desc;
  	struct ath12k_dp *dp = &ab->dp;
- 	struct hal_srng *srng;
-@@ -869,7 +864,7 @@ static int ath12k_dp_rx_link_desc_return(struct ath12k_base *ab,
- 		goto exit;
- 	}
++	int i;
  
--	ath12k_hal_rx_msdu_link_desc_set(ab, desc, link_desc, action);
-+	ath12k_hal_rx_msdu_link_desc_set(ab, desc, buf_addr_info, action);
+ 	ath12k_dp_rxdma_mon_buf_ring_free(ab, &dp->rxdma_mon_buf_ring);
  
- exit:
- 	ath12k_hal_srng_access_end(ab, srng);
-@@ -882,14 +877,17 @@ static int ath12k_dp_rx_link_desc_return(struct ath12k_base *ab,
- static void ath12k_dp_rx_frags_cleanup(struct ath12k_dp_rx_tid *rx_tid,
- 				       bool rel_link_desc)
++	if (ab->hw_params->rxdma1_enable)
++		return 0;
++
++	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++)
++		ath12k_dp_rxdma_mon_buf_ring_free(ab,
++						  &dp->rx_mon_status_refill_ring[i]);
++
+ 	return 0;
+ }
+ 
+@@ -430,7 +438,12 @@ static int ath12k_dp_rxdma_mon_ring_buf_setup(struct ath12k_base *ab,
+ 		ath12k_hal_srng_get_entrysize(ab, ringtype);
+ 
+ 	rx_ring->bufs_max = num_entries;
+-	ath12k_dp_mon_buf_replenish(ab, rx_ring, num_entries);
++
++	if (ringtype == HAL_RXDMA_MONITOR_STATUS)
++		ath12k_dp_mon_status_bufs_replenish(ab, rx_ring,
++						    num_entries);
++	else
++		ath12k_dp_mon_buf_replenish(ab, rx_ring, num_entries);
+ 
+ 	return 0;
+ }
+@@ -451,7 +464,8 @@ static int ath12k_dp_rxdma_ring_buf_setup(struct ath12k_base *ab,
+ static int ath12k_dp_rxdma_buf_setup(struct ath12k_base *ab)
  {
-+	struct ath12k_buffer_addr *buf_addr_info;
- 	struct ath12k_base *ab = rx_tid->ab;
+ 	struct ath12k_dp *dp = &ab->dp;
+-	int ret;
++	struct dp_rxdma_mon_ring *mon_ring;
++	int ret, i;
  
- 	lockdep_assert_held(&ab->base_lock);
+ 	ret = ath12k_dp_rxdma_ring_buf_setup(ab, &dp->rx_refill_buf_ring);
+ 	if (ret) {
+@@ -464,9 +478,19 @@ static int ath12k_dp_rxdma_buf_setup(struct ath12k_base *ab)
+ 		ret = ath12k_dp_rxdma_mon_ring_buf_setup(ab,
+ 							 &dp->rxdma_mon_buf_ring,
+ 							 HAL_RXDMA_MONITOR_BUF);
+-		if (ret) {
++		if (ret)
+ 			ath12k_warn(ab,
+ 				    "failed to setup HAL_RXDMA_MONITOR_BUF\n");
++		return ret;
++	}
++
++	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++		mon_ring = &dp->rx_mon_status_refill_ring[i];
++		ret = ath12k_dp_rxdma_mon_ring_buf_setup(ab, mon_ring,
++							 HAL_RXDMA_MONITOR_STATUS);
++		if (ret) {
++			ath12k_warn(ab,
++				    "failed to setup HAL_RXDMA_MONITOR_STATUS\n");
+ 			return ret;
+ 		}
+ 	}
+@@ -4244,6 +4268,7 @@ void ath12k_dp_rx_process_reo_status(struct ath12k_base *ab)
+ void ath12k_dp_rx_free(struct ath12k_base *ab)
+ {
+ 	struct ath12k_dp *dp = &ab->dp;
++	struct dp_srng *srng;
+ 	int i;
  
- 	if (rx_tid->dst_ring_desc) {
--		if (rel_link_desc)
--			ath12k_dp_rx_link_desc_return(ab, rx_tid->dst_ring_desc,
-+		if (rel_link_desc) {
-+			buf_addr_info = &rx_tid->dst_ring_desc->buf_addr_info;
-+			ath12k_dp_rx_link_desc_return(ab, buf_addr_info,
- 						      HAL_WBM_REL_BM_ACT_PUT_IN_IDLE);
+ 	ath12k_dp_srng_cleanup(ab, &dp->rx_refill_buf_ring.refill_buf_ring);
+@@ -4251,6 +4276,10 @@ void ath12k_dp_rx_free(struct ath12k_base *ab)
+ 	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
+ 		if (ab->hw_params->rx_mac_buf_ring)
+ 			ath12k_dp_srng_cleanup(ab, &dp->rx_mac_buf_ring[i]);
++		if (!ab->hw_params->rxdma1_enable) {
++			srng = &dp->rx_mon_status_refill_ring[i].refill_buf_ring;
++			ath12k_dp_srng_cleanup(ab, srng);
 +		}
- 		kfree(rx_tid->dst_ring_desc);
- 		rx_tid->dst_ring_desc = NULL;
- 	}
-@@ -3507,7 +3505,7 @@ static int ath12k_dp_rx_frag_h_mpdu(struct ath12k *ar,
- 			goto out_unlock;
- 		}
- 	} else {
--		ath12k_dp_rx_link_desc_return(ab, ring_desc,
-+		ath12k_dp_rx_link_desc_return(ab, &ring_desc->buf_addr_info,
- 					      HAL_WBM_REL_BM_ACT_PUT_IN_IDLE);
  	}
  
-@@ -3620,7 +3618,7 @@ ath12k_dp_process_rx_err_buf(struct ath12k *ar, struct hal_reo_dest_ring *desc,
- 
- 	if (ath12k_dp_rx_frag_h_mpdu(ar, msdu, desc)) {
- 		dev_kfree_skb_any(msdu);
--		ath12k_dp_rx_link_desc_return(ar->ab, desc,
-+		ath12k_dp_rx_link_desc_return(ar->ab, &desc->buf_addr_info,
- 					      HAL_WBM_REL_BM_ACT_PUT_IN_IDLE);
+ 	for (i = 0; i < ab->hw_params->num_rxdma_dst_ring; i++)
+@@ -4399,6 +4428,19 @@ int ath12k_dp_rx_htt_setup(struct ath12k_base *ab)
+ 				    ret);
+ 			return ret;
+ 		}
++	} else {
++		for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++			ring_id =
++				dp->rx_mon_status_refill_ring[i].refill_buf_ring.ring_id;
++			ret = ath12k_dp_tx_htt_srng_setup(ab, ring_id, i,
++							  HAL_RXDMA_MONITOR_STATUS);
++			if (ret) {
++				ath12k_warn(ab,
++					    "failed to configure mon_status_refill_ring%d %d\n",
++					    i, ret);
++				return ret;
++			}
++		}
  	}
- exit:
-@@ -3699,7 +3697,8 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 		    rbm != partner_ab->hw_params->hal_params->rx_buf_rbm) {
- 			ab->soc_stats.invalid_rbm++;
- 			ath12k_warn(ab, "invalid return buffer manager %d\n", rbm);
--			ath12k_dp_rx_link_desc_return(partner_ab, reo_desc,
-+			ath12k_dp_rx_link_desc_return(partner_ab,
-+						      &reo_desc->buf_addr_info,
- 						      HAL_WBM_REL_BM_ACT_REL_MSDU);
- 			continue;
- 		}
-@@ -3717,7 +3716,8 @@ int ath12k_dp_rx_process_err(struct ath12k_base *ab, struct napi_struct *napi,
- 			drop = true;
  
- 			/* Return the link desc back to wbm idle list */
--			ath12k_dp_rx_link_desc_return(partner_ab, reo_desc,
-+			ath12k_dp_rx_link_desc_return(partner_ab,
-+						      &reo_desc->buf_addr_info,
- 						      HAL_WBM_REL_BM_ACT_PUT_IN_IDLE);
- 		}
- 
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.c b/drivers/net/wireless/ath/ath12k/hal_rx.c
-index 98eeccc68fcd..837284992cd9 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.c
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.c
-@@ -447,16 +447,16 @@ void ath12k_hal_rx_reo_ent_paddr_get(struct ath12k_base *ab,
- }
- 
- void ath12k_hal_rx_msdu_link_desc_set(struct ath12k_base *ab,
--				      struct hal_wbm_release_ring *dst_desc,
--				      struct hal_wbm_release_ring *src_desc,
-+				      struct hal_wbm_release_ring *desc,
-+				      struct ath12k_buffer_addr *buf_addr_info,
- 				      enum hal_wbm_rel_bm_act action)
+ 	ret = ab->hw_params->hw_ops->rxdma_ring_sel_config(ab);
+@@ -4413,6 +4455,7 @@ int ath12k_dp_rx_htt_setup(struct ath12k_base *ab)
+ int ath12k_dp_rx_alloc(struct ath12k_base *ab)
  {
--	dst_desc->buf_addr_info = src_desc->buf_addr_info;
--	dst_desc->info0 |= le32_encode_bits(HAL_WBM_REL_SRC_MODULE_SW,
--					    HAL_WBM_RELEASE_INFO0_REL_SRC_MODULE) |
--			   le32_encode_bits(action, HAL_WBM_RELEASE_INFO0_BM_ACTION) |
--			   le32_encode_bits(HAL_WBM_REL_DESC_TYPE_MSDU_LINK,
--					    HAL_WBM_RELEASE_INFO0_DESC_TYPE);
-+	desc->buf_addr_info = *buf_addr_info;
-+	desc->info0 |= le32_encode_bits(HAL_WBM_REL_SRC_MODULE_SW,
-+					HAL_WBM_RELEASE_INFO0_REL_SRC_MODULE) |
-+		    le32_encode_bits(action, HAL_WBM_RELEASE_INFO0_BM_ACTION) |
-+		    le32_encode_bits(HAL_WBM_REL_DESC_TYPE_MSDU_LINK,
-+				     HAL_WBM_RELEASE_INFO0_DESC_TYPE);
- }
+ 	struct ath12k_dp *dp = &ab->dp;
++	struct dp_srng *srng;
+ 	int i, ret;
  
- void ath12k_hal_reo_status_queue_stats(struct ath12k_base *ab, struct hal_tlv_64_hdr *tlv,
-diff --git a/drivers/net/wireless/ath/ath12k/hal_rx.h b/drivers/net/wireless/ath/ath12k/hal_rx.h
-index c753eb2a03ad..ef8bda3c0fc2 100644
---- a/drivers/net/wireless/ath/ath12k/hal_rx.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_rx.h
-@@ -1141,8 +1141,8 @@ void ath12k_hal_rx_msdu_link_info_get(struct hal_rx_msdu_link *link, u32 *num_ms
- 				      u32 *msdu_cookies,
- 				      enum hal_rx_buf_return_buf_manager *rbm);
- void ath12k_hal_rx_msdu_link_desc_set(struct ath12k_base *ab,
--				      struct hal_wbm_release_ring *dst_desc,
--				      struct hal_wbm_release_ring *src_desc,
-+				      struct hal_wbm_release_ring *desc,
-+				      struct ath12k_buffer_addr *buf_addr_info,
- 				      enum hal_wbm_rel_bm_act action);
- void ath12k_hal_rx_buf_addr_info_set(struct ath12k_buffer_addr *binfo,
- 				     dma_addr_t paddr, u32 cookie, u8 manager);
+ 	idr_init(&dp->rxdma_mon_buf_ring.bufs_idr);
+@@ -4460,6 +4503,23 @@ int ath12k_dp_rx_alloc(struct ath12k_base *ab)
+ 			ath12k_warn(ab, "failed to setup HAL_RXDMA_MONITOR_BUF\n");
+ 			return ret;
+ 		}
++	} else {
++		for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++			idr_init(&dp->rx_mon_status_refill_ring[i].bufs_idr);
++			spin_lock_init(&dp->rx_mon_status_refill_ring[i].idr_lock);
++		}
++
++		for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++			srng = &dp->rx_mon_status_refill_ring[i].refill_buf_ring;
++			ret = ath12k_dp_srng_setup(ab, srng,
++						   HAL_RXDMA_MONITOR_STATUS, 0, i,
++						   DP_RXDMA_MON_STATUS_RING_SIZE);
++			if (ret) {
++				ath12k_warn(ab, "failed to setup mon status ring %d\n",
++					    i);
++				return ret;
++			}
++		}
+ 	}
+ 
+ 	ret = ath12k_dp_rxdma_buf_setup(ab);
+diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
+index 2136eeb278af..f6b02c1c035a 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
+@@ -1511,6 +1511,44 @@ int ath12k_dp_tx_htt_rx_monitor_mode_ring_config(struct ath12k *ar, bool reset)
+ 				return ret;
+ 			}
+ 		}
++		return 0;
++	}
++
++	if (!reset) {
++		for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++			ring_id = ab->dp.rx_mac_buf_ring[i].ring_id;
++			ret = ath12k_dp_tx_htt_rx_filter_setup(ar->ab, ring_id,
++							       i,
++							       HAL_RXDMA_BUF,
++							       DP_RXDMA_REFILL_RING_SIZE,
++							       &tlv_filter);
++			if (ret) {
++				ath12k_err(ab,
++					   "failed to setup filter for mon rx buf %d\n",
++					   ret);
++				return ret;
++			}
++		}
++	}
++
++	for (i = 0; i < ab->hw_params->num_rxdma_per_pdev; i++) {
++		ring_id = ab->dp.rx_mon_status_refill_ring[i].refill_buf_ring.ring_id;
++		if (!reset) {
++			tlv_filter.rx_filter =
++				HTT_RX_MON_FILTER_TLV_FLAGS_MON_STATUS_RING;
++		}
++
++		ret = ath12k_dp_tx_htt_rx_filter_setup(ab, ring_id,
++						       i,
++						       HAL_RXDMA_MONITOR_STATUS,
++						       RX_MON_STATUS_BUF_SIZE,
++						       &tlv_filter);
++		if (ret) {
++			ath12k_err(ab,
++				   "failed to setup filter for mon status buf %d\n",
++				   ret);
++			return ret;
++		}
+ 	}
+ 
+ 	return 0;
 -- 
 2.34.1
 
