@@ -4,91 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9934FC369D7
-	for <ath12k@archiver.kernel.org>; Fri, 25 Apr 2025 13:07:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57D5CC369C2
+	for <ath12k@archiver.kernel.org>; Fri, 25 Apr 2025 13:29:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:
-	Content-Transfer-Encoding:Cc:Date:In-Reply-To:From:Subject:Mime-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=E4RQReNZBGnV8PCNfSv0SZs5dApyh0rEnMU9Wrzf0/8=; b=RCRrsSeMeEX+UIHrS+H8py49Rg
-	8WPGTiXNj1SeMRckrH5U05GTa4bYFl9w3vPcniZJ1DngVNg8nf8b246JiOwg9jAMQZBfwNQ5onMAS
-	EgplIujQMw1OTQK2dI+3rF4lz/AiEpZCQpixUeCs2NXeMhgaBKA38Mra0PWo+ELInX2EWYnZan8Dd
-	1LRcGKarpZvVMCk7N2OWQk44RyFxnNRKgd4BPKxvkIsPXsq4zvvfqojJYeFvNCUYzMBOu84ElWhIC
-	tb6c31ugN+AZRA1MP9rRQn/YP6LtyPihy3yTOBFvbOQm9mZIjzqpPo8COp5jmuFs619F+7m5PzXCg
-	0T4OxLWw==;
+	bh=4lk2DNQ1X1AZSjaInM8+EVWShn+PsZb+h2wf6Z9CxfU=; b=OTmCmC7a6SHlmIF07hIqCPKm2P
+	9VJRyxjOXZkzMguAwBfeZWGliBKX17tWldbBZ2EY1x4b3EOwdqD+SjpofDn9bnY0stRdCZQKuHQzs
+	Nz76iVJcPJhKT3bAIXMyRNk0ELNk/eUCXQKbserKiNHgxWOu2J2iWJvAKZepofhYsdDXNipNMa6Zu
+	c0tdqWZlxL04GCqHzH5w4r301jup6b8fXYXlt2EHJJs9g0CiyPz2fzR79JvxlMejP3qsd9IM6Jmtd
+	BOStAOQfadFmAfu0dpIjg2xtt8vRtu2I9C5uFLVm2M+tvVo1jw/5ScB+HT/PovXfPj4u5b8F1w+JA
+	QvVB7fUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8Imb-0000000HDux-1MbA;
-	Fri, 25 Apr 2025 13:07:57 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1u8J7V-0000000HHYJ-0HIB;
+	Fri, 25 Apr 2025 13:29:33 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8HcB-0000000H1e0-3AWv
-	for ath12k@lists.infradead.org;
-	Fri, 25 Apr 2025 11:53:09 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-5ed43460d6bso3125659a12.0
-        for <ath12k@lists.infradead.org>; Fri, 25 Apr 2025 04:53:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1745581986; x=1746186786; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=E4RQReNZBGnV8PCNfSv0SZs5dApyh0rEnMU9Wrzf0/8=;
-        b=fI4IN+2PUZnXqARS/tAAOYdlIItM+mkxmDTO2UqILkUCXLtoh65oarC9M7QvJQCxTp
-         8JHucgIfeB30lUNkGKE3/NAaRWslgXn1xsmHxCIhzZ3JgsY8exhPDsys8sVWWP4GuJDt
-         3irEvISya6BOyPCrqD2hFRaBOnPLYgM0TOGfjHnhXF+OAB8NTDXvPIcZ/By/IvnMP55g
-         yMpY2Oi1ykFfX7td32n+56oxbE23yaHALyHhPgCwj7a7IzhKioglJhQ2j3earIydvaK5
-         pMu8w1v61lwj4CfPAV/h/SmgC0oTxnDEc/wu2PRle8azXsuMq6ffYKXFqn7MVX1x1mdU
-         IURw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745581986; x=1746186786;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=E4RQReNZBGnV8PCNfSv0SZs5dApyh0rEnMU9Wrzf0/8=;
-        b=QcPQpATh0d3rsChht4XE+bXBHHu3+3GHdjzyXDCHkOgfXVgiBuoV16piQe0b1Hg6pO
-         f2wWz5z6aaH5kdLjUxPiXFxoa3OQk1CIGa/aNpyHyaGeKZAWTsMcOeB8IXYQD3KuMsJb
-         5w8hxq1WWTpBUhftrAzmuXS2QGZ8kcQahu4xMjsDeNSBAi830zdceVIPAtcmoPd3cRxi
-         1hrr2H1RgIKtSErEI+5BZ/WobWW/j1ejP9fixDdRRelo+adFWTwq5uDdBKPvD8lN2YbR
-         WhgCq3j6gFPjzcMr21zzlgyjBpxjauG1YzVCuDkimFIri3DBqzCHxxUcxq/EWGxFwIDB
-         Pq/w==
-X-Gm-Message-State: AOJu0YyL/h54jr2suJklDD6YJcbwaVgHbAnsNPJXMfY0o+dcfxC4KV7Z
-	zpJI0LcfJw30wqbZKNWHIC7pw0Peq62UfDO7ET/JOo4FeF/v4WQo
-X-Gm-Gg: ASbGncs+/qxPeEfNi7ZrzNqfGQj3qKvwm0oT+ZpCOBwia3mDyNM/g3SE8xhslXYZbos
-	lkbx8nKoXOi4Y6hm+HrPC1XJ8yk+9KKsdS02Rig/3rIZtFKlnyYDqverAnJ+rwSSU1XA0o9IhUn
-	JOlVwT0mY3O30ALEJ0gsE4dSW0Q1YIRXFL3r9IBedk8CrZpfi7fuQjEtrBse+5lQ+e0PEB5wUK5
-	p2nUe7r0Ml3MVSMZnG+PQ2b36cDqh/F2lMikDWt1R6QAAVZaDMkpHRZXwFTScLDPeQwgb4Zp9qQ
-	tuybLOVnGGU+4z3M3isFqorMlAnR9CGshQSMNtiPqGlgvEhx4t2clfJXiBj3dpFOfWfv0u42V08
-	mwJ5MlIQE60tTeqSKRxmt4QF24+aa
-X-Google-Smtp-Source: AGHT+IGnnQsq6FRvV1DiWg0b1ZaPB2E66qabRLYZVamdd6BIFbsL3JhURSOXonfuk1KXAHbrjn708A==
-X-Received: by 2002:a05:6402:3582:b0:5f4:370d:96bc with SMTP id 4fb4d7f45d1cf-5f722673ab2mr1487536a12.2.1745581985534;
-        Fri, 25 Apr 2025 04:53:05 -0700 (PDT)
-Received: from smtpclient.apple (7-253-142-46.pool.kielnet.net. [46.142.253.7])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5f7016f48a3sm1175157a12.34.2025.04.25.04.53.04
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Fri, 25 Apr 2025 04:53:04 -0700 (PDT)
-Content-Type: text/plain;
-	charset=utf-8
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.500.181.1.5\))
-Subject: Re: wifi: ath12k: MLO not working in main/main-pending for NCM865 /
- WCM7850 in station mode
-From: Benjamin Eggerstedt <benjamin.eggerstedt@gmail.com>
-In-Reply-To: <a5bceb0d-bc44-4bf8-b08f-b56b637b28d6@oss.qualcomm.com>
-Date: Fri, 25 Apr 2025 13:52:53 +0200
-Cc: ath12k@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <D1F01BA0-8B75-4B62-A060-D43C666820F2@gmail.com>
-References: <231C035E-18AD-4ABD-91A5-841253644C2B@gmail.com>
- <7001407B-8507-4CD8-B96A-328927D6E286@gmail.com>
- <FBF5892D-0A0A-4AF9-9D53-B3C76673D797@gmail.com>
- <a5bceb0d-bc44-4bf8-b08f-b56b637b28d6@oss.qualcomm.com>
+	id 1u8IHV-0000000H8p7-2JK4;
+	Fri, 25 Apr 2025 12:35:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id BFFC45C5F39;
+	Fri, 25 Apr 2025 12:33:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 875DCC4CEE8;
+	Fri, 25 Apr 2025 12:35:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1745584548;
+	bh=NBbf9gNE6rO2PKHGflXky6hJbsXpf3UmgCARwrP7qoM=;
+	h=References:In-Reply-To:From:Date:Subject:To:List-Id:Cc:From;
+	b=eVCQ2y/XOwPqYzsX8T1RtjqS959rQ/0CmG8oGelz/MVfkfPCnDhF99VHQZf8ZHCvH
+	 uKP1lo6kgDz2AV/j8b2dgcC9UyRA3AfN8CT/yPfnpdU7ZgCLwy4gOZSAPM9hd4ehmr
+	 VjoXsD9YZowYehiPapJHqGnrCR7/5KbwVPdSRJ3Euwjo3zSEgQqpXv003GX+1pQro2
+	 +0nuE5Ph8rQGsWWRE08ddkiShYNbnViBxUlUnEMbn6gBlRfllMQPfej+Uwco/CPSX0
+	 zBRJerf//fxCVuJa+wM1M3cYqgUVi0OzV7omcs9tlzuQT6qtg17JkBM9qmN4oby2Jx
+	 NXI2TZah6L+7A==
+Received: by mail-yw1-f179.google.com with SMTP id 00721157ae682-7053f85f059so21206917b3.2;
+        Fri, 25 Apr 2025 05:35:48 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCUu6nuAVKXwWSBNah8KamoayuTiQ33qonzqkQHL2QLA7AgUzJfJetc3UKMC+mSQydElRpu9KWg=@lists.infradead.org, AJvYcCXmEv3cx1X5xNeXwdSfMsCMoqPTKAJqzIm28J5waS8hmW0s9ZW4U/MTHRsRhY6sNNTA10+kYp8h@lists.infradead.org
+X-Gm-Message-State: AOJu0YwFUPMG3TWarg4dtmqdVn1/qvTt95L2A8HeVUs7jOSXx+ggC+au
+	Jq6fKrypK3OA7S4ZTxbm6+FhT2rYPpWi2HO+wqF4Q0cYL1Z1MzDXboIe8tOAlRZ5q5pLxw4Ykmg
+	b/zc8vOMEWs7ZE2iV02tQHhoOuV4=
+X-Google-Smtp-Source: AGHT+IGDt9aoxGrxaGdyTTeDSrfXroJCvAtD1fdjtKXhnHKlHwfs/SCMm5fDkS5hkf5DjxqYAC/oNkBXKbPa4IJM9tY=
+X-Received: by 2002:a05:690c:6d05:b0:702:d54:5794 with SMTP id
+ 00721157ae682-708541e9ffcmr27742027b3.31.1745584547796; Fri, 25 Apr 2025
+ 05:35:47 -0700 (PDT)
+MIME-Version: 1.0
+References: <96b43d18-72e1-44a8-bf06-6a22fd012b07@oss.qualcomm.com>
+In-Reply-To: <96b43d18-72e1-44a8-bf06-6a22fd012b07@oss.qualcomm.com>
+From: Josh Boyer <jwboyer@kernel.org>
+Date: Fri, 25 Apr 2025 08:35:36 -0400
+X-Gmail-Original-Message-ID: <CA+5PVA71-_a9nG-vULohgzbSfyFyWOB9RE1x4D4vdUbw4HAegg@mail.gmail.com>
+X-Gm-Features: ATxdqUG-Y0F2Gdu0J4NLMD6PZcYoVIbFgR97YO-susRSEJJ3-yKT3qLEMaTQGWY
+Message-ID: <CA+5PVA71-_a9nG-vULohgzbSfyFyWOB9RE1x4D4vdUbw4HAegg@mail.gmail.com>
+Subject: Re: [PULL linux-firmware] ath11k and ath12k firmware 20250424
 To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-X-Mailer: Apple Mail (2.3826.500.181.1.5)
+Cc: linux-firmware@kernel.org, linux-wireless@vger.kernel.org, 
+	ath11k@lists.infradead.org, ath12k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250425_045307_794583_DE20A340 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250425_053549_676735_91D114D1 
+X-CRM114-Status: GOOD (  17.10  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,33 +82,66 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-> On 24. Apr 2025, at 16:28, Jeff Johnson =
+On Thu, Apr 24, 2025 at 4:38=E2=80=AFPM Jeff Johnson
 <jeff.johnson@oss.qualcomm.com> wrote:
->=20
-> On 4/22/2025 10:35 PM, Benjamin Eggerstedt wrote:
->> Hi,
->>=20
->> I compiled main-pending from here =
-https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=3Dmain-=
-pending after "Merge branch 'pending' into main-pending =
-ath-pending-202504182357 master-pending main-pending=E2=80=9D by Jeff =
-Johnson. I tried =E2=80=9Cmain=E2=80=9D the day before, but saw that a =
-couple of additional fixes went in and redid the previously and =
-unfortunately still unsuccessful test
->=20
-> Response from the development team is that the current public firmware =
-is not
-> MLO capable. An updated firmware will be pushed soon.
->=20
+>
+> Hi,
+> Here's a new pull request for ath11k and ath12k.
+>
+> For ath11k, update the firmware for IPQ5018 and update the board file
+> for WCN6855. For ath12k, update the firmware for WCN7850 and update
+> the board file for QCN9274.
+>
+> Please let me know if there are any problems.
+>
 > /jeff
+>
+> The following changes since commit 490c0af1d6b9ffca0523edcfad27ba483b9d6d=
+a3:
+>
+>   Merge branch 'robot/pr-0-1745490027' into 'main' (2025-04-24 13:46:05 +=
+0000)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git at=
+h-20250424
 
-Hi Jeff,
+Merged and pushed out.
 
-I appreciate the feedback, thank you. I=E2=80=99m happy to compile, test =
-& report back once such firmware becomes available.
-Feel free to give me a nudge here.
+https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/528
 
-Thanks,
-Regards,
-Benny=
+josh
+
+>
+> for you to fetch changes up to ce13d29c3933f77674cf45855668485c48d3eba0:
+>
+>   ath11k: WCN6855 hw2.0: update board-2.bin (2025-04-24 13:04:20 -0700)
+>
+> ----------------------------------------------------------------
+> Jeff Johnson (4):
+>       ath12k: QCN9274 hw2.0: update board-2.bin
+>       ath12k: WCN7850 hw2.0: update to WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V=
+1.0_V2.0_SILICONZ-3
+>       ath11k: IPQ5018 hw1.0: update to WLAN.HK.2.6.0.1-01300-QCAHKSWPL_SI=
+LICONZ-1
+>       ath11k: WCN6855 hw2.0: update board-2.bin
+>
+>  WHENCE                           |    4 +-
+>  ath11k/IPQ5018/hw1.0/Notice.txt  | 3918 +++-----------------------------=
+------
+>  ath11k/IPQ5018/hw1.0/q6_fw.b00   |  Bin 532 -> 532 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b01   |  Bin 520 -> 520 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b04   |  Bin 86788 -> 86788 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b08   |  Bin 4096 -> 4096 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b09   |  Bin 2334720 -> 2334720 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b10   |  Bin 269220 -> 269252 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b11   |  Bin 99456 -> 99456 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.b13   |  Bin 7072 -> 7080 bytes
+>  ath11k/IPQ5018/hw1.0/q6_fw.mdt   |  Bin 1052 -> 1052 bytes
+>  ath11k/WCN6855/hw2.0/board-2.bin |  Bin 6429240 -> 6429240 bytes
+>  ath12k/QCN9274/hw2.0/board-2.bin |  Bin 1308544 -> 2626240 bytes
+>  ath12k/WCN7850/hw2.0/amss.bin    |  Bin 6000704 -> 6082624 bytes
+>  ath12k/WCN7850/hw2.0/m3.bin      |  Bin 299660 -> 299660 bytes
+>  15 files changed, 315 insertions(+), 3607 deletions(-)
 
