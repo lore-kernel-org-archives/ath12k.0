@@ -4,109 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AAE7C36005
-	for <ath12k@archiver.kernel.org>; Mon, 28 Apr 2025 09:57:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1815DC369DC
+	for <ath12k@archiver.kernel.org>; Mon, 28 Apr 2025 14:19:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KNV6C0H8fN0Rf9jVVX+TgArfHdeapXFHvCou9OUu3is=; b=lIeeuLxGEsMVLWgQLXOz3d92NU
-	td5Z4ZtOjfyjlQ1QIrrg/7xs/PZ1OdqhJ7HzBBTaZoPoyx2JGmmZ6hzPRcup1xQ8AauQipl7OIOUW
-	JYmDmibHyhhVBY0qJ82WvfRLOC705AODbtk6dKWu9zPmfHBADoDEodMo6njHOsjV6/y4fB4dZHg+V
-	ZoVbxbzBc4pg0soxwfXCPESuCf7wyoLKlY/2qT7P3XBf5ZWqFukr5/M/1pao/JYygbxwzCbipgefR
-	xddN9Y1JZSZjTPzKVfYb/hlR+F58C6OVo7RvJN2V+ELNEFdN8MRsufuArLYEz9Hj6nCq7U9rLY6k8
-	p13Wm6iw==;
+	bh=INe4wjnjFUmwXhGN2W0SCm4GACVFxbQO0yQoVhezegY=; b=xp5rQzLyF+qrWuvsIR//7zosaF
+	gK1pMhHdDV26+B9MHv9ocFujkFIX9q9aRkeHuilV3bN9HFOdv+wQOxeK+OEUx8YFGUaOcJSh9Rcy4
+	YuJIL2kTMi28QEwbxkgWra+KOyeVTjEnA/hr/ZFtXzmWQJulOy3Dvf33FRBxecGj1NpjtK8YCj+fC
+	CVZheoaLCUMRPYyHghWL0kVATihZgQ2jj2pWAIs+Vz+2NswqmtES0sjPCx0vXsYtwnjINLML1YBSZ
+	81CjEKqM/aXr34eB6h3KyjHo32S45Zwkl+L9czYDB3qKG6BSdfSSOcWF0fpOdJb7p6sVgtvx+yygj
+	jKzKUY4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9LET-00000005jiZ-3Uao;
-	Mon, 28 Apr 2025 09:57:01 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1u9PKv-00000006ckn-3V62;
+	Mon, 28 Apr 2025 14:19:57 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9LER-00000005jiE-3wHL
+	id 1u9PKs-00000006ckL-3zmu
 	for ath12k@lists.infradead.org;
-	Mon, 28 Apr 2025 09:57:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 5D2A3A4AB9A;
-	Mon, 28 Apr 2025 09:51:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D59EC4CEE4;
-	Mon, 28 Apr 2025 09:56:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745834218;
-	bh=r2T2f4YcnuwLgVGxrEmJBYwVZbguYteccSC03jsU86s=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=cK1UbvJbkilMt2yZt38NGkGCaJCmgK07UMQ89sklVxoweOrxzMvT9pv5iXmg85iEI
-	 8CzItlR4AcCS5GUyRfiFUSvY6bGTwvftMQN0Rp2z/IE6kRD2yTM7nL/Ynf0UngDvh6
-	 obALheQRIt4FGZbfAUF8bJ1XZCTlZypEQgYd12pyNUpctlTbBRKr0UUShXStNEFB2E
-	 1E/tmeAdpUi78iopZZblP/Av4IYbkzMxKM+jyWkPaBtQ5kuHRn9ug5E6GPj8rIudU4
-	 6WJJpDGE8DTd9L6RTVR0W1VPcAh+Xg/q9gWSbr5qDINykA53wTKQfYiyQe40GKRiVC
-	 46YT+CTCTVXpg==
-Message-ID: <2248694b-32ea-4af9-99e1-45ced4f4b641@kernel.org>
-Date: Mon, 28 Apr 2025 11:56:54 +0200
+	Mon, 28 Apr 2025 14:19:56 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53S9glvf028791
+	for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 14:19:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	INe4wjnjFUmwXhGN2W0SCm4GACVFxbQO0yQoVhezegY=; b=AEFGs9Se8ZCnADaI
+	By5ZQFFXPoPfDM+v25wusbVVMHR8CnZRWq88xCYhwKDkJt6sCfKxsF7Ha+A2w1PY
+	b7Mx/GvpaClLXqGo/1RIaMHVu8eb5qsRtqPuxKTJ1hC/gil2j4kXUGUwkeTY0Jfa
+	owRa6gzzLvxTejuC7VkbMAcdh5InoeToJ3YrwIRL8pj3giXXMuLdvb/XEniYaUxd
+	P9NE9GWzi+6Bde10HpQje73czAVxhLOYUK30uKMsjRbVip05Y4RWcZctJFt6bkKG
+	RL5STephLIb254DDNvpL+peI8rczhCx31Sonjw4zNysp+pChCC/UWLGVU2OVDcVD
+	x0RFVA==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 468n6jgnsn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 14:19:52 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2254bdd4982so71930155ad.1
+        for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 07:19:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745849992; x=1746454792;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=INe4wjnjFUmwXhGN2W0SCm4GACVFxbQO0yQoVhezegY=;
+        b=W3Y//1QDxld2Xd10CnBXhtEStOObzfGdu1vq6/EuNF48lzxp2u3ooeJSL2VYyrDPrM
+         XwzmGDs5yLq6KvdYAloj9kd28vTG6RUgL8Gil/8xJaRsY80nVbUgR7WvZTUjkjaR02B2
+         d2rIX+jNzqvPl6ZrYzDPrr1E4q3HrHkLiRB/ffKWVl9RRO6u0VypwdlXNRAQRdH6CyqX
+         t4VzU4YyVVOow1ci2Goka9zZdZ6F+E6QzKBw68YtTEG4U8nsIKJJV3uhqQuMoGsuWrnA
+         vlyY3UfUZMDtuaml78+WZGzjBgz8udVT63k0VE0B7x1E9kHoUOa2NXZ8KymLd+xBmpWw
+         BDUA==
+X-Gm-Message-State: AOJu0YzljlLFVNYtRe63Dn2/uv0MKiS2ku+kpaxQmb+Phbod7bFDNVP6
+	gCvbATlFLhtE+G2E/8xLplNvzHXs81jTBPhFs+k/STufWLXf8ZPJjkyxgx8ugf/LWrx2Q2Ea4/B
+	I5DZlxBP9Y9U0/qINoGwmP6DS8Z5hcqFAaqpwBsr1w9OAH8zRH1o6lrCSlhXF
+X-Gm-Gg: ASbGncscW4BFt1tSd7aZL+XIQKrcM7aFPz83H5VlQcaXaQ5IXGRyu9wCKCG2Ej9lB6k
+	WCISHw7SOWYPoleb3vIc56WkkOzxYKCPcB6MmCgKcXnw4ipkQi9V6st/bBcbRy87mSs+ycwiyeH
+	eIgoj1KzOW6SWX5HvSw9rs8r9ZCvm1KK7Hr/ZdATndxJRlxt72Fiq3dlpw3Gjq/jeUbOCqnff0O
+	5IwDdT28zYF+FMhdsV/qsunJJVK0KCG+/iFSBlcU/lQfgbD7eYaYYohW2OWuIWUVUyx6sz2GtqB
+	8YSt6qDRufhjf5WXdKknEd1ucZDAdgi//8hPo9IOMhTgE1h4bpyKymbfzToOGboqlzo=
+X-Received: by 2002:a17:903:1744:b0:21f:35fd:1b7b with SMTP id d9443c01a7336-22dbf633583mr158873775ad.50.1745849992057;
+        Mon, 28 Apr 2025 07:19:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFtDIrbh0jxESGTPVjOYceg0jr+nzwxXsD7pVRBZpm4gj1i/GS5ULqzx7IwNLa0zI5iGno4Zg==
+X-Received: by 2002:a17:903:1744:b0:21f:35fd:1b7b with SMTP id d9443c01a7336-22dbf633583mr158873435ad.50.1745849991686;
+        Mon, 28 Apr 2025 07:19:51 -0700 (PDT)
+Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22db4d77e66sm83373235ad.20.2025.04.28.07.19.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 28 Apr 2025 07:19:51 -0700 (PDT)
+Message-ID: <ed88961a-4060-4a64-9d1c-2d08bc4dd165@oss.qualcomm.com>
+Date: Mon, 28 Apr 2025 07:19:50 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RESEND ath-next 1/2] dt-bindings: net: wireless: ath12k:
- describe firmware-name property
-To: Miaoqing Pan <quic_miaoqing@quicinc.com>, jjohnson@kernel.org,
- johannes@sipsolutions.net, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org
-Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-References: <20250424005703.2479907-1-quic_miaoqing@quicinc.com>
- <20250424005703.2479907-2-quic_miaoqing@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: wifi: ath12k: MLO not working in main/main-pending for NCM865 /
+ WCM7850 in station mode
+To: Benjamin Eggerstedt <benjamin.eggerstedt@gmail.com>
+Cc: ath12k@lists.infradead.org
+References: <231C035E-18AD-4ABD-91A5-841253644C2B@gmail.com>
+ <7001407B-8507-4CD8-B96A-328927D6E286@gmail.com>
+ <FBF5892D-0A0A-4AF9-9D53-B3C76673D797@gmail.com>
+ <a5bceb0d-bc44-4bf8-b08f-b56b637b28d6@oss.qualcomm.com>
+ <D1F01BA0-8B75-4B62-A060-D43C666820F2@gmail.com>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250424005703.2479907-2-quic_miaoqing@quicinc.com>
+In-Reply-To: <D1F01BA0-8B75-4B62-A060-D43C666820F2@gmail.com>
 Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI4MDExNiBTYWx0ZWRfX7HS/fsTVyx5l S4l5aND4KpLd/rehvLJUVPzl0zf+NidYaLsr3/ZvOZSi6mbEgqr1k54VMmxIaac3FjH13zdXJKo fT702Vxo2FCmOr+hGon6Oms5t/XQNvltcsluiMIixcHjFGElTUA08Z04Sh43PaA4bfuDZc+kxL7
+ sk4fRwMmg0/hvFU1NhCV78oR66tuPExFhDOJqLdfPsot/d1ApgJolRDswUoA/bkx4BDluU1dcg/ XhOZHFG1WEa74Ddl5UEEx/kA1+04ke//F5Qy9cSczjvmS8t5G/4q0cPyuNNMYkup3d8xegaoPhD EHHW0Ov+u7Ot/dg/rl7/UF0aBjHOyZ7aasin1Da8OaT/o5TEQRrVeutPh9gFZyPdeoJuqVEJ1XE
+ 61m0+odV4G/aVSDJJZePWSEdtuu7XmoDYvYF6FtIWpPLxEKINSxoPMWOROG/huiywrK1hJvo
+X-Proofpoint-GUID: Svg5ucZcCD6XvBL4AAy0xISJUvZjd2_s
+X-Proofpoint-ORIG-GUID: Svg5ucZcCD6XvBL4AAy0xISJUvZjd2_s
+X-Authority-Analysis: v=2.4 cv=C8fpyRP+ c=1 sm=1 tr=0 ts=680f8e89 cx=c_pps a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=bC-a23v3AAAA:8 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8
+ a=xSBUBWweaWCPaFR8eU0A:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=-FEs8UIgK8oA:10 a=GvdueXVYPmCkWapjIL-Q:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-04-28_05,2025-04-24_02,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
+ mlxlogscore=999 priorityscore=1501 clxscore=1015 spamscore=0 adultscore=0
+ malwarescore=0 lowpriorityscore=0 suspectscore=0 bulkscore=0 mlxscore=0
+ classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2504280116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250428_025700_116329_97703C95 
-X-CRM114-Status: UNSURE (   7.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250428_071955_013248_DE14B222 
+X-CRM114-Status: GOOD (  11.85  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,21 +126,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 24/04/2025 02:57, Miaoqing Pan wrote:
-> Introduce 'firmware-name' property to allow end-users and/or integrators
-> to decide which usecase-specific firmware to run on the WCN7850 platform.
-> This is necessary due to resource limitations such as memory capacity and
-> CPU capability, or performance and power optimization for different
-> application scenarios.
+On 4/25/2025 4:52 AM, Benjamin Eggerstedt wrote:
+>> On 24. Apr 2025, at 16:28, Jeff Johnson <jeff.johnson@oss.qualcomm.com> wrote:
+>>
+>> On 4/22/2025 10:35 PM, Benjamin Eggerstedt wrote:
+>>> Hi,
+>>>
+>>> I compiled main-pending from here https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=main-pending after "Merge branch 'pending' into main-pending ath-pending-202504182357 master-pending main-pending” by Jeff Johnson. I tried “main” the day before, but saw that a couple of additional fixes went in and redid the previously and unfortunately still unsuccessful test
+>>
+>> Response from the development team is that the current public firmware is not
+>> MLO capable. An updated firmware will be pushed soon.
+>>
+>> /jeff
 > 
-> Two firmwares are supported: 'WCN7850/hw2.0' and 'WCN7850/hw2.0/ncm825'.
-> The former is the default firmware, suitable for most WiFi 7 STA
-> functions. The latter adds support for commercial-quality SAP and
-> optimizes power consumption for IoT applications.
+> Hi Jeff,
 > 
+> I appreciate the feedback, thank you. I’m happy to compile, test & report back once such firmware becomes available.
+> Feel free to give me a nudge here.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+New WCN7850 firmware is now available in linux-firmware
+https://msgid.link/CA+5PVA71-_a9nG-vULohgzbSfyFyWOB9RE1x4D4vdUbw4HAegg@mail.gmail.com
 
-Best regards,
-Krzysztof
+WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
