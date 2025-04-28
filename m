@@ -4,59 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C81AC36005
-	for <ath12k@archiver.kernel.org>; Mon, 28 Apr 2025 09:55:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AAE7C36005
+	for <ath12k@archiver.kernel.org>; Mon, 28 Apr 2025 09:57:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WAoE8H3fcuXKr4oHzES+a1Kfsk8AVDpCfHksLfRE7ws=; b=gPo8SE8eBYTax2HNzfgkajwS55
-	INMUaS4I1ztapo2nsdD1eFC4NmEV1SMGJ1x6IsG5ylXrdYcSPhc7Qv4TJ9vBvGU7MZxsm+UFm6NXn
-	nlk19AyStwkXA+aV6G6/NS17EIj4NCGspYOZiFzYiEDIgdXcWdz+XBDeKp/ElQ/p1rqIG3icW5xGF
-	eJ9R2izZRcbSL9PQnaAbxhNUcLTF0ru89Pa+xXAYBvr9fQJccZmz5Sy3QGGJHYPUgrSvWzQBEOAXQ
-	GbMRjscPDJnPA8cMDVhcdubSdBAEzm9tn/eNEbexkKzH+yl1Mgib9FUPar4NdR6F0qmwoPKTkmif8
-	2o3SntRQ==;
+	bh=KNV6C0H8fN0Rf9jVVX+TgArfHdeapXFHvCou9OUu3is=; b=lIeeuLxGEsMVLWgQLXOz3d92NU
+	td5Z4ZtOjfyjlQ1QIrrg/7xs/PZ1OdqhJ7HzBBTaZoPoyx2JGmmZ6hzPRcup1xQ8AauQipl7OIOUW
+	JYmDmibHyhhVBY0qJ82WvfRLOC705AODbtk6dKWu9zPmfHBADoDEodMo6njHOsjV6/y4fB4dZHg+V
+	ZoVbxbzBc4pg0soxwfXCPESuCf7wyoLKlY/2qT7P3XBf5ZWqFukr5/M/1pao/JYygbxwzCbipgefR
+	xddN9Y1JZSZjTPzKVfYb/hlR+F58C6OVo7RvJN2V+ELNEFdN8MRsufuArLYEz9Hj6nCq7U9rLY6k8
+	p13Wm6iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9LCz-00000005jV4-480J;
-	Mon, 28 Apr 2025 09:55:29 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1u9LET-00000005jiZ-3Uao;
+	Mon, 28 Apr 2025 09:57:01 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9LCx-00000005jU2-1yAz
+	id 1u9LER-00000005jiE-3wHL
 	for ath12k@lists.infradead.org;
-	Mon, 28 Apr 2025 09:55:28 +0000
+	Mon, 28 Apr 2025 09:57:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id D290EA4AB90;
-	Mon, 28 Apr 2025 09:49:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F40FC4CEE4;
-	Mon, 28 Apr 2025 09:55:23 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 5D2A3A4AB9A;
+	Mon, 28 Apr 2025 09:51:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D59EC4CEE4;
+	Mon, 28 Apr 2025 09:56:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745834126;
-	bh=5gJA+Muqll+Py6HxdXCmp70DGvso8EIkCA2rMU7/Xzk=;
+	s=k20201202; t=1745834218;
+	bh=r2T2f4YcnuwLgVGxrEmJBYwVZbguYteccSC03jsU86s=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=rFfNwySDl4TQQ0LCzt1/Po19Kl+L3qYQdIcPV/Ug8CF36BZlj9bIWugG7SsPfEQOO
-	 n9aLOUws1fn4ibSUxfUNNHHM/dGtWkZuNqgN8tT7qQgAgnsSOmLFxNnWecSnOVCYA9
-	 89oEEHwFyOvNsA4UoUjHu4Zcz/jHXWnhQ+nobQG4s5wf75Do5SqBcoFILkMxfBQTLg
-	 RtBK/gIS36pNQgjwcJ0EeVZpRUXa5h2UnvKwg47ysLPz8bUyRrDlaWYnRQ92zTGVIF
-	 2+nNe8AMC6kpNmt0um6rCYGQvUVF1F3b3Angf8/7TKOJS1yTtGK1DUzBxSBHnEFui/
-	 uWfJE4towXILA==
-Message-ID: <26981b75-16d6-4b1f-83de-c642ac0e342f@kernel.org>
-Date: Mon, 28 Apr 2025 11:55:21 +0200
+	b=cK1UbvJbkilMt2yZt38NGkGCaJCmgK07UMQ89sklVxoweOrxzMvT9pv5iXmg85iEI
+	 8CzItlR4AcCS5GUyRfiFUSvY6bGTwvftMQN0Rp2z/IE6kRD2yTM7nL/Ynf0UngDvh6
+	 obALheQRIt4FGZbfAUF8bJ1XZCTlZypEQgYd12pyNUpctlTbBRKr0UUShXStNEFB2E
+	 1E/tmeAdpUi78iopZZblP/Av4IYbkzMxKM+jyWkPaBtQ5kuHRn9ug5E6GPj8rIudU4
+	 6WJJpDGE8DTd9L6RTVR0W1VPcAh+Xg/q9gWSbr5qDINykA53wTKQfYiyQe40GKRiVC
+	 46YT+CTCTVXpg==
+Message-ID: <2248694b-32ea-4af9-99e1-45ced4f4b641@kernel.org>
+Date: Mon, 28 Apr 2025 11:56:54 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [RESEND ath-next 1/2] dt-bindings: net: wireless: ath12k:
  describe firmware-name property
-To: Miaoqing Pan <quic_miaoqing@quicinc.com>
-Cc: jjohnson@kernel.org, johannes@sipsolutions.net, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, ath12k@lists.infradead.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org
+To: Miaoqing Pan <quic_miaoqing@quicinc.com>, jjohnson@kernel.org,
+ johannes@sipsolutions.net, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
 References: <20250424005703.2479907-1-quic_miaoqing@quicinc.com>
  <20250424005703.2479907-2-quic_miaoqing@quicinc.com>
- <20250428-ruddy-bold-macaw-9ffd28@kuoka>
- <bfd1be89-cb03-4426-ad7e-93b6774a68a7@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,12 +100,13 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <bfd1be89-cb03-4426-ad7e-93b6774a68a7@quicinc.com>
+In-Reply-To: <20250424005703.2479907-2-quic_miaoqing@quicinc.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250428_025527_637918_89961FCC 
-X-CRM114-Status: GOOD (  12.19  )
+X-CRM114-CacheID: sfid-20250428_025700_116329_97703C95 
+X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,40 +121,20 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 28/04/2025 11:48, Miaoqing Pan wrote:
+On 24/04/2025 02:57, Miaoqing Pan wrote:
+> Introduce 'firmware-name' property to allow end-users and/or integrators
+> to decide which usecase-specific firmware to run on the WCN7850 platform.
+> This is necessary due to resource limitations such as memory capacity and
+> CPU capability, or performance and power optimization for different
+> application scenarios.
 > 
+> Two firmwares are supported: 'WCN7850/hw2.0' and 'WCN7850/hw2.0/ncm825'.
+> The former is the default firmware, suitable for most WiFi 7 STA
+> functions. The latter adds support for commercial-quality SAP and
+> optimizes power consumption for IoT applications.
 > 
-> On 4/28/2025 4:25 PM, Krzysztof Kozlowski wrote:
->> On Thu, Apr 24, 2025 at 08:57:02AM GMT, Miaoqing Pan wrote:
->>> Introduce 'firmware-name' property to allow end-users and/or integrators
->>> to decide which usecase-specific firmware to run on the WCN7850 platform.
->>> This is necessary due to resource limitations such as memory capacity and
->>> CPU capability, or performance and power optimization for different
->>> application scenarios.
->>>
->>> Two firmwares are supported: 'WCN7850/hw2.0' and 'WCN7850/hw2.0/ncm825'.
->>> The former is the default firmware, suitable for most WiFi 7 STA
->>> functions. The latter adds support for commercial-quality SAP and
->>> optimizes power consumption for IoT applications.
->>>
->>> Signed-off-by: Miaoqing Pan <quic_miaoqing@quicinc.com>
->>> ---
->>>   .../devicetree/bindings/net/wireless/qcom,ath12k.yaml       | 6 ++++++
->>>   1 file changed, 6 insertions(+)
->>
->> <form letter>
->> This is a friendly reminder during the review process.
->>
->> It looks like you received a tag and forgot to add it.
->>
-> 
-> I don't find any tags on previous version: 
-> https://patchwork.kernel.org/project/linux-wireless/patch/20250423054152.2471568-2-quic_miaoqing@quicinc.com/.
-> 
-> Do you mean I should add 'Reviewed-by: Krzysztof Kozlowski 
-> <krzk@kernel.org>' ?
 
-No, probably I mixed up the patches.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
