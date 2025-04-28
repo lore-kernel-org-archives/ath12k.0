@@ -4,128 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E325C369DC
-	for <ath12k@archiver.kernel.org>; Mon, 28 Apr 2025 16:13:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D26E0C369D5
+	for <ath12k@archiver.kernel.org>; Mon, 28 Apr 2025 16:14:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=D8we/A24VCleiu1L9oIyqx2x5TSIcaS7vbGyH7HDGXc=; b=ojdgbnB7LXwrGuxNVFmoZ3SwTY
-	XCQqejKibhkTW744H+A1X3nbuwHEicZZidbLwzW68KKl5hnpGChx0z8ZDzbI/jP2HO82rmXJBVVLi
-	JTpzogtM7nQresCwj++TygC7+sJ75Vb/aK7Mmi9ekYrUECU9oE2Uar190rOMc+sltqof7LJou0r8y
-	/PdN3/bppZkMYF8ST+rbCvnMWVw/EFP5ZZNNawkaX4m+gzH4pyYju6yhWYjGJBwC99LGnFEMCDXb5
-	kkjRukDqcyxxC3leHnb6AkjA3JWOSMaaKQtrrX7d7VVuOoBzZQHv6LJpypXtsH8kc6W7CBAIX3KOL
-	KAUKmoGg==;
+	bh=/V8Sk0jnYoMxTmrMu46NMhWrQw7hVUH5YLpHYQVbNKY=; b=nUdLDeAiiOYDvPnbjw2qb5Mupt
+	swY+WYlLNeP4dMhqVehqh+CWrqRQgtWmDRts9A/TUw7wNS7ufy3wUnY3RrcekJGsFGM1M57hDA1S3
+	zNM9mCzwwOugJYLV18V8LiycX0KTAI0EviMNK/nFpatYtyVsnQJgm1G7oxoozvTkHoitrE7h23J2c
+	6zmR1heBRAJkkcoziSRpSqeo8bdTEozeYS1i2tluOqVxi+bU6vMVqRO2TcbnkrtkHpcaM1Q0mw52a
+	RPAbfuCgQvGiPf6VPqGg9moKtrU96mOGh3lWpOyyh9BVWaO2erU+QIWfp7/vF7w5hJQoT++yf5022
+	ndGT7wfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9R7A-00000006sUD-0C6Q;
-	Mon, 28 Apr 2025 16:13:52 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9R78-00000006sTq-1b8D
-	for ath12k@bombadil.infradead.org;
-	Mon, 28 Apr 2025 16:13:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=D8we/A24VCleiu1L9oIyqx2x5TSIcaS7vbGyH7HDGXc=; b=QZMwWonQZAngt5+H2c7AOmsT85
-	Ib1jEDWKDHYk23MrPkRZnSyvr4Vlka2cv5KdWnh6K+ZKBzauXI54bFIShLX3/WmfjbsKDj6nXEAH3
-	nyqYvG0Xf67lIM69HwDTqM7vRmZH1vdmDb5ZMYU7p8HDk4hHgI0YIm/7jvkiJyJKNc8vo6+dAsfsT
-	tAZOPYshzvBwa42GdhHRdtS7FAKVHMB9BkJFLRoTTgVaiQrwrY+mjoCpkIQnKmoAsGEl7klEWvSxw
-	9zM8RKp//h2zstIE95Ia4Yby4A2V+yCNlmsifd6kYr8Fke1i6ZLBnhnRJWRWYLEKorgPED9KMFL8M
-	UuKddCug==;
+	id 1u9R7c-00000006sY4-26ch;
+	Mon, 28 Apr 2025 16:14:20 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u9R74-0000000Cs3N-3zvX
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1u9R7a-00000006sXF-2wlB
 	for ath12k@lists.infradead.org;
-	Mon, 28 Apr 2025 16:13:49 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53S9xncA018694
-	for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 16:13:41 GMT
+	Mon, 28 Apr 2025 16:14:19 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53S9jc9S001260
+	for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 16:14:17 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	D8we/A24VCleiu1L9oIyqx2x5TSIcaS7vbGyH7HDGXc=; b=LXB90UClggrzgzGu
-	fuS+1nPxyo+FIzjnBqnwR7vzwejyORFEEV9jnPzK7vUEKGsCqFQxJTJTW0/jBcJk
-	p6O7iLjYerdGVowybofuuziJs0QcMw1RvGk6GhnENbaw5iVnHpd6BXrCkkYvbpcU
-	aj8AvYfrVNC6Q2eFDEvhuoTeQdvUs+aUd10wFIW6D7xMmQ59p8HA35N4yIradAkC
-	TKVi6uQwi534ks27jYNiHmimy6rYGc2mY68hhO2y9UE+8ZZaFpyUD5OdEZ+IuJFT
-	CWekTSqxgPtYIZQW8WECYVmFnKKAFeYwPDySpnghwej3hEKQU1Aaq2ySFSk22+0U
-	olB8xA==
+	/V8Sk0jnYoMxTmrMu46NMhWrQw7hVUH5YLpHYQVbNKY=; b=l0JsYmGDncuP3wk9
+	1mK1rJ/dDXV2C3LLhPfdUGHRo4Cssmf0vUefYPBQ91iyPcfz9oYa2Dt8i23Owwqp
+	qBDKNJaC7GkHQM8aATOHGRO663CeFCv0sE2C4u+ir9Wp4Dppljo5hvNKPBzmMvS6
+	HSRXg4rTgWrUfy1WgxMCxp22EXvfIjmQkDFMhuc/B8ZWaTP9jxwFAl0HXhP96/cd
+	WMUmm2m/tEpFSQKp8eOD433RKZjafK9zF42eDQf343kRrysE+1whMNgr1dSOk2MY
+	fcUJMTrAsmyTJANgWB6h6rUEep04NcHtZHXBXROF68iuCdfRAcTG77zijopmlz0U
+	3u+2WQ==
 Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 468n6jh00u-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 468pevgud4-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 16:13:41 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-22650077995so71575605ad.3
-        for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 09:13:41 -0700 (PDT)
+	for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 16:14:16 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-227e2faab6dso42357745ad.1
+        for <ath12k@lists.infradead.org>; Mon, 28 Apr 2025 09:14:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745856820; x=1746461620;
+        d=1e100.net; s=20230601; t=1745856856; x=1746461656;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=D8we/A24VCleiu1L9oIyqx2x5TSIcaS7vbGyH7HDGXc=;
-        b=L0HJSMP76ddSaxFDE9NCy+zuUaj7j8Aipw4Ykxuy2XGrMdXPJaDXKA6C39VkGohVnA
-         NXsR3pYnN0z7JShqdflsNitUf5YHyVqqMzcGKlLOJchNVrXfoFUOoDioqRc/zV96Y5oK
-         kAB4sa8+hxOxSzS01vQ6TcHmiLuLWKKFKnaIHCTuDU6jRHz8ZrdSV3DPBCSLgyN4J/1E
-         rcCTFsqWRzbHkPuxzM+JFykHp8/C9jPJSRypX9pKw8DziqFcWWOo4gCvEnZ2YgpDo1r3
-         n1YZ94FxuoUtVZKRrkYwOy5AUpItv1ao/UgqePQD/s+S9X3AfY3QCagO/dZmZPV0Sepx
-         SVmg==
-X-Forwarded-Encrypted: i=1; AJvYcCWdptem2Efk0tdy8mModuD7gz5Vq5yjX/7Ssow0PrHxbuGr5SQ4y1/Jx+AtwDtKjsEsjaWGGNk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz83qGFXNF6IzoY7Z/CEkJCNPKiyD+0krBa115jI6n2n/z1Vgrb
-	ipjvyuoDONHZtBR5XuJcbqv5BPhiAjnBIply+w+xMHwU9Px0ywrNRFMmHuebGnfddzVQBJ3U8+d
-	5aZ1FilWw1L5KkC8H5ctyrclRN68FVqJ7addLv2xY4DJt9IQDfUtp27fYE1NJf+SLsnBK
-X-Gm-Gg: ASbGncvEt01DRECOqtewVkOTOFZv9piryPAfxpwYg3v46ryDAHrvJsYxTE5uMa/9Ncj
-	wzHP/tOwdMjLwZeR10XuUDtsC9ip+UNcx1VMU/84nCgtxpM2gbyCaG+T0/4eOZFTb36yQOLdmLh
-	YIogA5o1Yw1yZH9E7UZbqeE0gdVC0IIG5MxmOuHxdflLDQzLyJbrb57BQ9F/VyuzJg1SOOyY9bS
-	Q9MU0rvjxDc37jAftsCtfR8PaOV5lvqisC9sDzGLIBNUexISOFhT/HEp1McWa9V+vItqLtb/27D
-	tv6wrf52nTT2rCfdzM3/ZWun1JF/4d3OrUgqnbaZucM3quZest6OKdMQSt98
-X-Received: by 2002:a17:903:3c4d:b0:223:6180:1bea with SMTP id d9443c01a7336-22dbf6218damr192112105ad.37.1745856820283;
-        Mon, 28 Apr 2025 09:13:40 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IExFQ7Id/p1uW87txW7F2ECaSz8fiByTLszVSkzSMB/oz9YpMbg8QzGy2y1k2FKTccnT3cawQ==
-X-Received: by 2002:a17:903:3c4d:b0:223:6180:1bea with SMTP id d9443c01a7336-22dbf6218damr192111825ad.37.1745856819926;
-        Mon, 28 Apr 2025 09:13:39 -0700 (PDT)
+        bh=/V8Sk0jnYoMxTmrMu46NMhWrQw7hVUH5YLpHYQVbNKY=;
+        b=LmAUL0fcabcty7+2+p4xNG9GGbKzifCwcOD/9RJF6ftbYKgykPIl2iNu0dbpOajz+K
+         XmAKfZKzg3+s4zskXOq+EyvvtaiuP7MBUBwfIMOZFm3bi8HJaFkHEExkbw4NtU8wK60d
+         E/WukoBcTFV15/fYR8kHV/i4plKtCTSHy6hBKgei0IwQhQ0KTn5oh/0v5ZcqhTq352/1
+         ZfI2FWV1NXA2Ee2pNqOYkTCUr0JkJHDiq2rS3XYyV5MImQKhWyE1u5AlBt9XPOfLgCR/
+         UgHf5z9kW4rQaQL7sKZVP3ZyS6E/5FEvQOe4j9iLuN2RpYxBH89lxJLicRlEVa9ZeGNU
+         eUxg==
+X-Forwarded-Encrypted: i=1; AJvYcCXflRlK5dcx77pSSg17e2t0am9S94kymFj7ewjFCc2kgATIEj1+0IQ20iGagupEvdXnKZ97Rlw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx1405/iIJ3VoyCllZO59++QrdNVvIU4l9iu5o84549Ugx1fz/g
+	jii7dNgKdbbMrUG457/y2HCF7Q2oX2MDjR0wDTteZNK66MYF6O5ZJwewfcjvoaSfxyecA2FUlos
+	Famz0lNjF+VOgzJurAL0Hxt7w0UMBsj6VlOz3pGfyRni5/4RsrIQwrB2FO0Uo
+X-Gm-Gg: ASbGncugm0cWxxG7E7sBssQYkEd0b1ZliZ1d6hr0WB/OEcxftxyXqeke1sZDM/r2pAI
+	ZwG6L35YnKzlkRnZm+nMrS+86ghBvH/V/3to5XpPeXAuOQT1XTpx8FY9+hzZTtpxHSrN88iDfQK
+	euB40wSOAgchfXkySFsa2EI0BDGG1o21qbI72t8zI+pOQNW2bBQW1iLiIGNacOLYwAflCrmwGUD
+	PVvjgYciyKZemONp1Le+R3cbRb3DAfnUSNqkZt7o+8f3ueOBrx1w6RHOJZlUFDbZZ8SeqxkvBdR
+	WhMnZSu+82bHFDXzCnOg0WsL4clWE0TvVlkIX8blf8t+CaC6zZbT8LevsMpE
+X-Received: by 2002:a17:903:3c48:b0:223:53fb:e1dd with SMTP id d9443c01a7336-22dc69f3b04mr143095855ad.9.1745856855817;
+        Mon, 28 Apr 2025 09:14:15 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHppuR8dvYljPTYcRZKu4BHzVYSZldfYQM9vAmQpN3t2WmX+8VasqrxjptsnxhSm3w0u+/LRw==
+X-Received: by 2002:a17:903:3c48:b0:223:53fb:e1dd with SMTP id d9443c01a7336-22dc69f3b04mr143095445ad.9.1745856855396;
+        Mon, 28 Apr 2025 09:14:15 -0700 (PDT)
 Received: from [192.168.225.142] ([157.51.192.240])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-309ef098157sm10202290a91.26.2025.04.28.09.13.38
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22db50ea421sm84982105ad.109.2025.04.28.09.14.13
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 28 Apr 2025 09:13:39 -0700 (PDT)
-Message-ID: <1cb0effd-71b5-415e-f419-69c727913f2e@oss.qualcomm.com>
-Date: Mon, 28 Apr 2025 21:43:36 +0530
+        Mon, 28 Apr 2025 09:14:15 -0700 (PDT)
+Message-ID: <1692f2f8-c77e-87ce-db70-00b4d9fc7c95@oss.qualcomm.com>
+Date: Mon, 28 Apr 2025 21:44:11 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
  Thunderbird/102.13.0
-Subject: Re: [PATCH ath-next] wifi: ath12k: combine channel list for split-phy
- devices in single-wiphy
+Subject: Re: [PATCH ath-next 00/15] wifi: ath12k: add support for 6 GHz
+ station for various modes : LPI, SP and VLP
 Content-Language: en-US
-To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-        ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250417073954.632994-1-rameshkumar.sundaram@oss.qualcomm.com>
+To: Baochen Qiang <quic_bqiang@quicinc.com>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20250418-ath12k-6g-lp-vlp-v1-0-c869c86cad60@quicinc.com>
 From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20250417073954.632994-1-rameshkumar.sundaram@oss.qualcomm.com>
+In-Reply-To: <20250418-ath12k-6g-lp-vlp-v1-0-c869c86cad60@quicinc.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI4MDEzMiBTYWx0ZWRfX1RssE/WVhUm3 3DmjwGT+QwQzNTrcwqSNVyl1gJ4pFit5vmIKLEt2KHzKANFezPFtjxWtVd1yZZ/UL+Hg1Q0OuCu en9SsocUrH4RcJYn3JF0mbHfgXKidc1++jUoAJ6rjFo+p1P8We/n4KjRHUirO8SXcrqG719aNc2
- ag5u5qDKrueKs+IMhQaLyb/bIhjAIFzSxfemxEXWBYz77JazatX+tIVoHr3ImdEwUjT1LfuSYok qCEY/OVkzMzE2SAnWoXjRAZANUHtFPjhP0XJF4EiRq4JudPTu8zUXa3LQ3fenXjcgdnZKIISkAW BePuAc6VuKFWMnTAjwkYd7moWFIAWFas4MiDyIEmDbpO/1ED4VoSRcGmIZCKYYzHRwxzDiNrtrG
- EYUpqnMqtTLH/m9iSOWw6yascYzl4LJUaMhEQq+yqBiIm08eOR4fEf6TxCQIyWo4RAiSrKst
-X-Proofpoint-GUID: tzEm-HrJDD8J1eY8MtReErtvT6weEl79
-X-Proofpoint-ORIG-GUID: tzEm-HrJDD8J1eY8MtReErtvT6weEl79
-X-Authority-Analysis: v=2.4 cv=C8fpyRP+ c=1 sm=1 tr=0 ts=680fa935 cx=c_pps a=cmESyDAEBpBGqyK7t0alAg==:117 a=XJI/iaC0GbrNbCf3OOiYRw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=2LzJI_1lXDcI7TO63KoA:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-ORIG-GUID: 4I6aVRL1kFkqfQIm1-qC_T4FVopG4J2_
+X-Authority-Analysis: v=2.4 cv=aeBhnQot c=1 sm=1 tr=0 ts=680fa958 cx=c_pps a=cmESyDAEBpBGqyK7t0alAg==:117 a=XJI/iaC0GbrNbCf3OOiYRw==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=rSFznLUdu7_CRTz4a9oA:9 a=QEXdDO2ut3YA:10
+ a=1OuFwYUASf3TG4hYMiVC:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: 4I6aVRL1kFkqfQIm1-qC_T4FVopG4J2_
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI4MDEzMiBTYWx0ZWRfX55E3AWDI8OXu Nonzl+ecPuGs22SxT8E6W8LTw0wXsfKA6McmB6AHbRwC+XwHVLMZVfzD7AScLOX0rWBlAbRjPo7 o7rBJ2DkpzWIVmJ7Ub02LvlNe8GYC1ZzmsnEUWGI0bomhHuEEQIaaDckHLITKVa2MUc86pPxJyE
+ UH0hZFd03Ue+kSRTxmy1EI16sMkL4mm1on1tkFqunT3CufssgJULzpPARxyqjqzOhI2jbv+7sFN 9aP36Hpsqu6h4cOiTolyC7aqTD8bLXJuxdgOkb42QLq0GiBlHBYYLm4i5jHtZtFr4cq4sUV92dL oHIsvj5zTzyH6hxsgxVXDognEqsejQLpN1ZAv5ybW/Nxx2kjAsljxHP/HiwdygbREpxmKzJPth3
+ HC+rSKG/sHRMIr73hTzXx/U2pT3KEGh0CkadANpOd6ib1IulxINaeRdhpr7cKch/eqwApYdG
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-04-28_06,2025-04-24_02,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 phishscore=0
- mlxlogscore=883 priorityscore=1501 clxscore=1015 spamscore=0 adultscore=0
- malwarescore=0 lowpriorityscore=0 suspectscore=0 bulkscore=0 mlxscore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 clxscore=1015
+ impostorscore=0 bulkscore=0 malwarescore=0 priorityscore=1501 spamscore=0
+ mlxlogscore=999 phishscore=0 suspectscore=0 lowpriorityscore=0 mlxscore=0
  classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2504070000
  definitions=main-2504280132
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250428_171347_506804_C5607AB1 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20250428_091418_757731_78387E3E 
+X-CRM114-Status: GOOD (  14.96  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,37 +129,49 @@ Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 
 
-On 4/17/2025 1:09 PM, Rameshkumar Sundaram wrote:
-> When two split-phy devices that support overlapping frequency ranges within
-> the same band are grouped into an ath12k hardware (HW) setup, they share a
-> common wiphy instance. Consequently, the channel list (wiphy->bands[])
-> becomes unified across all associated radios (ar).
+On 4/18/2025 8:25 AM, Baochen Qiang wrote:
+> Currently for 6 GHz reg rules from WMI_REG_CHAN_LIST_CC_EXT_EVENTID event,
+> host chooses low power indoor type rule regardless of interface type or AP's
+> power type, which is not correct. This series change to choose proper rule
+> based on interface type and AP's power type.
 > 
-> For reference, the devices are:
-> 2.4 GHz + 5 GHz Low Band
-> 5 GHz High Band + 6 GHz
+> When connecting to a 6 GHz AP, currently host sends power settings to firmware
+> over WMI_PDEV_PARAM_TXPOWER_LIMIT2G/WMI_PDEV_PARAM_TXPOWER_LIMIT5G commands.
+> Actually there is a new command WMI_VDEV_SET_TPC_POWER_CMDID with which host
+> can send more detailed parameter than with those two. So add support for this
+> interface.
 > 
-> The first radio probed within the 5 GHz range (say 5 GHz Low Band) updates
-> its sband reference (&ar->mac.sbands[NL80211_BAND_5GHZ]) within
-> wiphy->bands[]. However, when the second 5 GHz radio (5 GHz High Band) is
-> probed, it replaces the existing wiphy->bands[] entry with its own sub-band
-> reference. As a result, wiphy->bands[] always reflects the channel list
-> from the most recently probed radio in that band, restricting supported
-> channels to those within its specific range for upper-layer.
+> Before above changes, some fix and refactor are done to do some preparation
+> for following patches.
 > 
-> Fix this by updating the wiphy->bands[] to just enable the channels of
-> current radio when there exist a radio which already has set it.
-> This will make sure wiphy->bands[] holds reference of first radio which
-> got probed in 5 GHz band and subsequent radio just updates the channel list
-> in the same address space.
+> Signed-off-by: Baochen Qiang <quic_bqiang@quicinc.com>
+> ---
+> ---
+> Baochen Qiang (15):
+>        wifi: ath12k: fix a possible dead lock caused by ab->base_lock
+>        wifi: ath12k: refactor ath12k_reg_chan_list_event()
+>        wifi: ath12k: refactor ath12k_reg_build_regd()
+>        wifi: ath12k: add support to select 6 GHz regulatory type
+>        wifi: ath12k: move reg info handling outside
+>        wifi: ath12k: store reg info for later use
+>        wifi: ath12k: determine interface mode in _op_add_interface()
+>        wifi: ath12k: update regulatory rules when interface added
+>        wifi: ath12k: update regulatory rules when connection established
+>        wifi: ath12k: save power spectral density(PSD) of regulatory rule
+>        wifi: ath12k: add parse of transmit power envelope element
+>        wifi: ath12k: save max transmit power in vdev start response event from firmware
+>        wifi: ath12k: fill parameters for vdev set TPC power WMI command
+>        wifi: ath12k: add handler for WMI_VDEV_SET_TPC_POWER_CMDID
+>        wifi: ath12k: use WMI_VDEV_SET_TPC_POWER_CMDID when EXT_TPC_REG_SUPPORT for 6 GHz
 > 
-> Since same sband memory space is shared between radios of a band, while
-> determining the allowed frequency range of radio, its frequency limits
-> (ar->freq_range.start_freq, end_freq) should be used.
-> 
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-> 
-> Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
+>   drivers/net/wireless/ath/ath12k/core.h |   6 +
+>   drivers/net/wireless/ath/ath12k/mac.c  | 527 ++++++++++++++++++++++++++++++---
+>   drivers/net/wireless/ath/ath12k/mac.h  |  43 +++
+>   drivers/net/wireless/ath/ath12k/reg.c  | 209 +++++++++++--
+>   drivers/net/wireless/ath/ath12k/reg.h  |  18 +-
+>   drivers/net/wireless/ath/ath12k/wmi.c  | 198 +++++++------
+>   drivers/net/wireless/ath/ath12k/wmi.h  |  62 ++++
+>   7 files changed, 905 insertions(+), 158 deletions(-)
 
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
