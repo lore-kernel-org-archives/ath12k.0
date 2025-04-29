@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D73FFC369CB
-	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 04:36:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A2BFC369CB
+	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 04:36:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=i/HnctR1j7Z9DcND90xaCFatpdnRa8F8QFkEqOxeNBE=; b=dm4Ib5POcRmjcEO1F+x37Xxxfo
-	wiaU1CNGaeNnySfGs5jwNEx5AEcPSbikWDA8Rlriu0pZoRhcDip4LWMKx3R3bPL0ChKYaxIOAx6aw
-	TQ1pPJQPXFXEX68rBwoVGnDC8B7ktaPWdk7GdSZ4gpeUOS/JaYSmhS0p+wwUuGDHNQvcC5SpkYV2p
-	rIyJdjOCoBxZdakL+BKgumZaFWBB7U4+NeD8X/v0B/+MnRXjXWoJoYWzjlyT6xCZWNykuXIKjMEHB
-	7bZ7OsExVJIxt4EmuHFZHF4Yt5bdKU0CXrBJjuLmRwiGQKmmtfC/z+VYChIeqNvTMlRoSe6lOHuIv
-	wMBFhjOQ==;
+	bh=h5F6GDNDNVG3efZLMBROVGqEtCgXme6lJSN6yrogOh8=; b=hITWEBnjqnncuWLf6ioLTDhWRE
+	J+wwwg9T0XY7hCKSt5C6X4vPlHrzV0A7GD02n0pG28h91lz0ct5MDQgUfepq1N2zDUNCFdpN7Tcbw
+	30q/MiyHG9i+qw8lfC7+0ctyS28fEsKWzddNN5e/Fg/Pkew6+rjCqCLhIM5pQ78rc+k3QH2MonNw9
+	jvTwvXUgAOZ8pN51uOHASzINpeF90I9wgSr9bObI1C5TeTvHTh/wPDnWxknG9vpIX1yKnajCLRTom
+	EmA4nFSmFVZB3DY/c5shefgAlypIXhPFTqa1C3yIpeIQAud9DEd/dl1aq2uC76ugg7dcyozrQ2nLd
+	/PiI0K+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9chi-00000008JJf-2USk;
-	Tue, 29 Apr 2025 04:36:22 +0000
+	id 1u9ci2-00000008JM2-4Awi;
+	Tue, 29 Apr 2025 04:36:42 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9chg-00000008JIm-0bVA
+	id 1u9chy-00000008JLR-1QY9
 	for ath12k@lists.infradead.org;
-	Tue, 29 Apr 2025 04:36:21 +0000
+	Tue, 29 Apr 2025 04:36:41 +0000
 Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53SNqISW006805;
-	Tue, 29 Apr 2025 04:36:17 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53SNqISY006805;
+	Tue, 29 Apr 2025 04:36:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	i/HnctR1j7Z9DcND90xaCFatpdnRa8F8QFkEqOxeNBE=; b=it0Iu3TGlw+WIsp1
-	TfrvsVS0rOZbP3F7svui9kJlLmGBgHLpAqaVhR1vruWcjslMSjTrYZVCbeo7HDxI
-	oy59p9yDFiXv50gh+ygxsTJnpPUiYAxBw/AKTkug8gpBiHLJvcxZGGkuwIpCOsQc
-	dKXOcOJOgIEuPI+0/ostweMiBWzjuoGVTnbcxVuQoJLvpAyrPNsW3aWV3uKIAlcw
-	m8QwwPCY2yIgYP7AhjZxK0S1+NdZTAC3pcJyQwsJn2FtscTJFKQuBkmoupa7oP3z
-	xBb5C9xFx510ACB4AA8oZiQ/fU2PWmplgvsKx6sAzBF4Y2ipk07j1+N5cu/tIZuh
-	mViuPA==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 468ptmk7wa-1
+	h5F6GDNDNVG3efZLMBROVGqEtCgXme6lJSN6yrogOh8=; b=EOxDcJzVSVo8oEiA
+	YwSOwSsYKbzy7PIAX8OoDHSpas4wlsDl6nApSjba4jbHCDyp82lJjd+soKkD3KrI
+	EE43V1/5VaRDtpkh1avZv512emkLs/M0fkH53DZnt/aB4WTBAwzwqr+qoJohq+vL
+	viqDtX1xHSIEvppOyGp58DnwTY2JyAvdJcMDK1lMHxYbR5dbjVlFYxdbyEOGngVs
+	n1ec5ESxP5LKQX7JQWAiWckhXgw34AQUFU2qLW79S+S7slW7wZXmHH9oxcPcdLtD
+	3I5DgsfJiU6ydgN0pTFho3PSEMDJeLR79r0H2A2Yq0AuITE0tnAc8HxzGDqz7gUv
+	0rrFvg==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 468ptmk7x3-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 29 Apr 2025 04:36:17 +0000 (GMT)
+	Tue, 29 Apr 2025 04:36:37 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53T4aGB6026357
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53T4aaAq003302
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 29 Apr 2025 04:36:16 GMT
+	Tue, 29 Apr 2025 04:36:36 GMT
 Received: from [10.216.24.29] (10.80.80.8) by nasanex01b.na.qualcomm.com
  (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 28 Apr
- 2025 21:36:14 -0700
-Message-ID: <f885ba24-1736-47b7-b686-8de181cafcc8@quicinc.com>
-Date: Tue, 29 Apr 2025 10:06:11 +0530
+ 2025 21:36:34 -0700
+Message-ID: <c4aa15f3-79b9-48c8-83a6-a946d8a24a23@quicinc.com>
+Date: Tue, 29 Apr 2025 10:06:31 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 1/2] wifi: ath12k: Prepare ahvif scan link for
- parallel scan
+Subject: Re: [PATCH ath-next 2/2] wifi: ath12k: Split scan request for split
+ band device
 To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
         <ath12k@lists.infradead.org>
-CC: <linux-wireless@vger.kernel.org>
+CC: <linux-wireless@vger.kernel.org>, Vignesh C <quic_vignc@quicinc.com>
 References: <20250428151927.1169783-1-rameshkumar.sundaram@oss.qualcomm.com>
- <20250428151927.1169783-2-rameshkumar.sundaram@oss.qualcomm.com>
+ <20250428151927.1169783-3-rameshkumar.sundaram@oss.qualcomm.com>
 From: Mahendran P <quic_mahep@quicinc.com>
 Content-Language: en-US
-In-Reply-To: <20250428151927.1169783-2-rameshkumar.sundaram@oss.qualcomm.com>
+In-Reply-To: <20250428151927.1169783-3-rameshkumar.sundaram@oss.qualcomm.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: r8cebaliMr4GjAro7fs4uhVt7eUWg4v0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI5MDAzMyBTYWx0ZWRfX42sMq29lZXHg 0e06ZeyooPo3RDQDv7GKujKyHEej5/ECuwVv8xZP2NyRHjS1ojzDxwLvE9V00Aq81VTMNTHKWTs AFdtRAf8TnPOgMhrpb7ItR0+lCnYQ22RlPIIakR6BPv+DAMfozyx3iXcC7eDyMA1y9SXtf27xmm
- fKqz87/hPFiXClcjMJ6df251N2lrBsBTLiJKj5KK62HYIEhm/P+4V9VMMucN8CSfrV2mkCtw7UD mKqmvYvnG0+o0fbRU3uapC8EKhqhcGvdeWaVA3hxEPvVbozIxVKJ9U2Ra7nnuqt0SrWUZEp5mqB 1gfYUKEMOtnuwPDqM4h1HiludZ1pMDRzEAw4SyXfSSoXV5/+2Fq0bhBETEcHEMJZB8HaLckLTl3
- im6S3nXBiEEvXIXnzENUHBkiYtVuuRn4WDQ8Om7uO8oOBsBl09j7mnSN9vCz1PWGJcJletGz
-X-Proofpoint-GUID: r8cebaliMr4GjAro7fs4uhVt7eUWg4v0
-X-Authority-Analysis: v=2.4 cv=DKWP4zNb c=1 sm=1 tr=0 ts=68105741 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=bHGmK2d0Q8oOqtnJHTwA:9
+X-Proofpoint-ORIG-GUID: xE638SdQxjMtbGfWk0GfnEdC8CAix3sz
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI5MDAzMyBTYWx0ZWRfX1pDtRrnfulDS opYxp5JJJHVqAbfkSxeACffCk8/zuiPPQOHY7aOwTgi8ALcWfitPxj++evzEfT6wmWu88bfFGm6 zQWM1nrzaFeVSoosn6+OnxXLgEAv9mYE/6lN+9PM5LebgMBdn89KSiTFw63qb4pKi+/Cdzjyrsr
+ CsecE5BtTjS1O0G1KMWO1xoC1u8AhUNUpw1CyKlTtkUcuO/Goqq8lKvYp+8QFz1CYMzpr0FMsXc 2JRx5XqnCrtaTp4rddeeQ4m7555x+1fzVr7GuaiBzgNSBnEVJMsOCmGv4wfdBM/C542Qhl/oyI+ 7shLw/lKqan3CRnaVT9r6CTzMRRMiXZ33nD746v6Rbh4/dcdvGfI0J/jxGdtidVwQ/Zb2NKi9eb
+ QfuuyJ/9WJOAFVJh7Mzqhk0oMoBvqDdJKeA6qw4A3TqMJVMyC1J9tvQlZJPJATSeYi+2B46M
+X-Proofpoint-GUID: xE638SdQxjMtbGfWk0GfnEdC8CAix3sz
+X-Authority-Analysis: v=2.4 cv=DKWP4zNb c=1 sm=1 tr=0 ts=68105755 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=gB7bVOSc0XIp0_K5HaAA:9
  a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
@@ -90,8 +90,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogs
  reason=mlx scancount=1 engine=8.19.0-2504070000
  definitions=main-2504290033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250428_213620_331013_7192100E 
-X-CRM114-Status: GOOD (  37.56  )
+X-CRM114-CacheID: sfid-20250428_213638_511059_DE88A9F9 
+X-CRM114-Status: GOOD (  38.66  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,181 +107,286 @@ Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
 On 4/28/2025 8:49 PM, Rameshkumar Sundaram wrote:
-> When two split-phy devices that support overlapping frequency ranges within
-> the same band(say 5 GHz low and 5 GHz high) are grouped into an ath12k
-> hardware (HW) setup, they share a common wiphy instance. Consequently, the
-> channel list (wiphy->bands[]) becomes unified across all associated
-> radios (ar).
+> When two split-phy devices having supported frequency range in same band
+> (as mentioned below) are combined into an ath12k HW group, they will be
+> part of same wiphy and hence the channel list (wiphy->bands[]) will be
+> common for all of the radios (ar).
+> 
+> 1 - 2.4 GHz + 5 GHz Low band
+> 2 - 5 GHz High band + 6 GHz
 > 
 > When a scan is triggered with frequency list containing frequencies of
-> both 5 GHz low and 5 GHz high, mac80211 generates a single scan request
-> to driver with all the frequencies. This is because mac80211 splits the
+> both  5 GHz low and 5 GHz high, mac80211 generates a single scan request
+> to driver with both the frequencies. This is because mac80211 splits the
 > scan request based on band.
 > 
 > ath12k checks the first frequency in the requested scan frequency list and
 > initiates scan to corresponding radio's(ar) firmware with all the
-> frequencies. Firmware rejects this scan since some of the frequencies in
-> the scan request are not supported, resulting in a scan failure.
-> To fix this ath12k driver should split the scan request into multiple
-> scans based on requested frequencies and schedule them to corresponding
-> underlying radio(s) in parallel.
+> frequencies. Firmware rejects this scan as some frequencies in the scan
+> request are not supported, resulting is scan failure.
 > 
-> Currently, ath12k driver assigns the scan link (link 15) in ahvif->links[]
-> for scan vdev creation. However, with parallel scan support being
-> introduced in the following patch, multiple radios (e.g., 5 GHz low and
-> 5 GHz high) in the same HW group may attempt to use the same scan link
-> concurrently, causing conflicts where the vdev created by one radio could
-> be deleted and re-initialized by another.
+> Fix this by splitting the scan request into multiples scans in driver
+> based on the supported frequency range of different radios in a band and
+> schedule scans in parallel to them.
+> Finally send scan completion/abort notification to mac80211 after all the
+> radios complete their scheduled scan.
 > 
-> To address this, reserve space for additional scan links for each radio in
-> a MLO group and allow subsequent radios to use different available scan
-> links (ahvif->link[15..MAX_SCAN_LINKS]) when scan link (15) is
-> pre-occupied.
-> While at it, rename ATH12K_DEFAULT_SCAN_LINK as ATH12K_FIRST_SCAN_LINK
-> as there is no longer only one scan link.
+> Also, last_scan_link is not needed anymore as ath12k internally schedules
+> multiple scans, remove the same and use ahvif->links_map to identify
+> scan links when scan is cancelled.
 > 
 > Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
 > 
+> Co-developed-by: Vignesh C <quic_vignc@quicinc.com>
+> Signed-off-by: Vignesh C <quic_vignc@quicinc.com>
 > Signed-off-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
 > ---
->  drivers/net/wireless/ath/ath12k/core.h |  2 +-
->  drivers/net/wireless/ath/ath12k/mac.c  | 49 +++++++++++++++++++-------
->  drivers/net/wireless/ath/ath12k/mac.h  |  7 ++--
->  3 files changed, 42 insertions(+), 16 deletions(-)
+>  drivers/net/wireless/ath/ath12k/core.h |   2 -
+>  drivers/net/wireless/ath/ath12k/mac.c  | 148 ++++++++++++++++++++-----
+>  2 files changed, 118 insertions(+), 32 deletions(-)
 > 
 > diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-> index 4b8f434e3e9a..0d512818ee96 100644
+> index 0d512818ee96..c8fd0b29aaa1 100644
 > --- a/drivers/net/wireless/ath/ath12k/core.h
 > +++ b/drivers/net/wireless/ath/ath12k/core.h
-> @@ -352,7 +352,7 @@ struct ath12k_vif {
->  	struct ath12k_link_vif __rcu *link[ATH12K_NUM_MAX_LINKS];
+> @@ -353,8 +353,6 @@ struct ath12k_vif {
 >  	struct ath12k_vif_cache *cache[IEEE80211_MLD_MAX_NUM_LINKS];
 >  	/* indicates bitmap of link vif created in FW */
-> -	u16 links_map;
-> +	u32 links_map;
->  	u8 last_scan_link;
->  
+>  	u32 links_map;
+> -	u8 last_scan_link;
+> -
 >  	/* Must be last - ends in a flexible-array member.
+>  	 *
+>  	 * FIXME: Driver should not copy struct ieee80211_chanctx_conf,
 > diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index 8949073c0163..6dab2f3a9e0d 100644
+> index 6dab2f3a9e0d..236e3ee22d4d 100644
 > --- a/drivers/net/wireless/ath/ath12k/mac.c
 > +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -3483,7 +3483,7 @@ static struct ath12k_link_vif *ath12k_mac_assign_link_vif(struct ath12k_hw *ah,
->  	/* If this is the first link arvif being created for an ML VIF
->  	 * use the preallocated deflink memory except for scan arvifs
->  	 */
-> -	if (!ahvif->links_map && link_id != ATH12K_DEFAULT_SCAN_LINK) {
-> +	if (!ahvif->links_map && link_id < ATH12K_FIRST_SCAN_LINK) {
->  		arvif = &ahvif->deflink;
->  
->  		if (vif->type == NL80211_IFTYPE_STATION)
-> @@ -4475,11 +4475,12 @@ ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
->  	struct ath12k_link_vif *arvif;
->  	struct ath12k_hw *ah = ahvif->ah;
->  	unsigned long links = ahvif->links_map;
-> +	unsigned long scan_links_map;
->  	u8 link_id;
->  
->  	lockdep_assert_wiphy(ah->hw->wiphy);
->  
-> -	for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-> +	for_each_set_bit(link_id, &links, ATH12K_NUM_MAX_LINKS) {
->  		arvif = wiphy_dereference(ah->hw->wiphy, ahvif->link[link_id]);
->  
->  		if (!arvif || !arvif->is_created)
-> @@ -4489,10 +4490,20 @@ ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
->  			return link_id;
->  	}
->  
-> -	/* input ar is not assigned to any of the links of ML VIF, use scan
-> -	 * link (15) for scan vdev creation.
-> +	/* input ar is not assigned to any of the links of ML VIF, use next
-> +	 * available scan link for scan vdev creation. There are cases where
-> +	 * single scan req needs to be split in driver and initiate separate
-> +	 * scan requests to firmware based on device.
->  	 */
-> -	return ATH12K_DEFAULT_SCAN_LINK;
-> +
-> +	 /* Unset all non-scan links (0-14) of scan_links_map so that ffs() will
-> +	  * choose an available link among scan links (i.e link id >= 15)
-> +	  */
-> +	scan_links_map = ~ahvif->links_map & ATH12K_SCAN_LINKS_MASK;
-> +	if (scan_links_map)
-> +		return __ffs(scan_links_map);
-> +
-> +	return ATH12K_FIRST_SCAN_LINK;
+> @@ -4249,6 +4249,23 @@ static void ath12k_scan_timeout_work(struct work_struct *work)
+>  	wiphy_unlock(ath12k_ar_to_hw(ar)->wiphy);
 >  }
 >  
->  static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
-> @@ -4523,9 +4534,16 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
->  
->  	/* check if any of the links of ML VIF is already started on
->  	 * radio(ar) corresponding to given scan frequency and use it,
-> -	 * if not use scan link (link 15) for scan purpose.
-> +	 * if not use scan link (link id >= 15) for scan purpose.
->  	 */
->  	link_id = ath12k_mac_find_link_id_by_ar(ahvif, ar);
-> +	/* All scan links are occupied. ideally this shouldn't happen as
-> +	 * mac80211 won't schedule scan for same band until ongoing scan is
-> +	 * completed, don't try to exceed max links just in case if it happens.
-> +	 */
-> +	if (link_id >= ATH12K_NUM_MAX_LINKS)
-> +		return -EBUSY;
+> +static void ath12k_mac_scan_send_complete(struct ath12k *ar,
+> +					  struct cfg80211_scan_info *info)
+> +{
+> +	struct ath12k_hw *ah = ar->ah;
+> +	struct ath12k *partner_ar;
+> +	int i;
 > +
->  	arvif = ath12k_mac_assign_link_vif(ah, vif, link_id);
+> +	lockdep_assert_wiphy(ah->hw->wiphy);
+> +
+> +	for_each_ar(ah, partner_ar, i)
+> +		if (partner_ar != ar &&
+> +		    partner_ar->scan.state == ATH12K_SCAN_RUNNING)
+> +			return;
+> +
+> +	ieee80211_scan_completed(ah->hw, info);
+> +}
+> +
+>  static void ath12k_scan_vdev_clean_work(struct wiphy *wiphy, struct wiphy_work *work)
+>  {
+>  	struct ath12k *ar = container_of(work, struct ath12k,
+> @@ -4287,7 +4304,7 @@ static void ath12k_scan_vdev_clean_work(struct wiphy *wiphy, struct wiphy_work *
+>  				    ATH12K_SCAN_STARTING)),
+>  		};
 >  
->  	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac link ID %d selected for scan",
-> @@ -8654,7 +8672,8 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
->  	struct ath12k_hw *ah = hw->priv;
->  	struct ath12k *ar;
->  	struct ath12k_base *ab;
-> -	u8 link_id = arvif->link_id;
-> +	u8 link_id = arvif->link_id, scan_link_id;
-> +	unsigned long scan_link_map;
->  	int ret;
->  
->  	lockdep_assert_wiphy(hw->wiphy);
-> @@ -8673,12 +8692,16 @@ static struct ath12k *ath12k_mac_assign_vif_to_vdev(struct ieee80211_hw *hw,
->  	 * and now we want to create for actual usage.
->  	 */
->  	if (ieee80211_vif_is_mld(vif)) {
-> -		scan_arvif = wiphy_dereference(hw->wiphy,
-> -					       ahvif->link[ATH12K_DEFAULT_SCAN_LINK]);
-> -		if (scan_arvif && scan_arvif->ar == ar) {
-> -			ar->scan.arvif = NULL;
-> -			ath12k_mac_remove_link_interface(hw, scan_arvif);
-> -			ath12k_mac_unassign_link_vif(scan_arvif);
-> +		scan_link_map = ahvif->links_map & ATH12K_SCAN_LINKS_MASK;
-> +		for_each_set_bit(scan_link_id, &scan_link_map, ATH12K_NUM_MAX_LINKS) {
-> +			scan_arvif = wiphy_dereference(hw->wiphy,
-> +						       ahvif->link[scan_link_id]);
-> +			if (scan_arvif && scan_arvif->ar == ar) {
-> +				ar->scan.arvif = NULL;
-> +				ath12k_mac_remove_link_interface(hw, scan_arvif);
-> +				ath12k_mac_unassign_link_vif(scan_arvif);
-> +				break;
-> +			}
->  		}
+> -		ieee80211_scan_completed(ar->ah->hw, &info);
+> +		ath12k_mac_scan_send_complete(ar, &info);
 >  	}
 >  
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.h b/drivers/net/wireless/ath/ath12k/mac.h
-> index da37332352fe..8ec4a890172c 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.h
-> +++ b/drivers/net/wireless/ath/ath12k/mac.h
-> @@ -51,8 +51,11 @@ struct ath12k_generic_iter {
->  /* Default link after the IEEE802.11 defined Max link id limit
->   * for driver usage purpose.
->   */
-> -#define ATH12K_DEFAULT_SCAN_LINK	IEEE80211_MLD_MAX_NUM_LINKS
-> -#define ATH12K_NUM_MAX_LINKS		(IEEE80211_MLD_MAX_NUM_LINKS + 1)
-> +#define ATH12K_FIRST_SCAN_LINK		IEEE80211_MLD_MAX_NUM_LINKS
-> +#define ATH12K_SCAN_MAX_LINKS		ATH12K_GROUP_MAX_RADIO
-> +/* Define 1 scan link for each radio for parallel scan purposes */
-> +#define ATH12K_NUM_MAX_LINKS	(IEEE80211_MLD_MAX_NUM_LINKS + ATH12K_SCAN_MAX_LINKS)
-> +#define ATH12K_SCAN_LINKS_MASK	GENMASK(ATH12K_NUM_MAX_LINKS, IEEE80211_MLD_MAX_NUM_LINKS)
+>  	ar->scan.state = ATH12K_SCAN_IDLE;
+> @@ -4506,12 +4523,14 @@ ath12k_mac_find_link_id_by_ar(struct ath12k_vif *ahvif, struct ath12k *ar)
+>  	return ATH12K_FIRST_SCAN_LINK;
+>  }
 >  
->  enum ath12k_supported_bw {
->  	ATH12K_BW_20    = 0,
+> -static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+> -				 struct ieee80211_vif *vif,
+> -				 struct ieee80211_scan_request *hw_req)
+> +static int ath12k_mac_initiate_hw_scan(struct ieee80211_hw *hw,
+> +				       struct ieee80211_vif *vif,
+> +				       struct ieee80211_scan_request *hw_req,
+> +				       int n_channels,
+> +				       struct ieee80211_channel **chan_list,
+> +				       struct ath12k *ar)
+>  {
+>  	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+> -	struct ath12k *ar;
+>  	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+>  	struct ath12k_link_vif *arvif;
+>  	struct cfg80211_scan_request *req = &hw_req->req;
+> @@ -4525,13 +4544,6 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+>  
+>  	arvif = &ahvif->deflink;
+>  
+> -	/* Since the targeted scan device could depend on the frequency
+> -	 * requested in the hw_req, select the corresponding radio
+> -	 */
+> -	ar = ath12k_mac_select_scan_device(hw, vif, hw_req->req.channels[0]->center_freq);
+> -	if (!ar)
+> -		return -EINVAL;
+> -
+>  	/* check if any of the links of ML VIF is already started on
+>  	 * radio(ar) corresponding to given scan frequency and use it,
+>  	 * if not use scan link (link id >= 15) for scan purpose.
+> @@ -4634,8 +4646,8 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+>  		arg->scan_f_passive = 1;
+>  	}
+>  
+> -	if (req->n_channels) {
+> -		arg->num_chan = req->n_channels;
+> +	if (n_channels) {
+> +		arg->num_chan = n_channels;
+>  		arg->chan_list = kcalloc(arg->num_chan, sizeof(*arg->chan_list),
+>  					 GFP_KERNEL);
+>  		if (!arg->chan_list) {
+> @@ -4644,7 +4656,7 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+>  		}
+>  
+>  		for (i = 0; i < arg->num_chan; i++)
+> -			arg->chan_list[i] = req->channels[i]->center_freq;
+> +			arg->chan_list[i] = chan_list[i]->center_freq;
+>  	}
+>  
+>  	ret = ath12k_start_scan(ar, arg);
+> @@ -4662,13 +4674,6 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+>  
+>  	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "mac scan started");
+>  
+> -	/* As per cfg80211/mac80211 scan design, it allows only one
+> -	 * scan at a time. Hence last_scan link id is used for
+> -	 * tracking the link id on which the scan is been done on
+> -	 * this vif.
+> -	 */
+> -	ahvif->last_scan_link = arvif->link_id;
+> -
+>  	/* Add a margin to account for event/command processing */
+>  	ieee80211_queue_delayed_work(ath12k_ar_to_hw(ar), &ar->scan.timeout,
+>  				     msecs_to_jiffies(arg->max_scan_time +
+> @@ -4689,25 +4694,108 @@ static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+>  	return ret;
+>  }
+>  
+> +static int ath12k_mac_op_hw_scan(struct ieee80211_hw *hw,
+> +				 struct ieee80211_vif *vif,
+> +				 struct ieee80211_scan_request *hw_req)
+> +{
+> +	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+> +	struct ieee80211_channel **chan_list, *chan;
+> +	struct ath12k_hw *ah = ath12k_hw_to_ah(hw);
+> +	unsigned long links_map, link_id;
+> +	struct ath12k_link_vif *arvif;
+> +	struct ath12k *ar, *scan_ar;
+> +	int i, j, ret = 0;
+> +
+> +	lockdep_assert_wiphy(hw->wiphy);
+> +
+> +	chan_list = kcalloc(hw_req->req.n_channels, sizeof(*chan_list), GFP_KERNEL);
+> +	if (!chan_list)
+> +		return -ENOMEM;
+> +
+> +	/* There could be channels that belong to multiple underlying radio
+> +	 * in same scan request as mac80211 sees it as single band. In that
+> +	 * case split the hw_req based on frequency range and schedule scans to
+> +	 * corresponding radio.
+> +	 */
+> +	for_each_ar(ah, ar, i) {
+> +		int n_chans = 0;
+> +
+> +		for (j = 0; j < hw_req->req.n_channels; j++) {
+> +			chan = hw_req->req.channels[j];
+> +			scan_ar = ath12k_mac_select_scan_device(hw, vif,
+> +								chan->center_freq);
+> +			if (!scan_ar) {
+> +				ath12k_hw_warn(ah, "unable to select scan device for freq %d\n",
+> +					       chan->center_freq);
+> +				ret = -EINVAL;
+> +				goto abort;
+> +			}
+> +			if (ar != scan_ar)
+> +				continue;
+> +
+> +			chan_list[n_chans++] = chan;
+> +		}
+> +		if (n_chans) {
+> +			ret = ath12k_mac_initiate_hw_scan(hw, vif, hw_req, n_chans,
+> +							  chan_list, ar);
+> +			if (ret)
+> +				goto abort;
+> +		}
+> +	}
+> +abort:
+> +	/* If any of the parallel scans initiated fails, abort all and
+> +	 * remove the scan interfaces created. Return complete scan
+> +	 * failure as mac80211 assumes this as single scan request.
+> +	 */
+> +	if (ret) {
+> +		ath12k_hw_warn(ah, "Scan failed %d , cleanup all scan vdevs\n", ret);
+> +		links_map = ahvif->links_map;
+> +		for_each_set_bit(link_id, &links_map, ATH12K_NUM_MAX_LINKS) {
+> +			arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> +			if (!arvif)
+> +				continue;
+> +
+> +			ar = arvif->ar;
+> +			if (ar->scan.arvif == arvif) {
+> +				wiphy_work_cancel(hw->wiphy, &ar->scan.vdev_clean_wk);
+> +				spin_lock_bh(&ar->data_lock);
+> +				ar->scan.arvif = NULL;
+> +				ar->scan.state = ATH12K_SCAN_IDLE;
+> +				ar->scan_channel = NULL;
+> +				ar->scan.roc_freq = 0;
+> +				spin_unlock_bh(&ar->data_lock);
+> +			}
+> +			if (link_id >= ATH12K_FIRST_SCAN_LINK) {
+> +				ath12k_mac_remove_link_interface(hw, arvif);
+> +				ath12k_mac_unassign_link_vif(arvif);
+> +			}
+> +		}
+> +	}
+> +	kfree(chan_list);
+> +	return ret;
+> +}
+> +
+>  static void ath12k_mac_op_cancel_hw_scan(struct ieee80211_hw *hw,
+>  					 struct ieee80211_vif *vif)
+>  {
+>  	struct ath12k_vif *ahvif = ath12k_vif_to_ahvif(vif);
+> -	u16 link_id = ahvif->last_scan_link;
+> +	unsigned long link_id, links_map = ahvif->links_map;
+>  	struct ath12k_link_vif *arvif;
+>  	struct ath12k *ar;
+>  
+>  	lockdep_assert_wiphy(hw->wiphy);
+>  
+> -	arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> -	if (!arvif || arvif->is_started)
+> -		return;
+> +	for_each_set_bit(link_id, &links_map, ATH12K_NUM_MAX_LINKS) {
+> +		arvif = wiphy_dereference(hw->wiphy, ahvif->link[link_id]);
+> +		if (!arvif || arvif->is_started)
+> +			continue;
+>  
+> -	ar = arvif->ar;
+> +		ar = arvif->ar;
+>  
+> -	ath12k_scan_abort(ar);
+> +		ath12k_scan_abort(ar);
+>  
+> -	cancel_delayed_work_sync(&ar->scan.timeout);
+> +		cancel_delayed_work_sync(&ar->scan.timeout);
+> +	}
+>  }
+>  
+>  static int ath12k_install_key(struct ath12k_link_vif *arvif,
+> @@ -8917,7 +9005,7 @@ static void ath12k_mac_op_remove_interface(struct ieee80211_hw *hw,
+>  					.aborted = true,
+>  				};
+>  
+> -				ieee80211_scan_completed(ar->ah->hw, &info);
+> +				ath12k_mac_scan_send_complete(ar, &info);
+>  			}
+>  
+>  			ar->scan.state = ATH12K_SCAN_IDLE;
 
 Reviewed-by: Mahendran P <quic_mahep@quicinc.com>
 
