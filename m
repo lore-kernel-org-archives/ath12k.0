@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3240C369DC
-	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 12:22:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C936CC3ABA9
+	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 12:27:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=; b=BQVnr9oFyj+q4xEcXl4AhordYD
-	sQwDsXtNupC0XImzEeJY1TbCCOx31pL+1S4aZR97rkC3eavZ8Y04dkFkUr95akz4TqHln8dRIDzlV
-	i93Oh1E3wUQWo94WH6yVip8cJwn/5FtT4nqHeVRCBAVkxMgpdchxC++5/HBDsYL0eATL65856b2bt
-	8NhDHwDRzG/HKq16xRow1QrK4tgJVrzerxdbcpANW/8VcntRBaiwsdHPi2xyzTq6GHkfyv5yH1jWi
-	531xZy9gwmCKypuxH0s2672YoNu1yph/vlYQlladEeUzIpwNQBpVNYqQck+c/LbUJYOG+34jS97ZG
-	koUhOB7A==;
+	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=; b=SBRQY2cAUrF72L28OVYn8W6ZTL
+	CPeakXK3w84j0YNUDwpZy8CB1y3Lyuwmlutvt5qrlrn5mCUuYonlTbvLBksrzbqbdyOan4G2LAxEI
+	eIBht++nauK6aSVSXue77tF4XNWdA/oQTjujw242ch9G8fWC1gQaaVQg01caG0m4vjTUUEfqRZRqU
+	6G5GD1mPvkXzXJIJj54i1h/516jNV4lKVLvbC41f/9SFJ9oDg/gQwGQoE/Es74K28OX04+jQwxUsH
+	9ISK72qpEoSM9ZJApO9mFQnW57dEQA9RXIAwfZDM4KFiydiUsjTsV37r6Ql9YGC43jWf/p8/aK/l5
+	jh+bNGqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9jym-00000009d9f-1zHe;
-	Tue, 29 Apr 2025 12:22:28 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1u9k3G-00000009e0x-2FUP;
+	Tue, 29 Apr 2025 12:27:06 +0000
+Received: from sender3-pp-f112.zoho.com ([136.143.184.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9jyj-00000009d8r-3jFD;
-	Tue, 29 Apr 2025 12:22:27 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1745929328; cv=none; 
+	id 1u9k0m-00000009dYb-20pV;
+	Tue, 29 Apr 2025 12:24:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1745929453; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=Fac9jr2q+2FFJjwbysdw4ZN5Ctn7rfRpfIx+1lcAnA/nAwvP5nMuS/RO/OYB9QBONGUpSFuRiXN00tpzQkJw6znj2RtH1Sre5JU2DgSBGHtOGwFfG7cKGdG9Hb8s5fA8e/rQ8OgOkco0/YFkdEFX3COBh4+gWTWMUUsTiTj56Dg=
+	b=PYuHLCecog1qRMXuLCs6DMzTZriApuZa1/0MTnGhCpDeMvznSpJBFYBGBiVsP7yixP2Gcd/sOrRLY2rpCokAEGTSqsZ9ZxNLNgAACnhn6epLv5lfPsCmqU7uTlsUup5F68pMlGFQ2nzvLehVlzNEG9L+zxDyNuapGihTmsaMXzw=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1745929328; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	t=1745929453; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
 	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=; 
-	b=Vzj1rAukVMGMgQhFaGv8ckhYTMk4642OMD55TcoAymjsOlmRmJyXa2GpAbtqshGVqK+2NCeSpVqTMb7SySG+7HLa8VUFVrwV2XZEumqgghkkMevhu2TPvWLKsoawDOtyE1OgZM3nES+tIYjfLT9bsPsGU7hcJab8oBD6F/HuSZI=
+	b=mfMvA+8gSWP9YYwpptSa0BV+2kbL1f2ioRjnoCssYJ/DavYT5M+X0CmscN2MedYM2diER8RDICVnNPrGPESflQIbZiDhyvdR0RsZbLinmtFo+MVkBJ3BeQrmmYtep+eH6fdZP+vkfZh1cdp8dZB/MuTkC1Uj+xwgJbUZg2H61iQ=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=usama.anjum@collabora.com;
 	dmarc=pass header.from=<usama.anjum@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1745929327;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1745929453;
 	s=zohomail; d=collabora.com; i=usama.anjum@collabora.com;
 	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:MIME-Version:Content-Transfer-Encoding:Message-Id:Reply-To;
 	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=;
-	b=LnLAgr+QE8jLvEyADCjhfPHj9SCXQgULDYrsuSGMracCavNIFuNBpDPBgzgM0Bqf
-	8Yb/7XjOHjfoJwkQPsnHeM/hCKt4vH8Va5cfL5OVHN+4EV5tA0u0Q/7uKPVHOYpfHaG
-	WQCftFf8+zqk7CsSYrt2HbFKdT5oLowhz7EJ+SQ0=
-Received: by mx.zohomail.com with SMTPS id 1745929325816339.67490448540536;
-	Tue, 29 Apr 2025 05:22:05 -0700 (PDT)
+	b=Al6aHHX6V7efoRHenD0J77Vq9s4COpOYOZueLi9j+wA1LPQOTl8/W0Iy28h2lIwD
+	REH3shWKufnTwU2NgYOctT53XyfqoQHQpGHx0xAPucFSgil9a2Q8yCmRPTAfxGvGGkT
+	d2FvDkXpyCuFec4dZKwIPK1SUKexzul+QFhhYNv4=
+Received: by mx.zohomail.com with SMTPS id 1745929450569239.30908580364132;
+	Tue, 29 Apr 2025 05:24:10 -0700 (PDT)
 From: Muhammad Usama Anjum <usama.anjum@collabora.com>
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
 	Jeff Johnson <jjohnson@kernel.org>,
@@ -54,13 +54,13 @@ To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
 	Matthew Leung <quic_mattleun@quicinc.com>,
 	Muhammad Usama Anjum <usama.anjum@collabora.com>,
 	Yan Zhen <yanzhen@vivo.com>,
-	Alex Elder <elder@kernel.org>,
-	Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
 	Kunwu Chan <chentao@kylinos.cn>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Troy Hanson <quic_thanson@quicinc.com>,
-	"Dr. David Alan Gilbert" <linux@treblig.org>
+	"Dr. David Alan Gilbert" <linux@treblig.org>,
+	Troy Hanson <quic_thanson@quicinc.com>
 Cc: kernel@collabora.com,
+	Carl Vanderlip <quic_carlv@quicinc.com>,
+	Sumit Garg <sumit.garg@kernel.org>,
 	mhi@lists.linux.dev,
 	linux-arm-msm@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
@@ -68,15 +68,15 @@ Cc: kernel@collabora.com,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org
 Subject: [PATCH v3] bus: mhi: host: don't free bhie tables during suspend/hibernation
-Date: Tue, 29 Apr 2025 17:20:56 +0500
-Message-ID: <20250429122112.104472-1-usama.anjum@collabora.com>
+Date: Tue, 29 Apr 2025 17:23:35 +0500
+Message-ID: <20250429122351.108684-1-usama.anjum@collabora.com>
 X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250429_052225_997052_D237441C 
-X-CRM114-Status: GOOD (  17.74  )
+X-CRM114-CacheID: sfid-20250429_052432_590218_494849F1 
+X-CRM114-Status: GOOD (  17.35  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
