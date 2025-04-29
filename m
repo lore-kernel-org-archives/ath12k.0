@@ -4,92 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A49CC369DC
-	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 09:22:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3240C369DC
+	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 12:22:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:
-	Content-Transfer-Encoding:Cc:Date:In-Reply-To:From:Subject:Mime-Version:
-	Content-Type:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JYlXOPj1cgIGd6V6anYcfQS7uvt1A+zSUbBbB+MHYyk=; b=lFWh1FLnLEyPOxyucDsnq7cD/6
-	2d6DLHxqhUBGt6VjlCqzqV9iiyKApNIv2ji3Us8ldj5rgUZPX5ttdHp149RYOWI9d7ahbz+Orvott
-	gXhjpZZfuQPeM//9aZr89qC3tt+B7//tgGSyFsg/ldGM464qYgzGoJELXVtEwQXsE9Xs4qIAvl3Ad
-	c9NFx4H1Ykqn7RqJZetSJWKWrMzlCdkyU4E31+wWfTQ2NHP8poc2RRjyHwz00sw4qrjODRZdlvgPM
-	XHjHA117z4LlUOr2X6su37jymMT6I5vGhyCXh8d3InxA2hFCCGmT1nU9l+T4JkgXqOdNDSHBUN3LO
-	dpej0JhQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=; b=BQVnr9oFyj+q4xEcXl4AhordYD
+	sQwDsXtNupC0XImzEeJY1TbCCOx31pL+1S4aZR97rkC3eavZ8Y04dkFkUr95akz4TqHln8dRIDzlV
+	i93Oh1E3wUQWo94WH6yVip8cJwn/5FtT4nqHeVRCBAVkxMgpdchxC++5/HBDsYL0eATL65856b2bt
+	8NhDHwDRzG/HKq16xRow1QrK4tgJVrzerxdbcpANW/8VcntRBaiwsdHPi2xyzTq6GHkfyv5yH1jWi
+	531xZy9gwmCKypuxH0s2672YoNu1yph/vlYQlladEeUzIpwNQBpVNYqQck+c/LbUJYOG+34jS97ZG
+	koUhOB7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9hAm-000000096kK-3FFa;
-	Tue, 29 Apr 2025 09:22:40 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1u9jym-00000009d9f-1zHe;
+	Tue, 29 Apr 2025 12:22:28 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9hAk-000000096jD-1XVs
-	for ath12k@lists.infradead.org;
-	Tue, 29 Apr 2025 09:22:39 +0000
-Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-5eb92df4fcbso11137755a12.0
-        for <ath12k@lists.infradead.org>; Tue, 29 Apr 2025 02:22:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1745918556; x=1746523356; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=JYlXOPj1cgIGd6V6anYcfQS7uvt1A+zSUbBbB+MHYyk=;
-        b=BBgC3nBTjO6SKBtMC9KETGQ2b5nKG8tMV/guwvsE2T5pI8KhOAxh5pY2FEvO87pbP+
-         gGFGIEsWlhAP9LeojBeVxw6Y76QduDd1Nlad8ehr5T0QhCg9p2YBYLRYEFXOFoetCGww
-         jEbdIR/GujPB5OAOS5pQQS1HIK/WNzt6h9x2iupll1Kb4Mk4oq1g7p49XmTkWBtU+k5s
-         5uzBspwrUM5snB1JFe0LLpfTsG0qGrBqRJFFvIdlkuC3Cw5ewwz9dKJxsEmDE1RLu5uB
-         y50/I8kqnNePvtzvHwr3g6cD2P10Nkde83pHRe5/Az4MVNoShTz9Ki564LojJTMalhfz
-         Hnjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745918556; x=1746523356;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=JYlXOPj1cgIGd6V6anYcfQS7uvt1A+zSUbBbB+MHYyk=;
-        b=r7Ys00sl9zQml9wwXx7x7lO0NQiHb4IrSMdq88cmvPIx0WbhF86490isx/15QpcRBb
-         Og/bRD7U5k/fzK02u4eeh84Ei53fa1v+eEBfuRurntrEnU0nKiUwAKpRmMw+bKt+F7G9
-         +XIC0o3ACkWn+TpaM0mLCVtjlkkGnRwLOonnWJha+cN6WZC0LFrQBIjUX9Yhyfp/zTxv
-         C4mVTSs2AsOYojReyw+0vkHew/K/+Ssuds8T6TLKbx129UeWWhQDNMbOxuQ4z0lhtluY
-         vUW4ZxaMDmHmK9FzVgcLPF8bqHOg9I56pY2gvgxcMYng8zRu8Li6V4V0PVZ/R4NdnwF5
-         EjPg==
-X-Gm-Message-State: AOJu0Yy/sbMvXZYPi27Jotrkz641Z1o8vHaW9NYWaDThk/hLBkQ89Xwh
-	g9r/PzO8hwo/DJSnPjYxygOfxWHxaUg7ONLwcHGTJDEeR0K1jcfnPXuCLg==
-X-Gm-Gg: ASbGncvqyAsuNH/XOshFe7uE+AKVoiCeq6tcjSLjUODCCyoD5LMS6gGBv0iMhcdzzKm
-	YPW0WYmxwrL7xIm/ykO7N+J4nDltdMnKDrY2LFkiQovZgxKOqHBRwesPLUdpw71UO68Crr4SPVu
-	MtFIuR/wv3XeFnfqEG8xgph6Bb3niy6rSRuhJa/eW/P9/lnaKvS8m0Rhg5d5mT8tss95KmyPtw9
-	GIAH+tyfQexbO7KNMyRa4YMjo9FJCKuoJdQTiDi7QnRBuYsX5BKt7UBifdX4JwtXpCczMq+UowG
-	lRVV7I13zUWtaKOP3ZEknUb/kkjpV8J3E9ao6zGaxsMkhPYXI6hrvX3RujvZf8IhUHd0ZtPSXzh
-	Eq2jCMK/POpPxpySCNP4QHbY=
-X-Google-Smtp-Source: AGHT+IFV72fANjoX5Vl5M50nzv2sARExyGeniXvLo1n0DYcKIJbIPUaNluRThO5AiVRPUQqiIjEVYA==
-X-Received: by 2002:a17:907:2689:b0:ac4:76e:cdc1 with SMTP id a640c23a62f3a-ace849026b2mr1035335966b.21.1745918555796;
-        Tue, 29 Apr 2025 02:22:35 -0700 (PDT)
-Received: from smtpclient.apple (7-253-142-46.pool.kielnet.net. [46.142.253.7])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ace6ecf8f3dsm735618166b.110.2025.04.29.02.22.34
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 29 Apr 2025 02:22:35 -0700 (PDT)
-Content-Type: text/plain;
-	charset=utf-8
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.500.181.1.5\))
-Subject: Re: wifi: ath12k: MLO not working in main/main-pending for NCM865 /
- WCM7850 in station mode
-From: Benjamin Eggerstedt <benjamin.eggerstedt@gmail.com>
-In-Reply-To: <ed88961a-4060-4a64-9d1c-2d08bc4dd165@oss.qualcomm.com>
-Date: Tue, 29 Apr 2025 11:22:24 +0200
-Cc: ath12k@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <EBAC1B61-E726-4614-9709-268CFF07007F@gmail.com>
-References: <231C035E-18AD-4ABD-91A5-841253644C2B@gmail.com>
- <7001407B-8507-4CD8-B96A-328927D6E286@gmail.com>
- <FBF5892D-0A0A-4AF9-9D53-B3C76673D797@gmail.com>
- <a5bceb0d-bc44-4bf8-b08f-b56b637b28d6@oss.qualcomm.com>
- <D1F01BA0-8B75-4B62-A060-D43C666820F2@gmail.com>
- <ed88961a-4060-4a64-9d1c-2d08bc4dd165@oss.qualcomm.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-X-Mailer: Apple Mail (2.3826.500.181.1.5)
+	id 1u9jyj-00000009d8r-3jFD;
+	Tue, 29 Apr 2025 12:22:27 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1745929328; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=Fac9jr2q+2FFJjwbysdw4ZN5Ctn7rfRpfIx+1lcAnA/nAwvP5nMuS/RO/OYB9QBONGUpSFuRiXN00tpzQkJw6znj2RtH1Sre5JU2DgSBGHtOGwFfG7cKGdG9Hb8s5fA8e/rQ8OgOkco0/YFkdEFX3COBh4+gWTWMUUsTiTj56Dg=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1745929328; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=; 
+	b=Vzj1rAukVMGMgQhFaGv8ckhYTMk4642OMD55TcoAymjsOlmRmJyXa2GpAbtqshGVqK+2NCeSpVqTMb7SySG+7HLa8VUFVrwV2XZEumqgghkkMevhu2TPvWLKsoawDOtyE1OgZM3nES+tIYjfLT9bsPsGU7hcJab8oBD6F/HuSZI=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=usama.anjum@collabora.com;
+	dmarc=pass header.from=<usama.anjum@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1745929327;
+	s=zohomail; d=collabora.com; i=usama.anjum@collabora.com;
+	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:MIME-Version:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=sKJ1pTVCX4dEVX1vrqZiREtxmyVR9vDTmkBb2JrH30s=;
+	b=LnLAgr+QE8jLvEyADCjhfPHj9SCXQgULDYrsuSGMracCavNIFuNBpDPBgzgM0Bqf
+	8Yb/7XjOHjfoJwkQPsnHeM/hCKt4vH8Va5cfL5OVHN+4EV5tA0u0Q/7uKPVHOYpfHaG
+	WQCftFf8+zqk7CsSYrt2HbFKdT5oLowhz7EJ+SQ0=
+Received: by mx.zohomail.com with SMTPS id 1745929325816339.67490448540536;
+	Tue, 29 Apr 2025 05:22:05 -0700 (PDT)
+From: Muhammad Usama Anjum <usama.anjum@collabora.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
+	Youssef Samir <quic_yabdulra@quicinc.com>,
+	Matthew Leung <quic_mattleun@quicinc.com>,
+	Muhammad Usama Anjum <usama.anjum@collabora.com>,
+	Yan Zhen <yanzhen@vivo.com>,
+	Alex Elder <elder@kernel.org>,
+	Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
+	Kunwu Chan <chentao@kylinos.cn>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Troy Hanson <quic_thanson@quicinc.com>,
+	"Dr. David Alan Gilbert" <linux@treblig.org>
+Cc: kernel@collabora.com,
+	mhi@lists.linux.dev,
+	linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org
+Subject: [PATCH v3] bus: mhi: host: don't free bhie tables during suspend/hibernation
+Date: Tue, 29 Apr 2025 17:20:56 +0500
+Message-ID: <20250429122112.104472-1-usama.anjum@collabora.com>
+X-Mailer: git-send-email 2.43.0
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250429_022238_409930_45479722 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20250429_052225_997052_D237441C 
+X-CRM114-Status: GOOD (  17.74  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,215 +91,209 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
+Fix dma_direct_alloc() failure at resume time during bhie_table
+allocation. There is a crash report where at resume time, the memory
+from the dma doesn't get allocated and MHI fails to re-initialize.
+There is fragmentation/memory pressure.
 
+To fix it, don't free the memory at power down during suspend /
+hibernation. Instead, use the same allocated memory again after every
+resume / hibernation. This patch has been tested with resume and
+hibernation both.
 
-> On 28. Apr 2025, at 16:19, Jeff Johnson =
-<jeff.johnson@oss.qualcomm.com> wrote:
->=20
-> On 4/25/2025 4:52 AM, Benjamin Eggerstedt wrote:
->>> On 24. Apr 2025, at 16:28, Jeff Johnson =
-<jeff.johnson@oss.qualcomm.com> wrote:
->>>=20
->>> On 4/22/2025 10:35 PM, Benjamin Eggerstedt wrote:
->>>> Hi,
->>>>=20
->>>> I compiled main-pending from here =
-https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/log/?h=3Dmain-=
-pending after "Merge branch 'pending' into main-pending =
-ath-pending-202504182357 master-pending main-pending=E2=80=9D by Jeff =
-Johnson. I tried =E2=80=9Cmain=E2=80=9D the day before, but saw that a =
-couple of additional fixes went in and redid the previously and =
-unfortunately still unsuccessful test
->>>=20
->>> Response from the development team is that the current public =
-firmware is not
->>> MLO capable. An updated firmware will be pushed soon.
->>>=20
->>> /jeff
->>=20
->> Hi Jeff,
->>=20
->> I appreciate the feedback, thank you. I=E2=80=99m happy to compile, =
-test & report back once such firmware becomes available.
->> Feel free to give me a nudge here.
->=20
-> New WCN7850 firmware is now available in linux-firmware
-> =
-https://msgid.link/CA+5PVA71-_a9nG-vULohgzbSfyFyWOB9RE1x4D4vdUbw4HAegg@mai=
-l.gmail.com
->=20
-> WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+The rddm is of constant size for a given hardware. While the fbc_image
+size depends on the firmware. If the firmware changes, we'll free and
+allocate new memory for it.
 
+Here are the crash logs:
 
-Hi Jeff,
+[ 3029.338587] mhi mhi0: Requested to power ON
+[ 3029.338621] mhi mhi0: Power on setup success
+[ 3029.668654] kworker/u33:8: page allocation failure: order:7, mode:0xc04(GFP_NOIO|GFP_DMA32), nodemask=(null),cpuset=/,mems_allowed=0
+[ 3029.668682] CPU: 4 UID: 0 PID: 2744 Comm: kworker/u33:8 Not tainted 6.11.11-valve10-1-neptune-611-gb69e902b4338 #1ed779c892334112fb968aaa3facf9686b5ff0bd7
+[ 3029.668690] Hardware name: Valve Galileo/Galileo, BIOS F7G0112 08/01/2024
+[ 3029.668694] Workqueue: mhi_hiprio_wq mhi_pm_st_worker [mhi]
+[ 3029.668717] Call Trace:
+[ 3029.668722]  <TASK>
+[ 3029.668728]  dump_stack_lvl+0x4e/0x70
+[ 3029.668738]  warn_alloc+0x164/0x190
+[ 3029.668747]  ? srso_return_thunk+0x5/0x5f
+[ 3029.668754]  ? __alloc_pages_direct_compact+0xaf/0x360
+[ 3029.668761]  __alloc_pages_slowpath.constprop.0+0xc75/0xd70
+[ 3029.668774]  __alloc_pages_noprof+0x321/0x350
+[ 3029.668782]  __dma_direct_alloc_pages.isra.0+0x14a/0x290
+[ 3029.668790]  dma_direct_alloc+0x70/0x270
+[ 3029.668796]  mhi_alloc_bhie_table+0xe8/0x190 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
+[ 3029.668814]  mhi_fw_load_handler+0x1bc/0x310 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
+[ 3029.668830]  mhi_pm_st_worker+0x5c8/0xaa0 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
+[ 3029.668844]  ? srso_return_thunk+0x5/0x5f
+[ 3029.668853]  process_one_work+0x17e/0x330
+[ 3029.668861]  worker_thread+0x2ce/0x3f0
+[ 3029.668868]  ? __pfx_worker_thread+0x10/0x10
+[ 3029.668873]  kthread+0xd2/0x100
+[ 3029.668879]  ? __pfx_kthread+0x10/0x10
+[ 3029.668885]  ret_from_fork+0x34/0x50
+[ 3029.668892]  ? __pfx_kthread+0x10/0x10
+[ 3029.668898]  ret_from_fork_asm+0x1a/0x30
+[ 3029.668910]  </TASK>
 
-Thank you! I compiled a fresh =E2=80=9Cmain-pending=E2=80=9D today and =
-used the firmware you referenced. It doesn=E2=80=99t load (no wlan =
-interface) and makes a booboo when I try to =E2=80=9Csudo rmmod =
-ath12k=E2=80=9D.
-I=E2=80=99ll be travelling for 1,5 weeks for business unfortunately and =
-cannot really be of help with further tests for the time being.
+Tested-on: WCN6855 WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.6
 
-I hope the following is of help somehow =E2=80=A6
+Signed-off-by: Muhammad Usama Anjum <usama.anjum@collabora.com>
+---
+Changes since v1:
+- Don't free bhie tables during suspend/hibernation only
+- Handle fbc_image changed size correctly
+- Remove fbc_image getting set to NULL in *free_bhie_table()
 
-P.S. I saw the same when I just used the new firmware with the previous =
-kernel.
+Changes since v2:
+- Remove the new mhi_partial_unprepare_after_power_down() and instead
+  update mhi_power_down_keep_dev() to use
+  mhi_power_down_unprepare_keep_dev() as suggested by Mani
+- Update all users of this API such as ath12k (previously only ath11k
+  was updated)
+- Define prev_fw_sz in docs
+- Do better alignment of comments
 
-debadm@debian:~$ sudo journalctl -k -f
-[sudo] password for debadm:  Apr 29 11:05:47 debian kernel: input: HDA =
-Intel PCH Front Headphone as =
-/devices/pci0000:00/0000:00:1f.3/sound/card0/input12
-Apr 29 11:05:47 debian kernel: input: HDA Intel PCH HDMI/DP,pcm=3D3 as =
-/devices/pci0000:00/0000:00:1f.3/sound/card0/input13
-Apr 29 11:05:47 debian kernel: input: HDA Intel PCH HDMI/DP,pcm=3D7 as =
-/devices/pci0000:00/0000:00:1f.3/sound/card0/input14
-Apr 29 11:05:47 debian kernel: input: HDA Intel PCH HDMI/DP,pcm=3D8 as =
-/devices/pci0000:00/0000:00:1f.3/sound/card0/input15
-Apr 29 11:05:50 debian kernel: r8169 0000:06:00.0 enp6s0: Link is Up - =
-1Gbps/Full - flow control off
-Apr 29 11:05:52 debian kernel: ath12k_pci 0000:03:00.0: failed to =
-receive wmi unified ready event: -110
-Apr 29 11:05:52 debian kernel: ath12k_pci 0000:03:00.0: failed to start =
-core: -110
-Apr 29 11:05:52 debian kernel: failed to send QMI message
-Apr 29 11:05:52 debian kernel: ath12k_pci 0000:03:00.0: qmi failed to =
-send mode request, mode: 4, err =3D -5
-Apr 29 11:05:52 debian kernel: ath12k_pci 0000:03:00.0: qmi failed to =
-send wlan mode off
+Tested on ath11k.
+---
+ drivers/bus/mhi/host/boot.c           | 15 +++++++++++----
+ drivers/bus/mhi/host/init.c           |  5 +++--
+ drivers/bus/mhi/host/pm.c             |  9 +++++++++
+ drivers/net/wireless/ath/ath11k/mhi.c |  8 ++++----
+ drivers/net/wireless/ath/ath12k/mhi.c |  8 ++++----
+ include/linux/mhi.h                   |  2 ++
+ 6 files changed, 33 insertions(+), 14 deletions(-)
 
-## The above is during/after boot in dmesg
-## sudo rmmod ath12k
+diff --git a/drivers/bus/mhi/host/boot.c b/drivers/bus/mhi/host/boot.c
+index efa3b6dddf4d2..bc8459798bbee 100644
+--- a/drivers/bus/mhi/host/boot.c
++++ b/drivers/bus/mhi/host/boot.c
+@@ -584,10 +584,17 @@ void mhi_fw_load_handler(struct mhi_controller *mhi_cntrl)
+ 	 * device transitioning into MHI READY state
+ 	 */
+ 	if (fw_load_type == MHI_FW_LOAD_FBC) {
+-		ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
+-		if (ret) {
+-			release_firmware(firmware);
+-			goto error_fw_load;
++		if (mhi_cntrl->fbc_image && fw_sz != mhi_cntrl->prev_fw_sz) {
++			mhi_free_bhie_table(mhi_cntrl, mhi_cntrl->fbc_image);
++			mhi_cntrl->fbc_image = NULL;
++		}
++		if (!mhi_cntrl->fbc_image) {
++			ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
++			if (ret) {
++				release_firmware(firmware);
++				goto error_fw_load;
++			}
++			mhi_cntrl->prev_fw_sz = fw_sz;
+ 		}
+ 
+ 		/* Load the firmware into BHIE vec table */
+diff --git a/drivers/bus/mhi/host/init.c b/drivers/bus/mhi/host/init.c
+index 13e7a55f54ff4..a7663ad16bfc6 100644
+--- a/drivers/bus/mhi/host/init.c
++++ b/drivers/bus/mhi/host/init.c
+@@ -1173,8 +1173,9 @@ int mhi_prepare_for_power_up(struct mhi_controller *mhi_cntrl)
+ 		/*
+ 		 * Allocate RDDM table for debugging purpose if specified
+ 		 */
+-		mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->rddm_image,
+-				     mhi_cntrl->rddm_size);
++		if (!mhi_cntrl->rddm_image)
++			mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->rddm_image,
++					     mhi_cntrl->rddm_size);
+ 		if (mhi_cntrl->rddm_image) {
+ 			ret = mhi_rddm_prepare(mhi_cntrl,
+ 					       mhi_cntrl->rddm_image);
+diff --git a/drivers/bus/mhi/host/pm.c b/drivers/bus/mhi/host/pm.c
+index e6c3ff62bab1d..b726b000d8a5d 100644
+--- a/drivers/bus/mhi/host/pm.c
++++ b/drivers/bus/mhi/host/pm.c
+@@ -1259,10 +1259,19 @@ void mhi_power_down(struct mhi_controller *mhi_cntrl, bool graceful)
+ }
+ EXPORT_SYMBOL_GPL(mhi_power_down);
+ 
++void mhi_power_down_unprepare_keep_dev(struct mhi_controller *mhi_cntrl)
++{
++	mhi_cntrl->bhi = NULL;
++	mhi_cntrl->bhie = NULL;
++
++	mhi_deinit_dev_ctxt(mhi_cntrl);
++}
++
+ void mhi_power_down_keep_dev(struct mhi_controller *mhi_cntrl,
+ 			       bool graceful)
+ {
+ 	__mhi_power_down(mhi_cntrl, graceful, false);
++	mhi_power_down_unprepare_keep_dev(mhi_cntrl);
+ }
+ EXPORT_SYMBOL_GPL(mhi_power_down_keep_dev);
+ 
+diff --git a/drivers/net/wireless/ath/ath11k/mhi.c b/drivers/net/wireless/ath/ath11k/mhi.c
+index acd76e9392d31..c5dc776b23643 100644
+--- a/drivers/net/wireless/ath/ath11k/mhi.c
++++ b/drivers/net/wireless/ath/ath11k/mhi.c
+@@ -460,12 +460,12 @@ void ath11k_mhi_stop(struct ath11k_pci *ab_pci, bool is_suspend)
+ 	 * workaround, otherwise ath11k_core_resume() will timeout
+ 	 * during resume.
+ 	 */
+-	if (is_suspend)
++	if (is_suspend) {
+ 		mhi_power_down_keep_dev(ab_pci->mhi_ctrl, true);
+-	else
++	} else {
+ 		mhi_power_down(ab_pci->mhi_ctrl, true);
+-
+-	mhi_unprepare_after_power_down(ab_pci->mhi_ctrl);
++		mhi_unprepare_after_power_down(ab_pci->mhi_ctrl);
++	}
+ }
+ 
+ int ath11k_mhi_suspend(struct ath11k_pci *ab_pci)
+diff --git a/drivers/net/wireless/ath/ath12k/mhi.c b/drivers/net/wireless/ath/ath12k/mhi.c
+index 08f44baf182a5..cb7f789d873f2 100644
+--- a/drivers/net/wireless/ath/ath12k/mhi.c
++++ b/drivers/net/wireless/ath/ath12k/mhi.c
+@@ -635,12 +635,12 @@ void ath12k_mhi_stop(struct ath12k_pci *ab_pci, bool is_suspend)
+ 	 * workaround, otherwise ath12k_core_resume() will timeout
+ 	 * during resume.
+ 	 */
+-	if (is_suspend)
++	if (is_suspend) {
+ 		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF_KEEP_DEV);
+-	else
++	} else {
+ 		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_POWER_OFF);
+-
+-	ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
++		ath12k_mhi_set_state(ab_pci, ATH12K_MHI_DEINIT);
++	}
+ }
+ 
+ void ath12k_mhi_suspend(struct ath12k_pci *ab_pci)
+diff --git a/include/linux/mhi.h b/include/linux/mhi.h
+index dd372b0123a6d..6fd218a877855 100644
+--- a/include/linux/mhi.h
++++ b/include/linux/mhi.h
+@@ -306,6 +306,7 @@ struct mhi_controller_config {
+  *           if fw_image is NULL and fbc_download is true (optional)
+  * @fw_sz: Firmware image data size for normal booting, used only if fw_image
+  *         is NULL and fbc_download is true (optional)
++ * @prev_fw_sz: Previous firmware image data size, when fbc_download is true
+  * @edl_image: Firmware image name for emergency download mode (optional)
+  * @rddm_size: RAM dump size that host should allocate for debugging purpose
+  * @sbl_size: SBL image size downloaded through BHIe (optional)
+@@ -382,6 +383,7 @@ struct mhi_controller {
+ 	const char *fw_image;
+ 	const u8 *fw_data;
+ 	size_t fw_sz;
++	size_t prev_fw_sz;
+ 	const char *edl_image;
+ 	size_t rddm_size;
+ 	size_t sbl_size;
+-- 
+2.43.0
 
-Apr 29 11:15:52 debian kernel: BUG: kernel NULL pointer dereference, =
-address: 0000000000000000
-Apr 29 11:15:52 debian kernel: #PF: supervisor read access in kernel =
-mode
-Apr 29 11:15:52 debian kernel: #PF: error_code(0x0000) - not-present =
-page
-Apr 29 11:15:52 debian kernel: PGD 0 P4D 0  Apr 29 11:15:52 debian =
-kernel: Oops: Oops: 0000 [#1] SMP PTI
-Apr 29 11:15:52 debian kernel: CPU: 3 UID: 0 PID: 1245 Comm: rmmod Not =
-tainted 6.15.0-rc2-wt-ath-ath12kgeb #2 PREEMPT(voluntary)  Apr 29 =
-11:15:52 debian kernel: Hardware name: Gigabyte Technology Co., Ltd. =
-B365M DS3H/B365M DS3H, BIOS F7 11/13/2021
-Apr 29 11:15:52 debian kernel: RIP: =
-0010:ath12k_dp_rx_pdev_free+0x1f/0x70 [ath12k]
-Apr 29 11:15:52 debian kernel: Code: 90 90 90 90 90 90 90 90 90 90 90 66 =
-0f 1f 00 0f 1f 44 00 00 48 63 f6 41 54 48 69 f6 28 04 00 00 55 53 48 8b =
-9c 3e 28 b3 00 00 <4c> 8b 23 48 83 c3 40 49 8b 84 24 78 d7 00 00 8b 80 =
-94 00 00 00 85
-Apr 29 11:15:52 debian kernel: RSP: 0018:ffffb0b040f5bc00 EFLAGS: =
-00010206
-Apr 29 11:15:52 debian kernel: RAX: 0000000000000001 RBX: =
-0000000000000000 RCX: 0000000000000002
-Apr 29 11:15:52 debian kernel: RDX: ffff96e281968000 RSI: =
-0000000000000000 RDI: ffff96e288580000
-Apr 29 11:15:52 debian kernel: RBP: ffff96e288580000 R08: =
-000000000000001f R09: ffffffff8b7493e0
-Apr 29 11:15:52 debian kernel: R10: 0000000000000001 R11: =
-0000000000000000 R12: ffff96e2833df800
-Apr 29 11:15:52 debian kernel: R13: ffff96e28858b300 R14: =
-ffffffffc15b1308 R15: ffff96e2833df838
-Apr 29 11:15:52 debian kernel: FS:  00007f4d35e82f00(0000) =
-GS:ffff96ea03e67000(0000) knlGS:0000000000000000
-Apr 29 11:15:52 debian kernel: CS:  0010 DS: 0000 ES: 0000 CR0: =
-0000000080050033
-Apr 29 11:15:52 debian kernel: CR2: 0000000000000000 CR3: =
-000000010425c001 CR4: 00000000003726f0
-Apr 29 11:15:52 debian kernel: Call Trace:
-Apr 29 11:15:52 debian kernel:  <TASK>
-Apr 29 11:15:52 debian kernel:  ath12k_dp_pdev_free+0x27/0x40 [ath12k]
-Apr 29 11:15:52 debian kernel:  ath12k_core_hw_group_stop+0x64/0x90 =
-[ath12k]
-Apr 29 11:15:52 debian kernel:  ath12k_core_deinit+0x59/0xc0 [ath12k]
-Apr 29 11:15:52 debian kernel:  ath12k_pci_remove+0x5c/0x110 [ath12k]
-Apr 29 11:15:52 debian kernel:  pci_device_remove+0x3f/0xb0
-Apr 29 11:15:52 debian kernel:  =
-device_release_driver_internal+0x19c/0x200
-Apr 29 11:15:52 debian kernel:  driver_detach+0x48/0x90
-Apr 29 11:15:52 debian kernel:  bus_remove_driver+0x6d/0xf0
-Apr 29 11:15:52 debian kernel:  pci_unregister_driver+0x2e/0xb0
-Apr 29 11:15:52 debian kernel:  __do_sys_delete_module+0x1ce/0x310
-Apr 29 11:15:52 debian kernel:  do_syscall_64+0x82/0x190
-Apr 29 11:15:52 debian kernel:  ? __memcg_slab_free_hook+0xf7/0x140
-Apr 29 11:15:52 debian kernel:  ? __x64_sys_close+0x3d/0x80
-Apr 29 11:15:52 debian kernel:  ? kmem_cache_free+0x3ee/0x450
-Apr 29 11:15:52 debian kernel:  ? syscall_exit_to_user_mode+0x4d/0x210
-Apr 29 11:15:52 debian kernel:  ? do_syscall_64+0x8e/0x190
-Apr 29 11:15:52 debian kernel:  ? exc_page_fault+0x7e/0x1a0
-Apr 29 11:15:52 debian kernel:  entry_SYSCALL_64_after_hwframe+0x76/0x7e
-Apr 29 11:15:52 debian kernel: RIP: 0033:0x7f4d3571b417
-Apr 29 11:15:52 debian kernel: Code: 73 01 c3 48 8b 0d e1 59 0d 00 f7 d8 =
-64 89 01 48 83 c8 ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 44 00 00 b8 =
-b0 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d b1 59 0d 00 f7 =
-d8 64 89 01 48
-Apr 29 11:15:52 debian kernel: RSP: 002b:00007fffe8c6ede8 EFLAGS: =
-00000206 ORIG_RAX: 00000000000000b0
-Apr 29 11:15:52 debian kernel: RAX: ffffffffffffffda RBX: =
-000055ea12031760 RCX: 00007f4d3571b417
-Apr 29 11:15:52 debian kernel: RDX: 0000000000000000 RSI: =
-0000000000000800 RDI: 000055ea120317c0
-Apr 29 11:15:52 debian kernel: RBP: 0000000000000000 R08: =
-0000000000000000 R09: 0000000000000000
-Apr 29 11:15:52 debian kernel: R10: 0000000000000000 R11: =
-0000000000000206 R12: 000055ea120312a0
-Apr 29 11:15:52 debian kernel: R13: 00007fffe8c6f030 R14: =
-000055ea12031760 R15: 00007fffe8c6f038
-Apr 29 11:15:52 debian kernel:  </TASK>
-Apr 29 11:15:52 debian kernel: Modules linked in: snd_hda_codec_hdmi =
-snd_hda_codec_realtek snd_hda_codec_generic snd_hda_scodec_component =
-qrtr_mhi binfmt_misc intel_rapl_msr intel_rapl_common nls_ascii =
-nls_cp437 vfat intel_uncore_frequency intel_uncore_frequency_common fat =
-qrtr ath12k(-) qmi_helpers x86_pkg_temp_thermal intel_powerclamp =
-mac80211 coretemp i915 btusb snd_soc_avs kvm_intel btrtl btintel btbcm =
-snd_soc_hda_codec snd_hda_ext_core btmtk libarc4 snd_soc_core kvm =
-cfg80211 bluetooth snd_compress snd_pcm_dmaengine snd_hda_intel =
-drm_buddy joydev irqbypass ttm snd_intel_dspcfg snd_intel_sdw_acpi =
-ghash_clmulni_intel snd_hda_codec sha512_ssse3 drm_display_helper =
-sha256_ssse3 snd_hda_core sha1_ssse3 mei_hdcp mei_pxp snd_hwdep =
-aesni_intel cec ppdev snd_pcm crypto_simd cryptd rapl rc_core snd_timer =
-intel_cstate drm_client_lib snd intel_uncore gigabyte_wmi wmi_bmof =
-drm_kms_helper mhi ee1004 pcspkr soundcore mei_me rfkill mei hid_cherry =
-i2c_algo_bit intel_pmc_core parport_pc pmt_telemetry parport pmt_class =
-evdev intel_vsec acpi_pad
-Apr 29 11:15:52 debian kernel:  acpi_tad button sg drm configfs =
-efi_pstore nfnetlink efivarfs ip_tables x_tables autofs4 ext4 =
-hid_generic crc16 usbhid mbcache jbd2 hid dm_mod sd_mod xhci_pci ahci =
-iTCO_wdt libahci xhci_hcd intel_pmc_bxt iTCO_vendor_support watchdog =
-libata r8169 realtek mdio_devres usbcore libphy scsi_mod i2c_i801 =
-i2c_smbus scsi_common usb_common video wmi fan
-Apr 29 11:15:52 debian kernel: CR2: 0000000000000000
-Apr 29 11:15:52 debian kernel: ---[ end trace 0000000000000000 ]---
-Apr 29 11:15:52 debian kernel: RIP: =
-0010:ath12k_dp_rx_pdev_free+0x1f/0x70 [ath12k]
-Apr 29 11:15:52 debian kernel: Code: 90 90 90 90 90 90 90 90 90 90 90 66 =
-0f 1f 00 0f 1f 44 00 00 48 63 f6 41 54 48 69 f6 28 04 00 00 55 53 48 8b =
-9c 3e 28 b3 00 00 <4c> 8b 23 48 83 c3 40 49 8b 84 24 78 d7 00 00 8b 80 =
-94 00 00 00 85
-Apr 29 11:15:52 debian kernel: RSP: 0018:ffffb0b040f5bc00 EFLAGS: =
-00010206
-Apr 29 11:15:52 debian kernel: RAX: 0000000000000001 RBX: =
-0000000000000000 RCX: 0000000000000002
-Apr 29 11:15:52 debian kernel: RDX: ffff96e281968000 RSI: =
-0000000000000000 RDI: ffff96e288580000
-Apr 29 11:15:52 debian kernel: RBP: ffff96e288580000 R08: =
-000000000000001f R09: ffffffff8b7493e0
-Apr 29 11:15:52 debian kernel: R10: 0000000000000001 R11: =
-0000000000000000 R12: ffff96e2833df800
-Apr 29 11:15:52 debian kernel: R13: ffff96e28858b300 R14: =
-ffffffffc15b1308 R15: ffff96e2833df838
-Apr 29 11:15:52 debian kernel: FS:  00007f4d35e82f00(0000) =
-GS:ffff96ea03e67000(0000) knlGS:0000000000000000
-Apr 29 11:15:52 debian kernel: CS:  0010 DS: 0000 ES: 0000 CR0: =
-0000000080050033
-Apr 29 11:15:52 debian kernel: CR2: 0000000000000000 CR3: =
-000000010425c001 CR4: 00000000003726f0
-Apr 29 11:15:52 debian kernel: note: rmmod[1245] exited with irqs =
-disabled
-
-## Attempting to "sudo modprobe ath12k debug_mask=3D0xffff=E2=80=9D =
-gives me=20
-## modprobe: ERROR: could not insert 'ath12k': Device or resource busy
-
-Benny=
 
