@@ -4,115 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 642D2C369DC
-	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 17:06:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 021F6C369DC
+	for <ath12k@archiver.kernel.org>; Tue, 29 Apr 2025 20:57:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+BeRUPh5CwyEHNhQxM8dLF8a/Be260QZjKornLWq5+w=; b=KbuzdtRbE58mC+QZksKAhh9Uu7
-	lo4CoMdFzzpxfeIzAFPt/7AXoPPfofCBvHtsl4dpnxXdguRFLdxvGgfdfXjCHm3IQjhUj9n3XE5e3
-	oZN2lml6Ms/K4iW5wpIkpb2PHA1frXPKnm5VZvuHlBfsamOveYxsgDYCCMBUflmByGHLINKM1o023
-	8VceUF8Ay7Cul7LvqvLhtfCqM7yD3UykqHga8B4WO1bMsxqTYu5NN8E+dHPXmv455Xy1zaet5Ui1l
-	R6VLLZoe0hKJvOLwppYXtzUA9lX+dr1LP3q/oN6ECDnGfJQO7qgVdK/O2k6fuwyIH36eGuTnmsVjX
-	AWf0ul3Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=odzMyQM3vPCzlJNKRWyRYkcnhr/ay6CAo78WICcDwlw=; b=cRs82Uwj/QvJoRz7CeEOHviIlE
+	XHEd6p/s1Oi7UIp91ONGfyl3v+kOrdOjWf91dZvuDQwyzc9+5inibuwK6e0UI8ZQDtMWCzZpYTSK5
+	2xETt1YNNeGc4uiFpZw85aFYcrHvurIm+2SyZK1RFKknFIRfU8kp8Ex9ANv/2UF9+5QzPUDqejQwe
+	VpFNkO0jC8kt7y9tRTcMwAfo00km+Q1aSQS6jLhcspwqLqdZ3gPkMLsboTsXlRW3v+mW8+ewZ9vq0
+	dglsPHqOXDvLG0KqGT39hvdjYBaQUHhSUJxh2M4uTPdlwvrQ6vGpc/ItVpxOnxlJaoo2fWr7ESu6U
+	8KUaM1Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9oPv-0000000AMYN-0dse;
-	Tue, 29 Apr 2025 17:06:47 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u9s14-0000000Ao1F-2sot;
+	Tue, 29 Apr 2025 20:57:22 +0000
+Received: from sender3-pp-f112.zoho.com ([136.143.184.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9oOt-0000000AMQc-31YD
-	for ath12k@lists.infradead.org;
-	Tue, 29 Apr 2025 17:05:45 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53T9gEUu021614
-	for <ath12k@lists.infradead.org>; Tue, 29 Apr 2025 17:05:42 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+BeRUPh5CwyEHNhQxM8dLF8a/Be260QZjKornLWq5+w=; b=ZECioE4poFwTvAHH
-	o+ImugQNlVLFd2N7tWw+i9FwKtPEUBDbHBbmNrhFOoAIU52FbVPeRih06dnjTqDu
-	PVmESnMlD8UjkSOgLgQ12yK2aEOTPELIrshJMYJStSxSYEcjJqoaVudwqkgxrpPt
-	m7ROOoDH08k45bAEmSIM7mRc0sNrtNDMXCqLLI6ZhSxD4Kgtb4tTEbssH2DoSNeS
-	lc3MAWEyxb4/adZhqayAwvS7vS9AEs1qHJ9bkf98Fosnqj/FLKhIfykJh2QbXNts
-	3igKP6Tv4svPd2DawmtqZmgUQtSlmE3obYvJ3xbgzi404f/vRv0OlpygF9sqNzn/
-	29gn7Q==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 468qq5me3v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Tue, 29 Apr 2025 17:05:41 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2240a96112fso98156865ad.2
-        for <ath12k@lists.infradead.org>; Tue, 29 Apr 2025 10:05:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745946341; x=1746551141;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+BeRUPh5CwyEHNhQxM8dLF8a/Be260QZjKornLWq5+w=;
-        b=bJOissH1i93rT6KdQ9/Oz9lB0HsGcIIuZ7VORlRRE7fUw5HkRgLPlNQG+idzUuzUFb
-         XlbraxiVl3QnfY6ZeivBBU0HMM87HSW45YAADWouSja8rFnbtgyh5lVyHbaOxQ/Py51t
-         oHc2EUj5pt4r0jwQNhrz2C1YQrrxhAtRaWuXq4imOUuo/GDdiivQYj8rVlFmfjFFZ9uo
-         FnLZDrTM7QT3a3sUAdRNhaW9Cw6lVVsTuMAliFh9UO3dui4jlj/+OXH5FYGDyjA35XuQ
-         JEwb4WpS1Nd8iZ53f/sSd2lFsrtGn/bUruAIuSYYqt5lJBa402YnDZaDhbnl/u/ZOjso
-         dpCw==
-X-Forwarded-Encrypted: i=1; AJvYcCXFMRZOwOhEjvs9NCsp6LKJ1NcqSDiq2oSAZI9oNd6lGQTnSqAbOHi3pm3mr6T7LPVZ95LxFfs=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzd9lA5CFAda5KHSe1wMGRqq8qcjp+On6yCAs69OZMCw0fHqV5z
-	kullEsVGUVjG8qM2/INj1LlVbNFPldf93vc60R4JEvs45RvabADMvmDRCL1AYFCdT7TcGf2vPXZ
-	LPB0+UD3pEZmE/ynS6u6Yykvdp4yUoMCX3G2OXrNY8hSpjrgbRS5gc/Sv+CNi
-X-Gm-Gg: ASbGnctBDF0g+NVxzpJ0NGfEWJG7o7TWLj+L9xvgSOo+urvpqvgPuQKN54QYQHZLhGA
-	rXpiqOUIe4Wk5VpV6agPDr8MIPB2jR1Zu4KQnCL2nsUtRLqvdWKJHAEf/EeuXH7I4YErdafR92A
-	I7JvZsNz9luUUuIavCw9ikplbluFjENACpm4W07zUIlEbiMix/oR1HSRc6Q0RZ/ql4d9/rtzOqt
-	fySigZMzP0IyGVhsXPMpEo0tcGRXtVyY+Ei8PaYQmeZwAGykqON17eRPbTtsMfYMQHXXOnjlD4Y
-	9Qk4zJVErKatq8qcE1nAu3YrwuMF89luF7p3ggPiHAvyC4hOGrbBUj4EvQ67f3znAl11qi1z7v8
-	Cbn32
-X-Received: by 2002:a17:903:910:b0:223:6180:1bf7 with SMTP id d9443c01a7336-22df35761f2mr1957105ad.42.1745946340979;
-        Tue, 29 Apr 2025 10:05:40 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEeKvxlItGhJsW/F3o2/QxuNoWE7hUAA2vJZ6boPbJqtL5VKAj5jHnUGoJ9xfQtFHQK5H/Wuw==
-X-Received: by 2002:a17:903:910:b0:223:6180:1bf7 with SMTP id d9443c01a7336-22df35761f2mr1956735ad.42.1745946340640;
-        Tue, 29 Apr 2025 10:05:40 -0700 (PDT)
-Received: from [192.168.1.111] (c-73-202-227-126.hsd1.ca.comcast.net. [73.202.227.126])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22db4dc7b7asm105963485ad.102.2025.04.29.10.05.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 29 Apr 2025 10:05:40 -0700 (PDT)
-Message-ID: <97bea1c0-116c-4856-920c-08521d15f624@oss.qualcomm.com>
-Date: Tue, 29 Apr 2025 10:05:39 -0700
+	id 1u9rzT-0000000AnhR-2vZt;
+	Tue, 29 Apr 2025 20:55:45 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1745960116; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=U3KeHQdnauWazawBLwav0VA0mlkF30vT3Njanh6aZHJUzZZtQb5R+kI2Iy3UUeg5AvxaYMPSZ3So/e/lrSCXf/wMRcb4vbmzHZJN57PA7s1UZIBeNznGUvSqIBWOsYgYuzLCcO5rCCG0E9ccWThc3xxWkrP10k90z1DAefQeP1w=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1745960116; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=odzMyQM3vPCzlJNKRWyRYkcnhr/ay6CAo78WICcDwlw=; 
+	b=D/SkpRXP+jgAI7q2YBuJk/W2HSYyHke2DdHyZAyj2yPiRx8bNlfCHCwl0qHqpStWr/Amy2p2yWvm1pzJbp95a3m+Z0KJAI/Fvkx9iaLG8SwQZ0WMAfY8spQlO319FZOeMT7sGLQXstHI7LoQI/ZHqsFf7ytIO06/YYLcUCgfyZI=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1745960116;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=odzMyQM3vPCzlJNKRWyRYkcnhr/ay6CAo78WICcDwlw=;
+	b=LUBSkH+Tu8hgdrM0nVWr1TqtIRmuT7M85VKMLnGNvVBD8mtyZu1ZhZXyFHNJ8msO
+	lk+SNcYg2yBrGKGIp82cKMufV5YnmWmZsfGDWjebm1ett9eD35846V1621JbaIOvC7G
+	BfW5bTsrzaKuEnFM2RwIx7mAU1IrY/fMfMfTM0xA=
+Received: by mx.zohomail.com with SMTPS id 1745960113656306.3519637759904;
+	Tue, 29 Apr 2025 13:55:13 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id A7C89180D2A; Tue, 29 Apr 2025 22:55:07 +0200 (CEST)
+Date: Tue, 29 Apr 2025 22:55:07 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Muhammad Usama Anjum <usama.anjum@collabora.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+	Jeff Johnson <jjohnson@kernel.org>, Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
+	Youssef Samir <quic_yabdulra@quicinc.com>, Matthew Leung <quic_mattleun@quicinc.com>, 
+	Yan Zhen <yanzhen@vivo.com>, Kunwu Chan <chentao@kylinos.cn>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Dr. David Alan Gilbert" <linux@treblig.org>, 
+	Troy Hanson <quic_thanson@quicinc.com>, kernel@collabora.com, Carl Vanderlip <quic_carlv@quicinc.com>, 
+	Sumit Garg <sumit.garg@kernel.org>, mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+	ath12k@lists.infradead.org
+Subject: Re: [PATCH v3] bus: mhi: host: don't free bhie tables during
+ suspend/hibernation
+Message-ID: <vxyzortbnqc4znvy2gtuoufrcsddyhzc37ewchklszoburlw4p@xey7znoqgb54>
+References: <20250429122351.108684-1-usama.anjum@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 1/2] wifi: ath12k: Reorder and relocate the
- release of resources in ath12k_core_deinit()
-To: Raj Kumar Bhagat <quic_rajkbhag@quicinc.com>,
-        Yingying Tang <quic_yintang@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250423055650.16230-1-quic_yintang@quicinc.com>
- <20250423055650.16230-2-quic_yintang@quicinc.com>
- <28403304-bb8c-432b-9130-40af69bf8c66@quicinc.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <28403304-bb8c-432b-9130-40af69bf8c66@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: N7o1AWP-VkVTiuZUOSNqJd8kygkXhIK9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI5MDEyNiBTYWx0ZWRfXx/KcbgTkZyCa aF9+INTiBIxXFw8ppKEuShB82+u23pxjuP3uRsHQI+CjdVfFI5byaPubfPNdKVRfK+xnOfzPIro b8CQvlfbH+UMF3v8T4CcUfq3k8xdZ10AxQwW4nk2162tqEPE99oJrGGk+8UwJgArwGE3COULSXM
- nK+xvqQ4+AcExwFmGZCJ8YKiinbocUX+dYOg1vQpuuQA0B76teU1fE+sZ4LsjRp3WcwVCcpIB+K CBUXTaLFMSBK9xsQfJfH+cSYWKd1iKsdL5zpXifqMExOSWJjgcov60BBA3bJ7zBr6qxUFpPcWwb 9w7nuhD80q67fq9l+qnifsPf0UIIptiE96G9OzfXLgTK0JHSf9jobmja1spDbCpYE9cofaEtQcQ
- gJuNw4rEPbEcBzeTUrKRzlGoakH0iei28jXjKfzM4U02L+CaTVSdVQLZl+OjaoTDWZ+woVqd
-X-Authority-Analysis: v=2.4 cv=QP1oRhLL c=1 sm=1 tr=0 ts=681106e5 cx=c_pps a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=e70TP3dOR9hTogukJ0528Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=j-zp8VNVwZ3Kxvef4D0A:9 a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-GUID: N7o1AWP-VkVTiuZUOSNqJd8kygkXhIK9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-04-29_06,2025-04-24_02,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
- clxscore=1015 mlxlogscore=817 lowpriorityscore=0 adultscore=0 mlxscore=0
- bulkscore=0 phishscore=0 impostorscore=0 priorityscore=1501 malwarescore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2504290126
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="hmycg4mkzmf4pwnf"
+Content-Disposition: inline
+In-Reply-To: <20250429122351.108684-1-usama.anjum@collabora.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-1.4.2/244.214.33
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250429_100543_784387_A6701F3A 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250429_135543_844314_48277C30 
+X-CRM114-Status: GOOD (  17.88  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,17 +90,308 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 4/29/2025 5:41 AM, Raj Kumar Bhagat wrote:
-> On 4/23/2025 11:26 AM, Yingying Tang wrote:
->> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.0-02903-QCAHKSWPL_SILICONZ-1
->> Tested-on: QCN8750 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> I guess this Tested-on tag should be
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-> 
-> Not sure if this can be taken care while merging in pending branch? or re-spin is
-> required?
 
-I'll fix this in the 'pending' branch
+--hmycg4mkzmf4pwnf
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v3] bus: mhi: host: don't free bhie tables during
+ suspend/hibernation
+MIME-Version: 1.0
 
+Hi,
+
+On Tue, Apr 29, 2025 at 05:23:35PM +0500, Muhammad Usama Anjum wrote:
+> Fix dma_direct_alloc() failure at resume time during bhie_table
+> allocation. There is a crash report where at resume time, the memory
+> from the dma doesn't get allocated and MHI fails to re-initialize.
+> There is fragmentation/memory pressure.
+>=20
+> To fix it, don't free the memory at power down during suspend /
+> hibernation. Instead, use the same allocated memory again after every
+> resume / hibernation. This patch has been tested with resume and
+> hibernation both.
+>=20
+> The rddm is of constant size for a given hardware. While the fbc_image
+> size depends on the firmware. If the firmware changes, we'll free and
+> allocate new memory for it.
+>=20
+> Here are the crash logs:
+>=20
+> [ 3029.338587] mhi mhi0: Requested to power ON
+> [ 3029.338621] mhi mhi0: Power on setup success
+> [ 3029.668654] kworker/u33:8: page allocation failure: order:7, mode:0xc0=
+4(GFP_NOIO|GFP_DMA32), nodemask=3D(null),cpuset=3D/,mems_allowed=3D0
+> [ 3029.668682] CPU: 4 UID: 0 PID: 2744 Comm: kworker/u33:8 Not tainted 6.=
+11.11-valve10-1-neptune-611-gb69e902b4338 #1ed779c892334112fb968aaa3facf968=
+6b5ff0bd7
+> [ 3029.668690] Hardware name: Valve Galileo/Galileo, BIOS F7G0112 08/01/2=
+024
+> [ 3029.668694] Workqueue: mhi_hiprio_wq mhi_pm_st_worker [mhi]
+> [ 3029.668717] Call Trace:
+> [ 3029.668722]  <TASK>
+> [ 3029.668728]  dump_stack_lvl+0x4e/0x70
+> [ 3029.668738]  warn_alloc+0x164/0x190
+> [ 3029.668747]  ? srso_return_thunk+0x5/0x5f
+> [ 3029.668754]  ? __alloc_pages_direct_compact+0xaf/0x360
+> [ 3029.668761]  __alloc_pages_slowpath.constprop.0+0xc75/0xd70
+> [ 3029.668774]  __alloc_pages_noprof+0x321/0x350
+> [ 3029.668782]  __dma_direct_alloc_pages.isra.0+0x14a/0x290
+> [ 3029.668790]  dma_direct_alloc+0x70/0x270
+> [ 3029.668796]  mhi_alloc_bhie_table+0xe8/0x190 [mhi faa917c5aa23a5f5b12d=
+6a2c597067e16d2fedc0]
+> [ 3029.668814]  mhi_fw_load_handler+0x1bc/0x310 [mhi faa917c5aa23a5f5b12d=
+6a2c597067e16d2fedc0]
+> [ 3029.668830]  mhi_pm_st_worker+0x5c8/0xaa0 [mhi faa917c5aa23a5f5b12d6a2=
+c597067e16d2fedc0]
+> [ 3029.668844]  ? srso_return_thunk+0x5/0x5f
+> [ 3029.668853]  process_one_work+0x17e/0x330
+> [ 3029.668861]  worker_thread+0x2ce/0x3f0
+> [ 3029.668868]  ? __pfx_worker_thread+0x10/0x10
+> [ 3029.668873]  kthread+0xd2/0x100
+> [ 3029.668879]  ? __pfx_kthread+0x10/0x10
+> [ 3029.668885]  ret_from_fork+0x34/0x50
+> [ 3029.668892]  ? __pfx_kthread+0x10/0x10
+> [ 3029.668898]  ret_from_fork_asm+0x1a/0x30
+> [ 3029.668910]  </TASK>
+>=20
+> Tested-on: WCN6855 WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.5229=
+7.6
+>=20
+> Signed-off-by: Muhammad Usama Anjum <usama.anjum@collabora.com>
+> ---
+
+This breaks ath12k on my T14s Snapdragon with WCN785x. After a
+suspend/resume cycle the following is in my logs (and the resume
+is super slow). Additionally at shutdown ath12k crashes with a
+NULL pointer dereference in mhi_deinit_dev_ctxt, which got called
+by mhi_unprepare_after_power_down, which got called by ath12k_mhi_stop.
+This happens after filesystem umount and I don't have anything
+configured right now to get logs from that point, so it is not
+included in the log from the suspend/resume cycle down below:
+
+=2E..
+[   28.385370] ath12k_pci 0004:01:00.0: failed to set mhi state INIT(0) in =
+current mhi state (0x1)
+[   28.385379] ath12k_pci 0004:01:00.0: failed to set mhi state: INIT(0)
+[   28.385383] ath12k_pci 0004:01:00.0: failed to start mhi: -22
+[   28.385387] ath12k_pci 0004:01:00.0: failed to power up hif during resum=
+e: -22
+[   28.385391] ath12k_pci 0004:01:00.0: failed to early resume core: -22
+[   28.385393] ath12k_pci 0004:01:00.0: PM: dpm_run_callback(): pci_pm_resu=
+me_early returns -22
+[   28.385413] ath12k_pci 0004:01:00.0: PM: failed to resume async early: e=
+rror -22
+[   28.385513] qcom_mhi_qrtr mhi0_IPCR: Current EE: DISABLE Required EE Mas=
+k: 0x4
+[   28.385521] qcom_mhi_qrtr mhi0_IPCR: failed to prepare for autoqueue tra=
+nsfer -107
+[   28.385526] qcom_mhi_qrtr mhi0_IPCR: PM: dpm_run_callback(): qcom_mhi_qr=
+tr_pm_resume_early [qrtr_mhi] returns -107
+[   28.385541] qcom_mhi_qrtr mhi0_IPCR: PM: failed to resume early: error -=
+107
+[   50.146823] ath12k_pci 0004:01:00.0: timeout while waiting for restart c=
+omplete
+[   50.146830] ath12k_pci 0004:01:00.0: failed to resume core: -110
+[   50.146834] ath12k_pci 0004:01:00.0: PM: dpm_run_callback(): pci_pm_resu=
+me returns -110
+[   50.146849] ath12k_pci 0004:01:00.0: PM: failed to resume async: error -=
+110
+[   53.218794] ath12k_pci 0004:01:00.0: wmi command 16387 timeout
+[   53.218801] ath12k_pci 0004:01:00.0: failed to send WMI_PDEV_SET_PARAM c=
+md
+[   53.218808] ath12k_pci 0004:01:00.0: failed to set ac override for ARP: =
+-11
+[   53.218813] ath12k_pci 0004:01:00.0: fail to start mac operations in pde=
+v idx 0 ret -11
+[   53.218817] ------------[ cut here ]------------
+[   53.218820] Hardware became unavailable upon resume. This could be a sof=
+tware issue prior to suspend or a hardware issue.
+[   53.218855] WARNING: CPU: 2 PID: 1958 at net/mac80211/util.c:1829 ieee80=
+211_reconfig+0x37c/0x1718 [mac80211]
+[   53.218936] Modules linked in: reset_gpio snd_soc_wsa884x q6prm_clocks q=
+6apm_dai q6apm_lpass_dais snd_q6dsp_common q6prm michael_mic rfcomm wiregua=
+rd libchacha20poly1305 chacha_neon libchacha poly1305_neon ip6_udp_tunnel u=
+dp_tunnel libcurve25519_generic binfmt_misc qrtr_mhi ath12k mac80211 libarc=
+4 cfg80211 mhi hci_uart btqca btbcm snd_soc_x1e80100 snd_soc_qcom_sdw snd_s=
+oc_qcom_common bluetooth ecdh_generic ecc qcom_spmi_temp_alarm rfkill snd_q=
+6apm snd_soc_hdmi_codec fastrpc snd_soc_lpass_va_macro snd_soc_lpass_tx_mac=
+ro snd_soc_lpass_rx_macro snd_soc_lpass_wsa_macro soundwire_qcom snd_soc_wc=
+d938x slimbus snd_soc_lpass_macro_common snd_soc_wcd938x_sdw pci_pwrctrl_pw=
+rseq regmap_sdw snd_soc_wcd_mbhc coresight_stm coresight_funnel coresight_t=
+mc snd_soc_wcd_classh coresight_cti stm_core coresight_replicator soundwire=
+_bus coresight mux_gpio fuse nfnetlink ip_tables x_tables ipv6 gpio_sbu_mux=
+ panel_edp msm hid_multitouch drm_exec ocmem gpu_sched drm_dp_aux_bus rpmsg=
+_ctrl apr rpmsg_char qrtr_smd i2c_hid_of qcom_pd_mapper
+[   53.219100]  ps883x phy_nxp_ptn3222 i2c_hid drm_display_helper nvme phy_=
+qcom_qmp_combo leds_qcom_lpg ucsi_glink pmic_glink_altmode nvme_core aux_hp=
+d_bridge typec_ucsi qcom_battmgr sm3_ce sm3 led_class_multicolor qcom_q6v5_=
+pas sha3_ce rtc_pm8xxx phy_qcom_eusb2_repeater qcom_pbs drm_client_lib aux_=
+bridge sha512_ce qcom_pil_info drm_kms_helper qcom_common qcom_pon sha512_a=
+rm64 qcom_glink_smem typec qcom_q6v5 nvmem_qcom_spmi_sdam dispcc_x1e80100 d=
+rm pwrseq_qcom_wcn pinctrl_sm8550_lpass_lpi pwrseq_core i2c_qcom_geni qcom_=
+stats pinctrl_lpass_lpi phy_qcom_edp phy_qcom_qmp_usb qcom_sysmon tcsrcc_x1=
+e80100 llcc_qcom gpucc_x1e80100 phy_qcom_snps_eusb2 mdt_loader lpasscc_sc82=
+80xp pcie_qcom qcom_cpucp_mbox icc_bwmon phy_qcom_qmp_pcie qrtr pmic_glink =
+pdr_interface qcom_pdr_msg pwm_bl socinfo backlight qmi_helpers
+[   53.219234] CPU: 2 UID: 0 PID: 1958 Comm: kworker/u49:49 Not tainted 6.1=
+5.0-rc4+ #95 PREEMPT=20
+[   53.219241] Hardware name: LENOVO 21N1CTO1WW/21N1CTO1WW, BIOS N42ET85W (=
+2.15 ) 11/22/2024
+[   53.219245] Workqueue: async async_run_entry_fn
+[   53.219258] pstate: 61400005 (nZCv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=
+=3D--)
+[   53.219265] pc : ieee80211_reconfig+0x37c/0x1718 [mac80211]
+[   53.219315] lr : ieee80211_reconfig+0x37c/0x1718 [mac80211]
+[   53.219362] sp : ffff8000853ebb30
+[   53.219364] x29: ffff8000853ebbf0 x28: 0000000000000000 x27: 00000000000=
+00000
+[   53.219373] x26: ffff1ce140047428 x25: 0000000000000000 x24: ffff1ce1408=
+f7c05
+[   53.219380] x23: ffff1ce14aaa05b8 x22: 0000000000000010 x21: 00000000fff=
+ffff5
+[   53.219387] x20: 0000000000000000 x19: ffff1ce14aaa0900 x18: 00000000fff=
+ffffe
+[   53.219394] x17: 72617774666f7320 x16: 6120656220646c75 x15: 6f632073696=
+85420
+[   53.219401] x14: 2e656d7573657220 x13: 0a2e657573736920 x12: 65726177647=
+26168
+[   53.219408] x11: 0000000000000058 x10: 0000000000000018 x9 : ffffdacf6aa=
+7749c
+[   53.219415] x8 : 0000000000000507 x7 : ffffdacf6d031138 x6 : ffffdacf6d0=
+31138
+[   53.219422] x5 : ffff1ce8bbe76508 x4 : 0000000000000000 x3 : ffff42194ef=
+d1000
+[   53.219429] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff1ce149c=
+aa300
+[   53.219437] Call trace:
+[   53.219440]  ieee80211_reconfig+0x37c/0x1718 [mac80211] (P)
+[   53.219490]  ieee80211_resume+0x54/0x78 [mac80211]
+[   53.219541]  wiphy_resume+0x8c/0x200 [cfg80211]
+[   53.219603]  dpm_run_callback+0x50/0x188
+[   53.219614]  device_resume+0xc4/0x1f8
+[   53.219621]  async_resume+0x2c/0x50
+[   53.219628]  async_run_entry_fn+0x3c/0x160
+[   53.219634]  process_one_work+0x158/0x3c8
+[   53.219643]  worker_thread+0x2e0/0x418
+[   53.219650]  kthread+0x14c/0x230
+[   53.219657]  ret_from_fork+0x10/0x20
+[   53.219666] ---[ end trace 0000000000000000 ]---
+[   53.220154] ------------[ cut here ]------------
+[   53.220158] WARNING: CPU: 2 PID: 1958 at net/mac80211/driver-ops.c:41 dr=
+v_stop+0x1cc/0x1e8 [mac80211]
+[   53.220235] Modules linked in: reset_gpio snd_soc_wsa884x q6prm_clocks q=
+6apm_dai q6apm_lpass_dais snd_q6dsp_common q6prm michael_mic rfcomm wiregua=
+rd libchacha20poly1305 chacha_neon libchacha poly1305_neon ip6_udp_tunnel u=
+dp_tunnel libcurve25519_generic binfmt_misc qrtr_mhi ath12k mac80211 libarc=
+4 cfg80211 mhi hci_uart btqca btbcm snd_soc_x1e80100 snd_soc_qcom_sdw snd_s=
+oc_qcom_common bluetooth ecdh_generic ecc qcom_spmi_temp_alarm rfkill snd_q=
+6apm snd_soc_hdmi_codec fastrpc snd_soc_lpass_va_macro snd_soc_lpass_tx_mac=
+ro snd_soc_lpass_rx_macro snd_soc_lpass_wsa_macro soundwire_qcom snd_soc_wc=
+d938x slimbus snd_soc_lpass_macro_common snd_soc_wcd938x_sdw pci_pwrctrl_pw=
+rseq regmap_sdw snd_soc_wcd_mbhc coresight_stm coresight_funnel coresight_t=
+mc snd_soc_wcd_classh coresight_cti stm_core coresight_replicator soundwire=
+_bus coresight mux_gpio fuse nfnetlink ip_tables x_tables ipv6 gpio_sbu_mux=
+ panel_edp msm hid_multitouch drm_exec ocmem gpu_sched drm_dp_aux_bus rpmsg=
+_ctrl apr rpmsg_char qrtr_smd i2c_hid_of qcom_pd_mapper
+[   53.220351]  ps883x phy_nxp_ptn3222 i2c_hid drm_display_helper nvme phy_=
+qcom_qmp_combo leds_qcom_lpg ucsi_glink pmic_glink_altmode nvme_core aux_hp=
+d_bridge typec_ucsi qcom_battmgr sm3_ce sm3 led_class_multicolor qcom_q6v5_=
+pas sha3_ce rtc_pm8xxx phy_qcom_eusb2_repeater qcom_pbs drm_client_lib aux_=
+bridge sha512_ce qcom_pil_info drm_kms_helper qcom_common qcom_pon sha512_a=
+rm64 qcom_glink_smem typec qcom_q6v5 nvmem_qcom_spmi_sdam dispcc_x1e80100 d=
+rm pwrseq_qcom_wcn pinctrl_sm8550_lpass_lpi pwrseq_core i2c_qcom_geni qcom_=
+stats pinctrl_lpass_lpi phy_qcom_edp phy_qcom_qmp_usb qcom_sysmon tcsrcc_x1=
+e80100 llcc_qcom gpucc_x1e80100 phy_qcom_snps_eusb2 mdt_loader lpasscc_sc82=
+80xp pcie_qcom qcom_cpucp_mbox icc_bwmon phy_qcom_qmp_pcie qrtr pmic_glink =
+pdr_interface qcom_pdr_msg pwm_bl socinfo backlight qmi_helpers
+[   53.220444] CPU: 2 UID: 0 PID: 1958 Comm: kworker/u49:49 Tainted: G     =
+   W           6.15.0-rc4+ #95 PREEMPT=20
+[   53.220452] Tainted: [W]=3DWARN
+[   53.220455] Hardware name: LENOVO 21N1CTO1WW/21N1CTO1WW, BIOS N42ET85W (=
+2.15 ) 11/22/2024
+[   53.220458] Workqueue: async async_run_entry_fn
+[   53.220467] pstate: 61400005 (nZCv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=
+=3D--)
+[   53.220472] pc : drv_stop+0x1cc/0x1e8 [mac80211]
+[   53.220521] lr : ieee80211_stop_device+0x8c/0xa8 [mac80211]
+[   53.220580] sp : ffff8000853eb9f0
+[   53.220582] x29: ffff8000853eb9f0 x28: 0000000000000000 x27: 00000000000=
+00000
+[   53.220591] x26: ffff1ce140047428 x25: ffff8000853eba50 x24: ffff8000853=
+eba50
+[   53.220598] x23: 0000000000000000 x22: 0000000000000001 x21: 00000000000=
+00000
+[   53.220604] x20: 0000000000000000 x19: ffff1ce14aaa0900 x18: 00000000fff=
+ffffe
+[   53.220611] x17: ffff42194efd1000 x16: ffff800080010000 x15: 6f632073696=
+85420
+[   53.220618] x14: 000000000000037f x13: 000000000000037f x12: 071c71c71c7=
+1c71c
+[   53.220625] x11: ffff1ce8bbe88b8c x10: 1f0348adc6bb8584 x9 : ffffdacf676=
+22b3c
+[   53.220633] x8 : ffff1ce149e1e550 x7 : 0000000000000000 x6 : 00000000000=
+0003f
+[   53.220640] x5 : 0000000000000040 x4 : 0000000000000000 x3 : 00000000000=
+00003
+[   53.220646] x2 : 0000000000000001 x1 : 0000000000000000 x0 : 00000000000=
+00000
+[   53.220652] Call trace:
+[   53.220654]  drv_stop+0x1cc/0x1e8 [mac80211] (P)
+[   53.220702]  ieee80211_stop_device+0x8c/0xa8 [mac80211]
+[   53.220751]  ieee80211_do_stop+0x644/0x830 [mac80211]
+[   53.220798]  ieee80211_stop+0x60/0x1b0 [mac80211]
+[   53.220845]  __dev_close_many+0xbc/0x1f0
+[   53.220857]  dev_close_many+0x94/0x160
+[   53.220863]  netif_close+0x78/0xa0
+[   53.220868]  dev_close+0x3c/0x70
+[   53.220876]  cfg80211_shutdown_all_interfaces+0x4c/0x118 [cfg80211]
+[   53.220935]  wiphy_resume+0xc0/0x200 [cfg80211]
+[   53.220985]  dpm_run_callback+0x50/0x188
+[   53.220992]  device_resume+0xc4/0x1f8
+[   53.220999]  async_resume+0x2c/0x50
+[   53.221006]  async_run_entry_fn+0x3c/0x160
+[   53.221012]  process_one_work+0x158/0x3c8
+[   53.221020]  worker_thread+0x2e0/0x418
+[   53.221027]  kthread+0x14c/0x230
+[   53.221033]  ret_from_fork+0x10/0x20
+[   53.221039] ---[ end trace 0000000000000000 ]---
+[   53.221223] ieee80211 phy0: PM: dpm_run_callback(): wiphy_resume [cfg802=
+11] returns -11
+[   53.221277] ieee80211 phy0: PM: failed to resume async: error -11
+[   53.667179] OOM killer enabled.
+[   53.667182] Restarting tasks ... done.
+[   53.668270] random: crng reseeded on system resumption
+[   53.668317] PM: suspend exit
+[   56.804822] ath12k_pci 0004:01:00.0: wmi command 16387 timeout
+[   56.804845] ath12k_pci 0004:01:00.0: failed to send WMI_PDEV_SET_PARAM c=
+md
+[   56.804859] ath12k_pci 0004:01:00.0: failed to enable PMF QOS: (-11
+[   56.804872] ath12k_pci 0004:01:00.0: fail to start mac operations in pde=
+v idx 0 ret -11
+=2E..
+
+-- Sebastian
+
+--hmycg4mkzmf4pwnf
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmgRPKcACgkQ2O7X88g7
++pqErQ//WBW3sm7T8qldxt3HtCxP41rwt3Z5JH+j5o501AH/2ZZ4Btwb1myeIMZU
+NKdEq3BVp7NTjIoCk3QjposMCOmC3wrdvnHNLFTmUTyE8Fjk3+8wUfnna813UU6J
+QVVR+EWOwH79O92w0GUrcOEiJR6FTjLNRbU2JXoYzTccFDi1JBmK1hsdPxiHiocy
+hfiJzHXkBMF5ak+Ot7bf6jQFtHfBYisC4r2VecB2yUjRSBTCh0weIKY2xCTkyWCf
+4UMxbpuEHNuRAxOh/HmF2zDdGmYSNWj9pDfRnWEPt0W1BpN8r90SF70wmBJ0YJDt
+I10ux88WvBCH2giN7xv/T9crvKiwDKxyS3LzXfKNNsvshXp6ryE5oprc5X5RuGzd
+U8GK0nLNCvOguQPFX8yGs1i9cMrw52rZmmEsbzSvr5kyJ69tsMV867Z8KOulDRhB
+4R8JagvbRH8twF0Ln0v8l9MAgj/lXRJjjkyAPQWP4s0TnCksbegXXTGPrwPOuLz5
+inPkDwqDqCFGImfcEV/XXfBbr3zq9PPAVBt6exlCMCqneJPy+m+FQwdvw8DczzWD
+pl6QBw5EUnxZYjsNmsiqC80LcoOAzVJUnHvl4f1BiwgYYLaV3z09+cyw8WZJgqRf
+DjBNYl+mlzH3tuVYJsNRRmqcV0ijqtbwK++HeEqSuer68hXetEM=
+=L590
+-----END PGP SIGNATURE-----
+
+--hmycg4mkzmf4pwnf--
 
