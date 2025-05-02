@@ -4,67 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DBA8C3ABA3
-	for <ath12k@archiver.kernel.org>; Thu,  1 May 2025 16:02:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54FEEC3ABA5
+	for <ath12k@archiver.kernel.org>; Fri,  2 May 2025 04:15:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0SyRuyuTtvCEKvcJ6UDdAVW6OGWJ70bm90YNylOvbj0=; b=xEmki8qzAOa1y5uPdwj1HShMCZ
-	Z4KYfSAbI33YmJ8lS4pEpHRSTPqBKwMkJLN+kWLq1IE6Tx2UBSjBuZ1bf0BWeyXn1AhiYxccyA1UE
-	QqNVV5mCudTC53PyklZWEti4npEnyVvx9mVxcAZGc6foLKyQDLsC9bh328liuGUyVES3DKANqM2Wn
-	r3DAzgBWYO/4zjjgj5kv+aYHSCHJiEEWgdv2GGGlhEfoL8W7Fuyx53eSt7tHaKF4WME+tIDPPQpIo
-	GfGq2VoO8IEZ3vX+wxbhpwAITe6yZTSE/zU7M7pqoy5f7qXDFfXZwX2UbvYF2GkLdVgHgos8QEu25
-	9wWktr4w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:To:Subject:Cc:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=slniCBieFi8ALosAy7gsKHxe+RnIiRTt/8ka8YLXg+A=; b=c1ATKG7HHEZiZgIENPjxe7U2yU
+	u7k5xamEUU2HSC0Csg3g07SZ89ocbgXHo6XL+rVhRN+m70+/BuRkE8nGnJX89gl97mrB5FqHUuhZK
+	tpXBGEVugq3lgPyp398iWGxjXDspdgKpYmuurp5PXamn0rkqCRE6D1GLUYkgnJzIsRuyo6O50d49f
+	YKwxEhs0SwPcUesRW7CmzPOAtwJFYf4g1apkObPCM9i/lOKCoWgqJ/n1OZFc9Jfhae+6J2c5yhx7r
+	m0TAvpqJZP/LQ3Js2TMhV1gVbsFh45eLGWz/ze0B0BbSTSkEVwzTqQ8f+5B4o0mxRrFiz+FS6Psqk
+	zrRYUqyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uAWMd-0000000G8lk-1Kar;
-	Thu, 01 May 2025 16:02:19 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1uAhoY-00000000k4w-3oe5;
+	Fri, 02 May 2025 04:15:54 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uAWKt-0000000G8at-3NG7;
-	Thu, 01 May 2025 16:00:33 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 117CCA4B892;
-	Thu,  1 May 2025 15:55:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC6A7C4CEE3;
-	Thu,  1 May 2025 16:00:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1746115230;
-	bh=QdLG6Mxfeg9stM1JIO8NgkMtgfF8uSG0xcaTqwxc4jA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Yw7F+88U1p7hXmr+E/yol8oSlQWOTDSnm9TzXi8h1FFbqpY2uy2uAFQ3QubihEcrF
-	 7uUDL3iQpzSMHZS6K9b5d1ec8UNQyIrfp7fUFGX3YbiFRBsdgFnrmDGt9eRlM3tqhC
-	 7uaeqvAHolASbfZ/lUhfjL5Bsx7SoY2vmpYP28KI=
-Date: Thu, 1 May 2025 18:00:27 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Muhammad Usama Anjum <usama.anjum@collabora.com>
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
-	Youssef Samir <quic_yabdulra@quicinc.com>,
-	Matthew Leung <quic_mattleun@quicinc.com>,
-	Yan Zhen <yanzhen@vivo.com>, Alex Elder <elder@kernel.org>,
-	Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
-	Kunwu Chan <chentao@kylinos.cn>,
-	Troy Hanson <quic_thanson@quicinc.com>,
-	"Dr. David Alan Gilbert" <linux@treblig.org>, kernel@collabora.com,
-	mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org, ath12k@lists.infradead.org
+	id 1uAhoV-00000000k4N-2iQt;
+	Fri, 02 May 2025 04:15:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1746159322; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ER8AlXySUpnr6vDpzDd0slMHfE70fKr81s3q7pnsRWa0brvMAxQuaS9k+5BWNCcbMdAnQH5tAq2lkQ13KP1/qaml2Xv++uEi8ZS72ox2BTcPtnHfG2TVpweC8DFWF1RvK8UDkbBdZVQr7TRGhomgqlGHco9zXjnN0z5ktOfc0Ok=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1746159322; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=slniCBieFi8ALosAy7gsKHxe+RnIiRTt/8ka8YLXg+A=; 
+	b=ljCD8+Wnk+dpM+d+npXOlXrlrMDobFO3t6g0D1kf/cXlt7ymu7/7yXn7UpQ/L6kqZuwV8E2fy9eUUsz2Y189q4NC0rCkDzvfqHPXQ0ZFeZwl7Iwrnz/xTG/c62hvlCdcctBGqNfD8tXK9G7q1dP2bJOPqILYwONOqT5aqRHJp30=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=usama.anjum@collabora.com;
+	dmarc=pass header.from=<usama.anjum@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1746159322;
+	s=zohomail; d=collabora.com; i=usama.anjum@collabora.com;
+	h=Message-ID:Date:Date:MIME-Version:Cc:Cc:Subject:Subject:To:To:References:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=slniCBieFi8ALosAy7gsKHxe+RnIiRTt/8ka8YLXg+A=;
+	b=XzYiNSWdT5bolXnmG2GHdgaUr4k8ZzrDE0DpyIxeBOWZt6At8w0q8Ji18NHbwE6s
+	ehqOIryEakQ9dwxn8ciyZJnCu7BzoUebWnks1IUJviPdm0j37bta8O+UrqyCUIcozCa
+	DKxFkvNQMkWXQMaCMukOPtuvJZN8j0q3nxcE0dZ0=
+Received: by mx.zohomail.com with SMTPS id 1746159320663980.4307609300157;
+	Thu, 1 May 2025 21:15:20 -0700 (PDT)
+Message-ID: <bdc89d09-ce50-43a4-9043-3ca6a9245eb4@collabora.com>
+Date: Fri, 2 May 2025 09:15:10 +0500
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Cc: usama.anjum@collabora.com,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Jeff Johnson <jjohnson@kernel.org>, Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
+ Youssef Samir <quic_yabdulra@quicinc.com>,
+ Matthew Leung <quic_mattleun@quicinc.com>, Yan Zhen <yanzhen@vivo.com>,
+ Alex Elder <elder@kernel.org>,
+ Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
+ Kunwu Chan <chentao@kylinos.cn>, Troy Hanson <quic_thanson@quicinc.com>,
+ "Dr. David Alan Gilbert" <linux@treblig.org>, kernel@collabora.com,
+ mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org
 Subject: Re: [PATCH v3] bus: mhi: host: don't free bhie tables during
  suspend/hibernation
-Message-ID: <2025050110-unpeeled-spur-e4af@gregkh>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 References: <20250429122112.104472-1-usama.anjum@collabora.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20250429122112.104472-1-usama.anjum@collabora.com>
+ <2025050110-unpeeled-spur-e4af@gregkh>
+Content-Language: en-US
+From: Muhammad Usama Anjum <usama.anjum@collabora.com>
+In-Reply-To: <2025050110-unpeeled-spur-e4af@gregkh>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250501_090031_976701_CE076D90 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20250501_211551_731943_B9EA1C63 
+X-CRM114-Status: GOOD (  14.52  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,61 +90,68 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 29, 2025 at 05:20:56PM +0500, Muhammad Usama Anjum wrote:
-> Fix dma_direct_alloc() failure at resume time during bhie_table
-> allocation. There is a crash report where at resume time, the memory
-> from the dma doesn't get allocated and MHI fails to re-initialize.
-> There is fragmentation/memory pressure.
-> 
-> To fix it, don't free the memory at power down during suspend /
-> hibernation. Instead, use the same allocated memory again after every
-> resume / hibernation. This patch has been tested with resume and
-> hibernation both.
-> 
-> The rddm is of constant size for a given hardware. While the fbc_image
-> size depends on the firmware. If the firmware changes, we'll free and
-> allocate new memory for it.
-> 
-> Here are the crash logs:
-> 
-> [ 3029.338587] mhi mhi0: Requested to power ON
-> [ 3029.338621] mhi mhi0: Power on setup success
-> [ 3029.668654] kworker/u33:8: page allocation failure: order:7, mode:0xc04(GFP_NOIO|GFP_DMA32), nodemask=(null),cpuset=/,mems_allowed=0
-> [ 3029.668682] CPU: 4 UID: 0 PID: 2744 Comm: kworker/u33:8 Not tainted 6.11.11-valve10-1-neptune-611-gb69e902b4338 #1ed779c892334112fb968aaa3facf9686b5ff0bd7
-> [ 3029.668690] Hardware name: Valve Galileo/Galileo, BIOS F7G0112 08/01/2024
-> [ 3029.668694] Workqueue: mhi_hiprio_wq mhi_pm_st_worker [mhi]
-> [ 3029.668717] Call Trace:
-> [ 3029.668722]  <TASK>
-> [ 3029.668728]  dump_stack_lvl+0x4e/0x70
-> [ 3029.668738]  warn_alloc+0x164/0x190
-> [ 3029.668747]  ? srso_return_thunk+0x5/0x5f
-> [ 3029.668754]  ? __alloc_pages_direct_compact+0xaf/0x360
-> [ 3029.668761]  __alloc_pages_slowpath.constprop.0+0xc75/0xd70
-> [ 3029.668774]  __alloc_pages_noprof+0x321/0x350
-> [ 3029.668782]  __dma_direct_alloc_pages.isra.0+0x14a/0x290
-> [ 3029.668790]  dma_direct_alloc+0x70/0x270
-> [ 3029.668796]  mhi_alloc_bhie_table+0xe8/0x190 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
-> [ 3029.668814]  mhi_fw_load_handler+0x1bc/0x310 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
-> [ 3029.668830]  mhi_pm_st_worker+0x5c8/0xaa0 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
-> [ 3029.668844]  ? srso_return_thunk+0x5/0x5f
-> [ 3029.668853]  process_one_work+0x17e/0x330
-> [ 3029.668861]  worker_thread+0x2ce/0x3f0
-> [ 3029.668868]  ? __pfx_worker_thread+0x10/0x10
-> [ 3029.668873]  kthread+0xd2/0x100
-> [ 3029.668879]  ? __pfx_kthread+0x10/0x10
-> [ 3029.668885]  ret_from_fork+0x34/0x50
-> [ 3029.668892]  ? __pfx_kthread+0x10/0x10
-> [ 3029.668898]  ret_from_fork_asm+0x1a/0x30
-> [ 3029.668910]  </TASK>
-> 
-> Tested-on: WCN6855 WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.6
-> 
-> Signed-off-by: Muhammad Usama Anjum <usama.anjum@collabora.com>
+Hi Greg,
 
-What commit id does this fix?  Should it go to stable kernel(s)?  If so,
-how far back?
+On 5/1/25 9:00 PM, Greg Kroah-Hartman wrote:
+> On Tue, Apr 29, 2025 at 05:20:56PM +0500, Muhammad Usama Anjum wrote:
+>> Fix dma_direct_alloc() failure at resume time during bhie_table
+>> allocation. There is a crash report where at resume time, the memory
+>> from the dma doesn't get allocated and MHI fails to re-initialize.
+>> There is fragmentation/memory pressure.
+>>
+>> To fix it, don't free the memory at power down during suspend /
+>> hibernation. Instead, use the same allocated memory again after every
+>> resume / hibernation. This patch has been tested with resume and
+>> hibernation both.
+>>
+>> The rddm is of constant size for a given hardware. While the fbc_image
+>> size depends on the firmware. If the firmware changes, we'll free and
+>> allocate new memory for it.
+>>
+>> Here are the crash logs:
+>>
+>> [ 3029.338587] mhi mhi0: Requested to power ON
+>> [ 3029.338621] mhi mhi0: Power on setup success
+>> [ 3029.668654] kworker/u33:8: page allocation failure: order:7, mode:0xc04(GFP_NOIO|GFP_DMA32), nodemask=(null),cpuset=/,mems_allowed=0
+>> [ 3029.668682] CPU: 4 UID: 0 PID: 2744 Comm: kworker/u33:8 Not tainted 6.11.11-valve10-1-neptune-611-gb69e902b4338 #1ed779c892334112fb968aaa3facf9686b5ff0bd7
+>> [ 3029.668690] Hardware name: Valve Galileo/Galileo, BIOS F7G0112 08/01/2024
+>> [ 3029.668694] Workqueue: mhi_hiprio_wq mhi_pm_st_worker [mhi]
+>> [ 3029.668717] Call Trace:
+>> [ 3029.668722]  <TASK>
+>> [ 3029.668728]  dump_stack_lvl+0x4e/0x70
+>> [ 3029.668738]  warn_alloc+0x164/0x190
+>> [ 3029.668747]  ? srso_return_thunk+0x5/0x5f
+>> [ 3029.668754]  ? __alloc_pages_direct_compact+0xaf/0x360
+>> [ 3029.668761]  __alloc_pages_slowpath.constprop.0+0xc75/0xd70
+>> [ 3029.668774]  __alloc_pages_noprof+0x321/0x350
+>> [ 3029.668782]  __dma_direct_alloc_pages.isra.0+0x14a/0x290
+>> [ 3029.668790]  dma_direct_alloc+0x70/0x270
+>> [ 3029.668796]  mhi_alloc_bhie_table+0xe8/0x190 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
+>> [ 3029.668814]  mhi_fw_load_handler+0x1bc/0x310 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
+>> [ 3029.668830]  mhi_pm_st_worker+0x5c8/0xaa0 [mhi faa917c5aa23a5f5b12d6a2c597067e16d2fedc0]
+>> [ 3029.668844]  ? srso_return_thunk+0x5/0x5f
+>> [ 3029.668853]  process_one_work+0x17e/0x330
+>> [ 3029.668861]  worker_thread+0x2ce/0x3f0
+>> [ 3029.668868]  ? __pfx_worker_thread+0x10/0x10
+>> [ 3029.668873]  kthread+0xd2/0x100
+>> [ 3029.668879]  ? __pfx_kthread+0x10/0x10
+>> [ 3029.668885]  ret_from_fork+0x34/0x50
+>> [ 3029.668892]  ? __pfx_kthread+0x10/0x10
+>> [ 3029.668898]  ret_from_fork_asm+0x1a/0x30
+>> [ 3029.668910]  </TASK>
+>>
+>> Tested-on: WCN6855 WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.6
+>>
+>> Signed-off-by: Muhammad Usama Anjum <usama.anjum@collabora.com>
+> 
+> What commit id does this fix?  Should it go to stable kernel(s)?  If so,
+> how far back?
+This patch is fixing the dma_coherent_alloc() failure when there is
+memory pressure and its unable to allocate memory. Its not a bug in
+allocation API or the driver. I think it should be considered an
+improvement instead of the fix. Please correct me if I'm wrong.
 
-thanks,
-
-greg k-h
+-- 
+Regards,
+Usama
 
