@@ -4,58 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D50B7C3ABBF
-	for <ath12k@archiver.kernel.org>; Mon,  5 May 2025 23:49:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BABDDC3ABBF
+	for <ath12k@archiver.kernel.org>; Tue,  6 May 2025 00:29:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=r/M9EkR9IgX9x08ApMYeYVtrRtPs1kRUlyMcqPZATzI=; b=iKdo6bJVWOxt6PrE0OFdX/DoO0
-	GIFN5wmV8qcg+iSmhD5pvbkrU8EmMbuF8yGysitZ39hCx/2UE34bph8kLU88r+38du9gW6jllPBC9
-	HtRW8cKHSLYiamSOv+EkigWClBHqWDLVelYxcLkFNAEJymUa7ghZBOgsVuoVOTePDVjptGMkMZKDG
-	fmKG9JggwlNb1eLXRqWy2uQ0oQbDwnSNLWHgCErCGgqvynYivS1AyRBSi4o5oNOY/2fMkiYu7TFik
-	ybjU9dx/VZPPj6yZcrvoXeR+u5JeW1GsSDl0FcC/ee0n+FknmmgKVrq+FmMKlNzJBtQmoX+nv2Irr
-	juETYjGg==;
+	bh=M4Ur2+L2RdIgcWQTmx5ttEvH3/UifpjoUhie0a3gqCs=; b=m5v2HtHxHd1Z5AS9zF6FzT5uEH
+	yqbveo79M92j+JwhpUeYFOdFVxSa0a+IWGOgXJUzoNFzkof06XqSBPGtJG+eUl3DUddkRQBoxS5QD
+	Mg/ThO2+Zy11FHTMLnG6NB7oKwabyFhppn8tv2tB2BHF8YHVVXs0YMGTGAHQFmugxi//v7kHWrML3
+	P8RdpIIdn9j7PEPd9dw4LT1JL3wh4gNRNw0EX6mgtcx2NZ19hpT0Rc+2TolnhMZOTfNNsy0MrxTpa
+	uzmLU5WEpoAOhGIES7kzP15cVU6sk5bYDh/eZsqMwj7E3Qx7XE/rXqRxsTHAkn0X2IPYi+l0LF8Q8
+	9DtY2pSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC5YU-000000098VH-2VGF;
-	Mon, 05 May 2025 23:49:02 +0000
+	id 1uC6Bg-00000009I2k-2B24;
+	Tue, 06 May 2025 00:29:32 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC4Gt-00000008lAn-3hft
+	id 1uC4Oc-00000008neP-26aQ
 	for ath12k@lists.infradead.org;
-	Mon, 05 May 2025 22:26:47 +0000
+	Mon, 05 May 2025 22:34:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 78E82629C9;
-	Mon,  5 May 2025 22:26:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2C75C4CEEE;
-	Mon,  5 May 2025 22:26:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 13345629C6;
+	Mon,  5 May 2025 22:34:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D868C4CEF3;
+	Mon,  5 May 2025 22:34:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746484007;
-	bh=gGPQWYqVkprunFn5BHoxeVtKYrutCPfr6FxC6Dkiz8E=;
+	s=k20201202; t=1746484485;
+	bh=28MycwQojl4yf0AI0YpWwlRGwTopcRDThnxfc93eX6Q=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=JJmcnq2j3H4c+xyE+RwBhjGLfx/TyfdHSa39a4mDKbLShDaXNkfqGDg0imosW514S
-	 xHNdbwVW+icYzNV24PDsvX72xwxMIOZ7UBA5TDR9+CUXtU4t9irrmkbiKZsTfXFjPt
-	 Uje1uqN+EaRn9nAUGeQUouvTJlAilbrwX0t/HlEO+DBNY1OY6mwq4t6btwzQ4fsi30
-	 2mhk7Bp+O8ncOG23+IYsWTmgikk+akMbayiKboln5glKBXyYHRGq0S17KLzntLGMkg
-	 vPbcpgCQ2fF4v2H8PKQMN/E9MdpJHavKKhx4BsvpKSrD0boGNlXVrcNCEwcP11zSAW
-	 +vz7djZdJa6xg==
+	b=rcKUtw7Dh1L6U3jReQ0KXYCuSxuX9pqRjTF68Qd9XQQ2iZFUlq6wrKw+m6GYYFK1s
+	 fJlvmr5zU3oop+W12JdE3D3J9TZX2LABGoGeVoukhj1ant3Gsuq7Bsu4ZIlZizr++v
+	 eO7A8RSaGgt3MiVkUyKFtR3nHCsllB1LZss6KHgg/6pVt3sA/Ik2vPe51HGJO5Hgrh
+	 1FxMXBHWcTcWIlKSKU9P6gAwzyZJJPQ9BYbBzHNQGGGLmoew13orzUOA6qFFar6BFJ
+	 htfBhIH22/6z+qZkrdg47O6KhKDFNg4Vs/LmsYg0A7xmcjYjDKk3wtIomIt7cVhWSN
+	 yaeJEldgwuWuQ==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>,
-	Roopni Devanathan <quic_rdevanat@quicinc.com>,
+Cc: Aaradhana Sahu <quic_aarasahu@quicinc.com>,
 	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.14 315/642] wifi: ath12k: Improve BSS discovery with hidden SSID in 6 GHz band
-Date: Mon,  5 May 2025 18:08:51 -0400
-Message-Id: <20250505221419.2672473-315-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 494/642] wifi: ath12k: Enable MLO setup ready and teardown commands for single split-phy device
+Date: Mon,  5 May 2025 18:11:50 -0400
+Message-Id: <20250505221419.2672473-494-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250505221419.2672473-1-sashal@kernel.org>
 References: <20250505221419.2672473-1-sashal@kernel.org>
@@ -78,57 +77,134 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
+From: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 
-[ Upstream commit 27d38bdfd416f4db70e09c3bef3b030c86fd235a ]
+[ Upstream commit 5cec2d86c7f4242fb30a696d8e6fd48109bf3e8f ]
 
-Currently, sometimes, the station is unable to identify the configured
-AP SSID in its scan results when the AP is not broadcasting its name
-publicly and has a hidden SSID.
+When multi-link operation(MLO) is enabled through follow-up patches in
+the single split-phy device, the firmware expects hardware links
+(hw_links) information from the driver.
 
-Currently, channel dwell time for an ath12k station is 30 ms. Sometimes,
-station can send broadcast probe request to AP close to the end of dwell
-time. In some of these cases, before AP sends a response to the received
-probe request, the dwell time on the station side would come to an end.
-So, the station will move to scan next channel and will not be able to
-acknowledge the unicast probe response.
+If driver does not send WMI multi-link setup and ready command to the
+firmware during MLO setup for single split-phy device, the firmware will
+be unaware of the hw_links component of the multi-link operation. This may
+lead to firmware assert during multi-link association.
 
-Resolve this issue by increasing station's channel dwell time to 70 ms,
-so that the it remains on the same channel for a longer period. This
-would increase the station's chance of receiving probe response from the
-AP. The station will then send a response acknowledgment back to the AP,
-thus leading to successful scan and BSS discovery.
+Therefore, enable WMI setup, ready and teardown commands for single
+split-phy PCI device.
 
-With an increased dwell time, scan would take longer than it takes now.
-But, this fix is an improvement for hidden SSID scan issue.
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-
-Signed-off-by: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
-Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Signed-off-by: Aaradhana Sahu <quic_aarasahu@quicinc.com>
 Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250207060005.153835-1-quic_rdevanat@quicinc.com
+Link: https://patch.msgid.link/20250207050327.360987-2-quic_aarasahu@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/wmi.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c | 33 +++++++++++++++++++++++++-
+ drivers/net/wireless/ath/ath12k/core.h |  1 +
+ drivers/net/wireless/ath/ath12k/mac.c  |  9 +++++++
+ 3 files changed, 42 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index 7a87777e0a047..9cd7ceae5a4f8 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -2373,8 +2373,8 @@ void ath12k_wmi_start_scan_init(struct ath12k *ar,
- 	arg->dwell_time_active = 50;
- 	arg->dwell_time_active_2g = 0;
- 	arg->dwell_time_passive = 150;
--	arg->dwell_time_active_6g = 40;
--	arg->dwell_time_passive_6g = 30;
-+	arg->dwell_time_active_6g = 70;
-+	arg->dwell_time_passive_6g = 70;
- 	arg->min_rest_time = 50;
- 	arg->max_rest_time = 500;
- 	arg->repeat_probe_time = 0;
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 212cd935e60a0..ffd173ff7b08c 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -887,10 +887,41 @@ static void ath12k_core_hw_group_stop(struct ath12k_hw_group *ag)
+ 	ath12k_mac_destroy(ag);
+ }
+ 
++u8 ath12k_get_num_partner_link(struct ath12k *ar)
++{
++	struct ath12k_base *partner_ab, *ab = ar->ab;
++	struct ath12k_hw_group *ag = ab->ag;
++	struct ath12k_pdev *pdev;
++	u8 num_link = 0;
++	int i, j;
++
++	lockdep_assert_held(&ag->mutex);
++
++	for (i = 0; i < ag->num_devices; i++) {
++		partner_ab = ag->ab[i];
++
++		for (j = 0; j < partner_ab->num_radios; j++) {
++			pdev = &partner_ab->pdevs[j];
++
++			/* Avoid the self link */
++			if (ar == pdev->ar)
++				continue;
++
++			num_link++;
++		}
++	}
++
++	return num_link;
++}
++
+ static int __ath12k_mac_mlo_ready(struct ath12k *ar)
+ {
++	u8 num_link = ath12k_get_num_partner_link(ar);
+ 	int ret;
+ 
++	if (num_link == 0)
++		return 0;
++
+ 	ret = ath12k_wmi_mlo_ready(ar);
+ 	if (ret) {
+ 		ath12k_err(ar->ab, "MLO ready failed for pdev %d: %d\n",
+@@ -932,7 +963,7 @@ static int ath12k_core_mlo_setup(struct ath12k_hw_group *ag)
+ {
+ 	int ret, i;
+ 
+-	if (!ag->mlo_capable || ag->num_devices == 1)
++	if (!ag->mlo_capable)
+ 		return 0;
+ 
+ 	ret = ath12k_mac_mlo_setup(ag);
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index ee595794a7aee..6325ac493f82c 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -1084,6 +1084,7 @@ int ath12k_core_resume(struct ath12k_base *ab);
+ int ath12k_core_suspend(struct ath12k_base *ab);
+ int ath12k_core_suspend_late(struct ath12k_base *ab);
+ void ath12k_core_hw_group_unassign(struct ath12k_base *ab);
++u8 ath12k_get_num_partner_link(struct ath12k *ar);
+ 
+ const struct firmware *ath12k_core_firmware_request(struct ath12k_base *ab,
+ 						    const char *filename);
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 9c3e66dbe0c3b..9123ffab55b52 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -11140,6 +11140,9 @@ static int __ath12k_mac_mlo_setup(struct ath12k *ar)
+ 		}
+ 	}
+ 
++	if (num_link == 0)
++		return 0;
++
+ 	mlo.group_id = cpu_to_le32(ag->id);
+ 	mlo.partner_link_id = partner_link_id;
+ 	mlo.num_partner_links = num_link;
+@@ -11169,10 +11172,16 @@ static int __ath12k_mac_mlo_teardown(struct ath12k *ar)
+ {
+ 	struct ath12k_base *ab = ar->ab;
+ 	int ret;
++	u8 num_link;
+ 
+ 	if (test_bit(ATH12K_FLAG_RECOVERY, &ab->dev_flags))
+ 		return 0;
+ 
++	num_link = ath12k_get_num_partner_link(ar);
++
++	if (num_link == 0)
++		return 0;
++
+ 	ret = ath12k_wmi_mlo_teardown(ar);
+ 	if (ret) {
+ 		ath12k_warn(ab, "failed to send MLO teardown WMI command for pdev %d: %d\n",
 -- 
 2.39.5
 
