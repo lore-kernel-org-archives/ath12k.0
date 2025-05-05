@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85382C3ABB6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB4D2C3ABBE
 	for <ath12k@archiver.kernel.org>; Tue,  6 May 2025 03:25:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,49 +12,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0+Q5GeMK3wiIrrMh1L1fa89Ec7frq6EpGsHiGcsjCls=; b=gRSw7DLw/f0Ki03YxyrJ1/c+mH
-	i23baas7giqaji0qsGBAKF+ikEG79Kpzr+u+uN26WJQRQeX7qDyh6+cyMFlnWgIM4D5eQC70zxEpu
-	cpfGc5t4XRFgfk2pytKOcIdc0437KsnqGkronwpYR+XApWftZ562LL83Y8+0lEbElTOsd977+zN+D
-	a9jRJinueJKZbaSI57hMKhYz/0cgau0TJurlETEtfGdoFer0cGIFKlfPlgt9TDHohnj/5J+8gl0rv
-	PIcfIHM0m2ol03q7EhzCziIzAd8LVgY1u7imkLszNUJpVYshgR74FZepo0H2iHJtE/1GgfcKZRCVH
-	d9dsYhZA==;
+	bh=voCDin5qtbzFtYG2WtSj8frTQDwO/cIKAz0Dn22e3ZA=; b=vnxETO13E3n2Wl54fZ56UrJrHV
+	xzsBnLzfH5Nc5VSYWO9Rk1oZ9aEKpF9TxjabGHhFbDBvpEDxZZyw/Y39h3vJrSY502fdSsVCGrrMn
+	OCwpDCLTJFW4FndVxsWDxqVxbPQww3nswj+x9SlKM2XJCFxl2GgKyTkp78WTPgyYfI25koJwSa3Lt
+	4RX7nvf+/Mf4hMCTgyH+QBeoWXEj4DgBsTCMuwQpbe5kPnr+mg+mELtSmMIwF9cLAddg/QcKf8Tsq
+	Hb3dGw1ztQmbU3Rin/XuTX7axO4uSeekPdbsscB+CJkNbykQ8/MuWjYdhUjQNsGWzSx6P1ICTWWkl
+	y8IP+iTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC8wG-00000009yqJ-0d7V;
+	id 1uC8wG-00000009yqk-2Oh9;
 	Tue, 06 May 2025 03:25:48 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC4sy-00000008xCu-2Aeo
+	id 1uC4t2-00000008xEB-33T3
 	for ath12k@lists.infradead.org;
-	Mon, 05 May 2025 23:06:08 +0000
+	Mon, 05 May 2025 23:06:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1DC95629C9;
-	Mon,  5 May 2025 23:05:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A337CC4CEED;
-	Mon,  5 May 2025 23:06:06 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 547BAA4C6B1;
+	Mon,  5 May 2025 23:00:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B7036C4CEEE;
+	Mon,  5 May 2025 23:06:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746486367;
-	bh=1KuU1cq5++A1+lXLHU5Be7SugZDxVeCdiTW24JTYsk0=;
+	s=k20201202; t=1746486371;
+	bh=Eu0Vxmjy+j96zmKQbWqFv06fTIOV9pidgP4pHpT+D9Q=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=u8Xsg/JFdMIXbCId0ovt0fK5hngFM3y94siw5Jj43q9GTDsUgVV3aAWHUlySDthim
-	 6KqvsO0V+yTuDDOJC1Yx3hv813JM0tRn/fVfTECpf3MnHT0kDiCm3QjxS41UMOitIw
-	 FovB8o3p09UTKt21ux27cYXbI0uMmrzP9c6EkD2BvWrl/5MiuDYdKSjbr9rqIotFQL
-	 7w6zS//+CCzT/mSHH65leURC47n9xhUG/LH3O8k9Nqd54F0hgn3daqQtjemh1MbbZ+
-	 oy/EjdqoW/T8G6uUyVoan3KW7kc/WAE8E5SeJtZwFYLTemrFc3oYK66hHh8n+oqptD
-	 iVQBcjjt32iBQ==
+	b=WHXa2kfyWrlErSsszY91+kJ03HPDAHe3cl+XseLM6he9ulJf0WH4zDgfgMdZ3NJT1
+	 pkj41wH/hyJzDP5j4h37kwmXHweUs9DOdJ/D1cc4PO/zGtOblTikG0l0M9wg+Cv1Y7
+	 jocJhzkD16//o4dVFEDkXXPnKS7LtfONdMArXMHltiK7hz6XTp/Zq3zvvbYqohUZ7X
+	 ntQKURoM3aXmkjFqmsV9CuiqOvMd6/dLnXkQFUaYKVE9Ca0VDpd1EG6FaWXnc1iM1X
+	 AWna2lslumUPgCxpl8+p84o+PLYXIdf8i3faQtp1ZOQEQ1r1xipJ6bIqJsvC1PTWb2
+	 wepUwGrPh7KSA==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Nicolas Escande <nico.escande@gmail.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+Cc: P Praneesh <quic_ppranees@quicinc.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 286/294] wifi: ath12k: fix ath12k_hal_tx_cmd_ext_desc_setup() info1 override
-Date: Mon,  5 May 2025 18:56:26 -0400
-Message-Id: <20250505225634.2688578-286-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.6 289/294] wifi: ath12k: Fix end offset bit definition in monitor ring descriptor
+Date: Mon,  5 May 2025 18:56:29 -0400
+Message-Id: <20250505225634.2688578-289-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250505225634.2688578-1-sashal@kernel.org>
 References: <20250505225634.2688578-1-sashal@kernel.org>
@@ -63,6 +62,10 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.6.89
 Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250505_160612_831125_912E543D 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,39 +80,40 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Nicolas Escande <nico.escande@gmail.com>
+From: P Praneesh <quic_ppranees@quicinc.com>
 
-[ Upstream commit df11edfba49e5fb69f4c9e7cb76082b89c417f78 ]
+[ Upstream commit 6788a666000d600bd8f2e9f991cad9cc805e7f01 ]
 
-Since inception there is an obvious typo laying around in
-ath12k_hal_tx_cmd_ext_desc_setup(). Instead of initializing + adding
-flags to tcl_ext_cmd->info1, we initialize + override. This will be needed
-in the future to make broadcast frames work with ethernet encapsulation.
+End offset for the monitor destination ring descriptor is defined as
+16 bits, while the firmware definition specifies only 12 bits.
+The remaining bits (bit 12 to bit 15) are reserved and may contain
+junk values, leading to invalid information retrieval. Fix this issue
+by updating the correct genmask values.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
 
-Signed-off-by: Nicolas Escande <nico.escande@gmail.com>
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-Link: https://patch.msgid.link/20250127071306.1454699-1-nico.escande@gmail.com
+Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
+Link: https://patch.msgid.link/20241223060132.3506372-8-quic_ppranees@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/dp_tx.c | 2 +-
+ drivers/net/wireless/ath/ath12k/hal_desc.h | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 25a9d4c4fae76..474e0d4d406ea 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -118,7 +118,7 @@ static void ath12k_hal_tx_cmd_ext_desc_setup(struct ath12k_base *ab, void *cmd,
- 			       le32_encode_bits(ti->data_len,
- 						HAL_TX_MSDU_EXT_INFO1_BUF_LEN);
+diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
+index 6c17adc6d60b5..1bb840c2bef57 100644
+--- a/drivers/net/wireless/ath/ath12k/hal_desc.h
++++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
+@@ -2918,7 +2918,7 @@ struct hal_mon_buf_ring {
  
--	tcl_ext_cmd->info1 = le32_encode_bits(1, HAL_TX_MSDU_EXT_INFO1_EXTN_OVERRIDE) |
-+	tcl_ext_cmd->info1 |= le32_encode_bits(1, HAL_TX_MSDU_EXT_INFO1_EXTN_OVERRIDE) |
- 				le32_encode_bits(ti->encap_type,
- 						 HAL_TX_MSDU_EXT_INFO1_ENCAP_TYPE) |
- 				le32_encode_bits(ti->encrypt_type,
+ #define HAL_MON_DEST_COOKIE_BUF_ID      GENMASK(17, 0)
+ 
+-#define HAL_MON_DEST_INFO0_END_OFFSET		GENMASK(15, 0)
++#define HAL_MON_DEST_INFO0_END_OFFSET		GENMASK(11, 0)
+ #define HAL_MON_DEST_INFO0_FLUSH_DETECTED	BIT(16)
+ #define HAL_MON_DEST_INFO0_END_OF_PPDU		BIT(17)
+ #define HAL_MON_DEST_INFO0_INITIATOR		BIT(18)
 -- 
 2.39.5
 
