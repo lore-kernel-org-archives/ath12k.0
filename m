@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D2BBC3ABBF
-	for <ath12k@archiver.kernel.org>; Mon,  5 May 2025 23:38:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D50B7C3ABBF
+	for <ath12k@archiver.kernel.org>; Mon,  5 May 2025 23:49:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
 	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/uinnqCG2Qnnu9+QwUGSye0wQNIo+dieaGGCkdpjing=; b=ksDQA/cdZLv2cdt294fsONM82N
-	vZ3zc5UwFQt2wEZWRQkPSUjwiiIneU5wqQGlySe+SO7Gq7rGGMqrCOS8GQVFRlR7MAx5PcsaTQNac
-	KCfC0FNcTonb2m7vn4CcN/H2DEz+f61rKSteQdu5S3hxCQpJbeP1xlW4Sq7HBf99WdeFBsESBUkr3
-	qmWXziA05Y8q97W4v1u8Kcxh30FKpcs2ZDJLBTRLIwhV93E3sBKNrOQBZq95jim9Jo+igiwfYialI
-	enCHHJNdTKYAdu0Q5hcVGNX8c5XTMEajO4ZPLWGV6ZDBqfUuPkLSkV/jutrCX7HGDs2Mi55Xk858y
-	7ZnEwKQg==;
+	bh=r/M9EkR9IgX9x08ApMYeYVtrRtPs1kRUlyMcqPZATzI=; b=iKdo6bJVWOxt6PrE0OFdX/DoO0
+	GIFN5wmV8qcg+iSmhD5pvbkrU8EmMbuF8yGysitZ39hCx/2UE34bph8kLU88r+38du9gW6jllPBC9
+	HtRW8cKHSLYiamSOv+EkigWClBHqWDLVelYxcLkFNAEJymUa7ghZBOgsVuoVOTePDVjptGMkMZKDG
+	fmKG9JggwlNb1eLXRqWy2uQ0oQbDwnSNLWHgCErCGgqvynYivS1AyRBSi4o5oNOY/2fMkiYu7TFik
+	ybjU9dx/VZPPj6yZcrvoXeR+u5JeW1GsSDl0FcC/ee0n+FknmmgKVrq+FmMKlNzJBtQmoX+nv2Irr
+	juETYjGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC5Od-000000096SE-1GeD;
-	Mon, 05 May 2025 23:38:51 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uC5YU-000000098VH-2VGF;
+	Mon, 05 May 2025 23:49:02 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC4G9-00000008ktM-1DDr
+	id 1uC4Gt-00000008lAn-3hft
 	for ath12k@lists.infradead.org;
-	Mon, 05 May 2025 22:26:02 +0000
+	Mon, 05 May 2025 22:26:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id E57A3A4CD1F;
-	Mon,  5 May 2025 22:20:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F996C4CEEF;
-	Mon,  5 May 2025 22:25:59 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 78E82629C9;
+	Mon,  5 May 2025 22:26:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2C75C4CEEE;
+	Mon,  5 May 2025 22:26:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746483960;
-	bh=JfQQYIUu517awFWeygbO+llhgDES4MfHAR7evtgUobM=;
+	s=k20201202; t=1746484007;
+	bh=gGPQWYqVkprunFn5BHoxeVtKYrutCPfr6FxC6Dkiz8E=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=uoHagcy8QckWKLAeFhLNzd2amN3C/iwnf2+O8DSkgJA9VDXbztzTGaAfpXYFzR9NY
-	 BgJowhdD6JPuQW8/cJTFRAuFpnRSH4JB9pUpBON7HQet20Poq6+45Z5xCpebpioyd1
-	 BdcUVMaD2rLrzvFduJG54MBfF5zMErwtcTF6P8ZG2vaqz7wSihWThgUTyNDLKiIkaq
-	 LWDHQOfdLdzmVxhnICInZxs/fn+ZOAwzoL0ld1ee9DTHLm3pldi+8EDaTcJVv6u5mA
-	 8Nrt2C+tMjY51UPJ5uPW5FGXPY4krKf4SDl3NUWn3OHvpcrbsCAVhB2MisnKugvEXP
-	 KdDNPw71nXXfg==
+	b=JJmcnq2j3H4c+xyE+RwBhjGLfx/TyfdHSa39a4mDKbLShDaXNkfqGDg0imosW514S
+	 xHNdbwVW+icYzNV24PDsvX72xwxMIOZ7UBA5TDR9+CUXtU4t9irrmkbiKZsTfXFjPt
+	 Uje1uqN+EaRn9nAUGeQUouvTJlAilbrwX0t/HlEO+DBNY1OY6mwq4t6btwzQ4fsi30
+	 2mhk7Bp+O8ncOG23+IYsWTmgikk+akMbayiKboln5glKBXyYHRGq0S17KLzntLGMkg
+	 vPbcpgCQ2fF4v2H8PKQMN/E9MdpJHavKKhx4BsvpKSrD0boGNlXVrcNCEwcP11zSAW
+	 +vz7djZdJa6xg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Vinith Kumar R <quic_vinithku@quicinc.com>,
-	Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
+Cc: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>,
+	Roopni Devanathan <quic_rdevanat@quicinc.com>,
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	Sasha Levin <sashal@kernel.org>,
 	jjohnson@kernel.org,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.14 292/642] wifi: ath12k: Report proper tx completion status to mac80211
-Date: Mon,  5 May 2025 18:08:28 -0400
-Message-Id: <20250505221419.2672473-292-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 315/642] wifi: ath12k: Improve BSS discovery with hidden SSID in 6 GHz band
+Date: Mon,  5 May 2025 18:08:51 -0400
+Message-Id: <20250505221419.2672473-315-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250505221419.2672473-1-sashal@kernel.org>
 References: <20250505221419.2672473-1-sashal@kernel.org>
@@ -64,9 +64,6 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.14.5
 Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250505_152601_402757_BEB83F31 
-X-CRM114-Status: GOOD (  10.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,54 +78,57 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Vinith Kumar R <quic_vinithku@quicinc.com>
+From: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
 
-[ Upstream commit d2d9c9b8de725e1006d3aa3d18678a732f5d3584 ]
+[ Upstream commit 27d38bdfd416f4db70e09c3bef3b030c86fd235a ]
 
-Currently Tx completion for few exception packets are received from
-firmware and the tx status updated to mac80211. The tx status values of
-HAL_WBM_REL_HTT_TX_COMP_STATUS_DROP and HAL_WBM_REL_HTT_TX_COMP_STATUS_TTL
-are considered as tx failure and reported as tx failure to mac80211.
-But these failure status is due to internal firmware tx drop and these
-packets were not tried to transmit in the air.
-In case of mesh this invalid tx status report might trigger mpath broken
-issue due to increase in mpath fail average.
-So do not report these tx status as tx failure instead free the skb
-by calling ieee80211_free_txskb(), and that will be accounted as dropped
-frame.
+Currently, sometimes, the station is unable to identify the configured
+AP SSID in its scan results when the AP is not broadcasting its name
+publicly and has a hidden SSID.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+Currently, channel dwell time for an ath12k station is 30 ms. Sometimes,
+station can send broadcast probe request to AP close to the end of dwell
+time. In some of these cases, before AP sends a response to the received
+probe request, the dwell time on the station side would come to an end.
+So, the station will move to scan next channel and will not be able to
+acknowledge the unicast probe response.
 
-Signed-off-by: Vinith Kumar R <quic_vinithku@quicinc.com>
-Signed-off-by: Tamizh Chelvam Raja <quic_tamizhr@quicinc.com>
-Acked-by: Jeff Johnson <quic_jjohnson@quicinc.com>
-Link: https://patch.msgid.link/20241122173432.2064858-1-quic_tamizhr@quicinc.com
+Resolve this issue by increasing station's channel dwell time to 70 ms,
+so that the it remains on the same channel for a longer period. This
+would increase the station's chance of receiving probe response from the
+AP. The station will then send a response acknowledgment back to the AP,
+thus leading to successful scan and BSS discovery.
+
+With an increased dwell time, scan would take longer than it takes now.
+But, this fix is an improvement for hidden SSID scan issue.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
+
+Signed-off-by: Ramasamy Kaliappan <quic_rkaliapp@quicinc.com>
+Signed-off-by: Roopni Devanathan <quic_rdevanat@quicinc.com>
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+Link: https://patch.msgid.link/20250207060005.153835-1-quic_rdevanat@quicinc.com
 Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath12k/dp_tx.c | 4 ++--
+ drivers/net/wireless/ath/ath12k/wmi.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/dp_tx.c b/drivers/net/wireless/ath/ath12k/dp_tx.c
-index 1fffabaca527a..75608ae027afe 100644
---- a/drivers/net/wireless/ath/ath12k/dp_tx.c
-+++ b/drivers/net/wireless/ath/ath12k/dp_tx.c
-@@ -560,13 +560,13 @@ ath12k_dp_tx_process_htt_tx_complete(struct ath12k_base *ab,
- 
- 	switch (wbm_status) {
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_OK:
--	case HAL_WBM_REL_HTT_TX_COMP_STATUS_DROP:
--	case HAL_WBM_REL_HTT_TX_COMP_STATUS_TTL:
- 		ts.acked = (wbm_status == HAL_WBM_REL_HTT_TX_COMP_STATUS_OK);
- 		ts.ack_rssi = le32_get_bits(status_desc->info2,
- 					    HTT_TX_WBM_COMP_INFO2_ACK_RSSI);
- 		ath12k_dp_tx_htt_tx_complete_buf(ab, msdu, tx_ring, &ts);
- 		break;
-+	case HAL_WBM_REL_HTT_TX_COMP_STATUS_DROP:
-+	case HAL_WBM_REL_HTT_TX_COMP_STATUS_TTL:
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_REINJ:
- 	case HAL_WBM_REL_HTT_TX_COMP_STATUS_INSPECT:
- 		ath12k_dp_tx_free_txbuf(ab, msdu, mac_id, tx_ring);
+diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
+index 7a87777e0a047..9cd7ceae5a4f8 100644
+--- a/drivers/net/wireless/ath/ath12k/wmi.c
++++ b/drivers/net/wireless/ath/ath12k/wmi.c
+@@ -2373,8 +2373,8 @@ void ath12k_wmi_start_scan_init(struct ath12k *ar,
+ 	arg->dwell_time_active = 50;
+ 	arg->dwell_time_active_2g = 0;
+ 	arg->dwell_time_passive = 150;
+-	arg->dwell_time_active_6g = 40;
+-	arg->dwell_time_passive_6g = 30;
++	arg->dwell_time_active_6g = 70;
++	arg->dwell_time_passive_6g = 70;
+ 	arg->min_rest_time = 50;
+ 	arg->max_rest_time = 500;
+ 	arg->repeat_probe_time = 0;
 -- 
 2.39.5
 
