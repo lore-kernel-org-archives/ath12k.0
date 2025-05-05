@@ -4,105 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 317C7C3ABAC
-	for <ath12k@archiver.kernel.org>; Fri,  2 May 2025 23:03:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F6D0C369C2
+	for <ath12k@archiver.kernel.org>; Mon,  5 May 2025 03:44:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ITNozfI5RkhFMbtdCDhndJtiQb2Tu+23G2HG9tUlBoA=; b=t5IBGFbo5/tcl13Gi53g73AJI6
-	NjAc/Ux5jiLrvP+/ilUjXYi/jagMmF0VkJqis6+FJ58YqVWk1had6gXqs2IpfF/oHK/yO6kz8J+Ry
-	47HTCWUlp75KJQx8VFJ1m/VhHY2suh5iFuHMgK/+S+X+bh4qYJyZ0ywOLZLei6K9iEPgY+tnF43/M
-	UTKIe667lQogIPe3rQr5Gd5NgtnHe8I7eGniABxRUSmH9GAaOzy0pUZCxH1i8loscp//hhO/vnyCi
-	19XDLr2yOAchyzVbZOaNKrpLr+03qLU2Jw8PBtSlngIwpEen6Lpf+MdEJqiWKNGldEe1otc1rc3P/
-	w2Ld6mdQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=y+9aKZBVM2r868mKyITPWnznP2XUglYrdK0fzRTsWR4=; b=AIwmcFZesV/ByqFPLf3lB8sRo4
+	4bPkIhWbCVVU18zz1ntVBdRKv+GSedh2tWJYCCQhMocs8fEm+XXMKwEM0fpTVYb+4/qvdRcoj7BG5
+	45T4UTLOCgdavtu9Bf27CkigowejwxSZZ2pLNGNh0kpmVVisXCyeiFJb5XQElaonN+rH7l4oWJLDH
+	XalzIV+f+Ugv6OBiVf4P2vFkEEc44SxqQ1JSD4QlEf15MTSYs1KlUXNenEH2pFHKTsUym9JgvFV4f
+	ZDuigmPopesmqN01tIFsQjL80N5lQsJJ6f/DpNZCaCcdo0VhkNWJA5g2bDVRWd1FwN5My1jDkpXor
+	UUCTT90Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uAzPw-00000003Cqk-3WLc;
-	Fri, 02 May 2025 23:03:40 +0000
+	id 1uBmkf-00000006LX3-3pTQ;
+	Mon, 05 May 2025 03:44:21 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uAzPu-00000003Cq0-0ahj
+	id 1uBmkc-00000006LWf-1W80
 	for ath12k@lists.infradead.org;
-	Fri, 02 May 2025 23:03:39 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 542KBI8S015978
-	for <ath12k@lists.infradead.org>; Fri, 2 May 2025 23:03:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=ITNozfI5RkhFMbtdCDhndJtiQb2Tu+23G2H
-	G9tUlBoA=; b=lBU97RPXxNzfKFgTtuHPH766vtk8q78AR/sv4wYfqhZKaNVUyJ9
-	bkdj08UhTX5KWQONQJQq1WSk/8MOxG0ZgTX/+yOhRyMJg37eGsocIRAz/IHtwGlO
-	SBZi+z6VrtboCFFc45JvUSqXOqAHbirBV8wBCe/vQNWvlISWz2fRzpsGC/rTLQa+
-	+ZHVGIsTHg5lgcl5kXNDEcL4uEv7GFmhf0p0eTgHbK3QvX/5yTLy/K+zCBPSJbVP
-	HjrN2jDM0dGoqLxcqhs84MMXe1sh5XTQhP+NtMqq9RCFjxH3o/QIzWRS6axpVU0Z
-	gaWKdtfmr8Zfc8yLB+I7kAGPZFVIQxGnaJA==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46b6u81ke3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Fri, 02 May 2025 23:03:36 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b0e5f28841dso1642502a12.2
-        for <ath12k@lists.infradead.org>; Fri, 02 May 2025 16:03:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1746227015; x=1746831815;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ITNozfI5RkhFMbtdCDhndJtiQb2Tu+23G2HG9tUlBoA=;
-        b=iKEbQgyrsOIC8W40HdSBcPErAdSSCWaP52+bI66LfcCKNSLlojQFQtGbnHJrKZg1KT
-         eNu3/wyac800eFH3n/Xc855aeiqIuDoe08qZwSmpL+RrOpFYrxo96y7jbPaeFtYl6ceE
-         5KqyU1uwPxxK1TevcKoIG3IcqXw3OI0QT+RQ89iw/CgMMlmo8Rv4DBnj3Hg9Htrm0ruZ
-         gtMexG34jSYKFPWyU9JeH8RZ6MGQsKpR5wOC6u2bfwDN+v+0PHEv5kygX7nmX+3LD68l
-         5EueEUHyf42u16ltg78l9V6L7rk5stq58WDJ5zjkpyFyHWKeOVaiCZepBHJ+9bw5zZ7Q
-         0VQA==
-X-Gm-Message-State: AOJu0YwyQHD2P8SoIkf2iB+mkPpYCaqsGlgwSBLp+C5tKjgCYc0ra3IT
-	wNyFpBAMV+xzYgKLy26IdbGKQHHAPYIapPVwyt/FFJ+ZZkEKM/jxD+oih665AloOJ0M8Nz+C2Pe
-	DovnhEbmi1uyp8WRh9uKuMOyyO+MdMyXwBRMfPp5leun22gNTvCwZRDhJKvEXUOFW0oMy
-X-Gm-Gg: ASbGncs0lsfsuJ9cfee26fYCo586+8bMn/S9gfHfDPh8PVeF0h5gVZXH5cfDB8C4tgH
-	u7vRaUaO+X0YnNo/aBcOqhKSkKEpvyGkbnTV0ea2fwfxWBtWiSCteLsXZJ6zN++B4aycyfvGOvz
-	CVRcmbJpEzFzghNm0JzpmNg/YrVJzQeg+iu7LXx52gH5HlXZkZNWeNs8HVP2C3zX8UdY+zO2T8B
-	E8UgFlMVVusDrXFcPQ1040ZD3/AO2CLRwfgHBh4LdF1Y68+Gx1dVzoRB6XX0wIOCRXZ4cou5+l9
-	7oZLQ+jpLsMxmbIVIxE5gLVDcMxsJwgnl66YK9eGyB7Plly0Lku3aUvRduGqPuJBc1vo
-X-Received: by 2002:a05:6300:668b:b0:1f5:5a0b:4768 with SMTP id adf61e73a8af0-20cded43531mr6975784637.21.1746227015148;
-        Fri, 02 May 2025 16:03:35 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEkmy8VQIBA/Z3wJ2zrXg44xjFIk9NFsJDt5RRn7dQchBKgcfsiNd1Qz0qvyfME1r21G6Z/Hg==
-X-Received: by 2002:a05:6300:668b:b0:1f5:5a0b:4768 with SMTP id adf61e73a8af0-20cded43531mr6975744637.21.1746227014731;
-        Fri, 02 May 2025 16:03:34 -0700 (PDT)
-Received: from msinada-linux.qualcomm.com (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-74059020e2asm2160527b3a.111.2025.05.02.16.03.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 02 May 2025 16:03:34 -0700 (PDT)
-From: Muna Sinada <muna.sinada@oss.qualcomm.com>
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Karthik M <quic_karm@quicinc.com>,
-        Muna Sinada <muna.sinada@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: disable pdev for non supported country
-Date: Fri,  2 May 2025 16:02:40 -0700
-Message-Id: <20250502230240.3692678-1-muna.sinada@oss.qualcomm.com>
+	Mon, 05 May 2025 03:44:20 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 544Lkase025837;
+	Mon, 5 May 2025 03:44:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=y+9aKZBVM2r868mKyITPWn
+	znP2XUglYrdK0fzRTsWR4=; b=L01k72q2odCIMqTd/ftgttzDIaxa1qwrRcNk35
+	VtpdNeIXaHKgY8amJBT+W1uiyst2JpoabUB9GFe67yC7oKNM8uCRsKEtqcuhzB4z
+	VtawA5JNiH9laHZVYe3Q7Uw/627E8t4aHoXc0dsJE5r1pgTaECmDxqszQo/OuIXu
+	lKBbZYeHBstI7EpMXMLJnhTf6HoxGzz6XgFomB45XRGHCZlPhKcatH99BThhHh3I
+	W/ctkxU4WKzKCCp90ryaq/4/3cbyhhbTiPuHCusz7NQNSY2+6ajOTEX+Z/Ynk3B8
+	qaayolAz92RQgwOXWcXecMTT5Jss0qVSbq7vtyZ/u5tflk1Q==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46d9nktye6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 05 May 2025 03:44:16 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5453iFCL015523
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 5 May 2025 03:44:15 GMT
+Received: from hu-rajson-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sun, 4 May 2025 20:44:13 -0700
+From: Rajat Soni <quic_rajson@quicinc.com>
+To: <ath12k@lists.infradead.org>
+CC: <linux-wireless@vger.kernel.org>, Aishwarya R <quic_aisr@quicinc.com>,
+        Rajat Soni <quic_rajson@quicinc.com>
+Subject: [PATCH ath-pending v2] wifi: ath12k: remove redundant regulatory rules intersection logic in host
+Date: Mon, 5 May 2025 09:13:51 +0530
+Message-ID: <20250505034351.1365914-1-quic_rajson@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=Ldc86ifi c=1 sm=1 tr=0 ts=68154f48 cx=c_pps a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=GS2Ra1cEi1otGwMkaT0A:9 a=3WC7DwWrALyhR5TkjVHa:22
+Content-Type: text/plain
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA1MDAzMyBTYWx0ZWRfX5rzBSFuWwMGC
+ +VamvAVxCGHOmpIccBQ6PzdS2QGnZb1nbTb+ipC2LluldNc9noAp1oEnGcidOUHcGuNbqCPyPlC
+ 6w5wP25fXOzXu/Bi8mMd3SBmY4eiNigGO5zaX7Mce3Sox2GEQVwng5+oyJH3iSlj3lmTOYFsGmE
+ +yUrfJ9i3Oz4Iw1dwpcUrGEvnjBxgFcRJk3Xha73EQfX1mhGhyVFUhhymt9Bw0JaOAv/R5uJw79
+ bIT4IULbgo/CgihpEltUCkg0jUY6NfGIPq29x0m5dV8MQE8PRY47/sfwzuOBp7zBcprGy9EAgGr
+ 8HVl879frErRJ1YPoNwZm+a/0iHFBW/3DTd9uNzEofzY1oWOhOzfikgtDu31ne7jC9HL3VIC4dO
+ ggIz8wLakykm9Tnp5NuWT+Wk1ZG2RJqQAKyKePuR1MbTFxbr2BhPXixYtdzoTn3ykawdmGAp
+X-Proofpoint-GUID: vPfCL09_xyX12GO7RlHtCvM7pW7_KeiQ
+X-Authority-Analysis: v=2.4 cv=LpeSymdc c=1 sm=1 tr=0 ts=68183410 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=igJP8ltQK_XOvVwkCrQA:9
  a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: GTzq5_W7x0qb_6U-UFN-06m_8mb3IMcy
-X-Proofpoint-ORIG-GUID: GTzq5_W7x0qb_6U-UFN-06m_8mb3IMcy
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTAyMDE4OSBTYWx0ZWRfX9vhP2reVYLuy baXNl6smct3+c2NOhfEMyfTpxCYLv6fKiySbgJ+Jd6yQMKW5k7kis8qQP+6VDgYiHRRfJ6KAGGw yWwDEyhU235Er965iJXXe+yL9ZxOCVWaAaYQc8JQc1Rt5tMtxuqgB6XcD8BEcoK1HT6tyxWs/xv
- YuH8QWW/1L1e8Ueb8wsn3drtHk2qo4yrYnwmVfS7EHSj4++tM/Htke95O3b8NbiD+b766UJ0pmJ 7dQfRspqf4HmWoAjJTK5cZ/Ixqqf35Yxd5TVALVy99qoIYZ6G1YrVQYK+PtjpWmcC3pTDaRK95N moc67i7u88rhtXkyYKlm0WdHuq3SIuvxTkxb8JCEELTxku8sDLMYgUUQSO7npy1+8rTvPrT6xsv
- dH0Xc9ecYijMVnXRkBfQGJ8XCZe6dQVjCc0eUxzugylia+pcF0FukVdNmvwO+5Ro3Adjxm11
+X-Proofpoint-ORIG-GUID: vPfCL09_xyX12GO7RlHtCvM7pW7_KeiQ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-02_05,2025-04-30_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- priorityscore=1501 phishscore=0 impostorscore=0 clxscore=1015 spamscore=0
- bulkscore=0 mlxlogscore=704 malwarescore=0 mlxscore=0 suspectscore=0
- adultscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2505020189
+ definitions=2025-05-05_02,2025-04-30_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=999 adultscore=0 lowpriorityscore=0 impostorscore=0 mlxscore=0
+ spamscore=0 malwarescore=0 priorityscore=1501 clxscore=1015 phishscore=0
+ bulkscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505050033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250502_160338_187500_2716B081 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20250504_204418_505348_F763DD52 
+X-CRM114-Status: GOOD (  24.89  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,77 +106,293 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: Karthik M <quic_karm@quicinc.com>
+From: Aishwarya R <quic_aisr@quicinc.com>
 
-In MLO configuration, ath12k_mac_radio_start() iterates through all
-the radios and makes the ar state 'ON'. Even though some bands are
-not supported in certain countries, ath12k_reg_update_chan_list()
-tries to update the channel list for all the active pdevs and ends
-up in the warn_on for non-supported band.
+Whenever there is a change in the country code settings from the
+user, driver does an intersection of the regulatory rules for this
+new country with the original regulatory rules which were reported
+during initialization time.
 
-To prevent this, disable the pdev when the num of channels in a band
-for a particular country is zero.
+There is also similar logic running in firmware with a difference
+that the intersection in firmware is only done when the country code
+is configuration during boot up time (BDF/OTP). Firmware logic does
+not kick in when no country code is configured during device bring
+up time as the device is always expected to have the country code
+configured properly in the deployment.
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
+There is a debug/test use case that requires absolute regulatory
+rules to be used for a user configured country code when the device
+is not configured with a particular country code during boot up time.
 
-Signed-off-by: Karthik M <quic_karm@quicinc.com>
-Signed-off-by: Muna Sinada <muna.sinada@oss.qualcomm.com>
+To support the above test use case, remove the redundant regulatory
+rules intersection logic in the host driver. Depend on the
+intersection logic in firmware when the device comes up with
+pre-configured country code.
+
+Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00209-QCAHKSWPL_SILICONZ-1
+Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+
+Signed-off-by: Aishwarya R <quic_aisr@quicinc.com>
+Signed-off-by: Rajat Soni <quic_rajson@quicinc.com>
 ---
- drivers/net/wireless/ath/ath12k/mac.c | 12 +++++++++++-
- drivers/net/wireless/ath/ath12k/reg.c |  7 +++++--
- 2 files changed, 16 insertions(+), 3 deletions(-)
+v2:
+  - Rebased on top of ath-pending branch.
+---
+ drivers/net/wireless/ath/ath12k/reg.c | 178 ++------------------------
+ 1 file changed, 11 insertions(+), 167 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4dae941c9615..f731a5759ac3 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -7726,7 +7726,17 @@ static int ath12k_mac_start(struct ath12k *ar)
- 
- 	/* TODO: Do we need to enable ANI? */
- 
--	ath12k_reg_update_chan_list(ar, false);
-+	ret = ath12k_reg_update_chan_list(ar, false);
-+
-+	/* The ar state alone can be turned off for non supported country
-+	 * without returning the error value. As we need to update the channel
-+	 * for the next ar.
-+	 */
-+	if (ret) {
-+		if (ret == -EINVAL)
-+			ret = 0;
-+		goto err;
-+	}
- 
- 	ar->num_started_vdevs = 0;
- 	ar->num_created_vdevs = 0;
 diff --git a/drivers/net/wireless/ath/ath12k/reg.c b/drivers/net/wireless/ath/ath12k/reg.c
-index 7048834e0d14..a6c9c670e91d 100644
+index a1f4fa536b89..386af2f80387 100644
 --- a/drivers/net/wireless/ath/ath12k/reg.c
 +++ b/drivers/net/wireless/ath/ath12k/reg.c
-@@ -65,7 +65,7 @@ ath12k_reg_notifier(struct wiphy *wiphy, struct regulatory_request *request)
+@@ -467,134 +467,6 @@ static u32 ath12k_map_fw_phy_flags(u32 phy_flags)
+ 	return flags;
+ }
  
- 		for_each_ar(ah, ar, i) {
- 			ret = ath12k_reg_update_chan_list(ar, true);
--			if (ret) {
-+			if (ret && ret != -EINVAL) {
- 				ath12k_warn(ar->ab,
- 					    "failed to update chan list for pdev %u, ret %d\n",
- 					    i, ret);
-@@ -181,8 +181,11 @@ int ath12k_reg_update_chan_list(struct ath12k *ar, bool wait)
+-static bool
+-ath12k_reg_can_intersect(struct ieee80211_reg_rule *rule1,
+-			 struct ieee80211_reg_rule *rule2)
+-{
+-	u32 start_freq1, end_freq1;
+-	u32 start_freq2, end_freq2;
+-
+-	start_freq1 = rule1->freq_range.start_freq_khz;
+-	start_freq2 = rule2->freq_range.start_freq_khz;
+-
+-	end_freq1 = rule1->freq_range.end_freq_khz;
+-	end_freq2 = rule2->freq_range.end_freq_khz;
+-
+-	if ((start_freq1 >= start_freq2 &&
+-	     start_freq1 < end_freq2) ||
+-	    (start_freq2 > start_freq1 &&
+-	     start_freq2 < end_freq1))
+-		return true;
+-
+-	/* TODO: Should we restrict intersection feasibility
+-	 *  based on min bandwidth of the intersected region also,
+-	 *  say the intersected rule should have a  min bandwidth
+-	 * of 20MHz?
+-	 */
+-
+-	return false;
+-}
+-
+-static void ath12k_reg_intersect_rules(struct ieee80211_reg_rule *rule1,
+-				       struct ieee80211_reg_rule *rule2,
+-				       struct ieee80211_reg_rule *new_rule)
+-{
+-	u32 start_freq1, end_freq1;
+-	u32 start_freq2, end_freq2;
+-	u32 freq_diff, max_bw;
+-
+-	start_freq1 = rule1->freq_range.start_freq_khz;
+-	start_freq2 = rule2->freq_range.start_freq_khz;
+-
+-	end_freq1 = rule1->freq_range.end_freq_khz;
+-	end_freq2 = rule2->freq_range.end_freq_khz;
+-
+-	new_rule->freq_range.start_freq_khz = max_t(u32, start_freq1,
+-						    start_freq2);
+-	new_rule->freq_range.end_freq_khz = min_t(u32, end_freq1, end_freq2);
+-
+-	freq_diff = new_rule->freq_range.end_freq_khz -
+-			new_rule->freq_range.start_freq_khz;
+-	max_bw = min_t(u32, rule1->freq_range.max_bandwidth_khz,
+-		       rule2->freq_range.max_bandwidth_khz);
+-	new_rule->freq_range.max_bandwidth_khz = min_t(u32, max_bw, freq_diff);
+-
+-	new_rule->power_rule.max_antenna_gain =
+-		min_t(u32, rule1->power_rule.max_antenna_gain,
+-		      rule2->power_rule.max_antenna_gain);
+-
+-	new_rule->power_rule.max_eirp = min_t(u32, rule1->power_rule.max_eirp,
+-					      rule2->power_rule.max_eirp);
+-
+-	/* Use the flags of both the rules */
+-	new_rule->flags = rule1->flags | rule2->flags;
+-
+-	if ((rule1->flags & NL80211_RRF_PSD) && (rule2->flags & NL80211_RRF_PSD))
+-		new_rule->psd = min_t(s8, rule1->psd, rule2->psd);
+-	else
+-		new_rule->flags &= ~NL80211_RRF_PSD;
+-
+-	/* To be safe, lts use the max cac timeout of both rules */
+-	new_rule->dfs_cac_ms = max_t(u32, rule1->dfs_cac_ms,
+-				     rule2->dfs_cac_ms);
+-}
+-
+-static struct ieee80211_regdomain *
+-ath12k_regd_intersect(struct ieee80211_regdomain *default_regd,
+-		      struct ieee80211_regdomain *curr_regd)
+-{
+-	u8 num_old_regd_rules, num_curr_regd_rules, num_new_regd_rules;
+-	struct ieee80211_reg_rule *old_rule, *curr_rule, *new_rule;
+-	struct ieee80211_regdomain *new_regd = NULL;
+-	u8 i, j, k;
+-
+-	num_old_regd_rules = default_regd->n_reg_rules;
+-	num_curr_regd_rules = curr_regd->n_reg_rules;
+-	num_new_regd_rules = 0;
+-
+-	/* Find the number of intersecting rules to allocate new regd memory */
+-	for (i = 0; i < num_old_regd_rules; i++) {
+-		old_rule = default_regd->reg_rules + i;
+-		for (j = 0; j < num_curr_regd_rules; j++) {
+-			curr_rule = curr_regd->reg_rules + j;
+-
+-			if (ath12k_reg_can_intersect(old_rule, curr_rule))
+-				num_new_regd_rules++;
+-		}
+-	}
+-
+-	if (!num_new_regd_rules)
+-		return NULL;
+-
+-	new_regd = kzalloc(sizeof(*new_regd) + (num_new_regd_rules *
+-			sizeof(struct ieee80211_reg_rule)),
+-			GFP_ATOMIC);
+-
+-	if (!new_regd)
+-		return NULL;
+-
+-	/* We set the new country and dfs region directly and only trim
+-	 * the freq, power, antenna gain by intersecting with the
+-	 * default regdomain. Also MAX of the dfs cac timeout is selected.
+-	 */
+-	new_regd->n_reg_rules = num_new_regd_rules;
+-	memcpy(new_regd->alpha2, curr_regd->alpha2, sizeof(new_regd->alpha2));
+-	new_regd->dfs_region = curr_regd->dfs_region;
+-	new_rule = new_regd->reg_rules;
+-
+-	for (i = 0, k = 0; i < num_old_regd_rules; i++) {
+-		old_rule = default_regd->reg_rules + i;
+-		for (j = 0; j < num_curr_regd_rules; j++) {
+-			curr_rule = curr_regd->reg_rules + j;
+-
+-			if (ath12k_reg_can_intersect(old_rule, curr_rule))
+-				ath12k_reg_intersect_rules(old_rule, curr_rule,
+-							   (new_rule + k++));
+-		}
+-	}
+-	return new_regd;
+-}
+-
+ static const char *
+ ath12k_reg_get_regdom_str(enum nl80211_dfs_regions dfs_region)
+ {
+@@ -729,12 +601,6 @@ static void ath12k_reg_update_freq_range(struct ath12k_reg_freq *reg_freq,
+ 		reg_freq->end_freq = reg_rule->end_freq;
+ }
+ 
+-static bool ath12k_reg_is_world_alpha(char *alpha)
+-{
+-	return (alpha[0] == '0' && alpha[1] == '0') ||
+-	       (alpha[0] == 'n' && alpha[1] == 'a');
+-}
+-
+ enum wmi_reg_6g_ap_type
+ ath12k_reg_ap_pwr_convert(enum ieee80211_ap_reg_power power_type)
+ {
+@@ -756,7 +622,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 		      enum wmi_vdev_type vdev_type,
+ 		      enum ieee80211_ap_reg_power power_type)
+ {
+-	struct ieee80211_regdomain *tmp_regd, *default_regd, *new_regd = NULL;
++	struct ieee80211_regdomain *new_regd = NULL;
+ 	struct ath12k_reg_rule *reg_rule, *reg_rule_6ghz;
+ 	u32 flags, reg_6ghz_number, max_bw_6ghz;
+ 	u8 i = 0, j = 0, k = 0;
+@@ -804,20 +670,20 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 	if (reg_info->dfs_region == ATH12K_DFS_REG_ETSI)
+ 		num_rules += 2;
+ 
+-	tmp_regd = kzalloc(sizeof(*tmp_regd) +
++	new_regd = kzalloc(sizeof(*new_regd) +
+ 			   (num_rules * sizeof(struct ieee80211_reg_rule)),
+ 			   GFP_ATOMIC);
+-	if (!tmp_regd)
++	if (!new_regd)
+ 		goto ret;
+ 
+-	memcpy(tmp_regd->alpha2, reg_info->alpha2, REG_ALPHA2_LEN + 1);
++	memcpy(new_regd->alpha2, reg_info->alpha2, REG_ALPHA2_LEN + 1);
+ 	memcpy(alpha2, reg_info->alpha2, REG_ALPHA2_LEN + 1);
+ 	alpha2[2] = '\0';
+-	tmp_regd->dfs_region = ath12k_map_fw_dfs_region(reg_info->dfs_region);
++	new_regd->dfs_region = ath12k_map_fw_dfs_region(reg_info->dfs_region);
+ 
+ 	ath12k_dbg(ab, ATH12K_DBG_REG,
+ 		   "\r\nCountry %s, CFG Regdomain %s FW Regdomain %d, num_reg_rules %d\n",
+-		   alpha2, ath12k_reg_get_regdom_str(tmp_regd->dfs_region),
++		   alpha2, ath12k_reg_get_regdom_str(new_regd->dfs_region),
+ 		   reg_info->dfs_region, num_rules);
+ 
+ 	/* Reset start and end frequency for each band
+@@ -869,7 +735,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 		flags |= ath12k_map_fw_reg_flags(reg_rule->flags);
+ 		flags |= ath12k_map_fw_phy_flags(reg_info->phybitmap);
+ 
+-		ath12k_reg_update_rule(tmp_regd->reg_rules + i,
++		ath12k_reg_update_rule(new_regd->reg_rules + i,
+ 				       reg_rule->start_freq,
+ 				       reg_rule->end_freq, max_bw,
+ 				       reg_rule->ant_gain, reg_rule->reg_power,
+@@ -884,7 +750,7 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 		    reg_info->dfs_region == ATH12K_DFS_REG_ETSI &&
+ 		    (reg_rule->end_freq > ETSI_WEATHER_RADAR_BAND_LOW &&
+ 		    reg_rule->start_freq < ETSI_WEATHER_RADAR_BAND_HIGH)){
+-			ath12k_reg_update_weather_radar_band(ab, tmp_regd,
++			ath12k_reg_update_weather_radar_band(ab, new_regd,
+ 							     reg_rule, &i,
+ 							     flags, max_bw);
+ 			continue;
+@@ -894,41 +760,19 @@ ath12k_reg_build_regd(struct ath12k_base *ab,
+ 			ath12k_dbg(ab, ATH12K_DBG_REG, "\t%d. (%d - %d @ %d) (%d, %d) (%d ms) (FLAGS %d) (%d, %d)\n",
+ 				   i + 1, reg_rule->start_freq, reg_rule->end_freq,
+ 				   max_bw, reg_rule->ant_gain, reg_rule->reg_power,
+-				   tmp_regd->reg_rules[i].dfs_cac_ms,
++				   new_regd->reg_rules[i].dfs_cac_ms,
+ 				   flags, reg_rule->psd_flag, reg_rule->psd_eirp);
+ 		} else {
+ 			ath12k_dbg(ab, ATH12K_DBG_REG,
+ 				   "\t%d. (%d - %d @ %d) (%d, %d) (%d ms) (FLAGS %d)\n",
+ 				   i + 1, reg_rule->start_freq, reg_rule->end_freq,
+ 				   max_bw, reg_rule->ant_gain, reg_rule->reg_power,
+-				   tmp_regd->reg_rules[i].dfs_cac_ms,
++				   new_regd->reg_rules[i].dfs_cac_ms,
+ 				   flags);
  		}
  	}
  
--	if (WARN_ON(!num_channels))
-+	if (!num_channels) {
-+		ath12k_dbg(ar->ab, ATH12K_DBG_REG,
-+			   "pdev is not supported for this country\n");
- 		return -EINVAL;
-+	}
- 
- 	arg = kzalloc(struct_size(arg, channel, num_channels), GFP_KERNEL);
- 
+-	tmp_regd->n_reg_rules = i;
+-
+-	/* Intersect new rules with default regd if a new country setting was
+-	 * requested, i.e a default regd was already set during initialization
+-	 * and the regd coming from this event has a valid country info.
+-	 */
+-	default_regd = ab->default_regd[reg_info->phy_id];
+-	if (default_regd &&
+-	    !ath12k_reg_is_world_alpha((char *)default_regd->alpha2) &&
+-	    !ath12k_reg_is_world_alpha((char *)reg_info->alpha2)) {
+-		/* Get a new regd by intersecting the received regd with
+-		 * our default regd.
+-		 */
+-		new_regd = ath12k_regd_intersect(default_regd, tmp_regd);
+-		kfree(tmp_regd);
+-		if (!new_regd) {
+-			ath12k_warn(ab, "Unable to create intersected regdomain\n");
+-			goto ret;
+-		}
+-	} else {
+-		new_regd = tmp_regd;
+-	}
+-
++	new_regd->n_reg_rules = i;
+ ret:
+ 	return new_regd;
+ }
 
-base-commit: 885e5cbaa0ee3738fcd99167439459ede2cc102c
+base-commit: cbd170d5df79f023caaf71e8a55850060f9e7bc6
 -- 
 2.34.1
 
