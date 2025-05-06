@@ -4,68 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB4D2C3ABBE
-	for <ath12k@archiver.kernel.org>; Tue,  6 May 2025 03:25:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 899EAC3ABAC
+	for <ath12k@archiver.kernel.org>; Tue,  6 May 2025 06:03:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=voCDin5qtbzFtYG2WtSj8frTQDwO/cIKAz0Dn22e3ZA=; b=vnxETO13E3n2Wl54fZ56UrJrHV
-	xzsBnLzfH5Nc5VSYWO9Rk1oZ9aEKpF9TxjabGHhFbDBvpEDxZZyw/Y39h3vJrSY502fdSsVCGrrMn
-	OCwpDCLTJFW4FndVxsWDxqVxbPQww3nswj+x9SlKM2XJCFxl2GgKyTkp78WTPgyYfI25koJwSa3Lt
-	4RX7nvf+/Mf4hMCTgyH+QBeoWXEj4DgBsTCMuwQpbe5kPnr+mg+mELtSmMIwF9cLAddg/QcKf8Tsq
-	Hb3dGw1ztQmbU3Rin/XuTX7axO4uSeekPdbsscB+CJkNbykQ8/MuWjYdhUjQNsGWzSx6P1ICTWWkl
-	y8IP+iTg==;
+	bh=VssZjjWMJWPdqdH0IZ5tzinbZ36xyqX8Vl4pC5FcHbw=; b=GXqItoHG13aBXzZkP8BXUBsZRu
+	5ZDH2H4l6ETqXm+vvJF2os/dm++vmNs7mSx7bAkK9PE5vJ/Vo8uA1rso/uaSoAntzaI9z3/vPZ25w
+	byRMlppd76kvq68yJkt98hIbNP22E0Db5BqaPyXKmuR13w9FyzwhgOZf1l9zrmQCTn9RYLjrYBelQ
+	x8y5VneEXfHxRYg0jENlQMEF6wqY4DEjbYMwvWRowKgMwv+By6C8hlnvc/d3T4DM4t4utSZV+Y8kV
+	uacrRkkqI4eAM1t/+IJ1kcSdh4BjLHc4JqjTwbWL+LO9a9FTmH/3nl0NLUVnHZn5qNYOUUcUH+xKn
+	0wJzmxfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC8wG-00000009yqk-2Oh9;
-	Tue, 06 May 2025 03:25:48 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1uCBP4-0000000AZpA-1BXK;
+	Tue, 06 May 2025 06:03:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC4t2-00000008xEB-33T3
+	id 1uC9Q9-0000000A6Fz-3z4f
 	for ath12k@lists.infradead.org;
-	Mon, 05 May 2025 23:06:14 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 547BAA4C6B1;
-	Mon,  5 May 2025 23:00:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B7036C4CEEE;
-	Mon,  5 May 2025 23:06:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746486371;
-	bh=Eu0Vxmjy+j96zmKQbWqFv06fTIOV9pidgP4pHpT+D9Q=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=WHXa2kfyWrlErSsszY91+kJ03HPDAHe3cl+XseLM6he9ulJf0WH4zDgfgMdZ3NJT1
-	 pkj41wH/hyJzDP5j4h37kwmXHweUs9DOdJ/D1cc4PO/zGtOblTikG0l0M9wg+Cv1Y7
-	 jocJhzkD16//o4dVFEDkXXPnKS7LtfONdMArXMHltiK7hz6XTp/Zq3zvvbYqohUZ7X
-	 ntQKURoM3aXmkjFqmsV9CuiqOvMd6/dLnXkQFUaYKVE9Ca0VDpd1EG6FaWXnc1iM1X
-	 AWna2lslumUPgCxpl8+p84o+PLYXIdf8i3faQtp1ZOQEQ1r1xipJ6bIqJsvC1PTWb2
-	 wepUwGrPh7KSA==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: P Praneesh <quic_ppranees@quicinc.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Sasha Levin <sashal@kernel.org>,
-	jjohnson@kernel.org,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 289/294] wifi: ath12k: Fix end offset bit definition in monitor ring descriptor
-Date: Mon,  5 May 2025 18:56:29 -0400
-Message-Id: <20250505225634.2688578-289-sashal@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250505225634.2688578-1-sashal@kernel.org>
-References: <20250505225634.2688578-1-sashal@kernel.org>
+	Tue, 06 May 2025 03:56:43 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 545M3edn025518
+	for <ath12k@lists.infradead.org>; Tue, 6 May 2025 03:56:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	VssZjjWMJWPdqdH0IZ5tzinbZ36xyqX8Vl4pC5FcHbw=; b=Jk6s5/zGwEMAY4Wd
+	QQk95+qYd61DbVhhjMhLFFLQkkWFtQC366KwcuIumU2MRBzuUYx7Kc8dZlptXhLo
+	6siRUAWY3DGbR9whfyyu3qdgeKCHQyhLxU9qL0Rq8B6R1wv0jAlPLqOzjFAJ+Hns
+	JNkPOnwGCjqyjNS9qEL4ImJDJ0IGKSUidDCCUxdUpSdbV8NBVnTNxSV8NXOULeKe
+	G+JLPqZKkOOqfQivyncUWjN7cEQKKftsD2UVf00IL3OSkqfbEgXILu6frjl9jJYH
+	i37D3bbOWmXG2XzdbdGTLrYanZ1cuewNDbdGjfrPeeI3UHfMw0Kwxyqu69vcoyep
+	7qy2Hg==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46f5sv0sg5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 06 May 2025 03:56:40 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b090c7c2c6aso2766777a12.0
+        for <ath12k@lists.infradead.org>; Mon, 05 May 2025 20:56:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1746503800; x=1747108600;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=VssZjjWMJWPdqdH0IZ5tzinbZ36xyqX8Vl4pC5FcHbw=;
+        b=ZRgyqd/fsq1IdCaZi7wuAuFf9wCd+VdCnB6jB847htk8d36OfHgW8hMommqhQrzTyY
+         77/jydaMYH3SzjjVrHIrGX5KFGGNx5X9D9L0lH/M3MUjLxSgfqQcVCkTlnI5aVMJ76Ny
+         AOlw+24FxJm/XtiHRQ7x91FiGsZJxPzLikZV7v+YG4gd/Eo2/0GJXjYhBpKVTq+lcz5Z
+         F+Ypm+ns8u9qf3jSYSUSOspiwp59qPPsxu68AkQEe1TSlucIIEs3us0eGi/lbHW1ik3w
+         bZBgFLWPsidEpO0rQLsSnKCqRkUd3kawaSZokAojvVP04Hb0HZkUaKv5RyeuygQwRqgA
+         wo8A==
+X-Gm-Message-State: AOJu0YzOyMi1Wy62UFPLJO0Wd15vVKujJCsyjIweKgl3mvquq+fKlWJm
+	P4JUWUAlCffZOzmhaWxMqFDcI+Vv+2ii1LjVnv/ZlMIuOWEI+0ZYBB9vzGqWiyIMQuDrpnzmyg3
+	zqaqR1rMuHlkJ4+lSQJ6uo2mj3dm0ZVlu+GjDYWl104ecUonx7UyVm0L08FqO
+X-Gm-Gg: ASbGncsalCP2P1UIRR6PUqWOlvPBXFM1abBVlkAYUkn9VdBkGAf43uZIThhb12MGrtb
+	VEDJkUJ2k5IJFqsAnsmX1SvipgBp2FutdclcSjxvHl2kj/zo36MpYOGpSg+PK8TAbiNzmMYqrRz
+	9W9J6BaSW1CF04JpJAUxg30aPSNQ0f+UB7CdLOFXD5SJ6unBJiQEX+jfhGag9uXj6//53l36R7s
+	cv0uQK1D5lKbeiCC83lDDZoFDLAN0zGb5rgrdLZvQIgeEujN61rjhjV/23qn+36PnqBTRkFL5dZ
+	TNt3zfprOsjUXC4CMjgwV+kSen41o+MdkJFY7WEcoMBV6dUyrO3YUw==
+X-Received: by 2002:a05:6a21:9203:b0:203:bac4:c6d4 with SMTP id adf61e73a8af0-211823a4329mr2315344637.29.1746503799834;
+        Mon, 05 May 2025 20:56:39 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFbSVcvrD6TYRv9+C6F5mpiHYvymOofSleVgeTUg/fKF5J3cksoI1+ZjlKYg+zGXKNK8MhJTQ==
+X-Received: by 2002:a05:6a21:9203:b0:203:bac4:c6d4 with SMTP id adf61e73a8af0-211823a4329mr2315313637.29.1746503799526;
+        Mon, 05 May 2025 20:56:39 -0700 (PDT)
+Received: from [10.152.204.0] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b1fb3920f6dsm6456022a12.10.2025.05.05.20.56.36
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 May 2025 20:56:39 -0700 (PDT)
+Message-ID: <c9187ce5-2ae3-fee6-8b94-19792a981130@oss.qualcomm.com>
+Date: Tue, 6 May 2025 09:26:34 +0530
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.6.89
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Subject: Re: [RESEND ath-next 2/2] wifi: ath12k: support usercase-specific
+ firmware overrides
+Content-Language: en-US
+To: Miaoqing Pan <quic_miaoqing@quicinc.com>, jjohnson@kernel.org,
+        johannes@sipsolutions.net, robh@kernel.org, krzk+dt@kernel.org,
+        conor+dt@kernel.org
+Cc: ath12k@lists.infradead.org, linux-wireless@vger.kernel.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+References: <20250424005703.2479907-1-quic_miaoqing@quicinc.com>
+ <20250424005703.2479907-3-quic_miaoqing@quicinc.com>
+From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+In-Reply-To: <20250424005703.2479907-3-quic_miaoqing@quicinc.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-GUID: c-i1b4b9lfMCGq8EYVOA5NvaD6IT7E7V
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA2MDAzMyBTYWx0ZWRfX/LeLvtPVzjJ9
+ ZWsDQ1hJhfdiPgvSrqr5IdQmJ0hHiNXRA17bIicaxh0HxlTayqSPJHHi+wnm4/Qw9XPmbiUgzN3
+ XooS700wdb6VgkA0mis3AKIxpiGJXulZich3hm+Mysoy0kyFWe5+TG0zD9d9gbI4gaHxZLYWFeo
+ keZxA+D8MNS9rdor0+pUjIfffexwJocYsl3gn/+GVqOMVFp1XYxcEw3rB7Se9AykIR2dYbn+t2+
+ QuLDxci2UnPO7q4xH6U7XU4uFt0JmkZ38zbI9ra4aAlQQ99yvtSNNE9t4ZwOXfiCoBef2i3WWmG
+ 7LOAI73DmpO/nVje1zjAcZ4Jp2T9EGIaQCtvM1TNopnhxHSQvkri1m3QJYWe382nSjEPXLeAzsf
+ Cl+9Ie/Fh0eJ2Or36Kq+QvXAtjHxi/p+01KblxI4w4wzBzFXOZb+9rBaPQygSg87udNb9ivk
+X-Authority-Analysis: v=2.4 cv=cOXgskeN c=1 sm=1 tr=0 ts=68198878 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
+ a=nnbtXsLSmtPlU79_SnMA:9 a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: c-i1b4b9lfMCGq8EYVOA5NvaD6IT7E7V
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-06_02,2025-05-05_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxscore=0 clxscore=1015 suspectscore=0 priorityscore=1501 bulkscore=0
+ mlxlogscore=771 adultscore=0 impostorscore=0 malwarescore=0 spamscore=0
+ phishscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2504070000 definitions=main-2505060033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250505_160612_831125_912E543D 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250505_205642_032667_EFC2EB4A 
+X-CRM114-Status: GOOD (  12.13  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,41 +134,35 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-From: P Praneesh <quic_ppranees@quicinc.com>
 
-[ Upstream commit 6788a666000d600bd8f2e9f991cad9cc805e7f01 ]
 
-End offset for the monitor destination ring descriptor is defined as
-16 bits, while the firmware definition specifies only 12 bits.
-The remaining bits (bit 12 to bit 15) are reserved and may contain
-junk values, leading to invalid information retrieval. Fix this issue
-by updating the correct genmask values.
+On 4/24/2025 6:27 AM, Miaoqing Pan wrote:
+> Introduce 'firmware-name' property to allow end-users and/or integrators to
+> decide which usecase-specific firmware to run on the WCN7850 platform. This
+> is necessary due to resource limitations such as memory capacity and CPU
+> capability, or performance and power optimization for different application
+> scenarios.
+> 
+> Currently, there are two firmwares, both files can be executed
+> interchangeably.
+> For example:
+> 
+> - ath12k/WCN7850/hw2.0/amss.bin,
+>    ath12k/WCN7850/hw2.0/m3.bin
+>    ath12k/WCN7850/hw2.0/board-2.bin
+> 
+> - ath12k/WCN7850/hw2.0/ncm825/amss.bin,
+>    ath12k/WCN7850/hw2.0/ncm825/m3.bin
+>    ath12k/WCN7850/hw2.0/board-2.bin
+> 
+> The former is the default firmware, suitable for most WiFi 7 STA functions.
+> The latter adds support for commercial-quality SAP and optimizes power
+> consumption for IoT applications. And both use the same BDF/regdb data
+> within the main board-2.bin.
+> 
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+> 
+> Signed-off-by: Miaoqing Pan <quic_miaoqing@quicinc.com>
 
-Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.3.1-00173-QCAHKSWPL_SILICONZ-1
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.0.c5-00481-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
-
-Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
-Link: https://patch.msgid.link/20241223060132.3506372-8-quic_ppranees@quicinc.com
-Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/wireless/ath/ath12k/hal_desc.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/hal_desc.h b/drivers/net/wireless/ath/ath12k/hal_desc.h
-index 6c17adc6d60b5..1bb840c2bef57 100644
---- a/drivers/net/wireless/ath/ath12k/hal_desc.h
-+++ b/drivers/net/wireless/ath/ath12k/hal_desc.h
-@@ -2918,7 +2918,7 @@ struct hal_mon_buf_ring {
- 
- #define HAL_MON_DEST_COOKIE_BUF_ID      GENMASK(17, 0)
- 
--#define HAL_MON_DEST_INFO0_END_OFFSET		GENMASK(15, 0)
-+#define HAL_MON_DEST_INFO0_END_OFFSET		GENMASK(11, 0)
- #define HAL_MON_DEST_INFO0_FLUSH_DETECTED	BIT(16)
- #define HAL_MON_DEST_INFO0_END_OF_PPDU		BIT(17)
- #define HAL_MON_DEST_INFO0_INITIATOR		BIT(18)
--- 
-2.39.5
-
+Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
 
