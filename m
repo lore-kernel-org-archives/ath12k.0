@@ -4,80 +4,132 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC4A7C3ABC3
-	for <ath12k@archiver.kernel.org>; Mon, 12 May 2025 13:28:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85866C3ABC3
+	for <ath12k@archiver.kernel.org>; Mon, 12 May 2025 18:58:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BiBuYsu24PWFpZzl5PryEnD2vsEyUsDIOea1vuC2rBA=; b=W+bj1TjADX+aVUz+iVihep6g7k
-	0rRAj3XNzD5s5iQVlQ5M0NzPPyHebOJ89SiR09nAPXmX9GREjV+euI4+2lYmEWhApOXUd9DZqLoYR
-	ajgEy8h1SEyCrdaQcgM2by9hi27Dsrm01z4FYzWit/BdktYBqoydSxLACcSWMF1VVe2B45455KkDv
-	A0LEC6U2zFGy4XdZFhs39Sdm1hwL1Nl3kfffZpzEuSBvmkgkUoXEZB2CMGlv0NH/vLNb5VlmW2T6t
-	E23fcCUTOWZNq98OdVrkS9Z62eNI+DmPSwUrPNwaqXO9pOejgoNvWbIuj5sVM3Sv/2qs4EyY0sT/w
-	2iRH3ueQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=/r5mtaG20KhfYaNuwC8Nolf7zQua6agNHT2giYdPbbo=; b=yF3H36+walTi11ErOMH35MO4aQ
+	YSyxgIYCTa6L7EvCgzyklQ8f7x+g1vUFw1xlbaDFBeNYZ7mcYus1Iki3tnHpNNZx7y+I3hoKjLvOu
+	MNGvMmkqTXneeGyQnWXM8Wv6dbpw6+ZUtLtAEzas+lORPEjqecM47wiJZ/uYpAMwQYNXFOku0h/fE
+	Mz8/AwAHxP9pFQkyRnuv1N9I6Y3KDhFiGf+gXimNy4b34/If5Wbz2vdcMvLddDCMk1hMHh/ewFVh7
+	YHKGzvP0EU87VnQO7QEIO+/iy0QIYzOne6Hp4HWlwR1SxVdLqKQI1ly/R2GNmDLK9iW4qn5LBOxbS
+	u6Q5Pkvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uETCQ-00000009YH7-2Ly7;
-	Mon, 12 May 2025 13:28:06 +0000
-Received: from mail215c25.carrierzone.com ([64.29.147.109])
+	id 1uEYM4-0000000ATCY-12CQ;
+	Mon, 12 May 2025 18:58:24 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uESh6-00000009SRX-339B
+	id 1uEYAw-0000000AS3V-3rFP
 	for ath12k@lists.infradead.org;
-	Mon, 12 May 2025 12:55:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=carrierzone.com;
-	s=mailmia; t=1747054541;
-	bh=LmLNNz4Gy4IeZMk/hLlx+k+Lvn2erB1qt9EcKQFI2ic=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References:Reply-to:From;
-	b=QSSwHcVWBzgLaew8oLsGwRNMJyG6n5lRiXJfBzwRs2fkvcAXyBLyEywMT1dReNb0E
-	 8sLyePEFfG1B6cHDtRLGILYbV5HOYFzEtfW3fweTiEvgJfEbD+ul+ddFAt6Gl5QS2P
-	 VqyRXK+O+AFcRjILtpPxgqMewXxe7M3jjrVCfrAU=
-Feedback-ID: pgupta@hindutoo
-Received: from mail215c25.carrierzone.com (localhost [127.0.0.1])
-	by mail215c25.carrierzone.com (8.14.9/8.13.1) with ESMTP id 54CCtaiR2369382
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
-	Mon, 12 May 2025 12:55:36 +0000
-Received: (from webmail@localhost)
-	by mail215c25.carrierzone.com (8.14.9/8.12.2/Submit) id 54CCtZvY2369377;
-	Mon, 12 May 2025 08:55:35 -0400
-From: "pgupta@hindutool.com" <pgupta@hindutool.com>
-To: sidiqbakti@gmail.com, ath12k@lists.infradead.org
-Subject: Re: Missing board ID 4634 in board-2.bin for QCN9274
-Date: Mon, 12 May 2025 08:55:35 -0400
-Message-ID: <1747054535.59hkitnoow40o44g@mailapp03.register.com>
-In-Reply-To: <CAKyS+Cbdy25Y2ii+=DLA1EWkvCySYEOmSkBrrcHhy5mXGJ5ksQ@mail.gmail.com>
-References: <CAKyS+Cbdy25Y2ii+=DLA1EWkvCySYEOmSkBrrcHhy5mXGJ5ksQ@mail.gmail.com>
+	Mon, 12 May 2025 18:46:56 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54CDdTwI012023
+	for <ath12k@lists.infradead.org>; Mon, 12 May 2025 18:46:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/r5mtaG20KhfYaNuwC8Nolf7zQua6agNHT2giYdPbbo=; b=W0l+3+APuqQo0LFX
+	g236I3NUxXGKMXbpA9Ke8JlmNzDqNPDyW4VzT/UwxtmB7CTbs6741vrCtp3yQhxv
+	LE3WZP5kQs2r/ac/oIMXrwbK8yZqcKruQ0t5vn32fCUeGvoPyVAGhNxk0dWJJ1UU
+	RWjxbP/p/7x8udGOocwqsc+TUG+5tcNpSSQJjcI/Z2mlLNLKMp+0AZ2bxsGgHCr5
+	v9gT2V+ETI9JA/WGD4qw3d86DbfmQicXYFccIp/6wsOBKLbynlBxgfI2QOT7Rwz6
+	x3foFKY+dql18044P/cwdSvDVc+13ffx1rPJUwChZaXZ4Iw2xmX6pFB/vfJAMgw2
+	Q8wYWw==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46kc3mt46u-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Mon, 12 May 2025 18:46:54 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-22e3abea7e8so50658465ad.2
+        for <ath12k@lists.infradead.org>; Mon, 12 May 2025 11:46:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747075613; x=1747680413;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=/r5mtaG20KhfYaNuwC8Nolf7zQua6agNHT2giYdPbbo=;
+        b=rIYjkeH+X6aayZr30FWzmAHkAIfRmXvBacyzo2eJRjnDKsBok6ccy2TIKRYzjUmM7g
+         BB1RdqnS4a8PmU4Nbp4xGChc9O2D8sUtVNU8ntMdLq5YO+0rJcWYX5LI4AiqhgrvSgjx
+         yd5Pc1z5vu1Pi+800U/r9PjUgRKkMsnjrkJ6kPX9AE2ntDckZI+9Yol+LGjwwpczZL1o
+         FJUBMvS1O1MMadoRgKKZaZolV/xJsChDoVoBhgs+R7jfLBKLvY3RMA83SFR9hVstPl03
+         lHUsp0VKFJ5CdxTAUvG1wrC1G+POAZgvK2Kjoj4e/RgAKSX4Mg6bRmipDPFwGjbb6v1K
+         QU5g==
+X-Forwarded-Encrypted: i=1; AJvYcCVzkOYfT300/WxvJ9wGlNotcJ8FlWXJBygk+C4oLthf45w0PjFIVdzdCaPSrZvqF2C2DjeArnA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz7GXZzVWYSDhadFogmlLM6bofdJGYtoWfqGglcEfiDvbPUVrrb
+	UuL6FHhSSNDSk566HEWIgbfPWjegxeKy0zFqNxJzrxQm56h2kb3nydQhfJYBTcD/flzXnlxKC4A
+	OnQRQvk5eHJaP8bfaXPEtHE7jKVP1mHGZENjWHycT3Azys9vY3gMvLREQ8GQc
+X-Gm-Gg: ASbGnct6gq6o0jHn6vD/ZospSBNYOWARx1JZmuMUqwKr56oDBY3Wb3aAdaNoAVGVT7v
+	pU/0TScfj08jQLZmFKb8kDpd9O8peZTEiIgGyhNB4QjJOvd9yaMDXtUAQhhnsI/9OJBRaTP6pFy
+	TeKKveUGbrH+TDVNkd8pgHw4QLZFSnn187+vcZ5sWLrde9ErLVRFU20aucwlRBOyV6gL0AhrWhb
+	SuRV8YU2od4DQDpCaGItYoPIRD/37qYgyiThnRuY2M48pWGkJAYkYECBNoeUjmOvjrmuAgs8kt6
+	Nzp9gA7xD5Y7YNMdAVRErMZpWJ1kfsC0Nda2DzuZIB9sIe0M1eGOB7RBtzycQQ==
+X-Received: by 2002:a17:902:ce86:b0:223:39ae:a98 with SMTP id d9443c01a7336-22fc8b56fdfmr213280715ad.22.1747075613199;
+        Mon, 12 May 2025 11:46:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFsWqOd3L30u9cjxgIPmURHi+KkJtpXwBIuouO1S+U1W3n2h4To43nTOBZ4I/fyhCvVNGYpGg==
+X-Received: by 2002:a17:902:ce86:b0:223:39ae:a98 with SMTP id d9443c01a7336-22fc8b56fdfmr213280045ad.22.1747075612588;
+        Mon, 12 May 2025 11:46:52 -0700 (PDT)
+Received: from [10.226.59.182] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22fc7544f5esm66669185ad.36.2025.05.12.11.46.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 12 May 2025 11:46:52 -0700 (PDT)
+Message-ID: <4a6b83f4-885a-46e1-ae31-21a4f3959bae@oss.qualcomm.com>
+Date: Mon, 12 May 2025 12:46:49 -0600
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
-X-Image-Url: https://mailapp03.register.com/api/storage/pgupta@hindutool.com/profile/picture
-X-VADE-SPAMSTATE: clean
-X-VADE-SPAMSCORE: 0
-X-VADE-SPAMCAUSE: dmFkZTGKAru76KymTqsCb3eTtqs/JPuDC9tkI1/wrFx9x/bqoZN11IlfvkNBzNGUCIhm5crm1iVrDYujfMPZ4wU2rGFTFmaGD10B0T1Tbr7o22OcCs8bifTrh+88AJeBQS7ncjWZ6Qa3ZyT/QM8qd81gDWSoe0Z+847nAH9rbU1tRA9z4ws0gjuWurTy0EiTmiB7+uN6T7r5juhZHoo04LzY4Zq/OFEUawpH/kIwdc/EYfrXkPxIsuC6PKIvJPPY7eGom0vgbK3ssLMCRoKwY1tUd1v3WbhD/IFU7r0YunQYHWQQajoDyUFA4eY3jF6xbx0qRrpqbnaR8vXD3iY0QRfOflHgLlYx9THZCJLdZHXziJivWPY9TV3WRtLBhMhUIccyc82H2jMdf5AdslWeGFNGUcWj2OxhJVNkAeWKj6rLdmsschL1G29jrQbST6u9bKeLRwHQLcifZDzjmfGMw8FdFXfxIKqBmw9xbQpERRrG02a6rOvAiKibUHzZdMjjm4Gf4vvlSIgmvKt85iAsdKR7UH8eJvlPET3iwqcMf7l3iPeTCcCv3/vdlYtiu+0abcBhTf5Uj9HmUUSacmrrlzrowgQweAOFmdoyS2m+F8umIr0G3CucJ7odFJhWrTTbgVxTrBroleAw+1DTteN8TF2kHKpL0pMD+ZkxZzM+hTmEr0ycCw
-X-Rspamd-Result: default: False [0.90 / 6.00];
-	FROM_DN_EQ_ADDR(1.00)[];
-	MIME_GOOD(-0.10)[text/plain];
-	ARC_NA(0.00)[];
-	MISSING_XM_UA(0.00)[];
-	RCVD_COUNT_ONE(0.00)[1];
-	MIME_TRACE(0.00)[0:+];
-	FREEMAIL_TO(0.00)[gmail.com,lists.infradead.org];
-	RCPT_COUNT_TWO(0.00)[2];
-	FREEMAIL_ENVRCPT(0.00)[gmail.com];
-	RCVD_TLS_LAST(0.00)[];
-	FROM_EQ_ENVFROM(0.00)[];
-	HAS_REPLYTO(0.00)[pgupta@hindutool.com];
-	REPLYTO_ADDR_EQ_FROM(0.00)[];
-	TO_MATCH_ENVRCPT_ALL(0.00)[];
-	TO_DN_NONE(0.00)[];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[]
-X-Rspamd-Status: No, score=0.90
-X-Origin-Country: Unknown
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4] bus: mhi: host: don't free bhie tables during
+ suspend/hibernation
+To: Muhammad Usama Anjum <usama.anjum@collabora.com>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Youssef Samir
+ <quic_yabdulra@quicinc.com>,
+        Matthew Leung <quic_mattleun@quicinc.com>, Yan Zhen <yanzhen@vivo.com>,
+        Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>,
+        Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
+        Kunwu Chan <chentao@kylinos.cn>,
+        Troy Hanson <quic_thanson@quicinc.com>,
+        "Dr. David Alan Gilbert" <linux@treblig.org>
+Cc: kernel@collabora.com, sebastian.reichel@collabora.com,
+        Carl Vanderlip <quic_carlv@quicinc.com>, Alex Elder <elder@kernel.org>,
+        mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
+        ath11k@lists.infradead.org, ath12k@lists.infradead.org
+References: <20250506144941.2715345-1-usama.anjum@collabora.com>
+Content-Language: en-US
+From: Jeff Hugo <jeff.hugo@oss.qualcomm.com>
+In-Reply-To: <20250506144941.2715345-1-usama.anjum@collabora.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: ZJzddlF6QC0btgzbls3vFp7bmQOYX35h
+X-Proofpoint-GUID: ZJzddlF6QC0btgzbls3vFp7bmQOYX35h
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTEyMDE5MyBTYWx0ZWRfX80W7aZVygWK4
+ NZOWtqdtSaUAO4ckVQv8avrsRQ6CLKo5NaJjvxGpk1UBg6ruae67tAporl6WHnx79ow/0A6pgkE
+ PgmykWYgos6KWLWmSkBMjWqxe8J+4it+9PKL8JPLlcU+4r2y6t27rpakkGuhS5wVMvIocl8q5cf
+ h4pTCzeQcHowzcuI85mkAkQMcA7zbCMnF/xtUpXfMbXKbsXQpgplFoh3fEt2tzooywnluJEzseH
+ X8x3qxX4m3O5qkbNMRLHEsKWV+r+TywXjQ4lD9gqtBjGeXuUd5MLg0zu5F8POUhSmLhcAe9w61c
+ lQfreVUTYCjL9zE2IvBQ8qXy1lh5e/jRr0k01U4TBAPoCQ+OZ8X0f8DqUFFcAI9P+3bO23oni15
+ 7KNxx5t5aFaMl2qNNqrDFi2lxZ9OxJhz5mZ+oCK60hbfbGygTlD2YIGnb/xQqD+rIMBPLuqP
+X-Authority-Analysis: v=2.4 cv=afhhnQot c=1 sm=1 tr=0 ts=6822421e cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=mx74GWaVK5euFb1038QA:9
+ a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-12_06,2025-05-09_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 suspectscore=0 malwarescore=0 mlxlogscore=999 priorityscore=1501
+ impostorscore=0 mlxscore=0 lowpriorityscore=0 phishscore=0 clxscore=1011
+ spamscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505120193
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250512_055545_060620_DD75A669 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20250512_114654_967540_F3FEF0DA 
+X-CRM114-Status: GOOD (  22.18  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,118 +141,72 @@ List-Post: <mailto:ath12k@lists.infradead.org>
 List-Help: <mailto:ath12k-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
  <mailto:ath12k-request@lists.infradead.org?subject=subscribe>
-Reply-To: pgupta@hindutool.com
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-You may need to contact Compex.  I have three boards each are single band (=
-6, 5, 2.4) in order for linux to recognize, the required re-programming.=C2=
-=A0 There is also a software solution with a new .bin file they have, but I=
- opted for hardcoding and sent the modules back to them.=C2=A0 I would reac=
-h our to their support.
+On 5/6/2025 8:49 AM, Muhammad Usama Anjum wrote:
+> Fix dma_direct_alloc() failure at resume time during bhie_table
+> allocation because of memory pressure. There is a report where at
+> resume time, the memory from the dma doesn't get allocated and MHI
+> fails to re-initialize.
+> 
+> To fix it, don't free the memory at power down during suspend /
+> hibernation. Instead, use the same allocated memory again after every
+> resume / hibernation. This patch has been tested with resume and
+> hibernation both.
+> 
+> The rddm is of constant size for a given hardware. While the fbc_image
+> size depends on the firmware. If the firmware changes, we'll free and
+> allocate new memory for it.
 
+Why is it valid to load new firmware as a result of suspend?  I don't 
+users would expect that.
 
-Hope this helps someone,
+> diff --git a/drivers/bus/mhi/host/boot.c b/drivers/bus/mhi/host/boot.c
+> index efa3b6dddf4d2..bc8459798bbee 100644
+> --- a/drivers/bus/mhi/host/boot.c
+> +++ b/drivers/bus/mhi/host/boot.c
+> @@ -584,10 +584,17 @@ void mhi_fw_load_handler(struct mhi_controller *mhi_cntrl)
+>   	 * device transitioning into MHI READY state
+>   	 */
+>   	if (fw_load_type == MHI_FW_LOAD_FBC) {
 
-Prashant
+Why is this FBC specific?
 
+> -		ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
+> -		if (ret) {
+> -			release_firmware(firmware);
+> -			goto error_fw_load;
+> +		if (mhi_cntrl->fbc_image && fw_sz != mhi_cntrl->prev_fw_sz) {
+> +			mhi_free_bhie_table(mhi_cntrl, mhi_cntrl->fbc_image);
+> +			mhi_cntrl->fbc_image = NULL;
+> +		}
+> +		if (!mhi_cntrl->fbc_image) {
+> +			ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image, fw_sz);
+> +			if (ret) {
+> +				release_firmware(firmware);
+> +				goto error_fw_load;
+> +			}
+> +			mhi_cntrl->prev_fw_sz = fw_sz;
+>   		}
+>   
+>   		/* Load the firmware into BHIE vec table */
+> diff --git a/drivers/bus/mhi/host/pm.c b/drivers/bus/mhi/host/pm.c
+> index e6c3ff62bab1d..107d71b4cc51a 100644
+> --- a/drivers/bus/mhi/host/pm.c
+> +++ b/drivers/bus/mhi/host/pm.c
+> @@ -1259,10 +1259,19 @@ void mhi_power_down(struct mhi_controller *mhi_cntrl, bool graceful)
+>   }
+>   EXPORT_SYMBOL_GPL(mhi_power_down);
+>   
+> +static void __mhi_power_down_unprepare_keep_dev(struct mhi_controller *mhi_cntrl)
+> +{
+> +	mhi_cntrl->bhi = NULL;
+> +	mhi_cntrl->bhie = NULL;
 
+Why?
 
-On Mon, 12 May 2025 17:29:20 +0700, SIDIQ BAKTI <sidiqbakti@gmail.com> wrot=
-e:
-
->> Hi ath12k devs,
->>
->> I'm having an issue with chip ID 4634 which is currently not listed in
->> board-2.bin.
->>
->> I recently purchased a WLE7002E25 board from Complex, which uses the
->> QCN9274 chip in a DBDC configuration with a diplexer. I initially
->> assumed the chip ID would be the same as other QCN9274 variants, but
->> it turns out mine uses a higher board ID (4634), whereas the latest
->> board-2.bin only includes IDs up to 4121.
->>
->> This setup is mainly for hobby purposes. Here are the specs of my platfo=
-rm:
->>
->> **Board**: Photonicat (Ariaboard)
->> - Rockchip RK3568
->> - 4GB LPDDR4 / 64GB eMMC
->> - Renesas RA2E1 Cortex-M23 ultra-low power MCU
->> - Dual M.2 (B+E Key) PCIe via converter to mPCIe
->>
->> **OS:**
->> - ImmortalWrt SNAPSHOT r33919-09241815a1
->> - Kernel: 6.6.87
->> - Unpatched, using latest firmware from [CodeLinaro ath12k-firmware
->> repo](https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware)
->>
->> in the dmesg logs
->>
->> root@LoliskWrt:~# uname -a
->> Linux LoliskWrt 6.6.87 #0 SMP Thu May 1 14:33:10 2025 aarch64 GNU/Linux
->> root@LoliskWrt:~# lspci -mnn
->> 0002:20:00.0 "PCI bridge [0604]" "Rockchip Electronics Co., Ltd
->> [1d87]" "RK3568 Remote Signal Processor [3566]" -r01 -p00 "" ""
->> 0002:21:00.0 "Network controller [0280]" "Qualcomm Technologies, Inc
->> [17cb]" "QCN62xx/92xx Wireless Network Adapter [1109]" -r01 -p00
->> "Qualcomm Technologies, Inc [17cb]" "QCN62xx/92xx Wireless Network
->> Adapter [1109]"
->> root@LoliskWrt:~# find /lib/firmware/ath12k/ -type f | xargs md5sum
->> 25e7a02febd6d419594d074f8d5d6788 /lib/firmware/ath12k/QCN9274/hw2.0/boar=
-d-2.bin
->> 3616c32d0e0b8c131b3e0e42e030d82d
->> /lib/firmware/ath12k/QCN9274/hw2.0/firmware-2.bin
->> 08e77df7b9ab5e4c78bfee1c9f025672 /lib/firmware/ath12k/QCN9274/hw2.0/Noti=
-ce.txt
->> root@LoliskWrt:~# dmesg | grep ath12k
->> [ 6.822644] ath12k_pci 0002:21:00.0: BAR 0: assigned [mem
->> 0xf0200000-0xf03fffff 64bit]
->> [ 6.824009] ath12k_pci 0002:21:00.0: MSI vectors: 16
->> [ 6.824482] ath12k_pci 0002:21:00.0: Hardware name: qcn9274 hw2.0
->> [ 7.638688] ath12k_pci 0002:21:00.0: qmi dma allocation failed
->> (29360128 B type 1), will try later with small size
->> [ 7.659500] ath12k_pci 0002:21:00.0: memory type 10 not supported
->> [ 7.665751] ath12k_pci 0002:21:00.0: chip_id 0x0 chip_family 0xb
->> board_id 0x121a soc_id 0x401a2200
->> [ 7.666595] ath12k_pci 0002:21:00.0: fw_version 0x141580c7
->> fw_build_timestamp 2024-11-11 11:03 fw_build_id
->> QC_IMAGE_VERSION_STRING=3DWLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
->> [ 7.697939] ath12k_pci 0002:21:00.0: failed to fetch board data for
->> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4634 from
->> ath12k/QCN9274/hw2.0/board-2.bin
->> [ 7.699116] ath12k_pci 0002:21:00.0: failed to fetch board data for
->> bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D255 from
->> ath12k/QCN9274/hw2.0/board-2.bin
->> [ 7.700276] ath12k_pci 0002:21:00.0: failed to fetch board.bin from
->> QCN9274/hw2.0
->> [ 7.700940] ath12k_pci 0002:21:00.0: qmi failed to load bdf:
->> [ 7.701442] ath12k_pci 0002:21:00.0: qmi failed to load board data file:=
--12
->>
->>
->> forget the QMI dma, can skip =F0=9F=98=85
->>
->> i already tested using this latest firmware
->> https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware
->> but still can't find the ID,
->> I tried modifying `board-2.bin` on `board.json` by mapping 4634 to
->> 4121 (closest match) just to test:
->>
->> {
->> "names": [ "bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4634" ],
->> "data": "bus=3Dpci,qmi-chip-id=3D0,qmi-board-id=3D4121.bin"
->> }
->>
->> This made the device show up in iw dev, but instead of showing 2.4GHz
->> and 5GHz, it shows two 5GHz interfaces. So clearly it's the wrong
->> board file.
->>
->> Would it be possible to add support for board ID 4634 to board-2.bin?
->>
->> Happy to provide further logs or test patches if needed.
->>
->> Thanks in advance =F0=9F=99=8F
->> Regards,
->> Siddiq
+> +
+> +	mhi_deinit_dev_ctxt(mhi_cntrl);
+> +}
 
