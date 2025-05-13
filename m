@@ -4,71 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B913C3ABCC
-	for <ath12k@archiver.kernel.org>; Tue, 13 May 2025 14:11:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15EACC3ABCC
+	for <ath12k@archiver.kernel.org>; Tue, 13 May 2025 15:20:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=drhyEa04GHWrSzB1IMgWPQS/3uMdw5vi3y/OJ2kKVGY=; b=OIhDPmSUCukwPOx8+beOc/z5Ih
-	MUIWNF4rrdr2BOimqXGGti4T+WUE9PSldj72Izzs7zmSCJHTN0U1xIgciVTBRqvkE7jH9ToF3fNB8
-	JcXggQpThzpVjd3ub7WTVd8/yflGWXuxc106TeSY4TpI+dcBpLHrmAp+EFJdel0j2NR/nqd/E/TRJ
-	4DEUYbrfGqQ2GS8+LkZmGZhKLXxbtj5yJFUeAMTHzKxTqw1mSM0bVezcAPD59o43YaIiCCj1nYwsF
-	wRdB5Jk4e7xFXt/7YRZIeELCFg3CUqC2l9YmH8DXRltRYBTKa2DrLv6aRkv4YTZc0gUprXxe3UWpl
-	DpjEsDSQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=3ztrdVxrn8TBfS/7xFyW3WzhZsuxUDilww8DQjUsNkI=; b=JPWjw2S1GOtsvx3yEaEh0keyxd
+	QmJP+dWTMOrQKBls/b+QFogpP9mL0SU5RqYibeMCTY2pYUrqCKV1Z9v4kbK3FN0zprQfZRrdCyepr
+	e2/RSn4ZNm3kwn7l0HgVu96HPUPRA6/d+jqCz5UfIw1Ga9NWhUQGRbxnRuUVC+gwsswYRXoFv0Ymo
+	EyrEaif4+iofTBit1lI6BIg5w68Y7a5nPStc4xohSe2NdiFeF/iUGZr9zstuOU3JMdJUa+jcThDzp
+	6nVGLzUNS7mhuqgODrmP+6jV9AOri69S+lim4+gqeiczma/dlksxvAsQfgFUgY6XzGcFQ4UOiNGnu
+	iYN7H5tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEqLx-0000000Ca3O-0jBA;
-	Tue, 13 May 2025 14:11:29 +0000
-Received: from mgamail.intel.com ([192.198.163.15])
+	id 1uErR1-0000000ClCT-30VK;
+	Tue, 13 May 2025 15:20:47 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEqJu-0000000CZoO-1lqP
+	id 1uErNM-0000000CkRN-0C3S
 	for ath12k@lists.infradead.org;
-	Tue, 13 May 2025 14:09:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1747145362; x=1778681362;
-  h=date:from:to:cc:subject:message-id;
-  bh=W1tHXSl+Tcb9u9/nr5Az4QDV8636YvEwHECTA3jfvJ0=;
-  b=Y8ZY/hTO9jj83qDMle5G0Y7OSuk/BpPxLzfrwHPxg0EBhUQ7WEJ/tXnF
-   LVytZGMSm6Xsttvk1YP6wJ1m5i8XGf6waxI/WTCGNItdbFPm1OkAf6VXX
-   LnXpTLwIsqSaSbPTIM0WGNqcX4CqqOZKqjqBTrpKw4VCth5s+Vdzb+sMT
-   bryFNHi0lAFu39CNHPPylHp1LIP27sEpn0KxgPs22zjJBVeec5wsEfCC2
-   mnyy8E3hxT8ROTbb0B0nNZMc/WsHXW2xUpkz43hJWqGecLdqES35TUhND
-   yG2yG4POQRVNSx8QzFVFrSnNOxX13qefqNpO4sf2yeE+xceTFmRQqycLT
-   Q==;
-X-CSE-ConnectionGUID: fHsn6PCGQb+pC346dqxBuw==
-X-CSE-MsgGUID: nD2g6Vk3RCCRjovkRprF7A==
-X-IronPort-AV: E=McAfee;i="6700,10204,11431"; a="49142828"
-X-IronPort-AV: E=Sophos;i="6.15,285,1739865600"; 
-   d="scan'208";a="49142828"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 May 2025 07:09:20 -0700
-X-CSE-ConnectionGUID: G3e69ugSSWmrdnon+OqVDw==
-X-CSE-MsgGUID: JBk+g3nUSQC3u8YRLcYoTw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,285,1739865600"; 
-   d="scan'208";a="160991660"
-Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
-  by fmviesa002.fm.intel.com with ESMTP; 13 May 2025 07:09:19 -0700
-Received: from kbuild by 1992f890471c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uEqJo-000G6l-22;
-	Tue, 13 May 2025 14:09:16 +0000
-Date: Tue, 13 May 2025 22:08:54 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Kalle Valo <kvalo@kernel.org>, ath12k@lists.infradead.org
-Subject: [ath:master-pending] BUILD SUCCESS
- 1827614f95395f3d60414611aac6c29fdfcaebee
-Message-ID: <202505132244.g7suvRpk-lkp@intel.com>
-User-Agent: s-nail v14.9.24
+	Tue, 13 May 2025 15:17:01 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54DDMBs8018056
+	for <ath12k@lists.infradead.org>; Tue, 13 May 2025 15:16:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	3ztrdVxrn8TBfS/7xFyW3WzhZsuxUDilww8DQjUsNkI=; b=LIZas53faEkTAKOj
+	U+9+fr4CgM/DHXntykZu+DTxCM7n/wNvla8Yh1M+Anl8FZ44LK2LogmklpCLkpK9
+	ONsYCV+6mRfxkfS5hLHXeS/+TSb6/aDAEYnmUKnwjV4PqZYtINQKI75BU66Wo+7X
+	s8meOhsXZUR2zSgnWQVCvcnBs7z6wEJ2vf1smom/uOYDRtyQ/cak3+CYZ6hjYzs6
+	i5OqptPTI4GG74bcH+w9cX4y1HTJ0C0dikakvsFgpOFvAuyk1PcIJtYMRXp2loFa
+	Oat6rwKbqMK0h37WAFX9RGU4Juw/aOaCMdsc2RZna9NpYYng9tp5Se0b8TqUYNtW
+	ysBcEg==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46kcfemr6x-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ath12k@lists.infradead.org>; Tue, 13 May 2025 15:16:58 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b19226b5f7dso4032026a12.0
+        for <ath12k@lists.infradead.org>; Tue, 13 May 2025 08:16:58 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747149417; x=1747754217;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=3ztrdVxrn8TBfS/7xFyW3WzhZsuxUDilww8DQjUsNkI=;
+        b=SaSIzXxVprG5JHitreDqueMb4nvkx6deKZBZU2Hov07U9Btm971ji6Rr7yTxdO09aK
+         QGDyrf3G6cnNi1HNNRnzmCsVhYGTrxpyDZ/IWJMcz1lVqp9n9OWlCxGtSeXuEaxaZyji
+         Bdt6UdcbhAjER/1DPGbQ+ovaX1S/IM/v+O4cp73qEsNjg15wX3dHPbG3cK/Q0Qng4dHz
+         aIfZldGY+lR7EDH1C70vwRf+HcO96Gft85HBkds5nd0Tw40RdPVCVesry9nN00iBVgpd
+         9YwasgkdzubhlKtw4S4UcoPvQm14iIKT5Q2S85MNTRZyKoN8NeRZXpql3En5n2e6lKr6
+         NfmA==
+X-Forwarded-Encrypted: i=1; AJvYcCVilXMOhZa7N9SV8K7Eb592VN+IGbybi+DoWXWt/eWwhbXdAM8kf858E8jlO8tBIBoURNBU5Eg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyOaPiUax5dhrWuDZyIJMQNHZiBtK/8RER0ir6+KRFKEqnVfmdi
+	AofRtAy8Vrmvg/KygFenNMeIbW4hKPkgJ1T7Xy14FfDgk6LTmtkcMImyyC5aBxb+1N3SVzymAN3
+	qrqsI4YwWjwJ2z08SiaMheRBBGqywWVNO6hhgwjHqOB0MnTyZfGgWch151uqH
+X-Gm-Gg: ASbGncu7/q6jNA2BbMsV3swkGYYtoZSt5KiidNOAFji8u4985LS2x+ErHJcyXSjE1BM
+	s/jjxOWKq5HZkTfGlXlMzCQ7/OS5yQIIdisrdifuc+PnOfAWShvMog4j4cW3PI1WWshD6M5H86n
+	ohe+ScNbAU2Zdf5QI4SHQS7/jb4fNV1zQF4xKtKYwUi7z+R2zg6flmgw6wJocXsXqWbgd40d6Ub
+	W4J8Et7t6fIktAg4gtcsxquvno0+FwKgHxiYswh/1Meq4TZc0NEo2STZQ840kF7FRWMEk4MPG/a
+	Ht8ZdhvlosPuAi8TZdVWUnNVzPR9hyQDS2E3iJ5TOuZtebFUrO1m5rLJAPsa4w==
+X-Received: by 2002:a05:6a21:328b:b0:1ee:d664:17a4 with SMTP id adf61e73a8af0-215eb73ff9bmr5239882637.10.1747149416976;
+        Tue, 13 May 2025 08:16:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE/qZgi8tIjcUeE0ohWzU4Mnw55YfaTgtINhOjXu6Fl8drDxzQO1FyRbVY4oDD29OgLNL9FTQ==
+X-Received: by 2002:a05:6a21:328b:b0:1ee:d664:17a4 with SMTP id adf61e73a8af0-215eb73ff9bmr5239835637.10.1747149416526;
+        Tue, 13 May 2025 08:16:56 -0700 (PDT)
+Received: from [10.226.59.182] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b234ad3ea02sm6349451a12.39.2025.05.13.08.16.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 13 May 2025 08:16:56 -0700 (PDT)
+Message-ID: <57e04b5a-9f04-49bb-8a7d-978276e9033f@oss.qualcomm.com>
+Date: Tue, 13 May 2025 09:16:53 -0600
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4] bus: mhi: host: don't free bhie tables during
+ suspend/hibernation
+To: Muhammad Usama Anjum <usama.anjum@collabora.com>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Youssef Samir
+ <quic_yabdulra@quicinc.com>,
+        Matthew Leung <quic_mattleun@quicinc.com>, Yan Zhen <yanzhen@vivo.com>,
+        Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>,
+        Jacek Lawrynowicz <jacek.lawrynowicz@linux.intel.com>,
+        Kunwu Chan <chentao@kylinos.cn>,
+        Troy Hanson <quic_thanson@quicinc.com>,
+        "Dr. David Alan Gilbert" <linux@treblig.org>
+Cc: kernel@collabora.com, sebastian.reichel@collabora.com,
+        Carl Vanderlip <quic_carlv@quicinc.com>, Alex Elder <elder@kernel.org>,
+        mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
+        ath11k@lists.infradead.org, ath12k@lists.infradead.org
+References: <20250506144941.2715345-1-usama.anjum@collabora.com>
+ <4a6b83f4-885a-46e1-ae31-21a4f3959bae@oss.qualcomm.com>
+ <5521efad-1ca8-41e3-b820-5527d634c539@collabora.com>
+Content-Language: en-US
+From: Jeff Hugo <jeff.hugo@oss.qualcomm.com>
+In-Reply-To: <5521efad-1ca8-41e3-b820-5527d634c539@collabora.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTEzMDE0NSBTYWx0ZWRfX63hAF/4lfIWc
+ wf6zEcPMRSfH9avU1AVAmYNIcNL5t5QsNo/RKhR8YxTJHhtFfm5qzI2/y5YOzq2GoxH7FzJuTZA
+ TyYcGV4BeFsk7gBElds0zfndNHUmQQ30U/a4RqY1s4rIcCIojTSR7a0lW5P8RslARlowWG9kzQ1
+ UMhAe2Oykyxv+sjB3T2u308GIS38uviKcYRcZFIY5NROrr7tBV5s905JoxxTzOoFjO7gvP0uadF
+ FCoBfei+9W7PWSGWSjcAiojS7PNKLAuIsX7CG96z7YaMsNmJFFaEqDMUpgi/8i6qa6SZXuQ7j6H
+ CxdSUj5qua27zhCROlF5D5V73Y1cRhKpC6jQvL0+8cpO1Uo5gWStTqnO7dHU8y7gFjTW0j2Usej
+ gAM2znvtDs9Pj1dUkV9HUJI5y+bleTfe87edOj4JTgeZ/cUvwpG/ZlODpsVDc3ehq2o9PfEV
+X-Proofpoint-ORIG-GUID: SYOHAWPCBxyDoYiEUbYnIfrLQDm3DQlS
+X-Authority-Analysis: v=2.4 cv=asuyCTZV c=1 sm=1 tr=0 ts=6823626a cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=ql1YSk0x1lwMMiQrb4cA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-GUID: SYOHAWPCBxyDoYiEUbYnIfrLQDm3DQlS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-13_03,2025-05-09_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 mlxscore=0 impostorscore=0 malwarescore=0 mlxlogscore=999
+ adultscore=0 phishscore=0 suspectscore=0 priorityscore=1501 bulkscore=0
+ lowpriorityscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505130145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250513_070922_480289_750729E6 
-X-CRM114-Status: UNSURE (   3.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250513_081700_199339_E316CC39 
+X-CRM114-Status: GOOD (  27.78  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,162 +146,100 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git master-pending
-branch HEAD: 1827614f95395f3d60414611aac6c29fdfcaebee  Merge branch 'pending' into main-pending
+On 5/13/2025 12:44 AM, Muhammad Usama Anjum wrote:
+> On 5/12/25 11:46 PM, Jeff Hugo wrote:
+>> On 5/6/2025 8:49 AM, Muhammad Usama Anjum wrote:
+>>> Fix dma_direct_alloc() failure at resume time during bhie_table
+>>> allocation because of memory pressure. There is a report where at
+>>> resume time, the memory from the dma doesn't get allocated and MHI
+>>> fails to re-initialize.
+>>>
+>>> To fix it, don't free the memory at power down during suspend /
+>>> hibernation. Instead, use the same allocated memory again after every
+>>> resume / hibernation. This patch has been tested with resume and
+>>> hibernation both.
+>>>
+>>> The rddm is of constant size for a given hardware. While the fbc_image
+>>> size depends on the firmware. If the firmware changes, we'll free and
+>>> allocate new memory for it.
+>>
+>> Why is it valid to load new firmware as a result of suspend?  I don't
+>> users would expect that.
+> I'm not sure its valid or not. Like other users, I also don't expect
+> that firmware would get changed. It doesn't seem to be tested and hence
+> supported case.
+> 
+> But other drivers have code which have implementation like this. I'd
+> mentioned previously that this patch was motivated from the ath12k [1]
+> and ath11k [2] patches. They don't free the memory and reuse the same
+> memory if new size is same.
 
-elapsed time: 1068m
+It feels like this justification needs to be detailed in the commit 
+text. I suspect at some point we'll have another MHI device where the FW 
+will need to be cached.
 
-configs tested: 142
-configs skipped: 7
+>>> diff --git a/drivers/bus/mhi/host/boot.c b/drivers/bus/mhi/host/boot.c
+>>> index efa3b6dddf4d2..bc8459798bbee 100644
+>>> --- a/drivers/bus/mhi/host/boot.c
+>>> +++ b/drivers/bus/mhi/host/boot.c
+>>> @@ -584,10 +584,17 @@ void mhi_fw_load_handler(struct mhi_controller
+>>> *mhi_cntrl)
+>>>         * device transitioning into MHI READY state
+>>>         */
+>>>        if (fw_load_type == MHI_FW_LOAD_FBC) {
+>>
+>> Why is this FBC specific?
+> It seems we allocate fbc_image only when firmware load type is
+> FW_LOAD_FBC. I'm just optimizing the buffer allocation here.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+We alloc bhie tables in non FBC usecases. Is this somehow an FBC 
+specific issue? Perhaps you could clarify the limits of this solution in 
+the commit text?
 
-tested configs:
-alpha                             allnoconfig    gcc-14.2.0
-alpha                            allyesconfig    gcc-14.2.0
-arc                              allmodconfig    gcc-14.2.0
-arc                               allnoconfig    gcc-14.2.0
-arc                              allyesconfig    gcc-14.2.0
-arc                        nsim_700_defconfig    gcc-14.2.0
-arc                   randconfig-001-20250513    gcc-14.2.0
-arc                   randconfig-002-20250513    gcc-14.2.0
-arm                              allmodconfig    gcc-14.2.0
-arm                               allnoconfig    clang-21
-arm                              allyesconfig    gcc-14.2.0
-arm                     am200epdkit_defconfig    gcc-14.2.0
-arm                      footbridge_defconfig    clang-17
-arm                        multi_v5_defconfig    gcc-14.2.0
-arm                             mxs_defconfig    clang-21
-arm                            qcom_defconfig    clang-21
-arm                   randconfig-001-20250513    gcc-7.5.0
-arm                   randconfig-002-20250513    gcc-8.5.0
-arm                   randconfig-003-20250513    gcc-8.5.0
-arm                   randconfig-004-20250513    clang-16
-arm                           tegra_defconfig    gcc-14.2.0
-arm64                            allmodconfig    clang-19
-arm64                             allnoconfig    gcc-14.2.0
-arm64                 randconfig-001-20250513    clang-21
-arm64                 randconfig-002-20250513    clang-21
-arm64                 randconfig-003-20250513    gcc-6.5.0
-arm64                 randconfig-004-20250513    clang-21
-csky                              allnoconfig    gcc-14.2.0
-csky                  randconfig-001-20250513    gcc-14.2.0
-csky                  randconfig-002-20250513    gcc-12.4.0
-hexagon                          allmodconfig    clang-17
-hexagon                           allnoconfig    clang-21
-hexagon                          allyesconfig    clang-21
-hexagon               randconfig-001-20250513    clang-21
-hexagon               randconfig-002-20250513    clang-21
-i386                             allmodconfig    gcc-12
-i386                              allnoconfig    gcc-12
-i386                             allyesconfig    gcc-12
-i386        buildonly-randconfig-001-20250513    clang-20
-i386        buildonly-randconfig-002-20250513    clang-20
-i386        buildonly-randconfig-003-20250513    clang-20
-i386        buildonly-randconfig-004-20250513    clang-20
-i386        buildonly-randconfig-005-20250513    gcc-12
-i386        buildonly-randconfig-006-20250513    gcc-12
-i386                                defconfig    clang-20
-loongarch                        alldefconfig    gcc-14.2.0
-loongarch                        allmodconfig    gcc-14.2.0
-loongarch                         allnoconfig    gcc-14.2.0
-loongarch                 loongson3_defconfig    gcc-14.2.0
-loongarch             randconfig-001-20250513    gcc-14.2.0
-loongarch             randconfig-002-20250513    gcc-14.2.0
-m68k                             allmodconfig    gcc-14.2.0
-m68k                              allnoconfig    gcc-14.2.0
-m68k                             allyesconfig    gcc-14.2.0
-m68k                        mvme16x_defconfig    gcc-14.2.0
-m68k                            q40_defconfig    gcc-14.2.0
-microblaze                       allmodconfig    gcc-14.2.0
-microblaze                        allnoconfig    gcc-14.2.0
-microblaze                       allyesconfig    gcc-14.2.0
-mips                              allnoconfig    gcc-14.2.0
-mips                        bcm63xx_defconfig    clang-21
-mips                          eyeq5_defconfig    gcc-14.2.0
-mips                           ip22_defconfig    gcc-14.2.0
-nios2                             allnoconfig    gcc-14.2.0
-nios2                 randconfig-001-20250513    gcc-10.5.0
-nios2                 randconfig-002-20250513    gcc-12.4.0
-openrisc                          allnoconfig    gcc-14.2.0
-openrisc                         allyesconfig    gcc-14.2.0
-openrisc                            defconfig    gcc-14.2.0
-parisc                           allmodconfig    gcc-14.2.0
-parisc                            allnoconfig    gcc-14.2.0
-parisc                           allyesconfig    gcc-14.2.0
-parisc                              defconfig    gcc-14.2.0
-parisc                randconfig-001-20250513    gcc-11.5.0
-parisc                randconfig-002-20250513    gcc-11.5.0
-powerpc                          allmodconfig    gcc-14.2.0
-powerpc                           allnoconfig    gcc-14.2.0
-powerpc                          allyesconfig    clang-21
-powerpc                      chrp32_defconfig    clang-19
-powerpc                  iss476-smp_defconfig    gcc-14.2.0
-powerpc                       ppc64_defconfig    clang-21
-powerpc               randconfig-001-20250513    clang-21
-powerpc               randconfig-002-20250513    gcc-8.5.0
-powerpc               randconfig-003-20250513    clang-21
-powerpc64             randconfig-001-20250513    clang-21
-powerpc64             randconfig-002-20250513    gcc-8.5.0
-powerpc64             randconfig-003-20250513    clang-21
-riscv                            allmodconfig    clang-21
-riscv                             allnoconfig    gcc-14.2.0
-riscv                            allyesconfig    clang-16
-riscv                               defconfig    clang-21
-riscv                 randconfig-001-20250513    gcc-14.2.0
-riscv                 randconfig-002-20250513    gcc-14.2.0
-s390                             allmodconfig    clang-18
-s390                              allnoconfig    clang-21
-s390                             allyesconfig    gcc-14.2.0
-s390                                defconfig    clang-21
-s390                  randconfig-001-20250513    clang-21
-s390                  randconfig-002-20250513    gcc-9.3.0
-sh                               allmodconfig    gcc-14.2.0
-sh                                allnoconfig    gcc-14.2.0
-sh                               allyesconfig    gcc-14.2.0
-sh                        apsh4ad0a_defconfig    gcc-14.2.0
-sh                                  defconfig    gcc-14.2.0
-sh                             espt_defconfig    gcc-14.2.0
-sh                    randconfig-001-20250513    gcc-12.4.0
-sh                    randconfig-002-20250513    gcc-14.2.0
-sh                          rsk7203_defconfig    gcc-14.2.0
-sh                          rsk7269_defconfig    gcc-14.2.0
-sh                      rts7751r2d1_defconfig    gcc-14.2.0
-sh                           se7712_defconfig    gcc-14.2.0
-sh                           se7724_defconfig    gcc-14.2.0
-sh                            shmin_defconfig    gcc-14.2.0
-sh                            titan_defconfig    gcc-14.2.0
-sparc                            allmodconfig    gcc-14.2.0
-sparc                             allnoconfig    gcc-14.2.0
-sparc                 randconfig-001-20250513    gcc-11.5.0
-sparc                 randconfig-002-20250513    gcc-13.3.0
-sparc64                             defconfig    gcc-14.2.0
-sparc64               randconfig-001-20250513    gcc-11.5.0
-sparc64               randconfig-002-20250513    gcc-13.3.0
-um                               allmodconfig    clang-19
-um                                allnoconfig    clang-21
-um                               allyesconfig    gcc-12
-um                                  defconfig    clang-21
-um                             i386_defconfig    gcc-12
-um                    randconfig-001-20250513    clang-19
-um                    randconfig-002-20250513    gcc-12
-um                           x86_64_defconfig    clang-21
-x86_64                            allnoconfig    clang-20
-x86_64                           allyesconfig    clang-20
-x86_64      buildonly-randconfig-001-20250513    gcc-12
-x86_64      buildonly-randconfig-002-20250513    gcc-12
-x86_64      buildonly-randconfig-003-20250513    clang-20
-x86_64      buildonly-randconfig-004-20250513    gcc-12
-x86_64      buildonly-randconfig-005-20250513    clang-20
-x86_64      buildonly-randconfig-006-20250513    gcc-12
-x86_64                              defconfig    gcc-11
-x86_64                          rhel-9.4-rust    clang-18
-xtensa                            allnoconfig    gcc-14.2.0
-xtensa                randconfig-001-20250513    gcc-7.5.0
-xtensa                randconfig-002-20250513    gcc-14.2.0
+> 
+>>
+>>> -        ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl->fbc_image,
+>>> fw_sz);
+>>> -        if (ret) {
+>>> -            release_firmware(firmware);
+>>> -            goto error_fw_load;
+>>> +        if (mhi_cntrl->fbc_image && fw_sz != mhi_cntrl->prev_fw_sz) {
+>>> +            mhi_free_bhie_table(mhi_cntrl, mhi_cntrl->fbc_image);
+>>> +            mhi_cntrl->fbc_image = NULL;
+>>> +        }
+>>> +        if (!mhi_cntrl->fbc_image) {
+>>> +            ret = mhi_alloc_bhie_table(mhi_cntrl, &mhi_cntrl-
+>>>> fbc_image, fw_sz);
+>>> +            if (ret) {
+>>> +                release_firmware(firmware);
+>>> +                goto error_fw_load;
+>>> +            }
+>>> +            mhi_cntrl->prev_fw_sz = fw_sz;
+>>>            }
+>>>              /* Load the firmware into BHIE vec table */
+>>> diff --git a/drivers/bus/mhi/host/pm.c b/drivers/bus/mhi/host/pm.c
+>>> index e6c3ff62bab1d..107d71b4cc51a 100644
+>>> --- a/drivers/bus/mhi/host/pm.c
+>>> +++ b/drivers/bus/mhi/host/pm.c
+>>> @@ -1259,10 +1259,19 @@ void mhi_power_down(struct mhi_controller
+>>> *mhi_cntrl, bool graceful)
+>>>    }
+>>>    EXPORT_SYMBOL_GPL(mhi_power_down);
+>>>    +static void __mhi_power_down_unprepare_keep_dev(struct
+>>> mhi_controller *mhi_cntrl)
+>>> +{
+>>> +    mhi_cntrl->bhi = NULL;
+>>> +    mhi_cntrl->bhie = NULL;
+>>
+>> Why?
+> This function is shorter version of mhi_unprepare_after_power_down(). As
+> we need different code path in case of suspend/hibernation case, I was
+> adding a new API which Mani asked me remove and consolidate into
+> mhi_power_down_keep_dev() instead. So this static function has been
+> added. [3]
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+I don't understand the need to zero these out.  Also, if you are copying 
+part of the functionality of mhi_unprepare_after_power_down(), shouldn't 
+that functionality be moved into your new API to eliminate duplication?
+
 
