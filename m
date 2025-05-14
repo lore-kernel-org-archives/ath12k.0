@@ -4,119 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B34CC3ABD8
-	for <ath12k@archiver.kernel.org>; Wed, 14 May 2025 14:30:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A78EDC3ABD8
+	for <ath12k@archiver.kernel.org>; Wed, 14 May 2025 14:49:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6uM1re45O2wIlVIo/3+whtmMgKvQ4h1XZxYqjCsQfmE=; b=gw82jVk5xPTOnl5Ig1WebXrPlO
-	+4TOHeZXYd56zAHpqVzecv9ud0BQKlHPmt5zstb5pIlf0MJOr6x29TlveivSscG/IbZEl3lbn+Gi6
-	brpUgx5Lvl0EE7o0O7tMM87rpt6R50ILvIEOWVcEPKBgoNSKp++HJEkwFjr2caXtvWlK5JwK6r+Bz
-	hn0cbJtzlT5E7LpcDILqMlC+Q7KjcOUWAsSfLyZfm9RxtvmlSLlpsTZkGDEEJLwNSXerPGujgRm3e
-	HIfsO1maXto4GT+H9RPQVz/cY1isPlD5SyocL8+IuVI7igwHdwTnmmr3UET1pw/VfWEWoWb/ujA1/
-	fk3r9ADA==;
+	bh=+KTzmnKzLvxHCXdEX/W0vOtqVWJk7XhcUTCfpD3xKwI=; b=InwAk2Y3HK4JvAPvlCO7AF+hOC
+	v6sDi4jbICbgT/q8FVeI66zLR06a2CYqBJsDUQtf7jqcOnx2wxnuVMohJ2Wt7uXBbor1Na/nuz2sN
+	/BbcQS8jFMUm7rOateQT9S3ZwskDQGN7d1J063wwRQ9o0edkT9DbGBESVEcKv9QjROOx+Wgv/1wct
+	pCJW4d+U9g1vSFRRfnHxqku4Nt0tV41hGn6F6iYQZg16/UdT5WwLXZTbctK3pl6288HF4B60xyDoW
+	iAoFELrx5rqz01+DQW6aR+BlQtBCYTkYnwAA9xxTATlczz08HJ56EAGaoioeAL9ZZKXBS63ley+OP
+	LKey1KiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFD7s-0000000FQ0p-43KS;
-	Wed, 14 May 2025 14:30:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uFDQK-0000000FTHD-1pKS;
+	Wed, 14 May 2025 14:49:32 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFCSY-0000000FFbV-19g8
-	for ath12k@lists.infradead.org;
-	Wed, 14 May 2025 13:47:47 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54EAuw9g015222
-	for <ath12k@lists.infradead.org>; Wed, 14 May 2025 13:47:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6uM1re45O2wIlVIo/3+whtmMgKvQ4h1XZxYqjCsQfmE=; b=Mc4TGqMht/PxOfg6
-	hA0BbEeadgia23CK8qnHA4hWxlKGTCqwQTgvPoDCIj+lVQ3cx/4A9Zk+UbCU4nDc
-	KnRY+qJUPw1piR25whN/k19lK4Xsp8yGncvnboctU2OXa1mcRVCKccahtRpYjDgF
-	uSA3tj8rRLeMB+sqsDExor1IczvedCknyEtdy1rKYGAveqZEMklTSN5Eg7ipxd+J
-	+GTgFO51G+PeYEYU5+urmBg6AgxMutw4+tTmKpF38RUdnk5RfWtRggFQ2bbrYufq
-	nG1T0t2gK2w17agcqtUaM1Tx+Xe3oRd6eeY0qlAuXC7ofLzmwksGqV1ZEVI550f+
-	zNentQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcr2s6y-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <ath12k@lists.infradead.org>; Wed, 14 May 2025 13:47:44 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-22fdf1d9fcaso26446155ad.0
-        for <ath12k@lists.infradead.org>; Wed, 14 May 2025 06:47:43 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747230462; x=1747835262;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=6uM1re45O2wIlVIo/3+whtmMgKvQ4h1XZxYqjCsQfmE=;
-        b=JozOMwXQMle5ehFPtmjawPCiylbTAUaFdaXmmAMsGLnvB6t2kKZmWLVtY4yVFiNfFr
-         Sp9IHiXY4vRI+w92uGcM9FFuZREreKoKttqE5WZ5Tz06w3NvdsXxHiYQzQTgu9lwoh4Z
-         4X40Zw1BlFWOdo5qRi3A1+MeXBj1Nn1UkVC91IgozsJv2BXGbL1rEp1D9XGSGxK7DJgT
-         h0r0XZHsjmFJWZJv1BTGbBQd8JhEoucJjR8t1EYzR+pCHJoNzwsqsDsasZG74CiPKkmm
-         tdP1K4rV2SUPZodzZ6TpOS5QG1YvaWPJ8ZpwEqKLqiHztL0kqPPVQIBdEA4mJFcbM2pM
-         6QTQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUV+RRha+TCiWXZI2ovSBzl2DtxcIcI0Q3NKASisyl4oHCLz5cnBWEWaO7G4oh4WgBoVQ6XeYw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx2Rn6uaf1hsFoNMsIPV+VB8KYu89Ex3Ud5cZElbSouWuQ51cjw
-	X4Dq2fmRIoN9reWSBa4WmErNgClJBCpfFNWnNSmGsjRn5VdUL4Z4wU4q99OS6sxcmA6+UuW+eCt
-	UoJEjFbqy4BivzJnW+F1S3nZLnKmzfNjqLT/Pi+GQhe+zOz0pbb7m2EKRHwD937JaOm2f
-X-Gm-Gg: ASbGncseXjInwZfO4MNbo7WyRiNjitGNy8wsDNjBu1vD523GXuNIaRnTDAGWAkKP7zP
-	MeLpKqc+XRcyeE+J9pt33pNNNME+cWV9CU3v/zMNbKsLeSgS8U+dVrps2I6AWMYeXb1Km/lkwDL
-	aQN4XZu94n3FkSU6WArl8OMZFqbwgGIat7A+S659AwXfypqWMMWLzmoeV4wyg7haRFIw3XhCCPt
-	J7pzmHxV1l5wjf9wlFsKdotFcRNwVpb8thkZjS3WVI+Nbjjn5YQbuOstWdrjXzeFFwW9cbznN+Y
-	YeUEQsqjlvmOUolhd3Jqag2slgTRmoP3kcbR+ivl0HGIki9ozjaRKwQm2HStWRiaJo4=
-X-Received: by 2002:a17:902:e54d:b0:220:ec62:7dc8 with SMTP id d9443c01a7336-231980c96c6mr44309755ad.2.1747230462452;
-        Wed, 14 May 2025 06:47:42 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IG/Q3uPk/QbEWBOrhtr8PGNViB3LeyTkN11JRz2Zas4K7fDvgwbiBIbe9b160thz6soF12WTA==
-X-Received: by 2002:a17:902:e54d:b0:220:ec62:7dc8 with SMTP id d9443c01a7336-231980c96c6mr44309435ad.2.1747230462023;
-        Wed, 14 May 2025 06:47:42 -0700 (PDT)
-Received: from [10.227.110.203] (i-global254.qualcomm.com. [199.106.103.254])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22fc753fe13sm98929455ad.14.2025.05.14.06.47.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 14 May 2025 06:47:41 -0700 (PDT)
-Message-ID: <ff4e8d8e-5835-4200-a479-baa0e44478f0@oss.qualcomm.com>
-Date: Wed, 14 May 2025 06:47:40 -0700
+	id 1uFDB0-0000000FQMu-3Rya;
+	Wed, 14 May 2025 14:33:44 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id A587F5C5F48;
+	Wed, 14 May 2025 14:31:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26498C4CEE3;
+	Wed, 14 May 2025 14:33:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1747233221;
+	bh=0QNOi5L2b6Wa2pW0QAao2Q8QYjITnD2KoyJF4sxWD54=;
+	h=Date:Subject:List-Id:To:Cc:References:From:In-Reply-To:From;
+	b=ZVDp1fmwFAgjLPYgfBK8JEyim2lvuwSWNxpMRv48dTBxRZgf98A7Bp1FBHiYBS6x0
+	 gPuGvNpbrqZOC/hIkT2C2cDqMJAuiilSjo3ys/JLZnv4DZhhRobbn+2gXjLlw0G0R0
+	 9Quc1N74yM6vpTTimXFGEqiWfilwMteaqOa5hZxnLPEvlpem2LTYjZsBi5R8i9YBxH
+	 jOR+4rWA5kYn2SjPCx8Pks+0k1wIsOP9XPtyqDCo9lIpjqzys8TrE46A7F20c+0O4c
+	 ErDb7zAW/KPvX3T2KLSBtsHjjZmEz8e9jQaB4knFfIJyzp/0RamvRbzxSA3aNv3KC6
+	 dIhz3sM2dcQZA==
+Message-ID: <62cba955-0f4a-4b25-8ec9-065ccfa9e26e@kernel.org>
+Date: Wed, 14 May 2025 09:33:40 -0500
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next] wifi: ath12k: Fix scan initiation failure
- handling
-To: Vignesh C <quic_vignc@quicinc.com>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-References: <20250512065849.2833232-1-quic_vignc@quicinc.com>
- <52ff43fc-160c-4efe-ba9e-42a0c838fb3d@oss.qualcomm.com>
- <f0c8009a-829a-43f3-be03-c6b2a0b67883@quicinc.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Subject: Re: [PULL linux-firmware] ath11k and ath12k firmware 20250424
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>, linux-firmware@kernel.org
+Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+ ath12k@lists.infradead.org,
+ "Pananchikkal, Renjith" <Renjith.Pananchikkal@amd.com>,
+ Christian Heusel <christian@heusel.eu>
+References: <96b43d18-72e1-44a8-bf06-6a22fd012b07@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <f0c8009a-829a-43f3-be03-c6b2a0b67883@quicinc.com>
-Content-Type: text/plain; charset=UTF-8
+From: Mario Limonciello <superm1@kernel.org>
+In-Reply-To: <96b43d18-72e1-44a8-bf06-6a22fd012b07@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: O6vDKWl7eeGOSGSS895pkEfvGUq4OijT
-X-Authority-Analysis: v=2.4 cv=Auju3P9P c=1 sm=1 tr=0 ts=68249f00 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8 a=nJ64htB4QhkbdbSvBzUA:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: O6vDKWl7eeGOSGSS895pkEfvGUq4OijT
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE0MDEyMiBTYWx0ZWRfX8OlqsZuj596v
- zfFbiCD5P1qxNUqk3HHWwgPidmRdlphK1U95HTByi22bdntsXgTK66nsi9T+QqzteJSlenYeI2w
- OUMo5H8ZbaJhIi1dxJhsHuPFmiAF//pnfnhosM+yESVt49n3a26ZQszEXKEwijD1e1+UrCM9Li7
- A+9yg44SqGF9uWifh1rgUcTu5Y9tJV7Hwm94v38kaGS37TskoUua59GNmFbkgwYpD6F4ip7yeYM
- tkVMB5fv5JHLGRbAtAGEbXP5QjzZF0WoDKobKddWw4l5Dv9kuZOyD2HhlytDDRnJY1xZm4gwqe/
- tH/4nJ8KoRxtDXBQvi3HdvmnwFrlRBW5fx4576O51u4EzNTMr3O45r21/mRJZFWW2LIRLva5+sn
- /U9u3tpcWEmxHy3g9y0MoMI06dcbNZfg1brgT+kHDezxODYDnfDc2cKkLeNgXClhEC5VItmr
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-14_04,2025-05-14_03,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1015 spamscore=0 impostorscore=0 lowpriorityscore=0
- malwarescore=0 mlxscore=0 adultscore=0 priorityscore=1501 mlxlogscore=999
- phishscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
- definitions=main-2505140122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_064746_434837_362921EC 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20250514_073342_944886_9611DD3B 
+X-CRM114-Status: GOOD (  14.19  )
 X-BeenThere: ath12k@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,39 +74,62 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/ath12k>,
 Sender: "ath12k" <ath12k-bounces@lists.infradead.org>
 Errors-To: ath12k-bounces+ath12k=archiver.kernel.org@lists.infradead.org
 
-On 5/14/2025 4:48 AM, Vignesh C wrote:
+On 4/24/2025 3:38 PM, Jeff Johnson wrote:
+> Hi,
+> Here's a new pull request for ath11k and ath12k.
 > 
+> For ath11k, update the firmware for IPQ5018 and update the board file
+> for WCN6855. For ath12k, update the firmware for WCN7850 and update
+> the board file for QCN9274.
 > 
-> On 5/13/2025 3:25 AM, Jeff Johnson wrote:
->> On 5/11/2025 11:58 PM, Vignesh C wrote:
->>> During a code review, it is observed that in the scenario
->>> where scan initiation fails, the current code schedules the
->>> ar->scan.timeout workqueue which is not necessary.
->>
->> Are there any user-visible effects?
->>
+> Please let me know if there are any problems.
 > 
-> When MAC debug is enabled, the message 'mac scan started' is displayed, which is misleading in scan start failure scenario. Additionally, a scan timeout work-queue is scheduled to attempt aborting the scan, which is unnecessary in such cases.
+> /jeff
+> 
+> The following changes since commit 490c0af1d6b9ffca0523edcfad27ba483b9d6da3:
+> 
+>    Merge branch 'robot/pr-0-1745490027' into 'main' (2025-04-24 13:46:05 +0000)
+> 
+> are available in the Git repository at:
+> 
+>    git://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git ath-20250424
+> 
+> for you to fetch changes up to ce13d29c3933f77674cf45855668485c48d3eba0:
+> 
+>    ath11k: WCN6855 hw2.0: update board-2.bin (2025-04-24 13:04:20 -0700)
+> 
+> ----------------------------------------------------------------
+> Jeff Johnson (4):
+>        ath12k: QCN9274 hw2.0: update board-2.bin
+>        ath12k: WCN7850 hw2.0: update to WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+>        ath11k: IPQ5018 hw1.0: update to WLAN.HK.2.6.0.1-01300-QCAHKSWPL_SILICONZ-1
+>        ath11k: WCN6855 hw2.0: update board-2.bin
+> 
+>   WHENCE                           |    4 +-
+>   ath11k/IPQ5018/hw1.0/Notice.txt  | 3918 +++-----------------------------------
+>   ath11k/IPQ5018/hw1.0/q6_fw.b00   |  Bin 532 -> 532 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b01   |  Bin 520 -> 520 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b04   |  Bin 86788 -> 86788 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b08   |  Bin 4096 -> 4096 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b09   |  Bin 2334720 -> 2334720 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b10   |  Bin 269220 -> 269252 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b11   |  Bin 99456 -> 99456 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.b13   |  Bin 7072 -> 7080 bytes
+>   ath11k/IPQ5018/hw1.0/q6_fw.mdt   |  Bin 1052 -> 1052 bytes
+>   ath11k/WCN6855/hw2.0/board-2.bin |  Bin 6429240 -> 6429240 bytes
+>   ath12k/QCN9274/hw2.0/board-2.bin |  Bin 1308544 -> 2626240 bytes
+>   ath12k/WCN7850/hw2.0/amss.bin    |  Bin 6000704 -> 6082624 bytes
+>   ath12k/WCN7850/hw2.0/m3.bin      |  Bin 299660 -> 299660 bytes
+>   15 files changed, 315 insertions(+), 3607 deletions(-)
+> 
 
-Since there are no stability issues this is not a candidate for backporting
+FWIW - this appears to have broken Wifi for a bunch of people.
 
-> 
->>>
->>> In the scan initiation failure scenario, exit the code instead
->>> of scheduling the ar->scan.timeout workqueue.
->>>
->>> Compile tested only.
->>>
->>> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
->>
->> If there are no user-visible effects then I'll drop the Fixes tag since there
->> is no reason to backport this to stable kernel versions.
->>
-> 
-> Kindly refer the above comment and please let me know the next steps.
+https://discuss.cachyos.org/t/wifi-interface-fails-to-initialize-after-linux-firmware-upgrade-qualcomm-wcn7850-ath12k/8765
 
-There are no actions required on your part.
+https://bugzilla.opensuse.org/show_bug.cgi?id=1241986
 
-I've made the change in the pending branch:
-https://git.kernel.org/pub/scm/linux/kernel/git/ath/ath.git/commit/?h=pending&id=4545ccf7efbd97566eb6d98738013bb6d72ced05
+https://www.reddit.com/r/archlinux/comments/1kja6f9/ath12k_regression_on_latest_linuxfirmware_upgrade/
+
+
 
